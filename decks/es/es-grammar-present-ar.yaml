@@ -1,0 +1,68 @@
+schema: 1
+id: es-grammar-present-ar
+name: Spanish present tense, regular -ar verbs
+kind: grammar
+description: >-
+  The single most productive pattern in Spanish. Roughly three quarters of
+  Spanish verbs are regular -ar verbs, so these six endings unlock most of
+  them at once.
+language: { code: es, name: Spanish, script: latin, tts: es-ES }
+native:   { code: en, name: English }
+license: CC0-1.0
+tags: [beginner, grammar, verbs]
+
+pattern:
+  name: Present tense, regular -ar verbs
+  slot_name: person
+  slots: [yo, tú, él/ella, nosotros, vosotros, ellos]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: >-
+    Drop -ar from the infinitive and add -o, -as, -a, -amos, -áis, -an.
+    The vosotros form is used in Spain; Latin American Spanish uses ustedes
+    with the ellos form.
+  entries:
+    - lemma: hablar
+      gloss: to speak
+      forms:
+        yo: hablo
+        tú: hablas
+        él/ella: habla
+        nosotros: hablamos
+        vosotros: habláis
+        ellos: hablan
+    - lemma: trabajar
+      gloss: to work
+      forms:
+        yo: trabajo
+        tú: trabajas
+        él/ella: trabaja
+        nosotros: trabajamos
+        vosotros: trabajáis
+        ellos: trabajan
+    - lemma: estudiar
+      gloss: to study
+      forms:
+        yo: estudio
+        tú: estudias
+        él/ella: estudia
+        nosotros: estudiamos
+        vosotros: estudiáis
+        ellos: estudian
+    - lemma: comprar
+      gloss: to buy
+      forms:
+        yo: compro
+        tú: compras
+        él/ella: compra
+        nosotros: compramos
+        vosotros: compráis
+        ellos: compran
+    - lemma: caminar
+      gloss: to walk
+      forms:
+        yo: camino
+        tú: caminas
+        él/ella: camina
+        nosotros: caminamos
+        vosotros: camináis
+        ellos: caminan

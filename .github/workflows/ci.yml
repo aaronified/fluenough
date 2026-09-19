@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: "3.47.1"
+
+jobs:
+  decks:
+    name: Validate decks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      # Runs on every PR because YAML fails quietly: a bare `no` becomes a
+      # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
+      - run: python3 tools/validate_decks.py decks/
+
+  app:
+    name: Analyse and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # android/ and ios/ are generated rather than committed, so CI recreates
+      # them. This also catches a pubspec that no longer matches the SDK.
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      - run: flutter pub get
+      - run: dart format --output=none --set-exit-if-changed lib test
+      - run: flutter analyze
+      - run: flutter test
+
+  build:
+    name: Build debug APK
+    runs-on: ubuntu-latest
+    needs: [decks, app]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      - run: flutter pub get
+      - run: flutter build apk --debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fluenough-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 14

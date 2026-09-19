@@ -1,0 +1,81 @@
+name: Release
+
+# Builds a signed APK and attaches it to a GitHub Release.
+#
+# Requires four repository secrets, created once:
+#   KEYSTORE_BASE64      base64 of your release keystore (base64 -w0 key.jks)
+#   KEYSTORE_PASSWORD
+#   KEY_ALIAS
+#   KEY_PASSWORD
+#
+# Losing the keystore means no existing installation can ever be upgraded, and
+# Android offers no way to recover from that. Back it up somewhere you trust,
+# separately from this repository.
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python3 tools/validate_decks.py decks/
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.47.1"
+          channel: stable
+          cache: true
+
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      - run: flutter pub get
+      - run: flutter test
+
+      - name: Restore signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::error::KEYSTORE_BASE64 is not set; cannot sign a release."
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 -d > android/app/release.jks
+          cat > android/key.properties <<EOF
+          storeFile=release.jks
+          storePassword=${{ secrets.KEYSTORE_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          EOF
+
+      - run: flutter build apk --release --split-per-abi
+      - run: flutter build apk --release
+
+      - name: Attach APKs to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/app/outputs/flutter-apk/*.apk
+          generate_release_notes: true
+          body: |
+            Install the universal APK if unsure which to pick; the per-ABI
+            builds are smaller.
+
+            Fluenough is GPL-3.0 with an App Store Distribution Exception.
+            Source for this exact build is the tag it was made from.
+
+      - name: Remove signing material
+        if: always()
+        run: rm -f android/app/release.jks android/key.properties

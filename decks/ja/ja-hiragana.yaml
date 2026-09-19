@@ -1,0 +1,265 @@
+schema: 1
+id: ja-hiragana
+name: Japanese hiragana
+kind: vocab
+description: >-
+  All 46 basic hiragana. Learn these before anything else in Japanese; the
+  rest of the writing system assumes them.
+language: { code: ja, name: Japanese, script: kana, tts: ja-JP }
+native:   { code: en, name: English }
+license: CC0-1.0
+tags: [beginner, script, kana]
+
+cards:
+  # --- vowels -----------------------------------------------------------
+  - id: ja-hiragana-001
+    target: あ
+    native: "a"
+    reading: "a"
+    tags: [hiragana]
+  - id: ja-hiragana-002
+    target: い
+    native: "i"
+    reading: "i"
+    tags: [hiragana]
+  - id: ja-hiragana-003
+    target: う
+    native: "u"
+    reading: "u"
+    tags: [hiragana]
+  - id: ja-hiragana-004
+    target: え
+    native: "e"
+    reading: "e"
+    tags: [hiragana]
+  - id: ja-hiragana-005
+    target: お
+    native: "o"
+    reading: "o"
+    tags: [hiragana]
+  # --- k ----------------------------------------------------------------
+  - id: ja-hiragana-006
+    target: か
+    native: "ka"
+    reading: "ka"
+    tags: [hiragana]
+  - id: ja-hiragana-007
+    target: き
+    native: "ki"
+    reading: "ki"
+    tags: [hiragana]
+  - id: ja-hiragana-008
+    target: く
+    native: "ku"
+    reading: "ku"
+    tags: [hiragana]
+  - id: ja-hiragana-009
+    target: け
+    native: "ke"
+    reading: "ke"
+    tags: [hiragana]
+  - id: ja-hiragana-010
+    target: こ
+    native: "ko"
+    reading: "ko"
+    tags: [hiragana]
+  # --- s ----------------------------------------------------------------
+  - id: ja-hiragana-011
+    target: さ
+    native: "sa"
+    reading: "sa"
+    tags: [hiragana]
+  - id: ja-hiragana-012
+    target: し
+    native: "shi"
+    reading: "shi"
+    alt_native: ["si"]
+    tags: [hiragana]
+    notes: "Written si in some romanisation systems, but pronounced shi."
+  - id: ja-hiragana-013
+    target: す
+    native: "su"
+    reading: "su"
+    tags: [hiragana]
+  - id: ja-hiragana-014
+    target: せ
+    native: "se"
+    reading: "se"
+    tags: [hiragana]
+  - id: ja-hiragana-015
+    target: そ
+    native: "so"
+    reading: "so"
+    tags: [hiragana]
+  # --- t ----------------------------------------------------------------
+  - id: ja-hiragana-016
+    target: た
+    native: "ta"
+    reading: "ta"
+    tags: [hiragana]
+  - id: ja-hiragana-017
+    target: ち
+    native: "chi"
+    reading: "chi"
+    alt_native: ["ti"]
+    tags: [hiragana]
+    notes: "Written ti in some romanisation systems, but pronounced chi."
+  - id: ja-hiragana-018
+    target: つ
+    native: "tsu"
+    reading: "tsu"
+    alt_native: ["tu"]
+    tags: [hiragana]
+    notes: "Written tu in some romanisation systems, but pronounced tsu."
+  - id: ja-hiragana-019
+    target: て
+    native: "te"
+    reading: "te"
+    tags: [hiragana]
+  - id: ja-hiragana-020
+    target: と
+    native: "to"
+    reading: "to"
+    tags: [hiragana]
+  # --- n ----------------------------------------------------------------
+  - id: ja-hiragana-021
+    target: な
+    native: "na"
+    reading: "na"
+    tags: [hiragana]
+  - id: ja-hiragana-022
+    target: に
+    native: "ni"
+    reading: "ni"
+    tags: [hiragana]
+  - id: ja-hiragana-023
+    target: ぬ
+    native: "nu"
+    reading: "nu"
+    tags: [hiragana]
+  - id: ja-hiragana-024
+    target: ね
+    native: "ne"
+    reading: "ne"
+    tags: [hiragana]
+  - id: ja-hiragana-025
+    target: の
+    native: "no"
+    reading: "no"
+    tags: [hiragana]
+  # --- h ----------------------------------------------------------------
+  - id: ja-hiragana-026
+    target: は
+    native: "ha"
+    reading: "ha"
+    tags: [hiragana]
+  - id: ja-hiragana-027
+    target: ひ
+    native: "hi"
+    reading: "hi"
+    tags: [hiragana]
+  - id: ja-hiragana-028
+    target: ふ
+    native: "fu"
+    reading: "fu"
+    alt_native: ["hu"]
+    tags: [hiragana]
+    notes: "Between English f and h; the lips do not touch the teeth."
+  - id: ja-hiragana-029
+    target: へ
+    native: "he"
+    reading: "he"
+    tags: [hiragana]
+  - id: ja-hiragana-030
+    target: ほ
+    native: "ho"
+    reading: "ho"
+    tags: [hiragana]
+  # --- m ----------------------------------------------------------------
+  - id: ja-hiragana-031
+    target: ま
+    native: "ma"
+    reading: "ma"
+    tags: [hiragana]
+  - id: ja-hiragana-032
+    target: み
+    native: "mi"
+    reading: "mi"
+    tags: [hiragana]
+  - id: ja-hiragana-033
+    target: む
+    native: "mu"
+    reading: "mu"
+    tags: [hiragana]
+  - id: ja-hiragana-034
+    target: め
+    native: "me"
+    reading: "me"
+    tags: [hiragana]
+  - id: ja-hiragana-035
+    target: も
+    native: "mo"
+    reading: "mo"
+    tags: [hiragana]
+  # --- y ----------------------------------------------------------------
+  - id: ja-hiragana-036
+    target: や
+    native: "ya"
+    reading: "ya"
+    tags: [hiragana]
+  - id: ja-hiragana-037
+    target: ゆ
+    native: "yu"
+    reading: "yu"
+    tags: [hiragana]
+  - id: ja-hiragana-038
+    target: よ
+    native: "yo"
+    reading: "yo"
+    tags: [hiragana]
+  # --- r ----------------------------------------------------------------
+  - id: ja-hiragana-039
+    target: ら
+    native: "ra"
+    reading: "ra"
+    tags: [hiragana]
+  - id: ja-hiragana-040
+    target: り
+    native: "ri"
+    reading: "ri"
+    tags: [hiragana]
+  - id: ja-hiragana-041
+    target: る
+    native: "ru"
+    reading: "ru"
+    tags: [hiragana]
+  - id: ja-hiragana-042
+    target: れ
+    native: "re"
+    reading: "re"
+    tags: [hiragana]
+  - id: ja-hiragana-043
+    target: ろ
+    native: "ro"
+    reading: "ro"
+    tags: [hiragana]
+  # --- w ----------------------------------------------------------------
+  - id: ja-hiragana-044
+    target: わ
+    native: "wa"
+    reading: "wa"
+    tags: [hiragana]
+  - id: ja-hiragana-045
+    target: を
+    native: "wo"
+    reading: "wo"
+    alt_native: ["o"]
+    tags: [hiragana]
+    notes: "Used almost exclusively as the object particle, pronounced o."
+  # --- n-final ----------------------------------------------------------
+  - id: ja-hiragana-046
+    target: ん
+    native: "n"
+    reading: "n"
+    tags: [hiragana]
+    notes: "The only kana that is not a full syllable; it never starts a word."
