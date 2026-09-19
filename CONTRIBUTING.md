@@ -196,6 +196,9 @@ flutter test
 
 ## Pull requests
 
+`main` is protected: every change needs a pull request, one approving review,
+and green CI. Branch before you start.
+
 **One concern per pull request.** A change that adds a feature, refactors
 something and fixes formatting cannot be reviewed properly and conflicts with
 every other open branch.

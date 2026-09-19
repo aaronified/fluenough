@@ -165,7 +165,8 @@ it. See [ADR-0005](docs/adr/0005-scheduling.md).
 
 ## Working alongside other agents
 
-**Claim work before starting.** Comment on the issue saying what you are doing
+**Claim work before starting.** The open issues are the backlog — start there
+rather than inventing scope. Comment on the issue saying what you are doing
 *and which files you expect to touch*. That second half is what prevents the
 collisions, and it is the part people skip.
 
@@ -198,6 +199,12 @@ large feature branch that sits open for a week.
 ---
 
 ## Branches, commits, pull requests
+
+`main` is protected. You cannot push to it directly: every change goes through
+a pull request that needs one approving review, all three CI jobs green, and
+every review conversation resolved. Force pushes and branch deletion are
+refused. Work on a branch from the start — there is no path where committing
+straight to `main` works, and finding that out after the fact wastes your time.
 
 Branch names: `<area>/<short-description>` — `deck/fr-core-100`,
 `feat/production-drill`, `fix/grader-article-stripping`, `docs/adr-tts-update`.
