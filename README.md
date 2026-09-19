@@ -94,6 +94,22 @@ flutter run
 See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for toolchain setup, including
 notes for immutable Linux distributions and a warning about Waydroid and TTS.
 
+## Contributing
+
+Decks are the most useful contribution and need no Flutter toolchain — just a
+text editor and Python. Code contributions are welcome too; the roadmap says
+what is wanted next.
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — how to contribute, deck or code
+- [AGENTS.md](AGENTS.md) — how to work in this repository without colliding
+  with the other people doing so. **Required reading before your first code
+  change**, whether or not you use a coding agent.
+- [docs/adr/](docs/adr/) — why things are the way they are
+
+Several people build this in parallel, most of them with agents. Claim an issue
+before you start, say which files you expect to touch, and keep pull requests
+to one concern each.
+
 ## Licence
 
 **GPL-3.0, with an App Store Distribution Exception.**
