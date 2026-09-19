@@ -28,6 +28,9 @@ than hard-coded rules. Adding a language means adding files, never code.
 | **Listening** | hear target → answer | the app |
 | **Grammar** | prompt + slot → inflected form | the app |
 
+A fifth, minimal-pair discrimination, is planned for sound contrasts the
+learner's own language does not make.
+
 All four share one card model and one scheduler, so a card's difficulty is
 tracked per *skill* — you can recognise a word long before you can produce it,
 and Fluenough schedules those separately.
@@ -50,6 +53,15 @@ through system settings.
 
 A neural backend (Kokoro) is a candidate for a later release; see
 [ADR-0002](docs/adr/0002-system-tts.md) for why it is not in v1.
+
+## Scripts are first-class
+
+Where a language uses an unfamiliar writing system, learning the script and its
+pronunciation *is* the first task, not a preliminary to it. Fluenough treats
+script decks as ordinary decks — `decks/ja/ja-hiragana.yaml` is the worked
+example — and the starter set being built out (Bengali, Hindi, Gujarati,
+Telugu, Urdu) each pair a script deck with a vocabulary deck. See
+[docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Decks
 
