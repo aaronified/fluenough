@@ -16,11 +16,11 @@ class Sm2State {
 
   /// A card that has never been reviewed. Due immediately.
   factory Sm2State.fresh(DateTime now) => Sm2State(
-        repetitions: 0,
-        easeFactor: Sm2.defaultEase,
-        intervalDays: 0,
-        dueAt: now,
-      );
+    repetitions: 0,
+    easeFactor: Sm2.defaultEase,
+    intervalDays: 0,
+    dueAt: now,
+  );
 
   /// Consecutive successful reviews. Reset to zero by a lapse.
   final int repetitions;
@@ -45,17 +45,17 @@ class Sm2State {
     int? intervalDays,
     DateTime? dueAt,
     int? lapses,
-  }) =>
-      Sm2State(
-        repetitions: repetitions ?? this.repetitions,
-        easeFactor: easeFactor ?? this.easeFactor,
-        intervalDays: intervalDays ?? this.intervalDays,
-        dueAt: dueAt ?? this.dueAt,
-        lapses: lapses ?? this.lapses,
-      );
+  }) => Sm2State(
+    repetitions: repetitions ?? this.repetitions,
+    easeFactor: easeFactor ?? this.easeFactor,
+    intervalDays: intervalDays ?? this.intervalDays,
+    dueAt: dueAt ?? this.dueAt,
+    lapses: lapses ?? this.lapses,
+  );
 
   @override
-  String toString() => 'Sm2State(reps: $repetitions, ease: '
+  String toString() =>
+      'Sm2State(reps: $repetitions, ease: '
       '${easeFactor.toStringAsFixed(2)}, interval: ${intervalDays}d, '
       'due: $dueAt, lapses: $lapses)';
 }
@@ -87,21 +87,15 @@ abstract final class Sm2 {
   /// testable without a database or a device.
   ///
   /// Throws [ArgumentError] if [grade] is outside 0–5.
-  static Sm2State next(
-    Sm2State state,
-    int grade, {
-    required DateTime now,
-  }) {
+  static Sm2State next(Sm2State state, int grade, {required DateTime now}) {
     if (grade < 0 || grade > 5) {
       throw ArgumentError.value(grade, 'grade', 'must be between 0 and 5');
     }
 
     // The ease factor is adjusted on every review, pass or fail. A grade of 4
     // leaves it unchanged; 5 raises it, anything below 4 lowers it.
-    final double adjustment =
-        0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02);
-    final double newEase =
-        math.max(minEase, state.easeFactor + adjustment);
+    final double adjustment = 0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02);
+    final double newEase = math.max(minEase, state.easeFactor + adjustment);
 
     if (grade < passingGrade) {
       // Forgotten. Relearn from the beginning tomorrow, but keep the ease
@@ -119,9 +113,9 @@ abstract final class Sm2 {
       0 => firstInterval,
       1 => secondInterval,
       _ => math.max(
-          state.intervalDays + 1,
-          (state.intervalDays * state.easeFactor).round(),
-        ),
+        state.intervalDays + 1,
+        (state.intervalDays * state.easeFactor).round(),
+      ),
     };
 
     return Sm2State(

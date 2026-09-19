@@ -23,22 +23,23 @@ class LanguageInfo {
   String get ttsTag => tts ?? code;
 
   /// Whether this script needs a romanisation shown alongside the target.
-  bool get needsReading => !const {'latin', 'cyrillic', 'greek'}.contains(script);
+  bool get needsReading =>
+      !const {'latin', 'cyrillic', 'greek'}.contains(script);
 
   /// Leading articles ignored when grading typed answers.
   ///
   /// Deliberately data rather than code: a language without articles returns an
   /// empty list and the grading pass becomes a no-op.
   List<String> get articles => switch (code) {
-        'es' => const ['el', 'la', 'los', 'las', 'un', 'una'],
-        'fr' => const ['le', 'la', 'les', 'un', 'une', "l'"],
-        'de' => const ['der', 'die', 'das', 'ein', 'eine'],
-        'it' => const ['il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'una'],
-        'pt' => const ['o', 'a', 'os', 'as', 'um', 'uma'],
-        'nl' => const ['de', 'het', 'een'],
-        'en' => const ['the', 'a', 'an'],
-        _ => const <String>[],
-      };
+    'es' => const ['el', 'la', 'los', 'las', 'un', 'una'],
+    'fr' => const ['le', 'la', 'les', 'un', 'une', "l'"],
+    'de' => const ['der', 'die', 'das', 'ein', 'eine'],
+    'it' => const ['il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'una'],
+    'pt' => const ['o', 'a', 'os', 'as', 'um', 'uma'],
+    'nl' => const ['de', 'het', 'een'],
+    'en' => const ['the', 'a', 'an'],
+    _ => const <String>[],
+  };
 }
 
 enum DeckKind { vocab, grammar }

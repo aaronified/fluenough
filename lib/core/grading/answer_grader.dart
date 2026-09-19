@@ -27,11 +27,11 @@ enum AnswerOutcome {
   /// mistyping it are different events, and conflating them makes the
   /// scheduler over-drill words the learner actually knows.
   int toSm2Grade() => switch (this) {
-        AnswerOutcome.exact => 5,
-        AnswerOutcome.closeDiacritics => 4,
-        AnswerOutcome.closeTypo => 3,
-        AnswerOutcome.wrong => 1,
-      };
+    AnswerOutcome.exact => 5,
+    AnswerOutcome.closeDiacritics => 4,
+    AnswerOutcome.closeTypo => 3,
+    AnswerOutcome.wrong => 1,
+  };
 }
 
 class GradedAnswer {
@@ -66,8 +66,11 @@ class AnswerGrader {
   /// Answers at least this long get the more generous typo allowance.
   final int longThreshold;
 
-  GradedAnswer grade(String given, String expected,
-      {List<String> alternates = const <String>[]}) {
+  GradedAnswer grade(
+    String given,
+    String expected, {
+    List<String> alternates = const <String>[],
+  }) {
     final candidates = <String>[expected, ...alternates];
 
     final normalisedGiven = _normalise(given);

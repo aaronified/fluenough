@@ -62,8 +62,11 @@ class SystemTtsEngine implements TtsEngine {
   }
 
   @override
-  Future<void> speak(String text,
-      {required String bcp47, double rate = 0.5}) async {
+  Future<void> speak(
+    String text, {
+    required String bcp47,
+    double rate = 0.5,
+  }) async {
     if (text.trim().isEmpty) return;
     if (!await isLanguageAvailable(bcp47)) return;
 

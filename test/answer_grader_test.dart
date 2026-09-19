@@ -12,8 +12,11 @@ void main() {
 
     test('ignores case, surrounding space and terminal punctuation', () {
       for (final given in ['La Casa', '  la casa  ', 'la casa.', '¿la casa?']) {
-        expect(plain.grade(given, 'la casa').outcome, AnswerOutcome.exact,
-            reason: 'for input "$given"');
+        expect(
+          plain.grade(given, 'la casa').outcome,
+          AnswerOutcome.exact,
+          reason: 'for input "$given"',
+        );
       }
     });
 
@@ -22,8 +25,11 @@ void main() {
     });
 
     test('accepts a declared alternate', () {
-      final result = plain.grade('the home', 'the house',
-          alternates: const ['the home']);
+      final result = plain.grade(
+        'the home',
+        'the house',
+        alternates: const ['the home'],
+      );
       expect(result.outcome, AnswerOutcome.exact);
       expect(result.matched, 'the home');
     });
@@ -31,20 +37,32 @@ void main() {
 
   group('diacritics', () {
     test('a missing accent is correct but flagged', () {
-      expect(plain.grade('pais', 'país').outcome, AnswerOutcome.closeDiacritics);
-      expect(plain.grade('habláis', 'hablais').outcome,
-          AnswerOutcome.closeDiacritics);
+      expect(
+        plain.grade('pais', 'país').outcome,
+        AnswerOutcome.closeDiacritics,
+      );
+      expect(
+        plain.grade('habláis', 'hablais').outcome,
+        AnswerOutcome.closeDiacritics,
+      );
     });
 
     test('an accent on the wrong letter is still only a diacritic miss', () {
-      expect(plain.grade('páis', 'país').outcome, AnswerOutcome.closeDiacritics);
+      expect(
+        plain.grade('páis', 'país').outcome,
+        AnswerOutcome.closeDiacritics,
+      );
     });
 
     test('folds German and Nordic letters', () {
-      expect(plain.grade('grosse', 'größe').outcome,
-          AnswerOutcome.closeDiacritics);
-      expect(plain.grade('smorrebrod', 'smørrebrød').outcome,
-          AnswerOutcome.closeDiacritics);
+      expect(
+        plain.grade('grosse', 'größe').outcome,
+        AnswerOutcome.closeDiacritics,
+      );
+      expect(
+        plain.grade('smorrebrod', 'smørrebrød').outcome,
+        AnswerOutcome.closeDiacritics,
+      );
     });
 
     test('the matched answer is reported so the UI can show it', () {
@@ -72,8 +90,10 @@ void main() {
     });
 
     test('long answers get a more generous allowance', () {
-      expect(plain.grade('trabajamso', 'trabajamos').outcome,
-          AnswerOutcome.closeTypo);
+      expect(
+        plain.grade('trabajamso', 'trabajamos').outcome,
+        AnswerOutcome.closeTypo,
+      );
     });
 
     test('a short answer does not get the generous allowance', () {
@@ -97,17 +117,22 @@ void main() {
 
   group('SM-2 grade mapping', () {
     test('a typo is not punished as a forgotten card', () {
-      expect(AnswerOutcome.closeTypo.toSm2Grade(),
-          greaterThanOrEqualTo(3));
+      expect(AnswerOutcome.closeTypo.toSm2Grade(), greaterThanOrEqualTo(3));
     });
 
     test('outcomes map monotonically', () {
-      expect(AnswerOutcome.exact.toSm2Grade(),
-          greaterThan(AnswerOutcome.closeDiacritics.toSm2Grade()));
-      expect(AnswerOutcome.closeDiacritics.toSm2Grade(),
-          greaterThan(AnswerOutcome.closeTypo.toSm2Grade()));
-      expect(AnswerOutcome.closeTypo.toSm2Grade(),
-          greaterThan(AnswerOutcome.wrong.toSm2Grade()));
+      expect(
+        AnswerOutcome.exact.toSm2Grade(),
+        greaterThan(AnswerOutcome.closeDiacritics.toSm2Grade()),
+      );
+      expect(
+        AnswerOutcome.closeDiacritics.toSm2Grade(),
+        greaterThan(AnswerOutcome.closeTypo.toSm2Grade()),
+      );
+      expect(
+        AnswerOutcome.closeTypo.toSm2Grade(),
+        greaterThan(AnswerOutcome.wrong.toSm2Grade()),
+      );
     });
   });
 

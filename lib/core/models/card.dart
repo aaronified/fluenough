@@ -80,21 +80,20 @@ class Card {
 
   /// The accepted answers for [mode], the first being the canonical one.
   List<String> acceptedAnswers(DrillMode mode) => switch (mode) {
-        DrillMode.recognition => <String>[native, ...altNative],
-        DrillMode.production ||
-        DrillMode.listening ||
-        DrillMode.grammar =>
-          <String>[target, ...altTarget],
-      };
+    DrillMode.recognition => <String>[native, ...altNative],
+    DrillMode.production ||
+    DrillMode.listening ||
+    DrillMode.grammar => <String>[target, ...altTarget],
+  };
 
   /// What the learner is shown.
   String promptFor(DrillMode mode) => switch (mode) {
-        DrillMode.recognition => target,
-        DrillMode.production || DrillMode.grammar => native,
-        // The listening prompt is the audio itself; the text is withheld until
-        // the answer is in.
-        DrillMode.listening => '',
-      };
+    DrillMode.recognition => target,
+    DrillMode.production || DrillMode.grammar => native,
+    // The listening prompt is the audio itself; the text is withheld until
+    // the answer is in.
+    DrillMode.listening => '',
+  };
 
   @override
   String toString() => 'Card($id: $target = $native)';

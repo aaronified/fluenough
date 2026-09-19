@@ -50,8 +50,11 @@ class NullTtsEngine implements TtsEngine {
   Future<List<TtsVoice>> voicesFor(String bcp47) async => const <TtsVoice>[];
 
   @override
-  Future<void> speak(String text,
-      {required String bcp47, double rate = 0.5}) async {}
+  Future<void> speak(
+    String text, {
+    required String bcp47,
+    double rate = 0.5,
+  }) async {}
 
   @override
   Future<void> stop() async {}

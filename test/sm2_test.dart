@@ -35,10 +35,14 @@ void main() {
     });
 
     test('grade 5 raises and grade 3 lowers the ease factor', () {
-      expect(Sm2.next(Sm2State.fresh(now), 5, now: now).easeFactor,
-          closeTo(2.6, 1e-9));
-      expect(Sm2.next(Sm2State.fresh(now), 3, now: now).easeFactor,
-          closeTo(2.36, 1e-9));
+      expect(
+        Sm2.next(Sm2State.fresh(now), 5, now: now).easeFactor,
+        closeTo(2.6, 1e-9),
+      );
+      expect(
+        Sm2.next(Sm2State.fresh(now), 3, now: now).easeFactor,
+        closeTo(2.36, 1e-9),
+      );
     });
 
     test('a failed review resets the card to a one day interval', () {
@@ -94,28 +98,33 @@ void main() {
   });
 
   group('Sm2.replay', () {
-    test('reproduces the state reached by stepping through the same reviews', () {
-      final grades = <int>[5, 4, 3, 5, 1, 4, 5];
+    test(
+      'reproduces the state reached by stepping through the same reviews',
+      () {
+        final grades = <int>[5, 4, 3, 5, 1, 4, 5];
 
-      var stepped = Sm2State.fresh(now);
-      final reviews = <({int grade, DateTime at})>[];
-      for (var i = 0; i < grades.length; i++) {
-        final at = now.add(Duration(days: i));
-        stepped = Sm2.next(stepped, grades[i], now: at);
-        reviews.add((grade: grades[i], at: at));
-      }
+        var stepped = Sm2State.fresh(now);
+        final reviews = <({int grade, DateTime at})>[];
+        for (var i = 0; i < grades.length; i++) {
+          final at = now.add(Duration(days: i));
+          stepped = Sm2.next(stepped, grades[i], now: at);
+          reviews.add((grade: grades[i], at: at));
+        }
 
-      final replayed = Sm2.replay(reviews, createdAt: now);
+        final replayed = Sm2.replay(reviews, createdAt: now);
 
-      expect(replayed.repetitions, stepped.repetitions);
-      expect(replayed.intervalDays, stepped.intervalDays);
-      expect(replayed.easeFactor, closeTo(stepped.easeFactor, 1e-9));
-      expect(replayed.lapses, stepped.lapses);
-    });
+        expect(replayed.repetitions, stepped.repetitions);
+        expect(replayed.intervalDays, stepped.intervalDays);
+        expect(replayed.easeFactor, closeTo(stepped.easeFactor, 1e-9));
+        expect(replayed.lapses, stepped.lapses);
+      },
+    );
 
     test('an empty history replays to a fresh card', () {
-      final replayed =
-          Sm2.replay(const <({int grade, DateTime at})>[], createdAt: now);
+      final replayed = Sm2.replay(
+        const <({int grade, DateTime at})>[],
+        createdAt: now,
+      );
       expect(replayed.repetitions, 0);
       expect(replayed.easeFactor, Sm2.defaultEase);
     });
