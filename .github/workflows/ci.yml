@@ -40,9 +40,28 @@ jobs:
       # them. This also catches a pubspec that no longer matches the SDK.
       - run: flutter create . --org app --project-name fluenough --platforms=android
       - run: flutter pub get
-      - run: dart format --output=none --set-exit-if-changed lib test
+
+      # Analyse and test first: a formatting failure must not mask whether the
+      # code actually compiles and passes.
       - run: flutter analyze
       - run: flutter test
+
+      - name: Check formatting
+        id: fmt
+        run: |
+          dart format lib test
+          if ! git diff --quiet; then
+            git diff > format.patch
+            echo "::error::Formatting differs. Run: dart format lib test"
+            exit 1
+          fi
+      - name: Upload formatting patch
+        if: failure() && steps.fmt.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: format-patch
+          path: format.patch
+          if-no-files-found: ignore
 
   build:
     name: Build debug APK
