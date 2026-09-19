@@ -39,6 +39,9 @@ jobs:
       # android/ and ios/ are generated rather than committed, so CI recreates
       # them. This also catches a pubspec that no longer matches the SDK.
       - run: flutter create . --org app --project-name fluenough --platforms=android
+      # flutter create writes a widget_test.dart referencing MyApp; our app
+      # class is FluenoughApp, so the generated boilerplate does not compile.
+      - run: rm -f test/widget_test.dart
       - run: flutter pub get
 
       # Analyse and test first: a formatting failure must not mask whether the
@@ -79,6 +82,9 @@ jobs:
           channel: stable
           cache: true
       - run: flutter create . --org app --project-name fluenough --platforms=android
+      # flutter create writes a widget_test.dart referencing MyApp; our app
+      # class is FluenoughApp, so the generated boilerplate does not compile.
+      - run: rm -f test/widget_test.dart
       - run: flutter pub get
       - run: flutter build apk --debug
       - uses: actions/upload-artifact@v4

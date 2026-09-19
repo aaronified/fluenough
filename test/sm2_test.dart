@@ -70,7 +70,7 @@ void main() {
     });
 
     test('intervals always advance, even at minimum ease', () {
-      var state = Sm2State(
+      const state = Sm2State(
         repetitions: 5,
         easeFactor: Sm2.minEase,
         intervalDays: 1,

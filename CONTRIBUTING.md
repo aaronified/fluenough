@@ -160,6 +160,7 @@ agents, and that one sentence prevents most collisions. See
 
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
+rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
 flutter pub get
 flutter test
 ```

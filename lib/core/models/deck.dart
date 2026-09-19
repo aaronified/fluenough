@@ -5,20 +5,22 @@ class LanguageInfo {
     required this.code,
     required this.name,
     this.script = 'latin',
-    String? tts,
+    this.tts,
     this.rtl = false,
-  }) : _tts = tts;
+  });
 
   final String code;
   final String name;
   final String script;
   final bool rtl;
-  final String? _tts;
+
+  /// BCP-47 voice tag from the deck, if it declared one.
+  final String? tts;
 
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks
   /// for languages with major regional variation should set it explicitly.
-  String get ttsTag => _tts ?? code;
+  String get ttsTag => tts ?? code;
 
   /// Whether this script needs a romanisation shown alongside the target.
   bool get needsReading => !const {'latin', 'cyrillic', 'greek'}.contains(script);

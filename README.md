@@ -86,6 +86,7 @@ The platform folders are **not** committed; generate them on first checkout:
 
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
+rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
 flutter pub get
 dart run build_runner build
 flutter run
