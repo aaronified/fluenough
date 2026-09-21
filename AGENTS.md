@@ -69,6 +69,7 @@ and why Waydroid cannot test audio, is in
 | `lib/core/tts/` | `TtsEngine` + system implementation | low |
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
+| `lib/l10n/` | Interface strings, one ARB file per locale | low |
 | `decks/<lang>/` | Content, one YAML file per deck | very low |
 | `tools/` | Python deck validator and importer | low |
 | `docs/adr/` | Architecture decision records | low |
@@ -76,7 +77,7 @@ and why Waydroid cannot test audio, is in
 
 ---
 
-## Nine rules
+## Ten rules
 
 These are ordered by how much damage breaking them does.
 
@@ -161,6 +162,31 @@ before you start.
 the only table whose loss is irreparable; everything else can be rebuilt from
 it. See [ADR-0005](docs/adr/0005-scheduling.md).
 
+### 10. No user-visible string is a literal in a widget.
+
+Every label, title, button, hint, error and piece of interface prose is a token
+in `lib/l10n/app_en.arb`, reached through the generated `AppLocalizations`.
+English is the base locale and ships built in — it is a translation like any
+other, not a default hardcoded into the screens.
+
+```dart
+Text('Due today')                  // WRONG
+Text(AppLocalizations.of(context)!.dueToday)   // correct
+```
+
+Deck content — `target`, `native`, `reading`, `notes` — is not interface text
+and stays exactly as it is. So do log messages, exception text, and ids.
+
+The half that gets skipped is not the strings, it is the layout around them.
+Use `EdgeInsetsDirectional`, `AlignmentDirectional` and `TextAlign.start`, never
+`left` or `right`. Build sentences with placeholders rather than concatenation,
+so a translator controls word order. Use ICU `plural`, not `if (n == 1)`. Do not
+size a widget to the length of the English string.
+
+This is not anticipating a need. Four of the five starter languages are read by
+people whose interface language is not English, and one of them — Urdu — is
+right to left (#33). See [ADR-0006](docs/adr/0006-interface-text-is-tokens.md).
+
 ---
 
 ## Working alongside other agents
@@ -192,7 +218,8 @@ same repository interface is the most expensive outcome available here.
 
 ### Files where you should expect contention
 
-`pubspec.yaml`, `lib/core/data/*`, `docs/ROADMAP.md`, `lib/core/models/card.dart`.
+`pubspec.yaml`, `lib/core/data/*`, `docs/ROADMAP.md`, `lib/core/models/card.dart`,
+`lib/l10n/app_en.arb`.
 Touch them in their own small PR, merged quickly, rather than as part of a
 large feature branch that sits open for a week.
 
@@ -263,6 +290,7 @@ Specific to this repository, roughly in order of likelihood:
 | Running `flutter create` and committing the result | Rule 4. |
 | Putting scheduling logic in a widget | Makes it untestable without a device. Rule 3. |
 | Treating `flutter analyze` errors as a broken design | The Dart was never compiled. Fix the errors. |
+| Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
 | Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
 | Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](docs/adr/0002-system-tts.md). |
 
@@ -309,4 +337,6 @@ explain most of what is otherwise surprising about this codebase.
 - [ ] No card id renumbered, reused, or removed-and-replaced
 - [ ] Tests added for anything touching scheduling or grading
 - [ ] An ADR added if an architectural decision was made
+- [ ] No user-visible string is a literal in a widget; new tokens are in
+      `lib/l10n/app_en.arb`
 - [ ] The PR describes what was verified and what was not

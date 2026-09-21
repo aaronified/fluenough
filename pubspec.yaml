@@ -14,6 +14,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Interface strings are tokens, never literals — see ADR-0006. `intl: any`
+  # is deliberate: flutter_localizations pins it, and naming a version here
+  # only creates a conflict to resolve on every SDK bump.
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
   # Local database: cards, scheduling state, append-only review log.
   drift: ^2.35.0
   drift_flutter: ^0.3.1
@@ -37,6 +44,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  # Builds AppLocalizations from lib/l10n/*.arb on `flutter pub get`.
+  generate: true
   # One entry per language directory. A Flutter asset entry bundles only the
   # files directly inside the directory it names, not its subdirectories, so
   # `- decks/` alone would ship decks/README.md and none of the decks. Adding

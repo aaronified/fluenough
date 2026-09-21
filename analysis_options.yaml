@@ -4,6 +4,8 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    # Generated from lib/l10n/*.arb by `flutter pub get`. Not committed.
+    - "lib/l10n/app_localizations*.dart"
     - build/**
     - android/**
     - ios/**
