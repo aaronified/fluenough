@@ -50,7 +50,7 @@ jobs:
       # drift generates database.g.dart, which is gitignored like every other
       # generated file. Without this step the first PR that lands a drift
       # schema fails analyse, test and build on a file CI never made.
-      - run: dart run build_runner build --delete-conflicting-outputs
+      - run: dart run build_runner build
 
       # Analyse and test first: a formatting failure must not mask whether the
       # code actually compiles and passes.
@@ -98,7 +98,7 @@ jobs:
       # drift generates database.g.dart, which is gitignored like every other
       # generated file. Without this step the first PR that lands a drift
       # schema fails analyse, test and build on a file CI never made.
-      - run: dart run build_runner build --delete-conflicting-outputs
+      - run: dart run build_runner build
       - run: flutter build apk --debug
       - uses: actions/upload-artifact@v4
         with:

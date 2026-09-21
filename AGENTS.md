@@ -23,12 +23,16 @@ adding one means adding deck files.
 **What state it is in.** The domain layer, deck format, tooling and docs are
 written. **The UI is not built.** See [docs/ROADMAP.md](docs/ROADMAP.md).
 
-**One thing you must know before running anything:** the Dart code has never
-been compiled. It was written without a Flutter SDK available. The Python
-tooling is tested and working; the Dart is not. The first person to run
-`flutter analyze` will find real errors. **Fix them; do not conclude the design
-is wrong and start over.** If you are that person, say so in your PR so nobody
-repeats the work.
+**The Dart now compiles, as of 2026-09-21.** It was written without a Flutter
+SDK available, and for a while nobody had run it. That has been done: on
+Flutter 3.47.1, from a clean checkout following the sequence below,
+`flutter analyze` reports no issues, `flutter test` passes 35 tests,
+`dart format lib test` changes nothing, and `dart run build_runner build`
+succeeds. The Python tooling is tested and working too.
+
+What this does **not** tell you: nobody has run the app on a device, or built
+it on macOS or Windows, or generated the iOS folder. #17 is still open and is
+worth closing.
 
 ---
 
@@ -333,7 +337,7 @@ Specific to this repository, roughly in order of likelihood:
 | Regenerating a deck to change one card | 46-line diff for a 1-line fix. Rule 8. |
 | Running `flutter create` and committing the result | Rule 4. |
 | Putting scheduling logic in a widget | Makes it untestable without a device. Rule 3. |
-| Treating `flutter analyze` errors as a broken design | The Dart was never compiled. Fix the errors. |
+| Treating a `flutter analyze` error as a broken design | It analysed clean on 3.47.1; an error means your change. Fix it. |
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
 | Fanning out repository reading on a flagship model | Searching is cheap-tier work. See *How agents should run work*. |
 | Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
