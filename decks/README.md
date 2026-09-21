@@ -6,6 +6,8 @@ Deck content, one YAML file per deck, organised by language code.
 decks/
   es/  es-core-100.yaml
        es-grammar-present-ar.yaml
+  hi/  hi-devanagari.yaml
+       hi-core-100.yaml
   ja/  ja-hiragana.yaml
 ```
 

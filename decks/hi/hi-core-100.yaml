@@ -1,0 +1,317 @@
+schema: 1
+id: hi-core-100
+name: Hindi Core
+kind: vocab
+description: >-
+  High-frequency Hindi nouns, verbs, adjectives and courtesy phrases.
+  A starting point rather than a complete course. Pair with
+  hi-devanagari.yaml if the script itself is still new.
+language: { code: hi, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, name: English }
+license: CC0-1.0
+tags: [beginner, core]
+
+cards:
+  # --- People ---------------------------------------------------------------
+  - id: hi-core-0001
+    target: आदमी
+    native: the man
+    reading: "aadmi"
+    pos: noun
+    gender: m
+    tags: [people]
+  - id: hi-core-0002
+    target: औरत
+    native: the woman
+    reading: "aurat"
+    pos: noun
+    gender: f
+    tags: [people]
+  - id: hi-core-0003
+    target: लड़का
+    native: the boy
+    reading: "ladka"
+    pos: noun
+    gender: m
+    tags: [people]
+  - id: hi-core-0004
+    target: लड़की
+    native: the girl
+    reading: "ladki"
+    pos: noun
+    gender: f
+    tags: [people]
+  - id: hi-core-0005
+    target: दोस्त
+    native: the friend
+    reading: "dost"
+    pos: noun
+    notes: "Invariant for gender: दोस्त is used for both male and female friends."
+    tags: [people]
+
+  # --- Home and objects -------------------------------------------------------
+  - id: hi-core-0010
+    target: घर
+    native: the house
+    alt_native: [the home]
+    reading: "ghar"
+    pos: noun
+    gender: m
+    tags: [home]
+    examples:
+      - target: यह घर बहुत बड़ा है।
+        native: This house is very big.
+  - id: hi-core-0011
+    target: दरवाज़ा
+    native: the door
+    reading: "darvaaza"
+    pos: noun
+    gender: m
+    tags: [home]
+  - id: hi-core-0012
+    target: खिड़की
+    native: the window
+    reading: "khidki"
+    pos: noun
+    gender: f
+    tags: [home]
+  - id: hi-core-0013
+    target: मेज़
+    native: the table
+    reading: "mez"
+    pos: noun
+    gender: f
+    tags: [home]
+  - id: hi-core-0014
+    target: कुर्सी
+    native: the chair
+    reading: "kursi"
+    pos: noun
+    gender: f
+    tags: [home]
+  - id: hi-core-0015
+    target: किताब
+    native: the book
+    reading: "kitaab"
+    pos: noun
+    gender: f
+    tags: [objects]
+
+  # --- Food and drink ---------------------------------------------------------
+  - id: hi-core-0020
+    target: पानी
+    native: the water
+    reading: "paani"
+    pos: noun
+    gender: m
+    tags: [food]
+  - id: hi-core-0021
+    target: रोटी
+    native: the bread
+    reading: "roti"
+    pos: noun
+    gender: f
+    tags: [food]
+  - id: hi-core-0022
+    target: दूध
+    native: the milk
+    reading: "doodh"
+    pos: noun
+    gender: m
+    tags: [food]
+  - id: hi-core-0023
+    target: खाना
+    native: the food
+    alt_native: [the meal]
+    reading: "khaana"
+    pos: noun
+    gender: m
+    notes: "Also the infinitive of the verb to eat, below — a genuine homograph."
+    tags: [food]
+
+  # --- Place and time ----------------------------------------------------------
+  - id: hi-core-0030
+    target: शहर
+    native: the city
+    reading: "shahar"
+    pos: noun
+    gender: m
+    tags: [places]
+  - id: hi-core-0031
+    target: सड़क
+    native: the street
+    alt_native: [the road]
+    reading: "sadak"
+    pos: noun
+    gender: f
+    tags: [places]
+  - id: hi-core-0032
+    target: देश
+    native: the country
+    reading: "desh"
+    pos: noun
+    gender: m
+    tags: [places]
+  - id: hi-core-0033
+    target: दिन
+    native: the day
+    reading: "din"
+    pos: noun
+    gender: m
+    tags: [time]
+  - id: hi-core-0034
+    target: रात
+    native: the night
+    reading: "raat"
+    pos: noun
+    gender: f
+    tags: [time]
+  - id: hi-core-0035
+    target: साल
+    native: the year
+    alt_native: [the years]
+    reading: "saal"
+    pos: noun
+    gender: m
+    notes: "Invariant in the plural: साल covers both the year and the years."
+    tags: [time]
+
+  # --- Verbs ---------------------------------------------------------------
+  - id: hi-core-0040
+    target: होना
+    native: to be
+    reading: "honaa"
+    pos: verb
+    notes: "Cited in the infinitive -naa form, as all Hindi verbs are here."
+    tags: [verb]
+  - id: hi-core-0041
+    target: करना
+    native: to do
+    alt_native: [to make]
+    reading: "karnaa"
+    pos: verb
+    tags: [verb]
+  - id: hi-core-0042
+    target: जाना
+    native: to go
+    reading: "jaanaa"
+    pos: verb
+    tags: [verb]
+  - id: hi-core-0043
+    target: बोलना
+    native: to speak
+    alt_native: [to talk]
+    reading: "bolnaa"
+    pos: verb
+    tags: [verb]
+  - id: hi-core-0044
+    target: खाना
+    native: to eat
+    reading: "khaanaa"
+    pos: verb
+    notes: "Also the noun food, above — a genuine homograph."
+    tags: [verb]
+  - id: hi-core-0045
+    target: पीना
+    native: to drink
+    reading: "peenaa"
+    pos: verb
+    tags: [verb]
+
+  # --- Adjectives -----------------------------------------------------------
+  - id: hi-core-0060
+    target: बड़ा
+    native: big
+    alt_native: [large]
+    reading: "bada"
+    pos: adj
+    notes: "Masculine singular form; feminine is बड़ी (badi)."
+    tags: [adjective]
+  - id: hi-core-0061
+    target: छोटा
+    native: small
+    alt_native: [little]
+    reading: "chota"
+    pos: adj
+    notes: "Masculine singular form; feminine is छोटी (choti)."
+    tags: [adjective]
+  - id: hi-core-0062
+    target: अच्छा
+    native: good
+    reading: "achha"
+    pos: adj
+    notes: "Masculine singular form; feminine is अच्छी (achhi)."
+    tags: [adjective]
+  - id: hi-core-0063
+    target: ख़राब
+    native: bad
+    reading: "kharaab"
+    pos: adj
+    notes: "Invariant for gender, unlike most Hindi adjectives."
+    tags: [adjective]
+  - id: hi-core-0064
+    target: नया
+    native: new
+    reading: "naya"
+    pos: adj
+    notes: "Masculine singular form; feminine is नई (nayi)."
+    tags: [adjective]
+
+  # --- Courtesy ---------------------------------------------------------------
+  - id: hi-core-0080
+    target: नमस्ते
+    native: hello
+    alt_native: [goodbye]
+    reading: "namaste"
+    pos: phrase
+    notes: "Used on both arrival and departure, at any time of day."
+    tags: [courtesy]
+  - id: hi-core-0081
+    target: धन्यवाद
+    native: thank you
+    alt_native: [thanks]
+    reading: "dhanyavaad"
+    pos: phrase
+    notes: "शुक्रिया (shukriya) is a common, less formal alternative."
+    tags: [courtesy]
+  - id: hi-core-0082
+    target: कृपया
+    native: please
+    reading: "kripaya"
+    pos: phrase
+    tags: [courtesy]
+  - id: hi-core-0083
+    target: सुप्रभात
+    native: good morning
+    reading: "suprabhaat"
+    pos: phrase
+    notes: "Formal and somewhat literary; everyday speech more often just uses नमस्ते."
+    tags: [courtesy]
+  - id: hi-core-0084
+    target: शुभ रात्रि
+    native: good night
+    reading: "shubh raatri"
+    pos: phrase
+    tags: [courtesy]
+  - id: hi-core-0085
+    target: माफ़ कीजिए
+    native: I'm sorry
+    alt_native: [sorry, excuse me]
+    reading: "maaf kijiye"
+    pos: phrase
+    notes: "Formal register; माफ़ करना (maaf karna) is the informal equivalent."
+    tags: [courtesy]
+
+  # --- Basics -----------------------------------------------------------------
+  - id: hi-core-0090
+    target: हाँ
+    native: "yes"
+    reading: "haan"
+    pos: other
+    tags: [basics]
+  - id: hi-core-0091
+    target: नहीं
+    native: "no"
+    reading: "nahin"
+    pos: other
+    tags: [basics]
