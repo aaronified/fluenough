@@ -1,0 +1,293 @@
+schema: 1
+id: hi-devanagari
+name: Hindi Devanagari
+kind: vocab
+description: >-
+  The 13 independent vowels and 33 base consonants of the Devanagari
+  alphabet, in traditional order. Learn these before any Hindi vocabulary;
+  conjunct consonants and vowel signs (matras) come later (#30).
+language: { code: hi, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, name: English }
+license: CC0-1.0
+tags: [beginner, script, devanagari]
+
+cards:
+  # --- vowels (svar) ------------------------------------------------------
+  - id: hi-devanagari-001
+    target: अ
+    native: "a"
+    reading: "a"
+    tags: [vowel]
+  - id: hi-devanagari-002
+    target: आ
+    native: "aa"
+    reading: "aa"
+    tags: [vowel]
+    notes: "Long a, held about twice as long as अ."
+  - id: hi-devanagari-003
+    target: इ
+    native: "i"
+    reading: "i"
+    tags: [vowel]
+  - id: hi-devanagari-004
+    target: ई
+    native: "ii"
+    reading: "ii"
+    tags: [vowel]
+    notes: "Long i, held about twice as long as इ."
+  - id: hi-devanagari-005
+    target: उ
+    native: "u"
+    reading: "u"
+    tags: [vowel]
+  - id: hi-devanagari-006
+    target: ऊ
+    native: "uu"
+    reading: "uu"
+    tags: [vowel]
+    notes: "Long u, held about twice as long as उ."
+  - id: hi-devanagari-007
+    target: ऋ
+    native: "ri"
+    reading: "ri"
+    tags: [vowel]
+    notes: >-
+      A vocalic r, close to a short "ri". Rare outside words borrowed from
+      Sanskrit, e.g. ऋतु (season).
+  - id: hi-devanagari-008
+    target: ए
+    native: "e"
+    reading: "e"
+    tags: [vowel]
+  - id: hi-devanagari-009
+    target: ऐ
+    native: "ai"
+    reading: "ai"
+    tags: [vowel]
+  - id: hi-devanagari-010
+    target: ओ
+    native: "o"
+    reading: "o"
+    tags: [vowel]
+  - id: hi-devanagari-011
+    target: औ
+    native: "au"
+    reading: "au"
+    tags: [vowel]
+  - id: hi-devanagari-012
+    target: अं
+    native: "an"
+    reading: "an"
+    tags: [vowel]
+    notes: "Anusvara: nasalises the vowel it follows, not a full n sound."
+  - id: hi-devanagari-013
+    target: अः
+    native: "ah"
+    reading: "ah"
+    tags: [vowel]
+    notes: "Visarga: a light, breathy echo of the vowel it follows."
+
+  # --- velars (kanth vyanjan) ----------------------------------------------
+  - id: hi-devanagari-014
+    target: क
+    native: "ka"
+    reading: "ka"
+    tags: [consonant]
+  - id: hi-devanagari-015
+    target: ख
+    native: "kha"
+    reading: "kha"
+    tags: [consonant]
+    notes: "Aspirated k, with an audible puff of breath."
+  - id: hi-devanagari-016
+    target: ग
+    native: "ga"
+    reading: "ga"
+    tags: [consonant]
+  - id: hi-devanagari-017
+    target: घ
+    native: "gha"
+    reading: "gha"
+    tags: [consonant]
+    notes: "Aspirated g."
+  - id: hi-devanagari-018
+    target: ङ
+    native: "nga"
+    reading: "nga"
+    tags: [consonant]
+    notes: "Occurs only before another velar, e.g. अंक (anka, digit)."
+
+  # --- palatals (taalu vyanjan) --------------------------------------------
+  - id: hi-devanagari-019
+    target: च
+    native: "cha"
+    reading: "cha"
+    tags: [consonant]
+  - id: hi-devanagari-020
+    target: छ
+    native: "chha"
+    reading: "chha"
+    tags: [consonant]
+    notes: "Aspirated version of च."
+  - id: hi-devanagari-021
+    target: ज
+    native: "ja"
+    reading: "ja"
+    tags: [consonant]
+  - id: hi-devanagari-022
+    target: झ
+    native: "jha"
+    reading: "jha"
+    tags: [consonant]
+    notes: "Aspirated j."
+  - id: hi-devanagari-023
+    target: ञ
+    native: "nya"
+    reading: "nya"
+    tags: [consonant]
+    notes: "Occurs only before another palatal, e.g. पञ्च (panch, five)."
+
+  # --- retroflex (murdhanya vyanjan) ---------------------------------------
+  - id: hi-devanagari-024
+    target: ट
+    native: "Ta"
+    reading: "Ta"
+    tags: [consonant]
+    notes: >-
+      Retroflex: the tongue curls back to touch the roof of the mouth.
+      Distinct from the dental त below.
+  - id: hi-devanagari-025
+    target: ठ
+    native: "Tha"
+    reading: "Tha"
+    tags: [consonant]
+    notes: "Aspirated retroflex t."
+  - id: hi-devanagari-026
+    target: ड
+    native: "Da"
+    reading: "Da"
+    tags: [consonant]
+    notes: "Retroflex d, distinct from the dental द below."
+  - id: hi-devanagari-027
+    target: ढ
+    native: "Dha"
+    reading: "Dha"
+    tags: [consonant]
+    notes: "Aspirated retroflex d."
+  - id: hi-devanagari-028
+    target: ण
+    native: "Na"
+    reading: "Na"
+    tags: [consonant]
+    notes: "Retroflex n, distinct from the dental न below."
+
+  # --- dentals (dantya vyanjan) ---------------------------------------------
+  - id: hi-devanagari-029
+    target: त
+    native: "ta"
+    reading: "ta"
+    tags: [consonant]
+    notes: >-
+      Dental: the tongue touches the back of the upper teeth, not the roof
+      of the mouth as in English t.
+  - id: hi-devanagari-030
+    target: थ
+    native: "tha"
+    reading: "tha"
+    tags: [consonant]
+    notes: "Aspirated dental t."
+  - id: hi-devanagari-031
+    target: द
+    native: "da"
+    reading: "da"
+    tags: [consonant]
+  - id: hi-devanagari-032
+    target: ध
+    native: "dha"
+    reading: "dha"
+    tags: [consonant]
+    notes: "Aspirated dental d."
+  - id: hi-devanagari-033
+    target: न
+    native: "na"
+    reading: "na"
+    tags: [consonant]
+
+  # --- labials (oshtya vyanjan) ----------------------------------------------
+  - id: hi-devanagari-034
+    target: प
+    native: "pa"
+    reading: "pa"
+    tags: [consonant]
+  - id: hi-devanagari-035
+    target: फ
+    native: "pha"
+    reading: "pha"
+    tags: [consonant]
+    notes: >-
+      Aspirated p, not the English f sound. Loanwords with f use फ़, a
+      separate nukta letter not covered here.
+  - id: hi-devanagari-036
+    target: ब
+    native: "ba"
+    reading: "ba"
+    tags: [consonant]
+  - id: hi-devanagari-037
+    target: भ
+    native: "bha"
+    reading: "bha"
+    tags: [consonant]
+    notes: "Aspirated b."
+  - id: hi-devanagari-038
+    target: म
+    native: "ma"
+    reading: "ma"
+    tags: [consonant]
+
+  # --- semivowels (antahstha vyanjan) ---------------------------------------
+  - id: hi-devanagari-039
+    target: य
+    native: "ya"
+    reading: "ya"
+    tags: [consonant]
+  - id: hi-devanagari-040
+    target: र
+    native: "ra"
+    reading: "ra"
+    tags: [consonant]
+  - id: hi-devanagari-041
+    target: ल
+    native: "la"
+    reading: "la"
+    tags: [consonant]
+  - id: hi-devanagari-042
+    target: व
+    native: "va"
+    reading: "va"
+    tags: [consonant]
+    notes: "Between English v and w; the lips barely touch."
+
+  # --- sibilants and aspirate (ushma vyanjan) --------------------------------
+  - id: hi-devanagari-043
+    target: श
+    native: "sha"
+    reading: "sha"
+    tags: [consonant]
+  - id: hi-devanagari-044
+    target: ष
+    native: "Sha"
+    reading: "Sha"
+    tags: [consonant]
+    notes: >-
+      Retroflex sh. Distinct from श in careful speech, but the two have
+      merged for most speakers.
+  - id: hi-devanagari-045
+    target: स
+    native: "sa"
+    reading: "sa"
+    tags: [consonant]
+  - id: hi-devanagari-046
+    target: ह
+    native: "ha"
+    reading: "ha"
+    tags: [consonant]

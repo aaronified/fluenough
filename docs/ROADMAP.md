@@ -68,10 +68,14 @@ None of that is expressible today, and some of it is actively broken:
 Tracked in #35. Each needs a script deck, a core vocabulary deck, and
 pronunciation.
 
-- [ ] Bengali (#36) · Hindi (#37) · Gujarati (#38) · Telugu (#39) · Urdu (#40)
+- [ ] Bengali (#36)
+- [x] Hindi (#37) — script deck and core vocabulary; see `decks/hi/`
+- [ ] Gujarati (#38)
+- [ ] Telugu (#39)
+- [ ] Urdu (#40)
 
-Hindi is the one to start with: Devanagari is already a valid script value, so
-it is not blocked on #27.
+Hindi was the one to start with: Devanagari was already a valid script value,
+so it was not blocked on #27.
 
 ## Later
 - [ ] iOS build (requires an Apple Developer account — see [ADR-0001](adr/0001-flutter.md))
