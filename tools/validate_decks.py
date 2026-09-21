@@ -325,6 +325,37 @@ def collect(target: Path) -> list[Path]:
     return sorted(p for p in target.rglob("*.yaml") if "schema" not in p.parts)
 
 
+def check_bundled(paths: list[Path]) -> list[str]:
+    """Every language directory holding a deck must be a Flutter asset entry.
+
+    A Flutter asset entry bundles only the files directly inside the directory
+    it names, so `- decks/` does not reach `decks/es/`. A language missing from
+    the list ships as an app with that language silently absent — it builds, it
+    validates, and it is only visible on a device. Checking it here is cheaper
+    than finding it there.
+    """
+    pubspec = Path("pubspec.yaml")
+    if not pubspec.exists():
+        return []
+    try:
+        declared = yaml.safe_load(pubspec.read_text(encoding="utf-8"))
+    except yaml.YAMLError as exc:
+        return [f"pubspec.yaml is not valid YAML: {exc}"]
+
+    entries = ((declared or {}).get("flutter") or {}).get("assets") or []
+    have = {str(e).rstrip("/") for e in entries}
+
+    problems = []
+    for directory in sorted({p.parent for p in paths}):
+        wanted = str(directory).rstrip("/")
+        if wanted not in have:
+            problems.append(
+                f"{wanted}/ holds decks but pubspec.yaml does not bundle it — "
+                f"add `- {wanted}/` under flutter.assets"
+            )
+    return problems
+
+
 def main(argv: list[str]) -> int:
     targets = [Path(a) for a in argv[1:]] or [Path("decks")]
     paths: list[Path] = []
@@ -347,6 +378,10 @@ def main(argv: list[str]) -> int:
             return 1
         ids[p.stem] = p
 
+    unbundled = check_bundled(paths)
+    for problem in unbundled:
+        print(f"error: {problem}")
+
     failed = 0
     warned = 0
     for rep in reports:
@@ -364,7 +399,7 @@ def main(argv: list[str]) -> int:
     ok = len(reports) - failed
     print(f"\n{ok}/{len(reports)} decks valid"
           f"{f', {warned} with warnings' if warned else ''}.")
-    return 1 if failed else 0
+    return 1 if failed or unbundled else 0
 
 
 if __name__ == "__main__":

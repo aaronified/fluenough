@@ -12,6 +12,12 @@ decks/
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)
 - How to contribute one: [../CONTRIBUTING.md](../CONTRIBUTING.md)
 
+**Adding a language means adding its directory to `pubspec.yaml`.** A Flutter
+asset entry bundles only the files directly inside the directory it names, so
+`flutter.assets` needs one `- decks/<lang>/` line per language. The validator
+fails if a language directory is missing one, because the alternative is an app
+that builds and ships without that language in it.
+
 Validate before committing — CI runs exactly this:
 
 ```sh
