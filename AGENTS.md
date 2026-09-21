@@ -25,7 +25,8 @@ written. **The UI is not built.** See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 **The Dart now compiles, as of 2026-09-21.** It was written without a Flutter
 SDK available, and for a while nobody had run it. That has been done: on
-Flutter 3.47.1, from a clean checkout following the sequence below,
+Flutter 3.47.1, from a clean checkout following the sequence below with
+`--platforms=android`,
 `flutter analyze` reports no issues, `flutter test` passes 35 tests,
 `dart format lib test` changes nothing, and `dart run build_runner build`
 succeeds. The Python tooling is tested and working too.

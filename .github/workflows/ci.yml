@@ -27,6 +27,10 @@ jobs:
       # The validator now gates CI on more than deck content — it checks that
       # every language directory is bundled — so it has tests of its own.
       - run: python3 -m unittest discover -s tools -t tools
+      # Rule 10: no user-visible string is a literal in a widget. Checked here
+      # rather than by the analyzer because flutter_lints has no such rule, and
+      # a rule aimed at parallel agents cannot rest on a checklist box.
+      - run: python3 tools/check_ui_strings.py lib/
 
   app:
     name: Analyse and test
