@@ -216,6 +216,50 @@ else is working on.
 implementing your own version of it in parallel. Two implementations of the
 same repository interface is the most expensive outcome available here.
 
+### How agents should run work
+
+Two rules, both about where effort is spent. They come from
+[claude-kit](https://github.com/aaronified/claude-kit) (MIT), and the procedure
+they name is copied into `.claude/` so it travels with this checkout rather than
+depending on a repository you may not be able to read.
+
+**Fan out on the cheap tier.** Establishing what this repository already does —
+its conventions, its layout, which files a rule reaches, what a document says on
+page four — is searching, and searching is mechanical. It goes to a cheap-tier
+subagent, every time. Reading the tree into a flagship model's context to answer
+one question is the most expensive way to work here, and it is the default
+people fall into under time pressure.
+
+| Tier | Work | Model |
+| --- | --- | --- |
+| cheap | Searching, extraction, parsing, grouping, transcribing, running a test suite, running a linter | Haiku |
+| standard | Writing and synthesis with judgement | Sonnet |
+| deep | Adversarial review, correctness reasoning, rating | Opus |
+
+**Rate the work before calling it done, and 8/10 is the bar.** At the end of
+any task touching more than a couple of files, an independent subagent rates
+the work out of 10 against the user's own prompts. Below 8, fix what it found
+and re-rate against the new diff — do not commit, and do not report the task
+complete.
+
+The rater is the one subagent that is not cheap-tier. It is judging whether the
+work matches the request, which is the judgement call in the whole loop; a
+cheap rater rubber-stamps and the gate stops meaning anything.
+
+Three things make the score worth having, and all three are easy to lose:
+
+- **Never tell the rater the target.** Not the pass mark, not a previous score,
+  not that the score has a consequence. A rater that knows the bar rates to it.
+- **Hand it the prompts verbatim**, in order, including the ones that arrived
+  mid-task. A paraphrase is where the request quietly becomes the thing that
+  got built.
+- **Report the number as given.** Do not round, soften, or argue with a finding
+  by dropping it — answer it in a line and leave it in.
+
+The procedure is `.claude/skills/work-rating/SKILL.md`; the rater's instructions
+are `.claude/agents/work-rater.md`. Follow it inline if you have no subagents,
+and say in the pull request that the rating is self-assessed.
+
 ### Files where you should expect contention
 
 `pubspec.yaml`, `lib/core/data/*`, `docs/ROADMAP.md`, `lib/core/models/card.dart`,
@@ -291,6 +335,7 @@ Specific to this repository, roughly in order of likelihood:
 | Putting scheduling logic in a widget | Makes it untestable without a device. Rule 3. |
 | Treating `flutter analyze` errors as a broken design | The Dart was never compiled. Fix the errors. |
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
+| Fanning out repository reading on a flagship model | Searching is cheap-tier work. See *How agents should run work*. |
 | Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
 | Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](docs/adr/0002-system-tts.md). |
 
@@ -339,4 +384,6 @@ explain most of what is otherwise surprising about this codebase.
 - [ ] An ADR added if an architectural decision was made
 - [ ] No user-visible string is a literal in a widget; new tokens are in
       `lib/l10n/app_en.arb`
+- [ ] The work was rated 8/10 or better by an independent subagent, or the PR
+      says the rating is self-assessed
 - [ ] The PR describes what was verified and what was not
