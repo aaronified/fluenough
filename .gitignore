@@ -52,3 +52,7 @@ venv/
 # Local scratch
 /scratch/
 *.log
+
+# Transient checkouts made by isolated subagents. Never commit one — it is a
+# whole second copy of the repository.
+.claude/worktrees/
