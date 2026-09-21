@@ -51,18 +51,44 @@ languages, and the people best placed to write a good Hungarian deck are not
 necessarily Flutter developers. That asymmetry is the whole reason the deck
 format is plain text validated by a standalone Python script.
 
-### 2. The app itself
+### 2. Translating the interface
+
+Also **no Flutter toolchain** — one JSON file and a text editor.
+
+Every word the app puts on screen is a token rather than a literal, decided in
+[ADR-0006](docs/adr/0006-interface-text-is-tokens.md) precisely so that this is
+possible. English lives in [`lib/l10n/app_en.arb`](lib/l10n/app_en.arb). To add
+a language, copy it to `app_<code>.arb`, change `@@locale`, and translate the
+values:
+
+```json
+{
+  "@@locale": "hi",
+  "appTitle": "Fluenough",
+  "scaffoldingTagline": "पर्याप्त रूप से धाराप्रवाह।"
+}
+```
+
+Leave the `@`-prefixed entries out of your copy — they are descriptions for
+translators, not text to translate, and they stay in the English file. Anything
+you omit falls back to English, so a partial translation is welcome and useful.
+
+If you are translating into a language the app has no deck for yet, that is
+still worth doing, and the reverse is true too: the person best placed to write
+a good Telugu deck is usually the person best placed to translate the interface
+into Telugu.
+
+### 3. The app itself
 
 The domain layer exists; the UI does not. [docs/ROADMAP.md](docs/ROADMAP.md)
-lists what is wanted, in order. See *Contributing code* below — and note that
-the Dart has never been compiled, which is the first thing to know.
+lists what is wanted, in order. See *Contributing code* below.
 
-### 3. Bug reports
+### 4. Bug reports
 
 Especially about text-to-speech, which varies enormously by device and is the
 hardest thing for us to test. Use the issue template.
 
-### 4. Documentation
+### 5. Documentation
 
 If something here was confusing, that is a bug in this file.
 
@@ -146,10 +172,14 @@ Frequency order is a good default when you are unsure what to include.
 
 ### Before you start
 
-**The Dart has never been compiled.** It was written without a Flutter SDK
-available. The Python tooling is tested and working; the Dart is not. Expect
-`flutter analyze` to report real errors on a fresh checkout — fix them, and say
-so in your PR, rather than concluding the design is broken.
+**The Dart compiles, as of 2026-09-21** — on Flutter 3.47.1, `flutter analyze`
+is clean and `flutter test` passes. It was written without an SDK available and
+went unrun for a while, so that is worth knowing rather than assuming. If
+`flutter analyze` reports an error on a fresh checkout, it is most likely your
+change rather than the design.
+
+Nobody has run it on a device yet, though, and the iOS folder has never been
+generated. See #17.
 
 **Open an issue before anything substantial**, and say which files you expect
 to touch. Several people are working on this in parallel, frequently with
@@ -171,11 +201,13 @@ audio — is in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ### While you work
 
-The constraints that matter are in [AGENTS.md](AGENTS.md#nine-rules). The three
+The constraints that matter are in [AGENTS.md](AGENTS.md#ten-rules). The four
 that catch people most often:
 
 - `lib/core/models`, `core/scheduling` and `core/grading` import nothing from
   Flutter. That is what keeps them testable without a device.
+- No user-visible string is a literal in a widget — it is a token in
+  `lib/l10n/app_en.arb`. CI checks this.
 - Anything touching scheduling or grading needs tests.
 - Do not reformat files you are not changing.
 
@@ -187,6 +219,7 @@ in this codebase was decided, and the reasoning is written down.
 
 ```sh
 python3 tools/validate_decks.py decks/   # if decks changed
+python3 tools/check_ui_strings.py lib/   # if you added a widget
 dart format lib test
 flutter analyze
 flutter test
