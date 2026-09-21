@@ -43,6 +43,9 @@ jobs:
 
       - run: flutter create . --org app --project-name fluenough --platforms=android
       - run: flutter pub get
+
+      # Same reason as ci.yml: generated sources are not committed.
+      - run: dart run build_runner build --delete-conflicting-outputs
       - run: flutter test
 
       - name: Restore signing key
