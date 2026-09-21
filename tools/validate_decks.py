@@ -333,21 +333,32 @@ def check_bundled(paths: list[Path]) -> list[str]:
     the list ships as an app with that language silently absent — it builds, it
     validates, and it is only visible on a device. Checking it here is cheaper
     than finding it there.
+
+    Everything here is resolved against the repository root rather than the
+    working directory. A check that quietly passes when run from the wrong
+    directory is worse than no check, because it is trusted.
     """
-    pubspec = Path("pubspec.yaml")
+    root = Path(__file__).resolve().parent.parent
+    pubspec = root / "pubspec.yaml"
     if not pubspec.exists():
         return []
     try:
         declared = yaml.safe_load(pubspec.read_text(encoding="utf-8"))
     except yaml.YAMLError as exc:
-        return [f"pubspec.yaml is not valid YAML: {exc}"]
+        return [f"{pubspec} is not valid YAML: {exc}"]
 
     entries = ((declared or {}).get("flutter") or {}).get("assets") or []
-    have = {str(e).rstrip("/") for e in entries}
+    have = {str(e).strip().rstrip("/") for e in entries}
 
     problems = []
-    for directory in sorted({p.parent for p in paths}):
-        wanted = str(directory).rstrip("/")
+    for directory in sorted({p.resolve().parent for p in paths}):
+        try:
+            wanted = directory.relative_to(root).as_posix()
+        except ValueError:
+            # Outside the repository, so nothing in pubspec.yaml could bundle
+            # it. Validating a deck from elsewhere is legitimate; claiming it
+            # is unbundled is not.
+            continue
         if wanted not in have:
             problems.append(
                 f"{wanted}/ holds decks but pubspec.yaml does not bundle it — "

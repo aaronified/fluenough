@@ -24,6 +24,9 @@ jobs:
       # Runs on every PR because YAML fails quietly: a bare `no` becomes a
       # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
       - run: python3 tools/validate_decks.py decks/
+      # The validator now gates CI on more than deck content — it checks that
+      # every language directory is bundled — so it has tests of its own.
+      - run: python3 -m unittest discover -s tools -t tools
 
   app:
     name: Analyse and test
