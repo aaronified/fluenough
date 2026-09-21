@@ -1,0 +1,8 @@
+# Interface strings. See ADR-0006 and AGENTS.md rule 10.
+#
+# English is the template and the base locale: app_en.arb is the file a new
+# string is added to, and every other locale is generated against it.
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+untranslated-messages-file: build/untranslated_messages.txt
