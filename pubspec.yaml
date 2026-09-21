@@ -37,5 +37,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  # One entry per language directory. A Flutter asset entry bundles only the
+  # files directly inside the directory it names, not its subdirectories, so
+  # `- decks/` alone would ship decks/README.md and none of the decks. Adding
+  # a language means adding its directory here.
   assets:
-    - decks/
+    - decks/es/
+    - decks/ja/
