@@ -1,4 +1,11 @@
 # Flutter / Dart
+# `flutter create` regenerates these on every checkout and CI remakes them on
+# every run. Committing them is AGENTS.md rule 4 — the entries below for paths
+# inside them are kept because they are the ones that matter if someone
+# un-ignores a platform folder deliberately.
+/android/
+/ios/
+/.metadata
 .dart_tool/
 .packages
 .pub-cache/
