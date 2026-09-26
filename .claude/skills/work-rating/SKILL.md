@@ -77,6 +77,30 @@ that are not findings.
 If your runtime has no subagents, do the pass inline against that same rubric, but say
 plainly in the report that the rating is self-assessed rather than independent.
 
+#### No more than five raters, and the commits grouped to fit
+
+The owner's ruling: *"Don't fan out more than 5 raters. Group commits if needed."* When the
+work is more commits than five raters can each take one of, group them — by the area they
+touch, or by the finding they answer — so that every rater is handed a body of work large
+enough to judge. Each rater gets the prompts behind its whole group, and scores each commit
+in it.
+
+**WHY A CAP, AND NOT ONE RATER PER COMMIT.** A rater must return a rating, and one handed a
+commit with nothing wrong in it reports something anyway. The owner, stopping a fan-out of
+twenty-two: *"If you create such minute raters they will start hallucinating issues
+resulting in regressions."* It had been measured before it was ruled. In one consuming
+repository, pushes rated one commit per rater came back with 40 to 75 findings a round and
+never converged, and two commits made while answering those rounds were regressions that a
+later round had to catch: a publish job that stopped running, and a pairing code that
+outlived a factory reset.
+
+**A RATING THAT FINISHED STILL STANDS WHEN THE FAN-OUT IS STOPPED.** Also the owner's:
+*"You can act on whatever raters already rated. If they were more than 8, those commits are
+already rated then."* Recover the finished results (a workflow's journal records what each
+agent returned) and act on them as on any other round. A commit whose finished rating
+already clears the caller's bar is rated. Re-rate only the commits with no result, grouped
+as above.
+
 ### Step 3 — act on it, then report
 
 1. **Fix what the rater found**, if it found something real, before you report anything. A
@@ -111,6 +135,10 @@ should cost more than any implementation flaw.
   better number rather than a better answer. Fix first, then hand it the new diff.
 - Do not let the agent that did the work rate it, unless the runtime has no subagents — and
   then say in the report that the rating is self-assessed.
+- Do not fan out more than five raters, and do not hand a rater a commit too small to judge
+  on its own. Group the commits. A rater with nothing real to find invents something, and the
+  fix for an invented finding is how a regression gets in.
+- Do not throw away a finished rating because the run it was part of was stopped.
 - Do not treat the score as the deliverable. It is a work item; the fixes are the deliverable.
 - Do not run this on a one-line fix, a question answered in prose, or a task the user is still
   actively redirecting.
@@ -124,6 +152,8 @@ should cost more than any implementation flaw.
 - [ ] Nothing in the rater's prompt named a threshold, an expectation, a previous score, or a
       consequence.
 - [ ] The rater was independent of the work, or the report says the rating is self-assessed.
+- [ ] No more than five raters ran, and each was given a group of commits large enough to
+      judge.
 - [ ] The score is reported exactly as given, alongside its findings.
 - [ ] Every finding was either fixed or answered in one line with a reason; none was dropped.
 - [ ] The affected tests were re-run after the fixes.
