@@ -101,6 +101,32 @@ agent returned) and act on them as on any other round. A commit whose finished r
 already clears the caller's bar is rated. Re-rate only the commits with no result, grouped
 as above.
 
+#### Documentation findings are reported, and scored only where a reader meets them
+
+The owner's ruling: *"Make the rater cut rating marks only for actual issues, documentation
+problems are non rated issues (still should be reported) unless it is facing the user in the
+app or about a wrong claim in readme or wiki."* So every finding is one of two kinds, and the
+rater's prompt says which is which. That is part of how to score, not a target:
+
+- **Scored.** A behaviour defect. A test that cannot fail for the defect it names. A breach
+  of the repository's rules in code. A documentation problem a reader meets: text a user sees
+  in the app (labels, help, errors, sample content), or a wrong claim in the README or the
+  wiki.
+- **Reported, not scored.** Any other documentation problem: commit bodies, code comments,
+  internal notes such as plans, test headers and fixture notes, and wording slips in any of
+  them. Each is still listed, still fixed or answered in one line, and marked unscored. None
+  of them lowers the number.
+
+**ONE EXCEPTION STAYS SCORED: A FALSE ACCOUNT OF THE WORK.** A body or report claiming a test
+ran, a mutation failed, or a thing was done, when it was not, is not a documentation slip. It
+is the dishonest report the score weighs most (see *What the score is measuring*).
+
+**WHY.** It was measured before it was ruled. One consuming repository's release took six
+rating passes. The last four scored commits below the bar almost entirely for their commit
+bodies: a misquote, a miscount, a file named wrong. History there is never rewritten, so each
+correction was a new body for the next pass to find fault with, and the loop ended only when
+the owner stopped it.
+
 ### Step 3 — act on it, then report
 
 1. **Fix what the rater found**, if it found something real, before you report anything. A
@@ -110,6 +136,11 @@ as above.
 3. **Re-rate only after fixing**, and only by handing the rater the new diff. Do not ask it
    to reconsider the same work; that is asking for a better number rather than a better
    answer.
+4. **Re-rate at all only when the pass found at least three major findings**, meaning scored
+   ones the rater marked high or medium. The owner's ruling: *"if a rater didn't find at least 3
+   major issues, no need to rerun rater, regardless of rating."* Fewer than three: fix them all
+   and stop, whatever the score. The caller's own bar (a pass mark, say) can only ask for
+   fewer passes than this, never more.
 
 ## What the score is measuring
 
@@ -139,6 +170,9 @@ should cost more than any implementation flaw.
   on its own. Group the commits. A rater with nothing real to find invents something, and the
   fix for an invented finding is how a regression gets in.
 - Do not throw away a finished rating because the run it was part of was stopped.
+- Do not let a documentation problem the reader never meets lower the score. Report it,
+  marked unscored. Only text in the app, or a wrong claim in the README or wiki, is scored,
+  and so is a false account of what was run or done.
 - Do not treat the score as the deliverable. It is a work item; the fixes are the deliverable.
 - Do not run this on a one-line fix, a question answered in prose, or a task the user is still
   actively redirecting.
@@ -154,6 +188,9 @@ should cost more than any implementation flaw.
 - [ ] The rater was independent of the work, or the report says the rating is self-assessed.
 - [ ] No more than five raters ran, and each was given a group of commits large enough to
       judge.
+- [ ] The rater was told which findings are scored and which are reported unscored, and the
+      report keeps the unscored ones.
+- [ ] A re-rating ran only after a pass with at least three major findings.
 - [ ] The score is reported exactly as given, alongside its findings.
 - [ ] Every finding was either fixed or answered in one line with a reason; none was dropped.
 - [ ] The affected tests were re-run after the fixes.
