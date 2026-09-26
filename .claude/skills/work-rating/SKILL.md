@@ -59,6 +59,12 @@ If your runtime supports subagents, spawn one with the body of `.claude/agents/w
 as its instructions and pass it the evidence from Step 1. It needs a strong model — this is
 judgement, not extraction.
 
+**ITS OWN HELPERS RUN ON THE CHEAP TIER.** The owner's ruling of 27 September: a rater that
+fans out, or runs the screenshot bot, does it on the cheap tier. The judgement stays with the
+rater; what it hands off is retrieval and capture, and a helper that inherits the rater's deep
+tier pays for judgement nobody asked it for. So any agent a rater starts is started on the
+cheap tier, and screens are captured through the screenshot runner, which is cheap.
+
 **TWO THINGS IN THAT FILE'S FRONTMATTER ARE LOAD-BEARING and are not to be ignored.**
 
 - `tools: Read, Grep, Glob, Bash` — **no `Edit`, no `Write`.** The rater's most valuable
@@ -170,6 +176,8 @@ should cost more than any implementation flaw.
   on its own. Group the commits. A rater with nothing real to find invents something, and the
   fix for an invented finding is how a regression gets in.
 - Do not throw away a finished rating because the run it was part of was stopped.
+- Do not let a rater's helpers inherit its tier. A fan-out or a screenshot run it starts is
+  on the cheap tier.
 - Do not let a documentation problem the reader never meets lower the score. Report it,
   marked unscored. Only text in the app, or a wrong claim in the README or wiki, is scored,
   and so is a false account of what was run or done.
@@ -191,6 +199,7 @@ should cost more than any implementation flaw.
 - [ ] The rater was told which findings are scored and which are reported unscored, and the
       report keeps the unscored ones.
 - [ ] A re-rating ran only after a pass with at least three major findings.
+- [ ] Every agent the rater started, and every screenshot run, was on the cheap tier.
 - [ ] The score is reported exactly as given, alongside its findings.
 - [ ] Every finding was either fixed or answered in one line with a reason; none was dropped.
 - [ ] The affected tests were re-run after the fixes.
