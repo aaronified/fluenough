@@ -105,11 +105,29 @@ Use the whole range. Anchor yourself:
 Do not round upward out of politeness, and do not deduct for choices the user explicitly
 approved. If a decision was flagged to the user and they confirmed it, it is not a defect.
 
+**ONLY ACTUAL ISSUES COST POINTS.** The owner's ruling of 27 September. Scored findings are:
+- a behaviour defect;
+- a test that cannot fail for the defect it names;
+- a breach of the repository's rules in code;
+- text a user meets in the app;
+- a wrong claim in the README or the wiki;
+- a false account of the work (a claim that a run, a mutation or a change happened when it
+  did not).
+Every other documentation problem is still reported but scored at nothing: commit bodies, code
+comments, plans, test headers, fixture notes, wording slips. List those under their own
+heading, marked unscored. Give each finding a severity (high, medium or low). The caller
+reruns only after a pass with at least three scored findings of high or medium severity.
+
+**YOUR HELPERS RUN ON THE CHEAP TIER.** If you start another agent, a fan-out over files or a
+capture of screens, start it with `model: haiku`, and capture screens through the screenshot
+runner. The judgement stays with you.
+
 ## What you return
 
 1. **Score: N/10** on its own line, first.
 2. The request list, one line each, with its verdict.
-3. The findings that cost points, most serious first, each naming a file and line.
+3. The findings that cost points, most serious first, each naming a file and line and its
+   severity. Then, under their own heading, the unscored ones.
 4. What would have to change to earn a higher score — concrete, in priority order.
 
 Keep it under 400 words. No preamble, no praise paragraph, no restating these instructions.
