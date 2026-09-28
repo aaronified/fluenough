@@ -3,14 +3,16 @@ import '../../app/shell_tab.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'deck_detail_page.dart';
+import 'import_fixture.dart';
 import 'import_page.dart';
 
 /// Decks, a deck, and Add a deck, as the design's Gallery lists them. Owned
 /// by B2.
 ///
 /// The design's deck is Hindi Core, which is not on this branch (#41), so
-/// `deck` shows Spanish Core. `deck-novoice` is Japanese for Mira, whose
-/// language the fixture engine has no voice for.
+/// `deck` shows Spanish Core for Aro, with a Spanish voice. `deck-novoice` is
+/// Japanese for Mira, whose language the fixture engine has no voice for.
+/// `import-error` shows a real parser error, from `importErrorFixture`.
 final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
   GalleryEntry(
     id: 'decks',
@@ -47,6 +49,9 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     section: GallerySection.learn,
     label: 'Add a deck, error', // ui-literal-ok: debug-only gallery
     note: 'Line number and the fix', // ui-literal-ok: debug-only gallery
-    builder: (_) => const ImportPage(),
+    builder: (_) => ImportPage(
+      initialUrl: 'https://example.org/decks/$importErrorFixtureFile', // ui-literal-ok: debug-only gallery
+      error: importErrorFixture(),
+    ),
   ),
 ];
