@@ -76,6 +76,7 @@ enum Feature {
     Feature.drillListening,
     Feature.persistence,
     Feature.appearance,
+    Feature.stats,
   };
 }
 
