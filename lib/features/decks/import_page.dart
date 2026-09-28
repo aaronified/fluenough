@@ -8,7 +8,6 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import 'import_error_card.dart';
-import 'option_row.dart';
 
 /// Where a deck to add comes from.
 enum ImportSource {
@@ -154,9 +153,14 @@ class _ImportPageState extends State<ImportPage> {
     final l10n = AppLocalizations.of(context)!;
     final incoming = isIncoming(context, source.feature);
     final selected = source == _source;
-    return OptionRow(
+    return GroupedTile(
       feature: source.feature,
       selected: selected,
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 16,
+        vertical: 14,
+      ),
+      trailingGap: 12,
       leading: Icon(source.icon),
       title: source.label(l10n),
       subtitle: source.description(l10n),

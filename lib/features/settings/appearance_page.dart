@@ -9,9 +9,10 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/target_text.dart';
-import 'settings_row.dart';
+import 'settings_controls.dart';
 
 /// "System", "Light" or "Dark".
 String themeModeLabel(AppLocalizations l10n, ThemeMode mode) => switch (mode) {
@@ -98,7 +99,7 @@ class AppearancePage extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               _Block(
-                child: SettingsRow.toggle(
+                child: GroupedTile.toggle(
                   title: l10n.appearanceWallpaper,
                   subtitle: l10n.appearanceWallpaperDesc,
                   feature: Feature.dynamicColour,

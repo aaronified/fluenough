@@ -12,7 +12,6 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/mode_pill.dart';
 import 'deck_content.dart';
-import 'option_row.dart';
 
 /// "Practise one skill": a row per skill the deck offers, each starting a
 /// session on the deck in that skill alone.
@@ -57,12 +56,14 @@ class SkillSection extends StatelessWidget {
     final state = AppScope.of(context);
     final language = entry.language;
     const padding = EdgeInsetsDirectional.fromSTEB(16, 12, 12, 12);
+    const leadingGap = 14.0;
+    const trailingGap = 12.0;
 
     if (isIncoming(context, skill.feature)) {
-      return OptionRow(
+      return GroupedTile(
         feature: skill.feature,
         padding: padding,
-        gap: 14,
+        leadingGap: leadingGap,
         leading: ModePill(skill: skill, size: ModePillSize.large),
         title: skill.label(l10n),
         subtitle: skill.deckDescription(l10n, language.name),
@@ -70,9 +71,10 @@ class SkillSection extends StatelessWidget {
     }
 
     if (skill.needsVoice && !state.hasVoice(language)) {
-      return OptionRow(
+      return GroupedTile(
         padding: padding,
-        gap: 14,
+        leadingGap: leadingGap,
+        trailingGap: trailingGap,
         leading: ModePill(skill: skill, size: ModePillSize.large, muted: true),
         title: skill.label(l10n),
         titleColor: scheme.onSurfaceVariant,
@@ -89,9 +91,10 @@ class SkillSection extends StatelessWidget {
     final request = DrillRequest.deck(entry.id, skill: skill, tags: tags);
     final count = state.buildSession(request).items.length;
     final label = skill.label(l10n);
-    return OptionRow(
+    return GroupedTile(
       padding: padding,
-      gap: 14,
+      leadingGap: leadingGap,
+      trailingGap: trailingGap,
       leading: ModePill(skill: skill, size: ModePillSize.large),
       title: label,
       subtitle: skill.deckDescription(l10n, language.name),

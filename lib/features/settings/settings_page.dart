@@ -16,7 +16,7 @@ import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
-import 'settings_row.dart';
+import 'settings_controls.dart';
 
 /// The version the footer shows. There is no package to read it from the
 /// build (AGENTS.md rule 6), so it is kept in step with `pubspec.yaml` by
@@ -108,7 +108,7 @@ class SettingsPage extends StatelessWidget {
           onChanged: (v) => settings.newCardsPerDay = v.round(),
         ),
         for (final skill in Skill.values)
-          SettingsRow.toggle(
+          GroupedTile.toggle(
             title: skill.label(l10n),
             subtitle: skill.settingsDescription(l10n),
             feature: skill.feature,
@@ -118,7 +118,7 @@ class SettingsPage extends StatelessWidget {
                 settings.isEnabled(skill),
             onChanged: (on) => settings.setSkillEnabled(skill, on),
           ),
-        SettingsRow.toggle(
+        GroupedTile.toggle(
           title: l10n.settingsRomanisation,
           subtitle: l10n.settingsRomanisationDesc,
           value: settings.showRomanisation,
@@ -152,7 +152,7 @@ class SettingsPage extends StatelessWidget {
           semanticValue: (v) => l10n.settingsSpeechRateValue(step(v)),
           onChanged: (v) => settings.speechRate = step(v),
         ),
-        SettingsRow(
+        GroupedTile(
           title: l10n.settingsVoices,
           subtitle: l10n.settingsVoicesSummary(voiced, languages.length),
           trailing: const Icon(Icons.chevron_right),
@@ -167,7 +167,7 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionLook,
       children: <Widget>[
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.palette_outlined),
           title: l10n.settingsAppearance,
           subtitle: appearanceSummary(l10n, settings),
@@ -175,7 +175,7 @@ class SettingsPage extends StatelessWidget {
           feature: Feature.appearance,
           onTap: () => AppNavigator.openAppearance(context),
         ),
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.translate),
           title: l10n.settingsAppLanguage,
           feature: Feature.uiLanguage,
@@ -197,7 +197,7 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionReminder,
       children: <Widget>[
-        SettingsRow.toggle(
+        GroupedTile.toggle(
           leading: const Icon(Icons.notifications_outlined),
           title: l10n.settingsReminder,
           subtitle: l10n.settingsReminderDesc,
@@ -208,7 +208,7 @@ class SettingsPage extends StatelessWidget {
         // The design puts the time beside the switch. On a row of its own it
         // keeps its own screen-reader node and fits at any text size.
         if (reminderOn && settings.reminder)
-          SettingsRow(
+          GroupedTile(
             leading: const Icon(Icons.schedule),
             title: l10n.settingsReminderTime,
             trailing: Text(
@@ -233,7 +233,7 @@ class SettingsPage extends StatelessWidget {
           ),
         // No way to set or clear a PIN exists yet, so even with the feature
         // on the switch only shows whether this profile has one.
-        SettingsRow.toggle(
+        GroupedTile.toggle(
           leading: const Icon(Icons.lock_outline),
           title: l10n.settingsPinLock,
           subtitle: l10n.settingsPinLockDesc,
@@ -253,21 +253,21 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionData,
       children: <Widget>[
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.file_download_outlined),
           title: l10n.settingsExport,
           subtitle: l10n.settingsExportDesc(state.progress.log.length),
           feature: Feature.logExport,
           padding: _tallRow,
         ),
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.file_upload_outlined),
           title: l10n.settingsImport,
           subtitle: l10n.settingsImportDesc,
           feature: Feature.logImport,
           padding: _tallRow,
         ),
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.delete_outline),
           title: l10n.settingsDeleteProfile,
           titleColor: Theme.of(context).colorScheme.error,

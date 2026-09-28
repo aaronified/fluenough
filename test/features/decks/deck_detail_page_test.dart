@@ -7,11 +7,11 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/deck_facts.dart';
-import 'package:fluenough/features/decks/option_row.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/grouped_list.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
 
@@ -36,7 +36,7 @@ AppState withSpanishVoice() =>
     AppState.test(tts: FixedTtsEngine(const <String>{'es'}));
 
 Finder skillRow(AppLocalizations l10n, Skill skill) =>
-    find.widgetWithText(OptionRow, skill.label(l10n));
+    find.widgetWithText(GroupedTile, skill.label(l10n));
 
 /// Taps [finder] after scrolling it into view.
 Future<void> tapVisible(WidgetTester tester, Finder finder) async {
