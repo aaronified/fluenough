@@ -145,8 +145,12 @@ class _TypedDrillState extends State<TypedDrill> {
           color: scheme.primary,
         ),
         if (notes != null)
-          ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 280),
+          // Padding, not a max-width box: DrillFrame measures the card's
+          // intrinsic height, and a ConstrainedBox reports its child's
+          // height at the full width, so wrapped notes would overflow.
+          // 19 each side is the design's 280 on a phone's 318 card.
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
             child: Text(
               notes,
               textAlign: TextAlign.center,
