@@ -196,6 +196,65 @@ class FactsFiles(Validated):
         self.assertTrue(any("'en'" in w and "0 daily facts" in w for w in report.warnings),
                         report.warnings)
 
+THEMES = """\
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+"""
+
+
+class Themes(Validated):
+    """The shared theme path, and theme decks (ADR-0010)."""
+
+    def write(self, name: str, text: str) -> Path:
+        path = self.tmp / name
+        path.write_text(text, encoding="utf-8")
+        return path
+
+    def test_a_themes_file_is_valid(self) -> None:
+        report = validate_decks.validate(self.write("themes.yaml", THEMES))
+        self.assertEqual(report.errors, [])
+        self.assertEqual(report.themes, ["first-words", "market"])
+
+    def test_a_malformed_themes_file_is_rejected(self) -> None:
+        for bad, needle in (
+            (THEMES.replace("id: market", "id: first-words"), "listed twice"),
+            (THEMES.replace("id: market", "id: Market"), "id must match"),
+            (THEMES.replace(', name: "Market"', ""), "needs a name"),
+            (THEMES + "cards: []\n", "unknown field"),
+            ("schema: 1\nkind: themes\nthemes: []\n", "non-empty"),
+        ):
+            with self.subTest(needle):
+                errors = validate_decks.validate(self.write("themes.yaml", bad)).errors
+                self.assertTrue(any(needle in e for e in errors), errors)
+
+    def test_a_vocab_deck_may_name_a_theme(self) -> None:
+        report = self.assertValid(VOCAB.replace("license:", "theme: market\nlicense:"))
+        self.assertEqual(report.theme_key, ("hi", "en", "market"))
+
+    def test_only_a_vocab_deck_takes_a_theme(self) -> None:
+        self.assertRejected(
+            facts_file().replace("license:", "theme: market\nlicense:"),
+            "only a vocab deck teaches a theme",
+        )
+
+    def test_across_files_a_theme_must_exist_and_be_used_once(self) -> None:
+        themes = validate_decks.validate(self.write("themes.yaml", THEMES))
+
+        def deck(theme: str, name: str) -> validate_decks.Report:
+            text = VOCAB.replace("license:", f"theme: {theme}\nlicense:")
+            return validate_decks.validate(self.write(name, text))
+
+        good = deck("market", "a.yaml")
+        self.assertEqual(validate_decks.check_themes_across([themes, good]), [])
+        unknown = deck("weather", "b.yaml")
+        again = deck("market", "c.yaml")
+        problems = validate_decks.check_themes_across([themes, good, unknown, again])
+        self.assertTrue(any("'weather' is not in" in p for p in problems), problems)
+        self.assertTrue(any("already has a 'market' deck" in p for p in problems), problems)
+
 
 if __name__ == "__main__":
     unittest.main()
