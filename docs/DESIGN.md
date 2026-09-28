@@ -84,9 +84,11 @@ abstract interface class TtsEngine {
 ```
 
 `SystemTtsEngine` wraps `flutter_tts`. Nothing outside `core/tts` refers to
-`flutter_tts`, so a second implementation is additive. Listening drills are
-hidden, not broken, when `isLanguageAvailable` is false — a language-agnostic
-app must degrade gracefully on a device lacking a voice.
+`flutter_tts`, so a second implementation is additive. When
+`isLanguageAvailable` is false, listening is shown disabled with the reason and
+a way to set up a voice, and no session contains a listening card
+([ADR-0008](adr/0008-unbuilt-features-are-shown-disabled.md)) — a
+language-agnostic app must degrade gracefully on a device lacking a voice.
 
 ## Deck loading
 

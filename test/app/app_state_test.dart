@@ -9,6 +9,7 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/features/gallery/fixtures.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -176,7 +177,11 @@ void main() {
     });
 
     test('learnNew drills only new pairs, at most the number asked', () async {
-      final state = await loaded();
+      // With history, so reviews are due today and learnNew has something
+      // to leave out.
+      final state = GalleryFixtures.state(await loaded());
+      await state.load();
+      expect(state.buildSession(const DrillRequest.today()).due, isNotEmpty);
       final queue = state.buildSession(const DrillRequest.learnNew(5));
       expect(queue.length, 5);
       expect(queue.items.every((i) => i.isNew), isTrue);

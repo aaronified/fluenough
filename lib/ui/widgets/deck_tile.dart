@@ -4,6 +4,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import 'incoming.dart';
 
 /// A deck's one character on a rounded `secondaryContainer` tile.
 ///
@@ -59,6 +60,13 @@ enum DeckBadgeKind {
   /// "Done", when nothing in a deck the profile learns is due.
   done,
 
+  /// "Feature incoming", for a deck this version cannot drill at all: a
+  /// grammar deck, whose cards wait for the expander (#2). Never "Done",
+  /// which would claim it had been studied. Drawn as the app's
+  /// [IncomingBadge], under the deck's meta line: too wide to share a phone
+  /// row with the name.
+  incoming,
+
   /// "Start", for a deck in a language the profile does not learn.
   start,
 
@@ -70,12 +78,16 @@ enum DeckBadgeKind {
 class DeckBadge extends StatelessWidget {
   const DeckBadge({super.key, required this.kind, this.count = 0});
 
-  /// [entry]'s badge on the Decks tab and Today. For a language the current
-  /// profile learns: what a session on the deck would drill now, due and new
+  /// [entry]'s badge on the Decks tab and Today. A deck with nothing this
+  /// version can drill is incoming. For a language the current profile
+  /// learns: what a session on the deck would drill now, due and new
   /// together, or Done. Otherwise Start. Each deck's new cards are counted
   /// against the whole daily cap, so the badges can add up to more than
   /// Today's number.
   factory DeckBadge.forEntry(AppState state, DeckEntry entry) {
+    if (entry.cards.isEmpty) {
+      return const DeckBadge(kind: DeckBadgeKind.incoming);
+    }
     if (!state.currentProfile.learns(entry.language.code)) {
       return const DeckBadge(kind: DeckBadgeKind.start);
     }
@@ -95,7 +107,7 @@ class DeckBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final (String text, Color bg, Color fg) = switch (kind) {
+    final pill = switch (kind) {
       DeckBadgeKind.due => (
         l10n.commonDueBadge(count),
         scheme.primary,
@@ -111,12 +123,15 @@ class DeckBadge extends StatelessWidget {
         scheme.surfaceContainerHighest,
         scheme.onSurfaceVariant,
       ),
+      DeckBadgeKind.incoming => null,
       DeckBadgeKind.error => (
         l10n.decksBrokenBadge,
         scheme.errorContainer,
         scheme.onErrorContainer,
       ),
     };
+    if (pill == null) return const IncomingBadge();
+    final (text, bg, fg) = pill;
     return Container(
       constraints: const BoxConstraints(minWidth: 32, minHeight: 28),
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
@@ -136,8 +151,9 @@ class DeckBadge extends StatelessWidget {
 }
 
 /// A deck row, as Today and the deck list draw it: glyph, name, a meta line
-/// ("Hindi (hin) · 40 cards"), and a badge. Put it inside a `GroupedList`,
-/// which gives it its background and corners.
+/// ("Hindi (hin) · 40 cards"), and a badge: at the end of the row, or under
+/// the meta line when it is [DeckBadgeKind.incoming]. Put it inside a
+/// `GroupedList`, which gives it its background and corners.
 class DeckTile extends StatelessWidget {
   const DeckTile({
     super.key,
@@ -170,6 +186,7 @@ class DeckTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
+    final incoming = badge.kind == DeckBadgeKind.incoming;
     return MergeSemantics(
       child: InkWell(
         onTap: onTap,
@@ -198,11 +215,11 @@ class DeckTile extends StatelessWidget {
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
                     ),
+                    if (incoming) ...<Widget>[const SizedBox(height: 8), badge],
                   ],
                 ),
               ),
-              const SizedBox(width: 12),
-              badge,
+              if (!incoming) ...<Widget>[const SizedBox(width: 12), badge],
             ],
           ),
         ),

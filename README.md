@@ -6,10 +6,11 @@ A language-agnostic drilling app for basic language skills — vocabulary,
 production, listening and grammar — scheduled by spaced repetition, running
 entirely offline on your phone.
 
-> **Status: design complete, implementation not started.** This repository
-> currently contains the architecture, the deck format, example decks, the
-> deck validator and the project scaffolding. The Flutter app itself is not
-> yet built. See [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Status: early development.** The architecture, deck format, example
+> decks, deck parser and validator are in, and the app's screens are built
+> from the design. Progress is kept in memory until the database lands, and
+> features not built yet are shown disabled, marked "Feature incoming". See
+> [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Why "language-agnostic"
 

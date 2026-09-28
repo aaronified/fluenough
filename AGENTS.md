@@ -21,7 +21,10 @@ running offline. Flutter, Android first. A language is *data*, never code:
 adding one means adding deck files.
 
 **What state it is in.** The domain layer, deck format, tooling and docs are
-written. **The UI is not built.** See [docs/ROADMAP.md](docs/ROADMAP.md).
+written. **The UI is built from the design** on in-memory progress; what the
+backend lacks is shown disabled, marked "Feature incoming"
+([ADR-0008](docs/adr/0008-unbuilt-features-are-shown-disabled.md)). See
+[docs/ROADMAP.md](docs/ROADMAP.md).
 
 **The Dart now compiles, as of 2026-09-21.** It was written without a Flutter
 SDK available, and for a while nobody had run it. That has been done: on

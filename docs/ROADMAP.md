@@ -15,7 +15,7 @@ acceptance criteria, and what to read first.
 
 ## v0.2 — Audio and grammar
 - [ ] `SystemTtsEngine`, voice availability detection
-- [ ] Listening drill, hidden when no voice is installed
+- [ ] Listening drill, shown disabled with "Set up" when no voice is installed
 - [ ] Grammar drill over expanded patterns
 - [ ] Settings: daily new-card cap, drill modes, TTS rate
 

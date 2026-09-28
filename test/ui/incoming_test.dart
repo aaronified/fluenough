@@ -249,6 +249,39 @@ void main() {
       );
     });
 
+    testWidgets('a wide trailing control sends the badge under the text', (
+      tester,
+    ) async {
+      // Judged against the whole 600 px row the badge would fit beside the
+      // text, but the trailing control takes half of it: the title would be
+      // left a few letters wide. The rule must use the room left over.
+      useWidth(tester, 640);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: Builder(
+            builder: (context) => GroupedTile(
+              title: AppLocalizations.of(context)!.settingsAppLanguage,
+              feature: Feature.uiLanguage,
+              trailing: const SizedBox(width: 288, height: 40),
+            ),
+          ),
+        ),
+        state: AppState.test(),
+      );
+      final l10n = l10nOf(tester);
+      final title = find.text(l10n.settingsAppLanguage);
+      final badge = find.byType(IncomingBadge);
+      expect(tester.takeException(), isNull);
+      expect(beside(tester, badge, title), isFalse);
+      // One line: the title kept its width rather than wrapping per letter.
+      final style = Theme.of(tester.element(title)).textTheme.titleMedium!;
+      expect(
+        tester.getSize(title).height,
+        lessThanOrEqualTo(style.fontSize! * (style.height ?? 1.5) + 1),
+      );
+    });
+
     testWidgets('live: a row with onTap is one button; one without keeps its '
         "trailing button's own node", (tester) async {
       final handle = tester.ensureSemantics();
