@@ -6,17 +6,22 @@ import 'new_profile_page.dart';
 import 'pin_page.dart';
 import 'profiles_page.dart';
 
-/// The design's Aro (PIN 1234) and Mira, with profiles and PIN lock switched
-/// on: in this version both are incoming, and the screens are reached only
-/// from here.
-AppState profilesOn(AppState app) => GalleryFixtures.state(
-  app,
-  features: const FeatureRegistry.only(<Feature>{
-    ...Feature.available,
-    Feature.profiles,
-    Feature.pinLock,
-  }),
-);
+/// Profiles and PIN lock switched on. Both are incoming in this version, so
+/// the profile screens are reached only from the gallery.
+const FeatureRegistry profilesFeatures = FeatureRegistry.only(<Feature>{
+  ...Feature.available,
+  Feature.profiles,
+  Feature.pinLock,
+});
+
+/// The design's Aro (PIN 1234) and Mira on [app]'s catalog, with
+/// [profilesFeatures] and [currentProfileId] current.
+AppState profilesOn(AppState app, {String currentProfileId = 'aro'}) =>
+    GalleryFixtures.state(
+      app,
+      features: profilesFeatures,
+      currentProfileId: currentProfileId,
+    );
 
 /// Profiles and sign-in, as the design's Gallery lists them. Owned by B6.
 final List<GalleryEntry> profilesGalleryEntries = <GalleryEntry>[
