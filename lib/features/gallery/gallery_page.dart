@@ -7,6 +7,8 @@ import '../../app/routes.dart';
 import '../../ui/theme.dart';
 import '../decks/gallery_entries.dart';
 import '../drill/gallery_entries.dart';
+import '../drill/grammar_drill.dart';
+import '../drill/pair_drill.dart';
 import '../profiles/gallery_entries.dart';
 import '../settings/gallery_entries.dart';
 import '../stats/gallery_entries.dart';
@@ -18,16 +20,24 @@ import 'gallery_entry.dart';
 // Everything in this file is debug-only (AppRoutes.gallery is registered only
 // when kDebugMode), so its labels are literals, each marked for the gate.
 
-/// Every feature's entries, in the design's order. A builder adds entries to
-/// their own feature's `gallery_entries.dart`, never here.
+/// Every feature's entries, in the design's order, each feature's design
+/// screens followed by the other states it exports. A builder adds entries
+/// to their own feature's lists, never here.
 List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
   ...profilesGalleryEntries,
+  ...profilesGalleryStates,
   ...todayGalleryEntries,
+  ...todayGalleryStates,
   ...decksGalleryEntries,
   ...drillGalleryEntries,
+  ...grammarGalleryStates,
+  ...pairGalleryStates,
   ...summaryGalleryEntries,
+  ...summaryGalleryStates,
   ...statsGalleryEntries,
+  // The stats feature's `statsGalleryStates` goes here once it is built.
   ...settingsGalleryEntries,
+  ...settingsGalleryStates,
 ];
 
 /// The design's "Dark theme" section: these screens again, dark.
