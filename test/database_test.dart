@@ -1,0 +1,187 @@
+import 'package:drift/drift.dart' hide isNull, isNotNull;
+import 'package:drift/native.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/core/data/database.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
+
+void main() {
+  late AppDatabase db;
+
+  setUp(() => db = AppDatabase(NativeDatabase.memory()));
+  tearDown(() => db.close());
+
+  // Millisecond precision, in local time: what the columns keep.
+  final at = DateTime(2026, 9, 29, 8, 30, 15, 250);
+
+  ReviewsCompanion review({
+    DrillMode mode = DrillMode.production,
+    int grade = 4,
+    DateTime? ts,
+    bool first = true,
+  }) => ReviewsCompanion.insert(
+    ts: ts ?? at,
+    deckId: 'hi-en-market',
+    cardId: 'hi-en-market-0001',
+    mode: mode,
+    grade: grade,
+    elapsedMs: 3200,
+    answerGiven: const Value('kitne ka hai'),
+    intervalBefore: first ? const Value.absent() : const Value(1),
+    intervalAfter: 6,
+    easeBefore: first ? const Value.absent() : const Value(2.5),
+    easeAfter: 2.6,
+  );
+
+  test('opens at version 1 with the four tables', () async {
+    expect(db.schemaVersion, 1);
+    final tables = await db
+        .customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name NOT LIKE 'sqlite_%' ORDER BY name",
+        )
+        .map((r) => r.read<String>('name'))
+        .get();
+    expect(tables, <String>['card_states', 'cards', 'decks', 'reviews']);
+  });
+
+  test('decks: written, read back, and replaced by id', () async {
+    await db.decksDao.put(
+      DecksCompanion.insert(
+        id: 'hi-en-market',
+        name: 'Market',
+        kind: 'vocab',
+        languageCode: 'hi',
+        nativeCode: 'en',
+        loadedAt: at,
+      ),
+    );
+    final row = (await db.decksDao.byId('hi-en-market'))!;
+    expect(row.name, 'Market');
+    expect((row.languageCode, row.nativeCode), ('hi', 'en'));
+    expect(row.loadedAt, at);
+
+    await db.decksDao.put(
+      row.copyWith(name: 'Market and money').toCompanion(true),
+    );
+    expect((await db.decksDao.all()).single.name, 'Market and money');
+  });
+
+  test('cards: a deck is replaced outright, in deck order', () async {
+    CardsCompanion card(String id, int position, String target) =>
+        CardsCompanion.insert(
+          deckId: 'hi-en-market',
+          cardId: id,
+          position: position,
+          target: target,
+          native: 'how much',
+        );
+    await db.cardsDao.replaceDeck('hi-en-market', [
+      card('hi-en-market-0002', 1, 'कितना'),
+      card('hi-en-market-0001', 0, 'कितने का है?'),
+    ]);
+    expect(
+      (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
+      <String>['hi-en-market-0001', 'hi-en-market-0002'],
+    );
+    expect(
+      (await db.cardsDao.ofDeck('hi-en-market')).first.target,
+      'कितने का है?',
+    );
+
+    await db.cardsDao.replaceDeck('hi-en-market', [
+      card('hi-en-market-0003', 0, 'महँगा'),
+    ]);
+    expect(
+      (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
+      <String>['hi-en-market-0003'],
+    );
+  });
+
+  test('card_states: one row per deck, card and mode', () async {
+    CardStatesCompanion state(DrillMode mode, int interval) =>
+        CardStatesCompanion.insert(
+          deckId: 'hi-en-market',
+          cardId: 'hi-en-market-0001',
+          mode: mode,
+          intervalDays: interval,
+          easeFactor: 2.5,
+          repetitions: 1,
+          dueAt: at,
+        );
+    await db.cardStatesDao.put(state(DrillMode.recognition, 1));
+    await db.cardStatesDao.put(state(DrillMode.production, 6));
+    await db.cardStatesDao.put(state(DrillMode.recognition, 3));
+
+    final recognition = (await db.cardStatesDao.of(
+      'hi-en-market',
+      'hi-en-market-0001',
+      DrillMode.recognition,
+    ))!;
+    expect(recognition.intervalDays, 3, reason: 'replaced, not added');
+    expect(recognition.dueAt, at);
+    expect(recognition.lapses, 0);
+    expect(await db.cardStatesDao.all(), hasLength(2));
+    expect(
+      await db.cardStatesDao.of(
+        'hi-en-market',
+        'hi-en-market-0001',
+        DrillMode.listening,
+      ),
+      isNull,
+    );
+  });
+
+  test(
+    'reviews: appended and read back in order, first review nulls kept',
+    () async {
+      final first = await db.reviewsDao.append(review(grade: 3));
+      final second = await db.reviewsDao.append(
+        // An earlier clock time than the first: the log keeps append order.
+        review(first: false, ts: at.subtract(const Duration(hours: 1))),
+      );
+      expect(second, greaterThan(first));
+
+      final log = await db.reviewsDao.all();
+      expect(log.map((r) => r.id), <int>[first, second]);
+      expect(log.first.ts, at);
+      expect(log.first.mode, DrillMode.production);
+      expect(log.first.grade, 3);
+      expect(log.first.elapsedMs, 3200);
+      expect(log.first.answerGiven, 'kitne ka hai');
+      expect((log.first.intervalBefore, log.first.easeBefore), (null, null));
+      expect((log.last.intervalBefore, log.last.easeBefore), (1, 2.5));
+      expect((log.last.intervalAfter, log.last.easeAfter), (6, 2.6));
+    },
+  );
+
+  test('reviews: a grade outside 0 to 5 is refused', () async {
+    for (final grade in <int>[-1, 6]) {
+      await expectLater(
+        db.reviewsDao.append(review(grade: grade)),
+        throwsA(anything),
+        reason: '$grade',
+      );
+    }
+    expect(await db.reviewsDao.all(), isEmpty);
+  });
+
+  test(
+    'reviews: SQLite refuses any update or delete, even from drift',
+    () async {
+      await db.reviewsDao.append(review());
+      final Matcher appendOnly = throwsA(
+        predicate(
+          (Object e) => e.toString().contains('reviews is append-only'),
+        ),
+      );
+      await expectLater(
+        db.update(db.reviews).write(const ReviewsCompanion(grade: Value(0))),
+        appendOnly,
+      );
+      await expectLater(db.delete(db.reviews).go(), appendOnly);
+      await expectLater(db.customStatement('DELETE FROM reviews'), appendOnly);
+      final log = await db.reviewsDao.all();
+      expect(log.single.grade, 4);
+    },
+  );
+}
