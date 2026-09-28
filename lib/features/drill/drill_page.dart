@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/page_parts.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
+import 'grammar_drill.dart';
 import 'recognition_drill.dart';
 import 'typed_drill.dart';
 
@@ -193,6 +194,11 @@ class _DrillPageState extends State<DrillPage> {
         },
         child: switch (session.item.mode) {
           DrillMode.recognition => RecognitionDrill(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
+          DrillMode.grammar => GrammarDrill.live(
             key: ValueKey<int>(session.position),
             session: session,
             onClose: _close,
