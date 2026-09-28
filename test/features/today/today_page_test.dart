@@ -315,4 +315,23 @@ void main() {
     expect(withDue(12).minutes, 4);
     expect(withDue(41).minutes, 14);
   });
+
+  testWidgets('a catalog that failed offers Try again, which reloads it', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpScreen(
+      tester,
+      const TodayPage(),
+      state: AppState.test(decks: FailOnceDeckSource()),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.commonDecksFailed), findsOneWidget);
+
+    await tester.tap(find.text(l10n.commonRetry));
+    await tester.pumpAndSettle();
+    expect(state.status, CatalogStatus.ready);
+    expect(find.text(l10n.commonDecksFailed), findsNothing);
+    expect(find.byType(DeckTile), findsWidgets);
+  });
 }

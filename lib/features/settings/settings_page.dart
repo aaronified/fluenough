@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
@@ -9,6 +10,7 @@ import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/app_language_picker.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -16,12 +18,7 @@ import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
-import 'settings_row.dart';
-
-/// The version the footer shows. There is no package to read it from the
-/// build (AGENTS.md rule 6), so it is kept in step with `pubspec.yaml` by
-/// hand, and `test/features/settings/settings_page_test.dart` checks it.
-const String appVersion = '0.1.0';
+import 'settings_controls.dart';
 
 /// The Settings tab: the profile card, learning, sound, look and language,
 /// reminder and privacy, your data, and the footer.
@@ -73,7 +70,7 @@ class SettingsPage extends StatelessWidget {
                         horizontal: 16,
                       ),
                       child: Text(
-                        l10n.settingsFooter(appVersion),
+                        l10n.settingsFooter(AppInfo.version),
                         style: settingsHelpStyle(Theme.of(context)),
                       ),
                     ),
@@ -108,7 +105,7 @@ class SettingsPage extends StatelessWidget {
           onChanged: (v) => settings.newCardsPerDay = v.round(),
         ),
         for (final skill in Skill.values)
-          SettingsRow.toggle(
+          GroupedTile.toggle(
             title: skill.label(l10n),
             subtitle: skill.settingsDescription(l10n),
             feature: skill.feature,
@@ -118,7 +115,7 @@ class SettingsPage extends StatelessWidget {
                 settings.isEnabled(skill),
             onChanged: (on) => settings.setSkillEnabled(skill, on),
           ),
-        SettingsRow.toggle(
+        GroupedTile.toggle(
           title: l10n.settingsRomanisation,
           subtitle: l10n.settingsRomanisationDesc,
           value: settings.showRomanisation,
@@ -152,7 +149,7 @@ class SettingsPage extends StatelessWidget {
           semanticValue: (v) => l10n.settingsSpeechRateValue(step(v)),
           onChanged: (v) => settings.speechRate = step(v),
         ),
-        SettingsRow(
+        GroupedTile(
           title: l10n.settingsVoices,
           subtitle: l10n.settingsVoicesSummary(voiced, languages.length),
           trailing: const Icon(Icons.chevron_right),
@@ -167,7 +164,7 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionLook,
       children: <Widget>[
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.palette_outlined),
           title: l10n.settingsAppearance,
           subtitle: appearanceSummary(l10n, settings),
@@ -175,7 +172,7 @@ class SettingsPage extends StatelessWidget {
           feature: Feature.appearance,
           onTap: () => AppNavigator.openAppearance(context),
         ),
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.translate),
           title: l10n.settingsAppLanguage,
           feature: Feature.uiLanguage,
@@ -183,7 +180,16 @@ class SettingsPage extends StatelessWidget {
             horizontal: 20,
             vertical: 12,
           ),
-          trailing: const AppLanguagePicker(),
+          // Until #46 there is only English, and no setting to hold another
+          // choice; FluenoughApp would read one from SettingsNotifier.
+          trailing: AppLanguagePicker(
+            onChanged: (locale) => showAppSnackBar(
+              context,
+              l10n.settingsAppLanguageChanged(
+                AppLanguagePicker.ownName(locale),
+              ),
+            ),
+          ),
         ),
       ],
     );
@@ -197,7 +203,7 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionReminder,
       children: <Widget>[
-        SettingsRow.toggle(
+        GroupedTile.toggle(
           leading: const Icon(Icons.notifications_outlined),
           title: l10n.settingsReminder,
           subtitle: l10n.settingsReminderDesc,
@@ -208,7 +214,7 @@ class SettingsPage extends StatelessWidget {
         // The design puts the time beside the switch. On a row of its own it
         // keeps its own screen-reader node and fits at any text size.
         if (reminderOn && settings.reminder)
-          SettingsRow(
+          GroupedTile(
             leading: const Icon(Icons.schedule),
             title: l10n.settingsReminderTime,
             trailing: Text(
@@ -233,7 +239,7 @@ class SettingsPage extends StatelessWidget {
           ),
         // No way to set or clear a PIN exists yet, so even with the feature
         // on the switch only shows whether this profile has one.
-        SettingsRow.toggle(
+        GroupedTile.toggle(
           leading: const Icon(Icons.lock_outline),
           title: l10n.settingsPinLock,
           subtitle: l10n.settingsPinLockDesc,
@@ -253,21 +259,21 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionData,
       children: <Widget>[
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.file_download_outlined),
           title: l10n.settingsExport,
           subtitle: l10n.settingsExportDesc(state.progress.log.length),
           feature: Feature.logExport,
           padding: _tallRow,
         ),
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.file_upload_outlined),
           title: l10n.settingsImport,
           subtitle: l10n.settingsImportDesc,
           feature: Feature.logImport,
           padding: _tallRow,
         ),
-        SettingsRow(
+        GroupedTile(
           leading: const Icon(Icons.delete_outline),
           title: l10n.settingsDeleteProfile,
           titleColor: Theme.of(context).colorScheme.error,
@@ -363,89 +369,6 @@ class _ProfileCard extends StatelessWidget {
             ),
           ],
         ],
-      ),
-    );
-  }
-}
-
-/// The one interface-language picker (#46): every translation that ships,
-/// from `AppLocalizations.supportedLocales`, each by its own name and ISO
-/// 639-3 code (`localeOwnName`, `localeOwnIso639_3`). Nothing is hard-coded,
-/// so a new ARB file adds itself.
-///
-/// Disabled behind `Feature.uiLanguage`. The new-profile screen's "I speak"
-/// is the same list.
-class AppLanguagePicker extends StatelessWidget {
-  const AppLanguagePicker({super.key});
-
-  /// Each supported locale, with how the picker names it.
-  static List<({Locale locale, String name, String option})> options(
-    AppLocalizations l10n,
-  ) => <({Locale locale, String name, String option})>[
-    for (final locale in AppLocalizations.supportedLocales)
-      () {
-        final own = lookupAppLocalizations(locale);
-        return (
-          locale: locale,
-          name: own.localeOwnName,
-          option: l10n.settingsAppLanguageOption(
-            own.localeOwnName,
-            own.localeOwnIso639_3,
-          ),
-        );
-      }(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final scheme = Theme.of(context).colorScheme;
-    final all = options(l10n);
-    final current = Localizations.localeOf(context);
-    final selected = all
-        .map((o) => o.locale)
-        .firstWhere(
-          (l) => l.languageCode == current.languageCode,
-          orElse: () => all.first.locale,
-        );
-    final incoming = isIncoming(context, Feature.uiLanguage);
-
-    // Until #46 there is only English, and no setting to hold another
-    // choice; FluenoughApp would read one from SettingsNotifier.
-    void chosen(Locale? locale) {
-      if (locale == null) return;
-      final name = all.firstWhere((o) => o.locale == locale).name;
-      showAppSnackBar(context, l10n.settingsAppLanguageChanged(name));
-    }
-
-    return SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.45,
-      child: Container(
-        constraints: const BoxConstraints(minHeight: AppSizes.compactButton),
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-        decoration: BoxDecoration(
-          border: Border.all(color: scheme.outline),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: DropdownButtonHideUnderline(
-          child: DropdownButton<Locale>(
-            value: selected,
-            isExpanded: true,
-            borderRadius: BorderRadius.circular(12),
-            onChanged: incoming ? null : chosen,
-            items: <DropdownMenuItem<Locale>>[
-              for (final o in all)
-                DropdownMenuItem<Locale>(
-                  value: o.locale,
-                  child: Text(
-                    o.option,
-                    locale: o.locale,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-            ],
-          ),
-        ),
       ),
     );
   }

@@ -101,6 +101,10 @@ class _DecksPageState extends State<DecksPage> {
           icon: Icons.error_outline,
           title: l10n.commonDecksFailed,
           body: l10n.commonDecksFailedBody,
+          action: FilledButton(
+            onPressed: state.reload,
+            child: Text(l10n.commonRetry),
+          ),
         );
       case CatalogStatus.ready:
         break;
@@ -154,7 +158,7 @@ class _DecksPageState extends State<DecksPage> {
                 for (final entry in decks)
                   DeckTile(
                     entry: entry,
-                    badge: badgeFor(state, entry),
+                    badge: DeckBadge.forEntry(state, entry),
                     onTap: () => AppNavigator.openDeck(context, entry.id),
                   ),
                 for (final file in broken) BrokenDeckTile(broken: file),
@@ -164,21 +168,6 @@ class _DecksPageState extends State<DecksPage> {
         );
       },
     );
-  }
-
-  /// A deck's badge. For a language the profile learns: what a session on
-  /// the deck would drill now, due and new together, or Done. Otherwise
-  /// Start. Each deck's new cards are counted against the whole daily cap,
-  /// so the badges can add up to more than Today's number.
-  static DeckBadge badgeFor(AppState state, DeckEntry entry) {
-    if (!state.currentProfile.learns(entry.language.code)) {
-      return const DeckBadge(kind: DeckBadgeKind.start);
-    }
-    final counts = state.countsFor(entry);
-    final n = counts.due + counts.fresh;
-    return n > 0
-        ? DeckBadge(kind: DeckBadgeKind.due, count: n)
-        : const DeckBadge(kind: DeckBadgeKind.done);
   }
 }
 

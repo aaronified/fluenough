@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/settings.dart';
@@ -11,10 +12,11 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
-import 'package:fluenough/features/settings/settings_row.dart';
+import 'package:fluenough/features/settings/settings_controls.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
 import 'support.dart';
@@ -28,7 +30,7 @@ Finder _slider(String title) => find.descendant(
 );
 
 Finder _row(String title) =>
-    find.ancestor(of: find.text(title), matching: find.byType(SettingsRow));
+    find.ancestor(of: find.text(title), matching: find.byType(GroupedTile));
 
 void main() {
   group('live settings change SettingsNotifier', () {
@@ -291,11 +293,11 @@ void main() {
       r'^version:\s*([^+\s]+)',
       multiLine: true,
     ).firstMatch(pubspec)!.group(1);
-    expect(appVersion, version);
+    expect(AppInfo.version, version);
 
     usePhone(tester);
     await pumpScreen(tester, const SettingsPage());
-    final footer = find.text(l10nOf(tester).settingsFooter(appVersion));
+    final footer = find.text(l10nOf(tester).settingsFooter(AppInfo.version));
     await scrollTo(tester, footer);
     expect(footer, findsOneWidget);
   });

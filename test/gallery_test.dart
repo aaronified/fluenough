@@ -8,7 +8,7 @@ import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'support/harness.dart';
 
 /// Every screen and state the design's Gallery.dc.html lists, by its `start`
-/// id. The gallery must keep offering each one.
+/// id. The gallery must keep offering each one; it lists other states too.
 const List<String> designIds = <String>[
   'profiles',
   'pin',
@@ -39,11 +39,11 @@ const List<String> designIds = <String>[
 ];
 
 void main() {
-  test('the gallery lists every design screen once', () {
+  test('the gallery lists every design screen, and no id twice', () {
     final ids = allGalleryEntries.map((e) => e.id).toList();
     expect(ids.toSet(), hasLength(ids.length), reason: 'duplicate ids');
-    expect(ids.toSet(), designIds.toSet());
-    expect(darkGalleryIds.every(ids.contains), isTrue);
+    expect(ids, containsAll(designIds));
+    expect(ids, containsAll(darkGalleryIds));
   });
 
   testWidgets('every entry builds on its fixture state', (tester) async {

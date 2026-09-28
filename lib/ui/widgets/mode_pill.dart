@@ -24,6 +24,10 @@ enum ModePillSize {
 /// decorative: they sit beside the skill's name, which screen readers read.
 ///
 /// [muted] draws it greyed, for a skill the phone cannot do (no voice).
+///
+/// Given less width than its label needs, [ModePillSize.label] wraps the
+/// label onto more lines rather than overflowing, so put it in a `Flexible`
+/// in a row.
 class ModePill extends StatelessWidget {
   const ModePill({
     super.key,
@@ -61,6 +65,7 @@ class ModePill extends StatelessWidget {
             Flexible(
               child: Text(
                 skill.label(AppLocalizations.of(context)!),
+                textAlign: TextAlign.start,
                 style: theme.textTheme.labelLarge!.copyWith(
                   color: fg,
                   fontSize: 13,
