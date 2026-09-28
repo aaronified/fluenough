@@ -23,7 +23,7 @@ cheap to test.
 
 ## Data model
 
-Four tables, in one SQLite database per profile (`lib/core/data/database.dart`,
+Five tables, in one SQLite database per profile (`lib/core/data/database.dart`,
 which also says how a migration is added). Times are stored as milliseconds
 since the epoch.
 
@@ -49,6 +49,9 @@ Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one
 export has to protect. SQLite itself refuses an UPDATE or DELETE on it: migration
 1 adds triggers that abort both. See [ADR-0005](adr/0005-scheduling.md).
+
+**`settings`** — the learner's settings, one row per setting by a permanent
+name, as text (migration 2). Per profile, like progress.
 
 ## The review cycle
 
