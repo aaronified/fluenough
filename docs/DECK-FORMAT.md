@@ -33,6 +33,7 @@ Common to every kind.
 | `source` | no | URL the content was derived from. |
 | `description` | no | One or two sentences. |
 | `tags` | no | Deck-level tags, e.g. `[beginner, core]`. |
+| `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
 
 ### `language`
 
@@ -87,7 +88,7 @@ cards:
 | `notes` | no | Usage note shown after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs. |
-| `modes` | no | Which drills this card participates in. Defaults to all applicable. |
+| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition and listening. |
 
 ### A note on `id`
 
@@ -154,6 +155,34 @@ Each `(entry, slot)` pair becomes one production card:
 - **modes** — `grammar` only
 
 ---
+
+## Themes
+
+Vocabulary is taught along one shared path of themes, like the units of a
+course ([ADR-0010](adr/0010-themes.md)). `decks/themes.yaml` lists them, in
+order:
+
+```yaml
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+```
+
+A theme deck is an ordinary vocab deck with a `theme`, and its id is the
+course plus the theme: `hi-en-market` is Hindi from English, Market. Every
+language teaches the same themes in the same order, with its own words.
+
+- **Theme ids are permanent**, like card ids: decks name their theme by it.
+- **One deck per theme per course.** The validator fails a second
+  `hi-en` deck for `market`, and a `theme` that `themes.yaml` does not list.
+- **New cards follow the path.** A course's theme decks are drilled in the
+  file's order unless the learner picks a theme. Nothing is locked.
+- **Phrases are not typed.** Mark a card of more than one word `pos: phrase`:
+  it gets recognition and listening, and no production drill, since a whole
+  sentence is too hard to grade fairly.
+- **Grammar decks are not themes.** They stay separate from the path.
 
 ## Facts files
 

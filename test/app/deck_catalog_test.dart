@@ -58,11 +58,23 @@ void main() {
           .whereType<File>()
           .map((f) => f.path.replaceAll(r'\', '/'))
           .where(AssetDeckSource.isDeckPath)
-          .where((p) => !DeckCatalog.isFactsFile(File(p).readAsStringSync()))
+          // Facts and themes files sit beside the decks but are not decks.
+          .where(
+            (p) => !{
+              'facts',
+              'themes',
+            }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
+          )
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
       expect(catalog.decks.map((d) => d.path).toSet(), onDisk);
+    });
+
+    test('the shared theme path is bundled and read', () {
+      expect(catalog.themes.first.id, 'first-words');
+      expect(catalog.themes.map((t) => t.id), contains('market'));
+      expect(catalog.themeById('groceries')!.name, 'Groceries');
     });
 
     test('includes the known decks, in path order', () {
@@ -174,6 +186,72 @@ void main() {
       final paths = await AssetDeckSource(rootBundle).list();
       expect(paths, contains('decks/es/es-core-100.yaml'));
       expect(paths.every(AssetDeckSource.isDeckPath), isTrue);
+    });
+  });
+
+  group('themes', () {
+    const themes = '''
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+  - { id: help, name: "Help" }
+''';
+
+    String deck(String id, {String? theme, String lang = 'hi'}) =>
+        '''
+schema: 1
+id: $id
+name: "$id"
+${theme == null ? '' : 'theme: $theme'}
+language: { code: $lang, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: $id-0001
+    target: "नमस्ते"
+    native: "hello"
+''';
+
+    test(
+      'a course\'s theme decks follow the path; the rest keep path order',
+      () {
+        final catalog = DeckCatalog.parseAll({
+          'decks/themes.yaml': themes,
+          'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
+          'decks/hi/hi-en-help.yaml': deck('hi-en-help', theme: 'help'),
+          'decks/hi/hi-en-first-words.yaml': deck(
+            'hi-en-first-words',
+            theme: 'first-words',
+          ),
+          'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+          'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
+        });
+        expect(catalog.broken, isEmpty);
+        expect(catalog.themes.map((t) => t.id), [
+          'first-words',
+          'market',
+          'help',
+        ]);
+        expect(catalog.decks.map((d) => d.id), [
+          'hi-en-core',
+          'hi-en-first-words',
+          'hi-en-market',
+          'hi-en-help',
+          'ja-en-kana',
+        ]);
+      },
+    );
+
+    test('a broken themes file is reported, not fatal', () {
+      final catalog = DeckCatalog.parseAll({
+        'decks/themes.yaml': 'schema: 1\nkind: themes\nthemes: []\n',
+        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+      });
+      expect(catalog.broken.single.path, 'decks/themes.yaml');
+      expect(catalog.decks.single.deck.theme, 'market');
+      expect(catalog.themes, isEmpty);
     });
   });
 }
