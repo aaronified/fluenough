@@ -23,7 +23,9 @@ cheap to test.
 
 ## Data model
 
-Four tables.
+Four tables, in one SQLite database per profile (`lib/core/data/database.dart`,
+which also says how a migration is added). Times are stored as milliseconds
+since the epoch.
 
 **`decks`** — metadata for each loaded deck, keyed by deck id.
 
@@ -45,7 +47,8 @@ interval_before, interval_after, ease_before, ease_after
 
 Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one
-export has to protect. See [ADR-0005](adr/0005-scheduling.md).
+export has to protect. SQLite itself refuses an UPDATE or DELETE on it: migration
+1 adds triggers that abort both. See [ADR-0005](adr/0005-scheduling.md).
 
 ## The review cycle
 
