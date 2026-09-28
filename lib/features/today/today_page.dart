@@ -93,50 +93,60 @@ class _TodayContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final decks = state.profileDecks.take(todayDeckCount).toList();
     return SingleChildScrollView(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
+      padding: const EdgeInsetsDirectional.only(bottom: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Padding(
-            // The design's header sits 24 from the start edge, 16 from the end.
-            padding: const EdgeInsetsDirectional.only(start: 8),
-            child: _Header(state: state),
-          ),
+          _Header(state: state),
           const SizedBox(height: 8),
-          if (!state.progressIsSaved) ...<Widget>[
-            const _NotSavedBanner(),
-            const SizedBox(height: 16),
-          ],
-          if (numbers.hasDecks) DueCard(numbers: numbers) else const _NoDecks(),
-          const SizedBox(height: 16),
-          StreakCard(numbers: numbers),
-          if (decks.isNotEmpty) ...<Widget>[
-            const SizedBox(height: 24),
-            _DecksHeading(
-              onSeeAll: () => AppNavigator.selectTab(context, ShellTab.decks),
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: AppSizes.gutter,
             ),
-            const SizedBox(height: 8),
-            GroupedList(
-              outerRadius: AppRadii.group,
-              innerRadius: 8,
-              gap: 4,
-              children: <Widget>[
-                for (final entry in decks)
-                  DeckTile(
-                    entry: entry,
-                    glyphSize: 52,
-                    badge: _badgeFor(state, entry),
-                    onTap: () => AppNavigator.openDeck(context, entry.id),
-                  ),
-              ],
-            ),
-          ],
-          const SizedBox(height: 16),
-          const _FactCard(),
+            child: _sections(context),
+          ),
         ],
       ),
+    );
+  }
+
+  Widget _sections(BuildContext context) {
+    final decks = state.profileDecks.take(todayDeckCount).toList();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        if (!state.progressIsSaved) ...<Widget>[
+          const _NotSavedBanner(),
+          const SizedBox(height: 16),
+        ],
+        if (numbers.hasDecks) DueCard(numbers: numbers) else const _NoDecks(),
+        const SizedBox(height: 16),
+        StreakCard(numbers: numbers),
+        if (decks.isNotEmpty) ...<Widget>[
+          const SizedBox(height: 24),
+          _DecksHeading(
+            onSeeAll: () => AppNavigator.selectTab(context, ShellTab.decks),
+          ),
+          const SizedBox(height: 8),
+          GroupedList(
+            outerRadius: AppRadii.group,
+            innerRadius: 8,
+            gap: 4,
+            children: <Widget>[
+              for (final entry in decks)
+                DeckTile(
+                  entry: entry,
+                  glyphSize: 52,
+                  badge: _badgeFor(state, entry),
+                  onTap: () => AppNavigator.openDeck(context, entry.id),
+                ),
+            ],
+          ),
+        ],
+        const SizedBox(height: 16),
+        const _FactCard(),
+      ],
     );
   }
 }
@@ -155,8 +165,10 @@ class _Header extends StatelessWidget {
     final now = state.now();
     final locale = Localizations.localeOf(context).toLanguageTag();
     final profile = state.currentProfile;
-    return ConstrainedBox(
+    // The design's header: 72 high, 24 from the start edge, 16 from the end.
+    return Container(
       constraints: const BoxConstraints(minHeight: 72),
+      padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 16, 0),
       child: Row(
         children: <Widget>[
           Expanded(
