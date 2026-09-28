@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/features.dart';
 import '../../core/data/deck_parser.dart';
 import '../../l10n/app_localizations.dart';
@@ -90,7 +91,10 @@ class _ImportPageState extends State<ImportPage> {
   }
 
   void _choose(ImportSource? source) {
-    if (source == null || isIncoming(context, source.feature)) return;
+    if (source == null ||
+        AppScope.read(context).features.isIncoming(source.feature)) {
+      return;
+    }
     setState(() => _source = source);
   }
 
