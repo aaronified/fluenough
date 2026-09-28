@@ -27,14 +27,14 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     section: GallerySection.learn,
     label: 'Deck detail', // ui-literal-ok: debug-only gallery
     note: 'Start one skill or all due', // ui-literal-ok: debug-only gallery
-    builder: (_) => const DeckDetailPage(deckId: 'es-core-100'),
+    builder: (_) => const DeckDetailPage(deckId: 'es-en-core-100'),
   ),
   GalleryEntry(
     id: 'deck-novoice',
     section: GallerySection.learn,
     label: 'Deck, no voice', // ui-literal-ok: debug-only gallery
     note: 'Listening disabled, with a way to fix it', // ui-literal-ok: debug-only gallery
-    builder: (_) => const DeckDetailPage(deckId: 'ja-hiragana'),
+    builder: (_) => const DeckDetailPage(deckId: 'ja-en-hiragana'),
     state: (app) => GalleryFixtures.state(app, currentProfileId: 'mira'),
   ),
   GalleryEntry(

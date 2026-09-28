@@ -31,7 +31,7 @@ class DeckParseException implements Exception {
   /// 1-based column of the offending key or value, or null if unknown.
   final int? column;
 
-  /// `es-core-100.yaml:12:5: <message>`, the way a compiler reports it.
+  /// `es-en-core-100.yaml:12:5: <message>`, the way a compiler reports it.
   @override
   String toString() {
     final at = line == null
@@ -285,7 +285,7 @@ class _Reader {
       fail(
         node,
         '$name must be lowercase letters and digits joined by single hyphens, '
-        'like "es-core-0001"; got "$id"',
+        'like "es-en-core-0001"; got "$id"',
       );
     }
     return id;

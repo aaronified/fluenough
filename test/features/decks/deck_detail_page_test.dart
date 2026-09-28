@@ -17,9 +17,9 @@ import 'package:fluenough/ui/widgets/mode_pill.dart';
 
 import '../../support/harness.dart';
 
-const String spanish = 'es-core-100';
-const String hiragana = 'ja-hiragana';
-const String grammar = 'es-grammar-present-ar';
+const String spanish = 'es-en-core-100';
+const String hiragana = 'ja-en-hiragana';
+const String grammar = 'es-en-grammar-present-ar';
 
 Future<AppState> pumpDeck(
   WidgetTester tester,

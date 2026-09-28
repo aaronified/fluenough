@@ -19,7 +19,7 @@ import 'grammar_cells.dart';
 
 /// The deck the fixture drills: the real bundled pattern, read from the
 /// catalog.
-const String grammarFixtureDeckId = 'es-grammar-present-ar';
+const String grammarFixtureDeckId = 'es-en-grammar-present-ar';
 
 /// A cell named by its content: the lemma and the slot label.
 typedef GrammarPick = ({String lemma, String slot});

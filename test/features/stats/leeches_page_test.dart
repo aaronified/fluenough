@@ -23,7 +23,7 @@ Future<AppState> fixture({
   );
 }
 
-/// The first fixture leech: el pan, es-core-100, production, 5 lapses.
+/// The first fixture leech: el pan, es-en-core-100, production, 5 lapses.
 Finder firstCard() => find.byType(LeechCard).first;
 
 Finder inFirst(Finder f) => find.descendant(of: firstCard(), matching: f);
@@ -38,7 +38,7 @@ void main() {
       state: await fixture(),
     );
     final l10n = l10nOf(tester);
-    final deck = state.deckById('es-core-100')!.deck.name;
+    final deck = state.deckById('es-en-core-100')!.deck.name;
 
     expect(find.text(l10n.leechesIntro(kLeechThreshold)), findsOneWidget);
     expect(find.byType(LeechCard), findsNWidgets(2));
@@ -71,7 +71,7 @@ void main() {
       state: await fixture(),
     );
     final l10n = l10nOf(tester);
-    final deck = state.deckById('es-core-100')!.deck.name;
+    final deck = state.deckById('es-en-core-100')!.deck.name;
     final skill = l10n.skillProduction;
     final before = List<ReviewEvent>.of(state.progress.log);
     final statesBefore = Map.of(state.progress.states);
