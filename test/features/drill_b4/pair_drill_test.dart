@@ -8,10 +8,8 @@ import 'package:fluenough/features/drill/pair_drill.dart';
 import 'package:fluenough/features/drill/pair_fixture.dart';
 import 'package:fluenough/features/gallery/gallery_entry.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
-import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
-import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
 
 import '../../support/harness.dart';
@@ -29,31 +27,6 @@ FeedbackBanner banner(WidgetTester tester) =>
 Future<void> choose(WidgetTester tester, PairSound sound) async {
   await tester.tap(find.text(sound.target));
   await tester.pumpAndSettle();
-}
-
-/// `DrillFrame`'s pill row does not let its `ModePill` shrink, and at 2.0 the
-/// test font, whose glyphs are squares as wide as the font size, makes
-/// "Minimal pairs" wider than the whole row. On a phone's Roboto it fits.
-/// That is `lib/ui`'s to fix (in B4's hand-off), so allow exactly that one
-/// overflow: any other overflow is a second exception, which the test
-/// binding reports as "Multiple exceptions" and this rejects.
-void expectNoOverflowButThePill(WidgetTester tester, String reason) {
-  final error = tester.takeException();
-  if (error == null) return;
-  expect(
-    error,
-    isA<FlutterError>().having(
-      (e) => e.message,
-      'message',
-      contains('overflowed'),
-    ),
-    reason: reason,
-  );
-  expect(
-    tester.getSize(find.byType(ModePill)).width,
-    greaterThan(tester.getSize(find.byType(DrillCard)).width),
-    reason: '$reason: only the pill row may overflow',
-  );
 }
 
 void main() {
@@ -166,7 +139,11 @@ void main() {
             GalleryPreview(key: UniqueKey(), entry: entry, dark: dark),
             state: app,
           );
-          expectNoOverflowButThePill(tester, '${entry.id} $scale $dark');
+          expect(
+            tester.takeException(),
+            isNull,
+            reason: '${entry.id} $scale $dark',
+          );
           expect(find.byType(PairDrill), findsOneWidget);
         }
       }
