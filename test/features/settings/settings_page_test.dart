@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/settings.dart';
@@ -292,11 +293,11 @@ void main() {
       r'^version:\s*([^+\s]+)',
       multiLine: true,
     ).firstMatch(pubspec)!.group(1);
-    expect(appVersion, version);
+    expect(AppInfo.version, version);
 
     usePhone(tester);
     await pumpScreen(tester, const SettingsPage());
-    final footer = find.text(l10nOf(tester).settingsFooter(appVersion));
+    final footer = find.text(l10nOf(tester).settingsFooter(AppInfo.version));
     await scrollTo(tester, footer);
     expect(footer, findsOneWidget);
   });

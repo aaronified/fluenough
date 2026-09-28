@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
@@ -18,11 +19,6 @@ import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
 import 'settings_controls.dart';
-
-/// The version the footer shows. There is no package to read it from the
-/// build (AGENTS.md rule 6), so it is kept in step with `pubspec.yaml` by
-/// hand, and `test/features/settings/settings_page_test.dart` checks it.
-const String appVersion = '0.1.0';
 
 /// The Settings tab: the profile card, learning, sound, look and language,
 /// reminder and privacy, your data, and the footer.
@@ -74,7 +70,7 @@ class SettingsPage extends StatelessWidget {
                         horizontal: 16,
                       ),
                       child: Text(
-                        l10n.settingsFooter(appVersion),
+                        l10n.settingsFooter(AppInfo.version),
                         style: settingsHelpStyle(Theme.of(context)),
                       ),
                     ),
