@@ -78,7 +78,7 @@ class AppState extends ChangeNotifier {
     String? currentProfileId,
   }) {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
-    return AppState(
+    final state = AppState(
       catalog: decks == null ? DeckCatalog.bundled() : DeckCatalog(decks),
       progress: progress ?? MemoryProgress(),
       tts: tts,
@@ -88,6 +88,9 @@ class AppState extends ChangeNotifier {
       profiles: profiles,
       currentProfileId: currentProfileId,
     );
+    // Past the first-launch setup (#53), unless a test brings its own.
+    if (settings == null) state.settings.spokenLanguages = const <String>['en'];
+    return state;
   }
 
   /// Which features are switched on. Read it; wrap what it says is incoming
@@ -149,10 +152,23 @@ class AppState extends ChangeNotifier {
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 
   /// The decks in the languages the current profile learns.
-  List<DeckEntry> get profileDecks => <DeckEntry>[
-    for (final entry in decks)
-      if (currentProfile.learns(entry.language.code)) entry,
-  ];
+  ///
+  /// Decks taught from a language the learner speaks come first, best known
+  /// first (#53); otherwise the catalog's order holds.
+  List<DeckEntry> get profileDecks {
+    final mine = <DeckEntry>[
+      for (final entry in decks)
+        if (currentProfile.learns(entry.language.code)) entry,
+    ];
+    int rank(DeckEntry e) =>
+        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final byRank = mine.indexed.toList()
+      ..sort((a, b) {
+        final order = rank(a.$2).compareTo(rank(b.$2));
+        return order != 0 ? order : a.$1.compareTo(b.$1);
+      });
+    return <DeckEntry>[for (final (_, entry) in byRank) entry];
+  }
 
   /// Every language the catalog teaches, one per code.
   List<LanguageInfo> get languages => _catalog.languages;

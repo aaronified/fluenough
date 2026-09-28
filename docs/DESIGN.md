@@ -117,14 +117,17 @@ fails to parse is skipped and surfaced in the UI; it must not take the app down.
 
 Each language has a facts file (`<code>-facts.yaml`, see "Facts files" in
 `DECK-FORMAT.md`) alongside its decks. Once a day the app shows the learner one
-fact about each language they are studying, written in their interface
-language.
+fact about each language they are studying, in each language they speak.
+Those are the languages they picked and ranked on first launch (#53), which
+are kept apart from the interface language.
 
-A fact is eligible when its `text` has an entry for the interface language and
-its `contrast` is either absent or equal to that language. Facts without a
-contrast are the guaranteed pool, at least 30 per language, so a learner gets a
-month of facts whatever their interface language. Contrast facts are extra, and
-only make sense to someone reading in that language.
+A fact is shown in a spoken language when its `text` has an entry in it. A
+contrast fact is shown only to a learner who speaks the language it contrasts
+with. So a learner of Hindi who speaks Bengali and English sees the general
+facts in Bengali and in English, and the contrasts with Bengali and with
+English, their best-known language first. Facts without a contrast are the
+guaranteed pool, at least 30 per language, so a learner gets a month of facts
+whatever they speak.
 
 Seen facts are remembered by id, like review history keyed on card ids, so fact
 ids are permanent. Facts are not drilled and never enter `reviews`. The order,
