@@ -9,6 +9,7 @@ import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
 import 'deck_catalog.dart';
 import 'features.dart';
+import 'log_files.dart';
 import 'memory_progress.dart';
 import 'profile.dart';
 import 'session.dart';
@@ -55,6 +56,7 @@ class AppState extends ChangeNotifier {
     required this._tts,
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
+    this.logFiles = const PickerLogFiles(),
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
@@ -75,6 +77,7 @@ class AppState extends ChangeNotifier {
     ProgressStore? progress,
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
+    LogFiles logFiles = const PickerLogFiles(),
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
@@ -86,6 +89,7 @@ class AppState extends ChangeNotifier {
       tts: tts,
       features: features,
       clock: () => fixed,
+      logFiles: logFiles,
       settings: settings,
       profiles: profiles,
       currentProfileId: currentProfileId,
@@ -104,6 +108,9 @@ class AppState extends ChangeNotifier {
 
   /// Scheduling state and the review log. Has its own notifier.
   final ProgressStore progress;
+
+  /// Where the review log's backup is saved and read from (#20).
+  final LogFiles logFiles;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.

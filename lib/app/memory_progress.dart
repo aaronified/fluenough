@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../core/data/log_jsonl.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
@@ -50,6 +51,14 @@ abstract interface class ProgressStore implements Listenable {
     LeechActionKind kind, {
     required DateTime now,
   });
+
+  /// Merges a backup (#20): adds the [reviews] and [leechActions] not
+  /// already here, then rebuilds every state from the whole log. Importing
+  /// the same backup twice adds nothing. Returns how many reviews were new.
+  Future<int> importLog(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions,
+  );
 }
 
 /// Progress held in memory: an SM-2 state per `(deck, card, mode)` and the
@@ -147,11 +156,65 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     notifyListeners();
     return action;
   }
+
+  @override
+  Future<int> importLog(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions,
+  ) async {
+    final known = <String>{for (final e in _log) reviewIdentity(logged(e))};
+    final fresh = <LoggedReview>[
+      for (final r in reviews)
+        if (known.add(reviewIdentity(r))) r,
+    ];
+    final knownActions = <String>{
+      for (final a in _leechActions) leechIdentity(a),
+    };
+    final actions = actionsInTimeOrder(<LeechAction>[
+      ..._leechActions,
+      for (final a in leechActions)
+        if (knownActions.add(leechIdentity(a))) a,
+    ]);
+    _replace(
+      inTimeOrder(<LoggedReview>[..._log.map(logged), ...fresh]),
+      actions,
+    );
+    return fresh.length;
+  }
+
+  /// Everything replaced by [events] and [leechActions], and the states
+  /// rebuilt from them. For an import (#20).
+  void replaceWith(List<ReviewEvent> events, List<LeechAction> leechActions) =>
+      _replace(
+        inTimeOrder(events.map(logged)),
+        actionsInTimeOrder(leechActions),
+      );
+
+  /// [reviews] and [actions] are oldest first.
+  void _replace(List<LoggedReview> reviews, List<LeechAction> actions) {
+    final replayed = replayReviews(reviews, effects: LeechEffects(actions));
+    _log
+      ..clear()
+      ..addAll(replayed.events);
+    _states
+      ..clear()
+      ..addAll(replayed.states);
+    _leechActions
+      ..clear()
+      ..addAll(actions);
+    notifyListeners();
+  }
 }
 
 /// Questions every screen asks of a [ProgressStore], answered the same way
 /// everywhere. Pure reads of [ProgressStore.states] and [ProgressStore.log].
 extension ProgressQueries on ProgressStore {
+  /// The review log and leech actions as a JSONL backup (#20).
+  String exportJsonl() => LogJsonl.encode(
+    inTimeOrder(log.map(logged)),
+    actionsInTimeOrder(leechActions),
+  );
+
   /// What the leech actions add up to: which pairs are reset or set aside.
   LeechEffects get leechEffects => LeechEffects(leechActions);
 
