@@ -351,12 +351,18 @@ class AppState extends ChangeNotifier {
     final voiced = <String, bool>{
       for (final entry in decks) entry.id: hasVoice(entry.language),
     };
+    final leeches = progress.leechEffects;
     final queue = SessionQueue.build(
       cards: cards,
       stateOf: (card, mode) => progress.stateOf(card.deckId, card.id, mode),
       hasVoice: (card) => voiced[card.deckId] ?? false,
       now: now(),
       newCardLimit: newLimit,
+      isSetAside: (card, mode) => leeches.isSetAside((
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: mode,
+      )),
       modes: modes,
     );
     return request.newOnly ? queue.withoutDue() : queue;

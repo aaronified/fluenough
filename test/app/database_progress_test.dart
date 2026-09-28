@@ -203,4 +203,91 @@ void main() {
       isNot(databaseFileName(Profile.defaultProfile)),
     );
   });
+
+  test('leech actions are saved, and a reset holds after reopening', () async {
+    const key = (
+      deckId: 'hi-en-market',
+      cardId: 'hi-en-market-0001',
+      mode: DrillMode.production,
+    );
+    final first = await DatabaseProgress.open(fileDb());
+    answer(first, key.cardId, 4, at);
+    answer(first, key.cardId, 1, at.add(const Duration(days: 1)));
+    first.actOnLeech(
+      key,
+      LeechActionKind.reset,
+      now: at.add(const Duration(days: 2)),
+    );
+    expect(first.stateOf(key.deckId, key.cardId, key.mode), isNull);
+    answer(first, key.cardId, 5, at.add(const Duration(days: 3)));
+    first.actOnLeech(
+      key,
+      LeechActionKind.setAside,
+      now: at.add(const Duration(days: 3, hours: 1)),
+    );
+    final memory = first.stateOf(key.deckId, key.cardId, key.mode)!;
+    await first.close();
+    first.dispose();
+
+    final db = fileDb();
+    final again = await DatabaseProgress.open(db);
+    addTearDown(again.dispose);
+    addTearDown(again.close);
+    expect(again.leechActions.map((a) => a.kind), [
+      LeechActionKind.reset,
+      LeechActionKind.setAside,
+    ]);
+    expect(again.log, hasLength(3), reason: 'no review is removed');
+    final restored = again.stateOf(key.deckId, key.cardId, key.mode)!;
+    expect(fields(restored), fields(memory));
+    expect(restored.repetitions, 1, reason: 'restarted at the reset');
+    expect(again.leechEffects.isSetAside(key), isTrue);
+
+    final rows = await db.reviewsDao.all();
+    expect(rows.last.intervalBefore, isNull, reason: 'fresh after the reset');
+    final cached = (await db.cardStatesDao.of(
+      key.deckId,
+      key.cardId,
+      key.mode,
+    ))!;
+    expect(cached.repetitions, restored.repetitions);
+  });
+
+  test(
+    'a set-aside pair leaves the session; brought back, it returns',
+    () async {
+      final progress = await DatabaseProgress.open(
+        AppDatabase(NativeDatabase.memory()),
+      );
+      addTearDown(progress.dispose);
+      addTearDown(progress.close);
+      final state = AppState.test(progress: progress, now: at);
+      addTearDown(state.dispose);
+      await state.load();
+      final deck = state.decks.firstWhere((d) => d.cards.length >= 2);
+      final card = deck.cards.first;
+      const mode = DrillMode.recognition;
+      progress.record(
+        deckId: deck.id,
+        cardId: card.id,
+        mode: mode,
+        grade: 1,
+        now: at.subtract(const Duration(days: 2)),
+      );
+      bool queued() => state
+          .buildSession(DrillRequest.deck(deck.id))
+          .items
+          .any((i) => i.card.id == card.id && i.mode == mode);
+      expect(queued(), isTrue);
+
+      final key = (deckId: deck.id, cardId: card.id, mode: mode);
+      progress.actOnLeech(key, LeechActionKind.setAside, now: at);
+      expect(queued(), isFalse);
+      expect(progress.log, hasLength(1), reason: 'its history stays');
+
+      progress.actOnLeech(key, LeechActionKind.bringBack, now: at);
+      expect(queued(), isTrue);
+      await progress.flush();
+    },
+  );
 }

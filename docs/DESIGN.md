@@ -23,7 +23,7 @@ cheap to test.
 
 ## Data model
 
-Five tables, in one SQLite database per profile (`lib/core/data/database.dart`,
+Six tables, in one SQLite database per profile (`lib/core/data/database.dart`,
 which also says how a migration is added). Times are stored as milliseconds
 since the epoch.
 
@@ -52,6 +52,11 @@ export has to protect. SQLite itself refuses an UPDATE or DELETE on it: migratio
 
 **`settings`** — the learner's settings, one row per setting by a permanent
 name, as text (migration 2). Per profile, like progress.
+
+**`leech_actions`** — what the learner did about leeches: Reset, Undo, Set
+aside, Bring back (migration 3). Append-only and guarded like `reviews`.
+Replaying the log reads it: a pair restarts after a reset that still holds,
+and a set-aside pair is left out of every session. No review is touched.
 
 ## The review cycle
 
