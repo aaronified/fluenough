@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/theme.dart';
+import 'package:fluenough/ui/widgets/app_language_picker.dart';
 import 'package:fluenough/ui/widgets/expressive_shape.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/segmented.dart';
@@ -147,5 +150,45 @@ void main() {
       // shape narrower than its box; none is less than 80% of it.
       expect(bounds.width, greaterThan(0.8 * 112), reason: shape.name);
     }
+  });
+
+  testWidgets('AppLanguagePicker: both forms list every translation, and '
+      'are disabled while the feature is incoming', (tester) async {
+    Future<void> pump(FeatureRegistry features) => pumpScreen(
+      tester,
+      Scaffold(
+        body: Builder(
+          builder: (context) => Column(
+            children: <Widget>[
+              AppLanguagePicker(onChanged: (_) {}),
+              AppLanguagePicker(
+                onChanged: (_) {},
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.newProfileSpeaks,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      state: AppState.test(features: features),
+    );
+    List<DropdownButton<Locale>> pickers() => tester
+        .widgetList<DropdownButton<Locale>>(find.byType(DropdownButton<Locale>))
+        .toList();
+
+    await pump(FeatureRegistry.all());
+    expect(pickers(), hasLength(2));
+    for (final picker in pickers()) {
+      expect(
+        picker.items!.map((i) => i.value),
+        orderedEquals(AppLocalizations.supportedLocales),
+      );
+      expect(picker.value, const Locale('en'));
+      expect(picker.onChanged, isNotNull);
+    }
+
+    await pump(const FeatureRegistry.shipped());
+    expect(pickers().map((p) => p.onChanged), everyElement(isNull));
   });
 }
