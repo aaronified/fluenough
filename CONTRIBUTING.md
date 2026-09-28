@@ -119,7 +119,7 @@ Converting an existing wordlist:
 ```sh
 python3 tools/import_csv.py words.csv \
     --id fr-core-100 --name "French Core" \
-    --language fr --language-name French --tts fr-FR \
+    --language fr --language-name French --iso639-3 fra --tts fr-FR \
     --license CC0-1.0 > decks/fr/fr-core-100.yaml
 ```
 

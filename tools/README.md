@@ -30,7 +30,7 @@ used when present. `front`/`back` work as aliases. List columns split on `|`.
 ```sh
 python3 tools/import_csv.py words.csv \
     --id es-food --name "Spanish food" \
-    --language es --language-name Spanish --tts es-ES \
+    --language es --language-name Spanish --iso639-3 spa --tts es-ES \
     --license CC0-1.0 > decks/es/es-food.yaml
 
 python3 tools/validate_decks.py decks/es/es-food.yaml

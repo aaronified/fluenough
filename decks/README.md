@@ -26,6 +26,18 @@ Validate before committing — CI runs exactly this:
 python3 tools/validate_decks.py decks/
 ```
 
+## Every language
+
+- **An ISO 639-3 code on every language block.** `language` and `native` both
+  carry `iso639_3` (`hin`, `spa`, `eng`) beside `code`. CI rejects a deck
+  without one.
+- **A facts file, `<code>-facts.yaml`, with at least 30 facts.** One fact about
+  the language is shown each day, and 30 of them must be true whatever the
+  learner's interface language. Facts that compare it with one interface
+  language (say, how its s sounds differ from English) are extra and marked
+  `contrast`. See "Facts files" in the format specification. CI checks a facts
+  file when there is one; it does not yet require every language to have one.
+
 ## Two rules that matter more than the rest
 
 **Quote your romanisations.** YAML turns bare `no`, `yes`, `on` and `off` into
