@@ -222,6 +222,15 @@ void main() {
     });
   });
 
+  test('withoutDue keeps only the new pairs', () {
+    final queue = build(
+      [card('a'), card('b')],
+      states: {('a', DrillMode.recognition): dueDaysAgo(1)},
+    ).withoutDue();
+    expect(ids(queue.items), ['b:recognition']);
+    expect(queue.due, isEmpty);
+  });
+
   test('the empty queue is empty', () {
     expect(SessionQueue.empty.isEmpty, isTrue);
     expect(SessionQueue.empty.items, isEmpty);
