@@ -45,6 +45,7 @@ void main() {
       Feature.drillRecognition,
       Feature.drillProduction,
       Feature.drillListening,
+      Feature.drillGrammar,
     });
   });
 

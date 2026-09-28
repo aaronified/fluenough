@@ -8,6 +8,7 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/deck_facts.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/drill/grammar_drill.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
@@ -221,7 +222,7 @@ void main() {
     expect(request.tags, <String>{'food'});
   });
 
-  testWidgets('a grammar deck: its cells previewed, its row incoming', (
+  testWidgets('a grammar deck: its cells previewed, its row live', (
     tester,
   ) async {
     usePhone(tester);
@@ -243,19 +244,13 @@ void main() {
       findsOneWidget,
     );
 
+    // The grammar drill ships (#14), so its row is live.
     final row = skillRow(l10n, Skill.grammar);
     expect(row, findsOneWidget);
     expect(
       find.descendant(of: row, matching: find.byType(IncomingBadge)),
-      findsOneWidget,
+      findsNothing,
     );
-    expect(
-      find.bySemanticsLabel(
-        l10n.incomingSemanticsLabel(Skill.grammar.label(l10n)),
-      ),
-      findsOneWidget,
-    );
-    expect(find.text(l10n.deckReviewAll(0)), findsOneWidget);
 
     final first = pattern.entries.first;
     await tester.scrollUntilVisible(
@@ -264,8 +259,13 @@ void main() {
     );
     expect(find.text(first.forms[pattern.slots.first]!), findsOneWidget);
 
-    await tapVisible(tester, row);
-    expect(find.text(l10n.incomingSnackBar), findsOneWidget);
-    expect(find.byType(DrillPage), findsNothing);
+    // Its row's button opens the live grammar drill.
+    await tapVisible(
+      tester,
+      find.descendant(of: row, matching: find.byType(FilledButton)),
+    );
+    expect(find.text(l10n.incomingSnackBar), findsNothing);
+    expect(find.byType(DrillPage), findsOneWidget);
+    expect(find.byType(GrammarDrill), findsOneWidget);
   });
 }
