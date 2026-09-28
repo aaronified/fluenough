@@ -95,6 +95,19 @@ final class DeckEntry extends CatalogEntry {
 
   List<Card> get cards => deck.cards;
 
+  /// How many cards the deck has, as a deck row counts them. A grammar deck
+  /// has no cards until the expander lands (#2), so it counts its pattern's
+  /// cells that have a form: the cards it will expand to.
+  int get itemCount {
+    final pattern = deck.pattern;
+    if (deck.cards.isNotEmpty || pattern == null) return deck.cards.length;
+    var cells = 0;
+    for (final entry in pattern.entries) {
+      cells += entry.forms.values.where((form) => form != null).length;
+    }
+    return cells;
+  }
+
   /// Whether this deck teaches a writing system. There is no such deck kind:
   /// a script deck is a vocab deck tagged `script`, as both bundled script
   /// decks are.
