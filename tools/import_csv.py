@@ -2,9 +2,9 @@
 """Convert a CSV wordlist into a Fluenough deck.
 
     python3 tools/import_csv.py words.csv \
-        --id es-food --name "Spanish food" \
+        --id es-en-food --name "Spanish food" \
         --language es --language-name Spanish --iso639-3 spa --tts es-ES \
-        --license CC0-1.0 > decks/es/es-food.yaml
+        --license CC0-1.0 > decks/es/es-en-food.yaml
 
 The CSV needs a header row. `target` and `native` are required; `reading`,
 `tags`, `pos`, `notes`, `alt_target` and `alt_native` are used if present.
@@ -61,7 +61,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("csv_file", type=Path)
-    p.add_argument("--id", required=True, help="deck id; must match the filename stem")
+    p.add_argument("--id", required=True, help="deck id, such as es-en-food: the language learned, the language it is taught from, a name; must match the filename stem")
     p.add_argument("--name", required=True)
     p.add_argument("--language", required=True, help="language code being learned, e.g. es")
     p.add_argument("--language-name", required=True)

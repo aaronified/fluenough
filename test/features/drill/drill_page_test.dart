@@ -24,8 +24,8 @@ import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
 
-const String spanish = 'es-core-100';
-const String hiragana = 'ja-hiragana';
+const String spanish = 'es-en-core-100';
+const String hiragana = 'ja-en-hiragana';
 
 Future<AppState> pumpDrill(
   WidgetTester tester,
@@ -344,7 +344,7 @@ void main() {
   testWidgets('an empty queue shows the empty state', (tester) async {
     usePhone(tester);
     // A grammar deck has no cards until the expander (#2).
-    await pumpDrill(tester, DrillRequest.deck('es-grammar-present-ar'));
+    await pumpDrill(tester, DrillRequest.deck('es-en-grammar-present-ar'));
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillEmptyTitle), findsOneWidget);
     expect(find.text(l10n.drillEmptyBody), findsOneWidget);

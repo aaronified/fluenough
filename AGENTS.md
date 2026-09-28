@@ -97,7 +97,7 @@ Every card id keys the review history of every user who has ever studied that
 card. Change one and you orphan their progress. Reuse one and you silently
 attach old history to new content.
 
-Ids will look inconsistent — `es-core-0001` then `es-core-0010`, gaps
+Ids will look inconsistent — `es-en-core-0001` then `es-en-core-0010`, gaps
 everywhere, `ja-test-no` next to `ja-bare-0001`. **This is not a mess to clean
 up.** Making them sequential is the single most destructive change anyone can
 make to this repository, it will pass every test, and no reviewer will
@@ -105,11 +105,16 @@ necessarily catch it.
 
 To retire a card, delete it. Never repurpose it.
 
+The one exception was #51, which renamed every deck and card id once so that an
+id names the language a deck is taught from (`es-core-0001` became
+`es-en-core-0001`). It was done before any progress was saved anywhere, and
+will not be repeated.
+
 ### 2. Quote YAML values that are not obviously prose.
 
 YAML resolves bare `no`, `yes`, `on`, `off`, `true` and `false` to booleans,
 and `007` or `1.0` to numbers. The hiragana `の` romanises to `no`, so this is
-not hypothetical — it was a real bug in the first draft of `ja-hiragana.yaml`.
+not hypothetical — it was a real bug in the first draft of the hiragana deck.
 
 ```yaml
 native: no        # WRONG — the boolean false

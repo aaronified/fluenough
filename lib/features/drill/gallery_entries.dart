@@ -26,7 +26,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Recognition', // ui-literal-ok: debug-only gallery
     note: 'See it, recall the meaning', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('ja-hiragana', skill: Skill.recognition),
+      request: DrillRequest.deck('ja-en-hiragana', skill: Skill.recognition),
     ),
   ),
   GalleryEntry(
@@ -35,7 +35,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Recognition, self-grade', // ui-literal-ok: debug-only gallery
     note: 'Again, Hard, Good, Easy', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('es-core-100', skill: Skill.recognition),
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
       preset: const DrillPreset(target: 'la casa', reveal: true),
     ),
   ),
@@ -45,7 +45,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, accent missed', // ui-literal-ok: debug-only gallery
     note: 'Right, but mind the accent', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('es-core-100', skill: Skill.production),
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.production),
       preset: const DrillPreset(
         target: 'el niño',
         typed: 'el nino',
@@ -59,7 +59,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, near miss', // ui-literal-ok: debug-only gallery
     note: 'You judge a one-letter slip', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('es-core-100', skill: Skill.production),
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.production),
       preset: const DrillPreset(
         target: 'la ventana',
         typed: 'la ventna',
@@ -73,7 +73,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, own keyboard', // ui-literal-ok: debug-only gallery
     note: 'Type in the script; HeliBoard suggested', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('ja-hiragana', skill: Skill.production),
+      request: DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
       preset: const DrillPreset(target: 'か'),
     ),
   ),
@@ -83,7 +83,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, transliteration', // ui-literal-ok: debug-only gallery
     note: 'Latin letters instead; incoming (#47), shown switched on', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('ja-hiragana', skill: Skill.production),
+      request: DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
       preset: const DrillPreset(
         target: 'か',
         typed: 'ka',
@@ -104,7 +104,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Listening', // ui-literal-ok: debug-only gallery
     note: 'Phone voice, slower option', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('es-core-100', skill: Skill.listening),
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.listening),
     ),
   ),
   ...grammarGalleryEntries,

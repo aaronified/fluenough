@@ -4,9 +4,9 @@ Deck content, one YAML file per deck, organised by language code.
 
 ```
 decks/
-  es/  es-core-100.yaml
-       es-grammar-present-ar.yaml
-  ja/  ja-hiragana.yaml
+  es/  es-en-core-100.yaml
+       es-en-grammar-present-ar.yaml
+  ja/  ja-en-hiragana.yaml
 ```
 
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)

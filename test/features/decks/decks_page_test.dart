@@ -64,7 +64,7 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
     expect(state.decks, isNotEmpty);
-    expect(state.deckById('es-grammar-present-ar')!.cards, isEmpty);
+    expect(state.deckById('es-en-grammar-present-ar')!.cards, isEmpty);
     expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
@@ -99,7 +99,7 @@ void main() {
 
     await search(tester, 'hira');
     expect(shownDecks(tester), <String>[
-      state.deckById('ja-hiragana')!.deck.name,
+      state.deckById('ja-en-hiragana')!.deck.name,
     ]);
 
     await search(tester, 'SPANISH');
@@ -132,7 +132,7 @@ void main() {
     await tester.tap(find.widgetWithText(FilterChip, 'Japanese'));
     await tester.pumpAndSettle();
     expect(shownDecks(tester), <String>[
-      state.deckById('ja-hiragana')!.deck.name,
+      state.deckById('ja-en-hiragana')!.deck.name,
     ]);
 
     // A search narrows within the chosen language.
@@ -142,7 +142,7 @@ void main() {
     await tester.tap(find.widgetWithText(FilterChip, l10n.decksFilterAll));
     await tester.pumpAndSettle();
     expect(shownDecks(tester), <String>[
-      state.deckById('es-core-100')!.deck.name,
+      state.deckById('es-en-core-100')!.deck.name,
     ]);
   });
 
@@ -207,11 +207,11 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
 
-    await tester.tap(find.text(state.deckById('ja-hiragana')!.deck.name));
+    await tester.tap(find.text(state.deckById('ja-en-hiragana')!.deck.name));
     await tester.pumpAndSettle();
     expect(
       tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
-      'ja-hiragana',
+      'ja-en-hiragana',
     );
 
     await tester.pageBack();
