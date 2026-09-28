@@ -1,9 +1,12 @@
 import 'package:flutter/foundation.dart';
 
 import '../core/models/drill_mode.dart';
+import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
+import '../core/scheduling/replay.dart';
 import '../core/scheduling/sm2.dart';
 
+export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
 
 /// Scheduling state and the review log, as the interface reads them.
@@ -35,6 +38,18 @@ abstract interface class ProgressStore implements Listenable {
     Duration elapsed = Duration.zero,
     String? answerGiven,
   });
+
+  /// What the learner has done about leeches, oldest first. Append-only.
+  List<LeechAction> get leechActions;
+
+  /// Records [kind] for [key] and applies it: a reset restarts the pair's
+  /// scheduling, and a set-aside keeps it out of sessions. No review is
+  /// touched. Returns the action.
+  LeechAction actOnLeech(
+    ProgressKey key,
+    LeechActionKind kind, {
+    required DateTime now,
+  });
 }
 
 /// Progress held in memory: an SM-2 state per `(deck, card, mode)` and the
@@ -45,27 +60,26 @@ abstract interface class ProgressStore implements Listenable {
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress();
 
-  /// Progress rebuilt from [events], oldest first, by replaying them through
-  /// [Sm2.next] as the database will (ADR-0005). For tests and gallery
-  /// fixtures that need a history.
-  factory MemoryProgress.replaying(Iterable<ReviewEvent> events) {
-    final progress = MemoryProgress();
-    for (final e in events) {
-      progress.record(
-        deckId: e.deckId,
-        cardId: e.cardId,
-        mode: e.mode,
-        grade: e.grade,
-        now: e.at,
-        elapsed: e.elapsed,
-        answerGiven: e.answerGiven,
-      );
-    }
-    return progress;
+  /// Progress rebuilt from [events], oldest first, and [leechActions], by
+  /// replaying them as the database does (ADR-0005, [replayReviews]).
+  factory MemoryProgress.replaying(
+    Iterable<ReviewEvent> events, {
+    Iterable<LeechAction> leechActions = const <LeechAction>[],
+  }) {
+    final actions = leechActions.toList();
+    final replayed = replayReviews(
+      events.map(logged),
+      effects: LeechEffects(actions),
+    );
+    return MemoryProgress()
+      .._log.addAll(replayed.events)
+      .._states.addAll(replayed.states)
+      .._leechActions.addAll(actions);
   }
 
   final Map<ProgressKey, Sm2State> _states = <ProgressKey, Sm2State>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
+  final List<LeechAction> _leechActions = <LeechAction>[];
 
   @override
   bool get persists => false;
@@ -110,11 +124,37 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     notifyListeners();
     return event;
   }
+
+  @override
+  List<LeechAction> get leechActions =>
+      List<LeechAction>.unmodifiable(_leechActions);
+
+  @override
+  LeechAction actOnLeech(
+    ProgressKey key,
+    LeechActionKind kind, {
+    required DateTime now,
+  }) {
+    final action = LeechAction(at: now, key: key, kind: kind);
+    _leechActions.add(action);
+    final replayed = replayReviews(
+      _log.map(logged),
+      effects: LeechEffects(_leechActions),
+    );
+    _states
+      ..clear()
+      ..addAll(replayed.states);
+    notifyListeners();
+    return action;
+  }
 }
 
 /// Questions every screen asks of a [ProgressStore], answered the same way
 /// everywhere. Pure reads of [ProgressStore.states] and [ProgressStore.log].
 extension ProgressQueries on ProgressStore {
+  /// What the leech actions add up to: which pairs are reset or set aside.
+  LeechEffects get leechEffects => LeechEffects(leechActions);
+
   /// What [grade] would do to the pair, without recording anything. The
   /// rating buttons label themselves with its `intervalDays`.
   Sm2State preview(

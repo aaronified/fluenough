@@ -24,7 +24,10 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   static Future<DatabaseProgress> open(AppDatabase db) async {
     final log = ReviewLog(db);
     await log.rebuildStates();
-    final memory = MemoryProgress.replaying(await log.events());
+    final memory = MemoryProgress.replaying(
+      await log.events(),
+      leechActions: await log.leechActions(),
+    );
     return DatabaseProgress._(db, log, memory);
   }
 
@@ -48,6 +51,20 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   List<ReviewEvent> get log => _memory.log;
 
   @override
+  List<LeechAction> get leechActions => _memory.leechActions;
+
+  @override
+  LeechAction actOnLeech(
+    ProgressKey key,
+    LeechActionKind kind, {
+    required DateTime now,
+  }) {
+    final action = _memory.actOnLeech(key, kind, now: now);
+    _write(() => _log.act(action), 'while saving a leech action');
+    return action;
+  }
+
+  @override
   ReviewEvent record({
     required String deckId,
     required String cardId,
@@ -66,18 +83,26 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       elapsed: elapsed,
       answerGiven: answerGiven,
     );
+    _write(
+      () => _log.record(
+        deckId: deckId,
+        cardId: cardId,
+        mode: mode,
+        grade: grade,
+        now: now,
+        elapsed: elapsed,
+        answerGiven: answerGiven,
+      ),
+      'while saving a review',
+    );
+    return event;
+  }
+
+  /// Queues [write] after every write before it. A failure is reported
+  /// through [FlutterError] and kept for [flush].
+  void _write(Future<Object?> Function() write, String context) {
     _writes = _writes
-        .then(
-          (_) => _log.record(
-            deckId: deckId,
-            cardId: cardId,
-            mode: mode,
-            grade: grade,
-            now: now,
-            elapsed: elapsed,
-            answerGiven: answerGiven,
-          ),
-        )
+        .then((_) => write())
         .then<void>(
           (_) {},
           onError: (Object error, StackTrace stack) {
@@ -87,12 +112,11 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
                 exception: error,
                 stack: stack,
                 library: 'fluenough progress',
-                context: ErrorDescription('while saving a review'),
+                context: ErrorDescription(context),
               ),
             );
           },
         );
-    return event;
   }
 
   /// Completes once every review recorded so far is in the database.

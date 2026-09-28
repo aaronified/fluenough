@@ -1,10 +1,12 @@
 import 'package:drift/drift.dart';
 
 import '../models/drill_mode.dart';
+import '../models/leech_action.dart';
 import 'database.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/decks.dart';
+import 'tables/leech_actions.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
 
@@ -105,4 +107,35 @@ class SettingsDao extends DatabaseAccessor<AppDatabase>
   Future<void> put(String name, String value) => into(
     settings,
   ).insertOnConflictUpdate(SettingsCompanion.insert(name: name, value: value));
+}
+
+/// What the learner did about leeches. Append-only: it can add an action and
+/// read them, and nothing else; the schema refuses the rest.
+@DriftAccessor(tables: [LeechActions])
+class LeechActionsDao extends DatabaseAccessor<AppDatabase>
+    with _$LeechActionsDaoMixin {
+  LeechActionsDao(super.attachedDatabase);
+
+  /// Appends [action].
+  Future<void> append(LeechAction action) => into(leechActions).insert(
+    LeechActionsCompanion.insert(
+      ts: action.at,
+      deckId: action.key.deckId,
+      cardId: action.key.cardId,
+      mode: action.key.mode,
+      kind: action.kind,
+    ),
+  );
+
+  /// Every action, in the order it was appended.
+  Future<List<LeechAction>> all() async => <LeechAction>[
+    for (final row in await (select(
+      leechActions,
+    )..orderBy([(a) => OrderingTerm.asc(a.id)])).get())
+      LeechAction(
+        at: row.ts,
+        key: (deckId: row.deckId, cardId: row.cardId, mode: row.mode),
+        kind: row.kind,
+      ),
+  ];
 }
