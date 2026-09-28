@@ -5,7 +5,7 @@ import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/features/decks/import_error_card.dart';
 import 'package:fluenough/features/decks/import_fixture.dart';
 import 'package:fluenough/features/decks/import_page.dart';
-import 'package:fluenough/features/decks/option_row.dart';
+import 'package:fluenough/ui/widgets/grouped_list.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 
 import '../../support/harness.dart';
@@ -19,7 +19,7 @@ void main() {
     final l10n = l10nOf(tester);
 
     for (final source in ImportSource.values) {
-      final row = find.widgetWithText(OptionRow, source.label(l10n));
+      final row = find.widgetWithText(GroupedTile, source.label(l10n));
       expect(row, findsOneWidget, reason: source.name);
       expect(
         find.descendant(of: row, matching: find.byType(IncomingBadge)),
@@ -50,7 +50,7 @@ void main() {
     expect(find.byType(ImportErrorCard), findsNothing);
 
     // A tap says the feature is incoming and changes nothing.
-    await tester.tap(find.widgetWithText(OptionRow, l10n.importAnki));
+    await tester.tap(find.widgetWithText(GroupedTile, l10n.importAnki));
     await tester.pumpAndSettle();
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
     expect(find.text(l10n.importAnkiHelp), findsNothing);

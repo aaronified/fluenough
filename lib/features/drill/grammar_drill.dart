@@ -488,9 +488,8 @@ final List<GalleryEntry> grammarGalleryEntries = <GalleryEntry>[
   ),
 ];
 
-/// More grammar states than the design's Gallery lists. `test/gallery_test`
-/// allows only the design's ids, so these are exported for B4's tests, and
-/// for Phase 2 to splice into the gallery.
+/// More grammar states than the design's Gallery lists. The gallery lists
+/// them after the design's screens, and B4's tests pump each one.
 final List<GalleryEntry> grammarGalleryStates = <GalleryEntry>[
   GalleryEntry(
     id: 'drill-grammar-prompt',

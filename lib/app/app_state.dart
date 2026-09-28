@@ -159,6 +159,19 @@ class AppState extends ChangeNotifier {
   /// call more than once; later calls wait on the first.
   Future<void> load() => _loading ??= _load();
 
+  /// Reads the catalog again from its source, for "Try again" after the
+  /// catalog failed to load: back to [CatalogStatus.loading], then the same
+  /// as [load]. A load already under way is joined rather than repeated.
+  Future<void> reload() {
+    final loading = _loading;
+    if (loading != null && _status == CatalogStatus.loading) return loading;
+    deckCatalog.invalidate();
+    _status = CatalogStatus.loading;
+    _loadError = null;
+    notifyListeners();
+    return _loading = _load();
+  }
+
   Future<void> _load() async {
     try {
       _catalog = await deckCatalog.load();

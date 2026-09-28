@@ -64,9 +64,8 @@ final List<GalleryEntry> profilesGalleryEntries = <GalleryEntry>[
 
 /// The same screens as this version ships them, with profiles and PIN lock
 /// incoming: Add profile and the PIN switch disabled, Aro opening without
-/// her PIN. `gallery_test` allows only the design's 26 ids, so these are
-/// not in the gallery yet: Phase 2 splices them in. The profiles tests pump
-/// each one.
+/// her PIN. The gallery lists them after the design's screens, and the
+/// profiles tests pump each one.
 final List<GalleryEntry> profilesGalleryStates = <GalleryEntry>[
   GalleryEntry(
     id: 'profiles-as-shipped',

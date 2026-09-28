@@ -5,7 +5,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
-import 'package:fluenough/features/settings/settings_row.dart';
+import 'package:fluenough/features/settings/settings_controls.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';

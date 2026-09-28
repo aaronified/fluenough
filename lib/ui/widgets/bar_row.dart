@@ -16,6 +16,7 @@ class BarRow extends StatelessWidget {
     this.color,
     this.thickness = 12,
     this.labelWidth = 100,
+    this.labelStyle,
   });
 
   final String label;
@@ -32,6 +33,9 @@ class BarRow extends StatelessWidget {
   /// The label column's width. Longer labels wrap.
   final double labelWidth;
 
+  /// Merged onto the label's `bodyMedium`: the summary's labels are w600.
+  final TextStyle? labelStyle;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -41,7 +45,10 @@ class BarRow extends StatelessWidget {
       children: <Widget>[
         SizedBox(
           width: labelWidth,
-          child: Text(label, style: theme.textTheme.bodyMedium),
+          child: Text(
+            label,
+            style: theme.textTheme.bodyMedium!.merge(labelStyle),
+          ),
         ),
         const SizedBox(width: 12),
         Expanded(

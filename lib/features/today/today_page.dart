@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
 import '../../app/shell_tab.dart';
@@ -57,6 +56,10 @@ class TodayPage extends StatelessWidget {
               icon: Icons.error_outline,
               title: l10n.commonDecksFailed,
               body: l10n.commonDecksFailedBody,
+              action: FilledButton(
+                onPressed: state.reload,
+                child: Text(l10n.commonRetry),
+              ),
             ),
           ),
         ],
@@ -79,17 +82,6 @@ class _TodayContent extends StatelessWidget {
 
   final AppState state;
   final TodayNumbers numbers;
-
-  /// A deck's badge, as the Decks tab draws it: what a session on the deck
-  /// would drill now, due and new together, or Done. Today lists only decks
-  /// the profile learns, so never Start.
-  static DeckBadge _badgeFor(AppState state, DeckEntry entry) {
-    final counts = state.countsFor(entry);
-    final n = counts.due + counts.fresh;
-    return n > 0
-        ? DeckBadge(kind: DeckBadgeKind.due, count: n)
-        : const DeckBadge(kind: DeckBadgeKind.done);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +130,7 @@ class _TodayContent extends StatelessWidget {
                 DeckTile(
                   entry: entry,
                   glyphSize: 52,
-                  badge: _badgeFor(state, entry),
+                  badge: DeckBadge.forEntry(state, entry),
                   onTap: () => AppNavigator.openDeck(context, entry.id),
                 ),
             ],

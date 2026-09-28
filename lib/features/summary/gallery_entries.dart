@@ -20,8 +20,8 @@ final List<GalleryEntry> summaryGalleryEntries = <GalleryEntry>[
   ),
 ];
 
-/// The summary's other notable state, waiting for Phase 2 to splice it into
-/// the gallery for the same reason as `todayGalleryStates`.
+/// The summary's other notable state, which the gallery lists after the
+/// design's screens.
 final List<GalleryEntry> summaryGalleryStates = <GalleryEntry>[
   GalleryEntry(
     id: 'summary-empty',

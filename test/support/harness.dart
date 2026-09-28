@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_scope.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/theme.dart';
@@ -67,3 +68,22 @@ Future<AppState> pumpScreen(
 /// The interface strings, for asserting on tokens rather than English.
 AppLocalizations l10nOf(WidgetTester tester, [Finder? under]) =>
     AppLocalizations.of(tester.element(under ?? find.byType(Scaffold).first))!;
+
+/// The bundled decks, except that the first listing fails: a catalog that
+/// fails to load, then loads on "Try again" (`AppState.reload`).
+class FailOnceDeckSource implements DeckSource {
+  final DeckSource _decks = AssetDeckSource();
+  bool _failed = false;
+
+  @override
+  Future<List<String>> list() async {
+    if (!_failed) {
+      _failed = true;
+      throw StateError('no manifest');
+    }
+    return _decks.list();
+  }
+
+  @override
+  Future<String> read(String path) => _decks.read(path);
+}

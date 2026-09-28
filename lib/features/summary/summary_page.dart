@@ -105,13 +105,7 @@ class SummaryPage extends StatelessWidget {
                   spacing: 8,
                   children: <Widget>[
                     FilledButton(
-                      style: FilledButton.styleFrom(
-                        minimumSize: const Size.fromHeight(60),
-                        textStyle: theme.textTheme.titleMedium!.copyWith(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
+                      style: AppButtonStyles.closing(context),
                       onPressed: () => AppNavigator.backToShell(
                         context,
                         tab: ShellTab.today,
@@ -120,13 +114,7 @@ class SummaryPage extends StatelessWidget {
                     ),
                     if (learnNew > 0)
                       FilledButton.tonal(
-                        style: FilledButton.styleFrom(
-                          minimumSize: const Size.fromHeight(52),
-                          textStyle: theme.textTheme.titleSmall!.copyWith(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                        style: AppButtonStyles.secondary(context),
                         onPressed: () => AppNavigator.startDrill(
                           context,
                           DrillRequest.learnNew(learnNew),
@@ -250,6 +238,7 @@ class _BySkill extends StatelessWidget {
               ),
               thickness: 8,
               labelWidth: 110,
+              labelStyle: const TextStyle(fontWeight: FontWeight.w600),
             ),
           ),
       ],

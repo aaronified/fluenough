@@ -43,9 +43,8 @@ final List<GalleryEntry> settingsGalleryEntries = <GalleryEntry>[
 
 /// Settings, Appearance and Voices in their other notable states.
 ///
-/// Not in the gallery's list yet: `test/gallery_test.dart` holds that list to
-/// exactly the design's screen ids, so these wait for Phase 2 to splice them
-/// into `allGalleryEntries`. `test/features/settings/` pumps each of them.
+/// The gallery lists them after the design's screens, and
+/// `test/features/settings/` pumps each of them.
 final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
   GalleryEntry(
     id: 'settings-all-on',
