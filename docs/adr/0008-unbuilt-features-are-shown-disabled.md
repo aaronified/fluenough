@@ -83,7 +83,7 @@ table needs each card's `(entry, slot)`, for example, which #2 should expose.
 
 ## Alternatives considered
 
-**Hide what is not built.** The usual approach, and what `DESIGN.md` says for
+**Hide what is not built.** The usual approach, and what `DESIGN.md` said for
 listening without a voice. Rejected for *incoming* features because the design
 is the north star and is drawn complete; hiding would make every backend PR also
 a UI PR. *Missing on this phone* is not hidden either: the design shows a

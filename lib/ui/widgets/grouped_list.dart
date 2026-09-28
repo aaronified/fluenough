@@ -140,9 +140,11 @@ class GroupedList extends StatelessWidget {
 /// text and trailing dimmed to 38%, the badge at full contrast, taps showing
 /// the SnackBar, and one screen-reader node, "[title], feature incoming".
 /// The badge sits between the text and the trailing control, as the design
-/// draws it, when it takes at most 40% of the row; otherwise it goes under
-/// the text, so a 2.0 text scale or a long translation never overflows the
-/// row. Measuring the row needs a `LayoutBuilder` while incoming, so do not
+/// draws it, when it takes at most 40% of the room the text and badge share
+/// once [leading] and [trailing] are laid out; otherwise it goes under the
+/// text, so a 2.0 text scale, a wide trailing control or a long translation
+/// never squeezes the title. Measuring that room needs a `LayoutBuilder`
+/// while incoming, so do not
 /// put an incoming tile where intrinsic sizes are asked, such as in
 /// `DrillFrame`'s card. When the feature is available, the row is live.
 ///
@@ -231,18 +233,9 @@ class GroupedTile extends StatelessWidget {
     if (f != null && isIncoming(context, f)) {
       return IncomingNode(
         label: title,
-        child: LayoutBuilder(
-          builder: (context, constraints) => InkWell(
-            onTap: () => showIncomingSnackBar(context),
-            child: _row(
-              context,
-              incoming: true,
-              badgeBeside: incomingBadgeFitsBeside(
-                context,
-                constraints.maxWidth,
-              ),
-            ),
-          ),
+        child: InkWell(
+          onTap: () => showIncomingSnackBar(context),
+          child: _row(context, incoming: true),
         ),
       );
     }
@@ -271,7 +264,6 @@ class GroupedTile extends StatelessWidget {
   Widget _row(
     BuildContext context, {
     bool incoming = false,
-    bool badgeBeside = true,
     bool mergeText = false,
   }) {
     final theme = Theme.of(context);
@@ -323,23 +315,35 @@ class GroupedTile extends StatelessWidget {
             SizedBox(width: leadingGap),
           ],
           Expanded(
-            child: incoming && !badgeBeside
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      dimmed(text),
-                      const SizedBox(height: 8),
-                      const IncomingBadge(),
-                    ],
+            child: incoming
+                // Measured here, after the leading and trailing widgets have
+                // taken their room, so the rule is judged against the space
+                // the text and badge actually share. Judged against the whole
+                // row, a wide trailing control (the language picker) left the
+                // title a letter wide.
+                ? LayoutBuilder(
+                    builder: (context, constraints) =>
+                        incomingBadgeFitsBeside(context, constraints.maxWidth)
+                        ? Row(
+                            children: <Widget>[
+                              Expanded(child: dimmed(text)),
+                              const SizedBox(width: 12),
+                              const IncomingBadge(),
+                            ],
+                          )
+                        : Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              dimmed(text),
+                              const SizedBox(height: 8),
+                              const IncomingBadge(),
+                            ],
+                          ),
                   )
                 : mergeText
                 ? MergeSemantics(child: text)
                 : dimmed(text),
           ),
-          if (incoming && badgeBeside) ...<Widget>[
-            const SizedBox(width: 12),
-            const IncomingBadge(),
-          ],
           if (end != null) ...<Widget>[
             SizedBox(width: trailingGap),
             dimmed(IgnorePointer(ignoring: incoming, child: end)),
