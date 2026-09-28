@@ -8,10 +8,13 @@ export '../core/models/review_event.dart';
 
 /// Scheduling state and the review log, as the interface reads them.
 ///
-/// [MemoryProgress] implements this now; #6's store over `ReviewLog`
-/// implements it next, and nothing that reads through this interface
-/// changes. Listeners are told after every [record].
+/// [MemoryProgress] keeps it in memory, and `DatabaseProgress` in the
+/// profile's database; nothing that reads through this interface can tell
+/// them apart but [persists]. Listeners are told after every [record].
 abstract interface class ProgressStore implements Listenable {
+  /// Whether this store outlives the app: false for [MemoryProgress].
+  bool get persists;
+
   /// The state of one pair, or null if it has never been reviewed.
   Sm2State? stateOf(String deckId, String cardId, DrillMode mode);
 
@@ -37,8 +40,8 @@ abstract interface class ProgressStore implements Listenable {
 /// Progress held in memory: an SM-2 state per `(deck, card, mode)` and the
 /// review log, both gone when the app closes.
 ///
-/// A stand-in for the database (#3, #5). While `Feature.persistence` is off,
-/// Today says that progress is not saved.
+/// For tests and fixtures, and the fallback when the database cannot be
+/// opened, in which case Today says that progress is not saved.
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress();
 
@@ -63,6 +66,9 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 
   final Map<ProgressKey, Sm2State> _states = <ProgressKey, Sm2State>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
+
+  @override
+  bool get persists => false;
 
   @override
   Sm2State? stateOf(String deckId, String cardId, DrillMode mode) =>
