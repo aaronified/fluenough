@@ -71,11 +71,16 @@ def main() -> int:
     p.add_argument("--tts", default=None, help="BCP-47 voice tag, e.g. es-ES")
     p.add_argument("--native", default="en")
     p.add_argument("--native-name", default="English")
-    p.add_argument("--native-iso639-3", default="eng", dest="native_iso639_3")
+    p.add_argument("--native-iso639-3", default=None, dest="native_iso639_3",
+                   help="ISO 639-3 code of --native; defaults to eng only when --native is en")
     p.add_argument("--license", required=True, help="SPDX id, or CC0-1.0")
     p.add_argument("--tags", default="", help="deck-level tags, comma separated")
     p.add_argument("--delimiter", default=",")
     args = p.parse_args()
+    if args.native_iso639_3 is None:
+        if args.native != "en":
+            sys.exit(f"error: --native-iso639-3 is required when --native is {args.native!r}")
+        args.native_iso639_3 = "eng"
 
     if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", args.id):
         sys.exit(f"error: --id must match [a-z0-9-]+, got {args.id!r}")

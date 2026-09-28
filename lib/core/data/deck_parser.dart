@@ -171,8 +171,6 @@ class _Reader {
       fail(schemaNode, 'schema must be 1, got ${_describe(schemaNode)}');
     }
 
-    fields.allowOnly(_headerFields);
-
     final kindNode = fields.node('kind');
     final kind = kindNode == null
         ? DeckKind.vocab
@@ -191,6 +189,10 @@ class _Reader {
               'kind must be vocab or grammar, got ${_describe(kindNode)}',
             ),
           };
+
+    // After the kind, so that a facts file, whose `facts` is no deck field,
+    // is refused as a facts file rather than for an unknown field.
+    fields.allowOnly(_headerFields);
 
     final id = this.id(fields.require('id'), 'id');
     final name = fields.string('name');

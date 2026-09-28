@@ -103,11 +103,10 @@ void main() {
             .map((f) => f.path)
             .where((p) => p.endsWith('.yaml'))
             // A facts file is valid in decks/ but is not a deck (#48).
-            .where(
-              (p) =>
-                  (loadYaml(File(p).readAsStringSync()) as Map)['kind'] !=
-                  'facts',
-            )
+            .where((p) {
+              final doc = loadYaml(File(p).readAsStringSync());
+              return !(doc is Map && doc['kind'] == 'facts');
+            })
             .toList()
           ..sort();
 
@@ -1060,10 +1059,19 @@ cards:
   });
 
   test('a facts file is refused as not a deck', () {
+    const facts = '''
+schema: 1
+id: hi-facts
+name: Hindi facts
+kind: facts
+language: {code: hi, iso639_3: hin, name: Hindi, script: devanagari}
+license: CC0-1.0
+facts:
+  - id: hi-fact-001
+    text: {en: "No Hindi word begins with ड़ or ढ़."}
+''';
     expect(
-      () => parse(
-        vocab().replaceFirst('name: Test deck', 'name: Test deck\nkind: facts'),
-      ),
+      () => parse(facts),
       throwsParseError(line: 4, mentions: ['facts file, not a deck']),
     );
   });

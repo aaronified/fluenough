@@ -326,7 +326,9 @@ def check_facts(r: Report, facts: object) -> None:
 
     seen: set[str] = set()
     universal = 0
-    universal_by_language: dict[str, int] = {}
+    # English is the base interface language (ADR-0006), so it is counted even
+    # when no fact is written in it: a facts file with no English text warns.
+    universal_by_language: dict[str, int] = {"en": 0}
     for i, fact in enumerate(facts):
         where = f"facts[{i}]"
         if not isinstance(fact, dict):

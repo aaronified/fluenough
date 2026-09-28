@@ -179,15 +179,16 @@ facts:
     tags: [script, conjuncts]
     text:
       en: "Two consonants with no vowel between them join into one conjunct
-        (संयुक्ताक्षर, yuktakshar): क + ष = क्ष, त + र = त्र, ज + ञ = ज्ञ. Some
+        (संयुक्ताक्षर, sanyuktakshar): क + ष = क्ष, त + र = त्र, ज + ञ = ज्ञ. Some
         look nothing like the letters they are made of."
   # ...at least 30 facts without a contrast...
   - id: hi-fact-101
     contrast: en
     tags: [pronunciation]
     text:
-      en: "English writes the sh sound with two letters. Hindi gives it its own
-        letter, श, so 'sh' in a romanisation is one sound and one letter."
+      en: "English writes the sh sound with two letters. Hindi gives it letters
+        of its own, श and ष (most speakers now say them alike), so 'sh' in a
+        romanisation stands for one sound, not s followed by h."
   - id: hi-fact-102
     contrast: bn
     tags: [pronunciation]
@@ -215,8 +216,9 @@ fact carries its own text in every interface language it is written in. It has
   learner's interface language is, a month of one fact a day, and the
   validator fails a file with fewer. Facts with a `contrast` are extra.
 - **Write every fact in every interface language the app ships, English first.**
-  A language with fewer than 30 contrast-free facts written in it gets a
-  warning, since its learners see only that many.
+  English, and any other language a fact is written in, gets a warning when
+  fewer than 30 contrast-free facts are written in it, since its learners see
+  only that many.
 - **Facts are about the language:** its script, sounds, grammar, words and
   history. Good material includes letters that never start a word, how
   conjuncts form, sounds the learner's language lacks (these usually want a
