@@ -248,6 +248,12 @@ abstract final class AppSizes {
   /// The main action of a screen: "Start review", "Show answer", "Continue".
   static const double tallButton = 64;
 
+  /// The action that closes a screen: the summary's "Done".
+  static const double closingButton = 60;
+
+  /// A second action under a closing one: the summary's "Learn 5 new".
+  static const double secondaryButton = 52;
+
   /// A small button inside a row: "Set up", "Test", "Switch".
   static const double compactButton = 40;
 
@@ -295,6 +301,28 @@ abstract final class AppButtonStyles {
     textStyle: WidgetStatePropertyAll(
       Theme.of(context).textTheme.titleLarge!
           .copyWith(fontSize: 18, height: 24 / 18, fontWeight: FontWeight.w700),
+    ),
+  );
+
+  /// 60 px, 17 px bold: the action that closes a screen, the summary's
+  /// "Done".
+  static ButtonStyle closing(BuildContext context) => ButtonStyle(
+    minimumSize: const WidgetStatePropertyAll(Size(64, AppSizes.closingButton)),
+    textStyle: WidgetStatePropertyAll(
+      Theme.of(context).textTheme.titleMedium!
+          .copyWith(fontSize: 17, fontWeight: FontWeight.w700),
+    ),
+  );
+
+  /// 52 px, 15 px semibold: a second action under a closing one, the
+  /// summary's "Learn 5 new".
+  static ButtonStyle secondary(BuildContext context) => ButtonStyle(
+    minimumSize: const WidgetStatePropertyAll(
+      Size(64, AppSizes.secondaryButton),
+    ),
+    textStyle: WidgetStatePropertyAll(
+      Theme.of(context).textTheme.titleSmall!
+          .copyWith(fontSize: 15, fontWeight: FontWeight.w600),
     ),
   );
 
