@@ -1,20 +1,307 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
+import '../../app/deck_catalog.dart';
+import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/widgets/page_parts.dart';
+import '../../ui/theme.dart';
+import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/snack.dart';
 
-/// Which catalog languages the phone can speak, with Test, and how to install a voice.
+/// Which languages the phone can speak, with Test, and how to install a
+/// voice.
 ///
-/// Design screen `voices`. A Phase 0 stub that shows only its title;
-/// B5 replaces the body, keeping the class name and the constructor's
-/// required parameters, which `AppRoutes` depends on. Optional parameters
-/// (a gallery preset, say) may be added.
-class VoicesPage extends StatelessWidget {
+/// Design screen `voices`. Live: every language in the loaded decks, with
+/// its voice tag and whether the phone has a voice (installed, missing, or
+/// still checking); Test speaks a real card from that language's deck at the
+/// learner's speech rate; Check again asks the phone once more
+/// (`AppState.refreshVoices`), for after installing one.
+///
+/// The design's "Install voices in phone settings" opens Android's
+/// text-to-speech settings. Nothing in the repository can open them yet
+/// (`Feature.voiceSettingsLink` needs a dependency, AGENTS.md rule 6), so
+/// until then the button explains how to get there, in a dialog.
+class VoicesPage extends StatefulWidget {
   const VoicesPage({super.key});
+
+  /// What Test says for [language]: the first card of its first vocabulary
+  /// deck, or of a script deck when that is all there is. Null when no deck
+  /// in the language has cards, such as a grammar deck on its own.
+  static String? sampleFor(AppState state, LanguageInfo language) {
+    final decks = <DeckEntry>[
+      for (final deck in state.decks)
+        if (deck.language.code == language.code && deck.cards.isNotEmpty) deck,
+    ];
+    if (decks.isEmpty) return null;
+    final deck = decks.firstWhere(
+      (d) => !d.isScript,
+      orElse: () => decks.first,
+    );
+    return deck.cards.first.target;
+  }
+
+  @override
+  State<VoicesPage> createState() => _VoicesPageState();
+}
+
+class _VoicesPageState extends State<VoicesPage> {
+  /// Asking the phone again, after Check again.
+  bool _rechecking = false;
+
+  /// How many voices each available tag has, once asked.
+  final Map<String, int> _counts = <String, int>{};
+  final Set<String> _asking = <String>{};
+
+  void _countVoices(AppState state, LanguageInfo language) {
+    final tag = language.ttsTag;
+    if (_counts.containsKey(tag) || !_asking.add(tag)) return;
+    state
+        .voicesFor(language)
+        .then(
+          (voices) {
+            _asking.remove(tag);
+            if (mounted) setState(() => _counts[tag] = voices.length);
+          },
+          onError: (Object _) {
+            _asking.remove(tag);
+          },
+        );
+  }
+
+  Future<void> _checkAgain() async {
+    final state = AppScope.read(context);
+    setState(() {
+      _rechecking = true;
+      _counts.clear();
+    });
+    await state.refreshVoices();
+    if (mounted) setState(() => _rechecking = false);
+  }
+
+  Future<void> _test(AppState state, LanguageInfo language, String text) {
+    final l10n = AppLocalizations.of(context)!;
+    showAppSnackBar(context, l10n.voicesSpeaking(text));
+    return state.speak(text, language);
+  }
+
+  Future<void> _explainInstall() => showDialog<void>(
+    context: context,
+    builder: (context) {
+      final l10n = AppLocalizations.of(context)!;
+      return AlertDialog(
+        title: Text(l10n.voicesInstallTitle),
+        content: Text(l10n.voicesInstallSteps),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(l10n.commonGotIt),
+          ),
+        ],
+      );
+    },
+  );
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return PlaceholderPage(title: l10n.voicesTitle);
+    final theme = Theme.of(context);
+    final state = AppScope.of(context);
+    final languages = state.languages;
+
+    return Scaffold(
+      appBar: AppBar(title: Text(l10n.voicesTitle)),
+      body: ListView(
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+            child: Text(
+              languages.isEmpty ? l10n.voicesNone : l10n.voicesIntro,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                fontSize: 15,
+                height: 22 / 15,
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          if (languages.isNotEmpty) ...<Widget>[
+            const SizedBox(height: 16),
+            GroupedList(
+              children: <Widget>[
+                for (final language in languages)
+                  _VoiceRow(
+                    language: language,
+                    status: _rechecking
+                        ? VoiceStatus.checking
+                        : state.voiceStatus(language),
+                    count: _counts[language.ttsTag],
+                    sample: VoicesPage.sampleFor(state, language),
+                    onCount: () => _countVoices(state, language),
+                    onTest: (text) => _test(state, language, text),
+                  ),
+              ],
+            ),
+          ],
+          const SizedBox(height: 16),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+              textStyle: theme.textTheme.titleMedium,
+            ),
+            onPressed: _explainInstall,
+            icon: const Icon(Icons.settings_outlined),
+            label: Text(l10n.voicesInstall, textAlign: TextAlign.center),
+          ),
+          if (languages.isNotEmpty) ...<Widget>[
+            const SizedBox(height: 8),
+            Center(
+              child: TextButton.icon(
+                onPressed: _rechecking ? null : _checkAgain,
+                icon: const Icon(Icons.refresh),
+                label: Text(l10n.voicesCheckAgain),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+/// One language: a status icon, its name and voice tag, its status, and
+/// Test when the phone can speak it.
+class _VoiceRow extends StatelessWidget {
+  const _VoiceRow({
+    required this.language,
+    required this.status,
+    required this.count,
+    required this.sample,
+    required this.onCount,
+    required this.onTest,
+  });
+
+  final LanguageInfo language;
+  final VoiceStatus status;
+
+  /// How many voices the phone has for it, or null until asked.
+  final int? count;
+
+  /// A card to speak, or null when the language's decks have none.
+  final String? sample;
+
+  /// Asks for [count], when it is still unknown.
+  final VoidCallback onCount;
+
+  final ValueChanged<String> onTest;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final available = status == VoiceStatus.available;
+    if (available && count == null) onCount();
+
+    final String line = switch (status) {
+      VoiceStatus.checking => l10n.voicesChecking,
+      VoiceStatus.missing => l10n.voicesMissing,
+      // An engine that says yes has at least one voice, even if it lists
+      // none by name.
+      VoiceStatus.available =>
+        count == null
+            ? l10n.voicesChecking
+            : l10n.voicesInstalled(count! < 1 ? 1 : count!),
+    };
+
+    final icon = Container(
+      width: 40,
+      height: 40,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: available
+            ? scheme.primaryContainer
+            : scheme.surfaceContainerHighest,
+      ),
+      child: switch (status) {
+        VoiceStatus.available => Icon(
+          Icons.check,
+          size: 20,
+          color: scheme.onPrimaryContainer,
+        ),
+        VoiceStatus.missing => Icon(
+          Icons.volume_off_outlined,
+          size: 20,
+          color: scheme.onSurfaceVariant,
+        ),
+        // Still, not a spinner: an endless animation would keep a test or
+        // the gallery from ever settling, and the line below says it.
+        VoiceStatus.checking => Icon(
+          Icons.hourglass_empty,
+          size: 20,
+          color: scheme.onSurfaceVariant,
+        ),
+      },
+    );
+
+    final text = MergeSemantics(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text.rich(
+            TextSpan(
+              children: <InlineSpan>[
+                TextSpan(
+                  text: language.name,
+                  style: theme.textTheme.titleMedium,
+                ),
+                const WidgetSpan(child: SizedBox(width: 6)),
+                TextSpan(
+                  text: language.ttsTag,
+                  style: theme.textTheme.bodySmall!.copyWith(
+                    fontSize: 13,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Text(
+            line,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    final say = sample;
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(18, 14, 14, 14),
+      child: Row(
+        children: <Widget>[
+          icon,
+          const SizedBox(width: 14),
+          Expanded(child: text),
+          if (available && say != null) ...<Widget>[
+            const SizedBox(width: 12),
+            Semantics(
+              button: true,
+              label: l10n.voicesTestLabel(language.name),
+              excludeSemantics: true,
+              onTap: () => onTest(say),
+              child: FilledButton.tonalIcon(
+                style: AppButtonStyles.compact(context),
+                onPressed: () => onTest(say),
+                icon: const Icon(Icons.volume_up_outlined, size: 18),
+                label: Text(l10n.voicesTest),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
   }
 }
