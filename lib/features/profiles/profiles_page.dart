@@ -272,7 +272,9 @@ class _AddProfileTile extends StatelessWidget {
       ),
     );
 
-    if (!incoming) return Semantics(button: true, child: tile);
+    if (!incoming) {
+      return MergeSemantics(child: Semantics(button: true, child: tile));
+    }
     return Column(
       children: <Widget>[
         IncomingFeature(
