@@ -1,3 +1,4 @@
+import 'author.dart';
 import 'card.dart';
 import 'grammar_pattern.dart';
 
@@ -57,7 +58,7 @@ class Deck {
     this.pattern,
     this.description,
     this.tags = const <String>[],
-    this.authors = const <String>[],
+    this.authors = const <Author>[],
     this.source,
   });
 
@@ -80,7 +81,7 @@ class Deck {
 
   final String? description;
   final List<String> tags;
-  final List<String> authors;
+  final List<Author> authors;
   final String? source;
 
   int get cardCount => cards.length;
