@@ -80,6 +80,8 @@ and why Waydroid cannot test audio, is in
 | `docs/adr/` | Architecture decision records | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
 
+State reaches widgets through AppScope (ADR-0007). No state-management package.
+
 ---
 
 ## Ten rules
