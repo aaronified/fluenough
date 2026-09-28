@@ -7,6 +7,8 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
+import 'package:fluenough/features/gallery/gallery_page.dart';
+import 'package:fluenough/features/settings/gallery_entries.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 
 import '../../support/harness.dart';
@@ -152,5 +154,30 @@ void main() {
     await tester.tap(find.text(l10n.commonGotIt));
     await tester.pumpAndSettle();
     expect(find.byType(AlertDialog), findsNothing);
+  });
+
+  testWidgets('the checking and no-decks states', (tester) async {
+    usePhone(tester);
+    final app = AppState.test();
+    await app.load();
+    final entries = {for (final e in settingsGalleryStates) e.id: e};
+
+    await pumpScreen(
+      tester,
+      GalleryPreview(entry: entries['voices-checking']!),
+      state: app,
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.voicesChecking), findsNWidgets(app.languages.length));
+    expect(find.text(l10n.voicesTest), findsNothing);
+
+    await pumpScreen(
+      tester,
+      GalleryPreview(key: UniqueKey(), entry: entries['voices-none']!),
+      state: app,
+    );
+    expect(find.text(l10n.voicesNone), findsOneWidget);
+    expect(find.text(l10n.voicesCheckAgain), findsNothing);
+    expect(find.text(l10n.voicesInstall), findsOneWidget);
   });
 }
