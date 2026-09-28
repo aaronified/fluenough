@@ -101,6 +101,10 @@ class _DecksPageState extends State<DecksPage> {
           icon: Icons.error_outline,
           title: l10n.commonDecksFailed,
           body: l10n.commonDecksFailedBody,
+          action: FilledButton(
+            onPressed: state.reload,
+            child: Text(l10n.commonRetry),
+          ),
         );
       case CatalogStatus.ready:
         break;

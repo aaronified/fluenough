@@ -53,9 +53,24 @@ class _DrillPageState extends State<DrillPage> {
     final state = AppScope.read(context);
     // `load` also waits for the voice check, which decides whether
     // listening cards are in the queue. It is safe to call again.
-    state.load().then((_) {
+    _await(state, state.load());
+  }
+
+  void _await(AppState state, Future<void> loading) {
+    loading.then((_) {
       if (mounted) setState(() => _start(state));
     });
+  }
+
+  /// "Try again" after the catalog failed: back to the spinner, then start
+  /// on whatever the reload brings.
+  void _retry() {
+    final state = AppScope.read(context);
+    setState(() {
+      _loaded = false;
+      _failed = false;
+    });
+    _await(state, state.reload());
   }
 
   void _start(AppState state) {
@@ -157,6 +172,10 @@ class _DrillPageState extends State<DrillPage> {
                 icon: Icons.error_outline,
                 title: l10n.commonDecksFailed,
                 body: l10n.commonDecksFailedBody,
+                action: FilledButton(
+                  onPressed: _retry,
+                  child: Text(l10n.commonRetry),
+                ),
               )
             : EmptyState(
                 icon: Icons.event_available_outlined,

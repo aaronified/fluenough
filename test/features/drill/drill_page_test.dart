@@ -495,4 +495,22 @@ void main() {
     expect(Theme.of(context).brightness, Brightness.dark);
     expect(find.text(l10nOf(tester).feedbackAccent), findsOneWidget);
   });
+
+  testWidgets('a catalog that failed offers Try again, which starts the '
+      'session', (tester) async {
+    usePhone(tester);
+    await pumpDrill(
+      tester,
+      DrillRequest.deck(spanish, skill: Skill.recognition),
+      state: AppState.test(decks: FailOnceDeckSource()),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.commonDecksFailed), findsOneWidget);
+    expect(find.byType(DrillFrame), findsNothing);
+
+    await tester.tap(find.text(l10n.commonRetry));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.commonDecksFailed), findsNothing);
+    expect(find.byType(DrillFrame), findsOneWidget);
+  });
 }
