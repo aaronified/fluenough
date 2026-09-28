@@ -109,9 +109,9 @@ void main() {
         expect(find.text(cell.form!), findsOneWidget);
         final node = tester.getSemantics(find.text(cell.form!));
         if (cell.slot == 'vosotros') {
-          expect(node, containsSemantics(isSelected: true));
+          expect(node, isSemantics(isSelected: true));
         } else {
-          expect(node, isNot(containsSemantics(isSelected: true)));
+          expect(node, isNot(isSemantics(isSelected: true)));
         }
       }
       expect(find.text(pattern.notes!), findsOneWidget);
