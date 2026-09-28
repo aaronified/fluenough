@@ -18,9 +18,8 @@ final List<GalleryEntry> todayGalleryEntries = <GalleryEntry>[
 
 /// Today's other notable states.
 ///
-/// Not in the gallery's list yet: `test/gallery_test.dart` holds that list to
-/// exactly the design's screen ids, so these wait for Phase 2 to splice them
-/// into `allGalleryEntries`. `test/features/today/` pumps each of them.
+/// The gallery lists them after the design's screens, and
+/// `test/features/today/` pumps each of them.
 final List<GalleryEntry> todayGalleryStates = <GalleryEntry>[
   GalleryEntry(
     id: 'today-fresh',
