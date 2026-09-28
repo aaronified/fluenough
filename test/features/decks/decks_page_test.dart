@@ -64,15 +64,16 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
     expect(state.decks, isNotEmpty);
-    expect(state.deckById('es-grammar-present-ar')!.cards, isEmpty);
+    // The grammar deck has cards (#2) but no drill yet (#14).
+    expect(state.canDrill(state.deckById('es-grammar-present-ar')!), isFalse);
     expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
       final n = counts.due + counts.fresh;
       final tile = find.widgetWithText(DeckTile, entry.deck.name);
-      // A grammar deck has nothing to drill until the expander (#2): it is
+      // A grammar deck has nothing to drill until its drill ships (#14): it is
       // incoming, never Done.
-      final badge = entry.cards.isEmpty
+      final badge = !state.canDrill(entry)
           ? l10n.incomingBadge
           : n > 0
           ? l10n.commonDueBadge(n)
@@ -161,7 +162,7 @@ void main() {
           .badge;
       expect(
         badge.kind,
-        entry.cards.isEmpty
+        !state.canDrill(entry)
             ? DeckBadgeKind.incoming
             : entry.language.code == 'ja'
             ? DeckBadgeKind.due

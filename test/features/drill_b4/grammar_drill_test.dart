@@ -153,7 +153,7 @@ void main() {
       expect(find.byType(FeedbackBanner), findsNothing);
     });
 
-    testWidgets('no live session reaches it, even with every feature on', (
+    testWidgets('with its drill on, a session reaches the expanded cards', (
       tester,
     ) async {
       usePhone(tester);
@@ -167,8 +167,8 @@ void main() {
         ),
         state: grammarOn(),
       );
-      expect(find.byType(GrammarDrill), findsNothing);
-      expect(find.text(l10nOf(tester).drillEmptyTitle), findsOneWidget);
+      // The cards exist now (#2); #14 gives them the grammar screen.
+      expect(find.text(l10nOf(tester).drillEmptyTitle), findsNothing);
     });
 
     testWidgets('every state fits at 1.0 and 2.0, light and dark', (

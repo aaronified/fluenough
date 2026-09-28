@@ -60,9 +60,9 @@ enum DeckBadgeKind {
   /// "Done", when nothing in a deck the profile learns is due.
   done,
 
-  /// "Feature incoming", for a deck this version cannot drill at all: a
-  /// grammar deck, whose cards wait for the expander (#2). Never "Done",
-  /// which would claim it had been studied. Drawn as the app's
+  /// "Feature incoming", for a deck this version cannot drill at all: one
+  /// whose cards' drills are all incoming, such as a grammar deck before its
+  /// drill (#14). Never "Done", which would claim it had been studied. Drawn as the app's
   /// [IncomingBadge], under the deck's meta line: too wide to share a phone
   /// row with the name.
   incoming,
@@ -85,7 +85,7 @@ class DeckBadge extends StatelessWidget {
   /// against the whole daily cap, so the badges can add up to more than
   /// Today's number.
   factory DeckBadge.forEntry(AppState state, DeckEntry entry) {
-    if (entry.cards.isEmpty) {
+    if (!state.canDrill(entry)) {
       return const DeckBadge(kind: DeckBadgeKind.incoming);
     }
     if (!state.currentProfile.learns(entry.language.code)) {
