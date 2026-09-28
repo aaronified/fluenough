@@ -157,6 +157,45 @@ class FactsFiles(Validated):
     def test_other_decks_have_no_facts(self) -> None:
         self.assertRejected(VOCAB + "facts: []\n", "only valid on a facts file")
 
+    def test_a_grammar_deck_has_no_facts(self) -> None:
+        grammar = VOCAB.replace("name: Probe", "name: Probe\nkind: grammar").split("cards:")[0]
+        grammar += (
+            "pattern:\n  name: P\n  slot_name: person\n  slots: [yo]\n"
+            '  prompt: "{lemma} {gloss} {slot}"\n'
+            "  entries:\n    - { lemma: hablar, gloss: to speak, forms: { yo: hablo } }\n"
+            "facts: []\n"
+        )
+        self.assertRejected(grammar, "only valid on a facts file")
+
+    def test_a_facts_file_has_no_pattern(self) -> None:
+        self.assertRejected(facts_file(30) + "pattern: {}\n", "uses facts, not cards or a pattern")
+
+    def test_an_empty_facts_list_is_rejected(self) -> None:
+        self.assertRejected(FACTS_HEADER.replace("facts:\n", "facts: []\n"),
+                            "facts: must be a non-empty list")
+
+    def test_each_fact_must_be_a_mapping(self) -> None:
+        self.assertRejected(facts_file(30, '  - "just a string"\n'), "must be a mapping")
+
+    def test_fact_tags_must_be_a_list_of_text(self) -> None:
+        self.assertRejected(facts_file(30, fact(90, tags="script")), "tags must be a list")
+
+    def test_fact_source_must_be_text(self) -> None:
+        self.assertRejected(facts_file(30, fact(90, source="1990")), "not text")
+
+    def test_contrast_facts_do_not_count_towards_a_language(self) -> None:
+        # 30 English facts; Bengali appears only on a contrast fact, so it has
+        # no contrast-free facts and should not be warned about as if it did.
+        extra = fact(90, contrast="bn", text='{ bn: "তুলনা।" }')
+        report = self.assertValid(facts_file(30, extra))
+        self.assertFalse(any("'bn'" in w for w in report.warnings), report.warnings)
+
+    def test_a_file_with_no_english_warns(self) -> None:
+        text = facts_file(30).replace('{ en: "Fact number', '{ bn: "Fact number')
+        report = self.assertValid(text)
+        self.assertTrue(any("'en'" in w and "0 daily facts" in w for w in report.warnings),
+                        report.warnings)
+
 
 if __name__ == "__main__":
     unittest.main()
