@@ -130,6 +130,14 @@ guaranteed pool, at least 30 per language, so a learner gets a month of facts
 whatever they speak.
 
 Seen facts are remembered by id, like review history keyed on card ids, so fact
-ids are permanent. Facts are not drilled and never enter `reviews`. The order,
-what happens after the last fact, and where seen ids are stored are decided
-with the screen that shows them.
+ids are permanent. Facts are not drilled and never enter `reviews`.
+
+- **Order:** the file's. Today's fact is the first eligible fact not yet
+  shown; one shown today stays today's fact.
+- **After the last fact** the cycle starts again, with the one shown longest
+  ago.
+- **Which languages:** each language the profile learns that has a facts file,
+  one card each on Today. A language not studied is never shown.
+- **Where seen ids live:** with the profile's settings, as
+  `<language>/<fact id>` and when it was shown, since they are small, per
+  profile and read as the screen draws.

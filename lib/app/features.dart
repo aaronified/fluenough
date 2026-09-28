@@ -78,6 +78,7 @@ enum Feature {
     Feature.appearance,
     Feature.stats,
     Feature.leeches,
+    Feature.dailyFacts,
   };
 }
 

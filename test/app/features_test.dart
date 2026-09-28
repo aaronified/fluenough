@@ -50,6 +50,7 @@ void main() {
       Feature.appearance,
       Feature.stats,
       Feature.leeches,
+      Feature.dailyFacts,
     });
   });
 
