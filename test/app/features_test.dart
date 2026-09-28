@@ -40,13 +40,14 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the drills, saved progress and the theme', () {
+  test('this version ships the drills, saved progress, theme and stats', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
       Feature.drillListening,
       Feature.persistence,
       Feature.appearance,
+      Feature.stats,
     });
   });
 
