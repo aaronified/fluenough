@@ -1,4 +1,5 @@
 import 'card.dart';
+import 'grammar_pattern.dart';
 
 class LanguageInfo {
   const LanguageInfo({
@@ -53,6 +54,7 @@ class Deck {
     required this.native,
     required this.license,
     required this.cards,
+    this.pattern,
     this.description,
     this.tags = const <String>[],
     this.authors = const <String>[],
@@ -71,6 +73,10 @@ class Deck {
   /// For a grammar deck these are the expanded pattern cells, so the rest of
   /// the app never needs to know which kind of deck it came from.
   final List<Card> cards;
+
+  /// A grammar deck's pattern table; null for a vocab deck. A parsed grammar
+  /// deck has this set and [cards] empty until the expander fills them.
+  final GrammarPattern? pattern;
 
   final String? description;
   final List<String> tags;
