@@ -8,6 +8,7 @@ import '../../app/routes.dart';
 import '../../app/shell_tab.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/app_language_picker.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
@@ -75,7 +76,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
     final languages = state.languages;
     final learning =
         _learning ?? <String>{if (languages.isNotEmpty) languages.first.code};
-    final speaks = _speaks ?? _currentLocale(context);
+    final speaks = _speaks ?? AppLanguagePicker.current(context);
     final usePin = _pinOn && !isIncoming(context, Feature.pinLock);
     final canCreate =
         _name.text.trim().isNotEmpty &&
@@ -151,12 +152,10 @@ class _NewProfilePageState extends State<NewProfilePage> {
                   feature: Feature.uiLanguage,
                   label: l10n.newProfileSpeaks,
                   badge: IncomingBadgePlacement.below,
-                  child: _SpeaksPicker(
+                  child: AppLanguagePicker(
                     value: speaks,
                     decoration: field(l10n.newProfileSpeaks),
-                    onChanged: isIncoming(context, Feature.uiLanguage)
-                        ? null
-                        : (locale) => setState(() => _speaks = locale),
+                    onChanged: (locale) => setState(() => _speaks = locale),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -258,16 +257,6 @@ class _NewProfilePageState extends State<NewProfilePage> {
       ),
     );
   }
-
-  /// The shipped translation closest to the interface language in use.
-  static Locale _currentLocale(BuildContext context) {
-    final current = Localizations.localeOf(context);
-    const all = AppLocalizations.supportedLocales;
-    return all.firstWhere(
-      (l) => l.languageCode == current.languageCode,
-      orElse: () => all.first,
-    );
-  }
 }
 
 /// One avatar shape to pick: the bare shape in its tone, ringed in `primary`
@@ -314,50 +303,6 @@ class _ShapeChoice extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-/// "I speak": every translation that ships, from
-/// `AppLocalizations.supportedLocales`, each by its own name and ISO 639-3
-/// code (`localeOwnName`, `localeOwnIso639_3`), so a new ARB file adds itself.
-///
-/// The same list as Settings' App language picker, which lives in the
-/// settings feature; one shared picker is for Phase 2 to make. [onChanged]
-/// is null while `Feature.uiLanguage` is incoming.
-class _SpeaksPicker extends StatelessWidget {
-  const _SpeaksPicker({
-    required this.value,
-    required this.decoration,
-    required this.onChanged,
-  });
-
-  final Locale value;
-  final InputDecoration decoration;
-  final ValueChanged<Locale?>? onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return DropdownButtonFormField<Locale>(
-      initialValue: value,
-      isExpanded: true,
-      decoration: decoration,
-      borderRadius: BorderRadius.circular(AppRadii.small),
-      onChanged: onChanged,
-      items: <DropdownMenuItem<Locale>>[
-        for (final locale in AppLocalizations.supportedLocales)
-          DropdownMenuItem<Locale>(
-            value: locale,
-            child: Text(
-              l10n.settingsAppLanguageOption(
-                lookupAppLocalizations(locale).localeOwnName,
-                lookupAppLocalizations(locale).localeOwnIso639_3,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-      ],
     );
   }
 }

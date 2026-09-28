@@ -9,6 +9,7 @@ import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/app_language_picker.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -183,7 +184,16 @@ class SettingsPage extends StatelessWidget {
             horizontal: 20,
             vertical: 12,
           ),
-          trailing: const AppLanguagePicker(),
+          // Until #46 there is only English, and no setting to hold another
+          // choice; FluenoughApp would read one from SettingsNotifier.
+          trailing: AppLanguagePicker(
+            onChanged: (locale) => showAppSnackBar(
+              context,
+              l10n.settingsAppLanguageChanged(
+                AppLanguagePicker.ownName(locale),
+              ),
+            ),
+          ),
         ),
       ],
     );
@@ -363,89 +373,6 @@ class _ProfileCard extends StatelessWidget {
             ),
           ],
         ],
-      ),
-    );
-  }
-}
-
-/// The one interface-language picker (#46): every translation that ships,
-/// from `AppLocalizations.supportedLocales`, each by its own name and ISO
-/// 639-3 code (`localeOwnName`, `localeOwnIso639_3`). Nothing is hard-coded,
-/// so a new ARB file adds itself.
-///
-/// Disabled behind `Feature.uiLanguage`. The new-profile screen's "I speak"
-/// is the same list.
-class AppLanguagePicker extends StatelessWidget {
-  const AppLanguagePicker({super.key});
-
-  /// Each supported locale, with how the picker names it.
-  static List<({Locale locale, String name, String option})> options(
-    AppLocalizations l10n,
-  ) => <({Locale locale, String name, String option})>[
-    for (final locale in AppLocalizations.supportedLocales)
-      () {
-        final own = lookupAppLocalizations(locale);
-        return (
-          locale: locale,
-          name: own.localeOwnName,
-          option: l10n.settingsAppLanguageOption(
-            own.localeOwnName,
-            own.localeOwnIso639_3,
-          ),
-        );
-      }(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final scheme = Theme.of(context).colorScheme;
-    final all = options(l10n);
-    final current = Localizations.localeOf(context);
-    final selected = all
-        .map((o) => o.locale)
-        .firstWhere(
-          (l) => l.languageCode == current.languageCode,
-          orElse: () => all.first.locale,
-        );
-    final incoming = isIncoming(context, Feature.uiLanguage);
-
-    // Until #46 there is only English, and no setting to hold another
-    // choice; FluenoughApp would read one from SettingsNotifier.
-    void chosen(Locale? locale) {
-      if (locale == null) return;
-      final name = all.firstWhere((o) => o.locale == locale).name;
-      showAppSnackBar(context, l10n.settingsAppLanguageChanged(name));
-    }
-
-    return SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.45,
-      child: Container(
-        constraints: const BoxConstraints(minHeight: AppSizes.compactButton),
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-        decoration: BoxDecoration(
-          border: Border.all(color: scheme.outline),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: DropdownButtonHideUnderline(
-          child: DropdownButton<Locale>(
-            value: selected,
-            isExpanded: true,
-            borderRadius: BorderRadius.circular(12),
-            onChanged: incoming ? null : chosen,
-            items: <DropdownMenuItem<Locale>>[
-              for (final o in all)
-                DropdownMenuItem<Locale>(
-                  value: o.locale,
-                  child: Text(
-                    o.option,
-                    locale: o.locale,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-            ],
-          ),
-        ),
       ),
     );
   }
