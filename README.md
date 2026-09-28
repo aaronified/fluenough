@@ -8,8 +8,8 @@ entirely offline on your phone.
 
 > **Status: early development.** The architecture, deck format, example
 > decks, deck parser and validator are in, and the app's screens are built
-> from the design. Progress is kept in memory until the database lands, and
-> features not built yet are shown disabled, marked "Feature incoming". See
+> from the design. Progress is saved on the phone, one database per profile,
+> and features not built yet are shown disabled, marked "Feature incoming". See
 > [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Why "language-agnostic"

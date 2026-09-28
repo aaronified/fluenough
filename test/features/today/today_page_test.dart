@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 
 import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/session.dart';
@@ -151,10 +150,7 @@ void main() {
     expect(find.text(l10n.commonNotSavedTitle), findsOneWidget);
     expect(find.text(l10n.commonNotSavedBody), findsOneWidget);
 
-    await pumpToday(
-      tester,
-      state: AppState.test(features: FeatureRegistry.all()),
-    );
+    await pumpToday(tester, state: AppState.test(progress: _SavedProgress()));
     expect(find.text(l10n.commonNotSavedTitle), findsNothing);
   });
 
@@ -334,4 +330,10 @@ void main() {
     expect(find.text(l10n.commonDecksFailed), findsNothing);
     expect(find.byType(DeckTile), findsWidgets);
   });
+}
+
+/// Progress that says it outlives the app, as the database's does.
+class _SavedProgress extends MemoryProgress {
+  @override
+  bool get persists => true;
 }

@@ -111,8 +111,10 @@ class AppState extends ChangeNotifier {
   /// The current time, from the injected clock.
   DateTime now() => _clock();
 
-  /// Whether reviews outlive the app. False until #5; Today says so.
-  bool get progressIsSaved => features.isAvailable(Feature.persistence);
+  /// Whether reviews outlive the app: persistence ships and [progress] is a
+  /// store that keeps them. Today says so when not.
+  bool get progressIsSaved =>
+      features.isAvailable(Feature.persistence) && progress.persists;
 
   /// The tab the shell shows. A notifier of its own, so that a page pushed
   /// over the shell — the summary's "Done", Today's "See all" — can switch

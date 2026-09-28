@@ -40,11 +40,12 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the three drills the bundled decks support', () {
+  test('this version ships the three drills and saved progress', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
       Feature.drillListening,
+      Feature.persistence,
     });
   });
 
