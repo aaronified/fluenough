@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
 
 /// A row in a deck's "Practise one skill" group or the import sources:
@@ -11,10 +12,10 @@ import '../../ui/widgets/incoming.dart';
 /// Like `GroupedTile(feature:)`, a row whose [feature] is incoming is drawn
 /// dimmed with a full-contrast badge, shows the SnackBar on a tap, and is one
 /// screen-reader node, "[title], feature incoming". The difference is where
-/// the badge goes at large text sizes: between the text and the trailing
-/// control, as the design draws it, until the text is scaled past
-/// [_badgeInlineUpTo]; then under the text, so a long badge never pushes the
-/// row wider than the screen.
+/// the badge goes: between the text and the trailing control, as the design
+/// draws it, when it takes at most [_badgeInlineShare] of the row; otherwise
+/// under the text. So a large text scale, or a longer translation, never
+/// pushes the row wider than the screen or squeezes its title to a sliver.
 ///
 /// A live row keeps its trailing control's semantics separate, so a "Start"
 /// button is read with its own label.
@@ -56,18 +57,47 @@ class OptionRow extends StatelessWidget {
   /// Between the leading widget and the text.
   final double gap;
 
-  /// The text scale beyond which the badge moves under the text.
-  static const double _badgeInlineUpTo = 1.3;
+  /// The most of the row's width the badge may take beside the text.
+  static const double _badgeInlineShare = 0.4;
+
+  /// Whether the badge fits beside the text in a row [width] wide.
+  static bool _badgeFitsInline(BuildContext context, double width) {
+    final painter = TextPainter(
+      text: TextSpan(
+        text: AppLocalizations.of(context)!.incomingBadge,
+        style: Theme.of(context).textTheme.badge,
+      ),
+      textDirection: Directionality.of(context),
+      textScaler: MediaQuery.textScalerOf(context),
+      maxLines: 1,
+    )..layout();
+    // The badge's side padding, 10 each side.
+    final badge = painter.width + 20;
+    painter.dispose();
+    return badge <= width * _badgeInlineShare;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final f = feature;
+    if (f == null || !isIncoming(context, f)) return _build(context, false);
+    return LayoutBuilder(
+      builder: (context, constraints) => _build(
+        context,
+        true,
+        badgeInline: _badgeFitsInline(context, constraints.maxWidth),
+      ),
+    );
+  }
+
+  Widget _build(
+    BuildContext context,
+    bool incoming, {
+    bool badgeInline = true,
+  }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final f = feature;
-    final incoming = f != null && isIncoming(context, f);
     final dim = incoming ? kIncomingOpacity : 1.0;
-    final badgeInline =
-        MediaQuery.textScalerOf(context).scale(1) <= _badgeInlineUpTo;
     final foreground = selected ? scheme.onSecondaryContainer : null;
 
     Widget dimmed(Widget child) =>
