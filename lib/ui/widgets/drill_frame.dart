@@ -131,7 +131,10 @@ class DrillFrame extends StatelessWidget {
                         children: <Widget>[
                           Row(
                             children: <Widget>[
-                              ModePill(skill: skill),
+                              // Flexible, so that a long skill name in a
+                              // large text scale wraps inside the pill
+                              // rather than pushing the row off the screen.
+                              Flexible(child: ModePill(skill: skill)),
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
