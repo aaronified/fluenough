@@ -373,6 +373,16 @@
   "@newProfilePinHelp": {
     "description": "Help beside the PIN switch."
   },
+  "newProfilePinField": "Choose a {length}-digit PIN",
+  "@newProfilePinField": {
+    "description": "Label of the field, shown once Lock with a PIN is switched on, where the new profile's PIN is typed. Only digits go in it; length is how many.",
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
   "newProfileCreate": "Create profile",
   "@newProfileCreate": {
     "description": "Button that creates the profile."
