@@ -1,18 +1,2052 @@
 {
   "@@locale": "en",
-
   "appTitle": "Fluenough",
   "@appTitle": {
     "description": "The application name, shown in the app bar and as the task title. NOT the Android launcher label, which lives in android/ and is not localised through this file — see ADR-0006."
   },
-
   "scaffoldingTagline": "Fluent enough.",
   "@scaffoldingTagline": {
     "description": "Tagline on the placeholder home screen. Removed by #7."
   },
-
   "scaffoldingNotice": "The core domain layer is in place. Drills are not built yet — see docs/ROADMAP.md.",
   "@scaffoldingNotice": {
     "description": "Explains to a developer why the app shows nothing. Removed by #7."
+  },
+  "navToday": "Today",
+  "@navToday": {
+    "description": "Bottom navigation: the home tab, with what is due today."
+  },
+  "navDecks": "Decks",
+  "@navDecks": {
+    "description": "Bottom navigation: the tab listing every deck."
+  },
+  "navProgress": "Progress",
+  "@navProgress": {
+    "description": "Bottom navigation: the statistics tab."
+  },
+  "navSettings": "Settings",
+  "@navSettings": {
+    "description": "Bottom navigation: the settings tab."
+  },
+  "commonBack": "Back",
+  "@commonBack": {
+    "description": "Tooltip and screen-reader label of a back button."
+  },
+  "commonCancel": "Cancel",
+  "@commonCancel": {
+    "description": "Button that dismisses a dialog without doing anything."
+  },
+  "commonClose": "Close",
+  "@commonClose": {
+    "description": "Tooltip and screen-reader label of a button that closes a sheet or dialog."
+  },
+  "commonContinue": "Continue",
+  "@commonContinue": {
+    "description": "Button that moves on to the next card after feedback."
+  },
+  "commonDelete": "Delete",
+  "@commonDelete": {
+    "description": "Button that confirms deleting something."
+  },
+  "commonDone": "Done",
+  "@commonDone": {
+    "description": "Button that finishes a screen, such as the session summary."
+  },
+  "commonKeep": "Keep",
+  "@commonKeep": {
+    "description": "Button that backs out of deleting something and keeps it."
+  },
+  "commonUndo": "Undo",
+  "@commonUndo": {
+    "description": "Button that reverses the action just taken."
+  },
+  "commonGotIt": "Got it",
+  "@commonGotIt": {
+    "description": "Button that dismisses an explanation once read."
+  },
+  "commonRetry": "Try again",
+  "@commonRetry": {
+    "description": "Button that retries something that failed, such as loading the decks."
+  },
+  "commonLoadingDecks": "Loading decks…",
+  "@commonLoadingDecks": {
+    "description": "Shown while the bundled decks are being read at start-up."
+  },
+  "commonDecksFailed": "Decks couldn’t be loaded",
+  "@commonDecksFailed": {
+    "description": "Title shown when the list of decks itself could not be read. Rare: a single broken deck is shown as its own row instead."
+  },
+  "commonDecksFailedBody": "Something went wrong reading the decks that came with the app. Try again, and report it if it keeps happening.",
+  "@commonDecksFailedBody": {
+    "description": "Body under commonDecksFailed."
+  },
+  "commonCardCount": "{count, plural, =0{No cards} =1{1 card} other{{count} cards}}",
+  "@commonCardCount": {
+    "description": "How many cards a deck has, on its own line (deck detail) or inside a longer line.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "commonDueBadge": "{count, plural, other{{count} due}}",
+  "@commonDueBadge": {
+    "description": "Badge on a deck row: how many cards a session on that deck would drill now.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "commonDoneBadge": "Done",
+  "@commonDoneBadge": {
+    "description": "Badge on a deck row the profile learns, when nothing in it is due."
+  },
+  "commonStartBadge": "Start",
+  "@commonStartBadge": {
+    "description": "Badge on a deck row in a language the current profile is not learning."
+  },
+  "commonNoVoice": "No voice",
+  "@commonNoVoice": {
+    "description": "Short status where a count would be, when the phone has no voice for the language, so listening cannot be drilled."
+  },
+  "commonPercent": "{value}",
+  "@commonPercent": {
+    "description": "A percentage on its own, like a score or a size. The value is a fraction; 0.87 shows as 87%.",
+    "placeholders": {
+      "value": {
+        "type": "double",
+        "example": "0.87",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "commonListSeparator": ", ",
+  "@commonListSeparator": {
+    "description": "Placed between items when the app lists several names in a row, such as the languages a profile learns: \"Hindi, Spanish\". Keep any spacing your language uses."
+  },
+  "commonNotSavedTitle": "Progress isn’t saved yet",
+  "@commonNotSavedTitle": {
+    "description": "Banner title while this version keeps reviews in memory only."
+  },
+  "commonNotSavedBody": "This version keeps your reviews in memory. They’re gone when the app closes.",
+  "@commonNotSavedBody": {
+    "description": "Banner body under commonNotSavedTitle."
+  },
+  "commonUnnamedProfile": "You",
+  "@commonUnnamedProfile": {
+    "description": "Stands in for a profile's name when it has none, such as the default profile."
+  },
+  "commonLanguageWithCode": "{language} ({code})",
+  "@commonLanguageWithCode": {
+    "description": "A language name with its three-letter ISO 639-3 code, like \"Hindi (hin)\". The name comes from the deck file.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "code": {
+        "type": "String",
+        "example": "hin"
+      }
+    }
+  },
+  "incomingBadge": "Feature incoming",
+  "@incomingBadge": {
+    "description": "Badge on anything built but not switched on in this version. Shown at full contrast beside the dimmed control, so the state never relies on colour alone."
+  },
+  "incomingSnackBar": "Feature incoming. Not in this version yet.",
+  "@incomingSnackBar": {
+    "description": "SnackBar shown when someone taps a feature that is not switched on yet."
+  },
+  "incomingSemanticsLabel": "{label}, feature incoming",
+  "@incomingSemanticsLabel": {
+    "description": "What a screen reader says for a disabled, not-yet-available control. label is the control's own name.",
+    "placeholders": {
+      "label": {
+        "type": "String",
+        "example": "Daily reminder"
+      }
+    }
+  },
+  "incomingSemanticsHint": "Not in this version yet",
+  "@incomingSemanticsHint": {
+    "description": "Screen-reader hint on a control that is not available yet."
+  },
+  "skillRecognition": "Recognition",
+  "@skillRecognition": {
+    "description": "The skill of seeing a word in the target language and recalling its meaning. A drill type."
+  },
+  "skillProduction": "Production",
+  "@skillProduction": {
+    "description": "The skill of seeing the meaning and typing the word in the target language. A drill type."
+  },
+  "skillListening": "Listening",
+  "@skillListening": {
+    "description": "The skill of hearing a word and typing it. A drill type."
+  },
+  "skillGrammar": "Grammar",
+  "@skillGrammar": {
+    "description": "The skill of typing the right inflected form, from a pattern table. A drill type."
+  },
+  "skillPair": "Minimal pairs",
+  "@skillPair": {
+    "description": "The skill of telling two similar sounds apart, like ka and kha. A drill type."
+  },
+  "skillRecognitionDeckDesc": "See {language}, recall the meaning",
+  "@skillRecognitionDeckDesc": {
+    "description": "Under Recognition on a deck's screen.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "skillProductionDeckDesc": "See the meaning, type {language}",
+  "@skillProductionDeckDesc": {
+    "description": "Under Production on a deck's screen.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "skillListeningDeckDesc": "Hear it, type what you heard",
+  "@skillListeningDeckDesc": {
+    "description": "Under Listening on a deck's screen."
+  },
+  "skillGrammarDeckDesc": "Type the right form of the word",
+  "@skillGrammarDeckDesc": {
+    "description": "Under Grammar on a deck's screen."
+  },
+  "skillPairDeckDesc": "Tell similar sounds apart",
+  "@skillPairDeckDesc": {
+    "description": "Under Minimal pairs on a deck's screen."
+  },
+  "skillRecognitionSettingsDesc": "You judge your own recall",
+  "@skillRecognitionSettingsDesc": {
+    "description": "Under the Recognition switch in Settings."
+  },
+  "skillProductionSettingsDesc": "Typed, checked by the app",
+  "@skillProductionSettingsDesc": {
+    "description": "Under the Production switch in Settings."
+  },
+  "skillListeningSettingsDesc": "Needs a voice for the language",
+  "@skillListeningSettingsDesc": {
+    "description": "Under the Listening switch in Settings."
+  },
+  "skillGrammarSettingsDesc": "From pattern-table decks",
+  "@skillGrammarSettingsDesc": {
+    "description": "Under the Grammar switch in Settings."
+  },
+  "skillPairSettingsDesc": "Sounds your language may not have",
+  "@skillPairSettingsDesc": {
+    "description": "Under the Minimal pairs switch in Settings."
+  },
+  "profilesTitle": "Who’s practising?",
+  "@profilesTitle": {
+    "description": "Heading of the screen that picks a profile."
+  },
+  "profilesAdd": "Add profile",
+  "@profilesAdd": {
+    "description": "Button that starts creating a new profile."
+  },
+  "profilesPrivacy": "Profiles stay on this phone. Nothing is uploaded.",
+  "@profilesPrivacy": {
+    "description": "Note at the foot of the profile picker."
+  },
+  "profilesLocked": "PIN locked",
+  "@profilesLocked": {
+    "description": "Screen-reader label of the lock icon beside a profile that needs a PIN."
+  },
+  "profilesOpen": "{name}, learning {languages}",
+  "@profilesOpen": {
+    "description": "Screen-reader label of a profile in the picker. languages is a list joined with commonListSeparator.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Aro"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Spanish"
+      }
+    }
+  },
+  "profilesLearningNothing": "Nothing yet",
+  "@profilesLearningNothing": {
+    "description": "Stands in for the list of languages when a profile learns none yet."
+  },
+  "pinBackToProfiles": "Back to profiles",
+  "@pinBackToProfiles": {
+    "description": "Back button on the PIN screen."
+  },
+  "pinGreeting": "Hi, {name}",
+  "@pinGreeting": {
+    "description": "Heading of the PIN screen.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Aro"
+      }
+    }
+  },
+  "pinPrompt": "Enter your {length}-digit PIN",
+  "@pinPrompt": {
+    "description": "Instruction on the PIN screen.",
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "pinWrong": "That PIN didn’t match. Try again.",
+  "@pinWrong": {
+    "description": "Shown when the PIN entered is wrong. Announced to screen readers."
+  },
+  "pinEntered": "{entered} of {length} digits entered",
+  "@pinEntered": {
+    "description": "Screen-reader description of the PIN dots.",
+    "placeholders": {
+      "entered": {
+        "type": "int",
+        "example": "2"
+      },
+      "length": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "pinDeleteDigit": "Delete digit",
+  "@pinDeleteDigit": {
+    "description": "Screen-reader label of the backspace key on the PIN pad."
+  },
+  "pinForgot": "Forgot PIN?",
+  "@pinForgot": {
+    "description": "Button that explains what to do about a forgotten PIN."
+  },
+  "pinForgotBody": "A PIN can’t be recovered: nothing leaves this phone. Another profile can remove this one from Settings, and its review log goes with it.",
+  "@pinForgotBody": {
+    "description": "Shown under Forgot PIN?."
+  },
+  "newProfileTitle": "New profile",
+  "@newProfileTitle": {
+    "description": "Title of the screen that creates a profile."
+  },
+  "newProfileShape": "Pick a shape",
+  "@newProfileShape": {
+    "description": "Label above the avatar shapes."
+  },
+  "newProfileShapeOption": "Shape {number}",
+  "@newProfileShapeOption": {
+    "description": "Screen-reader label of one avatar shape.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "newProfileName": "Name",
+  "@newProfileName": {
+    "description": "Label of the name field."
+  },
+  "newProfileNameHint": "Your name",
+  "@newProfileNameHint": {
+    "description": "Placeholder in the empty name field."
+  },
+  "newProfileSpeaks": "I speak",
+  "@newProfileSpeaks": {
+    "description": "Label of the interface-language picker."
+  },
+  "newProfileSpeaksHelp": "Menus follow this language when a translation exists. English until then.",
+  "@newProfileSpeaksHelp": {
+    "description": "Help under the I speak picker."
+  },
+  "newProfileLearning": "I’m learning",
+  "@newProfileLearning": {
+    "description": "Label above the languages to learn."
+  },
+  "newProfilePin": "Lock with a PIN",
+  "@newProfilePin": {
+    "description": "Switch that protects the new profile with a PIN."
+  },
+  "newProfilePinHelp": "Stops others on this phone opening your profile.",
+  "@newProfilePinHelp": {
+    "description": "Help beside the PIN switch."
+  },
+  "newProfileCreate": "Create profile",
+  "@newProfileCreate": {
+    "description": "Button that creates the profile."
+  },
+  "newProfileCreated": "Profile created. Welcome!",
+  "@newProfileCreated": {
+    "description": "SnackBar after a profile is created."
+  },
+  "newProfileNoLanguages": "No decks are loaded yet, so there are no languages to pick.",
+  "@newProfileNoLanguages": {
+    "description": "Shown instead of the language chips when the catalog is empty."
+  },
+  "todayGreetingMorning": "Good morning",
+  "@todayGreetingMorning": {
+    "description": "Today's heading before noon, for a profile with no name."
+  },
+  "todayGreetingAfternoon": "Good afternoon",
+  "@todayGreetingAfternoon": {
+    "description": "Today's heading from noon until evening, for a profile with no name."
+  },
+  "todayGreetingEvening": "Good evening",
+  "@todayGreetingEvening": {
+    "description": "Today's heading in the evening and at night, for a profile with no name."
+  },
+  "todayGreetingMorningName": "Good morning, {name}",
+  "@todayGreetingMorningName": {
+    "description": "Today's heading before noon.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Aro"
+      }
+    }
+  },
+  "todayGreetingAfternoonName": "Good afternoon, {name}",
+  "@todayGreetingAfternoonName": {
+    "description": "Today's heading from noon until evening.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Aro"
+      }
+    }
+  },
+  "todayGreetingEveningName": "Good evening, {name}",
+  "@todayGreetingEveningName": {
+    "description": "Today's heading in the evening and at night.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Aro"
+      }
+    }
+  },
+  "todaySwitchProfile": "Switch profile",
+  "@todaySwitchProfile": {
+    "description": "Screen-reader label of the avatar button in Today's header."
+  },
+  "todayDueSection": "Due now",
+  "@todayDueSection": {
+    "description": "Screen-reader name of the card showing what is due."
+  },
+  "todayCardsDue": "{count, plural, =1{card due} other{cards due}}",
+  "@todayCardsDue": {
+    "description": "Beside the large number of cards due today, which is shown separately. The count only picks the form.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "23"
+      }
+    }
+  },
+  "todayMinutes": "{count, plural, =1{about 1 min} other{about {count} min}}",
+  "@todayMinutes": {
+    "description": "Estimated time for today's review.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "todaySkillSemantics": "{skill}: {count, plural, =0{none due} =1{1 due} other{{count} due}}",
+  "@todaySkillSemantics": {
+    "description": "Screen-reader label of one skill tile on Today.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Recognition"
+      },
+      "count": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "todaySkillNoVoice": "{skill}: no voice on this phone",
+  "@todaySkillNoVoice": {
+    "description": "Screen-reader label of the Listening tile when no language has a voice.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Listening"
+      }
+    }
+  },
+  "todayStartReview": "Start review",
+  "@todayStartReview": {
+    "description": "The main button on Today, which starts a session of everything due."
+  },
+  "todayAllDoneTitle": "All done for now",
+  "@todayAllDoneTitle": {
+    "description": "Shown on Today when nothing is due."
+  },
+  "todayAllDoneBody": "Nothing is due. New cards arrive tomorrow.",
+  "@todayAllDoneBody": {
+    "description": "Under todayAllDoneTitle."
+  },
+  "todayStreakSection": "Streak",
+  "@todayStreakSection": {
+    "description": "Screen-reader name of the streak card."
+  },
+  "todayStreak": "{count, plural, =0{No streak yet} =1{1-day streak} other{{count}-day streak}}",
+  "@todayStreak": {
+    "description": "How many days in a row the learner has practised.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "todayNewCards": "New cards today: {done} of {limit}",
+  "@todayNewCards": {
+    "description": "Under the streak: new cards introduced today against the daily cap.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "8"
+      },
+      "limit": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "todayWeekDay": "{day}: {status, select, done{practised} today{today, not yet practised} other{not practised}}",
+  "@todayWeekDay": {
+    "description": "Screen-reader label of one day in the week row. day is the weekday's name.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Monday"
+      },
+      "status": {
+        "type": "String",
+        "example": "done"
+      }
+    }
+  },
+  "todayYourDecks": "Your decks",
+  "@todayYourDecks": {
+    "description": "Heading above the decks on Today."
+  },
+  "todaySeeAll": "See all",
+  "@todaySeeAll": {
+    "description": "Button that opens the Decks tab."
+  },
+  "todayNoDecks": "No decks for your languages yet.",
+  "@todayNoDecks": {
+    "description": "Shown on Today when the profile's languages have no decks."
+  },
+  "todayBrowseDecks": "Browse decks",
+  "@todayBrowseDecks": {
+    "description": "Button under todayNoDecks."
+  },
+  "todayFactTitle": "Today’s fact",
+  "@todayFactTitle": {
+    "description": "Title of the daily fact card."
+  },
+  "todayFactBody": "One short, true thing about a language you’re learning, each day.",
+  "@todayFactBody": {
+    "description": "Body of the daily fact card while it is not built yet."
+  },
+  "decksTitle": "Decks",
+  "@decksTitle": {
+    "description": "Heading of the Decks tab."
+  },
+  "decksSearchHint": "Search decks",
+  "@decksSearchHint": {
+    "description": "Placeholder and label of the deck search field."
+  },
+  "decksFilterLabel": "Filter by language",
+  "@decksFilterLabel": {
+    "description": "Screen-reader name of the row of language chips."
+  },
+  "decksFilterAll": "All",
+  "@decksFilterAll": {
+    "description": "Language chip that shows every deck."
+  },
+  "decksAdd": "Add deck",
+  "@decksAdd": {
+    "description": "Floating button that opens Add a deck."
+  },
+  "decksEmptySearch": "No decks match that search.",
+  "@decksEmptySearch": {
+    "description": "Shown when the search or filter hides every deck."
+  },
+  "decksEmpty": "No decks yet.",
+  "@decksEmpty": {
+    "description": "Shown when no deck is loaded at all."
+  },
+  "deckMeta": "{language} ({code}) · {count, plural, =1{1 card} other{{count} cards}}",
+  "@deckMeta": {
+    "description": "Second line of a deck row.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "code": {
+        "type": "String",
+        "example": "hin"
+      },
+      "count": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "deckMetaImported": "{language} ({code}) · {count, plural, =1{1 card} other{{count} cards}} · Imported",
+  "@deckMetaImported": {
+    "description": "Second line of a row for a deck the learner imported.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Urdu"
+      },
+      "code": {
+        "type": "String",
+        "example": "urd"
+      },
+      "count": {
+        "type": "int",
+        "example": "24"
+      }
+    }
+  },
+  "decksBrokenTitle": "{file} couldn’t be read",
+  "@decksBrokenTitle": {
+    "description": "Title of a row for a deck file that failed to parse.",
+    "placeholders": {
+      "file": {
+        "type": "String",
+        "example": "ja-kana.yaml"
+      }
+    }
+  },
+  "decksBrokenAt": "Line {line}: {message}",
+  "@decksBrokenAt": {
+    "description": "Under decksBrokenTitle. message is the parser's own explanation, shown verbatim.",
+    "placeholders": {
+      "line": {
+        "type": "int",
+        "example": "42"
+      },
+      "message": {
+        "type": "String",
+        "example": "cards[3].native was read as the boolean false, not as text"
+      }
+    }
+  },
+  "decksBrokenBadge": "Error",
+  "@decksBrokenBadge": {
+    "description": "Badge on a row for a deck file that failed to parse."
+  },
+  "deckKindScript": "Script",
+  "@deckKindScript": {
+    "description": "A deck that teaches a writing system."
+  },
+  "deckKindVocabulary": "Vocabulary",
+  "@deckKindVocabulary": {
+    "description": "A deck of words and phrases."
+  },
+  "deckKindGrammar": "Grammar",
+  "@deckKindGrammar": {
+    "description": "A deck built from a pattern table, like verb endings."
+  },
+  "deckHeaderLine": "{language} ({code}) · {kind}",
+  "@deckHeaderLine": {
+    "description": "Above a deck's name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "code": {
+        "type": "String",
+        "example": "hin"
+      },
+      "kind": {
+        "type": "String",
+        "example": "Vocabulary"
+      }
+    }
+  },
+  "deckDue": "Due",
+  "@deckDue": {
+    "description": "Label under the number of reviews due in this deck."
+  },
+  "deckNewToday": "New today",
+  "@deckNewToday": {
+    "description": "Label under the number of new cards this deck can introduce today."
+  },
+  "deckLearned": "Learned",
+  "@deckLearned": {
+    "description": "Label under the number of cards in this deck remembered at least once."
+  },
+  "deckPractiseOne": "Practise one skill",
+  "@deckPractiseOne": {
+    "description": "Heading above the skill rows on a deck's screen."
+  },
+  "deckNoVoice": "No {language} voice on this phone",
+  "@deckNoVoice": {
+    "description": "Under Listening when the phone cannot speak the deck's language.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      }
+    }
+  },
+  "deckSetUpVoice": "Set up",
+  "@deckSetUpVoice": {
+    "description": "Button that opens Voices, beside a skill that needs one."
+  },
+  "deckStartSkill": "Start {skill}, {count, plural, =1{1 due} other{{count} due}}",
+  "@deckStartSkill": {
+    "description": "Screen-reader label of the button that starts one skill.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Recognition"
+      },
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "deckOnlyTags": "Only these tags",
+  "@deckOnlyTags": {
+    "description": "Heading above the tag chips that narrow a session."
+  },
+  "deckCards": "Cards",
+  "@deckCards": {
+    "description": "Heading above the card preview."
+  },
+  "deckLicence": "Content licence",
+  "@deckLicence": {
+    "description": "Label for the deck content's SPDX licence."
+  },
+  "deckSource": "Source",
+  "@deckSource": {
+    "description": "Label for where the deck came from."
+  },
+  "deckSourceBundled": "Bundled",
+  "@deckSourceBundled": {
+    "description": "Source of a deck that came with the app."
+  },
+  "deckAuthors": "Authors",
+  "@deckAuthors": {
+    "description": "Label for the people credited with the deck."
+  },
+  "deckVoice": "Voice",
+  "@deckVoice": {
+    "description": "Label for the deck language's voice status."
+  },
+  "deckVoiceInstalled": "{tag} · installed",
+  "@deckVoiceInstalled": {
+    "description": "The phone has a voice for the deck's language. tag is a BCP-47 voice tag.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "hi-IN"
+      }
+    }
+  },
+  "deckVoiceMissing": "{tag} · not on this phone",
+  "@deckVoiceMissing": {
+    "description": "The phone has no voice for the deck's language.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "ja-JP"
+      }
+    }
+  },
+  "deckVoiceChecking": "{tag} · checking…",
+  "@deckVoiceChecking": {
+    "description": "Still asking the phone about a voice.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "ja-JP"
+      }
+    }
+  },
+  "deckId": "Deck id",
+  "@deckId": {
+    "description": "Label for the deck's permanent id."
+  },
+  "deckReviewAll": "{count, plural, =0{Nothing due} other{Review all due · {count}}}",
+  "@deckReviewAll": {
+    "description": "The button at the foot of a deck's screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "deckGrammarCell": "{lemma} — {slot}",
+  "@deckGrammarCell": {
+    "description": "A grammar card in the preview: the dictionary form and the slot, like \"hablar — nosotros\".",
+    "placeholders": {
+      "lemma": {
+        "type": "String",
+        "example": "hablar"
+      },
+      "slot": {
+        "type": "String",
+        "example": "nosotros"
+      }
+    }
+  },
+  "deckNotFound": "This deck isn’t loaded.",
+  "@deckNotFound": {
+    "description": "Shown if a deck's screen opens for a deck that is not in the catalog."
+  },
+  "importTitle": "Add a deck",
+  "@importTitle": {
+    "description": "Title of the import screen."
+  },
+  "importSourceGroup": "Where is the deck?",
+  "@importSourceGroup": {
+    "description": "Screen-reader name of the choice of import source."
+  },
+  "importFile": "From a file",
+  "@importFile": {
+    "description": "Import source."
+  },
+  "importFileDesc": "A .yaml deck on this phone",
+  "@importFileDesc": {
+    "description": "Under From a file."
+  },
+  "importLink": "From a link",
+  "@importLink": {
+    "description": "Import source."
+  },
+  "importLinkDesc": "Paste a link to a .yaml deck",
+  "@importLinkDesc": {
+    "description": "Under From a link."
+  },
+  "importCsv": "From a spreadsheet",
+  "@importCsv": {
+    "description": "Import source."
+  },
+  "importCsvDesc": "A .csv file, one card per row",
+  "@importCsvDesc": {
+    "description": "Under From a spreadsheet."
+  },
+  "importAnki": "From Anki",
+  "@importAnki": {
+    "description": "Import source. Anki is a product name."
+  },
+  "importAnkiDesc": "An .apkg export",
+  "@importAnkiDesc": {
+    "description": "Under From Anki."
+  },
+  "importLinkLabel": "Deck link (.yaml)",
+  "@importLinkLabel": {
+    "description": "Label of the link field."
+  },
+  "importLinkHint": "https://…/deck.yaml",
+  "@importLinkHint": {
+    "description": "Placeholder in the empty link field."
+  },
+  "importCsvHelp": "Columns: {columns}. The first row is the header. You’ll name the language next.",
+  "@importCsvHelp": {
+    "description": "Help for spreadsheet import. columns is the list of column names, which are format keywords and not translated.",
+    "placeholders": {
+      "columns": {
+        "type": "String",
+        "example": "target, native, reading, tags"
+      }
+    }
+  },
+  "importAnkiHelp": "Each note becomes a card. Anki’s own review history is not carried over.",
+  "@importAnkiHelp": {
+    "description": "Help for Anki import."
+  },
+  "importFetch": "Fetch and check",
+  "@importFetch": {
+    "description": "Button that downloads and validates a linked deck."
+  },
+  "importChoose": "Choose file",
+  "@importChoose": {
+    "description": "Button that picks a file to import."
+  },
+  "importChecked": "Checked: no problems found",
+  "@importChecked": {
+    "description": "Shown when a deck to import passed every check."
+  },
+  "importDeckMeta": "{count, plural, =1{1 card} other{{count} cards}} · {licence}",
+  "@importDeckMeta": {
+    "description": "Under the name of a deck about to be imported.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "40"
+      },
+      "licence": {
+        "type": "String",
+        "example": "CC0-1.0"
+      }
+    }
+  },
+  "importAdd": "Add to my decks",
+  "@importAdd": {
+    "description": "Button that adds the checked deck."
+  },
+  "importAdded": "{name} added",
+  "@importAdded": {
+    "description": "SnackBar after a deck is added.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Hindi Core"
+      }
+    }
+  },
+  "importErrorTitle": "This deck couldn’t be read",
+  "@importErrorTitle": {
+    "description": "Title of the error when a deck to import fails a check."
+  },
+  "importErrorAt": "{file}, line {line}: {message}",
+  "@importErrorAt": {
+    "description": "Where the problem is, and what it is. message is the parser's own explanation, shown verbatim.",
+    "placeholders": {
+      "file": {
+        "type": "String",
+        "example": "ja-kana.yaml"
+      },
+      "line": {
+        "type": "int",
+        "example": "42"
+      },
+      "message": {
+        "type": "String",
+        "example": "native was read as the boolean false, not as text"
+      }
+    }
+  },
+  "importErrorIn": "{file}: {message}",
+  "@importErrorIn": {
+    "description": "The problem, when the parser could not say which line.",
+    "placeholders": {
+      "file": {
+        "type": "String",
+        "example": "ja-kana.yaml"
+      },
+      "message": {
+        "type": "String",
+        "example": "the deck is empty"
+      }
+    }
+  },
+  "importErrorNothingAdded": "Nothing was added. Your other decks are unchanged.",
+  "@importErrorNothingAdded": {
+    "description": "Reassurance at the foot of the import error."
+  },
+  "drillEndSession": "End session",
+  "@drillEndSession": {
+    "description": "Tooltip of the close button in a drill, and the button that confirms ending."
+  },
+  "drillProgressLabel": "Session progress",
+  "@drillProgressLabel": {
+    "description": "Screen-reader name of the progress wave."
+  },
+  "drillPosition": "{position} of {total}",
+  "@drillPosition": {
+    "description": "Screen-reader value of the progress wave.",
+    "placeholders": {
+      "position": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "drillPositionShort": "{position}/{total}",
+  "@drillPositionShort": {
+    "description": "The card counter in the drill header.",
+    "placeholders": {
+      "position": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "drillShowAnswer": "Show answer",
+  "@drillShowAnswer": {
+    "description": "Recognition: reveals the meaning."
+  },
+  "drillRatePrompt": "How well did you know it?",
+  "@drillRatePrompt": {
+    "description": "Above the four self-rating buttons."
+  },
+  "drillRateGroup": "Rate your recall",
+  "@drillRateGroup": {
+    "description": "Screen-reader name of the rating buttons."
+  },
+  "drillDontKnow": "Don’t know",
+  "@drillDontKnow": {
+    "description": "Gives up on a typed answer and shows it."
+  },
+  "drillCheck": "Check",
+  "@drillCheck": {
+    "description": "Submits a typed answer."
+  },
+  "drillCountWrong": "Count it wrong",
+  "@drillCountWrong": {
+    "description": "After a near miss: the learner says they did not know it."
+  },
+  "drillKnewIt": "I knew it",
+  "@drillKnewIt": {
+    "description": "After a near miss: the learner says it was a slip."
+  },
+  "drillAskIn": "In {language}?",
+  "@drillAskIn": {
+    "description": "Production: above the meaning to translate.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "drillTypeIn": "Type it in {language}",
+  "@drillTypeIn": {
+    "description": "Label of the answer field, for a language in Latin letters.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "drillTypeInScript": "Type it in {language} script",
+  "@drillTypeInScript": {
+    "description": "Label of the answer field, for a language in another script.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillTypeLatin": "Type it in Latin letters, e.g. {example}",
+  "@drillTypeLatin": {
+    "description": "Label of the answer field when typing the romanisation. example is a reading from the deck.",
+    "placeholders": {
+      "example": {
+        "type": "String",
+        "example": "ladka"
+      }
+    }
+  },
+  "drillTypeHeard": "Type what you hear",
+  "@drillTypeHeard": {
+    "description": "Label of the answer field in listening."
+  },
+  "drillTypeSlot": "Type the {slot} form",
+  "@drillTypeSlot": {
+    "description": "Label of the answer field in grammar. slot comes from the deck, like \"nosotros\".",
+    "placeholders": {
+      "slot": {
+        "type": "String",
+        "example": "nosotros"
+      }
+    }
+  },
+  "drillInputModeGroup": "How to type the answer",
+  "@drillInputModeGroup": {
+    "description": "Screen-reader name of the script or transliteration choice."
+  },
+  "drillInputScript": "{language} script",
+  "@drillInputScript": {
+    "description": "Choice: type in the language's own script.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillInputTranslit": "Transliteration",
+  "@drillInputTranslit": {
+    "description": "Choice: type the answer in Latin letters."
+  },
+  "drillKeyboardHint": "Needs a {language} keyboard. HeliBoard is a free, open-source keyboard for many languages.",
+  "@drillKeyboardHint": {
+    "description": "Hint under the answer field for a non-Latin script. HeliBoard is a product name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillGetHeliboard": "Get HeliBoard",
+  "@drillGetHeliboard": {
+    "description": "Button that copies HeliBoard's F-Droid link."
+  },
+  "drillHeliboardCopied": "Copied the link to HeliBoard on F-Droid. Paste it into your browser.",
+  "@drillHeliboardCopied": {
+    "description": "SnackBar after Get HeliBoard."
+  },
+  "drillPlay": "Play the word",
+  "@drillPlay": {
+    "description": "Screen-reader label of the play button."
+  },
+  "drillPlaying": "Playing",
+  "@drillPlaying": {
+    "description": "Screen-reader label of the play button while it plays."
+  },
+  "drillPlayHint": "Tap to hear it",
+  "@drillPlayHint": {
+    "description": "Under the play button."
+  },
+  "drillPlayingHint": "Playing…",
+  "@drillPlayingHint": {
+    "description": "Under the play button while it plays."
+  },
+  "drillSlower": "Slower · {rate}×",
+  "@drillSlower": {
+    "description": "Toggle that plays the word more slowly. rate is the speed multiplier.",
+    "placeholders": {
+      "rate": {
+        "type": "double",
+        "example": "0.7",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "drillPairQuestion": "Which one did you hear?",
+  "@drillPairQuestion": {
+    "description": "Minimal pairs: above the two choices."
+  },
+  "drillPairOption": "{target}, {reading}",
+  "@drillPairOption": {
+    "description": "Screen-reader label of one minimal-pair choice: the letter and how it reads.",
+    "placeholders": {
+      "target": {
+        "type": "String",
+        "example": "ख"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kha"
+      }
+    }
+  },
+  "drillExample": "Example",
+  "@drillExample": {
+    "description": "Screen-reader name of an example sentence on a card."
+  },
+  "drillEmptyTitle": "Nothing to drill right now",
+  "@drillEmptyTitle": {
+    "description": "Shown when a session has no cards."
+  },
+  "drillEmptyBody": "Everything here is scheduled for later. New cards arrive tomorrow.",
+  "@drillEmptyBody": {
+    "description": "Under drillEmptyTitle."
+  },
+  "drillEndTitle": "End this session?",
+  "@drillEndTitle": {
+    "description": "Title of the dialog when closing a session part-way."
+  },
+  "drillEndBody": "Your answers so far are already recorded.",
+  "@drillEndBody": {
+    "description": "Body of the end-session dialog."
+  },
+  "drillEndKeepGoing": "Keep going",
+  "@drillEndKeepGoing": {
+    "description": "Button that stays in the session."
+  },
+  "feedbackCorrect": "Correct",
+  "@feedbackCorrect": {
+    "description": "Feedback: the typed answer was right."
+  },
+  "feedbackAccent": "Right, but mind the accent",
+  "@feedbackAccent": {
+    "description": "Feedback: right apart from the accents. Still counted as correct."
+  },
+  "feedbackArticle": "Right, but keep the article",
+  "@feedbackArticle": {
+    "description": "Feedback: right apart from the leading article, like el or la. Still counted as correct."
+  },
+  "feedbackAccentAndArticle": "Right, but mind the accent and the article",
+  "@feedbackAccentAndArticle": {
+    "description": "Feedback: right apart from both the accents and the article."
+  },
+  "feedbackTypedWritten": "You typed “{typed}”. Written: {answer}",
+  "@feedbackTypedWritten": {
+    "description": "Detail under an accent or article miss.",
+    "placeholders": {
+      "typed": {
+        "type": "String",
+        "example": "el nino"
+      },
+      "answer": {
+        "type": "String",
+        "example": "el niño"
+      }
+    }
+  },
+  "feedbackTypo": "Almost. Did you mean {answer}?",
+  "@feedbackTypo": {
+    "description": "Feedback on a near miss, which the learner then judges.",
+    "placeholders": {
+      "answer": {
+        "type": "String",
+        "example": "la ventana"
+      }
+    }
+  },
+  "feedbackTypoDetail": "You typed “{typed}”. Near misses are yours to judge.",
+  "@feedbackTypoDetail": {
+    "description": "Detail under feedbackTypo.",
+    "placeholders": {
+      "typed": {
+        "type": "String",
+        "example": "la ventna"
+      }
+    }
+  },
+  "feedbackWrong": "Not quite",
+  "@feedbackWrong": {
+    "description": "Feedback: the typed answer was wrong."
+  },
+  "feedbackGaveUp": "Here it is",
+  "@feedbackGaveUp": {
+    "description": "Feedback after Don't know."
+  },
+  "feedbackAnswer": "Answer: {answer}",
+  "@feedbackAnswer": {
+    "description": "Detail under a wrong answer.",
+    "placeholders": {
+      "answer": {
+        "type": "String",
+        "example": "la ventana"
+      }
+    }
+  },
+  "feedbackReadingWithTarget": "{reading} ({target})",
+  "@feedbackReadingWithTarget": {
+    "description": "The answer when typing romanisation: the reading, then the word in its script.",
+    "placeholders": {
+      "reading": {
+        "type": "String",
+        "example": "ladka"
+      },
+      "target": {
+        "type": "String",
+        "example": "लड़का"
+      }
+    }
+  },
+  "feedbackPairCorrect": "Correct: {reading}",
+  "@feedbackPairCorrect": {
+    "description": "Minimal pairs: the right one was picked.",
+    "placeholders": {
+      "reading": {
+        "type": "String",
+        "example": "kha"
+      }
+    }
+  },
+  "feedbackPairWrong": "That was {reading}",
+  "@feedbackPairWrong": {
+    "description": "Minimal pairs: the wrong one was picked.",
+    "placeholders": {
+      "reading": {
+        "type": "String",
+        "example": "kha"
+      }
+    }
+  },
+  "feedbackPairHeard": "You heard {target}.",
+  "@feedbackPairHeard": {
+    "description": "Detail under minimal-pair feedback.",
+    "placeholders": {
+      "target": {
+        "type": "String",
+        "example": "ख"
+      }
+    }
+  },
+  "rateAgain": "Again",
+  "@rateAgain": {
+    "description": "Self-rating: did not remember it."
+  },
+  "rateHard": "Hard",
+  "@rateHard": {
+    "description": "Self-rating: remembered it with effort."
+  },
+  "rateGood": "Good",
+  "@rateGood": {
+    "description": "Self-rating: remembered it."
+  },
+  "rateEasy": "Easy",
+  "@rateEasy": {
+    "description": "Self-rating: remembered it at once."
+  },
+  "rateInterval": "{days, plural, =0{today} =1{1 day} other{{days} days}}",
+  "@rateInterval": {
+    "description": "Under a rating button: when the card is next due if rated so.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "rateButtonSemantics": "{rating}, next review in {interval}",
+  "@rateButtonSemantics": {
+    "description": "Screen-reader label of a rating button. interval is rateInterval's text.",
+    "placeholders": {
+      "rating": {
+        "type": "String",
+        "example": "Good"
+      },
+      "interval": {
+        "type": "String",
+        "example": "1 day"
+      }
+    }
+  },
+  "summaryTitle": "Session done",
+  "@summaryTitle": {
+    "description": "Heading of the session summary."
+  },
+  "summaryLine": "{cards, plural, =1{1 card} other{{cards} cards}} · {correct} correct",
+  "@summaryLine": {
+    "description": "Under the summary's heading.",
+    "placeholders": {
+      "cards": {
+        "type": "int",
+        "example": "8"
+      },
+      "correct": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "summaryCorrect": "correct",
+  "@summaryCorrect": {
+    "description": "Label under the percentage correct."
+  },
+  "summaryMinutes": "{count, plural, =1{minute} other{minutes}}",
+  "@summaryMinutes": {
+    "description": "Label under the minutes spent, which are shown separately. The count only picks the form.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "summaryStreak": "{count, plural, =1{day streak} other{day streak}}",
+  "@summaryStreak": {
+    "description": "Label under the streak, which is shown separately. The count only picks the form.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "summaryScore": "{correct}/{total}",
+  "@summaryScore": {
+    "description": "A skill's score in the summary.",
+    "placeholders": {
+      "correct": {
+        "type": "int",
+        "example": "6"
+      },
+      "total": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "summaryScoreSemantics": "{skill}: {correct} of {total} correct",
+  "@summaryScoreSemantics": {
+    "description": "Screen-reader label of a skill's score.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Production"
+      },
+      "correct": {
+        "type": "int",
+        "example": "6"
+      },
+      "total": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "summaryNextDue": "{count, plural, =0{Nothing due tomorrow} =1{Next due: 1 card tomorrow} other{Next due: {count} cards tomorrow}}",
+  "@summaryNextDue": {
+    "description": "How much is due tomorrow.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "summaryLearnNew": "{count, plural, =1{Learn 1 new card} other{Learn {count} new cards}}",
+  "@summaryLearnNew": {
+    "description": "Button that starts a short session of new cards.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "summaryEmpty": "No cards answered.",
+  "@summaryEmpty": {
+    "description": "Summary line when a session ended before any answer."
+  },
+  "statsTitle": "Progress",
+  "@statsTitle": {
+    "description": "Heading of the Progress tab."
+  },
+  "statsRangeGroup": "Time range",
+  "@statsRangeGroup": {
+    "description": "Screen-reader name of the range choice."
+  },
+  "statsRangeDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@statsRangeDays": {
+    "description": "A time range choice.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "statsRangeAll": "All time",
+  "@statsRangeAll": {
+    "description": "The time range covering every review."
+  },
+  "statsReviews": "Reviews",
+  "@statsReviews": {
+    "description": "Stat: reviews given in the range."
+  },
+  "statsRemembered": "Remembered",
+  "@statsRemembered": {
+    "description": "Stat: share of reviews remembered."
+  },
+  "statsDayStreak": "Day streak",
+  "@statsDayStreak": {
+    "description": "Stat: the current streak."
+  },
+  "statsLongestStreak": "Longest streak",
+  "@statsLongestStreak": {
+    "description": "Stat: the longest streak ever, for All time."
+  },
+  "statsNewCardsLearned": "New cards learned",
+  "@statsNewCardsLearned": {
+    "description": "Stat: new cards learned in the range."
+  },
+  "statsCardsLearned": "Cards learned",
+  "@statsCardsLearned": {
+    "description": "Stat: every card learned, for All time."
+  },
+  "statsHeatmapTitle": "{weeks, plural, =1{Reviews, last week} other{Reviews, last {weeks} weeks}}",
+  "@statsHeatmapTitle": {
+    "description": "Title of the activity grid.",
+    "placeholders": {
+      "weeks": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "statsHeatmapLabel": "Daily review activity",
+  "@statsHeatmapLabel": {
+    "description": "Screen-reader name of the activity grid."
+  },
+  "statsHeatmapSummary": "Reviewed on {active} of {days} days, {reviews, plural, =0{no reviews} =1{1 review} other{{reviews} reviews}} in all",
+  "@statsHeatmapSummary": {
+    "description": "Screen-reader summary of the activity grid, which is otherwise colour only.",
+    "placeholders": {
+      "active": {
+        "type": "int",
+        "example": "71"
+      },
+      "days": {
+        "type": "int",
+        "example": "84"
+      },
+      "reviews": {
+        "type": "int",
+        "example": "412",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "statsFewer": "Fewer",
+  "@statsFewer": {
+    "description": "Legend of the activity grid: the lightest colour."
+  },
+  "statsMore": "More",
+  "@statsMore": {
+    "description": "Legend of the activity grid: the strongest colour."
+  },
+  "statsBySkill": "Correct, by skill",
+  "@statsBySkill": {
+    "description": "Heading of the per-skill bars."
+  },
+  "statsWeakestTags": "Weakest tags",
+  "@statsWeakestTags": {
+    "description": "Heading of the per-tag bars. The tags come from the decks."
+  },
+  "statsBarSemantics": "{label}: {value}",
+  "@statsBarSemantics": {
+    "description": "Screen-reader label of one bar.",
+    "placeholders": {
+      "label": {
+        "type": "String",
+        "example": "Listening"
+      },
+      "value": {
+        "type": "double",
+        "example": "0.74",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "statsLeeches": "{count, plural, =0{No leeches} =1{1 leech} other{{count} leeches}}",
+  "@statsLeeches": {
+    "description": "Button that opens the leeches: cards missed again and again.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "statsLeechesSubtitle": "Cards you keep missing",
+  "@statsLeechesSubtitle": {
+    "description": "Under statsLeeches."
+  },
+  "statsFootnote": "Recomputed from your review log, so nothing here is ever lost.",
+  "@statsFootnote": {
+    "description": "Note at the foot of Progress."
+  },
+  "statsIncomingTitle": "Progress is on its way",
+  "@statsIncomingTitle": {
+    "description": "Shown on the Progress tab while statistics are not built."
+  },
+  "statsIncomingBody": "Charts of your reviews arrive once reviews are saved on this phone.",
+  "@statsIncomingBody": {
+    "description": "Under statsIncomingTitle."
+  },
+  "statsNoReviews": "No reviews yet. Finish a session and it shows up here.",
+  "@statsNoReviews": {
+    "description": "Shown on Progress before any review."
+  },
+  "leechesTitle": "Leeches",
+  "@leechesTitle": {
+    "description": "Title of the leeches screen: cards missed again and again."
+  },
+  "leechesIntro": "{count, plural, =1{Cards missed once or more.} other{Cards missed {count} or more times.}} Drilling them harder rarely helps: read the note, then reset or set them aside.",
+  "@leechesIntro": {
+    "description": "Explanation at the top of the leeches screen. count is the threshold.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "leechesLapses": "{count}×",
+  "@leechesLapses": {
+    "description": "Badge: how many times a card was missed.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "leechesLapsesSemantics": "{count, plural, =1{Missed once} other{Missed {count} times}}",
+  "@leechesLapsesSemantics": {
+    "description": "Screen-reader label of leechesLapses.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "leechesMeta": "{deck} · {skill}",
+  "@leechesMeta": {
+    "description": "Under a leech: its deck and skill.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Hindi Core"
+      },
+      "skill": {
+        "type": "String",
+        "example": "Production"
+      }
+    }
+  },
+  "leechesMetaSetAside": "{deck} · {skill} · Set aside",
+  "@leechesMetaSetAside": {
+    "description": "Under a leech that was set aside.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Hindi Core"
+      },
+      "skill": {
+        "type": "String",
+        "example": "Production"
+      }
+    }
+  },
+  "leechesMetaReset": "{deck} · {skill} · Reset to new",
+  "@leechesMetaReset": {
+    "description": "Under a leech that was reset.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Hindi Core"
+      },
+      "skill": {
+        "type": "String",
+        "example": "Production"
+      }
+    }
+  },
+  "leechesReset": "Reset",
+  "@leechesReset": {
+    "description": "Starts a leech again as new."
+  },
+  "leechesSetAside": "Set aside",
+  "@leechesSetAside": {
+    "description": "Stops drilling a leech for now."
+  },
+  "leechesBringBack": "Bring back",
+  "@leechesBringBack": {
+    "description": "Undoes Set aside."
+  },
+  "leechesEmpty": "No leeches. Nothing you keep missing.",
+  "@leechesEmpty": {
+    "description": "Shown when there are no leeches."
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Heading of the Settings tab."
+  },
+  "settingsLearningLanguages": "Learning {languages}",
+  "@settingsLearningLanguages": {
+    "description": "Under the profile's name in Settings. languages is joined with commonListSeparator.",
+    "placeholders": {
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Spanish"
+      }
+    }
+  },
+  "settingsSwitchProfile": "Switch",
+  "@settingsSwitchProfile": {
+    "description": "Button that goes to the profile picker."
+  },
+  "settingsSectionLearning": "Learning",
+  "@settingsSectionLearning": {
+    "description": "Settings section heading."
+  },
+  "settingsNewCardsPerDay": "New cards per day",
+  "@settingsNewCardsPerDay": {
+    "description": "Slider: the daily cap on new cards."
+  },
+  "settingsRomanisation": "Show romanisation",
+  "@settingsRomanisation": {
+    "description": "Switch: show the reading line."
+  },
+  "settingsRomanisationDesc": "Reading line under non-Latin scripts",
+  "@settingsRomanisationDesc": {
+    "description": "Under Show romanisation."
+  },
+  "settingsSectionSound": "Sound",
+  "@settingsSectionSound": {
+    "description": "Settings section heading."
+  },
+  "settingsSpeechRate": "Speech rate",
+  "@settingsSpeechRate": {
+    "description": "Slider: how fast the voice speaks."
+  },
+  "settingsSpeechRateValue": "{rate}×",
+  "@settingsSpeechRateValue": {
+    "description": "The speech rate as a multiplier, like 1.0×.",
+    "placeholders": {
+      "rate": {
+        "type": "double",
+        "example": "1.0",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "settingsVoices": "Voices",
+  "@settingsVoices": {
+    "description": "Row that opens the voices screen."
+  },
+  "settingsVoicesSummary": "{total, plural, =0{No languages to check} =1{{available} of 1 language has a voice} other{{available} of {total} languages have a voice}}",
+  "@settingsVoicesSummary": {
+    "description": "Under Voices.",
+    "placeholders": {
+      "available": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "settingsSectionLook": "Look and language",
+  "@settingsSectionLook": {
+    "description": "Settings section heading."
+  },
+  "settingsAppearance": "Appearance",
+  "@settingsAppearance": {
+    "description": "Row that opens the appearance screen."
+  },
+  "settingsAppearanceSummary": "{theme} · {colour}",
+  "@settingsAppearanceSummary": {
+    "description": "Under Appearance: the theme and colour chosen.",
+    "placeholders": {
+      "theme": {
+        "type": "String",
+        "example": "System"
+      },
+      "colour": {
+        "type": "String",
+        "example": "Forest"
+      }
+    }
+  },
+  "settingsAppearanceSummaryHigh": "{theme} · {colour} · High contrast",
+  "@settingsAppearanceSummaryHigh": {
+    "description": "Under Appearance, with high contrast on.",
+    "placeholders": {
+      "theme": {
+        "type": "String",
+        "example": "Dark"
+      },
+      "colour": {
+        "type": "String",
+        "example": "Forest"
+      }
+    }
+  },
+  "settingsAppLanguage": "App language",
+  "@settingsAppLanguage": {
+    "description": "Picker: the interface language."
+  },
+  "settingsAppLanguageOption": "{name} ({code})",
+  "@settingsAppLanguageOption": {
+    "description": "One interface language in the picker: its own name and ISO 639-3 code, from that translation's localeOwnName and localeOwnIso639_3.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "English"
+      },
+      "code": {
+        "type": "String",
+        "example": "eng"
+      }
+    }
+  },
+  "settingsAppLanguageChanged": "App language: {language}",
+  "@settingsAppLanguageChanged": {
+    "description": "SnackBar after the interface language changes.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "settingsSectionReminder": "Reminder and privacy",
+  "@settingsSectionReminder": {
+    "description": "Settings section heading."
+  },
+  "settingsReminder": "Daily reminder",
+  "@settingsReminder": {
+    "description": "Switch: a daily notification."
+  },
+  "settingsReminderDesc": "Only when cards are due",
+  "@settingsReminderDesc": {
+    "description": "Under Daily reminder."
+  },
+  "settingsReminderTime": "Reminder time",
+  "@settingsReminderTime": {
+    "description": "Screen-reader label of the reminder time."
+  },
+  "settingsPinLock": "PIN lock",
+  "@settingsPinLock": {
+    "description": "Switch: ask for a PIN."
+  },
+  "settingsPinLockDesc": "Ask for a PIN when opening this profile",
+  "@settingsPinLockDesc": {
+    "description": "Under PIN lock."
+  },
+  "settingsSectionData": "Your data",
+  "@settingsSectionData": {
+    "description": "Settings section heading."
+  },
+  "settingsExport": "Export review log",
+  "@settingsExport": {
+    "description": "Row that saves the review log as a file."
+  },
+  "settingsExportDesc": "{count, plural, =0{No reviews yet · JSONL file} =1{1 review · JSONL file} other{{count} reviews · JSONL file}}",
+  "@settingsExportDesc": {
+    "description": "Under Export review log. JSONL is a file format.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12480",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "settingsExported": "Saved {file} to Downloads",
+  "@settingsExported": {
+    "description": "SnackBar after an export.",
+    "placeholders": {
+      "file": {
+        "type": "String",
+        "example": "fluenough-aro-reviews.jsonl"
+      }
+    }
+  },
+  "settingsImport": "Import review log",
+  "@settingsImport": {
+    "description": "Row that merges a review log file."
+  },
+  "settingsImportDesc": "Merges with this profile’s history",
+  "@settingsImportDesc": {
+    "description": "Under Import review log."
+  },
+  "settingsImportPick": "Pick a .jsonl file to merge",
+  "@settingsImportPick": {
+    "description": "Shown when choosing a file to import."
+  },
+  "settingsDeleteProfile": "Delete this profile",
+  "@settingsDeleteProfile": {
+    "description": "Row that deletes the current profile."
+  },
+  "settingsDeleteWarning": "Deletes {name}’s review log for good. Export it first if you might want it back.",
+  "@settingsDeleteWarning": {
+    "description": "Confirmation before deleting a profile.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Aro"
+      }
+    }
+  },
+  "settingsProfileDeleted": "Profile deleted",
+  "@settingsProfileDeleted": {
+    "description": "SnackBar after a profile is deleted."
+  },
+  "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works fully offline",
+  "@settingsFooter": {
+    "description": "Footer of Settings.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.1"
+      }
+    }
+  },
+  "appearanceTitle": "Appearance",
+  "@appearanceTitle": {
+    "description": "Title of the appearance screen."
+  },
+  "appearanceTheme": "Theme",
+  "@appearanceTheme": {
+    "description": "Heading of the theme choice."
+  },
+  "appearanceThemeSystem": "System",
+  "@appearanceThemeSystem": {
+    "description": "Theme: follow the phone."
+  },
+  "appearanceThemeLight": "Light",
+  "@appearanceThemeLight": {
+    "description": "Theme: always light."
+  },
+  "appearanceThemeDark": "Dark",
+  "@appearanceThemeDark": {
+    "description": "Theme: always dark."
+  },
+  "appearanceThemeHelp": "System follows your phone’s dark theme and schedule.",
+  "@appearanceThemeHelp": {
+    "description": "Under the theme choice."
+  },
+  "appearanceWallpaper": "Wallpaper colours",
+  "@appearanceWallpaper": {
+    "description": "Switch: take colours from the wallpaper."
+  },
+  "appearanceWallpaperDesc": "Use your phone’s Material You palette (Android 12+)",
+  "@appearanceWallpaperDesc": {
+    "description": "Under Wallpaper colours. Material You is a product name."
+  },
+  "appearanceColour": "Colour",
+  "@appearanceColour": {
+    "description": "Heading of the colour choice."
+  },
+  "appearanceSeedForest": "Forest",
+  "@appearanceSeedForest": {
+    "description": "A green colour scheme, the default."
+  },
+  "appearanceSeedOcean": "Ocean",
+  "@appearanceSeedOcean": {
+    "description": "A blue colour scheme."
+  },
+  "appearanceSeedClay": "Clay",
+  "@appearanceSeedClay": {
+    "description": "A terracotta colour scheme."
+  },
+  "appearanceSeedIris": "Iris",
+  "@appearanceSeedIris": {
+    "description": "A violet colour scheme."
+  },
+  "appearanceContrast": "Contrast",
+  "@appearanceContrast": {
+    "description": "Heading of the contrast choice."
+  },
+  "appearanceContrastStandard": "Standard",
+  "@appearanceContrastStandard": {
+    "description": "Contrast: normal."
+  },
+  "appearanceContrastHigh": "High",
+  "@appearanceContrastHigh": {
+    "description": "Contrast: stronger."
+  },
+  "appearanceCardSize": "Card text size",
+  "@appearanceCardSize": {
+    "description": "Slider: size of the target text in drills."
+  },
+  "appearanceCardSizeHelp": "For scripts with small marks, like matras and dots. Menus follow your phone’s font size.",
+  "@appearanceCardSizeHelp": {
+    "description": "Under Card text size."
+  },
+  "voicesTitle": "Voices",
+  "@voicesTitle": {
+    "description": "Title of the voices screen."
+  },
+  "voicesIntro": "Listening drills use your phone’s own text-to-speech. Fluenough downloads nothing. A language without a voice simply skips listening.",
+  "@voicesIntro": {
+    "description": "Explanation at the top of the voices screen."
+  },
+  "voicesInstalled": "{count, plural, =1{Installed · 1 voice} other{Installed · {count} voices}}",
+  "@voicesInstalled": {
+    "description": "Status of a language the phone can speak.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "voicesMissing": "Not installed · listening skipped",
+  "@voicesMissing": {
+    "description": "Status of a language the phone cannot speak."
+  },
+  "voicesChecking": "Checking…",
+  "@voicesChecking": {
+    "description": "Status while asking the phone."
+  },
+  "voicesTest": "Test",
+  "@voicesTest": {
+    "description": "Button that speaks a sample."
+  },
+  "voicesTestLabel": "Test {language} voice",
+  "@voicesTestLabel": {
+    "description": "Screen-reader label of Test.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "voicesSpeaking": "Speaking: {text}",
+  "@voicesSpeaking": {
+    "description": "SnackBar while a sample is spoken. text is a card from the deck.",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "नमस्ते"
+      }
+    }
+  },
+  "voicesInstall": "Install voices in phone settings",
+  "@voicesInstall": {
+    "description": "Button that explains how to install a voice."
+  },
+  "voicesInstallTitle": "Installing a voice",
+  "@voicesInstallTitle": {
+    "description": "Title of the explanation."
+  },
+  "voicesInstallSteps": "Open your phone’s Settings and search for “Text-to-speech”. Choose the preferred engine, open its settings, and install the voice data for the language. Then come back here.",
+  "@voicesInstallSteps": {
+    "description": "How to install a voice. Android's own menu names vary by phone, so keep it general."
+  },
+  "voicesCheckAgain": "Check again",
+  "@voicesCheckAgain": {
+    "description": "Button that asks the phone about voices again."
+  },
+  "voicesNone": "No decks are loaded, so there are no languages to check.",
+  "@voicesNone": {
+    "description": "Shown when there are no languages."
+  },
+  "localeOwnName": "English",
+  "@localeOwnName": {
+    "description": "The name of THIS translation's language, written in that language: \"हिन्दी\" in the Hindi file, \"اردو\" in the Urdu one. The language picker lists every translation by this name. Do not translate it into another language's word for English."
+  },
+  "localeOwnIso639_3": "eng",
+  "@localeOwnIso639_3": {
+    "description": "The ISO 639-3 code of THIS translation's language: hin, urd. Shown beside localeOwnName in the language picker. Not translated."
   }
 }
