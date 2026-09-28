@@ -4,7 +4,9 @@ A deck is a single UTF-8 YAML file. Filenames are `<deck-id>.yaml` and live
 under `decks/<language-code>/`.
 
 Two kinds of deck exist: `vocab` (a list of cards) and `grammar` (a pattern
-table that expands into cards). They share the same header.
+table that expands into cards). A third kind of file, `facts`, holds a
+language's daily facts rather than anything drilled. All three share the same
+header.
 
 Validate before committing:
 
@@ -16,16 +18,16 @@ python3 tools/validate_decks.py decks/
 
 ## Header
 
-Common to both kinds.
+Common to every kind.
 
 | Field | Required | Notes |
 |---|---|---|
 | `schema` | yes | Must be `1`. |
 | `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. |
 | `name` | yes | Human-readable title. |
-| `kind` | no | `vocab` (default) or `grammar`. |
+| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). |
 | `language` | yes | The language being learned. See below. |
-| `native` | yes | The language explanations are written in. |
+| `native` | yes, except on a facts file | The language explanations are written in. |
 | `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | URL the content was derived from. |
@@ -36,7 +38,8 @@ Common to both kinds.
 
 | Field | Required | Notes |
 |---|---|---|
-| `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. |
+| `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. This is the tag voices and the app key on. |
+| `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
 | `script` | yes | One of `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `kana`, `han`, `hangul`, `thai`, `other`. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
@@ -44,7 +47,8 @@ Common to both kinds.
 
 ### `native`
 
-`{code, name}` — same meaning, for the learner's own language.
+`{code, iso639_3, name}` — same meaning, for the learner's own language. Every
+language named anywhere, learned or native, carries its ISO 639-3 code.
 
 ---
 
@@ -55,8 +59,8 @@ schema: 1
 id: es-core-100
 name: Spanish Core 100
 kind: vocab
-language: { code: es, name: Spanish, script: latin, tts: es-ES }
-native:   { code: en, name: English }
+language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
+native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 tags: [beginner, core]
 cards:
@@ -104,8 +108,8 @@ schema: 1
 id: es-grammar-present-ar
 name: Spanish present tense, regular -ar verbs
 kind: grammar
-language: { code: es, name: Spanish, script: latin, tts: es-ES }
-native:   { code: en, name: English }
+language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
+native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 pattern:
   name: Present tense, regular -ar verbs
@@ -148,6 +152,81 @@ Each `(entry, slot)` pair becomes one production card:
 - **target** — `forms[slot]`
 - **native** — `prompt` with substitutions applied
 - **modes** — `grammar` only
+
+---
+
+## Facts files
+
+One short, true and surprising thing about the language, shown to the learner
+once a day. Each language has one facts file, `decks/<code>/<code>-facts.yaml`,
+beside its decks:
+
+```yaml
+schema: 1
+id: hi-facts
+name: Hindi facts
+kind: facts
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+license: CC0-1.0
+facts:
+  - id: hi-fact-001
+    tags: [script]
+    text:
+      en: "No Hindi word begins with ड़ or ढ़. These dotted letters only occur
+        inside or at the end of a word, as in सड़क (sadak, road) and पढ़ना
+        (padhna, to read)."
+  - id: hi-fact-002
+    tags: [script, conjuncts]
+    text:
+      en: "Two consonants with no vowel between them join into one conjunct
+        (संयुक्ताक्षर, sanyuktakshar): क + ष = क्ष, त + र = त्र, ज + ञ = ज्ञ. Some
+        look nothing like the letters they are made of."
+  # ...at least 30 facts without a contrast...
+  - id: hi-fact-101
+    contrast: en
+    tags: [pronunciation]
+    text:
+      en: "English writes the sh sound with two letters. Hindi gives it letters
+        of its own, श and ष (most speakers now say them alike), so 'sh' in a
+        romanisation stands for one sound, not s followed by h."
+  - id: hi-fact-102
+    contrast: bn
+    tags: [pronunciation]
+    text:
+      bn: "হিন্দিতে স সবসময় 's' — বাংলার মতো 'শ' নয়।"
+```
+
+A facts file has the usual header, except that it has **no `native`**: each
+fact carries its own text in every interface language it is written in. It has
+`facts` in place of `cards`.
+
+### Fact fields
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | Unique within the file, `[a-z0-9-]+`, conventionally `<code>-fact-NNN`. **Never reuse or renumber**: the app remembers which facts a learner has seen by id. |
+| `text` | yes | The fact, keyed by interface-language code (the same codes as `code`): `{ en: ..., bn: ... }`. A learner sees the entry for their interface language. |
+| `contrast` | no | An interface-language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners using that interface language, and `text` must have an entry for it. |
+| `tags` | no | What the fact is about, e.g. `[script]`, `[pronunciation]`, `[grammar]`, `[history]`. |
+| `source` | no | Where the fact can be checked. Give one whenever the fact is not common knowledge. |
+
+### Rules
+
+- **At least 30 facts without a `contrast`.** These are true whatever the
+  learner's interface language is, a month of one fact a day, and the
+  validator fails a file with fewer. Facts with a `contrast` are extra.
+- **Write every fact in every interface language the app ships, English first.**
+  English, and any other language a fact is written in, gets a warning when
+  fewer than 30 contrast-free facts are written in it, since its learners see
+  only that many.
+- **Facts are about the language:** its script, sounds, grammar, words and
+  history. Good material includes letters that never start a word, how
+  conjuncts form, sounds the learner's language lacks (these usually want a
+  `contrast`), schwa deletion, loanwords, numerals, and related languages.
+- **True before interesting.** One to three sentences, no exaggeration, and a
+  `source` for anything a reader could doubt.
+- **The YAML quoting rule applies**, to keys too: Norwegian's code is `no`, so
+  write it `"no":`.
 
 ---
 

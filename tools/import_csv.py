@@ -3,7 +3,7 @@
 
     python3 tools/import_csv.py words.csv \
         --id es-food --name "Spanish food" \
-        --language es --language-name Spanish --tts es-ES \
+        --language es --language-name Spanish --iso639-3 spa --tts es-ES \
         --license CC0-1.0 > decks/es/es-food.yaml
 
 The CSV needs a header row. `target` and `native` are required; `reading`,
@@ -65,14 +65,22 @@ def main() -> int:
     p.add_argument("--name", required=True)
     p.add_argument("--language", required=True, help="language code being learned, e.g. es")
     p.add_argument("--language-name", required=True)
+    p.add_argument("--iso639-3", required=True, dest="iso639_3",
+                   help="three-letter ISO 639-3 code of that language, e.g. spa")
     p.add_argument("--script", default="latin")
     p.add_argument("--tts", default=None, help="BCP-47 voice tag, e.g. es-ES")
     p.add_argument("--native", default="en")
     p.add_argument("--native-name", default="English")
+    p.add_argument("--native-iso639-3", default=None, dest="native_iso639_3",
+                   help="ISO 639-3 code of --native; defaults to eng only when --native is en")
     p.add_argument("--license", required=True, help="SPDX id, or CC0-1.0")
     p.add_argument("--tags", default="", help="deck-level tags, comma separated")
     p.add_argument("--delimiter", default=",")
     args = p.parse_args()
+    if args.native_iso639_3 is None:
+        if args.native != "en":
+            sys.exit(f"error: --native-iso639-3 is required when --native is {args.native!r}")
+        args.native_iso639_3 = "eng"
 
     if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", args.id):
         sys.exit(f"error: --id must match [a-z0-9-]+, got {args.id!r}")
@@ -93,10 +101,12 @@ def main() -> int:
         f"id: {args.id}",
         f"name: {quote(args.name)}",
         "kind: vocab",
-        f"language: {{ code: {args.language}, name: {quote(args.language_name)}, "
+        f"language: {{ code: {args.language}, iso639_3: {args.iso639_3}, "
+        f"name: {quote(args.language_name)}, "
         f"script: {args.script}"
         + (f", tts: {args.tts}" if args.tts else "") + " }",
-        f"native:   {{ code: {args.native}, name: {quote(args.native_name)} }}",
+        f"native:   {{ code: {args.native}, iso639_3: {args.native_iso639_3}, "
+        f"name: {quote(args.native_name)} }}",
         f"license: {args.license}",
     ]
     if args.tags:

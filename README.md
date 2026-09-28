@@ -72,8 +72,8 @@ source. They are diffable, reviewable, and contributed as pull requests.
 schema: 1
 id: es-core-100
 name: Spanish Core 100
-language: { code: es, name: Spanish, script: latin, tts: es-ES }
-native:   { code: en, name: English }
+language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
+native:   { code: en, iso639_3: eng, name: English }
 license: CC-BY-SA-4.0
 cards:
   - id: es-core-0001

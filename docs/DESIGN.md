@@ -99,3 +99,21 @@ YAML text → DeckParser → Deck → (grammar: PatternExpander) → List<Card> 
 
 Parse failures are reported with file and line, never swallowed. A deck that
 fails to parse is skipped and surfaced in the UI; it must not take the app down.
+
+## Daily facts
+
+Each language has a facts file (`<code>-facts.yaml`, see "Facts files" in
+`DECK-FORMAT.md`) alongside its decks. Once a day the app shows the learner one
+fact about each language they are studying, written in their interface
+language.
+
+A fact is eligible when its `text` has an entry for the interface language and
+its `contrast` is either absent or equal to that language. Facts without a
+contrast are the guaranteed pool, at least 30 per language, so a learner gets a
+month of facts whatever their interface language. Contrast facts are extra, and
+only make sense to someone reading in that language.
+
+Seen facts are remembered by id, like review history keyed on card ids, so fact
+ids are permanent. Facts are not drilled and never enter `reviews`. The order,
+what happens after the last fact, and where seen ids are stored are decided
+with the screen that shows them.

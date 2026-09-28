@@ -1,16 +1,26 @@
+import 'author.dart';
 import 'card.dart';
 import 'grammar_pattern.dart';
 
 class LanguageInfo {
   const LanguageInfo({
     required this.code,
+    required this.iso639_3,
     required this.name,
     this.script = 'latin',
     this.tts,
     this.rtl = false,
   });
 
+  /// BCP-47 primary subtag, e.g. `hi`: the tag voices and the article table
+  /// key on.
   final String code;
+
+  /// Three-letter ISO 639-3 code, e.g. `hin`. Names the language
+  /// unambiguously, including languages with no two-letter code, beside
+  /// [code] rather than instead of it.
+  final String iso639_3;
+
   final String name;
   final String script;
   final bool rtl;
@@ -57,7 +67,7 @@ class Deck {
     this.pattern,
     this.description,
     this.tags = const <String>[],
-    this.authors = const <String>[],
+    this.authors = const <Author>[],
     this.source,
   });
 
@@ -80,7 +90,7 @@ class Deck {
 
   final String? description;
   final List<String> tags;
-  final List<String> authors;
+  final List<Author> authors;
   final String? source;
 
   int get cardCount => cards.length;
