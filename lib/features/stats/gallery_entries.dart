@@ -1,9 +1,12 @@
 import '../../app.dart';
+import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/shell_tab.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
+import 'leeches.dart';
 import 'leeches_page.dart';
+import 'stats_numbers.dart';
 
 /// Progress and leeches, as the design's Gallery lists them. Owned by B7.
 ///
@@ -16,9 +19,9 @@ final List<GalleryEntry> statsGalleryEntries = <GalleryEntry>[
     label: 'Progress', // ui-literal-ok: debug-only gallery
     note: 'From the review log', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
-    state: (app) =>
-        GalleryFixtures.state(app, features: FeatureRegistry.all())
-          ..shellTab.value = ShellTab.progress,
+    state: (app) => _onProgress(
+      GalleryFixtures.state(app, features: FeatureRegistry.all()),
+    ),
   ),
   GalleryEntry(
     id: 'leeches',
@@ -29,3 +32,79 @@ final List<GalleryEntry> statsGalleryEntries = <GalleryEntry>[
     state: (app) => GalleryFixtures.state(app, features: FeatureRegistry.all()),
   ),
 ];
+
+/// States the design does not draw, kept out of the gallery for the same
+/// reason as `todayGalleryStates`: `test/gallery_test.dart` allows only the
+/// design's ids. Phase 2 splices them in.
+final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
+  GalleryEntry(
+    id: 'stats-incoming',
+    section: GallerySection.progressAndSettings,
+    label: 'Progress, as shipped', // ui-literal-ok: debug-only gallery
+    note: 'Incoming until #18', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: (app) => _onProgress(GalleryFixtures.state(app)),
+  ),
+  GalleryEntry(
+    id: 'stats-empty',
+    section: GallerySection.progressAndSettings,
+    label: 'Progress, no reviews', // ui-literal-ok: debug-only gallery
+    note: 'Before the first session', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: (app) => _onProgress(
+      GalleryFixtures.state(
+        app,
+        features: FeatureRegistry.all(),
+        history: false,
+      ),
+    ),
+  ),
+  GalleryEntry(
+    id: 'stats-leeches-incoming',
+    section: GallerySection.progressAndSettings,
+    label: 'Progress before #19', // ui-literal-ok: debug-only gallery
+    note: 'Leeches row incoming', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: (app) => _onProgress(
+      GalleryFixtures.state(
+        app,
+        features: const FeatureRegistry.only(<Feature>{
+          ...Feature.available,
+          Feature.stats,
+        }),
+      ),
+    ),
+  ),
+  GalleryEntry(
+    id: 'leeches-acted',
+    section: GallerySection.progressAndSettings,
+    label: 'Leeches, one reset', // ui-literal-ok: debug-only gallery
+    note: 'Dimmed, with Undo', // ui-literal-ok: debug-only gallery
+    builder: (_) => const LeechesPage(),
+    state: (app) {
+      final state = GalleryFixtures.state(app, features: FeatureRegistry.all());
+      // The new state loads later; [app] shares its catalog and is loaded.
+      final first = findLeeches(
+        state.progress,
+        cardOf: cardLookupOf(app),
+      ).first;
+      LeechActions.of(state.progress).toggleReset(first.key, now: state.now());
+      return state;
+    },
+  ),
+  GalleryEntry(
+    id: 'leeches-empty',
+    section: GallerySection.progressAndSettings,
+    label: 'Leeches, none', // ui-literal-ok: debug-only gallery
+    note: 'Nothing missed often', // ui-literal-ok: debug-only gallery
+    builder: (_) => const LeechesPage(),
+    state: (app) => GalleryFixtures.state(
+      app,
+      features: FeatureRegistry.all(),
+      history: false,
+    ),
+  ),
+];
+
+AppState _onProgress(AppState state) =>
+    state..shellTab.value = ShellTab.progress;
