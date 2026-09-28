@@ -35,13 +35,33 @@ enum AnswerOutcome {
 }
 
 class GradedAnswer {
-  const GradedAnswer(this.outcome, {required this.matched});
+  const GradedAnswer(
+    this.outcome, {
+    required this.matched,
+    this.droppedArticle = false,
+    this.foldedDiacritics = false,
+  });
 
   final AnswerOutcome outcome;
 
   /// Which accepted answer was matched, for showing the learner what was
   /// expected. Null when nothing matched.
   final String? matched;
+
+  /// For [AnswerOutcome.closeDiacritics]: the leading article was missing,
+  /// added or different, and was dropped for the comparison. `el niño` for
+  /// `niño`, or `la niño` for `el niño`. False for every other outcome.
+  ///
+  /// The outcome and its grade do not change; this only tells the interface
+  /// which of "mind the accent" and "keep the article" to say.
+  final bool droppedArticle;
+
+  /// For [AnswerOutcome.closeDiacritics]: the diacritics differed and were
+  /// folded for the comparison. `nino` for `niño`. False for every other
+  /// outcome.
+  ///
+  /// Both flags are set when both differed, as in `nino` for `el niño`.
+  final bool foldedDiacritics;
 }
 
 /// Compares a typed answer against the accepted ones.
@@ -88,8 +108,24 @@ class AnswerGrader {
     // Pass 2: also fold diacritics and drop a leading article.
     final foldedGiven = _fold(normalisedGiven);
     for (final candidate in candidates) {
-      if (foldedGiven == _fold(_normalise(candidate))) {
-        return GradedAnswer(AnswerOutcome.closeDiacritics, matched: candidate);
+      final normalisedCandidate = _normalise(candidate);
+      if (foldedGiven == _fold(normalisedCandidate)) {
+        // Exact failed, so at least one of the two folds did the work. If the
+        // answers still differ with only diacritics folded, the article did.
+        final droppedArticle =
+            _foldDiacritics(normalisedGiven) !=
+            _foldDiacritics(normalisedCandidate);
+        // With the article left alone, the diacritics must be what differed;
+        // with it dropped, they may have differed as well.
+        final foldedDiacritics =
+            !droppedArticle ||
+            _dropArticle(normalisedGiven) != _dropArticle(normalisedCandidate);
+        return GradedAnswer(
+          AnswerOutcome.closeDiacritics,
+          matched: candidate,
+          droppedArticle: droppedArticle,
+          foldedDiacritics: foldedDiacritics,
+        );
       }
     }
 
@@ -118,19 +154,22 @@ class AnswerGrader {
   }
 
   /// Strips diacritics and any leading article.
-  String _fold(String input) {
+  String _fold(String input) => _dropArticle(_foldDiacritics(input));
+
+  String _foldDiacritics(String input) {
     final buffer = StringBuffer();
     for (final rune in input.runes) {
       final char = String.fromCharCode(rune);
       buffer.write(_diacriticFolding[char] ?? char);
     }
-    var text = buffer.toString();
+    return buffer.toString();
+  }
 
+  String _dropArticle(String text) {
     for (final article in articles) {
       final prefix = '${article.toLowerCase()} ';
       if (text.startsWith(prefix) && text.length > prefix.length) {
-        text = text.substring(prefix.length);
-        break;
+        return text.substring(prefix.length);
       }
     }
     return text;
