@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:yaml/yaml.dart';
 
 Deck parse(String yaml) => DeckParser.parse(yaml, source: 'test.yaml');
 
@@ -48,8 +49,8 @@ const header = '''
 schema: 1
 id: test-deck
 name: Test deck
-language: {code: es, name: Spanish, script: latin}
-native: {code: en, name: English}
+language: {code: es, iso639_3: spa, name: Spanish, script: latin}
+native: {code: en, iso639_3: eng, name: English}
 license: CC0-1.0
 ''';
 
@@ -69,8 +70,8 @@ schema: 1
 id: test-grammar
 name: Test grammar
 kind: grammar
-language: {code: es, name: Spanish, script: latin}
-native: {code: en, name: English}
+language: {code: es, iso639_3: spa, name: Spanish, script: latin}
+native: {code: en, iso639_3: eng, name: English}
 license: CC0-1.0
 pattern:
   name: Present tense
@@ -101,6 +102,12 @@ void main() {
             .whereType<File>()
             .map((f) => f.path)
             .where((p) => p.endsWith('.yaml'))
+            // A facts file is valid in decks/ but is not a deck (#48).
+            .where(
+              (p) =>
+                  (loadYaml(File(p).readAsStringSync()) as Map)['kind'] !=
+                  'facts',
+            )
             .toList()
           ..sort();
 
@@ -114,6 +121,13 @@ void main() {
         expect(deck.id, File(path).uri.pathSegments.last.split('.').first);
       });
     }
+
+    test('carry both language codes', () {
+      final deck = parseFile('decks/es/es-core-100.yaml');
+      expect(deck.language.code, 'es');
+      expect(deck.language.iso639_3, 'spa');
+      expect(deck.native.iso639_3, 'eng');
+    });
 
     test('ja-hiragana has all 46 kana, and "no" survives as text', () {
       final deck = parseFile('decks/ja/ja-hiragana.yaml');
@@ -166,9 +180,10 @@ id: test-full
 name: Full deck
 kind: vocab
 description: Every field, once.
-language: {code: ar, name: Arabic, script: arabic, tts: ar-EG, rtl: true}
+language: {code: ar, iso639_3: arb, name: Arabic, script: arabic, tts: ar-EG, rtl: true}
 native:
   code: en
+  iso639_3: eng
   name: English
 license: CC-BY-SA-4.0
 authors:
@@ -1020,5 +1035,36 @@ cards:
       const e = DeckParseException('unreadable', source: 'deck.yaml');
       expect(e.toString(), 'deck.yaml: unreadable');
     });
+  });
+
+  group('language codes', () {
+    test('iso639_3 is required on both language blocks', () {
+      for (final (line, code) in [(4, 'spa'), (5, 'eng')]) {
+        expect(
+          () => parse(vocab().replaceFirst('iso639_3: $code, ', '')),
+          throwsParseError(line: line, mentions: ['iso639_3']),
+          reason: code,
+        );
+      }
+    });
+
+    test('iso639_3 must be three lowercase letters', () {
+      for (final bad in ['es', 'spain', 'SPA', 's1a', '"spa\\n"']) {
+        expect(
+          () => parse(vocab().replaceFirst('iso639_3: spa', 'iso639_3: $bad')),
+          throwsParseError(line: 4, mentions: ['ISO 639-3']),
+          reason: bad,
+        );
+      }
+    });
+  });
+
+  test('a facts file is refused as not a deck', () {
+    expect(
+      () => parse(
+        vocab().replaceFirst('name: Test deck', 'name: Test deck\nkind: facts'),
+      ),
+      throwsParseError(line: 4, mentions: ['facts file, not a deck']),
+    );
   });
 }

@@ -136,6 +136,7 @@ const _authorFields = {'name', 'url'};
 
 /// Deck and card ids: lowercase letters and digits, joined by single hyphens.
 final _idPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
+final _iso639_3Pattern = RegExp(r'^[a-z]{3}$');
 
 /// Walks one deck, knowing its [source] so that any failure can name it.
 class _Reader {
@@ -178,6 +179,13 @@ class _Reader {
         : switch (_value(kindNode)) {
             'vocab' => DeckKind.vocab,
             'grammar' => DeckKind.grammar,
+            // Valid, but not a deck: its facts are not drilled, and a caller
+            // loading a directory routes such files elsewhere (#48).
+            'facts' => fail(
+              kindNode,
+              'this is a facts file, not a deck; it is read by the facts '
+              'loader, not DeckParser',
+            ),
             _ => fail(
               kindNode,
               'kind must be vocab or grammar, got ${_describe(kindNode)}',
@@ -281,10 +289,24 @@ class _Reader {
     return id;
   }
 
+  /// A three-letter ISO 639-3 code, such as `hin`.
+  String iso639_3(YamlNode node, String name) {
+    final code = text(node, name);
+    if (!_iso639_3Pattern.hasMatch(code)) {
+      fail(
+        node,
+        '$name must be the language\'s three-letter ISO 639-3 code, like '
+        '"hin" for Hindi; got "$code"',
+      );
+    }
+    return code;
+  }
+
   LanguageInfo language(YamlNode node, String path, {required bool full}) {
     final fields = this.fields(node, path);
     return LanguageInfo(
       code: fields.string('code'),
+      iso639_3: iso639_3(fields.require('iso639_3'), '$path.iso639_3'),
       name: fields.string('name'),
       // Any script name is accepted, so that a new one needs no parser change.
       script: full
