@@ -33,9 +33,8 @@ final List<GalleryEntry> statsGalleryEntries = <GalleryEntry>[
   ),
 ];
 
-/// States the design does not draw, kept out of the gallery for the same
-/// reason as `todayGalleryStates`: `test/gallery_test.dart` allows only the
-/// design's ids. Phase 2 splices them in.
+/// States the design does not draw, listed in the gallery after the
+/// design's own Progress and Leeches entries.
 final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
   GalleryEntry(
     id: 'stats-incoming',

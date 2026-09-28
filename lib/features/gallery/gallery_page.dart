@@ -35,7 +35,7 @@ List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
   ...summaryGalleryEntries,
   ...summaryGalleryStates,
   ...statsGalleryEntries,
-  // The stats feature's `statsGalleryStates` goes here once it is built.
+  ...statsGalleryStates,
   ...settingsGalleryEntries,
   ...settingsGalleryStates,
 ];
