@@ -79,6 +79,8 @@ enum Feature {
     Feature.stats,
     Feature.leeches,
     Feature.dailyFacts,
+    Feature.logExport,
+    Feature.logImport,
   };
 }
 

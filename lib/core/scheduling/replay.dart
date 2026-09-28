@@ -67,3 +67,25 @@ LoggedReview logged(ReviewEvent event) => (
   elapsed: event.elapsed,
   answerGiven: event.answerGiven,
 );
+
+/// [reviews] oldest first, keeping the order they were given in for a tie.
+/// The log replays by time, not by when a row was written, so that a
+/// backup's older history merged in (#20) takes its place.
+List<LoggedReview> inTimeOrder(Iterable<LoggedReview> reviews) {
+  final indexed = reviews.indexed.toList()
+    ..sort((a, b) {
+      final byTime = a.$2.at.compareTo(b.$2.at);
+      return byTime != 0 ? byTime : a.$1.compareTo(b.$1);
+    });
+  return <LoggedReview>[for (final (_, r) in indexed) r];
+}
+
+/// [actions] oldest first, keeping their order for a tie.
+List<LeechAction> actionsInTimeOrder(Iterable<LeechAction> actions) {
+  final indexed = actions.indexed.toList()
+    ..sort((a, b) {
+      final byTime = a.$2.at.compareTo(b.$2.at);
+      return byTime != 0 ? byTime : a.$1.compareTo(b.$1);
+    });
+  return <LeechAction>[for (final (_, a) in indexed) a];
+}

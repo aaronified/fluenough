@@ -40,8 +40,8 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the drills, saved progress, theme, stats and '
-      'leeches', () {
+  test('this version ships the drills, saved progress, theme, stats, '
+      'leeches, daily facts and the log backup', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -51,6 +51,8 @@ void main() {
       Feature.stats,
       Feature.leeches,
       Feature.dailyFacts,
+      Feature.logExport,
+      Feature.logImport,
     });
   });
 
