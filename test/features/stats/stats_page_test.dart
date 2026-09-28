@@ -4,7 +4,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
+import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/leeches_page.dart';
+import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/ui/widgets/segmented.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
@@ -137,10 +139,23 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    await pumpScreen(tester, const StatsPage(), state: await fixture());
+    final state = await pumpScreen(
+      tester,
+      const StatsPage(),
+      state: await fixture(),
+    );
     final l10n = l10nOf(tester);
-    final row = find.text(l10n.statsLeeches(2));
-    await scrollTo(tester, row);
+    await scrollTo(tester, find.text(l10n.statsLeeches(2)));
+
+    // One set aside no longer counts.
+    final leech = findLeeches(
+      state.progress,
+      cardOf: cardLookupOf(state),
+    ).first;
+    LeechActions.of(state.progress).toggleSetAside(leech.key, now: state.now());
+    await tester.pumpAndSettle();
+    final row = find.text(l10n.statsLeeches(1));
+    expect(row, findsOneWidget);
     await tester.tap(row);
     await tester.pumpAndSettle();
     expect(find.byType(LeechesPage), findsOneWidget);
