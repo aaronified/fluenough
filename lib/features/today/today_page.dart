@@ -56,6 +56,10 @@ class TodayPage extends StatelessWidget {
               icon: Icons.error_outline,
               title: l10n.commonDecksFailed,
               body: l10n.commonDecksFailedBody,
+              action: FilledButton(
+                onPressed: state.reload,
+                child: Text(l10n.commonRetry),
+              ),
             ),
           ),
         ],

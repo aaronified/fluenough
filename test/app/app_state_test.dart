@@ -49,6 +49,29 @@ void main() {
       expect(state.status, CatalogStatus.failed);
       expect(state.loadError, isA<StateError>());
     });
+
+    test('reload reads the source again after a failure', () async {
+      final source = _FailOnceSource();
+      final state = AppState.test(decks: source);
+      await state.load();
+      expect(state.status, CatalogStatus.failed);
+      await state.load();
+      expect(source.listed, 1, reason: 'load is memoised');
+
+      final statuses = <CatalogStatus>[];
+      state.addListener(() => statuses.add(state.status));
+      final reloading = state.reload();
+      expect(state.status, CatalogStatus.loading);
+      expect(state.loadError, isNull);
+      expect(identical(state.reload(), reloading), isTrue, reason: 'joined');
+      await reloading;
+      expect(source.listed, 2);
+      expect(state.status, CatalogStatus.ready);
+      expect(statuses.take(2), <CatalogStatus>[
+        CatalogStatus.loading,
+        CatalogStatus.ready,
+      ]);
+    });
   });
 
   group('voices', () {
@@ -246,6 +269,20 @@ void main() {
 class _ThrowingSource implements DeckSource {
   @override
   Future<List<String>> list() async => throw StateError('no manifest');
+
+  @override
+  Future<String> read(String path) async => throw StateError('unreachable');
+}
+
+/// Fails its first listing, then lists no files.
+class _FailOnceSource implements DeckSource {
+  int listed = 0;
+
+  @override
+  Future<List<String>> list() async {
+    if (listed++ == 0) throw StateError('no manifest');
+    return const <String>[];
+  }
 
   @override
   Future<String> read(String path) async => throw StateError('unreachable');
