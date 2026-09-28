@@ -1,0 +1,162 @@
+#!/usr/bin/env python3
+"""Content rules: ISO 639-3 codes on every language, and facts files.
+
+Both are described in docs/DECK-FORMAT.md. Stdlib `unittest` plus PyYAML, like
+the validator itself.
+"""
+
+from __future__ import annotations
+
+import shutil
+import tempfile
+import unittest
+from pathlib import Path
+
+import validate_decks
+
+VOCAB = """\
+schema: 1
+id: xx-probe
+name: Probe
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: xx-probe-0001
+    target: घर
+    native: the house
+    reading: "ghar"
+"""
+
+FACTS_HEADER = """\
+schema: 1
+id: xx-probe
+name: Hindi facts
+kind: facts
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+license: CC0-1.0
+facts:
+"""
+
+
+def fact(n: int, **fields: str) -> str:
+    """One fact, written in English unless `fields` says otherwise."""
+    lines = [f"  - id: hi-fact-{n:03d}"]
+    text = fields.pop("text", f'{{ en: "Fact number {n}." }}')
+    lines.append(f"    text: {text}")
+    for key, value in fields.items():
+        lines.append(f"    {key}: {value}")
+    return "\n".join(lines) + "\n"
+
+
+def facts_file(count: int = 30, extra: str = "", header: str = FACTS_HEADER) -> str:
+    return header + "".join(fact(n) for n in range(1, count + 1)) + extra
+
+
+class Validated(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+
+    def report(self, text: str) -> validate_decks.Report:
+        path = self.tmp / "xx-probe.yaml"
+        path.write_text(text, encoding="utf-8")
+        return validate_decks.validate(path)
+
+    def assertValid(self, text: str) -> validate_decks.Report:
+        report = self.report(text)
+        self.assertEqual(report.errors, [])
+        return report
+
+    def assertRejected(self, text: str, needle: str) -> None:
+        errors = self.report(text).errors
+        self.assertTrue(
+            any(needle in e for e in errors),
+            f"expected an error containing {needle!r}, got {errors}",
+        )
+
+
+class Iso6393Codes(Validated):
+    def test_a_deck_with_both_codes_is_valid(self) -> None:
+        self.assertValid(VOCAB)
+
+    def test_both_language_blocks_need_one(self) -> None:
+        for block, old in (
+            ("language", "iso639_3: hin, "),
+            ("native", "iso639_3: eng, "),
+        ):
+            with self.subTest(block):
+                self.assertRejected(VOCAB.replace(old, ""), "iso639_3 must be")
+
+    def test_it_must_be_three_lowercase_letters(self) -> None:
+        for bad in ("hi", "hind", "HIN", "h1n", '"hin\\n"', "yes"):
+            with self.subTest(bad=bad):
+                self.assertRejected(VOCAB.replace("iso639_3: hin", f"iso639_3: {bad}"),
+                                    "iso639_3 must be")
+
+    def test_a_facts_file_needs_one_on_its_language(self) -> None:
+        self.assertRejected(facts_file().replace("iso639_3: hin, ", ""), "iso639_3 must be")
+
+
+class FactsFiles(Validated):
+    def test_thirty_facts_are_valid(self) -> None:
+        self.assertValid(facts_file(30))
+
+    def test_twenty_nine_are_not_enough(self) -> None:
+        self.assertRejected(facts_file(29), "at least 30 facts without a contrast")
+
+    def test_contrast_facts_do_not_count_towards_the_thirty(self) -> None:
+        extra = fact(90, contrast="en")
+        self.assertRejected(facts_file(29, extra), "has 29")
+        self.assertValid(facts_file(30, extra))
+
+    def test_a_contrast_fact_must_be_written_in_its_language(self) -> None:
+        extra = fact(90, contrast="bn")
+        self.assertRejected(facts_file(30, extra), "text needs a 'bn' entry")
+
+    def test_a_partial_translation_warns_but_does_not_fail(self) -> None:
+        extra = fact(91, text='{ en: "One more.", bn: "আরও একটি।" }')
+        report = self.assertValid(facts_file(30, extra))
+        self.assertTrue(any("'bn'" in w and "1 daily facts" in w for w in report.warnings),
+                        report.warnings)
+
+    def test_fact_ids_are_unique(self) -> None:
+        self.assertRejected(facts_file(30, fact(1)), "duplicate fact id")
+
+    def test_fact_ids_match_the_id_pattern(self) -> None:
+        text = facts_file(30).replace("id: hi-fact-001", "id: Hi_Fact_1")
+        self.assertRejected(text, "id must match")
+
+    def test_unknown_fields_are_rejected(self) -> None:
+        self.assertRejected(facts_file(30, fact(90, colour="blue")), "unknown field 'colour'")
+
+    def test_text_must_be_a_mapping_of_codes_to_text(self) -> None:
+        cases = {
+            "a plain string": ('"Just text."', "text must map language codes"),
+            "a bad code": ('{ english: "Text." }', "text key must be"),
+            "a bare no": ('{ no: "Tekst." }', "Quote the code"),
+            "a boolean value": ("{ en: yes }", "parsed as the boolean"),
+            "an empty value": ('{ en: "" }', "must be non-empty text"),
+        }
+        for name, (text, needle) in cases.items():
+            with self.subTest(name):
+                self.assertRejected(facts_file(30, fact(90, text=text)), needle)
+
+    def test_contrast_must_be_a_language_code(self) -> None:
+        self.assertRejected(facts_file(30, fact(90, contrast='"English"')),
+                            "contrast must be")
+
+    def test_a_facts_file_has_no_native(self) -> None:
+        header = FACTS_HEADER.replace(
+            "license:", "native: { code: en, iso639_3: eng, name: English }\nlicense:")
+        self.assertRejected(facts_file(30, header=header), "a facts file has no native")
+
+    def test_a_facts_file_has_no_cards(self) -> None:
+        self.assertRejected(facts_file(30) + "cards: []\n", "uses facts, not cards")
+
+    def test_other_decks_have_no_facts(self) -> None:
+        self.assertRejected(VOCAB + "facts: []\n", "only valid on a facts file")
+
+
+if __name__ == "__main__":
+    unittest.main()

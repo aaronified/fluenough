@@ -22,8 +22,8 @@ DECK = """\
 schema: 1
 id: xx-probe
 name: Probe
-language: {{ code: es, name: Spanish, script: latin, tts: es-ES }}
-native: {{ code: en, name: English }}
+language: {{ code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }}
+native: {{ code: en, iso639_3: eng, name: English }}
 license: CC0-1.0
 cards:
   - id: {card_id}
@@ -64,8 +64,8 @@ class ParserParity(unittest.TestCase):
 
     def test_a_merge_key_is_rejected(self) -> None:
         text = deck().replace(
-            "native: { code: en, name: English }",
-            "base: &en { code: en, name: English }\nnative: { <<: *en }",
+            "native: { code: en, iso639_3: eng, name: English }",
+            "base: &en { code: en, iso639_3: eng, name: English }\nnative: { <<: *en }",
         )
         self.assertRejected(text, "merge key")
 
@@ -76,6 +76,15 @@ class ParserParity(unittest.TestCase):
 
     def test_an_id_ending_in_a_newline_is_rejected(self) -> None:
         self.assertRejected(deck(card_id='"xx-probe-0001\\n"'), "id must match")
+
+    def test_a_code_or_tts_tag_ending_in_a_newline_is_rejected(self) -> None:
+        cases = {
+            "code": ("code: es,", 'code: "es\\n",', "code must be"),
+            "tts": ("tts: es-ES", 'tts: "es-ES\\n"', "tts must be"),
+        }
+        for name, (old, new, needle) in cases.items():
+            with self.subTest(name):
+                self.assertRejected(deck().replace(old, new, 1), needle)
 
     def test_free_text_that_is_not_text_is_rejected(self) -> None:
         cases = {
@@ -90,14 +99,19 @@ class ParserParity(unittest.TestCase):
             with self.subTest(name):
                 self.assertRejected(text, "not text")
 
+    def test_free_text_that_is_a_list_or_mapping_is_rejected(self) -> None:
+        for value in ("[a]", "{ a: b }"):
+            with self.subTest(value=value):
+                self.assertRejected(deck(extra=f"    notes: {value}\n"), "must be text")
+
     def test_pattern_notes_that_are_not_text_are_rejected(self) -> None:
         text = """\
 schema: 1
 id: xx-probe
 name: Probe
 kind: grammar
-language: { code: es, name: Spanish, script: latin, tts: es-ES }
-native: { code: en, name: English }
+language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
+native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 pattern:
   name: P
@@ -112,13 +126,15 @@ pattern:
 
     def test_the_native_block_is_checked_like_language(self) -> None:
         cases = {
-            "rtl as text": '{ code: en, name: English, rtl: "yes" }',
-            "an empty script": '{ code: en, name: English, script: "" }',
-            "a bad tts tag": '{ code: en, name: English, tts: "en_GB" }',
+            "rtl as text": '{ code: en, iso639_3: eng, name: English, rtl: "yes" }',
+            "an empty script": '{ code: en, iso639_3: eng, name: English, script: "" }',
+            "a bad tts tag": '{ code: en, iso639_3: eng, name: English, tts: "en_GB" }',
         }
         for name, block in cases.items():
             with self.subTest(name):
-                text = deck().replace("native: { code: en, name: English }", f"native: {block}")
+                text = deck().replace(
+                    "native: { code: en, iso639_3: eng, name: English }", f"native: {block}"
+                )
                 self.assertTrue(self.errors(text), f"{name} was accepted")
 
 

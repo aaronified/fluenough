@@ -28,24 +28,30 @@ SCHEMA = 1
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LANG_RE = re.compile(r"^[a-z]{2,3}$")
 BCP47_RE = re.compile(r"^[a-zA-Z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+ISO639_3_RE = re.compile(r"[a-z]{3}")
+
+# A facts file must hold at least this many facts that make sense whatever the
+# learner's interface language is: a month of one fact a day.
+MIN_FACTS = 30
 
 SCRIPTS = {
     "latin", "cyrillic", "greek", "arabic", "hebrew",
     "devanagari", "kana", "han", "hangul", "thai", "other",
 }
-KINDS = {"vocab", "grammar"}
+KINDS = {"vocab", "grammar", "facts"}
 MODES = {"recognition", "production", "listening", "grammar"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
 
 HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
-    "authors", "source", "description", "tags", "cards", "pattern",
+    "authors", "source", "description", "tags", "cards", "pattern", "facts",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes",
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
+FACT_KEYS = {"id", "text", "contrast", "tags", "source"}
 
 
 class DeckLoader(yaml.SafeLoader):
@@ -138,6 +144,10 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
         r.error(where, f"code must be a 2-3 letter language code, got {code!r}")
     if not _is_str(block.get("name")):
         r.error(where, "name is required")
+    iso = block.get("iso639_3")
+    if not _is_str(iso) or not ISO639_3_RE.fullmatch(iso):
+        r.error(where, f"iso639_3 must be the language's three-letter ISO 639-3 "
+                       f"code, e.g. 'hin' for Hindi, got {iso!r}")
     # `native` needs only code and name, but whatever else it declares is
     # checked like `language`: the app's parser reads those fields either way.
     script = block.get("script")
@@ -301,6 +311,83 @@ def check_pattern(r: Report, pattern: object) -> None:
                 r.error(ewhere, f"forms[{slot!r}] must be a non-empty string or null")
 
 
+def _code_error(value: object) -> str:
+    if isinstance(value, bool):
+        return (f"got the boolean {value!r} -- YAML read a bare no/yes/on/off "
+                f"as a bool. Quote the code.")
+    return f"got {value!r}"
+
+
+def check_facts(r: Report, facts: object) -> None:
+    """A language's daily facts. See "Facts files" in docs/DECK-FORMAT.md."""
+    if not isinstance(facts, list) or not facts:
+        r.error("facts", "must be a non-empty list")
+        return
+
+    seen: set[str] = set()
+    universal = 0
+    universal_by_language: dict[str, int] = {}
+    for i, fact in enumerate(facts):
+        where = f"facts[{i}]"
+        if not isinstance(fact, dict):
+            r.error(where, "must be a mapping")
+            continue
+
+        fid = fact.get("id")
+        if not _is_str(fid) or not ID_RE.fullmatch(fid):
+            r.error(where, f"id must match [a-z0-9-]+, got {fid!r}")
+        else:
+            where = f"fact {fid}"
+            if fid in seen:
+                r.error(where, "duplicate fact id")
+            seen.add(fid)
+
+        for unknown in sorted(set(fact) - FACT_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+
+        text = fact.get("text")
+        written_in: list[str] = []
+        if not isinstance(text, dict) or not text:
+            r.error(where, "text must map language codes to the fact, e.g. { en: ... }")
+            text = {}
+        for code, value in text.items():
+            if not isinstance(code, str) or not LANG_RE.fullmatch(code):
+                r.error(where, f"text key must be a 2-3 letter language code, "
+                               f"{_code_error(code)}")
+            elif isinstance(value, bool):
+                r.error(where, f"text.{code} parsed as the boolean {value!r}. Quote the value.")
+            elif not _is_str(value):
+                r.error(where, f"text.{code} must be non-empty text")
+            else:
+                written_in.append(code)
+
+        contrast = fact.get("contrast")
+        if contrast is None:
+            universal += 1
+            for code in written_in:
+                universal_by_language[code] = universal_by_language.get(code, 0) + 1
+        elif not isinstance(contrast, str) or not LANG_RE.fullmatch(contrast):
+            r.error(where, f"contrast must be a 2-3 letter language code, "
+                           f"{_code_error(contrast)}")
+        elif contrast not in text:
+            r.error(where, f"contrast is {contrast!r}, so text needs a {contrast!r} "
+                           f"entry: the fact is shown only to learners whose "
+                           f"interface language is {contrast!r}")
+
+        if "tags" in fact:
+            _check_str_list(r, where, "tags", fact["tags"])
+        _check_optional_text(r, where, fact, "source")
+
+    if universal < MIN_FACTS:
+        r.error("facts", f"needs at least {MIN_FACTS} facts without a contrast, "
+                         f"true whatever the interface language; has {universal}")
+    for code, count in sorted(universal_by_language.items()):
+        if count < MIN_FACTS:
+            r.warn("facts", f"only {count} facts without a contrast have {code!r} "
+                            f"text, so learners with that interface language get "
+                            f"{count} daily facts, not {MIN_FACTS}")
+
+
 def validate(path: Path) -> Report:
     r = Report(path)
     try:
@@ -341,7 +428,11 @@ def validate(path: Path) -> Report:
         r.error("kind", f"must be one of {sorted(KINDS)}, got {kind!r}")
 
     check_langblock(r, "language", raw.get("language"), full=True)
-    check_langblock(r, "native", raw.get("native"), full=False)
+    if kind != "facts":
+        check_langblock(r, "native", raw.get("native"), full=False)
+    elif "native" in raw:
+        r.error("native", "a facts file has no native: each fact carries its text "
+                          "in every language it is written in")
 
     lang = raw.get("language")
     script = lang.get("script") if isinstance(lang, dict) else "other"
@@ -369,6 +460,8 @@ def validate(path: Path) -> Report:
     if kind == "vocab":
         if "pattern" in raw:
             r.error("pattern", "only valid on a grammar deck")
+        if "facts" in raw:
+            r.error("facts", "only valid on a facts file")
         cards = raw.get("cards")
         if not isinstance(cards, list) or not cards:
             r.error("cards", "must be a non-empty list")
@@ -376,7 +469,14 @@ def validate(path: Path) -> Report:
             seen: set[str] = set()
             for i, card in enumerate(cards):
                 check_card(r, deck_id or "", i, card, seen, script)
+    elif kind == "facts":
+        for key in ("cards", "pattern"):
+            if key in raw:
+                r.error(key, "a facts file uses facts, not cards or a pattern")
+        check_facts(r, raw.get("facts"))
     else:
+        if "facts" in raw:
+            r.error("facts", "only valid on a facts file")
         if "cards" in raw:
             r.error("cards", "a grammar deck uses pattern, not cards")
         if "pattern" not in raw:
