@@ -11,6 +11,7 @@ import 'memory_progress.dart';
 import 'profile.dart';
 import 'session.dart';
 import 'settings.dart';
+import 'shell_tab.dart';
 import 'skill.dart';
 
 /// The current time. Injected so that tests and the gallery can fix it.
@@ -112,6 +113,13 @@ class AppState extends ChangeNotifier {
 
   /// Whether reviews outlive the app. False until #5; Today says so.
   bool get progressIsSaved => features.isAvailable(Feature.persistence);
+
+  /// The tab the shell shows. A notifier of its own, so that a page pushed
+  /// over the shell — the summary's "Done", Today's "See all" — can switch
+  /// tabs; use `AppNavigator.selectTab` or `AppNavigator.backToShell`.
+  final ValueNotifier<ShellTab> shellTab = ValueNotifier<ShellTab>(
+    ShellTab.today,
+  );
 
   // ---------------------------------------------------------------------------
   // Decks
@@ -369,6 +377,7 @@ class AppState extends ChangeNotifier {
 
   @override
   void dispose() {
+    shellTab.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();
   }

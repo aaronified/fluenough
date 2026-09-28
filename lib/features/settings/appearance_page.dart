@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/page_parts.dart';
+
+/// Theme, colour, contrast and card text size. Behind `Feature.appearance` and its neighbours.
+///
+/// Design screen `appearance`. A Phase 0 stub that shows only its title;
+/// B5 replaces the body, keeping the class name and the constructor's
+/// required parameters, which `AppRoutes` depends on. Optional parameters
+/// (a gallery preset, say) may be added.
+class AppearancePage extends StatelessWidget {
+  const AppearancePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return PlaceholderPage(title: l10n.appearanceTitle);
+  }
+}

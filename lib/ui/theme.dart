@@ -285,25 +285,28 @@ abstract final class AppRadii {
   static const double drillCard = 40;
 }
 
-/// Button styles for the design's other sizes. Merge over the theme:
-/// `FilledButton(style: AppButtonStyles.tall, …)`.
+/// Button styles for the design's other sizes, merged over the theme's:
+/// `FilledButton(style: AppButtonStyles.tall(context), …)`. They take their
+/// text from the theme's type scale, so they keep its font.
 abstract final class AppButtonStyles {
   /// 64 px, 18 px bold: the main action of a screen.
-  static const ButtonStyle tall = ButtonStyle(
-    minimumSize: WidgetStatePropertyAll(Size(64, AppSizes.tallButton)),
+  static ButtonStyle tall(BuildContext context) => ButtonStyle(
+    minimumSize: const WidgetStatePropertyAll(Size(64, AppSizes.tallButton)),
     textStyle: WidgetStatePropertyAll(
-      TextStyle(fontSize: 18, height: 24 / 18, fontWeight: FontWeight.w700),
+      Theme.of(context).textTheme.titleLarge!
+          .copyWith(fontSize: 18, height: 24 / 18, fontWeight: FontWeight.w700),
     ),
   );
 
   /// 40 px with 14 px side padding: a button inside a row.
-  static const ButtonStyle compact = ButtonStyle(
-    minimumSize: WidgetStatePropertyAll(Size(48, AppSizes.compactButton)),
-    padding: WidgetStatePropertyAll(
+  static ButtonStyle compact(BuildContext context) => ButtonStyle(
+    minimumSize: const WidgetStatePropertyAll(Size(48, AppSizes.compactButton)),
+    padding: const WidgetStatePropertyAll(
       EdgeInsetsDirectional.symmetric(horizontal: 14),
     ),
     textStyle: WidgetStatePropertyAll(
-      TextStyle(fontSize: 14, height: 20 / 14, fontWeight: FontWeight.w600),
+      Theme.of(context).textTheme.labelLarge!
+          .copyWith(fontWeight: FontWeight.w600),
     ),
   );
 }
