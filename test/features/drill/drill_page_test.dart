@@ -450,6 +450,18 @@ void main() {
         DrillRequest.deck(spanish, skill: Skill.listening),
         const DrillPreset(),
       ),
+      // ser has the longest notes in the bundled decks: they wrap, and the
+      // frame must measure them at the width they are laid out at.
+      (
+        'recognition, revealed, long notes',
+        DrillRequest.deck(spanish, skill: Skill.recognition),
+        const DrillPreset(target: 'ser', reveal: true),
+      ),
+      (
+        'production, answered, long notes',
+        DrillRequest.deck(spanish, skill: Skill.production),
+        const DrillPreset(target: 'ser', typed: 'ser', check: true),
+      ),
     ];
     for (final (name, request, preset) in states) {
       testWidgets(name, (tester) async {
