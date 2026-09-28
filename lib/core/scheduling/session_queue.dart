@@ -1,0 +1,159 @@
+import '../models/card.dart';
+import '../models/drill_mode.dart';
+import 'sm2.dart';
+
+/// One card, drilled in one mode, in a session.
+class SessionItem {
+  const SessionItem({
+    required this.card,
+    required this.mode,
+    required this.state,
+  });
+
+  final Card card;
+  final DrillMode mode;
+
+  /// The scheduling state going in, or null for a `(card, mode)` pair that
+  /// has never been reviewed.
+  final Sm2State? state;
+
+  /// Whether this is the pair's first review. New items are what the daily
+  /// new-card cap counts.
+  bool get isNew => state == null;
+
+  @override
+  String toString() => 'SessionItem(${card.id}, ${mode.name})';
+}
+
+/// Looks up the scheduling state of [card] in [mode], or null if that pair
+/// has never been reviewed.
+typedef StateLookup = Sm2State? Function(Card card, DrillMode mode);
+
+/// Whether the device has a voice for [card]'s language, which decides whether
+/// the card can be drilled by ear. See [Card.modesIn].
+typedef VoiceLookup = bool Function(Card card);
+
+/// What one session drills: the reviews that are due, then new material up to
+/// the day's allowance.
+///
+/// This is the pure half of the scheduler (#6). It reads scheduling state
+/// through a [StateLookup] rather than from a store, so it runs with no
+/// database, no clock and no Flutter.
+///
+/// Three rules:
+///
+/// - **Due first.** Every `(card, mode)` pair whose state is due goes in,
+///   most overdue first. Reviews are never held back by the new-card cap.
+/// - **One mode per card per session.** A card due in two modes is drilled in
+///   its most overdue one; drilling the same word twice in a sitting tests
+///   short-term memory, not the schedule. A card with a due mode contributes
+///   no new mode either.
+/// - **New pairs up to the cap.** A pair with no state is new. They are taken
+///   in the order [SessionQueue.build] was given the cards, one per card, in
+///   [DrillMode] declaration order, which puts recognising a word before
+///   producing it. The cap counts new pairs rather than new cards, because
+///   scheduling is per pair (ADR-0005): a word learned by sight and never
+///   typed has a new production pair.
+///
+/// A mode is only ever offered where [Card.modesIn] allows it, so a card is
+/// never drilled by ear on a device without a voice for its language.
+///
+/// "Again" is not re-queued: a failed card is due tomorrow, as SM-2 says, and
+/// is not drilled a second time in the same session.
+class SessionQueue {
+  const SessionQueue._(this.due, this.fresh);
+
+  /// An empty session.
+  static const SessionQueue empty = SessionQueue._(
+    <SessionItem>[],
+    <SessionItem>[],
+  );
+
+  /// Builds the session for [cards].
+  ///
+  /// [modes] limits the session to the modes the learner has switched on, or
+  /// to one mode for "practise one skill". [newCardLimit] is how many new
+  /// pairs may still be introduced today: the daily cap less those already
+  /// introduced. A negative limit counts as zero.
+  ///
+  /// [cards] must be distinct. Cards from several decks may be mixed; the
+  /// caller's [stateOf] tells them apart.
+  factory SessionQueue.build({
+    required Iterable<Card> cards,
+    required StateLookup stateOf,
+    required VoiceLookup hasVoice,
+    required DateTime now,
+    required int newCardLimit,
+    Set<DrillMode> modes = const <DrillMode>{
+      DrillMode.recognition,
+      DrillMode.production,
+      DrillMode.listening,
+      DrillMode.grammar,
+    },
+  }) {
+    final due = <({SessionItem item, int order})>[];
+    final fresh = <SessionItem>[];
+    var newLeft = newCardLimit < 0 ? 0 : newCardLimit;
+
+    var order = 0;
+    for (final card in cards) {
+      final allowed = card.modesIn(ttsAvailable: hasVoice(card));
+      SessionItem? mostOverdue;
+      SessionItem? firstNew;
+      for (final mode in DrillMode.values) {
+        if (!allowed.contains(mode) || !modes.contains(mode)) continue;
+        final state = stateOf(card, mode);
+        if (state == null) {
+          firstNew ??= SessionItem(card: card, mode: mode, state: null);
+        } else if (state.isDue(now) &&
+            (mostOverdue == null ||
+                state.dueAt.isBefore(mostOverdue.state!.dueAt))) {
+          mostOverdue = SessionItem(card: card, mode: mode, state: state);
+        }
+      }
+      if (mostOverdue != null) {
+        due.add((item: mostOverdue, order: order++));
+      } else if (firstNew != null && newLeft > 0) {
+        fresh.add(firstNew);
+        newLeft--;
+      }
+    }
+
+    // Most overdue first; ties keep the order the cards were given in, so
+    // the session is deterministic.
+    due.sort((a, b) {
+      final byDue = a.item.state!.dueAt.compareTo(b.item.state!.dueAt);
+      return byDue != 0 ? byDue : a.order.compareTo(b.order);
+    });
+
+    return SessionQueue._(
+      List<SessionItem>.unmodifiable(due.map((d) => d.item)),
+      List<SessionItem>.unmodifiable(fresh),
+    );
+  }
+
+  /// Reviews that are due, most overdue first.
+  final List<SessionItem> due;
+
+  /// New pairs, within the day's allowance.
+  final List<SessionItem> fresh;
+
+  /// The whole session in the order it is drilled: [due], then [fresh].
+  List<SessionItem> get items => <SessionItem>[...due, ...fresh];
+
+  int get length => due.length + fresh.length;
+
+  bool get isEmpty => length == 0;
+
+  bool get isNotEmpty => !isEmpty;
+
+  /// How many items the session drills in each mode. Modes with none are
+  /// absent.
+  Map<DrillMode, int> countByMode() {
+    final counts = <DrillMode, int>{};
+    for (final item in items) {
+      counts[item.mode] = (counts[item.mode] ?? 0) + 1;
+    }
+    return counts;
+  }
+}
