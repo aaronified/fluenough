@@ -147,6 +147,10 @@ class SessionQueue {
 
   bool get isNotEmpty => !isEmpty;
 
+  /// The same session with the due reviews left out: only new material, as
+  /// "Learn 5 new cards" drills.
+  SessionQueue withoutDue() => SessionQueue._(const <SessionItem>[], fresh);
+
   /// How many items the session drills in each mode. Modes with none are
   /// absent.
   Map<DrillMode, int> countByMode() {
