@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
-import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'incoming.dart';
 
@@ -137,11 +136,23 @@ class GroupedList extends StatelessWidget {
 /// One row: optional leading icon, a title and subtitle, and an optional
 /// trailing control. The design's settings, voice, import and skill rows.
 ///
-/// Give it a [feature] and it handles the incoming state itself, exactly as
-/// the design lays it out: leading, text and trailing dimmed to 38%, the
-/// badge at full contrast between the text and the trailing control, taps
-/// showing the SnackBar, and one screen-reader node, "[title], feature
-/// incoming". When the feature is available, the row is live.
+/// Give it a [feature] and it handles the incoming state itself: leading,
+/// text and trailing dimmed to 38%, the badge at full contrast, taps showing
+/// the SnackBar, and one screen-reader node, "[title], feature incoming".
+/// The badge sits between the text and the trailing control, as the design
+/// draws it, when it takes at most 40% of the row; otherwise it goes under
+/// the text, so a 2.0 text scale or a long translation never overflows the
+/// row. Measuring the row needs a `LayoutBuilder` while incoming, so do not
+/// put an incoming tile where intrinsic sizes are asked, such as in
+/// `DrillFrame`'s card. When the feature is available, the row is live.
+///
+/// Live, a screen reader hears it as:
+///
+/// - with [onTap], or as [GroupedTile.toggle]: one node for the whole row, a
+///   button or a switch, trailing included. So its [trailing] should be
+///   decoration (a chevron, a value) or do what the row does (a radio);
+/// - otherwise: the title and subtitle as one node, and [trailing] as its
+///   own, so a "Start" or "Set up" button keeps its own label and action.
 ///
 /// [GroupedTile.toggle] is the switch row: the whole row toggles, and the
 /// switch is disabled M3-style while the feature is incoming.
@@ -155,13 +166,14 @@ class GroupedTile extends StatelessWidget {
     this.onTap,
     this.feature,
     this.titleColor,
-    this.padding = const EdgeInsetsDirectional.symmetric(
-      horizontal: 20,
-      vertical: 14,
-    ),
+    this.selected = false,
+    this.padding = defaultPadding,
+    this.leadingGap = 16,
+    this.trailingGap = 16,
   }) : _toggle = null;
 
-  /// A row with a [Switch] at its end.
+  /// A row with a [Switch] at its end. Pass null [onChanged] for a switch
+  /// that cannot change.
   const GroupedTile.toggle({
     super.key,
     required this.title,
@@ -171,18 +183,23 @@ class GroupedTile extends StatelessWidget {
     required ValueChanged<bool>? onChanged,
     this.feature,
     this.titleColor,
-    this.padding = const EdgeInsetsDirectional.symmetric(
-      horizontal: 20,
-      vertical: 14,
-    ),
+    this.padding = defaultPadding,
+    this.leadingGap = 16,
   }) : trailing = null,
        onTap = null,
+       selected = false,
+       trailingGap = 16,
        _toggle = (value: value, onChanged: onChanged);
+
+  /// The design's rows: 20 at the sides, 14 above and below.
+  static const EdgeInsetsGeometry defaultPadding =
+      EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 14);
 
   final String title;
   final String? subtitle;
 
-  /// Usually an [Icon]; drawn in `onSurfaceVariant` unless it sets a colour.
+  /// Usually an [Icon]; drawn in [titleColor], or `onSurfaceVariant`, unless
+  /// it sets a colour.
   final Widget? leading;
 
   final Widget? trailing;
@@ -191,20 +208,96 @@ class GroupedTile extends StatelessWidget {
   /// The feature this row belongs to, or null for a row that is always live.
   final Feature? feature;
 
-  /// The title's colour, such as `error` for "Delete this profile".
+  /// The title's colour, and the leading icon's, such as `error` for "Delete
+  /// this profile", or `onSurfaceVariant` for a skill the phone cannot do.
   final Color? titleColor;
 
+  /// Draws the row in `secondaryContainer`: the chosen import source.
+  final bool selected;
+
   final EdgeInsetsGeometry padding;
+
+  /// Between [leading] and the text.
+  final double leadingGap;
+
+  /// Between the text, or the badge, and [trailing].
+  final double trailingGap;
 
   final ({bool value, ValueChanged<bool>? onChanged})? _toggle;
 
   @override
   Widget build(BuildContext context) {
+    final f = feature;
+    if (f != null && isIncoming(context, f)) {
+      return IncomingNode(
+        label: title,
+        child: LayoutBuilder(
+          builder: (context, constraints) => InkWell(
+            onTap: () => showIncomingSnackBar(context),
+            child: _row(
+              context,
+              incoming: true,
+              badgeBeside: incomingBadgeFitsBeside(
+                context,
+                constraints.maxWidth,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    final toggle = _toggle;
+    if (toggle != null) {
+      final change = toggle.onChanged;
+      return MergeSemantics(
+        child: InkWell(
+          onTap: change == null ? null : () => change(!toggle.value),
+          child: _row(context),
+        ),
+      );
+    }
+    if (onTap != null) {
+      return MergeSemantics(
+        child: Semantics(
+          button: true,
+          child: InkWell(onTap: onTap, child: _row(context)),
+        ),
+      );
+    }
+    return _row(context, mergeText: true);
+  }
+
+  Widget _row(
+    BuildContext context, {
+    bool incoming = false,
+    bool badgeBeside = true,
+    bool mergeText = false,
+  }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final f = feature;
-    final incoming = f != null && isIncoming(context, f);
-    final dim = incoming ? kIncomingOpacity : 1.0;
+    final foreground = selected ? scheme.onSecondaryContainer : null;
+    Widget dimmed(Widget child) =>
+        incoming ? Opacity(opacity: kIncomingOpacity, child: child) : child;
+
+    final Widget text = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          title,
+          style: theme.textTheme.titleMedium!.copyWith(
+            color: titleColor ?? foreground,
+          ),
+        ),
+        if (subtitle != null)
+          Text(
+            subtitle!,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              color: foreground ?? scheme.onSurfaceVariant,
+            ),
+          ),
+      ],
+    );
 
     final toggle = _toggle;
     final Widget? end = toggle != null
@@ -213,78 +306,47 @@ class GroupedTile extends StatelessWidget {
             onChanged: incoming ? null : toggle.onChanged,
           )
         : trailing;
-    final VoidCallback? tap = incoming
-        ? () => showIncomingSnackBar(context)
-        : toggle != null
-        ? (toggle.onChanged == null
-              ? null
-              : () => toggle.onChanged!(!toggle.value))
-        : onTap;
 
     final row = Padding(
       padding: padding,
       child: Row(
         children: <Widget>[
           if (leading != null) ...<Widget>[
-            Opacity(
-              opacity: dim,
-              child: IconTheme.merge(
-                data: IconThemeData(color: scheme.onSurfaceVariant),
+            dimmed(
+              IconTheme.merge(
+                data: IconThemeData(
+                  color: titleColor ?? foreground ?? scheme.onSurfaceVariant,
+                ),
                 child: leading!,
               ),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: leadingGap),
           ],
           Expanded(
-            child: Opacity(
-              opacity: dim,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    title,
-                    style: theme.textTheme.titleMedium!.copyWith(
-                      color: titleColor,
-                    ),
-                  ),
-                  if (subtitle != null)
-                    Text(
-                      subtitle!,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                ],
-              ),
-            ),
+            child: incoming && !badgeBeside
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      dimmed(text),
+                      const SizedBox(height: 8),
+                      const IncomingBadge(),
+                    ],
+                  )
+                : mergeText
+                ? MergeSemantics(child: text)
+                : dimmed(text),
           ),
-          if (incoming) ...<Widget>[
+          if (incoming && badgeBeside) ...<Widget>[
             const SizedBox(width: 12),
             const IncomingBadge(),
           ],
           if (end != null) ...<Widget>[
-            const SizedBox(width: 16),
-            Opacity(
-              opacity: dim,
-              child: IgnorePointer(ignoring: incoming, child: end),
-            ),
+            SizedBox(width: trailingGap),
+            dimmed(IgnorePointer(ignoring: incoming, child: end)),
           ],
         ],
       ),
     );
-
-    final ink = InkWell(onTap: tap, child: row);
-    if (!incoming) return MergeSemantics(child: ink);
-    final l10n = AppLocalizations.of(context)!;
-    return Semantics(
-      container: true,
-      button: true,
-      enabled: false,
-      label: l10n.incomingSemanticsLabel(title),
-      hint: l10n.incomingSemanticsHint,
-      excludeSemantics: true,
-      onTap: tap,
-      child: ink,
-    );
+    return selected ? Ink(color: scheme.secondaryContainer, child: row) : row;
   }
 }
