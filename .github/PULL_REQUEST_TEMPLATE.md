@@ -20,6 +20,8 @@
 - [ ] No existing card id was renumbered, reused or removed-and-replaced
 - [ ] Romanisations and other bare values are quoted (`"no"`, not `no`)
 - [ ] `language.tts` is set if the language has regional variation
+- [ ] Every `language` and `native` block has its ISO 639-3 code (`iso639_3`)
+- [ ] A new language comes with a `<code>-facts.yaml` of 30+ facts, or an issue for one
 
 - [ ] One concern only; rebased on `main`
 - [ ] Agent assistance disclosed with a `Co-Authored-By:` trailer, if any

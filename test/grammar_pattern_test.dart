@@ -76,8 +76,13 @@ const presentAr = GrammarPattern(
   ],
 );
 
-const spanish = LanguageInfo(code: 'es', name: 'Spanish', tts: 'es-ES');
-const english = LanguageInfo(code: 'en', name: 'English');
+const spanish = LanguageInfo(
+  code: 'es',
+  iso639_3: 'spa',
+  name: 'Spanish',
+  tts: 'es-ES',
+);
+const english = LanguageInfo(code: 'en', iso639_3: 'eng', name: 'English');
 
 void main() {
   group('GrammarPattern', () {
