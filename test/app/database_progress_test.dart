@@ -8,6 +8,7 @@ import 'package:fluenough/app/database_progress.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/profile.dart';
+import 'package:fluenough/app/profile_storage.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/review_log.dart';
@@ -198,8 +199,8 @@ void main() {
 
   test('each profile has its own file', () {
     expect(
-      DatabaseProgress.fileNameFor(const Profile(id: 'mira', name: 'Mira')),
-      isNot(DatabaseProgress.fileNameFor(Profile.defaultProfile)),
+      databaseFileName(const Profile(id: 'mira', name: 'Mira')),
+      isNot(databaseFileName(Profile.defaultProfile)),
     );
   });
 }
