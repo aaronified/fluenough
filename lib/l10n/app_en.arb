@@ -119,11 +119,11 @@
   "@commonListSeparator": {
     "description": "Placed between items when the app lists several names in a row, such as the languages a profile learns: \"Hindi, Spanish\". Keep any spacing your language uses."
   },
-  "commonNotSavedTitle": "Progress isn’t saved yet",
+  "commonNotSavedTitle": "Progress isn’t being saved",
   "@commonNotSavedTitle": {
     "description": "Banner title while this version keeps reviews in memory only."
   },
-  "commonNotSavedBody": "This version keeps your reviews in memory. They’re gone when the app closes.",
+  "commonNotSavedBody": "The app couldn’t open its database, so this session’s reviews are kept in memory and are gone when it closes.",
   "@commonNotSavedBody": {
     "description": "Banner body under commonNotSavedTitle."
   },
@@ -352,10 +352,6 @@
   "newProfileNameHint": "Your name",
   "@newProfileNameHint": {
     "description": "Placeholder in the empty name field."
-  },
-  "newProfileSpeaks": "I speak",
-  "@newProfileSpeaks": {
-    "description": "Label of the interface-language picker."
   },
   "newProfileSpeaksHelp": "Menus follow this language when a translation exists. English until then.",
   "@newProfileSpeaksHelp": {
@@ -1779,6 +1775,42 @@
         "example": "Forest"
       }
     }
+  },
+  "spokenTitle": "Languages you speak",
+  "@spokenTitle": {
+    "description": "Title of the screen where the learner picks and ranks the languages they speak, shown on first launch and from Settings."
+  },
+  "spokenBody": "Tick every language you know, then drag them into order, the one you know best first. They decide which comparisons and daily facts you see.",
+  "@spokenBody": {
+    "description": "Explanation on the spoken-languages screen."
+  },
+  "spokenOption": "{name} · {ownName}",
+  "@spokenOption": {
+    "description": "One language in the list: its English name and its name for itself, such as 'Bengali · বাংলা'.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "ownName": {
+        "type": "String",
+        "example": "বাংলা"
+      }
+    }
+  },
+  "spokenRank": "{rank}",
+  "@spokenRank": {
+    "description": "The rank shown beside a ticked language, 1 for the one known best.",
+    "placeholders": {
+      "rank": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "settingsSpoken": "Languages I speak",
+  "@settingsSpoken": {
+    "description": "Settings row that opens the spoken-languages screen."
   },
   "settingsAppLanguage": "App language",
   "@settingsAppLanguage": {

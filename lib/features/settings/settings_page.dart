@@ -173,6 +173,12 @@ class SettingsPage extends StatelessWidget {
           onTap: () => AppNavigator.openAppearance(context),
         ),
         GroupedTile(
+          leading: const Icon(Icons.record_voice_over_outlined),
+          title: l10n.settingsSpoken,
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => AppNavigator.openSpokenLanguages(context),
+        ),
+        GroupedTile(
           leading: const Icon(Icons.translate),
           title: l10n.settingsAppLanguage,
           feature: Feature.uiLanguage,
