@@ -6,6 +6,7 @@ import '../../app/profile.dart';
 import '../../app/session.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/tts/fixed_tts_engine.dart';
 
@@ -80,7 +81,9 @@ abstract final class GalleryFixtures {
         >[];
     for (final entry in decks) {
       final cards = entry.cards;
-      if (cards.isEmpty) continue;
+      // Grammar cards are drilled in their own mode, which the fixture's
+      // history does not use.
+      if (cards.isEmpty || entry.deck.kind == DeckKind.grammar) continue;
       for (var day = 12; day >= 1; day--) {
         final at = addDays(today, -day).add(const Duration(hours: 18));
         final i = (12 - day) % cards.length;

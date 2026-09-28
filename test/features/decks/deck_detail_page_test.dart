@@ -230,7 +230,7 @@ void main() {
     final entry = state.deckById(grammar)!;
     final pattern = entry.deck.pattern!;
 
-    expect(entry.cards, isEmpty);
+    expect(entry.cards, hasLength(entry.itemCount), reason: 'expanded (#2)');
     expect(find.text(l10n.commonCardCount(entry.itemCount)), findsOneWidget);
     expect(
       find.text(
