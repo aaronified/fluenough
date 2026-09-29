@@ -5,6 +5,7 @@ import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/models/leech_action.dart';
 
 void main() {
   late AppDatabase db;
@@ -34,8 +35,19 @@ void main() {
     easeAfter: 2.6,
   );
 
-  test('opens at version 2 with its five tables', () async {
-    expect(db.schemaVersion, 2);
+  LeechAction leechAction({LeechActionKind kind = LeechActionKind.setAside}) =>
+      LeechAction(
+        at: at,
+        key: (
+          deckId: 'hi-en-market',
+          cardId: 'hi-en-market-0001',
+          mode: DrillMode.production,
+        ),
+        kind: kind,
+      );
+
+  test('opens at version 3 with its six tables', () async {
+    expect(db.schemaVersion, 3);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -47,20 +59,23 @@ void main() {
       'card_states',
       'cards',
       'decks',
+      'leech_actions',
       'reviews',
       'settings',
     ]);
   });
 
-  test('a version 1 database upgrades to 2 and keeps its reviews', () async {
+  test('a version 1 database upgrades to 3 and keeps its reviews', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/old.sqlite');
 
-    // Make a version 1 file: today's schema without what migration 2 adds.
+    // Make a version 1 file: today's schema without what migrations 2 and 3
+    // add.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
     await old.customStatement('DROP TABLE settings');
+    await old.customStatement('DROP TABLE leech_actions');
     await old.customStatement('PRAGMA user_version = 1');
     await old.close();
 
@@ -74,6 +89,40 @@ void main() {
       throwsA(anything),
       reason: 'the append-only triggers survive the upgrade',
     );
+    await upgraded.leechActionsDao.append(leechAction());
+    expect(await upgraded.leechActionsDao.all(), hasLength(1));
+    await expectLater(
+      upgraded.customStatement('DELETE FROM leech_actions'),
+      throwsA(
+        predicate((Object e) => '$e'.contains('leech_actions is append-only')),
+      ),
+      reason: 'migration 3 guards its table',
+    );
+  });
+
+  test('leech_actions: appended in order, never changed', () async {
+    await db.leechActionsDao.append(leechAction(kind: LeechActionKind.reset));
+    await db.leechActionsDao.append(
+      leechAction(kind: LeechActionKind.undoReset),
+    );
+    final actions = await db.leechActionsDao.all();
+    expect(actions.map((a) => a.kind), [
+      LeechActionKind.reset,
+      LeechActionKind.undoReset,
+    ]);
+    expect(actions.first.at, at);
+    expect(actions.first.key.mode, DrillMode.production);
+    for (final sql in [
+      "UPDATE leech_actions SET kind = 'setAside'",
+      'DELETE FROM leech_actions',
+    ]) {
+      await expectLater(
+        db.customStatement(sql),
+        throwsA(anything),
+        reason: sql,
+      );
+    }
+    expect(await db.leechActionsDao.all(), hasLength(2));
   });
 
   test('settings: stored by name, replaced on a second write', () async {

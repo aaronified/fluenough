@@ -1,11 +1,13 @@
 import 'package:drift/drift.dart';
 
 import '../models/drill_mode.dart';
+import '../models/leech_action.dart';
 import 'daos.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/converters.dart';
 import 'tables/decks.dart';
+import 'tables/leech_actions.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
 
@@ -35,36 +37,50 @@ part 'database.g.dart';
 ///    `cards` and `card_states` may be rebuilt, since the first two come from
 ///    the deck files and the last from replaying `reviews`.
 @DriftDatabase(
-  tables: [Decks, Cards, CardStates, Reviews, Settings],
-  daos: [DecksDao, CardsDao, CardStatesDao, ReviewsDao, SettingsDao],
+  tables: [Decks, Cards, CardStates, Reviews, Settings, LeechActions],
+  daos: [
+    DecksDao,
+    CardsDao,
+    CardStatesDao,
+    ReviewsDao,
+    SettingsDao,
+    LeechActionsDao,
+  ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   /// 1: the four tables, and the triggers that keep `reviews` append-only.
   /// 2: `settings` (#15).
+  /// 3: `leech_actions`, append-only like `reviews` (#19).
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
     onCreate: (m) async {
       await m.createAll();
-      await _guardReviews();
+      await _appendOnly('reviews');
+      await _appendOnly('leech_actions');
     },
     onUpgrade: (m, from, to) async {
       if (from < 2) await m.createTable(settings);
+      if (from < 3) {
+        await m.createTable(leechActions);
+        await _appendOnly('leech_actions');
+      }
     },
   );
 
-  /// Makes SQLite itself refuse to change the review log, so that no code
-  /// path, drift's own `update` and `delete` included, can rewrite history.
-  Future<void> _guardReviews() async {
+  /// Makes SQLite itself refuse to change [table], so that no code path,
+  /// drift's own `update` and `delete` included, can rewrite history. The
+  /// review log's triggers are `reviews_no_update` and `reviews_no_delete`.
+  Future<void> _appendOnly(String table) async {
     for (final action in const <String>['UPDATE', 'DELETE']) {
       await customStatement(
-        'CREATE TRIGGER reviews_no_${action.toLowerCase()} '
-        'BEFORE $action ON reviews '
-        "BEGIN SELECT RAISE(ABORT, 'reviews is append-only'); END",
+        'CREATE TRIGGER ${table}_no_${action.toLowerCase()} '
+        'BEFORE $action ON $table '
+        "BEGIN SELECT RAISE(ABORT, '$table is append-only'); END",
       );
     }
   }

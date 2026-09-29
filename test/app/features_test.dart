@@ -40,7 +40,8 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the drills, saved progress, theme and stats', () {
+  test('this version ships the drills, saved progress, theme, stats and '
+      'leeches', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -48,6 +49,7 @@ void main() {
       Feature.persistence,
       Feature.appearance,
       Feature.stats,
+      Feature.leeches,
     });
   });
 

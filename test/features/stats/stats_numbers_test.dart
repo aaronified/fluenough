@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
@@ -149,7 +150,7 @@ void main() {
   });
 
   test('leech actions are appended; the latest one sets the status', () {
-    final actions = LeechActions();
+    final actions = LeechActions.of(MemoryProgress());
     const key = (
       deckId: 'es-core-100',
       cardId: 'es-core-0002',
@@ -172,5 +173,39 @@ void main() {
       LeechActionKind.reset,
       LeechActionKind.undoReset,
     ]);
+  });
+
+  test('a reset leech stays listed, so its reset can be undone', () {
+    final progress = MemoryProgress();
+    const key = (
+      deckId: 'hi-en-market',
+      cardId: 'hi-en-market-0001',
+      mode: DrillMode.production,
+    );
+    final start = DateTime(2026, 9, 1, 9);
+    // Learned, then forgotten again and again.
+    for (var i = 0; i < 12; i++) {
+      progress.record(
+        deckId: key.deckId,
+        cardId: key.cardId,
+        mode: key.mode,
+        grade: i.isEven ? 4 : 1,
+        now: start.add(Duration(days: i)),
+      );
+    }
+    final card = app.decks.first.cards.first;
+    Card? cardOf(String deckId, String cardId) =>
+        deckId == key.deckId ? card : null;
+    expect(findLeeches(progress, cardOf: cardOf), hasLength(1));
+
+    progress.actOnLeech(
+      key,
+      LeechActionKind.reset,
+      now: start.add(const Duration(days: 20)),
+    );
+    expect(progress.stateOf(key.deckId, key.cardId, key.mode), isNull);
+    final listed = findLeeches(progress, cardOf: cardOf);
+    expect(listed.single.key, key);
+    expect(LeechActions.of(progress).statusOf(key), LeechStatus.reset);
   });
 }
