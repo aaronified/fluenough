@@ -60,9 +60,10 @@ void main() {
 
     await tester.tap(find.byType(ProfileAvatar).first);
     await tester.enterText(_nameField(tester), 'Dev');
+    // The first language the decks teach starts chosen; unchoose it.
     await _tapVisible(
       tester,
-      find.widgetWithText(FilterChip, languageName(state, 'es')),
+      find.widgetWithText(FilterChip, state.languages.first.name),
     );
     await _tapVisible(
       tester,
