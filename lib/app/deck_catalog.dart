@@ -5,9 +5,11 @@ import 'package:flutter/widgets.dart' show StringCharacters;
 import 'package:yaml/yaml.dart';
 
 import '../core/data/deck_parser.dart';
+import '../core/data/number_rules_parser.dart';
 import '../core/data/themes.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
+import '../core/models/number_rules.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -154,9 +156,15 @@ class Catalog {
     required List<DeckEntry> decks,
     required List<BrokenDeck> broken,
     List<DeckTheme> themes = const <DeckTheme>[],
+    Map<String, NumberRules> numberRules = const <String, NumberRules>{},
   }) : decks = List<DeckEntry>.unmodifiable(decks),
        broken = List<BrokenDeck>.unmodifiable(broken),
-       themes = List<DeckTheme>.unmodifiable(themes);
+       themes = List<DeckTheme>.unmodifiable(themes),
+       numberRules = Map<String, NumberRules>.unmodifiable(numberRules);
+
+  /// Each language's rules for spelling a generated number (#54), by
+  /// language code. A language without a numbers file has none.
+  final Map<String, NumberRules> numberRules;
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
@@ -232,12 +240,22 @@ class DeckCatalog {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
     var themes = const <DeckTheme>[];
+    final numberRules = <String, NumberRules>{};
     final firstPath = <String, String>{};
     final paths = files.keys.toList()..sort();
     for (final path in paths) {
       final text = files[path]!;
       final kind = kindOf(text);
       if (kind == 'facts') continue;
+      if (kind == 'numbers') {
+        try {
+          final rules = parseNumberRules(text, source: path.split('/').last);
+          numberRules.putIfAbsent(rules.language.code, () => rules);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       if (kind == 'themes') {
         try {
           themes = parseThemes(text, source: path.split('/').last);
@@ -273,6 +291,7 @@ class DeckCatalog {
       decks: _inThemeOrder(decks, themes),
       broken: broken,
       themes: themes,
+      numberRules: numberRules,
     );
   }
 
