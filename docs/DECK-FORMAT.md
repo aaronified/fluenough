@@ -32,7 +32,8 @@ Common to every kind.
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | URL the content was derived from. |
 | `description` | no | One or two sentences. |
-| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. |
+| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. |
+| `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
 
 ### `language`
 
@@ -87,7 +88,7 @@ cards:
 | `notes` | no | Usage note shown after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs. |
-| `modes` | no | Which drills this card participates in. Defaults to all applicable. |
+| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition and listening. |
 
 ### A note on `id`
 
@@ -178,6 +179,34 @@ Each `(entry, slot)` pair becomes one production card:
 
 ---
 
+## Themes
+
+Vocabulary is taught along one shared path of themes, like the units of a
+course ([ADR-0010](adr/0010-themes.md)). `decks/themes.yaml` lists them, in
+order:
+
+```yaml
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+```
+
+A theme deck is an ordinary vocab deck with a `theme`, and its id is the
+course plus the theme: `hi-en-market` is Hindi from English, Market. Every
+language teaches the same themes in the same order, with its own words.
+
+- **Theme ids are permanent**, like card ids: decks name their theme by it.
+- **One deck per theme per course.** The validator fails a second
+  `hi-en` deck for `market`, and a `theme` that `themes.yaml` does not list.
+- **New cards follow the path.** A course's theme decks are drilled in the
+  file's order unless the learner picks a theme. Nothing is locked.
+- **Phrases are not typed.** Mark a card of more than one word `pos: phrase`:
+  it gets recognition and listening, and no production drill, since a whole
+  sentence is too hard to grade fairly.
+- **Grammar decks are not themes.** They stay separate from the path.
+
 ## Facts files
 
 One short, true and surprising thing about the language, shown to the learner
@@ -220,7 +249,7 @@ facts:
 ```
 
 A facts file has the usual header, except that it has **no `native`**: each
-fact carries its own text in every interface language it is written in. It has
+fact carries its own text in every language it is written in. It has
 `facts` in place of `cards`.
 
 ### Fact fields
@@ -228,17 +257,18 @@ fact carries its own text in every interface language it is written in. It has
 | Field | Required | Notes |
 |---|---|---|
 | `id` | yes | Unique within the file, `[a-z0-9-]+`, conventionally `<code>-fact-NNN`. **Never reuse or renumber**: the app remembers which facts a learner has seen by id. |
-| `text` | yes | The fact, keyed by interface-language code (the same codes as `code`): `{ en: ..., bn: ... }`. A learner sees the entry for their interface language. |
-| `contrast` | no | An interface-language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners using that interface language, and `text` must have an entry for it. |
+| `text` | yes | The fact, keyed by language code (the same codes as `code`): `{ en: ..., bn: ... }`. A learner sees it in each language they speak that it is written in. |
+| `contrast` | no | A language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners who speak that language, and `text` must have an entry for it. |
 | `tags` | no | What the fact is about, e.g. `[script]`, `[pronunciation]`, `[grammar]`, `[history]`. |
 | `source` | no | Where the fact can be checked. Give one whenever the fact is not common knowledge. |
 
 ### Rules
 
 - **At least 30 facts without a `contrast`.** These are true whatever the
-  learner's interface language is, a month of one fact a day, and the
+  learner speaks, a month of one fact a day, and the
   validator fails a file with fewer. Facts with a `contrast` are extra.
-- **Write every fact in every interface language the app ships, English first.**
+- **Write every fact in every language a learner can say they speak
+  (`assets/languages.yaml`: English, Bengali and Hindi), English first.**
   English, and any other language a fact is written in, gets a warning when
   fewer than 30 contrast-free facts are written in it, since its learners see
   only that many.
@@ -252,6 +282,53 @@ fact carries its own text in every interface language it is written in. It has
   write it `"no":`.
 
 ---
+
+## Number rules
+
+The number generator (#54, [ADR-0011](adr/0011-number-generator.md)) makes
+practice cards for 4-digit numbers, spelled from the words a language's
+number decks teach. Each language that has them gives its rules in
+`decks/<code>/<code>-numbers.yaml`:
+
+```yaml
+schema: 1
+id: te-numbers
+name: "Telugu numbers"
+kind: numbers
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+license: CC0-1.0
+tens_and_units: true
+words:
+  1: "ఒకటి"
+  5: ["ఐదు", "అయిదు"]
+  20: "ఇరవై"
+hundreds:
+  1: ["వంద", "నూరు"]
+  2: "రెండు వందలు"
+hundreds_before:
+  1: "నూట"
+  2: "రెండు వందల"
+thousands:
+  1: "వెయ్యి"
+  2: "రెండు వేలు"
+thousands_before:
+  1: "వెయ్యి"
+  2: "రెండు వేల"
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `words` | yes | The numbers from 1 to 99 the decks teach a word for. |
+| `tens_and_units` | no | `true` when a number from 21 to 99 without a word is its tens word and its units word, as Telugu's ఇరవై ఆరు is 26. Defaults to `false`: Hindi and Bengali have a word of their own for each. |
+| `hundreds`, `thousands` | yes | 100–900 and 1,000–9,000 on their own, keyed 1 to 9. |
+| `hundreds_before`, `thousands_before` | no | The same with more digits after them, where the word changes. Default to `hundreds` and `thousands`. |
+| `join` | no | What goes between the parts. Defaults to a space. |
+
+A value is a spelling or a list of spellings, the usual one first; every
+one is accepted as an answer. A number whose last two digits have no word is
+never generated. **Every word used must be taught:** the validator fails a
+rules file that spells with a word that no card in the language's
+`numbers-1-20` or `numbers-big` deck contains.
 
 ## Drill modes
 
@@ -272,13 +349,19 @@ translation is beyond what an offline app should attempt.
 
 Automatically graded answers are normalised before comparison:
 
-1. Unicode NFC normalisation
+1. one spelling for text that looks the same: precomposed letters are
+   decomposed (Devanagari and Bengali nukta letters such as क़ and য়, and
+   Bengali and Telugu two-part vowel signs such as ো), Indic digits read as
+   0–9, and zero-width joiners are ignored. This is a table for the scripts
+   the app ships, not full Unicode NFC, which needs a package (#28); a new
+   script adds its rows to `lib/core/grading/canonical.dart`
 2. trim, collapse internal whitespace
 3. case folding
 4. strip terminal punctuation
 
-If that does not match, a second pass **also** strips diacritics (NFD, drop
-combining marks) and leading articles declared for the language. A match at
+If that does not match, a second pass **also** strips diacritics (the Latin
+accents, and the Devanagari and Bengali nukta) and leading articles declared
+for the language. A match at
 this stage counts as correct but the UI flags what was missed — the answer was
 right, the accent was not.
 

@@ -1,0 +1,85 @@
+schema: 1
+id: te-en-directions
+name: "Directions"
+kind: vocab
+theme: directions
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Left, right, straight on, and asking where something is. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: te-en-directions-0001
+    target: "… ఎక్కడ?"
+    native: "Where is …?"
+    reading: "… ekkada?"
+    pos: "phrase"
+    notes: "Put the place first: స్టేషన్ ఎక్కడ? Where's the station?"
+  - id: te-en-directions-0002
+    target: "కుడి"
+    native: "right (side)"
+    reading: "kudi"
+    pos: "adj"
+    notes: "కుడి వైపు (kudi vaipu), to the right."
+  - id: te-en-directions-0003
+    target: "ఎడమ"
+    native: "left (side)"
+    reading: "edama"
+    pos: "adj"
+    notes: "ఎడమ వైపు (edama vaipu), to the left."
+  - id: te-en-directions-0004
+    target: "నేరుగా"
+    native: "straight on"
+    reading: "neerugaa"
+    pos: "adv"
+  - id: te-en-directions-0005
+    target: "తిరగండి"
+    native: "please turn"
+    reading: "tiragandi"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "కుడి వైపు తిరగండి, turn right."
+  - id: te-en-directions-0006
+    target: "ముందు"
+    native: "ahead; in front"
+    reading: "mundu"
+    pos: "adv"
+  - id: te-en-directions-0007
+    target: "వెనక"
+    native: "behind"
+    reading: "venaka"
+    alt_target: ["వెనుక"]
+    pos: "adv"
+  - id: te-en-directions-0008
+    target: "దగ్గర"
+    native: "near"
+    reading: "daggara"
+    pos: "adv"
+    notes: "స్టేషన్ దగ్గర, near the station."
+  - id: te-en-directions-0009
+    target: "దూరం"
+    native: "far; distance"
+    reading: "duuram"
+    pos: "noun"
+    notes: "ఎంత దూరం? How far is it?"
+  - id: te-en-directions-0010
+    target: "ఇక్కడ"
+    native: "here"
+    reading: "ikkada"
+    pos: "adv"
+  - id: te-en-directions-0011
+    target: "అక్కడ"
+    native: "there"
+    reading: "akkada"
+    pos: "adv"
+  - id: te-en-directions-0012
+    target: "దారి"
+    native: "way; route"
+    reading: "daari"
+    pos: "noun"
+    notes: "దారి చెప్పండి, please tell me the way."
+  - id: te-en-directions-0013
+    target: "రోడ్డు"
+    native: "road"
+    reading: "roddu"
+    pos: "noun"

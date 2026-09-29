@@ -103,6 +103,7 @@ const _headerFields = {
   'tags',
   'cards',
   'pattern',
+  'theme',
 };
 
 const _cardFields = {
@@ -184,6 +185,11 @@ class _Reader {
               'this is a facts file, not a deck; it is read by the facts '
               'loader, not DeckParser',
             ),
+            'themes' => fail(
+              kindNode,
+              'this is the themes file, not a deck; the catalog reads it '
+              'with parseThemes',
+            ),
             _ => fail(
               kindNode,
               'kind must be vocab or grammar, got ${_describe(kindNode)}',
@@ -211,6 +217,9 @@ class _Reader {
     final authors = this.authors(fields.node('authors'));
     final description = fields.optionalString('description');
     final deckSource = fields.optionalString('source');
+    final theme = fields.has('theme')
+        ? this.id(fields.require('theme'), 'theme')
+        : null;
 
     var cards = const <Card>[];
     GrammarPattern? pattern;
@@ -247,6 +256,7 @@ class _Reader {
       tags: tags,
       authors: authors,
       source: deckSource,
+      theme: theme,
     );
   }
 

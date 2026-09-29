@@ -44,13 +44,15 @@ SCRIPTS = {
     "kana", "han", "hangul", "thai", "other",
 }
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
-KINDS = {"vocab", "grammar", "facts"}
+KINDS = {"vocab", "grammar", "facts", "themes", "numbers"}
+THEMES_KEYS = {"schema", "kind", "description", "themes"}
 MODES = {"recognition", "production", "listening", "grammar"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
 
 HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
     "authors", "source", "description", "tags", "cards", "pattern", "facts",
+    "theme",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "alt_target", "alt_native",
@@ -103,6 +105,14 @@ class Report:
     path: Path
     errors: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
+    # For the checks across files: the theme ids a themes file lists, in
+    # order, and the (language, native, theme) a theme deck teaches.
+    themes: list[str] | None = None
+    theme_key: tuple[str, str, str] | None = None
+    # For the number rules (ADR-0011): the words a numbers file spells with,
+    # by language, and the words a number deck teaches.
+    number_words: tuple[str, set[str]] | None = None
+    number_taught: tuple[str, set[str]] | None = None
 
     def error(self, where: str, msg: str) -> None:
         self.errors.append(f"{where}: {msg}")
@@ -434,6 +444,13 @@ def validate(path: Path) -> Report:
         r.error("root", "deck must be a YAML mapping")
         return r
 
+    if raw.get("kind") == "themes":
+        check_themes_file(r, raw)
+        return r
+    if raw.get("kind") == "numbers":
+        check_numbers_file(r, raw, path)
+        return r
+
     for unknown in sorted(set(raw) - HEADER_KEYS):
         r.error("root", f"unknown field {unknown!r}")
 
@@ -457,6 +474,27 @@ def validate(path: Path) -> Report:
     kind = raw.get("kind", "vocab")
     if kind not in KINDS:
         r.error("kind", f"must be one of {sorted(KINDS)}, got {kind!r}")
+
+    theme = raw.get("theme")
+    if theme is not None:
+        if kind != "vocab":
+            r.error("theme", "only a vocab deck teaches a theme")
+        elif not _is_str(theme) or not ID_RE.fullmatch(theme):
+            r.error("theme", f"must be a theme id from decks/themes.yaml, got {theme!r}")
+        else:
+            lang, native = raw.get("language"), raw.get("native")
+            if isinstance(lang, dict) and isinstance(native, dict):
+                r.theme_key = (str(lang.get("code")), str(native.get("code")), theme)
+            if theme in NUMBER_THEMES and isinstance(lang, dict):
+                words: set[str] = set()
+                for card in raw.get("cards") or []:
+                    if not isinstance(card, dict):
+                        continue
+                    alts = card.get("alt_target")
+                    for text in [card.get("target"), *(alts if isinstance(alts, list) else [])]:
+                        if _is_str(text):
+                            words.update(text.split())
+                r.number_taught = (str(lang.get("code")), words)
 
     check_langblock(r, "language", raw.get("language"), full=True)
     if kind != "facts":
@@ -518,6 +556,155 @@ def validate(path: Path) -> Report:
     return r
 
 
+def check_themes_file(r: Report, raw: dict) -> None:
+    """The shared theme path, decks/themes.yaml. See ADR-0010."""
+    for unknown in sorted(set(raw) - THEMES_KEYS):
+        r.error("root", f"unknown field {unknown!r} in a themes file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    themes = raw.get("themes")
+    if not isinstance(themes, list) or not themes:
+        r.error("themes", "must be a non-empty list")
+        return
+    ids: list[str] = []
+    for i, theme in enumerate(themes):
+        where = f"themes[{i}]"
+        if not isinstance(theme, dict) or set(theme) - {"id", "name"}:
+            r.error(where, "must be a mapping with only an id and a name")
+            continue
+        tid = theme.get("id")
+        if not _is_str(tid) or not ID_RE.fullmatch(tid):
+            r.error(where, f"id must match [a-z0-9-]+, got {tid!r}")
+            continue
+        if tid in ids:
+            r.error(where, f"theme {tid!r} is listed twice")
+        if not _is_str(theme.get("name")):
+            r.error(where, f"theme {tid!r} needs a name")
+        ids.append(tid)
+    r.themes = ids
+
+
+NUMBERS_KEYS = {
+    "schema", "id", "name", "kind", "language", "license", "description",
+    "words", "tens_and_units", "hundreds", "hundreds_before", "thousands",
+    "thousands_before", "join",
+}
+# The themes whose decks teach the words a numbers file may use.
+NUMBER_THEMES = {"numbers-1-20", "numbers-big"}
+
+
+def check_numbers_file(r: Report, raw: dict, path: Path) -> None:
+    """A language's rules for spelling generated numbers. See ADR-0011."""
+    for unknown in sorted(set(raw) - NUMBERS_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r} in a numbers file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    for key in ("name", "license"):
+        if not _is_str(raw.get(key)):
+            r.error(key, "is required")
+    check_langblock(r, "language", raw.get("language"), full=True)
+    lang = raw.get("language")
+    code = lang.get("code") if isinstance(lang, dict) else None
+    if code is not None:
+        want = f"{code}-numbers"
+        if raw.get("id") != want:
+            r.error("id", f"must be {want!r}, got {raw.get('id')!r}")
+        elif path.stem != want:
+            r.error("id", f"is {want!r} but the filename stem is {path.stem!r}")
+    tu = raw.get("tens_and_units", False)
+    if not isinstance(tu, bool):
+        r.error("tens_and_units", "must be true or false")
+    if "join" in raw and not isinstance(raw["join"], str):
+        r.error("join", "must be text")
+
+    used: set[str] = set()
+
+    def table(key: str, lo: int, hi: int, *, required: bool, complete: bool) -> None:
+        t = raw.get(key)
+        if t is None:
+            if required:
+                r.error(key, "is required")
+            return
+        if not isinstance(t, dict) or not t:
+            r.error(key, "must map numbers to their words")
+            return
+        for k, v in t.items():
+            if isinstance(k, bool) or not isinstance(k, int) or not lo <= k <= hi:
+                r.error(key, f"keys are whole numbers from {lo} to {hi}, got {k!r}")
+                continue
+            spellings = v if isinstance(v, list) else [v]
+            if not spellings or not all(_is_str(x) for x in spellings):
+                r.error(key, f"{k} must be a word or a list of words, got {v!r}")
+                continue
+            for x in spellings:
+                if x != unicodedata.normalize("NFC", x):
+                    r.error(key, f"{k}: {x!r} is not NFC-normalised")
+                used.update(x.split())
+        if complete:
+            missing = [k for k in range(lo, hi + 1) if k not in t]
+            if missing:
+                r.error(key, f"needs an entry for each of {lo} to {hi}; missing {missing}")
+
+    table("words", 1, 99, required=True, complete=False)
+    table("hundreds", 1, 9, required=True, complete=True)
+    table("hundreds_before", 1, 9, required=False, complete=True)
+    table("thousands", 1, 9, required=True, complete=True)
+    table("thousands_before", 1, 9, required=False, complete=True)
+    if _is_str(code):
+        r.number_words = (code, used)
+
+
+def check_numbers_across(reports: list[Report]) -> list[str]:
+    """A numbers file spells only with words its language's number decks
+    teach, so a generated number never uses a word the learner was not
+    taught (#54)."""
+    taught: dict[str, set[str]] = {}
+    for rep in reports:
+        if rep.number_taught is not None:
+            code, words = rep.number_taught
+            taught.setdefault(code, set()).update(words)
+    problems = []
+    for rep in reports:
+        if rep.number_words is None:
+            continue
+        code, used = rep.number_words
+        if code not in taught:
+            problems.append(f"{rep.path}: no {code} deck teaches a number theme "
+                            f"({', '.join(sorted(NUMBER_THEMES))}), so there are "
+                            f"no taught words to spell with")
+            continue
+        missing = sorted(used - taught[code])
+        if missing:
+            problems.append(f"{rep.path}: spells with words no {code} number deck "
+                            f"teaches: {', '.join(missing)}")
+    return problems
+
+
+def check_themes_across(reports: list[Report]) -> list[str]:
+    """Every theme a deck names is on the path, once per course."""
+    listed = [rep for rep in reports if rep.themes is not None]
+    problems = []
+    if len(listed) > 1:
+        problems.append("more than one themes file: "
+                        + ", ".join(str(rep.path) for rep in listed))
+    known = set(listed[0].themes) if listed else set()
+    seen: dict[tuple[str, str, str], Path] = {}
+    for rep in reports:
+        key = rep.theme_key
+        if key is None:
+            continue
+        if key[2] not in known:
+            problems.append(f"{rep.path}: theme {key[2]!r} is not in decks/themes.yaml")
+        elif key in seen:
+            problems.append(f"{rep.path}: {key[0]} from {key[1]} already has a "
+                            f"{key[2]!r} deck, {seen[key]}")
+        else:
+            seen[key] = rep.path
+    return problems
+
+
 def collect(target: Path) -> list[Path]:
     if target.is_file():
         return [target]
@@ -550,19 +737,25 @@ def check_bundled(paths: list[Path]) -> list[str]:
     have = {str(e).strip().rstrip("/") for e in entries}
 
     problems = []
-    for directory in sorted({p.resolve().parent for p in paths}):
+    unbundled: dict[str, None] = {}
+    for p in sorted(paths):
         try:
-            wanted = directory.relative_to(root).as_posix()
+            file = p.resolve().relative_to(root).as_posix()
         except ValueError:
             # Outside the repository, so nothing in pubspec.yaml could bundle
             # it. Validating a deck from elsewhere is legitimate; claiming it
             # is unbundled is not.
             continue
-        if wanted not in have:
-            problems.append(
-                f"{wanted}/ holds decks but pubspec.yaml does not bundle it — "
-                f"add `- {wanted}/` under flutter.assets"
-            )
+        directory = file.rsplit("/", 1)[0]
+        # A directory entry bundles the files directly inside it; a file
+        # entry, such as decks/themes.yaml, bundles just that file.
+        if directory not in have and file not in have:
+            unbundled[directory] = None
+    for wanted in unbundled:
+        problems.append(
+            f"{wanted}/ holds decks but pubspec.yaml does not bundle it — "
+            f"add `- {wanted}/` under flutter.assets"
+        )
     return problems
 
 
@@ -591,6 +784,9 @@ def main(argv: list[str]) -> int:
     unbundled = check_bundled(paths)
     for problem in unbundled:
         print(f"error: {problem}")
+    across = check_themes_across(reports) + check_numbers_across(reports)
+    for problem in across:
+        print(f"error: {problem}")
 
     failed = 0
     warned = 0
@@ -609,7 +805,7 @@ def main(argv: list[str]) -> int:
     ok = len(reports) - failed
     print(f"\n{ok}/{len(reports)} decks valid"
           f"{f', {warned} with warnings' if warned else ''}.")
-    return 1 if failed or unbundled else 0
+    return 1 if failed or unbundled or across else 0
 
 
 if __name__ == "__main__":

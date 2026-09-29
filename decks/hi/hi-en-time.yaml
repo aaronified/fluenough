@@ -1,0 +1,123 @@
+schema: 1
+id: hi-en-time
+name: "Time and days"
+kind: vocab
+theme: time
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Today and tomorrow, telling the time, and the days of the week."
+tags: [beginner]
+cards:
+  - id: hi-en-time-0001
+    target: "आज"
+    native: "today"
+    reading: "aaj"
+    pos: "adv"
+  - id: hi-en-time-0002
+    target: "कल"
+    native: "tomorrow; yesterday"
+    reading: "kal"
+    pos: "adv"
+    notes: "One word for both. The verb's tense says which: कल आऊँगा, I'll come tomorrow; कल आया, I came yesterday."
+  - id: hi-en-time-0003
+    target: "अभी"
+    native: "now; right now"
+    reading: "abhii"
+    pos: "adv"
+  - id: hi-en-time-0004
+    target: "सुबह"
+    native: "morning"
+    reading: "subah"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-time-0005
+    target: "शाम"
+    native: "evening"
+    reading: "shaam"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-time-0006
+    target: "रात"
+    native: "night"
+    reading: "raat"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-time-0007
+    target: "बजे"
+    native: "o'clock; at … o'clock"
+    reading: "baje"
+    pos: "other"
+    notes: "चार बजे (chaar baje), at four o'clock. सुबह सात बजे, at seven in the morning."
+  - id: hi-en-time-0008
+    target: "साढ़े"
+    native: "half past; and a half"
+    reading: "saadhe"
+    pos: "other"
+    notes: "साढ़े चार बजे (saadhe chaar baje), at half past four. For half past one and half past two Hindi uses डेढ़ (dedh) and ढाई (dhaaii) instead."
+  - id: hi-en-time-0009
+    target: "कितने बजे हैं?"
+    native: "What time is it?"
+    reading: "kitne baje hain?"
+    pos: "phrase"
+    notes: "In speech, often टाइम क्या हुआ है? (taaim kyaa huaa hai?)"
+  - id: hi-en-time-0010
+    target: "दिन"
+    native: "day"
+    reading: "din"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-time-0011
+    target: "हफ़्ता"
+    native: "week"
+    reading: "haftaa"
+    alt_target: ["हफ्ता"]
+    pos: "noun"
+    gender: "m"
+    notes: "Formally सप्ताह (saptaah)."
+  - id: hi-en-time-0012
+    target: "सोमवार"
+    native: "Monday"
+    reading: "somvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "Each day ends in वार (vaar, day) and is masculine. सोम is the moon."
+  - id: hi-en-time-0013
+    target: "मंगलवार"
+    native: "Tuesday"
+    reading: "mangalvaar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-time-0014
+    target: "बुधवार"
+    native: "Wednesday"
+    reading: "budhvaar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-time-0015
+    target: "गुरुवार"
+    native: "Thursday"
+    reading: "guruvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "Also बृहस्पतिवार (brihaspativaar)."
+  - id: hi-en-time-0016
+    target: "शुक्रवार"
+    native: "Friday"
+    reading: "shukravaar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-time-0017
+    target: "शनिवार"
+    native: "Saturday"
+    reading: "shanivaar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-time-0018
+    target: "रविवार"
+    native: "Sunday"
+    reading: "ravivaar"
+    alt_target: ["इतवार"]
+    pos: "noun"
+    gender: "m"
+    notes: "In everyday speech, often इतवार (itvaar)."
