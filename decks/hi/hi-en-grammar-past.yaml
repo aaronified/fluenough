@@ -1,0 +1,64 @@
+schema: 1
+id: hi-en-grammar-past
+name: "Past tense"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I came, she went: the simple past of verbs without an object."
+tags: [beginner, grammar]
+pattern:
+  name: "Simple past, intransitive verbs"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "With a verb that takes no object, the past agrees with the doer: -आ, -ई, -ए, -ईं. जाना is irregular: गया. Some writers spell आए and गई as आये and गयी. With an object, the rule is different: see Pitfalls."
+  entries:
+    - lemma: "आना"
+      key: aanaa
+      gloss: "to come"
+      forms:
+        "मैं (m)": "आया"
+        "मैं (f)": "आई"
+        "तुम (m)": "आए"
+        "तुम (f)": "आईं"
+        "वह (m)": "आया"
+        "वह (f)": "आई"
+        "हम (m)": "आए"
+        "हम (f)": "आईं"
+        "आप (m)": "आए"
+        "आप (f)": "आईं"
+        "वे (m)": "आए"
+        "वे (f)": "आईं"
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: "to go"
+      forms:
+        "मैं (m)": "गया"
+        "मैं (f)": "गई"
+        "तुम (m)": "गए"
+        "तुम (f)": "गईं"
+        "वह (m)": "गया"
+        "वह (f)": "गई"
+        "हम (m)": "गए"
+        "हम (f)": "गईं"
+        "आप (m)": "गए"
+        "आप (f)": "गईं"
+        "वे (m)": "गए"
+        "वे (f)": "गईं"
+    - lemma: "बैठना"
+      key: baithnaa
+      gloss: "to sit"
+      forms:
+        "मैं (m)": "बैठा"
+        "मैं (f)": "बैठी"
+        "तुम (m)": "बैठे"
+        "तुम (f)": "बैठीं"
+        "वह (m)": "बैठा"
+        "वह (f)": "बैठी"
+        "हम (m)": "बैठे"
+        "हम (f)": "बैठीं"
+        "आप (m)": "बैठे"
+        "आप (f)": "बैठीं"
+        "वे (m)": "बैठे"
+        "वे (f)": "बैठीं"

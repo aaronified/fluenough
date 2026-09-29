@@ -1,0 +1,72 @@
+schema: 1
+id: hi-en-grammar-nouns
+name: "Nouns: plural and oblique"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "How a noun changes for the plural, and before a postposition."
+tags: [beginner, grammar]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  slots: ["plural", "singular, before a postposition", "plural, before a postposition"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Before a postposition such as में, से or को, a noun takes its oblique form: कमरा → कमरे में, in the room. Masculine nouns in -आ change; other masculine nouns only change in the oblique plural, which always ends in -ओं. Feminine nouns change only in the plural."
+  entries:
+    - lemma: "लड़का"
+      key: ladkaa
+      gloss: "boy, m"
+      forms:
+        "plural": "लड़के"
+        "singular, before a postposition": "लड़के"
+        "plural, before a postposition": "लड़कों"
+    - lemma: "कमरा"
+      key: kamraa
+      gloss: "room, m"
+      forms:
+        "plural": "कमरे"
+        "singular, before a postposition": "कमरे"
+        "plural, before a postposition": "कमरों"
+    - lemma: "घर"
+      key: ghar
+      gloss: "house, m"
+      forms:
+        "plural": "घर"
+        "singular, before a postposition": "घर"
+        "plural, before a postposition": "घरों"
+    - lemma: "आदमी"
+      key: aadmii
+      gloss: "man, m"
+      forms:
+        "plural": "आदमी"
+        "singular, before a postposition": "आदमी"
+        "plural, before a postposition": "आदमियों"
+    - lemma: "लड़की"
+      key: ladkii
+      gloss: "girl, f"
+      forms:
+        "plural": "लड़कियाँ"
+        "singular, before a postposition": "लड़की"
+        "plural, before a postposition": "लड़कियों"
+    - lemma: "किताब"
+      key: kitaab
+      gloss: "book, f"
+      forms:
+        "plural": "किताबें"
+        "singular, before a postposition": "किताब"
+        "plural, before a postposition": "किताबों"
+    - lemma: "बहन"
+      key: bahan
+      gloss: "sister, f"
+      forms:
+        "plural": "बहनें"
+        "singular, before a postposition": "बहन"
+        "plural, before a postposition": "बहनों"
+    - lemma: "भाषा"
+      key: bhaashaa
+      gloss: "language, f"
+      forms:
+        "plural": "भाषाएँ"
+        "singular, before a postposition": "भाषा"
+        "plural, before a postposition": "भाषाओं"
