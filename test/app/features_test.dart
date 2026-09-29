@@ -46,6 +46,7 @@ void main() {
       Feature.drillRecognition,
       Feature.drillProduction,
       Feature.drillListening,
+      Feature.drillGrammar,
       Feature.persistence,
       Feature.appearance,
       Feature.stats,

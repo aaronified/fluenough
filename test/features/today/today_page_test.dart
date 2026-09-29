@@ -60,22 +60,20 @@ void main() {
     expect(find.text(l10n.todayMinutes(numbers.minutes)), findsOneWidget);
 
     final byMode = queue.countByMode();
-    for (final skill in <Skill>[Skill.recognition, Skill.production]) {
-      final label = skill == Skill.recognition
-          ? l10n.skillRecognition
-          : l10n.skillProduction;
+    for (final (skill, label) in <(Skill, String)>[
+      (Skill.recognition, l10n.skillRecognition),
+      (Skill.production, l10n.skillProduction),
+      // The grammar drill ships (#14).
+      (Skill.grammar, l10n.skillGrammar),
+    ]) {
       expect(
         find.bySemanticsLabel(
           l10n.todaySkillSemantics(label, byMode[skill.mode] ?? 0),
         ),
         findsOneWidget,
+        reason: skill.name,
       );
     }
-    // Grammar is built but incoming (#2).
-    expect(
-      find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.skillGrammar)),
-      findsOneWidget,
-    );
   });
 
   testWidgets('the header greets by time of day, with or without a name', (

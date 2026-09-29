@@ -380,6 +380,20 @@ class AppState extends ChangeNotifier {
         skill.mode!,
   };
 
+  /// Whether this version can drill anything in [entry]: some card has a
+  /// mode whose drill is available. A grammar deck cannot until its drill
+  /// ships (#14). The learner's own skill switches do not count here.
+  bool canDrill(DeckEntry entry) {
+    final shipped = <DrillMode>{
+      for (final skill in Skill.values)
+        if (skill.mode != null && features.isAvailable(skill.feature))
+          skill.mode!,
+    };
+    return entry.cards.any(
+      (card) => card.modesIn(ttsAvailable: true).any(shipped.contains),
+    );
+  }
+
   /// New pairs today may still introduce: the daily cap less those already
   /// introduced.
   int get newCardsLeftToday {

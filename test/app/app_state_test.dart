@@ -101,8 +101,14 @@ void main() {
   });
 
   group('sessions', () {
+    // Grammar cards enter in their own mode. These tests are about
+    // vocabulary, so the grammar drill is off in them.
+    final vocabOnly = FeatureRegistry.only(
+      Feature.available.difference({Feature.drillGrammar}),
+    );
+
     test('today, fresh: new recognition pairs up to the daily cap', () async {
-      final state = await loaded();
+      final state = await loaded(features: vocabOnly);
       final queue = state.buildSession(const DrillRequest.today());
       expect(queue.length, 20);
       expect(queue.due, isEmpty);
@@ -150,7 +156,7 @@ void main() {
 
     test('a skill switched off in settings is left out', () async {
       final settings = SettingsNotifier();
-      final state = await loaded(settings: settings);
+      final state = await loaded(settings: settings, features: vocabOnly);
       settings.setSkillEnabled(Skill.recognition, false);
       final queue = state.buildSession(const DrillRequest.today());
       expect(queue.items.every((i) => i.mode == DrillMode.production), isTrue);

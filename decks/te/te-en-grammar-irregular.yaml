@@ -1,0 +1,58 @@
+schema: 1
+id: te-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose stem changes from tense to tense. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["past, నేను", "future, నేను", "polite request, మీరు"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "These change their stem: రావడం (to come) gives వచ్చాను, వస్తాను and రండి; ఇవ్వడం (to give) gives ఇచ్చాను, ఇస్తాను."
+  entries:
+    - lemma: "రావడం"
+      key: raavadam
+      gloss: "to come"
+      forms:
+        "past, నేను": "వచ్చాను"
+        "future, నేను": "వస్తాను"
+        "polite request, మీరు": "రండి"
+    - lemma: "ఇవ్వడం"
+      key: ivvadam
+      gloss: "to give"
+      forms:
+        "past, నేను": "ఇచ్చాను"
+        "future, నేను": "ఇస్తాను"
+        "polite request, మీరు": "ఇవ్వండి"
+    - lemma: "తినడం"
+      key: tinadam
+      gloss: "to eat"
+      forms:
+        "past, నేను": "తిన్నాను"
+        "future, నేను": "తింటాను"
+        "polite request, మీరు": "తినండి"
+    - lemma: "తీసుకోవడం"
+      key: tiisukoovadam
+      gloss: "to take"
+      forms:
+        "past, నేను": "తీసుకున్నాను"
+        "future, నేను": "తీసుకుంటాను"
+        "polite request, మీరు": "తీసుకోండి"
+    - lemma: "చూడడం"
+      key: chuudadam
+      gloss: "to see"
+      forms:
+        "past, నేను": "చూశాను"
+        "future, నేను": "చూస్తాను"
+        "polite request, మీరు": "చూడండి"
+    - lemma: "వెళ్ళడం"
+      key: velladam
+      gloss: "to go"
+      forms:
+        "past, నేను": "వెళ్ళాను"
+        "future, నేను": "వెళ్తాను"
+        "polite request, మీరు": "వెళ్ళండి"

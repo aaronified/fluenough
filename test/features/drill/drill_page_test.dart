@@ -347,8 +347,11 @@ void main() {
 
   testWidgets('an empty queue shows the empty state', (tester) async {
     usePhone(tester);
-    // A grammar deck has no cards until the expander (#2).
-    await pumpDrill(tester, DrillRequest.deck('es-grammar-present-ar'));
+    // Listening, with no voice on the phone: nothing to drill.
+    await pumpDrill(
+      tester,
+      DrillRequest.deck('ja-hiragana', skill: Skill.listening),
+    );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillEmptyTitle), findsOneWidget);
     expect(find.text(l10n.drillEmptyBody), findsOneWidget);

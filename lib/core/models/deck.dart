@@ -100,6 +100,23 @@ class Deck {
 
   int get cardCount => cards.length;
 
+  /// This deck with [cards] in place of its own: a grammar deck once its
+  /// pattern is expanded.
+  Deck withCards(List<Card> cards) => Deck(
+    id: id,
+    name: name,
+    kind: kind,
+    language: language,
+    native: native,
+    license: license,
+    cards: cards,
+    pattern: pattern,
+    description: description,
+    tags: tags,
+    authors: authors,
+    source: source,
+  );
+
   @override
   String toString() => 'Deck($id, ${cards.length} cards)';
 }
