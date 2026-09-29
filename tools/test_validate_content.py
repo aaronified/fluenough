@@ -16,7 +16,7 @@ import validate_decks
 
 VOCAB = """\
 schema: 1
-id: xx-probe
+id: hi-en-probe
 name: Probe
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
@@ -30,7 +30,7 @@ cards:
 
 FACTS_HEADER = """\
 schema: 1
-id: xx-probe
+id: hi-en-probe
 name: Hindi facts
 kind: facts
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
@@ -59,7 +59,7 @@ class Validated(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.tmp, True)
 
     def report(self, text: str) -> validate_decks.Report:
-        path = self.tmp / "xx-probe.yaml"
+        path = self.tmp / "hi-en-probe.yaml"
         path.write_text(text, encoding="utf-8")
         return validate_decks.validate(path)
 
@@ -96,6 +96,25 @@ class Iso6393Codes(Validated):
 
     def test_a_facts_file_needs_one_on_its_language(self) -> None:
         self.assertRejected(facts_file().replace("iso639_3: hin, ", ""), "iso639_3 must be")
+
+
+class DeckIds(Validated):
+    """A deck id names the language learned, then the one it is taught from."""
+
+    def test_both_languages_lead_the_id(self) -> None:
+        self.assertValid(VOCAB)
+
+    def test_an_id_without_the_source_language_is_rejected(self) -> None:
+        for bad in ("hi-probe", "en-hi-probe", "hi-enprobe"):
+            with self.subTest(bad=bad):
+                self.assertRejected(VOCAB.replace("id: hi-en-probe", f"id: {bad}"),
+                                    "must start with 'hi-en-'")
+
+    def test_a_facts_file_names_only_its_language(self) -> None:
+        path = self.tmp / "hi-facts.yaml"
+        path.write_text(facts_file().replace("id: hi-en-probe", "id: hi-facts"),
+                        encoding="utf-8")
+        self.assertEqual(validate_decks.validate(path).errors, [])
 
 
 class FactsFiles(Validated):
@@ -288,7 +307,7 @@ if __name__ == "__main__":
 
 GRAMMAR = """\
 schema: 1
-id: xx-probe
+id: hi-en-probe
 name: Probe
 kind: grammar
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }

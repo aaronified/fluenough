@@ -9,7 +9,7 @@ Checks decks against schema 1. CI runs this on every pull request.
 
 ```sh
 python3 tools/validate_decks.py decks/
-python3 tools/validate_decks.py decks/es/es-core-100.yaml
+python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 ```
 
 Errors fail the build; warnings do not. Exit status is 0 when every deck is
@@ -29,11 +29,11 @@ used when present. `front`/`back` work as aliases. List columns split on `|`.
 
 ```sh
 python3 tools/import_csv.py words.csv \
-    --id es-food --name "Spanish food" \
+    --id es-en-food --name "Spanish food" \
     --language es --language-name Spanish --iso639-3 spa --tts es-ES \
-    --license CC0-1.0 > decks/es/es-food.yaml
+    --license CC0-1.0 > decks/es/es-en-food.yaml
 
-python3 tools/validate_decks.py decks/es/es-food.yaml
+python3 tools/validate_decks.py decks/es/es-en-food.yaml
 ```
 
 It quotes any value YAML would misread, and derives card ids from the target,

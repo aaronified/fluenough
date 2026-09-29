@@ -3,7 +3,7 @@
 
 Usage:
     python3 tools/validate_decks.py decks/
-    python3 tools/validate_decks.py decks/es/es-core-100.yaml
+    python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 
 Requires only Python 3.11+ and PyYAML, so deck contributors need no Flutter
 toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
@@ -504,6 +504,15 @@ def validate(path: Path) -> Report:
                           "in every language it is written in")
 
     lang = raw.get("language")
+    native = raw.get("native")
+    if kind != "facts" and _is_str(deck_id) and isinstance(lang, dict) \
+            and isinstance(native, dict) \
+            and _is_str(lang.get("code")) and _is_str(native.get("code")):
+        # A deck is a course, "Hindi from English", and its id says so.
+        prefix = f"{lang['code']}-{native['code']}-"
+        if not deck_id.startswith(prefix):
+            r.error("id", f"must start with {prefix!r}, the language learned and then "
+                          f"the language it is taught from, got {deck_id!r}")
     script = lang.get("script") if isinstance(lang, dict) else "other"
     if script not in SCRIPTS:
         script = "other"

@@ -68,8 +68,8 @@ abstract final class GalleryFixtures {
   /// The decks the design's history is drawn on. Only these get history,
   /// so the gallery's numbers stay the same as content decks are added.
   static const Set<String> historyDecks = <String>{
-    'es-core-100',
-    'ja-hiragana',
+    'es-en-core-100',
+    'ja-en-hiragana',
   };
 
   /// Twelve days of reviews ending yesterday, on the first cards of each of

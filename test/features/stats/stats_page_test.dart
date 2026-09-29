@@ -14,7 +14,7 @@ import 'package:fluenough/ui/widgets/stat_tile.dart';
 import '../../support/harness.dart';
 
 /// The gallery's history: twelve days ending yesterday, 22 reviews in each
-/// of es-core-100 and ja-hiragana (12 recognition, all remembered; 10
+/// of es-en-core-100 and ja-en-hiragana (12 recognition, all remembered; 10
 /// production on one leech, half remembered).
 Future<AppState> fixture({FeatureRegistry? features}) async {
   final app = AppState.test();

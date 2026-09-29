@@ -23,7 +23,7 @@ Common to every kind.
 | Field | Required | Notes |
 |---|---|---|
 | `schema` | yes | Must be `1`. |
-| `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. |
+| `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. |
 | `name` | yes | Human-readable title. |
 | `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). |
 | `language` | yes | The language being learned. See below. |
@@ -57,7 +57,7 @@ language named anywhere, learned or native, carries its ISO 639-3 code.
 
 ```yaml
 schema: 1
-id: es-core-100
+id: es-en-core-100
 name: Spanish Core 100
 kind: vocab
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
@@ -65,7 +65,7 @@ native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 tags: [beginner, core]
 cards:
-  - id: es-core-0001
+  - id: es-en-core-0001
     target: la casa
     native: the house
     pos: noun
@@ -106,7 +106,7 @@ card per cell. This keeps the app free of per-language grammar logic.
 
 ```yaml
 schema: 1
-id: es-grammar-present-ar
+id: es-en-grammar-present-ar
 name: Spanish present tense, regular -ar verbs
 kind: grammar
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
@@ -381,7 +381,7 @@ YAML resolves the bare words `no`, `yes`, `on`, `off`, `true` and `false` to
 hiragana `の` romanises to `no`:
 
 ```yaml
-- id: ja-hiragana-025
+- id: ja-en-hiragana-025
   target: の
   native: no          # WRONG: parses as the boolean false
   native: "no"        # correct

@@ -20,20 +20,20 @@ final Map<String, (Widget Function(), AppState Function())> screens =
         () => AppState.test(decks: withBrokenDeck()),
       ),
       'deck, with a voice': (
-        () => const DeckDetailPage(deckId: 'es-core-100'),
+        () => const DeckDetailPage(deckId: 'es-en-core-100'),
         () => AppState.test(tts: FixedTtsEngine(const <String>{'es'})),
       ),
       'deck, no voice': (
-        () => const DeckDetailPage(deckId: 'ja-hiragana'),
+        () => const DeckDetailPage(deckId: 'ja-en-hiragana'),
         AppState.test,
       ),
       'deck, grammar': (
-        () => const DeckDetailPage(deckId: 'es-grammar-present-ar'),
+        () => const DeckDetailPage(deckId: 'es-en-grammar-present-ar'),
         AppState.test,
       ),
       'deck, tags chosen': (
         () => const DeckDetailPage(
-          deckId: 'es-core-100',
+          deckId: 'es-en-core-100',
           initialTags: <String>{'food', 'home'},
         ),
         AppState.test,

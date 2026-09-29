@@ -89,7 +89,7 @@ void main() {
     final l10n = l10nOf(tester);
     expect(state.decks, isNotEmpty);
     // The grammar deck has cards (#2) and its drill (#14).
-    expect(state.canDrill(state.deckById('es-grammar-present-ar')!), isTrue);
+    expect(state.canDrill(state.deckById('es-en-grammar-present-ar')!), isTrue);
     expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
@@ -171,7 +171,7 @@ void main() {
 
     await search(tester, 'hira');
     expect(shownDecks(tester), <String>[
-      state.deckById('ja-hiragana')!.deck.name,
+      state.deckById('ja-en-hiragana')!.deck.name,
     ]);
 
     await search(tester, 'SPANISH');
@@ -203,7 +203,7 @@ void main() {
 
     await tapChip(tester, 'Japanese');
     expect(shownDecks(tester), <String>[
-      state.deckById('ja-hiragana')!.deck.name,
+      state.deckById('ja-en-hiragana')!.deck.name,
     ]);
 
     // A search narrows within the chosen language.
@@ -212,7 +212,7 @@ void main() {
 
     await tapChip(tester, l10n.decksFilterAll);
     expect(shownDecks(tester), <String>[
-      state.deckById('es-core-100')!.deck.name,
+      state.deckById('es-en-core-100')!.deck.name,
     ]);
   });
 
@@ -275,11 +275,11 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
 
-    await tester.tap(find.text(state.deckById('ja-hiragana')!.deck.name));
+    await tester.tap(find.text(state.deckById('ja-en-hiragana')!.deck.name));
     await tester.pumpAndSettle();
     expect(
       tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
-      'ja-hiragana',
+      'ja-en-hiragana',
     );
 
     await tester.pageBack();

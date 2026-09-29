@@ -20,7 +20,7 @@ import validate_decks
 
 DECK = """\
 schema: 1
-id: xx-probe
+id: es-en-probe
 name: Probe
 language: {{ code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }}
 native: {{ code: en, iso639_3: eng, name: English }}
@@ -42,7 +42,7 @@ class ParserParity(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.tmp, True)
 
     def errors(self, text: str) -> list[str]:
-        path = self.tmp / "xx-probe.yaml"
+        path = self.tmp / "es-en-probe.yaml"
         path.write_text(text, encoding="utf-8")
         return validate_decks.validate(path).errors
 
@@ -107,7 +107,7 @@ class ParserParity(unittest.TestCase):
     def test_pattern_notes_that_are_not_text_are_rejected(self) -> None:
         text = """\
 schema: 1
-id: xx-probe
+id: es-en-probe
 name: Probe
 kind: grammar
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }

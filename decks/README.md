@@ -6,11 +6,11 @@ Deck content, one YAML file per deck, organised by language code.
 decks/
   bn/  bn-en-first-words.yaml     one deck per theme in themes.yaml
        bn-en-questions.yaml …
-  es/  es-core-100.yaml
-       es-grammar-present-ar.yaml
+  es/  es-en-core-100.yaml
+       es-en-grammar-present-ar.yaml
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
-  ja/  ja-hiragana.yaml
+  ja/  ja-en-hiragana.yaml
   te/  te-en-first-words.yaml     not yet checked by a Telugu speaker
        te-en-questions.yaml …
   themes.yaml

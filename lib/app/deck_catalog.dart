@@ -75,10 +75,10 @@ class MemoryDeckSource implements DeckSource {
 sealed class CatalogEntry {
   const CatalogEntry(this.path);
 
-  /// The file's path in its [DeckSource], like `decks/es/es-core-100.yaml`.
+  /// The file's path in its [DeckSource], like `decks/es/es-en-core-100.yaml`.
   final String path;
 
-  /// The last segment of [path], like `es-core-100.yaml`.
+  /// The last segment of [path], like `es-en-core-100.yaml`.
   String get fileName => path.split('/').last;
 }
 
