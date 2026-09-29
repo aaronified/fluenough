@@ -111,6 +111,7 @@ class _TypedDrillState extends State<TypedDrill> {
               card: card,
               expected: session.acceptedAnswers.first,
               transliterating: translit,
+              language: session.typesDigits ? null : language,
             ),
       actions: _actions(context, answer),
     );
