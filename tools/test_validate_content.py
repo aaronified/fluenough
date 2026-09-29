@@ -286,6 +286,47 @@ if __name__ == "__main__":
     unittest.main()
 
 
+GRAMMAR = """\
+schema: 1
+id: xx-probe
+name: Probe
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+pattern:
+  name: P
+  slot_name: person
+  slots: ["मैं (m)", "मैं (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+"""
+
+
+def entry(lemma: str, key: str | None = None) -> str:
+    key_line = f"      key: {key}\n" if key is not None else ""
+    return (f'    - lemma: "{lemma}"\n{key_line}      gloss: "g"\n'
+            f'      forms: {{ "मैं (m)": "a", "मैं (f)": "b" }}\n')
+
+
+class PatternKeys(Validated):
+    def test_an_ascii_lemma_needs_no_key(self) -> None:
+        self.assertValid(GRAMMAR + entry("jaanaa"))
+
+    def test_a_devanagari_lemma_with_a_key_is_valid(self) -> None:
+        self.assertValid(GRAMMAR + entry("जाना", "jaanaa") + entry("आना", "aanaa"))
+
+    def test_a_devanagari_lemma_needs_a_key(self) -> None:
+        self.assertRejected(GRAMMAR + entry("जाना"), "cannot go into a card id")
+
+    def test_a_key_must_be_an_id(self) -> None:
+        self.assertRejected(GRAMMAR + entry("जाना", "Jaana"), "key must match")
+
+    def test_two_rows_cannot_share_an_id_part(self) -> None:
+        self.assertRejected(GRAMMAR + entry("जाना", "jaanaa") + entry("jaanaa"),
+                            "already names another row")
+
+
 NUMBERS = """\
 schema: 1
 id: hi-numbers

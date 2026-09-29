@@ -4,11 +4,20 @@ class PatternEntry {
     required this.lemma,
     required this.gloss,
     required this.forms,
+    this.key,
   });
 
-  /// Part of every expanded card id, so changing it orphans the row's history.
+  /// The word the row inflects, as the drill shows it.
   final String lemma;
   final String gloss;
+
+  /// An ASCII name for the row, for a [lemma] that cannot go into an id,
+  /// such as जाना (#58). Null when the lemma is its own key.
+  final String? key;
+
+  /// What the row puts into every expanded card id: [key], or else [lemma].
+  /// Changing it orphans the row's history.
+  String get idPart => key ?? lemma;
 
   /// One form per slot, keyed by slot label. A `null` form marks a cell with no
   /// valid form — a defective verb, say — which is skipped rather than drilled.
@@ -36,7 +45,7 @@ class GrammarPattern {
   final String slotName;
 
   /// Slot labels, in declaration order. The order is load-bearing: an expanded
-  /// card's id is `<deck-id>-<lemma>-<slot-index>` and the index is positional,
+  /// card's id is `<deck-id>-<key>-<slot-index>` and the index is positional,
   /// so reordering this list rewrites every id in the deck and orphans its
   /// review history. That is why this is a [List] and never a [Set] or a
   /// [Map]. New slots go at the end.

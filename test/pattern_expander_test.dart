@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/pattern_expander.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/features/drill/grammar_cells.dart';
 
 void main() {
   final bundled = DeckParser.parse(
@@ -73,5 +74,39 @@ pattern:
       source: 'es-core-100.yaml',
     );
     expect(expandPattern(vocab), isEmpty);
+  });
+
+  test('a key stands in for a lemma that cannot go into an id', () {
+    final deck = DeckParser.parse('''
+schema: 1
+id: hi-en-grammar-probe
+name: Probe
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+pattern:
+  name: P
+  slot_name: person
+  slots: ["मैं (m)", "मैं (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: to go
+      forms: { "मैं (m)": "गया", "मैं (f)": "गई" }
+''', source: 'probe.yaml');
+    final cards = expandPattern(deck);
+    expect(cards.map((c) => c.id), [
+      'hi-en-grammar-probe-jaanaa-0',
+      'hi-en-grammar-probe-jaanaa-1',
+    ]);
+    expect(cards.first.native, 'जाना (to go) — मैं (m)');
+    expect(cards.last.target, 'गई');
+
+    // The drill finds each card's cell by the same id.
+    final cell = grammarCellOf(cards.last, deck.withCards(cards))!;
+    expect(cell.entry.lemma, 'जाना');
+    expect(cell.slot, 'मैं (f)');
   });
 }

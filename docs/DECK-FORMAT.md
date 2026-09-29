@@ -137,18 +137,41 @@ pattern:
 | `slot_name` | yes | What the slots are: `person`, `case`, `tense`, `number`… |
 | `slots` | yes | Ordered list of slot labels. |
 | `prompt` | yes | Template. `{lemma}`, `{gloss}` and `{slot}` are substituted. |
-| `entries` | yes | List of `{lemma, gloss, forms}`. |
+| `entries` | yes | List of `{lemma, gloss, forms}`, each with an optional `key`. |
 | `notes` | no | Shown after answering. |
 
 `forms` must supply a key for every slot. A cell with no valid form (a
 defective verb, say) may be `null` and is skipped rather than drilled.
 
+### Entry keys
+
+A lemma goes into every card id its row expands to, and card ids are
+lowercase ASCII. A lemma that is not, such as Hindi जाना, needs a `key`: an
+ASCII name for the row, used in the ids in its place. The drill still shows
+the lemma. The validator requires a `key` whenever the lemma is not
+`[a-z0-9-]+`, and like a card id, **a key is permanent**.
+
+```yaml
+  entries:
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: "to go"
+      forms: { ... }
+```
+
+### A table that varies in more than one way
+
+The slots are one list. A form that varies by person and gender together,
+like the Hindi past tense, has one slot per combination: `"मैं (m)"`,
+`"मैं (f)"`, and so on.
+
 ### Expansion
 
 Each `(entry, slot)` pair becomes one production card:
 
-- **id** — `<deck-id>-<lemma>-<slot-index>`, stable as long as `slots` keeps
-  its order and `lemma` is unchanged. **Reordering `slots` rewrites every id in
+- **id** — `<deck-id>-<key>-<slot-index>`, stable as long as `slots` keeps
+  its order and the key is unchanged. The key is the entry's `key`, or its
+  `lemma` when it has none. **Reordering `slots` rewrites every id in
   the deck and orphans its history.** Append new slots at the end.
 - **target** — `forms[slot]`
 - **native** — `prompt` with substitutions applied
