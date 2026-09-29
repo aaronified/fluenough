@@ -6,6 +6,7 @@ import 'app/app_state.dart';
 import 'app/routes.dart';
 import 'app/shell_tab.dart';
 import 'features/decks/decks_page.dart';
+import 'features/profiles/spoken_languages_page.dart';
 import 'features/settings/settings_page.dart';
 import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
@@ -59,7 +60,11 @@ class _FluenoughAppState extends State<FluenoughApp> {
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          home: const AppShell(),
+          // The first launch asks which languages the learner speaks (#53)
+          // before anything else.
+          home: settings.spokenLanguages.isEmpty
+              ? const SpokenLanguagesPage(firstRun: true)
+              : const AppShell(),
         ),
       ),
     );

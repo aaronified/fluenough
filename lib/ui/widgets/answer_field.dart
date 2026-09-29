@@ -19,6 +19,7 @@ class AnswerField extends StatelessWidget {
     required this.label,
     required this.language,
     this.latin = false,
+    this.digits = false,
     this.focusNode,
     this.autofocus = true,
     this.enabled = true,
@@ -36,6 +37,9 @@ class AnswerField extends StatelessWidget {
   /// Transliteration: Latin letters, left to right.
   final bool latin;
 
+  /// A number in digits: the number keyboard, left to right.
+  final bool digits;
+
   final FocusNode? focusNode;
   final bool autofocus;
 
@@ -51,7 +55,7 @@ class AnswerField extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final rtl = language.rtl && !latin;
+    final rtl = language.rtl && !latin && !digits;
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(AppRadii.tile),
       borderSide: BorderSide(color: scheme.primary, width: 2),
@@ -80,6 +84,7 @@ class AnswerField extends StatelessWidget {
             enableSuggestions: false,
             textCapitalization: TextCapitalization.none,
             textInputAction: TextInputAction.done,
+            keyboardType: digits ? TextInputType.number : null,
             style: TextStyle(
               fontSize: 22,
               color: scheme.onSurface,
