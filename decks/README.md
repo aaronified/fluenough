@@ -6,7 +6,10 @@ Deck content, one YAML file per deck, organised by language code.
 decks/
   es/  es-core-100.yaml
        es-grammar-present-ar.yaml
+  hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
+       hi-en-questions.yaml …
   ja/  ja-hiragana.yaml
+  themes.yaml
 ```
 
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)
@@ -37,6 +40,21 @@ python3 tools/validate_decks.py decks/
   language (say, how its s sounds differ from English) are extra and marked
   `contrast`. See "Facts files" in the format specification. CI checks a facts
   file when there is one; it does not yet require every language to have one.
+
+## Romanising Indic languages
+
+A `reading` is there to help a learner say the word, so every Indic deck
+writes it the same way, in plain ASCII:
+
+- **Long vowels are doubled:** `aa`, `ii`, `uu` (पानी is `paanii`, दूध is
+  `duudh`). Short ones are single.
+- **A nasal vowel is followed by `n`:** हाँ is `haan`, नहीं is `nahiin`.
+- **The schwa a speaker drops is not written:** कमल is `kamal`, सड़क is
+  `sadak`, not `kamala`, `sadaka`.
+- **Aspiration is an `h`:** `kh`, `gh`, `chh`, `th`, `dh`, `ph`, `bh`. श and ष
+  are both `sh`.
+- **Retroflex and dental consonants are not told apart** in the reading. The
+  script tells them apart, and the notes say so where it matters.
 
 ## Two rules that matter more than the rest
 
