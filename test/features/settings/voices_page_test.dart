@@ -59,12 +59,13 @@ void main() {
     final es = _language(state, 'es');
     final ja = _language(state, 'ja');
 
-    expect(state.languages, hasLength(2));
+    final others = state.languages.length - 1;
+    expect(others, greaterThan(0));
     expect(find.textContaining(es.name, findRichText: true), findsOneWidget);
     expect(find.textContaining(es.ttsTag, findRichText: true), findsWidgets);
     expect(find.textContaining(ja.name, findRichText: true), findsOneWidget);
     expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
-    expect(find.text(l10n.voicesMissing), findsOneWidget);
+    expect(find.text(l10n.voicesMissing), findsNWidgets(others));
 
     // Test only where there is a voice.
     expect(find.bySemanticsLabel(l10n.voicesTestLabel(es.name)), findsOne);
@@ -112,7 +113,8 @@ void main() {
       state: AppState.test(tts: tts),
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.voicesMissing), findsNWidgets(2));
+    final languages = state.languages.length;
+    expect(find.text(l10n.voicesMissing), findsNWidgets(languages));
     expect(find.text(l10n.voicesTest), findsNothing);
 
     // The learner installs a Japanese voice and comes back.
@@ -121,7 +123,7 @@ void main() {
       ..gate = Completer<void>();
     await tester.tap(find.text(l10n.voicesCheckAgain));
     await tester.pump();
-    expect(find.text(l10n.voicesChecking), findsNWidgets(2));
+    expect(find.text(l10n.voicesChecking), findsNWidgets(languages));
     expect(
       tester
           .widget<TextButton>(
@@ -138,7 +140,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(state.hasVoice(_language(state, 'ja')), isTrue);
     expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
-    expect(find.text(l10n.voicesMissing), findsOneWidget);
+    expect(find.text(l10n.voicesMissing), findsNWidgets(languages - 1));
     expect(find.text(l10n.voicesTest), findsOneWidget);
   });
 

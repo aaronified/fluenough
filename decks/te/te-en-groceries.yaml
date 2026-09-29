@@ -1,0 +1,86 @@
+schema: 1
+id: te-en-groceries
+name: "Groceries"
+kind: vocab
+theme: groceries
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Vegetables, fish, meat, eggs and the staples. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: te-en-groceries-0001
+    target: "కూరగాయలు"
+    native: "vegetables"
+    reading: "kuuragaayalu"
+    pos: "noun"
+  - id: te-en-groceries-0002
+    target: "బంగాళాదుంప"
+    native: "potato"
+    reading: "bangaalaadumpa"
+    alt_target: ["ఆలుగడ్డ"]
+    pos: "noun"
+    notes: "In speech often ఆలుగడ్డ (aalugadda)."
+  - id: te-en-groceries-0003
+    target: "ఉల్లిపాయ"
+    native: "onion"
+    reading: "ullipaaya"
+    alt_target: ["ఉల్లిగడ్డ"]
+    pos: "noun"
+    notes: "In Telangana often ఉల్లిగడ్డ (ulligadda)."
+  - id: te-en-groceries-0004
+    target: "టమాటా"
+    native: "tomato"
+    reading: "tamaataa"
+    pos: "noun"
+  - id: te-en-groceries-0005
+    target: "మిరపకాయ"
+    native: "chilli"
+    reading: "mirapakaaya"
+    pos: "noun"
+  - id: te-en-groceries-0006
+    target: "వెల్లుల్లి"
+    native: "garlic"
+    reading: "vellulli"
+    pos: "noun"
+  - id: te-en-groceries-0007
+    target: "చేప"
+    native: "fish"
+    reading: "cheepa"
+    pos: "noun"
+    notes: "More than one: చేపలు (cheepalu)."
+  - id: te-en-groceries-0008
+    target: "మటన్"
+    native: "mutton (goat meat)"
+    reading: "matan"
+    pos: "noun"
+    notes: "Meat is మాంసం (maamsam). In India 'mutton' almost always means goat."
+  - id: te-en-groceries-0009
+    target: "కోడి"
+    native: "chicken; hen"
+    reading: "koodi"
+    pos: "noun"
+    notes: "Chicken meat is కోడి మాంసం (koodi maamsam); shops also say చికెన్."
+  - id: te-en-groceries-0010
+    target: "గుడ్డు"
+    native: "egg"
+    reading: "guddu"
+    pos: "noun"
+    notes: "More than one: గుడ్లు (gudlu)."
+  - id: te-en-groceries-0011
+    target: "పాలు"
+    native: "milk"
+    reading: "paalu"
+    pos: "noun"
+    notes: "Plural in grammar, like నీళ్ళు (water)."
+  - id: te-en-groceries-0012
+    target: "బియ్యం"
+    native: "rice (uncooked)"
+    reading: "biyyam"
+    pos: "noun"
+    notes: "Cooked rice is అన్నం (annam)."
+  - id: te-en-groceries-0013
+    target: "పప్పు"
+    native: "lentils; dal"
+    reading: "pappu"
+    pos: "noun"

@@ -1,0 +1,99 @@
+schema: 1
+id: hi-en-calendar
+name: "Months and years"
+kind: vocab
+theme: calendar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The months as Hindi says them, and how to read a year."
+tags: [beginner]
+cards:
+  - id: hi-en-calendar-0001
+    target: "महीना"
+    native: "month"
+    reading: "mahiinaa"
+    pos: "noun"
+    gender: "m"
+    notes: "The Gregorian months are used for almost everything; the Hindu calendar's months matter mainly for festivals."
+  - id: hi-en-calendar-0002
+    target: "साल"
+    native: "year"
+    reading: "saal"
+    pos: "noun"
+    gender: "m"
+    notes: "Years before 2000 are read in hundreds: 1950 is उन्नीस सौ पचास (unniis sau pachaas), 'nineteen hundred fifty'. From 2000, in thousands: 2020 is दो हज़ार बीस (do hazaar biis)."
+  - id: hi-en-calendar-0003
+    target: "तारीख़"
+    native: "date"
+    reading: "taariikh"
+    alt_target: ["तारीख"]
+    pos: "noun"
+    gender: "f"
+    notes: "आज कौन-सी तारीख़ है? What's the date today?"
+  - id: hi-en-calendar-0004
+    target: "जनवरी"
+    native: "January"
+    reading: "janvarii"
+    pos: "noun"
+    notes: "The months come from English. Speakers differ on their gender, so the verb may agree either way."
+  - id: hi-en-calendar-0005
+    target: "फ़रवरी"
+    native: "February"
+    reading: "farvarii"
+    alt_target: ["फरवरी"]
+    pos: "noun"
+  - id: hi-en-calendar-0006
+    target: "मार्च"
+    native: "March"
+    reading: "maarch"
+    pos: "noun"
+  - id: hi-en-calendar-0007
+    target: "अप्रैल"
+    native: "April"
+    reading: "aprail"
+    pos: "noun"
+  - id: hi-en-calendar-0008
+    target: "मई"
+    native: "May"
+    reading: "maii"
+    pos: "noun"
+  - id: hi-en-calendar-0009
+    target: "जून"
+    native: "June"
+    reading: "juun"
+    pos: "noun"
+  - id: hi-en-calendar-0010
+    target: "जुलाई"
+    native: "July"
+    reading: "julaaii"
+    pos: "noun"
+  - id: hi-en-calendar-0011
+    target: "अगस्त"
+    native: "August"
+    reading: "agast"
+    pos: "noun"
+  - id: hi-en-calendar-0012
+    target: "सितंबर"
+    native: "September"
+    reading: "sitambar"
+    alt_target: ["सितम्बर"]
+    pos: "noun"
+  - id: hi-en-calendar-0013
+    target: "अक्तूबर"
+    native: "October"
+    reading: "aktuubar"
+    alt_target: ["अक्टूबर"]
+    pos: "noun"
+  - id: hi-en-calendar-0014
+    target: "नवंबर"
+    native: "November"
+    reading: "navambar"
+    alt_target: ["नवम्बर"]
+    pos: "noun"
+  - id: hi-en-calendar-0015
+    target: "दिसंबर"
+    native: "December"
+    reading: "disambar"
+    alt_target: ["दिसम्बर"]
+    pos: "noun"

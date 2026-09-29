@@ -67,10 +67,9 @@ final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
     state: (app) => _onProgress(
       GalleryFixtures.state(
         app,
-        features: const FeatureRegistry.only(<Feature>{
-          ...Feature.available,
-          Feature.stats,
-        }),
+        features: FeatureRegistry.only(
+          Feature.available.difference(const <Feature>{Feature.leeches}),
+        ),
       ),
     ),
   ),

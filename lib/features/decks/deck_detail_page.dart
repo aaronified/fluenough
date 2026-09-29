@@ -14,6 +14,7 @@ import '../../ui/widgets/stat_tile.dart';
 import 'deck_content.dart';
 import 'deck_facts.dart';
 import 'skill_section.dart';
+import 'unreviewed_notice.dart';
 
 /// One deck: counts, practise one skill, only these tags, a card preview,
 /// licence, source, voice and id, and Review all due.
@@ -182,6 +183,10 @@ class _Header extends StatelessWidget {
                 color: scheme.onSurfaceVariant,
               ),
             ),
+          ],
+          if (UnreviewedNotice.appliesTo(entry)) ...<Widget>[
+            const SizedBox(height: 12),
+            UnreviewedNotice(entry: entry),
           ],
         ],
       ),

@@ -5,9 +5,14 @@ import 'package:flutter/widgets.dart' show StringCharacters;
 import 'package:yaml/yaml.dart';
 
 import '../core/data/deck_parser.dart';
+import '../core/data/facts_parser.dart';
+import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
+import '../core/data/themes.dart';
+import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
+import '../core/models/number_rules.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -141,16 +146,44 @@ final class BrokenDeck extends CatalogEntry {
 
 /// The loaded catalog: the decks that parsed, and the files that did not.
 class Catalog {
-  Catalog({required List<DeckEntry> decks, required List<BrokenDeck> broken})
-    : decks = List<DeckEntry>.unmodifiable(decks),
-      broken = List<BrokenDeck>.unmodifiable(broken);
+  Catalog({
+    required List<DeckEntry> decks,
+    required List<BrokenDeck> broken,
+    List<DeckTheme> themes = const <DeckTheme>[],
+    Map<String, FactsFile> facts = const <String, FactsFile>{},
+    Map<String, NumberRules> numberRules = const <String, NumberRules>{},
+  }) : decks = List<DeckEntry>.unmodifiable(decks),
+       broken = List<BrokenDeck>.unmodifiable(broken),
+       themes = List<DeckTheme>.unmodifiable(themes),
+       facts = Map<String, FactsFile>.unmodifiable(facts),
+       numberRules = Map<String, NumberRules>.unmodifiable(numberRules);
+
+  /// Each language's daily facts (#48), by language code.
+  final Map<String, FactsFile> facts;
+
+  /// Each language's rules for spelling a generated number (#54), by
+  /// language code. A language without a numbers file has none.
+  final Map<String, NumberRules> numberRules;
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
-  /// In path order, which groups them by language directory.
+  /// In path order, which groups them by language directory, except that a
+  /// course's theme decks come in the order of [themes], so that its new
+  /// cards follow the theme path.
   final List<DeckEntry> decks;
 
   final List<BrokenDeck> broken;
+
+  /// The shared theme path, from `decks/themes.yaml` (ADR-0010).
+  final List<DeckTheme> themes;
+
+  /// The theme with [id], or null if the path has none.
+  DeckTheme? themeById(String? id) {
+    for (final theme in themes) {
+      if (theme.id == id) return theme;
+    }
+    return null;
+  }
 
   DeckEntry? byId(String id) {
     for (final entry in decks) {
@@ -172,10 +205,10 @@ class Catalog {
 
 /// Lists and parses every deck file in a [DeckSource].
 ///
-/// A stand-in for the deck repository (#4). It skips facts files, which live
-/// beside the decks but are not decks (#48), expands grammar decks into cards
-/// (#2), and turns a file that fails to parse into a [BrokenDeck] rather than
-/// an exception.
+/// A stand-in for the deck repository (#4). It reads the files that live
+/// beside the decks but are not decks: facts (#48), number rules (#54) and
+/// the theme path (#52). It expands grammar decks into cards (#2), and turns
+/// a file that fails to parse into a [BrokenDeck] rather than an exception.
 class DeckCatalog {
   DeckCatalog(this.source);
 
@@ -206,11 +239,40 @@ class DeckCatalog {
   static Catalog parseAll(Map<String, String> files) {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
+    var themes = const <DeckTheme>[];
+    final facts = <String, FactsFile>{};
+    final numberRules = <String, NumberRules>{};
     final firstPath = <String, String>{};
     final paths = files.keys.toList()..sort();
     for (final path in paths) {
       final text = files[path]!;
-      if (isFactsFile(text)) continue;
+      final kind = kindOf(text);
+      if (kind == 'facts') {
+        try {
+          final file = parseFacts(text, source: path.split('/').last);
+          facts.putIfAbsent(file.languageCode, () => file);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'numbers') {
+        try {
+          final rules = parseNumberRules(text, source: path.split('/').last);
+          numberRules.putIfAbsent(rules.language.code, () => rules);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'themes') {
+        try {
+          themes = parseThemes(text, source: path.split('/').last);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       Deck deck;
       try {
         deck = DeckParser.parse(text, source: path.split('/').last);
@@ -239,20 +301,58 @@ class DeckCatalog {
       }
       decks.add(DeckEntry(path: path, deck: deck));
     }
-    return Catalog(decks: decks, broken: broken);
+    return Catalog(
+      decks: _inThemeOrder(decks, themes),
+      broken: broken,
+      themes: themes,
+      facts: facts,
+      numberRules: numberRules,
+    );
+  }
+
+  /// [decks] with each course's theme decks put in [themes] order, in the
+  /// places those decks held, so that everything else keeps its path order.
+  /// A theme the path does not list goes after the ones it does.
+  static List<DeckEntry> _inThemeOrder(
+    List<DeckEntry> decks,
+    List<DeckTheme> themes,
+  ) {
+    final rank = <String, int>{
+      for (final (i, theme) in themes.indexed) theme.id: i,
+    };
+    int rankOf(DeckEntry e) => rank[e.deck.theme] ?? rank.length;
+    final byCourse = <String, List<int>>{};
+    for (final (i, entry) in decks.indexed) {
+      if (entry.deck.theme == null) continue;
+      final course = '${entry.language.code}/${entry.deck.native.code}';
+      (byCourse[course] ??= <int>[]).add(i);
+    }
+    final ordered = List<DeckEntry>.of(decks);
+    for (final slots in byCourse.values) {
+      final inOrder = [for (final i in slots) decks[i]]
+        ..sort((a, b) => rankOf(a).compareTo(rankOf(b)));
+      for (final (n, slot) in slots.indexed) {
+        ordered[slot] = inOrder[n];
+      }
+    }
+    return ordered;
+  }
+
+  /// A file's `kind`, such as `facts` or `themes` for the files beside the
+  /// decks that are not decks, or null. Decided by the file's `kind`, not
+  /// its name. Text that is not a YAML mapping has none; the parser then
+  /// reports what is wrong.
+  static String? kindOf(String text) {
+    try {
+      final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
+      final kind = root is YamlMap ? root['kind'] : null;
+      return kind is String ? kind : null;
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Whether [text] is a facts file (`kind: facts`), which is valid beside
   /// the decks but is read by the facts loader, not `DeckParser`.
-  ///
-  /// Decided by the file's `kind`, not its name. Text that is not a YAML
-  /// mapping is not a facts file; the parser then reports what is wrong.
-  static bool isFactsFile(String text) {
-    try {
-      final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
-      return root is YamlMap && root['kind'] == 'facts';
-    } catch (_) {
-      return false;
-    }
-  }
+  static bool isFactsFile(String text) => kindOf(text) == 'facts';
 }

@@ -60,9 +60,10 @@ void main() {
 
     await tester.tap(find.byType(ProfileAvatar).first);
     await tester.enterText(_nameField(tester), 'Dev');
+    // The first language the decks teach starts chosen; unchoose it.
     await _tapVisible(
       tester,
-      find.widgetWithText(FilterChip, languageName(state, 'es')),
+      find.widgetWithText(FilterChip, state.languages.first.name),
     );
     await _tapVisible(
       tester,
@@ -83,7 +84,7 @@ void main() {
     expect(find.text(l10nOf(tester).newProfileCreated), findsOneWidget);
   });
 
-  testWidgets('as shipped, the PIN switch and I speak are incoming', (
+  testWidgets('as shipped, the PIN switch and the app language are incoming', (
     tester,
   ) async {
     final semantics = tester.ensureSemantics();
@@ -95,7 +96,9 @@ void main() {
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.newProfileSpeaks)),
+      find.bySemanticsLabel(
+        l10n.incomingSemanticsLabel(l10n.settingsAppLanguage),
+      ),
       findsOneWidget,
     );
     expect(

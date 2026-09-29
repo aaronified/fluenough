@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/links.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/deck_facts.dart';
+import 'package:fluenough/features/decks/unreviewed_notice.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -267,5 +270,41 @@ void main() {
     await tapVisible(tester, row);
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
     expect(find.byType(DrillPage), findsNothing);
+  });
+
+  testWidgets('a deck no speaker has checked says so, and copies the link to '
+      'report a mistake', (tester) async {
+    usePhone(tester);
+    String? copied;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+      SystemChannels.platform,
+      (call) async {
+        if (call.method == 'Clipboard.setData') {
+          copied = (call.arguments as Map<Object?, Object?>)['text'] as String?;
+        }
+        return null;
+      },
+    );
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        null,
+      ),
+    );
+    final state = await pumpDeck(tester, 'te-en-market');
+    final l10n = l10nOf(tester);
+    final entry = state.deckById('te-en-market')!;
+    expect(entry.deck.tags, contains(UnreviewedNotice.tag));
+
+    expect(find.text(l10n.deckUnreviewed('Telugu')), findsOneWidget);
+    await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
+    expect(copied, AppLinks.issues);
+    expect(find.text(l10n.deckUnreviewedCopied), findsOneWidget);
+  });
+
+  testWidgets('a checked deck shows no such notice', (tester) async {
+    usePhone(tester);
+    await pumpDeck(tester, spanish);
+    expect(find.byType(UnreviewedNotice), findsNothing);
   });
 }
