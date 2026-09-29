@@ -4,6 +4,8 @@ Deck content, one YAML file per deck, organised by language code.
 
 ```
 decks/
+  bn/  bn-en-first-words.yaml     one deck per theme in themes.yaml
+       bn-en-questions.yaml …
   es/  es-core-100.yaml
        es-grammar-present-ar.yaml
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
@@ -55,6 +57,15 @@ writes it the same way, in plain ASCII:
   are both `sh`.
 - **Retroflex and dental consonants are not told apart** in the reading. The
   script tells them apart, and the notes say so where it matters.
+
+Bengali differs in two ways, and its readings follow how it is said:
+
+- **The inherent vowel is `o`, never `a`:** কমল is `komol`, বন is `bon`.
+  `o` stands for both অ and ও.
+- **No doubled vowels:** Bengali does not tell long and short vowels apart,
+  so আ is `a`, ই and ঈ are `i`, উ and ঊ are `u`. শ, ষ and স are all `sh`,
+  except where a speaker says s, as before a consonant: স্টেশন is
+  `steshon`.
 
 ## Two rules that matter more than the rest
 

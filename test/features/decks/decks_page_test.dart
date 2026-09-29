@@ -23,10 +23,15 @@ List<String> shownDecks(WidgetTester tester) => tester
     .map((t) => t.entry.deck.name)
     .toList();
 
+/// The row for [entry]. Two courses can each have a deck called "Market",
+/// so a row is found by its deck, not its name.
+Finder tileOf(DeckEntry entry) =>
+    find.byWidgetPredicate((w) => w is DeckTile && w.entry.id == entry.id);
+
 /// A phone tall enough for the lazy list to build every bundled deck.
 void useTallPhone(WidgetTester tester) {
   usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 4000 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 12000 * 3);
 }
 
 /// Taps [chip] after scrolling the chip row to it.
@@ -86,7 +91,7 @@ void main() {
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
       final n = counts.due + counts.fresh;
-      final tile = find.widgetWithText(DeckTile, entry.deck.name);
+      final tile = tileOf(entry);
       // A grammar deck has nothing to drill until the expander (#2): it is
       // incoming, never Done.
       final badge = entry.cards.isEmpty
@@ -178,9 +183,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     for (final entry in state.decks) {
-      final badge = tester
-          .widget<DeckTile>(find.widgetWithText(DeckTile, entry.deck.name))
-          .badge;
+      final badge = tester.widget<DeckTile>(tileOf(entry)).badge;
       expect(
         badge.kind,
         entry.cards.isEmpty
