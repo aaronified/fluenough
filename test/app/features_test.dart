@@ -40,11 +40,19 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the three drills the bundled decks support', () {
+  test('this version ships the drills, saved progress, theme, stats, '
+      'leeches, daily facts and the log backup', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
       Feature.drillListening,
+      Feature.persistence,
+      Feature.appearance,
+      Feature.stats,
+      Feature.leeches,
+      Feature.dailyFacts,
+      Feature.logExport,
+      Feature.logImport,
     });
   });
 
