@@ -33,7 +33,7 @@ Finder tileOf(DeckEntry entry) =>
 /// A phone tall enough for the lazy list to build every bundled deck.
 void useTallPhone(WidgetTester tester) {
   usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 12000 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 20000 * 3);
 }
 
 /// Taps [chip] after scrolling the chip row to it.
