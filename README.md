@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="fluenough-brand/fluenough-lockup-dark.svg">
+  <img src="fluenough-brand/fluenough-lockup.svg" alt="" width="320">
+</picture>
+
 # Fluenough
 
 *Fluent enough.*
