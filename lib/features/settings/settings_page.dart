@@ -4,9 +4,11 @@ import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
+import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
+import '../../core/data/log_jsonl.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -26,9 +28,10 @@ import 'settings_controls.dart';
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
 /// per day, the skill switches, romanisation, speech rate, and the Voices row.
-/// Everything else is built and shown disabled behind its [Feature]: switching
-/// profile, Appearance, the app language, the reminder, the PIN lock, the
-/// review log's export and import, and deleting the profile.
+/// Export and import save the review log as a file and merge one back
+/// (#20). Everything else is built and shown disabled behind its [Feature]:
+/// switching profile, the app language, the reminder, the PIN lock, and
+/// deleting the profile.
 ///
 /// Keeps a [GalleryLink] at the foot, which draws nothing in a release build.
 class SettingsPage extends StatelessWidget {
@@ -268,9 +271,8 @@ class SettingsPage extends StatelessWidget {
 
   Widget _data(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
-    // Export, import and delete wait for the review log to be stored (#5,
-    // #20) and for profiles to be decided, so they have no action yet even
-    // when their feature is on.
+    // Delete waits for profiles to be decided, so it has no action yet even
+    // when its feature is on.
     return GroupedList.settings(
       header: l10n.settingsSectionData,
       children: <Widget>[
@@ -280,6 +282,7 @@ class SettingsPage extends StatelessWidget {
           subtitle: l10n.settingsExportDesc(state.progress.log.length),
           feature: Feature.logExport,
           padding: _tallRow,
+          onTap: () => _export(context, state),
         ),
         GroupedTile(
           leading: const Icon(Icons.file_upload_outlined),
@@ -287,6 +290,7 @@ class SettingsPage extends StatelessWidget {
           subtitle: l10n.settingsImportDesc,
           feature: Feature.logImport,
           padding: _tallRow,
+          onTap: () => _import(context, state),
         ),
         GroupedTile(
           leading: const Icon(Icons.delete_outline),
@@ -297,6 +301,53 @@ class SettingsPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  /// Saves the review log as `fluenough-<profile>-reviews.jsonl`, where the
+  /// learner picks.
+  Future<void> _export(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    final name = 'fluenough-${state.currentProfile.id}-reviews.jsonl';
+    final bool saved;
+    try {
+      saved = await state.logFiles.save(name, state.progress.exportJsonl());
+    } on Exception {
+      if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
+      return;
+    }
+    if (saved && context.mounted) {
+      showAppSnackBar(context, l10n.settingsExported(name));
+    }
+  }
+
+  /// Merges a picked backup into this profile's log and says how many
+  /// reviews were new, or what is wrong with the file.
+  Future<void> _import(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    final String? text;
+    try {
+      text = await state.logFiles.open(title: l10n.settingsImportPick);
+    } on Exception catch (e) {
+      if (context.mounted) {
+        showAppSnackBar(context, l10n.settingsImportFailed('$e'));
+      }
+      return;
+    }
+    if (text == null) return;
+    final int added;
+    try {
+      final backup = LogJsonl.decode(text);
+      added = await state.progress.importLog(
+        backup.reviews,
+        backup.leechActions,
+      );
+    } on FormatException catch (e) {
+      if (context.mounted) {
+        showAppSnackBar(context, l10n.settingsImportFailed(e.message));
+      }
+      return;
+    }
+    if (context.mounted) showAppSnackBar(context, l10n.settingsImported(added));
   }
 
   /// The design's button rows: 16 above and below.
