@@ -250,13 +250,19 @@ translation is beyond what an offline app should attempt.
 
 Automatically graded answers are normalised before comparison:
 
-1. Unicode NFC normalisation
+1. one spelling for text that looks the same: precomposed letters are
+   decomposed (Devanagari and Bengali nukta letters such as क़ and য়, and
+   Bengali and Telugu two-part vowel signs such as ো), Indic digits read as
+   0–9, and zero-width joiners are ignored. This is a table for the scripts
+   the app ships, not full Unicode NFC, which needs a package (#28); a new
+   script adds its rows to `lib/core/grading/canonical.dart`
 2. trim, collapse internal whitespace
 3. case folding
 4. strip terminal punctuation
 
-If that does not match, a second pass **also** strips diacritics (NFD, drop
-combining marks) and leading articles declared for the language. A match at
+If that does not match, a second pass **also** strips diacritics (the Latin
+accents, and the Devanagari and Bengali nukta) and leading articles declared
+for the language. A match at
 this stage counts as correct but the UI flags what was missed — the answer was
 right, the accent was not.
 

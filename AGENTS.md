@@ -58,6 +58,7 @@ committed:
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
 rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
+python3 tools/brand_android.py   # launcher icon, label and launch screen
 flutter pub get
 ```
 
