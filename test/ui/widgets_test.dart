@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -141,6 +143,23 @@ void main() {
       const Color(0xFFAEF2C6),
       const Color(0xFFFFB68A),
     ));
+  });
+
+  test('the launch screen is the app\'s own background, light and dark', () {
+    // fluenough-brand/android: the window Android shows before the first
+    // frame, so a change of seed that left it behind would flash.
+    Color launch(String folder) {
+      final xml = File('fluenough-brand/android/$folder/launch_colors.xml')
+          .readAsStringSync();
+      final hex = RegExp(r'name="launch_background">#([0-9A-Fa-f]{6})<')
+          .firstMatch(xml)!
+          .group(1)!;
+      return Color(int.parse('FF$hex', radix: 16));
+    }
+
+    expect(launch('values'), AppTheme.light().colorScheme.surface);
+    expect(launch('values-night'), AppTheme.dark().colorScheme.surface);
+    expect(launch('values-night'), isNot(const Color(0xFF000000)));
   });
 
   testWidgets('the mark is decorative: nothing for a screen reader', (
