@@ -1,0 +1,261 @@
+schema: 1
+id: hi-facts
+name: "Hindi facts"
+kind: facts
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+license: CC0-1.0
+description: "One true, surprising thing about Hindi a day, in English, Bengali and Hindi."
+facts:
+  - id: hi-fact-001
+    tags: [script]
+    text:
+      en: "No Hindi word begins with ड़ or ढ़. These dotted letters come only inside or at the end of a word, as in सड़क (sadak, road) and पढ़ना (padhnaa, to read)."
+      bn: "কোনো হিন্দি শব্দ ड़ বা ढ़ দিয়ে শুরু হয় না। এই ফোঁটাওয়ালা অক্ষরগুলো কেবল শব্দের মাঝে বা শেষে আসে, যেমন सड़क (sadak, রাস্তা) আর पढ़ना (padhnaa, পড়া)।"
+      hi: "हिंदी का कोई भी शब्द ड़ या ढ़ से शुरू नहीं होता। ये अक्षर केवल शब्द के बीच में या अंत में आते हैं, जैसे सड़क और पढ़ना में।"
+  - id: hi-fact-002
+    tags: [script, conjuncts]
+    text:
+      en: "Two consonants with no vowel between them join into one conjunct, a संयुक्ताक्षर (sanyuktaakshar): क + ष = क्ष, त + र = त्र, ज + ञ = ज्ञ. Some look nothing like the letters they are made of."
+      bn: "মাঝে কোনো স্বর না থাকলে দুটি ব্যঞ্জন জুড়ে একটি যুক্তাক্ষর (संयुक्ताक्षर) হয়: क + ष = क्ष, त + र = त्र, ज + ञ = ज्ञ। কয়েকটিকে দেখে তাদের অংশগুলো চেনাই যায় না।"
+      hi: "जब दो व्यंजनों के बीच कोई स्वर नहीं होता, तो वे मिलकर संयुक्ताक्षर बनाते हैं: क + ष = क्ष, त + र = त्र, ज + ञ = ज्ञ। कुछ संयुक्ताक्षर अपने अक्षरों से बिल्कुल अलग दिखते हैं।"
+  - id: hi-fact-003
+    tags: [pronunciation]
+    source: "https://en.wikipedia.org/wiki/Schwa_deletion_in_Indo-Aryan_languages"
+    text:
+      en: "Every Hindi consonant letter carries a built-in 'a', but speakers drop it at the end of most words and often in the middle: कमल is kamal, not kamala, and समझना is samajhnaa."
+      bn: "হিন্দির প্রতিটি ব্যঞ্জনবর্ণে একটি অন্তর্নিহিত 'অ' থাকে, কিন্তু বেশিরভাগ শব্দের শেষে, আর অনেক সময় মাঝেও, তা উচ্চারিত হয় না: कमल হলো 'kamal', 'kamala' নয়; समझना হলো 'samajhnaa'।"
+      hi: "हर व्यंजन में एक 'अ' छिपा होता है, पर ज़्यादातर शब्दों के अंत में, और अक्सर बीच में भी, यह बोला नहीं जाता: कमल को 'कमल्' की तरह बोलते हैं, और समझना को 'समझ्ना'।"
+  - id: hi-fact-004
+    tags: [script]
+    text:
+      en: "The line along the top of Hindi writing is the शिरोरेखा (shirorekhaa). It joins the letters of a word, so a word ends where the line breaks."
+      bn: "হিন্দি লেখার মাথার ওপরের টানা রেখাটির নাম शिरोरेखा (shirorekhaa)। এটি একটি শব্দের অক্ষরগুলোকে জুড়ে রাখে, তাই রেখা যেখানে ভাঙে, শব্দও সেখানে শেষ।"
+      hi: "हिंदी लिखावट के ऊपर खिंची रेखा को शिरोरेखा कहते हैं। यह एक शब्द के अक्षरों को जोड़ती है, इसलिए जहाँ रेखा टूटती है, वहीं शब्द ख़त्म होता है।"
+  - id: hi-fact-005
+    tags: [script]
+    text:
+      en: "A vowel has two shapes: a full letter at the start of a syllable, like आ, and a sign after a consonant, a मात्रा (maatraa), like the ा in का (kaa)."
+      bn: "হিন্দিতে স্বরের দুটি রূপ: শব্দাংশের শুরুতে পূর্ণ অক্ষর, যেমন आ; আর ব্যঞ্জনের পরে একটি চিহ্ন, मात्रा, যেমন का-র ा।"
+      hi: "हर स्वर के दो रूप होते हैं: शुरुआत में पूरा अक्षर, जैसे आ, और व्यंजन के बाद मात्रा, जैसे का में ा।"
+  - id: hi-fact-006
+    tags: [script]
+    text:
+      en: "The vowel sign ि is written before its consonant but said after it: कि is ki, and दिन is din."
+      bn: "স্বরচিহ্ন ি ব্যঞ্জনের আগে লেখা হয়, কিন্তু উচ্চারিত হয় পরে: कि হলো 'ki', दिन হলো 'din'।"
+      hi: "ि की मात्रा व्यंजन से पहले लिखी जाती है, पर बोली उसके बाद जाती है: कि, दिन।"
+  - id: hi-fact-007
+    tags: [pronunciation]
+    text:
+      en: "Hindi tells four k sounds apart: क (k), ख (k with a puff of breath), ग (g) and घ (g with breath). Most consonants come in sets of four like this."
+      bn: "হিন্দিতে চার রকম ক-ধ্বনি আলাদা: क (k), ख (নিঃশ্বাস-সহ k), ग (g), घ (নিঃশ্বাস-সহ g)। বেশিরভাগ ব্যঞ্জন এমন চারটির দলে আসে।"
+      hi: "हिंदी में क, ख, ग और घ चार अलग ध्वनियाँ हैं; ख और घ साँस के झोंके के साथ बोले जाते हैं। ज़्यादातर व्यंजन ऐसे ही चार-चार के समूह में आते हैं।"
+  - id: hi-fact-008
+    tags: [pronunciation]
+    text:
+      en: "ड and द are different sounds: ड with the tongue curled back, द with the tongue against the teeth. डाल (daal) is a branch; दाल (daal) is lentils."
+      bn: "ड আর द আলাদা ধ্বনি: ड-তে জিভ পেছনে উল্টে যায়, द-তে জিভ দাঁতে লাগে। डाल (daal) মানে গাছের ডাল; दाल (daal) মানে রান্নার ডাল।"
+      hi: "ड और द अलग ध्वनियाँ हैं: ड में जीभ पीछे मुड़ती है, द में दाँतों को छूती है। डाल पेड़ की होती है, दाल खाने की।"
+  - id: hi-fact-009
+    tags: [script, pronunciation]
+    text:
+      en: "The moon and dot, ँ, makes a vowel nasal, and it can change the word: हंस (hans) is a swan, while हँस (hãs) is the stem of हँसना, to laugh."
+      bn: "চাঁদবিন্দু (ँ) স্বরকে নাসিক্য করে, আর তাতে শব্দও বদলাতে পারে: हंस (hans) মানে রাজহাঁস, আর हँस (hãs) হলো हँसना, হাসা, ক্রিয়ার মূল।"
+      hi: "चंद्रबिंदु (ँ) स्वर को नाक से बोलने का निशान है, और इससे शब्द बदल सकता है: हंस एक पक्षी है, पर हँस 'हँसना' से बना है।"
+  - id: hi-fact-010
+    tags: [script, loanwords]
+    text:
+      en: "A dot under a letter, the नुक़्ता (nuqtaa), marks a sound from Persian, Arabic or English: ज़ is z, as in ज़मीन (zamiin, land), and फ़ is f, as in फ़िल्म. Many speakers say ज and फ instead."
+      bn: "অক্ষরের নিচের বিন্দুটিকে বলে नुक़्ता (nuqtaa)। এটি ফারসি, আরবি বা ইংরেজি থেকে আসা ধ্বনি বোঝায়: ज़ হলো 'z', যেমন ज़मीन (zamiin, জমি), আর फ़ হলো 'f', যেমন फ़िल्म। অনেকে এগুলো ज আর फ বলেই উচ্চারণ করেন।"
+      hi: "अक्षर के नीचे की बिंदी को नुक़्ता कहते हैं। यह फ़ारसी, अरबी या अंग्रेज़ी से आई ध्वनियाँ दिखाता है: ज़मीन का ज़, फ़िल्म का फ़। बहुत से लोग इन्हें ज और फ ही बोलते हैं।"
+  - id: hi-fact-011
+    tags: [history]
+    source: "https://en.wikipedia.org/wiki/Hindustani_language"
+    text:
+      en: "In everyday speech, Hindi and Urdu are one language written in two scripts, Devanagari and a Perso-Arabic script. They drift apart in formal words, which Hindi takes from Sanskrit and Urdu from Persian and Arabic."
+      bn: "রোজকার কথায় হিন্দি আর উর্দু প্রায় একই ভাষা, লেখা হয় দুই লিপিতে: দেবনাগরী আর ফারসি-আরবি লিপি। পার্থক্য বাড়ে আনুষ্ঠানিক শব্দে: হিন্দি নেয় সংস্কৃত থেকে, উর্দু ফারসি ও আরবি থেকে।"
+      hi: "रोज़मर्रा की बोलचाल में हिंदी और उर्दू लगभग एक ही भाषा हैं, जो दो लिपियों में लिखी जाती हैं: देवनागरी और फ़ारसी-अरबी लिपि। औपचारिक शब्दों में ये अलग हो जाती हैं: हिंदी संस्कृत से शब्द लेती है, उर्दू फ़ारसी और अरबी से।"
+  - id: hi-fact-012
+    tags: [history]
+    source: "https://en.wikipedia.org/wiki/Languages_with_official_status_in_India"
+    text:
+      en: "The Constitution of India makes Hindi, in the Devanagari script, the official language of the Union, and English continues to be used alongside it (Article 343)."
+      bn: "ভারতের সংবিধান অনুযায়ী দেবনাগরী লিপিতে হিন্দি কেন্দ্রীয় সরকারের সরকারি ভাষা, আর তার পাশাপাশি ইংরেজিও চলে (অনুচ্ছেদ ৩৪৩)।"
+      hi: "भारत के संविधान के अनुच्छेद 343 के अनुसार संघ की राजभाषा देवनागरी लिपि में हिंदी है, और उसके साथ अंग्रेज़ी का प्रयोग भी जारी है।"
+  - id: hi-fact-013
+    tags: [history]
+    source: "https://en.wikipedia.org/wiki/Hindi_Day"
+    text:
+      en: "Hindi Day, हिंदी दिवस, is 14 September: on that day in 1949 the Constituent Assembly adopted Hindi in Devanagari as the Union's official language."
+      bn: "১৪ সেপ্টেম্বর হিন্দি দিবস (हिंदी दिवस): ১৯৪৯ সালের এই দিনে গণপরিষদ দেবনাগরী লিপিতে হিন্দিকে কেন্দ্রের সরকারি ভাষা হিসেবে গ্রহণ করে।"
+      hi: "14 सितंबर को हिंदी दिवस मनाया जाता है: 1949 में इसी दिन संविधान सभा ने देवनागरी में लिखी हिंदी को संघ की राजभाषा के रूप में अपनाया।"
+  - id: hi-fact-014
+    tags: [script, history]
+    text:
+      en: "Devanagari is not only Hindi's script: Marathi, Nepali, Konkani and Sanskrit are written in it too."
+      bn: "দেবনাগরী কেবল হিন্দির লিপি নয়: মারাঠি, নেপালি, কোঙ্কণি আর সংস্কৃতও এই লিপিতে লেখা হয়।"
+      hi: "देवनागरी सिर्फ़ हिंदी की लिपि नहीं है: मराठी, नेपाली, कोंकणी और संस्कृत भी इसी में लिखी जाती हैं।"
+  - id: hi-fact-015
+    tags: [numbers]
+    text:
+      en: "Hindi has a separate word for every number up to a hundred. 21 to 99 are old fusions, not built by rule, so 26 is छब्बीस (chhabbiis) and 99 is निन्यानवे (ninyaanve)."
+      bn: "হিন্দিতে একশো পর্যন্ত প্রতিটি সংখ্যার আলাদা শব্দ আছে। ২১ থেকে ৯৯ নিয়ম মেনে গড়া নয়, তাই ২৬ হলো छब्बीस (chhabbiis), আর ৯৯ निन्यानवे (ninyaanve)।"
+      hi: "हिंदी में सौ तक हर संख्या का अपना अलग शब्द है। 21 से 99 तक के शब्द किसी सीधे नियम से नहीं बनते: 26 छब्बीस है, और 99 निन्यानवे।"
+  - id: hi-fact-016
+    tags: [numbers, history]
+    source: "https://en.wikipedia.org/wiki/Hindu%E2%80%93Arabic_numeral_system"
+    text:
+      en: "Hindi has its own digits, ० १ २ ३ ४ ५ ६ ७ ८ ९. The digits 0 to 9 used around the world began in India and reached Europe through the Arab world."
+      bn: "হিন্দির নিজস্ব অঙ্ক আছে: ० १ २ ३ ४ ५ ६ ७ ८ ९। সারা পৃথিবীতে যে 0 থেকে 9 অঙ্ক চলে, তাদের জন্ম ভারতে; আরব জগতের হাত ঘুরে তারা ইউরোপে পৌঁছায়।"
+      hi: "हिंदी के अपने अंक हैं: ० १ २ ३ ४ ५ ६ ७ ८ ९। दुनिया भर में चलने वाले 0 से 9 तक के अंक भारत में बने और अरब देशों से होकर यूरोप पहुँचे।"
+  - id: hi-fact-017
+    tags: [grammar]
+    text:
+      en: "Hindi puts the verb last: मैं चाय पीता हूँ, 'I drink tea', is word for word 'I tea drink'."
+      bn: "হিন্দিতে ক্রিয়া বসে বাক্যের শেষে: मैं चाय पीता हूँ, শব্দে শব্দে 'আমি চা পান করি'।"
+      hi: "हिंदी वाक्य में क्रिया सबसे अंत में आती है: मैं चाय पीता हूँ।"
+  - id: hi-fact-018
+    tags: [grammar]
+    text:
+      en: "Hindi has postpositions, not prepositions: घर में, 'house in', is 'in the house'."
+      bn: "হিন্দিতে 'মধ্যে', 'ওপরে'-র মতো শব্দ বসে বিশেষ্যের পরে: घर में মানে 'ঘরের মধ্যে', मेज़ पर মানে 'টেবিলের ওপরে'।"
+      hi: "हिंदी में में, पर, से जैसे शब्द संज्ञा के बाद आते हैं: घर में, मेज़ पर।"
+  - id: hi-fact-019
+    tags: [grammar]
+    text:
+      en: "Every Hindi noun is masculine or feminine, and there is no neuter: पानी (water) is masculine, चाय (tea) feminine."
+      bn: "হিন্দির প্রতিটি বিশেষ্য হয় পুংলিঙ্গ, নয় স্ত্রীলিঙ্গ; ক্লীবলিঙ্গ নেই: पानी (জল) পুংলিঙ্গ, चाय (চা) স্ত্রীলিঙ্গ।"
+      hi: "हिंदी में हर संज्ञा या तो पुल्लिंग है या स्त्रीलिंग; नपुंसक लिंग नहीं होता: पानी पुल्लिंग है, चाय स्त्रीलिंग।"
+  - id: hi-fact-020
+    tags: [grammar]
+    text:
+      en: "A Hindi verb shows the speaker's gender: for 'I go', a man says मैं जाता हूँ and a woman मैं जाती हूँ."
+      bn: "হিন্দি ক্রিয়া বক্তার লিঙ্গ দেখায়: 'আমি যাই' পুরুষ বলেন मैं जाता हूँ, নারী বলেন मैं जाती हूँ।"
+      hi: "हिंदी की क्रिया बोलने वाले का लिंग बताती है: पुरुष कहता है 'मैं जाता हूँ', स्त्री कहती है 'मैं जाती हूँ'।"
+  - id: hi-fact-021
+    tags: [grammar, respect]
+    text:
+      en: "Hindi has three words for 'you': तू for the very close, तुम for friends and equals, and आप for respect."
+      bn: "হিন্দিতে 'তুমি'-র তিনটি রূপ: খুব ঘনিষ্ঠের জন্য तू, বন্ধু ও সমবয়সীর জন্য तुम, আর সম্মান জানাতে आप।"
+      hi: "हिंदी में 'you' के लिए तीन शब्द हैं: बहुत क़रीबी के लिए तू, दोस्तों और बराबर वालों के लिए तुम, और सम्मान के लिए आप।"
+  - id: hi-fact-022
+    tags: [grammar, respect]
+    text:
+      en: "आप takes a plural verb even when said to one person: आप आए हैं, 'you have come'. Hindi uses the plural for an elder spoken about, too: पिताजी आ रहे हैं, 'Father is coming'."
+      bn: "একজনকে বললেও आप-এর সঙ্গে ক্রিয়া বহুবচনে বসে: आप आए हैं। গুরুজনের কথা বলতেও হিন্দি বহুবচন ব্যবহার করে: पिताजी आ रहे हैं, 'বাবা আসছেন'।"
+      hi: "आप के साथ क्रिया बहुवचन में आती है, चाहे बात एक ही व्यक्ति से हो। बड़ों के बारे में बोलते समय भी बहुवचन आता है: पिताजी आ रहे हैं।"
+  - id: hi-fact-023
+    tags: [grammar]
+    text:
+      en: "Hindi has no word for 'the' or 'a': किताब is 'book', 'a book' or 'the book', and the context says which."
+      bn: "হিন্দিতে ইংরেজির 'the' বা 'a'-র মতো কোনো শব্দ নেই: किताब মানে 'বই', 'একটি বই' বা 'বইটি'; প্রসঙ্গ দেখে বোঝা যায়।"
+      hi: "हिंदी में अंग्रेज़ी के 'the' या 'a' जैसा कोई शब्द नहीं है: 'किताब' से ही काम चल जाता है, और संदर्भ बताता है कि कौन-सी।"
+  - id: hi-fact-024
+    tags: [words]
+    text:
+      en: "कल means both yesterday and tomorrow, and परसों both the day before yesterday and the day after tomorrow. The verb's tense says which."
+      bn: "कल মানে গতকাল আর আগামীকাল দুটোই, আর परसों মানে আগের বা পরের পরশু। ক্রিয়ার কাল দেখে বোঝা যায় কোনটা।"
+      hi: "कल का मतलब बीता हुआ कल भी है और आने वाला कल भी; परसों भी दोनों तरफ़ का होता है। क्रिया का काल बताता है कि कौन-सा।"
+  - id: hi-fact-025
+    tags: [words]
+    text:
+      en: "Repeating a word with its first sound changed to v means 'and so on': चाय-वाय is 'tea and such', किताब-विताब 'books and things'."
+      bn: "শব্দটি আবার বলে প্রথম ধ্বনিটি 'v' করে দিলে মানে দাঁড়ায় 'এইসব': चाय-वाय মানে 'চা-টা', किताब-विताब 'বই-টই'।"
+      hi: "किसी शब्द को दोहराकर पहली ध्वनि 'व' कर देने से 'वग़ैरह' का अर्थ आता है: चाय-वाय, किताब-विताब।"
+  - id: hi-fact-026
+    tags: [words]
+    text:
+      en: "-वाला (-vaalaa) after a word makes a person or thing connected with it: चायवाला is a tea seller, दिल्लीवाला someone from Delhi."
+      bn: "শব্দের পরে -वाला (-vaalaa) বসালে তার সঙ্গে যুক্ত মানুষ বা জিনিস বোঝায়: चायवाला মানে চা-বিক্রেতা, दिल्लीवाला দিল্লির লোক।"
+      hi: "किसी शब्द के बाद -वाला लगाने से उससे जुड़ा व्यक्ति या चीज़ बनती है: चायवाला, दिल्लीवाला।"
+  - id: hi-fact-027
+    tags: [words, loanwords]
+    text:
+      en: "Many everyday Hindi words came from Persian and Arabic, like दुकान (shop) and हफ़्ता (week), and many from English, like बस, टिकट and स्टेशन."
+      bn: "হিন্দির অনেক রোজকার শব্দ এসেছে ফারসি ও আরবি থেকে, যেমন दुकान (দোকান) আর हफ़्ता (সপ্তাহ), আর অনেক ইংরেজি থেকে, যেমন बस, टिकट, स्टेशन।"
+      hi: "हिंदी के बहुत से रोज़मर्रा के शब्द फ़ारसी और अरबी से आए हैं, जैसे दुकान और हफ़्ता, और बहुत से अंग्रेज़ी से, जैसे बस, टिकट और स्टेशन।"
+  - id: hi-fact-028
+    tags: [words, loanwords]
+    source: "https://en.wikipedia.org/wiki/List_of_English_words_of_Hindi_or_Urdu_origin"
+    text:
+      en: "English borrowed from Hindi: shampoo from चाँपो (chaanpo, 'press!'), jungle from जंगल, thug from ठग, and bungalow from बंगला, 'in the Bengal style'."
+      bn: "ইংরেজি হিন্দি থেকে শব্দ ধার নিয়েছে: shampoo এসেছে चाँपो ('টেপো!') থেকে, jungle जंगल থেকে, thug ठग থেকে, আর bungalow बंगला, অর্থাৎ 'বাংলা ধাঁচের', থেকে।"
+      hi: "अंग्रेज़ी ने हिंदी से शब्द लिए हैं: shampoo 'चाँपो' से, jungle 'जंगल' से, thug 'ठग' से, और bungalow 'बंगला' से, यानी बंगाल की शैली का घर।"
+  - id: hi-fact-029
+    tags: [script]
+    text:
+      en: "Hindi ends a sentence with a vertical line, ।, the पूर्ण विराम (puurn viraam, 'full stop')."
+      bn: "হিন্দিতে বাক্যের শেষে বসে একটি খাড়া রেখা, ।, যার নাম पूर्ण विराम (পূর্ণ বিরাম)।"
+      hi: "हिंदी में वाक्य के अंत में पूर्ण विराम (।) लगता है, जो एक खड़ी रेखा है।"
+  - id: hi-fact-030
+    tags: [script, pronunciation]
+    text:
+      en: "ऋ was a vowel in Sanskrit. In Hindi it is said ri: ऋषि (rishi, sage)."
+      bn: "সংস্কৃতে ऋ ছিল একটি স্বরবর্ণ। হিন্দিতে এর উচ্চারণ 'রি': ऋषि (ঋষি)।"
+      hi: "संस्कृत में ऋ एक स्वर था। हिंदी में इसे 'रि' बोलते हैं: ऋषि।"
+  - id: hi-fact-031
+    tags: [script, conjuncts, pronunciation]
+    text:
+      en: "ज्ञ is built from ज and ञ, but Hindi says it gy: ज्ञान (gyaan, knowledge)."
+      bn: "ज्ञ গঠিত ज আর ञ দিয়ে, কিন্তু হিন্দিতে এর উচ্চারণ 'গ্য': ज्ञान হলো 'gyaan', অর্থাৎ জ্ঞান।"
+      hi: "ज्ञ, ज और ञ से बना है, पर हिंदी में इसे 'ग्य' बोलते हैं: ज्ञान।"
+  - id: hi-fact-032
+    tags: [script, pronunciation]
+    text:
+      en: "The dot ं before a consonant is said as the nasal of that consonant's own group: अंक is ank, संत is sant, and कंबल is kambal."
+      bn: "ব্যঞ্জনের আগে বিন্দু (ं) সেই ব্যঞ্জনের বর্গের নাসিক্য হিসেবে উচ্চারিত হয়: अंक হলো 'ank', संत 'sant', कंबल 'kambal'।"
+      hi: "किसी व्यंजन से पहले अनुस्वार (ं) उसी वर्ग के नासिक्य की तरह बोला जाता है: अंक, संत, कंबल।"
+  - id: hi-fact-033
+    tags: [grammar]
+    text:
+      en: "Hindi often pairs a verb with a second, light verb that adds a shade of meaning: खा लेना is 'eat up', गिर पड़ना 'fall down'."
+      bn: "হিন্দিতে প্রায়ই একটি ক্রিয়ার সঙ্গে আরেকটি হালকা ক্রিয়া জুড়ে অর্থে সূক্ষ্ম রং আনা হয়: खा लेना মানে 'খেয়ে নেওয়া', गिर पड़ना 'পড়ে যাওয়া'।"
+      hi: "हिंदी में अक्सर एक क्रिया के साथ दूसरी सहायक क्रिया जुड़कर अर्थ में रंग भरती है: खा लेना, गिर पड़ना।"
+  - id: hi-fact-101
+    contrast: en
+    tags: [pronunciation]
+    text:
+      en: "English writes the sh sound with two letters. Hindi gives it letters of its own, श and ष (most speakers now say them alike), so sh in a romanisation stands for one sound, not s followed by h."
+  - id: hi-fact-102
+    contrast: bn
+    tags: [pronunciation]
+    text:
+      en: "Where Bengali often says স like 'sh', Hindi स is always s: सात is saat, not shaat."
+      bn: "বাংলায় স প্রায়ই 'শ'-এর মতো শোনায়, কিন্তু হিন্দিতে स সবসময় 's': सात হলো 'saat', 'shaat' নয়।"
+  - id: hi-fact-103
+    contrast: bn
+    tags: [pronunciation]
+    text:
+      en: "Bengali says a consonant's built-in vowel as a rounded o; Hindi says it as a short a. कमल is kamal in Hindi, where Bengali says kômol."
+      bn: "বাংলায় ব্যঞ্জনের অন্তর্নিহিত স্বর 'অ' ও-ঘেঁষা, হিন্দিতে তা খোলা 'a': कमल হিন্দিতে 'kamal', বাংলার 'কমল' (kômol)-এর মতো নয়।"
+  - id: hi-fact-104
+    contrast: bn
+    tags: [pronunciation, script]
+    text:
+      en: "Hindi व is v or w, where Bengali's matching letter ব is b: Hindi वन is van, Bengali বন is bon."
+      bn: "হিন্দির व বাংলার ব নয়: এর উচ্চারণ 'v' বা 'w'। হিন্দির वन হলো 'van', বাংলার বন 'bon'।"
+  - id: hi-fact-105
+    contrast: bn
+    tags: [grammar]
+    text:
+      en: "Bengali has no grammatical gender; Hindi does. A Bengali speaker has to learn whether each Hindi noun is masculine or feminine, and make verbs agree."
+      bn: "বাংলায় ব্যাকরণগত লিঙ্গ নেই, হিন্দিতে আছে: 'আমি যাই' হিন্দিতে পুরুষ বলেন जाता हूँ, নারী जाती हूँ, আর প্রতিটি বিশেষ্যের লিঙ্গ আলাদা করে শিখতে হয়।"
+  - id: hi-fact-106
+    contrast: en
+    tags: [grammar, pitfall]
+    text:
+      en: "English verbs agree with their subject. In the Hindi past of a verb with an object, the verb agrees with the object instead: मैंने रोटी खाई, 'I ate a roti', is feminine because रोटी is."
+  - id: hi-fact-107
+    contrast: en
+    tags: [grammar, respect, pitfall]
+    text:
+      en: "English has one 'you' for everyone. In Hindi, तुम to a stranger or an elder can sound rude; आप is always the safe choice."
+  - id: hi-fact-108
+    contrast: en
+    tags: [grammar, pitfall]
+    text:
+      en: "Hindi has no verb for having a thing. मेरे पास एक गाड़ी है, 'I have a car', is 'near me there is a car'."
+  - id: hi-fact-109
+    contrast: en
+    tags: [grammar, pitfall]
+    text:
+      en: "Many English sentences that start with 'I' start with 'to me' in Hindi: मुझे भूख लगी है, 'I'm hungry', is 'hunger has struck me', and मुझे हिंदी पसंद है, 'I like Hindi', is 'to me Hindi is pleasing'."

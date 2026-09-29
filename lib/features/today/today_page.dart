@@ -136,8 +136,14 @@ class _TodayContent extends StatelessWidget {
             ],
           ),
         ],
-        const SizedBox(height: 16),
-        const _FactCard(),
+        if (state.features.isIncoming(Feature.dailyFacts)) ...<Widget>[
+          const SizedBox(height: 16),
+          const _FactCard(),
+        ] else
+          for (final fact in state.todaysFacts()) ...<Widget>[
+            const SizedBox(height: 16),
+            _TodayFactCard(fact: fact),
+          ],
       ],
     );
   }
@@ -346,7 +352,68 @@ class _DecksHeading extends StatelessWidget {
   }
 }
 
-/// A fact a day about a language the profile learns (#48). Built, incoming.
+/// Today's fact about one language the profile learns (#48), in each
+/// language the learner speaks that it is written in, best known first.
+/// The fact is deck content, shown as written, in its own language.
+class _TodayFactCard extends StatelessWidget {
+  const _TodayFactCard({required this.fact});
+
+  final TodayFact fact;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Container(
+      padding: const EdgeInsetsDirectional.all(20),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadii.group),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: scheme.secondaryContainer,
+              borderRadius: BorderRadius.circular(AppRadii.small),
+            ),
+            child: Icon(
+              Icons.lightbulb_outline,
+              color: scheme.onSecondaryContainer,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  l10n.todayFactFor(fact.language.name),
+                  style: theme.textTheme.sectionTitle,
+                ),
+                for (final (i, text) in fact.texts.indexed) ...<Widget>[
+                  SizedBox(height: i == 0 ? 4 : 10),
+                  Text(
+                    text.text,
+                    locale: Locale(text.code),
+                    style: theme.textTheme.bodyMedium,
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// A fact a day about a language the profile learns (#48), while the
+/// feature is incoming.
 class _FactCard extends StatelessWidget {
   const _FactCard();
 

@@ -6,8 +6,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/log_files.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/data/log_jsonl.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
@@ -16,6 +20,7 @@ import 'package:fluenough/features/settings/settings_controls.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/fluenough_mark.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
@@ -31,6 +36,27 @@ Finder _slider(String title) => find.descendant(
 
 Finder _row(String title) =>
     find.ancestor(of: find.text(title), matching: find.byType(GroupedTile));
+
+/// Saves into [saved] and opens [picked], in place of the phone's dialogs.
+class _FakeLogFiles implements LogFiles {
+  _FakeLogFiles({this.picked});
+
+  final Map<String, String> saved = <String, String>{};
+  String? picked;
+  String? title;
+
+  @override
+  Future<bool> save(String fileName, String contents) async {
+    saved[fileName] = contents;
+    return true;
+  }
+
+  @override
+  Future<String?> open({required String title}) async {
+    this.title = title;
+    return picked;
+  }
+}
 
 void main() {
   group('live settings change SettingsNotifier', () {
@@ -147,12 +173,9 @@ void main() {
       l10n.settingsSwitchProfile,
       l10n.skillGrammar,
       l10n.skillPair,
-      l10n.settingsAppearance,
       l10n.settingsAppLanguage,
       l10n.settingsReminder,
       l10n.settingsPinLock,
-      l10n.settingsExport,
-      l10n.settingsImport,
       l10n.settingsDeleteProfile,
     ];
     for (final label in labels) {
@@ -182,6 +205,17 @@ void main() {
     expect(settings.isEnabled(Skill.grammar), isTrue);
     expect(settings.reminder, isFalse);
     semantics.dispose();
+  });
+
+  testWidgets('Appearance is live and opens its screen', (tester) async {
+    usePhone(tester);
+    await pumpScreen(tester, const SettingsPage());
+    final l10n = l10nOf(tester);
+    final row = find.text(l10n.settingsAppearance);
+    await scrollTo(tester, row);
+    await tester.tap(row);
+    await tester.pumpAndSettle();
+    expect(find.byType(AppearancePage), findsOneWidget);
   });
 
   testWidgets('the app language picker lists every translation by its own '
@@ -287,6 +321,98 @@ void main() {
     expect(find.byType(ProfilesPage), findsOneWidget);
   });
 
+  group('the review log backup', () {
+    void answer(ProgressStore p, String card, int grade, int day) => p.record(
+      deckId: 'hi-en-market',
+      cardId: card,
+      mode: DrillMode.production,
+      grade: grade,
+      now: DateTime(2026, 9, 20 + day, 19),
+    );
+
+    Future<void> tapRow(WidgetTester tester, String title) async {
+      final row = find.text(title);
+      await scrollTo(tester, row);
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('Export saves the log as the profile\'s file', (tester) async {
+      usePhone(tester);
+      final files = _FakeLogFiles();
+      final progress = MemoryProgress();
+      answer(progress, 'hi-en-market-0001', 4, 0);
+      answer(progress, 'hi-en-market-0002', 1, 1);
+      final state = await pumpScreen(
+        tester,
+        const SettingsPage(),
+        state: AppState.test(progress: progress, logFiles: files),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.settingsExportDesc(2)), findsOneWidget);
+
+      await tapRow(tester, l10n.settingsExport);
+      final name = 'fluenough-${state.currentProfile.id}-reviews.jsonl';
+      expect(files.saved.keys, [name]);
+      expect(LogJsonl.decode(files.saved[name]!).reviews, hasLength(2));
+      expect(find.text(l10n.settingsExported(name)), findsOneWidget);
+    });
+
+    testWidgets('Import merges a backup and says how many reviews were new', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final old = MemoryProgress();
+      answer(old, 'hi-en-market-0001', 4, 0);
+      answer(old, 'hi-en-market-0001', 5, 1);
+      answer(old, 'hi-en-market-0002', 3, 1);
+      final files = _FakeLogFiles(picked: old.exportJsonl());
+      final progress = MemoryProgress();
+      answer(progress, 'hi-en-market-0001', 5, 1);
+      await pumpScreen(
+        tester,
+        const SettingsPage(),
+        state: AppState.test(progress: progress, logFiles: files),
+      );
+      final l10n = l10nOf(tester);
+
+      await tapRow(tester, l10n.settingsImport);
+      expect(files.title, l10n.settingsImportPick);
+      expect(progress.log, hasLength(3), reason: 'one review was already here');
+      expect(find.text(l10n.settingsImported(2)), findsOneWidget);
+      expect(find.text(l10n.settingsExportDesc(3)), findsOneWidget);
+
+      await clearSnackBars(tester);
+      await tapRow(tester, l10n.settingsImport);
+      expect(progress.log, hasLength(3));
+      expect(find.text(l10n.settingsImported(0)), findsOneWidget);
+    });
+
+    testWidgets('Import refuses a file that is not a log, and does nothing '
+        'when none is picked', (tester) async {
+      usePhone(tester);
+      final files = _FakeLogFiles(picked: 'id,front,back\n1,casa,house\n');
+      final state = await pumpScreen(
+        tester,
+        const SettingsPage(),
+        state: AppState.test(logFiles: files),
+      );
+      final l10n = l10nOf(tester);
+
+      await tapRow(tester, l10n.settingsImport);
+      expect(
+        find.text(l10n.settingsImportFailed('line 1 is not JSON')),
+        findsOneWidget,
+      );
+      expect(state.progress.log, isEmpty);
+
+      await clearSnackBars(tester);
+      files.picked = null;
+      await tapRow(tester, l10n.settingsImport);
+      expect(find.byType(SnackBar), findsNothing);
+    });
+  });
+
   testWidgets('the footer shows the version in pubspec.yaml', (tester) async {
     final pubspec = File('pubspec.yaml').readAsStringSync();
     final version = RegExp(
@@ -300,5 +426,18 @@ void main() {
     final footer = find.text(l10nOf(tester).settingsFooter(AppInfo.version));
     await scrollTo(tester, footer);
     expect(footer, findsOneWidget);
+  });
+
+  testWidgets('the footer carries the brand mark, beside the name', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(tester, const SettingsPage());
+    final footer = find.text(l10nOf(tester).settingsFooter(AppInfo.version));
+    await scrollTo(tester, footer);
+    final mark = find.byType(FluenoughMark);
+    expect(mark, findsOneWidget);
+    expect(tester.getSize(mark), const Size.square(32));
+    expect(tester.getCenter(mark).dy, closeTo(tester.getCenter(footer).dy, 12));
   });
 }
