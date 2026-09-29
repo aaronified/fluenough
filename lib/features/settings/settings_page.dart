@@ -11,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/app_language_picker.dart';
+import '../../ui/widgets/fluenough_mark.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -69,9 +70,17 @@ class SettingsPage extends StatelessWidget {
                       padding: const EdgeInsetsDirectional.symmetric(
                         horizontal: 16,
                       ),
-                      child: Text(
-                        l10n.settingsFooter(AppInfo.version),
-                        style: settingsHelpStyle(Theme.of(context)),
+                      child: Row(
+                        children: <Widget>[
+                          const FluenoughMark(),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              l10n.settingsFooter(AppInfo.version),
+                              style: settingsHelpStyle(Theme.of(context)),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
