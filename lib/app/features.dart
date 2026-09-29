@@ -77,6 +77,7 @@ enum Feature {
     Feature.persistence,
     Feature.appearance,
     Feature.stats,
+    Feature.leeches,
   };
 }
 
