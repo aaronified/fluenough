@@ -1,0 +1,64 @@
+schema: 1
+id: bn-en-grammar-nouns
+name: "Nouns: the, plural and case"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "-টা for 'the', -গুলো for the plural, and the endings for 'of' and 'in'."
+tags: [beginner, grammar]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  slots: ["the one: -টা", "the ones: -গুলো", "of: -র or -এর", "in, at: -এ or -তে"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Bengali has no 'the': -টা after a noun does its work, and -গুলো makes it plural. A noun ending in a vowel takes -র and -তে (বাড়ির, বাড়িতে); one ending in a consonant takes -এর and -এ (ঘরের, ঘরে). People take -রা for the plural: ছেলেরা, the boys."
+  entries:
+    - lemma: "বই"
+      key: boi
+      gloss: "book"
+      forms:
+        "the one: -টা": "বইটা"
+        "the ones: -গুলো": "বইগুলো"
+        "of: -র or -এর": "বইয়ের"
+        "in, at: -এ or -তে": "বইয়ে"
+    - lemma: "বাড়ি"
+      key: bari
+      gloss: "house"
+      forms:
+        "the one: -টা": "বাড়িটা"
+        "the ones: -গুলো": "বাড়িগুলো"
+        "of: -র or -এর": "বাড়ির"
+        "in, at: -এ or -তে": "বাড়িতে"
+    - lemma: "ঘর"
+      key: ghor
+      gloss: "room"
+      forms:
+        "the one: -টা": "ঘরটা"
+        "the ones: -গুলো": "ঘরগুলো"
+        "of: -র or -এর": "ঘরের"
+        "in, at: -এ or -তে": "ঘরে"
+    - lemma: "দোকান"
+      key: dokan
+      gloss: "shop"
+      forms:
+        "the one: -টা": "দোকানটা"
+        "the ones: -গুলো": "দোকানগুলো"
+        "of: -র or -এর": "দোকানের"
+        "in, at: -এ or -তে": "দোকানে"
+    - lemma: "গাড়ি"
+      key: gari
+      gloss: "car"
+      forms:
+        "the one: -টা": "গাড়িটা"
+        "the ones: -গুলো": "গাড়িগুলো"
+        "of: -র or -এর": "গাড়ির"
+        "in, at: -এ or -তে": "গাড়িতে"
+    - lemma: "শহর"
+      key: shohor
+      gloss: "city"
+      forms:
+        "the one: -টা": "শহরটা"
+        "the ones: -গুলো": "শহরগুলো"
+        "of: -র or -এর": "শহরের"
+        "in, at: -এ or -তে": "শহরে"

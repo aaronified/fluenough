@@ -1,0 +1,64 @@
+schema: 1
+id: bn-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose stem shifts from tense to tense."
+tags: [beginner, grammar]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["present, আমি", "past, আমি", "future, আমি", "polite request, আপনি"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "These are among the most used verbs in Bengali, so they are worth learning by heart. The stem's vowel shifts: দেওয়া gives দিই, দিলাম, দেব. আসা and যাওয়া take different pasts: এলাম, গেলাম."
+  entries:
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "present, আমি": "যাই"
+        "past, আমি": "গেলাম"
+        "future, আমি": "যাব"
+        "polite request, আপনি": "যান"
+    - lemma: "আসা"
+      key: asha
+      gloss: "to come"
+      forms:
+        "present, আমি": "আসি"
+        "past, আমি": "এলাম"
+        "future, আমি": "আসব"
+        "polite request, আপনি": "আসুন"
+    - lemma: "দেওয়া"
+      key: deoa
+      gloss: "to give"
+      forms:
+        "present, আমি": "দিই"
+        "past, আমি": "দিলাম"
+        "future, আমি": "দেব"
+        "polite request, আপনি": "দিন"
+    - lemma: "নেওয়া"
+      key: neoa
+      gloss: "to take"
+      forms:
+        "present, আমি": "নিই"
+        "past, আমি": "নিলাম"
+        "future, আমি": "নেব"
+        "polite request, আপনি": "নিন"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "present, আমি": "খাই"
+        "past, আমি": "খেলাম"
+        "future, আমি": "খাব"
+        "polite request, আপনি": "খান"
+    - lemma: "হওয়া"
+      key: hoa
+      gloss: "to be, to become"
+      forms:
+        "present, আমি": "হই"
+        "past, আমি": "হলাম"
+        "future, আমি": "হব"
+        "polite request, আপনি": null

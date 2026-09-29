@@ -1,0 +1,56 @@
+schema: 1
+id: bn-en-grammar-future
+name: "Future tense"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I will do, you will go."
+tags: [beginner, grammar]
+pattern:
+  name: "Future"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / ওরা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ব, -বি, -বে, -বেন. Some writers add the o: করবো, যাবো."
+  entries:
+    - lemma: "করা"
+      key: kora
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করব"
+        "তুই / তোরা": "করবি"
+        "তুমি / তোমরা": "করবে"
+        "আপনি / আপনারা": "করবেন"
+        "সে / ওরা": "করবে"
+        "তিনি / তাঁরা": "করবেন"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": "যাব"
+        "তুই / তোরা": "যাবি"
+        "তুমি / তোমরা": "যাবে"
+        "আপনি / আপনারা": "যাবেন"
+        "সে / ওরা": "যাবে"
+        "তিনি / তাঁরা": "যাবেন"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খাব"
+        "তুই / তোরা": "খাবি"
+        "তুমি / তোমরা": "খাবে"
+        "আপনি / আপনারা": "খাবেন"
+        "সে / ওরা": "খাবে"
+        "তিনি / তাঁরা": "খাবেন"
+    - lemma: "বলা"
+      key: bola
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বলব"
+        "তুই / তোরা": "বলবি"
+        "তুমি / তোমরা": "বলবে"
+        "আপনি / আপনারা": "বলবেন"
+        "সে / ওরা": "বলবে"
+        "তিনি / তাঁরা": "বলবেন"
