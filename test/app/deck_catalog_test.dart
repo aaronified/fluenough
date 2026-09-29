@@ -77,14 +77,37 @@ void main() {
       expect(catalog.themeById('groceries')!.name, 'Groceries');
     });
 
-    test('includes the known decks, in path order', () {
+    test('includes the known decks, in path order, each course\'s theme '
+        'decks in theme order', () {
       final ids = catalog.decks.map((d) => d.id).toList();
       expect(
         ids,
         containsAll(['es-core-100', 'es-grammar-present-ar', 'ja-hiragana']),
       );
       final paths = catalog.decks.map((d) => d.path).toList();
-      expect(paths, [...paths]..sort());
+      expect(paths.toSet(), hasLength(paths.length));
+      final others = [
+        for (final d in catalog.decks)
+          if (d.deck.theme == null) d.path,
+      ];
+      expect(others, [...others]..sort());
+
+      final path = [for (final t in catalog.themes) t.id];
+      final courses = <String, List<String>>{};
+      for (final d in catalog.decks) {
+        final theme = d.deck.theme;
+        if (theme == null) continue;
+        courses
+            .putIfAbsent('${d.language.code}-${d.deck.native.code}', () => [])
+            .add(theme);
+      }
+      expect(courses, contains('hi-en'));
+      for (final MapEntry(key: course, value: themes) in courses.entries) {
+        expect(themes, [
+          for (final t in path)
+            if (themes.contains(t)) t,
+        ], reason: course);
+      }
     });
 
     test('a grammar deck is listed, with its pattern and no cards yet', () {
