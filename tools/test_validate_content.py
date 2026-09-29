@@ -196,6 +196,31 @@ class FactsFiles(Validated):
         self.assertTrue(any("'en'" in w and "0 daily facts" in w for w in report.warnings),
                         report.warnings)
 
+class Scripts(Validated):
+    """`script` is an open list, checked with a warning (ADR-0009)."""
+
+    def test_the_indic_starter_scripts_are_known(self) -> None:
+        for script in ("bengali", "gujarati", "telugu", "devanagari", "arabic"):
+            with self.subTest(script):
+                report = self.assertValid(
+                    VOCAB.replace("script: devanagari", f"script: {script}")
+                )
+                self.assertFalse(
+                    [w for w in report.warnings if "not one the validator knows" in w]
+                )
+
+    def test_an_unknown_script_is_a_warning_not_an_error(self) -> None:
+        report = self.assertValid(VOCAB.replace("script: devanagari", "script: ethiopic"))
+        self.assertTrue(any("'ethiopic' is not one" in w for w in report.warnings))
+
+    def test_a_script_that_is_not_a_lowercase_name_is_an_error(self) -> None:
+        for bad in ("Bengali", "5", '""', "yes", "bengali script"):
+            with self.subTest(bad=bad):
+                self.assertRejected(
+                    VOCAB.replace("script: devanagari", f"script: {bad}"),
+                    "script must be a lowercase script name",
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
