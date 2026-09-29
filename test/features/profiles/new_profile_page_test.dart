@@ -83,7 +83,7 @@ void main() {
     expect(find.text(l10nOf(tester).newProfileCreated), findsOneWidget);
   });
 
-  testWidgets('as shipped, the PIN switch and I speak are incoming', (
+  testWidgets('as shipped, the PIN switch and the app language are incoming', (
     tester,
   ) async {
     final semantics = tester.ensureSemantics();
@@ -95,7 +95,9 @@ void main() {
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.newProfileSpeaks)),
+      find.bySemanticsLabel(
+        l10n.incomingSemanticsLabel(l10n.settingsAppLanguage),
+      ),
       findsOneWidget,
     );
     expect(

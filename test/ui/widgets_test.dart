@@ -214,7 +214,7 @@ void main() {
               AppLanguagePicker(
                 onChanged: (_) {},
                 decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.newProfileSpeaks,
+                  labelText: AppLocalizations.of(context)!.settingsAppLanguage,
                 ),
               ),
             ],

@@ -38,9 +38,11 @@ class SettingsNotifier extends ChangeNotifier {
     this._cardTextScale = 1.0,
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
+    List<String> spokenLanguages = const <String>[],
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? Skill.values.toSet(),
-       );
+       ),
+       _spokenLanguages = List<String>.unmodifiable(spokenLanguages);
 
   /// The new-card slider's range and step, from the design.
   static const int maxNewCardsPerDay = 50;
@@ -69,6 +71,24 @@ class SettingsNotifier extends ChangeNotifier {
   double _cardTextScale;
   bool _reminder;
   TimeOfDay _reminderTime;
+  List<String> _spokenLanguages;
+
+  /// The languages the learner speaks, by code, best known first (#53).
+  /// Empty until they have said, which is what sends a first launch to the
+  /// setup screen. Kept apart from the interface language (#46).
+  List<String> get spokenLanguages => _spokenLanguages;
+  set spokenLanguages(List<String> codes) {
+    final next = List<String>.unmodifiable(<String>{...codes});
+    if (listEquals(next, _spokenLanguages)) return;
+    _spokenLanguages = next;
+    notifyListeners();
+  }
+
+  /// Where [code] ranks among [spokenLanguages], from 0, or null.
+  int? rankOf(String code) {
+    final i = _spokenLanguages.indexOf(code);
+    return i < 0 ? null : i;
+  }
 
   /// How many new `(card, mode)` pairs a day may introduce.
   int get newCardsPerDay => _newCardsPerDay;
@@ -156,6 +176,7 @@ class SettingsNotifier extends ChangeNotifier {
     'card_text_scale': '$_cardTextScale',
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
+    'spoken_languages': _spokenLanguages.join(','),
   };
 
   /// Applies [stored], as [toStored] wrote it, through the setters, so that
@@ -196,6 +217,12 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('reminder', flag) case final v?) reminder = v;
     if (pick('reminder_time', _parseTime) case final v?) reminderTime = v;
+    if (pick('spoken_languages', (t) => t) case final v?) {
+      spokenLanguages = <String>[
+        for (final code in v.split(','))
+          if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
+      ];
+    }
   }
 
   static TimeOfDay? _parseTime(String text) {
