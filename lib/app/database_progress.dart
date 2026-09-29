@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../core/data/database.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
+import '../core/scheduling/replay.dart';
 import '../core/scheduling/sm2.dart';
 import 'memory_progress.dart';
 
@@ -117,6 +118,17 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
             );
           },
         );
+  }
+
+  @override
+  Future<int> importLog(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions,
+  ) async {
+    await _writes;
+    final added = await _log.importAll(reviews, leechActions);
+    _memory.replaceWith(await _log.events(), await _log.leechActions());
+    return added;
   }
 
   /// Completes once every review recorded so far is in the database.

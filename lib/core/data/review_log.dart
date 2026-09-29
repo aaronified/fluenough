@@ -6,6 +6,7 @@ import '../models/review_event.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/sm2.dart';
 import 'card_state_repository.dart';
+import 'log_jsonl.dart';
 import 'database.dart';
 
 /// The review log, and the scheduling state it drives, in the database
@@ -77,7 +78,9 @@ class ReviewLog {
   /// that still holds. In one transaction, so the cache is never seen
   /// half-built. This is the proof that the log is enough, and the path a
   /// change of algorithm will take.
-  Future<void> rebuildStates() => _db.transaction(() async {
+  Future<void> rebuildStates() => _db.transaction(_rebuild);
+
+  Future<void> _rebuild() async {
     final states = (await _replay()).states;
     await _db.cardStatesDao.clear();
     await _db.batch((b) {
@@ -85,6 +88,65 @@ class ReviewLog {
         for (final MapEntry(:key, :value) in states.entries) value.toRow(key),
       ]);
     });
+  }
+
+  /// Merges a backup (#20): appends the reviews and leech actions the log
+  /// does not already hold, then rebuilds `card_states` from the whole log,
+  /// in one transaction. A review is the same review when its pair and
+  /// moment match ([reviewIdentity]), so importing a backup twice adds
+  /// nothing the second time. Returns how many reviews were new.
+  ///
+  /// A new row's interval and ease columns are what replaying the merged
+  /// log gives at that review. Rows already there keep theirs: those
+  /// columns record what was computed when the row was written, and the
+  /// state is always rebuilt from the grades.
+  Future<int> importAll(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions,
+  ) => _db.transaction(() async {
+    final existing = inTimeOrder(<LoggedReview>[
+      for (final row in await _db.reviewsDao.all()) _logged(row),
+    ]);
+    final known = <String>{for (final r in existing) reviewIdentity(r)};
+    final fresh = <LoggedReview>[
+      for (final r in reviews)
+        if (known.add(reviewIdentity(r))) r,
+    ];
+    final knownActions = <String>{
+      for (final a in await _db.leechActionsDao.all()) leechIdentity(a),
+    };
+    for (final a in leechActions) {
+      if (knownActions.add(leechIdentity(a))) {
+        await _db.leechActionsDao.append(a);
+      }
+    }
+    if (fresh.isNotEmpty) {
+      final merged = replayReviews(
+        inTimeOrder(<LoggedReview>[...existing, ...fresh]),
+        effects: LeechEffects(await _actions()),
+      );
+      final isFresh = <String>{for (final r in fresh) reviewIdentity(r)};
+      for (final event in merged.events) {
+        if (!isFresh.contains(reviewIdentity(logged(event)))) continue;
+        await _db.reviewsDao.append(
+          ReviewsCompanion.insert(
+            ts: event.at,
+            deckId: event.deckId,
+            cardId: event.cardId,
+            mode: event.mode,
+            grade: event.grade,
+            elapsedMs: event.elapsed.inMilliseconds,
+            answerGiven: Value(event.answerGiven),
+            intervalBefore: Value(event.before?.intervalDays),
+            intervalAfter: event.after.intervalDays,
+            easeBefore: Value(event.before?.easeFactor),
+            easeAfter: event.after.easeFactor,
+          ),
+        );
+      }
+    }
+    await _rebuild();
+    return fresh.length;
   });
 
   /// Appends [action] and brings its pair's state in `card_states` in line
@@ -107,14 +169,22 @@ class ReviewLog {
   });
 
   Future<({List<ReviewEvent> events, Map<ProgressKey, Sm2State> states})>
-  _replay() async => replayReviews(<LoggedReview>[
-    for (final row in await _db.reviewsDao.all())
-      (
-        key: (deckId: row.deckId, cardId: row.cardId, mode: row.mode),
-        at: row.ts,
-        grade: row.grade,
-        elapsed: Duration(milliseconds: row.elapsedMs),
-        answerGiven: row.answerGiven,
-      ),
-  ], effects: LeechEffects(await _db.leechActionsDao.all()));
+  _replay() async => replayReviews(
+    inTimeOrder(<LoggedReview>[
+      for (final row in await _db.reviewsDao.all()) _logged(row),
+    ]),
+    effects: LeechEffects(await _actions()),
+  );
+
+  /// Every leech action, oldest first.
+  Future<List<LeechAction>> _actions() async =>
+      actionsInTimeOrder(await _db.leechActionsDao.all());
 }
+
+LoggedReview _logged(ReviewRow row) => (
+  key: (deckId: row.deckId, cardId: row.cardId, mode: row.mode),
+  at: row.ts,
+  grade: row.grade,
+  elapsed: Duration(milliseconds: row.elapsedMs),
+  answerGiven: row.answerGiven,
+);

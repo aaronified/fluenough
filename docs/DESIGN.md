@@ -58,6 +58,12 @@ aside, Bring back (migration 3). Append-only and guarded like `reviews`.
 Replaying the log reads it: a pair restarts after a reset that still holds,
 and a set-aside pair is left out of every session. No review is touched.
 
+**Backup.** Settings → Export review log writes both logs as one JSONL file,
+and Import merges such a file back, adding only the reviews not already
+there and rebuilding `card_states` from the whole log. The log replays by
+time, so older history imported onto a new phone takes its place. See
+[LOG-FORMAT.md](LOG-FORMAT.md).
+
 ## The review cycle
 
 1. `Scheduler.dueCards(deck, mode, limit)` queries `card_states` for
