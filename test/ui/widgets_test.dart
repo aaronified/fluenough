@@ -1,3 +1,5 @@
+import 'dart:ui' show LocaleStringAttribute;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -130,6 +132,24 @@ void main() {
     expect(text.style!.height, TargetSizes.rtlHeight);
     expect(text.style!.fontSize, 64, reason: 'four graphemes');
   });
+
+  testWidgets(
+    'a screen reader reads TargetText in the deck\'s language (#26)',
+    (tester) async {
+      final semantics = tester.ensureSemantics();
+      await pumpScreen(
+        tester,
+        const Scaffold(body: TargetText.hero('کتاب', language: urdu)),
+      );
+      final label = tester.getSemantics(find.text('کتاب')).attributedLabel;
+      expect(label.string, 'کتاب');
+      expect(
+        label.attributes.whereType<LocaleStringAttribute>().single.locale,
+        const Locale('ur'),
+      );
+      semantics.dispose();
+    },
+  );
 
   test('target sizes step down with length and scale with the setting', () {
     expect(TargetSizes.forText('あ'), 96);
