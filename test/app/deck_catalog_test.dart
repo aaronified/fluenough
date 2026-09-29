@@ -58,21 +58,64 @@ void main() {
           .whereType<File>()
           .map((f) => f.path.replaceAll(r'\', '/'))
           .where(AssetDeckSource.isDeckPath)
-          .where((p) => !DeckCatalog.isFactsFile(File(p).readAsStringSync()))
+          // Facts, themes and number rules sit beside the decks but are
+          // not decks.
+          .where(
+            (p) => !{
+              'facts',
+              'themes',
+              'numbers',
+            }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
+          )
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
       expect(catalog.decks.map((d) => d.path).toSet(), onDisk);
     });
 
-    test('includes the known decks, in path order', () {
+    test('each language with number decks has its number rules (#54)', () {
+      expect(catalog.numberRules.keys, containsAll(<String>['hi', 'bn', 'te']));
+      expect(catalog.numberRules['te']!.tensAndUnits, isTrue);
+      expect(catalog.numberRules['hi']!.tensAndUnits, isFalse);
+    });
+
+    test('the shared theme path is bundled and read', () {
+      expect(catalog.themes.first.id, 'first-words');
+      expect(catalog.themes.map((t) => t.id), contains('market'));
+      expect(catalog.themeById('groceries')!.name, 'Groceries');
+    });
+
+    test('includes the known decks, in path order, each course\'s theme '
+        'decks in theme order', () {
       final ids = catalog.decks.map((d) => d.id).toList();
       expect(
         ids,
         containsAll(['es-core-100', 'es-grammar-present-ar', 'ja-hiragana']),
       );
       final paths = catalog.decks.map((d) => d.path).toList();
-      expect(paths, [...paths]..sort());
+      expect(paths.toSet(), hasLength(paths.length));
+      final others = [
+        for (final d in catalog.decks)
+          if (d.deck.theme == null) d.path,
+      ];
+      expect(others, [...others]..sort());
+
+      final path = [for (final t in catalog.themes) t.id];
+      final courses = <String, List<String>>{};
+      for (final d in catalog.decks) {
+        final theme = d.deck.theme;
+        if (theme == null) continue;
+        courses
+            .putIfAbsent('${d.language.code}-${d.deck.native.code}', () => [])
+            .add(theme);
+      }
+      expect(courses, contains('hi-en'));
+      for (final MapEntry(key: course, value: themes) in courses.entries) {
+        expect(themes, [
+          for (final t in path)
+            if (themes.contains(t)) t,
+        ], reason: course);
+      }
     });
 
     test('a grammar deck is listed with its pattern, expanded to cards', () {
@@ -98,6 +141,16 @@ void main() {
   });
 
   group('parseAll', () {
+    test('a broken numbers file is a broken row, not a crash', () {
+      final catalog = DeckCatalog.parseAll({
+        'decks/es/es-mini.yaml': miniDeck,
+        'decks/xx/xx-numbers.yaml': 'schema: 1\nkind: numbers\nid: xx\n',
+      });
+      expect(catalog.decks.map((d) => d.id), ['xx-mini']);
+      expect(catalog.numberRules, isEmpty);
+      expect(catalog.broken.single.fileName, 'xx-numbers.yaml');
+    });
+
     test('skips a facts file, by its kind rather than its name', () {
       final catalog = DeckCatalog.parseAll({
         'decks/es/es-mini.yaml': miniDeck,
@@ -175,6 +228,72 @@ void main() {
       final paths = await AssetDeckSource(rootBundle).list();
       expect(paths, contains('decks/es/es-core-100.yaml'));
       expect(paths.every(AssetDeckSource.isDeckPath), isTrue);
+    });
+  });
+
+  group('themes', () {
+    const themes = '''
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+  - { id: help, name: "Help" }
+''';
+
+    String deck(String id, {String? theme, String lang = 'hi'}) =>
+        '''
+schema: 1
+id: $id
+name: "$id"
+${theme == null ? '' : 'theme: $theme'}
+language: { code: $lang, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: $id-0001
+    target: "नमस्ते"
+    native: "hello"
+''';
+
+    test(
+      'a course\'s theme decks follow the path; the rest keep path order',
+      () {
+        final catalog = DeckCatalog.parseAll({
+          'decks/themes.yaml': themes,
+          'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
+          'decks/hi/hi-en-help.yaml': deck('hi-en-help', theme: 'help'),
+          'decks/hi/hi-en-first-words.yaml': deck(
+            'hi-en-first-words',
+            theme: 'first-words',
+          ),
+          'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+          'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
+        });
+        expect(catalog.broken, isEmpty);
+        expect(catalog.themes.map((t) => t.id), [
+          'first-words',
+          'market',
+          'help',
+        ]);
+        expect(catalog.decks.map((d) => d.id), [
+          'hi-en-core',
+          'hi-en-first-words',
+          'hi-en-market',
+          'hi-en-help',
+          'ja-en-kana',
+        ]);
+      },
+    );
+
+    test('a broken themes file is reported, not fatal', () {
+      final catalog = DeckCatalog.parseAll({
+        'decks/themes.yaml': 'schema: 1\nkind: themes\nthemes: []\n',
+        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+      });
+      expect(catalog.broken.single.path, 'decks/themes.yaml');
+      expect(catalog.decks.single.deck.theme, 'market');
+      expect(catalog.themes, isEmpty);
     });
   });
 }

@@ -42,7 +42,23 @@ Future<void> scrollTo(WidgetTester tester, Finder finder) async {
 }
 
 void main() {
-  testWidgets('as shipped, the tab shows that Progress is incoming', (
+  testWidgets('with stats switched off, the tab shows that they are incoming', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const StatsPage(),
+      state: await fixture(features: const FeatureRegistry.only(<Feature>{})),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.statsIncomingTitle), findsOneWidget);
+    expect(find.text(l10n.statsIncomingBody), findsOneWidget);
+    expect(find.text(l10n.incomingBadge), findsOneWidget);
+    expect(find.byType(StatTile), findsNothing);
+  });
+
+  testWidgets('as shipped, the tab shows the numbers from the log', (
     tester,
   ) async {
     usePhone(tester);
@@ -52,10 +68,8 @@ void main() {
       state: await fixture(features: const FeatureRegistry.shipped()),
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.statsIncomingTitle), findsOneWidget);
-    expect(find.text(l10n.statsIncomingBody), findsOneWidget);
-    expect(find.text(l10n.incomingBadge), findsOneWidget);
-    expect(find.byType(StatTile), findsNothing);
+    expect(find.text(l10n.statsIncomingTitle), findsNothing);
+    expect(find.byType(StatTile), findsWidgets);
   });
 
   testWidgets('with no reviews it says so', (tester) async {
