@@ -619,6 +619,38 @@
       }
     }
   },
+  "decksCourseHeading": "{language} from {native}",
+  "@decksCourseHeading": {
+    "description": "Heading over a course's theme decks on the Decks tab, such as 'Hindi from English'.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "native": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "deckMetaTheme": "Theme {position} · {learned} of {count} learned",
+  "@deckMetaTheme": {
+    "description": "Second line of a theme deck's row: its place on the path, and how many of its cards are learned.",
+    "placeholders": {
+      "position": {
+        "type": "int",
+        "example": "7"
+      },
+      "learned": {
+        "type": "int",
+        "example": "3"
+      },
+      "count": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
   "deckMetaImported": "{language} ({code}) · {count, plural, =1{1 card} other{{count} cards}} · Imported",
   "@deckMetaImported": {
     "description": "Second line of a row for a deck the learner imported.",
