@@ -6,10 +6,12 @@ import 'package:yaml/yaml.dart';
 
 import '../core/data/deck_parser.dart';
 import '../core/data/facts_parser.dart';
+import '../core/data/number_rules_parser.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
+import '../core/models/number_rules.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -157,13 +159,19 @@ class Catalog {
     required List<BrokenDeck> broken,
     List<DeckTheme> themes = const <DeckTheme>[],
     Map<String, FactsFile> facts = const <String, FactsFile>{},
+    Map<String, NumberRules> numberRules = const <String, NumberRules>{},
   }) : decks = List<DeckEntry>.unmodifiable(decks),
        broken = List<BrokenDeck>.unmodifiable(broken),
        themes = List<DeckTheme>.unmodifiable(themes),
-       facts = Map<String, FactsFile>.unmodifiable(facts);
+       facts = Map<String, FactsFile>.unmodifiable(facts),
+       numberRules = Map<String, NumberRules>.unmodifiable(numberRules);
 
   /// Each language's daily facts (#48), by language code.
   final Map<String, FactsFile> facts;
+
+  /// Each language's rules for spelling a generated number (#54), by
+  /// language code. A language without a numbers file has none.
+  final Map<String, NumberRules> numberRules;
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
@@ -241,6 +249,7 @@ class DeckCatalog {
     final broken = <BrokenDeck>[];
     var themes = const <DeckTheme>[];
     final facts = <String, FactsFile>{};
+    final numberRules = <String, NumberRules>{};
     final firstPath = <String, String>{};
     final paths = files.keys.toList()..sort();
     for (final path in paths) {
@@ -250,6 +259,15 @@ class DeckCatalog {
         try {
           final file = parseFacts(text, source: path.split('/').last);
           facts.putIfAbsent(file.languageCode, () => file);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'numbers') {
+        try {
+          final rules = parseNumberRules(text, source: path.split('/').last);
+          numberRules.putIfAbsent(rules.language.code, () => rules);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
         }
@@ -291,6 +309,7 @@ class DeckCatalog {
       broken: broken,
       themes: themes,
       facts: facts,
+      numberRules: numberRules,
     );
   }
 
