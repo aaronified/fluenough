@@ -9,9 +9,11 @@ publishes nothing.
 its password, means no installed copy can ever be upgraded, and Android
 offers no recovery.
 
-## 1. Find `keytool`
+## 1. Get `keytool`
 
-It ships with Java. With Android Studio on Windows:
+It ships with Java 17 or later.
+
+**Windows.** Android Studio includes it:
 
 ```
 "C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe"
@@ -19,14 +21,46 @@ It ships with Java. With Android Studio on Windows:
 
 Otherwise use the `bin` folder of any JDK 17 or later.
 
+**Ubuntu.**
+
+```sh
+sudo apt install openjdk-21-jre-headless
+keytool -help   # checks it is on the PATH
+```
+
+**Bazzite** (and other immutable Fedoras). Do not layer Java onto the base
+image. Use the same distrobox as DEVELOPMENT.md; if you already set it up,
+`keytool` is in it:
+
+```sh
+distrobox create --name fluenough-dev --image fedora:latest   # once
+distrobox enter fluenough-dev
+sudo dnf install java-21-openjdk-headless
+```
+
+The container shares your home folder, so the keystore it writes is on the
+host too.
+
 ## 2. Generate the keystore
 
-In PowerShell, from a folder **outside** the repository:
+From a folder **outside** the repository.
+
+**Windows**, in PowerShell:
 
 ```powershell
 & "C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe" -genkeypair -v `
   -keystore fluenough-release.jks -alias fluenough `
   -keyalg RSA -keysize 4096 -validity 10000
+```
+
+**Ubuntu and Bazzite** (on Bazzite, inside the distrobox):
+
+```sh
+mkdir -p ~/keys && cd ~/keys
+keytool -genkeypair -v \
+  -keystore fluenough-release.jks -alias fluenough \
+  -keyalg RSA -keysize 4096 -validity 10000
+chmod 600 fluenough-release.jks
 ```
 
 `keytool` asks for a keystore password: you make one up. Use a long random
@@ -46,10 +80,30 @@ outside the folder it cannot be committed at all (AGENTS.md rule 4).
 
 ## 4. Turn the keystore into a secret
 
-This copies it, base64-encoded, to the clipboard:
+Copy it, base64-encoded on one line, to the clipboard.
+
+**Windows**, in PowerShell:
 
 ```powershell
 [Convert]::ToBase64String([IO.File]::ReadAllBytes("fluenough-release.jks")) | Set-Clipboard
+```
+
+**Ubuntu and Bazzite.** Both desktops run Wayland by default, where
+`wl-copy` reaches the clipboard (`sudo apt install wl-clipboard` on Ubuntu;
+`sudo dnf install wl-clipboard` in the Bazzite distrobox):
+
+```sh
+base64 -w0 ~/keys/fluenough-release.jks | wl-copy
+```
+
+On an X11 session, use `xclip -selection clipboard` in place of `wl-copy`.
+Without either, write it to a file, open it in a text editor, copy
+everything, then delete the file:
+
+```sh
+base64 -w0 ~/keys/fluenough-release.jks > /tmp/keystore.b64
+# copy its contents, then:
+shred -u /tmp/keystore.b64
 ```
 
 ## 5. Add the four secrets
