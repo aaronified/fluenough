@@ -1,0 +1,86 @@
+schema: 1
+id: bn-en-directions
+name: "Directions"
+kind: vocab
+theme: directions
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Left, right, straight on, and asking where something is."
+tags: [beginner]
+cards:
+  - id: bn-en-directions-0001
+    target: "… কোথায়?"
+    native: "Where is …?"
+    reading: "… kothay?"
+    pos: "phrase"
+    notes: "Put the place first: স্টেশনটা কোথায়? Where's the station?"
+  - id: bn-en-directions-0002
+    target: "ডান"
+    native: "right (side)"
+    reading: "dan"
+    pos: "adj"
+    notes: "ডান দিকে (dan dike), to the right."
+  - id: bn-en-directions-0003
+    target: "বাঁ"
+    native: "left (side)"
+    reading: "ban"
+    alt_target: ["বাম"]
+    pos: "adj"
+    notes: "বাঁ দিকে (ban dike), to the left. Also বাম (bam)."
+  - id: bn-en-directions-0004
+    target: "সোজা"
+    native: "straight on"
+    reading: "shoja"
+    pos: "adv"
+  - id: bn-en-directions-0005
+    target: "ঘুরুন"
+    native: "please turn"
+    reading: "ghurun"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "ডান দিকে ঘুরুন, turn right."
+  - id: bn-en-directions-0006
+    target: "সামনে"
+    native: "ahead; in front"
+    reading: "shamne"
+    pos: "adv"
+  - id: bn-en-directions-0007
+    target: "পিছনে"
+    native: "behind; at the back"
+    reading: "pichhone"
+    alt_target: ["পেছনে"]
+    pos: "adv"
+  - id: bn-en-directions-0008
+    target: "কাছে"
+    native: "near"
+    reading: "kachhe"
+    pos: "adv"
+    notes: "স্টেশনের কাছে, near the station."
+  - id: bn-en-directions-0009
+    target: "দূরে"
+    native: "far"
+    reading: "dure"
+    pos: "adv"
+    notes: "কত দূর? How far is it?"
+  - id: bn-en-directions-0010
+    target: "এখানে"
+    native: "here"
+    reading: "ekhane"
+    pos: "adv"
+  - id: bn-en-directions-0011
+    target: "ওখানে"
+    native: "there"
+    reading: "okhane"
+    pos: "adv"
+  - id: bn-en-directions-0012
+    target: "রাস্তা"
+    native: "road; way"
+    reading: "rasta"
+    pos: "noun"
+  - id: bn-en-directions-0013
+    target: "মোড়"
+    native: "crossing; corner"
+    reading: "mor"
+    pos: "noun"
+    notes: "Kolkata gives directions by its crossings: শ্যামবাজার মোড়, the Shyambazar crossing."
