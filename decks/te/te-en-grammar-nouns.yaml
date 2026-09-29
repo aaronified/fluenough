@@ -1,0 +1,56 @@
+schema: 1
+id: te-en-grammar-nouns
+name: "Nouns: plural and case"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The plural, and the endings for 'in', 'to' and 'from', often on a changed stem. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  slots: ["plural", "in: -లో", "to: -కి or -కు", "from: నుంచి"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "-లు makes a plural. Before an ending, many nouns take an oblique stem: ఇల్లు becomes ఇంటి- (ఇంటికి, to the house), and a noun in -ం takes -ఆని- (పుస్తకానికి)."
+  entries:
+    - lemma: "ఇల్లు"
+      key: illu
+      gloss: "house"
+      forms:
+        "plural": "ఇళ్ళు"
+        "in: -లో": "ఇంట్లో"
+        "to: -కి or -కు": "ఇంటికి"
+        "from: నుంచి": "ఇంటి నుంచి"
+    - lemma: "పుస్తకం"
+      key: pustakam
+      gloss: "book"
+      forms:
+        "plural": "పుస్తకాలు"
+        "in: -లో": "పుస్తకంలో"
+        "to: -కి or -కు": "పుస్తకానికి"
+        "from: నుంచి": "పుస్తకం నుంచి"
+    - lemma: "దుకాణం"
+      key: dukaanam
+      gloss: "shop"
+      forms:
+        "plural": "దుకాణాలు"
+        "in: -లో": "దుకాణంలో"
+        "to: -కి or -కు": "దుకాణానికి"
+        "from: నుంచి": "దుకాణం నుంచి"
+    - lemma: "గది"
+      key: gadi
+      gloss: "room"
+      forms:
+        "plural": "గదులు"
+        "in: -లో": "గదిలో"
+        "to: -కి or -కు": "గదికి"
+        "from: నుంచి": "గది నుంచి"
+    - lemma: "బస్సు"
+      key: bassu
+      gloss: "bus"
+      forms:
+        "plural": "బస్సులు"
+        "in: -లో": "బస్సులో"
+        "to: -కి or -కు": "బస్సుకి"
+        "from: నుంచి": "బస్సు నుంచి"

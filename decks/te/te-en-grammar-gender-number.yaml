@@ -1,0 +1,43 @@
+schema: 1
+id: te-en-grammar-gender-number
+name: "Gender and number"
+kind: vocab
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Men, women and things in the third person, and the plural. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - id: te-en-grammar-gender-number-0001
+    target: "అతను వచ్చాడు."
+    native: "He came."
+    reading: "atanu vachchaadu."
+    pos: "phrase"
+  - id: te-en-grammar-gender-number-0002
+    target: "ఆమె వచ్చింది."
+    native: "She came."
+    reading: "aame vachchindi."
+    pos: "phrase"
+    notes: "In the third person a woman takes the same verb form as a thing: ఆమె వచ్చింది, అది వచ్చింది. Only men have a form of their own."
+  - id: te-en-grammar-gender-number-0003
+    target: "అది వచ్చింది."
+    native: "It came."
+    reading: "adi vachchindi."
+    pos: "phrase"
+  - id: te-en-grammar-gender-number-0004
+    target: "వాళ్ళు వచ్చారు."
+    native: "They came."
+    reading: "vaallu vachchaaru."
+    pos: "phrase"
+  - id: te-en-grammar-gender-number-0005
+    target: "పిల్లలు ఆడుతున్నారు."
+    native: "The children are playing."
+    reading: "pillalu aadutunnaaru."
+    pos: "phrase"
+    notes: "-లు makes a plural: పిల్ల → పిల్లలు."
+  - id: te-en-grammar-gender-number-0006
+    target: "మూడు పుస్తకాలు"
+    native: "three books"
+    reading: "muudu pustakaalu"
+    pos: "phrase"
+    notes: "After a number, the noun is plural."
