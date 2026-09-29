@@ -1,4 +1,3 @@
-import 'package:drift_flutter/drift_flutter.dart';
 import 'package:flutter/foundation.dart';
 
 import '../core/data/database.dart';
@@ -6,7 +5,6 @@ import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/sm2.dart';
 import 'memory_progress.dart';
-import 'profile.dart';
 
 /// A profile's progress, kept in its own database file (#3, #5) and read
 /// into memory when the app opens.
@@ -22,15 +20,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     _memory.addListener(notifyListeners);
   }
 
-  /// Opens [profile]'s database file, `fluenough-<id>.sqlite` in the app's
-  /// documents directory, one per profile.
-  static Future<DatabaseProgress> openFor(Profile profile) =>
-      open(AppDatabase(driftDatabase(name: fileNameFor(profile))));
-
-  /// The file [profile]'s progress lives in, without its extension.
-  static String fileNameFor(Profile profile) => 'fluenough-${profile.id}';
-
-  /// Progress over [db], which this object then owns: [close] closes it.
+  /// Progress over [db]. [close] closes the database.
   static Future<DatabaseProgress> open(AppDatabase db) async {
     final log = ReviewLog(db);
     await log.rebuildStates();

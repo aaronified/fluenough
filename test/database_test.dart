@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:drift/drift.dart' hide isNull, isNotNull;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -32,8 +34,8 @@ void main() {
     easeAfter: 2.6,
   );
 
-  test('opens at version 1 with the four tables', () async {
-    expect(db.schemaVersion, 1);
+  test('opens at version 2 with its five tables', () async {
+    expect(db.schemaVersion, 2);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -41,7 +43,44 @@ void main() {
         )
         .map((r) => r.read<String>('name'))
         .get();
-    expect(tables, <String>['card_states', 'cards', 'decks', 'reviews']);
+    expect(tables, <String>[
+      'card_states',
+      'cards',
+      'decks',
+      'reviews',
+      'settings',
+    ]);
+  });
+
+  test('a version 1 database upgrades to 2 and keeps its reviews', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/old.sqlite');
+
+    // Make a version 1 file: today's schema without what migration 2 adds.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await old.customStatement('DROP TABLE settings');
+    await old.customStatement('PRAGMA user_version = 1');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    await upgraded.settingsDao.put('speech_rate', '0.8');
+    expect(await upgraded.settingsDao.all(), {'speech_rate': '0.8'});
+    expect(await upgraded.reviewsDao.all(), hasLength(1));
+    await expectLater(
+      upgraded.customStatement('DELETE FROM reviews'),
+      throwsA(anything),
+      reason: 'the append-only triggers survive the upgrade',
+    );
+  });
+
+  test('settings: stored by name, replaced on a second write', () async {
+    await db.settingsDao.put('theme_mode', 'dark');
+    await db.settingsDao.put('theme_mode', 'light');
+    await db.settingsDao.put('seed', 'clay');
+    expect(await db.settingsDao.all(), {'theme_mode': 'light', 'seed': 'clay'});
   });
 
   test('decks: written, read back, and replaced by id', () async {

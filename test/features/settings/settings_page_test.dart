@@ -148,7 +148,6 @@ void main() {
       l10n.settingsSwitchProfile,
       l10n.skillGrammar,
       l10n.skillPair,
-      l10n.settingsAppearance,
       l10n.settingsAppLanguage,
       l10n.settingsReminder,
       l10n.settingsPinLock,
@@ -183,6 +182,17 @@ void main() {
     expect(settings.isEnabled(Skill.grammar), isTrue);
     expect(settings.reminder, isFalse);
     semantics.dispose();
+  });
+
+  testWidgets('Appearance is live and opens its screen', (tester) async {
+    usePhone(tester);
+    await pumpScreen(tester, const SettingsPage());
+    final l10n = l10nOf(tester);
+    final row = find.text(l10n.settingsAppearance);
+    await scrollTo(tester, row);
+    await tester.tap(row);
+    await tester.pumpAndSettle();
+    expect(find.byType(AppearancePage), findsOneWidget);
   });
 
   testWidgets('the app language picker lists every translation by its own '
