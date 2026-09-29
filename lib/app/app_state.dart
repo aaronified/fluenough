@@ -1,8 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
+import '../core/models/number_rules.dart';
+import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/tts/tts_engine.dart';
 import '../core/data/themes.dart';
@@ -363,6 +367,27 @@ class AppState extends ChangeNotifier {
       modes: modes,
     );
     return request.newOnly ? queue.withoutDue() : queue;
+  }
+
+  /// How numbers are spelled in [language], or null for a language with no
+  /// number rules (#54).
+  NumberRules? numberRulesFor(LanguageInfo language) =>
+      _catalog.numberRules[language.code];
+
+  /// Generated numbers to practise in [deck]'s language, in the skills the
+  /// learner has on, by ear only with a voice. Never recorded (ADR-0011).
+  List<SessionItem> numberPracticeFor(DeckEntry deck, {Random? random}) {
+    final rules = numberRulesFor(deck.language);
+    if (rules == null) return const <SessionItem>[];
+    return numberPractice(
+      rules,
+      deckId: deck.id,
+      modes: <DrillMode>{
+        for (final mode in sessionModes)
+          if (mode != DrillMode.listening || hasVoice(deck.language)) mode,
+      },
+      random: random ?? Random(),
+    );
   }
 
   /// A deck's due reviews, new pairs within today's allowance, and cards
