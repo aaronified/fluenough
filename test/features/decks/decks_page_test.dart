@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -21,6 +22,21 @@ List<String> shownDecks(WidgetTester tester) => tester
     .widgetList<DeckTile>(find.byType(DeckTile))
     .map((t) => t.entry.deck.name)
     .toList();
+
+/// A phone tall enough for the lazy list to build every bundled deck.
+void useTallPhone(WidgetTester tester) {
+  usePhone(tester);
+  tester.view.physicalSize = const Size(390 * 3, 4000 * 3);
+}
+
+/// Taps [chip] after scrolling the chip row to it.
+Future<void> tapChip(WidgetTester tester, String label) async {
+  final chip = find.widgetWithText(FilterChip, label);
+  await tester.ensureVisible(chip);
+  await tester.pumpAndSettle();
+  await tester.tap(chip);
+  await tester.pumpAndSettle();
+}
 
 Future<void> search(WidgetTester tester, String text) async {
   await tester.enterText(find.byType(TextField), text);
@@ -61,7 +77,7 @@ void main() {
   testWidgets('lists every bundled deck with what a session would drill', (
     tester,
   ) async {
-    usePhone(tester);
+    useTallPhone(tester);
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
     expect(state.decks, isNotEmpty);
@@ -83,12 +99,19 @@ void main() {
         findsOneWidget,
         reason: entry.id,
       );
+      // A theme deck's line is its place on the path and its progress.
+      final theme = state.themeOf(entry);
+      final meta = theme == null
+          ? DeckTile.metaFor(l10n, entry)
+          : l10n.deckMetaTheme(
+              state.themes.indexOf(theme) + 1,
+              state.progress.learnedIn(entry.id),
+              entry.itemCount,
+            );
       expect(
-        find.descendant(
-          of: tile,
-          matching: find.text(DeckTile.metaFor(l10n, entry)),
-        ),
+        find.descendant(of: tile, matching: find.text(meta)),
         findsOneWidget,
+        reason: entry.id,
       );
     }
   });
@@ -130,8 +153,7 @@ void main() {
       );
     }
 
-    await tester.tap(find.widgetWithText(FilterChip, 'Japanese'));
-    await tester.pumpAndSettle();
+    await tapChip(tester, 'Japanese');
     expect(shownDecks(tester), <String>[
       state.deckById('ja-hiragana')!.deck.name,
     ]);
@@ -140,8 +162,7 @@ void main() {
     await search(tester, 'core');
     expect(find.text(l10n.decksEmptySearch), findsOneWidget);
 
-    await tester.tap(find.widgetWithText(FilterChip, l10n.decksFilterAll));
-    await tester.pumpAndSettle();
+    await tapChip(tester, l10n.decksFilterAll);
     expect(shownDecks(tester), <String>[
       state.deckById('es-core-100')!.deck.name,
     ]);
@@ -150,7 +171,7 @@ void main() {
   testWidgets('a deck in a language the profile does not learn says Start', (
     tester,
   ) async {
-    usePhone(tester);
+    useTallPhone(tester);
     final state = await pumpDecks(
       tester,
       state: AppState.test(profiles: const [GalleryFixtures.mira]),
@@ -204,7 +225,7 @@ void main() {
   testWidgets('a deck opens its screen, and Add deck opens import', (
     tester,
   ) async {
-    usePhone(tester);
+    useTallPhone(tester);
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
 
