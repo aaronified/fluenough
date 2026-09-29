@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import 'canonical.dart';
+
 /// How close a typed answer was to the expected one.
 ///
 /// Deliberately not a boolean: the distinction drives both what the UI says
@@ -145,9 +147,10 @@ class AnswerGrader {
     return const GradedAnswer(AnswerOutcome.wrong, matched: null);
   }
 
-  /// Case folding, whitespace collapsing and terminal punctuation removal.
+  /// One spelling for text that looks the same ([canonical]), case folding,
+  /// whitespace collapsing and terminal punctuation removal.
   String _normalise(String input) {
-    var text = input.trim().toLowerCase();
+    var text = canonical(input).trim().toLowerCase();
     text = text.replaceAll(RegExp(r'\s+'), ' ');
     text = text.replaceAll(RegExp(r'''^[¿¡"'(\[]+|[.,!?;:"')\]]+$'''), '');
     return text.trim();
@@ -238,6 +241,10 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   'ae': 'æ',
   'oe': 'œ',
   'ss': 'ß',
+  // The nukta, which Devanagari and Bengali writers often leave off: ज for
+  // ज़. After [canonical] it is always a mark of its own, so dropping it is
+  // "right, but watch the nukta", not a miss.
+  '': '\u093C\u09BC',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {
