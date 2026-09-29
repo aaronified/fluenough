@@ -246,11 +246,11 @@ void main() {
     });
   });
 
-  test('progress is not saved while persistence is incoming', () async {
+  test('progress in memory is not saved, whatever the features say', () async {
     expect((await loaded()).progressIsSaved, isFalse);
     expect(
       (await loaded(features: FeatureRegistry.all())).progressIsSaved,
-      isTrue,
+      isFalse,
     );
   });
 
