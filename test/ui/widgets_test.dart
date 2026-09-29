@@ -9,6 +9,7 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/app_language_picker.dart';
 import 'package:fluenough/ui/widgets/expressive_shape.dart';
+import 'package:fluenough/ui/widgets/fluenough_mark.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/segmented.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
@@ -129,6 +130,36 @@ void main() {
     expect(text.locale, const Locale('ur'));
     expect(text.style!.height, TargetSizes.rtlHeight);
     expect(text.style!.fontSize, 64, reason: 'four graphemes');
+  });
+
+  test('the mark keeps the brand\'s colours, whatever the seed', () {
+    expect(FluenoughMark.colorsFor(Brightness.light), (
+      const Color(0xFF085231),
+      const Color(0xFFC2621D),
+    ));
+    expect(FluenoughMark.colorsFor(Brightness.dark), (
+      const Color(0xFFAEF2C6),
+      const Color(0xFFFFB68A),
+    ));
+  });
+
+  testWidgets('the mark is decorative: nothing for a screen reader', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    await pumpScreen(
+      tester,
+      const Scaffold(body: Center(child: FluenoughMark(size: 48))),
+    );
+    expect(tester.getSize(find.byType(FluenoughMark)), const Size.square(48));
+    expect(
+      find.descendant(
+        of: find.byType(FluenoughMark),
+        matching: find.byType(ExcludeSemantics),
+      ),
+      findsOneWidget,
+    );
+    semantics.dispose();
   });
 
   test('target sizes step down with length and scale with the setting', () {

@@ -58,6 +58,7 @@ committed:
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
 rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
+cp -R fluenough-brand/android/. android/app/src/main/res/   # the launcher icon
 flutter pub get
 ```
 
