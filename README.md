@@ -97,6 +97,16 @@ python3 tools/validate_decks.py decks/
 
 The validator needs only Python 3.11+ and PyYAML — no Flutter toolchain.
 
+### The Telugu decks have not been checked by a Telugu speaker
+
+The Hindi and Bengali decks are reviewed by a speaker before they ship.
+The Telugu decks (`decks/te/`) were written from published sources, and no
+Telugu speaker has checked them yet. Each one says so in its description and on its screen in
+the app. If you speak Telugu, please
+[report mistakes](https://github.com/aaronified/fluenough/issues) or send a
+fix; a review by a speaker is the most useful contribution the Telugu decks
+could get.
+
 ## Building
 
 You need the Flutter SDK (3.47+) and, for Android, a JDK and the Android SDK.
