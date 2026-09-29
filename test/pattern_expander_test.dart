@@ -109,4 +109,22 @@ pattern:
     expect(cell.entry.lemma, 'जाना');
     expect(cell.slot, 'मैं (f)');
   });
+
+  test('every bundled grammar card id is an ASCII id', () {
+    final files = Directory('decks')
+        .listSync(recursive: true)
+        .whereType<File>()
+        .where((f) => f.path.endsWith('.yaml'));
+    var grammarDecks = 0;
+    for (final file in files) {
+      final text = file.readAsStringSync();
+      if (!text.contains('kind: grammar')) continue;
+      final deck = DeckParser.parse(text, source: file.path);
+      grammarDecks++;
+      for (final card in expandPattern(deck)) {
+        expect(card.id, matches(RegExp(r'^[a-z0-9]+(-[a-z0-9]+)*$')));
+      }
+    }
+    expect(grammarDecks, greaterThan(1));
+  });
 }
