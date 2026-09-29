@@ -1,0 +1,56 @@
+schema: 1
+id: bn-en-grammar-past
+name: "Past tense"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I did, you went: the simple past, by person and respect."
+tags: [beginner, grammar]
+pattern:
+  name: "Simple past"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / ওরা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -লাম, -লি, -লে, -লেন, -ল, -লেন. যাওয়া takes a different stem: গেলাম. খাওয়া changes its vowel: খেলাম."
+  entries:
+    - lemma: "করা"
+      key: kora
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করলাম"
+        "তুই / তোরা": "করলি"
+        "তুমি / তোমরা": "করলে"
+        "আপনি / আপনারা": "করলেন"
+        "সে / ওরা": "করল"
+        "তিনি / তাঁরা": "করলেন"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": "গেলাম"
+        "তুই / তোরা": "গেলি"
+        "তুমি / তোমরা": "গেলে"
+        "আপনি / আপনারা": "গেলেন"
+        "সে / ওরা": "গেল"
+        "তিনি / তাঁরা": "গেলেন"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খেলাম"
+        "তুই / তোরা": "খেলি"
+        "তুমি / তোমরা": "খেলে"
+        "আপনি / আপনারা": "খেলেন"
+        "সে / ওরা": "খেল"
+        "তিনি / তাঁরা": "খেলেন"
+    - lemma: "বলা"
+      key: bola
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বললাম"
+        "তুই / তোরা": "বললি"
+        "তুমি / তোমরা": "বললে"
+        "আপনি / আপনারা": "বললেন"
+        "সে / ওরা": "বলল"
+        "তিনি / তাঁরা": "বললেন"

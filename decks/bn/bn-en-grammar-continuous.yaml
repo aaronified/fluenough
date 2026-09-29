@@ -1,0 +1,56 @@
+schema: 1
+id: bn-en-grammar-continuous
+name: "Present continuous"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I am doing, she is going: what is happening now."
+tags: [beginner, grammar]
+pattern:
+  name: "Present continuous"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / ওরা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ছি, -ছিস, -ছ, -ছেন, -ছে; a stem ending in a vowel takes -চ্ছ-: যাচ্ছি. করছ is also written করছো."
+  entries:
+    - lemma: "করা"
+      key: kora
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করছি"
+        "তুই / তোরা": "করছিস"
+        "তুমি / তোমরা": "করছ"
+        "আপনি / আপনারা": "করছেন"
+        "সে / ওরা": "করছে"
+        "তিনি / তাঁরা": "করছেন"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": "যাচ্ছি"
+        "তুই / তোরা": "যাচ্ছিস"
+        "তুমি / তোমরা": "যাচ্ছ"
+        "আপনি / আপনারা": "যাচ্ছেন"
+        "সে / ওরা": "যাচ্ছে"
+        "তিনি / তাঁরা": "যাচ্ছেন"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খাচ্ছি"
+        "তুই / তোরা": "খাচ্ছিস"
+        "তুমি / তোমরা": "খাচ্ছ"
+        "আপনি / আপনারা": "খাচ্ছেন"
+        "সে / ওরা": "খাচ্ছে"
+        "তিনি / তাঁরা": "খাচ্ছেন"
+    - lemma: "বলা"
+      key: bola
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বলছি"
+        "তুই / তোরা": "বলছিস"
+        "তুমি / তোমরা": "বলছ"
+        "আপনি / আপনারা": "বলছেন"
+        "সে / ওরা": "বলছে"
+        "তিনি / তাঁরা": "বলছেন"
