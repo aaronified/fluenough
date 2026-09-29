@@ -13,7 +13,7 @@ The `android/` and `ios/` folders are generated, not committed. Recreate them:
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
 rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
-cp -R fluenough-brand/android/. android/app/src/main/res/   # the launcher icon
+python3 tools/brand_android.py   # launcher icon, label and launch screen
 flutter pub get
 dart run build_runner build
 flutter run
