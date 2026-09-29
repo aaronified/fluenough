@@ -1,0 +1,77 @@
+schema: 1
+id: bn-en-market
+name: "Market"
+kind: vocab
+theme: market
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Asking the price, bargaining, paying: what a market stall needs."
+tags: [beginner]
+cards:
+  - id: bn-en-market-0001
+    target: "কত দাম?"
+    native: "How much is it?"
+    reading: "koto dam?"
+    pos: "phrase"
+    notes: "Also এটা কত? (eta koto?), how much is this?"
+  - id: bn-en-market-0002
+    target: "দাম"
+    native: "price"
+    reading: "dam"
+    pos: "noun"
+  - id: bn-en-market-0003
+    target: "টাকা"
+    native: "rupee; money"
+    reading: "taka"
+    pos: "noun"
+    notes: "In West Bengal the rupee is called টাকা, the same word Bangladesh uses for its own currency. একশো টাকা, a hundred rupees."
+  - id: bn-en-market-0004
+    target: "খুচরো"
+    native: "change; small notes and coins"
+    reading: "khuchro"
+    pos: "noun"
+    notes: "খুচরো আছে? Do you have change?"
+  - id: bn-en-market-0005
+    target: "দামি"
+    native: "expensive"
+    reading: "dami"
+    pos: "adj"
+    notes: "খুব দামি! It's very expensive! Adjectives never change for gender or number."
+  - id: bn-en-market-0006
+    target: "সস্তা"
+    native: "cheap"
+    reading: "shosta"
+    pos: "adj"
+  - id: bn-en-market-0007
+    target: "একটু কম করুন।"
+    native: "Please lower it a little."
+    reading: "ektu kom korun."
+    pos: "phrase"
+    tags: ["polite"]
+    notes: "The polite way to bargain. Bargaining is expected at markets, not in shops with fixed prices."
+  - id: bn-en-market-0008
+    target: "দোকান"
+    native: "shop"
+    reading: "dokan"
+    pos: "noun"
+  - id: bn-en-market-0009
+    target: "দিন"
+    native: "please give (me)"
+    reading: "din"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "The polite request form of দেওয়া (deoa, to give): এক কিলো দিন, a kilo, please. দিন also means 'day'."
+  - id: bn-en-market-0010
+    target: "কিলো"
+    native: "kilo"
+    reading: "kilo"
+    alt_target: ["কেজি"]
+    pos: "noun"
+    notes: "Also কেজি (keji). আধ কিলো (adh kilo) is half a kilo."
+  - id: bn-en-market-0011
+    target: "আর কিছু না।"
+    native: "Nothing else."
+    reading: "ar kichhu na."
+    pos: "phrase"
+    notes: "What you say when the shopkeeper asks আর কিছু? (anything else?)."

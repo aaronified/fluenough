@@ -69,6 +69,7 @@ class Deck {
     this.tags = const <String>[],
     this.authors = const <Author>[],
     this.source,
+    this.theme,
   });
 
   final String id;
@@ -92,6 +93,10 @@ class Deck {
   final List<String> tags;
   final List<Author> authors;
   final String? source;
+
+  /// The theme this deck teaches, by its id in `decks/themes.yaml`, such as
+  /// `market`. Null for a deck outside the theme path (ADR-0010).
+  final String? theme;
 
   int get cardCount => cards.length;
 
