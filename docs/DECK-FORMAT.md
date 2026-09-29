@@ -42,7 +42,7 @@ Common to every kind.
 | `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. This is the tag voices and the app key on. |
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
-| `script` | yes | One of `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `kana`, `han`, `hangul`, `thai`, `other`. |
+| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic` and `greek` expects a `reading` on each card. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
 
@@ -226,7 +226,7 @@ facts:
 ```
 
 A facts file has the usual header, except that it has **no `native`**: each
-fact carries its own text in every interface language it is written in. It has
+fact carries its own text in every language it is written in. It has
 `facts` in place of `cards`.
 
 ### Fact fields
@@ -234,17 +234,18 @@ fact carries its own text in every interface language it is written in. It has
 | Field | Required | Notes |
 |---|---|---|
 | `id` | yes | Unique within the file, `[a-z0-9-]+`, conventionally `<code>-fact-NNN`. **Never reuse or renumber**: the app remembers which facts a learner has seen by id. |
-| `text` | yes | The fact, keyed by interface-language code (the same codes as `code`): `{ en: ..., bn: ... }`. A learner sees the entry for their interface language. |
-| `contrast` | no | An interface-language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners using that interface language, and `text` must have an entry for it. |
+| `text` | yes | The fact, keyed by language code (the same codes as `code`): `{ en: ..., bn: ... }`. A learner sees it in each language they speak that it is written in. |
+| `contrast` | no | A language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners who speak that language, and `text` must have an entry for it. |
 | `tags` | no | What the fact is about, e.g. `[script]`, `[pronunciation]`, `[grammar]`, `[history]`. |
 | `source` | no | Where the fact can be checked. Give one whenever the fact is not common knowledge. |
 
 ### Rules
 
 - **At least 30 facts without a `contrast`.** These are true whatever the
-  learner's interface language is, a month of one fact a day, and the
+  learner speaks, a month of one fact a day, and the
   validator fails a file with fewer. Facts with a `contrast` are extra.
-- **Write every fact in every interface language the app ships, English first.**
+- **Write every fact in every language a learner can say they speak
+  (`assets/languages.yaml`: English, Bengali and Hindi), English first.**
   English, and any other language a fact is written in, gets a warning when
   fewer than 30 contrast-free facts are written in it, since its learners see
   only that many.
@@ -278,13 +279,19 @@ translation is beyond what an offline app should attempt.
 
 Automatically graded answers are normalised before comparison:
 
-1. Unicode NFC normalisation
+1. one spelling for text that looks the same: precomposed letters are
+   decomposed (Devanagari and Bengali nukta letters such as क़ and য়, and
+   Bengali and Telugu two-part vowel signs such as ো), Indic digits read as
+   0–9, and zero-width joiners are ignored. This is a table for the scripts
+   the app ships, not full Unicode NFC, which needs a package (#28); a new
+   script adds its rows to `lib/core/grading/canonical.dart`
 2. trim, collapse internal whitespace
 3. case folding
 4. strip terminal punctuation
 
-If that does not match, a second pass **also** strips diacritics (NFD, drop
-combining marks) and leading articles declared for the language. A match at
+If that does not match, a second pass **also** strips diacritics (the Latin
+accents, and the Devanagari and Bengali nukta) and leading articles declared
+for the language. A match at
 this stage counts as correct but the UI flags what was missed — the answer was
 right, the accent was not.
 

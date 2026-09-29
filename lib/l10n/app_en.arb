@@ -119,11 +119,11 @@
   "@commonListSeparator": {
     "description": "Placed between items when the app lists several names in a row, such as the languages a profile learns: \"Hindi, Spanish\". Keep any spacing your language uses."
   },
-  "commonNotSavedTitle": "Progress isn’t saved yet",
+  "commonNotSavedTitle": "Progress isn’t being saved",
   "@commonNotSavedTitle": {
     "description": "Banner title while this version keeps reviews in memory only."
   },
-  "commonNotSavedBody": "This version keeps your reviews in memory. They’re gone when the app closes.",
+  "commonNotSavedBody": "The app couldn’t open its database, so this session’s reviews are kept in memory and are gone when it closes.",
   "@commonNotSavedBody": {
     "description": "Banner body under commonNotSavedTitle."
   },
@@ -353,10 +353,6 @@
   "@newProfileNameHint": {
     "description": "Placeholder in the empty name field."
   },
-  "newProfileSpeaks": "I speak",
-  "@newProfileSpeaks": {
-    "description": "Label of the interface-language picker."
-  },
   "newProfileSpeaksHelp": "Menus follow this language when a translation exists. English until then.",
   "@newProfileSpeaksHelp": {
     "description": "Help under the I speak picker."
@@ -562,6 +558,16 @@
   "todayFactTitle": "Today’s fact",
   "@todayFactTitle": {
     "description": "Title of the daily fact card."
+  },
+  "todayFactFor": "Today’s fact · {language}",
+  "@todayFactFor": {
+    "description": "Title of the daily fact card for one language the learner studies (#48).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
   },
   "todayFactBody": "One short, true thing about a language you’re learning, each day.",
   "@todayFactBody": {
@@ -1780,6 +1786,42 @@
       }
     }
   },
+  "spokenTitle": "Languages you speak",
+  "@spokenTitle": {
+    "description": "Title of the screen where the learner picks and ranks the languages they speak, shown on first launch and from Settings."
+  },
+  "spokenBody": "Tick every language you know, then drag them into order, the one you know best first. They decide which comparisons and daily facts you see.",
+  "@spokenBody": {
+    "description": "Explanation on the spoken-languages screen."
+  },
+  "spokenOption": "{name} · {ownName}",
+  "@spokenOption": {
+    "description": "One language in the list: its English name and its name for itself, such as 'Bengali · বাংলা'.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "ownName": {
+        "type": "String",
+        "example": "বাংলা"
+      }
+    }
+  },
+  "spokenRank": "{rank}",
+  "@spokenRank": {
+    "description": "The rank shown beside a ticked language, 1 for the one known best.",
+    "placeholders": {
+      "rank": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "settingsSpoken": "Languages I speak",
+  "@settingsSpoken": {
+    "description": "Settings row that opens the spoken-languages screen."
+  },
   "settingsAppLanguage": "App language",
   "@settingsAppLanguage": {
     "description": "Picker: the interface language."
@@ -1851,7 +1893,7 @@
       }
     }
   },
-  "settingsExported": "Saved {file} to Downloads",
+  "settingsExported": "Saved {file}",
   "@settingsExported": {
     "description": "SnackBar after an export.",
     "placeholders": {
@@ -1860,6 +1902,10 @@
         "example": "fluenough-aro-reviews.jsonl"
       }
     }
+  },
+  "settingsExportFailed": "Couldn’t save the review log",
+  "@settingsExportFailed": {
+    "description": "SnackBar when saving the review log fails."
   },
   "settingsImport": "Import review log",
   "@settingsImport": {
@@ -1872,6 +1918,27 @@
   "settingsImportPick": "Pick a .jsonl file to merge",
   "@settingsImportPick": {
     "description": "Shown when choosing a file to import."
+  },
+  "settingsImported": "{count, plural, =0{Nothing new: every review was already here} =1{Added 1 review} other{Added {count} reviews}}",
+  "@settingsImported": {
+    "description": "SnackBar after an import. count is how many reviews were new.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "340",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "settingsImportFailed": "Couldn’t import: {reason}",
+  "@settingsImportFailed": {
+    "description": "SnackBar when a file is not a review log. reason is what is wrong with it, in English, such as 'line 3 is not JSON'.",
+    "placeholders": {
+      "reason": {
+        "type": "String",
+        "example": "line 3 is not JSON"
+      }
+    }
   },
   "settingsDeleteProfile": "Delete this profile",
   "@settingsDeleteProfile": {

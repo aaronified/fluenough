@@ -8,6 +8,7 @@ import '../features/gallery/gallery_page.dart';
 import '../features/profiles/new_profile_page.dart';
 import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
+import '../features/profiles/spoken_languages_page.dart';
 import '../features/settings/appearance_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/leeches_page.dart';
@@ -38,6 +39,7 @@ abstract final class AppRoutes {
 
   static const String leeches = '/leeches';
   static const String appearance = '/appearance';
+  static const String spokenLanguages = '/spoken-languages';
   static const String voices = '/voices';
   static const String profiles = '/profiles';
 
@@ -60,6 +62,7 @@ abstract final class AppRoutes {
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => const LeechesPage(),
       appearance => const AppearancePage(),
+      spokenLanguages => const SpokenLanguagesPage(),
       voices => const VoicesPage(),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -96,6 +99,9 @@ abstract final class AppNavigator {
 
   static Future<void> openAppearance(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.appearance);
+
+  static Future<void> openSpokenLanguages(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.spokenLanguages);
 
   static Future<void> openVoices(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.voices);

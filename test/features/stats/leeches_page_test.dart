@@ -74,7 +74,13 @@ void main() {
     final deck = state.deckById('es-core-100')!.deck.name;
     final skill = l10n.skillProduction;
     final before = List<ReviewEvent>.of(state.progress.log);
-    final statesBefore = Map.of(state.progress.states);
+    Map<ProgressKey, String> byValue() => {
+      for (final MapEntry(:key, :value) in state.progress.states.entries)
+        key:
+            '${value.repetitions} ${value.easeFactor} ${value.intervalDays} '
+            '${value.dueAt} ${value.lapses}',
+    };
+    final statesBefore = byValue();
     final actions = LeechActions.of(state.progress);
 
     Future<void> tap(String label) async {
@@ -120,7 +126,7 @@ void main() {
       LeechActionKind.bringBack,
     ]);
     expect(state.progress.log, orderedEquals(before), reason: 'rule 9');
-    expect(state.progress.states, statesBefore);
+    expect(byValue(), statesBefore, reason: 'undone and brought back');
   });
 
   testWidgets('with no leeches it says so', (tester) async {

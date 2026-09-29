@@ -80,7 +80,10 @@ void main() {
     final state = await pumpApp(
       tester,
       state: AppState.test(
-        settings: SettingsNotifier(themeMode: ThemeMode.dark),
+        settings: SettingsNotifier(
+          themeMode: ThemeMode.dark,
+          spokenLanguages: const <String>['en'],
+        ),
       ),
     );
     final context = tester.element(find.byType(TodayPage));
