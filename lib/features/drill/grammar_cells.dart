@@ -1,3 +1,4 @@
+import '../../core/data/pattern_expander.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/grammar_pattern.dart';
@@ -78,7 +79,7 @@ GrammarCell? grammarCellOf(Card card, Deck deck) {
   final pattern = deck.pattern;
   if (pattern == null) return null;
   for (final cell in grammarCells(pattern)) {
-    if ('${deck.id}-${cell.entry.lemma}-${cell.slotIndex}' == card.id) {
+    if (patternCardId(deck.id, cell.entry, cell.slotIndex) == card.id) {
       return cell;
     }
   }

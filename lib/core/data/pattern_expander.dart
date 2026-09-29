@@ -1,13 +1,16 @@
 import '../models/card.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
+import '../models/grammar_pattern.dart';
 
 /// One grammar deck's pattern table as cards: one per `(entry, slot)` cell
 /// that has a form (docs/DECK-FORMAT.md, "Expansion").
 ///
-/// - **id** `<deck-id>-<lemma>-<slot-index>`. The slot index is positional,
-///   so reordering a deck's `slots` rewrites every id and orphans history;
-///   that is the documented scheme, and this does not defend against it.
+/// - **id** [patternCardId]: `<deck-id>-<key>-<slot-index>`, where the key is
+///   the entry's `key`, or its lemma when it has none. The slot index is
+///   positional, so reordering a deck's `slots` rewrites every id and orphans
+///   history; that is the documented scheme, and this does not defend
+///   against it.
 /// - **target** the cell's form; **native** the prompt with `{lemma}`,
 ///   `{gloss}` and `{slot}` filled in; **notes** the pattern's notes, shown
 ///   after answering; **modes** `grammar` only.
@@ -22,7 +25,7 @@ List<Card> expandPattern(Deck deck) {
       for (final (i, slot) in pattern.slots.indexed)
         if (entry.forms[slot] case final form?)
           Card(
-            id: '${deck.id}-${entry.lemma}-$i',
+            id: patternCardId(deck.id, entry, i),
             deckId: deck.id,
             target: form,
             native: pattern.prompt.replaceAllMapped(
@@ -38,5 +41,11 @@ List<Card> expandPattern(Deck deck) {
           ),
   ];
 }
+
+/// The id of the card [deckId]'s pattern expands from [entry] at slot
+/// [slotIndex]. The one place the scheme is written, so that the drill finds
+/// a card's cell by the same id the expander gave it.
+String patternCardId(String deckId, PatternEntry entry, int slotIndex) =>
+    '$deckId-${entry.idPart}-$slotIndex';
 
 final RegExp _placeholder = RegExp(r'\{(lemma|gloss|slot)\}');
