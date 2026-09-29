@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="fluenough-brand/fluenough-lockup-dark.svg">
+  <img src="fluenough-brand/fluenough-lockup.svg" alt="" width="320">
+</picture>
+
 # Fluenough
 
 *Fluent enough.*
@@ -8,8 +13,8 @@ entirely offline on your phone.
 
 > **Status: early development.** The architecture, deck format, example
 > decks, deck parser and validator are in, and the app's screens are built
-> from the design. Progress is kept in memory until the database lands, and
-> features not built yet are shown disabled, marked "Feature incoming". See
+> from the design. Progress is saved on the phone, one database per profile,
+> and features not built yet are shown disabled, marked "Feature incoming". See
 > [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Why "language-agnostic"
@@ -91,6 +96,16 @@ python3 tools/validate_decks.py decks/
 ```
 
 The validator needs only Python 3.11+ and PyYAML — no Flutter toolchain.
+
+### The Telugu decks have not been checked by a Telugu speaker
+
+The Hindi and Bengali decks are reviewed by a speaker before they ship.
+The Telugu decks (`decks/te/`) were written from published sources, and no
+Telugu speaker has checked them yet. Each one says so in its description and on its screen in
+the app. If you speak Telugu, please
+[report mistakes](https://github.com/aaronified/fluenough/issues) or send a
+fix; a review by a speaker is the most useful contribution the Telugu decks
+could get.
 
 ## Building
 

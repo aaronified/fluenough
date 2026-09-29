@@ -9,4 +9,7 @@ abstract final class AppLinks {
   /// Devanagari, kana, Urdu and many more (#25).
   static const String heliboard =
       'https://f-droid.org/packages/helium314.keyboard/';
+
+  /// Where a mistake in a deck is reported: the project's issues.
+  static const String issues = 'https://github.com/aaronified/fluenough/issues';
 }

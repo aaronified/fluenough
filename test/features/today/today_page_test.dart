@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 
 import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/session.dart';
@@ -18,7 +17,6 @@ import 'package:fluenough/features/today/today_fixtures.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
-import 'package:fluenough/ui/widgets/incoming.dart';
 
 import '../../support/harness.dart';
 
@@ -149,10 +147,7 @@ void main() {
     expect(find.text(l10n.commonNotSavedTitle), findsOneWidget);
     expect(find.text(l10n.commonNotSavedBody), findsOneWidget);
 
-    await pumpToday(
-      tester,
-      state: AppState.test(features: FeatureRegistry.all()),
-    );
+    await pumpToday(tester, state: AppState.test(progress: _SavedProgress()));
     expect(find.text(l10n.commonNotSavedTitle), findsNothing);
   });
 
@@ -253,28 +248,18 @@ void main() {
     );
   });
 
-  testWidgets('switch profile and the daily fact are incoming', (tester) async {
+  testWidgets('switch profile is incoming', (tester) async {
     usePhone(tester);
     await pumpToday(tester);
     final l10n = l10nOf(tester);
-    for (final label in <String>[
-      l10n.todaySwitchProfile,
-      l10n.todayFactTitle,
-    ]) {
-      expect(
-        find.bySemanticsLabel(l10n.incomingSemanticsLabel(label)),
-        findsOneWidget,
-        reason: label,
-      );
-    }
-    await tapVisible(
-      tester,
-      find.ancestor(
-        of: find.text(l10n.todayFactTitle),
-        matching: find.byType(IncomingFeature),
-      ),
+    final node = find.bySemanticsLabel(
+      l10n.incomingSemanticsLabel(l10n.todaySwitchProfile),
     );
+    expect(node, findsOneWidget);
+    await tapVisible(tester, node);
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
+    // The bundled decks have no facts file yet, so no fact card either.
+    expect(find.text(l10n.todayFactTitle), findsNothing);
   });
 
   testWidgets('a profile with no decks in its languages is sent to Decks', (
@@ -332,4 +317,10 @@ void main() {
     expect(find.text(l10n.commonDecksFailed), findsNothing);
     expect(find.byType(DeckTile), findsWidgets);
   });
+}
+
+/// Progress that says it outlives the app, as the database's does.
+class _SavedProgress extends MemoryProgress {
+  @override
+  bool get persists => true;
 }
