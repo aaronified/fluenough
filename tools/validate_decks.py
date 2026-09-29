@@ -34,10 +34,16 @@ ISO639_3_RE = re.compile(r"[a-z]{3}")
 # learner's interface language is: a month of one fact a day.
 MIN_FACTS = 30
 
+# The scripts the validator knows (ADR-0009). Any other lowercase name is
+# accepted with a warning: the field is a hint, and a new language must not
+# need a change here to be valid.
 SCRIPTS = {
     "latin", "cyrillic", "greek", "arabic", "hebrew",
-    "devanagari", "kana", "han", "hangul", "thai", "other",
+    "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
+    "telugu", "tamil", "kannada", "malayalam", "sinhala",
+    "kana", "han", "hangul", "thai", "other",
 }
+SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
 KINDS = {"vocab", "grammar", "facts", "themes"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 MODES = {"recognition", "production", "listening", "grammar"}
@@ -157,8 +163,14 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
     # `native` needs only code and name, but whatever else it declares is
     # checked like `language`: the app's parser reads those fields either way.
     script = block.get("script")
-    if (full or script is not None) and script not in SCRIPTS:
-        r.error(where, f"script must be one of {sorted(SCRIPTS)}, got {script!r}")
+    if full or script is not None:
+        if not _is_str(script) or not SCRIPT_RE.fullmatch(script):
+            r.error(where, f"script must be a lowercase script name, such as "
+                           f"'devanagari', got {script!r}")
+        elif script not in SCRIPTS:
+            r.warn(where, f"script {script!r} is not one the validator knows "
+                          f"({', '.join(sorted(SCRIPTS))}); it is accepted, "
+                          f"and a reading is expected on every card")
     tts = block.get("tts")
     if tts is not None and (not _is_str(tts) or not BCP47_RE.fullmatch(tts)):
         r.error(where, f"tts must be a BCP-47 tag, got {tts!r}")
