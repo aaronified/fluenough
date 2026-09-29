@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
@@ -19,7 +21,8 @@ enum ThemeSeed {
   final int argb;
 }
 
-/// The learner's settings, in memory until #15 stores them.
+/// The learner's settings. `StoredSettings` keeps them in the profile's
+/// database ([toStored], [restore]).
 ///
 /// Read through `AppState.settings` inside a `ListenableBuilder`, so that a
 /// change rebuilds only what shows it. Every setter notifies only when the
@@ -37,9 +40,11 @@ class SettingsNotifier extends ChangeNotifier {
     this._cardTextScale = 1.0,
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
+    List<String> spokenLanguages = const <String>[],
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? Skill.values.toSet(),
-       );
+       ),
+       _spokenLanguages = List<String>.unmodifiable(spokenLanguages);
 
   /// The new-card slider's range and step, from the design.
   static const int maxNewCardsPerDay = 50;
@@ -68,6 +73,47 @@ class SettingsNotifier extends ChangeNotifier {
   double _cardTextScale;
   bool _reminder;
   TimeOfDay _reminderTime;
+  List<String> _spokenLanguages;
+  Map<String, DateTime> _factsShown = const <String, DateTime>{};
+
+  /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
+  /// Not something the learner sets: kept here because it is small, per
+  /// profile, and read synchronously, and the settings table stores it.
+  DateTime? factShownAt(String language, String factId) =>
+      _factsShown['$language/$factId'];
+
+  /// When [language]'s facts were last shown, by fact id.
+  Map<String, DateTime> factsShownFor(String language) => <String, DateTime>{
+    for (final MapEntry(:key, :value) in _factsShown.entries)
+      if (key.startsWith('$language/'))
+        key.substring(language.length + 1): value,
+  };
+
+  /// Records that [factId] about [language] was shown at [at].
+  void markFactShown(String language, String factId, DateTime at) {
+    _factsShown = Map<String, DateTime>.unmodifiable(<String, DateTime>{
+      ..._factsShown,
+      '$language/$factId': at,
+    });
+    notifyListeners();
+  }
+
+  /// The languages the learner speaks, by code, best known first (#53).
+  /// Empty until they have said, which is what sends a first launch to the
+  /// setup screen. Kept apart from the interface language (#46).
+  List<String> get spokenLanguages => _spokenLanguages;
+  set spokenLanguages(List<String> codes) {
+    final next = List<String>.unmodifiable(<String>{...codes});
+    if (listEquals(next, _spokenLanguages)) return;
+    _spokenLanguages = next;
+    notifyListeners();
+  }
+
+  /// Where [code] ranks among [spokenLanguages], from 0, or null.
+  int? rankOf(String code) {
+    final i = _spokenLanguages.indexOf(code);
+    return i < 0 ? null : i;
+  }
 
   /// How many new `(card, mode)` pairs a day may introduce.
   int get newCardsPerDay => _newCardsPerDay;
@@ -140,6 +186,107 @@ class SettingsNotifier extends ChangeNotifier {
   TimeOfDay get reminderTime => _reminderTime;
   set reminderTime(TimeOfDay value) =>
       _set(_reminderTime, value, (v) => _reminderTime = v);
+
+  /// Every setting as text, by its stored name. The names are permanent:
+  /// renaming one resets it for everyone.
+  Map<String, String> toStored() => <String, String>{
+    'new_cards_per_day': '$_newCardsPerDay',
+    'enabled_skills': [for (final s in _enabledSkills) s.name].join(','),
+    'show_romanisation': '$_showRomanisation',
+    'speech_rate': '$_speechRate',
+    'theme_mode': _themeMode.name,
+    'seed': _seed.name,
+    'dynamic_colour': '$_dynamicColour',
+    'high_contrast': '$_highContrast',
+    'card_text_scale': '$_cardTextScale',
+    'reminder': '$_reminder',
+    'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
+    'spoken_languages': _spokenLanguages.join(','),
+    'facts_shown': jsonEncode(<String, int>{
+      for (final MapEntry(:key, :value) in _factsShown.entries)
+        key: value.millisecondsSinceEpoch,
+    }),
+  };
+
+  /// Applies [stored], as [toStored] wrote it, through the setters, so that
+  /// ranges are clamped. A missing or unreadable value keeps its current
+  /// setting.
+  void restore(Map<String, String> stored) {
+    T? pick<T>(String name, T? Function(String) parse) {
+      final text = stored[name];
+      return text == null ? null : parse(text);
+    }
+
+    bool? flag(String t) => bool.tryParse(t);
+    E? named<E extends Enum>(List<E> values, String t) => values.asNameMap()[t];
+
+    if (pick('new_cards_per_day', int.tryParse) case final v?) {
+      newCardsPerDay = v;
+    }
+    if (pick('enabled_skills', (t) => t) case final names?) {
+      final skills = <Skill>{
+        for (final name in names.split(',')) ?Skill.values.asNameMap()[name],
+      };
+      for (final skill in Skill.values) {
+        setSkillEnabled(skill, skills.contains(skill));
+      }
+    }
+    if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
+    if (pick('speech_rate', _parseFinite) case final v?) speechRate = v;
+    if (pick('theme_mode', (t) => named(ThemeMode.values, t)) case final v?) {
+      themeMode = v;
+    }
+    if (pick('seed', (t) => named(ThemeSeed.values, t)) case final v?) {
+      seed = v;
+    }
+    if (pick('dynamic_colour', flag) case final v?) dynamicColour = v;
+    if (pick('high_contrast', flag) case final v?) highContrast = v;
+    if (pick('card_text_scale', _parseFinite) case final v?) {
+      cardTextScale = v;
+    }
+    if (pick('reminder', flag) case final v?) reminder = v;
+    if (pick('reminder_time', _parseTime) case final v?) reminderTime = v;
+    if (pick('facts_shown', _parseShown) case final v?) {
+      _factsShown = Map<String, DateTime>.unmodifiable(v);
+      notifyListeners();
+    }
+    if (pick('spoken_languages', (t) => t) case final v?) {
+      spokenLanguages = <String>[
+        for (final code in v.split(','))
+          if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
+      ];
+    }
+  }
+
+  static TimeOfDay? _parseTime(String text) {
+    final parts = text.split(':');
+    if (parts.length != 2) return null;
+    final h = int.tryParse(parts[0]);
+    final m = int.tryParse(parts[1]);
+    if (h == null || m == null || h < 0 || h > 23 || m < 0 || m > 59) {
+      return null;
+    }
+    return TimeOfDay(hour: h, minute: m);
+  }
+
+  static Map<String, DateTime>? _parseShown(String text) {
+    try {
+      final map = jsonDecode(text);
+      if (map is! Map) return null;
+      return <String, DateTime>{
+        for (final MapEntry(:key, :value) in map.entries)
+          if (key is String && value is int)
+            key: DateTime.fromMillisecondsSinceEpoch(value),
+      };
+    } on FormatException {
+      return null;
+    }
+  }
+
+  static double? _parseFinite(String text) {
+    final value = double.tryParse(text);
+    return value != null && value.isFinite ? value : null;
+  }
 
   void _set<T>(T current, T next, void Function(T) assign) {
     if (current == next) return;

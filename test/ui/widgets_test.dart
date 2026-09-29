@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -9,6 +11,7 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/app_language_picker.dart';
 import 'package:fluenough/ui/widgets/expressive_shape.dart';
+import 'package:fluenough/ui/widgets/fluenough_mark.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/segmented.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
@@ -131,6 +134,53 @@ void main() {
     expect(text.style!.fontSize, 64, reason: 'four graphemes');
   });
 
+  test('the mark keeps the brand\'s colours, whatever the seed', () {
+    expect(FluenoughMark.colorsFor(Brightness.light), (
+      const Color(0xFF085231),
+      const Color(0xFFC2621D),
+    ));
+    expect(FluenoughMark.colorsFor(Brightness.dark), (
+      const Color(0xFFAEF2C6),
+      const Color(0xFFFFB68A),
+    ));
+  });
+
+  test('the launch screen is the app\'s own background, light and dark', () {
+    // fluenough-brand/android: the window Android shows before the first
+    // frame, so a change of seed that left it behind would flash.
+    Color launch(String folder) {
+      final xml = File('fluenough-brand/android/$folder/launch_colors.xml')
+          .readAsStringSync();
+      final hex = RegExp(r'name="launch_background">#([0-9A-Fa-f]{6})<')
+          .firstMatch(xml)!
+          .group(1)!;
+      return Color(int.parse('FF$hex', radix: 16));
+    }
+
+    expect(launch('values'), AppTheme.light().colorScheme.surface);
+    expect(launch('values-night'), AppTheme.dark().colorScheme.surface);
+    expect(launch('values-night'), isNot(const Color(0xFF000000)));
+  });
+
+  testWidgets('the mark is decorative: nothing for a screen reader', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    await pumpScreen(
+      tester,
+      const Scaffold(body: Center(child: FluenoughMark(size: 48))),
+    );
+    expect(tester.getSize(find.byType(FluenoughMark)), const Size.square(48));
+    expect(
+      find.descendant(
+        of: find.byType(FluenoughMark),
+        matching: find.byType(ExcludeSemantics),
+      ),
+      findsOneWidget,
+    );
+    semantics.dispose();
+  });
+
   test('target sizes step down with length and scale with the setting', () {
     expect(TargetSizes.forText('あ'), 96);
     // क plus its vowel sign is two code points but one grapheme.
@@ -164,7 +214,7 @@ void main() {
               AppLanguagePicker(
                 onChanged: (_) {},
                 decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.newProfileSpeaks,
+                  labelText: AppLocalizations.of(context)!.settingsAppLanguage,
                 ),
               ),
             ],
