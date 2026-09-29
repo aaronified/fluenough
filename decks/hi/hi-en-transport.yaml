@@ -1,0 +1,87 @@
+schema: 1
+id: hi-en-transport
+name: "Bus, auto, cab"
+kind: vocab
+theme: transport
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Getting a ride, agreeing the fare and getting off where you want."
+tags: [beginner]
+cards:
+  - id: hi-en-transport-0001
+    target: "बस"
+    native: "bus"
+    reading: "bas"
+    pos: "noun"
+    gender: "f"
+    notes: "Feminine: बस आ गई (bas aa gaii), the bus has come. It also means 'enough'."
+  - id: hi-en-transport-0002
+    target: "ऑटो"
+    native: "auto-rickshaw"
+    reading: "auto"
+    alt_target: ["आटो"]
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-transport-0003
+    target: "टैक्सी"
+    native: "taxi"
+    reading: "taiksii"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-transport-0004
+    target: "किराया"
+    native: "fare; rent"
+    reading: "kiraayaa"
+    pos: "noun"
+    gender: "m"
+    notes: "किराया कितना है? What's the fare?"
+  - id: hi-en-transport-0005
+    target: "मीटर से चलिए।"
+    native: "Please go by the meter."
+    reading: "miitar se chaliye."
+    pos: "phrase"
+    tags: ["polite"]
+    notes: "Ask before you get in. If the driver refuses, agree the fare first."
+  - id: hi-en-transport-0006
+    target: "स्टेशन जाना है।"
+    native: "I need to go to the station."
+    reading: "steshan jaanaa hai."
+    pos: "phrase"
+    notes: "Put any place before जाना है: एयरपोर्ट जाना है, I need to go to the airport."
+  - id: hi-en-transport-0007
+    target: "कितनी देर लगेगी?"
+    native: "How long will it take?"
+    reading: "kitnii der lagegii?"
+    pos: "phrase"
+  - id: hi-en-transport-0008
+    target: "यहाँ रोकिए।"
+    native: "Stop here, please."
+    reading: "yahaan rokiye."
+    pos: "phrase"
+    tags: ["polite"]
+  - id: hi-en-transport-0009
+    target: "स्टेशन"
+    native: "station"
+    reading: "steshan"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-transport-0010
+    target: "टिकट"
+    native: "ticket"
+    reading: "tikat"
+    pos: "noun"
+    gender: "m"
+    notes: "Some speakers make it feminine."
+  - id: hi-en-transport-0011
+    target: "सीट"
+    native: "seat"
+    reading: "siit"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-transport-0012
+    target: "चलिए"
+    native: "let's go; please go"
+    reading: "chaliye"
+    pos: "verb"
+    tags: ["polite"]
