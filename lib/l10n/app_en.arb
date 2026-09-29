@@ -559,6 +559,16 @@
   "@todayFactTitle": {
     "description": "Title of the daily fact card."
   },
+  "todayFactFor": "Today’s fact · {language}",
+  "@todayFactFor": {
+    "description": "Title of the daily fact card for one language the learner studies (#48).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
   "todayFactBody": "One short, true thing about a language you’re learning, each day.",
   "@todayFactBody": {
     "description": "Body of the daily fact card while it is not built yet."

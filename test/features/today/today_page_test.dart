@@ -17,7 +17,6 @@ import 'package:fluenough/features/today/today_fixtures.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
-import 'package:fluenough/ui/widgets/incoming.dart';
 
 import '../../support/harness.dart';
 
@@ -251,28 +250,18 @@ void main() {
     );
   });
 
-  testWidgets('switch profile and the daily fact are incoming', (tester) async {
+  testWidgets('switch profile is incoming', (tester) async {
     usePhone(tester);
     await pumpToday(tester);
     final l10n = l10nOf(tester);
-    for (final label in <String>[
-      l10n.todaySwitchProfile,
-      l10n.todayFactTitle,
-    ]) {
-      expect(
-        find.bySemanticsLabel(l10n.incomingSemanticsLabel(label)),
-        findsOneWidget,
-        reason: label,
-      );
-    }
-    await tapVisible(
-      tester,
-      find.ancestor(
-        of: find.text(l10n.todayFactTitle),
-        matching: find.byType(IncomingFeature),
-      ),
+    final node = find.bySemanticsLabel(
+      l10n.incomingSemanticsLabel(l10n.todaySwitchProfile),
     );
+    expect(node, findsOneWidget);
+    await tapVisible(tester, node);
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
+    // The bundled decks have no facts file yet, so no fact card either.
+    expect(find.text(l10n.todayFactTitle), findsNothing);
   });
 
   testWidgets('a profile with no decks in its languages is sent to Decks', (
