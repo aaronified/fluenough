@@ -3,10 +3,14 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
+import 'package:fluenough/features/decks/number_practice_tile.dart';
+import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 
@@ -21,10 +25,15 @@ List<String> shownDecks(WidgetTester tester) => tester
     .map((t) => t.entry.deck.name)
     .toList();
 
+/// The row for [entry]. Two courses can each have a deck called "Market",
+/// so a row is found by its deck, not its name.
+Finder tileOf(DeckEntry entry) =>
+    find.byWidgetPredicate((w) => w is DeckTile && w.entry.id == entry.id);
+
 /// A phone tall enough for the lazy list to build every bundled deck.
 void useTallPhone(WidgetTester tester) {
   usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 4000 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 12000 * 3);
 }
 
 /// Taps [chip] after scrolling the chip row to it.
@@ -85,7 +94,7 @@ void main() {
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
       final n = counts.due + counts.fresh;
-      final tile = find.widgetWithText(DeckTile, entry.deck.name);
+      final tile = tileOf(entry);
       // A grammar deck has nothing to drill until its drill ships (#14): it is
       // incoming, never Done.
       final badge = !state.canDrill(entry)
@@ -98,14 +107,61 @@ void main() {
         findsOneWidget,
         reason: entry.id,
       );
+      // A theme deck's line is its place on the path and its progress.
+      final theme = state.themeOf(entry);
+      final meta = theme == null
+          ? DeckTile.metaFor(l10n, entry)
+          : l10n.deckMetaTheme(
+              state.themes.indexOf(theme) + 1,
+              state.progress.learnedIn(entry.id),
+              entry.itemCount,
+            );
       expect(
-        find.descendant(
-          of: tile,
-          matching: find.text(DeckTile.metaFor(l10n, entry)),
-        ),
+        find.descendant(of: tile, matching: find.text(meta)),
         findsOneWidget,
+        reason: entry.id,
       );
     }
+  });
+
+  testWidgets('number practice follows each big-numbers deck, and starts '
+      'unrecorded practice (#54)', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpDecks(tester);
+    final l10n = l10nOf(tester);
+    final rows = tester
+        .widgetList<NumberPracticeTile>(find.byType(NumberPracticeTile))
+        .map((t) => t.deck.id);
+    expect(
+      rows,
+      unorderedEquals(<String>[
+        'hi-en-numbers-big',
+        'bn-en-numbers-big',
+        'te-en-numbers-big',
+      ]),
+    );
+    for (final id in rows) {
+      final deck = tester.getRect(tileOf(state.deckById(id)!));
+      final practice = tester.getRect(
+        find.byWidgetPredicate(
+          (w) => w is NumberPracticeTile && w.deck.id == id,
+        ),
+      );
+      // Next in the list: only the list's gap between the two rows.
+      expect(practice.top - deck.bottom, inInclusiveRange(0, 8), reason: id);
+    }
+    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(3));
+
+    await tester.tap(
+      find.byWidgetPredicate(
+        (w) => w is NumberPracticeTile && w.deck.id == 'hi-en-numbers-big',
+      ),
+    );
+    await tester.pumpAndSettle();
+    final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+    expect(drill.request.numbers, isTrue);
+    expect(drill.request.deckIds, <String>{'hi-en-numbers-big'});
+    expect(find.text(l10n.numbersPracticeTitle), findsOneWidget);
   });
 
   testWidgets('search matches deck and language names', (tester) async {
@@ -170,9 +226,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     for (final entry in state.decks) {
-      final badge = tester
-          .widget<DeckTile>(find.widgetWithText(DeckTile, entry.deck.name))
-          .badge;
+      final badge = tester.widget<DeckTile>(tileOf(entry)).badge;
       expect(
         badge.kind,
         !state.canDrill(entry)
@@ -253,5 +307,64 @@ void main() {
     expect(state.status, CatalogStatus.ready);
     expect(find.text(l10n.commonDecksFailed), findsNothing);
     expect(find.byType(DeckTile), findsWidgets);
+  });
+
+  testWidgets('a course\'s theme decks sit under it, with their progress', (
+    tester,
+  ) async {
+    usePhone(tester);
+    String deck(String id, {String? theme, int cards = 2}) =>
+        '''
+schema: 1
+id: $id
+name: "${theme ?? id}"
+${theme == null ? '' : 'theme: $theme'}
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+${[for (var i = 1; i <= cards; i++) '  - { id: $id-000$i, target: "क$i", native: "k$i", reading: "k$i" }'].join('\n')}
+''';
+    final state = AppState.test(
+      decks: MemoryDeckSource(<String, String>{
+        'decks/themes.yaml': '''
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+''',
+        'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
+        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+        'decks/hi/hi-en-first-words.yaml': deck(
+          'hi-en-first-words',
+          theme: 'first-words',
+          cards: 3,
+        ),
+      }),
+    );
+    await state.load();
+    state.progress.record(
+      deckId: 'hi-en-first-words',
+      cardId: 'hi-en-first-words-0001',
+      mode: DrillMode.recognition,
+      grade: 5,
+      now: state.now(),
+    );
+    await pumpDecks(tester, state: state);
+    final l10n = l10nOf(tester);
+
+    expect(shownDecks(tester), <String>['hi-en-core', 'first-words', 'market']);
+    expect(
+      find.text(l10n.decksCourseHeading('Hindi', 'English')),
+      findsOneWidget,
+    );
+    expect(find.text(l10n.deckMetaTheme(1, 1, 3)), findsOneWidget);
+    expect(find.text(l10n.deckMetaTheme(2, 0, 2)), findsOneWidget);
+    // The deck outside the path keeps its usual line.
+    expect(
+      find.text(DeckTile.metaFor(l10n, state.deckById('hi-en-core')!)),
+      findsOneWidget,
+    );
   });
 }

@@ -1,0 +1,96 @@
+schema: 1
+id: hi-en-groceries
+name: "Groceries"
+kind: vocab
+theme: groceries
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Vegetables, fish, meat, eggs and the staples."
+tags: [beginner]
+cards:
+  - id: hi-en-groceries-0001
+    target: "सब्ज़ी"
+    native: "vegetable; a vegetable dish"
+    reading: "sabzii"
+    alt_target: ["सब्जी"]
+    pos: "noun"
+    gender: "f"
+    notes: "Plural सब्ज़ियाँ (sabziyaan). A सब्ज़ीवाला (sabziivaalaa) sells them."
+  - id: hi-en-groceries-0002
+    target: "आलू"
+    native: "potato"
+    reading: "aaluu"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-groceries-0003
+    target: "प्याज़"
+    native: "onion"
+    reading: "pyaaz"
+    alt_target: ["प्याज"]
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-groceries-0004
+    target: "टमाटर"
+    native: "tomato"
+    reading: "tamaatar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-groceries-0005
+    target: "मिर्च"
+    native: "chilli"
+    reading: "mirch"
+    pos: "noun"
+    gender: "f"
+    notes: "हरी मिर्च (harii mirch), green chillies, are often added free with vegetables if you ask."
+  - id: hi-en-groceries-0006
+    target: "लहसुन"
+    native: "garlic"
+    reading: "lahsun"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-groceries-0007
+    target: "मछली"
+    native: "fish"
+    reading: "machhlii"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-groceries-0008
+    target: "मटन"
+    native: "mutton (goat meat)"
+    reading: "matan"
+    pos: "noun"
+    gender: "m"
+    notes: "In India 'mutton' almost always means goat, not sheep."
+  - id: hi-en-groceries-0009
+    target: "चिकन"
+    native: "chicken (as meat)"
+    reading: "chikan"
+    pos: "noun"
+    gender: "m"
+    notes: "The bird is मुर्गा (murgaa), a hen मुर्गी (murgii)."
+  - id: hi-en-groceries-0010
+    target: "अंडा"
+    native: "egg"
+    reading: "andaa"
+    pos: "noun"
+    gender: "m"
+    notes: "Plural अंडे (ande). Eggs are often sold by the piece or by the dozen, दर्जन (darjan)."
+  - id: hi-en-groceries-0011
+    target: "दूध"
+    native: "milk"
+    reading: "duudh"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-groceries-0012
+    target: "चावल"
+    native: "rice"
+    reading: "chaaval"
+    pos: "noun"
+    gender: "m"
+  - id: hi-en-groceries-0013
+    target: "दाल"
+    native: "lentils; dal"
+    reading: "daal"
+    pos: "noun"
+    gender: "f"
