@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
@@ -147,23 +148,53 @@ class _DecksPageState extends State<DecksPage> {
           );
         }
 
+        Widget tile(DeckEntry entry) {
+          final theme = state.themeOf(entry);
+          return DeckTile(
+            entry: entry,
+            badge: DeckBadge.forEntry(state, entry),
+            meta: theme == null
+                ? null
+                : l10n.deckMetaTheme(
+                    state.themes.indexOf(theme) + 1,
+                    state.progress.learnedIn(entry.id),
+                    entry.itemCount,
+                  ),
+            onTap: () => AppNavigator.openDeck(context, entry.id),
+          );
+        }
+
+        final sections = courseSections(decks, state);
         return ListView(
           // Clear of Add deck, which floats over the list's end.
           padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 96),
           children: <Widget>[
-            GroupedList(
-              outerRadius: AppRadii.card,
-              gap: 4,
-              children: <Widget>[
-                for (final entry in decks)
-                  DeckTile(
-                    entry: entry,
-                    badge: DeckBadge.forEntry(state, entry),
-                    onTap: () => AppNavigator.openDeck(context, entry.id),
-                  ),
-                for (final file in broken) BrokenDeckTile(broken: file),
-              ],
-            ),
+            for (final (i, section) in sections.indexed) ...<Widget>[
+              if (i > 0) const SizedBox(height: 20),
+              GroupedList(
+                header: section.course == null
+                    ? null
+                    : l10n.decksCourseHeading(
+                        section.course!.language.name,
+                        section.course!.deck.native.name,
+                      ),
+                outerRadius: AppRadii.card,
+                gap: 4,
+                children: <Widget>[
+                  for (final entry in section.decks) tile(entry),
+                  if (i == sections.length - 1)
+                    for (final file in broken) BrokenDeckTile(broken: file),
+                ],
+              ),
+            ],
+            if (sections.isEmpty)
+              GroupedList(
+                outerRadius: AppRadii.card,
+                gap: 4,
+                children: <Widget>[
+                  for (final file in broken) BrokenDeckTile(broken: file),
+                ],
+              ),
           ],
         );
       },
@@ -280,4 +311,31 @@ class _ChipGlyph extends StatelessWidget {
       ),
     );
   }
+}
+
+/// A run of deck rows: a course's theme decks, under the course, or decks
+/// outside the theme path, with no heading.
+typedef DeckSection = ({DeckEntry? course, List<DeckEntry> decks});
+
+/// [decks], in order, cut into sections: each run of one course's theme
+/// decks under that course (#52), and each run of other decks on its own.
+/// The catalog already puts a course's theme decks together, in path order.
+List<DeckSection> courseSections(List<DeckEntry> decks, AppState state) {
+  String? courseOf(DeckEntry e) => state.themeOf(e) == null
+      ? null
+      : '${e.language.code}/${e.deck.native.code}';
+  final sections = <DeckSection>[];
+  String? current;
+  for (final entry in decks) {
+    final course = courseOf(entry);
+    if (sections.isEmpty || course != current) {
+      sections.add((
+        course: course == null ? null : entry,
+        decks: <DeckEntry>[],
+      ));
+      current = course;
+    }
+    sections.last.decks.add(entry);
+  }
+  return sections;
 }

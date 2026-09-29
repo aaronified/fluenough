@@ -5,6 +5,7 @@ import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/tts/tts_engine.dart';
+import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
 import 'deck_catalog.dart';
@@ -154,6 +155,10 @@ class AppState extends ChangeNotifier {
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
+
+  /// The shared theme path (ADR-0010), and one theme on it.
+  List<DeckTheme> get themes => _catalog.themes;
+  DeckTheme? themeOf(DeckEntry entry) => _catalog.themeById(entry.deck.theme);
 
   /// Today's fact for each language the profile learns that has facts
   /// (#48), with its text in each language the learner speaks, best known

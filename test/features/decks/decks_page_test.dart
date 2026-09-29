@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
@@ -239,5 +240,64 @@ void main() {
     expect(state.status, CatalogStatus.ready);
     expect(find.text(l10n.commonDecksFailed), findsNothing);
     expect(find.byType(DeckTile), findsWidgets);
+  });
+
+  testWidgets('a course\'s theme decks sit under it, with their progress', (
+    tester,
+  ) async {
+    usePhone(tester);
+    String deck(String id, {String? theme, int cards = 2}) =>
+        '''
+schema: 1
+id: $id
+name: "${theme ?? id}"
+${theme == null ? '' : 'theme: $theme'}
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+${[for (var i = 1; i <= cards; i++) '  - { id: $id-000$i, target: "क$i", native: "k$i", reading: "k$i" }'].join('\n')}
+''';
+    final state = AppState.test(
+      decks: MemoryDeckSource(<String, String>{
+        'decks/themes.yaml': '''
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+''',
+        'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
+        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+        'decks/hi/hi-en-first-words.yaml': deck(
+          'hi-en-first-words',
+          theme: 'first-words',
+          cards: 3,
+        ),
+      }),
+    );
+    await state.load();
+    state.progress.record(
+      deckId: 'hi-en-first-words',
+      cardId: 'hi-en-first-words-0001',
+      mode: DrillMode.recognition,
+      grade: 5,
+      now: state.now(),
+    );
+    await pumpDecks(tester, state: state);
+    final l10n = l10nOf(tester);
+
+    expect(shownDecks(tester), <String>['hi-en-core', 'first-words', 'market']);
+    expect(
+      find.text(l10n.decksCourseHeading('Hindi', 'English')),
+      findsOneWidget,
+    );
+    expect(find.text(l10n.deckMetaTheme(1, 1, 3)), findsOneWidget);
+    expect(find.text(l10n.deckMetaTheme(2, 0, 2)), findsOneWidget);
+    // The deck outside the path keeps its usual line.
+    expect(
+      find.text(DeckTile.metaFor(l10n, state.deckById('hi-en-core')!)),
+      findsOneWidget,
+    );
   });
 }

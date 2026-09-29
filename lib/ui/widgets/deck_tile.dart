@@ -161,11 +161,16 @@ class DeckTile extends StatelessWidget {
     required this.badge,
     this.onTap,
     this.glyphSize = 56,
+    this.meta,
   });
 
   final DeckEntry entry;
   final DeckBadge badge;
   final VoidCallback? onTap;
+
+  /// The second line, when it is not [metaFor]'s: a theme deck shows its
+  /// place on the path and its progress instead.
+  final String? meta;
 
   /// 56 on the deck list, 52 on Today.
   final double glyphSize;
@@ -210,7 +215,7 @@ class DeckTile extends StatelessWidget {
                     Text(entry.deck.name, style: theme.textTheme.titleMedium),
                     const SizedBox(height: 2),
                     Text(
-                      metaFor(l10n, entry),
+                      meta ?? metaFor(l10n, entry),
                       style: theme.textTheme.bodyMedium!.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
