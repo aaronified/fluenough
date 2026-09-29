@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
@@ -72,6 +74,29 @@ class SettingsNotifier extends ChangeNotifier {
   bool _reminder;
   TimeOfDay _reminderTime;
   List<String> _spokenLanguages;
+  Map<String, DateTime> _factsShown = const <String, DateTime>{};
+
+  /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
+  /// Not something the learner sets: kept here because it is small, per
+  /// profile, and read synchronously, and the settings table stores it.
+  DateTime? factShownAt(String language, String factId) =>
+      _factsShown['$language/$factId'];
+
+  /// When [language]'s facts were last shown, by fact id.
+  Map<String, DateTime> factsShownFor(String language) => <String, DateTime>{
+    for (final MapEntry(:key, :value) in _factsShown.entries)
+      if (key.startsWith('$language/'))
+        key.substring(language.length + 1): value,
+  };
+
+  /// Records that [factId] about [language] was shown at [at].
+  void markFactShown(String language, String factId, DateTime at) {
+    _factsShown = Map<String, DateTime>.unmodifiable(<String, DateTime>{
+      ..._factsShown,
+      '$language/$factId': at,
+    });
+    notifyListeners();
+  }
 
   /// The languages the learner speaks, by code, best known first (#53).
   /// Empty until they have said, which is what sends a first launch to the
@@ -177,6 +202,10 @@ class SettingsNotifier extends ChangeNotifier {
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
     'spoken_languages': _spokenLanguages.join(','),
+    'facts_shown': jsonEncode(<String, int>{
+      for (final MapEntry(:key, :value) in _factsShown.entries)
+        key: value.millisecondsSinceEpoch,
+    }),
   };
 
   /// Applies [stored], as [toStored] wrote it, through the setters, so that
@@ -217,6 +246,10 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('reminder', flag) case final v?) reminder = v;
     if (pick('reminder_time', _parseTime) case final v?) reminderTime = v;
+    if (pick('facts_shown', _parseShown) case final v?) {
+      _factsShown = Map<String, DateTime>.unmodifiable(v);
+      notifyListeners();
+    }
     if (pick('spoken_languages', (t) => t) case final v?) {
       spokenLanguages = <String>[
         for (final code in v.split(','))
@@ -234,6 +267,20 @@ class SettingsNotifier extends ChangeNotifier {
       return null;
     }
     return TimeOfDay(hour: h, minute: m);
+  }
+
+  static Map<String, DateTime>? _parseShown(String text) {
+    try {
+      final map = jsonDecode(text);
+      if (map is! Map) return null;
+      return <String, DateTime>{
+        for (final MapEntry(:key, :value) in map.entries)
+          if (key is String && value is int)
+            key: DateTime.fromMillisecondsSinceEpoch(value),
+      };
+    } on FormatException {
+      return null;
+    }
   }
 
   static double? _parseFinite(String text) {

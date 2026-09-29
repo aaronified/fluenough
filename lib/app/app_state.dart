@@ -5,6 +5,8 @@ import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/tts/tts_engine.dart';
+import '../core/models/fact.dart';
+import '../core/scheduling/daily_fact.dart';
 import 'deck_catalog.dart';
 import 'features.dart';
 import 'memory_progress.dart';
@@ -145,6 +147,43 @@ class AppState extends ChangeNotifier {
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
+
+  /// Today's fact for each language the profile learns that has facts
+  /// (#48), with its text in each language the learner speaks, best known
+  /// first. Choosing one records it as shown today, after this call, so
+  /// that it stays today's fact.
+  List<TodayFact> todaysFacts() {
+    final spoken = settings.spokenLanguages;
+    final learned = <String, LanguageInfo>{
+      for (final entry in profileDecks) entry.language.code: entry.language,
+    };
+    final today = <TodayFact>[];
+    for (final language in learned.values) {
+      final file = _catalog.facts[language.code];
+      if (file == null) continue;
+      final shown = settings.factsShownFor(language.code);
+      final fact = factForToday(
+        file.facts,
+        spoken: spoken,
+        shownAt: shown,
+        now: now(),
+      );
+      if (fact == null) continue;
+      today.add((
+        language: language,
+        fact: fact,
+        texts: factTexts(fact, spoken),
+      ));
+      final at = shown[fact.id];
+      if (at == null || !isSameDay(at, now())) {
+        final code = language.code;
+        final id = fact.id;
+        final when = now();
+        Future<void>.microtask(() => settings.markFactShown(code, id, when));
+      }
+    }
+    return today;
+  }
 
   DeckEntry? deckById(String id) => _catalog.byId(id);
 
@@ -419,3 +458,10 @@ class AppState extends ChangeNotifier {
     super.dispose();
   }
 }
+
+/// A language's fact for today, and its text in the learner's languages.
+typedef TodayFact = ({
+  LanguageInfo language,
+  Fact fact,
+  List<({String code, String text})> texts,
+});

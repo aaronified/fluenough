@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart' show StringCharacters;
 import 'package:yaml/yaml.dart';
 
 import '../core/data/deck_parser.dart';
+import '../core/data/facts_parser.dart';
+import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 
@@ -149,9 +151,16 @@ final class BrokenDeck extends CatalogEntry {
 
 /// The loaded catalog: the decks that parsed, and the files that did not.
 class Catalog {
-  Catalog({required List<DeckEntry> decks, required List<BrokenDeck> broken})
-    : decks = List<DeckEntry>.unmodifiable(decks),
-      broken = List<BrokenDeck>.unmodifiable(broken);
+  Catalog({
+    required List<DeckEntry> decks,
+    required List<BrokenDeck> broken,
+    Map<String, FactsFile> facts = const <String, FactsFile>{},
+  }) : decks = List<DeckEntry>.unmodifiable(decks),
+       broken = List<BrokenDeck>.unmodifiable(broken),
+       facts = Map<String, FactsFile>.unmodifiable(facts);
+
+  /// Each language's daily facts (#48), by language code.
+  final Map<String, FactsFile> facts;
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
@@ -180,8 +189,9 @@ class Catalog {
 
 /// Lists and parses every deck file in a [DeckSource].
 ///
-/// A stand-in for the deck repository (#4). It skips facts files, which live
-/// beside the decks but are not decks (#48), and turns a file that fails to
+/// A stand-in for the deck repository (#4). It reads facts files, which live
+/// beside the decks but are not decks, into the catalog's facts (#48), and
+/// turns a file that fails to
 /// parse into a [BrokenDeck] rather than an exception.
 class DeckCatalog {
   DeckCatalog(this.source);
@@ -213,11 +223,20 @@ class DeckCatalog {
   static Catalog parseAll(Map<String, String> files) {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
+    final facts = <String, FactsFile>{};
     final firstPath = <String, String>{};
     final paths = files.keys.toList()..sort();
     for (final path in paths) {
       final text = files[path]!;
-      if (isFactsFile(text)) continue;
+      if (isFactsFile(text)) {
+        try {
+          final file = parseFacts(text, source: path.split('/').last);
+          facts.putIfAbsent(file.languageCode, () => file);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       final Deck deck;
       try {
         deck = DeckParser.parse(text, source: path.split('/').last);
@@ -241,7 +260,7 @@ class DeckCatalog {
       firstPath[deck.id] = path;
       decks.add(DeckEntry(path: path, deck: deck));
     }
-    return Catalog(decks: decks, broken: broken);
+    return Catalog(decks: decks, broken: broken, facts: facts);
   }
 
   /// Whether [text] is a facts file (`kind: facts`), which is valid beside
