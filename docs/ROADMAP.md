@@ -3,13 +3,40 @@
 Every item below has an issue. The issues carry the detail — files to touch,
 acceptance criteria, and what to read first.
 
+## Beta — 0.9.0
+
+The first release for learners, tracked in #55: a signed APK that a learner
+uses daily for a month without losing progress. F-Droid and the deck authoring
+guide wait for 1.0.
+
+- **Decks** are all taught from English: Hindi, Bengali and Telugu, plus the
+  existing Spanish and Japanese. Deck ids name both languages (#51).
+- **Vocabulary is taught by theme**, one deck per theme, in 14 shared themes
+  aimed at minimal fluency: first words, questions, numbers, market,
+  groceries, transport, directions and so on (#52).
+- **Numbers**: two number decks, and a generator for 4-digit numbers and
+  years built from them (#54).
+- **Grammar**: the pattern expander and grammar drill, with grammar decks for
+  Hindi, Bengali and Telugu (#2, #14).
+- **Spoken languages**, ranked, set on first launch from English, Bengali and
+  Hindi. Daily facts come in each of them, with contrasts against each (#53,
+  #48).
+- **Progress is saved**, with stats, leeches and a review-log export (#3, #5,
+  #6, #18, #19, #20).
+- **Telugu is written without a Telugu speaker's review**, and says so (#39).
+- **Not in the beta:** the Hindi and Bengali interface, profiles and PIN, the
+  daily reminder, deck imports, transliterated answers.
+
 ## v0.1 — Core loop
-- [ ] `flutter create` the platform folders, wire up CI
-- [ ] Models, deck parser, pattern expander
+- [x] `flutter create` the platform folders, wire up CI
+- [x] Models, deck parser
+- [ ] Pattern expander
 - [ ] drift schema and migrations
-- [ ] SM-2 scheduler + review log, with tests
-- [ ] `AnswerGrader`, with tests
-- [ ] Recognition and production drills
+- [x] SM-2 scheduler, with tests
+- [ ] Review log
+- [x] `AnswerGrader`, with tests
+- [x] Recognition drill
+- [ ] Production drill
 - [ ] Deck browser and per-deck drill launch
 - [ ] Two complete starter decks
 
