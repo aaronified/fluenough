@@ -1,0 +1,10 @@
+# The languages a learner can say they speak, on first launch and in
+# Settings (#53). A fork or a contributor adds one by adding an entry here:
+# no code change. `own_name` is the language's name for itself, shown beside
+# its English name.
+schema: 1
+kind: languages
+languages:
+  - { code: en, iso639_3: eng, name: "English", own_name: "English" }
+  - { code: bn, iso639_3: ben, name: "Bengali", own_name: "বাংলা" }
+  - { code: hi, iso639_3: hin, name: "Hindi", own_name: "हिन्दी" }
