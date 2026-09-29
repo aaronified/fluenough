@@ -1,0 +1,49 @@
+schema: 1
+id: te-en-grammar-continuous
+name: "Present continuous"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I am doing, she is coming: what is happening now. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Present continuous"
+  slot_name: "person"
+  slots: ["నేను", "మేము", "నువ్వు", "మీరు", "అతను", "ఆమె / అది", "వాళ్ళు"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing: ఆమె వచ్చింది, అది వచ్చింది. మీరు, plural or respectful, takes the plural. The feminine and neuter form is also written -తున్నది: చేస్తున్నది."
+  entries:
+    - lemma: "చేయడం"
+      key: cheeyadam
+      gloss: "to do"
+      forms:
+        "నేను": "చేస్తున్నాను"
+        "మేము": "చేస్తున్నాము"
+        "నువ్వు": "చేస్తున్నావు"
+        "మీరు": "చేస్తున్నారు"
+        "అతను": "చేస్తున్నాడు"
+        "ఆమె / అది": "చేస్తోంది"
+        "వాళ్ళు": "చేస్తున్నారు"
+    - lemma: "వెళ్ళడం"
+      key: velladam
+      gloss: "to go"
+      forms:
+        "నేను": "వెళ్తున్నాను"
+        "మేము": "వెళ్తున్నాము"
+        "నువ్వు": "వెళ్తున్నావు"
+        "మీరు": "వెళ్తున్నారు"
+        "అతను": "వెళ్తున్నాడు"
+        "ఆమె / అది": "వెళ్తోంది"
+        "వాళ్ళు": "వెళ్తున్నారు"
+    - lemma: "రావడం"
+      key: raavadam
+      gloss: "to come"
+      forms:
+        "నేను": "వస్తున్నాను"
+        "మేము": "వస్తున్నాము"
+        "నువ్వు": "వస్తున్నావు"
+        "మీరు": "వస్తున్నారు"
+        "అతను": "వస్తున్నాడు"
+        "ఆమె / అది": "వస్తోంది"
+        "వాళ్ళు": "వస్తున్నారు"
