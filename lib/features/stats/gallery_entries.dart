@@ -65,13 +65,7 @@ final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
     note: 'Leeches row incoming', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: (app) => _onProgress(
-      GalleryFixtures.state(
-        app,
-        features: const FeatureRegistry.only(<Feature>{
-          ...Feature.available,
-          Feature.stats,
-        }),
-      ),
+      GalleryFixtures.state(app, features: const FeatureRegistry.shipped()),
     ),
   ),
   GalleryEntry(
