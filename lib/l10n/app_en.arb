@@ -753,6 +753,24 @@
       }
     }
   },
+  "deckUnreviewed": "No {language} speaker has checked this deck yet. If you speak {language}, please report any mistake you find.",
+  "@deckUnreviewed": {
+    "description": "Notice on the screen of a deck that no native speaker has checked (#39).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "deckUnreviewedReport": "Copy the link to report one",
+  "@deckUnreviewedReport": {
+    "description": "Button under the unchecked-deck notice. It copies the address where mistakes are reported."
+  },
+  "deckUnreviewedCopied": "Link copied. Paste it into a browser to report a mistake.",
+  "@deckUnreviewedCopied": {
+    "description": "SnackBar after copying the address for reporting mistakes."
+  },
   "deckSetUpVoice": "Set up",
   "@deckSetUpVoice": {
     "description": "Button that opens Voices, beside a skill that needs one."
