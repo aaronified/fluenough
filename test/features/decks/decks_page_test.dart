@@ -88,8 +88,8 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
     expect(state.decks, isNotEmpty);
-    // The grammar deck has cards (#2) but no drill yet (#14).
-    expect(state.canDrill(state.deckById('es-grammar-present-ar')!), isFalse);
+    // The grammar deck has cards (#2) and its drill (#14).
+    expect(state.canDrill(state.deckById('es-grammar-present-ar')!), isTrue);
     expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
