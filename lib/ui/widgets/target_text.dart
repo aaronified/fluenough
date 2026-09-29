@@ -74,3 +74,39 @@ class TargetText extends StatelessWidget {
     ),
   );
 }
+
+/// [text], an interface string that quotes deck content, with each of
+/// [quotes] in it marked as [language]'s: drawn in its font and read by a
+/// screen reader in its voice, while the rest stays the interface's (#26).
+/// "Answer: el niño" is read in English up to the colon and in Spanish after.
+TextSpan quotingTarget(
+  String text,
+  Iterable<String> quotes,
+  LanguageInfo language,
+) {
+  // Longest first, so that at one place "el niño" wins over "niño".
+  final wanted = <String>{
+    for (final quote in quotes)
+      if (quote.isNotEmpty) quote,
+  }.toList()..sort((a, b) => b.length.compareTo(a.length));
+  final locale = Locale(language.code);
+  final spans = <TextSpan>[];
+  var start = 0;
+  while (start < text.length) {
+    var at = -1;
+    String? found;
+    for (final quote in wanted) {
+      final i = text.indexOf(quote, start);
+      if (i >= 0 && (at < 0 || i < at)) {
+        at = i;
+        found = quote;
+      }
+    }
+    if (found == null) break;
+    if (at > start) spans.add(TextSpan(text: text.substring(start, at)));
+    spans.add(TextSpan(text: found, locale: locale));
+    start = at + found.length;
+  }
+  if (start < text.length) spans.add(TextSpan(text: text.substring(start)));
+  return TextSpan(children: spans);
+}
