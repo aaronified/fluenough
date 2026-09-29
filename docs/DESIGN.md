@@ -23,7 +23,9 @@ cheap to test.
 
 ## Data model
 
-Four tables.
+Six tables, in one SQLite database per profile (`lib/core/data/database.dart`,
+which also says how a migration is added). Times are stored as milliseconds
+since the epoch.
 
 **`decks`** — metadata for each loaded deck, keyed by deck id.
 
@@ -45,7 +47,22 @@ interval_before, interval_after, ease_before, ease_after
 
 Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one
-export has to protect. See [ADR-0005](adr/0005-scheduling.md).
+export has to protect. SQLite itself refuses an UPDATE or DELETE on it: migration
+1 adds triggers that abort both. See [ADR-0005](adr/0005-scheduling.md).
+
+**`settings`** — the learner's settings, one row per setting by a permanent
+name, as text (migration 2). Per profile, like progress.
+
+**`leech_actions`** — what the learner did about leeches: Reset, Undo, Set
+aside, Bring back (migration 3). Append-only and guarded like `reviews`.
+Replaying the log reads it: a pair restarts after a reset that still holds,
+and a set-aside pair is left out of every session. No review is touched.
+
+**Backup.** Settings → Export review log writes both logs as one JSONL file,
+and Import merges such a file back, adding only the reviews not already
+there and rebuilding `card_states` from the whole log. The log replays by
+time, so older history imported onto a new phone takes its place. See
+[LOG-FORMAT.md](LOG-FORMAT.md).
 
 ## The review cycle
 
@@ -106,16 +123,27 @@ fails to parse is skipped and surfaced in the UI; it must not take the app down.
 
 Each language has a facts file (`<code>-facts.yaml`, see "Facts files" in
 `DECK-FORMAT.md`) alongside its decks. Once a day the app shows the learner one
-fact about each language they are studying, written in their interface
-language.
+fact about each language they are studying, in each language they speak.
+Those are the languages they picked and ranked on first launch (#53), which
+are kept apart from the interface language.
 
-A fact is eligible when its `text` has an entry for the interface language and
-its `contrast` is either absent or equal to that language. Facts without a
-contrast are the guaranteed pool, at least 30 per language, so a learner gets a
-month of facts whatever their interface language. Contrast facts are extra, and
-only make sense to someone reading in that language.
+A fact is shown in a spoken language when its `text` has an entry in it. A
+contrast fact is shown only to a learner who speaks the language it contrasts
+with. So a learner of Hindi who speaks Bengali and English sees the general
+facts in Bengali and in English, and the contrasts with Bengali and with
+English, their best-known language first. Facts without a contrast are the
+guaranteed pool, at least 30 per language, so a learner gets a month of facts
+whatever they speak.
 
 Seen facts are remembered by id, like review history keyed on card ids, so fact
-ids are permanent. Facts are not drilled and never enter `reviews`. The order,
-what happens after the last fact, and where seen ids are stored are decided
-with the screen that shows them.
+ids are permanent. Facts are not drilled and never enter `reviews`.
+
+- **Order:** the file's. Today's fact is the first eligible fact not yet
+  shown; one shown today stays today's fact.
+- **After the last fact** the cycle starts again, with the one shown longest
+  ago.
+- **Which languages:** each language the profile learns that has a facts file,
+  one card each on Today. A language not studied is never shown.
+- **Where seen ids live:** with the profile's settings, as
+  `<language>/<fact id>` and when it was shown, since they are small, per
+  profile and read as the screen draws.

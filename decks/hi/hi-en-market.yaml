@@ -1,0 +1,90 @@
+schema: 1
+id: hi-en-market
+name: "Market"
+kind: vocab
+theme: market
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Asking the price, bargaining, paying: what a market stall needs."
+tags: [beginner]
+cards:
+  - id: hi-en-market-0001
+    target: "कितने का है?"
+    native: "How much is it?"
+    reading: "kitne kaa hai?"
+    pos: "phrase"
+    notes: "For several things: कितने के हैं? (kitne ke hain?). Often just कितने का? with a point at the thing."
+  - id: hi-en-market-0002
+    target: "दाम"
+    native: "price"
+    reading: "daam"
+    pos: "noun"
+    gender: "m"
+    notes: "Also कीमत (kiimat), feminine."
+  - id: hi-en-market-0003
+    target: "रुपया"
+    native: "rupee"
+    reading: "rupayaa"
+    pos: "noun"
+    gender: "m"
+    notes: "More than one: रुपये (rupaye). सौ रुपये, a hundred rupees."
+  - id: hi-en-market-0004
+    target: "पैसे"
+    native: "money"
+    reading: "paise"
+    pos: "noun"
+    gender: "m"
+    notes: "A पैसा (paisaa) is a hundredth of a rupee, but the plural पैसे is the everyday word for money: पैसे नहीं हैं, I have no money."
+  - id: hi-en-market-0005
+    target: "खुले पैसे"
+    native: "change; small notes and coins"
+    reading: "khule paise"
+    pos: "phrase"
+    notes: "खुले पैसे हैं? Do you have change?"
+  - id: hi-en-market-0006
+    target: "महँगा"
+    native: "expensive"
+    reading: "mahangaa"
+    alt_target: ["महंगा"]
+    pos: "adj"
+    notes: "Agrees with the thing: महँगी (mahangii) with a feminine word. बहुत महँगा है! It's very expensive!"
+  - id: hi-en-market-0007
+    target: "सस्ता"
+    native: "cheap"
+    reading: "sastaa"
+    pos: "adj"
+    notes: "Feminine सस्ती (sastii)."
+  - id: hi-en-market-0008
+    target: "थोड़ा कम कीजिए।"
+    native: "Please lower it a little."
+    reading: "thodaa kam kiijiye."
+    pos: "phrase"
+    tags: ["polite"]
+    notes: "The polite way to bargain. Bargaining is expected at street stalls and markets, not in shops with fixed prices."
+  - id: hi-en-market-0009
+    target: "दुकान"
+    native: "shop"
+    reading: "dukaan"
+    pos: "noun"
+    gender: "f"
+  - id: hi-en-market-0010
+    target: "दीजिए"
+    native: "please give (me)"
+    reading: "diijiye"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "The polite request form of देना (denaa, to give). एक किलो दीजिए, a kilo, please."
+  - id: hi-en-market-0011
+    target: "किलो"
+    native: "kilo"
+    reading: "kilo"
+    pos: "noun"
+    gender: "m"
+    notes: "आधा किलो (aadhaa kilo) is half a kilo."
+  - id: hi-en-market-0012
+    target: "बस"
+    native: "that's all; enough"
+    reading: "bas"
+    pos: "other"
+    notes: "In a shop, बस means 'that's all'. It also means 'bus'."

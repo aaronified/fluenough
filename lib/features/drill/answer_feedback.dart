@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../core/grading/answer_grader.dart';
 import '../../core/models/card.dart';
+import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import 'drill_session.dart';
@@ -24,15 +25,25 @@ class AnswerFeedback extends StatelessWidget {
     super.key,
     required this.answer,
     required this.card,
+    required this.expected,
     required this.transliterating,
+    this.language,
   });
 
   final TypedAnswer answer;
   final Card card;
 
+  /// The canonical answer: the card's target, or a generated number's digits
+  /// when it was heard.
+  final String expected;
+
   /// Whether the answer was typed in Latin letters: the answer is then shown
   /// as the reading with the target after it.
   final bool transliterating;
+
+  /// The deck's language, in which a screen reader reads the answer and what
+  /// was typed. Null when they are not in it: a heard number's digits.
+  final LanguageInfo? language;
 
   @override
   Widget build(BuildContext context) {
@@ -44,40 +55,56 @@ class AnswerFeedback extends StatelessWidget {
       if (transliterating && reading != null) {
         return l10n.feedbackReadingWithTarget(reading, card.target);
       }
-      return matched ?? card.target;
+      return matched ?? expected;
     }
 
+    // Latin letters typed for a transliteration are not the deck's script.
+    final quotes = <String>[
+      card.target,
+      expected,
+      ?graded?.matched,
+      if (!transliterating) answer.typed,
+    ];
+    FeedbackBanner banner(FeedbackKind kind, String title, String detail) =>
+        FeedbackBanner(
+          kind: kind,
+          title: title,
+          detail: detail,
+          quotes: quotes,
+          language: language,
+        );
+
     if (graded == null) {
-      return FeedbackBanner(
-        kind: FeedbackKind.wrong,
-        title: l10n.feedbackGaveUp,
-        detail: l10n.feedbackAnswer(shown(null)),
+      return banner(
+        FeedbackKind.wrong,
+        l10n.feedbackGaveUp,
+        l10n.feedbackAnswer(shown(null)),
       );
     }
     return switch (graded.outcome) {
-      AnswerOutcome.exact => FeedbackBanner(
-        kind: FeedbackKind.correct,
-        title: l10n.feedbackCorrect,
-        detail: shown(null),
+      AnswerOutcome.exact => banner(
+        FeedbackKind.correct,
+        l10n.feedbackCorrect,
+        shown(null),
       ),
-      AnswerOutcome.closeDiacritics => FeedbackBanner(
-        kind: FeedbackKind.close,
-        title: graded.droppedArticle && graded.foldedDiacritics
+      AnswerOutcome.closeDiacritics => banner(
+        FeedbackKind.close,
+        graded.droppedArticle && graded.foldedDiacritics
             ? l10n.feedbackAccentAndArticle
             : graded.droppedArticle
             ? l10n.feedbackArticle
             : l10n.feedbackAccent,
-        detail: l10n.feedbackTypedWritten(answer.typed, shown(graded.matched)),
+        l10n.feedbackTypedWritten(answer.typed, shown(graded.matched)),
       ),
-      AnswerOutcome.closeTypo => FeedbackBanner(
-        kind: FeedbackKind.nearMiss,
-        title: l10n.feedbackTypo(shown(graded.matched)),
-        detail: l10n.feedbackTypoDetail(answer.typed),
+      AnswerOutcome.closeTypo => banner(
+        FeedbackKind.nearMiss,
+        l10n.feedbackTypo(shown(graded.matched)),
+        l10n.feedbackTypoDetail(answer.typed),
       ),
-      AnswerOutcome.wrong => FeedbackBanner(
-        kind: FeedbackKind.wrong,
-        title: l10n.feedbackWrong,
-        detail: l10n.feedbackAnswer(shown(null)),
+      AnswerOutcome.wrong => banner(
+        FeedbackKind.wrong,
+        l10n.feedbackWrong,
+        l10n.feedbackAnswer(shown(null)),
       ),
     };
   }
