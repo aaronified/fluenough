@@ -97,6 +97,9 @@ jobs:
       # flutter create writes a widget_test.dart referencing MyApp; our app
       # class is FluenoughApp, so the generated boilerplate does not compile.
       - run: rm -f test/widget_test.dart
+      # flutter create writes Flutter's icon, launch screen and a lowercase
+      # label; this puts the brand's in their place.
+      - run: python3 tools/brand_android.py
       - run: flutter pub get
 
       # drift generates database.g.dart, which is gitignored like every other
