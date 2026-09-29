@@ -17,7 +17,8 @@ class RatingButtons extends StatelessWidget {
   });
 
   /// Days until the card is next due if rated so: `ProgressStore.preview`.
-  final int Function(SelfGrade grade) intervalFor;
+  /// Null in number practice, which schedules nothing: no interval is shown.
+  final int Function(SelfGrade grade)? intervalFor;
 
   final ValueChanged<SelfGrade> onRate;
 
@@ -34,7 +35,10 @@ class RatingButtons extends StatelessWidget {
       child: _RatingButton(
         grade: grade,
         label: _label(l10n, grade),
-        interval: l10n.rateInterval(intervalFor(grade)),
+        interval: switch (intervalFor) {
+          final interval? => l10n.rateInterval(interval(grade)),
+          null => null,
+        },
         radius: radius,
         onPressed: () => onRate(grade),
       ),
@@ -142,7 +146,9 @@ class _RatingButton extends StatelessWidget {
 
   final SelfGrade grade;
   final String label;
-  final String interval;
+
+  /// Null when nothing is scheduled: the button is its label alone.
+  final String? interval;
   final BorderRadiusDirectional radius;
   final VoidCallback onPressed;
 
@@ -173,7 +179,10 @@ class _RatingButton extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: radius),
       ),
       child: Semantics(
-        label: l10n.rateButtonSemantics(label, interval),
+        label: switch (interval) {
+          final interval? => l10n.rateButtonSemantics(label, interval),
+          null => label,
+        },
         excludeSemantics: true,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -186,15 +195,17 @@ class _RatingButton extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const SizedBox(height: 2),
-            Text(
-              interval,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.labelMedium!.copyWith(
-                color: fg.withValues(alpha: 0.85),
-                fontWeight: FontWeight.w400,
+            if (interval case final interval?) ...<Widget>[
+              const SizedBox(height: 2),
+              Text(
+                interval,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.labelMedium!.copyWith(
+                  color: fg.withValues(alpha: 0.85),
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ),

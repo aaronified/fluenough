@@ -9,6 +9,8 @@ import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
+import 'package:fluenough/features/decks/number_practice_tile.dart';
+import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 
@@ -119,6 +121,46 @@ void main() {
         reason: entry.id,
       );
     }
+  });
+
+  testWidgets('number practice follows each big-numbers deck, and starts '
+      'unrecorded practice (#54)', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpDecks(tester);
+    final l10n = l10nOf(tester);
+    final rows = tester
+        .widgetList<NumberPracticeTile>(find.byType(NumberPracticeTile))
+        .map((t) => t.deck.id);
+    expect(
+      rows,
+      unorderedEquals(<String>[
+        'hi-en-numbers-big',
+        'bn-en-numbers-big',
+        'te-en-numbers-big',
+      ]),
+    );
+    for (final id in rows) {
+      final deck = tester.getRect(tileOf(state.deckById(id)!));
+      final practice = tester.getRect(
+        find.byWidgetPredicate(
+          (w) => w is NumberPracticeTile && w.deck.id == id,
+        ),
+      );
+      // Next in the list: only the list's gap between the two rows.
+      expect(practice.top - deck.bottom, inInclusiveRange(0, 8), reason: id);
+    }
+    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(3));
+
+    await tester.tap(
+      find.byWidgetPredicate(
+        (w) => w is NumberPracticeTile && w.deck.id == 'hi-en-numbers-big',
+      ),
+    );
+    await tester.pumpAndSettle();
+    final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+    expect(drill.request.numbers, isTrue);
+    expect(drill.request.deckIds, <String>{'hi-en-numbers-big'});
+    expect(find.text(l10n.numbersPracticeTitle), findsOneWidget);
   });
 
   testWidgets('search matches deck and language names', (tester) async {
