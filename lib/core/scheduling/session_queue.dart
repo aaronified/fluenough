@@ -33,6 +33,10 @@ typedef StateLookup = Sm2State? Function(Card card, DrillMode mode);
 /// the card can be drilled by ear. See [Card.modesIn].
 typedef VoiceLookup = bool Function(Card card);
 
+/// Whether one `(card, mode)` pair is left out, such as a leech the learner
+/// has set aside (#19). Its history stays; it just is not drilled.
+typedef PairFilter = bool Function(Card card, DrillMode mode);
+
 /// What one session drills: the reviews that are due, then new material up to
 /// the day's allowance.
 ///
@@ -84,6 +88,7 @@ class SessionQueue {
     required VoiceLookup hasVoice,
     required DateTime now,
     required int newCardLimit,
+    PairFilter? isSetAside,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
@@ -102,6 +107,7 @@ class SessionQueue {
       SessionItem? firstNew;
       for (final mode in DrillMode.values) {
         if (!allowed.contains(mode) || !modes.contains(mode)) continue;
+        if (isSetAside?.call(card, mode) ?? false) continue;
         final state = stateOf(card, mode);
         if (state == null) {
           firstNew ??= SessionItem(card: card, mode: mode, state: null);

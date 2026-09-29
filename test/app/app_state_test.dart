@@ -187,6 +187,49 @@ void main() {
       expect(queue.items.every((i) => i.isNew), isTrue);
     });
 
+    test('new cards follow the theme path; a picked theme drills alone', () async {
+      String deck(String id, String theme) =>
+          '''
+schema: 1
+id: $id
+name: "$theme"
+theme: $theme
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: $id-0001, target: "क", native: "k", reading: "k" }
+  - { id: $id-0002, target: "ख", native: "kh", reading: "kh" }
+''';
+      final state = AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          'decks/themes.yaml': '''
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+''',
+          // Alphabetically, market's file comes first; the path puts it second.
+          'decks/hi/hi-en-a-market.yaml': deck('hi-en-a-market', 'market'),
+          'decks/hi/hi-en-first-words.yaml': deck(
+            'hi-en-first-words',
+            'first-words',
+          ),
+        }),
+        settings: SettingsNotifier(newCardsPerDay: 2),
+      );
+      await state.load();
+      final today = state.buildSession(const DrillRequest.today());
+      expect(today.fresh.map((i) => i.card.deckId).toSet(), {
+        'hi-en-first-words',
+      });
+      final picked = state.buildSession(DrillRequest.deck('hi-en-a-market'));
+      expect(picked.items.map((i) => i.card.deckId).toSet(), {
+        'hi-en-a-market',
+      });
+    });
+
     test('recording goes to the progress store at the injected time', () async {
       final state = await loaded();
       final item = state.buildSession(const DrillRequest.today()).items.first;
@@ -246,11 +289,11 @@ void main() {
     });
   });
 
-  test('progress is not saved while persistence is incoming', () async {
+  test('progress in memory is not saved, whatever the features say', () async {
     expect((await loaded()).progressIsSaved, isFalse);
     expect(
       (await loaded(features: FeatureRegistry.all())).progressIsSaved,
-      isTrue,
+      isFalse,
     );
   });
 
