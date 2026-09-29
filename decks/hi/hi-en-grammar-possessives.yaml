@@ -1,0 +1,79 @@
+schema: 1
+id: hi-en-grammar-possessives
+name: "Possessives: my, your"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "My, your, his and her. They agree with the thing owned, not the owner."
+tags: [beginner, grammar]
+pattern:
+  name: "Possessive pronouns"
+  slot_name: "agreement"
+  slots: ["before a masculine noun", "before a feminine noun", "before a masculine plural, or a postposition"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "A possessive agrees with what is owned, not with the owner: मेरा घर (my house) because घर is masculine, मेरी किताब (my book) because किताब is feminine, whoever is speaking. So nothing in उसका says whether it is his or hers."
+  entries:
+    - lemma: "मैं"
+      key: main
+      gloss: "my"
+      forms:
+        "before a masculine noun": "मेरा"
+        "before a feminine noun": "मेरी"
+        "before a masculine plural, or a postposition": "मेरे"
+    - lemma: "तू"
+      key: tuu
+      gloss: "your, intimate"
+      forms:
+        "before a masculine noun": "तेरा"
+        "before a feminine noun": "तेरी"
+        "before a masculine plural, or a postposition": "तेरे"
+    - lemma: "तुम"
+      key: tum
+      gloss: "your, familiar"
+      forms:
+        "before a masculine noun": "तुम्हारा"
+        "before a feminine noun": "तुम्हारी"
+        "before a masculine plural, or a postposition": "तुम्हारे"
+    - lemma: "आप"
+      key: aap
+      gloss: "your, respectful"
+      forms:
+        "before a masculine noun": "आपका"
+        "before a feminine noun": "आपकी"
+        "before a masculine plural, or a postposition": "आपके"
+    - lemma: "यह"
+      key: yah
+      gloss: "his, her, its: near"
+      forms:
+        "before a masculine noun": "इसका"
+        "before a feminine noun": "इसकी"
+        "before a masculine plural, or a postposition": "इसके"
+    - lemma: "वह"
+      key: vah
+      gloss: "his, her, its: far"
+      forms:
+        "before a masculine noun": "उसका"
+        "before a feminine noun": "उसकी"
+        "before a masculine plural, or a postposition": "उसके"
+    - lemma: "हम"
+      key: ham
+      gloss: "our"
+      forms:
+        "before a masculine noun": "हमारा"
+        "before a feminine noun": "हमारी"
+        "before a masculine plural, or a postposition": "हमारे"
+    - lemma: "ये"
+      key: ye
+      gloss: "their: near"
+      forms:
+        "before a masculine noun": "इनका"
+        "before a feminine noun": "इनकी"
+        "before a masculine plural, or a postposition": "इनके"
+    - lemma: "वे"
+      key: ve
+      gloss: "their: far"
+      forms:
+        "before a masculine noun": "उनका"
+        "before a feminine noun": "उनकी"
+        "before a masculine plural, or a postposition": "उनके"

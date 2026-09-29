@@ -1,0 +1,64 @@
+schema: 1
+id: hi-en-grammar-present
+name: "Present tense"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I go, she speaks: the everyday present, by person and gender."
+tags: [beginner, grammar]
+pattern:
+  name: "Present habitual"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb's stem, then -ता, -ती or -ते for the doer's gender and number, then हूँ, हो, है or हैं. वह, हम, आप and वे do not show gender; the verb does."
+  entries:
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: "to go"
+      forms:
+        "मैं (m)": "जाता हूँ"
+        "मैं (f)": "जाती हूँ"
+        "तुम (m)": "जाते हो"
+        "तुम (f)": "जाती हो"
+        "वह (m)": "जाता है"
+        "वह (f)": "जाती है"
+        "हम (m)": "जाते हैं"
+        "हम (f)": "जाती हैं"
+        "आप (m)": "जाते हैं"
+        "आप (f)": "जाती हैं"
+        "वे (m)": "जाते हैं"
+        "वे (f)": "जाती हैं"
+    - lemma: "बोलना"
+      key: bolnaa
+      gloss: "to speak"
+      forms:
+        "मैं (m)": "बोलता हूँ"
+        "मैं (f)": "बोलती हूँ"
+        "तुम (m)": "बोलते हो"
+        "तुम (f)": "बोलती हो"
+        "वह (m)": "बोलता है"
+        "वह (f)": "बोलती है"
+        "हम (m)": "बोलते हैं"
+        "हम (f)": "बोलती हैं"
+        "आप (m)": "बोलते हैं"
+        "आप (f)": "बोलती हैं"
+        "वे (m)": "बोलते हैं"
+        "वे (f)": "बोलती हैं"
+    - lemma: "खाना"
+      key: khaanaa
+      gloss: "to eat"
+      forms:
+        "मैं (m)": "खाता हूँ"
+        "मैं (f)": "खाती हूँ"
+        "तुम (m)": "खाते हो"
+        "तुम (f)": "खाती हो"
+        "वह (m)": "खाता है"
+        "वह (f)": "खाती है"
+        "हम (m)": "खाते हैं"
+        "हम (f)": "खाती हैं"
+        "आप (m)": "खाते हैं"
+        "आप (f)": "खाती हैं"
+        "वे (m)": "खाते हैं"
+        "वे (f)": "खाती हैं"
