@@ -24,11 +24,16 @@ class AnswerFeedback extends StatelessWidget {
     super.key,
     required this.answer,
     required this.card,
+    required this.expected,
     required this.transliterating,
   });
 
   final TypedAnswer answer;
   final Card card;
+
+  /// The canonical answer: the card's target, or a generated number's digits
+  /// when it was heard.
+  final String expected;
 
   /// Whether the answer was typed in Latin letters: the answer is then shown
   /// as the reading with the target after it.
@@ -44,7 +49,7 @@ class AnswerFeedback extends StatelessWidget {
       if (transliterating && reading != null) {
         return l10n.feedbackReadingWithTarget(reading, card.target);
       }
-      return matched ?? card.target;
+      return matched ?? expected;
     }
 
     if (graded == null) {
