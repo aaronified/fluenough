@@ -53,6 +53,25 @@ provides the TTS voices — so **listening drills will be silent** unless you ad
 GApps or install a standalone TTS engine APK. Never conclude that audio is
 broken from a Waydroid run alone.
 
+## Accessibility
+
+`test/accessibility_test.dart` checks automatically (#26):
+
+- Flutter's tap-target, label and WCAG AA contrast guidelines on every drill
+  state, the four tabs and the pushed screens, in both themes
+- tap targets and no clipping at font scale 2.0, Android's largest
+- no answer on the screen reader's tree before it is given
+- deck content in feedback marked with the deck's language
+
+A test cannot hear a voice. After a change to a drill, run TalkBack on a
+phone with the deck's voice installed. Check that:
+
+- a card's word is read in the deck's language, not English
+- the feedback is announced as it appears, with the answer in the deck's
+  language
+- recognition does not read the meaning before "Show answer"
+- every button says what it does
+
 ## Before opening a pull request
 
 ```sh

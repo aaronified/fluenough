@@ -63,16 +63,20 @@ class _DecksPageState extends State<DecksPage> {
               padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: AppSizes.gutter,
               ),
-              child: SearchBar(
-                controller: _search,
-                hintText: l10n.decksSearchHint,
-                leading: const Icon(Icons.search),
-                elevation: const WidgetStatePropertyAll<double>(0),
-                constraints: const BoxConstraints(minHeight: 56),
-                padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-                  EdgeInsetsDirectional.symmetric(horizontal: 16),
+              // One screen-reader node, the bar's full 56 in height: alone,
+              // the field inside is a 24-tall tap target (#26).
+              child: MergeSemantics(
+                child: SearchBar(
+                  controller: _search,
+                  hintText: l10n.decksSearchHint,
+                  leading: const Icon(Icons.search),
+                  elevation: const WidgetStatePropertyAll<double>(0),
+                  constraints: const BoxConstraints(minHeight: 56),
+                  padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+                    EdgeInsetsDirectional.symmetric(horizontal: 16),
+                  ),
+                  onChanged: (value) => setState(() => _query = value),
                 ),
-                onChanged: (value) => setState(() => _query = value),
               ),
             ),
             const SizedBox(height: 12),
