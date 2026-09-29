@@ -58,17 +58,25 @@ void main() {
           .whereType<File>()
           .map((f) => f.path.replaceAll(r'\', '/'))
           .where(AssetDeckSource.isDeckPath)
-          // Facts and themes files sit beside the decks but are not decks.
+          // Facts, themes and number rules sit beside the decks but are
+          // not decks.
           .where(
             (p) => !{
               'facts',
               'themes',
+              'numbers',
             }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
           )
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
       expect(catalog.decks.map((d) => d.path).toSet(), onDisk);
+    });
+
+    test('each language with number decks has its number rules (#54)', () {
+      expect(catalog.numberRules.keys, containsAll(<String>['hi', 'bn', 'te']));
+      expect(catalog.numberRules['te']!.tensAndUnits, isTrue);
+      expect(catalog.numberRules['hi']!.tensAndUnits, isFalse);
     });
 
     test('the shared theme path is bundled and read', () {
@@ -132,6 +140,16 @@ void main() {
   });
 
   group('parseAll', () {
+    test('a broken numbers file is a broken row, not a crash', () {
+      final catalog = DeckCatalog.parseAll({
+        'decks/es/es-mini.yaml': miniDeck,
+        'decks/xx/xx-numbers.yaml': 'schema: 1\nkind: numbers\nid: xx\n',
+      });
+      expect(catalog.decks.map((d) => d.id), ['xx-mini']);
+      expect(catalog.numberRules, isEmpty);
+      expect(catalog.broken.single.fileName, 'xx-numbers.yaml');
+    });
+
     test('skips a facts file, by its kind rather than its name', () {
       final catalog = DeckCatalog.parseAll({
         'decks/es/es-mini.yaml': miniDeck,

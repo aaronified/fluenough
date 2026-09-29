@@ -284,3 +284,75 @@ class Scripts(Validated):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+NUMBERS = """\
+schema: 1
+id: hi-numbers
+name: Hindi numbers
+kind: numbers
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+license: CC0-1.0
+words:
+  1: "एक"
+  2: ["दो"]
+hundreds: { 1: "एक सौ", 2: "दो सौ", 3: "दो सौ", 4: "दो सौ", 5: "दो सौ", 6: "दो सौ", 7: "दो सौ", 8: "दो सौ", 9: "दो सौ" }
+thousands: { 1: "एक हज़ार", 2: "दो हज़ार", 3: "दो हज़ार", 4: "दो हज़ार", 5: "दो हज़ार", 6: "दो हज़ार", 7: "दो हज़ार", 8: "दो हज़ार", 9: "दो हज़ार" }
+"""
+
+NUMBER_DECK = """\
+schema: 1
+id: hi-en-numbers-big
+name: Tens and big numbers
+theme: numbers-big
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: hi-en-numbers-big-0001, target: "एक", native: "1", reading: "ek" }
+  - { id: hi-en-numbers-big-0002, target: "दो", native: "2", reading: "do" }
+  - { id: hi-en-numbers-big-0003, target: "सौ", native: "100", reading: "sau" }
+  - { id: hi-en-numbers-big-0004, target: "हज़ार", native: "1000", reading: "hazaar" }
+"""
+
+
+class Numbers(Validated):
+    """A language's number rules, and the words its number decks teach (ADR-0011)."""
+
+    def write(self, name: str, text: str) -> validate_decks.Report:
+        path = self.tmp / name
+        path.write_text(text, encoding="utf-8")
+        return validate_decks.validate(path)
+
+    def test_a_numbers_file_is_valid(self) -> None:
+        report = self.write("hi-numbers.yaml", NUMBERS)
+        self.assertEqual(report.errors, [])
+        self.assertEqual(report.number_words[0], "hi")
+        self.assertIn("हज़ार", report.number_words[1])
+
+    def test_its_id_names_its_language(self) -> None:
+        report = self.write("hi-numbers.yaml", NUMBERS.replace("id: hi-numbers", "id: hindi"))
+        self.assertTrue(any("must be 'hi-numbers'" in e for e in report.errors), report.errors)
+
+    def test_hundreds_and_thousands_need_every_digit(self) -> None:
+        report = self.write("hi-numbers.yaml", NUMBERS.replace(', 9: "दो सौ" }', " }"))
+        self.assertTrue(any("missing [9]" in e for e in report.errors), report.errors)
+
+    def test_words_are_keyed_by_numbers_below_a_hundred(self) -> None:
+        report = self.write("hi-numbers.yaml", NUMBERS.replace('  1: "एक"', '  100: "एक"'))
+        self.assertTrue(any("from 1 to 99" in e for e in report.errors), report.errors)
+
+    def test_every_word_must_be_taught_by_a_number_deck(self) -> None:
+        rules = self.write("hi-numbers.yaml", NUMBERS)
+        deck = self.write("hi-en-numbers-big.yaml", NUMBER_DECK)
+        self.assertEqual(deck.errors, [])
+        self.assertEqual(validate_decks.check_numbers_across([rules, deck]), [])
+
+        untaught = self.write("hi-en-numbers-big.yaml", NUMBER_DECK.replace('"हज़ार"', '"हजार"'))
+        problems = validate_decks.check_numbers_across([rules, untaught])
+        self.assertTrue(any("teaches: हज़ार" in p for p in problems), problems)
+
+    def test_rules_with_no_number_deck_are_refused(self) -> None:
+        rules = self.write("hi-numbers.yaml", NUMBERS)
+        problems = validate_decks.check_numbers_across([rules])
+        self.assertTrue(any("no hi deck teaches a number theme" in p for p in problems), problems)
