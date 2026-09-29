@@ -19,7 +19,8 @@ enum ThemeSeed {
   final int argb;
 }
 
-/// The learner's settings, in memory until #15 stores them.
+/// The learner's settings. `StoredSettings` keeps them in the profile's
+/// database ([toStored], [restore]).
 ///
 /// Read through `AppState.settings` inside a `ListenableBuilder`, so that a
 /// change rebuilds only what shows it. Every setter notifies only when the
@@ -140,6 +141,78 @@ class SettingsNotifier extends ChangeNotifier {
   TimeOfDay get reminderTime => _reminderTime;
   set reminderTime(TimeOfDay value) =>
       _set(_reminderTime, value, (v) => _reminderTime = v);
+
+  /// Every setting as text, by its stored name. The names are permanent:
+  /// renaming one resets it for everyone.
+  Map<String, String> toStored() => <String, String>{
+    'new_cards_per_day': '$_newCardsPerDay',
+    'enabled_skills': [for (final s in _enabledSkills) s.name].join(','),
+    'show_romanisation': '$_showRomanisation',
+    'speech_rate': '$_speechRate',
+    'theme_mode': _themeMode.name,
+    'seed': _seed.name,
+    'dynamic_colour': '$_dynamicColour',
+    'high_contrast': '$_highContrast',
+    'card_text_scale': '$_cardTextScale',
+    'reminder': '$_reminder',
+    'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
+  };
+
+  /// Applies [stored], as [toStored] wrote it, through the setters, so that
+  /// ranges are clamped. A missing or unreadable value keeps its current
+  /// setting.
+  void restore(Map<String, String> stored) {
+    T? pick<T>(String name, T? Function(String) parse) {
+      final text = stored[name];
+      return text == null ? null : parse(text);
+    }
+
+    bool? flag(String t) => bool.tryParse(t);
+    E? named<E extends Enum>(List<E> values, String t) => values.asNameMap()[t];
+
+    if (pick('new_cards_per_day', int.tryParse) case final v?) {
+      newCardsPerDay = v;
+    }
+    if (pick('enabled_skills', (t) => t) case final names?) {
+      final skills = <Skill>{
+        for (final name in names.split(',')) ?Skill.values.asNameMap()[name],
+      };
+      for (final skill in Skill.values) {
+        setSkillEnabled(skill, skills.contains(skill));
+      }
+    }
+    if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
+    if (pick('speech_rate', _parseFinite) case final v?) speechRate = v;
+    if (pick('theme_mode', (t) => named(ThemeMode.values, t)) case final v?) {
+      themeMode = v;
+    }
+    if (pick('seed', (t) => named(ThemeSeed.values, t)) case final v?) {
+      seed = v;
+    }
+    if (pick('dynamic_colour', flag) case final v?) dynamicColour = v;
+    if (pick('high_contrast', flag) case final v?) highContrast = v;
+    if (pick('card_text_scale', _parseFinite) case final v?) {
+      cardTextScale = v;
+    }
+    if (pick('reminder', flag) case final v?) reminder = v;
+    if (pick('reminder_time', _parseTime) case final v?) reminderTime = v;
+  }
+
+  static TimeOfDay? _parseTime(String text) {
+    final parts = text.split(':');
+    if (parts.length != 2) return null;
+    final h = int.tryParse(parts[0]);
+    final m = int.tryParse(parts[1]);
+    if (h == null || m == null || h < 0 || h > 23 || m < 0 || m > 59) {
+      return null;
+    }
+    return TimeOfDay(hour: h, minute: m);
+  }
+
+  static double? _parseFinite(String text) {
+    final value = double.tryParse(text);
+    return value != null && value.isFinite ? value : null;
+  }
 
   void _set<T>(T current, T next, void Function(T) assign) {
     if (current == next) return;

@@ -7,6 +7,7 @@ import 'tables/cards.dart';
 import 'tables/converters.dart';
 import 'tables/decks.dart';
 import 'tables/reviews.dart';
+import 'tables/settings.dart';
 
 part 'database.g.dart';
 
@@ -34,15 +35,16 @@ part 'database.g.dart';
 ///    `cards` and `card_states` may be rebuilt, since the first two come from
 ///    the deck files and the last from replaying `reviews`.
 @DriftDatabase(
-  tables: [Decks, Cards, CardStates, Reviews],
-  daos: [DecksDao, CardsDao, CardStatesDao, ReviewsDao],
+  tables: [Decks, Cards, CardStates, Reviews, Settings],
+  daos: [DecksDao, CardsDao, CardStatesDao, ReviewsDao, SettingsDao],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   /// 1: the four tables, and the triggers that keep `reviews` append-only.
+  /// 2: `settings` (#15).
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -51,7 +53,7 @@ class AppDatabase extends _$AppDatabase {
       await _guardReviews();
     },
     onUpgrade: (m, from, to) async {
-      // Version 1 is the first schema, so there is nothing to upgrade from.
+      if (from < 2) await m.createTable(settings);
     },
   );
 

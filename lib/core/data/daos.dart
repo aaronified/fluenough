@@ -6,6 +6,7 @@ import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/decks.dart';
 import 'tables/reviews.dart';
+import 'tables/settings.dart';
 
 part 'daos.g.dart';
 
@@ -87,4 +88,21 @@ class ReviewsDao extends DatabaseAccessor<AppDatabase> with _$ReviewsDaoMixin {
   /// Every review, in the order it was appended.
   Future<List<ReviewRow>> all() =>
       (select(reviews)..orderBy([(r) => OrderingTerm.asc(r.id)])).get();
+}
+
+/// The learner's settings, by name.
+@DriftAccessor(tables: [Settings])
+class SettingsDao extends DatabaseAccessor<AppDatabase>
+    with _$SettingsDaoMixin {
+  SettingsDao(super.attachedDatabase);
+
+  /// Every stored setting, by name.
+  Future<Map<String, String>> all() async => <String, String>{
+    for (final row in await select(settings).get()) row.name: row.value,
+  };
+
+  /// Stores [value] under [name], replacing what was there.
+  Future<void> put(String name, String value) => into(
+    settings,
+  ).insertOnConflictUpdate(SettingsCompanion.insert(name: name, value: value));
 }
