@@ -13,6 +13,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import 'broken_deck_tile.dart';
 import 'deck_content.dart';
+import 'number_practice_tile.dart';
 
 /// The Decks tab: search, language chips, every deck with its badge,
 /// broken-deck rows, and Add deck.
@@ -181,7 +182,11 @@ class _DecksPageState extends State<DecksPage> {
                 outerRadius: AppRadii.card,
                 gap: 4,
                 children: <Widget>[
-                  for (final entry in section.decks) tile(entry),
+                  for (final entry in section.decks) ...<Widget>[
+                    tile(entry),
+                    if (hasNumberPractice(state, entry))
+                      NumberPracticeTile(deck: entry),
+                  ],
                   if (i == sections.length - 1)
                     for (final file in broken) BrokenDeckTile(broken: file),
                 ],

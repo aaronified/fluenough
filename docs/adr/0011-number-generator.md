@@ -12,6 +12,7 @@ was not taught. Hindi and Bengali have a word of their own for every number
 up to 99 and the beta teaches only 1–20 and the tens, so they can spell 2020
 but not 2026. Telugu builds 21–99 from parts, so it can spell any.
 
+The issue names this ADR 0010; that number went to the theme decks.
 Two questions were left to this ADR:
 - whether generated cards are scheduled, and under what ids
 - where the generator sits in the theme path
@@ -37,14 +38,28 @@ Two questions were left to this ADR:
   random from those that can be spelled. Nothing is permanent, so logging
   can be added later without touching rule 1 or 9.
 - **Placement (maintainer's decision):** its own row in each course's theme
-  list, right after `numbers-big`, drawn like a deck and marked as
-  generated. That is the second part of #54.
+  list, right after `numbers-big`, drawn like a deck. Its second line says
+  the numbers are random and not recorded.
+- **The drill.** A practice session is ten different four-digit numbers.
+  They take the skills the learner has on, in turn:
+  - Recognition shows the words, then the digits. The learner rates the
+    recall; the rating buttons show no interval, because nothing is
+    scheduled.
+  - Production shows the digits and grades the typed words as any card's
+    target, near misses included.
+  - Listening speaks the words and the learner types the digits, only with a
+    voice. Digits are right or wrong: 2021 is not a slip for 2020. Spaces
+    and commas are ignored.
+
+  The summary counts the answers as usual.
 
 ## Consequences
 
 - A language gets generated numbers by adding one data file. Its words
   cannot drift from its decks, because CI checks them.
 - Number practice does not count toward stats or the streak.
+- Words are typed in the language's script. The rules carry no readings, so
+  typing a number in Latin letters (#47) waits for them.
 - Years are spelled as numbers (1950 as 'one thousand nine hundred fifty').
   The "nineteen hundred fifty" reading, common in Hindi and Bengali, is not
   generated. The calendar decks' notes teach it.
