@@ -275,12 +275,14 @@ def check_pattern(r: Report, pattern: object) -> None:
         return
 
     lemmas: set[str] = set()
+    # What each row puts into its expanded card ids: its key, or its lemma.
+    id_parts: set[str] = set()
     for i, entry in enumerate(entries):
         ewhere = f"pattern.entries[{i}]"
         if not isinstance(entry, dict):
             r.error(ewhere, "must be a mapping")
             continue
-        for unknown in sorted(set(entry) - {"lemma", "gloss", "forms"}):
+        for unknown in sorted(set(entry) - {"lemma", "key", "gloss", "forms"}):
             r.error(ewhere, f"unknown field {unknown!r}")
         lemma = entry.get("lemma")
         if not _is_str(lemma):
@@ -290,6 +292,21 @@ def check_pattern(r: Report, pattern: object) -> None:
             if lemma in lemmas:
                 r.error(ewhere, "duplicate lemma")
             lemmas.add(lemma)
+            # Card ids are ASCII (AGENTS.md rule 1): a lemma such as जाना
+            # names its row with a key instead.
+            key = entry.get("key")
+            if key is not None:
+                if not _is_str(key) or not ID_RE.fullmatch(key):
+                    r.error(ewhere, f"key must match [a-z0-9-]+, got {key!r}")
+                    key = None
+            elif not ID_RE.fullmatch(lemma):
+                r.error(ewhere, f"lemma {lemma!r} cannot go into a card id; "
+                                f"give the entry a key of lowercase letters "
+                                f"and digits, like 'jaanaa'")
+            id_part = key if key is not None else lemma
+            if id_part in id_parts:
+                r.error(ewhere, f"{id_part!r} already names another row")
+            id_parts.add(id_part)
         if not _is_str(entry.get("gloss")):
             r.error(ewhere, "gloss is required")
 
