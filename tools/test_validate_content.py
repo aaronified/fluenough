@@ -307,7 +307,7 @@ if __name__ == "__main__":
 
 GRAMMAR = """\
 schema: 1
-id: xx-probe
+id: hi-en-probe
 name: Probe
 kind: grammar
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }

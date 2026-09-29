@@ -8,17 +8,17 @@ import 'package:fluenough/features/drill/grammar_cells.dart';
 
 void main() {
   final bundled = DeckParser.parse(
-    File('decks/es/es-grammar-present-ar.yaml').readAsStringSync(),
-    source: 'es-grammar-present-ar.yaml',
+    File('decks/es/es-en-grammar-present-ar.yaml').readAsStringSync(),
+    source: 'es-en-grammar-present-ar.yaml',
   );
 
   test('the bundled -ar deck expands to 30 cards, 5 lemmas by 6 slots', () {
     final cards = expandPattern(bundled);
     expect(cards, hasLength(30));
-    expect(cards.first.id, 'es-grammar-present-ar-hablar-0');
+    expect(cards.first.id, 'es-en-grammar-present-ar-hablar-0');
     expect(cards.first.target, 'hablo');
     expect(cards.first.native, 'hablar (to speak) — yo');
-    expect(cards[4].id, 'es-grammar-present-ar-hablar-4');
+    expect(cards[4].id, 'es-en-grammar-present-ar-hablar-4');
     expect(cards[4].target, 'habláis');
   });
 
@@ -28,7 +28,7 @@ void main() {
     expect(again, first);
     expect(first.toSet(), hasLength(first.length), reason: 'unique');
     for (final id in first) {
-      expect(id, matches(RegExp(r'^es-grammar-present-ar-[a-z]+-[0-5]$')));
+      expect(id, matches(RegExp(r'^es-en-grammar-present-ar-[a-z]+-[0-5]$')));
     }
   });
 
@@ -70,8 +70,8 @@ pattern:
 
   test('a deck without a pattern has no cards to expand', () {
     final vocab = DeckParser.parse(
-      File('decks/es/es-core-100.yaml').readAsStringSync(),
-      source: 'es-core-100.yaml',
+      File('decks/es/es-en-core-100.yaml').readAsStringSync(),
+      source: 'es-en-core-100.yaml',
     );
     expect(expandPattern(vocab), isEmpty);
   });

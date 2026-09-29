@@ -89,7 +89,7 @@ void main() {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck('es-core-100', skill: Skill.production),
+          request: DrillRequest.deck('es-en-core-100', skill: Skill.production),
           preset: const DrillPreset(
             target: 'el niño',
             typed: 'la mesa',
@@ -143,7 +143,10 @@ void main() {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck('es-core-100', skill: Skill.recognition),
+          request: DrillRequest.deck(
+            'es-en-core-100',
+            skill: Skill.recognition,
+          ),
           preset: const DrillPreset(target: 'la casa'),
         ),
       );
@@ -166,7 +169,7 @@ void main() {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck('es-core-100', skill: Skill.production),
+          request: DrillRequest.deck('es-en-core-100', skill: Skill.production),
           preset: const DrillPreset(target: 'el niño'),
         ),
       );
@@ -181,7 +184,7 @@ void main() {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck('es-core-100', skill: Skill.listening),
+          request: DrillRequest.deck('es-en-core-100', skill: Skill.listening),
           preset: const DrillPreset(target: 'el niño'),
         ),
         state: AppState.test(tts: FixedTtsEngine(<String>{'es'})),
@@ -216,47 +219,47 @@ void main() {
   final drills = <(String, DrillRequest, DrillPreset)>[
     (
       'recognition',
-      DrillRequest.deck('es-core-100', skill: Skill.recognition),
+      DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
       const DrillPreset(target: 'la casa'),
     ),
     (
       'recognition, revealed',
-      DrillRequest.deck('es-core-100', skill: Skill.recognition),
+      DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
       const DrillPreset(target: 'la casa', reveal: true),
     ),
     (
       'production',
-      DrillRequest.deck('es-core-100', skill: Skill.production),
+      DrillRequest.deck('es-en-core-100', skill: Skill.production),
       const DrillPreset(target: 'el niño'),
     ),
     (
       'production, correct',
-      DrillRequest.deck('es-core-100', skill: Skill.production),
+      DrillRequest.deck('es-en-core-100', skill: Skill.production),
       const DrillPreset(target: 'el niño', typed: 'el niño', check: true),
     ),
     (
       'production, accent',
-      DrillRequest.deck('es-core-100', skill: Skill.production),
+      DrillRequest.deck('es-en-core-100', skill: Skill.production),
       const DrillPreset(target: 'el niño', typed: 'el nino', check: true),
     ),
     (
       'production, near miss',
-      DrillRequest.deck('es-core-100', skill: Skill.production),
+      DrillRequest.deck('es-en-core-100', skill: Skill.production),
       const DrillPreset(target: 'la ventana', typed: 'la ventna', check: true),
     ),
     (
       'production, wrong',
-      DrillRequest.deck('es-core-100', skill: Skill.production),
+      DrillRequest.deck('es-en-core-100', skill: Skill.production),
       const DrillPreset(target: 'la ventana', typed: 'el perro', check: true),
     ),
     (
       'production in a script, with the keyboard hint',
-      DrillRequest.deck('ja-hiragana', skill: Skill.production),
+      DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
       const DrillPreset(target: 'か'),
     ),
     (
       'listening',
-      DrillRequest.deck('es-core-100', skill: Skill.listening),
+      DrillRequest.deck('es-en-core-100', skill: Skill.listening),
       const DrillPreset(),
     ),
     (

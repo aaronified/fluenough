@@ -123,7 +123,7 @@ void main() {
     });
 
     test('a grammar deck is listed with its pattern, expanded to cards', () {
-      final grammar = catalog.byId('es-grammar-present-ar')!;
+      final grammar = catalog.byId('es-en-grammar-present-ar')!;
       expect(grammar.deck.kind, DeckKind.grammar);
       expect(grammar.deck.pattern, isNotNull);
       expect(grammar.cards, hasLength(30), reason: '5 lemmas x 6 slots');
