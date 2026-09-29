@@ -18,8 +18,14 @@ void main() {
     expect(find.text(l10n.profilesTitle), findsOneWidget);
     expect(find.text(l10n.profilesPrivacy), findsOneWidget);
     expect(find.text(l10n.profilesAdd), findsOneWidget);
-    // Aro learns hi and es; only Spanish has a deck on this branch.
-    final aro = l10n.profilesOpen('Aro', languageName(state, 'es'));
+    // Aro learns Hindi and Spanish, listed in the catalog's order.
+    final aro = l10n.profilesOpen(
+      'Aro',
+      [
+        languageName(state, 'es'),
+        languageName(state, 'hi'),
+      ].join(l10n.commonListSeparator),
+    );
     final mira = l10n.profilesOpen('Mira', languageName(state, 'ja'));
     expect(
       find.bySemanticsLabel('$aro\n${l10n.profilesLocked}'),

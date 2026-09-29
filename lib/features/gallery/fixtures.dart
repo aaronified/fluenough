@@ -6,6 +6,7 @@ import '../../app/profile.dart';
 import '../../app/session.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/tts/fixed_tts_engine.dart';
 
@@ -13,8 +14,7 @@ import '../../core/tts/fixed_tts_engine.dart';
 /// design's people and a history to show.
 ///
 /// Everything is built on the real bundled decks: no invented card ids ever
-/// appear (AGENTS.md rule 1). The design's Hindi decks are not on this branch
-/// yet (#41), so Aro learns Spanish here.
+/// appear (AGENTS.md rule 1).
 abstract final class GalleryFixtures {
   /// The design's first profile: PIN 1234.
   static const Profile aro = Profile(
@@ -65,8 +65,15 @@ abstract final class GalleryFixtures {
     );
   }
 
-  /// Twelve days of reviews ending yesterday, on the first cards of every
-  /// deck with cards: a 12-day streak, those cards due today, and one card
+  /// The decks the design's history is drawn on. Only these get history,
+  /// so the gallery's numbers stay the same as content decks are added.
+  static const Set<String> historyDecks = <String>{
+    'es-core-100',
+    'ja-hiragana',
+  };
+
+  /// Twelve days of reviews ending yesterday, on the first cards of each of
+  /// [historyDecks]: a 12-day streak, those cards due today, and one card
   /// forgotten five times over, a leech at #19's default threshold.
   static void seedHistory(
     MemoryProgress progress,
@@ -80,7 +87,13 @@ abstract final class GalleryFixtures {
         >[];
     for (final entry in decks) {
       final cards = entry.cards;
-      if (cards.isEmpty) continue;
+      // Grammar cards are drilled in their own mode, which the fixture's
+      // history does not use.
+      if (cards.isEmpty ||
+          entry.deck.kind == DeckKind.grammar ||
+          !historyDecks.contains(entry.id)) {
+        continue;
+      }
       for (var day = 12; day >= 1; day--) {
         final at = addDays(today, -day).add(const Duration(hours: 18));
         final i = (12 - day) % cards.length;

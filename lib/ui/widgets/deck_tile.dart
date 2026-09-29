@@ -60,9 +60,9 @@ enum DeckBadgeKind {
   /// "Done", when nothing in a deck the profile learns is due.
   done,
 
-  /// "Feature incoming", for a deck this version cannot drill at all: a
-  /// grammar deck, whose cards wait for the expander (#2). Never "Done",
-  /// which would claim it had been studied. Drawn as the app's
+  /// "Feature incoming", for a deck this version cannot drill at all: one
+  /// whose cards' drills are all incoming, such as a grammar deck before its
+  /// drill (#14). Never "Done", which would claim it had been studied. Drawn as the app's
   /// [IncomingBadge], under the deck's meta line: too wide to share a phone
   /// row with the name.
   incoming,
@@ -85,7 +85,7 @@ class DeckBadge extends StatelessWidget {
   /// against the whole daily cap, so the badges can add up to more than
   /// Today's number.
   factory DeckBadge.forEntry(AppState state, DeckEntry entry) {
-    if (entry.cards.isEmpty) {
+    if (!state.canDrill(entry)) {
       return const DeckBadge(kind: DeckBadgeKind.incoming);
     }
     if (!state.currentProfile.learns(entry.language.code)) {
@@ -161,11 +161,16 @@ class DeckTile extends StatelessWidget {
     required this.badge,
     this.onTap,
     this.glyphSize = 56,
+    this.meta,
   });
 
   final DeckEntry entry;
   final DeckBadge badge;
   final VoidCallback? onTap;
+
+  /// The second line, when it is not [metaFor]'s: a theme deck shows its
+  /// place on the path and its progress instead.
+  final String? meta;
 
   /// 56 on the deck list, 52 on Today.
   final double glyphSize;
@@ -210,7 +215,7 @@ class DeckTile extends StatelessWidget {
                     Text(entry.deck.name, style: theme.textTheme.titleMedium),
                     const SizedBox(height: 2),
                     Text(
-                      metaFor(l10n, entry),
+                      meta ?? metaFor(l10n, entry),
                       style: theme.textTheme.bodyMedium!.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),

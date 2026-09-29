@@ -69,6 +69,7 @@ class Deck {
     this.tags = const <String>[],
     this.authors = const <Author>[],
     this.source,
+    this.theme,
   });
 
   final String id;
@@ -93,7 +94,28 @@ class Deck {
   final List<Author> authors;
   final String? source;
 
+  /// The theme this deck teaches, by its id in `decks/themes.yaml`, such as
+  /// `market`. Null for a deck outside the theme path (ADR-0010).
+  final String? theme;
+
   int get cardCount => cards.length;
+
+  /// This deck with [cards] in place of its own: a grammar deck once its
+  /// pattern is expanded.
+  Deck withCards(List<Card> cards) => Deck(
+    id: id,
+    name: name,
+    kind: kind,
+    language: language,
+    native: native,
+    license: license,
+    cards: cards,
+    pattern: pattern,
+    description: description,
+    tags: tags,
+    authors: authors,
+    source: source,
+  );
 
   @override
   String toString() => 'Deck($id, ${cards.length} cards)';

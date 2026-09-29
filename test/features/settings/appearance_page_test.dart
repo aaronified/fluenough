@@ -12,8 +12,8 @@ import '../../support/harness.dart';
 import 'support.dart';
 
 void main() {
-  testWidgets('in this version every control is incoming and changes '
-      'nothing', (tester) async {
+  testWidgets('in this version the theme is live and every other control is '
+      'incoming', (tester) async {
     usePhone(tester);
     final semantics = tester.ensureSemantics();
     final state = await pumpScreen(tester, const AppearancePage());
@@ -21,7 +21,6 @@ void main() {
     final settings = state.settings;
 
     for (final label in <String>[
-      l10n.appearanceTheme,
       l10n.appearanceWallpaper,
       l10n.appearanceColour,
       l10n.appearanceContrast,
@@ -47,14 +46,11 @@ void main() {
       await clearSnackBars(tester);
     }
 
-    await tester.scrollUntilVisible(
-      find.text(l10n.appearanceThemeDark),
-      -200,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.tap(find.text(l10n.appearanceThemeDark), warnIfMissed: false);
+    await tester.ensureVisible(find.text(l10n.appearanceThemeDark));
     await tester.pumpAndSettle();
-    expect(settings.themeMode, ThemeMode.system);
+    await tester.tap(find.text(l10n.appearanceThemeDark));
+    await tester.pumpAndSettle();
+    expect(settings.themeMode, ThemeMode.dark);
     expect(settings.seed, ThemeSeed.forest);
     semantics.dispose();
   });
@@ -97,6 +93,8 @@ void main() {
     await tapSlider(tester, slider, 1);
     await tester.pumpAndSettle();
     expect(settings.cardTextScale, SettingsNotifier.maxCardTextScale);
+    // The preview above grows with the scale, so the label may have moved.
+    await scrollTo(tester, find.text(l10n.commonPercent(1.4)));
     expect(find.text(l10n.commonPercent(1.4)), findsOneWidget);
 
     // Wallpaper colours on: the seeds no longer apply.

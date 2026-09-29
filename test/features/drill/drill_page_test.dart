@@ -6,15 +6,19 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/app/links.dart';
 import 'package:fluenough/core/grading/self_grade.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
+import 'package:fluenough/features/drill/recognition_drill.dart';
 import 'package:fluenough/features/drill/rtl_fixture.dart';
+import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
@@ -343,8 +347,11 @@ void main() {
 
   testWidgets('an empty queue shows the empty state', (tester) async {
     usePhone(tester);
-    // A grammar deck has no cards until the expander (#2).
-    await pumpDrill(tester, DrillRequest.deck('es-en-grammar-present-ar'));
+    // Listening, with no voice on the phone: nothing to drill.
+    await pumpDrill(
+      tester,
+      DrillRequest.deck('ja-hiragana', skill: Skill.listening),
+    );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillEmptyTitle), findsOneWidget);
     expect(find.text(l10n.drillEmptyBody), findsOneWidget);
@@ -512,5 +519,106 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text(l10n.commonDecksFailed), findsNothing);
     expect(find.byType(DrillFrame), findsOneWidget);
+  });
+
+  group('number practice (#54)', () {
+    const numbersBig = 'hi-en-numbers-big';
+
+    /// The generated number on screen now.
+    NumberCard current(WidgetTester tester) {
+      final drill = tester.widget(
+        find.byWidgetPredicate((w) => w is RecognitionDrill || w is TypedDrill),
+      );
+      final session = drill is RecognitionDrill
+          ? drill.session
+          : (drill as TypedDrill).session;
+      return session.item.card as NumberCard;
+    }
+
+    testWidgets('recognition, production and listening, none of it recorded', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final tts = FixedTtsEngine(<String>{'hi'});
+      final state = await pumpDrill(
+        tester,
+        DrillRequest.numbers(numbersBig),
+        state: AppState.test(tts: tts),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.numbersPracticeTitle), findsOneWidget);
+      expect(find.text(l10n.drillPositionShort(1, 10)), findsOneWidget);
+
+      // The words, then the digits, rated with no interval: nothing is
+      // scheduled.
+      var card = current(tester);
+      expect(find.text(card.target), findsOneWidget);
+      await tester.tap(find.text(l10n.drillShowAnswer));
+      await tester.pumpAndSettle();
+      expect(find.text(card.native), findsOneWidget);
+      expect(find.bySemanticsLabel(l10n.rateGood), findsOneWidget);
+      for (final days in <int>[0, 1, 4]) {
+        expect(find.text(l10n.rateInterval(days)), findsNothing);
+      }
+      await tester.tap(find.text(l10n.rateGood));
+      await tester.pumpAndSettle();
+
+      // The digits; the words typed, in their other accepted spelling.
+      card = current(tester);
+      expect(find.text(card.native), findsOneWidget);
+      await typeAndCheck(tester, card.altTarget.firstOrNull ?? card.target);
+      expect(find.text(l10n.feedbackCorrect), findsOneWidget);
+      await tester.tap(find.text(l10n.commonContinue));
+      await tester.pumpAndSettle();
+
+      // Heard as words; typed as digits, a comma allowed.
+      card = current(tester);
+      expect(find.text(l10n.numbersTypeDigits), findsOneWidget);
+      await tester.tap(find.byType(PlayButton));
+      await tester.pumpAndSettle();
+      expect(tts.spoken.single.text, card.target);
+      final n = card.number;
+      await typeAndCheck(
+        tester,
+        '${n ~/ 1000},${(n % 1000).toString().padLeft(3, '0')}',
+      );
+      expect(find.text(l10n.feedbackCorrect), findsOneWidget);
+
+      expect(state.progress.log, isEmpty);
+    });
+
+    testWidgets('a heard number one off is wrong, not a near miss', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final settings = SettingsNotifier()
+        ..setSkillEnabled(Skill.recognition, false)
+        ..setSkillEnabled(Skill.production, false);
+      await pumpDrill(
+        tester,
+        DrillRequest.numbers(numbersBig),
+        state: AppState.test(
+          tts: FixedTtsEngine(<String>{'hi'}),
+          settings: settings,
+        ),
+      );
+      final l10n = l10nOf(tester);
+      final card = current(tester);
+      final off = card.number == 9999 ? 9998 : card.number + 1;
+      await typeAndCheck(tester, '$off');
+      expect(find.text(l10n.feedbackWrong), findsOneWidget);
+      expect(find.text(l10n.feedbackAnswer(card.native)), findsOneWidget);
+    });
+
+    testWidgets('without a voice, no number is heard', (tester) async {
+      usePhone(tester);
+      final state = await pumpDrill(tester, DrillRequest.numbers(numbersBig));
+      final deck = state.deckById(numbersBig)!;
+      expect(
+        state.numberPracticeFor(deck).map((i) => i.mode),
+        isNot(contains(DrillMode.listening)),
+      );
+      expect(find.byType(DrillFrame), findsOneWidget);
+    });
   });
 }

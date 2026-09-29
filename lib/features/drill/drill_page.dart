@@ -6,10 +6,12 @@ import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/card.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/page_parts.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
+import 'grammar_drill.dart';
 import 'recognition_drill.dart';
 import 'typed_drill.dart';
 
@@ -81,6 +83,16 @@ class _DrillPageState extends State<DrillPage> {
     }
     final request = widget.request;
     final preset = widget.preset;
+    if (request.numbers) {
+      final deck = state.deckById(request.deckIds!.single);
+      final items = deck == null
+          ? const <SessionItem>[]
+          : state.numberPracticeFor(deck);
+      if (items.isEmpty) return;
+      _session = DrillSession(state: state, items: items, recorded: false)
+        ..addListener(_onSession);
+      return;
+    }
     var items = state.buildSession(request).items;
     if (preset != null) {
       final ids = request.deckIds;
@@ -193,6 +205,11 @@ class _DrillPageState extends State<DrillPage> {
         },
         child: switch (session.item.mode) {
           DrillMode.recognition => RecognitionDrill(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
+          DrillMode.grammar => GrammarDrill.live(
             key: ValueKey<int>(session.position),
             session: session,
             onClose: _close,

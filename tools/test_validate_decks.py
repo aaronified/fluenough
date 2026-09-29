@@ -74,6 +74,19 @@ class BundledAssetCheck(unittest.TestCase):
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
+    def test_a_file_entry_bundles_just_that_file(self) -> None:
+        themes = "schema: 1\nkind: themes\nthemes:\n  - { id: market, name: Market }\n"
+        (self.tmp / "decks" / "themes.yaml").write_text(themes, encoding="utf-8")
+        result = self.run_validator("decks/", self.tmp)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("decks/ holds decks", result.stdout)
+
+        (self.tmp / "pubspec.yaml").write_text(
+            PUBSPEC + "    - decks/themes.yaml\n", encoding="utf-8"
+        )
+        result = self.run_validator("decks/", self.tmp)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_fails_when_a_language_is_not_bundled(self) -> None:
         self.add_unbundled_language()
         result = self.run_validator("decks/", self.tmp)

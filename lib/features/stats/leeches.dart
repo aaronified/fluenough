@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../app/memory_progress.dart';
 import '../../core/models/card.dart';
+import '../../core/scheduling/replay.dart';
 import '../../core/scheduling/sm2.dart';
 import 'stats_numbers.dart';
 
@@ -21,8 +22,9 @@ class Leech {
   int get lapses => state.lapses;
 }
 
-/// The pairs in [progress] with at least [threshold] lapses, most missed
-/// first. A pair whose card has left its deck is skipped: it cannot be drilled
+/// The pairs in [progress] with at least [threshold] lapses over their
+/// whole history, most missed first. Lifetime lapses, so that a leech the
+/// learner has reset stays listed and its reset can be undone. A pair whose card has left its deck is skipped: it cannot be drilled
 /// or shown, and its history stays in the log.
 List<Leech> findLeeches(
   ProgressStore progress, {
@@ -30,7 +32,9 @@ List<Leech> findLeeches(
   int threshold = kLeechThreshold,
 }) {
   final leeches = <Leech>[
-    for (final MapEntry(:key, :value) in progress.states.entries)
+    for (final MapEntry(:key, :value) in replayReviews(
+      progress.log.map(logged),
+    ).states.entries)
       if (value.lapses >= threshold)
         if (cardOf(key.deckId, key.cardId) case final card?)
           Leech(key: key, card: card, state: value),
@@ -46,47 +50,28 @@ List<Leech> findLeeches(
   return leeches;
 }
 
-/// What the learner has done about a leech.
+/// What the learner has done about a leech, as its row shows it: its latest
+/// action.
 enum LeechStatus { active, reset, setAside }
 
-/// One thing done to a leech. Each undoes nothing in place: Undo and Bring
-/// back are events of their own.
-enum LeechActionKind { reset, undoReset, setAside, bringBack }
-
-class LeechAction {
-  const LeechAction({required this.at, required this.key, required this.kind});
-
-  final DateTime at;
-  final ProgressKey key;
-  final LeechActionKind kind;
-}
-
-/// Reset and Set aside, kept as an append-only log of their own beside the
-/// review log (AGENTS.md rule 9): nothing here removes or rewrites a review.
-/// A leech's status is its latest action.
-///
-/// In memory only, one per [ProgressStore], like the progress it annotates.
-/// The scheduler does not read it yet: until #19 gives the store a reset and
-/// a suspend event that replay honours, a reset pair keeps its SM-2 state
-/// and a set-aside pair is still queued.
-class LeechActions extends ChangeNotifier {
-  LeechActions();
-
-  static final Expando<LeechActions> _byStore = Expando<LeechActions>(
-    'LeechActions',
-  );
+/// Reset and Set aside on the leeches of one [ProgressStore], which records
+/// them (#19): append-only beside the review log (AGENTS.md rule 9), saved
+/// with the progress, and honoured by the scheduler. A reset restarts the
+/// pair; a set-aside keeps it out of sessions. Listening to this is
+/// listening to the store.
+class LeechActions implements Listenable {
+  const LeechActions._(this._progress);
 
   /// The actions taken on [progress]'s leeches.
-  static LeechActions of(ProgressStore progress) =>
-      _byStore[progress] ??= LeechActions();
+  static LeechActions of(ProgressStore progress) => LeechActions._(progress);
 
-  final List<LeechAction> _log = <LeechAction>[];
+  final ProgressStore _progress;
 
   /// Every action, oldest first. Append-only.
-  List<LeechAction> get log => List<LeechAction>.unmodifiable(_log);
+  List<LeechAction> get log => _progress.leechActions;
 
   LeechStatus statusOf(ProgressKey key) {
-    for (final action in _log.reversed) {
+    for (final action in log.reversed) {
       if (action.key != key) continue;
       return switch (action.kind) {
         LeechActionKind.reset => LeechStatus.reset,
@@ -99,25 +84,29 @@ class LeechActions extends ChangeNotifier {
   }
 
   /// Reset, or Undo if [key] was reset.
-  void toggleReset(ProgressKey key, {required DateTime now}) => _append(
-    key,
-    statusOf(key) == LeechStatus.reset
-        ? LeechActionKind.undoReset
-        : LeechActionKind.reset,
-    now,
-  );
+  void toggleReset(ProgressKey key, {required DateTime now}) =>
+      _progress.actOnLeech(
+        key,
+        statusOf(key) == LeechStatus.reset
+            ? LeechActionKind.undoReset
+            : LeechActionKind.reset,
+        now: now,
+      );
 
   /// Set aside, or Bring back if [key] was set aside.
-  void toggleSetAside(ProgressKey key, {required DateTime now}) => _append(
-    key,
-    statusOf(key) == LeechStatus.setAside
-        ? LeechActionKind.bringBack
-        : LeechActionKind.setAside,
-    now,
-  );
+  void toggleSetAside(ProgressKey key, {required DateTime now}) =>
+      _progress.actOnLeech(
+        key,
+        statusOf(key) == LeechStatus.setAside
+            ? LeechActionKind.bringBack
+            : LeechActionKind.setAside,
+        now: now,
+      );
 
-  void _append(ProgressKey key, LeechActionKind kind, DateTime now) {
-    _log.add(LeechAction(at: now, key: key, kind: kind));
-    notifyListeners();
-  }
+  @override
+  void addListener(VoidCallback listener) => _progress.addListener(listener);
+
+  @override
+  void removeListener(VoidCallback listener) =>
+      _progress.removeListener(listener);
 }

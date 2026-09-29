@@ -1,12 +1,20 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
+import '../core/models/number_rules.dart';
+import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/tts/tts_engine.dart';
+import '../core/data/themes.dart';
+import '../core/models/fact.dart';
+import '../core/scheduling/daily_fact.dart';
 import 'deck_catalog.dart';
 import 'features.dart';
+import 'log_files.dart';
 import 'memory_progress.dart';
 import 'profile.dart';
 import 'session.dart';
@@ -53,6 +61,7 @@ class AppState extends ChangeNotifier {
     required this._tts,
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
+    this.logFiles = const PickerLogFiles(),
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
@@ -73,21 +82,26 @@ class AppState extends ChangeNotifier {
     ProgressStore? progress,
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
+    LogFiles logFiles = const PickerLogFiles(),
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
   }) {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
-    return AppState(
+    final state = AppState(
       catalog: decks == null ? DeckCatalog.bundled() : DeckCatalog(decks),
       progress: progress ?? MemoryProgress(),
       tts: tts,
       features: features,
       clock: () => fixed,
+      logFiles: logFiles,
       settings: settings,
       profiles: profiles,
       currentProfileId: currentProfileId,
     );
+    // Past the first-launch setup (#53), unless a test brings its own.
+    if (settings == null) state.settings.spokenLanguages = const <String>['en'];
+    return state;
   }
 
   /// Which features are switched on. Read it; wrap what it says is incoming
@@ -100,6 +114,9 @@ class AppState extends ChangeNotifier {
   /// Scheduling state and the review log. Has its own notifier.
   final ProgressStore progress;
 
+  /// Where the review log's backup is saved and read from (#20).
+  final LogFiles logFiles;
+
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
   final DeckCatalog deckCatalog;
@@ -111,8 +128,10 @@ class AppState extends ChangeNotifier {
   /// The current time, from the injected clock.
   DateTime now() => _clock();
 
-  /// Whether reviews outlive the app. False until #5; Today says so.
-  bool get progressIsSaved => features.isAvailable(Feature.persistence);
+  /// Whether reviews outlive the app: persistence ships and [progress] is a
+  /// store that keeps them. Today says so when not.
+  bool get progressIsSaved =>
+      features.isAvailable(Feature.persistence) && progress.persists;
 
   /// The tab the shell shows. A notifier of its own, so that a page pushed
   /// over the shell — the summary's "Done", Today's "See all" — can switch
@@ -141,16 +160,70 @@ class AppState extends ChangeNotifier {
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
 
+  /// The shared theme path (ADR-0010), and one theme on it.
+  List<DeckTheme> get themes => _catalog.themes;
+  DeckTheme? themeOf(DeckEntry entry) => _catalog.themeById(entry.deck.theme);
+
+  /// Today's fact for each language the profile learns that has facts
+  /// (#48), with its text in each language the learner speaks, best known
+  /// first. Choosing one records it as shown today, after this call, so
+  /// that it stays today's fact.
+  List<TodayFact> todaysFacts() {
+    final spoken = settings.spokenLanguages;
+    final learned = <String, LanguageInfo>{
+      for (final entry in profileDecks) entry.language.code: entry.language,
+    };
+    final today = <TodayFact>[];
+    for (final language in learned.values) {
+      final file = _catalog.facts[language.code];
+      if (file == null) continue;
+      final shown = settings.factsShownFor(language.code);
+      final fact = factForToday(
+        file.facts,
+        spoken: spoken,
+        shownAt: shown,
+        now: now(),
+      );
+      if (fact == null) continue;
+      today.add((
+        language: language,
+        fact: fact,
+        texts: factTexts(fact, spoken),
+      ));
+      final at = shown[fact.id];
+      if (at == null || !isSameDay(at, now())) {
+        final code = language.code;
+        final id = fact.id;
+        final when = now();
+        Future<void>.microtask(() => settings.markFactShown(code, id, when));
+      }
+    }
+    return today;
+  }
+
   DeckEntry? deckById(String id) => _catalog.byId(id);
 
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 
   /// The decks in the languages the current profile learns.
-  List<DeckEntry> get profileDecks => <DeckEntry>[
-    for (final entry in decks)
-      if (currentProfile.learns(entry.language.code)) entry,
-  ];
+  ///
+  /// Decks taught from a language the learner speaks come first, best known
+  /// first (#53); otherwise the catalog's order holds.
+  List<DeckEntry> get profileDecks {
+    final mine = <DeckEntry>[
+      for (final entry in decks)
+        if (currentProfile.learns(entry.language.code)) entry,
+    ];
+    int rank(DeckEntry e) =>
+        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final byRank = mine.indexed.toList()
+      ..sort((a, b) {
+        final order = rank(a.$2).compareTo(rank(b.$2));
+        return order != 0 ? order : a.$1.compareTo(b.$1);
+      });
+    return <DeckEntry>[for (final (_, entry) in byRank) entry];
+  }
 
   /// Every language the catalog teaches, one per code.
   List<LanguageInfo> get languages => _catalog.languages;
@@ -307,6 +380,20 @@ class AppState extends ChangeNotifier {
         skill.mode!,
   };
 
+  /// Whether this version can drill anything in [entry]: some card has a
+  /// mode whose drill is available. A grammar deck cannot until its drill
+  /// ships (#14). The learner's own skill switches do not count here.
+  bool canDrill(DeckEntry entry) {
+    final shipped = <DrillMode>{
+      for (final skill in Skill.values)
+        if (skill.mode != null && features.isAvailable(skill.feature))
+          skill.mode!,
+    };
+    return entry.cards.any(
+      (card) => card.modesIn(ttsAvailable: true).any(shipped.contains),
+    );
+  }
+
   /// New pairs today may still introduce: the daily cap less those already
   /// introduced.
   int get newCardsLeftToday {
@@ -349,15 +436,42 @@ class AppState extends ChangeNotifier {
     final voiced = <String, bool>{
       for (final entry in decks) entry.id: hasVoice(entry.language),
     };
+    final leeches = progress.leechEffects;
     final queue = SessionQueue.build(
       cards: cards,
       stateOf: (card, mode) => progress.stateOf(card.deckId, card.id, mode),
       hasVoice: (card) => voiced[card.deckId] ?? false,
       now: now(),
       newCardLimit: newLimit,
+      isSetAside: (card, mode) => leeches.isSetAside((
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: mode,
+      )),
       modes: modes,
     );
     return request.newOnly ? queue.withoutDue() : queue;
+  }
+
+  /// How numbers are spelled in [language], or null for a language with no
+  /// number rules (#54).
+  NumberRules? numberRulesFor(LanguageInfo language) =>
+      _catalog.numberRules[language.code];
+
+  /// Generated numbers to practise in [deck]'s language, in the skills the
+  /// learner has on, by ear only with a voice. Never recorded (ADR-0011).
+  List<SessionItem> numberPracticeFor(DeckEntry deck, {Random? random}) {
+    final rules = numberRulesFor(deck.language);
+    if (rules == null) return const <SessionItem>[];
+    return numberPractice(
+      rules,
+      deckId: deck.id,
+      modes: <DrillMode>{
+        for (final mode in sessionModes)
+          if (mode != DrillMode.listening || hasVoice(deck.language)) mode,
+      },
+      random: random ?? Random(),
+    );
   }
 
   /// A deck's due reviews, new pairs within today's allowance, and cards
@@ -395,3 +509,10 @@ class AppState extends ChangeNotifier {
     super.dispose();
   }
 }
+
+/// A language's fact for today, and its text in the learner's languages.
+typedef TodayFact = ({
+  LanguageInfo language,
+  Fact fact,
+  List<({String code, String text})> texts,
+});

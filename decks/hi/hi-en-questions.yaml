@@ -1,0 +1,80 @@
+schema: 1
+id: hi-en-questions
+name: "Yes, no and questions"
+kind: vocab
+theme: questions
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Yes and no, the question words, and how a sentence becomes a question."
+tags: [beginner]
+cards:
+  - id: hi-en-questions-0001
+    target: "हाँ"
+    native: "yes"
+    reading: "haan"
+    alt_target: ["हां"]
+    pos: "other"
+    notes: "Said politely: जी हाँ (jii haan)."
+  - id: hi-en-questions-0002
+    target: "नहीं"
+    native: "no; not"
+    reading: "nahiin"
+    pos: "other"
+    notes: "Also the 'not' of a sentence, just before the verb: मैं नहीं जानता (main nahiin jaantaa), I don't know."
+  - id: hi-en-questions-0003
+    target: "क्या"
+    native: "what; also marks a yes/no question"
+    reading: "kyaa"
+    pos: "other"
+    notes: "At the start of a sentence, क्या turns it into a yes/no question: क्या आप हिंदी बोलते हैं? Do you speak Hindi? In speech the क्या is often dropped and the voice rises instead."
+  - id: hi-en-questions-0004
+    target: "कौन"
+    native: "who"
+    reading: "kaun"
+    pos: "other"
+  - id: hi-en-questions-0005
+    target: "कहाँ"
+    native: "where"
+    reading: "kahaan"
+    alt_target: ["कहां"]
+    pos: "other"
+  - id: hi-en-questions-0006
+    target: "कब"
+    native: "when"
+    reading: "kab"
+    pos: "other"
+  - id: hi-en-questions-0007
+    target: "क्यों"
+    native: "why"
+    reading: "kyon"
+    pos: "other"
+  - id: hi-en-questions-0008
+    target: "कैसे"
+    native: "how"
+    reading: "kaise"
+    pos: "other"
+  - id: hi-en-questions-0009
+    target: "कितना"
+    native: "how much; how many"
+    reading: "kitnaa"
+    pos: "other"
+    notes: "Agrees with what is counted: कितनी (kitnii) with a feminine word, कितने (kitne) with a plural. कितने लोग? How many people?"
+  - id: hi-en-questions-0010
+    target: "कौन-सा"
+    native: "which"
+    reading: "kaun-saa"
+    alt_target: ["कौन सा"]
+    pos: "other"
+    notes: "Agrees like an adjective: कौन-सी (kaun-sii) with a feminine word, कौन-से (kaun-se) with a plural."
+  - id: hi-en-questions-0011
+    target: "ठीक है?"
+    native: "Is that OK? / OK?"
+    reading: "thiik hai?"
+    pos: "phrase"
+    notes: "As a reply without the question mark, ठीक है means 'OK, fine'."
+  - id: hi-en-questions-0012
+    target: "सच में?"
+    native: "Really?"
+    reading: "sach men?"
+    pos: "phrase"

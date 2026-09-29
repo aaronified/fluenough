@@ -102,10 +102,12 @@ void main() {
             .whereType<File>()
             .map((f) => f.path)
             .where((p) => p.endsWith('.yaml'))
-            // A facts file is valid in decks/ but is not a deck (#48).
+            // Facts files (#48), the themes file (#52) and number rules
+            // (#54) are valid in decks/ but are not decks.
             .where((p) {
               final doc = loadYaml(File(p).readAsStringSync());
-              return !(doc is Map && doc['kind'] == 'facts');
+              return !(doc is Map &&
+                  {'facts', 'themes', 'numbers'}.contains(doc['kind']));
             })
             .toList()
           ..sort();
@@ -843,6 +845,45 @@ cards:
         throwsParseError(
           line: lineOf(yaml, 'lemma: hablar', occurrence: 2),
           mentions: ['pattern.entries[1].lemma', 'duplicate lemma "hablar"'],
+        ),
+      );
+    });
+
+    test('a lemma that cannot go into a card id, without a key', () {
+      final yaml = grammar.replaceFirst('lemma: llover', 'lemma: "जाना"');
+      expect(
+        () => parse(yaml),
+        throwsParseError(
+          line: lineOf(yaml, 'lemma: "जाना"'),
+          mentions: ['pattern.entries[1]', '"जाना" cannot go into a card id'],
+        ),
+      );
+    });
+
+    test('a badly formed key', () {
+      final yaml = grammar.replaceFirst(
+        'lemma: llover',
+        'lemma: llover\n      key: Llover',
+      );
+      expect(
+        () => parse(yaml),
+        throwsParseError(
+          line: lineOf(yaml, 'key: Llover'),
+          mentions: ['pattern.entries[1].key must be', '"Llover"'],
+        ),
+      );
+    });
+
+    test('a key that another row already uses as its lemma', () {
+      final yaml = grammar.replaceFirst(
+        'lemma: llover',
+        'lemma: llover\n      key: hablar',
+      );
+      expect(
+        () => parse(yaml),
+        throwsParseError(
+          line: lineOf(yaml, 'key: hablar'),
+          mentions: ['pattern.entries[1]', '"hablar" already names a row'],
         ),
       );
     });

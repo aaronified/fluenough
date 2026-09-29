@@ -10,6 +10,7 @@ class DrillRequest {
     this.tags = const <String>{},
     this.newOnly = false,
     this.newLimit,
+    this.numbers = false,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -27,6 +28,11 @@ class DrillRequest {
   /// Only new pairs, at most [count]: the summary's "Learn 5 new cards".
   const DrillRequest.learnNew(int count) : this(newOnly: true, newLimit: count);
 
+  /// Number practice in the language of [deckId], a number deck: generated
+  /// numbers, drilled and not recorded (#54, ADR-0011).
+  DrillRequest.numbers(String deckId)
+    : this(deckIds: <String>{deckId}, numbers: true);
+
   /// The decks to draw from, or null for every deck the current profile
   /// learns.
   final Set<String>? deckIds;
@@ -43,10 +49,14 @@ class DrillRequest {
   /// At most this many new pairs, within what the daily cap still allows.
   final int? newLimit;
 
+  /// Generated numbers instead of the decks' cards; nothing is recorded.
+  final bool numbers;
+
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
-      'tags: $tags, newOnly: $newOnly, newLimit: $newLimit)';
+      'tags: $tags, newOnly: $newOnly, newLimit: $newLimit, '
+      'numbers: $numbers)';
 }
 
 /// One answer in a finished session, for the summary.

@@ -1,14 +1,15 @@
+import '../../core/data/pattern_expander.dart';
+import '../../core/models/card.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/grammar_pattern.dart';
 
 /// One cell of a grammar deck's pattern table: an entry and a slot, the unit
 /// a grammar card drills.
 ///
-/// This is local to the drill on purpose. The expander (#2) turns cells into
-/// cards, and it should hand the drill each card's `(entry, slot)` directly,
-/// so that nothing has to parse `<deck-id>-<lemma>-<slot-index>` back out of
-/// an id (decision 8 in the UI plan). Until then the drill runs on cells
-/// shaped here from the real pattern. When #2 lands, build these from its
-/// cards rather than from [grammarCells].
+/// The live drill finds a card's cell with [grammarCellOf], which matches
+/// the card against each cell's expanded id rather than parsing
+/// `<deck-id>-<lemma>-<slot-index>` back out of it (decision 8 in the UI
+/// plan).
 class GrammarCell {
   const GrammarCell({
     required this.pattern,
@@ -68,6 +69,19 @@ GrammarCell? findGrammarCell(
 }) {
   for (final cell in grammarCells(pattern)) {
     if (cell.entry.lemma == lemma && cell.slot == slot) return cell;
+  }
+  return null;
+}
+
+/// The cell of [deck]'s pattern that [card] was expanded from (#2), or null
+/// if [card] is not one of its cells.
+GrammarCell? grammarCellOf(Card card, Deck deck) {
+  final pattern = deck.pattern;
+  if (pattern == null) return null;
+  for (final cell in grammarCells(pattern)) {
+    if (patternCardId(deck.id, cell.entry, cell.slotIndex) == card.id) {
+      return cell;
+    }
   }
   return null;
 }

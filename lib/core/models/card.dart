@@ -66,14 +66,20 @@ class Card {
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language.
+  ///
+  /// A card that declares no modes gets recognition, production and
+  /// listening, except a phrase (`pos: phrase`), which is not typed: a whole
+  /// sentence is too hard to grade fairly (ADR-0010).
   Set<DrillMode> modesIn({required bool ttsAvailable}) {
-    final declared = modes.isEmpty
-        ? const {
+    final declared = modes.isNotEmpty
+        ? modes
+        : pos == 'phrase'
+        ? const {DrillMode.recognition, DrillMode.listening}
+        : const {
             DrillMode.recognition,
             DrillMode.production,
             DrillMode.listening,
-          }
-        : modes;
+          };
     if (ttsAvailable) return declared;
     return declared.where((m) => m != DrillMode.listening).toSet();
   }

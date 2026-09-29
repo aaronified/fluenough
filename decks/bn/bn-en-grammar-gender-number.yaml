@@ -1,0 +1,45 @@
+schema: 1
+id: bn-en-grammar-gender-number
+name: "No gender; plurals"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Bengali has no grammatical gender, and its verbs ignore number."
+tags: [beginner, grammar]
+cards:
+  - id: bn-en-grammar-gender-number-0001
+    target: "সে আসছে।"
+    native: "He is coming. / She is coming."
+    reading: "she ashchhe."
+    pos: "phrase"
+    notes: "সে is he and she. Nothing in the sentence says which."
+  - id: bn-en-grammar-gender-number-0002
+    target: "ভালো ছেলে"
+    native: "a good boy"
+    reading: "bhalo chhele"
+    pos: "phrase"
+  - id: bn-en-grammar-gender-number-0003
+    target: "ভালো মেয়ে"
+    native: "a good girl"
+    reading: "bhalo meye"
+    pos: "phrase"
+    notes: "Adjectives never change: ভালো for both."
+  - id: bn-en-grammar-gender-number-0004
+    target: "আমি যাই, আমরা যাই।"
+    native: "I go; we go."
+    reading: "ami jai, amra jai."
+    pos: "phrase"
+    notes: "The verb does not change for number."
+  - id: bn-en-grammar-gender-number-0005
+    target: "ছেলেরা খেলছে।"
+    native: "The boys are playing."
+    reading: "chhelera khelchhe."
+    pos: "phrase"
+    notes: "-রা makes a plural for people: ছেলেরা, মেয়েরা."
+  - id: bn-en-grammar-gender-number-0006
+    target: "তিনটে বই"
+    native: "three books"
+    reading: "tinte boi"
+    pos: "phrase"
+    notes: "After a number, or অনেক (many), the noun stays singular."

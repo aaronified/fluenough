@@ -21,8 +21,8 @@ running offline. Flutter, Android first. A language is *data*, never code:
 adding one means adding deck files.
 
 **What state it is in.** The domain layer, deck format, tooling and docs are
-written. **The UI is built from the design** on in-memory progress; what the
-backend lacks is shown disabled, marked "Feature incoming"
+written. **The UI is built from the design** and progress is saved in a
+database; what the backend lacks is shown disabled, marked "Feature incoming"
 ([ADR-0008](docs/adr/0008-unbuilt-features-are-shown-disabled.md)). See
 [docs/ROADMAP.md](docs/ROADMAP.md).
 
@@ -58,6 +58,7 @@ committed:
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
 rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
+python3 tools/brand_android.py   # launcher icon, label and launch screen
 flutter pub get
 ```
 
