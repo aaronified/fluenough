@@ -28,8 +28,8 @@ import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
 
-const String spanish = 'es-core-100';
-const String hiragana = 'ja-hiragana';
+const String spanish = 'es-en-core-100';
+const String hiragana = 'ja-en-hiragana';
 
 Future<AppState> pumpDrill(
   WidgetTester tester,
@@ -350,7 +350,7 @@ void main() {
     // Listening, with no voice on the phone: nothing to drill.
     await pumpDrill(
       tester,
-      DrillRequest.deck('ja-hiragana', skill: Skill.listening),
+      DrillRequest.deck('ja-en-hiragana', skill: Skill.listening),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillEmptyTitle), findsOneWidget);

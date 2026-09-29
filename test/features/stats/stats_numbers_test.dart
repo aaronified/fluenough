@@ -8,7 +8,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 
-/// A known log on real cards of `es-core-100`, whose tags are `people`
+/// A known log on real cards of `es-en-core-100`, whose tags are `people`
 /// (0001) and `home` (0010–0013). The clock is Mon 28 Sep 2026, 19:00.
 ///
 /// | day | card, mode, grade |
@@ -24,8 +24,8 @@ MemoryProgress knownLog(DateTime now) {
   final progress = MemoryProgress();
   final today = dateOnly(now);
   void at(int day, String card, DrillMode mode, int grade) => progress.record(
-    deckId: 'es-core-100',
-    cardId: 'es-core-$card',
+    deckId: 'es-en-core-100',
+    cardId: 'es-en-core-$card',
     mode: mode,
     grade: grade,
     now: addDays(today, day).add(const Duration(hours: 9)),
@@ -104,8 +104,8 @@ void main() {
   test('a range with no reviews has no remembered share', () {
     final quiet = MemoryProgress()
       ..record(
-        deckId: 'es-core-100',
-        cardId: 'es-core-0001',
+        deckId: 'es-en-core-100',
+        cardId: 'es-en-core-0001',
         mode: DrillMode.recognition,
         grade: 4,
         now: addDays(app.now(), -20),
@@ -126,22 +126,22 @@ void main() {
     for (var i = 0; i < kLeechThreshold; i++) {
       progress
         ..record(
-          deckId: 'es-core-100',
-          cardId: 'es-core-0002',
+          deckId: 'es-en-core-100',
+          cardId: 'es-en-core-0002',
           mode: DrillMode.production,
           grade: 4,
           now: app.now(),
         )
         ..record(
-          deckId: 'es-core-100',
-          cardId: 'es-core-0002',
+          deckId: 'es-en-core-100',
+          cardId: 'es-en-core-0002',
           mode: DrillMode.production,
           grade: 1,
           now: app.now(),
         );
     }
     final leeches = findLeeches(progress, cardOf: cardOf);
-    expect(leeches.map((l) => l.card.id), <String>['es-core-0002']);
+    expect(leeches.map((l) => l.card.id), <String>['es-en-core-0002']);
     expect(leeches.single.lapses, kLeechThreshold);
     expect(
       findLeeches(progress, cardOf: cardOf, threshold: kLeechThreshold + 1),
@@ -152,8 +152,8 @@ void main() {
   test('leech actions are appended; the latest one sets the status', () {
     final actions = LeechActions.of(MemoryProgress());
     const key = (
-      deckId: 'es-core-100',
-      cardId: 'es-core-0002',
+      deckId: 'es-en-core-100',
+      cardId: 'es-en-core-0002',
       mode: DrillMode.production,
     );
     final now = app.now();

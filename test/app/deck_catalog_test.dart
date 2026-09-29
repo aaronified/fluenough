@@ -90,7 +90,11 @@ void main() {
       final ids = catalog.decks.map((d) => d.id).toList();
       expect(
         ids,
-        containsAll(['es-core-100', 'es-grammar-present-ar', 'ja-hiragana']),
+        containsAll([
+          'es-en-core-100',
+          'es-en-grammar-present-ar',
+          'ja-en-hiragana',
+        ]),
       );
       final paths = catalog.decks.map((d) => d.path).toList();
       expect(paths.toSet(), hasLength(paths.length));
@@ -119,7 +123,7 @@ void main() {
     });
 
     test('a grammar deck is listed with its pattern, expanded to cards', () {
-      final grammar = catalog.byId('es-grammar-present-ar')!;
+      final grammar = catalog.byId('es-en-grammar-present-ar')!;
       expect(grammar.deck.kind, DeckKind.grammar);
       expect(grammar.deck.pattern, isNotNull);
       expect(grammar.cards, hasLength(30), reason: '5 lemmas x 6 slots');
@@ -128,9 +132,9 @@ void main() {
     });
 
     test('script decks are the ones tagged script', () {
-      expect(catalog.byId('ja-hiragana')!.isScript, isTrue);
-      expect(catalog.byId('es-core-100')!.isScript, isFalse);
-      expect(catalog.byId('ja-hiragana')!.glyph, 'あ');
+      expect(catalog.byId('ja-en-hiragana')!.isScript, isTrue);
+      expect(catalog.byId('es-en-core-100')!.isScript, isFalse);
+      expect(catalog.byId('ja-en-hiragana')!.glyph, 'あ');
     });
 
     test('languages come one per code', () {
@@ -219,14 +223,17 @@ void main() {
     });
 
     test('only YAML under decks/ counts as a deck path', () {
-      expect(AssetDeckSource.isDeckPath('decks/es/es-core-100.yaml'), isTrue);
+      expect(
+        AssetDeckSource.isDeckPath('decks/es/es-en-core-100.yaml'),
+        isTrue,
+      );
       expect(AssetDeckSource.isDeckPath('decks/README.md'), isFalse);
       expect(AssetDeckSource.isDeckPath('fonts/x.yaml'), isFalse);
     });
 
     test('the asset manifest lists the bundled decks', () async {
       final paths = await AssetDeckSource(rootBundle).list();
-      expect(paths, contains('decks/es/es-core-100.yaml'));
+      expect(paths, contains('decks/es/es-en-core-100.yaml'));
       expect(paths.every(AssetDeckSource.isDeckPath), isTrue);
     });
   });

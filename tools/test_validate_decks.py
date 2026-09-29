@@ -22,7 +22,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VALIDATOR = REPO / "tools" / "validate_decks.py"
-SAMPLE_DECK = REPO / "decks" / "es" / "es-core-100.yaml"
+SAMPLE_DECK = REPO / "decks" / "es" / "es-en-core-100.yaml"
 
 PUBSPEC = """\
 name: fluenough
@@ -52,11 +52,11 @@ class BundledAssetCheck(unittest.TestCase):
         hi = self.tmp / "decks" / "hi"
         hi.mkdir()
         deck = SAMPLE_DECK.read_text(encoding="utf-8")
-        deck = deck.replace("id: es-core-100", "id: hi-probe")
+        deck = deck.replace("id: es-en-core-100", "id: hi-en-probe")
         deck = deck.replace("code: es", "code: hi")
         deck = deck.replace("name: Spanish", "name: Hindi")
         deck = deck.replace("tts: es-ES", "tts: hi-IN")
-        (hi / "hi-probe.yaml").write_text(deck, encoding="utf-8")
+        (hi / "hi-en-probe.yaml").write_text(deck, encoding="utf-8")
 
     def run_validator(
         self, target: str, cwd: Path

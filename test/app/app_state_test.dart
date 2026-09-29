@@ -39,7 +39,7 @@ void main() {
       state.addListener(() => notified++);
       await state.load();
       expect(state.status, CatalogStatus.ready);
-      expect(state.deckById('es-core-100'), isNotNull);
+      expect(state.deckById('es-en-core-100'), isNotNull);
       expect(state.brokenDecks, isEmpty);
       expect(notified, greaterThan(0));
     });
@@ -78,8 +78,8 @@ void main() {
   group('voices', () {
     test('are checked once the catalog is in', () async {
       final state = await loaded(tts: FixedTtsEngine({'es'}));
-      final spanish = state.deckById('es-core-100')!.language;
-      final japanese = state.deckById('ja-hiragana')!.language;
+      final spanish = state.deckById('es-en-core-100')!.language;
+      final japanese = state.deckById('ja-en-hiragana')!.language;
       expect(state.voiceStatus(spanish), VoiceStatus.available);
       expect(state.voiceStatus(japanese), VoiceStatus.missing);
       expect(state.hasVoice(japanese), isFalse);
@@ -91,7 +91,7 @@ void main() {
         tts: tts,
         settings: SettingsNotifier(speechRate: 0.8),
       );
-      final spanish = state.deckById('es-core-100')!.language;
+      final spanish = state.deckById('es-en-core-100')!.language;
       await state.speak('la casa', spanish);
       await state.speak('la casa', spanish, slower: true);
       expect(tts.spoken.map((s) => s.bcp47), ['es-ES', 'es-ES']);
@@ -129,10 +129,10 @@ void main() {
     test('listening joins only when the language has a voice', () async {
       final state = await loaded(tts: FixedTtsEngine({'es'}));
       final spanish = state.buildSession(
-        DrillRequest.deck('es-core-100', skill: Skill.listening),
+        DrillRequest.deck('es-en-core-100', skill: Skill.listening),
       );
       final japanese = state.buildSession(
-        DrillRequest.deck('ja-hiragana', skill: Skill.listening),
+        DrillRequest.deck('ja-en-hiragana', skill: Skill.listening),
       );
       expect(spanish.isNotEmpty, isTrue);
       expect(japanese.isEmpty, isTrue);
@@ -147,7 +147,7 @@ void main() {
       expect(
         state
             .buildSession(
-              DrillRequest.deck('es-core-100', skill: Skill.grammar),
+              DrillRequest.deck('es-en-core-100', skill: Skill.grammar),
             )
             .isEmpty,
         isTrue,
@@ -165,7 +165,7 @@ void main() {
     test('tags narrow a deck to the cards that carry them', () async {
       final state = await loaded();
       final queue = state.buildSession(
-        DrillRequest.deck('es-core-100', tags: {'people'}),
+        DrillRequest.deck('es-en-core-100', tags: {'people'}),
       );
       expect(queue.isNotEmpty, isTrue);
       expect(queue.items.every((i) => i.card.tags.contains('people')), isTrue);
@@ -177,9 +177,12 @@ void main() {
           Profile(id: 'mira', name: 'Mira', languages: {'ja'}),
         ],
       );
-      expect(state.profileDecks.map((d) => d.id), ['ja-hiragana']);
+      expect(state.profileDecks.map((d) => d.id), ['ja-en-hiragana']);
       final queue = state.buildSession(const DrillRequest.today());
-      expect(queue.items.every((i) => i.card.deckId == 'ja-hiragana'), isTrue);
+      expect(
+        queue.items.every((i) => i.card.deckId == 'ja-en-hiragana'),
+        isTrue,
+      );
     });
 
     test('learnNew drills only new pairs, at most the number asked', () async {
@@ -250,7 +253,7 @@ themes:
 
     test('deck counts agree with the deck\'s session', () async {
       final state = await loaded(settings: SettingsNotifier(newCardsPerDay: 7));
-      final deck = state.deckById('ja-hiragana')!;
+      final deck = state.deckById('ja-en-hiragana')!;
       final counts = state.countsFor(deck);
       expect(counts.due, 0);
       expect(counts.fresh, 7);

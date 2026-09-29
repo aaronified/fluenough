@@ -64,7 +64,7 @@ A neural backend (Kokoro) is a candidate for a later release; see
 
 Where a language uses an unfamiliar writing system, learning the script and its
 pronunciation *is* the first task, not a preliminary to it. Fluenough treats
-script decks as ordinary decks — `decks/ja/ja-hiragana.yaml` is the worked
+script decks as ordinary decks — `decks/ja/ja-en-hiragana.yaml` is the worked
 example — and the starter set being built out (Bengali, Hindi, Gujarati,
 Telugu, Urdu) each pair a script deck with a vocabulary deck. See
 [docs/ROADMAP.md](docs/ROADMAP.md).
@@ -76,13 +76,13 @@ source. They are diffable, reviewable, and contributed as pull requests.
 
 ```yaml
 schema: 1
-id: es-core-100
+id: es-en-core-100
 name: Spanish Core 100
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC-BY-SA-4.0
 cards:
-  - id: es-core-0001
+  - id: es-en-core-0001
     target: la casa
     native: the house
     tags: [noun, home]

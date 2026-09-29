@@ -124,14 +124,14 @@ void main() {
     }
 
     test('carry both language codes', () {
-      final deck = parseFile('decks/es/es-core-100.yaml');
+      final deck = parseFile('decks/es/es-en-core-100.yaml');
       expect(deck.language.code, 'es');
       expect(deck.language.iso639_3, 'spa');
       expect(deck.native.iso639_3, 'eng');
     });
 
-    test('ja-hiragana has all 46 kana, and "no" survives as text', () {
-      final deck = parseFile('decks/ja/ja-hiragana.yaml');
+    test('ja-en-hiragana has all 46 kana, and "no" survives as text', () {
+      final deck = parseFile('decks/ja/ja-en-hiragana.yaml');
       expect(deck.kind, DeckKind.vocab);
       expect(deck.cards, hasLength(46));
       expect(deck.language.script, 'kana');
@@ -140,8 +140,8 @@ void main() {
       expect(no.reading, 'no');
     });
 
-    test('es-grammar-present-ar is a pattern with no cards', () {
-      final deck = parseFile('decks/es/es-grammar-present-ar.yaml');
+    test('es-en-grammar-present-ar is a pattern with no cards', () {
+      final deck = parseFile('decks/es/es-en-grammar-present-ar.yaml');
       expect(deck.kind, DeckKind.grammar);
       expect(deck.cards, isEmpty);
       final pattern = deck.pattern!;
@@ -158,8 +158,8 @@ void main() {
       expect(pattern.entries.first.forms['vosotros'], 'habláis');
     });
 
-    test('es-core-100 has every card in the file', () {
-      const path = 'decks/es/es-core-100.yaml';
+    test('es-en-core-100 has every card in the file', () {
+      const path = 'decks/es/es-en-core-100.yaml';
       final inFile = RegExp(
         r'^  - id: ',
         multiLine: true,
@@ -167,7 +167,7 @@ void main() {
       final deck = parseFile(path);
       expect(inFile, greaterThan(0));
       expect(deck.cards, hasLength(inFile));
-      final casa = deck.cards.singleWhere((c) => c.id == 'es-core-0010');
+      final casa = deck.cards.singleWhere((c) => c.id == 'es-en-core-0010');
       expect(casa.altNative, ['the home']);
       expect(casa.examples.single.target, 'La casa es muy grande.');
     });
@@ -1061,13 +1061,13 @@ cards:
     test('start with the source, line and column', () {
       final yaml = vocab().replaceFirst('native: the house', 'native: no');
       try {
-        DeckParser.parse(yaml, source: 'es-core-100.yaml');
+        DeckParser.parse(yaml, source: 'es-en-core-100.yaml');
         fail('expected a DeckParseException');
       } on DeckParseException catch (e) {
-        expect(e.source, 'es-core-100.yaml');
+        expect(e.source, 'es-en-core-100.yaml');
         expect(e.line, lineOf(yaml, 'native: no'));
         expect(e.column, 13);
-        expect(e.toString(), 'es-core-100.yaml:${e.line}:13: ${e.message}');
+        expect(e.toString(), 'es-en-core-100.yaml:${e.line}:13: ${e.message}');
       }
     });
 

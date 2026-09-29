@@ -12,7 +12,7 @@ void main() {
     int grade, {
     DateTime? at,
     DrillMode mode = DrillMode.recognition,
-    String deck = 'es-core-100',
+    String deck = 'es-en-core-100',
   }) => progress.record(
     deckId: deck,
     cardId: card,
@@ -23,7 +23,7 @@ void main() {
 
   test('recording runs Sm2.next from a fresh state', () {
     final progress = MemoryProgress();
-    final event = answer(progress, 'es-core-0001', 4);
+    final event = answer(progress, 'es-en-core-0001', 4);
 
     expect(event.wasNew, isTrue);
     expect(event.before, isNull);
@@ -32,7 +32,7 @@ void main() {
     expect(event.after.dueAt, expected.dueAt);
     expect(
       progress
-          .stateOf('es-core-100', 'es-core-0001', DrillMode.recognition)!
+          .stateOf('es-en-core-100', 'es-en-core-0001', DrillMode.recognition)!
           .repetitions,
       1,
     );
@@ -41,7 +41,10 @@ void main() {
   test('state is kept per deck, card and mode', () {
     final progress = MemoryProgress();
     answer(progress, 'a', 5);
-    expect(progress.stateOf('es-core-100', 'a', DrillMode.production), isNull);
+    expect(
+      progress.stateOf('es-en-core-100', 'a', DrillMode.production),
+      isNull,
+    );
     expect(progress.stateOf('other', 'a', DrillMode.recognition), isNull);
     answer(progress, 'a', 5, mode: DrillMode.production);
     expect(progress.states, hasLength(2));
@@ -76,7 +79,7 @@ void main() {
     final progress = MemoryProgress();
     answer(progress, 'a', 5);
     final state = progress.preview(
-      'es-core-100',
+      'es-en-core-100',
       'a',
       DrillMode.recognition,
       5,
@@ -130,9 +133,9 @@ void main() {
     answer(progress, 'a', 5);
     answer(progress, 'a', 5, mode: DrillMode.production);
     answer(progress, 'b', 1);
-    answer(progress, 'c', 4, deck: 'ja-hiragana');
-    expect(progress.learnedIn('es-core-100'), 1);
-    expect(progress.learnedIn('ja-hiragana'), 1);
+    answer(progress, 'c', 4, deck: 'ja-en-hiragana');
+    expect(progress.learnedIn('es-en-core-100'), 1);
+    expect(progress.learnedIn('ja-en-hiragana'), 1);
   });
 
   test('due tomorrow counts cards whose next review is tomorrow', () {

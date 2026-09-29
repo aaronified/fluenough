@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/grammar_pattern.dart';
 
-/// Mirrors `decks/es/es-grammar-present-ar.yaml`.
+/// Mirrors `decks/es/es-en-grammar-present-ar.yaml`.
 const presentAr = GrammarPattern(
   name: 'Present tense, regular -ar verbs',
   slotName: 'person',
@@ -86,7 +86,7 @@ const english = LanguageInfo(code: 'en', iso639_3: 'eng', name: 'English');
 
 void main() {
   group('GrammarPattern', () {
-    test('holds the es-grammar-present-ar table', () {
+    test('holds the es-en-grammar-present-ar table', () {
       expect(presentAr.entries, hasLength(5));
       expect(presentAr.slots, hasLength(6));
       expect(presentAr.entries.map((e) => e.lemma), [
@@ -140,7 +140,7 @@ void main() {
   group('Deck.pattern', () {
     test('is null on a vocab deck', () {
       const deck = Deck(
-        id: 'es-core-100',
+        id: 'es-en-core-100',
         name: 'Spanish Core 100',
         kind: DeckKind.vocab,
         language: spanish,
@@ -153,7 +153,7 @@ void main() {
 
     test('holds the table on an unexpanded grammar deck', () {
       const deck = Deck(
-        id: 'es-grammar-present-ar',
+        id: 'es-en-grammar-present-ar',
         name: 'Spanish present tense, regular -ar verbs',
         kind: DeckKind.grammar,
         language: spanish,

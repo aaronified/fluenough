@@ -109,9 +109,9 @@ pip install pyyaml        # the only dependency
 1. Read [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md). It is short.
 2. Create `decks/<language-code>/<deck-id>.yaml`. The deck id must equal the
    filename stem.
-3. Start from an existing deck — [`decks/es/es-core-100.yaml`](decks/es/es-core-100.yaml)
-   for vocabulary, [`decks/es/es-grammar-present-ar.yaml`](decks/es/es-grammar-present-ar.yaml)
-   for a grammar pattern, [`decks/ja/ja-hiragana.yaml`](decks/ja/ja-hiragana.yaml)
+3. Start from an existing deck — [`decks/es/es-en-core-100.yaml`](decks/es/es-en-core-100.yaml)
+   for vocabulary, [`decks/es/es-en-grammar-present-ar.yaml`](decks/es/es-en-grammar-present-ar.yaml)
+   for a grammar pattern, [`decks/ja/ja-en-hiragana.yaml`](decks/ja/ja-en-hiragana.yaml)
    for a non-Latin script.
 
 Converting an existing wordlist:

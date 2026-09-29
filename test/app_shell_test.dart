@@ -24,8 +24,8 @@ void main() {
     final state = await pumpApp(tester);
 
     expect(state.status, CatalogStatus.ready);
-    expect(state.deckById('es-core-100'), isNotNull);
-    expect(state.deckById('ja-hiragana'), isNotNull);
+    expect(state.deckById('es-en-core-100'), isNotNull);
+    expect(state.deckById('ja-en-hiragana'), isNotNull);
     expect(state.brokenDecks, isEmpty);
     expect(state.currentProfile.id, Profile.defaultProfile.id);
 

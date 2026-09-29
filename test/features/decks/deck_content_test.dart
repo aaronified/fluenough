@@ -17,7 +17,7 @@ void main() {
   });
 
   test('a vocab deck offers the modes its cards take part in', () {
-    final spanish = state.deckById('es-core-100')!;
+    final spanish = state.deckById('es-en-core-100')!;
     expect(deckSkills(spanish, SettingsNotifier()), <Skill>[
       Skill.recognition,
       Skill.production,
@@ -26,7 +26,7 @@ void main() {
   });
 
   test('a grammar deck offers grammar, and no deck offers pairs yet', () {
-    final grammar = state.deckById('es-grammar-present-ar')!;
+    final grammar = state.deckById('es-en-grammar-present-ar')!;
     expect(deckSkills(grammar, SettingsNotifier()), <Skill>[Skill.grammar]);
     for (final entry in state.decks) {
       expect(declaresPairs(entry), isFalse, reason: entry.id);
@@ -38,7 +38,7 @@ void main() {
   });
 
   test('a skill switched off in Settings is left out', () {
-    final spanish = state.deckById('es-core-100')!;
+    final spanish = state.deckById('es-en-core-100')!;
     final settings = SettingsNotifier(
       enabledSkills: <Skill>{Skill.recognition, Skill.listening},
     );
@@ -49,18 +49,18 @@ void main() {
   });
 
   test('the tag filter lists card tags, not deck tags', () {
-    final spanish = state.deckById('es-core-100')!;
+    final spanish = state.deckById('es-en-core-100')!;
     final tags = cardTagsOf(spanish);
     expect(tags, contains('people'));
     expect(tags, isNot(contains('beginner')), reason: 'a deck tag');
     expect(tags.toSet(), hasLength(tags.length));
     expect(showsTagFilter(spanish), isTrue);
     // Every hiragana card has the one tag, which would filter nothing.
-    expect(showsTagFilter(state.deckById('ja-hiragana')!), isFalse);
+    expect(showsTagFilter(state.deckById('ja-en-hiragana')!), isFalse);
   });
 
   test('a grammar deck previews its pattern cells, lemma and slot', () {
-    final grammar = state.deckById('es-grammar-present-ar')!;
+    final grammar = state.deckById('es-en-grammar-present-ar')!;
     final pattern = grammar.deck.pattern!;
     final first = pattern.entries.first;
     final preview = previewOf(grammar, l10n);
@@ -73,7 +73,7 @@ void main() {
   });
 
   test('a vocab preview is deck content, never a card id', () {
-    final spanish = state.deckById('es-core-100')!;
+    final spanish = state.deckById('es-en-core-100')!;
     final ids = spanish.cards.map((c) => c.id).toSet();
     for (final line in previewOf(spanish, l10n)) {
       expect(ids, isNot(contains(line.target)));
@@ -82,7 +82,7 @@ void main() {
   });
 
   test('search matches a deck name or its language name', () {
-    final hiragana = state.deckById('ja-hiragana')!;
+    final hiragana = state.deckById('ja-en-hiragana')!;
     expect(deckMatches(hiragana, ''), isTrue);
     expect(deckMatches(hiragana, 'HIRA'), isTrue);
     expect(deckMatches(hiragana, 'japanese'), isTrue);
