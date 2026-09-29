@@ -1,0 +1,46 @@
+schema: 1
+id: hi-en-grammar-articles
+name: "No articles: a and the"
+kind: vocab
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Hindi has no 'a' or 'the'. How it says them anyway."
+tags: [beginner, grammar]
+cards:
+  - id: hi-en-grammar-articles-0001
+    target: "किताब मेज़ पर है।"
+    native: "The book is on the table."
+    reading: "kitaab mez par hai."
+    pos: "phrase"
+    notes: "Hindi has no word for 'the' or 'a'. किताब is 'book', 'a book' or 'the book'; the context says which."
+  - id: hi-en-grammar-articles-0002
+    target: "एक लड़का आया।"
+    native: "A boy came."
+    reading: "ek ladkaa aayaa."
+    pos: "phrase"
+    notes: "एक, 'one', can mark 'a' when the thing is new to the listener."
+  - id: hi-en-grammar-articles-0003
+    target: "लड़का आया।"
+    native: "The boy came."
+    reading: "ladkaa aayaa."
+    pos: "phrase"
+    notes: "Without एक, the listener takes it to be a boy they already know about."
+  - id: hi-en-grammar-articles-0004
+    target: "एक चाय दीजिए।"
+    native: "One tea, please."
+    reading: "ek chaay diijiye."
+    pos: "phrase"
+    notes: "In a shop, एक is simply 'one'."
+  - id: hi-en-grammar-articles-0005
+    target: "कोई आया है।"
+    native: "Someone has come."
+    reading: "koii aayaa hai."
+    pos: "phrase"
+    notes: "कोई is 'some, any, someone'."
+  - id: hi-en-grammar-articles-0006
+    target: "थोड़ा पानी दीजिए।"
+    native: "Some water, please."
+    reading: "thodaa paanii diijiye."
+    pos: "phrase"
+    notes: "थोड़ा, 'a little', is the everyday 'some' before an amount. कुछ is 'some' or 'something': कुछ चाहिए? Do you need anything?"

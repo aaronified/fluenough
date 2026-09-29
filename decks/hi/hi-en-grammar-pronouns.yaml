@@ -1,0 +1,79 @@
+schema: 1
+id: hi-en-grammar-pronouns
+name: "Pronouns"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, and the forms they take with को, से and ने."
+tags: [beginner, grammar]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["to or for (को)", "with से (from, with)", "with ने (past of a transitive verb)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Hindi has three words for 'you': आप (respectful), तुम (familiar) and तू (intimate). यह and वह are he, she or it: यह for someone near, वह for someone further off. मुझे and मुझको mean the same; मुझे is more common."
+  entries:
+    - lemma: "मैं"
+      key: main
+      gloss: "I"
+      forms:
+        "to or for (को)": "मुझे"
+        "with से (from, with)": "मुझसे"
+        "with ने (past of a transitive verb)": "मैंने"
+    - lemma: "तू"
+      key: tuu
+      gloss: "you, intimate"
+      forms:
+        "to or for (को)": "तुझे"
+        "with से (from, with)": "तुझसे"
+        "with ने (past of a transitive verb)": "तूने"
+    - lemma: "तुम"
+      key: tum
+      gloss: "you, familiar"
+      forms:
+        "to or for (को)": "तुम्हें"
+        "with से (from, with)": "तुमसे"
+        "with ने (past of a transitive verb)": "तुमने"
+    - lemma: "आप"
+      key: aap
+      gloss: "you, respectful"
+      forms:
+        "to or for (को)": "आपको"
+        "with से (from, with)": "आपसे"
+        "with ने (past of a transitive verb)": "आपने"
+    - lemma: "यह"
+      key: yah
+      gloss: "he, she, it: near"
+      forms:
+        "to or for (को)": "इसे"
+        "with से (from, with)": "इससे"
+        "with ने (past of a transitive verb)": "इसने"
+    - lemma: "वह"
+      key: vah
+      gloss: "he, she, it: far"
+      forms:
+        "to or for (को)": "उसे"
+        "with से (from, with)": "उससे"
+        "with ने (past of a transitive verb)": "उसने"
+    - lemma: "हम"
+      key: ham
+      gloss: "we"
+      forms:
+        "to or for (को)": "हमें"
+        "with से (from, with)": "हमसे"
+        "with ने (past of a transitive verb)": "हमने"
+    - lemma: "ये"
+      key: ye
+      gloss: "they: near"
+      forms:
+        "to or for (को)": "इन्हें"
+        "with से (from, with)": "इनसे"
+        "with ने (past of a transitive verb)": "इन्होंने"
+    - lemma: "वे"
+      key: ve
+      gloss: "they: far"
+      forms:
+        "to or for (को)": "उन्हें"
+        "with से (from, with)": "उनसे"
+        "with ने (past of a transitive verb)": "उन्होंने"

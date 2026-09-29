@@ -1,0 +1,52 @@
+schema: 1
+id: hi-en-grammar-adjectives
+name: "Adjectives: gender and number"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Adjectives in -आ agree with their noun; the others never change."
+tags: [beginner, grammar]
+pattern:
+  name: "Adjective agreement"
+  slot_name: "agreement"
+  slots: ["with a feminine noun", "with a masculine plural, or before a postposition"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "An adjective ending in -आ agrees: अच्छा लड़का, अच्छी लड़की, अच्छे लड़के. Any other adjective stays the same: सुंदर लड़का, सुंदर लड़की. A feminine plural takes the feminine form: अच्छी लड़कियाँ."
+  entries:
+    - lemma: "अच्छा"
+      key: achchhaa
+      gloss: "good"
+      forms:
+        "with a feminine noun": "अच्छी"
+        "with a masculine plural, or before a postposition": "अच्छे"
+    - lemma: "बड़ा"
+      key: badaa
+      gloss: "big"
+      forms:
+        "with a feminine noun": "बड़ी"
+        "with a masculine plural, or before a postposition": "बड़े"
+    - lemma: "छोटा"
+      key: chhotaa
+      gloss: "small"
+      forms:
+        "with a feminine noun": "छोटी"
+        "with a masculine plural, or before a postposition": "छोटे"
+    - lemma: "नया"
+      key: nayaa
+      gloss: "new"
+      forms:
+        "with a feminine noun": "नई"
+        "with a masculine plural, or before a postposition": "नए"
+    - lemma: "सुंदर"
+      key: sundar
+      gloss: "beautiful"
+      forms:
+        "with a feminine noun": "सुंदर"
+        "with a masculine plural, or before a postposition": "सुंदर"
+    - lemma: "लाल"
+      key: laal
+      gloss: "red"
+      forms:
+        "with a feminine noun": "लाल"
+        "with a masculine plural, or before a postposition": "लाल"

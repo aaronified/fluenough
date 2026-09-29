@@ -1,0 +1,64 @@
+schema: 1
+id: hi-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose past and polite request break the pattern."
+tags: [beginner, grammar]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["past, masculine", "past, feminine", "past, masculine plural", "polite request"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "These are among the most used verbs in Hindi, so they are worth learning by heart. A regular verb forms its past from its stem (बोलना → बोला) and its polite request with -इए (बोलिए)."
+  entries:
+    - lemma: "करना"
+      key: karnaa
+      gloss: "to do"
+      forms:
+        "past, masculine": "किया"
+        "past, feminine": "की"
+        "past, masculine plural": "किए"
+        "polite request": "कीजिए"
+    - lemma: "देना"
+      key: denaa
+      gloss: "to give"
+      forms:
+        "past, masculine": "दिया"
+        "past, feminine": "दी"
+        "past, masculine plural": "दिए"
+        "polite request": "दीजिए"
+    - lemma: "लेना"
+      key: lenaa
+      gloss: "to take"
+      forms:
+        "past, masculine": "लिया"
+        "past, feminine": "ली"
+        "past, masculine plural": "लिए"
+        "polite request": "लीजिए"
+    - lemma: "पीना"
+      key: piinaa
+      gloss: "to drink"
+      forms:
+        "past, masculine": "पिया"
+        "past, feminine": "पी"
+        "past, masculine plural": "पिए"
+        "polite request": "पीजिए"
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: "to go"
+      forms:
+        "past, masculine": "गया"
+        "past, feminine": "गई"
+        "past, masculine plural": "गए"
+        "polite request": "जाइए"
+    - lemma: "होना"
+      key: honaa
+      gloss: "to be, to happen"
+      forms:
+        "past, masculine": "हुआ"
+        "past, feminine": "हुई"
+        "past, masculine plural": "हुए"
+        "polite request": null

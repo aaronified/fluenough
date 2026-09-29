@@ -1,0 +1,48 @@
+schema: 1
+id: hi-en-grammar-future
+name: "Future tense"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I will go, they will speak."
+tags: [beginner, grammar]
+pattern:
+  name: "Future"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem, a vowel for the person (-ऊँ, -ओ, -ए, -एँ), then -गा, -गी or -गे for gender and number. Some writers spell जाएगा as जायेगा."
+  entries:
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: "to go"
+      forms:
+        "मैं (m)": "जाऊँगा"
+        "मैं (f)": "जाऊँगी"
+        "तुम (m)": "जाओगे"
+        "तुम (f)": "जाओगी"
+        "वह (m)": "जाएगा"
+        "वह (f)": "जाएगी"
+        "हम (m)": "जाएँगे"
+        "हम (f)": "जाएँगी"
+        "आप (m)": "जाएँगे"
+        "आप (f)": "जाएँगी"
+        "वे (m)": "जाएँगे"
+        "वे (f)": "जाएँगी"
+    - lemma: "बोलना"
+      key: bolnaa
+      gloss: "to speak"
+      forms:
+        "मैं (m)": "बोलूँगा"
+        "मैं (f)": "बोलूँगी"
+        "तुम (m)": "बोलोगे"
+        "तुम (f)": "बोलोगी"
+        "वह (m)": "बोलेगा"
+        "वह (f)": "बोलेगी"
+        "हम (m)": "बोलेंगे"
+        "हम (f)": "बोलेंगी"
+        "आप (m)": "बोलेंगे"
+        "आप (f)": "बोलेंगी"
+        "वे (m)": "बोलेंगे"
+        "वे (f)": "बोलेंगी"
