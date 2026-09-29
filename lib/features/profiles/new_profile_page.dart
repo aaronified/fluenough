@@ -150,11 +150,11 @@ class _NewProfilePageState extends State<NewProfilePage> {
                 const SizedBox(height: 28),
                 IncomingFeature(
                   feature: Feature.uiLanguage,
-                  label: l10n.newProfileSpeaks,
+                  label: l10n.settingsAppLanguage,
                   badge: IncomingBadgePlacement.below,
                   child: AppLanguagePicker(
                     value: speaks,
-                    decoration: field(l10n.newProfileSpeaks),
+                    decoration: field(l10n.settingsAppLanguage),
                     onChanged: (locale) => setState(() => _speaks = locale),
                   ),
                 ),
