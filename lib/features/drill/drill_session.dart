@@ -9,6 +9,7 @@ import '../../app/skill.dart';
 import '../../core/grading/answer_grader.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
 
 /// Where the current card is: the design's `phase`.
@@ -57,12 +58,14 @@ class TypedAnswer {
 /// Every answer is recorded through [AppState.record] the moment it is
 /// given: a rating, a checked answer, "Don't know", or the verdict on a near
 /// miss. Nothing waits for the end of the session, so ending part-way loses
-/// nothing.
+/// nothing. A session that is not [recorded], number practice (#54), records
+/// nothing and only counts its answers for the summary.
 class DrillSession extends ChangeNotifier {
   DrillSession({
     required AppState state,
     required List<SessionItem> items,
     this._inputMode = InputMode.script,
+    this.recorded = true,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        _state = state,
        items = List<SessionItem>.unmodifiable(items),
@@ -76,6 +79,10 @@ class DrillSession extends ChangeNotifier {
   final List<SessionItem> items;
 
   final DateTime startedAt;
+
+  /// Whether answers go to the review log. False only for number practice,
+  /// which has no schedule, so recognition shows no intervals either.
+  final bool recorded;
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
@@ -197,14 +204,27 @@ class DrillSession extends ChangeNotifier {
     return accepted;
   }
 
+  /// Whether the answer is a number in digits: a generated number heard.
+  bool get typesDigits =>
+      item.card is NumberCard && item.mode == DrillMode.listening;
+
   /// Grades [typed]. A near miss waits for [judge]; every other outcome is
   /// recorded now.
+  ///
+  /// Digits are right or wrong, never a typo: 2021 is not a slip for 2020.
+  /// Spaces and commas in them are ignored, so 2,020 is 2020.
   void check(String typed) {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition) return;
     final accepted = acceptedAnswers;
-    final graded = AnswerGrader(articles: deck.language.articles)
-        .grade(typed, accepted.first, alternates: accepted.sublist(1));
+    final grader = typesDigits
+        ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
+        : AnswerGrader(articles: deck.language.articles);
+    final graded = grader.grade(
+      typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
+      accepted.first,
+      alternates: accepted.sublist(1),
+    );
     final grade = graded.outcome == AnswerOutcome.closeTypo
         ? null
         : graded.outcome.toSm2Grade();
@@ -275,12 +295,14 @@ class DrillSession extends ChangeNotifier {
   // ---------------------------------------------------------------------------
 
   void _record(int grade, {String? answerGiven}) {
-    _state.record(
-      item,
-      grade,
-      elapsed: _watch.elapsed,
-      answerGiven: answerGiven,
-    );
+    if (recorded) {
+      _state.record(
+        item,
+        grade,
+        elapsed: _watch.elapsed,
+        answerGiven: answerGiven,
+      );
+    }
     _answers.add(SessionAnswer(skill: skill, grade: grade));
   }
 

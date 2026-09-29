@@ -46,7 +46,9 @@ class RecognitionDrill extends StatelessWidget {
 
     return DrillFrame(
       skill: session.skill,
-      deckName: session.deck.deck.name,
+      deckName: session.recorded
+          ? session.deck.deck.name
+          : l10n.numbersPracticeTitle,
       position: session.position,
       total: session.total,
       progress: session.progress,
@@ -109,7 +111,7 @@ class RecognitionDrill extends StatelessWidget {
                 ),
               ),
               RatingButtons(
-                intervalFor: session.intervalFor,
+                intervalFor: session.recorded ? session.intervalFor : null,
                 onRate: session.rate,
               ),
             ]

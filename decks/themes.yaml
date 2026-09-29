@@ -1,0 +1,20 @@
+# The shared theme path (ADR-0010). Every language teaches these themes, in
+# this order, each with its own words. A theme deck names its theme by id,
+# and ids are permanent, like card ids.
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: questions, name: "Yes, no and questions" }
+  - { id: addressing, name: "Addressing people" }
+  - { id: about-me, name: "About me" }
+  - { id: numbers-1-20, name: "Numbers 1–20" }
+  - { id: numbers-big, name: "Tens and big numbers" }
+  - { id: market, name: "Market" }
+  - { id: groceries, name: "Groceries" }
+  - { id: transport, name: "Bus, auto, cab" }
+  - { id: directions, name: "Directions" }
+  - { id: time, name: "Time and days" }
+  - { id: calendar, name: "Months and years" }
+  - { id: eating-out, name: "Eating out" }
+  - { id: help, name: "Help" }

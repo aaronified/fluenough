@@ -1,0 +1,71 @@
+schema: 1
+id: te-en-about-me
+name: "About me"
+kind: vocab
+theme: about-me
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Your name, where you are from, where you live, and the people around you. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: te-en-about-me-0001
+    target: "పేరు"
+    native: "name"
+    reading: "peeru"
+    pos: "noun"
+  - id: te-en-about-me-0002
+    target: "నా పేరు …"
+    native: "My name is …"
+    reading: "naa peeru …"
+    pos: "phrase"
+    notes: "There is no 'is': 'my name …'."
+  - id: te-en-about-me-0003
+    target: "మీ పేరు ఏమిటి?"
+    native: "What is your name?"
+    reading: "mii peeru eemiti?"
+    pos: "phrase"
+    tags: ["polite"]
+  - id: te-en-about-me-0004
+    target: "నేను … నుంచి వచ్చాను."
+    native: "I'm from …"
+    reading: "neenu … nunchi vachchaanu."
+    pos: "phrase"
+    notes: "Literally 'I came from …'. నుంచి (nunchi), 'from', comes after the place."
+  - id: te-en-about-me-0005
+    target: "నేను …లో ఉంటాను."
+    native: "I live in …"
+    reading: "neenu …loo untaanu."
+    pos: "phrase"
+    notes: "-లో (loo), 'in', joins the end of the place: హైదరాబాద్‌లో, in Hyderabad."
+  - id: te-en-about-me-0006
+    target: "ఇల్లు"
+    native: "home; house"
+    reading: "illu"
+    pos: "noun"
+  - id: te-en-about-me-0007
+    target: "కుటుంబం"
+    native: "family"
+    reading: "kutumbam"
+    pos: "noun"
+  - id: te-en-about-me-0008
+    target: "పని"
+    native: "work"
+    reading: "pani"
+    pos: "noun"
+  - id: te-en-about-me-0009
+    target: "ఊరు"
+    native: "town; home town"
+    reading: "uuru"
+    pos: "noun"
+    notes: "మీది ఏ ఊరు? Which is your home town? A common first question."
+  - id: te-en-about-me-0010
+    target: "దేశం"
+    native: "country"
+    reading: "deesham"
+    pos: "noun"
+  - id: te-en-about-me-0011
+    target: "భాష"
+    native: "language"
+    reading: "bhaasha"
+    pos: "noun"
