@@ -41,7 +41,7 @@ Common to every kind.
 | `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. This is the tag voices and the app key on. |
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
-| `script` | yes | One of `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `kana`, `han`, `hangul`, `thai`, `other`. |
+| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic` and `greek` expects a `reading` on each card. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
 
@@ -249,13 +249,19 @@ translation is beyond what an offline app should attempt.
 
 Automatically graded answers are normalised before comparison:
 
-1. Unicode NFC normalisation
+1. one spelling for text that looks the same: precomposed letters are
+   decomposed (Devanagari and Bengali nukta letters such as क़ and য়, and
+   Bengali and Telugu two-part vowel signs such as ো), Indic digits read as
+   0–9, and zero-width joiners are ignored. This is a table for the scripts
+   the app ships, not full Unicode NFC, which needs a package (#28); a new
+   script adds its rows to `lib/core/grading/canonical.dart`
 2. trim, collapse internal whitespace
 3. case folding
 4. strip terminal punctuation
 
-If that does not match, a second pass **also** strips diacritics (NFD, drop
-combining marks) and leading articles declared for the language. A match at
+If that does not match, a second pass **also** strips diacritics (the Latin
+accents, and the Devanagari and Bengali nukta) and leading articles declared
+for the language. A match at
 this stage counts as correct but the UI flags what was missed — the answer was
 right, the accent was not.
 
