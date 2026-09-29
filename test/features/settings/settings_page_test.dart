@@ -16,6 +16,7 @@ import 'package:fluenough/features/settings/settings_controls.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/fluenough_mark.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
@@ -310,5 +311,18 @@ void main() {
     final footer = find.text(l10nOf(tester).settingsFooter(AppInfo.version));
     await scrollTo(tester, footer);
     expect(footer, findsOneWidget);
+  });
+
+  testWidgets('the footer carries the brand mark, beside the name', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(tester, const SettingsPage());
+    final footer = find.text(l10nOf(tester).settingsFooter(AppInfo.version));
+    await scrollTo(tester, footer);
+    final mark = find.byType(FluenoughMark);
+    expect(mark, findsOneWidget);
+    expect(tester.getSize(mark), const Size.square(32));
+    expect(tester.getCenter(mark).dy, closeTo(tester.getCenter(footer).dy, 12));
   });
 }
