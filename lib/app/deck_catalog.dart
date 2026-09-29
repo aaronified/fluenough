@@ -7,6 +7,7 @@ import 'package:yaml/yaml.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/facts_parser.dart';
 import '../core/data/number_rules_parser.dart';
+import '../core/data/pattern_expander.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
@@ -100,18 +101,9 @@ final class DeckEntry extends CatalogEntry {
 
   List<Card> get cards => deck.cards;
 
-  /// How many cards the deck has, as a deck row counts them. A grammar deck
-  /// has no cards until the expander lands (#2), so it counts its pattern's
-  /// cells that have a form: the cards it will expand to.
-  int get itemCount {
-    final pattern = deck.pattern;
-    if (deck.cards.isNotEmpty || pattern == null) return deck.cards.length;
-    var cells = 0;
-    for (final entry in pattern.entries) {
-      cells += entry.forms.values.where((form) => form != null).length;
-    }
-    return cells;
-  }
+  /// How many cards the deck has, as a deck row counts them. A grammar
+  /// deck's are its expanded cells (#2).
+  int get itemCount => deck.cards.length;
 
   /// Whether this deck teaches a writing system. There is no such deck kind:
   /// a script deck is a vocab deck tagged `script`, as both bundled script
@@ -214,9 +206,9 @@ class Catalog {
 /// Lists and parses every deck file in a [DeckSource].
 ///
 /// A stand-in for the deck repository (#4). It reads the files that live
-/// beside the decks but are not decks, facts (#48) and the theme path (#52),
-/// and turns a file that fails to parse into a [BrokenDeck] rather than an
-/// exception.
+/// beside the decks but are not decks: facts (#48), number rules (#54) and
+/// the theme path (#52). It expands grammar decks into cards (#2), and turns
+/// a file that fails to parse into a [BrokenDeck] rather than an exception.
 class DeckCatalog {
   DeckCatalog(this.source);
 
@@ -281,7 +273,7 @@ class DeckCatalog {
         }
         continue;
       }
-      final Deck deck;
+      Deck deck;
       try {
         deck = DeckParser.parse(text, source: path.split('/').last);
       } on DeckParseException catch (e) {
@@ -302,6 +294,11 @@ class DeckCatalog {
         continue;
       }
       firstPath[deck.id] = path;
+      // A grammar deck becomes cards here (#2), so that nothing after the
+      // catalog needs to know which kind of deck a card came from.
+      if (deck.kind == DeckKind.grammar) {
+        deck = deck.withCards(expandPattern(deck));
+      }
       decks.add(DeckEntry(path: path, deck: deck));
     }
     return Catalog(

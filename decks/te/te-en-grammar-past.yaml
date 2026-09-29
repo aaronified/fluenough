@@ -1,0 +1,49 @@
+schema: 1
+id: te-en-grammar-past
+name: "Past tense"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I did, she went: the past, by person, number and gender. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Past"
+  slot_name: "person"
+  slots: ["నేను", "మేము", "నువ్వు", "మీరు", "అతను", "ఆమె / అది", "వాళ్ళు"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing: ఆమె వచ్చింది, అది వచ్చింది. మీరు, plural or respectful, takes the plural. Everyday speech often drops the last -u: చేశాను becomes చేశా."
+  entries:
+    - lemma: "చేయడం"
+      key: cheeyadam
+      gloss: "to do"
+      forms:
+        "నేను": "చేశాను"
+        "మేము": "చేశాము"
+        "నువ్వు": "చేశావు"
+        "మీరు": "చేశారు"
+        "అతను": "చేశాడు"
+        "ఆమె / అది": "చేసింది"
+        "వాళ్ళు": "చేశారు"
+    - lemma: "వెళ్ళడం"
+      key: velladam
+      gloss: "to go"
+      forms:
+        "నేను": "వెళ్ళాను"
+        "మేము": "వెళ్ళాము"
+        "నువ్వు": "వెళ్ళావు"
+        "మీరు": "వెళ్ళారు"
+        "అతను": "వెళ్ళాడు"
+        "ఆమె / అది": "వెళ్ళింది"
+        "వాళ్ళు": "వెళ్ళారు"
+    - lemma: "రావడం"
+      key: raavadam
+      gloss: "to come"
+      forms:
+        "నేను": "వచ్చాను"
+        "మేము": "వచ్చాము"
+        "నువ్వు": "వచ్చావు"
+        "మీరు": "వచ్చారు"
+        "అతను": "వచ్చాడు"
+        "ఆమె / అది": "వచ్చింది"
+        "వాళ్ళు": "వచ్చారు"

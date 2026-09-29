@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/skill.dart';
 import '../../core/grading/answer_grader.dart';
+import '../../core/grading/self_grade.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -15,6 +16,7 @@ import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
+import 'drill_session.dart';
 import 'grammar_cells.dart';
 
 /// The deck the fixture drills: the real bundled pattern, read from the
@@ -35,16 +37,15 @@ const List<GrammarPick> grammarFixturePicks = <GrammarPick>[
 /// after answering the lemma's whole table, with the asked cell marked, and
 /// the pattern's notes.
 ///
-/// Design screen `drill-grammar`. Built on a fixture and disabled: grammar
-/// decks have no cards until the expander (#2) lands, so this runs on
-/// [GrammarCell]s shaped from the real pattern of [deckId], picked by
-/// [picks]. Nothing in a live session builds it; `DrillPage` never queues a
-/// grammar card. Behind `Feature.drillGrammar`: while incoming, the field
-/// and the foot are disabled and marked.
+/// Design screen `drill-grammar`. [GrammarDrill.live] drills a session's
+/// grammar card (#14): the card is an expanded cell (#2), and the session
+/// grades it with `AnswerGrader` as the production drill does, records it,
+/// and moves on. Behind `Feature.drillGrammar`.
 ///
-/// Answers are graded locally and not recorded, as there is no card to
-/// record them against. Typed forms are graded without articles: a verb form
-/// is not a noun phrase.
+/// The unnamed constructor is the gallery's: it runs on [GrammarCell]s
+/// shaped from the real pattern of [deckId], picked by [picks], graded
+/// locally and not recorded, and disabled and marked while the feature is
+/// incoming.
 class GrammarDrill extends StatefulWidget {
   const GrammarDrill({
     super.key,
@@ -52,7 +53,23 @@ class GrammarDrill extends StatefulWidget {
     this.picks = grammarFixturePicks,
     this.typed,
     this.check = false,
-  });
+  }) : session = null,
+       onClose = null;
+
+  /// A live session's current grammar card, graded and recorded by
+  /// [session]. Build one per card (key it by the card's position).
+  const GrammarDrill.live({
+    super.key,
+    required DrillSession this.session,
+    required VoidCallback this.onClose,
+  }) : deckId = grammarFixtureDeckId,
+       picks = const <GrammarPick>[],
+       typed = null,
+       check = false;
+
+  /// Null for the gallery's fixture.
+  final DrillSession? session;
+  final VoidCallback? onClose;
 
   final String deckId;
   final List<GrammarPick> picks;
@@ -68,6 +85,16 @@ class GrammarDrill extends StatefulWidget {
 }
 
 typedef _Answer = ({String typed, GradedAnswer? graded});
+
+/// What each button of the foot does: locally for the gallery's fixture,
+/// through the session for a live card.
+typedef _Moves = ({
+  VoidCallback dontKnow,
+  VoidCallback check,
+  VoidCallback next,
+  VoidCallback countWrong,
+  VoidCallback knewIt,
+});
 
 class _GrammarDrillState extends State<GrammarDrill> {
   static const AnswerGrader _grader = AnswerGrader();
@@ -120,7 +147,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final session = widget.session;
+    if (session != null) return _live(context, session);
+
     final state = AppScope.of(context);
     final entry = state.deckById(widget.deckId);
     final cells = _cells(state);
@@ -128,21 +157,76 @@ class _GrammarDrillState extends State<GrammarDrill> {
     if (entry == null || cells.isEmpty) return const Scaffold();
 
     final cell = cells[_index];
-    final language = entry.deck.language;
-    final incoming = isIncoming(context, Feature.drillGrammar);
     if (_presetCheck) {
       _presetCheck = false;
       if (_controller.text.trim().isNotEmpty) _answer = _grade(cell);
     }
-    final answer = _answer;
+    final total = cells.length;
+    return _frame(
+      context,
+      deck: entry.deck,
+      cell: cell,
+      position: _index + 1,
+      total: total,
+      answer: _answer,
+      incoming: isIncoming(context, Feature.drillGrammar),
+      onClose: () => Navigator.maybePop(context),
+      moves: (
+        dontKnow: () => setState(() => _answer = (typed: '', graded: null)),
+        check: () => _check(cell),
+        next: () => _next(total),
+        countWrong: () => _next(total),
+        knewIt: () => _next(total),
+      ),
+    );
+  }
 
+  /// The session's card, answered through the session.
+  Widget _live(BuildContext context, DrillSession session) {
+    final deck = session.deck.deck;
+    final cell = grammarCellOf(session.item.card, deck);
+    // A grammar card always comes from a pattern cell; guard all the same.
+    if (cell == null) return const Scaffold();
+    final given = session.answer;
+    return _frame(
+      context,
+      deck: deck,
+      cell: cell,
+      position: session.position,
+      total: session.total,
+      answer: given == null ? null : (typed: given.typed, graded: given.graded),
+      incoming: false,
+      onClose: widget.onClose!,
+      moves: (
+        dontKnow: session.dontKnow,
+        check: () => session.check(_controller.text),
+        next: session.next,
+        countWrong: () => session.judge(TypoJudgement.countWrong),
+        knewIt: () => session.judge(TypoJudgement.knewIt),
+      ),
+    );
+  }
+
+  Widget _frame(
+    BuildContext context, {
+    required Deck deck,
+    required GrammarCell cell,
+    required int position,
+    required int total,
+    required _Answer? answer,
+    required bool incoming,
+    required VoidCallback onClose,
+    required _Moves moves,
+  }) {
+    final l10n = AppLocalizations.of(context)!;
+    final language = deck.language;
     return DrillFrame(
       skill: Skill.grammar,
-      deckName: entry.deck.name,
-      position: _index + 1,
-      total: cells.length,
-      progress: (_index + (answer == null ? 0 : 0.5)) / cells.length,
-      onClose: () => Navigator.maybePop(context),
+      deckName: deck.name,
+      position: position,
+      total: total,
+      progress: (position - 1 + (answer == null ? 0 : 0.5)) / total,
+      onClose: onClose,
       card: _card(context, cell, language, answered: answer != null),
       belowCard: answer != null
           ? null
@@ -154,11 +238,13 @@ class _GrammarDrillState extends State<GrammarDrill> {
                 enabled: !incoming,
                 autofocus: !incoming,
                 onChanged: (_) => setState(() {}),
-                onSubmitted: (_) => _check(cell),
+                onSubmitted: (_) {
+                  if (_controller.text.trim().isNotEmpty) moves.check();
+                },
               ),
             ],
       feedback: answer == null ? null : _feedback(l10n, cell, answer),
-      actions: _actions(context, cell, cells.length, answer, incoming),
+      actions: _actions(context, answer, incoming, moves),
     );
   }
 
@@ -277,10 +363,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
   /// incoming every button is disabled and the whole foot is marked.
   List<Widget> _actions(
     BuildContext context,
-    GrammarCell cell,
-    int total,
     _Answer? answer,
     bool incoming,
+    _Moves moves,
   ) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -309,9 +394,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
         children: <Widget>[
           Flexible(
             child: OutlinedButton(
-              onPressed: live(
-                () => setState(() => _answer = (typed: '', graded: null)),
-              ),
+              onPressed: live(moves.dontKnow),
               style: outlined,
               child: Text(l10n.drillDontKnow, textAlign: TextAlign.center),
             ),
@@ -319,7 +402,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
           const SizedBox(width: 8),
           Expanded(
             child: FilledButton(
-              onPressed: empty ? null : live(() => _check(cell)),
+              onPressed: empty ? null : live(moves.check),
               style: filled,
               child: Text(l10n.drillCheck, textAlign: TextAlign.center),
             ),
@@ -331,7 +414,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
         children: <Widget>[
           Expanded(
             child: OutlinedButton(
-              onPressed: live(() => _next(total)),
+              onPressed: live(moves.countWrong),
               style: outlined,
               child: Text(l10n.drillCountWrong, textAlign: TextAlign.center),
             ),
@@ -339,7 +422,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
           const SizedBox(width: 8),
           Expanded(
             child: FilledButton(
-              onPressed: live(() => _next(total)),
+              onPressed: live(moves.knewIt),
               style: filled,
               child: Text(l10n.drillKnewIt, textAlign: TextAlign.center),
             ),
@@ -348,7 +431,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
       );
     } else {
       foot = FilledButton(
-        onPressed: live(() => _next(total)),
+        onPressed: live(moves.next),
         style: AppButtonStyles.tall(context),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -464,15 +547,8 @@ class _GrammarTable extends StatelessWidget {
   }
 }
 
-/// The gallery runs the drill with its feature switched on, so it shows what
-/// the incoming drill will do.
-const FeatureRegistry _grammarOn = FeatureRegistry.only(<Feature>{
-  ...Feature.available,
-  Feature.drillGrammar,
-});
-
-AppState _grammarState(AppState app) =>
-    GalleryFixtures.state(app, features: _grammarOn);
+/// The gallery runs the drill as shipped: its feature is on (#14).
+AppState _grammarState(AppState app) => GalleryFixtures.state(app);
 
 /// B4's gallery entries for the grammar drill. `drill/gallery_entries.dart`
 /// already includes them. The design's state: "hablamos" typed for the

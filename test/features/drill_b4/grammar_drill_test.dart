@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/grammar_pattern.dart';
@@ -142,7 +143,15 @@ void main() {
 
     testWidgets('is disabled while its feature is incoming', (tester) async {
       usePhone(tester);
-      await pumpScreen(tester, const GrammarDrill(), state: AppState.test());
+      await pumpScreen(
+        tester,
+        const GrammarDrill(),
+        state: AppState.test(
+          features: FeatureRegistry.only(
+            Feature.available.difference(const <Feature>{Feature.drillGrammar}),
+          ),
+        ),
+      );
       final l10n = l10nOf(tester);
       expect(tester.widget<TextField>(find.byType(TextField)).enabled, isFalse);
       expect(find.text(l10n.incomingBadge), findsOneWidget);
@@ -153,7 +162,7 @@ void main() {
       expect(find.byType(FeedbackBanner), findsNothing);
     });
 
-    testWidgets('no live session reaches it, even with every feature on', (
+    testWidgets('with its drill on, a session reaches the expanded cards', (
       tester,
     ) async {
       usePhone(tester);
@@ -167,8 +176,8 @@ void main() {
         ),
         state: grammarOn(),
       );
-      expect(find.byType(GrammarDrill), findsNothing);
-      expect(find.text(l10nOf(tester).drillEmptyTitle), findsOneWidget);
+      // The cards exist now (#2); #14 gives them the grammar screen.
+      expect(find.text(l10nOf(tester).drillEmptyTitle), findsNothing);
     });
 
     testWidgets('every state fits at 1.0 and 2.0, light and dark', (
@@ -220,5 +229,36 @@ void main() {
       );
       expect((box.decoration as BoxDecoration).color, scheme.primaryContainer);
     });
+  });
+
+  testWidgets('live: a session card is graded, recorded, and shows its table '
+      'and notes', (tester) async {
+    usePhone(tester);
+    final state = await pumpScreen(
+      tester,
+      DrillPage(
+        request: DrillRequest.deck(grammarFixtureDeckId, skill: Skill.grammar),
+      ),
+      state: AppState.test(),
+    );
+    final l10n = l10nOf(tester);
+    final pattern = state.deckById(grammarFixtureDeckId)!.deck.pattern!;
+    expect(find.byType(GrammarDrill), findsOneWidget);
+    // The first new cell in deck order: hablar, yo.
+    expect(find.text('hablar (to speak) — yo'), findsOneWidget);
+
+    await tester.enterText(find.byType(TextField), 'hablo');
+    await tester.pump();
+    await tester.tap(find.text(l10n.drillCheck));
+    await tester.pumpAndSettle();
+
+    expect(find.text(l10n.feedbackCorrect), findsOneWidget);
+    expect(find.text('hablas'), findsOneWidget, reason: 'the whole table');
+    expect(find.text(pattern.notes!), findsOneWidget);
+    final review = state.progress.log.single;
+    expect(review.mode, DrillMode.grammar);
+    expect(review.cardId, 'es-grammar-present-ar-hablar-0');
+    expect(review.answerGiven, 'hablo');
+    expect(review.grade, greaterThanOrEqualTo(4));
   });
 }

@@ -33,7 +33,7 @@ Finder tileOf(DeckEntry entry) =>
 /// A phone tall enough for the lazy list to build every bundled deck.
 void useTallPhone(WidgetTester tester) {
   usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 12000 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 20000 * 3);
 }
 
 /// Taps [chip] after scrolling the chip row to it.
@@ -88,15 +88,16 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
     expect(state.decks, isNotEmpty);
-    expect(state.deckById('es-grammar-present-ar')!.cards, isEmpty);
+    // The grammar deck has cards (#2) and its drill (#14).
+    expect(state.canDrill(state.deckById('es-grammar-present-ar')!), isTrue);
     expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
     for (final entry in state.decks) {
       final counts = state.countsFor(entry);
       final n = counts.due + counts.fresh;
       final tile = tileOf(entry);
-      // A grammar deck has nothing to drill until the expander (#2): it is
+      // A grammar deck has nothing to drill until its drill ships (#14): it is
       // incoming, never Done.
-      final badge = entry.cards.isEmpty
+      final badge = !state.canDrill(entry)
           ? l10n.incomingBadge
           : n > 0
           ? l10n.commonDueBadge(n)
@@ -228,7 +229,7 @@ void main() {
       final badge = tester.widget<DeckTile>(tileOf(entry)).badge;
       expect(
         badge.kind,
-        entry.cards.isEmpty
+        !state.canDrill(entry)
             ? DeckBadgeKind.incoming
             : entry.language.code == 'ja'
             ? DeckBadgeKind.due

@@ -171,7 +171,6 @@ void main() {
 
     final labels = <String>[
       l10n.settingsSwitchProfile,
-      l10n.skillGrammar,
       l10n.skillPair,
       l10n.settingsAppLanguage,
       l10n.settingsReminder,

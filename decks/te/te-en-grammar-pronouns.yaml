@@ -1,0 +1,79 @@
+schema: 1
+id: te-en-grammar-pronouns
+name: "Pronouns and possessives"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, with my and your, to me, and me as an object. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["possessive: my, your …", "to: to me …", "object: me …"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Telugu has two 'we': మనం includes the listener, మేము leaves them out. మీరు is 'you' for one person you respect and for more than one."
+  entries:
+    - lemma: "నేను"
+      key: neenu
+      gloss: "I"
+      forms:
+        "possessive: my, your …": "నా"
+        "to: to me …": "నాకు"
+        "object: me …": "నన్ను"
+    - lemma: "నువ్వు"
+      key: nuvvu
+      gloss: "you, familiar"
+      forms:
+        "possessive: my, your …": "నీ"
+        "to: to me …": "నీకు"
+        "object: me …": "నిన్ను"
+    - lemma: "మీరు"
+      key: miiru
+      gloss: "you, respectful or plural"
+      forms:
+        "possessive: my, your …": "మీ"
+        "to: to me …": "మీకు"
+        "object: me …": "మిమ్మల్ని"
+    - lemma: "అతను"
+      key: atanu
+      gloss: "he"
+      forms:
+        "possessive: my, your …": "అతని"
+        "to: to me …": "అతనికి"
+        "object: me …": "అతన్ని"
+    - lemma: "ఆమె"
+      key: aame
+      gloss: "she"
+      forms:
+        "possessive: my, your …": "ఆమె"
+        "to: to me …": "ఆమెకు"
+        "object: me …": "ఆమెను"
+    - lemma: "అది"
+      key: adi
+      gloss: "it"
+      forms:
+        "possessive: my, your …": "దాని"
+        "to: to me …": "దానికి"
+        "object: me …": "దాన్ని"
+    - lemma: "మేము"
+      key: meemu
+      gloss: "we, not you"
+      forms:
+        "possessive: my, your …": "మా"
+        "to: to me …": "మాకు"
+        "object: me …": "మమ్మల్ని"
+    - lemma: "మనం"
+      key: manam
+      gloss: "we, you and I"
+      forms:
+        "possessive: my, your …": "మన"
+        "to: to me …": "మనకు"
+        "object: me …": "మనల్ని"
+    - lemma: "వాళ్ళు"
+      key: vaallu
+      gloss: "they"
+      forms:
+        "possessive: my, your …": "వాళ్ళ"
+        "to: to me …": "వాళ్ళకి"
+        "object: me …": "వాళ్ళని"

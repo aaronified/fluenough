@@ -1,0 +1,48 @@
+schema: 1
+id: hi-en-grammar-continuous
+name: "Present continuous"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I am doing, she is watching: what is happening now."
+tags: [beginner, grammar]
+pattern:
+  name: "Present continuous"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The bare stem, then रहा, रही or रहे for gender and number, then हूँ, हो, है or हैं."
+  entries:
+    - lemma: "करना"
+      key: karnaa
+      gloss: "to do"
+      forms:
+        "मैं (m)": "कर रहा हूँ"
+        "मैं (f)": "कर रही हूँ"
+        "तुम (m)": "कर रहे हो"
+        "तुम (f)": "कर रही हो"
+        "वह (m)": "कर रहा है"
+        "वह (f)": "कर रही है"
+        "हम (m)": "कर रहे हैं"
+        "हम (f)": "कर रही हैं"
+        "आप (m)": "कर रहे हैं"
+        "आप (f)": "कर रही हैं"
+        "वे (m)": "कर रहे हैं"
+        "वे (f)": "कर रही हैं"
+    - lemma: "देखना"
+      key: dekhnaa
+      gloss: "to watch"
+      forms:
+        "मैं (m)": "देख रहा हूँ"
+        "मैं (f)": "देख रही हूँ"
+        "तुम (m)": "देख रहे हो"
+        "तुम (f)": "देख रही हो"
+        "वह (m)": "देख रहा है"
+        "वह (f)": "देख रही है"
+        "हम (m)": "देख रहे हैं"
+        "हम (f)": "देख रही हैं"
+        "आप (m)": "देख रहे हैं"
+        "आप (f)": "देख रही हैं"
+        "वे (m)": "देख रहे हैं"
+        "वे (f)": "देख रही हैं"

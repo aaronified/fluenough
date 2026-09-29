@@ -93,6 +93,8 @@ void main() {
     await tapSlider(tester, slider, 1);
     await tester.pumpAndSettle();
     expect(settings.cardTextScale, SettingsNotifier.maxCardTextScale);
+    // The preview above grows with the scale, so the label may have moved.
+    await scrollTo(tester, find.text(l10n.commonPercent(1.4)));
     expect(find.text(l10n.commonPercent(1.4)), findsOneWidget);
 
     // Wallpaper colours on: the seeds no longer apply.

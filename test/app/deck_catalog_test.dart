@@ -118,11 +118,12 @@ void main() {
       }
     });
 
-    test('a grammar deck is listed, with its pattern and no cards yet', () {
+    test('a grammar deck is listed with its pattern, expanded to cards', () {
       final grammar = catalog.byId('es-grammar-present-ar')!;
       expect(grammar.deck.kind, DeckKind.grammar);
       expect(grammar.deck.pattern, isNotNull);
-      expect(grammar.cards, isEmpty);
+      expect(grammar.cards, hasLength(30), reason: '5 lemmas x 6 slots');
+      expect(grammar.itemCount, 30);
       expect(grammar.glyph, 'h', reason: 'first grapheme of the first lemma');
     });
 

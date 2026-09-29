@@ -849,6 +849,45 @@ cards:
       );
     });
 
+    test('a lemma that cannot go into a card id, without a key', () {
+      final yaml = grammar.replaceFirst('lemma: llover', 'lemma: "जाना"');
+      expect(
+        () => parse(yaml),
+        throwsParseError(
+          line: lineOf(yaml, 'lemma: "जाना"'),
+          mentions: ['pattern.entries[1]', '"जाना" cannot go into a card id'],
+        ),
+      );
+    });
+
+    test('a badly formed key', () {
+      final yaml = grammar.replaceFirst(
+        'lemma: llover',
+        'lemma: llover\n      key: Llover',
+      );
+      expect(
+        () => parse(yaml),
+        throwsParseError(
+          line: lineOf(yaml, 'key: Llover'),
+          mentions: ['pattern.entries[1].key must be', '"Llover"'],
+        ),
+      );
+    });
+
+    test('a key that another row already uses as its lemma', () {
+      final yaml = grammar.replaceFirst(
+        'lemma: llover',
+        'lemma: llover\n      key: hablar',
+      );
+      expect(
+        () => parse(yaml),
+        throwsParseError(
+          line: lineOf(yaml, 'key: hablar'),
+          mentions: ['pattern.entries[1]', '"hablar" already names a row'],
+        ),
+      );
+    });
+
     test('a duplicate slot', () {
       final yaml = grammar.replaceFirst('[yo, tú, él]', '[yo, tú, yo]');
       expect(

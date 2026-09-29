@@ -131,7 +131,7 @@ const _patternFields = {
   'notes',
 };
 
-const _entryFields = {'lemma', 'gloss', 'forms'};
+const _entryFields = {'lemma', 'key', 'gloss', 'forms'};
 const _exampleFields = {'target', 'native'};
 const _authorFields = {'name', 'url'};
 
@@ -436,12 +436,13 @@ class _Reader {
     final slots = this.slots(fields.require('slots'));
 
     final lemmas = <String, YamlNode>{};
+    final keys = <String, YamlNode>{};
     final entries = [
       for (final (i, item) in list(
         fields.require('entries'),
         'pattern.entries',
       ).indexed)
-        entry(item, 'pattern.entries[$i]', slots, lemmas),
+        entry(item, 'pattern.entries[$i]', slots, lemmas, keys),
     ];
 
     return GrammarPattern(
@@ -468,13 +469,15 @@ class _Reader {
     return List.unmodifiable(slots);
   }
 
-  /// One pattern row. [lemmas] maps each lemma so far to where it was
-  /// declared: a lemma is part of every expanded card id in its row.
+  /// One pattern row. [lemmas] and [keys] map each lemma and id part so far
+  /// to where it was declared: the id part, the row's `key` or else its
+  /// lemma, is in every expanded card id in its row.
   PatternEntry entry(
     YamlNode node,
     String path,
     List<String> slots,
     Map<String, YamlNode> lemmas,
+    Map<String, YamlNode> keys,
   ) {
     final fields = this.fields(node, path);
     fields.allowOnly(_entryFields);
@@ -490,8 +493,38 @@ class _Reader {
     }
     lemmas[lemma] = lemmaNode;
 
+    // A card id is ASCII (AGENTS.md rule 1), so a lemma that cannot go into
+    // one, like जाना, names its row with a key instead.
+    final keyNode = fields.node('key');
+    final String? key;
+    final YamlNode idNode;
+    if (keyNode != null) {
+      key = id(keyNode, '$path.key');
+      idNode = keyNode;
+    } else {
+      if (!_idPattern.hasMatch(lemma)) {
+        fail(
+          lemmaNode,
+          '$path: the lemma "$lemma" cannot go into a card id; give the '
+          'entry a key of lowercase letters and digits, like "jaanaa"',
+        );
+      }
+      key = null;
+      idNode = lemmaNode;
+    }
+    final idPart = key ?? lemma;
+    final clash = keys[idPart];
+    if (clash != null) {
+      fail(
+        idNode,
+        '$path: "$idPart" already names a row, ${_firstUsed(clash)}',
+      );
+    }
+    keys[idPart] = idNode;
+
     return PatternEntry(
       lemma: lemma,
+      key: key,
       gloss: fields.string('gloss'),
       forms: forms(fields.require('forms'), '$path.forms', slots),
     );
