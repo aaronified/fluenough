@@ -5,8 +5,10 @@ import 'package:flutter/widgets.dart' show StringCharacters;
 import 'package:yaml/yaml.dart';
 
 import '../core/data/deck_parser.dart';
+import '../core/data/facts_parser.dart';
 import '../core/data/number_rules_parser.dart';
 import '../core/data/themes.dart';
+import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
@@ -156,11 +158,16 @@ class Catalog {
     required List<DeckEntry> decks,
     required List<BrokenDeck> broken,
     List<DeckTheme> themes = const <DeckTheme>[],
+    Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
   }) : decks = List<DeckEntry>.unmodifiable(decks),
        broken = List<BrokenDeck>.unmodifiable(broken),
        themes = List<DeckTheme>.unmodifiable(themes),
+       facts = Map<String, FactsFile>.unmodifiable(facts),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules);
+
+  /// Each language's daily facts (#48), by language code.
+  final Map<String, FactsFile> facts;
 
   /// Each language's rules for spelling a generated number (#54), by
   /// language code. A language without a numbers file has none.
@@ -206,9 +213,10 @@ class Catalog {
 
 /// Lists and parses every deck file in a [DeckSource].
 ///
-/// A stand-in for the deck repository (#4). It skips facts files, which live
-/// beside the decks but are not decks (#48), and turns a file that fails to
-/// parse into a [BrokenDeck] rather than an exception.
+/// A stand-in for the deck repository (#4). It reads the files that live
+/// beside the decks but are not decks, facts (#48) and the theme path (#52),
+/// and turns a file that fails to parse into a [BrokenDeck] rather than an
+/// exception.
 class DeckCatalog {
   DeckCatalog(this.source);
 
@@ -240,13 +248,22 @@ class DeckCatalog {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
     var themes = const <DeckTheme>[];
+    final facts = <String, FactsFile>{};
     final numberRules = <String, NumberRules>{};
     final firstPath = <String, String>{};
     final paths = files.keys.toList()..sort();
     for (final path in paths) {
       final text = files[path]!;
       final kind = kindOf(text);
-      if (kind == 'facts') continue;
+      if (kind == 'facts') {
+        try {
+          final file = parseFacts(text, source: path.split('/').last);
+          facts.putIfAbsent(file.languageCode, () => file);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       if (kind == 'numbers') {
         try {
           final rules = parseNumberRules(text, source: path.split('/').last);
@@ -291,6 +308,7 @@ class DeckCatalog {
       decks: _inThemeOrder(decks, themes),
       broken: broken,
       themes: themes,
+      facts: facts,
       numberRules: numberRules,
     );
   }
