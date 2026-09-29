@@ -78,7 +78,9 @@ class _TypedDrillState extends State<TypedDrill> {
 
     return DrillFrame(
       skill: session.skill,
-      deckName: session.deck.deck.name,
+      deckName: session.recorded
+          ? session.deck.deck.name
+          : l10n.numbersPracticeTitle,
       position: session.position,
       total: session.total,
       progress: session.progress,
@@ -95,6 +97,7 @@ class _TypedDrillState extends State<TypedDrill> {
                 label: _fieldLabel(l10n, language, listening, translit),
                 language: language,
                 latin: translit,
+                digits: session.typesDigits,
                 onChanged: (_) => setState(() {}),
                 onSubmitted: (_) => _check(),
               ),
@@ -106,7 +109,9 @@ class _TypedDrillState extends State<TypedDrill> {
           : AnswerFeedback(
               answer: answer,
               card: card,
+              expected: session.acceptedAnswers.first,
               transliterating: translit,
+              language: session.typesDigits ? null : language,
             ),
       actions: _actions(context, answer),
     );
@@ -263,6 +268,7 @@ class _TypedDrillState extends State<TypedDrill> {
     bool listening,
     bool translit,
   ) {
+    if (_session.typesDigits) return l10n.numbersTypeDigits;
     if (listening) return l10n.drillTypeHeard;
     if (translit) return l10n.drillTypeLatin(_exampleReading());
     return language.needsReading

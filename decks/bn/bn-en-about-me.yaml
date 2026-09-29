@@ -1,0 +1,70 @@
+schema: 1
+id: bn-en-about-me
+name: "About me"
+kind: vocab
+theme: about-me
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Your name, where you are from, where you live, and the people around you."
+tags: [beginner]
+cards:
+  - id: bn-en-about-me-0001
+    target: "নাম"
+    native: "name"
+    reading: "nam"
+    pos: "noun"
+  - id: bn-en-about-me-0002
+    target: "আমার নাম …"
+    native: "My name is …"
+    reading: "amar nam …"
+    pos: "phrase"
+    notes: "There is no 'is': 'my name …'. Bengali drops 'to be' in the present."
+  - id: bn-en-about-me-0003
+    target: "আপনার নাম কী?"
+    native: "What is your name?"
+    reading: "apnar nam ki?"
+    pos: "phrase"
+    tags: ["polite"]
+  - id: bn-en-about-me-0004
+    target: "আমি … থেকে এসেছি।"
+    native: "I'm from …"
+    reading: "ami … theke eshechhi."
+    pos: "phrase"
+    notes: "Literally 'I have come from …'. থেকে (theke), 'from', comes after the place."
+  - id: bn-en-about-me-0005
+    target: "আমি … থাকি।"
+    native: "I live in …"
+    reading: "ami … thaki."
+    pos: "phrase"
+    notes: "The place takes -এ or -তে: আমি কলকাতায় থাকি, I live in Kolkata."
+  - id: bn-en-about-me-0006
+    target: "বাড়ি"
+    native: "home; house"
+    reading: "bari"
+    pos: "noun"
+  - id: bn-en-about-me-0007
+    target: "পরিবার"
+    native: "family"
+    reading: "poribar"
+    pos: "noun"
+  - id: bn-en-about-me-0008
+    target: "কাজ"
+    native: "work"
+    reading: "kaj"
+    pos: "noun"
+  - id: bn-en-about-me-0009
+    target: "শহর"
+    native: "city; town"
+    reading: "shohor"
+    pos: "noun"
+  - id: bn-en-about-me-0010
+    target: "দেশ"
+    native: "country"
+    reading: "desh"
+    pos: "noun"
+  - id: bn-en-about-me-0011
+    target: "ভাষা"
+    native: "language"
+    reading: "bhasha"
+    pos: "noun"

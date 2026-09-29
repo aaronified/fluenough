@@ -1,0 +1,88 @@
+schema: 1
+id: hi-en-directions
+name: "Directions"
+kind: vocab
+theme: directions
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Left, right, straight on, and asking where something is."
+tags: [beginner]
+cards:
+  - id: hi-en-directions-0001
+    target: "… कहाँ है?"
+    native: "Where is …?"
+    reading: "… kahaan hai?"
+    pos: "phrase"
+    notes: "Put the place first: स्टेशन कहाँ है? Where is the station?"
+  - id: hi-en-directions-0002
+    target: "दाएँ"
+    native: "right; to the right"
+    reading: "daayen"
+    alt_target: ["दाएं", "दायें"]
+    pos: "adv"
+    notes: "Also दाहिने (daahine). दाएँ मुड़िए, turn right."
+  - id: hi-en-directions-0003
+    target: "बाएँ"
+    native: "left; to the left"
+    reading: "baayen"
+    alt_target: ["बाएं", "बायें"]
+    pos: "adv"
+  - id: hi-en-directions-0004
+    target: "सीधे"
+    native: "straight on"
+    reading: "siidhe"
+    pos: "adv"
+  - id: hi-en-directions-0005
+    target: "मुड़िए"
+    native: "please turn"
+    reading: "mudiye"
+    pos: "verb"
+    tags: ["polite"]
+  - id: hi-en-directions-0006
+    target: "आगे"
+    native: "ahead; further on"
+    reading: "aage"
+    pos: "adv"
+  - id: hi-en-directions-0007
+    target: "पीछे"
+    native: "behind; back"
+    reading: "piichhe"
+    pos: "adv"
+  - id: hi-en-directions-0008
+    target: "पास"
+    native: "near"
+    reading: "paas"
+    pos: "adv"
+    notes: "स्टेशन के पास (steshan ke paas), near the station."
+  - id: hi-en-directions-0009
+    target: "दूर"
+    native: "far"
+    reading: "duur"
+    pos: "adv"
+    notes: "कितनी दूर है? How far is it?"
+  - id: hi-en-directions-0010
+    target: "यहाँ"
+    native: "here"
+    reading: "yahaan"
+    alt_target: ["यहां"]
+    pos: "adv"
+  - id: hi-en-directions-0011
+    target: "वहाँ"
+    native: "there"
+    reading: "vahaan"
+    alt_target: ["वहां"]
+    pos: "adv"
+  - id: hi-en-directions-0012
+    target: "रास्ता"
+    native: "way; route"
+    reading: "raastaa"
+    pos: "noun"
+    gender: "m"
+    notes: "रास्ता बताइए (raastaa bataaiye), please tell me the way."
+  - id: hi-en-directions-0013
+    target: "सड़क"
+    native: "road; street"
+    reading: "sadak"
+    pos: "noun"
+    gender: "f"
