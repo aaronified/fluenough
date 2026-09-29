@@ -32,7 +32,7 @@ Common to every kind.
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | URL the content was derived from. |
 | `description` | no | One or two sentences. |
-| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. |
+| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
 
 ### `language`

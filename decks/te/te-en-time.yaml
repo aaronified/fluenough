@@ -1,0 +1,114 @@
+schema: 1
+id: te-en-time
+name: "Time and days"
+kind: vocab
+theme: time
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Today and tomorrow, telling the time, and the days of the week. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: te-en-time-0001
+    target: "ఈరోజు"
+    native: "today"
+    reading: "iiroju"
+    alt_target: ["ఈ రోజు"]
+    pos: "adv"
+  - id: te-en-time-0002
+    target: "రేపు"
+    native: "tomorrow"
+    reading: "reepu"
+    pos: "adv"
+    notes: "Unlike Hindi and Bengali, Telugu has a separate word for yesterday: నిన్న."
+  - id: te-en-time-0003
+    target: "నిన్న"
+    native: "yesterday"
+    reading: "ninna"
+    pos: "adv"
+  - id: te-en-time-0004
+    target: "ఇప్పుడు"
+    native: "now"
+    reading: "ippudu"
+    pos: "adv"
+  - id: te-en-time-0005
+    target: "పొద్దున"
+    native: "morning"
+    reading: "poddunna"
+    alt_target: ["ఉదయం"]
+    pos: "noun"
+    notes: "Formally ఉదయం (udayam)."
+  - id: te-en-time-0006
+    target: "సాయంత్రం"
+    native: "evening"
+    reading: "saayantram"
+    pos: "noun"
+  - id: te-en-time-0007
+    target: "రాత్రి"
+    native: "night"
+    reading: "raatri"
+    pos: "noun"
+  - id: te-en-time-0008
+    target: "గంటలు"
+    native: "o'clock; hours"
+    reading: "gantalu"
+    pos: "noun"
+    notes: "నాలుగు గంటలు (naalugu gantalu), four o'clock."
+  - id: te-en-time-0009
+    target: "నాలుగున్నర"
+    native: "half past four; 4½"
+    reading: "naalugunnara"
+    pos: "other"
+    notes: "-న్నర adds a half to any number."
+  - id: te-en-time-0010
+    target: "టైం ఎంత?"
+    native: "What time is it?"
+    reading: "taim enta?"
+    pos: "phrase"
+    notes: "Also ఎన్ని గంటలు? (enni gantalu?)."
+  - id: te-en-time-0011
+    target: "రోజు"
+    native: "day"
+    reading: "roju"
+    pos: "noun"
+  - id: te-en-time-0012
+    target: "వారం"
+    native: "week"
+    reading: "vaaram"
+    pos: "noun"
+  - id: te-en-time-0013
+    target: "సోమవారం"
+    native: "Monday"
+    reading: "soomavaaram"
+    pos: "noun"
+    notes: "Each day ends in వారం (vaaram), and most names match Hindi's."
+  - id: te-en-time-0014
+    target: "మంగళవారం"
+    native: "Tuesday"
+    reading: "mangalavaaram"
+    pos: "noun"
+  - id: te-en-time-0015
+    target: "బుధవారం"
+    native: "Wednesday"
+    reading: "budhavaaram"
+    pos: "noun"
+  - id: te-en-time-0016
+    target: "గురువారం"
+    native: "Thursday"
+    reading: "guruvaaram"
+    pos: "noun"
+  - id: te-en-time-0017
+    target: "శుక్రవారం"
+    native: "Friday"
+    reading: "shukravaaram"
+    pos: "noun"
+  - id: te-en-time-0018
+    target: "శనివారం"
+    native: "Saturday"
+    reading: "shanivaaram"
+    pos: "noun"
+  - id: te-en-time-0019
+    target: "ఆదివారం"
+    native: "Sunday"
+    reading: "aadivaaram"
+    pos: "noun"

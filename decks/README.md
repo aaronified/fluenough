@@ -11,6 +11,8 @@ decks/
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
   ja/  ja-hiragana.yaml
+  te/  te-en-first-words.yaml     not yet checked by a Telugu speaker
+       te-en-questions.yaml …
   themes.yaml
 ```
 
@@ -66,6 +68,15 @@ Bengali differs in two ways, and its readings follow how it is said:
   so আ is `a`, ই and ঈ are `i`, উ and ঊ are `u`. শ, ষ and স are all `sh`,
   except where a speaker says s, as before a consonant: স্টেশন is
   `steshon`.
+
+Telugu tells short e and o from long ones, so its readings double those
+too: ఏడు (seven) is `eedu`, and ఎడమ (left) is `edama`.
+
+## Decks no speaker has checked
+
+Tag a deck `unreviewed` when no native speaker has checked it. The app then
+says so on the deck's screen and asks speakers to report mistakes, and the
+deck's `description` should say so too. The Telugu decks carry it (#39).
 
 ## Two rules that matter more than the rest
 
