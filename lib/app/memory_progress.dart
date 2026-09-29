@@ -1,62 +1,24 @@
 import 'package:flutter/foundation.dart';
 
+import '../core/data/log_jsonl.dart';
 import '../core/models/drill_mode.dart';
+import '../core/models/leech_action.dart';
+import '../core/models/review_event.dart';
+import '../core/scheduling/replay.dart';
 import '../core/scheduling/sm2.dart';
 
-/// Identifies one scheduling state: a card, in one mode, in one deck.
-typedef ProgressKey = ({String deckId, String cardId, DrillMode mode});
-
-/// One answered card: a row of the review log (docs/DESIGN.md, ADR-0005).
-class ReviewEvent {
-  const ReviewEvent({
-    required this.at,
-    required this.deckId,
-    required this.cardId,
-    required this.mode,
-    required this.grade,
-    required this.elapsed,
-    required this.before,
-    required this.after,
-    this.answerGiven,
-  });
-
-  final DateTime at;
-  final String deckId;
-  final String cardId;
-  final DrillMode mode;
-
-  /// The SM-2 grade recorded, 0–5.
-  final int grade;
-
-  /// How long the learner took to answer.
-  final Duration elapsed;
-
-  /// What was typed, for a machine-graded mode. Null for recognition.
-  final String? answerGiven;
-
-  /// The state going in, or null if this was the pair's first review.
-  final Sm2State? before;
-
-  final Sm2State after;
-
-  ProgressKey get key => (deckId: deckId, cardId: cardId, mode: mode);
-
-  /// Whether this review introduced a new pair, which the daily cap counts.
-  bool get wasNew => before == null;
-
-  /// Whether SM-2 counts this review as remembered.
-  bool get passed => grade >= Sm2.passingGrade;
-
-  @override
-  String toString() => 'ReviewEvent($deckId/$cardId ${mode.name}, $grade)';
-}
+export '../core/models/leech_action.dart';
+export '../core/models/review_event.dart';
 
 /// Scheduling state and the review log, as the interface reads them.
 ///
-/// [MemoryProgress] implements this now; #5's drift store implements it
-/// next, and nothing that reads through this interface changes. Listeners
-/// are told after every [record].
+/// [MemoryProgress] keeps it in memory, and `DatabaseProgress` in the
+/// profile's database; nothing that reads through this interface can tell
+/// them apart but [persists]. Listeners are told after every [record].
 abstract interface class ProgressStore implements Listenable {
+  /// Whether this store outlives the app: false for [MemoryProgress].
+  bool get persists;
+
   /// The state of one pair, or null if it has never been reviewed.
   Sm2State? stateOf(String deckId, String cardId, DrillMode mode);
 
@@ -77,37 +39,59 @@ abstract interface class ProgressStore implements Listenable {
     Duration elapsed = Duration.zero,
     String? answerGiven,
   });
+
+  /// What the learner has done about leeches, oldest first. Append-only.
+  List<LeechAction> get leechActions;
+
+  /// Records [kind] for [key] and applies it: a reset restarts the pair's
+  /// scheduling, and a set-aside keeps it out of sessions. No review is
+  /// touched. Returns the action.
+  LeechAction actOnLeech(
+    ProgressKey key,
+    LeechActionKind kind, {
+    required DateTime now,
+  });
+
+  /// Merges a backup (#20): adds the [reviews] and [leechActions] not
+  /// already here, then rebuilds every state from the whole log. Importing
+  /// the same backup twice adds nothing. Returns how many reviews were new.
+  Future<int> importLog(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions,
+  );
 }
 
 /// Progress held in memory: an SM-2 state per `(deck, card, mode)` and the
 /// review log, both gone when the app closes.
 ///
-/// A stand-in for the database (#3, #5). While `Feature.persistence` is off,
-/// Today says that progress is not saved.
+/// For tests and fixtures, and the fallback when the database cannot be
+/// opened, in which case Today says that progress is not saved.
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress();
 
-  /// Progress rebuilt from [events], oldest first, by replaying them through
-  /// [Sm2.next] as the database will (ADR-0005). For tests and gallery
-  /// fixtures that need a history.
-  factory MemoryProgress.replaying(Iterable<ReviewEvent> events) {
-    final progress = MemoryProgress();
-    for (final e in events) {
-      progress.record(
-        deckId: e.deckId,
-        cardId: e.cardId,
-        mode: e.mode,
-        grade: e.grade,
-        now: e.at,
-        elapsed: e.elapsed,
-        answerGiven: e.answerGiven,
-      );
-    }
-    return progress;
+  /// Progress rebuilt from [events], oldest first, and [leechActions], by
+  /// replaying them as the database does (ADR-0005, [replayReviews]).
+  factory MemoryProgress.replaying(
+    Iterable<ReviewEvent> events, {
+    Iterable<LeechAction> leechActions = const <LeechAction>[],
+  }) {
+    final actions = leechActions.toList();
+    final replayed = replayReviews(
+      events.map(logged),
+      effects: LeechEffects(actions),
+    );
+    return MemoryProgress()
+      .._log.addAll(replayed.events)
+      .._states.addAll(replayed.states)
+      .._leechActions.addAll(actions);
   }
 
   final Map<ProgressKey, Sm2State> _states = <ProgressKey, Sm2State>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
+  final List<LeechAction> _leechActions = <LeechAction>[];
+
+  @override
+  bool get persists => false;
 
   @override
   Sm2State? stateOf(String deckId, String cardId, DrillMode mode) =>
@@ -149,11 +133,91 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     notifyListeners();
     return event;
   }
+
+  @override
+  List<LeechAction> get leechActions =>
+      List<LeechAction>.unmodifiable(_leechActions);
+
+  @override
+  LeechAction actOnLeech(
+    ProgressKey key,
+    LeechActionKind kind, {
+    required DateTime now,
+  }) {
+    final action = LeechAction(at: now, key: key, kind: kind);
+    _leechActions.add(action);
+    final replayed = replayReviews(
+      _log.map(logged),
+      effects: LeechEffects(_leechActions),
+    );
+    _states
+      ..clear()
+      ..addAll(replayed.states);
+    notifyListeners();
+    return action;
+  }
+
+  @override
+  Future<int> importLog(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions,
+  ) async {
+    final known = <String>{for (final e in _log) reviewIdentity(logged(e))};
+    final fresh = <LoggedReview>[
+      for (final r in reviews)
+        if (known.add(reviewIdentity(r))) r,
+    ];
+    final knownActions = <String>{
+      for (final a in _leechActions) leechIdentity(a),
+    };
+    final actions = actionsInTimeOrder(<LeechAction>[
+      ..._leechActions,
+      for (final a in leechActions)
+        if (knownActions.add(leechIdentity(a))) a,
+    ]);
+    _replace(
+      inTimeOrder(<LoggedReview>[..._log.map(logged), ...fresh]),
+      actions,
+    );
+    return fresh.length;
+  }
+
+  /// Everything replaced by [events] and [leechActions], and the states
+  /// rebuilt from them. For an import (#20).
+  void replaceWith(List<ReviewEvent> events, List<LeechAction> leechActions) =>
+      _replace(
+        inTimeOrder(events.map(logged)),
+        actionsInTimeOrder(leechActions),
+      );
+
+  /// [reviews] and [actions] are oldest first.
+  void _replace(List<LoggedReview> reviews, List<LeechAction> actions) {
+    final replayed = replayReviews(reviews, effects: LeechEffects(actions));
+    _log
+      ..clear()
+      ..addAll(replayed.events);
+    _states
+      ..clear()
+      ..addAll(replayed.states);
+    _leechActions
+      ..clear()
+      ..addAll(actions);
+    notifyListeners();
+  }
 }
 
 /// Questions every screen asks of a [ProgressStore], answered the same way
 /// everywhere. Pure reads of [ProgressStore.states] and [ProgressStore.log].
 extension ProgressQueries on ProgressStore {
+  /// The review log and leech actions as a JSONL backup (#20).
+  String exportJsonl() => LogJsonl.encode(
+    inTimeOrder(log.map(logged)),
+    actionsInTimeOrder(leechActions),
+  );
+
+  /// What the leech actions add up to: which pairs are reset or set aside.
+  LeechEffects get leechEffects => LeechEffects(leechActions);
+
   /// What [grade] would do to the pair, without recording anything. The
   /// rating buttons label themselves with its `intervalDays`.
   Sm2State preview(
