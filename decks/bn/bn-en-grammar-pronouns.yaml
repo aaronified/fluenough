@@ -1,0 +1,70 @@
+schema: 1
+id: bn-en-grammar-pronouns
+name: "Pronouns and possessives"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, with my and your, and me and you as objects."
+tags: [beginner, grammar]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["possessive: my, your …", "object: me, to me …"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Bengali has three words for 'you': আপনি (respectful), তুমি (familiar) and তুই (intimate). সে and তিনি are he or she; তিনি is respectful. A possessive never changes for the thing owned: আমার বই, আমার বাড়ি. In the plural, the object is usually the same as the possessive: আমাদের."
+  entries:
+    - lemma: "আমি"
+      key: ami
+      gloss: "I"
+      forms:
+        "possessive: my, your …": "আমার"
+        "object: me, to me …": "আমাকে"
+    - lemma: "তুই"
+      key: tui
+      gloss: "you, intimate"
+      forms:
+        "possessive: my, your …": "তোর"
+        "object: me, to me …": "তোকে"
+    - lemma: "তুমি"
+      key: tumi
+      gloss: "you, familiar"
+      forms:
+        "possessive: my, your …": "তোমার"
+        "object: me, to me …": "তোমাকে"
+    - lemma: "আপনি"
+      key: apni
+      gloss: "you, respectful"
+      forms:
+        "possessive: my, your …": "আপনার"
+        "object: me, to me …": "আপনাকে"
+    - lemma: "সে"
+      key: she
+      gloss: "he or she"
+      forms:
+        "possessive: my, your …": "তার"
+        "object: me, to me …": "তাকে"
+    - lemma: "তিনি"
+      key: tini
+      gloss: "he or she, respectful"
+      forms:
+        "possessive: my, your …": "তাঁর"
+        "object: me, to me …": "তাঁকে"
+    - lemma: "আমরা"
+      key: amra
+      gloss: "we"
+      forms:
+        "possessive: my, your …": "আমাদের"
+        "object: me, to me …": "আমাদের"
+    - lemma: "তোমরা"
+      key: tomra
+      gloss: "you all, familiar"
+      forms:
+        "possessive: my, your …": "তোমাদের"
+        "object: me, to me …": "তোমাদের"
+    - lemma: "ওরা"
+      key: ora
+      gloss: "they"
+      forms:
+        "possessive: my, your …": "ওদের"
+        "object: me, to me …": "ওদের"

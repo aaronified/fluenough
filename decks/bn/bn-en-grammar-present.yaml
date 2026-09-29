@@ -1,0 +1,56 @@
+schema: 1
+id: bn-en-grammar-present
+name: "Present tense"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I do, you go, she eats: the simple present, by person and respect."
+tags: [beginner, grammar]
+pattern:
+  name: "Simple present"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / ওরা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ই, -িস, -ও, -েন, -ে, -েন."
+  entries:
+    - lemma: "করা"
+      key: kora
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করি"
+        "তুই / তোরা": "করিস"
+        "তুমি / তোমরা": "করো"
+        "আপনি / আপনারা": "করেন"
+        "সে / ওরা": "করে"
+        "তিনি / তাঁরা": "করেন"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": "যাই"
+        "তুই / তোরা": "যাস"
+        "তুমি / তোমরা": "যাও"
+        "আপনি / আপনারা": "যান"
+        "সে / ওরা": "যায়"
+        "তিনি / তাঁরা": "যান"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খাই"
+        "তুই / তোরা": "খাস"
+        "তুমি / তোমরা": "খাও"
+        "আপনি / আপনারা": "খান"
+        "সে / ওরা": "খায়"
+        "তিনি / তাঁরা": "খান"
+    - lemma: "বলা"
+      key: bola
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বলি"
+        "তুই / তোরা": "বলিস"
+        "তুমি / তোমরা": "বলো"
+        "আপনি / আপনারা": "বলেন"
+        "সে / ওরা": "বলে"
+        "তিনি / তাঁরা": "বলেন"
