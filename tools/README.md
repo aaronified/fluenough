@@ -40,3 +40,17 @@ It quotes any value YAML would misread, and derives card ids from the target,
 falling back to the reading and then to the row number when the target has no
 usable ASCII. **Check the generated ids before committing** — they are
 permanent once published, because they key every user's review history.
+
+## `brand_android.py`
+
+Run after every `flutter create`. It copies `fluenough-brand/android/` into
+the generated `android/app/src/main/res/`, for the launcher icon and the
+launch screen, and sets the launcher label to `appTitle` from
+`lib/l10n/app_en.arb`. CI and the release workflow run it.
+
+```sh
+python3 tools/brand_android.py
+```
+
+Exit status is 0 on success, and 1 when `android/` is missing or its manifest
+is not the shape `flutter create` writes.

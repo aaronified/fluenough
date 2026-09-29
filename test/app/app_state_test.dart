@@ -101,8 +101,14 @@ void main() {
   });
 
   group('sessions', () {
+    // Grammar cards enter in their own mode. These tests are about
+    // vocabulary, so the grammar drill is off in them.
+    final vocabOnly = FeatureRegistry.only(
+      Feature.available.difference({Feature.drillGrammar}),
+    );
+
     test('today, fresh: new recognition pairs up to the daily cap', () async {
-      final state = await loaded();
+      final state = await loaded(features: vocabOnly);
       final queue = state.buildSession(const DrillRequest.today());
       expect(queue.length, 20);
       expect(queue.due, isEmpty);
@@ -150,7 +156,7 @@ void main() {
 
     test('a skill switched off in settings is left out', () async {
       final settings = SettingsNotifier();
-      final state = await loaded(settings: settings);
+      final state = await loaded(settings: settings, features: vocabOnly);
       settings.setSkillEnabled(Skill.recognition, false);
       final queue = state.buildSession(const DrillRequest.today());
       expect(queue.items.every((i) => i.mode == DrillMode.production), isTrue);
@@ -188,6 +194,49 @@ void main() {
       final queue = state.buildSession(const DrillRequest.learnNew(5));
       expect(queue.length, 5);
       expect(queue.items.every((i) => i.isNew), isTrue);
+    });
+
+    test('new cards follow the theme path; a picked theme drills alone', () async {
+      String deck(String id, String theme) =>
+          '''
+schema: 1
+id: $id
+name: "$theme"
+theme: $theme
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: $id-0001, target: "क", native: "k", reading: "k" }
+  - { id: $id-0002, target: "ख", native: "kh", reading: "kh" }
+''';
+      final state = AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          'decks/themes.yaml': '''
+schema: 1
+kind: themes
+themes:
+  - { id: first-words, name: "First words" }
+  - { id: market, name: "Market" }
+''',
+          // Alphabetically, market's file comes first; the path puts it second.
+          'decks/hi/hi-en-a-market.yaml': deck('hi-en-a-market', 'market'),
+          'decks/hi/hi-en-first-words.yaml': deck(
+            'hi-en-first-words',
+            'first-words',
+          ),
+        }),
+        settings: SettingsNotifier(newCardsPerDay: 2),
+      );
+      await state.load();
+      final today = state.buildSession(const DrillRequest.today());
+      expect(today.fresh.map((i) => i.card.deckId).toSet(), {
+        'hi-en-first-words',
+      });
+      final picked = state.buildSession(DrillRequest.deck('hi-en-a-market'));
+      expect(picked.items.map((i) => i.card.deckId).toSet(), {
+        'hi-en-a-market',
+      });
     });
 
     test('recording goes to the progress store at the injected time', () async {
@@ -249,11 +298,11 @@ void main() {
     });
   });
 
-  test('progress is not saved while persistence is incoming', () async {
+  test('progress in memory is not saved, whatever the features say', () async {
     expect((await loaded()).progressIsSaved, isFalse);
     expect(
       (await loaded(features: FeatureRegistry.all())).progressIsSaved,
-      isTrue,
+      isFalse,
     );
   });
 

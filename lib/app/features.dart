@@ -74,6 +74,14 @@ enum Feature {
     Feature.drillRecognition,
     Feature.drillProduction,
     Feature.drillListening,
+    Feature.drillGrammar,
+    Feature.persistence,
+    Feature.appearance,
+    Feature.stats,
+    Feature.leeches,
+    Feature.dailyFacts,
+    Feature.logExport,
+    Feature.logImport,
   };
 }
 

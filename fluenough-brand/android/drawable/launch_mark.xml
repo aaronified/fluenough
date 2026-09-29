@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The mark for the launch screen: a 288dp canvas, Android 12's splash icon
+     size, with the mark in the middle 128dp, inside the 192dp circle the
+     system keeps. The same drawable is centred on older versions. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp" android:height="288dp"
+    android:viewportWidth="288" android:viewportHeight="288">
+  <group android:translateX="56.4211" android:translateY="56.4211" android:scaleX="1.6842" android:scaleY="1.6842">
+    <path android:pathData="M46 84V42c0-14 8-22 21-22" android:strokeColor="@color/launch_mark_stem" android:strokeWidth="12" android:strokeLineCap="round"/>
+    <path android:pathData="M27 48l19 13 30-27" android:strokeColor="@color/launch_mark_tick" android:strokeWidth="12" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+  </group>
+</vector>

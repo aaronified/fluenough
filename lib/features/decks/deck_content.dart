@@ -52,15 +52,15 @@ bool showsTagFilter(DeckEntry entry) => cardTagsOf(entry).length >= 2;
 typedef PreviewLine = ({String target, String native, String? reading});
 
 /// The first [count] cards of [entry], as its screen previews them. A
-/// grammar deck has no cards until the expander lands (#2), so it previews
-/// its pattern's cells that have a form: the form, and "lemma — slot".
+/// grammar deck previews its pattern's cells that have a form: the form, and
+/// "lemma — slot", which reads better than its cards' full prompts.
 List<PreviewLine> previewOf(
   DeckEntry entry,
   AppLocalizations l10n, {
   int count = 4,
 }) {
   final pattern = entry.deck.pattern;
-  if (entry.cards.isEmpty && pattern != null) {
+  if (pattern != null) {
     return <PreviewLine>[
       for (final row in pattern.entries)
         for (final slot in pattern.slots)
