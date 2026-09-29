@@ -69,6 +69,10 @@ class CardStatesDao extends DatabaseAccessor<AppDatabase>
           .getSingleOrNull();
 
   Future<List<CardStateRow>> all() => select(cardStates).get();
+
+  /// Empties the cache, for a rebuild from `reviews`. Never call it without
+  /// refilling it in the same transaction.
+  Future<void> clear() => delete(cardStates).go();
 }
 
 /// The review log. It can add a review and read them, and has no way to
