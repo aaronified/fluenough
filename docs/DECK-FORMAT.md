@@ -259,6 +259,53 @@ fact carries its own text in every interface language it is written in. It has
 
 ---
 
+## Number rules
+
+The number generator (#54, [ADR-0011](adr/0011-number-generator.md)) makes
+practice cards for 4-digit numbers, spelled from the words a language's
+number decks teach. Each language that has them gives its rules in
+`decks/<code>/<code>-numbers.yaml`:
+
+```yaml
+schema: 1
+id: te-numbers
+name: "Telugu numbers"
+kind: numbers
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+license: CC0-1.0
+tens_and_units: true
+words:
+  1: "ఒకటి"
+  5: ["ఐదు", "అయిదు"]
+  20: "ఇరవై"
+hundreds:
+  1: ["వంద", "నూరు"]
+  2: "రెండు వందలు"
+hundreds_before:
+  1: "నూట"
+  2: "రెండు వందల"
+thousands:
+  1: "వెయ్యి"
+  2: "రెండు వేలు"
+thousands_before:
+  1: "వెయ్యి"
+  2: "రెండు వేల"
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `words` | yes | The numbers from 1 to 99 the decks teach a word for. |
+| `tens_and_units` | no | `true` when a number from 21 to 99 without a word is its tens word and its units word, as Telugu's ఇరవై ఆరు is 26. Defaults to `false`: Hindi and Bengali have a word of their own for each. |
+| `hundreds`, `thousands` | yes | 100–900 and 1,000–9,000 on their own, keyed 1 to 9. |
+| `hundreds_before`, `thousands_before` | no | The same with more digits after them, where the word changes. Default to `hundreds` and `thousands`. |
+| `join` | no | What goes between the parts. Defaults to a space. |
+
+A value is a spelling or a list of spellings, the usual one first; every
+one is accepted as an answer. A number whose last two digits have no word is
+never generated. **Every word used must be taught:** the validator fails a
+rules file that spells with a word that no card in the language's
+`numbers-1-20` or `numbers-big` deck contains.
+
 ## Drill modes
 
 | Mode | Prompt | Expected answer | Graded |
