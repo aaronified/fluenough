@@ -17,7 +17,8 @@ import '../../ui/widgets/snack.dart';
 /// its voice tag and whether the phone has a voice (installed, missing, or
 /// still checking); Test speaks a real card from that language's deck at the
 /// learner's speech rate; Check again asks the phone once more
-/// (`AppState.refreshVoices`), for after installing one.
+/// (`AppState.refreshVoices`, and `AppState.recheckSpeech` once speaking is
+/// set up), for after installing a voice or a language pack.
 ///
 /// The design's "Install voices in phone settings" opens Android's
 /// text-to-speech settings. Nothing in the repository can open them yet
@@ -76,7 +77,10 @@ class _VoicesPageState extends State<VoicesPage> {
       _rechecking = true;
       _counts.clear();
     });
-    await state.refreshVoices();
+    await Future.wait(<Future<void>>[
+      state.refreshVoices(),
+      state.recheckSpeech(),
+    ]);
     if (mounted) setState(() => _rechecking = false);
   }
 

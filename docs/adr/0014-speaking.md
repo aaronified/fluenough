@@ -33,29 +33,37 @@ The maintainer decided, on 2 October 2026:
   additive. The plugin's manifest declares nothing, so
   `tools/brand_android.py` adds the microphone permission and the query
   that lets Android 11 and later see a recogniser.
-- **On the device first.** Every listen asks for on-device recognition.
-  When Android says a language cannot be recognised there, the app
-  remembers it and asks the learner, for that language, whether to
-  recognise it online, saying that what they say would leave the phone.
-  The answer is a setting (`speech_online`). Nothing goes online
-  otherwise.
+- **On the device first.** A language the recogniser lists, or any
+  language when it lists none, is listened for on the device. Android 13
+  and later list only the on-device languages, so one they leave out may
+  still be recognised online. When it is unlisted, or a listen finds the
+  device cannot recognise it, the drill asks the learner, for that
+  language, whether to recognise it online, saying that what they say
+  would leave the phone. The answer is a setting (`speech_online`). Nothing
+  goes online otherwise. What listens find, that a language is not on the
+  device or not supported online either, is kept (`speech_not_on_device`,
+  `speech_unsupported`), so a restart does not cost a spoken word to find
+  it out again. Check again on the Voices page forgets it.
 - **The microphone is asked for once speaking is switched on.** Speaking
   starts off. Switching it on, in Settings or on the Voices page, asks for
   the permission and then which languages the recogniser knows. Android 13
   and later answer that only with the permission granted, so before it the
   app does not know, and says so. A permission granted before lets the app
-  check quietly at launch. It never asks there.
+  check quietly at launch, without holding the launch up. It never asks
+  there.
 - **Speaking is a drill mode,** `speaking`, scheduled per `(card, mode)`
   like the others (ADR-0005). A vocabulary card gets it by default,
   phrases too, since the recogniser does the writing. A card is drilled by
   speaking only while the skill is on and its language is heard, on the
-  device or online with leave.
+  device or online with leave. Otherwise a deck's Speaking row says why and
+  opens Voices, as Listening does without a voice.
 - **Grading is the typed answer's,** through `AnswerGrader` with the
   target and its alternates, but exact once normalised: in speech a near
   miss is a different word, not a typo. The recogniser returns several
-  readings. The attempt counts if its best reading is right, or any other
-  it is fairly sure of (confidence 0.5 or more, or none given). Nothing
-  heard records nothing, and the learner can say it again.
+  readings. The attempt counts if its best reading is right, or another it
+  states a confidence of 0.5 or more for. Android scores every reading
+  after the best 0, so in practice that is the best one. Nothing heard
+  records nothing, and the learner can say it again.
 - **Pronunciation is commented on only when it changes the word** (#89's
   rule). An accent that keeps the word is recognised as the target and
   passes without comment. When the word heard is the target's contrast

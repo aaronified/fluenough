@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
@@ -22,7 +23,8 @@ import 'deck_content.dart';
 ///   would drill, which starts `DrillRequest.deck(id, skill:, tags:)`;
 /// - **missing on this phone**: a skill that needs a voice, on a phone
 ///   without one for the language — a muted pill, `deckNoVoice`, and Set up,
-///   which opens Voices;
+///   which opens Voices; and speaking, where the phone cannot recognise the
+///   language, or only online without the learner's leave, the same way;
 /// - **incoming**: a skill whose drill is not built yet, such as grammar
 ///   (#2) — dimmed, with the badge.
 class SkillSection extends StatelessWidget {
@@ -70,7 +72,22 @@ class SkillSection extends StatelessWidget {
       );
     }
 
+    final String? missing;
     if (skill.needsVoice && !state.hasVoice(language)) {
+      missing = l10n.deckNoVoice(language.name);
+    } else if (skill.needsMicrophone) {
+      missing = switch (state.speechStatus(language)) {
+        SpeechStatus.onDevice ||
+        SpeechStatus.online ||
+        SpeechStatus.checking => null,
+        SpeechStatus.onlineOnly => l10n.deckSpeechOnlineOnly(language.name),
+        SpeechStatus.off ||
+        SpeechStatus.missing => l10n.deckNoSpeech(language.name),
+      };
+    } else {
+      missing = null;
+    }
+    if (missing != null) {
       return GroupedTile(
         padding: padding,
         leadingGap: leadingGap,
@@ -78,7 +95,7 @@ class SkillSection extends StatelessWidget {
         leading: ModePill(skill: skill, size: ModePillSize.large, muted: true),
         title: skill.label(l10n),
         titleColor: scheme.onSurfaceVariant,
-        subtitle: l10n.deckNoVoice(language.name),
+        subtitle: missing,
         trailing: OutlinedButton(
           style: AppButtonStyles.compact(context)
               .merge(OutlinedButton.styleFrom(foregroundColor: scheme.primary)),

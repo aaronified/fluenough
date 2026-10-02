@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/session.dart';
@@ -48,6 +49,8 @@ void main() {
       final state = AppState.test(speech: speech);
       addTearDown(state.dispose);
       await state.load();
+      // Not awaited by load: the check can take seconds.
+      await pumpEventQueue();
       expect(speech.starts, 1);
       final info = state.deckById(spanish)!.language;
       expect(state.speechStatus(info), SpeechStatus.onDevice);
@@ -119,14 +122,81 @@ void main() {
       expect(speech.listens.last.onDevice, isFalse);
     });
 
-    test('a language the recogniser does not list is missing', () async {
+    test('a language the device does not list may still be heard online, '
+        'with leave', () async {
+      // Android 13 and later list only the on-device languages.
+      final speech = FixedSpeechEngine(
+        onDevice: <String>{'ja'},
+        online: <String>{'es'},
+      );
+      final state = speaking(speech);
+      addTearDown(state.dispose);
+      await state.load();
+      await state.setSpeaking(true);
+      final info = state.deckById(spanish)!.language;
+      expect(state.speechStatus(info), SpeechStatus.onlineOnly);
+      expect((await state.listenFor(info)).failure, SpeechFailure.notOnDevice);
+      expect(speech.listens, isEmpty);
+
+      state.settings.allowOnlineSpeech('es', true);
+      speech.next = const <SpeechAlternative>[SpeechAlternative('la casa')];
+      final heard = await state.listenFor(info);
+      expect(heard.alternatives.single.text, 'la casa');
+      expect(speech.listens.single.onDevice, isFalse);
+    });
+
+    test('a language online does not know either is missing, and is not '
+        'listened for again', () async {
       final speech = FixedSpeechEngine(onDevice: <String>{'ja'});
       final state = speaking(speech);
       addTearDown(state.dispose);
       await state.load();
       await state.setSpeaking(true);
       final info = state.deckById(spanish)!.language;
+      state.settings.allowOnlineSpeech('es', true);
+      expect(state.speechStatus(info), SpeechStatus.online);
+
+      expect((await state.listenFor(info)).failure, SpeechFailure.unsupported);
       expect(state.speechStatus(info), SpeechStatus.missing);
+      expect(state.canHear(info), isFalse);
+      expect((await state.listenFor(info)).failure, SpeechFailure.unsupported);
+      expect(speech.listens, hasLength(1));
+    });
+
+    test('what listens found survives a restart, and Check again forgets '
+        'it', () async {
+      final speech = FixedSpeechEngine(online: <String>{'es'});
+      final state = speaking(speech);
+      addTearDown(state.dispose);
+      await state.load();
+      await state.setSpeaking(true);
+      final info = state.deckById(spanish)!.language;
+      await state.listenFor(info);
+      state.settings.allowOnlineSpeech('es', true);
+      expect(state.speechStatus(info), SpeechStatus.online);
+
+      final stored = state.settings.toStored();
+      final restarted = AppState.test(
+        speech: FixedSpeechEngine(online: <String>{'es'}, granted: true),
+        settings: SettingsNotifier()..restore(stored),
+      );
+      addTearDown(restarted.dispose);
+      await restarted.load();
+      await pumpEventQueue();
+      expect(restarted.speechStatus(info), SpeechStatus.online);
+
+      await restarted.recheckSpeech();
+      expect(restarted.settings.speechNotOnDevice, isEmpty);
+      expect(restarted.speechStatus(info), SpeechStatus.onDevice);
+    });
+
+    test('Check again never asks for the microphone', () async {
+      final speech = FixedSpeechEngine(onDevice: <String>{'es'});
+      final state = speaking(speech);
+      addTearDown(state.dispose);
+      await state.load();
+      await state.recheckSpeech();
+      expect(speech.starts, 0);
     });
 
     test('sessions drill speaking only while it is on and the language can '
@@ -232,8 +302,8 @@ void main() {
       expect(state.progress.log.single.mode, DrillMode.speaking);
     });
 
-    test('another reading counts if the recogniser was fairly sure of it, '
-        'and not otherwise', () async {
+    test('another reading counts if the recogniser said it was fairly sure '
+        'of it, and not otherwise', () async {
       final s = await session();
       addTearDown(s.dispose);
       final target = s.item.card.target;
@@ -244,15 +314,23 @@ void main() {
       expect(s.answer!.graded!.outcome.isCorrect, isTrue);
       expect(s.answer!.typed, target);
 
-      s.next();
-      final second = s.item.card.target;
-      s.checkSpoken(<SpeechAlternative>[
-        const SpeechAlternative('xyz', confidence: 0.9),
-        SpeechAlternative(second, confidence: 0.2),
-      ]);
-      expect(s.answer!.graded!.outcome.isCorrect, isFalse);
-      expect(s.answer!.typed, 'xyz');
-      expect(s.answer!.grade, 1);
+      // Low, 0 as Android gives every reading after the best, or none
+      // given: not taken as what was said.
+      for (final confidence in <double?>[0.2, 0.0, null]) {
+        s.next();
+        final other = s.item.card.target;
+        s.checkSpoken(<SpeechAlternative>[
+          const SpeechAlternative('xyz', confidence: 0.9),
+          SpeechAlternative(other, confidence: confidence),
+        ]);
+        expect(
+          s.answer!.graded!.outcome.isCorrect,
+          isFalse,
+          reason: '$confidence',
+        );
+        expect(s.answer!.typed, 'xyz');
+        expect(s.answer!.grade, 1);
+      }
     });
 
     test('a near miss is wrong: in speech it is another word', () async {
@@ -281,26 +359,47 @@ void main() {
   });
 
   test('the plugin\'s error codes map to the reasons the app tells apart', () {
+    SpeechFailure of(String code, {bool onDevice = true}) =>
+        SystemSpeechEngine.failureOf(code, onDevice: onDevice);
+    expect(of('error_language_unavailable'), SpeechFailure.notOnDevice);
+    expect(of('error_language_not_supported'), SpeechFailure.notOnDevice);
     expect(
-      SystemSpeechEngine.failureOf('error_language_unavailable'),
-      SpeechFailure.notOnDevice,
+      of('error_language_unavailable', onDevice: false),
+      SpeechFailure.unsupported,
     );
     expect(
-      SystemSpeechEngine.failureOf('error_language_not_supported'),
-      SpeechFailure.notOnDevice,
+      of('error_language_not_supported', onDevice: false),
+      SpeechFailure.unsupported,
     );
-    expect(
-      SystemSpeechEngine.failureOf('error_speech_timeout'),
-      SpeechFailure.noMatch,
+    expect(of('error_no_match'), SpeechFailure.noMatch);
+    expect(of('error_speech_timeout'), SpeechFailure.noMatch);
+    expect(of('error_permission'), SpeechFailure.permissionDenied);
+    expect(of('error_network'), SpeechFailure.network);
+    expect(of('error_network_timeout'), SpeechFailure.network);
+    expect(of('error_server'), SpeechFailure.network);
+    expect(of('error_server_disconnected'), SpeechFailure.network);
+    expect(of('error_busy'), SpeechFailure.other);
+  });
+
+  test('the plugin\'s readings keep a score of 0, and only -1 means none '
+      'given', () {
+    final readings = SystemSpeechEngine.alternativesOf(
+      SpeechRecognitionResult(const <SpeechRecognitionWords>[
+        SpeechRecognitionWords('la casa', null, 0.92),
+        SpeechRecognitionWords('la masa', null, 0),
+        SpeechRecognitionWords('  ', null, 0.5),
+        SpeechRecognitionWords(
+          'las casas',
+          null,
+          SpeechRecognitionWords.missingConfidence,
+        ),
+      ], ResultType.finalResult.value),
     );
-    expect(
-      SystemSpeechEngine.failureOf('error_permission'),
-      SpeechFailure.permissionDenied,
-    );
-    expect(
-      SystemSpeechEngine.failureOf('error_network_timeout'),
-      SpeechFailure.network,
-    );
-    expect(SystemSpeechEngine.failureOf('error_busy'), SpeechFailure.other);
+    expect(readings.map((r) => r.text), <String>[
+      'la casa',
+      'la masa',
+      'las casas',
+    ]);
+    expect(readings.map((r) => r.confidence), <double?>[0.92, 0.0, null]);
   });
 }

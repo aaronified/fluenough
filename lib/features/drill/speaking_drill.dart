@@ -16,8 +16,9 @@ import 'drill_session.dart';
 /// typed answer.
 ///
 /// Nothing heard, or a recogniser that failed, records nothing and asks
-/// again. A language the phone cannot recognise by itself asks before going
-/// online, for that language from then on, or skips the card unrecorded.
+/// again, or offers to skip the card when saying it again cannot help. A
+/// language the phone cannot recognise by itself asks before going online,
+/// for that language from then on, or skips the card unrecorded.
 ///
 /// Build one per card (key it by the card's position).
 class SpeakingDrill extends StatelessWidget {
@@ -132,6 +133,9 @@ class SpeakingDrill extends StatelessWidget {
               SpeechFailure.noMatch => l10n.drillUnheardNoMatch,
               SpeechFailure.permissionDenied => l10n.drillUnheardPermission,
               SpeechFailure.noRecogniser => l10n.drillUnheardNoRecogniser,
+              SpeechFailure.unsupported => l10n.drillUnheardUnsupported(
+                language.name,
+              ),
               SpeechFailure.network => l10n.drillUnheardNetwork,
               SpeechFailure.notOnDevice ||
               SpeechFailure.other => l10n.drillUnheardOther,
@@ -140,6 +144,18 @@ class SpeakingDrill extends StatelessWidget {
             style: theme.textTheme.bodyLarge!.copyWith(color: scheme.error),
           ),
         ),
+        // Saying it again will not help these.
+        if (unheard == SpeechFailure.permissionDenied ||
+            unheard == SpeechFailure.noRecogniser ||
+            unheard == SpeechFailure.unsupported) ...<Widget>[
+          const SizedBox(height: 8),
+          Center(
+            child: TextButton(
+              onPressed: session.skipUnheard,
+              child: Text(l10n.drillSkipCard, textAlign: TextAlign.center),
+            ),
+          ),
+        ],
       ],
     ];
   }
