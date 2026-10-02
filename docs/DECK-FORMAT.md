@@ -255,7 +255,8 @@ units:
 - **The first units teach the script, the sounds and how the grammar
   differs from English,** before any theme, and in every skill. So their
   short sentences are typed too: they leave out `pos: phrase`. A letter
-  that sounds exactly like another, such as Bengali ন and ণ, is drilled by
+  that sounds exactly like another, such as Bengali ন and ণ, or whose
+  sound a recogniser writes another way (ঋ is written রি), is drilled by
   reading and writing only (`modes: [recognition, production]`), since no
   ear and no recogniser can tell them apart; so is a mark that is not a
   sound of its own, written on a host letter (কং).
