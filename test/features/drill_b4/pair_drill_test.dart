@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/app_scope.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/drill/pair_drill.dart';
 import 'package:fluenough/features/drill/pair_fixture.dart';
@@ -11,6 +13,7 @@ import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
+import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
 
@@ -26,6 +29,22 @@ FeedbackBanner banner(WidgetTester tester) =>
 
 Future<void> choose(WidgetTester tester, PairSound sound) async {
   await tester.tap(find.text(sound.target));
+  await tester.pumpAndSettle();
+}
+
+/// The font size of every piece of target-language text on screen.
+List<double> targetSizes(WidgetTester tester) => <double>[
+  for (final text in tester.widgetList<Text>(
+    find.descendant(of: find.byType(TargetText), matching: find.byType(Text)),
+  ))
+    text.style!.fontSize!,
+];
+
+/// Sets the card text size on the state the gallery preview on screen built
+/// for itself, which is not the one it was pumped on.
+Future<void> setCardScale(WidgetTester tester, double scale) async {
+  AppScope.read(tester.element(find.byType(PairDrill))).settings.cardTextScale =
+      scale;
   await tester.pumpAndSettle();
 }
 
@@ -121,13 +140,16 @@ void main() {
     expect(find.byType(FeedbackBanner), findsNothing);
   });
 
-  testWidgets('every state fits at 1.0 and 2.0, light and dark', (
-    tester,
-  ) async {
+  testWidgets('every state fits at 1.0 and 2.0, and at 2.0 with the largest '
+      'card text, light and dark', (tester) async {
     usePhone(tester);
     final app = AppState.test();
     await app.load();
-    for (final scale in <double>[1.0, 2.0]) {
+    for (final (scale, card) in <(double, double)>[
+      (1.0, 1.0),
+      (2.0, 1.0),
+      (2.0, SettingsNotifier.maxCardTextScale),
+    ]) {
       tester.platformDispatcher.textScaleFactorTestValue = scale;
       for (final GalleryEntry entry in <GalleryEntry>[
         ...pairGalleryEntries,
@@ -139,14 +161,40 @@ void main() {
             GalleryPreview(key: UniqueKey(), entry: entry, dark: dark),
             state: app,
           );
+          await setCardScale(tester, card);
           expect(
             tester.takeException(),
             isNull,
-            reason: '${entry.id} $scale $dark',
+            reason: '${entry.id} $scale $card $dark',
           );
           expect(find.byType(PairDrill), findsOneWidget);
         }
       }
+    }
+  });
+
+  testWidgets('every piece of target text grows with the card text size', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final app = AppState.test(features: FeatureRegistry.all());
+    await app.load();
+    for (final GalleryEntry entry in <GalleryEntry>[
+      ...pairGalleryEntries,
+      ...pairGalleryStates,
+    ]) {
+      await pumpScreen(
+        tester,
+        GalleryPreview(key: UniqueKey(), entry: entry),
+        state: app,
+      );
+      final standard = targetSizes(tester);
+      expect(standard, isNotEmpty, reason: entry.id);
+      await setCardScale(tester, SettingsNotifier.maxCardTextScale);
+      expect(targetSizes(tester), <Matcher>[
+        for (final size in standard)
+          closeTo(size * SettingsNotifier.maxCardTextScale, 1e-9),
+      ], reason: entry.id);
     }
   });
 
