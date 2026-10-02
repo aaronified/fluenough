@@ -125,6 +125,7 @@ void main() {
       placedDecks: const <String>{
         'hi-en-script-vowels',
         'hi-en-script-consonants',
+        'hi-en-script-reading',
       },
     );
     await pumpToday(tester, state: AppState.test(settings: settings));
