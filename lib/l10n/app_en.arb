@@ -265,6 +265,48 @@
   "@settingsSpeakingNoRecogniser": {
     "description": "SnackBar when Speaking is switched on but the phone cannot recognise speech."
   },
+  "settingsPausedUntil": "Paused until {time}",
+  "@settingsPausedUntil": {
+    "description": "Settings, under Listening or Speaking: paused by Can't listen now / Can't speak now.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "3:45 PM"
+      }
+    }
+  },
+  "settingsResume": "Resume",
+  "@settingsResume": {
+    "description": "Button: end a pause now."
+  },
+  "settingsSkillLanguages": "Languages",
+  "@settingsSkillLanguages": {
+    "description": "Settings row under Listening or Speaking: choose the languages it is on for."
+  },
+  "settingsSkillOnForAll": "On for every language",
+  "@settingsSkillOnForAll": {
+    "description": "Subtitle of the Languages row when the skill is on for every language."
+  },
+  "settingsSkillOffFor": "Off for {languages}",
+  "@settingsSkillOffFor": {
+    "description": "Subtitle of the Languages row: the languages the skill is off for, joined by the list separator.",
+    "placeholders": {
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Bengali"
+      }
+    }
+  },
+  "settingsSkillLanguagesTitle": "{skill}, by language",
+  "@settingsSkillLanguagesTitle": {
+    "description": "Title of the dialog that turns Listening or Speaking on or off per language.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Speaking"
+      }
+    }
+  },
   "skillGrammarSettingsDesc": "From pattern-table decks",
   "@skillGrammarSettingsDesc": {
     "description": "Under the Grammar switch in Settings."
@@ -1368,6 +1410,36 @@
   "drillSkipCard": "Skip this card",
   "@drillSkipCard": {
     "description": "Speaking: moves on without recording anything."
+  },
+  "drillCantSpeak": "Can’t speak now",
+  "@drillCantSpeak": {
+    "description": "Button on a speaking card: opens the choices to pause or switch off speaking."
+  },
+  "drillCantListen": "Can’t listen now",
+  "@drillCantListen": {
+    "description": "Button on a listening card: opens the choices to pause or switch off listening."
+  },
+  "cantNowPause": "Pause for an hour",
+  "@cantNowPause": {
+    "description": "Choice after Can't speak now / Can't listen now: the skill comes back by itself in an hour."
+  },
+  "cantNowOffFor": "Turn off for {language}",
+  "@cantNowOffFor": {
+    "description": "Choice after Can't speak now / Can't listen now: the skill stays off for this language until switched back on in Settings.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "cantNowOffEverywhere": "Turn off everywhere",
+  "@cantNowOffEverywhere": {
+    "description": "Choice after Can't speak now / Can't listen now: the skill is switched off for every language."
+  },
+  "cantNowHint": "The rest of this session skips it. Settings turns it back on.",
+  "@cantNowHint": {
+    "description": "Under the choices after Can't speak now / Can't listen now."
   },
   "drillSlower": "Slower · {rate}×",
   "@drillSlower": {

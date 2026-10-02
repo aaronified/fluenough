@@ -127,7 +127,7 @@ class SettingsPage extends StatelessWidget {
           semanticValue: (v) => '${v.round()}',
           onChanged: (v) => settings.newCardsPerDay = v.round(),
         ),
-        for (final skill in Skill.values)
+        for (final skill in Skill.values) ...<Widget>[
           GroupedTile.toggle(
             title: skill.label(l10n),
             subtitle: skill.settingsDescription(l10n),
@@ -140,6 +140,31 @@ class SettingsPage extends StatelessWidget {
                 ? (on) => _setSpeaking(context, state, on)
                 : (on) => settings.setSkillEnabled(skill, on),
           ),
+          if (skill.pausable &&
+              state.features.isAvailable(skill.feature) &&
+              settings.isEnabled(skill)) ...<Widget>[
+            if (settings.pausedUntil(skill) case final until?
+                when until.isAfter(state.now()))
+              GroupedTile(
+                leading: const Icon(Icons.timer_outlined),
+                title: l10n.settingsPausedUntil(
+                  MaterialLocalizations.of(context)
+                      .formatTimeOfDay(TimeOfDay.fromDateTime(until)),
+                ),
+                trailing: TextButton(
+                  onPressed: () => settings.resume(skill),
+                  child: Text(l10n.settingsResume),
+                ),
+              ),
+            GroupedTile(
+              leading: const Icon(Icons.translate),
+              title: l10n.settingsSkillLanguages,
+              subtitle: _offForLine(l10n, state, skill),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => _chooseLanguages(context, state, skill),
+            ),
+          ],
+        ],
         GroupedTile.toggle(
           title: l10n.settingsRomanisation,
           subtitle: l10n.settingsRomanisationDesc,
@@ -149,6 +174,60 @@ class SettingsPage extends StatelessWidget {
       ],
     );
   }
+
+  /// "On for every language", or the ones [skill] is off for.
+  String _offForLine(AppLocalizations l10n, AppState state, Skill skill) {
+    final off = <String>[
+      for (final language in state.languages)
+        if (state.settings.isOffFor(skill, language.code)) language.name,
+    ];
+    return off.isEmpty
+        ? l10n.settingsSkillOnForAll
+        : l10n.settingsSkillOffFor(off.join(l10n.commonListSeparator));
+  }
+
+  /// [skill] on or off for each language the profile learns (#89).
+  Future<void> _chooseLanguages(
+    BuildContext context,
+    AppState state,
+    Skill skill,
+  ) => showDialog<void>(
+    context: context,
+    builder: (context) {
+      final l10n = AppLocalizations.of(context)!;
+      final settings = state.settings;
+      final languages = [
+        for (final language in state.languages)
+          if (state.currentProfile.learns(language.code)) language,
+      ];
+      return AlertDialog(
+        title: Text(l10n.settingsSkillLanguagesTitle(skill.label(l10n))),
+        content: ListenableBuilder(
+          listenable: settings,
+          builder: (context, _) => SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                for (final language in languages)
+                  CheckboxListTile(
+                    title: Text(language.name),
+                    value: !settings.isOffFor(skill, language.code),
+                    onChanged: (on) =>
+                        settings.setOffFor(skill, language.code, on != true),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(l10n.commonDone),
+          ),
+        ],
+      );
+    },
+  );
 
   /// Speaking asks for the microphone as it is switched on (ADR-0014), and
   /// stays off, saying why, when it cannot be had.

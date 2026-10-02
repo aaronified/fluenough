@@ -41,6 +41,10 @@ enum Skill {
   /// recogniser for the language (ADR-0014).
   bool get needsMicrophone => this == Skill.speaking;
 
+  /// Whether the skill can be paused for an hour or switched off per
+  /// language: the ones that need sound, out loud or in the ear (#89).
+  bool get pausable => this == Skill.listening || this == Skill.speaking;
+
   /// Whether the skill starts switched on. Speaking starts off: switching it
   /// on asks for the microphone, which the app never does unasked.
   bool get onByDefault => this != Skill.speaking;
