@@ -720,16 +720,13 @@ class AppState extends ChangeNotifier {
       bool Function(Card card)? canIntroduce,
     }) => SessionQueue.build(
       cards: cards,
-      stateOf: (card, mode) => progress.stateOf(card.deckId, card.id, mode),
+      stateOf: (card, mode) => progress.stateOf(card.id, mode),
       hasVoice: (card) => voiced[card.deckId] ?? false,
       canHear: (card) => heard[card.deckId] ?? false,
       now: now(),
       newCardLimit: newCardLimit,
-      isSetAside: (card, mode) => leeches.isSetAside((
-        deckId: card.deckId,
-        cardId: card.id,
-        mode: mode,
-      )),
+      isSetAside: (card, mode) =>
+          leeches.isSetAside((cardId: card.id, mode: mode)),
       reviseAll: request.revise,
       modes: modes,
       canIntroduce: canIntroduce,
@@ -916,7 +913,7 @@ class AppState extends ChangeNotifier {
     return (
       due: queue.due.length,
       fresh: queue.fresh.length,
-      learned: progress.learnedIn(deck.id),
+      learned: progress.learnedIn(deck.cards.map((card) => card.id)),
     );
   }
 

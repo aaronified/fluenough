@@ -4,17 +4,22 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 
-/// Finds the card a review was given on, or null if it has left its deck.
-/// Retired cards are deleted (AGENTS.md rule 1), so history can outlive them.
-typedef CardLookup = Card? Function(String deckId, String cardId);
+/// Finds a card by its id, as [deckId] lists it if that deck still does,
+/// or else as the first deck listing it does; null if no deck does. Retired
+/// cards are deleted (AGENTS.md rule 1), so history can outlive them.
+typedef CardLookup = Card? Function(String cardId, {String? deckId});
 
 /// A [CardLookup] over [state]'s catalog, indexed once.
 CardLookup cardLookupOf(AppState state) {
-  final cards = <String, Card>{
-    for (final entry in state.decks)
-      for (final card in entry.cards) '${entry.id}/${card.id}': card,
-  };
-  return (deckId, cardId) => cards['$deckId/$cardId'];
+  final listed = <String, Card>{};
+  final first = <String, Card>{};
+  for (final entry in state.decks) {
+    for (final card in entry.cards) {
+      listed['${entry.id}/${card.id}'] = card;
+      first.putIfAbsent(card.id, () => card);
+    }
+  }
+  return (cardId, {deckId}) => listed['$deckId/$cardId'] ?? first[cardId];
 }
 
 /// Finds the language a deck teaches, by code, or null if it cannot tell.
@@ -145,17 +150,19 @@ class StatsNumbers {
       final s = skills.putIfAbsent(Skill.of(e.mode), () => <int>[0, 0]);
       s[0] += ok;
       s[1]++;
-      for (final tag in cardOf(e.deckId, e.cardId)?.tags ?? const <String>[]) {
+      for (final tag
+          in cardOf(e.cardId, deckId: e.deckId)?.tags ?? const <String>[]) {
         final t = tags.putIfAbsent(tag, () => <int>[0, 0]);
         t[0] += ok;
         t[1]++;
       }
     }
 
-    // A card is learned on its first remembered review, in any mode.
+    // A card is learned on its first remembered review, in any mode and in
+    // any deck that lists it (ADR-0018).
     final firstPass = <String, DateTime>{};
     for (final e in log.where((e) => e.passed)) {
-      firstPass.putIfAbsent('${e.deckId}/${e.cardId}', () => e.at);
+      firstPass.putIfAbsent(e.cardId, () => e.at);
     }
 
     final weakest = tags.entries.toList()

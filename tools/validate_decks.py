@@ -5,6 +5,8 @@ Usage:
     python3 tools/validate_decks.py decks/
     python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 
+    python3 tools/validate_decks.py --next-id bn
+
 Requires only Python 3.11+ and PyYAML, so deck contributors need no Flutter
 toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
 """
@@ -63,6 +65,13 @@ HEADER_KEYS = {
 CARD_KEYS = {
     "id", "target", "native", "reading", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes",
+}
+# A ref lists a card written in another deck (ADR-0018). It may give its own
+# native-side fields; what the card is in the language learned stays the
+# card's own.
+REF_KEYS = {
+    "ref", "native", "reading", "alt_native", "tags", "notes", "examples",
+    "modes",
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source"}
@@ -124,6 +133,13 @@ class Report:
     # file lists, in order.
     course_deck: tuple[str, str, str] | None = None
     course_path: tuple[str, str, list[str]] | None = None
+    # For card ids (ADR-0018): the deck's language and native codes, the
+    # cards it writes (id -> what a number deck counts as taught by it), and
+    # the cards it lists by ref (id, whether it gives its own native, where).
+    lang_code: str | None = None
+    native_code: str | None = None
+    card_defs: dict[str, list[str]] = field(default_factory=dict)
+    refs: list[tuple[str, bool, str]] = field(default_factory=list)
 
     def error(self, where: str, msg: str) -> None:
         self.errors.append(f"{where}: {msg}")
@@ -195,21 +211,37 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
         r.error(where, "rtl must be a boolean")
 
 
-def check_card(r: Report, deck_id: str, idx: int, card: object, seen: set[str],
-               script: str) -> None:
+def card_id_re(lang: str) -> re.Pattern[str]:
+    """A card id names the language learned and a number (ADR-0018)."""
+    return re.compile(rf"{re.escape(lang)}-[0-9]{{4,}}")
+
+
+def check_card(r: Report, idx: int, card: object, seen: set[str],
+               script: str, lang: str) -> None:
     where = f"cards[{idx}]"
     if not isinstance(card, dict):
         r.error(where, "must be a mapping")
         return
+    id_re = card_id_re(lang)
+
+    if "ref" in card:
+        check_ref(r, idx, card, seen, id_re)
+        return
 
     cid = card.get("id")
-    if not _is_str(cid) or not ID_RE.fullmatch(cid):
-        r.error(where, f"id must match [a-z0-9-]+, got {cid!r}")
+    if not _is_str(cid) or not id_re.fullmatch(cid):
+        r.error(where, f"id must be {lang}- and at least four digits, such as "
+                       f"{lang}-0001, got {cid!r}")
     else:
         where = f"card {cid}"
         if cid in seen:
             r.error(where, "duplicate card id")
         seen.add(cid)
+        alts = card.get("alt_target")
+        r.card_defs[cid] = [
+            t for t in [card.get("target"), *(alts if isinstance(alts, list) else [])]
+            if _is_str(t)
+        ]
 
     for unknown in sorted(set(card) - CARD_KEYS):
         r.error(where, f"unknown field {unknown!r}")
@@ -258,18 +290,59 @@ def check_card(r: Report, deck_id: str, idx: int, card: object, seen: set[str],
                 if isinstance(m, str) and m not in MODES:
                     r.error(where, f"unknown mode {m!r}")
 
-    examples = card.get("examples")
-    if examples is not None:
-        if not isinstance(examples, list):
-            r.error(where, "examples must be a list")
+    _check_examples(r, where, card.get("examples"))
+
+
+def _check_examples(r: Report, where: str, examples: object) -> None:
+    if examples is None:
+        return
+    if not isinstance(examples, list):
+        r.error(where, "examples must be a list")
+        return
+    for j, ex in enumerate(examples):
+        if not isinstance(ex, dict):
+            r.error(where, f"examples[{j}] must be a mapping")
+        elif not _is_str(ex.get("target")) or not _is_str(ex.get("native")):
+            r.error(where, f"examples[{j}] needs both target and native")
+        elif set(ex) - {"target", "native"}:
+            r.error(where, f"examples[{j}] has unknown fields")
+
+
+def check_ref(r: Report, idx: int, card: dict, seen: set[str],
+              id_re: re.Pattern[str]) -> None:
+    """A card written in another deck, listed here by its id, with any
+    native-side fields this deck gives it."""
+    rid = card.get("ref")
+    where = f"cards[{idx}]"
+    if not _is_str(rid) or not id_re.fullmatch(rid):
+        r.error(where, f"ref must be a card id of this deck's language, got {rid!r}")
+        return
+    where = f"ref {rid}"
+    if rid in seen:
+        r.error(where, "this card is already in the deck")
+    seen.add(rid)
+    for unknown in sorted(set(card) - REF_KEYS):
+        if unknown in CARD_KEYS:
+            r.error(where, f"a ref cannot give {unknown!r}: it belongs to the card "
+                           f"itself, where it is written")
         else:
-            for j, ex in enumerate(examples):
-                if not isinstance(ex, dict):
-                    r.error(where, f"examples[{j}] must be a mapping")
-                elif not _is_str(ex.get("target")) or not _is_str(ex.get("native")):
-                    r.error(where, f"examples[{j}] needs both target and native")
-                elif set(ex) - {"target", "native"}:
-                    r.error(where, f"examples[{j}] has unknown fields")
+            r.error(where, f"unknown field {unknown!r}")
+    for key in ("native", "reading"):
+        if key in card and not _is_str(card[key]):
+            r.error(where, f"{key} must be a non-empty string")
+    for key in ("alt_native", "tags"):
+        if key in card:
+            _check_str_list(r, where, key, card[key])
+    _check_optional_text(r, where, card, "notes")
+    modes = card.get("modes")
+    if modes is not None:
+        _check_str_list(r, where, "modes", modes)
+        if isinstance(modes, list):
+            for m in modes:
+                if isinstance(m, str) and m not in MODES:
+                    r.error(where, f"unknown mode {m!r}")
+    _check_examples(r, where, card.get("examples"))
+    r.refs.append((rid, _is_str(card.get("native")), where))
 
 
 def check_pattern(r: Report, pattern: object) -> None:
@@ -357,8 +430,15 @@ def check_pattern(r: Report, pattern: object) -> None:
             r.error(ewhere, "every form is null; nothing to drill")
         for slot in slots:
             val = forms.get(slot)
-            if val is not None and not _is_str(val):
-                r.error(ewhere, f"forms[{slot!r}] must be a non-empty string or null")
+            if isinstance(val, list):
+                # The first is the form shown; every one is accepted (#144).
+                if not val or not all(_is_str(v) for v in val):
+                    r.error(ewhere, f"forms[{slot!r}] must list non-empty strings")
+                elif len(set(val)) != len(val):
+                    r.error(ewhere, f"forms[{slot!r}] lists a form twice")
+            elif val is not None and not _is_str(val):
+                r.error(ewhere, f"forms[{slot!r}] must be a form, a list of forms, "
+                                f"or null")
 
 
 def _code_error(value: object) -> str:
@@ -506,15 +586,9 @@ def validate(path: Path) -> Report:
             if isinstance(lang, dict) and isinstance(native, dict):
                 r.theme_key = (str(lang.get("code")), str(native.get("code")), theme)
             if theme in NUMBER_THEMES and isinstance(lang, dict):
-                words: set[str] = set()
-                for card in raw.get("cards") or []:
-                    if not isinstance(card, dict):
-                        continue
-                    alts = card.get("alt_target")
-                    for text in [card.get("target"), *(alts if isinstance(alts, list) else [])]:
-                        if _is_str(text):
-                            words.update(text.split())
-                r.number_taught = (str(lang.get("code")), words)
+                # The cards it writes, below; the ones it lists by ref, across
+                # files.
+                r.number_taught = (str(lang.get("code")), set())
 
     check_langblock(r, "language", raw.get("language"), full=True)
     if kind != "facts":
@@ -534,6 +608,7 @@ def validate(path: Path) -> Report:
             r.error("id", f"must start with {prefix!r}, the language learned and then "
                           f"the language it is taught from, got {deck_id!r}")
         r.course_deck = (lang["code"], native["code"], deck_id)
+        r.lang_code, r.native_code = lang["code"], native["code"]
     script = lang.get("script") if isinstance(lang, dict) else "other"
     if script not in SCRIPTS:
         script = "other"
@@ -566,8 +641,12 @@ def validate(path: Path) -> Report:
             r.error("cards", "must be a non-empty list")
         else:
             seen: set[str] = set()
+            code = lang.get("code") if isinstance(lang, dict) else None
             for i, card in enumerate(cards):
-                check_card(r, deck_id or "", i, card, seen, script)
+                check_card(r, i, card, seen, script, code if _is_str(code) else "xx")
+            if r.number_taught is not None:
+                r.number_taught[1].update(
+                    w for texts in r.card_defs.values() for t in texts for w in t.split())
     elif kind == "facts":
         for key in ("cards", "pattern"):
             if key in raw:
@@ -843,6 +922,76 @@ def check_numbers_file(r: Report, raw: dict, path: Path) -> None:
         r.number_words = (code, used)
 
 
+def _repo_card_defs(lang: str) -> dict[str, tuple[Path, str, list[str]]]:
+    """The cards the repository's own decks write for [lang], so that one
+    file can be validated alone and still have its refs resolved."""
+    root = Path(__file__).resolve().parent.parent / "decks" / lang
+    found: dict[str, tuple[Path, str, list[str]]] = {}
+    for p in sorted(root.glob("*.yaml")) if root.is_dir() else []:
+        rep = validate(p)
+        if rep.native_code is None:
+            continue
+        for cid, words in rep.card_defs.items():
+            found.setdefault(cid, (p, rep.native_code, words))
+    return found
+
+
+def check_cards_across(reports: list[Report]) -> list[str]:
+    """A card id is written once in its language, in any course, and every
+    ref names a card written in another deck of that language. A ref from a
+    course taught from another language gives its own native (ADR-0018)."""
+    problems = []
+    defs: dict[str, tuple[Path, str, list[str]]] = {}
+    repo: dict[str, dict[str, tuple[Path, str, list[str]]]] = {}
+
+    def repo_defs(lang: str) -> dict[str, tuple[Path, str, list[str]]]:
+        if lang not in repo:
+            repo[lang] = _repo_card_defs(lang)
+        return repo[lang]
+
+    given = {rep.path.resolve() for rep in reports}
+    for rep in reports:
+        if rep.native_code is None or rep.lang_code is None:
+            continue
+        for cid, words in rep.card_defs.items():
+            # A deck in the repository but not among those given still
+            # writes its cards, so a file checked alone is held to them;
+            # not to its own deck's copy, which a draft elsewhere replaces.
+            elsewhere = repo_defs(rep.lang_code).get(cid)
+            if elsewhere is not None and (elsewhere[0].resolve() in given
+                                          or elsewhere[0].stem == rep.path.stem):
+                elsewhere = None
+            first = defs.get(cid) or elsewhere
+            if first is not None and first[0].resolve() != rep.path.resolve():
+                problems.append(f"{rep.path}: card {cid} is already written in "
+                                f"{first[0]}; list it here with ref: {cid}")
+            else:
+                defs[cid] = (rep.path, rep.native_code, words)
+    for rep in reports:
+        for rid, has_native, where in rep.refs:
+            found = defs.get(rid)
+            if found is None and rep.lang_code is not None:
+                found = repo_defs(rep.lang_code).get(rid)
+            if found is None:
+                problems.append(f"{rep.path}: {where}: no deck writes card {rid}")
+                continue
+            # A ref to a card its own deck writes is refused within the deck.
+            path, native, words = found
+            if native != rep.native_code and not has_native:
+                problems.append(f"{rep.path}: {where}: the card is written for "
+                                f"learners from {native!r}; this deck is taught from "
+                                f"{rep.native_code!r}, so the ref needs its own native")
+            if rep.number_taught is not None:
+                rep.number_taught[1].update(w for t in words for w in t.split())
+    return problems
+
+
+def next_card_id(lang: str) -> str:
+    """The next free card id in [lang], after every one its decks write."""
+    numbers = [int(cid.rsplit("-", 1)[1]) for cid in _repo_card_defs(lang)]
+    return f"{lang}-{max(numbers, default=0) + 1:04d}"
+
+
 def check_numbers_across(reports: list[Report]) -> list[str]:
     """A numbers file spells only with words its language's number decks
     teach, so a generated number never uses a word the learner was not
@@ -999,6 +1148,12 @@ def check_bundled(paths: list[Path]) -> list[str]:
 
 
 def main(argv: list[str]) -> int:
+    if len(argv) == 3 and argv[1] == "--next-id":
+        if not LANG_RE.fullmatch(argv[2]):
+            print(f"error: {argv[2]!r} is not a language code", file=sys.stderr)
+            return 2
+        print(next_card_id(argv[2]))
+        return 0
     targets = [Path(a) for a in argv[1:]] or [Path("decks")]
     paths: list[Path] = []
     for t in targets:
@@ -1023,8 +1178,8 @@ def main(argv: list[str]) -> int:
     unbundled = check_bundled(paths)
     for problem in unbundled:
         print(f"error: {problem}")
-    across = (check_themes_across(reports) + check_numbers_across(reports)
-              + check_paths_across(reports))
+    across = (check_themes_across(reports) + check_cards_across(reports)
+              + check_numbers_across(reports) + check_paths_across(reports))
     for problem in across:
         print(f"error: {problem}")
 

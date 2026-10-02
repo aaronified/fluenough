@@ -4,7 +4,7 @@ import 'review_event.dart';
 /// its own: nothing is ever removed, like the review log (AGENTS.md rule 9).
 enum LeechActionKind { reset, undoReset, setAside, bringBack }
 
-/// One leech action, on one `(deck, card, mode)` pair.
+/// One leech action, on one `(card, mode)` pair.
 class LeechAction {
   const LeechAction({required this.at, required this.key, required this.kind});
 
@@ -14,7 +14,7 @@ class LeechAction {
 
   @override
   String toString() =>
-      'LeechAction(${key.deckId}/${key.cardId} '
+      'LeechAction(${key.cardId} '
       '${key.mode.name}, ${kind.name})';
 }
 

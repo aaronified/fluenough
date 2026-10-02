@@ -125,7 +125,11 @@ class _GrammarDrillState extends State<GrammarDrill> {
 
   _Answer _grade(GrammarCell cell) => (
     typed: _controller.text,
-    graded: _grader.grade(_controller.text, cell.answer),
+    graded: _grader.grade(
+      _controller.text,
+      cell.answer,
+      alternates: cell.alternatives,
+    ),
   );
 
   void _check(GrammarCell cell) {

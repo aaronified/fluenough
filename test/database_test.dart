@@ -24,7 +24,7 @@ void main() {
   }) => ReviewsCompanion.insert(
     ts: ts ?? at,
     deckId: 'hi-en-market',
-    cardId: 'hi-en-market-0001',
+    cardId: 'hi-0231',
     mode: mode,
     grade: grade,
     elapsedMs: 3200,
@@ -38,16 +38,12 @@ void main() {
   LeechAction leechAction({LeechActionKind kind = LeechActionKind.setAside}) =>
       LeechAction(
         at: at,
-        key: (
-          deckId: 'hi-en-market',
-          cardId: 'hi-en-market-0001',
-          mode: DrillMode.production,
-        ),
+        key: (cardId: 'hi-0231', mode: DrillMode.production),
         kind: kind,
       );
 
-  test('opens at version 3 with its six tables', () async {
-    expect(db.schemaVersion, 3);
+  test('opens at version 4 with its six tables', () async {
+    expect(db.schemaVersion, 4);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -65,7 +61,7 @@ void main() {
     ]);
   });
 
-  test('a version 1 database upgrades to 3 and keeps its reviews', () async {
+  test('a version 1 database upgrades and keeps its reviews', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/old.sqlite');
@@ -98,6 +94,46 @@ void main() {
       ),
       reason: 'migration 3 guards its table',
     );
+  });
+
+  test('a version 3 database\'s card_states is rebuilt without the deck '
+      '(ADR-0018), and its reviews kept', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/v3.sqlite');
+
+    // Make a version 3 file: card_states keyed by deck, card and mode, with
+    // one card in two decks.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await old.customStatement('DROP TABLE card_states');
+    await old.customStatement(
+      'CREATE TABLE card_states (deck_id TEXT NOT NULL, card_id TEXT NOT NULL, '
+      'mode TEXT NOT NULL, interval_days INTEGER NOT NULL, '
+      'ease_factor REAL NOT NULL, repetitions INTEGER NOT NULL, '
+      'due_at INTEGER NOT NULL, lapses INTEGER NOT NULL DEFAULT 0, '
+      'PRIMARY KEY (deck_id, card_id, mode))',
+    );
+    for (final deck in <String>['hi-en-market', 'hi-en-groceries']) {
+      await old.customStatement(
+        "INSERT INTO card_states VALUES ('$deck', 'hi-0231', 'production', "
+        '1, 2.5, 1, ${at.millisecondsSinceEpoch}, 0)',
+      );
+    }
+    await old.customStatement('PRAGMA user_version = 3');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.cardStatesDao.all(), isEmpty, reason: 'a cache');
+    final columns = await upgraded
+        .customSelect("SELECT name FROM pragma_table_info('card_states')")
+        .get();
+    expect(
+      columns.map((r) => r.read<String>('name')),
+      isNot(contains('deck_id')),
+    );
+    expect(await upgraded.reviewsDao.all(), hasLength(1));
   });
 
   test('leech_actions: appended in order, never changed', () async {
@@ -164,12 +200,12 @@ void main() {
           native: 'how much',
         );
     await db.cardsDao.replaceDeck('hi-en-market', [
-      card('hi-en-market-0002', 1, 'कितना'),
-      card('hi-en-market-0001', 0, 'कितने का है?'),
+      card('hi-0232', 1, 'कितना'),
+      card('hi-0231', 0, 'कितने का है?'),
     ]);
     expect(
       (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
-      <String>['hi-en-market-0001', 'hi-en-market-0002'],
+      <String>['hi-0231', 'hi-0232'],
     );
     expect(
       (await db.cardsDao.ofDeck('hi-en-market')).first.target,
@@ -177,19 +213,18 @@ void main() {
     );
 
     await db.cardsDao.replaceDeck('hi-en-market', [
-      card('hi-en-market-0003', 0, 'महँगा'),
+      card('hi-0233', 0, 'महँगा'),
     ]);
     expect(
       (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
-      <String>['hi-en-market-0003'],
+      <String>['hi-0233'],
     );
   });
 
-  test('card_states: one row per deck, card and mode', () async {
+  test('card_states: one row per card and mode', () async {
     CardStatesCompanion state(DrillMode mode, int interval) =>
         CardStatesCompanion.insert(
-          deckId: 'hi-en-market',
-          cardId: 'hi-en-market-0001',
+          cardId: 'hi-0231',
           mode: mode,
           intervalDays: interval,
           easeFactor: 2.5,
@@ -201,22 +236,14 @@ void main() {
     await db.cardStatesDao.put(state(DrillMode.recognition, 3));
 
     final recognition = (await db.cardStatesDao.of(
-      'hi-en-market',
-      'hi-en-market-0001',
+      'hi-0231',
       DrillMode.recognition,
     ))!;
     expect(recognition.intervalDays, 3, reason: 'replaced, not added');
     expect(recognition.dueAt, at);
     expect(recognition.lapses, 0);
     expect(await db.cardStatesDao.all(), hasLength(2));
-    expect(
-      await db.cardStatesDao.of(
-        'hi-en-market',
-        'hi-en-market-0001',
-        DrillMode.listening,
-      ),
-      isNull,
-    );
+    expect(await db.cardStatesDao.of('hi-0231', DrillMode.listening), isNull);
   });
 
   test(

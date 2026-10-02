@@ -22,7 +22,7 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
-  - id: xx-probe-0001
+  - id: hi-0001
     target: घर
     native: the house
     reading: "ghar"
@@ -369,10 +369,10 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
-  - { id: hi-en-numbers-big-0001, target: "एक", native: "1", reading: "ek" }
-  - { id: hi-en-numbers-big-0002, target: "दो", native: "2", reading: "do" }
-  - { id: hi-en-numbers-big-0003, target: "सौ", native: "100", reading: "sau" }
-  - { id: hi-en-numbers-big-0004, target: "हज़ार", native: "1000", reading: "hazaar" }
+  - { id: hi-0001, target: "एक", native: "1", reading: "ek" }
+  - { id: hi-0002, target: "दो", native: "2", reading: "do" }
+  - { id: hi-0003, target: "सौ", native: "100", reading: "sau" }
+  - { id: hi-0004, target: "हज़ार", native: "1000", reading: "hazaar" }
 """
 
 

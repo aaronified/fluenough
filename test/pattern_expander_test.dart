@@ -15,10 +15,10 @@ void main() {
   test('the bundled -ar deck expands to 30 cards, 5 lemmas by 6 slots', () {
     final cards = expandPattern(bundled);
     expect(cards, hasLength(30));
-    expect(cards.first.id, 'es-en-grammar-present-ar-hablar-0');
+    expect(cards.first.id, 'es-grammar-present-ar-hablar-0');
     expect(cards.first.target, 'hablo');
     expect(cards.first.native, 'hablar (to speak) — yo');
-    expect(cards[4].id, 'es-en-grammar-present-ar-hablar-4');
+    expect(cards[4].id, 'es-grammar-present-ar-hablar-4');
     expect(cards[4].target, 'habláis');
   });
 
@@ -28,7 +28,7 @@ void main() {
     expect(again, first);
     expect(first.toSet(), hasLength(first.length), reason: 'unique');
     for (final id in first) {
-      expect(id, matches(RegExp(r'^es-en-grammar-present-ar-[a-z]+-[0-5]$')));
+      expect(id, matches(RegExp(r'^es-grammar-present-ar-[a-z]+-[0-5]$')));
     }
   });
 
@@ -62,8 +62,8 @@ pattern:
 ''', source: 'probe');
     final cards = expandPattern(deck);
     expect(cards.map((c) => c.id), [
-      'es-en-grammar-probe-soler-0',
-      'es-en-grammar-probe-soler-2',
+      'es-grammar-probe-soler-0',
+      'es-grammar-probe-soler-2',
     ]);
     expect(cards.last.native, 'él of soler, to tend to');
   });
@@ -98,8 +98,8 @@ pattern:
 ''', source: 'probe.yaml');
     final cards = expandPattern(deck);
     expect(cards.map((c) => c.id), [
-      'hi-en-grammar-probe-jaanaa-0',
-      'hi-en-grammar-probe-jaanaa-1',
+      'hi-grammar-probe-jaanaa-0',
+      'hi-grammar-probe-jaanaa-1',
     ]);
     expect(cards.first.native, 'जाना (to go) — मैं (m)');
     expect(cards.last.target, 'गई');

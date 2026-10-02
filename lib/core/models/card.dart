@@ -7,6 +7,76 @@ class CardExample {
   final String native;
 }
 
+/// A card written in another deck, listed in this one by its id (ADR-0018).
+///
+/// A card id names a word of the language learned, not a deck or a course,
+/// so a word met again in another deck, or from another native language, is
+/// the same card with one schedule. The ref may give the native-side fields
+/// this deck wants; the card's target, its alternatives and its part of
+/// speech stay the card's own.
+class CardRef {
+  const CardRef({
+    required this.id,
+    required this.position,
+    this.native,
+    this.reading,
+    this.altNative,
+    this.tags,
+    this.notes,
+    this.examples,
+    this.modes,
+  });
+
+  final String id;
+
+  /// Where the ref sits in its deck's `cards`, from 0, written cards
+  /// counted, so that the deck keeps its order once the ref is resolved.
+  final int position;
+
+  // Each null when the ref does not give it.
+  final String? native;
+  final String? reading;
+  final List<String>? altNative;
+  final List<String>? tags;
+  final String? notes;
+  final List<CardExample>? examples;
+  final Set<DrillMode>? modes;
+
+  /// [written] as this ref lists it in [deckId]. A deck taught from the
+  /// language [written] was written for takes the card's own native-side
+  /// fields where the ref gives none. A deck taught from another language
+  /// takes none of its notes, tags, alternative meanings or examples, and is
+  /// null when the ref gives no [native]. The card's [reading] and [modes],
+  /// which belong to the word, come across either way unless the ref gives
+  /// its own.
+  Card? resolve(
+    Card written, {
+    required String deckId,
+    required bool sameNative,
+  }) {
+    final native = this.native ?? (sameNative ? written.native : null);
+    if (native == null) return null;
+    return Card(
+      id: id,
+      deckId: deckId,
+      target: written.target,
+      native: native,
+      reading: reading ?? written.reading,
+      altTarget: written.altTarget,
+      altNative:
+          altNative ?? (sameNative ? written.altNative : const <String>[]),
+      pos: written.pos,
+      gender: written.gender,
+      tags: tags ?? (sameNative ? written.tags : const <String>[]),
+      notes: notes ?? (sameNative ? written.notes : null),
+      audio: written.audio,
+      examples:
+          examples ?? (sameNative ? written.examples : const <CardExample>[]),
+      modes: modes ?? written.modes,
+    );
+  }
+}
+
 /// One item of content.
 ///
 /// The field set is a deliberate superset, chosen so that the same model serves
@@ -34,8 +104,13 @@ class Card {
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
-  /// history hangs off, so it must never be reused or renumbered.
+  /// history hangs off, so it must never be reused or renumbered. It names
+  /// the language learned and a number, such as `bn-0042`, and is the same in
+  /// every deck that lists the card (ADR-0018).
   final String id;
+
+  /// The deck this card is listed in. A card in two decks is two [Card]s
+  /// with one [id], and one schedule.
   final String deckId;
 
   final String target;

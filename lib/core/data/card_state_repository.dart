@@ -5,7 +5,7 @@ import '../models/review_event.dart';
 import '../scheduling/sm2.dart';
 import 'database.dart';
 
-/// Reads the scheduling state of every `(deck, card, mode)` pair.
+/// Reads the scheduling state of every `(card, mode)` pair.
 ///
 /// Writes go through `ReviewLog`, which keeps this state and the log in step.
 class CardStateRepository {
@@ -14,17 +14,13 @@ class CardStateRepository {
   final AppDatabase _db;
 
   /// One pair's state, or null if it has never been reviewed.
-  Future<Sm2State?> stateOf(
-    String deckId,
-    String cardId,
-    DrillMode mode,
-  ) async => (await _db.cardStatesDao.of(deckId, cardId, mode))?.toSm2State();
+  Future<Sm2State?> stateOf(String cardId, DrillMode mode) async =>
+      (await _db.cardStatesDao.of(cardId, mode))?.toSm2State();
 
   /// Every pair that has been reviewed, with its state.
   Future<Map<ProgressKey, Sm2State>> all() async => <ProgressKey, Sm2State>{
     for (final row in await _db.cardStatesDao.all())
-      (deckId: row.deckId, cardId: row.cardId, mode: row.mode): row
-          .toSm2State(),
+      (cardId: row.cardId, mode: row.mode): row.toSm2State(),
   };
 }
 
@@ -42,7 +38,6 @@ extension CardStateRowToSm2 on CardStateRow {
 /// An [Sm2State] as the `card_states` row for [key].
 extension Sm2StateToRow on Sm2State {
   CardStatesCompanion toRow(ProgressKey key) => CardStatesCompanion.insert(
-    deckId: key.deckId,
     cardId: key.cardId,
     mode: key.mode,
     intervalDays: intervalDays,

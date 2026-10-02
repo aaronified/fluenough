@@ -33,8 +33,8 @@ class ReviewLog {
     Duration elapsed = Duration.zero,
     String? answerGiven,
   }) => _db.transaction(() async {
-    final key = (deckId: deckId, cardId: cardId, mode: mode);
-    final before = await CardStateRepository(_db).stateOf(deckId, cardId, mode);
+    final key = (cardId: cardId, mode: mode);
+    final before = await CardStateRepository(_db).stateOf(cardId, mode);
     final after = Sm2.next(before ?? Sm2State.fresh(now), grade, now: now);
     await _db.reviewsDao.append(
       ReviewsCompanion.insert(
@@ -157,10 +157,7 @@ class ReviewLog {
     final state = (await _replay()).states[key];
     if (state == null) {
       await (_db.delete(_db.cardStates)..where(
-            (s) =>
-                s.deckId.equals(key.deckId) &
-                s.cardId.equals(key.cardId) &
-                s.mode.equalsValue(key.mode),
+            (s) => s.cardId.equals(key.cardId) & s.mode.equalsValue(key.mode),
           ))
           .go();
     } else {
@@ -182,7 +179,8 @@ class ReviewLog {
 }
 
 LoggedReview _logged(ReviewRow row) => (
-  key: (deckId: row.deckId, cardId: row.cardId, mode: row.mode),
+  key: (cardId: row.cardId, mode: row.mode),
+  deckId: row.deckId,
   at: row.ts,
   grade: row.grade,
   elapsed: Duration(milliseconds: row.elapsedMs),

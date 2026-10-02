@@ -31,18 +31,22 @@ List<Leech> findLeeches(
   required CardLookup cardOf,
   int threshold = kLeechThreshold,
 }) {
+  // A pair is shown in the deck it was last answered in.
+  final lastDeck = <ProgressKey, String>{
+    for (final event in progress.log) event.key: event.deckId,
+  };
   final leeches = <Leech>[
     for (final MapEntry(:key, :value) in replayReviews(
       progress.log.map(logged),
     ).states.entries)
       if (value.lapses >= threshold)
-        if (cardOf(key.deckId, key.cardId) case final card?)
+        if (cardOf(key.cardId, deckId: lastDeck[key]) case final card?)
           Leech(key: key, card: card, state: value),
   ];
   leeches.sort((a, b) {
     final byLapses = b.lapses.compareTo(a.lapses);
     if (byLapses != 0) return byLapses;
-    final byDeck = a.key.deckId.compareTo(b.key.deckId);
+    final byDeck = a.card.deckId.compareTo(b.card.deckId);
     if (byDeck != 0) return byDeck;
     final byCard = a.key.cardId.compareTo(b.key.cardId);
     return byCard != 0 ? byCard : a.key.mode.index.compareTo(b.key.mode.index);

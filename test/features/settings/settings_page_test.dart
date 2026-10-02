@@ -340,8 +340,8 @@ void main() {
       usePhone(tester);
       final files = _FakeLogFiles();
       final progress = MemoryProgress();
-      answer(progress, 'hi-en-market-0001', 4, 0);
-      answer(progress, 'hi-en-market-0002', 1, 1);
+      answer(progress, 'hi-0231', 4, 0);
+      answer(progress, 'hi-0232', 1, 1);
       final state = await pumpScreen(
         tester,
         const SettingsPage(),
@@ -362,12 +362,12 @@ void main() {
     ) async {
       usePhone(tester);
       final old = MemoryProgress();
-      answer(old, 'hi-en-market-0001', 4, 0);
-      answer(old, 'hi-en-market-0001', 5, 1);
-      answer(old, 'hi-en-market-0002', 3, 1);
+      answer(old, 'hi-0231', 4, 0);
+      answer(old, 'hi-0231', 5, 1);
+      answer(old, 'hi-0232', 3, 1);
       final files = _FakeLogFiles(picked: old.exportJsonl());
       final progress = MemoryProgress();
-      answer(progress, 'hi-en-market-0001', 5, 1);
+      answer(progress, 'hi-0231', 5, 1);
       await pumpScreen(
         tester,
         const SettingsPage(),

@@ -165,7 +165,9 @@ class _DecksPageState extends State<DecksPage> {
                 ? null
                 : l10n.deckMetaTheme(
                     state.themes.indexOf(theme) + 1,
-                    state.progress.learnedIn(entry.id),
+                    state.progress.learnedIn(
+                      entry.cards.map((card) => card.id),
+                    ),
                     entry.itemCount,
                   ),
             onTap: () => AppNavigator.openDeck(context, entry.id),

@@ -99,18 +99,21 @@ Every card id keys the review history of every user who has ever studied that
 card. Change one and you orphan their progress. Reuse one and you silently
 attach old history to new content.
 
-Ids will look inconsistent — `es-en-core-0001` then `es-en-core-0010`, gaps
-everywhere, `ja-test-no` next to `ja-bare-0001`. **This is not a mess to clean
-up.** Making them sequential is the single most destructive change anyone can
+Ids will look inconsistent — `bn-0012` then `bn-0040` in one deck, gaps
+everywhere, a deck listing another deck's card by `ref`. **This is not a mess
+to clean up.** Making them sequential is the single most destructive change anyone can
 make to this repository, it will pass every test, and no reviewer will
 necessarily catch it.
 
 To retire a card, delete it. Never repurpose it.
 
-The one exception was #51, which renamed every deck and card id once so that an
-id names the language a deck is taught from (`es-core-0001` became
-`es-en-core-0001`). It was done before any progress was saved anywhere, and
-will not be repeated.
+There have been two exceptions, both made before anyone but the maintainer had
+progress to lose. #51 renamed every deck and card id once so that an id names
+the language a deck is taught from (`es-core-0001` became `es-en-core-0001`).
+#143 renamed every card once more, so that an id names only the language
+learned (`es-en-core-0001` became `es-0001`), and a word repeated across decks
+or courses is one card (ADR-0018). Neither will be repeated. A new card takes
+`python3 tools/validate_decks.py --next-id <language>`.
 
 ### 2. Quote YAML values that are not obviously prose.
 

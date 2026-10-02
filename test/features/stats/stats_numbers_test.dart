@@ -9,37 +9,37 @@ import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 
 /// A known log on real cards of `es-en-core-100`, whose tags are `people`
-/// (0001) and `home` (0010–0013). The clock is Mon 28 Sep 2026, 19:00.
+/// (0001) and `home` (0006–0009). The clock is Mon 28 Sep 2026, 19:00.
 ///
 /// | day | card, mode, grade |
 /// | --- | --- |
-/// | −100 | 0013 recognition 4 (outside the grid) |
+/// | −100 | 0009 recognition 4 (outside the grid) |
 /// | −40 | 0001 recognition 4 |
-/// | −20 | 0001 production 1, 0010 recognition 5 |
-/// | −3 | 0010 production 2, 0011 recognition 4 |
-/// | −2 | 0011 recognition 4 |
-/// | −1 | 0012 recognition 4 |
+/// | −20 | 0001 production 1, 0006 recognition 5 |
+/// | −3 | 0006 production 2, 0007 recognition 4 |
+/// | −2 | 0007 recognition 4 |
+/// | −1 | 0008 recognition 4 |
 /// | 0 | 0001 recognition 3 |
 MemoryProgress knownLog(DateTime now) {
   final progress = MemoryProgress();
   final today = dateOnly(now);
   void at(int day, String card, DrillMode mode, int grade) => progress.record(
     deckId: 'es-en-core-100',
-    cardId: 'es-en-core-$card',
+    cardId: 'es-$card',
     mode: mode,
     grade: grade,
     now: addDays(today, day).add(const Duration(hours: 9)),
   );
   const r = DrillMode.recognition;
   const p = DrillMode.production;
-  at(-100, '0013', r, 4);
+  at(-100, '0009', r, 4);
   at(-40, '0001', r, 4);
   at(-20, '0001', p, 1);
-  at(-20, '0010', r, 5);
-  at(-3, '0010', p, 2);
-  at(-3, '0011', r, 4);
-  at(-2, '0011', r, 4);
-  at(-1, '0012', r, 4);
+  at(-20, '0006', r, 5);
+  at(-3, '0006', p, 2);
+  at(-3, '0007', r, 4);
+  at(-2, '0007', r, 4);
+  at(-1, '0008', r, 4);
   at(0, '0001', r, 3);
   return progress;
 }
@@ -105,7 +105,7 @@ void main() {
     final quiet = MemoryProgress()
       ..record(
         deckId: 'es-en-core-100',
-        cardId: 'es-en-core-0001',
+        cardId: 'es-0001',
         mode: DrillMode.recognition,
         grade: 4,
         now: addDays(app.now(), -20),
@@ -120,6 +120,61 @@ void main() {
     expect(n.remembered, isNull);
     expect(n.streak, 0);
     expect(n.bySkill, isEmpty);
+  });
+
+  test('a card remembered in two decks is learned once (ADR-0018)', () {
+    final progress = MemoryProgress();
+    for (final (i, deck) in <String>['es-en-core-100', 'es-en-other'].indexed) {
+      progress.record(
+        deckId: deck,
+        cardId: 'es-0001',
+        mode: DrillMode.values[i],
+        grade: 5,
+        now: addDays(app.now(), -1 - i),
+      );
+    }
+    final n = StatsNumbers.of(
+      progress,
+      now: app.now(),
+      range: StatsRange.week,
+      cardOf: cardOf,
+    );
+    expect(n.reviews, 2);
+    expect(n.learned, 1);
+  });
+
+  test('a card is looked up as the deck it was answered in lists it', () {
+    // কাল is written in the time deck and listed by the sound differences
+    // deck, which gives its own gloss.
+    expect(
+      cardOf('bn-0316', deckId: 'bn-en-time')!.native,
+      'tomorrow; yesterday',
+    );
+    expect(
+      cardOf('bn-0316', deckId: 'bn-en-sound-differences')!.native,
+      'time; tomorrow; yesterday',
+    );
+    expect(cardOf('bn-0316', deckId: 'bn-en-retired')!.id, 'bn-0316');
+    expect(cardOf('bn-9999'), isNull);
+  });
+
+  test('a leech is shown in the deck it was last answered in', () {
+    final progress = MemoryProgress();
+    final start = DateTime(2026, 9, 1, 9);
+    for (var i = 0; i < 12; i++) {
+      progress.record(
+        deckId: i < 11 ? 'bn-en-sound-differences' : 'bn-en-time',
+        cardId: 'bn-0316',
+        mode: DrillMode.recognition,
+        grade: i.isEven ? 4 : 1,
+        now: start.add(Duration(days: i)),
+      );
+    }
+    // The sound differences deck lists কাল first on the path, so only the
+    // last answer can put the leech in the time deck.
+    final leech = findLeeches(progress, cardOf: cardOf).single;
+    expect(leech.card.deckId, 'bn-en-time');
+    expect(leech.card.native, 'tomorrow; yesterday');
   });
 
   group('by language', () {
@@ -215,21 +270,21 @@ void main() {
       progress
         ..record(
           deckId: 'es-en-core-100',
-          cardId: 'es-en-core-0002',
+          cardId: 'es-0002',
           mode: DrillMode.production,
           grade: 4,
           now: app.now(),
         )
         ..record(
           deckId: 'es-en-core-100',
-          cardId: 'es-en-core-0002',
+          cardId: 'es-0002',
           mode: DrillMode.production,
           grade: 1,
           now: app.now(),
         );
     }
     final leeches = findLeeches(progress, cardOf: cardOf);
-    expect(leeches.map((l) => l.card.id), <String>['es-en-core-0002']);
+    expect(leeches.map((l) => l.card.id), <String>['es-0002']);
     expect(leeches.single.lapses, kLeechThreshold);
     expect(
       findLeeches(progress, cardOf: cardOf, threshold: kLeechThreshold + 1),
@@ -239,11 +294,7 @@ void main() {
 
   test('leech actions are appended; the latest one sets the status', () {
     final actions = LeechActions.of(MemoryProgress());
-    const key = (
-      deckId: 'es-en-core-100',
-      cardId: 'es-en-core-0002',
-      mode: DrillMode.production,
-    );
+    const key = (cardId: 'es-0002', mode: DrillMode.production);
     final now = app.now();
     actions.toggleReset(key, now: now);
     expect(actions.statusOf(key), LeechStatus.reset);
@@ -265,16 +316,12 @@ void main() {
 
   test('a reset leech stays listed, so its reset can be undone', () {
     final progress = MemoryProgress();
-    const key = (
-      deckId: 'hi-en-market',
-      cardId: 'hi-en-market-0001',
-      mode: DrillMode.production,
-    );
+    const key = (cardId: 'hi-0231', mode: DrillMode.production);
     final start = DateTime(2026, 9, 1, 9);
     // Learned, then forgotten again and again.
     for (var i = 0; i < 12; i++) {
       progress.record(
-        deckId: key.deckId,
+        deckId: 'hi-en-market',
         cardId: key.cardId,
         mode: key.mode,
         grade: i.isEven ? 4 : 1,
@@ -282,8 +329,8 @@ void main() {
       );
     }
     final card = app.decks.first.cards.first;
-    Card? cardOf(String deckId, String cardId) =>
-        deckId == key.deckId ? card : null;
+    Card? cardOf(String cardId, {String? deckId}) =>
+        cardId == key.cardId ? card : null;
     expect(findLeeches(progress, cardOf: cardOf), hasLength(1));
 
     progress.actOnLeech(
@@ -291,7 +338,7 @@ void main() {
       LeechActionKind.reset,
       now: start.add(const Duration(days: 20)),
     );
-    expect(progress.stateOf(key.deckId, key.cardId, key.mode), isNull);
+    expect(progress.stateOf(key.cardId, key.mode), isNull);
     final listed = findLeeches(progress, cardOf: cardOf);
     expect(listed.single.key, key);
     expect(LeechActions.of(progress).statusOf(key), LeechStatus.reset);

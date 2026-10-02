@@ -19,8 +19,9 @@ abstract interface class ProgressStore implements Listenable {
   /// Whether this store outlives the app: false for [MemoryProgress].
   bool get persists;
 
-  /// The state of one pair, or null if it has never been reviewed.
-  Sm2State? stateOf(String deckId, String cardId, DrillMode mode);
+  /// The state of one pair, or null if it has never been reviewed. A pair is
+  /// a card and a mode, in whichever deck lists the card (ADR-0018).
+  Sm2State? stateOf(String cardId, DrillMode mode);
 
   /// Every pair that has been reviewed, with its current state.
   Map<ProgressKey, Sm2State> get states;
@@ -61,7 +62,7 @@ abstract interface class ProgressStore implements Listenable {
   );
 }
 
-/// Progress held in memory: an SM-2 state per `(deck, card, mode)` and the
+/// Progress held in memory: an SM-2 state per `(card, mode)` and the
 /// review log, both gone when the app closes.
 ///
 /// For tests and fixtures, and the fallback when the database cannot be
@@ -94,8 +95,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   bool get persists => false;
 
   @override
-  Sm2State? stateOf(String deckId, String cardId, DrillMode mode) =>
-      _states[(deckId: deckId, cardId: cardId, mode: mode)];
+  Sm2State? stateOf(String cardId, DrillMode mode) =>
+      _states[(cardId: cardId, mode: mode)];
 
   @override
   Map<ProgressKey, Sm2State> get states =>
@@ -114,7 +115,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     Duration elapsed = Duration.zero,
     String? answerGiven,
   }) {
-    final key = (deckId: deckId, cardId: cardId, mode: mode);
+    final key = (cardId: cardId, mode: mode);
     final before = _states[key];
     final after = Sm2.next(before ?? Sm2State.fresh(now), grade, now: now);
     final event = ReviewEvent(
@@ -221,16 +222,11 @@ extension ProgressQueries on ProgressStore {
   /// What [grade] would do to the pair, without recording anything. The
   /// rating buttons label themselves with its `intervalDays`.
   Sm2State preview(
-    String deckId,
     String cardId,
     DrillMode mode,
     int grade, {
     required DateTime now,
-  }) => Sm2.next(
-    stateOf(deckId, cardId, mode) ?? Sm2State.fresh(now),
-    grade,
-    now: now,
-  );
+  }) => Sm2.next(stateOf(cardId, mode) ?? Sm2State.fresh(now), grade, now: now);
 
   /// New pairs introduced on [day]'s calendar date, which the daily cap
   /// counts against.
@@ -247,13 +243,15 @@ extension ProgressQueries on ProgressStore {
   /// has none yet, so that a streak is not broken before the day is over.
   int streakAt(DateTime now) => streakIn(log, now);
 
-  /// Distinct cards in [deckId] reviewed successfully at least once, in any
-  /// mode: the deck's "Learned" count.
-  int learnedIn(String deckId) => <String>{
-    for (final entry in states.entries)
-      if (entry.key.deckId == deckId && entry.value.repetitions > 0)
-        entry.key.cardId,
-  }.length;
+  /// Distinct cards of [cardIds], a deck's, reviewed successfully at least
+  /// once, in any mode and in any deck: the deck's "Learned" count.
+  int learnedIn(Iterable<String> cardIds) {
+    final learned = <String>{
+      for (final entry in states.entries)
+        if (entry.value.repetitions > 0) entry.key.cardId,
+    };
+    return cardIds.toSet().where(learned.contains).length;
+  }
 
   /// Distinct cards due by the end of the calendar day after [now] and not
   /// due at [now]: "Next due: 14 cards tomorrow".
@@ -263,7 +261,7 @@ extension ProgressQueries on ProgressStore {
       for (final entry in states.entries)
         if (!entry.value.isDue(now) &&
             entry.value.dueAt.isBefore(endOfTomorrow))
-          '${entry.key.deckId}/${entry.key.cardId}',
+          entry.key.cardId,
     }.length;
   }
 }

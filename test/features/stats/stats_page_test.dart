@@ -326,7 +326,7 @@ void main() {
       expect(find.text(l10n.leechesTitleIn(japanese)), findsOneWidget);
       final cards = tester.widgetList<LeechCard>(find.byType(LeechCard));
       expect(cards, hasLength(1));
-      expect(cards.single.leech.key.deckId, 'ja-en-hiragana');
+      expect(cards.single.leech.card.deckId, 'ja-en-hiragana');
     });
 
     testWidgets('one language is named by its chip, with no All', (

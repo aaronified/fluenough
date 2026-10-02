@@ -33,7 +33,9 @@ since the epoch.
 whenever a deck is loaded or updated. Contains no user data, so it can always
 be discarded and regenerated.
 
-**`card_states`** — scheduling state, keyed by `(deck_id, card_id, mode)`.
+**`card_states`** — scheduling state, keyed by `(card_id, mode)`: a card listed
+in several decks, or learned from several languages, has one schedule
+(ADR-0018).
 Holds `interval_days`, `ease_factor`, `repetitions`, `due_at`, `lapses`. This
 is a **derived cache**: it can be rebuilt in full by replaying `reviews`.
 

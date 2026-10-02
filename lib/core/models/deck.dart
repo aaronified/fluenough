@@ -70,6 +70,7 @@ class Deck {
     this.authors = const <Author>[],
     this.source,
     this.theme,
+    this.refs = const <CardRef>[],
   });
 
   final String id;
@@ -98,10 +99,14 @@ class Deck {
   /// `market`. Null for a deck outside the theme path (ADR-0010).
   final String? theme;
 
+  /// Cards written in other decks, listed here by id: unresolved until the
+  /// catalog has every deck, and then folded into [cards] (ADR-0018).
+  final List<CardRef> refs;
+
   int get cardCount => cards.length;
 
-  /// This deck with [cards] in place of its own: a grammar deck once its
-  /// pattern is expanded.
+  /// This deck with [cards] in place of its own, and no refs left: a grammar
+  /// deck once its pattern is expanded, or a deck once its refs are resolved.
   Deck withCards(List<Card> cards) => Deck(
     id: id,
     name: name,
@@ -115,6 +120,7 @@ class Deck {
     tags: tags,
     authors: authors,
     source: source,
+    theme: theme,
   );
 
   @override

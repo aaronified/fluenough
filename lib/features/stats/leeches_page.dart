@@ -53,7 +53,7 @@ class LeechesPage extends StatelessWidget {
                 cardOf: cardLookupOf(state),
               ))
                 if (language == null ||
-                    languageOf(leech.key.deckId) == language)
+                    languageOf(leech.card.deckId) == language)
                   leech,
             ];
             if (leeches.isEmpty) {
@@ -129,7 +129,7 @@ class LeechCard extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final AppState state = AppScope.of(context);
-    final entry = state.deckById(leech.key.deckId)!;
+    final entry = state.deckById(leech.card.deckId)!;
     final deck = entry.deck.name;
     final skill = Skill.of(leech.key.mode).label(l10n);
     final meta = switch (status) {
