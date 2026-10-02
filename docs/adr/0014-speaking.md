@@ -47,13 +47,22 @@ The maintainer decided, on 2 October 2026:
   device or not supported online either, is kept (`speech_not_on_device`,
   `speech_unsupported`), so a restart does not cost a spoken word to find
   it out again. Check again on the Voices page forgets it.
-- **The microphone is asked for once speaking is switched on.** Speaking
-  starts off. Switching it on, in Settings or on the Voices page, asks for
-  the permission and then which languages the recogniser knows. Android 13
-  and later answer that only with the permission granted, so before it the
-  app does not know, and says so. A permission granted before lets the app
-  check quietly at launch, without holding the launch up. It never asks
-  there.
+- **The first launch checks the microphone and the sound.** After the
+  tour, a step records two seconds (`record`, BSD-3-Clause) and plays
+  them back (`audioplayers`, MIT), from memory: nothing is saved. Then it
+  asks whether the learner heard themselves. A recording refused, silent
+  or failed, or a phone with no recogniser, leaves speaking off; a
+  playback that failed or wasn't heard leaves listening off. With nothing
+  recorded, a beep tests the sound. Try again asks for the microphone
+  once more, as Android allows. Passing the step without checking changes
+  nothing. The maintainer chose both packages and the Try again.
+- **Otherwise the microphone is asked for once speaking is switched on.**
+  Speaking starts off. Switching it on, in Settings or on the Voices page,
+  asks for the permission and then which languages the recogniser knows.
+  Android 13 and later answer that only with the permission granted, so
+  before it the app does not know, and says so. A permission granted before
+  lets the app check quietly at launch, without holding the launch up. It
+  never asks there.
 - **Speaking is a drill mode,** `speaking`, scheduled per `(card, mode)`
   like the others (ADR-0005). A vocabulary card gets it by default,
   phrases too, since the recogniser does the writing. A card is drilled by
