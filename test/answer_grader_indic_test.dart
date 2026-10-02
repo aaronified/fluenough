@@ -19,6 +19,27 @@ void main() {
     );
   }
 
+  group('a sentence-final mark is not part of the answer (#130)', () {
+    test('the danda and double danda', () {
+      same('আমি ছাত্র', 'আমি ছাত্র।', because: 'Bengali full stop');
+      same('मैं छात्र हूँ', 'मैं छात्र हूँ।', because: 'Hindi full stop');
+      same('नमस्ते', 'नमस्ते॥', because: 'double danda');
+    });
+
+    test('full-width marks', () {
+      same('はい', 'はい。', because: 'Japanese full stop');
+      same('ほんとう', 'ほんとう？', because: 'full-width question mark');
+      same('すごい', 'すごい！', because: 'full-width exclamation mark');
+    });
+
+    test('a danda inside an answer still counts', () {
+      expect(
+        grader.grade('আমি। ছাত্র', 'আমি ছাত্র').outcome,
+        isNot(AnswerOutcome.exact),
+      );
+    });
+  });
+
   group('one letter, two spellings, compare equal', () {
     test('Devanagari nukta letters, precomposed or not', () {
       same('\u095B\u0930\u093E', '\u091C\u093C\u0930\u093E', because: 'ज़रा');

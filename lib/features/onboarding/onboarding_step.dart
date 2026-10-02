@@ -2,7 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../app/app_state.dart';
+import '../../app/skill.dart';
 import '../../core/data/spoken_languages.dart';
+import '../../core/sound/sound_check.dart';
 import '../../l10n/app_localizations.dart';
 
 /// One screen of the first launch (#118). `OnboardingFlow` draws the top
@@ -93,9 +95,67 @@ class OnboardingAnswers extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// What the sound check found (#89), or null if it was not run, which
+  /// leaves both switches as they are.
+  SoundCheckResult? get soundCheck => _soundCheck;
+  SoundCheckResult? _soundCheck;
+  set soundCheck(SoundCheckResult? result) {
+    if (result == _soundCheck) return;
+    _soundCheck = result;
+    notifyListeners();
+  }
+
   /// Writes every answer. The spoken languages go last: saving them is what
   /// ends the first launch (`lib/app.dart`), so nothing may follow them.
   void saveTo(AppState state) {
+    if (_soundCheck case final check?) {
+      state.settings.setSkillEnabled(Skill.speaking, check.speaks);
+      if (check.hears case final on?) {
+        state.settings.setSkillEnabled(Skill.listening, on);
+      }
+    }
     state.settings.spokenLanguages = _spoken;
   }
+}
+
+/// What one run of the sound check found.
+@immutable
+class SoundCheckResult {
+  const SoundCheckResult({
+    required this.speaks,
+    required this.hears,
+    this.failure,
+    this.noRecogniser = false,
+    this.beep = false,
+    this.refusals = 0,
+  });
+
+  /// Whether speaking works: it recorded, and the phone has a recogniser.
+  final bool speaks;
+
+  /// Whether listening works: false if playback failed or wasn't heard,
+  /// null while the learner hasn't said whether they heard it.
+  final bool? hears;
+
+  /// Why the recording failed, or null if it worked.
+  final RecordFailure? failure;
+
+  /// It recorded, but the phone has no speech recogniser.
+  final bool noRecogniser;
+
+  /// A beep was played, there being no recording.
+  final bool beep;
+
+  /// How many times the microphone was refused, across tries. From the
+  /// second, Android no longer asks.
+  final int refusals;
+
+  SoundCheckResult heard(bool heard) => SoundCheckResult(
+    speaks: speaks,
+    hears: heard,
+    failure: failure,
+    noRecogniser: noRecogniser,
+    beep: beep,
+    refusals: refusals,
+  );
 }

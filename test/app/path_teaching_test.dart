@@ -216,9 +216,10 @@ void main() {
       for (final unit in everything.pendingUnits) unit.first.id,
     ];
     // Two units for each course, and Japanese's only one, hiragana.
+    // Bengali starts with its script.
     expect(
       starts,
-      containsAll(<String>['bn-en-first-words', 'bn-en-questions']),
+      containsAll(<String>['bn-en-script-vowels', 'bn-en-script-vowel-signs']),
     );
     expect(starts, containsAll(<String>['es-en-core-100', 'ja-en-hiragana']));
     expect(starts, hasLength(9));
