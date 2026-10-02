@@ -73,6 +73,42 @@ class SessionQueue {
     <SessionItem>[],
   );
 
+  /// A session of [due] reviews and then [fresh] new pairs, put together by
+  /// the caller, as Today does from several courses' queues.
+  SessionQueue.of({
+    required List<SessionItem> due,
+    required List<SessionItem> fresh,
+  }) : due = List<SessionItem>.unmodifiable(due),
+       fresh = List<SessionItem>.unmodifiable(fresh);
+
+  /// Up to [limit] new pairs from [blocks], shared equally and kept in
+  /// blocks: as many from the first as from the second, and so on, each
+  /// block's in its own order, one block after another. A block with fewer
+  /// than its share gives the rest to the others. Today shares a day's new
+  /// cards between the languages being learned this way, so that none is
+  /// starved and the script does not change on every card.
+  static List<SessionItem> fairShares(
+    List<List<SessionItem>> blocks,
+    int limit,
+  ) {
+    final shares = List<int>.filled(blocks.length, 0);
+    var left = limit;
+    var gave = true;
+    while (left > 0 && gave) {
+      gave = false;
+      for (var i = 0; i < blocks.length && left > 0; i++) {
+        if (shares[i] < blocks[i].length) {
+          shares[i]++;
+          left--;
+          gave = true;
+        }
+      }
+    }
+    return <SessionItem>[
+      for (final (i, block) in blocks.indexed) ...block.take(shares[i]),
+    ];
+  }
+
   /// Builds the session for [cards].
   ///
   /// [modes] limits the session to the modes the learner has switched on, or
@@ -86,6 +122,10 @@ class SessionQueue {
   /// With [reviseAll], every pair already reviewed counts as due, whatever
   /// its date: revising a finished deck. One mode per card still holds, the
   /// one due soonest.
+  ///
+  /// [canIntroduce], when given, limits new pairs to the cards it accepts:
+  /// Today teaches only a course's pending units (ADR-0013). Due reviews come
+  /// from every card. New pairs are taken in the order of [cards].
   factory SessionQueue.build({
     required Iterable<Card> cards,
     required StateLookup stateOf,
@@ -93,6 +133,7 @@ class SessionQueue {
     required DateTime now,
     required int newCardLimit,
     PairFilter? isSetAside,
+    bool Function(Card card)? canIntroduce,
     bool reviseAll = false,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
@@ -124,7 +165,9 @@ class SessionQueue {
       }
       if (mostOverdue != null) {
         due.add((item: mostOverdue, order: order++));
-      } else if (firstNew != null && newLeft > 0) {
+      } else if (firstNew != null &&
+          newLeft > 0 &&
+          (canIntroduce?.call(card) ?? true)) {
         fresh.add(firstNew);
         newLeft--;
       }

@@ -41,10 +41,15 @@ class SettingsNotifier extends ChangeNotifier {
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
     List<String> spokenLanguages = const <String>[],
+    List<String> learningLanguages = const <String>[],
+    Set<String> placedDecks = const <String>{},
+    this._learningChosen = false,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? Skill.values.toSet(),
        ),
-       _spokenLanguages = List<String>.unmodifiable(spokenLanguages);
+       _spokenLanguages = List<String>.unmodifiable(spokenLanguages),
+       _learningLanguages = List<String>.unmodifiable(learningLanguages),
+       _placedDecks = Set<String>.unmodifiable(placedDecks);
 
   /// The new-card slider's range and step, from the design.
   static const int maxNewCardsPerDay = 50;
@@ -74,6 +79,9 @@ class SettingsNotifier extends ChangeNotifier {
   bool _reminder;
   TimeOfDay _reminderTime;
   List<String> _spokenLanguages;
+  List<String> _learningLanguages;
+  Set<String> _placedDecks;
+  bool _learningChosen;
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
 
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
@@ -108,6 +116,36 @@ class SettingsNotifier extends ChangeNotifier {
     _spokenLanguages = next;
     notifyListeners();
   }
+
+  /// The languages the learner has chosen to learn, by code (#117). Empty
+  /// until they have chosen, when the profile learns every language.
+  List<String> get learningLanguages => _learningLanguages;
+  set learningLanguages(List<String> codes) {
+    final next = List<String>.unmodifiable(<String>{...codes});
+    if (listEquals(next, _learningLanguages)) return;
+    _learningLanguages = next;
+    notifyListeners();
+  }
+
+  /// The decks placement found the learner already knows (#117,
+  /// ADR-0013), by id. A placed deck reads Done and is not taught by Today,
+  /// though it can still be studied; nothing is recorded as learned.
+  Set<String> get placedDecks => _placedDecks;
+  set placedDecks(Set<String> ids) {
+    final next = Set<String>.unmodifiable(ids);
+    if (setEquals(next, _placedDecks)) return;
+    _placedDecks = next;
+    notifyListeners();
+  }
+
+  bool isPlaced(String deckId) => _placedDecks.contains(deckId);
+
+  /// Whether the learner has been through choosing what to learn and
+  /// placement (#117). Until then the first launch, or the first after an
+  /// update, asks.
+  bool get learningChosen => _learningChosen;
+  set learningChosen(bool value) =>
+      _set(_learningChosen, value, (v) => _learningChosen = v);
 
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
@@ -202,6 +240,9 @@ class SettingsNotifier extends ChangeNotifier {
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
     'spoken_languages': _spokenLanguages.join(','),
+    'learning_languages': _learningLanguages.join(','),
+    'placed_decks': (_placedDecks.toList()..sort()).join(','),
+    'learning_chosen': '$_learningChosen',
     'facts_shown': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _factsShown.entries)
         key: value.millisecondsSinceEpoch,
@@ -255,6 +296,19 @@ class SettingsNotifier extends ChangeNotifier {
         for (final code in v.split(','))
           if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
       ];
+    }
+    if (pick('learning_languages', (t) => t) case final v?) {
+      learningLanguages = <String>[
+        for (final code in v.split(','))
+          if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
+      ];
+    }
+    if (pick('learning_chosen', flag) case final v?) learningChosen = v;
+    if (pick('placed_decks', (t) => t) case final v?) {
+      placedDecks = <String>{
+        for (final id in v.split(','))
+          if (RegExp(r'^[a-z0-9-]+$').hasMatch(id)) id,
+      };
     }
   }
 

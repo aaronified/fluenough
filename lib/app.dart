@@ -7,6 +7,7 @@ import 'app/routes.dart';
 import 'app/shell_tab.dart';
 import 'features/decks/decks_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
+import 'features/placement/learn_languages_page.dart';
 import 'features/settings/settings_page.dart';
 import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
@@ -60,11 +61,14 @@ class _FluenoughAppState extends State<FluenoughApp> {
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          // The first launch (#118): welcome, tour, then the languages the
-          // learner speaks (#53). Saving those ends it: this rebuilds on
-          // settings, and the shell takes over.
+          // The first launch: welcome, tour and the languages the learner
+          // speaks (#118, #53), then which they want to learn, and placement
+          // (#117). Each answer saved rebuilds this on settings. An install
+          // from before #117 is asked the second once.
           home: settings.spokenLanguages.isEmpty
               ? const OnboardingFlow()
+              : !settings.learningChosen
+              ? const LearnLanguagesPage(firstRun: true)
               : const AppShell(),
         ),
       ),
