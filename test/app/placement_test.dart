@@ -101,17 +101,58 @@ void main() {
   });
 
   test('a unit with fewer than four meanings asks them all, and needs them '
-      'all', () {
-    final small = <List<DeckEntry>>[
-      <DeckEntry>[
-        for (final entry in hindi.first)
-          if (entry.id == 'hi-en-first-words') entry,
-      ],
-    ];
-    final p = Placement(small, random: Random(1), questionsPerUnit: 2);
+      'all', () async {
+    final state = AppState.test(
+      decks: MemoryDeckSource(<String, String>{
+        'decks/hi/hi-en-two.yaml': '''
+schema: 1
+id: hi-en-two
+name: Two
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: hi-en-two-0001, target: "घर", native: "house" }
+  - { id: hi-en-two-0002, target: "पानी", native: "water" }
+''',
+      }),
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    final p = Placement(state.courseUnits('hi'), random: Random(1));
     p.answer(p.question!.card.native);
+    expect(p.isFinished, isFalse);
     p.answer(null);
     expect(p.isFinished, isTrue);
     expect(p.placedDeckIds, isEmpty, reason: 'one wrong of two is too many');
+  });
+
+  test('no question offers a second right answer, where forms are spelled '
+      'alike, in any unit of the Indic courses', () async {
+    final state = AppState.test();
+    addTearDown(state.dispose);
+    await state.load();
+    for (final code in <String>['hi', 'bn', 'te']) {
+      final units = state.courseUnits(code);
+      final meanings = <String, Set<String>>{};
+      for (final unit in units) {
+        for (final entry in unit) {
+          for (final card in entry.cards) {
+            (meanings[card.target] ??= <String>{}).add(card.native);
+          }
+        }
+      }
+      for (var seed = 0; seed < 30; seed++) {
+        final p = Placement(units, random: Random(seed));
+        while (!p.isFinished) {
+          final q = p.question!;
+          final right = meanings[q.card.target]!;
+          expect(q.options.where(right.contains), <String>[
+            q.card.native,
+          ], reason: '$code seed $seed: ${q.card.target} offers ${q.options}');
+          p.answer(q.card.native);
+        }
+      }
+    }
   });
 }
