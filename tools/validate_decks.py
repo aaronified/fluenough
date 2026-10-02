@@ -50,7 +50,7 @@ PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
-FEATURE_KEYS = {"id", "name", "term", "example", "text", "letters"}
+FEATURE_KEYS = {"id", "name", "term", "reading", "example", "text", "letters"}
 CODE_RE = re.compile(r"[a-z]{2,3}")
 MODES = {"recognition", "production", "listening", "grammar", "speaking"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
@@ -762,6 +762,11 @@ def check_script_file(r: Report, raw: dict, path: Path) -> None:
                 r.error(where, f"needs {key}, quoted text")
         if "term" in feature and (not _is_str(feature["term"]) or not feature["term"].strip()):
             r.error(where, "term must be quoted text, or left out")
+        if "reading" in feature:
+            if "term" not in feature:
+                r.error(where, "reading is the term's, so it needs a term")
+            elif not _is_str(feature["reading"]) or not feature["reading"].strip():
+                r.error(where, "reading must be quoted text, or left out")
         letters = feature.get("letters", [])
         if not isinstance(letters, list) or not all(_is_str(x) and x for x in letters):
             r.error(where, "letters must be a list of quoted letters")

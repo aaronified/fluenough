@@ -50,10 +50,15 @@ class DrillPage extends StatefulWidget {
 class _DrillPageState extends State<DrillPage> {
   DrillSession? _session;
 
-  /// A script's guide to show before the session (#30, ADR-0016): the
-  /// first script card's language, while its guide is unseen.
-  ScriptGuide? _guide;
-  LanguageInfo? _guideLanguage;
+  /// The script guides to show before the session (#30, ADR-0016), in
+  /// turn: one for each language with script cards in it whose guide is
+  /// unseen, in the order the session reaches them.
+  final List<(ScriptGuide, LanguageInfo)> _guides =
+      <(ScriptGuide, LanguageInfo)>[];
+
+  /// The queue, kept until the last guide is closed. The session is built
+  /// then, so that its clock doesn't time the reading as the first answer.
+  List<SessionItem> _items = const <SessionItem>[];
   bool _loaded = false;
   bool _failed = false;
   bool _summaryShown = false;
@@ -118,27 +123,45 @@ class _DrillPageState extends State<DrillPage> {
     }
     if (items.isEmpty) return;
     if (preset == null) {
+      final languages = <String>{};
       for (final item in items) {
         final entry = state.deckOf(item.card);
         if (entry == null || !entry.isScript) continue;
-        final guide = state.scriptGuideFor(entry.language);
+        final language = entry.language;
+        if (!languages.add(language.code)) continue;
+        final guide = state.scriptGuideFor(language);
         if (guide != null &&
-            !state.settings.hasSeenScriptGuide(entry.language.code)) {
-          _guide = guide;
-          _guideLanguage = entry.language;
+            !state.settings.hasSeenScriptGuide(language.code)) {
+          _guides.add((guide, language));
         }
-        break;
       }
     }
+    _items = items;
+    if (_guides.isEmpty) _begin(state);
+  }
+
+  void _begin(AppState state) {
+    final request = widget.request;
+    final preset = widget.preset;
     final session = DrillSession(
       state: state,
-      items: items,
+      items: _items,
       inputMode: preset?.inputMode ?? InputMode.script,
       recorded: !request.revise,
       revising: request.revise,
     );
     preset?.apply(session);
     _session = session..addListener(_onSession);
+  }
+
+  /// Start, on a guide: it is seen, and the next one, or the session,
+  /// follows.
+  void _guideRead(AppState state, LanguageInfo language) {
+    state.settings.markScriptGuideSeen(language.code);
+    setState(() {
+      _guides.removeAt(0);
+      if (_guides.isEmpty) _begin(state);
+    });
   }
 
   void _onSession() {
@@ -197,6 +220,17 @@ class _DrillPageState extends State<DrillPage> {
         ),
       );
     }
+    if (_guides.isNotEmpty) {
+      final (guide, language) = _guides.first;
+      return ScriptGuideView(
+        key: ValueKey<String>(language.code),
+        guide: guide,
+        language: language,
+        actionLabel: l10n.scriptGuideStart,
+        onAction: () => _guideRead(AppScope.read(context), language),
+        onClose: _close,
+      );
+    }
     final session = _session;
     if (session == null) {
       return Scaffold(
@@ -222,21 +256,6 @@ class _DrillPageState extends State<DrillPage> {
                 title: l10n.drillEmptyTitle,
                 body: l10n.drillEmptyBody,
               ),
-      );
-    }
-    final guide = _guide;
-    final guideLanguage = _guideLanguage;
-    if (guide != null && guideLanguage != null) {
-      return ScriptGuideView(
-        guide: guide,
-        language: guideLanguage,
-        actionLabel: l10n.scriptGuideStart,
-        onAction: () {
-          AppScope.read(context).settings
-              .markScriptGuideSeen(guideLanguage.code);
-          setState(() => _guide = null);
-        },
-        onClose: _close,
       );
     }
     return ListenableBuilder(

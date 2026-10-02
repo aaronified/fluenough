@@ -158,6 +158,9 @@ class _Header extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final language = entry.language;
     final description = entry.deck.description;
+    final guide = entry.isScript
+        ? AppScope.of(context).scriptGuideFor(language)
+        : null;
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
       child: Column(
@@ -214,9 +217,7 @@ class _Header extends StatelessWidget {
           ],
           // How the script works (#30): Tips, as Duolingo's script pages
           // have above their chart.
-          if (entry.isScript &&
-              AppScope.of(context).scriptGuideFor(language) !=
-                  null) ...<Widget>[
+          if (guide != null) ...<Widget>[
             const SizedBox(height: 12),
             OutlinedButton.icon(
               style: OutlinedButton.styleFrom(
@@ -226,7 +227,7 @@ class _Header extends StatelessWidget {
                   AppNavigator.openScriptGuide(context, language.code),
               icon: const Icon(Icons.lightbulb_outline),
               label: Text(
-                l10n.deckScriptTips(language.name),
+                l10n.deckScriptTips(guide.name),
                 textAlign: TextAlign.center,
               ),
             ),

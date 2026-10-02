@@ -1,7 +1,7 @@
 # ADR-0016: Each script has a guide to its recurring features
 
 - **Status:** Accepted
-- **Date:** 2026-10-03
+- **Date:** 2026-10-02
 
 ## Context
 
@@ -27,15 +27,19 @@ October 2026:
   `decks/bn/bn-script.yaml`. It has a title, an introductory paragraph,
   and the features. Each feature has:
   - a name in English;
-  - its term in the language, if it has one;
+  - its term in the language, if it has one, and the term's reading,
+    shown under it when Show romanisation is on, as on a card;
   - one example drawn large;
   - what to look for;
   - the letters that share it.
-- **The drill shows it once,** before a session whose first script card
-  is in a language with an unseen guide. The page ends in "Start the
-  letters", which goes on to the drill and records the guide as seen
-  (`script_guides_seen`). Today, a deck and placement all start drills
-  the same way, so all of them show it.
+- **The drill shows it once,** before a session with script cards in a
+  language whose guide is unseen. A session with two such languages shows
+  both, in the order it reaches them. Each page ends in "Start the
+  letters", which records that guide as seen (`script_guides_seen`) and
+  goes on to the next guide or the drill. The session is built after the
+  last guide, so the reading isn't timed as the first answer. Today, a
+  deck, learning new cards and revising all start the drill this way, so
+  all of them show it; number practice has no script cards.
 - **A script deck's page has Tips,** which opens the guide again with
   Done. Opening it there doesn't count as seen.
 - **The drill deck is ordinary data.** Each language's path puts a short
@@ -47,7 +51,11 @@ October 2026:
   - it has a name, an intro and features;
   - feature ids are unique;
   - each feature has a name, an example and text;
-  - any term or letters are quoted text.
+  - any term, reading or letters are quoted text, and a reading has a
+    term.
+- **Only the term has a reading.** The example and the letters are shapes
+  to look at, not words to read, and the text gives a sound where it
+  matters, as a card's notes do.
 
 ## Consequences
 

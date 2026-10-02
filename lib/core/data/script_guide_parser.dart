@@ -12,7 +12,15 @@ const _fields = {
   'intro',
   'features',
 };
-const _featureFields = {'id', 'name', 'term', 'example', 'text', 'letters'};
+const _featureFields = {
+  'id',
+  'name',
+  'term',
+  'reading',
+  'example',
+  'text',
+  'letters',
+};
 
 /// The script guide in [text], a `<code>-script.yaml` (#30, ADR-0016).
 /// Throws [DeckParseException] for a file that is not one, or is malformed,
@@ -79,6 +87,11 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
     if (term != null && (term is! String || term.trim().isEmpty)) {
       throw bad('feature "$id": term is text, or left out', node);
     }
+    final reading = node['reading'];
+    if (reading != null &&
+        (term == null || reading is! String || reading.trim().isEmpty)) {
+      throw bad('feature "$id": reading is the term\'s, as text', node);
+    }
     final lettersNode = node.nodes['letters'];
     final letters = <String>[];
     if (lettersNode != null) {
@@ -97,6 +110,7 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
         id: id,
         name: required(node, 'name', 'feature "$id"'),
         term: term as String?,
+        reading: reading as String?,
         example: required(node, 'example', 'feature "$id"'),
         text: required(node, 'text', 'feature "$id"'),
         letters: letters,

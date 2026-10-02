@@ -51,6 +51,10 @@ class ScriptGuidePage extends StatelessWidget {
 /// large, its name and its term in the language, what to look for, and the
 /// letters that share it. Modelled on Duolingo's script tips
 /// (docs/market-research.md, "Script lessons").
+///
+/// Only the term has a reading, under Show romanisation as on a card. The
+/// example and the letters are shapes to look at, and the text gives a
+/// sound where it matters, as a card's notes do.
 class ScriptGuideView extends StatelessWidget {
   const ScriptGuideView({
     super.key,
@@ -73,6 +77,7 @@ class ScriptGuideView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final settings = AppScope.of(context).settings;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -93,7 +98,14 @@ class ScriptGuideView extends StatelessWidget {
           ),
           for (final feature in guide.features) ...<Widget>[
             const SizedBox(height: 24),
-            _FeatureRow(feature: feature, language: language),
+            ListenableBuilder(
+              listenable: settings,
+              builder: (context, _) => _FeatureRow(
+                feature: feature,
+                language: language,
+                showReading: settings.showRomanisation,
+              ),
+            ),
           ],
         ],
       ),
@@ -112,17 +124,22 @@ class ScriptGuideView extends StatelessWidget {
 }
 
 class _FeatureRow extends StatelessWidget {
-  const _FeatureRow({required this.feature, required this.language});
+  const _FeatureRow({
+    required this.feature,
+    required this.language,
+    required this.showReading,
+  });
 
   final ScriptFeature feature;
   final LanguageInfo language;
+  final bool showReading;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final locale = Locale(language.code);
     final term = feature.term;
+    final reading = feature.reading;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -157,11 +174,19 @@ class _FeatureRow extends StatelessWidget {
                 child: Text(feature.name, style: theme.textTheme.titleMedium),
               ),
               if (term != null)
-                Text(
+                TargetText(
                   term,
-                  locale: locale,
+                  language: language,
+                  fontSize: theme.textTheme.bodyLarge!.fontSize!,
+                  fontWeight: FontWeight.w500,
+                  color: scheme.primary,
+                  textAlign: TextAlign.start,
+                ),
+              if (showReading && reading != null)
+                Text(
+                  reading,
                   style: theme.textTheme.bodyMedium!.copyWith(
-                    color: scheme.primary,
+                    color: scheme.onSurfaceVariant,
                   ),
                 ),
               const SizedBox(height: 4),

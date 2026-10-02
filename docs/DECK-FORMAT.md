@@ -305,7 +305,8 @@ Each contrast:
 How a script works, before its letters ([ADR-0016](adr/0016-script-guides.md)):
 the features a learner from English misses because their own script has
 nothing like them. The drill shows the guide once, before a language's
-first script card. A script deck's Tips opens it again.
+first script card; a session with two such languages shows both guides,
+in the order it reaches them. A script deck's Tips opens it again.
 `decks/bn/bn-script.yaml`:
 
 ```yaml
@@ -318,10 +319,11 @@ intro: "A few ideas come back in letter after letter."
 features:
   - id: headline
     name: "The headline"
-    term: "মাত্রা (matra)"
+    term: "মাত্রা"
+    reading: "matra"
     example: "ক"
     text: "Most letters hang from a line along the top."
-    letters: ["ক", "খ", "গ"]
+    letters: ["ক", "ঘ", "ত", "ন"]
 ```
 
 | Field | Required | Notes |
@@ -338,7 +340,8 @@ Each feature:
 |---|---|---|
 | `id` | yes | `[a-z0-9-]+`, unique in the guide. |
 | `name` | yes | The feature in plain English. |
-| `term` | no | Its name in the language, with a reading: `"মাত্রা (matra)"`. |
+| `term` | no | Its name in the language: `"মাত্রা"`. |
+| `reading` | no | The term in the Latin alphabet, shown under it when Show romanisation is on. Only with a `term`. |
 | `example` | yes | One letter or short word that shows it, drawn large. |
 | `text` | yes | What to look for, for a beginner from English. |
 | `letters` | no | More letters that share it, each quoted. |

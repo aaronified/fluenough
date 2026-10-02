@@ -21,10 +21,11 @@ intro: "Most of what looks strange is a few ideas used again and again."
 features:
   - id: headline
     name: "The headline"
-    term: "মাত্রা (matra)"
+    term: "মাত্রা"
+    reading: "matra"
     example: "ক"
     text: "Most letters hang from a line along the top."
-    letters: ["ক", "খ", "গ"]
+    letters: ["ক", "ঘ", "ত"]
   - id: knot
     name: "The knot"
     example: "ত"
@@ -65,9 +66,13 @@ class ScriptGuideTest(unittest.TestCase):
         self.assertTrue(any("needs example" in e for e in self.errors(
             GOOD.replace('    example: "ত"\n', ''))))
         self.assertTrue(any("term" in e for e in self.errors(
-            GOOD.replace('term: "মাত্রা (matra)"', 'term: ""'))))
+            GOOD.replace('term: "মাত্রা"', 'term: ""'))))
+        self.assertTrue(any("needs a term" in e for e in self.errors(
+            GOOD.replace('    term: "মাত্রা"\n', ''))))
+        self.assertTrue(any("reading" in e for e in self.errors(
+            GOOD.replace('reading: "matra"', 'reading: ""'))))
         self.assertTrue(any("letters" in e for e in self.errors(
-            GOOD.replace('letters: ["ক", "খ", "গ"]', 'letters: "ক"'))))
+            GOOD.replace('letters: ["ক", "ঘ", "ত"]', 'letters: "ক"'))))
 
     def test_unknown_fields_fail(self) -> None:
         self.assertTrue(any("unknown field" in e for e in self.errors(GOOD + "extra: 1\n")))

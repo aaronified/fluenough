@@ -27,10 +27,25 @@ intro: "A few ideas come back again and again."
 features:
   - id: headline
     name: "The headline"
-    term: "মাত্রা (matra)"
+    term: "মাত্রা"
+    reading: "matra"
     example: "ক"
     text: "Most letters hang from a line along the top."
     letters: ["ক", "খ"]
+''';
+
+const String hindiGuide = '''
+schema: 1
+kind: script
+id: hi-script
+language: hi
+name: "How Devanagari works"
+intro: "A few ideas come back again and again."
+features:
+  - id: headline
+    name: "The headline"
+    example: "क"
+    text: "Most letters hang from a line along the top."
 ''';
 
 String deck(String id, {bool script = true}) =>
@@ -77,7 +92,8 @@ void main() {
       expect(parsed.name, 'How Bengali script works');
       final feature = parsed.features.single;
       expect(feature.id, 'headline');
-      expect(feature.term, 'মাত্রা (matra)');
+      expect(feature.term, 'মাত্রা');
+      expect(feature.reading, 'matra');
       expect(feature.example, 'ক');
       expect(feature.letters, <String>['ক', 'খ']);
     });
@@ -88,6 +104,8 @@ void main() {
         guide.replaceFirst('schema: 1', 'schema: 2'),
         guide.replaceFirst('    example: "ক"\n', ''),
         guide.replaceFirst('letters: ["ক", "খ"]', 'letters: "ক"'),
+        // A reading is the term's.
+        guide.replaceFirst('    term: "মাত্রা"\n', ''),
         '$guide\nextra: 1\n',
       ]) {
         expect(
@@ -116,7 +134,7 @@ void main() {
     final l10n = l10nOf(tester);
     expect(find.text('How Bengali script works'), findsOneWidget);
     expect(find.text('The headline'), findsOneWidget);
-    expect(find.text('মাত্রা (matra)'), findsOneWidget);
+    expect(find.text('মাত্রা'), findsOneWidget);
     expect(find.byType(RecognitionDrill), findsNothing);
     await tapText(tester, l10n.scriptGuideStart);
     expect(state.settings.hasSeenScriptGuide('bn'), isTrue);
@@ -131,6 +149,72 @@ void main() {
     );
     expect(find.text('How Bengali script works'), findsNothing);
     expect(find.byType(RecognitionDrill), findsOneWidget);
+  });
+
+  testWidgets('a session with two scripts shows each unseen guide in turn, '
+      'and only then starts', (tester) async {
+    usePhone(tester);
+    final state = AppState.test(
+      decks: MemoryDeckSource(<String, String>{
+        'decks/bn/bn-en-letters.yaml': deck('bn-en-letters'),
+        'decks/bn/bn-script.yaml': guide,
+        'decks/hi/hi-en-letters.yaml': deck('hi-en-letters')
+            .replaceFirst(
+              '{ code: bn, iso639_3: ben, name: Bengali, script: bengali, '
+                  'tts: bn-IN }',
+              '{ code: hi, iso639_3: hin, name: Hindi, script: devanagari, '
+                  'tts: hi-IN }',
+            )
+            .replaceAll('"ক"', '"क"')
+            .replaceAll('"খ"', '"ख"'),
+        'decks/hi/hi-script.yaml': hindiGuide,
+      }),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningChosen: true,
+      ),
+    );
+    await pumpScreen(
+      tester,
+      const DrillPage(
+        request: DrillRequest(
+          deckIds: <String>{'bn-en-letters', 'hi-en-letters'},
+        ),
+      ),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    final titles = <String>['How Bengali script works', 'How Devanagari works'];
+    final first = titles.firstWhere(
+      (title) => find.text(title).evaluate().isNotEmpty,
+    );
+    final second = titles.firstWhere((title) => title != first);
+    expect(find.byType(RecognitionDrill), findsNothing);
+    await tapText(tester, l10n.scriptGuideStart);
+    expect(find.text(second), findsOneWidget);
+    expect(find.byType(RecognitionDrill), findsNothing);
+    await tapText(tester, l10n.scriptGuideStart);
+    expect(find.byType(RecognitionDrill), findsOneWidget);
+    expect(state.settings.hasSeenScriptGuide('bn'), isTrue);
+    expect(state.settings.hasSeenScriptGuide('hi'), isTrue);
+  });
+
+  testWidgets("the term's reading shows only with Show romanisation", (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = guided();
+    await pumpScreen(
+      tester,
+      const ScriptGuidePage(languageCode: 'bn'),
+      state: state,
+    );
+    expect(find.text('মাত্রা'), findsOneWidget);
+    expect(find.text('matra'), findsOneWidget);
+    state.settings.showRomanisation = false;
+    await tester.pumpAndSettle();
+    expect(find.text('মাত্রা'), findsOneWidget);
+    expect(find.text('matra'), findsNothing);
   });
 
   testWidgets('not shown for a deck that is not a script, nor for a language '
@@ -165,7 +249,7 @@ void main() {
       state: state,
     );
     final l10n = l10nOf(tester);
-    await tapText(tester, l10n.deckScriptTips('Bengali'));
+    await tapText(tester, l10n.deckScriptTips('How Bengali script works'));
     expect(find.byType(ScriptGuidePage), findsOneWidget);
     expect(find.text('The headline'), findsOneWidget);
     await tapText(tester, l10n.commonDone);
@@ -181,7 +265,10 @@ void main() {
       const DeckDetailPage(deckId: 'bn-en-words'),
       state: guided(),
     );
-    expect(find.text(l10nOf(tester).deckScriptTips('Bengali')), findsNothing);
+    expect(
+      find.text(l10nOf(tester).deckScriptTips('How Bengali script works')),
+      findsNothing,
+    );
   });
 
   test('which guides were seen survives a restart', () {
