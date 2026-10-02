@@ -147,10 +147,37 @@ void main() {
         'tag_name': 'v0.2.0',
         'name': 'Fluenough 0.2.0',
         'draft': false,
+        'assets': <Object?>[
+          <String, Object?>{'name': 'app-release.apk'},
+        ],
       });
       expect(release.ok, isTrue);
       expect(release.version, '0.2.0');
+      expect(release.hasApk, isTrue);
       expect(release.failure, isNull);
+    });
+
+    test('a release without app-release.apk has nothing to install', () {
+      // As in the minute before the release workflow uploads it, or on a
+      // release made by hand.
+      for (final assets in <Object?>[
+        null,
+        <Object?>[],
+        <Object?>[
+          <String, Object?>{'name': 'app-debug.apk'},
+          <String, Object?>{'name': 'notes.txt'},
+        ],
+        <Object?>['app-release.apk'],
+        'app-release.apk',
+      ]) {
+        final release = reply(<String, Object?>{
+          'tag_name': 'v0.2.0',
+          'assets': ?assets,
+        });
+        expect(release.version, '0.2.0', reason: '$assets');
+        expect(release.hasApk, isFalse, reason: '$assets');
+        expect(release.apkSha256, isNull, reason: '$assets');
+      }
     });
 
     test("the APK's SHA-256 comes from its asset's digest", () {
@@ -244,10 +271,16 @@ void main() {
 
     test('asks for the latest release, saying who asks', () async {
       final client = _FakeClient(
-        () async => (200, utf8.encode('{"tag_name": "v0.3.1"}')),
+        () async => (
+          200,
+          utf8.encode(
+            '{"tag_name": "v0.3.1", "assets": [{"name": "app-release.apk"}]}',
+          ),
+        ),
       );
       final release = await _ask(check, client);
       expect(release.version, '0.3.1');
+      expect(release.hasApk, isTrue);
       expect(
         client.asked,
         Uri.parse(

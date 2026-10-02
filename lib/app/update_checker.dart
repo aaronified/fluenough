@@ -36,7 +36,7 @@ enum UpdateStatus {
 /// Asks GitHub whether a newer version is out, and installs it (ADR-0017):
 /// a check when the learner taps "Check for updates", and at launch, at most
 /// once a day, if they have switched on `SettingsNotifier.autoUpdateCheck`;
-/// an install when they tap Download.
+/// a check and then an install when they tap Download.
 ///
 /// What a check finds is kept in [settings], so that a newer version stays
 /// marked after a restart without asking again. A check that reached
@@ -81,6 +81,7 @@ class UpdateChecker extends ChangeNotifier {
   ({String version, String? sha256})? _checked;
   Future<void>? _checking;
   Future<void>? _installing;
+  bool _cancelling = false;
   bool _disposed = false;
 
   UpdateStatus get status => _status == UpdateStatus.idle && updateAvailable
@@ -143,12 +144,19 @@ class UpdateChecker extends ChangeNotifier {
     if (release.failure != ReleaseCheckFailure.offline) {
       settings.lastUpdateCheck = _clock();
     }
-    if (release.version case final version?) {
+    if (release.version case final version? when release.hasApk) {
       settings.latestRelease = version;
       _checked = (version: version, sha256: release.apkSha256);
       _status = isNewerVersion(version, current)
           ? UpdateStatus.available
           : UpdateStatus.upToDate;
+    } else if (release.version != null) {
+      // The newest release has no APK yet, so the latest-download path has
+      // nothing to install, not even an older release's: nothing is newer
+      // for now. A check once the workflow has uploaded it finds it.
+      settings.latestRelease = null;
+      _checked = null;
+      _status = UpdateStatus.upToDate;
     } else {
       _failure = release.failure;
       _status = UpdateStatus.failed;
@@ -158,7 +166,8 @@ class UpdateChecker extends ChangeNotifier {
 
   /// Downloads the newest release's APK and opens Android's installer on
   /// it, checked against the checksum this launch's check found for that
-  /// version, if any. An install already under way is joined.
+  /// version, if any. An install already under way is joined. Download and
+  /// Try again use [checkAndInstall], so that a check always comes first.
   Future<void> install() =>
       _installing ??= _install().whenComplete(() => _installing = null);
 
@@ -170,6 +179,7 @@ class UpdateChecker extends ChangeNotifier {
     _status = UpdateStatus.downloading;
     _percent = 0;
     _installFailure = null;
+    _cancelling = false;
     notifyListeners();
     final events = _installer.install(
       AppLinks.latestApk,
@@ -181,8 +191,12 @@ class UpdateChecker extends ChangeNotifier {
     await for (final event in events) {
       if (_disposed) return;
       if (event.failure case final failure?) {
-        _installFailure = failure;
-        _status = UpdateStatus.installFailed;
+        if (failure == InstallFailure.cancelled && _cancelling) {
+          _status = UpdateStatus.available;
+        } else {
+          _installFailure = failure;
+          _status = UpdateStatus.installFailed;
+        }
       } else if (event.installing) {
         _status = UpdateStatus.installing;
       } else {
@@ -192,16 +206,30 @@ class UpdateChecker extends ChangeNotifier {
     }
     // The download stopped without saying why.
     if (!_disposed && _status == UpdateStatus.downloading) {
-      _installFailure = InstallFailure.download;
-      _status = UpdateStatus.installFailed;
+      if (_cancelling) {
+        _status = UpdateStatus.available;
+      } else {
+        _installFailure = InstallFailure.download;
+        _status = UpdateStatus.installFailed;
+      }
       notifyListeners();
     }
   }
 
-  /// "Try again" after an install stopped, or after closing Android's
-  /// installer: checks again, for the newest version and its checksum, then
-  /// installs it if it is still newer.
-  Future<void> retryInstall() async {
+  /// The downloading row's Cancel: stops the download, and the row offers
+  /// it again. The partial file is replaced by the next download.
+  Future<void> cancelInstall() async {
+    if (_status != UpdateStatus.downloading) return;
+    _cancelling = true;
+    await _installer.cancel();
+  }
+
+  /// Download, and Try again after an install stopped or Android's installer
+  /// was closed: checks first, for the newest version and its checksum, then
+  /// installs it if it is still newer. So a download is always checked
+  /// against GitHub's checksum when it gives one, even when the version
+  /// offered was found before this launch.
+  Future<void> checkAndInstall() async {
     await check();
     if (!_disposed && status == UpdateStatus.available) await install();
   }

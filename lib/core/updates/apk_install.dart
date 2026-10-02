@@ -6,7 +6,8 @@ enum InstallFailure {
   /// The learner has not allowed Fluenough to install apps.
   notAllowed,
 
-  /// The APK could not be downloaded: no network, or GitHub had no file.
+  /// The APK could not be downloaded: no network, GitHub had no file, or
+  /// the download stalled.
   download,
 
   /// The download did not match the checksum GitHub gave for it.
@@ -18,7 +19,8 @@ enum InstallFailure {
   /// Anything else went wrong on the phone.
   internal,
 
-  /// The download was cancelled before it finished.
+  /// The download was cancelled before it finished. One the learner cancels
+  /// is not a failure: the row offers it again.
   cancelled,
 }
 
@@ -60,6 +62,10 @@ abstract interface class ApkInstaller {
     required String fileName,
     String? sha256,
   });
+
+  /// Stops the download under way, if there is one: its stream ends with
+  /// [InstallFailure.cancelled].
+  Future<void> cancel();
 }
 
 /// No installer: every install fails. The default, so that no test or
@@ -75,6 +81,9 @@ class NullApkInstaller implements ApkInstaller {
   }) => Stream<InstallEvent>.value(
     const InstallEvent.failed(InstallFailure.internal),
   );
+
+  @override
+  Future<void> cancel() async {}
 }
 
 /// An installer that reports [events] and records what it was asked to
@@ -90,12 +99,18 @@ class FixedApkInstaller implements ApkInstaller {
   final MemoryDownloadStore? files;
 
   /// While set and not completed, an install waits on it after reporting
-  /// its first event, so that a step can be seen.
+  /// its first event, so that a step can be seen. One never completed is a
+  /// download that stalls, until [cancel].
   Completer<void>? gate;
 
   /// Every install asked for: its url, file name and checksum.
   final List<({String url, String fileName, String? sha256})> asked =
       <({String url, String fileName, String? sha256})>[];
+
+  /// How many times [cancel] was called.
+  int cancels = 0;
+
+  Completer<void>? _cancelled;
 
   @override
   Stream<InstallEvent> install(
@@ -104,11 +119,26 @@ class FixedApkInstaller implements ApkInstaller {
     String? sha256,
   }) async* {
     asked.add((url: url, fileName: fileName, sha256: sha256));
+    final cancelled = _cancelled = Completer<void>();
+    final wait = gate;
     for (final (i, event) in events.indexed) {
       if (event.installing) files?.names.add(fileName);
       yield event;
-      if (i == 0) await gate?.future;
+      if (i == 0 && wait != null) {
+        await Future.any(<Future<void>>[wait.future, cancelled.future]);
+      }
+      if (cancelled.isCompleted) {
+        yield const InstallEvent.failed(InstallFailure.cancelled);
+        return;
+      }
     }
+  }
+
+  @override
+  Future<void> cancel() async {
+    cancels++;
+    final cancelled = _cancelled;
+    if (cancelled != null && !cancelled.isCompleted) cancelled.complete();
   }
 }
 

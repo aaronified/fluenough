@@ -18,11 +18,13 @@ enum ReleaseCheckFailure {
 
 /// The newest release, or why it could not be found.
 class LatestRelease {
-  const LatestRelease(String this.version, {this.apkSha256}) : failure = null;
+  const LatestRelease(String this.version, {this.apkSha256, this.hasApk = true})
+    : failure = null;
 
   const LatestRelease.failed(ReleaseCheckFailure this.failure)
     : version = null,
-      apkSha256 = null;
+      apkSha256 = null,
+      hasApk = false;
 
   /// The release's version, its tag without the "v": `0.2.0`.
   final String? version;
@@ -31,6 +33,11 @@ class LatestRelease {
   /// The SHA-256 of the release's [apkName], in lower-case hex, when GitHub
   /// gives one: the download is checked against it before it installs.
   final String? apkSha256;
+
+  /// Whether the release has [apkName] attached. Without it the
+  /// latest-download path has nothing to install: in the minute before the
+  /// release workflow uploads it, or on a release made by hand.
+  final bool hasApk;
 
   /// The file the release workflow attaches to every release.
   static const String apkName = 'app-release.apk';
@@ -114,8 +121,9 @@ bool isNewerVersion(String? latest, String current) {
 }
 
 /// GitHub's reply to `releases/latest`, its [status] and [body], as a
-/// release. The version is the release's `tag_name`; the APK's checksum is
-/// its asset's `digest`, `sha256:` and 64 hex digits, if it has one.
+/// release. The version is the release's `tag_name`. Whether it has the APK
+/// comes from its `assets`, and the APK's checksum from that asset's
+/// `digest`, `sha256:` and 64 hex digits, if it has one.
 LatestRelease releaseFromReply(int status, String body) {
   const bad = LatestRelease.failed(ReleaseCheckFailure.badReply);
   // GitHub says 403 for its hourly limit, and 429 for its burst limit.
@@ -133,21 +141,24 @@ LatestRelease releaseFromReply(int status, String body) {
   final tag = json['tag_name'];
   final numbers = tag is String ? parseVersion(tag) : null;
   if (numbers == null) return bad;
-  return LatestRelease(numbers.join('.'), apkSha256: _apkSha256(json));
+  final apk = _apkAsset(json);
+  final digest = apk?['digest'];
+  final hex = digest is String
+      ? RegExp(r'^sha256:([0-9a-fA-F]{64})$').firstMatch(digest)?.group(1)
+      : null;
+  return LatestRelease(
+    numbers.join('.'),
+    apkSha256: hex?.toLowerCase(),
+    hasApk: apk != null,
+  );
 }
 
-/// The digest GitHub gives [release]'s APK, or null if it gives none or one
-/// that is not SHA-256.
-String? _apkSha256(Map<String, Object?> release) {
+/// [release]'s asset named `LatestRelease.apkName`, or null if it has none.
+Map<Object?, Object?>? _apkAsset(Map<String, Object?> release) {
   final assets = release['assets'];
   if (assets is! List) return null;
   for (final asset in assets) {
-    if (asset is! Map || asset['name'] != LatestRelease.apkName) continue;
-    final digest = asset['digest'];
-    final hex = digest is String
-        ? RegExp(r'^sha256:([0-9a-fA-F]{64})$').firstMatch(digest)?.group(1)
-        : null;
-    return hex?.toLowerCase();
+    if (asset is Map && asset['name'] == LatestRelease.apkName) return asset;
   }
   return null;
 }

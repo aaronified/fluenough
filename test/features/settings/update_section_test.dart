@@ -216,9 +216,10 @@ void main() {
     await _tap(tester, find.text(l10n.settingsUpdateCheck));
     await _tap(tester, find.text(l10n.settingsUpdateDownload));
     expect(find.text(l10n.settingsUpdateInstalling(_newer)), findsOneWidget);
+    expect(fakes.engine.checks, 2, reason: 'Download checks first');
 
     await _tap(tester, find.text(l10n.commonRetry));
-    expect(fakes.engine.checks, 2);
+    expect(fakes.engine.checks, 3);
     expect(fakes.installer.asked, hasLength(2));
     expect(find.text(l10n.settingsUpdateInstalling(_newer)), findsOneWidget);
   });
@@ -300,6 +301,51 @@ void main() {
     expect(find.text(l10n.settingsUpdatePageCopied), findsOneWidget);
   });
 
+  testWidgets('Download after a restart checks first, and passes GitHub\'s '
+      'checksum', (tester) async {
+    usePhone(tester);
+    final sha = 'ef' * 32;
+    final engine = FixedReleaseCheck(LatestRelease(_newer, apkSha256: sha));
+    final installer = FixedApkInstaller(const <InstallEvent>[
+      InstallEvent.installing(),
+    ]);
+    final state = AppState.test(releases: engine, installer: installer);
+    // The dot from before this launch; no check has run since.
+    state.settings.latestRelease = _newer;
+    await pumpScreen(tester, const SettingsPage(), state: state);
+    final l10n = l10nOf(tester);
+    await _tap(tester, find.text(l10n.settingsUpdateDownload));
+    expect(engine.checks, 1);
+    expect(installer.asked.single.sha256, sha);
+    expect(find.text(l10n.settingsUpdateInstalling(_newer)), findsOneWidget);
+  });
+
+  testWidgets('Cancel stops a download that never ends, and offers it again', (
+    tester,
+  ) async {
+    final fakes = await _pump(
+      tester,
+      LatestRelease(_newer),
+      events: const <InstallEvent>[
+        InstallEvent.downloading(30),
+        InstallEvent.installing(),
+      ],
+      // Never completes.
+      installGate: Completer<void>(),
+    );
+    final l10n = l10nOf(tester);
+    await _tap(tester, find.text(l10n.settingsUpdateCheck));
+    await _tap(tester, find.text(l10n.settingsUpdateDownload));
+    expect(find.text(l10n.settingsUpdatePercent(30)), findsOneWidget);
+
+    await _tap(tester, find.text(l10n.commonCancel));
+    expect(fakes.installer.cancels, 1);
+    expect(find.text(l10n.settingsUpdateAvailable(_newer)), findsOneWidget);
+    expect(find.text(l10n.settingsUpdateDownload), findsOneWidget);
+    expect(find.byType(LinearProgressIndicator), findsNothing);
+    expect(find.text(l10n.settingsUpdateCancelled), findsNothing);
+  });
+
   testWidgets('a version found before this launch is offered straight away', (
     tester,
   ) async {
@@ -366,8 +412,8 @@ void main() {
     expect(settings.autoUpdateCheck, isFalse);
   });
 
-  testWidgets("the row's text is a live region, but for a download's "
-      'percent, and its buttons are their own', (tester) async {
+  testWidgets("the row's text is a live region, its buttons are their own, "
+      'and a download is announced once, as it starts', (tester) async {
     final semantics = tester.ensureSemantics();
     final installGate = Completer<void>();
     await _pump(
@@ -375,6 +421,7 @@ void main() {
       LatestRelease(_newer),
       events: const <InstallEvent>[
         InstallEvent.downloading(30),
+        InstallEvent.downloading(80),
         InstallEvent.installing(),
       ],
       installGate: installGate,
@@ -420,7 +467,9 @@ void main() {
       isNot(tester.getSemantics(text).id),
     );
 
-    // Downloading: read when reached, not at every percent.
+    // Downloading: the row is not a live region, so the percent is not read
+    // out as it changes. Its start is announced, once.
+    tester.takeAnnouncements();
     await _tap(tester, download);
     expect(
       tester.getSemantics(find.text(l10n.settingsUpdateDownloading(_newer))),
@@ -431,8 +480,13 @@ void main() {
         isLiveRegion: false,
       ),
     );
+    expect(tester.takeAnnouncements(), <Matcher>[
+      isAccessibilityAnnouncement(l10n.settingsUpdateDownloading(_newer)),
+    ]);
     installGate.complete();
     await tester.pumpAndSettle();
+    expect(find.text(l10n.settingsUpdatePercent(80)), findsNothing);
+    expect(tester.takeAnnouncements(), isEmpty, reason: 'no more percents');
     expect(
       tester.getSemantics(find.text(l10n.settingsUpdateInstalling(_newer))),
       isSemantics(isLiveRegion: true),
