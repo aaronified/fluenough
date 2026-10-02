@@ -184,7 +184,7 @@ is accepted (#144).
 
 ```yaml
       forms:
-        "আমি / আমরা": ["এলাম", "আসলাম"]   # West Bengal, Bangladesh
+        "আমি / আমরা": ["এলাম", "আসলাম"]   # two forms, both accepted
 ```
 
 ### Entry keys
