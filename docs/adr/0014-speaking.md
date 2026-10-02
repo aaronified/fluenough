@@ -36,11 +36,14 @@ The maintainer decided, on 2 October 2026:
 - **On the device first.** A language the recogniser lists, or any
   language when it lists none, is listened for on the device. Android 13
   and later list only the on-device languages, so one they leave out may
-  still be recognised online. When it is unlisted, or a listen finds the
-  device cannot recognise it, the drill asks the learner, for that
-  language, whether to recognise it online, saying that what they say
-  would leave the phone. The answer is a setting (`speech_online`). Nothing
-  goes online otherwise. What listens find, that a language is not on the
+  still be recognised online. An unlisted language is not drilled until
+  the learner allows it online, on the Voices page, which a deck's
+  Speaking row opens. When a listen finds that a listed language cannot be
+  recognised on the device, the drill asks the learner, for that language,
+  whether to recognise it online, saying that what they say would leave
+  the phone; "Not now" skips its speaking cards for the rest of the
+  session. The answer is a setting (`speech_online`). Nothing goes online
+  otherwise. What listens find, that a language is not on the
   device or not supported online either, is kept (`speech_not_on_device`,
   `speech_unsupported`), so a restart does not cost a spoken word to find
   it out again. Check again on the Voices page forgets it.

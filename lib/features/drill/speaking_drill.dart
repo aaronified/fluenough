@@ -18,7 +18,8 @@ import 'drill_session.dart';
 /// Nothing heard, or a recogniser that failed, records nothing and asks
 /// again, or offers to skip the card when saying it again cannot help. A
 /// language the phone cannot recognise by itself asks before going online,
-/// for that language from then on, or skips the card unrecorded.
+/// for that language from then on, or not now, which skips its speaking
+/// cards for the rest of the session unrecorded.
 ///
 /// Build one per card (key it by the card's position).
 class SpeakingDrill extends StatelessWidget {
@@ -188,7 +189,7 @@ class SpeakingDrill extends StatelessWidget {
         const SizedBox(height: 8),
         OutlinedButton(
           onPressed: session.skipUnheard,
-          child: Text(l10n.drillSkipCard, textAlign: TextAlign.center),
+          child: Text(l10n.drillOnlineNotNow, textAlign: TextAlign.center),
         ),
       ],
     );
