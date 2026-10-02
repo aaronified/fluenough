@@ -123,8 +123,8 @@ void main() {
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['hi'],
       placedDecks: const <String>{
-        'hi-en-first-words',
-        'hi-en-grammar-sentences',
+        'hi-en-script-vowels',
+        'hi-en-script-consonants',
       },
     );
     await pumpToday(tester, state: AppState.test(settings: settings));
@@ -133,9 +133,9 @@ void main() {
         tile.entry.id,
     ];
     expect(shown, <String>[
-      'hi-en-questions',
-      'hi-en-grammar-questions',
-      'hi-en-addressing',
+      'hi-en-script-vowel-signs',
+      'hi-en-script-conjuncts',
+      'hi-en-sound-differences',
     ]);
   });
 
