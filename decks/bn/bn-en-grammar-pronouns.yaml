@@ -5,14 +5,14 @@ kind: grammar
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "I, you, he and she, with my and your, and me and you as objects."
+description: "I, you, he and she, here, over there and not present, with my and your, and me and you as objects."
 tags: [beginner, grammar]
 pattern:
   name: "Personal pronouns"
   slot_name: "form"
   slots: ["possessive: my, your …", "object: me, to me …"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Bengali has three words for 'you': আপনি (respectful), তুমি (familiar) and তুই (intimate). সে and তিনি are he or she; তিনি is respectful. A possessive never changes for the thing owned: আমার বই, আমার বাড়ি. In the plural, the object is usually the same as the possessive: আমাদের."
+  notes: "Bengali has three words for 'you': আপনি (respectful), তুমি (familiar) and তুই (intimate). 'He or she' depends on where the person is: এ for someone here, ও for someone over there, সে for someone not present. Their respectful forms are ইনি, উনি and তিনি, and their plurals এরা, ওরা and তারা. A possessive never changes for the thing owned: আমার বই, আমার বাড়ি. In the plural, the object is usually the same as the possessive: আমাদের, or with -কে, আমাদেরকে. In speech এঁর and ওঁর are often এনার and ওনার: ওনার বাড়ি, and এঁকে and ওঁকে are এনাকে and ওনাকে; the drill accepts both."
   entries:
     - lemma: "আমি"
       key: ami
@@ -64,7 +64,61 @@ pattern:
         "object: me, to me …": "তোমাদের"
     - lemma: "ওরা"
       key: ora
-      gloss: "they"
+      gloss: "they, over there"
       forms:
         "possessive: my, your …": "ওদের"
         "object: me, to me …": "ওদের"
+    - lemma: "এ"
+      key: e
+      gloss: "he or she, here, familiar"
+      forms:
+        "possessive: my, your …": "এর"
+        "object: me, to me …": "একে"
+    - lemma: "ও"
+      key: o
+      gloss: "he or she, over there, familiar"
+      forms:
+        "possessive: my, your …": "ওর"
+        "object: me, to me …": "ওকে"
+    - lemma: "ইনি"
+      key: ini
+      gloss: "he or she, here, respectful"
+      forms:
+        "possessive: my, your …": ["এঁর", "এনার"]
+        "object: me, to me …": ["এঁকে", "এনাকে"]
+    - lemma: "উনি"
+      key: uni
+      gloss: "he or she, over there, respectful"
+      forms:
+        "possessive: my, your …": ["ওঁর", "ওনার"]
+        "object: me, to me …": ["ওঁকে", "ওনাকে"]
+    - lemma: "তোরা"
+      key: tora
+      gloss: "you all, intimate"
+      forms:
+        "possessive: my, your …": "তোদের"
+        "object: me, to me …": "তোদের"
+    - lemma: "আপনারা"
+      key: apnara
+      gloss: "you all, respectful"
+      forms:
+        "possessive: my, your …": "আপনাদের"
+        "object: me, to me …": "আপনাদের"
+    - lemma: "এরা"
+      key: era
+      gloss: "they, here"
+      forms:
+        "possessive: my, your …": "এদের"
+        "object: me, to me …": "এদের"
+    - lemma: "তারা"
+      key: tara
+      gloss: "they, not present"
+      forms:
+        "possessive: my, your …": "তাদের"
+        "object: me, to me …": "তাদের"
+    - lemma: "তাঁরা"
+      key: tanra
+      gloss: "they, respectful"
+      forms:
+        "possessive: my, your …": "তাঁদের"
+        "object: me, to me …": "তাঁদের"

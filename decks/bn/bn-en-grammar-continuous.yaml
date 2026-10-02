@@ -10,9 +10,9 @@ tags: [beginner, grammar]
 pattern:
   name: "Present continuous"
   slot_name: "person and respect"
-  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / ওরা", "তিনি / তাঁরা"]
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ছি, -ছিস, -ছ, -ছেন, -ছে; a stem ending in a vowel takes -চ্ছ-: যাচ্ছি. করছ is also written করছো."
+  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ছি, -ছিস, -ছো, -ছেন, -ছে; a stem ending in a vowel takes -চ্ছ-: যাচ্ছি. করছো is also written করছ, and both are accepted."
   entries:
     - lemma: "করা"
       key: kora
@@ -20,9 +20,9 @@ pattern:
       forms:
         "আমি / আমরা": "করছি"
         "তুই / তোরা": "করছিস"
-        "তুমি / তোমরা": "করছ"
+        "তুমি / তোমরা": ["করছো", "করছ"]
         "আপনি / আপনারা": "করছেন"
-        "সে / ওরা": "করছে"
+        "সে / তারা": "করছে"
         "তিনি / তাঁরা": "করছেন"
     - lemma: "যাওয়া"
       key: jaoa
@@ -30,9 +30,9 @@ pattern:
       forms:
         "আমি / আমরা": "যাচ্ছি"
         "তুই / তোরা": "যাচ্ছিস"
-        "তুমি / তোমরা": "যাচ্ছ"
+        "তুমি / তোমরা": ["যাচ্ছো", "যাচ্ছ"]
         "আপনি / আপনারা": "যাচ্ছেন"
-        "সে / ওরা": "যাচ্ছে"
+        "সে / তারা": "যাচ্ছে"
         "তিনি / তাঁরা": "যাচ্ছেন"
     - lemma: "খাওয়া"
       key: khaoa
@@ -40,9 +40,9 @@ pattern:
       forms:
         "আমি / আমরা": "খাচ্ছি"
         "তুই / তোরা": "খাচ্ছিস"
-        "তুমি / তোমরা": "খাচ্ছ"
+        "তুমি / তোমরা": ["খাচ্ছো", "খাচ্ছ"]
         "আপনি / আপনারা": "খাচ্ছেন"
-        "সে / ওরা": "খাচ্ছে"
+        "সে / তারা": "খাচ্ছে"
         "তিনি / তাঁরা": "খাচ্ছেন"
     - lemma: "বলা"
       key: bola
@@ -50,7 +50,7 @@ pattern:
       forms:
         "আমি / আমরা": "বলছি"
         "তুই / তোরা": "বলছিস"
-        "তুমি / তোমরা": "বলছ"
+        "তুমি / তোমরা": ["বলছো", "বলছ"]
         "আপনি / আপনারা": "বলছেন"
-        "সে / ওরা": "বলছে"
+        "সে / তারা": "বলছে"
         "তিনি / তাঁরা": "বলছেন"

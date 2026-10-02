@@ -6,7 +6,7 @@ theme: numbers-big
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "The tens, a hundred, a thousand, lakh and crore, and the halves every market uses."
+description: "Every number from 21 to 99, the hundreds, a thousand, lakh and crore, and the halves every market uses."
 tags: [beginner]
 cards:
   - id: bn-0222
@@ -15,7 +15,7 @@ cards:
     reading: "trish"
     alt_target: ["তিরিশ"]
     pos: "other"
-    notes: "Every number up to a hundred has its own word: 26 is ছাব্বিশ (chhabbish), not 'twenty six'. This deck teaches the tens. In speech 30 is often তিরিশ (tirish)."
+    notes: "Every number up to a hundred has its own word: 26 is ছাব্বিশ (chhabbish), not 'twenty-six'. In speech 30 is often তিরিশ (tirish)."
   - id: bn-0223
     target: "চল্লিশ"
     native: "40, forty"
@@ -31,6 +31,7 @@ cards:
     native: "60, sixty"
     reading: "shat"
     pos: "other"
+    notes: "Not সাত (shat, 7): ষাট ends in the retroflex ট, with the tongue curled back, and is 60."
   - id: bn-0226
     target: "সত্তর"
     native: "70, seventy"
@@ -50,21 +51,22 @@ cards:
     target: "একশো"
     native: "100, a hundred"
     reading: "eksho"
+    alt_target: ["একশ"]
     pos: "other"
-    notes: "Hundreds join into one word: দুশো (dusho) is 200, তিনশো 300, পাঁচশো 500."
+    notes: "Also written একশ. Hundreds join into one word: দুশো (dusho) is 200, তিনশো 300, পাঁচশো 500."
   - id: bn-0230
     target: "হাজার"
     native: "1,000, a thousand"
     reading: "hajar"
     pos: "other"
-    notes: "দু হাজার কুড়ি (du hajar kuri) is 2020."
+    notes: "দু হাজার কুড়ি (du hajar kuri) is 2020, also দুই হাজার বিশ (dui hajar bish)."
   - id: bn-0231
     target: "লাখ"
     native: "1,00,000, a lakh (a hundred thousand)"
     reading: "lakh"
     alt_target: ["লক্ষ"]
     pos: "other"
-    notes: "Indian numbering counts in lakhs and crores, and places its commas to match: 1,00,000 is one lakh. Formally লক্ষ (lokkho)."
+    notes: "South Asian numbering counts in lakhs and crores, and places its commas to match: 1,00,000 is one lakh. Formally লক্ষ (lokkho)."
   - id: bn-0232
     target: "কোটি"
     native: "1,00,00,000, a crore (ten million)"
@@ -87,42 +89,421 @@ cards:
     target: "দুশো"
     native: "200, two hundred"
     reading: "dusho"
+    alt_target: ["দুশ", "দুইশো", "দুইশ"]
     pos: "other"
-    notes: "Bengali joins the hundreds into one word: দুশো, not দুই শো."
+    notes: "The hundreds join into one word: দুশো (dusho), also দুইশ (duisho), but never two words."
   - id: bn-0236
     target: "তিনশো"
     native: "300, three hundred"
     reading: "tinsho"
+    alt_target: ["তিনশ"]
     pos: "other"
   - id: bn-0237
     target: "চারশো"
     native: "400, four hundred"
     reading: "charsho"
+    alt_target: ["চারশ"]
     pos: "other"
   - id: bn-0238
     target: "পাঁচশো"
     native: "500, five hundred"
     reading: "panchsho"
+    alt_target: ["পাঁচশ"]
     pos: "other"
   - id: bn-0239
     target: "ছশো"
     native: "600, six hundred"
     reading: "chhosho"
-    alt_target: ["ছয়শো"]
+    alt_target: ["ছয়শো", "ছয়শ", "ছশ"]
     pos: "other"
   - id: bn-0240
     target: "সাতশো"
     native: "700, seven hundred"
     reading: "shatsho"
+    alt_target: ["সাতশ"]
     pos: "other"
   - id: bn-0241
     target: "আটশো"
     native: "800, eight hundred"
     reading: "atsho"
+    alt_target: ["আটশ"]
     pos: "other"
   - id: bn-0242
     target: "নশো"
     native: "900, nine hundred"
     reading: "nosho"
-    alt_target: ["নয়শো"]
+    alt_target: ["নয়শো", "নয়শ", "নশ"]
+    pos: "other"
+  - id: bn-0473
+    target: "একুশ"
+    native: "21, twenty-one"
+    reading: "ekush"
+    pos: "other"
+    notes: "Each number from 21 to 99 is one word, with the unit blended into the ten, often irregularly; learn them as words."
+  - id: bn-0474
+    target: "বাইশ"
+    native: "22, twenty-two"
+    reading: "baish"
+    pos: "other"
+  - id: bn-0475
+    target: "তেইশ"
+    native: "23, twenty-three"
+    reading: "teish"
+    pos: "other"
+  - id: bn-0476
+    target: "চব্বিশ"
+    native: "24, twenty-four"
+    reading: "chobbish"
+    pos: "other"
+  - id: bn-0477
+    target: "পঁচিশ"
+    native: "25, twenty-five"
+    reading: "ponchish"
+    pos: "other"
+  - id: bn-0478
+    target: "ছাব্বিশ"
+    native: "26, twenty-six"
+    reading: "chhabbish"
+    pos: "other"
+  - id: bn-0479
+    target: "সাতাশ"
+    native: "27, twenty-seven"
+    reading: "shatash"
+    pos: "other"
+  - id: bn-0480
+    target: "আঠাশ"
+    native: "28, twenty-eight"
+    reading: "athash"
+    alt_target: ["আটাশ"]
+    pos: "other"
+  - id: bn-0481
+    target: "ঊনত্রিশ"
+    native: "29, twenty-nine"
+    reading: "untrish"
+    alt_target: ["উনত্রিশ"]
+    pos: "other"
+    notes: "ঊন- means 'one less': 29 is 'one less than thirty', and so for 39, 49 … 89. Also written উন-. In everyday speech its o is dropped, untrish; unotrish is more formal. Before the vowel of আশি it stays: ঊনআশি is unoashi."
+  - id: bn-0482
+    target: "একত্রিশ"
+    native: "31, thirty-one"
+    reading: "ektrish"
+    pos: "other"
+  - id: bn-0483
+    target: "বত্রিশ"
+    native: "32, thirty-two"
+    reading: "botrish"
+    pos: "other"
+  - id: bn-0484
+    target: "তেত্রিশ"
+    native: "33, thirty-three"
+    reading: "tetrish"
+    pos: "other"
+  - id: bn-0485
+    target: "চৌত্রিশ"
+    native: "34, thirty-four"
+    reading: "choutrish"
+    pos: "other"
+  - id: bn-0486
+    target: "পঁয়ত্রিশ"
+    native: "35, thirty-five"
+    reading: "poyntrish"
+    pos: "other"
+  - id: bn-0487
+    target: "ছত্রিশ"
+    native: "36, thirty-six"
+    reading: "chhotrish"
+    pos: "other"
+  - id: bn-0488
+    target: "সাঁইত্রিশ"
+    native: "37, thirty-seven"
+    reading: "shaintrish"
+    pos: "other"
+  - id: bn-0489
+    target: "আটত্রিশ"
+    native: "38, thirty-eight"
+    reading: "attrish"
+    pos: "other"
+  - id: bn-0490
+    target: "ঊনচল্লিশ"
+    native: "39, thirty-nine"
+    reading: "unchollish"
+    alt_target: ["উনচল্লিশ"]
+    pos: "other"
+  - id: bn-0491
+    target: "একচল্লিশ"
+    native: "41, forty-one"
+    reading: "ekchollish"
+    pos: "other"
+  - id: bn-0492
+    target: "বিয়াল্লিশ"
+    native: "42, forty-two"
+    reading: "biyallish"
+    alt_target: ["বেয়াল্লিশ"]
+    pos: "other"
+  - id: bn-0493
+    target: "তেতাল্লিশ"
+    native: "43, forty-three"
+    reading: "tetallish"
+    pos: "other"
+  - id: bn-0494
+    target: "চুয়াল্লিশ"
+    native: "44, forty-four"
+    reading: "chuyallish"
+    pos: "other"
+  - id: bn-0495
+    target: "পঁয়তাল্লিশ"
+    native: "45, forty-five"
+    reading: "poyntallish"
+    pos: "other"
+  - id: bn-0496
+    target: "ছেচল্লিশ"
+    native: "46, forty-six"
+    reading: "chhechollish"
+    pos: "other"
+  - id: bn-0497
+    target: "সাতচল্লিশ"
+    native: "47, forty-seven"
+    reading: "shatchollish"
+    pos: "other"
+  - id: bn-0498
+    target: "আটচল্লিশ"
+    native: "48, forty-eight"
+    reading: "atchollish"
+    pos: "other"
+  - id: bn-0499
+    target: "ঊনপঞ্চাশ"
+    native: "49, forty-nine"
+    reading: "unponchash"
+    alt_target: ["উনপঞ্চাশ"]
+    pos: "other"
+  - id: bn-0500
+    target: "একান্ন"
+    native: "51, fifty-one"
+    reading: "ekanno"
+    pos: "other"
+  - id: bn-0501
+    target: "বাহান্ন"
+    native: "52, fifty-two"
+    reading: "bahanno"
+    pos: "other"
+  - id: bn-0502
+    target: "তিপ্পান্ন"
+    native: "53, fifty-three"
+    reading: "tippanno"
+    pos: "other"
+  - id: bn-0503
+    target: "চুয়ান্ন"
+    native: "54, fifty-four"
+    reading: "chuyanno"
+    pos: "other"
+  - id: bn-0504
+    target: "পঞ্চান্ন"
+    native: "55, fifty-five"
+    reading: "ponchanno"
+    pos: "other"
+  - id: bn-0505
+    target: "ছাপ্পান্ন"
+    native: "56, fifty-six"
+    reading: "chhappanno"
+    pos: "other"
+  - id: bn-0506
+    target: "সাতান্ন"
+    native: "57, fifty-seven"
+    reading: "shatanno"
+    pos: "other"
+  - id: bn-0507
+    target: "আটান্ন"
+    native: "58, fifty-eight"
+    reading: "atanno"
+    pos: "other"
+  - id: bn-0508
+    target: "ঊনষাট"
+    native: "59, fifty-nine"
+    reading: "unshat"
+    alt_target: ["উনষাট"]
+    pos: "other"
+  - id: bn-0509
+    target: "একষট্টি"
+    native: "61, sixty-one"
+    reading: "ekshotti"
+    pos: "other"
+  - id: bn-0510
+    target: "বাষট্টি"
+    native: "62, sixty-two"
+    reading: "bashotti"
+    pos: "other"
+  - id: bn-0511
+    target: "তেষট্টি"
+    native: "63, sixty-three"
+    reading: "teshotti"
+    pos: "other"
+  - id: bn-0512
+    target: "চৌষট্টি"
+    native: "64, sixty-four"
+    reading: "choushotti"
+    pos: "other"
+  - id: bn-0513
+    target: "পঁয়ষট্টি"
+    native: "65, sixty-five"
+    reading: "poynshotti"
+    pos: "other"
+  - id: bn-0514
+    target: "ছেষট্টি"
+    native: "66, sixty-six"
+    reading: "chheshotti"
+    pos: "other"
+  - id: bn-0515
+    target: "সাতষট্টি"
+    native: "67, sixty-seven"
+    reading: "shatshotti"
+    pos: "other"
+  - id: bn-0516
+    target: "আটষট্টি"
+    native: "68, sixty-eight"
+    reading: "atshotti"
+    pos: "other"
+  - id: bn-0517
+    target: "ঊনসত্তর"
+    native: "69, sixty-nine"
+    reading: "unshottor"
+    alt_target: ["উনসত্তর"]
+    pos: "other"
+  - id: bn-0518
+    target: "একাত্তর"
+    native: "71, seventy-one"
+    reading: "ekattor"
+    pos: "other"
+  - id: bn-0519
+    target: "বাহাত্তর"
+    native: "72, seventy-two"
+    reading: "bahattor"
+    pos: "other"
+  - id: bn-0520
+    target: "তিয়াত্তর"
+    native: "73, seventy-three"
+    reading: "tiyattor"
+    pos: "other"
+  - id: bn-0521
+    target: "চুয়াত্তর"
+    native: "74, seventy-four"
+    reading: "chuyattor"
+    pos: "other"
+  - id: bn-0522
+    target: "পঁচাত্তর"
+    native: "75, seventy-five"
+    reading: "ponchattor"
+    pos: "other"
+  - id: bn-0523
+    target: "ছিয়াত্তর"
+    native: "76, seventy-six"
+    reading: "chhiyattor"
+    pos: "other"
+  - id: bn-0524
+    target: "সাতাত্তর"
+    native: "77, seventy-seven"
+    reading: "shatattor"
+    pos: "other"
+  - id: bn-0525
+    target: "আটাত্তর"
+    native: "78, seventy-eight"
+    reading: "atattor"
+    pos: "other"
+  - id: bn-0526
+    target: "ঊনআশি"
+    native: "79, seventy-nine"
+    reading: "unoashi"
+    alt_target: ["উনআশি"]
+    pos: "other"
+  - id: bn-0527
+    target: "একাশি"
+    native: "81, eighty-one"
+    reading: "ekashi"
+    pos: "other"
+  - id: bn-0528
+    target: "বিরাশি"
+    native: "82, eighty-two"
+    reading: "birashi"
+    pos: "other"
+  - id: bn-0529
+    target: "তিরাশি"
+    native: "83, eighty-three"
+    reading: "tirashi"
+    pos: "other"
+  - id: bn-0530
+    target: "চুরাশি"
+    native: "84, eighty-four"
+    reading: "churashi"
+    pos: "other"
+  - id: bn-0531
+    target: "পঁচাশি"
+    native: "85, eighty-five"
+    reading: "ponchashi"
+    pos: "other"
+  - id: bn-0532
+    target: "ছিয়াশি"
+    native: "86, eighty-six"
+    reading: "chhiyashi"
+    pos: "other"
+  - id: bn-0533
+    target: "সাতাশি"
+    native: "87, eighty-seven"
+    reading: "shatashi"
+    pos: "other"
+  - id: bn-0534
+    target: "অষ্টাশি"
+    native: "88, eighty-eight"
+    reading: "oshtashi"
+    alt_target: ["আটাশি"]
+    pos: "other"
+    notes: "Also আটাশি (atashi), built like the other eights."
+  - id: bn-0535
+    target: "ঊননব্বই"
+    native: "89, eighty-nine"
+    reading: "unnobboi"
+    alt_target: ["উননব্বই"]
+    pos: "other"
+  - id: bn-0536
+    target: "একানব্বই"
+    native: "91, ninety-one"
+    reading: "ekanobboi"
+    pos: "other"
+  - id: bn-0537
+    target: "বিরানব্বই"
+    native: "92, ninety-two"
+    reading: "biranobboi"
+    pos: "other"
+  - id: bn-0538
+    target: "তিরানব্বই"
+    native: "93, ninety-three"
+    reading: "tiranobboi"
+    pos: "other"
+  - id: bn-0539
+    target: "চুরানব্বই"
+    native: "94, ninety-four"
+    reading: "churanobboi"
+    pos: "other"
+  - id: bn-0540
+    target: "পঁচানব্বই"
+    native: "95, ninety-five"
+    reading: "ponchanobboi"
+    pos: "other"
+  - id: bn-0541
+    target: "ছিয়ানব্বই"
+    native: "96, ninety-six"
+    reading: "chhiyanobboi"
+    pos: "other"
+  - id: bn-0542
+    target: "সাতানব্বই"
+    native: "97, ninety-seven"
+    reading: "shatanobboi"
+    pos: "other"
+  - id: bn-0543
+    target: "আটানব্বই"
+    native: "98, ninety-eight"
+    reading: "atanobboi"
+    pos: "other"
+  - id: bn-0544
+    target: "নিরানব্বই"
+    native: "99, ninety-nine"
+    reading: "niranobboi"
     pos: "other"

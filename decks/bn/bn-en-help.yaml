@@ -6,7 +6,7 @@ theme: help
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Asking for help, doctors and medicine, and saying you are lost."
+description: "Asking for help, saying you feel ill, doctors and medicine, and saying you are lost."
 tags: [beginner]
 cards:
   - id: bn-0371
@@ -29,15 +29,12 @@ cards:
   - id: bn-0374
     target: "দাঁড়ান!"
     native: "Stop! Wait, please!"
-    reading: "daran!"
+    reading: "danran!"
     pos: "phrase"
     tags: ["polite"]
-  - id: bn-0375
-    target: "পুলিশ"
+  - ref: bn-0375
     native: "police"
-    reading: "pulish"
-    pos: "noun"
-    notes: "The emergency number in India is 112."
+    notes: "The emergency number is 112 in India and 999 in Bangladesh."
   - id: bn-0376
     target: "ডাক্তার"
     native: "doctor"
@@ -76,3 +73,55 @@ cards:
     reading: "bathrum kothay?"
     pos: "phrase"
     notes: "Signs say শৌচাগার (shouchagar)."
+  - id: bn-0726
+    target: "আমার শরীর খারাপ।"
+    native: "I'm not well."
+    reading: "amar shorir kharap."
+    pos: "phrase"
+    notes: "Literally 'my body is bad'."
+  - id: bn-0727
+    target: "জ্বর"
+    native: "fever"
+    reading: "jor"
+    pos: "noun"
+    notes: "The ব under জ is not said. আমার জ্বর হয়েছে (amar jor hoyechhe), I have a fever."
+  - id: bn-0728
+    target: "মাথা"
+    native: "head"
+    reading: "matha"
+    pos: "noun"
+  - id: bn-0729
+    target: "পেট"
+    native: "stomach"
+    reading: "pet"
+    pos: "noun"
+  - id: bn-0730
+    target: "হাত"
+    native: "hand; arm"
+    reading: "hat"
+    pos: "noun"
+  - id: bn-0731
+    target: "পা"
+    native: "foot; leg"
+    reading: "pa"
+    pos: "noun"
+  - id: bn-0732
+    target: "চোখ"
+    native: "eye"
+    reading: "chokh"
+    pos: "noun"
+  - id: bn-0733
+    target: "দাঁত"
+    native: "tooth"
+    reading: "dant"
+    pos: "noun"
+  - id: bn-0734
+    target: "গলা"
+    native: "throat; neck"
+    reading: "gola"
+    pos: "noun"
+  - id: bn-0735
+    target: "আমার পেট ব্যথা করছে।"
+    native: "I have a stomach ache."
+    reading: "amar pet byatha korchhe."
+    pos: "phrase"

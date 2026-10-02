@@ -5,7 +5,7 @@ kind: vocab
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Pairs of everyday words that differ in one sound: a breath after a consonant, the tongue on the teeth or curled back, the vowel every consonant carries against a, a nasal vowel, and the flapped r."
+description: "Pairs of everyday words that differ in one sound: a breath after a consonant, the tongue on the teeth or curled back, the vowel every consonant carries against a, a nasal vowel, and the flapped r. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [beginner, unreviewed]
 cards:
   - id: bn-0102
@@ -21,15 +21,14 @@ cards:
     tags: ["aspiration"]
     notes: "Aspiration: খরা (khora, drought) is করা (kora, to do) with a puff of breath after the k."
   - ref: bn-0316
-    native: "time; tomorrow; yesterday"
     tags: ["aspiration"]
-    notes: "Aspiration: খাল (khal, canal) is কাল (kal, time) with a breath after the k."
+    notes: "Aspiration: খাল (khal, canal) is কাল (kal, tomorrow) with a breath after the k."
   - id: bn-0104
     target: "খাল"
     native: "canal"
     reading: "khal"
     tags: ["aspiration"]
-    notes: "Aspiration: খাল (khal, canal) is কাল (kal, time) with a breath after the k."
+    notes: "Aspiration: খাল (khal, canal) is কাল (kal, tomorrow) with a breath after the k."
   - id: bn-0105
     target: "বাত"
     native: "rheumatism"
@@ -67,13 +66,13 @@ cards:
     native: "call; post (mail)"
     reading: "dak"
     tags: ["aspiration"]
-    notes: "Aspiration: ঢাক (dhak, a big drum) is ডাক (dak, call; post) with a breath after the d."
+    notes: "Aspiration: ঢাক (dhak, a big drum) is like ডাক (dak, call; post), but with the tongue a little further back and a breath after the d."
   - id: bn-0110
     target: "ঢাক"
     native: "dhak (a big drum)"
     reading: "dhak"
     tags: ["aspiration"]
-    notes: "Aspiration: ঢাক (dhak, a big drum) is ডাক (dak, call; post) with a breath after the d."
+    notes: "Aspiration: ঢাক (dhak, a big drum) is like ডাক (dak, call; post), but with the tongue a little further back and a breath after the d."
   - id: bn-0111
     target: "দান"
     native: "gift; donation"
@@ -99,6 +98,7 @@ cards:
     target: "পর"
     native: "after; other"
     reading: "por"
+    alt_target: ["পরে"]
     tags: ["inherent-vowel"]
     notes: "The open o against a: পর (por, after; other) has the vowel every consonant carries; পার (par, the far bank; across) has আ, the 'a' of 'father'."
   - id: bn-0115
@@ -109,7 +109,7 @@ cards:
     notes: "The open o against a: পর (por, after; other) has the vowel every consonant carries; পার (par, the far bank; across) has আ, the 'a' of 'father'."
   - ref: bn-0350
     tags: ["inherent-vowel"]
-    notes: "The open o against a: জল (jol, water) has the vowel every consonant carries; জাল (jal, net) has আ, the 'a' of 'father'."
+    notes: "The open o against a: জল (jol, water) has the vowel every consonant carries; জাল (jal, net) has আ, the 'a' of 'father'. Also পানি (pani)."
   - id: bn-0116
     target: "জাল"
     native: "net"

@@ -1,0 +1,107 @@
+schema: 1
+id: bn-en-grammar-demonstratives
+name: "This, that and the one not here"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Bengali points three ways: এ- near you, ও- over there, সে- out of sight or already mentioned. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Pointing words"
+  slot_name: "where"
+  slots: ["near: এ-", "over there: ও-", "not here, or already mentioned: সে-"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "এ- is near you, ও- is over there, and সে- is out of sight or the one already talked about, though speakers don't keep strictly to near and far (Basic Bangla 2.4). For people, সে-'s other forms start with ত-: তারা, তার, তাকে. ইনি, উনি and তিনি are the respectful forms; their forms with ঁ are also said with ন, as in এনারা, ওনার, ওনাকে, and the drill accepts both. A thing takes -টা: এটা, and before a noun এই বইটা, this book. ওই is also written ঐ, and both are accepted."
+  entries:
+    - lemma: "he, she"
+      key: person
+      gloss: "a person"
+      forms:
+        "near: এ-": "এ"
+        "over there: ও-": "ও"
+        "not here, or already mentioned: সে-": "সে"
+    - lemma: "he, she, respectful"
+      key: person-respectful
+      gloss: "a person"
+      forms:
+        "near: এ-": "ইনি"
+        "over there: ও-": "উনি"
+        "not here, or already mentioned: সে-": "তিনি"
+    - lemma: "they"
+      key: people
+      gloss: "people"
+      forms:
+        "near: এ-": "এরা"
+        "over there: ও-": "ওরা"
+        "not here, or already mentioned: সে-": "তারা"
+    - lemma: "they, respectful"
+      key: people-respectful
+      gloss: "people"
+      forms:
+        "near: এ-": ["এঁরা", "এনারা"]
+        "over there: ও-": ["ওঁরা", "ওনারা"]
+        "not here, or already mentioned: সে-": "তাঁরা"
+    - lemma: "his, her"
+      key: possessive
+      gloss: "of a person"
+      forms:
+        "near: এ-": "এর"
+        "over there: ও-": "ওর"
+        "not here, or already mentioned: সে-": "তার"
+    - lemma: "his, her, respectful"
+      key: possessive-respectful
+      gloss: "of a person"
+      forms:
+        "near: এ-": ["এঁর", "এনার"]
+        "over there: ও-": ["ওঁর", "ওনার"]
+        "not here, or already mentioned: সে-": "তাঁর"
+    - lemma: "him, her"
+      key: object
+      gloss: "a person, as object"
+      forms:
+        "near: এ-": "একে"
+        "over there: ও-": "ওকে"
+        "not here, or already mentioned: সে-": "তাকে"
+    - lemma: "this one, that one"
+      key: thing
+      gloss: "a thing"
+      forms:
+        "near: এ-": "এটা"
+        "over there: ও-": "ওটা"
+        "not here, or already mentioned: সে-": "সেটা"
+    - lemma: "these, those"
+      key: things
+      gloss: "things"
+      forms:
+        "near: এ-": "এগুলো"
+        "over there: ও-": "ওগুলো"
+        "not here, or already mentioned: সে-": "সেগুলো"
+    - lemma: "this, that"
+      key: before-noun
+      gloss: "before a noun"
+      forms:
+        "near: এ-": "এই"
+        "over there: ও-": ["ওই", "ঐ"]
+        "not here, or already mentioned: সে-": "সেই"
+    - lemma: "here, there"
+      key: place
+      gloss: "a place"
+      forms:
+        "near: এ-": "এখানে"
+        "over there: ও-": "ওখানে"
+        "not here, or already mentioned: সে-": "সেখানে"
+    - lemma: "this way, that way"
+      key: way
+      gloss: "a direction"
+      forms:
+        "near: এ-": "এদিকে"
+        "over there: ও-": "ওদিকে"
+        "not here, or already mentioned: সে-": "সেদিকে"
+    - lemma: "like this, like that"
+      key: kind
+      gloss: "a kind"
+      forms:
+        "near: এ-": "এরকম"
+        "over there: ও-": "ওরকম"
+        "not here, or already mentioned: সে-": "সেরকম"

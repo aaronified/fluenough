@@ -1,0 +1,155 @@
+schema: 1
+id: bn-en-work
+name: "Work"
+kind: vocab
+theme: work
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Jobs, and how to say what you do and where you work. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: bn-0449
+    target: "চাকরি"
+    native: "job (employment)"
+    reading: "chakri"
+    pos: "noun"
+    notes: "আমি চাকরি করি (ami chakri kori), I have a job. কাজ (kaj) is work of any kind."
+  - ref: bn-0198
+  - id: bn-0450
+    target: "অফিস"
+    native: "office"
+    reading: "ophis"
+    pos: "noun"
+  - id: bn-0451
+    target: "শিক্ষক"
+    native: "teacher"
+    reading: "shikkhok"
+    pos: "noun"
+    notes: "A woman teacher is শিক্ষিকা (shikkhika). A few job words have a feminine like this; most, like ডাক্তার (daktar), do not."
+  - id: bn-0452
+    target: "দোকানদার"
+    native: "shopkeeper"
+    reading: "dokandar"
+    pos: "noun"
+    notes: "দোকান (dokan), shop, and -দার, the one who has it."
+  - id: bn-0453
+    target: "ড্রাইভার"
+    native: "driver"
+    reading: "draibhar"
+    alt_target: ["চালক"]
+    pos: "noun"
+    notes: "In writing also চালক (chalok)."
+  - id: bn-0454
+    target: "ইঞ্জিনিয়ার"
+    native: "engineer"
+    reading: "injiniyar"
+    pos: "noun"
+  - id: bn-0455
+    target: "উকিল"
+    native: "lawyer"
+    reading: "ukil"
+    alt_target: ["আইনজীবী"]
+    pos: "noun"
+    notes: "The formal word is আইনজীবী (ainjibi)."
+  - id: bn-0456
+    target: "নার্স"
+    native: "nurse"
+    reading: "nars"
+    pos: "noun"
+  - id: bn-0457
+    target: "কর্মচারী"
+    native: "employee; clerk"
+    reading: "kormochari"
+    pos: "noun"
+  - id: bn-0458
+    target: "মিস্ত্রি"
+    native: "mechanic; workman"
+    reading: "mistri"
+    pos: "noun"
+    notes: "Anyone who builds or mends: কাঠমিস্ত্রি (kathmistri) is a carpenter."
+  - id: bn-0459
+    target: "কৃষক"
+    native: "farmer"
+    reading: "krishok"
+    alt_target: ["চাষি"]
+    pos: "noun"
+    notes: "In everyday speech also চাষি (chashi)."
+  - id: bn-0460
+    target: "রাঁধুনি"
+    native: "cook"
+    reading: "randhuni"
+    pos: "noun"
+  - id: bn-0461
+    target: "লেখক"
+    native: "writer"
+    reading: "lekhok"
+    pos: "noun"
+    notes: "From লেখা (lekha), to write."
+  - id: bn-0462
+    target: "সাংবাদিক"
+    native: "journalist"
+    reading: "shangbadik"
+    pos: "noun"
+    notes: "From সংবাদ (shongbad), news."
+  - id: bn-0463
+    target: "ছুটি"
+    native: "day off; holiday; leave"
+    reading: "chhuti"
+    pos: "noun"
+    notes: "আজ আমার ছুটি (aj amar chhuti), I'm off today."
+  - id: bn-0464
+    target: "আপনি কী করেন?"
+    native: "What do you do (for a living)?"
+    reading: "apni ki koren?"
+    pos: "phrase"
+    notes: "কী (ki), with the long ই, is 'what'."
+  - id: bn-0465
+    target: "আমি একজন শিক্ষক।"
+    native: "I'm a teacher."
+    reading: "ami ekjon shikkhok."
+    alt_target: ["আমি শিক্ষক।"]
+    pos: "phrase"
+    notes: "একজন (ekjon), 'one person', is optional: আমি শিক্ষক is just as right. There is no 'am'."
+  - id: bn-0466
+    target: "আপনি কোথায় কাজ করেন?"
+    native: "Where do you work?"
+    reading: "apni kothay kaj koren?"
+    pos: "phrase"
+  - id: bn-0467
+    target: "আমি একটা অফিসে কাজ করি।"
+    native: "I work in an office."
+    reading: "ami ekta ophise kaj kori."
+    pos: "phrase"
+    notes: "The place takes -এ: অফিসে, in an office."
+  - id: bn-0468
+    target: "উনি ডাক্তার।"
+    native: "He is a doctor. / She is a doctor."
+    reading: "uni daktar."
+    pos: "phrase"
+    notes: "উনি (uni) is a respectful he or she for someone over there; ইনি (ini) for someone right here. No 'is'."
+  - ref: bn-0376
+  - id: bn-0375
+    target: "পুলিশ"
+    native: "police; police officer"
+    reading: "pulish"
+    pos: "noun"
+  - id: bn-0470
+    target: "ছাত্র"
+    native: "student"
+    reading: "chhatro"
+    alt_target: ["ছাত্রী"]
+    pos: "noun"
+    notes: "A woman student is ছাত্রী (chhatri)."
+  - id: bn-0471
+    target: "ব্যবসা"
+    native: "business"
+    reading: "byabsha"
+    pos: "noun"
+  - id: bn-0472
+    target: "বেতন"
+    native: "salary; pay"
+    reading: "beton"
+    alt_target: ["মাইনে"]
+    pos: "noun"
+    notes: "Also মাইনে (maine), in everyday speech."

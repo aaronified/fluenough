@@ -11,7 +11,7 @@ cards:
   - ref: bn-0124
     tags: []
     native: "at home; in the house"
-    notes: "-এ or -তে is 'in, at': ঘরে, in the room; কলকাতায়, in Kolkata."
+    notes: "-এ, -তে or -য় is 'in, at': ঘরে, in the room; বাড়িতে, at home; কলকাতায়, in Kolkata (-য় after আ)."
   - id: bn-0292
     target: "রামের বাড়ি"
     native: "Ram's house"
@@ -23,13 +23,13 @@ cards:
     native: "Give it to Ram, please."
     reading: "ramke din."
     pos: "phrase"
-    notes: "-কে marks the person something is given or said to."
+    notes: "-কে marks a person as the object: the one given or told something (রামকে দিন), or the one seen or known (আমি রামকে চিনি). Things usually take no ending."
   - id: bn-0294
     target: "থেকে"
     native: "from"
     reading: "theke"
     pos: "particle"
-    notes: "দিল্লি থেকে, from Delhi. কাল থেকে, since yesterday."
+    notes: "দিল্লি থেকে, from Delhi. কাল থেকে, since yesterday or from tomorrow: কাল is both, and the verb's tense tells you which."
   - id: bn-0295
     target: "দিয়ে"
     native: "with (using); by way of"
@@ -56,8 +56,9 @@ cards:
     target: "পরে"
     native: "after"
     reading: "pore"
+    alt_target: ["পর"]
     pos: "particle"
-    notes: "খাওয়ার পরে, after eating."
+    notes: "খাওয়ার পরে or খাওয়ার পর, after eating."
   - id: bn-0299
     target: "আগে"
     native: "before"
@@ -68,11 +69,69 @@ cards:
     target: "ওপরে"
     native: "on; above"
     reading: "opore"
+    alt_target: ["উপরে"]
     pos: "particle"
-    notes: "টেবিলের ওপরে, on the table."
+    notes: "টেবিলের ওপরে, on the table. Also written উপরে (upore)."
   - id: bn-0301
     target: "নিচে"
     native: "under; below"
     reading: "niche"
+    alt_target: ["নীচে"]
     pos: "particle"
-    notes: "টেবিলের নিচে, under the table."
+    notes: "টেবিলের নিচে, under the table. Also written নীচে."
+  - id: bn-0585
+    target: "ভিতরে"
+    native: "inside"
+    reading: "bhitore"
+    alt_target: ["ভেতরে"]
+    pos: "particle"
+    notes: "বাক্সের ভিতরে, inside the box. In speech often ভেতরে (bhetore)."
+  - id: bn-0586
+    target: "বাইরে"
+    native: "outside"
+    reading: "baire"
+    pos: "particle"
+    notes: "বাড়ির বাইরে, outside the house."
+  - id: bn-0587
+    target: "মধ্যে"
+    native: "in; within; among"
+    reading: "moddhe"
+    pos: "particle"
+    notes: "এক ঘণ্টার মধ্যে, within an hour."
+  - id: bn-0588
+    target: "চেয়ে"
+    native: "than"
+    reading: "cheye"
+    pos: "particle"
+    notes: "After the possessive: আমার চেয়ে, than me."
+  - id: bn-0589
+    target: "ছাড়া"
+    native: "except; without"
+    reading: "chhara"
+    pos: "particle"
+    notes: "The word before it takes no ending: চিনি ছাড়া, without sugar."
+  - id: bn-0590
+    target: "নিয়ে"
+    native: "about (a topic); bringing along"
+    reading: "niye"
+    pos: "particle"
+    notes: "কী নিয়ে? About what? A person before it takes -কে: ওকে নিয়ে এসো, bring him along."
+  - id: bn-0591
+    target: "পর্যন্ত"
+    native: "until; as far as"
+    reading: "porjonto"
+    alt_target: ["অবধি"]
+    pos: "particle"
+    notes: "পাঁচটা পর্যন্ত, until five. Also অবধি (obodhi)."
+  - id: bn-0592
+    target: "আমি ওকে চিনি।"
+    native: "I know him. / I know her."
+    reading: "ami oke chini."
+    pos: "phrase"
+    notes: "A person as the object takes -কে; a thing usually doesn't: আমি বইটা চাই."
+  - id: bn-0593
+    target: "কাঠের টেবিল"
+    native: "a wooden table"
+    reading: "kather tebil"
+    pos: "phrase"
+    notes: "-এর is also 'made of' and 'aged': দশ বছরের ছেলে, a ten-year-old boy."

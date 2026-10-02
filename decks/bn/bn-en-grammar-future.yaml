@@ -10,47 +10,47 @@ tags: [beginner, grammar]
 pattern:
   name: "Future"
   slot_name: "person and respect"
-  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / ওরা", "তিনি / তাঁরা"]
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ব, -বি, -বে, -বেন. Some writers add the o: করবো, যাবো."
+  notes: "The verb changes for person and for respect, never for gender or number: আমি and আমরা take the same form. The endings are -ব, -বি, -বে, -বেন. Some writers add the o: করবো, যাবো, and both are accepted."
   entries:
     - lemma: "করা"
       key: kora
       gloss: "to do"
       forms:
-        "আমি / আমরা": "করব"
+        "আমি / আমরা": ["করব", "করবো"]
         "তুই / তোরা": "করবি"
         "তুমি / তোমরা": "করবে"
         "আপনি / আপনারা": "করবেন"
-        "সে / ওরা": "করবে"
+        "সে / তারা": "করবে"
         "তিনি / তাঁরা": "করবেন"
     - lemma: "যাওয়া"
       key: jaoa
       gloss: "to go"
       forms:
-        "আমি / আমরা": "যাব"
+        "আমি / আমরা": ["যাব", "যাবো"]
         "তুই / তোরা": "যাবি"
         "তুমি / তোমরা": "যাবে"
         "আপনি / আপনারা": "যাবেন"
-        "সে / ওরা": "যাবে"
+        "সে / তারা": "যাবে"
         "তিনি / তাঁরা": "যাবেন"
     - lemma: "খাওয়া"
       key: khaoa
       gloss: "to eat"
       forms:
-        "আমি / আমরা": "খাব"
+        "আমি / আমরা": ["খাব", "খাবো"]
         "তুই / তোরা": "খাবি"
         "তুমি / তোমরা": "খাবে"
         "আপনি / আপনারা": "খাবেন"
-        "সে / ওরা": "খাবে"
+        "সে / তারা": "খাবে"
         "তিনি / তাঁরা": "খাবেন"
     - lemma: "বলা"
       key: bola
       gloss: "to say"
       forms:
-        "আমি / আমরা": "বলব"
+        "আমি / আমরা": ["বলব", "বলবো"]
         "তুই / তোরা": "বলবি"
         "তুমি / তোমরা": "বলবে"
         "আপনি / আপনারা": "বলবেন"
-        "সে / ওরা": "বলবে"
+        "সে / তারা": "বলবে"
         "তিনি / তাঁরা": "বলবেন"

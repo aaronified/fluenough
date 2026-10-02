@@ -1,0 +1,77 @@
+schema: 1
+id: bn-en-grammar-likes
+name: "Likes and dislikes"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I like, I love, I don't like, my favourite: four ways Bengali says it. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: bn-0715
+    target: "আমার মিষ্টি ভালো লাগে।"
+    native: "I like sweets."
+    reading: "amar mishti bhalo lage."
+    pos: "phrase"
+    notes: "The liker takes -র: 'to me sweets feel good'. লাগে stays the same for everyone: তোর, তোমার, আপনার, ওর, ওঁর মিষ্টি ভালো লাগে."
+  - id: bn-0716
+    target: "আমার এই গানটা ভালো লাগে না।"
+    native: "I don't like this song."
+    reading: "amar ei ganta bhalo lage na."
+    pos: "phrase"
+  - id: bn-0717
+    target: "আপনার কি কলকাতা ভালো লাগে?"
+    native: "Do you like Kolkata?"
+    reading: "apnar ki kolkata bhalo lage?"
+    pos: "phrase"
+    notes: "কি after the subject turns it into a yes-or-no question."
+  - id: bn-0718
+    target: "ওঁর চা ভালো লাগে না।"
+    native: "She doesn't like tea. / He doesn't like tea. (respectful)"
+    reading: "onr cha bhalo lage na."
+    alt_target: ["ওনার চা ভালো লাগে না।"]
+    pos: "phrase"
+    notes: "উনি takes -র as ওঁর, often said ওনার (onar); both are accepted."
+  - id: bn-0719
+    target: "খুব ভালো লাগল।"
+    native: "I really enjoyed it."
+    reading: "khub bhalo laglo."
+    pos: "phrase"
+    notes: "For one experience, the past লাগল: সিনেমাটা ভালো লাগল, I liked the film. আলাপ করে ভালো লাগল, nice to meet you."
+  - id: bn-0720
+    target: "আমি মাছ ভালোবাসি।"
+    native: "I love fish."
+    reading: "ami machh bhalobashi."
+    pos: "phrase"
+    notes: "ভালোবাসা is an ordinary verb: no -র on the subject, and the verb changes for the person: আমি ভালোবাসি, তুই ভালোবাসিস, তুমি ভালোবাসো, আপনি ভালোবাসেন, ও ভালোবাসে, উনি ভালোবাসেন. It is used for food and pastimes as much as for people."
+  - id: bn-0721
+    target: "আমি তোমাকে ভালোবাসি।"
+    native: "I love you."
+    reading: "ami tomake bhalobashi."
+    pos: "phrase"
+    notes: "The person loved takes -কে."
+  - id: bn-0722
+    target: "ও ক্রিকেট খেলতে ভালোবাসে।"
+    native: "He loves playing cricket. / She loves playing cricket."
+    reading: "o kriket khelte bhalobashe."
+    pos: "phrase"
+    notes: "'Loves doing': the verb's -তে form, then ভালোবাসা."
+  - id: bn-0723
+    target: "আমি ঝাল খাবার পছন্দ করি না।"
+    native: "I don't like spicy food."
+    reading: "ami jhal khabar pochhondo kori na."
+    pos: "phrase"
+    notes: "পছন্দ করা is a noun with করা, and only করা changes: আপনি পছন্দ করেন, ও পছন্দ করে. In the negative it is 'don't like': ঝাল খাবার পছন্দ করি না."
+  - id: bn-0724
+    target: "পছন্দ"
+    native: "liking; choice"
+    reading: "pochhondo"
+    pos: "noun"
+    notes: "কোনটা পছন্দ? Which one do you like? Of something you have picked out: এটা আমার পছন্দ হয়েছে, I like this one."
+  - id: bn-0725
+    target: "রসগোল্লা আমার প্রিয় মিষ্টি।"
+    native: "Rosogolla is my favourite sweet."
+    reading: "roshogolla amar priyo mishti."
+    pos: "phrase"
+    notes: "প্রিয় is an adjective, so there is no verb. 'Not my favourite' is আমার প্রিয় নয়, or in speech না."
+  - ref: bn-0640
