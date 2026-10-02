@@ -238,10 +238,10 @@ units:
 | `description` | no | Free text. |
 
 - **A unit is what is taught together**: a theme deck and the grammar that
-  goes with it, or a script. ADR-0013 has Today take new cards from the
-  first unit not yet finished and the one after it, and placement pass or
-  place a unit whole, so keep a unit to what a learner would take in
-  together.
+  goes with it, or a script. Today takes new cards from the first unit not
+  yet finished and the one after it, mixing the two, and placement passes
+  or places a unit whole (ADR-0013), so keep a unit to what a learner would
+  take in together.
 - **Every deck of the course is on its path, exactly once,** and only the
   course's decks. The validator fails a deck left out, one listed twice, one
   from another course, and an id that is no deck. Adding a deck means adding
