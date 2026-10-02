@@ -19,7 +19,7 @@ features:
     name: "A gap in the headline"
     example: "ध"
     text: "In a few letters the line breaks, and the gap is what tells them from a look-alike: ध from घ, and भ from म."
-    letters: ["ख", "थ", "ध", "भ"]
+    letters: ["थ", "ध", "भ", "श"]
   - id: stem
     name: "The standing line"
     term: "खड़ी पाई"
@@ -42,15 +42,22 @@ features:
     term: "मात्रा"
     reading: "maatraa"
     example: "कि"
-    text: "After a consonant a vowel is a sign on it, not a letter of its own. ि is written before the consonant but said after it: you see ि then क, and say ki. े and ै sit above, ु and ू below, the rest after."
+    text: "After a consonant a vowel is a sign on it, not a letter of its own. ि is written before the consonant but said after it: you see ि then क, and say ki. े and ै sit above, ु, ू and ृ below, the rest after."
     letters: ["का", "कि", "की", "कु", "के", "को"]
   - id: half-letters
     name: "Half letters"
     term: "आधा अक्षर"
     reading: "aadhaa akshar"
     example: "प्य"
-    text: "Two consonants with no vowel between them join. Usually the first is written as a half letter, without its standing line: प्यार (pyaar, love). Letters with no standing line stack instead, or keep the halant: द्ध, ट्ट."
+    text: "Two consonants with no vowel between them join. Usually the first is written as a half letter, without its standing line: प्यार (pyaar, love). क drops the hook on its right instead (क्य). Letters with no standing line stack, one above the other: द्ध, ट्ट."
     letters: ["क्य", "प्य", "स्त", "च्च", "द्ध"]
+  - id: halant
+    name: "The mark that takes the vowel away"
+    term: "हलंत"
+    reading: "halant"
+    example: "क्"
+    text: "The small slanting stroke below a letter, ्, means no vowel after it. You'll rarely see it, because two consonants usually join instead."
+    letters: ["क्", "द्", "ट्"]
   - id: own-shapes
     name: "Four joins with shapes of their own"
     example: "क्ष"
@@ -59,21 +66,21 @@ features:
   - id: r-forms
     name: "र written as a stroke"
     example: "प्र"
-    text: "Next to another consonant र isn't written in full. After it, it's a slanting stroke at its foot (प्र), or a small caret under ट and ड (ट्र); before it, a small hook on top, the reph (धर्म)."
+    text: "Next to another consonant र isn't written in full. After it, it's a slanting stroke at its foot (प्र), or a small caret under a letter with no standing line, such as ट and ड (ट्र); before it, a small hook on top, the reph (धर्म)."
     letters: ["प्र", "क्र", "ट्र", "र्म"]
   - id: dot-below
     name: "A dot below makes another sound"
     term: "नुक़्ता"
     reading: "nuqtaa"
     example: "ज़"
-    text: "A dot below a letter changes its sound: ज is j and ज़ is z, फ is ph and फ़ is f. ड़ and ढ़ are ड and ढ with the tongue placed the same way but not touching the roof of the mouth."
+    text: "A dot below a letter, the nuqta, marks a sound from Persian, Arabic or English: ज is j and ज़ is z, फ is ph and फ़ is f. ड़ and ढ़ have the same dot but are Hindi's own sounds: the tongue is placed as for ड and ढ, but doesn't touch the roof of the mouth."
     letters: ["ज", "ज़", "फ", "फ़", "ड", "ड़", "ढ", "ढ़"]
   - id: nasal-marks
     name: "The moon and the dot"
     term: "चंद्रबिंदु"
     reading: "chandrabindu"
     example: "हँ"
-    text: "The moon and dot ँ above a letter makes its vowel nasal, said through the nose as well. The dot alone, ं, is an n or m before the next consonant, and stands for the moon where a sign above leaves no room."
+    text: "The moon and dot ँ above a letter makes its vowel nasal, said through the nose as well. The dot alone, ं, the anusvaar, is an n or m before the next consonant, and stands for the moon where a sign above leaves no room."
     letters: ["हँ", "में", "रंग"]
   - id: look-alikes
     name: "Letters that look alike"
@@ -82,6 +89,6 @@ features:
     letters: ["ब", "व", "प", "ष", "ख"]
   - id: digits
     name: "Devanagari digits"
-    example: "१"
-    text: "Devanagari has its own digits, seen on some signs, in older books and on official papers. Everyday Hindi mostly writes 0 to 9. १ is 1, though it looks like a 9."
+    example: "४"
+    text: "Devanagari has its own digits, seen on some signs, in older books and on official papers. Everyday Hindi mostly writes 0 to 9. ४ is 4, though it looks like an 8, and १ and ९ look alike."
     letters: ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"]
