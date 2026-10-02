@@ -78,7 +78,10 @@ void main() {
     final state = await pumpApp(
       tester,
       state: AppState.test(
-        settings: SettingsNotifier(spokenLanguages: const <String>['en']),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+        ),
       ),
     );
     final l10n = l10nOf(tester);
