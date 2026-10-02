@@ -219,8 +219,9 @@ class Catalog {
 ///
 /// A stand-in for the deck repository (#4). It reads the files that live
 /// beside the decks but are not decks: facts (#48), number rules (#54), the
-/// theme path (#52) and each course's path (#117). It expands grammar decks into cards (#2), and turns
-/// a file that fails to parse into a [BrokenDeck] rather than an exception.
+/// theme path (#52) and each course's path (#117). It expands grammar decks
+/// into cards (#2), and turns a file that fails to parse into a [BrokenDeck]
+/// rather than an exception.
 class DeckCatalog {
   DeckCatalog(this.source);
 

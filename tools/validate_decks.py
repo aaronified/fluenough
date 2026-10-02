@@ -768,8 +768,8 @@ def check_themes_across(reports: list[Report]) -> list[str]:
 
 
 def check_paths_across(reports: list[Report]) -> list[str]:
-    """A course has at most one path, which lists every deck of that course
-    exactly once, and only that course's decks."""
+    """A course has one path, which lists every deck of that course exactly
+    once, and only that course's decks."""
     course_of = {rep.course_deck[2]: rep.course_deck[:2]
                  for rep in reports if rep.course_deck is not None}
     problems = []
@@ -795,6 +795,27 @@ def check_paths_across(reports: list[Report]) -> list[str]:
         for deck in missing:
             problems.append(f"{rep.path}: does not list {deck!r}; every deck of "
                             f"{lang} from {native} is on its path")
+
+    # A course with a deck in this repository needs a path. A path not being
+    # validated now, beside the deck on disk, counts: validating one deck is
+    # legitimate. So is drafting one outside the repository, as check_bundled
+    # also allows.
+    root = Path(__file__).resolve().parent.parent
+    pathless: dict[tuple[str, str], Path] = {}
+    for rep in reports:
+        if rep.course_deck is None or rep.course_deck[:2] in seen:
+            continue
+        lang, native, _ = rep.course_deck
+        try:
+            rep.path.resolve().relative_to(root)
+        except ValueError:
+            continue
+        if (rep.path.parent / f"{lang}-{native}-path.yaml").exists():
+            continue
+        pathless.setdefault((lang, native), rep.path)
+    for (lang, native), deck in pathless.items():
+        problems.append(f"{deck}: {lang} from {native} has no path; add "
+                        f"{lang}-{native}-path.yaml beside its decks")
     return problems
 
 
