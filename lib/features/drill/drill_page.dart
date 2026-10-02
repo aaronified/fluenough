@@ -13,6 +13,7 @@ import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
 import 'recognition_drill.dart';
+import 'speaking_drill.dart';
 import 'typed_drill.dart';
 
 /// A drill session: recognition, production and listening, one card at a
@@ -216,6 +217,11 @@ class _DrillPageState extends State<DrillPage> {
             onClose: _close,
           ),
           DrillMode.grammar => GrammarDrill.live(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
+          DrillMode.speaking => SpeakingDrill(
             key: ValueKey<int>(session.position),
             session: session,
             onClose: _close,

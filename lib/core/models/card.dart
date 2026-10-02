@@ -65,23 +65,32 @@ class Card {
   final Set<DrillMode> modes;
 
   /// The drills this card can actually be used for, given whether the device
-  /// has a voice for the language.
+  /// has a voice for the language, and whether it can recognise speech in it.
   ///
-  /// A card that declares no modes gets recognition, production and
-  /// listening, except a phrase (`pos: phrase`), which is not typed: a whole
-  /// sentence is too hard to grade fairly (ADR-0010).
-  Set<DrillMode> modesIn({required bool ttsAvailable}) {
+  /// A card that declares no modes gets recognition, production, listening
+  /// and speaking, except a phrase (`pos: phrase`), which is not typed: a
+  /// whole sentence is too hard to grade fairly (ADR-0010). A phrase can be
+  /// spoken, since the recogniser does the writing (ADR-0014).
+  Set<DrillMode> modesIn({
+    required bool ttsAvailable,
+    bool speechAvailable = false,
+  }) {
     final declared = modes.isNotEmpty
         ? modes
         : pos == 'phrase'
-        ? const {DrillMode.recognition, DrillMode.listening}
+        ? const {DrillMode.recognition, DrillMode.listening, DrillMode.speaking}
         : const {
             DrillMode.recognition,
             DrillMode.production,
             DrillMode.listening,
+            DrillMode.speaking,
           };
-    if (ttsAvailable) return declared;
-    return declared.where((m) => m != DrillMode.listening).toSet();
+    return <DrillMode>{
+      for (final mode in declared)
+        if ((ttsAvailable || mode != DrillMode.listening) &&
+            (speechAvailable || mode != DrillMode.speaking))
+          mode,
+    };
   }
 
   /// The accepted answers for [mode], the first being the canonical one.
@@ -89,13 +98,14 @@ class Card {
     DrillMode.recognition => <String>[native, ...altNative],
     DrillMode.production ||
     DrillMode.listening ||
-    DrillMode.grammar => <String>[target, ...altTarget],
+    DrillMode.grammar ||
+    DrillMode.speaking => <String>[target, ...altTarget],
   };
 
   /// What the learner is shown.
   String promptFor(DrillMode mode) => switch (mode) {
     DrillMode.recognition => target,
-    DrillMode.production || DrillMode.grammar => native,
+    DrillMode.production || DrillMode.grammar || DrillMode.speaking => native,
     // The listening prompt is the audio itself; the text is withheld until
     // the answer is in.
     DrillMode.listening => '',

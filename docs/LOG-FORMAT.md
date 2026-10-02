@@ -36,10 +36,10 @@ One per answered card, oldest first: a row of the `reviews` table
 | `ts` | yes | When it was answered: ISO 8601, in UTC. Read back in local time. |
 | `deck` | yes | Deck id. |
 | `card` | yes | Card id, permanent (AGENTS.md rule 1). |
-| `mode` | yes | `recognition`, `production`, `listening` or `grammar`. |
+| `mode` | yes | `recognition`, `production`, `listening`, `grammar` or `speaking`. |
 | `grade` | yes | SM-2 grade, a whole number 0–5. |
 | `elapsed_ms` | yes | How long the answer took, in milliseconds. |
-| `answer` | no | What was typed. Absent for a self-graded review. |
+| `answer` | no | What was typed, or for `speaking` what the recogniser heard. Absent for a self-graded review. |
 
 ## `leech` lines
 

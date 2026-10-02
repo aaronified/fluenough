@@ -1032,12 +1032,12 @@ cards:
     });
 
     test('an unknown drill mode', () {
-      final yaml = vocab(cards: '$oneCard    modes: [production, speaking]\n');
+      final yaml = vocab(cards: '$oneCard    modes: [production, singing]\n');
       expect(
         () => parse(yaml),
         throwsParseError(
-          line: lineOf(yaml, 'speaking'),
-          mentions: ['cards[0].modes[1]', 'unknown mode "speaking"'],
+          line: lineOf(yaml, 'singing'),
+          mentions: ['cards[0].modes[1]', 'unknown mode "singing"'],
         ),
       );
     });
