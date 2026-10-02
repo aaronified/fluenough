@@ -5,7 +5,7 @@ import '../models/review_event.dart';
 import '../scheduling/sm2.dart';
 import 'database.dart';
 
-/// Reads the scheduling state of every `(deck, card, mode)` pair.
+/// Reads the scheduling state of every `(card, mode)` pair.
 ///
 /// Writes go through `ReviewLog`, which keeps this state and the log in step.
 class CardStateRepository {

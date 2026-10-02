@@ -117,6 +117,20 @@ class CardIds(unittest.TestCase):
             ),
             [])
 
+    def test_a_ref_checks_its_examples_as_a_card_does(self) -> None:
+        (rep,) = self.reports(es_en_b=vocab(
+            "es-en-b", '  - ref: es-9001\n    examples: [{ target: "x" }]\n'))
+        self.assertTrue(any("needs both target and native" in e for e in rep.errors),
+                        rep.errors)
+
+    def test_a_file_checked_alone_is_held_to_the_repository(self) -> None:
+        taken = next(iter(validate_decks._repo_card_defs("es")))
+        reports = self.reports(es_en_new=vocab(
+            "es-en-new", WRITTEN.replace("es-9001", taken)))
+        problems = validate_decks.check_cards_across(reports)
+        self.assertEqual(len(problems), 1, problems)
+        self.assertIn(f"card {taken} is already written in", problems[0])
+
     def test_next_id_follows_the_highest_in_the_language(self) -> None:
         out = subprocess.run(
             [sys.executable, str(TOOLS / "validate_decks.py"), "--next-id", "bn"],

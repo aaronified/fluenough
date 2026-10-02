@@ -198,7 +198,7 @@ class AppState extends ChangeNotifier {
   final LinkOpener links;
 
   /// Settings' "Check for updates", the check at launch, and installing
-  /// what it finds (ADR-0018). Has its own notifier; what it finds is kept
+  /// what it finds (ADR-0017). Has its own notifier; what it finds is kept
   /// in [settings].
   late final UpdateChecker updates = UpdateChecker(
     engine: _releases,

@@ -122,6 +122,61 @@ void main() {
     expect(n.bySkill, isEmpty);
   });
 
+  test('a card remembered in two decks is learned once (ADR-0018)', () {
+    final progress = MemoryProgress();
+    for (final (i, deck) in <String>['es-en-core-100', 'es-en-other'].indexed) {
+      progress.record(
+        deckId: deck,
+        cardId: 'es-0001',
+        mode: DrillMode.values[i],
+        grade: 5,
+        now: addDays(app.now(), -1 - i),
+      );
+    }
+    final n = StatsNumbers.of(
+      progress,
+      now: app.now(),
+      range: StatsRange.week,
+      cardOf: cardOf,
+    );
+    expect(n.reviews, 2);
+    expect(n.learned, 1);
+  });
+
+  test('a card is looked up as the deck it was answered in lists it', () {
+    // কাল is written in the time deck and listed by the sound differences
+    // deck, which gives its own gloss.
+    expect(
+      cardOf('bn-0316', deckId: 'bn-en-time')!.native,
+      'tomorrow; yesterday',
+    );
+    expect(
+      cardOf('bn-0316', deckId: 'bn-en-sound-differences')!.native,
+      'time; tomorrow; yesterday',
+    );
+    expect(cardOf('bn-0316', deckId: 'bn-en-retired')!.id, 'bn-0316');
+    expect(cardOf('bn-9999'), isNull);
+  });
+
+  test('a leech is shown in the deck it was last answered in', () {
+    final progress = MemoryProgress();
+    final start = DateTime(2026, 9, 1, 9);
+    for (var i = 0; i < 12; i++) {
+      progress.record(
+        deckId: i < 11 ? 'bn-en-sound-differences' : 'bn-en-time',
+        cardId: 'bn-0316',
+        mode: DrillMode.recognition,
+        grade: i.isEven ? 4 : 1,
+        now: start.add(Duration(days: i)),
+      );
+    }
+    // The sound differences deck lists কাল first on the path, so only the
+    // last answer can put the leech in the time deck.
+    final leech = findLeeches(progress, cardOf: cardOf).single;
+    expect(leech.card.deckId, 'bn-en-time');
+    expect(leech.card.native, 'tomorrow; yesterday');
+  });
+
   group('by language', () {
     late LanguageLookup languageOf;
     setUpAll(() => languageOf = languageLookupOf(app));

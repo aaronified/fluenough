@@ -50,7 +50,7 @@ class CardsDao extends DatabaseAccessor<AppDatabase> with _$CardsDaoMixin {
           .get();
 }
 
-/// Scheduling state per `(deck, card, mode)`: a cache that replaying
+/// Scheduling state per `(card, mode)`: a cache that replaying
 /// `reviews` rebuilds.
 @DriftAccessor(tables: [CardStates])
 class CardStatesDao extends DatabaseAccessor<AppDatabase>

@@ -158,10 +158,11 @@ class StatsNumbers {
       }
     }
 
-    // A card is learned on its first remembered review, in any mode.
+    // A card is learned on its first remembered review, in any mode and in
+    // any deck that lists it (ADR-0018).
     final firstPass = <String, DateTime>{};
     for (final e in log.where((e) => e.passed)) {
-      firstPass.putIfAbsent('${e.deckId}/${e.cardId}', () => e.at);
+      firstPass.putIfAbsent(e.cardId, () => e.at);
     }
 
     final weakest = tags.entries.toList()
