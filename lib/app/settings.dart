@@ -87,6 +87,8 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechOnline;
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
+  Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
+  Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
 
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
@@ -197,6 +199,50 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// When [skill] comes back after "Can't speak now" or "Can't listen now"
+  /// (#89), or null if it is not paused.
+  DateTime? pausedUntil(Skill skill) => _pausedUntil[skill];
+
+  /// Whether [skill] is paused at [now].
+  bool isPaused(Skill skill, DateTime now) =>
+      _pausedUntil[skill]?.isAfter(now) ?? false;
+
+  /// Pauses [skill] until [until]: an hour, from a drill's "Can't speak now"
+  /// or "Can't listen now", or from Settings.
+  void pause(Skill skill, {required DateTime until}) {
+    _pausedUntil = Map<Skill, DateTime>.unmodifiable(<Skill, DateTime>{
+      ..._pausedUntil,
+      skill: until,
+    });
+    notifyListeners();
+  }
+
+  /// Ends a pause early.
+  void resume(Skill skill) {
+    if (!_pausedUntil.containsKey(skill)) return;
+    _pausedUntil = Map<Skill, DateTime>.unmodifiable(
+      Map<Skill, DateTime>.of(_pausedUntil)..remove(skill),
+    );
+    notifyListeners();
+  }
+
+  /// The languages, by code, [skill] is switched off for, while it stays on
+  /// for the others (#89).
+  Set<String> offFor(Skill skill) => _offFor[skill] ?? const <String>{};
+
+  bool isOffFor(Skill skill, String code) => offFor(skill).contains(code);
+
+  void setOffFor(Skill skill, String code, bool off) {
+    final next = Set<String>.of(offFor(skill));
+    off ? next.add(code) : next.remove(code);
+    if (setEquals(next, offFor(skill))) return;
+    _offFor = Map<Skill, Set<String>>.unmodifiable(<Skill, Set<String>>{
+      ..._offFor,
+      skill: Set<String>.unmodifiable(next),
+    });
+    notifyListeners();
+  }
+
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
     final i = _spokenLanguages.indexOf(code);
@@ -296,6 +342,14 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_online': (_speechOnline.toList()..sort()).join(','),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
+    'paused_until': jsonEncode(<String, int>{
+      for (final MapEntry(:key, :value) in _pausedUntil.entries)
+        key.name: value.millisecondsSinceEpoch,
+    }),
+    'off_for': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _offFor.entries)
+        if (value.isNotEmpty) key.name: value.toList()..sort(),
+    }),
     'facts_shown': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _factsShown.entries)
         key: value.millisecondsSinceEpoch,
@@ -357,6 +411,25 @@ class SettingsNotifier extends ChangeNotifier {
       ];
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
+    if (pick('paused_until', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        final skill = Skill.values.asNameMap()[key];
+        if (skill != null && value is int) {
+          pause(skill, until: DateTime.fromMillisecondsSinceEpoch(value));
+        }
+      }
+    }
+    if (pick('off_for', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        final skill = Skill.values.asNameMap()[key];
+        if (skill == null || value is! List) continue;
+        for (final code in value) {
+          if (code is String && RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
+            setOffFor(skill, code, true);
+          }
+        }
+      }
+    }
     if (pick('speech_online', (t) => t) case final v?) {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
@@ -404,6 +477,15 @@ class SettingsNotifier extends ChangeNotifier {
           if (key is String && value is int)
             key: DateTime.fromMillisecondsSinceEpoch(value),
       };
+    } on FormatException {
+      return null;
+    }
+  }
+
+  static Map<String, Object?>? _parseJsonMap(String text) {
+    try {
+      final map = jsonDecode(text);
+      return map is Map<String, Object?> ? map : null;
     } on FormatException {
       return null;
     }
