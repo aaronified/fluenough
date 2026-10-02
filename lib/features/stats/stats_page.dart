@@ -10,6 +10,7 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/language_chips.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/stat_tile.dart';
@@ -21,6 +22,11 @@ import 'stats_numbers.dart';
 ///
 /// Design screen `stats`. Every number is computed from the review log and
 /// the current scheduling states (`StatsNumbers`), none from the design.
+///
+/// The numbers are one language's: a chip per language the log has reviews
+/// in names it, most recently reviewed first, and "All languages" after
+/// them counts every language together when there are several. The tab
+/// opens on the first chip.
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key, this.initialRange = StatsRange.month});
 
@@ -33,6 +39,12 @@ class StatsPage extends StatefulWidget {
 
 class _StatsPageState extends State<StatsPage> {
   late StatsRange _range = widget.initialRange;
+
+  /// Whether the learner has chosen a language chip, and which: a code, or
+  /// null for All. Until they choose, the tab shows the language reviewed
+  /// last.
+  bool _chosen = false;
+  String? _language;
 
   @override
   Widget build(BuildContext context) {
@@ -65,26 +77,74 @@ class _StatsPageState extends State<StatsPage> {
             ),
           );
         }
+        final languageOf = languageLookupOf(state);
+        final practised = practisedLanguages(
+          state.progress,
+          languages: state.languages,
+          languageOf: languageOf,
+        );
+        final several = practised.length > 1;
+        // A chosen language whose reviews can no longer be placed, its decks
+        // gone from the catalog, falls back to the first chip.
+        final language =
+            several &&
+                _chosen &&
+                (_language == null || practised.any((l) => l.code == _language))
+            ? _language
+            : practised.firstOrNull?.code;
         return _Frame(
           header: header,
           controls: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 8),
-            child: Segmented<StatsRange>(
-              semanticLabel: l10n.statsRangeGroup,
-              selected: _range,
-              onSelected: (range) => setState(() => _range = range),
-              options: <SegmentOption<StatsRange>>[
-                for (final range in StatsRange.values)
-                  SegmentOption<StatsRange>(
-                    value: range,
-                    label: range.days == null
-                        ? l10n.statsRangeAll
-                        : l10n.statsRangeDays(range.days!),
+            padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                if (practised.isNotEmpty) ...<Widget>[
+                  LanguageChips(
+                    languages: practised,
+                    decks: state.decks,
+                    semanticLabel: l10n.statsLanguageGroup,
+                    allLabel: several ? l10n.statsLanguageAll : null,
+                    // The language shown first is the first chip, on screen
+                    // whatever the width.
+                    allLast: true,
+                    selected: language,
+                    onSelected: (code) => setState(() {
+                      _chosen = true;
+                      _language = code;
+                    }),
                   ),
+                  const SizedBox(height: 8),
+                ],
+                Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: Segmented<StatsRange>(
+                    semanticLabel: l10n.statsRangeGroup,
+                    selected: _range,
+                    onSelected: (range) => setState(() => _range = range),
+                    options: <SegmentOption<StatsRange>>[
+                      for (final range in StatsRange.values)
+                        SegmentOption<StatsRange>(
+                          value: range,
+                          label: range.days == null
+                              ? l10n.statsRangeAll
+                              : l10n.statsRangeDays(range.days!),
+                        ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
-          child: _StatsBody(state: state, actions: actions, range: _range),
+          child: _StatsBody(
+            state: state,
+            actions: actions,
+            range: _range,
+            language: language,
+            languageOf: languageOf,
+          ),
         );
       },
     );
@@ -120,11 +180,20 @@ class _StatsBody extends StatelessWidget {
     required this.state,
     required this.actions,
     required this.range,
+    required this.language,
+    required this.languageOf,
   });
 
   final AppState state;
   final LeechActions actions;
   final StatsRange range;
+
+  /// The language counted, by code, or null for every review.
+  final String? language;
+  final LanguageLookup languageOf;
+
+  bool _counts(String deckId) =>
+      language == null || languageOf(deckId) == language;
 
   @override
   Widget build(BuildContext context) {
@@ -137,11 +206,15 @@ class _StatsBody extends StatelessWidget {
       now: state.now(),
       range: range,
       cardOf: cardOf,
+      deckFilter: language == null ? null : _counts,
     );
-    final leeches = findLeeches(
-      state.progress,
-      cardOf: cardOf,
-    ).where((l) => actions.statusOf(l.key) == LeechStatus.active).length;
+    final leeches = findLeeches(state.progress, cardOf: cardOf)
+        .where(
+          (l) =>
+              _counts(l.key.deckId) &&
+              actions.statusOf(l.key) == LeechStatus.active,
+        )
+        .length;
 
     final count = NumberFormat.decimalPattern(l10n.localeName);
     final remembered = numbers.remembered;
@@ -221,7 +294,7 @@ class _StatsBody extends StatelessWidget {
           ),
         ],
         const SizedBox(height: 16),
-        _LeechesRow(count: leeches),
+        _LeechesRow(count: leeches, language: language),
         const SizedBox(height: 16),
         Padding(
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
@@ -238,13 +311,15 @@ class _StatsBody extends StatelessWidget {
   }
 }
 
-/// "4 leeches · Cards you keep missing", which opens Leeches. While
-/// `Feature.leeches` is incoming it is dimmed, with the badge under its text
-/// so that it still fits at large text sizes.
+/// "4 leeches · Cards you keep missing", which opens Leeches, in
+/// [language] when one is counted. While `Feature.leeches` is incoming it is
+/// dimmed, with the badge under its text so that it still fits at large text
+/// sizes.
 class _LeechesRow extends StatelessWidget {
-  const _LeechesRow({required this.count});
+  const _LeechesRow({required this.count, required this.language});
 
   final int count;
+  final String? language;
 
   @override
   Widget build(BuildContext context) {
@@ -305,7 +380,7 @@ class _LeechesRow extends StatelessWidget {
       child: InkWell(
         onTap: incoming
             ? () => showIncomingSnackBar(context)
-            : () => AppNavigator.openLeeches(context),
+            : () => AppNavigator.openLeeches(context, language: language),
         child: row,
       ),
     );

@@ -122,6 +122,93 @@ void main() {
     expect(n.bySkill, isEmpty);
   });
 
+  group('by language', () {
+    late LanguageLookup languageOf;
+    setUpAll(() => languageOf = languageLookupOf(app));
+
+    /// Two Japanese reviews, six and five days ago, beside the Spanish log.
+    void addJapanese(MemoryProgress progress, List<int> days) {
+      final deck = app.deckById('ja-en-hiragana')!;
+      for (final day in days) {
+        progress.record(
+          deckId: deck.id,
+          cardId: deck.cards.first.id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: addDays(dateOnly(app.now()), day).add(const Duration(hours: 9)),
+        );
+      }
+    }
+
+    StatsNumbers numbersIn(String? code) => StatsNumbers.of(
+      progress,
+      now: app.now(),
+      range: StatsRange.week,
+      cardOf: cardOf,
+      deckFilter: code == null ? null : (deck) => languageOf(deck) == code,
+    );
+
+    test('one language counts its own reviews, with its own streak', () {
+      addJapanese(progress, <int>[-6, -5]);
+      final spanish = numbersIn('es');
+      expect(spanish.reviews, 5);
+      expect(spanish.streak, 4);
+      expect(spanish.heatmapReviews, 8);
+
+      final japanese = numbersIn('ja');
+      expect(japanese.reviews, 2);
+      expect(japanese.remembered, 1.0);
+      expect(japanese.streak, 0, reason: 'nothing since five days ago');
+      expect(japanese.learned, 1);
+      expect(japanese.weakestTags.keys, isNot(contains('home')));
+      expect(japanese.heatmapReviews, 2);
+
+      final all = numbersIn(null);
+      expect(all.reviews, 7);
+      expect(all.streak, 4);
+      expect(all.heatmapReviews, 10);
+    });
+
+    test('languages are listed most recently reviewed first', () {
+      List<String> order() => <String>[
+        for (final language in practisedLanguages(
+          progress,
+          languages: app.languages,
+          languageOf: languageOf,
+        ))
+          language.code,
+      ];
+      // Recorded after the Spanish log, as an imported backup would be,
+      // but older: Spanish was reviewed today.
+      addJapanese(progress, <int>[-6]);
+      expect(order(), <String>['es', 'ja']);
+      progress.record(
+        deckId: 'ja-en-hiragana',
+        cardId: app.deckById('ja-en-hiragana')!.cards.first.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: app.now(),
+      );
+      expect(order(), <String>['ja', 'es']);
+      expect(
+        practisedLanguages(
+          MemoryProgress(),
+          languages: app.languages,
+          languageOf: languageOf,
+        ),
+        isEmpty,
+      );
+    });
+
+    test('a deck gone from the catalog is placed by the language its id '
+        'names, if the catalog has it', () {
+      expect(languageOf('es-en-core-100'), 'es');
+      expect(languageOf('es-en-retired'), 'es');
+      expect(languageOf('xx-en-retired'), isNull);
+      expect(languageOf('nonsense'), isNull);
+    });
+  });
+
   test('a leech is a pair at or over the threshold, found in the states', () {
     for (var i = 0; i < kLeechThreshold; i++) {
       progress

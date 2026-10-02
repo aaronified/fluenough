@@ -245,17 +245,7 @@ extension ProgressQueries on ProgressStore {
 
   /// Consecutive days with a review, ending today — or yesterday, if today
   /// has none yet, so that a streak is not broken before the day is over.
-  int streakAt(DateTime now) {
-    final days = <DateTime>{for (final e in log) dateOnly(e.at)};
-    var day = dateOnly(now);
-    if (!days.contains(day)) day = addDays(day, -1);
-    var streak = 0;
-    while (days.contains(day)) {
-      streak++;
-      day = addDays(day, -1);
-    }
-    return streak;
-  }
+  int streakAt(DateTime now) => streakIn(log, now);
 
   /// Distinct cards in [deckId] reviewed successfully at least once, in any
   /// mode: the deck's "Learned" count.
@@ -276,6 +266,20 @@ extension ProgressQueries on ProgressStore {
           '${entry.key.deckId}/${entry.key.cardId}',
     }.length;
   }
+}
+
+/// [ProgressQueries.streakAt] over [log], which may be part of a store's:
+/// Progress counts one language's streak this way.
+int streakIn(Iterable<ReviewEvent> log, DateTime now) {
+  final days = <DateTime>{for (final e in log) dateOnly(e.at)};
+  var day = dateOnly(now);
+  if (!days.contains(day)) day = addDays(day, -1);
+  var streak = 0;
+  while (days.contains(day)) {
+    streak++;
+    day = addDays(day, -1);
+  }
+  return streak;
 }
 
 /// Midnight at the start of [time]'s calendar day, in its time zone.
