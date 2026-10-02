@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/leeches_page.dart';
@@ -40,6 +42,18 @@ Future<void> scrollTo(WidgetTester tester, Finder finder) async {
   await tester.ensureVisible(finder);
   await tester.pumpAndSettle();
 }
+
+/// Taps the language chip [label], scrolling the row to it first.
+Future<void> tapChip(WidgetTester tester, String label) async {
+  await tester.ensureVisible(find.text(label));
+  await tester.pumpAndSettle();
+  await tester.tap(find.text(label));
+  await tester.pumpAndSettle();
+}
+
+/// Counts every language together, as the tab did before it named one.
+Future<void> showAll(WidgetTester tester) =>
+    tapChip(tester, l10nOf(tester).statsLanguageAll);
 
 void main() {
   testWidgets('with stats switched off, the tab shows that they are incoming', (
@@ -88,6 +102,7 @@ void main() {
   ) async {
     usePhone(tester);
     await pumpScreen(tester, const StatsPage(), state: await fixture());
+    await showAll(tester);
     final l10n = l10nOf(tester);
     final all = l10n.commonPercent(34 / 44);
 
@@ -120,6 +135,7 @@ void main() {
     final handle = tester.ensureSemantics();
     usePhone(tester);
     await pumpScreen(tester, const StatsPage(), state: await fixture());
+    await showAll(tester);
     final l10n = l10nOf(tester);
 
     expect(
@@ -158,6 +174,7 @@ void main() {
       const StatsPage(),
       state: await fixture(),
     );
+    await showAll(tester);
     final l10n = l10nOf(tester);
     await scrollTo(tester, find.text(l10n.statsLeeches(2)));
 
@@ -187,6 +204,7 @@ void main() {
         features: const FeatureRegistry.only(<Feature>{Feature.stats}),
       ),
     );
+    await showAll(tester);
     final l10n = l10nOf(tester);
     final row = find.bySemanticsLabel(
       l10n.incomingSemanticsLabel(l10n.statsLeeches(2)),
@@ -198,5 +216,144 @@ void main() {
     expect(find.byType(LeechesPage), findsNothing);
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
     handle.dispose();
+  });
+
+  group('by language', () {
+    /// The fixture, plus one Spanish review this morning: Spanish is the
+    /// language reviewed last, and only its streak reaches today.
+    Future<AppState> spanishToday() async {
+      final state = await fixture();
+      await state.load();
+      final deck = state.deckById('es-en-core-100')!;
+      state.progress.record(
+        deckId: deck.id,
+        cardId: deck.cards.first.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: dateOnly(state.now()).add(const Duration(hours: 9)),
+      );
+      return state;
+    }
+
+    String nameOf(AppState state, String code) =>
+        state.languages.singleWhere((l) => l.code == code).name;
+
+    testWidgets('opens on the language reviewed last, and each chip counts '
+        'only its own', (tester) async {
+      usePhone(tester);
+      final state = await pumpScreen(
+        tester,
+        const StatsPage(),
+        state: await spanishToday(),
+      );
+      final l10n = l10nOf(tester);
+      bool chosen(String label) => tester
+          .widget<FilterChip>(
+            find.ancestor(
+              of: find.text(label),
+              matching: find.byType(FilterChip),
+            ),
+          )
+          .selected;
+
+      final spanish = nameOf(state, 'es');
+      final japanese = nameOf(state, 'ja');
+      // Most recently reviewed first, so that the chip the tab opens on is
+      // on screen; All languages last.
+      final chips = find.byType(FilterChip);
+      double startOf(String label) => tester
+          .getRect(find.ancestor(of: find.text(label), matching: chips))
+          .left;
+      expect(startOf(spanish), lessThan(startOf(japanese)));
+      expect(startOf(japanese), lessThan(startOf(l10n.statsLanguageAll)));
+      expect(
+        tester.getRect(find.ancestor(of: find.text(spanish), matching: chips)),
+        isA<Rect>().having((r) => r.right, 'right', lessThanOrEqualTo(390)),
+      );
+      expect(chosen(spanish), isTrue);
+      expect(chosen(japanese), isFalse);
+      expect(chosen(l10n.statsLanguageAll), isFalse);
+      expect(tile('23', l10n.statsReviews), findsOneWidget);
+      expect(tile('13', l10n.statsDayStreak), findsOneWidget);
+      expect(tile('13', l10n.statsNewCardsLearned), findsOneWidget);
+
+      await tapChip(tester, japanese);
+      expect(chosen(japanese), isTrue);
+      expect(tile('22', l10n.statsReviews), findsOneWidget);
+      // Japanese was last reviewed yesterday: its own streak, not Spanish's.
+      expect(tile('12', l10n.statsDayStreak), findsOneWidget);
+      expect(
+        tile(l10n.commonPercent(17 / 22), l10n.statsRemembered),
+        findsOneWidget,
+      );
+      await scrollTo(tester, find.text(l10n.statsLeeches(1)));
+      expect(find.text(l10n.statsLeeches(1)), findsOneWidget);
+      await tester.fling(
+        find.byType(Scrollable).last,
+        const Offset(0, 3000),
+        3000,
+      );
+      await tester.pumpAndSettle();
+
+      await tapChip(tester, l10n.statsLanguageAll);
+      expect(tile('45', l10n.statsReviews), findsOneWidget);
+      expect(tile('13', l10n.statsDayStreak), findsOneWidget);
+      expect(tile('26', l10n.statsNewCardsLearned), findsOneWidget);
+
+      // The choice holds as the range changes.
+      await tester.tap(find.text(l10n.statsRangeDays(7)));
+      await tester.pumpAndSettle();
+      expect(chosen(l10n.statsLanguageAll), isTrue);
+    });
+
+    testWidgets('the leeches row opens that language\'s leeches only', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await pumpScreen(
+        tester,
+        const StatsPage(),
+        state: await spanishToday(),
+      );
+      final l10n = l10nOf(tester);
+      final japanese = nameOf(state, 'ja');
+      await tapChip(tester, japanese);
+
+      final row = find.text(l10n.statsLeeches(1));
+      await scrollTo(tester, row);
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.leechesTitleIn(japanese)), findsOneWidget);
+      final cards = tester.widgetList<LeechCard>(find.byType(LeechCard));
+      expect(cards, hasLength(1));
+      expect(cards.single.leech.key.deckId, 'ja-en-hiragana');
+    });
+
+    testWidgets('one language is named by its chip, with no All', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final base = AppState.test();
+      await base.load();
+      final progress = MemoryProgress();
+      final deck = base.deckById('es-en-core-100')!;
+      progress.record(
+        deckId: deck.id,
+        cardId: deck.cards.first.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: base.now(),
+      );
+      final state = await pumpScreen(
+        tester,
+        const StatsPage(),
+        state: AppState.test(progress: progress),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.byType(FilterChip), findsOneWidget);
+      expect(find.text(nameOf(state, 'es')), findsOneWidget);
+      expect(find.text(l10n.statsLanguageAll), findsNothing);
+      expect(tile('1', l10n.statsReviews), findsOneWidget);
+    });
   });
 }

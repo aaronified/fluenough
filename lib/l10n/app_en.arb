@@ -1528,6 +1528,14 @@
   "@statsRangeAll": {
     "description": "The time range covering every review."
   },
+  "statsLanguageGroup": "Language",
+  "@statsLanguageGroup": {
+    "description": "Screen-reader name of the row of language chips on Progress."
+  },
+  "statsLanguageAll": "All languages",
+  "@statsLanguageAll": {
+    "description": "Language chip on Progress that counts every language together."
+  },
   "statsReviews": "Reviews",
   "@statsReviews": {
     "description": "Stat: reviews given in the range."
@@ -1649,6 +1657,16 @@
   "leechesTitle": "Leeches",
   "@leechesTitle": {
     "description": "Title of the leeches screen: cards missed again and again."
+  },
+  "leechesTitleIn": "Leeches in {language}",
+  "@leechesTitleIn": {
+    "description": "Title of the leeches screen when opened from one language's Progress.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
   },
   "leechesIntro": "{count, plural, =1{Cards missed once or more.} other{Cards missed {count} or more times.}} Drilling them harder rarely helps: read the note, then reset or set them aside.",
   "@leechesIntro": {

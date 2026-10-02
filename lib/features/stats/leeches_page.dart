@@ -16,28 +16,45 @@ import 'stats_numbers.dart';
 /// Cards missed again and again, with Reset and Set aside. Behind `Feature.leeches`.
 ///
 /// Design screen `leeches`. Lists every pair at or over [kLeechThreshold]
-/// lapses. Reset and Set aside are appended to [LeechActions], never taken
+/// lapses, or only [language]'s when opened from that language's Progress. Reset and Set aside are appended to [LeechActions], never taken
 /// out of the review log; a card acted on stays listed, dimmed, so the
 /// action can be undone.
 class LeechesPage extends StatelessWidget {
-  const LeechesPage({super.key});
+  const LeechesPage({super.key, this.language});
+
+  /// The language whose leeches are listed, by code, or null for every
+  /// language's.
+  final String? language;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final actions = LeechActions.of(state.progress);
+    final languageOf = languageLookupOf(state);
+    final name = <String, String>{
+      for (final l in state.languages) l.code: l.name,
+    }[language];
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.leechesTitle)),
+      appBar: AppBar(
+        title: Text(
+          name == null ? l10n.leechesTitle : l10n.leechesTitleIn(name),
+        ),
+      ),
       body: SafeArea(
         top: false,
         child: ListenableBuilder(
           listenable: Listenable.merge(<Listenable>[state.progress, actions]),
           builder: (context, _) {
-            final leeches = findLeeches(
-              state.progress,
-              cardOf: cardLookupOf(state),
-            );
+            final leeches = <Leech>[
+              for (final leech in findLeeches(
+                state.progress,
+                cardOf: cardLookupOf(state),
+              ))
+                if (language == null ||
+                    languageOf(leech.key.deckId) == language)
+                  leech,
+            ];
             if (leeches.isEmpty) {
               return EmptyState(
                 icon: Icons.check_circle_outline,

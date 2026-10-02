@@ -2,6 +2,7 @@ import '../../app/app_state.dart';
 import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
+import '../../core/models/deck.dart';
 
 /// Finds the card a review was given on, or null if it has left its deck.
 /// Retired cards are deleted (AGENTS.md rule 1), so history can outlive them.
@@ -14,6 +15,55 @@ CardLookup cardLookupOf(AppState state) {
       for (final card in entry.cards) '${entry.id}/${card.id}': card,
   };
   return (deckId, cardId) => cards['$deckId/$cardId'];
+}
+
+/// Finds the language a deck teaches, by code, or null if it cannot tell.
+typedef LanguageLookup = String? Function(String deckId);
+
+/// A [LanguageLookup] over [state]'s catalog. A deck that has left it is
+/// placed by its id, which names the language it teaches first
+/// (`es-en-core-100`, #51), when the catalog has that language.
+LanguageLookup languageLookupOf(AppState state) {
+  final byDeck = <String, String>{
+    for (final entry in state.decks) entry.id: entry.language.code,
+  };
+  final codes = <String>{for (final language in state.languages) language.code};
+  return (deckId) {
+    if (byDeck[deckId] case final code?) return code;
+    final named = deckId.split('-').first;
+    return codes.contains(named) ? named : null;
+  };
+}
+
+/// The languages [progress]'s log has reviews in, most recently reviewed
+/// first by the reviews' own times, since an imported backup can add older
+/// reviews after newer ones. Languages last reviewed at the same moment keep
+/// [languages]' order. Reviews whose language cannot be told count under
+/// none of them, only under every language together.
+List<LanguageInfo> practisedLanguages(
+  ProgressStore progress, {
+  required List<LanguageInfo> languages,
+  required LanguageLookup languageOf,
+}) {
+  final latest = <String, DateTime>{};
+  for (final e in progress.log) {
+    final code = languageOf(e.deckId);
+    if (code == null) continue;
+    final at = latest[code];
+    if (at == null || e.at.isAfter(at)) latest[code] = e.at;
+  }
+  final practised = <LanguageInfo>[
+    for (final language in languages)
+      if (latest.containsKey(language.code)) language,
+  ];
+  // List.sort is not stable, so ties fall back to the catalog's order.
+  final rank = <String, int>{
+    for (final (i, language) in practised.indexed) language.code: i,
+  };
+  return practised..sort((a, b) {
+    final byTime = latest[b.code]!.compareTo(latest[a.code]!);
+    return byTime != 0 ? byTime : rank[a.code]!.compareTo(rank[b.code]!);
+  });
 }
 
 /// The time ranges Progress offers.
@@ -61,15 +111,22 @@ class StatsNumbers {
     required this.heatmap,
   });
 
-  /// The numbers for [range], ending on [now]'s calendar day.
+  /// The numbers for [range], ending on [now]'s calendar day: of every
+  /// review, or of those on decks [deckFilter] keeps.
   factory StatsNumbers.of(
     ProgressStore progress, {
     required DateTime now,
     required StatsRange range,
     required CardLookup cardOf,
+    bool Function(String deckId)? deckFilter,
     int tagCount = 3,
   }) {
-    final log = progress.log;
+    final log = deckFilter == null
+        ? progress.log
+        : <ReviewEvent>[
+            for (final e in progress.log)
+              if (deckFilter(e.deckId)) e,
+          ];
     final today = dateOnly(now);
     final from = range.days == null ? null : addDays(today, 1 - range.days!);
     bool inRange(DateTime at) => from == null || !at.isBefore(from);
@@ -120,7 +177,7 @@ class StatsNumbers {
     return StatsNumbers._(
       reviews: inside.length,
       remembered: inside.isEmpty ? null : passed / inside.length,
-      streak: progress.streakAt(now),
+      streak: streakIn(log, now),
       longestStreak: _longestStreak(log),
       learned: firstPass.values.where(inRange).length,
       bySkill: <Skill, Tally>{
@@ -142,7 +199,8 @@ class StatsNumbers {
   /// were none.
   final double? remembered;
 
-  /// Consecutive days with a review, ending today or yesterday.
+  /// Consecutive days with a review, ending today or yesterday. Of the
+  /// filtered reviews only, so one language's streak is its own.
   final int streak;
 
   /// The longest run of consecutive days with a review, ever.
