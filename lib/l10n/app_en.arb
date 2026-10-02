@@ -2152,6 +2152,88 @@
   "@onboardingTourFactsBody": {
     "description": "Tour slide 4, body. 'Most' because not every language has facts yet. Leads into the next screen, which asks which languages the learner speaks."
   },
+  "onboardingSoundTitle": "Check your microphone and sound",
+  "@onboardingSoundTitle": {
+    "description": "First launch, sound check (#89): title."
+  },
+  "onboardingSoundBody": "Speaking drills listen to you, and listening drills read words aloud. Record two seconds and hear them back. Your phone will ask to let Fluenough use the microphone.",
+  "@onboardingSoundBody": {
+    "description": "First launch, sound check: what it is for, and that the phone will ask for the microphone."
+  },
+  "onboardingSoundHint": "Tap the microphone, then say anything.",
+  "@onboardingSoundHint": {
+    "description": "First launch, sound check: under the microphone button, before recording."
+  },
+  "onboardingSoundRecord": "Record two seconds",
+  "@onboardingSoundRecord": {
+    "description": "First launch, sound check: the microphone button's spoken label."
+  },
+  "onboardingSoundRecording": "Recording… say something",
+  "@onboardingSoundRecording": {
+    "description": "First launch, sound check: while it records."
+  },
+  "onboardingSoundPlaying": "Playing it back…",
+  "@onboardingSoundPlaying": {
+    "description": "First launch, sound check: while the recording plays back."
+  },
+  "onboardingSoundBeeping": "Playing a beep…",
+  "@onboardingSoundBeeping": {
+    "description": "First launch, sound check: there was no recording, so a beep tests the sound."
+  },
+  "onboardingSoundHeardYou": "Did you hear yourself?",
+  "@onboardingSoundHeardYou": {
+    "description": "First launch, sound check: asked after the recording played back."
+  },
+  "onboardingSoundHeardBeep": "Did you hear a beep?",
+  "@onboardingSoundHeardBeep": {
+    "description": "First launch, sound check: asked after the beep played."
+  },
+  "onboardingSoundYes": "Yes, I heard it",
+  "@onboardingSoundYes": {
+    "description": "First launch, sound check: answer, the sound worked."
+  },
+  "onboardingSoundNo": "No, I heard nothing",
+  "@onboardingSoundNo": {
+    "description": "First launch, sound check: answer, the sound didn't work."
+  },
+  "onboardingSoundSpeakingOn": "Speaking is on: your microphone works.",
+  "@onboardingSoundSpeakingOn": {
+    "description": "First launch, sound check: result, speaking drills will run."
+  },
+  "onboardingSoundRefused": "Speaking stays off: Fluenough wasn’t allowed to use the microphone. Try again to be asked once more.",
+  "@onboardingSoundRefused": {
+    "description": "First launch, sound check: result, the microphone permission was refused."
+  },
+  "onboardingSoundSilent": "Speaking stays off: only silence was recorded. Is the microphone covered or muted?",
+  "@onboardingSoundSilent": {
+    "description": "First launch, sound check: result, the recording was silent."
+  },
+  "onboardingSoundNotRecorded": "Speaking stays off: the microphone didn’t record.",
+  "@onboardingSoundNotRecorded": {
+    "description": "First launch, sound check: result, recording failed."
+  },
+  "onboardingSoundNoRecogniser": "Speaking stays off: the microphone works, but this phone has no speech recogniser.",
+  "@onboardingSoundNoRecogniser": {
+    "description": "First launch, sound check: result, recorded fine but there is no recogniser."
+  },
+  "onboardingSoundListeningOn": "Listening is on: your sound works.",
+  "@onboardingSoundListeningOn": {
+    "description": "First launch, sound check: result, listening drills will run."
+  },
+  "onboardingSoundListeningOff": "Listening stays off: the sound didn’t reach you. Check the volume and try again.",
+  "@onboardingSoundListeningOff": {
+    "description": "First launch, sound check: result, playback failed or wasn't heard."
+  },
+  "onboardingSoundLater": "You can switch speaking and listening on or off later, in {settings}.",
+  "@onboardingSoundLater": {
+    "description": "First launch, sound check: note under the check. {settings} is the Settings tab's name.",
+    "placeholders": {
+      "settings": {
+        "type": "String",
+        "example": "Settings"
+      }
+    }
+  },
   "onboardingSpokenTitle": "Which languages do you already speak?",
   "@onboardingSpokenTitle": {
     "description": "First-launch question: the languages the learner already knows, not the one they want to learn, which is asked separately. The same choice as the Settings screen spokenTitle."
