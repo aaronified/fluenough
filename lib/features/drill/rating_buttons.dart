@@ -17,7 +17,8 @@ class RatingButtons extends StatelessWidget {
   });
 
   /// Days until the card is next due if rated so: `ProgressStore.preview`.
-  /// Null in number practice, which schedules nothing: no interval is shown.
+  /// Null in a session that is not recorded, number practice or revising,
+  /// which schedules nothing: no interval is shown.
   final int Function(SelfGrade grade)? intervalFor;
 
   final ValueChanged<SelfGrade> onRate;

@@ -17,7 +17,9 @@ import 'skill_section.dart';
 import 'unreviewed_notice.dart';
 
 /// One deck: counts, practise one skill, only these tags, a card preview,
-/// licence, source, voice and id, and Review all due.
+/// licence, source, voice and id, and at the foot Review all due; once
+/// nothing is due, Learn anyway while cards are left to learn past today's
+/// cap, then Revise when every card is learned (ADR-0012).
 ///
 /// Design screens `deck` and `deck-novoice`. The counts are
 /// `AppState.countsFor`, the deck's numbers whatever tags are chosen; the

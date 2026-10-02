@@ -84,7 +84,7 @@
   },
   "commonDueBadge": "{count, plural, other{{count} due}}",
   "@commonDueBadge": {
-    "description": "Badge on a deck row: how many cards a session on that deck would drill now.",
+    "description": "Badge on a deck row: how many reviews in that deck are due now. New cards are not counted.",
     "placeholders": {
       "count": {
         "type": "int",
@@ -875,9 +875,9 @@
       }
     }
   },
-  "deckLearnAnywayNote": "You have learned today's new cards. You can keep going with this deck anyway.",
+  "deckLearnAnywayNote": "Today’s new cards are used up. You can keep going with this deck anyway.",
   "@deckLearnAnywayNote": {
-    "description": "Above Learn anyway on a deck's screen: why there is nothing to review, and that the learner may still go on."
+    "description": "Above Learn anyway on a deck's screen: nothing is due and the daily allowance of new cards is spent (or set to none), but the learner may still go on."
   },
   "deckRevise": "Revise · {count}",
   "@deckRevise": {
@@ -889,7 +889,7 @@
       }
     }
   },
-  "deckReviseNote": "You have learned every card here. Revise them whenever you like; it does not change when they come back.",
+  "deckReviseNote": "You’ve learned every card here. Revise them whenever you like — it won’t change when they’re next due.",
   "@deckReviseNote": {
     "description": "Above Revise on a finished deck's screen: revising is not recorded, so the schedule stays as it is."
   },
@@ -1283,6 +1283,10 @@
   "drillEndBody": "Your answers so far are already recorded.",
   "@drillEndBody": {
     "description": "Body of the end-session dialog."
+  },
+  "drillEndBodyNotRecorded": "This session isn’t recorded, so ending it changes nothing.",
+  "@drillEndBodyNotRecorded": {
+    "description": "Body of the end-session dialog in a session that is not recorded: number practice, or revising a finished deck."
   },
   "drillEndKeepGoing": "Keep going",
   "@drillEndKeepGoing": {
