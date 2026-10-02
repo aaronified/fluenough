@@ -44,7 +44,9 @@ class SoundContrasts {
     final b = normaliseForContrast(expected);
     if (a.isEmpty || b.isEmpty || a == b) return null;
     for (final contrast in contrasts) {
-      for (final (x, y) in contrast.pairs) {
+      for (final (rawX, rawY) in contrast.pairs) {
+        final x = composed(rawX);
+        final y = composed(rawY);
         if (_oneSwap(b, x, y, a, contrast.withinWord) ||
             _oneSwap(b, y, x, a, contrast.withinWord)) {
           return contrast;
@@ -92,9 +94,11 @@ class SoundContrasts {
 }
 
 /// [text] as the contrast check compares it: one spelling for what looks
-/// the same, lower case, one space, and no sentence-final mark.
+/// the same, in whole letters, lower case, one space, and no
+/// sentence-final mark. Whole letters matter: taken apart, Bengali ো is ে
+/// and া, and an e said for an o would look like an a added.
 String normaliseForContrast(String text) {
-  var out = canonical(text).trim().toLowerCase();
+  var out = composed(text).trim().toLowerCase();
   out = out.replaceAll(RegExp(r'\s+'), ' ');
   out = out.replaceAll(RegExp(r'[.,!?;:।॥。．，！？；：]+$'), '');
   return out.trim();

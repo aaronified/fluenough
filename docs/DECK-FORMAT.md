@@ -290,7 +290,7 @@ Each contrast:
 | `id` | yes | `[a-z0-9-]+`, unique in the file. A sound-differences deck tags each minimal pair with it. |
 | `name` | yes | Completes "The difference is …", in the learner's language. |
 | `pairs` | yes | A non-empty list of two different quoted strings, letters or signs, at most one of them empty (a sign there or not). |
-| `within_word` | no | `true`: a sign added or taken away counts only inside a word, since a vowel sign added at the end of a word adds a syllable. Swaps always count. |
+| `within_word` | no | `true`: a sign added or taken away counts only inside a word, for a language that drops a word's final vowel (Bengali, Hindi), where a vowel sign added at the end adds a syllable. Swaps always count. |
 
 ## Facts files
 
