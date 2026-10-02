@@ -33,8 +33,6 @@ const ScriptGuide _sample = ScriptGuide(
     ScriptFeature(
       id: 'knot',
       name: 'The knot', // ui-literal-ok: debug-only gallery
-      term: 'গুটলি',
-      reading: 'gutli', // ui-literal-ok: debug-only gallery
       example: 'ত',
       text: 'A small loop that tells look-alike letters apart.', // ui-literal-ok: debug-only gallery
       letters: <String>['ক', 'খ', 'ত', 'ল'],
