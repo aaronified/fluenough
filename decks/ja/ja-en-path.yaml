@@ -1,0 +1,9 @@
+# The order Japanese is taught from English in: hiragana, which everything
+# else in Japanese assumes. See ADR-0013 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: ja-en-path
+language: ja
+native: en
+units:
+  - [ja-en-hiragana]

@@ -58,13 +58,14 @@ void main() {
           .whereType<File>()
           .map((f) => f.path.replaceAll(r'\', '/'))
           .where(AssetDeckSource.isDeckPath)
-          // Facts, themes and number rules sit beside the decks but are
-          // not decks.
+          // Facts, themes, number rules and course paths sit beside the
+          // decks but are not decks.
           .where(
             (p) => !{
               'facts',
               'themes',
               'numbers',
+              'path',
             }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
           )
           .toSet();
@@ -98,11 +99,6 @@ void main() {
       );
       final paths = catalog.decks.map((d) => d.path).toList();
       expect(paths.toSet(), hasLength(paths.length));
-      final others = [
-        for (final d in catalog.decks)
-          if (d.deck.theme == null) d.path,
-      ];
-      expect(others, [...others]..sort());
 
       final path = [for (final t in catalog.themes) t.id];
       final courses = <String, List<String>>{};
@@ -120,6 +116,26 @@ void main() {
             if (themes.contains(t)) t,
         ], reason: course);
       }
+    });
+
+    test('every course has a path, which lists all its decks and only '
+        'them, and its decks come in that order (#117)', () {
+      final byCourse = <String, List<String>>{};
+      for (final d in catalog.decks) {
+        byCourse
+            .putIfAbsent('${d.language.code}/${d.deck.native.code}', () => [])
+            .add(d.id);
+      }
+      expect(catalog.paths.keys.toSet(), byCourse.keys.toSet());
+      for (final MapEntry(key: course, value: ids) in byCourse.entries) {
+        expect(ids, catalog.paths[course]!.deckIds.toList(), reason: course);
+      }
+      final hindi = catalog.byId('hi-en-addressing')!;
+      expect(catalog.pathOf(hindi)!.id, 'hi-en-path');
+      expect(
+        catalog.pathOf(hindi)!.units[catalog.pathOf(hindi)!.unitOf(hindi.id)!],
+        contains('hi-en-grammar-pronouns'),
+      );
     });
 
     test('a grammar deck is listed with its pattern, expanded to cards', () {
@@ -263,35 +279,108 @@ cards:
     native: "hello"
 ''';
 
-    test(
-      'a course\'s theme decks follow the path; the rest keep path order',
-      () {
-        final catalog = DeckCatalog.parseAll({
-          'decks/themes.yaml': themes,
-          'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
-          'decks/hi/hi-en-help.yaml': deck('hi-en-help', theme: 'help'),
-          'decks/hi/hi-en-first-words.yaml': deck(
-            'hi-en-first-words',
-            theme: 'first-words',
+    test('without a path, a course\'s theme decks come first, in theme order, '
+        'then its other decks (#80)', () {
+      final catalog = DeckCatalog.parseAll({
+        'decks/themes.yaml': themes,
+        'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
+        'decks/hi/hi-en-help.yaml': deck('hi-en-help', theme: 'help'),
+        'decks/hi/hi-en-first-words.yaml': deck(
+          'hi-en-first-words',
+          theme: 'first-words',
+        ),
+        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+        'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
+      });
+      expect(catalog.broken, isEmpty);
+      expect(catalog.themes.map((t) => t.id), [
+        'first-words',
+        'market',
+        'help',
+      ]);
+      expect(catalog.decks.map((d) => d.id), [
+        'hi-en-first-words',
+        'hi-en-market',
+        'hi-en-help',
+        'hi-en-core',
+        'ja-en-kana',
+      ]);
+      expect(catalog.paths, isEmpty);
+    });
+
+    group('with a path', () {
+      Map<String, String> files(String units) => <String, String>{
+        'decks/themes.yaml': themes,
+        'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
+        'decks/hi/hi-en-help.yaml': deck('hi-en-help', theme: 'help'),
+        'decks/hi/hi-en-first-words.yaml': deck(
+          'hi-en-first-words',
+          theme: 'first-words',
+        ),
+        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
+        'decks/hi/hi-en-path.yaml': '''
+schema: 1
+kind: path
+id: hi-en-path
+language: hi
+native: en
+units:
+$units''',
+        'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
+      };
+
+      test('the course\'s decks come in the path\'s order, whatever their '
+          'themes', () {
+        final catalog = DeckCatalog.parseAll(
+          files(
+            '  - [hi-en-first-words, hi-en-core]\n'
+            '  - [hi-en-help]\n'
+            '  - [hi-en-market]\n',
           ),
-          'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
-          'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
-        });
+        );
         expect(catalog.broken, isEmpty);
-        expect(catalog.themes.map((t) => t.id), [
-          'first-words',
-          'market',
-          'help',
-        ]);
         expect(catalog.decks.map((d) => d.id), [
+          'hi-en-first-words',
           'hi-en-core',
+          'hi-en-help',
+          'hi-en-market',
+          'ja-en-kana',
+        ]);
+        expect(catalog.paths['hi/en']!.units, [
+          ['hi-en-first-words', 'hi-en-core'],
+          ['hi-en-help'],
+          ['hi-en-market'],
+        ]);
+        expect(catalog.pathOf(catalog.byId('ja-en-kana')!), isNull);
+      });
+
+      test('a deck the path leaves out comes after it, and a deck it names '
+          'that does not exist is ignored', () {
+        final catalog = DeckCatalog.parseAll(
+          files('  - [hi-en-market, hi-en-gone]\n  - [hi-en-help]\n'),
+        );
+        expect(catalog.decks.map((d) => d.id), [
+          'hi-en-market',
+          'hi-en-help',
+          'hi-en-core',
+          'hi-en-first-words',
+          'ja-en-kana',
+        ]);
+      });
+
+      test('a broken path is reported, and the course falls back to its '
+          'themes', () {
+        final catalog = DeckCatalog.parseAll(files('  - []\n'));
+        expect(catalog.broken.single.path, 'decks/hi/hi-en-path.yaml');
+        expect(catalog.paths, isEmpty);
+        expect(catalog.decks.map((d) => d.id).take(4), [
           'hi-en-first-words',
           'hi-en-market',
           'hi-en-help',
-          'ja-en-kana',
+          'hi-en-core',
         ]);
-      },
-    );
+      });
+    });
 
     test('a broken themes file is reported, not fatal', () {
       final catalog = DeckCatalog.parseAll({
