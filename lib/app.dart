@@ -6,7 +6,7 @@ import 'app/app_state.dart';
 import 'app/routes.dart';
 import 'app/shell_tab.dart';
 import 'features/decks/decks_page.dart';
-import 'features/profiles/spoken_languages_page.dart';
+import 'features/onboarding/onboarding_flow.dart';
 import 'features/settings/settings_page.dart';
 import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
@@ -60,10 +60,11 @@ class _FluenoughAppState extends State<FluenoughApp> {
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          // The first launch asks which languages the learner speaks (#53)
-          // before anything else.
+          // The first launch (#118): welcome, tour, then the languages the
+          // learner speaks (#53). Saving those ends it: this rebuilds on
+          // settings, and the shell takes over.
           home: settings.spokenLanguages.isEmpty
-              ? const SpokenLanguagesPage(firstRun: true)
+              ? const OnboardingFlow()
               : const AppShell(),
         ),
       ),

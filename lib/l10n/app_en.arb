@@ -1902,13 +1902,131 @@
       }
     }
   },
+  "onboardingWelcomeTagline": "Fluent enough.",
+  "@onboardingWelcomeTagline": {
+    "description": "First screen of the first launch, under the app's name: its motto, a play on the name (fluent + enough), meaning good enough to get by. Translate the idea; the pun need not survive."
+  },
+  "onboardingWelcomeBody": "Learn the basics of a new language with drills that come back just before you’d forget them.",
+  "@onboardingWelcomeBody": {
+    "description": "First screen of the first launch, under the motto: what the app does, in one sentence. 'Drills' are short exercises on words and sentences; they are scheduled by spaced repetition."
+  },
+  "onboardingWelcomeNote": "No account needed. Works offline.",
+  "@onboardingWelcomeNote": {
+    "description": "First screen of the first launch, small print above Get started, beside an offline icon. Both are true: there is no sign-in, and nothing in the app needs the internet."
+  },
+  "onboardingStart": "Get started",
+  "@onboardingStart": {
+    "description": "Main button on the first screen of the first launch. Opens the tour of the app."
+  },
+  "onboardingNext": "Next",
+  "@onboardingNext": {
+    "description": "Main button of the first launch on a tour slide, or on a question that is not the last one. Goes on to the next."
+  },
+  "onboardingSkip": "Skip",
+  "@onboardingSkip": {
+    "description": "Top of each tour slide but the last. Leaves the tour and goes on to the first question; nothing is skipped but the tour."
+  },
+  "onboardingFinish": "Start learning",
+  "@onboardingFinish": {
+    "description": "Main button on the first launch's last question. Saves the answers and opens the Today tab."
+  },
+  "onboardingTourPosition": "Slide {current} of {total}: {title}",
+  "@onboardingTourPosition": {
+    "description": "Not shown: what a screen reader says for the tour's page dots, announced each time the slide changes, by button, swipe or back.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      },
+      "title": {
+        "type": "String",
+        "example": "Back just before you forget"
+      }
+    }
+  },
+  "onboardingQuestionPosition": "Question {current} of {total}",
+  "@onboardingQuestionPosition": {
+    "description": "Not shown: what a screen reader says for the progress bar over the first launch's questions, drawn once there is more than one question.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "onboardingTourSkillsTitle": "Four ways to practise",
+  "@onboardingTourSkillsTitle": {
+    "description": "Tour slide 1, title: the four kinds of drill."
+  },
+  "onboardingTourSkillsBody": "Recognise a word, type it, catch it by ear and put it in the right form, each on its own schedule.",
+  "@onboardingTourSkillsBody": {
+    "description": "Tour slide 1, body: one clause per drill, in the order of the labels above it (recognition, production, listening, grammar), then that each skill is scheduled separately."
+  },
+  "onboardingTourReviewsTitle": "Back just before you forget",
+  "@onboardingTourReviewsTitle": {
+    "description": "Tour slide 2, title: spaced repetition, in plain words."
+  },
+  "onboardingTourReviewsBody": "Cards you know wait longer each time, cards you miss come back tomorrow, and Today shows what’s due.",
+  "@onboardingTourReviewsBody": {
+    "description": "Tour slide 2, body. 'Today' is the first tab (navToday): use the same word."
+  },
+  "onboardingTourPhoneTitle": "Yours, on this phone",
+  "@onboardingTourPhoneTitle": {
+    "description": "Tour slide 3, title: where the learner’s progress is kept."
+  },
+  "onboardingTourPhoneBody": "Your progress is saved on this phone, never uploaded, and you can export it from Settings whenever you like.",
+  "@onboardingTourPhoneBody": {
+    "description": "Tour slide 3, body. 'Settings' is the last tab (navSettings): use the same word. The export is Settings' 'Export review log' (settingsExport)."
+  },
+  "onboardingTourFactsTitle": "A fact a day",
+  "@onboardingTourFactsTitle": {
+    "description": "Tour slide 4, title: the daily fact on the Today tab."
+  },
+  "onboardingTourFactsBody": "Most languages here come with a short fact each day, shown on Today in the languages you speak.",
+  "@onboardingTourFactsBody": {
+    "description": "Tour slide 4, body. 'Most' because not every language has facts yet. Leads into the next screen, which asks which languages the learner speaks."
+  },
+  "onboardingSpokenTitle": "Which languages do you already speak?",
+  "@onboardingSpokenTitle": {
+    "description": "First-launch question: the languages the learner already knows, not the one they want to learn, which is asked separately. The same choice as the Settings screen spokenTitle."
+  },
+  "onboardingSpokenBody": "Tick each one you know. Today’s facts are written in them, and some compare the language you’re learning with one of them.",
+  "@onboardingSpokenBody": {
+    "description": "Under that question: how to answer, and what the answer is used for."
+  },
+  "onboardingSpokenPrivacy": "Saved only on this phone. You can change it any time in {settings}, under “{row}”.",
+  "@onboardingSpokenPrivacy": {
+    "description": "Foot of the first-launch question: where the answer is kept, and where to change it.",
+    "placeholders": {
+      "settings": {
+        "type": "String",
+        "example": "Settings"
+      },
+      "row": {
+        "type": "String",
+        "example": "Languages I speak"
+      }
+    }
+  },
+  "onboardingSpokenNeedOne": "Tick at least one language to go on.",
+  "@onboardingSpokenNeedOne": {
+    "description": "First-launch question, just above the button while it is disabled: why it is."
+  },
   "spokenTitle": "Languages you speak",
   "@spokenTitle": {
-    "description": "Title of the screen where the learner picks and ranks the languages they speak, shown on first launch and from Settings."
+    "description": "Title of the screen opened from Settings where the learner picks and ranks the languages they speak. The first launch asks the same question as onboardingSpokenTitle."
   },
   "spokenBody": "Tick every language you know, then drag them into order, the one you know best first. They decide which comparisons and daily facts you see.",
   "@spokenBody": {
-    "description": "Explanation on the spoken-languages screen."
+    "description": "Under the title of the spoken-languages screen opened from Settings: how to answer, and what the answer changes."
   },
   "spokenOption": "{name} · {ownName}",
   "@spokenOption": {
@@ -1931,6 +2049,28 @@
       "rank": {
         "type": "int",
         "example": "1"
+      }
+    }
+  },
+  "spokenRankHint": "Drag by the handle to put the one you know best at the top. Today’s facts show it first.",
+  "@spokenRankHint": {
+    "description": "Under the spoken-language list once two or more are ticked, on first launch and in Settings: how to rank them, and what the rank does."
+  },
+  "spokenRankHintActions": "Use a language’s move actions to put the one you know best at the top. Today’s facts show it first.",
+  "@spokenRankHintActions": {
+    "description": "The same hint while a screen reader is on, which offers move actions instead of dragging."
+  },
+  "spokenRankSemantics": "Ranked {rank} of {count}",
+  "@spokenRankSemantics": {
+    "description": "Not shown: what a screen reader says for the number beside a ticked language, after its name. 1 is the language known best.",
+    "placeholders": {
+      "rank": {
+        "type": "int",
+        "example": "1"
+      },
+      "count": {
+        "type": "int",
+        "example": "2"
       }
     }
   },

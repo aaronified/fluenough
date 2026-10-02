@@ -1,14 +1,18 @@
+import 'dart:io';
 import 'dart:ui' show LocaleStringAttribute;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show SemanticsNode;
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -18,8 +22,11 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
+import 'package:fluenough/features/onboarding/onboarding_flow.dart';
+import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
+import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/stats/leeches_page.dart';
@@ -102,6 +109,30 @@ void main() {
         quotedIn(tester, find.text(l10n.feedbackAnswer('el niño'))),
         <String, String>{'el niño': 'es'},
       );
+      semantics.dispose();
+    });
+
+    testWidgets('a language\'s own name, in the list of spoken ones', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final semantics = tester.ensureSemantics();
+      await pumpScreen(
+        tester,
+        OnboardingFlow(
+          startAt: 'spoken',
+          spoken: const <String>['bn', 'en'],
+          choices: parseSpokenLanguages(
+            File(SpokenLanguagesPage.asset).readAsStringSync(),
+          ),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      final bengali = find.text(l10n.spokenOption('Bengali', 'বাংলা'));
+      expect(quotedIn(tester, bengali), <String, String>{'বাংলা': 'bn'});
+      final node = tester.getSemantics(bengali);
+      expect(node, isSemantics(isChecked: true));
+      expect(node.label, contains(l10n.spokenRankSemantics(1, 2)));
       semantics.dispose();
     });
 
@@ -293,7 +324,47 @@ void main() {
     ),
   ];
 
+  final choices = parseSpokenLanguages(
+    File(SpokenLanguagesPage.asset).readAsStringSync(),
+  );
+  final firstLaunch = <(String, Widget)>[
+    ('first launch: welcome', const OnboardingFlow()),
+    for (final (i, slide) in tourSlides.indexed)
+      (
+        'first launch: tour, ${slide.id}',
+        OnboardingFlow(startAt: 'tour', page: i),
+      ),
+    (
+      'first launch: languages, none ticked',
+      OnboardingFlow(startAt: 'spoken', choices: choices),
+    ),
+    (
+      'first launch: languages, two ranked',
+      OnboardingFlow(
+        startAt: 'spoken',
+        spoken: const <String>['bn', 'en'],
+        choices: choices,
+      ),
+    ),
+    ('languages, from Settings', SpokenLanguagesPage(choices: choices)),
+  ];
+  pages.addAll(firstLaunch);
+
   group('at the largest font size, 2.0 on Android', () {
+    for (final (name, page) in firstLaunch) {
+      testWidgets('$name: nothing clipped, targets still big enough', (
+        tester,
+      ) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        await pumpScreen(tester, page);
+        expect(tester.takeException(), isNull);
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+
     for (final (name, request, preset) in drills) {
       testWidgets('$name: nothing clipped, targets still big enough', (
         tester,
@@ -355,4 +426,45 @@ void main() {
       }
     });
   }
+
+  group('the first launch in every colour', () {
+    setUp(rootBundle.clear);
+    for (final seed in ThemeSeed.values) {
+      for (final high in <bool>[false, true]) {
+        for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+          testWidgets('${seed.name}, ${high ? 'high' : 'standard'} contrast, '
+              '${mode.name}', (tester) async {
+            usePhone(tester);
+            final semantics = tester.ensureSemantics();
+            final settings = SettingsNotifier(
+              seed: seed,
+              highContrast: high,
+              themeMode: mode,
+            );
+            final state = AppState.test(settings: settings);
+            addTearDown(state.dispose);
+            addTearDown(settings.dispose);
+            await tester.pumpWidget(FluenoughApp(state: state));
+            await tester.pumpAndSettle();
+            final l10n = l10nOf(tester);
+            await expectLater(tester, meetsGuideline(textContrastGuideline));
+            await tester.tap(find.byType(FilledButton));
+            await tester.pumpAndSettle();
+            for (var i = 0; i < tourSlides.length; i++) {
+              await expectLater(tester, meetsGuideline(textContrastGuideline));
+              await tester.tap(find.byType(FilledButton));
+              await tester.pumpAndSettle();
+            }
+            await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
+            await tester.tap(
+              find.text(l10n.spokenOption('English', 'English')),
+            );
+            await tester.pumpAndSettle();
+            await expectLater(tester, meetsGuideline(textContrastGuideline));
+            semantics.dispose();
+          });
+        }
+      }
+    }
+  });
 }
