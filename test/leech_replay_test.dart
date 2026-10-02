@@ -5,22 +5,15 @@ import 'package:fluenough/core/models/review_event.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/scheduling/sm2.dart';
 
-const ProgressKey pair = (
-  deckId: 'hi-en-market',
-  cardId: 'hi-en-market-0001',
-  mode: DrillMode.production,
-);
-const ProgressKey other = (
-  deckId: 'hi-en-market',
-  cardId: 'hi-en-market-0002',
-  mode: DrillMode.production,
-);
+const ProgressKey pair = (cardId: 'hi-0231', mode: DrillMode.production);
+const ProgressKey other = (cardId: 'hi-0232', mode: DrillMode.production);
 
 final DateTime day0 = DateTime(2026, 9, 1, 9);
 DateTime day(int n) => DateTime(day0.year, day0.month, day0.day + n, 9);
 
 LoggedReview review(ProgressKey key, int d, int grade) => (
   key: key,
+  deckId: 'hi-en-market',
   at: day(d),
   grade: grade,
   elapsed: Duration.zero,

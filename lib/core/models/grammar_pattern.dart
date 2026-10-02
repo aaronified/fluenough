@@ -5,6 +5,7 @@ class PatternEntry {
     required this.gloss,
     required this.forms,
     this.key,
+    this.alternatives = const <String, List<String>>{},
   });
 
   /// The word the row inflects, as the drill shows it.
@@ -21,7 +22,12 @@ class PatternEntry {
 
   /// One form per slot, keyed by slot label. A `null` form marks a cell with no
   /// valid form — a defective verb, say — which is skipped rather than drilled.
+  /// It is the form shown; [alternatives] holds any others accepted.
   final Map<String, String?> forms;
+
+  /// Other forms accepted for a slot, after the one in [forms]: West Bengal
+  /// এলাম and Bangladesh আসলাম, say (#144). Slots with none are absent.
+  final Map<String, List<String>> alternatives;
 }
 
 /// A grammar deck's inflection table, before it is expanded into cards.

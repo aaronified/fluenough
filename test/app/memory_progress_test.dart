@@ -23,31 +23,27 @@ void main() {
 
   test('recording runs Sm2.next from a fresh state', () {
     final progress = MemoryProgress();
-    final event = answer(progress, 'es-en-core-0001', 4);
+    final event = answer(progress, 'es-0001', 4);
 
     expect(event.wasNew, isTrue);
     expect(event.before, isNull);
     final expected = Sm2.next(Sm2State.fresh(monday), 4, now: monday);
     expect(event.after.intervalDays, expected.intervalDays);
     expect(event.after.dueAt, expected.dueAt);
-    expect(
-      progress
-          .stateOf('es-en-core-100', 'es-en-core-0001', DrillMode.recognition)!
-          .repetitions,
-      1,
-    );
+    expect(progress.stateOf('es-0001', DrillMode.recognition)!.repetitions, 1);
   });
 
-  test('state is kept per deck, card and mode', () {
+  test('state is kept per card and mode, whichever deck lists it', () {
     final progress = MemoryProgress();
     answer(progress, 'a', 5);
-    expect(
-      progress.stateOf('es-en-core-100', 'a', DrillMode.production),
-      isNull,
-    );
-    expect(progress.stateOf('other', 'a', DrillMode.recognition), isNull);
+    expect(progress.stateOf('a', DrillMode.production), isNull);
+    expect(progress.stateOf('a', DrillMode.recognition), isNotNull);
     answer(progress, 'a', 5, mode: DrillMode.production);
     expect(progress.states, hasLength(2));
+    // The same card answered in another deck is the same pair (ADR-0018).
+    answer(progress, 'a', 5, deck: 'ja-en-hiragana');
+    expect(progress.states, hasLength(2));
+    expect(progress.stateOf('a', DrillMode.recognition)!.repetitions, 2);
   });
 
   test('the log only grows, and each event carries before and after', () {
@@ -78,13 +74,7 @@ void main() {
   test('preview says what a grade would do, and records nothing', () {
     final progress = MemoryProgress();
     answer(progress, 'a', 5);
-    final state = progress.preview(
-      'es-en-core-100',
-      'a',
-      DrillMode.recognition,
-      5,
-      now: monday,
-    );
+    final state = progress.preview('a', DrillMode.recognition, 5, now: monday);
     expect(state.intervalDays, 6);
     expect(progress.log, hasLength(1));
   });
@@ -134,8 +124,10 @@ void main() {
     answer(progress, 'a', 5, mode: DrillMode.production);
     answer(progress, 'b', 1);
     answer(progress, 'c', 4, deck: 'ja-en-hiragana');
-    expect(progress.learnedIn('es-en-core-100'), 1);
-    expect(progress.learnedIn('ja-en-hiragana'), 1);
+    expect(progress.learnedIn(<String>['a', 'b']), 1);
+    expect(progress.learnedIn(<String>['c']), 1);
+    // A card is learned in every deck that lists it (ADR-0018).
+    expect(progress.learnedIn(<String>['c', 'd']), 1);
   });
 
   test('due tomorrow counts cards whose next review is tomorrow', () {

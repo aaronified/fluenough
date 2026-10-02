@@ -5,6 +5,7 @@ import 'sm2.dart';
 /// One review as the log keeps it: enough to replay it.
 typedef LoggedReview = ({
   ProgressKey key,
+  String deckId,
   DateTime at,
   int grade,
   Duration elapsed,
@@ -42,7 +43,7 @@ typedef LoggedReview = ({
     events.add(
       ReviewEvent(
         at: review.at,
-        deckId: key.deckId,
+        deckId: review.deckId,
         cardId: key.cardId,
         mode: key.mode,
         grade: review.grade,
@@ -62,6 +63,7 @@ typedef LoggedReview = ({
 /// [event] as the log keeps it.
 LoggedReview logged(ReviewEvent event) => (
   key: event.key,
+  deckId: event.deckId,
   at: event.at,
   grade: event.grade,
   elapsed: event.elapsed,

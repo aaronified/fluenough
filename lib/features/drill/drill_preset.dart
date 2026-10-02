@@ -56,7 +56,7 @@ class DrillPreset {
       return <SessionItem>[
         first,
         for (final item in items)
-          if (item.card.id != card.id || item.card.deckId != card.deckId) item,
+          if (item.card.id != card.id) item,
       ];
     }
     return items;

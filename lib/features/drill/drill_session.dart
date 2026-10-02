@@ -170,13 +170,7 @@ class DrillSession extends ChangeNotifier {
   int intervalFor(SelfGrade grade) {
     final card = item.card;
     return _state.progress
-        .preview(
-          card.deckId,
-          card.id,
-          item.mode,
-          grade.toSm2Grade(),
-          now: _state.now(),
-        )
+        .preview(card.id, item.mode, grade.toSm2Grade(), now: _state.now())
         .intervalDays;
   }
 

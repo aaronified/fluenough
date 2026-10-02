@@ -8,8 +8,8 @@ import '../../core/models/grammar_pattern.dart';
 ///
 /// The live drill finds a card's cell with [grammarCellOf], which matches
 /// the card against each cell's expanded id rather than parsing
-/// `<deck-id>-<lemma>-<slot-index>` back out of it (decision 8 in the UI
-/// plan).
+/// `<language>-<deck name>-<lemma>-<slot-index>` back out of it (decision 8
+/// in the UI plan).
 class GrammarCell {
   const GrammarCell({
     required this.pattern,
@@ -28,6 +28,9 @@ class GrammarCell {
 
   /// The form to type. [grammarCells] never yields a cell without one.
   String get answer => entry.forms[slot]!;
+
+  /// The other forms accepted for the slot (#144), after [answer].
+  List<String> get alternatives => entry.alternatives[slot] ?? const <String>[];
 
   /// The pattern's `prompt` with `{lemma}`, `{gloss}` and `{slot}` filled in:
   /// "hablar (to speak) — nosotros". Deck content, shown as written.
@@ -79,7 +82,7 @@ GrammarCell? grammarCellOf(Card card, Deck deck) {
   final pattern = deck.pattern;
   if (pattern == null) return null;
   for (final cell in grammarCells(pattern)) {
-    if (patternCardId(deck.id, cell.entry, cell.slotIndex) == card.id) {
+    if (patternCardId(deck, cell.entry, cell.slotIndex) == card.id) {
       return cell;
     }
   }

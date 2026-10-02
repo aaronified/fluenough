@@ -16,6 +16,8 @@ class LeechActions extends Table {
 
   IntColumn get ts => integer().map(const EpochMs())();
 
+  /// Empty since migration 4: an action is on a card and a mode, whichever
+  /// deck lists the card (ADR-0018).
   TextColumn get deckId => text()();
 
   TextColumn get cardId => text()();

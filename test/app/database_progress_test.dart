@@ -42,9 +42,9 @@ void main() {
 
   test('answers survive closing the app and opening it again', () async {
     final first = await DatabaseProgress.open(fileDb());
-    answer(first, 'hi-en-market-0001', 4, at);
-    answer(first, 'hi-en-market-0002', 1, at);
-    answer(first, 'hi-en-market-0001', 5, at.add(const Duration(days: 1)));
+    answer(first, 'hi-0231', 4, at);
+    answer(first, 'hi-0232', 1, at);
+    answer(first, 'hi-0231', 5, at.add(const Duration(days: 1)));
     final before = {
       for (final e in first.states.entries) e.key: fields(e.value),
     };
@@ -56,9 +56,9 @@ void main() {
     addTearDown(again.close);
     expect(again.persists, isTrue);
     expect(again.log.map((e) => (e.cardId, e.grade)), [
-      ('hi-en-market-0001', 4),
-      ('hi-en-market-0002', 1),
-      ('hi-en-market-0001', 5),
+      ('hi-0231', 4),
+      ('hi-0232', 1),
+      ('hi-0231', 5),
     ]);
     expect({
       for (final e in again.states.entries) e.key: fields(e.value),
@@ -74,15 +74,15 @@ void main() {
     progress.addListener(() => told++);
 
     for (var i = 1; i <= 3; i++) {
-      answer(progress, 'hi-en-market-000$i', 4, at.add(Duration(minutes: i)));
+      answer(progress, 'hi-023$i', 4, at.add(Duration(minutes: i)));
       expect(progress.log, hasLength(i), reason: 'before any write lands');
     }
     expect(told, 3);
     await progress.flush();
     expect((await db.reviewsDao.all()).map((r) => r.cardId), [
-      'hi-en-market-0001',
-      'hi-en-market-0002',
-      'hi-en-market-0003',
+      'hi-0231',
+      'hi-0232',
+      'hi-0233',
     ]);
     expect(await db.cardStatesDao.all(), hasLength(3));
   });
@@ -101,7 +101,7 @@ void main() {
     FlutterError.onError = reported.add;
     addTearDown(() => FlutterError.onError = previous);
 
-    answer(progress, 'hi-en-market-0001', 4, at);
+    answer(progress, 'hi-0231', 4, at);
     await expectLater(progress.flush(), throwsA(anything));
     expect(reported.single.library, 'fluenough progress');
   });
@@ -110,7 +110,7 @@ void main() {
     final db = AppDatabase(NativeDatabase.memory());
     await ReviewLog(db).record(
       deckId: 'hi-en-market',
-      cardId: 'hi-en-market-0001',
+      cardId: 'hi-0231',
       mode: DrillMode.recognition,
       grade: 5,
       now: at,
@@ -205,11 +205,7 @@ void main() {
   });
 
   test('leech actions are saved, and a reset holds after reopening', () async {
-    const key = (
-      deckId: 'hi-en-market',
-      cardId: 'hi-en-market-0001',
-      mode: DrillMode.production,
-    );
+    const key = (cardId: 'hi-0231', mode: DrillMode.production);
     final first = await DatabaseProgress.open(fileDb());
     answer(first, key.cardId, 4, at);
     answer(first, key.cardId, 1, at.add(const Duration(days: 1)));
@@ -218,14 +214,14 @@ void main() {
       LeechActionKind.reset,
       now: at.add(const Duration(days: 2)),
     );
-    expect(first.stateOf(key.deckId, key.cardId, key.mode), isNull);
+    expect(first.stateOf(key.cardId, key.mode), isNull);
     answer(first, key.cardId, 5, at.add(const Duration(days: 3)));
     first.actOnLeech(
       key,
       LeechActionKind.setAside,
       now: at.add(const Duration(days: 3, hours: 1)),
     );
-    final memory = first.stateOf(key.deckId, key.cardId, key.mode)!;
+    final memory = first.stateOf(key.cardId, key.mode)!;
     await first.close();
     first.dispose();
 
@@ -238,18 +234,14 @@ void main() {
       LeechActionKind.setAside,
     ]);
     expect(again.log, hasLength(3), reason: 'no review is removed');
-    final restored = again.stateOf(key.deckId, key.cardId, key.mode)!;
+    final restored = again.stateOf(key.cardId, key.mode)!;
     expect(fields(restored), fields(memory));
     expect(restored.repetitions, 1, reason: 'restarted at the reset');
     expect(again.leechEffects.isSetAside(key), isTrue);
 
     final rows = await db.reviewsDao.all();
     expect(rows.last.intervalBefore, isNull, reason: 'fresh after the reset');
-    final cached = (await db.cardStatesDao.of(
-      key.deckId,
-      key.cardId,
-      key.mode,
-    ))!;
+    final cached = (await db.cardStatesDao.of(key.cardId, key.mode))!;
     expect(cached.repetitions, restored.repetitions);
   });
 
@@ -280,7 +272,7 @@ void main() {
           .any((i) => i.card.id == card.id && i.mode == mode);
       expect(queued(), isTrue);
 
-      final key = (deckId: deck.id, cardId: card.id, mode: mode);
+      final key = (cardId: card.id, mode: mode);
       progress.actOnLeech(key, LeechActionKind.setAside, now: at);
       expect(queued(), isFalse);
       expect(progress.log, hasLength(1), reason: 'its history stays');

@@ -26,7 +26,7 @@ abstract final class LogJsonl {
         jsonEncode(<String, Object?>{
           'type': 'review',
           'ts': r.at.toUtc().toIso8601String(),
-          'deck': r.key.deckId,
+          'deck': r.deckId,
           'card': r.key.cardId,
           'mode': r.key.mode.name,
           'grade': r.grade,
@@ -37,7 +37,6 @@ abstract final class LogJsonl {
         jsonEncode(<String, Object>{
           'type': 'leech',
           'ts': a.at.toUtc().toIso8601String(),
-          'deck': a.key.deckId,
           'card': a.key.cardId,
           'mode': a.key.mode.name,
           'kind': a.kind.name,
@@ -84,6 +83,7 @@ abstract final class LogJsonl {
         case 'review':
           reviews.add((
             key: _key(decoded, n),
+            deckId: _deck(decoded, n),
             at: _time(decoded, n),
             grade: _grade(decoded, n),
             elapsed: Duration(milliseconds: _int(decoded, 'elapsed_ms', n)),
@@ -108,13 +108,19 @@ abstract final class LogJsonl {
   }
 
   static ProgressKey _key(Map<String, Object?> o, int n) {
-    final deck = o['deck'];
     final card = o['card'];
     final mode = DrillMode.tryParse('${o['mode']}');
-    if (deck is! String || card is! String || mode == null) {
-      throw FormatException('line $n: deck, card or mode is missing');
+    if (card is! String || mode == null) {
+      throw FormatException('line $n: card or mode is missing');
     }
-    return (deckId: deck, cardId: card, mode: mode);
+    return (cardId: card, mode: mode);
+  }
+
+  /// The deck a review was answered in.
+  static String _deck(Map<String, Object?> o, int n) {
+    final deck = o['deck'];
+    if (deck is! String) throw FormatException('line $n: deck is missing');
+    return deck;
   }
 
   static DateTime _time(Map<String, Object?> o, int n) {
@@ -140,10 +146,9 @@ abstract final class LogJsonl {
 /// What makes two reviews the same review, for an import that must not
 /// double the history: the pair and the moment, to the millisecond.
 String reviewIdentity(LoggedReview r) =>
-    '${r.key.deckId}|${r.key.cardId}|${r.key.mode.name}|'
-    '${r.at.millisecondsSinceEpoch}';
+    '${r.key.cardId}|${r.key.mode.name}|${r.at.millisecondsSinceEpoch}';
 
 /// The same, for a leech action.
 String leechIdentity(LeechAction a) =>
-    '${a.key.deckId}|${a.key.cardId}|${a.key.mode.name}|'
+    '${a.key.cardId}|${a.key.mode.name}|'
     '${a.at.millisecondsSinceEpoch}|${a.kind.name}';

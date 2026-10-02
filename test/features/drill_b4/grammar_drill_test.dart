@@ -307,7 +307,7 @@ void main() {
     expect(find.text(pattern.notes!), findsOneWidget);
     final review = state.progress.log.single;
     expect(review.mode, DrillMode.grammar);
-    expect(review.cardId, 'es-en-grammar-present-ar-hablar-0');
+    expect(review.cardId, 'es-grammar-present-ar-hablar-0');
     expect(review.answerGiven, 'hablo');
     expect(review.grade, greaterThanOrEqualTo(4));
   });

@@ -175,7 +175,7 @@ void main() {
       final deck = parseFile(path);
       expect(inFile, greaterThan(0));
       expect(deck.cards, hasLength(inFile));
-      final casa = deck.cards.singleWhere((c) => c.id == 'es-en-core-0010');
+      final casa = deck.cards.singleWhere((c) => c.id == 'es-0006');
       expect(casa.altNative, ['the home']);
       expect(casa.examples.single.target, 'La casa es muy grande.');
     });

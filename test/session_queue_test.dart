@@ -55,6 +55,22 @@ List<String> ids(List<SessionItem> items) => [
 
 void main() {
   group('new cards', () {
+    test('a card listed by two decks is one pair, taken once (ADR-0018)', () {
+      const listed = Card(
+        id: 'a',
+        deckId: 'other',
+        target: 'target a',
+        native: 'native a, as the other deck glosses it',
+      );
+      final queue = build([card('a'), listed, card('b')]);
+      expect(ids(queue.fresh), ['a:recognition', 'b:recognition']);
+      expect(
+        queue.fresh.first.card.deckId,
+        'test',
+        reason: 'the first listing',
+      );
+    });
+
     test('a new card starts with recognition', () {
       final queue = build([card('a'), card('b')]);
       expect(ids(queue.fresh), ['a:recognition', 'b:recognition']);

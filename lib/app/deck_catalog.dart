@@ -364,7 +364,7 @@ class DeckCatalog {
       decks.add(DeckEntry(path: path, deck: deck));
     }
     return Catalog(
-      decks: _inTeachingOrder(decks, themes, coursePaths),
+      decks: _inTeachingOrder(_withRefs(decks), themes, coursePaths),
       broken: broken,
       themes: themes,
       facts: facts,
@@ -373,6 +373,56 @@ class DeckCatalog {
       sounds: sounds,
       scriptGuides: scriptGuides,
     );
+  }
+
+  /// [decks] with each ref folded into its deck's cards, in its place
+  /// (ADR-0018): the card as its own deck writes it, with what the ref
+  /// gives. A ref to a card no deck writes, or from a deck taught from
+  /// another language that gives no native, is left out; the validator
+  /// refuses both.
+  static List<DeckEntry> _withRefs(List<DeckEntry> decks) {
+    final written = <String, (Card, String)>{};
+    for (final entry in decks) {
+      if (entry.deck.kind != DeckKind.vocab) continue;
+      for (final card in entry.deck.cards) {
+        written.putIfAbsent(card.id, () => (card, entry.deck.native.code));
+      }
+    }
+    return <DeckEntry>[
+      for (final entry in decks)
+        if (entry.deck.refs.isEmpty)
+          entry
+        else
+          DeckEntry(
+            path: entry.path,
+            deck: entry.deck.withCards(_resolved(entry.deck, written)),
+            bundled: entry.bundled,
+          ),
+    ];
+  }
+
+  static List<Card> _resolved(Deck deck, Map<String, (Card, String)> written) {
+    final refAt = <int, CardRef>{
+      for (final ref in deck.refs) ref.position: ref,
+    };
+    final cards = <Card>[];
+    var next = 0;
+    for (var i = 0; i < deck.cards.length + deck.refs.length; i++) {
+      final ref = refAt[i];
+      if (ref == null) {
+        cards.add(deck.cards[next++]);
+        continue;
+      }
+      if (written[ref.id] case (final card, final native)) {
+        final listed = ref.resolve(
+          card,
+          deckId: deck.id,
+          sameNative: native == deck.native.code,
+        );
+        if (listed != null) cards.add(listed);
+      }
+    }
+    return List<Card>.unmodifiable(cards);
   }
 
   /// [decks] with each course's put in teaching order, in the places that
