@@ -207,7 +207,8 @@ class SettingsNotifier extends ChangeNotifier {
   bool isPaused(Skill skill, DateTime now) =>
       _pausedUntil[skill]?.isAfter(now) ?? false;
 
-  /// Pauses [skill] until [until]: an hour, from a drill or Settings.
+  /// Pauses [skill] until [until]: an hour, from a drill's "Can't speak now"
+  /// or "Can't listen now", or from Settings.
   void pause(Skill skill, {required DateTime until}) {
     _pausedUntil = Map<Skill, DateTime>.unmodifiable(<Skill, DateTime>{
       ..._pausedUntil,

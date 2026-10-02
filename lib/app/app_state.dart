@@ -636,11 +636,15 @@ class AppState extends ChangeNotifier {
     ];
     final cards = tagged(<Card>[for (final entry in decks) ...entry.cards]);
 
+    // A named skill is drilled even if switched off in Settings, as the
+    // deck page offers it, but not while it is paused.
     final skill = request.skill;
     final modes = skill == null
         ? _modes(ignorePauses: ignorePauses)
         : <DrillMode>{
-            if (skill.mode != null && features.isAvailable(skill.feature))
+            if (skill.mode != null &&
+                features.isAvailable(skill.feature) &&
+                (ignorePauses || !settings.isPaused(skill, now())))
               skill.mode!,
           };
 

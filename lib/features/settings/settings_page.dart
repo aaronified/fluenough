@@ -155,6 +155,15 @@ class SettingsPage extends StatelessWidget {
                   onPressed: () => settings.resume(skill),
                   child: Text(l10n.settingsResume),
                 ),
+              )
+            else
+              GroupedTile(
+                leading: const Icon(Icons.timer_outlined),
+                title: l10n.cantNowPause,
+                onTap: () => settings.pause(
+                  skill,
+                  until: state.now().add(const Duration(hours: 1)),
+                ),
               ),
             GroupedTile(
               leading: const Icon(Icons.translate),

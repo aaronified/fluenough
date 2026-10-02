@@ -8,10 +8,16 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/features/decks/deck_detail_page.dart';
+import 'package:fluenough/features/drill/cant_now.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
 
@@ -98,6 +104,28 @@ void main() {
       expect(later.sessionModes, contains(DrillMode.listening));
     },
   );
+
+  test('a paused skill is not drilled when it is asked for by name either, '
+      'as the deck page asks', () async {
+    final state = soundState();
+    addTearDown(state.dispose);
+    await state.load();
+    expect(drillsIn(state, spanish, Skill.listening), isTrue);
+    state.settings.pause(
+      Skill.listening,
+      until: noon.add(const Duration(hours: 1)),
+    );
+    expect(drillsIn(state, spanish, Skill.listening), isFalse);
+    expect(
+      state
+          .buildSession(
+            DrillRequest.deck(spanish, skill: Skill.listening),
+            ignorePauses: true,
+          )
+          .items,
+      isNotEmpty,
+    );
+  });
 
   test('off for one language leaves the others', () async {
     final state = soundState();
@@ -212,6 +240,46 @@ cards:
       expect(find.text(l10n.drillCantSpeak), findsNothing);
     });
 
+    testWidgets('Turn off for Spanish keeps the session\'s cards in another '
+        'language', (tester) async {
+      usePhone(tester);
+      final state = soundState();
+      await state.load();
+      await tester.pump();
+      List<SessionItem> listening(String deck) => state
+          .buildSession(DrillRequest.deck(deck, skill: Skill.listening))
+          .items
+          .take(2)
+          .toList();
+      final session = DrillSession(
+        state: state,
+        items: <SessionItem>[...listening(spanish), ...listening(hiragana)],
+      );
+      addTearDown(session.dispose);
+      await pumpScreen(
+        tester,
+        ListenableBuilder(
+          listenable: session,
+          builder: (context, _) => Scaffold(
+            body: Column(
+              children: <Widget>[
+                Text(session.deck.id),
+                CantNowButton(session: session),
+              ],
+            ),
+          ),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(spanish), findsOneWidget);
+      await tapText(tester, l10n.drillCantListen);
+      await tapText(tester, l10n.cantNowOffFor('Spanish'));
+      expect(state.settings.offFor(Skill.listening), <String>{'es'});
+      expect(find.text(hiragana), findsOneWidget);
+      expect(state.progress.log, isEmpty);
+    });
+
     testWidgets('Turn off everywhere switches the skill off', (tester) async {
       usePhone(tester);
       final state = soundState();
@@ -233,7 +301,88 @@ cards:
     });
   });
 
+  group('on the deck page', () {
+    testWidgets('a paused skill is muted, says until when, and Resume ends '
+        'the pause', (tester) async {
+      usePhone(tester);
+      final state = soundState();
+      state.settings.pause(
+        Skill.listening,
+        until: noon.add(const Duration(hours: 1)),
+      );
+      await pumpScreen(
+        tester,
+        const DeckDetailPage(deckId: spanish),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      final until = MaterialLocalizations.of(
+        tester.element(find.byType(DeckDetailPage)),
+      ).formatTimeOfDay(const TimeOfDay(hour: 13, minute: 0));
+      final row = find.widgetWithText(GroupedTile, Skill.listening.label(l10n));
+      await tester.ensureVisible(row);
+      await tester.pumpAndSettle();
+      expect(
+        find.descendant(
+          of: row,
+          matching: find.text(l10n.settingsPausedUntil(until)),
+        ),
+        findsOneWidget,
+      );
+      await tapText(tester, l10n.settingsResume);
+      expect(state.settings.pausedUntil(Skill.listening), isNull);
+      expect(
+        find.descendant(of: row, matching: find.byType(FilledButton)),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('a skill off for the language says so, and Turn on switches '
+        'it back on', (tester) async {
+      usePhone(tester);
+      final state = soundState();
+      state.settings.setOffFor(Skill.listening, 'es', true);
+      await pumpScreen(
+        tester,
+        const DeckDetailPage(deckId: spanish),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      final row = find.widgetWithText(GroupedTile, Skill.listening.label(l10n));
+      await tester.ensureVisible(row);
+      await tester.pumpAndSettle();
+      expect(
+        find.descendant(
+          of: row,
+          matching: find.text(l10n.deckSkillOffFor('Spanish')),
+        ),
+        findsOneWidget,
+      );
+      await tapText(tester, l10n.deckTurnOn);
+      expect(state.settings.offFor(Skill.listening), isEmpty);
+    });
+  });
+
   group('in Settings', () {
+    testWidgets('Pause for an hour pauses the skill from Settings', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = soundState();
+      await pumpScreen(tester, const SettingsPage(), state: state);
+      final l10n = l10nOf(tester);
+      await tester.scrollUntilVisible(
+        find.text(l10n.cantNowPause).first,
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tapText(tester, l10n.cantNowPause);
+      expect(
+        state.settings.pausedUntil(Skill.listening),
+        noon.add(const Duration(hours: 1)),
+      );
+    });
+
     testWidgets('a pause shows until when, and Resume ends it', (tester) async {
       usePhone(tester);
       final state = soundState();
