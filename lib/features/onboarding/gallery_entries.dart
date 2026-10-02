@@ -22,6 +22,13 @@ final List<GalleryEntry> onboardingGalleryEntries = <GalleryEntry>[
       builder: (_) => OnboardingFlow(startAt: 'tour', page: i),
     ),
   GalleryEntry(
+    id: 'onboarding-sound',
+    section: GallerySection.profiles,
+    label: 'First launch: microphone and sound check', // ui-literal-ok: debug-only gallery
+    note: 'Record two seconds, play back, did you hear it? (#89)', // ui-literal-ok: debug-only gallery
+    builder: (_) => const OnboardingFlow(startAt: 'sound'),
+  ),
+  GalleryEntry(
     id: 'onboarding-spoken',
     section: GallerySection.profiles,
     label: 'First launch: languages you speak', // ui-literal-ok: debug-only gallery

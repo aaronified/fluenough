@@ -10,6 +10,7 @@ import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
+import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/tts_engine.dart';
 import '../core/data/themes.dart';
@@ -99,6 +100,7 @@ class AppState extends ChangeNotifier {
     required this.progress,
     required this._tts,
     this._speech = const NullSpeechEngine(),
+    this.soundCheck = const NullSoundCheck(),
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
@@ -126,6 +128,7 @@ class AppState extends ChangeNotifier {
     DeckSource? decks,
     TtsEngine tts = const NullTtsEngine(),
     SpeechEngine speech = const NullSpeechEngine(),
+    SoundCheckEngine soundCheck = const NullSoundCheck(),
     ProgressStore? progress,
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
@@ -140,6 +143,7 @@ class AppState extends ChangeNotifier {
       progress: progress ?? MemoryProgress(),
       tts: tts,
       speech: speech,
+      soundCheck: soundCheck,
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
@@ -176,6 +180,9 @@ class AppState extends ChangeNotifier {
 
   final TtsEngine _tts;
   final SpeechEngine _speech;
+
+  /// The microphone and speaker, for the first launch's sound check (#89).
+  final SoundCheckEngine soundCheck;
   final Clock _clock;
   final bool _ownsSettings;
 
