@@ -23,27 +23,27 @@ features:
   - id: breath-mark
     name: "A breathy letter is its partner with a mark"
     example: "ఫ"
-    text: "Often the letter with a breath after it is its plain partner with a small extra stroke: ప and ఫ, బ and భ, డ and ఢ."
+    text: "Often the letter with a breath after it is its plain partner with a small extra mark. ఢ is డ with one more stroke. ఫ and భ are ప and బ with a small stroke added, and they also wear the tick that ప and బ don't."
     letters: ["ప", "ఫ", "బ", "భ", "డ", "ఢ"]
   - id: inherent-vowel
     name: "The vowel you don't see"
     example: "క"
-    text: "Every consonant carries a short a unless a sign changes it: క alone is ka. Telugu words end in a vowel, and it is said: తల is tala."
+    text: "Every consonant carries a short a unless a sign changes it: క alone is ka. Almost every native Telugu word ends in a vowel, and it is said: తల is tala."
     letters: ["క", "కల", "తల"]
   - id: vowel-signs
     name: "Vowels as signs on a letter"
     term: "గుణింతాలు"
     reading: "gunintaalu"
     example: "కి"
-    text: "After a consonant a vowel is a sign on it: on top in place of the tick (కి, కె), joined on the right (కా, కు), or in two parts (కై). Unlike Hindi and Bengali, none is written before the letter."
+    text: "After a consonant a vowel is a sign on it: on top in place of the tick (కా, కి, కె), joined on the right (కు, కూ), or in two parts (కై). Unlike Hindi and Bengali, none is written before the letter."
     letters: ["కా", "కి", "కు", "కె", "కొ"]
   - id: long-stroke
     name: "A stroke for a long vowel"
     term: "దీర్ఘం"
     reading: "diirgham"
     example: "కీ"
-    text: "A short and a long vowel are different words in Telugu, and the long one usually adds a stroke to the short sign: కి and కీ, కె and కే, కొ and కో."
-    letters: ["కి", "కీ", "కె", "కే", "కొ", "కో"]
+    text: "A short and a long vowel can make different words in Telugu, and the long one is usually the short sign with a stroke added: కి and కీ, కె and కే, కొ and కో. For a, the tick on top becomes a hook to the right: క and కా."
+    letters: ["క", "కా", "కి", "కీ", "కె", "కే", "కొ", "కో"]
   - id: pollu
     name: "The mark that takes the vowel away"
     term: "పొల్లు"
@@ -56,7 +56,7 @@ features:
     term: "వత్తు"
     reading: "vattu"
     example: "స్త"
-    text: "Two consonants with no vowel between them: the second is written small below the first, usually without its tick. Some vattus look little like their letter, such as the r below ప in ప్ర."
+    text: "Two consonants with no vowel between them: the second is written small below the first, usually without its tick. This small form is the vattu, also called ఒత్తు (ottu). Some look little like their letter, such as the r below ప in ప్ర."
     letters: ["స్త", "ప్ర", "క్ష", "వ్య"]
   - id: doubled
     name: "Doubled consonants"
@@ -67,8 +67,8 @@ features:
     letters: ["క్క", "త్త", "న్న", "మ్మ", "ల్ల"]
   - id: sunna
     name: "The circle after a letter"
-    term: "సున్నా"
-    reading: "sunnaa"
+    term: "సున్న"
+    reading: "sunna"
     example: "కం"
     text: "A small circle ం after a letter is an m or an n: m at the end of a word, as in పుస్తకం (pustakam, book), and before another consonant the nasal that suits it."
     letters: ["కం", "పుస్తకం"]

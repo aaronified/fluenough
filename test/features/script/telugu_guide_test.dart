@@ -15,5 +15,10 @@ void main() {
       catalog.paths['te/en']!.units.first,
       contains('te-en-script-reading'),
     );
+    final reading = catalog.decks.singleWhere(
+      (entry) => entry.id == 'te-en-script-reading',
+    );
+    expect(reading.isScript, isTrue);
+    expect(reading.cards, hasLength(15));
   });
 }
