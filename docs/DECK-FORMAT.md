@@ -127,8 +127,10 @@ stays where it is written.
 - **The same native language:** what the ref does not give comes from the
   card.
 - **Another native language,** say an `es-bn` deck listing a card written in
-  an `es-en` one: the ref gives its own `native`, and nothing else comes
-  across from the English side.
+  an `es-en` one: the ref gives its own `native`. The card's `notes`, `tags`,
+  `alt_native` and `examples`, written for English speakers, do not come
+  across; its `reading` and `modes`, which belong to the word, do unless the
+  ref gives its own.
 - The validator checks that each ref names a card written in another deck
   of the language, and that no card is written twice.
 

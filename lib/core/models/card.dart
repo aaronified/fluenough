@@ -45,7 +45,10 @@ class CardRef {
   /// [written] as this ref lists it in [deckId]. A deck taught from the
   /// language [written] was written for takes the card's own native-side
   /// fields where the ref gives none. A deck taught from another language
-  /// takes only what the ref gives, and null when it gives no [native].
+  /// takes none of its notes, tags, alternative meanings or examples, and is
+  /// null when the ref gives no [native]. The card's [reading] and [modes],
+  /// which belong to the word, come across either way unless the ref gives
+  /// its own.
   Card? resolve(
     Card written, {
     required String deckId,

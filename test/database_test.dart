@@ -61,7 +61,7 @@ void main() {
     ]);
   });
 
-  test('a version 1 database upgrades to 3 and keeps its reviews', () async {
+  test('a version 1 database upgrades and keeps its reviews', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/old.sqlite');
@@ -94,6 +94,46 @@ void main() {
       ),
       reason: 'migration 3 guards its table',
     );
+  });
+
+  test('a version 3 database\'s card_states is rebuilt without the deck '
+      '(ADR-0018), and its reviews kept', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/v3.sqlite');
+
+    // Make a version 3 file: card_states keyed by deck, card and mode, with
+    // one card in two decks.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await old.customStatement('DROP TABLE card_states');
+    await old.customStatement(
+      'CREATE TABLE card_states (deck_id TEXT NOT NULL, card_id TEXT NOT NULL, '
+      'mode TEXT NOT NULL, interval_days INTEGER NOT NULL, '
+      'ease_factor REAL NOT NULL, repetitions INTEGER NOT NULL, '
+      'due_at INTEGER NOT NULL, lapses INTEGER NOT NULL DEFAULT 0, '
+      'PRIMARY KEY (deck_id, card_id, mode))',
+    );
+    for (final deck in <String>['hi-en-market', 'hi-en-groceries']) {
+      await old.customStatement(
+        "INSERT INTO card_states VALUES ('$deck', 'hi-0231', 'production', "
+        '1, 2.5, 1, ${at.millisecondsSinceEpoch}, 0)',
+      );
+    }
+    await old.customStatement('PRAGMA user_version = 3');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.cardStatesDao.all(), isEmpty, reason: 'a cache');
+    final columns = await upgraded
+        .customSelect("SELECT name FROM pragma_table_info('card_states')")
+        .get();
+    expect(
+      columns.map((r) => r.read<String>('name')),
+      isNot(contains('deck_id')),
+    );
+    expect(await upgraded.reviewsDao.all(), hasLength(1));
   });
 
   test('leech_actions: appended in order, never changed', () async {

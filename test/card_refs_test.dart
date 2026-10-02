@@ -102,17 +102,23 @@ void main() {
         'decks/es/es-en-a.yaml': vocab('es-en-a', written),
         'decks/es/es-en-b.yaml': vocab(
           'es-en-b',
-          '  - id: es-0003\n    target: "pez"\n    native: "fish"\n'
-              '  - ref: es-0001\n    notes: "Barks."\n'
-              '  - ref: es-0002\n',
+          '  - ref: es-0001\n    notes: "Barks."\n'
+              '  - id: es-0003\n    target: "pez"\n    native: "fish"\n'
+              '  - ref: es-0002\n'
+              '  - id: es-0004\n    target: "pato"\n    native: "duck"\n',
           theme: 'pets',
         ),
       });
       final b = catalog.byId('es-en-b')!.deck;
       expect(b.theme, 'pets', reason: 'resolving keeps the deck as it was');
       expect(b.refs, isEmpty);
-      expect(b.cards.map((c) => c.id), ['es-0003', 'es-0001', 'es-0002']);
-      final dog = b.cards[1];
+      expect(b.cards.map((c) => c.id), [
+        'es-0001',
+        'es-0003',
+        'es-0002',
+        'es-0004',
+      ], reason: 'each ref in its own place, between written cards');
+      final dog = b.cards[0];
       expect(dog.deckId, 'es-en-b');
       expect(dog.target, 'perro');
       expect(dog.altTarget, ['can'], reason: 'the card\'s own');

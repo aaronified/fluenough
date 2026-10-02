@@ -5,12 +5,13 @@
 
 ## Context
 
-A card id named its deck, so it named its course too: `bn-en-groceries-0013`.
-Scheduling state was keyed by `(deck, card, mode)`. So the same word in two
-decks was two cards with two schedules. ফল is taught in the script unit and
-again in groceries, and a learner who knew it from the first met it as new
-in the second. The maintainer wants each theme to cover its important words,
-repeats included, so there will be more of these.
+A card id named its deck, so it named its course too:
+`bn-en-groceries-0013`. Scheduling state was keyed by `(deck, card, mode)`.
+So the same word in two decks was two cards with two schedules. জল is taught
+in the script unit, in the sound differences and again in eating out, and a
+learner who knew it from the first met it as new in the others. The
+maintainer wants each theme to cover its important words, repeats included,
+so there will be more of these.
 
 The maintainer decided, on 3 October 2026 (#143):
 
@@ -40,7 +41,9 @@ The maintainer decided, on 3 October 2026 (#143):
   card's `target`, `alt_target`, `pos`, `gender` and `audio` stay its own. A
   deck taught from the language the card was written for takes the card's
   native side where the ref gives none. A deck taught from another language
-  takes nothing from that side and must give its own `native`.
+  must give its own `native`, and takes none of the card's notes, tags,
+  `alt_native` or examples. It does take the card's `reading` and `modes`,
+  which belong to the word, unless it gives its own.
 - **One schedule per card and mode.** Scheduling state is keyed by
   `(card_id, mode)`. A card listed in two decks is learned in both, and a
   session takes it once. `reviews` still records the deck each answer was

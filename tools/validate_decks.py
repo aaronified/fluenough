@@ -290,18 +290,22 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
                 if isinstance(m, str) and m not in MODES:
                     r.error(where, f"unknown mode {m!r}")
 
-    examples = card.get("examples")
-    if examples is not None:
-        if not isinstance(examples, list):
-            r.error(where, "examples must be a list")
-        else:
-            for j, ex in enumerate(examples):
-                if not isinstance(ex, dict):
-                    r.error(where, f"examples[{j}] must be a mapping")
-                elif not _is_str(ex.get("target")) or not _is_str(ex.get("native")):
-                    r.error(where, f"examples[{j}] needs both target and native")
-                elif set(ex) - {"target", "native"}:
-                    r.error(where, f"examples[{j}] has unknown fields")
+    _check_examples(r, where, card.get("examples"))
+
+
+def _check_examples(r: Report, where: str, examples: object) -> None:
+    if examples is None:
+        return
+    if not isinstance(examples, list):
+        r.error(where, "examples must be a list")
+        return
+    for j, ex in enumerate(examples):
+        if not isinstance(ex, dict):
+            r.error(where, f"examples[{j}] must be a mapping")
+        elif not _is_str(ex.get("target")) or not _is_str(ex.get("native")):
+            r.error(where, f"examples[{j}] needs both target and native")
+        elif set(ex) - {"target", "native"}:
+            r.error(where, f"examples[{j}] has unknown fields")
 
 
 def check_ref(r: Report, idx: int, card: dict, seen: set[str],
@@ -337,9 +341,7 @@ def check_ref(r: Report, idx: int, card: dict, seen: set[str],
             for m in modes:
                 if isinstance(m, str) and m not in MODES:
                     r.error(where, f"unknown mode {m!r}")
-    examples = card.get("examples")
-    if examples is not None and not isinstance(examples, list):
-        r.error(where, "examples must be a list")
+    _check_examples(r, where, card.get("examples"))
     r.refs.append((rid, _is_str(card.get("native")), where))
 
 
@@ -940,31 +942,42 @@ def check_cards_across(reports: list[Report]) -> list[str]:
     course taught from another language gives its own native (ADR-0018)."""
     problems = []
     defs: dict[str, tuple[Path, str, list[str]]] = {}
+    repo: dict[str, dict[str, tuple[Path, str, list[str]]]] = {}
+
+    def repo_defs(lang: str) -> dict[str, tuple[Path, str, list[str]]]:
+        if lang not in repo:
+            repo[lang] = _repo_card_defs(lang)
+        return repo[lang]
+
+    given = {rep.path.resolve() for rep in reports}
     for rep in reports:
-        if rep.native_code is None:
+        if rep.native_code is None or rep.lang_code is None:
             continue
         for cid, words in rep.card_defs.items():
-            if cid in defs:
+            # A deck in the repository but not among those given still
+            # writes its cards, so a file checked alone is held to them;
+            # not to its own deck's copy, which a draft elsewhere replaces.
+            elsewhere = repo_defs(rep.lang_code).get(cid)
+            if elsewhere is not None and (elsewhere[0].resolve() in given
+                                          or elsewhere[0].stem == rep.path.stem):
+                elsewhere = None
+            first = defs.get(cid) or elsewhere
+            if first is not None and first[0].resolve() != rep.path.resolve():
                 problems.append(f"{rep.path}: card {cid} is already written in "
-                                f"{defs[cid][0]}; list it here with ref: {cid}")
+                                f"{first[0]}; list it here with ref: {cid}")
             else:
                 defs[cid] = (rep.path, rep.native_code, words)
-    repo: dict[str, dict[str, tuple[Path, str, list[str]]]] = {}
     for rep in reports:
         for rid, has_native, where in rep.refs:
             found = defs.get(rid)
             if found is None and rep.lang_code is not None:
-                if rep.lang_code not in repo:
-                    repo[rep.lang_code] = _repo_card_defs(rep.lang_code)
-                found = repo[rep.lang_code].get(rid)
+                found = repo_defs(rep.lang_code).get(rid)
             if found is None:
                 problems.append(f"{rep.path}: {where}: no deck writes card {rid}")
                 continue
+            # A ref to a card its own deck writes is refused within the deck.
             path, native, words = found
-            if path.resolve() == rep.path.resolve():
-                problems.append(f"{rep.path}: {where}: the card is written in this "
-                                f"deck already")
-            elif native != rep.native_code and not has_native:
+            if native != rep.native_code and not has_native:
                 problems.append(f"{rep.path}: {where}: the card is written for "
                                 f"learners from {native!r}; this deck is taught from "
                                 f"{rep.native_code!r}, so the ref needs its own native")

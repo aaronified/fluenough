@@ -62,7 +62,7 @@ abstract interface class ProgressStore implements Listenable {
   );
 }
 
-/// Progress held in memory: an SM-2 state per `(deck, card, mode)` and the
+/// Progress held in memory: an SM-2 state per `(card, mode)` and the
 /// review log, both gone when the app closes.
 ///
 /// For tests and fixtures, and the fallback when the database cannot be
