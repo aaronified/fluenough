@@ -5,6 +5,7 @@ import '../models/card.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
+import '../models/reading.dart';
 
 /// A deck file that could not be read, and where in it the problem is.
 ///
@@ -104,6 +105,7 @@ const _headerFields = {
   'cards',
   'pattern',
   'theme',
+  'passages',
 };
 
 const _cardFields = {
@@ -145,11 +147,26 @@ const _patternFields = {
 };
 
 const _entryFields = {'lemma', 'key', 'gloss', 'forms'};
+const _passageFields = {
+  'id',
+  'title',
+  'sentences',
+  'source',
+  'theme',
+  'questions',
+  'glossary',
+};
+const _sentenceFields = {'text', 'reading'};
+const _glossFields = {'word', 'modern', 'reading', 'meaning', 'note'};
+const _questionFields = {'id', 'prompt', 'options', 'answer'};
 const _exampleFields = {'target', 'native'};
 const _authorFields = {'name', 'url'};
 
 /// Deck and card ids: lowercase letters and digits, joined by single hyphens.
 final _idPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
+
+/// A language code keying a reading question's text, such as `en`.
+final _languageCode = RegExp(r'^[a-z]{2,3}$');
 final _iso639_3Pattern = RegExp(r'^[a-z]{3}$');
 
 /// Walks one deck, knowing its [source] so that any failure can name it.
@@ -191,6 +208,7 @@ class _Reader {
         : switch (_value(kindNode)) {
             'vocab' => DeckKind.vocab,
             'grammar' => DeckKind.grammar,
+            'reading' => DeckKind.reading,
             // Valid, but not a deck: its facts are not drilled, and a caller
             // loading a directory routes such files elsewhere (#48).
             'facts' => fail(
@@ -205,7 +223,8 @@ class _Reader {
             ),
             _ => fail(
               kindNode,
-              'kind must be vocab or grammar, got ${_describe(kindNode)}',
+              'kind must be vocab, grammar or reading, got '
+              '${_describe(kindNode)}',
             ),
           };
 
@@ -237,6 +256,14 @@ class _Reader {
     var cards = const <Card>[];
     var refs = const <CardRef>[];
     GrammarPattern? pattern;
+    var passages = const <Passage>[];
+    if (kind != DeckKind.reading && fields.has('passages')) {
+      fail(
+        fields.keyNode('passages'),
+        'passages are only for a reading deck; add "kind: reading" or '
+        'remove them',
+      );
+    }
     switch (kind) {
       case DeckKind.vocab:
         if (fields.has('pattern')) {
@@ -255,6 +282,25 @@ class _Reader {
           );
         }
         pattern = this.pattern(fields.require('pattern'));
+      case DeckKind.reading:
+        for (final key in const <String>['cards', 'pattern']) {
+          if (fields.has(key)) {
+            fail(fields.keyNode(key), 'a reading deck has passages, not $key');
+          }
+        }
+        passages = this.passages(fields.require('passages'));
+        // Each question is a card, so that it is scheduled and recorded as
+        // every card is (ADR-0019).
+        cards = List<Card>.unmodifiable(<Card>[
+          for (final passage in passages)
+            for (final question in passage.questions)
+              QuestionCard(
+                deckId: id,
+                passage: passage,
+                question: question,
+                source: passage.source ?? deckSource,
+              ),
+        ]);
     }
 
     return Deck(
@@ -266,6 +312,7 @@ class _Reader {
       license: license,
       cards: cards,
       pattern: pattern,
+      passages: passages,
       description: description,
       tags: tags,
       authors: authors,
@@ -477,12 +524,196 @@ class _Reader {
 
   DrillMode mode(YamlNode node, String path) {
     final name = text(node, path);
-    return DrillMode.tryParse(name) ??
+    final mode = DrillMode.tryParse(name);
+    // Only a reading deck's questions are read; a card has nothing to read.
+    if (mode == null || mode == DrillMode.reading) {
+      final modes = <String>[
+        for (final m in DrillMode.values)
+          if (m != DrillMode.reading) m.name,
+      ];
+      fail(
+        node,
+        '$path: unknown mode "$name"; the modes are ${modes.join(', ')}',
+      );
+    }
+    return mode;
+  }
+
+  /// A reading deck's passages. Passage and question ids share one
+  /// namespace, and each must be new: a question id keys its review history.
+  List<Passage> passages(YamlNode node) {
+    final seen = <String, YamlNode>{};
+    return List.unmodifiable([
+      for (final (i, item) in list(node, 'passages').indexed)
+        passage(item, 'passages[$i]', seen),
+    ]);
+  }
+
+  /// A passage or question id, failing if [seen] has it already.
+  String newId(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final id = this.id(node, path);
+    final first = seen[id];
+    if (first != null) {
+      fail(node, '$path: duplicate id "$id", ${_firstUsed(first)}');
+    }
+    seen[id] = node;
+    return id;
+  }
+
+  Passage passage(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_passageFields);
+    final id = newId(fields.require('id'), '$path.id', seen);
+    final title = fields.string('title');
+    final sentences = [
+      for (final (i, item) in list(
+        fields.require('sentences'),
+        '$path.sentences',
+      ).indexed)
+        sentence(item, '$path.sentences[$i]'),
+    ];
+    final source = fields.optionalString('source', allowEmpty: false);
+    final theme = fields.has('theme')
+        ? this.id(fields.require('theme'), '$path.theme')
+        : null;
+    final questions = [
+      for (final (i, item) in list(
+        fields.require('questions'),
+        '$path.questions',
+      ).indexed)
+        question(item, '$path.questions[$i]', seen),
+    ];
+    final glossaryNode = fields.node('glossary');
+    final glossary = glossaryNode == null || _value(glossaryNode) == null
+        ? const <GlossEntry>[]
+        : [
+            for (final (i, item) in list(
+              glossaryNode,
+              '$path.glossary',
+              allowEmpty: true,
+            ).indexed)
+              gloss(item, '$path.glossary[$i]', sentences),
+          ];
+    return Passage(
+      id: id,
+      title: title,
+      sentences: List.unmodifiable(sentences),
+      questions: List.unmodifiable(questions),
+      source: source,
+      theme: theme,
+      glossary: List.unmodifiable(glossary),
+    );
+  }
+
+  /// One glossary entry. Its word must occur in the passage exactly as
+  /// written, and like the passage, nothing in it is trimmed or normalised.
+  GlossEntry gloss(
+    YamlNode node,
+    String path,
+    List<PassageSentence> sentences,
+  ) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_glossFields);
+    final wordNode = fields.require('word');
+    final word = text(wordNode, '$path.word');
+    if (!sentences.any((s) => s.text.contains(word))) {
+      fail(
+        wordNode,
+        '$path.word: "$word" does not occur in the passage, letter for letter',
+      );
+    }
+    final noteNode = fields.node('note');
+    return GlossEntry(
+      word: word,
+      modern: fields.string('modern'),
+      reading: fields.optionalString('reading', allowEmpty: false),
+      meaning: byLanguage(fields.require('meaning'), '$path.meaning'),
+      note: noteNode == null || _value(noteNode) == null
+          ? const <String, String>{}
+          : byLanguage(noteNode, '$path.note'),
+    );
+  }
+
+  /// One sentence. Its text is kept exactly as written, a quotation that
+  /// must stay letter for letter: [text] neither trims nor normalises it.
+  PassageSentence sentence(YamlNode node, String path) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_sentenceFields);
+    return PassageSentence(
+      text: fields.string('text'),
+      reading: fields.optionalString('reading', allowEmpty: false),
+    );
+  }
+
+  ReadingQuestion question(
+    YamlNode node,
+    String path,
+    Map<String, YamlNode> seen,
+  ) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_questionFields);
+    final id = newId(fields.require('id'), '$path.id', seen);
+    final prompt = byLanguage(fields.require('prompt'), '$path.prompt');
+    final optionsNode = fields.node('options');
+    final options = optionsNode == null
+        ? const <Map<String, String>>[]
+        : [
+            for (final (i, item) in list(optionsNode, '$path.options').indexed)
+              byLanguage(item, '$path.options[$i]'),
+          ];
+    if (optionsNode != null && (options.length < 2 || options.length > 4)) {
+      fail(optionsNode, '$path.options: a question has 2 to 4 options');
+    }
+    final answerNode = fields.require('answer');
+    final answer = _value(answerNode);
+    final int index;
+    if (options.isEmpty) {
+      if (answer is! bool) {
         fail(
-          node,
-          '$path: unknown mode "$name"; the modes are '
-          '${DrillMode.values.map((m) => m.name).join(', ')}',
+          answerNode,
+          '$path.answer: a question without options is true or false, so '
+          'its answer is true or false, got ${_describe(answerNode)}',
         );
+      }
+      index = answer ? 0 : 1;
+    } else {
+      if (answer is! int || answer < 1 || answer > options.length) {
+        fail(
+          answerNode,
+          '$path.answer: the number of the right option, from 1 to '
+          '${options.length}, got ${_describe(answerNode)}',
+        );
+      }
+      index = answer - 1;
+    }
+    return ReadingQuestion(
+      id: id,
+      prompt: prompt,
+      options: List.unmodifiable(options),
+      answer: index,
+    );
+  }
+
+  /// Text keyed by language code, as a fact's is: `{ en: ..., bn: ... }`.
+  /// English is required, so that every learner can be shown it.
+  Map<String, String> byLanguage(YamlNode node, String path) {
+    final map = fields(node, path).map;
+    final texts = <String, String>{};
+    for (final entry in map.nodes.entries) {
+      final key = entry.key as YamlNode;
+      final code = _value(key);
+      if (code is bool || code is num) {
+        fail(key, _notText(key, 'the key ${_plainText(key)} in $path'));
+      }
+      if (code is! String || !_languageCode.hasMatch(code)) {
+        fail(key, '$path: ${_describe(key)} is not a language code like "en"');
+      }
+      texts[code] = text(entry.value, '$path.$code');
+    }
+    if (!texts.containsKey('en')) {
+      fail(node, '$path: missing "en"; English is required');
+    }
+    return Map.unmodifiable(texts);
   }
 
   GrammarPattern pattern(YamlNode node) {

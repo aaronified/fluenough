@@ -1,0 +1,363 @@
+schema: 1
+id: bn-en-reading-sahaj-path-1
+name: "Reading: Sahaj Path, part 1"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"
+description: "Eight short passages from the first lessons of Tagore's Sahaj Path, quoted letter for letter from the Visva-Bharati printing of 1993, with questions and the older words explained. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: bn-sahaj-path-1-01
+    title: "Where they live"
+    source: "Sahaj Path, part 1, page ২০ (Visva-Bharati, 1993 printing)"
+    sentences:
+      - text: "বনে থাকে বাঘ।"
+        reading: "bone thake bagh."
+      - text: "গাছে থাকে পাখি।"
+        reading: "gachhe thake pakhi."
+      - text: "জলে থাকে মাছ।"
+        reading: "jole thake machh."
+      - text: "ডালে আছে ফল।"
+        reading: "dale achhe phol."
+      - text: "পাখি ফল খায়।"
+        reading: "pakhi phol khay."
+      - text: "পাখা মেলে ওড়ে।"
+        reading: "pakha mele ore."
+    questions:
+      - id: bn-0751
+        prompt: { en: "Where does the tiger live?" }
+        options:
+          - { en: "In the forest" }
+          - { en: "In the water" }
+          - { en: "In a tree" }
+        answer: 1
+      - id: bn-0752
+        prompt: { en: "The fish lives in the water." }
+        answer: true
+      - id: bn-0753
+        prompt: { en: "What does the bird eat?" }
+        options:
+          - { en: "Fish" }
+          - { en: "Fruit" }
+          - { en: "Rice" }
+        answer: 2
+  - id: bn-sahaj-path-1-02
+    title: "Ram picks flowers"
+    source: "Sahaj Path, part 1, page ২৩ (Visva-Bharati, 1993 printing)"
+    sentences:
+      - text: "রাম বনে ফুল পাড়ে।"
+        reading: "ram bone phul pare."
+      - text: "গায়ে তার লাল শাল।"
+        reading: "gaye tar lal shal."
+      - text: "হাতে তার সাজি।"
+        reading: "hate tar shaji."
+      - text: "জবা ফুল তোলে।"
+        reading: "joba phul tole."
+      - text: "বেল ফুল তোলে।"
+        reading: "bel phul tole."
+      - text: "বেল ফুল সাদা।"
+        reading: "bel phul shada."
+      - text: "জবা ফুল লাল।"
+        reading: "joba phul lal."
+      - text: "জলে আছে নাল ফুল।"
+        reading: "jole achhe nal phul."
+    glossary:
+      - word: "সাজি"
+        modern: "সাজি"
+        reading: "shaji"
+        meaning: { en: "a flower basket" }
+      - word: "নাল ফুল"
+        modern: "নাল ফুল"
+        reading: "nal phul"
+        meaning: { en: "a red water lily" }
+    questions:
+      - id: bn-0754
+        prompt: { en: "What colour is Ram's shawl?" }
+        options:
+          - { en: "Red" }
+          - { en: "White" }
+          - { en: "Black" }
+        answer: 1
+      - id: bn-0755
+        prompt: { en: "The bel flower is white." }
+        answer: true
+      - id: bn-0756
+        prompt: { en: "The joba flower is white." }
+        answer: false
+  - id: bn-sahaj-path-1-03
+    title: "A puja at home"
+    source: "Sahaj Path, part 1, page ২৩ (Visva-Bharati, 1993 printing)"
+    sentences:
+      - text: "ফুল তুলে রাম বাড়ি চলে।"
+        reading: "phul tule ram bari chole."
+      - text: "তার বাড়ি আজ পূজা।"
+        reading: "tar bari aj puja."
+      - text: "পূজা হবে রাতে।"
+        reading: "puja hobe rate."
+      - text: "তাই রাম ফুল আনে।"
+        reading: "tai ram phul ane."
+      - text: "তাই তার ঘরে খুব ঘটা।"
+        reading: "tai tar ghore khub ghota."
+      - text: "ঢাক বাজে, ঢোল বাজে।"
+        reading: "dhak baje, dhol baje."
+      - text: "ঘরে ঘরে ধূপ ধুনা।"
+        reading: "ghore ghore dhup dhuna."
+    glossary:
+      - word: "ঘটা"
+        modern: "ঘটা"
+        reading: "ghota"
+        meaning: { en: "pomp, festivity" }
+      - word: "ধুনা"
+        modern: "ধুনা"
+        reading: "dhuna"
+        meaning: { en: "resin burnt as incense" }
+    questions:
+      - id: bn-0757
+        prompt: { en: "When will the puja be?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "At night" }
+          - { en: "Tomorrow" }
+        answer: 2
+      - id: bn-0758
+        prompt: { en: "Ram brings the flowers home for the puja." }
+        answer: true
+  - id: bn-sahaj-path-1-04
+    title: "Going to the market"
+    source: "Sahaj Path, part 1, page ২৬ (Visva-Bharati, 1993 printing)"
+    theme: groceries
+    sentences:
+      - text: "ঐ সাদা ছাতা।"
+        reading: "oi shada chhata."
+      - text: "দাদা যায় হাটে।"
+        reading: "dada jay hate."
+      - text: "গায়ে লাল জামা।"
+        reading: "gaye lal jama."
+      - text: "মামা যায় খাতা হাতে।"
+        reading: "mama jay khata hate."
+      - text: "গায়ে সাদা শাল।"
+        reading: "gaye shada shal."
+      - text: "মামা আনে চাল ডাল।"
+        reading: "mama ane chal dal."
+      - text: "আর কেনে শাক।"
+        reading: "ar kene shak."
+      - text: "আর কেনে আটা।"
+        reading: "ar kene ata."
+    glossary:
+      - word: "ঐ"
+        modern: "ওই"
+        reading: "oi"
+        meaning: { en: "that" }
+        note: { en: "an older spelling of ওই, still in use" }
+      - word: "হাটে"
+        modern: "হাটে"
+        reading: "hate"
+        meaning: { en: "to the market (a village market held on fixed days)" }
+    questions:
+      - id: bn-0759
+        prompt: { en: "Where does Dada go?" }
+        options:
+          - { en: "To the market" }
+          - { en: "To school" }
+          - { en: "Home" }
+        answer: 1
+      - id: bn-0760
+        prompt: { en: "Mama brings rice and lentils, and buys greens and flour." }
+        answer: true
+      - id: bn-0761
+        prompt: { en: "Mama wears a red shirt." }
+        answer: false
+  - id: bn-sahaj-path-1-05
+    title: "Fruit for everyone"
+    source: "Sahaj Path, part 1, page ২৬ (Visva-Bharati, 1993 printing)"
+    theme: groceries
+    sentences:
+      - text: "দাদা কেনে পাকা আতা, সাত আনা দিয়ে।"
+        reading: "dada kene paka ata, shat ana diye."
+      - text: "আর আখ, আর জাম চার আনা।"
+        reading: "ar akh, ar jam char ana."
+      - text: "বাবা খাবে।"
+        reading: "baba khabe."
+      - text: "কাকা খাবে।"
+        reading: "kaka khabe."
+      - text: "আর খাবে মামা।"
+        reading: "ar khabe mama."
+      - text: "তার পরে কাজ আছে।"
+        reading: "tar pore kaj achhe."
+      - text: "বাবা কাজে যাবে।"
+        reading: "baba kaje jabe."
+    glossary:
+      - word: "আতা"
+        modern: "আতা"
+        reading: "ata"
+        meaning: { en: "custard apple" }
+      - word: "আনা"
+        modern: "আনা"
+        reading: "ana"
+        meaning: { en: "an anna, an old coin: sixteen made a rupee" }
+    questions:
+      - id: bn-0762
+        prompt: { en: "What does Dada pay for the ripe custard apples?" }
+        options:
+          - { en: "Seven annas" }
+          - { en: "Four annas" }
+          - { en: "Seven rupees" }
+        answer: 1
+      - id: bn-0763
+        prompt: { en: "Father will go to work afterwards." }
+        answer: true
+  - id: bn-sahaj-path-1-06
+    title: "The parakeet"
+    source: "Sahaj Path, part 1, page ৩০ (Visva-Bharati, 1993 printing)"
+    sentences:
+      - text: "এ কী পাখি?"
+        reading: "e ki pakhi?"
+      - text: "এ যে টিয়া পাখি।"
+        reading: "e je tiya pakhi."
+      - text: "ও পাখি কি কিছু কথা বলে?"
+        reading: "o pakhi ki kichhu kotha bole?"
+      - text: "কী কথা বলে?"
+        reading: "ki kotha bole?"
+      - text: "ও বলে, রাম রাম, হরি হরি।"
+        reading: "o bole, ram ram, hori hori."
+      - text: "ও কী খায়?"
+        reading: "o ki khay?"
+      - text: "ও খায় দানা।"
+        reading: "o khay dana."
+    glossary:
+      - word: "টিয়া"
+        modern: "টিয়া"
+        reading: "tiya"
+        meaning: { en: "a parakeet" }
+      - word: "দানা"
+        modern: "দানা"
+        reading: "dana"
+        meaning: { en: "grain, seed" }
+    questions:
+      - id: bn-0764
+        prompt: { en: "What kind of bird is it?" }
+        options:
+          - { en: "A parakeet" }
+          - { en: "A crow" }
+          - { en: "A myna" }
+        answer: 1
+      - id: bn-0765
+        prompt: { en: "What does it eat?" }
+        options:
+          - { en: "Grain" }
+          - { en: "Fish" }
+          - { en: "Fruit" }
+        answer: 1
+      - id: bn-0766
+        prompt: { en: "The bird cannot say anything." }
+        answer: false
+  - id: bn-sahaj-path-1-07
+    title: "A cold morning"
+    source: "Sahaj Path, part 1, page ৩৩ (Visva-Bharati, 1993 printing)"
+    sentences:
+      - text: "চুপ ক’রে ব’সে ঘুম পায়।"
+        reading: "chup kore bose ghum pay."
+      - text: "চলো, ঘুরে আসি।"
+        reading: "cholo, ghure ashi."
+      - text: "ফুল তুলে আনি।"
+        reading: "phul tule ani."
+      - text: "আজ খুব শীত।"
+        reading: "aj khub shit."
+      - text: "কচুপাতা থেকে টুপ্ টুপ্ ক’রে হিম পড়ে।"
+        reading: "kochupata theke tup tup kore him pore."
+      - text: "ঘাস ভিজে।"
+        reading: "ghash bhije."
+      - text: "পা ভিজে যায়।"
+        reading: "pa bhije jay."
+      - text: "দুখী বুড়ি উনুন-ধারে উবু হয়ে ব’সে আগুন পোহায় আর গুন্ গুন্ গায়।"
+        reading: "dukhi buri unun-dhare ubu hoye bose agun pohay ar gun gun gay."
+    glossary:
+      - word: "ক’রে"
+        modern: "করে"
+        reading: "kore"
+        meaning: { en: "having done; after a sound word, 'with': টুপটুপ করে, with a drip, drip" }
+        note: { en: "older spelling: the apostrophe marks a dropped ই" }
+      - word: "ব’সে"
+        modern: "বসে"
+        reading: "bose"
+        meaning: { en: "sitting" }
+        note: { en: "older spelling: the apostrophe marks a dropped ই" }
+      - word: "হিম"
+        modern: "হিম"
+        reading: "him"
+        meaning: { en: "dew; the cold of the night" }
+      - word: "দুখী"
+        modern: "দুঃখী"
+        reading: "dukkhi"
+        meaning: { en: "poor, unhappy" }
+        note: { en: "older, poetic form" }
+      - word: "উবু হয়ে"
+        modern: "উবু হয়ে"
+        reading: "ubu hoye"
+        meaning: { en: "squatting" }
+      - word: "পোহায়"
+        modern: "পোহায়"
+        reading: "pohay"
+        meaning: { en: "warms herself (at a fire)" }
+    questions:
+      - id: bn-0767
+        prompt: { en: "It is very cold today." }
+        answer: true
+      - id: bn-0768
+        prompt: { en: "Where does the dew drip from?" }
+        options:
+          - { en: "From the taro leaves" }
+          - { en: "From the roof" }
+          - { en: "From the sky" }
+        answer: 1
+      - id: bn-0769
+        prompt: { en: "The old woman sits by the stove and hums." }
+        answer: true
+  - id: bn-sahaj-path-1-08
+    title: "Football"
+    source: "Sahaj Path, part 1, page ৩৭ (Visva-Bharati, 1993 printing)"
+    sentences:
+      - text: "বেলা যায়।"
+        reading: "bela jay."
+      - text: "তেল মেখে জলে ডুব দিয়ে আসি।"
+        reading: "tel mekhe jole dub diye ashi."
+      - text: "তার পরে খেলা হবে।"
+        reading: "tar pore khela hobe."
+      - text: "একা একা খেলা যায় না।"
+        reading: "eka eka khela jay na."
+      - text: "ঐ বাড়ি থেকে কয়জন ছেলে এলে বেশ হয়।"
+        reading: "oi bari theke koyjon chhele ele besh hoy."
+      - text: "ঐ-যে আসে শচী সেন, মণি সেন, বংশী সেন, আর ঐ-যে আসে মধু শেঠ আর খেতু শেঠ।"
+        reading: "oi-je ashe shochi shen, moni shen, bongshi shen, ar oi-je ashe modhu sheth ar khetu sheth."
+      - text: "ফুটবল খেলা খুব হবে।"
+        reading: "phutbol khela khub hobe."
+    glossary:
+      - word: "বেলা যায়"
+        modern: "বেলা যায়"
+        reading: "bela jay"
+        meaning: { en: "the day is getting on" }
+      - word: "কয়জন"
+        modern: "কজন"
+        reading: "kojon"
+        meaning: { en: "a few (people)" }
+        note: { en: "older form" }
+      - word: "বেশ হয়"
+        modern: "বেশ হয়"
+        reading: "besh hoy"
+        meaning: { en: "it would be nice" }
+    questions:
+      - id: bn-0770
+        prompt: { en: "What game will they play?" }
+        options:
+          - { en: "Football" }
+          - { en: "Cricket" }
+          - { en: "Hide and seek" }
+        answer: 1
+      - id: bn-0771
+        prompt: { en: "You cannot play alone." }
+        answer: true
+      - id: bn-0772
+        prompt: { en: "They bathe before they play." }
+        answer: true

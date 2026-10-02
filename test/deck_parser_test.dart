@@ -1034,7 +1034,7 @@ cards:
         () => parse(yaml),
         throwsParseError(
           line: lineOf(yaml, 'flashcards'),
-          mentions: ['kind must be vocab or grammar', '"flashcards"'],
+          mentions: ['kind must be vocab, grammar or reading', '"flashcards"'],
         ),
       );
     });

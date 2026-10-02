@@ -16,6 +16,10 @@ enum Skill {
   listening(DrillMode.listening, Feature.drillListening),
   speaking(DrillMode.speaking, Feature.drillSpeaking),
   grammar(DrillMode.grammar, Feature.drillGrammar),
+
+  /// Passages with questions (#98, ADR-0019). Heard, a passage's questions
+  /// are [listening]'s.
+  reading(DrillMode.reading, Feature.drillReading),
   pair(null, Feature.drillPair);
 
   const Skill(this.mode, this.feature);
@@ -29,6 +33,7 @@ enum Skill {
   static Skill of(DrillMode mode) => switch (mode) {
     DrillMode.recognition => Skill.recognition,
     DrillMode.production => Skill.production,
+    DrillMode.reading => Skill.reading,
     DrillMode.listening => Skill.listening,
     DrillMode.grammar => Skill.grammar,
     DrillMode.speaking => Skill.speaking,

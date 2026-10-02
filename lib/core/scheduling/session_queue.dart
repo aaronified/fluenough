@@ -1,5 +1,6 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
+import '../models/reading.dart';
 import 'sm2.dart';
 
 /// One card, drilled in one mode, in a session.
@@ -62,6 +63,11 @@ typedef PairFilter = bool Function(Card card, DrillMode mode);
 /// A mode is only ever offered where [Card.modesIn] allows it, so a card is
 /// never drilled by ear on a device without a voice for its language.
 ///
+/// A passage's questions (#98, ADR-0019) keep together. Its new ones are
+/// introduced all at once or not at all: when its first fits under the cap,
+/// the rest come with it, which can pass the cap by up to three. And in
+/// [items], every question of a passage follows its first.
+///
 /// "Again" is not re-queued: a failed card is due tomorrow, as SM-2 says, and
 /// is not drilled a second time in the same session.
 class SessionQueue {
@@ -104,6 +110,15 @@ class SessionQueue {
         }
       }
     }
+    // A passage's new questions come together, so a share that ends inside
+    // one runs on to its end.
+    for (final (i, block) in blocks.indexed) {
+      while (shares[i] > 0 &&
+          shares[i] < block.length &&
+          _samePassage(block[shares[i] - 1].card, block[shares[i]].card)) {
+        shares[i]++;
+      }
+    }
     return <SessionItem>[
       for (final (i, block) in blocks.indexed) ...block.take(shares[i]),
     ];
@@ -142,6 +157,7 @@ class SessionQueue {
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
+      DrillMode.reading,
       DrillMode.listening,
       DrillMode.grammar,
       DrillMode.speaking,
@@ -151,10 +167,9 @@ class SessionQueue {
     final fresh = <SessionItem>[];
     var newLeft = newCardLimit < 0 ? 0 : newCardLimit;
 
-    var order = 0;
-    final seen = <String>{};
-    for (final card in cards) {
-      if (!seen.add(card.id)) continue;
+    // The pair [card] is most overdue in, or else its first new pair, or
+    // neither.
+    ({SessionItem? due, SessionItem? fresh}) pairsOf(Card card) {
       final allowed = card.modesIn(
         ttsAvailable: hasVoice(card),
         speechAvailable: canHear?.call(card) ?? false,
@@ -173,13 +188,51 @@ class SessionQueue {
           mostOverdue = SessionItem(card: card, mode: mode, state: state);
         }
       }
-      if (mostOverdue != null) {
-        due.add((item: mostOverdue, order: order++));
-      } else if (firstNew != null &&
-          newLeft > 0 &&
-          (canIntroduce?.call(card) ?? true)) {
-        fresh.add(firstNew);
-        newLeft--;
+      return (due: mostOverdue, fresh: mostOverdue == null ? firstNew : null);
+    }
+
+    // A card listed by more than one of the decks is taken once.
+    final seen = <String>{};
+    final all = <Card>[
+      for (final card in cards)
+        if (seen.add(card.id)) card,
+    ];
+    final passages = <String, List<QuestionCard>>{};
+    for (final card in all.whereType<QuestionCard>()) {
+      (passages[_passageKey(card)] ??= <QuestionCard>[]).add(card);
+    }
+
+    var order = 0;
+    for (final card in all) {
+      if (card is QuestionCard) {
+        // The whole passage, when its first question is reached.
+        final questions = passages.remove(_passageKey(card));
+        if (questions == null) continue;
+        final news = <SessionItem>[];
+        for (final question in questions) {
+          final pairs = pairsOf(question);
+          if (pairs.due case final item?) {
+            due.add((item: item, order: order++));
+          } else if (pairs.fresh case final item?) {
+            news.add(item);
+          }
+        }
+        if (news.isNotEmpty &&
+            newLeft > 0 &&
+            (canIntroduce?.call(card) ?? true)) {
+          fresh.addAll(news);
+          newLeft = newLeft > news.length ? newLeft - news.length : 0;
+        }
+        continue;
+      }
+      final pairs = pairsOf(card);
+      if (pairs.due case final item?) {
+        due.add((item: item, order: order++));
+      } else if (pairs.fresh case final item?) {
+        if (newLeft > 0 && (canIntroduce?.call(card) ?? true)) {
+          fresh.add(item);
+          newLeft--;
+        }
       }
     }
 
@@ -202,8 +255,10 @@ class SessionQueue {
   /// New pairs, within the day's allowance.
   final List<SessionItem> fresh;
 
-  /// The whole session in the order it is drilled: [due], then [fresh].
-  List<SessionItem> get items => <SessionItem>[...due, ...fresh];
+  /// The whole session in the order it is drilled: [due], then [fresh],
+  /// except that a passage's questions come together, where its first one
+  /// was ([inPassages]).
+  List<SessionItem> get items => inPassages(<SessionItem>[...due, ...fresh]);
 
   int get length => due.length + fresh.length;
 
@@ -225,3 +280,35 @@ class SessionQueue {
     return counts;
   }
 }
+
+/// [items] with each passage's questions together, where its first one was:
+/// those to be heard, then those to be read, so that a passage is not seen
+/// before it is heard (#98, ADR-0019). Every other item keeps its place.
+List<SessionItem> inPassages(List<SessionItem> items) {
+  final groups = <String, List<SessionItem>>{};
+  for (final item in items) {
+    final card = item.card;
+    if (card is QuestionCard) {
+      (groups[_passageKey(card)] ??= <SessionItem>[]).add(item);
+    }
+  }
+  if (groups.isEmpty) return items;
+  final ordered = <SessionItem>[];
+  for (final item in items) {
+    final card = item.card;
+    if (card is! QuestionCard) {
+      ordered.add(item);
+      continue;
+    }
+    final group = groups.remove(_passageKey(card));
+    if (group == null) continue;
+    ordered
+      ..addAll(group.where((i) => i.mode == DrillMode.listening))
+      ..addAll(group.where((i) => i.mode != DrillMode.listening));
+  }
+  return ordered;
+}
+
+String _passageKey(QuestionCard card) => '${card.deckId}/${card.passage.id}';
+
+bool _samePassage(Card a, Card b) => a is QuestionCard && a.sharesPassage(b);

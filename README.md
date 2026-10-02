@@ -107,6 +107,22 @@ the app. If you speak Telugu, please
 fix; a review by a speaker is the most useful contribution the Telugu decks
 could get.
 
+### Sources
+
+Most decks are written for Fluenough. Where a deck's text comes from
+elsewhere, the deck names the source in its `source` field, and the app shows
+it: under each passage, on the deck's page, and in Settings, under Sources.
+
+Bengali reading passages come from two books in the public domain, quoted
+letter for letter:
+
+- *Sahaj Path*, part 1, by Rabindranath Tagore (1930), in the public domain:
+  passages for reading.
+- *Abol Tabol* by Sukumar Ray (1923), in the public domain: older
+  spellings in the spelling deck, and passages for reading to come.
+
+A new source gets a line here, and its decks name it in `source`.
+
 ## Building
 
 You need the Flutter SDK (3.47+) and, for Android, a JDK and the Android SDK.
