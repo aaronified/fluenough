@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/deck_catalog.dart';
 import '../../app/placement.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
@@ -157,16 +158,24 @@ class _PlacementPageState extends State<PlacementPage> {
     AppState state,
     LanguageInfo language,
   ) {
-    final units = _placement?.units ?? state.courseUnits(_code);
-    final start = _placement == null
-        ? units.firstOrNull
-        : _placement!.startUnit;
+    final placement = _placement;
+    final units = placement?.units ?? state.courseUnits(_code);
+    final known = placement?.unit ?? 0;
+    // Where Today will start: the first unit from there that is not
+    // finished by study either, as the pending window has it. Placement
+    // from before, which this replaces, does not count.
+    bool studied(DeckEntry e) =>
+        !state.canDrill(e) || state.notStudiedIn(e) == 0;
+    final start = units
+        .skip(known)
+        .where((unit) => !unit.every(studied))
+        .firstOrNull;
     if (start == null) return l10n.placementResultAll(language.name);
-    final known = _placement?.unit ?? 0;
     final deck = start.first.deck.name;
-    return known == 0
+    if (known > 0) return l10n.placementResultFrom(known, language.name, deck);
+    return identical(start, units.firstOrNull)
         ? l10n.placementResultStart(language.name, deck)
-        : l10n.placementResultFrom(known, language.name, deck);
+        : l10n.placementResultContinue(language.name, deck);
   }
 }
 

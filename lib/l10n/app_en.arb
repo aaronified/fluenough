@@ -2104,7 +2104,7 @@
       }
     }
   },
-  "placementAskBody": "A short check finds where to start: a few words from each part of the course, until one is new to you. Nothing is recorded, and you can still study anything it skips.",
+  "placementAskBody": "A short check finds where to start: a few words from each part of the course, until one is new to you. Your answers don’t count as reviews, and you can still study anything it skips.",
   "@placementAskBody": {
     "description": "Explanation under the placement question."
   },
@@ -2170,6 +2170,20 @@
         "type": "int",
         "example": "3"
       },
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "placementResultContinue": "You’ll carry on with {language} at {deck}, after what you have studied already.",
+  "@placementResultContinue": {
+    "description": "Placement result when nothing was placed as known, but the learner has already studied the first parts of the course.",
+    "placeholders": {
       "language": {
         "type": "String",
         "example": "Hindi"

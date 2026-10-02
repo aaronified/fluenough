@@ -130,12 +130,21 @@ class Placement {
     List<DeckEntry> unit,
     Set<String> everyMeaning,
   ) {
+    // Forms coincide, in grammar above all: आप and वे both take हैं. A
+    // meaning of another card spelled like this one would be right too, so
+    // it is never offered as wrong.
+    final alsoRight = <String>{
+      for (final unit in units)
+        for (final entry in unit)
+          for (final c in entry.cards)
+            if (c.target == card.target) c.native,
+    };
     final deck = unit.firstWhere((e) => e.id == card.deckId);
     final near = <String>{for (final c in deck.cards) c.native}
-      ..remove(card.native);
+      ..removeAll(alsoRight);
     final far = Set<String>.of(everyMeaning)
       ..removeAll(near)
-      ..remove(card.native);
+      ..removeAll(alsoRight);
     final wrong = <String>[
       ...(near.toList()..shuffle(_random)),
       ...(far.toList()..shuffle(_random)),
@@ -144,8 +153,8 @@ class Placement {
     return PlacementQuestion(card: card, options: options);
   }
 
-  /// [cards] with one card per meaning, so that no question has two right
-  /// answers.
+  /// [cards] with one card per meaning, so that a unit never asks the same
+  /// meaning twice.
   static List<Card> _distinctByMeaning(List<Card> cards) {
     final seen = <String>{};
     return <Card>[

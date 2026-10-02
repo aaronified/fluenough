@@ -26,15 +26,18 @@ class LearnLanguagesPage extends StatefulWidget {
 }
 
 class _LearnLanguagesPageState extends State<LearnLanguagesPage> {
-  late Set<String> _ticked = <String>{
-    ...AppScope.read(context).settings.learningLanguages,
+  // What the current profile learns, as Settings' row shows it, once the
+  // learner has chosen; nothing on first launch.
+  late Set<String> _ticked = _learning(AppScope.read(context));
+
+  static Set<String> _learning(AppState state) => <String>{
+    if (state.settings.learningChosen)
+      for (final language in state.languages)
+        if (state.currentProfile.learns(language.code)) language.code,
   };
 
   void _continue(AppState state) {
-    final settings = state.settings;
-    final before = settings.learningChosen
-        ? settings.learningLanguages.toSet()
-        : <String>{};
+    final before = _learning(state);
     final chosen = <String>[
       for (final language in state.languages)
         if (_ticked.contains(language.code)) language.code,
@@ -79,8 +82,8 @@ class _LearnLanguagesPageState extends State<LearnLanguagesPage> {
           if (!replaced.contains(id)) id,
         for (final ids in placed.values) ...ids,
       }
-      ..learningLanguages = chosen
       ..learningChosen = true;
+    state.setLearningLanguages(chosen);
   }
 
   @override
