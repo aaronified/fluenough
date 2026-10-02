@@ -282,6 +282,11 @@ void main() {
       catalog.paths['bn/en']!.units.first,
       contains('bn-en-script-reading'),
     );
+    final reading = catalog.decks.singleWhere(
+      (entry) => entry.id == 'bn-en-script-reading',
+    );
+    expect(reading.isScript, isTrue);
+    expect(reading.cards, hasLength(16));
   });
 
   test('which guides were seen survives a restart', () {
