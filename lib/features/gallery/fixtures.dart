@@ -10,6 +10,8 @@ import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../core/tts/fixed_tts_engine.dart';
+import '../../core/updates/apk_install.dart';
+import '../../core/updates/release_check.dart';
 
 /// Fixture data for the debug gallery, and for widget tests that want the
 /// design's people and a history to show.
@@ -40,7 +42,8 @@ abstract final class GalleryFixtures {
   /// (Hindi and Spanish, as in the design; Japanese has none), the design's
   /// two profiles with [currentProfileId] current, and — unless [history] is
   /// false — twelve days of reviews, so there is a streak, cards due and a
-  /// leech.
+  /// leech. The update check answers from [releases], never from GitHub,
+  /// and an update installs through [installer], never for real.
   ///
   /// Call `load()` on the result before showing it; the gallery does.
   static AppState state(
@@ -52,6 +55,8 @@ abstract final class GalleryFixtures {
     bool history = true,
     SettingsNotifier? settings,
     SpeechEngine speech = const NullSpeechEngine(),
+    ReleaseCheckEngine releases = const NullReleaseCheck(),
+    ApkInstaller installer = const NullApkInstaller(),
   }) {
     final progress = MemoryProgress();
     if (history) seedHistory(progress, app.decks, app.now());
@@ -62,6 +67,8 @@ abstract final class GalleryFixtures {
       speech: speech,
       features: features,
       clock: app.now,
+      releases: releases,
+      installer: installer,
       settings: settings,
       profiles: profiles,
       currentProfileId: currentProfileId,
