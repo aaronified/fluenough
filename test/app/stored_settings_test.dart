@@ -23,7 +23,8 @@ void changeAll(SettingsNotifier s) {
     ..reminder = true
     ..reminderTime = const TimeOfDay(hour: 7, minute: 5)
     ..learningLanguages = const <String>['hi', 'bn']
-    ..placedDecks = const <String>{'hi-en-first-words', 'hi-en-questions'};
+    ..placedDecks = const <String>{'hi-en-first-words', 'hi-en-questions'}
+    ..learningChosen = true;
 }
 
 void main() {

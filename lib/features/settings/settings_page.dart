@@ -101,9 +101,20 @@ class SettingsPage extends StatelessWidget {
   Widget _learning(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
     final settings = state.settings;
+    final learning = <String>[
+      for (final language in state.languages)
+        if (state.currentProfile.learns(language.code)) language.name,
+    ].join(l10n.commonListSeparator);
     return GroupedList.settings(
       header: l10n.settingsSectionLearning,
       children: <Widget>[
+        GroupedTile(
+          leading: const Icon(Icons.school_outlined),
+          title: l10n.settingsLearn,
+          subtitle: learning,
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => AppNavigator.openLearnLanguages(context),
+        ),
         SettingsSlider(
           title: l10n.settingsNewCardsPerDay,
           valueLabel: '${settings.newCardsPerDay}',
