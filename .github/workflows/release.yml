@@ -185,11 +185,30 @@ jobs:
           fi
 
           # Both print the certificate's SHA-256 in hex, keytool in upper case
-          # with colons, so strip and lower-case both before comparing. More
-          # than one signer in the APK concatenates here and fails too.
+          # with colons, so strip and lower-case both before comparing.
+          #
+          # apksigner words its signer lines two ways. Build-tools 36 prints
+          # "Signer #1 certificate SHA-256 digest: <hex>"; build-tools 37
+          # names the signature scheme instead, "V2 Signer: certificate
+          # SHA-256 digest: <hex>" ("V3.0 Signer:", or "V2 Signer #2:" when
+          # there are several signers). v0.1.0's first run failed here because
+          # only the first wording was read. Repeated digests are dropped in
+          # case one certificate is ever listed under more than one scheme;
+          # two different certificates still concatenate and fail the
+          # comparison. normalise() is not used for these lines because it
+          # deletes the newlines sort -u needs.
           normalise() { tr -d ':[:space:]' | tr '[:upper:]' '[:lower:]'; }
-          apk_sha=$(printf '%s\n' "$apk_certs" | sed -n 's/^Signer #[0-9]* certificate SHA-256 digest: //p' | normalise)
+          apk_sha=$(printf '%s\n' "$apk_certs" \
+            | sed -n -E 's/^(Signer #[0-9]+|V[0-9.]+ Signer( #[0-9]+)?:) certificate SHA-256 digest: //p' \
+            | tr -d ': \t\r' | tr '[:upper:]' '[:lower:]' | sort -u | tr -d '\n')
           key_sha=$(printf '%s\n' "$key_certs" | sed -n 's/^[[:space:]]*SHA256: //p' | head -n 1 | normalise)
+
+          # Say so plainly when the output could not be read, rather than
+          # claiming the APK is signed with some other key.
+          if [ -z "$apk_sha" ]; then
+            echo "::error::No signer certificate SHA-256 was found in apksigner's output above, so $apk cannot be checked and will not be published. If apksigner's wording has changed, update the sed expression in this step."
+            exit 1
+          fi
 
           if [ -z "$key_sha" ] || [ "$apk_sha" != "$key_sha" ]; then
             echo "::error::$apk is not signed with the release key, so it will not be published. APK certificate SHA-256: ${apk_sha:-none found}. Release key certificate SHA-256: ${key_sha:-none found}."
