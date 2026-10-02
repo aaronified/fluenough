@@ -1,0 +1,77 @@
+# How Bengali script works: the recurring features a learner from English
+# misses, shown before the first letters and from a script deck's Tips.
+# See ADR-0016 and docs/DECK-FORMAT.md.
+schema: 1
+kind: script
+id: bn-script
+language: bn
+name: "How Bengali script works"
+intro: "Bengali script is built from a few ideas that come back in letter after letter. They look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  - id: headline
+    name: "The headline"
+    term: "মাত্রা (matra)"
+    example: "ক"
+    text: "Most letters hang from a line along the top, and in a word the lines join into one. Read along the top, not along a baseline as in English."
+    letters: ["ক", "গ", "ত", "দ", "ন", "ম", "ল"]
+  - id: half-headline
+    name: "Letters with half a headline"
+    term: "অর্ধমাত্রা (ordhomatra)"
+    example: "খ"
+    text: "Eight letters carry only part of the line, so it stops short over them. Where it breaks often shows where one letter ends."
+    letters: ["ঋ", "খ", "গ", "ণ", "থ", "ধ", "প", "শ"]
+  - id: no-headline
+    name: "Letters with no headline"
+    term: "মাত্রাহীন (matrahin)"
+    example: "এ"
+    text: "A few letters and marks have no line at all and stand apart in a word."
+    letters: ["এ", "ঐ", "ও", "ঔ", "ঙ", "ঞ", "ৎ"]
+  - id: knot
+    name: "The knot"
+    term: "গুটলি (gutli)"
+    example: "ক"
+    text: "A small closed loop inside a letter. Many letters have one, each in its own place, so where the knot sits tells you which letter it is."
+    letters: ["ক", "খ", "ত", "ল"]
+  - id: inherent-vowel
+    name: "The vowel you don't see"
+    example: "ক"
+    text: "Every consonant carries the open o (অ) unless a sign changes it: ক alone is ko. So কলম is kolom, with no vowel written at all."
+    letters: ["ক", "কল", "কলম"]
+  - id: final-vowel
+    name: "The last o is usually not said"
+    example: "ঘর"
+    text: "At the end of most words the carried o goes quiet: ঘর is ghor, not ghoro, and কলম is kolom. Some words keep it, such as বড় (boro, big), so learn each word as it's said."
+    letters: ["ঘর", "জল", "কলম"]
+  - id: vowel-signs
+    name: "Vowels as signs on a letter"
+    term: "কার (kar)"
+    example: "কি"
+    text: "After a consonant a vowel is a sign on it, not a letter of its own. ি, ে and ৈ are written before the consonant but said after it: you see ি then ক, and say ki."
+    letters: ["কা", "কি", "কু", "কে", "কো"]
+  - id: hoshonto
+    name: "The mark that takes the vowel away"
+    term: "হসন্ত (hoshonto)"
+    example: "ক্"
+    text: "The small slanting stroke below a letter, ্, means no vowel after it. You'll rarely see it, because two consonants usually join instead."
+    letters: ["ক্", "ত্"]
+  - id: conjuncts
+    name: "Letters that join"
+    term: "যুক্তাক্ষর (juktakkhor)"
+    example: "ক্ষ"
+    text: "Two consonants with no vowel between them are written as one shape, side by side or one above the other. Some look nothing like their parts: ক্ষ is ক and ষ."
+    letters: ["ক্ত", "ন্দ", "স্ত", "ক্ষ", "জ্ঞ"]
+  - id: r-forms
+    name: "র written as a stroke"
+    example: "প্র"
+    text: "Next to another consonant র isn't written in full. After it, it's a stroke at its foot (প্র); before it, a small hook on top, the reph (র্ম)."
+    letters: ["প্র", "ক্র", "ত্র", "র্ম"]
+  - id: dot-below
+    name: "A dot below makes another letter"
+    example: "র"
+    text: "Some letters differ only by a dot below: ব and র, ড and ড়, ঢ and ঢ়, য and য়. Look for the dot every time."
+    letters: ["ব", "র", "ড", "ড়", "ঢ", "ঢ়", "য", "য়"]
+  - id: digits
+    name: "Bengali digits"
+    example: "৪"
+    text: "Bengali writes its own digits, in prices, dates and phone numbers. ৪ is 4, though it looks like an 8."
+    letters: ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]
