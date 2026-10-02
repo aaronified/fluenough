@@ -19,24 +19,20 @@ class SystemSoundCheck implements SoundCheckEngine {
   static const double silence = 0.01;
 
   @override
-  Future<bool> hasPermission() async {
-    final recorder = AudioRecorder();
-    try {
-      return await recorder.hasPermission(request: false);
-    } catch (_) {
-      return false;
-    } finally {
-      unawaited(recorder.dispose());
-    }
-  }
-
-  @override
   Future<Recording> record(Duration duration) async {
     final recorder = AudioRecorder();
     try {
       if (!await recorder.hasPermission()) {
         return const Recording.failed(RecordFailure.refused);
       }
+      // The recorder may change the rate or channels to suit the
+      // microphone; the WAV header must say what it really used.
+      var sampleRate = _sampleRate;
+      var channels = 1;
+      await recorder.setOnConfigChanged((config) {
+        sampleRate = config.sampleRate;
+        channels = config.numChannels;
+      });
       final bytes = BytesBuilder(copy: false);
       final stream = await recorder.startStream(
         const RecordConfig(
@@ -54,7 +50,9 @@ class SystemSoundCheck implements SoundCheckEngine {
       if (peakOfPcm16(pcm) < silence) {
         return const Recording.failed(RecordFailure.silent);
       }
-      return Recording(wavFromPcm16(pcm, sampleRate: _sampleRate));
+      return Recording(
+        wavFromPcm16(pcm, sampleRate: sampleRate, channels: channels),
+      );
     } catch (_) {
       return const Recording.failed(RecordFailure.failed);
     } finally {
@@ -67,19 +65,23 @@ class SystemSoundCheck implements SoundCheckEngine {
     final wav = recording.wav;
     if (wav == null) return false;
     final player = AudioPlayer();
+    final done = Completer<void>();
+    final completes = player.onPlayerComplete.listen((_) {
+      if (!done.isCompleted) done.complete();
+    });
     try {
-      final done = player.onPlayerComplete.first;
       await player.play(BytesSource(wav, mimeType: 'audio/wav'));
-      // The recording's own length, and a little more for the player to
-      // start; a player that never reports is given up on.
-      final seconds = (wav.length - 44) / (_sampleRate * 2);
-      await done.timeout(
-        Duration(milliseconds: (seconds * 1000).round() + 3000),
-      );
+      // The recording's own length, from its header's bytes per second,
+      // and a little more for the player to start; a player that never
+      // reports is given up on.
+      final byteRate = ByteData.sublistView(wav).getUint32(28, Endian.little);
+      final millis = (wav.length - 44) * 1000 ~/ byteRate;
+      await done.future.timeout(Duration(milliseconds: millis + 3000));
       return true;
     } catch (_) {
       return false;
     } finally {
+      await completes.cancel();
       unawaited(player.dispose());
     }
   }

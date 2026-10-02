@@ -52,8 +52,9 @@ void main() {
     return state;
   }
 
-  Future<void> tap(WidgetTester tester, Finder finder) async {
-    // At a large text size the check starts below the fold.
+  /// Scrolls the check until [finder] is built: at a large text size, or
+  /// with a long message, part of it starts below the fold.
+  Future<void> reveal(WidgetTester tester, Finder finder) async {
     final check = find.descendant(
       of: find.byType(SoundCheckContent),
       matching: find.byType(Scrollable),
@@ -61,6 +62,10 @@ void main() {
     if (finder.evaluate().isEmpty && check.evaluate().isNotEmpty) {
       await tester.scrollUntilVisible(finder, 120, scrollable: check.first);
     }
+  }
+
+  Future<void> tap(WidgetTester tester, Finder finder) async {
+    await reveal(tester, finder);
     await tester.ensureVisible(finder);
     await tester.pumpAndSettle();
     await tester.tap(finder);
@@ -164,7 +169,9 @@ void main() {
     expect(state.settings.isEnabled(Skill.speaking), isTrue);
   });
 
-  testWidgets('refused for good: speaking is saved off', (tester) async {
+  testWidgets('refused and not tried again: speaking is saved off', (
+    tester,
+  ) async {
     final sound = FixedSoundCheck(grants: false);
     final state = await atSoundCheck(tester, sound);
     final l10n = l10nOf(tester);
@@ -210,15 +217,64 @@ void main() {
     expect(state.settings.isEnabled(Skill.speaking), isTrue);
   });
 
-  testWidgets('playback failing: listening stays off without asking', (
+  testWidgets('playback failing: listening is saved off without asking', (
     tester,
   ) async {
     final sound = FixedSoundCheck(plays: false);
-    await atSoundCheck(tester, sound);
+    final state = await atSoundCheck(tester, sound);
     final l10n = l10nOf(tester);
     await record(tester);
     expect(find.text(l10n.onboardingSoundHeardYou), findsNothing);
     expect(find.text(l10n.onboardingSoundListeningOff), findsOneWidget);
+    await finish(tester);
+    expect(state.settings.isEnabled(Skill.listening), isFalse);
+  });
+
+  testWidgets('refused twice: Android won\'t ask again, so it says where to '
+      'allow it', (tester) async {
+    final sound = FixedSoundCheck(grants: false);
+    await atSoundCheck(tester, sound);
+    final l10n = l10nOf(tester);
+    await record(tester);
+    await tap(tester, find.text(l10n.onboardingSoundYes));
+    expect(find.text(l10n.onboardingSoundRefused), findsOneWidget);
+    await tap(tester, find.text(l10n.commonRetry));
+    await tap(tester, find.text(l10n.onboardingSoundYes));
+    expect(find.text(l10n.onboardingSoundRefusedForGood), findsOneWidget);
+    await reveal(tester, find.text(l10n.commonRetry));
+    expect(find.text(l10n.commonRetry), findsOneWidget);
+  });
+
+  testWidgets('leaving the step and coming back shows what will be saved', (
+    tester,
+  ) async {
+    final sound = FixedSoundCheck(grants: false);
+    final state = await atSoundCheck(tester, sound, recogniser: false);
+    final l10n = l10nOf(tester);
+    Future<void> leaveAndReturn() async {
+      await tap(tester, find.byType(BackButton));
+      await tap(tester, find.text(l10n.onboardingNext));
+      expect(find.text(l10n.onboardingSoundTitle), findsOneWidget);
+    }
+
+    // Refused: the reason survives.
+    await record(tester);
+    await tap(tester, find.text(l10n.onboardingSoundYes));
+    await leaveAndReturn();
+    expect(find.text(l10n.onboardingSoundRefused), findsOneWidget);
+
+    // Played but not yet answered: the question is still asked.
+    sound.grants = true;
+    await tap(tester, find.text(l10n.commonRetry));
+    expect(find.text(l10n.onboardingSoundHeardYou), findsOneWidget);
+    await leaveAndReturn();
+    expect(find.text(l10n.onboardingSoundHeardYou), findsOneWidget);
+    await tap(tester, find.text(l10n.onboardingSoundNo));
+    // No recogniser: speaking off, for that reason.
+    expect(find.text(l10n.onboardingSoundNoRecogniser), findsOneWidget);
+    await finish(tester);
+    expect(state.settings.isEnabled(Skill.listening), isFalse);
+    expect(state.settings.isEnabled(Skill.speaking), isFalse);
   });
 
   testWidgets('passed without a check: both switches stay as they are', (
