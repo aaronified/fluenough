@@ -8,6 +8,7 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
+import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
@@ -831,6 +832,26 @@ class AppState extends ChangeNotifier {
   /// number rules (#54).
   NumberRules? numberRulesFor(LanguageInfo language) =>
       _catalog.numberRules[language.code];
+
+  /// [language]'s sound contrasts (#89, ADR-0015), or null if it has no
+  /// sounds file.
+  SoundContrasts? soundsFor(LanguageInfo language) =>
+      _catalog.sounds[language.code];
+
+  /// A card in [language] whose target is [text], as the grader compares
+  /// them, for saying what a word heard instead means. Null if no deck has
+  /// one.
+  Card? cardSaying(LanguageInfo language, String text) {
+    final wanted = normaliseForContrast(text);
+    if (wanted.isEmpty) return null;
+    for (final entry in decks) {
+      if (entry.language.code != language.code) continue;
+      for (final card in entry.cards) {
+        if (normaliseForContrast(card.target) == wanted) return card;
+      }
+    }
+    return null;
+  }
 
   /// Generated numbers to practise in [deck]'s language, in the skills the
   /// learner has on, by ear only with a voice. Never recorded (ADR-0011).

@@ -1594,6 +1594,25 @@
       }
     }
   },
+  "feedbackSaidContrast": "You said “{said}”. The difference is {contrast}. Answer: {answer}",
+  "@feedbackSaidContrast": {
+    "description": "Speaking drill, wrong: the word heard is the answer with one sound changed (#89). {contrast} comes from the language's sounds file, such as 'a breath after the consonant'.",
+    "placeholders": {
+      "said": {"type": "String", "example": "খাল"},
+      "contrast": {"type": "String", "example": "a breath after the consonant"},
+      "answer": {"type": "String", "example": "কাল"}
+    }
+  },
+  "feedbackSaidContrastMeaning": "You said “{said}”, which means {meaning}. The difference is {contrast}. Answer: {answer}",
+  "@feedbackSaidContrastMeaning": {
+    "description": "As feedbackSaidContrast, when a deck has the word heard: {meaning} is its meaning.",
+    "placeholders": {
+      "said": {"type": "String", "example": "খাল"},
+      "meaning": {"type": "String", "example": "canal"},
+      "contrast": {"type": "String", "example": "a breath after the consonant"},
+      "answer": {"type": "String", "example": "কাল"}
+    }
+  },
   "feedbackSaidAnswer": "You said “{said}”. Answer: {answer}",
   "@feedbackSaidAnswer": {
     "description": "Speaking: detail under a wrong answer, with what the recogniser heard.",

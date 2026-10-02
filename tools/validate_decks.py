@@ -44,9 +44,11 @@ SCRIPTS = {
     "kana", "han", "hangul", "thai", "other",
 }
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
-KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path"}
+KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
+SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
+CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 CODE_RE = re.compile(r"[a-z]{2,3}")
 MODES = {"recognition", "production", "listening", "grammar", "speaking"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
@@ -460,6 +462,9 @@ def validate(path: Path) -> Report:
     if raw.get("kind") == "path":
         check_path_file(r, raw, path)
         return r
+    if raw.get("kind") == "sounds":
+        check_sounds_file(r, raw, path)
+        return r
 
     for unknown in sorted(set(raw) - HEADER_KEYS):
         r.error("root", f"unknown field {unknown!r}")
@@ -645,6 +650,64 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
                 listed.append(deck)
     if codes_ok:
         r.course_path = (lang, native, listed)
+
+
+def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
+    """A language's sound contrasts, decks/<lang>/<lang>-sounds.yaml: pairs
+    of letters or signs that change a word, for the speaking drill's
+    feedback (#89). See ADR-0015."""
+    for unknown in sorted(set(raw) - SOUNDS_KEYS):
+        r.error("root", f"unknown field {unknown!r} in a sounds file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not isinstance(lang, str) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code such as 'bn', {_code_error(lang)}")
+        lang = None
+    elif path.parent.name != lang:
+        r.error("language", f"is {lang!r} but the file is in {path.parent.name}/")
+    sounds_id = raw.get("id")
+    if sounds_id != path.stem:
+        r.error("id", f"is {sounds_id!r} but the filename stem is {path.stem!r}")
+    elif lang is not None and sounds_id != f"{lang}-sounds":
+        r.error("id", f"a sounds file for {lang} has id {lang}-sounds, got {sounds_id!r}")
+    _check_optional_text(r, "root", raw, "description")
+    contrasts = raw.get("contrasts")
+    if not isinstance(contrasts, list) or not contrasts:
+        r.error("contrasts", "must be a non-empty list")
+        return
+    ids: set[str] = set()
+    for i, contrast in enumerate(contrasts):
+        where = f"contrasts[{i}]"
+        if not isinstance(contrast, dict):
+            r.error(where, "must be a mapping with id, name and pairs")
+            continue
+        for unknown in sorted(set(contrast) - CONTRAST_KEYS):
+            r.error(where, f"unknown field {unknown!r}")
+        cid = contrast.get("id")
+        if not _is_str(cid) or not ID_RE.fullmatch(cid):
+            r.error(where, f"id must match [a-z0-9-]+, got {cid!r}")
+        elif cid in ids:
+            r.error(where, f"contrast {cid!r} is listed twice")
+        else:
+            ids.add(cid)
+        if not _is_str(contrast.get("name")) or not contrast["name"].strip():
+            r.error(where, "needs a name, such as 'a breath after the consonant'")
+        within = contrast.get("within_word", False)
+        if not isinstance(within, bool):
+            r.error(where, f"within_word must be true or false, got {within!r}")
+        pairs = contrast.get("pairs")
+        if not isinstance(pairs, list) or not pairs:
+            r.error(where, "pairs must be a non-empty list")
+            continue
+        for j, pair in enumerate(pairs):
+            ok = (isinstance(pair, list) and len(pair) == 2
+                  and all(isinstance(p, str) for p in pair)
+                  and pair[0] != pair[1] and (pair[0] or pair[1]))
+            if not ok:
+                r.error(f"{where}.pairs[{j}]",
+                        f"must be two different quoted strings, at most one empty, got {pair!r}")
 
 
 NUMBERS_KEYS = {

@@ -84,3 +84,15 @@ const Map<int, String> _decompositions = <int, String>{
   // Telugu: the two-part vowel sign.
   0x0C48: 'ై', // ై
 };
+
+/// [input] as [canonical] spells it, with each decomposed letter put back
+/// together: ে then া is ো again, ড then the nukta is ড়. For comparisons
+/// that must see whole letters, such as which sound a word differs by
+/// (#89): taken apart, ো would look like ে with an া added.
+String composed(String input) {
+  var out = canonical(input);
+  for (final MapEntry(:key, :value) in _decompositions.entries) {
+    out = out.replaceAll(value, String.fromCharCode(key));
+  }
+  return out;
+}
