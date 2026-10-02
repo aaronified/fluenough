@@ -8,6 +8,7 @@ import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/speech/speech_engine.dart';
 import '../../core/tts/fixed_tts_engine.dart';
 
 /// Fixture data for the debug gallery, and for widget tests that want the
@@ -50,6 +51,7 @@ abstract final class GalleryFixtures {
     FeatureRegistry features = const FeatureRegistry.shipped(),
     bool history = true,
     SettingsNotifier? settings,
+    SpeechEngine speech = const NullSpeechEngine(),
   }) {
     final progress = MemoryProgress();
     if (history) seedHistory(progress, app.decks, app.now());
@@ -57,6 +59,7 @@ abstract final class GalleryFixtures {
       catalog: app.deckCatalog,
       progress: progress,
       tts: FixedTtsEngine(voices),
+      speech: speech,
       features: features,
       clock: app.now,
       settings: settings,

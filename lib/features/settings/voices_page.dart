@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/features.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -163,8 +164,103 @@ class _VoicesPageState extends State<VoicesPage> {
               ),
             ),
           ],
+          if (languages.isNotEmpty &&
+              state.features.isAvailable(Feature.drillSpeaking)) ...<Widget>[
+            const SizedBox(height: 24),
+            _SpeechSection(state: state),
+          ],
         ],
       ),
+    );
+  }
+}
+
+/// Which languages the phone's speech recogniser hears, for the speaking
+/// drill (#89, ADR-0014), and the learner's leave, per language, to hear
+/// one online that the phone cannot hear by itself.
+class _SpeechSection extends StatelessWidget {
+  const _SpeechSection({required this.state});
+
+  final AppState state;
+
+  Future<void> _switchOn(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
+    final why = switch (await state.setSpeaking(true)) {
+      SpeechSetup.ready => null,
+      SpeechSetup.refused => l10n.settingsSpeakingRefused,
+      SpeechSetup.noRecogniser => l10n.settingsSpeakingNoRecogniser,
+    };
+    if (why != null && context.mounted) showAppSnackBar(context, why);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final settings = state.settings;
+    final style = theme.textTheme.bodyLarge!.copyWith(
+      fontSize: 15,
+      height: 22 / 15,
+      color: theme.colorScheme.onSurfaceVariant,
+    );
+    final off =
+        state.speechReady != true &&
+        state.languages.every((l) => state.speechStatus(l) == SpeechStatus.off);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+          child: Text(
+            l10n.voicesSpeechHeading,
+            style: theme.textTheme.titleMedium,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+          child: Text(
+            off ? l10n.voicesSpeechOff : l10n.voicesSpeechIntro,
+            style: style,
+          ),
+        ),
+        const SizedBox(height: 16),
+        if (off)
+          FilledButton.icon(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+            ),
+            onPressed: () => _switchOn(context),
+            icon: const Icon(Icons.mic_none),
+            label: Text(l10n.voicesSpeechTurnOn, textAlign: TextAlign.center),
+          )
+        else
+          GroupedList(
+            children: <Widget>[
+              for (final language in state.languages)
+                switch (state.speechStatus(language)) {
+                  SpeechStatus.onlineOnly ||
+                  SpeechStatus.online => GroupedTile.toggle(
+                    title: language.name,
+                    subtitle: settings.allowsOnlineSpeech(language.code)
+                        ? l10n.voicesSpeechOnline
+                        : l10n.voicesSpeechOnlineOnly,
+                    value: settings.allowsOnlineSpeech(language.code),
+                    onChanged: (on) =>
+                        settings.allowOnlineSpeech(language.code, on),
+                  ),
+                  final status => GroupedTile(
+                    title: language.name,
+                    subtitle: switch (status) {
+                      SpeechStatus.onDevice => l10n.voicesSpeechOnDevice,
+                      SpeechStatus.missing => l10n.voicesSpeechMissing,
+                      _ => l10n.voicesChecking,
+                    },
+                  ),
+                },
+            ],
+          ),
+      ],
     );
   }
 }

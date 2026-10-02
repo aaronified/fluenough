@@ -136,7 +136,9 @@ class SettingsPage extends StatelessWidget {
             value:
                 state.features.isAvailable(skill.feature) &&
                 settings.isEnabled(skill),
-            onChanged: (on) => settings.setSkillEnabled(skill, on),
+            onChanged: skill.needsMicrophone
+                ? (on) => _setSpeaking(context, state, on)
+                : (on) => settings.setSkillEnabled(skill, on),
           ),
         GroupedTile.toggle(
           title: l10n.settingsRomanisation,
@@ -146,6 +148,23 @@ class SettingsPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  /// Speaking asks for the microphone as it is switched on (ADR-0014), and
+  /// stays off, saying why, when it cannot be had.
+  Future<void> _setSpeaking(
+    BuildContext context,
+    AppState state,
+    bool on,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    final setup = await state.setSpeaking(on);
+    final why = switch (setup) {
+      SpeechSetup.ready => null,
+      SpeechSetup.refused => l10n.settingsSpeakingRefused,
+      SpeechSetup.noRecogniser => l10n.settingsSpeakingNoRecogniser,
+    };
+    if (why != null && context.mounted) showAppSnackBar(context, why);
   }
 
   Widget _sound(BuildContext context, AppState state) {

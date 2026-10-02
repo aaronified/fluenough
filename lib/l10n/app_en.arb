@@ -187,6 +187,10 @@
   "@skillListening": {
     "description": "The skill of hearing a word and typing it. A drill type."
   },
+  "skillSpeaking": "Speaking",
+  "@skillSpeaking": {
+    "description": "The skill of seeing a word's meaning and saying the word aloud. A drill type."
+  },
   "skillGrammar": "Grammar",
   "@skillGrammar": {
     "description": "The skill of typing the right inflected form, from a pattern table. A drill type."
@@ -219,6 +223,16 @@
   "@skillListeningDeckDesc": {
     "description": "Under Listening on a deck's screen."
   },
+  "skillSpeakingDeckDesc": "See the meaning, say it in {language}",
+  "@skillSpeakingDeckDesc": {
+    "description": "Under Speaking on a deck's screen.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
   "skillGrammarDeckDesc": "Type the right form of the word",
   "@skillGrammarDeckDesc": {
     "description": "Under Grammar on a deck's screen."
@@ -238,6 +252,18 @@
   "skillListeningSettingsDesc": "Needs a voice for the language",
   "@skillListeningSettingsDesc": {
     "description": "Under the Listening switch in Settings."
+  },
+  "skillSpeakingSettingsDesc": "Said aloud, heard by your phone. Uses the microphone",
+  "@skillSpeakingSettingsDesc": {
+    "description": "Under the Speaking switch in Settings. Switching it on asks for the microphone."
+  },
+  "settingsSpeakingRefused": "Speaking needs the microphone, so it stays off. Allow the microphone to switch it on.",
+  "@settingsSpeakingRefused": {
+    "description": "SnackBar when the microphone permission is refused as Speaking is switched on."
+  },
+  "settingsSpeakingNoRecogniser": "This phone has no speech recogniser, so speaking stays off.",
+  "@settingsSpeakingNoRecogniser": {
+    "description": "SnackBar when Speaking is switched on but the phone cannot recognise speech."
   },
   "skillGrammarSettingsDesc": "From pattern-table decks",
   "@skillGrammarSettingsDesc": {
@@ -1239,6 +1265,76 @@
   "@drillPlayingHint": {
     "description": "Under the play button while it plays."
   },
+  "drillSayIn": "Say it in {language}",
+  "@drillSayIn": {
+    "description": "Speaking: above the meaning to say aloud.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillSpeakHint": "Tap and say it",
+  "@drillSpeakHint": {
+    "description": "Under the microphone button in the speaking drill."
+  },
+  "drillHearingHint": "Listening…",
+  "@drillHearingHint": {
+    "description": "Under the microphone button while the phone listens."
+  },
+  "drillSpeak": "Say the word",
+  "@drillSpeak": {
+    "description": "Screen-reader name of the microphone button."
+  },
+  "drillStopHearing": "Stop listening",
+  "@drillStopHearing": {
+    "description": "Screen-reader name of the microphone button while it listens."
+  },
+  "drillUnheardNoMatch": "Didn’t catch that. Say it again.",
+  "@drillUnheardNoMatch": {
+    "description": "Speaking: nothing was recognised. Nothing is recorded."
+  },
+  "drillUnheardPermission": "Fluenough can’t use the microphone. Allow it in your phone’s settings, under Apps, Fluenough, Permissions.",
+  "@drillUnheardPermission": {
+    "description": "Speaking: the microphone permission was refused."
+  },
+  "drillUnheardNoRecogniser": "This phone has no speech recogniser for this.",
+  "@drillUnheardNoRecogniser": {
+    "description": "Speaking: the phone cannot recognise speech at all."
+  },
+  "drillUnheardNetwork": "Couldn’t reach the online recogniser. Try again.",
+  "@drillUnheardNetwork": {
+    "description": "Speaking: online recognition failed for want of a network."
+  },
+  "drillUnheardOther": "The recogniser stopped. Try again.",
+  "@drillUnheardOther": {
+    "description": "Speaking: any other recogniser error."
+  },
+  "drillOnlineAsk": "Your phone can’t recognise {language} by itself. Recognise it online? What you say would go to your phone’s speech service.",
+  "@drillOnlineAsk": {
+    "description": "Speaking: the language has no on-device recogniser; asks before sending audio off the phone.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillOnlineAllow": "Allow online for {language}",
+  "@drillOnlineAllow": {
+    "description": "Speaking: allows online recognition for this language, from now on.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillSkipCard": "Skip this card",
+  "@drillSkipCard": {
+    "description": "Speaking: moves on without recording anything."
+  },
   "drillSlower": "Slower · {rate}×",
   "@drillSlower": {
     "description": "Toggle that plays the word more slowly. rate is the speed multiplier.",
@@ -1326,6 +1422,20 @@
       }
     }
   },
+  "feedbackSaidWritten": "You said “{said}”. Written: {answer}",
+  "@feedbackSaidWritten": {
+    "description": "Speaking: detail under an accent or article miss.",
+    "placeholders": {
+      "said": {
+        "type": "String",
+        "example": "nino"
+      },
+      "answer": {
+        "type": "String",
+        "example": "niño"
+      }
+    }
+  },
   "feedbackTypo": "Almost. Did you mean {answer}?",
   "@feedbackTypo": {
     "description": "Feedback on a near miss, which the learner then judges.",
@@ -1361,6 +1471,20 @@
       "answer": {
         "type": "String",
         "example": "la ventana"
+      }
+    }
+  },
+  "feedbackSaidAnswer": "You said “{said}”. Answer: {answer}",
+  "@feedbackSaidAnswer": {
+    "description": "Speaking: detail under a wrong answer, with what the recogniser heard.",
+    "placeholders": {
+      "said": {
+        "type": "String",
+        "example": "फल"
+      },
+      "answer": {
+        "type": "String",
+        "example": "पल"
       }
     }
   },
@@ -2495,6 +2619,38 @@
   "voicesCheckAgain": "Check again",
   "@voicesCheckAgain": {
     "description": "Button that asks the phone about voices again."
+  },
+  "voicesSpeechHeading": "Recognising your speech",
+  "@voicesSpeechHeading": {
+    "description": "Heading of the speech-recognition section on the voices screen."
+  },
+  "voicesSpeechIntro": "Speaking drills use your phone’s own speech recogniser. Where it can, it listens on the phone, and nothing you say leaves it.",
+  "@voicesSpeechIntro": {
+    "description": "Explanation of the speech-recognition section."
+  },
+  "voicesSpeechOff": "Speaking is off. Switching it on asks for the microphone.",
+  "@voicesSpeechOff": {
+    "description": "Shown while speaking is off, before the microphone has been asked for."
+  },
+  "voicesSpeechTurnOn": "Switch on speaking",
+  "@voicesSpeechTurnOn": {
+    "description": "Button: switch the speaking drill on, which asks for the microphone."
+  },
+  "voicesSpeechOnDevice": "Heard on this phone",
+  "@voicesSpeechOnDevice": {
+    "description": "Status: the phone recognises this language itself."
+  },
+  "voicesSpeechOnlineOnly": "Only online. Allow it to send what you say to your phone’s speech service",
+  "@voicesSpeechOnlineOnly": {
+    "description": "Status: the phone recognises this language only online, not yet allowed. Beside a switch."
+  },
+  "voicesSpeechOnline": "Heard online, as you allowed",
+  "@voicesSpeechOnline": {
+    "description": "Status: online recognition allowed for this language. Beside a switch to take it back."
+  },
+  "voicesSpeechMissing": "Not recognised on this phone",
+  "@voicesSpeechMissing": {
+    "description": "Status: the phone cannot recognise this language."
   },
   "voicesNone": "No decks are loaded, so there are no languages to check.",
   "@voicesNone": {

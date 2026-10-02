@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 
 /// Features the UI plan (§2, "Design features with no issue") lists as having
 /// no issue yet, plus the voice settings link, which needs a dependency before
@@ -40,12 +41,14 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the drills, saved progress, appearance but for '
-      'wallpaper colours, stats, leeches, daily facts and the log backup', () {
+  test('this version ships the drills, speaking among them, saved progress, '
+      'appearance but for wallpaper colours, stats, leeches, daily facts and '
+      'the log backup', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
       Feature.drillListening,
+      Feature.drillSpeaking,
       Feature.drillGrammar,
       Feature.persistence,
       Feature.appearance,
@@ -81,7 +84,9 @@ void main() {
   });
 
   test('every skill is switched on by its own drill feature', () {
-    expect(Skill.values.map((s) => s.feature).toSet(), hasLength(5));
+    expect(Skill.values.map((s) => s.feature).toSet(), hasLength(6));
+    expect(Skill.speaking.feature, Feature.drillSpeaking);
+    expect(Skill.speaking.mode, DrillMode.speaking);
     expect(Skill.pair.mode, isNull);
     expect(Skill.pair.feature, Feature.drillPair);
     expect(Skill.grammar.feature, Feature.drillGrammar);

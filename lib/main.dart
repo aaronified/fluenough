@@ -5,6 +5,7 @@ import 'app/app_state.dart';
 import 'app/deck_catalog.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
 
 export 'app.dart' show FluenoughApp;
@@ -22,6 +23,7 @@ Future<void> main() async {
         progress: storage.progress,
         settings: storage.settings,
         tts: SystemTtsEngine(),
+        speech: SystemSpeechEngine(),
       ),
     ),
   );
