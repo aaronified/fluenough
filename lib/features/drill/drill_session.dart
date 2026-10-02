@@ -386,12 +386,19 @@ class DrillSession extends ChangeNotifier {
   }
 
   /// Moves on without recording anything, for a card that cannot be heard
-  /// now: the phone cannot recognise its language on the device, and the
-  /// learner has not allowed online recognition.
+  /// now. Declining to go online, when the phone cannot recognise the
+  /// language by itself, holds for the language's other speaking cards in
+  /// this session, so the question is not asked again on each.
   void skipUnheard() {
     if (item.mode != DrillMode.speaking || _phase != DrillPhase.prompt) return;
+    if (_unheard == SpeechFailure.notOnDevice) {
+      _declinedOnline.add(deck.language.code);
+    }
     _advance();
   }
+
+  /// Languages whose online question the learner declined in this session.
+  final Set<String> _declinedOnline = <String>{};
 
   // ---------------------------------------------------------------------------
 
@@ -408,12 +415,17 @@ class DrillSession extends ChangeNotifier {
   }
 
   /// Whether [item] can still be drilled: not a speaking card in a language
-  /// found, since the session was built, not to be heard at all.
+  /// found, since the session was built, not to be heard at all, or one
+  /// whose online question the learner declined and has not since allowed.
   bool _drillable(SessionItem item) {
     if (item.mode != DrillMode.speaking) return true;
     final language = _state.deckOf(item.card)?.language;
-    return language == null ||
-        _state.speechStatus(language) != SpeechStatus.missing;
+    if (language == null) return true;
+    return switch (_state.speechStatus(language)) {
+      SpeechStatus.missing => false,
+      SpeechStatus.onlineOnly => !_declinedOnline.contains(language.code),
+      _ => true,
+    };
   }
 
   void _advance() {

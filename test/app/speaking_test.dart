@@ -174,6 +174,7 @@ void main() {
       await state.listenFor(info);
       state.settings.allowOnlineSpeech('es', true);
       expect(state.speechStatus(info), SpeechStatus.online);
+      state.settings.foundSpeech('ja', unsupported: true);
 
       final stored = state.settings.toStored();
       final restarted = AppState.test(
@@ -184,6 +185,8 @@ void main() {
       await restarted.load();
       await pumpEventQueue();
       expect(restarted.speechStatus(info), SpeechStatus.online);
+      expect(restarted.settings.speechUnsupported, <String>{'ja'});
+      expect(restarted.settings.speechNotOnDevice, <String>{'es', 'ja'});
 
       await restarted.recheckSpeech();
       expect(restarted.settings.speechNotOnDevice, isEmpty);

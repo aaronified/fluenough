@@ -390,8 +390,9 @@ rules file that spells with a word that no card in the language's
 the device. `speaking` is offered only once the learner has switched it on,
 which asks for the microphone, and only for a language the phone's speech
 recogniser hears ([ADR-0014](adr/0014-speaking.md)). Matching is exact once
-normalised: a near miss in speech is a different word, not a typo. `recognition` is self-graded because judging a free-text
-translation is beyond what an offline app should attempt.
+normalised: a near miss in speech is a different word, not a typo.
+`recognition` is self-graded because judging a free-text translation is beyond
+what an offline app should attempt.
 
 ---
 

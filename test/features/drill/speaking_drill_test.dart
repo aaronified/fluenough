@@ -149,21 +149,32 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('Skip this card moves on without recording', (tester) async {
+  testWidgets('Not now skips the language\'s speaking cards for the session, '
+      'unrecorded, without asking again', (tester) async {
     usePhone(tester);
     final handle = tester.ensureSemantics();
     final speech = FixedSpeechEngine(online: <String>{'es'});
     final state = await pumpSpeaking(tester, speech);
     final l10n = l10nOf(tester);
+    expect(
+      state
+          .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+          .items
+          .length,
+      greaterThan(1),
+    );
     await speak(tester);
-    await tapText(tester, l10n.drillSkipCard);
+    expect(find.text(l10n.drillOnlineAsk('Spanish')), findsOneWidget);
+    await tapText(tester, l10n.drillOnlineNotNow);
     expect(state.progress.log, isEmpty);
-    // The next card asks straight away, now that the phone is known not to
-    // hear Spanish by itself.
     expect(
       state.speechStatus(state.deckById(spanish)!.language),
       SpeechStatus.onlineOnly,
     );
+    // Every other card was Spanish speaking, so the session is over.
+    expect(find.byType(SpeakingDrill), findsNothing);
+    expect(find.text(l10n.drillOnlineAsk('Spanish')), findsNothing);
+    expect(speech.listens, hasLength(1));
     handle.dispose();
   });
 
