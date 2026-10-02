@@ -10,6 +10,7 @@ import '../features/profiles/new_profile_page.dart';
 import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
 import '../features/profiles/spoken_languages_page.dart';
+import '../features/script/script_guide_page.dart';
 import '../features/settings/appearance_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/leeches_page.dart';
@@ -45,6 +46,9 @@ abstract final class AppRoutes {
   static const String spokenLanguages = '/spoken-languages';
   static const String learnLanguages = '/learn-languages';
   static const String voices = '/voices';
+
+  /// A script's guide. Argument: the language code, a [String].
+  static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
 
   /// A profile's PIN. Argument: the profile id, a [String].
@@ -69,6 +73,7 @@ abstract final class AppRoutes {
       spokenLanguages => const SpokenLanguagesPage(),
       learnLanguages => const LearnLanguagesPage(),
       voices => const VoicesPage(),
+      scriptGuide when args is String => ScriptGuidePage(languageCode: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
       newProfile => const NewProfilePage(),
@@ -114,6 +119,14 @@ abstract final class AppNavigator {
 
   static Future<void> openVoices(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.voices);
+
+  /// How [languageCode]'s script works (#30): a script deck's Tips.
+  static Future<void> openScriptGuide(
+    BuildContext context,
+    String languageCode,
+  ) =>
+      Navigator.of(context)
+          .pushNamed(AppRoutes.scriptGuide, arguments: languageCode);
 
   static Future<void> openProfiles(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.profiles);

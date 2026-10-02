@@ -8,6 +8,7 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
+import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
@@ -832,6 +833,10 @@ class AppState extends ChangeNotifier {
   /// number rules (#54).
   NumberRules? numberRulesFor(LanguageInfo language) =>
       _catalog.numberRules[language.code];
+
+  /// [language]'s script guide (#30, ADR-0016), or null if it has none.
+  ScriptGuide? scriptGuideFor(LanguageInfo language) =>
+      _catalog.scriptGuides[language.code];
 
   /// [language]'s sound contrasts (#89, ADR-0015), or null if it has no
   /// sounds file.

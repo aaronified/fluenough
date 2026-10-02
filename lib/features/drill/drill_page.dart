@@ -5,10 +5,13 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/card.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/script_guide.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../script/script_guide_page.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
@@ -46,6 +49,16 @@ class DrillPage extends StatefulWidget {
 
 class _DrillPageState extends State<DrillPage> {
   DrillSession? _session;
+
+  /// The script guides to show before the session (#30, ADR-0016), in
+  /// turn: one for each language with script cards in it whose guide is
+  /// unseen, in the order the session reaches them.
+  final List<(ScriptGuide, LanguageInfo)> _guides =
+      <(ScriptGuide, LanguageInfo)>[];
+
+  /// The queue, kept until the last guide is closed. The session is built
+  /// then, so that its clock doesn't time the reading as the first answer.
+  List<SessionItem> _items = const <SessionItem>[];
   bool _loaded = false;
   bool _failed = false;
   bool _summaryShown = false;
@@ -109,15 +122,46 @@ class _DrillPageState extends State<DrillPage> {
       );
     }
     if (items.isEmpty) return;
+    if (preset == null) {
+      final languages = <String>{};
+      for (final item in items) {
+        final entry = state.deckOf(item.card);
+        if (entry == null || !entry.isScript) continue;
+        final language = entry.language;
+        if (!languages.add(language.code)) continue;
+        final guide = state.scriptGuideFor(language);
+        if (guide != null &&
+            !state.settings.hasSeenScriptGuide(language.code)) {
+          _guides.add((guide, language));
+        }
+      }
+    }
+    _items = items;
+    if (_guides.isEmpty) _begin(state);
+  }
+
+  void _begin(AppState state) {
+    final request = widget.request;
+    final preset = widget.preset;
     final session = DrillSession(
       state: state,
-      items: items,
+      items: _items,
       inputMode: preset?.inputMode ?? InputMode.script,
       recorded: !request.revise,
       revising: request.revise,
     );
     preset?.apply(session);
     _session = session..addListener(_onSession);
+  }
+
+  /// Start, on a guide: it is seen, and the next one, or the session,
+  /// follows.
+  void _guideRead(AppState state, LanguageInfo language) {
+    state.settings.markScriptGuideSeen(language.code);
+    setState(() {
+      _guides.removeAt(0);
+      if (_guides.isEmpty) _begin(state);
+    });
   }
 
   void _onSession() {
@@ -174,6 +218,17 @@ class _DrillPageState extends State<DrillPage> {
             semanticsLabel: l10n.commonLoadingDecks,
           ),
         ),
+      );
+    }
+    if (_guides.isNotEmpty) {
+      final (guide, language) = _guides.first;
+      return ScriptGuideView(
+        key: ValueKey<String>(language.code),
+        guide: guide,
+        language: language,
+        actionLabel: l10n.scriptGuideStart,
+        onAction: () => _guideRead(AppScope.read(context), language),
+        onClose: _close,
       );
     }
     final session = _session;
