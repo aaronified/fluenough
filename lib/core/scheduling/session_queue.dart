@@ -82,6 +82,10 @@ class SessionQueue {
   ///
   /// [cards] must be distinct. Cards from several decks may be mixed; the
   /// caller's [stateOf] tells them apart.
+  ///
+  /// With [reviseAll], every pair already reviewed counts as due, whatever
+  /// its date: revising a finished deck. One mode per card still holds, the
+  /// one due soonest.
   factory SessionQueue.build({
     required Iterable<Card> cards,
     required StateLookup stateOf,
@@ -89,6 +93,7 @@ class SessionQueue {
     required DateTime now,
     required int newCardLimit,
     PairFilter? isSetAside,
+    bool reviseAll = false,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
@@ -111,7 +116,7 @@ class SessionQueue {
         final state = stateOf(card, mode);
         if (state == null) {
           firstNew ??= SessionItem(card: card, mode: mode, state: null);
-        } else if (state.isDue(now) &&
+        } else if ((reviseAll || state.isDue(now)) &&
             (mostOverdue == null ||
                 state.dueAt.isBefore(mostOverdue.state!.dueAt))) {
           mostOverdue = SessionItem(card: card, mode: mode, state: state);
