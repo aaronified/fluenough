@@ -15,11 +15,14 @@ import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/tts_engine.dart';
+import '../core/updates/apk_install.dart';
+import '../core/updates/release_check.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
 import 'deck_catalog.dart';
 import 'features.dart';
+import 'links.dart';
 import 'log_files.dart';
 import 'memory_progress.dart';
 import 'profile.dart';
@@ -27,6 +30,7 @@ import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
 import 'skill.dart';
+import 'update_checker.dart';
 
 /// The current time. Injected so that tests and the gallery can fix it.
 typedef Clock = DateTime Function();
@@ -106,6 +110,10 @@ class AppState extends ChangeNotifier {
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
+    this.links = const LauncherLinks(),
+    this._releases = const NullReleaseCheck(),
+    this._installer = const NullApkInstaller(),
+    this._downloads = const NullDownloadStore(),
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
@@ -124,8 +132,10 @@ class AppState extends ChangeNotifier {
 
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, no voices unless [tts] has some, empty in-memory
-  /// progress, and a clock fixed at [now] — by default Monday 28 September
-  /// 2026, 19:00, the evening the design is drawn on.
+  /// progress, links that open unless [links] says otherwise, no network
+  /// for the update check unless [releases] answers, no download unless
+  /// [installer] does one, and a clock fixed at [now] — by default Monday 28
+  /// September 2026, 19:00, the evening the design is drawn on.
   factory AppState.test({
     DeckSource? decks,
     TtsEngine tts = const NullTtsEngine(),
@@ -135,6 +145,10 @@ class AppState extends ChangeNotifier {
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
     LogFiles logFiles = const PickerLogFiles(),
+    LinkOpener? links,
+    ReleaseCheckEngine releases = const NullReleaseCheck(),
+    ApkInstaller installer = const NullApkInstaller(),
+    DownloadStore downloads = const NullDownloadStore(),
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
@@ -149,6 +163,10 @@ class AppState extends ChangeNotifier {
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
+      links: links ?? FixedLinks(),
+      releases: releases,
+      installer: installer,
+      downloads: downloads,
       settings: settings,
       profiles: profiles,
       currentProfileId: currentProfileId,
@@ -175,6 +193,23 @@ class AppState extends ChangeNotifier {
 
   /// Where the review log's backup is saved and read from (#20).
   final LogFiles logFiles;
+
+  /// Opens links in the browser, or the app that handles them.
+  final LinkOpener links;
+
+  /// Settings' "Check for updates", the check at launch, and installing
+  /// what it finds (ADR-0017). Has its own notifier; what it finds is kept
+  /// in [settings].
+  late final UpdateChecker updates = UpdateChecker(
+    engine: _releases,
+    settings: settings,
+    clock: _clock,
+    installer: _installer,
+    downloads: _downloads,
+  );
+  final ReleaseCheckEngine _releases;
+  final ApkInstaller _installer;
+  final DownloadStore _downloads;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -910,6 +945,7 @@ class AppState extends ChangeNotifier {
     settings.removeListener(_forgetPending);
     progress.removeListener(_forgetPending);
     shellTab.dispose();
+    updates.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();
   }

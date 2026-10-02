@@ -18,7 +18,10 @@ import 'ui/theme.dart';
 /// strings, the light and dark themes and the routes, opening on [AppShell].
 ///
 /// Starts loading the catalog as it is first built, so a test only has to
-/// pump it: `FluenoughApp(state: AppState.test())`.
+/// pump it: `FluenoughApp(state: AppState.test())`. Then, for updates
+/// (ADR-0017), deletes the download of one that has installed, and checks
+/// for a newer one if the learner has switched that on and no check has
+/// reached GitHub in the last day.
 class FluenoughApp extends StatefulWidget {
   const FluenoughApp({super.key, required this.state});
 
@@ -33,6 +36,7 @@ class _FluenoughAppState extends State<FluenoughApp> {
   void initState() {
     super.initState();
     widget.state.load();
+    widget.state.updates.atLaunch();
   }
 
   @override
@@ -82,7 +86,7 @@ class _FluenoughAppState extends State<FluenoughApp> {
 /// Which tab shows is `AppState.shellTab`, so a page pushed over the shell
 /// can switch it (`AppNavigator.selectTab`). Every tab stays built while
 /// another shows, keeping its scroll position. Back on any tab but Today
-/// returns to Today.
+/// returns to Today. Settings carries a dot while a newer version is out.
 class AppShell extends StatelessWidget {
   const AppShell({super.key});
 
@@ -127,14 +131,39 @@ class AppShell extends StatelessWidget {
                 label: l10n.navProgress,
               ),
               NavigationDestination(
-                icon: const Icon(Icons.settings_outlined),
-                selectedIcon: const Icon(Icons.settings),
+                icon: const _SettingsIcon(Icons.settings_outlined),
+                selectedIcon: const _SettingsIcon(Icons.settings),
                 label: l10n.navSettings,
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+/// The Settings tab's [icon], with a dot while a newer version is out
+/// (ADR-0017), which a screen reader hears with the tab's name.
+class _SettingsIcon extends StatelessWidget {
+  const _SettingsIcon(this.icon);
+
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.read(context);
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) {
+        final available = state.updates.updateAvailable;
+        return Semantics(
+          label: available
+              ? AppLocalizations.of(context)!.navSettingsUpdate
+              : null,
+          child: Badge(isLabelVisible: available, child: Icon(icon)),
+        );
+      },
     );
   }
 }

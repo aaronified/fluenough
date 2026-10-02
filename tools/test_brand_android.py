@@ -21,6 +21,10 @@ import brand_android
 
 REPO = Path(__file__).resolve().parent.parent
 BRAND = REPO / brand_android.BRAND
+ANDROID = "{http://schemas.android.com/apk/res/android}"
+NAME = f"{ANDROID}name"
+SCHEME = f"{ANDROID}scheme"
+NODE = "{http://schemas.android.com/tools}node"
 
 # A manifest shaped like the one flutter create writes, cut down.
 MANIFEST = """\
@@ -33,6 +37,42 @@ MANIFEST = """\
     </application>
 </manifest>
 """
+
+# The app's Gradle file, cut down to what the script looks for: written for
+# this test, in the shape flutter create's Kotlin DSL file has.
+GRADLE = """\
+plugins {
+    id("com.android.application")
+}
+
+android {
+    namespace = "app.fluenough"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+flutter {
+    source = "../.."
+}
+"""
+
+
+def granted(root: ET.Element) -> list[str]:
+    """The permissions [root], a manifest, asks for, in order."""
+    return [
+        e.get(NAME) for e in root.findall("uses-permission") if e.get(NODE) != "remove"
+    ]
+
+
+def removed(root: ET.Element) -> list[str]:
+    """The permissions [root] removes from what plugins ask for."""
+    return [
+        e.get(NAME) for e in root.findall("uses-permission") if e.get(NODE) == "remove"
+    ]
+
 
 # What flutter create puts in res/ that the brand replaces or relies on.
 GENERATED = {
@@ -58,6 +98,8 @@ class ApplyTest(unittest.TestCase):
             (res / path).write_text(text, encoding="utf-8")
         self.manifest = self.root / brand_android.MANIFEST
         self.manifest.write_text(MANIFEST, encoding="utf-8")
+        self.gradle = self.root / brand_android.GRADLE
+        self.gradle.write_text(GRADLE, encoding="utf-8")
 
     def test_the_label_is_the_app_title(self) -> None:
         self.assertEqual(brand_android.apply(self.root), "Fluenough")
@@ -80,9 +122,15 @@ class ApplyTest(unittest.TestCase):
 
     def test_running_twice_is_the_same_as_once(self) -> None:
         brand_android.apply(self.root)
-        once = self.manifest.read_text(encoding="utf-8")
+        paths = self.root / brand_android.OTA_PATHS
+        once = [
+            f.read_text(encoding="utf-8") for f in (self.manifest, self.gradle, paths)
+        ]
         brand_android.apply(self.root)
-        self.assertEqual(self.manifest.read_text(encoding="utf-8"), once)
+        self.assertEqual(
+            [f.read_text(encoding="utf-8") for f in (self.manifest, self.gradle, paths)],
+            once,
+        )
 
     def test_a_name_is_escaped_for_xml(self) -> None:
         (self.root / brand_android.ARB).write_text(
@@ -98,11 +146,74 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         text = self.manifest.read_text(encoding="utf-8")
         root = ET.fromstring(text)
-        name = "{http://schemas.android.com/apk/res/android}name"
-        permissions = [e.get(name) for e in root.findall("uses-permission")]
-        self.assertEqual(permissions, ["android.permission.RECORD_AUDIO"])
-        actions = [e.get(name) for e in root.findall("queries/intent/action")]
-        self.assertEqual(actions, ["android.speech.RecognitionService"])
+        self.assertEqual(
+            granted(root),
+            ["android.permission.RECORD_AUDIO", "android.permission.INTERNET"],
+        )
+        actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
+        self.assertIn("android.speech.RecognitionService", actions)
+
+    def test_the_internet_and_https_links_are_declared(self) -> None:
+        # A release build has no internet unless the main manifest asks, and
+        # url_launcher finds no browser on Android 11+ without the query.
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        self.assertIn("android.permission.INTERNET", granted(root))
+        views = [
+            intent
+            for intent in root.findall("queries/intent")
+            if [a.get(NAME) for a in intent.findall("action")]
+            == ["android.intent.action.VIEW"]
+        ]
+        self.assertEqual(len(views), 1)
+        self.assertEqual(
+            [d.get(SCHEME) for d in views[0].findall("data")], ["https"]
+        )
+
+    def test_what_the_manifest_already_declares_is_not_added_again(self) -> None:
+        # Written by hand, laid out differently from what the script writes.
+        self.manifest.write_text(
+            MANIFEST.replace(
+                "<application",
+                '<uses-permission android:name="android.permission.INTERNET" />\n'
+                "    <application",
+            ).replace(
+                "</manifest>",
+                "    <queries>\n"
+                "        <intent><action android:name=\"android.intent.action.VIEW\" />"
+                '<data android:scheme="https" /></intent>\n'
+                "    </queries>\n</manifest>",
+            ),
+            encoding="utf-8",
+        )
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        self.assertEqual(
+            sorted(granted(root)),
+            ["android.permission.INTERNET", "android.permission.RECORD_AUDIO"],
+        )
+        self.assertEqual(
+            sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
+            ["android.intent.action.VIEW", "android.speech.RecognitionService"],
+        )
+
+    def test_a_view_query_for_another_scheme_does_not_count(self) -> None:
+        self.manifest.write_text(
+            MANIFEST.replace(
+                "</manifest>",
+                "    <queries>\n        <intent>\n"
+                '            <action android:name="android.intent.action.VIEW"/>\n'
+                '            <data android:scheme="geo"/>\n'
+                "        </intent>\n    </queries>\n</manifest>",
+            ),
+            encoding="utf-8",
+        )
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        self.assertEqual(
+            sorted(d.get(SCHEME) for d in root.findall("queries/intent/data")),
+            ["geo", "https"],
+        )
 
     def test_an_existing_queries_block_keeps_what_it_had(self) -> None:
         self.manifest.write_text(
@@ -117,13 +228,118 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         brand_android.apply(self.root)
         root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        name = "{http://schemas.android.com/apk/res/android}name"
         self.assertEqual(len(root.findall("queries")), 1)
         self.assertEqual(
-            sorted(e.get(name) for e in root.findall("queries/intent/action")),
-            ["android.intent.action.PROCESS_TEXT", "android.speech.RecognitionService"],
+            sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
+            [
+                "android.intent.action.PROCESS_TEXT",
+                "android.intent.action.VIEW",
+                "android.speech.RecognitionService",
+            ],
         )
-        self.assertEqual(len(root.findall("uses-permission")), 1)
+        self.assertEqual(len(granted(root)), 2)
+
+    def test_ota_update_gets_its_file_provider(self) -> None:
+        # Android's installer reads the download through it; ota_update's
+        # own manifest does not declare one.
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        providers = root.findall("application/provider")
+        self.assertEqual(len(providers), 1)
+        provider = providers[0]
+        self.assertEqual(provider.get(NAME), "sk.fourq.otaupdate.OtaUpdateFileProvider")
+        self.assertEqual(
+            provider.get(f"{ANDROID}authorities"),
+            "${applicationId}.ota_update_provider",
+        )
+        self.assertEqual(provider.get(f"{ANDROID}exported"), "false")
+        self.assertEqual(provider.get(f"{ANDROID}grantUriPermissions"), "true")
+        meta = provider.findall("meta-data")
+        self.assertEqual(
+            [(m.get(NAME), m.get(f"{ANDROID}resource")) for m in meta],
+            [("android.support.FILE_PROVIDER_PATHS", "@xml/ota_update_paths")],
+        )
+        # The activity is still there, and the provider is beside it.
+        self.assertEqual(len(root.findall("application/activity")), 1)
+
+    def test_the_provider_shares_only_the_download_folder(self) -> None:
+        brand_android.apply(self.root)
+        paths = self.root / brand_android.OTA_PATHS
+        self.assertEqual(
+            paths.relative_to(self.root / brand_android.RES).as_posix(),
+            "xml/ota_update_paths.xml",
+        )
+        root = ET.parse(paths).getroot()
+        self.assertEqual(root.tag, "paths")
+        # FileProvider reads these attributes without a namespace.
+        shared = [(e.tag, e.get("name"), e.get("path")) for e in root]
+        self.assertEqual(
+            shared, [("files-path", "internal_apk_storage", "ota_update/")]
+        )
+
+    def test_external_storage_is_removed_from_the_merged_manifest(self) -> None:
+        # ota_update asks to write it, which implies reading it, and has used
+        # neither since 7.0.1: the download goes to the app's own storage.
+        brand_android.apply(self.root)
+        text = self.manifest.read_text(encoding="utf-8")
+        self.assertEqual(text.count('xmlns:tools="http://schemas.android.com/tools"'), 1)
+        root = ET.fromstring(text)
+        self.assertEqual(
+            removed(root),
+            [
+                "android.permission.WRITE_EXTERNAL_STORAGE",
+                "android.permission.READ_EXTERNAL_STORAGE",
+            ],
+        )
+        self.assertFalse([p for p in granted(root) if "STORAGE" in p])
+
+    def test_core_library_desugaring_is_switched_on(self) -> None:
+        # ota_update's build requires it of the app.
+        brand_android.apply(self.root)
+        text = self.gradle.read_text(encoding="utf-8")
+        start = text.index("compileOptions {")
+        options = text[start : text.index("}", start)]
+        self.assertIn("isCoreLibraryDesugaringEnabled = true", options)
+        self.assertEqual(text.count("isCoreLibraryDesugaringEnabled"), 1)
+        self.assertIn(
+            "dependencies {\n"
+            '    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")\n'
+            "}",
+            text,
+        )
+        self.assertIn("sourceCompatibility = JavaVersion.VERSION_17", text)
+
+    def test_desugaring_already_on_is_left_alone(self) -> None:
+        self.gradle.write_text(
+            GRADLE.replace(
+                "compileOptions {",
+                "compileOptions {\n        isCoreLibraryDesugaringEnabled = true",
+            )
+            + "dependencies {\n"
+            '    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")\n'
+            "}\n",
+            encoding="utf-8",
+        )
+        before = self.gradle.read_text(encoding="utf-8")
+        brand_android.apply(self.root)
+        self.assertEqual(self.gradle.read_text(encoding="utf-8"), before)
+
+    def test_a_gradle_file_of_another_shape_is_an_error_and_nothing_changes(
+        self,
+    ) -> None:
+        self.gradle.write_text(
+            GRADLE.replace("compileOptions {", "java {"), encoding="utf-8"
+        )
+        with self.assertRaisesRegex(brand_android.BrandError, "compileOptions"):
+            brand_android.apply(self.root)
+        self.assertEqual(self.manifest.read_text(encoding="utf-8"), MANIFEST)
+        png = self.root / brand_android.RES / "mipmap-mdpi/ic_launcher.png"
+        self.assertEqual(png.read_text(encoding="utf-8"), "flutter")
+
+    def test_no_gradle_file_is_an_error(self) -> None:
+        self.gradle.unlink()
+        with self.assertRaisesRegex(brand_android.BrandError, "flutter create"):
+            brand_android.apply(self.root)
 
     def test_no_android_folder_is_an_error(self) -> None:
         self.manifest.unlink()

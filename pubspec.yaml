@@ -38,6 +38,15 @@ dependencies:
   record: ^7.1.1
   audioplayers: ^6.8.1
 
+  # Opens links in the browser: the issues page, HeliBoard, and the release
+  # page when an update cannot install. Agreed with the maintainer for the
+  # update check (ADR-0017).
+  url_launcher: ^6.3.2
+
+  # Downloads the newest release's APK into the app's own storage and opens
+  # Android's installer on it. Agreed with the maintainer (ADR-0017).
+  ota_update: ^7.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
