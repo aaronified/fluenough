@@ -23,10 +23,12 @@ import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
 import 'settings_controls.dart';
+import 'sources_section.dart';
 import 'update_section.dart';
 
 /// The Settings tab: the profile card, learning, sound, look and language,
-/// reminder and privacy, your data, cloud backup, updates, and the footer.
+/// reminder and privacy, your data, the sources the decks name, cloud
+/// backup, updates, and the footer.
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
 /// per day, the skill switches, romanisation, speech rate, and the Voices row.
@@ -72,6 +74,8 @@ class SettingsPage extends StatelessWidget {
                     _reminder(context, state),
                     const SizedBox(height: 20),
                     _data(context, state),
+                    // Where the decks' texts come from (#98).
+                    const SourcesSection(gap: 20),
                     const SizedBox(height: 20),
                     const BackupSection(),
                     const SizedBox(height: 20),

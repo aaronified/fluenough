@@ -11,7 +11,14 @@ enum DrillMode {
   /// Shown the meaning, type the target. Machine-graded.
   production,
 
-  /// Hear the target, type it. Machine-graded, needs a TTS voice.
+  /// Read a passage, answer questions about it by choosing. Machine-graded
+  /// (#98, ADR-0019). Before listening, so that a new question is read
+  /// before it is heard.
+  reading,
+
+  /// Hear the target, type it. Machine-graded, needs a TTS voice. For a
+  /// reading question, the passage is read aloud and its text is hidden
+  /// until the question is answered.
   listening,
 
   /// Shown an inflection prompt, type the inflected form. Machine-graded.

@@ -68,7 +68,8 @@ void main() {
     expect(s.reminderTime, defaults.reminderTime);
     expect(s.cardTextScale, SettingsNotifier.maxCardTextScale);
     expect(s.showRomanisation, defaults.showRomanisation);
-    expect(s.enabledSkills, {Skill.recognition});
+    // Reading is newer than a list with no marks, so it keeps its default.
+    expect(s.enabledSkills, {Skill.recognition, Skill.reading});
     expect(s.learningLanguages, ['hi', 'bn']);
     expect(s.placedDecks, {'hi-en-market'});
     expect(s.autoUpdateCheck, isFalse);
@@ -124,6 +125,33 @@ void main() {
       expect(again.settings.pendingUpdate, isNull);
     },
   );
+
+  test('a skill added since the settings were stored keeps its default, '
+      'and one switched off since stays off (#98)', () {
+    // Stored before reading existed: listening was switched off.
+    final older = SettingsNotifier()
+      ..restore(const <String, String>{
+        'enabled_skills': 'recognition,production,grammar',
+      });
+    expect(older.isEnabled(Skill.reading), isTrue);
+    expect(older.isEnabled(Skill.listening), isFalse);
+    expect(older.isEnabled(Skill.speaking), isFalse);
+
+    final off = SettingsNotifier()..setSkillEnabled(Skill.reading, false);
+    final again = SettingsNotifier()..restore(off.toStored());
+    expect(again.isEnabled(Skill.reading), isFalse);
+    expect(again.isEnabled(Skill.recognition), isTrue);
+
+    // Stored by a version with a skill this one does not know, unmarked
+    // skills absent: each keeps its default.
+    final newer = SettingsNotifier()
+      ..restore(const <String, String>{
+        'enabled_skills': 'recognition,!production,someday',
+      });
+    expect(newer.isEnabled(Skill.production), isFalse);
+    expect(newer.isEnabled(Skill.listening), isTrue);
+    expect(newer.isEnabled(Skill.reading), isTrue);
+  });
 
   test('settings persist across closing and reopening the database', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');

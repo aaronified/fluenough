@@ -1,6 +1,7 @@
 import 'author.dart';
 import 'card.dart';
 import 'grammar_pattern.dart';
+import 'reading.dart';
 
 class LanguageInfo {
   const LanguageInfo({
@@ -53,7 +54,9 @@ class LanguageInfo {
   };
 }
 
-enum DeckKind { vocab, grammar }
+/// What a deck holds: cards, a pattern table that expands into cards, or
+/// passages with questions, which are its cards (#98, ADR-0019).
+enum DeckKind { vocab, grammar, reading }
 
 class Deck {
   const Deck({
@@ -65,6 +68,7 @@ class Deck {
     required this.license,
     required this.cards,
     this.pattern,
+    this.passages = const <Passage>[],
     this.description,
     this.tags = const <String>[],
     this.authors = const <Author>[],
@@ -89,6 +93,10 @@ class Deck {
   /// A grammar deck's pattern table; null for a vocab deck. A parsed grammar
   /// deck has this set and [cards] empty until the expander fills them.
   final GrammarPattern? pattern;
+
+  /// A reading deck's passages, in order; empty for any other deck. Their
+  /// questions are its [cards], as `QuestionCard`s.
+  final List<Passage> passages;
 
   final String? description;
   final List<String> tags;
@@ -116,6 +124,7 @@ class Deck {
     license: license,
     cards: cards,
     pattern: pattern,
+    passages: passages,
     description: description,
     tags: tags,
     authors: authors,

@@ -371,7 +371,11 @@ class SettingsNotifier extends ChangeNotifier {
   /// renaming one resets it for everyone.
   Map<String, String> toStored() => <String, String>{
     'new_cards_per_day': '$_newCardsPerDay',
-    'enabled_skills': [for (final s in _enabledSkills) s.name].join(','),
+    // Every skill, a switched-off one marked with a !, so that a skill
+    // added later can tell it was not known here (#98).
+    'enabled_skills': [
+      for (final s in Skill.values) isEnabled(s) ? s.name : '!${s.name}',
+    ].join(','),
     'show_romanisation': '$_showRomanisation',
     'speech_rate': '$_speechRate',
     'theme_mode': _themeMode.name,
@@ -422,12 +426,19 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('new_cards_per_day', int.tryParse) case final v?) {
       newCardsPerDay = v;
     }
-    if (pick('enabled_skills', (t) => t) case final names?) {
-      final skills = <Skill>{
-        for (final name in names.split(',')) ?Skill.values.asNameMap()[name],
-      };
+    if (pick('enabled_skills', (t) => t.split(',')) case final names?) {
+      // A skill added since these were stored keeps its default, rather
+      // than reading as switched off. Each skill is listed, a switched-off
+      // one marked !; a list with no mark is older, or has every skill on,
+      // and either way knew every skill but reading (#98).
+      final marked = names.any((name) => name.startsWith('!'));
       for (final skill in Skill.values) {
-        setSkillEnabled(skill, skills.contains(skill));
+        if (names.contains(skill.name)) {
+          setSkillEnabled(skill, true);
+        } else if (names.contains('!${skill.name}') ||
+            (!marked && skill != Skill.reading)) {
+          setSkillEnabled(skill, false);
+        }
       }
     }
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;

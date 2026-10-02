@@ -6,6 +6,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -54,6 +55,13 @@ class SkillSection extends StatelessWidget {
     );
   }
 
+  /// The line under [skill]. On a reading deck, listening is hearing a
+  /// passage, not typing a word (#98).
+  String _description(AppLocalizations l10n, Skill skill) =>
+      skill == Skill.listening && entry.deck.kind == DeckKind.reading
+      ? l10n.skillListeningReadingDeckDesc
+      : skill.deckDescription(l10n, entry.language.name);
+
   Widget _row(BuildContext context, Skill skill) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
@@ -70,7 +78,7 @@ class SkillSection extends StatelessWidget {
         leadingGap: leadingGap,
         leading: ModePill(skill: skill, size: ModePillSize.large),
         title: skill.label(l10n),
-        subtitle: skill.deckDescription(l10n, language.name),
+        subtitle: _description(l10n, skill),
       );
     }
 
@@ -148,7 +156,7 @@ class SkillSection extends StatelessWidget {
       trailingGap: trailingGap,
       leading: ModePill(skill: skill, size: ModePillSize.large),
       title: label,
-      subtitle: skill.deckDescription(l10n, language.name),
+      subtitle: _description(l10n, skill),
       trailing: FilledButton.tonalIcon(
         style: AppButtonStyles.compact(context)
             .merge(const ButtonStyle(iconAlignment: IconAlignment.end)),
