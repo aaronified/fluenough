@@ -24,18 +24,20 @@ const ScriptGuide _sample = ScriptGuide(
     ScriptFeature(
       id: 'headline',
       name: 'The headline', // ui-literal-ok: debug-only gallery
-      term: 'মাত্রা (matra)',
+      term: 'মাত্রা',
+      reading: 'matra', // ui-literal-ok: debug-only gallery
       example: 'ক',
       text: 'Most letters hang from a line along the top.', // ui-literal-ok: debug-only gallery
-      letters: <String>['ক', 'খ', 'গ', 'ত'],
+      letters: <String>['ক', 'ঘ', 'ত', 'ন'],
     ),
     ScriptFeature(
       id: 'knot',
       name: 'The knot', // ui-literal-ok: debug-only gallery
-      term: 'গুটলি (gutli)',
+      term: 'গুটলি',
+      reading: 'gutli', // ui-literal-ok: debug-only gallery
       example: 'ত',
       text: 'A small loop that tells look-alike letters apart.', // ui-literal-ok: debug-only gallery
-      letters: <String>['ক', 'ত', 'ল'],
+      letters: <String>['ক', 'খ', 'ত', 'ল'],
     ),
   ],
 );

@@ -8,6 +8,7 @@ class ScriptFeature {
     required this.example,
     required this.text,
     this.term,
+    this.reading,
     this.letters = const <String>[],
   });
 
@@ -17,9 +18,13 @@ class ScriptFeature {
   /// The feature in plain English: "The headline".
   final String name;
 
-  /// Its name in the language, with a reading: "মাত্রা (matra)". Null if
-  /// it has none worth learning.
+  /// Its name in the language: "মাত্রা". Null if it has none worth
+  /// learning.
   final String? term;
+
+  /// The [term] in the Latin alphabet, "matra", shown under it when Show
+  /// romanisation is on, as on a card.
+  final String? reading;
 
   /// One letter, or a short word, that shows it, drawn large.
   final String example;
