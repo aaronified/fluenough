@@ -6,6 +6,7 @@ import 'app/app_state.dart';
 import 'app/routes.dart';
 import 'app/shell_tab.dart';
 import 'features/decks/decks_page.dart';
+import 'features/placement/learn_languages_page.dart';
 import 'features/profiles/spoken_languages_page.dart';
 import 'features/settings/settings_page.dart';
 import 'features/stats/stats_page.dart';
@@ -60,10 +61,14 @@ class _FluenoughAppState extends State<FluenoughApp> {
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          // The first launch asks which languages the learner speaks (#53)
-          // before anything else.
+          // The first launch asks which languages the learner speaks (#53),
+          // then which they want to learn, and places them (#117), before
+          // anything else. An install from before #117 is asked the second
+          // once.
           home: settings.spokenLanguages.isEmpty
               ? const SpokenLanguagesPage(firstRun: true)
+              : !settings.learningChosen
+              ? const LearnLanguagesPage(firstRun: true)
               : const AppShell(),
         ),
       ),

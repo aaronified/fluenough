@@ -106,8 +106,13 @@ class AppState extends ChangeNotifier {
       profiles: profiles,
       currentProfileId: currentProfileId,
     );
-    // Past the first-launch setup (#53), unless a test brings its own.
-    if (settings == null) state.settings.spokenLanguages = const <String>['en'];
+    // Past the first-launch setup (#53, #117), unless a test brings its
+    // own: speaking English, and learning every language.
+    if (settings == null) {
+      state.settings
+        ..spokenLanguages = const <String>['en']
+        ..learningChosen = true;
+    }
     return state;
   }
 
@@ -540,36 +545,49 @@ class AppState extends ChangeNotifier {
       pendingUnits.any((unit) => unit.any((e) => e.id == entry.id));
 
   List<List<DeckEntry>> _findPending() {
-    final mine = profileDecks;
-    final courses = <String, List<DeckEntry>>{};
-    final taughtFrom = <String, String>{};
-    for (final entry in mine) {
-      final language = entry.language.code;
-      final native = taughtFrom.putIfAbsent(
-        language,
-        () => entry.deck.native.code,
-      );
-      if (entry.deck.native.code != native) continue;
-      (courses[language] ??= <DeckEntry>[]).add(entry);
-    }
-    final pending = <List<DeckEntry>>[];
-    for (final decks in courses.values) {
-      final byId = <String, DeckEntry>{for (final e in decks) e.id: e};
-      final path = pathOf(decks.first);
-      final units = <List<DeckEntry>>[
-        if (path != null)
-          for (final unit in path.units)
-            <DeckEntry>[for (final id in unit) ?byId[id]],
-        for (final entry in decks)
-          if (path?.unitOf(entry.id) == null) <DeckEntry>[entry],
-      ];
-      pending.addAll(
-        units
-            .where((unit) => unit.isNotEmpty && !unit.every(isFinished))
-            .take(2),
-      );
-    }
-    return List<List<DeckEntry>>.unmodifiable(pending);
+    final languages = <String>{
+      for (final entry in profileDecks) entry.language.code,
+    };
+    return List<List<DeckEntry>>.unmodifiable(<List<DeckEntry>>[
+      for (final code in languages)
+        ...courseUnits(code).where((unit) => !unit.every(isFinished)).take(2),
+    ]);
+  }
+
+  /// The units of [language]'s course, in teaching order: the course taught
+  /// from the best-known language the learner speaks that has one, else the
+  /// first in the catalog. Its path's units, or without a path each deck as
+  /// a unit, in catalog order; a deck its path leaves out follows as a unit
+  /// of its own. Empty if no deck teaches [language]. Whether the profile
+  /// learns it does not matter: placement asks before it does.
+  List<List<DeckEntry>> courseUnits(String language) {
+    final teaching = <DeckEntry>[
+      for (final entry in decks)
+        if (entry.language.code == language) entry,
+    ];
+    if (teaching.isEmpty) return const <List<DeckEntry>>[];
+    int rank(DeckEntry e) =>
+        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final native = teaching
+        .reduce((best, e) => rank(e) < rank(best) ? e : best)
+        .deck
+        .native
+        .code;
+    final course = <DeckEntry>[
+      for (final entry in teaching)
+        if (entry.deck.native.code == native) entry,
+    ];
+    final byId = <String, DeckEntry>{for (final e in course) e.id: e};
+    final path = pathOf(course.first);
+    return <List<DeckEntry>>[
+      if (path != null)
+        for (final unit in path.units)
+          if (<DeckEntry>[for (final id in unit) ?byId[id]] case final found
+              when found.isNotEmpty)
+            found,
+      for (final entry in course)
+        if (path?.unitOf(entry.id) == null) <DeckEntry>[entry],
+    ];
   }
 
   /// [units]' cards, one from each unit in turn, so that a day's new cards
