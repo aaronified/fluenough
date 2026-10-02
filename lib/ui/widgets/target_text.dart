@@ -16,18 +16,20 @@ import '../theme.dart';
 /// - **Line height** of 1.9 for right-to-left scripts, whose Nastaliq forms
 ///   climb and descend far more than Latin, and 1.25 otherwise.
 ///
-/// [TargetText.hero] sizes the text as the design does — 96, 64 or 48 by
-/// length — times the learner's card text scale, which it follows live.
+/// Text in a drill follows the learner's card text size, live:
+/// [TargetText.hero] sizes it as the design does — 96, 64 or 48 by length —
+/// and [TargetText.card] from a size it is given, both times the scale.
+/// Elsewhere, as in lists and menus, a plain [TargetText] keeps its size.
 class TargetText extends StatelessWidget {
   const TargetText(
     this.text, {
     super.key,
     required this.language,
-    required this.fontSize,
+    required double this.fontSize,
     this.fontWeight = FontWeight.w600,
     this.color,
     this.textAlign = TextAlign.center,
-  }) : _hero = false;
+  }) : _sizing = _Sizing.fixed;
 
   /// The big text on a drill card, sized by its length and the card scale.
   const TargetText.hero(
@@ -38,26 +40,41 @@ class TargetText extends StatelessWidget {
     this.color,
     this.textAlign = TextAlign.center,
   }) : fontSize = null,
-       _hero = true;
+       _sizing = _Sizing.hero;
+
+  /// Other text on a drill card, at [fontSize] times the card scale.
+  const TargetText.card(
+    this.text, {
+    super.key,
+    required this.language,
+    required double this.fontSize,
+    this.fontWeight = FontWeight.w600,
+    this.color,
+    this.textAlign = TextAlign.center,
+  }) : _sizing = _Sizing.card;
 
   final String text;
   final LanguageInfo language;
 
-  /// Null only for [TargetText.hero], which works it out.
+  /// Null only for [TargetText.hero], which works it out. For
+  /// [TargetText.card], the size at a scale of 1.
   final double? fontSize;
   final FontWeight fontWeight;
   final Color? color;
   final TextAlign textAlign;
-  final bool _hero;
+  final _Sizing _sizing;
 
   @override
   Widget build(BuildContext context) {
-    if (!_hero) return _text(fontSize!);
+    if (_sizing == _Sizing.fixed) return _text(fontSize!);
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
       listenable: settings,
-      builder: (context, _) =>
-          _text(TargetSizes.forText(text, scale: settings.cardTextScale)),
+      builder: (context, _) => _text(
+        _sizing == _Sizing.hero
+            ? TargetSizes.forText(text, scale: settings.cardTextScale)
+            : fontSize! * settings.cardTextScale,
+      ),
     );
   }
 
@@ -74,6 +91,8 @@ class TargetText extends StatelessWidget {
     ),
   );
 }
+
+enum _Sizing { fixed, hero, card }
 
 /// [text], an interface string that quotes deck content, with each of
 /// [quotes] in it marked as [language]'s: drawn in its font and read by a

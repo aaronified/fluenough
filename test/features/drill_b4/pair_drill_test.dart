@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/drill/pair_drill.dart';
 import 'package:fluenough/features/drill/pair_fixture.dart';
@@ -127,8 +128,13 @@ void main() {
     usePhone(tester);
     final app = AppState.test();
     await app.load();
-    for (final scale in <double>[1.0, 2.0]) {
+    for (final (scale, card) in <(double, double)>[
+      (1.0, 1.0),
+      (2.0, 1.0),
+      (2.0, SettingsNotifier.maxCardTextScale),
+    ]) {
       tester.platformDispatcher.textScaleFactorTestValue = scale;
+      app.settings.cardTextScale = card;
       for (final GalleryEntry entry in <GalleryEntry>[
         ...pairGalleryEntries,
         ...pairGalleryStates,
@@ -142,7 +148,7 @@ void main() {
           expect(
             tester.takeException(),
             isNull,
-            reason: '${entry.id} $scale $dark',
+            reason: '${entry.id} $scale $card $dark',
           );
           expect(find.byType(PairDrill), findsOneWidget);
         }
