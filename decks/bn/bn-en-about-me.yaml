@@ -6,7 +6,7 @@ theme: about-me
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Your name, where you are from, where you live, and the people around you."
+description: "Your name and age, where you are from, where you live, and the people around you."
 tags: [beginner]
 cards:
   - id: bn-0191
@@ -19,7 +19,7 @@ cards:
     native: "My name is …"
     reading: "amar nam …"
     pos: "phrase"
-    notes: "There is no 'is': 'my name …'. Bengali drops 'to be' in the present."
+    notes: "There is no 'is': 'my name …'. In the present, Bengali needs no verb to say what something is. To say where someone is, or how they are, it uses আছে: ভালো আছি, I'm fine."
   - id: bn-0193
     target: "আপনার নাম কী?"
     native: "What is your name?"
@@ -37,12 +37,14 @@ cards:
     native: "I live in …"
     reading: "ami … thaki."
     pos: "phrase"
-    notes: "The place takes -এ or -তে: আমি কলকাতায় থাকি, I live in Kolkata."
+    notes: "The place takes -এ, or after a vowel -য় or -তে: আমি কলকাতায় থাকি, I live in Kolkata; আমি ঢাকায় থাকি, I live in Dhaka."
   - id: bn-0196
     target: "বাড়ি"
     native: "home; house"
     reading: "bari"
+    alt_target: ["বাসা"]
     pos: "noun"
+    notes: "বাড়ি (bari) is home, wherever you live. Also বাসা (basha), for the place you live now, with বাড়ি the family home."
   - id: bn-0197
     target: "পরিবার"
     native: "family"
@@ -68,3 +70,41 @@ cards:
     native: "language"
     reading: "bhasha"
     pos: "noun"
+  - id: bn-0416
+    target: "বয়স"
+    native: "age"
+    reading: "boyosh"
+    pos: "noun"
+  - id: bn-0417
+    target: "আপনার বয়স কত?"
+    native: "How old are you?"
+    reading: "apnar boyosh koto?"
+    pos: "phrase"
+  - id: bn-0418
+    target: "আমার বয়স ত্রিশ।"
+    native: "I'm thirty."
+    reading: "amar boyosh trish."
+    alt_target: ["আমার বয়স তিরিশ।"]
+    pos: "phrase"
+    notes: "'My age thirty': no 'years' and no verb. In speech 30 is often তিরিশ (tirish)."
+  - id: bn-0419
+    target: "বিদেশি"
+    native: "foreigner; foreign"
+    reading: "bideshi"
+    pos: "noun"
+  - id: bn-0420
+    target: "বাঙালি"
+    native: "a Bengali (person)"
+    reading: "bangali"
+    pos: "noun"
+    notes: "The language is বাংলা; its people, wherever they live, are বাঙালি."
+  - id: bn-0421
+    target: "ভারতীয়"
+    native: "Indian"
+    reading: "bharotiyo"
+    pos: "adj"
+  - id: bn-0422
+    target: "বাংলাদেশি"
+    native: "Bangladeshi"
+    reading: "bangladeshi"
+    pos: "adj"

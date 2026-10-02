@@ -5,21 +5,18 @@ kind: vocab
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Short everyday words written with letters alone, no vowel signs: the headline, the knot, the dot below and the vowel you do not see, at work."
+description: "Short everyday words written with letters alone, no vowel signs: the headline, the dot below and the vowel you do not see, at work. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [beginner, unreviewed, script]
 cards:
-  - id: bn-0051
-    target: "ঘর"
-    native: "room; home"
-    reading: "ghor"
+  - ref: bn-0051
     notes: "Two letters under one headline. ঘ is gho and র is ro, but the last o isn't said: ghor."
   - ref: bn-0350
-    notes: "The headline runs on over both letters. ল has a knot; the final o is quiet."
+    notes: "The headline runs on over both letters; the final o is quiet."
   - id: bn-0052
     target: "কলম"
     native: "pen"
     reading: "kolom"
-    notes: "Three letters and no vowel written: ko-lo-m. Look for the knot in ক and in ল."
+    notes: "Three letters and no vowel written: ko-lo-m."
   - id: bn-0053
     target: "বন"
     native: "forest"
@@ -29,16 +26,13 @@ cards:
     target: "রথ"
     native: "chariot"
     reading: "roth"
-    notes: "র is ব with a dot below. থ has a knot and only half a headline."
+    notes: "র is ব with a dot below. থ has only half a headline."
   - id: bn-0055
     target: "বল"
     native: "ball"
     reading: "bol"
     notes: "ব and ল under one headline; the last o is quiet."
-  - id: bn-0056
-    target: "ফল"
-    native: "fruit"
-    reading: "phol"
+  - ref: bn-0056
     notes: "ফ is প with a curl and a breath after it: ph."
   - id: bn-0057
     target: "পথ"
@@ -49,7 +43,7 @@ cards:
     target: "নখ"
     native: "nail (of a finger)"
     reading: "nokh"
-    notes: "ন and খ both have a knot; খ has only half a headline."
+    notes: "খ has only half a headline."
   - ref: bn-0211
     native: "ten"
     notes: "শ has half a headline; it is said sh."
@@ -57,7 +51,7 @@ cards:
     target: "তরল"
     native: "liquid"
     reading: "torol"
-    notes: "ত has a knot; ত, র and ল each carry their o, and the last one is quiet."
+    notes: "ত, র and ল each carry their o, and the last one is quiet."
   - id: bn-0060
     target: "গরম"
     native: "hot"
@@ -75,6 +69,7 @@ cards:
     target: "বড়"
     native: "big"
     reading: "boro"
+    alt_target: ["বড়ো"]
     notes: "ড় is ড with a dot below: the tongue is placed as for ড, but doesn't touch the roof of the mouth. This word keeps its last o: boro."
   - ref: bn-0202
     native: "one"

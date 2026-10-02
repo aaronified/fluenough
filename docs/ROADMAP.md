@@ -11,7 +11,7 @@ guide wait for 1.0.
 
 - **Decks** are all taught from English: Hindi, Bengali and Telugu, plus the
   existing Spanish and Japanese. Deck ids name both languages (#51).
-- **Vocabulary is taught by theme**, one deck per theme, in 14 shared themes
+- **Vocabulary is taught by theme**, one deck per theme, in 18 shared themes
   aimed at minimal fluency: first words, questions, numbers, market,
   groceries, transport, directions and so on (#52).
 - **Numbers**: two number decks, and a generator for 4-digit numbers and

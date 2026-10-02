@@ -1,0 +1,46 @@
+schema: 1
+id: bn-en-grammar-be
+name: "To be: আছে, ছিল, নয়"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Bengali's three ways of saying be: আছে for where and how someone is, ছিল for was, and নয় for is not. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "To be"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "আছে is be for where and how: আমি ভালো আছি, I'm well; বাবা বাড়িতে আছেন, Father is at home. With the owner's -র it is have: আমার সময় আছে, I have time. Its negative is নেই, the same for every person: আমি বাড়িতে নেই, I'm not at home. With a noun or an adjective the present has no verb (আমি ছাত্র, I am a student), but 'not' has one: আমি ছাত্র নই. In speech না often stands for every নয় form: আমি ছাত্র না. ছিল is the past of both: আমি বাড়িতে ছিলাম, আমি ছাত্র ছিলাম, and its negative puts না after it: ছিলাম না. ও and এ take the same form as সে, and উনি and ইনি the same as তিনি. তুমি আছো is also written আছ, and both are accepted."
+  entries:
+    - lemma: "আছে"
+      key: achhe
+      gloss: "am, is, are (somewhere, or how); there is"
+      forms:
+        "আমি / আমরা": "আছি"
+        "তুই / তোরা": "আছিস"
+        "তুমি / তোমরা": ["আছো", "আছ"]
+        "আপনি / আপনারা": "আছেন"
+        "সে / তারা": "আছে"
+        "তিনি / তাঁরা": "আছেন"
+    - lemma: "ছিল"
+      key: chhilo
+      gloss: "was, were"
+      forms:
+        "আমি / আমরা": "ছিলাম"
+        "তুই / তোরা": "ছিলি"
+        "তুমি / তোমরা": "ছিলে"
+        "আপনি / আপনারা": "ছিলেন"
+        "সে / তারা": "ছিল"
+        "তিনি / তাঁরা": "ছিলেন"
+    - lemma: "নয়"
+      key: noy
+      gloss: "am not, is not, are not (a student, tired …)"
+      forms:
+        "আমি / আমরা": "নই"
+        "তুই / তোরা": "নস"
+        "তুমি / তোমরা": "নও"
+        "আপনি / আপনারা": "নন"
+        "সে / তারা": "নয়"
+        "তিনি / তাঁরা": "নন"

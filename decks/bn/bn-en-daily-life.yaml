@@ -1,0 +1,135 @@
+schema: 1
+id: bn-en-daily-life
+name: "A day"
+kind: vocab
+theme: daily-life
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Getting up, meals, work and bed, and how often you do each. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: bn-0657
+    target: "ঘুম থেকে ওঠা"
+    native: "to get up"
+    reading: "ghum theke otha"
+    pos: "phrase"
+    notes: "'To rise from sleep'. ওঠা (otha) is to rise: আমি উঠি, I get up."
+  - id: bn-0658
+    target: "মুখ ধোয়া"
+    native: "to wash one's face"
+    reading: "mukh dhoya"
+    pos: "phrase"
+    notes: "ধোয়া (dhoya), to wash: আমি মুখ ধুই (ami mukh dhui), I wash my face."
+  - id: bn-0659
+    target: "দাঁত মাজা"
+    native: "to brush one's teeth"
+    reading: "dant maja"
+    pos: "phrase"
+  - id: bn-0660
+    target: "স্নান করা"
+    native: "to bathe; to have a shower"
+    reading: "snan kora"
+    alt_target: ["গোসল করা"]
+    pos: "phrase"
+    notes: "Also গোসল করা (goshol kora)."
+  - id: bn-0661
+    target: "জলখাবার"
+    native: "breakfast; a light meal"
+    reading: "jolkhabar"
+    alt_target: ["নাশ্তা", "নাশতা", "নাস্তা"]
+    pos: "noun"
+    notes: "Also নাশ্তা (nashta), also written নাস্তা."
+  - id: bn-0662
+    target: "দুপুরের খাবার"
+    native: "lunch"
+    reading: "dupurer khabar"
+    pos: "phrase"
+    notes: "'Midday's food': দুপুর (dupur), midday, takes -এর."
+  - id: bn-0663
+    target: "রাতের খাবার"
+    native: "dinner"
+    reading: "rater khabar"
+    pos: "phrase"
+    notes: "'Night's food'."
+  - id: bn-0664
+    target: "কাজে যাওয়া"
+    native: "to go to work"
+    reading: "kaje jaoa"
+    pos: "phrase"
+    notes: "কাজ (kaj), work, takes -এ for 'to': কাজে."
+  - id: bn-0665
+    target: "বাড়ি ফেরা"
+    native: "to come home"
+    reading: "bari phera"
+    alt_target: ["বাসায় ফেরা"]
+    pos: "phrase"
+    notes: "ফেরা (phera) is to return. Also বাসায় ফেরা (bashay phera)."
+  - id: bn-0666
+    target: "রান্না করা"
+    native: "to cook"
+    reading: "ranna kora"
+    pos: "phrase"
+  - id: bn-0667
+    target: "ঘুমোতে যাওয়া"
+    native: "to go to bed"
+    reading: "ghumote jaoa"
+    alt_target: ["ঘুমাতে যাওয়া"]
+    pos: "phrase"
+    notes: "Also ঘুমাতে যাওয়া (ghumate jaoa), the form usually written."
+  - id: bn-0668
+    target: "প্রতিদিন"
+    native: "every day"
+    reading: "protidin"
+    alt_target: ["রোজ"]
+    pos: "adv"
+    notes: "In speech often রোজ (roj)."
+  - id: bn-0669
+    target: "মাঝে মাঝে"
+    native: "sometimes"
+    reading: "majhe majhe"
+    pos: "phrase"
+  - id: bn-0670
+    target: "সবসময়"
+    native: "always"
+    reading: "shobshomoy"
+    alt_target: ["সব সময়"]
+    pos: "adv"
+    notes: "Also written as two words, সব সময়: 'all the time'."
+  - id: bn-0671
+    target: "সাধারণত"
+    native: "usually"
+    reading: "shadharonoto"
+    pos: "adv"
+  - id: bn-0672
+    target: "তারপর"
+    native: "then; after that"
+    reading: "tarpor"
+    pos: "adv"
+    notes: "The word that strings a day together: তারপর … তারপর …"
+  - id: bn-0673
+    target: "আমি রোজ সাতটায় উঠি।"
+    native: "I get up at seven every day."
+    reading: "ami roj shattay uthi."
+    alt_target: ["আমি প্রতিদিন সাতটায় উঠি।"]
+    pos: "phrase"
+    notes: "-টায় is 'at' with a time: সাতটায় (shattay), at seven. কটায়? (kotay?), at what time?"
+  - id: bn-0674
+    target: "তারপর আমি কাজে যাই।"
+    native: "Then I go to work."
+    reading: "tarpor ami kaje jai."
+    pos: "phrase"
+  - id: bn-0675
+    target: "আমি রাত এগারোটায় ঘুমোতে যাই।"
+    native: "I go to bed at eleven at night."
+    reading: "ami rat egarotay ghumote jai."
+    alt_target: ["আমি রাত এগারোটায় ঘুমাতে যাই।"]
+    pos: "phrase"
+    notes: "The part of the day comes before the hour: রাত এগারোটায়, at eleven at night; সকাল সাতটায় (shokal shattay), at seven in the morning."
+  - id: bn-0676
+    target: "আমি কখনও দেরি করি না।"
+    native: "I'm never late."
+    reading: "ami kokhono deri kori na."
+    alt_target: ["আমি কখনো দেরি করি না।"]
+    pos: "phrase"
+    notes: "'Never' is কখনও (kokhono), also written কখনো, with না after the verb. দেরি (deri) is delay."

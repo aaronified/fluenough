@@ -12,7 +12,7 @@ pattern:
   slot_name: "form"
   slots: ["present, আমি", "past, আমি", "future, আমি", "polite request, আপনি"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "These are among the most used verbs in Bengali, so they are worth learning by heart. The stem's vowel shifts: দেওয়া gives দিই, দিলাম, দেব. আসা and যাওয়া take different pasts: এলাম, গেলাম."
+  notes: "These are among the most used verbs in Bengali, so they are worth learning by heart. The stem's vowel shifts: দেওয়া gives দিই, দিলাম, দেব. আসা and যাওয়া take different pasts: এলাম, গেলাম. আসা's past is এলাম (elam), also আসলাম (ashlam); the drill accepts both. হোন, the polite request of হওয়া, is written with ো to keep it apart from the present হন."
   entries:
     - lemma: "যাওয়া"
       key: jaoa
@@ -20,15 +20,15 @@ pattern:
       forms:
         "present, আমি": "যাই"
         "past, আমি": "গেলাম"
-        "future, আমি": "যাব"
+        "future, আমি": ["যাব", "যাবো"]
         "polite request, আপনি": "যান"
     - lemma: "আসা"
       key: asha
       gloss: "to come"
       forms:
         "present, আমি": "আসি"
-        "past, আমি": "এলাম"
-        "future, আমি": "আসব"
+        "past, আমি": ["এলাম", "আসলাম"]
+        "future, আমি": ["আসব", "আসবো"]
         "polite request, আপনি": "আসুন"
     - lemma: "দেওয়া"
       key: deoa
@@ -36,7 +36,7 @@ pattern:
       forms:
         "present, আমি": "দিই"
         "past, আমি": "দিলাম"
-        "future, আমি": "দেব"
+        "future, আমি": ["দেব", "দেবো"]
         "polite request, আপনি": "দিন"
     - lemma: "নেওয়া"
       key: neoa
@@ -44,7 +44,7 @@ pattern:
       forms:
         "present, আমি": "নিই"
         "past, আমি": "নিলাম"
-        "future, আমি": "নেব"
+        "future, আমি": ["নেব", "নেবো"]
         "polite request, আপনি": "নিন"
     - lemma: "খাওয়া"
       key: khaoa
@@ -52,7 +52,7 @@ pattern:
       forms:
         "present, আমি": "খাই"
         "past, আমি": "খেলাম"
-        "future, আমি": "খাব"
+        "future, আমি": ["খাব", "খাবো"]
         "polite request, আপনি": "খান"
     - lemma: "হওয়া"
       key: hoa
@@ -60,5 +60,5 @@ pattern:
       forms:
         "present, আমি": "হই"
         "past, আমি": "হলাম"
-        "future, আমি": "হব"
-        "polite request, আপনি": null
+        "future, আমি": ["হব", "হবো"]
+        "polite request, আপনি": "হোন"

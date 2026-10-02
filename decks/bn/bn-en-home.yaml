@@ -1,0 +1,148 @@
+schema: 1
+id: bn-en-home
+name: "Home and neighbourhood"
+kind: vocab
+theme: home
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The rooms of a flat, what is in them, and the neighbourhood around it. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: bn-0594
+    target: "ফ্ল্যাট"
+    native: "flat; apartment"
+    reading: "phlyat"
+    pos: "noun"
+    notes: "Where you live now, a flat or a house, is also বাসা (basha); বাড়ি (bari) is the house, or the family home."
+  - id: bn-0595
+    target: "রান্নাঘর"
+    native: "kitchen"
+    reading: "rannaghor"
+    pos: "noun"
+    notes: "রান্না (ranna), cooking, and ঘর (ghor), room."
+  - id: bn-0596
+    target: "শোয়ার ঘর"
+    native: "bedroom"
+    reading: "shoyar ghor"
+    alt_target: ["শোবার ঘর"]
+    pos: "phrase"
+    notes: "'The room for lying down'. Also শোবার ঘর (shobar ghor)."
+  - id: bn-0597
+    target: "বসার ঘর"
+    native: "living room"
+    reading: "boshar ghor"
+    pos: "phrase"
+    notes: "'The room for sitting'."
+  - id: bn-0598
+    target: "বাথরুম"
+    native: "bathroom"
+    reading: "bathrum"
+    alt_target: ["স্নানঘর", "গোসলখানা"]
+    pos: "noun"
+    notes: "Everyone says বাথরুম (bathrum). The Bengali words are স্নানঘর (snanghor) and গোসলখানা (gosholkhana)."
+  - id: bn-0599
+    target: "দরজা"
+    native: "door"
+    reading: "dorja"
+    pos: "noun"
+  - id: bn-0600
+    target: "জানালা"
+    native: "window"
+    reading: "janala"
+    alt_target: ["জানলা"]
+    pos: "noun"
+    notes: "In speech also জানলা (janla)."
+  - id: bn-0601
+    target: "বারান্দা"
+    native: "balcony; veranda"
+    reading: "baranda"
+    pos: "noun"
+  - id: bn-0602
+    target: "ছাদ"
+    native: "roof; roof terrace"
+    reading: "chhad"
+    pos: "noun"
+    notes: "Flat roofs are lived on: people dry clothes and fly kites on the ছাদ."
+  - id: bn-0603
+    target: "সিঁড়ি"
+    native: "stairs"
+    reading: "sinri"
+    pos: "noun"
+  - id: bn-0604
+    target: "তলা"
+    native: "floor; storey"
+    reading: "tola"
+    pos: "noun"
+    notes: "Counted from the ground: একতলা (ektola) is the ground floor, দোতলা (dotola) the one above. আমি দোতলায় থাকি (ami dotolay thaki), I live one floor up."
+  - id: bn-0605
+    target: "চাবি"
+    native: "key"
+    reading: "chabi"
+    pos: "noun"
+  - id: bn-0606
+    target: "বিছানা"
+    native: "bed"
+    reading: "bichhana"
+    pos: "noun"
+  - id: bn-0607
+    target: "চেয়ার"
+    native: "chair"
+    reading: "cheyar"
+    pos: "noun"
+  - id: bn-0608
+    target: "টেবিল"
+    native: "table"
+    reading: "tebil"
+    pos: "noun"
+  - id: bn-0609
+    target: "পাখা"
+    native: "fan"
+    reading: "pakha"
+    alt_target: ["ফ্যান"]
+    pos: "noun"
+    notes: "Also ফ্যান (phyan), from English."
+  - id: bn-0610
+    target: "পাড়া"
+    native: "neighbourhood"
+    reading: "para"
+    pos: "noun"
+    notes: "পাড়ার দোকান (parar dokan), the local shop."
+  - id: bn-0611
+    target: "প্রতিবেশী"
+    native: "neighbour"
+    reading: "protibeshi"
+    pos: "noun"
+  - id: bn-0612
+    target: "বাড়ির সামনে একটা পার্ক আছে।"
+    native: "There's a park in front of the house."
+    reading: "barir shamne ekta park achhe."
+    pos: "phrase"
+    notes: "'In front of the house' is বাড়ির সামনে: the house takes -র, and সামনে comes after it. আছে, 'there is', comes last."
+  - id: bn-0613
+    target: "আমাদের পাড়াটা খুব শান্ত।"
+    native: "Our neighbourhood is very quiet."
+    reading: "amader parata khub shanto."
+    pos: "phrase"
+    notes: "No 'is': 'our neighbourhood very quiet'."
+  - ref: bn-0196
+    native: "house; home"
+    notes: "Where you live now is also বাসা (basha); বাড়ি is the house, or the family home."
+  - id: bn-0051
+    target: "ঘর"
+    native: "room"
+    reading: "ghor"
+    pos: "noun"
+  - id: bn-0615
+    target: "আলো"
+    native: "light"
+    reading: "alo"
+    pos: "noun"
+  - id: bn-0616
+    target: "আলমারি"
+    native: "cupboard; wardrobe"
+    reading: "almari"
+    pos: "noun"
+  - ref: bn-0283
+    native: "rent"
+    notes: "Also the fare for a bus or a taxi."

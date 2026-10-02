@@ -1,0 +1,172 @@
+schema: 1
+id: bn-en-grammar-adjectives
+name: "Adjectives and comparison"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Describing words, which don't change for number and almost never for gender, and how to say -er and -est. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: bn-0617
+    target: "ভালো"
+    native: "good"
+    reading: "bhalo"
+    pos: "adj"
+  - id: bn-0618
+    target: "খারাপ"
+    native: "bad"
+    reading: "kharap"
+    pos: "adj"
+  - id: bn-0619
+    target: "ছোট"
+    native: "small; young"
+    reading: "chhoto"
+    alt_target: ["ছোটো"]
+    pos: "adj"
+    notes: "Also written ছোটো, as Basic Bangla does, and বড় (boro), big, as বড়ো. Both spellings are right."
+  - ref: bn-0062
+    native: "big; elder"
+    notes: "বড় বাড়ি (boro bari), a big house; বড় ভাই (boro bhai), an elder brother. Also written বড়ো."
+  - ref: bn-0060
+    notes: "গরম চা (gorom cha), hot tea. The opposite is ঠান্ডা."
+  - id: bn-0620
+    target: "নতুন"
+    native: "new"
+    reading: "notun"
+    pos: "adj"
+  - id: bn-0621
+    target: "পুরোনো"
+    native: "old (of things)"
+    reading: "purono"
+    alt_target: ["পুরনো"]
+    pos: "adj"
+    notes: "Also written পুরনো. Not for people: an old person is বৃদ্ধ (briddho)."
+  - id: bn-0622
+    target: "ঠান্ডা"
+    native: "cold"
+    reading: "thanda"
+    alt_target: ["ঠাণ্ডা"]
+    pos: "adj"
+    notes: "Also written ঠাণ্ডা, as the Bangla Academy dictionary does."
+  - id: bn-0623
+    target: "সহজ"
+    native: "easy"
+    reading: "shohoj"
+    pos: "adj"
+  - id: bn-0624
+    target: "কঠিন"
+    native: "difficult"
+    reading: "kothin"
+    pos: "adj"
+  - id: bn-0625
+    target: "সুন্দর"
+    native: "beautiful"
+    reading: "shundor"
+    pos: "adj"
+    notes: "A few adjectives from Sanskrit have a feminine form, as in সুন্দরী মেয়ে, a beautiful girl, but the plain form is always right: সুন্দর মেয়ে."
+  - id: bn-0626
+    target: "পরিষ্কার"
+    native: "clean; clear"
+    reading: "porishkar"
+    pos: "adj"
+  - id: bn-0627
+    target: "নোংরা"
+    native: "dirty"
+    reading: "nongra"
+    pos: "adj"
+  - id: bn-0628
+    target: "লম্বা"
+    native: "tall; long"
+    reading: "lomba"
+    pos: "adj"
+  - id: bn-0629
+    target: "বেঁটে"
+    native: "short (of a person)"
+    reading: "bente"
+    alt_target: ["খাটো"]
+    pos: "adj"
+    notes: "Also খাটো (khato)."
+  - id: bn-0630
+    target: "মোটা"
+    native: "fat; thick"
+    reading: "mota"
+    pos: "adj"
+  - id: bn-0631
+    target: "রোগা"
+    native: "thin (of a person)"
+    reading: "roga"
+    pos: "adj"
+  - id: bn-0632
+    target: "ভারী"
+    native: "heavy"
+    reading: "bhari"
+    pos: "adj"
+    notes: "With ী. ভারি with ি is the adverb 'very', as in ভারি সুন্দর."
+  - id: bn-0633
+    target: "হালকা"
+    native: "light (not heavy)"
+    reading: "halka"
+    pos: "adj"
+  - id: bn-0634
+    target: "গরিব"
+    native: "poor"
+    reading: "gorib"
+    alt_target: ["গরীব"]
+    pos: "adj"
+    notes: "The Bangla Academy spelling. Basic Bangla writes গরীব."
+  - id: bn-0635
+    target: "খুশি"
+    native: "happy"
+    reading: "khushi"
+    pos: "adj"
+  - id: bn-0636
+    target: "ক্লান্ত"
+    native: "tired"
+    reading: "klanto"
+    pos: "adj"
+  - id: bn-0637
+    target: "ব্যস্ত"
+    native: "busy"
+    reading: "byasto"
+    pos: "adj"
+  - id: bn-0638
+    target: "শক্ত"
+    native: "hard"
+    reading: "shokto"
+    pos: "adj"
+  - id: bn-0639
+    target: "নরম"
+    native: "soft"
+    reading: "norom"
+    pos: "adj"
+  - id: bn-0640
+    target: "প্রিয়"
+    native: "favourite; dear"
+    reading: "priyo"
+    pos: "adj"
+    notes: "আমার প্রিয় খাবার, my favourite food."
+  - id: bn-0641
+    target: "খুব"
+    native: "very"
+    reading: "khub"
+    pos: "adv"
+  - id: bn-0642
+    target: "ও আমার চেয়ে লম্বা।"
+    native: "She is taller than me. / He is taller than me."
+    reading: "o amar cheye lomba."
+    alt_target: ["ও আমার থেকে লম্বা।"]
+    pos: "phrase"
+    notes: "'Than' is চেয়ে or থেকে after the possessive: আমার চেয়ে, আমার থেকে. Both are right. The adjective itself never changes."
+  - id: bn-0643
+    target: "এটা সবচেয়ে ভালো।"
+    native: "This is the best."
+    reading: "eta shobcheye bhalo."
+    pos: "phrase"
+    notes: "সবচেয়ে, 'than all', makes -est: সবচেয়ে বড়, the biggest."
+  - id: bn-0644
+    target: "এটা আরও ভালো।"
+    native: "This one is even better."
+    reading: "eta aro bhalo."
+    pos: "phrase"
+    notes: "With no 'than', আরও (still more) makes -er: আরও বড়, bigger."
