@@ -252,6 +252,13 @@ units:
   decks.
 - **Order is a teaching decision.** Put a script first, before any deck
   written in it, and grammar with the theme that first needs it.
+- **The first units teach the script, the sounds and how the grammar
+  differs from English,** before any theme, and in every skill. So their
+  short sentences are typed too: they leave out `pos: phrase`. A letter
+  that sounds exactly like another, such as Bengali ন and ণ, is drilled by
+  reading and writing only (`modes: [recognition, production]`), since no
+  ear and no recogniser can tell them apart; so is a mark that is not a
+  sound of its own, written on a host letter (কং).
 
 ## Facts files
 
