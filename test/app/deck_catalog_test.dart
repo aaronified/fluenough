@@ -58,14 +58,15 @@ void main() {
           .whereType<File>()
           .map((f) => f.path.replaceAll(r'\', '/'))
           .where(AssetDeckSource.isDeckPath)
-          // Facts, themes, number rules and course paths sit beside the
-          // decks but are not decks.
+          // Facts, themes, number rules, course paths and sounds files sit
+          // beside the decks but are not decks.
           .where(
             (p) => !{
               'facts',
               'themes',
               'numbers',
               'path',
+              'sounds',
             }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
           )
           .toSet();
