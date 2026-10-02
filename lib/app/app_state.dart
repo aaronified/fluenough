@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
@@ -9,6 +10,7 @@ import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
+import '../core/speech/speech_engine.dart';
 import '../core/tts/tts_engine.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
@@ -37,6 +39,42 @@ enum VoiceStatus {
   missing,
 }
 
+/// What came of switching speaking on (#89, ADR-0014).
+enum SpeechSetup {
+  /// The recogniser is ready.
+  ready,
+
+  /// The microphone permission was refused.
+  refused,
+
+  /// The microphone is allowed, but the phone has no speech recogniser.
+  noRecogniser,
+}
+
+/// Whether the phone can recognise speech in a language (#89, ADR-0014).
+enum SpeechStatus {
+  /// The recogniser has not been readied: speaking has not been switched
+  /// on since launch, the microphone was refused, or the phone has no
+  /// recogniser. Says nothing of the Settings switch.
+  off,
+
+  /// The recogniser has not answered yet.
+  checking,
+
+  /// Recognised on the phone, as far as is known: listens ask to stay on
+  /// it.
+  onDevice,
+
+  /// Recognised only online, which the learner has not allowed.
+  onlineOnly,
+
+  /// Recognised only online, and the learner has allowed it.
+  online,
+
+  /// Not recognised on this phone, on the device or online.
+  missing,
+}
+
 /// A deck's numbers, as its row and its detail screen show them.
 ///
 /// [due] and [fresh] are what a session on the deck would drill right now,
@@ -60,6 +98,7 @@ class AppState extends ChangeNotifier {
     required DeckCatalog catalog,
     required this.progress,
     required this._tts,
+    this._speech = const NullSpeechEngine(),
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
@@ -86,6 +125,7 @@ class AppState extends ChangeNotifier {
   factory AppState.test({
     DeckSource? decks,
     TtsEngine tts = const NullTtsEngine(),
+    SpeechEngine speech = const NullSpeechEngine(),
     ProgressStore? progress,
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
@@ -99,6 +139,7 @@ class AppState extends ChangeNotifier {
       catalog: decks == null ? DeckCatalog.bundled() : DeckCatalog(decks),
       progress: progress ?? MemoryProgress(),
       tts: tts,
+      speech: speech,
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
@@ -134,6 +175,7 @@ class AppState extends ChangeNotifier {
   final DeckCatalog deckCatalog;
 
   final TtsEngine _tts;
+  final SpeechEngine _speech;
   final Clock _clock;
   final bool _ownsSettings;
 
@@ -270,7 +312,137 @@ class AppState extends ChangeNotifier {
     }
     notifyListeners();
     await refreshVoices();
+    // Never asks: only a permission granted before lets the phone be
+    // checked at launch (ADR-0014). Not awaited: the check can take
+    // seconds, and until it answers speaking waits, not the app.
+    unawaited(_checkSpeechQuietly());
   }
+
+  Future<void> _checkSpeechQuietly() async {
+    if (await _speech.hasPermission() && !_disposed) await startSpeech();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Speech recognition (#89, ADR-0014)
+
+  bool? _speechReady;
+  bool _speechChecking = false;
+  Set<String> _speechLanguages = const <String>{};
+
+  /// Whether the recogniser is ready: null until speaking has been switched
+  /// on, false if the microphone was refused or the phone has none.
+  bool? get speechReady => _speechReady;
+
+  /// Readies the recogniser and asks which languages it knows. Asks for the
+  /// microphone permission if it has not been granted, so call it only when
+  /// the learner switches speaking on.
+  Future<SpeechSetup> startSpeech() async {
+    _speechChecking = true;
+    notifyListeners();
+    var setup = SpeechSetup.noRecogniser;
+    try {
+      final ready = await _speech.start();
+      _speechReady = ready;
+      _speechLanguages = ready ? await _speech.languages() : const <String>{};
+      setup = ready
+          ? SpeechSetup.ready
+          : await _speech.hasPermission()
+          ? SpeechSetup.noRecogniser
+          : SpeechSetup.refused;
+    } catch (_) {
+      _speechReady = false;
+      _speechLanguages = const <String>{};
+    } finally {
+      _speechChecking = false;
+      if (!_disposed) notifyListeners();
+    }
+    return setup;
+  }
+
+  /// Asks the recogniser again which languages it knows, and forgets what
+  /// listens found, for after installing a language pack. Does nothing
+  /// unless speaking has been set up, so it never asks for the microphone.
+  Future<void> recheckSpeech() async {
+    if (_speechReady != true) return;
+    settings.forgetFoundSpeech();
+    await startSpeech();
+  }
+
+  /// Switches speaking on, asking for the microphone first (ADR-0014), or
+  /// off. It stays off unless the recogniser is ready. Returns what came of
+  /// switching it on, or [SpeechSetup.ready] for switching it off.
+  Future<SpeechSetup> setSpeaking(bool on) async {
+    if (!on) {
+      settings.setSkillEnabled(Skill.speaking, false);
+      return SpeechSetup.ready;
+    }
+    final setup = await startSpeech();
+    settings.setSkillEnabled(Skill.speaking, setup == SpeechSetup.ready);
+    return setup;
+  }
+
+  /// Whether the phone can recognise [language], and where.
+  ///
+  /// Android 13 and later list only the on-device recogniser's languages,
+  /// so one it does not list may still be heard online. A phone that lists
+  /// none, because it cannot say, is tried on the device. Either way the
+  /// first listen settles it, and is remembered in [settings].
+  SpeechStatus speechStatus(LanguageInfo language) {
+    if (_speechChecking) return SpeechStatus.checking;
+    if (_speechReady != true) return SpeechStatus.off;
+    final code = language.code;
+    if (settings.speechUnsupported.contains(code)) return SpeechStatus.missing;
+    final listed = _speechLanguages.isEmpty || _speechLanguages.contains(code);
+    if (listed && !settings.speechNotOnDevice.contains(code)) {
+      return SpeechStatus.onDevice;
+    }
+    return settings.allowsOnlineSpeech(code)
+        ? SpeechStatus.online
+        : SpeechStatus.onlineOnly;
+  }
+
+  /// Whether a speaking drill in [language] can be graded now.
+  bool canHear(LanguageInfo language) => switch (speechStatus(language)) {
+    SpeechStatus.onDevice || SpeechStatus.online => true,
+    _ => false,
+  };
+
+  /// Listens for [language]: on the device while it may be recognised
+  /// there, otherwise online if the learner allowed it. What a listen finds
+  /// out is remembered: a language the device does not know, so that the
+  /// drill can ask before going online, and one online does not know
+  /// either, which is then [SpeechStatus.missing].
+  Future<SpeechHeard> listenFor(LanguageInfo language) async {
+    final code = language.code;
+    final bool onDevice;
+    switch (speechStatus(language)) {
+      case SpeechStatus.onDevice:
+        onDevice = true;
+      case SpeechStatus.online:
+        onDevice = false;
+      case SpeechStatus.onlineOnly:
+        return const SpeechHeard.failed(SpeechFailure.notOnDevice);
+      case SpeechStatus.missing:
+        return const SpeechHeard.failed(SpeechFailure.unsupported);
+      case SpeechStatus.off || SpeechStatus.checking:
+        return const SpeechHeard.failed(SpeechFailure.noRecogniser);
+    }
+    final heard = await _speech.listen(
+      bcp47: language.ttsTag,
+      onDevice: onDevice,
+    );
+    switch (heard.failure) {
+      case SpeechFailure.notOnDevice when onDevice:
+        settings.foundSpeech(code);
+      case SpeechFailure.unsupported:
+        settings.foundSpeech(code, unsupported: true);
+      default:
+    }
+    return heard;
+  }
+
+  /// Stops a listen early, keeping what was heard.
+  Future<void> stopListening() => _speech.stop();
 
   // ---------------------------------------------------------------------------
   // Voices
@@ -478,6 +650,9 @@ class AppState extends ChangeNotifier {
     final voiced = <String, bool>{
       for (final entry in this.decks) entry.id: hasVoice(entry.language),
     };
+    final heard = <String, bool>{
+      for (final entry in this.decks) entry.id: canHear(entry.language),
+    };
     final leeches = progress.leechEffects;
     SessionQueue queueOf(
       List<Card> cards, {
@@ -487,6 +662,7 @@ class AppState extends ChangeNotifier {
       cards: cards,
       stateOf: (card, mode) => progress.stateOf(card.deckId, card.id, mode),
       hasVoice: (card) => voiced[card.deckId] ?? false,
+      canHear: (card) => heard[card.deckId] ?? false,
       now: now(),
       newCardLimit: newCardLimit,
       isSetAside: (card, mode) => leeches.isSetAside((
@@ -675,8 +851,11 @@ class AppState extends ChangeNotifier {
     answerGiven: answerGiven,
   );
 
+  bool _disposed = false;
+
   @override
   void dispose() {
+    _disposed = true;
     settings.removeListener(_forgetPending);
     progress.removeListener(_forgetPending);
     shellTab.dispose();

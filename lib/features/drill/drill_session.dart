@@ -11,6 +11,7 @@ import '../../core/grading/self_grade.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
+import '../../core/speech/speech_engine.dart';
 
 /// Where the current card is: the design's `phase`.
 enum DrillPhase {
@@ -101,6 +102,8 @@ class DrillSession extends ChangeNotifier {
   InputMode _inputMode;
   bool _slower = false;
   bool _playing = false;
+  bool _hearing = false;
+  SpeechFailure? _unheard;
   DateTime? _endedAt;
   bool _disposed = false;
 
@@ -302,6 +305,102 @@ class DrillSession extends ChangeNotifier {
   }
 
   // ---------------------------------------------------------------------------
+  // Speaking (#89, ADR-0014)
+
+  /// The confidence a reading other than the recogniser's best needs to be
+  /// taken as what the learner said. One with no confidence given is not.
+  static const double speechConfidence = 0.5;
+
+  /// Whether the recogniser is listening now.
+  bool get hearing => _hearing;
+
+  /// Why the last listen gave nothing to grade, or null. Nothing is recorded
+  /// for it: the learner can say it again.
+  SpeechFailure? get unheard => _unheard;
+
+  /// Listens for the current card's target and grades what was heard.
+  Future<void> listen() async {
+    if (item.mode != DrillMode.speaking ||
+        _phase != DrillPhase.prompt ||
+        _hearing) {
+      return;
+    }
+    final listeningIndex = _index;
+    _hearing = true;
+    _unheard = null;
+    notifyListeners();
+    final heard = await _state.listenFor(deck.language);
+    if (_disposed || _index != listeningIndex) return;
+    _hearing = false;
+    if (heard.failed) {
+      _unheard = heard.failure ?? SpeechFailure.noMatch;
+      notifyListeners();
+      return;
+    }
+    checkSpoken(heard.alternatives);
+  }
+
+  /// Stops listening early; what was said so far is graded.
+  Future<void> stopListening() => _state.stopListening();
+
+  /// Grades what the recogniser heard, [alternatives] best first.
+  ///
+  /// The attempt counts if its best reading, or another the recogniser said
+  /// it was fairly sure of, is an accepted answer: one noisy guess does not
+  /// fail a learner, and an unscored one does not pass them. Matching is exact once normalised: a near miss in speech is a
+  /// different word, not a typo.
+  void checkSpoken(List<SpeechAlternative> alternatives) {
+    if (_phase != DrillPhase.prompt ||
+        item.mode != DrillMode.speaking ||
+        alternatives.isEmpty) {
+      return;
+    }
+    final accepted = acceptedAnswers;
+    final grader = AnswerGrader(
+      articles: deck.language.articles,
+      typoDistance: 0,
+      longTypoDistance: 0,
+    );
+    GradedAnswer gradeOf(SpeechAlternative a) =>
+        grader.grade(a.text, accepted.first, alternates: accepted.sublist(1));
+    var said = alternatives.first;
+    var graded = gradeOf(said);
+    if (!graded.outcome.isCorrect) {
+      for (final other in alternatives.skip(1)) {
+        final confidence = other.confidence;
+        if (confidence == null || confidence < speechConfidence) continue;
+        final g = gradeOf(other);
+        if (g.outcome.isCorrect) {
+          said = other;
+          graded = g;
+          break;
+        }
+      }
+    }
+    final grade = graded.outcome.toSm2Grade();
+    _unheard = null;
+    _answer = TypedAnswer(typed: said.text, graded: graded, grade: grade);
+    _record(grade, answerGiven: said.text);
+    _phase = DrillPhase.feedback;
+    notifyListeners();
+  }
+
+  /// Moves on without recording anything, for a card that cannot be heard
+  /// now. Declining to go online, when the phone cannot recognise the
+  /// language by itself, holds for the language's other speaking cards in
+  /// this session, so the question is not asked again on each.
+  void skipUnheard() {
+    if (item.mode != DrillMode.speaking || _phase != DrillPhase.prompt) return;
+    if (_unheard == SpeechFailure.notOnDevice) {
+      _declinedOnline.add(deck.language.code);
+    }
+    _advance();
+  }
+
+  /// Languages whose online question the learner declined in this session.
+  final Set<String> _declinedOnline = <String>{};
+
+  // ---------------------------------------------------------------------------
 
   void _record(int grade, {String? answerGiven}) {
     if (recorded) {
@@ -315,18 +414,38 @@ class DrillSession extends ChangeNotifier {
     _answers.add(SessionAnswer(skill: skill, grade: grade));
   }
 
+  /// Whether [item] can still be drilled: not a speaking card in a language
+  /// found, since the session was built, not to be heard at all, or one
+  /// whose online question the learner declined and has not since allowed.
+  bool _drillable(SessionItem item) {
+    if (item.mode != DrillMode.speaking) return true;
+    final language = _state.deckOf(item.card)?.language;
+    if (language == null) return true;
+    return switch (_state.speechStatus(language)) {
+      SpeechStatus.missing => false,
+      SpeechStatus.onlineOnly => !_declinedOnline.contains(language.code),
+      _ => true,
+    };
+  }
+
   void _advance() {
     if (_playing) _state.stopSpeaking();
     _playing = false;
-    if (_index + 1 >= items.length) {
+    var next = _index + 1;
+    while (next < items.length && !_drillable(items[next])) {
+      next++;
+    }
+    if (next >= items.length) {
       _endedAt = _state.now();
       _watch.stop();
       notifyListeners();
       return;
     }
-    _index++;
+    _index = next;
     _phase = DrillPhase.prompt;
     _answer = null;
+    _hearing = false;
+    _unheard = null;
     _watch
       ..reset()
       ..start();
@@ -337,6 +456,7 @@ class DrillSession extends ChangeNotifier {
   void dispose() {
     _disposed = true;
     if (_playing) _state.stopSpeaking();
+    if (_hearing) _state.stopListening();
     super.dispose();
   }
 }

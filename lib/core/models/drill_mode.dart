@@ -1,4 +1,4 @@
-/// The four skills Fluenough drills.
+/// The skills Fluenough drills.
 ///
 /// Scheduling state is tracked per `(card, mode)` rather than per card:
 /// recognising a word is easier than producing it, which is easier again than
@@ -15,7 +15,11 @@ enum DrillMode {
   listening,
 
   /// Shown an inflection prompt, type the inflected form. Machine-graded.
-  grammar;
+  grammar,
+
+  /// Shown the meaning, say the target. Graded from what the phone's speech
+  /// recogniser heard, so it needs one for the language (#89, ADR-0014).
+  speaking;
 
   /// Whether the app grades this mode itself.
   ///

@@ -90,7 +90,7 @@ cards:
 | `notes` | no | Usage note shown after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs. |
-| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition and listening. |
+| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking. |
 
 ### A note on `id`
 
@@ -384,10 +384,15 @@ rules file that spells with a word that no card in the language's
 | `production` | `native` | `target` | automatically |
 | `listening` | TTS audio of `target` | `target` | automatically |
 | `grammar` | expanded `prompt` | inflected form | automatically |
+| `speaking` | `native` | `target`, said aloud | automatically, from what the phone's speech recogniser heard |
 
 `listening` is offered only when a TTS voice for `language.tts` is available on
-the device. `recognition` is self-graded because judging a free-text
-translation is beyond what an offline app should attempt.
+the device. `speaking` is offered only once the learner has switched it on,
+which asks for the microphone, and only for a language the phone's speech
+recogniser hears ([ADR-0014](adr/0014-speaking.md)). Matching is exact once
+normalised: a near miss in speech is a different word, not a typo.
+`recognition` is self-graded because judging a free-text translation is beyond
+what an offline app should attempt.
 
 ---
 

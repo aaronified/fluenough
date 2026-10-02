@@ -13,7 +13,11 @@ in CI, in the release workflow and on a first checkout. It
   launcher icon, and a launch screen in the app's own background, light or
   dark, with the mark;
 - sets the launcher label to the app's name, `appTitle` in
-  lib/l10n/app_en.arb, so the name has one source.
+  lib/l10n/app_en.arb, so the name has one source;
+- declares what the app asks Android for: the microphone, for the speaking
+  drill (ADR-0014), and a query for the speech recogniser, which Android 11
+  and later hide from an app that does not declare one. The speech_to_text
+  plugin's own manifest declares neither.
 
 It fails rather than quietly doing nothing when the manifest does not have
 the one android:label it expects, as it would after a flutter create that
@@ -39,6 +43,9 @@ MANIFEST = Path("android/app/src/main/AndroidManifest.xml")
 ARB = Path("lib/l10n/app_en.arb")
 
 LABEL = re.compile(r'android:label="[^"]*"')
+MANIFEST_OPEN = re.compile(r"<manifest\b[^>]*>")
+RECORD_AUDIO = "android.permission.RECORD_AUDIO"
+RECOGNITION_SERVICE = "android.speech.RecognitionService"
 
 
 class BrandError(Exception):
@@ -51,6 +58,34 @@ def app_name(root: Path) -> str:
     if not isinstance(name, str) or not name.strip():
         raise BrandError(f"{ARB} has no appTitle")
     return name
+
+
+def declare(text: str) -> str:
+    """[text], a manifest, with the microphone permission and the speech
+    recogniser query added if they are not there already."""
+    if len(MANIFEST_OPEN.findall(text)) != 1 or text.count("</manifest>") != 1:
+        raise BrandError(
+            f"{MANIFEST} does not have one <manifest> element; "
+            "flutter create has changed what it writes"
+        )
+    if RECORD_AUDIO not in text:
+        text = MANIFEST_OPEN.sub(
+            lambda m: f'{m.group(0)}\n    <uses-permission android:name="{RECORD_AUDIO}"/>',
+            text,
+            count=1,
+        )
+    if RECOGNITION_SERVICE not in text:
+        intent = (
+            f'<intent>\n            <action android:name="{RECOGNITION_SERVICE}"/>'
+            "\n        </intent>"
+        )
+        if "<queries>" in text:
+            text = text.replace("<queries>", f"<queries>\n        {intent}", 1)
+        else:
+            text = text.replace(
+                "</manifest>", f"    <queries>\n        {intent}\n    </queries>\n</manifest>", 1
+            )
+    return text
 
 
 def apply(root: Path) -> str:
@@ -70,7 +105,7 @@ def apply(root: Path) -> str:
     name = app_name(root)
     shutil.copytree(root / BRAND, root / RES, dirs_exist_ok=True)
     label = f'android:label="{escape(name, {chr(34): "&quot;"})}"'
-    manifest.write_text(LABEL.sub(lambda _: label, text), encoding="utf-8")
+    manifest.write_text(declare(LABEL.sub(lambda _: label, text)), encoding="utf-8")
     return name
 
 
@@ -80,7 +115,8 @@ def main() -> int:
     except BrandError as e:
         print(f"brand_android: {e}", file=sys.stderr)
         return 1
-    print(f"Brand applied to {RES}; launcher label {name!r}.")
+    print(f"Brand applied to {RES}; launcher label {name!r}; microphone and "
+          "speech recogniser declared.")
     return 0
 
 

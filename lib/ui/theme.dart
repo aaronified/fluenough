@@ -391,6 +391,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     required this.recognition,
     required this.production,
     required this.listening,
+    required this.speaking,
     required this.grammar,
     required this.pair,
   });
@@ -399,6 +400,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     recognition: ModeColor(Color(0xFFD6E3FF), Color(0xFF001B3E)),
     production: ModeColor(Color(0xFFFFDCC2), Color(0xFF2E1500)),
     listening: ModeColor(Color(0xFFEADDFF), Color(0xFF21005D)),
+    speaking: ModeColor(Color(0xFFBDF0B3), Color(0xFF002203)),
     grammar: ModeColor(Color(0xFFB8F0E4), Color(0xFF00201B)),
     pair: ModeColor(Color(0xFFFFD8EC), Color(0xFF3A0028)),
   );
@@ -407,6 +409,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     recognition: ModeColor(Color(0xFF284777), Color(0xFFD6E3FF)),
     production: ModeColor(Color(0xFF6E3900), Color(0xFFFFDCC2)),
     listening: ModeColor(Color(0xFF4F378B), Color(0xFFEADDFF)),
+    speaking: ModeColor(Color(0xFF255023), Color(0xFFBDF0B3)),
     grammar: ModeColor(Color(0xFF00504A), Color(0xFFB8F0E4)),
     pair: ModeColor(Color(0xFF7A2963), Color(0xFFFFD8EC)),
   );
@@ -415,6 +418,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     recognition: ModeColor(Color(0xFF284777), Color(0xFFFFFFFF)),
     production: ModeColor(Color(0xFF6E3900), Color(0xFFFFFFFF)),
     listening: ModeColor(Color(0xFF4F378B), Color(0xFFFFFFFF)),
+    speaking: ModeColor(Color(0xFF255023), Color(0xFFFFFFFF)),
     grammar: ModeColor(Color(0xFF00504A), Color(0xFFFFFFFF)),
     pair: ModeColor(Color(0xFF772761), Color(0xFFFFFFFF)),
   );
@@ -423,6 +427,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     recognition: ModeColor(Color(0xFFAAC7FF), Color(0xFF000000)),
     production: ModeColor(Color(0xFFFFB77D), Color(0xFF000000)),
     listening: ModeColor(Color(0xFFCFBCFF), Color(0xFF000000)),
+    speaking: ModeColor(Color(0xFFA2D399), Color(0xFF000000)),
     grammar: ModeColor(Color(0xFF92D2CA), Color(0xFF000000)),
     pair: ModeColor(Color(0xFFFFADDF), Color(0xFF000000)),
   );
@@ -430,6 +435,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
   final ModeColor recognition;
   final ModeColor production;
   final ModeColor listening;
+  final ModeColor speaking;
   final ModeColor grammar;
   final ModeColor pair;
 
@@ -438,6 +444,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     Skill.recognition => recognition,
     Skill.production => production,
     Skill.listening => listening,
+    Skill.speaking => speaking,
     Skill.grammar => grammar,
     Skill.pair => pair,
   };
@@ -452,12 +459,14 @@ class ModeColors extends ThemeExtension<ModeColors> {
     ModeColor? recognition,
     ModeColor? production,
     ModeColor? listening,
+    ModeColor? speaking,
     ModeColor? grammar,
     ModeColor? pair,
   }) => ModeColors(
     recognition: recognition ?? this.recognition,
     production: production ?? this.production,
     listening: listening ?? this.listening,
+    speaking: speaking ?? this.speaking,
     grammar: grammar ?? this.grammar,
     pair: pair ?? this.pair,
   );
@@ -469,6 +478,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
       recognition: ModeColor.lerp(recognition, other.recognition, t),
       production: ModeColor.lerp(production, other.production, t),
       listening: ModeColor.lerp(listening, other.listening, t),
+      speaking: ModeColor.lerp(speaking, other.speaking, t),
       grammar: ModeColor.lerp(grammar, other.grammar, t),
       pair: ModeColor.lerp(pair, other.pair, t),
     );

@@ -4,8 +4,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/links.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/deck_facts.dart';
@@ -181,6 +183,87 @@ void main() {
 
     await tapVisible(tester, find.text(l10n.deckSetUpVoice));
     expect(find.byType(VoicesPage), findsOneWidget);
+  });
+
+  testWidgets('speaking is listed where it is switched on; a language heard '
+      'only online says so, and Set up opens Voices', (tester) async {
+    usePhone(tester);
+    // Lists only Japanese on the device, so Spanish can only be heard
+    // online, which the learner has not allowed.
+    final speech = FixedSpeechEngine(
+      onDevice: <String>{'ja'},
+      online: <String>{'es'},
+    );
+    final state = AppState.test(
+      tts: FixedTtsEngine(const <String>{'es'}),
+      speech: speech,
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningChosen: true,
+        enabledSkills: Skill.values.toSet(),
+      ),
+    );
+    await state.load();
+    await state.startSpeech();
+    await pumpDeck(tester, spanish, state: state);
+    final l10n = l10nOf(tester);
+
+    final speaking = skillRow(l10n, Skill.speaking);
+    await tester.ensureVisible(speaking);
+    await tester.pumpAndSettle();
+    expect(
+      find.descendant(
+        of: speaking,
+        matching: find.text(l10n.deckSpeechOnlineOnly('Spanish')),
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(of: speaking, matching: find.byType(FilledButton)),
+      findsNothing,
+    );
+
+    // Allowed, the row is live.
+    state.settings.allowOnlineSpeech('es', true);
+    await tester.pumpAndSettle();
+    expect(
+      find.descendant(of: speaking, matching: find.byType(FilledButton)),
+      findsOneWidget,
+    );
+    state.settings.allowOnlineSpeech('es', false);
+    await tester.pumpAndSettle();
+
+    await tapVisible(
+      tester,
+      find.descendant(of: speaking, matching: find.text(l10n.deckSetUpVoice)),
+    );
+    expect(find.byType(VoicesPage), findsOneWidget);
+  });
+
+  testWidgets('speaking says the phone cannot recognise the language until '
+      'the recogniser is set up', (tester) async {
+    usePhone(tester);
+    final state = AppState.test(
+      tts: FixedTtsEngine(const <String>{'es'}),
+      speech: FixedSpeechEngine(onDevice: <String>{'es'}),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningChosen: true,
+        enabledSkills: Skill.values.toSet(),
+      ),
+    );
+    await pumpDeck(tester, spanish, state: state);
+    final l10n = l10nOf(tester);
+    final speaking = skillRow(l10n, Skill.speaking);
+    await tester.ensureVisible(speaking);
+    await tester.pumpAndSettle();
+    expect(
+      find.descendant(
+        of: speaking,
+        matching: find.text(l10n.deckNoSpeech('Spanish')),
+      ),
+      findsOneWidget,
+    );
   });
 
   testWidgets('a skill button starts that skill on this deck', (tester) async {
