@@ -81,49 +81,48 @@ cards:
 });
 
 void main() {
-  testWidgets(
-    'lists every bundled deck, each Not done before anything is studied',
-    (tester) async {
-      useTallPhone(tester);
-      final state = await pumpDecks(tester);
-      final l10n = l10nOf(tester);
-      expect(state.decks, isNotEmpty);
-      // The grammar deck has cards (#2) and its drill (#14).
+  testWidgets('lists every bundled deck, each Pending or Not done before anything is '
+      'studied', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpDecks(tester);
+    final l10n = l10nOf(tester);
+    expect(state.decks, isNotEmpty);
+    // The grammar deck has cards (#2) and its drill (#14).
+    expect(state.canDrill(state.deckById('es-en-grammar-present-ar')!), isTrue);
+    expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
+    for (final entry in state.decks) {
+      final tile = tileOf(entry);
+      // A grammar deck has nothing to drill until its drill ships (#14): it is
+      // incoming, never Done. Nothing is studied yet, so every other deck is
+      // Pending, in the first two units of its course's path (ADR-0013), or
+      // Not done: never Done, and new cards are not "due".
+      final firstTwo = state.pathOf(entry)!.units.take(2).expand((u) => u);
+      final badge = !state.canDrill(entry)
+          ? l10n.incomingBadge
+          : firstTwo.contains(entry.id)
+          ? l10n.commonPendingBadge
+          : l10n.commonNotDoneBadge;
       expect(
-        state.canDrill(state.deckById('es-en-grammar-present-ar')!),
-        isTrue,
+        find.descendant(of: tile, matching: find.text(badge)),
+        findsOneWidget,
+        reason: entry.id,
       );
-      expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
-      for (final entry in state.decks) {
-        final tile = tileOf(entry);
-        // A grammar deck has nothing to drill until its drill ships (#14): it is
-        // incoming, never Done. Nothing is studied yet, so every other deck is
-        // Not done: never Done, and new cards are not "due".
-        final badge = !state.canDrill(entry)
-            ? l10n.incomingBadge
-            : l10n.commonNotDoneBadge;
-        expect(
-          find.descendant(of: tile, matching: find.text(badge)),
-          findsOneWidget,
-          reason: entry.id,
-        );
-        // A theme deck's line is its place on the path and its progress.
-        final theme = state.themeOf(entry);
-        final meta = theme == null
-            ? DeckTile.metaFor(l10n, entry)
-            : l10n.deckMetaTheme(
-                state.themes.indexOf(theme) + 1,
-                state.progress.learnedIn(entry.id),
-                entry.itemCount,
-              );
-        expect(
-          find.descendant(of: tile, matching: find.text(meta)),
-          findsOneWidget,
-          reason: entry.id,
-        );
-      }
-    },
-  );
+      // A theme deck's line is its place on the path and its progress.
+      final theme = state.themeOf(entry);
+      final meta = theme == null
+          ? DeckTile.metaFor(l10n, entry)
+          : l10n.deckMetaTheme(
+              state.themes.indexOf(theme) + 1,
+              state.progress.learnedIn(entry.id),
+              entry.itemCount,
+            );
+      expect(
+        find.descendant(of: tile, matching: find.text(meta)),
+        findsOneWidget,
+        reason: entry.id,
+      );
+    }
+  });
 
   testWidgets('number practice follows each big-numbers deck, and starts '
       'unrecorded practice (#54)', (tester) async {
@@ -232,8 +231,9 @@ void main() {
         badge.kind,
         !state.canDrill(entry)
             ? DeckBadgeKind.incoming
+            // Mira learns Japanese, whose one deck is its path's first unit.
             : entry.language.code == 'ja'
-            ? DeckBadgeKind.notDone
+            ? DeckBadgeKind.pending
             : DeckBadgeKind.start,
         reason: entry.id,
       );

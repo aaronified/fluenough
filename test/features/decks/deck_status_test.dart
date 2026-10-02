@@ -58,15 +58,22 @@ DeckBadgeKind badgeOf(AppState state, String deckId) =>
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('every deck starts Not done, and spending the day\'s new cards '
-      'leaves it Not done', () async {
+  test('every deck starts Pending or Not done, and spending the day\'s new '
+      'cards leaves it so', () async {
     final state = AppState.test();
     addTearDown(state.dispose);
     await state.load();
     final decks = state.decks.where(state.canDrill).toList();
     expect(decks, isNotEmpty);
+    // Pending: in the first two units of its course's path (ADR-0013).
+    DeckBadgeKind expected(DeckEntry entry) =>
+        state.pathOf(entry)!.units.take(2).expand((u) => u).contains(entry.id)
+        ? DeckBadgeKind.pending
+        : DeckBadgeKind.notDone;
+    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
+    expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
     for (final entry in decks) {
-      expect(badgeOf(state, entry.id), DeckBadgeKind.notDone, reason: entry.id);
+      expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
     }
 
     // The first session takes the whole day's allowance of new cards.
@@ -75,7 +82,7 @@ void main() {
     }
     expect(state.newCardsLeftToday, 0);
     for (final entry in decks) {
-      expect(badgeOf(state, entry.id), DeckBadgeKind.notDone, reason: entry.id);
+      expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
     }
   });
 
@@ -87,11 +94,12 @@ void main() {
     final entry = state.deckById(tiny)!;
     expect(state.notStudiedIn(entry), 2);
 
-    // Learned by sight only: production is still to learn.
+    // Learned by sight only: production is still to learn. Its course's only
+    // deck, so it is the unit Today teaches.
     for (final item in state.buildSession(DrillRequest.deck(tiny)).items) {
       state.record(item, 5);
     }
-    expect(badgeOf(state, tiny), DeckBadgeKind.notDone);
+    expect(badgeOf(state, tiny), DeckBadgeKind.pending);
 
     learnAll(state, tiny);
     expect(state.notStudiedIn(entry), 0);
