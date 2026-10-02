@@ -16,11 +16,12 @@ import '../../l10n/app_localizations.dart';
 /// as the design leaves them out.
 ///
 /// A skill's drill being incoming does not hide it: the row is shown
-/// disabled (ADR-0008). Nor does a missing voice: the row says why and how to
-/// fix it.
+/// disabled (ADR-0008). Nor does a missing voice or speech recogniser: the
+/// row says why and how to fix it.
 List<Skill> deckSkills(DeckEntry entry, SettingsNotifier settings) {
   final modes = <DrillMode>{
-    for (final card in entry.cards) ...card.modesIn(ttsAvailable: true),
+    for (final card in entry.cards)
+      ...card.modesIn(ttsAvailable: true, speechAvailable: true),
     if (entry.deck.pattern != null) DrillMode.grammar,
   };
   return <Skill>[

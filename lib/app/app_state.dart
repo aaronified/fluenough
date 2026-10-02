@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
@@ -52,14 +53,16 @@ enum SpeechSetup {
 
 /// Whether the phone can recognise speech in a language (#89, ADR-0014).
 enum SpeechStatus {
-  /// Speaking is not switched on, or the microphone was refused, so the
-  /// phone has not been asked.
+  /// The recogniser has not been readied: speaking has not been switched
+  /// on since launch, the microphone was refused, or the phone has no
+  /// recogniser. Says nothing of the Settings switch.
   off,
 
   /// The recogniser has not answered yet.
   checking,
 
-  /// Recognised on the phone: audio never leaves it.
+  /// Recognised on the phone, as far as is known: listens ask to stay on
+  /// it.
   onDevice,
 
   /// Recognised only online, which the learner has not allowed.
@@ -68,7 +71,7 @@ enum SpeechStatus {
   /// Recognised only online, and the learner has allowed it.
   online,
 
-  /// Not recognised on this phone at all.
+  /// Not recognised on this phone, on the device or online.
   missing,
 }
 
@@ -310,8 +313,13 @@ class AppState extends ChangeNotifier {
     notifyListeners();
     await refreshVoices();
     // Never asks: only a permission granted before lets the phone be
-    // checked at launch (ADR-0014).
-    if (await _speech.hasPermission()) await startSpeech();
+    // checked at launch (ADR-0014). Not awaited: the check can take
+    // seconds, and until it answers speaking waits, not the app.
+    unawaited(_checkSpeechQuietly());
+  }
+
+  Future<void> _checkSpeechQuietly() async {
+    if (await _speech.hasPermission() && !_disposed) await startSpeech();
   }
 
   // ---------------------------------------------------------------------------
@@ -320,7 +328,6 @@ class AppState extends ChangeNotifier {
   bool? _speechReady;
   bool _speechChecking = false;
   Set<String> _speechLanguages = const <String>{};
-  final Set<String> _notOnDevice = <String>{};
 
   /// Whether the recogniser is ready: null until speaking has been switched
   /// on, false if the microphone was refused or the phone has none.
@@ -347,9 +354,18 @@ class AppState extends ChangeNotifier {
       _speechLanguages = const <String>{};
     } finally {
       _speechChecking = false;
-      notifyListeners();
+      if (!_disposed) notifyListeners();
     }
     return setup;
+  }
+
+  /// Asks the recogniser again which languages it knows, and forgets what
+  /// listens found, for after installing a language pack. Does nothing
+  /// unless speaking has been set up, so it never asks for the microphone.
+  Future<void> recheckSpeech() async {
+    if (_speechReady != true) return;
+    settings.forgetFoundSpeech();
+    await startSpeech();
   }
 
   /// Switches speaking on, asking for the microphone first (ADR-0014), or
@@ -366,12 +382,20 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether the phone can recognise [language], and where.
+  ///
+  /// Android 13 and later list only the on-device recogniser's languages,
+  /// so one it does not list may still be heard online. A phone that lists
+  /// none, because it cannot say, is tried on the device. Either way the
+  /// first listen settles it, and is remembered in [settings].
   SpeechStatus speechStatus(LanguageInfo language) {
     if (_speechChecking) return SpeechStatus.checking;
     if (_speechReady != true) return SpeechStatus.off;
     final code = language.code;
-    if (!_speechLanguages.contains(code)) return SpeechStatus.missing;
-    if (!_notOnDevice.contains(code)) return SpeechStatus.onDevice;
+    if (settings.speechUnsupported.contains(code)) return SpeechStatus.missing;
+    final listed = _speechLanguages.isEmpty || _speechLanguages.contains(code);
+    if (listed && !settings.speechNotOnDevice.contains(code)) {
+      return SpeechStatus.onDevice;
+    }
     return settings.allowsOnlineSpeech(code)
         ? SpeechStatus.online
         : SpeechStatus.onlineOnly;
@@ -383,23 +407,36 @@ class AppState extends ChangeNotifier {
     _ => false,
   };
 
-  /// Listens for [language]: on the device unless it has been found not to
-  /// be recognised there and the learner allowed online recognition. A
-  /// language the device turns out not to know is remembered, so that the
-  /// drill can ask before going online.
+  /// Listens for [language]: on the device while it may be recognised
+  /// there, otherwise online if the learner allowed it. What a listen finds
+  /// out is remembered: a language the device does not know, so that the
+  /// drill can ask before going online, and one online does not know
+  /// either, which is then [SpeechStatus.missing].
   Future<SpeechHeard> listenFor(LanguageInfo language) async {
     final code = language.code;
-    final onDevice = !_notOnDevice.contains(code);
-    if (!onDevice && !settings.allowsOnlineSpeech(code)) {
-      return const SpeechHeard.failed(SpeechFailure.notOnDevice);
+    final bool onDevice;
+    switch (speechStatus(language)) {
+      case SpeechStatus.onDevice:
+        onDevice = true;
+      case SpeechStatus.online:
+        onDevice = false;
+      case SpeechStatus.onlineOnly:
+        return const SpeechHeard.failed(SpeechFailure.notOnDevice);
+      case SpeechStatus.missing:
+        return const SpeechHeard.failed(SpeechFailure.unsupported);
+      case SpeechStatus.off || SpeechStatus.checking:
+        return const SpeechHeard.failed(SpeechFailure.noRecogniser);
     }
     final heard = await _speech.listen(
       bcp47: language.ttsTag,
       onDevice: onDevice,
     );
-    if (onDevice && heard.failure == SpeechFailure.notOnDevice) {
-      _notOnDevice.add(code);
-      notifyListeners();
+    switch (heard.failure) {
+      case SpeechFailure.notOnDevice when onDevice:
+        settings.foundSpeech(code);
+      case SpeechFailure.unsupported:
+        settings.foundSpeech(code, unsupported: true);
+      default:
     }
     return heard;
   }
@@ -814,8 +851,11 @@ class AppState extends ChangeNotifier {
     answerGiven: answerGiven,
   );
 
+  bool _disposed = false;
+
   @override
   void dispose() {
+    _disposed = true;
     settings.removeListener(_forgetPending);
     progress.removeListener(_forgetPending);
     shellTab.dispose();

@@ -4,7 +4,8 @@ class SpeechAlternative {
 
   final String text;
 
-  /// 0 to 1, or null when the recogniser gives none, as Android often does.
+  /// 0 to 1, or null when the recogniser gives none. Android scores every
+  /// reading after the best one 0, which is a score, not a missing one.
   final double? confidence;
 
   @override
@@ -19,6 +20,9 @@ enum SpeechFailure {
   /// The language cannot be recognised on the device: no pack for it is
   /// installed, or the on-device recogniser does not support it.
   notOnDevice,
+
+  /// Online recognition was tried and does not support the language either.
+  unsupported,
 
   /// The microphone permission was refused.
   permissionDenied,
@@ -56,8 +60,9 @@ class SpeechHeard {
 /// second implementation is additive (ADR-0014). Nothing outside
 /// `lib/core/speech` refers to a concrete engine.
 ///
-/// Audio stays on the phone unless a caller asks for online recognition,
-/// which the app does only for a language the learner has allowed.
+/// Every listen asks to stay on the phone unless a caller asks for online
+/// recognition, which the app does only for a language the learner has
+/// allowed.
 abstract interface class SpeechEngine {
   /// Whether the microphone permission is granted. Never asks.
   Future<bool> hasPermission();
@@ -75,9 +80,11 @@ abstract interface class SpeechEngine {
   Future<Set<String>> languages();
 
   /// Listens once, for a word or a short phrase in [bcp47], for at most
-  /// [listenFor]. With [onDevice], audio never leaves the phone, and a
-  /// language the device cannot recognise fails with
-  /// [SpeechFailure.notOnDevice].
+  /// [listenFor]. With [onDevice], the on-device recogniser listens where
+  /// the phone has one (Android 12 and later); before that the default
+  /// recogniser is asked to stay offline. A language it cannot recognise
+  /// fails with [SpeechFailure.notOnDevice]. Without [onDevice], a language
+  /// the recogniser does not support fails with [SpeechFailure.unsupported].
   Future<SpeechHeard> listen({
     required String bcp47,
     required bool onDevice,
@@ -112,8 +119,10 @@ class NullSpeechEngine implements SpeechEngine {
   Future<void> stop() async {}
 }
 
-/// A recogniser that recognises [languages] on the device, or [online] ones
-/// only online, and hears whatever [next] says. For tests and the gallery.
+/// A recogniser that recognises [onDevice] languages on the device, or
+/// [online] ones only online, and hears whatever [next] says. It lists only
+/// the on-device ones, as Android 13 and later do. For tests and the
+/// gallery.
 class FixedSpeechEngine implements SpeechEngine {
   FixedSpeechEngine({
     this.onDevice = const <String>{},
@@ -156,7 +165,7 @@ class FixedSpeechEngine implements SpeechEngine {
 
   @override
   Future<Set<String>> languages() async =>
-      granted ? <String>{...onDevice, ...online} : const <String>{};
+      granted ? onDevice : const <String>{};
 
   @override
   Future<SpeechHeard> listen({
@@ -173,7 +182,7 @@ class FixedSpeechEngine implements SpeechEngine {
       return const SpeechHeard.failed(SpeechFailure.notOnDevice);
     }
     if (!this.onDevice.contains(code) && !online.contains(code)) {
-      return const SpeechHeard.failed(SpeechFailure.noRecogniser);
+      return const SpeechHeard.failed(SpeechFailure.unsupported);
     }
     if (next.isEmpty) return const SpeechHeard.failed(SpeechFailure.noMatch);
     return SpeechHeard(next);

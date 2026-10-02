@@ -7,9 +7,9 @@ import 'package:speech_to_text/speech_to_text.dart';
 import 'speech_engine.dart';
 
 /// The operating system's speech recogniser, through the `speech_to_text`
-/// plugin (ADR-0014). On Android it prefers the on-device recogniser
-/// (`createOnDeviceSpeechRecognizer`, Android 12 and later; offline mode
-/// before), so audio stays on the phone unless a caller asks otherwise.
+/// plugin (ADR-0014). On Android an on-device listen uses the on-device
+/// recogniser (`createOnDeviceSpeechRecognizer`, Android 12 and later), and
+/// before that asks the default one to stay offline.
 ///
 /// The plugin calls back rather than returning, so [listen] collects its
 /// callbacks into one result, with a deadline: a recogniser that never
@@ -20,6 +20,7 @@ class SystemSpeechEngine implements SpeechEngine {
 
   final SpeechToText _plugin;
   Completer<SpeechHeard>? _listening;
+  bool _listeningOnDevice = true;
   bool _started = false;
 
   /// How long past `listenFor` a listen may take to report before it is
@@ -82,6 +83,7 @@ class SystemSpeechEngine implements SpeechEngine {
     }
     _listening?.complete(const SpeechHeard.failed(SpeechFailure.other));
     final done = _listening = Completer<SpeechHeard>();
+    _listeningOnDevice = onDevice;
     try {
       await _plugin.listen(
         onResult: _onResult,
@@ -123,15 +125,7 @@ class SystemSpeechEngine implements SpeechEngine {
 
   void _onResult(SpeechRecognitionResult result) {
     if (!result.finalResult) return;
-    final alternatives = <SpeechAlternative>[
-      for (final words in result.alternates)
-        if (words.recognizedWords.trim().isNotEmpty)
-          SpeechAlternative(
-            words.recognizedWords,
-            // Android reports 0, or -1, when it gives no confidence.
-            confidence: words.confidence > 0 ? words.confidence : null,
-          ),
-    ];
+    final alternatives = alternativesOf(result);
     _finish(
       alternatives.isEmpty
           ? const SpeechHeard.failed(SpeechFailure.noMatch)
@@ -139,8 +133,25 @@ class SystemSpeechEngine implements SpeechEngine {
     );
   }
 
-  void _onError(SpeechRecognitionError error) =>
-      _finish(SpeechHeard.failed(failureOf(error.errorMsg)));
+  /// A final result's readings, best first, without empty ones. The plugin
+  /// gives -1 for no confidence; Android scores every reading after the
+  /// best 0, which stays a low score.
+  static List<SpeechAlternative> alternativesOf(
+    SpeechRecognitionResult result,
+  ) => <SpeechAlternative>[
+    for (final words in result.alternates)
+      if (words.recognizedWords.trim().isNotEmpty)
+        SpeechAlternative(
+          words.recognizedWords,
+          confidence: words.hasConfidenceRating && words.confidence >= 0
+              ? words.confidence
+              : null,
+        ),
+  ];
+
+  void _onError(SpeechRecognitionError error) => _finish(
+    SpeechHeard.failed(failureOf(error.errorMsg, onDevice: _listeningOnDevice)),
+  );
 
   void _onStatus(String status) {
     // Done with no final result: nothing was heard.
@@ -149,16 +160,19 @@ class SystemSpeechEngine implements SpeechEngine {
     }
   }
 
-  /// The plugin's error codes, as the reasons the app tells apart.
-  static SpeechFailure failureOf(String code) => switch (code) {
-    'error_language_not_supported' ||
-    'error_language_unavailable' => SpeechFailure.notOnDevice,
-    'error_no_match' || 'error_speech_timeout' => SpeechFailure.noMatch,
-    'error_permission' => SpeechFailure.permissionDenied,
-    'error_network' ||
-    'error_network_timeout' ||
-    'error_server' ||
-    'error_server_disconnected' => SpeechFailure.network,
-    _ => SpeechFailure.other,
-  };
+  /// The plugin's error codes, as the reasons the app tells apart. A
+  /// language the recogniser lacks means different things on the device and
+  /// online.
+  static SpeechFailure failureOf(String code, {required bool onDevice}) =>
+      switch (code) {
+        'error_language_not_supported' || 'error_language_unavailable' =>
+          onDevice ? SpeechFailure.notOnDevice : SpeechFailure.unsupported,
+        'error_no_match' || 'error_speech_timeout' => SpeechFailure.noMatch,
+        'error_permission' => SpeechFailure.permissionDenied,
+        'error_network' ||
+        'error_network_timeout' ||
+        'error_server' ||
+        'error_server_disconnected' => SpeechFailure.network,
+        _ => SpeechFailure.other,
+      };
 }

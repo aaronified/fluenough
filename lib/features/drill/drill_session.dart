@@ -307,8 +307,8 @@ class DrillSession extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Speaking (#89, ADR-0014)
 
-  /// The confidence below which a reading other than the recogniser's best
-  /// is not taken as what the learner said.
+  /// The confidence a reading other than the recogniser's best needs to be
+  /// taken as what the learner said. One with no confidence given is not.
   static const double speechConfidence = 0.5;
 
   /// Whether the recogniser is listening now.
@@ -345,9 +345,9 @@ class DrillSession extends ChangeNotifier {
 
   /// Grades what the recogniser heard, [alternatives] best first.
   ///
-  /// The attempt counts if any reading the recogniser was fairly sure of, or
-  /// its best one, is an accepted answer: one noisy guess does not fail a
-  /// learner. Matching is exact once normalised: a near miss in speech is a
+  /// The attempt counts if its best reading, or another the recogniser said
+  /// it was fairly sure of, is an accepted answer: one noisy guess does not
+  /// fail a learner, and an unscored one does not pass them. Matching is exact once normalised: a near miss in speech is a
   /// different word, not a typo.
   void checkSpoken(List<SpeechAlternative> alternatives) {
     if (_phase != DrillPhase.prompt ||
@@ -368,7 +368,7 @@ class DrillSession extends ChangeNotifier {
     if (!graded.outcome.isCorrect) {
       for (final other in alternatives.skip(1)) {
         final confidence = other.confidence;
-        if (confidence != null && confidence < speechConfidence) continue;
+        if (confidence == null || confidence < speechConfidence) continue;
         final g = gradeOf(other);
         if (g.outcome.isCorrect) {
           said = other;
@@ -407,16 +407,29 @@ class DrillSession extends ChangeNotifier {
     _answers.add(SessionAnswer(skill: skill, grade: grade));
   }
 
+  /// Whether [item] can still be drilled: not a speaking card in a language
+  /// found, since the session was built, not to be heard at all.
+  bool _drillable(SessionItem item) {
+    if (item.mode != DrillMode.speaking) return true;
+    final language = _state.deckOf(item.card)?.language;
+    return language == null ||
+        _state.speechStatus(language) != SpeechStatus.missing;
+  }
+
   void _advance() {
     if (_playing) _state.stopSpeaking();
     _playing = false;
-    if (_index + 1 >= items.length) {
+    var next = _index + 1;
+    while (next < items.length && !_drillable(items[next])) {
+      next++;
+    }
+    if (next >= items.length) {
       _endedAt = _state.now();
       _watch.stop();
       notifyListeners();
       return;
     }
-    _index++;
+    _index = next;
     _phase = DrillPhase.prompt;
     _answer = null;
     _hearing = false;

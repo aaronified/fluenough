@@ -85,6 +85,8 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _placedDecks;
   bool _learningChosen;
   Set<String> _speechOnline;
+  Set<String> _speechNotOnDevice = const <String>{};
+  Set<String> _speechUnsupported = const <String>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
 
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
@@ -162,6 +164,36 @@ class SettingsNotifier extends ChangeNotifier {
     allowed ? next.add(code) : next.remove(code);
     if (setEquals(next, _speechOnline)) return;
     _speechOnline = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The languages, by code, that a listen found the phone cannot
+  /// recognise by itself, and those that online recognition does not
+  /// support either (ADR-0014). Like [factShownAt], not something the
+  /// learner sets: kept so that a restart does not find them out again at
+  /// the cost of a spoken word. Check again on the Voices page forgets them.
+  Set<String> get speechNotOnDevice => _speechNotOnDevice;
+  Set<String> get speechUnsupported => _speechUnsupported;
+
+  /// Records that a listen found [code] not on the device, or with
+  /// [unsupported], not online either.
+  void foundSpeech(String code, {bool unsupported = false}) {
+    final notOnDevice = <String>{..._speechNotOnDevice, code};
+    final none = <String>{..._speechUnsupported, if (unsupported) code};
+    if (setEquals(notOnDevice, _speechNotOnDevice) &&
+        setEquals(none, _speechUnsupported)) {
+      return;
+    }
+    _speechNotOnDevice = Set<String>.unmodifiable(notOnDevice);
+    _speechUnsupported = Set<String>.unmodifiable(none);
+    notifyListeners();
+  }
+
+  /// Forgets what listens found, so that the next ones find out again.
+  void forgetFoundSpeech() {
+    if (_speechNotOnDevice.isEmpty && _speechUnsupported.isEmpty) return;
+    _speechNotOnDevice = const <String>{};
+    _speechUnsupported = const <String>{};
     notifyListeners();
   }
 
@@ -262,6 +294,8 @@ class SettingsNotifier extends ChangeNotifier {
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
     'speech_online': (_speechOnline.toList()..sort()).join(','),
+    'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
+    'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'facts_shown': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _factsShown.entries)
         key: value.millisecondsSinceEpoch,
@@ -327,6 +361,18 @@ class SettingsNotifier extends ChangeNotifier {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           allowOnlineSpeech(code, true);
+        }
+      }
+    }
+    for (final (name, unsupported) in <(String, bool)>[
+      ('speech_not_on_device', false),
+      ('speech_unsupported', true),
+    ]) {
+      if (pick(name, (t) => t) case final v?) {
+        for (final code in v.split(',')) {
+          if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
+            foundSpeech(code, unsupported: unsupported);
+          }
         }
       }
     }

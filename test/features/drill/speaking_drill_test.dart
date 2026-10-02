@@ -200,9 +200,42 @@ void main() {
     expect(state.speechReady, isTrue);
   });
 
+  testWidgets('a language online does not know either says so, and the '
+      'card can be skipped unrecorded', (tester) async {
+    usePhone(tester);
+    final handle = tester.ensureSemantics();
+    final speech = FixedSpeechEngine(onDevice: <String>{'ja'});
+    final state = speakingState(speech);
+    state.settings.allowOnlineSpeech('es', true);
+    await state.load();
+    await state.startSpeech();
+    await pumpScreen(
+      tester,
+      DrillPage(request: DrillRequest.deck(spanish, skill: Skill.speaking)),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    final items = state
+        .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+        .items;
+    expect(items.length, greaterThan(1));
+    await speak(tester);
+    expect(find.text(l10n.drillUnheardUnsupported('Spanish')), findsOneWidget);
+    expect(speech.listens.single.onDevice, isFalse);
+    // Skipped unrecorded, and so are the session's other Spanish speaking
+    // cards, which cannot be heard either.
+    await tapText(tester, l10n.drillSkipCard);
+    expect(state.progress.log, isEmpty);
+    expect(find.byType(SpeakingDrill), findsNothing);
+    expect(speech.listens, hasLength(1));
+    handle.dispose();
+  });
+
   testWidgets('the Voices page offers to switch speaking on, then shows what '
       'each language can do', (tester) async {
     usePhone(tester);
+    // Android 13 and later list only the on-device languages: Hindi is
+    // unlisted, so it can only be heard online.
     final speech = FixedSpeechEngine(
       onDevice: <String>{'es'},
       online: <String>{'hi'},
@@ -225,7 +258,25 @@ void main() {
       scrollable: find.byType(Scrollable).first,
     );
     expect(find.text(l10n.voicesSpeechOnDevice), findsWidgets);
-    expect(find.text(l10n.voicesSpeechMissing), findsWidgets);
+    expect(find.text(l10n.voicesSpeechOnlineOnly), findsWidgets);
+  });
+
+  testWidgets('Check again on the Voices page forgets what listens found', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final speech = FixedSpeechEngine(online: <String>{'es'});
+    final state = speakingState(speech);
+    await state.load();
+    await state.startSpeech();
+    final info = state.deckById(spanish)!.language;
+    await state.listenFor(info);
+    expect(state.speechStatus(info), SpeechStatus.onlineOnly);
+    await pumpScreen(tester, const VoicesPage(), state: state);
+    final l10n = l10nOf(tester);
+    await tapText(tester, l10n.voicesCheckAgain);
+    expect(state.settings.speechNotOnDevice, isEmpty);
+    expect(state.speechStatus(info), SpeechStatus.onDevice);
   });
 
   testWidgets('every state fits at twice the text size, and meets the '
