@@ -1,9 +1,11 @@
+import 'package:url_launcher/url_launcher.dart';
+
 /// Addresses the app points people to. Not interface text: a URL is the same
 /// in every language.
 ///
-/// Opening a link needs url_launcher, which is not a dependency (AGENTS.md
-/// rule 6). Until it is, a link is copied with `Clipboard.setData` and a
-/// SnackBar says so.
+/// A link opens through [LinkOpener]: `openLink` in
+/// `lib/ui/widgets/snack.dart` opens it, and copies it with a SnackBar when
+/// nothing on the phone can open it.
 abstract final class AppLinks {
   /// HeliBoard on F-Droid: a free, open-source keyboard with layouts for
   /// Devanagari, kana, Urdu and many more (#25).
@@ -12,4 +14,59 @@ abstract final class AppLinks {
 
   /// Where a mistake in a deck is reported: the project's issues.
   static const String issues = 'https://github.com/aaronified/fluenough/issues';
+
+  /// The newest release's APK (ADR-0017). GitHub redirects this to the file
+  /// of that name on the newest release, which the release workflow builds.
+  static const String latestApk =
+      'https://github.com/aaronified/fluenough/releases/latest/download/app-release.apk';
+
+  /// The newest release's page, for downloading it in the browser when the
+  /// app cannot install it.
+  static const String latestRelease =
+      'https://github.com/aaronified/fluenough/releases/latest';
+}
+
+/// Opens a link outside the app. An interface so that tests need no
+/// platform.
+abstract interface class LinkOpener {
+  /// Opens [url] in the browser, or in the app that handles it. False if
+  /// nothing could.
+  Future<bool> open(String url);
+}
+
+/// [LinkOpener] through url_launcher, always in another app, never a view
+/// inside this one: F-Droid opens its own pages, and the browser can
+/// download a release (ADR-0017).
+class LauncherLinks implements LinkOpener {
+  const LauncherLinks();
+
+  @override
+  Future<bool> open(String url) async {
+    try {
+      return await launchUrl(
+        Uri.parse(url),
+        mode: LaunchMode.externalApplication,
+      );
+    } on Exception {
+      return false;
+    }
+  }
+}
+
+/// A [LinkOpener] that opens whatever it is asked to, unless [opens] is
+/// false, and records each link. For tests and the gallery.
+class FixedLinks implements LinkOpener {
+  FixedLinks({this.opens = true});
+
+  /// Whether a link opens. Can change between links.
+  bool opens;
+
+  /// Every link asked for, in order, whether or not it opened.
+  final List<String> asked = <String>[];
+
+  @override
+  Future<bool> open(String url) async {
+    asked.add(url);
+    return opens;
+  }
 }

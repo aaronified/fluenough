@@ -9,8 +9,8 @@ import '../../ui/widgets/snack.dart';
 /// On a deck no native speaker has checked, tagged `unreviewed`: says so and
 /// asks speakers to report mistakes (#39). The Telugu decks carry it.
 ///
-/// Opening a link needs url_launcher, which is not a dependency, so the
-/// button copies the address and says so, as the keyboard hint does.
+/// The button opens the project's issues, or copies their address when
+/// nothing can, as the keyboard hint does.
 class UnreviewedNotice extends StatelessWidget {
   const UnreviewedNotice({super.key, required this.entry});
 
@@ -49,10 +49,10 @@ class UnreviewedNotice extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => copyToClipboard(
+                  onPressed: () => openLink(
                     context,
                     AppLinks.issues,
-                    confirmation: l10n.deckUnreviewedCopied,
+                    copied: l10n.deckUnreviewedCopied,
                   ),
                   style: TextButton.styleFrom(
                     minimumSize: const Size(48, 40),

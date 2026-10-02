@@ -46,11 +46,17 @@ permanent once published, because they key every user's review history.
 Run after every `flutter create`. It copies `fluenough-brand/android/` into
 the generated `android/app/src/main/res/`, for the launcher icon and the
 launch screen, and sets the launcher label to `appTitle` from
-`lib/l10n/app_en.arb`. CI and the release workflow run it.
+`lib/l10n/app_en.arb`. It declares in the manifest what the app asks Android
+for: the microphone, the internet for the update check, and queries for the
+speech recogniser and for apps that open https links. And it sets up
+ota_update, which installs updates: its FileProvider and the folder that
+shares, external storage removed, and core library desugaring switched on
+in `android/app/build.gradle.kts`. Each is added once, so running it again
+changes nothing. CI and the release workflow run it.
 
 ```sh
 python3 tools/brand_android.py
 ```
 
 Exit status is 0 on success, and 1 when `android/` is missing or its manifest
-is not the shape `flutter create` writes.
+or Gradle file is not the shape `flutter create` writes.

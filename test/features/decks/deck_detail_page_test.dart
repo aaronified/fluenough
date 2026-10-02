@@ -355,8 +355,8 @@ void main() {
     expect(find.byType(GrammarDrill), findsOneWidget);
   });
 
-  testWidgets('a deck no speaker has checked says so, and copies the link to '
-      'report a mistake', (tester) async {
+  testWidgets('a deck no speaker has checked says so, and opens the page to '
+      'report a mistake, or copies its link', (tester) async {
     usePhone(tester);
     String? copied;
     tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
@@ -374,13 +374,26 @@ void main() {
         null,
       ),
     );
-    final state = await pumpDeck(tester, 'te-en-market');
+    final links = FixedLinks();
+    final state = await pumpDeck(
+      tester,
+      'te-en-market',
+      state: AppState.test(links: links),
+    );
     final l10n = l10nOf(tester);
     final entry = state.deckById('te-en-market')!;
     expect(entry.deck.tags, contains(UnreviewedNotice.tag));
 
     expect(find.text(l10n.deckUnreviewed('Telugu')), findsOneWidget);
     await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
+    expect(links.asked, <String>[AppLinks.issues]);
+    expect(copied, isNull, reason: 'opened, so nothing to copy');
+    expect(find.text(l10n.deckUnreviewedCopied), findsNothing);
+
+    // When nothing can open it, the link is copied instead.
+    links.opens = false;
+    await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
+    expect(links.asked, hasLength(2));
     expect(copied, AppLinks.issues);
     expect(find.text(l10n.deckUnreviewedCopied), findsOneWidget);
   });

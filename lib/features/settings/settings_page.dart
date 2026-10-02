@@ -21,17 +21,21 @@ import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
+import 'backup_section.dart';
 import 'settings_controls.dart';
+import 'update_section.dart';
 
 /// The Settings tab: the profile card, learning, sound, look and language,
-/// reminder and privacy, your data, and the footer.
+/// reminder and privacy, your data, cloud backup, updates, and the footer.
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
 /// per day, the skill switches, romanisation, speech rate, and the Voices row.
 /// Export and import save the review log as a file and merge one back
-/// (#20). Everything else is built and shown disabled behind its [Feature]:
-/// switching profile, the app language, the reminder, the PIN lock, and
-/// deleting the profile.
+/// (#20). Updates, which the design does not draw, checks GitHub for a newer
+/// version, beside the version line, and installs it (ADR-0017). Everything
+/// else is built and shown disabled behind its [Feature]: switching profile,
+/// the app language, the reminder, the PIN lock, deleting the profile, and
+/// cloud backup (#139).
 ///
 /// Keeps a [GalleryLink] at the foot, which draws nothing in a release build.
 class SettingsPage extends StatelessWidget {
@@ -68,6 +72,10 @@ class SettingsPage extends StatelessWidget {
                     _reminder(context, state),
                     const SizedBox(height: 20),
                     _data(context, state),
+                    const SizedBox(height: 20),
+                    const BackupSection(),
+                    const SizedBox(height: 20),
+                    const UpdateSection(),
                     const SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsetsDirectional.symmetric(

@@ -1,11 +1,15 @@
 import 'dart:async';
 
+import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/memory_progress.dart';
 import '../../app/settings.dart';
+import '../../app/shell_tab.dart';
 import '../../core/tts/tts_engine.dart';
+import '../../core/updates/apk_install.dart';
+import '../../core/updates/release_check.dart';
 import '../gallery/fixtures.dart';
 
 /// Fixture states for Settings, Appearance and Voices in the gallery and the
@@ -39,6 +43,90 @@ abstract final class SettingsFixtures {
     tts: const PendingTtsEngine(),
     clock: app.now,
   );
+
+  /// A version newer than this build's: its next minor version, so that it
+  /// stays newer whatever [AppInfo.version] becomes.
+  static String get newerVersion {
+    final numbers = parseVersion(AppInfo.version)!;
+    final minor = numbers.length > 1 ? numbers[1] : 0;
+    return '${numbers.first}.${minor + 1}.0';
+  }
+
+  /// Settings after the automatic check found [newerVersion]: the row offers
+  /// the download, and the tab has its dot (ADR-0017).
+  static AppState updateAvailable(AppState app) =>
+      _checked(app, LatestRelease(newerVersion), automatic: true);
+
+  /// Settings after a check found nothing newer than this build.
+  static AppState upToDate(AppState app) =>
+      _checked(app, const LatestRelease(AppInfo.version));
+
+  /// Settings while GitHub has not answered, which it never does here.
+  static AppState updateChecking(AppState app) => _checked(
+    app,
+    const LatestRelease(AppInfo.version),
+    gate: Completer<void>(),
+  );
+
+  /// Settings after a check could not reach GitHub.
+  static AppState updateFailed(AppState app) =>
+      _checked(app, const LatestRelease.failed(ReleaseCheckFailure.offline));
+
+  /// Settings while [newerVersion] downloads, 45% of the way, as it stays.
+  static AppState updateDownloading(AppState app) => _installed(
+    app,
+    const <InstallEvent>[InstallEvent.downloading(45)],
+    gate: Completer<void>(),
+  );
+
+  /// Settings once [newerVersion] has downloaded and Android's installer
+  /// is open.
+  static AppState updateInstalling(AppState app) =>
+      _installed(app, const <InstallEvent>[
+        InstallEvent.downloading(100),
+        InstallEvent.installing(),
+      ]);
+
+  /// Settings after Android would not let the app install: what to allow,
+  /// Try again, and the download page.
+  static AppState updateNotAllowed(AppState app) =>
+      _installed(app, const <InstallEvent>[
+        InstallEvent.downloading(100),
+        InstallEvent.failed(InstallFailure.notAllowed),
+      ]);
+
+  /// Settings with an install of [newerVersion] started that reports
+  /// [events], waiting after the first on [gate] if given.
+  static AppState _installed(
+    AppState app,
+    List<InstallEvent> events, {
+    Completer<void>? gate,
+  }) {
+    final state = GalleryFixtures.state(
+      app,
+      releases: FixedReleaseCheck(LatestRelease(newerVersion)),
+      installer: FixedApkInstaller(events, gate: gate),
+      settings: SettingsNotifier()..latestRelease = newerVersion,
+    )..shellTab.value = ShellTab.settings;
+    unawaited(state.updates.install());
+    return state;
+  }
+
+  /// Settings with a check started that [answer]s, after [gate] if given.
+  static AppState _checked(
+    AppState app,
+    LatestRelease answer, {
+    Completer<void>? gate,
+    bool automatic = false,
+  }) {
+    final state = GalleryFixtures.state(
+      app,
+      releases: FixedReleaseCheck(answer, gate: gate),
+      settings: SettingsNotifier(autoUpdateCheck: automatic),
+    )..shellTab.value = ShellTab.settings;
+    unawaited(state.updates.check());
+    return state;
+  }
 }
 
 /// A [TtsEngine] that never answers: every language stays "Checking…".

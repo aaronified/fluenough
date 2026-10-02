@@ -7,10 +7,8 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
 
 /// Under the answer field for a script that needs its own keyboard: "Needs a
-/// Japanese keyboard. HeliBoard is…", and "Get HeliBoard".
-///
-/// Opening a link needs url_launcher, which is not a dependency, so the
-/// button copies HeliBoard's F-Droid address and says so (decision 15).
+/// Japanese keyboard. HeliBoard is…", and "Get HeliBoard", which opens
+/// HeliBoard's F-Droid page, or copies its address when nothing can.
 class KeyboardHint extends StatelessWidget {
   const KeyboardHint({super.key, required this.language});
 
@@ -33,10 +31,10 @@ class KeyboardHint extends StatelessWidget {
       ),
     );
     final button = TextButton(
-      onPressed: () => copyToClipboard(
+      onPressed: () => openLink(
         context,
         AppLinks.heliboard,
-        confirmation: l10n.drillHeliboardCopied,
+        copied: l10n.drillHeliboardCopied,
       ),
       style: TextButton.styleFrom(
         minimumSize: const Size(48, 36),

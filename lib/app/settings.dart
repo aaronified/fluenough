@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
+import '../core/updates/release_check.dart';
 import 'skill.dart';
 
 /// The colour seeds the Appearance screen offers. [forest] is the repository's
@@ -40,6 +41,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._cardTextScale = 1.0,
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
+    this._autoUpdateCheck = false,
     List<String> spokenLanguages = const <String>[],
     List<String> learningLanguages = const <String>[],
     Set<String> placedDecks = const <String>{},
@@ -80,6 +82,10 @@ class SettingsNotifier extends ChangeNotifier {
   double _cardTextScale;
   bool _reminder;
   TimeOfDay _reminderTime;
+  bool _autoUpdateCheck;
+  DateTime? _lastUpdateCheck;
+  String? _latestRelease;
+  String? _pendingUpdate;
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   Set<String> _placedDecks;
@@ -335,6 +341,32 @@ class SettingsNotifier extends ChangeNotifier {
   set reminderTime(TimeOfDay value) =>
       _set(_reminderTime, value, (v) => _reminderTime = v);
 
+  /// Whether the app asks GitHub for a newer version once a day, at launch
+  /// (ADR-0017). Off until the learner turns it on, since each check is a
+  /// request to GitHub.
+  bool get autoUpdateCheck => _autoUpdateCheck;
+  set autoUpdateCheck(bool value) =>
+      _set(_autoUpdateCheck, value, (v) => _autoUpdateCheck = v);
+
+  /// When a check last reached GitHub, and the newest version it found
+  /// there, such as `0.2.0`. Like [factShownAt], not something the learner
+  /// sets: kept so that a restart neither asks again within the day nor
+  /// forgets that a newer version is out.
+  DateTime? get lastUpdateCheck => _lastUpdateCheck;
+  set lastUpdateCheck(DateTime? value) =>
+      _set(_lastUpdateCheck, value, (v) => _lastUpdateCheck = v);
+
+  String? get latestRelease => _latestRelease;
+  set latestRelease(String? value) =>
+      _set(_latestRelease, value, (v) => _latestRelease = v);
+
+  /// The version whose APK was last downloaded to install, until a launch
+  /// finds it installed and deletes the download. Not something the learner
+  /// sets.
+  String? get pendingUpdate => _pendingUpdate;
+  set pendingUpdate(String? value) =>
+      _set(_pendingUpdate, value, (v) => _pendingUpdate = v);
+
   /// Every setting as text, by its stored name. The names are permanent:
   /// renaming one resets it for everyone.
   Map<String, String> toStored() => <String, String>{
@@ -349,6 +381,10 @@ class SettingsNotifier extends ChangeNotifier {
     'card_text_scale': '$_cardTextScale',
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
+    'auto_update_check': '$_autoUpdateCheck',
+    'last_update_check': '${_lastUpdateCheck?.millisecondsSinceEpoch ?? ''}',
+    'latest_release': _latestRelease ?? '',
+    'pending_update': _pendingUpdate ?? '',
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
@@ -409,6 +445,18 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('reminder', flag) case final v?) reminder = v;
     if (pick('reminder_time', _parseTime) case final v?) reminderTime = v;
+    if (pick('auto_update_check', flag) case final v?) autoUpdateCheck = v;
+    if (pick('last_update_check', int.tryParse) case final v?) {
+      lastUpdateCheck = DateTime.fromMillisecondsSinceEpoch(v);
+    }
+    if (pick('latest_release', (t) => parseVersion(t) == null ? null : t)
+        case final v?) {
+      latestRelease = v;
+    }
+    if (pick('pending_update', (t) => parseVersion(t) == null ? null : t)
+        case final v?) {
+      pendingUpdate = v;
+    }
     if (pick('facts_shown', _parseShown) case final v?) {
       _factsShown = Map<String, DateTime>.unmodifiable(v);
       notifyListeners();

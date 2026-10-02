@@ -30,6 +30,7 @@ enum Feature {
   leeches(19),
   logExport(20),
   logImport(20),
+  cloudBackup(139),
 
   // Adding decks.
   importFile(22),
