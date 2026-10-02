@@ -422,7 +422,12 @@ void main() {
 
   testWidgets('the last answer goes to the summary', (tester) async {
     usePhone(tester);
-    await pumpDrill(tester, const DrillRequest.learnNew(1));
+    // The first new card is a script's first letter: past its guide.
+    final state = AppState.test();
+    for (final code in <String>['bn', 'hi', 'te', 'ja']) {
+      state.settings.markScriptGuideSeen(code);
+    }
+    await pumpDrill(tester, const DrillRequest.learnNew(1), state: state);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillPositionShort(1, 1)), findsOneWidget);
     await tester.tap(find.text(l10n.drillShowAnswer));
