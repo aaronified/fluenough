@@ -10,32 +10,36 @@ intro: "Bengali script is built from a few ideas that come back in letter after 
 features:
   - id: headline
     name: "The headline"
-    term: "মাত্রা (matra)"
+    term: "মাত্রা"
+    reading: "matra"
     example: "ক"
     text: "Most letters hang from a line along the top, and in a word the lines join into one. Read along the top, not along a baseline as in English."
-    letters: ["ক", "গ", "ত", "দ", "ন", "ম", "ল"]
+    letters: ["ক", "ঘ", "ত", "দ", "ন", "ম", "ল"]
   - id: half-headline
     name: "Letters with half a headline"
-    term: "অর্ধমাত্রা (ordhomatra)"
+    term: "অর্ধমাত্রা"
+    reading: "ordhomatra"
     example: "খ"
     text: "Eight letters carry only part of the line, so it stops short over them. Where it breaks often shows where one letter ends."
     letters: ["ঋ", "খ", "গ", "ণ", "থ", "ধ", "প", "শ"]
   - id: no-headline
     name: "Letters with no headline"
-    term: "মাত্রাহীন (matrahin)"
+    term: "মাত্রাহীন"
+    reading: "matrahin"
     example: "এ"
     text: "A few letters and marks have no line at all and stand apart in a word."
-    letters: ["এ", "ঐ", "ও", "ঔ", "ঙ", "ঞ", "ৎ"]
+    letters: ["এ", "ঐ", "ও", "ঔ", "ঙ", "ঞ", "ৎ", "ং", "ঃ", "ঁ"]
   - id: knot
     name: "The knot"
-    term: "গুটলি (gutli)"
+    term: "গুটলি"
+    reading: "gutli"
     example: "ক"
     text: "A small closed loop inside a letter. Many letters have one, each in its own place, so where the knot sits tells you which letter it is."
     letters: ["ক", "খ", "ত", "ল"]
   - id: inherent-vowel
     name: "The vowel you don't see"
     example: "ক"
-    text: "Every consonant carries the open o (অ) unless a sign changes it: ক alone is ko. So কলম is kolom, with no vowel written at all."
+    text: "Every consonant carries a vowel unless a sign changes it: most often the open o of অ, like the aw in 'awe', and sometimes a closed o, as in 'go'. ক alone is ko. So কলম is kolom, with no vowel written at all."
     letters: ["ক", "কল", "কলম"]
   - id: final-vowel
     name: "The last o is usually not said"
@@ -44,19 +48,22 @@ features:
     letters: ["ঘর", "জল", "কলম"]
   - id: vowel-signs
     name: "Vowels as signs on a letter"
-    term: "কার (kar)"
+    term: "আ-কার, ই-কার"
+    reading: "a-kar, i-kar"
     example: "কি"
-    text: "After a consonant a vowel is a sign on it, not a letter of its own. ি, ে and ৈ are written before the consonant but said after it: you see ি then ক, and say ki."
-    letters: ["কা", "কি", "কু", "কে", "কো"]
+    text: "After a consonant a vowel is a sign on it, not a letter of its own, named after its vowel: আ-কার is the sign for আ. ি, ে and ৈ are written before the consonant but said after it: you see ি then ক, and say ki. ো and ৌ go on both sides: কো is ko."
+    letters: ["কা", "কি", "কু", "কে", "কো", "কৌ"]
   - id: hoshonto
     name: "The mark that takes the vowel away"
-    term: "হসন্ত (hoshonto)"
+    term: "হসন্ত"
+    reading: "hoshonto"
     example: "ক্"
     text: "The small slanting stroke below a letter, ্, means no vowel after it. You'll rarely see it, because two consonants usually join instead."
     letters: ["ক্", "ত্"]
   - id: conjuncts
     name: "Letters that join"
-    term: "যুক্তাক্ষর (juktakkhor)"
+    term: "যুক্তাক্ষর"
+    reading: "juktakkhor"
     example: "ক্ষ"
     text: "Two consonants with no vowel between them are written as one shape, side by side or one above the other. Some look nothing like their parts: ক্ষ is ক and ষ."
     letters: ["ক্ত", "ন্দ", "স্ত", "ক্ষ", "জ্ঞ"]
@@ -65,11 +72,25 @@ features:
     example: "প্র"
     text: "Next to another consonant র isn't written in full. After it, it's a stroke at its foot (প্র); before it, a small hook on top, the reph (র্ম)."
     letters: ["প্র", "ক্র", "ত্র", "র্ম"]
+  - id: phola
+    name: "য and ব written as a sign"
+    term: "য-ফলা, ব-ফলা"
+    reading: "jo-phola, bo-phola"
+    example: "ব্য"
+    text: "After a consonant য is written as a hook beside it (ব্য), and ব as a small mark under or beside it (স্ব). Neither is usually said as itself: they double the consonant before them, or change its vowel, so learn each word as it's said."
+    letters: ["ব্য", "ত্য", "স্ব", "শ্ব"]
   - id: dot-below
     name: "A dot below makes another letter"
     example: "র"
-    text: "Some letters differ only by a dot below: ব and র, ড and ড়, ঢ and ঢ়, য and য়. Look for the dot every time."
+    text: "Some letters differ only by a dot below: ব and র, ড and ড়, ঢ and ঢ়, য and য়. Look for the dot every time. ড় and ঢ় are said with the tongue placed as for ড and ঢ, but not touching the roof of the mouth."
     letters: ["ব", "র", "ড", "ড়", "ঢ", "ঢ়", "য", "য়"]
+  - id: nasal-marks
+    name: "The moon and the circle"
+    term: "চন্দ্রবিন্দু"
+    reading: "chondrobindu"
+    example: "কাঁ"
+    text: "The moon and dot ঁ above a letter makes its vowel nasal, said through the nose as well, and it changes the word: বাধা (badha) is an obstacle, বাঁধা (bandha) is tied. The small circle ং after a vowel is ng: বাংলা (bangla)."
+    letters: ["কাঁ", "চাঁ", "বাং", "রং"]
   - id: digits
     name: "Bengali digits"
     example: "৪"
