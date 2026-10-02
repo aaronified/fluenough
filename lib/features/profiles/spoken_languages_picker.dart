@@ -41,6 +41,10 @@ class SpokenLanguagesPicker extends StatefulWidget {
 }
 
 class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
+  /// Drives the scrollbar, which shows there is more below when large text
+  /// pushes the list past the screen.
+  final ScrollController _scroll = ScrollController();
+
   List<SpokenLanguage>? _choices;
   List<String> _order = const <String>[];
   Set<String> _ticked = const <String>{};
@@ -55,6 +59,12 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
   void didUpdateWidget(SpokenLanguagesPicker old) {
     super.didUpdateWidget(old);
     if (_choices == null && widget.choices != null) _init(widget.choices!);
+  }
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
   }
 
   @override
@@ -115,40 +125,45 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
                   : l10n.spokenRankHint,
             ),
           );
-    return ReorderableListView(
-      header: widget.header,
-      footer: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Scrollbar(
+      controller: _scroll,
+      thumbVisibility: true,
+      child: ReorderableListView(
+        scrollController: _scroll,
+        header: widget.header,
+        footer: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            // Not AnimatedSize at Duration.zero: it asserts.
+            if (still)
+              hint
+            else
+              AnimatedSize(
+                duration: Durations.medium1,
+                curve: Easing.emphasizedDecelerate,
+                alignment: AlignmentDirectional.topStart,
+                child: hint,
+              ),
+            ?widget.footer,
+            const SizedBox(height: 16),
+          ],
+        ),
+        onReorderItem: (from, to) => _change(() {
+          final order = List<String>.of(_order);
+          order.insert(to, order.removeAt(from));
+          _order = order;
+        }),
         children: <Widget>[
-          // Not AnimatedSize at Duration.zero: it asserts.
-          if (still)
-            hint
-          else
-            AnimatedSize(
-              duration: Durations.medium1,
-              curve: Easing.emphasizedDecelerate,
-              alignment: AlignmentDirectional.topStart,
-              child: hint,
+          for (final (i, code) in _order.indexed)
+            _row(
+              context,
+              choices.firstWhere((c) => c.code == code),
+              rank: ranked.indexOf(code) + 1,
+              of: ranked.length,
+              index: i,
             ),
-          ?widget.footer,
-          const SizedBox(height: 16),
         ],
       ),
-      onReorderItem: (from, to) => _change(() {
-        final order = List<String>.of(_order);
-        order.insert(to, order.removeAt(from));
-        _order = order;
-      }),
-      children: <Widget>[
-        for (final (i, code) in _order.indexed)
-          _row(
-            context,
-            choices.firstWhere((c) => c.code == code),
-            rank: ranked.indexOf(code) + 1,
-            of: ranked.length,
-            index: i,
-          ),
-      ],
     );
   }
 

@@ -98,7 +98,8 @@ final OnboardingStep tourStep = OnboardingStep(
 );
 
 /// The slides in a pager the flow controls: [page] is the flow's, a swipe
-/// reports through [onPage], and Next, Back and Android back move [page].
+/// reports through [onPage] once it settles, and Next, Back and Android
+/// back move [page].
 class TourContent extends StatefulWidget {
   const TourContent({super.key, required this.page, required this.onPage});
 
@@ -148,22 +149,35 @@ class _TourContentState extends State<TourContent> {
     super.dispose();
   }
 
+  /// Reports only where the pager comes to rest, never the pages an
+  /// animation passes or a touch interrupts on its way: those would show
+  /// the wrong dot, or leave the flow on a page the pager is not on.
+  bool _settled(ScrollEndNotification end) {
+    // Each slide scrolls too; only the pager's own ends count.
+    if (end.depth != 0 || !_pages.hasClients) return false;
+    final page = _pages.page!.round();
+    if (page != _shown) {
+      _shown = page;
+      widget.onPage(page);
+    }
+    return false;
+  }
+
   @override
-  Widget build(BuildContext context) => PageView(
-    controller: _pages,
-    onPageChanged: (i) {
-      if (i == _shown) return;
-      _shown = i;
-      widget.onPage(i);
-    },
-    children: <Widget>[
-      for (final (i, slide) in tourSlides.indexed)
-        _SlideView(slide: slide, index: i, pages: _pages),
-    ],
-  );
+  Widget build(BuildContext context) =>
+      NotificationListener<ScrollEndNotification>(
+        onNotification: _settled,
+        child: PageView(
+          controller: _pages,
+          children: <Widget>[
+            for (final (i, slide) in tourSlides.indexed)
+              _SlideView(slide: slide, index: i, pages: _pages),
+          ],
+        ),
+      );
 }
 
-class _SlideView extends StatelessWidget {
+class _SlideView extends StatefulWidget {
   const _SlideView({
     required this.slide,
     required this.index,
@@ -175,88 +189,127 @@ class _SlideView extends StatelessWidget {
   final PageController pages;
 
   @override
+  State<_SlideView> createState() => _SlideViewState();
+}
+
+class _SlideViewState extends State<_SlideView> {
+  /// Drives the scrollbar, the sign there is more when even without the
+  /// picture the words do not fit.
+  final ScrollController _scroll = ScrollController();
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final _SlideView(:slide, :index, :pages) = widget;
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final still = MediaQuery.disableAnimationsOf(context);
-    // Larger text gets the room: the picture gives it up first.
-    final large = MediaQuery.textScalerOf(context).scale(16) > 21;
+    final title = slide.title(l10n);
+    final body = slide.body(l10n);
+    final titleStyle = theme.textTheme.headlineMedium!;
+    final bodyStyle = theme.textTheme.bodyLarge!.copyWith(
+      color: scheme.onSurfaceVariant,
+    );
     return LayoutBuilder(
       builder: (context, box) {
-        final size = large ? 160.0 : (box.maxHeight * 0.46).clamp(200.0, 300.0);
-        return CustomScrollView(
-          slivers: <Widget>[
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    const Spacer(),
-                    ExcludeSemantics(
-                      child: SizedBox(
-                        height: size,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: <Widget>[
-                            // The shape rolls with the finger as the page
-                            // is dragged.
-                            AnimatedBuilder(
-                              animation: pages,
-                              builder: (context, _) {
-                                final at = pages.hasClients
-                                    ? pages.page ?? index.toDouble()
-                                    : index.toDouble();
-                                return SizedBox.square(
-                                  dimension: size,
-                                  child: DecoratedBox(
-                                    decoration: ShapeDecoration(
-                                      color: slide.tint(scheme),
-                                      shape: ExpressiveShapeBorder(
-                                        slide.shape,
-                                        turn: still ? 0 : (at - index) * 0.5,
+        // The words get the room first: the picture takes what they leave,
+        // up to 300, and goes when that is under 96 rather than push a
+        // sentence below the dots.
+        double height(String text, TextStyle style) {
+          final painter = TextPainter(
+            text: TextSpan(text: text, style: style),
+            textDirection: Directionality.of(context),
+            textScaler: MediaQuery.textScalerOf(context),
+            locale: Localizations.localeOf(context),
+          )..layout(maxWidth: box.maxWidth - 48);
+          final height = painter.height;
+          painter.dispose();
+          return height;
+        }
+
+        final words =
+            8 + height(title, titleStyle) + 12 + height(body, bodyStyle) + 16;
+        final room = box.maxHeight - words - 32;
+        final size = room < 96 ? 0.0 : room.clamp(96.0, 300.0);
+        return Scrollbar(
+          controller: _scroll,
+          thumbVisibility: true,
+          child: CustomScrollView(
+            controller: _scroll,
+            slivers: <Widget>[
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      const Spacer(),
+                      if (size > 0) ...<Widget>[
+                        ExcludeSemantics(
+                          child: SizedBox(
+                            height: size,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: <Widget>[
+                                // The shape rolls with the finger as the page
+                                // is dragged.
+                                AnimatedBuilder(
+                                  animation: pages,
+                                  builder: (context, _) {
+                                    final at = pages.hasClients
+                                        ? pages.page ?? index.toDouble()
+                                        : index.toDouble();
+                                    return SizedBox.square(
+                                      dimension: size,
+                                      child: DecoratedBox(
+                                        decoration: ShapeDecoration(
+                                          color: slide.tint(scheme),
+                                          shape: ExpressiveShapeBorder(
+                                            slide.shape,
+                                            turn: still
+                                                ? 0
+                                                : (at - index) * 0.5,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    );
+                                  },
+                                ),
+                                SizedBox(
+                                  width: size * 1.1,
+                                  height: size * 0.7,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: slide.hero(context),
                                   ),
-                                );
-                              },
+                                ),
+                              ],
                             ),
-                            SizedBox(
-                              width: size * 1.1,
-                              height: size * 0.7,
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: slide.hero(context),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
+                        const SizedBox(height: 32),
+                      ],
+                      Semantics(
+                        header: true,
+                        namesRoute: true,
+                        child: Text(title, style: titleStyle),
                       ),
-                    ),
-                    const SizedBox(height: 32),
-                    Semantics(
-                      header: true,
-                      namesRoute: true,
-                      child: Text(
-                        slide.title(l10n),
-                        style: theme.textTheme.headlineMedium,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      slide.body(l10n),
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const Spacer(),
-                  ],
+                      const SizedBox(height: 12),
+                      Text(body, style: bodyStyle),
+                      const Spacer(),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );

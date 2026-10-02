@@ -127,20 +127,40 @@ void main() {
     expect(find.byType(AppShell), findsOneWidget);
   });
 
-  testWidgets('from Settings it can go back without saving', (tester) async {
+  Future<void> openFromSettings(WidgetTester tester) async {
+    unawaited(
+      AppNavigator.openSpokenLanguages(tester.element(find.byType(AppShell))),
+    );
+    await tester.pumpAndSettle();
+  }
+
+  testWidgets('from Settings, Back leaves without saving', (tester) async {
     usePhone(tester);
-    final choices = parseSpokenLanguages(
-      File(SpokenLanguagesPage.asset).readAsStringSync(),
-    );
-    final state = await pumpScreen(
-      tester,
-      SpokenLanguagesPage(choices: choices),
-    );
-    expect(find.byType(BackButton), findsNothing, reason: 'pushed alone here');
-    expect(state.settings.spokenLanguages, ['en']);
+    final state = await pumpApp(tester);
     final l10n = l10nOf(tester);
+    await openFromSettings(tester);
     // English, the test state's language, starts ticked and ranked 1.
     expect(find.text(l10n.spokenRank(1)), findsOneWidget);
+    await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
+    await tester.pump();
+    expect(find.text(l10n.spokenRank(2)), findsOneWidget);
+    await tester.tap(find.byType(BackButton));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.spokenTitle), findsNothing);
+    expect(state.settings.spokenLanguages, ['en']);
+  });
+
+  testWidgets('from Settings, Continue waits for a language, and its text '
+      'starts on the 24 px line', (tester) async {
+    usePhone(tester);
+    await pumpApp(tester);
+    final l10n = l10nOf(tester);
+    await openFromSettings(tester);
+    expect(textStart(tester, find.text(l10n.spokenBody)), 24);
+    await tester.tap(find.text(l10n.spokenOption('English', 'English')));
+    await tester.pump();
+    final go = find.widgetWithText(FilledButton, l10n.commonContinue);
+    expect(tester.widget<FilledButton>(go).onPressed, isNull);
   });
 
   testWidgets('from Settings, Continue saves the ranking and goes back', (
@@ -149,10 +169,7 @@ void main() {
     usePhone(tester);
     final state = await pumpApp(tester);
     final l10n = l10nOf(tester);
-    unawaited(
-      AppNavigator.openSpokenLanguages(tester.element(find.byType(AppShell))),
-    );
-    await tester.pumpAndSettle();
+    await openFromSettings(tester);
     expect(find.text(l10n.spokenTitle), findsOneWidget);
 
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
@@ -185,9 +202,8 @@ void main() {
             ),
           );
           final l10n = l10nOf(tester);
-          // Distance from the start edge.
-          double start(Finder f) =>
-              rtl ? 390 - tester.getTopRight(f).dx : tester.getTopLeft(f).dx;
+          // Distance from the start edge, of the glyphs themselves.
+          double start(Finder f) => textStart(tester, f);
           expect(start(find.text(l10n.onboardingSpokenTitle)), 24);
           expect(start(find.text(l10n.onboardingSpokenBody)), 24);
           for (final box in tester.widgetList(find.byType(Checkbox))) {
@@ -218,6 +234,58 @@ void main() {
     await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
     await tester.pumpAndSettle();
     expect(find.text(l10n.spokenRankHint), findsOneWidget);
+  });
+
+  testWidgets('with a screen reader, the hint names the move actions', (
+    tester,
+  ) async {
+    usePhone(tester);
+    tester.platformDispatcher.accessibilityFeaturesTestValue =
+        const FakeAccessibilityFeatures(accessibleNavigation: true);
+    addTearDown(tester.platformDispatcher.clearAccessibilityFeaturesTestValue);
+    final choices = parseSpokenLanguages(
+      File(SpokenLanguagesPage.asset).readAsStringSync(),
+    );
+    await pumpScreen(
+      tester,
+      OnboardingFlow(
+        startAt: 'spoken',
+        spoken: const <String>['bn', 'en'],
+        choices: choices,
+      ),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.spokenRankHintActions), findsOneWidget);
+    expect(find.text(l10n.spokenRankHint), findsNothing);
+  });
+
+  testWidgets('a tap on a drag handle does not untick its language', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final choices = parseSpokenLanguages(
+      File(SpokenLanguagesPage.asset).readAsStringSync(),
+    );
+    await pumpScreen(
+      tester,
+      OnboardingFlow(
+        startAt: 'spoken',
+        spoken: const <String>['bn', 'en'],
+        choices: choices,
+      ),
+    );
+    final l10n = l10nOf(tester);
+    final handle = find.byIcon(Icons.drag_handle);
+    // A target of its own, 48 square, so a tap lands on it, not the row.
+    expect(
+      tester.getSize(
+        find.ancestor(of: handle.first, matching: find.byType(SizedBox)).first,
+      ),
+      const Size.square(48),
+    );
+    await tester.tap(handle.first);
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.spokenRank(2)), findsOneWidget);
   });
 
   test(
