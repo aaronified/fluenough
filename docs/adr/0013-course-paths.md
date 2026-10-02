@@ -22,8 +22,8 @@ The maintainer decided, on 2 October 2026:
 - that every course's first three units are its **alphabet**, its **sound
   differences** and its **basic grammar differences** from the language it
   is taught from, and that each is drilled in every skill: recognition,
-  listening, speaking and writing. For Hindi, Bengali and Telugu they follow
-  as content.
+  listening, speaking and writing. They follow as content, for every
+  course.
 
 ## Decision
 
@@ -64,11 +64,15 @@ The maintainer decided, on 2 October 2026:
   decks can still be studied in full.
 - Placement leaves no history to learn from. Statistics and streaks count
   only real reviews.
-- A path can only list decks that exist. Until the alphabet, sound and
-  grammar-difference decks are written for Hindi, Bengali and Telugu, those
-  paths start at their first words, which carry a romanised reading. A
-  speaking drill does not exist yet (#89), so until it does those units are
-  drilled in the other three skills.
+- A path can only list decks that exist, so the first three units arrive
+  as content, after #117. Until then Hindi, Bengali and Telugu start at their
+  first words, which carry a romanised reading. Spanish starts at its core
+  vocabulary, and Japanese at hiragana, which is its alphabet unit already.
+  Its sound and grammar-difference units come with the others. A speaking
+  drill does not exist yet (#89), so until it does these units are drilled
+  in the other three skills.
+- The validator requires a path for every course with a deck in `decks/`.
+  A deck imported into the app with no path falls back to theme order.
 
 ## Alternatives considered
 

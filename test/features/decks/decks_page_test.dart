@@ -400,6 +400,19 @@ themes:
         ]);
       }
     }
+    // A course's decks apart in the list still make one section, at the
+    // place of its first: grouped by course, not by neighbour.
+    final split = courseSections(<DeckEntry>[
+      state.deckById('hi-en-first-words')!,
+      state.deckById('ja-en-hiragana')!,
+      state.deckById('hi-en-grammar-nouns')!,
+    ], state);
+    expect(split.map((s) => s.course?.language.code), ['hi', null]);
+    expect(split.map((s) => [for (final e in s.decks) e.id]), [
+      ['hi-en-first-words', 'hi-en-grammar-nouns'],
+      ['ja-en-hiragana'],
+    ]);
+
     final bengali = courseSections(
       state.decks,
       state,

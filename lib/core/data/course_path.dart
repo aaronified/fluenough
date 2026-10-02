@@ -4,11 +4,12 @@ import 'deck_parser.dart';
 
 /// A course's curated path (#117, ADR-0013): its decks in the order they are
 /// taught, in units. A course is a language taught from another, such as
-/// Hindi from English, and has at most one path.
+/// Hindi from English, and has one path.
 ///
 /// A unit is what is taught together: a theme deck and the grammar that goes
-/// with it, or a script. Today takes new cards from the first unfinished
-/// unit and the one after it, and placement passes or places a unit whole.
+/// with it, or a script. ADR-0013 has Today take new cards from the first
+/// unfinished unit and the one after it, and placement pass or place a unit
+/// whole.
 class CoursePath {
   const CoursePath({
     required this.id,
