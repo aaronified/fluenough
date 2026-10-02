@@ -9,7 +9,7 @@ language: bn
 contrasts:
   - id: aspiration
     name: "a breath after the consonant"
-    pairs: [["ক", "খ"], ["গ", "ঘ"], ["চ", "ছ"], ["জ", "ঝ"], ["ট", "ঠ"], ["ড", "ঢ"], ["ত", "থ"], ["দ", "ধ"], ["প", "ফ"], ["ব", "ভ"]]
+    pairs: [["ক", "খ"], ["গ", "ঘ"], ["চ", "ছ"], ["জ", "ঝ"], ["ট", "ঠ"], ["ড", "ঢ"], ["ত", "থ"], ["দ", "ধ"], ["প", "ফ"], ["ব", "ভ"], ["ড়", "ঢ়"]]
   - id: dental-retroflex
     name: "the tongue on the teeth or curled back"
     pairs: [["ত", "ট"], ["থ", "ঠ"], ["দ", "ড"], ["ধ", "ঢ"]]
@@ -22,4 +22,4 @@ contrasts:
     pairs: [["", "ঁ"]]
   - id: flap
     name: "the flapped r (ড়) against d or r"
-    pairs: [["ড", "ড়"], ["ড়", "র"]]
+    pairs: [["ড", "ড়"], ["ঢ", "ঢ়"], ["ড়", "র"]]
