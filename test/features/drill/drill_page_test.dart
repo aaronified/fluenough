@@ -322,12 +322,29 @@ void main() {
       features: FeatureRegistry.only(<Feature>{...Feature.available, ...extra}),
     );
 
-    await pumpDrill(
+    // Revealed, la casa shows its example sentence too.
+    final recognition = await pumpDrill(
       tester,
       DrillRequest.deck(spanish, skill: Skill.recognition),
       preset: const DrillPreset(target: 'la casa', reveal: true),
-      state: scaled(),
+      state: AppState.test(settings: SettingsNotifier()),
     );
+    List<double> targetSizes() => <double>[
+      for (final text in tester.widgetList<Text>(
+        find.descendant(
+          of: find.byType(TargetText),
+          matching: find.byType(Text),
+        ),
+      ))
+        text.style!.fontSize!,
+    ];
+    final standard = targetSizes();
+    expect(standard, hasLength(2), reason: 'the word and its example');
+    recognition.settings.cardTextScale = 1.4;
+    await tester.pumpAndSettle();
+    expect(targetSizes(), <Matcher>[
+      for (final size in standard) closeTo(size * 1.4, 1e-9),
+    ]);
     expect(sizeOf(find.text('la casa')), closeTo(48 * 1.4, 1e-9));
 
     // A fresh tree for each drill, rather than an update of the last one.
