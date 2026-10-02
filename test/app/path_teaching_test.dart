@@ -79,9 +79,10 @@ void main() {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
+    // Hindi starts with its script.
     expect(unitIds(state), <List<String>>[
-      <String>['hi-en-first-words', 'hi-en-grammar-sentences'],
-      <String>['hi-en-questions', 'hi-en-grammar-questions'],
+      <String>['hi-en-script-vowels', 'hi-en-script-consonants'],
+      <String>['hi-en-script-vowel-signs', 'hi-en-script-conjuncts'],
     ]);
     final fresh = state.buildSession(const DrillRequest.today()).fresh;
     expect(fresh, hasLength(20));
@@ -104,28 +105,28 @@ void main() {
   test('a placed unit is skipped, and its decks read Done', () async {
     final state = learning(
       <String>['hi'],
-      placed: <String>{'hi-en-first-words', 'hi-en-grammar-sentences'},
+      placed: <String>{'hi-en-script-vowels', 'hi-en-script-consonants'},
     );
     addTearDown(state.dispose);
     await state.load();
     expect(unitIds(state).first, <String>[
-      'hi-en-questions',
-      'hi-en-grammar-questions',
+      'hi-en-script-vowel-signs',
+      'hi-en-script-conjuncts',
     ]);
-    expect(unitIds(state).last.first, 'hi-en-addressing');
-    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.done);
-    expect(badgeOf(state, 'hi-en-questions'), DeckBadgeKind.pending);
-    expect(badgeOf(state, 'hi-en-addressing'), DeckBadgeKind.pending);
+    expect(unitIds(state).last.first, 'hi-en-sound-differences');
+    expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.done);
+    expect(badgeOf(state, 'hi-en-script-vowel-signs'), DeckBadgeKind.pending);
+    expect(badgeOf(state, 'hi-en-sound-differences'), DeckBadgeKind.pending);
     expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
     // A placed deck can still be studied.
     expect(
-      state.buildSession(DrillRequest.deck('hi-en-first-words')).fresh,
+      state.buildSession(DrillRequest.deck('hi-en-script-vowels')).fresh,
       isNotEmpty,
     );
 
     // Placement is a setting: changing it moves the window at once.
     state.settings.placedDecks = const <String>{};
-    expect(unitIds(state).first.first, 'hi-en-first-words');
+    expect(unitIds(state).first.first, 'hi-en-script-vowels');
   });
 
   test('a deck finished inside a pending unit reads Done, its unit-mate '
@@ -133,16 +134,18 @@ void main() {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
-    final sentences = state.deckById('hi-en-grammar-sentences')!;
-    while (state.notStudiedIn(sentences) > 0) {
+    final consonants = state.deckById('hi-en-script-consonants')!;
+    while (state.notStudiedIn(consonants) > 0) {
       for (final item
-          in state.buildSession(DrillRequest.learnAnyway(sentences.id)).items) {
+          in state
+              .buildSession(DrillRequest.learnAnyway(consonants.id))
+              .items) {
         state.record(item, 5);
       }
     }
-    expect(unitIds(state).first, contains(sentences.id));
-    expect(badgeOf(state, sentences.id), DeckBadgeKind.done);
-    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
+    expect(unitIds(state).first, contains(consonants.id));
+    expect(badgeOf(state, consonants.id), DeckBadgeKind.done);
+    expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.pending);
   });
 
   test('a finished unit is passed, and the next two are taught', () async {
