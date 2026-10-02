@@ -81,7 +81,7 @@ cards:
 });
 
 void main() {
-  testWidgets('lists every bundled deck with what a session would drill', (
+  testWidgets('lists every bundled deck with its state: due, Not done or Done', (
     tester,
   ) async {
     useTallPhone(tester);
@@ -92,15 +92,16 @@ void main() {
     expect(state.canDrill(state.deckById('es-en-grammar-present-ar')!), isTrue);
     expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
     for (final entry in state.decks) {
-      final counts = state.countsFor(entry);
-      final n = counts.due + counts.fresh;
+      final due = state.countsFor(entry).due;
       final tile = tileOf(entry);
       // A grammar deck has nothing to drill until its drill ships (#14): it is
-      // incoming, never Done.
+      // incoming, never Done. A deck still to learn is Not done, never Done.
       final badge = !state.canDrill(entry)
           ? l10n.incomingBadge
-          : n > 0
-          ? l10n.commonDueBadge(n)
+          : due > 0
+          ? l10n.commonDueBadge(due)
+          : state.notStudiedIn(entry) > 0
+          ? l10n.commonNotDoneBadge
           : l10n.commonDoneBadge;
       expect(
         find.descendant(of: tile, matching: find.text(badge)),
@@ -232,7 +233,7 @@ void main() {
         !state.canDrill(entry)
             ? DeckBadgeKind.incoming
             : entry.language.code == 'ja'
-            ? DeckBadgeKind.due
+            ? DeckBadgeKind.notDone
             : DeckBadgeKind.start,
         reason: entry.id,
       );

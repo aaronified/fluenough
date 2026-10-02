@@ -54,10 +54,16 @@ class DeckGlyph extends StatelessWidget {
 
 /// The pill at the end of a deck row.
 enum DeckBadgeKind {
-  /// "9 due", in `primary`.
+  /// "9 due", in `primary`: reviews due now. New cards are not due, so a
+  /// deck never studied is not "due".
   due,
 
-  /// "Done", when nothing in a deck the profile learns is due.
+  /// "Not done": nothing is due, but some cards are not yet learned. A deck
+  /// starts here, and stays here once the day's new cards are spent.
+  notDone,
+
+  /// "Done": every card learned, in every skill the learner has on, and
+  /// nothing due. The deck can still be revised.
   done,
 
   /// "Feature incoming", for a deck this version cannot drill at all: one
@@ -80,10 +86,9 @@ class DeckBadge extends StatelessWidget {
 
   /// [entry]'s badge on the Decks tab and Today. A deck with nothing this
   /// version can drill is incoming. For a language the current profile
-  /// learns: what a session on the deck would drill now, due and new
-  /// together, or Done. Otherwise Start. Each deck's new cards are counted
-  /// against the whole daily cap, so the badges can add up to more than
-  /// Today's number.
+  /// learns: the reviews due now; else Not done while any card is still to
+  /// learn, whatever today's new-card cap allows; else Done. Otherwise
+  /// Start.
   factory DeckBadge.forEntry(AppState state, DeckEntry entry) {
     if (!state.canDrill(entry)) {
       return const DeckBadge(kind: DeckBadgeKind.incoming);
@@ -91,10 +96,10 @@ class DeckBadge extends StatelessWidget {
     if (!state.currentProfile.learns(entry.language.code)) {
       return const DeckBadge(kind: DeckBadgeKind.start);
     }
-    final counts = state.countsFor(entry);
-    final n = counts.due + counts.fresh;
-    return n > 0
-        ? DeckBadge(kind: DeckBadgeKind.due, count: n)
+    final due = state.countsFor(entry).due;
+    if (due > 0) return DeckBadge(kind: DeckBadgeKind.due, count: due);
+    return state.notStudiedIn(entry) > 0
+        ? const DeckBadge(kind: DeckBadgeKind.notDone)
         : const DeckBadge(kind: DeckBadgeKind.done);
   }
 
@@ -112,6 +117,11 @@ class DeckBadge extends StatelessWidget {
         l10n.commonDueBadge(count),
         scheme.primary,
         scheme.onPrimary,
+      ),
+      DeckBadgeKind.notDone => (
+        l10n.commonNotDoneBadge,
+        scheme.secondaryContainer,
+        scheme.onSecondaryContainer,
       ),
       DeckBadgeKind.done => (
         l10n.commonDoneBadge,
@@ -134,7 +144,10 @@ class DeckBadge extends StatelessWidget {
     final (text, bg, fg) = pill;
     return Container(
       constraints: const BoxConstraints(minWidth: 32, minHeight: 28),
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 10,
+        vertical: 4,
+      ),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: bg,
@@ -142,7 +155,7 @@ class DeckBadge extends StatelessWidget {
       ),
       child: Text(
         text,
-        softWrap: false,
+        textAlign: TextAlign.center,
         style: Theme.of(context).textTheme.labelLarge!
             .copyWith(color: fg, fontWeight: FontWeight.w700),
       ),
@@ -224,7 +237,15 @@ class DeckTile extends StatelessWidget {
                   ],
                 ),
               ),
-              if (!incoming) ...<Widget>[const SizedBox(width: 12), badge],
+              if (!incoming) ...<Widget>[
+                const SizedBox(width: 12),
+                // A long label, or a large text size, wraps rather than
+                // squeezing out the name.
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 120),
+                  child: badge,
+                ),
+              ],
             ],
           ),
         ),

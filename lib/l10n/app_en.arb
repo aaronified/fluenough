@@ -94,7 +94,11 @@
   },
   "commonDoneBadge": "Done",
   "@commonDoneBadge": {
-    "description": "Badge on a deck row the profile learns, when nothing in it is due."
+    "description": "Badge on a deck row the profile learns, when every card in it has been learned and nothing is due."
+  },
+  "commonNotDoneBadge": "Not done",
+  "@commonNotDoneBadge": {
+    "description": "Badge on a deck row the profile learns, when nothing in it is due but some of its cards are not learned yet. Every deck starts with it."
   },
   "commonStartBadge": "Start",
   "@commonStartBadge": {
@@ -860,6 +864,34 @@
         "example": "9"
       }
     }
+  },
+  "deckLearnAnyway": "Learn anyway · {count}",
+  "@deckLearnAnyway": {
+    "description": "The button at the foot of a deck's screen when today's new cards are spent but the deck still has cards to learn. The count is how many it would introduce.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "deckLearnAnywayNote": "You have learned today's new cards. You can keep going with this deck anyway.",
+  "@deckLearnAnywayNote": {
+    "description": "Above Learn anyway on a deck's screen: why there is nothing to review, and that the learner may still go on."
+  },
+  "deckRevise": "Revise · {count}",
+  "@deckRevise": {
+    "description": "The button at the foot of a finished deck's screen, when nothing is due: practise every learned card again. The count is how many cards.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "deckReviseNote": "You have learned every card here. Revise them whenever you like; it does not change when they come back.",
+  "@deckReviseNote": {
+    "description": "Above Revise on a finished deck's screen: revising is not recorded, so the schedule stays as it is."
   },
   "deckGrammarCell": "{lemma} — {slot}",
   "@deckGrammarCell": {
