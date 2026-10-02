@@ -1,0 +1,66 @@
+schema: 1
+id: hi-en-script-vowels
+name: "Hindi vowels"
+kind: vocab
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The eleven vowels as they are written on their own, at the start of a word. In Hindi a short and a long vowel are different sounds."
+tags: [beginner, unreviewed, script]
+cards:
+  - id: hi-en-script-vowels-0001
+    target: "अ"
+    native: "a, short (the vowel every consonant carries)"
+    reading: "a"
+    notes: "Like the 'u' of 'but'. Every consonant carries it, and Hindi drops it at the end of most words: नमस्ते is namaste, कमल is kamal. On its own: अनार (anaar, pomegranate)."
+  - id: hi-en-script-vowels-0002
+    target: "आ"
+    native: "aa, long"
+    reading: "aa"
+    notes: "The 'a' of 'father', held longer than अ. Short and long change the word in Hindi: आम (aam, mango)."
+  - id: hi-en-script-vowels-0003
+    target: "इ"
+    native: "i, short"
+    reading: "i"
+    notes: "Like the 'i' of 'sit': इमली (imlii, tamarind)."
+  - id: hi-en-script-vowels-0004
+    target: "ई"
+    native: "ii, long"
+    reading: "ii"
+    notes: "The 'ee' of 'see', held longer than इ: ईख (iikh, sugarcane)."
+  - id: hi-en-script-vowels-0005
+    target: "उ"
+    native: "u, short"
+    reading: "u"
+    notes: "Like the 'u' of 'put': उल्लू (ulluu, owl)."
+  - id: hi-en-script-vowels-0006
+    target: "ऊ"
+    native: "uu, long"
+    reading: "uu"
+    notes: "The 'oo' of 'food', held longer than उ: ऊन (uun, wool)."
+  - id: hi-en-script-vowels-0007
+    target: "ऋ"
+    native: "ri (a vowel letter)"
+    reading: "ri"
+    modes: [recognition, production]
+    notes: "Said 'ri', though it is written as one vowel, in words from Sanskrit: ऋषि (rishi, sage). A recogniser writes this sound as रि, so it is drilled by reading and writing only."
+  - id: hi-en-script-vowels-0008
+    target: "ए"
+    native: "e (as in 'café')"
+    reading: "e"
+    notes: "Like the 'e' of 'café', without the glide of English 'say': एक (ek, one)."
+  - id: hi-en-script-vowels-0009
+    target: "ऐ"
+    native: "ai (between 'e' and the 'a' of 'cat')"
+    reading: "ai"
+    notes: "In standard Hindi a long open e, close to the 'a' of 'cat', though it is written ai: ऐनक (ainak, spectacles)."
+  - id: hi-en-script-vowels-0010
+    target: "ओ"
+    native: "o (as in 'go')"
+    reading: "o"
+    notes: "Like the 'o' of 'go', without the glide English adds: ओखली (okhlii, mortar)."
+  - id: hi-en-script-vowels-0011
+    target: "औ"
+    native: "au (between 'o' and the 'aw' of 'law')"
+    reading: "au"
+    notes: "In standard Hindi a long open o, close to the 'aw' of 'law', though it is written au: औरत (aurat, woman)."

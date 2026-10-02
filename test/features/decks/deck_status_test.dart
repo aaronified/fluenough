@@ -70,7 +70,9 @@ void main() {
         state.pathOf(entry)!.units.take(2).expand((u) => u).contains(entry.id)
         ? DeckBadgeKind.pending
         : DeckBadgeKind.notDone;
-    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
+    // Hindi starts with its script.
+    expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.pending);
+    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.notDone);
     expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
     for (final entry in decks) {
       expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
