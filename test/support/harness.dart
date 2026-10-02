@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -63,6 +64,37 @@ Future<AppState> pumpScreen(
   );
   await tester.pumpAndSettle();
   return s;
+}
+
+/// How far [text]'s first line of glyphs starts from the start edge of the
+/// [width]-wide screen: from the left in left-to-right text, from the right
+/// in right-to-left. Measures the glyphs, not the text's box, which a
+/// stretched column makes as wide as the column whatever the alignment.
+/// Spaces are left out: a line's trailing space hangs past its edge.
+double textStart(WidgetTester tester, Finder text, {double width = 390}) {
+  final paragraph = tester.renderObject<RenderParagraph>(text);
+  final plain = paragraph.text.toPlainText();
+  // The first line's band, from the runs; then its words, which leave the
+  // spaces out and keep a script's clusters whole.
+  final runs = paragraph.getBoxesForSelection(
+    TextSelection(baseOffset: 0, extentOffset: plain.length),
+  );
+  final band = runs.reduce((a, b) => a.top <= b.top ? a : b);
+  final line = <TextBox>[
+    for (final word in RegExp(r'\S+').allMatches(plain))
+      for (final box in paragraph.getBoxesForSelection(
+        TextSelection(baseOffset: word.start, extentOffset: word.end),
+      ))
+        if ((box.top + box.bottom) / 2 < band.bottom) box,
+  ];
+  final origin = paragraph.localToGlobal(Offset.zero).dx;
+  final edge = paragraph.textDirection == TextDirection.rtl
+      ? width -
+            origin -
+            line.map((b) => b.right).reduce((a, b) => a > b ? a : b)
+      : origin + line.map((b) => b.left).reduce((a, b) => a < b ? a : b);
+  // Glyph boxes land on fractions of a pixel.
+  return edge.roundToDouble();
 }
 
 /// The interface strings, for asserting on tokens rather than English.
