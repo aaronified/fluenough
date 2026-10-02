@@ -214,27 +214,38 @@ class _DecksPageState extends State<DecksPage> {
   }
 }
 
-/// A run of deck rows: a course's theme decks, under the course, or decks
-/// outside the theme path, with no heading.
+/// A course's decks under the course, or a run of decks outside any course
+/// with theme decks, with no heading.
 typedef DeckSection = ({DeckEntry? course, List<DeckEntry> decks});
 
-/// [decks], in order, cut into sections: each run of one course's theme
-/// decks under that course (#52), and each run of other decks on its own.
-/// The catalog already puts a course's theme decks together, in path order.
+/// [decks], in order, in sections: every deck of a course that teaches
+/// themes under one heading for that course (#52), at the place its first
+/// deck comes, grammar decks included (#119), and each run of other decks on
+/// its own. Grouped by course rather than by neighbour, so that a course
+/// stays together whatever order its decks come in.
 List<DeckSection> courseSections(List<DeckEntry> decks, AppState state) {
-  String? courseOf(DeckEntry e) => state.themeOf(e) == null
-      ? null
-      : '${e.language.code}/${e.deck.native.code}';
+  String courseOf(DeckEntry e) => '${e.language.code}/${e.deck.native.code}';
+  // From every deck, not only those shown, so that a grammar deck a search
+  // finds still sits under its course.
+  final themed = <String>{
+    for (final entry in state.decks)
+      if (state.themeOf(entry) != null) courseOf(entry),
+  };
   final sections = <DeckSection>[];
-  String? current;
+  final byCourse = <String, DeckSection>{};
   for (final entry in decks) {
     final course = courseOf(entry);
-    if (sections.isEmpty || course != current) {
-      sections.add((
-        course: course == null ? null : entry,
-        decks: <DeckEntry>[],
-      ));
-      current = course;
+    if (themed.contains(course)) {
+      final section = byCourse[course];
+      if (section != null) {
+        section.decks.add(entry);
+      } else {
+        sections.add(byCourse[course] = (course: entry, decks: [entry]));
+      }
+      continue;
+    }
+    if (sections.isEmpty || sections.last.course != null) {
+      sections.add((course: null, decks: <DeckEntry>[]));
     }
     sections.last.decks.add(entry);
   }

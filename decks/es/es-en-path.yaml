@@ -1,0 +1,11 @@
+# The order Spanish is taught from English in: the core vocabulary, then
+# the present tense of -ar verbs. Every es-en deck is listed exactly once.
+# See ADR-0013 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: es-en-path
+language: es
+native: en
+units:
+  - [es-en-core-100]
+  - [es-en-grammar-present-ar]

@@ -1,0 +1,23 @@
+# The order Telugu is taught from English in: one unit per line, a theme
+# deck and the grammar that goes with it. Every te-en deck is listed exactly
+# once. See ADR-0013 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: te-en-path
+language: te
+native: en
+units:
+  - [te-en-first-words, te-en-grammar-sentences]
+  - [te-en-questions, te-en-grammar-questions]
+  - [te-en-addressing, te-en-grammar-pronouns]
+  - [te-en-about-me]
+  - [te-en-numbers-1-20]
+  - [te-en-numbers-big]
+  - [te-en-market, te-en-grammar-nouns, te-en-grammar-articles]
+  - [te-en-groceries, te-en-grammar-gender-number]
+  - [te-en-transport, te-en-grammar-postpositions]
+  - [te-en-directions, te-en-grammar-continuous]
+  - [te-en-time, te-en-grammar-future]
+  - [te-en-calendar, te-en-grammar-past]
+  - [te-en-eating-out, te-en-grammar-conjunctions]
+  - [te-en-help, te-en-grammar-irregular, te-en-grammar-pitfalls]

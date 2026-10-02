@@ -44,8 +44,10 @@ SCRIPTS = {
     "kana", "han", "hangul", "thai", "other",
 }
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
-KINDS = {"vocab", "grammar", "facts", "themes", "numbers"}
+KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
+PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
+CODE_RE = re.compile(r"[a-z]{2,3}")
 MODES = {"recognition", "production", "listening", "grammar"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
 
@@ -113,6 +115,11 @@ class Report:
     # by language, and the words a number deck teaches.
     number_words: tuple[str, set[str]] | None = None
     number_taught: tuple[str, set[str]] | None = None
+    # For the course paths (#117, ADR-0013): the (language, native, id) of a
+    # vocab or grammar deck, and the (language, native, deck ids) a path
+    # file lists, in order.
+    course_deck: tuple[str, str, str] | None = None
+    course_path: tuple[str, str, list[str]] | None = None
 
     def error(self, where: str, msg: str) -> None:
         self.errors.append(f"{where}: {msg}")
@@ -450,6 +457,9 @@ def validate(path: Path) -> Report:
     if raw.get("kind") == "numbers":
         check_numbers_file(r, raw, path)
         return r
+    if raw.get("kind") == "path":
+        check_path_file(r, raw, path)
+        return r
 
     for unknown in sorted(set(raw) - HEADER_KEYS):
         r.error("root", f"unknown field {unknown!r}")
@@ -513,6 +523,7 @@ def validate(path: Path) -> Report:
         if not deck_id.startswith(prefix):
             r.error("id", f"must start with {prefix!r}, the language learned and then "
                           f"the language it is taught from, got {deck_id!r}")
+        r.course_deck = (lang["code"], native["code"], deck_id)
     script = lang.get("script") if isinstance(lang, dict) else "other"
     if script not in SCRIPTS:
         script = "other"
@@ -592,6 +603,48 @@ def check_themes_file(r: Report, raw: dict) -> None:
             r.error(where, f"theme {tid!r} needs a name")
         ids.append(tid)
     r.themes = ids
+
+
+def check_path_file(r: Report, raw: dict, path: Path) -> None:
+    """A course's curated path, decks/<lang>/<lang>-<native>-path.yaml: its
+    decks in teaching order, in units. See ADR-0013."""
+    for unknown in sorted(set(raw) - PATH_KEYS):
+        r.error("root", f"unknown field {unknown!r} in a path file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang, native = raw.get("language"), raw.get("native")
+    codes_ok = True
+    for key, value in (("language", lang), ("native", native)):
+        if not isinstance(value, str) or not CODE_RE.fullmatch(value):
+            r.error(key, f"must be a language code such as 'hi', {_code_error(value)}")
+            codes_ok = False
+    path_id = raw.get("id")
+    if path_id != path.stem:
+        r.error("id", f"is {path_id!r} but the filename stem is {path.stem!r}")
+    if codes_ok and path_id != f"{lang}-{native}-path":
+        r.error("id", f"a path for {lang} from {native} has id "
+                      f"{lang}-{native}-path, got {path_id!r}")
+    _check_optional_text(r, "root", raw, "description")
+    units = raw.get("units")
+    if not isinstance(units, list) or not units:
+        r.error("units", "must be a non-empty list")
+        return
+    listed: list[str] = []
+    for i, unit in enumerate(units):
+        where = f"units[{i}]"
+        if not isinstance(unit, list) or not unit:
+            r.error(where, "must be a non-empty list of deck ids")
+            continue
+        for deck in unit:
+            if not _is_str(deck) or not ID_RE.fullmatch(deck):
+                r.error(where, f"must list deck ids, got {deck!r}")
+            elif deck in listed:
+                r.error(where, f"deck {deck!r} is listed twice")
+            else:
+                listed.append(deck)
+    if codes_ok:
+        r.course_path = (lang, native, listed)
 
 
 NUMBERS_KEYS = {
@@ -714,6 +767,37 @@ def check_themes_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+def check_paths_across(reports: list[Report]) -> list[str]:
+    """A course has at most one path, which lists every deck of that course
+    exactly once, and only that course's decks."""
+    course_of = {rep.course_deck[2]: rep.course_deck[:2]
+                 for rep in reports if rep.course_deck is not None}
+    problems = []
+    seen: dict[tuple[str, str], Path] = {}
+    for rep in reports:
+        if rep.course_path is None:
+            continue
+        lang, native, listed = rep.course_path
+        course = (lang, native)
+        if course in seen:
+            problems.append(f"{rep.path}: {lang} from {native} already has a path, "
+                            f"{seen[course]}")
+            continue
+        seen[course] = rep.path
+        for deck in listed:
+            if deck not in course_of:
+                problems.append(f"{rep.path}: lists {deck!r}, which is not a deck")
+            elif course_of[deck] != course:
+                problems.append(f"{rep.path}: lists {deck!r}, which teaches "
+                                f"{course_of[deck][0]} from {course_of[deck][1]}")
+        missing = sorted(deck for deck, c in course_of.items()
+                         if c == course and deck not in listed)
+        for deck in missing:
+            problems.append(f"{rep.path}: does not list {deck!r}; every deck of "
+                            f"{lang} from {native} is on its path")
+    return problems
+
+
 def collect(target: Path) -> list[Path]:
     if target.is_file():
         return [target]
@@ -793,7 +877,8 @@ def main(argv: list[str]) -> int:
     unbundled = check_bundled(paths)
     for problem in unbundled:
         print(f"error: {problem}")
-    across = check_themes_across(reports) + check_numbers_across(reports)
+    across = (check_themes_across(reports) + check_numbers_across(reports)
+              + check_paths_across(reports))
     for problem in across:
         print(f"error: {problem}")
 

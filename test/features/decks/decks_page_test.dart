@@ -355,7 +355,9 @@ themes:
     await pumpDecks(tester, state: state);
     final l10n = l10nOf(tester);
 
-    expect(shownDecks(tester), <String>['hi-en-core', 'first-words', 'market']);
+    // The course's theme decks first, in theme order, then its other decks
+    // (#80), all under the one heading (#119).
+    expect(shownDecks(tester), <String>['first-words', 'market', 'hi-en-core']);
     expect(
       find.text(l10n.decksCourseHeading('Hindi', 'English')),
       findsOneWidget,
@@ -366,6 +368,45 @@ themes:
     expect(
       find.text(DeckTile.metaFor(l10n, state.deckById('hi-en-core')!)),
       findsOneWidget,
+    );
+  });
+
+  test('each course is one section, grammar decks included, with or '
+      'without a language chosen (#119)', () async {
+    final state = AppState.test();
+    await state.load();
+    String courseOf(DeckEntry e) => '${e.language.code}/${e.deck.native.code}';
+
+    for (final decks in <List<DeckEntry>>[
+      state.decks,
+      for (final language in state.languages)
+        [
+          for (final e in state.decks)
+            if (e.language.code == language.code) e,
+        ],
+    ]) {
+      final sections = courseSections(decks, state);
+      final headed = [
+        for (final section in sections)
+          if (section.course case final course?) courseOf(course),
+      ];
+      expect(headed.toSet(), hasLength(headed.length), reason: '$headed');
+      for (final section in sections) {
+        final course = section.course;
+        if (course == null) continue;
+        expect(section.decks.map((e) => e.id), [
+          for (final e in decks)
+            if (courseOf(e) == courseOf(course)) e.id,
+        ]);
+      }
+    }
+    final bengali = courseSections(
+      state.decks,
+      state,
+    ).singleWhere((s) => s.course?.language.code == 'bn');
+    expect(
+      bengali.decks.map((e) => e.id),
+      containsAll(<String>['bn-en-market', 'bn-en-grammar-nouns']),
     );
   });
 }
