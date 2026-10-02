@@ -21,8 +21,7 @@ class OnboardingStep {
     this.asks = false,
     this.skippable = false,
     this.action,
-    this.ready,
-    this.waiting,
+    this.blocked,
     this.marker,
   });
 
@@ -44,11 +43,10 @@ class OnboardingStep {
   /// step.
   final String Function(AppLocalizations l10n)? action;
 
-  /// Whether the main button is enabled. Null: always.
-  final bool Function(OnboardingAnswers answers)? ready;
-
-  /// Shown above the disabled button: why it is disabled.
-  final String Function(AppLocalizations l10n)? waiting;
+  /// Why the main button is disabled, shown above it, or null while it is
+  /// enabled. Null: always enabled.
+  final String? Function(OnboardingAnswers answers, AppLocalizations l10n)?
+  blocked;
 
   /// Drawn above the button on a step with pages: the tour's dots.
   final Widget Function(BuildContext context, int page)? marker;

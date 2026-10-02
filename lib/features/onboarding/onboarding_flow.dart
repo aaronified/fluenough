@@ -127,8 +127,13 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     _go(_step - 1, _leftOn[previous.id] ?? previous.pages - 1, forward: false);
   }
 
-  void _skip() {
-    if (!_leaving) _go(_step + 1, 0, forward: true);
+  /// [from] as for [_next]: a second tap before the next frame is ignored,
+  /// rather than skipping past the last step.
+  void _skip((int, int) from) {
+    if (_leaving || from != (_step, _page) || _step >= _steps.length - 1) {
+      return;
+    }
+    _go(_step + 1, 0, forward: true);
   }
 
   void _save() {
@@ -180,6 +185,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
         if (s.asks) s,
     ];
     final question = questions.indexOf(step);
+    final from = (_step, _page);
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 64),
       // 8 + the button's 12 px inset puts the arrow's stroke on the 24 px
@@ -209,7 +215,10 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                   : const SizedBox.shrink(),
             ),
             if (step.skippable && _page < step.pages - 1)
-              TextButton(onPressed: _skip, child: Text(l10n.onboardingSkip)),
+              TextButton(
+                onPressed: () => _skip(from),
+                child: Text(l10n.onboardingSkip),
+              ),
           ],
         ),
       ),
@@ -218,6 +227,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
 
   Widget _content(BuildContext context, bool still) {
     final step = _current;
+    final drawnFor = _step;
     final rtl = Directionality.of(context) == TextDirection.rtl;
     return AnimatedSwitcher(
       duration: still ? Duration.zero : Durations.medium2,
@@ -258,7 +268,13 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
             context,
             OnboardingPosition(
               page: _page,
-              onPage: (page) => setState(() => _page = page),
+              // A step on its way out may still be settling a swipe; its
+              // page is no longer the flow's.
+              onPage: (page) {
+                if (_step == drawnFor && !_leaving) {
+                  setState(() => _page = page);
+                }
+              },
               answers: _answers,
               choices: _choices,
               firstVisit: !_visited.contains(step.id),
@@ -282,8 +298,8 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     return ListenableBuilder(
       listenable: _answers,
       builder: (context, _) {
-        final ready = step.ready?.call(_answers) ?? true;
-        final waiting = ready ? null : step.waiting?.call(l10n);
+        final waiting = step.blocked?.call(_answers, l10n);
+        final ready = waiting == null;
         final Widget slot = switch ((step.marker, waiting)) {
           (final marker?, _) => Padding(
             padding: const EdgeInsetsDirectional.symmetric(vertical: 16),

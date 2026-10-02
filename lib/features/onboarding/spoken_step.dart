@@ -9,8 +9,8 @@ import 'onboarding_step.dart';
 final OnboardingStep spokenStep = OnboardingStep(
   id: 'spoken',
   asks: true,
-  ready: (answers) => answers.spoken.isNotEmpty,
-  waiting: (l10n) => l10n.onboardingSpokenNeedOne,
+  blocked: (answers, l10n) =>
+      answers.spoken.isEmpty ? l10n.onboardingSpokenNeedOne : null,
   content: (context, at) {
     final l10n = AppLocalizations.of(context)!;
     return SpokenLanguagesPicker(
@@ -33,7 +33,9 @@ final OnboardingStep spokenStep = OnboardingStep(
 );
 
 /// A question's title and what the answer is for, on the 24 px line. It
-/// scrolls with the answers, so large text never squeezes them out.
+/// scrolls with the answers. The title grows at most one and a half times,
+/// as Android's own scaling does for large type, so the first answers stay
+/// in view at the largest text size.
 class QuestionHeading extends StatelessWidget {
   const QuestionHeading({super.key, required this.title, required this.body});
 
@@ -51,7 +53,12 @@ class QuestionHeading extends StatelessWidget {
           Semantics(
             header: true,
             namesRoute: true,
-            child: Text(title, style: theme.textTheme.headlineMedium),
+            child: Text(
+              title,
+              style: theme.textTheme.headlineMedium,
+              textScaler: MediaQuery.textScalerOf(context)
+                  .clamp(maxScaleFactor: 1.5),
+            ),
           ),
           const SizedBox(height: 12),
           Text(
