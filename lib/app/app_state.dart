@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
+import '../core/data/course_path.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
@@ -9,7 +10,6 @@ import '../core/models/number_rules.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/tts/tts_engine.dart';
-import '../core/data/course_path.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
@@ -325,13 +325,14 @@ class AppState extends ChangeNotifier {
   /// Everyone practising on this phone. In memory until #3.
   List<Profile> get profiles => List<Profile>.unmodifiable(_profiles);
 
-  /// The profile practising now. The languages it learns are those its
-  /// settings name once the learner has chosen (#117), since profiles are
-  /// not stored yet (#3) and settings are.
+  /// The profile practising now. A profile with no languages of its own,
+  /// such as the default one, learns those its settings name once the
+  /// learner has chosen (#117): profiles are not stored yet (#3), and
+  /// settings are. A profile made with its own languages keeps them.
   Profile get currentProfile {
     final profile = profileById(_currentProfileId) ?? _profiles.first;
     final chosen = settings.learningLanguages;
-    return chosen.isEmpty
+    return chosen.isEmpty || profile.languages != null
         ? profile
         : profile.copyWith(languages: chosen.toSet());
   }
@@ -433,21 +434,11 @@ class AppState extends ChangeNotifier {
               if (ids.contains(entry.id)) entry,
           ];
     final tags = request.tags;
-    // Today, and "Learn 5 new", teach new cards only from the pending units,
-    // mixed; reviews come from every deck the profile learns (ADR-0013).
-    final pending = ids == null && !request.revise ? pendingUnits : null;
-    final pendingIds = <String>{
-      for (final unit in pending ?? const <List<DeckEntry>>[])
-        for (final entry in unit) entry.id,
-    };
-    final cards = <Card>[
-      for (final card in <Card>[
-        if (pending != null) ..._alternating(pending),
-        for (final entry in decks)
-          if (!pendingIds.contains(entry.id)) ...entry.cards,
-      ])
+    List<Card> tagged(Iterable<Card> cards) => <Card>[
+      for (final card in cards)
         if (tags.isEmpty || card.tags.any(tags.contains)) card,
     ];
+    final cards = tagged(<Card>[for (final entry in decks) ...entry.cards]);
 
     final skill = request.skill;
     final modes = skill == null
@@ -466,15 +457,19 @@ class AppState extends ChangeNotifier {
     if (requested != null && requested < newLimit) newLimit = requested;
 
     final voiced = <String, bool>{
-      for (final entry in decks) entry.id: hasVoice(entry.language),
+      for (final entry in this.decks) entry.id: hasVoice(entry.language),
     };
     final leeches = progress.leechEffects;
-    final queue = SessionQueue.build(
+    SessionQueue queueOf(
+      List<Card> cards, {
+      required int newCardLimit,
+      bool Function(Card card)? canIntroduce,
+    }) => SessionQueue.build(
       cards: cards,
       stateOf: (card, mode) => progress.stateOf(card.deckId, card.id, mode),
       hasVoice: (card) => voiced[card.deckId] ?? false,
       now: now(),
-      newCardLimit: newLimit,
+      newCardLimit: newCardLimit,
       isSetAside: (card, mode) => leeches.isSetAside((
         deckId: card.deckId,
         cardId: card.id,
@@ -482,10 +477,37 @@ class AppState extends ChangeNotifier {
       )),
       reviseAll: request.revise,
       modes: modes,
-      canIntroduce: pending == null
-          ? null
-          : (card) => pendingIds.contains(card.deckId),
+      canIntroduce: canIntroduce,
     );
+
+    // Today, and "Learn 5 new", teach new cards only from the pending units
+    // (ADR-0013): an equal share of the day's for each language, in a block
+    // of its own, each block mixing its course's two units. Reviews come
+    // from every deck the profile learns.
+    final SessionQueue queue;
+    if (ids == null && !request.revise) {
+      final byLanguage = <String, List<List<DeckEntry>>>{};
+      for (final unit in pendingUnits) {
+        (byLanguage[unit.first.language.code] ??= <List<DeckEntry>>[]).add(
+          unit,
+        );
+      }
+      final blocks = <List<SessionItem>>[
+        for (final units in byLanguage.values)
+          queueOf(
+            tagged(_alternating(units)),
+            newCardLimit: newLimit,
+            canIntroduce: (card) =>
+                units.any((unit) => unit.any((e) => e.id == card.deckId)),
+          ).fresh,
+      ];
+      queue = SessionQueue.of(
+        due: queueOf(cards, newCardLimit: 0).due,
+        fresh: SessionQueue.fairShares(blocks, newLimit),
+      );
+    } else {
+      queue = queueOf(cards, newCardLimit: newLimit);
+    }
     return request.newOnly ? queue.withoutDue() : queue;
   }
 

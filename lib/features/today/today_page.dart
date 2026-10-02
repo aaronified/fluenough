@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
 import '../../app/shell_tab.dart';
@@ -17,7 +18,8 @@ import 'due_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
 
-/// How many of the profile's decks Today lists; "See all" opens the rest.
+/// How many of the profile's decks Today lists, pending ones first; "See
+/// all" opens the rest.
 const int todayDeckCount = 3;
 
 /// Today: cards due by skill, Start review, the streak and week, and the profile's decks.
@@ -104,7 +106,14 @@ class _TodayContent extends StatelessWidget {
   }
 
   Widget _sections(BuildContext context) {
-    final decks = state.profileDecks.take(todayDeckCount).toList();
+    // The decks Today is teaching from first (ADR-0013), then the rest of
+    // the profile's not placed as known.
+    final pending = <DeckEntry>[for (final unit in state.pendingUnits) ...unit];
+    final decks = <DeckEntry>[
+      ...pending,
+      for (final entry in state.profileDecks)
+        if (!pending.contains(entry) && !state.isPlaced(entry)) entry,
+    ].take(todayDeckCount).toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[

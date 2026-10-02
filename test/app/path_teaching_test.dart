@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
@@ -125,6 +128,23 @@ void main() {
     expect(unitIds(state).first.first, 'hi-en-first-words');
   });
 
+  test('a deck finished inside a pending unit reads Done, its unit-mate '
+      'Pending', () async {
+    final state = learning(<String>['hi']);
+    addTearDown(state.dispose);
+    await state.load();
+    final sentences = state.deckById('hi-en-grammar-sentences')!;
+    while (state.notStudiedIn(sentences) > 0) {
+      for (final item
+          in state.buildSession(DrillRequest.learnAnyway(sentences.id)).items) {
+        state.record(item, 5);
+      }
+    }
+    expect(unitIds(state).first, contains(sentences.id));
+    expect(badgeOf(state, sentences.id), DeckBadgeKind.done);
+    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
+  });
+
   test('a finished unit is passed, and the next two are taught', () async {
     final state = learning(<String>[
       'hi',
@@ -220,5 +240,71 @@ void main() {
       <String>['hi-bn-c'],
       <String>['hi-bn-a'],
     ]);
+    // With the Bengali course nearly done, its last unit is all that is
+    // pending: the English course's decks are never pulled in.
+    state.settings.placedDecks = const <String>{'hi-bn-c', 'hi-bn-a'};
+    expect(unitIds(state), <List<String>>[
+      <String>['hi-bn-b'],
+    ]);
   });
+
+  test('a profile made with its own languages keeps them', () async {
+    final state = AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['hi'],
+      ),
+      profiles: const <Profile>[
+        Profile.defaultProfile,
+        Profile(id: 'mira', languages: <String>{'ja'}),
+      ],
+      currentProfileId: 'mira',
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    expect(state.currentProfile.learns('ja'), isTrue);
+    expect(state.currentProfile.learns('hi'), isFalse);
+    state.selectProfile(Profile.defaultProfile.id);
+    expect(state.currentProfile.learns('hi'), isTrue);
+    expect(state.currentProfile.learns('ja'), isFalse);
+  });
+
+  test(
+    'two languages share the day equally, each in a block of its own',
+    () async {
+      final state = learning(<String>['hi', 'bn']);
+      addTearDown(state.dispose);
+      await state.load();
+      final fresh = state.buildSession(const DrillRequest.today()).fresh;
+      expect(fresh, hasLength(20));
+      final languages = fresh.map(
+        (i) => state.deckById(i.card.deckId)!.language.code,
+      );
+      // Bengali comes first in the catalog, so its block does too.
+      expect(languages.take(10), everyElement('bn'));
+      expect(languages.skip(10), everyElement('hi'));
+
+      // A language with fewer new cards than its share passes the rest on.
+      final small = learning(
+        <String>['hi', 'ja'],
+        decks: MemoryDeckSource(<String, String>{
+          ...tinyCourse(),
+          'decks/ja/ja-en-hiragana.yaml': File('decks/ja/ja-en-hiragana.yaml')
+              .readAsStringSync(),
+          'decks/ja/ja-en-path.yaml': File('decks/ja/ja-en-path.yaml')
+              .readAsStringSync(),
+        }),
+      );
+      addTearDown(small.dispose);
+      await small.load();
+      final mixed = small.buildSession(const DrillRequest.today()).fresh;
+      expect(mixed, hasLength(20));
+      expect(
+        mixed
+            .where((i) => i.card.deckId.startsWith('hi-'))
+            .map((i) => i.card.deckId),
+        <String>['hi-en-a', 'hi-en-b'],
+      );
+    },
+  );
 }
