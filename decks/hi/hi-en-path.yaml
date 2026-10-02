@@ -1,0 +1,23 @@
+# The order Hindi is taught from English in: one unit per line, a theme
+# deck and the grammar that goes with it. Every hi-en deck is listed exactly
+# once. See ADR-0013 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: hi-en-path
+language: hi
+native: en
+units:
+  - [hi-en-first-words, hi-en-grammar-sentences]
+  - [hi-en-questions, hi-en-grammar-questions]
+  - [hi-en-addressing, hi-en-grammar-pronouns]
+  - [hi-en-about-me, hi-en-grammar-present, hi-en-grammar-possessives]
+  - [hi-en-numbers-1-20]
+  - [hi-en-numbers-big]
+  - [hi-en-market, hi-en-grammar-nouns, hi-en-grammar-articles]
+  - [hi-en-groceries, hi-en-grammar-adjectives]
+  - [hi-en-transport, hi-en-grammar-postpositions]
+  - [hi-en-directions, hi-en-grammar-continuous]
+  - [hi-en-time, hi-en-grammar-future]
+  - [hi-en-calendar, hi-en-grammar-past]
+  - [hi-en-eating-out, hi-en-grammar-conjunctions]
+  - [hi-en-help, hi-en-grammar-irregular, hi-en-grammar-pitfalls]

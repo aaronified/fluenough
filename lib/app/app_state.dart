@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
+import '../core/data/course_path.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
@@ -70,7 +71,13 @@ class AppState extends ChangeNotifier {
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
        _profiles = List<Profile>.of(profiles),
-       _currentProfileId = currentProfileId ?? profiles.first.id;
+       _currentProfileId = currentProfileId ?? profiles.first.id {
+    // What is pending follows progress, settings and this state's own
+    // changes: the catalog, voices and the profile.
+    for (final source in <Listenable>[this, this.settings, progress]) {
+      source.addListener(_forgetPending);
+    }
+  }
 
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, no voices unless [tts] has some, empty in-memory
@@ -99,8 +106,13 @@ class AppState extends ChangeNotifier {
       profiles: profiles,
       currentProfileId: currentProfileId,
     );
-    // Past the first-launch setup (#53), unless a test brings its own.
-    if (settings == null) state.settings.spokenLanguages = const <String>['en'];
+    // Past the first-launch setup (#53, #117), unless a test brings its
+    // own: speaking English, and learning every language.
+    if (settings == null) {
+      state.settings
+        ..spokenLanguages = const <String>['en']
+        ..learningChosen = true;
+    }
     return state;
   }
 
@@ -202,6 +214,9 @@ class AppState extends ChangeNotifier {
   }
 
   DeckEntry? deckById(String id) => _catalog.byId(id);
+
+  /// The path of [entry]'s course (ADR-0013), or null if it has none.
+  CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
 
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
@@ -315,8 +330,17 @@ class AppState extends ChangeNotifier {
   /// Everyone practising on this phone. In memory until #3.
   List<Profile> get profiles => List<Profile>.unmodifiable(_profiles);
 
-  Profile get currentProfile =>
-      profileById(_currentProfileId) ?? _profiles.first;
+  /// The profile practising now. A profile with no languages of its own,
+  /// such as the default one, learns those its settings name once the
+  /// learner has chosen (#117): profiles are not stored yet (#3), and
+  /// settings are. A profile made with its own languages keeps them.
+  Profile get currentProfile {
+    final profile = profileById(_currentProfileId) ?? _profiles.first;
+    final chosen = settings.learningLanguages;
+    return chosen.isEmpty || profile.languages != null
+        ? profile
+        : profile.copyWith(languages: chosen.toSet());
+  }
 
   Profile? profileById(String id) {
     for (final profile in _profiles) {
@@ -415,11 +439,11 @@ class AppState extends ChangeNotifier {
               if (ids.contains(entry.id)) entry,
           ];
     final tags = request.tags;
-    final cards = <Card>[
-      for (final entry in decks)
-        for (final card in entry.cards)
-          if (tags.isEmpty || card.tags.any(tags.contains)) card,
+    List<Card> tagged(Iterable<Card> cards) => <Card>[
+      for (final card in cards)
+        if (tags.isEmpty || card.tags.any(tags.contains)) card,
     ];
+    final cards = tagged(<Card>[for (final entry in decks) ...entry.cards]);
 
     final skill = request.skill;
     final modes = skill == null
@@ -438,15 +462,19 @@ class AppState extends ChangeNotifier {
     if (requested != null && requested < newLimit) newLimit = requested;
 
     final voiced = <String, bool>{
-      for (final entry in decks) entry.id: hasVoice(entry.language),
+      for (final entry in this.decks) entry.id: hasVoice(entry.language),
     };
     final leeches = progress.leechEffects;
-    final queue = SessionQueue.build(
+    SessionQueue queueOf(
+      List<Card> cards, {
+      required int newCardLimit,
+      bool Function(Card card)? canIntroduce,
+    }) => SessionQueue.build(
       cards: cards,
       stateOf: (card, mode) => progress.stateOf(card.deckId, card.id, mode),
       hasVoice: (card) => voiced[card.deckId] ?? false,
       now: now(),
-      newCardLimit: newLimit,
+      newCardLimit: newCardLimit,
       isSetAside: (card, mode) => leeches.isSetAside((
         deckId: card.deckId,
         cardId: card.id,
@@ -454,8 +482,127 @@ class AppState extends ChangeNotifier {
       )),
       reviseAll: request.revise,
       modes: modes,
+      canIntroduce: canIntroduce,
     );
+
+    // Today, and "Learn 5 new", teach new cards only from the pending units
+    // (ADR-0013): an equal share of the day's for each language, in a block
+    // of its own, each block mixing its course's two units. Reviews come
+    // from every deck the profile learns.
+    final SessionQueue queue;
+    if (ids == null && !request.revise) {
+      final byLanguage = <String, List<List<DeckEntry>>>{};
+      for (final unit in pendingUnits) {
+        (byLanguage[unit.first.language.code] ??= <List<DeckEntry>>[]).add(
+          unit,
+        );
+      }
+      final blocks = <List<SessionItem>>[
+        for (final units in byLanguage.values)
+          queueOf(
+            tagged(_alternating(units)),
+            newCardLimit: newLimit,
+            canIntroduce: (card) =>
+                units.any((unit) => unit.any((e) => e.id == card.deckId)),
+          ).fresh,
+      ];
+      queue = SessionQueue.of(
+        due: queueOf(cards, newCardLimit: 0).due,
+        fresh: SessionQueue.fairShares(blocks, newLimit),
+      );
+    } else {
+      queue = queueOf(cards, newCardLimit: newLimit);
+    }
     return request.newOnly ? queue.withoutDue() : queue;
+  }
+
+  // ---------------------------------------------------------------------------
+  // The path (#117, ADR-0013)
+
+  List<List<DeckEntry>>? _pendingUnits;
+
+  void _forgetPending() => _pendingUnits = null;
+
+  /// Whether placement found the learner already knows [entry]. It reads
+  /// Done and Today does not teach it, though it can still be studied.
+  bool isPlaced(DeckEntry entry) => settings.isPlaced(entry.id);
+
+  /// Whether the path is past [entry]: it is placed, this version can drill
+  /// nothing in it, or every card in it is learned in the skills on.
+  bool isFinished(DeckEntry entry) =>
+      isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0;
+
+  /// The units Today teaches new cards from: for each language the profile
+  /// learns, the first unit of its course's path that is not finished and
+  /// the one after it. The course is the one taught from the best-known
+  /// language the learner speaks, as [profileDecks] orders them. A course
+  /// without a path is taught as if each deck were a unit, in catalog order,
+  /// and a deck its path leaves out follows it as a unit of its own.
+  List<List<DeckEntry>> get pendingUnits => _pendingUnits ??= _findPending();
+
+  /// Whether [entry] is in one of the [pendingUnits].
+  bool isPending(DeckEntry entry) =>
+      pendingUnits.any((unit) => unit.any((e) => e.id == entry.id));
+
+  List<List<DeckEntry>> _findPending() {
+    final languages = <String>{
+      for (final entry in profileDecks) entry.language.code,
+    };
+    return List<List<DeckEntry>>.unmodifiable(<List<DeckEntry>>[
+      for (final code in languages)
+        ...courseUnits(code).where((unit) => !unit.every(isFinished)).take(2),
+    ]);
+  }
+
+  /// The units of [language]'s course, in teaching order: the course taught
+  /// from the best-known language the learner speaks that has one, else the
+  /// first in the catalog. Its path's units, or without a path each deck as
+  /// a unit, in catalog order; a deck its path leaves out follows as a unit
+  /// of its own. Empty if no deck teaches [language]. Whether the profile
+  /// learns it does not matter: placement asks before it does.
+  List<List<DeckEntry>> courseUnits(String language) {
+    final teaching = <DeckEntry>[
+      for (final entry in decks)
+        if (entry.language.code == language) entry,
+    ];
+    if (teaching.isEmpty) return const <List<DeckEntry>>[];
+    int rank(DeckEntry e) =>
+        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final native = teaching
+        .reduce((best, e) => rank(e) < rank(best) ? e : best)
+        .deck
+        .native
+        .code;
+    final course = <DeckEntry>[
+      for (final entry in teaching)
+        if (entry.deck.native.code == native) entry,
+    ];
+    final byId = <String, DeckEntry>{for (final e in course) e.id: e};
+    final path = pathOf(course.first);
+    return <List<DeckEntry>>[
+      if (path != null)
+        for (final unit in path.units)
+          if (<DeckEntry>[for (final id in unit) ?byId[id]] case final found
+              when found.isNotEmpty)
+            found,
+      for (final entry in course)
+        if (path?.unitOf(entry.id) == null) <DeckEntry>[entry],
+    ];
+  }
+
+  /// [units]' cards, one from each unit in turn, so that a day's new cards
+  /// mix the pending units rather than finishing one first.
+  static List<Card> _alternating(List<List<DeckEntry>> units) {
+    final queues = <List<Card>>[
+      for (final unit in units) <Card>[for (final e in unit) ...e.cards],
+    ];
+    final mixed = <Card>[];
+    for (var i = 0; queues.any((q) => i < q.length); i++) {
+      for (final queue in queues) {
+        if (i < queue.length) mixed.add(queue[i]);
+      }
+    }
+    return mixed;
   }
 
   /// Cards in [deck] with a pair never drilled, in every skill the learner
@@ -516,6 +663,8 @@ class AppState extends ChangeNotifier {
 
   @override
   void dispose() {
+    settings.removeListener(_forgetPending);
+    progress.removeListener(_forgetPending);
     shellTab.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();

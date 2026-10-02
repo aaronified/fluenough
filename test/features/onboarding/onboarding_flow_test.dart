@@ -12,6 +12,7 @@ import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/onboarding/onboarding_step.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
+import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/fluenough_mark.dart';
@@ -92,7 +93,7 @@ void main() {
     );
     expect(find.byType(WaveProgress), findsNothing, reason: 'one question');
     expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
-    final go = find.widgetWithText(FilledButton, l10n.onboardingFinish);
+    final go = find.widgetWithText(FilledButton, l10n.commonContinue);
     expect(tester.widget<FilledButton>(go).onPressed, isNull);
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
     await tester.pumpAndSettle();
@@ -102,7 +103,8 @@ void main() {
     await tester.tap(go);
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['hi']);
-    expect(find.byType(AppShell), findsOneWidget);
+    // Then what to learn (#117), before the app.
+    expect(find.byType(LearnLanguagesPage), findsOneWidget);
     expect(find.byType(OnboardingFlow), findsNothing);
     semantics.dispose();
   });
@@ -281,8 +283,8 @@ void main() {
     expect(title.textScaler!.scale(28), 42);
   });
 
-  testWidgets('with animations off, Start learning still saves and opens '
-      'Today', (tester) async {
+  testWidgets('with animations off, Continue still saves and asks what to '
+      'learn', (tester) async {
     tester.platformDispatcher.accessibilityFeaturesTestValue =
         const FakeAccessibilityFeatures(disableAnimations: true);
     addTearDown(tester.platformDispatcher.clearAccessibilityFeaturesTestValue);
@@ -294,11 +296,11 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
     await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.onboardingFinish));
+    await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     expect(settings.spokenLanguages, ['hi']);
-    expect(find.byType(AppShell), findsOneWidget);
+    expect(find.byType(LearnLanguagesPage), findsOneWidget);
   });
 
   testWidgets('with animations off, nothing moves', (tester) async {
@@ -396,7 +398,7 @@ void main() {
       findsOneWidget,
     );
     expect(settings.spokenLanguages, isEmpty);
-    await tester.tap(find.text(l10n.onboardingFinish));
+    await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['bn']);
   });

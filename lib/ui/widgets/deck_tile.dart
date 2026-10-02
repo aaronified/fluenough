@@ -58,12 +58,18 @@ enum DeckBadgeKind {
   /// deck never studied is not "due".
   due,
 
+  /// "Pending": nothing is due, and the deck is in a unit Today is teaching
+  /// new cards from, the current unit of its course's path or the next
+  /// (ADR-0013).
+  pending,
+
   /// "Not done": nothing is due, but some cards are not yet learned. A deck
   /// starts here, and stays here once the day's new cards are spent.
   notDone,
 
   /// "Done": every card learned, in every skill the learner has on, and
-  /// nothing due. The deck can still be revised.
+  /// nothing due, or placed as known (ADR-0013). The deck can still be
+  /// revised, or a placed one studied.
   done,
 
   /// "Feature incoming", for a deck this version cannot drill at all: one
@@ -86,9 +92,10 @@ class DeckBadge extends StatelessWidget {
 
   /// [entry]'s badge on the Decks tab and Today. A deck with nothing this
   /// version can drill is incoming. For a language the current profile
-  /// learns: the reviews due now; else Not done while any card is still to
-  /// learn, whatever today's new-card cap allows, or nothing is learned yet;
-  /// else Done. Otherwise Start.
+  /// learns: the reviews due now; else Done if placement placed it; else
+  /// Pending if Today is teaching its unit; else Not done while any card is
+  /// still to learn, whatever today's new-card cap allows, or nothing is
+  /// learned yet; else Done. Otherwise Start.
   factory DeckBadge.forEntry(AppState state, DeckEntry entry) {
     if (!state.canDrill(entry)) {
       return const DeckBadge(kind: DeckBadgeKind.incoming);
@@ -99,6 +106,12 @@ class DeckBadge extends StatelessWidget {
     final counts = state.countsFor(entry);
     if (counts.due > 0) {
       return DeckBadge(kind: DeckBadgeKind.due, count: counts.due);
+    }
+    if (state.isPlaced(entry)) {
+      return const DeckBadge(kind: DeckBadgeKind.done);
+    }
+    if (state.isPending(entry) && state.notStudiedIn(entry) > 0) {
+      return const DeckBadge(kind: DeckBadgeKind.pending);
     }
     // A deck with nothing learned is never Done, even when the skills on
     // leave nothing in it to drill.
@@ -121,6 +134,11 @@ class DeckBadge extends StatelessWidget {
         l10n.commonDueBadge(count),
         scheme.primary,
         scheme.onPrimary,
+      ),
+      DeckBadgeKind.pending => (
+        l10n.commonPendingBadge,
+        scheme.tertiaryContainer,
+        scheme.onTertiaryContainer,
       ),
       DeckBadgeKind.notDone => (
         l10n.commonNotDoneBadge,

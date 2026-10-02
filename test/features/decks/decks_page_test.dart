@@ -81,49 +81,48 @@ cards:
 });
 
 void main() {
-  testWidgets(
-    'lists every bundled deck, each Not done before anything is studied',
-    (tester) async {
-      useTallPhone(tester);
-      final state = await pumpDecks(tester);
-      final l10n = l10nOf(tester);
-      expect(state.decks, isNotEmpty);
-      // The grammar deck has cards (#2) and its drill (#14).
+  testWidgets('lists every bundled deck, each Pending or Not done before anything is '
+      'studied', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpDecks(tester);
+    final l10n = l10nOf(tester);
+    expect(state.decks, isNotEmpty);
+    // The grammar deck has cards (#2) and its drill (#14).
+    expect(state.canDrill(state.deckById('es-en-grammar-present-ar')!), isTrue);
+    expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
+    for (final entry in state.decks) {
+      final tile = tileOf(entry);
+      // A grammar deck has nothing to drill until its drill ships (#14): it is
+      // incoming, never Done. Nothing is studied yet, so every other deck is
+      // Pending, in the first two units of its course's path (ADR-0013), or
+      // Not done: never Done, and new cards are not "due".
+      final firstTwo = state.pathOf(entry)!.units.take(2).expand((u) => u);
+      final badge = !state.canDrill(entry)
+          ? l10n.incomingBadge
+          : firstTwo.contains(entry.id)
+          ? l10n.commonPendingBadge
+          : l10n.commonNotDoneBadge;
       expect(
-        state.canDrill(state.deckById('es-en-grammar-present-ar')!),
-        isTrue,
+        find.descendant(of: tile, matching: find.text(badge)),
+        findsOneWidget,
+        reason: entry.id,
       );
-      expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
-      for (final entry in state.decks) {
-        final tile = tileOf(entry);
-        // A grammar deck has nothing to drill until its drill ships (#14): it is
-        // incoming, never Done. Nothing is studied yet, so every other deck is
-        // Not done: never Done, and new cards are not "due".
-        final badge = !state.canDrill(entry)
-            ? l10n.incomingBadge
-            : l10n.commonNotDoneBadge;
-        expect(
-          find.descendant(of: tile, matching: find.text(badge)),
-          findsOneWidget,
-          reason: entry.id,
-        );
-        // A theme deck's line is its place on the path and its progress.
-        final theme = state.themeOf(entry);
-        final meta = theme == null
-            ? DeckTile.metaFor(l10n, entry)
-            : l10n.deckMetaTheme(
-                state.themes.indexOf(theme) + 1,
-                state.progress.learnedIn(entry.id),
-                entry.itemCount,
-              );
-        expect(
-          find.descendant(of: tile, matching: find.text(meta)),
-          findsOneWidget,
-          reason: entry.id,
-        );
-      }
-    },
-  );
+      // A theme deck's line is its place on the path and its progress.
+      final theme = state.themeOf(entry);
+      final meta = theme == null
+          ? DeckTile.metaFor(l10n, entry)
+          : l10n.deckMetaTheme(
+              state.themes.indexOf(theme) + 1,
+              state.progress.learnedIn(entry.id),
+              entry.itemCount,
+            );
+      expect(
+        find.descendant(of: tile, matching: find.text(meta)),
+        findsOneWidget,
+        reason: entry.id,
+      );
+    }
+  });
 
   testWidgets('number practice follows each big-numbers deck, and starts '
       'unrecorded practice (#54)', (tester) async {
@@ -232,8 +231,9 @@ void main() {
         badge.kind,
         !state.canDrill(entry)
             ? DeckBadgeKind.incoming
+            // Mira learns Japanese, whose one deck is its path's first unit.
             : entry.language.code == 'ja'
-            ? DeckBadgeKind.notDone
+            ? DeckBadgeKind.pending
             : DeckBadgeKind.start,
         reason: entry.id,
       );
@@ -355,7 +355,9 @@ themes:
     await pumpDecks(tester, state: state);
     final l10n = l10nOf(tester);
 
-    expect(shownDecks(tester), <String>['hi-en-core', 'first-words', 'market']);
+    // The course's theme decks first, in theme order, then its other decks
+    // (#80), all under the one heading (#119).
+    expect(shownDecks(tester), <String>['first-words', 'market', 'hi-en-core']);
     expect(
       find.text(l10n.decksCourseHeading('Hindi', 'English')),
       findsOneWidget,
@@ -366,6 +368,58 @@ themes:
     expect(
       find.text(DeckTile.metaFor(l10n, state.deckById('hi-en-core')!)),
       findsOneWidget,
+    );
+  });
+
+  test('each course is one section, grammar decks included, with or '
+      'without a language chosen (#119)', () async {
+    final state = AppState.test();
+    await state.load();
+    String courseOf(DeckEntry e) => '${e.language.code}/${e.deck.native.code}';
+
+    for (final decks in <List<DeckEntry>>[
+      state.decks,
+      for (final language in state.languages)
+        [
+          for (final e in state.decks)
+            if (e.language.code == language.code) e,
+        ],
+    ]) {
+      final sections = courseSections(decks, state);
+      final headed = [
+        for (final section in sections)
+          if (section.course case final course?) courseOf(course),
+      ];
+      expect(headed.toSet(), hasLength(headed.length), reason: '$headed');
+      for (final section in sections) {
+        final course = section.course;
+        if (course == null) continue;
+        expect(section.decks.map((e) => e.id), [
+          for (final e in decks)
+            if (courseOf(e) == courseOf(course)) e.id,
+        ]);
+      }
+    }
+    // A course's decks apart in the list still make one section, at the
+    // place of its first: grouped by course, not by neighbour.
+    final split = courseSections(<DeckEntry>[
+      state.deckById('hi-en-first-words')!,
+      state.deckById('ja-en-hiragana')!,
+      state.deckById('hi-en-grammar-nouns')!,
+    ], state);
+    expect(split.map((s) => s.course?.language.code), ['hi', null]);
+    expect(split.map((s) => [for (final e in s.decks) e.id]), [
+      ['hi-en-first-words', 'hi-en-grammar-nouns'],
+      ['ja-en-hiragana'],
+    ]);
+
+    final bengali = courseSections(
+      state.decks,
+      state,
+    ).singleWhere((s) => s.course?.language.code == 'bn');
+    expect(
+      bengali.decks.map((e) => e.id),
+      containsAll(<String>['bn-en-market', 'bn-en-grammar-nouns']),
     );
   });
 }

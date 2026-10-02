@@ -12,6 +12,7 @@ import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
+import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 
 import '../../support/harness.dart';
@@ -95,7 +96,7 @@ void main() {
 
     expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
     expect(find.byType(AppShell), findsNothing);
-    final go = find.widgetWithText(FilledButton, l10n.onboardingFinish);
+    final go = find.widgetWithText(FilledButton, l10n.commonContinue);
     expect(
       tester.widget<FilledButton>(go).onPressed,
       isNull,
@@ -124,7 +125,9 @@ void main() {
     await tester.tap(go);
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['bn', 'en']);
-    expect(find.byType(AppShell), findsOneWidget);
+    // Then what to learn (#117), before the app.
+    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(AppShell), findsNothing);
   });
 
   Future<void> openFromSettings(WidgetTester tester) async {

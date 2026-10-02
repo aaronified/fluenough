@@ -13,7 +13,8 @@ import 'spoken_step.dart';
 import 'tour_step.dart';
 import 'welcome_step.dart';
 
-/// The first launch, in order (#118). #117 adds its questions here.
+/// The first launch, in order (#118). What to learn and placement (#117)
+/// follow it as their own pages (`lib/app.dart`).
 final List<OnboardingStep> onboardingSteps = <OnboardingStep>[
   welcomeStep,
   tourStep,
@@ -24,7 +25,7 @@ final List<OnboardingStep> onboardingSteps = <OnboardingStep>[
 /// (`lib/app.dart`).
 ///
 /// One widget, never a pushed route: saving the answers swaps the home for
-/// the shell, and nothing may be left on the navigator above it. It draws
+/// the next page, and nothing may be left on the navigator above it. It draws
 /// the frame once — Back and Skip at the top, the button at the bottom —
 /// and only the content between them changes.
 class OnboardingFlow extends StatefulWidget {
@@ -138,7 +139,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
 
   void _save() {
     _answers.saveTo(AppScope.read(context));
-    // The app replaces this home with the shell on its next frame. Where
+    // The app replaces this home with the learn page on its next frame. Where
     // nothing replaces it — the gallery, a test — fade back in.
     if (mounted) setState(() => _leaving = false);
   }
@@ -293,7 +294,7 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
     final label =
         step.action?.call(l10n) ??
         (_step == _steps.length - 1
-            ? l10n.onboardingFinish
+            ? l10n.commonContinue
             : l10n.onboardingNext);
     return ListenableBuilder(
       listenable: _answers,

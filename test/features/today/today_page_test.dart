@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/session.dart';
@@ -115,6 +116,29 @@ void main() {
     expect(drill.request.newOnly, isFalse);
   });
 
+  testWidgets('a unit placed as known gives its place in Your decks to the '
+      'next one (ADR-0013)', (tester) async {
+    usePhone(tester);
+    final settings = SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: const <String>['hi'],
+      placedDecks: const <String>{
+        'hi-en-first-words',
+        'hi-en-grammar-sentences',
+      },
+    );
+    await pumpToday(tester, state: AppState.test(settings: settings));
+    final shown = <String>[
+      for (final tile in tester.widgetList<DeckTile>(find.byType(DeckTile)))
+        tile.entry.id,
+    ];
+    expect(shown, <String>[
+      'hi-en-questions',
+      'hi-en-grammar-questions',
+      'hi-en-addressing',
+    ]);
+  });
+
   testWidgets('See all switches the shell to the Decks tab', (tester) async {
     usePhone(tester);
     final state = await pumpApp(tester);
@@ -131,6 +155,8 @@ void main() {
     final tiles = find.byType(DeckTile);
     expect(tiles, findsNWidgets(state.profileDecks.length.clamp(0, 3)));
     final first = tester.widget<DeckTile>(tiles.first).entry;
+    // The decks Today is teaching from come first (ADR-0013).
+    expect(state.isPending(first), isTrue);
     await tapVisible(tester, tiles.first);
     expect(
       tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,

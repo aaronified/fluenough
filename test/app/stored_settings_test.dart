@@ -21,7 +21,10 @@ void changeAll(SettingsNotifier s) {
     ..highContrast = true
     ..cardTextScale = 1.2
     ..reminder = true
-    ..reminderTime = const TimeOfDay(hour: 7, minute: 5);
+    ..reminderTime = const TimeOfDay(hour: 7, minute: 5)
+    ..learningLanguages = const <String>['hi', 'bn']
+    ..placedDecks = const <String>{'hi-en-first-words', 'hi-en-questions'}
+    ..learningChosen = true;
 }
 
 void main() {
@@ -46,6 +49,8 @@ void main() {
         'card_text_scale': '9',
         'show_romanisation': 'maybe',
         'enabled_skills': 'recognition,unknown',
+        'learning_languages': 'hi,Hindi,,bn',
+        'placed_decks': 'hi-en-market,Not A Deck',
       });
     final defaults = SettingsNotifier();
     expect(s.newCardsPerDay, SettingsNotifier.maxNewCardsPerDay);
@@ -56,6 +61,8 @@ void main() {
     expect(s.cardTextScale, SettingsNotifier.maxCardTextScale);
     expect(s.showRomanisation, defaults.showRomanisation);
     expect(s.enabledSkills, {Skill.recognition});
+    expect(s.learningLanguages, ['hi', 'bn']);
+    expect(s.placedDecks, {'hi-en-market'});
   });
 
   test('settings persist across closing and reopening the database', () async {

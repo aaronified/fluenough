@@ -83,6 +83,7 @@ void main() {
         settings: SettingsNotifier(
           themeMode: ThemeMode.dark,
           spokenLanguages: const <String>['en'],
+          learningChosen: true,
         ),
       ),
     );

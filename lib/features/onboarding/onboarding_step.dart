@@ -11,7 +11,7 @@ import '../../l10n/app_localizations.dart';
 ///
 /// To add a step, define one in its own file and add it to
 /// `onboardingSteps`. A question (`asks: true`) gets "Next", Back, the
-/// question progress bar and "Start learning" when it is last, for free.
+/// question progress bar and "Continue" when it is last, for free.
 @immutable
 class OnboardingStep {
   const OnboardingStep({
@@ -39,8 +39,7 @@ class OnboardingStep {
   /// Shows Skip, which goes on to the next step, on every page but the last.
   final bool skippable;
 
-  /// The main button's label. Null: "Next", or "Start learning" on the last
-  /// step.
+  /// The main button's label. Null: "Next", or "Continue" on the last step.
   final String Function(AppLocalizations l10n)? action;
 
   /// Why the main button is disabled, shown above it, or null while it is
