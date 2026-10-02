@@ -87,8 +87,8 @@ class DeckBadge extends StatelessWidget {
   /// [entry]'s badge on the Decks tab and Today. A deck with nothing this
   /// version can drill is incoming. For a language the current profile
   /// learns: the reviews due now; else Not done while any card is still to
-  /// learn, whatever today's new-card cap allows; else Done. Otherwise
-  /// Start.
+  /// learn, whatever today's new-card cap allows, or nothing is learned yet;
+  /// else Done. Otherwise Start.
   factory DeckBadge.forEntry(AppState state, DeckEntry entry) {
     if (!state.canDrill(entry)) {
       return const DeckBadge(kind: DeckBadgeKind.incoming);
@@ -96,9 +96,13 @@ class DeckBadge extends StatelessWidget {
     if (!state.currentProfile.learns(entry.language.code)) {
       return const DeckBadge(kind: DeckBadgeKind.start);
     }
-    final due = state.countsFor(entry).due;
-    if (due > 0) return DeckBadge(kind: DeckBadgeKind.due, count: due);
-    return state.notStudiedIn(entry) > 0
+    final counts = state.countsFor(entry);
+    if (counts.due > 0) {
+      return DeckBadge(kind: DeckBadgeKind.due, count: counts.due);
+    }
+    // A deck with nothing learned is never Done, even when the skills on
+    // leave nothing in it to drill.
+    return state.notStudiedIn(entry) > 0 || counts.learned == 0
         ? const DeckBadge(kind: DeckBadgeKind.notDone)
         : const DeckBadge(kind: DeckBadgeKind.done);
   }
@@ -148,16 +152,20 @@ class DeckBadge extends StatelessWidget {
         horizontal: 10,
         vertical: 4,
       ),
-      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(14),
       ),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.labelLarge!
-            .copyWith(color: fg, fontWeight: FontWeight.w700),
+      // Sized to the text, not to whatever width the row allows.
+      child: Center(
+        widthFactor: 1,
+        heightFactor: 1,
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.labelLarge!
+              .copyWith(color: fg, fontWeight: FontWeight.w700),
+        ),
       ),
     );
   }

@@ -39,8 +39,8 @@ enum VoiceStatus {
 /// A deck's numbers, as its row and its detail screen show them.
 ///
 /// [due] and [fresh] are what a session on the deck would drill right now,
-/// in every skill the learner has on; [session] is the two together, which is
-/// what "Review all due" runs and a deck's badge counts.
+/// in every skill the learner has on; the two together are what "Review all
+/// due" runs. A deck's badge counts [due] only.
 typedef DeckCounts = ({int due, int fresh, int learned});
 
 /// Everything the interface reads and does, in one place (ADR-0007).

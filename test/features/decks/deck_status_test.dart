@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
@@ -5,6 +6,9 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
@@ -104,6 +108,76 @@ void main() {
     expect(badge.count, 2);
   });
 
+  test('a deck with reviews due and cards still to learn counts only the '
+      'due ones', () async {
+    final state = tinyState();
+    addTearDown(state.dispose);
+    await state.load();
+    final hola = state.deckById(tiny)!.cards.first;
+    for (final mode in <DrillMode>[
+      DrillMode.recognition,
+      DrillMode.production,
+    ]) {
+      state.record(SessionItem(card: hola, mode: mode, state: null), 5);
+    }
+    final later = tinyState(
+      progress: state.progress,
+      now: state.now().add(const Duration(days: 2)),
+    );
+    addTearDown(later.dispose);
+    await later.load();
+    final entry = later.deckById(tiny)!;
+    expect(later.countsFor(entry).fresh, 1, reason: 'adiós is still new');
+    final badge = DeckBadge.forEntry(later, entry);
+    expect(badge.kind, DeckBadgeKind.due);
+    expect(badge.count, 1);
+  });
+
+  test('a deck with nothing learned is Not done even when the skills on '
+      'leave nothing in it to drill', () async {
+    final settings = SettingsNotifier(spokenLanguages: const <String>['en'])
+      ..setSkillEnabled(Skill.recognition, false)
+      ..setSkillEnabled(Skill.production, false);
+    addTearDown(settings.dispose);
+    final state = tinyState(settings: settings);
+    addTearDown(state.dispose);
+    await state.load();
+    expect(state.notStudiedIn(state.deckById(tiny)!), 0);
+    expect(badgeOf(state, tiny), DeckBadgeKind.notDone);
+  });
+
+  testWidgets('a short badge is as wide as its text, not the row\'s cap', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = tinyState();
+    await pumpScreen(
+      tester,
+      Builder(
+        builder: (context) => Scaffold(
+          body: ListView(
+            children: <Widget>[
+              DeckTile(
+                entry: state.deckById(tiny)!,
+                badge: const DeckBadge(kind: DeckBadgeKind.done),
+              ),
+              DeckTile(
+                entry: state.deckById(tiny)!,
+                badge: const DeckBadge(kind: DeckBadgeKind.due, count: 3),
+              ),
+            ],
+          ),
+        ),
+      ),
+      state: state,
+    );
+    final badges = find.byType(DeckBadge);
+    expect(badges, findsNWidgets(2));
+    for (final badge in badges.evaluate()) {
+      expect(tester.getSize(find.byWidget(badge.widget)).width, lessThan(100));
+    }
+  });
+
   testWidgets('once the day\'s new cards are spent, a deck offers Learn '
       'anyway, and it starts', (tester) async {
     usePhone(tester);
@@ -120,6 +194,13 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(DrillPage), findsOneWidget);
     expect(find.text('hola'), findsOneWidget);
+
+    // Learning past the cap is recorded like any new card.
+    await tester.tap(find.text(l10n.drillShowAnswer));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.rateGood));
+    await tester.pumpAndSettle();
+    expect(state.progress.log, hasLength(1));
   });
 
   testWidgets('a finished deck offers Revise, and revising records nothing', (
@@ -148,5 +229,28 @@ void main() {
     await tester.pumpAndSettle();
     expect(state.progress.log, hasLength(logged));
     expect(state.progress.states, states);
+
+    // Ending part-way says so, rather than that answers were recorded.
+    await tester.tap(find.byTooltip(l10n.drillEndSession));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.drillEndBodyNotRecorded), findsOneWidget);
+    expect(find.text(l10n.drillEndBody), findsNothing);
+  });
+
+  testWidgets('a typed revision is titled with the deck too', (tester) async {
+    usePhone(tester);
+    final settings = SettingsNotifier(spokenLanguages: const <String>['en'])
+      ..setSkillEnabled(Skill.recognition, false);
+    addTearDown(settings.dispose);
+    final state = tinyState(settings: settings);
+    await state.load();
+    learnAll(state, tiny);
+    await pumpScreen(tester, const DeckDetailPage(deckId: tiny), state: state);
+    final l10n = l10nOf(tester);
+
+    await tester.tap(find.text(l10n.deckRevise(2)));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.drillShowAnswer), findsNothing, reason: 'typed');
+    expect(find.text('Tiny'), findsOneWidget);
   });
 }
