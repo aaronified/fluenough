@@ -159,9 +159,11 @@ contrasts:
     expect(hi('अच्छा', 'अछा'), 'gemination');
     final bengali = catalog.sounds['bn']!;
     expect(bengali.between('বর', 'বড়')?.id, 'flap');
+    expect(bengali.between('পরা', 'পড়া')?.id, 'flap');
+    expect(bengali.between('ঢ', 'ঢ়')?.id, 'flap');
     expect(bengali.between('কোন', 'কেন'), isNull);
-    // ঢ় and ড় are said alike: no contrast between them.
-    expect(bengali.between('আষাড়', 'আষাঢ়'), isNull);
+    // ঢ় is not said like ড়: as with ঢ and ড, the tongue goes further in.
+    expect(bengali.between('আষাড়', 'আষাঢ়')?.id, 'aspiration');
     final telugu = catalog.sounds['te']!;
     expect(telugu.between('పాలు', 'పలు')?.id, 'vowel-length');
     // Telugu says its final vowels, so a long one at the end counts.
