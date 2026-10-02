@@ -6,7 +6,9 @@ under `decks/<language-code>/`.
 Two kinds of deck exist: `vocab` (a list of cards) and `grammar` (a pattern
 table that expands into cards). A third kind of file, `facts`, holds a
 language's daily facts rather than anything drilled. All three share the same
-header.
+header. Beside them sit files that are not decks: the shared
+[themes](#themes), each language's [number rules](#number-rules), and each
+course's [path](#course-paths).
 
 Validate before committing:
 
@@ -25,7 +27,7 @@ Common to every kind.
 | `schema` | yes | Must be `1`. |
 | `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. |
 | `name` | yes | Human-readable title. |
-| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). |
+| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers` and `path`. |
 | `language` | yes | The language being learned. See below. |
 | `native` | yes, except on a facts file | The language explanations are written in. |
 | `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
@@ -201,11 +203,52 @@ language teaches the same themes in the same order, with its own words.
 - **One deck per theme per course.** The validator fails a second
   `hi-en` deck for `market`, and a `theme` that `themes.yaml` does not list.
 - **New cards follow the path.** A course's theme decks are drilled in the
-  file's order unless the learner picks a theme. Nothing is locked.
+  file's order unless the learner picks a theme. Nothing is locked. A
+  course with a [path](#course-paths) is ordered by that instead.
 - **Phrases are not typed.** Mark a card of more than one word `pos: phrase`:
   it gets recognition and listening, and no production drill, since a whole
   sentence is too hard to grade fairly.
-- **Grammar decks are not themes.** They stay separate from the path.
+- **Grammar decks are not themes.** A course's path places them beside the
+  theme decks they go with.
+
+## Course paths
+
+A course is taught along a curated path ([ADR-0013](adr/0013-course-paths.md)):
+its decks in teaching order, in **units**. `decks/hi/hi-en-path.yaml` is
+Hindi from English:
+
+```yaml
+schema: 1
+kind: path
+id: hi-en-path
+language: hi
+native: en
+units:
+  - [hi-en-first-words, hi-en-grammar-sentences]
+  - [hi-en-questions, hi-en-grammar-questions]
+  - [hi-en-addressing, hi-en-grammar-pronouns]
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `<language>-<native>-path`, and the filename stem. |
+| `language` | yes | The code of the language learned, such as `hi`. |
+| `native` | yes | The code of the language it is taught from, such as `en`. |
+| `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids. |
+| `description` | no | Free text. |
+
+- **A unit is what is taught together**: a theme deck and the grammar that
+  goes with it, or a script. Today takes new cards from the first unit not
+  yet finished and the one after it, and placement passes or places a unit
+  whole, so keep a unit to what a learner would take in together.
+- **Every deck of the course is on its path, exactly once,** and only the
+  course's decks. The validator fails a deck left out, one listed twice, one
+  from another course, and an id that is no deck. Adding a deck means adding
+  it to its course's path.
+- **One path per course.** A course with no path file is taught in its theme
+  order, and then its other decks.
+- **Order is a teaching decision.** Put a script first, before any deck
+  written in it, and grammar with the theme that first needs it.
 
 ## Facts files
 

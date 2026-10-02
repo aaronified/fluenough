@@ -113,6 +113,9 @@ pip install pyyaml        # the only dependency
    for vocabulary, [`decks/es/es-en-grammar-present-ar.yaml`](decks/es/es-en-grammar-present-ar.yaml)
    for a grammar pattern, [`decks/ja/ja-en-hiragana.yaml`](decks/ja/ja-en-hiragana.yaml)
    for a non-Latin script.
+4. Add it to its course's path, `decks/<language-code>/<language>-<native>-path.yaml`,
+   in the unit it is taught with. A new course needs a path of its own. See
+   "Course paths" in the format specification.
 
 Converting an existing wordlist:
 
