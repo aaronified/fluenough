@@ -37,6 +37,8 @@ abstract final class AppRoutes {
   /// The session summary. Argument: a [SessionResult].
   static const String summary = '/summary';
 
+  /// Leeches. Argument: a language code, a [String], for that language's
+  /// only; none for every language.
   static const String leeches = '/leeches';
   static const String appearance = '/appearance';
   static const String spokenLanguages = '/spoken-languages';
@@ -60,7 +62,7 @@ abstract final class AppRoutes {
       import => const ImportPage(),
       drill when args is DrillRequest => DrillPage(request: args),
       summary when args is SessionResult => SummaryPage(result: args),
-      leeches => const LeechesPage(),
+      leeches => LeechesPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
       spokenLanguages => const SpokenLanguagesPage(),
       voices => const VoicesPage(),
@@ -94,8 +96,9 @@ abstract final class AppNavigator {
       Navigator.of(context)
           .pushReplacementNamed(AppRoutes.summary, arguments: result);
 
-  static Future<void> openLeeches(BuildContext context) =>
-      Navigator.of(context).pushNamed(AppRoutes.leeches);
+  /// Leeches, in [language] only when given.
+  static Future<void> openLeeches(BuildContext context, {String? language}) =>
+      Navigator.of(context).pushNamed(AppRoutes.leeches, arguments: language);
 
   static Future<void> openAppearance(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.appearance);
