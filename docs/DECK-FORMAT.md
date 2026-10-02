@@ -27,7 +27,7 @@ Common to every kind.
 | `schema` | yes | Must be `1`. |
 | `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. |
 | `name` | yes | Human-readable title. |
-| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path` and `sounds`. |
+| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path`, `sounds` and `script`. |
 | `language` | yes | The language being learned. See below. |
 | `native` | yes, except on a facts file | The language explanations are written in. |
 | `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
@@ -299,6 +299,49 @@ Each contrast:
 | `name` | yes | Completes "The difference is …", in the learner's language. |
 | `pairs` | yes | A non-empty list of two different quoted strings, letters or signs, at most one of them empty (a sign there or not). |
 | `within_word` | no | `true`: a sign added or taken away counts only inside a word, for a language that drops a word's final vowel (Bengali, Hindi), where a vowel sign added at the end adds a syllable. Swaps always count. |
+
+## Script guides
+
+How a script works, before its letters ([ADR-0016](adr/0016-script-guides.md)):
+the features a learner from English misses because their own script has
+nothing like them. The drill shows the guide once, before a language's
+first script card. A script deck's Tips opens it again.
+`decks/bn/bn-script.yaml`:
+
+```yaml
+schema: 1
+kind: script
+id: bn-script
+language: bn
+name: "How Bengali script works"
+intro: "A few ideas come back in letter after letter."
+features:
+  - id: headline
+    name: "The headline"
+    term: "মাত্রা (matra)"
+    example: "ক"
+    text: "Most letters hang from a line along the top."
+    letters: ["ক", "খ", "গ"]
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `<language>-script`, and the filename stem. |
+| `language` | yes | The code of the language, which is also its folder. |
+| `name` | yes | The page's title. |
+| `intro` | yes | A paragraph before the features. |
+| `features` | yes | A non-empty list. |
+
+Each feature:
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `[a-z0-9-]+`, unique in the guide. |
+| `name` | yes | The feature in plain English. |
+| `term` | no | Its name in the language, with a reading: `"মাত্রা (matra)"`. |
+| `example` | yes | One letter or short word that shows it, drawn large. |
+| `text` | yes | What to look for, for a beginner from English. |
+| `letters` | no | More letters that share it, each quoted. |
 
 ## Facts files
 

@@ -212,6 +212,25 @@ class _Header extends StatelessWidget {
             const SizedBox(height: 12),
             UnreviewedNotice(entry: entry),
           ],
+          // How the script works (#30): Tips, as Duolingo's script pages
+          // have above their chart.
+          if (entry.isScript &&
+              AppScope.of(context).scriptGuideFor(language) !=
+                  null) ...<Widget>[
+            const SizedBox(height: 12),
+            OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+              ),
+              onPressed: () =>
+                  AppNavigator.openScriptGuide(context, language.code),
+              icon: const Icon(Icons.lightbulb_outline),
+              label: Text(
+                l10n.deckScriptTips(language.name),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
         ],
       ),
     );

@@ -843,6 +843,21 @@
   "@deckTurnOn": {
     "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
   },
+  "deckScriptTips": "Tips: how {language} script works",
+  "@deckScriptTips": {
+    "description": "Button on a script deck's page (#30): opens the guide to the script's recurring features, such as Bengali's headline.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "scriptGuideStart": "Start the letters",
+  "@scriptGuideStart": {
+    "description": "Button at the foot of a script's guide when it is shown before the first script card: goes on to the drill.",
+    "placeholders": {}
+  },
   "deckNoSpeech": "This phone can’t recognise {language} speech yet",
   "@deckNoSpeech": {
     "description": "Under Speaking when the phone's speech recogniser cannot hear the deck's language, or speaking has not been set up since launch. Set up opens Voices.",
