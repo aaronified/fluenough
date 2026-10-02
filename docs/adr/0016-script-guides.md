@@ -10,7 +10,7 @@ learner from English isn't any one letter. It's a few ideas that come
 back in letter after letter, and that feel obvious to a native reader
 because they've always been there. English has none of them. The
 maintainer named Bengali's examples: the headline (মাত্রা) most letters
-hang from, and the small knot (গুটলি) in ক, খ, ত, ল. Others are the
+hang from, and the small knot in ক, খ, ত, ল. Others are the
 vowel signs written before a letter but read after it, the ways two
 consonants join, and letters that differ by one dot.
 
