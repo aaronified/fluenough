@@ -74,6 +74,21 @@ void main() {
       expect(build([card('a')], newCardLimit: -3).isEmpty, isTrue);
     });
 
+    test('only the cards canIntroduce accepts give new pairs; any card can '
+        'be due (ADR-0013)', () {
+      final queue = SessionQueue.build(
+        cards: [card('a'), card('b'), card('c')],
+        stateOf: (c, m) =>
+            c.id == 'c' && m == DrillMode.recognition ? dueDaysAgo(1) : null,
+        hasVoice: (_) => true,
+        now: now,
+        newCardLimit: 20,
+        canIntroduce: (c) => c.id == 'b',
+      );
+      expect(ids(queue.fresh), ['b:recognition']);
+      expect(ids(queue.due), ['c:recognition']);
+    });
+
     test('the cap counts pairs: a card known by sight is new to type', () {
       final queue = build(
         [card('a')],

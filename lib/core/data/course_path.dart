@@ -7,9 +7,9 @@ import 'deck_parser.dart';
 /// Hindi from English, and has one path.
 ///
 /// A unit is what is taught together: a theme deck and the grammar that goes
-/// with it, or a script. ADR-0013 has Today take new cards from the first
-/// unfinished unit and the one after it, and placement pass or place a unit
-/// whole.
+/// with it, or a script. Today takes new cards from the first unfinished
+/// unit and the one after it (`AppState.pendingUnits`), and placement passes
+/// or places a unit whole (ADR-0013).
 class CoursePath {
   const CoursePath({
     required this.id,

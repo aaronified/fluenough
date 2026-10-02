@@ -196,7 +196,8 @@ void main() {
       expect(queue.items.every((i) => i.isNew), isTrue);
     });
 
-    test('new cards follow the theme path; a picked theme drills alone', () async {
+    test('new cards follow the theme path, two units at a time; a picked '
+        'theme drills alone', () async {
       String deck(String id, String theme) =>
           '''
 schema: 1
@@ -229,10 +230,13 @@ themes:
         settings: SettingsNotifier(newCardsPerDay: 2),
       );
       await state.load();
+      // Without a path each deck is a unit, in theme order; Today mixes the
+      // first two (ADR-0013), first words first.
       final today = state.buildSession(const DrillRequest.today());
-      expect(today.fresh.map((i) => i.card.deckId).toSet(), {
+      expect(today.fresh.map((i) => i.card.deckId), [
         'hi-en-first-words',
-      });
+        'hi-en-a-market',
+      ]);
       final picked = state.buildSession(DrillRequest.deck('hi-en-a-market'));
       expect(picked.items.map((i) => i.card.deckId).toSet(), {
         'hi-en-a-market',

@@ -86,6 +86,10 @@ class SessionQueue {
   /// With [reviseAll], every pair already reviewed counts as due, whatever
   /// its date: revising a finished deck. One mode per card still holds, the
   /// one due soonest.
+  ///
+  /// [canIntroduce], when given, limits new pairs to the cards it accepts:
+  /// Today teaches only a course's pending units (ADR-0013). Due reviews come
+  /// from every card. New pairs are taken in the order of [cards].
   factory SessionQueue.build({
     required Iterable<Card> cards,
     required StateLookup stateOf,
@@ -93,6 +97,7 @@ class SessionQueue {
     required DateTime now,
     required int newCardLimit,
     PairFilter? isSetAside,
+    bool Function(Card card)? canIntroduce,
     bool reviseAll = false,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
@@ -124,7 +129,9 @@ class SessionQueue {
       }
       if (mostOverdue != null) {
         due.add((item: mostOverdue, order: order++));
-      } else if (firstNew != null && newLeft > 0) {
+      } else if (firstNew != null &&
+          newLeft > 0 &&
+          (canIntroduce?.call(card) ?? true)) {
         fresh.add(firstNew);
         newLeft--;
       }
