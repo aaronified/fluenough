@@ -38,6 +38,7 @@ SoundContrasts parseSounds(String text, {required String source}) {
       throw bad('unknown field "${key.value}" in a sounds file', key);
     }
   }
+  if (root['schema'] != 1) throw bad('schema must be 1', root);
   final language = root['language'];
   if (language is! String || !RegExp(r'^[a-z]{2,3}$').hasMatch(language)) {
     throw bad('language must be a code such as "bn"', root);

@@ -52,12 +52,41 @@ void main() {
     test('within a word only: a vowel sign at the end adds a syllable', () {
       expect(between('কলা', 'কল'), isNull);
       expect(between('কল', 'কলা'), isNull);
+      // The end of any word, not just the last.
+      expect(between('আমি কলা খাই', 'আমি কল খাই'), isNull);
       // Swaps at the end still count; so does a nasal mark.
       expect(between('ভাব', 'ভাভ'), 'aspiration');
     });
 
     test('in a sentence, and with the full stop the recogniser leaves out', () {
       expect(between('আমি খাল যাব', 'আমি কাল যাব।'), 'aspiration');
+    });
+
+    test(
+      'an e said for an o is not an a added: letters are compared whole',
+      () {
+        // Taken apart, ো is ে and া.
+        expect(between('কোন', 'কেন'), isNull);
+        expect(between('কেন', 'কোন'), isNull);
+        expect(between('লোক', 'লেক'), isNull);
+        expect(between('মোটা', 'মেটা'), isNull);
+      },
+    );
+
+    test('a pair in the file matches however its letters are encoded', () {
+      final split = parseSounds('''
+schema: 1
+kind: sounds
+id: bn-sounds
+language: bn
+contrasts:
+  - id: flap
+    name: "the flapped r"
+    pairs: [["\u09A1", "\u09A1\u09BC"]]
+''', source: 'bn-sounds.yaml');
+      // ড় precomposed in the words, taken apart in the file.
+      expect(split.between('ব\u09DC', 'বড')?.id, 'flap');
+      expect(split.between('ব\u09A1\u09BC', 'বড')?.id, 'flap');
     });
 
     test('nothing for the same word, two changes, or another word', () {
@@ -90,6 +119,7 @@ void main() {
         bengali.replaceFirst('[["দ", "ড"]]', '[["", ""]]'),
         bengali.replaceFirst('within_word: true', 'within_word: 3'),
         bengali.replaceFirst('id: nasal', 'id: aspiration'),
+        bengali.replaceFirst('schema: 1', 'schema: 2'),
         '$bengali\nextra: 1\n',
       ]) {
         expect(
@@ -124,8 +154,18 @@ void main() {
     expect(hi('पक्का', 'पका'), 'gemination');
     expect(hi('बच्चा', 'बचा'), 'gemination');
     expect(hi('हैं', 'है'), 'nasal');
+    expect(hi('पढ़ना', 'पड़ना'), 'aspiration');
+    expect(hi('सरक', 'सड़क'), 'flap');
+    expect(hi('अच्छा', 'अछा'), 'gemination');
+    final bengali = catalog.sounds['bn']!;
+    expect(bengali.between('বর', 'বড়')?.id, 'flap');
+    expect(bengali.between('কোন', 'কেন'), isNull);
+    // ঢ় and ড় are said alike: no contrast between them.
+    expect(bengali.between('আষাড়', 'আষাঢ়'), isNull);
     final telugu = catalog.sounds['te']!;
     expect(telugu.between('పాలు', 'పలు')?.id, 'vowel-length');
+    // Telugu says its final vowels, so a long one at the end counts.
+    expect(telugu.between('అమ్మా', 'అమ్మ')?.id, 'vowel-length');
     expect(telugu.between('పాట', 'పాత')?.id, 'dental-retroflex');
     expect(telugu.between('కళ', 'కల')?.id, 'lateral');
     expect(telugu.between('అక్క', 'అక')?.id, 'gemination');

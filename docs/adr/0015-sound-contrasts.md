@@ -31,6 +31,11 @@ shared with the minimal-pair drill (#31).
 - **A sign added or taken away can be limited to inside a word**
   (`within_word`). Adding a vowel sign at the end of a word adds a
   syllable, which isn't the same contrast.
+- **Letters are compared whole.** The grader's spelling normaliser takes
+  some letters apart: Bengali ো becomes ে and া, and ড় becomes ড and a
+  nukta. Taken apart, an e said for an o would look like an a added. So
+  the check puts them back together first, both the words and the file's
+  pairs.
 - **Contrast ids are the tags** a language's sound-differences deck puts
   on its minimal pairs. That way the minimal-pair drill can find a
   contrast's pairs by tag.
