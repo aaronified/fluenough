@@ -153,7 +153,7 @@ class _Example extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            TargetText(
+            TargetText.card(
               example.target,
               language: language,
               fontSize: 16,
