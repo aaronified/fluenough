@@ -7,6 +7,8 @@ import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
@@ -257,21 +259,99 @@ void main() {
       'guidelines', (tester) async {
     usePhone(tester);
     final handle = tester.ensureSemantics();
-    for (final page in <Widget>[
-      const LearnLanguagesPage(firstRun: true),
-      PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
-      PlacementPage(
-        languages: const <String>['hi'],
-        onFinished: (_) {},
-        random: Random(1),
-        checking: true,
-      ),
-    ]) {
-      await pumpScreen(tester, KeyedSubtree(key: UniqueKey(), child: page));
-      await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-      await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-      await expectLater(tester, meetsGuideline(textContrastGuideline));
+    for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+      for (final page in <Widget>[
+        const LearnLanguagesPage(firstRun: true),
+        PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
+        PlacementPage(
+          languages: const <String>['hi'],
+          onFinished: (_) {},
+          random: Random(1),
+          checking: true,
+        ),
+      ]) {
+        await pumpScreen(
+          tester,
+          KeyedSubtree(key: UniqueKey(), child: page),
+          themeMode: mode,
+        );
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(textContrastGuideline));
+      }
     }
     handle.dispose();
+  });
+
+  testWidgets('for a profile made with its own languages, Settings shows and '
+      'changes those', (tester) async {
+    usePhone(tester);
+    final state = await pumpApp(
+      tester,
+      state: AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+        ),
+        profiles: const <Profile>[
+          Profile.defaultProfile,
+          Profile(id: 'mira', name: 'Mira', languages: <String>{'ja'}),
+        ],
+        currentProfileId: 'mira',
+      ),
+    );
+    final l10n = l10nOf(tester);
+    final japanese = nameOf(state, 'ja');
+    final hindi = nameOf(state, 'hi');
+    await tapText(tester, l10n.navSettings);
+    await tapText(tester, l10n.settingsLearn);
+    bool ticked(String name) => tester
+        .widget<CheckboxListTile>(find.widgetWithText(CheckboxListTile, name))
+        .value!;
+    expect(ticked(japanese), isTrue);
+    expect(ticked(hindi), isFalse);
+
+    await tapText(tester, hindi);
+    await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.placementNew(hindi));
+    await tapText(tester, l10n.placementDone);
+    expect(state.currentProfile.languages, <String>{'hi', 'ja'});
+    expect(state.settings.learningLanguages, isEmpty);
+  });
+
+  testWidgets('the result names where Today will start, past units already '
+      'studied', (tester) async {
+    usePhone(tester);
+    final state = AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['bn'],
+        learningChosen: true,
+      ),
+    );
+    addTearDown(state.dispose);
+    await state.load();
+    final units = state.courseUnits('hi');
+    // An install from before #117, with Hindi's first unit studied.
+    for (final entry in units.first) {
+      while (state.notStudiedIn(entry) > 0) {
+        for (final item
+            in state.buildSession(DrillRequest.learnAnyway(entry.id)).items) {
+          state.record(item, 5);
+        }
+      }
+    }
+    await pumpApp(tester, state: state);
+    final l10n = l10nOf(tester);
+    final hindi = nameOf(state, 'hi');
+    await tapText(tester, l10n.navSettings);
+    await tapText(tester, l10n.settingsLearn);
+    await tapText(tester, hindi);
+    await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.placementNew(hindi));
+    expect(
+      find.text(l10n.placementResultContinue(hindi, units[1].first.deck.name)),
+      findsOneWidget,
+    );
   });
 }

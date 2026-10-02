@@ -357,6 +357,20 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the languages the current profile learns (#117): its own, if it
+  /// was made with some, else the setting a profile without its own follows.
+  void setLearningLanguages(List<String> codes) {
+    final i = _profiles.indexWhere((p) => p.id == _currentProfileId);
+    final at = i < 0 ? 0 : i;
+    final profile = _profiles[at];
+    if (profile.languages == null) {
+      settings.learningLanguages = codes;
+      return;
+    }
+    _profiles[at] = profile.copyWith(languages: codes.toSet());
+    notifyListeners();
+  }
+
   /// Adds a profile and returns it. It does not become current; call
   /// [selectProfile] for that.
   Profile createProfile({
