@@ -5,7 +5,7 @@ kind: vocab
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Every consonant, each carrying its vowel o, then the dotted letters and the three marks for nasals and breath."
+description: "Every consonant, each carrying its vowel o, then the dotted letters and the three marks for nasals and breath, on ক."
 tags: [beginner, unreviewed, script]
 cards:
   - id: bn-en-script-consonants-0001
@@ -82,7 +82,8 @@ cards:
     target: "ণ"
     native: "n (murdhonyo no)"
     reading: "no"
-    notes: "Sounds just like ন today: murdhonyo means 'curled back', as it once was. It is a spelling, mostly in words from Sanskrit: কারণ (karon, reason)."
+    modes: [recognition, production]
+    notes: "Sounds just like ন today: murdhonyo means 'curled back', as it once was. It is a spelling, mostly in words from Sanskrit: কারণ (karon, reason). It sounds just like ন, so it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-en-script-consonants-0016
     target: "ত"
     native: "t, on the teeth (to)"
@@ -137,7 +138,8 @@ cards:
     target: "য"
     native: "j (ontostho jo)"
     reading: "jo"
-    notes: "At the start of a word it sounds just like জ: যাওয়া (jaowa, to go). After another consonant it is written as the y-sign (য-ফলা), as in ব্য."
+    modes: [recognition, production]
+    notes: "At the start of a word it sounds just like জ: যাওয়া (jaowa, to go). After another consonant it is written as the y-sign (য-ফলা), as in ব্য. It sounds just like জ, so it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-en-script-consonants-0027
     target: "র"
     native: "r (ro)"
@@ -157,12 +159,14 @@ cards:
     target: "ষ"
     native: "sh (murdhonyo sho)"
     reading: "sho"
-    notes: "Sounds just like শ, 'sh'. It is a spelling, mostly in words from Sanskrit: ভাষা (bhasha, language)."
+    modes: [recognition, production]
+    notes: "Sounds just like শ, 'sh'. It is a spelling, mostly in words from Sanskrit: ভাষা (bhasha, language). It sounds just like শ, so it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-en-script-consonants-0031
     target: "স"
     native: "sh or s (dontyo sho)"
     reading: "sho"
-    notes: "Usually 'sh' too: সে (she, he; she). It is said 's' before t, th, n, r and l, as in আস্তে (aste, slowly), and in many English words."
+    modes: [recognition, production]
+    notes: "Usually 'sh' too: সে (she, he; she). It is said 's' before t, th, n, r and l, as in আস্তে (aste, slowly), and in many English words. It sounds just like শ in most words, so it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-en-script-consonants-0032
     target: "হ"
     native: "h (ho)"
@@ -177,7 +181,8 @@ cards:
     target: "ঢ়"
     native: "rh, flapped, with a breath (ঢ-e shunyo ro)"
     reading: "rho"
-    notes: "ঢ with a dot below. Most speakers say it like ড়. It is rare: আষাঢ় (asharh, a month of the rains)."
+    modes: [recognition, production]
+    notes: "ঢ with a dot below. Most speakers say it like ড়. It is rare: আষাঢ় (asharh, a month of the rains). It sounds just like ড়, so it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-en-script-consonants-0035
     target: "য়"
     native: "y (ontostho yo)"
@@ -189,17 +194,20 @@ cards:
     reading: "t"
     notes: "A t that ends a syllable with no vowel after it: হঠাৎ (hothat, suddenly)."
   - id: bn-en-script-consonants-0037
-    target: "ং"
-    native: "ng after a vowel (onusshar)"
-    reading: "ng"
-    notes: "Written after a vowel and said 'ng': বাংলা (bangla, Bengali)."
+    target: "কং"
+    native: "ng after a vowel (onusshar), on ক"
+    reading: "kong"
+    modes: [recognition, production]
+    notes: "ং (onusshar) after a vowel is said 'ng': কং is 'kong', as in বাংলা (bangla, Bengali). A mark rather than a sound of its own, so it is drilled by reading and writing only."
   - id: bn-en-script-consonants-0038
-    target: "ঃ"
-    native: "the breath mark (bishorgo)"
-    reading: "h"
-    notes: "Rare. Inside a word it usually doubles the next consonant: দুঃখ (dukkho, sorrow)."
+    target: "কঃ"
+    native: "the breath mark (bishorgo), on ক"
+    reading: "koh"
+    modes: [recognition, production]
+    notes: "ঃ (bishorgo) is rare. Inside a word it usually doubles the next consonant: দুঃখ (dukkho, sorrow). A mark rather than a sound of its own, so it is drilled by reading and writing only."
   - id: bn-en-script-consonants-0039
-    target: "ঁ"
-    native: "nasal vowel mark (chondrobindu)"
-    reading: "n"
-    notes: "The moon-and-dot above a letter makes its vowel nasal, said through the nose as well: বাঁ (ban, left). With it or without it are different words: বাধা (badha, obstacle), বাঁধা (bandha, tied)."
+    target: "কাঁ"
+    native: "nasal vowel mark (chondrobindu), on কা"
+    reading: "kan"
+    modes: [recognition, production]
+    notes: "ঁ (chondrobindu) above a letter makes its vowel nasal, said through the nose as well: কাঁ is 'kan', as in কাঁদা (kanda, to cry). With it or without it are different words: বাধা (badha, obstacle), বাঁধা (bandha, tied). A mark rather than a sound of its own, so it is drilled by reading and writing only."
