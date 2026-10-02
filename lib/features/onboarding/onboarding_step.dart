@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../app/app_state.dart';
+import '../../app/skill.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -93,9 +94,30 @@ class OnboardingAnswers extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// What the sound check found (#89): whether speaking and listening
+  /// work on this phone. Null for one not checked, which leaves its switch
+  /// as it is.
+  bool? get canSpeak => _canSpeak;
+  bool? get canHear => _canHear;
+  bool? _canSpeak;
+  bool? _canHear;
+
+  void soundChecked({bool? speaking, bool? listening}) {
+    if (speaking == _canSpeak && listening == _canHear) return;
+    _canSpeak = speaking;
+    _canHear = listening;
+    notifyListeners();
+  }
+
   /// Writes every answer. The spoken languages go last: saving them is what
   /// ends the first launch (`lib/app.dart`), so nothing may follow them.
   void saveTo(AppState state) {
+    if (_canSpeak case final on?) {
+      state.settings.setSkillEnabled(Skill.speaking, on);
+    }
+    if (_canHear case final on?) {
+      state.settings.setSkillEnabled(Skill.listening, on);
+    }
     state.settings.spokenLanguages = _spoken;
   }
 }
