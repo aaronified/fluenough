@@ -152,7 +152,12 @@ class AnswerGrader {
   String _normalise(String input) {
     var text = canonical(input).trim().toLowerCase();
     text = text.replaceAll(RegExp(r'\s+'), ' ');
-    text = text.replaceAll(RegExp(r'''^[¿¡"'(\[]+|[.,!?;:"')\]]+$'''), '');
+    // The danda । and ॥ end Bengali and Hindi sentences; the full-width
+    // marks end Japanese ones. A recogniser writes none of them (#130).
+    text = text.replaceAll(
+      RegExp(r'''^[¿¡"'(\[]+|[.,!?;:"')\]।॥。．，！？；：]+$'''),
+      '',
+    );
     return text.trim();
   }
 

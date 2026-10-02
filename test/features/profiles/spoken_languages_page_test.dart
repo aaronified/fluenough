@@ -87,11 +87,13 @@ void main() {
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
 
-    // The welcome, then straight past the tour.
+    // The welcome, then straight past the tour and the sound check.
     expect(find.text(l10n.appTitle), findsOneWidget);
     await tester.tap(find.text(l10n.onboardingStart));
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.onboardingSkip));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.onboardingNext));
     await tester.pumpAndSettle();
 
     expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);

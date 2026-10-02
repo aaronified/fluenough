@@ -8,7 +8,9 @@ import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/grading/answer_grader.dart';
 import '../../core/grading/self_grade.dart';
+import '../../core/models/card.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/speech/speech_engine.dart';
@@ -35,6 +37,8 @@ class TypedAnswer {
     required this.typed,
     required this.graded,
     required this.grade,
+    this.contrast,
+    this.heardCard,
   });
 
   /// What the learner typed; empty after "Don't know".
@@ -46,6 +50,13 @@ class TypedAnswer {
   /// The SM-2 grade recorded, or null while a near miss waits for the
   /// learner's judgement.
   final int? grade;
+
+  /// For a spoken answer that was wrong: the sound contrast the word heard
+  /// differs from the answer by, if one does (#89, ADR-0015).
+  final SoundContrast? contrast;
+
+  /// The card whose target is the word heard instead, to say what it means.
+  final Card? heardCard;
 
   bool get gaveUp => graded == null;
 
@@ -378,8 +389,30 @@ class DrillSession extends ChangeNotifier {
       }
     }
     final grade = graded.outcome.toSm2Grade();
+    // A wrong word that is the answer with one sound changed: the feedback
+    // names the sound (ADR-0014's rule: only a slip that changes the word).
+    SoundContrast? contrast;
+    Card? heardCard;
+    if (!graded.outcome.isCorrect) {
+      final sounds = _state.soundsFor(deck.language);
+      if (sounds != null) {
+        for (final answer in accepted) {
+          contrast = sounds.between(said.text, answer);
+          if (contrast != null) break;
+        }
+        if (contrast != null) {
+          heardCard = _state.cardSaying(deck.language, said.text);
+        }
+      }
+    }
     _unheard = null;
-    _answer = TypedAnswer(typed: said.text, graded: graded, grade: grade);
+    _answer = TypedAnswer(
+      typed: said.text,
+      graded: graded,
+      grade: grade,
+      contrast: contrast,
+      heardCard: heardCard,
+    );
     _record(grade, answerGiven: said.text);
     _phase = DrillPhase.feedback;
     notifyListeners();
@@ -414,13 +447,38 @@ class DrillSession extends ChangeNotifier {
     _answers.add(SessionAnswer(skill: skill, grade: grade));
   }
 
-  /// Whether [item] can still be drilled: not a speaking card in a language
-  /// found, since the session was built, not to be heard at all, or one
-  /// whose online question the learner declined and has not since allowed.
+  // ---------------------------------------------------------------------------
+  // Can't speak now, can't listen now (#89)
+
+  /// "Can't speak now" or "Can't listen now": the current card's skill is
+  /// not for the rest of this session, in its language only when
+  /// [onlyLanguage] is set. The card, and every later one the choice
+  /// reaches, is skipped unrecorded. What it means beyond the session (a
+  /// pause, or switching the skill off) is the caller's, in the settings.
+  void skipSkill({String? onlyLanguage}) {
+    if (_phase != DrillPhase.prompt) return;
+    if (_hearing) _state.stopListening();
+    _hearing = false;
+    _notNow.add((skill, onlyLanguage));
+    _advance();
+  }
+
+  final Set<(Skill, String?)> _notNow = <(Skill, String?)>{};
+
+  /// Whether [item] can still be drilled: not set aside on this drill, its
+  /// skill not paused since the session was built, and not a speaking card
+  /// in a language found not to be heard at all, or whose online question
+  /// the learner declined and has not since allowed.
   bool _drillable(SessionItem item) {
-    if (item.mode != DrillMode.speaking) return true;
+    final itemSkill = Skill.of(item.mode);
     final language = _state.deckOf(item.card)?.language;
-    if (language == null) return true;
+    final code = language?.code;
+    if (_notNow.contains((itemSkill, null)) ||
+        _notNow.contains((itemSkill, code))) {
+      return false;
+    }
+    if (_state.settings.isPaused(itemSkill, _state.now())) return false;
+    if (item.mode != DrillMode.speaking || language == null) return true;
     return switch (_state.speechStatus(language)) {
       SpeechStatus.missing => false,
       SpeechStatus.onlineOnly => !_declinedOnline.contains(language.code),

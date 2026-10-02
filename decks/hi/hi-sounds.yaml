@@ -1,0 +1,28 @@
+# Hindi's sound contrasts: pairs of letters or signs that change a word,
+# for the speaking drill's feedback (#89) and the minimal-pair drill (#31).
+# Each id is the tag the language's sound-differences deck uses. See
+# ADR-0015 and docs/DECK-FORMAT.md.
+schema: 1
+kind: sounds
+id: hi-sounds
+language: hi
+contrasts:
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["क", "ख"], ["ग", "घ"], ["च", "छ"], ["ज", "झ"], ["ट", "ठ"], ["ड", "ढ"], ["त", "थ"], ["द", "ध"], ["प", "फ"], ["ब", "भ"], ["ड़", "ढ़"]]
+  - id: dental-retroflex
+    name: "the tongue on the teeth or curled back"
+    pairs: [["त", "ट"], ["थ", "ठ"], ["द", "ड"], ["ध", "ढ"]]
+  - id: vowel-length
+    name: "a short or a long vowel"
+    within_word: true
+    pairs: [["", "ा"], ["ि", "ी"], ["ु", "ू"], ["अ", "आ"], ["इ", "ई"], ["उ", "ऊ"]]
+  - id: gemination
+    name: "a single or a double consonant"
+    pairs: [["क", "क्क"], ["ख", "क्ख"], ["ग", "ग्ग"], ["च", "च्च"], ["छ", "च्छ"], ["ज", "ज्ज"], ["ट", "ट्ट"], ["ठ", "ट्ठ"], ["ड", "ड्ड"], ["त", "त्त"], ["थ", "त्थ"], ["द", "द्द"], ["ध", "द्ध"], ["न", "न्न"], ["प", "प्प"], ["ब", "ब्ब"], ["म", "म्म"], ["ल", "ल्ल"]]
+  - id: nasal
+    name: "a nasal sound (the dot or the moon above)"
+    pairs: [["", "ं"], ["", "ँ"]]
+  - id: flap
+    name: "the flapped r (ड़) against d or r"
+    pairs: [["ड", "ड़"], ["ढ", "ढ़"], ["ड़", "र"]]

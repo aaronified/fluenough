@@ -76,6 +76,7 @@ and why Waydroid cannot test audio, is in
 | `lib/core/scheduling/` | SM-2. Pure functions | low |
 | `lib/core/grading/` | Answer comparison | low |
 | `lib/core/tts/` | `TtsEngine` + system implementation | low |
+| `lib/core/speech/`, `lib/core/sound/` | `SpeechEngine`, `SoundCheckEngine` + system implementations | low |
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
@@ -128,7 +129,8 @@ native: "no"      # correct
 from Flutter.
 
 That is what keeps them testable in milliseconds with no device or emulator.
-`lib/core/tts` is exempt — it wraps a platform plugin by definition.
+`lib/core/tts`, `lib/core/speech` and `lib/core/sound` are exempt — they
+wrap platform plugins by definition.
 
 If you find yourself wanting `BuildContext` in the scheduler, the logic belongs
 in the feature layer instead.

@@ -8,8 +8,10 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
+import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
+import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/tts_engine.dart';
 import '../core/data/themes.dart';
@@ -99,6 +101,7 @@ class AppState extends ChangeNotifier {
     required this.progress,
     required this._tts,
     this._speech = const NullSpeechEngine(),
+    this.soundCheck = const NullSoundCheck(),
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
@@ -126,6 +129,7 @@ class AppState extends ChangeNotifier {
     DeckSource? decks,
     TtsEngine tts = const NullTtsEngine(),
     SpeechEngine speech = const NullSpeechEngine(),
+    SoundCheckEngine soundCheck = const NullSoundCheck(),
     ProgressStore? progress,
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
@@ -140,6 +144,7 @@ class AppState extends ChangeNotifier {
       progress: progress ?? MemoryProgress(),
       tts: tts,
       speech: speech,
+      soundCheck: soundCheck,
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
@@ -176,6 +181,9 @@ class AppState extends ChangeNotifier {
 
   final TtsEngine _tts;
   final SpeechEngine _speech;
+
+  /// The microphone and speaker, for the first launch's sound check (#89).
+  final SoundCheckEngine soundCheck;
   final Clock _clock;
   final bool _ownsSettings;
 
@@ -582,10 +590,13 @@ class AppState extends ChangeNotifier {
 
   /// The modes a session may use: skills the learner has switched on, whose
   /// drill is available, and which the scheduler knows.
-  Set<DrillMode> get sessionModes => <DrillMode>{
+  Set<DrillMode> get sessionModes => _modes(ignorePauses: false);
+
+  Set<DrillMode> _modes({required bool ignorePauses}) => <DrillMode>{
     for (final skill in Skill.values)
       if (skill.mode != null &&
           settings.isEnabled(skill) &&
+          (ignorePauses || !settings.isPaused(skill, now())) &&
           features.isAvailable(skill.feature))
         skill.mode!,
   };
@@ -616,7 +627,9 @@ class AppState extends ChangeNotifier {
   ///
   /// Today's counts, a deck's counts and the drill itself all come from
   /// here, so they always agree.
-  SessionQueue buildSession(DrillRequest request) {
+  /// [ignorePauses] builds it as if no skill were paused: a pause lasts an
+  /// hour and does not make a deck finished, so [notStudiedIn] ignores it.
+  SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
     final ids = request.deckIds;
     final decks = ids == null
         ? profileDecks
@@ -631,11 +644,15 @@ class AppState extends ChangeNotifier {
     ];
     final cards = tagged(<Card>[for (final entry in decks) ...entry.cards]);
 
+    // A named skill is drilled even if switched off in Settings, as the
+    // deck page offers it, but not while it is paused.
     final skill = request.skill;
     final modes = skill == null
-        ? sessionModes
+        ? _modes(ignorePauses: ignorePauses)
         : <DrillMode>{
-            if (skill.mode != null && features.isAvailable(skill.feature))
+            if (skill.mode != null &&
+                features.isAvailable(skill.feature) &&
+                (ignorePauses || !settings.isPaused(skill, now())))
               skill.mode!,
           };
 
@@ -647,11 +664,18 @@ class AppState extends ChangeNotifier {
     final requested = request.newLimit;
     if (requested != null && requested < newLimit) newLimit = requested;
 
+    // A skill switched off for a language is not drilled in it (#89).
     final voiced = <String, bool>{
-      for (final entry in this.decks) entry.id: hasVoice(entry.language),
+      for (final entry in this.decks)
+        entry.id:
+            hasVoice(entry.language) &&
+            !settings.isOffFor(Skill.listening, entry.language.code),
     };
     final heard = <String, bool>{
-      for (final entry in this.decks) entry.id: canHear(entry.language),
+      for (final entry in this.decks)
+        entry.id:
+            canHear(entry.language) &&
+            !settings.isOffFor(Skill.speaking, entry.language.code),
     };
     final leeches = progress.leechEffects;
     SessionQueue queueOf(
@@ -799,13 +823,35 @@ class AppState extends ChangeNotifier {
   /// has on, whatever today's cap allows. None left means the deck is
   /// finished: its badge says Done when nothing is due, and it can be
   /// revised.
-  int notStudiedIn(DeckEntry deck) =>
-      buildSession(DrillRequest.learnAnyway(deck.id)).fresh.length;
+  int notStudiedIn(DeckEntry deck) => buildSession(
+    DrillRequest.learnAnyway(deck.id),
+    ignorePauses: true,
+  ).fresh.length;
 
   /// How numbers are spelled in [language], or null for a language with no
   /// number rules (#54).
   NumberRules? numberRulesFor(LanguageInfo language) =>
       _catalog.numberRules[language.code];
+
+  /// [language]'s sound contrasts (#89, ADR-0015), or null if it has no
+  /// sounds file.
+  SoundContrasts? soundsFor(LanguageInfo language) =>
+      _catalog.sounds[language.code];
+
+  /// A card in [language] whose target is [text], as the grader compares
+  /// them, for saying what a word heard instead means. Null if no deck has
+  /// one.
+  Card? cardSaying(LanguageInfo language, String text) {
+    final wanted = normaliseForContrast(text);
+    if (wanted.isEmpty) return null;
+    for (final entry in decks) {
+      if (entry.language.code != language.code) continue;
+      for (final card in entry.cards) {
+        if (normaliseForContrast(card.target) == wanted) return card;
+      }
+    }
+    return null;
+  }
 
   /// Generated numbers to practise in [deck]'s language, in the skills the
   /// learner has on, by ear only with a voice. Never recorded (ADR-0011).
