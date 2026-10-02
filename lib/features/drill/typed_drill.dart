@@ -143,7 +143,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ),
       if (answered) ...<Widget>[
-        TargetText(
+        TargetText.card(
           card.target,
           language: language,
           fontSize: 28,
@@ -202,7 +202,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ),
       if (session.answer != null) ...<Widget>[
-        TargetText(
+        TargetText.card(
           card.target,
           language: language,
           fontSize: 28,

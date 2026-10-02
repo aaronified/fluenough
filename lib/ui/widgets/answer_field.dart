@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
 import '../theme.dart';
 
 /// The typed-answer field: a label above, then a 64 px field with a 2 px
-/// `primary` border and 20 px corners, text at 22 px.
+/// `primary` border and 20 px corners, text at 22 px. Text in [language]'s
+/// script is drawn at that times the learner's card text size, as the card's
+/// own target text is; transliteration and digits stay at 22.
 ///
 /// Types in [language]'s direction — right to left for an Urdu deck — unless
 /// [latin] is set, for transliteration, which is always left to right.
@@ -55,7 +58,9 @@ class AnswerField extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final rtl = language.rtl && !latin && !digits;
+    final settings = AppScope.of(context).settings;
+    final script = !latin && !digits;
+    final rtl = language.rtl && script;
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(AppRadii.tile),
       borderSide: BorderSide(color: scheme.primary, width: 2),
@@ -71,37 +76,43 @@ class AnswerField extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          TextField(
-            controller: controller,
-            focusNode: focusNode,
-            autofocus: autofocus,
-            enabled: enabled,
-            onChanged: onChanged,
-            onSubmitted: onSubmitted,
-            textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
-            textAlign: TextAlign.start,
-            autocorrect: false,
-            enableSuggestions: false,
-            textCapitalization: TextCapitalization.none,
-            textInputAction: TextInputAction.done,
-            keyboardType: digits ? TextInputType.number : null,
-            style: TextStyle(
-              fontSize: 22,
-              color: scheme.onSurface,
-              height: rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
-            ),
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: scheme.surfaceContainerLowest,
-              contentPadding: const EdgeInsetsDirectional.symmetric(
-                horizontal: 20,
-                vertical: 18,
+          ListenableBuilder(
+            listenable: settings,
+            builder: (context, _) => TextField(
+              controller: controller,
+              focusNode: focusNode,
+              autofocus: autofocus,
+              enabled: enabled,
+              onChanged: onChanged,
+              onSubmitted: onSubmitted,
+              textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
+              textAlign: TextAlign.start,
+              autocorrect: false,
+              enableSuggestions: false,
+              textCapitalization: TextCapitalization.none,
+              textInputAction: TextInputAction.done,
+              keyboardType: digits ? TextInputType.number : null,
+              style: TextStyle(
+                fontSize: script ? 22 * settings.cardTextScale : 22,
+                color: scheme.onSurface,
+                height: rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
               ),
-              border: border,
-              enabledBorder: border,
-              focusedBorder: border,
-              disabledBorder: border.copyWith(
-                borderSide: BorderSide(color: scheme.outlineVariant, width: 2),
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: scheme.surfaceContainerLowest,
+                contentPadding: const EdgeInsetsDirectional.symmetric(
+                  horizontal: 20,
+                  vertical: 18,
+                ),
+                border: border,
+                enabledBorder: border,
+                focusedBorder: border,
+                disabledBorder: border.copyWith(
+                  borderSide: BorderSide(
+                    color: scheme.outlineVariant,
+                    width: 2,
+                  ),
+                ),
               ),
             ),
           ),

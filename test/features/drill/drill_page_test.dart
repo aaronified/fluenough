@@ -311,6 +311,51 @@ void main() {
     expect(state.progress.log.single.grade, 5);
   });
 
+  testWidgets('the card text size reaches the card, the typed script and the '
+      'answer, but not transliteration', (tester) async {
+    usePhone(tester);
+    double sizeOf(Finder text) => tester.widget<Text>(text).style!.fontSize!;
+    double fieldSize() =>
+        tester.widget<TextField>(find.byType(TextField)).style!.fontSize!;
+    AppState scaled({Set<Feature> extra = const <Feature>{}}) => AppState.test(
+      settings: SettingsNotifier(cardTextScale: 1.4),
+      features: FeatureRegistry.only(<Feature>{...Feature.available, ...extra}),
+    );
+
+    await pumpDrill(
+      tester,
+      DrillRequest.deck(spanish, skill: Skill.recognition),
+      preset: const DrillPreset(target: 'la casa', reveal: true),
+      state: scaled(),
+    );
+    expect(sizeOf(find.text('la casa')), closeTo(48 * 1.4, 1e-9));
+
+    // A fresh tree for each drill, rather than an update of the last one.
+    await tester.pumpWidget(const SizedBox.shrink());
+    await pumpDrill(
+      tester,
+      DrillRequest.deck(hiragana, skill: Skill.production),
+      preset: const DrillPreset(target: 'か'),
+      state: scaled(),
+    );
+    expect(fieldSize(), closeTo(22 * 1.4, 1e-9));
+    await typeAndCheck(tester, 'か');
+    final answer = find.descendant(
+      of: find.byType(TargetText),
+      matching: find.text('か'),
+    );
+    expect(sizeOf(answer), closeTo(28 * 1.4, 1e-9));
+
+    await tester.pumpWidget(const SizedBox.shrink());
+    await pumpDrill(
+      tester,
+      DrillRequest.deck(hiragana, skill: Skill.production),
+      preset: const DrillPreset(target: 'か', inputMode: InputMode.translit),
+      state: scaled(extra: const <Feature>{Feature.translitInput}),
+    );
+    expect(fieldSize(), 22);
+  });
+
   testWidgets('listening speaks at the speech rate, and slower', (
     tester,
   ) async {
@@ -471,17 +516,22 @@ void main() {
       ),
     ];
     for (final (name, request, preset) in states) {
-      testWidgets(name, (tester) async {
-        usePhone(tester, textScale: 2.0);
-        await pumpDrill(
-          tester,
-          request,
-          preset: preset,
-          state: AppState.test(tts: FixedTtsEngine(<String>{'es'})),
-        );
-        expect(tester.takeException(), isNull);
-        expect(find.byType(DrillFrame), findsOneWidget);
-      });
+      for (final card in <double>[1.0, SettingsNotifier.maxCardTextScale]) {
+        testWidgets('$name, card text at $card', (tester) async {
+          usePhone(tester, textScale: 2.0);
+          await pumpDrill(
+            tester,
+            request,
+            preset: preset,
+            state: AppState.test(
+              tts: FixedTtsEngine(<String>{'es'}),
+              settings: SettingsNotifier(cardTextScale: card),
+            ),
+          );
+          expect(tester.takeException(), isNull);
+          expect(find.byType(DrillFrame), findsOneWidget);
+        });
+      }
     }
   });
 
