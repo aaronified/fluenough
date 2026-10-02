@@ -25,6 +25,8 @@ import 'deck_content.dart';
 ///   without one for the language — a muted pill, `deckNoVoice`, and Set up,
 ///   which opens Voices; and speaking, where the phone cannot recognise the
 ///   language, or only online without the learner's leave, the same way;
+/// - **set aside**: a skill switched off for this language, or paused
+///   (#89) — a muted pill, why, and Turn on or Resume;
 /// - **incoming**: a skill whose drill is not built yet, such as grammar
 ///   (#2) — dimmed, with the badge.
 class SkillSection extends StatelessWidget {
@@ -69,6 +71,38 @@ class SkillSection extends StatelessWidget {
         leading: ModePill(skill: skill, size: ModePillSize.large),
         title: skill.label(l10n),
         subtitle: skill.deckDescription(l10n, language.name),
+      );
+    }
+
+    // Switched off for this language, or paused (#89): muted, with the way
+    // back.
+    final settings = state.settings;
+    final pausedUntil = settings.pausedUntil(skill);
+    if (skill.pausable &&
+        (settings.isOffFor(skill, language.code) ||
+            (pausedUntil != null && pausedUntil.isAfter(state.now())))) {
+      final off = settings.isOffFor(skill, language.code);
+      return GroupedTile(
+        padding: padding,
+        leadingGap: leadingGap,
+        trailingGap: trailingGap,
+        leading: ModePill(skill: skill, size: ModePillSize.large, muted: true),
+        title: skill.label(l10n),
+        titleColor: scheme.onSurfaceVariant,
+        subtitle: off
+            ? l10n.deckSkillOffFor(language.name)
+            : l10n.settingsPausedUntil(
+                MaterialLocalizations.of(context)
+                    .formatTimeOfDay(TimeOfDay.fromDateTime(pausedUntil!)),
+              ),
+        trailing: OutlinedButton(
+          style: AppButtonStyles.compact(context)
+              .merge(OutlinedButton.styleFrom(foregroundColor: scheme.primary)),
+          onPressed: off
+              ? () => settings.setOffFor(skill, language.code, false)
+              : () => settings.resume(skill),
+          child: Text(off ? l10n.deckTurnOn : l10n.settingsResume),
+        ),
       );
     }
 

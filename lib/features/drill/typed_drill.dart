@@ -15,6 +15,7 @@ import '../../ui/widgets/play_button.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
+import 'cant_now.dart';
 import 'drill_session.dart';
 import 'keyboard_hint.dart';
 
@@ -313,6 +314,10 @@ class _TypedDrillState extends State<TypedDrill> {
     if (answer == null) {
       final empty = _controller.text.trim().isEmpty;
       return <Widget>[
+        if (session.item.mode == DrillMode.listening) ...<Widget>[
+          CantNowButton(session: session),
+          const SizedBox(height: 4),
+        ],
         Row(
           children: <Widget>[
             Flexible(
