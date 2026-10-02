@@ -3,20 +3,21 @@ import 'package:flutter/material.dart';
 import '../app/settings.dart';
 import '../app/skill.dart';
 
-/// The app's Material 3 themes, built from the repository's seed.
+/// The app's Material 3 themes, built from the learner's colour seed.
 ///
 /// The design's "Forest" is the M3 tonal-spot scheme from seed `#3F6C51`, so
 /// the schemes are generated with [ColorScheme.fromSeed] and never copied from
-/// the design's hex tables. Component shapes and sizes follow the design:
-/// 56 px stadium buttons, 10 px chips, 16 px SnackBars, an 80 px navigation
-/// bar.
+/// the design's hex tables. High contrast is the same scheme at M3's highest
+/// contrast level, with [ModeColors.lightHigh] or [ModeColors.darkHigh].
+/// Component shapes and sizes follow the design: 56 px stadium buttons, 10 px
+/// chips, 16 px SnackBars, an 80 px navigation bar.
 abstract final class AppTheme {
   static ThemeData light({
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
   }) => fromScheme(
     _scheme(seed, Brightness.light, highContrast),
-    modes: ModeColors.light,
+    modes: highContrast ? ModeColors.lightHigh : ModeColors.light,
   );
 
   static ThemeData dark({
@@ -24,7 +25,7 @@ abstract final class AppTheme {
     bool highContrast = false,
   }) => fromScheme(
     _scheme(seed, Brightness.dark, highContrast),
-    modes: ModeColors.dark,
+    modes: highContrast ? ModeColors.darkHigh : ModeColors.dark,
   );
 
   static ColorScheme _scheme(ThemeSeed seed, Brightness b, bool high) =>
@@ -380,6 +381,11 @@ class ModeColor {
 /// Text contrast is 7:1 or better in both. The containers are close to the
 /// surface (1.2:1 light, 2.0:1 dark), which is why a mode is never shown by
 /// colour alone: every pill carries an icon and a label.
+///
+/// High contrast swaps them the way M3's highest contrast level swaps its own
+/// containers: tone 30 under white in light, tone 80 under black in dark, from
+/// the same hues. Text is then 9:1 or better and every container stands 6:1
+/// or more off the surfaces it sits on.
 class ModeColors extends ThemeExtension<ModeColors> {
   const ModeColors({
     required this.recognition,
@@ -403,6 +409,22 @@ class ModeColors extends ThemeExtension<ModeColors> {
     listening: ModeColor(Color(0xFF4F378B), Color(0xFFEADDFF)),
     grammar: ModeColor(Color(0xFF00504A), Color(0xFFB8F0E4)),
     pair: ModeColor(Color(0xFF7A2963), Color(0xFFFFD8EC)),
+  );
+
+  static const ModeColors lightHigh = ModeColors(
+    recognition: ModeColor(Color(0xFF284777), Color(0xFFFFFFFF)),
+    production: ModeColor(Color(0xFF6E3900), Color(0xFFFFFFFF)),
+    listening: ModeColor(Color(0xFF4F378B), Color(0xFFFFFFFF)),
+    grammar: ModeColor(Color(0xFF00504A), Color(0xFFFFFFFF)),
+    pair: ModeColor(Color(0xFF772761), Color(0xFFFFFFFF)),
+  );
+
+  static const ModeColors darkHigh = ModeColors(
+    recognition: ModeColor(Color(0xFFAAC7FF), Color(0xFF000000)),
+    production: ModeColor(Color(0xFFFFB77D), Color(0xFF000000)),
+    listening: ModeColor(Color(0xFFCFBCFF), Color(0xFF000000)),
+    grammar: ModeColor(Color(0xFF92D2CA), Color(0xFF000000)),
+    pair: ModeColor(Color(0xFFFFADDF), Color(0xFF000000)),
   );
 
   final ModeColor recognition;

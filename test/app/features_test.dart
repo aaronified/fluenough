@@ -40,8 +40,8 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the drills, saved progress, theme, stats, '
-      'leeches, daily facts and the log backup', () {
+  test('this version ships the drills, saved progress, appearance but for '
+      'wallpaper colours, stats, leeches, daily facts and the log backup', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -49,6 +49,9 @@ void main() {
       Feature.drillGrammar,
       Feature.persistence,
       Feature.appearance,
+      Feature.colourSeeds,
+      Feature.contrast,
+      Feature.cardSize,
       Feature.stats,
       Feature.leeches,
       Feature.dailyFacts,
