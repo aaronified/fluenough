@@ -9,6 +9,7 @@ import '../core/models/number_rules.dart';
 import '../core/numbers/number_practice.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/tts/tts_engine.dart';
+import '../core/data/course_path.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
@@ -70,7 +71,13 @@ class AppState extends ChangeNotifier {
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
        _profiles = List<Profile>.of(profiles),
-       _currentProfileId = currentProfileId ?? profiles.first.id;
+       _currentProfileId = currentProfileId ?? profiles.first.id {
+    // What is pending follows progress, settings and this state's own
+    // changes: the catalog, voices and the profile.
+    for (final source in <Listenable>[this, this.settings, progress]) {
+      source.addListener(_forgetPending);
+    }
+  }
 
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, no voices unless [tts] has some, empty in-memory
@@ -203,6 +210,9 @@ class AppState extends ChangeNotifier {
 
   DeckEntry? deckById(String id) => _catalog.byId(id);
 
+  /// The path of [entry]'s course (ADR-0013), or null if it has none.
+  CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
+
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 
@@ -315,8 +325,16 @@ class AppState extends ChangeNotifier {
   /// Everyone practising on this phone. In memory until #3.
   List<Profile> get profiles => List<Profile>.unmodifiable(_profiles);
 
-  Profile get currentProfile =>
-      profileById(_currentProfileId) ?? _profiles.first;
+  /// The profile practising now. The languages it learns are those its
+  /// settings name once the learner has chosen (#117), since profiles are
+  /// not stored yet (#3) and settings are.
+  Profile get currentProfile {
+    final profile = profileById(_currentProfileId) ?? _profiles.first;
+    final chosen = settings.learningLanguages;
+    return chosen.isEmpty
+        ? profile
+        : profile.copyWith(languages: chosen.toSet());
+  }
 
   Profile? profileById(String id) {
     for (final profile in _profiles) {
@@ -415,10 +433,20 @@ class AppState extends ChangeNotifier {
               if (ids.contains(entry.id)) entry,
           ];
     final tags = request.tags;
+    // Today, and "Learn 5 new", teach new cards only from the pending units,
+    // mixed; reviews come from every deck the profile learns (ADR-0013).
+    final pending = ids == null && !request.revise ? pendingUnits : null;
+    final pendingIds = <String>{
+      for (final unit in pending ?? const <List<DeckEntry>>[])
+        for (final entry in unit) entry.id,
+    };
     final cards = <Card>[
-      for (final entry in decks)
-        for (final card in entry.cards)
-          if (tags.isEmpty || card.tags.any(tags.contains)) card,
+      for (final card in <Card>[
+        if (pending != null) ..._alternating(pending),
+        for (final entry in decks)
+          if (!pendingIds.contains(entry.id)) ...entry.cards,
+      ])
+        if (tags.isEmpty || card.tags.any(tags.contains)) card,
     ];
 
     final skill = request.skill;
@@ -454,8 +482,87 @@ class AppState extends ChangeNotifier {
       )),
       reviseAll: request.revise,
       modes: modes,
+      canIntroduce: pending == null
+          ? null
+          : (card) => pendingIds.contains(card.deckId),
     );
     return request.newOnly ? queue.withoutDue() : queue;
+  }
+
+  // ---------------------------------------------------------------------------
+  // The path (#117, ADR-0013)
+
+  List<List<DeckEntry>>? _pendingUnits;
+
+  void _forgetPending() => _pendingUnits = null;
+
+  /// Whether placement found the learner already knows [entry]. It reads
+  /// Done and Today does not teach it, though it can still be studied.
+  bool isPlaced(DeckEntry entry) => settings.isPlaced(entry.id);
+
+  /// Whether the path is past [entry]: it is placed, this version can drill
+  /// nothing in it, or every card in it is learned in the skills on.
+  bool isFinished(DeckEntry entry) =>
+      isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0;
+
+  /// The units Today teaches new cards from: for each language the profile
+  /// learns, the first unit of its course's path that is not finished and
+  /// the one after it. The course is the one taught from the best-known
+  /// language the learner speaks, as [profileDecks] orders them. A course
+  /// without a path is taught as if each deck were a unit, in catalog order,
+  /// and a deck its path leaves out follows it as a unit of its own.
+  List<List<DeckEntry>> get pendingUnits => _pendingUnits ??= _findPending();
+
+  /// Whether [entry] is in one of the [pendingUnits].
+  bool isPending(DeckEntry entry) =>
+      pendingUnits.any((unit) => unit.any((e) => e.id == entry.id));
+
+  List<List<DeckEntry>> _findPending() {
+    final mine = profileDecks;
+    final courses = <String, List<DeckEntry>>{};
+    final taughtFrom = <String, String>{};
+    for (final entry in mine) {
+      final language = entry.language.code;
+      final native = taughtFrom.putIfAbsent(
+        language,
+        () => entry.deck.native.code,
+      );
+      if (entry.deck.native.code != native) continue;
+      (courses[language] ??= <DeckEntry>[]).add(entry);
+    }
+    final pending = <List<DeckEntry>>[];
+    for (final decks in courses.values) {
+      final byId = <String, DeckEntry>{for (final e in decks) e.id: e};
+      final path = pathOf(decks.first);
+      final units = <List<DeckEntry>>[
+        if (path != null)
+          for (final unit in path.units)
+            <DeckEntry>[for (final id in unit) ?byId[id]],
+        for (final entry in decks)
+          if (path?.unitOf(entry.id) == null) <DeckEntry>[entry],
+      ];
+      pending.addAll(
+        units
+            .where((unit) => unit.isNotEmpty && !unit.every(isFinished))
+            .take(2),
+      );
+    }
+    return List<List<DeckEntry>>.unmodifiable(pending);
+  }
+
+  /// [units]' cards, one from each unit in turn, so that a day's new cards
+  /// mix the pending units rather than finishing one first.
+  static List<Card> _alternating(List<List<DeckEntry>> units) {
+    final queues = <List<Card>>[
+      for (final unit in units) <Card>[for (final e in unit) ...e.cards],
+    ];
+    final mixed = <Card>[];
+    for (var i = 0; queues.any((q) => i < q.length); i++) {
+      for (final queue in queues) {
+        if (i < queue.length) mixed.add(queue[i]);
+      }
+    }
+    return mixed;
   }
 
   /// Cards in [deck] with a pair never drilled, in every skill the learner
@@ -516,6 +623,8 @@ class AppState extends ChangeNotifier {
 
   @override
   void dispose() {
+    settings.removeListener(_forgetPending);
+    progress.removeListener(_forgetPending);
     shellTab.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();
