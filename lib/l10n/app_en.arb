@@ -1942,6 +1942,126 @@
   "@settingsSpoken": {
     "description": "Settings row that opens the spoken-languages screen."
   },
+  "settingsLearn": "Languages I’m learning",
+  "@settingsLearn": {
+    "description": "Settings row that opens the screen for choosing which languages to learn."
+  },
+  "learnTitle": "What do you want to learn?",
+  "@learnTitle": {
+    "description": "Title of the screen where the learner picks the languages to learn, on first launch and from Settings."
+  },
+  "learnBody": "Pick one or more. Each starts at the beginning of its course, or further on if a short check finds you know some already. You can change this in Settings.",
+  "@learnBody": {
+    "description": "Explanation on the choose-what-to-learn screen."
+  },
+  "learnLoading": "Loading the courses…",
+  "@learnLoading": {
+    "description": "Screen-reader label while the courses load on the choose-what-to-learn screen."
+  },
+  "placementAskTitle": "Do you know any {language}?",
+  "@placementAskTitle": {
+    "description": "Title of the placement question for one language.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placementAskBody": "A short check finds where to start: a few words from each part of the course, until one is new to you. Nothing is recorded, and you can still study anything it skips.",
+  "@placementAskBody": {
+    "description": "Explanation under the placement question."
+  },
+  "placementFind": "Find my level",
+  "@placementFind": {
+    "description": "Button: start the placement check."
+  },
+  "placementNew": "I’m new to {language}",
+  "@placementNew": {
+    "description": "Button: skip the placement check and start the course from the beginning.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placementQuestion": "What does this mean?",
+  "@placementQuestion": {
+    "description": "The question asked about each word in the placement check."
+  },
+  "placementDontKnow": "I don’t know",
+  "@placementDontKnow": {
+    "description": "Button in the placement check: the learner does not know the word."
+  },
+  "placementStop": "Stop here",
+  "@placementStop": {
+    "description": "Button in the placement check: end it, keeping what it has found so far."
+  },
+  "placementProgress": "Part {unit} of {total}",
+  "@placementProgress": {
+    "description": "Above a placement question: which part of the course is being checked.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "placementResultStart": "You’ll start {language} from the beginning, with {deck}.",
+  "@placementResultStart": {
+    "description": "Placement result when nothing was placed as known.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "deck": {
+        "type": "String",
+        "example": "First words"
+      }
+    }
+  },
+  "placementResultFrom": "{count, plural, =1{You know the first part of {language}.} other{You know the first {count} parts of {language}.}} You’ll start with {deck}.",
+  "@placementResultFrom": {
+    "description": "Placement result when some parts were placed as known. {deck} is where teaching starts.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      },
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "placementResultAll": "You know every part of {language} the app has. Its decks are there to revise.",
+  "@placementResultAll": {
+    "description": "Placement result when every part was placed as known.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placementNext": "Next language",
+  "@placementNext": {
+    "description": "Button after one language's placement result, when another language follows."
+  },
+  "placementDone": "Start learning",
+  "@placementDone": {
+    "description": "Button after the last placement result: go on to the app."
+  },
   "settingsAppLanguage": "App language",
   "@settingsAppLanguage": {
     "description": "Picker: the interface language."

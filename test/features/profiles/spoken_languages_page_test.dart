@@ -8,6 +8,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 
 import '../../support/harness.dart';
@@ -109,7 +110,9 @@ void main() {
     await tester.tap(go);
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['bn', 'en']);
-    expect(find.byType(AppShell), findsOneWidget);
+    // Then what to learn (#117), before the app.
+    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(AppShell), findsNothing);
   });
 
   testWidgets('from Settings it can go back without saving', (tester) async {

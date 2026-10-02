@@ -43,6 +43,7 @@ class SettingsNotifier extends ChangeNotifier {
     List<String> spokenLanguages = const <String>[],
     List<String> learningLanguages = const <String>[],
     Set<String> placedDecks = const <String>{},
+    this._learningChosen = false,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? Skill.values.toSet(),
        ),
@@ -80,6 +81,7 @@ class SettingsNotifier extends ChangeNotifier {
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   Set<String> _placedDecks;
+  bool _learningChosen;
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
 
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
@@ -137,6 +139,13 @@ class SettingsNotifier extends ChangeNotifier {
   }
 
   bool isPlaced(String deckId) => _placedDecks.contains(deckId);
+
+  /// Whether the learner has been through choosing what to learn and
+  /// placement (#117). Until then the first launch, or the first after an
+  /// update, asks.
+  bool get learningChosen => _learningChosen;
+  set learningChosen(bool value) =>
+      _set(_learningChosen, value, (v) => _learningChosen = v);
 
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
@@ -233,6 +242,7 @@ class SettingsNotifier extends ChangeNotifier {
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
+    'learning_chosen': '$_learningChosen',
     'facts_shown': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _factsShown.entries)
         key: value.millisecondsSinceEpoch,
@@ -293,6 +303,7 @@ class SettingsNotifier extends ChangeNotifier {
           if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
       ];
     }
+    if (pick('learning_chosen', flag) case final v?) learningChosen = v;
     if (pick('placed_decks', (t) => t) case final v?) {
       placedDecks = <String>{
         for (final id in v.split(','))
