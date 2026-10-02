@@ -81,7 +81,11 @@ void main() {
     await state.load();
     // Hindi starts with its script.
     expect(unitIds(state), <List<String>>[
-      <String>['hi-en-script-vowels', 'hi-en-script-consonants'],
+      <String>[
+        'hi-en-script-vowels',
+        'hi-en-script-consonants',
+        'hi-en-script-reading',
+      ],
       <String>['hi-en-script-vowel-signs', 'hi-en-script-conjuncts'],
     ]);
     final fresh = state.buildSession(const DrillRequest.today()).fresh;
@@ -105,7 +109,11 @@ void main() {
   test('a placed unit is skipped, and its decks read Done', () async {
     final state = learning(
       <String>['hi'],
-      placed: <String>{'hi-en-script-vowels', 'hi-en-script-consonants'},
+      placed: <String>{
+        'hi-en-script-vowels',
+        'hi-en-script-consonants',
+        'hi-en-script-reading',
+      },
     );
     addTearDown(state.dispose);
     await state.load();
