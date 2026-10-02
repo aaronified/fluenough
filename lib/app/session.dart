@@ -11,6 +11,8 @@ class DrillRequest {
     this.newOnly = false,
     this.newLimit,
     this.numbers = false,
+    this.pastDailyCap = false,
+    this.revise = false,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -33,6 +35,22 @@ class DrillRequest {
   DrillRequest.numbers(String deckId)
     : this(deckIds: <String>{deckId}, numbers: true);
 
+  /// Every new pair left in one deck, past what today's cap allows: a
+  /// deck's "Learn anyway" once the day's new cards are spent.
+  DrillRequest.learnAnyway(String deckId, {Set<String> tags = const <String>{}})
+    : this(
+        deckIds: <String>{deckId},
+        tags: tags,
+        newOnly: true,
+        pastDailyCap: true,
+      );
+
+  /// Every card already learned in one deck, due or not, and not recorded:
+  /// a finished deck's "Revise". Recording an early review would stretch
+  /// its interval as if it had been remembered for the whole of it.
+  DrillRequest.revise(String deckId, {Set<String> tags = const <String>{}})
+    : this(deckIds: <String>{deckId}, tags: tags, revise: true);
+
   /// The decks to draw from, or null for every deck the current profile
   /// learns.
   final Set<String>? deckIds;
@@ -52,11 +70,18 @@ class DrillRequest {
   /// Generated numbers instead of the decks' cards; nothing is recorded.
   final bool numbers;
 
+  /// New pairs are not held to today's cap; [newLimit] still applies.
+  final bool pastDailyCap;
+
+  /// Every reviewed pair counts as due and no new pair is taken; nothing is
+  /// recorded.
+  final bool revise;
+
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
       'tags: $tags, newOnly: $newOnly, newLimit: $newLimit, '
-      'numbers: $numbers)';
+      'numbers: $numbers, pastDailyCap: $pastDailyCap, revise: $revise)';
 }
 
 /// One answer in a finished session, for the summary.

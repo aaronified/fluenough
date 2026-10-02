@@ -46,7 +46,7 @@ class RecognitionDrill extends StatelessWidget {
 
     return DrillFrame(
       skill: session.skill,
-      deckName: session.recorded
+      deckName: session.recorded || session.revising
           ? session.deck.deck.name
           : l10n.numbersPracticeTitle,
       position: session.position,

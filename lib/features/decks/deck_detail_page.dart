@@ -17,7 +17,9 @@ import 'skill_section.dart';
 import 'unreviewed_notice.dart';
 
 /// One deck: counts, practise one skill, only these tags, a card preview,
-/// licence, source, voice and id, and Review all due.
+/// licence, source, voice and id, and at the foot Review all due; once
+/// nothing is due, Learn anyway while cards are left to learn past today's
+/// cap, then Revise when every card is learned (ADR-0012).
 ///
 /// Design screens `deck` and `deck-novoice`. The counts are
 /// `AppState.countsFor`, the deck's numbers whatever tags are chosen; the
@@ -75,6 +77,14 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
         final counts = state.countsFor(entry);
         final all = DrillRequest.deck(entry.id, tags: _tags);
         final allCount = state.buildSession(all).items.length;
+        final more = DrillRequest.learnAnyway(entry.id, tags: _tags);
+        final moreCount = allCount > 0
+            ? 0
+            : state.buildSession(more).items.length;
+        final revise = DrillRequest.revise(entry.id, tags: _tags);
+        final reviseCount = allCount > 0 || moreCount > 0
+            ? 0
+            : state.buildSession(revise).items.length;
         return Scaffold(
           appBar: AppBar(),
           body: ListView(
@@ -99,12 +109,26 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
               DeckFacts(entry: entry),
             ],
           ),
-          bottomNavigationBar: _ReviewAllBar(
-            count: allCount,
-            onPressed: allCount == 0
-                ? null
-                : () => AppNavigator.startDrill(context, all),
-          ),
+          bottomNavigationBar: moreCount > 0
+              ? _ReviewAllBar(
+                  note: l10n.deckLearnAnywayNote,
+                  icon: Icons.add_rounded,
+                  label: l10n.deckLearnAnyway(moreCount),
+                  onPressed: () => AppNavigator.startDrill(context, more),
+                )
+              : reviseCount > 0
+              ? _ReviewAllBar(
+                  note: l10n.deckReviseNote,
+                  icon: Icons.replay_rounded,
+                  label: l10n.deckRevise(reviseCount),
+                  onPressed: () => AppNavigator.startDrill(context, revise),
+                )
+              : _ReviewAllBar(
+                  label: l10n.deckReviewAll(allCount),
+                  onPressed: allCount == 0
+                      ? null
+                      : () => AppNavigator.startDrill(context, all),
+                ),
         );
       },
     );
@@ -278,17 +302,28 @@ class _TagFilter extends StatelessWidget {
   }
 }
 
-/// "Review all due · 12", pinned under the scrolling content.
+/// "Review all due · 12", pinned under the scrolling content. Once nothing
+/// is due it offers what is left: "Learn anyway" while the deck has cards to
+/// learn past today's cap, then "Revise" when every card is learned, each
+/// with a [note] saying why.
 class _ReviewAllBar extends StatelessWidget {
-  const _ReviewAllBar({required this.count, required this.onPressed});
+  const _ReviewAllBar({
+    required this.label,
+    required this.onPressed,
+    this.icon = Icons.play_arrow_rounded,
+    this.note,
+  });
 
-  final int count;
+  final String label;
+  final IconData icon;
+  final String? note;
   final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final note = this.note;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: scheme.surface,
@@ -298,13 +333,28 @@ class _ReviewAllBar extends StatelessWidget {
         top: false,
         child: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 16),
-          child: FilledButton.icon(
-            style: FilledButton.styleFrom(
-              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
-            ),
-            onPressed: onPressed,
-            icon: const Icon(Icons.play_arrow_rounded, size: 22),
-            label: Text(l10n.deckReviewAll(count)),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              if (note != null) ...<Widget>[
+                Text(
+                  note,
+                  style: theme.textTheme.bodyMedium!.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 12),
+              ],
+              FilledButton.icon(
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+                ),
+                onPressed: onPressed,
+                icon: Icon(icon, size: 22),
+                label: Text(label),
+              ),
+            ],
           ),
         ),
       ),

@@ -58,15 +58,18 @@ class TypedAnswer {
 /// Every answer is recorded through [AppState.record] the moment it is
 /// given: a rating, a checked answer, "Don't know", or the verdict on a near
 /// miss. Nothing waits for the end of the session, so ending part-way loses
-/// nothing. A session that is not [recorded], number practice (#54), records
-/// nothing and only counts its answers for the summary.
+/// nothing. A session that is not [recorded], number practice (#54) or
+/// [revising] a finished deck, records nothing and only counts its answers
+/// for the summary.
 class DrillSession extends ChangeNotifier {
   DrillSession({
     required AppState state,
     required List<SessionItem> items,
     this._inputMode = InputMode.script,
     this.recorded = true,
+    this.revising = false,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
+       assert(!revising || !recorded, 'revising is never recorded'),
        _state = state,
        items = List<SessionItem>.unmodifiable(items),
        startedAt = state.now() {
@@ -80,9 +83,15 @@ class DrillSession extends ChangeNotifier {
 
   final DateTime startedAt;
 
-  /// Whether answers go to the review log. False only for number practice,
-  /// which has no schedule, so recognition shows no intervals either.
+  /// Whether answers go to the review log. False for number practice, which
+  /// has no schedule, and for [revising]; recognition shows no intervals
+  /// either.
   final bool recorded;
+
+  /// Revising a finished deck's cards ahead of their dates. Titled with the
+  /// deck, like a recorded session, but never [recorded]: an early review
+  /// would stretch the card's interval.
+  final bool revising;
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
