@@ -126,6 +126,29 @@ void main() {
       }
     });
 
+    test('that finds a newer release without its APK is up to date, and '
+        'forgets a version the latest path no longer serves', () async {
+      final (state, engine) = _app(
+        const LatestRelease('99.0.0', hasApk: false),
+      );
+      addTearDown(state.dispose);
+      // Found before, when it was the newest.
+      state.settings.latestRelease = _newer;
+      expect(state.updates.updateAvailable, isTrue);
+
+      await state.updates.check();
+      expect(state.updates.status, UpdateStatus.upToDate);
+      expect(state.updates.updateAvailable, isFalse, reason: 'no dot');
+      expect(state.settings.latestRelease, isNull);
+      expect(state.settings.lastUpdateCheck, _now, reason: 'GitHub answered');
+
+      // Once the workflow has uploaded it.
+      engine.answer = const LatestRelease('99.0.0');
+      await state.updates.check();
+      expect(state.updates.status, UpdateStatus.available);
+      expect(state.settings.latestRelease, '99.0.0');
+    });
+
     test('that fails says why, and forgets no version it knew', () async {
       final state = _state(
         const LatestRelease.failed(ReleaseCheckFailure.badReply),
@@ -322,18 +345,84 @@ void main() {
       expect(installer.asked.single.sha256, sha);
     });
 
-    test('without a check of that version this launch, it downloads without '
-        'a checksum', () async {
+    test(
+      'Download after a restart checks first, so it has the checksum',
+      () async {
+        final (updates, engine, installer) = checker(
+          LatestRelease(_newer, apkSha256: sha),
+          const <InstallEvent>[InstallEvent.installing()],
+        );
+        // Found before this launch: the dot is on, and no check has run.
+        updates.settings.latestRelease = _newer;
+        expect(updates.status, UpdateStatus.available);
+        await updates.checkAndInstall();
+        expect(engine.checks, 1);
+        expect(installer.asked.single.sha256, sha);
+        expect(updates.status, UpdateStatus.installing);
+      },
+    );
+
+    test('the install step alone, with no check of that version this launch, '
+        'has no checksum to give', () async {
       final (updates, _, installer) = checker(
         LatestRelease(_newer, apkSha256: sha),
         const <InstallEvent>[InstallEvent.installing()],
       );
-      // Found before this launch.
       updates.settings.latestRelease = _newer;
-      expect(updates.status, UpdateStatus.available);
       await updates.install();
       expect(installer.asked.single.sha256, isNull);
-      expect(updates.status, UpdateStatus.installing);
+    });
+
+    test('Download installs nothing when the check fails', () async {
+      final (updates, _, installer) = checker(
+        const LatestRelease.failed(ReleaseCheckFailure.rateLimited),
+        const <InstallEvent>[InstallEvent.installing()],
+      );
+      updates.settings.latestRelease = _newer;
+      await updates.checkAndInstall();
+      expect(updates.status, UpdateStatus.failed);
+      expect(installer.asked, isEmpty);
+    });
+
+    test(
+      'Cancel stops a download that never ends, and offers it again',
+      () async {
+        final (updates, _, installer) = checker(
+          LatestRelease(_newer),
+          const <InstallEvent>[
+            InstallEvent.downloading(30),
+            InstallEvent.installing(),
+          ],
+          // Never completes: the download stalls.
+          gate: Completer<void>(),
+        );
+        await updates.check();
+        final installing = updates.install();
+        await Future<void>.delayed(Duration.zero);
+        expect(updates.status, UpdateStatus.downloading);
+
+        await updates.cancelInstall();
+        await installing;
+        expect(installer.cancels, 1);
+        expect(updates.status, UpdateStatus.available);
+        expect(updates.installFailure, isNull);
+        expect(updates.settings.pendingUpdate, _newer, reason: 'replaced next');
+
+        // Nothing to cancel now.
+        await updates.cancelInstall();
+        expect(installer.cancels, 1);
+      },
+    );
+
+    test('a cancel the learner did not ask for is a failure', () async {
+      final (updates, _, _) = checker(
+        LatestRelease(_newer),
+        const <InstallEvent>[InstallEvent.failed(InstallFailure.cancelled)],
+      );
+      await updates.check();
+      await updates.install();
+      expect(updates.status, UpdateStatus.installFailed);
+      expect(updates.installFailure, InstallFailure.cancelled);
     });
 
     test(
@@ -353,7 +442,7 @@ void main() {
         expect(updates.settings.pendingUpdate, _newer);
 
         installer.events = const <InstallEvent>[InstallEvent.installing()];
-        await updates.retryInstall();
+        await updates.checkAndInstall();
         expect(engine.checks, 2);
         expect(installer.asked, hasLength(2));
         expect(updates.status, UpdateStatus.installing);
@@ -369,7 +458,7 @@ void main() {
       await updates.check();
       await updates.install();
       engine.answer = const LatestRelease(AppInfo.version);
-      await updates.retryInstall();
+      await updates.checkAndInstall();
       expect(updates.status, UpdateStatus.upToDate);
       expect(installer.asked, hasLength(1));
     });
@@ -417,7 +506,7 @@ void main() {
         await updates.check();
         await updates.install();
         engine.answer = const LatestRelease('99.0.0');
-        await updates.retryInstall();
+        await updates.checkAndInstall();
         expect(installer.asked.map((a) => a.fileName), <String>[
           UpdateChecker.apkFileName,
           UpdateChecker.apkFileName,

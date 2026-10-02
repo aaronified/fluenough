@@ -37,7 +37,7 @@ Future<void> main() async {
         speech: SystemSpeechEngine(),
         soundCheck: SystemSoundCheck(),
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
-        installer: const OtaApkInstaller(),
+        installer: OtaApkInstaller(),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
       ),
     ),

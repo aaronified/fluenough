@@ -37,6 +37,16 @@ url_launcher.
   - 403 and 429 are GitHub's rate limits. Any other error, or a reply
     without a readable tag, is a bad reply. No network, or no answer in time,
     is offline. Each has its own message, with Try again.
+  - **A newest release without `app-release.apk` reads as up to date**, and
+    any newer version found before is forgotten. The latest-download path
+    then has nothing to install, not even an older release's APK. That
+    happens in the minute before the release workflow uploads the file, or
+    on a release made by hand. Up to date fits better than a bad reply:
+    GitHub answered clearly, there is just nothing newer to install yet,
+    and a release made by hand would otherwise fail every check. The next
+    check finds the APK once it is there. Without this, ota_update 7.1.0
+    would write GitHub's 404 page to the file, and with no checksum open
+    Android's installer on it.
   - It sits behind `ReleaseCheckEngine`, in `lib/core/updates`. Only
     `main.dart` names `GitHubReleaseCheck`; tests and the gallery use
     `FixedReleaseCheck`, so no test reaches the network.
@@ -55,15 +65,28 @@ url_launcher.
   `https://github.com/aaronified/fluenough/releases/latest/download/app-release.apk`
   with ota_update, into `files/ota_update/fluenough-update.apk` in the app's
   own storage. That needs no storage permission. The row shows the
-  download's progress, then opens Android's installer on the file.
-  - If this launch's check saw a `sha256:` digest on the release's
-    `app-release.apk` asset, it is passed as ota_update's checksum, and a
-    download that does not match is not installed. Without one, it downloads
-    unchecked.
+  download's progress, with Cancel, then opens Android's installer on the
+  file.
+  - **Download checks first**, as Try again does, then downloads. So when
+    GitHub gives a `sha256:` digest for the release's `app-release.apk`, it
+    is always passed as ota_update's checksum, even when the version offered
+    was found before this launch, and a download that does not match is not
+    installed. Only a release without a digest downloads unchecked.
   - Each ota_update error has its own message. When the learner has not
     allowed Fluenough to install apps, it names the setting: Install unknown
     apps. Try again checks again, for the newest version and its checksum,
     then downloads again.
+  - **A download that goes quiet for 60 seconds has failed.** ota_update
+    7.1.0 drops a download the server resets (an HTTP/2 RST_STREAM) without
+    reporting anything, and leaves its stream open, so the row would wait
+    forever. `OtaApkInstaller` keeps a watchdog that every event resets;
+    when it runs out it drops the download and reports a download failure,
+    with Try again. **Cancel** stops a download the same way at any time,
+    and the row offers Download again.
+  - A screen reader hears each answer: the row's text is a live region. A
+    download is not, or every percent would be read out; and tapping
+    Download removes the button that had the focus. So its start is
+    announced once instead, "Downloading 0.2.0".
   - When the install fails, "Open download page" opens
     `https://github.com/aaronified/fluenough/releases/latest` in the browser,
     so the learner can still update by hand.
@@ -139,7 +162,14 @@ url_launcher.
   error" cannot be told apart. Both read "Android didn't start installing
   it". The app guards against starting two installs itself. A plugin
   instance also hands its first stream back to every later call, so each
-  install makes a new one.
+  install makes a new one. A reset download stalls without a word, which
+  the watchdog turns into a failure after a minute. And it installs
+  whatever a failed request wrote to the file unless a checksum stops it,
+  which is why Download always checks first and a release without its APK
+  is not offered.
+- **One more request per download.** Download asks GitHub again before it
+  downloads. That is one request against the hourly limit, and it fails
+  when GitHub cannot be reached, as the download would.
 - **The script now edits a Gradle file.** Like the manifest, it fails, and
   changes nothing, when `flutter create` writes a file of another shape.
 - **Android only.** ota_update only opens Safari on iOS, and the release is
@@ -167,7 +197,14 @@ url_launcher.
 - **The release's own download address.** The reply names each asset's
   address, which would tie the download to the version and checksum exactly.
   But the maintainer asked for the latest-download path. The gap is a release
-  published between the check and the download: at worst a checksum error,
-  which Try again settles by checking again.
+  published between the check and the download, now seconds apart: at worst
+  a checksum error, which Try again settles by checking again.
+- **Downloading with whatever checksum the launch already had.** Saves a
+  request, but the usual path, a version found before this launch, would
+  download with no checksum at all.
+- **A live region on the downloading row's title only.** Android reads a
+  live region when its label changes, so a new title would be read. But a
+  test can only see the flag, not what is read; an announcement is what is
+  said, and the test checks it.
 - **GitHub's Atom feed of releases.** No account either, but no checksum,
   and a feed to parse instead of one JSON field.

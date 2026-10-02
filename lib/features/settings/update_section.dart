@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/links.dart';
@@ -15,7 +16,9 @@ import '../../ui/widgets/snack.dart';
 /// a day at launch, off until switched on.
 ///
 /// The row's text is a live region, so a screen reader hears each answer
-/// arrive, but not each percent of a download.
+/// arrive. A download is not, or it would be read out at every percent:
+/// its start is announced once instead, since the Download button that had
+/// the focus is gone.
 class UpdateSection extends StatelessWidget {
   const UpdateSection({super.key});
 
@@ -25,20 +28,23 @@ class UpdateSection extends StatelessWidget {
     final state = AppScope.read(context);
     final settings = state.settings;
     final updates = state.updates;
-    return ListenableBuilder(
-      listenable: Listenable.merge(<Listenable>[updates, settings]),
-      builder: (context, _) => GroupedList.settings(
-        header: l10n.settingsSectionUpdates,
-        children: <Widget>[
-          _checkRow(context, updates),
-          GroupedTile.toggle(
-            leading: const Icon(Icons.update),
-            title: l10n.settingsUpdateAuto,
-            subtitle: l10n.settingsUpdateAutoDesc,
-            value: settings.autoUpdateCheck,
-            onChanged: (on) => settings.autoUpdateCheck = on,
-          ),
-        ],
+    return _DownloadAnnouncer(
+      updates: updates,
+      child: ListenableBuilder(
+        listenable: Listenable.merge(<Listenable>[updates, settings]),
+        builder: (context, _) => GroupedList.settings(
+          header: l10n.settingsSectionUpdates,
+          children: <Widget>[
+            _checkRow(context, updates),
+            GroupedTile.toggle(
+              leading: const Icon(Icons.update),
+              title: l10n.settingsUpdateAuto,
+              subtitle: l10n.settingsUpdateAutoDesc,
+              value: settings.autoUpdateCheck,
+              onChanged: (on) => settings.autoUpdateCheck = on,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -76,7 +82,7 @@ class UpdateSection extends StatelessWidget {
         subtitle: l10n.settingsUpdateAvailableDesc(current),
         actions: <Widget>[
           FilledButton.tonal(
-            onPressed: updates.install,
+            onPressed: updates.checkAndInstall,
             child: Text(l10n.settingsUpdateDownload),
           ),
         ],
@@ -93,7 +99,8 @@ class UpdateSection extends StatelessWidget {
           TextButton(onPressed: updates.check, child: Text(l10n.commonRetry)),
         ],
       ),
-      // Not a live region: it would read out every percent.
+      // Not a live region: it would read out every percent. Its start is
+      // announced by _DownloadAnnouncer.
       UpdateStatus.downloading => _ActionRow(
         icon: Icons.downloading,
         iconColor: Theme.of(context).colorScheme.primary,
@@ -101,6 +108,12 @@ class UpdateSection extends StatelessWidget {
         subtitle: l10n.settingsUpdatePercent(updates.percent),
         progress: updates.percent / 100,
         live: false,
+        actions: <Widget>[
+          TextButton(
+            onPressed: updates.cancelInstall,
+            child: Text(l10n.commonCancel),
+          ),
+        ],
       ),
       UpdateStatus.installing => _ActionRow(
         icon: Icons.install_mobile,
@@ -109,7 +122,7 @@ class UpdateSection extends StatelessWidget {
         subtitle: l10n.settingsUpdateInstallingDesc,
         actions: <Widget>[
           TextButton(
-            onPressed: updates.retryInstall,
+            onPressed: updates.checkAndInstall,
             child: Text(l10n.commonRetry),
           ),
         ],
@@ -121,7 +134,7 @@ class UpdateSection extends StatelessWidget {
         subtitle: installFailureText(l10n, updates.installFailure),
         actions: <Widget>[
           TextButton(
-            onPressed: updates.retryInstall,
+            onPressed: updates.checkAndInstall,
             child: Text(l10n.commonRetry),
           ),
           TextButton(
@@ -150,6 +163,60 @@ class UpdateSection extends StatelessWidget {
     InstallFailure.cancelled => l10n.settingsUpdateCancelled,
     InstallFailure.internal || null => l10n.settingsUpdateInternalError,
   };
+}
+
+/// Announces "Downloading 0.2.0" once, as a download starts.
+class _DownloadAnnouncer extends StatefulWidget {
+  const _DownloadAnnouncer({required this.updates, required this.child});
+
+  final UpdateChecker updates;
+  final Widget child;
+
+  @override
+  State<_DownloadAnnouncer> createState() => _DownloadAnnouncerState();
+}
+
+class _DownloadAnnouncerState extends State<_DownloadAnnouncer> {
+  late UpdateStatus _last = widget.updates.status;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.updates.addListener(_changed);
+  }
+
+  @override
+  void didUpdateWidget(_DownloadAnnouncer old) {
+    super.didUpdateWidget(old);
+    if (old.updates == widget.updates) return;
+    old.updates.removeListener(_changed);
+    widget.updates.addListener(_changed);
+    _last = widget.updates.status;
+  }
+
+  @override
+  void dispose() {
+    widget.updates.removeListener(_changed);
+    super.dispose();
+  }
+
+  void _changed() {
+    final status = widget.updates.status;
+    if (mounted &&
+        status == UpdateStatus.downloading &&
+        _last != UpdateStatus.downloading) {
+      final l10n = AppLocalizations.of(context)!;
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        l10n.settingsUpdateDownloading(widget.updates.latest ?? ''),
+        Directionality.of(context),
+      );
+    }
+    _last = status;
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.child;
 }
 
 /// A row with buttons of its own, laid out as a [GroupedTile] is: the icon,
