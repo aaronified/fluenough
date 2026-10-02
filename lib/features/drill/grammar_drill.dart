@@ -258,7 +258,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     final scheme = theme.colorScheme;
     final notes = cell.pattern.notes;
     return <Widget>[
-      TargetText(
+      TargetText.card(
         cell.prompt,
         language: language,
         fontSize: 32,
@@ -288,7 +288,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
                   horizontal: 16,
                   vertical: 7,
                 ),
-                child: TargetText(
+                child: TargetText.card(
                   cell.slot,
                   language: language,
                   fontSize: 18,
@@ -512,7 +512,7 @@ class _GrammarTable extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: TargetText(
+                  child: TargetText.card(
                     row.slot,
                     language: language,
                     fontSize: 15,
@@ -529,7 +529,7 @@ class _GrammarTable extends StatelessWidget {
                           textAlign: TextAlign.end,
                           style: TextStyle(color: fg),
                         )
-                      : TargetText(
+                      : TargetText.card(
                           form,
                           language: language,
                           fontSize: 15,

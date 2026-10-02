@@ -147,7 +147,7 @@ class _PairDrillState extends State<PairDrill> {
           // frame measures.
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(horizontal: 9),
-            child: TargetText(
+            child: TargetText.card(
               round.pair.contrast,
               language: widget.language,
               fontSize: 16,
@@ -245,7 +245,7 @@ class _PairOption extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            TargetText(
+            TargetText.card(
               sound.target,
               language: language,
               fontSize: 48,

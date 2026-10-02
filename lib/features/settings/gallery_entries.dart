@@ -59,7 +59,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     id: 'appearance-incoming',
     section: GallerySection.progressAndSettings,
     label: 'Appearance, this version', // ui-literal-ok: debug-only gallery
-    note: 'Every control incoming', // ui-literal-ok: debug-only gallery
+    note: 'Wallpaper colours incoming', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppearancePage(),
   ),
   GalleryEntry(
