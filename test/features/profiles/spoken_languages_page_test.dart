@@ -1,18 +1,25 @@
+import 'dart:async' show unawaited;
 import 'dart:io';
 
 import 'package:flutter/gestures.dart' show kLongPressTimeout;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 
 import '../../support/harness.dart';
 
 void main() {
+  // A cached asset's future belongs to the test that first read it.
+  setUp(rootBundle.clear);
+
   group('assets/languages.yaml', () {
     test('lists English, Bengali and Hindi, each by its own name too', () {
       final languages = parseSpokenLanguages(
@@ -79,9 +86,16 @@ void main() {
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
 
-    expect(find.text(l10n.spokenTitle), findsOneWidget);
+    // The welcome, then straight past the tour.
+    expect(find.text(l10n.appTitle), findsOneWidget);
+    await tester.tap(find.text(l10n.onboardingStart));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.onboardingSkip));
+    await tester.pumpAndSettle();
+
+    expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
     expect(find.byType(AppShell), findsNothing);
-    final go = find.widgetWithText(FilledButton, l10n.commonContinue);
+    final go = find.widgetWithText(FilledButton, l10n.onboardingFinish);
     expect(
       tester.widget<FilledButton>(go).onPressed,
       isNull,
@@ -105,6 +119,7 @@ void main() {
     }
     await drag.up();
     await tester.pumpAndSettle();
+    expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
 
     await tester.tap(go);
     await tester.pumpAndSettle();
@@ -126,6 +141,83 @@ void main() {
     final l10n = l10nOf(tester);
     // English, the test state's language, starts ticked and ranked 1.
     expect(find.text(l10n.spokenRank(1)), findsOneWidget);
+  });
+
+  testWidgets('from Settings, Continue saves the ranking and goes back', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpApp(tester);
+    final l10n = l10nOf(tester);
+    unawaited(
+      AppNavigator.openSpokenLanguages(tester.element(find.byType(AppShell))),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.spokenTitle), findsOneWidget);
+
+    await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
+    await tester.pump();
+    await tester.tap(find.widgetWithText(FilledButton, l10n.commonContinue));
+    await tester.pumpAndSettle();
+    expect(state.settings.spokenLanguages, ['en', 'hi']);
+    expect(find.text(l10n.spokenTitle), findsNothing);
+  });
+
+  group('one line', () {
+    final choices = parseSpokenLanguages(
+      File(SpokenLanguagesPage.asset).readAsStringSync(),
+    );
+    for (final rtl in <bool>[false, true]) {
+      testWidgets(
+        'heading, body and boxes on 24, every name on 72, ticked or not'
+        '${rtl ? ', right to left' : ''}',
+        (tester) async {
+          usePhone(tester);
+          await pumpScreen(
+            tester,
+            Directionality(
+              textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
+              child: OnboardingFlow(
+                startAt: 'spoken',
+                spoken: const <String>['en'],
+                choices: choices,
+              ),
+            ),
+          );
+          final l10n = l10nOf(tester);
+          // Distance from the start edge.
+          double start(Finder f) =>
+              rtl ? 390 - tester.getTopRight(f).dx : tester.getTopLeft(f).dx;
+          expect(start(find.text(l10n.onboardingSpokenTitle)), 24);
+          expect(start(find.text(l10n.onboardingSpokenBody)), 24);
+          for (final box in tester.widgetList(find.byType(Checkbox))) {
+            final centre = tester.getCenter(find.byWidget(box)).dx;
+            expect(rtl ? 390 - centre : centre, 24 + 9, reason: 'box');
+          }
+          // English is ticked and ranked, Hindi is not: both names on 72.
+          expect(start(find.text(l10n.spokenOption('English', 'English'))), 72);
+          expect(start(find.text(l10n.spokenOption('Hindi', 'हिन्दी'))), 72);
+        },
+      );
+    }
+  });
+
+  testWidgets('the rank hint comes with the second tick', (tester) async {
+    usePhone(tester);
+    final choices = parseSpokenLanguages(
+      File(SpokenLanguagesPage.asset).readAsStringSync(),
+    );
+    await pumpScreen(
+      tester,
+      OnboardingFlow(startAt: 'spoken', choices: choices),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text(l10n.spokenOption('English', 'English')));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.spokenRankHint), findsNothing);
+    await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.spokenRankHint), findsOneWidget);
   });
 
   test(

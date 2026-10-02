@@ -9,6 +9,7 @@ import '../decks/gallery_entries.dart';
 import '../drill/gallery_entries.dart';
 import '../drill/grammar_drill.dart';
 import '../drill/pair_drill.dart';
+import '../onboarding/gallery_entries.dart';
 import '../profiles/gallery_entries.dart';
 import '../settings/gallery_entries.dart';
 import '../stats/gallery_entries.dart';
@@ -24,6 +25,7 @@ import 'gallery_entry.dart';
 /// screens followed by the other states it exports. A builder adds entries
 /// to their own feature's lists, never here.
 List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
+  ...onboardingGalleryEntries,
   ...profilesGalleryEntries,
   ...profilesGalleryStates,
   ...todayGalleryEntries,
