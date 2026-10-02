@@ -1,0 +1,79 @@
+# How Telugu script works: the recurring features a learner from English
+# misses, shown before the first letters and from a script deck's Tips.
+# See ADR-0016 and docs/DECK-FORMAT.md.
+schema: 1
+kind: script
+id: te-script
+language: te
+name: "How Telugu script works"
+intro: "Telugu script is built from a few ideas that come back in letter after letter. They look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  - id: tick
+    name: "The tick on top"
+    term: "తలకట్టు"
+    reading: "talakattu"
+    example: "క"
+    text: "Many letters wear a small tick on top. A vowel sign usually takes its place, so a letter's top changes with its vowel: క, కి, కె."
+    letters: ["క", "గ", "చ", "త", "న"]
+  - id: rounds
+    name: "Letters built from rounds"
+    example: "ఠ"
+    text: "Most letters are curves and circles, from centuries of writing on palm leaves, where straight lines split the leaf. Letters often differ by a small detail inside the round, so look closely."
+    letters: ["ఒ", "ర", "ఠ", "ద", "బ"]
+  - id: breath-mark
+    name: "A breathy letter is its partner with a mark"
+    example: "ఫ"
+    text: "Often the letter with a breath after it is its plain partner with a small extra stroke: ప and ఫ, బ and భ, డ and ఢ."
+    letters: ["ప", "ఫ", "బ", "భ", "డ", "ఢ"]
+  - id: inherent-vowel
+    name: "The vowel you don't see"
+    example: "క"
+    text: "Every consonant carries a short a unless a sign changes it: క alone is ka. Telugu words end in a vowel, and it is said: తల is tala."
+    letters: ["క", "కల", "తల"]
+  - id: vowel-signs
+    name: "Vowels as signs on a letter"
+    term: "గుణింతాలు"
+    reading: "gunintaalu"
+    example: "కి"
+    text: "After a consonant a vowel is a sign on it: on top in place of the tick (కి, కె), joined on the right (కా, కు), or in two parts (కై). Unlike Hindi and Bengali, none is written before the letter."
+    letters: ["కా", "కి", "కు", "కె", "కొ"]
+  - id: long-stroke
+    name: "A stroke for a long vowel"
+    term: "దీర్ఘం"
+    reading: "diirgham"
+    example: "కీ"
+    text: "A short and a long vowel are different words in Telugu, and the long one usually adds a stroke to the short sign: కి and కీ, కె and కే, కొ and కో."
+    letters: ["కి", "కీ", "కె", "కే", "కొ", "కో"]
+  - id: pollu
+    name: "The mark that takes the vowel away"
+    term: "పొల్లు"
+    reading: "pollu"
+    example: "క్"
+    text: "The small mark ్ on top of a letter means no vowel after it. It ends English words written in Telugu, such as డాక్టర్ (daaktar, doctor)."
+    letters: ["క్", "ర్", "న్"]
+  - id: vattu
+    name: "The second consonant below"
+    term: "వత్తు"
+    reading: "vattu"
+    example: "స్త"
+    text: "Two consonants with no vowel between them: the second is written small below the first, usually without its tick. Some vattus look little like their letter, such as the r below ప in ప్ర."
+    letters: ["స్త", "ప్ర", "క్ష", "వ్య"]
+  - id: doubled
+    name: "Doubled consonants"
+    term: "ద్విత్వం"
+    reading: "dvitvam"
+    example: "అమ్మ"
+    text: "A consonant written again below itself is held longer, and it changes the word. Doubled letters are everywhere in Telugu: అమ్మ, అక్క, పెద్ద."
+    letters: ["క్క", "త్త", "న్న", "మ్మ", "ల్ల"]
+  - id: sunna
+    name: "The circle after a letter"
+    term: "సున్నా"
+    reading: "sunnaa"
+    example: "కం"
+    text: "A small circle ం after a letter is an m or an n: m at the end of a word, as in పుస్తకం (pustakam, book), and before another consonant the nasal that suits it."
+    letters: ["కం", "పుస్తకం"]
+  - id: digits
+    name: "Telugu digits"
+    example: "౩"
+    text: "Telugu has its own digits, seen on old signs and in some books. Everyday Telugu uses 0 to 9."
+    letters: ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯"]
