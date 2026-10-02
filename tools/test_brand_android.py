@@ -94,6 +94,37 @@ class ApplyTest(unittest.TestCase):
             self.manifest.read_text(encoding="utf-8"),
         )
 
+    def test_the_microphone_and_the_recogniser_are_declared(self) -> None:
+        brand_android.apply(self.root)
+        text = self.manifest.read_text(encoding="utf-8")
+        root = ET.fromstring(text)
+        name = "{http://schemas.android.com/apk/res/android}name"
+        permissions = [e.get(name) for e in root.findall("uses-permission")]
+        self.assertEqual(permissions, ["android.permission.RECORD_AUDIO"])
+        actions = [e.get(name) for e in root.findall("queries/intent/action")]
+        self.assertEqual(actions, ["android.speech.RecognitionService"])
+
+    def test_an_existing_queries_block_keeps_what_it_had(self) -> None:
+        self.manifest.write_text(
+            MANIFEST.replace(
+                "</manifest>",
+                "    <queries>\n        <intent>\n"
+                '            <action android:name="android.intent.action.PROCESS_TEXT"/>\n'
+                "        </intent>\n    </queries>\n</manifest>",
+            ),
+            encoding="utf-8",
+        )
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        name = "{http://schemas.android.com/apk/res/android}name"
+        self.assertEqual(len(root.findall("queries")), 1)
+        self.assertEqual(
+            sorted(e.get(name) for e in root.findall("queries/intent/action")),
+            ["android.intent.action.PROCESS_TEXT", "android.speech.RecognitionService"],
+        )
+        self.assertEqual(len(root.findall("uses-permission")), 1)
+
     def test_no_android_folder_is_an_error(self) -> None:
         self.manifest.unlink()
         with self.assertRaisesRegex(brand_android.BrandError, "flutter create"):

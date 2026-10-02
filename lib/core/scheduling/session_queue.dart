@@ -114,7 +114,9 @@ class SessionQueue {
   /// [modes] limits the session to the modes the learner has switched on, or
   /// to one mode for "practise one skill". [newCardLimit] is how many new
   /// pairs may still be introduced today: the daily cap less those already
-  /// introduced. A negative limit counts as zero.
+  /// introduced. A negative limit counts as zero. [canHear] says whether the
+  /// phone can recognise speech in a card's language; without it, nothing is
+  /// drilled by speaking.
   ///
   /// [cards] must be distinct. Cards from several decks may be mixed; the
   /// caller's [stateOf] tells them apart.
@@ -132,6 +134,7 @@ class SessionQueue {
     required VoiceLookup hasVoice,
     required DateTime now,
     required int newCardLimit,
+    VoiceLookup? canHear,
     PairFilter? isSetAside,
     bool Function(Card card)? canIntroduce,
     bool reviseAll = false,
@@ -140,6 +143,7 @@ class SessionQueue {
       DrillMode.production,
       DrillMode.listening,
       DrillMode.grammar,
+      DrillMode.speaking,
     },
   }) {
     final due = <({SessionItem item, int order})>[];
@@ -148,7 +152,10 @@ class SessionQueue {
 
     var order = 0;
     for (final card in cards) {
-      final allowed = card.modesIn(ttsAvailable: hasVoice(card));
+      final allowed = card.modesIn(
+        ttsAvailable: hasVoice(card),
+        speechAvailable: canHear?.call(card) ?? false,
+      );
       SessionItem? mostOverdue;
       SessionItem? firstNew;
       for (final mode in DrillMode.values) {

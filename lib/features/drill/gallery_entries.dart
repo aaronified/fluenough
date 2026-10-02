@@ -1,7 +1,9 @@
 import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/session.dart';
+import '../../app/settings.dart';
 import '../../app/skill.dart';
+import '../../core/speech/speech_engine.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'drill_page.dart';
@@ -107,6 +109,16 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
       request: DrillRequest.deck('es-en-core-100', skill: Skill.listening),
     ),
   ),
+  GalleryEntry(
+    id: 'drill-speaking',
+    section: GallerySection.drills,
+    label: 'Speaking', // ui-literal-ok: debug-only gallery
+    note: 'See the meaning, say the word (#89)', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.speaking),
+    ),
+    state: speakingOn,
+  ),
   ...grammarGalleryEntries,
   ...pairGalleryEntries,
   GalleryEntry(
@@ -121,3 +133,16 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     state: (app) => AppState.test(decks: rtlFixtureDecks(), now: app.now()),
   ),
 ];
+
+/// Speaking switched on, with a recogniser that hears Spanish and Hindi on
+/// the phone and has the microphone already: the speaking drill's gallery
+/// state.
+AppState speakingOn(AppState app) => GalleryFixtures.state(
+  app,
+  speech: FixedSpeechEngine(onDevice: <String>{'es', 'hi'}, granted: true),
+  settings: SettingsNotifier(
+    spokenLanguages: const <String>['en'],
+    learningChosen: true,
+    enabledSkills: Skill.values.toSet(),
+  ),
+);

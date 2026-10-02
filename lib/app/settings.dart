@@ -44,12 +44,14 @@ class SettingsNotifier extends ChangeNotifier {
     List<String> learningLanguages = const <String>[],
     Set<String> placedDecks = const <String>{},
     this._learningChosen = false,
+    Set<String> speechOnline = const <String>{},
   }) : _enabledSkills = Set<Skill>.unmodifiable(
-         enabledSkills ?? Skill.values.toSet(),
+         enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
        _spokenLanguages = List<String>.unmodifiable(spokenLanguages),
        _learningLanguages = List<String>.unmodifiable(learningLanguages),
-       _placedDecks = Set<String>.unmodifiable(placedDecks);
+       _placedDecks = Set<String>.unmodifiable(placedDecks),
+       _speechOnline = Set<String>.unmodifiable(speechOnline);
 
   /// The new-card slider's range and step, from the design.
   static const int maxNewCardsPerDay = 50;
@@ -82,6 +84,7 @@ class SettingsNotifier extends ChangeNotifier {
   List<String> _learningLanguages;
   Set<String> _placedDecks;
   bool _learningChosen;
+  Set<String> _speechOnline;
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
 
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
@@ -146,6 +149,21 @@ class SettingsNotifier extends ChangeNotifier {
   bool get learningChosen => _learningChosen;
   set learningChosen(bool value) =>
       _set(_learningChosen, value, (v) => _learningChosen = v);
+
+  /// The languages, by code, whose speech the learner allows to be
+  /// recognised online, where the phone cannot recognise them itself
+  /// (ADR-0014). Audio then leaves the phone, so it is asked per language.
+  Set<String> get speechOnline => _speechOnline;
+
+  bool allowsOnlineSpeech(String code) => _speechOnline.contains(code);
+
+  void allowOnlineSpeech(String code, bool allowed) {
+    final next = Set<String>.of(_speechOnline);
+    allowed ? next.add(code) : next.remove(code);
+    if (setEquals(next, _speechOnline)) return;
+    _speechOnline = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
 
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
@@ -243,6 +261,7 @@ class SettingsNotifier extends ChangeNotifier {
     'learning_languages': _learningLanguages.join(','),
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
+    'speech_online': (_speechOnline.toList()..sort()).join(','),
     'facts_shown': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _factsShown.entries)
         key: value.millisecondsSinceEpoch,
@@ -304,6 +323,13 @@ class SettingsNotifier extends ChangeNotifier {
       ];
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
+    if (pick('speech_online', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
+          allowOnlineSpeech(code, true);
+        }
+      }
+    }
     if (pick('placed_decks', (t) => t) case final v?) {
       placedDecks = <String>{
         for (final id in v.split(','))

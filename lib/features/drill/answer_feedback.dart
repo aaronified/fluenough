@@ -28,6 +28,7 @@ class AnswerFeedback extends StatelessWidget {
     required this.expected,
     required this.transliterating,
     this.language,
+    this.spoken = false,
   });
 
   final TypedAnswer answer;
@@ -44,6 +45,10 @@ class AnswerFeedback extends StatelessWidget {
   /// The deck's language, in which a screen reader reads the answer and what
   /// was typed. Null when they are not in it: a heard number's digits.
   final LanguageInfo? language;
+
+  /// Whether the answer was said, not typed: the detail says what was heard
+  /// (#89).
+  final bool spoken;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +99,9 @@ class AnswerFeedback extends StatelessWidget {
             : graded.droppedArticle
             ? l10n.feedbackArticle
             : l10n.feedbackAccent,
-        l10n.feedbackTypedWritten(answer.typed, shown(graded.matched)),
+        spoken
+            ? l10n.feedbackSaidWritten(answer.typed, shown(graded.matched))
+            : l10n.feedbackTypedWritten(answer.typed, shown(graded.matched)),
       ),
       AnswerOutcome.closeTypo => banner(
         FeedbackKind.nearMiss,
@@ -104,7 +111,9 @@ class AnswerFeedback extends StatelessWidget {
       AnswerOutcome.wrong => banner(
         FeedbackKind.wrong,
         l10n.feedbackWrong,
-        l10n.feedbackAnswer(shown(null)),
+        spoken
+            ? l10n.feedbackSaidAnswer(answer.typed, shown(null))
+            : l10n.feedbackAnswer(shown(null)),
       ),
     };
   }

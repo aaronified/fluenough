@@ -48,7 +48,7 @@ KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
 CODE_RE = re.compile(r"[a-z]{2,3}")
-MODES = {"recognition", "production", "listening", "grammar"}
+MODES = {"recognition", "production", "listening", "grammar", "speaking"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
 
 HEADER_KEYS = {
