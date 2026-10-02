@@ -5,7 +5,7 @@ kind: vocab
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Two consonants with no vowel between them join: the first is usually written as a half letter, without its upright stroke. Four join in their own shapes."
+description: "Two consonants with no vowel between them join: the first is usually written as a half letter, most without their upright stroke. Four join in their own shapes."
 tags: [beginner, unreviewed, script]
 cards:
   - id: hi-en-script-conjuncts-0001
@@ -47,17 +47,20 @@ cards:
     target: "क्क"
     native: "k + k (half क)"
     reading: "kka"
-    notes: "The first क loses its stroke and joins the second: पक्का (pakkaa, firm; certain)."
+    modes: [recognition, production]
+    notes: "The first क is written as a half letter, without its hook on the right, and joins the second: पक्का (pakkaa, firm; certain). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-en-script-conjuncts-0009
     target: "च्च"
     native: "ch + ch (half च)"
     reading: "chcha"
-    notes: "Half च joined to च: बच्चा (bachchaa, child)."
+    modes: [recognition, production]
+    notes: "Half च joined to च: बच्चा (bachchaa, child). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-en-script-conjuncts-0010
     target: "त्त"
     native: "t + t (half त)"
     reading: "tta"
-    notes: "Half त joined to त: पत्ता (pattaa, leaf)."
+    modes: [recognition, production]
+    notes: "Half त joined to त: पत्ता (pattaa, leaf). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-en-script-conjuncts-0011
     target: "स्त"
     native: "s + t (half स)"
@@ -77,12 +80,14 @@ cards:
     target: "द्ध"
     native: "d + dh"
     reading: "ddha"
-    notes: "द and ध joined, one above the other: शुद्ध (shuddh, pure)."
+    modes: [recognition, production]
+    notes: "द and ध joined, one above the other: शुद्ध (shuddh, pure). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-en-script-conjuncts-0015
     target: "ल्ल"
     native: "l + l (half ल)"
     reading: "lla"
-    notes: "Half ल joined to ल: उल्लू (ulluu, owl)."
+    modes: [recognition, production]
+    notes: "Half ल joined to ल: उल्लू (ulluu, owl). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-en-script-conjuncts-0016
     target: "प्य"
     native: "p + y (half प)"

@@ -134,15 +134,17 @@ void main() {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
-    final sentences = state.deckById('hi-en-script-consonants')!;
-    while (state.notStudiedIn(sentences) > 0) {
+    final consonants = state.deckById('hi-en-script-consonants')!;
+    while (state.notStudiedIn(consonants) > 0) {
       for (final item
-          in state.buildSession(DrillRequest.learnAnyway(sentences.id)).items) {
+          in state
+              .buildSession(DrillRequest.learnAnyway(consonants.id))
+              .items) {
         state.record(item, 5);
       }
     }
-    expect(unitIds(state).first, contains(sentences.id));
-    expect(badgeOf(state, sentences.id), DeckBadgeKind.done);
+    expect(unitIds(state).first, contains(consonants.id));
+    expect(badgeOf(state, consonants.id), DeckBadgeKind.done);
     expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.pending);
   });
 
