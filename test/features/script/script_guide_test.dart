@@ -271,6 +271,24 @@ void main() {
     );
   });
 
+  test('the bundled Bengali guide loads, and its reading deck opens the '
+      'path', () async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    final catalog = await DeckCatalog.bundled().load();
+    expect(catalog.broken, isEmpty);
+    final bengali = catalog.scriptGuides['bn']!;
+    expect(bengali.features.map((f) => f.id), contains('knot'));
+    expect(
+      catalog.paths['bn/en']!.units.first,
+      contains('bn-en-script-reading'),
+    );
+    final reading = catalog.decks.singleWhere(
+      (entry) => entry.id == 'bn-en-script-reading',
+    );
+    expect(reading.isScript, isTrue);
+    expect(reading.cards, hasLength(16));
+  });
+
   test('which guides were seen survives a restart', () {
     final settings = SettingsNotifier()..markScriptGuideSeen('bn');
     final restored = SettingsNotifier()..restore(settings.toStored());
