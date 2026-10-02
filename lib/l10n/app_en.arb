@@ -84,7 +84,7 @@
   },
   "commonDueBadge": "{count, plural, other{{count} due}}",
   "@commonDueBadge": {
-    "description": "Badge on a deck row: how many cards a session on that deck would drill now.",
+    "description": "Badge on a deck row: how many reviews in that deck are due now. New cards are not counted.",
     "placeholders": {
       "count": {
         "type": "int",
@@ -94,7 +94,11 @@
   },
   "commonDoneBadge": "Done",
   "@commonDoneBadge": {
-    "description": "Badge on a deck row the profile learns, when nothing in it is due."
+    "description": "Badge on a deck row the profile learns, when every card in it has been learned and nothing is due."
+  },
+  "commonNotDoneBadge": "Not done",
+  "@commonNotDoneBadge": {
+    "description": "Badge on a deck row the profile learns, when nothing in it is due but some of its cards are not learned yet. Every deck starts with it."
   },
   "commonStartBadge": "Start",
   "@commonStartBadge": {
@@ -861,6 +865,34 @@
       }
     }
   },
+  "deckLearnAnyway": "Learn anyway · {count}",
+  "@deckLearnAnyway": {
+    "description": "The button at the foot of a deck's screen when today's new cards are spent but the deck still has cards to learn. The count is how many it would introduce.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "deckLearnAnywayNote": "Today’s new cards are used up. You can keep going with this deck anyway.",
+  "@deckLearnAnywayNote": {
+    "description": "Above Learn anyway on a deck's screen: nothing is due and the daily allowance of new cards is spent (or set to none), but the learner may still go on."
+  },
+  "deckRevise": "Revise · {count}",
+  "@deckRevise": {
+    "description": "The button at the foot of a finished deck's screen, when nothing is due: practise every learned card again. The count is how many cards.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "deckReviseNote": "You’ve learned every card here. Revise them whenever you like — it won’t change when they’re next due.",
+  "@deckReviseNote": {
+    "description": "Above Revise on a finished deck's screen: revising is not recorded, so the schedule stays as it is."
+  },
   "deckGrammarCell": "{lemma} — {slot}",
   "@deckGrammarCell": {
     "description": "A grammar card in the preview: the dictionary form and the slot, like \"hablar — nosotros\".",
@@ -1251,6 +1283,10 @@
   "drillEndBody": "Your answers so far are already recorded.",
   "@drillEndBody": {
     "description": "Body of the end-session dialog."
+  },
+  "drillEndBodyNotRecorded": "This session isn’t recorded, so ending it changes nothing.",
+  "@drillEndBodyNotRecorded": {
+    "description": "Body of the end-session dialog in a session that is not recorded: number practice, or revising a finished deck."
   },
   "drillEndKeepGoing": "Keep going",
   "@drillEndKeepGoing": {

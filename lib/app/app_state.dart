@@ -39,8 +39,8 @@ enum VoiceStatus {
 /// A deck's numbers, as its row and its detail screen show them.
 ///
 /// [due] and [fresh] are what a session on the deck would drill right now,
-/// in every skill the learner has on; [session] is the two together, which is
-/// what "Review all due" runs and a deck's badge counts.
+/// in every skill the learner has on; the two together are what "Review all
+/// due" runs. A deck's badge counts [due] only.
 typedef DeckCounts = ({int due, int fresh, int learned});
 
 /// Everything the interface reads and does, in one place (ADR-0007).
@@ -429,7 +429,11 @@ class AppState extends ChangeNotifier {
               skill.mode!,
           };
 
-    var newLimit = newCardsLeftToday;
+    var newLimit = request.revise
+        ? 0
+        : request.pastDailyCap
+        ? cards.length
+        : newCardsLeftToday;
     final requested = request.newLimit;
     if (requested != null && requested < newLimit) newLimit = requested;
 
@@ -448,10 +452,18 @@ class AppState extends ChangeNotifier {
         cardId: card.id,
         mode: mode,
       )),
+      reviseAll: request.revise,
       modes: modes,
     );
     return request.newOnly ? queue.withoutDue() : queue;
   }
+
+  /// Cards in [deck] with a pair never drilled, in every skill the learner
+  /// has on, whatever today's cap allows. None left means the deck is
+  /// finished: its badge says Done when nothing is due, and it can be
+  /// revised.
+  int notStudiedIn(DeckEntry deck) =>
+      buildSession(DrillRequest.learnAnyway(deck.id)).fresh.length;
 
   /// How numbers are spelled in [language], or null for a language with no
   /// number rules (#54).

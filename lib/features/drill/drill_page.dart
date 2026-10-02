@@ -26,7 +26,7 @@ import 'typed_drill.dart';
 /// The queue is built once, when the catalog and the voice check are in,
 /// from `AppState.buildSession`; a [DrillSession] owned by this page's
 /// `State` runs it. An empty queue shows the empty state. Closing part-way
-/// asks first, since the answers so far are already recorded.
+/// asks first, saying whether the answers so far are recorded.
 ///
 /// Grammar and minimal pairs are B4's, in `grammar_drill.dart` and
 /// `pair_drill.dart`; no live session contains them yet.
@@ -112,6 +112,8 @@ class _DrillPageState extends State<DrillPage> {
       state: state,
       items: items,
       inputMode: preset?.inputMode ?? InputMode.script,
+      recorded: !request.revise,
+      revising: request.revise,
     );
     preset?.apply(session);
     _session = session..addListener(_onSession);
@@ -141,7 +143,11 @@ class _DrillPageState extends State<DrillPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(l10n.drillEndTitle),
-        content: Text(l10n.drillEndBody),
+        content: Text(
+          _session?.recorded ?? true
+              ? l10n.drillEndBody
+              : l10n.drillEndBodyNotRecorded,
+        ),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),

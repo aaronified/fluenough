@@ -222,6 +222,42 @@ void main() {
     });
   });
 
+  test('reviseAll drills every reviewed card, due or not, and nothing new', () {
+    final early = card('early');
+    final later = card('later');
+    final unseen = card('unseen');
+    final queue = SessionQueue.build(
+      cards: [early, later, unseen],
+      stateOf: (c, m) => switch ((c.id, m)) {
+        ('early', DrillMode.recognition) => dueDaysAgo(-5),
+        ('early', DrillMode.production) => dueDaysAgo(-2),
+        ('later', DrillMode.recognition) => dueDaysAgo(-9),
+        _ => null,
+      },
+      hasVoice: (_) => true,
+      now: now,
+      newCardLimit: 0,
+      reviseAll: true,
+    );
+    expect(queue.fresh, isEmpty);
+    // One mode per card, the one due soonest; soonest card first.
+    expect(queue.due.map((i) => (i.card.id, i.mode)), [
+      ('early', DrillMode.production),
+      ('later', DrillMode.recognition),
+    ]);
+    // Without it, nothing is due yet.
+    expect(
+      SessionQueue.build(
+        cards: [early, later, unseen],
+        stateOf: (c, m) => c.id == 'unseen' ? null : dueDaysAgo(-5),
+        hasVoice: (_) => true,
+        now: now,
+        newCardLimit: 0,
+      ).isEmpty,
+      isTrue,
+    );
+  });
+
   test('withoutDue keeps only the new pairs', () {
     final queue = build(
       [card('a'), card('b')],
