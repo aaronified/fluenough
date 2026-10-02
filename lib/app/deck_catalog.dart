@@ -7,6 +7,8 @@ import 'package:yaml/yaml.dart';
 import '../core/data/course_path.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/facts_parser.dart';
+import '../core/data/sounds_parser.dart';
+import '../core/models/sound_contrasts.dart';
 import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/data/themes.dart';
@@ -154,12 +156,14 @@ class Catalog {
     Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
+    Map<String, SoundContrasts> sounds = const <String, SoundContrasts>{},
   }) : decks = List<DeckEntry>.unmodifiable(decks),
        broken = List<BrokenDeck>.unmodifiable(broken),
        themes = List<DeckTheme>.unmodifiable(themes),
        facts = Map<String, FactsFile>.unmodifiable(facts),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
-       paths = Map<String, CoursePath>.unmodifiable(paths);
+       paths = Map<String, CoursePath>.unmodifiable(paths),
+       sounds = Map<String, SoundContrasts>.unmodifiable(sounds);
 
   /// Each language's daily facts (#48), by language code.
   final Map<String, FactsFile> facts;
@@ -171,6 +175,10 @@ class Catalog {
   /// Each course's curated path (#117, ADR-0013), by `CoursePath.course`,
   /// such as `hi/en`. A course without a path file has none.
   final Map<String, CoursePath> paths;
+
+  /// Each language's sound contrasts (#89, ADR-0015), by language code. A
+  /// language without a sounds file has none.
+  final Map<String, SoundContrasts> sounds;
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
@@ -256,6 +264,7 @@ class DeckCatalog {
     final facts = <String, FactsFile>{};
     final numberRules = <String, NumberRules>{};
     final coursePaths = <String, CoursePath>{};
+    final sounds = <String, SoundContrasts>{};
     final firstPath = <String, String>{};
     final paths = files.keys.toList()..sort();
     for (final path in paths) {
@@ -286,6 +295,15 @@ class DeckCatalog {
             source: path.split('/').last,
           );
           coursePaths.putIfAbsent(coursePath.course, () => coursePath);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'sounds') {
+        try {
+          final file = parseSounds(text, source: path.split('/').last);
+          sounds.putIfAbsent(file.language, () => file);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
         }
@@ -334,6 +352,7 @@ class DeckCatalog {
       facts: facts,
       numberRules: numberRules,
       paths: coursePaths,
+      sounds: sounds,
     );
   }
 
