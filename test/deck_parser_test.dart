@@ -102,12 +102,19 @@ void main() {
             .whereType<File>()
             .map((f) => f.path)
             .where((p) => p.endsWith('.yaml'))
-            // Facts files (#48), the themes file (#52), number rules (#54)
-            // and course paths (#117) are valid in decks/ but are not decks.
+            // Facts files (#48), the themes file (#52), number rules (#54),
+            // course paths (#117) and sounds files (#89) are valid in decks/
+            // but are not decks.
             .where((p) {
               final doc = loadYaml(File(p).readAsStringSync());
               return !(doc is Map &&
-                  {'facts', 'themes', 'numbers', 'path'}.contains(doc['kind']));
+                  {
+                    'facts',
+                    'themes',
+                    'numbers',
+                    'path',
+                    'sounds',
+                  }.contains(doc['kind']));
             })
             .toList()
           ..sort();
