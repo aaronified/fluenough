@@ -57,13 +57,16 @@ void main() {
       expect(spellNumber(bn, 1950), contains('এক হাজার নয়শো পঞ্চাশ'));
     });
 
-    test('never 2026', () => expect(spellNumber(bn, 2026), isEmpty));
+    test('2026, now that every number to 99 has its word', () {
+      expect(spellNumber(bn, 2026).first, 'দু হাজার ছাব্বিশ');
+      expect(spellNumber(bn, 2026), contains('দুই হাজার ছাব্বিশ'));
+    });
   });
 
   group('Telugu: 21 to 99 built from parts, and forms before more digits', () {
     final te = bundled('te');
 
-    test('2026, which Hindi and Bengali cannot spell', () {
+    test('2026, which Hindi cannot spell', () {
       expect(spellNumber(te, 2026).first, 'రెండు వేల ఇరవై ఆరు');
     });
 

@@ -1,0 +1,96 @@
+schema: 1
+id: bn-en-grammar-perfect
+name: "Present perfect"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I have done, she has gone: -এছি, which Bengali also uses for anything just done. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Present perfect"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The endings are -এছি, -এছিস, -এছো, -এছেন, -এছে, -এছেন. It is 'have done', and also the everyday past for something recent: আমি খেয়েছি, I've eaten, or I ate. -লাম (খেলাম) says the same, and speakers choose freely. Some verbs change their vowel: খাওয়া gives খেয়েছি, বোঝা gives বুঝেছি, আসা gives এসেছি. যাওয়া is গিয়েছি, said গেছি in everyday speech, and the drill accepts both. ও and এ take the same form as সে, and উনি and ইনি the same as তিনি. করেছো is also written করেছ, and both are accepted."
+  entries:
+    - lemma: "করা"
+      key: kora
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করেছি"
+        "তুই / তোরা": "করেছিস"
+        "তুমি / তোমরা": ["করেছো", "করেছ"]
+        "আপনি / আপনারা": "করেছেন"
+        "সে / তারা": "করেছে"
+        "তিনি / তাঁরা": "করেছেন"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": ["গিয়েছি", "গেছি"]
+        "তুই / তোরা": ["গিয়েছিস", "গেছিস"]
+        "তুমি / তোমরা": ["গিয়েছো", "গিয়েছ", "গেছো", "গেছ"]
+        "আপনি / আপনারা": ["গিয়েছেন", "গেছেন"]
+        "সে / তারা": ["গিয়েছে", "গেছে"]
+        "তিনি / তাঁরা": ["গিয়েছেন", "গেছেন"]
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খেয়েছি"
+        "তুই / তোরা": "খেয়েছিস"
+        "তুমি / তোমরা": ["খেয়েছো", "খেয়েছ"]
+        "আপনি / আপনারা": "খেয়েছেন"
+        "সে / তারা": "খেয়েছে"
+        "তিনি / তাঁরা": "খেয়েছেন"
+    - lemma: "আসা"
+      key: asha
+      gloss: "to come"
+      forms:
+        "আমি / আমরা": "এসেছি"
+        "তুই / তোরা": "এসেছিস"
+        "তুমি / তোমরা": ["এসেছো", "এসেছ"]
+        "আপনি / আপনারা": "এসেছেন"
+        "সে / তারা": "এসেছে"
+        "তিনি / তাঁরা": "এসেছেন"
+    - lemma: "দেখা"
+      key: dekha
+      gloss: "to see"
+      forms:
+        "আমি / আমরা": "দেখেছি"
+        "তুই / তোরা": "দেখেছিস"
+        "তুমি / তোমরা": ["দেখেছো", "দেখেছ"]
+        "আপনি / আপনারা": "দেখেছেন"
+        "সে / তারা": "দেখেছে"
+        "তিনি / তাঁরা": "দেখেছেন"
+    - lemma: "বলা"
+      key: bola
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বলেছি"
+        "তুই / তোরা": "বলেছিস"
+        "তুমি / তোমরা": ["বলেছো", "বলেছ"]
+        "আপনি / আপনারা": "বলেছেন"
+        "সে / তারা": "বলেছে"
+        "তিনি / তাঁরা": "বলেছেন"
+    - lemma: "বোঝা"
+      key: bojha
+      gloss: "to understand"
+      forms:
+        "আমি / আমরা": "বুঝেছি"
+        "তুই / তোরা": "বুঝেছিস"
+        "তুমি / তোমরা": ["বুঝেছো", "বুঝেছ"]
+        "আপনি / আপনারা": "বুঝেছেন"
+        "সে / তারা": "বুঝেছে"
+        "তিনি / তাঁরা": "বুঝেছেন"
+    - lemma: "হওয়া"
+      key: hoa
+      gloss: "to become; to happen"
+      forms:
+        "আমি / আমরা": "হয়েছি"
+        "তুই / তোরা": "হয়েছিস"
+        "তুমি / তোমরা": ["হয়েছো", "হয়েছ"]
+        "আপনি / আপনারা": "হয়েছেন"
+        "সে / তারা": "হয়েছে"
+        "তিনি / তাঁরা": "হয়েছেন"

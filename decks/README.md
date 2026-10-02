@@ -10,7 +10,7 @@ decks/
   es/  es-en-core-100.yaml
        es-en-grammar-present-ar.yaml
        es-en-path.yaml
-  hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
+  hi/  hi-en-first-words.yaml     a deck per theme, but not yet family, work, home, daily-life
        hi-en-questions.yaml …
        hi-en-path.yaml
   ja/  ja-en-hiragana.yaml
@@ -75,8 +75,11 @@ Bengali differs in two ways, and its readings follow how it is said:
   `o` stands for both অ and ও.
 - **No doubled vowels:** Bengali does not tell long and short vowels apart,
   so আ is `a`, ই and ঈ are `i`, উ and ঊ are `u`. শ, ষ and স are all `sh`,
-  except where a speaker says s, as before a consonant: স্টেশন is
-  `steshon`.
+  except where a speaker says s. স is `s` when it is joined in a conjunct
+  with t, th, n, r or l (স্টেশন is `steshon`, আস্তে is `aste`), and in
+  many English words. It stays `sh` before k and p (হাসপাতাল is
+  `hashpatal`, নমস্কার is `nomoshkar`), and where it is written apart from
+  the next letter (আসতে is `ashte`, আসলাম is `ashlam`).
 
 Telugu tells short e and o from long ones, so its readings double those
 too: ఏడు (seven) is `eedu`, and ఎడమ (left) is `edama`.

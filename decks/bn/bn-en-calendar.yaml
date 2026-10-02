@@ -6,7 +6,7 @@ theme: calendar
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "The months as Bengali says them, and how to read a year."
+description: "The months as Bengali says them, dates and seasons, and how to read a year."
 tags: [beginner]
 cards:
   - id: bn-0334
@@ -14,13 +14,13 @@ cards:
     native: "month"
     reading: "mash"
     pos: "noun"
-    notes: "The Gregorian months are used for almost everything. Bengal's own calendar matters mostly for festivals and পয়লা বৈশাখ (poyla boishakh), the new year in mid-April."
+    notes: "The Gregorian months are used for almost everything. Bengal's own calendar matters mostly for festivals and পয়লা বৈশাখ (poyla boishakh), also পহেলা বৈশাখ (pohela boishakh), the new year on 14 or 15 April."
   - id: bn-0335
     target: "বছর"
     native: "year"
     reading: "bochhor"
     pos: "noun"
-    notes: "Years before 2000 are read in hundreds: 1950 is উনিশশো পঞ্চাশ (unishsho ponchash). From 2000, in thousands: 2020 is দু হাজার কুড়ি (du hajar kuri)."
+    notes: "Years before 2000 are read in hundreds: 1950 is উনিশশো পঞ্চাশ (unishsho ponchash), also written উনিশশ পঞ্চাশ. From 2000, in thousands: 2020 is দু হাজার কুড়ি (du hajar kuri), also দুই হাজার বিশ (dui hajar bish)."
   - id: bn-0336
     target: "তারিখ"
     native: "date"
@@ -35,7 +35,7 @@ cards:
   - id: bn-0338
     target: "ফেব্রুয়ারি"
     native: "February"
-    reading: "februari"
+    reading: "phebruari"
     pos: "noun"
   - id: bn-0339
     target: "মার্চ"
@@ -86,4 +86,76 @@ cards:
     target: "ডিসেম্বর"
     native: "December"
     reading: "disembor"
+    pos: "noun"
+  - id: bn-0698
+    target: "প্রথম"
+    native: "first"
+    reading: "prothom"
+    pos: "adj"
+  - id: bn-0699
+    target: "দ্বিতীয়"
+    native: "second"
+    reading: "ditiyo"
+    pos: "adj"
+    notes: "The ব under দ is not said."
+  - id: bn-0700
+    target: "তৃতীয়"
+    native: "third"
+    reading: "tritiyo"
+    pos: "adj"
+  - id: bn-0701
+    target: "পয়লা"
+    native: "the 1st (of a month)"
+    reading: "poyla"
+    alt_target: ["পহেলা"]
+    pos: "other"
+    notes: "Dates have forms of their own: পয়লা, দোসরা, তেসরা, চৌঠা for the 1st to the 4th, then -ই from the 5th to the 18th (পাঁচই, written ৫ই) and -এ from the 19th (উনিশে, একুশে). Also পহেলা (pohela)."
+  - id: bn-0702
+    target: "দোসরা"
+    native: "the 2nd (of a month)"
+    reading: "doshra"
+    pos: "other"
+  - id: bn-0703
+    target: "তেসরা"
+    native: "the 3rd (of a month)"
+    reading: "teshra"
+    pos: "other"
+  - id: bn-0704
+    target: "চৌঠা"
+    native: "the 4th (of a month)"
+    reading: "choutha"
+    pos: "other"
+  - id: bn-0705
+    target: "একুশে ফেব্রুয়ারি"
+    native: "21 February (Language Martyrs' Day)"
+    reading: "ekushe phebruari"
+    pos: "phrase"
+    notes: "So famous it is a name: একুশে, 'the 21st', remembers the students killed in Dhaka in 1952 for the right to Bengali. Bengalis everywhere keep it, and UNESCO made it International Mother Language Day."
+  - id: bn-0706
+    target: "ঋতু"
+    native: "season"
+    reading: "ritu"
+    pos: "noun"
+    notes: "Bengal counts six: গ্রীষ্ম (grishsho, summer), বর্ষা (borsha, the rains), শরৎ (shorot, early autumn), হেমন্ত (hemonto, late autumn), শীত (shit, winter) and বসন্ত (boshonto, spring)."
+  - id: bn-0707
+    target: "গরমকাল"
+    native: "summer"
+    reading: "goromkal"
+    alt_target: ["গ্রীষ্মকাল"]
+    pos: "noun"
+    notes: "কাল here is 'time, season': গরম (gorom), hot, + কাল. The formal word is গ্রীষ্মকাল (grishshokal)."
+  - id: bn-0708
+    target: "বর্ষাকাল"
+    native: "the rainy season"
+    reading: "borshakal"
+    pos: "noun"
+  - id: bn-0709
+    target: "শীতকাল"
+    native: "winter"
+    reading: "shitkal"
+    pos: "noun"
+  - id: bn-0710
+    target: "বসন্তকাল"
+    native: "spring"
+    reading: "boshontokal"
     pos: "noun"

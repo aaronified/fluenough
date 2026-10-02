@@ -5,19 +5,19 @@ kind: vocab
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Two consonants with no vowel between them are written joined. These are the ones a beginner meets first, each in an everyday word."
+description: "Two consonants with no vowel between them are written joined. These are the ones a beginner meets first, each in an everyday word. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [beginner, unreviewed, script]
 cards:
   - id: bn-0081
     target: "ক্ষ"
-    native: "k + murdhonyo sho, said kh"
+    native: "k + murdhonno sho, said kh"
     reading: "kkho"
     notes: "Looks nothing like its parts. It is said 'kh' at the start of a word and 'kkh' inside one: ক্ষমা (khoma, forgiveness), পক্ষ (pokkho, side)."
   - id: bn-0082
     target: "জ্ঞ"
     native: "j + ny, said gy"
     reading: "gyo"
-    notes: "Looks nothing like its parts, and is said 'g' with a 'y' glide: জ্ঞান (gyan, knowledge). Inside a word it is 'gg': বিজ্ঞান (biggan, science)."
+    notes: "Looks nothing like its parts. At the start of a word it is said 'g' and turns the vowel after it into the 'a' of 'cat': জ্ঞান (gyan, knowledge). Inside a word it is 'gg': বিজ্ঞান (biggyan, science)."
   - id: bn-0083
     target: "ক্ত"
     native: "k + t"
@@ -65,12 +65,12 @@ cards:
     notes: "স and থ joined, with স said 's': স্থান (sthan, place)."
   - id: bn-0092
     target: "শ্র"
-    native: "talobyo sho + the r-sign, said sr"
+    native: "talobbo sho + the r-sign, said sr"
     reading: "sro"
     notes: "The r-sign below শ. Before র, শ is said 's': শ্রম (srom, labour)."
   - id: bn-0093
     target: "ষ্ট"
-    native: "murdhonyo sho + curled-back t"
+    native: "murdhonno sho + curled-back t"
     reading: "shto"
     notes: "ষ and ট joined: কষ্ট (koshto, hardship)."
   - id: bn-0094
@@ -116,3 +116,24 @@ cards:
     native: "b + the y-sign"
     reading: "bya"
     notes: "A য after a consonant is written as the y-sign (য-ফলা). At the start of a word it turns the vowel into the 'a' of 'cat': ব্যাংক (byank, bank)."
+  - id: bn-0391
+    target: "স্ত্র"
+    native: "s + t + the r-sign"
+    reading: "stro"
+    notes: "Three consonants in one shape: স্ত্রী (stri, wife)."
+  - id: bn-0392
+    target: "ত্ম"
+    native: "t + the m-sign, said tt"
+    reading: "tto"
+    modes: [recognition, production]
+    notes: "After a consonant ম can be written as a sign (ম-ফলা) that is not said itself and only doubles the consonant before it: আত্মীয় (attiyo, relative), পদ্ম (poddo, lotus). Said on its own it sounds like ত্ত, so it is drilled by reading and writing only."
+  - id: bn-0393
+    target: "ম্ব"
+    native: "m + b"
+    reading: "mbo"
+    notes: "ম and ব joined: লম্বা (lomba, tall)."
+  - id: bn-0394
+    target: "ঙ্ক"
+    native: "ng + k"
+    reading: "ngko"
+    notes: "ঙ and ক joined: অঙ্ক (ongko, sum; maths)."

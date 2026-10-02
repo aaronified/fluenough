@@ -6,7 +6,7 @@ theme: groceries
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Vegetables, fish, meat, eggs and the staples."
+description: "Vegetables, fruit, fish, meat, eggs and the staples."
 tags: [beginner]
 cards:
   - id: bn-0260
@@ -34,8 +34,9 @@ cards:
     target: "লঙ্কা"
     native: "chilli"
     reading: "lonka"
+    alt_target: ["মরিচ"]
     pos: "noun"
-    notes: "Green chillies are কাঁচা লঙ্কা (kancha lonka). In Bangladesh the word is মরিচ (morich)."
+    notes: "Also মরিচ (morich). Green chillies are কাঁচা লঙ্কা (kancha lonka), or কাঁচা মরিচ (kancha morich)."
   - id: bn-0265
     target: "রসুন"
     native: "garlic"
@@ -49,16 +50,18 @@ cards:
     notes: "Fish is at the heart of Bengali food. Ask for it by name: রুই (rui), ইলিশ (ilish), চিংড়ি (chingri, prawns)."
   - id: bn-0267
     target: "মাংস"
-    native: "meat; mutton"
+    native: "meat"
     reading: "mangsho"
+    alt_target: ["গোশ্ত", "গোশত"]
     pos: "noun"
-    notes: "On its own, মাংস at home usually means goat meat."
+    notes: "Also গোশ্ত (gosht). In many homes, মাংস on its own means goat meat."
   - id: bn-0268
     target: "পাঁঠার মাংস"
     native: "goat meat (mutton)"
     reading: "panthar mangsho"
+    alt_target: ["খাসির মাংস"]
     pos: "phrase"
-    notes: "What to ask for at the butcher. In India 'mutton' almost always means goat."
+    notes: "What to ask for at the butcher. In South Asia 'mutton' almost always means goat. Also খাসির মাংস (khashir mangsho), the more common word in many places."
   - id: bn-0269
     target: "মুরগি"
     native: "chicken"
@@ -70,7 +73,7 @@ cards:
     native: "egg"
     reading: "dim"
     pos: "noun"
-    notes: "Sold by the piece or the dozen, ডজন (dozon)."
+    notes: "Sold by the piece or the dozen, ডজন (dojon)."
   - id: bn-0271
     target: "দুধ"
     native: "milk"
@@ -86,4 +89,57 @@ cards:
     target: "ডাল"
     native: "lentils; dal"
     reading: "dal"
+    pos: "noun"
+  - id: bn-0561
+    target: "কলা"
+    native: "banana"
+    reading: "kola"
+    pos: "noun"
+    notes: "Sold by the dozen, ডজন (dojon), or by the piece."
+  - id: bn-0562
+    target: "আম"
+    native: "mango"
+    reading: "am"
+    pos: "noun"
+  - id: bn-0563
+    target: "পেঁপে"
+    native: "papaya"
+    reading: "penpe"
+    pos: "noun"
+  - id: bn-0564
+    target: "লেবু"
+    native: "lime; lemon"
+    reading: "lebu"
+    pos: "noun"
+  - id: bn-0565
+    target: "ফুলকপি"
+    native: "cauliflower"
+    reading: "phulkopi"
+    pos: "noun"
+  - id: bn-0566
+    target: "বেগুন"
+    native: "aubergine; eggplant"
+    reading: "begun"
+    pos: "noun"
+  - id: bn-0567
+    target: "নুন"
+    native: "salt"
+    reading: "nun"
+    alt_target: ["লবণ"]
+    pos: "noun"
+    notes: "Also লবণ (lobon)."
+  - id: bn-0056
+    target: "ফল"
+    native: "fruit"
+    reading: "phol"
+    pos: "noun"
+  - id: bn-0569
+    target: "তেল"
+    native: "oil"
+    reading: "tel"
+    pos: "noun"
+  - id: bn-0570
+    target: "চিনি"
+    native: "sugar"
+    reading: "chini"
     pos: "noun"

@@ -1,0 +1,96 @@
+schema: 1
+id: bn-en-grammar-past-negative
+name: "Didn't, haven't: -নি"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I didn't go, she hasn't eaten: the present form with -নি joined on. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past negative"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Take the present form and join -নি to it, written as one word: যাই, যাইনি; বোঝো, বোঝোনি, also written বোঝনি, and both are accepted. It is both 'didn't' and 'haven't': আমি খাইনি, I didn't eat, or I haven't eaten; এখনও খাইনি, I haven't eaten yet. For a state, such as knowing, 'didn't' is the -তাম form with না: আমি জানতাম না, I didn't know. ও and এ take the same form as সে, and উনি and ইনি the same as তিনি."
+  entries:
+    - lemma: "করা"
+      key: kora
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করিনি"
+        "তুই / তোরা": "করিসনি"
+        "তুমি / তোমরা": ["করোনি", "করনি"]
+        "আপনি / আপনারা": "করেননি"
+        "সে / তারা": "করেনি"
+        "তিনি / তাঁরা": "করেননি"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": "যাইনি"
+        "তুই / তোরা": "যাসনি"
+        "তুমি / তোমরা": "যাওনি"
+        "আপনি / আপনারা": "যাননি"
+        "সে / তারা": "যায়নি"
+        "তিনি / তাঁরা": "যাননি"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খাইনি"
+        "তুই / তোরা": "খাসনি"
+        "তুমি / তোমরা": "খাওনি"
+        "আপনি / আপনারা": "খাননি"
+        "সে / তারা": "খায়নি"
+        "তিনি / তাঁরা": "খাননি"
+    - lemma: "আসা"
+      key: asha
+      gloss: "to come"
+      forms:
+        "আমি / আমরা": "আসিনি"
+        "তুই / তোরা": "আসিসনি"
+        "তুমি / তোমরা": ["আসোনি", "আসনি"]
+        "আপনি / আপনারা": "আসেননি"
+        "সে / তারা": "আসেনি"
+        "তিনি / তাঁরা": "আসেননি"
+    - lemma: "দেখা"
+      key: dekha
+      gloss: "to see"
+      forms:
+        "আমি / আমরা": "দেখিনি"
+        "তুই / তোরা": "দেখিসনি"
+        "তুমি / তোমরা": ["দেখোনি", "দেখনি"]
+        "আপনি / আপনারা": "দেখেননি"
+        "সে / তারা": "দেখেনি"
+        "তিনি / তাঁরা": "দেখেননি"
+    - lemma: "বলা"
+      key: bola
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বলিনি"
+        "তুই / তোরা": "বলিসনি"
+        "তুমি / তোমরা": ["বলোনি", "বলনি"]
+        "আপনি / আপনারা": "বলেননি"
+        "সে / তারা": "বলেনি"
+        "তিনি / তাঁরা": "বলেননি"
+    - lemma: "বোঝা"
+      key: bojha
+      gloss: "to understand"
+      forms:
+        "আমি / আমরা": "বুঝিনি"
+        "তুই / তোরা": "বুঝিসনি"
+        "তুমি / তোমরা": ["বোঝোনি", "বোঝনি"]
+        "আপনি / আপনারা": "বোঝেননি"
+        "সে / তারা": "বোঝেনি"
+        "তিনি / তাঁরা": "বোঝেননি"
+    - lemma: "হওয়া"
+      key: hoa
+      gloss: "to become; to happen"
+      forms:
+        "আমি / আমরা": "হইনি"
+        "তুই / তোরা": "হসনি"
+        "তুমি / তোমরা": "হওনি"
+        "আপনি / আপনারা": "হননি"
+        "সে / তারা": "হয়নি"
+        "তিনি / তাঁরা": "হননি"

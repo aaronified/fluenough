@@ -1,0 +1,216 @@
+schema: 1
+id: bn-en-grammar-verb-classes
+name: "The ten verb types"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Bengali verbs fall into ten types by their vowels: learn one verb of each and you can conjugate the rest. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Principal parts, by verb type"
+  slot_name: "form"
+  slots: ["আমি: present", "সে: present", "আমি: have done (-এছি)", "আমি: did (-লাম)", "আমি: will (-ব)", "আমি: didn't (-নি)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Basic Bangla (4.4 to 4.9) sorts verbs into ten types by their vowels, and every verb of a type changes the same way. Type 1, অ-আ: পড়া, like করা and বলা. Type 2, আ-আ: জানা, থাকা, আনা; the -এছি past turns আ into এ: জেনেছি, এনেছি. Type 3, এ-আ: লেখা, শেখা, কেনা, and type 5, ও-আ: বোঝা, শোনা, খোঁজা. Here এ becomes ই and ও becomes উ in every form but the present of তুমি, সে and আপনি: লিখি, লিখেছি, লিখব, but সে লেখে. Type 4, অ্যা-আ: দেখা, whose এ is the a of 'cat' in দেখা and দেখে, and a plain e in দেখি. Type 6, এ-ও-আ: দেওয়া, নেওয়া: দিই, দিয়েছি, দিলাম, but দেয় and দেব. Type 7, যাওয়া, takes গ- in the past: গিয়েছি, also said গেছি, and গেলাম. Type 7a, খাওয়া, which Basic Bangla gives with চাওয়া; পাওয়া goes the same way: খেয়েছি, খেলাম. Type 8, ও-ও-আ: ধোয়া, which Basic Bangla writes ধোওয়া. Type 9, অ-ও-আ: হওয়া. Type 10, ঔ-আ-ও: দৌড়ানো, পৌঁছানো. In speech the আ of these verbs is often an ও, as in ঘুমোচ্ছি for ঘুমাচ্ছি; the table shows Basic Bangla's forms and accepts both. 'Didn't' is the present with -নি joined on: লিখিনি, সে লেখেনি."
+  entries:
+    - lemma: "পড়া"
+      key: pora
+      gloss: "to read; to study"
+      forms:
+        "আমি: present": "পড়ি"
+        "সে: present": "পড়ে"
+        "আমি: have done (-এছি)": "পড়েছি"
+        "আমি: did (-লাম)": "পড়লাম"
+        "আমি: will (-ব)": ["পড়ব", "পড়বো"]
+        "আমি: didn't (-নি)": "পড়িনি"
+    - lemma: "জানা"
+      key: jana
+      gloss: "to know"
+      forms:
+        "আমি: present": "জানি"
+        "সে: present": "জানে"
+        "আমি: have done (-এছি)": "জেনেছি"
+        "আমি: did (-লাম)": "জানলাম"
+        "আমি: will (-ব)": ["জানব", "জানবো"]
+        "আমি: didn't (-নি)": "জানিনি"
+    - lemma: "থাকা"
+      key: thaka
+      gloss: "to stay; to live"
+      forms:
+        "আমি: present": "থাকি"
+        "সে: present": "থাকে"
+        "আমি: have done (-এছি)": "থেকেছি"
+        "আমি: did (-লাম)": "থাকলাম"
+        "আমি: will (-ব)": ["থাকব", "থাকবো"]
+        "আমি: didn't (-নি)": "থাকিনি"
+    - lemma: "আনা"
+      key: ana
+      gloss: "to bring"
+      forms:
+        "আমি: present": "আনি"
+        "সে: present": "আনে"
+        "আমি: have done (-এছি)": "এনেছি"
+        "আমি: did (-লাম)": "আনলাম"
+        "আমি: will (-ব)": ["আনব", "আনবো"]
+        "আমি: didn't (-নি)": "আনিনি"
+    - lemma: "লেখা"
+      key: lekha
+      gloss: "to write"
+      forms:
+        "আমি: present": "লিখি"
+        "সে: present": "লেখে"
+        "আমি: have done (-এছি)": "লিখেছি"
+        "আমি: did (-লাম)": "লিখলাম"
+        "আমি: will (-ব)": ["লিখব", "লিখবো"]
+        "আমি: didn't (-নি)": "লিখিনি"
+    - lemma: "শেখা"
+      key: shekha
+      gloss: "to learn"
+      forms:
+        "আমি: present": "শিখি"
+        "সে: present": "শেখে"
+        "আমি: have done (-এছি)": "শিখেছি"
+        "আমি: did (-লাম)": "শিখলাম"
+        "আমি: will (-ব)": ["শিখব", "শিখবো"]
+        "আমি: didn't (-নি)": "শিখিনি"
+    - lemma: "কেনা"
+      key: kena
+      gloss: "to buy"
+      forms:
+        "আমি: present": "কিনি"
+        "সে: present": "কেনে"
+        "আমি: have done (-এছি)": "কিনেছি"
+        "আমি: did (-লাম)": "কিনলাম"
+        "আমি: will (-ব)": ["কিনব", "কিনবো"]
+        "আমি: didn't (-নি)": "কিনিনি"
+    - lemma: "দেখা"
+      key: dekha
+      gloss: "to see"
+      forms:
+        "আমি: present": "দেখি"
+        "সে: present": "দেখে"
+        "আমি: have done (-এছি)": "দেখেছি"
+        "আমি: did (-লাম)": "দেখলাম"
+        "আমি: will (-ব)": ["দেখব", "দেখবো"]
+        "আমি: didn't (-নি)": "দেখিনি"
+    - lemma: "বোঝা"
+      key: bojha
+      gloss: "to understand"
+      forms:
+        "আমি: present": "বুঝি"
+        "সে: present": "বোঝে"
+        "আমি: have done (-এছি)": "বুঝেছি"
+        "আমি: did (-লাম)": "বুঝলাম"
+        "আমি: will (-ব)": ["বুঝব", "বুঝবো"]
+        "আমি: didn't (-নি)": "বুঝিনি"
+    - lemma: "শোনা"
+      key: shona
+      gloss: "to hear; to listen"
+      forms:
+        "আমি: present": "শুনি"
+        "সে: present": "শোনে"
+        "আমি: have done (-এছি)": "শুনেছি"
+        "আমি: did (-লাম)": "শুনলাম"
+        "আমি: will (-ব)": ["শুনব", "শুনবো"]
+        "আমি: didn't (-নি)": "শুনিনি"
+    - lemma: "খোঁজা"
+      key: khonja
+      gloss: "to look for"
+      forms:
+        "আমি: present": "খুঁজি"
+        "সে: present": "খোঁজে"
+        "আমি: have done (-এছি)": "খুঁজেছি"
+        "আমি: did (-লাম)": "খুঁজলাম"
+        "আমি: will (-ব)": ["খুঁজব", "খুঁজবো"]
+        "আমি: didn't (-নি)": "খুঁজিনি"
+    - lemma: "দেওয়া"
+      key: deoa
+      gloss: "to give"
+      forms:
+        "আমি: present": "দিই"
+        "সে: present": "দেয়"
+        "আমি: have done (-এছি)": "দিয়েছি"
+        "আমি: did (-লাম)": "দিলাম"
+        "আমি: will (-ব)": ["দেব", "দেবো"]
+        "আমি: didn't (-নি)": "দিইনি"
+    - lemma: "নেওয়া"
+      key: neoa
+      gloss: "to take"
+      forms:
+        "আমি: present": "নিই"
+        "সে: present": "নেয়"
+        "আমি: have done (-এছি)": "নিয়েছি"
+        "আমি: did (-লাম)": "নিলাম"
+        "আমি: will (-ব)": ["নেব", "নেবো"]
+        "আমি: didn't (-নি)": "নিইনি"
+    - lemma: "যাওয়া"
+      key: jaoa
+      gloss: "to go"
+      forms:
+        "আমি: present": "যাই"
+        "সে: present": "যায়"
+        "আমি: have done (-এছি)": ["গিয়েছি", "গেছি"]
+        "আমি: did (-লাম)": "গেলাম"
+        "আমি: will (-ব)": ["যাব", "যাবো"]
+        "আমি: didn't (-নি)": "যাইনি"
+    - lemma: "খাওয়া"
+      key: khaoa
+      gloss: "to eat; to drink"
+      forms:
+        "আমি: present": "খাই"
+        "সে: present": "খায়"
+        "আমি: have done (-এছি)": "খেয়েছি"
+        "আমি: did (-লাম)": "খেলাম"
+        "আমি: will (-ব)": ["খাব", "খাবো"]
+        "আমি: didn't (-নি)": "খাইনি"
+    - lemma: "পাওয়া"
+      key: paoa
+      gloss: "to get; to find"
+      forms:
+        "আমি: present": "পাই"
+        "সে: present": "পায়"
+        "আমি: have done (-এছি)": "পেয়েছি"
+        "আমি: did (-লাম)": "পেলাম"
+        "আমি: will (-ব)": ["পাব", "পাবো"]
+        "আমি: didn't (-নি)": "পাইনি"
+    - lemma: "ধোয়া"
+      key: dhoya
+      gloss: "to wash"
+      forms:
+        "আমি: present": "ধুই"
+        "সে: present": "ধোয়"
+        "আমি: have done (-এছি)": "ধুয়েছি"
+        "আমি: did (-লাম)": "ধুলাম"
+        "আমি: will (-ব)": ["ধোব", "ধোবো"]
+        "আমি: didn't (-নি)": "ধুইনি"
+    - lemma: "হওয়া"
+      key: hoa
+      gloss: "to be; to become; to happen"
+      forms:
+        "আমি: present": "হই"
+        "সে: present": "হয়"
+        "আমি: have done (-এছি)": "হয়েছি"
+        "আমি: did (-লাম)": "হলাম"
+        "আমি: will (-ব)": ["হব", "হবো"]
+        "আমি: didn't (-নি)": "হইনি"
+    - lemma: "দৌড়ানো"
+      key: dourano
+      gloss: "to run"
+      forms:
+        "আমি: present": ["দৌড়াই", "দৌড়োই"]
+        "সে: present": ["দৌড়ায়", "দৌড়োয়"]
+        "আমি: have done (-এছি)": "দৌড়েছি"
+        "আমি: did (-লাম)": ["দৌড়ালাম", "দৌড়োলাম"]
+        "আমি: will (-ব)": ["দৌড়াব", "দৌড়োব", "দৌড়াবো", "দৌড়োবো"]
+        "আমি: didn't (-নি)": ["দৌড়াইনি", "দৌড়োইনি"]
+    - lemma: "পৌঁছানো"
+      key: pounchhano
+      gloss: "to arrive; to reach"
+      forms:
+        "আমি: present": ["পৌঁছাই", "পৌঁছোই"]
+        "সে: present": ["পৌঁছায়", "পৌঁছোয়"]
+        "আমি: have done (-এছি)": "পৌঁছেছি"
+        "আমি: did (-লাম)": ["পৌঁছালাম", "পৌঁছোলাম"]
+        "আমি: will (-ব)": ["পৌঁছাব", "পৌঁছোব", "পৌঁছাবো", "পৌঁছোবো"]
+        "আমি: didn't (-নি)": ["পৌঁছাইনি", "পৌঁছোইনি"]
