@@ -89,18 +89,12 @@ void main() {
 
     for (final grade in SelfGrade.values) {
       final days = progress
-          .preview(
-            spanish,
-            card.id,
-            DrillMode.recognition,
-            grade.toSm2Grade(),
-            now: now,
-          )
+          .preview(card.id, DrillMode.recognition, grade.toSm2Grade(), now: now)
           .intervalDays;
       expect(find.text(l10n.rateInterval(days)), findsWidgets);
     }
     final goodDays = progress
-        .preview(spanish, card.id, DrillMode.recognition, 4, now: now)
+        .preview(card.id, DrillMode.recognition, 4, now: now)
         .intervalDays;
     expect(
       find.bySemanticsLabel(

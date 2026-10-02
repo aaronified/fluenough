@@ -7,11 +7,7 @@ import 'package:fluenough/core/models/leech_action.dart';
 import 'package:fluenough/core/models/review_event.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
 
-const ProgressKey pair = (
-  deckId: 'hi-en-market',
-  cardId: 'hi-en-market-0001',
-  mode: DrillMode.production,
-);
+const ProgressKey pair = (cardId: 'hi-0231', mode: DrillMode.production);
 
 const String header = '{"format":"fluenough-review-log","version":1}';
 
@@ -33,17 +29,15 @@ void main() {
   final reviews = <LoggedReview>[
     (
       key: pair,
+      deckId: 'hi-en-market',
       at: at,
       grade: 4,
       elapsed: const Duration(milliseconds: 3120),
       answerGiven: 'बाज़ार',
     ),
     (
-      key: (
-        deckId: 'bn-en-market',
-        cardId: 'bn-en-market-0004',
-        mode: DrillMode.recognition,
-      ),
+      key: (cardId: 'bn-0246', mode: DrillMode.recognition),
+      deckId: 'bn-en-market',
       at: at.add(const Duration(days: 1)),
       grade: 1,
       elapsed: Duration.zero,
@@ -83,7 +77,7 @@ void main() {
       'type': 'review',
       'ts': at.toUtc().toIso8601String(),
       'deck': 'hi-en-market',
-      'card': 'hi-en-market-0001',
+      'card': 'hi-0231',
       'mode': 'production',
       'grade': 4,
       'elapsed_ms': 3120,
@@ -97,8 +91,7 @@ void main() {
     expect(jsonDecode(lines[3]), {
       'type': 'leech',
       'ts': actions.single.at.toUtc().toIso8601String(),
-      'deck': 'hi-en-market',
-      'card': 'hi-en-market-0001',
+      'card': 'hi-0231',
       'mode': 'production',
       'kind': 'setAside',
     });
@@ -120,11 +113,7 @@ void main() {
       '{"type":"review","ts":"2026-09-28T13:34:05.678Z","deck":"d",'
       '"card":"c","mode":"listening","grade":5,"elapsed_ms":0}\n\n',
     );
-    expect(back.reviews.single.key, (
-      deckId: 'd',
-      cardId: 'c',
-      mode: DrillMode.listening,
-    ));
+    expect(back.reviews.single.key, (cardId: 'c', mode: DrillMode.listening));
     expect(
       back.reviews.single.at.toUtc(),
       DateTime.utc(2026, 9, 28, 13, 34, 5, 678),
@@ -194,7 +183,16 @@ void main() {
             '"card":"c","mode":"typing","grade":3,"elapsed_ms":0}',
           ),
         ),
-        failsWith('line 2: deck, card or mode is missing'),
+        failsWith('line 2: card or mode is missing'),
+      );
+      expect(
+        () => LogJsonl.decode(
+          withLine(
+            '{"type":"review","ts":"2026-09-28T13:34:05Z",'
+            '"card":"c","mode":"recognition","grade":3,"elapsed_ms":0}',
+          ),
+        ),
+        failsWith('line 2: deck is missing'),
       );
     });
 
@@ -210,6 +208,7 @@ void main() {
     final r = reviews.first;
     final regraded = (
       key: r.key,
+      deckId: r.deckId,
       at: r.at,
       grade: 0,
       elapsed: Duration.zero,
@@ -218,6 +217,7 @@ void main() {
     expect(reviewIdentity(regraded), reviewIdentity(r));
     final later = (
       key: r.key,
+      deckId: r.deckId,
       at: r.at.add(const Duration(milliseconds: 1)),
       grade: r.grade,
       elapsed: r.elapsed,

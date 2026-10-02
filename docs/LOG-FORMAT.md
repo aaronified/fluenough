@@ -11,9 +11,9 @@ whatever the scheduler becomes.
 
 ```jsonl
 {"format":"fluenough-review-log","version":1}
-{"type":"review","ts":"2026-09-28T13:34:05.678Z","deck":"hi-en-market","card":"hi-en-market-0001","mode":"production","grade":4,"elapsed_ms":3120,"answer":"बाज़ार"}
-{"type":"review","ts":"2026-09-29T02:10:00.000Z","deck":"hi-en-market","card":"hi-en-market-0001","mode":"recognition","grade":3,"elapsed_ms":2400}
-{"type":"leech","ts":"2026-10-02T11:00:00.000Z","deck":"hi-en-market","card":"hi-en-market-0001","mode":"production","kind":"setAside"}
+{"type":"review","ts":"2026-09-28T13:34:05.678Z","deck":"hi-en-market","card":"hi-0231","mode":"production","grade":4,"elapsed_ms":3120,"answer":"बाज़ार"}
+{"type":"review","ts":"2026-09-29T02:10:00.000Z","deck":"hi-en-market","card":"hi-0231","mode":"recognition","grade":3,"elapsed_ms":2400}
+{"type":"leech","ts":"2026-10-02T11:00:00.000Z","card":"hi-0231","mode":"production","kind":"setAside"}
 ```
 
 ## Header
@@ -34,7 +34,7 @@ One per answered card, oldest first: a row of the `reviews` table
 |---|---|---|
 | `type` | yes | `review`. |
 | `ts` | yes | When it was answered: ISO 8601, in UTC. Read back in local time. |
-| `deck` | yes | Deck id. |
+| `deck` | yes | The deck it was answered in. Not part of the pair: a card listed in several decks has one schedule (ADR-0018). |
 | `card` | yes | Card id, permanent (AGENTS.md rule 1). |
 | `mode` | yes | `recognition`, `production`, `listening`, `grammar` or `speaking`. |
 | `grade` | yes | SM-2 grade, a whole number 0–5. |
@@ -48,7 +48,7 @@ One per action taken on a leech, oldest first: a row of `leech_actions`.
 | Field | Required | Notes |
 |---|---|---|
 | `type` | yes | `leech`. |
-| `ts`, `deck`, `card`, `mode` | yes | As for a review. |
+| `ts`, `card`, `mode` | yes | As for a review. An action is on the pair, in whichever deck; a `deck` from an older file is ignored. |
 | `kind` | yes | `reset`, `undoReset`, `setAside` or `bringBack`. |
 
 ## Reading
@@ -63,7 +63,7 @@ One per action taken on a leech, oldest first: a row of `leech_actions`.
 
 Import never replaces or deletes. It adds each review the profile does not
 already hold, then rebuilds every scheduling state from the whole log in time
-order. A review is the same review when its deck, card, mode and `ts`, to the
+order. A review is the same review when its card, mode and `ts`, to the
 millisecond, match; a leech action when those and its `kind` match. So:
 
 - importing the same file twice adds nothing the second time;

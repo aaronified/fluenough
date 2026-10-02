@@ -122,6 +122,19 @@ const _cardFields = {
   'modes',
 };
 
+/// What a ref may give: the native side of a card written in another deck
+/// (ADR-0018).
+const _refFields = {
+  'ref',
+  'native',
+  'reading',
+  'alt_native',
+  'tags',
+  'notes',
+  'examples',
+  'modes',
+};
+
 const _patternFields = {
   'name',
   'slot_name',
@@ -222,6 +235,7 @@ class _Reader {
         : null;
 
     var cards = const <Card>[];
+    var refs = const <CardRef>[];
     GrammarPattern? pattern;
     switch (kind) {
       case DeckKind.vocab:
@@ -232,7 +246,7 @@ class _Reader {
             'remove it',
           );
         }
-        cards = this.cards(fields.require('cards'), id);
+        (:cards, :refs) = this.cards(fields.require('cards'), id);
       case DeckKind.grammar:
         if (fields.has('cards')) {
           fail(
@@ -257,6 +271,7 @@ class _Reader {
       authors: authors,
       source: deckSource,
       theme: theme,
+      refs: refs,
     );
   }
 
@@ -346,12 +361,56 @@ class _Reader {
     );
   }
 
-  List<Card> cards(YamlNode node, String deckId) {
+  /// The cards a deck writes, and the ones it lists by ref, each ref with
+  /// its place in the list.
+  ({List<Card> cards, List<CardRef> refs}) cards(YamlNode node, String deckId) {
     final seen = <String, YamlNode>{};
-    return List.unmodifiable([
-      for (final (i, item) in list(node, 'cards').indexed)
-        card(item, 'cards[$i]', deckId, seen),
-    ]);
+    final cards = <Card>[];
+    final refs = <CardRef>[];
+    for (final (i, item) in list(node, 'cards').indexed) {
+      if (item is YamlMap && item.nodes.containsKey('ref')) {
+        refs.add(ref(item, 'cards[$i]', i, seen));
+      } else {
+        cards.add(card(item, 'cards[$i]', deckId, seen));
+      }
+    }
+    return (cards: List.unmodifiable(cards), refs: List.unmodifiable(refs));
+  }
+
+  /// A card written in another deck, listed here (ADR-0018).
+  CardRef ref(
+    YamlNode node,
+    String path,
+    int position,
+    Map<String, YamlNode> seen,
+  ) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_refFields);
+    final idNode = fields.require('ref');
+    final id = this.id(idNode, '$path.ref');
+    final first = seen[id];
+    if (first != null) {
+      fail(
+        idNode,
+        '$path.ref: card "$id" is already in the deck, ${_firstUsed(first)}',
+      );
+    }
+    seen[id] = idNode;
+    return CardRef(
+      id: id,
+      position: position,
+      native: fields.has('native') ? fields.string('native') : null,
+      reading: fields.optionalString('reading', allowEmpty: false),
+      altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
+      tags: fields.has('tags') ? fields.strings('tags') : null,
+      notes: fields.optionalString('notes'),
+      examples: fields.has('examples')
+          ? examples(fields.node('examples'), '$path.examples')
+          : null,
+      modes: fields.has('modes')
+          ? modes(fields.node('modes'), '$path.modes')
+          : null,
+    );
   }
 
   /// One card. [seen] maps each card id so far to where it was declared.
@@ -522,19 +581,31 @@ class _Reader {
     }
     keys[idPart] = idNode;
 
+    final (:forms, :alternatives) = this.forms(
+      fields.require('forms'),
+      '$path.forms',
+      slots,
+    );
     return PatternEntry(
       lemma: lemma,
       key: key,
       gloss: fields.string('gloss'),
-      forms: forms(fields.require('forms'), '$path.forms', slots),
+      forms: forms,
+      alternatives: alternatives,
     );
   }
 
-  /// One form per slot, in slot order. A null form is a cell with no valid
-  /// form, and is kept so that the expander can skip it.
-  Map<String, String?> forms(YamlNode node, String path, List<String> slots) {
+  /// One form per slot, in slot order, and the other forms accepted for a
+  /// slot whose cell lists several (#144). A null form is a cell with no
+  /// valid form, and is kept so that the expander can skip it.
+  ({Map<String, String?> forms, Map<String, List<String>> alternatives}) forms(
+    YamlNode node,
+    String path,
+    List<String> slots,
+  ) {
     final map = fields(node, path).map;
     final found = <String, String?>{};
+    final alternatives = <String, List<String>>{};
     for (final entry in map.nodes.entries) {
       final key = entry.key as YamlNode;
       final slot = _value(key);
@@ -548,9 +619,22 @@ class _Reader {
           '${slots.join(', ')}',
         );
       }
-      found[slot] = _value(entry.value) == null
-          ? null
-          : text(entry.value, '$path.$slot');
+      final value = entry.value;
+      if (value is YamlList) {
+        final listed = [
+          for (final (i, item) in list(value, '$path.$slot').indexed)
+            text(item, '$path.$slot[$i]'),
+        ];
+        if (listed.toSet().length != listed.length) {
+          fail(value, '$path.$slot lists a form twice');
+        }
+        found[slot] = listed.first;
+        if (listed.length > 1) {
+          alternatives[slot] = List.unmodifiable(listed.skip(1));
+        }
+      } else {
+        found[slot] = _value(value) == null ? null : text(value, '$path.$slot');
+      }
     }
 
     final missing = [
@@ -567,7 +651,10 @@ class _Reader {
     if (found.values.every((form) => form == null)) {
       fail(node, '$path: every form is null, so there is nothing to drill');
     }
-    return Map.unmodifiable({for (final slot in slots) slot: found[slot]});
+    return (
+      forms: Map.unmodifiable({for (final slot in slots) slot: found[slot]}),
+      alternatives: Map.unmodifiable(alternatives),
+    );
   }
 }
 

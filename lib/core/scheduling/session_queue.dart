@@ -118,8 +118,9 @@ class SessionQueue {
   /// phone can recognise speech in a card's language; without it, nothing is
   /// drilled by speaking.
   ///
-  /// [cards] must be distinct. Cards from several decks may be mixed; the
-  /// caller's [stateOf] tells them apart.
+  /// Cards from several decks may be mixed. A card listed in more than one
+  /// of them has one schedule (ADR-0018), so it is taken once, as the first
+  /// to list it does.
   ///
   /// With [reviseAll], every pair already reviewed counts as due, whatever
   /// its date: revising a finished deck. One mode per card still holds, the
@@ -151,7 +152,9 @@ class SessionQueue {
     var newLeft = newCardLimit < 0 ? 0 : newCardLimit;
 
     var order = 0;
+    final seen = <String>{};
     for (final card in cards) {
+      if (!seen.add(card.id)) continue;
       final allowed = card.modesIn(
         ttsAvailable: hasVoice(card),
         speechAvailable: canHear?.call(card) ?? false,

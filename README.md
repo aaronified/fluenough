@@ -82,7 +82,7 @@ language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC-BY-SA-4.0
 cards:
-  - id: es-en-core-0001
+  - id: es-0001
     target: la casa
     native: the house
     tags: [noun, home]

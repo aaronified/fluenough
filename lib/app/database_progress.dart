@@ -42,8 +42,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   bool get persists => true;
 
   @override
-  Sm2State? stateOf(String deckId, String cardId, DrillMode mode) =>
-      _memory.stateOf(deckId, cardId, mode);
+  Sm2State? stateOf(String cardId, DrillMode mode) =>
+      _memory.stateOf(cardId, mode);
 
   @override
   Map<ProgressKey, Sm2State> get states => _memory.states;

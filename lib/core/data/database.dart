@@ -53,8 +53,9 @@ class AppDatabase extends _$AppDatabase {
   /// 1: the four tables, and the triggers that keep `reviews` append-only.
   /// 2: `settings` (#15).
   /// 3: `leech_actions`, append-only like `reviews` (#19).
+  /// 4: `card_states` keyed by `(card_id, mode)`, without the deck (ADR-0018).
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -68,6 +69,11 @@ class AppDatabase extends _$AppDatabase {
       if (from < 3) {
         await m.createTable(leechActions);
         await _appendOnly('leech_actions');
+      }
+      if (from < 4) {
+        // A cache, refilled from `reviews` whenever progress opens.
+        await m.deleteTable('card_states');
+        await m.createTable(cardStates);
       }
     },
   );

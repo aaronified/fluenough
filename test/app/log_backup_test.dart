@@ -39,11 +39,7 @@ void main() {
   final at = DateTime(2026, 9, 28, 19);
   DateTime day(int n) => at.add(Duration(days: n));
 
-  const key = (
-    deckId: 'hi-en-market',
-    cardId: 'hi-en-market-0001',
-    mode: DrillMode.production,
-  );
+  const key = (cardId: 'hi-0231', mode: DrillMode.production);
 
   void answer(ProgressStore p, String card, int grade, DateTime now) =>
       p.record(
@@ -58,11 +54,11 @@ void main() {
   /// Reviews on two cards with a lapse, a reset and a set-aside.
   void history(ProgressStore p) {
     answer(p, key.cardId, 4, day(0));
-    answer(p, 'hi-en-market-0002', 5, day(0));
+    answer(p, 'hi-0232', 5, day(0));
     answer(p, key.cardId, 1, day(1));
     p.actOnLeech(key, LeechActionKind.reset, now: day(2));
     answer(p, key.cardId, 4, day(3));
-    answer(p, 'hi-en-market-0002', 3, day(4));
+    answer(p, 'hi-0232', 3, day(4));
     p.actOnLeech(key, LeechActionKind.setAside, now: day(5));
   }
 
@@ -101,7 +97,7 @@ void main() {
       rows.map((r) => (r.intervalBefore, r.intervalAfter)),
       source.log.map((e) => (e.before?.intervalDays, e.after.intervalDays)),
     );
-    final cached = await db.cardStatesDao.of(key.deckId, key.cardId, key.mode);
+    final cached = await db.cardStatesDao.of(key.cardId, key.mode);
     expect(cached!.repetitions, source.states[key]!.repetitions);
   });
 

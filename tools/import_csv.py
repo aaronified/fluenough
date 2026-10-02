@@ -11,6 +11,9 @@ The CSV needs a header row. `target` and `native` are required; `reading`,
 List columns are split on `|`. Column names are matched case-insensitively,
 and `front`/`back` are accepted as aliases for target/native.
 
+Card ids name the language, not the deck (ADR-0018): they continue from the
+next free one among the language's decks in decks/, so `bn-0391` onward.
+
 Always run tools/validate_decks.py on the result before committing.
 """
 
@@ -20,8 +23,10 @@ import argparse
 import csv
 import re
 import sys
-import unicodedata
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from validate_decks import next_card_id  # noqa: E402
 
 ALIASES = {"front": "target", "back": "native", "word": "target",
            "meaning": "native", "translation": "native", "romaji": "reading",
@@ -49,12 +54,6 @@ def quote(value: str) -> str:
     if not needs:
         return value
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
-
-
-def slugify(text: str) -> str:
-    text = unicodedata.normalize("NFKD", text)
-    text = "".join(c for c in text if not unicodedata.combining(c))
-    return re.sub(r"[^a-zA-Z0-9]+", "-", text).strip("-").lower()
 
 
 def main() -> int:
@@ -114,7 +113,8 @@ def main() -> int:
         out.append("tags: [" + ", ".join(quote(t) for t in tags) + "]")
     out += ["", "cards:"]
 
-    seen: set[str] = set()
+    first = next_card_id(args.language)
+    number = int(first.rsplit("-", 1)[1])
     written = skipped = 0
     for i, row in enumerate(rows, 1):
         target, native = row.get("target", ""), row.get("native", "")
@@ -124,17 +124,10 @@ def main() -> int:
             skipped += 1
             continue
 
-        # Card ids key the user's review history forever, so they must be
-        # stable and meaningful. A non-Latin target slugifies to nothing, so
-        # fall back to the reading, then to the row number.
-        stem = slugify(target) or slugify(row.get("reading", "")) or f"{i:04d}"
-        base = f"{args.id}-{stem}"
-        card_id, n = base, 2
-        while card_id in seen:
-            card_id, n = f"{base}-{n}", n + 1
-        seen.add(card_id)
-
-        out.append(f"  - id: {card_id}")
+        # Card ids key the user's review history forever: the language and
+        # the next free number, kept whatever the deck becomes.
+        out.append(f"  - id: {args.language}-{number:04d}")
+        number += 1
         out.append(f"    target: {quote(target)}")
         out.append(f"    native: {quote(native)}")
         for field in SIMPLE_FIELDS:

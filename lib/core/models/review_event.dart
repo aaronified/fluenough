@@ -1,8 +1,10 @@
 import '../scheduling/sm2.dart';
 import 'drill_mode.dart';
 
-/// Identifies one scheduling state: a card, in one mode, in one deck.
-typedef ProgressKey = ({String deckId, String cardId, DrillMode mode});
+/// Identifies one scheduling state: a card, in one mode. Not a deck: a card
+/// listed in several decks, or learned from several native languages, has
+/// one schedule (ADR-0018).
+typedef ProgressKey = ({String cardId, DrillMode mode});
 
 /// One answered card: a row of the review log (docs/DESIGN.md, ADR-0005).
 class ReviewEvent {
@@ -19,6 +21,8 @@ class ReviewEvent {
   });
 
   final DateTime at;
+
+  /// The deck the card was answered in. Not part of its [key].
   final String deckId;
   final String cardId;
   final DrillMode mode;
@@ -37,7 +41,7 @@ class ReviewEvent {
 
   final Sm2State after;
 
-  ProgressKey get key => (deckId: deckId, cardId: cardId, mode: mode);
+  ProgressKey get key => (cardId: cardId, mode: mode);
 
   /// Whether this review introduced a new pair, which the daily cap counts.
   bool get wasNew => before == null;

@@ -32,7 +32,7 @@ cards:
 {extra}"""
 
 
-def deck(card_id: str = "xx-probe-0001", extra: str = "") -> str:
+def deck(card_id: str = "es-0001", extra: str = "") -> str:
     return DECK.format(card_id=card_id, extra=extra)
 
 
@@ -75,7 +75,7 @@ class ParserParity(unittest.TestCase):
                 self.assertRejected(deck().replace("schema: 1", f"schema: {value}"), "schema")
 
     def test_an_id_ending_in_a_newline_is_rejected(self) -> None:
-        self.assertRejected(deck(card_id='"xx-probe-0001\\n"'), "id must match")
+        self.assertRejected(deck(card_id='"es-0001\\n"'), "id must be")
 
     def test_a_code_or_tts_tag_ending_in_a_newline_is_rejected(self) -> None:
         cases = {
