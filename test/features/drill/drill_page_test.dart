@@ -253,10 +253,12 @@ void main() {
         null,
       ),
     );
+    final links = FixedLinks();
     await pumpDrill(
       tester,
       DrillRequest.deck(hiragana, skill: Skill.production),
       preset: const DrillPreset(target: 'か'),
+      state: AppState.test(links: links),
     );
     final l10n = l10nOf(tester);
 
@@ -267,6 +269,15 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.drillGetHeliboard));
     await tester.pumpAndSettle();
+    expect(links.asked, <String>[AppLinks.heliboard]);
+    expect(copied, isNull, reason: 'opened, so nothing to copy');
+    expect(find.text(l10n.drillHeliboardCopied), findsNothing);
+
+    // When nothing can open it, the link is copied instead.
+    links.opens = false;
+    await tester.tap(find.text(l10n.drillGetHeliboard));
+    await tester.pumpAndSettle();
+    expect(links.asked, hasLength(2));
     expect(copied, AppLinks.heliboard);
     expect(find.text(l10n.drillHeliboardCopied), findsOneWidget);
 

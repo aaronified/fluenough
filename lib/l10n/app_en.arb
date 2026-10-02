@@ -20,6 +20,10 @@
   "@navSettings": {
     "description": "Bottom navigation: the settings tab."
   },
+  "navSettingsUpdate": "Update available",
+  "@navSettingsUpdate": {
+    "description": "Screen-reader label of the dot on the Settings tab while a newer version of the app is out. Heard with the tab's name."
+  },
   "commonBack": "Back",
   "@commonBack": {
     "description": "Tooltip and screen-reader label of a back button."
@@ -888,13 +892,13 @@
       }
     }
   },
-  "deckUnreviewedReport": "Copy the link to report one",
+  "deckUnreviewedReport": "Report a mistake",
   "@deckUnreviewedReport": {
-    "description": "Button under the unchecked-deck notice. It copies the address where mistakes are reported."
+    "description": "Button under the unchecked-deck notice. It opens the page where mistakes are reported, in the browser."
   },
-  "deckUnreviewedCopied": "Link copied. Paste it into a browser to report a mistake.",
+  "deckUnreviewedCopied": "Couldn’t open the page for reporting mistakes, so its link is copied.",
   "@deckUnreviewedCopied": {
-    "description": "SnackBar after copying the address for reporting mistakes."
+    "description": "SnackBar when nothing on the phone could open the page for reporting mistakes, so its address was copied instead."
   },
   "deckSetUpVoice": "Set up",
   "@deckSetUpVoice": {
@@ -1334,11 +1338,11 @@
   },
   "drillGetHeliboard": "Get HeliBoard",
   "@drillGetHeliboard": {
-    "description": "Button that copies HeliBoard's F-Droid link."
+    "description": "Button that opens HeliBoard's page on F-Droid, in F-Droid or the browser."
   },
-  "drillHeliboardCopied": "Copied the link to HeliBoard on F-Droid. Paste it into your browser.",
+  "drillHeliboardCopied": "Couldn’t open the link to HeliBoard on F-Droid, so it’s copied.",
   "@drillHeliboardCopied": {
-    "description": "SnackBar after Get HeliBoard."
+    "description": "SnackBar after Get HeliBoard when nothing on the phone could open the link, so it was copied instead."
   },
   "drillPlay": "Play the word",
   "@drillPlay": {
@@ -2711,6 +2715,186 @@
   "settingsProfileDeleted": "Profile deleted",
   "@settingsProfileDeleted": {
     "description": "SnackBar after a profile is deleted."
+  },
+  "settingsSectionBackup": "Back up to the cloud",
+  "@settingsSectionBackup": {
+    "description": "Settings section heading, under Your data: copying progress to an online storage service (#139)."
+  },
+  "settingsBackupDropbox": "Dropbox",
+  "@settingsBackupDropbox": {
+    "description": "A cloud backup option. The service's name, as it writes it in this language."
+  },
+  "settingsBackupBox": "Box",
+  "@settingsBackupBox": {
+    "description": "A cloud backup option. The service's name (Box, box.com), as it writes it in this language."
+  },
+  "settingsBackupGoogleDrive": "Google Drive",
+  "@settingsBackupGoogleDrive": {
+    "description": "A cloud backup option. The service's name, as Google writes it in this language."
+  },
+  "settingsBackupOneDrive": "OneDrive",
+  "@settingsBackupOneDrive": {
+    "description": "A cloud backup option. The service's name, as Microsoft writes it in this language."
+  },
+  "settingsBackupNextcloud": "Nextcloud",
+  "@settingsBackupNextcloud": {
+    "description": "A cloud backup option: a Nextcloud server, often the learner's own. The software's name."
+  },
+  "settingsBackupHelp": "Your progress stays on this phone. Export it to keep a copy anywhere else.",
+  "@settingsBackupHelp": {
+    "description": "Line under the cloud backup options: nothing leaves the phone unless the learner exports it."
+  },
+  "settingsSectionUpdates": "Updates",
+  "@settingsSectionUpdates": {
+    "description": "Settings section heading, above the app's version line."
+  },
+  "settingsUpdateCheck": "Check for updates",
+  "@settingsUpdateCheck": {
+    "description": "Row that asks GitHub whether a newer version of the app is out."
+  },
+  "settingsUpdateCurrent": "You have {version}",
+  "@settingsUpdateCurrent": {
+    "description": "Under Check for updates, before it has been tapped. version is this app's version.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.1.0"
+      }
+    }
+  },
+  "settingsUpdateChecking": "Checking GitHub…",
+  "@settingsUpdateChecking": {
+    "description": "Under Check for updates while the check runs."
+  },
+  "settingsUpdateUpToDate": "Up to date. You have {version}.",
+  "@settingsUpdateUpToDate": {
+    "description": "Under Check for updates when no newer version is out. version is this app's version.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.1.0"
+      }
+    }
+  },
+  "settingsUpdateAvailable": "Version {version} is available",
+  "@settingsUpdateAvailable": {
+    "description": "Title of the update row when a newer version is out.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.2.0"
+      }
+    }
+  },
+  "settingsUpdateAvailableDesc": "You have {version}. It downloads here, then Android asks you to install it.",
+  "@settingsUpdateAvailableDesc": {
+    "description": "Under Version … is available. version is this app's version. The app downloads the new version itself, then opens Android's installer.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.1.0"
+      }
+    }
+  },
+  "settingsUpdateDownload": "Download",
+  "@settingsUpdateDownload": {
+    "description": "Button that downloads the newer version into the app and then opens Android's installer."
+  },
+  "settingsUpdateDownloading": "Downloading {version}",
+  "@settingsUpdateDownloading": {
+    "description": "Title of the update row while the newer version downloads.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.2.0"
+      }
+    }
+  },
+  "settingsUpdatePercent": "{percent}% downloaded",
+  "@settingsUpdatePercent": {
+    "description": "Under Downloading …: how much of the download is done.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "45"
+      }
+    }
+  },
+  "settingsUpdateInstalling": "Installing {version}",
+  "@settingsUpdateInstalling": {
+    "description": "Title of the update row once Android's installer has opened on the download.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.2.0"
+      }
+    }
+  },
+  "settingsUpdateInstallingDesc": "Finish in Android’s installer. If you closed it, try again.",
+  "@settingsUpdateInstallingDesc": {
+    "description": "Under Installing …. The app is not told whether the learner installed it or closed the installer."
+  },
+  "settingsUpdateInstallFailed": "Couldn’t install {version}",
+  "@settingsUpdateInstallFailed": {
+    "description": "Title of the update row when the download or the install stopped.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.2.0"
+      }
+    }
+  },
+  "settingsUpdateNotAllowed": "Fluenough isn’t allowed to install apps. In Android’s Settings, open Apps, then Special app access, then Install unknown apps, and allow Fluenough. Then try again.",
+  "@settingsUpdateNotAllowed": {
+    "description": "Under Couldn’t install … when Android has not let the app install updates. Names the steps in Android's own Settings app; on most phones they are called this."
+  },
+  "settingsUpdateDownloadFailed": "The download failed. Check your connection and try again.",
+  "@settingsUpdateDownloadFailed": {
+    "description": "Under Couldn’t install … when the file could not be downloaded."
+  },
+  "settingsUpdateChecksumFailed": "The download didn’t match the release on GitHub, so it wasn’t installed.",
+  "@settingsUpdateChecksumFailed": {
+    "description": "Under Couldn’t install … when the downloaded file was not the file GitHub said it would be: damaged on the way."
+  },
+  "settingsUpdateInstallError": "Android didn’t start installing it.",
+  "@settingsUpdateInstallError": {
+    "description": "Under Couldn’t install … when the download finished but Android's installer did not start."
+  },
+  "settingsUpdateInternalError": "Something went wrong on the phone while getting it ready.",
+  "@settingsUpdateInternalError": {
+    "description": "Under Couldn’t install … for any other error."
+  },
+  "settingsUpdateCancelled": "The download was cancelled.",
+  "@settingsUpdateCancelled": {
+    "description": "Under Couldn’t install … when the download was stopped before it finished."
+  },
+  "settingsUpdateOpenPage": "Open download page",
+  "@settingsUpdateOpenPage": {
+    "description": "Button under a failed install that opens the newest release's page on GitHub in the browser, to download it there."
+  },
+  "settingsUpdatePageCopied": "Couldn’t open the download page, so its link is copied.",
+  "@settingsUpdatePageCopied": {
+    "description": "SnackBar when nothing on the phone could open the release page, so its address was copied instead."
+  },
+  "settingsUpdateOffline": "Couldn’t reach GitHub. Check your connection.",
+  "@settingsUpdateOffline": {
+    "description": "Under Check for updates when there is no network, or GitHub did not answer in time."
+  },
+  "settingsUpdateRateLimited": "GitHub has had too many requests from this network. Try again in an hour.",
+  "@settingsUpdateRateLimited": {
+    "description": "Under Check for updates when GitHub refuses for now. It allows 60 requests an hour from one network."
+  },
+  "settingsUpdateBadReply": "GitHub’s answer couldn’t be read.",
+  "@settingsUpdateBadReply": {
+    "description": "Under Check for updates when GitHub answered with an error, or without a version."
+  },
+  "settingsUpdateAuto": "Check automatically",
+  "@settingsUpdateAuto": {
+    "description": "Switch: check for updates by itself. Off unless the learner turns it on."
+  },
+  "settingsUpdateAutoDesc": "Once a day, when the app opens. Each check asks GitHub.",
+  "@settingsUpdateAutoDesc": {
+    "description": "Under Check automatically. Says that each check is a request to GitHub, a website."
   },
   "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works fully offline",
   "@settingsFooter": {

@@ -24,7 +24,11 @@ void changeAll(SettingsNotifier s) {
     ..reminderTime = const TimeOfDay(hour: 7, minute: 5)
     ..learningLanguages = const <String>['hi', 'bn']
     ..placedDecks = const <String>{'hi-en-first-words', 'hi-en-questions'}
-    ..learningChosen = true;
+    ..learningChosen = true
+    ..autoUpdateCheck = true
+    ..lastUpdateCheck = DateTime(2026, 10, 1, 8, 30)
+    ..latestRelease = '0.2.0'
+    ..pendingUpdate = '0.2.0';
 }
 
 void main() {
@@ -51,6 +55,10 @@ void main() {
         'enabled_skills': 'recognition,unknown',
         'learning_languages': 'hi,Hindi,,bn',
         'placed_decks': 'hi-en-market,Not A Deck',
+        'auto_update_check': 'sometimes',
+        'last_update_check': 'yesterday',
+        'latest_release': 'latest',
+        'pending_update': 'app-release.apk',
       });
     final defaults = SettingsNotifier();
     expect(s.newCardsPerDay, SettingsNotifier.maxNewCardsPerDay);
@@ -63,7 +71,59 @@ void main() {
     expect(s.enabledSkills, {Skill.recognition});
     expect(s.learningLanguages, ['hi', 'bn']);
     expect(s.placedDecks, {'hi-en-market'});
+    expect(s.autoUpdateCheck, isFalse);
+    expect(s.lastUpdateCheck, isNull);
+    expect(s.latestRelease, isNull);
+    expect(s.pendingUpdate, isNull);
   });
+
+  test('the update check is stored: the switch, when, what it found, and '
+      'what is downloaded to install', () {
+    final checked = DateTime(2026, 10, 1, 8, 30);
+    final changed = SettingsNotifier()
+      ..autoUpdateCheck = true
+      ..lastUpdateCheck = checked
+      ..latestRelease = '0.3.0'
+      ..pendingUpdate = '0.2.0';
+    final stored = changed.toStored();
+    expect(stored['auto_update_check'], 'true');
+    expect(stored['last_update_check'], '${checked.millisecondsSinceEpoch}');
+    expect(stored['latest_release'], '0.3.0');
+    expect(stored['pending_update'], '0.2.0');
+
+    final restored = SettingsNotifier()..restore(stored);
+    expect(restored.autoUpdateCheck, isTrue);
+    expect(restored.lastUpdateCheck, checked);
+    expect(restored.latestRelease, '0.3.0');
+    expect(restored.pendingUpdate, '0.2.0');
+
+    // Off, never checked and nothing downloaded, by default.
+    final defaults = SettingsNotifier().toStored();
+    expect(defaults['auto_update_check'], 'false');
+    expect(defaults['last_update_check'], '');
+    expect(defaults['latest_release'], '');
+    expect(defaults['pending_update'], '');
+    final fresh = SettingsNotifier()..restore(defaults);
+    expect(fresh.autoUpdateCheck, isFalse);
+    expect(fresh.lastUpdateCheck, isNull);
+    expect(fresh.latestRelease, isNull);
+    expect(fresh.pendingUpdate, isNull);
+  });
+
+  test(
+    'a download forgotten after its update is stored as forgotten',
+    () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      final stored = await StoredSettings.open(db);
+      stored.settings.pendingUpdate = '0.2.0';
+      await stored.flush();
+      stored.settings.pendingUpdate = null;
+      await stored.flush();
+      final again = await StoredSettings.open(db);
+      expect(again.settings.pendingUpdate, isNull);
+    },
+  );
 
   test('settings persist across closing and reopening the database', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
