@@ -5,11 +5,11 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
-import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/language_chips.dart';
 import '../../ui/widgets/page_parts.dart';
 import 'broken_deck_tile.dart';
 import 'deck_content.dart';
@@ -80,8 +80,11 @@ class _DecksPageState extends State<DecksPage> {
               ),
             ),
             const SizedBox(height: 12),
-            _LanguageChips(
-              state: state,
+            LanguageChips(
+              languages: state.languages,
+              decks: state.decks,
+              allLabel: l10n.decksFilterAll,
+              semanticLabel: l10n.decksFilterLabel,
               selected: _language,
               onSelected: (code) => setState(() => _language = code),
             ),
@@ -207,117 +210,6 @@ class _DecksPageState extends State<DecksPage> {
           ],
         );
       },
-    );
-  }
-}
-
-/// All, then one chip per language the decks teach, scrolling sideways.
-class _LanguageChips extends StatelessWidget {
-  const _LanguageChips({
-    required this.state,
-    required this.selected,
-    required this.onSelected,
-  });
-
-  final AppState state;
-  final String? selected;
-  final ValueChanged<String?> onSelected;
-
-  /// The glyph of the first deck in [language], so a language's chip shows
-  /// the same character as its deck.
-  String _glyphOf(LanguageInfo language) {
-    for (final entry in state.decks) {
-      if (entry.language.code == language.code) return entry.glyph;
-    }
-    return '';
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final chips = <Widget>[
-      FilterChip(
-        label: Text(l10n.decksFilterAll),
-        selected: selected == null,
-        onSelected: (_) => onSelected(null),
-      ),
-      for (final language in state.languages)
-        FilterChip(
-          label: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              _ChipGlyph(
-                glyph: _glyphOf(language),
-                language: language,
-                selected: selected == language.code,
-              ),
-              const SizedBox(width: 6),
-              Text(language.name),
-            ],
-          ),
-          selected: selected == language.code,
-          onSelected: (_) => onSelected(language.code),
-        ),
-    ];
-    return Semantics(
-      container: true,
-      explicitChildNodes: true,
-      label: l10n.decksFilterLabel,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: AppSizes.gutter,
-        ),
-        child: Row(
-          children: <Widget>[
-            for (var i = 0; i < chips.length; i++) ...<Widget>[
-              if (i > 0) const SizedBox(width: 8),
-              chips[i],
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/// A language's character on a small tile inside its chip.
-class _ChipGlyph extends StatelessWidget {
-  const _ChipGlyph({
-    required this.glyph,
-    required this.language,
-    required this.selected,
-  });
-
-  final String glyph;
-  final LanguageInfo language;
-  final bool selected;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return ExcludeSemantics(
-      child: Container(
-        constraints: const BoxConstraints(minWidth: 22, minHeight: 22),
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: selected
-              ? scheme.surfaceContainerLowest
-              : scheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(7),
-        ),
-        child: Text(
-          glyph,
-          locale: Locale(language.code),
-          textScaler: TextScaler.noScaling,
-          style: TextStyle(
-            fontSize: 14,
-            height: 22 / 14,
-            color: selected ? scheme.onSurface : scheme.onSecondaryContainer,
-          ),
-        ),
-      ),
     );
   }
 }
