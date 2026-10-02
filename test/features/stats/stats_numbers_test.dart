@@ -144,17 +144,11 @@ void main() {
   });
 
   test('a card is looked up as the deck it was answered in lists it', () {
-    // কাল is written in the time deck and listed by the sound differences
-    // deck, which gives its own gloss.
-    expect(
-      cardOf('bn-0316', deckId: 'bn-en-time')!.native,
-      'tomorrow; yesterday',
-    );
-    expect(
-      cardOf('bn-0316', deckId: 'bn-en-sound-differences')!.native,
-      'time; tomorrow; yesterday',
-    );
-    expect(cardOf('bn-0316', deckId: 'bn-en-retired')!.id, 'bn-0316');
+    // ভাড়া is written in the transport deck and listed by the home deck,
+    // which gives its own gloss.
+    expect(cardOf('bn-0283', deckId: 'bn-en-transport')!.native, 'fare; rent');
+    expect(cardOf('bn-0283', deckId: 'bn-en-home')!.native, 'rent');
+    expect(cardOf('bn-0283', deckId: 'bn-en-retired')!.id, 'bn-0283');
     expect(cardOf('bn-9999'), isNull);
   });
 
@@ -163,18 +157,18 @@ void main() {
     final start = DateTime(2026, 9, 1, 9);
     for (var i = 0; i < 12; i++) {
       progress.record(
-        deckId: i < 11 ? 'bn-en-sound-differences' : 'bn-en-time',
-        cardId: 'bn-0316',
+        deckId: i < 11 ? 'bn-en-transport' : 'bn-en-home',
+        cardId: 'bn-0283',
         mode: DrillMode.recognition,
         grade: i.isEven ? 4 : 1,
         now: start.add(Duration(days: i)),
       );
     }
-    // The sound differences deck lists কাল first on the path, so only the
-    // last answer can put the leech in the time deck.
+    // The transport deck lists ভাড়া first on the path, so only the last
+    // answer can put the leech in the home deck.
     final leech = findLeeches(progress, cardOf: cardOf).single;
-    expect(leech.card.deckId, 'bn-en-time');
-    expect(leech.card.native, 'tomorrow; yesterday');
+    expect(leech.card.deckId, 'bn-en-home');
+    expect(leech.card.native, 'rent');
   });
 
   group('by language', () {

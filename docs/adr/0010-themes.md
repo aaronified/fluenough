@@ -31,8 +31,10 @@ locked, and grammar kept separate.
 
 ## Consequences
 
-- Adding a theme is a line in `themes.yaml` and a deck per language. Theme
-  ids are permanent, like card ids.
+- Adding a theme is a line in `themes.yaml` and a deck in each course that
+  teaches it. Theme ids are permanent, like card ids. (Amended 3 October
+  2026: Bengali added family, work, home and daily-life before the other
+  courses, so a course need not have a deck for every theme.)
 - One order for all languages. A language that wants a different order
   cannot have one; that was accepted for a consistent path.
 - The Decks tab groups a course's theme decks under the course, a departure

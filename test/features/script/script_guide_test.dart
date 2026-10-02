@@ -277,7 +277,12 @@ void main() {
     final catalog = await DeckCatalog.bundled().load();
     expect(catalog.broken, isEmpty);
     final bengali = catalog.scriptGuides['bn']!;
-    expect(bengali.features.map((f) => f.id), contains('knot'));
+    expect(bengali.features.map((f) => f.id), contains('rows'));
+    expect(
+      bengali.features.map((f) => f.id),
+      isNot(contains('knot')),
+      reason: 'Aro: follow the grammar book, which has no knot',
+    );
     expect(
       catalog.paths['bn/en']!.units.first,
       contains('bn-en-script-reading'),

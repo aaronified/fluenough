@@ -6,7 +6,7 @@ theme: market
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Asking the price, bargaining, paying: what a market stall needs."
+description: "Asking the price, bargaining, paying, and saying how much: what a market stall needs."
 tags: [beginner]
 cards:
   - id: bn-0243
@@ -25,7 +25,7 @@ cards:
     native: "rupee; money"
     reading: "taka"
     pos: "noun"
-    notes: "In West Bengal the rupee is called টাকা, the same word Bangladesh uses for its own currency. একশো টাকা, a hundred rupees."
+    notes: "টাকা is the word for money, and for the currency: the rupee in India, the taka in Bangladesh. একশো টাকা, a hundred rupees."
   - id: bn-0246
     target: "খুচরো"
     native: "change; small notes and coins"
@@ -37,7 +37,7 @@ cards:
     native: "expensive"
     reading: "dami"
     pos: "adj"
-    notes: "খুব দামি! It's very expensive! Adjectives never change for gender or number."
+    notes: "খুব দামি! It's very expensive! Adjectives don't change for number, and almost never for gender."
   - id: bn-0248
     target: "সস্তা"
     native: "cheap"
@@ -75,3 +75,67 @@ cards:
     reading: "ar kichhu na."
     pos: "phrase"
     notes: "What you say when the shopkeeper asks আর কিছু? (anything else?)."
+  - id: bn-0545
+    target: "আমি শুধু দেখছি।"
+    native: "I'm just looking."
+    reading: "ami shudhu dekhchhi."
+    pos: "phrase"
+  - id: bn-0546
+    target: "কত করে কেজি?"
+    native: "How much a kilo?"
+    reading: "koto kore keji?"
+    alt_target: ["কত করে কিলো?"]
+    pos: "phrase"
+    notes: "কত করে, 'at how much', asks the rate: কত করে ডজন? How much a dozen?"
+  - id: bn-0547
+    target: "এটা নেব।"
+    native: "I'll take this."
+    reading: "eta nebo."
+    pos: "phrase"
+  - id: bn-0548
+    target: "অন্য রং আছে?"
+    native: "Do you have another colour?"
+    reading: "onno rong achhe?"
+    pos: "phrase"
+  - id: bn-0549
+    target: "কিছু"
+    native: "some; something"
+    reading: "kichhu"
+    pos: "other"
+  - id: bn-0550
+    target: "অনেক"
+    native: "many; a lot"
+    reading: "onek"
+    pos: "other"
+  - id: bn-0551
+    target: "একটু"
+    native: "a little"
+    reading: "ektu"
+    pos: "other"
+    notes: "Also the softener in any request: একটু দেখুন, please have a look."
+  - id: bn-0552
+    target: "সব"
+    native: "all; everything"
+    reading: "shob"
+    pos: "other"
+  - id: bn-0553
+    target: "শুধু"
+    native: "only; just"
+    reading: "shudhu"
+    pos: "other"
+  - id: bn-0554
+    target: "যথেষ্ট"
+    native: "enough"
+    reading: "jotheshto"
+    pos: "other"
+  - id: bn-0555
+    target: "বেশি"
+    native: "too much; too many"
+    reading: "beshi"
+    pos: "other"
+    notes: "খুব বেশি দাম, the price is too high."
+  - id: bn-0556
+    target: "কম"
+    native: "less; low"
+    reading: "kom"
+    pos: "other"

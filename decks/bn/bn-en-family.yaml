@@ -1,0 +1,185 @@
+schema: 1
+id: bn-en-family
+name: "Family"
+kind: vocab
+theme: family
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, with the other words many families use. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: bn-0423
+    target: "বাবা"
+    native: "father"
+    reading: "baba"
+    alt_target: ["আব্বা", "আব্বু"]
+    pos: "noun"
+    notes: "বাবা (baba) is said everywhere. Many Muslim families also say আব্বা (abba) or আব্বু (abbu)."
+  - id: bn-0424
+    target: "মা"
+    native: "mother"
+    reading: "ma"
+    alt_target: ["আম্মা", "আম্মু"]
+    pos: "noun"
+    notes: "মা (ma) is said everywhere. Many Muslim families also say আম্মা (amma) or আম্মু (ammu)."
+  - ref: bn-0186
+    native: "brother; younger brother"
+    notes: "An elder brother is দাদা (dada), also বড় ভাই (boro bhai); in many families দাদা means grandfather. Cousins are brothers and sisters too: মামাতো ভাই (mamato bhai) is your mother's brother's son."
+  - ref: bn-0181
+    native: "elder brother"
+    tags: []
+    notes: "Also বড় ভাই (boro bhai). In many families দাদা means grandfather."
+  - ref: bn-0182
+    native: "elder sister"
+    tags: []
+    notes: "Also আপা (apa)."
+  - id: bn-0425
+    target: "বোন"
+    native: "sister; younger sister"
+    reading: "bon"
+    pos: "noun"
+    notes: "An elder sister is দিদি (didi), also আপা (apa). Brothers and sisters are named by birth order: বড় (boro) the eldest, মেজো (mejo) the second, ছোট (chhoto) the youngest."
+  - id: bn-0426
+    target: "ছেলে"
+    native: "son; boy"
+    reading: "chhele"
+    pos: "noun"
+  - id: bn-0427
+    target: "মেয়ে"
+    native: "daughter; girl"
+    reading: "meye"
+    pos: "noun"
+  - id: bn-0428
+    target: "স্বামী"
+    native: "husband"
+    reading: "shami"
+    alt_target: ["বর"]
+    pos: "noun"
+    notes: "স্ব is said sh: at the start of a word the ব-sign is silent. Also বর (bor), in everyday speech."
+  - id: bn-0429
+    target: "স্ত্রী"
+    native: "wife"
+    reading: "stri"
+    alt_target: ["বউ"]
+    pos: "noun"
+    notes: "In everyday speech বউ (bou), which also means bride. স্ত্র is s, t and r in one conjunct."
+  - id: bn-0430
+    target: "ছেলেমেয়ে"
+    native: "children (one's sons and daughters)"
+    reading: "chhelemeye"
+    pos: "noun"
+    notes: "Sons and daughters in one word."
+  - id: bn-0431
+    target: "ঠাকুরদা"
+    native: "grandfather (father's father)"
+    reading: "thakurda"
+    alt_target: ["দাদু", "দাদা"]
+    pos: "noun"
+    notes: "Also দাদু (dadu), said for either grandfather, and দাদা (dada). Careful: দাদা is also an elder brother."
+  - id: bn-0432
+    target: "ঠাকুমা"
+    native: "grandmother (father's mother)"
+    reading: "thakuma"
+    alt_target: ["ঠাকুরমা", "দাদি"]
+    pos: "noun"
+    notes: "Also written ঠাকুরমা. Also দাদি (dadi)."
+  - id: bn-0433
+    target: "দাদু"
+    native: "grandfather (mother's father)"
+    reading: "dadu"
+    alt_target: ["দাদামশাই", "নানা"]
+    pos: "noun"
+    notes: "More formally দাদামশাই (dadamoshai). Also নানা (nana)."
+  - id: bn-0434
+    target: "দিদিমা"
+    native: "grandmother (mother's mother)"
+    reading: "didima"
+    alt_target: ["দিদা", "নানি"]
+    pos: "noun"
+    notes: "Also দিদা (dida), and নানি (nani)."
+  - id: bn-0435
+    target: "কাকা"
+    native: "uncle (father's younger brother)"
+    reading: "kaka"
+    alt_target: ["কাকু", "চাচা"]
+    pos: "noun"
+    notes: "Fondly কাকু (kaku). Also চাচা (chacha). His wife is কাকিমা (kakima), also চাচি (chachi). Your father's elder brother is জেঠু (jethu), also বড় চাচা (boro chacha)."
+  - id: bn-0436
+    target: "পিসি"
+    native: "aunt (father's sister)"
+    reading: "pishi"
+    alt_target: ["পিসিমা", "ফুফু"]
+    pos: "noun"
+    notes: "Also পিসিমা (pishima), and ফুফু (phuphu). Her husband is পিসেমশাই (pishemoshai), also ফুফা (phupha)."
+  - id: bn-0437
+    target: "মামা"
+    native: "uncle (mother's brother)"
+    reading: "mama"
+    pos: "noun"
+    notes: "The same word in every family. His wife is মামি (mami), also মামিমা (mamima)."
+  - id: bn-0438
+    target: "মাসি"
+    native: "aunt (mother's sister)"
+    reading: "mashi"
+    alt_target: ["মাসিমা", "খালা"]
+    pos: "noun"
+    notes: "Also মাসিমা (mashima), and খালা (khala). Her husband is মেসো (mesho) or মেসোমশাই (meshomoshai), also খালু (khalu)."
+  - id: bn-0439
+    target: "আমার এক ভাই আর দুই বোন আছে।"
+    native: "I have one brother and two sisters."
+    reading: "amar ek bhai ar dui bon achhe."
+    pos: "phrase"
+    notes: "Having is আছে, 'there is', with the owner in the possessive: আমার (amar), 'of me'."
+  - id: bn-0440
+    target: "আপনার কি ভাইবোন আছে?"
+    native: "Do you have brothers and sisters?"
+    reading: "apnar ki bhaibon achhe?"
+    pos: "phrase"
+    notes: "ভাইবোন (bhaibon) is brothers and sisters together. কি (ki) makes it a yes-or-no question."
+  - id: bn-0441
+    target: "আমি বিবাহিত।"
+    native: "I'm married."
+    reading: "ami bibahito."
+    pos: "phrase"
+    notes: "Unmarried is অবিবাহিত (obibahito). In everyday speech also আমার বিয়ে হয়েছে (amar biye hoyechhe), 'my wedding has happened'."
+  - ref: bn-0197
+  - id: bn-0442
+    target: "বাবা-মা"
+    native: "parents"
+    reading: "baba-ma"
+    alt_target: ["মা-বাবা"]
+    pos: "noun"
+  - id: bn-0443
+    target: "আত্মীয়"
+    native: "relative"
+    reading: "attiyo"
+    pos: "noun"
+  - id: bn-0444
+    target: "জেঠু"
+    native: "uncle (father's elder brother)"
+    reading: "jethu"
+    alt_target: ["জ্যাঠা", "বড় চাচা"]
+    pos: "noun"
+    notes: "Formally জ্যাঠা (jyatha). Also বড় চাচা (boro chacha). His wife is জেঠিমা (jethima), also বড় চাচি (boro chachi)."
+  - id: bn-0445
+    target: "শ্বশুর"
+    native: "father-in-law"
+    reading: "shoshur"
+    pos: "noun"
+  - id: bn-0446
+    target: "শাশুড়ি"
+    native: "mother-in-law"
+    reading: "shashuri"
+    pos: "noun"
+  - id: bn-0447
+    target: "নাতি"
+    native: "grandson"
+    reading: "nati"
+    pos: "noun"
+  - id: bn-0448
+    target: "নাতনি"
+    native: "granddaughter"
+    reading: "natni"
+    alt_target: ["নাতনী"]
+    pos: "noun"

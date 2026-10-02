@@ -31,11 +31,11 @@ const ScriptGuide _sample = ScriptGuide(
       letters: <String>['ক', 'ঘ', 'ত', 'ন'],
     ),
     ScriptFeature(
-      id: 'knot',
-      name: 'The knot', // ui-literal-ok: debug-only gallery
-      example: 'ত',
-      text: 'A small loop that tells look-alike letters apart.', // ui-literal-ok: debug-only gallery
-      letters: <String>['ক', 'খ', 'ত', 'ল'],
+      id: 'dot-below',
+      name: 'The dot below', // ui-literal-ok: debug-only gallery
+      example: 'র',
+      text: 'A dot below makes a different letter: ব and র.', // ui-literal-ok: debug-only gallery
+      letters: <String>['র', 'ড়', 'ঢ়', 'য়'],
     ),
   ],
 );

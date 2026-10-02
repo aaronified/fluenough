@@ -243,7 +243,9 @@ themes:
 
 A theme deck is an ordinary vocab deck with a `theme`, and its id is the
 course plus the theme: `hi-en-market` is Hindi from English, Market. Every
-language teaches the same themes in the same order, with its own words.
+language teaches the themes in the same order, with its own words. A course
+need not have a deck for every theme yet: Bengali has Family, Work, Home and
+A day, and Hindi and Telugu do not.
 
 - **Theme ids are permanent**, like card ids: decks name their theme by it.
 - **One deck per theme per course.** The validator fails a second
