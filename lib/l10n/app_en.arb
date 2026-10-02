@@ -829,6 +829,20 @@
       }
     }
   },
+  "deckSkillOffFor": "Off for {language}",
+  "@deckSkillOffFor": {
+    "description": "Under Listening or Speaking on a deck's page, when the learner switched that skill off for the deck's language (#89). Turn on beside it switches it back on.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "deckTurnOn": "Turn on",
+  "@deckTurnOn": {
+    "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
+  },
   "deckNoSpeech": "This phone can’t recognise {language} speech yet",
   "@deckNoSpeech": {
     "description": "Under Speaking when the phone's speech recogniser cannot hear the deck's language, or speaking has not been set up since launch. Set up opens Voices.",
