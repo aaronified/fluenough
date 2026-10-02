@@ -12,6 +12,7 @@ import '../drill/pair_drill.dart';
 import '../onboarding/gallery_entries.dart';
 import '../placement/gallery_entries.dart';
 import '../profiles/gallery_entries.dart';
+import '../script/gallery_entries.dart';
 import '../settings/gallery_entries.dart';
 import '../stats/gallery_entries.dart';
 import '../summary/gallery_entries.dart';
@@ -33,6 +34,7 @@ List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
   ...todayGalleryEntries,
   ...todayGalleryStates,
   ...decksGalleryEntries,
+  ...scriptGalleryEntries,
   ...drillGalleryEntries,
   ...grammarGalleryStates,
   ...pairGalleryStates,

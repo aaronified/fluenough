@@ -44,11 +44,13 @@ SCRIPTS = {
     "kana", "han", "hangul", "thai", "other",
 }
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
-KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds"}
+KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
+SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
+FEATURE_KEYS = {"id", "name", "term", "reading", "example", "text", "letters"}
 CODE_RE = re.compile(r"[a-z]{2,3}")
 MODES = {"recognition", "production", "listening", "grammar", "speaking"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
@@ -465,6 +467,9 @@ def validate(path: Path) -> Report:
     if raw.get("kind") == "sounds":
         check_sounds_file(r, raw, path)
         return r
+    if raw.get("kind") == "script":
+        check_script_file(r, raw, path)
+        return r
 
     for unknown in sorted(set(raw) - HEADER_KEYS):
         r.error("root", f"unknown field {unknown!r}")
@@ -708,6 +713,63 @@ def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
             if not ok:
                 r.error(f"{where}.pairs[{j}]",
                         f"must be two different quoted strings, at most one empty, got {pair!r}")
+
+
+def check_script_file(r: Report, raw: dict, path: Path) -> None:
+    """A script's guide, decks/<lang>/<lang>-script.yaml: the recurring
+    features a learner from English misses, shown before the first script
+    card (#30). See ADR-0016."""
+    for unknown in sorted(set(raw) - SCRIPT_KEYS):
+        r.error("root", f"unknown field {unknown!r} in a script guide")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not isinstance(lang, str) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code such as 'bn', {_code_error(lang)}")
+        lang = None
+    elif path.parent.name != lang:
+        r.error("language", f"is {lang!r} but the file is in {path.parent.name}/")
+    guide_id = raw.get("id")
+    if guide_id != path.stem:
+        r.error("id", f"is {guide_id!r} but the filename stem is {path.stem!r}")
+    elif lang is not None and guide_id != f"{lang}-script":
+        r.error("id", f"a script guide for {lang} has id {lang}-script, got {guide_id!r}")
+    for key in ("name", "intro"):
+        if not _is_str(raw.get(key)) or not raw[key].strip():
+            r.error(key, "is required text")
+    features = raw.get("features")
+    if not isinstance(features, list) or not features:
+        r.error("features", "must be a non-empty list")
+        return
+    ids: set[str] = set()
+    for i, feature in enumerate(features):
+        where = f"features[{i}]"
+        if not isinstance(feature, dict):
+            r.error(where, "must be a mapping with id, name, example and text")
+            continue
+        for unknown in sorted(set(feature) - FEATURE_KEYS):
+            r.error(where, f"unknown field {unknown!r}")
+        fid = feature.get("id")
+        if not _is_str(fid) or not ID_RE.fullmatch(fid):
+            r.error(where, f"id must match [a-z0-9-]+, got {fid!r}")
+        elif fid in ids:
+            r.error(where, f"feature {fid!r} is listed twice")
+        else:
+            ids.add(fid)
+        for key in ("name", "example", "text"):
+            if not _is_str(feature.get(key)) or not feature[key].strip():
+                r.error(where, f"needs {key}, quoted text")
+        if "term" in feature and (not _is_str(feature["term"]) or not feature["term"].strip()):
+            r.error(where, "term must be quoted text, or left out")
+        if "reading" in feature:
+            if "term" not in feature:
+                r.error(where, "reading is the term's, so it needs a term")
+            elif not _is_str(feature["reading"]) or not feature["reading"].strip():
+                r.error(where, "reading must be quoted text, or left out")
+        letters = feature.get("letters", [])
+        if not isinstance(letters, list) or not all(_is_str(x) and x for x in letters):
+            r.error(where, "letters must be a list of quoted letters")
 
 
 NUMBERS_KEYS = {

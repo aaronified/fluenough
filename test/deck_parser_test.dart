@@ -114,6 +114,7 @@ void main() {
                     'numbers',
                     'path',
                     'sounds',
+                    'script',
                   }.contains(doc['kind']));
             })
             .toList()

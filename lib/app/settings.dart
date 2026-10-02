@@ -87,6 +87,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechOnline;
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
+  Set<String> _scriptGuidesSeen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
@@ -188,6 +189,19 @@ class SettingsNotifier extends ChangeNotifier {
     }
     _speechNotOnDevice = Set<String>.unmodifiable(notOnDevice);
     _speechUnsupported = Set<String>.unmodifiable(none);
+    notifyListeners();
+  }
+
+  /// Whether the learner has seen [code]'s script guide (#30, ADR-0016),
+  /// which the drill shows once, before the language's first script card.
+  bool hasSeenScriptGuide(String code) => _scriptGuidesSeen.contains(code);
+
+  void markScriptGuideSeen(String code) {
+    if (_scriptGuidesSeen.contains(code)) return;
+    _scriptGuidesSeen = Set<String>.unmodifiable(<String>{
+      ..._scriptGuidesSeen,
+      code,
+    });
     notifyListeners();
   }
 
@@ -342,6 +356,7 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_online': (_speechOnline.toList()..sort()).join(','),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
+    'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
         key.name: value.millisecondsSinceEpoch,
@@ -435,6 +450,11 @@ class SettingsNotifier extends ChangeNotifier {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           allowOnlineSpeech(code, true);
         }
+      }
+    }
+    if (pick('script_guides_seen', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markScriptGuideSeen(code);
       }
     }
     for (final (name, unsupported) in <(String, bool)>[
