@@ -82,6 +82,11 @@ void main() {
       await tester.pumpAndSettle();
     }
 
+    // The sound check (#89), which Next passes without asking anything.
+    expect(find.text(l10n.onboardingSoundTitle), findsOneWidget);
+    await tester.tap(find.text(l10n.onboardingNext));
+    await tester.pumpAndSettle();
+
     expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
     // What the answer is for, where it is kept, and where to change it.
     expect(find.text(l10n.onboardingSpokenBody), findsOneWidget);
@@ -123,7 +128,7 @@ void main() {
 
     await tester.tap(find.text(l10n.onboardingSkip));
     await tester.pumpAndSettle();
-    expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
+    expect(find.text(l10n.onboardingSoundTitle), findsOneWidget);
 
     // Android back: the slide it was left on, the one before, the welcome.
     for (final expected in <String>[
@@ -162,9 +167,14 @@ void main() {
     await tester.pump();
     await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
-    expect(find.text(title(l10n, tourSlides.length - 1)), findsOneWidget);
-    await tester.tap(find.text(l10n.onboardingNext));
+    expect(find.text(l10n.onboardingSoundTitle), findsOneWidget);
+    await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
+    expect(find.text(title(l10n, tourSlides.length - 1)), findsOneWidget);
+    for (var i = 0; i < 2; i++) {
+      await tester.tap(find.text(l10n.onboardingNext));
+      await tester.pumpAndSettle();
+    }
     expect(find.text(l10n.spokenRank(1)), findsOneWidget);
     expect(state.settings.spokenLanguages, ['en'], reason: 'not saved');
   });
@@ -189,7 +199,8 @@ void main() {
     await tester.tap(find.text(l10n.onboardingSkip));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
-    expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
+    // One step on: the sound check, not past it.
+    expect(find.text(l10n.onboardingSoundTitle), findsOneWidget);
   });
 
   testWidgets('a swipe still settling as the step changes leaves the new '
@@ -293,6 +304,8 @@ void main() {
     await tester.tap(find.text(l10n.onboardingStart));
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.onboardingSkip));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.onboardingNext)); // the sound check
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
     await tester.pumpAndSettle();

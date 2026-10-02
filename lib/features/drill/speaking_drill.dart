@@ -9,6 +9,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
+import 'cant_now.dart';
 import 'drill_session.dart';
 
 /// Speaking (#89, ADR-0014): the meaning ("Say it in Hindi"), a microphone
@@ -200,6 +201,8 @@ class SpeakingDrill extends StatelessWidget {
     final answer = session.answer;
     if (answer == null) {
       return <Widget>[
+        CantNowButton(session: session),
+        const SizedBox(height: 4),
         OutlinedButton(
           onPressed: session.hearing ? null : session.dontKnow,
           style: OutlinedButton.styleFrom(

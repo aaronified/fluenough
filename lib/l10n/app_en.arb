@@ -265,6 +265,48 @@
   "@settingsSpeakingNoRecogniser": {
     "description": "SnackBar when Speaking is switched on but the phone cannot recognise speech."
   },
+  "settingsPausedUntil": "Paused until {time}",
+  "@settingsPausedUntil": {
+    "description": "Settings, under Listening or Speaking: paused by Can't listen now / Can't speak now.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "3:45 PM"
+      }
+    }
+  },
+  "settingsResume": "Resume",
+  "@settingsResume": {
+    "description": "Button: end a pause now."
+  },
+  "settingsSkillLanguages": "Languages",
+  "@settingsSkillLanguages": {
+    "description": "Settings row under Listening or Speaking: choose the languages it is on for."
+  },
+  "settingsSkillOnForAll": "On for every language",
+  "@settingsSkillOnForAll": {
+    "description": "Subtitle of the Languages row when the skill is on for every language."
+  },
+  "settingsSkillOffFor": "Off for {languages}",
+  "@settingsSkillOffFor": {
+    "description": "Subtitle of the Languages row: the languages the skill is off for, joined by the list separator.",
+    "placeholders": {
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Bengali"
+      }
+    }
+  },
+  "settingsSkillLanguagesTitle": "{skill}, by language",
+  "@settingsSkillLanguagesTitle": {
+    "description": "Title of the dialog that turns Listening or Speaking on or off per language.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Speaking"
+      }
+    }
+  },
   "skillGrammarSettingsDesc": "From pattern-table decks",
   "@skillGrammarSettingsDesc": {
     "description": "Under the Grammar switch in Settings."
@@ -786,6 +828,20 @@
         "example": "Japanese"
       }
     }
+  },
+  "deckSkillOffFor": "Off for {language}",
+  "@deckSkillOffFor": {
+    "description": "Under Listening or Speaking on a deck's page, when the learner switched that skill off for the deck's language (#89). Turn on beside it switches it back on.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "deckTurnOn": "Turn on",
+  "@deckTurnOn": {
+    "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
   },
   "deckNoSpeech": "This phone can’t recognise {language} speech yet",
   "@deckNoSpeech": {
@@ -1369,6 +1425,36 @@
   "@drillSkipCard": {
     "description": "Speaking: moves on without recording anything."
   },
+  "drillCantSpeak": "Can’t speak now",
+  "@drillCantSpeak": {
+    "description": "Button on a speaking card: opens the choices to pause or switch off speaking."
+  },
+  "drillCantListen": "Can’t listen now",
+  "@drillCantListen": {
+    "description": "Button on a listening card: opens the choices to pause or switch off listening."
+  },
+  "cantNowPause": "Pause for an hour",
+  "@cantNowPause": {
+    "description": "Choice after Can't speak now / Can't listen now: the skill comes back by itself in an hour."
+  },
+  "cantNowOffFor": "Turn off for {language}",
+  "@cantNowOffFor": {
+    "description": "Choice after Can't speak now / Can't listen now: the skill stays off for this language until switched back on in Settings.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "cantNowOffEverywhere": "Turn off everywhere",
+  "@cantNowOffEverywhere": {
+    "description": "Choice after Can't speak now / Can't listen now: the skill is switched off for every language."
+  },
+  "cantNowHint": "The rest of this session skips it. Settings turns it back on.",
+  "@cantNowHint": {
+    "description": "Under the choices after Can't speak now / Can't listen now."
+  },
   "drillSlower": "Slower · {rate}×",
   "@drillSlower": {
     "description": "Toggle that plays the word more slowly. rate is the speed multiplier.",
@@ -1506,6 +1592,25 @@
         "type": "String",
         "example": "la ventana"
       }
+    }
+  },
+  "feedbackSaidContrast": "You said “{said}”. The difference is {contrast}. Answer: {answer}",
+  "@feedbackSaidContrast": {
+    "description": "Speaking drill, wrong: the word heard is the answer with one sound changed (#89). {contrast} comes from the language's sounds file, such as 'a breath after the consonant'.",
+    "placeholders": {
+      "said": {"type": "String", "example": "খাল"},
+      "contrast": {"type": "String", "example": "a breath after the consonant"},
+      "answer": {"type": "String", "example": "কাল"}
+    }
+  },
+  "feedbackSaidContrastMeaning": "You said “{said}”, which means {meaning}. The difference is {contrast}. Answer: {answer}",
+  "@feedbackSaidContrastMeaning": {
+    "description": "As feedbackSaidContrast, when a deck has the word heard: {meaning} is its meaning.",
+    "placeholders": {
+      "said": {"type": "String", "example": "খাল"},
+      "meaning": {"type": "String", "example": "canal"},
+      "contrast": {"type": "String", "example": "a breath after the consonant"},
+      "answer": {"type": "String", "example": "কাল"}
     }
   },
   "feedbackSaidAnswer": "You said “{said}”. Answer: {answer}",
@@ -2151,6 +2256,92 @@
   "onboardingTourFactsBody": "Most languages here come with a short fact each day, shown on Today in the languages you speak.",
   "@onboardingTourFactsBody": {
     "description": "Tour slide 4, body. 'Most' because not every language has facts yet. Leads into the next screen, which asks which languages the learner speaks."
+  },
+  "onboardingSoundTitle": "Check your microphone and sound",
+  "@onboardingSoundTitle": {
+    "description": "First launch, sound check (#89): title."
+  },
+  "onboardingSoundBody": "Speaking drills listen to you, and listening drills read words aloud. Record two seconds and hear them back. Your phone will ask to let Fluenough use the microphone.",
+  "@onboardingSoundBody": {
+    "description": "First launch, sound check: what it is for, and that the phone will ask for the microphone."
+  },
+  "onboardingSoundHint": "Tap the microphone, then say anything.",
+  "@onboardingSoundHint": {
+    "description": "First launch, sound check: under the microphone button, before recording."
+  },
+  "onboardingSoundRecord": "Record two seconds",
+  "@onboardingSoundRecord": {
+    "description": "First launch, sound check: the microphone button's spoken label."
+  },
+  "onboardingSoundRecording": "Recording… say something",
+  "@onboardingSoundRecording": {
+    "description": "First launch, sound check: while it records."
+  },
+  "onboardingSoundPlaying": "Playing it back…",
+  "@onboardingSoundPlaying": {
+    "description": "First launch, sound check: while the recording plays back."
+  },
+  "onboardingSoundBeeping": "Playing a beep…",
+  "@onboardingSoundBeeping": {
+    "description": "First launch, sound check: there was no recording, so a beep tests the sound."
+  },
+  "onboardingSoundHeardYou": "Did you hear yourself?",
+  "@onboardingSoundHeardYou": {
+    "description": "First launch, sound check: asked after the recording played back."
+  },
+  "onboardingSoundHeardBeep": "Did you hear a beep?",
+  "@onboardingSoundHeardBeep": {
+    "description": "First launch, sound check: asked after the beep played."
+  },
+  "onboardingSoundYes": "Yes, I heard it",
+  "@onboardingSoundYes": {
+    "description": "First launch, sound check: answer, the sound worked."
+  },
+  "onboardingSoundNo": "No, I heard nothing",
+  "@onboardingSoundNo": {
+    "description": "First launch, sound check: answer, the sound didn't work."
+  },
+  "onboardingSoundSpeakingOn": "Speaking is on: your microphone works.",
+  "@onboardingSoundSpeakingOn": {
+    "description": "First launch, sound check: result, speaking drills will run."
+  },
+  "onboardingSoundRefused": "Speaking stays off: Fluenough wasn’t allowed to use the microphone. Try again to be asked once more.",
+  "@onboardingSoundRefused": {
+    "description": "First launch, sound check: result, the microphone permission was refused."
+  },
+  "onboardingSoundRefusedForGood": "Speaking stays off: Fluenough still can’t use the microphone, and Android won’t ask again. Allow it in your phone’s settings, under Apps, Fluenough, Permissions, then try again.",
+  "@onboardingSoundRefusedForGood": {
+    "description": "First launch, sound check: result after a second refusal, when Android no longer shows the permission dialog."
+  },
+  "onboardingSoundSilent": "Speaking stays off: only silence was recorded. Is the microphone covered or muted?",
+  "@onboardingSoundSilent": {
+    "description": "First launch, sound check: result, the recording was silent."
+  },
+  "onboardingSoundNotRecorded": "Speaking stays off: the microphone didn’t record.",
+  "@onboardingSoundNotRecorded": {
+    "description": "First launch, sound check: result, recording failed."
+  },
+  "onboardingSoundNoRecogniser": "Speaking stays off: the microphone works, but this phone has no speech recogniser.",
+  "@onboardingSoundNoRecogniser": {
+    "description": "First launch, sound check: result, recorded fine but there is no recogniser."
+  },
+  "onboardingSoundListeningOn": "Listening is on: your sound works.",
+  "@onboardingSoundListeningOn": {
+    "description": "First launch, sound check: result, listening drills will run."
+  },
+  "onboardingSoundListeningOff": "Listening stays off: the sound didn’t reach you. Check the volume and try again.",
+  "@onboardingSoundListeningOff": {
+    "description": "First launch, sound check: result, playback failed or wasn't heard."
+  },
+  "onboardingSoundLater": "You can switch speaking and listening on or off later, in {settings}.",
+  "@onboardingSoundLater": {
+    "description": "First launch, sound check: note under the check. {settings} is the Settings tab's name.",
+    "placeholders": {
+      "settings": {
+        "type": "String",
+        "example": "Settings"
+      }
+    }
   },
   "onboardingSpokenTitle": "Which languages do you already speak?",
   "@onboardingSpokenTitle": {
