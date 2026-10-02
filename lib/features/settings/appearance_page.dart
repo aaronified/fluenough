@@ -43,14 +43,14 @@ String appearanceSummary(AppLocalizations l10n, SettingsNotifier settings) {
 
 /// Theme, colour, contrast and card text size.
 ///
-/// Design screen `appearance`. Built as designed, and every control is
-/// disabled behind its feature until #15 and #26 land: the theme behind
-/// `Feature.appearance`, the seeds behind `colourSeeds`, wallpaper colours
-/// behind `dynamicColour` (which needs a dependency), contrast behind
-/// `contrast` and the card size behind `cardSize`. Until then the app keeps
-/// the repository's seed, #3F6C51, and follows the phone's dark theme. With
-/// `FeatureRegistry.all()`, as the gallery shows it, every control changes
-/// [SettingsNotifier], which `FluenoughApp` already reads.
+/// Design screen `appearance`. Each control sits behind its feature: the
+/// theme behind `Feature.appearance`, the seeds behind `colourSeeds`,
+/// wallpaper colours behind `dynamicColour`, contrast behind `contrast` and
+/// the card size behind `cardSize`. All but wallpaper colours are live, and
+/// change [SettingsNotifier]: `FluenoughApp` builds its themes from the
+/// theme, seed and contrast, and drill text follows the card size
+/// (`TargetText.hero`, `TargetText.card`, `AnswerField`). Wallpaper colours
+/// wait for their dependency, and show as incoming.
 ///
 /// The preview at the top draws a real card from the loaded decks in the
 /// chosen theme, colour, contrast and card size.
