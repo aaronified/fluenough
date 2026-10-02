@@ -111,9 +111,25 @@ class AnswerFeedback extends StatelessWidget {
       AnswerOutcome.wrong => banner(
         FeedbackKind.wrong,
         l10n.feedbackWrong,
-        spoken
-            ? l10n.feedbackSaidAnswer(answer.typed, shown(null))
-            : l10n.feedbackAnswer(shown(null)),
+        !spoken
+            ? l10n.feedbackAnswer(shown(null))
+            : switch ((answer.contrast, answer.heardCard)) {
+                // The word heard is the answer with one sound changed:
+                // name the sound, and what the other word means (#89).
+                (final contrast?, final heard?) =>
+                  l10n.feedbackSaidContrastMeaning(
+                    answer.typed,
+                    heard.native,
+                    contrast.name,
+                    shown(null),
+                  ),
+                (final contrast?, null) => l10n.feedbackSaidContrast(
+                  answer.typed,
+                  contrast.name,
+                  shown(null),
+                ),
+                _ => l10n.feedbackSaidAnswer(answer.typed, shown(null)),
+              },
       ),
     };
   }

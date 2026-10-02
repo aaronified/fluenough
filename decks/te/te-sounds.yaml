@@ -1,0 +1,25 @@
+# Telugu's sound contrasts: pairs of letters or signs that change a word,
+# for the speaking drill's feedback (#89) and the minimal-pair drill (#31).
+# Each id is the tag the language's sound-differences deck uses. See
+# ADR-0015 and docs/DECK-FORMAT.md.
+schema: 1
+kind: sounds
+id: te-sounds
+language: te
+contrasts:
+  - id: vowel-length
+    name: "a short or a long vowel"
+    within_word: true
+    pairs: [["", "ా"], ["ి", "ీ"], ["ు", "ూ"], ["ె", "ే"], ["ొ", "ో"], ["అ", "ఆ"], ["ఇ", "ఈ"], ["ఉ", "ఊ"], ["ఎ", "ఏ"], ["ఒ", "ఓ"]]
+  - id: dental-retroflex
+    name: "the tongue on the teeth or curled back"
+    pairs: [["త", "ట"], ["థ", "ఠ"], ["ద", "డ"], ["ధ", "ఢ"], ["న", "ణ"]]
+  - id: lateral
+    name: "the l on the teeth or curled back"
+    pairs: [["ల", "ళ"]]
+  - id: gemination
+    name: "a single or a double consonant"
+    pairs: [["క", "క్క"], ["గ", "గ్గ"], ["చ", "చ్చ"], ["ట", "ట్ట"], ["డ", "డ్డ"], ["త", "త్త"], ["ద", "ద్ద"], ["న", "న్న"], ["ప", "ప్ప"], ["మ", "మ్మ"], ["ల", "ల్ల"], ["ళ", "ళ్ళ"], ["య", "య్య"], ["వ", "వ్వ"]]
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["క", "ఖ"], ["గ", "ఘ"], ["చ", "ఛ"], ["జ", "ఝ"], ["ట", "ఠ"], ["డ", "ఢ"], ["త", "థ"], ["ద", "ధ"], ["ప", "ఫ"], ["బ", "భ"]]

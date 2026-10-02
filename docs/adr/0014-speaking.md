@@ -70,8 +70,8 @@ The maintainer decided, on 2 October 2026:
 - **Pronunciation is commented on only when it changes the word** (#89's
   rule). An accent that keeps the word is recognised as the target and
   passes without comment. When the word heard is the target's contrast
-  partner in the language's sounds file, the feedback names the contrast.
-  Contrast feedback comes in its own change.
+  partner in the language's sounds file, the feedback names the contrast
+  ([ADR-0015](0015-sound-contrasts.md)).
 
 ## Consequences
 

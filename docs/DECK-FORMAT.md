@@ -27,7 +27,7 @@ Common to every kind.
 | `schema` | yes | Must be `1`. |
 | `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. |
 | `name` | yes | Human-readable title. |
-| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers` and `path`. |
+| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path` and `sounds`. |
 | `language` | yes | The language being learned. See below. |
 | `native` | yes, except on a facts file | The language explanations are written in. |
 | `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
@@ -252,6 +252,45 @@ units:
   decks.
 - **Order is a teaching decision.** Put a script first, before any deck
   written in it, and grammar with the theme that first needs it.
+
+## Sounds files
+
+A language's sound contrasts ([ADR-0015](adr/0015-sound-contrasts.md)):
+the pairs of sounds it tells apart and English doesn't, and how each is
+written. When a spoken answer is wrong and the word heard is the answer
+with one pair swapped, the speaking drill names the contrast.
+`decks/bn/bn-sounds.yaml`:
+
+```yaml
+schema: 1
+kind: sounds
+id: bn-sounds
+language: bn
+contrasts:
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["ক", "খ"], ["ব", "ভ"]]
+  - id: inherent-vowel
+    name: "the open o against a"
+    within_word: true
+    pairs: [["", "া"]]
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `<language>-sounds`, and the filename stem. |
+| `language` | yes | The code of the language, which is also its folder. |
+| `contrasts` | yes | A non-empty list. |
+| `description` | no | Free text. |
+
+Each contrast:
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `[a-z0-9-]+`, unique in the file. A sound-differences deck tags each minimal pair with it. |
+| `name` | yes | Completes "The difference is …", in the learner's language. |
+| `pairs` | yes | A non-empty list of two different quoted strings, letters or signs, at most one of them empty (a sign there or not). |
+| `within_word` | no | `true`: a sign added or taken away counts only inside a word, since a vowel sign added at the end of a word adds a syllable. Swaps always count. |
 
 ## Facts files
 
