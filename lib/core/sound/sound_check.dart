@@ -31,9 +31,6 @@ class Recording {
 /// (#89): record a moment, play it back. Narrow enough that tests fake it;
 /// nothing outside `lib/core/sound` refers to a concrete one.
 abstract interface class SoundCheckEngine {
-  /// Whether the microphone permission is granted. Never asks.
-  Future<bool> hasPermission();
-
   /// Records for [duration], asking for the microphone permission if it has
   /// not been granted, and asking again each time it was refused before.
   Future<Recording> record(Duration duration);
@@ -45,9 +42,6 @@ abstract interface class SoundCheckEngine {
 /// No microphone and no speaker: tests, and the gallery.
 class NullSoundCheck implements SoundCheckEngine {
   const NullSoundCheck();
-
-  @override
-  Future<bool> hasPermission() async => false;
 
   @override
   Future<Recording> record(Duration duration) async =>
@@ -78,9 +72,6 @@ class FixedSoundCheck implements SoundCheckEngine {
 
   /// How many times [play] was called.
   int playbacks = 0;
-
-  @override
-  Future<bool> hasPermission() async => _granted;
 
   @override
   Future<Recording> record(Duration duration) async {

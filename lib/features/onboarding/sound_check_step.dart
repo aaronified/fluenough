@@ -38,31 +38,25 @@ class SoundCheckContent extends StatefulWidget {
 class _SoundCheckContentState extends State<SoundCheckContent> {
   _Phase _phase = _Phase.ready;
 
-  /// Why the recording failed, or null if it worked.
-  RecordFailure? _failure;
-
-  /// The recording worked, but the phone has no speech recogniser.
-  bool _noRecogniser = false;
-
-  /// Whether a beep is played, there being no recording.
+  /// While recording or playing, whether a beep stands in.
   bool _beep = false;
+
+  /// What was found, kept in the answers so that coming back to the step
+  /// shows it, and saves what it shows.
+  SoundCheckResult? get _result => widget.answers.soundCheck;
 
   @override
   void initState() {
     super.initState();
-    // Coming back to the step shows what was found.
-    if (widget.answers.canSpeak != null || widget.answers.canHear != null) {
-      _phase = _Phase.done;
+    if (_result case final result?) {
+      _phase = result.hears == null ? _Phase.asking : _Phase.done;
     }
   }
 
   Future<void> _check() async {
     final state = AppScope.read(context);
-    setState(() {
-      _phase = _Phase.recording;
-      _failure = null;
-      _noRecogniser = false;
-    });
+    final refusedBefore = _result?.refusals ?? 0;
+    setState(() => _phase = _Phase.recording);
     final recording = await state.soundCheck.record(soundCheckLength);
     if (!mounted) return;
     var speaks = false;
@@ -71,10 +65,8 @@ class _SoundCheckContentState extends State<SoundCheckContent> {
       final setup = await state.startSpeech();
       if (!mounted) return;
       speaks = setup == SpeechSetup.ready;
-      _noRecogniser = !speaks;
     }
     setState(() {
-      _failure = recording.failure;
       _beep = !recording.ok;
       _phase = _Phase.playing;
     });
@@ -82,18 +74,20 @@ class _SoundCheckContentState extends State<SoundCheckContent> {
       recording.ok ? recording : beep(),
     );
     if (!mounted) return;
-    widget.answers.soundChecked(
-      speaking: speaks,
-      listening: played ? null : false,
+    widget.answers.soundCheck = SoundCheckResult(
+      speaks: speaks,
+      hears: played ? null : false,
+      failure: recording.failure,
+      noRecogniser: recording.ok && !speaks,
+      beep: !recording.ok,
+      refusals:
+          refusedBefore + (recording.failure == RecordFailure.refused ? 1 : 0),
     );
     setState(() => _phase = played ? _Phase.asking : _Phase.done);
   }
 
   void _heard(bool heard) {
-    widget.answers.soundChecked(
-      speaking: widget.answers.canSpeak,
-      listening: heard,
-    );
+    widget.answers.soundCheck = _result!.heard(heard);
     setState(() => _phase = _Phase.done);
   }
 
@@ -172,7 +166,7 @@ class _SoundCheckContentState extends State<SoundCheckContent> {
           Semantics(
             liveRegion: true,
             child: Text(
-              _beep
+              _result?.beep ?? _beep
                   ? l10n.onboardingSoundHeardBeep
                   : l10n.onboardingSoundHeardYou,
               style: theme.textTheme.titleLarge,
@@ -192,17 +186,21 @@ class _SoundCheckContentState extends State<SoundCheckContent> {
           ),
         ];
       case _Phase.done:
-        final speaks = widget.answers.canSpeak ?? false;
-        final hears = widget.answers.canHear ?? false;
+        final result = _result!;
+        final speaks = result.speaks;
+        final hears = result.hears ?? false;
         return <Widget>[
           const SizedBox(height: 8),
           _Outcome(
             ok: speaks,
             text: speaks
                 ? l10n.onboardingSoundSpeakingOn
-                : _noRecogniser
+                : result.noRecogniser
                 ? l10n.onboardingSoundNoRecogniser
-                : switch (_failure) {
+                : switch (result.failure) {
+                    // From the second refusal Android no longer asks.
+                    RecordFailure.refused when result.refusals > 1 =>
+                      l10n.onboardingSoundRefusedForGood,
                     RecordFailure.refused => l10n.onboardingSoundRefused,
                     RecordFailure.silent => l10n.onboardingSoundSilent,
                     _ => l10n.onboardingSoundNotRecorded,
