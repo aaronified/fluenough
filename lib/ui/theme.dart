@@ -8,9 +8,9 @@ import '../app/skill.dart';
 /// The design's "Forest" is the M3 tonal-spot scheme from seed `#3F6C51`, so
 /// the schemes are generated with [ColorScheme.fromSeed] and never copied from
 /// the design's hex tables. High contrast is the same scheme at M3's highest
-/// contrast level, with [ModeColors.lightHigh] or [ModeColors.darkHigh]. Component shapes and sizes follow the design:
-/// 56 px stadium buttons, 10 px chips, 16 px SnackBars, an 80 px navigation
-/// bar.
+/// contrast level, with [ModeColors.lightHigh] or [ModeColors.darkHigh].
+/// Component shapes and sizes follow the design: 56 px stadium buttons, 10 px
+/// chips, 16 px SnackBars, an 80 px navigation bar.
 abstract final class AppTheme {
   static ThemeData light({
     ThemeSeed seed = ThemeSeed.forest,
