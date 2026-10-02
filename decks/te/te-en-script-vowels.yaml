@@ -1,0 +1,76 @@
+schema: 1
+id: te-en-script-vowels
+name: "Telugu vowels"
+kind: vocab
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The vowels as they are written on their own, at the start of a word. In Telugu a short and a long vowel are different sounds."
+tags: [beginner, unreviewed, script]
+cards:
+  - id: te-en-script-vowels-0001
+    target: "అ"
+    native: "a, short (the vowel every consonant carries)"
+    reading: "a"
+    notes: "Like the 'u' of 'but'. Every consonant carries it unless a sign changes it: క is 'ka'. అమ్మ (amma, mother)."
+  - id: te-en-script-vowels-0002
+    target: "ఆ"
+    native: "aa, long"
+    reading: "aa"
+    notes: "The 'a' of 'father', held about twice as long as అ. Short and long change the word in Telugu: ఆవు (aavu, cow)."
+  - id: te-en-script-vowels-0003
+    target: "ఇ"
+    native: "i, short"
+    reading: "i"
+    notes: "Like the 'i' of 'sit': ఇల్లు (illu, house)."
+  - id: te-en-script-vowels-0004
+    target: "ఈ"
+    native: "ii, long"
+    reading: "ii"
+    notes: "The 'ee' of 'see', held longer than ఇ: ఈగ (iiga, housefly)."
+  - id: te-en-script-vowels-0005
+    target: "ఉ"
+    native: "u, short"
+    reading: "u"
+    notes: "Like the 'u' of 'put': ఉడుత (uduta, squirrel)."
+  - id: te-en-script-vowels-0006
+    target: "ఊ"
+    native: "uu, long"
+    reading: "uu"
+    notes: "The 'oo' of 'food', held longer than ఉ: ఊరు (uuru, town; village)."
+  - id: te-en-script-vowels-0007
+    target: "ఋ"
+    native: "ru (a vowel letter)"
+    reading: "ru"
+    modes: [recognition, production]
+    notes: "Said 'ru', though it is written as one vowel, in words from Sanskrit: ఋషి (rushi, sage). A recogniser writes 'ru' as రు, so it is drilled by reading and writing only."
+  - id: te-en-script-vowels-0008
+    target: "ఎ"
+    native: "e, short"
+    reading: "e"
+    notes: "Like the 'e' of 'pet', short. English has no short and long e; Telugu does: ఎలుక (eluka, rat)."
+  - id: te-en-script-vowels-0009
+    target: "ఏ"
+    native: "ee, long"
+    reading: "ee"
+    notes: "The 'ay' of 'say' held long, without the glide English adds: ఏనుగు (eenugu, elephant)."
+  - id: te-en-script-vowels-0010
+    target: "ఐ"
+    native: "ai (as in 'kite')"
+    reading: "ai"
+    notes: "A glide from a to i, like the 'i' of 'kite': ఐదు (aidu, five)."
+  - id: te-en-script-vowels-0011
+    target: "ఒ"
+    native: "o, short"
+    reading: "o"
+    notes: "Like a short 'o' of 'go', with no glide. Telugu has short and long o: ఒంటె (onte, camel)."
+  - id: te-en-script-vowels-0012
+    target: "ఓ"
+    native: "oo, long"
+    reading: "oo"
+    notes: "The 'o' of 'go' held long, without the glide English adds: ఓడ (ooda, ship)."
+  - id: te-en-script-vowels-0013
+    target: "ఔ"
+    native: "au (as in 'cow')"
+    reading: "au"
+    notes: "A glide from a to u, like the 'ow' of 'cow', mostly in words from Sanskrit: ఔషధం (aushadham, medicine)."

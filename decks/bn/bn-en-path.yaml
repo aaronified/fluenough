@@ -1,12 +1,17 @@
-# The order Bengali is taught from English in: one unit per line, a theme
-# deck and the grammar that goes with it. Every bn-en deck is listed exactly
-# once. See ADR-0013 and docs/DECK-FORMAT.md.
+# The order Bengali is taught from English in: one unit per line. First the
+# script, the sounds English lacks, and how Bengali grammar differs from
+# English; then a theme deck and the grammar that goes with it. Every bn-en
+# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: bn-en-path
 language: bn
 native: en
 units:
+  - [bn-en-script-vowels, bn-en-script-consonants]
+  - [bn-en-script-vowel-signs, bn-en-script-conjuncts]
+  - [bn-en-sound-differences]
+  - [bn-en-grammar-differences]
   - [bn-en-first-words, bn-en-grammar-sentences]
   - [bn-en-questions, bn-en-grammar-questions]
   - [bn-en-addressing, bn-en-grammar-pronouns]

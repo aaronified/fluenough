@@ -9,6 +9,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/wave_progress.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'onboarding_step.dart';
+import 'sound_check_step.dart';
 import 'spoken_step.dart';
 import 'tour_step.dart';
 import 'welcome_step.dart';
@@ -18,6 +19,7 @@ import 'welcome_step.dart';
 final List<OnboardingStep> onboardingSteps = <OnboardingStep>[
   welcomeStep,
   tourStep,
+  soundCheckStep,
   spokenStep,
 ];
 

@@ -455,6 +455,10 @@ void main() {
               await tester.tap(find.byType(FilledButton));
               await tester.pumpAndSettle();
             }
+            // The microphone and sound check (#89), then on.
+            await expectLater(tester, meetsGuideline(textContrastGuideline));
+            await tester.tap(find.byType(FilledButton));
+            await tester.pumpAndSettle();
             await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
             await tester.tap(
               find.text(l10n.spokenOption('English', 'English')),
