@@ -6,53 +6,123 @@ import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/settings_controls.dart';
+import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
 import 'support.dart';
 
 void main() {
-  testWidgets('in this version the theme is live and every other control is '
-      'incoming', (tester) async {
+  testWidgets('in this version every control is live but wallpaper colours', (
+    tester,
+  ) async {
     usePhone(tester);
     final semantics = tester.ensureSemantics();
     final state = await pumpScreen(tester, const AppearancePage());
     final l10n = l10nOf(tester);
     final settings = state.settings;
 
+    final wallpaper = find.bySemanticsLabel(
+      l10n.incomingSemanticsLabel(l10n.appearanceWallpaper),
+    );
+    expect(wallpaper, findsOneWidget);
+    await tester.tap(wallpaper, warnIfMissed: false);
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.incomingSnackBar), findsOneWidget);
+    expect(settings.dynamicColour, isFalse);
+    await clearSnackBars(tester);
+
     for (final label in <String>[
-      l10n.appearanceWallpaper,
       l10n.appearanceColour,
       l10n.appearanceContrast,
       l10n.appearanceCardSize,
     ]) {
-      final node = find.bySemanticsLabel(l10n.incomingSemanticsLabel(label));
-      await scrollTo(tester, node);
-      expect(node, findsOneWidget, reason: label);
       expect(
-        tester.getSemantics(node),
-        matchesSemantics(
-          label: l10n.incomingSemanticsLabel(label),
-          hint: l10n.incomingSemanticsHint,
-          isButton: true,
-          hasEnabledState: true,
-          hasTapAction: true,
-        ),
+        find.bySemanticsLabel(l10n.incomingSemanticsLabel(label)),
+        findsNothing,
         reason: label,
       );
-      await tester.tap(node, warnIfMissed: false);
-      await tester.pumpAndSettle();
-      expect(find.text(l10n.incomingSnackBar), findsOneWidget, reason: label);
-      await clearSnackBars(tester);
     }
 
-    await tester.ensureVisible(find.text(l10n.appearanceThemeDark));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.appearanceThemeDark));
-    await tester.pumpAndSettle();
+    Future<void> tapText(String text) async {
+      await tester.ensureVisible(find.text(text));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(text));
+      await tester.pumpAndSettle();
+    }
+
+    await tapText(l10n.appearanceThemeDark);
     expect(settings.themeMode, ThemeMode.dark);
-    expect(settings.seed, ThemeSeed.forest);
+    await tapText(l10n.appearanceSeedIris);
+    expect(settings.seed, ThemeSeed.iris);
+    await tapText(l10n.appearanceContrastHigh);
+    expect(settings.highContrast, isTrue);
+
+    final slider = find.descendant(
+      of: find.byType(SettingsSlider),
+      matching: find.byType(Slider),
+    );
+    await scrollTo(tester, slider);
+    await tapSlider(tester, slider, 0);
+    await tester.pumpAndSettle();
+    expect(settings.cardTextScale, SettingsNotifier.minCardTextScale);
+    expect(tester.takeException(), isNull);
     semantics.dispose();
+  });
+
+  testWidgets('a colour and high contrast picked here theme the whole app', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpApp(
+      tester,
+      state: AppState.test(
+        settings: SettingsNotifier(spokenLanguages: const <String>['en']),
+      ),
+    );
+    final l10n = l10nOf(tester);
+    Future<void> tapText(String text) async {
+      await tester.ensureVisible(find.text(text));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(text));
+      await tester.pumpAndSettle();
+    }
+
+    await tapText(l10n.navSettings);
+    await tapText(l10n.settingsAppearance);
+    expect(find.byType(AppearancePage), findsOneWidget);
+
+    await tapText(l10n.appearanceSeedClay);
+    await tapText(l10n.appearanceContrastHigh);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    final context = tester.element(find.byType(SettingsPage));
+    expect(
+      Theme.of(context).colorScheme.primary,
+      ColorScheme.fromSeed(
+        seedColor: Color(ThemeSeed.clay.argb),
+        contrastLevel: 1.0,
+      ).primary,
+    );
+    expect(ModeColors.of(context).listening, ModeColors.lightHigh.listening);
+    expect(
+      find.text(
+        l10n.settingsAppearanceSummaryHigh(
+          l10n.appearanceThemeSystem,
+          l10n.appearanceSeedClay,
+        ),
+      ),
+      findsOneWidget,
+    );
+
+    state.settings.highContrast = false;
+    await tester.pumpAndSettle();
+    expect(
+      ModeColors.of(tester.element(find.byType(SettingsPage))).listening,
+      ModeColors.light.listening,
+    );
   });
 
   testWidgets('with every feature on, each control changes SettingsNotifier', (
