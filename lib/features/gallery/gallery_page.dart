@@ -16,6 +16,7 @@ import '../settings/gallery_entries.dart';
 import '../stats/gallery_entries.dart';
 import '../summary/gallery_entries.dart';
 import '../today/gallery_entries.dart';
+import '../script/gallery_entries.dart';
 import 'fixtures.dart';
 import 'gallery_entry.dart';
 
@@ -33,6 +34,7 @@ List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
   ...todayGalleryEntries,
   ...todayGalleryStates,
   ...decksGalleryEntries,
+  ...scriptGalleryEntries,
   ...drillGalleryEntries,
   ...grammarGalleryStates,
   ...pairGalleryStates,

@@ -5,10 +5,13 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/card.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/script_guide.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../script/script_guide_page.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
@@ -46,6 +49,11 @@ class DrillPage extends StatefulWidget {
 
 class _DrillPageState extends State<DrillPage> {
   DrillSession? _session;
+
+  /// A script's guide to show before the session (#30, ADR-0016): the
+  /// first script card's language, while its guide is unseen.
+  ScriptGuide? _guide;
+  LanguageInfo? _guideLanguage;
   bool _loaded = false;
   bool _failed = false;
   bool _summaryShown = false;
@@ -109,6 +117,19 @@ class _DrillPageState extends State<DrillPage> {
       );
     }
     if (items.isEmpty) return;
+    if (preset == null) {
+      for (final item in items) {
+        final entry = state.deckOf(item.card);
+        if (entry == null || !entry.isScript) continue;
+        final guide = state.scriptGuideFor(entry.language);
+        if (guide != null &&
+            !state.settings.hasSeenScriptGuide(entry.language.code)) {
+          _guide = guide;
+          _guideLanguage = entry.language;
+        }
+        break;
+      }
+    }
     final session = DrillSession(
       state: state,
       items: items,
@@ -201,6 +222,21 @@ class _DrillPageState extends State<DrillPage> {
                 title: l10n.drillEmptyTitle,
                 body: l10n.drillEmptyBody,
               ),
+      );
+    }
+    final guide = _guide;
+    final guideLanguage = _guideLanguage;
+    if (guide != null && guideLanguage != null) {
+      return ScriptGuideView(
+        guide: guide,
+        language: guideLanguage,
+        actionLabel: l10n.scriptGuideStart,
+        onAction: () {
+          AppScope.read(context).settings
+              .markScriptGuideSeen(guideLanguage.code);
+          setState(() => _guide = null);
+        },
+        onClose: _close,
       );
     }
     return ListenableBuilder(

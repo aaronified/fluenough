@@ -67,6 +67,7 @@ void main() {
               'numbers',
               'path',
               'sounds',
+              'script',
             }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
           )
           .toSet();
