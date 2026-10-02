@@ -67,7 +67,7 @@ native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 tags: [beginner, core]
 cards:
-  - id: es-en-core-0001
+  - id: es-0001
     target: la casa
     native: the house
     pos: noun
@@ -78,7 +78,7 @@ cards:
 
 | Field | Required | Notes |
 |---|---|---|
-| `id` | yes | Unique within the deck, `[a-z0-9-]+`. **Never reuse or renumber** — review history is keyed on it. |
+| `id` | yes | The language learned and a number, `es-0001`: unique in the language, across every deck and course. **Never reuse or renumber** — review history is keyed on it. |
 | `target` | yes | The text in the language being learned. |
 | `native` | yes | The meaning, in the learner's language. |
 | `reading` | no | Romanisation or phonetic reading. Required in practice for non-Latin scripts. |
@@ -98,6 +98,39 @@ Card ids are the primary key of the user's entire review history. Changing an
 id orphans that card's history; reusing one silently attaches old history to
 new content. Treat ids as immutable once published. To retire a card, delete
 it — do not repurpose it.
+
+An id names the language, not the deck or the course
+([ADR-0018](adr/0018-card-ids-name-the-language.md)). Numbers are shared by
+every deck of the language, so take the next free one:
+
+```sh
+python3 tools/validate_decks.py --next-id es
+```
+
+### A word in more than one deck: `ref`
+
+A word is one card, written once. Another deck that teaches it lists it by
+its id, and the learner has one schedule for it, whichever deck they meet it
+in, and whichever language they learn it from:
+
+```yaml
+cards:
+  - ref: es-0001
+    notes: "In this deck: the house you live in."
+```
+
+A ref may give the card's native side for this deck: `native`, `alt_native`,
+`reading`, `notes`, `tags`, `examples` and `modes`. What the card is in the
+language learned, its `target`, `alt_target`, `pos`, `gender` and `audio`,
+stays where it is written.
+
+- **The same native language:** what the ref does not give comes from the
+  card.
+- **Another native language,** say an `es-bn` deck listing a card written in
+  an `es-en` one: the ref gives its own `native`, and nothing else comes
+  across from the English side.
+- The validator checks that each ref names a card written in another deck
+  of the language, and that no card is written twice.
 
 ---
 
@@ -143,7 +176,14 @@ pattern:
 | `notes` | no | Shown after answering. |
 
 `forms` must supply a key for every slot. A cell with no valid form (a
-defective verb, say) may be `null` and is skipped rather than drilled.
+defective verb, say) may be `null` and is skipped rather than drilled. A cell
+with more than one right form lists them: the first is shown, and every one
+is accepted (#144).
+
+```yaml
+      forms:
+        "আমি / আমরা": ["এলাম", "আসলাম"]   # West Bengal, Bangladesh
+```
 
 ### Entry keys
 
@@ -171,11 +211,15 @@ like the Hindi past tense, has one slot per combination: `"मैं (m)"`,
 
 Each `(entry, slot)` pair becomes one production card:
 
-- **id** — `<deck-id>-<key>-<slot-index>`, stable as long as `slots` keeps
-  its order and the key is unchanged. The key is the entry's `key`, or its
-  `lemma` when it has none. **Reordering `slots` rewrites every id in
+- **id** — `<language>-<deck name>-<key>-<slot-index>`, where the deck name
+  is the deck id without its course: `es-en-grammar-present-ar` expands to
+  `es-grammar-present-ar-hablar-0`, and so would the same table in a deck
+  taught from another language (ADR-0018). It is stable as long as `slots`
+  keeps its order and the key is unchanged. The key is the entry's `key`,
+  or its `lemma` when it has none. **Reordering `slots` rewrites every id in
   the deck and orphans its history.** Append new slots at the end.
-- **target** — `forms[slot]`
+- **target** — `forms[slot]`, the first form where a cell lists several, and
+  **alt_target** the rest
 - **native** — `prompt` with substitutions applied
 - **modes** — `grammar` only
 

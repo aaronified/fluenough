@@ -217,7 +217,7 @@ class _StatsBody extends StatelessWidget {
     final leeches = findLeeches(state.progress, cardOf: cardOf)
         .where(
           (l) =>
-              _counts(l.key.deckId) &&
+              _counts(l.card.deckId) &&
               actions.statusOf(l.key) == LeechStatus.active,
         )
         .length;

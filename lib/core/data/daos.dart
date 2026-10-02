@@ -62,13 +62,9 @@ class CardStatesDao extends DatabaseAccessor<AppDatabase>
       into(cardStates).insertOnConflictUpdate(state);
 
   /// One pair's state, or null if it has never been reviewed.
-  Future<CardStateRow?> of(String deckId, String cardId, DrillMode mode) =>
-      (select(cardStates)..where(
-            (s) =>
-                s.deckId.equals(deckId) &
-                s.cardId.equals(cardId) &
-                s.mode.equalsValue(mode),
-          ))
+  Future<CardStateRow?> of(String cardId, DrillMode mode) =>
+      (select(cardStates)
+            ..where((s) => s.cardId.equals(cardId) & s.mode.equalsValue(mode)))
           .getSingleOrNull();
 
   Future<List<CardStateRow>> all() => select(cardStates).get();
@@ -120,7 +116,9 @@ class LeechActionsDao extends DatabaseAccessor<AppDatabase>
   Future<void> append(LeechAction action) => into(leechActions).insert(
     LeechActionsCompanion.insert(
       ts: action.at,
-      deckId: action.key.deckId,
+      // The pair is a card and a mode, in whichever deck (ADR-0018); the
+      // column stays, unused, since this table is append-only.
+      deckId: '',
       cardId: action.key.cardId,
       mode: action.key.mode,
       kind: action.kind,
@@ -134,7 +132,7 @@ class LeechActionsDao extends DatabaseAccessor<AppDatabase>
     )..orderBy([(a) => OrderingTerm.asc(a.id)])).get())
       LeechAction(
         at: row.ts,
-        key: (deckId: row.deckId, cardId: row.cardId, mode: row.mode),
+        key: (cardId: row.cardId, mode: row.mode),
         kind: row.kind,
       ),
   ];

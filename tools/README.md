@@ -16,8 +16,9 @@ Errors fail the build; warnings do not. Exit status is 0 when every deck is
 valid, 1 on any error, 2 if the arguments are wrong.
 
 It checks structure and field types, that the deck id matches the filename,
-that card ids are unique, that a grammar deck supplies every slot for every
-entry — and that no value has been silently eaten by YAML's type resolution.
+that each card id names the deck's language and is written once in it, that
+every `ref` names a card another deck writes (ADR-0018), that a grammar deck
+supplies every slot for every entry — and that no value has been silently eaten by YAML's type resolution.
 That last one is the reason this exists: `native: no` on the hiragana `の`
 parses as the boolean `false`, and no reviewer reliably catches that by eye.
 
@@ -36,10 +37,11 @@ python3 tools/import_csv.py words.csv \
 python3 tools/validate_decks.py decks/es/es-en-food.yaml
 ```
 
-It quotes any value YAML would misread, and derives card ids from the target,
-falling back to the reading and then to the row number when the target has no
-usable ASCII. **Check the generated ids before committing** — they are
-permanent once published, because they key every user's review history.
+It quotes any value YAML would misread, and numbers the cards from the
+language's next free id (`validate_decks.py --next-id`). **Check the generated
+ids before committing** — they are permanent once published, because they key
+every user's review history. A word another deck already teaches should be
+listed there by `ref` instead.
 
 ## `brand_android.py`
 

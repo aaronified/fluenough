@@ -24,7 +24,7 @@ void main() {
   }) => ReviewsCompanion.insert(
     ts: ts ?? at,
     deckId: 'hi-en-market',
-    cardId: 'hi-en-market-0001',
+    cardId: 'hi-0231',
     mode: mode,
     grade: grade,
     elapsedMs: 3200,
@@ -38,16 +38,12 @@ void main() {
   LeechAction leechAction({LeechActionKind kind = LeechActionKind.setAside}) =>
       LeechAction(
         at: at,
-        key: (
-          deckId: 'hi-en-market',
-          cardId: 'hi-en-market-0001',
-          mode: DrillMode.production,
-        ),
+        key: (cardId: 'hi-0231', mode: DrillMode.production),
         kind: kind,
       );
 
-  test('opens at version 3 with its six tables', () async {
-    expect(db.schemaVersion, 3);
+  test('opens at version 4 with its six tables', () async {
+    expect(db.schemaVersion, 4);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -164,12 +160,12 @@ void main() {
           native: 'how much',
         );
     await db.cardsDao.replaceDeck('hi-en-market', [
-      card('hi-en-market-0002', 1, 'कितना'),
-      card('hi-en-market-0001', 0, 'कितने का है?'),
+      card('hi-0232', 1, 'कितना'),
+      card('hi-0231', 0, 'कितने का है?'),
     ]);
     expect(
       (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
-      <String>['hi-en-market-0001', 'hi-en-market-0002'],
+      <String>['hi-0231', 'hi-0232'],
     );
     expect(
       (await db.cardsDao.ofDeck('hi-en-market')).first.target,
@@ -177,19 +173,18 @@ void main() {
     );
 
     await db.cardsDao.replaceDeck('hi-en-market', [
-      card('hi-en-market-0003', 0, 'महँगा'),
+      card('hi-0233', 0, 'महँगा'),
     ]);
     expect(
       (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
-      <String>['hi-en-market-0003'],
+      <String>['hi-0233'],
     );
   });
 
-  test('card_states: one row per deck, card and mode', () async {
+  test('card_states: one row per card and mode', () async {
     CardStatesCompanion state(DrillMode mode, int interval) =>
         CardStatesCompanion.insert(
-          deckId: 'hi-en-market',
-          cardId: 'hi-en-market-0001',
+          cardId: 'hi-0231',
           mode: mode,
           intervalDays: interval,
           easeFactor: 2.5,
@@ -201,22 +196,14 @@ void main() {
     await db.cardStatesDao.put(state(DrillMode.recognition, 3));
 
     final recognition = (await db.cardStatesDao.of(
-      'hi-en-market',
-      'hi-en-market-0001',
+      'hi-0231',
       DrillMode.recognition,
     ))!;
     expect(recognition.intervalDays, 3, reason: 'replaced, not added');
     expect(recognition.dueAt, at);
     expect(recognition.lapses, 0);
     expect(await db.cardStatesDao.all(), hasLength(2));
-    expect(
-      await db.cardStatesDao.of(
-        'hi-en-market',
-        'hi-en-market-0001',
-        DrillMode.listening,
-      ),
-      isNull,
-    );
+    expect(await db.cardStatesDao.of('hi-0231', DrillMode.listening), isNull);
   });
 
   test(

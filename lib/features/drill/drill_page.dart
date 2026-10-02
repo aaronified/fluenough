@@ -117,8 +117,7 @@ class _DrillPageState extends State<DrillPage> {
             if (ids == null || ids.contains(entry.id)) ...entry.cards,
         ],
         mode: request.skill?.mode ?? DrillMode.recognition,
-        stateOf: (card, mode) =>
-            state.progress.stateOf(card.deckId, card.id, mode),
+        stateOf: (card, mode) => state.progress.stateOf(card.id, mode),
       );
     }
     if (items.isEmpty) return;

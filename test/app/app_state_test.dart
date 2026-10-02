@@ -249,10 +249,7 @@ themes:
       final event = state.record(item, 5, answerGiven: 'x');
       expect(event.at, state.now());
       expect(state.progress.log.single.cardId, item.card.id);
-      expect(
-        state.progress.stateOf(item.card.deckId, item.card.id, item.mode),
-        isNotNull,
-      );
+      expect(state.progress.stateOf(item.card.id, item.mode), isNotNull);
     });
 
     test('deck counts agree with the deck\'s session', () async {

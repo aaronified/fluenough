@@ -33,9 +33,9 @@ void main() {
   /// relearning, a day or so apart.
   Future<List<ReviewEvent>> recordTwenty() async {
     const pairs = <(String, String, DrillMode)>[
-      ('hi-en-market', 'hi-en-market-0001', DrillMode.recognition),
-      ('hi-en-market', 'hi-en-market-0001', DrillMode.production),
-      ('bn-en-market', 'bn-en-market-0004', DrillMode.recognition),
+      ('hi-en-market', 'hi-0231', DrillMode.recognition),
+      ('hi-en-market', 'hi-0231', DrillMode.production),
+      ('bn-en-market', 'bn-0246', DrillMode.recognition),
     ];
     const grades = <int>[
       4,
@@ -76,7 +76,7 @@ void main() {
   test('recording appends the review and stores the new state', () async {
     final event = await log.record(
       deckId: 'hi-en-market',
-      cardId: 'hi-en-market-0001',
+      cardId: 'hi-0231',
       mode: DrillMode.production,
       grade: 4,
       now: start,
@@ -91,16 +91,12 @@ void main() {
     final rows = await db.reviewsDao.all();
     expect(rows.single.intervalAfter, event.after.intervalDays);
     expect(rows.single.answerGiven, 'kitna');
-    final stored = await states.stateOf(
-      'hi-en-market',
-      'hi-en-market-0001',
-      DrillMode.production,
-    );
+    final stored = await states.stateOf('hi-0231', DrillMode.production);
     expect(fields(stored!), fields(event.after));
 
     final second = await log.record(
       deckId: 'hi-en-market',
-      cardId: 'hi-en-market-0001',
+      cardId: 'hi-0231',
       mode: DrillMode.production,
       grade: 5,
       now: start.add(const Duration(days: 1)),
@@ -119,7 +115,7 @@ void main() {
       await expectLater(
         log.record(
           deckId: 'hi-en-market',
-          cardId: 'hi-en-market-0001',
+          cardId: 'hi-0231',
           mode: DrillMode.recognition,
           grade: 4,
           now: start,
@@ -135,7 +131,7 @@ void main() {
     await expectLater(
       log.record(
         deckId: 'hi-en-market',
-        cardId: 'hi-en-market-0001',
+        cardId: 'hi-0231',
         mode: DrillMode.recognition,
         grade: 6,
         now: start,
@@ -153,11 +149,8 @@ void main() {
     // Wreck the cache: drop one pair, corrupt another.
     await db.cardStatesDao.clear();
     await db.cardStatesDao.put(
-      Sm2State.fresh(start).toRow((
-        deckId: 'hi-en-market',
-        cardId: 'hi-en-market-0001',
-        mode: DrillMode.recognition,
-      )),
+      Sm2State.fresh(start)
+          .toRow((cardId: 'hi-0231', mode: DrillMode.recognition)),
     );
 
     await log.rebuildStates();

@@ -153,7 +153,11 @@ booleans. The hiragana `の` romanises to `no`. The validator catches this.
 whatever accent the device defaults to.
 
 **Card ids are new.** Never renumber, reuse, or remove-and-replace an existing
-one; they key every user's review history. To retire a card, delete it.
+one; they key every user's review history. To retire a card, delete it. A new
+card takes the language's next free id
+(`python3 tools/validate_decks.py --next-id fr`), and a word another deck of
+the language already teaches is listed with `ref:` rather than written again
+(see "A word in more than one deck" in docs/DECK-FORMAT.md).
 
 Non-Latin scripts also need `reading` on every card.
 

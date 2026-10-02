@@ -113,7 +113,7 @@ void main() {
           ? DeckTile.metaFor(l10n, entry)
           : l10n.deckMetaTheme(
               state.themes.indexOf(theme) + 1,
-              state.progress.learnedIn(entry.id),
+              state.progress.learnedIn(entry.cards.map((card) => card.id)),
               entry.itemCount,
             );
       expect(
@@ -347,7 +347,7 @@ themes:
     await state.load();
     state.progress.record(
       deckId: 'hi-en-first-words',
-      cardId: 'hi-en-first-words-0001',
+      cardId: 'hi-en-first-words-0002',
       mode: DrillMode.recognition,
       grade: 5,
       now: state.now(),
