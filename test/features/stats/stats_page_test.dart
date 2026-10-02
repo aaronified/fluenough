@@ -355,5 +355,32 @@ void main() {
       expect(find.text(l10n.statsLanguageAll), findsNothing);
       expect(tile('1', l10n.statsReviews), findsOneWidget);
     });
+
+    testWidgets('a review that cannot be placed in a language still counts, '
+        'under All languages', (tester) async {
+      usePhone(tester);
+      final base = AppState.test();
+      await base.load();
+      final progress = MemoryProgress();
+      final deck = base.deckById('es-en-core-100')!;
+      for (final deckId in <String>[deck.id, 'xx-en-gone']) {
+        progress.record(
+          deckId: deckId,
+          cardId: deckId == deck.id ? deck.cards.first.id : 'xx-en-gone-0001',
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: base.now(),
+        );
+      }
+      await pumpScreen(
+        tester,
+        const StatsPage(),
+        state: AppState.test(progress: progress),
+      );
+      final l10n = l10nOf(tester);
+      expect(tile('1', l10n.statsReviews), findsOneWidget);
+      await showAll(tester);
+      expect(tile('2', l10n.statsReviews), findsOneWidget);
+    });
   });
 }
