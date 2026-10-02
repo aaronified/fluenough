@@ -1,6 +1,6 @@
 # ADR-0010: Vocabulary is taught along a shared path of themes
 
-- **Status:** Accepted
+- **Status:** Accepted. The ordering of a course's decks is superseded by [ADR-0013](0013-course-paths.md); the theme list stands.
 - **Date:** 2026-09-29
 
 ## Context

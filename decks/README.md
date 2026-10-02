@@ -6,15 +6,24 @@ Deck content, one YAML file per deck, organised by language code.
 decks/
   bn/  bn-en-first-words.yaml     one deck per theme in themes.yaml
        bn-en-questions.yaml …
+       bn-en-path.yaml            the order the course is taught in
   es/  es-en-core-100.yaml
        es-en-grammar-present-ar.yaml
+       es-en-path.yaml
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
+       hi-en-path.yaml
   ja/  ja-en-hiragana.yaml
+       ja-en-path.yaml
   te/  te-en-first-words.yaml     not yet checked by a Telugu speaker
        te-en-questions.yaml …
+       te-en-path.yaml
   themes.yaml
 ```
+
+**Every deck is on its course's path.** `<lang>-<native>-path.yaml` lists the
+course's decks in teaching order, in units, and the validator fails a deck
+left off it. See "Course paths" in the format specification.
 
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)
 - How to contribute one: [../CONTRIBUTING.md](../CONTRIBUTING.md)

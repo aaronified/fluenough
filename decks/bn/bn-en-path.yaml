@@ -1,0 +1,23 @@
+# The order Bengali is taught from English in: one unit per line, a theme
+# deck and the grammar that goes with it. Every bn-en deck is listed exactly
+# once. See ADR-0013 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: bn-en-path
+language: bn
+native: en
+units:
+  - [bn-en-first-words, bn-en-grammar-sentences]
+  - [bn-en-questions, bn-en-grammar-questions]
+  - [bn-en-addressing, bn-en-grammar-pronouns]
+  - [bn-en-about-me, bn-en-grammar-present]
+  - [bn-en-numbers-1-20]
+  - [bn-en-numbers-big]
+  - [bn-en-market, bn-en-grammar-nouns, bn-en-grammar-articles]
+  - [bn-en-groceries, bn-en-grammar-gender-number]
+  - [bn-en-transport, bn-en-grammar-postpositions]
+  - [bn-en-directions, bn-en-grammar-continuous]
+  - [bn-en-time, bn-en-grammar-future]
+  - [bn-en-calendar, bn-en-grammar-past]
+  - [bn-en-eating-out, bn-en-grammar-conjunctions]
+  - [bn-en-help, bn-en-grammar-irregular, bn-en-grammar-pitfalls]
