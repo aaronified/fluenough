@@ -16,9 +16,10 @@ import 'stats_numbers.dart';
 /// Cards missed again and again, with Reset and Set aside. Behind `Feature.leeches`.
 ///
 /// Design screen `leeches`. Lists every pair at or over [kLeechThreshold]
-/// lapses, or only [language]'s when opened from that language's Progress. Reset and Set aside are appended to [LeechActions], never taken
-/// out of the review log; a card acted on stays listed, dimmed, so the
-/// action can be undone.
+/// lapses, or only [language]'s when opened from that language's Progress.
+/// Reset and Set aside are appended to [LeechActions], never taken out of the
+/// review log; a card acted on stays listed, dimmed, so the action can be
+/// undone.
 class LeechesPage extends StatelessWidget {
   const LeechesPage({super.key, this.language});
 

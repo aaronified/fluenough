@@ -25,8 +25,8 @@ import 'stats_numbers.dart';
 ///
 /// The numbers are one language's: a chip per language the log has reviews
 /// in names it, most recently reviewed first, and "All languages" after
-/// them counts every language together when there are several. The tab
-/// opens on the first chip.
+/// them counts every review together when there are several languages, or
+/// reviews whose language cannot be told. The tab opens on the first chip.
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key, this.initialRange = StatsRange.month});
 
@@ -83,7 +83,13 @@ class _StatsPageState extends State<StatsPage> {
           languages: state.languages,
           languageOf: languageOf,
         );
-        final several = practised.length > 1;
+        // All languages is offered beside two or more languages, or beside
+        // one when some reviews cannot be placed in any, so that every
+        // review is counted somewhere.
+        final several =
+            practised.length > 1 ||
+            (practised.isNotEmpty &&
+                state.progress.log.any((e) => languageOf(e.deckId) == null));
         // A chosen language whose reviews can no longer be placed, its decks
         // gone from the catalog, falls back to the first chip.
         final language =

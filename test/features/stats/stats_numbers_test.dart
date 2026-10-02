@@ -126,7 +126,8 @@ void main() {
     late LanguageLookup languageOf;
     setUpAll(() => languageOf = languageLookupOf(app));
 
-    /// Two Japanese reviews, six and five days ago, beside the Spanish log.
+    /// A Japanese review on each of [days], counted from today, beside the
+    /// Spanish log.
     void addJapanese(MemoryProgress progress, List<int> days) {
       final deck = app.deckById('ja-en-hiragana')!;
       for (final day in days) {
