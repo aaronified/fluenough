@@ -89,6 +89,33 @@ void main() {
       expect(ids(queue.due), ['c:recognition']);
     });
 
+    test('fairShares splits new pairs equally, in blocks, and passes a short '
+        "block's share on", () {
+      List<SessionItem> block(String name, int n) => <SessionItem>[
+        for (var i = 0; i < n; i++)
+          SessionItem(
+            card: card('$name$i'),
+            mode: DrillMode.recognition,
+            state: null,
+          ),
+      ];
+      final shared = SessionQueue.fairShares(<List<SessionItem>>[
+        block('a', 5),
+        block('b', 1),
+        block('c', 5),
+      ], 7);
+      expect(shared.map((i) => i.card.id), [
+        'a0', 'a1', 'a2', //
+        'b0',
+        'c0', 'c1', 'c2',
+      ]);
+      expect(
+        SessionQueue.fairShares(<List<SessionItem>>[block('a', 2)], 7),
+        hasLength(2),
+      );
+      expect(SessionQueue.fairShares(<List<SessionItem>>[], 7), isEmpty);
+    });
+
     test('the cap counts pairs: a card known by sight is new to type', () {
       final queue = build(
         [card('a')],
