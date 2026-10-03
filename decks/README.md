@@ -104,8 +104,8 @@ history to new content. To retire a card, delete it.
 The Bengali reading deck quotes Rabindranath Tagore's *Sahaj Path*, part 1
 (1930, in the public domain), letter for letter from the Visva-Bharati
 printing of 1993; two readers checked every passage against the page images.
-The spelling deck quotes older spellings printed in *Sahaj Path* and in an
-older printing of Sukumar Ray's *Abol Tabol*. Never correct a quoted text:
+The spelling deck quotes older spellings printed in *Sahaj Path* and in the
+Shaibya printing of Sukumar Ray's *Abol Tabol*. Never correct a quoted text:
 explain a difference in a note.
 
 ## Deck licences

@@ -150,8 +150,8 @@ class Passage {
 }
 
 /// A reading question as a card, so that it is scheduled, recorded and
-/// counted like any other: its own SM-2 state per mode, keyed by the deck
-/// and the question's id.
+/// counted like any other: its own SM-2 state per mode, keyed by the
+/// question's id, a card id of the language (ADR-0018).
 ///
 /// It is read in [DrillMode.reading], and heard in [DrillMode.listening]
 /// where the phone has a voice. Its [target] and [reading] are the passage's

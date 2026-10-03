@@ -151,6 +151,15 @@ void main() {
     expect(newer.isEnabled(Skill.production), isFalse);
     expect(newer.isEnabled(Skill.listening), isTrue);
     expect(newer.isEnabled(Skill.reading), isTrue);
+
+    // Every skill on is still marked as a complete list, so a skill a later
+    // version adds keeps its default rather than reading as off.
+    final allOn = SettingsNotifier().toStored()['enabled_skills']!;
+    expect(allOn.split(','), contains('+'));
+    final later = SettingsNotifier()
+      ..restore(const <String, String>{'enabled_skills': '+,recognition'});
+    expect(later.isEnabled(Skill.listening), isTrue);
+    expect(later.isEnabled(Skill.recognition), isTrue);
   });
 
   test('settings persist across closing and reopening the database', () async {

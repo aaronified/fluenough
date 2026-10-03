@@ -22,10 +22,9 @@ List<({LanguageInfo language, List<DeckSourceLine> lines})> sourcesOf(
       <String, ({LanguageInfo language, List<DeckSourceLine> lines})>{};
   for (final entry in decks) {
     final deck = entry.deck;
-    final named = <String>[
-      ?deck.source,
-      for (final passage in deck.passages) ?passage.source,
-    ];
+    // The deck's own source names the book; a passage's names its page,
+    // which the drill shows with the passage.
+    final named = <String>[?deck.source];
     for (final source in named) {
       final language = byLanguage.putIfAbsent(
         entry.language.code,

@@ -84,6 +84,10 @@ passages:
         reading: "kore"
         meaning: { en: "having done" }
         note: { en: "older spelling; the apostrophe marks a dropped ই" }
+      - word: "বাড়িতে"
+        modern: "বাড়িতে"
+        reading: "barite"
+        meaning: { en: "at home" }
     questions:
       - id: bn-en-fixture-reading-home-q1
         prompt:

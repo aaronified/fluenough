@@ -82,6 +82,7 @@ class ReadingDrill extends StatelessWidget {
           ),
           _Title(card.passage.title),
           if (heard) ..._listen(context, large: true) else text,
+          if (!heard) ?_RomanisationToggle.of(card.passage, settings),
           if (!heard && card.passage.glossary.isNotEmpty)
             _WordsButton(passage: card.passage, language: language),
           if (source != null) _Source(source),
@@ -164,6 +165,7 @@ class ReadingDrill extends StatelessWidget {
                 ),
               ),
               text,
+              ?_RomanisationToggle.of(card.passage, settings),
               if (card.passage.glossary.isNotEmpty)
                 _WordsButton(passage: card.passage, language: language),
             ],
@@ -265,6 +267,32 @@ class ReadingDrill extends StatelessWidget {
 }
 
 /// Small text over the card's main line.
+/// Show romanisation, on the passage itself: a learner who reads by the
+/// romanisation, without the script, can still take the passage as the
+/// test of its words and grammar. The same setting as in Settings, so it
+/// holds for every passage and the glossary. Only for a passage that has
+/// readings.
+class _RomanisationToggle extends StatelessWidget {
+  const _RomanisationToggle(this.settings);
+
+  static _RomanisationToggle? of(Passage passage, SettingsNotifier settings) =>
+      passage.sentences.any((s) => s.reading != null)
+      ? _RomanisationToggle(settings)
+      : null;
+
+  final SettingsNotifier settings;
+
+  @override
+  Widget build(BuildContext context) => Align(
+    alignment: AlignmentDirectional.centerStart,
+    child: FilterChip(
+      label: Text(AppLocalizations.of(context)!.settingsRomanisation),
+      selected: settings.showRomanisation,
+      onSelected: (on) => settings.showRomanisation = on,
+    ),
+  );
+}
+
 class _Label extends StatelessWidget {
   const _Label(this.text);
 
@@ -639,18 +667,22 @@ class Glossary extends StatelessWidget {
                         fontSize: 22,
                         textAlign: TextAlign.start,
                       ),
-                      Icon(
-                        Icons.arrow_forward,
-                        size: 18,
-                        color: scheme.onSurfaceVariant,
-                        semanticLabel: l10n.readingGlossToday,
-                      ),
-                      TargetText(
-                        entry.modern,
-                        language: language,
-                        fontSize: 22,
-                        textAlign: TextAlign.start,
-                      ),
+                      // A word still written the same today has no
+                      // today's form to point to.
+                      if (entry.modern != entry.word) ...<Widget>[
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: scheme.onSurfaceVariant,
+                          semanticLabel: l10n.readingGlossToday,
+                        ),
+                        TargetText(
+                          entry.modern,
+                          language: language,
+                          fontSize: 22,
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
                     ],
                   ),
                   if (settings.showRomanisation && entry.reading != null)

@@ -35,8 +35,8 @@ the drill and the sources, on 2 and 3 October 2026.
 - **Each question is a card.** The parser makes every question a
   `QuestionCard`, a `Card` that also carries its passage, so it is
   scheduled, recorded, counted and backed up as every card is: its own
-  SM-2 state per mode, in the existing review log, keyed by the deck id
-  and the question's id. No table changes. Its target is the passage's
+  SM-2 state per mode, in the existing review log, keyed by the question's
+  id, a card id of the language, and the mode (ADR-0018). No table changes. Its target is the passage's
   first sentence, so a list of cards, such as the leeches, shows which
   passage it is.
 - **A new mode, `reading`, and a skill for it.** Reading has its own switch
