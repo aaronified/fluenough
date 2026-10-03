@@ -226,14 +226,14 @@ void main() {
     final starts = <String>[
       for (final unit in everything.pendingUnits) unit.first.id,
     ];
-    // Two units for each of the eight courses with more than one, and
-    // Japanese's only one, hiragana. Bengali starts with its script.
+    // Two units for each of the eight courses. Bengali starts with its
+    // script.
     expect(
       starts,
       containsAll(<String>['bn-en-script-vowels', 'bn-en-script-vowel-signs']),
     );
-    expect(starts, containsAll(<String>['es-en-core-100', 'ja-en-hiragana']));
-    expect(starts, hasLength(17));
+    expect(starts, contains('es-en-core-100'));
+    expect(starts, hasLength(16));
   });
 
   test('a language is taught from the best-known language the learner speaks '
@@ -268,17 +268,17 @@ void main() {
       ),
       profiles: const <Profile>[
         Profile.defaultProfile,
-        Profile(id: 'mira', languages: <String>{'ja'}),
+        Profile(id: 'mira', languages: <String>{'bn'}),
       ],
       currentProfileId: 'mira',
     );
     addTearDown(state.dispose);
     await state.load();
-    expect(state.currentProfile.learns('ja'), isTrue);
+    expect(state.currentProfile.learns('bn'), isTrue);
     expect(state.currentProfile.learns('hi'), isFalse);
     state.selectProfile(Profile.defaultProfile.id);
     expect(state.currentProfile.learns('hi'), isTrue);
-    expect(state.currentProfile.learns('ja'), isFalse);
+    expect(state.currentProfile.learns('bn'), isFalse);
   });
 
   test(
@@ -298,13 +298,21 @@ void main() {
 
       // A language with fewer new cards than its share passes the rest on.
       final small = learning(
-        <String>['hi', 'ja'],
+        <String>['hi', 'bn'],
         decks: MemoryDeckSource(<String, String>{
           ...tinyCourse(),
-          'decks/ja/ja-en-hiragana.yaml': File('decks/ja/ja-en-hiragana.yaml')
-              .readAsStringSync(),
-          'decks/ja/ja-en-path.yaml': File('decks/ja/ja-en-path.yaml')
-              .readAsStringSync(),
+          'decks/bn/bn-en-script-consonants.yaml': File(
+            'decks/bn/bn-en-script-consonants.yaml',
+          ).readAsStringSync(),
+          'decks/bn/bn-en-path.yaml': '''
+schema: 1
+kind: path
+id: bn-en-path
+language: bn
+native: en
+units:
+  - [bn-en-script-consonants]
+''',
         }),
       );
       addTearDown(small.dispose);

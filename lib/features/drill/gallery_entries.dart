@@ -18,9 +18,9 @@ import 'rtl_fixture.dart';
 /// `pair_drill.dart` and which are spliced in here already.
 ///
 /// Each entry is a real session on the bundled decks, started part-way by a
-/// [DrillPreset]. The design draws Hindi; this branch has no Hindi deck yet
-/// (#41), so the script states use Japanese. The presets find their cards
-/// by target text, never by id.
+/// [DrillPreset]. The design draws Hindi, and so do the script states. The
+/// presets find their cards by target text, never by id; a preset also
+/// skips the script's guide, which a real first session shows.
 final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
   GalleryEntry(
     id: 'drill-recognition',
@@ -28,7 +28,11 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Recognition', // ui-literal-ok: debug-only gallery
     note: 'See it, recall the meaning', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('ja-en-hiragana', skill: Skill.recognition),
+      request: DrillRequest.deck(
+        'hi-en-script-vowels',
+        skill: Skill.recognition,
+      ),
+      preset: const DrillPreset(target: 'अ'),
     ),
   ),
   GalleryEntry(
@@ -75,8 +79,11 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, own keyboard', // ui-literal-ok: debug-only gallery
     note: 'Type in the script; HeliBoard suggested', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
-      preset: const DrillPreset(target: 'か'),
+      request: DrillRequest.deck(
+        'hi-en-script-consonants',
+        skill: Skill.production,
+      ),
+      preset: const DrillPreset(target: 'क'),
     ),
   ),
   GalleryEntry(
@@ -85,9 +92,12 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, transliteration', // ui-literal-ok: debug-only gallery
     note: 'Latin letters instead (#47)', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
+      request: DrillRequest.deck(
+        'hi-en-script-consonants',
+        skill: Skill.production,
+      ),
       preset: const DrillPreset(
-        target: 'か',
+        target: 'क',
         typed: 'ka',
         inputMode: InputMode.translit,
       ),

@@ -111,7 +111,7 @@ pip install pyyaml        # the only dependency
    filename stem.
 3. Start from an existing deck — [`decks/es/es-en-core-100.yaml`](decks/es/es-en-core-100.yaml)
    for vocabulary, [`decks/es/es-en-grammar-present-ar.yaml`](decks/es/es-en-grammar-present-ar.yaml)
-   for a grammar pattern, [`decks/ja/ja-en-hiragana.yaml`](decks/ja/ja-en-hiragana.yaml)
+   for a grammar pattern, [`decks/hi/hi-en-script-vowels.yaml`](decks/hi/hi-en-script-vowels.yaml)
    for a non-Latin script.
 4. Add it to its course's path, `decks/<language-code>/<language>-<native>-path.yaml`,
    in the unit it is taught with. A new course needs a path of its own. See

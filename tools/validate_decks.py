@@ -1547,6 +1547,16 @@ def collect(target: Path) -> list[Path]:
     return sorted(p for p in target.rglob("*.yaml") if "schema" not in p.parts)
 
 
+# Language directories kept in the repository, and validated like any other,
+# but left out of the app on purpose, so that check_bundled does not ask for
+# their pubspec.yaml entry. Remove a line when its directory goes back under
+# flutter.assets.
+NOT_BUNDLED = {
+    # Hidden for now: the app teaches Spanish and the Indic languages.
+    "decks/ja",
+}
+
+
 def check_bundled(paths: list[Path]) -> list[str]:
     """Every language directory holding a deck must be a Flutter asset entry.
 
@@ -1554,7 +1564,8 @@ def check_bundled(paths: list[Path]) -> list[str]:
     it names, so `- decks/` does not reach `decks/es/`. A language missing from
     the list ships as an app with that language silently absent — it builds, it
     validates, and it is only visible on a device. Checking it here is cheaper
-    than finding it there.
+    than finding it there. The directories in NOT_BUNDLED are absent on
+    purpose, and are not asked for.
 
     Everything here is resolved against the repository root rather than the
     working directory. A check that quietly passes when run from the wrong
@@ -1583,6 +1594,8 @@ def check_bundled(paths: list[Path]) -> list[str]:
             # is unbundled is not.
             continue
         directory = file.rsplit("/", 1)[0]
+        if directory in NOT_BUNDLED:
+            continue
         # A directory entry bundles the files directly inside it; a file
         # entry, such as decks/themes.yaml, bundles just that file.
         if directory not in have and file not in have:

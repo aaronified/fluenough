@@ -194,7 +194,7 @@ class _PlacementPageState extends State<PlacementPage> {
   ) {
     final placement = _placement;
     final units = placement?.units ?? _units(state);
-    // Japanese, say, has nothing yet but its script (#47).
+    // A course may have nothing yet but its alphabet decks (#47).
     if (units.isEmpty) return l10n.placementNoAlphabet(language.name);
     final known = placement?.unit ?? 0;
     // Where Today will start: the first unit from there that is not
