@@ -4,5 +4,5 @@ abstract final class AppInfo {
   /// is no package to read it from the build (AGENTS.md rule 6), so it is
   /// kept in step by hand, and
   /// `test/features/settings/settings_page_test.dart` checks it.
-  static const String version = '0.1.0';
+  static const String version = '0.2.0';
 }
