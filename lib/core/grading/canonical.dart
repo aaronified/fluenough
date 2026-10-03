@@ -10,7 +10,7 @@
 ///
 /// Dart's core library has no Unicode normalisation, and full NFC needs a
 /// package (AGENTS.md rule 6). This table covers the scripts the app ships
-/// decks for: Devanagari, Bengali and Telugu. It is data, and a new script
+/// decks for: Devanagari, Bengali, Gujarati, Telugu and Kannada. It is data, and a new script
 /// adds its rows. It also reads the Indic digits as 0–9 and ignores the
 /// zero-width joiner and non-joiner, which change a conjunct's shape and
 /// never its letters.
@@ -41,7 +41,9 @@ const int _zwj = 0x200D;
 const List<int> _zeros = <int>[
   0x0966, // Devanagari ०
   0x09E6, // Bengali ০
+  0x0AE6, // Gujarati ૦
   0x0C66, // Telugu ౦
+  0x0CE6, // Kannada ೦
 ];
 
 int? _digit(int rune) {
@@ -83,6 +85,13 @@ const Map<int, String> _decompositions = <int, String>{
   0x09CC: 'ৌ', // ৌ
   // Telugu: the two-part vowel sign.
   0x0C48: 'ై', // ై
+  // Kannada: the two-part vowel signs. ೋ before ೊ, whose spelling begins
+  // it, so that [composed] puts ೋ back whole.
+  0x0CCB: 'ೋ', // ೋ
+  0x0CCA: 'ೊ', // ೊ
+  0x0CC0: 'ೀ', // ೀ
+  0x0CC7: 'ೇ', // ೇ
+  0x0CC8: 'ೈ', // ೈ
 };
 
 /// [input] as [canonical] spells it, with each decomposed letter put back
