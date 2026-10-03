@@ -10,13 +10,13 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/play_button.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
 import 'input_mode_choice.dart';
 import 'keyboard_hint.dart';
-import '../../ui/widgets/reading_first.dart';
 
 /// Production and listening: a typed answer, graded by `AnswerGrader`.
 ///

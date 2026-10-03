@@ -7,11 +7,11 @@ import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
-import '../../ui/widgets/reading_first.dart';
 
 /// Speaking (#89, ADR-0014): the meaning ("Say it in Hindi"), a microphone
 /// button, and what the phone's speech recogniser heard, graded like a

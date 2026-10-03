@@ -6,9 +6,9 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
-import '../../ui/widgets/reading_first.dart';
 import 'rating_buttons.dart';
 
 /// Recognition: the target, big, with its reading; "Show answer"; then the
