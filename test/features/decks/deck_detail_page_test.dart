@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
@@ -355,25 +354,11 @@ void main() {
     expect(find.byType(GrammarDrill), findsOneWidget);
   });
 
-  testWidgets('a deck no speaker has checked says so, and opens the page to '
-      'report a mistake, or copies its link', (tester) async {
+  testWidgets('a deck no speaker has checked says so, and Report a mistake '
+      'opens a new GitHub issue about that deck while mail is incoming', (
+    tester,
+  ) async {
     usePhone(tester);
-    String? copied;
-    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
-      SystemChannels.platform,
-      (call) async {
-        if (call.method == 'Clipboard.setData') {
-          copied = (call.arguments as Map<Object?, Object?>)['text'] as String?;
-        }
-        return null;
-      },
-    );
-    addTearDown(
-      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
-        SystemChannels.platform,
-        null,
-      ),
-    );
     final links = FixedLinks();
     final state = await pumpDeck(
       tester,
@@ -386,16 +371,11 @@ void main() {
 
     expect(find.text(l10n.deckUnreviewed('Telugu')), findsOneWidget);
     await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
-    expect(links.asked, <String>[AppLinks.issues]);
-    expect(copied, isNull, reason: 'opened, so nothing to copy');
-    expect(find.text(l10n.deckUnreviewedCopied), findsNothing);
-
-    // When nothing can open it, the link is copied instead.
-    links.opens = false;
-    await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
-    expect(links.asked, hasLength(2));
-    expect(copied, AppLinks.issues);
-    expect(find.text(l10n.deckUnreviewedCopied), findsOneWidget);
+    await tester.tap(find.text(l10n.reportOpenGitHub));
+    await tester.pumpAndSettle();
+    final url = Uri.parse(links.asked.single);
+    expect(url.path, '/aaronified/fluenough/issues/new');
+    expect(url.queryParameters['body'], contains('Showing: te-en-market'));
   });
 
   testWidgets('a checked deck shows no such notice', (tester) async {
