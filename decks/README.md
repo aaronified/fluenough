@@ -15,7 +15,7 @@ decks/
        hi-en-path.yaml
   ja/  ja-en-hiragana.yaml
        ja-en-path.yaml
-  te/  te-en-first-words.yaml     not yet checked by a Telugu speaker
+  te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
        te-en-path.yaml
   themes.yaml
@@ -112,6 +112,12 @@ public domain) from *Prem-Dwadashi*, the 1926 printing scanned on Wikimedia
 Commons. Every sentence was checked against the page images: where the
 Wikisource transcription differs (a missing nukta, mostly), the page wins.
 The print's misprints are not corrected; a sentence with one is left out.
+
+The Telugu reading deck quotes Gurajada Apparao's story *Diddubatu* (1910, in
+the public domain) from *Gurujadalu* (MaNaSu Foundation, 2012), the collected
+works scanned on Wikimedia Commons. Every sentence was checked against the
+page images; where the Wikisource transcription differs (a long vowel sign
+where the page has a short one, and punctuation, mostly), the page wins.
 
 Never correct a quoted text: explain a difference in a note.
 

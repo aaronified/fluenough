@@ -1,0 +1,71 @@
+schema: 1
+id: te-en-grammar-negative
+name: "Won't and don't"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I don't go, she won't come: the negative of the future and the habit is a tense of its own. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Negative"
+  slot_name: "person"
+  slots: ["నేను", "మేము", "నువ్వు", "మీరు", "అతను", "ఆమె / అది", "వాళ్ళు"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The negative of the future and the habit needs no word for not: రాను, I won't come, I don't come. In the past one form serves everyone, the verb with -లేదు: నేను రాలేదు, ఆమె రాలేదు, I didn't come, she didn't come. The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing. మీరు, plural or respectful, takes the plural."
+  entries:
+    - lemma: "చేయడం"
+      key: cheeyadam
+      gloss: "to do"
+      forms:
+        "నేను": "చేయను"
+        "మేము": ["చేయము", "చేయం"]
+        "నువ్వు": "చేయవు"
+        "మీరు": "చేయరు"
+        "అతను": "చేయడు"
+        "ఆమె / అది": "చేయదు"
+        "వాళ్ళు": "చేయరు"
+    - lemma: "వెళ్ళడం"
+      key: velladam
+      gloss: "to go"
+      forms:
+        "నేను": "వెళ్ళను"
+        "మేము": ["వెళ్ళము", "వెళ్ళం"]
+        "నువ్వు": "వెళ్ళవు"
+        "మీరు": "వెళ్ళరు"
+        "అతను": "వెళ్ళడు"
+        "ఆమె / అది": "వెళ్ళదు"
+        "వాళ్ళు": "వెళ్ళరు"
+    - lemma: "రావడం"
+      key: raavadam
+      gloss: "to come"
+      forms:
+        "నేను": "రాను"
+        "మేము": ["రాము", "రాం"]
+        "నువ్వు": "రావు"
+        "మీరు": "రారు"
+        "అతను": "రాడు"
+        "ఆమె / అది": "రాదు"
+        "వాళ్ళు": "రారు"
+    - lemma: "తినడం"
+      key: tinadam
+      gloss: "to eat"
+      forms:
+        "నేను": "తినను"
+        "మేము": ["తినము", "తినం"]
+        "నువ్వు": "తినవు"
+        "మీరు": "తినరు"
+        "అతను": "తినడు"
+        "ఆమె / అది": "తినదు"
+        "వాళ్ళు": "తినరు"
+    - lemma: "తాగడం"
+      key: taagadam
+      gloss: "to drink"
+      forms:
+        "నేను": "తాగను"
+        "మేము": ["తాగము", "తాగం"]
+        "నువ్వు": "తాగవు"
+        "మీరు": "తాగరు"
+        "అతను": "తాగడు"
+        "ఆమె / అది": "తాగదు"
+        "వాళ్ళు": "తాగరు"
