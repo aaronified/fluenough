@@ -175,14 +175,7 @@ class AnswerGrader {
   /// Strips diacritics and any leading article.
   String _fold(String input) => _dropArticle(_foldDiacritics(input));
 
-  String _foldDiacritics(String input) {
-    final buffer = StringBuffer();
-    for (final rune in input.runes) {
-      final char = String.fromCharCode(rune);
-      buffer.write(_diacriticFolding[char] ?? char);
-    }
-    return buffer.toString();
-  }
+  String _foldDiacritics(String input) => foldDiacritics(input);
 
   String _dropArticle(String text) {
     for (final article in articles) {
@@ -225,6 +218,17 @@ int levenshtein(String a, String b, {int cutoff = 1 << 30}) {
     current = swap;
   }
   return previous[b.length];
+}
+
+/// [input] with each Latin letter's diacritics stripped, by the table below:
+/// `niño` is `nino`, `kitnā` is `kitna`.
+String foldDiacritics(String input) {
+  final buffer = StringBuffer();
+  for (final rune in input.runes) {
+    final char = String.fromCharCode(rune);
+    buffer.write(_diacriticFolding[char] ?? char);
+  }
+  return buffer.toString();
 }
 
 /// Diacritic folding for Latin and Cyrillic-adjacent scripts.

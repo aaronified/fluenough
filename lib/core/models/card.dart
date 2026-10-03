@@ -62,6 +62,7 @@ class CardRef {
       target: written.target,
       native: native,
       reading: reading ?? written.reading,
+      altReading: reading == null ? written.altReading : const <String>[],
       altTarget: written.altTarget,
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
@@ -92,6 +93,7 @@ class Card {
     required this.target,
     required this.native,
     this.reading,
+    this.altReading = const <String>[],
     this.altTarget = const <String>[],
     this.altNative = const <String>[],
     this.pos,
@@ -118,6 +120,14 @@ class Card {
 
   /// Romanisation or phonetic reading, for non-Latin scripts.
   final String? reading;
+
+  /// The readings of [altTarget], for a grammar cell that lists several
+  /// forms: accepted too when the answer is typed in Latin letters (#47).
+  final List<String> altReading;
+
+  /// Every reading a romanised answer is compared with, [reading] first.
+  /// Empty for a card with none.
+  List<String> get readings => <String>[?reading, ...altReading];
 
   /// Extra answers accepted when the learner is typing the target.
   final List<String> altTarget;
