@@ -83,10 +83,29 @@ void main() {
       same('కై', 'కై', because: 'కై');
     });
 
+    test('Kannada two-part vowel signs', () {
+      // One code point, or the parts Unicode says it is made of.
+      for (final (whole, parts) in <(String, String)>[
+        ('ಕೀ', 'ಕೀ'), // ಕೀ
+        ('ಕೇ', 'ಕೇ'), // ಕೇ
+        ('ಕೈ', 'ಕೈ'), // ಕೈ
+        ('ಕೊ', 'ಕೊ'), // ಕೊ
+        ('ಕೋ', 'ಕೋ'), // ಕೋ
+        ('ಕೋ', 'ಕೋ'), // ಕೋ, as ೊ then the length mark
+      ]) {
+        same(whole, parts, because: whole);
+      }
+      // Put back together, ೋ is ೋ again, not ೊ with a mark left over.
+      expect(composed('ಕೋ'), 'ಕೋ');
+      expect(composed('ಕೊ'), 'ಕೊ');
+    });
+
     test('Indic digits read as 0 to 9', () {
       same('२०२०', '2020', because: 'Devanagari २०२०');
       same('১৯৫০', '1950', because: 'Bengali ১৯৫০');
       same('౪౦౦౭', '4007', because: 'Telugu ౪౦౦౭');
+      same('૧૯૬૦', '1960', because: 'Gujarati ૧૯૬૦');
+      same('೨೦೨೬', '2026', because: 'Kannada ೨೦೨೬');
     });
 
     test('zero-width joiners are ignored', () {

@@ -1,0 +1,199 @@
+schema: 1
+id: kn-en-reading-ravi
+name: "Reading: Ravi goes to the market"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Written for this deck and released under CC0"
+description: "A short story in four scenes, written for this deck in plain modern Kannada and released under CC0: Ravi's Sunday, a bus ride, bargaining for tomatoes, and supper at home. It quotes no book. The glossary explains the words the theme decks do not teach. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: kn-ravi-01
+    title: "Ravi's Sunday"
+    theme: daily-life
+    sentences:
+      - text: "ರವಿ ಬೆಳಿಗ್ಗೆ ಆರು ಗಂಟೆಗೆ ಏಳುತ್ತಾನೆ."
+        reading: "ravi beligge aaru gantege eeluttaane."
+      - text: "ಇವತ್ತು ಭಾನುವಾರ, ಅವನಿಗೆ ರಜೆ."
+        reading: "ivattu bhaanuvaara, avanige raje."
+      - text: "ಅವನು ಸ್ನಾನ ಮಾಡಿ ತಿಂಡಿ ತಿನ್ನುತ್ತಾನೆ."
+        reading: "avanu snaana maadi tindi tinnuttaane."
+      - text: "ಅವನ ಅಮ್ಮ ಬಿಸಿ ಬಿಸಿ ದೋಸೆ ಮಾಡುತ್ತಾರೆ."
+        reading: "avana amma bisi bisi doose maaduttaare."
+    glossary:
+      - word: "ಏಳುತ್ತಾನೆ"
+        modern: "ಏಳುತ್ತಾನೆ"
+        reading: "eeluttaane"
+        meaning: { en: "he gets up" }
+        note: { en: "ಏಳು, to get up, the same word as seven" }
+      - word: "ಮಾಡಿ"
+        modern: "ಮಾಡಿ"
+        reading: "maadi"
+        meaning: { en: "having done; and then" }
+        note: { en: "the verb in -ಇ joins two actions: ಸ್ನಾನ ಮಾಡಿ ತಿನ್ನುತ್ತಾನೆ, he bathes and then eats" }
+      - word: "ಮಾಡುತ್ತಾರೆ"
+        modern: "ಮಾಡುತ್ತಾರೆ"
+        reading: "maaduttaare"
+        meaning: { en: "she makes" }
+        note: { en: "the respectful plural, as for any mother" }
+    questions:
+      - id: kn-0590
+        prompt: { en: "What does Ravi's mother make?" }
+        options:
+          - { en: "Dosa" }
+          - { en: "Idli" }
+          - { en: "Rice" }
+        answer: 1
+      - id: kn-0591
+        prompt: { en: "Ravi has to go to work today." }
+        answer: false
+      - id: kn-0592
+        prompt: { en: "Ravi gets up at six in the morning." }
+        answer: true
+  - id: kn-ravi-02
+    title: "To the market"
+    theme: transport
+    sentences:
+      - text: "ಅಮ್ಮ ಹೇಳುತ್ತಾರೆ, “ರವಿ, ಸಂತೆಗೆ ಹೋಗಿ ತರಕಾರಿ ತೆಗೆದುಕೊಂಡು ಬಾ.”"
+        reading: "amma heeluttaare, “ravi, santege hoogi tarakaari tegedukondu baa.”"
+      - text: "ರವಿ ಬಸ್ಸಿನಲ್ಲಿ ಸಂತೆಗೆ ಹೋಗುತ್ತಾನೆ."
+        reading: "ravi bassinalli santege hooguttaane."
+      - text: "ಬಸ್ಸಿನಲ್ಲಿ ತುಂಬಾ ಜನ ಇದ್ದಾರೆ."
+        reading: "bassinalli tumbaa jana iddaare."
+      - text: "ಅವನಿಗೆ ಸೀಟು ಸಿಗುವುದಿಲ್ಲ, ಅವನು ನಿಂತುಕೊಂಡೇ ಹೋಗುತ್ತಾನೆ."
+        reading: "avanige siitu siguvudilla, avanu nintukondee hooguttaane."
+    glossary:
+      - word: "ಸಂತೆಗೆ"
+        modern: "ಸಂತೆಗೆ"
+        reading: "santege"
+        meaning: { en: "to the weekly market" }
+        note: { en: "ಸಂತೆ is an open-air market held on one day of the week" }
+      - word: "ತೆಗೆದುಕೊಂಡು ಬಾ"
+        modern: "ತೆಗೆದುಕೊಂಡು ಬಾ"
+        reading: "tegedukondu baa"
+        meaning: { en: "fetch; buy and bring back" }
+        note: { en: "'having taken, come'" }
+      - word: "ಸಿಗುವುದಿಲ್ಲ"
+        modern: "ಸಿಗುವುದಿಲ್ಲ"
+        reading: "siguvudilla"
+        meaning: { en: "he doesn't get" }
+        note: { en: "ಸಿಗು, to be got: ಅವನಿಗೆ ಸೀಟು ಸಿಗುತ್ತದೆ, he gets a seat" }
+      - word: "ನಿಂತುಕೊಂಡೇ"
+        modern: "ನಿಂತುಕೊಂಡೇ"
+        reading: "nintukondee"
+        meaning: { en: "standing all the way" }
+        note: { en: "ನಿಂತುಕೊಳ್ಳು, to stand, with -ಏ, 'just so'" }
+    questions:
+      - id: kn-0593
+        prompt: { en: "How does Ravi go to the market?" }
+        options:
+          - { en: "By bus" }
+          - { en: "By auto" }
+          - { en: "On foot" }
+        answer: 1
+      - id: kn-0594
+        prompt: { en: "Ravi gets a seat on the bus." }
+        answer: false
+  - id: kn-ravi-03
+    title: "Bargaining"
+    theme: market
+    sentences:
+      - text: "ಸಂತೆಯಲ್ಲಿ ಒಬ್ಬರು ಅಜ್ಜಿ ಟೊಮೆಟೊ ಮಾರುತ್ತಿದ್ದಾರೆ."
+        reading: "santeyalli obbaru ajji tometo maaruttiddaare."
+      - text: "“ಅಜ್ಜಿ, ಒಂದು ಕೆಜಿ ಟೊಮೆಟೊ ಎಷ್ಟು?”"
+        reading: "“ajji, ondu keji tometo eshtu?”"
+      - text: "“ನಲವತ್ತು ರೂಪಾಯಿ.”"
+        reading: "“nalavattu ruupaayi.”"
+      - text: "“ತುಂಬಾ ಜಾಸ್ತಿ, ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ.”"
+        reading: "“tumbaa jaasti, svalpa kadime maadi.”"
+      - text: "ಅಜ್ಜಿ ನಗುತ್ತಾ ಹೇಳುತ್ತಾರೆ, “ಸರಿ ಮಗ, ಮೂವತ್ತು ಕೊಡು.”"
+        reading: "ajji naguttaa heeluttaare, “sari maga, muuvattu kodu.”"
+      - text: "ರವಿ ಎರಡು ಕೆಜಿ ಟೊಮೆಟೊ ಮತ್ತು ಒಂದು ಕೆಜಿ ಈರುಳ್ಳಿ ತೆಗೆದುಕೊಳ್ಳುತ್ತಾನೆ."
+        reading: "ravi eradu keji tometo mattu ondu keji iirulli tegedukolluttaane."
+    glossary:
+      - word: "ಒಬ್ಬರು"
+        modern: "ಒಬ್ಬರು"
+        reading: "obbaru"
+        meaning: { en: "one (person), said with respect" }
+      - word: "ಮಾರುತ್ತಿದ್ದಾರೆ"
+        modern: "ಮಾರುತ್ತಿದ್ದಾರೆ"
+        reading: "maaruttiddaare"
+        meaning: { en: "is selling" }
+        note: { en: "ಮಾರು, to sell, in the respectful plural" }
+      - word: "ನಗುತ್ತಾ"
+        modern: "ನಗುತ್ತಾ"
+        reading: "naguttaa"
+        meaning: { en: "laughing; with a smile" }
+        note: { en: "-ಉತ್ತಾ, while doing" }
+      - word: "ಮಗ"
+        modern: "ಮಗ"
+        reading: "maga"
+        meaning: { en: "son; here, how an older person kindly calls a young man" }
+    questions:
+      - id: kn-0595
+        prompt: { en: "What price does the grandmother first ask for a kilo of tomatoes?" }
+        options:
+          - { en: "Forty rupees" }
+          - { en: "Thirty rupees" }
+          - { en: "Twenty rupees" }
+        answer: 1
+      - id: kn-0596
+        prompt: { en: "What else does Ravi buy?" }
+        options:
+          - { en: "Onions" }
+          - { en: "Potatoes" }
+          - { en: "Fish" }
+        answer: 1
+      - id: kn-0597
+        prompt: { en: "In the end she sells the tomatoes for thirty rupees a kilo." }
+        answer: true
+  - id: kn-ravi-04
+    title: "Home again"
+    theme: family
+    sentences:
+      - text: "ರವಿ ಮನೆಗೆ ಬಂದಾಗ ಅಮ್ಮ ಕೇಳುತ್ತಾರೆ, “ಎಷ್ಟು ಆಯಿತು?”"
+        reading: "ravi manege bandaaga amma keeluttaare, “eshtu aayitu?”"
+      - text: "“ಟೊಮೆಟೊಗೆ ಅರವತ್ತು, ಈರುಳ್ಳಿಗೆ ಮೂವತ್ತು.”"
+        reading: "“tometoge aravattu, iirullige muuvattu.”"
+      - text: "ಅಮ್ಮನಿಗೆ ತುಂಬಾ ಖುಷಿ ಆಗುತ್ತದೆ."
+        reading: "ammanige tumbaa khushi aaguttade."
+      - text: "“ಚೆನ್ನಾಗಿ ಚೌಕಾಸಿ ಮಾಡಿದೆ!”"
+        reading: "“chennaagi chaukaasi maadide!”"
+      - text: "ರಾತ್ರಿ ಎಲ್ಲರೂ ಒಟ್ಟಿಗೆ ಊಟ ಮಾಡುತ್ತಾರೆ."
+        reading: "raatri ellaruu ottige uuta maaduttaare."
+    glossary:
+      - word: "ಬಂದಾಗ"
+        modern: "ಬಂದಾಗ"
+        reading: "bandaaga"
+        meaning: { en: "when (he) came" }
+        note: { en: "-ಆಗ, when" }
+      - word: "ಆಯಿತು"
+        modern: "ಆಯಿತು"
+        reading: "aayitu"
+        meaning: { en: "it came to; it became" }
+        note: { en: "in speech ಆಯ್ತು: ಎಷ್ಟು ಆಯ್ತು?, how much did it come to?" }
+      - word: "ಖುಷಿ"
+        modern: "ಖುಷಿ"
+        reading: "khushi"
+        meaning: { en: "happiness; pleased" }
+        note: { en: "ಅಮ್ಮನಿಗೆ ಖುಷಿ ಆಗುತ್ತದೆ: 'to mother happiness comes'" }
+      - word: "ಚೌಕಾಸಿ"
+        modern: "ಚೌಕಾಸಿ"
+        reading: "chaukaasi"
+        meaning: { en: "bargaining" }
+      - word: "ಒಟ್ಟಿಗೆ"
+        modern: "ಒಟ್ಟಿಗೆ"
+        reading: "ottige"
+        meaning: { en: "together" }
+    questions:
+      - id: kn-0598
+        prompt: { en: "How much did Ravi spend in all?" }
+        options:
+          - { en: "Ninety rupees" }
+          - { en: "Sixty rupees" }
+          - { en: "A hundred rupees" }
+        answer: 1
+      - id: kn-0599
+        prompt: { en: "His mother is cross that he paid too much." }
+        answer: false

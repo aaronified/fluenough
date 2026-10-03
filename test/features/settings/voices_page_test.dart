@@ -106,6 +106,8 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
+    // Tall enough for every bundled language's row and what is under them.
+    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
     final tts = _ChangingTts();
     final state = await pumpScreen(
       tester,
@@ -146,6 +148,8 @@ void main() {
 
   testWidgets('Install explains how, in a dialog', (tester) async {
     usePhone(tester);
+    // Tall enough for every bundled language's row and what is under them.
+    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
     await pumpScreen(tester, const VoicesPage());
     final l10n = l10nOf(tester);
     await tester.tap(find.text(l10n.voicesInstall));

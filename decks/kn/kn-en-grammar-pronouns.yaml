@@ -1,0 +1,72 @@
+schema: 1
+id: kn-en-grammar-pronouns
+name: "Pronouns and possessives"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, with my and your, to me, and me as an object. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["possessive: my, your …", "to: to me …", "object: me …"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Kannada has one 'we', ನಾವು, and two 'you': ನೀನು to a friend or a child, ನೀವು to anyone you respect and to more than one. ಅವರು is 'they', and 'he' or 'she' with respect. In speech ನನಗೆ is often ನಂಗೆ, and the object ending -ಅನ್ನು is often dropped: ನನ್ನ, me."
+  entries:
+    - lemma: "ನಾನು"
+      key: naanu
+      gloss: "I"
+      forms:
+        "possessive: my, your …": ["ನನ್ನ"]
+        "to: to me …": ["ನನಗೆ", "ನಂಗೆ"]
+        "object: me …": ["ನನ್ನನ್ನು", "ನನ್ನ"]
+    - lemma: "ನೀನು"
+      key: niinu
+      gloss: "you, familiar"
+      forms:
+        "possessive: my, your …": ["ನಿನ್ನ"]
+        "to: to me …": ["ನಿನಗೆ", "ನಿಂಗೆ"]
+        "object: me …": ["ನಿನ್ನನ್ನು", "ನಿನ್ನ"]
+    - lemma: "ನೀವು"
+      key: niivu
+      gloss: "you, respectful or plural"
+      forms:
+        "possessive: my, your …": ["ನಿಮ್ಮ"]
+        "to: to me …": ["ನಿಮಗೆ", "ನಿಮ್ಗೆ"]
+        "object: me …": ["ನಿಮ್ಮನ್ನು", "ನಿಮ್ಮ"]
+    - lemma: "ಅವನು"
+      key: avanu
+      gloss: "he"
+      forms:
+        "possessive: my, your …": ["ಅವನ"]
+        "to: to me …": ["ಅವನಿಗೆ"]
+        "object: me …": ["ಅವನನ್ನು"]
+    - lemma: "ಅವಳು"
+      key: avalu
+      gloss: "she"
+      forms:
+        "possessive: my, your …": ["ಅವಳ"]
+        "to: to me …": ["ಅವಳಿಗೆ"]
+        "object: me …": ["ಅವಳನ್ನು"]
+    - lemma: "ಅದು"
+      key: adu
+      gloss: "it"
+      forms:
+        "possessive: my, your …": ["ಅದರ"]
+        "to: to me …": ["ಅದಕ್ಕೆ"]
+        "object: me …": ["ಅದನ್ನು"]
+    - lemma: "ನಾವು"
+      key: naavu
+      gloss: "we"
+      forms:
+        "possessive: my, your …": ["ನಮ್ಮ"]
+        "to: to me …": ["ನಮಗೆ", "ನಮ್ಗೆ"]
+        "object: me …": ["ನಮ್ಮನ್ನು"]
+    - lemma: "ಅವರು"
+      key: avaru
+      gloss: "they; he or she, respectful"
+      forms:
+        "possessive: my, your …": ["ಅವರ"]
+        "to: to me …": ["ಅವರಿಗೆ"]
+        "object: me …": ["ಅವರನ್ನು"]

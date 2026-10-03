@@ -1,0 +1,58 @@
+schema: 1
+id: kn-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose stem changes in the past. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["past, ನಾನು", "future, ನಾನು", "polite request, ನೀವು"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "These change their stem in the past: ಬರು (to come) gives ಬಂದೆ, but ಬರುತ್ತೇನೆ and ಬನ್ನಿ; ಕೊಡು (to give) gives ಕೊಟ್ಟೆ. Where two forms are given, the second is everyday speech."
+  entries:
+    - lemma: "ಬರು"
+      key: baru
+      gloss: "to come"
+      forms:
+        "past, ನಾನು": "ಬಂದೆ"
+        "future, ನಾನು": ["ಬರುತ್ತೇನೆ", "ಬರ್ತೀನಿ"]
+        "polite request, ನೀವು": "ಬನ್ನಿ"
+    - lemma: "ಹೋಗು"
+      key: hoogu
+      gloss: "to go"
+      forms:
+        "past, ನಾನು": "ಹೋದೆ"
+        "future, ನಾನು": ["ಹೋಗುತ್ತೇನೆ", "ಹೋಗ್ತೀನಿ"]
+        "polite request, ನೀವು": "ಹೋಗಿ"
+    - lemma: "ತಿನ್ನು"
+      key: tinnu
+      gloss: "to eat"
+      forms:
+        "past, ನಾನು": "ತಿಂದೆ"
+        "future, ನಾನು": ["ತಿನ್ನುತ್ತೇನೆ", "ತಿಂತೀನಿ"]
+        "polite request, ನೀವು": "ತಿನ್ನಿ"
+    - lemma: "ಕೊಡು"
+      key: kodu
+      gloss: "to give"
+      forms:
+        "past, ನಾನು": "ಕೊಟ್ಟೆ"
+        "future, ನಾನು": ["ಕೊಡುತ್ತೇನೆ", "ಕೊಡ್ತೀನಿ"]
+        "polite request, ನೀವು": "ಕೊಡಿ"
+    - lemma: "ತೆಗೆದುಕೊಳ್ಳು"
+      key: tegedukollu
+      gloss: "to take"
+      forms:
+        "past, ನಾನು": ["ತೆಗೆದುಕೊಂಡೆ", "ತಗೊಂಡೆ"]
+        "future, ನಾನು": ["ತೆಗೆದುಕೊಳ್ಳುತ್ತೇನೆ", "ತಗೊಳ್ತೀನಿ"]
+        "polite request, ನೀವು": ["ತೆಗೆದುಕೊಳ್ಳಿ", "ತಗೊಳ್ಳಿ"]
+    - lemma: "ಇಡು"
+      key: idu
+      gloss: "to put; to keep"
+      forms:
+        "past, ನಾನು": "ಇಟ್ಟೆ"
+        "future, ನಾನು": ["ಇಡುತ್ತೇನೆ", "ಇಡ್ತೀನಿ"]
+        "polite request, ನೀವು": "ಇಡಿ"

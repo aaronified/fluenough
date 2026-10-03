@@ -1,0 +1,86 @@
+schema: 1
+id: gu-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose past breaks the pattern, with their future and polite request. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["past (it, or a neuter object)", "future, તે", "request, તમે"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "A regular verb makes its past with -યું on the stem: બોલવું, બોલ્યું; આવવું, આવ્યું. These, among the most used verbs, don't: જવું gives ગયું, લેવું લીધું, ખાવું ખાધું. Their future and request are regular. The past here is neuter; it agrees as usual: ગયો, ગઈ, ગયું."
+  entries:
+    - lemma: "જવું"
+      key: javun
+      gloss: "to go"
+      forms:
+        "past (it, or a neuter object)": "ગયું"
+        "future, તે": "જશે"
+        "request, તમે": "જાઓ"
+    - lemma: "કરવું"
+      key: karvun
+      gloss: "to do"
+      forms:
+        "past (it, or a neuter object)": "કર્યું"
+        "future, તે": "કરશે"
+        "request, તમે": "કરો"
+    - lemma: "લેવું"
+      key: levun
+      gloss: "to take"
+      forms:
+        "past (it, or a neuter object)": "લીધું"
+        "future, તે": "લેશે"
+        "request, તમે": "લો"
+    - lemma: "દેવું"
+      key: devun
+      gloss: "to give"
+      forms:
+        "past (it, or a neuter object)": "દીધું"
+        "future, તે": "દેશે"
+        "request, તમે": "દો"
+    - lemma: "ખાવું"
+      key: khaavun
+      gloss: "to eat"
+      forms:
+        "past (it, or a neuter object)": "ખાધું"
+        "future, તે": "ખાશે"
+        "request, તમે": "ખાઓ"
+    - lemma: "પીવું"
+      key: piivun
+      gloss: "to drink"
+      forms:
+        "past (it, or a neuter object)": "પીધું"
+        "future, તે": "પીશે"
+        "request, તમે": ["પીઓ", "પીવો"]
+    - lemma: "બેસવું"
+      key: besvun
+      gloss: "to sit"
+      forms:
+        "past (it, or a neuter object)": "બેઠું"
+        "future, તે": "બેસશે"
+        "request, તમે": "બેસો"
+    - lemma: "કહેવું"
+      key: kahevun
+      gloss: "to say; to tell"
+      forms:
+        "past (it, or a neuter object)": "કહ્યું"
+        "future, તે": "કહેશે"
+        "request, તમે": "કહો"
+    - lemma: "થવું"
+      key: thavun
+      gloss: "to become; to happen"
+      forms:
+        "past (it, or a neuter object)": "થયું"
+        "future, તે": "થશે"
+        "request, તમે": "થાઓ"
+    - lemma: "સૂવું"
+      key: suuvun
+      gloss: "to sleep; to lie down"
+      forms:
+        "past (it, or a neuter object)": "સૂતું"
+        "future, તે": "સૂશે"
+        "request, તમે": "સૂઓ"

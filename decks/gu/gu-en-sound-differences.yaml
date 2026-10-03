@@ -1,0 +1,97 @@
+schema: 1
+id: gu-en-sound-differences
+name: "Sounds to tell apart"
+kind: vocab
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Pairs of everyday words that differ in one sound: the tongue on the teeth or curled back, the two l's, a breath after the consonant, a and aa, and a nasal vowel. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: gu-0226
+    target: "દાળ"
+    native: "dal; lentils"
+    reading: "daal"
+    tags: ["dental-retroflex"]
+    notes: "Dental against curled back: દાળ (daal, lentils) has the tongue on the teeth for d; ડાળ (daal, branch) has it curled back."
+  - id: gu-0227
+    target: "ડાળ"
+    native: "branch (of a tree)"
+    reading: "daal"
+    tags: ["dental-retroflex"]
+    notes: "Dental against curled back: દાળ (daal, lentils) has the tongue on the teeth for d; ડાળ (daal, branch) has it curled back."
+  - id: gu-0228
+    target: "વાળ"
+    native: "hair"
+    reading: "vaal"
+    tags: ["lateral"]
+    notes: "The two l's: વાળ (vaal, hair) has the l curled back; વાલ (vaal, field beans) has it on the teeth."
+  - id: gu-0229
+    target: "વાલ"
+    native: "field beans (a dried bean)"
+    reading: "vaal"
+    tags: ["lateral"]
+    notes: "The two l's: વાલ (vaal, beans) has the l on the teeth; વાળ (vaal, hair) has it curled back."
+  - ref: gu-0120
+    tags: ["aspiration"]
+    notes: "A breath after the consonant: બાર (baar, twelve) has none; ભાર (bhaar, a load) has a puff of breath after the b."
+  - id: gu-0230
+    target: "ભાર"
+    native: "weight; a load"
+    reading: "bhaar"
+    tags: ["aspiration"]
+    notes: "A breath after the consonant: ભાર (bhaar, a load) against બાર (baar, twelve)."
+  - id: gu-0231
+    target: "દાન"
+    native: "a gift to charity; donation"
+    reading: "daan"
+    tags: ["aspiration"]
+    notes: "A breath after the consonant: દાન (daan, donation) has none; ધાન (dhaan, grain) has one."
+  - id: gu-0232
+    target: "ધાન"
+    native: "grain"
+    reading: "dhaan"
+    tags: ["aspiration"]
+    notes: "A breath after the consonant: ધાન (dhaan, grain) against દાન (daan, donation)."
+  - id: gu-0233
+    target: "ચાલ"
+    native: "a way of walking; a move (in a game)"
+    reading: "chaal"
+    tags: ["aspiration"]
+    notes: "A breath after the consonant: ચાલ (chaal, gait) has none; છાલ (chhaal, peel) has one."
+  - id: gu-0234
+    target: "છાલ"
+    native: "peel; bark"
+    reading: "chhaal"
+    tags: ["aspiration"]
+    notes: "A breath after the consonant: છાલ (chhaal, peel) against ચાલ (chaal, gait)."
+  - ref: gu-0053
+    tags: ["a-aa"]
+    notes: "a against aa: રસ (ras, juice) has the short a; રાસ (raas, a circle dance) has the long aa."
+  - id: gu-0235
+    target: "રાસ"
+    native: "raas (a circle dance with sticks)"
+    reading: "raas"
+    tags: ["a-aa"]
+    notes: "a against aa: રાસ (raas, the dance of Navratri) against રસ (ras, juice)."
+  - ref: gu-0117
+    tags: ["a-aa"]
+    notes: "a against aa: નવ (nav, nine) has the short a; નાવ (naav, boat) has the long aa."
+  - id: gu-0236
+    target: "નાવ"
+    native: "boat"
+    reading: "naav"
+    tags: ["a-aa"]
+    notes: "a against aa: નાવ (naav, boat) against નવ (nav, nine)."
+  - id: gu-0237
+    target: "વાસ"
+    native: "smell"
+    reading: "vaas"
+    tags: ["nasal"]
+    notes: "A nasal vowel: વાસ (vaas, smell) is said through the mouth; વાંસ (vaans, bamboo) through the nose as well."
+  - id: gu-0238
+    target: "વાંસ"
+    native: "bamboo"
+    reading: "vaans"
+    tags: ["nasal"]
+    notes: "A nasal vowel: the dot on વાંસ (vaans, bamboo) sends the aa through the nose; વાસ (vaas) is a smell."

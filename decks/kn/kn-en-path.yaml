@@ -1,0 +1,39 @@
+# The order Kannada is taught from English in: one unit per line. First the
+# script, the sounds English lacks, and how Kannada grammar differs from
+# English; then a theme deck and the grammar that goes with it. Every kn-en
+# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: kn-en-path
+language: kn
+native: en
+units:
+  - [kn-en-script-vowels, kn-en-script-consonants, kn-en-script-reading]
+  - [kn-en-script-vowel-signs, kn-en-script-conjuncts]
+  - [kn-en-sound-differences]
+  - [kn-en-grammar-differences]
+  - [kn-en-first-words, kn-en-grammar-sentences]
+  - [kn-en-questions, kn-en-grammar-questions]
+  - [kn-en-addressing, kn-en-grammar-pronouns]
+  - [kn-en-about-me]
+  - [kn-en-family, kn-en-grammar-be]
+  - [kn-en-work, kn-en-grammar-demonstratives]
+  - [kn-en-numbers-1-20]
+  - [kn-en-numbers-big]
+  - [kn-en-market, kn-en-grammar-nouns, kn-en-grammar-articles]
+  - [kn-en-groceries, kn-en-grammar-gender-number, kn-en-grammar-needs]
+  - [kn-en-transport, kn-en-grammar-postpositions]
+  - [kn-en-directions, kn-en-grammar-continuous]
+  - [kn-en-home, kn-en-grammar-adjectives]
+  - [kn-en-time, kn-en-grammar-future]
+  - [kn-en-daily-life, kn-en-grammar-negative]
+  - [kn-en-calendar, kn-en-grammar-past]
+  - [kn-en-grammar-past-more, kn-en-grammar-conjunct-verbs]
+  - [kn-en-grammar-compound-verbs]
+  - [kn-en-eating-out, kn-en-grammar-conjunctions, kn-en-grammar-likes]
+  - [kn-en-help, kn-en-grammar-irregular, kn-en-grammar-pitfalls]
+  - [kn-en-registers]
+  - [kn-en-slang]
+  - [kn-en-grammar-can-must]
+  - [kn-en-spelling]
+  - [kn-en-reading-ravi]

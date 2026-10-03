@@ -1,0 +1,56 @@
+schema: 1
+id: gu-en-grammar-future
+name: "Future tense"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I will go, they will come: one ending for each person, and no gender. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Future"
+  slot_name: "person"
+  slots: ["હું", "તું", "તે", "અમે", "તમે", "તેઓ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem and an ending with શ: -ઈશ (હું, તું), -શે (તે, તેઓ), -ઈશું (અમે), -શો (તમે). Unlike Hindi, the future shows no gender. In everyday speech તું often takes -શે too: તું ક્યારે આવશે? A request put in the future is polite: બેસશો? won't you sit?"
+  entries:
+    - lemma: "કરવું"
+      key: karvun
+      gloss: "to do"
+      forms:
+        "હું": "કરીશ"
+        "તું": ["કરીશ", "કરશે"]
+        "તે": "કરશે"
+        "અમે": "કરીશું"
+        "તમે": "કરશો"
+        "તેઓ": "કરશે"
+    - lemma: "જવું"
+      key: javun
+      gloss: "to go"
+      forms:
+        "હું": "જઈશ"
+        "તું": ["જઈશ", "જશે"]
+        "તે": "જશે"
+        "અમે": "જઈશું"
+        "તમે": "જશો"
+        "તેઓ": "જશે"
+    - lemma: "આવવું"
+      key: aavvun
+      gloss: "to come"
+      forms:
+        "હું": "આવીશ"
+        "તું": ["આવીશ", "આવશે"]
+        "તે": "આવશે"
+        "અમે": "આવીશું"
+        "તમે": "આવશો"
+        "તેઓ": "આવશે"
+    - lemma: "ખાવું"
+      key: khaavun
+      gloss: "to eat"
+      forms:
+        "હું": "ખાઈશ"
+        "તું": ["ખાઈશ", "ખાશે"]
+        "તે": "ખાશે"
+        "અમે": "ખાઈશું"
+        "તમે": "ખાશો"
+        "તેઓ": "ખાશે"

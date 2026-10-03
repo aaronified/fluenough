@@ -1,0 +1,46 @@
+schema: 1
+id: gu-en-grammar-gender-number
+name: "Gender and number"
+kind: vocab
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Masculine, feminine and neuter, in the singular and the plural, and the plural of respect. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - ref: gu-0244
+    notes: "Masculine: the noun in -ઓ, the past verb in -ઓ."
+  - ref: gu-0245
+    notes: "Feminine: the noun in -ઈ, the past verb in -ઈ."
+  - ref: gu-0246
+    notes: "Neuter: the verb in -ઉં. A child, many things and some animals are neuter, whatever their sex."
+  - id: gu-0405
+    target: "છોકરાઓ રમે છે."
+    native: "The boys are playing."
+    reading: "chhokraao rame chhe."
+    pos: "phrase"
+    notes: "છોકરો becomes છોકરા in the plural, and many add -ઓ as well: છોકરાઓ."
+  - id: gu-0406
+    target: "છોકરાં રમે છે."
+    native: "The children are playing."
+    reading: "chhokraan rame chhe."
+    pos: "phrase"
+    notes: "છોકરું (chhokrun), a child, is neuter; its plural છોકરાં takes in boys and girls together."
+  - id: gu-0407
+    target: "મારાં કપડાં"
+    native: "my clothes"
+    reading: "maaraan kapdaan"
+    pos: "phrase"
+    notes: "કપડાં (kapdaan) is neuter plural, so 'my' is મારાં, with the nasal -આં."
+  - id: gu-0408
+    target: "ત્રણ કેળાં"
+    native: "three bananas"
+    reading: "tran kelaan"
+    pos: "phrase"
+    notes: "After a number a noun can be plural or stay singular: ત્રણ કેળાં, બે ભાઈ."
+  - id: gu-0409
+    target: "બા આવ્યાં."
+    native: "Ba has come. (with respect)"
+    reading: "baa aavyaan."
+    pos: "phrase"
+    notes: "One person spoken of with respect takes the plural: a man -આ (પપ્પા આવ્યા), a woman -આં. A mixed group takes -આં too."

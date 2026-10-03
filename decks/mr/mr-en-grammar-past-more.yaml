@@ -1,0 +1,76 @@
+schema: 1
+id: mr-en-grammar-past-more
+name: "Used to"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I used to go, she used to come: the past of a habit, by person and gender. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [unreviewed, grammar]
+pattern:
+  name: "Past habit"
+  slot_name: "person and gender"
+  slots: ["मी (m)", "मी (f)", "आम्ही", "तू (m)", "तू (f)", "तुम्ही", "तो", "ती", "ते (it)", "ते (they)", "त्या (they, f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem with -आयचा, agreeing with the doer like the past, even when there is an object: मी लहानपणी पुण्यात राहायचो, I used to live in Pune as a child; ती रोज स्वयंपाक करायची, she used to cook every day. Books use -त असे instead: मी जात असे, I used to go."
+  entries:
+    - lemma: "जाणे"
+      key: jaane
+      gloss: "to go"
+      forms:
+        "मी (m)": "जायचो"
+        "मी (f)": "जायचे"
+        "आम्ही": "जायचो"
+        "तू (m)": "जायचास"
+        "तू (f)": "जायचीस"
+        "तुम्ही": "जायचात"
+        "तो": "जायचा"
+        "ती": "जायची"
+        "ते (it)": "जायचे"
+        "ते (they)": "जायचे"
+        "त्या (they, f)": "जायच्या"
+    - lemma: "येणे"
+      key: yene
+      gloss: "to come"
+      forms:
+        "मी (m)": "यायचो"
+        "मी (f)": "यायचे"
+        "आम्ही": "यायचो"
+        "तू (m)": "यायचास"
+        "तू (f)": "यायचीस"
+        "तुम्ही": "यायचात"
+        "तो": "यायचा"
+        "ती": "यायची"
+        "ते (it)": "यायचे"
+        "ते (they)": "यायचे"
+        "त्या (they, f)": "यायच्या"
+    - lemma: "राहणे"
+      key: raahne
+      gloss: "to live; to stay"
+      forms:
+        "मी (m)": "राहायचो"
+        "मी (f)": "राहायचे"
+        "आम्ही": "राहायचो"
+        "तू (m)": "राहायचास"
+        "तू (f)": "राहायचीस"
+        "तुम्ही": "राहायचात"
+        "तो": "राहायचा"
+        "ती": "राहायची"
+        "ते (it)": "राहायचे"
+        "ते (they)": "राहायचे"
+        "त्या (they, f)": "राहायच्या"
+    - lemma: "करणे"
+      key: karne
+      gloss: "to do"
+      forms:
+        "मी (m)": "करायचो"
+        "मी (f)": "करायचे"
+        "आम्ही": "करायचो"
+        "तू (m)": "करायचास"
+        "तू (f)": "करायचीस"
+        "तुम्ही": "करायचात"
+        "तो": "करायचा"
+        "ती": "करायची"
+        "ते (it)": "करायचे"
+        "ते (they)": "करायचे"
+        "त्या (they, f)": "करायच्या"

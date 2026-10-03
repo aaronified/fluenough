@@ -1,0 +1,76 @@
+schema: 1
+id: mr-en-grammar-past
+name: "Past tense"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I went, she came: the simple past of verbs without an object, by person and gender. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Simple past, verbs without an object"
+  slot_name: "person and gender"
+  slots: ["मी (m)", "मी (f)", "आम्ही", "तू (m)", "तू (f)", "तुम्ही", "तो", "ती", "ते (it)", "ते (they)", "त्या (they, f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem, then -ल-, then an ending that agrees with the doer: a man says मी गेलो, a woman मी गेले; to a man तू गेलास, to a woman तू गेलीस; तो गेला, ती गेली, ते (it) गेले. आम्ही takes -लो, and तुम्ही -लात, often shortened to -ला. जाणे and येणे have stems of their own: गेला, आला. With an object the rule is different: see Pitfalls."
+  entries:
+    - lemma: "जाणे"
+      key: jaane
+      gloss: "to go"
+      forms:
+        "मी (m)": "गेलो"
+        "मी (f)": "गेले"
+        "आम्ही": "गेलो"
+        "तू (m)": "गेलास"
+        "तू (f)": "गेलीस"
+        "तुम्ही": ["गेलात", "गेला"]
+        "तो": "गेला"
+        "ती": "गेली"
+        "ते (it)": "गेले"
+        "ते (they)": "गेले"
+        "त्या (they, f)": "गेल्या"
+    - lemma: "येणे"
+      key: yene
+      gloss: "to come"
+      forms:
+        "मी (m)": "आलो"
+        "मी (f)": "आले"
+        "आम्ही": "आलो"
+        "तू (m)": "आलास"
+        "तू (f)": "आलीस"
+        "तुम्ही": ["आलात", "आला"]
+        "तो": "आला"
+        "ती": "आली"
+        "ते (it)": "आले"
+        "ते (they)": "आले"
+        "त्या (they, f)": "आल्या"
+    - lemma: "बसणे"
+      key: basne
+      gloss: "to sit"
+      forms:
+        "मी (m)": "बसलो"
+        "मी (f)": "बसले"
+        "आम्ही": "बसलो"
+        "तू (m)": "बसलास"
+        "तू (f)": "बसलीस"
+        "तुम्ही": ["बसलात", "बसला"]
+        "तो": "बसला"
+        "ती": "बसली"
+        "ते (it)": "बसले"
+        "ते (they)": "बसले"
+        "त्या (they, f)": "बसल्या"
+    - lemma: "उठणे"
+      key: uthne
+      gloss: "to get up"
+      forms:
+        "मी (m)": "उठलो"
+        "मी (f)": "उठले"
+        "आम्ही": "उठलो"
+        "तू (m)": "उठलास"
+        "तू (f)": "उठलीस"
+        "तुम्ही": ["उठलात", "उठला"]
+        "तो": "उठला"
+        "ती": "उठली"
+        "ते (it)": "उठले"
+        "ते (they)": "उठले"
+        "त्या (they, f)": "उठल्या"
