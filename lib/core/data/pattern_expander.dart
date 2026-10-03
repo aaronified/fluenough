@@ -34,6 +34,8 @@ List<Card> expandPattern(Deck deck) {
             target: form,
             altTarget: entry.alternatives[slot] ?? const <String>[],
             reading: entry.readings[slot]?.first,
+            altReading:
+                entry.readings[slot]?.skip(1).toList() ?? const <String>[],
             native: pattern.prompt.replaceAllMapped(
               _placeholder,
               (m) => switch (m[1]) {

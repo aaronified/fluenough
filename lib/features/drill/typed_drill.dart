@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart' hide Card;
 
-import '../../app/features.dart';
 import '../../app/settings.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
@@ -10,13 +9,12 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
-import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/play_button.dart';
-import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'input_mode_choice.dart';
 import 'keyboard_hint.dart';
 
 /// Production and listening: a typed answer, graded by `AnswerGrader`.
@@ -92,7 +90,8 @@ class _TypedDrillState extends State<TypedDrill> {
       belowCard: answer != null
           ? null
           : <Widget>[
-              if (session.canTransliterate) _inputModeChoice(context),
+              if (session.canTransliterate)
+                InputModeChoice(session: session, onChanged: _controller.clear),
               AnswerField(
                 controller: _controller,
                 label: _fieldLabel(l10n, language, listening, translit),
@@ -218,49 +217,6 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ],
     ];
-  }
-
-  /// Script or transliteration. Transliteration is #47's, so while it is
-  /// incoming the choice is shown dimmed, with its badge.
-  Widget _inputModeChoice(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final session = _session;
-    final language = session.deck.language;
-    final incoming = isIncoming(context, Feature.translitInput);
-    return IncomingFeature(
-      feature: Feature.translitInput,
-      label: l10n.drillInputModeGroup,
-      badge: IncomingBadgePlacement.below,
-      child: Segmented<InputMode>(
-        semanticLabel: l10n.drillInputModeGroup,
-        height: 44,
-        selected: session.transliterating
-            ? InputMode.translit
-            : InputMode.script,
-        onSelected: incoming
-            ? null
-            : (mode) {
-                _controller.clear();
-                session.inputMode = mode;
-              },
-        options: <SegmentOption<InputMode>>[
-          SegmentOption<InputMode>(
-            value: InputMode.script,
-            label: l10n.drillInputScript(language.name),
-            leading: TargetText(
-              session.deck.glyph,
-              language: language,
-              fontSize: 16,
-            ),
-          ),
-          SegmentOption<InputMode>(
-            value: InputMode.translit,
-            label: l10n.drillInputTranslit,
-            leading: const Icon(Icons.abc, size: 20),
-          ),
-        ],
-      ),
-    );
   }
 
   String _fieldLabel(

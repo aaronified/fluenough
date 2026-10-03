@@ -8,6 +8,7 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
+import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
@@ -1029,6 +1030,11 @@ class AppState extends ChangeNotifier {
   /// sounds file.
   SoundContrasts? soundsFor(LanguageInfo language) =>
       _catalog.sounds[language.code];
+
+  /// How [language] is romanised (#47), or null if it has no romanisation
+  /// file.
+  Romanisation? romanisationFor(LanguageInfo language) =>
+      _catalog.romanisations[language.code];
 
   /// A card in [language] whose target is [text], as the grader compares
   /// them, for saying what a word heard instead means. Null if no deck has
