@@ -72,6 +72,7 @@ class ReadingDrill extends StatelessWidget {
         deckName: session.deck.deck.name,
         position: session.position,
         total: session.total,
+        reportDetail: '${session.item.card.id} in ${session.deck.id}',
         progress: session.progress,
         onClose: onClose,
         card: <Widget>[
@@ -122,6 +123,7 @@ class ReadingDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
+      reportDetail: '${session.item.card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
       card: <Widget>[
