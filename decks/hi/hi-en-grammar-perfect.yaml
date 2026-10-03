@@ -1,0 +1,80 @@
+schema: 1
+id: hi-en-grammar-perfect
+name: "Present perfect"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I have come, she has gone: the present perfect of verbs without an object. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Present perfect, intransitive verbs"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The past form of the verb, then हूँ, हो, है or हैं: आया हूँ, I have come. With an object, the doer takes ने as in the simple past: मैंने खाना खाया है."
+  entries:
+    - lemma: "आना"
+      key: aanaa
+      gloss: "to come"
+      forms:
+        "मैं (m)": "आया हूँ"
+        "मैं (f)": "आई हूँ"
+        "तुम (m)": "आए हो"
+        "तुम (f)": "आई हो"
+        "वह (m)": "आया है"
+        "वह (f)": "आई है"
+        "हम (m)": "आए हैं"
+        "हम (f)": "आई हैं"
+        "आप (m)": "आए हैं"
+        "आप (f)": "आई हैं"
+        "वे (m)": "आए हैं"
+        "वे (f)": "आई हैं"
+    - lemma: "जाना"
+      key: jaanaa
+      gloss: "to go"
+      forms:
+        "मैं (m)": "गया हूँ"
+        "मैं (f)": "गई हूँ"
+        "तुम (m)": "गए हो"
+        "तुम (f)": "गई हो"
+        "वह (m)": "गया है"
+        "वह (f)": "गई है"
+        "हम (m)": "गए हैं"
+        "हम (f)": "गई हैं"
+        "आप (m)": "गए हैं"
+        "आप (f)": "गई हैं"
+        "वे (m)": "गए हैं"
+        "वे (f)": "गई हैं"
+    - lemma: "पहुँचना"
+      key: pahunchnaa
+      gloss: "to arrive"
+      forms:
+        "मैं (m)": "पहुँचा हूँ"
+        "मैं (f)": "पहुँची हूँ"
+        "तुम (m)": "पहुँचे हो"
+        "तुम (f)": "पहुँची हो"
+        "वह (m)": "पहुँचा है"
+        "वह (f)": "पहुँची है"
+        "हम (m)": "पहुँचे हैं"
+        "हम (f)": "पहुँची हैं"
+        "आप (m)": "पहुँचे हैं"
+        "आप (f)": "पहुँची हैं"
+        "वे (m)": "पहुँचे हैं"
+        "वे (f)": "पहुँची हैं"
+    - lemma: "बैठना"
+      key: baithnaa
+      gloss: "to sit"
+      forms:
+        "मैं (m)": "बैठा हूँ"
+        "मैं (f)": "बैठी हूँ"
+        "तुम (m)": "बैठे हो"
+        "तुम (f)": "बैठी हो"
+        "वह (m)": "बैठा है"
+        "वह (f)": "बैठी है"
+        "हम (m)": "बैठे हैं"
+        "हम (f)": "बैठी हैं"
+        "आप (m)": "बैठे हैं"
+        "आप (f)": "बैठी हैं"
+        "वे (m)": "बैठे हैं"
+        "वे (f)": "बैठी हैं"

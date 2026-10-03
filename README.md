@@ -120,6 +120,18 @@ The Bengali decks quote two books in the public domain, letter for letter:
 - *Abol Tabol* by Sukumar Ray (1923), in the public domain: older
   spellings in the spelling deck, and passages for reading to come.
 
+The Hindi reading deck quotes a story in the public domain, letter for
+letter:
+
+- *Panch Parmeshwar* by Premchand, as printed in *Prem-Dwadashi* (1926):
+  passages for reading, checked against the page images.
+
+The Telugu reading deck quotes a story in the public domain, letter for
+letter:
+
+- *Diddubatu* by Gurajada Apparao (1910), as printed in *Gurujadalu*
+  (2012): passages for reading, checked against the page images.
+
 A new source gets a line here, and its decks name it in `source`.
 
 ## Building

@@ -1,0 +1,60 @@
+schema: 1
+id: te-en-grammar-be
+name: "To be: ఉండు and కాదు"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Is, was, isn't, will be: ఉండు for where and how things are, no verb at all for what someone is, and కాదు for what someone is not. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "ఉండు by tense"
+  slot_name: "person"
+  slots: ["నేను", "మేము", "నువ్వు", "మీరు", "అతను", "ఆమె / అది", "వాళ్ళు"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "ఉండు says where or how someone is: నేను ఇంట్లో ఉన్నాను, I'm at home. To say what someone is, Telugu needs no verb: ఆయన డాక్టర్, he's a doctor. With నేను, మేము and నువ్వు the noun takes an ending instead: నేను విద్యార్థిని, మేము విద్యార్థులం, నువ్వు విద్యార్థివి. ఉన్నాను is also the past: నిన్న నేను ఇంట్లో ఉన్నాను, I was at home yesterday. 'Is not somewhere' is a verb of its own, లేను, లేదు …: నేను ఇంట్లో లేను, I'm not at home. 'Is not something' is కాను, కాదు …: ఇది నీళ్ళు కాదు, this isn't water. The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing. మీరు, plural or respectful, takes the plural."
+  entries:
+    - lemma: "ఉండు, now or then"
+      key: unnaanu
+      gloss: "to be (somewhere), now or then"
+      forms:
+        "నేను": "ఉన్నాను"
+        "మేము": ["ఉన్నాము", "ఉన్నాం"]
+        "నువ్వు": "ఉన్నావు"
+        "మీరు": "ఉన్నారు"
+        "అతను": "ఉన్నాడు"
+        "ఆమె / అది": ["ఉంది", "ఉన్నది"]
+        "వాళ్ళు": "ఉన్నారు"
+    - lemma: "ఉండు, not"
+      key: leenu
+      gloss: "not to be (somewhere)"
+      forms:
+        "నేను": "లేను"
+        "మేము": ["లేము", "లేం"]
+        "నువ్వు": "లేవు"
+        "మీరు": "లేరు"
+        "అతను": "లేడు"
+        "ఆమె / అది": "లేదు"
+        "వాళ్ళు": "లేరు"
+    - lemma: "ఉండు, usually or later"
+      key: untaanu
+      gloss: "to be, as a habit or later"
+      forms:
+        "నేను": "ఉంటాను"
+        "మేము": ["ఉంటాము", "ఉంటాం"]
+        "నువ్వు": "ఉంటావు"
+        "మీరు": "ఉంటారు"
+        "అతను": "ఉంటాడు"
+        "ఆమె / అది": "ఉంటుంది"
+        "వాళ్ళు": "ఉంటారు"
+    - lemma: "కాదు, not a …"
+      key: kaadu
+      gloss: "not to be (something)"
+      forms:
+        "నేను": "కాను"
+        "మేము": ["కాము", "కాం"]
+        "నువ్వు": "కావు"
+        "మీరు": "కారు"
+        "అతను": "కాడు"
+        "ఆమె / అది": "కాదు"
+        "వాళ్ళు": "కారు"

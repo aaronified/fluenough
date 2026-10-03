@@ -1,0 +1,67 @@
+schema: 1
+id: hi-en-grammar-can-must
+name: "Can, want to, have to"
+kind: vocab
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "सकना, चाहना, चाहिए, पड़ना and पाना with another verb. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: hi-0513
+    target: "सकना"
+    native: "to be able; can"
+    reading: "saknaa"
+    pos: "verb"
+    notes: "After a verb's stem: बोल सकता हूँ, I can speak."
+  - id: hi-0514
+    target: "मैं हिंदी बोल सकता हूँ।"
+    native: "I can speak Hindi. (said by a man)"
+    reading: "main hindii bol saktaa huun."
+    alt_target: ["मैं हिंदी बोल सकती हूँ।"]
+    pos: "phrase"
+  - id: hi-0515
+    target: "मैं तैर नहीं सकती।"
+    native: "I can't swim. (said by a woman)"
+    reading: "main tair nahiin saktii."
+    alt_target: ["मैं तैर नहीं सकता।"]
+    pos: "phrase"
+  - id: hi-0516
+    target: "क्या आप मेरी मदद कर सकते हैं?"
+    native: "Could you help me?"
+    reading: "kyaa aap merii madad kar sakte hain?"
+    pos: "phrase"
+  - id: hi-0517
+    target: "मैं घर जाना चाहता हूँ।"
+    native: "I want to go home. (said by a man)"
+    reading: "main ghar jaanaa chaahtaa huun."
+    alt_target: ["मैं घर जाना चाहती हूँ।"]
+    pos: "phrase"
+  - id: hi-0518
+    target: "आपको आराम करना चाहिए।"
+    native: "You should rest."
+    reading: "aapko aaraam karnaa chaahiye."
+    pos: "phrase"
+    notes: "The -ना form with चाहिए is 'should'."
+  - id: hi-0519
+    target: "मुझे कल काम पर जाना है।"
+    native: "I have to go to work tomorrow."
+    reading: "mujhe kal kaam par jaanaa hai."
+    pos: "phrase"
+  - id: hi-0520
+    target: "मुझे जाना पड़ेगा।"
+    native: "I'll have to go."
+    reading: "mujhe jaanaa padegaa."
+    pos: "phrase"
+    notes: "पड़ना says you have no choice; होना है is milder."
+  - id: hi-0521
+    target: "मैं नहीं आ पाया।"
+    native: "I couldn't make it. (said by a man)"
+    reading: "main nahiin aa paayaa."
+    pos: "phrase"
+    notes: "पाना is 'to manage to'. A woman says नहीं आ पाई."
+  - id: hi-0522
+    target: "यहाँ फ़ोटो ले सकते हैं?"
+    native: "Can one take photos here?"
+    reading: "yahaan foto le sakte hain?"
+    pos: "phrase"

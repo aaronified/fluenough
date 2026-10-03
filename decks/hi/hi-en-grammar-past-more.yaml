@@ -1,0 +1,64 @@
+schema: 1
+id: hi-en-grammar-past-more
+name: "Was doing, used to, had gone"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Three more pasts: what was going on, what used to happen, and what had already happened. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past continuous, habitual past and past perfect"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Each joins था, थी, थे or थीं to a form you know: कर रहा था, was doing; करता था, used to do; गया था, had gone. गया था is also the plain past for something further back: पिछले साल मैं दिल्ली गया था, I went to Delhi last year."
+  entries:
+    - lemma: "करना, was doing"
+      key: karnaa-rahaa
+      gloss: "to do"
+      forms:
+        "मैं (m)": "कर रहा था"
+        "मैं (f)": "कर रही थी"
+        "तुम (m)": "कर रहे थे"
+        "तुम (f)": "कर रही थीं"
+        "वह (m)": "कर रहा था"
+        "वह (f)": "कर रही थी"
+        "हम (m)": "कर रहे थे"
+        "हम (f)": "कर रही थीं"
+        "आप (m)": "कर रहे थे"
+        "आप (f)": "कर रही थीं"
+        "वे (m)": "कर रहे थे"
+        "वे (f)": "कर रही थीं"
+    - lemma: "करना, used to"
+      key: karnaa-taa
+      gloss: "to do"
+      forms:
+        "मैं (m)": "करता था"
+        "मैं (f)": "करती थी"
+        "तुम (m)": "करते थे"
+        "तुम (f)": "करती थीं"
+        "वह (m)": "करता था"
+        "वह (f)": "करती थी"
+        "हम (m)": "करते थे"
+        "हम (f)": "करती थीं"
+        "आप (m)": "करते थे"
+        "आप (f)": "करती थीं"
+        "वे (m)": "करते थे"
+        "वे (f)": "करती थीं"
+    - lemma: "जाना, had gone"
+      key: jaanaa-gayaa
+      gloss: "to go"
+      forms:
+        "मैं (m)": "गया था"
+        "मैं (f)": "गई थी"
+        "तुम (m)": "गए थे"
+        "तुम (f)": "गई थीं"
+        "वह (m)": "गया था"
+        "वह (f)": "गई थी"
+        "हम (m)": "गए थे"
+        "हम (f)": "गई थीं"
+        "आप (m)": "गए थे"
+        "आप (f)": "गई थीं"
+        "वे (m)": "गए थे"
+        "वे (f)": "गई थीं"
