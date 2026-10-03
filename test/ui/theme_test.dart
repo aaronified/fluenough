@@ -54,4 +54,28 @@ void main() {
     expect(AppTheme.light().extension<ModeColors>(), same(ModeColors.light));
     expect(AppTheme.dark().extension<ModeColors>(), same(ModeColors.dark));
   });
+
+  test('pure black makes only the dark background black, on every seed', () {
+    for (final seed in ThemeSeed.values) {
+      for (final high in <bool>[false, true]) {
+        final black = AppTheme.dark(
+          seed: seed,
+          highContrast: high,
+          pureBlack: true,
+        );
+        final grey = AppTheme.dark(seed: seed, highContrast: high);
+        expect(black.scaffoldBackgroundColor, Colors.black);
+        expect(black.colorScheme.surface, Colors.black);
+        // Cards and bars keep their tones, so they still stand out.
+        expect(
+          black.colorScheme.surfaceContainerLow,
+          grey.colorScheme.surfaceContainerLow,
+        );
+        expect(
+          contrast(black.colorScheme.onSurface, Colors.black),
+          greaterThanOrEqualTo(7),
+        );
+      }
+    }
+  });
 }

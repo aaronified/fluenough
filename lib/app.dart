@@ -62,6 +62,7 @@ class _FluenoughAppState extends State<FluenoughApp> {
           darkTheme: AppTheme.dark(
             seed: settings.seed,
             highContrast: settings.highContrast,
+            pureBlack: settings.pureBlack,
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
