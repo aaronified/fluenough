@@ -239,6 +239,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
       deckName: deck.name,
       position: position,
       total: total,
+      reportDetail: '${cell.entry.lemma}, ${cell.slot} in ${deck.id}',
       progress: (position - 1 + (answer == null ? 0 : 0.5)) / total,
       onClose: onClose,
       card: _card(context, cell, language, answered: answer != null),

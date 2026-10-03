@@ -1,0 +1,18 @@
+# How Hindi is romanised: the scheme every `reading` in decks/hi is written
+# in, and the spellings a learner may type for the same sound, which grading
+# treats as one (#47). The first spelling of each group is the decks' own.
+# See docs/DECK-FORMAT.md, "Romanisation files".
+schema: 1
+kind: romanisation
+id: hi-romanisation
+language: hi
+scheme: "Popular, as Hindi is typed in a chat: lowercase ASCII with no length or retroflex marks (thora, kijiye), the inherent a left out where it is not said (kitne, samajh), ch for च and chh for छ, sh for श and ष, n for a nasal vowel (hun, nahin), r and rh for ड़ and ढ़ (larka, parhna), z for ज़, f for फ़, v for व."
+equivalents:
+  - ["a", "aa"]
+  - ["i", "ee", "ii"]
+  - ["u", "oo", "uu"]
+  - ["v", "w"]
+  - ["z", "j"]
+  - ["f", "ph"]
+  - ["chh", "ch"]
+  - ["k", "q"]

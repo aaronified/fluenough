@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/report_button.dart';
 import 'spoken_languages_picker.dart';
 
 /// The languages the learner speaks, ticked and ranked (#53), opened from
@@ -39,7 +40,10 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.spokenTitle)),
+      appBar: AppBar(
+        title: Text(l10n.spokenTitle),
+        actions: const <Widget>[ReportButton()],
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[

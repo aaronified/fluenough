@@ -177,6 +177,28 @@ void main() {
     expect(settings.seed, ThemeSeed.ocean);
   });
 
+  testWidgets('every colour swatch is drawn, not just the chosen one', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(tester, const AppearancePage(), themeMode: ThemeMode.dark);
+    final swatches = find.byType(ClipOval);
+    expect(swatches, findsNWidgets(ThemeSeed.values.length));
+    for (final swatch in swatches.evaluate()) {
+      final bands = find.descendant(
+        of: find.byWidget(swatch.widget),
+        matching: find.byType(ColoredBox),
+      );
+      expect(bands, findsNWidgets(3));
+      for (final band in bands.evaluate()) {
+        final size = tester.getSize(find.byWidget(band.widget));
+        // Collapsed bands were the invisible swatches of 0.2.0.
+        expect(size.width, greaterThan(20));
+        expect(size.height, greaterThan(20));
+      }
+    }
+  });
+
   testWidgets('the preview draws a real card at the chosen size', (
     tester,
   ) async {
