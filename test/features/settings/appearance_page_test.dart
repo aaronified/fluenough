@@ -158,6 +158,9 @@ void main() {
     await tapText(l10n.appearanceContrastHigh);
     expect(settings.highContrast, isTrue);
 
+    await tapText(l10n.appearancePureBlack);
+    expect(settings.pureBlack, isTrue);
+
     final slider = find.descendant(
       of: find.byType(SettingsSlider),
       matching: find.byType(Slider),
@@ -224,5 +227,25 @@ void main() {
     if (sample.card.reading != null) {
       expect(find.text(sample.card.reading!), findsOneWidget);
     }
+  });
+
+  testWidgets('pure black turns the background black whenever the app is '
+      'dark, and only then', (tester) async {
+    usePhone(tester);
+    final settings = SettingsNotifier(themeMode: ThemeMode.dark);
+    addTearDown(settings.dispose);
+    await pumpApp(tester, state: AppState.test(settings: settings));
+    Color background() =>
+        Theme.of(tester.element(find.byType(Scaffold).first))
+            .scaffoldBackgroundColor;
+    expect(background(), isNot(Colors.black));
+
+    settings.pureBlack = true;
+    await tester.pumpAndSettle();
+    expect(background(), Colors.black);
+
+    settings.themeMode = ThemeMode.light;
+    await tester.pumpAndSettle();
+    expect(background(), isNot(Colors.black));
   });
 }
