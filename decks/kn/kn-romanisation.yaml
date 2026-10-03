@@ -1,0 +1,16 @@
+# How every reading in decks/kn is written (#47): Kannada as people type it
+# in a chat. The first spelling of each group is the one the decks use; the
+# others are what a learner may type for the same sound. Kannada typists
+# write ee and oo for the long i and u (neenu, ooru), so long e and o are
+# typed e and o like the short ones, and have no group of their own. See
+# "Romanisation" in docs/DECK-FORMAT.md.
+schema: 1
+kind: romanisation
+id: kn-romanisation
+language: kn
+scheme: "Popular, as Kannada is typed in a chat: lowercase, no length marks (ನೀವು nivu, ಬೇಕು beku), every vowel said is written, t and d for dental and retroflex alike, n for ಣ and ಞ, l for ಳ, sh for ಶ and ಷ, ch for ಚ, chh for ಛ, j for ಜ, ru for ಋ, aspirates with h, ಂ as the m or n said, and f for ಫ in words from English."
+equivalents:
+  - ["a", "aa"]
+  - ["i", "ee", "ii"]
+  - ["u", "oo", "uu"]
+  - ["v", "w"]
