@@ -1,0 +1,130 @@
+schema: 1
+id: hi-en-registers
+name: "Formal words and everyday words"
+kind: vocab
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Hindi often has two words for one thing: a formal one from Sanskrit, seen on signs and in the news, and the one people say, often from Persian or English. Recognition only. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [reading, unreviewed]
+cards:
+  - id: hi-0604
+    target: "प्रश्न"
+    native: "question; everyday सवाल"
+    reading: "prashn"
+    pos: "other"
+    modes: [recognition]
+    notes: "सवाल (savaal) in speech."
+  - id: hi-0605
+    target: "उत्तर"
+    native: "answer; everyday जवाब"
+    reading: "uttar"
+    pos: "other"
+    modes: [recognition]
+    notes: "जवाब (javaab) in speech. उत्तर also means north."
+  - id: hi-0606
+    target: "प्रयोग"
+    native: "use; everyday इस्तेमाल"
+    reading: "prayog"
+    pos: "other"
+    modes: [recognition]
+    notes: "इस्तेमाल (istemaal) in speech."
+  - id: hi-0607
+    target: "समय"
+    native: "time; also वक़्त"
+    reading: "samay"
+    pos: "other"
+    modes: [recognition]
+    notes: "Both are everyday; वक़्त (vakt) is more common in speech."
+  - id: hi-0608
+    target: "सहायता"
+    native: "help; everyday मदद"
+    reading: "sahaayataa"
+    pos: "other"
+    modes: [recognition]
+    notes: "मदद (madad) in speech; सहायता on signs and in news."
+  - id: hi-0609
+    target: "प्रतीक्षा"
+    native: "waiting; everyday इंतज़ार"
+    reading: "pratiikshaa"
+    pos: "other"
+    modes: [recognition]
+    notes: "इंतज़ार (intazaar) in speech: कृपया प्रतीक्षा करें on a sign, इंतज़ार कीजिए from a person."
+  - id: hi-0610
+    target: "आवश्यक"
+    native: "necessary; everyday ज़रूरी"
+    reading: "aavashyak"
+    pos: "other"
+    modes: [recognition]
+    notes: "ज़रूरी (zaruurii) in speech."
+  - id: hi-0611
+    target: "कठिन"
+    native: "difficult; everyday मुश्किल"
+    reading: "kathin"
+    pos: "other"
+    modes: [recognition]
+    notes: "मुश्किल (mushkil) in speech."
+  - id: hi-0612
+    target: "सरल"
+    native: "easy; everyday आसान"
+    reading: "saral"
+    pos: "other"
+    modes: [recognition]
+    notes: "आसान (aasaan) in speech."
+  - id: hi-0613
+    target: "पुस्तक"
+    native: "book; everyday किताब"
+    reading: "pustak"
+    pos: "other"
+    modes: [recognition]
+    notes: "किताब (kitaab) in speech; पुस्तकालय (pustakaalay) is a library."
+  - id: hi-0614
+    target: "विद्यालय"
+    native: "school; everyday स्कूल"
+    reading: "vidyaalay"
+    pos: "other"
+    modes: [recognition]
+    notes: "स्कूल (skuul) in speech."
+  - id: hi-0615
+    target: "भोजन"
+    native: "meal; everyday खाना"
+    reading: "bhojan"
+    pos: "other"
+    modes: [recognition]
+    notes: "खाना (khaanaa) in speech; भोजन on menus and in formal invitations."
+  - ref: hi-0049
+    native: "water; everyday पानी"
+    notes: "पानी (paanii) in speech; जल on signs and in words like जलपान, a snack."
+    modes: [recognition]
+  - id: hi-0616
+    target: "कृपया"
+    native: "please (written)"
+    reading: "kripayaa"
+    pos: "other"
+    modes: [recognition]
+    notes: "On signs and in letters: कृपया जूते बाहर उतारें. Speech uses the polite verb instead: बैठिए."
+  - id: hi-0617
+    target: "निषेध"
+    native: "forbidden (on signs)"
+    reading: "nishedh"
+    pos: "other"
+    modes: [recognition]
+    notes: "धूम्रपान निषेध, no smoking."
+  - id: hi-0618
+    target: "प्रवेश"
+    native: "entry; entrance"
+    reading: "pravesh"
+    pos: "other"
+    modes: [recognition]
+    notes: "On doors and gates: प्रवेश, entry; निकास (nikaas), exit."
+  - id: hi-0619
+    target: "शौचालय"
+    native: "toilet (on signs)"
+    reading: "shauchaalay"
+    pos: "other"
+    modes: [recognition]
+    notes: "Speakers say टॉयलेट or बाथरूम."
+  - ref: hi-0138
+    native: "thank you (formal)"
+    notes: "शुक्रिया (shukriyaa) is the everyday word."
+    modes: [recognition]

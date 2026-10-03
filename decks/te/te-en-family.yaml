@@ -1,0 +1,143 @@
+schema: 1
+id: te-en-family
+name: "Family"
+kind: vocab
+theme: family
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, each with its own word. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: te-0196
+  - id: te-0380
+    target: "తల్లిదండ్రులు"
+    native: "parents"
+    reading: "tallidandrulu"
+    alt_target: ["అమ్మానాన్నలు"]
+    pos: "noun"
+    notes: "In speech also అమ్మానాన్నలు (ammaanaannalu)."
+  - id: te-0381
+    target: "నాన్న"
+    native: "father"
+    reading: "naanna"
+    alt_target: ["నాన్నగారు", "తండ్రి"]
+    pos: "noun"
+    notes: "నాన్నగారు (naannagaaru) adds respect; తండ్రి (tandri) is the formal word."
+  - ref: te-0059
+    notes: "The formal word is తల్లి (talli)."
+  - ref: te-0061
+    notes: "Often అన్నయ్య (annayya)."
+  - ref: te-0181
+  - ref: te-0060
+  - ref: te-0182
+    notes: "Also చెల్లెలు (chellelu)."
+  - id: te-0382
+    target: "అన్నదమ్ములు"
+    native: "brothers"
+    reading: "annadammulu"
+    pos: "noun"
+    notes: "Telugu has no everyday word for a brother or a sister, only elder and younger: అన్న, తమ్ముడు. Brothers together are అన్నదమ్ములు; sisters, అక్కచెల్లెళ్ళు (akkachellellu). The formal words are సోదరుడు (soodarudu) and సోదరి (soodari)."
+  - id: te-0383
+    target: "కొడుకు"
+    native: "son"
+    reading: "koduku"
+    pos: "noun"
+  - id: te-0384
+    target: "కూతురు"
+    native: "daughter"
+    reading: "kuuturu"
+    alt_target: ["కుమార్తె"]
+    pos: "noun"
+    notes: "Formally కుమార్తె (kumaarte)."
+  - id: te-0385
+    target: "భర్త"
+    native: "husband"
+    reading: "bharta"
+    pos: "noun"
+    notes: "In speech also ఆయన, 'he': మా ఆయన, my husband."
+  - id: te-0386
+    target: "భార్య"
+    native: "wife"
+    reading: "bhaarya"
+    pos: "noun"
+    notes: "In speech also ఆవిడ, 'she': మా ఆవిడ, my wife."
+  - id: te-0387
+    target: "పిల్లలు"
+    native: "children"
+    reading: "pillalu"
+    pos: "noun"
+  - id: te-0388
+    target: "తాత"
+    native: "grandfather"
+    reading: "taata"
+    pos: "noun"
+    notes: "On either side: a father's father or a mother's father."
+  - id: te-0389
+    target: "నానమ్మ"
+    native: "grandmother (father's mother)"
+    reading: "naanamma"
+    pos: "noun"
+  - id: te-0390
+    target: "అమ్మమ్మ"
+    native: "grandmother (mother's mother)"
+    reading: "ammamma"
+    pos: "noun"
+  - ref: te-0187
+    native: "uncle (father's younger brother)"
+    notes: "Also how you address a man of your parents' age. His wife is పిన్ని (pinni)."
+  - id: te-0391
+    target: "పెదనాన్న"
+    native: "uncle (father's elder brother)"
+    reading: "pedanaanna"
+    pos: "noun"
+    notes: "His wife is పెద్దమ్మ (peddamma)."
+  - id: te-0392
+    target: "మామయ్య"
+    native: "uncle (mother's brother)"
+    reading: "maamayya"
+    pos: "noun"
+    notes: "His wife is అత్త (atta)."
+  - ref: te-0062
+    native: "aunt (father's sister, or mother's brother's wife)"
+    notes: "Also a mother-in-law: with respect, అత్తగారు."
+  - id: te-0393
+    target: "పిన్ని"
+    native: "aunt (mother's younger sister)"
+    reading: "pinni"
+    pos: "noun"
+    notes: "Also the wife of బాబాయ్. A mother's elder sister is పెద్దమ్మ (peddamma)."
+  - id: te-0394
+    target: "మామగారు"
+    native: "father-in-law"
+    reading: "maamagaaru"
+    pos: "noun"
+  - id: te-0395
+    target: "అత్తగారు"
+    native: "mother-in-law"
+    reading: "attagaaru"
+    pos: "noun"
+  - id: te-0396
+    target: "బంధువు"
+    native: "relative"
+    reading: "bandhuvu"
+    pos: "noun"
+    notes: "Plural బంధువులు (bandhuvulu)."
+  - id: te-0397
+    target: "నాకు ఇద్దరు తమ్ముళ్ళు ఉన్నారు."
+    native: "I have two younger brothers."
+    reading: "naaku iddaru tammullu unnaaru."
+    pos: "phrase"
+    notes: "'To me two younger brothers are': people take ఉన్నారు, things ఉన్నాయి."
+  - id: te-0398
+    target: "మీకు అన్నదమ్ములు ఉన్నారా?"
+    native: "Do you have any brothers?"
+    reading: "miiku annadammulu unnaaraa?"
+    pos: "phrase"
+  - id: te-0399
+    target: "నాకు పెళ్ళైంది."
+    native: "I'm married."
+    reading: "naaku pellaindi."
+    alt_target: ["నాకు పెళ్లయింది.", "నాకు పెళ్ళయింది."]
+    pos: "phrase"
+    notes: "Literally 'to me the wedding has happened'."
