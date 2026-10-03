@@ -42,7 +42,7 @@ void main() {
   });
 
   test('this version ships the drills, speaking and reading among them, '
-      'saved progress, '
+      'answers in Latin letters, saved progress, '
       'appearance but for wallpaper colours, stats, leeches, daily facts, '
       'the log backup and adding a deck from a file', () {
     expect(Feature.available, {
@@ -52,6 +52,7 @@ void main() {
       Feature.drillSpeaking,
       Feature.drillGrammar,
       Feature.drillReading,
+      Feature.translitInput,
       Feature.persistence,
       Feature.appearance,
       Feature.colourSeeds,

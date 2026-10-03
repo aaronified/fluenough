@@ -9,6 +9,7 @@ import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/grading/answer_grader.dart';
+import '../../core/grading/romanised.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
 import '../../core/models/drill_mode.dart';
@@ -30,8 +31,8 @@ enum DrillPhase {
   feedback,
 }
 
-/// How a production answer is typed: in the language's own script, or in
-/// Latin letters (#47, behind [Feature.translitInput]).
+/// How a typed answer is typed: in the language's own script, or in Latin
+/// letters (#47, behind [Feature.translitInput]).
 enum InputMode { script, translit }
 
 /// A typed answer, once it is in.
@@ -193,12 +194,37 @@ class DrillSession extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Typed answers: production and listening
 
-  /// Whether this card can be typed as a transliteration: production of a
-  /// card with a reading, in a script that needs one.
+  /// Whether this card can be typed as a transliteration (#47): a
+  /// production, listening or grammar card with a reading, in a script that
+  /// needs one.
   bool get canTransliterate =>
-      item.mode == DrillMode.production &&
+      _typedModes.contains(item.mode) &&
+      item.card is! NumberCard &&
       item.card.reading != null &&
       deck.language.needsReading;
+
+  static const Set<DrillMode> _typedModes = <DrillMode>{
+    DrillMode.production,
+    DrillMode.listening,
+    DrillMode.grammar,
+  };
+
+  /// The grade a right answer in Latin letters records (#47): a learner
+  /// learning the alphabet who answers without it recalled the word, but
+  /// not how it is written.
+  static const int romanisedGrade = 3;
+
+  /// Each language's romanised spelling, made once it is needed.
+  final Map<String, RomanisedSpelling> _spellings =
+      <String, RomanisedSpelling>{};
+
+  RomanisedSpelling get _spelling {
+    final language = deck.language;
+    return _spellings.putIfAbsent(
+      language.code,
+      () => RomanisedSpelling(_state.romanisationFor(language)),
+    );
+  }
 
   InputMode get inputMode => _inputMode;
 
@@ -216,11 +242,8 @@ class DrillSession extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// The answers the grader accepts, the canonical one first.
-  ///
-  /// Typing a transliteration accepts the reading as well as the target:
-  /// the direction #47 takes. Its per-language spelling variants are #47's
-  /// to add.
+  /// The answers the grader accepts, the canonical one first: while
+  /// [transliterating], the reading, then the target, which is accepted too.
   List<String> get acceptedAnswers {
     final accepted = item.card.acceptedAnswers(item.mode);
     final reading = item.card.reading;
@@ -242,7 +265,7 @@ class DrillSession extends ChangeNotifier {
   void check(String typed) {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
-    final accepted = acceptedAnswers;
+    final accepted = item.card.acceptedAnswers(item.mode);
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
         : AnswerGrader(articles: deck.language.articles);
@@ -251,13 +274,26 @@ class DrillSession extends ChangeNotifier {
       accepted.first,
       alternates: accepted.sublist(1),
     );
+    // In Latin letters, the reading in the language's scheme (#47). The
+    // script is still accepted, and counts in full.
+    var romanised = false;
+    if (transliterating && graded.outcome != AnswerOutcome.exact) {
+      final roman = _spelling.grade(typed, item.card.readings);
+      if (roman.outcome.index < graded.outcome.index) {
+        graded = roman;
+        romanised = true;
+      }
+    }
     // A near miss that is word for word another card's answer is that
     // other word, not a slip: చేస్తావు for చేస్తాను is the wrong person.
-    if (graded.outcome == AnswerOutcome.closeTypo && _answersAnother(typed)) {
+    if (graded.outcome == AnswerOutcome.closeTypo &&
+        _answersAnother(typed, romanised: romanised)) {
       graded = const GradedAnswer(AnswerOutcome.wrong, matched: null);
     }
     final grade = graded.outcome == AnswerOutcome.closeTypo
         ? null
+        : romanised && graded.outcome.isCorrect
+        ? romanisedGrade
         : graded.outcome.toSm2Grade();
     _answer = TypedAnswer(typed: typed, graded: graded, grade: grade);
     if (grade != null) _record(grade, answerGiven: typed);
@@ -266,19 +302,23 @@ class DrillSession extends ChangeNotifier {
   }
 
   /// Whether [typed] is exactly what another card of this deck accepts in
-  /// this mode: a different word or form, so never a typo.
-  bool _answersAnother(String typed) {
+  /// this mode, or, [romanised], one of its readings: a different word or
+  /// form, so never a typo.
+  bool _answersAnother(String typed, {required bool romanised}) {
     final exact = AnswerGrader(
       articles: deck.language.articles,
       typoDistance: 0,
       longTypoDistance: 0,
     );
+    final spelling = romanised ? _spelling : null;
+    final key = spelling?.key(typed);
     for (final card in deck.cards) {
       if (card.id == item.card.id) continue;
-      final answers = <String>[
-        if (transliterating && card.reading != null) card.reading!,
-        ...card.acceptedAnswers(item.mode),
-      ];
+      if (spelling != null) {
+        if (card.readings.any((r) => spelling.key(r) == key)) return true;
+        continue;
+      }
+      final answers = card.acceptedAnswers(item.mode);
       if (answers.isEmpty) continue;
       final graded = exact.grade(
         typed,

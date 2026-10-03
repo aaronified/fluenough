@@ -1,5 +1,4 @@
 import '../../app/app_state.dart';
-import '../../app/features.dart';
 import '../../app/session.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
@@ -84,7 +83,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     id: 'drill-production-translit',
     section: GallerySection.drills,
     label: 'Production, transliteration', // ui-literal-ok: debug-only gallery
-    note: 'Latin letters instead; incoming (#47), shown switched on', // ui-literal-ok: debug-only gallery
+    note: 'Latin letters instead (#47)', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
       request: DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
       preset: const DrillPreset(
@@ -92,13 +91,6 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
         typed: 'ka',
         inputMode: InputMode.translit,
       ),
-    ),
-    state: (app) => GalleryFixtures.state(
-      app,
-      features: const FeatureRegistry.only(<Feature>{
-        ...Feature.available,
-        Feature.translitInput,
-      }),
     ),
   ),
   GalleryEntry(
