@@ -90,6 +90,12 @@ void main() {
     final semantics = tester.ensureSemantics();
     await pumpProfiles(tester, const NewProfilePage(), flagsOn: false);
     final l10n = l10nOf(tester);
+    // Below the language list, which every bundled language makes long.
+    await tester.scrollUntilVisible(
+      find.byType(SwitchListTile),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
 
     expect(
       find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.newProfilePin)),
@@ -121,6 +127,11 @@ void main() {
     final l10n = l10nOf(tester);
 
     await tester.enterText(_nameField(tester), 'Dev');
+    await tester.scrollUntilVisible(
+      find.byType(SwitchListTile),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     await _tapVisible(tester, find.byType(SwitchListTile));
     final pin = find.widgetWithText(TextField, l10n.newProfilePinField(4));
     // Below the language list, which every bundled language makes long.
