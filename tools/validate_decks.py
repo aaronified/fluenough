@@ -53,6 +53,11 @@ PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
+ROMANISATION_KEYS = {"schema", "kind", "id", "language", "scheme", "equivalents"}
+# A romanisation in a language's own scheme (#47): lowercase ASCII letters,
+# digits, spaces and plain punctuation. No diacritics, no capitals.
+ROMAN_RE = re.compile(r"[a-z0-9 '.,?!;:()/\-]+")
+ROMAN_PIECE_RE = re.compile(r"[a-z]+(?:[ '-][a-z]+)*")
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
 FEATURE_KEYS = {"id", "name", "term", "reading", "example", "text", "letters"}
@@ -407,8 +412,12 @@ def check_pattern(r: Report, pattern: object) -> None:
         if not isinstance(entry, dict):
             r.error(ewhere, "must be a mapping")
             continue
-        for unknown in sorted(set(entry) - {"lemma", "key", "gloss", "forms"}):
+        for unknown in sorted(set(entry) - {"lemma", "key", "gloss", "forms",
+                                            "reading", "readings"}):
             r.error(ewhere, f"unknown field {unknown!r}")
+        if "reading" in entry and not _is_str(entry.get("reading")):
+            r.error(ewhere, "reading, the lemma romanised, must be a non-empty "
+                            "string or omitted")
         lemma = entry.get("lemma")
         if not _is_str(lemma):
             r.error(ewhere, "lemma is required")
@@ -458,6 +467,103 @@ def check_pattern(r: Report, pattern: object) -> None:
             elif val is not None and not _is_str(val):
                 r.error(ewhere, f"forms[{slot!r}] must be a form, a list of forms, "
                                 f"or null")
+        check_pattern_readings(r, ewhere, entry, forms, slots)
+
+
+def check_pattern_readings(r: Report, where: str, entry: dict, forms: dict,
+                           slots: list) -> None:
+    """An entry's `readings`, each form romanised (#47): a reading, or a list
+    of them, for every slot with a form, and none for a slot without."""
+    readings = entry.get("readings")
+    if readings is None:
+        return
+    if not isinstance(readings, dict):
+        r.error(where, "readings must be a mapping of slot to reading")
+        return
+    for extra in sorted(set(readings) - set(slots)):
+        r.error(where, f"readings has key {extra!r} which is not a slot")
+    for slot in slots:
+        form, reading = forms.get(slot), readings.get(slot)
+        if form is None:
+            if reading is not None:
+                r.error(where, f"readings[{slot!r}] given for a slot with no form")
+            continue
+        if reading is None:
+            r.error(where, f"readings[{slot!r}] is missing; every form has one")
+        elif isinstance(reading, list):
+            if not reading or not all(_is_str(v) for v in reading):
+                r.error(where, f"readings[{slot!r}] must list non-empty strings")
+        elif not _is_str(reading):
+            r.error(where, f"readings[{slot!r}] must be a reading or a list")
+
+
+def _readings_in(node: object):
+    """Every romanisation in a file: the values of `reading` and `readings`
+    keys, wherever they are."""
+    if isinstance(node, dict):
+        for key, value in node.items():
+            if key == "reading" and isinstance(value, str):
+                yield value
+            elif key == "readings" and isinstance(value, dict):
+                for v in value.values():
+                    if isinstance(v, str):
+                        yield v
+                    elif isinstance(v, list):
+                        yield from (x for x in v if isinstance(x, str))
+            else:
+                yield from _readings_in(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from _readings_in(item)
+
+
+def check_romanised(r: Report, raw: dict, path: Path) -> None:
+    """Once a language has its romanisation file (#47), every reading in its
+    files is in that scheme: lowercase ASCII, no diacritics or capitals."""
+    lang = raw.get("language")
+    code = lang.get("code") if isinstance(lang, dict) else lang
+    if not _is_str(code) or not (path.parent / f"{code}-romanisation.yaml").exists():
+        return
+    for reading in sorted(set(_readings_in(raw))):
+        if not ROMAN_RE.fullmatch(reading):
+            r.error("reading", f"{reading!r} is not in the {code} romanisation: "
+                               f"lowercase ASCII, no diacritics or capitals")
+
+
+def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/<lang>/<lang>-romanisation.yaml: the language's romanisation
+    scheme, and the spellings a learner may type for the same sound (#47)."""
+    for unknown in sorted(set(raw) - ROMANISATION_KEYS):
+        r.error("root", f"unknown field {unknown!r}")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not _is_str(lang) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code, {_code_error(lang)}")
+    elif path.stem != f"{lang}-romanisation" or raw.get("id") != path.stem:
+        r.error("id", f"a romanisation file is {lang}-romanisation.yaml with id "
+                      f"{lang}-romanisation")
+    if not _is_str(raw.get("scheme")):
+        r.error("scheme", "is required: how the language is romanised, in a line")
+    groups = raw.get("equivalents")
+    if not isinstance(groups, list):
+        r.error("equivalents", "must be a list of groups of spellings")
+        return
+    seen: dict[str, int] = {}
+    for i, group in enumerate(groups):
+        where = f"equivalents[{i}]"
+        if (not isinstance(group, list) or len(group) < 2
+                or not all(_is_str(g) for g in group)):
+            r.error(where, "must list two or more spellings")
+            continue
+        for spelling in group:
+            if not ROMAN_PIECE_RE.fullmatch(spelling):
+                r.error(where, f"{spelling!r} must be lowercase ASCII letters")
+            elif spelling in seen:
+                r.error(where, f"{spelling!r} is already in equivalents[{seen[spelling]}]")
+            else:
+                seen[spelling] = i
 
 
 def _code_error(value: object) -> str:
@@ -563,6 +669,10 @@ def validate(path: Path) -> Report:
     if raw.get("kind") == "path":
         check_path_file(r, raw, path)
         return r
+    if raw.get("kind") == "romanisation":
+        check_romanisation_file(r, raw, path)
+        return r
+    check_romanised(r, raw, path)
     if raw.get("kind") == "sounds":
         check_sounds_file(r, raw, path)
         return r

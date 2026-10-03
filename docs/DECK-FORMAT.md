@@ -460,6 +460,77 @@ it at the bottom of that theme's unit, through the path's wildcards; a deck
 with no theme, or one the course does not have, goes at the end. An added
 deck can be removed from its page; what was learned from it stays.
 
+## Romanisation
+
+Every `reading` in a language with its own script is written the way people
+type the language in a chat, in one scheme per language, so that a learner
+sees the same spelling everywhere and can answer in it (#47).
+
+**The scheme: popular and unmarked.**
+
+- Lowercase ASCII letters only, with spaces and the sentence's own
+  punctuation. No diacritics, no capitals, and no doubled vowels for length:
+  *thora*, *kijiye*, not *thoRaa*, *kiijiye* or *thoṛā*.
+- Spelled as the word is said, not letter for letter: Hindi, Marathi and
+  Gujarati drop the inherent vowel where speakers do (*kitne*, *samajh*);
+  Bengali and Assamese write it as the *o* it is said as (*ami*, *bhalo*).
+- Consonants as people type them: *ch* for च, *chh* for छ, *sh* for श and ष,
+  *n* for ण, ञ and ङ, *r* for ड़ and *rh* for ढ़, *z* for ज़, *f* for फ़;
+  aspirates with *h* (*kh*, *gh*, *th*, *dh*, *ph*, *bh*); retroflex and
+  dental alike (*t*, *d*).
+- A letter card for ङ or ञ on its own reads *nga* or *nya*, so that it
+  differs from न; words write *n*. The same holds for those letters in the
+  other Indic scripts.
+- A grammar row whose lemma is English, such as a demonstratives table's
+  "this, that", has no `reading`; its forms do.
+- A language's own common conventions win, such as Assamese *x* for স, শ
+  and ষ (*Axom*). Its romanisation file says them in its `scheme`.
+
+A grammar row gives its lemma's `reading` and a `readings` map beside
+`forms`, a reading per slot that has a form, or a list of them for a cell
+that lists several forms:
+
+```yaml
+    - lemma: "जाना"
+      key: jaanaa
+      reading: "jana"
+      gloss: "to go"
+      forms:
+        "मैं (m)": "जाता हूँ"
+        "तुम (m)": "जाते हो"
+      readings:
+        "मैं (m)": "jata hun"
+        "तुम (m)": "jate ho"
+```
+
+### Romanisation files
+
+`decks/<code>/<code>-romanisation.yaml` names the scheme and the spellings a
+learner may type for the same sound, which grading treats as one:
+
+```yaml
+schema: 1
+kind: romanisation
+id: hi-romanisation
+language: hi
+scheme: "Popular: lowercase, no length or retroflex marks, spelled as said."
+equivalents:
+  - ["i", "ee", "ii"]
+  - ["u", "oo", "uu"]
+  - ["v", "w"]
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `<code>-romanisation`, and the filename stem. |
+| `language` | yes | The language's code. |
+| `scheme` | yes | How the language is romanised, in a line, with its own conventions. |
+| `equivalents` | yes | Groups of two or more lowercase spellings. The first of each group is the one the decks use. A spelling is in one group only. |
+
+Once a language has the file, the validator checks every reading in that
+language's files, cards, refs, grammar rows, passages, glossaries, sounds and
+script guides, is in the scheme: lowercase ASCII, no diacritics or capitals.
+
 ## Sounds files
 
 A language's sound contrasts ([ADR-0015](adr/0015-sound-contrasts.md)):
@@ -563,8 +634,8 @@ facts:
     tags: [script]
     text:
       en: "No Hindi word begins with ड़ or ढ़. These dotted letters only occur
-        inside or at the end of a word, as in सड़क (sadak, road) and पढ़ना
-        (padhna, to read)."
+        inside or at the end of a word, as in सड़क (sarak, road) and पढ़ना
+        (parhna, to read)."
   - id: hi-fact-002
     tags: [script, conjuncts]
     text:

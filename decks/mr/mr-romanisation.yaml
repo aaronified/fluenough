@@ -1,0 +1,19 @@
+# How Marathi readings are written (#47): popular and unmarked, the way
+# Marathi is typed in a chat. Each group lists spellings a learner may type
+# for the same sound; the first is the one the decks use. See
+# "Romanisation" in docs/DECK-FORMAT.md.
+schema: 1
+kind: romanisation
+id: mr-romanisation
+language: mr
+scheme: "Popular, as Marathi is texted: lowercase, no length or retroflex marks, spelled as said with the dropped a left out; ch and j for च and ज however said, chh for छ, jh for झ, sh for श and ष, ksh for क्ष, dny for ज्ञ, n for ण, l for ळ, ru for ऋ, v for व, ph for फ but f in English words, a and o for ॅ and ॉ, and the dot as n or m as said, unwritten as a final nasal a."
+equivalents:
+  - ["a", "aa"]
+  - ["i", "ee", "ii"]
+  - ["u", "oo", "uu"]
+  - ["v", "w"]
+  - ["ph", "f"]
+  - ["jh", "z", "zh"]
+  - ["ksh", "x"]
+  - ["dny", "gy", "gny"]
+  - ["au", "ou"]
