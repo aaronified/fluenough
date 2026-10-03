@@ -19,6 +19,7 @@ void changeAll(SettingsNotifier s) {
     ..seed = ThemeSeed.clay
     ..dynamicColour = true
     ..highContrast = true
+    ..pureBlack = true
     ..cardTextScale = 1.2
     ..reminder = true
     ..reminderTime = const TimeOfDay(hour: 7, minute: 5)
