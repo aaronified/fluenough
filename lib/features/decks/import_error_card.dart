@@ -4,16 +4,18 @@ import '../../core/data/deck_parser.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
-/// "This deck couldn't be read": the file, the line and the parser's own
-/// message, verbatim (ADR-0006), then that nothing was added.
+/// "This deck couldn't be read": the file, the line and the problem, then
+/// that nothing was added.
 ///
-/// Laid out straight from a [DeckParseException]: its `source` is the file,
-/// its `line` the line, its `message` the explanation, which already says
-/// how to fix it. Without a line, it names the file alone.
+/// For a parse error, [detailFor] lays the [detail] out straight from the
+/// [DeckParseException]: its `source` is the file, its `line` the line, its
+/// `message` the parser's explanation, verbatim (ADR-0006), which already
+/// says how to fix it. Without a line, it names the file alone.
 class ImportErrorCard extends StatelessWidget {
-  const ImportErrorCard({super.key, required this.error});
+  const ImportErrorCard({super.key, required this.detail});
 
-  final DeckParseException error;
+  /// Where and what, such as [detailFor] gives.
+  final String detail;
 
   /// Where and what: "ja-kana.yaml, line 12: …", or "ja-kana.yaml: …".
   static String detailFor(AppLocalizations l10n, DeckParseException error) {
@@ -63,7 +65,7 @@ class ImportErrorCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            Text(detailFor(l10n, error), style: body),
+            Text(detail, style: body),
             const SizedBox(height: 10),
             Text(
               l10n.importErrorNothingAdded,

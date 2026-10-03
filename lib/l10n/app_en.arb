@@ -1046,6 +1046,38 @@
   "@deckNotFound": {
     "description": "Shown if a deck's screen opens for a deck that is not in the catalog."
   },
+  "deckRemove": "Remove deck",
+  "@deckRemove": {
+    "description": "Tooltip of the button that removes a deck the learner added."
+  },
+  "deckRemoveTitle": "Remove {name}?",
+  "@deckRemoveTitle": {
+    "description": "Title of the dialog that confirms removing an added deck.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "My words"
+      }
+    }
+  },
+  "deckRemoveBody": "What you learned from it stays, and comes back if you add the deck again.",
+  "@deckRemoveBody": {
+    "description": "Body of the dialog that confirms removing an added deck."
+  },
+  "deckRemoveConfirm": "Remove",
+  "@deckRemoveConfirm": {
+    "description": "Button that removes the added deck."
+  },
+  "deckRemoved": "{name} removed",
+  "@deckRemoved": {
+    "description": "SnackBar after an added deck is removed.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "My words"
+      }
+    }
+  },
   "importTitle": "Add a deck",
   "@importTitle": {
     "description": "Title of the import screen."
@@ -1187,6 +1219,78 @@
   "importErrorNothingAdded": "Nothing was added. Your other decks are unchanged.",
   "@importErrorNothingAdded": {
     "description": "Reassurance at the foot of the import error."
+  },
+  "importFileHelp": "Start from the template: it shows every field. A deck with a theme joins that theme’s unit; any other goes at the end of its course.",
+  "@importFileHelp": {
+    "description": "Help under the file source: how to make a deck, and where it is taught."
+  },
+  "importTemplate": "Save the template",
+  "@importTemplate": {
+    "description": "Button that saves the deck template file."
+  },
+  "importTemplateSaved": "Saved {file}",
+  "@importTemplateSaved": {
+    "description": "SnackBar after the deck template is saved.",
+    "placeholders": {
+      "file": {
+        "type": "String",
+        "example": "fluenough-deck-template.yaml"
+      }
+    }
+  },
+  "importTemplateFailed": "The template couldn’t be saved",
+  "@importTemplateFailed": {
+    "description": "SnackBar when saving the deck template fails."
+  },
+  "importPickTitle": "Choose a deck file",
+  "@importPickTitle": {
+    "description": "Title of the file dialog that picks a deck to add."
+  },
+  "importReadFailed": "The file couldn’t be opened: {error}",
+  "@importReadFailed": {
+    "description": "SnackBar when the picked deck file cannot be read.",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "example": "permission denied"
+      }
+    }
+  },
+  "importIdBundled": "{id} is the id of a deck that comes with the app. Give your deck another id.",
+  "@importIdBundled": {
+    "description": "Why a deck to add was refused: a bundled deck has its id. Shown after the file name.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "hi-en-market"
+      }
+    }
+  },
+  "importCardTaken": "card {cardId} is already in {deck}. Give your card another id, or list that card by ref.",
+  "@importCardTaken": {
+    "description": "Why a deck to add was refused: another deck has one of its card ids. Shown after the file name.",
+    "placeholders": {
+      "cardId": {
+        "type": "String",
+        "example": "hi-0231"
+      },
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "importReplaces": "You added a deck with this id before. Adding this one replaces it.",
+  "@importReplaces": {
+    "description": "Under a checked deck whose id is a deck the learner added before."
+  },
+  "importAddFailed": "The deck couldn’t be saved on this phone",
+  "@importAddFailed": {
+    "description": "SnackBar when a checked deck cannot be written to the app's storage."
+  },
+  "importReplace": "Replace my deck",
+  "@importReplace": {
+    "description": "Button that adds the checked deck in place of the learner's deck with its id."
   },
   "drillEndSession": "End session",
   "@drillEndSession": {

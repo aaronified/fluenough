@@ -6,6 +6,9 @@ kind: path
 id: es-en-path
 language: es
 native: en
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
 units:
   - [es-en-core-100]
   - [es-en-grammar-present-ar]
+  - ["*"]
