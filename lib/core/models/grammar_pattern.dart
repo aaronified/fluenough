@@ -6,6 +6,8 @@ class PatternEntry {
     required this.forms,
     this.key,
     this.alternatives = const <String, List<String>>{},
+    this.reading,
+    this.readings = const <String, List<String>>{},
   });
 
   /// The word the row inflects, as the drill shows it.
@@ -28,6 +30,14 @@ class PatternEntry {
   /// Other forms accepted for a slot, after the one in [forms]: West Bengal
   /// এলাম and Bangladesh আসলাম, say (#144). Slots with none are absent.
   final Map<String, List<String>> alternatives;
+
+  /// [lemma] romanised (#47), or null.
+  final String? reading;
+
+  /// Each form romanised, by slot (#47): one reading, or one per form for a
+  /// cell that lists several. Absent for a slot with no form, and empty for
+  /// a deck that gives none.
+  final Map<String, List<String>> readings;
 }
 
 /// A grammar deck's inflection table, before it is expanded into cards.
