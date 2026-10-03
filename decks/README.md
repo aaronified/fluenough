@@ -59,33 +59,38 @@ python3 tools/validate_decks.py decks/
 
 ## Romanising Indic languages
 
-A `reading` is there to help a learner say the word, so every Indic deck
-writes it the same way, in plain ASCII:
+A `reading` is there to help a learner say the word, and to let them answer
+in it (#47). Each language writes every reading in one scheme, the way its
+speakers type it in a chat, and names that scheme in its
+`<code>-romanisation.yaml`. The common rules are in
+[the format specification](../docs/DECK-FORMAT.md#romanisation):
 
-- **Long vowels are doubled:** `aa`, `ii`, `uu` (पानी is `paanii`, दूध is
-  `duudh`). Short ones are single.
-- **A nasal vowel is followed by `n`:** हाँ is `haan`, नहीं is `nahiin`.
+- **Lowercase ASCII, no marks:** no diacritics, no capitals, and **no doubled
+  vowels** for length. पानी is `pani`, दूध is `dudh`, మీరు is `miru`.
+- **A nasal vowel is followed by `n`:** हाँ is `han`, नहीं is `nahin`.
 - **The schwa a speaker drops is not written:** कमल is `kamal`, सड़क is
-  `sadak`, not `kamala`, `sadaka`.
+  `sarak`, not `kamala`, `saraka`.
 - **Aspiration is an `h`:** `kh`, `gh`, `chh`, `th`, `dh`, `ph`, `bh`. श and ष
-  are both `sh`.
+  are both `sh`. ड़ is `r` and ढ़ is `rh`.
 - **Retroflex and dental consonants are not told apart** in the reading. The
   script tells them apart, and the notes say so where it matters.
+- **A letter card for ङ or ञ on its own** (and their Bengali, Telugu,
+  Kannada and Gujarati twins) reads `nga` or `nya`, so that it differs from
+  न. Words write `n`.
+- **A grammar row whose lemma is English** has no `reading`; its forms do.
+- **Spellings learners also type**, such as `ee` for `i` or `w` for `v`, are
+  listed as `equivalents` in the romanisation file. Grading treats them as
+  the decks' own.
 
 Bengali differs in two ways, and its readings follow how it is said:
 
 - **The inherent vowel is `o`, never `a`:** কমল is `komol`, বন is `bon`.
   `o` stands for both অ and ও.
-- **No doubled vowels:** Bengali does not tell long and short vowels apart,
-  so আ is `a`, ই and ঈ are `i`, উ and ঊ are `u`. শ, ষ and স are all `sh`,
-  except where a speaker says s. স is `s` when it is joined in a conjunct
-  with t, th, n, r or l (স্টেশন is `steshon`, আস্তে is `aste`), and in
-  many English words. It stays `sh` before k and p (হাসপাতাল is
-  `hashpatal`, নমস্কার is `nomoshkar`), and where it is written apart from
-  the next letter (আসতে is `ashte`, আসলাম is `ashlam`).
-
-Telugu tells short e and o from long ones, so its readings double those
-too: ఏడు (seven) is `eedu`, and ఎడమ (left) is `edama`.
+- **শ, ষ and স are all `sh`,** except where a speaker says s. স is `s` when
+  it is joined in a conjunct with t, th, n, r or l (স্টেশন is `steshon`,
+  আস্তে is `aste`), and in many English words. It stays `sh` before k and p
+  (হাসপাতাল is `hashpatal`, নমস্কার is `nomoshkar`), and where it is written
+  apart from the next letter (আসতে is `ashte`, আসলাম is `ashlam`).
 
 ## Decks no speaker has checked
 

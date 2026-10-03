@@ -176,6 +176,7 @@ void main() {
       l10n.settingsReminder,
       l10n.settingsPinLock,
       l10n.settingsDeleteProfile,
+      l10n.settingsAppLog,
     ];
     for (final label in labels) {
       final node = find.bySemanticsLabel(l10n.incomingSemanticsLabel(label));

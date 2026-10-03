@@ -8,9 +8,11 @@ import 'app/app_info.dart';
 import 'app/added_decks.dart';
 import 'app/app_state.dart';
 import 'app/deck_catalog.dart';
+import 'app/links.dart';
 import 'app/ota_installer.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'app/report_mail.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
@@ -40,6 +42,10 @@ Future<void> main() async {
         tts: SystemTtsEngine(),
         speech: SystemSpeechEngine(),
         soundCheck: SystemSoundCheck(),
+        reports: const MailReportSender(
+          address: AppLinks.feedbackEmail,
+          links: LauncherLinks(),
+        ),
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
         installer: OtaApkInstaller(),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
