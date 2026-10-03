@@ -923,6 +923,10 @@
   "@inspectExamples": {
     "description": "Inspect: the card's example sentences."
   },
+  "inspectReport": "Report this card",
+  "@inspectReport": {
+    "description": "Tooltip of the report button beside each card's id on the Inspect screen."
+  },
   "inspectQuestions": "Questions",
   "@inspectQuestions": {
     "description": "Inspect: a passage's questions, the right answer marked."
@@ -975,10 +979,6 @@
   "deckUnreviewedReport": "Report a mistake",
   "@deckUnreviewedReport": {
     "description": "Button under the unchecked-deck notice. It opens the page where mistakes are reported, in the browser."
-  },
-  "deckUnreviewedCopied": "Couldn’t open the page for reporting mistakes, so its link is copied.",
-  "@deckUnreviewedCopied": {
-    "description": "SnackBar when nothing on the phone could open the page for reporting mistakes, so its address was copied instead."
   },
   "deckSetUpVoice": "Set up",
   "@deckSetUpVoice": {
@@ -1147,6 +1147,94 @@
         "example": "My words"
       }
     }
+  },
+  "reportOpen": "Report a problem or idea",
+  "@reportOpen": {
+    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen."
+  },
+  "reportTitle": "Report a problem or idea",
+  "@reportTitle": {
+    "description": "Title of the report screen."
+  },
+  "reportKindGroup": "What kind of report?",
+  "@reportKindGroup": {
+    "description": "Accessibility label of the bug / feature / suggestion choice."
+  },
+  "reportKindBug": "Bug",
+  "@reportKindBug": {
+    "description": "A report that something is wrong."
+  },
+  "reportKindFeature": "Feature",
+  "@reportKindFeature": {
+    "description": "A report asking for something new."
+  },
+  "reportKindSuggestion": "Suggestion",
+  "@reportKindSuggestion": {
+    "description": "A report suggesting a change."
+  },
+  "reportTitleLabel": "Title",
+  "@reportTitleLabel": {
+    "description": "Label of the report's one-line title."
+  },
+  "reportTitleMissing": "Give it a title",
+  "@reportTitleMissing": {
+    "description": "Shown when Send is tapped with no title."
+  },
+  "reportDetailsLabel": "Details",
+  "@reportDetailsLabel": {
+    "description": "Label of the report's longer text."
+  },
+  "reportDetailsHint": "What did you do, and what happened? Or what would help?",
+  "@reportDetailsHint": {
+    "description": "Hint in the report's details field."
+  },
+  "reportInMailApp": "Your mail app has the report. Send it from there.",
+  "@reportInMailApp": {
+    "description": "SnackBar after the report opens in the reporter's mail app."
+  },
+  "reportNoMailApp": "No mail app on this phone could take the report.",
+  "@reportNoMailApp": {
+    "description": "Shown when no mail app can open the report."
+  },
+  "reportIssuePrompt": "What happened, or what would help?",
+  "@reportIssuePrompt": {
+    "description": "First line of a new GitHub issue opened from a report button, above what the app fills in. The reporter writes under it."
+  },
+  "reportLinkCopied": "Couldn’t open GitHub, so the link to report is copied.",
+  "@reportLinkCopied": {
+    "description": "SnackBar when nothing on the phone could open the GitHub link for a report, so it was copied instead."
+  },
+  "reportPublic": "Reports become public GitHub issues. Your email address is not shown; leave out anything private.",
+  "@reportPublic": {
+    "description": "Warning above Send, on the mail report."
+  },
+  "reportAlsoSent": "Always sent: this screen and what it showed.",
+  "@reportAlsoSent": {
+    "description": "What every report carries whatever the reporter ticks, above Send."
+  },
+  "reportDeviceInfo": "Include device information",
+  "@reportDeviceInfo": {
+    "description": "Checkbox on a report, unticked until the reporter ticks it: adds the device details shown under it (app and system versions, screen size, text scale, languages)."
+  },
+  "reportGitHubTitle": "Report on GitHub",
+  "@reportGitHubTitle": {
+    "description": "Title of the sheet shown before a report opens GitHub's new-issue form."
+  },
+  "reportGitHubBody": "GitHub opens a new issue with this screen filled in. Issues are public, so leave out anything private.",
+  "@reportGitHubBody": {
+    "description": "Text of the sheet shown before a report opens GitHub."
+  },
+  "reportOpenGitHub": "Open GitHub",
+  "@reportOpenGitHub": {
+    "description": "Button on the sheet that opens GitHub's new-issue form."
+  },
+  "reportSend": "Write it in my mail app",
+  "@reportSend": {
+    "description": "Button that opens the reporter's mail app with the report filled in."
+  },
+  "reportNotSetUp": "Reports by mail aren’t set up in this version of the app.",
+  "@reportNotSetUp": {
+    "description": "Shown when the build has no address for reports."
   },
   "importTitle": "Add a deck",
   "@importTitle": {
@@ -3013,6 +3101,18 @@
   "settingsSectionData": "Your data",
   "@settingsSectionData": {
     "description": "Settings section heading."
+  },
+  "settingsSectionLogs": "Logs",
+  "@settingsSectionLogs": {
+    "description": "Settings section heading, for the app's own log (#162)."
+  },
+  "settingsAppLog": "App log",
+  "@settingsAppLog": {
+    "description": "Settings row: the app's own log of what it did and what went wrong (#162). Feature incoming."
+  },
+  "settingsAppLogDesc": "What the app did and what went wrong, to add to a report",
+  "@settingsAppLogDesc": {
+    "description": "Subtitle of the App log row in Settings."
   },
   "settingsExport": "Export review log",
   "@settingsExport": {

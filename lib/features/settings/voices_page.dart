@@ -8,6 +8,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 
 /// Which languages the phone can speak, with Test, and how to install a
@@ -115,7 +116,10 @@ class _VoicesPageState extends State<VoicesPage> {
     final languages = state.languages;
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.voicesTitle)),
+      appBar: AppBar(
+        title: Text(l10n.voicesTitle),
+        actions: const <Widget>[ReportButton()],
+      ),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
         children: <Widget>[
