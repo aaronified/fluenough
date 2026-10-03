@@ -7,6 +7,7 @@ import '../../app/session.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/reading.dart';
 import '../../core/models/script_guide.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
@@ -15,12 +16,14 @@ import '../script/script_guide_page.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
+import 'reading_drill.dart';
 import 'recognition_drill.dart';
 import 'speaking_drill.dart';
 import 'typed_drill.dart';
 
 /// A drill session: recognition, production and listening, one card at a
-/// time, recording each answer as it is given, then the summary.
+/// time, recording each answer as it is given, then the summary. A reading
+/// question, read or heard, is a `ReadingDrill` (#98).
 ///
 /// Design screens `drill-recognition`, `drill-recognition-revealed`,
 /// `drill-production-accent`, `drill-production-typo`,
@@ -265,6 +268,15 @@ class _DrillPageState extends State<DrillPage> {
           if (!didPop) _confirmEnd();
         },
         child: switch (session.item.mode) {
+          // A reading question, read or heard (#98).
+          _ when session.item.card is QuestionCard => ReadingDrill(
+            key: ValueKey<(int, bool)>((
+              session.position,
+              session.showsPassage,
+            )),
+            session: session,
+            onClose: _close,
+          ),
           DrillMode.recognition => RecognitionDrill(
             key: ValueKey<int>(session.position),
             session: session,

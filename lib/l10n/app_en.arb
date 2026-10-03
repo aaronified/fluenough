@@ -1360,6 +1360,172 @@
   "@drillPlayingHint": {
     "description": "Under the play button while it plays."
   },
+  "skillReading": "Reading",
+  "@skillReading": {
+    "description": "A skill: reading passages and answering questions about them (#98)."
+  },
+  "skillReadingDeckDesc": "Read a passage, answer questions",
+  "@skillReadingDeckDesc": {
+    "description": "Under Reading on a reading deck's screen."
+  },
+  "skillReadingSettingsDesc": "Short passages, with questions",
+  "@skillReadingSettingsDesc": {
+    "description": "Under the Reading switch in Settings."
+  },
+  "skillListeningReadingDeckDesc": "Hear a passage, answer questions",
+  "@skillListeningReadingDeckDesc": {
+    "description": "Under Listening on a reading deck's screen, where listening means hearing the passage read aloud."
+  },
+  "readingIntro": "{count, plural, =1{Read it, then answer a question} other{Read it, then answer {count} questions}}",
+  "@readingIntro": {
+    "description": "Above a passage, before its questions.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "readingListenIntro": "{count, plural, =1{Listen, then answer a question} other{Listen, then answer {count} questions}}",
+  "@readingListenIntro": {
+    "description": "Above the play button of a passage read aloud, before its questions.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "readingToQuestions": "Answer the questions",
+  "@readingToQuestions": {
+    "description": "Button under a passage, going on to its first question."
+  },
+  "readingPlayPassage": "Play the passage",
+  "@readingPlayPassage": {
+    "description": "Screen-reader label of the button that reads the whole passage aloud."
+  },
+  "readingPlaySentence": "Play this sentence",
+  "@readingPlaySentence": {
+    "description": "Tooltip and screen-reader label of the button beside each sentence of a passage."
+  },
+  "readingTextHidden": "The text shows once you have answered",
+  "@readingTextHidden": {
+    "description": "Under the play button of a passage read aloud: its text is hidden until the question is answered."
+  },
+  "readingTrueOrFalse": "True or false?",
+  "@readingTrueOrFalse": {
+    "description": "Above a true-or-false question's statement."
+  },
+  "readingTrue": "True",
+  "@readingTrue": {
+    "description": "A choice on a true-or-false question."
+  },
+  "readingFalse": "False",
+  "@readingFalse": {
+    "description": "A choice on a true-or-false question."
+  },
+  "readingChoiceRight": "the right answer",
+  "@readingChoiceRight": {
+    "description": "Read by screen readers after a choice, once answered, when it is the right one."
+  },
+  "readingChoiceChosen": "your answer",
+  "@readingChoiceChosen": {
+    "description": "Read by screen readers after the choice the learner made, once answered."
+  },
+  "readingPassage": "The passage",
+  "@readingPassage": {
+    "description": "Heading over the passage, under a question's choices."
+  },
+  "readingSource": "Source: {source}",
+  "@readingSource": {
+    "description": "Under a passage and on each of its questions: where the text comes from, from the deck file, such as a book in the public domain.",
+    "placeholders": {
+      "source": {
+        "type": "String",
+        "example": "Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"
+      }
+    }
+  },
+  "readingWords": "Words",
+  "@readingWords": {
+    "description": "Button by a passage that opens its glossary: older or unusual words in it, with today's form and meaning."
+  },
+  "readingWordsTitle": "Words in this passage",
+  "@readingWordsTitle": {
+    "description": "Heading of a passage's glossary."
+  },
+  "readingGlossToday": "today",
+  "@readingGlossToday": {
+    "description": "Read by screen readers between a glossary word and today's form of it, where the screen shows an arrow."
+  },
+  "deckKindReading": "Reading",
+  "@deckKindReading": {
+    "description": "A deck of passages with questions about them."
+  },
+  "deckReadingCount": "{passages, plural, =1{1 passage} other{{passages} passages}}, {questions, plural, =1{1 question} other{{questions} questions}}",
+  "@deckReadingCount": {
+    "description": "How many passages and questions a reading deck has, on a deck's screen.",
+    "placeholders": {
+      "passages": {
+        "type": "int",
+        "example": "3"
+      },
+      "questions": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "deckMetaReading": "{language} ({code}) · {count, plural, =1{1 passage} other{{count} passages}}",
+  "@deckMetaReading": {
+    "description": "Second line of a reading deck's row.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "code": {
+        "type": "String",
+        "example": "ben"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "deckPassages": "Passages",
+  "@deckPassages": {
+    "description": "Heading above a reading deck's preview of its passages."
+  },
+  "deckPassageQuestions": "{count, plural, =1{1 question} other{{count} questions}}",
+  "@deckPassageQuestions": {
+    "description": "How many questions a passage has, in a reading deck's preview.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "settingsSectionSources": "Sources",
+  "@settingsSectionSources": {
+    "description": "Settings section heading: where the decks' texts come from, one row per language."
+  },
+  "settingsSourceLine": "{source}: {kind, select, reading{passages for reading} grammar{grammar} other{words}}",
+  "@settingsSourceLine": {
+    "description": "A row in Settings, Sources: a source the decks name, from the deck file, and what it gives the app.",
+    "placeholders": {
+      "source": {
+        "type": "String",
+        "example": "Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"
+      },
+      "kind": {
+        "type": "String",
+        "example": "reading"
+      }
+    }
+  },
   "drillSayIn": "Say it in {language}",
   "@drillSayIn": {
     "description": "Speaking: above the meaning to say aloud.",

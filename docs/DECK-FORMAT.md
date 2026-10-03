@@ -3,10 +3,10 @@
 A deck is a single UTF-8 YAML file. Filenames are `<deck-id>.yaml` and live
 under `decks/<language-code>/`.
 
-Two kinds of deck exist: `vocab` (a list of cards) and `grammar` (a pattern
-table that expands into cards). A third kind of file, `facts`, holds a
-language's daily facts rather than anything drilled. All three share the same
-header. Beside them sit files that are not decks: the shared
+Three kinds of deck exist: `vocab` (a list of cards), `grammar` (a pattern
+table that expands into cards) and `reading` (passages with questions about
+them). Another kind of file, `facts`, holds a language's daily facts rather
+than anything drilled. All four share the same header. Beside them sit files that are not decks: the shared
 [themes](#themes), each language's [number rules](#number-rules), and each
 course's [path](#course-paths).
 
@@ -27,12 +27,12 @@ Common to every kind.
 | `schema` | yes | Must be `1`. |
 | `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. |
 | `name` | yes | Human-readable title. |
-| `kind` | no | `vocab` (default), `grammar`, or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path`, `sounds` and `script`. |
+| `kind` | no | `vocab` (default), `grammar`, `reading` for [passages](#reading-decks), or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path`, `sounds` and `script`. |
 | `language` | yes | The language being learned. See below. |
 | `native` | yes, except on a facts file | The language explanations are written in. |
 | `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
 | `authors` | no | List of `{name, url?}`. |
-| `source` | no | URL the content was derived from. |
+| `source` | no | Where the content comes from: a URL, or for a book its title, author, year and licence, as in `"Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"`. The app shows it on the deck's page, and Settings lists it under Sources. |
 | `description` | no | One or two sentences. |
 | `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
@@ -227,6 +227,127 @@ Each `(entry, slot)` pair becomes one production card:
 
 ---
 
+## Reading decks
+
+Short passages, each with questions about it (#98,
+[ADR-0019](adr/0019-reading-comprehension.md)). The learner reads a
+passage, or hears it read aloud, and answers its questions by choosing.
+Each question is scheduled like a card, in the `reading` mode, and heard in
+`listening` where the phone has a voice.
+
+```yaml
+schema: 1
+id: bn-en-reading-home
+name: "Bengali reading: going home"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Written for this example"
+passages:
+  - id: bn-going-home
+    title: "Going home"
+    theme: market
+    sentences:
+      - text: "সে কাজ ক’রে বাড়ি যায়।"
+        reading: "she kaj kore bari jay."
+      - text: "বাড়িতে সে ভাত খায়।"
+        reading: "barite she bhat khay."
+    glossary:
+      - word: "ক’রে"
+        modern: "করে"
+        reading: "kore"
+        meaning: { en: "having done" }
+        note: { en: "older spelling; the apostrophe marks a dropped ই" }
+    questions:
+      - id: bn-0901
+        prompt:
+          en: "They eat rice at home."
+          hi: "वे घर पर चावल खाते हैं।"
+        answer: true
+      - id: bn-0902
+        prompt: { en: "Where do they go after work?" }
+        options:
+          - { en: "Home" }
+          - { en: "To the market" }
+        answer: 1
+```
+
+A reading deck has the usual header, with `passages` in place of `cards`,
+and no `theme` of its own: each passage names the theme it follows.
+
+### Passage fields
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | The language and a name, `bn-going-home`: unique in the deck among its passages and questions. Permanent. |
+| `title` | yes | The passage's name, in the language the deck is taught from, as the deck's `name` is. |
+| `sentences` | yes | A non-empty list of sentences, below. |
+| `questions` | yes | 2 to 4 questions, below. |
+| `source` | no | Where this passage comes from, shown with it on every screen of the drill and on the deck's page. Without one, the deck's `source` is shown. |
+| `theme` | no | The theme whose words it uses, by its id in [`decks/themes.yaml`](#themes). |
+| `glossary` | no | Older or unusual words in it, below. |
+
+### Sentences
+
+| Field | Required | Notes |
+|---|---|---|
+| `text` | yes | The sentence in the language learned, exactly as written. Quote it. |
+| `reading` | yes, in a script that needs one | Its romanisation, written as [`decks/README.md`](../decks/README.md) says. Shown when Show romanisation is on. |
+
+**A passage's text is kept letter for letter.** Passages may quote a book,
+so nothing in the app or the validator trims, normalises or corrects
+`text`, a glossary's `word` or `modern`, or their readings: no Unicode
+normalisation, and no straightening of ’ or ‘. Write the text exactly as
+the source has it. The validator only warns of leading or trailing spaces,
+which are kept.
+
+### Questions
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | A card id of the language, `bn-0901` ([ADR-0018](adr/0018-card-ids-name-the-language.md)): a question is a card. **Never reuse or renumber**: it keys the question's review history. |
+| `prompt` | yes | The question, or for true or false the statement, keyed by language code as a [fact's](#fact-fields) `text` is: `{ en: ..., bn: ..., hi: ... }`. `en` is required. |
+| `options` | no | 2 to 4 choices, each keyed by language like `prompt` and in exactly its languages. Leave it out for a true-or-false question. |
+| `answer` | yes | The number of the right option, counting from 1. For a true-or-false question, `true` or `false`, unquoted. |
+
+A question is shown in the best language the learner speaks that it is
+written in, as facts are (#53), else in English. Its true and false are the
+app's own words.
+
+### Glossary
+
+Older Bengali, in its sadhu and chalit forms, reads differently from the
+language the decks teach. A glossary gives today's form of a passage's
+older or unusual words. The drill opens it from Words, wherever the
+passage's text shows.
+
+| Field | Required | Notes |
+|---|---|---|
+| `word` | yes | The word exactly as the passage writes it. It must occur in the passage's sentences, character for character. |
+| `modern` | yes | Today's standard colloquial form. |
+| `reading` | yes, in a script that needs one | `modern` in the Latin alphabet, as in a sentence's `reading`. |
+| `meaning` | yes | What it means, keyed by language, `en` required. |
+| `note` | no | More about it, keyed by language, `en` required: "older colloquial; the apostrophe marks a dropped ই". |
+
+### Rules
+
+- **On its course's path, after its theme.** A reading deck is an ordinary
+  deck: it is listed on the Decks tab, and its path puts it in a unit after
+  the theme decks its passages use, so that its new questions come once
+  their words are taught. The validator warns of a passage whose theme's
+  deck is in the same unit or a later one.
+- **Words no deck teaches are warned of.** Validating a course's decks
+  together, the validator lists each passage's words that no vocab or
+  grammar deck of the course contains, its glossary's aside. This is a
+  warning, not an error: a passage has inflected forms and names.
+- **The validator checks the rest:** ids unique and well formed, 2 to 4
+  questions and options, an answer that is an option or true or false,
+  `en` in every text keyed by language, a reading on every sentence in a
+  script that needs one, and every glossary word in its passage.
+
+---
+
 ## Themes
 
 Vocabulary is taught along one shared path of themes, like the units of a
@@ -299,7 +420,8 @@ units:
   with no path is taught in its course's theme order, and then its other
   decks.
 - **Order is a teaching decision.** Put a script first, before any deck
-  written in it, and grammar with the theme that first needs it.
+  written in it, grammar with the theme that first needs it, and a
+  [reading deck](#reading-decks) in a unit after the themes it uses.
 - **The first units teach the script, the sounds and how the grammar
   differs from English,** before any theme, and in every skill. So their
   short sentences are typed too: they leave out `pos: phrase`. A letter
@@ -526,6 +648,11 @@ rules file that spells with a word that no card in the language's
 | `listening` | TTS audio of `target` | `target` | automatically |
 | `grammar` | expanded `prompt` | inflected form | automatically |
 | `speaking` | `native` | `target`, said aloud | automatically, from what the phone's speech recogniser heard |
+| `reading` | a passage, then a question about it | the right choice | automatically |
+
+A reading question is also heard, in `listening`: the passage is read aloud
+and its text is hidden until the question is answered. A card cannot take
+`reading`; only a [reading deck](#reading-decks)'s questions do.
 
 `listening` is offered only when a TTS voice for `language.tts` is available on
 the device. `speaking` is offered only once the learner has switched it on,

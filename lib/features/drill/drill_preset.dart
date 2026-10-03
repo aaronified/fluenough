@@ -16,6 +16,8 @@ class DrillPreset {
     this.check = false,
     this.reveal = false,
     this.inputMode = InputMode.script,
+    this.questions = false,
+    this.choice,
   });
 
   /// Starts on the first card of the request's decks whose target is this,
@@ -35,6 +37,13 @@ class DrillPreset {
   /// Script or transliteration, where the card offers the choice and
   /// `Feature.translitInput` is on.
   final InputMode inputMode;
+
+  /// A reading question: past the passage, to its first question.
+  final bool questions;
+
+  /// A reading question: past the passage, with this choice made, from 0.
+  /// This records it, as a check does.
+  final int? choice;
 
   /// [items] with the preset's card first. [cards] are the request's decks'
   /// cards, [mode] its skill's, and [stateOf] finds the card's state.
@@ -65,6 +74,9 @@ class DrillPreset {
   /// Puts [session] where the preset says.
   void apply(DrillSession session) {
     if (reveal) session.reveal();
+    final chosen = choice;
+    if (questions || chosen != null) session.toQuestions();
+    if (chosen != null) session.choose(chosen);
     final text = typed;
     if (check && text != null) session.check(text);
   }

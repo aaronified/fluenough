@@ -9,18 +9,23 @@ import 'segmented.dart';
 /// becomes a pause icon while [playing].
 ///
 /// 136 in listening, 104 in minimal pairs. Screen readers hear "Play the
-/// word", or "Playing" while it plays.
+/// word", or [label] when given, or "Playing" while it plays.
 class PlayButton extends StatefulWidget {
   const PlayButton({
     super.key,
     required this.onPressed,
     this.playing = false,
     this.size = 136,
+    this.label,
   });
 
   final VoidCallback? onPressed;
   final bool playing;
   final double size;
+
+  /// What it plays, for screen readers: "Play the passage". Null for the
+  /// word.
+  final String? label;
 
   @override
   State<PlayButton> createState() => _PlayButtonState();
@@ -41,7 +46,9 @@ class _PlayButtonState extends State<PlayButton> {
     return Semantics(
       button: true,
       enabled: widget.onPressed != null,
-      label: widget.playing ? l10n.drillPlaying : l10n.drillPlay,
+      label: widget.playing
+          ? l10n.drillPlaying
+          : widget.label ?? l10n.drillPlay,
       excludeSemantics: true,
       onTap: widget.onPressed == null ? null : _press,
       child: SizedBox.square(

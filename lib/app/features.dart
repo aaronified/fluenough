@@ -19,6 +19,7 @@ enum Feature {
   drillSpeaking(89),
   drillGrammar(2),
   drillPair(31),
+  drillReading(98),
   translitInput(47),
 
   // Today.
@@ -78,6 +79,7 @@ enum Feature {
     Feature.drillListening,
     Feature.drillGrammar,
     Feature.drillSpeaking,
+    Feature.drillReading,
     Feature.persistence,
     Feature.appearance,
     Feature.colourSeeds,
