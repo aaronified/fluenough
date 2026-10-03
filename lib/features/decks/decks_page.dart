@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../core/data/themes.dart';
 import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
 import '../../l10n/app_localizations.dart';
@@ -125,10 +126,20 @@ class _DecksPageState extends State<DecksPage> {
         state.settings,
       ]),
       builder: (context, _) {
+        final themes = _query.trim().isEmpty
+            ? const <String, DeckTheme>{}
+            : state.themesByDeck;
         final decks = <DeckEntry>[
           for (final entry in state.decks)
             if ((_language == null || entry.language.code == _language) &&
-                deckMatches(entry, _query))
+                deckMatches(
+                  entry,
+                  _query,
+                  also: <String>[
+                    ?themes[entry.id]?.name,
+                    deckKindLabel(l10n, entry),
+                  ],
+                ))
               entry,
         ];
         final q = _query.trim().toLowerCase();

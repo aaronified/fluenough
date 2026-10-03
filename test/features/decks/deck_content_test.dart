@@ -88,4 +88,22 @@ void main() {
     expect(deckMatches(hiragana, 'japanese'), isTrue);
     expect(deckMatches(hiragana, 'spanish'), isFalse);
   });
+
+  test('every word of a search must match something about the deck', () {
+    final nouns = state.deckById('hi-en-grammar-nouns')!;
+    final also = <String>['Market', 'Grammar'];
+    expect(deckMatches(nouns, 'hindi market', also: also), isTrue);
+    expect(deckMatches(nouns, '  Market   HINDI ', also: also), isTrue);
+    expect(deckMatches(nouns, 'grammar', also: also), isTrue);
+    expect(deckMatches(nouns, 'bengali market', also: also), isFalse);
+    expect(deckMatches(nouns, 'hindi transport', also: also), isFalse);
+  });
+
+  test('a deck is searched under its own theme, or its unit\'s', () {
+    final themes = state.themesByDeck;
+    expect(themes['hi-en-market']?.id, 'market');
+    // Grammar has no theme of its own: it takes its unit's on the path.
+    expect(themes['hi-en-grammar-nouns']?.id, 'market');
+    expect(themes['hi-en-grammar-articles']?.id, 'market');
+  });
 }
