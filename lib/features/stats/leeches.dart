@@ -74,26 +74,28 @@ class LeechActions implements Listenable {
   /// Every action, oldest first. Append-only.
   List<LeechAction> get log => _progress.leechActions;
 
+  /// What [key]'s row says: set aside before reset, as a pair set aside is
+  /// out of every session whether reset or not.
   LeechStatus statusOf(ProgressKey key) {
-    for (final action in log.reversed) {
-      if (action.key != key) continue;
-      return switch (action.kind) {
-        LeechActionKind.reset => LeechStatus.reset,
-        LeechActionKind.setAside => LeechStatus.setAside,
-        LeechActionKind.undoReset ||
-        LeechActionKind.bringBack => LeechStatus.active,
-      };
-    }
+    if (isSetAside(key)) return LeechStatus.setAside;
+    if (isReset(key)) return LeechStatus.reset;
     return LeechStatus.active;
   }
 
-  /// Reset, or Undo if [key] was reset.
+  /// [key]'s actions alone, added up.
+  LeechEffects _effectsOf(ProgressKey key) =>
+      LeechEffects(log.where((a) => a.key == key));
+
+  /// Whether a reset of [key] holds, whether or not it is also set aside.
+  bool isReset(ProgressKey key) => _effectsOf(key).resetAt(key) != null;
+
+  /// Whether [key] is set aside, whether or not it is also reset.
+  bool isSetAside(ProgressKey key) => _effectsOf(key).isSetAside(key);
+
   void toggleReset(ProgressKey key, {required DateTime now}) =>
       _progress.actOnLeech(
         key,
-        statusOf(key) == LeechStatus.reset
-            ? LeechActionKind.undoReset
-            : LeechActionKind.reset,
+        isReset(key) ? LeechActionKind.undoReset : LeechActionKind.reset,
         now: now,
       );
 
@@ -101,9 +103,7 @@ class LeechActions implements Listenable {
   void toggleSetAside(ProgressKey key, {required DateTime now}) =>
       _progress.actOnLeech(
         key,
-        statusOf(key) == LeechStatus.setAside
-            ? LeechActionKind.bringBack
-            : LeechActionKind.setAside,
+        isSetAside(key) ? LeechActionKind.bringBack : LeechActionKind.setAside,
         now: now,
       );
 

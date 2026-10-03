@@ -170,6 +170,20 @@ void main() {
       expect(
         () => LogJsonl.decode(
           withLine(
+            '{"type":"review",$good,"grade":3,"elapsed_ms":0,"answer":7}',
+          ),
+        ),
+        failsWith('line 2: answer is not text'),
+      );
+      expect(
+        () => LogJsonl.decode(
+          withLine('{"type":"review",$good,"grade":3,"elapsed_ms":-5}'),
+        ),
+        failsWith('line 2: elapsed_ms -5'),
+      );
+      expect(
+        () => LogJsonl.decode(
+          withLine(
             '{"type":"review","ts":"yesterday","deck":"d","card":"c",'
             '"mode":"recognition","grade":3,"elapsed_ms":0}',
           ),

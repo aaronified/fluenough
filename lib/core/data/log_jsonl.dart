@@ -86,8 +86,8 @@ abstract final class LogJsonl {
             deckId: _deck(decoded, n),
             at: _time(decoded, n),
             grade: _grade(decoded, n),
-            elapsed: Duration(milliseconds: _int(decoded, 'elapsed_ms', n)),
-            answerGiven: decoded['answer'] as String?,
+            elapsed: Duration(milliseconds: _elapsed(decoded, n)),
+            answerGiven: _answer(decoded, n),
           ));
         case 'leech':
           final kind = LeechActionKind.values.asNameMap()[decoded['kind']];
@@ -128,6 +128,20 @@ abstract final class LogJsonl {
     final at = ts is String ? DateTime.tryParse(ts) : null;
     if (at == null) throw FormatException('line $n: ts is not a time');
     return at.toLocal();
+  }
+
+  static String? _answer(Map<String, Object?> o, int n) {
+    final answer = o['answer'];
+    if (answer != null && answer is! String) {
+      throw FormatException('line $n: answer is not text');
+    }
+    return answer as String?;
+  }
+
+  static int _elapsed(Map<String, Object?> o, int n) {
+    final ms = _int(o, 'elapsed_ms', n);
+    if (ms < 0) throw FormatException('line $n: elapsed_ms $ms');
+    return ms;
   }
 
   static int _grade(Map<String, Object?> o, int n) {

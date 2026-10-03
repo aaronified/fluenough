@@ -124,6 +124,27 @@ void main() {
       expect(state.progress.log, isEmpty);
     });
 
+    testWidgets('the options are shuffled (#148), and the one tapped is the '
+        'one recorded', (tester) async {
+      usePhone(tester);
+      final state = readingApp();
+      await pumpScreen(tester, DrillPage(request: read), state: state);
+      await tapText(tester, l10nOf(tester).readingToQuestions);
+      // The test app's chance is seeded, so this order is always the same,
+      // and it is not the deck's: The price is not first.
+      final shown = <String>['The price', 'The way', 'The time']
+        ..sort(
+          (a, b) => tester
+              .getTopLeft(find.text(a))
+              .dy
+              .compareTo(tester.getTopLeft(find.text(b)).dy),
+        );
+      expect(shown.first, isNot('The price'));
+      await tapText(tester, 'The price');
+      expect(state.progress.log.single.answerGiven, '1');
+      expect(state.progress.log.single.grade, ReadingQuestion.rightGrade);
+    });
+
     testWidgets('a choice is recorded at once, right or wrong, with the right '
         'answer shown', (tester) async {
       usePhone(tester);

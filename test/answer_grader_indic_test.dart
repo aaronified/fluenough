@@ -113,4 +113,24 @@ void main() {
       }
     });
   });
+
+  group('the typo allowance counts letters as written', () {
+    test('an answer of one or two letters allows no slip', () {
+      // あ is one letter; x is not a slip for it.
+      expect(grader.grade('x', 'あ').outcome, AnswerOutcome.wrong);
+      // है and हो are one letter each, and different words.
+      expect(grader.grade('हो', 'है').outcome, AnswerOutcome.wrong);
+      expect(grader.grade('si', 'sí').outcome, AnswerOutcome.closeDiacritics);
+      expect(grader.grade('so', 'si').outcome, AnswerOutcome.wrong);
+    });
+
+    test('from three letters, one slip is a near miss', () {
+      expect(grader.grade('dig', 'dog').outcome, AnswerOutcome.closeTypo);
+      // ఉన్నాను is three letters: ఉ, న్నా, ను.
+      expect(
+        grader.grade('ఉన్నాన', 'ఉన్నాను').outcome,
+        AnswerOutcome.closeTypo,
+      );
+    });
+  });
 }

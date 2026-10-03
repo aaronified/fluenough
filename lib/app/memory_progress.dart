@@ -254,13 +254,15 @@ extension ProgressQueries on ProgressStore {
   }
 
   /// Distinct cards due by the end of the calendar day after [now] and not
-  /// due at [now]: "Next due: 14 cards tomorrow".
-  int dueTomorrow(DateTime now) {
+  /// due at [now]: "Next due: 14 cards tomorrow". Only the pairs [counts]
+  /// accepts, when given.
+  int dueTomorrow(DateTime now, {bool Function(ProgressKey key)? counts}) {
     final endOfTomorrow = addDays(dateOnly(now), 2);
     return <String>{
       for (final entry in states.entries)
         if (!entry.value.isDue(now) &&
-            entry.value.dueAt.isBefore(endOfTomorrow))
+            entry.value.dueAt.isBefore(endOfTomorrow) &&
+            (counts?.call(entry.key) ?? true))
           entry.key.cardId,
     }.length;
   }

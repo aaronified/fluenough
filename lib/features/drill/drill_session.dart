@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/foundation.dart';
 
 import '../../app/app_state.dart';
@@ -81,9 +83,11 @@ class DrillSession extends ChangeNotifier {
     this._inputMode = InputMode.script,
     this.recorded = true,
     this.revising = false,
+    math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(!revising || !recorded, 'revising is never recorded'),
        _state = state,
+       _random = random ?? state.random,
        items = List<SessionItem>.unmodifiable(items),
        startedAt = state.now(),
        _showingPassage = items.first.card is QuestionCard {
@@ -91,6 +95,9 @@ class DrillSession extends ChangeNotifier {
   }
 
   final AppState _state;
+
+  /// Shuffles the options of a multiple-choice question (#148).
+  final math.Random _random;
 
   /// The whole session in the order it is drilled, built once at the start.
   final List<SessionItem> items;
@@ -239,11 +246,16 @@ class DrillSession extends ChangeNotifier {
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
         : AnswerGrader(articles: deck.language.articles);
-    final graded = grader.grade(
+    var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
       accepted.first,
       alternates: accepted.sublist(1),
     );
+    // A near miss that is word for word another card's answer is that
+    // other word, not a slip: చేస్తావు for చేస్తాను is the wrong person.
+    if (graded.outcome == AnswerOutcome.closeTypo && _answersAnother(typed)) {
+      graded = const GradedAnswer(AnswerOutcome.wrong, matched: null);
+    }
     final grade = graded.outcome == AnswerOutcome.closeTypo
         ? null
         : graded.outcome.toSm2Grade();
@@ -251,6 +263,32 @@ class DrillSession extends ChangeNotifier {
     if (grade != null) _record(grade, answerGiven: typed);
     _phase = DrillPhase.feedback;
     notifyListeners();
+  }
+
+  /// Whether [typed] is exactly what another card of this deck accepts in
+  /// this mode: a different word or form, so never a typo.
+  bool _answersAnother(String typed) {
+    final exact = AnswerGrader(
+      articles: deck.language.articles,
+      typoDistance: 0,
+      longTypoDistance: 0,
+    );
+    for (final card in deck.cards) {
+      if (card.id == item.card.id) continue;
+      final answers = <String>[
+        if (transliterating && card.reading != null) card.reading!,
+        ...card.acceptedAnswers(item.mode),
+      ];
+      if (answers.isEmpty) continue;
+      final graded = exact.grade(
+        typed,
+        answers.first,
+        alternates: answers.sublist(1),
+      );
+      // Exact, or the same but for an accent or an article.
+      if (graded.outcome != AnswerOutcome.wrong) return true;
+    }
+    return false;
   }
 
   /// "Don't know": shows the answer and records a failure.
@@ -323,6 +361,20 @@ class DrillSession extends ChangeNotifier {
 
   /// The choice made on the current question, from 0, once it is made.
   int? get choice => _choice;
+
+  List<int>? _choiceOrder;
+
+  /// The order the current question's choices are shown in, as their
+  /// indices. Options are shuffled each time a question is shown, so the
+  /// answer is not always in the same place (#148); true and false keep
+  /// their order.
+  List<int> get choiceOrder {
+    final q = question?.question;
+    if (q == null) return const <int>[];
+    if (q.isTrueFalse) return const <int>[0, 1];
+    return _choiceOrder ??= List<int>.generate(q.choiceCount, (i) => i)
+      ..shuffle(_random);
+  }
 
   /// The language the current question is shown in: the best the learner
   /// speaks of those it is written in (#53).
@@ -619,6 +671,7 @@ class DrillSession extends ChangeNotifier {
     _phase = DrillPhase.prompt;
     _answer = null;
     _choice = null;
+    _choiceOrder = null;
     _hearing = false;
     _unheard = null;
     _watch

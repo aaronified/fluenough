@@ -140,8 +140,8 @@ class ReadingDrill extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            for (var i = 0; i < question.choiceCount; i++) ...<Widget>[
-              if (i > 0) const SizedBox(height: 10),
+            for (final (place, i) in session.choiceOrder.indexed) ...<Widget>[
+              if (place > 0) const SizedBox(height: 10),
               _Choice(
                 text: _choiceText(l10n, question, i, shown),
                 code: question.isTrueFalse ? null : shown,

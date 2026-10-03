@@ -12,6 +12,33 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 
 void main() {
+  test('tomorrow counts only what Today will drill: not a pair set aside, '
+      'nor a skill switched off', () async {
+    final state = AppState.test();
+    addTearDown(state.dispose);
+    await state.load();
+    final cards = state.deckById('es-en-core-100')!.cards;
+    // Answered today, so due tomorrow.
+    for (final card in cards.take(3)) {
+      state.progress.record(
+        deckId: 'es-en-core-100',
+        cardId: card.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: state.now(),
+      );
+    }
+    expect(state.dueTomorrow(), 3);
+    state.progress.actOnLeech(
+      (cardId: cards.first.id, mode: DrillMode.recognition),
+      LeechActionKind.setAside,
+      now: state.now(),
+    );
+    expect(state.dueTomorrow(), 2);
+    state.settings.setSkillEnabled(Skill.recognition, false);
+    expect(state.dueTomorrow(), 0);
+  });
+
   TestWidgetsFlutterBinding.ensureInitialized();
 
   Future<AppState> loaded({
