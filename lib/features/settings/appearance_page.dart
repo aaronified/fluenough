@@ -44,11 +44,11 @@ String appearanceSummary(AppLocalizations l10n, SettingsNotifier settings) {
 /// Theme, colour, contrast and card text size.
 ///
 /// Design screen `appearance`. Each control sits behind its feature: the
-/// theme behind `Feature.appearance`, the seeds behind `colourSeeds`,
+/// theme and pure black behind `Feature.appearance`, the seeds behind `colourSeeds`,
 /// wallpaper colours behind `dynamicColour`, contrast behind `contrast` and
 /// the card size behind `cardSize`. All but wallpaper colours are live, and
 /// change [SettingsNotifier]: `FluenoughApp` builds its themes from the
-/// theme, seed and contrast, and drill text follows the card size
+/// theme, pure black, seed and contrast, and drill text follows the card size
 /// (`TargetText.hero`, `TargetText.card`, `AnswerField`). Wallpaper colours
 /// wait for their dependency, and show as incoming.
 ///
@@ -95,6 +95,20 @@ class AppearancePage extends StatelessWidget {
                         icon: icon,
                       ),
                   ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              _Block(
+                child: GroupedTile.toggle(
+                  title: l10n.appearancePureBlack,
+                  subtitle: l10n.appearancePureBlackDesc,
+                  feature: Feature.appearance,
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 20,
+                    vertical: 16,
+                  ),
+                  value: settings.pureBlack,
+                  onChanged: (on) => settings.pureBlack = on,
                 ),
               ),
               const SizedBox(height: 24),
@@ -239,6 +253,7 @@ class _Preview extends StatelessWidget {
         ? AppTheme.dark(
             seed: settings.seed,
             highContrast: settings.highContrast,
+            pureBlack: settings.pureBlack,
           )
         : AppTheme.light(
             seed: settings.seed,
