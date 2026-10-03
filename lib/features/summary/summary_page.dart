@@ -6,6 +6,7 @@ import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/shell_tab.dart';
+import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -27,6 +28,10 @@ const double _rowMaxScale = 1.5;
 /// progress store, never from the design's sample (whose streak, 13, did not
 /// match Today's 12). Done returns to Today; "Learn 5 new cards" starts a
 /// session of new cards only.
+///
+/// After one language's part of Today, it is the break between languages:
+/// that language is done for today, and each other language with something
+/// left is offered next, one at a time.
 class SummaryPage extends StatelessWidget {
   const SummaryPage({super.key, required this.result});
 
@@ -41,9 +46,23 @@ class SummaryPage extends StatelessWidget {
     final scheme = theme.colorScheme;
     final now = state.now();
     final empty = result.total == 0;
-    final learnNew = state
-        .buildSession(const DrillRequest.learnNew(summaryLearnNewCount))
-        .length;
+    final finished = <LanguageInfo>[
+      for (final language in state.languages)
+        if (language.code == result.language) language,
+    ].firstOrNull;
+    final next = finished == null
+        ? const <LanguageInfo>[]
+        : <LanguageInfo>[
+            for (final language in state.todayLanguages)
+              if (language.code != finished.code) language,
+          ];
+    // New cards of every language at once would undo taking them one at a
+    // time, so the offer waits until no other language is.
+    final learnNew = next.isNotEmpty
+        ? 0
+        : state
+              .buildSession(const DrillRequest.learnNew(summaryLearnNewCount))
+              .length;
 
     return Scaffold(
       body: SafeArea(
@@ -58,7 +77,9 @@ class SummaryPage extends StatelessWidget {
                   Semantics(
                     header: true,
                     child: Text(
-                      l10n.summaryTitle,
+                      finished == null
+                          ? l10n.summaryTitle
+                          : l10n.summaryLanguageDone(finished.name),
                       textAlign: TextAlign.center,
                       style: theme.textTheme.headlineLarge!.copyWith(
                         fontWeight: FontWeight.w700,
@@ -104,6 +125,32 @@ class SummaryPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   spacing: 8,
                   children: <Widget>[
+                    if (next.isNotEmpty) ...<Widget>[
+                      Text(
+                        l10n.summaryNextLanguage,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.titleMedium,
+                      ),
+                      for (final language in next)
+                        FilledButton.tonal(
+                          style: AppButtonStyles.secondary(context),
+                          onPressed: () => AppNavigator.nextDrill(
+                            context,
+                            DrillRequest.today(language: language.code),
+                          ),
+                          child: Text(
+                            l10n.summaryStartLanguage(
+                              language.name,
+                              state
+                                  .buildSession(
+                                    DrillRequest.today(language: language.code),
+                                  )
+                                  .length,
+                            ),
+                          ),
+                        ),
+                      const SizedBox(height: 8),
+                    ],
                     FilledButton(
                       style: AppButtonStyles.closing(context),
                       onPressed: () => AppNavigator.backToShell(

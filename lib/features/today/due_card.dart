@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/routes.dart';
-import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
@@ -52,12 +51,16 @@ class DueCard extends StatelessWidget {
                   const SizedBox(height: 20),
                   FilledButton.icon(
                     style: AppButtonStyles.tall(context),
-                    onPressed: () => AppNavigator.startDrill(
-                      context,
-                      const DrillRequest.today(),
-                    ),
+                    onPressed: () =>
+                        AppNavigator.startDrill(context, numbers.start),
                     icon: const Icon(Icons.play_arrow_rounded, size: 24),
-                    label: Text(l10n.todayStartReview),
+                    label: Text(
+                      numbers.languages.length > 1
+                          ? l10n.todayStartLanguage(
+                              numbers.languages.first.name,
+                            )
+                          : l10n.todayStartReview,
+                    ),
                   ),
                 ],
               ),

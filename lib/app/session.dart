@@ -13,11 +13,14 @@ class DrillRequest {
     this.numbers = false,
     this.pastDailyCap = false,
     this.revise = false,
+    this.language,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
-  /// the learner has switched on. What "Start review" runs.
-  const DrillRequest.today() : this();
+  /// the learner has switched on. With [language], only that language's
+  /// part of it: Start review and the summary take a learner through their
+  /// languages one at a time.
+  const DrillRequest.today({String? language}) : this(language: language);
 
   /// One deck: "Review all due", or with [skill] "Practise one skill", or
   /// with [tags] "Only these tags".
@@ -77,11 +80,15 @@ class DrillRequest {
   /// recorded.
   final bool revise;
 
+  /// Only decks in this language, by code; null for every language.
+  final String? language;
+
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
       'tags: $tags, newOnly: $newOnly, newLimit: $newLimit, '
-      'numbers: $numbers, pastDailyCap: $pastDailyCap, revise: $revise)';
+      'numbers: $numbers, pastDailyCap: $pastDailyCap, revise: $revise, '
+      'language: $language)';
 }
 
 /// One answer in a finished session, for the summary.
@@ -111,11 +118,24 @@ class SessionResult {
     required List<SessionAnswer> answers,
     required this.startedAt,
     required this.endedAt,
+    this.language,
   }) : answers = List<SessionAnswer>.unmodifiable(answers);
 
   final List<SessionAnswer> answers;
   final DateTime startedAt;
   final DateTime endedAt;
+
+  /// The language a one-language session was in, by code, so the summary
+  /// can offer the next; null for a session over several or none.
+  final String? language;
+
+  /// This result, as the session in [language] gave it.
+  SessionResult inLanguage(String? language) => SessionResult(
+    answers: answers,
+    startedAt: startedAt,
+    endedAt: endedAt,
+    language: language,
+  );
 
   int get total => answers.length;
 
