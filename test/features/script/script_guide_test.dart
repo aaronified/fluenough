@@ -272,7 +272,7 @@ void main() {
   });
 
   test('the bundled Bengali guide loads, and its reading deck opens the '
-      'path', () async {
+      'script units', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
     final catalog = await DeckCatalog.bundled().load();
     expect(catalog.broken, isEmpty);
@@ -284,7 +284,9 @@ void main() {
       reason: 'Aro: follow the grammar book, which has no knot',
     );
     expect(
-      catalog.paths['bn/en']!.units.first,
+      catalog.paths['bn/en']!.units.firstWhere(
+        (unit) => unit.any((id) => id.contains('-script-')),
+      ),
       contains('bn-en-script-reading'),
     );
     final reading = catalog.decks.singleWhere(

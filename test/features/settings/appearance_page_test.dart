@@ -96,6 +96,17 @@ void main() {
     await tapText(l10n.settingsAppearance);
     expect(find.byType(AppearancePage), findsOneWidget);
 
+    // Below the preview, which a longer first card makes taller.
+    await tester.scrollUntilVisible(
+      find.text(l10n.appearanceSeedClay),
+      200,
+      scrollable: find
+          .descendant(
+            of: find.byType(AppearancePage),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
     await tapText(l10n.appearanceSeedClay);
     await tapText(l10n.appearanceContrastHigh);
     await tester.pageBack();
@@ -186,6 +197,12 @@ void main() {
     usePhone(tester);
     await pumpScreen(tester, const AppearancePage(), themeMode: ThemeMode.dark);
     final swatches = find.byType(ClipOval);
+    // Below the preview, which a longer first card makes taller.
+    await tester.scrollUntilVisible(
+      find.text(l10nOf(tester).appearanceSeedIris),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(swatches, findsNWidgets(ThemeSeed.values.length));
     for (final swatch in swatches.evaluate()) {
       final bands = find.descendant(

@@ -430,12 +430,16 @@ units:
   the course. So a unit ending in `"*"` needs a theme deck, which the
   validator checks. Every bundled path ends each unit that has a theme deck
   in `"*"`, and has a last unit of `"*"` alone.
-- **Order is a teaching decision.** Put a script first, before any deck
-  written in it, grammar with the theme that first needs it, and a
-  [reading deck](#reading-decks) in a unit after the themes it uses.
-- **The first units teach the script, the sounds and how the grammar
-  differs from English,** before any theme, and in every skill. So their
-  short sentences are typed too: they leave out `pos: phrase`. A letter
+- **Order is a teaching decision.** Grammar goes with the theme that first
+  needs it, and a [reading deck](#reading-decks) in a unit after the themes
+  it uses.
+- **A course opens with words, not letters.** Its first units are a few
+  words and basic sentences, the sounds English lacks and how the grammar
+  differs from English, then five more themes; the script comes after
+  those six themes, before the rest. Until the learner is past the script
+  units, answers typed in Latin letters count in full (ADR-0022), and
+  readings show beside the script. The sound and grammar units are typed
+  too: their short sentences leave out `pos: phrase`. A letter
   that sounds exactly like another, such as Bengali ন and ণ, or whose
   sound a recogniser writes another way (ঋ is written রি), is drilled by
   reading and writing only (`modes: [recognition, production]`), since no
