@@ -5,5 +5,8 @@ kind: path
 id: ja-en-path
 language: ja
 native: en
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
 units:
   - [ja-en-hiragana]
+  - ["*"]

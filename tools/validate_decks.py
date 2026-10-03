@@ -50,6 +50,8 @@ KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "sc
          "reading"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
+# Ends a path's unit to take decks the path does not list (#22).
+WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
@@ -141,6 +143,9 @@ class Report:
     # file lists, in order.
     course_deck: tuple[str, str, str] | None = None
     course_path: tuple[str, str, list[str]] | None = None
+    # A path's units that end in the wildcard and list decks of their own,
+    # each as its deck ids, for the check that one of them has a theme.
+    open_units: list[list[str]] = field(default_factory=list)
     # For card ids (ADR-0018): the deck's language and native codes, the
     # cards it writes (id -> what a number deck counts as taught by it), and
     # the cards it lists by ref (id, whether it gives its own native, where).
@@ -977,7 +982,18 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
         if not isinstance(unit, list) or not unit:
             r.error(where, "must be a non-empty list of deck ids")
             continue
+        # The wildcard takes decks the path does not list, such as a deck a
+        # learner adds: its theme's unit, or a last unit of it alone.
+        if WILDCARD in unit:
+            if unit.index(WILDCARD) != len(unit) - 1 or unit.count(WILDCARD) > 1:
+                r.error(where, f"{WILDCARD!r} can only end a unit")
+            elif len(unit) == 1 and i != len(units) - 1:
+                r.error(where, f"a unit of {WILDCARD!r} alone can only be the last")
+            elif len(unit) > 1:
+                r.open_units.append([d for d in unit if d != WILDCARD])
         for deck in unit:
+            if deck == WILDCARD:
+                continue
             if not _is_str(deck) or not ID_RE.fullmatch(deck):
                 r.error(where, f"must list deck ids, got {deck!r}")
             elif deck in listed:
@@ -1300,6 +1316,8 @@ def check_paths_across(reports: list[Report]) -> list[str]:
     once, and only that course's decks."""
     course_of = {rep.course_deck[2]: rep.course_deck[:2]
                  for rep in reports if rep.course_deck is not None}
+    themed = {rep.course_deck[2] for rep in reports
+              if rep.course_deck is not None and rep.theme_key is not None}
     problems = []
     seen: dict[tuple[str, str], Path] = {}
     for rep in reports:
@@ -1323,6 +1341,14 @@ def check_paths_across(reports: list[Report]) -> list[str]:
         for deck in missing:
             problems.append(f"{rep.path}: does not list {deck!r}; every deck of "
                             f"{lang} from {native} is on its path")
+        # A wildcard takes its unit's theme, so its unit needs a theme deck.
+        # Only when the unit's decks are being validated too.
+        for unit in rep.open_units:
+            if all(deck in course_of for deck in unit) and not any(
+                    deck in themed for deck in unit):
+                problems.append(f"{rep.path}: the unit [{', '.join(unit)}] ends in "
+                                f"{WILDCARD!r} but has no theme deck to say which "
+                                f"decks it takes")
 
     # A course with a deck in this repository needs a path. A path not being
     # validated now, beside the deck on disk, counts: validating one deck is

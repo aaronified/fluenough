@@ -20,7 +20,9 @@ import '../core/updates/release_check.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
+import 'added_decks.dart';
 import 'deck_catalog.dart';
+import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
 import 'log_files.dart';
@@ -110,6 +112,7 @@ class AppState extends ChangeNotifier {
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
+    this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this._releases = const NullReleaseCheck(),
     this._installer = const NullApkInstaller(),
@@ -137,7 +140,7 @@ class AppState extends ChangeNotifier {
   final Random random;
 
   /// An app on fakes, for widget tests: the real bundled decks unless
-  /// [decks] is given, no voices unless [tts] has some, empty in-memory
+  /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
   /// progress, links that open unless [links] says otherwise, no network
   /// for the update check unless [releases] answers, no download unless
   /// [installer] does one, a clock fixed at [now] — by default Monday 28
@@ -152,6 +155,8 @@ class AppState extends ChangeNotifier {
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
     LogFiles logFiles = const PickerLogFiles(),
+    DeckFiles deckFiles = const PickerDeckFiles(),
+    DeckStore? addedDecks,
     LinkOpener? links,
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ApkInstaller installer = const NullApkInstaller(),
@@ -162,7 +167,10 @@ class AppState extends ChangeNotifier {
   }) {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
     final state = AppState(
-      catalog: decks == null ? DeckCatalog.bundled() : DeckCatalog(decks),
+      catalog: DeckCatalog(
+        decks ?? AssetDeckSource(),
+        added: addedDecks ?? MemoryDeckStore(),
+      ),
       progress: progress ?? MemoryProgress(),
       tts: tts,
       speech: speech,
@@ -170,6 +178,7 @@ class AppState extends ChangeNotifier {
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
+      deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       releases: releases,
       installer: installer,
@@ -201,6 +210,9 @@ class AppState extends ChangeNotifier {
 
   /// Where the review log's backup is saved and read from (#20).
   final LogFiles logFiles;
+
+  /// Where a deck to add is read from, and its template saved to (#22).
+  final DeckFiles deckFiles;
 
   /// Opens links in the browser, or the app that handles them.
   final LinkOpener links;
@@ -372,6 +384,37 @@ class AppState extends ChangeNotifier {
     _loadError = null;
     notifyListeners();
     return _loading = _load();
+  }
+
+  /// Whether decks can be added: the catalog has somewhere to keep them.
+  bool get canAddDecks => deckCatalog.added != null;
+
+  /// What adding [text], the file [fileName], as a deck would do (#22).
+  DeckCheck checkDeck(String text, String fileName) =>
+      checkAddedDeck(text, fileName: fileName, decks: decks);
+
+  /// Keeps [text], the file of [deck], with the decks added before,
+  /// replacing one with its id, and reads the catalog again. The path puts
+  /// it where its wildcards say (`CoursePath.placing`).
+  Future<void> addDeck(Deck deck, String text) async {
+    await deckCatalog.added!.save(deck.id, text);
+    await _reloadDecks();
+  }
+
+  /// Forgets the added deck [deckId]. Its cards' history stays, and comes
+  /// back if the deck is added again.
+  Future<void> removeDeck(String deckId) async {
+    await deckCatalog.added!.remove(deckId);
+    await _reloadDecks();
+  }
+
+  /// Reads the catalog again without going back to loading, so the screen
+  /// that added or removed a deck stays.
+  Future<void> _reloadDecks() async {
+    deckCatalog.invalidate();
+    _catalog = await deckCatalog.load();
+    notifyListeners();
+    await refreshVoices();
   }
 
   Future<void> _load() async {

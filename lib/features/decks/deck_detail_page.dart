@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/stat_tile.dart';
 import 'deck_content.dart';
 import 'deck_facts.dart';
@@ -52,6 +53,33 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
     on ? _tags.add(tag) : _tags.remove(tag);
   });
 
+  /// Removes a deck the learner added (#22), once they confirm.
+  Future<void> _confirmRemove(DeckEntry entry) async {
+    final l10n = AppLocalizations.of(context)!;
+    final remove = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.deckRemoveTitle(entry.deck.name)),
+        content: Text(l10n.deckRemoveBody),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.commonCancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.deckRemoveConfirm),
+          ),
+        ],
+      ),
+    );
+    if (remove != true || !mounted) return;
+    final state = AppScope.read(context);
+    showAppSnackBar(context, l10n.deckRemoved(entry.deck.name));
+    await Navigator.of(context).maybePop();
+    await state.removeDeck(entry.id);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -88,7 +116,16 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             ? 0
             : state.buildSession(revise).items.length;
         return Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            actions: <Widget>[
+              if (!entry.bundled)
+                IconButton(
+                  tooltip: l10n.deckRemove,
+                  icon: const Icon(Icons.delete_outline),
+                  onPressed: () => _confirmRemove(entry),
+                ),
+            ],
+          ),
           body: ListView(
             padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
             children: <Widget>[
