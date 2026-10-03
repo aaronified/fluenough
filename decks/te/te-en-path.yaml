@@ -7,6 +7,16 @@ kind: path
 id: te-en-path
 language: te
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - te-en-script-vowels
+  - te-en-script-consonants
+  - te-en-script-reading
+  - te-en-script-vowel-signs
+  - te-en-script-conjuncts
+  - te-en-spelling
+  - te-en-reading-diddubatu
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:

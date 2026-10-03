@@ -405,6 +405,7 @@ units:
 | `language` | yes | The code of the language learned, such as `hi`. |
 | `native` | yes | The code of the language it is taught from, such as `en`. |
 | `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids, which may end in the wildcard `"*"`. |
+| `alphabet` | no | The decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
 | `description` | no | Free text. |
 
 - **A unit is what is taught together**: a theme deck and the grammar that

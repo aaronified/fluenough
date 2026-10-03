@@ -7,6 +7,16 @@ kind: path
 id: bn-en-path
 language: bn
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - bn-en-script-vowels
+  - bn-en-script-consonants
+  - bn-en-script-reading
+  - bn-en-script-vowel-signs
+  - bn-en-script-conjuncts
+  - bn-en-reading-sahaj-path-1
+  - bn-en-spelling
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:

@@ -148,7 +148,7 @@ class _DrillPageState extends State<DrillPage> {
     final session = DrillSession(
       state: state,
       items: _items,
-      inputMode: preset?.inputMode ?? InputMode.script,
+      inputMode: preset?.inputMode,
       recorded: !request.revise,
       revising: request.revise,
     );

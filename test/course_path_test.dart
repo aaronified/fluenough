@@ -76,6 +76,31 @@ void main() {
     }
   });
 
+  test('names the decks that need the alphabet, each on the path', () {
+    const units = '  - [hi-en-script-vowels]\n  - [hi-en-market]\n';
+    final path = parseCoursePath(
+      pathFile(units)
+          .replaceFirst('units:', 'alphabet: [hi-en-script-vowels]\nunits:'),
+    );
+    expect(path.alphabet, <String>{'hi-en-script-vowels'});
+    expect(parseCoursePath(pathFile(units)).alphabet, isEmpty);
+    // Kept when added decks are placed.
+    expect(path.placing(const [], (_) => null).alphabet, path.alphabet);
+    expect(
+      () => parseCoursePath(
+        pathFile(units)
+            .replaceFirst('units:', 'alphabet: [hi-en-spelling]\nunits:'),
+      ),
+      throwsA(
+        isA<DeckParseException>().having(
+          (e) => e.message,
+          'message',
+          contains('which the path does not'),
+        ),
+      ),
+    );
+  });
+
   test('a unit may end in "*", and a unit of "*" alone is the last', () {
     final path = parseCoursePath(
       pathFile(
