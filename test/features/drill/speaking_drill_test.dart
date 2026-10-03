@@ -276,6 +276,8 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
+    // Tall enough for every bundled language's row and what is under them.
+    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
     final speech = FixedSpeechEngine(online: <String>{'es'});
     final state = speakingState(speech);
     await state.load();

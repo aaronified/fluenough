@@ -1,0 +1,138 @@
+schema: 1
+id: mr-en-script-conjuncts
+name: "Marathi conjuncts"
+kind: vocab
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Two consonants with no vowel between them join: the first is usually written as a half letter, without its standing line. Four join in shapes of their own, r takes three forms, and Marathi has its own eyelash r. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed, script]
+cards:
+  - id: mr-0087
+    target: "क्ष"
+    native: "k + curled-back sh (ksh)"
+    reading: "ksha"
+    notes: "Its own shape, nothing like its parts: पक्षी (pakshii, bird). Marathi counts it as a letter of the alphabet."
+  - id: mr-0088
+    target: "त्र"
+    native: "t + r (tr)"
+    reading: "tra"
+    notes: "Its own shape, त joined with र: मित्र (mitra, friend). A word that ends in a conjunct keeps its last a in Marathi: mitra, not mitr."
+  - id: mr-0089
+    target: "ज्ञ"
+    native: "j + ny, said dny"
+    reading: "dnya"
+    notes: "Its own shape. Marathi says it 'dny', where Hindi says 'gy': ज्ञान (dnyaan, knowledge). It is a letter of the Marathi alphabet."
+  - id: mr-0090
+    target: "श्र"
+    native: "sh + r (shr)"
+    reading: "shra"
+    notes: "Its own shape: श्रावण (shraavan, the month of the monsoon festivals)."
+  - id: mr-0091
+    target: "प्र"
+    native: "p + r (the r stroke)"
+    reading: "pra"
+    notes: "A र after a consonant is a small slanting stroke at its foot: प्रवास (pravaas, journey)."
+  - id: mr-0092
+    target: "ट्र"
+    native: "curled-back t + r"
+    reading: "tra"
+    notes: "After ट or ड, र is written as a small caret below: ट्रेन (tren, train)."
+  - id: mr-0093
+    target: "र्य"
+    native: "r + y (the reph)"
+    reading: "rya"
+    notes: "A र before another consonant is usually a small hook above that consonant, the reph: सूर्य (suurya, sun)."
+  - id: mr-0094
+    target: "ऱ्य"
+    native: "r + y (the eyelash r)"
+    reading: "rya"
+    modes: [recognition, production]
+    notes: "In many Marathi words where r meets y, the r is a small eyelash instead of a reph: दुसऱ्या (dusryaa, other; second), कैऱ्या (kairyaa, green mangoes). It sounds the same as र्य, so it is drilled by reading and writing only."
+  - id: mr-0095
+    target: "क्क"
+    native: "k + k (half क)"
+    reading: "kka"
+    modes: [recognition, production]
+    notes: "The first क is written without its hook on the right and joins the second: पक्का (pakkaa, firm; certain). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
+  - id: mr-0096
+    target: "च्च"
+    native: "ch + ch (half च)"
+    reading: "chcha"
+    modes: [recognition, production]
+    notes: "Half च joined to च: कच्चा (kachchaa, raw; unripe). Drilled by reading and writing only."
+  - id: mr-0097
+    target: "त्त"
+    native: "t + t (half त)"
+    reading: "tta"
+    modes: [recognition, production]
+    notes: "Half त joined to त: पत्ता (pattaa, address). Drilled by reading and writing only."
+  - id: mr-0098
+    target: "ल्ल"
+    native: "l + l (half ल)"
+    reading: "lla"
+    modes: [recognition, production]
+    notes: "Half ल joined to ल: किल्ला (killaa, fort). Drilled by reading and writing only."
+  - id: mr-0099
+    target: "न्न"
+    native: "n + n (half न)"
+    reading: "nna"
+    modes: [recognition, production]
+    notes: "Half न joined to न: पन्नास (pannaas, fifty). Drilled by reading and writing only."
+  - id: mr-0100
+    target: "प्प"
+    native: "p + p (half प)"
+    reading: "ppa"
+    modes: [recognition, production]
+    notes: "Half प joined to प: गप्पा (gappaa, a chat). Drilled by reading and writing only."
+  - id: mr-0101
+    target: "ट्ट"
+    native: "curled-back t + t (stacked)"
+    reading: "tta"
+    modes: [recognition, production]
+    notes: "ट has no standing line, so it can't be halved: the second ट is stacked below the first. पट्टा (pattaa, strap; belt). Drilled by reading and writing only."
+  - id: mr-0102
+    target: "द्ध"
+    native: "d + dh (stacked)"
+    reading: "ddha"
+    notes: "द stacks too, with ध below it: शुद्ध (shuddha, pure)."
+  - id: mr-0103
+    target: "द्य"
+    native: "d + y"
+    reading: "dya"
+    notes: "द with a small य joined after it: विद्यार्थी (vidyaarthii, student)."
+  - id: mr-0104
+    target: "स्त"
+    native: "s + t (half स)"
+    reading: "sta"
+    notes: "Half स joined to त: रस्ता (rastaa, road)."
+  - id: mr-0105
+    target: "स्थ"
+    native: "s + th (half स)"
+    reading: "stha"
+    notes: "Half स joined to थ: स्थानक (sthaanak, station)."
+  - id: mr-0106
+    target: "क्त"
+    native: "k + t"
+    reading: "kta"
+    notes: "क without its hook, joined to त: फक्त (phakta, only). The final a stays after a conjunct."
+  - id: mr-0107
+    target: "श्च"
+    native: "sh + ch"
+    reading: "shcha"
+    notes: "Half श joined to च: पश्चिम (pashchim, west)."
+  - id: mr-0108
+    target: "म्ह"
+    native: "m with a breath (mh)"
+    reading: "mha"
+    notes: "Marathi joins h to m, n and l to give them a breath: तुम्ही (tumhii, you), आम्ही (aamhii, we)."
+  - id: mr-0109
+    target: "न्ह"
+    native: "n with a breath (nh)"
+    reading: "nha"
+    notes: "Half न joined to ह: उन्हाळा (unhaalaa, summer)."
+  - id: mr-0110
+    target: "ल्ह"
+    native: "l with a breath (lh)"
+    reading: "lha"
+    notes: "Half ल joined to ह: कोल्हा (kolhaa, jackal), and the city of कोल्हापूर (kolhaapuur)."

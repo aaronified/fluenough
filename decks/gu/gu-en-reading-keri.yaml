@@ -1,0 +1,196 @@
+schema: 1
+id: gu-en-reading-keri
+name: "Reading: Mangoes for lunch"
+kind: reading
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Written for this deck, and released under CC0"
+description: "A short, simple story written for this deck and released under CC0, not quoted from any book: Meena and her grandmother buy mangoes at the market, bargain, and make mango pulp for the family's lunch. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: gu-keri-01
+    title: "To the market"
+    theme: market
+    sentences:
+      - text: "આજે રવિવાર છે."
+        reading: "aaje ravivaar chhe."
+      - text: "મીના અને તેનાં દાદી બજારમાં જાય છે."
+        reading: "miinaa ane tenaan daadii bajaarmaan jaay chhe."
+      - text: "બજારમાં બહુ ભીડ છે."
+        reading: "bajaarmaan bahu bhiid chhe."
+      - text: "દાદીને કેરી જોઈએ છે."
+        reading: "daadiine kerii joiie chhe."
+      - text: "દાદી પૂછે છે, “કેરી કેટલાની છે?”"
+        reading: "daadii puuchhe chhe, “kerii ketlaanii chhe?”"
+      - text: "વેપારી કહે છે, “એકસો વીસ રૂપિયે કિલો.”"
+        reading: "vepaarii kahe chhe, “ekso viis ruupiye kilo.”"
+    glossary:
+      - word: "તેનાં"
+        modern: "તેનાં"
+        reading: "tenaan"
+        meaning: { en: "her (with respect)" }
+        note: { en: "'her' takes the plural -આં because the grandmother is spoken of with respect" }
+      - word: "ભીડ"
+        modern: "ભીડ"
+        reading: "bhiid"
+        meaning: { en: "a crowd" }
+      - word: "રૂપિયે"
+        modern: "રૂપિયે"
+        reading: "ruupiye"
+        meaning: { en: "at ... rupees (a price per unit)" }
+        note: { en: "-એ on a price gives the rate: સો રૂપિયે કિલો, a hundred rupees a kilo" }
+    questions:
+      - id: gu-0668
+        prompt: { en: "What day is it?" }
+        options:
+          - { en: "Sunday" }
+          - { en: "Monday" }
+          - { en: "Saturday" }
+        answer: 1
+      - id: gu-0669
+        prompt: { en: "Grandma wants mangoes." }
+        answer: true
+      - id: gu-0670
+        prompt: { en: "What price does the seller ask?" }
+        options:
+          - { en: "A hundred rupees a kilo" }
+          - { en: "A hundred and twenty rupees a kilo" }
+          - { en: "Two hundred rupees a kilo" }
+        answer: 2
+  - id: gu-keri-02
+    title: "A good price"
+    theme: market
+    sentences:
+      - text: "“બહુ મોંઘી છે, ભાઈ.”"
+        reading: "“bahu monghii chhe, bhaaii.”"
+      - text: "“સો રૂપિયે આપો.”"
+        reading: "“so ruupiye aapo.”"
+      - text: "વેપારી હસે છે."
+        reading: "vepaarii hase chhe."
+      - text: "“ભલે બા, સો રૂપિયે.”"
+        reading: "“bhale baa, so ruupiye.”"
+      - text: "મીના બે કિલો કેરી થેલીમાં મૂકે છે."
+        reading: "miinaa be kilo kerii theliimaan muuke chhe."
+    glossary:
+      - word: "હસે"
+        modern: "હસે"
+        reading: "hase"
+        meaning: { en: "laughs; smiles" }
+        note: { en: "from હસવું, to laugh" }
+      - word: "ભલે"
+        modern: "ભલે"
+        reading: "bhale"
+        meaning: { en: "all right; fine" }
+      - word: "મૂકે"
+        modern: "મૂકે"
+        reading: "muuke"
+        meaning: { en: "puts" }
+        note: { en: "from મૂકવું, to put" }
+    questions:
+      - id: gu-0671
+        prompt: { en: "Grandma thinks the mangoes are cheap." }
+        answer: false
+      - id: gu-0672
+        prompt: { en: "What price do they settle on?" }
+        options:
+          - { en: "A hundred rupees a kilo" }
+          - { en: "A hundred and twenty rupees a kilo" }
+          - { en: "Two hundred rupees a kilo" }
+        answer: 1
+      - id: gu-0673
+        prompt: { en: "How many kilos does Meena put in the bag?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 2
+  - id: gu-keri-03
+    title: "On the way home"
+    theme: transport
+    sentences:
+      - text: "ઘરે જવા માટે તેઓ રિક્ષા લે છે."
+        reading: "ghare javaa maate teo rikshaa le chhe."
+      - text: "રસ્તામાં મીના પૂછે છે, “દાદી, આપણે રસ બનાવીશું?”"
+        reading: "rastaamaan miinaa puuchhe chhe, “daadii, aapne ras banaaviishun?”"
+      - text: "“હા, અને સાથે પૂરી પણ.”"
+        reading: "“haa, ane saathe puurii pan.”"
+      - text: "મીના ખુશ થઈ જાય છે."
+        reading: "miinaa khush thaii jaay chhe."
+    glossary:
+      - word: "બનાવીશું"
+        modern: "બનાવીશું"
+        reading: "banaaviishun"
+        meaning: { en: "shall we make; we will make" }
+        note: { en: "the future of બનાવવું, to make, with આપણે" }
+      - word: "પૂરી"
+        modern: "પૂરી"
+        reading: "puurii"
+        meaning: { en: "puri, a small puffed fried bread" }
+      - word: "ખુશ"
+        modern: "ખુશ"
+        reading: "khush"
+        meaning: { en: "happy" }
+    questions:
+      - id: gu-0674
+        prompt: { en: "How do they go home?" }
+        options:
+          - { en: "By bus" }
+          - { en: "By auto-rickshaw" }
+          - { en: "On foot" }
+        answer: 2
+      - id: gu-0675
+        prompt: { en: "Meena wants to make mango pulp." }
+        answer: true
+      - id: gu-0676
+        prompt: { en: "What will they eat with it?" }
+        options:
+          - { en: "Rice" }
+          - { en: "Puris" }
+          - { en: "Chapatis" }
+        answer: 2
+  - id: gu-keri-04
+    title: "Lunch"
+    theme: eating-out
+    sentences:
+      - text: "બપોરે આખું કુટુંબ સાથે જમે છે."
+        reading: "bapore aakhun kutumb saathe jame chhe."
+      - text: "પપ્પા કહે છે, “રસ બહુ મીઠો છે!”"
+        reading: "pappaa kahe chhe, “ras bahu miitho chhe!”"
+      - text: "દાદી હસીને કહે છે, “કેરી મીનાએ પસંદ કરી હતી.”"
+        reading: "daadii hasiine kahe chhe, “kerii miinaae pasand karii hatii.”"
+      - text: "સાંજે મીના બે કેરી પાડોશીને આપે છે."
+        reading: "saanje miinaa be kerii paadoshiine aape chhe."
+    glossary:
+      - word: "આખું"
+        modern: "આખું"
+        reading: "aakhun"
+        meaning: { en: "whole; the whole" }
+      - word: "હસીને"
+        modern: "હસીને"
+        reading: "hasiine"
+        meaning: { en: "with a smile; laughing" }
+        note: { en: "-ઈને on a stem is 'having done': હસીને કહે છે, says with a smile" }
+      - word: "પસંદ"
+        modern: "પસંદ"
+        reading: "pasand"
+        meaning: { en: "choice; liking" }
+        note: { en: "પસંદ કરવું, to choose; કરી હતી is feminine because કેરી is" }
+    questions:
+      - id: gu-0677
+        prompt: { en: "Who says the mango pulp is very sweet?" }
+        options:
+          - { en: "Grandma" }
+          - { en: "Dad" }
+          - { en: "Meena" }
+        answer: 2
+      - id: gu-0678
+        prompt: { en: "Who chose the mangoes?" }
+        options:
+          - { en: "Meena" }
+          - { en: "Grandma" }
+          - { en: "The seller" }
+        answer: 1
+      - id: gu-0679
+        prompt: { en: "In the evening Meena gives mangoes to a neighbour." }
+        answer: true

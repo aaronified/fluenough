@@ -1,0 +1,144 @@
+schema: 1
+id: mr-en-time
+name: "Time and days"
+kind: vocab
+theme: time
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Today and tomorrow, the parts of the day, telling the time, and the days of the week. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: mr-0474
+    target: "आज"
+    native: "today"
+    reading: "aaj"
+    pos: "adv"
+  - id: mr-0475
+    target: "उद्या"
+    native: "tomorrow"
+    reading: "udyaa"
+    pos: "adv"
+    notes: "Unlike Hindi, which says कल for both, Marathi has a word of its own for each: उद्या tomorrow, काल yesterday."
+  - ref: mr-0119
+    notes: "Only 'yesterday'. The day before yesterday is परवा (parvaa), which is also the day after tomorrow."
+  - id: mr-0476
+    target: "आता"
+    native: "now"
+    reading: "aataa"
+    pos: "adv"
+    notes: "आत्ता (aattaa), right now."
+  - id: mr-0477
+    target: "सकाळ"
+    native: "morning"
+    reading: "sakaal"
+    pos: "noun"
+    gender: "f"
+    notes: "सकाळी (sakaalii), in the morning: सकाळी सात वाजता, at seven in the morning."
+  - id: mr-0478
+    target: "दुपार"
+    native: "afternoon; midday"
+    reading: "dupaar"
+    pos: "noun"
+    gender: "f"
+    notes: "दुपारी (dupaarii), in the afternoon. Many shops close for a while after lunch."
+  - id: mr-0479
+    target: "संध्याकाळ"
+    native: "evening"
+    reading: "sandhyaakaal"
+    pos: "noun"
+    gender: "f"
+    notes: "संध्याकाळी (sandhyaakaalii), in the evening."
+  - id: mr-0480
+    target: "रात्र"
+    native: "night"
+    reading: "raatra"
+    pos: "noun"
+    gender: "f"
+    notes: "रात्री (raatrii), at night."
+  - ref: mr-0122
+    notes: "Time, and a time: आता वेळ नाही (aataa vel naahii), there's no time now; जेवणाची वेळ, mealtime."
+  - id: mr-0481
+    target: "वाजता"
+    native: "at … o'clock"
+    reading: "vaajtaa"
+    pos: "other"
+    notes: "After the number: चार वाजता (chaar vaajtaa), at four o'clock. 'It's four o'clock' is चार वाजले (chaar vaajle), 'four have struck'."
+  - id: mr-0482
+    target: "तास"
+    native: "hour"
+    reading: "taas"
+    pos: "noun"
+    gender: "m"
+    notes: "दोन तास (don taas), two hours. A lesson at school is a तास too."
+  - id: mr-0483
+    target: "मिनिट"
+    native: "minute"
+    reading: "minit"
+    pos: "noun"
+    gender: "n"
+    notes: "पाच मिनिटे (paach minite), five minutes. एक मिनिट!, just a minute!"
+  - id: mr-0484
+    target: "साडेचार"
+    native: "half past four; 4½"
+    reading: "saadechaar"
+    pos: "other"
+    notes: "साडे + the hour: साडेपाच (saadepaach), 5:30. But 1:30 is दीड (diid) and 2:30 अडीच (adiich). A quarter past is सव्वा, a quarter to पावणे: सव्वाचार, 4:15; पावणेचार, 3:45."
+  - id: mr-0485
+    target: "दिवस"
+    native: "day"
+    reading: "divas"
+    pos: "noun"
+    gender: "m"
+    notes: "दिवसा (divsaa), by day. दर दिवशी (dar divshii), every day."
+  - id: mr-0486
+    target: "आठवडा"
+    native: "week"
+    reading: "aathvadaa"
+    pos: "noun"
+    gender: "m"
+    notes: "पुढच्या आठवड्यात (pudhchyaa aathvadyaat), next week."
+  - id: mr-0487
+    target: "सोमवार"
+    native: "Monday"
+    reading: "somvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "The days are named after the moon and the planets, as in English: सोम, the moon. On Monday: सोमवारी (somvaarii)."
+  - id: mr-0488
+    target: "मंगळवार"
+    native: "Tuesday"
+    reading: "mangalvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "मंगळ, Mars, with the curled-back ळ."
+  - id: mr-0489
+    target: "बुधवार"
+    native: "Wednesday"
+    reading: "budhvaar"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0490
+    target: "गुरुवार"
+    native: "Thursday"
+    reading: "guruvaar"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0491
+    target: "शुक्रवार"
+    native: "Friday"
+    reading: "shukravaar"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0492
+    target: "शनिवार"
+    native: "Saturday"
+    reading: "shanivaar"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0493
+    target: "रविवार"
+    native: "Sunday"
+    reading: "ravivaar"
+    pos: "noun"
+    gender: "m"

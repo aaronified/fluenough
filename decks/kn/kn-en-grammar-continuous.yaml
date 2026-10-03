@@ -1,0 +1,52 @@
+schema: 1
+id: kn-en-grammar-continuous
+name: "Present continuous"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I am doing, she is coming: what is happening now. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Present continuous"
+  slot_name: "person"
+  slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb with -ಉತ್ತ- and then ಇರು, to be: ಮಾಡುತ್ತಿದ್ದೇನೆ, 'I am doing'. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು, ಅವಳು ಬಂದಳು, ಅದು ಬಂತು. ನೀವು, plural or respectful, takes the plural, and so does ಅವರು, they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
+  entries:
+    - lemma: "ಮಾಡು"
+      key: maadu
+      gloss: "to do"
+      forms:
+        "ನಾನು": ["ಮಾಡುತ್ತಿದ್ದೇನೆ", "ಮಾಡ್ತಿದ್ದೀನಿ"]
+        "ನಾವು": ["ಮಾಡುತ್ತಿದ್ದೇವೆ", "ಮಾಡ್ತಿದ್ದೀವಿ"]
+        "ನೀನು": ["ಮಾಡುತ್ತಿದ್ದೀಯ", "ಮಾಡ್ತಿದ್ದೀಯ"]
+        "ನೀವು": ["ಮಾಡುತ್ತಿದ್ದೀರಿ", "ಮಾಡ್ತಿದ್ದೀರಿ"]
+        "ಅವನು": ["ಮಾಡುತ್ತಿದ್ದಾನೆ", "ಮಾಡ್ತಿದ್ದಾನೆ"]
+        "ಅವಳು": ["ಮಾಡುತ್ತಿದ್ದಾಳೆ", "ಮಾಡ್ತಿದ್ದಾಳೆ"]
+        "ಅದು": ["ಮಾಡುತ್ತಿದೆ", "ಮಾಡ್ತಿದೆ"]
+        "ಅವರು": ["ಮಾಡುತ್ತಿದ್ದಾರೆ", "ಮಾಡ್ತಿದ್ದಾರೆ"]
+    - lemma: "ಹೋಗು"
+      key: hoogu
+      gloss: "to go"
+      forms:
+        "ನಾನು": ["ಹೋಗುತ್ತಿದ್ದೇನೆ", "ಹೋಗ್ತಿದ್ದೀನಿ"]
+        "ನಾವು": ["ಹೋಗುತ್ತಿದ್ದೇವೆ", "ಹೋಗ್ತಿದ್ದೀವಿ"]
+        "ನೀನು": ["ಹೋಗುತ್ತಿದ್ದೀಯ", "ಹೋಗ್ತಿದ್ದೀಯ"]
+        "ನೀವು": ["ಹೋಗುತ್ತಿದ್ದೀರಿ", "ಹೋಗ್ತಿದ್ದೀರಿ"]
+        "ಅವನು": ["ಹೋಗುತ್ತಿದ್ದಾನೆ", "ಹೋಗ್ತಿದ್ದಾನೆ"]
+        "ಅವಳು": ["ಹೋಗುತ್ತಿದ್ದಾಳೆ", "ಹೋಗ್ತಿದ್ದಾಳೆ"]
+        "ಅದು": ["ಹೋಗುತ್ತಿದೆ", "ಹೋಗ್ತಿದೆ"]
+        "ಅವರು": ["ಹೋಗುತ್ತಿದ್ದಾರೆ", "ಹೋಗ್ತಿದ್ದಾರೆ"]
+    - lemma: "ಬರು"
+      key: baru
+      gloss: "to come"
+      forms:
+        "ನಾನು": ["ಬರುತ್ತಿದ್ದೇನೆ", "ಬರ್ತಿದ್ದೀನಿ"]
+        "ನಾವು": ["ಬರುತ್ತಿದ್ದೇವೆ", "ಬರ್ತಿದ್ದೀವಿ"]
+        "ನೀನು": ["ಬರುತ್ತಿದ್ದೀಯ", "ಬರ್ತಿದ್ದೀಯ"]
+        "ನೀವು": ["ಬರುತ್ತಿದ್ದೀರಿ", "ಬರ್ತಿದ್ದೀರಿ"]
+        "ಅವನು": ["ಬರುತ್ತಿದ್ದಾನೆ", "ಬರ್ತಿದ್ದಾನೆ"]
+        "ಅವಳು": ["ಬರುತ್ತಿದ್ದಾಳೆ", "ಬರ್ತಿದ್ದಾಳೆ"]
+        "ಅದು": ["ಬರುತ್ತಿದೆ", "ಬರ್ತಿದೆ"]
+        "ಅವರು": ["ಬರುತ್ತಿದ್ದಾರೆ", "ಬರ್ತಿದ್ದಾರೆ"]

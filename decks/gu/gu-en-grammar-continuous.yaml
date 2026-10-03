@@ -1,0 +1,76 @@
+schema: 1
+id: gu-en-grammar-continuous
+name: "Present: I do, I'm doing"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Gujarati's present does for both 'I go' and 'I am going': the verb, then છું, છે or છો. For 'right now', -ઈ રહ્યો છું. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Present"
+  slot_name: "person"
+  slots: ["હું", "તું", "તે", "અમે", "તમે", "તેઓ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem, an ending for the person, then the present of 'be': હું કરું છું, તું કરે છે, અમે કરીએ છીએ, તમે કરો છો. The same form is 'I do' and 'I am doing'. To stress 'right now', put -ઈ on the stem and add રહ્યો (a man), રહી (a woman) or રહ્યું (a thing): હું કરી રહ્યો છું."
+  entries:
+    - lemma: "કરવું"
+      key: karvun
+      gloss: "to do"
+      forms:
+        "હું": "કરું છું"
+        "તું": "કરે છે"
+        "તે": "કરે છે"
+        "અમે": "કરીએ છીએ"
+        "તમે": "કરો છો"
+        "તેઓ": "કરે છે"
+    - lemma: "જવું"
+      key: javun
+      gloss: "to go"
+      forms:
+        "હું": "જાઉં છું"
+        "તું": "જાય છે"
+        "તે": "જાય છે"
+        "અમે": "જઈએ છીએ"
+        "તમે": "જાઓ છો"
+        "તેઓ": "જાય છે"
+    - lemma: "આવવું"
+      key: aavvun
+      gloss: "to come"
+      forms:
+        "હું": "આવું છું"
+        "તું": "આવે છે"
+        "તે": "આવે છે"
+        "અમે": "આવીએ છીએ"
+        "તમે": "આવો છો"
+        "તેઓ": "આવે છે"
+    - lemma: "ખાવું"
+      key: khaavun
+      gloss: "to eat"
+      forms:
+        "હું": "ખાઉં છું"
+        "તું": "ખાય છે"
+        "તે": "ખાય છે"
+        "અમે": "ખાઈએ છીએ"
+        "તમે": "ખાઓ છો"
+        "તેઓ": "ખાય છે"
+    - lemma: "રહેવું"
+      key: rahevun
+      gloss: "to live; to stay"
+      forms:
+        "હું": "રહું છું"
+        "તું": "રહે છે"
+        "તે": "રહે છે"
+        "અમે": "રહીએ છીએ"
+        "તમે": "રહો છો"
+        "તેઓ": "રહે છે"
+    - lemma: "કરવું, right now"
+      key: karii-rahyo
+      gloss: "to be doing, said of a man or men"
+      forms:
+        "હું": "કરી રહ્યો છું"
+        "તું": "કરી રહ્યો છે"
+        "તે": "કરી રહ્યો છે"
+        "અમે": "કરી રહ્યા છીએ"
+        "તમે": "કરી રહ્યા છો"
+        "તેઓ": "કરી રહ્યા છે"

@@ -1,0 +1,86 @@
+schema: 1
+id: gu-en-grammar-pronouns
+name: "Pronouns"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, and the forms they take with -ને (to), -નું (of) and -એ (the doer in the past). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["to or for (-ને)", "of (-નું, before a neuter noun)", "the doer in the past (-એ)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "'Of' agrees with what is owned: મારો ભાઈ, મારી બહેન, મારું ઘર. The -એ form is the doer of a past verb with an object: મેં ખાધું, I ate. તે and એ are both he, she or it; આ is someone near. અમે leaves out the person you talk to, આપણે takes them in."
+  entries:
+    - lemma: "હું"
+      key: hun
+      gloss: "I"
+      forms:
+        "to or for (-ને)": "મને"
+        "of (-નું, before a neuter noun)": "મારું"
+        "the doer in the past (-એ)": "મેં"
+    - lemma: "તું"
+      key: tun
+      gloss: "you, familiar"
+      forms:
+        "to or for (-ને)": "તને"
+        "of (-નું, before a neuter noun)": "તારું"
+        "the doer in the past (-એ)": "તેં"
+    - lemma: "તમે"
+      key: tame
+      gloss: "you, respectful or plural"
+      forms:
+        "to or for (-ને)": "તમને"
+        "of (-નું, before a neuter noun)": "તમારું"
+        "the doer in the past (-એ)": "તમે"
+    - lemma: "આપ"
+      key: aap
+      gloss: "you, very formal"
+      forms:
+        "to or for (-ને)": "આપને"
+        "of (-નું, before a neuter noun)": "આપનું"
+        "the doer in the past (-એ)": "આપે"
+    - lemma: "તે"
+      key: te
+      gloss: "he, she, it"
+      forms:
+        "to or for (-ને)": "તેને"
+        "of (-નું, before a neuter noun)": "તેનું"
+        "the doer in the past (-એ)": "તેણે"
+    - lemma: "એ"
+      key: e
+      gloss: "he, she, it: that one"
+      forms:
+        "to or for (-ને)": "એને"
+        "of (-નું, before a neuter noun)": "એનું"
+        "the doer in the past (-એ)": "એણે"
+    - lemma: "આ"
+      key: aa
+      gloss: "he, she, it: this one, near"
+      forms:
+        "to or for (-ને)": "આને"
+        "of (-નું, before a neuter noun)": "આનું"
+        "the doer in the past (-એ)": "આણે"
+    - lemma: "અમે"
+      key: ame
+      gloss: "we, not you"
+      forms:
+        "to or for (-ને)": "અમને"
+        "of (-નું, before a neuter noun)": "અમારું"
+        "the doer in the past (-એ)": "અમે"
+    - lemma: "આપણે"
+      key: aapne
+      gloss: "we, you and I"
+      forms:
+        "to or for (-ને)": "આપણને"
+        "of (-નું, before a neuter noun)": "આપણું"
+        "the doer in the past (-એ)": "આપણે"
+    - lemma: "તેઓ"
+      key: teo
+      gloss: "they; he or she, with respect"
+      forms:
+        "to or for (-ને)": "તેમને"
+        "of (-નું, before a neuter noun)": "તેમનું"
+        "the doer in the past (-એ)": "તેમણે"

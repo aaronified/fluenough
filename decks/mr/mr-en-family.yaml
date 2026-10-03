@@ -1,0 +1,135 @@
+schema: 1
+id: mr-en-family
+name: "Family"
+kind: vocab
+theme: family
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, each with its own word. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: mr-0217
+    target: "आई"
+    native: "mother"
+    reading: "aaii"
+    pos: "noun"
+    gender: "f"
+    notes: "Most children call their mother आई, and say तू to her."
+  - id: mr-0218
+    target: "वडील"
+    native: "father"
+    reading: "vadiil"
+    pos: "noun"
+    gender: "m"
+    notes: "Respectful, and plural in form: माझे वडील (maajhe vadiil), my father. Speaking to him, most say बाबा."
+  - id: mr-0219
+    target: "बाबा"
+    native: "dad; father"
+    reading: "baabaa"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0220
+    target: "भाऊ"
+    native: "brother"
+    reading: "bhaau"
+    pos: "noun"
+    gender: "m"
+    notes: "An elder brother is called दादा. In many places भाऊ is also any man, and a title after a name."
+  - id: mr-0221
+    target: "बहीण"
+    native: "sister"
+    reading: "bahiin"
+    pos: "noun"
+    gender: "f"
+    notes: "An elder sister is called ताई. Plural: बहिणी (bahinii)."
+  - id: mr-0222
+    target: "मुलगा"
+    native: "son; boy"
+    reading: "mulgaa"
+    pos: "noun"
+    gender: "m"
+    notes: "Plural मुलगे (mulge)."
+  - id: mr-0223
+    target: "मुलगी"
+    native: "daughter; girl"
+    reading: "mulgii"
+    pos: "noun"
+    gender: "f"
+    notes: "Plural मुली (mulii)."
+  - id: mr-0224
+    target: "मूल"
+    native: "child"
+    reading: "muul"
+    pos: "noun"
+    gender: "n"
+    notes: "Neuter, boy or girl. Plural मुले (mule), in speech मुलं (mulan): तुम्हाला मुले आहेत का? Do you have children?"
+  - id: mr-0225
+    target: "आई-वडील"
+    native: "parents"
+    reading: "aaii-vadiil"
+    pos: "noun"
+    gender: "m"
+    notes: "'Mother-father', plural: माझे आई-वडील पुण्यात राहतात, my parents live in Pune."
+  - id: mr-0226
+    target: "नवरा"
+    native: "husband"
+    reading: "navraa"
+    pos: "noun"
+    gender: "m"
+    notes: "Formally पती (patii)."
+  - id: mr-0227
+    target: "बायको"
+    native: "wife"
+    reading: "baayko"
+    pos: "noun"
+    gender: "f"
+    notes: "Formally पत्नी (patnii)."
+  - ref: mr-0197
+    notes: "Grandmother on either side: Marathi does not tell them apart."
+  - ref: mr-0198
+    notes: "Grandfather on either side."
+  - ref: mr-0194
+    notes: "Your father's brother. Your mother's brother is मामा."
+  - ref: mr-0195
+    notes: "काकाची बायको, the wife of your father's brother."
+  - id: mr-0228
+    target: "आत्या"
+    native: "aunt (father's sister)"
+    reading: "aatyaa"
+    pos: "noun"
+    gender: "f"
+  - id: mr-0229
+    target: "मामा"
+    native: "uncle (mother's brother)"
+    reading: "maamaa"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0230
+    target: "मामी"
+    native: "aunt (mother's brother's wife)"
+    reading: "maamii"
+    pos: "noun"
+    gender: "f"
+  - ref: mr-0196
+    notes: "Your mother's sister. Her husband is your काका too, or मावसा (maavsaa)."
+  - id: mr-0231
+    target: "कुटुंब"
+    native: "family"
+    reading: "kutumb"
+    pos: "noun"
+    gender: "n"
+    notes: "In speech also घरचे (gharche), 'the people of the house'."
+  - id: mr-0232
+    target: "सासू"
+    native: "mother-in-law"
+    reading: "saasuu"
+    pos: "noun"
+    gender: "f"
+  - id: mr-0233
+    target: "सासरे"
+    native: "father-in-law"
+    reading: "saasre"
+    pos: "noun"
+    gender: "m"
+    notes: "Respectful and plural in form, like वडील."

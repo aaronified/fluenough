@@ -1,0 +1,52 @@
+schema: 1
+id: kn-en-grammar-future
+name: "Future and habit"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I will go, she eats every day: one tense for both. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Future and habit"
+  slot_name: "person"
+  slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The same form is the future and the habit: ನಾನು ಕಾಫಿ ಕುಡಿಯುತ್ತೇನೆ is 'I will drink coffee' and 'I drink coffee'. Speech shortens -ಉತ್ತ- to -ತ್-: ಮಾಡ್ತೀನಿ. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು, ಅವಳು ಬಂದಳು, ಅದು ಬಂತು. ನೀವು, plural or respectful, takes the plural, and so does ಅವರು, they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
+  entries:
+    - lemma: "ಮಾಡು"
+      key: maadu
+      gloss: "to do"
+      forms:
+        "ನಾನು": ["ಮಾಡುತ್ತೇನೆ", "ಮಾಡ್ತೀನಿ"]
+        "ನಾವು": ["ಮಾಡುತ್ತೇವೆ", "ಮಾಡ್ತೀವಿ"]
+        "ನೀನು": ["ಮಾಡುತ್ತೀಯ", "ಮಾಡ್ತೀಯ"]
+        "ನೀವು": ["ಮಾಡುತ್ತೀರಿ", "ಮಾಡ್ತೀರಿ"]
+        "ಅವನು": ["ಮಾಡುತ್ತಾನೆ", "ಮಾಡ್ತಾನೆ"]
+        "ಅವಳು": ["ಮಾಡುತ್ತಾಳೆ", "ಮಾಡ್ತಾಳೆ"]
+        "ಅದು": ["ಮಾಡುತ್ತದೆ", "ಮಾಡುತ್ತೆ"]
+        "ಅವರು": ["ಮಾಡುತ್ತಾರೆ", "ಮಾಡ್ತಾರೆ"]
+    - lemma: "ಹೋಗು"
+      key: hoogu
+      gloss: "to go"
+      forms:
+        "ನಾನು": ["ಹೋಗುತ್ತೇನೆ", "ಹೋಗ್ತೀನಿ"]
+        "ನಾವು": ["ಹೋಗುತ್ತೇವೆ", "ಹೋಗ್ತೀವಿ"]
+        "ನೀನು": ["ಹೋಗುತ್ತೀಯ", "ಹೋಗ್ತೀಯ"]
+        "ನೀವು": ["ಹೋಗುತ್ತೀರಿ", "ಹೋಗ್ತೀರಿ"]
+        "ಅವನು": ["ಹೋಗುತ್ತಾನೆ", "ಹೋಗ್ತಾನೆ"]
+        "ಅವಳು": ["ಹೋಗುತ್ತಾಳೆ", "ಹೋಗ್ತಾಳೆ"]
+        "ಅದು": ["ಹೋಗುತ್ತದೆ", "ಹೋಗುತ್ತೆ"]
+        "ಅವರು": ["ಹೋಗುತ್ತಾರೆ", "ಹೋಗ್ತಾರೆ"]
+    - lemma: "ಬರು"
+      key: baru
+      gloss: "to come"
+      forms:
+        "ನಾನು": ["ಬರುತ್ತೇನೆ", "ಬರ್ತೀನಿ"]
+        "ನಾವು": ["ಬರುತ್ತೇವೆ", "ಬರ್ತೀವಿ"]
+        "ನೀನು": ["ಬರುತ್ತೀಯ", "ಬರ್ತೀಯ"]
+        "ನೀವು": ["ಬರುತ್ತೀರಿ", "ಬರ್ತೀರಿ"]
+        "ಅವನು": ["ಬರುತ್ತಾನೆ", "ಬರ್ತಾನೆ"]
+        "ಅವಳು": ["ಬರುತ್ತಾಳೆ", "ಬರ್ತಾಳೆ"]
+        "ಅದು": ["ಬರುತ್ತದೆ", "ಬರುತ್ತೆ"]
+        "ಅವರು": ["ಬರುತ್ತಾರೆ", "ಬರ್ತಾರೆ"]

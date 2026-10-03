@@ -1,0 +1,84 @@
+# How Kannada script works: the recurring features a learner from English
+# misses, shown before the first letters and from a script deck's Tips.
+# See ADR-0016 and docs/DECK-FORMAT.md.
+schema: 1
+kind: script
+id: kn-script
+language: kn
+name: "How Kannada script works"
+intro: "Kannada script is built from a few ideas that come back in letter after letter. It is a close cousin of Telugu script, and they look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  - id: tick
+    name: "The tick on top"
+    term: "ತಲೆಕಟ್ಟು"
+    reading: "talekattu"
+    example: "ಕ"
+    text: "Many letters wear a small tick on top, the talekattu, 'head knot'. Some vowel signs take its place, so a letter's top changes with its vowel: ಕ, ಕಿ, ಕೆ."
+    letters: ["ಕ", "ಗ", "ಚ", "ತ", "ನ"]
+  - id: rounds
+    name: "Letters built from rounds"
+    example: "ಠ"
+    text: "Most letters are curves and circles. The usual explanation is that they were scratched into palm leaves with a stylus, and a straight line along the leaf would split it. Letters often differ by a small detail inside the round, so look closely: ಬ and ಭ, ದ and ಧ."
+    letters: ["ಒ", "ಠ", "ದ", "ಬ", "ಳ"]
+  - id: breath-mark
+    name: "A breathy letter is its partner with a mark"
+    example: "ಧ"
+    text: "Often the letter with a breath after it is its plain partner with a small extra stroke, usually below: ದ and ಧ, ತ and ಥ, ಡ and ಢ."
+    letters: ["ದ", "ಧ", "ತ", "ಥ", "ಡ", "ಢ"]
+  - id: inherent-vowel
+    name: "The vowel you don't see"
+    example: "ಕ"
+    text: "Every consonant carries a short a unless a sign changes it: ಕ alone is ka. Unlike Hindi, the last a of a word is said: ಕಮಲ is kamala. Native Kannada words end in a vowel, and words from English often gain one: bus becomes ಬಸ್ಸು."
+    letters: ["ಕ", "ಮರ", "ಕಮಲ"]
+  - id: vowel-signs
+    name: "Vowels as signs on a letter"
+    term: "ಕಾಗುಣಿತ"
+    reading: "kaagunita"
+    example: "ಕಿ"
+    text: "After a consonant a vowel is a sign on it: in place of the tick on top (ಕಿ), or joined on the right (ಕಾ, ಕು, ಕೆ). None is written before the letter. Children learn every consonant with every sign in a chart, the kaagunita."
+    letters: ["ಕಾ", "ಕಿ", "ಕು", "ಕೆ", "ಕೊ"]
+  - id: long-mark
+    name: "A mark for a long vowel"
+    term: "ದೀರ್ಘ"
+    reading: "diirgha"
+    example: "ಕೀ"
+    text: "A short and a long vowel make different words in Kannada. For ii, ee and oo the long one is the short sign with a mark ೕ added on the right: ಕಿ and ಕೀ, ಕೆ and ಕೇ, ಕೊ and ಕೋ."
+    letters: ["ಕಿ", "ಕೀ", "ಕೆ", "ಕೇ", "ಕೊ", "ಕೋ"]
+  - id: halant
+    name: "The mark that takes the vowel away"
+    term: "ಹಲಂತ"
+    reading: "halanta"
+    example: "ಕ್"
+    text: "The small mark ್ on a letter means no vowel after it. It ends words from English written in Kannada, such as ಬಸ್ (bas, bus) and ಡಾಕ್ಟರ್ (daaktar, doctor)."
+    letters: ["ಕ್", "ರ್", "ನ್", "ಸ್"]
+  - id: ottakshara
+    name: "The second consonant below"
+    term: "ಒತ್ತಕ್ಷರ"
+    reading: "ottakshara"
+    example: "ಸ್ತ"
+    text: "Two consonants with no vowel between them: the second is written small below the first, the ottakshara. Some look little like their letter, such as the small ರ below ಪ in ಪ್ರ, and the small ಯ in ವ್ಯ."
+    letters: ["ಸ್ತ", "ಪ್ರ", "ಕ್ಷ", "ವ್ಯ"]
+  - id: arkavottu
+    name: "An r written after its consonant"
+    term: "ಅರ್ಕಾವೊತ್ತು"
+    reading: "arkaavottu"
+    example: "ರ್ಕ"
+    text: "An r before another consonant is not written below it but after it, as a small mark: in ಕರ್ನಾಟಕ (karnaataka) the r is the mark after ನ. Read it before the letter it follows."
+    letters: ["ರ್ಕ", "ರ್ನ", "ರ್ಮ"]
+  - id: doubled
+    name: "Doubled consonants"
+    example: "ಅಮ್ಮ"
+    text: "A consonant written again below itself is held longer, and it changes the word. Doubled letters are everywhere in Kannada: ಅಮ್ಮ, ಅಕ್ಕ, ಹತ್ತು."
+    letters: ["ಕ್ಕ", "ತ್ತ", "ಣ್ಣ", "ಮ್ಮ", "ಲ್ಲ"]
+  - id: sonne
+    name: "The circle after a letter"
+    term: "ಅನುಸ್ವಾರ"
+    reading: "anusvaara"
+    example: "ಕಂ"
+    text: "A small circle ಂ after a letter, also called ಸೊನ್ನೆ (sonne, zero), is an m or an n: the nasal that suits the next letter, as in ಕಂಬ (kamba, pillar) and ಗಂಗೆ (gange)."
+    letters: ["ಕಂ", "ಅಂಗಡಿ", "ಕಂಬ"]
+  - id: digits
+    name: "Kannada digits"
+    example: "೩"
+    text: "Kannada has its own digits, seen on some signs and in older books. Everyday Kannada mostly uses 0 to 9."
+    letters: ["೦", "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯"]
