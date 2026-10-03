@@ -170,7 +170,10 @@ class _DrillPageState extends State<DrillPage> {
     final session = _session!;
     if (session.finished && !_summaryShown) {
       _summaryShown = true;
-      AppNavigator.showSummary(context, session.result);
+      AppNavigator.showSummary(
+        context,
+        session.result.inLanguage(widget.request.language),
+      );
     }
   }
 
