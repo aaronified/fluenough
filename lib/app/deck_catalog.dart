@@ -18,6 +18,7 @@ import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
+import 'added_decks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -239,13 +240,16 @@ class Catalog {
 /// into cards (#2), and turns a file that fails to parse into a [BrokenDeck]
 /// rather than an exception.
 class DeckCatalog {
-  DeckCatalog(this.source);
+  DeckCatalog(this.source, {this.added});
 
-  /// The decks bundled with the app.
-  factory DeckCatalog.bundled([AssetBundle? bundle]) =>
-      DeckCatalog(AssetDeckSource(bundle));
+  /// The decks bundled with the app, and those added to [added].
+  factory DeckCatalog.bundled([AssetBundle? bundle, DeckStore? added]) =>
+      DeckCatalog(AssetDeckSource(bundle), added: added);
 
   final DeckSource source;
+
+  /// Where decks a learner adds are kept (#22), or null where none can be.
+  final DeckStore? added;
 
   Future<Catalog>? _loading;
 
@@ -261,10 +265,18 @@ class DeckCatalog {
     for (final path in await source.list()) {
       files[path] = await source.read(path);
     }
+    final added = this.added;
+    if (added != null) {
+      for (final path in await added.list()) {
+        files[path] = await added.read(path);
+      }
+    }
     return parseAll(files);
   }
 
   /// Parses [files], keyed by path, into a catalog. Pure: no source, no IO.
+  /// A deck whose path starts with [addedDeckPrefix] was added by the
+  /// learner, not bundled.
   static Catalog parseAll(Map<String, String> files) {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
@@ -275,7 +287,14 @@ class DeckCatalog {
     final sounds = <String, SoundContrasts>{};
     final scriptGuides = <String, ScriptGuide>{};
     final firstPath = <String, String>{};
-    final paths = files.keys.toList()..sort();
+    // Added decks after the bundled ones: a bundled deck keeps its id, and
+    // the card a ref finds, when an added deck has them too.
+    bool isAdded(String path) => path.startsWith(addedDeckPrefix);
+    final paths = files.keys.toList()
+      ..sort(
+        (a, b) =>
+            isAdded(a) != isAdded(b) ? (isAdded(a) ? 1 : -1) : a.compareTo(b),
+      );
     for (final path in paths) {
       final text = files[path]!;
       final kind = kindOf(text);
@@ -361,18 +380,47 @@ class DeckCatalog {
       if (deck.kind == DeckKind.grammar) {
         deck = deck.withCards(expandPattern(deck));
       }
-      decks.add(DeckEntry(path: path, deck: deck));
+      decks.add(
+        DeckEntry(
+          path: path,
+          deck: deck,
+          bundled: !path.startsWith(addedDeckPrefix),
+        ),
+      );
     }
+    final resolved = _withRefs(decks);
+    final placed = _placed(coursePaths, resolved);
     return Catalog(
-      decks: _inTeachingOrder(_withRefs(decks), themes, coursePaths),
+      decks: _inTeachingOrder(resolved, themes, placed),
       broken: broken,
       themes: themes,
       facts: facts,
       numberRules: numberRules,
-      paths: coursePaths,
+      paths: placed,
       sounds: sounds,
       scriptGuides: scriptGuides,
     );
+  }
+
+  /// Each course's path with the course's decks it does not list put where
+  /// its wildcards say (`CoursePath.placing`): an added deck at the bottom
+  /// of its theme's unit, or at the end.
+  static Map<String, CoursePath> _placed(
+    Map<String, CoursePath> paths,
+    List<DeckEntry> decks,
+  ) {
+    final themeOf = <String, String?>{
+      for (final e in decks) e.id: e.deck.theme,
+    };
+    return <String, CoursePath>{
+      for (final MapEntry(key: course, value: path) in paths.entries)
+        course: path.placing(<({String id, String? theme})>[
+          for (final e in decks)
+            if ('${e.language.code}/${e.deck.native.code}' == course &&
+                path.unitOf(e.id) == null)
+              (id: e.id, theme: e.deck.theme),
+        ], (id) => themeOf[id]),
+    };
   }
 
   /// [decks] with each ref folded into its deck's cards, in its place

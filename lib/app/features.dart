@@ -90,6 +90,7 @@ enum Feature {
     Feature.dailyFacts,
     Feature.logExport,
     Feature.logImport,
+    Feature.importFile,
   };
 }
 

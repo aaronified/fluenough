@@ -16,7 +16,8 @@ from pathlib import Path
 import validate_decks
 
 
-def deck(deck_id: str, lang: str = "hi", native: str = "en") -> str:
+def deck(deck_id: str, lang: str = "hi", native: str = "en",
+         theme: str | None = None) -> str:
     names = {"hi": ("hin", "Hindi", "devanagari", "hi-IN"),
              "bn": ("ben", "Bengali", "bengali", "bn-IN"),
              "en": ("eng", "English", "latin", "en-GB")}
@@ -29,7 +30,7 @@ name: Probe
 language: {{ code: {lang}, iso639_3: {iso}, name: {name}, script: {script}, tts: {tts} }}
 native: {{ code: {native}, iso639_3: {n_iso}, name: {n_name} }}
 license: CC0-1.0
-cards:
+{f"theme: {theme}" + chr(10) if theme else ""}cards:
   - id: {deck_id}-0001
     target: "x"
     native: the thing
@@ -111,6 +112,24 @@ class PathFile(Paths):
                 self.assertRejected(
                     self.write("hi-en-path.yaml", path_file(units)), needle)
 
+    def test_a_wildcard_ends_a_unit_and_is_not_a_deck(self) -> None:
+        report = self.write("hi-en-path.yaml", path_file(
+            '  - [hi-en-market, "*"]\n  - [hi-en-help]\n  - ["*"]\n'))
+        self.assertEqual(report.errors, [])
+        self.assertEqual(report.course_path,
+                         ("hi", "en", ["hi-en-market", "hi-en-help"]))
+        self.assertEqual(report.open_units, [["hi-en-market"]])
+
+    def test_a_wildcard_only_ends_a_unit_and_alone_only_the_last(self) -> None:
+        for units, needle in (
+            ('  - ["*", hi-en-market]\n', "can only end a unit"),
+            ('  - [hi-en-market, "*", "*"]\n', "can only end a unit"),
+            ('  - ["*"]\n  - [hi-en-market]\n', "alone can only be the last"),
+        ):
+            with self.subTest(units=units):
+                self.assertRejected(
+                    self.write("hi-en-path.yaml", path_file(units)), needle)
+
     def test_unknown_fields_are_rejected(self) -> None:
         self.assertRejected(
             self.write("hi-en-path.yaml",
@@ -139,6 +158,16 @@ class PathAcrossDecks(Paths):
                             for p in problems), problems)
         self.assertTrue(any("'hi-en-gone', which is not a deck" in p
                             for p in problems), problems)
+
+    def test_a_wildcard_unit_needs_a_theme_deck(self) -> None:
+        themed = self.write("hi-en-home.yaml", deck("hi-en-home", theme="home"))
+        self.assertEqual(self.problems(
+            '  - [hi-en-home, "*"]\n  - [hi-en-market, hi-en-grammar-nouns]\n'
+            '  - ["*"]\n', themed), [])
+        problems = self.problems(
+            '  - [hi-en-home]\n  - [hi-en-market, hi-en-grammar-nouns, "*"]\n',
+            themed)
+        self.assertTrue(any("has no theme deck" in p for p in problems), problems)
 
     def test_a_course_has_one_path(self) -> None:
         other = self.tmp / "other"

@@ -43,8 +43,8 @@ void main() {
 
   test('this version ships the drills, speaking and reading among them, '
       'saved progress, '
-      'appearance but for wallpaper colours, stats, leeches, daily facts and '
-      'the log backup', () {
+      'appearance but for wallpaper colours, stats, leeches, daily facts, '
+      'the log backup and adding a deck from a file', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -62,6 +62,7 @@ void main() {
       Feature.dailyFacts,
       Feature.logExport,
       Feature.logImport,
+      Feature.importFile,
     });
   });
 

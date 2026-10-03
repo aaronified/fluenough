@@ -10,12 +10,18 @@ import 'deck_parser.dart';
 /// with it, or a script. Today takes new cards from the first unfinished
 /// unit and the one after it (`AppState.pendingUnits`), and placement passes
 /// or places a unit whole (ADR-0013).
+///
+/// A unit may end in the wildcard `"*"`, which takes the course's decks the
+/// path does not list, such as decks a learner adds (#22): those whose theme
+/// is the unit's go at its bottom. A last unit of only `"*"` takes the rest,
+/// so a deck whose theme no unit takes goes at the end ([placing]).
 class CoursePath {
   const CoursePath({
     required this.id,
     required this.language,
     required this.native,
     required this.units,
+    this.open = const <int>{},
   });
 
   /// `<language>-<native>-path`, the file's name.
@@ -27,9 +33,12 @@ class CoursePath {
   /// The code of the language it is taught from, such as `en`.
   final String native;
 
-  /// Each unit's deck ids, in teaching order. Never empty, and no deck is
-  /// listed twice.
+  /// Each unit's deck ids, in teaching order, without the wildcard. No deck
+  /// is listed twice. Only a unit of the wildcard alone is empty.
   final List<List<String>> units;
+
+  /// The units that end in the wildcard, by index.
+  final Set<int> open;
 
   /// `hi/en`: the key the catalog finds a course's path by.
   String get course => '$language/$native';
@@ -45,9 +54,51 @@ class CoursePath {
     return null;
   }
 
+  /// This path with [extra] decks, which it does not list, put where its
+  /// wildcards say: each at the bottom of the first open unit that holds a
+  /// deck of its theme ([themeOf] gives a listed deck's), else in the open
+  /// unit of the wildcard alone. A deck no wildcard takes is left out, and
+  /// follows the path as before. The result has no wildcards and no empty
+  /// units.
+  CoursePath placing(
+    Iterable<({String id, String? theme})> extra,
+    String? Function(String deckId) themeOf,
+  ) {
+    final placed = <List<String>>[for (final unit in units) List.of(unit)];
+    final rest = <int>[
+      for (final i in open)
+        if (units[i].isEmpty) i,
+    ];
+    for (final deck in extra) {
+      int? into;
+      if (deck.theme != null) {
+        for (final i in open.toList()..sort()) {
+          if (units[i].any((id) => themeOf(id) == deck.theme)) {
+            into = i;
+            break;
+          }
+        }
+      }
+      into ??= rest.isEmpty ? null : rest.first;
+      if (into != null) placed[into].add(deck.id);
+    }
+    return CoursePath(
+      id: id,
+      language: language,
+      native: native,
+      units: List<List<String>>.unmodifiable(<List<String>>[
+        for (final unit in placed)
+          if (unit.isNotEmpty) List<String>.unmodifiable(unit),
+      ]),
+    );
+  }
+
   @override
   String toString() => 'CoursePath($id)';
 }
+
+/// The wildcard a path's unit may end in.
+const String pathWildcard = '*';
 
 final _code = RegExp(r'^[a-z]{2,3}$');
 final _deckId = RegExp(r'^[a-z0-9-]+$');
@@ -100,13 +151,27 @@ CoursePath parseCoursePath(String text, {String source = 'path.yaml'}) {
   }
   final seen = <String>{};
   final units = <List<String>>[];
-  for (final item in list.nodes) {
+  final open = <int>{};
+  for (final (u, item) in list.nodes.indexed) {
     if (item is! YamlList || item.nodes.isEmpty) {
       throw bad('each unit is a non-empty list of deck ids', item);
     }
     final unit = <String>[];
-    for (final deck in item.nodes) {
+    for (final (i, deck) in item.nodes.indexed) {
       final value = deck.value;
+      if (value == pathWildcard) {
+        if (i != item.nodes.length - 1) {
+          throw bad('"$pathWildcard" can only end a unit', deck);
+        }
+        if (unit.isEmpty && u != list.nodes.length - 1) {
+          throw bad(
+            'a unit of "$pathWildcard" alone can only be the last',
+            deck,
+          );
+        }
+        open.add(u);
+        continue;
+      }
       if (value is! String || !_deckId.hasMatch(value)) {
         throw bad('a unit lists deck ids, got "$value"', deck);
       }
@@ -120,5 +185,6 @@ CoursePath parseCoursePath(String text, {String source = 'path.yaml'}) {
     language: language as String,
     native: native as String,
     units: List<List<String>>.unmodifiable(units),
+    open: Set<int>.unmodifiable(open),
   );
 }

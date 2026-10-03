@@ -393,9 +393,10 @@ id: hi-en-path
 language: hi
 native: en
 units:
-  - [hi-en-first-words, hi-en-grammar-sentences]
-  - [hi-en-questions, hi-en-grammar-questions]
-  - [hi-en-addressing, hi-en-grammar-pronouns]
+  - [hi-en-first-words, hi-en-grammar-sentences, "*"]
+  - [hi-en-questions, hi-en-grammar-questions, "*"]
+  - [hi-en-addressing, hi-en-grammar-pronouns, "*"]
+  - ["*"]
 ```
 
 | Field | Required | Notes |
@@ -403,7 +404,7 @@ units:
 | `id` | yes | `<language>-<native>-path`, and the filename stem. |
 | `language` | yes | The code of the language learned, such as `hi`. |
 | `native` | yes | The code of the language it is taught from, such as `en`. |
-| `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids. |
+| `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids, which may end in the wildcard `"*"`. |
 | `description` | no | Free text. |
 
 - **A unit is what is taught together**: a theme deck and the grammar that
@@ -416,9 +417,18 @@ units:
   from another course, and an id that is no deck. Adding a deck means adding
   it to its course's path.
 - **One path per course,** and every course with a deck in `decks/` has
-  one: the validator fails a course without. A deck imported into the app
-  with no path is taught in its course's theme order, and then its other
-  decks.
+  one: the validator fails a course without. A deck added in the app to a
+  course with no path is taught in its course's theme order, and then its
+  other decks.
+- **The wildcard `"*"` takes decks the path does not list,** such as a deck
+  a learner adds in the app ([ADR-0020](adr/0020-added-decks.md)). Quote
+  it: a bare `*` is YAML for an alias. It may only end a unit, and a unit
+  of `"*"` alone may only be the last. A deck the path does not list goes
+  at the bottom of the first unit ending in `"*"` that holds a theme deck
+  of its theme, and otherwise into the unit of `"*"` alone, at the end of
+  the course. So a unit ending in `"*"` needs a theme deck, which the
+  validator checks. Every bundled path ends each unit that has a theme deck
+  in `"*"`, and has a last unit of `"*"` alone.
 - **Order is a teaching decision.** Put a script first, before any deck
   written in it, grammar with the theme that first needs it, and a
   [reading deck](#reading-decks) in a unit after the themes it uses.
@@ -430,6 +440,25 @@ units:
   reading and writing only (`modes: [recognition, production]`), since no
   ear and no recogniser can tell them apart; so is a mark that is not a
   sound of its own, written on a host letter (কং).
+
+## Adding your own deck
+
+In the app, Decks > Add a deck > From a file saves a template,
+[`assets/deck-template.yaml`](../assets/deck-template.yaml), and adds a deck
+written from it. It is a [vocab deck](#vocab-decks) like any other, and any
+deck the app can read can be added, grammar and reading decks too. The app
+checks it first, and refuses:
+
+- a file that is not a deck, or that does not parse: the file, line and
+  message are shown, as for a bundled deck;
+- the id of a deck that comes with the app;
+- a card id that another deck has. Write `<language>-my-NNNN`, which no
+  bundled deck uses, and list a word another deck has by `ref`.
+
+Adding a deck with the id of one added before replaces it. Its `theme` puts
+it at the bottom of that theme's unit, through the path's wildcards; a deck
+with no theme, or one the course does not have, goes at the end. An added
+deck can be removed from its page; what was learned from it stays.
 
 ## Sounds files
 
