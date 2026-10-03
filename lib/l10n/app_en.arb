@@ -857,6 +857,76 @@
   "@deckTurnOn": {
     "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
   },
+  "deckInspect": "Inspect all cards",
+  "@deckInspect": {
+    "description": "Button under a deck's header that opens every card in full, for reviewers."
+  },
+  "inspectTitle": "{deck}: every card",
+  "@inspectTitle": {
+    "description": "Title of the Inspect screen.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "inspectIntro": "Every card as the deck file {file} writes it, with its id. Select any text to copy it.",
+  "@inspectIntro": {
+    "description": "Line at the top of the Inspect screen. file is the deck's id.",
+    "placeholders": {
+      "file": {
+        "type": "String",
+        "example": "hi-en-market"
+      }
+    }
+  },
+  "inspectId": "id {id}",
+  "@inspectId": {
+    "description": "A card's, passage's or question's id on the Inspect screen.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "hi-0231"
+      }
+    }
+  },
+  "inspectAlsoAccepted": "Also accepted",
+  "@inspectAlsoAccepted": {
+    "description": "Inspect: other forms accepted as the answer."
+  },
+  "inspectAlsoMeans": "Also means",
+  "@inspectAlsoMeans": {
+    "description": "Inspect: other meanings accepted."
+  },
+  "inspectPartOfSpeech": "Part of speech",
+  "@inspectPartOfSpeech": {
+    "description": "Inspect: the card's part of speech, as the deck file writes it."
+  },
+  "inspectGender": "Gender",
+  "@inspectGender": {
+    "description": "Inspect: the card's grammatical gender, as the deck file writes it."
+  },
+  "inspectTags": "Tags",
+  "@inspectTags": {
+    "description": "Inspect: the card's tags."
+  },
+  "inspectOnlyIn": "Only drilled in",
+  "@inspectOnlyIn": {
+    "description": "Inspect: the skills a card is limited to, when it is."
+  },
+  "inspectNotes": "Notes",
+  "@inspectNotes": {
+    "description": "Inspect: the card's notes."
+  },
+  "inspectExamples": "Examples",
+  "@inspectExamples": {
+    "description": "Inspect: the card's example sentences."
+  },
+  "inspectQuestions": "Questions",
+  "@inspectQuestions": {
+    "description": "Inspect: a passage's questions, the right answer marked."
+  },
   "deckScriptTips": "Tips: {guide}",
   "@deckScriptTips": {
     "description": "Button on a script deck's page (#30): opens the guide to the script's recurring features, such as Bengali's headline. The placeholder is the guide's own title, from its file.",

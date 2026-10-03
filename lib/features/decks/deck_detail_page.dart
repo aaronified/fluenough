@@ -270,6 +270,16 @@ class _Header extends StatelessWidget {
               ),
             ),
           ],
+          // For reviewers: every card in full, with its id.
+          const SizedBox(height: 12),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+            ),
+            onPressed: () => AppNavigator.openInspect(context, entry.id),
+            icon: const Icon(Icons.manage_search),
+            label: Text(l10n.deckInspect, textAlign: TextAlign.center),
+          ),
         ],
       ),
     );

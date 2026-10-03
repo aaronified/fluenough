@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app.dart';
@@ -39,6 +40,12 @@ void main() {
       findsOneWidget,
     );
     expect(find.text(l10n.deckReadingCount(2, 5)), findsOneWidget);
+    // Below the header's buttons, Inspect among them.
+    await tester.scrollUntilVisible(
+      find.byType(PassagePreview),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.byType(PassagePreview), findsOneWidget);
     expect(find.text(l10n.deckPassages), findsOneWidget);
     for (final title in ['At the shop', 'Going home']) {
