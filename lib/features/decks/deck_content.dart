@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -79,13 +80,37 @@ List<PreviewLine> previewOf(
   ];
 }
 
-/// Whether [entry] matches a search: its name or its language's name
-/// contains [query], ignoring case. An empty query matches every deck.
-bool deckMatches(DeckEntry entry, String query) {
-  final q = query.trim().toLowerCase();
-  if (q.isEmpty) return true;
-  return entry.deck.name.toLowerCase().contains(q) ||
-      entry.language.name.toLowerCase().contains(q);
+/// "Script" for a deck tagged `script` (there is no such deck kind), then
+/// the deck's own kind.
+String deckKindLabel(AppLocalizations l10n, DeckEntry entry) => entry.isScript
+    ? l10n.deckKindScript
+    : switch (entry.deck.kind) {
+        DeckKind.vocab => l10n.deckKindVocabulary,
+        DeckKind.grammar => l10n.deckKindGrammar,
+        DeckKind.reading => l10n.deckKindReading,
+      };
+
+/// Whether [entry] matches a search. The search is split into words, and
+/// every word must be found, ignoring case, in the deck's name, its
+/// language's name or any of [also]: the Decks tab passes the deck's theme
+/// and kind. So "hindi market" finds Hindi's Market deck and the grammar
+/// taught with it, and "market" alone finds every language's. An empty
+/// search matches every deck.
+bool deckMatches(
+  DeckEntry entry,
+  String query, {
+  Iterable<String> also = const <String>[],
+}) {
+  final words = <String>[
+    for (final word in query.toLowerCase().split(RegExp(r'\s+')))
+      if (word.isNotEmpty) word,
+  ];
+  if (words.isEmpty) return true;
+  final fields = <String>[
+    for (final field in <String>[entry.deck.name, entry.language.name, ...also])
+      field.toLowerCase(),
+  ];
+  return words.every((word) => fields.any((field) => field.contains(word)));
 }
 
 /// [n] written in the interface's locale, for a stat tile or a button.

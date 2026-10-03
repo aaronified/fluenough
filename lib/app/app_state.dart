@@ -270,6 +270,26 @@ class AppState extends ChangeNotifier {
   List<DeckTheme> get themes => _catalog.themes;
   DeckTheme? themeOf(DeckEntry entry) => _catalog.themeById(entry.deck.theme);
 
+  /// The theme each deck is taught under, by deck id: its own, or for a deck
+  /// with none, such as grammar, that of a theme deck in its unit of the
+  /// course's path. The Decks tab searches by it.
+  Map<String, DeckTheme> get themesByDeck {
+    final out = <String, DeckTheme>{};
+    for (final code in <String>{for (final e in decks) e.language.code}) {
+      for (final unit in courseUnits(code)) {
+        final theme = unit.map(themeOf).nonNulls.firstOrNull;
+        if (theme == null) continue;
+        for (final entry in unit) {
+          out[entry.id] = theme;
+        }
+      }
+    }
+    for (final entry in decks) {
+      if (themeOf(entry) case final own?) out[entry.id] = own;
+    }
+    return out;
+  }
+
   /// Today's fact for each language the profile learns that has facts
   /// (#48), with its text in each language the learner speaks, best known
   /// first. Choosing one records it as shown today, after this call, so
