@@ -5,6 +5,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'app.dart';
 import 'app/app_info.dart';
+import 'app/added_decks.dart';
 import 'app/app_state.dart';
 import 'app/deck_catalog.dart';
 import 'app/ota_installer.dart';
@@ -30,7 +31,10 @@ Future<void> main() async {
   runApp(
     FluenoughApp(
       state: AppState(
-        catalog: DeckCatalog.bundled(),
+        catalog: DeckCatalog.bundled(
+          null,
+          FileDeckStore(Directory('${files.path}/decks')),
+        ),
         progress: storage.progress,
         settings: storage.settings,
         tts: SystemTtsEngine(),

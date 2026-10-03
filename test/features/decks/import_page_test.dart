@@ -11,7 +11,7 @@ import 'package:fluenough/ui/widgets/incoming.dart';
 import '../../support/harness.dart';
 
 void main() {
-  testWidgets('all four sources are built, and every one is incoming', (
+  testWidgets('a file is live, and the other three sources are incoming', (
     tester,
   ) async {
     usePhone(tester);
@@ -19,15 +19,13 @@ void main() {
     final l10n = l10nOf(tester);
 
     for (final source in ImportSource.values) {
+      final incoming = source != ImportSource.file;
       final row = find.widgetWithText(GroupedTile, source.label(l10n));
       expect(row, findsOneWidget, reason: source.name);
       expect(
         find.descendant(of: row, matching: find.byType(IncomingBadge)),
-        findsOneWidget,
-      );
-      expect(
-        find.bySemanticsLabel(l10n.incomingSemanticsLabel(source.label(l10n))),
-        findsOneWidget,
+        incoming ? findsOneWidget : findsNothing,
+        reason: source.name,
       );
       expect(
         tester
@@ -38,22 +36,33 @@ void main() {
               ),
             )
             .enabled,
-        isFalse,
+        !incoming,
+        reason: source.name,
       );
     }
 
-    // The design opens on a link: its field and Fetch, both disabled.
-    expect(find.text(l10n.importLinkLabel), findsOneWidget);
-    expect(tester.widget<TextField>(find.byType(TextField)).enabled, isFalse);
-    final fetch = find.widgetWithText(FilledButton, l10n.importFetch);
-    expect(tester.widget<FilledButton>(fetch).onPressed, isNull);
+    // It opens on a file: the help, the template and Choose file.
+    expect(find.text(l10n.importFileHelp), findsOneWidget);
+    expect(find.text(l10n.importTemplate), findsOneWidget);
+    final choose = find.widgetWithText(FilledButton, l10n.importChoose);
+    expect(tester.widget<FilledButton>(choose).onPressed, isNotNull);
     expect(find.byType(ImportErrorCard), findsNothing);
 
-    // A tap says the feature is incoming and changes nothing.
+    // A tap on an incoming source says so and changes nothing.
     await tester.tap(find.widgetWithText(GroupedTile, l10n.importAnki));
     await tester.pumpAndSettle();
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
     expect(find.text(l10n.importAnkiHelp), findsNothing);
+  });
+
+  testWidgets('a link opens disabled: its field and Fetch', (tester) async {
+    usePhone(tester);
+    await pumpScreen(tester, const ImportPage(initialSource: ImportSource.url));
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.importLinkLabel), findsOneWidget);
+    expect(tester.widget<TextField>(find.byType(TextField)).enabled, isFalse);
+    final fetch = find.widgetWithText(FilledButton, l10n.importFetch);
+    expect(tester.widget<FilledButton>(fetch).onPressed, isNull);
   });
 
   testWidgets('a spreadsheet source says which columns it reads', (

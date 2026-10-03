@@ -1,0 +1,43 @@
+# A deck of your own. Change what follows, keep the shape, save it as a
+# .yaml file, and add it from Decks > Add a deck > From a file.
+#
+# Put text in "double quotes". Unquoted, YAML reads some words as something
+# else: no as false, and 1:30 as a number.
+
+schema: 1
+
+# The deck's own id: small letters, digits and dashes. Start it with the
+# language and the language it is taught from. Add the same id again to
+# replace the deck.
+id: hi-en-my-words
+name: "My words"
+kind: vocab
+
+# Optional. One theme from the course: first-words, questions, addressing,
+# about-me, family, work, numbers-1-20, numbers-big, market, groceries,
+# transport, directions, home, time, daily-life, calendar, eating-out, help.
+# The deck joins the bottom of that theme's unit. Without one, or with a
+# theme the course does not have, it goes at the end of the course.
+theme: market
+
+# The language learned, and the one it is taught from. Copy both lines from
+# any deck of the course you are adding to.
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Words I need at the market."
+
+cards:
+  # Each card's id is the language, "my" and a number no other deck uses.
+  - id: hi-my-0001
+    target: "बहुत महँगा है"
+    native: "It is very expensive"
+    reading: "bahut mahangaa hai"
+  - id: hi-my-0002
+    target: "थोड़ा कम कीजिए"
+    native: "Make it a little less, please"
+    reading: "thoDaa kam kiijiye"
+    notes: "Optional: anything worth knowing about the card."
+
+  # A word another deck already has: list it by its id instead.
+  - ref: hi-0231
