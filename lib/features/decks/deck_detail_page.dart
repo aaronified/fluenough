@@ -184,16 +184,6 @@ class _Header extends StatelessWidget {
 
   final DeckEntry entry;
 
-  /// "Script" for a deck tagged `script` (there is no such deck kind), then
-  /// the deck's own kind.
-  static String kindOf(AppLocalizations l10n, DeckEntry entry) => entry.isScript
-      ? l10n.deckKindScript
-      : switch (entry.deck.kind) {
-          DeckKind.vocab => l10n.deckKindVocabulary,
-          DeckKind.grammar => l10n.deckKindGrammar,
-          DeckKind.reading => l10n.deckKindReading,
-        };
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -222,7 +212,7 @@ class _Header extends StatelessWidget {
                         l10n.deckHeaderLine(
                           language.name,
                           language.iso639_3,
-                          kindOf(l10n, entry),
+                          deckKindLabel(l10n, entry),
                         ),
                         style: theme.textTheme.titleSmall!.copyWith(
                           color: scheme.primary,

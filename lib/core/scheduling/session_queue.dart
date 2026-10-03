@@ -97,31 +97,41 @@ class SessionQueue {
     List<List<SessionItem>> blocks,
     int limit,
   ) {
-    final shares = List<int>.filled(blocks.length, 0);
+    final shares = shareCounts(<int>[for (final b in blocks) b.length], limit);
+    return <SessionItem>[
+      for (final (i, block) in blocks.indexed) ...takeWhole(block, shares[i]),
+    ];
+  }
+
+  /// How [fairShares] divides [limit] between blocks that hold [sizes]: one
+  /// each in turn, a block that runs out giving the rest to the others.
+  static List<int> shareCounts(List<int> sizes, int limit) {
+    final shares = List<int>.filled(sizes.length, 0);
     var left = limit;
     var gave = true;
     while (left > 0 && gave) {
       gave = false;
-      for (var i = 0; i < blocks.length && left > 0; i++) {
-        if (shares[i] < blocks[i].length) {
+      for (var i = 0; i < sizes.length && left > 0; i++) {
+        if (shares[i] < sizes[i]) {
           shares[i]++;
           left--;
           gave = true;
         }
       }
     }
-    // A passage's new questions come together, so a share that ends inside
-    // one runs on to its end.
-    for (final (i, block) in blocks.indexed) {
-      while (shares[i] > 0 &&
-          shares[i] < block.length &&
-          _samePassage(block[shares[i] - 1].card, block[shares[i]].card)) {
-        shares[i]++;
-      }
+    return shares;
+  }
+
+  /// The first [count] of [block]. A passage's new questions come together,
+  /// so a count that ends inside one runs on to its end.
+  static List<SessionItem> takeWhole(List<SessionItem> block, int count) {
+    var n = count < 0 ? 0 : count;
+    while (n > 0 &&
+        n < block.length &&
+        _samePassage(block[n - 1].card, block[n].card)) {
+      n++;
     }
-    return <SessionItem>[
-      for (final (i, block) in blocks.indexed) ...block.take(shares[i]),
-    ];
+    return block.take(n).toList();
   }
 
   /// Builds the session for [cards].
