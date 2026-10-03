@@ -1,0 +1,31 @@
+name: Feedback mail to issues
+
+# Reports from the app arrive as mails to the Fluenough Gmail (#160,
+# ADR-0021). Every hour this files the new ones as issues: text only, the
+# sender's address never written. Until the repository has the two
+# FEEDBACK_GMAIL_* secrets it does nothing and says so.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  file:
+    name: File report mails as issues
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python3 tools/mail_to_issues.py
+        env:
+          FEEDBACK_GMAIL_ADDRESS: ${{ secrets.FEEDBACK_GMAIL_ADDRESS }}
+          FEEDBACK_GMAIL_APP_PASSWORD: ${{ secrets.FEEDBACK_GMAIL_APP_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}

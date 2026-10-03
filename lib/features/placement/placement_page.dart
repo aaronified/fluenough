@@ -9,6 +9,7 @@ import '../../app/placement.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 
 /// Placement for each of [languages] in turn (#117, ADR-0013): whether the
@@ -112,7 +113,7 @@ class _PlacementPageState extends State<PlacementPage> {
     final language = state.languages.where((l) => l.code == _code).firstOrNull;
     if (language == null) {
       return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(actions: const <Widget>[ReportButton()]),
         body: Center(
           child: CircularProgressIndicator(semanticsLabel: l10n.learnLoading),
         ),
@@ -126,6 +127,7 @@ class _PlacementPageState extends State<PlacementPage> {
         actions: <Widget>[
           if (_stage == _Stage.check)
             TextButton(onPressed: _stop, child: Text(l10n.placementStop)),
+          const ReportButton(),
         ],
       ),
       body: SafeArea(

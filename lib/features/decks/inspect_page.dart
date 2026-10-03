@@ -9,6 +9,7 @@ import '../../core/models/reading.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/grammar_cells.dart';
 
@@ -51,7 +52,10 @@ class InspectPage extends StatelessWidget {
       ],
     };
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.inspectTitle(entry.deck.name))),
+      appBar: AppBar(
+        title: Text(l10n.inspectTitle(entry.deck.name)),
+        actions: <Widget>[ReportButton(detail: entry.id)],
+      ),
       body: SelectionArea(
         child: ListView.separated(
           padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
@@ -123,7 +127,7 @@ class InspectPage extends StatelessWidget {
         middle: sentence.reading,
       ),
     for (final question in passage.questions)
-      (_) => _QuestionRow(question: question, spoken: spoken),
+      (_) => _QuestionRow(question: question, spoken: spoken, deckId: entry.id),
     for (final gloss in passage.glossary)
       (context) => _Line(
         top: TargetText(
@@ -235,13 +239,15 @@ class _Script extends StatelessWidget {
 }
 
 /// Two or three lines: [top] (the script and its romanisation), [middle]
-/// and [bottom], then the [id]. With [more], it opens in place.
+/// and [bottom], then the [id]. With [more], or with a [deckId] to report it
+/// in, it opens in place: [more], then "Report this card" (#160).
 class _Line extends StatelessWidget {
   const _Line({
     required this.top,
     this.middle,
     this.bottom,
     this.id,
+    this.deckId,
     this.more = const <Widget>[],
   });
 
@@ -249,6 +255,7 @@ class _Line extends StatelessWidget {
   final String? middle;
   final String? bottom;
   final String? id;
+  final String? deckId;
   final List<Widget> more;
 
   @override
@@ -269,6 +276,19 @@ class _Line extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: subtitle,
           );
+    final deck = deckId;
+    final more = <Widget>[
+      ...this.more,
+      if (id != null && deck != null)
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: TextButton.icon(
+            onPressed: () => ReportButton.open(context, detail: '$id in $deck'),
+            icon: const Icon(Icons.flag_outlined),
+            label: Text(AppLocalizations.of(context)!.inspectReport),
+          ),
+        ),
+    ];
     if (more.isEmpty) {
       return ListTile(title: top, subtitle: sub);
     }
@@ -344,6 +364,7 @@ class _CardRow extends StatelessWidget {
       top: _Script(card.target, card.reading, language: language),
       bottom: card.native,
       id: card.id,
+      deckId: entry.id,
       more: <Widget>[
         if (card.altTarget.isNotEmpty)
           _Field(l10n.inspectAlsoAccepted, card.altTarget.join(separator)),
@@ -403,6 +424,7 @@ class _CellRow extends StatelessWidget {
       ),
       bottom: '${cell.pattern.slotName}: ${cell.slot}', // ui-literal-ok: deck content, label and value
       id: card.id,
+      deckId: entry.id,
       more: <Widget>[
         if (card.altTarget.isNotEmpty)
           _Field(
@@ -417,10 +439,15 @@ class _CellRow extends StatelessWidget {
 /// A question: its prompt, the right answer, its id; every choice when
 /// opened, the right one marked.
 class _QuestionRow extends StatelessWidget {
-  const _QuestionRow({required this.question, required this.spoken});
+  const _QuestionRow({
+    required this.question,
+    required this.spoken,
+    required this.deckId,
+  });
 
   final ReadingQuestion question;
   final List<String> spoken;
+  final String deckId;
 
   @override
   Widget build(BuildContext context) {
@@ -440,6 +467,7 @@ class _QuestionRow extends StatelessWidget {
       ),
       middle: '✓ ${choices[question.answer]}', // ui-literal-ok: a mark, not language
       id: question.id,
+      deckId: deckId,
       more: <Widget>[
         for (final (i, choice) in choices.indexed)
           Semantics(

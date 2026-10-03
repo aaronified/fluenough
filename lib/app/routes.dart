@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../core/feedback/report.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
 import '../features/decks/inspect_page.dart';
@@ -11,6 +12,7 @@ import '../features/profiles/new_profile_page.dart';
 import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
 import '../features/profiles/spoken_languages_page.dart';
+import '../features/report/report_page.dart';
 import '../features/script/script_guide_page.dart';
 import '../features/settings/appearance_page.dart';
 import '../features/settings/voices_page.dart';
@@ -60,6 +62,10 @@ abstract final class AppRoutes {
   /// Every screen and state, like the design's Gallery. Debug builds only.
   static const String gallery = '/gallery';
 
+  /// A report from the screen under it (ADR-0021). Argument: a
+  /// [ReportRequest].
+  static const String report = '/report';
+
   /// Every card of a deck in full, for reviewers. Argument: the deck id, a
   /// [String].
   static const String inspect = '/inspect';
@@ -83,6 +89,7 @@ abstract final class AppRoutes {
       pin when args is String => PinPage(profileId: args),
       newProfile => const NewProfilePage(),
       gallery when kDebugMode => const GalleryPage(),
+      report when args is ReportRequest => ReportPage(request: args),
       inspect when args is String => InspectPage(deckId: args),
       _ => null,
     };
@@ -96,6 +103,10 @@ abstract final class AppRoutes {
 abstract final class AppNavigator {
   static Future<void> openDeck(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.deck, arguments: deckId);
+
+  /// A report from the screen [request] was raised on.
+  static Future<void> openReport(BuildContext context, ReportRequest request) =>
+      Navigator.of(context).pushNamed(AppRoutes.report, arguments: request);
 
   /// Every card of [deckId] in full, with its id.
   static Future<void> openInspect(BuildContext context, String deckId) =>
