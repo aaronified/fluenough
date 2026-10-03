@@ -141,6 +141,10 @@ class SessionQueue {
   /// its date: revising a finished deck. One mode per card still holds, the
   /// one due soonest.
   ///
+  /// A card gives either its most overdue pair or its first new one, unless
+  /// [newEvenIfDue]: then its first new pair is offered as well, for a
+  /// session of new cards only, which drops the due ones.
+  ///
   /// [canIntroduce], when given, limits new pairs to the cards it accepts:
   /// Today teaches only a course's pending units (ADR-0013). Due reviews come
   /// from every card. New pairs are taken in the order of [cards].
@@ -154,6 +158,7 @@ class SessionQueue {
     PairFilter? isSetAside,
     bool Function(Card card)? canIntroduce,
     bool reviseAll = false,
+    bool newEvenIfDue = false,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
@@ -188,7 +193,10 @@ class SessionQueue {
           mostOverdue = SessionItem(card: card, mode: mode, state: state);
         }
       }
-      return (due: mostOverdue, fresh: mostOverdue == null ? firstNew : null);
+      return (
+        due: mostOverdue,
+        fresh: newEvenIfDue || mostOverdue == null ? firstNew : null,
+      );
     }
 
     // A card listed by more than one of the decks is taken once.
@@ -213,9 +221,8 @@ class SessionQueue {
           final pairs = pairsOf(question);
           if (pairs.due case final item?) {
             due.add((item: item, order: order++));
-          } else if (pairs.fresh case final item?) {
-            news.add(item);
           }
+          if (pairs.fresh case final item?) news.add(item);
         }
         if (news.isNotEmpty &&
             newLeft > 0 &&
@@ -228,7 +235,8 @@ class SessionQueue {
       final pairs = pairsOf(card);
       if (pairs.due case final item?) {
         due.add((item: item, order: order++));
-      } else if (pairs.fresh case final item?) {
+      }
+      if (pairs.fresh case final item?) {
         if (newLeft > 0 && (canIntroduce?.call(card) ?? true)) {
           fresh.add(item);
           newLeft--;

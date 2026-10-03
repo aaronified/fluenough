@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import 'package:flutter/widgets.dart' show StringCharacters;
+
 import 'canonical.dart';
 
 /// How close a typed answer was to the expected one.
@@ -75,6 +77,7 @@ class AnswerGrader {
     this.typoDistance = 1,
     this.longTypoDistance = 2,
     this.longThreshold = 8,
+    this.shortThreshold = 3,
   });
 
   /// Leading articles ignored when comparing, e.g. `['el', 'la', 'los', 'las']`
@@ -85,8 +88,13 @@ class AnswerGrader {
   final int typoDistance;
   final int longTypoDistance;
 
-  /// Answers at least this long get the more generous typo allowance.
+  /// Answers at least this long, in letters as written (grapheme
+  /// clusters: है is one), get the more generous typo allowance.
   final int longThreshold;
+
+  /// Answers shorter than this, in letters as written, allow no typo: one
+  /// slip in あ or है is a different answer altogether.
+  final int shortThreshold;
 
   GradedAnswer grade(
     String given,
@@ -135,7 +143,10 @@ class AnswerGrader {
     // does not also consume the typo budget.
     for (final candidate in candidates) {
       final foldedCandidate = _fold(_normalise(candidate));
-      final allowed = foldedCandidate.length >= longThreshold
+      final letters = foldedCandidate.characters.length;
+      final allowed = letters < shortThreshold
+          ? 0
+          : letters >= longThreshold
           ? longTypoDistance
           : typoDistance;
       if (levenshtein(foldedGiven, foldedCandidate, cutoff: allowed) <=

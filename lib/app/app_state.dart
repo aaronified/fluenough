@@ -117,7 +117,9 @@ class AppState extends ChangeNotifier {
     SettingsNotifier? settings,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
+    Random? random,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
+       random = random ?? Random(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
@@ -130,12 +132,17 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  /// Where a drill's chance comes from, such as the order of a question's
+  /// options: seeded in tests and the gallery, so that they repeat.
+  final Random random;
+
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, no voices unless [tts] has some, empty in-memory
   /// progress, links that open unless [links] says otherwise, no network
   /// for the update check unless [releases] answers, no download unless
-  /// [installer] does one, and a clock fixed at [now] — by default Monday 28
-  /// September 2026, 19:00, the evening the design is drawn on.
+  /// [installer] does one, a clock fixed at [now] — by default Monday 28
+  /// September 2026, 19:00, the evening the design is drawn on — and chance
+  /// seeded the same every time.
   factory AppState.test({
     DeckSource? decks,
     TtsEngine tts = const NullTtsEngine(),
@@ -170,6 +177,7 @@ class AppState extends ChangeNotifier {
       settings: settings,
       profiles: profiles,
       currentProfileId: currentProfileId,
+      random: Random(0),
     );
     // Past the first-launch setup (#53, #117), unless a test brings its
     // own: speaking English, and learning every language.
@@ -637,6 +645,24 @@ class AppState extends ChangeNotifier {
         skill.mode!,
   };
 
+  /// Cards due tomorrow, as Today will count them: in the decks the profile
+  /// learns, in the skills switched on, and not set aside.
+  int dueTomorrow() {
+    final modes = _modes(ignorePauses: true);
+    final learned = <String>{
+      for (final entry in profileDecks)
+        for (final card in entry.cards) card.id,
+    };
+    final leeches = progress.leechEffects;
+    return progress.dueTomorrow(
+      now(),
+      counts: (key) =>
+          learned.contains(key.cardId) &&
+          modes.contains(key.mode) &&
+          !leeches.isSetAside(key),
+    );
+  }
+
   /// Whether this version can drill anything in [entry]: some card has a
   /// mode whose drill is available. A grammar deck cannot until its drill
   /// ships (#14). The learner's own skill switches do not count here.
@@ -728,6 +754,10 @@ class AppState extends ChangeNotifier {
       isSetAside: (card, mode) =>
           leeches.isSetAside((cardId: card.id, mode: mode)),
       reviseAll: request.revise,
+      // A session of new cards only offers a card's new pair even while
+      // another of its pairs is due, so a deck with reviews due is not
+      // taken for finished.
+      newEvenIfDue: request.newOnly,
       modes: modes,
       canIntroduce: canIntroduce,
     );

@@ -91,6 +91,7 @@ class LeechesPage extends StatelessWidget {
                   LeechCard(
                     leech: leech,
                     status: actions.statusOf(leech.key),
+                    reset: actions.isReset(leech.key),
                     onReset: () =>
                         actions.toggleReset(leech.key, now: state.now()),
                     onSetAside: () =>
@@ -114,12 +115,17 @@ class LeechCard extends StatelessWidget {
     super.key,
     required this.leech,
     required this.status,
+    this.reset = false,
     required this.onReset,
     required this.onSetAside,
   });
 
   final Leech leech;
   final LeechStatus status;
+
+  /// Whether a reset holds, which a pair set aside may also be: Undo is
+  /// offered for it either way.
+  final bool reset;
   final VoidCallback onReset;
   final VoidCallback onSetAside;
 
@@ -148,7 +154,7 @@ class LeechCard extends StatelessWidget {
           )
         : button;
 
-    final resetLabel = status == LeechStatus.reset
+    final resetLabel = reset || status == LeechStatus.reset
         ? l10n.commonUndo
         : l10n.leechesReset;
     final setAsideLabel = status == LeechStatus.setAside
