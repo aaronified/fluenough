@@ -1,0 +1,105 @@
+schema: 1
+id: mr-en-registers
+name: "Written Marathi and spoken Marathi"
+kind: vocab
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Marathi is written in a standard close to the speech of Pune, but speech runs words together and writes its neuter endings as -ं, while signs and offices use formal words from Sanskrit that nobody says at home. Here they are side by side. Recognition only. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [reading, unreviewed]
+cards:
+  - ref: mr-0148
+    notes: "Formal. Between friends, often थँक्स (thaenks), or nothing at all."
+    modes: [recognition]
+  - ref: mr-0157
+    notes: "Formal and written: कृपया शांतता राखा (krupayaa shaantataa raakhaa), please keep quiet, on a sign. In speech the polite verb ending is enough."
+    modes: [recognition]
+  - ref: mr-0137
+    notes: "As 'you', formal: in speeches, to a guest, on the telephone to a stranger, and in shops that want your custom."
+    modes: [recognition]
+  - ref: mr-0409
+    notes: "The written form. Speech says मुलं (mulan), and dialogue in books and films writes it so: a neuter -े is said, and often written, as -ं."
+    modes: [recognition]
+  - id: mr-0615
+    target: "झालं"
+    native: "done; it's happened (spoken form of झाले)"
+    reading: "jhaalan"
+    pos: "other"
+    modes: [recognition]
+    notes: "The written ending -ए of a neuter or of a past is said as a nasal a: झाले, झालं; केले, केलं; मुले, मुलं. काय झालं? (kaay jhaalan?), what happened?"
+  - id: mr-0616
+    target: "नाहीये"
+    native: "isn't (spoken)"
+    reading: "naahiiye"
+    pos: "other"
+    modes: [recognition]
+    notes: "Spoken for नाही आहे: तो घरी नाहीये, he isn't at home. Written Marathi says नाही."
+  - id: mr-0617
+    target: "स्वच्छतागृह"
+    native: "toilet (on signs)"
+    reading: "svachchhataagruh"
+    pos: "noun"
+    gender: "n"
+    modes: [recognition]
+    notes: "'Cleanliness house': what the sign says. Ask for the टॉयलेट or बाथरूम."
+  - id: mr-0618
+    target: "धूम्रपान करू नये"
+    native: "no smoking"
+    reading: "dhuumrapaan karuu naye"
+    pos: "phrase"
+    modes: [recognition]
+    notes: "-ऊ नये is 'one should not', the language of notices: येथे थुंकू नये, do not spit here."
+  - id: mr-0619
+    target: "प्रवेश"
+    native: "entry; entrance"
+    reading: "pravesh"
+    pos: "noun"
+    gender: "m"
+    modes: [recognition]
+    notes: "On signs: प्रवेश बंद (pravesh band), no entry."
+  - id: mr-0620
+    target: "भ्रमणध्वनी"
+    native: "mobile phone (formal)"
+    reading: "bhramandhvanii"
+    pos: "noun"
+    gender: "m"
+    modes: [recognition]
+    notes: "'Roaming sound', on forms and in official letters. Everyone says मोबाइल (mobaail)."
+  - id: mr-0621
+    target: "दूरध्वनी"
+    native: "telephone (formal)"
+    reading: "duurdhvanii"
+    pos: "noun"
+    gender: "m"
+    modes: [recognition]
+    notes: "'Far sound'. In speech, फोन."
+  - id: mr-0622
+    target: "संगणक"
+    native: "computer (formal)"
+    reading: "sanganak"
+    pos: "noun"
+    gender: "m"
+    modes: [recognition]
+    notes: "'Calculator'. In speech, कॉम्प्युटर (kompyuutar)."
+  - id: mr-0623
+    target: "शासन"
+    native: "government"
+    reading: "shaasan"
+    pos: "noun"
+    gender: "n"
+    modes: [recognition]
+    notes: "महाराष्ट्र शासन, the Government of Maharashtra, on every official notice. In speech, सरकार (sarkaar)."
+  - id: mr-0624
+    target: "करिता"
+    native: "for (formal)"
+    reading: "karitaa"
+    pos: "other"
+    modes: [recognition]
+    notes: "Written and formal: मुलांकरिता (mulaankaritaa), for children. In speech, -साठी."
+  - id: mr-0625
+    target: "जाहले"
+    native: "happened (older form of झाले)"
+    reading: "jaahle"
+    pos: "other"
+    modes: [recognition]
+    notes: "Older and poetic writing; today झाले."

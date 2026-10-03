@@ -1,0 +1,84 @@
+# How Kannada spells a generated number (ADR-0011). Kannada does build 21 to
+# 99 from a tens word and a units word, but it fuses them into one word with
+# a sandhi change: ಇಪ್ಪತ್ತು + ಒಂದು is ಇಪ್ಪತ್ತೊಂದು, 21. The format joins the
+# two parts with a fixed string and cannot express that change, so
+# tens_and_units is false, and only the numbers whose last two digits the
+# decks teach a word for are generated: 1 to 20, the tens, 25 and 26.
+schema: 1
+id: kn-numbers
+name: "Kannada numbers"
+kind: numbers
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+license: CC0-1.0
+description: "How Kannada spells a generated number from the words its number decks teach (ADR-0011). Not yet checked by a Kannada speaker: please report any mistake."
+tens_and_units: false
+words:
+  1: "ಒಂದು"
+  2: "ಎರಡು"
+  3: "ಮೂರು"
+  4: "ನಾಲ್ಕು"
+  5: "ಐದು"
+  6: "ಆರು"
+  7: "ಏಳು"
+  8: "ಎಂಟು"
+  9: "ಒಂಬತ್ತು"
+  10: "ಹತ್ತು"
+  11: "ಹನ್ನೊಂದು"
+  12: "ಹನ್ನೆರಡು"
+  13: "ಹದಿಮೂರು"
+  14: "ಹದಿನಾಲ್ಕು"
+  15: "ಹದಿನೈದು"
+  16: "ಹದಿನಾರು"
+  17: "ಹದಿನೇಳು"
+  18: "ಹದಿನೆಂಟು"
+  19: "ಹತ್ತೊಂಬತ್ತು"
+  20: "ಇಪ್ಪತ್ತು"
+  25: "ಇಪ್ಪತ್ತೈದು"
+  26: "ಇಪ್ಪತ್ತಾರು"
+  30: "ಮೂವತ್ತು"
+  40: "ನಲವತ್ತು"
+  50: "ಐವತ್ತು"
+  60: "ಅರವತ್ತು"
+  70: "ಎಪ್ಪತ್ತು"
+  80: "ಎಂಬತ್ತು"
+  90: "ತೊಂಬತ್ತು"
+hundreds:
+  1: "ನೂರು"
+  2: "ಇನ್ನೂರು"
+  3: "ಮುನ್ನೂರು"
+  4: "ನಾನೂರು"
+  5: "ಐನೂರು"
+  6: "ಆರುನೂರು"
+  7: "ಏಳುನೂರು"
+  8: "ಎಂಟುನೂರು"
+  9: "ಒಂಬೈನೂರು"
+hundreds_before:
+  1: "ನೂರ"
+  2: "ಇನ್ನೂರ"
+  3: "ಮುನ್ನೂರ"
+  4: "ನಾನೂರ"
+  5: "ಐನೂರ"
+  6: "ಆರುನೂರ"
+  7: "ಏಳುನೂರ"
+  8: "ಎಂಟುನೂರ"
+  9: "ಒಂಬೈನೂರ"
+thousands:
+  1: ["ಸಾವಿರ", "ಒಂದು ಸಾವಿರ"]
+  2: "ಎರಡು ಸಾವಿರ"
+  3: "ಮೂರು ಸಾವಿರ"
+  4: "ನಾಲ್ಕು ಸಾವಿರ"
+  5: "ಐದು ಸಾವಿರ"
+  6: "ಆರು ಸಾವಿರ"
+  7: "ಏಳು ಸಾವಿರ"
+  8: "ಎಂಟು ಸಾವಿರ"
+  9: "ಒಂಬತ್ತು ಸಾವಿರ"
+thousands_before:
+  1: ["ಸಾವಿರದ", "ಒಂದು ಸಾವಿರದ", "ಸಾವಿರ"]
+  2: ["ಎರಡು ಸಾವಿರದ", "ಎರಡು ಸಾವಿರ"]
+  3: ["ಮೂರು ಸಾವಿರದ", "ಮೂರು ಸಾವಿರ"]
+  4: ["ನಾಲ್ಕು ಸಾವಿರದ", "ನಾಲ್ಕು ಸಾವಿರ"]
+  5: ["ಐದು ಸಾವಿರದ", "ಐದು ಸಾವಿರ"]
+  6: ["ಆರು ಸಾವಿರದ", "ಆರು ಸಾವಿರ"]
+  7: ["ಏಳು ಸಾವಿರದ", "ಏಳು ಸಾವಿರ"]
+  8: ["ಎಂಟು ಸಾವಿರದ", "ಎಂಟು ಸಾವಿರ"]
+  9: ["ಒಂಬತ್ತು ಸಾವಿರದ", "ಒಂಬತ್ತು ಸಾವಿರ"]

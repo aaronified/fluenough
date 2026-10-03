@@ -123,6 +123,12 @@ void main() {
     await tester.enterText(_nameField(tester), 'Dev');
     await _tapVisible(tester, find.byType(SwitchListTile));
     final pin = find.widgetWithText(TextField, l10n.newProfilePinField(4));
+    // Below the language list, which every bundled language makes long.
+    await tester.scrollUntilVisible(
+      pin,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(pin, findsOneWidget);
 
     await tester.ensureVisible(pin);

@@ -18,6 +18,9 @@ decks/
   te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
        te-en-path.yaml
+  mr/  mr-en-first-words.yaml     the same, for Marathi; not yet checked by a Marathi speaker
+  kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker
+  gu/  gu-en-first-words.yaml     the same, for Gujarati; not yet checked by a Gujarati speaker
   themes.yaml
 ```
 
@@ -88,7 +91,8 @@ too: ఏడు (seven) is `eedu`, and ఎడమ (left) is `edama`.
 
 Tag a deck `unreviewed` when no native speaker has checked it. The app then
 says so on the deck's screen and asks speakers to report mistakes, and the
-deck's `description` should say so too. The Telugu decks carry it (#39).
+deck's `description` should say so too. The Telugu decks carry it (#39), and
+so do the Marathi, Kannada and Gujarati ones.
 
 ## Two rules that matter more than the rest
 

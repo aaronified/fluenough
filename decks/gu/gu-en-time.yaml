@@ -1,0 +1,167 @@
+schema: 1
+id: gu-en-time
+name: "Time and days"
+kind: vocab
+theme: time
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Telling the time, the parts of the day, today and the one word for yesterday and tomorrow, and the days of the week. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: gu-0060
+  - id: gu-0477
+    target: "કેટલા વાગ્યા?"
+    native: "What time is it?"
+    reading: "ketlaa vaagyaa?"
+    pos: "phrase"
+    notes: "Literally 'how many have struck?'."
+  - id: gu-0478
+    target: "પાંચ વાગ્યા છે."
+    native: "It's five o'clock."
+    reading: "paanch vaagyaa chhe."
+    pos: "phrase"
+    notes: "Half past five is સાડા પાંચ (saadaa paanch); a quarter past, સવા પાંચ; a quarter to, પોણા પાંચ. One o'clock is એક વાગ્યો (ek vaagyo)."
+  - id: gu-0479
+    target: "સાત વાગ્યે"
+    native: "at seven o'clock"
+    reading: "saat vaagye"
+    pos: "phrase"
+    notes: "-વાગ્યે (vaagye) is 'at' a time."
+  - id: gu-0480
+    target: "કલાક"
+    native: "hour"
+    reading: "kalaak"
+    pos: "noun"
+    gender: "m"
+    notes: "અડધો કલાક (adadho kalaak), half an hour."
+  - id: gu-0481
+    target: "મિનિટ"
+    native: "minute"
+    reading: "minit"
+    pos: "noun"
+    gender: "f"
+    notes: "એક મિનિટ! (ek minit!), just a minute!"
+  - id: gu-0482
+    target: "આજે"
+    native: "today"
+    reading: "aaje"
+    pos: "adv"
+  - id: gu-0483
+    target: "કાલે"
+    native: "yesterday; tomorrow"
+    reading: "kaale"
+    pos: "adv"
+    notes: "One word for both: the verb's tense tells which. To be clear, say ગઈ કાલે (gaii kaale), yesterday, or આવતી કાલે (aavtii kaale), tomorrow."
+  - id: gu-0484
+    target: "અત્યારે"
+    native: "now"
+    reading: "atyaare"
+    pos: "adv"
+  - id: gu-0485
+    target: "હમણાં"
+    native: "just now; in a moment"
+    reading: "hamnaan"
+    pos: "adv"
+    notes: "Both a moment ago and a moment from now: હમણાં આવું છું, I'll be right there."
+  - id: gu-0486
+    target: "સવાર"
+    native: "morning"
+    reading: "savaar"
+    pos: "noun"
+    gender: "f"
+    notes: "સવારે (savaare), in the morning."
+  - id: gu-0487
+    target: "બપોર"
+    native: "midday; early afternoon"
+    reading: "bapor"
+    pos: "noun"
+    gender: "f"
+    notes: "બપોરે (bapore), at midday. In some towns, Rajkot most famously, shops close for a while after the midday meal."
+  - id: gu-0488
+    target: "સાંજ"
+    native: "evening"
+    reading: "saanj"
+    pos: "noun"
+    gender: "f"
+    notes: "સાંજે (saanje), in the evening."
+  - id: gu-0489
+    target: "રાત"
+    native: "night"
+    reading: "raat"
+    pos: "noun"
+    gender: "f"
+    notes: "રાત્રે (raatre), at night."
+  - id: gu-0490
+    target: "દિવસ"
+    native: "day"
+    reading: "divas"
+    pos: "noun"
+    gender: "m"
+  - id: gu-0491
+    target: "અઠવાડિયું"
+    native: "week"
+    reading: "athvaadiyun"
+    pos: "noun"
+    gender: "n"
+  - id: gu-0492
+    target: "મોડું"
+    native: "late"
+    reading: "modun"
+    pos: "adv"
+    notes: "મોડું થયું (modun thayun), it's late; I'm late. Don't mix it with મોટું (motun), big."
+  - id: gu-0493
+    target: "વહેલું"
+    native: "early"
+    reading: "vahelun"
+    pos: "adv"
+    notes: "વહેલા આવજો (vahelaa aavjo), come early."
+  - id: gu-0494
+    target: "સોમવાર"
+    native: "Monday"
+    reading: "somvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "Every day ends in -વાર, 'day'. સોમ is the moon."
+  - id: gu-0495
+    target: "મંગળવાર"
+    native: "Tuesday"
+    reading: "mangalvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "મંગળ is Mars."
+  - id: gu-0496
+    target: "બુધવાર"
+    native: "Wednesday"
+    reading: "budhvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "બુધ is Mercury."
+  - id: gu-0497
+    target: "ગુરુવાર"
+    native: "Thursday"
+    reading: "guruvaar"
+    pos: "noun"
+    gender: "m"
+    notes: "ગુરુ is Jupiter."
+  - id: gu-0498
+    target: "શુક્રવાર"
+    native: "Friday"
+    reading: "shukravaar"
+    pos: "noun"
+    gender: "m"
+    notes: "શુક્ર is Venus."
+  - id: gu-0499
+    target: "શનિવાર"
+    native: "Saturday"
+    reading: "shanivaar"
+    pos: "noun"
+    gender: "m"
+    notes: "શનિ is Saturn."
+  - id: gu-0500
+    target: "રવિવાર"
+    native: "Sunday"
+    reading: "ravivaar"
+    pos: "noun"
+    gender: "m"
+    notes: "રવિ is the sun."

@@ -1,0 +1,95 @@
+schema: 1
+id: mr-en-addressing
+name: "Addressing people"
+kind: vocab
+theme: addressing
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "What to call a shopkeeper, a driver or an older woman: Marathi speakers address strangers as family, and call out with अहो, अरे and अगं. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: mr-0145
+    notes: "The safe 'you' for anyone you don't know well. Its verb takes the plural: तुम्ही कुठे जाता? (tumhii kuthe jaataa?), where are you going?"
+  - ref: mr-0137
+    notes: "In formal speech, to a guest or in a speech, आपण is the most polite 'you': आपण कुठून आलात? (aapan kuthuun aalaat?), where have you come from?"
+  - id: mr-0192
+    target: "दादा"
+    native: "elder brother; a young man"
+    reading: "daadaa"
+    pos: "noun"
+    gender: "m"
+    notes: "Any young man about your age or a little older: a driver, a waiter, a shopkeeper. Also after a name: सुनीलदादा."
+  - id: mr-0193
+    target: "ताई"
+    native: "elder sister; a young woman"
+    reading: "taaii"
+    pos: "noun"
+    gender: "f"
+    notes: "Any young woman about your age or a little older. Also after a name: सुनीताताई."
+  - id: mr-0194
+    target: "काका"
+    native: "uncle (father's brother); an older man"
+    reading: "kaakaa"
+    pos: "noun"
+    gender: "m"
+    notes: "Any man of your parents' age: a shopkeeper, a neighbour, a rickshaw driver."
+  - id: mr-0195
+    target: "काकू"
+    native: "aunt (father's brother's wife); an older woman"
+    reading: "kaakuu"
+    pos: "noun"
+    gender: "f"
+    notes: "Any woman of your parents' age."
+  - id: mr-0196
+    target: "मावशी"
+    native: "aunt (mother's sister); a woman who helps at home"
+    reading: "maavshii"
+    pos: "noun"
+    gender: "f"
+    notes: "Also what many families call a woman who cooks or cleans for them, as a sign of respect."
+  - id: mr-0197
+    target: "आजी"
+    native: "grandmother; an old woman"
+    reading: "aajii"
+    pos: "noun"
+    gender: "f"
+  - id: mr-0198
+    target: "आजोबा"
+    native: "grandfather; an old man"
+    reading: "aajobaa"
+    pos: "noun"
+    gender: "m"
+  - id: mr-0199
+    target: "साहेब"
+    native: "sir"
+    reading: "saaheb"
+    pos: "noun"
+    gender: "m"
+    notes: "To an official, a boss or a customer. Also after a surname: पाटीलसाहेब (paatiilsaaheb)."
+  - id: mr-0200
+    target: "अहो"
+    native: "excuse me; hello there (respectful)"
+    reading: "aho"
+    pos: "other"
+    tags: ["polite"]
+    notes: "The polite way to get anyone's attention: अहो, ऐका! (aho, aikaa!), excuse me, listen! Traditionally also how a wife calls her husband."
+  - id: mr-0201
+    target: "अरे"
+    native: "hey (to a man or boy you know well)"
+    reading: "are"
+    pos: "other"
+    notes: "Familiar: to a friend, a younger brother, a child. Used with तू."
+  - id: mr-0202
+    target: "अगं"
+    native: "hey (to a woman or girl you know well)"
+    reading: "agan"
+    pos: "other"
+    notes: "The familiar call to a woman, used with तू. Also written अग."
+  - id: mr-0203
+    target: "मॅडम"
+    native: "madam"
+    reading: "maedam"
+    pos: "noun"
+    gender: "f"
+    notes: "To a teacher, an official or a woman in an office. Its partner is सर (sar), sir."

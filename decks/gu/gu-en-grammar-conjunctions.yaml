@@ -1,0 +1,71 @@
+schema: 1
+id: gu-en-grammar-conjunctions
+name: "And, but, because, if"
+kind: vocab
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The small words that join one idea to the next, and the pairs જો … તો (if … then) and જ્યારે … ત્યારે (when … then). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - id: gu-0579
+    target: "અને"
+    native: "and"
+    reading: "ane"
+    pos: "other"
+    notes: "મીના અને રમેશ, Meena and Ramesh."
+  - ref: gu-0055
+    notes: "Between two clauses, 'but': હું આવીશ, પણ મોડો, I'll come, but late. After a word, 'also; even'."
+  - id: gu-0580
+    target: "કે"
+    native: "or; that"
+    reading: "ke"
+    pos: "other"
+    notes: "ચા કે કૉફી? tea or coffee? It also joins 'that': મને લાગે છે કે..., I think that..."
+  - id: gu-0581
+    target: "અથવા"
+    native: "or (formal)"
+    reading: "athvaa"
+    pos: "other"
+    notes: "On forms and in writing; in speech, કે."
+  - id: gu-0582
+    target: "કારણ કે"
+    native: "because"
+    reading: "kaaran ke"
+    pos: "phrase"
+    notes: "Literally 'the reason that'."
+  - id: gu-0583
+    target: "એટલે"
+    native: "so; that's why"
+    reading: "etle"
+    pos: "other"
+    notes: "It comes where English puts 'so': વરસાદ પડે છે, એટલે હું ઘરે છું, it's raining, so I'm at home."
+  - id: gu-0584
+    target: "જો"
+    native: "if"
+    reading: "jo"
+    pos: "other"
+    notes: "Usually paired with તો (to), 'then', in the second half. જો is also 'look!', from જોવું."
+  - id: gu-0585
+    target: "જો વરસાદ પડશે, તો હું નહીં આવું."
+    native: "If it rains, I won't come."
+    reading: "jo varsaad padshe, to hun nahiin aavun."
+    pos: "phrase"
+    notes: "Gujarati puts the 'if' half in the future too: 'if rain will fall'."
+  - id: gu-0586
+    target: "જ્યારે હું આવીશ, ત્યારે વાત કરીશું."
+    native: "When I come, we'll talk."
+    reading: "jyaare hun aaviish, tyaare vaat kariishun."
+    pos: "phrase"
+    notes: "જ્યારે (jyaare), 'when', is answered by ત્યારે (tyaare), 'then'. The question 'when?' is ક્યારે."
+  - id: gu-0587
+    target: "નહીંતર"
+    native: "otherwise; or else"
+    reading: "nahiintar"
+    pos: "other"
+    notes: "જલદી ચાલો, નહીંતર બસ જતી રહેશે, hurry, or the bus will go."
+  - id: gu-0588
+    target: "તોપણ"
+    native: "even so; still"
+    reading: "topan"
+    pos: "other"

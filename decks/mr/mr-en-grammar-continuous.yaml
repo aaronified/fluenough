@@ -1,0 +1,56 @@
+schema: 1
+id: mr-en-grammar-continuous
+name: "Present continuous"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I am going, she is coming: what is happening now, in its full form and in the short forms of speech. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Present continuous"
+  slot_name: "person"
+  slots: ["मी", "आम्ही", "तू", "तुम्ही", "तो / ती / ते", "ते / त्या (they)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem with -त, then आहे in its person: मी जात आहे, I'm going. The full form does not show gender. Speech runs the two together, and then gender shows: a man says जातोय, a woman जातेय; to a man तू जातोयस, to a woman जातेयस. The full form comes first here, and the short forms are accepted too."
+  entries:
+    - lemma: "जाणे"
+      key: jaane
+      gloss: "to go"
+      forms:
+        "मी": ["जात आहे", "जातोय", "जातेय"]
+        "आम्ही": ["जात आहोत", "जातोय"]
+        "तू": ["जात आहेस", "जातोयस", "जातेयस"]
+        "तुम्ही": ["जात आहात", "जाताय"]
+        "तो / ती / ते": ["जात आहे", "जातोय", "जातेय"]
+        "ते / त्या (they)": ["जात आहेत", "जातायत"]
+    - lemma: "येणे"
+      key: yene
+      gloss: "to come"
+      forms:
+        "मी": ["येत आहे", "येतोय", "येतेय"]
+        "आम्ही": ["येत आहोत", "येतोय"]
+        "तू": ["येत आहेस", "येतोयस", "येतेयस"]
+        "तुम्ही": ["येत आहात", "येताय"]
+        "तो / ती / ते": ["येत आहे", "येतोय", "येतेय"]
+        "ते / त्या (they)": ["येत आहेत", "येतायत"]
+    - lemma: "करणे"
+      key: karne
+      gloss: "to do"
+      forms:
+        "मी": ["करत आहे", "करतोय", "करतेय"]
+        "आम्ही": ["करत आहोत", "करतोय"]
+        "तू": ["करत आहेस", "करतोयस", "करतेयस"]
+        "तुम्ही": ["करत आहात", "करताय"]
+        "तो / ती / ते": ["करत आहे", "करतोय", "करतेय"]
+        "ते / त्या (they)": ["करत आहेत", "करतायत"]
+    - lemma: "शिकणे"
+      key: shikne
+      gloss: "to learn"
+      forms:
+        "मी": ["शिकत आहे", "शिकतोय", "शिकतेय"]
+        "आम्ही": ["शिकत आहोत", "शिकतोय"]
+        "तू": ["शिकत आहेस", "शिकतोयस", "शिकतेयस"]
+        "तुम्ही": ["शिकत आहात", "शिकताय"]
+        "तो / ती / ते": ["शिकत आहे", "शिकतोय", "शिकतेय"]
+        "ते / त्या (they)": ["शिकत आहेत", "शिकतायत"]

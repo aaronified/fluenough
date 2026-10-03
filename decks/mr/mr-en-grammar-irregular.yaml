@@ -1,0 +1,100 @@
+schema: 1
+id: mr-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose past or polite request does not follow the pattern. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [unreviewed, grammar]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["past, masculine", "past, feminine", "please … (तुम्ही)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The past masculine is the form for तो with a verb that takes no object, तो गेला, he went. A verb that takes an object agrees with the object instead: त्याने चहा केला, he made tea (चहा is masculine); त्याने पोळी केली, he made a chapati (पोळी is feminine). The polite request goes with तुम्ही: या, please come; to a friend, the bare stem: ये."
+  entries:
+    - lemma: "जाणे"
+      key: jaane
+      gloss: "to go"
+      forms:
+        "past, masculine": "गेला"
+        "past, feminine": "गेली"
+        "please … (तुम्ही)": "जा"
+    - lemma: "येणे"
+      key: yene
+      gloss: "to come"
+      forms:
+        "past, masculine": "आला"
+        "past, feminine": "आली"
+        "please … (तुम्ही)": "या"
+    - lemma: "करणे"
+      key: karne
+      gloss: "to do; to make"
+      forms:
+        "past, masculine": "केला"
+        "past, feminine": "केली"
+        "please … (तुम्ही)": "करा"
+    - lemma: "घेणे"
+      key: ghene
+      gloss: "to take"
+      forms:
+        "past, masculine": "घेतला"
+        "past, feminine": "घेतली"
+        "please … (तुम्ही)": "घ्या"
+    - lemma: "देणे"
+      key: dene
+      gloss: "to give"
+      forms:
+        "past, masculine": "दिला"
+        "past, feminine": "दिली"
+        "please … (तुम्ही)": "द्या"
+    - lemma: "खाणे"
+      key: khaane
+      gloss: "to eat"
+      forms:
+        "past, masculine": "खाल्ला"
+        "past, feminine": "खाल्ली"
+        "please … (तुम्ही)": "खा"
+    - lemma: "पिणे"
+      key: pine
+      gloss: "to drink"
+      forms:
+        "past, masculine": ["प्यायला", "प्याला"]
+        "past, feminine": ["प्यायली", "प्याली"]
+        "please … (तुम्ही)": "प्या"
+    - lemma: "होणे"
+      key: hone
+      gloss: "to become; to happen"
+      forms:
+        "past, masculine": "झाला"
+        "past, feminine": "झाली"
+        "please … (तुम्ही)": "व्हा"
+    - lemma: "लिहिणे"
+      key: lihine
+      gloss: "to write"
+      forms:
+        "past, masculine": "लिहिला"
+        "past, feminine": "लिहिली"
+        "please … (तुम्ही)": "लिहा"
+    - lemma: "धुणे"
+      key: dhune
+      gloss: "to wash"
+      forms:
+        "past, masculine": "धुतला"
+        "past, feminine": "धुतली"
+        "please … (तुम्ही)": "धुवा"
+    - lemma: "सांगणे"
+      key: saangne
+      gloss: "to tell"
+      forms:
+        "past, masculine": "सांगितला"
+        "past, feminine": "सांगितली"
+        "please … (तुम्ही)": "सांगा"
+    - lemma: "म्हणणे"
+      key: mhanne
+      gloss: "to say"
+      forms:
+        "past, masculine": "म्हणाला"
+        "past, feminine": "म्हणाली"
+        "please … (तुम्ही)": "म्हणा"

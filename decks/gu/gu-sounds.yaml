@@ -1,0 +1,30 @@
+# Gujarati's sound contrasts: pairs of letters or signs that change a word,
+# for the speaking drill's feedback (#89) and the minimal-pair drill (#31).
+# Each id is the tag the language's sound-differences deck uses. See
+# ADR-0015 and docs/DECK-FORMAT.md. Gujarati does not tell long and short
+# i or u apart in speech, so they are not a contrast here. Not yet checked
+# by a Gujarati speaker: please report any mistake.
+schema: 1
+kind: sounds
+id: gu-sounds
+language: gu
+contrasts:
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["ક", "ખ"], ["ગ", "ઘ"], ["ચ", "છ"], ["જ", "ઝ"], ["ટ", "ઠ"], ["ડ", "ઢ"], ["ત", "થ"], ["દ", "ધ"], ["પ", "ફ"], ["બ", "ભ"]]
+  - id: dental-retroflex
+    name: "the tongue on the teeth or curled back"
+    pairs: [["ત", "ટ"], ["થ", "ઠ"], ["દ", "ડ"], ["ધ", "ઢ"], ["ન", "ણ"]]
+  - id: lateral
+    name: "the l on the teeth or curled back"
+    pairs: [["લ", "ળ"]]
+  - id: a-aa
+    name: "a short a or a long aa"
+    within_word: true
+    pairs: [["", "ા"], ["અ", "આ"]]
+  - id: nasal
+    name: "a nasal vowel (the dot above)"
+    pairs: [["", "ં"]]
+  - id: gemination
+    name: "a single or a double consonant"
+    pairs: [["ક", "ક્ક"], ["ચ", "ચ્ચ"], ["છ", "ચ્છ"], ["ટ", "ટ્ટ"], ["ઠ", "ઠ્ઠ"], ["ત", "ત્ત"], ["દ", "દ્દ"], ["ન", "ન્ન"], ["પ", "પ્પ"], ["મ", "મ્મ"], ["લ", "લ્લ"], ["વ", "વ્વ"]]

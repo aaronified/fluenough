@@ -1,0 +1,72 @@
+schema: 1
+id: gu-en-grammar-past-more
+name: "Past tense with an object"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I ate, she saw: in the past a verb with an object agrees with the object, and the doer takes -એ. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Simple past, verbs with an object"
+  slot_name: "the object"
+  slots: ["a masculine object", "a feminine object", "a neuter object, or none", "a neuter plural object"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "With an object, the doer takes -એ: હું → મેં, તું → તેં, તે → તેણે, તેઓ → તેમણે, મીના → મીનાએ; અમે and તમે stay the same. The verb then agrees with the object, not with the doer: મેં ચા પીધી (ચા is feminine), મેં પાણી પીધું (neuter), મેં રોટલો ખાધો (masculine). With no object named, the verb is neuter: મેં ખાધું, I ate. A woman and a man say it alike."
+  entries:
+    - lemma: "ખાવું"
+      key: khaavun
+      gloss: "to eat"
+      forms:
+        "a masculine object": "ખાધો"
+        "a feminine object": "ખાધી"
+        "a neuter object, or none": "ખાધું"
+        "a neuter plural object": "ખાધાં"
+    - lemma: "પીવું"
+      key: piivun
+      gloss: "to drink"
+      forms:
+        "a masculine object": "પીધો"
+        "a feminine object": "પીધી"
+        "a neuter object, or none": "પીધું"
+        "a neuter plural object": "પીધાં"
+    - lemma: "લેવું"
+      key: levun
+      gloss: "to take; to buy"
+      forms:
+        "a masculine object": "લીધો"
+        "a feminine object": "લીધી"
+        "a neuter object, or none": "લીધું"
+        "a neuter plural object": "લીધાં"
+    - lemma: "કરવું"
+      key: karvun
+      gloss: "to do"
+      forms:
+        "a masculine object": "કર્યો"
+        "a feminine object": "કરી"
+        "a neuter object, or none": "કર્યું"
+        "a neuter plural object": "કર્યાં"
+    - lemma: "જોવું"
+      key: jovun
+      gloss: "to see"
+      forms:
+        "a masculine object": "જોયો"
+        "a feminine object": "જોઈ"
+        "a neuter object, or none": "જોયું"
+        "a neuter plural object": "જોયાં"
+    - lemma: "આપવું"
+      key: aapvun
+      gloss: "to give"
+      forms:
+        "a masculine object": "આપ્યો"
+        "a feminine object": "આપી"
+        "a neuter object, or none": "આપ્યું"
+        "a neuter plural object": "આપ્યાં"
+    - lemma: "વાંચવું"
+      key: vaanchvun
+      gloss: "to read"
+      forms:
+        "a masculine object": "વાંચ્યો"
+        "a feminine object": "વાંચી"
+        "a neuter object, or none": "વાંચ્યું"
+        "a neuter plural object": "વાંચ્યાં"
