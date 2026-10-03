@@ -19,6 +19,7 @@ void changeAll(SettingsNotifier s) {
     ..seed = ThemeSeed.clay
     ..dynamicColour = true
     ..highContrast = true
+    ..pureBlack = true
     ..setLearnsAlphabet('hi', false)
     ..cardTextScale = 1.2
     ..reminder = true
