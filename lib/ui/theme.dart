@@ -9,6 +9,8 @@ import '../app/skill.dart';
 /// the schemes are generated with [ColorScheme.fromSeed] and never copied from
 /// the design's hex tables. High contrast is the same scheme at M3's highest
 /// contrast level, with [ModeColors.lightHigh] or [ModeColors.darkHigh].
+/// Pure black makes the dark theme's background black, for OLED screens;
+/// cards, bars and sheets keep their tones, so they still stand out.
 /// Component shapes and sizes follow the design: 56 px stadium buttons, 10 px
 /// chips, 16 px SnackBars, an 80 px navigation bar.
 abstract final class AppTheme {
@@ -23,10 +25,20 @@ abstract final class AppTheme {
   static ThemeData dark({
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
-  }) => fromScheme(
-    _scheme(seed, Brightness.dark, highContrast),
-    modes: highContrast ? ModeColors.darkHigh : ModeColors.dark,
-  );
+    bool pureBlack = false,
+  }) {
+    final scheme = _scheme(seed, Brightness.dark, highContrast);
+    return fromScheme(
+      pureBlack
+          ? scheme.copyWith(
+              surface: Colors.black,
+              surfaceDim: Colors.black,
+              surfaceContainerLowest: Colors.black,
+            )
+          : scheme,
+      modes: highContrast ? ModeColors.darkHigh : ModeColors.dark,
+    );
+  }
 
   static ColorScheme _scheme(ThemeSeed seed, Brightness b, bool high) =>
       ColorScheme.fromSeed(
