@@ -1,0 +1,91 @@
+# How Gujarati script works: the recurring features a learner from English
+# misses, shown before the first letters and from a script deck's Tips.
+# See ADR-0016 and docs/DECK-FORMAT.md. Not yet checked by a Gujarati
+# speaker: please report any mistake.
+schema: 1
+kind: script
+id: gu-script
+language: gu
+name: "How Gujarati script works"
+intro: "Gujarati script is a close cousin of Devanagari, the script of Hindi and Marathi, and is built from the same few ideas, which come back in letter after letter. They look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  - id: no-headline
+    name: "No line along the top"
+    example: "ક"
+    text: "Hindi letters hang from a line along the top. Gujarati letters don't: each stands on its own, and words are told apart by spaces alone. Many letters look like a Devanagari letter with the line taken away."
+    letters: ["ક", "ગ", "ત", "ન", "મ", "સ"]
+  - id: own-shapes
+    name: "Letters with shapes of their own"
+    example: "જ"
+    text: "Some letters look nothing like their Devanagari cousins, so learn them as new: અ, ઇ, ખ, જ, ઝ, ણ, શ and ળ."
+    letters: ["અ", "ઇ", "ખ", "જ", "ઝ", "ણ", "શ", "ળ"]
+  - id: rows
+    name: "Rows of five"
+    term: "વર્ગ"
+    reading: "varg"
+    example: "ક"
+    text: "Most consonants come in five rows of five. Each row is made in about one place in the mouth: ક at the back, ચ against the palate, ટ with the tongue curled back, ત on the teeth, પ at the lips. The columns work the same way in every row: plain (ક), with a breath (ખ), voiced (ગ), voiced with a breath (ઘ), and through the nose (ઙ). ઙ and ઞ are rare: the dot ં is written in their place."
+    letters: ["ક", "ખ", "ગ", "ઘ", "ઙ", "ચ", "છ", "જ", "ઝ", "ઞ", "ટ", "ઠ", "ડ", "ઢ", "ણ", "ત", "થ", "દ", "ધ", "ન", "પ", "ફ", "બ", "ભ", "મ"]
+  - id: inherent-vowel
+    name: "The vowel you don't see"
+    example: "ક"
+    text: "Every consonant carries a short a, said like the u of 'but', unless a sign changes it: ક alone is ka."
+    letters: ["ક", "કર", "કમળ"]
+  - id: final-a
+    name: "The last a usually isn't said"
+    example: "ઘર"
+    text: "At the end of most words the carried a goes quiet: ઘર is ghar, કમળ is kamal. Inside longer words it often goes quiet too: છોકરો is chhokro, not chhokaro. Learn each word as it's said."
+    letters: ["ઘર", "કમળ", "છોકરો"]
+  - id: vowel-signs
+    name: "Vowels as signs on a letter"
+    term: "બારાખડી"
+    reading: "baaraakhadii"
+    example: "કિ"
+    text: "After a consonant a vowel is a sign on it, not a letter of its own. િ is written before the consonant but said after it: you see િ then ક, and say ki. ે and ૈ sit above, ુ, ૂ and ૃ below, the rest after. The table of every consonant with every sign is the બારાખડી, which children chant at school."
+    letters: ["કા", "કિ", "કી", "કુ", "કે", "કો"]
+  - id: half-letters
+    name: "Half letters"
+    term: "જોડાક્ષર"
+    reading: "jodaakshar"
+    example: "પ્ય"
+    text: "Two consonants with no vowel between them join. Usually the first is written as a half letter, without its upright stroke: પ્યાલો (pyaalo, cup). Some stack one above the other: ટ્ટ, દ્ધ."
+    letters: ["પ્ય", "સ્ત", "ત્ય", "ચ્છ", "દ્ધ"]
+  - id: special-joins
+    name: "Joins with shapes of their own"
+    example: "ક્ષ"
+    text: "A few joins look nothing like their parts: ક્ષ is ક and ષ, જ્ઞ is જ and ઞ, ત્ર is ત and ર, શ્ર is શ and ર, દ્ર is દ and ર. Gujarati says જ્ઞ as gn: જ્ઞાન is gnaan, knowledge."
+    letters: ["ક્ષ", "જ્ઞ", "ત્ર", "શ્ર", "દ્ર"]
+  - id: r-forms
+    name: "ર written as a stroke"
+    example: "પ્ર"
+    text: "Next to another consonant ર isn't written in full. After it, it's a small slanting stroke at its foot (પ્ર), or a caret under a letter such as ટ (ટ્ર); before it, a small hook on top of the next letter (ર્મ in ધર્મ)."
+    letters: ["પ્ર", "ક્ર", "ટ્ર", "ર્મ"]
+  - id: halant
+    name: "The mark that takes the vowel away"
+    term: "હલંત"
+    reading: "halant"
+    example: "ક્"
+    text: "The small slanting stroke below a letter, ્, means no vowel after it. You'll rarely see it, because two consonants usually join instead."
+    letters: ["ક્", "દ્", "ટ્"]
+  - id: dot
+    name: "The dot above"
+    term: "અનુસ્વાર"
+    reading: "anusvaar"
+    example: "હું"
+    text: "A dot above a letter makes its vowel nasal, said through the nose as well: હું (hun, I), છું (chhun, am). Before a consonant it is the n or m that suits it: પંદર (pandar, fifteen). Gujarati writes the dot almost everywhere Hindi would write the moon ँ."
+    letters: ["હું", "છું", "પંદર", "મોટું"]
+  - id: moon
+    name: "The moon for English vowels"
+    example: "ઑ"
+    text: "A small moon above a vowel marks the open sounds of English words: ઑ in ઑફિસ (ofis, office), ૅ in બૅન્ક (benk, bank). Many writers leave the moon out."
+    letters: ["ઑ", "કૉ", "કૅ"]
+  - id: curled-back
+    name: "Two curled-back letters Gujarati loves"
+    example: "ળ"
+    text: "ણ (n with the tongue curled back) and ળ (l with the tongue curled back) are everywhere in Gujarati, though never at the start of a word: પાણી (paanii, water), સોળ (sol, sixteen), કેળું (kelun, banana)."
+    letters: ["ણ", "ળ"]
+  - id: digits
+    name: "Gujarati digits"
+    example: "૪"
+    text: "Gujarati has its own digits, seen in schoolbooks, calendars and some newspapers. Much everyday writing uses 0 to 9."
+    letters: ["૦", "૧", "૨", "૩", "૪", "૫", "૬", "૭", "૮", "૯"]

@@ -97,15 +97,18 @@ python3 tools/validate_decks.py decks/
 
 The validator needs only Python 3.11+ and PyYAML — no Flutter toolchain.
 
-### The Telugu decks have not been checked by a Telugu speaker
+### The Telugu, Marathi, Kannada and Gujarati decks have not been checked by a speaker
 
 A deck no speaker has checked yet is tagged unreviewed and says so: some
-Hindi and Bengali decks, and all the Telugu ones. The Telugu decks (`decks/te/`) were written from published sources, and no
-Telugu speaker has checked them yet. Each one says so in its description and on its screen in
-the app. If you speak Telugu, please
+Hindi and Bengali decks, and all the Telugu, Marathi, Kannada and Gujarati
+ones. The Telugu decks (`decks/te/`) were written from published sources; the
+Marathi (`decks/mr/`), Kannada (`decks/kn/`) and Gujarati (`decks/gu/`) decks
+are a first attempt written for Fluenough. No speaker has checked any of them
+yet. Each one says so in its description and on its screen in the app. If you
+speak one of these languages, please
 [report mistakes](https://github.com/aaronified/fluenough/issues) or send a
-fix; a review by a speaker is the most useful contribution the Telugu decks
-could get.
+fix; a review by a speaker is the most useful contribution these decks could
+get.
 
 ### Sources
 

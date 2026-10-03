@@ -1,0 +1,153 @@
+schema: 1
+id: mr-en-reading-sunitacha-ravivar
+name: "Reading: Sunita's Sunday"
+kind: reading
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Written for this deck and released under CC0"
+description: "सुनीताचा रविवार, Sunita's Sunday: a short story in three scenes, written for this deck in everyday Marathi and released under CC0. Sunita goes to the market for her grandmother, bargains for onions, and buys vada pav on the way home. The glossary gives the words the theme decks don't teach. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: mr-ravivar-01
+    title: "Sunday morning"
+    theme: daily-life
+    sentences:
+      - text: "आज रविवार आहे."
+        reading: "aaj ravivaar aahe."
+      - text: "सुनीता सात वाजता उठते."
+        reading: "suniitaa saat vaajtaa uthte."
+      - text: "ती चहा करते आणि आजीला देते."
+        reading: "tii chahaa karte aani aajiilaa dete."
+      - text: "आजी म्हणते, “आज बाजारात जा. घरात भाजी नाही.”"
+        reading: "aajii mhante, “aaj baajaaraat jaa. gharaat bhaajii naahii.”"
+      - text: "सुनीता पिशवी घेते आणि बाहेर जाते."
+        reading: "suniitaa pishvii ghete aani baaher jaate."
+    glossary:
+      - word: "सुनीता"
+        modern: "सुनीता"
+        reading: "suniitaa"
+        meaning: { en: "Sunita, a woman's name" }
+      - word: "बाहेर"
+        modern: "बाहेर"
+        reading: "baaher"
+        meaning: { en: "out; outside" }
+    questions:
+      - id: mr-0656
+        prompt: { en: "What day is it?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Sunday" }
+          - { en: "Saturday" }
+        answer: 2
+      - id: mr-0657
+        prompt: { en: "Sunita makes tea for her grandmother." }
+        answer: true
+      - id: mr-0658
+        prompt: { en: "Why does Sunita go to the market?" }
+        options:
+          - { en: "There are no vegetables at home." }
+          - { en: "Her grandmother is ill." }
+          - { en: "She wants to see a film." }
+        answer: 1
+  - id: mr-ravivar-02
+    title: "At the market"
+    theme: market
+    sentences:
+      - text: "बाजारात खूप गर्दी आहे."
+        reading: "baajaaraat khuup gardii aahe."
+      - text: "सुनीता भाजीवाल्या काकांना विचारते, “कांदे किती रुपये किलो?”"
+        reading: "suniitaa bhaajiivaalyaa kaakaannaa vichaarte, “kaande kitii rupaye kilo?”"
+      - text: "काका म्हणतात, “चाळीस रुपये.”"
+        reading: "kaakaa mhantaat, “chaaliis rupaye.”"
+      - text: "“खूप महाग आहे! थोडे कमी करा.”"
+        reading: "“khuup mahaag aahe! thode kamii karaa.”"
+      - text: "काका हसतात आणि पस्तीस रुपये घेतात."
+        reading: "kaakaa hastaat aani pastiis rupaye ghetaat."
+      - text: "सुनीता दोन किलो कांदे आणि एक किलो बटाटे घेते."
+        reading: "suniitaa don kilo kaande aani ek kilo bataate ghete."
+    glossary:
+      - word: "गर्दी"
+        modern: "गर्दी"
+        reading: "gardii"
+        meaning: { en: "a crowd; crowded" }
+      - word: "भाजीवाल्या काकांना"
+        modern: "भाजीवाले काका"
+        reading: "bhaajiivaale kaakaa"
+        meaning: { en: "(to) the vegetable seller" }
+        note: { en: "भाजी, vegetables, with -वाला, the one who sells them. An older man is काका, and spoken of politely in the plural, so -ला becomes -ना: काकांना, to him." }
+      - word: "विचारते"
+        modern: "विचारते"
+        reading: "vichaarte"
+        meaning: { en: "asks" }
+        note: { en: "from विचारणे, to ask" }
+      - word: "हसतात"
+        modern: "हसतात"
+        reading: "hastaat"
+        meaning: { en: "laughs (said of him in the polite plural)" }
+        note: { en: "from हसणे, to laugh" }
+    questions:
+      - id: mr-0659
+        prompt: { en: "What does the seller first ask for a kilo of onions?" }
+        options:
+          - { en: "35 rupees" }
+          - { en: "40 rupees" }
+          - { en: "50 rupees" }
+        answer: 2
+      - id: mr-0660
+        prompt: { en: "Sunita bargains with the seller." }
+        answer: true
+      - id: mr-0661
+        prompt: { en: "What does Sunita buy?" }
+        options:
+          - { en: "Onions and potatoes" }
+          - { en: "Onions and mangoes" }
+          - { en: "Fish" }
+        answer: 1
+  - id: mr-ravivar-03
+    title: "Vada pav"
+    theme: eating-out
+    sentences:
+      - text: "घरी जाताना सुनीताला भूक लागते."
+        reading: "gharii jaataanaa suniitaalaa bhuuk laagte."
+      - text: "रस्त्यावर एक वडापावची गाडी आहे."
+        reading: "rastyaavar ek vadaapaavchii gaadii aahe."
+      - text: "ती दोन वडापाव घेते."
+        reading: "tii don vadaapaav ghete."
+      - text: "एक वडापाव ती खाते आणि एक आजीसाठी घेऊन जाते."
+        reading: "ek vadaapaav tii khaate aani ek aajiisaathii gheuun jaate."
+      - text: "आजी म्हणते, “वा! खूप छान!”"
+        reading: "aajii mhante, “vaa! khuup chhaan!”"
+    glossary:
+      - word: "जाताना"
+        modern: "जाताना"
+        reading: "jaataanaa"
+        meaning: { en: "while going; on the way" }
+        note: { en: "the stem with -ताना is 'while doing'" }
+      - word: "सुनीताला"
+        modern: "सुनीताला"
+        reading: "suniitaalaa"
+        meaning: { en: "to Sunita" }
+        note: { en: "hunger 'strikes' the one who feels it, who takes -ला: मला भूक लागते, I get hungry" }
+      - word: "वा"
+        modern: "वा"
+        reading: "vaa"
+        meaning: { en: "wow; how lovely" }
+    questions:
+      - id: mr-0662
+        prompt: { en: "Why does Sunita stop on the way home?" }
+        options:
+          - { en: "She is hungry." }
+          - { en: "It is raining." }
+          - { en: "She meets a friend." }
+        answer: 1
+      - id: mr-0663
+        prompt: { en: "How many vada pavs does she buy?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 2
+      - id: mr-0664
+        prompt: { en: "Grandmother doesn't like the vada pav." }
+        answer: false

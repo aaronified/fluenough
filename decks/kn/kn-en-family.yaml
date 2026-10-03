@@ -1,0 +1,125 @@
+schema: 1
+id: kn-en-family
+name: "Family"
+kind: vocab
+theme: family
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, each with its own word. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: kn-0202
+  - id: kn-0207
+    target: "ತಂದೆತಾಯಿ"
+    native: "parents"
+    reading: "tandetaayi"
+    alt_target: ["ತಂದೆ ತಾಯಿ", "ಅಪ್ಪ ಅಮ್ಮ"]
+    pos: "noun"
+    notes: "ತಂದೆ (tande) and ತಾಯಿ (taayi) are the formal words for father and mother. In speech, ಅಪ್ಪ ಅಮ್ಮ."
+  - ref: kn-0059
+    notes: "The formal word is ತಂದೆ (tande)."
+  - ref: kn-0058
+    notes: "The formal word is ತಾಯಿ (taayi)."
+  - ref: kn-0061
+  - ref: kn-0186
+  - ref: kn-0060
+  - ref: kn-0187
+  - id: kn-0208
+    target: "ಅಣ್ಣತಮ್ಮಂದಿರು"
+    native: "brothers"
+    reading: "annatammandiru"
+    pos: "noun"
+    notes: "Kannada has no everyday word for a brother or a sister, only elder and younger: ಅಣ್ಣ, ತಮ್ಮ. Brothers together are ಅಣ್ಣತಮ್ಮಂದಿರು; sisters, ಅಕ್ಕತಂಗಿಯರು (akkatangiyaru). The formal words are ಸಹೋದರ (sahoodara) and ಸಹೋದರಿ (sahoodari)."
+  - ref: kn-0057
+  - id: kn-0209
+    target: "ಮಗಳು"
+    native: "daughter"
+    reading: "magalu"
+    pos: "noun"
+  - id: kn-0210
+    target: "ಗಂಡ"
+    native: "husband"
+    reading: "ganda"
+    pos: "noun"
+    notes: "Politely, ಯಜಮಾನರು (yajamaanaru), 'the master of the house', is still heard from older women."
+  - id: kn-0211
+    target: "ಹೆಂಡತಿ"
+    native: "wife"
+    reading: "hendati"
+    pos: "noun"
+  - id: kn-0212
+    target: "ಮಕ್ಕಳು"
+    native: "children"
+    reading: "makkalu"
+    pos: "noun"
+    notes: "One child is ಮಗು (magu)."
+  - id: kn-0213
+    target: "ಅಜ್ಜ"
+    native: "grandfather"
+    reading: "ajja"
+    pos: "noun"
+    notes: "Also ತಾತ (taata). Unlike Hindi and Bengali, one word serves for both sides of the family."
+  - ref: kn-0194
+    native: "grandmother"
+    notes: "One word for both sides of the family."
+  - id: kn-0214
+    target: "ಚಿಕ್ಕಪ್ಪ"
+    native: "uncle (father's younger brother)"
+    reading: "chikkappa"
+    pos: "noun"
+    notes: "Literally 'small father'. His wife is ಚಿಕ್ಕಮ್ಮ (chikkamma)."
+  - id: kn-0215
+    target: "ದೊಡ್ಡಪ್ಪ"
+    native: "uncle (father's elder brother)"
+    reading: "doddappa"
+    pos: "noun"
+    notes: "Literally 'big father'. His wife is ದೊಡ್ಡಮ್ಮ (doddamma)."
+  - id: kn-0216
+    target: "ಮಾವ"
+    native: "uncle (mother's brother); father-in-law"
+    reading: "maava"
+    pos: "noun"
+    notes: "One word for both: in the old south Indian custom of marrying a cousin, a mother's brother could become one's father-in-law."
+  - id: kn-0217
+    target: "ಅತ್ತೆ"
+    native: "aunt (father's sister); mother-in-law"
+    reading: "atte"
+    pos: "noun"
+    notes: "Like ಮಾವ, one word for both."
+  - id: kn-0218
+    target: "ಚಿಕ್ಕಮ್ಮ"
+    native: "aunt (mother's younger sister)"
+    reading: "chikkamma"
+    pos: "noun"
+    notes: "Also the wife of a father's younger brother."
+  - id: kn-0219
+    target: "ದೊಡ್ಡಮ್ಮ"
+    native: "aunt (mother's elder sister)"
+    reading: "doddamma"
+    pos: "noun"
+    notes: "Also the wife of a father's elder brother."
+  - id: kn-0220
+    target: "ಸಂಬಂಧಿಕರು"
+    native: "relatives"
+    reading: "sambandhikaru"
+    alt_target: ["ನೆಂಟರು"]
+    pos: "noun"
+    notes: "In speech also ನೆಂಟರು (nentaru)."
+  - id: kn-0221
+    target: "ನನಗೆ ಇಬ್ಬರು ತಮ್ಮಂದಿರು ಇದ್ದಾರೆ."
+    native: "I have two younger brothers."
+    reading: "nanage ibbaru tammandiru iddaare."
+    pos: "phrase"
+    notes: "'To me two younger brothers are'. People are counted with words of their own: ಒಬ್ಬರು, ಇಬ್ಬರು, ಮೂವರು (obbaru, ibbaru, muuvaru), one, two, three people."
+  - id: kn-0222
+    target: "ನಿಮಗೆ ಅಣ್ಣತಮ್ಮಂದಿರು ಇದ್ದಾರಾ?"
+    native: "Do you have any brothers?"
+    reading: "nimage annatammandiru iddaaraa?"
+    pos: "phrase"
+  - id: kn-0223
+    target: "ನನಗೆ ಮದುವೆ ಆಗಿದೆ."
+    native: "I'm married."
+    reading: "nanage maduve aagide."
+    pos: "phrase"
+    notes: "Literally 'to me a wedding has happened'. Not married: ನನಗೆ ಇನ್ನೂ ಮದುವೆ ಆಗಿಲ್ಲ (nanage innuu maduve aagilla)."

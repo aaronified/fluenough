@@ -1,0 +1,115 @@
+schema: 1
+id: gu-en-groceries
+name: "Groceries"
+kind: vocab
+theme: groceries
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The staples of a Gujarati kitchen: grains, dal, vegetables, fruit, milk and the rest. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: gu-0390
+    target: "શાકભાજી"
+    native: "vegetables"
+    reading: "shaakbhaajii"
+    pos: "noun"
+    notes: "A cooked vegetable dish is શાક (shaak)."
+  - ref: gu-0050
+  - ref: gu-0226
+    notes: "Gujarati dal is often a little sweet and sour, with jaggery and kokum or lemon."
+  - id: gu-0391
+    target: "ચોખા"
+    native: "rice (uncooked)"
+    reading: "chokhaa"
+    pos: "noun"
+    gender: "m"
+    notes: "Plural. Cooked rice is ભાત (bhaat)."
+  - id: gu-0392
+    target: "લોટ"
+    native: "flour"
+    reading: "lot"
+    pos: "noun"
+    gender: "m"
+    notes: "ઘઉંનો લોટ (ghaunno lot), wheat flour; ચણાનો લોટ, gram flour."
+  - id: gu-0393
+    target: "દૂધ"
+    native: "milk"
+    reading: "duudh"
+    pos: "noun"
+    gender: "n"
+  - id: gu-0394
+    target: "દહીં"
+    native: "yogurt; curd"
+    reading: "dahiin"
+    pos: "noun"
+    gender: "n"
+    notes: "Buttermilk, drunk with almost every meal, is છાશ (chhaash)."
+  - id: gu-0395
+    target: "ઘી"
+    native: "ghee; clarified butter"
+    reading: "ghii"
+    pos: "noun"
+    gender: "n"
+  - id: gu-0396
+    target: "તેલ"
+    native: "oil"
+    reading: "tel"
+    pos: "noun"
+    gender: "n"
+  - id: gu-0397
+    target: "ખાંડ"
+    native: "sugar"
+    reading: "khaand"
+    pos: "noun"
+    gender: "f"
+    notes: "Jaggery is ગોળ (gol), a word that also means 'round'."
+  - id: gu-0398
+    target: "મીઠું"
+    native: "salt"
+    reading: "miithun"
+    pos: "noun"
+    gender: "n"
+    notes: "The same word is the adjective 'sweet; lovely': મીઠું ગીત, a lovely song. For sweet food Gujarati usually says ગળ્યું (galyun)."
+  - id: gu-0399
+    target: "ડુંગળી"
+    native: "onion"
+    reading: "dunglii"
+    pos: "noun"
+    gender: "f"
+  - id: gu-0400
+    target: "બટાકા"
+    native: "potatoes"
+    reading: "bataakaa"
+    alt_target: ["બટેટા"]
+    pos: "noun"
+    gender: "m"
+    notes: "Also બટેટા (batetaa). Both come from Portuguese batata. One potato is બટાકું or બટેટું."
+  - id: gu-0401
+    target: "ટામેટાં"
+    native: "tomatoes"
+    reading: "taametaan"
+    pos: "noun"
+    gender: "n"
+    notes: "One tomato is ટામેટું (taametun)."
+  - id: gu-0402
+    target: "કેળું"
+    native: "banana"
+    reading: "kelun"
+    pos: "noun"
+    gender: "n"
+    notes: "Plural કેળાં (kelaan). Bananas are sold by the dozen, ડઝન (dazan)."
+  - id: gu-0403
+    target: "કેરી"
+    native: "mango"
+    reading: "kerii"
+    pos: "noun"
+    gender: "f"
+    notes: "Summer in Gujarat means mangoes, above all the Kesar from around Junagadh. Mango pulp, eaten with puris, is કેરીનો રસ (keriino ras)."
+  - id: gu-0404
+    target: "ઈંડાં"
+    native: "eggs"
+    reading: "iindaan"
+    pos: "noun"
+    gender: "n"
+    notes: "One egg is ઈંડું (iindun). Many Gujarati homes never cook them."

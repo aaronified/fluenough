@@ -1,0 +1,130 @@
+schema: 1
+id: kn-en-home
+name: "Home and neighbourhood"
+kind: vocab
+theme: home
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The rooms of a home, what is in them, and the people next door. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: kn-0201
+  - id: kn-0380
+    target: "ಕೋಣೆ"
+    native: "room"
+    reading: "koone"
+    alt_target: ["ರೂಮು"]
+    pos: "noun"
+    notes: "Also ರೂಮು (ruumu)."
+  - id: kn-0381
+    target: "ಅಡುಗೆಮನೆ"
+    native: "kitchen"
+    reading: "adugemane"
+    pos: "noun"
+    notes: "'The cooking house'."
+  - id: kn-0382
+    target: "ಮಲಗುವ ಕೋಣೆ"
+    native: "bedroom"
+    reading: "malaguva koone"
+    pos: "noun"
+    notes: "'The sleeping room'. Many say ಬೆಡ್‌ರೂಮ್."
+  - id: kn-0383
+    target: "ಹಾಲ್"
+    native: "sitting room; hall"
+    reading: "haal"
+    pos: "noun"
+    notes: "Ends in the halant: not ಹಾಲು (haalu), milk."
+  - id: kn-0384
+    target: "ಬಚ್ಚಲುಮನೆ"
+    native: "bathroom"
+    reading: "bachchalumane"
+    pos: "noun"
+    notes: "Also ಸ್ನಾನದ ಮನೆ (snaanada mane), 'the bathing room'."
+  - id: kn-0385
+    target: "ಬಾಗಿಲು"
+    native: "door"
+    reading: "baagilu"
+    pos: "noun"
+    notes: "ಬಾಗಿಲು ಹಾಕಿ (baagilu haaki), please shut the door."
+  - id: kn-0386
+    target: "ಕಿಟಕಿ"
+    native: "window"
+    reading: "kitaki"
+    pos: "noun"
+  - id: kn-0387
+    target: "ಮೆಟ್ಟಿಲು"
+    native: "stairs; a step"
+    reading: "mettilu"
+    pos: "noun"
+  - id: kn-0388
+    target: "ಮಹಡಿ"
+    native: "floor; storey"
+    reading: "mahadi"
+    pos: "noun"
+    notes: "ಮೊದಲನೇ ಮಹಡಿ (modalanee mahadi), the first floor."
+  - id: kn-0389
+    target: "ಬೀಗದ ಕೈ"
+    native: "key"
+    reading: "biigada kai"
+    alt_target: ["ಕೀ"]
+    pos: "noun"
+    notes: "'The hand of the lock': ಬೀಗ (biiga) is a lock. Many say ಕೀ (kii)."
+  - id: kn-0390
+    target: "ಮಂಚ"
+    native: "bed; cot"
+    reading: "mancha"
+    pos: "noun"
+    notes: "The mattress and bedding are ಹಾಸಿಗೆ (haasige)."
+  - id: kn-0391
+    target: "ಕುರ್ಚಿ"
+    native: "chair"
+    reading: "kurchi"
+    pos: "noun"
+  - id: kn-0392
+    target: "ಮೇಜು"
+    native: "table"
+    reading: "meeju"
+    pos: "noun"
+    notes: "Also ಟೇಬಲ್ (teebal)."
+  - id: kn-0393
+    target: "ಫ್ಯಾನು"
+    native: "fan"
+    reading: "fyaanu"
+    alt_target: ["ಫ್ಯಾನ್"]
+    pos: "noun"
+  - id: kn-0394
+    target: "ದೀಪ"
+    native: "light; lamp"
+    reading: "diipa"
+    alt_target: ["ಲೈಟು"]
+    pos: "noun"
+    notes: "An electric light is often ಲೈಟು (laitu)."
+  - id: kn-0395
+    target: "ಅಕ್ಕಪಕ್ಕದವರು"
+    native: "the neighbours"
+    reading: "akkapakkadavaru"
+    pos: "noun"
+    notes: "'The people to the side and side'."
+  - ref: kn-0345
+    notes: "ಬಾಡಿಗೆ ಮನೆ (baadige mane), a rented house."
+  - id: kn-0396
+    target: "ಫ್ಲಾಟ್"
+    native: "flat; apartment"
+    reading: "flaat"
+    pos: "noun"
+  - id: kn-0397
+    target: "ಬೀದಿ"
+    native: "street"
+    reading: "biidi"
+    pos: "noun"
+  - id: kn-0398
+    target: "ಮನೆಯ ಮುಂದೆ ಒಂದು ಪಾರ್ಕ್ ಇದೆ."
+    native: "There's a park in front of the house."
+    reading: "maneya munde ondu paark ide."
+    pos: "phrase"
+  - id: kn-0399
+    target: "ನಮ್ಮ ಬೀದಿ ತುಂಬಾ ಶಾಂತವಾಗಿದೆ."
+    native: "Our street is very quiet."
+    reading: "namma biidi tumbaa shaantavaagide."
+    pos: "phrase"

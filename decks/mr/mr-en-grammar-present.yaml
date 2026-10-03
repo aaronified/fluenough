@@ -1,0 +1,76 @@
+schema: 1
+id: mr-en-grammar-present
+name: "Present: what you usually do"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I go, she lives, they speak: habits and facts, by person and gender. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Present habitual"
+  slot_name: "person and gender"
+  slots: ["मी (m)", "मी (f)", "आम्ही", "तू (m)", "तू (f)", "तुम्ही", "तो", "ती", "ते (it)", "ते (they)", "त्या (they, f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The stem, then -त-, then an ending that agrees with the doer: -तो for a man, -ते for a woman or a thing, -तात for more than one. With मी and तू the speaker's or listener's gender shows: a man says मी जातो, a woman मी जाते. आम्ही takes -तो whoever speaks, and तुम्ही takes -ता, for one person or many. This tense is for habits and facts: मी रोज चहा पितो, I drink tea every day. For what is happening now, see the present continuous."
+  entries:
+    - lemma: "जाणे"
+      key: jaane
+      gloss: "to go"
+      forms:
+        "मी (m)": "जातो"
+        "मी (f)": "जाते"
+        "आम्ही": "जातो"
+        "तू (m)": "जातोस"
+        "तू (f)": "जातेस"
+        "तुम्ही": "जाता"
+        "तो": "जातो"
+        "ती": "जाते"
+        "ते (it)": "जाते"
+        "ते (they)": "जातात"
+        "त्या (they, f)": "जातात"
+    - lemma: "करणे"
+      key: karne
+      gloss: "to do"
+      forms:
+        "मी (m)": "करतो"
+        "मी (f)": "करते"
+        "आम्ही": "करतो"
+        "तू (m)": "करतोस"
+        "तू (f)": "करतेस"
+        "तुम्ही": "करता"
+        "तो": "करतो"
+        "ती": "करते"
+        "ते (it)": "करते"
+        "ते (they)": "करतात"
+        "त्या (they, f)": "करतात"
+    - lemma: "राहणे"
+      key: raahne
+      gloss: "to live; to stay"
+      forms:
+        "मी (m)": "राहतो"
+        "मी (f)": "राहते"
+        "आम्ही": "राहतो"
+        "तू (m)": "राहतोस"
+        "तू (f)": "राहतेस"
+        "तुम्ही": "राहता"
+        "तो": "राहतो"
+        "ती": "राहते"
+        "ते (it)": "राहते"
+        "ते (they)": "राहतात"
+        "त्या (they, f)": "राहतात"
+    - lemma: "बोलणे"
+      key: bolne
+      gloss: "to speak"
+      forms:
+        "मी (m)": "बोलतो"
+        "मी (f)": "बोलते"
+        "आम्ही": "बोलतो"
+        "तू (m)": "बोलतोस"
+        "तू (f)": "बोलतेस"
+        "तुम्ही": "बोलता"
+        "तो": "बोलतो"
+        "ती": "बोलते"
+        "ते (it)": "बोलते"
+        "ते (they)": "बोलतात"
+        "त्या (they, f)": "बोलतात"
