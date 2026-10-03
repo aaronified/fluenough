@@ -1,0 +1,150 @@
+schema: 1
+id: as-en-family
+name: "Family"
+kind: vocab
+theme: family
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, each with its own word, and a word that changes with whose relative it is. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: as-0171
+  - id: as-0178
+    target: "মা-দেউতা"
+    native: "parents"
+    reading: "ma-deuta"
+    pos: "noun"
+    notes: "Mother and father together, mother first. Formally পিতৃ-মাতৃ (pitri-matri)."
+  - id: as-0179
+    target: "দেউতা"
+    native: "father; my father"
+    reading: "deuta"
+    pos: "noun"
+    notes: "Kinship words change with whose relative it is. দেউতা is my father; your father is দেউতাৰা (deutara), and his or hers দেউতাক (deutak). So are মা, মাৰা, মাক (mother) and ককাই, ককায়েৰা, ককায়েক (elder brother)."
+  - id: as-0180
+    target: "মা"
+    native: "mother; my mother"
+    reading: "ma"
+    alt_target: ["আই"]
+    pos: "noun"
+    notes: "Also আই (ai). Your mother is মাৰা (mara), his or her mother মাক (mak)."
+  - id: as-0181
+    target: "ককাই"
+    native: "elder brother"
+    reading: "kokai"
+    pos: "noun"
+    notes: "With respect, ককাইদেউ. Assamese has no everyday word for a brother or a sister, only elder and younger."
+  - ref: as-0155
+    notes: "Formally ভাই (bhai)."
+  - id: as-0182
+    target: "বাই"
+    native: "elder sister"
+    reading: "bai"
+    pos: "noun"
+    notes: "With respect, বাইদেউ."
+  - ref: as-0156
+    notes: "Formally ভনী (bhoni)."
+  - id: as-0183
+    target: "ভাই-ককাই"
+    native: "brothers"
+    reading: "bhai-kokai"
+    pos: "noun"
+    notes: "Younger and elder brothers together. Sisters together are বাই-ভনী (bai-bhoni)."
+  - id: as-0184
+    target: "ল'ৰা"
+    native: "son; boy"
+    reading: "lora"
+    pos: "noun"
+    notes: "The apostrophe marks a closed o. মোৰ ল'ৰা (mur lora), my son."
+  - id: as-0185
+    target: "ছোৱালী"
+    native: "daughter; girl"
+    reading: "suwali"
+    alt_target: ["জীয়ৰী"]
+    pos: "noun"
+    notes: "Also জীয়ৰী (jiyori), a daughter."
+  - id: as-0186
+    target: "ল'ৰা-ছোৱালী"
+    native: "children"
+    reading: "lora-suwali"
+    pos: "noun"
+    notes: "Literally 'boys and girls'."
+  - id: as-0187
+    target: "স্বামী"
+    native: "husband"
+    reading: "xami"
+    pos: "noun"
+    notes: "The ব under স is not said. A woman speaking of her husband often just says তেওঁ (teu), 'he', the respectful pronoun."
+  - id: as-0188
+    target: "ঘৈণী"
+    native: "wife"
+    reading: "ghoini"
+    alt_target: ["পত্নী"]
+    pos: "noun"
+    notes: "Formally পত্নী (potni)."
+  - ref: as-0159
+    native: "grandfather"
+  - ref: as-0160
+    native: "grandmother"
+  - ref: as-0157
+    native: "uncle (father's younger brother)"
+    notes: "Also how you address a man of your parents' age. His wife is খুৰী (khuri)."
+  - ref: as-0158
+    native: "aunt (wife of father's younger brother)"
+  - id: as-0189
+    target: "বৰদেউতা"
+    native: "uncle (father's elder brother)"
+    reading: "bordeuta"
+    pos: "noun"
+    notes: "Literally 'big father'. His wife is বৰমা (borma), 'big mother'."
+  - id: as-0190
+    target: "মামা"
+    native: "uncle (mother's brother)"
+    reading: "mama"
+    pos: "noun"
+    notes: "His wife is মামী (mami)."
+  - id: as-0191
+    target: "মাহী"
+    native: "aunt (mother's sister)"
+    reading: "mahi"
+    pos: "noun"
+    notes: "Her husband is মহা (moha)."
+  - id: as-0192
+    target: "পেহী"
+    native: "aunt (father's sister)"
+    reading: "pehi"
+    pos: "noun"
+    notes: "Her husband is পেহা (peha)."
+  - id: as-0193
+    target: "শহুৰ"
+    native: "father-in-law"
+    reading: "xohur"
+    pos: "noun"
+  - id: as-0194
+    target: "শাহু"
+    native: "mother-in-law"
+    reading: "xahu"
+    pos: "noun"
+  - id: as-0195
+    target: "আত্মীয়"
+    native: "relative"
+    reading: "atmiyo"
+    pos: "noun"
+  - id: as-0196
+    target: "মোৰ দুজন ভাইটি আছে।"
+    native: "I have two younger brothers."
+    reading: "mur dujon bhaiti ase."
+    pos: "phrase"
+    notes: "'Of me two younger brothers are': Assamese says 'have' with আছে. দুজন is two with জন, the counting word for people."
+  - id: as-0197
+    target: "আপোনাৰ ভাই-ককাই আছে নেকি?"
+    native: "Do you have any brothers?"
+    reading: "apunar bhai-kokai ase neki?"
+    pos: "phrase"
+  - id: as-0198
+    target: "মোৰ বিয়া হৈছে।"
+    native: "I'm married."
+    reading: "mur biya hoise."
+    pos: "phrase"
+    notes: "Literally 'my wedding has happened'. বিয়া (biya), a wedding."

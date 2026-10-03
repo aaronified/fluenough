@@ -1,0 +1,86 @@
+schema: 1
+id: as-en-grammar-be
+name: "To be: আছে, আছিল and নহয়"
+kind: grammar
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Is, was, isn't, will be: আছে for where and how things are, no verb at all for what someone is, নহয় for what someone is not, and হ'ব for will be. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "To be"
+  slot_name: "person and respect"
+  slots: ["মই / আমি", "তই / তহঁত", "তুমি / তোমালোক", "আপুনি / সি / তাই / তেওঁ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "আছে says where or how someone is: মই ঘৰত আছোঁ, I'm at home; মই ভালে আছোঁ, I'm well. With the owner's -ৰ it is have: মোৰ সময় আছে, I have time. Its negative is নাই, the same for every person: মই ঘৰত নাই, I'm not at home. To say what someone is, the present needs no verb: মই ছাত্ৰ, I'm a student. But 'is not' has one, নহয়: মই ছাত্ৰ নহওঁ, and in speech নহয় often stands for every person. আছিল is the past of both: মই ঘৰত আছিলোঁ, I was at home; মই ছাত্ৰ আছিলোঁ, I was a student. হ'ব, will be, is the future of হোৱা, to become. আপুনি takes the same form as সি, তাই and তেওঁ, and a plural the same as its singular. The ending -ওঁ is also written -ো, without ঁ, and both are accepted."
+  entries:
+    - lemma: "আছে"
+      key: ase
+      reading: "ase"
+      gloss: "am, is, are (somewhere, or how); there is"
+      forms:
+        "মই / আমি": ["আছোঁ", "আছো"]
+        "তই / তহঁত": "আছ"
+        "তুমি / তোমালোক": "আছা"
+        "আপুনি / সি / তাই / তেওঁ": "আছে"
+      readings:
+        "মই / আমি": ["asu", "asu"]
+        "তই / তহঁত": "as"
+        "তুমি / তোমালোক": "asa"
+        "আপুনি / সি / তাই / তেওঁ": "ase"
+    - lemma: "আছিল"
+      key: asil
+      reading: "asil"
+      gloss: "was, were"
+      forms:
+        "মই / আমি": ["আছিলোঁ", "আছিলো"]
+        "তই / তহঁত": "আছিলি"
+        "তুমি / তোমালোক": "আছিলা"
+        "আপুনি / সি / তাই / তেওঁ": "আছিল"
+      readings:
+        "মই / আমি": ["asilu", "asilu"]
+        "তই / তহঁত": "asili"
+        "তুমি / তোমালোক": "asila"
+        "আপুনি / সি / তাই / তেওঁ": "asil"
+    - lemma: "নাছিল"
+      key: nasil
+      reading: "nasil"
+      gloss: "was not, were not (somewhere); there was not"
+      forms:
+        "মই / আমি": ["নাছিলোঁ", "নাছিলো"]
+        "তই / তহঁত": "নাছিলি"
+        "তুমি / তোমালোক": "নাছিলা"
+        "আপুনি / সি / তাই / তেওঁ": "নাছিল"
+      readings:
+        "মই / আমি": ["nasilu", "nasilu"]
+        "তই / তহঁত": "nasili"
+        "তুমি / তোমালোক": "nasila"
+        "আপুনি / সি / তাই / তেওঁ": "nasil"
+    - lemma: "নহয়"
+      key: nohoy
+      reading: "nohoy"
+      gloss: "am not, is not, are not (a student, a doctor …)"
+      forms:
+        "মই / আমি": ["নহওঁ", "নহও"]
+        "তই / তহঁত": "নহৱ"
+        "তুমি / তোমালোক": "নোহোৱা"
+        "আপুনি / সি / তাই / তেওঁ": "নহয়"
+      readings:
+        "মই / আমি": ["nohou", "nohou"]
+        "তই / তহঁত": "nohow"
+        "তুমি / তোমালোক": "nuhuwa"
+        "আপুনি / সি / তাই / তেওঁ": "nohoy"
+    - lemma: "হ'ব"
+      key: hobo
+      reading: "hobo"
+      gloss: "will be"
+      forms:
+        "মই / আমি": "হ'ম"
+        "তই / তহঁত": "হ'বি"
+        "তুমি / তোমালোক": "হ'বা"
+        "আপুনি / সি / তাই / তেওঁ": "হ'ব"
+      readings:
+        "মই / আমি": "hom"
+        "তই / তহঁত": "hobi"
+        "তুমি / তোমালোক": "hoba"
+        "আপুনি / সি / তাই / তেওঁ": "hobo"
