@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/stat_tile.dart';
 import 'deck_content.dart';
@@ -87,7 +88,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
     final entry = state.deckById(widget.deckId);
     if (entry == null) {
       return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(actions: const <Widget>[ReportButton()]),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -124,6 +125,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
                   icon: const Icon(Icons.delete_outline),
                   onPressed: () => _confirmRemove(entry),
                 ),
+              ReportButton(detail: entry.id),
             ],
           ),
           body: ListView(
@@ -270,6 +272,16 @@ class _Header extends StatelessWidget {
               ),
             ),
           ],
+          // For reviewers: every card in full, with its id.
+          const SizedBox(height: 12),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+            ),
+            onPressed: () => AppNavigator.openInspect(context, entry.id),
+            icon: const Icon(Icons.manage_search),
+            label: Text(l10n.deckInspect, textAlign: TextAlign.center),
+          ),
         ],
       ),
     );
