@@ -569,6 +569,16 @@
   "@todayStartReview": {
     "description": "The main button on Today, which starts a session of everything due."
   },
+  "todayStartLanguage": "Start with {language}",
+  "@todayStartLanguage": {
+    "description": "The main button on Today when more than one language has something due: it starts that language's part of the day, and the others follow one at a time.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
   "todayAllDoneTitle": "All done for now",
   "@todayAllDoneTitle": {
     "description": "Shown on Today when nothing is due."
@@ -657,9 +667,9 @@
   "@decksTitle": {
     "description": "Heading of the Decks tab."
   },
-  "decksSearchHint": "Search decks",
+  "decksSearchHint": "Search by deck, language or theme",
   "@decksSearchHint": {
-    "description": "Placeholder and label of the deck search field."
+    "description": "Placeholder and label of the deck search field. Each word searched for is matched on its own, so 'hindi market' finds Hindi's Market deck."
   },
   "decksFilterLabel": "Filter by language",
   "@decksFilterLabel": {
@@ -2003,6 +2013,34 @@
   "summaryTitle": "Session done",
   "@summaryTitle": {
     "description": "Heading of the session summary."
+  },
+  "summaryLanguageDone": "You’ve completed {language} for today",
+  "@summaryLanguageDone": {
+    "description": "Heading of the summary after one language's part of the day, in place of summaryTitle.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "summaryNextLanguage": "Do you want to start another?",
+  "@summaryNextLanguage": {
+    "description": "Over the buttons that start the next language's part of the day, on the summary after one language."
+  },
+  "summaryStartLanguage": "{language} · {count, plural, =1{1 card} other{{count} cards}}",
+  "@summaryStartLanguage": {
+    "description": "A button on the summary that starts that language's part of the day: its name and how many cards it holds.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
   },
   "summaryLine": "{cards, plural, =1{1 card} other{{cards} cards}} · {correct} correct",
   "@summaryLine": {

@@ -98,6 +98,12 @@ abstract final class AppNavigator {
   static Future<void> startDrill(BuildContext context, DrillRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.drill, arguments: request);
 
+  /// Replaces the summary with another session: the next language's, which
+  /// the summary offers, so finished summaries do not pile up behind it.
+  static Future<void> nextDrill(BuildContext context, DrillRequest request) =>
+      Navigator.of(context)
+          .pushReplacementNamed(AppRoutes.drill, arguments: request);
+
   /// Replaces the drill with its summary, so that back from the summary does
   /// not return to a finished session.
   static Future<void> showSummary(BuildContext context, SessionResult result) =>
