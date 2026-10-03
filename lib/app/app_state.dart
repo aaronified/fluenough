@@ -969,9 +969,13 @@ class AppState extends ChangeNotifier {
   /// from the best-known language the learner speaks that has one, else the
   /// first in the catalog. Its path's units, or without a path each deck as
   /// a unit, in catalog order; a deck its path leaves out follows as a unit
-  /// of its own. Empty if no deck teaches [language]. Whether the profile
+  /// of its own. Without its alphabet, the decks the path marks as needing
+  /// it are left out. Empty if no deck teaches [language]. Whether the profile
   /// learns it does not matter: placement asks before it does.
-  List<List<DeckEntry>> courseUnits(String language) {
+  ///
+  /// [alphabet] overrides whether the alphabet is learned, for placement,
+  /// which asks before it is saved.
+  List<List<DeckEntry>> courseUnits(String language, {bool? alphabet}) {
     final teaching = <DeckEntry>[
       for (final entry in decks)
         if (entry.language.code == language) entry,
@@ -988,8 +992,13 @@ class AppState extends ChangeNotifier {
       for (final entry in teaching)
         if (entry.deck.native.code == native) entry,
     ];
-    final byId = <String, DeckEntry>{for (final e in course) e.id: e};
     final path = pathOf(course.first);
+    // Learned without its alphabet, the course leaves out the decks that
+    // need it.
+    if (path != null && !(alphabet ?? settings.learnsAlphabet(language))) {
+      course.removeWhere((e) => path.alphabet.contains(e.id));
+    }
+    final byId = <String, DeckEntry>{for (final e in course) e.id: e};
     return <List<DeckEntry>>[
       if (path != null)
         for (final unit in path.units)
@@ -999,6 +1008,22 @@ class AppState extends ChangeNotifier {
       for (final entry in course)
         if (path?.unitOf(entry.id) == null) <DeckEntry>[entry],
     ];
+  }
+
+  /// Whether [entry] needs an alphabet the learner is not learning: its
+  /// course leaves it out (#47). It can still be opened and studied.
+  bool leavesOut(DeckEntry entry) =>
+      !settings.learnsAlphabet(entry.language.code) &&
+      (pathOf(entry)?.alphabet.contains(entry.id) ?? false);
+
+  /// Whether [language]'s course has decks that need its alphabet, so that
+  /// it can be learned without them.
+  bool hasAlphabet(String language) {
+    for (final entry in decks) {
+      if (entry.language.code != language) continue;
+      if (pathOf(entry)?.alphabet.contains(entry.id) ?? false) return true;
+    }
+    return false;
   }
 
   /// [units]' cards, one from each unit in turn, so that a day's new cards

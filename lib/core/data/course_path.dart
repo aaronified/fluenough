@@ -22,6 +22,7 @@ class CoursePath {
     required this.native,
     required this.units,
     this.open = const <int>{},
+    this.alphabet = const <String>{},
   });
 
   /// `<language>-<native>-path`, the file's name.
@@ -39,6 +40,10 @@ class CoursePath {
 
   /// The units that end in the wildcard, by index.
   final Set<int> open;
+
+  /// The decks that need the alphabet: its script, spelling and reading
+  /// decks. A learner who skips the alphabet is not taught them.
+  final Set<String> alphabet;
 
   /// `hi/en`: the key the catalog finds a course's path by.
   String get course => '$language/$native';
@@ -90,6 +95,7 @@ class CoursePath {
         for (final unit in placed)
           if (unit.isNotEmpty) List<String>.unmodifiable(unit),
       ]),
+      alphabet: alphabet,
     );
   }
 
@@ -180,11 +186,26 @@ CoursePath parseCoursePath(String text, {String source = 'path.yaml'}) {
     }
     units.add(List<String>.unmodifiable(unit));
   }
+  final alphabetNode = root.nodes['alphabet'];
+  final alphabet = <String>{};
+  if (alphabetNode != null) {
+    if (alphabetNode is! YamlList) {
+      throw bad('alphabet must be a list of deck ids', alphabetNode);
+    }
+    for (final deck in alphabetNode.nodes) {
+      final value = deck.value;
+      if (value is! String || !seen.contains(value)) {
+        throw bad('alphabet lists "$value", which the path does not', deck);
+      }
+      alphabet.add(value);
+    }
+  }
   return CoursePath(
     id: id as String,
     language: language as String,
     native: native as String,
     units: List<List<String>>.unmodifiable(units),
     open: Set<int>.unmodifiable(open),
+    alphabet: Set<String>.unmodifiable(alphabet),
   );
 }

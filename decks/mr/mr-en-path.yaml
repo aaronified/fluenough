@@ -7,6 +7,16 @@ kind: path
 id: mr-en-path
 language: mr
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - mr-en-script-vowels
+  - mr-en-script-consonants
+  - mr-en-script-reading
+  - mr-en-script-vowel-signs
+  - mr-en-script-conjuncts
+  - mr-en-spelling
+  - mr-en-reading-sunitacha-ravivar
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:

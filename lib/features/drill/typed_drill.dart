@@ -10,6 +10,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/play_button.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
@@ -144,12 +145,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ),
       if (answered) ...<Widget>[
-        TargetText.card(
-          card.target,
-          language: language,
-          fontSize: 28,
-          color: scheme.primary,
-        ),
+        _word(card, language, scheme),
         if (notes != null)
           // Padding, not a max-width box: DrillFrame measures the card's
           // intrinsic height, and a ConstrainedBox reports its child's
@@ -203,12 +199,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ),
       if (session.answer != null) ...<Widget>[
-        TargetText.card(
-          card.target,
-          language: language,
-          fontSize: 28,
-          color: scheme.primary,
-        ),
+        _word(card, language, scheme),
         Text(
           card.native,
           textAlign: TextAlign.center,
@@ -218,6 +209,27 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ],
     ];
+  }
+
+  /// The answer, once in: the word, or for a language learned without its
+  /// alphabet, its reading first.
+  Widget _word(Card card, LanguageInfo language, ColorScheme scheme) {
+    final reading = card.reading;
+    if (reading != null && !_session.learnsAlphabet) {
+      return ReadingFirst(
+        reading: reading,
+        target: card.target,
+        language: language,
+        fontSize: 28,
+        color: scheme.primary,
+      );
+    }
+    return TargetText.card(
+      card.target,
+      language: language,
+      fontSize: 28,
+      color: scheme.primary,
+    );
   }
 
   String _fieldLabel(
