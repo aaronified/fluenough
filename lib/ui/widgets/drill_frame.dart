@@ -4,11 +4,13 @@ import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'mode_pill.dart';
+import 'report_button.dart';
 import 'wave_progress.dart';
 
 /// The layout every drill shares, from the design's drill screen:
 ///
-/// 1. A 64 px header: close button, the progress wave, "3/8".
+/// 1. A 64 px header: close button, the progress wave, "3/8", and the
+///    bug icon (ADR-0021).
 /// 2. A scrolling body: the skill's pill and the deck's name, then the
 ///    [card] — a 40 px-cornered `surfaceContainerHigh` panel at least 300 px
 ///    tall that grows to fill the space — then [belowCard], where the answer
@@ -35,7 +37,11 @@ class DrillFrame extends StatelessWidget {
     this.belowCard,
     this.feedback,
     this.actions = const <Widget>[],
+    this.reportDetail,
   });
+
+  /// What a report from this drill says it showed: the card's id and deck.
+  final String? reportDetail;
 
   final Skill skill;
 
@@ -82,7 +88,7 @@ class DrillFrame extends StatelessWidget {
             SizedBox(
               height: 64,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 16, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                 child: Row(
                   children: <Widget>[
                     IconButton(
@@ -110,6 +116,7 @@ class DrillFrame extends StatelessWidget {
                         ),
                       ),
                     ),
+                    ReportButton(detail: reportDetail ?? deckName),
                   ],
                 ),
               ),

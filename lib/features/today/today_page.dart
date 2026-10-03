@@ -14,6 +14,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
+import '../../ui/widgets/report_button.dart';
 import 'due_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
@@ -200,6 +201,7 @@ class _Header extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
+          const ReportButton(detail: 'Today'),
           IncomingFeature(
             feature: Feature.profiles,
             label: l10n.todaySwitchProfile,

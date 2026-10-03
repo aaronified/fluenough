@@ -39,6 +39,13 @@ enum Feature {
   importCsv(0),
   importAnki(23),
 
+  // Feedback: reports by mail, text only. Until it is on, every report
+  // button opens a new GitHub issue instead.
+  feedbackMail(160),
+
+  // The app's own log, for reports, and its section in Settings.
+  logs(162),
+
   // Settings.
   reminder(21),
   uiLanguage(46),
