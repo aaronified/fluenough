@@ -286,7 +286,8 @@ void main() {
     );
   });
 
-  test('leech actions are appended; the latest one sets the status', () {
+  test('leech actions are appended; a reset and a set-aside each hold on '
+      'their own', () {
     final actions = LeechActions.of(MemoryProgress());
     const key = (cardId: 'es-0002', mode: DrillMode.production);
     final now = app.now();
@@ -294,17 +295,21 @@ void main() {
     expect(actions.statusOf(key), LeechStatus.reset);
     actions.toggleSetAside(key, now: now);
     expect(actions.statusOf(key), LeechStatus.setAside);
+    expect(actions.isReset(key), isTrue);
+    // Brought back, it is still reset, and the reset button undoes it
+    // rather than add a second reset.
     actions.toggleSetAside(key, now: now);
+    expect(actions.statusOf(key), LeechStatus.reset);
+    actions.toggleReset(key, now: now);
     expect(actions.statusOf(key), LeechStatus.active);
     actions.toggleReset(key, now: now);
-    actions.toggleReset(key, now: now);
-    expect(actions.statusOf(key), LeechStatus.active);
+    expect(actions.statusOf(key), LeechStatus.reset);
     expect(actions.log.map((a) => a.kind), <LeechActionKind>[
       LeechActionKind.reset,
       LeechActionKind.setAside,
       LeechActionKind.bringBack,
-      LeechActionKind.reset,
       LeechActionKind.undoReset,
+      LeechActionKind.reset,
     ]);
   });
 
