@@ -10,6 +10,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/target_text.dart';
 import 'settings_controls.dart';
@@ -63,7 +64,10 @@ class AppearancePage extends StatelessWidget {
     final state = AppScope.of(context);
     final settings = state.settings;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.appearanceTitle)),
+      appBar: AppBar(
+        title: Text(l10n.appearanceTitle),
+        actions: const <Widget>[ReportButton()],
+      ),
       body: ListenableBuilder(
         listenable: settings,
         builder: (context, _) {

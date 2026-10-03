@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
+import 'report_button.dart';
 
 /// The large title at the top of a tab: "Decks", "Progress", "Settings".
 /// 32/40 semibold, 24 from the start edge, marked as a heading.
@@ -14,10 +15,20 @@ class TabHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 8),
-    child: Semantics(
-      header: true,
-      child: Text(title, style: Theme.of(context).textTheme.headlineLarge),
+    padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 12, 8),
+    child: Row(
+      children: <Widget>[
+        Expanded(
+          child: Semantics(
+            header: true,
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+          ),
+        ),
+        ReportButton(detail: title),
+      ],
     ),
   );
 }
@@ -111,7 +122,10 @@ class PlaceholderPage extends StatelessWidget {
       );
     }
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(title),
+        actions: const <Widget>[ReportButton()],
+      ),
       body: const SizedBox.expand(),
     );
   }
