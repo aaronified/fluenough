@@ -1,0 +1,80 @@
+schema: 1
+id: mr-en-grammar-pronouns
+name: "Pronouns and possessives"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, with my and your, to me, and with me, which is how Marathi says 'I have'. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["possessive, masculine: माझा …", "possessive, feminine: माझी …", "to, and as object: मला …", "with, have: माझ्याकडे …"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "My, your and his agree with what is owned, not with the owner: माझा भाऊ (my brother), माझी बहीण (my sister), माझे घर (my house, neuter). Before a neuter noun or a masculine plural they end in -े, माझे; before a feminine plural, -्या, माझ्या. -ला is 'to' and also marks a person as the object: मी तुला ओळखतो, I know you. -कडे is 'with, at': माझ्याकडे पेन आहे, I have a pen. Marathi has two 'we': आपण includes the listener, आम्ही leaves them out. ते is 'they', and also a respectful 'he'."
+  entries:
+    - lemma: "मी"
+      key: mii
+      gloss: "I"
+      forms:
+        "possessive, masculine: माझा …": "माझा"
+        "possessive, feminine: माझी …": "माझी"
+        "to, and as object: मला …": "मला"
+        "with, have: माझ्याकडे …": "माझ्याकडे"
+    - lemma: "तू"
+      key: tuu
+      gloss: "you, familiar"
+      forms:
+        "possessive, masculine: माझा …": "तुझा"
+        "possessive, feminine: माझी …": "तुझी"
+        "to, and as object: मला …": "तुला"
+        "with, have: माझ्याकडे …": "तुझ्याकडे"
+    - lemma: "तुम्ही"
+      key: tumhii
+      gloss: "you, respectful or plural"
+      forms:
+        "possessive, masculine: माझा …": "तुमचा"
+        "possessive, feminine: माझी …": "तुमची"
+        "to, and as object: मला …": "तुम्हाला"
+        "with, have: माझ्याकडे …": "तुमच्याकडे"
+    - lemma: "आपण"
+      key: aapan
+      gloss: "we, you and I"
+      forms:
+        "possessive, masculine: माझा …": "आपला"
+        "possessive, feminine: माझी …": "आपली"
+        "to, and as object: मला …": "आपल्याला"
+        "with, have: माझ्याकडे …": "आपल्याकडे"
+    - lemma: "आम्ही"
+      key: aamhii
+      gloss: "we, not you"
+      forms:
+        "possessive, masculine: माझा …": "आमचा"
+        "possessive, feminine: माझी …": "आमची"
+        "to, and as object: मला …": "आम्हाला"
+        "with, have: माझ्याकडे …": "आमच्याकडे"
+    - lemma: "तो"
+      key: to
+      gloss: "he"
+      forms:
+        "possessive, masculine: माझा …": "त्याचा"
+        "possessive, feminine: माझी …": "त्याची"
+        "to, and as object: मला …": "त्याला"
+        "with, have: माझ्याकडे …": "त्याच्याकडे"
+    - lemma: "ती"
+      key: tii
+      gloss: "she"
+      forms:
+        "possessive, masculine: माझा …": "तिचा"
+        "possessive, feminine: माझी …": "तिची"
+        "to, and as object: मला …": "तिला"
+        "with, have: माझ्याकडे …": "तिच्याकडे"
+    - lemma: "ते"
+      key: te
+      gloss: "they"
+      forms:
+        "possessive, masculine: माझा …": "त्यांचा"
+        "possessive, feminine: माझी …": "त्यांची"
+        "to, and as object: मला …": "त्यांना"
+        "with, have: माझ्याकडे …": "त्यांच्याकडे"

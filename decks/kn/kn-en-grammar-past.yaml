@@ -1,0 +1,52 @@
+schema: 1
+id: kn-en-grammar-past
+name: "Past tense"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I did, she went: the past, by person, number and gender. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past tense"
+  slot_name: "person"
+  slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Everyday speech drops the -ನು of a man's form, ಬಂದ for ಬಂದನು, and shortens the others: ಬಂದ್ರು for ಬಂದರು. The past of ನಾನು and ನೀನು is the same: ಬಂದೆ, I came, you came. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು, ಅವಳು ಬಂದಳು, ಅದು ಬಂತು. ನೀವು, plural or respectful, takes the plural, and so does ಅವರು, they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
+  entries:
+    - lemma: "ಮಾಡು"
+      key: maadu
+      gloss: "to do"
+      forms:
+        "ನಾನು": ["ಮಾಡಿದೆ", "ಮಾಡ್ದೆ"]
+        "ನಾವು": ["ಮಾಡಿದೆವು", "ಮಾಡಿದ್ವಿ"]
+        "ನೀನು": ["ಮಾಡಿದೆ", "ಮಾಡ್ದೆ"]
+        "ನೀವು": ["ಮಾಡಿದಿರಿ", "ಮಾಡಿದ್ರಿ"]
+        "ಅವನು": ["ಮಾಡಿದನು", "ಮಾಡಿದ", "ಮಾಡ್ದ"]
+        "ಅವಳು": ["ಮಾಡಿದಳು", "ಮಾಡಿದ್ಲು"]
+        "ಅದು": ["ಮಾಡಿತು", "ಮಾಡ್ತು"]
+        "ಅವರು": ["ಮಾಡಿದರು", "ಮಾಡಿದ್ರು"]
+    - lemma: "ಹೋಗು"
+      key: hoogu
+      gloss: "to go"
+      forms:
+        "ನಾನು": "ಹೋದೆ"
+        "ನಾವು": ["ಹೋದೆವು", "ಹೋದ್ವಿ"]
+        "ನೀನು": "ಹೋದೆ"
+        "ನೀವು": ["ಹೋದಿರಿ", "ಹೋದ್ರಿ"]
+        "ಅವನು": ["ಹೋದನು", "ಹೋದ"]
+        "ಅವಳು": ["ಹೋದಳು", "ಹೋದ್ಲು"]
+        "ಅದು": ["ಹೋಯಿತು", "ಹೋಯ್ತು"]
+        "ಅವರು": ["ಹೋದರು", "ಹೋದ್ರು"]
+    - lemma: "ಬರು"
+      key: baru
+      gloss: "to come"
+      forms:
+        "ನಾನು": "ಬಂದೆ"
+        "ನಾವು": ["ಬಂದೆವು", "ಬಂದ್ವಿ"]
+        "ನೀನು": "ಬಂದೆ"
+        "ನೀವು": ["ಬಂದಿರಿ", "ಬಂದ್ರಿ"]
+        "ಅವನು": ["ಬಂದನು", "ಬಂದ"]
+        "ಅವಳು": ["ಬಂದಳು", "ಬಂದ್ಲು"]
+        "ಅದು": ["ಬಂತು", "ಬಂದಿತು"]
+        "ಅವರು": ["ಬಂದರು", "ಬಂದ್ರು"]

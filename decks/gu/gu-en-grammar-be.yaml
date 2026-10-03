@@ -1,0 +1,58 @@
+schema: 1
+id: gu-en-grammar-be
+name: "To be: છે, હતું, હશે"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Am, was, will be: હોવું in the present, the past and the future. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "હોવું by tense"
+  slot_name: "person and gender"
+  slots: ["હું (m)", "હું (f)", "તું (m)", "તું (f)", "તે (m)", "તે (f)", "તે (it)", "અમે", "તમે", "તેઓ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The present and the future change with the person, not the gender. The past is the other way round: it changes with gender and number, not the person, like an adjective: હતો (m), હતી (f), હતું (n), હતા (m plural). A group of women and men, or a woman spoken of with respect, takes હતાં. નથી is 'am not, is not, are not' for every person: હું ઘરે નથી, I'm not at home."
+  entries:
+    - lemma: "હોવું, now"
+      key: chhe
+      gloss: "to be, present"
+      forms:
+        "હું (m)": "છું"
+        "હું (f)": "છું"
+        "તું (m)": "છે"
+        "તું (f)": "છે"
+        "તે (m)": "છે"
+        "તે (f)": "છે"
+        "તે (it)": "છે"
+        "અમે": "છીએ"
+        "તમે": "છો"
+        "તેઓ": "છે"
+    - lemma: "હોવું, then"
+      key: hatun
+      gloss: "to be, past"
+      forms:
+        "હું (m)": "હતો"
+        "હું (f)": "હતી"
+        "તું (m)": "હતો"
+        "તું (f)": "હતી"
+        "તે (m)": "હતો"
+        "તે (f)": "હતી"
+        "તે (it)": "હતું"
+        "અમે": ["હતા", "હતાં"]
+        "તમે": ["હતા", "હતાં"]
+        "તેઓ": ["હતા", "હતાં"]
+    - lemma: "હોવું, later"
+      key: hashe
+      gloss: "to be, future"
+      forms:
+        "હું (m)": "હોઈશ"
+        "હું (f)": "હોઈશ"
+        "તું (m)": "હોઈશ"
+        "તું (f)": "હોઈશ"
+        "તે (m)": "હશે"
+        "તે (f)": "હશે"
+        "તે (it)": "હશે"
+        "અમે": "હોઈશું"
+        "તમે": "હશો"
+        "તેઓ": "હશે"

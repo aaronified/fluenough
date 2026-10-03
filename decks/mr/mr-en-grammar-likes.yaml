@@ -1,0 +1,64 @@
+schema: 1
+id: mr-en-grammar-likes
+name: "Likes"
+kind: vocab
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "आवडणे: what you like, and what you liked. The one who likes takes -ला, and the verb agrees with what is liked. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [unreviewed, grammar]
+cards:
+  - ref: mr-0162
+  - id: mr-0585
+    target: "आवडणे"
+    native: "to like; to be pleasing"
+    reading: "aavadne"
+    pos: "verb"
+    notes: "Turned round from English: what is liked is the subject, and the one who likes takes -ला. मला आवडते, I like it, 'to me it is pleasing'."
+  - id: mr-0586
+    target: "मला चहा आवडतो."
+    native: "I like tea."
+    reading: "malaa chahaa aavadto."
+    pos: "phrase"
+    notes: "चहा is masculine, so आवडतो, whoever is speaking."
+  - id: mr-0587
+    target: "मला कॉफी आवडते."
+    native: "I like coffee."
+    reading: "malaa kophii aavadte."
+    pos: "phrase"
+    notes: "कॉफी is feminine, so आवडते."
+  - id: mr-0588
+    target: "मला आंबे आवडतात."
+    native: "I like mangoes."
+    reading: "malaa aambe aavadtaat."
+    pos: "phrase"
+    notes: "आंबे is plural, so आवडतात."
+  - id: mr-0589
+    target: "मला हा चित्रपट आवडला."
+    native: "I liked this film."
+    reading: "malaa haa chitrapat aavadlaa."
+    pos: "phrase"
+    notes: "In the past it agrees too: चित्रपट (chitrapat, film) is masculine, so आवडला. Also सिनेमा (sinemaa)."
+  - id: mr-0590
+    target: "मला ते आवडत नाही."
+    native: "I don't like it."
+    reading: "malaa te aavadat naahii."
+    pos: "phrase"
+  - id: mr-0591
+    target: "तुम्हाला काय आवडते?"
+    native: "What do you like?"
+    reading: "tumhaalaa kaay aavadte?"
+    pos: "phrase"
+  - id: mr-0592
+    target: "आवडता"
+    native: "favourite"
+    reading: "aavadtaa"
+    alt_target: ["आवडती", "आवडते"]
+    pos: "adj"
+    notes: "Agrees with its noun: माझा आवडता रंग (maajhaa aavadtaa rang), my favourite colour; माझी आवडती भाजी, my favourite vegetable."
+  - id: mr-0593
+    target: "मला वाचायला आवडते."
+    native: "I like reading."
+    reading: "malaa vaachaaylaa aavadte."
+    pos: "phrase"
+    notes: "An action you like takes -आयला: वाचायला, to read; फिरायला (phiraaylaa), to go out and about."

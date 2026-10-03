@@ -1,0 +1,80 @@
+schema: 1
+id: gu-en-grammar-adjectives
+name: "Adjectives: gender and number"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Adjectives in -ઓ agree with their noun in all three genders; the others never change. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Adjective agreement"
+  slot_name: "agreement"
+  slots: ["with a feminine noun", "with a neuter noun", "with a masculine plural", "with a neuter plural"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "An adjective in -ઓ agrees: સારો છોકરો, સારી છોકરી, સારું ઘર, સારા છોકરા, સારાં કેળાં. Before an ending a masculine or neuter adjective takes -આ: સારા છોકરાને. Any other adjective stays the same: ગરમ ચા, ગરમ દૂધ; સુંદર, ખરાબ, લાલ. A feminine plural keeps -ઈ: સારી છોકરીઓ."
+  entries:
+    - lemma: "સારો"
+      key: saaro
+      gloss: "good"
+      forms:
+        "with a feminine noun": "સારી"
+        "with a neuter noun": "સારું"
+        "with a masculine plural": "સારા"
+        "with a neuter plural": "સારાં"
+    - lemma: "મોટો"
+      key: moto
+      gloss: "big; older"
+      forms:
+        "with a feminine noun": "મોટી"
+        "with a neuter noun": "મોટું"
+        "with a masculine plural": "મોટા"
+        "with a neuter plural": "મોટાં"
+    - lemma: "નાનો"
+      key: naano
+      gloss: "small; younger"
+      forms:
+        "with a feminine noun": "નાની"
+        "with a neuter noun": "નાનું"
+        "with a masculine plural": "નાના"
+        "with a neuter plural": "નાનાં"
+    - lemma: "નવો"
+      key: navo
+      gloss: "new"
+      forms:
+        "with a feminine noun": "નવી"
+        "with a neuter noun": "નવું"
+        "with a masculine plural": "નવા"
+        "with a neuter plural": "નવાં"
+    - lemma: "જૂનો"
+      key: juuno
+      gloss: "old (a thing)"
+      forms:
+        "with a feminine noun": "જૂની"
+        "with a neuter noun": "જૂનું"
+        "with a masculine plural": "જૂના"
+        "with a neuter plural": "જૂનાં"
+    - lemma: "ઠંડો"
+      key: thando
+      gloss: "cold"
+      forms:
+        "with a feminine noun": "ઠંડી"
+        "with a neuter noun": "ઠંડું"
+        "with a masculine plural": "ઠંડા"
+        "with a neuter plural": "ઠંડાં"
+    - lemma: "કાળો"
+      key: kaalo
+      gloss: "black"
+      forms:
+        "with a feminine noun": "કાળી"
+        "with a neuter noun": "કાળું"
+        "with a masculine plural": "કાળા"
+        "with a neuter plural": "કાળાં"
+    - lemma: "લીલો"
+      key: liilo
+      gloss: "green"
+      forms:
+        "with a feminine noun": "લીલી"
+        "with a neuter noun": "લીલું"
+        "with a masculine plural": "લીલા"
+        "with a neuter plural": "લીલાં"
