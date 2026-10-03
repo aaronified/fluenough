@@ -1,0 +1,21 @@
+# How Bengali readings are written, and the spellings a learner may type for
+# the same sound, which grading treats as one (#47). The first spelling of
+# each group is the one the decks use. o and a are not a group: Bengalis type
+# the inherent vowel as the o it is said as, and কল (kol) and কাল (kal) are
+# different words. See "Romanisation" in docs/DECK-FORMAT.md. Not yet checked
+# by a Bengali speaker: please report any mistake.
+schema: 1
+kind: romanisation
+id: bn-romanisation
+language: bn
+scheme: "Popular, as Bengali is texted: lowercase ASCII, no length marks, spelled as said; the inherent vowel written o where it is said (ami, tomar, bhalo, kotha) and left out where it is silent (nam, korchhi); sh for শ, ষ and স, but s where it is said s (stri, steshon, bas); j for জ and য, y for য়, b for ব, bh for ভ, ch for চ, chh for ছ, kkh for ক্ষ, gg for জ্ঞ, r and rh for ড় and ঢ়, ng for ং and ঙ, n for ঁ, e for এ also where it is said as the a of cat (ek, dekha), ya for the য-ফলা said that way (byasto), a doubled consonant written twice (shotti, achchha), and aspirates with h."
+equivalents:
+  - ["i", "ee"]
+  - ["u", "oo"]
+  - ["sh", "s"]
+  - ["chh", "ch"]
+  - ["chchh", "cch"]
+  - ["bh", "v"]
+  - ["ph", "f"]
+  - ["j", "z"]
+  - ["oa", "owa", "wa"]
