@@ -170,7 +170,8 @@ class Card {
 
   /// The accepted answers for [mode], the first being the canonical one.
   List<String> acceptedAnswers(DrillMode mode) => switch (mode) {
-    DrillMode.recognition => <String>[native, ...altNative],
+    DrillMode.recognition ||
+    DrillMode.reading => <String>[native, ...altNative],
     DrillMode.production ||
     DrillMode.listening ||
     DrillMode.grammar ||
@@ -179,7 +180,7 @@ class Card {
 
   /// What the learner is shown.
   String promptFor(DrillMode mode) => switch (mode) {
-    DrillMode.recognition => target,
+    DrillMode.recognition || DrillMode.reading => target,
     DrillMode.production || DrillMode.grammar || DrillMode.speaking => native,
     // The listening prompt is the audio itself; the text is withheld until
     // the answer is in.

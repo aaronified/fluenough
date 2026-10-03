@@ -10,6 +10,7 @@ import '../../core/grading/answer_grader.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
@@ -68,11 +69,11 @@ class TypedAnswer {
 /// with the route.
 ///
 /// Every answer is recorded through [AppState.record] the moment it is
-/// given: a rating, a checked answer, "Don't know", or the verdict on a near
-/// miss. Nothing waits for the end of the session, so ending part-way loses
-/// nothing. A session that is not [recorded], number practice (#54) or
-/// [revising] a finished deck, records nothing and only counts its answers
-/// for the summary.
+/// given: a rating, a checked answer, "Don't know", the verdict on a near
+/// miss, or a reading question's choice. Nothing waits for the end of the
+/// session, so ending part-way loses nothing. A session that is not
+/// [recorded], number practice (#54) or [revising] a finished deck, records
+/// nothing and only counts its answers for the summary.
 class DrillSession extends ChangeNotifier {
   DrillSession({
     required AppState state,
@@ -84,7 +85,8 @@ class DrillSession extends ChangeNotifier {
        assert(!revising || !recorded, 'revising is never recorded'),
        _state = state,
        items = List<SessionItem>.unmodifiable(items),
-       startedAt = state.now() {
+       startedAt = state.now(),
+       _showingPassage = items.first.card is QuestionCard {
     _watch.start();
   }
 
@@ -232,7 +234,7 @@ class DrillSession extends ChangeNotifier {
   /// Spaces and commas in them are ignored, so 2,020 is 2020.
   void check(String typed) {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
-    if (item.mode == DrillMode.recognition) return;
+    if (item.mode == DrillMode.recognition || question != null) return;
     final accepted = acceptedAnswers;
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
@@ -253,7 +255,9 @@ class DrillSession extends ChangeNotifier {
 
   /// "Don't know": shows the answer and records a failure.
   void dontKnow() {
-    if (_phase != DrillPhase.prompt || item.mode == DrillMode.recognition) {
+    if (_phase != DrillPhase.prompt ||
+        item.mode == DrillMode.recognition ||
+        question != null) {
       return;
     }
     const grade = 1;
@@ -273,10 +277,116 @@ class DrillSession extends ChangeNotifier {
 
   /// "Continue", once the feedback is showing and the answer is recorded.
   void next() {
-    if (_phase != DrillPhase.feedback || _answer?.awaitsJudgement != false) {
+    if (_phase != DrillPhase.feedback) return;
+    if (_choice == null && _answer?.awaitsJudgement != false) return;
+    _advance();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Reading (#98, ADR-0019)
+
+  /// The current card as a reading question, or null for any other card.
+  QuestionCard? get question => switch (item.card) {
+    final QuestionCard card => card,
+    _ => null,
+  };
+
+  bool _showingPassage;
+
+  /// Whether the passage shows on its own, before its first question: once
+  /// for the questions about it that come together, read or heard.
+  bool get showsPassage => _showingPassage;
+
+  /// How many questions about the current passage, from this one on, come
+  /// one after another in this session in this mode.
+  int get passageQuestionsLeft {
+    var count = 0;
+    for (var i = _index; i < items.length; i++) {
+      if (!_samePassage(items[_index], items[i])) break;
+      count++;
+    }
+    return count;
+  }
+
+  /// From the passage to its first question. The clock starts again, so
+  /// that reading the passage is not timed as the first answer.
+  void toQuestions() {
+    if (!_showingPassage) return;
+    _showingPassage = false;
+    _watch
+      ..reset()
+      ..start();
+    notifyListeners();
+  }
+
+  int? _choice;
+
+  /// The choice made on the current question, from 0, once it is made.
+  int? get choice => _choice;
+
+  /// The language the current question is shown in: the best the learner
+  /// speaks of those it is written in (#53).
+  String get questionLanguage =>
+      question!.question.languageFor(_state.settings.spokenLanguages);
+
+  /// Chooses [choice] and records it at once: right or wrong, there is no
+  /// near miss to judge.
+  void choose(int choice) {
+    final card = question;
+    if (card == null || _showingPassage || _phase != DrillPhase.prompt) {
       return;
     }
-    _advance();
+    final q = card.question;
+    if (choice < 0 || choice >= q.choiceCount) return;
+    _choice = choice;
+    _record(q.gradeFor(choice), answerGiven: q.logged(choice));
+    _phase = DrillPhase.feedback;
+    notifyListeners();
+  }
+
+  /// Whether the passage's text is showing: always when read; when heard,
+  /// only once the question is answered.
+  bool get showsPassageText =>
+      item.mode != DrillMode.listening || _phase == DrillPhase.feedback;
+
+  int? _playingSentence;
+
+  /// The sentence playing now, or null while nothing is, or the whole
+  /// passage is.
+  int? get playingSentence => _playingSentence;
+
+  /// Plays sentence [index] of the current passage.
+  Future<void> playSentence(int index) async {
+    final card = question;
+    if (card == null || index < 0 || index >= card.passage.sentences.length) {
+      return;
+    }
+    await _speakPassage(<String>[card.passage.sentences[index].text], index);
+  }
+
+  int _speaking = 0;
+
+  /// Speaks [texts] in turn, stopping at a newer call or another card.
+  Future<void> _speakPassage(List<String> texts, int? sentence) async {
+    final call = ++_speaking;
+    if (_playing) await _state.stopSpeaking();
+    if (_disposed || call != _speaking) return;
+    final at = _index;
+    _playing = true;
+    _playingSentence = sentence;
+    notifyListeners();
+    try {
+      for (final text in texts) {
+        if (_disposed || call != _speaking || _index != at) break;
+        await _state.speak(text, deck.language, slower: _slower);
+      }
+    } finally {
+      if (!_disposed && call == _speaking && _index == at) {
+        _playing = false;
+        _playingSentence = null;
+        notifyListeners();
+      }
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -293,8 +403,14 @@ class DrillSession extends ChangeNotifier {
   /// Whether the word is playing now.
   bool get playing => _playing;
 
-  /// Speaks the current card's target at the learner's rate, or slower.
+  /// Speaks the current card's target at the learner's rate, or slower: for
+  /// a reading question, its whole passage, a sentence at a time.
   Future<void> play() async {
+    if (question case final card?) {
+      return _speakPassage(<String>[
+        for (final sentence in card.passage.sentences) sentence.text,
+      ], null);
+    }
     if (item.mode != DrillMode.listening) return;
     final playingIndex = _index;
     _playing = true;
@@ -483,6 +599,7 @@ class DrillSession extends ChangeNotifier {
   void _advance() {
     if (_playing) _state.stopSpeaking();
     _playing = false;
+    _playingSentence = null;
     var next = _index + 1;
     while (next < items.length && !_drillable(items[next])) {
       next++;
@@ -493,9 +610,15 @@ class DrillSession extends ChangeNotifier {
       notifyListeners();
       return;
     }
+    // A passage shows once for its questions that come together, and again
+    // when it comes back in the other mode.
+    _showingPassage =
+        items[next].card is QuestionCard &&
+        !_samePassage(items[_index], items[next]);
     _index = next;
     _phase = DrillPhase.prompt;
     _answer = null;
+    _choice = null;
     _hearing = false;
     _unheard = null;
     _watch
@@ -512,3 +635,9 @@ class DrillSession extends ChangeNotifier {
     super.dispose();
   }
 }
+
+/// Whether [a] and [b] ask about the same passage, in the same mode.
+bool _samePassage(SessionItem a, SessionItem b) =>
+    a.mode == b.mode &&
+    a.card is QuestionCard &&
+    (a.card as QuestionCard).sharesPassage(b.card);

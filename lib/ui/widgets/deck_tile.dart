@@ -214,9 +214,17 @@ class DeckTile extends StatelessWidget {
   /// 56 on the deck list, 52 on Today.
   final double glyphSize;
 
-  /// The meta line for [entry]: its language, ISO 639-3 code and size.
+  /// The meta line for [entry]: its language, ISO 639-3 code and size, in
+  /// passages for a reading deck (#98).
   static String metaFor(AppLocalizations l10n, DeckEntry entry) {
     final language = entry.language;
+    if (entry.deck.kind == DeckKind.reading && entry.bundled) {
+      return l10n.deckMetaReading(
+        language.name,
+        language.iso639_3,
+        entry.deck.passages.length,
+      );
+    }
     return entry.bundled
         ? l10n.deckMeta(language.name, language.iso639_3, entry.itemCount)
         : l10n.deckMetaImported(

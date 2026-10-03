@@ -41,7 +41,8 @@ void main() {
     expect(zero, noIssueYet);
   });
 
-  test('this version ships the drills, speaking among them, saved progress, '
+  test('this version ships the drills, speaking and reading among them, '
+      'saved progress, '
       'appearance but for wallpaper colours, stats, leeches, daily facts and '
       'the log backup', () {
     expect(Feature.available, {
@@ -50,6 +51,7 @@ void main() {
       Feature.drillListening,
       Feature.drillSpeaking,
       Feature.drillGrammar,
+      Feature.drillReading,
       Feature.persistence,
       Feature.appearance,
       Feature.colourSeeds,
@@ -84,11 +86,14 @@ void main() {
   });
 
   test('every skill is switched on by its own drill feature', () {
-    expect(Skill.values.map((s) => s.feature).toSet(), hasLength(6));
+    expect(Skill.values.map((s) => s.feature).toSet(), hasLength(7));
     expect(Skill.speaking.feature, Feature.drillSpeaking);
     expect(Skill.speaking.mode, DrillMode.speaking);
     expect(Skill.pair.mode, isNull);
     expect(Skill.pair.feature, Feature.drillPair);
     expect(Skill.grammar.feature, Feature.drillGrammar);
+    expect(Skill.reading.feature, Feature.drillReading);
+    expect(Skill.reading.mode, DrillMode.reading);
+    expect(Feature.drillReading.issue, 98);
   });
 }

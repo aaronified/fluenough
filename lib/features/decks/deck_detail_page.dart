@@ -13,11 +13,13 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/stat_tile.dart';
 import 'deck_content.dart';
 import 'deck_facts.dart';
+import 'passage_preview.dart';
 import 'skill_section.dart';
 import 'unreviewed_notice.dart';
 
 /// One deck: counts, practise one skill, only these tags, a card preview,
-/// licence, source, voice and id, and at the foot Review all due; once
+/// or for a reading deck its passages (#98), licence, source, voice and id,
+/// and at the foot Review all due; once
 /// nothing is due, Learn anyway while cards are left to learn past today's
 /// cap, then Revise when every card is learned (ADR-0012).
 ///
@@ -104,7 +106,10 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
                 ),
               ],
               const SizedBox(height: 20),
-              CardPreview(entry: entry),
+              if (entry.deck.kind == DeckKind.reading)
+                PassagePreview(entry: entry)
+              else
+                CardPreview(entry: entry),
               const SizedBox(height: 20),
               DeckFacts(entry: entry),
             ],
@@ -149,6 +154,7 @@ class _Header extends StatelessWidget {
       : switch (entry.deck.kind) {
           DeckKind.vocab => l10n.deckKindVocabulary,
           DeckKind.grammar => l10n.deckKindGrammar,
+          DeckKind.reading => l10n.deckKindReading,
         };
 
   @override
@@ -186,7 +192,12 @@ class _Header extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        l10n.commonCardCount(entry.itemCount),
+                        entry.deck.kind == DeckKind.reading
+                            ? l10n.deckReadingCount(
+                                entry.deck.passages.length,
+                                entry.itemCount,
+                              )
+                            : l10n.commonCardCount(entry.itemCount),
                         style: theme.textTheme.bodyMedium!.copyWith(
                           color: scheme.onSurfaceVariant,
                         ),

@@ -46,7 +46,8 @@ SCRIPTS = {
     "kana", "han", "hangul", "thai", "other",
 }
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
-KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script"}
+KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
+         "reading"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -60,7 +61,7 @@ POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
 HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
     "authors", "source", "description", "tags", "cards", "pattern", "facts",
-    "theme",
+    "theme", "passages",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "alt_target", "alt_native",
@@ -75,6 +76,13 @@ REF_KEYS = {
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source"}
+PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary"}
+SENTENCE_KEYS = {"text", "reading"}
+QUESTION_KEYS = {"id", "prompt", "options", "answer"}
+GLOSS_KEYS = {"word", "modern", "reading", "meaning", "note"}
+# A reading question has this many options, and a passage this many
+# questions (#98, ADR-0019).
+CHOICES = range(2, 5)
 
 
 class DeckLoader(yaml.SafeLoader):
@@ -140,6 +148,12 @@ class Report:
     native_code: str | None = None
     card_defs: dict[str, list[str]] = field(default_factory=dict)
     refs: list[tuple[str, bool, str]] = field(default_factory=list)
+    # For reading decks (#98, ADR-0019): the unit each deck of a path is in;
+    # the words a vocab or grammar deck teaches; and a reading deck's
+    # passages, as (id, theme, words in its sentences, words it glosses).
+    course_units: tuple[str, str, dict[str, int]] | None = None
+    taught_words: tuple[str, str, set[str]] | None = None
+    passages: tuple[str, str, list[tuple[str, str | None, list[str], set[str]]]] | None = None
 
     def error(self, where: str, msg: str) -> None:
         self.errors.append(f"{where}: {msg}")
@@ -631,6 +645,8 @@ def validate(path: Path) -> Report:
                 else:
                     _check_optional_text(r, f"authors[{i}]", a, "url")
 
+    if kind != "reading" and "passages" in raw:
+        r.error("passages", "only valid on a reading deck; add kind: reading")
     if kind == "vocab":
         if "pattern" in raw:
             r.error("pattern", "only valid on a grammar deck")
@@ -652,6 +668,15 @@ def validate(path: Path) -> Report:
             if key in raw:
                 r.error(key, "a facts file uses facts, not cards or a pattern")
         check_facts(r, raw.get("facts"))
+    elif kind == "reading":
+        for key in ("cards", "pattern", "facts"):
+            if key in raw:
+                r.error(key, "a reading deck has passages, not " + key)
+        code = lang.get("code") if isinstance(lang, dict) else None
+        passages = check_passages(r, raw.get("passages"), script,
+                                  code if _is_str(code) else "xx")
+        if r.course_deck is not None:
+            r.passages = (r.course_deck[0], r.course_deck[1], passages)
     else:
         if "facts" in raw:
             r.error("facts", "only valid on a facts file")
@@ -662,7 +687,233 @@ def validate(path: Path) -> Report:
         else:
             check_pattern(r, raw["pattern"])
 
+    if kind in ("vocab", "grammar") and r.course_deck is not None:
+        r.taught_words = (r.course_deck[0], r.course_deck[1], _taught(raw))
     return r
+
+
+def _words(text: str) -> list[str]:
+    """The words of [text], for comparing with the words decks teach: split
+    at spaces and punctuation, but not at an apostrophe inside a word, as in
+    ক’রে, and without numbers. Never used to change what is stored."""
+    words = []
+    for chunk in text.split():
+        spaced = "".join(
+            " " if unicodedata.category(ch)[0] in "PSZ" and ch not in "’'" else ch
+            for ch in chunk)
+        for word in spaced.split():
+            word = word.strip("’'")
+            if word and not word.isdigit():
+                words.append(unicodedata.normalize("NFC", word))
+    return words
+
+
+def _taught(raw: dict) -> set[str]:
+    """Every word a vocab or grammar deck teaches, as [_words] splits them."""
+    texts: list[object] = []
+    for card in raw.get("cards") or []:
+        if isinstance(card, dict):
+            texts.append(card.get("target"))
+            alts = card.get("alt_target")
+            texts.extend(alts if isinstance(alts, list) else [])
+            for ex in card.get("examples") or []:
+                if isinstance(ex, dict):
+                    texts.append(ex.get("target"))
+    pattern = raw.get("pattern")
+    if isinstance(pattern, dict):
+        for entry in pattern.get("entries") or []:
+            if isinstance(entry, dict):
+                texts.append(entry.get("lemma"))
+                forms = entry.get("forms")
+                texts.extend(forms.values() if isinstance(forms, dict) else [])
+    return {w for t in texts if isinstance(t, str) for w in _words(t)}
+
+
+def _check_by_language(r: Report, where: str, key: str, value: object) -> set[str]:
+    """Text keyed by language code, as a fact's is, with English required.
+    Returns the codes it has."""
+    if not isinstance(value, dict) or not value:
+        r.error(where, f"{key} must map language codes to text, e.g. {{ en: ... }}")
+        return set()
+    codes = set()
+    for code, text in value.items():
+        if not isinstance(code, str) or not LANG_RE.fullmatch(code):
+            r.error(where, f"{key} key must be a 2-3 letter language code, "
+                           f"{_code_error(code)}")
+        elif isinstance(text, bool):
+            r.error(where, f"{key}.{code} parsed as the boolean {text!r}. Quote the value.")
+        elif not _is_str(text):
+            r.error(where, f"{key}.{code} must be non-empty text")
+        else:
+            codes.add(code)
+    if "en" not in value:
+        r.error(where, f"{key} needs en: English is shown to every learner")
+    return codes
+
+
+def _check_passage_text(r: Report, where: str, block: dict, key: str) -> None:
+    """Text from a passage, kept exactly as written: a quotation must stay
+    letter for letter, so nothing here asks for it to be normalised."""
+    val = block.get(key)
+    if isinstance(val, bool):
+        r.error(where, f"{key} parsed as the boolean {val!r} -- YAML read a "
+                       f"bare no/yes/on/off as a bool. Quote the value.")
+    elif isinstance(val, (int, float)):
+        r.error(where, f"{key} parsed as the number {val!r}, not text. Quote the value.")
+    elif not _is_str(val):
+        r.error(where, f"{key} is required and must be non-empty text")
+    elif val != val.strip():
+        r.warn(where, f"{key} has leading or trailing whitespace, which is kept "
+                      f"exactly as written")
+
+
+def check_passages(r: Report, passages: object, script: str, lang: str
+                   ) -> list[tuple[str, str | None, list[str], set[str]]]:
+    """A reading deck's passages and their questions (#98). See "Reading
+    decks" in docs/DECK-FORMAT.md and ADR-0019."""
+    found: list[tuple[str, str | None, list[str], set[str]]] = []
+    if not isinstance(passages, list) or not passages:
+        r.error("passages", "must be a non-empty list")
+        return found
+    needs_reading = script not in ("latin", "cyrillic", "greek")
+    # A question is a card: its id is a card id of the language, written
+    # once in it (rule 1, ADR-0018). A passage's id names the language too,
+    # and passage and question ids are one namespace.
+    ids: set[str] = set()
+    card_id = card_id_re(lang)
+    passage_id = re.compile(rf"{re.escape(lang)}(?:-[a-z0-9]+)+")
+
+    def new_id(where: str, value: object, *, question: bool) -> str | None:
+        if question and (not _is_str(value) or not card_id.fullmatch(value)):
+            r.error(where, f"id must be {lang}- and at least four digits, such as "
+                           f"{lang}-0001, got {value!r}")
+            return None
+        if not question and (not _is_str(value) or not passage_id.fullmatch(value)
+                             or card_id.fullmatch(value)):
+            r.error(where, f"id must start with {lang}- and name the passage, such as "
+                           f"{lang}-sahaj-path-1-01, got {value!r}")
+            return None
+        if value in ids:
+            r.error(where, f"duplicate id {value!r}")
+        ids.add(value)
+        if question:
+            r.card_defs[value] = []
+        return value
+
+    for i, passage in enumerate(passages):
+        where = f"passages[{i}]"
+        if not isinstance(passage, dict):
+            r.error(where, "must be a mapping")
+            continue
+        pid = new_id(where, passage.get("id"), question=False)
+        if pid is not None:
+            where = f"passage {pid}"
+        for unknown in sorted(set(passage) - PASSAGE_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        if not _is_str(passage.get("title")):
+            r.error(where, "title is required")
+        _check_optional_text(r, where, passage, "source")
+        theme = passage.get("theme")
+        if theme is not None and (not _is_str(theme) or not ID_RE.fullmatch(theme)):
+            r.error(where, f"theme must be a theme id from decks/themes.yaml, got {theme!r}")
+            theme = None
+
+        texts: list[str] = []
+        sentences = passage.get("sentences")
+        if not isinstance(sentences, list) or not sentences:
+            r.error(where, "sentences must be a non-empty list")
+            sentences = []
+        for j, sentence in enumerate(sentences):
+            swhere = f"{where}.sentences[{j}]"
+            if not isinstance(sentence, dict):
+                r.error(swhere, "must be a mapping with text and reading")
+                continue
+            for unknown in sorted(set(sentence) - SENTENCE_KEYS, key=str):
+                r.error(swhere, f"unknown field {unknown!r}")
+            _check_passage_text(r, swhere, sentence, "text")
+            if _is_str(sentence.get("text")):
+                texts.append(sentence["text"])
+            if "reading" in sentence or needs_reading:
+                if needs_reading and "reading" not in sentence:
+                    r.error(swhere, f"reading is required: the script is {script!r}")
+                else:
+                    _check_passage_text(r, swhere, sentence, "reading")
+
+        questions = passage.get("questions")
+        if not isinstance(questions, list) or len(questions) not in CHOICES:
+            r.error(where, "questions must be a list of 2 to 4 questions")
+            questions = questions if isinstance(questions, list) else []
+        for j, question in enumerate(questions):
+            qwhere = f"{where}.questions[{j}]"
+            if not isinstance(question, dict):
+                r.error(qwhere, "must be a mapping")
+                continue
+            qid = new_id(qwhere, question.get("id"), question=True)
+            if qid is not None:
+                qwhere = f"question {qid}"
+            for unknown in sorted(set(question) - QUESTION_KEYS, key=str):
+                r.error(qwhere, f"unknown field {unknown!r}")
+            languages = _check_by_language(r, qwhere, "prompt", question.get("prompt"))
+            options = question.get("options")
+            answer = question.get("answer")
+            if options is None:
+                if not isinstance(answer, bool):
+                    r.error(qwhere, f"a question without options is true or false, so "
+                                    f"answer is true or false, got {answer!r}")
+                continue
+            if not isinstance(options, list) or len(options) not in CHOICES:
+                r.error(qwhere, "options must be a list of 2 to 4 options")
+                continue
+            for k, option in enumerate(options):
+                have = _check_by_language(r, qwhere, f"options[{k}]", option)
+                if have and languages and have != languages:
+                    r.error(qwhere, f"options[{k}] is written in {sorted(have)}, the "
+                                    f"prompt in {sorted(languages)}: a question is "
+                                    f"shown in a language only if all of it has it")
+            if isinstance(answer, bool) or not isinstance(answer, int) \
+                    or not 1 <= answer <= len(options):
+                r.error(qwhere, f"answer must be the number of the right option, "
+                                f"from 1 to {len(options)}, got {answer!r}")
+
+        glossed: set[str] = set()
+        glossary = passage.get("glossary")
+        if glossary is not None and not isinstance(glossary, list):
+            r.error(where, "glossary must be a list")
+            glossary = []
+        words: set[str] = set()
+        for j, entry in enumerate(glossary or []):
+            gwhere = f"{where}.glossary[{j}]"
+            if not isinstance(entry, dict):
+                r.error(gwhere, "must be a mapping with word, modern, reading and meaning")
+                continue
+            for unknown in sorted(set(entry) - GLOSS_KEYS, key=str):
+                r.error(gwhere, f"unknown field {unknown!r}")
+            _check_passage_text(r, gwhere, entry, "word")
+            word = entry.get("word")
+            if _is_str(word):
+                if word in words:
+                    r.error(gwhere, f"word {word!r} is listed twice")
+                words.add(word)
+                # Character for character: a curly apostrophe is not a
+                # straight one, and nothing is normalised first.
+                if not any(word in text for text in texts):
+                    r.error(gwhere, f"word {word!r} does not occur in the passage, "
+                                    f"character for character")
+                glossed.update(_words(word))
+            _check_passage_text(r, gwhere, entry, "modern")
+            if _is_str(entry.get("modern")):
+                glossed.update(_words(entry["modern"]))
+            if needs_reading and "reading" not in entry:
+                r.error(gwhere, f"reading is required: the script is {script!r}")
+            elif "reading" in entry:
+                _check_passage_text(r, gwhere, entry, "reading")
+            _check_by_language(r, gwhere, "meaning", entry.get("meaning"))
+            if "note" in entry:
+                _check_by_language(r, gwhere, "note", entry["note"])
+
+        if pid is not None:
+            found.append((pid, theme, [w for t in texts for w in _words(t)], glossed))
+    return found
 
 
 def check_themes_file(r: Report, raw: dict) -> None:
@@ -720,6 +971,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
         r.error("units", "must be a non-empty list")
         return
     listed: list[str] = []
+    unit_of: dict[str, int] = {}
     for i, unit in enumerate(units):
         where = f"units[{i}]"
         if not isinstance(unit, list) or not unit:
@@ -732,8 +984,10 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
                 r.error(where, f"deck {deck!r} is listed twice")
             else:
                 listed.append(deck)
+                unit_of[deck] = i
     if codes_ok:
         r.course_path = (lang, native, listed)
+        r.course_units = (lang, native, unit_of)
 
 
 def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
@@ -1093,6 +1347,54 @@ def check_paths_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+def check_reading_across(reports: list[Report]) -> list[str]:
+    """A reading deck's passages against the rest of its course (#98).
+
+    A passage's theme must be on the theme path. Two things are only
+    warned of: a word in a passage that no deck of the course teaches, as
+    [_words] splits them, glossed words aside; and a passage on the path in
+    a unit no later than its theme's deck, whose new questions would then
+    come before the words they use."""
+    problems: list[str] = []
+    listed = [rep for rep in reports if rep.themes is not None]
+    known = set(listed[0].themes) if listed else None
+    taught: dict[tuple[str, str], set[str]] = {}
+    for rep in reports:
+        if rep.taught_words is not None:
+            lang, native, words = rep.taught_words
+            taught.setdefault((lang, native), set()).update(words)
+    theme_decks = {rep.theme_key: rep.course_deck[2] for rep in reports
+                   if rep.theme_key is not None and rep.course_deck is not None}
+    units = {rep.course_units[:2]: rep.course_units[2] for rep in reports
+             if rep.course_units is not None}
+    for rep in reports:
+        if rep.passages is None or rep.course_deck is None:
+            continue
+        lang, native, passages = rep.passages
+        course = (lang, native)
+        unit_of = units.get(course, {})
+        for pid, theme, words, glossed in passages:
+            if theme is not None and known is not None and theme not in known:
+                problems.append(f"{rep.path}: passage {pid}: theme {theme!r} is not "
+                                f"in decks/themes.yaml")
+            theme_deck = theme_decks.get((lang, native, theme))
+            here, there = unit_of.get(rep.course_deck[2]), unit_of.get(theme_deck)
+            if here is not None and there is not None and here <= there:
+                rep.warn(f"passage {pid}", f"follows {theme!r}, but the path puts "
+                                           f"{rep.course_deck[2]} in unit {here + 1} "
+                                           f"and {theme_deck} in unit {there + 1}; put "
+                                           f"it in a later unit")
+            # Only against a course whose decks are being validated too.
+            if course not in taught:
+                continue
+            unknown = list(dict.fromkeys(
+                w for w in words if w not in taught[course] and w not in glossed))
+            if unknown:
+                rep.warn(f"passage {pid}", f"{len(unknown)} words appear in no "
+                                           f"{lang}-{native} deck: {', '.join(unknown)}")
+    return problems
+
+
 def collect(target: Path) -> list[Path]:
     if target.is_file():
         return [target]
@@ -1179,7 +1481,8 @@ def main(argv: list[str]) -> int:
     for problem in unbundled:
         print(f"error: {problem}")
     across = (check_themes_across(reports) + check_cards_across(reports)
-              + check_numbers_across(reports) + check_paths_across(reports))
+              + check_numbers_across(reports) + check_paths_across(reports)
+              + check_reading_across(reports))
     for problem in across:
         print(f"error: {problem}")
 

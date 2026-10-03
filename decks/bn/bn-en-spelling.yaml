@@ -1,0 +1,123 @@
+schema: 1
+id: bn-en-spelling
+name: "Bengali spellings, old and new"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Spellings you will meet in older books, and the rules that changed them: Calcutta University's of 1936, the Paschimbanga Bangla Akademi's and the Bangla Academy's. Every older spelling here is printed in a book or a rulebook. Not yet checked by a Bengali speaker: please report any mistake."
+source: "Older printings of Sahaj Path and Abol Tabol, and the spelling rules of Calcutta University (1936), the Paschimbanga Bangla Akademi and the Bangla Academy"
+tags: [advanced, unreviewed]
+cards:
+  - id: bn-0797
+    target: "পাখী"
+    native: "bird; today পাখি"
+    reading: "pakhi"
+    pos: "other"
+    modes: [recognition]
+    notes: "Sanskrit words keep their ঈ; other words now take ই. Calcutta University's rules of 1936 allowed both পাখী and পাখি; the Paschimbanga Bangla Akademi and the Bangla Academy both write only পাখি."
+  - id: bn-0798
+    target: "বাড়ী"
+    native: "house, home; today বাড়ি"
+    reading: "bari"
+    pos: "other"
+    modes: [recognition]
+    notes: "The same rule as পাখি: ই in words that are not Sanskrit. The Shaibya printing of Abol Tabol: কোথায় বাড়ী"
+  - id: bn-0799
+    target: "গরীব"
+    native: "poor; today গরিব"
+    reading: "gorib"
+    pos: "other"
+    modes: [recognition]
+    notes: "A loanword, so ই. The Shaibya printing of Abol Tabol: গরীব বেজায়—"
+  - id: bn-0800
+    target: "তৈরী"
+    native: "ready; today তৈরি"
+    reading: "toiri"
+    pos: "other"
+    modes: [recognition]
+    notes: "Not Sanskrit, so ই. The Shaibya printing of Abol Tabol: তৈরী ছেলে"
+  - id: bn-0801
+    target: "হাতী"
+    native: "elephant; today হাতি"
+    reading: "hati"
+    pos: "other"
+    modes: [recognition]
+    notes: "Not Sanskrit, so ই. The Shaibya printing of Abol Tabol: হ্যাংলা হাতী চ্যাং-দোলা,"
+  - id: bn-0802
+    target: "খুশী"
+    native: "happy; today খুশি"
+    reading: "khushi"
+    pos: "other"
+    modes: [recognition]
+    notes: "Not Sanskrit, so ই. Sahaj Path's 1993 printing has both, খুশি and খুব খুশী"
+  - id: bn-0803
+    target: "ইংরেজী"
+    native: "English; today ইংরেজি"
+    reading: "ingreji"
+    pos: "other"
+    modes: [recognition]
+    notes: "Calcutta University's rules of 1936 asked for ঈ in the names of languages and peoples. Both academies now write ইংরেজি, বাঙালি."
+  - id: bn-0804
+    target: "শ্রেণী"
+    native: "class, row; today শ্রেণি"
+    reading: "shreni"
+    pos: "other"
+    modes: [recognition]
+    notes: "A Sanskrit word correct with either vowel takes the short one in both academies' rules. A 1949 reprint of Tagore's বাংলাভাষা-পরিচয় still prints শ্রেণী."
+  - id: bn-0805
+    target: "কর্ম্ম"
+    native: "work, deed; today কর্ম"
+    reading: "kormo"
+    pos: "other"
+    modes: [recognition]
+    notes: "No doubled letter after a reph (র্). Calcutta University, 1936: কর্ম্ম → কর্ম. The Bangla Academy agrees."
+  - id: bn-0806
+    target: "কক্ষণো"
+    native: "never; today কক্ষনো"
+    reading: "kokkhono"
+    pos: "other"
+    modes: [recognition]
+    notes: "A word that is not Sanskrit never takes ণ (Bangla Academy, rule 2.7). The Shaibya printing of Abol Tabol: কক্ষণো তা হয় না।"
+  - id: bn-0807
+    target: "সোণা"
+    native: "gold; today সোনা"
+    reading: "shona"
+    pos: "other"
+    modes: [recognition]
+    notes: "Calcutta University, 1936: সোণা → সোনা. ন, not ণ, in words that are not Sanskrit."
+  - id: bn-0808
+    target: "ভাল"
+    native: "good; today ভালো"
+    reading: "bhalo"
+    pos: "other"
+    modes: [recognition]
+    notes: "Calcutta University made the final ো optional; the Paschimbanga Bangla Akademi writes ভালো, মতো, and the Bangla Academy allows it. The Shaibya printing of Abol Tabol: ভাল রে ভাল!"
+  - id: bn-0809
+    target: "রঙ"
+    native: "colour; today রং"
+    reading: "rong"
+    pos: "other"
+    modes: [recognition]
+    notes: "At the end of a word ং, before a vowel ঙ: রং, but রঙিন (Bangla Academy, rule 2.4). Calcutta University allowed both, and Sahaj Path writes রঙ."
+  - id: bn-0810
+    target: "দৈ"
+    native: "curd; today দই"
+    reading: "doi"
+    pos: "other"
+    modes: [recognition]
+    notes: "An older spelling; today দই. The Shaibya printing of Abol Tabol: চৌদ্দ হাঁড়ি দৈ কি মালাই"
+  - id: bn-0811
+    target: "শেখে নি"
+    native: "hasn't learnt; today শেখেনি"
+    reading: "shekhe ni"
+    pos: "phrase"
+    modes: [recognition]
+    notes: "The Bangla Academy's rules of 2012 join নি to the verb, শেখেনি, and keep না apart: শেখে না. Sahaj Path's 1993 printing: শেখে নি সে কথা কওয়া"
+  - id: bn-0812
+    target: "হলো"
+    native: "became; also হল"
+    reading: "holo"
+    pos: "other"
+    modes: [recognition]
+    notes: "The Bangla Academy allows a final ো on verbs: হলো, দেবো. The Paschimbanga Bangla Akademi writes হল, দেব. Sahaj Path's 1993 printing has ভোর হ’ল।"

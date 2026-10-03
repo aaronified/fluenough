@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../core/models/card.dart';
+import '../core/models/deck.dart';
 import 'deck_catalog.dart';
 
 /// One placement question: [card]'s target, and [options] to say what it
@@ -24,6 +25,10 @@ class PlacementQuestion {
 /// unit means reading its script too. A unit is known when at most one in
 /// four answers is wrong: three of its four questions, or all of them in a
 /// unit with fewer than four meanings to ask.
+///
+/// A reading deck asks nothing here: its questions need their passage. A
+/// unit of nothing but reading is known when it is reached, as a unit with
+/// nothing to ask always is (ADR-0019).
 class Placement {
   Placement(this.units, {Random? random, this.questionsPerUnit = 4})
     : _random = random ?? Random() {
@@ -101,7 +106,7 @@ class Placement {
   List<PlacementQuestion> _questionsFor(List<DeckEntry> unit) {
     final pools = <List<Card>>[
       for (final entry in unit)
-        if (_distinctByMeaning(entry.cards) case final cards
+        if (_distinctByMeaning(_askable(entry)) case final cards
             when cards.isNotEmpty)
           cards..shuffle(_random),
     ];
@@ -118,7 +123,7 @@ class Placement {
     final everyMeaning = <String>{
       for (final unit in units)
         for (final entry in unit)
-          for (final card in entry.cards) card.native,
+          for (final card in _askable(entry)) card.native,
     };
     return <PlacementQuestion>[
       for (final card in picked) _question(card, unit, everyMeaning),
@@ -136,7 +141,7 @@ class Placement {
     final alsoRight = <String>{
       for (final unit in units)
         for (final entry in unit)
-          for (final c in entry.cards)
+          for (final c in _askable(entry))
             if (c.target == card.target) c.native,
     };
     final deck = unit.firstWhere((e) => e.id == card.deckId);
@@ -152,6 +157,10 @@ class Placement {
     final options = <String>[card.native, ...wrong]..shuffle(_random);
     return PlacementQuestion(card: card, options: options);
   }
+
+  /// The cards of [entry] placement can ask about: none of a reading deck's.
+  static List<Card> _askable(DeckEntry entry) =>
+      entry.deck.kind == DeckKind.reading ? const <Card>[] : entry.cards;
 
   /// [cards] with one card per meaning, so that a unit never asks the same
   /// meaning twice.

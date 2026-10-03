@@ -11,6 +11,7 @@ import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
 import 'pair_drill.dart';
+import 'reading_gallery_entries.dart';
 import 'rtl_fixture.dart';
 
 /// The drills, as the design's Gallery lists them. Owned by B1, except for
@@ -121,6 +122,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
   ),
   ...grammarGalleryEntries,
   ...pairGalleryEntries,
+  ...readingGalleryEntries,
   GalleryEntry(
     id: 'drill-rtl',
     section: GallerySection.drills,
