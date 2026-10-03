@@ -31,9 +31,6 @@ jobs:
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
       - run: python3 tools/check_ui_strings.py lib/
-      # The relay for in-app reports (ADR-0021). Node's own test runner: no
-      # packages to install.
-      - run: node --test tools/report-relay/worker.test.mjs
 
   app:
     name: Analyse and test

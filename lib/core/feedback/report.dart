@@ -1,14 +1,38 @@
-import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 import 'dart:typed_data';
 
-/// What a report is about. Its [name] is what the relay is sent, and the
-/// relay labels the issue by it (ADR-0021).
-enum ReportKind { bug, feature, suggestion }
+/// What a report is about. [label] starts its mail's subject, which the
+/// mail-to-issue Action reads to label the issue (ADR-0021).
+enum ReportKind {
+  bug('Bug'),
+  feature('Feature'),
+  suggestion('Suggestion');
+
+  const ReportKind(this.label);
+
+  /// English, whatever the app's language: the Action and the issue read it.
+  final String label;
+}
+
+/// What a report button hands on: the screen it was pressed on.
+class ReportRequest {
+  const ReportRequest({required this.screen, this.detail, this.screenshot});
+
+  /// The screen's route name, `/deck`, or `/` for the tabs.
+  final String screen;
+
+  /// What the screen showed, such as a card's id and deck.
+  final String? detail;
+
+  /// The screen as it was, as PNG, or null if no picture could be taken.
+  final Uint8List? screenshot;
+}
+
+/// Every report mail's subject starts with this; the Action that files
+/// issues reads no other mail (#160).
+const String reportSubjectPrefix = '[Fluenough]';
 
 /// A bug, a feature asked for, or a suggestion, from the screen it was
-/// raised on (ADR-0021). Becomes a public GitHub issue.
+/// raised on (ADR-0021). Sent as a mail; it becomes a public GitHub issue.
 class Report {
   const Report({
     required this.kind,
@@ -29,41 +53,48 @@ class Report {
   /// What the app adds, such as its version and the screen, by name.
   final Map<String, String> context;
 
-  /// The screen the report was raised on, as PNG, if the learner kept it.
+  /// The screen the report was raised on, as PNG, if the learner added it.
   final Uint8List? screenshot;
 
-  /// The body sent to the relay.
-  Map<String, Object> toJson() => <String, Object>{
-    'kind': kind.name,
-    'title': title,
-    'details': details,
-    'context': context,
-    if (screenshot case final png?) 'screenshot': base64Encode(png),
-  };
+  /// `[Fluenough] Bug: The card shows twice`.
+  String get subject => '$reportSubjectPrefix ${kind.label}: $title';
+
+  /// The details, then what the app added, one `Name: value` line each.
+  String get body => <String>[
+    if (details.isNotEmpty) ...<String>[details, ''],
+    '---',
+    for (final MapEntry(:key, :value) in context.entries) '$key: $value',
+  ].join('\n');
 }
 
-/// Why a report was not sent.
+/// The body of a new GitHub issue, opened while mail reports are not set
+/// up: [prompt], room to write, then what the app adds, as [Report.body].
+String issueBody(String prompt, Map<String, String> context) => <String>[
+  prompt,
+  '',
+  '',
+  '---',
+  for (final MapEntry(:key, :value) in context.entries) '$key: $value',
+].join('\n');
+
+/// Why a report did not reach a mail app.
 enum ReportFailure {
-  /// This build has nowhere to send reports: no relay was given to it.
+  /// This build has no address to send reports to.
   notSetUp,
 
-  /// The relay was not reached, or did not answer in time.
-  offline,
-
-  /// The relay answered, and refused the report or could not file it.
-  refused,
+  /// The phone has no mail app that can take it.
+  noMailApp,
 }
 
-/// What became of a report: an issue, or why not.
+/// What became of a report.
 sealed class ReportOutcome {
   const ReportOutcome();
 }
 
-final class ReportSent extends ReportOutcome {
-  const ReportSent({this.issueUrl});
-
-  /// The issue it became, when the relay says.
-  final String? issueUrl;
+/// The reporter's mail app has the report, ready to send. Whether they send
+/// it is theirs to do.
+final class ReportInMailApp extends ReportOutcome {
+  const ReportInMailApp();
 }
 
 final class ReportFailed extends ReportOutcome {
@@ -72,83 +103,16 @@ final class ReportFailed extends ReportOutcome {
   final ReportFailure reason;
 }
 
-/// Where reports go. An interface so that tests need no network.
+/// Where reports go. An interface so that tests need no mail app.
 abstract interface class ReportSender {
   Future<ReportOutcome> send(Report report);
 }
 
-/// A build with no relay: every report fails as [ReportFailure.notSetUp].
+/// A build with nowhere to send reports.
 class NullReportSender implements ReportSender {
   const NullReportSender();
 
   @override
   Future<ReportOutcome> send(Report report) async =>
       const ReportFailed(ReportFailure.notSetUp);
-}
-
-/// Sends a report to the relay at [endpoint] (`tools/report-relay`), which
-/// holds the GitHub token and files the issue (ADR-0021). The app holds no
-/// token. Through dart:io's own client, like the update check.
-class RelayReportSender implements ReportSender {
-  RelayReportSender(
-    this.endpoint, {
-    required this.userAgent,
-    this.timeout = const Duration(seconds: 30),
-  });
-
-  final Uri endpoint;
-
-  /// `fluenough/0.2.0`.
-  final String userAgent;
-
-  /// How long sending may take, from connecting to the last byte.
-  final Duration timeout;
-
-  @override
-  Future<ReportOutcome> send(Report report) async {
-    final client = HttpClient()..connectionTimeout = timeout;
-    try {
-      return await _post(client, report).timeout(timeout);
-    } on FormatException {
-      return const ReportFailed(ReportFailure.refused);
-    } catch (_) {
-      return const ReportFailed(ReportFailure.offline);
-    } finally {
-      client.close(force: true);
-    }
-  }
-
-  Future<ReportOutcome> _post(HttpClient client, Report report) async {
-    final request = await client.postUrl(endpoint);
-    request.headers
-      ..set(HttpHeaders.userAgentHeader, userAgent)
-      ..contentType = ContentType.json;
-    request.add(utf8.encode(jsonEncode(report.toJson())));
-    final response = await request.close();
-    final body = await response.transform(utf8.decoder).join();
-    return outcomeOf(response.statusCode, body);
-  }
-
-  /// What the relay's answer means: 201 with the issue's address, or a
-  /// refusal.
-  static ReportOutcome outcomeOf(int status, String body) {
-    if (status != 201) return const ReportFailed(ReportFailure.refused);
-    final reply = jsonDecode(body);
-    final url = reply is Map ? reply['url'] : null;
-    return ReportSent(issueUrl: url is String ? url : null);
-  }
-}
-
-/// What the bug icon hands the report: the screen it was tapped on.
-class ReportRequest {
-  const ReportRequest({required this.screen, this.detail, this.screenshot});
-
-  /// The screen's route name, `/deck`, or `/` for the tabs.
-  final String screen;
-
-  /// What the screen showed, such as a card's id.
-  final String? detail;
-
-  /// The screen as it was, as PNG, or null if no picture could be taken.
-  final Uint8List? screenshot;
 }

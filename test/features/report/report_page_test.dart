@@ -1,12 +1,15 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/links.dart';
 import 'package:fluenough/core/feedback/report.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
+import 'package:fluenough/features/decks/inspect_page.dart';
 import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
 
@@ -19,7 +22,7 @@ final Uint8List png = base64Decode(
 
 /// Records what it is sent, and answers with [outcome].
 class FakeReportSender implements ReportSender {
-  FakeReportSender([this.outcome = const ReportSent()]);
+  FakeReportSender([this.outcome = const ReportInMailApp()]);
 
   ReportOutcome outcome;
   final List<Report> sent = <Report>[];
@@ -30,6 +33,15 @@ class FakeReportSender implements ReportSender {
     return outcome;
   }
 }
+
+/// Mail reports on, as once the Gmail exists (#160).
+const FeatureRegistry withMail = FeatureRegistry.only(<Feature>{
+  ...Feature.available,
+  Feature.feedbackMail,
+});
+
+/// The body GitHub was asked to fill in.
+String issueBodyOf(String url) => Uri.parse(url).queryParameters['body']!;
 
 Future<void> tapInList(WidgetTester tester, Finder finder) async {
   await tester.scrollUntilVisible(
@@ -44,11 +56,93 @@ Future<void> tapInList(WidgetTester tester, Finder finder) async {
 }
 
 void main() {
-  testWidgets('the bug icon opens a report with a picture of its screen', (
+  test('mail reports are incoming until the Gmail exists (#160)', () {
+    expect(Feature.available, isNot(contains(Feature.feedbackMail)));
+    expect(AppLinks.feedbackEmail, isEmpty);
+  });
+
+  testWidgets('while mail is incoming, the bug icon opens a new GitHub issue '
+      'with the screen and the app filled in', (tester) async {
+    usePhone(tester);
+    final links = FixedLinks();
+    await pumpScreen(
+      tester,
+      const DecksPage(),
+      state: AppState.test(links: links),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.byType(ReportButton));
+    await tester.pumpAndSettle();
+    expect(find.byType(ReportPage), findsNothing);
+    final url = links.asked.single;
+    expect(
+      url,
+      startsWith('https://github.com/aaronified/fluenough/issues/new'),
+    );
+    final body = issueBodyOf(url);
+    expect(body, startsWith(l10n.reportIssuePrompt));
+    expect(body, contains('Screen: /'));
+    expect(body, contains('Showing: ${l10n.decksTitle}'));
+    expect(body, contains('App: fluenough '));
+  });
+
+  testWidgets('a card in Inspect is reported with its id and deck', (
     tester,
   ) async {
     usePhone(tester);
-    await pumpScreen(tester, const DecksPage());
+    final links = FixedLinks();
+    final state = await pumpScreen(
+      tester,
+      const InspectPage(deckId: 'hi-en-market'),
+      state: AppState.test(links: links),
+    );
+    final l10n = l10nOf(tester);
+    final card = state.deckById('hi-en-market')!.cards.first;
+    await tester.tap(find.byTooltip(l10n.inspectReport).first);
+    await tester.pumpAndSettle();
+    expect(
+      issueBodyOf(links.asked.single),
+      contains('Showing: ${card.id} in hi-en-market'),
+    );
+  });
+
+  testWidgets('if GitHub cannot be opened, the link is copied', (tester) async {
+    usePhone(tester);
+    String? copied;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+      SystemChannels.platform,
+      (call) async {
+        if (call.method == 'Clipboard.setData') {
+          copied = (call.arguments as Map<Object?, Object?>)['text'] as String?;
+        }
+        return null;
+      },
+    );
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        null,
+      ),
+    );
+    await pumpScreen(
+      tester,
+      const DecksPage(),
+      state: AppState.test(links: FixedLinks(opens: false)),
+    );
+    await tester.tap(find.byType(ReportButton));
+    await tester.pumpAndSettle();
+    expect(find.text(l10nOf(tester).reportLinkCopied), findsOneWidget);
+    expect(copied, startsWith('https://github.com/aaronified/fluenough/'));
+  });
+
+  testWidgets('once mail is on, the bug icon opens a report with a picture '
+      'of its screen, which is not attached until added', (tester) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const DecksPage(),
+      state: AppState.test(features: withMail),
+    );
     final l10n = l10nOf(tester);
     // The picture is taken by the engine, outside the test's fake clock.
     await tester.runAsync(() async {
@@ -58,14 +152,18 @@ void main() {
     await tester.pumpAndSettle();
     final page = tester.widget<ReportPage>(find.byType(ReportPage));
     expect(page.request.detail, l10n.decksTitle);
-    expect(page.request.screen, '/');
-    final shot = page.request.screenshot!;
-    expect(shot.sublist(0, 4), <int>[0x89, 0x50, 0x4e, 0x47]);
-    expect(find.text(l10n.reportTitle), findsOneWidget);
+    expect(page.request.screenshot!.sublist(0, 4), <int>[
+      0x89,
+      0x50,
+      0x4e,
+      0x47,
+    ]);
+    expect(find.text(l10n.reportAddScreenshot), findsOneWidget);
+    expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsNothing);
   });
 
-  testWidgets('a report needs a title, then is sent with its screen, what it '
-      'showed and the screenshot', (tester) async {
+  testWidgets('a report needs a title, then goes to the mail app with its '
+      'screen, what it showed, and the screenshot once added', (tester) async {
     usePhone(tester);
     final reports = FakeReportSender();
     await pumpScreen(
@@ -77,7 +175,7 @@ void main() {
           screenshot: png,
         ),
       ),
-      state: AppState.test(reports: reports),
+      state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.reportPublic), findsOneWidget);
@@ -94,20 +192,21 @@ void main() {
       find.widgetWithText(TextField, l10n.reportDetailsLabel),
       'After Check',
     );
+    await tapInList(tester, find.text(l10n.reportAddScreenshot));
+    expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsOneWidget);
     await tapInList(tester, find.text(l10n.reportSend));
     final report = reports.sent.single;
     expect(report.kind, ReportKind.bug);
-    expect(report.title, 'The card shows twice');
+    expect(report.subject, '[Fluenough] Bug: The card shows twice');
     expect(report.details, 'After Check');
     expect(report.screenshot, png);
     expect(report.context['Screen'], '/deck');
     expect(report.context['Showing'], 'hi-en-market');
     expect(report.context['App'], startsWith('fluenough '));
-    expect(report.context['Learning'], isNotEmpty);
-    expect(find.text(l10n.reportSent), findsOneWidget);
+    expect(find.text(l10n.reportInMailApp), findsOneWidget);
   });
 
-  testWidgets('the kind is chosen, and the screenshot can be left out', (
+  testWidgets('the kind is chosen, and a screenshot added can be removed', (
     tester,
   ) async {
     usePhone(tester);
@@ -117,7 +216,7 @@ void main() {
       ReportPage(
         request: ReportRequest(screen: '/', screenshot: png),
       ),
-      state: AppState.test(reports: reports),
+      state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
     await tester.tap(find.text(l10n.reportKindFeature));
@@ -125,8 +224,8 @@ void main() {
       find.widgetWithText(TextField, l10n.reportTitleLabel),
       'Dark cards',
     );
-    expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsOneWidget);
-    await tapInList(tester, find.text(l10n.reportScreenshot));
+    await tapInList(tester, find.text(l10n.reportAddScreenshot));
+    await tapInList(tester, find.text(l10n.reportRemoveScreenshot));
     expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsNothing);
     await tapInList(tester, find.text(l10n.reportSend));
     final report = reports.sent.single;
@@ -135,42 +234,30 @@ void main() {
     expect(report.context.containsKey('Showing'), isFalse);
   });
 
-  testWidgets('a failure says why, and Send works again', (tester) async {
+  testWidgets('no mail app, or no address, says why; Send works again', (
+    tester,
+  ) async {
     usePhone(tester);
-    final reports = FakeReportSender(const ReportFailed(ReportFailure.offline));
+    final reports = FakeReportSender(
+      const ReportFailed(ReportFailure.noMailApp),
+    );
     await pumpScreen(
       tester,
       const ReportPage(request: ReportRequest(screen: '/')),
-      state: AppState.test(reports: reports),
+      state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.reportScreenshot), findsNothing);
+    expect(find.text(l10n.reportAddScreenshot), findsNothing);
     await tester.enterText(
       find.widgetWithText(TextField, l10n.reportTitleLabel),
       'Crash',
     );
     await tapInList(tester, find.text(l10n.reportSend));
-    expect(find.text(l10n.reportOffline), findsOneWidget);
-    expect(find.text(l10n.reportSent), findsNothing);
+    expect(find.text(l10n.reportNoMailApp), findsOneWidget);
 
-    reports.outcome = const ReportSent();
+    reports.outcome = const ReportFailed(ReportFailure.notSetUp);
     await tapInList(tester, find.text(l10n.reportSend));
     expect(reports.sent, hasLength(2));
-    expect(find.text(l10n.reportOffline), findsNothing);
-  });
-
-  testWidgets('a build with no relay says it cannot send', (tester) async {
-    usePhone(tester);
-    await pumpScreen(
-      tester,
-      const ReportPage(request: ReportRequest(screen: '/')),
-    );
-    final l10n = l10nOf(tester);
-    await tester.enterText(
-      find.widgetWithText(TextField, l10n.reportTitleLabel),
-      'Crash',
-    );
-    await tapInList(tester, find.text(l10n.reportSend));
     expect(find.text(l10n.reportNotSetUp), findsOneWidget);
   });
 }

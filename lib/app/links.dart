@@ -12,6 +12,19 @@ abstract final class AppLinks {
   static const String heliboard =
       'https://f-droid.org/packages/helium314.keyboard/';
 
+  /// Where reports from the app go once mail reports are set up (#160):
+  /// the Fluenough Gmail. Empty until it exists; `Feature.feedbackMail`
+  /// stays incoming until then.
+  static const String feedbackEmail = '';
+
+  /// GitHub's form for a new issue, its body filled in with [body]: where
+  /// every report button goes while mail reports are incoming (#160).
+  static Uri newIssue(String body) => Uri.https(
+    'github.com',
+    '/aaronified/fluenough/issues/new',
+    <String, String>{'body': body},
+  );
+
   /// The newest release's APK (ADR-0017). GitHub redirects this to the file
   /// of that name on the newest release, which the release workflow builds.
   static const String latestApk =

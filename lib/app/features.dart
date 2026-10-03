@@ -39,6 +39,10 @@ enum Feature {
   importCsv(0),
   importAnki(23),
 
+  // Feedback: reports by mail, with a screenshot. Until it is on, every
+  // report button opens a new GitHub issue instead.
+  feedbackMail(160),
+
   // Settings.
   reminder(21),
   uiLanguage(46),

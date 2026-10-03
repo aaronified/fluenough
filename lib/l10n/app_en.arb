@@ -923,6 +923,10 @@
   "@inspectExamples": {
     "description": "Inspect: the card's example sentences."
   },
+  "inspectReport": "Report this card",
+  "@inspectReport": {
+    "description": "Tooltip of the report button beside each card's id on the Inspect screen."
+  },
   "inspectQuestions": "Questions",
   "@inspectQuestions": {
     "description": "Inspect: a passage's questions, the right answer marked."
@@ -1184,45 +1188,49 @@
   "@reportDetailsHint": {
     "description": "Hint in the report's details field."
   },
-  "reportScreenshot": "Include a screenshot of this screen",
-  "@reportScreenshot": {
-    "description": "Checkbox: send the picture of the screen the report was raised on."
-  },
   "reportScreenshotPreview": "Screenshot to send",
   "@reportScreenshotPreview": {
     "description": "Accessibility label of the screenshot preview."
   },
-  "reportPublic": "Reports are public on GitHub, screenshots included. Leave out anything private.",
+  "reportAddScreenshot": "Add screenshot of this screen",
+  "@reportAddScreenshot": {
+    "description": "Button on the report: attaches the picture of the screen the report was raised on. Off until tapped."
+  },
+  "reportRemoveScreenshot": "Remove screenshot",
+  "@reportRemoveScreenshot": {
+    "description": "Button under the screenshot preview on the report."
+  },
+  "reportInMailApp": "Your mail app has the report. Send it from there.",
+  "@reportInMailApp": {
+    "description": "SnackBar after the report opens in the reporter's mail app."
+  },
+  "reportNoMailApp": "No mail app on this phone could take the report.",
+  "@reportNoMailApp": {
+    "description": "Shown when no mail app can open the report."
+  },
+  "reportIssuePrompt": "What happened, or what would help?",
+  "@reportIssuePrompt": {
+    "description": "First line of a new GitHub issue opened from a report button, above what the app fills in. The reporter writes under it."
+  },
+  "reportLinkCopied": "Couldn’t open GitHub, so the link to report is copied.",
+  "@reportLinkCopied": {
+    "description": "SnackBar when nothing on the phone could open the GitHub link for a report, so it was copied instead."
+  },
+  "reportPublic": "Reports become public GitHub issues. Your email address is not shown; leave out anything private.",
   "@reportPublic": {
-    "description": "Warning above Send."
+    "description": "Warning above Send, on the mail report."
   },
   "reportAlsoSent": "Also sent: the app’s version, your phone’s system version, this screen and the languages you learn.",
   "@reportAlsoSent": {
     "description": "What the app adds to a report, above Send."
   },
-  "reportSend": "Send",
+  "reportSend": "Write it in my mail app",
   "@reportSend": {
-    "description": "Button that sends the report."
+    "description": "Button that opens the reporter's mail app with the report filled in."
   },
-  "reportSending": "Sending…",
-  "@reportSending": {
-    "description": "The Send button while the report is being sent."
-  },
-  "reportSent": "Sent. Thank you!",
-  "@reportSent": {
-    "description": "SnackBar after a report is sent."
-  },
-  "reportNotSetUp": "This version of the app can’t send reports.",
+  "reportNotSetUp": "Reports by mail aren’t set up in this version of the app.",
   "@reportNotSetUp": {
-    "description": "Shown when the build has no report service."
-  },
-  "reportOffline": "Couldn’t reach the report service. Check your connection and try again.",
-  "@reportOffline": {
-    "description": "Shown when sending a report fails for want of a connection."
-  },
-  "reportRefused": "The report service turned this down. Try a shorter report, or try again later.",
-  "@reportRefused": {
-    "description": "Shown when the report service refuses a report."
+    "description": "Shown when the build has no address for reports."
   },
   "importTitle": "Add a deck",
   "@importTitle": {
