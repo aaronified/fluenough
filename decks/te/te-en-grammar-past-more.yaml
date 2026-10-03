@@ -1,0 +1,60 @@
+schema: 1
+id: te-en-grammar-past-more
+name: "Used to"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I used to go, she used to come: the past of a habit. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past habit"
+  slot_name: "person"
+  slots: ["నేను", "మేము", "నువ్వు", "మీరు", "అతను", "ఆమె / అది", "వాళ్ళు"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The habit in the past is the verb in -ఏ, then a word for the doer: వెళ్ళేవాడు, he used to go, 'a goer'. With నేను and నువ్వు it shows whether the speaker or the listener is a man or a woman: వెళ్ళేవాడిని (a man), వెళ్ళేదాన్ని (a woman). The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing. మీరు, plural or respectful, takes the plural."
+  entries:
+    - lemma: "చేయడం"
+      key: cheeyadam
+      gloss: "to do"
+      forms:
+        "నేను": ["చేసేవాడిని", "చేసేదాన్ని"]
+        "మేము": "చేసేవాళ్ళం"
+        "నువ్వు": ["చేసేవాడివి", "చేసేదానివి"]
+        "మీరు": "చేసేవారు"
+        "అతను": "చేసేవాడు"
+        "ఆమె / అది": "చేసేది"
+        "వాళ్ళు": ["చేసేవారు", "చేసేవాళ్ళు"]
+    - lemma: "వెళ్ళడం"
+      key: velladam
+      gloss: "to go"
+      forms:
+        "నేను": ["వెళ్ళేవాడిని", "వెళ్ళేదాన్ని"]
+        "మేము": "వెళ్ళేవాళ్ళం"
+        "నువ్వు": ["వెళ్ళేవాడివి", "వెళ్ళేదానివి"]
+        "మీరు": "వెళ్ళేవారు"
+        "అతను": "వెళ్ళేవాడు"
+        "ఆమె / అది": "వెళ్ళేది"
+        "వాళ్ళు": ["వెళ్ళేవారు", "వెళ్ళేవాళ్ళు"]
+    - lemma: "రావడం"
+      key: raavadam
+      gloss: "to come"
+      forms:
+        "నేను": ["వచ్చేవాడిని", "వచ్చేదాన్ని"]
+        "మేము": "వచ్చేవాళ్ళం"
+        "నువ్వు": ["వచ్చేవాడివి", "వచ్చేదానివి"]
+        "మీరు": "వచ్చేవారు"
+        "అతను": "వచ్చేవాడు"
+        "ఆమె / అది": "వచ్చేది"
+        "వాళ్ళు": ["వచ్చేవారు", "వచ్చేవాళ్ళు"]
+    - lemma: "ఉండడం"
+      key: undadam
+      gloss: "to be; to live"
+      forms:
+        "నేను": ["ఉండేవాడిని", "ఉండేదాన్ని"]
+        "మేము": "ఉండేవాళ్ళం"
+        "నువ్వు": ["ఉండేవాడివి", "ఉండేదానివి"]
+        "మీరు": "ఉండేవారు"
+        "అతను": "ఉండేవాడు"
+        "ఆమె / అది": "ఉండేది"
+        "వాళ్ళు": ["ఉండేవారు", "ఉండేవాళ్ళు"]

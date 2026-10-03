@@ -1,0 +1,133 @@
+schema: 1
+id: te-en-home
+name: "Home and neighbourhood"
+kind: vocab
+theme: home
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The rooms of a home, what is in them, and the people next door. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: te-0195
+  - id: te-0420
+    target: "గది"
+    native: "room"
+    reading: "gadi"
+    pos: "noun"
+    notes: "గదిలో, in the room."
+  - id: te-0421
+    target: "వంటిల్లు"
+    native: "kitchen"
+    reading: "vantillu"
+    alt_target: ["వంటగది"]
+    pos: "noun"
+    notes: "Also వంటగది (vantagadi)."
+  - id: te-0422
+    target: "పడకగది"
+    native: "bedroom"
+    reading: "padakagadi"
+    alt_target: ["పడక గది", "బెడ్‌రూమ్"]
+    pos: "noun"
+  - id: te-0423
+    target: "హాలు"
+    native: "sitting room; hall"
+    reading: "haalu"
+    alt_target: ["హాల్"]
+    pos: "noun"
+  - id: te-0424
+    target: "బాత్‌రూమ్"
+    native: "bathroom"
+    reading: "baatruum"
+    alt_target: ["స్నానాల గది"]
+    pos: "noun"
+    notes: "Also స్నానాల గది (snaanaala gadi)."
+  - id: te-0425
+    target: "తలుపు"
+    native: "door"
+    reading: "talupu"
+    pos: "noun"
+  - id: te-0426
+    target: "కిటికీ"
+    native: "window"
+    reading: "kitikii"
+    pos: "noun"
+  - id: te-0427
+    target: "మెట్లు"
+    native: "stairs"
+    reading: "metlu"
+    pos: "noun"
+  - id: te-0428
+    target: "అంతస్తు"
+    native: "floor; storey"
+    reading: "antastu"
+    pos: "noun"
+  - id: te-0429
+    target: "తాళం చెవి"
+    native: "key"
+    reading: "taalam chevi"
+    alt_target: ["తాళంచెవి"]
+    pos: "phrase"
+    notes: "Literally 'the lock's ear'. తాళం (taalam) alone is the lock."
+  - id: te-0430
+    target: "మంచం"
+    native: "bed; cot"
+    reading: "mancham"
+    pos: "noun"
+  - id: te-0431
+    target: "కుర్చీ"
+    native: "chair"
+    reading: "kurchii"
+    pos: "noun"
+  - id: te-0432
+    target: "బల్ల"
+    native: "table"
+    reading: "balla"
+    alt_target: ["టేబుల్"]
+    pos: "noun"
+    notes: "Also టేబుల్ (teebul)."
+  - id: te-0433
+    target: "ఫ్యాన్"
+    native: "fan"
+    reading: "fyaan"
+    pos: "noun"
+  - id: te-0434
+    target: "లైటు"
+    native: "light"
+    reading: "laitu"
+    alt_target: ["లైట్"]
+    pos: "noun"
+    notes: "లైటు వేయండి, please switch on the light."
+  - id: te-0435
+    target: "ఇరుగుపొరుగు"
+    native: "the neighbours"
+    reading: "iruguporugu"
+    alt_target: ["పొరుగువాళ్ళు"]
+    pos: "noun"
+    notes: "Also పొరుగువాళ్ళు (poruguvaallu), the people next door."
+  - id: te-0436
+    target: "అద్దె"
+    native: "rent"
+    reading: "adde"
+    pos: "noun"
+    notes: "అద్దె ఇల్లు, a rented house."
+  - id: te-0437
+    target: "ఫ్లాట్"
+    native: "flat; apartment"
+    reading: "flaat"
+    pos: "noun"
+  - id: te-0438
+    target: "వీధి"
+    native: "street"
+    reading: "viidhi"
+    pos: "noun"
+  - id: te-0439
+    target: "ఇంటి ముందు ఒక పార్కు ఉంది."
+    native: "There's a park in front of the house."
+    reading: "inti mundu oka paarku undi."
+    pos: "phrase"
+  - id: te-0440
+    target: "మా వీధి చాలా ప్రశాంతంగా ఉంటుంది."
+    native: "Our street is very quiet."
+    reading: "maa viidhi chaalaa prashaantangaa untundi."
+    pos: "phrase"
