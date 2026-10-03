@@ -112,7 +112,10 @@ class _TodayContent extends StatelessWidget {
     final decks = <DeckEntry>[
       ...pending,
       for (final entry in state.profileDecks)
-        if (!pending.contains(entry) && !state.isPlaced(entry)) entry,
+        if (!pending.contains(entry) &&
+            !state.isPlaced(entry) &&
+            !state.leavesOut(entry))
+          entry,
     ].take(todayDeckCount).toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

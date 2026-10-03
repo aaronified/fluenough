@@ -130,6 +130,20 @@ class PathFile(Paths):
                 self.assertRejected(
                     self.write("hi-en-path.yaml", path_file(units)), needle)
 
+    def test_the_alphabet_decks_are_on_the_path(self) -> None:
+        units = "  - [hi-en-script-vowels]\n  - [hi-en-market]\n"
+        report = self.write("hi-en-path.yaml", path_file(
+            units, extra="alphabet: [hi-en-script-vowels]\n"))
+        self.assertEqual(report.errors, [])
+        self.assertRejected(
+            self.write("hi-en-path.yaml", path_file(
+                units, extra="alphabet: [hi-en-spelling]\n")),
+            "lists 'hi-en-spelling', which the path does not")
+        self.assertRejected(
+            self.write("hi-en-path.yaml", path_file(
+                units, extra="alphabet: hi-en-script-vowels\n")),
+            "must be a list")
+
     def test_unknown_fields_are_rejected(self) -> None:
         self.assertRejected(
             self.write("hi-en-path.yaml",

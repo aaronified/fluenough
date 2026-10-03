@@ -49,7 +49,8 @@ SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
 KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
          "reading"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
-PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units"}
+PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units",
+             "alphabet"}
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -1111,6 +1112,15 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
             else:
                 listed.append(deck)
                 unit_of[deck] = i
+    # The decks a learner who skips the alphabet leaves out: the script,
+    # spelling and reading decks.
+    alphabet = raw.get("alphabet", [])
+    if not isinstance(alphabet, list):
+        r.error("alphabet", "must be a list of deck ids on the path")
+    else:
+        for deck in alphabet:
+            if deck not in listed:
+                r.error("alphabet", f"lists {deck!r}, which the path does not")
     if codes_ok:
         r.course_path = (lang, native, listed)
         r.course_units = (lang, native, unit_of)

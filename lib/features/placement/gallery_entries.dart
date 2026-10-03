@@ -15,12 +15,20 @@ final List<GalleryEntry> placementGalleryEntries = <GalleryEntry>[
     builder: (_) => const LearnLanguagesPage(firstRun: true),
   ),
   GalleryEntry(
+    id: 'placement-alphabet',
+    section: GallerySection.profiles,
+    label: 'Placement, the alphabet', // ui-literal-ok: debug-only gallery
+    note: 'Learn the alphabet, or Latin letters only (#47)', // ui-literal-ok: debug-only gallery
+    builder: (_) =>
+        PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
+  ),
+  GalleryEntry(
     id: 'placement-ask',
     section: GallerySection.profiles,
     label: 'Placement, asked', // ui-literal-ok: debug-only gallery
     note: 'Find my level, or start from the beginning', // ui-literal-ok: debug-only gallery
     builder: (_) =>
-        PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
+        PlacementPage(languages: const <String>['es'], onFinished: (_) {}),
   ),
   GalleryEntry(
     id: 'placement-check',

@@ -11,6 +11,7 @@ import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import '../../ui/widgets/reading_first.dart';
 
 /// Speaking (#89, ADR-0014): the meaning ("Say it in Hindi"), a microphone
 /// button, and what the phone's speech recogniser heard, graded like a
@@ -84,20 +85,30 @@ class SpeakingDrill extends StatelessWidget {
         ),
       ),
       if (answered) ...<Widget>[
-        TargetText.card(
-          card.target,
-          language: language,
-          fontSize: 28,
-          color: scheme.primary,
-        ),
-        if (reading != null)
-          Text(
-            reading,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+        if (reading != null && !session.learnsAlphabet)
+          ReadingFirst(
+            reading: reading,
+            target: card.target,
+            language: language,
+            fontSize: 28,
+            color: scheme.primary,
+          )
+        else ...<Widget>[
+          TargetText.card(
+            card.target,
+            language: language,
+            fontSize: 28,
+            color: scheme.primary,
           ),
+          if (reading != null)
+            Text(
+              reading,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+        ],
       ],
     ];
   }
