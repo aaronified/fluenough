@@ -13,7 +13,6 @@ import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
 import 'l10n/app_localizations.dart';
 import 'ui/theme.dart';
-import 'ui/widgets/report_capture.dart';
 
 /// The app: [AppState] at the top, then [MaterialApp] with the interface
 /// strings, the light and dark themes and the routes, opening on [AppShell].
@@ -66,9 +65,6 @@ class _FluenoughAppState extends State<FluenoughApp> {
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          // Around every screen, so that the bug icon can take a picture of
-          // the one it is tapped on (ADR-0021).
-          builder: ReportCapture.wrap,
           // The first launch: welcome, tour and the languages the learner
           // speaks (#118, #53), then which they want to learn, and placement
           // (#117). Each answer saved rebuilds this on settings. An install

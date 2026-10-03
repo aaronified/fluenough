@@ -170,23 +170,6 @@ class ApplyTest(unittest.TestCase):
             [d.get(SCHEME) for d in views[0].findall("data")], ["https"]
         )
 
-    def test_a_mail_app_is_queried_for_reports(self) -> None:
-        # flutter_email_sender finds no mail app on Android 11+ without it
-        # (#160).
-        brand_android.apply(self.root)
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        mails = [
-            intent
-            for intent in root.findall("queries/intent")
-            if [a.get(NAME) for a in intent.findall("action")]
-            == ["android.intent.action.SENDTO"]
-        ]
-        self.assertEqual(len(mails), 1)
-        self.assertEqual(
-            [d.get(SCHEME) for d in mails[0].findall("data")], ["mailto"]
-        )
-
     def test_what_the_manifest_already_declares_is_not_added_again(self) -> None:
         # Written by hand, laid out differently from what the script writes.
         self.manifest.write_text(
@@ -211,11 +194,7 @@ class ApplyTest(unittest.TestCase):
         )
         self.assertEqual(
             sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
-            [
-                "android.intent.action.SENDTO",
-                "android.intent.action.VIEW",
-                "android.speech.RecognitionService",
-            ],
+            ["android.intent.action.VIEW", "android.speech.RecognitionService"],
         )
 
     def test_a_view_query_for_another_scheme_does_not_count(self) -> None:
@@ -233,7 +212,7 @@ class ApplyTest(unittest.TestCase):
         root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
         self.assertEqual(
             sorted(d.get(SCHEME) for d in root.findall("queries/intent/data")),
-            ["geo", "https", "mailto"],
+            ["geo", "https"],
         )
 
     def test_an_existing_queries_block_keeps_what_it_had(self) -> None:
@@ -254,7 +233,6 @@ class ApplyTest(unittest.TestCase):
             sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
             [
                 "android.intent.action.PROCESS_TEXT",
-                "android.intent.action.SENDTO",
                 "android.intent.action.VIEW",
                 "android.speech.RecognitionService",
             ],

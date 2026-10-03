@@ -25,6 +25,11 @@ routed via their mail application, but prefilled and all screenshots
 attached)", into a Fluenough Gmail, with "a bot" turning mails into issues.
 Mail stays incoming until that inbox exists (#160).
 
+Screenshots then went: the owner did not want them on public issues, and
+then said "Forget screenshots then. Only text." Device details go only
+with consent: "Attach a log and device information but only with explicit
+consent from the user." The app keeps no log yet; that is #162.
+
 ## Decision
 
 - **A bug icon on every screen.**
@@ -35,27 +40,33 @@ Mail stays incoming until that inbox exists (#160).
     and behind each card's Report in Inspect.
   - `test/gallery_test.dart` fails for any screen in the gallery without
     the icon.
+- **Text only.** No screenshot is taken or sent.
+- **Device details only with consent.** Every report carries the screen and
+  what it showed (a card's or deck's id). One box, "Include device
+  information", unticked until the reporter ticks it, adds the app's
+  version and language, the system's version (Android's, read with
+  `getprop`, no package), the screen's size, the text scale and the
+  languages being learned. The exact lines it adds are shown under it.
+  The app log joins the same box once it exists (#162); Settings shows a
+  Logs section as incoming until then.
 - **Until mail is on (`Feature.feedbackMail`, #160), every report button
-  opens GitHub's new-issue form.** The form is pre-filled with the screen,
-  what it showed (a card's or deck's id), the app's version, the system,
-  and the languages being learned. The reporter needs a GitHub account.
+  opens GitHub's new-issue form**, after a sheet with that box. The form
+  is pre-filled with what the report carries. The reporter needs a GitHub
+  account.
 - **Once mail is on:**
-  - The button takes a picture of its screen (`ReportCapture`, a
-    `RepaintBoundary` around the app) and opens the report: Bug, Feature or
-    Suggestion, a title and details.
-  - "Add screenshot of this screen" is off until tapped, and shows the
-    picture once added.
-  - Sending opens the reporter's own mail app through `flutter_email_sender`,
-    a dependency agreed with the owner. The mail is addressed to the Fluenough
-    Gmail, its subject is `[Fluenough] Bug: …`, and the screenshot is attached.
-    The reporter sends it; the app sends nothing itself.
+  - The button opens the report: Bug, Feature or Suggestion, a title,
+    details, and the box.
+  - Sending opens the reporter's own mail app through a `mailto` link
+    (url_launcher, already a dependency). The mail is addressed to the
+    Fluenough Gmail and its subject is `[Fluenough] Bug: …`. The reporter
+    sends it; the app sends nothing itself.
 - **An hourly Action files the mails as issues** (`tools/mail_to_issues.py`,
   stdlib only).
   - It reads the inbox over IMAP with an app password held in repository
     secrets.
   - It takes only mails whose subject starts with `[Fluenough]`.
-  - The issue is text only: the screenshot stays in the mail, and the issue
-    says one came.
+  - The issue is text only: a picture the reporter attached by hand stays
+    in the mail, and the issue says one came.
   - The sender's address is never written to the public issue, and
     `@mentions` are broken.
   - A filed mail gets the Gmail label `fluenough-filed`, never a read mark,
@@ -63,8 +74,7 @@ Mail stays incoming until that inbox exists (#160).
 
 ## Consequences
 
-- One new app dependency, `flutter_email_sender`. CI's Android setup
-  declares the mail-app query it needs on Android 11+.
+- No new dependency.
 - Turning mail on needs:
   - the Gmail address in `AppLinks.feedbackEmail`;
   - the repository secrets `FEEDBACK_GMAIL_ADDRESS` and

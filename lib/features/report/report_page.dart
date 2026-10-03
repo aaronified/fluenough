@@ -8,8 +8,8 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 
 /// A bug, a feature or a suggestion, sent by mail from the reporter's own
-/// mail app (#160, ADR-0021): a title, details, and, if the reporter adds
-/// it, the picture of the screen the report was raised on. Behind
+/// mail app (#160, ADR-0021): a title, details, the screen it was raised on,
+/// and the device's details if the reporter ticks the box. Text only. Behind
 /// `Feature.feedbackMail`: until it is on, report buttons open GitHub.
 class ReportPage extends StatefulWidget {
   const ReportPage({super.key, required this.request});
@@ -25,7 +25,7 @@ class _ReportPageState extends State<ReportPage> {
   final TextEditingController _details = TextEditingController();
   final FocusNode _titleFocus = FocusNode();
   ReportKind _kind = ReportKind.bug;
-  bool _withScreenshot = false;
+  bool _withDevice = false;
   bool _titleMissing = false;
   bool _sending = false;
   ReportFailure? _failure;
@@ -52,12 +52,10 @@ class _ReportPageState extends State<ReportPage> {
       kind: _kind,
       title: title,
       details: _details.text.trim(),
-      context: reportContext(
-        context,
-        screen: widget.request.screen,
-        detail: widget.request.detail,
-      ),
-      screenshot: _withScreenshot ? widget.request.screenshot : null,
+      context: <String, String>{
+        ...widget.request.always,
+        if (_withDevice) ...widget.request.device,
+      },
     );
     setState(() {
       _sending = true;
@@ -91,7 +89,6 @@ class _ReportPageState extends State<ReportPage> {
     final muted = theme.textTheme.bodyMedium!.copyWith(
       color: scheme.onSurfaceVariant,
     );
-    final screenshot = widget.request.screenshot;
     final failure = _failure;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reportTitle)),
@@ -151,37 +148,12 @@ class _ReportPageState extends State<ReportPage> {
               alignLabelWithHint: true,
             ),
           ),
-          // Off until tapped: nothing is attached unless the reporter adds
-          // it, and then sees it first.
-          if (screenshot != null && !_withScreenshot) ...<Widget>[
-            const SizedBox(height: 8),
-            OutlinedButton.icon(
-              onPressed: () => setState(() => _withScreenshot = true),
-              icon: const Icon(Icons.add_photo_alternate_outlined),
-              label: Text(l10n.reportAddScreenshot),
-            ),
-          ],
-          if (screenshot != null && _withScreenshot) ...<Widget>[
-            const SizedBox(height: 8),
-            Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(AppRadii.small),
-                child: Image.memory(
-                  screenshot,
-                  height: 280,
-                  fit: BoxFit.contain,
-                  semanticLabel: l10n.reportScreenshotPreview,
-                ),
-              ),
-            ),
-            Center(
-              child: TextButton.icon(
-                onPressed: () => setState(() => _withScreenshot = false),
-                icon: const Icon(Icons.close),
-                label: Text(l10n.reportRemoveScreenshot),
-              ),
-            ),
-          ],
+          const SizedBox(height: 8),
+          DeviceInfoConsent(
+            device: widget.request.device,
+            value: _withDevice,
+            onChanged: (value) => setState(() => _withDevice = value),
+          ),
           const SizedBox(height: 16),
           Text(l10n.reportPublic, style: muted),
           const SizedBox(height: 8),

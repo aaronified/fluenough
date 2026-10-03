@@ -371,6 +371,8 @@ void main() {
 
     expect(find.text(l10n.deckUnreviewed('Telugu')), findsOneWidget);
     await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
+    await tester.tap(find.text(l10n.reportOpenGitHub));
+    await tester.pumpAndSettle();
     final url = Uri.parse(links.asked.single);
     expect(url.path, '/aaronified/fluenough/issues/new');
     expect(url.queryParameters['body'], contains('Showing: te-en-market'));

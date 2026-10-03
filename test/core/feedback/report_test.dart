@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/core/feedback/report.dart';
@@ -39,10 +37,28 @@ void main() {
     );
   });
 
+  test('a mail link is addressed, its spaces written %20, not +', () {
+    final url = reportMailto('reports@example.org', report);
+    expect(url.scheme, 'mailto');
+    expect(url.path, 'reports@example.org');
+    expect(url.queryParameters['subject'], report.subject);
+    expect(url.queryParameters['body'], report.body);
+    expect(url.toString(), isNot(contains('+')));
+    expect(url.toString(), contains('Dark%20mode'));
+  });
+
+  test('a request always carries its screen and what it showed', () {
+    expect(const ReportRequest(screen: '/deck', detail: 'x').always, {
+      'Screen': '/deck',
+      'Showing': 'x',
+    });
+    expect(const ReportRequest(screen: '/').always, {'Screen': '/'});
+  });
+
   test('a build with nowhere to send reports says so', () async {
     expect(
       await const NullReportSender().send(
-        Report(kind: ReportKind.bug, title: 't', screenshot: Uint8List(1)),
+        const Report(kind: ReportKind.bug, title: 't'),
       ),
       isA<ReportFailed>().having(
         (f) => f.reason,
