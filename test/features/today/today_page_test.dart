@@ -109,11 +109,38 @@ void main() {
 
   testWidgets('Start review opens a drill of today\'s session', (tester) async {
     usePhone(tester);
-    await pumpToday(tester);
+    final settings = SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: const <String>['hi'],
+    );
+    await pumpToday(tester, state: AppState.test(settings: settings));
     await tapVisible(tester, find.text(l10nOf(tester).todayStartReview));
     final drill = tester.widget<DrillPage>(find.byType(DrillPage));
     expect(drill.request.deckIds, isNull);
     expect(drill.request.newOnly, isFalse);
+    expect(drill.request.language, isNull, reason: 'one language');
+  });
+
+  testWidgets('with several languages, Start begins with the first alone', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final settings = SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: const <String>['bn', 'hi'],
+    );
+    final state = await pumpToday(
+      tester,
+      state: AppState.test(settings: settings),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.todayStartReview), findsNothing);
+    final bengali = state.todayLanguages.first;
+    expect(bengali.code, 'bn', reason: 'the order they were chosen in');
+    await tapVisible(tester, find.text(l10n.todayStartLanguage(bengali.name)));
+    final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+    expect(drill.request.language, 'bn');
+    expect(drill.request.deckIds, isNull);
   });
 
   testWidgets('a unit placed as known gives its place in Your decks to the '

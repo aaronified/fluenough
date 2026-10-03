@@ -4,6 +4,7 @@ import '../../app/app_state.dart';
 import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../core/models/deck.dart';
 
 /// How long the design allows for one card when it estimates a session:
 /// "about 4 min" for 12 cards.
@@ -49,6 +50,7 @@ class TodayNumbers {
     required this.newDone,
     required this.newLimit,
     required this.week,
+    this.languages = const <LanguageInfo>[],
   });
 
   factory TodayNumbers.of(AppState state) {
@@ -91,6 +93,7 @@ class TodayNumbers {
       newDone: progress.newIntroducedOn(now),
       newLimit: state.settings.newCardsPerDay,
       week: <WeekDay>[for (var back = 6; back >= 0; back--) dayOf(back)],
+      languages: state.todayLanguages,
     );
   }
 
@@ -118,6 +121,16 @@ class TodayNumbers {
 
   /// The last seven days, oldest first, ending today.
   final List<WeekDay> week;
+
+  /// The languages with something to do today, in the order they are
+  /// drilled: one session each, with a break between.
+  final List<LanguageInfo> languages;
+
+  /// What Start review runs: the first language's session when there is more
+  /// than one, so that languages come one at a time.
+  DrillRequest get start => languages.length > 1
+      ? DrillRequest.today(language: languages.first.code)
+      : const DrillRequest.today();
 
   /// Nothing to drill now.
   bool get allDone => due == 0;
