@@ -1,0 +1,14 @@
+# How Japanese is romanised: the scheme every `reading` in decks/ja is
+# written in, and the spellings a learner may type for the same sound, which
+# grading treats as one (#47). The first spelling of each group is the
+# decks' own. See docs/DECK-FORMAT.md, "Romanisation files".
+schema: 1
+kind: romanisation
+id: ja-romanisation
+language: ja
+scheme: "Hepburn, unmarked, as Japanese is usually typed: lowercase ASCII with no macrons; shi, chi, tsu and fu; ん as n; を as wo, the way it is typed."
+equivalents:
+  - ["shi", "si"]
+  - ["chi", "ti"]
+  - ["tsu", "tu"]
+  - ["fu", "hu"]

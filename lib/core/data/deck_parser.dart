@@ -146,7 +146,7 @@ const _patternFields = {
   'notes',
 };
 
-const _entryFields = {'lemma', 'key', 'gloss', 'forms'};
+const _entryFields = {'lemma', 'key', 'gloss', 'forms', 'reading', 'readings'};
 const _passageFields = {
   'id',
   'title',
@@ -823,7 +823,49 @@ class _Reader {
       gloss: fields.string('gloss'),
       forms: forms,
       alternatives: alternatives,
+      reading: fields.has('reading')
+          ? text(fields.require('reading'), '$path.reading')
+          : null,
+      readings: fields.has('readings')
+          ? readings(fields.require('readings'), '$path.readings', forms)
+          : const <String, List<String>>{},
     );
+  }
+
+  /// Each form romanised (#47): a reading or a list of them for every slot
+  /// with a form, and none for a slot without.
+  Map<String, List<String>> readings(
+    YamlNode node,
+    String path,
+    Map<String, String?> forms,
+  ) {
+    final map = fields(node, path).map;
+    final found = <String, List<String>>{};
+    for (final entry in map.nodes.entries) {
+      final key = entry.key as YamlNode;
+      final slot = _value(key);
+      if (slot is! String || !forms.containsKey(slot)) {
+        fail(key, '$path: ${_describe(key)} is not a slot');
+      }
+      if (forms[slot] == null) {
+        fail(key, '$path: "$slot" has no form, so it has no reading');
+      }
+      final value = entry.value;
+      found[slot] = value is YamlList
+          ? List.unmodifiable(<String>[
+              for (final (i, item) in list(value, '$path.$slot').indexed)
+                text(item, '$path.$slot[$i]'),
+            ])
+          : List.unmodifiable(<String>[text(value, '$path.$slot')]);
+    }
+    final missing = [
+      for (final MapEntry(key: slot, value: form) in forms.entries)
+        if (form != null && !found.containsKey(slot)) '"$slot"',
+    ];
+    if (missing.isNotEmpty) {
+      fail(node, '$path: no reading for ${missing.join(', ')}');
+    }
+    return Map.unmodifiable(found);
   }
 
   /// One form per slot, in slot order, and the other forms accepted for a
