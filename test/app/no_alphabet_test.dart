@@ -40,7 +40,7 @@ void main() {
     final state = AppState.test();
     addTearDown(state.dispose);
     await state.load();
-    for (final code in <String>['bn', 'hi', 'te', 'mr', 'kn', 'gu', 'ja']) {
+    for (final code in <String>['as', 'bn', 'hi', 'te', 'mr', 'kn', 'gu', 'ja']) {
       expect(state.hasAlphabet(code), isTrue, reason: code);
     }
     expect(state.hasAlphabet('es'), isFalse);

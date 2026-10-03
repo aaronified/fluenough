@@ -7,6 +7,16 @@ kind: path
 id: as-en-path
 language: as
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - as-en-script-vowels
+  - as-en-script-consonants
+  - as-en-script-reading
+  - as-en-script-vowel-signs
+  - as-en-script-conjuncts
+  - as-en-spelling
+  - as-en-reading-aitar-mas
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
