@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
+import '../features/decks/inspect_page.dart';
 import '../features/drill/drill_page.dart';
 import '../features/gallery/gallery_page.dart';
 import '../features/placement/learn_languages_page.dart';
@@ -59,6 +60,10 @@ abstract final class AppRoutes {
   /// Every screen and state, like the design's Gallery. Debug builds only.
   static const String gallery = '/gallery';
 
+  /// Every card of a deck in full, for reviewers. Argument: the deck id, a
+  /// [String].
+  static const String inspect = '/inspect';
+
   /// The page for [settings], or null for an unknown name or a wrong
   /// argument, which Flutter reports.
   static Route<void>? onGenerateRoute(RouteSettings settings) {
@@ -78,6 +83,7 @@ abstract final class AppRoutes {
       pin when args is String => PinPage(profileId: args),
       newProfile => const NewProfilePage(),
       gallery when kDebugMode => const GalleryPage(),
+      inspect when args is String => InspectPage(deckId: args),
       _ => null,
     };
     if (page == null) return null;
@@ -90,6 +96,10 @@ abstract final class AppRoutes {
 abstract final class AppNavigator {
   static Future<void> openDeck(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.deck, arguments: deckId);
+
+  /// Every card of [deckId] in full, with its id.
+  static Future<void> openInspect(BuildContext context, String deckId) =>
+      Navigator.of(context).pushNamed(AppRoutes.inspect, arguments: deckId);
 
   static Future<void> openImport(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.import);

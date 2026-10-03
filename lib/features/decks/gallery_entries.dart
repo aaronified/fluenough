@@ -5,6 +5,7 @@ import '../gallery/gallery_entry.dart';
 import 'deck_detail_page.dart';
 import 'import_fixture.dart';
 import 'import_page.dart';
+import 'inspect_page.dart';
 
 /// Decks, a deck, and Add a deck, as the design's Gallery lists them. Owned
 /// by B2.
@@ -36,6 +37,28 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     note: 'Listening disabled, with a way to fix it', // ui-literal-ok: debug-only gallery
     builder: (_) => const DeckDetailPage(deckId: 'ja-en-hiragana'),
     state: (app) => GalleryFixtures.state(app, currentProfileId: 'mira'),
+  ),
+  GalleryEntry(
+    id: 'inspect',
+    section: GallerySection.learn,
+    label: 'Inspect a deck', // ui-literal-ok: debug-only gallery
+    note:
+        'Every card in full, with its id', // ui-literal-ok: debug-only gallery
+    builder: (_) => const InspectPage(deckId: 'hi-en-market'),
+  ),
+  GalleryEntry(
+    id: 'inspect-grammar',
+    section: GallerySection.learn,
+    label: 'Inspect a grammar deck', // ui-literal-ok: debug-only gallery
+    note: 'Each table whole, a cell id per form', // ui-literal-ok: debug-only gallery
+    builder: (_) => const InspectPage(deckId: 'hi-en-grammar-present'),
+  ),
+  GalleryEntry(
+    id: 'inspect-reading',
+    section: GallerySection.learn,
+    label: 'Inspect a reading deck', // ui-literal-ok: debug-only gallery
+    note: 'Passages, questions with answers, glossary', // ui-literal-ok: debug-only gallery
+    builder: (_) => const InspectPage(deckId: 'bn-en-reading-sahaj-path-1'),
   ),
   GalleryEntry(
     id: 'import',
