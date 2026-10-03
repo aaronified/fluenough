@@ -1,4 +1,4 @@
-# ADR-0021: Reports go from a bug icon on every screen, through a relay that holds the token
+# ADR-0021: Reports go from a bug icon on every screen, by the reporter's mail, into GitHub issues
 
 - **Status:** Accepted
 - **Date:** 2026-10-03
@@ -6,59 +6,69 @@
 ## Context
 
 The owner asked for "a way to record suggestions, features and bugs and
-report them directly on github", then: "User should be able to add
-screenshots of their app screen from where they are raising a bug report,
-and every screen will have a bug report icon." The Marathi, Kannada,
-Gujarati and Telugu decks are unchecked and "will be verified by users", so
-reports about cards matter most.
+report them directly on github", with "every screen will have a bug report
+icon", and a way to "add screenshot (which will add the screenshot of the
+screen on which the button was pressed)". The Marathi, Kannada, Gujarati
+and Telugu decks are unchecked and "will be verified by users", so reports
+about cards matter most.
 
-The owner first proposed a GitHub token added at build time from GitHub's
-secrets. A value compiled into the app is in the APK, which is public on the
-releases page, and a fine-grained token's narrowest permission (Issues:
-write) also edits and closes every issue. A pre-filled GitHub link needs the
-reporter to have an account and cannot carry a screenshot. Google Forms
-cannot take a file without the reporter signing in. The owner set those
-aside.
+Set aside, with the owner:
+
+- **A GitHub token in the app.** It would be in the public APK, and the
+  narrowest token can still edit and close every issue.
+- **A relay** holding the token: the owner did not want another service.
+- **Google and Microsoft Forms.** Neither takes a file without the reporter
+  signing in.
+
+The owner chose mail: "users mail stuff there from the app itself (will be
+routed via their mail application, but prefilled and all screenshots
+attached)", into a Fluenough Gmail, with "a bot" turning mails into issues.
+Mail stays incoming until that inbox exists (#160).
 
 ## Decision
 
-- **A bug icon on every screen.** `ReportButton` is in every app bar, in the
-  tabs' `TabHeader`, in every drill's frame, and in the screens with no bar
-  (Today's header, onboarding's top bar, the summary and profiles, through
-  `WithReportButton`). `test/gallery_test.dart` fails for any screen in the
-  gallery without one. An unchecked deck's "Report a mistake" opens the same
-  report, about that deck.
-- **The screenshot is of the screen the icon is on.** `MaterialApp.builder`
-  puts the whole app in a `RepaintBoundary` (`ReportCapture`); the icon
-  takes the picture before the report opens, at no more than twice the
-  screen's logical size. The report shows it, and the learner may leave it
-  out.
-- **The report says what it adds:** the app's version, the system's, the
-  app language, the languages learned, the screen's route, and what the
-  screen showed (a card's id and deck, a deck's id, a tab). Nothing else.
-  It says reports are public.
-- **The app sends to a relay, never to GitHub.** A Cloudflare Worker
-  (`tools/report-relay`) holds a fine-grained token, limited to this
-  repository with Issues and Contents write, as a Cloudflare secret. It
-  checks each report, turns away an address sending more than five a
-  minute, saves the screenshot on a `report-screenshots` branch with no
-  history of `main`'s, and opens a labelled issue. It never edits, closes or
-  comments, and breaks `@mentions` so a report notifies no one.
-- **The relay's address is given at build time** (`--dart-define=REPORT_URL`,
-  the repository variable `REPORT_URL` in the release workflow). It is not a
-  secret. A build without it says reports cannot be sent.
-- **No new dependency:** the picture is Flutter's own, the request dart:io's
-  client, as the update check (ADR-0017). The Worker's tests use Node's own
-  runner.
+- **A bug icon on every screen.**
+  - Where it is: `ReportButton` is in every app bar, the tabs' `TabHeader`
+    and every drill's frame. Screens with no bar get it through
+    `WithReportButton`: Today, onboarding, the summary and profiles.
+  - The same report is also behind an unchecked deck's "Report a mistake",
+    and behind each card's Report in Inspect.
+  - `test/gallery_test.dart` fails for any screen in the gallery without
+    the icon.
+- **Until mail is on (`Feature.feedbackMail`, #160), every report button
+  opens GitHub's new-issue form.** The form is pre-filled with the screen,
+  what it showed (a card's or deck's id), the app's version, the system,
+  and the languages being learned. The reporter needs a GitHub account.
+- **Once mail is on:**
+  - The button takes a picture of its screen (`ReportCapture`, a
+    `RepaintBoundary` around the app) and opens the report: Bug, Feature or
+    Suggestion, a title and details.
+  - "Add screenshot of this screen" is off until tapped, and shows the
+    picture once added.
+  - Sending opens the reporter's own mail app through `flutter_email_sender`,
+    a dependency agreed with the owner. The mail is addressed to the Fluenough
+    Gmail, its subject is `[Fluenough] Bug: …`, and the screenshot is attached.
+    The reporter sends it; the app sends nothing itself.
+- **An hourly Action files the mails as issues** (`tools/mail_to_issues.py`,
+  stdlib only).
+  - It reads the inbox over IMAP with an app password held in repository
+    secrets.
+  - It takes only mails whose subject starts with `[Fluenough]`.
+  - The issue is text only: the screenshot stays in the mail, and the issue
+    says one came.
+  - The sender's address is never written to the public issue, and
+    `@mentions` are broken.
+  - A filed mail gets the Gmail label `fluenough-filed`, never a read mark,
+    so it is never filed twice.
 
 ## Consequences
 
-- The owner runs a Worker: a free Cloudflare account and a one-time deploy
-  (`tools/report-relay/README.md`). If it is down, the app says it could not
-  reach the report service.
-- Anyone who finds the relay's address can open issues, rate-limited. They
-  cannot change existing ones.
-- Screenshots are public on the `report-screenshots` branch, like the
-  issues. The branch grows with each one; it can be pruned without touching
-  `main`.
-- A screen added later needs the icon, or its gallery entry fails the test.
+- One new app dependency, `flutter_email_sender`. CI's Android setup
+  declares the mail-app query it needs on Android 11+.
+- Turning mail on needs:
+  - the Gmail address in `AppLinks.feedbackEmail`;
+  - the repository secrets `FEEDBACK_GMAIL_ADDRESS` and
+    `FEEDBACK_GMAIL_APP_PASSWORD`;
+  - `Feature.feedbackMail` in `Feature.available`.
+- A reporter without a mail app gets told so; one without a GitHub account
+  cannot report until mail is on.

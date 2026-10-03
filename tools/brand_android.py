@@ -68,6 +68,7 @@ RECORD_AUDIO = "android.permission.RECORD_AUDIO"
 INTERNET = "android.permission.INTERNET"
 RECOGNITION_SERVICE = "android.speech.RecognitionService"
 VIEW = "android.intent.action.VIEW"
+SENDTO = "android.intent.action.SENDTO"
 # ota_update asks to write external storage, and the merge then adds the
 # read permission that implies. It has used neither since 7.0.1.
 STORAGE = (
@@ -197,9 +198,9 @@ def query(text: str, *lines: str) -> str:
 
 def declare(text: str) -> str:
     """[text], a manifest, with the microphone and internet permissions, the
-    queries for the speech recogniser and for opening https links, and
-    ota_update's FileProvider, each added if it is not there already, and
-    external storage removed."""
+    queries for the speech recogniser, for opening https links and for a
+    mail app (flutter_email_sender, #160), and ota_update's FileProvider,
+    each added if it is not there already, and external storage removed."""
     if len(MANIFEST_OPEN.findall(text)) != 1 or text.count("</manifest>") != 1:
         raise BrandError(
             f"{MANIFEST} does not have one <manifest> element; "
@@ -222,6 +223,12 @@ def declare(text: str) -> str:
             text,
             f'<action android:name="{VIEW}"/>',
             '<data android:scheme="https"/>',
+        )
+    if not queries(text, SENDTO, scheme="mailto"):
+        text = query(
+            text,
+            f'<action android:name="{SENDTO}"/>',
+            '<data android:scheme="mailto"/>',
         )
     return text
 

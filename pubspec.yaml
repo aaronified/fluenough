@@ -46,6 +46,9 @@ dependencies:
   # Downloads the newest release's APK into the app's own storage and opens
   # Android's installer on it. Agreed with the maintainer (ADR-0017).
   ota_update: ^7.1.0
+  # Opens the reporter's mail app with a report and its screenshot attached
+  # (#160, ADR-0021). Agreed with the maintainer.
+  flutter_email_sender: ^10.0.1
 
 dev_dependencies:
   flutter_test:

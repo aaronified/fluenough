@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/grammar_cells.dart';
 
@@ -50,7 +51,10 @@ class InspectPage extends StatelessWidget {
       ],
     };
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.inspectTitle(entry.deck.name))),
+      appBar: AppBar(
+        title: Text(l10n.inspectTitle(entry.deck.name)),
+        actions: <Widget>[ReportButton(detail: entry.id)],
+      ),
       body: SelectionArea(
         child: ListView.separated(
           padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
@@ -119,22 +123,38 @@ class _Muted extends StatelessWidget {
   );
 }
 
-/// A card or cell id, in a fixed-width face so that it reads exactly.
+/// A card, cell or passage id, in a fixed-width face so that it reads
+/// exactly, and with [deckId] a Report action for it (#160).
 class _Id extends StatelessWidget {
-  const _Id(this.id);
+  const _Id(this.id, {this.deckId});
 
   final String id;
+
+  /// The deck it is in. With it, the id has a Report action.
+  final String? deckId;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    return Text(
+    final deck = deckId;
+    final text = Text(
       l10n.inspectId(id),
       style: theme.textTheme.labelMedium!.copyWith(
         fontFamily: 'monospace',
         color: theme.colorScheme.primary,
       ),
+    );
+    if (deck == null) return text;
+    return Row(
+      children: <Widget>[
+        Expanded(child: text),
+        IconButton(
+          tooltip: l10n.inspectReport,
+          icon: const Icon(Icons.flag_outlined),
+          onPressed: () => ReportButton.open(context, detail: '$id in $deck'),
+        ),
+      ],
     );
   }
 }
@@ -191,8 +211,7 @@ class _CardBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _Id(card.id),
-          const SizedBox(height: 6),
+          _Id(card.id, deckId: entry.id),
           TargetText(
             card.target,
             language: language,
@@ -288,7 +307,7 @@ class _GrammarTable extends StatelessWidget {
                       l10n.inspectAlsoAccepted,
                       card.altTarget.join(l10n.commonListSeparator),
                     ),
-                  _Id(card.id),
+                  _Id(card.id, deckId: entry.id),
                 ],
               ),
             ),
@@ -321,8 +340,7 @@ class _PassageBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _Id(passage.id),
-          const SizedBox(height: 6),
+          _Id(passage.id, deckId: entry.id),
           Text(passage.title, style: theme.textTheme.titleLarge),
           if (source != null) _Muted(l10n.readingSource(source)),
           _Field(l10n.readingPassage, ''),

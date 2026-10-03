@@ -1,18 +1,16 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
-import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
-import '../../app/app_state.dart';
 import '../../core/feedback/report.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 
-/// A bug, a feature or a suggestion, sent as a public GitHub issue through
-/// the relay (ADR-0021): a title, details, and the screenshot of the screen
-/// it was raised on, which the learner sees and may leave out.
+/// A bug, a feature or a suggestion, sent by mail from the reporter's own
+/// mail app (#160, ADR-0021): a title, details, and, if the reporter adds
+/// it, the picture of the screen the report was raised on. Behind
+/// `Feature.feedbackMail`: until it is on, report buttons open GitHub.
 class ReportPage extends StatefulWidget {
   const ReportPage({super.key, required this.request});
 
@@ -27,7 +25,7 @@ class _ReportPageState extends State<ReportPage> {
   final TextEditingController _details = TextEditingController();
   final FocusNode _titleFocus = FocusNode();
   ReportKind _kind = ReportKind.bug;
-  bool _withScreenshot = true;
+  bool _withScreenshot = false;
   bool _titleMissing = false;
   bool _sending = false;
   ReportFailure? _failure;
@@ -40,20 +38,6 @@ class _ReportPageState extends State<ReportPage> {
     super.dispose();
   }
 
-  /// What the app adds to the issue, which the page says it sends. Keys are
-  /// for the issue's reader, not interface text.
-  Map<String, String> _context(AppState state) => <String, String>{
-    'App': 'fluenough ${AppInfo.version}',
-    'System': '${Platform.operatingSystem} ${Platform.operatingSystemVersion}',
-    'App language': Localizations.localeOf(context).toLanguageTag(),
-    'Learning': <String>[
-      for (final language in state.languages)
-        if (state.currentProfile.learns(language.code)) language.code,
-    ].join(', '),
-    'Screen': widget.request.screen,
-    'Showing': ?widget.request.detail,
-  };
-
   Future<void> _send() async {
     final title = _title.text.trim();
     if (title.isEmpty) {
@@ -64,23 +48,26 @@ class _ReportPageState extends State<ReportPage> {
     }
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.read(context);
+    final report = Report(
+      kind: _kind,
+      title: title,
+      details: _details.text.trim(),
+      context: reportContext(
+        context,
+        screen: widget.request.screen,
+        detail: widget.request.detail,
+      ),
+      screenshot: _withScreenshot ? widget.request.screenshot : null,
+    );
     setState(() {
       _sending = true;
       _failure = null;
     });
-    final outcome = await state.reports.send(
-      Report(
-        kind: _kind,
-        title: title,
-        details: _details.text.trim(),
-        context: _context(state),
-        screenshot: _withScreenshot ? widget.request.screenshot : null,
-      ),
-    );
+    final outcome = await state.reports.send(report);
     if (!mounted) return;
     switch (outcome) {
-      case ReportSent():
-        showAppSnackBar(context, l10n.reportSent);
+      case ReportInMailApp():
+        showAppSnackBar(context, l10n.reportInMailApp);
         await Navigator.of(context).maybePop();
       case ReportFailed(:final reason):
         setState(() {
@@ -93,8 +80,7 @@ class _ReportPageState extends State<ReportPage> {
   String _failureText(AppLocalizations l10n, ReportFailure failure) =>
       switch (failure) {
         ReportFailure.notSetUp => l10n.reportNotSetUp,
-        ReportFailure.offline => l10n.reportOffline,
-        ReportFailure.refused => l10n.reportRefused,
+        ReportFailure.noMailApp => l10n.reportNoMailApp,
       };
 
   @override
@@ -165,26 +151,36 @@ class _ReportPageState extends State<ReportPage> {
               alignLabelWithHint: true,
             ),
           ),
-          if (screenshot != null) ...<Widget>[
+          // Off until tapped: nothing is attached unless the reporter adds
+          // it, and then sees it first.
+          if (screenshot != null && !_withScreenshot) ...<Widget>[
             const SizedBox(height: 8),
-            CheckboxListTile(
-              contentPadding: EdgeInsetsDirectional.zero,
-              value: _withScreenshot,
-              onChanged: (on) => setState(() => _withScreenshot = on ?? false),
-              title: Text(l10n.reportScreenshot),
+            OutlinedButton.icon(
+              onPressed: () => setState(() => _withScreenshot = true),
+              icon: const Icon(Icons.add_photo_alternate_outlined),
+              label: Text(l10n.reportAddScreenshot),
             ),
-            if (_withScreenshot)
-              Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(AppRadii.small),
-                  child: Image.memory(
-                    screenshot,
-                    height: 280,
-                    fit: BoxFit.contain,
-                    semanticLabel: l10n.reportScreenshotPreview,
-                  ),
+          ],
+          if (screenshot != null && _withScreenshot) ...<Widget>[
+            const SizedBox(height: 8),
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(AppRadii.small),
+                child: Image.memory(
+                  screenshot,
+                  height: 280,
+                  fit: BoxFit.contain,
+                  semanticLabel: l10n.reportScreenshotPreview,
                 ),
               ),
+            ),
+            Center(
+              child: TextButton.icon(
+                onPressed: () => setState(() => _withScreenshot = false),
+                icon: const Icon(Icons.close),
+                label: Text(l10n.reportRemoveScreenshot),
+              ),
+            ),
           ],
           const SizedBox(height: 16),
           Text(l10n.reportPublic, style: muted),
@@ -208,8 +204,8 @@ class _ReportPageState extends State<ReportPage> {
               minimumSize: const Size.fromHeight(AppSizes.primaryButton),
             ),
             onPressed: _sending ? null : _send,
-            icon: const Icon(Icons.send_outlined),
-            label: Text(_sending ? l10n.reportSending : l10n.reportSend),
+            icon: const Icon(Icons.mail_outline),
+            label: Text(l10n.reportSend),
           ),
         ],
       ),
