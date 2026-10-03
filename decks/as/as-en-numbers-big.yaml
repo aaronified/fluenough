@@ -1,0 +1,162 @@
+schema: 1
+id: as-en-numbers-big
+name: "Tens and big numbers"
+kind: vocab
+theme: numbers-big
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The tens, the hundreds, a thousand, lakh and crore, and the halves every market uses. Each number from 21 to 99 has a word of its own: here is one, 25, to show how. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: as-0239
+    target: "ত্ৰিশ"
+    native: "30, thirty"
+    reading: "trix"
+    pos: "other"
+    notes: "As in Bengali and Hindi, 21 to 99 are not built from parts: each has its own word, which you learn one by one, as with পঁচিশ (posix), 25."
+  - id: as-0240
+    target: "চল্লিশ"
+    native: "40, forty"
+    reading: "sollix"
+    pos: "other"
+  - id: as-0241
+    target: "পঞ্চাশ"
+    native: "50, fifty"
+    reading: "ponsax"
+    pos: "other"
+  - id: as-0242
+    target: "ষাঠি"
+    native: "60, sixty"
+    reading: "xathi"
+    pos: "other"
+  - id: as-0243
+    target: "সত্তৰ"
+    native: "70, seventy"
+    reading: "xottor"
+    pos: "other"
+  - id: as-0244
+    target: "আশী"
+    native: "80, eighty"
+    reading: "axi"
+    pos: "other"
+  - id: as-0245
+    target: "নব্বৈ"
+    native: "90, ninety"
+    reading: "nobboi"
+    pos: "other"
+  - id: as-0246
+    target: "পঁচিশ"
+    native: "25, twenty-five"
+    reading: "posix"
+    pos: "other"
+    notes: "From পাঁচ, five, and বিশ, twenty, fused into one word."
+  - id: as-0247
+    target: "এশ"
+    native: "100, a hundred"
+    reading: "ex"
+    pos: "other"
+    notes: "Hundreds join into one word: দুশ (dux) is 200, তিনিশ (tinix) 300, পাঁচশ (pasox) 500."
+  - id: as-0248
+    target: "দুশ"
+    native: "200, two hundred"
+    reading: "dux"
+    pos: "other"
+    notes: "The hundreds join into one word, never two."
+  - id: as-0249
+    target: "তিনিশ"
+    native: "300, three hundred"
+    reading: "tinix"
+    pos: "other"
+  - id: as-0250
+    target: "চাৰিশ"
+    native: "400, four hundred"
+    reading: "sarix"
+    pos: "other"
+  - id: as-0251
+    target: "পাঁচশ"
+    native: "500, five hundred"
+    reading: "pasox"
+    pos: "other"
+  - id: as-0252
+    target: "ছশ"
+    native: "600, six hundred"
+    reading: "sox"
+    pos: "other"
+  - id: as-0253
+    target: "সাতশ"
+    native: "700, seven hundred"
+    reading: "xatox"
+    pos: "other"
+  - id: as-0254
+    target: "আঠশ"
+    native: "800, eight hundred"
+    reading: "athox"
+    pos: "other"
+  - id: as-0255
+    target: "নশ"
+    native: "900, nine hundred"
+    reading: "nox"
+    pos: "other"
+  - id: as-0256
+    target: "হাজাৰ"
+    native: "1,000, a thousand"
+    reading: "hajar"
+    pos: "other"
+    notes: "On its own or with এক: এক হাজাৰ (ek hajar). Two thousand is দুহাজাৰ (duhajar) or দুই হাজাৰ."
+  - id: as-0257
+    target: "দুহাজাৰ"
+    native: "2,000, two thousand"
+    reading: "duhajar"
+    alt_target: ["দুই হাজাৰ"]
+    pos: "other"
+    notes: "Also দুই হাজাৰ (dui hajar). Three thousand is তিনি হাজাৰ (tini hajar), and so on."
+  - id: as-0258
+    target: "লাখ"
+    native: "1,00,000, a lakh (a hundred thousand)"
+    reading: "lakh"
+    alt_target: ["লক্ষ"]
+    pos: "other"
+    notes: "South Asian numbering counts in lakhs and crores, and places its commas to match: 1,00,000 is one lakh. Formally লক্ষ (lokkho)."
+  - id: as-0259
+    target: "কোটি"
+    native: "1,00,00,000, a crore (ten million)"
+    reading: "kuti"
+    pos: "other"
+    notes: "A hundred lakh."
+  - id: as-0260
+    target: "ডেৰ"
+    native: "1½, one and a half"
+    reading: "der"
+    pos: "other"
+    notes: "With hundreds too: ডেৰশ (derox) is 150. Heard constantly in markets."
+  - id: as-0261
+    target: "আঢ়ৈ"
+    native: "2½, two and a half"
+    reading: "arhoi"
+    pos: "other"
+    notes: "আঢ়ৈশ (arhoix) is 250. From 3½ on, Assamese says সাৰে (xare), 'and a half': সাৰে তিনি (xare tini), 3½."
+  - id: as-0262
+    target: "আধা"
+    native: "½, half"
+    reading: "adha"
+    pos: "other"
+    notes: "আধা কিলো (adha kilo), half a kilo. With a number, the half is ডেৰ, আঢ়ৈ or সাৰে instead."
+  - id: as-0263
+    target: "দুশ পঞ্চাশ"
+    native: "250, two hundred and fifty"
+    reading: "dux ponsax"
+    pos: "other"
+    notes: "The hundred, then the rest, with no 'and'. Also আঢ়ৈশ (arhoix)."
+  - id: as-0264
+    target: "এশ পঞ্চাশ"
+    native: "150, a hundred and fifty"
+    reading: "ex ponsax"
+    pos: "other"
+    notes: "Also ডেৰশ (derox), 'one and a half hundred'."
+  - id: as-0265
+    target: "দুহাজাৰ বিশ"
+    native: "2020, two thousand and twenty"
+    reading: "duhajar bix"
+    pos: "other"
+    notes: "A year is read as a number, thousands first."

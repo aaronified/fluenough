@@ -1,0 +1,126 @@
+schema: 1
+id: as-en-grammar-negative
+name: "Don't and won't"
+kind: grammar
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I don't go, she won't come: Assamese says not with ন- at the front of the verb. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Negative"
+  slot_name: "tense, person and respect"
+  slots: ["don't, মই / আমি", "don't, তই / তহঁত", "don't, তুমি / তোমালোক", "don't, আপুনি / সি / তাই / তেওঁ", "won't, মই / আমি", "won't, তই / তহঁত", "won't, তুমি / তোমালোক", "won't, আপুনি / সি / তাই / তেওঁ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Not is ন- before the verb, and its vowel echoes the verb's first vowel: কৰোঁ, নকৰোঁ; যাওঁ, নাযাওঁ; শুনোঁ, নুশুনোঁ; খেলোঁ, নেখেলোঁ. Before a verb that starts with a vowel the two run together: আহোঁ, নাহোঁ, I don't come. In the past, ন- goes on the past form, নকৰিলোঁ, I didn't do it, or the verb noun takes নাই: মই কৰা নাই, I haven't done it. A 'don't' said to someone is the negative future: নকৰিবা, don't, to a friend; নকৰিব, to someone you respect. আপুনি takes the same form as সি, তাই and তেওঁ. The ending -ওঁ is also written -ো, without ঁ, and both are accepted."
+  entries:
+    - lemma: "কৰা"
+      key: kora
+      reading: "kora"
+      gloss: "to do"
+      forms:
+        "don't, মই / আমি": ["নকৰোঁ", "নকৰো"]
+        "don't, তই / তহঁত": "নকৰ"
+        "don't, তুমি / তোমালোক": "নকৰা"
+        "don't, আপুনি / সি / তাই / তেওঁ": "নকৰে"
+        "won't, মই / আমি": "নকৰিম"
+        "won't, তই / তহঁত": "নকৰিবি"
+        "won't, তুমি / তোমালোক": "নকৰিবা"
+        "won't, আপুনি / সি / তাই / তেওঁ": "নকৰিব"
+      readings:
+        "don't, মই / আমি": ["nokoru", "nokoru"]
+        "don't, তই / তহঁত": "nokor"
+        "don't, তুমি / তোমালোক": "nokora"
+        "don't, আপুনি / সি / তাই / তেওঁ": "nokore"
+        "won't, মই / আমি": "nokorim"
+        "won't, তই / তহঁত": "nokoribi"
+        "won't, তুমি / তোমালোক": "nokoriba"
+        "won't, আপুনি / সি / তাই / তেওঁ": "nokoribo"
+    - lemma: "যোৱা"
+      key: juwa
+      reading: "juwa"
+      gloss: "to go"
+      forms:
+        "don't, মই / আমি": ["নাযাওঁ", "নাযাও"]
+        "don't, তই / তহঁত": "নাযাৱ"
+        "don't, তুমি / তোমালোক": "নাযোৱা"
+        "don't, আপুনি / সি / তাই / তেওঁ": "নাযায়"
+        "won't, মই / আমি": "নাযাম"
+        "won't, তই / তহঁত": "নাযাবি"
+        "won't, তুমি / তোমালোক": "নাযাবা"
+        "won't, আপুনি / সি / তাই / তেওঁ": "নাযাব"
+      readings:
+        "don't, মই / আমি": ["najau", "najau"]
+        "don't, তই / তহঁত": "najaw"
+        "don't, তুমি / তোমালোক": "najuwa"
+        "don't, আপুনি / সি / তাই / তেওঁ": "najay"
+        "won't, মই / আমি": "najam"
+        "won't, তই / তহঁত": "najabi"
+        "won't, তুমি / তোমালোক": "najaba"
+        "won't, আপুনি / সি / তাই / তেওঁ": "najabo"
+    - lemma: "অহা"
+      key: oha
+      reading: "oha"
+      gloss: "to come"
+      forms:
+        "don't, মই / আমি": ["নাহোঁ", "নাহো"]
+        "don't, তই / তহঁত": "নাহ"
+        "don't, তুমি / তোমালোক": "নাহা"
+        "don't, আপুনি / সি / তাই / তেওঁ": "নাহে"
+        "won't, মই / আমি": "নাহিম"
+        "won't, তই / তহঁত": "নাহিবি"
+        "won't, তুমি / তোমালোক": "নাহিবা"
+        "won't, আপুনি / সি / তাই / তেওঁ": "নাহিব"
+      readings:
+        "don't, মই / আমি": ["nahu", "nahu"]
+        "don't, তই / তহঁত": "nah"
+        "don't, তুমি / তোমালোক": "naha"
+        "don't, আপুনি / সি / তাই / তেওঁ": "nahe"
+        "won't, মই / আমি": "nahim"
+        "won't, তই / তহঁত": "nahibi"
+        "won't, তুমি / তোমালোক": "nahiba"
+        "won't, আপুনি / সি / তাই / তেওঁ": "nahibo"
+    - lemma: "শুনা"
+      key: xuna
+      reading: "xuna"
+      gloss: "to listen; to hear"
+      forms:
+        "don't, মই / আমি": ["নুশুনোঁ", "নুশুনো"]
+        "don't, তই / তহঁত": "নুশুন"
+        "don't, তুমি / তোমালোক": "নুশুনা"
+        "don't, আপুনি / সি / তাই / তেওঁ": "নুশুনে"
+        "won't, মই / আমি": "নুশুনিম"
+        "won't, তই / তহঁত": "নুশুনিবি"
+        "won't, তুমি / তোমালোক": "নুশুনিবা"
+        "won't, আপুনি / সি / তাই / তেওঁ": "নুশুনিব"
+      readings:
+        "don't, মই / আমি": ["nuxunu", "nuxunu"]
+        "don't, তই / তহঁত": "nuxun"
+        "don't, তুমি / তোমালোক": "nuxuna"
+        "don't, আপুনি / সি / তাই / তেওঁ": "nuxune"
+        "won't, মই / আমি": "nuxunim"
+        "won't, তই / তহঁত": "nuxunibi"
+        "won't, তুমি / তোমালোক": "nuxuniba"
+        "won't, আপুনি / সি / তাই / তেওঁ": "nuxunibo"
+    - lemma: "খেলা"
+      key: khela
+      reading: "khela"
+      gloss: "to play"
+      forms:
+        "don't, মই / আমি": ["নেখেলোঁ", "নেখেলো"]
+        "don't, তই / তহঁত": "নেখেল"
+        "don't, তুমি / তোমালোক": "নেখেলা"
+        "don't, আপুনি / সি / তাই / তেওঁ": "নেখেলে"
+        "won't, মই / আমি": "নেখেলিম"
+        "won't, তই / তহঁত": "নেখেলিবি"
+        "won't, তুমি / তোমালোক": "নেখেলিবা"
+        "won't, আপুনি / সি / তাই / তেওঁ": "নেখেলিব"
+      readings:
+        "don't, মই / আমি": ["nekhelu", "nekhelu"]
+        "don't, তই / তহঁত": "nekhel"
+        "don't, তুমি / তোমালোক": "nekhela"
+        "don't, আপুনি / সি / তাই / তেওঁ": "nekhele"
+        "won't, মই / আমি": "nekhelim"
+        "won't, তই / তহঁত": "nekhelibi"
+        "won't, তুমি / তোমালোক": "nekheliba"
+        "won't, আপুনি / সি / তাই / তেওঁ": "nekhelibo"
