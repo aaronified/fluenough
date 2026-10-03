@@ -1,0 +1,94 @@
+schema: 1
+id: te-en-grammar-demonstratives
+name: "This and that"
+kind: grammar
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "ఈ and ఆ, and the words built on them: this one, here, this way, so much. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  slots: ["near: ఈ, ఇ-", "far: ఆ, అ-"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Words for near things start with ఇ- or ఈ-, words for far ones with అ- or ఆ- (people: వీళ్ళు and వాళ్ళు). ఈ and ఆ stand before a noun and never change: ఈ పుస్తకం, this book; ఆ ఇల్లు, that house."
+  entries:
+    - lemma: "this, that (before a noun)"
+      key: adj
+      gloss: "before a noun"
+      forms:
+        "near: ఈ, ఇ-": "ఈ"
+        "far: ఆ, అ-": "ఆ"
+    - lemma: "this one, that one (a thing)"
+      key: thing
+      gloss: "a thing"
+      forms:
+        "near: ఈ, ఇ-": "ఇది"
+        "far: ఆ, అ-": "అది"
+    - lemma: "these, those (things)"
+      key: things
+      gloss: "things"
+      forms:
+        "near: ఈ, ఇ-": "ఇవి"
+        "far: ఆ, అ-": "అవి"
+    - lemma: "this man, that man"
+      key: man
+      gloss: "a man"
+      forms:
+        "near: ఈ, ఇ-": "ఇతను"
+        "far: ఆ, అ-": "అతను"
+    - lemma: "this woman, that woman"
+      key: woman
+      gloss: "a woman"
+      forms:
+        "near: ఈ, ఇ-": "ఈమె"
+        "far: ఆ, అ-": "ఆమె"
+    - lemma: "this man, that man (respectful)"
+      key: man-resp
+      gloss: "a man, with respect"
+      forms:
+        "near: ఈ, ఇ-": "ఈయన"
+        "far: ఆ, అ-": "ఆయన"
+    - lemma: "this woman, that woman (respectful)"
+      key: woman-resp
+      gloss: "a woman, with respect"
+      forms:
+        "near: ఈ, ఇ-": "ఈవిడ"
+        "far: ఆ, అ-": "ఆవిడ"
+    - lemma: "these people, those people"
+      key: people
+      gloss: "people"
+      forms:
+        "near: ఈ, ఇ-": "వీళ్ళు"
+        "far: ఆ, అ-": "వాళ్ళు"
+    - lemma: "here, there"
+      key: place
+      gloss: "place"
+      forms:
+        "near: ఈ, ఇ-": "ఇక్కడ"
+        "far: ఆ, అ-": "అక్కడ"
+    - lemma: "this way, that way"
+      key: direction
+      gloss: "direction"
+      forms:
+        "near: ఈ, ఇ-": "ఇటు"
+        "far: ఆ, అ-": "అటు"
+    - lemma: "like this, like that"
+      key: manner
+      gloss: "manner"
+      forms:
+        "near: ఈ, ఇ-": "ఇలా"
+        "far: ఆ, అ-": "అలా"
+    - lemma: "this much, that much"
+      key: amount
+      gloss: "amount"
+      forms:
+        "near: ఈ, ఇ-": "ఇంత"
+        "far: ఆ, అ-": "అంత"
+    - lemma: "now, then"
+      key: time
+      gloss: "time"
+      forms:
+        "near: ఈ, ఇ-": "ఇప్పుడు"
+        "far: ఆ, అ-": "అప్పుడు"

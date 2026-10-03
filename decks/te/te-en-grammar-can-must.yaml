@@ -1,0 +1,60 @@
+schema: 1
+id: te-en-grammar-can-must
+name: "Can, may and must"
+kind: vocab
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Ability, permission, need and duty: each is an ending on the verb. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: te-0492
+    target: "నేను తెలుగు మాట్లాడగలను."
+    native: "I can speak Telugu."
+    reading: "neenu telugu maatlaadagalanu."
+    pos: "phrase"
+    notes: "Can is the verb with -గల-, then the person: మాట్లాడగలను, I can speak."
+  - id: te-0493
+    target: "మీరు రేపు రాగలరా?"
+    native: "Can you come tomorrow?"
+    reading: "miiru reepu raagalaraa?"
+    pos: "phrase"
+  - id: te-0494
+    target: "నేను రాలేను."
+    native: "I can't come."
+    reading: "neenu raaleenu."
+    pos: "phrase"
+    notes: "Can't is the verb with లేను, లేవు, లేదు …: రాలేను, I can't come."
+  - id: te-0495
+    target: "నాకు ఈత వచ్చు."
+    native: "I can swim."
+    reading: "naaku iita vachchu."
+    pos: "phrase"
+    notes: "For a skill, the one who knows takes -కు and the verb is వచ్చు, comes: 'to me swimming comes'. The negative is రాదు."
+  - ref: te-0143
+  - id: te-0496
+    target: "మీరు లోపలికి రావచ్చు."
+    native: "You may come in."
+    reading: "miiru loopaliki raavachchu."
+    pos: "phrase"
+    notes: "May is the verb with -వచ్చు: రావచ్చు, may come."
+  - id: te-0497
+    target: "ఇక్కడ ఫోటోలు తీయకూడదు."
+    native: "You mustn't take photos here."
+    reading: "ikkada footoolu tiiyakuudadu."
+    pos: "phrase"
+    notes: "Must not is the verb with -కూడదు."
+  - ref: te-0377
+  - id: te-0498
+    target: "మీరు రేపు రావాలి."
+    native: "You must come tomorrow."
+    reading: "miiru reepu raavaali."
+    pos: "phrase"
+    notes: "Must is the verb with -ఆలి, the same for everyone: నేను వెళ్ళాలి, ఆమె వెళ్ళాలి."
+  - id: te-0499
+    target: "నేను వెళ్ళనక్కర్లేదు."
+    native: "I don't have to go."
+    reading: "neenu vellanakkarleedu."
+    alt_target: ["నేను వెళ్ళక్కర్లేదు."]
+    pos: "phrase"
+    notes: "Don't have to is the verb with -అక్కర్లేదు, 'there is no need'."
