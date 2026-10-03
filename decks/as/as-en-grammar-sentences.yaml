@@ -1,0 +1,71 @@
+schema: 1
+id: as-en-grammar-sentences
+name: "Basic sentences"
+kind: vocab
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Word order, no 'is', and how Assamese says 'have' and 'like'. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: as-2019
+    target: "মই এজন ছাত্ৰ।"
+    native: "I am a student."
+    reading: "moi ejon satro."
+    pos: "phrase"
+    notes: "No separate 'am'. এজন, 'one person', often stands where English has 'a'. A woman says মই এজনী ছাত্ৰী (moi ejoni satri)."
+  - id: as-2020
+    target: "এইটো মোৰ ঘৰ।"
+    native: "This is my house."
+    reading: "eitu mur ghor."
+    pos: "phrase"
+    notes: "There is no 'is' in the present."
+  - id: as-2021
+    target: "মই চাহ খাওঁ।"
+    native: "I drink tea."
+    reading: "moi sah khau."
+    alt_target: ["মই চাহ খাও।"]
+    pos: "phrase"
+    notes: "Assamese eats its tea: খোৱা is 'to eat' and 'to drink'. Subject, object, verb."
+  - id: as-2022
+    target: "তাই অসমীয়া শিকি আছে।"
+    native: "She is learning Assamese."
+    reading: "tai oxomiya xiki ase."
+    pos: "phrase"
+  - id: as-2023
+    target: "মই অসমীয়া ভাল পাওঁ।"
+    native: "I like Assamese."
+    reading: "moi oxomiya bhal pau."
+    alt_target: ["মই অসমীয়া ভাল পাও।"]
+    pos: "phrase"
+    notes: "'I get it good': ভাল পোৱা is 'to like', and the one who likes is the doer."
+  - id: as-2024
+    target: "মোৰ এখন গাড়ী আছে।"
+    native: "I have a car."
+    reading: "mur ekhon gari ase."
+    pos: "phrase"
+    notes: "'Of me a car there is': the owner takes -ৰ, and আছে says 'there is'."
+  - id: as-2025
+    target: "মোৰ লগত টকা নাই।"
+    native: "I don't have any money on me."
+    reading: "mur logot toka nai."
+    pos: "phrase"
+    notes: "'With me there is no money'. নাই is the same for one thing or many."
+  - id: as-2026
+    target: "এইটো ভাল নহয়।"
+    native: "This isn't good."
+    reading: "eitu bhal nohoy."
+    pos: "phrase"
+    notes: "নহয় says what something is not; নাই, that it is not there."
+  - id: as-2027
+    target: "নাযাব।"
+    native: "Please don't go."
+    reading: "najabo."
+    pos: "phrase"
+    notes: "A polite 'don't' is the negative future, here for আপুনি. To a friend, নাযাবা (najaba)."
+  - id: as-2028
+    target: "আজি বৰ গৰম।"
+    native: "It's very hot today."
+    reading: "aji bor gorom."
+    pos: "phrase"
+    notes: "বৰ is 'very'. No verb is needed."

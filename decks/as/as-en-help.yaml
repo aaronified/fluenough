@@ -1,0 +1,73 @@
+schema: 1
+id: as-en-help
+name: "Help"
+kind: vocab
+theme: help
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Asking for help, doctors and medicine, and saying you are lost. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: as-0421
+    target: "সহায়"
+    native: "help"
+    reading: "xohay"
+    pos: "noun"
+  - id: as-0422
+    target: "সহায় কৰক!"
+    native: "Please help!"
+    reading: "xohay korok!"
+    pos: "phrase"
+    tags: ["polite"]
+  - id: as-0423
+    target: "বচাওক!"
+    native: "Help! Save me!"
+    reading: "bosauk!"
+    pos: "phrase"
+  - id: as-0424
+    target: "অলপ ৰ'ব!"
+    native: "Wait a moment, please!"
+    reading: "olop robo!"
+    pos: "phrase"
+    tags: ["polite"]
+    notes: "ৰ'ব, 'you will stay', is a polite request. To a friend: অলপ ৰ'বা (olop roba)."
+  - ref: as-0212
+  - ref: as-0211
+  - id: as-0425
+    target: "হস্পিতাল"
+    native: "hospital"
+    reading: "hospital"
+    alt_target: ["চিকিৎসালয়"]
+    pos: "noun"
+    notes: "Formally, and on signs, চিকিৎসালয় (sikitsaloy)."
+  - id: as-0426
+    target: "দৰব"
+    native: "medicine"
+    reading: "dorob"
+    pos: "noun"
+    notes: "The everyday word. The formal one is ঔষধ (ouxodh)."
+  - id: as-0427
+    target: "বিষ"
+    native: "pain; ache"
+    reading: "bix"
+    pos: "noun"
+    notes: "মূৰৰ বিষ (muror bix), a headache; পেটৰ বিষ (petor bix), a stomach ache. In Bengali and Hindi the same word, বিষ, विष, means poison."
+  - id: as-0428
+    target: "মই বাট হেৰুৱালোঁ।"
+    native: "I'm lost."
+    reading: "moi bat heruwalu."
+    pos: "phrase"
+    notes: "Literally 'I have lost the way'."
+  - id: as-0429
+    target: "মই বুজি নাপালোঁ।"
+    native: "I didn't understand."
+    reading: "moi buji napalu."
+    pos: "phrase"
+    notes: "Literally 'I did not get it, understanding'. I understand: বুজি পাইছোঁ (buji paisu)."
+  - id: as-0430
+    target: "বাথৰুম ক'ত?"
+    native: "Where is the toilet?"
+    reading: "bathrum kot?"
+    pos: "phrase"
+    notes: "Signs say শৌচালয় (xousaloy)."

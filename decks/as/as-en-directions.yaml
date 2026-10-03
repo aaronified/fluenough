@@ -1,0 +1,93 @@
+schema: 1
+id: as-en-directions
+name: "Directions"
+kind: vocab
+theme: directions
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Left, right, straight on, and asking where something is. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: as-0314
+    target: "… ক'ত?"
+    native: "Where is …?"
+    reading: "... kot?"
+    pos: "phrase"
+    notes: "Put the place first: ষ্টেচন ক'ত? Where's the station? Politely, ষ্টেচনটো ক'ত, কৈ দিব নেকি? Could you tell me where the station is?"
+  - id: as-0315
+    target: "সোঁ"
+    native: "right (side)"
+    reading: "xu"
+    pos: "adj"
+    notes: "সোঁফালে (xuphale), to the right. ফাল (phal) is a side or direction."
+  - id: as-0316
+    target: "বাওঁ"
+    native: "left (side)"
+    reading: "bau"
+    pos: "adj"
+    notes: "বাওঁফালে (bauphale), to the left."
+  - id: as-0317
+    target: "পোনে পোনে"
+    native: "straight on"
+    reading: "pune pune"
+    pos: "phrase"
+  - id: as-0318
+    target: "ঘূৰক"
+    native: "please turn"
+    reading: "ghurok"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "সোঁফালে ঘূৰক (xuphale ghurok), turn right."
+  - id: as-0319
+    target: "আগত"
+    native: "ahead; in front"
+    reading: "agot"
+    pos: "adv"
+    notes: "Formally সন্মুখত (xonmukhot)."
+  - id: as-0320
+    target: "পাছফালে"
+    native: "behind; at the back"
+    reading: "pasphale"
+    pos: "adv"
+    notes: "পাছ (pas), the back, and ফাল (phal), side."
+  - id: as-0321
+    target: "ওচৰত"
+    native: "near"
+    reading: "usorot"
+    pos: "adv"
+    notes: "After the place, with -ৰ: ষ্টেচনৰ ওচৰত (stesonor usorot), near the station."
+  - id: as-0322
+    target: "দূৰ"
+    native: "far; distance"
+    reading: "dur"
+    pos: "adj"
+    notes: "কিমান দূৰ? (kiman dur?), how far is it?"
+  - id: as-0323
+    target: "ইয়াত"
+    native: "here"
+    reading: "iyat"
+    pos: "adv"
+  - id: as-0324
+    target: "তাত"
+    native: "there"
+    reading: "tat"
+    pos: "adv"
+  - id: as-0325
+    target: "বাট"
+    native: "way; route"
+    reading: "bat"
+    pos: "noun"
+    notes: "বাটটো কৈ দিয়ক (battu koi diyok), please tell me the way."
+  - id: as-0326
+    target: "আলি"
+    native: "road; street"
+    reading: "ali"
+    pos: "noun"
+    notes: "Also ৰাস্তা (rasta) and পথ (poth)."
+  - id: as-0327
+    target: "চাৰিআলি"
+    native: "crossroads"
+    reading: "sariali"
+    pos: "noun"
+    notes: "Literally 'four roads'. Many places in Assam are named after their crossroads, and a bus conductor will call them out."
