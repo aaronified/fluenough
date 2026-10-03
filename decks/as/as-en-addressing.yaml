@@ -1,0 +1,101 @@
+schema: 1
+id: as-en-addressing
+name: "Addressing people"
+kind: vocab
+theme: addressing
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "What to call a shopkeeper, a driver or an older woman: Assamese speakers address strangers as family, and add -দেউ for respect. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: as-0153
+    target: "ককাইদেউ"
+    native: "elder brother (respectful); to a man a little older"
+    reading: "kokaideu"
+    alt_target: ["দাদা"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "ককাই (kokai), elder brother, with -দেউ (-deu), a mark of respect. In Guwahati many people say দাদা (dada) to a shopkeeper or a driver: দাদা, কিমান হ'ল? Friendly and polite at once."
+  - id: as-0154
+    target: "বাইদেউ"
+    native: "elder sister (respectful); to a woman a little older"
+    reading: "baideu"
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "বাই (bai), elder sister, with -দেউ. What you call a woman at a stall or a counter: বাইদেউ, এইটো কিমান? How much is this?"
+  - id: as-0155
+    target: "ভাইটি"
+    native: "younger brother; to a younger man or a boy"
+    reading: "bhaiti"
+    pos: "noun"
+    notes: "To a waiter, or a boy at a shop. Warm, not rude."
+  - id: as-0156
+    target: "ভণ্টি"
+    native: "younger sister; to a younger woman or a girl"
+    reading: "bhonti"
+    pos: "noun"
+    notes: "The fond form; the plain word is ভনী (bhoni)."
+  - id: as-0157
+    target: "খুৰা"
+    native: "uncle; to a man of your parents' age"
+    reading: "khura"
+    alt_target: ["খুৰাদেউ"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "Strictly your father's younger brother. With more respect, খুৰাদেউ (khuradeu)."
+  - id: as-0158
+    target: "খুৰী"
+    native: "aunty; to a woman of your parents' age"
+    reading: "khuri"
+    alt_target: ["খুৰীদেউ"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "Strictly the wife of খুৰা. In towns many say আণ্টি (anti), from English aunty."
+  - id: as-0159
+    target: "ককা"
+    native: "grandfather; to an old man"
+    reading: "koka"
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "On either side, a father's father or a mother's father. Careful: ককাই (kokai), with -ই, is an elder brother."
+  - id: as-0160
+    target: "আইতা"
+    native: "grandmother; to an old woman"
+    reading: "aita"
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "On either side. আই (ai) alone is mother."
+  - id: as-0161
+    target: "ডাঙৰীয়া"
+    native: "Mr; sir (after a man's name, respectful)"
+    reading: "dangoriya"
+    pos: "particle"
+    tags: ["honorific"]
+    notes: "From ডাঙৰ (dangor), big, great: বৰুৱা ডাঙৰীয়া (borua dangoriya), Mr Baruah. Formal: in speeches, letters and the news."
+  - id: as-0162
+    target: "ছাৰ"
+    native: "sir"
+    reading: "sar"
+    pos: "noun"
+    tags: ["honorific"]
+    notes: "From English, used in offices, shops and schools. Assamese writes English s with ছ or চ."
+  - id: as-0163
+    target: "মেডাম"
+    native: "madam"
+    reading: "medam"
+    pos: "noun"
+    tags: ["honorific"]
+  - id: as-0164
+    target: "বন্ধু"
+    native: "friend"
+    reading: "bondhu"
+    pos: "noun"
+    notes: "Also লগৰীয়া (logoriya), a companion, the friend you go about with."
+  - id: as-0165
+    target: "শুনক"
+    native: "excuse me; listen (to get attention)"
+    reading: "xunok"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "The polite request form of শুনা (xuna), to hear: 'please listen'. Often with a word of family: শুনক, বাইদেউ."

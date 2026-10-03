@@ -1,0 +1,104 @@
+schema: 1
+id: as-en-grammar-past-more
+name: "Was doing, had done, used to"
+kind: grammar
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I was eating, I had gone, I used to go: the past continuous, and the -ইছিল past, which says had done and used to. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past continuous and past perfect"
+  slot_name: "tense, person and respect"
+  slots: ["was doing, মই / আমি", "was doing, তই / তহঁত", "was doing, তুমি / তোমালোক", "was doing, আপুনি / সি / তাই / তেওঁ", "had done, used to, মই / আমি", "had done, used to, তই / তহঁত", "had done, used to, তুমি / তোমালোক", "had done, used to, আপুনি / সি / তাই / তেওঁ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Was doing is the present continuous with আছিল in place of আছে: কৰি আছোঁ, I am doing; কৰি আছিলোঁ, I was doing. The -ইছিল past says had done: মই অহাৰ আগতে সি গৈছিল, he had gone before I came. It is also the plain past for something further back, and for what used to happen: সৰুতে মই তাত থাকিছিলোঁ, I lived there as a child. যোৱা takes গৈ: গৈ আছিলোঁ, গৈছিলোঁ. আপুনি takes the same form as সি, তাই and তেওঁ. The ending -ওঁ is also written -ো, without ঁ, and both are accepted."
+  entries:
+    - lemma: "কৰা"
+      key: kora
+      reading: "kora"
+      gloss: "to do"
+      forms:
+        "was doing, মই / আমি": ["কৰি আছিলোঁ", "কৰি আছিলো"]
+        "was doing, তই / তহঁত": "কৰি আছিলি"
+        "was doing, তুমি / তোমালোক": "কৰি আছিলা"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "কৰি আছিল"
+        "had done, used to, মই / আমি": ["কৰিছিলোঁ", "কৰিছিলো"]
+        "had done, used to, তই / তহঁত": "কৰিছিলি"
+        "had done, used to, তুমি / তোমালোক": "কৰিছিলা"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "কৰিছিল"
+      readings:
+        "was doing, মই / আমি": ["kori asilu", "kori asilu"]
+        "was doing, তই / তহঁত": "kori asili"
+        "was doing, তুমি / তোমালোক": "kori asila"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "kori asil"
+        "had done, used to, মই / আমি": ["korisilu", "korisilu"]
+        "had done, used to, তই / তহঁত": "korisili"
+        "had done, used to, তুমি / তোমালোক": "korisila"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "korisil"
+    - lemma: "যোৱা"
+      key: juwa
+      reading: "juwa"
+      gloss: "to go"
+      forms:
+        "was doing, মই / আমি": ["গৈ আছিলোঁ", "গৈ আছিলো"]
+        "was doing, তই / তহঁত": "গৈ আছিলি"
+        "was doing, তুমি / তোমালোক": "গৈ আছিলা"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "গৈ আছিল"
+        "had done, used to, মই / আমি": ["গৈছিলোঁ", "গৈছিলো"]
+        "had done, used to, তই / তহঁত": "গৈছিলি"
+        "had done, used to, তুমি / তোমালোক": "গৈছিলা"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "গৈছিল"
+      readings:
+        "was doing, মই / আমি": ["goi asilu", "goi asilu"]
+        "was doing, তই / তহঁত": "goi asili"
+        "was doing, তুমি / তোমালোক": "goi asila"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "goi asil"
+        "had done, used to, মই / আমি": ["goisilu", "goisilu"]
+        "had done, used to, তই / তহঁত": "goisili"
+        "had done, used to, তুমি / তোমালোক": "goisila"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "goisil"
+    - lemma: "অহা"
+      key: oha
+      reading: "oha"
+      gloss: "to come"
+      forms:
+        "was doing, মই / আমি": ["আহি আছিলোঁ", "আহি আছিলো"]
+        "was doing, তই / তহঁত": "আহি আছিলি"
+        "was doing, তুমি / তোমালোক": "আহি আছিলা"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "আহি আছিল"
+        "had done, used to, মই / আমি": ["আহিছিলোঁ", "আহিছিলো"]
+        "had done, used to, তই / তহঁত": "আহিছিলি"
+        "had done, used to, তুমি / তোমালোক": "আহিছিলা"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "আহিছিল"
+      readings:
+        "was doing, মই / আমি": ["ahi asilu", "ahi asilu"]
+        "was doing, তই / তহঁত": "ahi asili"
+        "was doing, তুমি / তোমালোক": "ahi asila"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "ahi asil"
+        "had done, used to, মই / আমি": ["ahisilu", "ahisilu"]
+        "had done, used to, তই / তহঁত": "ahisili"
+        "had done, used to, তুমি / তোমালোক": "ahisila"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "ahisil"
+    - lemma: "খোৱা"
+      key: khuwa
+      reading: "khuwa"
+      gloss: "to eat; to drink"
+      forms:
+        "was doing, মই / আমি": ["খাই আছিলোঁ", "খাই আছিলো"]
+        "was doing, তই / তহঁত": "খাই আছিলি"
+        "was doing, তুমি / তোমালোক": "খাই আছিলা"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "খাই আছিল"
+        "had done, used to, মই / আমি": ["খাইছিলোঁ", "খাইছিলো"]
+        "had done, used to, তই / তহঁত": "খাইছিলি"
+        "had done, used to, তুমি / তোমালোক": "খাইছিলা"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "খাইছিল"
+      readings:
+        "was doing, মই / আমি": ["khai asilu", "khai asilu"]
+        "was doing, তই / তহঁত": "khai asili"
+        "was doing, তুমি / তোমালোক": "khai asila"
+        "was doing, আপুনি / সি / তাই / তেওঁ": "khai asil"
+        "had done, used to, মই / আমি": ["khaisilu", "khaisilu"]
+        "had done, used to, তই / তহঁত": "khaisili"
+        "had done, used to, তুমি / তোমালোক": "khaisila"
+        "had done, used to, আপুনি / সি / তাই / তেওঁ": "khaisil"

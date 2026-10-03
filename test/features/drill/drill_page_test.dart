@@ -417,7 +417,16 @@ void main() {
     usePhone(tester);
     // The first new card is a script's first letter: past its guide.
     final state = AppState.test();
-    for (final code in <String>['bn', 'hi', 'te', 'ja']) {
+    for (final code in <String>[
+      'as',
+      'bn',
+      'gu',
+      'hi',
+      'kn',
+      'mr',
+      'te',
+      'ja',
+    ]) {
       state.settings.markScriptGuideSeen(code);
     }
     await pumpDrill(tester, const DrillRequest.learnNew(1), state: state);
