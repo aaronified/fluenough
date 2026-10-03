@@ -38,6 +38,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._seed = ThemeSeed.forest,
     this._dynamicColour = false,
     this._highContrast = false,
+    this._pureBlack = false,
     this._cardTextScale = 1.0,
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
@@ -81,6 +82,7 @@ class SettingsNotifier extends ChangeNotifier {
   ThemeSeed _seed;
   bool _dynamicColour;
   bool _highContrast;
+  bool _pureBlack;
   double _cardTextScale;
   bool _reminder;
   TimeOfDay _reminderTime;
@@ -344,6 +346,11 @@ class SettingsNotifier extends ChangeNotifier {
   set highContrast(bool value) =>
       _set(_highContrast, value, (v) => _highContrast = v);
 
+  /// Black backgrounds whenever the app is dark: Dark, or System when the
+  /// phone is dark. For OLED screens. Light ignores it.
+  bool get pureBlack => _pureBlack;
+  set pureBlack(bool value) => _set(_pureBlack, value, (v) => _pureBlack = v);
+
   /// A multiplier on target text in drills, 0.8–1.4. Menus follow the phone's
   /// own font size instead.
   double get cardTextScale => _cardTextScale;
@@ -404,6 +411,7 @@ class SettingsNotifier extends ChangeNotifier {
     'seed': _seed.name,
     'dynamic_colour': '$_dynamicColour',
     'high_contrast': '$_highContrast',
+    'pure_black': '$_pureBlack',
     'card_text_scale': '$_cardTextScale',
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
@@ -474,6 +482,7 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('dynamic_colour', flag) case final v?) dynamicColour = v;
     if (pick('high_contrast', flag) case final v?) highContrast = v;
+    if (pick('pure_black', flag) case final v?) pureBlack = v;
     if (pick('card_text_scale', _parseFinite) case final v?) {
       cardTextScale = v;
     }
