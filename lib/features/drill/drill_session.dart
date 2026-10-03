@@ -200,12 +200,14 @@ class DrillSession extends ChangeNotifier {
 
   /// Whether this card can be typed as a transliteration (#47): a
   /// production, listening or grammar card with a reading, in a script that
-  /// needs one.
+  /// needs one. Not on a deck that teaches the alphabet itself, whose
+  /// prompts give the reading away ("k (ka)").
   bool get canTransliterate =>
       _typedModes.contains(item.mode) &&
       item.card is! NumberCard &&
       item.card.reading != null &&
-      deck.language.needsReading;
+      deck.language.needsReading &&
+      !_state.needsAlphabet(deck);
 
   static const Set<DrillMode> _typedModes = <DrillMode>{
     DrillMode.production,
