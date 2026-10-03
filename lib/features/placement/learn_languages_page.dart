@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/report_button.dart';
 import 'placement_page.dart';
 
 /// The languages the learner wants to learn (#117): asked on first launch,
@@ -164,6 +165,7 @@ class _LearnLanguagesPageState extends State<LearnLanguagesPage> {
       appBar: AppBar(
         title: Text(l10n.learnTitle),
         automaticallyImplyLeading: !widget.firstRun,
+        actions: const <Widget>[ReportButton()],
       ),
       body: body,
     );

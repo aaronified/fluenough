@@ -471,13 +471,19 @@ sees the same spelling everywhere and can answer in it (#47).
 
 - Lowercase ASCII letters only, with spaces and the sentence's own
   punctuation. No diacritics, no capitals, and no doubled vowels for length:
-  *thoda*, *kijiye*, not *thoDaa*, *kiijiye* or *thoḍā*.
+  *thora*, *kijiye*, not *thoRaa*, *kiijiye* or *thoṛā*.
 - Spelled as the word is said, not letter for letter: Hindi, Marathi and
   Gujarati drop the inherent vowel where speakers do (*kitne*, *samajh*);
   Bengali and Assamese write it as the *o* it is said as (*ami*, *bhalo*).
 - Consonants as people type them: *ch* for च, *chh* for छ, *sh* for श and ष,
-  *n* for ण, ञ and ङ, *r* for ड़, *z* for ज़, *f* for फ़; aspirates with *h*
-  (*kh*, *gh*, *th*, *dh*, *ph*, *bh*); retroflex and dental alike (*t*, *d*).
+  *n* for ण, ञ and ङ, *r* for ड़ and *rh* for ढ़, *z* for ज़, *f* for फ़;
+  aspirates with *h* (*kh*, *gh*, *th*, *dh*, *ph*, *bh*); retroflex and
+  dental alike (*t*, *d*).
+- A letter card for ङ or ञ on its own reads *nga* or *nya*, so that it
+  differs from न; words write *n*. The same holds for those letters in the
+  other Indic scripts.
+- A grammar row whose lemma is English, such as a demonstratives table's
+  "this, that", has no `reading`; its forms do.
 - A language's own common conventions win, such as Assamese *x* for স, শ
   and ষ (*Axom*). Its romanisation file says them in its `scheme`.
 
@@ -629,8 +635,8 @@ facts:
     tags: [script]
     text:
       en: "No Hindi word begins with ड़ or ढ़. These dotted letters only occur
-        inside or at the end of a word, as in सड़क (sadak, road) and पढ़ना
-        (padhna, to read)."
+        inside or at the end of a word, as in सड़क (sarak, road) and पढ़ना
+        (parhna, to read)."
   - id: hi-fact-002
     tags: [script, conjuncts]
     text:

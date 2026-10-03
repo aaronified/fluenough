@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../app/deck_catalog.dart';
-import '../../app/links.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/snack.dart';
+import '../../ui/widgets/report_button.dart';
 
 /// On a deck no native speaker has checked, tagged `unreviewed`: says so and
 /// asks speakers to report mistakes (#39). The Telugu decks carry it.
 ///
-/// The button opens the project's issues, or copies their address when
-/// nothing can, as the keyboard hint does.
+/// The button opens a report from this screen, as the bug icon does
+/// (ADR-0021), saying which deck it is about.
 class UnreviewedNotice extends StatelessWidget {
   const UnreviewedNotice({super.key, required this.entry});
 
@@ -49,11 +48,7 @@ class UnreviewedNotice extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => openLink(
-                    context,
-                    AppLinks.issues,
-                    copied: l10n.deckUnreviewedCopied,
-                  ),
+                  onPressed: () => ReportButton.open(context, detail: entry.id),
                   style: TextButton.styleFrom(
                     minimumSize: const Size(48, 40),
                     padding: EdgeInsets.zero,

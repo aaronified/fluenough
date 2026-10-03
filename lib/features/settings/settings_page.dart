@@ -75,6 +75,8 @@ class SettingsPage extends StatelessWidget {
                     _reminder(context, state),
                     const SizedBox(height: 20),
                     _data(context, state),
+                    const SizedBox(height: 20),
+                    _logs(context),
                     // Where the decks' texts come from (#98).
                     const SourcesSection(gap: 20),
                     const SizedBox(height: 20),
@@ -497,6 +499,24 @@ class SettingsPage extends StatelessWidget {
           title: l10n.settingsDeleteProfile,
           titleColor: Theme.of(context).colorScheme.error,
           feature: Feature.deleteProfile,
+          padding: _tallRow,
+        ),
+      ],
+    );
+  }
+
+  /// The app's own log, for reports (#162). Incoming: the app keeps none
+  /// yet.
+  Widget _logs(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return GroupedList.settings(
+      header: l10n.settingsSectionLogs,
+      children: <Widget>[
+        GroupedTile(
+          leading: const Icon(Icons.receipt_long_outlined),
+          title: l10n.settingsAppLog,
+          subtitle: l10n.settingsAppLogDesc,
+          feature: Feature.logs,
           padding: _tallRow,
         ),
       ],

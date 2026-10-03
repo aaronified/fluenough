@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 
 import '../core/data/course_path.dart';
+import '../core/feedback/report.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
@@ -115,6 +116,7 @@ class AppState extends ChangeNotifier {
     this.logFiles = const PickerLogFiles(),
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
+    this.reports = const NullReportSender(),
     this._releases = const NullReleaseCheck(),
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
@@ -159,6 +161,7 @@ class AppState extends ChangeNotifier {
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
     LinkOpener? links,
+    ReportSender reports = const NullReportSender(),
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
@@ -181,6 +184,7 @@ class AppState extends ChangeNotifier {
       logFiles: logFiles,
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
+      reports: reports,
       releases: releases,
       installer: installer,
       downloads: downloads,
@@ -217,6 +221,10 @@ class AppState extends ChangeNotifier {
 
   /// Opens links in the browser, or the app that handles them.
   final LinkOpener links;
+
+  /// Where a report from the bug icon goes (ADR-0021): the relay, or
+  /// nowhere in a build that was given none.
+  final ReportSender reports;
 
   /// Settings' "Check for updates", the check at launch, and installing
   /// what it finds (ADR-0017). Has its own notifier; what it finds is kept
