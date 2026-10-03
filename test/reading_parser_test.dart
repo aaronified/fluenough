@@ -149,7 +149,9 @@ void main() {
       'keeps a glossary as written, and its word must be in the passage',
       () {
         final passage = parse(readingFixtureYaml).passages.last;
-        final gloss = passage.glossary.single;
+        expect(passage.glossary, hasLength(2));
+        final gloss = passage.glossary.first;
+        expect(passage.glossary.last.modern, passage.glossary.last.word);
         expect(utf8.encode(gloss.word), utf8.encode('ক’রে'));
         expect(gloss.modern, 'করে');
         expect(gloss.reading, 'kore');

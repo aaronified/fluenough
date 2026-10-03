@@ -75,12 +75,18 @@ void main() {
       200,
     );
     expect(find.text(l10n.settingsSectionSources), findsOneWidget);
+    // The deck's own source names the book; a passage's page shows with
+    // the passage, not in Settings.
     final row = find.widgetWithText(
       GroupedTile,
-      '${l10n.settingsSourceLine(readingFixtureDeckSource, 'reading')}\n'
-      '${l10n.settingsSourceLine(readingFixtureSource, 'reading')}',
+      l10n.settingsSourceLine(readingFixtureDeckSource, 'reading'),
     );
     expect(row, findsOneWidget);
+    expect(
+      find.textContaining(readingFixtureSource),
+      findsNothing,
+      reason: 'a passage source is not a line of its own',
+    );
     expect(
       find.descendant(of: row, matching: find.text('Bengali')),
       findsOneWidget,

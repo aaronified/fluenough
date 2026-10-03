@@ -262,6 +262,35 @@ void main() {
       semantics.dispose();
     });
 
+    testWidgets('Show romanisation on the passage hides and shows its '
+        'readings, before and with the questions', (tester) async {
+      usePhone(tester);
+      final state = readingApp();
+      await pumpScreen(tester, DrillPage(request: read), state: state);
+      final l10n = l10nOf(tester);
+      final toggle = find.widgetWithText(FilterChip, l10n.settingsRomanisation);
+      expect(toggle, findsOneWidget);
+      expect(find.text('nomoshkar. koto dam?'), findsOneWidget);
+
+      await tester.tap(toggle);
+      await tester.pumpAndSettle();
+      expect(state.settings.showRomanisation, isFalse);
+      expect(find.text('nomoshkar. koto dam?'), findsNothing);
+
+      await tapText(tester, l10n.readingToQuestions);
+      expect(
+        toggle,
+        findsOneWidget,
+        reason: 'with the passage under the choices',
+      );
+      await tester.ensureVisible(toggle);
+      await tester.pumpAndSettle();
+      await tester.tap(toggle);
+      await tester.pumpAndSettle();
+      expect(state.settings.showRomanisation, isTrue);
+      expect(find.text('nomoshkar. koto dam?'), findsOneWidget);
+    });
+
     testWidgets('Words opens the glossary: the word as written, today\'s '
         'form, its reading with romanisation on, and its meaning', (
       tester,
@@ -291,6 +320,18 @@ void main() {
       }
       expect(find.text('kore'), findsOneWidget);
       expect(find.text('having done'), findsOneWidget);
+      // A word written the same today shows once, with no arrow to itself.
+      expect(
+        find.descendant(of: glossary, matching: find.text('বাড়িতে')),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(
+          of: glossary,
+          matching: find.byIcon(Icons.arrow_forward),
+        ),
+        findsOneWidget,
+      );
       expect(
         find.text('older spelling; the apostrophe marks a dropped ই'),
         findsOneWidget,

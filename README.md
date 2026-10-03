@@ -113,8 +113,7 @@ Most decks are written for Fluenough. Where a deck's text comes from
 elsewhere, the deck names the source in its `source` field, and the app shows
 it: under each passage, on the deck's page, and in Settings, under Sources.
 
-Bengali reading passages come from two books in the public domain, quoted
-letter for letter:
+The Bengali decks quote two books in the public domain, letter for letter:
 
 - *Sahaj Path*, part 1, by Rabindranath Tagore (1930), in the public domain:
   passages for reading.
