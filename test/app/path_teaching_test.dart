@@ -319,4 +319,37 @@ void main() {
       );
     },
   );
+
+  test('a deck whose reviews are due is not finished while a skill is still '
+      'new in it', () async {
+    final base = learning(<String>['hi']);
+    await base.load();
+    final market = base.deckById('hi-en-market')!;
+    // Every card seen in recognition three days ago, so due again today,
+    // and none yet in production.
+    final progress = MemoryProgress();
+    for (final card in market.cards) {
+      progress.record(
+        deckId: market.id,
+        cardId: card.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: base.now().subtract(const Duration(days: 3)),
+      );
+    }
+    base.dispose();
+    final state = learning(<String>['hi'], progress: progress);
+    addTearDown(state.dispose);
+    await state.load();
+    final entry = state.deckById(market.id)!;
+    expect(state.notStudiedIn(entry), greaterThan(0));
+    expect(state.isFinished(entry), isFalse);
+    expect(
+      state
+          .buildSession(DrillRequest.learnAnyway(market.id))
+          .items
+          .map((i) => i.mode),
+      contains(DrillMode.production),
+    );
+  });
 }

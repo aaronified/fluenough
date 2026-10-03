@@ -97,6 +97,22 @@ void main() {
     expect(replayed.events[4].before, isNull, reason: 'day 5 restarts');
   });
 
+  test('undo takes back only the latest reset', () {
+    final effects = LeechEffects([
+      act(LeechActionKind.reset, 1),
+      act(LeechActionKind.reset, 4),
+      act(LeechActionKind.undoReset, 5),
+    ]);
+    expect(effects.resetAt(pair), act(LeechActionKind.reset, 1).at);
+    expect(
+      LeechEffects([
+        act(LeechActionKind.reset, 1),
+        act(LeechActionKind.undoReset, 2),
+      ]).resetAt(pair),
+      isNull,
+    );
+  });
+
   test('set aside holds until the pair is brought back', () {
     expect(
       LeechEffects([act(LeechActionKind.setAside, 0)]).isSetAside(pair),

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
@@ -72,6 +74,8 @@ abstract final class GalleryFixtures {
       settings: settings,
       profiles: profiles,
       currentProfileId: currentProfileId,
+      // The same order of options in every screenshot.
+      random: Random(0),
     );
   }
 

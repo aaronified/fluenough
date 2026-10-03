@@ -21,26 +21,31 @@ class LeechAction {
 /// What a sequence of leech actions adds up to, for scheduling.
 ///
 /// A reset holds until it is undone, and the latest one counts: the pair's
-/// reviews before it are kept but no longer schedule it. A set-aside holds
+/// reviews before it are kept but no longer schedule it. Undo takes back
+/// only the latest reset, so an earlier one holds again. A set-aside holds
 /// until the pair is brought back, and keeps the pair out of every session.
 class LeechEffects {
   /// The effects of [actions], oldest first.
   factory LeechEffects(Iterable<LeechAction> actions) {
-    final resetAt = <ProgressKey, DateTime>{};
+    final resets = <ProgressKey, List<DateTime>>{};
     final setAside = <ProgressKey>{};
     for (final action in actions) {
       switch (action.kind) {
         case LeechActionKind.reset:
-          resetAt[action.key] = action.at;
+          (resets[action.key] ??= <DateTime>[]).add(action.at);
         case LeechActionKind.undoReset:
-          resetAt.remove(action.key);
+          final held = resets[action.key];
+          if (held != null && held.isNotEmpty) held.removeLast();
         case LeechActionKind.setAside:
           setAside.add(action.key);
         case LeechActionKind.bringBack:
           setAside.remove(action.key);
       }
     }
-    return LeechEffects._(resetAt, setAside);
+    return LeechEffects._(<ProgressKey, DateTime>{
+      for (final MapEntry(:key, :value) in resets.entries)
+        if (value.isNotEmpty) key: value.last,
+    }, setAside);
   }
 
   const LeechEffects._(this._resetAt, this._setAside);

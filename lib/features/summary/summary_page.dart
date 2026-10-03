@@ -86,7 +86,7 @@ class SummaryPage extends StatelessWidget {
                   ],
                   const SizedBox(height: 24),
                   Text(
-                    l10n.summaryNextDue(state.progress.dueTomorrow(now)),
+                    l10n.summaryNextDue(state.dueTomorrow()),
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodyMedium!.copyWith(
                       color: scheme.onSurfaceVariant,
