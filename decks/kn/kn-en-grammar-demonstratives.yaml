@@ -1,0 +1,88 @@
+schema: 1
+id: kn-en-grammar-demonstratives
+name: "This and that"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "ಈ and ಆ, and the words built on them: this one, here, this way, so much. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  slots: ["near: ಈ, ಇ-", "far: ಆ, ಅ-"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Words for near things start with ಇ- or ಈ-, words for far ones with ಅ- or ಆ-; 'like this' and 'like that' take an h: ಹೀಗೆ, ಹಾಗೆ. ಈ and ಆ stand before a noun and never change: ಈ ಪುಸ್ತಕ, this book; ಆ ಮನೆ, that house. The far words are also the everyday 'he', 'she', 'it' and 'they'."
+  entries:
+    - lemma: "this, that (before a noun)"
+      key: before-noun
+      gloss: "before a noun"
+      forms:
+        "near: ಈ, ಇ-": "ಈ"
+        "far: ಆ, ಅ-": "ಆ"
+    - lemma: "this one, that one (a thing)"
+      key: thing
+      gloss: "a thing"
+      forms:
+        "near: ಈ, ಇ-": "ಇದು"
+        "far: ಆ, ಅ-": "ಅದು"
+    - lemma: "these, those (things)"
+      key: things
+      gloss: "things"
+      forms:
+        "near: ಈ, ಇ-": "ಇವು"
+        "far: ಆ, ಅ-": "ಅವು"
+    - lemma: "this man, that man"
+      key: man
+      gloss: "a man"
+      forms:
+        "near: ಈ, ಇ-": "ಇವನು"
+        "far: ಆ, ಅ-": "ಅವನು"
+    - lemma: "this woman, that woman"
+      key: woman
+      gloss: "a woman"
+      forms:
+        "near: ಈ, ಇ-": "ಇವಳು"
+        "far: ಆ, ಅ-": "ಅವಳು"
+    - lemma: "these people, those people"
+      key: people
+      gloss: "people, or one person with respect"
+      forms:
+        "near: ಈ, ಇ-": "ಇವರು"
+        "far: ಆ, ಅ-": "ಅವರು"
+    - lemma: "here, there"
+      key: place
+      gloss: "place"
+      forms:
+        "near: ಈ, ಇ-": "ಇಲ್ಲಿ"
+        "far: ಆ, ಅ-": "ಅಲ್ಲಿ"
+    - lemma: "this way, that way"
+      key: direction
+      gloss: "direction"
+      forms:
+        "near: ಈ, ಇ-": ["ಈ ಕಡೆ", "ಈಕಡೆ"]
+        "far: ಆ, ಅ-": ["ಆ ಕಡೆ", "ಆಕಡೆ"]
+    - lemma: "like this, like that"
+      key: manner
+      gloss: "manner"
+      forms:
+        "near: ಈ, ಇ-": "ಹೀಗೆ"
+        "far: ಆ, ಅ-": "ಹಾಗೆ"
+    - lemma: "this much, that much"
+      key: amount
+      gloss: "amount"
+      forms:
+        "near: ಈ, ಇ-": "ಇಷ್ಟು"
+        "far: ಆ, ಅ-": "ಅಷ್ಟು"
+    - lemma: "now, then"
+      key: time
+      gloss: "time"
+      forms:
+        "near: ಈ, ಇ-": "ಈಗ"
+        "far: ಆ, ಅ-": "ಆಗ"
+    - lemma: "such as this, such as that"
+      key: kind
+      gloss: "kind"
+      forms:
+        "near: ಈ, ಇ-": ["ಇಂಥ", "ಇಂತಹ"]
+        "far: ಆ, ಅ-": ["ಅಂಥ", "ಅಂತಹ"]

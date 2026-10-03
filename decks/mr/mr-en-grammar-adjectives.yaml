@@ -1,0 +1,96 @@
+schema: 1
+id: mr-en-grammar-adjectives
+name: "Describing words"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Big, good, new: a describing word that ends in -आ agrees with its noun in three genders. Others never change. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Adjective agreement"
+  slot_name: "agreement"
+  slots: ["with a masculine noun", "with a feminine noun", "with a neuter noun, or a masculine plural", "with a feminine plural, or before an ending"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "A describing word in -आ changes with its noun: मोठा मुलगा, a big boy; मोठी मुलगी, a big girl; मोठे घर, a big house; मोठे मुलगे, big boys; मोठ्या मुली, big girls. Before a noun with an ending, every gender takes -्या: मोठ्या घरात, in a big house. A neuter plural takes -ई: मोठी घरे. Words that don't end in -आ never change: लाल (red), सुंदर (beautiful), छान (nice), गरम (hot), थंड (cold), महाग (expensive)."
+  entries:
+    - lemma: "मोठा"
+      key: mothaa
+      gloss: "big; older"
+      forms:
+        "with a masculine noun": "मोठा"
+        "with a feminine noun": "मोठी"
+        "with a neuter noun, or a masculine plural": "मोठे"
+        "with a feminine plural, or before an ending": "मोठ्या"
+    - lemma: "छोटा"
+      key: chhotaa
+      gloss: "small; little"
+      forms:
+        "with a masculine noun": "छोटा"
+        "with a feminine noun": "छोटी"
+        "with a neuter noun, or a masculine plural": "छोटे"
+        "with a feminine plural, or before an ending": "छोट्या"
+    - lemma: "चांगला"
+      key: chaanglaa
+      gloss: "good"
+      forms:
+        "with a masculine noun": "चांगला"
+        "with a feminine noun": "चांगली"
+        "with a neuter noun, or a masculine plural": "चांगले"
+        "with a feminine plural, or before an ending": "चांगल्या"
+    - lemma: "नवा"
+      key: navaa
+      gloss: "new"
+      forms:
+        "with a masculine noun": "नवा"
+        "with a feminine noun": "नवी"
+        "with a neuter noun, or a masculine plural": "नवे"
+        "with a feminine plural, or before an ending": "नव्या"
+    - lemma: "जुना"
+      key: junaa
+      gloss: "old (of things)"
+      forms:
+        "with a masculine noun": "जुना"
+        "with a feminine noun": "जुनी"
+        "with a neuter noun, or a masculine plural": "जुने"
+        "with a feminine plural, or before an ending": "जुन्या"
+    - lemma: "काळा"
+      key: kaalaa
+      gloss: "black"
+      forms:
+        "with a masculine noun": "काळा"
+        "with a feminine noun": "काळी"
+        "with a neuter noun, or a masculine plural": "काळे"
+        "with a feminine plural, or before an ending": "काळ्या"
+    - lemma: "पांढरा"
+      key: paandhraa
+      gloss: "white"
+      forms:
+        "with a masculine noun": "पांढरा"
+        "with a feminine noun": "पांढरी"
+        "with a neuter noun, or a masculine plural": "पांढरे"
+        "with a feminine plural, or before an ending": "पांढऱ्या"
+    - lemma: "पिवळा"
+      key: pivlaa
+      gloss: "yellow"
+      forms:
+        "with a masculine noun": "पिवळा"
+        "with a feminine noun": "पिवळी"
+        "with a neuter noun, or a masculine plural": "पिवळे"
+        "with a feminine plural, or before an ending": "पिवळ्या"
+    - lemma: "हिरवा"
+      key: hirvaa
+      gloss: "green"
+      forms:
+        "with a masculine noun": "हिरवा"
+        "with a feminine noun": "हिरवी"
+        "with a neuter noun, or a masculine plural": "हिरवे"
+        "with a feminine plural, or before an ending": "हिरव्या"
+    - lemma: "ताजा"
+      key: taajaa
+      gloss: "fresh"
+      forms:
+        "with a masculine noun": "ताजा"
+        "with a feminine noun": "ताजी"
+        "with a neuter noun, or a masculine plural": "ताजे"
+        "with a feminine plural, or before an ending": "ताज्या"

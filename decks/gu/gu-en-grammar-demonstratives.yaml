@@ -1,0 +1,76 @@
+schema: 1
+id: gu-en-grammar-demonstratives
+name: "This and that"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "આ and એ, and the words built on them: here and there, now and then, this much, like this. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  slots: ["near: આ, અ-", "far: એ, ત-"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Words for near things start with આ- or અ-; words for far ones with એ- or ત-, and most far words also have a form in તે-: એટલું or તેટલું, એવું or તેવું. આ and એ stand before a noun and never change: આ ઘર, this house; એ છોકરી, that girl. For something far off you can point at, there is also પેલું (pelun), 'that one over there', which agrees like an adjective."
+  entries:
+    - lemma: "this, that (before a noun)"
+      key: adj
+      gloss: "before a noun"
+      forms:
+        "near: આ, અ-": "આ"
+        "far: એ, ત-": ["એ", "તે"]
+    - lemma: "here, there"
+      key: place
+      gloss: "a place"
+      forms:
+        "near: આ, અ-": "અહીં"
+        "far: એ, ત-": "ત્યાં"
+    - lemma: "from here, from there"
+      key: from-place
+      gloss: "from a place"
+      forms:
+        "near: આ, અ-": "અહીંથી"
+        "far: એ, ત-": "ત્યાંથી"
+    - lemma: "now, then"
+      key: time
+      gloss: "a time"
+      forms:
+        "near: આ, અ-": "અત્યારે"
+        "far: એ, ત-": "ત્યારે"
+    - lemma: "this much, that much"
+      key: amount
+      gloss: "an amount"
+      forms:
+        "near: આ, અ-": "આટલું"
+        "far: એ, ત-": ["એટલું", "તેટલું"]
+    - lemma: "like this, like that"
+      key: kind
+      gloss: "a kind"
+      forms:
+        "near: આ, અ-": "આવું"
+        "far: એ, ત-": ["એવું", "તેવું"]
+    - lemma: "this way, that way"
+      key: manner
+      gloss: "a way of doing"
+      forms:
+        "near: આ, અ-": "આમ"
+        "far: એ, ત-": ["એમ", "તેમ"]
+    - lemma: "to this one, to that one"
+      key: to-one
+      gloss: "with -ને"
+      forms:
+        "near: આ, અ-": "આને"
+        "far: એ, ત-": ["એને", "તેને"]
+    - lemma: "of this one, of that one"
+      key: of-one
+      gloss: "with -નું, before a neuter noun"
+      forms:
+        "near: આ, અ-": "આનું"
+        "far: એ, ત-": ["એનું", "તેનું"]
+    - lemma: "in this, in that"
+      key: in-one
+      gloss: "with -માં"
+      forms:
+        "near: આ, અ-": "આમાં"
+        "far: એ, ત-": ["એમાં", "તેમાં"]

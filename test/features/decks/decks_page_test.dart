@@ -33,7 +33,7 @@ Finder tileOf(DeckEntry entry) =>
 /// A phone tall enough for the lazy list to build every bundled deck.
 void useTallPhone(WidgetTester tester) {
   usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 20000 * 3);
+  tester.view.physicalSize = const Size(390 * 3, 60000 * 3);
 }
 
 /// Taps [chip] after scrolling the chip row to it.
@@ -138,6 +138,9 @@ void main() {
         'hi-en-numbers-big',
         'bn-en-numbers-big',
         'te-en-numbers-big',
+        'mr-en-numbers-big',
+        'kn-en-numbers-big',
+        'gu-en-numbers-big',
       ]),
     );
     for (final id in rows) {
@@ -150,7 +153,7 @@ void main() {
       // Next in the list: only the list's gap between the two rows.
       expect(practice.top - deck.bottom, inInclusiveRange(0, 8), reason: id);
     }
-    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(3));
+    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(6));
 
     await tester.tap(
       find.byWidgetPredicate(

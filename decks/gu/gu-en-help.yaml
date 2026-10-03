@@ -1,0 +1,87 @@
+schema: 1
+id: gu-en-help
+name: "Help"
+kind: vocab
+theme: help
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Calling for help, feeling ill, losing your way or your wallet, and finding a doctor. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: gu-0600
+    target: "બચાવો!"
+    native: "Help! Save me!"
+    reading: "bachaavo!"
+    pos: "other"
+    notes: "The cry for help. To ask for a hand: મદદ કરો! (madad karo!)."
+  - id: gu-0601
+    target: "મદદ"
+    native: "help"
+    reading: "madad"
+    pos: "noun"
+    gender: "f"
+  - id: gu-0602
+    target: "પોલીસ"
+    native: "police"
+    reading: "poliis"
+    pos: "noun"
+    notes: "The emergency number in India is 112."
+  - ref: gu-0359
+    notes: "Doctors are addressed as ડૉક્ટર સાહેબ (doktar saaheb)."
+  - id: gu-0603
+    target: "હૉસ્પિટલ"
+    native: "hospital"
+    reading: "hospital"
+    alt_target: ["હોસ્પિટલ"]
+    pos: "noun"
+    gender: "f"
+  - id: gu-0604
+    target: "દવા"
+    native: "medicine"
+    reading: "davaa"
+    pos: "noun"
+    gender: "f"
+    notes: "A chemist's shop is a મેડિકલ સ્ટોર (medikal stor)."
+  - id: gu-0605
+    target: "મને સારું નથી લાગતું."
+    native: "I don't feel well."
+    reading: "mane saarun nathii laagtun."
+    pos: "phrase"
+    notes: "Literally 'to me it doesn't feel good'."
+  - id: gu-0606
+    target: "મારું માથું દુખે છે."
+    native: "I have a headache."
+    reading: "maarun maathun dukhe chhe."
+    pos: "phrase"
+    notes: "Literally 'my head hurts'. Any part of the body: મારું પેટ દુખે છે (pet), my stomach hurts."
+  - id: gu-0607
+    target: "મારું પાકીટ ખોવાઈ ગયું."
+    native: "I've lost my wallet."
+    reading: "maarun paakiit khovaaii gayun."
+    pos: "phrase"
+    notes: "Literally 'my wallet got lost'. A phone: મારો ફોન ખોવાઈ ગયો."
+  - id: gu-0608
+    target: "હું રસ્તો ભૂલી ગયો છું."
+    native: "I'm lost. (a man)"
+    reading: "hun rasto bhuulii gayo chhun."
+    pos: "phrase"
+    notes: "Literally 'I have forgotten the way'. A woman says ભૂલી ગઈ છું."
+  - id: gu-0609
+    target: "ધ્યાન રાખો!"
+    native: "Be careful! Look out!"
+    reading: "dhyaan raakho!"
+    pos: "phrase"
+    notes: "Also 'take care' on parting: તબિયતનું ધ્યાન રાખજો, look after your health."
+  - id: gu-0610
+    target: "ઍમ્બ્યુલન્સ બોલાવો."
+    native: "Call an ambulance."
+    reading: "embyulans bolaavo."
+    alt_target: ["એમ્બ્યુલન્સ બોલાવો."]
+    pos: "phrase"
+    notes: "બોલાવવું (bolaavvun), to call someone over."
+  - id: gu-0611
+    target: "ચોર!"
+    native: "Thief!"
+    reading: "chor!"
+    pos: "other"

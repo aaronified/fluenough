@@ -1,0 +1,94 @@
+schema: 1
+id: kn-en-groceries
+name: "Groceries"
+kind: vocab
+theme: groceries
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Vegetables, fish, meat, eggs and the staples. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: kn-0314
+    target: "ತರಕಾರಿ"
+    native: "vegetables"
+    reading: "tarakaari"
+    pos: "noun"
+  - id: kn-0315
+    target: "ಆಲೂಗಡ್ಡೆ"
+    native: "potato"
+    reading: "aaluugadde"
+    pos: "noun"
+  - id: kn-0316
+    target: "ಈರುಳ್ಳಿ"
+    native: "onion"
+    reading: "iirulli"
+    pos: "noun"
+  - id: kn-0317
+    target: "ಟೊಮೆಟೊ"
+    native: "tomato"
+    reading: "tometo"
+    alt_target: ["ಟೊಮ್ಯಾಟೋ", "ಟೊಮೇಟೊ"]
+    pos: "noun"
+    notes: "Spelled several ways: ಟೊಮ್ಯಾಟೋ, ಟೊಮೇಟೊ."
+  - id: kn-0318
+    target: "ಮೆಣಸಿನಕಾಯಿ"
+    native: "chilli"
+    reading: "menasinakaayi"
+    pos: "noun"
+    notes: "ಮೆಣಸು (menasu) is pepper, and ಕಾಯಿ (kaayi) an unripe fruit or pod."
+  - id: kn-0319
+    target: "ಬೆಳ್ಳುಳ್ಳಿ"
+    native: "garlic"
+    reading: "bellulli"
+    pos: "noun"
+    notes: "'White onion': ಬೆಳ್ (white) + ಉಳ್ಳಿ."
+  - id: kn-0320
+    target: "ಮೀನು"
+    native: "fish"
+    reading: "miinu"
+    pos: "noun"
+  - id: kn-0321
+    target: "ಕುರಿ ಮಾಂಸ"
+    native: "mutton (sheep or goat meat)"
+    reading: "kuri maamsa"
+    alt_target: ["ಮಟನ್"]
+    pos: "noun"
+    notes: "Most people simply say ಮಟನ್ (matan)."
+  - id: kn-0322
+    target: "ಕೋಳಿ"
+    native: "chicken; hen"
+    reading: "kooli"
+    alt_target: ["ಚಿಕನ್"]
+    pos: "noun"
+  - id: kn-0323
+    target: "ಮೊಟ್ಟೆ"
+    native: "egg"
+    reading: "motte"
+    pos: "noun"
+  - ref: kn-0120
+    notes: "Plain l. Compare ಹಾಳು (haalu), ruined, with the curled-back l."
+  - id: kn-0324
+    target: "ಅಕ್ಕಿ"
+    native: "rice (uncooked)"
+    reading: "akki"
+    pos: "noun"
+    notes: "Cooked rice is ಅನ್ನ (anna)."
+  - id: kn-0325
+    target: "ಬೇಳೆ"
+    native: "lentils; dal"
+    reading: "beele"
+    pos: "noun"
+    notes: "Long e, curled-back l. Compare ಬೆಲೆ (bele), price."
+  - id: kn-0326
+    target: "ಮೊಸರು"
+    native: "curd; yogurt"
+    reading: "mosaru"
+    pos: "noun"
+    notes: "A meal in Karnataka ends with rice and curd: ಮೊಸರನ್ನ (mosaranna)."
+  - id: kn-0327
+    target: "ಬಾಳೆಹಣ್ಣು"
+    native: "banana"
+    reading: "baalehannu"
+    pos: "noun"
+    notes: "ಹಣ್ಣು (hannu) is fruit."

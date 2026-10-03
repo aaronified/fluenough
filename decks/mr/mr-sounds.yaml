@@ -1,0 +1,26 @@
+# Marathi's sound contrasts: pairs of letters or signs that change a word,
+# for the speaking drill's feedback (#89) and the minimal-pair drill (#31).
+# Each id is the tag the language's sound-differences deck uses. See
+# ADR-0015 and docs/DECK-FORMAT.md. Short and long i and u are left out on
+# purpose: Marathi spells them apart but barely says them apart.
+schema: 1
+kind: sounds
+id: mr-sounds
+language: mr
+contrasts:
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["क", "ख"], ["ग", "घ"], ["च", "छ"], ["ज", "झ"], ["ट", "ठ"], ["ड", "ढ"], ["त", "थ"], ["द", "ध"], ["प", "फ"], ["ब", "भ"]]
+  - id: dental-retroflex
+    name: "the tongue on the teeth or curled back"
+    pairs: [["त", "ट"], ["थ", "ठ"], ["द", "ड"], ["ध", "ढ"], ["न", "ण"]]
+  - id: lateral
+    name: "the l on the teeth or curled back"
+    pairs: [["ल", "ळ"]]
+  - id: vowel-length
+    name: "a short a or a long aa"
+    within_word: true
+    pairs: [["", "ा"], ["अ", "आ"]]
+  - id: gemination
+    name: "a single or a double consonant"
+    pairs: [["क", "क्क"], ["च", "च्च"], ["ट", "ट्ट"], ["त", "त्त"], ["द", "द्द"], ["न", "न्न"], ["प", "प्प"], ["ब", "ब्ब"], ["म", "म्म"], ["ल", "ल्ल"], ["स", "स्स"]]

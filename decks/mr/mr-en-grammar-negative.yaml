@@ -1,0 +1,66 @@
+schema: 1
+id: mr-en-grammar-negative
+name: "Don't and won't"
+kind: grammar
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I don't go, she won't come: नाही after the verb, taking the person's ending. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Negative"
+  slot_name: "person"
+  slots: ["मी", "आम्ही", "तू", "तुम्ही", "तो / ती / ते", "ते / त्या (they)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "'Don't' is the stem with -त, then नाही: मी जात नाही, I don't go. 'Won't' is the -णार form, then नाही: मी जाणार नाही, I won't go. Neither shows gender. नाही takes -स for तू and -त for they: तू जात नाहीस, ते जात नाहीत. A request uses नको and नका instead: जाऊ नका, please don't go. The past negative is the past with नाही: मी गेलो नाही, I didn't go."
+  entries:
+    - lemma: "जाणे, don't"
+      key: jaat-naahii
+      gloss: "not to go, as a habit"
+      forms:
+        "मी": "जात नाही"
+        "आम्ही": "जात नाही"
+        "तू": "जात नाहीस"
+        "तुम्ही": "जात नाही"
+        "तो / ती / ते": "जात नाही"
+        "ते / त्या (they)": "जात नाहीत"
+    - lemma: "करणे, don't"
+      key: karat-naahii
+      gloss: "not to do, as a habit"
+      forms:
+        "मी": "करत नाही"
+        "आम्ही": "करत नाही"
+        "तू": "करत नाहीस"
+        "तुम्ही": "करत नाही"
+        "तो / ती / ते": "करत नाही"
+        "ते / त्या (they)": "करत नाहीत"
+    - lemma: "खाणे, don't"
+      key: khaat-naahii
+      gloss: "not to eat, as a habit"
+      forms:
+        "मी": "खात नाही"
+        "आम्ही": "खात नाही"
+        "तू": "खात नाहीस"
+        "तुम्ही": "खात नाही"
+        "तो / ती / ते": "खात नाही"
+        "ते / त्या (they)": "खात नाहीत"
+    - lemma: "जाणे, won't"
+      key: jaanaar-naahii
+      gloss: "not to go, later"
+      forms:
+        "मी": "जाणार नाही"
+        "आम्ही": "जाणार नाही"
+        "तू": "जाणार नाहीस"
+        "तुम्ही": "जाणार नाही"
+        "तो / ती / ते": "जाणार नाही"
+        "ते / त्या (they)": "जाणार नाहीत"
+    - lemma: "येणे, won't"
+      key: yenaar-naahii
+      gloss: "not to come, later"
+      forms:
+        "मी": "येणार नाही"
+        "आम्ही": "येणार नाही"
+        "तू": "येणार नाहीस"
+        "तुम्ही": "येणार नाही"
+        "तो / ती / ते": "येणार नाही"
+        "ते / त्या (they)": "येणार नाहीत"

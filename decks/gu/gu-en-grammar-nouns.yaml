@@ -1,0 +1,76 @@
+schema: 1
+id: gu-en-grammar-nouns
+name: "Nouns: plural and before an ending"
+kind: grammar
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "How a noun changes for the plural, and before an ending such as -માં, -ને or -નું. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  slots: ["plural", "before an ending (-માં, -ને, -નું)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "A masculine noun in -ઓ ends in -આ in the plural and before an ending: છોકરો, છોકરા, છોકરાને. A neuter noun in -ઉં ends in -આં in the plural and -આ before an ending: કેળું, કેળાં, કેળાનું. Other nouns add -ઓ for the plural and don't change before an ending. Many speakers add -ઓ to a plural that already shows it: છોકરાઓ."
+  entries:
+    - lemma: "છોકરો"
+      key: chhokro
+      gloss: "boy, m"
+      forms:
+        "plural": ["છોકરા", "છોકરાઓ"]
+        "before an ending (-માં, -ને, -નું)": "છોકરા"
+    - lemma: "રસ્તો"
+      key: rasto
+      gloss: "road, m"
+      forms:
+        "plural": ["રસ્તા", "રસ્તાઓ"]
+        "before an ending (-માં, -ને, -નું)": "રસ્તા"
+    - lemma: "કેળું"
+      key: kelun
+      gloss: "banana, n"
+      forms:
+        "plural": "કેળાં"
+        "before an ending (-માં, -ને, -નું)": "કેળા"
+    - lemma: "રસોડું"
+      key: rasodun
+      gloss: "kitchen, n"
+      forms:
+        "plural": "રસોડાં"
+        "before an ending (-માં, -ને, -નું)": "રસોડા"
+    - lemma: "ઘર"
+      key: ghar
+      gloss: "house, n"
+      forms:
+        "plural": ["ઘરો", "ઘર"]
+        "before an ending (-માં, -ને, -નું)": "ઘર"
+    - lemma: "માણસ"
+      key: maanas
+      gloss: "person, m"
+      forms:
+        "plural": "માણસો"
+        "before an ending (-માં, -ને, -નું)": "માણસ"
+    - lemma: "ભાઈ"
+      key: bhaaii
+      gloss: "brother, m"
+      forms:
+        "plural": ["ભાઈઓ", "ભાઈ"]
+        "before an ending (-માં, -ને, -નું)": "ભાઈ"
+    - lemma: "છોકરી"
+      key: chhokrii
+      gloss: "girl, f"
+      forms:
+        "plural": "છોકરીઓ"
+        "before an ending (-માં, -ને, -નું)": "છોકરી"
+    - lemma: "વાત"
+      key: vaat
+      gloss: "talk; a matter, f"
+      forms:
+        "plural": "વાતો"
+        "before an ending (-માં, -ને, -નું)": "વાત"
+    - lemma: "બારી"
+      key: baarii
+      gloss: "window, f"
+      forms:
+        "plural": "બારીઓ"
+        "before an ending (-માં, -ને, -નું)": "બારી"

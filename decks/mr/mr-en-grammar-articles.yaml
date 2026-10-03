@@ -1,0 +1,48 @@
+schema: 1
+id: mr-en-grammar-articles
+name: "No articles: a and the"
+kind: vocab
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Marathi has no 'a' or 'the'. How it says them anyway. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - id: mr-0384
+    target: "पुस्तक"
+    native: "book; a book; the book"
+    reading: "pustak"
+    pos: "noun"
+    gender: "n"
+    notes: "A bare noun is 'a book' or 'the book': context decides. पुस्तक टेबलावर आहे (pustak tebalaavar aahe), the book is on the table."
+  - ref: mr-0139
+    notes: "एक, 'one', serves for 'a' when the 'one' matters, as when something is new to the story: एक पुस्तक घेतले, I bought a book."
+  - id: mr-0385
+    target: "हे पुस्तक"
+    native: "this book; the book (here)"
+    reading: "he pustak"
+    pos: "phrase"
+    notes: "For 'the', point with this or that: हे पुस्तक, this book; ते पुस्तक, that book."
+  - id: mr-0386
+    target: "तो मुलगा"
+    native: "that boy; the boy"
+    reading: "to mulgaa"
+    pos: "phrase"
+    notes: "तो, 'that', often does the work of 'the' for someone already mentioned."
+  - id: mr-0387
+    target: "एक मुलगी"
+    native: "a girl; one girl"
+    reading: "ek mulgii"
+    pos: "phrase"
+  - id: mr-0388
+    target: "कोणीतरी"
+    native: "someone"
+    reading: "koniitarii"
+    pos: "other"
+    notes: "कोणी, who, with -तरी, 'some': दारावर कोणीतरी आहे (daaraavar koniitarii aahe), there's someone at the door."
+  - id: mr-0389
+    target: "काहीतरी"
+    native: "something"
+    reading: "kaahiitarii"
+    pos: "other"
+    notes: "काही, some, with -तरी: काहीतरी खा (kaahiitarii khaa), eat something."

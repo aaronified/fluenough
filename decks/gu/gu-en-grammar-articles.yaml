@@ -1,0 +1,41 @@
+schema: 1
+id: gu-en-grammar-articles
+name: "No articles: a and the"
+kind: vocab
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Gujarati has no 'a' or 'the'. How it says them anyway. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - id: gu-0385
+    target: "ચોપડી ટેબલ પર છે."
+    native: "The book is on the table."
+    reading: "chopdii tebal par chhe."
+    pos: "phrase"
+    notes: "No word for 'the' or 'a': the context says which. ચોપડી (chopdii) is the everyday word for a book."
+  - id: gu-0386
+    target: "એક છોકરો આવ્યો."
+    native: "A boy came."
+    reading: "ek chhokro aavyo."
+    pos: "phrase"
+    notes: "એક, 'one', can do the work of 'a'."
+  - ref: gu-0244
+    notes: "Without એક, the boy is one both of you know: 'the boy'. It can also be 'a boy'; the context tells."
+  - id: gu-0387
+    target: "એક ચા આપજો."
+    native: "One tea, please."
+    reading: "ek chaa aapjo."
+    pos: "phrase"
+  - id: gu-0388
+    target: "કોઈ આવ્યું છે."
+    native: "Someone has come."
+    reading: "koii aavyun chhe."
+    pos: "phrase"
+    notes: "કોઈ (koii) is 'someone; some, any'. An unknown someone takes the neuter verb. કંઈક (kaink) is 'something'."
+  - id: gu-0389
+    target: "કોઈ સારી દુકાન બતાવો."
+    native: "Show me a good shop."
+    reading: "koii saarii dukaan bataavo."
+    pos: "phrase"
+    notes: "કોઈ before a noun is 'some' or 'any': any good shop at all."

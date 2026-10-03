@@ -226,14 +226,14 @@ void main() {
     final starts = <String>[
       for (final unit in everything.pendingUnits) unit.first.id,
     ];
-    // Two units for each course, and Japanese's only one, hiragana.
-    // Bengali starts with its script.
+    // Two units for each of the seven courses with more than one, and
+    // Japanese's only one, hiragana. Bengali starts with its script.
     expect(
       starts,
       containsAll(<String>['bn-en-script-vowels', 'bn-en-script-vowel-signs']),
     );
     expect(starts, containsAll(<String>['es-en-core-100', 'ja-en-hiragana']));
-    expect(starts, hasLength(9));
+    expect(starts, hasLength(15));
   });
 
   test('a language is taught from the best-known language the learner speaks '

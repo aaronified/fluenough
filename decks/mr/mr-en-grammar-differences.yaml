@@ -1,0 +1,123 @@
+schema: 1
+id: mr-en-grammar-differences
+name: "How Marathi grammar differs from English"
+kind: vocab
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Before any theme: the verb last, endings for in, to and with written onto the noun, three genders and a verb that shows the speaker's, two yous, two wes, no articles, and how Marathi says have, not and questions. Not yet checked by a Marathi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: mr-0125
+    target: "मी भात खातो."
+    native: "I eat rice. (a man speaking)"
+    reading: "mii bhaat khaato."
+    alt_target: ["मी भात खाते."]
+    tags: ["grammar", "word-order"]
+    notes: "The verb comes last: subject, object, verb. Word for word, 'I rice eat'. A woman says खाते (khaate)."
+  - id: mr-0126
+    target: "तो डॉक्टर आहे."
+    native: "He is a doctor."
+    reading: "to doktar aahe."
+    tags: ["grammar", "word-order"]
+    notes: "आहे, 'is', comes last too: 'he doctor is'."
+  - id: mr-0127
+    target: "घरात"
+    native: "in the house"
+    reading: "gharaat"
+    tags: ["grammar", "case-endings"]
+    notes: "Marathi puts 'in' after the noun, as an ending, and writes it joined: घर (ghar, house) + -त, with an -आ- between."
+  - id: mr-0128
+    target: "मुंबईला"
+    native: "to Mumbai"
+    reading: "mumbaiilaa"
+    tags: ["grammar", "case-endings"]
+    notes: "'To' is the ending -ला: मुंबई (mumbaii) + -ला."
+  - id: mr-0129
+    target: "आईबरोबर"
+    native: "with mother"
+    reading: "aaiibarobar"
+    tags: ["grammar", "case-endings"]
+    notes: "'With' is -बरोबर, written joined too: आई (aaii, mother) + -बरोबर. Hindi writes such words apart; Marathi joins them."
+  - id: mr-0130
+    target: "मी आलो."
+    native: "I came. (a man speaking)"
+    reading: "mii aalo."
+    tags: ["grammar", "gender"]
+    notes: "The verb shows the speaker's gender, even for 'I': a man says आलो."
+  - id: mr-0131
+    target: "मी आले."
+    native: "I came. (a woman speaking)"
+    reading: "mii aale."
+    tags: ["grammar", "gender"]
+    notes: "A woman says आले. Learners who are women need these forms from the first day."
+  - id: mr-0132
+    target: "तो आला."
+    native: "He came."
+    reading: "to aalaa."
+    tags: ["grammar", "gender"]
+  - id: mr-0133
+    target: "ती आली."
+    native: "She came."
+    reading: "tii aalii."
+    tags: ["grammar", "gender"]
+  - id: mr-0134
+    target: "ते आले."
+    native: "It came."
+    reading: "te aale."
+    tags: ["grammar", "gender"]
+    notes: "Marathi has a third gender, neuter, for many things and for children: बाळ आले (baal aale), the baby came. ते is also 'they' and a respectful 'he'."
+  - id: mr-0135
+    target: "तू ये."
+    native: "Come! (to a friend)"
+    reading: "tuu ye."
+    tags: ["grammar", "two-yous"]
+    notes: "Two words for 'you': तू to a friend, a child or someone younger, and in many families to a mother."
+  - id: mr-0136
+    target: "तुम्ही या."
+    native: "Please come."
+    reading: "tumhii yaa."
+    tags: ["grammar", "two-yous"]
+    notes: "तुम्ही is the respectful 'you', and the plural, and its verb takes the plural: या, not ये."
+  - id: mr-0137
+    target: "आपण"
+    native: "we (you and I); you (very formal)"
+    reading: "aapan"
+    tags: ["grammar", "two-wes"]
+    notes: "Two words for 'we': आपण includes the person you're talking to. In formal speech it is also a very polite 'you'."
+  - id: mr-0138
+    target: "आम्ही"
+    native: "we (not you)"
+    reading: "aamhii"
+    tags: ["grammar", "two-wes"]
+    notes: "आम्ही leaves the person you're talking to out."
+  - id: mr-0139
+    target: "एक पुस्तक"
+    native: "a book; one book"
+    reading: "ek pustak"
+    tags: ["grammar", "articles"]
+    notes: "No word for 'the', and एक, 'one', serves for 'a' when it is needed."
+  - id: mr-0140
+    target: "माझ्याकडे पुस्तक आहे."
+    native: "I have a book."
+    reading: "maajhyaakade pustak aahe."
+    tags: ["grammar", "have"]
+    notes: "No verb 'have': 'with me a book is'. -कडे is 'at, towards, with'."
+  - id: mr-0141
+    target: "मी येणार नाही."
+    native: "I won't come."
+    reading: "mii yenaar naahii."
+    tags: ["grammar", "negation"]
+    notes: "नाही, 'not', comes after the verb: येणार is 'going to come'."
+  - id: mr-0142
+    target: "वेळ नाही."
+    native: "There's no time."
+    reading: "vel naahii."
+    tags: ["grammar", "negation"]
+    notes: "नाही is also 'there is not', the opposite of आहे."
+  - id: mr-0143
+    target: "तुम्ही येणार का?"
+    native: "Will you come?"
+    reading: "tumhii yenaar kaa?"
+    tags: ["grammar", "questions"]
+    notes: "A yes-or-no question adds का at the end, or simply rises in tone: तुम्ही येणार (you will come) becomes तुम्ही येणार का?"

@@ -1,0 +1,70 @@
+schema: 1
+id: kn-en-grammar-nouns
+name: "Nouns: plural and case"
+kind: grammar
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The plural, and the endings for 'in', 'to', 'from' and 'of', often joined by a y or an -ಇನ-. Not yet checked by a Kannada speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Noun endings"
+  slot_name: "form"
+  slots: ["plural", "in: -ಅಲ್ಲಿ", "to: -ಗೆ or -ಕ್ಕೆ", "from: -ಇಂದ", "of: -ಅ"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "-ಗಳು makes a plural. A noun in -e or -i joins its endings with a y: ಮನೆಯಲ್ಲಿ. A noun in -a takes -ದ- before them and -ಕ್ಕೆ for 'to': ಪುಸ್ತಕದಲ್ಲಿ, ಪುಸ್ತಕಕ್ಕೆ. Many nouns in -u take -ಇನ-: ಊರಿನಲ್ಲಿ. Where two forms are given, the second is everyday speech."
+  entries:
+    - lemma: "ಮನೆ"
+      key: mane
+      gloss: "house"
+      forms:
+        "plural": "ಮನೆಗಳು"
+        "in: -ಅಲ್ಲಿ": ["ಮನೆಯಲ್ಲಿ", "ಮನೇಲಿ"]
+        "to: -ಗೆ or -ಕ್ಕೆ": "ಮನೆಗೆ"
+        "from: -ಇಂದ": "ಮನೆಯಿಂದ"
+        "of: -ಅ": "ಮನೆಯ"
+    - lemma: "ಪುಸ್ತಕ"
+      key: pustaka
+      gloss: "book"
+      forms:
+        "plural": "ಪುಸ್ತಕಗಳು"
+        "in: -ಅಲ್ಲಿ": "ಪುಸ್ತಕದಲ್ಲಿ"
+        "to: -ಗೆ or -ಕ್ಕೆ": "ಪುಸ್ತಕಕ್ಕೆ"
+        "from: -ಇಂದ": "ಪುಸ್ತಕದಿಂದ"
+        "of: -ಅ": "ಪುಸ್ತಕದ"
+    - lemma: "ಅಂಗಡಿ"
+      key: angadi
+      gloss: "shop"
+      forms:
+        "plural": "ಅಂಗಡಿಗಳು"
+        "in: -ಅಲ್ಲಿ": ["ಅಂಗಡಿಯಲ್ಲಿ", "ಅಂಗಡೀಲಿ"]
+        "to: -ಗೆ or -ಕ್ಕೆ": "ಅಂಗಡಿಗೆ"
+        "from: -ಇಂದ": "ಅಂಗಡಿಯಿಂದ"
+        "of: -ಅ": "ಅಂಗಡಿಯ"
+    - lemma: "ಕೋಣೆ"
+      key: koone
+      gloss: "room"
+      forms:
+        "plural": "ಕೋಣೆಗಳು"
+        "in: -ಅಲ್ಲಿ": "ಕೋಣೆಯಲ್ಲಿ"
+        "to: -ಗೆ or -ಕ್ಕೆ": "ಕೋಣೆಗೆ"
+        "from: -ಇಂದ": "ಕೋಣೆಯಿಂದ"
+        "of: -ಅ": "ಕೋಣೆಯ"
+    - lemma: "ಬಸ್ಸು"
+      key: bassu
+      gloss: "bus"
+      forms:
+        "plural": "ಬಸ್ಸುಗಳು"
+        "in: -ಅಲ್ಲಿ": ["ಬಸ್ಸಿನಲ್ಲಿ", "ಬಸ್ಸಲ್ಲಿ"]
+        "to: -ಗೆ or -ಕ್ಕೆ": "ಬಸ್ಸಿಗೆ"
+        "from: -ಇಂದ": "ಬಸ್ಸಿನಿಂದ"
+        "of: -ಅ": "ಬಸ್ಸಿನ"
+    - lemma: "ಊರು"
+      key: uuru
+      gloss: "town"
+      forms:
+        "plural": "ಊರುಗಳು"
+        "in: -ಅಲ್ಲಿ": ["ಊರಿನಲ್ಲಿ", "ಊರಲ್ಲಿ"]
+        "to: -ಗೆ or -ಕ್ಕೆ": "ಊರಿಗೆ"
+        "from: -ಇಂದ": "ಊರಿನಿಂದ"
+        "of: -ಅ": "ಊರಿನ"
