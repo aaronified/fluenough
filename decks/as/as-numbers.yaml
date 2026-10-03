@@ -1,0 +1,64 @@
+# How Assamese spells a generated number (ADR-0011). Like Bengali and Hindi,
+# Assamese has a word of its own for each number from 21 to 99: পঁচিশ, 25,
+# is not বিশ পাঁচ. The decks teach 1 to 20, the tens and 25, so
+# tens_and_units is false, and only the numbers whose last two digits the
+# decks teach a word for are generated. The hundreds join into one word
+# (দুশ, 200); the thousands are two (তিনি হাজাৰ, 3,000), and 2,000 is also
+# said as one, দুহাজাৰ.
+schema: 1
+id: as-numbers
+name: "Assamese numbers"
+kind: numbers
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+license: CC0-1.0
+description: "How Assamese spells a generated number from the words its number decks teach (ADR-0011). Not yet checked by an Assamese speaker: please report any mistake."
+tens_and_units: false
+words:
+  1: "এক"
+  2: ["দুই", "দু"]
+  3: "তিনি"
+  4: "চাৰি"
+  5: "পাঁচ"
+  6: "ছয়"
+  7: "সাত"
+  8: "আঠ"
+  9: "ন"
+  10: "দহ"
+  11: "এঘাৰ"
+  12: "বাৰ"
+  13: "তেৰ"
+  14: "চৈধ্য"
+  15: "পোন্ধৰ"
+  16: "ষোল্ল"
+  17: "সোতৰ"
+  18: "ওঠৰ"
+  19: "ঊনৈশ"
+  20: "বিশ"
+  25: "পঁচিশ"
+  30: "ত্ৰিশ"
+  40: "চল্লিশ"
+  50: "পঞ্চাশ"
+  60: "ষাঠি"
+  70: "সত্তৰ"
+  80: "আশী"
+  90: "নব্বৈ"
+hundreds:
+  1: "এশ"
+  2: "দুশ"
+  3: "তিনিশ"
+  4: "চাৰিশ"
+  5: "পাঁচশ"
+  6: "ছশ"
+  7: "সাতশ"
+  8: "আঠশ"
+  9: "নশ"
+thousands:
+  1: ["এক হাজাৰ", "হাজাৰ"]
+  2: ["দুহাজাৰ", "দুই হাজাৰ"]
+  3: "তিনি হাজাৰ"
+  4: "চাৰি হাজাৰ"
+  5: "পাঁচ হাজাৰ"
+  6: "ছয় হাজাৰ"
+  7: "সাত হাজাৰ"
+  8: "আঠ হাজাৰ"
+  9: "ন হাজাৰ"

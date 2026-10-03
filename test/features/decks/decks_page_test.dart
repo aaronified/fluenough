@@ -141,6 +141,7 @@ void main() {
         'mr-en-numbers-big',
         'kn-en-numbers-big',
         'gu-en-numbers-big',
+        'as-en-numbers-big',
       ]),
     );
     for (final id in rows) {
@@ -153,7 +154,7 @@ void main() {
       // Next in the list: only the list's gap between the two rows.
       expect(practice.top - deck.bottom, inInclusiveRange(0, 8), reason: id);
     }
-    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(6));
+    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(7));
 
     await tester.tap(
       find.byWidgetPredicate(

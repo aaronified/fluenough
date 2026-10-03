@@ -1,0 +1,160 @@
+schema: 1
+id: as-en-grammar-irregular
+name: "Irregular verbs"
+kind: grammar
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The common verbs whose stem changes from tense to tense. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  slots: ["present, মই", "past, মই", "future, মই", "request, তুমি", "request, আপুনি"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "A stem that ends in a vowel changes it: খা- gives খাওঁ, খালোঁ, খাম, and with তুমি খোৱা; ক- gives কওঁ, ক'লোঁ and কোৱা. যোৱা takes গ'- in the past: গ'লোঁ, I went. The verb noun, the form a dictionary lists, often changes its vowel too: থাক-, stay, gives থকা; আহ-, come, gives অহা. A request to আপুনি ends in -ক or -ওক: আহক, বহক, খাওক. The ending -ওঁ is also written -ো, without ঁ, and both are accepted."
+  entries:
+    - lemma: "যোৱা"
+      key: juwa
+      reading: "juwa"
+      gloss: "to go"
+      forms:
+        "present, মই": ["যাওঁ", "যাও"]
+        "past, মই": ["গ'লোঁ", "গ'লো"]
+        "future, মই": "যাম"
+        "request, তুমি": "যোৱা"
+        "request, আপুনি": "যাওক"
+      readings:
+        "present, মই": ["jau", "jau"]
+        "past, মই": ["golu", "golu"]
+        "future, মই": "jam"
+        "request, তুমি": "juwa"
+        "request, আপুনি": "jauk"
+    - lemma: "অহা"
+      key: oha
+      reading: "oha"
+      gloss: "to come"
+      forms:
+        "present, মই": ["আহোঁ", "আহো"]
+        "past, মই": ["আহিলোঁ", "আহিলো"]
+        "future, মই": "আহিম"
+        "request, তুমি": "আহা"
+        "request, আপুনি": "আহক"
+      readings:
+        "present, মই": ["ahu", "ahu"]
+        "past, মই": ["ahilu", "ahilu"]
+        "future, মই": "ahim"
+        "request, তুমি": "aha"
+        "request, আপুনি": "ahok"
+    - lemma: "খোৱা"
+      key: khuwa
+      reading: "khuwa"
+      gloss: "to eat; to drink"
+      forms:
+        "present, মই": ["খাওঁ", "খাও"]
+        "past, মই": ["খালোঁ", "খালো"]
+        "future, মই": "খাম"
+        "request, তুমি": "খোৱা"
+        "request, আপুনি": "খাওক"
+      readings:
+        "present, মই": ["khau", "khau"]
+        "past, মই": ["khalu", "khalu"]
+        "future, মই": "kham"
+        "request, তুমি": "khuwa"
+        "request, আপুনি": "khauk"
+    - lemma: "দিয়া"
+      key: diya
+      reading: "diya"
+      gloss: "to give"
+      forms:
+        "present, মই": ["দিওঁ", "দিও"]
+        "past, মই": ["দিলোঁ", "দিলো"]
+        "future, মই": "দিম"
+        "request, তুমি": "দিয়া"
+        "request, আপুনি": "দিয়ক"
+      readings:
+        "present, মই": ["diu", "diu"]
+        "past, মই": ["dilu", "dilu"]
+        "future, মই": "dim"
+        "request, তুমি": "diya"
+        "request, আপুনি": "diyok"
+    - lemma: "লোৱা"
+      key: luwa
+      reading: "luwa"
+      gloss: "to take"
+      forms:
+        "present, মই": ["লওঁ", "লও"]
+        "past, মই": ["ল'লোঁ", "ল'লো"]
+        "future, মই": "ল'ম"
+        "request, তুমি": "লোৱা"
+        "request, আপুনি": "লওক"
+      readings:
+        "present, মই": ["lou", "lou"]
+        "past, মই": ["lolu", "lolu"]
+        "future, মই": "lom"
+        "request, তুমি": "luwa"
+        "request, আপুনি": "louk"
+    - lemma: "কোৱা"
+      key: kuwa
+      reading: "kuwa"
+      gloss: "to say"
+      forms:
+        "present, মই": ["কওঁ", "কও"]
+        "past, মই": ["ক'লোঁ", "ক'লো"]
+        "future, মই": "ক'ম"
+        "request, তুমি": "কোৱা"
+        "request, আপুনি": "কওক"
+      readings:
+        "present, মই": ["kou", "kou"]
+        "past, মই": ["kolu", "kolu"]
+        "future, মই": "kom"
+        "request, তুমি": "kuwa"
+        "request, আপুনি": "kouk"
+    - lemma: "হোৱা"
+      key: huwa
+      reading: "huwa"
+      gloss: "to be; to become"
+      forms:
+        "present, মই": ["হওঁ", "হও"]
+        "past, মই": ["হ'লোঁ", "হ'লো"]
+        "future, মই": "হ'ম"
+        "request, তুমি": "হোৱা"
+        "request, আপুনি": "হওক"
+      readings:
+        "present, মই": ["hou", "hou"]
+        "past, মই": ["holu", "holu"]
+        "future, মই": "hom"
+        "request, তুমি": "huwa"
+        "request, আপুনি": "houk"
+    - lemma: "চোৱা"
+      key: suwa
+      reading: "suwa"
+      gloss: "to look; to watch"
+      forms:
+        "present, মই": ["চাওঁ", "চাও"]
+        "past, মই": ["চালোঁ", "চালো"]
+        "future, মই": "চাম"
+        "request, তুমি": "চোৱা"
+        "request, আপুনি": "চাওক"
+      readings:
+        "present, মই": ["sau", "sau"]
+        "past, মই": ["salu", "salu"]
+        "future, মই": "sam"
+        "request, তুমি": "suwa"
+        "request, আপুনি": "sauk"
+    - lemma: "থকা"
+      key: thoka
+      reading: "thoka"
+      gloss: "to stay; to live"
+      forms:
+        "present, মই": ["থাকোঁ", "থাকো"]
+        "past, মই": ["থাকিলোঁ", "থাকিলো"]
+        "future, মই": "থাকিম"
+        "request, তুমি": "থাকা"
+        "request, আপুনি": "থাকক"
+      readings:
+        "present, মই": ["thaku", "thaku"]
+        "past, মই": ["thakilu", "thakilu"]
+        "future, মই": "thakim"
+        "request, তুমি": "thaka"
+        "request, আপুনি": "thakok"

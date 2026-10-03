@@ -21,6 +21,7 @@ decks/
   mr/  mr-en-first-words.yaml     the same, for Marathi; not yet checked by a Marathi speaker
   kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker
   gu/  gu-en-first-words.yaml     the same, for Gujarati; not yet checked by a Gujarati speaker
+  as/  as-en-first-words.yaml     the same, for Assamese; not yet checked by an Assamese speaker
   themes.yaml
 ```
 
@@ -97,7 +98,7 @@ Bengali differs in two ways, and its readings follow how it is said:
 Tag a deck `unreviewed` when no native speaker has checked it. The app then
 says so on the deck's screen and asks speakers to report mistakes, and the
 deck's `description` should say so too. The Telugu decks carry it (#39), and
-so do the Marathi, Kannada and Gujarati ones.
+so do the Marathi, Kannada, Gujarati and Assamese ones.
 
 ## Two rules that matter more than the rest
 
