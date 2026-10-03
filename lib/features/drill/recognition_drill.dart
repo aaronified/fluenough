@@ -51,6 +51,7 @@ class RecognitionDrill extends StatelessWidget {
           : l10n.numbersPracticeTitle,
       position: session.position,
       total: session.total,
+      reportDetail: '${session.item.card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
       card: <Widget>[

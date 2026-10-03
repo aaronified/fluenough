@@ -147,11 +147,17 @@ jobs:
 
       # versionName is the tag without its "v"; the guard above has already
       # checked its shape. versionCode is the run number: see the top.
+      # REPORT_URL is the report relay's address (ADR-0021), a repository
+      # variable rather than a secret: the relay holds the token. Unset, the
+      # app's bug icon says reports cannot be sent.
       - name: Build the release APK
+        env:
+          REPORT_URL: ${{ vars.REPORT_URL }}
         run: |
           flutter build apk --release \
             --build-name="${GITHUB_REF_NAME#v}" \
-            --build-number=${{ github.run_number }}
+            --build-number=${{ github.run_number }} \
+            --dart-define=REPORT_URL="$REPORT_URL"
 
       # If AGP ever ignored the injected properties, the build above would
       # still succeed, quietly signed with the debug key. An APK like that

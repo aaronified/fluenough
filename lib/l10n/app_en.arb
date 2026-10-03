@@ -906,10 +906,6 @@
   "@deckUnreviewedReport": {
     "description": "Button under the unchecked-deck notice. It opens the page where mistakes are reported, in the browser."
   },
-  "deckUnreviewedCopied": "Couldn’t open the page for reporting mistakes, so its link is copied.",
-  "@deckUnreviewedCopied": {
-    "description": "SnackBar when nothing on the phone could open the page for reporting mistakes, so its address was copied instead."
-  },
   "deckSetUpVoice": "Set up",
   "@deckSetUpVoice": {
     "description": "Button that opens Voices, beside a skill that needs one."
@@ -1077,6 +1073,86 @@
         "example": "My words"
       }
     }
+  },
+  "reportOpen": "Report a problem or idea",
+  "@reportOpen": {
+    "description": "Tooltip of the bug icon on every screen, which opens a report with a screenshot of that screen."
+  },
+  "reportTitle": "Report a problem or idea",
+  "@reportTitle": {
+    "description": "Title of the report screen."
+  },
+  "reportKindGroup": "What kind of report?",
+  "@reportKindGroup": {
+    "description": "Accessibility label of the bug / feature / suggestion choice."
+  },
+  "reportKindBug": "Bug",
+  "@reportKindBug": {
+    "description": "A report that something is wrong."
+  },
+  "reportKindFeature": "Feature",
+  "@reportKindFeature": {
+    "description": "A report asking for something new."
+  },
+  "reportKindSuggestion": "Suggestion",
+  "@reportKindSuggestion": {
+    "description": "A report suggesting a change."
+  },
+  "reportTitleLabel": "Title",
+  "@reportTitleLabel": {
+    "description": "Label of the report's one-line title."
+  },
+  "reportTitleMissing": "Give it a title",
+  "@reportTitleMissing": {
+    "description": "Shown when Send is tapped with no title."
+  },
+  "reportDetailsLabel": "Details",
+  "@reportDetailsLabel": {
+    "description": "Label of the report's longer text."
+  },
+  "reportDetailsHint": "What did you do, and what happened? Or what would help?",
+  "@reportDetailsHint": {
+    "description": "Hint in the report's details field."
+  },
+  "reportScreenshot": "Include a screenshot of this screen",
+  "@reportScreenshot": {
+    "description": "Checkbox: send the picture of the screen the report was raised on."
+  },
+  "reportScreenshotPreview": "Screenshot to send",
+  "@reportScreenshotPreview": {
+    "description": "Accessibility label of the screenshot preview."
+  },
+  "reportPublic": "Reports are public on GitHub, screenshots included. Leave out anything private.",
+  "@reportPublic": {
+    "description": "Warning above Send."
+  },
+  "reportAlsoSent": "Also sent: the app’s version, your phone’s system version, this screen and the languages you learn.",
+  "@reportAlsoSent": {
+    "description": "What the app adds to a report, above Send."
+  },
+  "reportSend": "Send",
+  "@reportSend": {
+    "description": "Button that sends the report."
+  },
+  "reportSending": "Sending…",
+  "@reportSending": {
+    "description": "The Send button while the report is being sent."
+  },
+  "reportSent": "Sent. Thank you!",
+  "@reportSent": {
+    "description": "SnackBar after a report is sent."
+  },
+  "reportNotSetUp": "This version of the app can’t send reports.",
+  "@reportNotSetUp": {
+    "description": "Shown when the build has no report service."
+  },
+  "reportOffline": "Couldn’t reach the report service. Check your connection and try again.",
+  "@reportOffline": {
+    "description": "Shown when sending a report fails for want of a connection."
+  },
+  "reportRefused": "The report service turned this down. Try a shorter report, or try again later.",
+  "@reportRefused": {
+    "description": "Shown when the report service refuses a report."
   },
   "importTitle": "Add a deck",
   "@importTitle": {
