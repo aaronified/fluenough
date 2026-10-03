@@ -219,6 +219,33 @@ void main() {
     ]);
   });
 
+  testWidgets('a search finds a theme within a language, word by word', (
+    tester,
+  ) async {
+    useTallPhone(tester);
+    final state = await pumpDecks(tester);
+    await tester.enterText(find.byType(SearchBar), 'hindi market');
+    await tester.pumpAndSettle();
+    final shown = <String>{
+      for (final tile in tester.widgetList<DeckTile>(find.byType(DeckTile)))
+        tile.entry.id,
+    };
+    expect(shown, <String>{
+      'hi-en-market',
+      'hi-en-grammar-nouns',
+      'hi-en-grammar-articles',
+    });
+    expect(state.deckById('bn-en-market'), isNotNull);
+
+    await tester.enterText(find.byType(SearchBar), 'market');
+    await tester.pumpAndSettle();
+    final everyMarket = <String>{
+      for (final tile in tester.widgetList<DeckTile>(find.byType(DeckTile)))
+        tile.entry.id,
+    };
+    expect(everyMarket, containsAll(<String>['hi-en-market', 'bn-en-market']));
+  });
+
   testWidgets('a deck in a language the profile does not learn says Start', (
     tester,
   ) async {

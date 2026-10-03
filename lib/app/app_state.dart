@@ -270,6 +270,26 @@ class AppState extends ChangeNotifier {
   List<DeckTheme> get themes => _catalog.themes;
   DeckTheme? themeOf(DeckEntry entry) => _catalog.themeById(entry.deck.theme);
 
+  /// The theme each deck is taught under, by deck id: its own, or for a deck
+  /// with none, such as grammar, that of a theme deck in its unit of the
+  /// course's path. The Decks tab searches by it.
+  Map<String, DeckTheme> get themesByDeck {
+    final out = <String, DeckTheme>{};
+    for (final code in <String>{for (final e in decks) e.language.code}) {
+      for (final unit in courseUnits(code)) {
+        final theme = unit.map(themeOf).nonNulls.firstOrNull;
+        if (theme == null) continue;
+        for (final entry in unit) {
+          out[entry.id] = theme;
+        }
+      }
+    }
+    for (final entry in decks) {
+      if (themeOf(entry) case final own?) out[entry.id] = own;
+    }
+    return out;
+  }
+
   /// Today's fact for each language the profile learns that has facts
   /// (#48), with its text in each language the learner speaks, best known
   /// first. Choosing one records it as shown today, after this call, so
@@ -679,6 +699,38 @@ class AppState extends ChangeNotifier {
 
   /// New pairs today may still introduce: the daily cap less those already
   /// introduced.
+  /// New pairs introduced today in the language with [code]: a card id
+  /// begins with its language (ADR-0018).
+  int _newTodayIn(String code) {
+    final today = now();
+    return progress.log
+        .where(
+          (e) =>
+              e.wasNew &&
+              isSameDay(e.at, today) &&
+              e.cardId.startsWith('$code-'),
+        )
+        .length;
+  }
+
+  /// The languages with something to do in Today's session, each its own
+  /// session (`DrillRequest.today(language:)`), in the order the learner
+  /// chose to learn them, then the decks' order.
+  List<LanguageInfo> get todayLanguages {
+    final all = <String, LanguageInfo>{
+      for (final entry in profileDecks) entry.language.code: entry.language,
+    };
+    final chosen = settings.learningLanguages;
+    return <LanguageInfo>[
+      for (final code in <String>[
+        ...chosen.where(all.containsKey),
+        ...all.keys.where((code) => !chosen.contains(code)),
+      ])
+        if (buildSession(DrillRequest.today(language: code)).isNotEmpty)
+          all[code]!,
+    ];
+  }
+
   int get newCardsLeftToday {
     final left = settings.newCardsPerDay - progress.newIntroducedOn(now());
     return left < 0 ? 0 : left;
@@ -693,8 +745,12 @@ class AppState extends ChangeNotifier {
   /// hour and does not make a deck finished, so [notStudiedIn] ignores it.
   SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
     final ids = request.deckIds;
+    final language = request.language;
     final decks = ids == null
-        ? profileDecks
+        ? <DeckEntry>[
+            for (final entry in profileDecks)
+              if (language == null || entry.language.code == language) entry,
+          ]
         : <DeckEntry>[
             for (final entry in this.decks)
               if (ids.contains(entry.id)) entry,
@@ -774,18 +830,44 @@ class AppState extends ChangeNotifier {
           unit,
         );
       }
-      final blocks = <List<SessionItem>>[
-        for (final units in byLanguage.values)
-          queueOf(
-            tagged(_alternating(units)),
-            newCardLimit: newLimit,
-            canIntroduce: (card) =>
-                units.any((unit) => unit.any((e) => e.id == card.deckId)),
-          ).fresh,
-      ];
+      List<SessionItem> freshIn(String code, int limit) {
+        final units = byLanguage[code]!;
+        return queueOf(
+          tagged(_alternating(units)),
+          newCardLimit: limit,
+          canIntroduce: (card) =>
+              units.any((unit) => unit.any((e) => e.id == card.deckId)),
+        ).fresh;
+      }
+
+      final List<SessionItem> fresh;
+      if (language == null) {
+        fresh = SessionQueue.fairShares(<List<SessionItem>>[
+          for (final code in byLanguage.keys) freshIn(code, newLimit),
+        ], newLimit);
+      } else if (!byLanguage.containsKey(language)) {
+        fresh = const <SessionItem>[];
+      } else {
+        // One language's share of the whole day, less what it has had
+        // today, so that finishing one language first does not shrink the
+        // next one's share.
+        final day = settings.newCardsPerDay;
+        final codes = byLanguage.keys.toList();
+        final had = <int>[for (final code in codes) _newTodayIn(code)];
+        final shares = SessionQueue.shareCounts(<int>[
+          for (final (i, code) in codes.indexed)
+            had[i] + freshIn(code, day).length,
+        ], day);
+        final i = codes.indexOf(language);
+        final left = shares[i] - had[i];
+        fresh = SessionQueue.takeWhole(
+          freshIn(language, day),
+          left < newLimit ? left : newLimit,
+        );
+      }
       queue = SessionQueue.of(
         due: queueOf(cards, newCardLimit: 0).due,
-        fresh: SessionQueue.fairShares(blocks, newLimit),
+        fresh: fresh,
       );
     } else {
       queue = queueOf(cards, newCardLimit: newLimit);
