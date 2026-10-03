@@ -1,0 +1,142 @@
+schema: 1
+id: as-en-grammar-demonstratives
+name: "This and that"
+kind: grammar
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "এই and সেই, and the words built on them: this one, here, like this, so much. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  slots: ["near: এই, ই-", "far: সেই, সি-, ত-"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Words for near things start with এ- or ই-, words for far ones with সে-, সি-, তে- or ত-. এই and সেই stand before a noun and never change, and the noun keeps its classifier: এই কিতাপখন, this book; সেই ঘৰটো, that house. For something far off and in sight, ঐ (oi) is also 'that': ঐটো, that one over there."
+  entries:
+    - lemma: "this, that"
+      key: adj
+      gloss: "before a noun"
+      forms:
+        "near: এই, ই-": "এই"
+        "far: সেই, সি-, ত-": "সেই"
+      readings:
+        "near: এই, ই-": "ei"
+        "far: সেই, সি-, ত-": "xei"
+    - lemma: "this one, that one"
+      key: thing
+      gloss: "a thing"
+      forms:
+        "near: এই, ই-": "এইটো"
+        "far: সেই, সি-, ত-": "সেইটো"
+      readings:
+        "near: এই, ই-": "eitu"
+        "far: সেই, সি-, ত-": "xeitu"
+    - lemma: "these, those"
+      key: things
+      gloss: "things"
+      forms:
+        "near: এই, ই-": "এইবোৰ"
+        "far: সেই, সি-, ত-": "সেইবোৰ"
+      readings:
+        "near: এই, ই-": "eibur"
+        "far: সেই, সি-, ত-": "xeibur"
+    - lemma: "he"
+      key: man
+      gloss: "this man, that man"
+      forms:
+        "near: এই, ই-": "ই"
+        "far: সেই, সি-, ত-": "সি"
+      readings:
+        "near: এই, ই-": "i"
+        "far: সেই, সি-, ত-": "xi"
+    - lemma: "she"
+      key: woman
+      gloss: "this woman, that woman"
+      forms:
+        "near: এই, ই-": "এই"
+        "far: সেই, সি-, ত-": "তাই"
+      readings:
+        "near: এই, ই-": "ei"
+        "far: সেই, সি-, ত-": "tai"
+    - lemma: "he or she, respectful"
+      key: resp
+      gloss: "this person, that person"
+      forms:
+        "near: এই, ই-": "এওঁ"
+        "far: সেই, সি-, ত-": "তেওঁ"
+      readings:
+        "near: এই, ই-": "eu"
+        "far: সেই, সি-, ত-": "teu"
+    - lemma: "they"
+      key: people
+      gloss: "these people, those people"
+      forms:
+        "near: এই, ই-": "ইহঁত"
+        "far: সেই, সি-, ত-": "সিহঁত"
+      readings:
+        "near: এই, ই-": "ihot"
+        "far: সেই, সি-, ত-": "xihot"
+    - lemma: "here, there"
+      key: place
+      gloss: "a place"
+      forms:
+        "near: এই, ই-": "ইয়াত"
+        "far: সেই, সি-, ত-": "তাত"
+      readings:
+        "near: এই, ই-": "iyat"
+        "far: সেই, সি-, ত-": "tat"
+    - lemma: "to here, to there"
+      key: toward
+      gloss: "going towards a place"
+      forms:
+        "near: এই, ই-": "ইয়ালৈ"
+        "far: সেই, সি-, ত-": "তালৈ"
+      readings:
+        "near: এই, ই-": "iyaloi"
+        "far: সেই, সি-, ত-": "taloi"
+    - lemma: "this way, that way"
+      key: side
+      gloss: "side or direction"
+      forms:
+        "near: এই, ই-": "ইফালে"
+        "far: সেই, সি-, ত-": "সিফালে"
+      readings:
+        "near: এই, ই-": "iphale"
+        "far: সেই, সি-, ত-": "xiphale"
+    - lemma: "like this, like that"
+      key: manner
+      gloss: "how"
+      forms:
+        "near: এই, ই-": "এনেকৈ"
+        "far: সেই, সি-, ত-": "তেনেকৈ"
+      readings:
+        "near: এই, ই-": "enekoi"
+        "far: সেই, সি-, ত-": "tenekoi"
+    - lemma: "this kind of, that kind of"
+      key: kind
+      gloss: "what sort"
+      forms:
+        "near: এই, ই-": "এনেকুৱা"
+        "far: সেই, সি-, ত-": "তেনেকুৱা"
+      readings:
+        "near: এই, ই-": "enekuwa"
+        "far: সেই, সি-, ত-": "tenekuwa"
+    - lemma: "this much, that much"
+      key: amount
+      gloss: "how much"
+      forms:
+        "near: এই, ই-": "ইমান"
+        "far: সেই, সি-, ত-": "সিমান"
+      readings:
+        "near: এই, ই-": "iman"
+        "far: সেই, সি-, ত-": "ximan"
+    - lemma: "now, then"
+      key: time
+      gloss: "when"
+      forms:
+        "near: এই, ই-": "এতিয়া"
+        "far: সেই, সি-, ত-": "তেতিয়া"
+      readings:
+        "near: এই, ই-": "etiya"
+        "far: সেই, সি-, ত-": "tetiya"

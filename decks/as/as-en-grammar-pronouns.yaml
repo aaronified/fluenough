@@ -1,0 +1,184 @@
+schema: 1
+id: as-en-grammar-pronouns
+name: "Pronouns and possessives"
+kind: grammar
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "I, you, he and she, with my and your, me as an object, and for me. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  slots: ["possessive: my, your …", "object: me, you …", "for: for me, to me …"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Assamese has three words for 'you': আপুনি (respectful), তুমি (familiar) and তই (intimate, only for the very close or a child). 'He' is সি and 'she' is তাই; তেওঁ is a respectful he or she, and ই is 'he' for someone here. Plurals add -হঁত or -লোক: সিহঁত, তেওঁলোক. A possessive never changes for the thing owned: মোৰ কিতাপ, মোৰ ঘৰ. -ক marks the object and the one given to: মোক দিয়া, give it to me. -লৈ is for or towards: মোলৈ, for me. মই takes the stem মো- before an ending, and তুমি and আপুনি take তোমা- and আপোনা-."
+  entries:
+    - lemma: "মই"
+      key: moi
+      reading: "moi"
+      gloss: "I"
+      forms:
+        "possessive: my, your …": "মোৰ"
+        "object: me, you …": "মোক"
+        "for: for me, to me …": "মোলৈ"
+      readings:
+        "possessive: my, your …": "mur"
+        "object: me, you …": "muk"
+        "for: for me, to me …": "muloi"
+    - lemma: "তই"
+      key: toi
+      reading: "toi"
+      gloss: "you, intimate"
+      forms:
+        "possessive: my, your …": "তোৰ"
+        "object: me, you …": "তোক"
+        "for: for me, to me …": "তোলৈ"
+      readings:
+        "possessive: my, your …": "tur"
+        "object: me, you …": "tuk"
+        "for: for me, to me …": "tuloi"
+    - lemma: "তুমি"
+      key: tumi
+      reading: "tumi"
+      gloss: "you, familiar"
+      forms:
+        "possessive: my, your …": "তোমাৰ"
+        "object: me, you …": "তোমাক"
+        "for: for me, to me …": "তোমালৈ"
+      readings:
+        "possessive: my, your …": "tumar"
+        "object: me, you …": "tumak"
+        "for: for me, to me …": "tumaloi"
+    - lemma: "আপুনি"
+      key: apuni
+      reading: "apuni"
+      gloss: "you, respectful"
+      forms:
+        "possessive: my, your …": "আপোনাৰ"
+        "object: me, you …": "আপোনাক"
+        "for: for me, to me …": "আপোনালৈ"
+      readings:
+        "possessive: my, your …": "apunar"
+        "object: me, you …": "apunak"
+        "for: for me, to me …": "apunaloi"
+    - lemma: "সি"
+      key: xi
+      reading: "xi"
+      gloss: "he"
+      forms:
+        "possessive: my, your …": "তাৰ"
+        "object: me, you …": "তাক"
+        "for: for me, to me …": "তালৈ"
+      readings:
+        "possessive: my, your …": "tar"
+        "object: me, you …": "tak"
+        "for: for me, to me …": "taloi"
+    - lemma: "তাই"
+      key: tai
+      reading: "tai"
+      gloss: "she"
+      forms:
+        "possessive: my, your …": "তাইৰ"
+        "object: me, you …": "তাইক"
+        "for: for me, to me …": "তাইলৈ"
+      readings:
+        "possessive: my, your …": "tair"
+        "object: me, you …": "taik"
+        "for: for me, to me …": "tailoi"
+    - lemma: "তেওঁ"
+      key: teu
+      reading: "teu"
+      gloss: "he or she, respectful"
+      forms:
+        "possessive: my, your …": "তেওঁৰ"
+        "object: me, you …": "তেওঁক"
+        "for: for me, to me …": "তেওঁলৈ"
+      readings:
+        "possessive: my, your …": "teur"
+        "object: me, you …": "teuk"
+        "for: for me, to me …": "teuloi"
+    - lemma: "ই"
+      key: i
+      reading: "i"
+      gloss: "he, here; this one"
+      forms:
+        "possessive: my, your …": "ইয়াৰ"
+        "object: me, you …": "ইয়াক"
+        "for: for me, to me …": "ইয়ালৈ"
+      readings:
+        "possessive: my, your …": "iyar"
+        "object: me, you …": "iyak"
+        "for: for me, to me …": "iyaloi"
+    - lemma: "আমি"
+      key: ami
+      reading: "ami"
+      gloss: "we"
+      forms:
+        "possessive: my, your …": "আমাৰ"
+        "object: me, you …": "আমাক"
+        "for: for me, to me …": "আমালৈ"
+      readings:
+        "possessive: my, your …": "amar"
+        "object: me, you …": "amak"
+        "for: for me, to me …": "amaloi"
+    - lemma: "তহঁত"
+      key: tohot
+      reading: "tohot"
+      gloss: "you all, intimate"
+      forms:
+        "possessive: my, your …": "তহঁতৰ"
+        "object: me, you …": "তহঁতক"
+        "for: for me, to me …": "তহঁতলৈ"
+      readings:
+        "possessive: my, your …": "tohotor"
+        "object: me, you …": "tohotok"
+        "for: for me, to me …": "tohotoloi"
+    - lemma: "তোমালোক"
+      key: tumaluk
+      reading: "tumaluk"
+      gloss: "you all, familiar"
+      forms:
+        "possessive: my, your …": "তোমালোকৰ"
+        "object: me, you …": "তোমালোকক"
+        "for: for me, to me …": "তোমালোকলৈ"
+      readings:
+        "possessive: my, your …": "tumalukor"
+        "object: me, you …": "tumalukok"
+        "for: for me, to me …": "tumalukoloi"
+    - lemma: "আপোনালোক"
+      key: apunaluk
+      reading: "apunaluk"
+      gloss: "you all, respectful"
+      forms:
+        "possessive: my, your …": "আপোনালোকৰ"
+        "object: me, you …": "আপোনালোকক"
+        "for: for me, to me …": "আপোনালোকলৈ"
+      readings:
+        "possessive: my, your …": "apunalukor"
+        "object: me, you …": "apunalukok"
+        "for: for me, to me …": "apunalukoloi"
+    - lemma: "সিহঁত"
+      key: xihot
+      reading: "xihot"
+      gloss: "they"
+      forms:
+        "possessive: my, your …": "সিহঁতৰ"
+        "object: me, you …": "সিহঁতক"
+        "for: for me, to me …": "সিহঁতলৈ"
+      readings:
+        "possessive: my, your …": "xihotor"
+        "object: me, you …": "xihotok"
+        "for: for me, to me …": "xihotoloi"
+    - lemma: "তেওঁলোক"
+      key: teuluk
+      reading: "teuluk"
+      gloss: "they, respectful"
+      forms:
+        "possessive: my, your …": "তেওঁলোকৰ"
+        "object: me, you …": "তেওঁলোকক"
+        "for: for me, to me …": "তেওঁলোকলৈ"
+      readings:
+        "possessive: my, your …": "teulukor"
+        "object: me, you …": "teulukok"
+        "for: for me, to me …": "teulukoloi"

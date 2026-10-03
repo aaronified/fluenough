@@ -1,0 +1,23 @@
+# Assamese's sound contrasts: pairs of letters or signs that change a word,
+# for the speaking drill's feedback (#89) and the minimal-pair drill (#31).
+# Each id is the tag the language's sound-differences deck uses. See
+# ADR-0015 and docs/DECK-FORMAT.md. Assamese says ত and ট alike, চ and ছ
+# alike (s), and জ, ঝ and য alike (z), so none of those is a contrast here.
+schema: 1
+kind: sounds
+id: as-sounds
+language: as
+contrasts:
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["ক", "খ"], ["গ", "ঘ"], ["ত", "থ"], ["দ", "ধ"], ["ট", "ঠ"], ["ড", "ঢ"], ["প", "ফ"], ["ব", "ভ"]]
+  - id: x-sound
+    name: "x, a rasp at the back of the mouth, against h, kh or s"
+    pairs: [["স", "হ"], ["শ", "হ"], ["ষ", "হ"], ["স", "খ"], ["শ", "খ"], ["ষ", "খ"], ["স", "চ"], ["শ", "চ"], ["ষ", "চ"], ["স", "ছ"], ["শ", "ছ"], ["ষ", "ছ"]]
+  - id: inherent-vowel
+    name: "the open o against a"
+    within_word: true
+    pairs: [["", "া"]]
+  - id: nasal
+    name: "a vowel said through the nose"
+    pairs: [["", "ঁ"]]
