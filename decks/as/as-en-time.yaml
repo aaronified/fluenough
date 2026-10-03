@@ -1,0 +1,119 @@
+schema: 1
+id: as-en-time
+name: "Time and days"
+kind: vocab
+theme: time
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Today, yesterday and tomorrow, each with its own word, telling the time, and the days of the week. Not yet checked by an Assamese speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: as-0350
+    target: "আজি"
+    native: "today"
+    reading: "aji"
+    pos: "adv"
+  - id: as-0351
+    target: "কাইলৈ"
+    native: "tomorrow"
+    reading: "kailoi"
+    pos: "adv"
+    notes: "Unlike Hindi and Bengali, which use one word for both, Assamese has a word for tomorrow and another for yesterday: কালি (kali)."
+  - id: as-0352
+    target: "কালি"
+    native: "yesterday"
+    reading: "kali"
+    pos: "adv"
+  - id: as-0353
+    target: "এতিয়া"
+    native: "now"
+    reading: "etiya"
+    pos: "adv"
+  - id: as-0354
+    target: "ৰাতিপুৱা"
+    native: "morning"
+    reading: "ratipuwa"
+    pos: "noun"
+    notes: "ৰাতিপুৱা সাত বজাত (ratipuwa xat bojat), at seven in the morning."
+  - id: as-0355
+    target: "দুপৰীয়া"
+    native: "midday; early afternoon"
+    reading: "duporiya"
+    pos: "noun"
+  - id: as-0356
+    target: "গধূলি"
+    native: "evening; dusk"
+    reading: "godhuli"
+    pos: "noun"
+    notes: "The hour when cattle come home and the dust they raise hangs in the light: গো (cattle) and ধূলি (dust)."
+  - id: as-0357
+    target: "ৰাতি"
+    native: "night"
+    reading: "rati"
+    pos: "noun"
+  - id: as-0358
+    target: "বজা"
+    native: "o'clock"
+    reading: "boja"
+    pos: "noun"
+    notes: "চাৰি বজা (sari boja), four o'clock; চাৰি বজাত (sari bojat), at four. From বজা, to ring, as a clock chimes."
+  - id: as-0359
+    target: "সাৰে চাৰি"
+    native: "half past four; 4½"
+    reading: "xare sari"
+    pos: "phrase"
+    notes: "সাৰে (xare) adds a half to any number from three on. Half past one is ডেৰ (der), half past two আঢ়ৈ (arhoi)."
+  - id: as-0360
+    target: "কিমান বাজিছে?"
+    native: "What time is it?"
+    reading: "kiman bajise?"
+    pos: "phrase"
+    notes: "Literally 'how many has it rung?'. The answer: চাৰি বাজিছে (sari bajise), it's four."
+  - id: as-0361
+    target: "দিন"
+    native: "day"
+    reading: "din"
+    pos: "noun"
+  - id: as-0362
+    target: "সপ্তাহ"
+    native: "week"
+    reading: "xoptah"
+    pos: "noun"
+  - id: as-0363
+    target: "সোমবাৰ"
+    native: "Monday"
+    reading: "xumbar"
+    pos: "noun"
+    notes: "Each day ends in বাৰ (bar), and most names match Bengali's and Hindi's."
+  - id: as-0364
+    target: "মঙলবাৰ"
+    native: "Tuesday"
+    reading: "mongolbar"
+    pos: "noun"
+  - id: as-0365
+    target: "বুধবাৰ"
+    native: "Wednesday"
+    reading: "budhbar"
+    pos: "noun"
+  - id: as-0366
+    target: "বৃহস্পতিবাৰ"
+    native: "Thursday"
+    reading: "brihospotibar"
+    pos: "noun"
+  - id: as-0367
+    target: "শুক্ৰবাৰ"
+    native: "Friday"
+    reading: "xukrobar"
+    pos: "noun"
+  - id: as-0368
+    target: "শনিবাৰ"
+    native: "Saturday"
+    reading: "xonibar"
+    pos: "noun"
+  - id: as-0369
+    target: "দেওবাৰ"
+    native: "Sunday"
+    reading: "deubar"
+    pos: "noun"
+    notes: "Here Assamese differs from Bengali and Hindi, which say রবিবার and रविवार."
