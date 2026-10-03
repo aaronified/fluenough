@@ -1,0 +1,70 @@
+schema: 1
+id: hi-en-grammar-demonstratives
+name: "This and that"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "यह and वह, and the words built on them: here and there, this way and that, so much. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  slots: ["near: यह, इ-", "far: वह, उ-"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Words for near things start with य- or इ- (or ऐ-: ऐसा), words for far ones with व- or उ- (or वै-: वैसा). Before a postposition, यह and वह become इस and उस: इस कमरे में, in this room. In speech यह is often said ये, and वह वो."
+  entries:
+    - lemma: "he, she, it"
+      key: person
+      gloss: "a person or a thing"
+      forms:
+        "near: यह, इ-": "यह"
+        "far: वह, उ-": "वह"
+    - lemma: "they"
+      key: people
+      gloss: "people or things"
+      forms:
+        "near: यह, इ-": "ये"
+        "far: वह, उ-": "वे"
+    - lemma: "this, that, before a postposition"
+      key: oblique
+      gloss: "before में, से, को"
+      forms:
+        "near: यह, इ-": "इस"
+        "far: वह, उ-": "उस"
+    - lemma: "his, her, its"
+      key: possessive
+      gloss: "the owner"
+      forms:
+        "near: यह, इ-": "इसका"
+        "far: वह, उ-": "उसका"
+    - lemma: "him, her, it"
+      key: object
+      gloss: "the object"
+      forms:
+        "near: यह, इ-": "इसे"
+        "far: वह, उ-": "उसे"
+    - lemma: "here, there"
+      key: place
+      gloss: "place"
+      forms:
+        "near: यह, इ-": "यहाँ"
+        "far: वह, उ-": "वहाँ"
+    - lemma: "this way, that way"
+      key: direction
+      gloss: "direction"
+      forms:
+        "near: यह, इ-": "इधर"
+        "far: वह, उ-": "उधर"
+    - lemma: "like this, like that"
+      key: manner
+      gloss: "manner"
+      forms:
+        "near: यह, इ-": "ऐसा"
+        "far: वह, उ-": "वैसा"
+    - lemma: "this much, that much"
+      key: amount
+      gloss: "amount"
+      forms:
+        "near: यह, इ-": "इतना"
+        "far: वह, उ-": "उतना"

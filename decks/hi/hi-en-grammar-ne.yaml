@@ -1,0 +1,56 @@
+schema: 1
+id: hi-en-grammar-ne
+name: "The ने construction"
+kind: vocab
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "In the past, a verb with an object takes ने after the doer and agrees with the object. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - ref: hi-0364
+  - id: hi-0480
+    target: "मैंने चाय पी।"
+    native: "I drank tea."
+    reading: "mainne chaay pii."
+    pos: "phrase"
+    notes: "पी is feminine because चाय is, whoever drank it."
+  - id: hi-0481
+    target: "उसने किताब पढ़ी।"
+    native: "He read a book. / She read a book."
+    reading: "usne kitaab padhii."
+    pos: "phrase"
+    notes: "पढ़ी agrees with किताब, feminine. Nothing says whether the reader was a man or a woman."
+  - id: hi-0482
+    target: "हमने फ़िल्म देखी।"
+    native: "We saw a film."
+    reading: "hamne film dekhii."
+    pos: "phrase"
+  - id: hi-0483
+    target: "राम ने पत्र लिखा।"
+    native: "Ram wrote a letter."
+    reading: "raam ne patr likhaa."
+    pos: "phrase"
+    notes: "After a name, ने is written apart."
+  - id: hi-0484
+    target: "आपने क्या कहा?"
+    native: "What did you say?"
+    reading: "aapne kyaa kahaa?"
+    pos: "phrase"
+  - id: hi-0485
+    target: "उन्होंने खाना खाया।"
+    native: "They ate. / He ate. (respectful)"
+    reading: "unhonne khaanaa khaayaa."
+    pos: "phrase"
+  - id: hi-0486
+    target: "मैंने उसे देखा।"
+    native: "I saw him. / I saw her."
+    reading: "mainne use dekhaa."
+    pos: "phrase"
+    notes: "When the object takes को (उसे = उसको), the verb stays masculine singular."
+  - id: hi-0487
+    target: "मैं आया।"
+    native: "I came. (said by a man)"
+    reading: "main aayaa."
+    pos: "phrase"
+    notes: "No ने: आना takes no object, so the verb agrees with the doer."

@@ -1,0 +1,156 @@
+schema: 1
+id: hi-en-home
+name: "Home and neighbourhood"
+kind: vocab
+theme: home
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "The rooms of a home, what is in them, and the people next door. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - ref: hi-0192
+  - id: hi-0419
+    target: "मकान"
+    native: "house (the building)"
+    reading: "makaan"
+    pos: "noun"
+    gender: "m"
+    notes: "घर is home; मकान is the building, as in मकान मालिक (makaan maalik), landlord."
+  - id: hi-0420
+    target: "फ़्लैट"
+    native: "flat; apartment"
+    reading: "flait"
+    alt_target: ["फ्लैट"]
+    pos: "noun"
+    gender: "m"
+  - id: hi-0421
+    target: "कमरा"
+    native: "room"
+    reading: "kamraa"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0422
+    target: "रसोई"
+    native: "kitchen"
+    reading: "rasoii"
+    alt_target: ["रसोईघर"]
+    pos: "noun"
+    gender: "f"
+  - id: hi-0423
+    target: "सोने का कमरा"
+    native: "bedroom"
+    reading: "sone kaa kamraa"
+    alt_target: ["बेडरूम"]
+    pos: "phrase"
+    notes: "In speech, often बेडरूम (bedruum)."
+  - id: hi-0424
+    target: "बैठक"
+    native: "sitting room"
+    reading: "baithak"
+    alt_target: ["ड्राइंग रूम"]
+    pos: "noun"
+    gender: "f"
+  - id: hi-0425
+    target: "बाथरूम"
+    native: "bathroom"
+    reading: "baathruum"
+    alt_target: ["स्नानघर"]
+    pos: "noun"
+    gender: "m"
+  - id: hi-0426
+    target: "दरवाज़ा"
+    native: "door"
+    reading: "darvaazaa"
+    alt_target: ["दरवाजा"]
+    pos: "noun"
+    gender: "m"
+  - id: hi-0427
+    target: "खिड़की"
+    native: "window"
+    reading: "khidkii"
+    pos: "noun"
+    gender: "f"
+  - id: hi-0428
+    target: "छत"
+    native: "roof; roof terrace"
+    reading: "chhat"
+    pos: "noun"
+    gender: "f"
+  - id: hi-0429
+    target: "सीढ़ियाँ"
+    native: "stairs"
+    reading: "siidhiyaan"
+    alt_target: ["सीढ़ियां"]
+    pos: "noun"
+  - id: hi-0430
+    target: "मंज़िल"
+    native: "floor; storey"
+    reading: "manzil"
+    alt_target: ["मंजिल"]
+    pos: "noun"
+    gender: "f"
+  - id: hi-0431
+    target: "चाबी"
+    native: "key"
+    reading: "chaabii"
+    alt_target: ["चाभी"]
+    pos: "noun"
+    gender: "f"
+  - id: hi-0432
+    target: "बिस्तर"
+    native: "bed"
+    reading: "bistar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0433
+    target: "कुर्सी"
+    native: "chair"
+    reading: "kursii"
+    pos: "noun"
+    gender: "f"
+  - id: hi-0434
+    target: "मेज़"
+    native: "table"
+    reading: "mez"
+    alt_target: ["मेज"]
+    pos: "noun"
+    gender: "f"
+  - id: hi-0435
+    target: "पंखा"
+    native: "fan"
+    reading: "pankhaa"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0436
+    target: "बत्ती"
+    native: "light"
+    reading: "battii"
+    pos: "noun"
+    gender: "f"
+    notes: "बत्ती जलाइए, please switch on the light."
+  - id: hi-0437
+    target: "पड़ोसी"
+    native: "neighbour"
+    reading: "padosii"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0438
+    target: "मोहल्ला"
+    native: "neighbourhood"
+    reading: "mohallaa"
+    pos: "noun"
+    gender: "m"
+  - ref: hi-0265
+    native: "rent"
+    notes: "Also the fare for a bus or a taxi."
+  - id: hi-0439
+    target: "घर के सामने एक पार्क है।"
+    native: "There's a park in front of the house."
+    reading: "ghar ke saamne ek paark hai."
+    pos: "phrase"
+  - id: hi-0440
+    target: "हमारा मोहल्ला बहुत शांत है।"
+    native: "Our neighbourhood is very quiet."
+    reading: "hamaaraa mohallaa bahut shaant hai."
+    pos: "phrase"
