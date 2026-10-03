@@ -450,13 +450,18 @@ class _Swatch extends StatelessWidget {
   Widget build(BuildContext context) => SizedBox.square(
     dimension: 56,
     child: ClipOval(
+      // Expand, so that the bands fill the circle: loose, a band with no
+      // child of its own takes no width at all, and the circle is invisible.
       child: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
           Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(child: ColoredBox(color: scheme.primary)),
               Expanded(
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Expanded(
                       child: ColoredBox(color: scheme.secondaryContainer),
