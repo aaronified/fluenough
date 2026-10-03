@@ -22,7 +22,6 @@ import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
-import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
@@ -275,28 +274,17 @@ void main() {
     expect(copied, AppLinks.heliboard);
     expect(find.text(l10n.drillHeliboardCopied), findsOneWidget);
 
-    expect(find.text(l10n.incomingBadge), findsOneWidget);
-    await tester.ensureVisible(find.byType(IncomingFeature));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byType(IncomingFeature));
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.incomingSnackBar), findsOneWidget);
-    expect(find.text(l10n.drillTypeInScript('Japanese')), findsOneWidget);
+    // Latin letters are offered beside the script, live (#47).
+    expect(find.text(l10n.drillInputTranslit), findsOneWidget);
+    expect(find.text(l10n.incomingBadge), findsNothing);
   });
 
-  testWidgets('transliteration, once #47 is on, types Latin letters', (
-    tester,
-  ) async {
+  testWidgets('transliteration types Latin letters, and a right answer in '
+      'them counts as a hard recall (#47)', (tester) async {
     usePhone(tester);
     final state = await pumpDrill(
       tester,
       DrillRequest.deck(hiragana, skill: Skill.production),
-      state: AppState.test(
-        features: const FeatureRegistry.only(<Feature>{
-          ...Feature.available,
-          Feature.translitInput,
-        }),
-      ),
       preset: const DrillPreset(target: 'か', inputMode: InputMode.translit),
     );
     final l10n = l10nOf(tester);
@@ -313,7 +301,7 @@ void main() {
       find.text(l10n.feedbackReadingWithTarget('ka', 'か')),
       findsOneWidget,
     );
-    expect(state.progress.log.single.grade, 5);
+    expect(state.progress.log.single.grade, DrillSession.romanisedGrade);
   });
 
   testWidgets('the card text size reaches the card, the typed script and the '

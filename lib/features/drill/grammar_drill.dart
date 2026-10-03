@@ -18,6 +18,7 @@ import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'drill_session.dart';
 import 'grammar_cells.dart';
+import 'input_mode_choice.dart';
 
 /// The deck the fixture drills: the real bundled pattern, read from the
 /// catalog.
@@ -192,6 +193,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     // A grammar card always comes from a pattern cell; guard all the same.
     if (cell == null) return const Scaffold();
     final given = session.answer;
+    final reading = session.item.card.reading;
     return _frame(
       context,
       deck: deck,
@@ -200,6 +202,11 @@ class _GrammarDrillState extends State<GrammarDrill> {
       total: session.total,
       answer: given == null ? null : (typed: given.typed, graded: given.graded),
       incoming: false,
+      inputChoice: session.canTransliterate
+          ? InputModeChoice(session: session, onChanged: _controller.clear)
+          : null,
+      latin: session.transliterating,
+      reading: session.transliterating ? reading : null,
       onClose: widget.onClose!,
       moves: (
         dontKnow: session.dontKnow,
@@ -221,6 +228,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
     required bool incoming,
     required VoidCallback onClose,
     required _Moves moves,
+    Widget? inputChoice,
+    bool latin = false,
+    String? reading,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final language = deck.language;
@@ -236,10 +246,12 @@ class _GrammarDrillState extends State<GrammarDrill> {
       belowCard: answer != null
           ? null
           : <Widget>[
+              ?inputChoice,
               AnswerField(
                 controller: _controller,
                 label: l10n.drillTypeSlot(cell.slot),
                 language: language,
+                latin: latin,
                 enabled: !incoming,
                 autofocus: !incoming,
                 onChanged: (_) => setState(() {}),
@@ -248,7 +260,16 @@ class _GrammarDrillState extends State<GrammarDrill> {
                 },
               ),
             ],
-      feedback: answer == null ? null : _feedback(l10n, cell, answer),
+      feedback: answer == null
+          ? null
+          : _feedback(
+              l10n,
+              cell,
+              answer,
+              reading == null
+                  ? cell.answer
+                  : l10n.feedbackReadingWithTarget(reading, cell.answer),
+            ),
       actions: _actions(context, answer, incoming, moves),
     );
   }
@@ -331,35 +352,42 @@ class _GrammarDrillState extends State<GrammarDrill> {
     ];
   }
 
-  Widget _feedback(AppLocalizations l10n, GrammarCell cell, _Answer answer) {
+  /// [shown] is the form, or its reading with the form after it when the
+  /// answer was typed in Latin letters.
+  Widget _feedback(
+    AppLocalizations l10n,
+    GrammarCell cell,
+    _Answer answer,
+    String shown,
+  ) {
     final graded = answer.graded;
     if (graded == null) {
       return FeedbackBanner(
         kind: FeedbackKind.wrong,
         title: l10n.feedbackGaveUp,
-        detail: l10n.feedbackAnswer(cell.answer),
+        detail: l10n.feedbackAnswer(shown),
       );
     }
     return switch (graded.outcome) {
       AnswerOutcome.exact => FeedbackBanner(
         kind: FeedbackKind.correct,
         title: l10n.feedbackCorrect,
-        detail: cell.answer,
+        detail: shown,
       ),
       AnswerOutcome.closeDiacritics => FeedbackBanner(
         kind: FeedbackKind.close,
         title: l10n.feedbackAccent,
-        detail: l10n.feedbackTypedWritten(answer.typed, cell.answer),
+        detail: l10n.feedbackTypedWritten(answer.typed, shown),
       ),
       AnswerOutcome.closeTypo => FeedbackBanner(
         kind: FeedbackKind.nearMiss,
-        title: l10n.feedbackTypo(cell.answer),
+        title: l10n.feedbackTypo(shown),
         detail: l10n.feedbackTypoDetail(answer.typed),
       ),
       AnswerOutcome.wrong => FeedbackBanner(
         kind: FeedbackKind.wrong,
         title: l10n.feedbackWrong,
-        detail: l10n.feedbackAnswer(cell.answer),
+        detail: l10n.feedbackAnswer(shown),
       ),
     };
   }

@@ -87,6 +87,7 @@ enum Feature {
     Feature.drillGrammar,
     Feature.drillSpeaking,
     Feature.drillReading,
+    Feature.translitInput,
     Feature.persistence,
     Feature.appearance,
     Feature.colourSeeds,
