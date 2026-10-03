@@ -1013,8 +1013,12 @@ class AppState extends ChangeNotifier {
   /// Whether [entry] needs an alphabet the learner is not learning: its
   /// course leaves it out (#47). It can still be opened and studied.
   bool leavesOut(DeckEntry entry) =>
-      !settings.learnsAlphabet(entry.language.code) &&
-      (pathOf(entry)?.alphabet.contains(entry.id) ?? false);
+      !settings.learnsAlphabet(entry.language.code) && needsAlphabet(entry);
+
+  /// Whether [entry] is one of its course's decks that need the alphabet:
+  /// a script, spelling or reading deck.
+  bool needsAlphabet(DeckEntry entry) =>
+      pathOf(entry)?.alphabet.contains(entry.id) ?? false;
 
   /// Whether [language]'s course has decks that need its alphabet, so that
   /// it can be learned without them.
