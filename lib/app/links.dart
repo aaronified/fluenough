@@ -12,9 +12,6 @@ abstract final class AppLinks {
   static const String heliboard =
       'https://f-droid.org/packages/helium314.keyboard/';
 
-  /// Where a mistake in a deck is reported: the project's issues.
-  static const String issues = 'https://github.com/aaronified/fluenough/issues';
-
   /// The newest release's APK (ADR-0017). GitHub redirects this to the file
   /// of that name on the newest release, which the release workflow builds.
   static const String latestApk =

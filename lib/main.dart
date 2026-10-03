@@ -13,11 +13,17 @@ import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
+import 'core/feedback/report.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
 
 export 'app.dart' show FluenoughApp;
+
+/// Where reports from the bug icon go: the relay's address, given at build
+/// time (`--dart-define=REPORT_URL=…`, ADR-0021). Not a secret: the relay
+/// holds the token. Empty in a build given none, which then cannot send.
+const String reportUrl = String.fromEnvironment('REPORT_URL');
 
 /// Builds the app's services and starts it. This is the only place that
 /// names a concrete service: everything below reads them through `AppScope`
@@ -40,6 +46,12 @@ Future<void> main() async {
         tts: SystemTtsEngine(),
         speech: SystemSpeechEngine(),
         soundCheck: SystemSoundCheck(),
+        reports: reportUrl.isEmpty
+            ? const NullReportSender()
+            : RelayReportSender(
+                Uri.parse(reportUrl),
+                userAgent: 'fluenough/${AppInfo.version}',
+              ),
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
         installer: OtaApkInstaller(),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),

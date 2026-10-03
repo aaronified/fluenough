@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/app/links.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
@@ -14,6 +12,7 @@ import 'package:fluenough/features/decks/deck_facts.dart';
 import 'package:fluenough/features/decks/unreviewed_notice.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/grammar_drill.dart';
+import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
@@ -355,47 +354,27 @@ void main() {
     expect(find.byType(GrammarDrill), findsOneWidget);
   });
 
-  testWidgets('a deck no speaker has checked says so, and opens the page to '
-      'report a mistake, or copies its link', (tester) async {
+  testWidgets('a deck no speaker has checked says so, and Report a mistake '
+      'opens a report about that deck, with a screenshot', (tester) async {
     usePhone(tester);
-    String? copied;
-    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
-      SystemChannels.platform,
-      (call) async {
-        if (call.method == 'Clipboard.setData') {
-          copied = (call.arguments as Map<Object?, Object?>)['text'] as String?;
-        }
-        return null;
-      },
-    );
-    addTearDown(
-      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
-        SystemChannels.platform,
-        null,
-      ),
-    );
-    final links = FixedLinks();
-    final state = await pumpDeck(
-      tester,
-      'te-en-market',
-      state: AppState.test(links: links),
-    );
+    final state = await pumpDeck(tester, 'te-en-market');
     final l10n = l10nOf(tester);
     final entry = state.deckById('te-en-market')!;
     expect(entry.deck.tags, contains(UnreviewedNotice.tag));
 
     expect(find.text(l10n.deckUnreviewed('Telugu')), findsOneWidget);
-    await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
-    expect(links.asked, <String>[AppLinks.issues]);
-    expect(copied, isNull, reason: 'opened, so nothing to copy');
-    expect(find.text(l10n.deckUnreviewedCopied), findsNothing);
-
-    // When nothing can open it, the link is copied instead.
-    links.opens = false;
-    await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
-    expect(links.asked, hasLength(2));
-    expect(copied, AppLinks.issues);
-    expect(find.text(l10n.deckUnreviewedCopied), findsOneWidget);
+    final report = find.text(l10n.deckUnreviewedReport);
+    await tester.ensureVisible(report);
+    await tester.pumpAndSettle();
+    // The picture is taken by the engine, outside the test's fake clock.
+    await tester.runAsync(() async {
+      await tester.tap(report);
+      await Future<void>.delayed(const Duration(milliseconds: 200));
+    });
+    await tester.pumpAndSettle();
+    final page = tester.widget<ReportPage>(find.byType(ReportPage));
+    expect(page.request.detail, 'te-en-market');
+    expect(page.request.screenshot, isNotNull);
   });
 
   testWidgets('a checked deck shows no such notice', (tester) async {

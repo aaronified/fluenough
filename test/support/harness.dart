@@ -10,6 +10,7 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/theme.dart';
+import 'package:fluenough/ui/widgets/report_capture.dart';
 
 /// Shared helpers for widget tests. Import from any test directory:
 /// `import '../support/harness.dart';` (adjust the depth).
@@ -58,6 +59,7 @@ Future<AppState> pumpScreen(
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
         onGenerateRoute: AppRoutes.onGenerateRoute,
+        builder: ReportCapture.wrap,
         home: child,
       ),
     ),
