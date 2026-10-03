@@ -45,6 +45,7 @@ class SpeakingDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
+      reportDetail: '${session.item.card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
       card: _card(context, card, language),

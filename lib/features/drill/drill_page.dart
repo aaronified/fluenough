@@ -12,6 +12,7 @@ import '../../core/models/script_guide.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/report_button.dart';
 import '../script/script_guide_page.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
@@ -245,6 +246,7 @@ class _DrillPageState extends State<DrillPage> {
             tooltip: l10n.commonClose,
             icon: const Icon(Icons.close),
           ),
+          actions: const <Widget>[ReportButton()],
         ),
         body: _failed
             ? EmptyState(
