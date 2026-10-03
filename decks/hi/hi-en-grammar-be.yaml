@@ -1,0 +1,64 @@
+schema: 1
+id: hi-en-grammar-be
+name: "To be: है, था, होगा"
+kind: grammar
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Am, was, will be: होना in the present, the past and the future. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "होना by tense"
+  slot_name: "person and gender"
+  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The present (हूँ, हो, है, हैं) does not show gender; the past and the future do. नहीं comes before the verb: मैं घर पर नहीं हूँ, I'm not at home. With नहीं the present है is often left out: वह यहाँ नहीं."
+  entries:
+    - lemma: "होना, now"
+      key: hai
+      gloss: "to be, present"
+      forms:
+        "मैं (m)": "हूँ"
+        "मैं (f)": "हूँ"
+        "तुम (m)": "हो"
+        "तुम (f)": "हो"
+        "वह (m)": "है"
+        "वह (f)": "है"
+        "हम (m)": "हैं"
+        "हम (f)": "हैं"
+        "आप (m)": "हैं"
+        "आप (f)": "हैं"
+        "वे (m)": "हैं"
+        "वे (f)": "हैं"
+    - lemma: "होना, then"
+      key: thaa
+      gloss: "to be, past"
+      forms:
+        "मैं (m)": "था"
+        "मैं (f)": "थी"
+        "तुम (m)": "थे"
+        "तुम (f)": "थीं"
+        "वह (m)": "था"
+        "वह (f)": "थी"
+        "हम (m)": "थे"
+        "हम (f)": "थीं"
+        "आप (m)": "थे"
+        "आप (f)": "थीं"
+        "वे (m)": "थे"
+        "वे (f)": "थीं"
+    - lemma: "होना, later"
+      key: hogaa
+      gloss: "to be, future"
+      forms:
+        "मैं (m)": "होऊँगा"
+        "मैं (f)": "होऊँगी"
+        "तुम (m)": "होगे"
+        "तुम (f)": "होगी"
+        "वह (m)": "होगा"
+        "वह (f)": "होगी"
+        "हम (m)": "होंगे"
+        "हम (f)": "होंगी"
+        "आप (m)": "होंगे"
+        "आप (f)": "होंगी"
+        "वे (m)": "होंगे"
+        "वे (f)": "होंगी"

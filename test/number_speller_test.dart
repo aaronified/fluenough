@@ -21,7 +21,7 @@ Matcher refusedWith(String message) => throwsA(
 );
 
 void main() {
-  group('Hindi: only numbers whose last two digits have a taught word', () {
+  group('Hindi: every number to 99 is a word of its own', () {
     final hi = bundled('hi');
 
     test('2020, 1950 and 4007, the usual spelling first', () {
@@ -32,14 +32,14 @@ void main() {
       expect(spellNumber(hi, 1000).first, 'एक हज़ार');
     });
 
-    test('never 2026: छब्बीस is a word of its own the beta does not teach', () {
-      expect(spellNumber(hi, 2026), isEmpty);
-      expect(spellNumber(hi, 1999), isEmpty);
+    test('2026 and 1999, with the other accepted spelling of 99', () {
+      expect(spellNumber(hi, 2026).first, 'दो हज़ार छब्बीस');
+      expect(spellNumber(hi, 1999).first, 'एक हज़ार नौ सौ निन्यानवे');
+      expect(spellNumber(hi, 1999), contains('एक हज़ार नौ सौ निन्यानबे'));
     });
 
-    test('9 thousands, 10 hundreds and 28 endings make 2,520 numbers', () {
-      // 0, 1-20, and the seven tens from 30 to 90.
-      expect(spellableNumbers(hi), hasLength(9 * 10 * 28));
+    test('every four-digit number can be spelled', () {
+      expect(spellableNumbers(hi), hasLength(9000));
     });
   });
 
@@ -66,7 +66,7 @@ void main() {
   group('Telugu: 21 to 99 built from parts, and forms before more digits', () {
     final te = bundled('te');
 
-    test('2026, which Hindi cannot spell', () {
+    test('2026', () {
       expect(spellNumber(te, 2026).first, 'రెండు వేల ఇరవై ఆరు');
     });
 

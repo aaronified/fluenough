@@ -1,0 +1,146 @@
+schema: 1
+id: hi-en-work
+name: "Work"
+kind: vocab
+theme: work
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+description: "Jobs, the workplace, and how to ask and say what someone does. Not yet checked by a Hindi speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: hi-0399
+    target: "नौकरी"
+    native: "job (employment)"
+    reading: "naukrii"
+    pos: "noun"
+    gender: "f"
+    notes: "मैं नौकरी करता हूँ, I have a job. काम (kaam) is work of any kind."
+  - ref: hi-0194
+  - id: hi-0400
+    target: "दफ़्तर"
+    native: "office"
+    reading: "daftar"
+    alt_target: ["दफ्तर", "ऑफ़िस", "ऑफिस"]
+    pos: "noun"
+    gender: "m"
+    notes: "Also ऑफ़िस (aafis), from English."
+  - id: hi-0401
+    target: "अध्यापक"
+    native: "teacher"
+    reading: "adhyaapak"
+    alt_target: ["टीचर"]
+    pos: "noun"
+    gender: "m"
+    notes: "A woman teacher is अध्यापिका (adhyaapikaa). In speech, often टीचर."
+  - id: hi-0402
+    target: "दुकानदार"
+    native: "shopkeeper"
+    reading: "dukaandaar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0403
+    target: "ड्राइवर"
+    native: "driver"
+    reading: "draaivar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0404
+    target: "इंजीनियर"
+    native: "engineer"
+    reading: "injiiniyar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0405
+    target: "वकील"
+    native: "lawyer"
+    reading: "vakiil"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0406
+    target: "नर्स"
+    native: "nurse"
+    reading: "nars"
+    pos: "noun"
+    gender: "f"
+  - id: hi-0407
+    target: "किसान"
+    native: "farmer"
+    reading: "kisaan"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0408
+    target: "रसोइया"
+    native: "cook"
+    reading: "rasoiyaa"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0409
+    target: "लेखक"
+    native: "writer"
+    reading: "lekhak"
+    pos: "noun"
+    gender: "m"
+    notes: "A woman writer is लेखिका (lekhikaa)."
+  - id: hi-0410
+    target: "पत्रकार"
+    native: "journalist"
+    reading: "patrakaar"
+    pos: "noun"
+    gender: "m"
+  - ref: hi-0357
+  - ref: hi-0356
+  - id: hi-0411
+    target: "छात्र"
+    native: "student"
+    reading: "chhaatr"
+    alt_target: ["छात्रा"]
+    pos: "noun"
+    gender: "m"
+    notes: "A woman student is छात्रा (chhaatraa)."
+  - id: hi-0412
+    target: "छुट्टी"
+    native: "day off; holiday; leave"
+    reading: "chhuttii"
+    pos: "noun"
+    gender: "f"
+    notes: "आज मेरी छुट्टी है, I have the day off today."
+  - id: hi-0413
+    target: "तनख़्वाह"
+    native: "salary; pay"
+    reading: "tankhvaah"
+    alt_target: ["तनख्वाह", "वेतन"]
+    pos: "noun"
+    gender: "f"
+    notes: "Formally वेतन (vetan)."
+  - id: hi-0414
+    target: "व्यापार"
+    native: "business; trade"
+    reading: "vyaapaar"
+    pos: "noun"
+    gender: "m"
+  - id: hi-0415
+    target: "आप क्या करते हैं?"
+    native: "What do you do (for a living)?"
+    reading: "aap kyaa karte hain?"
+    alt_target: ["आप क्या करती हैं?"]
+    pos: "phrase"
+    notes: "To a woman: आप क्या करती हैं?"
+  - id: hi-0416
+    target: "मैं टीचर हूँ।"
+    native: "I'm a teacher."
+    reading: "main tiichar huun."
+    alt_target: ["मैं अध्यापक हूँ।", "मैं अध्यापिका हूँ।"]
+    pos: "phrase"
+  - id: hi-0417
+    target: "आप कहाँ काम करते हैं?"
+    native: "Where do you work?"
+    reading: "aap kahaan kaam karte hain?"
+    alt_target: ["आप कहाँ काम करती हैं?"]
+    pos: "phrase"
+  - id: hi-0418
+    target: "मैं एक दफ़्तर में काम करता हूँ।"
+    native: "I work in an office. (said by a man)"
+    reading: "main ek daftar men kaam kartaa huun."
+    pos: "phrase"
+    notes: "A woman says काम करती हूँ (kaam kartii huun)."
