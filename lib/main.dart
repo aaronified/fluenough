@@ -42,7 +42,10 @@ Future<void> main() async {
         tts: SystemTtsEngine(),
         speech: SystemSpeechEngine(),
         soundCheck: SystemSoundCheck(),
-        reports: const MailReportSender(address: AppLinks.feedbackEmail),
+        reports: const MailReportSender(
+          address: AppLinks.feedbackEmail,
+          links: LauncherLinks(),
+        ),
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
         installer: OtaApkInstaller(),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),

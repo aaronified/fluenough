@@ -1150,7 +1150,7 @@
   },
   "reportOpen": "Report a problem or idea",
   "@reportOpen": {
-    "description": "Tooltip of the bug icon on every screen, which opens a report with a screenshot of that screen."
+    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen."
   },
   "reportTitle": "Report a problem or idea",
   "@reportTitle": {
@@ -1188,18 +1188,6 @@
   "@reportDetailsHint": {
     "description": "Hint in the report's details field."
   },
-  "reportScreenshotPreview": "Screenshot to send",
-  "@reportScreenshotPreview": {
-    "description": "Accessibility label of the screenshot preview."
-  },
-  "reportAddScreenshot": "Add screenshot of this screen",
-  "@reportAddScreenshot": {
-    "description": "Button on the report: attaches the picture of the screen the report was raised on. Off until tapped."
-  },
-  "reportRemoveScreenshot": "Remove screenshot",
-  "@reportRemoveScreenshot": {
-    "description": "Button under the screenshot preview on the report."
-  },
   "reportInMailApp": "Your mail app has the report. Send it from there.",
   "@reportInMailApp": {
     "description": "SnackBar after the report opens in the reporter's mail app."
@@ -1220,9 +1208,25 @@
   "@reportPublic": {
     "description": "Warning above Send, on the mail report."
   },
-  "reportAlsoSent": "Also sent: the app’s version, your phone’s system version, this screen and the languages you learn.",
+  "reportAlsoSent": "Always sent: this screen and what it showed.",
   "@reportAlsoSent": {
-    "description": "What the app adds to a report, above Send."
+    "description": "What every report carries whatever the reporter ticks, above Send."
+  },
+  "reportDeviceInfo": "Include device information",
+  "@reportDeviceInfo": {
+    "description": "Checkbox on a report, unticked until the reporter ticks it: adds the device details shown under it (app and system versions, screen size, text scale, languages)."
+  },
+  "reportGitHubTitle": "Report on GitHub",
+  "@reportGitHubTitle": {
+    "description": "Title of the sheet shown before a report opens GitHub's new-issue form."
+  },
+  "reportGitHubBody": "GitHub opens a new issue with this screen filled in. Issues are public, so leave out anything private.",
+  "@reportGitHubBody": {
+    "description": "Text of the sheet shown before a report opens GitHub."
+  },
+  "reportOpenGitHub": "Open GitHub",
+  "@reportOpenGitHub": {
+    "description": "Button on the sheet that opens GitHub's new-issue form."
   },
   "reportSend": "Write it in my mail app",
   "@reportSend": {
@@ -3097,6 +3101,18 @@
   "settingsSectionData": "Your data",
   "@settingsSectionData": {
     "description": "Settings section heading."
+  },
+  "settingsSectionLogs": "Logs",
+  "@settingsSectionLogs": {
+    "description": "Settings section heading, for the app's own log (#162)."
+  },
+  "settingsAppLog": "App log",
+  "@settingsAppLog": {
+    "description": "Settings row: the app's own log of what it did and what went wrong (#162). Feature incoming."
+  },
+  "settingsAppLogDesc": "What the app did and what went wrong, to add to a report",
+  "@settingsAppLogDesc": {
+    "description": "Subtitle of the App log row in Settings."
   },
   "settingsExport": "Export review log",
   "@settingsExport": {

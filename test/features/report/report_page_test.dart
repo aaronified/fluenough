@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -14,11 +12,6 @@ import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
 
 import '../../support/harness.dart';
-
-/// A 1×1 PNG, so that the preview has something real to decode.
-final Uint8List png = base64Decode(
-  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
-);
 
 /// Records what it is sent, and answers with [outcome].
 class FakeReportSender implements ReportSender {
@@ -40,6 +33,12 @@ const FeatureRegistry withMail = FeatureRegistry.only(<Feature>{
   Feature.feedbackMail,
 });
 
+/// What the device box adds, as the bug icon would hand it on.
+const Map<String, String> device = <String, String>{
+  'App': 'fluenough 0.2.0',
+  'System': 'Android 14 (API 34)',
+};
+
 /// The body GitHub was asked to fill in.
 String issueBodyOf(String url) => Uri.parse(url).queryParameters['body']!;
 
@@ -56,13 +55,17 @@ Future<void> tapInList(WidgetTester tester, Finder finder) async {
 }
 
 void main() {
-  test('mail reports are incoming until the Gmail exists (#160)', () {
+  test('mail reports and the app log are incoming until they exist '
+      '(#160, #162)', () {
     expect(Feature.available, isNot(contains(Feature.feedbackMail)));
+    expect(Feature.available, isNot(contains(Feature.logs)));
     expect(AppLinks.feedbackEmail, isEmpty);
   });
 
-  testWidgets('while mail is incoming, the bug icon opens a new GitHub issue '
-      'with the screen and the app filled in', (tester) async {
+  testWidgets('while mail is incoming, the bug icon asks first, with the '
+      'device box unticked, then opens GitHub with only the screen', (
+    tester,
+  ) async {
     usePhone(tester);
     final links = FixedLinks();
     await pumpScreen(
@@ -74,6 +77,18 @@ void main() {
     await tester.tap(find.byType(ReportButton));
     await tester.pumpAndSettle();
     expect(find.byType(ReportPage), findsNothing);
+    expect(find.text(l10n.reportGitHubTitle), findsOneWidget);
+    expect(
+      tester.widget<CheckboxListTile>(find.byType(CheckboxListTile)).value,
+      isFalse,
+    );
+    // The exact lines the box would add are shown before anything opens.
+    expect(find.textContaining('App: fluenough '), findsOneWidget);
+    expect(find.textContaining('Text scale: 1.00'), findsOneWidget);
+    expect(links.asked, isEmpty);
+
+    await tester.tap(find.text(l10n.reportOpenGitHub));
+    await tester.pumpAndSettle();
     final url = links.asked.single;
     expect(
       url,
@@ -81,9 +96,57 @@ void main() {
     );
     final body = issueBodyOf(url);
     expect(body, startsWith(l10n.reportIssuePrompt));
-    expect(body, contains('Screen: /'));
-    expect(body, contains('Showing: ${l10n.decksTitle}'));
-    expect(body, contains('App: fluenough '));
+    expect(body, endsWith('---\nScreen: /\nShowing: ${l10n.decksTitle}'));
+  });
+
+  testWidgets('ticked, the issue carries the device lines shown', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final links = FixedLinks();
+    await pumpScreen(
+      tester,
+      const DecksPage(),
+      state: AppState.test(links: links),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.byType(ReportButton));
+    await tester.pumpAndSettle();
+    final shown = tester
+        .widget<Text>(find.textContaining('App: fluenough '))
+        .data!;
+    await tester.tap(find.text(l10n.reportDeviceInfo));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reportOpenGitHub));
+    await tester.pumpAndSettle();
+    final body = issueBodyOf(links.asked.single);
+    expect(body, contains('Showing: ${l10n.decksTitle}\n$shown'));
+    for (final key in <String>[
+      'App',
+      'System',
+      'Screen size',
+      'Text scale',
+      'App language',
+      'Learning',
+    ]) {
+      expect(shown, contains('$key: '));
+    }
+  });
+
+  testWidgets('dismissing the sheet opens nothing', (tester) async {
+    usePhone(tester);
+    final links = FixedLinks();
+    await pumpScreen(
+      tester,
+      const DecksPage(),
+      state: AppState.test(links: links),
+    );
+    await tester.tap(find.byType(ReportButton));
+    await tester.pumpAndSettle();
+    await tester.tapAt(const Offset(20, 20));
+    await tester.pumpAndSettle();
+    expect(find.text(l10nOf(tester).reportGitHubTitle), findsNothing);
+    expect(links.asked, isEmpty);
   });
 
   testWidgets('a card in Inspect is reported with its id and deck', (
@@ -98,7 +161,9 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final card = state.deckById('hi-en-market')!.cards.first;
-    await tester.tap(find.byTooltip(l10n.inspectReport).first);
+    await tapInList(tester, find.text(l10n.inspectId(card.id)));
+    await tapInList(tester, find.text(l10n.inspectReport));
+    await tester.tap(find.text(l10n.reportOpenGitHub));
     await tester.pumpAndSettle();
     expect(
       issueBodyOf(links.asked.single),
@@ -129,14 +194,17 @@ void main() {
       const DecksPage(),
       state: AppState.test(links: FixedLinks(opens: false)),
     );
+    final l10n = l10nOf(tester);
     await tester.tap(find.byType(ReportButton));
     await tester.pumpAndSettle();
-    expect(find.text(l10nOf(tester).reportLinkCopied), findsOneWidget);
+    await tester.tap(find.text(l10n.reportOpenGitHub));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reportLinkCopied), findsOneWidget);
     expect(copied, startsWith('https://github.com/aaronified/fluenough/'));
   });
 
-  testWidgets('once mail is on, the bug icon opens a report with a picture '
-      'of its screen, which is not attached until added', (tester) async {
+  testWidgets('once mail is on, the bug icon opens the report, with what '
+      'its screen showed and the device lines', (tester) async {
     usePhone(tester);
     await pumpScreen(
       tester,
@@ -144,41 +212,35 @@ void main() {
       state: AppState.test(features: withMail),
     );
     final l10n = l10nOf(tester);
-    // The picture is taken by the engine, outside the test's fake clock.
-    await tester.runAsync(() async {
-      await tester.tap(find.byType(ReportButton));
-      await Future<void>.delayed(const Duration(milliseconds: 200));
-    });
+    await tester.tap(find.byType(ReportButton));
     await tester.pumpAndSettle();
+    expect(find.text(l10n.reportGitHubTitle), findsNothing);
     final page = tester.widget<ReportPage>(find.byType(ReportPage));
+    expect(page.request.screen, '/');
     expect(page.request.detail, l10n.decksTitle);
-    expect(page.request.screenshot!.sublist(0, 4), <int>[
-      0x89,
-      0x50,
-      0x4e,
-      0x47,
-    ]);
-    expect(find.text(l10n.reportAddScreenshot), findsOneWidget);
-    expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsNothing);
+    expect(page.request.device['App'], startsWith('fluenough '));
   });
 
   testWidgets('a report needs a title, then goes to the mail app with its '
-      'screen, what it showed, and the screenshot once added', (tester) async {
+      'screen and what it showed, and no device lines unless ticked', (
+    tester,
+  ) async {
     usePhone(tester);
     final reports = FakeReportSender();
     await pumpScreen(
       tester,
-      ReportPage(
+      const ReportPage(
         request: ReportRequest(
           screen: '/deck',
           detail: 'hi-en-market',
-          screenshot: png,
+          device: device,
         ),
       ),
       state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.reportPublic), findsOneWidget);
+    expect(find.text(contextLines(device)), findsOneWidget);
 
     await tapInList(tester, find.text(l10n.reportSend));
     expect(find.text(l10n.reportTitleMissing), findsOneWidget);
@@ -192,29 +254,27 @@ void main() {
       find.widgetWithText(TextField, l10n.reportDetailsLabel),
       'After Check',
     );
-    await tapInList(tester, find.text(l10n.reportAddScreenshot));
-    expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsOneWidget);
     await tapInList(tester, find.text(l10n.reportSend));
     final report = reports.sent.single;
     expect(report.kind, ReportKind.bug);
     expect(report.subject, '[Fluenough] Bug: The card shows twice');
     expect(report.details, 'After Check');
-    expect(report.screenshot, png);
-    expect(report.context['Screen'], '/deck');
-    expect(report.context['Showing'], 'hi-en-market');
-    expect(report.context['App'], startsWith('fluenough '));
+    expect(report.context, <String, String>{
+      'Screen': '/deck',
+      'Showing': 'hi-en-market',
+    });
     expect(find.text(l10n.reportInMailApp), findsOneWidget);
   });
 
-  testWidgets('the kind is chosen, and a screenshot added can be removed', (
+  testWidgets('the kind is chosen, and the device box adds what it shows', (
     tester,
   ) async {
     usePhone(tester);
     final reports = FakeReportSender();
     await pumpScreen(
       tester,
-      ReportPage(
-        request: ReportRequest(screen: '/', screenshot: png),
+      const ReportPage(
+        request: ReportRequest(screen: '/', device: device),
       ),
       state: AppState.test(reports: reports, features: withMail),
     );
@@ -224,14 +284,11 @@ void main() {
       find.widgetWithText(TextField, l10n.reportTitleLabel),
       'Dark cards',
     );
-    await tapInList(tester, find.text(l10n.reportAddScreenshot));
-    await tapInList(tester, find.text(l10n.reportRemoveScreenshot));
-    expect(find.bySemanticsLabel(l10n.reportScreenshotPreview), findsNothing);
+    await tapInList(tester, find.text(l10n.reportDeviceInfo));
     await tapInList(tester, find.text(l10n.reportSend));
     final report = reports.sent.single;
     expect(report.kind, ReportKind.feature);
-    expect(report.screenshot, isNull);
-    expect(report.context.containsKey('Showing'), isFalse);
+    expect(report.context, <String, String>{'Screen': '/', ...device});
   });
 
   testWidgets('no mail app, or no address, says why; Send works again', (
@@ -247,7 +304,6 @@ void main() {
       state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.reportAddScreenshot), findsNothing);
     await tester.enterText(
       find.widgetWithText(TextField, l10n.reportTitleLabel),
       'Crash',
