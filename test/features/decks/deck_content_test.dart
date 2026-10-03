@@ -55,8 +55,8 @@ void main() {
     expect(tags, isNot(contains('beginner')), reason: 'a deck tag');
     expect(tags.toSet(), hasLength(tags.length));
     expect(showsTagFilter(spanish), isTrue);
-    // Every hiragana card has the one tag, which would filter nothing.
-    expect(showsTagFilter(state.deckById('ja-en-hiragana')!), isFalse);
+    // The Hindi vowels carry no card tags, so there is nothing to filter.
+    expect(showsTagFilter(state.deckById('hi-en-script-vowels')!), isFalse);
   });
 
   test('a grammar deck previews its pattern cells, lemma and slot', () {
@@ -82,11 +82,12 @@ void main() {
   });
 
   test('search matches a deck name or its language name', () {
-    final hiragana = state.deckById('ja-en-hiragana')!;
-    expect(deckMatches(hiragana, ''), isTrue);
-    expect(deckMatches(hiragana, 'HIRA'), isTrue);
-    expect(deckMatches(hiragana, 'japanese'), isTrue);
-    expect(deckMatches(hiragana, 'spanish'), isFalse);
+    // Named "First words", in Hindi.
+    final words = state.deckById('hi-en-first-words')!;
+    expect(deckMatches(words, ''), isTrue);
+    expect(deckMatches(words, 'FIRST'), isTrue);
+    expect(deckMatches(words, 'hindi'), isTrue);
+    expect(deckMatches(words, 'spanish'), isFalse);
   });
 
   test('every word of a search must match something about the deck', () {

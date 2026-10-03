@@ -103,6 +103,22 @@ class BundledAssetCheck(unittest.TestCase):
         self.assertEqual(result.returncode, 1, result.stdout)
         self.assertIn("decks/hi/", result.stdout)
 
+    def test_a_directory_kept_out_on_purpose_is_still_validated(self) -> None:
+        """decks/ja/ is in NOT_BUNDLED: not asked for, but still checked."""
+        shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
+        result = self.run_validator("decks/", self.tmp)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertNotIn("decks/ja/ holds decks", result.stdout)
+
+        deck = self.tmp / "decks" / "ja" / "ja-en-hiragana.yaml"
+        deck.write_text(
+            deck.read_text(encoding="utf-8").replace("schema: 1", "schema: 9"),
+            encoding="utf-8",
+        )
+        result = self.run_validator("decks/", self.tmp)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("ja-en-hiragana.yaml", result.stdout)
+
     def test_fails_from_a_different_working_directory(self) -> None:
         """The regression: the check used to read pubspec.yaml from the CWD.
 

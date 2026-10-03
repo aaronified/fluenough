@@ -26,7 +26,7 @@ void main() {
         languageName(state, 'hi'),
       ].join(l10n.commonListSeparator),
     );
-    final mira = l10n.profilesOpen('Mira', languageName(state, 'ja'));
+    final mira = l10n.profilesOpen('Mira', languageName(state, 'mr'));
     expect(
       find.bySemanticsLabel('$aro\n${l10n.profilesLocked}'),
       findsOneWidget,

@@ -14,8 +14,8 @@ import 'voices_page.dart';
 ///
 /// Settings runs the whole shell, as this version ships it. Appearance runs
 /// with every feature on, as the design draws it; `appearance-incoming` below
-/// is how this version shows it. Voices has Spanish installed and Japanese
-/// missing.
+/// is how this version shows it. Voices has Hindi and Spanish installed and
+/// the other languages missing.
 final List<GalleryEntry> settingsGalleryEntries = <GalleryEntry>[
   GalleryEntry(
     id: 'settings',
