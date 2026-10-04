@@ -77,6 +77,8 @@ class ReadingDrill extends StatelessWidget {
         reportDetail: '${session.item.card.id} in ${session.deck.id}',
         progress: session.progress,
         onClose: onClose,
+        // A heard passage is only heard: its text stays hidden.
+        needsSound: heard,
         card: <Widget>[
           _Label(
             heard
