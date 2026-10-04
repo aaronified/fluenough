@@ -5,6 +5,10 @@ kind: path
 id: ja-en-path
 language: ja
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - ja-en-hiragana
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:

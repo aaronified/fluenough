@@ -173,9 +173,9 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
 
-    await search(tester, 'hira');
+    await search(tester, 'parmesh');
     expect(shownDecks(tester), <String>[
-      state.deckById('ja-en-hiragana')!.deck.name,
+      state.deckById('hi-en-reading-panch-parmeshwar')!.deck.name,
     ]);
 
     await search(tester, 'SPANISH');
@@ -205,10 +205,10 @@ void main() {
       );
     }
 
-    await tapChip(tester, 'Japanese');
-    expect(shownDecks(tester), <String>[
-      state.deckById('ja-en-hiragana')!.deck.name,
-    ]);
+    await tapChip(tester, 'Hindi');
+    final hindi = tester.widgetList<DeckTile>(find.byType(DeckTile));
+    expect(hindi, isNotEmpty);
+    expect(hindi.map((t) => t.entry.language.code), everyElement('hi'));
 
     // A search narrows within the chosen language.
     await search(tester, 'core');
@@ -262,9 +262,12 @@ void main() {
         badge.kind,
         !state.canDrill(entry)
             ? DeckBadgeKind.incoming
-            // Mira learns Japanese, whose one deck is its path's first unit.
-            : entry.language.code == 'ja'
-            ? DeckBadgeKind.pending
+            // Mira learns Marathi, with nothing studied yet: its first
+            // units are pending, the rest not done.
+            : entry.language.code == 'mr'
+            ? (state.isPending(entry)
+                  ? DeckBadgeKind.pending
+                  : DeckBadgeKind.notDone)
             : DeckBadgeKind.start,
         reason: entry.id,
       );
@@ -307,11 +310,13 @@ void main() {
     final state = await pumpDecks(tester);
     final l10n = l10nOf(tester);
 
-    await tester.tap(find.text(state.deckById('ja-en-hiragana')!.deck.name));
+    await tester.tap(
+      find.text(state.deckById('hi-en-script-vowels')!.deck.name),
+    );
     await tester.pumpAndSettle();
     expect(
       tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
-      'ja-en-hiragana',
+      'hi-en-script-vowels',
     );
 
     await tester.pageBack();
@@ -435,13 +440,13 @@ themes:
     // place of its first: grouped by course, not by neighbour.
     final split = courseSections(<DeckEntry>[
       state.deckById('hi-en-first-words')!,
-      state.deckById('ja-en-hiragana')!,
+      state.deckById('es-en-core-100')!,
       state.deckById('hi-en-grammar-nouns')!,
     ], state);
     expect(split.map((s) => s.course?.language.code), ['hi', null]);
     expect(split.map((s) => [for (final e in s.decks) e.id]), [
       ['hi-en-first-words', 'hi-en-grammar-nouns'],
-      ['ja-en-hiragana'],
+      ['es-en-core-100'],
     ]);
 
     final bengali = courseSections(

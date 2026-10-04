@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/models/deck.dart';
+import 'package:yaml/yaml.dart';
 
 const String miniDeck = '''
 schema: 1
@@ -53,11 +54,20 @@ void main() {
     });
 
     test('every bundled deck file is listed and parses', () {
+      // The directories pubspec.yaml bundles. A directory left out, as
+      // decks/ja/ is for now, stays in the repository but not in the app.
+      final pubspec = loadYaml(File('pubspec.yaml').readAsStringSync());
+      final bundled = <String>{
+        for (final asset in pubspec['flutter']['assets'] as YamlList) '$asset',
+      };
       final onDisk = Directory('decks')
           .listSync(recursive: true)
           .whereType<File>()
           .map((f) => f.path.replaceAll(r'\', '/'))
           .where(AssetDeckSource.isDeckPath)
+          .where(
+            (p) => bundled.contains(p.substring(0, p.lastIndexOf('/') + 1)),
+          )
           // Facts, themes, number rules, course paths, sounds and
           // romanisation files sit beside the decks but are not decks.
           .where(
@@ -97,7 +107,7 @@ void main() {
         containsAll([
           'es-en-core-100',
           'es-en-grammar-present-ar',
-          'ja-en-hiragana',
+          'hi-en-script-vowels',
         ]),
       );
       final paths = catalog.decks.map((d) => d.path).toList();
@@ -151,15 +161,15 @@ void main() {
     });
 
     test('script decks are the ones tagged script', () {
-      expect(catalog.byId('ja-en-hiragana')!.isScript, isTrue);
+      expect(catalog.byId('hi-en-script-vowels')!.isScript, isTrue);
       expect(catalog.byId('es-en-core-100')!.isScript, isFalse);
-      expect(catalog.byId('ja-en-hiragana')!.glyph, 'あ');
+      expect(catalog.byId('hi-en-script-vowels')!.glyph, 'अ');
     });
 
     test('languages come one per code', () {
       final codes = catalog.languages.map((l) => l.code).toList();
       expect(codes.toSet(), hasLength(codes.length));
-      expect(codes, containsAll(['es', 'ja']));
+      expect(codes, containsAll(['es', 'hi']));
     });
   });
 

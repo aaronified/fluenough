@@ -1,25 +1,36 @@
-# The order Telugu is taught from English in: one unit per line. First the
-# script, the sounds English lacks, and how Telugu grammar differs from
-# English; then a theme deck and the grammar that goes with it. Every te-en
-# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
+# The order Telugu is taught from English in: one unit per line. First a
+# few words and basic sentences, the sounds English lacks and how Telugu
+# grammar differs from English; then five more themes, each with the grammar
+# that goes with it; then the script, before the rest. Every te-en deck is
+# listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: te-en-path
 language: te
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - te-en-script-vowels
+  - te-en-script-consonants
+  - te-en-script-reading
+  - te-en-script-vowel-signs
+  - te-en-script-conjuncts
+  - te-en-spelling
+  - te-en-reading-diddubatu
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [te-en-script-vowels, te-en-script-consonants, te-en-script-reading]
-  - [te-en-script-vowel-signs, te-en-script-conjuncts]
+  - [te-en-first-words, te-en-grammar-sentences, "*"]
   - [te-en-sound-differences]
   - [te-en-grammar-differences]
-  - [te-en-first-words, te-en-grammar-sentences, "*"]
   - [te-en-questions, te-en-grammar-questions, "*"]
   - [te-en-addressing, te-en-grammar-pronouns, "*"]
   - [te-en-about-me, "*"]
   - [te-en-family, te-en-grammar-be, "*"]
   - [te-en-work, te-en-grammar-demonstratives, "*"]
+  - [te-en-script-vowels, te-en-script-consonants, te-en-script-reading]
+  - [te-en-script-vowel-signs, te-en-script-conjuncts]
   - [te-en-numbers-1-20, "*"]
   - [te-en-numbers-big, "*"]
   - [te-en-market, te-en-grammar-nouns, te-en-grammar-articles, "*"]

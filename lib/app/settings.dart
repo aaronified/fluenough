@@ -48,13 +48,15 @@ class SettingsNotifier extends ChangeNotifier {
     Set<String> placedDecks = const <String>{},
     this._learningChosen = false,
     Set<String> speechOnline = const <String>{},
+    Set<String> noAlphabet = const <String>{},
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
        _spokenLanguages = List<String>.unmodifiable(spokenLanguages),
        _learningLanguages = List<String>.unmodifiable(learningLanguages),
        _placedDecks = Set<String>.unmodifiable(placedDecks),
-       _speechOnline = Set<String>.unmodifiable(speechOnline);
+       _speechOnline = Set<String>.unmodifiable(speechOnline),
+       _noAlphabet = Set<String>.unmodifiable(noAlphabet);
 
   /// The new-card slider's range and step, from the design.
   static const int maxNewCardsPerDay = 50;
@@ -93,6 +95,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _placedDecks;
   bool _learningChosen;
   Set<String> _speechOnline;
+  Set<String> _noAlphabet;
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
@@ -175,6 +178,22 @@ class SettingsNotifier extends ChangeNotifier {
     allowed ? next.add(code) : next.remove(code);
     if (setEquals(next, _speechOnline)) return;
     _speechOnline = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The languages, by code, learned without their alphabet: their path
+  /// leaves out the decks that need it, cards show the romanisation first,
+  /// and answers are typed in Latin letters, in full credit. Asked per
+  /// language when it is chosen.
+  Set<String> get noAlphabet => _noAlphabet;
+
+  bool learnsAlphabet(String code) => !_noAlphabet.contains(code);
+
+  void setLearnsAlphabet(String code, bool learns) {
+    final next = Set<String>.of(_noAlphabet);
+    learns ? next.remove(code) : next.add(code);
+    if (setEquals(next, _noAlphabet)) return;
+    _noAlphabet = Set<String>.unmodifiable(next);
     notifyListeners();
   }
 
@@ -405,6 +424,7 @@ class SettingsNotifier extends ChangeNotifier {
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
     'speech_online': (_speechOnline.toList()..sort()).join(','),
+    'no_alphabet': (_noAlphabet.toList()..sort()).join(','),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
@@ -520,6 +540,13 @@ class SettingsNotifier extends ChangeNotifier {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           allowOnlineSpeech(code, true);
+        }
+      }
+    }
+    if (pick('no_alphabet', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
+          setLearnsAlphabet(code, false);
         }
       }
     }

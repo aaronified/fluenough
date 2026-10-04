@@ -31,21 +31,23 @@ abstract final class GalleryFixtures {
     pin: '1234',
   );
 
-  /// The design's second profile: Japanese, no PIN.
+  /// The design's second profile, no PIN. The design has her learn
+  /// Japanese, which the app does not bundle for now: Marathi here, which
+  /// also has no voice in [state].
   static const Profile mira = Profile(
     id: 'mira',
     name: 'Mira',
-    languages: <String>{'ja'},
+    languages: <String>{'mr'},
     shape: AvatarShape.clover,
     tone: AvatarTone.tertiary,
   );
 
   /// A state on [app]'s already-loaded catalog, with voices for [voices]
-  /// (Hindi and Spanish, as in the design; Japanese has none), the design's
-  /// two profiles with [currentProfileId] current, and — unless [history] is
-  /// false — twelve days of reviews, so there is a streak, cards due and a
-  /// leech. The update check answers from [releases], never from GitHub,
-  /// and an update installs through [installer], never for real.
+  /// (Hindi and Spanish, as in the design; Mira's Marathi has none), the
+  /// design's two profiles with [currentProfileId] current, and — unless
+  /// [history] is false — twelve days of reviews, so there is a streak, cards
+  /// due and a leech. The update check answers from [releases], never from
+  /// GitHub, and an update installs through [installer], never for real.
   ///
   /// Call `load()` on the result before showing it; the gallery does.
   static AppState state(
@@ -83,7 +85,7 @@ abstract final class GalleryFixtures {
   /// so the gallery's numbers stay the same as content decks are added.
   static const Set<String> historyDecks = <String>{
     'es-en-core-100',
-    'ja-en-hiragana',
+    'mr-en-script-consonants',
   };
 
   /// Twelve days of reviews ending yesterday, on the first cards of each of

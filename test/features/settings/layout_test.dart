@@ -36,7 +36,7 @@ final Map<String, (Widget, AppState Function(AppState))> screens =
       'Voices': (const VoicesPage(), GalleryFixtures.state),
       'Voices, all installed': (
         const VoicesPage(),
-        (app) => AppState.test(tts: FixedTtsEngine(const <String>{'es', 'ja'})),
+        (app) => AppState.test(tts: FixedTtsEngine(const <String>{'es', 'hi'})),
       ),
     };
 

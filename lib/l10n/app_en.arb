@@ -2578,6 +2578,32 @@
   "@settingsRomanisationDesc": {
     "description": "Under Show romanisation."
   },
+  "settingsAlphabet": "Alphabets",
+  "@settingsAlphabet": {
+    "description": "Settings row: which languages are learned with their alphabet, and which in Latin letters only."
+  },
+  "settingsAlphabetAll": "Learning every alphabet",
+  "@settingsAlphabetAll": {
+    "description": "Under Alphabets, when no language is learned in Latin letters only."
+  },
+  "settingsAlphabetLatin": "Latin letters only: {languages}",
+  "@settingsAlphabetLatin": {
+    "description": "Under Alphabets: the languages learned without their alphabet, joined by commonListSeparator.",
+    "placeholders": {
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Telugu"
+      }
+    }
+  },
+  "settingsAlphabetTitle": "Learn the alphabet",
+  "@settingsAlphabetTitle": {
+    "description": "Title of the dialog with a switch per language: learn its alphabet, or Latin letters only."
+  },
+  "settingsAlphabetEmpty": "No decks without the alphabet yet",
+  "@settingsAlphabetEmpty": {
+    "description": "Under a language in the Alphabets dialog whose course has nothing to teach without its alphabet."
+  },
   "settingsSectionSound": "Sound",
   "@settingsSectionSound": {
     "description": "Settings section heading."
@@ -2927,6 +2953,44 @@
   "learnLoading": "Loading the courses…",
   "@learnLoading": {
     "description": "Screen-reader label while the courses load on the choose-what-to-learn screen."
+  },
+  "alphabetAskTitle": "Learn the {language} alphabet?",
+  "@alphabetAskTitle": {
+    "description": "Asked for each language chosen to learn whose course has script decks, before placement.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "alphabetAskBody": "Or learn {language} in Latin letters only: words show their romanisation first, you answer in Latin letters, and the script, spelling and reading decks are left out. You can change this in Settings.",
+  "@alphabetAskBody": {
+    "description": "Under the alphabet question.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "alphabetLearn": "Learn the alphabet",
+  "@alphabetLearn": {
+    "description": "Button: learn the language with its alphabet."
+  },
+  "alphabetSkip": "Latin letters only",
+  "@alphabetSkip": {
+    "description": "Button: learn the language without its alphabet, in Latin letters only."
+  },
+  "placementNoAlphabet": "{language} has no decks without its alphabet yet. You can learn the alphabet from Settings.",
+  "@placementNoAlphabet": {
+    "description": "Placement result for a language learned without its alphabet whose course has nothing else yet.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
   },
   "placementAskTitle": "Do you know any {language}?",
   "@placementAskTitle": {

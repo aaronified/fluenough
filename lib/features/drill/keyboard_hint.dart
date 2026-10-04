@@ -7,7 +7,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
 
 /// Under the answer field for a script that needs its own keyboard: "No
-/// Japanese keyboard? Try HeliBoard.", and "Get HeliBoard", which opens
+/// Hindi keyboard? Try HeliBoard.", and "Get HeliBoard", which opens
 /// HeliBoard's F-Droid page, or copies its address when nothing can.
 class KeyboardHint extends StatelessWidget {
   const KeyboardHint({super.key, required this.language});

@@ -47,6 +47,6 @@ AppState todayAllDoneState(AppState app) {
   return state;
 }
 
-/// Mira, who learns Japanese, which the fixture phone has no voice for.
+/// Mira, who learns Marathi, which the fixture phone has no voice for.
 AppState todayNoVoiceState(AppState app) =>
     GalleryFixtures.state(app, currentProfileId: GalleryFixtures.mira.id);

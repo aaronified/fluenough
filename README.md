@@ -64,10 +64,13 @@ A neural backend (Kokoro) is a candidate for a later release; see
 
 Where a language uses an unfamiliar writing system, learning the script and its
 pronunciation *is* the first task, not a preliminary to it. Fluenough treats
-script decks as ordinary decks — `decks/ja/ja-en-hiragana.yaml` is the worked
-example — and the starter set being built out (Bengali, Hindi, Gujarati,
+script decks as ordinary decks — `decks/hi/hi-en-script-vowels.yaml` is a
+worked example — and the starter set being built out (Bengali, Hindi, Gujarati,
 Telugu, Urdu) each pair a script deck with a vocabulary deck. See
 [docs/ROADMAP.md](docs/ROADMAP.md).
+
+Japanese (`decks/ja/`) is kept in the repository but not bundled in the app for
+now.
 
 ## Decks
 

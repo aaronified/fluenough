@@ -56,7 +56,8 @@ class _LearnLanguagesPageState extends State<LearnLanguagesPage> {
         settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
           languages: added,
-          onFinished: (placed) => _save(state, chosen, placed),
+          onFinished: (found) =>
+              _save(state, chosen, found.placed, alphabet: found.alphabet),
         ),
       ),
     );
@@ -68,9 +69,13 @@ class _LearnLanguagesPageState extends State<LearnLanguagesPage> {
   void _save(
     AppState state,
     List<String> chosen,
-    Map<String, Set<String>> placed,
-  ) {
+    Map<String, Set<String>> placed, {
+    Map<String, bool> alphabet = const <String, bool>{},
+  }) {
     final settings = state.settings;
+    for (final MapEntry(:key, :value) in alphabet.entries) {
+      settings.setLearnsAlphabet(key, value);
+    }
     final replaced = <String>{
       for (final entry in state.decks)
         if (placed.containsKey(entry.language.code)) entry.id,

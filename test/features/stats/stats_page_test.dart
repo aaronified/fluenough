@@ -16,8 +16,8 @@ import 'package:fluenough/ui/widgets/stat_tile.dart';
 import '../../support/harness.dart';
 
 /// The gallery's history: twelve days ending yesterday, 22 reviews in each
-/// of es-en-core-100 and ja-en-hiragana (12 recognition, all remembered; 10
-/// production on one leech, half remembered).
+/// of es-en-core-100 and mr-en-script-consonants (12 recognition, all
+/// remembered; 10 production on one leech, half remembered).
 Future<AppState> fixture({FeatureRegistry? features}) async {
   final app = AppState.test();
   await app.load();
@@ -154,9 +154,9 @@ void main() {
     for (final label in <String>[
       l10n.statsBarSemantics(l10n.skillRecognition, 1),
       l10n.statsBarSemantics(l10n.skillProduction, 0.5),
-      // Weakest first: el agua and el pan (6 of 11), then hiragana (17/22).
+      // Weakest first: el agua and el pan (6 of 11). The Marathi letters
+      // carry no tags.
       l10n.statsBarSemantics('food', 6 / 11),
-      l10n.statsBarSemantics('hiragana', 17 / 22),
     ]) {
       final bar = find.bySemanticsLabel(label);
       await scrollTo(tester, bar);
@@ -257,30 +257,30 @@ void main() {
           .selected;
 
       final spanish = nameOf(state, 'es');
-      final japanese = nameOf(state, 'ja');
+      final marathi = nameOf(state, 'mr');
       // Most recently reviewed first, so that the chip the tab opens on is
       // on screen; All languages last.
       final chips = find.byType(FilterChip);
       double startOf(String label) => tester
           .getRect(find.ancestor(of: find.text(label), matching: chips))
           .left;
-      expect(startOf(spanish), lessThan(startOf(japanese)));
-      expect(startOf(japanese), lessThan(startOf(l10n.statsLanguageAll)));
+      expect(startOf(spanish), lessThan(startOf(marathi)));
+      expect(startOf(marathi), lessThan(startOf(l10n.statsLanguageAll)));
       expect(
         tester.getRect(find.ancestor(of: find.text(spanish), matching: chips)),
         isA<Rect>().having((r) => r.right, 'right', lessThanOrEqualTo(390)),
       );
       expect(chosen(spanish), isTrue);
-      expect(chosen(japanese), isFalse);
+      expect(chosen(marathi), isFalse);
       expect(chosen(l10n.statsLanguageAll), isFalse);
       expect(tile('23', l10n.statsReviews), findsOneWidget);
       expect(tile('13', l10n.statsDayStreak), findsOneWidget);
       expect(tile('13', l10n.statsNewCardsLearned), findsOneWidget);
 
-      await tapChip(tester, japanese);
-      expect(chosen(japanese), isTrue);
+      await tapChip(tester, marathi);
+      expect(chosen(marathi), isTrue);
       expect(tile('22', l10n.statsReviews), findsOneWidget);
-      // Japanese was last reviewed yesterday: its own streak, not Spanish's.
+      // Marathi was last reviewed yesterday: its own streak, not Spanish's.
       expect(tile('12', l10n.statsDayStreak), findsOneWidget);
       expect(
         tile(l10n.commonPercent(17 / 22), l10n.statsRemembered),
@@ -316,17 +316,17 @@ void main() {
         state: await spanishToday(),
       );
       final l10n = l10nOf(tester);
-      final japanese = nameOf(state, 'ja');
-      await tapChip(tester, japanese);
+      final marathi = nameOf(state, 'mr');
+      await tapChip(tester, marathi);
 
       final row = find.text(l10n.statsLeeches(1));
       await scrollTo(tester, row);
       await tester.tap(row);
       await tester.pumpAndSettle();
-      expect(find.text(l10n.leechesTitleIn(japanese)), findsOneWidget);
+      expect(find.text(l10n.leechesTitleIn(marathi)), findsOneWidget);
       final cards = tester.widgetList<LeechCard>(find.byType(LeechCard));
       expect(cards, hasLength(1));
-      expect(cards.single.leech.card.deckId, 'ja-en-hiragana');
+      expect(cards.single.leech.card.deckId, 'mr-en-script-consonants');
     });
 
     testWidgets('one language is named by its chip, with no All', (

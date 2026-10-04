@@ -12,16 +12,23 @@ import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
+import '../../support/script_only_course.dart';
 
 /// Choosing what to learn and placement (#117, ADR-0013), from first launch
 /// and from Settings.
 
-/// The app on first launch after the languages the learner speaks.
-Future<AppState> pumpFirstLaunch(WidgetTester tester) async {
+/// The app on first launch after the languages the learner speaks, on the
+/// bundled decks unless [decks] is given.
+Future<AppState> pumpFirstLaunch(
+  WidgetTester tester, {
+  DeckSource? decks,
+}) async {
   final state = AppState.test(
+    decks: decks,
     settings: SettingsNotifier(spokenLanguages: const <String>['en']),
   );
   addTearDown(state.dispose);
@@ -82,6 +89,9 @@ void main() {
     await tapText(tester, hindi);
     await tester.tap(go);
     await tester.pumpAndSettle();
+    // First, whether to learn the alphabet (#47).
+    expect(find.text(l10n.alphabetAskTitle(hindi)), findsOneWidget);
+    await tapText(tester, l10n.alphabetLearn);
     expect(find.text(l10n.placementAskTitle(hindi)), findsOneWidget);
     expect(state.settings.learningChosen, isFalse, reason: 'nothing saved yet');
 
@@ -107,6 +117,7 @@ void main() {
 
     await tapText(tester, hindi);
     await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetLearn);
     await tapText(tester, l10n.placementFind);
     expect(find.text(l10n.placementQuestion), findsOneWidget);
     expect(find.text(l10n.placementProgress(1, units.length)), findsOneWidget);
@@ -135,6 +146,7 @@ void main() {
 
     await tapText(tester, hindi);
     await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetLearn);
     await tapText(tester, l10n.placementFind);
     for (var i = 0; i < 4; i++) {
       await answer(tester, state, 'hi', right: true);
@@ -159,9 +171,13 @@ void main() {
     await tapText(tester, bengali);
     await tapText(tester, l10n.commonContinue);
     // In the catalog's order.
+    expect(find.text(l10n.alphabetAskTitle(bengali)), findsOneWidget);
+    await tapText(tester, l10n.alphabetLearn);
     expect(find.text(l10n.placementAskTitle(bengali)), findsOneWidget);
     await tapText(tester, l10n.placementNew(bengali));
     await tapText(tester, l10n.placementNext);
+    expect(find.text(l10n.alphabetAskTitle(hindi)), findsOneWidget);
+    await tapText(tester, l10n.alphabetLearn);
     expect(find.text(l10n.placementAskTitle(hindi)), findsOneWidget);
     await tapText(tester, l10n.placementNew(hindi));
     await tapText(tester, l10n.placementDone);
@@ -175,6 +191,7 @@ void main() {
     final l10n = l10nOf(tester);
     await tapText(tester, nameOf(state, 'hi'));
     await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetLearn);
     await tapText(tester, l10n.placementFind);
     await answer(tester, state, 'hi', right: true);
     await tester.pageBack();
@@ -212,6 +229,7 @@ void main() {
     expect(find.text(l10n.learnTitle), findsOneWidget);
     await tapText(tester, bengali);
     await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetLearn);
     expect(find.text(l10n.placementAskTitle(bengali)), findsOneWidget);
     await tapText(tester, l10n.placementNew(bengali));
     await tapText(tester, l10n.placementDone);
@@ -295,27 +313,28 @@ void main() {
         ),
         profiles: const <Profile>[
           Profile.defaultProfile,
-          Profile(id: 'mira', name: 'Mira', languages: <String>{'ja'}),
+          Profile(id: 'mira', name: 'Mira', languages: <String>{'bn'}),
         ],
         currentProfileId: 'mira',
       ),
     );
     final l10n = l10nOf(tester);
-    final japanese = nameOf(state, 'ja');
+    final bengali = nameOf(state, 'bn');
     final hindi = nameOf(state, 'hi');
     await tapText(tester, l10n.navSettings);
     await tapText(tester, l10n.settingsLearn);
     bool ticked(String name) => tester
         .widget<CheckboxListTile>(find.widgetWithText(CheckboxListTile, name))
         .value!;
-    expect(ticked(japanese), isTrue);
+    expect(ticked(bengali), isTrue);
     expect(ticked(hindi), isFalse);
 
     await tapText(tester, hindi);
     await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetLearn);
     await tapText(tester, l10n.placementNew(hindi));
     await tapText(tester, l10n.placementDone);
-    expect(state.currentProfile.languages, <String>{'hi', 'ja'});
+    expect(state.currentProfile.languages, <String>{'hi', 'bn'});
     expect(state.settings.learningLanguages, isEmpty);
   });
 
@@ -348,10 +367,82 @@ void main() {
     await tapText(tester, l10n.settingsLearn);
     await tapText(tester, hindi);
     await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetLearn);
     await tapText(tester, l10n.placementNew(hindi));
     expect(
       find.text(l10n.placementResultContinue(hindi, units[1].first.deck.name)),
       findsOneWidget,
     );
+  });
+
+  testWidgets('Latin letters only leaves out the decks that need the '
+      'alphabet, and is saved with the choice (#47)', (tester) async {
+    usePhone(tester);
+    final state = await pumpFirstLaunch(tester);
+    final l10n = l10nOf(tester);
+    final hindi = nameOf(state, 'hi');
+    final withAlphabet = state.courseUnits('hi');
+    final alphabet = state.pathOf(withAlphabet.first.first)!.alphabet;
+    expect(alphabet, isNotEmpty);
+
+    await tapText(tester, hindi);
+    await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetSkip);
+    // Nothing is saved until the end.
+    expect(state.settings.learnsAlphabet('hi'), isTrue);
+    await tapText(tester, l10n.placementNew(hindi));
+    final first = state
+        .courseUnits('hi', alphabet: false)
+        .first
+        .first
+        .deck
+        .name;
+    expect(find.text(l10n.placementResultStart(hindi, first)), findsOneWidget);
+    await tapText(tester, l10n.placementDone);
+
+    expect(state.settings.learnsAlphabet('hi'), isFalse);
+    final without = decksOf(state.courseUnits('hi'));
+    expect(without.intersection(alphabet), isEmpty);
+    expect(decksOf(withAlphabet).difference(without), alphabet);
+    expect(decksOf(state.pendingUnits).intersection(alphabet), isEmpty);
+  });
+
+  testWidgets("without the alphabet, placement's check shows the reading "
+      'first', (tester) async {
+    usePhone(tester);
+    final state = await pumpFirstLaunch(tester);
+    final l10n = l10nOf(tester);
+    await tapText(tester, nameOf(state, 'hi'));
+    await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetSkip);
+    await tapText(tester, l10n.placementFind);
+    expect(find.byType(ReadingFirst), findsOneWidget);
+  });
+
+  testWidgets('a course with nothing but its script says so without the '
+      'alphabet', (tester) async {
+    usePhone(tester);
+    final state = await pumpFirstLaunch(
+      tester,
+      decks: MemoryDeckSource(scriptOnlyCourse()),
+    );
+    final l10n = l10nOf(tester);
+    final hindi = nameOf(state, 'hi');
+    await tapText(tester, hindi);
+    await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetSkip);
+    await tapText(tester, l10n.placementNew(hindi));
+    expect(find.text(l10n.placementNoAlphabet(hindi)), findsOneWidget);
+  });
+
+  testWidgets('a language with no alphabet decks is not asked', (tester) async {
+    usePhone(tester);
+    final state = await pumpFirstLaunch(tester);
+    final l10n = l10nOf(tester);
+    final spanish = nameOf(state, 'es');
+    await tapText(tester, spanish);
+    await tapText(tester, l10n.commonContinue);
+    expect(find.text(l10n.alphabetAskTitle(spanish)), findsNothing);
+    expect(find.text(l10n.placementAskTitle(spanish)), findsOneWidget);
   });
 }
