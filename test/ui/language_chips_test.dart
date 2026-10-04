@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/ui/widgets/language_chips.dart';
 
@@ -30,29 +32,55 @@ void main() {
     expect(icons.values.toSet(), hasLength(icons.length));
   });
 
+  Future<void> pumpChips(
+    WidgetTester tester,
+    LanguageInfo language,
+    List<DeckEntry> decks,
+  ) => tester.pumpWidget(
+    MaterialApp(
+      home: Scaffold(
+        body: LanguageChips(
+          languages: <LanguageInfo>[language],
+          decks: decks,
+          semanticLabel: 'Filter by language',
+          selected: null,
+          onSelected: (_) {},
+        ),
+      ),
+    ),
+  );
+
   testWidgets('a chip shows the icon, or else its first deck\'s glyph', (
     tester,
   ) async {
-    const hindi = LanguageInfo(
+    final deck = DeckParser.parse('''
+schema: 1
+id: hi-en-probe
+name: Probe
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: hi-0001
+    target: नमस्ते
+    native: hello
+    reading: namaste
+''', source: 'hi-en-probe.yaml');
+    final decks = <DeckEntry>[DeckEntry(path: 'hi-en-probe.yaml', deck: deck)];
+    const named = LanguageInfo(
       code: 'hi',
       iso639_3: 'hin',
       name: 'Hindi',
       script: 'devanagari',
       icon: 'हि',
     );
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          body: LanguageChips(
-            languages: const <LanguageInfo>[hindi],
-            decks: const [],
-            semanticLabel: 'Filter by language',
-            selected: null,
-            onSelected: (_) {},
-          ),
-        ),
-      ),
-    );
+    await pumpChips(tester, named, decks);
     expect(find.text('हि'), findsOneWidget);
+    expect(find.text('न'), findsNothing);
+
+    // A language that names no icon: the first letter of its first card.
+    await pumpChips(tester, deck.language, decks);
+    expect(find.text('न'), findsOneWidget);
+    expect(find.text('हि'), findsNothing);
   });
 }
