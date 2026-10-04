@@ -5,13 +5,14 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 
-/// A lesson teaching a word (ADR-0024): the word and its reading, its
-/// meaning, its note and an example, played aloud as it shows where the
+/// A lesson teaching a word (ADR-0024): the word, its reading and its IPA,
+/// its meaning, its note and an example, played aloud as it shows where the
 /// phone has a voice and sound is on. Continue goes on to its first question; nothing is
 /// recorded.
 ///
@@ -73,6 +74,9 @@ class _TeachDrillState extends State<TeachDrill> {
               ),
             ),
         ],
+        // How it is said, under the reading.
+        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
+          IpaText(ipa),
         Text(
           card.native,
           textAlign: TextAlign.center,

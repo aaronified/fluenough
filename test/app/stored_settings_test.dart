@@ -13,6 +13,7 @@ void changeAll(SettingsNotifier s) {
   s
     ..setSkillEnabled(Skill.listening, false)
     ..showRomanisation = false
+    ..showIpa = false
     ..soundOn = false
     ..autoplay = true
     ..countSpeakerTap()

@@ -13,6 +13,7 @@ import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
@@ -285,6 +286,11 @@ class _GrammarDrillState extends State<GrammarDrill> {
               reading == null
                   ? cell.answer
                   : l10n.feedbackReadingWithTarget(reading, cell.answer),
+              ipaToShow(
+                context,
+                cell.entry.ipas[cell.slot],
+                target: cell.answer,
+              ),
             ),
       actions: _actions(context, answer, incoming, moves),
     );
@@ -389,12 +395,13 @@ class _GrammarDrillState extends State<GrammarDrill> {
   }
 
   /// [shown] is the form, or its reading with the form after it when the
-  /// answer was typed in Latin letters.
+  /// answer was typed in Latin letters; [ipa], the form's IPA, if shown.
   Widget _feedback(
     AppLocalizations l10n,
     GrammarCell cell,
     _Answer answer,
     String shown,
+    String? ipa,
   ) {
     final graded = answer.graded;
     if (graded == null) {
@@ -402,6 +409,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
         kind: FeedbackKind.wrong,
         title: l10n.feedbackGaveUp,
         detail: l10n.feedbackAnswer(shown),
+        ipa: ipa,
       );
     }
     return switch (graded.outcome) {
@@ -409,21 +417,25 @@ class _GrammarDrillState extends State<GrammarDrill> {
         kind: FeedbackKind.correct,
         title: l10n.feedbackCorrect,
         detail: shown,
+        ipa: ipa,
       ),
       AnswerOutcome.closeDiacritics => FeedbackBanner(
         kind: FeedbackKind.close,
         title: l10n.feedbackAccent,
         detail: l10n.feedbackTypedWritten(answer.typed, shown),
+        ipa: ipa,
       ),
       AnswerOutcome.closeTypo => FeedbackBanner(
         kind: FeedbackKind.nearMiss,
         title: l10n.feedbackTypo(shown),
         detail: l10n.feedbackTypoDetail(answer.typed),
+        ipa: ipa,
       ),
       AnswerOutcome.wrong => FeedbackBanner(
         kind: FeedbackKind.wrong,
         title: l10n.feedbackWrong,
         detail: l10n.feedbackAnswer(shown),
+        ipa: ipa,
       ),
     };
   }

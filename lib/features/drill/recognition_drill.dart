@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
@@ -79,6 +80,9 @@ class RecognitionDrill extends StatelessWidget {
               color: scheme.onSurfaceVariant,
             ),
           ),
+        // How it is said: the word is shown, so this gives nothing away.
+        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
+          IpaText(ipa),
         // From the start: hearing the word gives nothing away. Keyed, so
         // that showing the answer does not play it again.
         if (session.canPlay)

@@ -51,7 +51,12 @@ List<String> cardTagsOf(DeckEntry entry) =>
 bool showsTagFilter(DeckEntry entry) => cardTagsOf(entry).length >= 2;
 
 /// One line of a deck's card preview: deck content, never a card id.
-typedef PreviewLine = ({String target, String native, String? reading});
+typedef PreviewLine = ({
+  String target,
+  String native,
+  String? reading,
+  String? ipa,
+});
 
 /// The first [count] cards of [entry], as its screen previews them. A
 /// grammar deck previews its pattern's cells that have a form: the form, and
@@ -71,12 +76,18 @@ List<PreviewLine> previewOf(
               target: form,
               native: l10n.deckGrammarCell(row.lemma, slot),
               reading: null,
+              ipa: row.ipas[slot],
             ),
     ].take(count).toList();
   }
   return <PreviewLine>[
     for (final card in entry.cards.take(count))
-      (target: card.target, native: card.native, reading: card.reading),
+      (
+        target: card.target,
+        native: card.native,
+        reading: card.reading,
+        ipa: card.ipa,
+      ),
   ];
 }
 

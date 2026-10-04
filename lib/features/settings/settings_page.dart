@@ -32,7 +32,7 @@ import 'update_section.dart';
 /// backup, updates, and the footer.
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
-/// per day, the skill switches, romanisation, sound, playing
+/// per day, the skill switches, romanisation and the IPA, sound, playing
 /// words automatically, speech rate, and the Voices row.
 /// Export and import save the review log as a file and merge one back
 /// (#20). Updates, which the design does not draw, checks GitHub for a newer
@@ -183,6 +183,12 @@ class SettingsPage extends StatelessWidget {
           subtitle: l10n.settingsRomanisationDesc,
           value: settings.showRomanisation,
           onChanged: (on) => settings.showRomanisation = on,
+        ),
+        GroupedTile.toggle(
+          title: l10n.settingsIpa,
+          subtitle: l10n.settingsIpaDesc,
+          value: settings.showIpa,
+          onChanged: (on) => settings.showIpa = on,
         ),
         if (_withAlphabet(state).isNotEmpty)
           GroupedTile(

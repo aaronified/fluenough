@@ -6,11 +6,12 @@ import '../../app/deck_catalog.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/target_text.dart';
 import 'deck_content.dart';
 
-/// "Cards": the first few cards of a deck, target, meaning and reading. Deck
-/// content only — never a card id (AGENTS.md rule 1).
+/// "Cards": the first few cards of a deck, target, meaning, reading and IPA.
+/// Deck content only — never a card id (AGENTS.md rule 1).
 class CardPreview extends StatelessWidget {
   const CardPreview({super.key, required this.entry});
 
@@ -91,6 +92,9 @@ class _PreviewRow extends StatelessWidget {
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
                     ),
+                  if (ipaToShow(context, line.ipa, target: line.target)
+                      case final ipa?)
+                    IpaText(ipa, fontSize: 13, textAlign: TextAlign.start),
                 ],
               ),
             ),

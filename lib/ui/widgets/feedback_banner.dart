@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 
 import '../../core/models/deck.dart';
+import 'ipa_text.dart';
 import 'target_text.dart';
 
 /// What a drill's feedback says about the answer, which sets its colour and
@@ -28,6 +29,7 @@ enum FeedbackKind {
 /// A live region, so screen readers announce it as it appears. [detail]
 /// often quotes deck content, so its direction is taken from its own text,
 /// and each of [quotes] in the title or the detail is read in [language].
+/// [ipa], the answer's IPA, goes under them.
 class FeedbackBanner extends StatelessWidget {
   const FeedbackBanner({
     super.key,
@@ -36,11 +38,16 @@ class FeedbackBanner extends StatelessWidget {
     this.detail,
     this.quotes = const <String>[],
     this.language,
+    this.ipa,
   });
 
   final FeedbackKind kind;
   final String title;
   final String? detail;
+
+  /// How the answer is said, in the IPA, without the slashes; null for none
+  /// (see `ipaToShow`).
+  final String? ipa;
 
   /// The deck content the title and the detail quote: the answer, what was
   /// typed.
@@ -119,6 +126,15 @@ class FeedbackBanner extends StatelessWidget {
                           ? TextDirection.rtl
                           : null,
                       style: theme.textTheme.bodyMedium!.copyWith(color: fg),
+                    ),
+                  ],
+                  if (ipa case final ipa?) ...<Widget>[
+                    const SizedBox(height: 2),
+                    IpaText(
+                      ipa,
+                      fontSize: 15,
+                      color: fg.withValues(alpha: 0.85),
+                      textAlign: TextAlign.start,
                     ),
                   ],
                 ],

@@ -8,13 +8,14 @@ import '../../core/models/deck.dart';
 import '../../core/models/reading.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/grammar_cells.dart';
 
 /// Every card of a deck as one scrolling list, for reviewers: two or three
-/// lines a card, its script and romanisation, its meaning, and its id, so
+/// lines a card, its script, romanisation and IPA, its meaning, and its id, so
 /// that a whole deck reads quickly and a mistake can be pointed at exactly.
 /// A card with more to it (other accepted forms and meanings, part of
 /// speech, tags, notes, examples, the skills it is limited to) opens in
@@ -56,18 +57,24 @@ class InspectPage extends StatelessWidget {
         title: Text(l10n.inspectTitle(entry.deck.name)),
         actions: <Widget>[ReportButton(detail: entry.id)],
       ),
-      body: SelectionArea(
-        child: ListView.separated(
-          padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
-          itemCount: rows.length + 1,
-          separatorBuilder: (_, i) =>
-              i == 0 ? const SizedBox(height: 8) : const Divider(height: 1),
-          itemBuilder: (context, i) => i == 0
-              ? Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-                  child: _Muted(l10n.inspectIntro(entry.id)),
-                )
-              : rows[i - 1](context),
+      // Built again as Show IPA changes.
+      body: ListenableBuilder(
+        listenable: state.settings,
+        builder: (context, _) => SelectionArea(
+          child: ListView.separated(
+            padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
+            itemCount: rows.length + 1,
+            separatorBuilder: (_, i) =>
+                i == 0 ? const SizedBox(height: 8) : const Divider(height: 1),
+            itemBuilder: (context, i) => i == 0
+                ? Padding(
+                    padding: const EdgeInsetsDirectional.symmetric(
+                      horizontal: 8,
+                    ),
+                    child: _Muted(l10n.inspectIntro(entry.id)),
+                  )
+                : rows[i - 1](context),
+          ),
         ),
       ),
     );
@@ -94,6 +101,7 @@ class InspectPage extends StatelessWidget {
         (_) => _Heading(
           title: cells.first.$1.entry.lemma,
           subtitle: cells.first.$1.entry.gloss,
+          ipa: cells.first.$1.entry.ipa,
           language: entry.language,
         ),
         for (final (cell, card) in cells)
@@ -125,6 +133,7 @@ class InspectPage extends StatelessWidget {
           textAlign: TextAlign.start,
         ),
         middle: sentence.reading,
+        ipa: sentence.ipa,
       ),
     for (final question in passage.questions)
       (_) => _QuestionRow(question: question, spoken: spoken, deckId: entry.id),
@@ -141,6 +150,7 @@ class InspectPage extends StatelessWidget {
           gloss.modern,
           ?gloss.reading,
         ].join(' · '), // ui-literal-ok: a separator, not language
+        ipa: gloss.ipa,
         bottom: gloss.meaning[bestLanguage(gloss.meaning.keys, spoken)],
       ),
   ];
@@ -205,17 +215,20 @@ class _Field extends StatelessWidget {
   );
 }
 
-/// The script with its romanisation beside it: one line where it fits.
+/// The script with its romanisation and IPA beside it: one line where it
+/// fits.
 class _Script extends StatelessWidget {
   const _Script(
     this.text,
     this.reading, {
     required this.language,
+    this.ipa,
     this.size = 20,
   });
 
   final String text;
   final String? reading;
+  final String? ipa;
   final LanguageInfo language;
   final double size;
 
@@ -233,19 +246,22 @@ class _Script extends StatelessWidget {
           textAlign: TextAlign.start,
         ),
         if (reading != null && reading.isNotEmpty) _Muted(reading),
+        if (ipaToShow(context, ipa, target: text) case final ipa?)
+          IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
       ],
     );
   }
 }
 
 /// Two or three lines: [top] (the script and its romanisation), [middle]
-/// and [bottom], then the [id], with "Report this card" beside it when the
-/// row has a [deckId] to report it in (#160). With [more], it opens in
-/// place to show it.
+/// and its [ipa], and [bottom], then the [id], with "Report this card"
+/// beside it when the row has a [deckId] to report it in (#160). With
+/// [more], it opens in place to show it.
 class _Line extends StatelessWidget {
   const _Line({
     required this.top,
     this.middle,
+    this.ipa,
     this.bottom,
     this.id,
     this.deckId,
@@ -254,6 +270,7 @@ class _Line extends StatelessWidget {
 
   final Widget top;
   final String? middle;
+  final String? ipa;
   final String? bottom;
   final String? id;
   final String? deckId;
@@ -267,6 +284,8 @@ class _Line extends StatelessWidget {
     final id = this.id;
     final subtitle = <Widget>[
       if (middle != null && middle.isNotEmpty) _Muted(middle),
+      if (ipaToShow(context, ipa) case final ipa?)
+        IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
       if (bottom != null && bottom.isNotEmpty)
         Text(bottom, style: theme.textTheme.bodyLarge),
       if (id != null)
@@ -307,12 +326,20 @@ class _Line extends StatelessWidget {
   }
 }
 
-/// A heading over a grammar row's cells, or a passage.
+/// A heading over a grammar row's cells, with the lemma's IPA, or a
+/// passage.
 class _Heading extends StatelessWidget {
-  const _Heading({required this.title, this.subtitle, this.id, this.language});
+  const _Heading({
+    required this.title,
+    this.subtitle,
+    this.ipa,
+    this.id,
+    this.language,
+  });
 
   final String title;
   final String? subtitle;
+  final String? ipa;
   final String? id;
   final LanguageInfo? language;
 
@@ -338,6 +365,8 @@ class _Heading extends StatelessWidget {
                     textAlign: TextAlign.start,
                   ),
           ),
+          if (ipaToShow(context, ipa, target: title) case final ipa?)
+            IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
           if (subtitle != null) _Muted(subtitle),
           ?(id == null ? null : _Id(id)),
         ],
@@ -364,7 +393,12 @@ class _CardRow extends StatelessWidget {
           skill.label(l10n),
     ];
     return _Line(
-      top: _Script(card.target, card.reading, language: language),
+      top: _Script(
+        card.target,
+        card.reading,
+        ipa: card.ipa,
+        language: language,
+      ),
       bottom: card.native,
       id: card.id,
       deckId: entry.id,
@@ -396,6 +430,9 @@ class _CardRow extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     textAlign: TextAlign.start,
                   ),
+                  if (ipaToShow(context, example.ipa, target: example.target)
+                      case final ipa?)
+                    IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
                   _Muted(example.native),
                 ],
               ),
@@ -422,6 +459,7 @@ class _CellRow extends StatelessWidget {
       top: _Script(
         card.target,
         card.reading,
+        ipa: card.ipa,
         language: entry.language,
         size: 18,
       ),

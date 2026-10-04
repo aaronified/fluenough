@@ -29,6 +29,7 @@ class AnswerFeedback extends StatelessWidget {
     required this.transliterating,
     this.language,
     this.spoken = false,
+    this.ipa,
   });
 
   final TypedAnswer answer;
@@ -49,6 +50,9 @@ class AnswerFeedback extends StatelessWidget {
   /// Whether the answer was said, not typed: the detail says what was heard
   /// (#89).
   final bool spoken;
+
+  /// The answer's IPA, under the rest; null for none (see `ipaToShow`).
+  final String? ipa;
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +81,7 @@ class AnswerFeedback extends StatelessWidget {
           detail: detail,
           quotes: quotes,
           language: language,
+          ipa: ipa,
         );
 
     if (graded == null) {

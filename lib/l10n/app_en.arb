@@ -1710,6 +1710,16 @@
   "@speakerMuted": {
     "description": "Screen-reader value of a speaker while sound is off in Settings: it is greyed out."
   },
+  "ipaSemantics": "In the IPA: {ipa}",
+  "@ipaSemantics": {
+    "description": "Screen-reader label of a word's IPA line, how it is said in the International Phonetic Alphabet. The IPA is deck content.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "paːlu"
+      }
+    }
+  },
   "drillRaiseVolume": "Please raise the volume",
   "@drillRaiseVolume": {
     "description": "On a listening card while the phone's media volume is at zero and sound is on in the app: the card is greyed out until the volume is raised."
@@ -2741,6 +2751,14 @@
   "settingsRomanisationDesc": "Reading line under non-Latin scripts",
   "@settingsRomanisationDesc": {
     "description": "Under Show romanisation."
+  },
+  "settingsIpa": "Show IPA",
+  "@settingsIpa": {
+    "description": "Switch: show how words are said in the International Phonetic Alphabet, as /paːlu/, where a deck gives it."
+  },
+  "settingsIpaDesc": "How words are said, in the phonetic alphabet",
+  "@settingsIpaDesc": {
+    "description": "Under Show IPA."
   },
   "settingsAlphabet": "Alphabets",
   "@settingsAlphabet": {
