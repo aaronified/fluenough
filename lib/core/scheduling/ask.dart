@@ -24,7 +24,11 @@ enum Ask {
   matchPairs,
 
   /// Put the target's words in order. Production.
-  rearrange;
+  rearrange,
+
+  /// Shown the word, its reading and meaning, and played aloud: a lesson
+  /// teaching it, before its first question. Records nothing.
+  teach;
 
   /// Whether the learner picks one of the options the session offers.
   bool get chooses =>

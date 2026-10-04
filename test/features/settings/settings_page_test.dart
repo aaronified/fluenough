@@ -60,20 +60,12 @@ class _FakeLogFiles implements LogFiles {
 
 void main() {
   group('live settings change SettingsNotifier', () {
-    testWidgets('new cards per day', (tester) async {
-      usePhone(tester);
-      final state = await pumpScreen(tester, const SettingsPage());
-      final l10n = l10nOf(tester);
-      expect(state.settings.newCardsPerDay, 20);
-
-      await tapSlider(tester, _slider(l10n.settingsNewCardsPerDay), 1);
-      await tester.pumpAndSettle();
-      expect(state.settings.newCardsPerDay, SettingsNotifier.maxNewCardsPerDay);
-      expect(find.text('${SettingsNotifier.maxNewCardsPerDay}'), findsOne);
-
-      await tapSlider(tester, _slider(l10n.settingsNewCardsPerDay), 0.5);
-      await tester.pumpAndSettle();
-      expect(state.settings.newCardsPerDay, 25);
+    test('there is no daily cap on new cards: new words come in lessons '
+        '(ADR-0024)', () {
+      expect(
+        SettingsNotifier().toStored(),
+        isNot(contains('new_cards_per_day')),
+      );
     });
 
     testWidgets('each live skill switch, and romanisation', (tester) async {

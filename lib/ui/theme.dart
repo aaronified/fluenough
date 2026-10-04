@@ -264,7 +264,7 @@ abstract final class AppSizes {
   /// The action that closes a screen: the summary's "Done".
   static const double closingButton = 60;
 
-  /// A second action under a closing one: the summary's "Learn 5 new".
+  /// A second action under a closing one: the summary's "Another lesson".
   static const double secondaryButton = 52;
 
   /// A small button inside a row: "Set up", "Test", "Switch".
@@ -328,7 +328,7 @@ abstract final class AppButtonStyles {
   );
 
   /// 52 px, 15 px semibold: a second action under a closing one, the
-  /// summary's "Learn 5 new".
+  /// summary's "Another lesson".
   static ButtonStyle secondary(BuildContext context) => ButtonStyle(
     minimumSize: const WidgetStatePropertyAll(
       Size(64, AppSizes.secondaryButton),

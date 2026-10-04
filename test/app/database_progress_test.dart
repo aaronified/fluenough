@@ -172,7 +172,11 @@ void main() {
         isFalse,
         reason: 'reviewed and not yet due',
       );
-      expect(queue.fresh.length, lessThanOrEqualTo(state.newCardsLeftToday));
+      // New pairs are new skills of the words taught, those three.
+      expect(
+        queue.fresh.map((i) => i.card.id),
+        everyElement(isIn(<String>{for (final c in cards.take(3)) c.id})),
+      );
     },
   );
 

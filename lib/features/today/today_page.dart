@@ -16,6 +16,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/report_button.dart';
 import 'due_card.dart';
+import 'lesson_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
 
@@ -23,7 +24,8 @@ import 'today_numbers.dart';
 /// all" opens the rest.
 const int todayDeckCount = 3;
 
-/// Today: cards due by skill, Start review, the streak and week, and the profile's decks.
+/// Today: each language's lesson (ADR-0024), cards due by skill, Start
+/// review, the streak and week, and the profile's decks.
 ///
 /// Design screen `today`. Every number is computed ([TodayNumbers]); none is
 /// the design's sample. Also here, beyond the design: the banner saying that
@@ -123,6 +125,10 @@ class _TodayContent extends StatelessWidget {
       children: <Widget>[
         if (!state.progressIsSaved) ...<Widget>[
           const _NotSavedBanner(),
+          const SizedBox(height: 16),
+        ],
+        if (numbers.lessons.isNotEmpty) ...<Widget>[
+          LessonCard(lessons: numbers.lessons),
           const SizedBox(height: 16),
         ],
         if (numbers.hasDecks) DueCard(numbers: numbers) else const _NoDecks(),

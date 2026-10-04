@@ -428,16 +428,23 @@ void main() {
 
   testWidgets('the last answer goes to the summary', (tester) async {
     usePhone(tester);
-    // The first new card is a script's first letter: past its guide.
-    final state = AppState.test();
-    for (final code in <String>['as', 'bn', 'gu', 'hi', 'kn', 'mr', 'te']) {
-      state.settings.markScriptGuideSeen(code);
-    }
+    // One review due, and nothing else.
+    final base = AppState.test();
+    await base.load();
+    final card = base.deckById(spanish)!.cards.first;
+    final progress = MemoryProgress()
+      ..record(
+        deckId: spanish,
+        cardId: card.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: base.now().subtract(const Duration(days: 8)),
+      );
     // Rated, as a preset keeps it (ADR-0024).
     await pumpDrill(
       tester,
-      const DrillRequest.learnNew(1),
-      state: state,
+      DrillRequest.deck(spanish, skill: Skill.recognition),
+      state: AppState.test(progress: progress),
       preset: const DrillPreset(),
     );
     final l10n = l10nOf(tester);

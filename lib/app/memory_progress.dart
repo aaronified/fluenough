@@ -228,8 +228,7 @@ extension ProgressQueries on ProgressStore {
     required DateTime now,
   }) => Sm2.next(stateOf(cardId, mode) ?? Sm2State.fresh(now), grade, now: now);
 
-  /// New pairs introduced on [day]'s calendar date, which the daily cap
-  /// counts against.
+  /// New pairs introduced on [day]'s calendar date.
   int newIntroducedOn(DateTime day) =>
       log.where((e) => e.wasNew && isSameDay(e.at, day)).length;
 

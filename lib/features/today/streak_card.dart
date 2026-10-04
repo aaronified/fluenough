@@ -5,7 +5,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import 'today_numbers.dart';
 
-/// The streak, new cards today against the daily cap, and the last seven
+/// The streak, the words taught today, and the last seven
 /// days, each ticked if practised.
 ///
 /// Design screen `today`, the section named "Streak". The week is drawn in
@@ -60,7 +60,7 @@ class StreakCard extends StatelessWidget {
                           style: theme.textTheme.sectionTitle,
                         ),
                         Text(
-                          l10n.todayNewCards(numbers.newDone, numbers.newLimit),
+                          l10n.todayNewWords(numbers.newWords),
                           style: theme.textTheme.bodyMedium!.copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
