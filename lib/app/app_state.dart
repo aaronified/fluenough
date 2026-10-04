@@ -1020,6 +1020,25 @@ class AppState extends ChangeNotifier {
   bool needsAlphabet(DeckEntry entry) =>
       pathOf(entry)?.alphabet.contains(entry.id) ?? false;
 
+  /// Whether the learner is past [language]'s script units: the first run
+  /// of units on its path whose decks all need the alphabet, each finished
+  /// or placed. Until then typed answers start in Latin letters and count
+  /// in full. True for a course with no such units.
+  bool scriptLearned(String language) {
+    final units = courseUnits(language, alphabet: true);
+    final path = units.isEmpty ? null : pathOf(units.first.first);
+    if (path == null) return true;
+    bool script(List<DeckEntry> unit) =>
+        unit.every((e) => path.alphabet.contains(e.id));
+    final start = units.indexWhere(script);
+    if (start < 0) return true;
+    for (final unit in units.skip(start)) {
+      if (!script(unit)) break;
+      if (!unit.every(isFinished)) return false;
+    }
+    return true;
+  }
+
   /// Whether [language]'s course has decks that need its alphabet, so that
   /// it can be learned without them.
   bool hasAlphabet(String language) {

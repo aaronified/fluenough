@@ -37,9 +37,12 @@ learner is graded 3.
   A near miss that is another card's reading is that other word, and wrong.
   The script is still accepted in Latin mode, and counts in full.
 - **The grade:** a right answer in Latin letters records 3 for a learner
-  learning the alphabet: they recalled the word, not how it is written. A
-  near miss they judge "I knew it" is 3 already. The no-alphabet path
-  gives full credit instead.
+  learning the alphabet who is past its script units: they recalled the
+  word, not how it is written. A near miss they judge "I knew it" is 3
+  already. Before the script units, which a course reaches after its first
+  six themes, answers start in Latin letters and count in full: the owner
+  asked that "even for script learners, the initial writing exercises
+  should be romanised". The no-alphabet path gives full credit throughout.
 
 ## Consequences
 

@@ -216,9 +216,23 @@ class DrillSession extends ChangeNotifier {
   };
 
   /// The grade a right answer in Latin letters records (#47) for a learner
-  /// learning the alphabet, who recalled the word but not how it is
-  /// written. Without the alphabet, it counts in full.
+  /// learning the alphabet who is past its script units: they recalled the
+  /// word but not how it is written. Before the script, or without the
+  /// alphabet, it counts in full.
   static const int romanisedGrade = 3;
+
+  /// Whether each language's script units are behind the learner, found
+  /// once a session.
+  final Map<String, bool> _scriptLearned = <String, bool>{};
+
+  /// Whether the script is expected of the learner now: they learn the
+  /// alphabet and are past its script units. Until then answers start in
+  /// Latin letters and count in full.
+  bool get expectsScript {
+    final code = deck.language.code;
+    return learnsAlphabet &&
+        _scriptLearned.putIfAbsent(code, () => _state.scriptLearned(code));
+  }
 
   /// Each language's romanised spelling, made once it is needed.
   final Map<String, RomanisedSpelling> _spellings =
@@ -235,10 +249,10 @@ class DrillSession extends ChangeNotifier {
   /// Whether the current card's language is learned with its alphabet.
   bool get learnsAlphabet => _state.settings.learnsAlphabet(deck.language.code);
 
-  /// Script, or Latin letters: as chosen, or else Latin letters for a
-  /// language learned without its alphabet.
+  /// Script, or Latin letters: as chosen, or else the script once it is
+  /// [expectsScript], and Latin letters before.
   InputMode get inputMode =>
-      _chosenMode ?? (learnsAlphabet ? InputMode.script : InputMode.translit);
+      _chosenMode ?? (expectsScript ? InputMode.script : InputMode.translit);
 
   /// Whether the answer is being typed in Latin letters. Only ever true
   /// while [Feature.translitInput] is on.
@@ -304,7 +318,7 @@ class DrillSession extends ChangeNotifier {
     }
     final grade = graded.outcome == AnswerOutcome.closeTypo
         ? null
-        : romanised && graded.outcome.isCorrect && learnsAlphabet
+        : romanised && graded.outcome.isCorrect && expectsScript
         ? romanisedGrade
         : graded.outcome.toSm2Grade();
     _answer = TypedAnswer(typed: typed, graded: graded, grade: grade);

@@ -5,14 +5,16 @@ import 'package:fluenough/app/deck_catalog.dart';
 /// Hindi's script guide (#30, ADR-0016), as bundled.
 void main() {
   test('the bundled Hindi guide loads, and its reading deck opens the '
-      'path', () async {
+      'script units', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
     final catalog = await DeckCatalog.bundled().load();
     expect(catalog.broken, isEmpty);
     final hindi = catalog.scriptGuides['hi']!;
     expect(hindi.features.map((f) => f.id), contains('headline-gap'));
     expect(
-      catalog.paths['hi/en']!.units.first,
+      catalog.paths['hi/en']!.units.firstWhere(
+        (unit) => unit.any((id) => id.contains('-script-')),
+      ),
       contains('hi-en-script-reading'),
     );
     final reading = catalog.decks.singleWhere(
