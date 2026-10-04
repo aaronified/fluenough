@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
@@ -110,6 +111,10 @@ class SpeakingDrill extends StatelessWidget {
               ),
             ),
         ],
+        // Only once answered: hearing it first would be saying it after
+        // the phone.
+        if (session.canPlay)
+          Speaker(onPlay: session.play, playing: session.playing),
       ],
     ];
   }

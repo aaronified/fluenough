@@ -205,6 +205,44 @@ void main() {
     expect(find.byType(VoicesPage), findsOneWidget);
   });
 
+  testWidgets('with sound off: listening is muted, says so, and Turn on '
+      'turns sound back on', (tester) async {
+    usePhone(tester);
+    final state = await withSpanishVoice();
+    state.settings.soundOn = false;
+    await pumpDeck(tester, spanish, state: state);
+    final l10n = l10nOf(tester);
+
+    final listening = skillRow(l10n, Skill.listening);
+    await tester.ensureVisible(listening);
+    await tester.pumpAndSettle();
+    expect(
+      find.descendant(of: listening, matching: find.text(l10n.deckSoundOff)),
+      findsOneWidget,
+    );
+    expect(
+      tester
+          .widget<ModePill>(
+            find.descendant(of: listening, matching: find.byType(ModePill)),
+          )
+          .muted,
+      isTrue,
+    );
+    expect(
+      find.descendant(of: listening, matching: find.byType(FilledButton)),
+      findsNothing,
+    );
+    await tapVisible(
+      tester,
+      find.descendant(of: listening, matching: find.text(l10n.deckTurnOn)),
+    );
+    expect(state.settings.soundOn, isTrue);
+    expect(
+      find.descendant(of: listening, matching: find.byType(FilledButton)),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('speaking is listed where it is switched on; a language heard '
       'only online says so, and Set up opens Voices', (tester) async {
     usePhone(tester);

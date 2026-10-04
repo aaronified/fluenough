@@ -5,14 +5,14 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
-import '../../ui/widgets/play_button.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 
 /// A lesson teaching a word (ADR-0024): the word and its reading, its
 /// meaning, its note and an example, played aloud as it shows where the
-/// phone has a voice. Continue goes on to its first question; nothing is
+/// phone has a voice and sound is on. Continue goes on to its first question; nothing is
 /// recorded.
 ///
 /// Build one per card (key it by the card's position).
@@ -27,16 +27,6 @@ class TeachDrill extends StatefulWidget {
 }
 
 class _TeachDrillState extends State<TeachDrill> {
-  @override
-  void initState() {
-    super.initState();
-    if (widget.session.canPlay) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) widget.session.play();
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -88,8 +78,14 @@ class _TeachDrillState extends State<TeachDrill> {
           textAlign: TextAlign.center,
           style: theme.textTheme.headlineMedium,
         ),
+        // Played as it shows, whatever Play words automatically says.
         if (session.canPlay)
-          PlayButton(onPressed: session.play, playing: session.playing),
+          Speaker(
+            onPlay: session.play,
+            playing: session.playing,
+            size: 136,
+            playOnAppear: true,
+          ),
         if (notes != null)
           // Padding, not a max-width box: DrillFrame measures the card's
           // intrinsic height (see RecognitionDrill).
