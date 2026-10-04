@@ -25,7 +25,8 @@ guide wait for 1.0.
   #6, #18, #19, #20).
 - **Telugu is written without a Telugu speaker's review**, and says so (#39).
 - **Not in the beta:** the Hindi and Bengali interface, profiles and PIN, the
-  daily reminder, deck imports, transliterated answers.
+  daily reminder. Deck imports from a file and transliterated answers came
+  after it (#156, #166).
 
 ## v0.1 — Core loop
 - [x] `flutter create` the platform folders, wire up CI
