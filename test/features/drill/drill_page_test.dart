@@ -75,12 +75,12 @@ void main() {
     // preset keeps each card asked its own way.
     final state = await pumpDrill(
       tester,
-      DrillRequest.deck(spanish, skill: Skill.recognition),
+      DrillRequest.untaught(spanish, skill: Skill.recognition),
       state: AppState.test(progress: progress),
       preset: const DrillPreset(),
     );
     final l10n = l10nOf(tester);
-    final total = state.buildSession(DrillRequest.deck(spanish)).length;
+    final total = state.buildSession(DrillRequest.untaught(spanish)).length;
 
     expect(find.text(card.target), findsOneWidget);
     expect(find.text(card.native), findsNothing);
@@ -165,7 +165,7 @@ void main() {
         usePhone(tester);
         final state = await pumpDrill(
           tester,
-          DrillRequest.deck(spanish, skill: Skill.production),
+          DrillRequest.untaught(spanish, skill: Skill.production),
           preset: const DrillPreset(target: 'el niño'),
         );
         final l10n = l10nOf(tester);
@@ -190,7 +190,7 @@ void main() {
         usePhone(tester);
         final state = await pumpDrill(
           tester,
-          DrillRequest.deck(spanish, skill: Skill.production),
+          DrillRequest.untaught(spanish, skill: Skill.production),
           preset: const DrillPreset(target: 'la ventana'),
         );
         final l10n = l10nOf(tester);
@@ -217,7 +217,7 @@ void main() {
       usePhone(tester);
       final state = await pumpDrill(
         tester,
-        DrillRequest.deck(spanish, skill: Skill.production),
+        DrillRequest.untaught(spanish, skill: Skill.production),
         preset: const DrillPreset(target: 'el niño'),
       );
       final l10n = l10nOf(tester);
@@ -252,7 +252,7 @@ void main() {
     final links = FixedLinks();
     await pumpDrill(
       tester,
-      DrillRequest.deck(consonants, skill: Skill.production),
+      DrillRequest.untaught(consonants, skill: Skill.production),
       preset: const DrillPreset(target: 'क'),
       state: AppState.test(links: links),
     );
@@ -288,7 +288,7 @@ void main() {
     usePhone(tester);
     final state = await pumpDrill(
       tester,
-      DrillRequest.deck('hi-en-first-words', skill: Skill.production),
+      DrillRequest.untaught('hi-en-first-words', skill: Skill.production),
       preset: const DrillPreset(
         target: 'नमस्कार',
         inputMode: InputMode.translit,
@@ -328,7 +328,7 @@ void main() {
     // Revealed, la casa shows its example sentence too.
     final recognition = await pumpDrill(
       tester,
-      DrillRequest.deck(spanish, skill: Skill.recognition),
+      DrillRequest.untaught(spanish, skill: Skill.recognition),
       preset: const DrillPreset(target: 'la casa', reveal: true),
       state: AppState.test(settings: SettingsNotifier()),
     );
@@ -354,7 +354,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpDrill(
       tester,
-      DrillRequest.deck(consonants, skill: Skill.production),
+      DrillRequest.untaught(consonants, skill: Skill.production),
       preset: const DrillPreset(target: 'क'),
       state: scaled(),
     );
@@ -369,7 +369,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpDrill(
       tester,
-      DrillRequest.deck('hi-en-first-words', skill: Skill.production),
+      DrillRequest.untaught('hi-en-first-words', skill: Skill.production),
       preset: const DrillPreset(
         target: 'नमस्कार',
         inputMode: InputMode.translit,
@@ -386,7 +386,7 @@ void main() {
     final tts = FixedTtsEngine(<String>{'es'});
     final state = await pumpDrill(
       tester,
-      DrillRequest.deck(spanish, skill: Skill.listening),
+      DrillRequest.untaught(spanish, skill: Skill.listening),
       state: AppState.test(tts: tts),
     );
     final l10n = l10nOf(tester);
@@ -418,7 +418,7 @@ void main() {
     // Listening, with no voice on the phone: nothing to drill.
     await pumpDrill(
       tester,
-      DrillRequest.deck(consonants, skill: Skill.listening),
+      DrillRequest.untaught(consonants, skill: Skill.listening),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillEmptyTitle), findsOneWidget);
@@ -468,7 +468,7 @@ void main() {
     navigator.push(
       MaterialPageRoute<void>(
         builder: (_) => DrillPage(
-          request: DrillRequest.deck(spanish, skill: Skill.recognition),
+          request: DrillRequest.untaught(spanish, skill: Skill.recognition),
           // Rated, as a preset keeps it (ADR-0024).
           preset: const DrillPreset(),
         ),
@@ -502,7 +502,7 @@ void main() {
     usePhone(tester);
     final state = await pumpDrill(
       tester,
-      DrillRequest.deck(rtlFixtureDeckId, skill: Skill.production),
+      DrillRequest.untaught(rtlFixtureDeckId, skill: Skill.production),
       state: AppState.test(decks: rtlFixtureDecks()),
       preset: const DrillPreset(target: 'کتاب'),
     );
@@ -523,17 +523,17 @@ void main() {
     final states = <(String, DrillRequest, DrillPreset)>[
       (
         'recognition, revealed',
-        DrillRequest.deck(spanish, skill: Skill.recognition),
+        DrillRequest.untaught(spanish, skill: Skill.recognition),
         const DrillPreset(target: 'la casa', reveal: true),
       ),
       (
         'production, script and keyboard hint',
-        DrillRequest.deck(consonants, skill: Skill.production),
+        DrillRequest.untaught(consonants, skill: Skill.production),
         const DrillPreset(target: 'क'),
       ),
       (
         'production, near miss',
-        DrillRequest.deck(spanish, skill: Skill.production),
+        DrillRequest.untaught(spanish, skill: Skill.production),
         const DrillPreset(
           target: 'la ventana',
           typed: 'la ventna',
@@ -542,19 +542,19 @@ void main() {
       ),
       (
         'listening',
-        DrillRequest.deck(spanish, skill: Skill.listening),
+        DrillRequest.untaught(spanish, skill: Skill.listening),
         const DrillPreset(),
       ),
       // ser has the longest notes in the bundled decks: they wrap, and the
       // frame must measure them at the width they are laid out at.
       (
         'recognition, revealed, long notes',
-        DrillRequest.deck(spanish, skill: Skill.recognition),
+        DrillRequest.untaught(spanish, skill: Skill.recognition),
         const DrillPreset(target: 'ser', reveal: true),
       ),
       (
         'production, answered, long notes',
-        DrillRequest.deck(spanish, skill: Skill.production),
+        DrillRequest.untaught(spanish, skill: Skill.production),
         const DrillPreset(target: 'ser', typed: 'ser', check: true),
       ),
     ];
@@ -582,7 +582,7 @@ void main() {
     usePhone(tester);
     await pumpDrill(
       tester,
-      DrillRequest.deck(spanish, skill: Skill.production),
+      DrillRequest.untaught(spanish, skill: Skill.production),
       preset: const DrillPreset(
         target: 'el niño',
         typed: 'el nino',
@@ -601,7 +601,7 @@ void main() {
     usePhone(tester);
     await pumpDrill(
       tester,
-      DrillRequest.deck(spanish, skill: Skill.recognition),
+      DrillRequest.untaught(spanish, skill: Skill.recognition),
       state: AppState.test(decks: FailOnceDeckSource()),
     );
     final l10n = l10nOf(tester);

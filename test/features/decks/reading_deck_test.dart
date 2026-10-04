@@ -69,9 +69,10 @@ void main() {
     expect(find.text(l10n.skillListeningDeckDesc), findsNothing);
     expect(state.countsFor(state.deckById(readingFixtureDeckId)!).fresh, 5);
 
-    // Start reads its passages.
-    await tester.ensureVisible(find.text(l10n.deckReviewAll(5)));
-    await tester.tap(find.text(l10n.deckReviewAll(5)));
+    // Nothing is due, so it offers its first passage, as a lesson
+    // (ADR-0024).
+    await tester.ensureVisible(find.text(l10n.deckLessonReading));
+    await tester.tap(find.text(l10n.deckLessonReading));
     await tester.pumpAndSettle();
     expect(find.byType(DrillPage), findsOneWidget);
     expect(find.byType(ReadingDrill), findsOneWidget);

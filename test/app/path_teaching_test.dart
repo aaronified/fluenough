@@ -282,8 +282,8 @@ void main() {
     }
   });
 
-  test('a deck whose reviews are due is not finished while a skill is still '
-      'new in it', () async {
+  test('a deck whose words are all taught is finished, its other skills '
+      'coming with its reviews (ADR-0024)', () async {
     final base = learning(<String>['hi']);
     await base.load();
     final market = base.deckById('hi-en-market')!;
@@ -304,14 +304,8 @@ void main() {
     addTearDown(state.dispose);
     await state.load();
     final entry = state.deckById(market.id)!;
-    expect(state.notStudiedIn(entry), greaterThan(0));
-    expect(state.isFinished(entry), isFalse);
-    expect(
-      state
-          .buildSession(DrillRequest.untaught(market.id))
-          .items
-          .map((i) => i.mode),
-      contains(DrillMode.production),
-    );
+    expect(state.notStudiedIn(entry), 0);
+    expect(state.isFinished(entry), isTrue);
+    expect(state.buildSession(DrillRequest.deck(market.id)).due, isNotEmpty);
   });
 }

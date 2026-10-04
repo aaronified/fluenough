@@ -45,10 +45,11 @@ class DrillRequest {
   DrillRequest.numbers(String deckId)
     : this(deckIds: <String>{deckId}, numbers: true);
 
-  /// Every new pair left in one deck, of words taught or not: what is left
-  /// to learn in it.
-  DrillRequest.untaught(String deckId)
-    : this(deckIds: <String>{deckId}, newOnly: true, untaught: true);
+  /// One deck, in [skill] if given, its words taught or not: what is due
+  /// and every new pair left, so that its new pairs are what is left to
+  /// learn in it. No screen offers it: new words come in lessons.
+  DrillRequest.untaught(String deckId, {Skill? skill})
+    : this(deckIds: <String>{deckId}, skill: skill, untaught: true);
 
   /// Every card already learned in one deck, due or not, and not recorded:
   /// a finished deck's "Revise". Recording an early review would stretch

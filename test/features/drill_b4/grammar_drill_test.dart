@@ -193,7 +193,7 @@ void main() {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck(
+          request: DrillRequest.untaught(
             grammarFixtureDeckId,
             skill: Skill.grammar,
           ),
@@ -290,7 +290,10 @@ void main() {
     final state = await pumpScreen(
       tester,
       DrillPage(
-        request: DrillRequest.deck(grammarFixtureDeckId, skill: Skill.grammar),
+        request: DrillRequest.untaught(
+          grammarFixtureDeckId,
+          skill: Skill.grammar,
+        ),
       ),
       state: AppState.test(),
     );

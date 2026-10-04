@@ -26,11 +26,11 @@ import '../../support/harness.dart';
 
 final DateTime noon = DateTime(2026, 9, 28, 12);
 
-final DrillRequest read = DrillRequest.deck(
+final DrillRequest read = DrillRequest.untaught(
   readingFixtureDeckId,
   skill: Skill.reading,
 );
-final DrillRequest heard = DrillRequest.deck(
+final DrillRequest heard = DrillRequest.untaught(
   readingFixtureDeckId,
   skill: Skill.listening,
 );
@@ -457,7 +457,7 @@ void main() {
         await today.load();
         expect(
           today
-              .buildSession(DrillRequest.deck(readingFixtureDeckId))
+              .buildSession(DrillRequest.untaught(readingFixtureDeckId))
               .items
               .map((i) => i.mode)
               .toSet(),
@@ -482,7 +482,7 @@ void main() {
       final state = readingApp(progress: progress);
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.deck(readingFixtureDeckId)),
+        DrillPage(request: DrillRequest.untaught(readingFixtureDeckId)),
         state: state,
       );
       final l10n = l10nOf(tester);

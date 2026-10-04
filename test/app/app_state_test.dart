@@ -162,10 +162,10 @@ void main() {
     test('listening joins only when the language has a voice', () async {
       final state = await loaded(tts: FixedTtsEngine({'es'}));
       final spanish = state.buildSession(
-        DrillRequest.deck('es-en-core-100', skill: Skill.listening),
+        DrillRequest.untaught('es-en-core-100', skill: Skill.listening),
       );
       final hindi = state.buildSession(
-        DrillRequest.deck('hi-en-script-vowels', skill: Skill.listening),
+        DrillRequest.untaught('hi-en-script-vowels', skill: Skill.listening),
       );
       expect(spanish.isNotEmpty, isTrue);
       expect(hindi.isEmpty, isTrue);
@@ -198,7 +198,11 @@ void main() {
     test('tags narrow a deck to the cards that carry them', () async {
       final state = await loaded();
       final queue = state.buildSession(
-        DrillRequest.deck('es-en-core-100', tags: {'people'}),
+        const DrillRequest(
+          deckIds: {'es-en-core-100'},
+          tags: {'people'},
+          untaught: true,
+        ),
       );
       expect(queue.isNotEmpty, isTrue);
       expect(queue.items.every((i) => i.card.tags.contains('people')), isTrue);
@@ -269,7 +273,9 @@ themes:
         'hi-en-first-words',
         'hi-en-a-market',
       ]);
-      final picked = state.buildSession(DrillRequest.deck('hi-en-a-market'));
+      final picked = state.buildSession(
+        DrillRequest.untaught('hi-en-a-market'),
+      );
       expect(picked.items.map((i) => i.card.deckId).toSet(), {
         'hi-en-a-market',
       });

@@ -64,7 +64,9 @@ void main() {
     await state.load();
     await state.startSpeech();
     final item = state
-        .buildSession(DrillRequest.deck('bn-en-probe', skill: Skill.speaking))
+        .buildSession(
+          DrillRequest.untaught('bn-en-probe', skill: Skill.speaking),
+        )
         .items
         .firstWhere((i) => i.card.id == cardId);
     final session = DrillSession(state: state, items: [item]);
