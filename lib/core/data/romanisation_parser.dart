@@ -3,7 +3,16 @@ import 'package:yaml/yaml.dart';
 import '../models/romanisation.dart';
 import 'deck_parser.dart';
 
-const _fields = {'schema', 'kind', 'id', 'language', 'scheme', 'equivalents'};
+const _fields = {
+  'schema',
+  'kind',
+  'id',
+  'language',
+  'scheme',
+  'standard',
+  'typed',
+  'equivalents',
+};
 final _spelling = RegExp(r"^[a-z]+(?:[ '-][a-z]+)*$");
 
 /// The romanisation in [text], a `<code>-romanisation.yaml` (#47). Throws
@@ -49,6 +58,30 @@ Romanisation parseRomanisation(String text, {required String source}) {
   if (scheme is! String || scheme.trim().isEmpty) {
     throw bad('scheme says how $language is romanised, in a line', root);
   }
+  final standard = root['standard'];
+  if (standard != null && standard != 'ISO 15919') {
+    throw bad('the one standard known is "ISO 15919"', root);
+  }
+  final typed = <(String, String)>[];
+  final typedNode = root.nodes['typed'];
+  if (typedNode != null) {
+    if (standard == null) {
+      throw bad('typed is for readings in a standard\'s letters', typedNode);
+    }
+    if (typedNode is! YamlList) {
+      throw bad('typed must be a list of [letters, typed] pairs', typedNode);
+    }
+    for (final pair in typedNode.nodes) {
+      if (pair is! YamlList ||
+          pair.length != 2 ||
+          pair[0] is! String ||
+          (pair[0] as String).isEmpty ||
+          pair[1] is! String) {
+        throw bad('a typed pair is the letters and how they are typed', pair);
+      }
+      typed.add((pair[0] as String, pair[1] as String));
+    }
+  }
   final list = root.nodes['equivalents'];
   if (list is! YamlList) {
     throw bad('equivalents must be a list of groups of spellings', root);
@@ -77,5 +110,7 @@ Romanisation parseRomanisation(String text, {required String source}) {
     language: language,
     scheme: scheme,
     equivalents: List<List<String>>.unmodifiable(groups),
+    standard: standard as String?,
+    typed: List<(String, String)>.unmodifiable(typed),
   );
 }

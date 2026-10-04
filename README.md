@@ -72,6 +72,52 @@ Telugu, Urdu) each pair a script deck with a vocabulary deck. See
 Japanese (`decks/ja/`) is kept in the repository but not bundled in the app for
 now.
 
+## How words are written in Latin letters: ISO 15919
+
+Every word in an Indian language has a reading, its Latin letters, shown on the
+card. The readings use the letters of **ISO 15919**, the international standard
+for writing Indian scripts in Latin letters
+([ADR-0025](docs/adr/0025-iso-15919-and-ipa.md)). Its marks show what plain
+letters cannot: పాలు, milk, is **pālu** and పలు, many, is **palu**; పాట, song,
+is **pāṭa** and పాత, old, is **pāta**.
+
+ISO 15919 writes letters, so कितना is *kitanā* letter for letter. The decks
+write each word **as it is said**, in ISO 15919's letters: *kitnā*, without the
+a that Hindi does not say. Where a language says two letters alike, the reading
+writes the sound: Bengali ঈ is *i*, as ই is.
+
+| Letters | Sound | Example |
+|---|---|---|
+| a | the short vowel every consonant carries: *u* in *but* in Hindi, *a* in Telugu | कल *kal* |
+| ā ī ū | long a, i, u: held about twice as long | పాలు *pālu*, नहीं *nahīm̐* |
+| e ē, o ō | short and long e and o, where a language has both (Telugu, Kannada) | నేను *nēnu* |
+| ē ō | the long e and o of Hindi, which has no short ones | मेरा *mērā* |
+| ai au | the vowels of ऐ and औ | है *hai* |
+| ô | Bengali's and Assamese's own vowel, as in *law* | কথা *kôthā* |
+| ê | the vowel of *cat*, in Bengali, and in words from English | ব্যাগ *bêg* |
+| ṭ ṭh ḍ ḍh ṇ | tongue curled back to the roof of the mouth (retroflex) | పాట *pāṭa*, अंडा *aṇḍā* |
+| t th d dh n | tongue on the back of the upper teeth (dental) | పాత *pāta* |
+| kh gh ch jh th dh ph bh | an h after a letter is a puff of breath, never one sound: *th* is not *thin*, *ph* is not *phone* | खाना *khānā* |
+| c ch | *ch* of *church*; ch with a puff of breath | चाय *cāy*, छह *chah* |
+| ś ṣ | *sh*; ṣ with the tongue curled back | शादी *śādī* |
+| ṅ ñ | *ng* of *sing*; *ny* of *canyon* | বাংলা *bāṅlā* |
+| ḷ | an l with the tongue curled back | ನಾಳೆ *nāḷe* |
+| ṛ ṛh | a flap with the tongue curled back | लड़का *laṛkā* |
+| ṁ | the anusvara where it nasalises the vowel before y, r, l, v, s or h | संसार *saṁsār* |
+| m̐ | the vowel before is said through the nose | हाँ *hām̐* |
+| ḵ q ġ z f | sounds from Persian, Arabic and English, written with a dot (nukta) | ख़त्म *ḵatm* |
+| x | Assamese's own sound, as in Scottish *loch*; ISO 15919 has no letter for it | অসম *ôxôm* |
+
+Each language's file in `decks/<code>/<code>-romanisation.yaml` says how its
+readings are written, in a paragraph. Next to each reading the card shows how
+the word is said in the **IPA**, the International Phonetic Alphabet: /paːlu/.
+
+A typed answer needs none of the marks. *palu*, *paalu* and *pālu* are all
+right for పాలు, as *kitna* and *kitnaa* are for कितना: answers are compared
+after the marks are taken away, and each romanisation file lists the spellings
+people type for one sound. To write a reading and IPA for a new card, run
+`python3 tools/transcribe.py <code> "<word>" <how it is typed>`.
+
 ## Decks
 
 Decks are YAML files under [`decks/`](decks/), versioned in git like any other
