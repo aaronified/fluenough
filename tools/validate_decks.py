@@ -234,6 +234,13 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
         r.warn(where, "no tts tag; the device will pick a default regional voice")
     if "rtl" in block and not isinstance(block["rtl"], bool):
         r.error(where, "rtl must be a boolean")
+    # A language's chip shows its icon: the first letter of its own name,
+    # such as हि for Hindi (ADR-0027). A letter or two, no more.
+    icon = block.get("icon")
+    if icon is not None and (not _is_str(icon) or len(icon.strip()) > 4
+                             or icon != icon.strip()):
+        r.error(where, f"icon must be a letter or two of the language's own "
+                       f"name, such as 'हि', got {icon!r}")
 
 
 def card_id_re(lang: str) -> re.Pattern[str]:
