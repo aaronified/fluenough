@@ -9,7 +9,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
-import '../../ui/widgets/play_button.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
@@ -20,7 +20,8 @@ import 'drill_session.dart';
 /// wrong and recorded at once. Then the feedback, with the right answer.
 ///
 /// - **Read**: the passage a sentence at a time, each with its reading when
-///   Show romanisation is on and a button to hear it. Each question has its
+///   Show romanisation is on and a button to hear it, and a speaker for the
+///   whole passage. Each question has its
 ///   choices, and the passage again under them, to look back at.
 /// - **Heard**, a reading question in listening: the passage is read aloud
 ///   and its text is hidden until the question is answered, as a listening
@@ -83,6 +84,13 @@ class ReadingDrill extends StatelessWidget {
                 : l10n.readingIntro(session.passageQuestionsLeft),
           ),
           _Title(card.passage.title),
+          // Read: the whole passage can be heard too, a sentence at a time.
+          if (!heard && state.hasVoice(language))
+            Speaker(
+              onPlay: session.play,
+              playing: session.playing && session.playingSentence == null,
+              label: l10n.readingPlayPassage,
+            ),
           if (heard) ..._listen(context, large: true) else text,
           if (!heard) ?_RomanisationToggle.of(card.passage, settings),
           if (!heard && card.passage.glossary.isNotEmpty)
@@ -206,11 +214,15 @@ class ReadingDrill extends StatelessWidget {
     final slower = session.slower;
     final canPlay = AppScope.read(context).hasVoice(session.deck.language);
     return <Widget>[
-      PlayButton(
-        onPressed: canPlay ? session.play : null,
+      // Played as it shows, when words play automatically, on the passage
+      // only: not again on each of its questions.
+      Speaker(
+        onPlay: session.play,
         playing: playing,
         size: large ? 136 : 104,
         label: l10n.readingPlayPassage,
+        enabled: canPlay,
+        autoplay: large,
       ),
       if (large)
         Text(
@@ -441,14 +453,10 @@ class _PassageText extends StatelessWidget {
                   ),
                 ),
                 if (canPlay)
-                  IconButton(
-                    onPressed: () => session.playSentence(i),
-                    tooltip: l10n.readingPlaySentence,
-                    icon: Icon(
-                      session.playingSentence == i
-                          ? Icons.pause
-                          : Icons.volume_up_outlined,
-                    ),
+                  SpeakerIcon(
+                    onPlay: () => session.playSentence(i),
+                    label: l10n.readingPlaySentence,
+                    playing: session.playingSentence == i,
                   ),
               ],
             ),
