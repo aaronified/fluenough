@@ -113,6 +113,7 @@ const _cardFields = {
   'target',
   'native',
   'reading',
+  'ipa',
   'alt_target',
   'alt_native',
   'pos',
@@ -130,6 +131,7 @@ const _refFields = {
   'ref',
   'native',
   'reading',
+  'ipa',
   'alt_native',
   'tags',
   'notes',
@@ -146,7 +148,16 @@ const _patternFields = {
   'notes',
 };
 
-const _entryFields = {'lemma', 'key', 'gloss', 'forms', 'reading', 'readings'};
+const _entryFields = {
+  'lemma',
+  'key',
+  'gloss',
+  'forms',
+  'reading',
+  'readings',
+  'ipa',
+  'ipas',
+};
 const _passageFields = {
   'id',
   'title',
@@ -156,10 +167,10 @@ const _passageFields = {
   'questions',
   'glossary',
 };
-const _sentenceFields = {'text', 'reading'};
-const _glossFields = {'word', 'modern', 'reading', 'meaning', 'note'};
+const _sentenceFields = {'text', 'reading', 'ipa'};
+const _glossFields = {'word', 'modern', 'reading', 'ipa', 'meaning', 'note'};
 const _questionFields = {'id', 'prompt', 'options', 'answer'};
-const _exampleFields = {'target', 'native'};
+const _exampleFields = {'target', 'native', 'language', 'reading', 'ipa'};
 const _authorFields = {'name', 'url'};
 
 /// Deck and card ids: lowercase letters and digits, joined by single hyphens.
@@ -349,6 +360,15 @@ class _Reader {
     return value;
   }
 
+  /// A language code, such as `hi`: the language an example is in.
+  String languageCode(YamlNode node, String name) {
+    final code = text(node, name);
+    if (!_languageCode.hasMatch(code)) {
+      fail(node, '$name: "$code" is not a language code like "hi"');
+    }
+    return code;
+  }
+
   /// A deck or card id. Card ids key every learner's review history, so a
   /// malformed one is refused rather than tidied.
   String id(YamlNode node, String name) {
@@ -388,6 +408,8 @@ class _Reader {
           : fields.optionalString('script', allowEmpty: false) ?? 'latin',
       tts: fields.optionalString('tts', allowEmpty: false),
       rtl: fields.optionalBool('rtl') ?? false,
+      icon: fields.optionalString('icon', allowEmpty: false),
+      typed: fields.optionalBool('typed') ?? true,
     );
   }
 
@@ -448,6 +470,7 @@ class _Reader {
       position: position,
       native: fields.has('native') ? fields.string('native') : null,
       reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
       tags: fields.has('tags') ? fields.strings('tags') : null,
       notes: fields.optionalString('notes'),
@@ -484,6 +507,7 @@ class _Reader {
       target: fields.string('target'),
       native: fields.string('native'),
       reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
       altTarget: fields.strings('alt_target'),
       altNative: fields.strings('alt_native'),
       pos: fields.optionalString('pos', allowEmpty: false),
@@ -510,6 +534,11 @@ class _Reader {
     return CardExample(
       target: fields.string('target'),
       native: fields.string('native'),
+      language: fields.has('language')
+          ? languageCode(fields.require('language'), '$path.language')
+          : null,
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
     );
   }
 
@@ -627,6 +656,7 @@ class _Reader {
       word: word,
       modern: fields.string('modern'),
       reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
       meaning: byLanguage(fields.require('meaning'), '$path.meaning'),
       note: noteNode == null || _value(noteNode) == null
           ? const <String, String>{}
@@ -642,6 +672,7 @@ class _Reader {
     return PassageSentence(
       text: fields.string('text'),
       reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
     );
   }
 
@@ -829,6 +860,10 @@ class _Reader {
       readings: fields.has('readings')
           ? readings(fields.require('readings'), '$path.readings', forms)
           : const <String, List<String>>{},
+      ipa: fields.has('ipa') ? text(fields.require('ipa'), '$path.ipa') : null,
+      ipas: fields.has('ipas')
+          ? ipas(fields.require('ipas'), '$path.ipas', forms)
+          : const <String, String>{},
     );
   }
 
@@ -864,6 +899,36 @@ class _Reader {
     ];
     if (missing.isNotEmpty) {
       fail(node, '$path: no reading for ${missing.join(', ')}');
+    }
+    return Map.unmodifiable(found);
+  }
+
+  /// The form shown in each slot, in the IPA (ADR-0025): one for every slot
+  /// with a form, and none for a slot without.
+  Map<String, String> ipas(
+    YamlNode node,
+    String path,
+    Map<String, String?> forms,
+  ) {
+    final map = fields(node, path).map;
+    final found = <String, String>{};
+    for (final entry in map.nodes.entries) {
+      final key = entry.key as YamlNode;
+      final slot = _value(key);
+      if (slot is! String || !forms.containsKey(slot)) {
+        fail(key, '$path: ${_describe(key)} is not a slot');
+      }
+      if (forms[slot] == null) {
+        fail(key, '$path: "$slot" has no form, so it has no IPA');
+      }
+      found[slot] = text(entry.value, '$path.$slot');
+    }
+    final missing = [
+      for (final MapEntry(key: slot, value: form) in forms.entries)
+        if (form != null && !found.containsKey(slot)) '"$slot"',
+    ];
+    if (missing.isNotEmpty) {
+      fail(node, '$path: no IPA for ${missing.join(', ')}');
     }
     return Map.unmodifiable(found);
   }

@@ -8,6 +8,8 @@ class PatternEntry {
     this.alternatives = const <String, List<String>>{},
     this.reading,
     this.readings = const <String, List<String>>{},
+    this.ipa,
+    this.ipas = const <String, String>{},
   });
 
   /// The word the row inflects, as the drill shows it.
@@ -38,6 +40,13 @@ class PatternEntry {
   /// cell that lists several. Absent for a slot with no form, and empty for
   /// a deck that gives none.
   final Map<String, List<String>> readings;
+
+  /// [lemma] in the IPA (ADR-0025), or null.
+  final String? ipa;
+
+  /// The form shown in each slot, in the IPA, by slot (ADR-0025). Absent for
+  /// a slot with no form, and empty for a deck that gives none.
+  final Map<String, String> ipas;
 }
 
 /// A grammar deck's inflection table, before it is expanded into cards.

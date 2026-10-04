@@ -1,10 +1,27 @@
 import 'drill_mode.dart';
 
 class CardExample {
-  const CardExample({required this.target, required this.native});
+  const CardExample({
+    required this.target,
+    required this.native,
+    this.language,
+    this.reading,
+    this.ipa,
+  });
 
   final String target;
   final String native;
+
+  /// The language [target] is in, by code, where it is not the deck's: the
+  /// IPA course's example words are Hindi, Telugu or Spanish, and are played
+  /// in that language's voice.
+  final String? language;
+
+  /// [target] romanised, for an example in a script that needs it.
+  final String? reading;
+
+  /// [target] in the IPA, broad, without slashes.
+  final String? ipa;
 }
 
 /// A card written in another deck, listed in this one by its id (ADR-0018).
@@ -20,6 +37,7 @@ class CardRef {
     required this.position,
     this.native,
     this.reading,
+    this.ipa,
     this.altNative,
     this.tags,
     this.notes,
@@ -36,6 +54,7 @@ class CardRef {
   // Each null when the ref does not give it.
   final String? native;
   final String? reading;
+  final String? ipa;
   final List<String>? altNative;
   final List<String>? tags;
   final String? notes;
@@ -46,9 +65,9 @@ class CardRef {
   /// language [written] was written for takes the card's own native-side
   /// fields where the ref gives none. A deck taught from another language
   /// takes none of its notes, tags, alternative meanings or examples, and is
-  /// null when the ref gives no [native]. The card's [reading] and [modes],
-  /// which belong to the word, come across either way unless the ref gives
-  /// its own.
+  /// null when the ref gives no [native]. The card's [reading], [ipa] and
+  /// [modes], which belong to the word, come across either way unless the
+  /// ref gives its own.
   Card? resolve(
     Card written, {
     required String deckId,
@@ -63,6 +82,7 @@ class CardRef {
       native: native,
       reading: reading ?? written.reading,
       altReading: reading == null ? written.altReading : const <String>[],
+      ipa: ipa ?? written.ipa,
       altTarget: written.altTarget,
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
@@ -93,6 +113,7 @@ class Card {
     required this.target,
     required this.native,
     this.reading,
+    this.ipa,
     this.altReading = const <String>[],
     this.altTarget = const <String>[],
     this.altNative = const <String>[],
@@ -118,8 +139,13 @@ class Card {
   final String target;
   final String native;
 
-  /// Romanisation or phonetic reading, for non-Latin scripts.
+  /// Romanisation, for non-Latin scripts: ISO 15919 letters for the Indic
+  /// languages, spelled as the word is said (ADR-0025).
   final String? reading;
+
+  /// How the word is said, in the IPA: broad, without the slashes, as
+  /// `paːlu` (ADR-0025).
+  final String? ipa;
 
   /// The readings of [altTarget], for a grammar cell that lists several
   /// forms: accepted too when the answer is typed in Latin letters (#47).
