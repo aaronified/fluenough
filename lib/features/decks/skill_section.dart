@@ -27,7 +27,8 @@ import 'deck_content.dart';
 ///   which opens Voices; and speaking, where the phone cannot recognise the
 ///   language, or only online without the learner's leave, the same way;
 /// - **set aside**: a skill switched off for this language, or paused
-///   (#89) — a muted pill, why, and Turn on or Resume;
+///   (#89) — a muted pill, why, and Turn on or Resume; and listening while
+///   sound is off for the whole app, with Turn on;
 /// - **incoming**: a skill whose drill is not built yet, such as grammar
 ///   (#2) — dimmed, with the badge.
 class SkillSection extends StatelessWidget {
@@ -110,6 +111,26 @@ class SkillSection extends StatelessWidget {
               ? () => settings.setOffFor(skill, language.code, false)
               : () => settings.resume(skill),
           child: Text(off ? l10n.deckTurnOn : l10n.settingsResume),
+        ),
+      );
+    }
+
+    // Sound off for the whole app: nothing is heard, so listening is not
+    // drilled, whatever the phone's voices.
+    if (skill.needsVoice && !settings.soundOn) {
+      return GroupedTile(
+        padding: padding,
+        leadingGap: leadingGap,
+        trailingGap: trailingGap,
+        leading: ModePill(skill: skill, size: ModePillSize.large, muted: true),
+        title: skill.label(l10n),
+        titleColor: scheme.onSurfaceVariant,
+        subtitle: l10n.deckSoundOff,
+        trailing: OutlinedButton(
+          style: AppButtonStyles.compact(context)
+              .merge(OutlinedButton.styleFrom(foregroundColor: scheme.primary)),
+          onPressed: () => settings.soundOn = true,
+          child: Text(l10n.deckTurnOn),
         ),
       );
     }

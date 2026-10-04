@@ -680,6 +680,9 @@ class DrillSession extends ChangeNotifier {
   /// Whether the phone has a voice for the current card's language.
   bool get canPlay => _state.hasVoice(deck.language);
 
+  /// Whether sound is on in Settings.
+  bool get soundOn => _state.settings.soundOn;
+
   /// On from a card being taught. Nothing is recorded: its questions are.
   void learnt() {
     if (ask != Ask.teach) return;
@@ -906,12 +909,14 @@ class DrillSession extends ChangeNotifier {
   final Set<(Skill, String?)> _notNow = <(Skill, String?)>{};
 
   /// Whether [item] can still be drilled: not set aside on this drill, its
-  /// skill not paused since the session was built, and not a speaking card
-  /// in a language found not to be heard at all, or whose online question
-  /// the learner declined and has not since allowed.
+  /// skill not paused since the session was built, not a listening card
+  /// while sound is off, and not a speaking card in a language found not to
+  /// be heard at all, or whose online question the learner declined and has
+  /// not since allowed.
   bool _drillable(SessionItem item) {
     // A word is taught whatever comes of its questions.
     if (item.ask == Ask.teach) return true;
+    if (item.mode == DrillMode.listening && !soundOn) return false;
     final itemSkill = Skill.of(item.mode);
     final language = _state.deckOf(item.card)?.language;
     final code = language?.code;

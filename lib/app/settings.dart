@@ -32,6 +32,9 @@ class SettingsNotifier extends ChangeNotifier {
   SettingsNotifier({
     Set<Skill>? enabledSkills,
     this._showRomanisation = true,
+    this._showIpa = true,
+    this._soundOn = true,
+    this._autoplay = false,
     this._speechRate = 1.0,
     this._themeMode = ThemeMode.system,
     this._seed = ThemeSeed.forest,
@@ -71,6 +74,10 @@ class SettingsNotifier extends ChangeNotifier {
 
   Set<Skill> _enabledSkills;
   bool _showRomanisation;
+  bool _showIpa;
+  bool _soundOn;
+  bool _autoplay;
+  int _speakerTaps = 0;
   double _speechRate;
   ThemeMode _themeMode;
   ThemeSeed _seed;
@@ -318,6 +325,35 @@ class SettingsNotifier extends ChangeNotifier {
   set showRomanisation(bool value) =>
       _set(_showRomanisation, value, (v) => _showRomanisation = v);
 
+  /// Whether a word's IPA line, `/paːlu/`, shows where the deck gives one:
+  /// on the teach card, under a word asked about, and with the answer once
+  /// it is in.
+  bool get showIpa => _showIpa;
+  set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
+
+  /// Sound for the whole app. Off, nothing is spoken, every speaker is
+  /// greyed out, and listening is not drilled, as on a phone with no voice.
+  bool get soundOn => _soundOn;
+  set soundOn(bool value) => _set(_soundOn, value, (v) => _soundOn = v);
+
+  /// Whether a card's word plays by itself as its speaker appears: as the
+  /// card shows, or once it is answered where hearing it would give the
+  /// answer away. Off by default; a long press on any speaker switches it.
+  bool get autoplay => _autoplay;
+  set autoplay(bool value) => _set(_autoplay, value, (v) => _autoplay = v);
+
+  /// How many times a speaker has been tapped to play while [autoplay] was
+  /// off: every tenth says that a long press plays words automatically, so
+  /// that those who tap it most hear of it. Not something the learner sets.
+  int get speakerTaps => _speakerTaps;
+
+  /// Counts a tap on a speaker, and returns the count.
+  int countSpeakerTap() {
+    _speakerTaps++;
+    notifyListeners();
+    return _speakerTaps;
+  }
+
   /// Speech speed as a multiple of normal, 0.5–1.5, shown as "1.0×".
   double get speechRate => _speechRate;
   set speechRate(double value) => _set(
@@ -407,6 +443,10 @@ class SettingsNotifier extends ChangeNotifier {
       for (final s in Skill.values) isEnabled(s) ? s.name : '!${s.name}',
     ].join(','),
     'show_romanisation': '$_showRomanisation',
+    'show_ipa': '$_showIpa',
+    'sound_on': '$_soundOn',
+    'autoplay': '$_autoplay',
+    'speaker_taps': '$_speakerTaps',
     'speech_rate': '$_speechRate',
     'theme_mode': _themeMode.name,
     'seed': _seed.name,
@@ -475,6 +515,12 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
+    if (pick('show_ipa', flag) case final v?) showIpa = v;
+    if (pick('sound_on', flag) case final v?) soundOn = v;
+    if (pick('autoplay', flag) case final v?) autoplay = v;
+    if (pick('speaker_taps', int.tryParse) case final v? when v >= 0) {
+      _set(_speakerTaps, v, (n) => _speakerTaps = n);
+    }
     if (pick('speech_rate', _parseFinite) case final v?) speechRate = v;
     if (pick('theme_mode', (t) => named(ThemeMode.values, t)) case final v?) {
       themeMode = v;

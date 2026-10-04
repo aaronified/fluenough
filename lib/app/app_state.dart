@@ -586,6 +586,14 @@ class AppState extends ChangeNotifier {
   bool hasVoice(LanguageInfo language) =>
       voiceStatus(language) == VoiceStatus.available;
 
+  /// Whether [language] can be heard now: the phone has a voice for it, and
+  /// sound is on in Settings. What decides whether listening is drilled;
+  /// with sound off it is skipped, as on a phone with no voice at all.
+  /// [voiceStatus] and [hasVoice] stay the phone's own, for the Voices page
+  /// and for whether a speaker shows.
+  bool canSpeak(LanguageInfo language) =>
+      settings.soundOn && hasVoice(language);
+
   /// Asks the engine about every catalog language again, for when the
   /// learner has been off to install a voice.
   Future<void> refreshVoices() async {
@@ -605,16 +613,20 @@ class AppState extends ChangeNotifier {
       _tts.voicesFor(language.ttsTag);
 
   /// Speaks [text] in [language] at the learner's speech rate, or slower.
-  /// Completes when playback ends. Does nothing without a voice.
+  /// Completes when playback ends. Does nothing without a voice, or while
+  /// sound is off in Settings.
   Future<void> speak(
     String text,
     LanguageInfo language, {
     bool slower = false,
-  }) => _tts.speak(
-    text,
-    bcp47: language.ttsTag,
-    rate: settings.ttsRate(slower: slower),
-  );
+  }) async {
+    if (!settings.soundOn) return;
+    await _tts.speak(
+      text,
+      bcp47: language.ttsTag,
+      rate: settings.ttsRate(slower: slower),
+    );
+  }
 
   Future<void> stopSpeaking() => _tts.stop();
 
@@ -812,11 +824,12 @@ class AppState extends ChangeNotifier {
     // of words not taught yet.
     final newLimit = request.revise ? 0 : cards.length;
 
-    // A skill switched off for a language is not drilled in it (#89).
+    // A skill switched off for a language is not drilled in it (#89), and
+    // nothing is heard while sound is off.
     final voiced = <String, bool>{
       for (final entry in this.decks)
         entry.id:
-            hasVoice(entry.language) &&
+            canSpeak(entry.language) &&
             !settings.isOffFor(Skill.listening, entry.language.code),
     };
     final heard = <String, bool>{
@@ -1015,8 +1028,8 @@ class AppState extends ChangeNotifier {
       DrillMode.values.any((mode) => progress.stateOf(card.id, mode) != null);
 
   /// The modes [card] can be drilled in now: those it takes, switched on
-  /// and not paused, by ear only with a voice and by mouth only with a
-  /// recogniser, each on for its language, and none set aside.
+  /// and not paused, by ear only with a voice and sound on and by mouth
+  /// only with a recogniser, each on for its language, and none set aside.
   Set<DrillMode> drillableModes(Card card) {
     final entry = deckOf(card);
     if (entry == null) return const <DrillMode>{};
@@ -1026,7 +1039,7 @@ class AppState extends ChangeNotifier {
     return <DrillMode>{
       for (final mode in card.modesIn(
         ttsAvailable:
-            hasVoice(language) &&
+            canSpeak(language) &&
             !settings.isOffFor(Skill.listening, language.code),
         speechAvailable:
             canHear(language) &&
@@ -1172,7 +1185,8 @@ class AppState extends ChangeNotifier {
   }
 
   /// Generated numbers to practise in [deck]'s language, in the skills the
-  /// learner has on, by ear only with a voice. Never recorded (ADR-0011).
+  /// learner has on, by ear only with a voice and sound on. Never recorded
+  /// (ADR-0011).
   List<SessionItem> numberPracticeFor(DeckEntry deck, {Random? random}) {
     final rules = numberRulesFor(deck.language);
     if (rules == null) return const <SessionItem>[];
@@ -1181,7 +1195,7 @@ class AppState extends ChangeNotifier {
       deckId: deck.id,
       modes: <DrillMode>{
         for (final mode in sessionModes)
-          if (mode != DrillMode.listening || hasVoice(deck.language)) mode,
+          if (mode != DrillMode.listening || canSpeak(deck.language)) mode,
       },
       random: random ?? Random(),
     );

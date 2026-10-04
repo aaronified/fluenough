@@ -13,6 +13,10 @@ void changeAll(SettingsNotifier s) {
   s
     ..setSkillEnabled(Skill.listening, false)
     ..showRomanisation = false
+    ..showIpa = false
+    ..soundOn = false
+    ..autoplay = true
+    ..countSpeakerTap()
     ..speechRate = 0.8
     ..themeMode = ThemeMode.dark
     ..seed = ThemeSeed.clay
