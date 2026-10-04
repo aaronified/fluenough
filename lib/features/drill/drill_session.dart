@@ -17,6 +17,7 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
+import '../../core/scheduling/sm2.dart';
 import '../../core/speech/speech_engine.dart';
 
 /// Where the current card is: the design's `phase`.
@@ -84,6 +85,7 @@ class DrillSession extends ChangeNotifier {
     InputMode? inputMode,
     this.recorded = true,
     this.revising = false,
+    this.recordsMisses = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(!revising || !recorded, 'revising is never recorded'),
@@ -115,6 +117,11 @@ class DrillSession extends ChangeNotifier {
   /// deck, like a recorded session, but never [recorded]: an early review
   /// would stretch the card's interval.
   final bool revising;
+
+  /// Whether a wrong answer is recorded although the session is not: a
+  /// quick revision (ADR-0029), where a lapse should bring the card back
+  /// sooner, and a right answer, given early, should not stretch it.
+  final bool recordsMisses;
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
@@ -876,7 +883,7 @@ class DrillSession extends ChangeNotifier {
       _recordItem(item, grade, answerGiven: answerGiven);
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
-    if (recorded) {
+    if (recorded || (recordsMisses && grade < Sm2.passingGrade)) {
       _state.record(
         entry,
         grade,

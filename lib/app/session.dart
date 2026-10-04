@@ -14,6 +14,7 @@ class DrillRequest {
     this.revise = false,
     this.lesson = false,
     this.language,
+    this.limit,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -57,6 +58,13 @@ class DrillRequest {
   DrillRequest.revise(String deckId, {Set<String> tags = const <String>{}})
     : this(deckIds: <String>{deckId}, tags: tags, revise: true);
 
+  /// Quick revision, from Today (ADR-0029): [count] words the learner has
+  /// been taught, from every language they learn, picked at random, each in
+  /// a skill it has been reviewed in, due or not. A wrong answer is
+  /// recorded, as a lapse that brings the card back sooner; a right one is
+  /// not, since an early review would stretch the card's interval.
+  const DrillRequest.revision(int count) : this(revise: true, limit: count);
+
   /// The decks to draw from, or null for every deck the current profile
   /// learns.
   final Set<String>? deckIds;
@@ -86,12 +94,20 @@ class DrillRequest {
   /// Only decks in this language, by code; null for every language.
   final String? language;
 
+  /// At most this many words, picked at random: a quick revision. Null for
+  /// all of them, in order.
+  final int? limit;
+
+  /// Whether a wrong answer is recorded although the session is not: a
+  /// quick revision (ADR-0029).
+  bool get recordsMisses => revise && limit != null;
+
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
       'untaught: $untaught, revise: $revise, lesson: $lesson, '
-      'language: $language)';
+      'language: $language, limit: $limit)';
 }
 
 /// One answer in a finished session, for the summary.
