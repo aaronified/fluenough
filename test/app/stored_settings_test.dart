@@ -39,6 +39,9 @@ void main() {
   test('every setting survives toStored and restore', () {
     final changed = SettingsNotifier();
     changeAll(changed);
+    // Saved at all: a key left out of toStored would round-trip as its
+    // default on both sides, and pass.
+    expect(changed.toStored()['pure_black'], 'true');
     final restored = SettingsNotifier()..restore(changed.toStored());
     expect(restored.toStored(), changed.toStored());
     expect(restored.toStored(), isNot(SettingsNotifier().toStored()));

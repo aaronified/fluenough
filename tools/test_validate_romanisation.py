@@ -109,6 +109,19 @@ cards:
         self.assertEqual(self.write("hi-en-probe.yaml",
                                     deck.replace("thoDaa", "thoda")).errors, [])
 
+    def test_with_the_file_grammar_readings_are_in_the_scheme_too(self) -> None:
+        self.write("hi-romanisation.yaml", ROMANISATION)
+        self.assertEqual(self.write("hi-en-grammar-probe.yaml", grammar(
+            '      readings: { "मैं": "jata hun" }\n')).errors, [])
+        for readings in (
+            '      readings: { "मैं": "jaatā hun" }\n',
+            '      readings: { "मैं": ["Jata hun"] }\n',
+        ):
+            with self.subTest(readings=readings):
+                self.assertRejected(
+                    self.write("hi-en-grammar-probe.yaml", grammar(readings)),
+                    "not in the hi romanisation")
+
 
 if __name__ == "__main__":
     unittest.main()
