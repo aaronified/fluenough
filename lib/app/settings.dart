@@ -30,7 +30,6 @@ enum ThemeSeed {
 /// value actually changes.
 class SettingsNotifier extends ChangeNotifier {
   SettingsNotifier({
-    this._newCardsPerDay = 20,
     Set<Skill>? enabledSkills,
     this._showRomanisation = true,
     this._speechRate = 1.0,
@@ -58,10 +57,6 @@ class SettingsNotifier extends ChangeNotifier {
        _speechOnline = Set<String>.unmodifiable(speechOnline),
        _noAlphabet = Set<String>.unmodifiable(noAlphabet);
 
-  /// The new-card slider's range and step, from the design.
-  static const int maxNewCardsPerDay = 50;
-  static const int newCardsStep = 5;
-
   /// The speech-rate slider's range and step, as a multiple of normal speed.
   static const double minSpeechRate = 0.5;
   static const double maxSpeechRate = 1.5;
@@ -74,7 +69,6 @@ class SettingsNotifier extends ChangeNotifier {
   static const double minCardTextScale = 0.8;
   static const double maxCardTextScale = 1.4;
 
-  int _newCardsPerDay;
   Set<Skill> _enabledSkills;
   bool _showRomanisation;
   double _speechRate;
@@ -102,6 +96,21 @@ class SettingsNotifier extends ChangeNotifier {
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
+  Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
+
+  /// When a lesson in [language] was last finished (ADR-0024), so that
+  /// Today offers the day's lesson, then "Another lesson". Like
+  /// [factShownAt], not something the learner sets.
+  DateTime? lessonDoneAt(String language) => _lessonsDone[language];
+
+  /// Records that a lesson in [language] was finished at [at].
+  void markLessonDone(String language, DateTime at) {
+    _lessonsDone = Map<String, DateTime>.unmodifiable(<String, DateTime>{
+      ..._lessonsDone,
+      language: at,
+    });
+    notifyListeners();
+  }
 
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
   /// Not something the learner sets: kept here because it is small, per
@@ -290,13 +299,6 @@ class SettingsNotifier extends ChangeNotifier {
     return i < 0 ? null : i;
   }
 
-  /// How many new `(card, mode)` pairs a day may introduce.
-  int get newCardsPerDay => _newCardsPerDay;
-  set newCardsPerDay(int value) =>
-      _set(_newCardsPerDay, value.clamp(0, maxNewCardsPerDay), (v) {
-        _newCardsPerDay = v;
-      });
-
   /// The skills the learner has switched on. A skill that is switched on but
   /// whose feature is incoming still never enters a session.
   Set<Skill> get enabledSkills => _enabledSkills;
@@ -396,7 +398,6 @@ class SettingsNotifier extends ChangeNotifier {
   /// Every setting as text, by its stored name. The names are permanent:
   /// renaming one resets it for everyone.
   Map<String, String> toStored() => <String, String>{
-    'new_cards_per_day': '$_newCardsPerDay',
     // Every skill, a switched-off one marked with a !, so that a skill
     // added later can tell it was not known here (#98).
     // + says every skill this version knows is listed, on or marked !, so
@@ -440,6 +441,10 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _factsShown.entries)
         key: value.millisecondsSinceEpoch,
     }),
+    'lessons_done': jsonEncode(<String, int>{
+      for (final MapEntry(:key, :value) in _lessonsDone.entries)
+        key: value.millisecondsSinceEpoch,
+    }),
   };
 
   /// Applies [stored], as [toStored] wrote it, through the setters, so that
@@ -454,9 +459,6 @@ class SettingsNotifier extends ChangeNotifier {
     bool? flag(String t) => bool.tryParse(t);
     E? named<E extends Enum>(List<E> values, String t) => values.asNameMap()[t];
 
-    if (pick('new_cards_per_day', int.tryParse) case final v?) {
-      newCardsPerDay = v;
-    }
     if (pick('enabled_skills', (t) => t.split(',')) case final names?) {
       // A skill added since these were stored keeps its default, rather
       // than reading as switched off. Each skill is listed, a switched-off
@@ -502,6 +504,10 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('facts_shown', _parseShown) case final v?) {
       _factsShown = Map<String, DateTime>.unmodifiable(v);
+      notifyListeners();
+    }
+    if (pick('lessons_done', _parseShown) case final v?) {
+      _lessonsDone = Map<String, DateTime>.unmodifiable(v);
       notifyListeners();
     }
     if (pick('spoken_languages', (t) => t) case final v?) {

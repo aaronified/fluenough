@@ -1,6 +1,8 @@
 # ADR-0024: New words come in a daily lesson, and every drill has more kinds of question
 
-- **Status:** Accepted
+- **Status:** Accepted. Amends ADR-0010 (phrases are produced, by
+  rearranging), ADR-0013 (the pending units feed lessons) and ADR-0019 (no
+  daily cap for a passage to pass).
 - **Date:** 2026-10-04
 
 ## Context
@@ -57,8 +59,7 @@ speaking. Phrases were never produced (ADR-0010).
   records listening; typing, rearranging or choosing the word records
   production; saying it records speaking. A right choice is graded 4, a
   right typed or said answer 5, a near miss as before, a wrong one 1. A
-  grammar cell has one skill, so its second question is practice and
-  records nothing.
+  grammar cell has one skill, so it is asked once, typed.
 - **Today** shows each language's lesson ("Learn 9 new words") above the
   reviews, then "Another lesson" once it is done. Start review is due
   reviews only, and the new skills of words already met: a word is new
@@ -78,8 +79,17 @@ speaking. Phrases were never produced (ADR-0010).
   to 20 new pairs, mostly recognition.
 - Self-rating survives only where a choice cannot be made: a language with
   fewer than two other cards to choose from.
-- Placement, paths, pending units and the scheduler are unchanged: a lesson
-  draws on the pending units, and what it records is scheduled as before.
+- Placement, paths and the scheduler are unchanged: a lesson draws on the
+  pending units (ADR-0013), and what it records is scheduled as before.
+  Today's session no longer takes new cards from the pending units, and
+  there is no daily cap, so the shares between languages and the cap ADR-0019
+  lets a passage pass are gone.
+- A deck is finished once every word in it is taught, so the path moves on
+  then; the words' other skills come with their reviews. A deck's "New"
+  count is its words not taught yet.
+- Nothing past the day's lesson is offered as new on a deck's screen: with
+  nothing due, it offers a lesson of that deck's words instead of "Learn
+  anyway".
 
 ## Alternatives considered
 

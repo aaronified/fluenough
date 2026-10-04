@@ -210,7 +210,7 @@ void main() {
       await state.load();
       Set<DrillMode> modes() => <DrillMode>{
         for (final item
-            in state.buildSession(DrillRequest.learnAnyway(spanish)).items)
+            in state.buildSession(DrillRequest.untaught(spanish)).items)
           item.mode,
       };
       expect(modes(), isNot(contains(DrillMode.speaking)));

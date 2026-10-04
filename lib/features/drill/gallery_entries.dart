@@ -48,6 +48,13 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     ),
   ),
   GalleryEntry(
+    id: 'drill-lesson',
+    section: GallerySection.drills,
+    label: 'Lesson, a word taught', // ui-literal-ok: debug-only gallery
+    note: 'Then asked, then practised', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(request: DrillRequest.lesson(language: 'es')),
+  ),
+  GalleryEntry(
     id: 'drill-choose-meaning',
     section: GallerySection.drills,
     label: 'Recognition, multiple choice', // ui-literal-ok: debug-only gallery

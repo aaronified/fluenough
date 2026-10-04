@@ -23,6 +23,7 @@ import '../core/updates/release_check.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
+import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
 import 'deck_catalog.dart';
 import 'deck_import.dart';
@@ -750,22 +751,6 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  /// New pairs today may still introduce: the daily cap less those already
-  /// introduced.
-  /// New pairs introduced today in the language with [code]: a card id
-  /// begins with its language (ADR-0018).
-  int _newTodayIn(String code) {
-    final today = now();
-    return progress.log
-        .where(
-          (e) =>
-              e.wasNew &&
-              isSameDay(e.at, today) &&
-              e.cardId.startsWith('$code-'),
-        )
-        .length;
-  }
-
   /// The languages with something to do in Today's session, each its own
   /// session (`DrillRequest.today(language:)`), in the order the learner
   /// chose to learn them, then the decks' order.
@@ -782,11 +767,6 @@ class AppState extends ChangeNotifier {
         if (buildSession(DrillRequest.today(language: code)).isNotEmpty)
           all[code]!,
     ];
-  }
-
-  int get newCardsLeftToday {
-    final left = settings.newCardsPerDay - progress.newIntroducedOn(now());
-    return left < 0 ? 0 : left;
   }
 
   /// The queue for [request], built by [SessionQueue] from the catalog, the
@@ -827,13 +807,10 @@ class AppState extends ChangeNotifier {
               skill.mode!,
           };
 
-    var newLimit = request.revise
-        ? 0
-        : request.pastDailyCap
-        ? cards.length
-        : newCardsLeftToday;
-    final requested = request.newLimit;
-    if (requested != null && requested < newLimit) newLimit = requested;
+    // A new pair is a new skill of a word already taught: a word is new
+    // once, in its lesson (ADR-0024). Only an untaught request takes those
+    // of words not taught yet.
+    final newLimit = request.revise ? 0 : cards.length;
 
     // A skill switched off for a language is not drilled in it (#89).
     final voiced = <String, bool>{
@@ -871,60 +848,11 @@ class AppState extends ChangeNotifier {
       canIntroduce: canIntroduce,
     );
 
-    // Today, and "Learn 5 new", teach new cards only from the pending units
-    // (ADR-0013): an equal share of the day's for each language, in a block
-    // of its own, each block mixing its course's two units. Reviews come
-    // from every deck the profile learns.
-    final SessionQueue queue;
-    if (ids == null && !request.revise) {
-      final byLanguage = <String, List<List<DeckEntry>>>{};
-      for (final unit in pendingUnits) {
-        (byLanguage[unit.first.language.code] ??= <List<DeckEntry>>[]).add(
-          unit,
-        );
-      }
-      List<SessionItem> freshIn(String code, int limit) {
-        final units = byLanguage[code]!;
-        return queueOf(
-          tagged(_alternating(units)),
-          newCardLimit: limit,
-          canIntroduce: (card) =>
-              units.any((unit) => unit.any((e) => e.id == card.deckId)),
-        ).fresh;
-      }
-
-      final List<SessionItem> fresh;
-      if (language == null) {
-        fresh = SessionQueue.fairShares(<List<SessionItem>>[
-          for (final code in byLanguage.keys) freshIn(code, newLimit),
-        ], newLimit);
-      } else if (!byLanguage.containsKey(language)) {
-        fresh = const <SessionItem>[];
-      } else {
-        // One language's share of the whole day, less what it has had
-        // today, so that finishing one language first does not shrink the
-        // next one's share.
-        final day = settings.newCardsPerDay;
-        final codes = byLanguage.keys.toList();
-        final had = <int>[for (final code in codes) _newTodayIn(code)];
-        final shares = SessionQueue.shareCounts(<int>[
-          for (final (i, code) in codes.indexed)
-            had[i] + freshIn(code, day).length,
-        ], day);
-        final i = codes.indexOf(language);
-        final left = shares[i] - had[i];
-        fresh = SessionQueue.takeWhole(
-          freshIn(language, day),
-          left < newLimit ? left : newLimit,
-        );
-      }
-      queue = SessionQueue.of(
-        due: queueOf(cards, newCardLimit: 0).due,
-        fresh: fresh,
-      );
-    } else {
-      queue = queueOf(cards, newCardLimit: newLimit);
-    }
+    final queue = queueOf(
+      cards,
+      newCardLimit: newLimit,
+      canIntroduce: request.untaught ? null : isTaught,
+    );
     return request.newOnly ? queue.withoutDue() : queue;
   }
 
@@ -1079,6 +1007,99 @@ class AppState extends ChangeNotifier {
     canChoose: (item) => canChoose(item.card, Ask.chooseMeaning),
   );
 
+  // ---------------------------------------------------------------------------
+  // Lessons (ADR-0024)
+
+  /// Whether [card] has been taught: some skill of it has been drilled.
+  bool isTaught(Card card) =>
+      DrillMode.values.any((mode) => progress.stateOf(card.id, mode) != null);
+
+  /// The modes [card] can be drilled in now: those it takes, switched on
+  /// and not paused, by ear only with a voice and by mouth only with a
+  /// recogniser, each on for its language, and none set aside.
+  Set<DrillMode> drillableModes(Card card) {
+    final entry = deckOf(card);
+    if (entry == null) return const <DrillMode>{};
+    final language = entry.language;
+    final modes = _modes(ignorePauses: false);
+    final leeches = progress.leechEffects;
+    return <DrillMode>{
+      for (final mode in card.modesIn(
+        ttsAvailable:
+            hasVoice(language) &&
+            !settings.isOffFor(Skill.listening, language.code),
+        speechAvailable:
+            canHear(language) &&
+            !settings.isOffFor(Skill.speaking, language.code),
+      ))
+        if (modes.contains(mode) &&
+            !leeches.isSetAside((cardId: card.id, mode: mode)))
+          mode,
+    };
+  }
+
+  /// The cards a lesson in [language] can teach, in their order: from
+  /// [deckId], or else from the pending units (ADR-0013). Those not taught
+  /// yet that can be drilled now.
+  List<Card> untaughtCards(String language, {String? deckId}) {
+    final cards = deckId != null
+        ? deckById(deckId)?.cards ?? const <Card>[]
+        : _alternating(<List<DeckEntry>>[
+            for (final unit in pendingUnits)
+              if (unit.first.language.code == language) unit,
+          ]);
+    final seen = <String>{};
+    return <Card>[
+      for (final card in cards)
+        if (seen.add(card.id) &&
+            !isTaught(card) &&
+            drillableModes(card).isNotEmpty)
+          card,
+    ];
+  }
+
+  /// The items of the lesson [request] asks for (ADR-0024), or none when
+  /// there is nothing left to teach.
+  ///
+  /// When the first card left is a reading question, the lesson is its
+  /// passage: the questions about it, heard, then read. Otherwise it is up
+  /// to nine words before the next passage, as [lessonItems] picks them,
+  /// each taught, checked and practised ([lessonPlan]).
+  List<SessionItem> lessonFor(DrillRequest request) {
+    final cards = untaughtCards(
+      request.language!,
+      deckId: request.deckIds?.single,
+    );
+    if (cards.isEmpty) return const <SessionItem>[];
+    final first = cards.first;
+    if (first is QuestionCard) {
+      final questions = <QuestionCard>[
+        for (final card in cards)
+          if (card is QuestionCard && card.sharesPassage(first)) card,
+      ];
+      return inPassages(<SessionItem>[
+        for (final mode in const <DrillMode>[
+          DrillMode.reading,
+          DrillMode.listening,
+        ])
+          for (final question in questions)
+            if (drillableModes(question).contains(mode))
+              SessionItem(card: question, mode: mode, state: null),
+      ]);
+    }
+    return lessonPlan(
+      lessonItems(cards.takeWhile((card) => card is! QuestionCard)),
+      modesOf: drillableModes,
+      canChoose: canChoose,
+    );
+  }
+
+  /// Whether a lesson in [language] was finished today.
+  bool lessonDoneToday(String language) {
+    final at = settings.lessonDoneAt(language);
+    return at != null && isSameDay(at, now());
+  }
+
   /// Whether [language]'s course has decks that need its alphabet, so that
   /// it can be learned without them.
   bool hasAlphabet(String language) {
@@ -1104,14 +1125,17 @@ class AppState extends ChangeNotifier {
     return mixed;
   }
 
-  /// Cards in [deck] with a pair never drilled, in every skill the learner
-  /// has on, whatever today's cap allows. None left means the deck is
-  /// finished: its badge says Done when nothing is due, and it can be
-  /// revised.
-  int notStudiedIn(DeckEntry deck) => buildSession(
-    DrillRequest.learnAnyway(deck.id),
-    ignorePauses: true,
-  ).fresh.length;
+  /// Cards in [deck] not taught yet, that some skill the learner has on can
+  /// drill (ADR-0024). None left means the deck is finished: its badge says
+  /// Done when nothing is due, and it can be revised. A taught word's other
+  /// skills come with its reviews.
+  int notStudiedIn(DeckEntry deck) => <String>{
+    for (final item in buildSession(
+      DrillRequest.untaught(deck.id),
+      ignorePauses: true,
+    ).fresh)
+      if (!isTaught(item.card)) item.card.id,
+  }.length;
 
   /// How numbers are spelled in [language], or null for a language with no
   /// number rules (#54).
@@ -1163,13 +1187,13 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  /// A deck's due reviews, new pairs within today's allowance, and cards
+  /// A deck's due reviews, words not taught yet (ADR-0024), and cards
   /// learned, in every skill the learner has on.
   DeckCounts countsFor(DeckEntry deck) {
     final queue = buildSession(DrillRequest.deck(deck.id));
     return (
       due: queue.due.length,
-      fresh: queue.fresh.length,
+      fresh: notStudiedIn(deck),
       learned: progress.learnedIn(deck.cards.map((card) => card.id)),
     );
   }

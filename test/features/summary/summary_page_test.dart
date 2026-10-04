@@ -139,38 +139,35 @@ void main() {
     expect(state.shellTab.value, ShellTab.today);
   });
 
-  testWidgets('Learn 5 new cards starts a session of new cards only', (
-    tester,
-  ) async {
+  testWidgets('after a language\'s session, the summary offers its lesson '
+      '(ADR-0024): today\'s, then another', (tester) async {
     usePhone(tester);
-    await pumpScreen(tester, SummaryPage(result: fiveAnswers));
+    final state = AppState.test(
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['es'],
+      ),
+    );
+    await state.load();
+    final spanish = fiveAnswers.inLanguage('es');
+    await pumpScreen(tester, SummaryPage(result: spanish), state: state);
     final l10n = l10nOf(tester);
-    await tapVisible(tester, find.text(l10n.summaryLearnNew(5)));
+    expect(find.text(l10n.summaryLesson), findsOneWidget);
+
+    state.settings.markLessonDone('es', state.now());
+    await pumpScreen(tester, SummaryPage(result: spanish), state: state);
+    await tapVisible(tester, find.text(l10n.summaryAnotherLesson));
     final request = tester.widget<DrillPage>(find.byType(DrillPage)).request;
-    expect(request.newOnly, isTrue);
-    expect(request.newLimit, 5);
+    expect(request.lesson, isTrue);
+    expect(request.language, 'es');
   });
 
-  testWidgets('Learn offers only what today\'s cap leaves, or nothing', (
-    tester,
-  ) async {
+  testWidgets('a session in no one language offers no lesson', (tester) async {
     usePhone(tester);
-    final state = AppState.test(settings: SettingsNotifier(newCardsPerDay: 5));
-    await state.load();
-    final items = state.buildSession(const DrillRequest.today()).items;
-    for (final item in items.take(2)) {
-      state.record(item, 4);
-    }
-    expect(state.progress.newIntroducedOn(state.now()), 2);
-    await pumpScreen(tester, SummaryPage(result: fiveAnswers), state: state);
-    final l10n = l10nOf(tester);
-    expect(find.text(l10n.summaryLearnNew(3)), findsOneWidget);
-
-    state.settings.newCardsPerDay = 0;
-    await pumpScreen(tester, SummaryPage(result: fiveAnswers), state: state);
+    await pumpScreen(tester, SummaryPage(result: fiveAnswers));
     // Only Done is left.
     expect(find.byType(FilledButton), findsOneWidget);
-    expect(find.text(l10n.commonDone), findsOneWidget);
+    expect(find.text(l10nOf(tester).commonDone), findsOneWidget);
   });
 
   for (final (name, result) in <(String, SessionResult)>[

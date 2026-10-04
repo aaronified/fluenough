@@ -248,17 +248,8 @@ void main() {
     expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
     expect(find.text(l10n.todayAllDoneBody), findsOneWidget);
     expect(find.text(l10n.todayStartReview), findsNothing);
-    // Today now counts towards the streak and the new-card cap.
+    // Today now counts towards the streak.
     expect(find.text(l10n.todayStreak(13)), findsOneWidget);
-    expect(
-      find.text(
-        l10n.todayNewCards(
-          state.progress.newIntroducedOn(state.now()),
-          state.settings.newCardsPerDay,
-        ),
-      ),
-      findsOneWidget,
-    );
   });
 
   testWidgets('the streak and each day of the week come from the history', (
@@ -270,7 +261,7 @@ void main() {
     final l10n = l10nOf(tester);
 
     expect(find.text(l10n.todayStreak(12)), findsOneWidget);
-    expect(find.text(l10n.todayNewCards(0, 20)), findsOneWidget);
+    expect(find.text(l10n.todayNewWords(0)), findsOneWidget);
 
     // The fixture practised every day before today: six ticks, then today.
     final name = DateFormat.EEEE('en');
@@ -342,8 +333,7 @@ void main() {
       bySkill: const <Skill, int>{},
       noVoice: false,
       streak: 0,
-      newDone: 0,
-      newLimit: 20,
+      newWords: 0,
       week: const <WeekDay>[],
     );
     expect(withDue(0).minutes, 0);

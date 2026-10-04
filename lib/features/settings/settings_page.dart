@@ -130,18 +130,6 @@ class SettingsPage extends StatelessWidget {
           trailing: const Icon(Icons.chevron_right),
           onTap: () => AppNavigator.openLearnLanguages(context),
         ),
-        SettingsSlider(
-          title: l10n.settingsNewCardsPerDay,
-          valueLabel: '${settings.newCardsPerDay}',
-          value: settings.newCardsPerDay.toDouble(),
-          min: 0,
-          max: SettingsNotifier.maxNewCardsPerDay.toDouble(),
-          divisions:
-              SettingsNotifier.maxNewCardsPerDay ~/
-              SettingsNotifier.newCardsStep,
-          semanticValue: (v) => '${v.round()}',
-          onChanged: (v) => settings.newCardsPerDay = v.round(),
-        ),
         for (final skill in Skill.values) ...<Widget>[
           GroupedTile.toggle(
             title: skill.label(l10n),

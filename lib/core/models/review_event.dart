@@ -43,7 +43,7 @@ class ReviewEvent {
 
   ProgressKey get key => (cardId: cardId, mode: mode);
 
-  /// Whether this review introduced a new pair, which the daily cap counts.
+  /// Whether this review introduced a new pair.
   bool get wasNew => before == null;
 
   /// Whether SM-2 counts this review as remembered.
