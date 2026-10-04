@@ -7,6 +7,7 @@ import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
@@ -85,20 +86,30 @@ class SpeakingDrill extends StatelessWidget {
         ),
       ),
       if (answered) ...<Widget>[
-        TargetText.card(
-          card.target,
-          language: language,
-          fontSize: 28,
-          color: scheme.primary,
-        ),
-        if (reading != null)
-          Text(
-            reading,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!.copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+        if (reading != null && !session.learnsAlphabet)
+          ReadingFirst(
+            reading: reading,
+            target: card.target,
+            language: language,
+            fontSize: 28,
+            color: scheme.primary,
+          )
+        else ...<Widget>[
+          TargetText.card(
+            card.target,
+            language: language,
+            fontSize: 28,
+            color: scheme.primary,
           ),
+          if (reading != null)
+            Text(
+              reading,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyLarge!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+        ],
       ],
     ];
   }

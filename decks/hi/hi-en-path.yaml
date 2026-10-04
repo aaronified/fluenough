@@ -7,6 +7,16 @@ kind: path
 id: hi-en-path
 language: hi
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - hi-en-script-vowels
+  - hi-en-script-consonants
+  - hi-en-script-reading
+  - hi-en-script-vowel-signs
+  - hi-en-script-conjuncts
+  - hi-en-spelling
+  - hi-en-reading-panch-parmeshwar
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:

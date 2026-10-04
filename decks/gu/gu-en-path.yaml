@@ -9,6 +9,16 @@ kind: path
 id: gu-en-path
 language: gu
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - gu-en-script-vowels
+  - gu-en-script-consonants
+  - gu-en-script-reading
+  - gu-en-script-vowel-signs
+  - gu-en-script-conjuncts
+  - gu-en-spelling
+  - gu-en-reading-keri
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
