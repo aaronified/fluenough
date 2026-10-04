@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Quick revision on Today: revise 5, 10, 15 or 20 words you know, picked at random from every language you learn. A word you get wrong comes back sooner; one you get right keeps its date. The fact of the day follows it (#183).
-- A speaker on every card, reviews included. Long-press it to play words automatically, also in Settings > Sound; words don't play by themselves until you turn that on (#182).
+- A speaker on every card, reviews included; match pairs has none. Long-press it to play words automatically, also in Settings > Sound; words don't play by themselves until you turn that on (#182).
 - A Sound switch in Settings. With sound off, every speaker is greyed out, and lessons and reviews skip the questions that need sound until it is back on; turning it off says so. With the phone's volume at zero, a listening card is greyed out and asks you to raise the volume (#182).
 - Every word now carries how it is said in the IPA (/paːlu/), ready for the screens to show (#180).
 
