@@ -49,6 +49,11 @@ Branch `wip/v032-ipa`, commit `d21d3df`, on origin:
 - The language block: `{ code: ipa, iso639_3: zxx, name: IPA, script: ipa,
   typed: false, icon: "ə" }`.
 
+Branch `feat/ipa-line`, on origin, shows each word's IPA on cards, with a
+Settings > Learning > Show IPA switch. It is not in 0.3.2. It is stacked on
+the ISO 15919 readings (#180) and the sound work (#182). Rebase it once those
+merge and open its PR; its tests passed with them.
+
 Branch `claude/ecstatic-wright-b1z4x5` has a draft of the app side:
 `LanguageInfo.typed` and `scoped`, `CardExample.language`, and the `ipa`
 script needing no reading. It also has a draft ADR,
