@@ -226,7 +226,7 @@ void main() {
     usePhone(tester);
     final state = await pumpToday(
       tester,
-      state: AppState.test(tts: FixedTtsEngine(const <String>{'es', 'ja'})),
+      state: AppState.test(tts: FixedTtsEngine(const <String>{'es', 'hi'})),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.commonNoVoice), findsNothing);

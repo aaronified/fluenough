@@ -12,7 +12,7 @@ import 'inspect_page.dart';
 ///
 /// The design's deck is Hindi Core, which is not on this branch (#41), so
 /// `deck` shows Spanish Core for Aro, with a Spanish voice. `deck-novoice` is
-/// Japanese for Mira, whose language the fixture engine has no voice for.
+/// Marathi for Mira, whose language the fixture engine has no voice for.
 /// `import-error` shows a real parser error, from `importErrorFixture`.
 final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
   GalleryEntry(
@@ -35,7 +35,7 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     section: GallerySection.learn,
     label: 'Deck, no voice', // ui-literal-ok: debug-only gallery
     note: 'Listening disabled, with a way to fix it', // ui-literal-ok: debug-only gallery
-    builder: (_) => const DeckDetailPage(deckId: 'ja-en-hiragana'),
+    builder: (_) => const DeckDetailPage(deckId: 'mr-en-script-consonants'),
     state: (app) => GalleryFixtures.state(app, currentProfileId: 'mira'),
   ),
   GalleryEntry(

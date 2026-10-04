@@ -57,19 +57,19 @@ void main() {
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
     final es = _language(state, 'es');
-    final ja = _language(state, 'ja');
+    final hi = _language(state, 'hi');
 
     final others = state.languages.length - 1;
     expect(others, greaterThan(0));
     expect(find.textContaining(es.name, findRichText: true), findsOneWidget);
     expect(find.textContaining(es.ttsTag, findRichText: true), findsWidgets);
-    expect(find.textContaining(ja.name, findRichText: true), findsOneWidget);
+    expect(find.textContaining(hi.name, findRichText: true), findsOneWidget);
     expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
     expect(find.text(l10n.voicesMissing), findsNWidgets(others));
 
     // Test only where there is a voice.
     expect(find.bySemanticsLabel(l10n.voicesTestLabel(es.name)), findsOne);
-    expect(find.bySemanticsLabel(l10n.voicesTestLabel(ja.name)), findsNothing);
+    expect(find.bySemanticsLabel(l10n.voicesTestLabel(hi.name)), findsNothing);
     semantics.dispose();
   });
 
@@ -119,9 +119,9 @@ void main() {
     expect(find.text(l10n.voicesMissing), findsNWidgets(languages));
     expect(find.text(l10n.voicesTest), findsNothing);
 
-    // The learner installs a Japanese voice and comes back.
+    // The learner installs a Hindi voice and comes back.
     tts
-      ..voices = <String>{'ja'}
+      ..voices = <String>{'hi'}
       ..gate = Completer<void>();
     await tester.tap(find.text(l10n.voicesCheckAgain));
     await tester.pump();
@@ -140,7 +140,7 @@ void main() {
 
     tts.gate!.complete();
     await tester.pumpAndSettle();
-    expect(state.hasVoice(_language(state, 'ja')), isTrue);
+    expect(state.hasVoice(_language(state, 'hi')), isTrue);
     expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
     expect(find.text(l10n.voicesMissing), findsNWidgets(languages - 1));
     expect(find.text(l10n.voicesTest), findsOneWidget);

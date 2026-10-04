@@ -24,7 +24,7 @@ final Map<String, (Widget Function(), AppState Function())> screens =
         () => AppState.test(tts: FixedTtsEngine(const <String>{'es'})),
       ),
       'deck, no voice': (
-        () => const DeckDetailPage(deckId: 'ja-en-hiragana'),
+        () => const DeckDetailPage(deckId: 'hi-en-script-vowels'),
         AppState.test,
       ),
       'deck, grammar': (

@@ -215,7 +215,7 @@ void main() {
       'card can be skipped unrecorded', (tester) async {
     usePhone(tester);
     final handle = tester.ensureSemantics();
-    final speech = FixedSpeechEngine(onDevice: <String>{'ja'});
+    final speech = FixedSpeechEngine(onDevice: <String>{'hi'});
     final state = speakingState(speech);
     state.settings.allowOnlineSpeech('es', true);
     await state.load();

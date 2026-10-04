@@ -15,6 +15,7 @@ import 'package:fluenough/ui/widgets/deck_tile.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
 
 import '../support/harness.dart';
+import '../support/script_only_course.dart';
 
 /// Learning a language without its alphabet (#47): its path leaves out the
 /// decks that need it, cards show the reading first, and answers in Latin
@@ -30,7 +31,7 @@ AppState hindiWithout() => AppState.test(
     spokenLanguages: const <String>['en'],
     learningLanguages: const <String>['hi', 'es'],
     learningChosen: true,
-    noAlphabet: const <String>{'hi', 'ja'},
+    noAlphabet: const <String>{'hi'},
   ),
 );
 
@@ -40,16 +41,7 @@ void main() {
     final state = AppState.test();
     addTearDown(state.dispose);
     await state.load();
-    for (final code in <String>[
-      'as',
-      'bn',
-      'hi',
-      'te',
-      'mr',
-      'kn',
-      'gu',
-      'ja',
-    ]) {
+    for (final code in <String>['as', 'bn', 'hi', 'te', 'mr', 'kn', 'gu']) {
       expect(state.hasAlphabet(code), isTrue, reason: code);
     }
     expect(state.hasAlphabet('es'), isFalse);
@@ -58,8 +50,7 @@ void main() {
       if (path == null) continue;
       final marked = path.alphabet.contains(entry.id);
       final id = entry.id;
-      final needs = RegExp(r'-(script-|spelling$|reading-|hiragana$)')
-          .hasMatch(id);
+      final needs = RegExp(r'-(script-|spelling$|reading-)').hasMatch(id);
       expect(marked, needs, reason: id);
     }
   });
@@ -75,10 +66,30 @@ void main() {
     expect(left, isNotEmpty);
     expect(left.every((id) => state.leavesOut(state.deckById(id)!)), isTrue);
     expect(decksOf(state.pendingUnits).intersection(left), isEmpty);
-    // Japanese has nothing yet but its script.
-    expect(state.courseUnits('ja'), isEmpty);
     expect(state.courseUnits('bn'), state.courseUnits('bn', alphabet: true));
   });
+
+  test(
+    'a course with nothing but its alphabet has nothing without it',
+    () async {
+      final state = AppState.test(
+        decks: MemoryDeckSource(scriptOnlyCourse()),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['hi'],
+          learningChosen: true,
+          noAlphabet: const <String>{'hi'},
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      expect(state.hasAlphabet('hi'), isTrue);
+      expect(state.courseUnits('hi'), isEmpty);
+      expect(decksOf(state.courseUnits('hi', alphabet: true)), <String>{
+        'hi-en-letters',
+      });
+    },
+  );
 
   testWidgets('Today does not list a deck the course leaves out', (
     tester,

@@ -126,7 +126,7 @@ void main() {
         'with leave', () async {
       // Android 13 and later list only the on-device languages.
       final speech = FixedSpeechEngine(
-        onDevice: <String>{'ja'},
+        onDevice: <String>{'hi'},
         online: <String>{'es'},
       );
       final state = speaking(speech);
@@ -147,7 +147,7 @@ void main() {
 
     test('a language online does not know either is missing, and is not '
         'listened for again', () async {
-      final speech = FixedSpeechEngine(onDevice: <String>{'ja'});
+      final speech = FixedSpeechEngine(onDevice: <String>{'hi'});
       final state = speaking(speech);
       addTearDown(state.dispose);
       await state.load();
@@ -174,7 +174,7 @@ void main() {
       await state.listenFor(info);
       state.settings.allowOnlineSpeech('es', true);
       expect(state.speechStatus(info), SpeechStatus.online);
-      state.settings.foundSpeech('ja', unsupported: true);
+      state.settings.foundSpeech('hi', unsupported: true);
 
       final stored = state.settings.toStored();
       final restarted = AppState.test(
@@ -185,8 +185,8 @@ void main() {
       await restarted.load();
       await pumpEventQueue();
       expect(restarted.speechStatus(info), SpeechStatus.online);
-      expect(restarted.settings.speechUnsupported, <String>{'ja'});
-      expect(restarted.settings.speechNotOnDevice, <String>{'es', 'ja'});
+      expect(restarted.settings.speechUnsupported, <String>{'hi'});
+      expect(restarted.settings.speechNotOnDevice, <String>{'es', 'hi'});
 
       await restarted.recheckSpeech();
       expect(restarted.settings.speechNotOnDevice, isEmpty);
@@ -222,12 +222,12 @@ void main() {
       expect(spoken.items, isNotEmpty);
       expect(spoken.items.map((i) => i.mode), everyElement(DrillMode.speaking));
 
-      final japanese = speaking(FixedSpeechEngine(onDevice: <String>{'ja'}));
-      addTearDown(japanese.dispose);
-      await japanese.load();
-      await japanese.setSpeaking(true);
+      final hindiOnly = speaking(FixedSpeechEngine(onDevice: <String>{'hi'}));
+      addTearDown(hindiOnly.dispose);
+      await hindiOnly.load();
+      await hindiOnly.setSpeaking(true);
       expect(
-        japanese
+        hindiOnly
             .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
             .items,
         isEmpty,

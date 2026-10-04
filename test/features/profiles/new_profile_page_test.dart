@@ -67,7 +67,7 @@ void main() {
     );
     await _tapVisible(
       tester,
-      find.widgetWithText(FilterChip, languageName(state, 'ja')),
+      find.widgetWithText(FilterChip, languageName(state, 'hi')),
     );
     await tester.tap(_create(tester));
     await tester.pumpAndSettle();
@@ -75,7 +75,7 @@ void main() {
     expect(state.profiles, hasLength(before + 1));
     final created = state.profiles.last;
     expect(created.name, 'Dev');
-    expect(created.languages, <String>{'ja'});
+    expect(created.languages, <String>{'hi'});
     expect(created.shape, AvatarShape.cookie);
     expect(created.tone, AvatarTone.primary);
     expect(created.isLocked, isFalse);
