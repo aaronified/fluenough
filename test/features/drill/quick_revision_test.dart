@@ -5,7 +5,11 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/features/drill/choice_drill.dart';
+import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
+import 'package:fluenough/features/drill/match_drill.dart';
+import 'package:fluenough/features/drill/recognition_drill.dart';
 
 import '../../support/harness.dart';
 
@@ -92,5 +96,58 @@ void main() {
     final miss = state.progress.log.last;
     expect(miss.cardId, second.card.id);
     expect(miss.grade, lessThan(Sm2.passingGrade));
+  });
+
+  testWidgets('from the page, a miss is recorded and ending part-way says '
+      'the misses are kept', (tester) async {
+    usePhone(tester);
+    final state = await knowing(8);
+    await pumpScreen(
+      tester,
+      const DrillPage(request: DrillRequest.revision(5)),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    final before = state.progress.log.length;
+    // Miss the first word, whichever way it is asked.
+    switch (tester.widget(
+      find.byWidgetPredicate(
+        (w) => w is RecognitionDrill || w is ChoiceDrill || w is MatchDrill,
+      ),
+    )) {
+      case MatchDrill(:final session):
+        final target = session.matchTargets.first;
+        session
+          ..match(
+            target,
+            session.matchMeanings.firstWhere(
+              (meaning) => meaning.card.id != target.card.id,
+            ),
+          )
+          ..match(
+            target,
+            session.matchMeanings.firstWhere(
+              (meaning) => meaning.card.id == target.card.id,
+            ),
+          );
+      case ChoiceDrill(:final session):
+        session.pick(
+          session.options.firstWhere(
+            (option) => option.id != session.item.card.id,
+          ),
+        );
+      default:
+        await tester.tap(find.text(l10n.drillShowAnswer));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(l10n.rateAgain));
+    }
+    await tester.pumpAndSettle();
+    expect(state.progress.log, hasLength(before + 1));
+    expect(state.progress.log.last.grade, lessThan(Sm2.passingGrade));
+
+    await tester.tap(find.byTooltip(l10n.drillEndSession));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.drillEndBodyMisses), findsOneWidget);
+    expect(find.text(l10n.drillEndBodyNotRecorded), findsNothing);
   });
 }

@@ -209,11 +209,12 @@ class _DrillPageState extends State<DrillPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(l10n.drillEndTitle),
-        content: Text(
-          _session?.recorded ?? true
-              ? l10n.drillEndBody
-              : l10n.drillEndBodyNotRecorded,
-        ),
+        content: Text(switch (_session) {
+          DrillSession(recorded: false, recordsMisses: true) =>
+            l10n.drillEndBodyMisses,
+          DrillSession(recorded: false) => l10n.drillEndBodyNotRecorded,
+          _ => l10n.drillEndBody,
+        }),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),

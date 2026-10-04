@@ -196,11 +196,15 @@ void main() {
     await pumpToday(tester, state: state);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.todayRevisionBody), findsOneWidget);
-    await tapVisible(tester, find.text('5'));
-    final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-    expect(drill.request.revise, isTrue);
-    expect(drill.request.limit, 5);
-    expect(drill.request.recordsMisses, isTrue);
+    for (final size in QuickRevision.sizes) {
+      await tapVisible(tester, find.text('$size'));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.revise, isTrue);
+      expect(drill.request.limit, size);
+      expect(drill.request.recordsMisses, isTrue);
+      tester.state<NavigatorState>(find.byType(Navigator).first).pop();
+      await tester.pumpAndSettle();
+    }
   });
 
   testWidgets('the not-saved banner shows only while progress is in memory', (
