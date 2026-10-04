@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-10-04
+
+### Fixed
+
+- No sound played on Android 11 and later, in lessons, listening cards or anywhere else: the app could not find the phone's text-to-speech engine (#176).
+
 ## [0.3.0] - 2026-10-04
 
 ### Added
@@ -73,7 +79,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release. For changes before this point, see the commit history.
 
-[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/aaronified/fluenough/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/aaronified/fluenough/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/aaronified/fluenough/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/aaronified/fluenough/releases/tag/v0.1.0
