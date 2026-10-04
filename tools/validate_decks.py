@@ -256,7 +256,6 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
         r.error(where, "rtl must be a boolean")
 
 
-
 def card_id_re(lang: str) -> re.Pattern[str]:
     """A card id names the language learned and a number (ADR-0018)."""
     return re.compile(rf"{re.escape(lang)}-[0-9]{{4,}}")
