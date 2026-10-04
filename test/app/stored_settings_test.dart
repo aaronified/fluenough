@@ -11,7 +11,6 @@ import 'package:fluenough/core/data/database.dart';
 /// Every setting changed from its default.
 void changeAll(SettingsNotifier s) {
   s
-    ..newCardsPerDay = 35
     ..setSkillEnabled(Skill.listening, false)
     ..showRomanisation = false
     ..speechRate = 0.8
@@ -50,7 +49,6 @@ void main() {
   test('unreadable or out-of-range values keep a sensible setting', () {
     final s = SettingsNotifier()
       ..restore(const <String, String>{
-        'new_cards_per_day': '500',
         'speech_rate': 'NaN',
         'theme_mode': 'purple',
         'seed': '',
@@ -66,7 +64,6 @@ void main() {
         'pending_update': 'app-release.apk',
       });
     final defaults = SettingsNotifier();
-    expect(s.newCardsPerDay, SettingsNotifier.maxNewCardsPerDay);
     expect(s.speechRate, defaults.speechRate);
     expect(s.themeMode, defaults.themeMode);
     expect(s.seed, defaults.seed);

@@ -139,7 +139,7 @@ void main() {
     );
     await pumpScreen(
       tester,
-      DrillPage(request: DrillRequest.deck(entry.id, skill: Skill.grammar)),
+      DrillPage(request: DrillRequest.untaught(entry.id, skill: Skill.grammar)),
       state: state,
     );
     final first = tester.widget<ReadingFirst>(find.byType(ReadingFirst));

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
@@ -74,8 +72,8 @@ ${[for (final name in order) '  - [hi-$native-$name]'].join('\n')}
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('Today takes new cards only from the first two units of the path, '
-      'one from each in turn', () async {
+  test('A lesson takes new words only from the first two units of the '
+      'path, one from each in turn', () async {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
@@ -84,22 +82,22 @@ void main() {
       <String>['hi-en-first-words', 'hi-en-grammar-sentences'],
       <String>['hi-en-sound-differences'],
     ]);
-    final fresh = state.buildSession(const DrillRequest.today()).fresh;
-    expect(fresh, hasLength(20));
+    final untaught = state.untaughtCards('hi');
     final unitOf = <String, int>{
       for (final (i, unit) in unitIds(state).indexed)
         for (final id in unit) id: i,
     };
-    expect(fresh.map((i) => unitOf[i.card.deckId]), everyElement(isNotNull));
-    expect(fresh.take(4).map((i) => unitOf[i.card.deckId]), [0, 1, 0, 1]);
-    // "Learn 5 new" draws on the same units.
+    expect(untaught.map((c) => unitOf[c.deckId]), everyElement(isNotNull));
+    expect(untaught.take(4).map((c) => unitOf[c.deckId]), [0, 1, 0, 1]);
+    // The lesson draws on the same units.
     expect(
       state
-          .buildSession(const DrillRequest.learnNew(5))
-          .fresh
+          .lessonFor(DrillRequest.lesson(language: 'hi'))
           .map((i) => i.card.deckId),
       everyElement(isIn(unitOf.keys)),
     );
+    // And Start review has no new words.
+    expect(state.buildSession(const DrillRequest.today()).isEmpty, isTrue);
   });
 
   test('a placed unit is skipped, and its decks read Done', () async {
@@ -115,9 +113,11 @@ void main() {
     expect(badgeOf(state, 'hi-en-sound-differences'), DeckBadgeKind.pending);
     expect(badgeOf(state, 'hi-en-grammar-differences'), DeckBadgeKind.pending);
     expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
-    // A placed deck can still be studied.
+    // A placed deck can still be studied, in a lesson of its own.
     expect(
-      state.buildSession(DrillRequest.deck('hi-en-first-words')).fresh,
+      state.lessonFor(
+        DrillRequest.lesson(language: 'hi', deckId: 'hi-en-first-words'),
+      ),
       isNotEmpty,
     );
 
@@ -134,7 +134,7 @@ void main() {
     final sentences = state.deckById('hi-en-grammar-sentences')!;
     while (state.notStudiedIn(sentences) > 0) {
       for (final item
-          in state.buildSession(DrillRequest.learnAnyway(sentences.id)).items) {
+          in state.buildSession(DrillRequest.untaught(sentences.id)).items) {
         state.record(item, 5);
       }
     }
@@ -153,15 +153,15 @@ void main() {
       <String>['hi-en-a'],
       <String>['hi-en-b'],
     ]);
-    // The day's cap would allow more, but nothing past the pending units.
-    expect(
-      state
-          .buildSession(const DrillRequest.today())
-          .fresh
-          .map((i) => i.card.deckId),
-      <String>['hi-en-a', 'hi-en-b'],
-    );
-    final first = state.buildSession(DrillRequest.deck('hi-en-a')).items.single;
+    // Nothing past the pending units.
+    expect(state.untaughtCards('hi').map((c) => c.deckId), <String>[
+      'hi-en-a',
+      'hi-en-b',
+    ]);
+    final first = state
+        .buildSession(DrillRequest.untaught('hi-en-a'))
+        .items
+        .single;
     state.record(first, 5);
     expect(unitIds(state), <List<String>>[
       <String>['hi-en-b'],
@@ -268,55 +268,22 @@ void main() {
     expect(state.currentProfile.learns('bn'), isFalse);
   });
 
-  test(
-    'two languages share the day equally, each in a block of its own',
-    () async {
-      final state = learning(<String>['hi', 'bn']);
-      addTearDown(state.dispose);
-      await state.load();
-      final fresh = state.buildSession(const DrillRequest.today()).fresh;
-      expect(fresh, hasLength(20));
-      final languages = fresh.map(
-        (i) => state.deckById(i.card.deckId)!.language.code,
-      );
-      // Bengali comes first in the catalog, so its block does too.
-      expect(languages.take(10), everyElement('bn'));
-      expect(languages.skip(10), everyElement('hi'));
-
-      // A language with fewer new cards than its share passes the rest on.
-      final small = learning(
-        <String>['hi', 'bn'],
-        decks: MemoryDeckSource(<String, String>{
-          ...tinyCourse(),
-          'decks/bn/bn-en-script-consonants.yaml': File(
-            'decks/bn/bn-en-script-consonants.yaml',
-          ).readAsStringSync(),
-          'decks/bn/bn-en-path.yaml': '''
-schema: 1
-kind: path
-id: bn-en-path
-language: bn
-native: en
-units:
-  - [bn-en-script-consonants]
-''',
-        }),
-      );
-      addTearDown(small.dispose);
-      await small.load();
-      final mixed = small.buildSession(const DrillRequest.today()).fresh;
-      expect(mixed, hasLength(20));
+  test('each language has a lesson of its own, from its own units', () async {
+    final state = learning(<String>['hi', 'bn']);
+    addTearDown(state.dispose);
+    await state.load();
+    for (final code in <String>['hi', 'bn']) {
+      final lesson = state.lessonFor(DrillRequest.lesson(language: code));
+      expect(lesson, isNotEmpty, reason: code);
       expect(
-        mixed
-            .where((i) => i.card.deckId.startsWith('hi-'))
-            .map((i) => i.card.deckId),
-        <String>['hi-en-a', 'hi-en-b'],
+        lesson.map((i) => state.deckById(i.card.deckId)!.language.code),
+        everyElement(code),
       );
-    },
-  );
+    }
+  });
 
-  test('a deck whose reviews are due is not finished while a skill is still '
-      'new in it', () async {
+  test('a deck whose words are all taught is finished, its other skills '
+      'coming with its reviews (ADR-0024)', () async {
     final base = learning(<String>['hi']);
     await base.load();
     final market = base.deckById('hi-en-market')!;
@@ -337,14 +304,8 @@ units:
     addTearDown(state.dispose);
     await state.load();
     final entry = state.deckById(market.id)!;
-    expect(state.notStudiedIn(entry), greaterThan(0));
-    expect(state.isFinished(entry), isFalse);
-    expect(
-      state
-          .buildSession(DrillRequest.learnAnyway(market.id))
-          .items
-          .map((i) => i.mode),
-      contains(DrillMode.production),
-    );
+    expect(state.notStudiedIn(entry), 0);
+    expect(state.isFinished(entry), isTrue);
+    expect(state.buildSession(DrillRequest.deck(market.id)).due, isNotEmpty);
   });
 }

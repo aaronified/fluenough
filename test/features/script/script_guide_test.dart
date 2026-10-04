@@ -12,6 +12,8 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
 import 'package:fluenough/features/script/script_guide_page.dart';
 
+import 'package:fluenough/ui/widgets/drill_frame.dart';
+
 import '../../support/harness.dart';
 
 /// A script's guide (#30, ADR-0016): shown once before a language's first
@@ -128,7 +130,7 @@ void main() {
     final state = guided();
     await pumpScreen(
       tester,
-      DrillPage(request: DrillRequest.deck('bn-en-letters')),
+      DrillPage(request: DrillRequest.untaught('bn-en-letters')),
       state: state,
     );
     final l10n = l10nOf(tester);
@@ -144,7 +146,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpScreen(
       tester,
-      DrillPage(request: DrillRequest.deck('bn-en-letters')),
+      DrillPage(request: DrillRequest.untaught('bn-en-letters')),
       state: state,
     );
     expect(find.text('How Bengali script works'), findsNothing);
@@ -179,6 +181,7 @@ void main() {
       const DrillPage(
         request: DrillRequest(
           deckIds: <String>{'bn-en-letters', 'hi-en-letters'},
+          untaught: true,
         ),
       ),
       state: state,
@@ -194,7 +197,8 @@ void main() {
     expect(find.text(second), findsOneWidget);
     expect(find.byType(RecognitionDrill), findsNothing);
     await tapText(tester, l10n.scriptGuideStart);
-    expect(find.byType(RecognitionDrill), findsOneWidget);
+    // The session, its letters asked by choosing (ADR-0024).
+    expect(find.byType(DrillFrame), findsOneWidget);
     expect(state.settings.hasSeenScriptGuide('bn'), isTrue);
     expect(state.settings.hasSeenScriptGuide('hi'), isTrue);
   });
@@ -223,7 +227,7 @@ void main() {
     final words = guided();
     await pumpScreen(
       tester,
-      DrillPage(request: DrillRequest.deck('bn-en-words')),
+      DrillPage(request: DrillRequest.untaught('bn-en-words')),
       state: words,
     );
     expect(find.text('How Bengali script works'), findsNothing);
@@ -232,7 +236,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpScreen(
       tester,
-      DrillPage(request: DrillRequest.deck('bn-en-letters')),
+      DrillPage(request: DrillRequest.untaught('bn-en-letters')),
       state: guided(withGuide: false),
     );
     expect(find.byType(RecognitionDrill), findsOneWidget);
@@ -311,7 +315,7 @@ void main() {
       await tester.pumpWidget(const SizedBox.shrink());
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.deck('bn-en-letters')),
+        DrillPage(request: DrillRequest.untaught('bn-en-letters')),
         state: guided(),
       );
       expect(tester.takeException(), isNull, reason: '$scale');

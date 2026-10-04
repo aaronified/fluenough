@@ -8,6 +8,7 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 
@@ -134,32 +135,37 @@ void main() {
       Feature.available.difference({Feature.drillGrammar}),
     );
 
-    test('today, fresh: new recognition pairs up to the daily cap', () async {
+    test('today, fresh: nothing to review, and new words come in a lesson '
+        '(ADR-0024)', () async {
       final state = await loaded(features: vocabOnly);
-      final queue = state.buildSession(const DrillRequest.today());
-      expect(queue.length, 20);
-      expect(queue.due, isEmpty);
-      expect(queue.items.every((i) => i.mode == DrillMode.recognition), isTrue);
+      expect(state.buildSession(const DrillRequest.today()).isEmpty, isTrue);
+      final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
+      expect(lesson.where((i) => i.ask == Ask.teach), hasLength(9));
     });
 
-    test('the cap follows the setting and what today already used', () async {
-      final settings = SettingsNotifier(newCardsPerDay: 5);
-      final state = await loaded(settings: settings);
-      expect(state.buildSession(const DrillRequest.today()).length, 5);
-      final item = state.buildSession(const DrillRequest.today()).items.first;
-      state.record(item, 4);
-      expect(state.newCardsLeftToday, 4);
-      settings.newCardsPerDay = 0;
-      expect(state.buildSession(const DrillRequest.today()).isEmpty, isTrue);
+    test('once a word is taught, its other skills join the reviews, and '
+        'it leaves the lessons', () async {
+      final state = await loaded(features: vocabOnly);
+      final lesson = DrillRequest.lesson(language: 'es');
+      final check = state.lessonFor(lesson)[1];
+      state.record(check, 4);
+      expect(state.isTaught(check.card), isTrue);
+      final today = state.buildSession(const DrillRequest.today());
+      expect(today.fresh.map((i) => i.card.id), <String>[check.card.id]);
+      expect(today.fresh.single.mode, isNot(check.mode));
+      expect(
+        state.lessonFor(lesson).map((i) => i.card.id),
+        isNot(contains(check.card.id)),
+      );
     });
 
     test('listening joins only when the language has a voice', () async {
       final state = await loaded(tts: FixedTtsEngine({'es'}));
       final spanish = state.buildSession(
-        DrillRequest.deck('es-en-core-100', skill: Skill.listening),
+        DrillRequest.untaught('es-en-core-100', skill: Skill.listening),
       );
       final hindi = state.buildSession(
-        DrillRequest.deck('hi-en-script-vowels', skill: Skill.listening),
+        DrillRequest.untaught('hi-en-script-vowels', skill: Skill.listening),
       );
       expect(spanish.isNotEmpty, isTrue);
       expect(hindi.isEmpty, isTrue);
@@ -192,7 +198,11 @@ void main() {
     test('tags narrow a deck to the cards that carry them', () async {
       final state = await loaded();
       final queue = state.buildSession(
-        DrillRequest.deck('es-en-core-100', tags: {'people'}),
+        const DrillRequest(
+          deckIds: {'es-en-core-100'},
+          tags: {'people'},
+          untaught: true,
+        ),
       );
       expect(queue.isNotEmpty, isTrue);
       expect(queue.items.every((i) => i.card.tags.contains('people')), isTrue);
@@ -209,20 +219,19 @@ void main() {
           if (d.language.code == 'hi') d.id,
       };
       expect(state.profileDecks.map((d) => d.id).toSet(), hindi);
-      final queue = state.buildSession(const DrillRequest.today());
-      expect(queue.isNotEmpty, isTrue);
-      expect(queue.items.every((i) => hindi.contains(i.card.deckId)), isTrue);
+      final lesson = state.lessonFor(DrillRequest.lesson(language: 'hi'));
+      expect(lesson, isNotEmpty);
+      expect(lesson.every((i) => hindi.contains(i.card.deckId)), isTrue);
+      expect(state.lessonFor(DrillRequest.lesson(language: 'es')), isEmpty);
     });
 
-    test('learnNew drills only new pairs, at most the number asked', () async {
-      // With history, so reviews are due today and learnNew has something
-      // to leave out.
+    test('Start review takes new skills of taught words only', () async {
+      // With history, so some words are taught.
       final state = GalleryFixtures.state(await loaded());
       await state.load();
-      expect(state.buildSession(const DrillRequest.today()).due, isNotEmpty);
-      final queue = state.buildSession(const DrillRequest.learnNew(5));
-      expect(queue.length, 5);
-      expect(queue.items.every((i) => i.isNew), isTrue);
+      final queue = state.buildSession(const DrillRequest.today());
+      expect(queue.due, isNotEmpty);
+      expect(queue.fresh.every((i) => state.isTaught(i.card)), isTrue);
     });
 
     test('new cards follow the theme path, two units at a time; a picked '
@@ -256,17 +265,17 @@ themes:
             'first-words',
           ),
         }),
-        settings: SettingsNotifier(newCardsPerDay: 2),
       );
       await state.load();
-      // Without a path each deck is a unit, in theme order; Today mixes the
-      // first two (ADR-0013), first words first.
-      final today = state.buildSession(const DrillRequest.today());
-      expect(today.fresh.map((i) => i.card.deckId), [
+      // Without a path each deck is a unit, in theme order; a lesson mixes
+      // the first two (ADR-0013), first words first.
+      expect(state.untaughtCards('hi').take(2).map((c) => c.deckId), [
         'hi-en-first-words',
         'hi-en-a-market',
       ]);
-      final picked = state.buildSession(DrillRequest.deck('hi-en-a-market'));
+      final picked = state.buildSession(
+        DrillRequest.untaught('hi-en-a-market'),
+      );
       expect(picked.items.map((i) => i.card.deckId).toSet(), {
         'hi-en-a-market',
       });
@@ -274,7 +283,9 @@ themes:
 
     test('recording goes to the progress store at the injected time', () async {
       final state = await loaded();
-      final item = state.buildSession(const DrillRequest.today()).items.first;
+      final item = state
+          .lessonFor(DrillRequest.lesson(language: 'es'))
+          .firstWhere((i) => i.ask != Ask.teach);
       final event = state.record(item, 5, answerGiven: 'x');
       expect(event.at, state.now());
       expect(state.progress.log.single.cardId, item.card.id);
@@ -282,11 +293,13 @@ themes:
     });
 
     test('deck counts agree with the deck\'s session', () async {
-      final state = await loaded(settings: SettingsNotifier(newCardsPerDay: 7));
+      final state = await loaded();
       final deck = state.deckById('hi-en-script-vowels')!;
       final counts = state.countsFor(deck);
       expect(counts.due, 0);
-      expect(counts.fresh, 7);
+      // New: the words not taught yet.
+      expect(counts.fresh, state.notStudiedIn(deck));
+      expect(counts.fresh, greaterThan(0));
       expect(counts.learned, 0);
     });
   });
@@ -338,8 +351,6 @@ themes:
 
   test('settings clamp to their ranges', () {
     final settings = SettingsNotifier();
-    settings.newCardsPerDay = 500;
-    expect(settings.newCardsPerDay, SettingsNotifier.maxNewCardsPerDay);
     settings.speechRate = 9;
     expect(settings.speechRate, SettingsNotifier.maxSpeechRate);
     var notified = 0;

@@ -41,7 +41,7 @@ Future<AppState> pumpSpeaking(
   await state.startSpeech();
   await pumpScreen(
     tester,
-    DrillPage(request: DrillRequest.deck(spanish, skill: Skill.speaking)),
+    DrillPage(request: DrillRequest.untaught(spanish, skill: Skill.speaking)),
     state: state,
   );
   return state;
@@ -74,7 +74,7 @@ void main() {
     final l10n = l10nOf(tester);
     expect(find.byType(SpeakingDrill), findsOneWidget);
     final card = state
-        .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+        .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
         .items
         .first
         .card;
@@ -98,7 +98,7 @@ void main() {
     final state = await pumpSpeaking(tester, speech);
     final l10n = l10nOf(tester);
     final card = state
-        .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+        .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
         .items
         .first
         .card;
@@ -133,7 +133,7 @@ void main() {
     final state = await pumpSpeaking(tester, speech);
     final l10n = l10nOf(tester);
     final items = state
-        .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+        .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
         .items;
     await speak(tester);
     expect(find.text(l10n.drillOnlineAsk('Spanish')), findsOneWidget);
@@ -158,7 +158,7 @@ void main() {
     final l10n = l10nOf(tester);
     expect(
       state
-          .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+          .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
           .items
           .length,
       greaterThan(1),
@@ -222,12 +222,12 @@ void main() {
     await state.startSpeech();
     await pumpScreen(
       tester,
-      DrillPage(request: DrillRequest.deck(spanish, skill: Skill.speaking)),
+      DrillPage(request: DrillRequest.untaught(spanish, skill: Skill.speaking)),
       state: state,
     );
     final l10n = l10nOf(tester);
     final items = state
-        .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+        .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
         .items;
     expect(items.length, greaterThan(1));
     await speak(tester);

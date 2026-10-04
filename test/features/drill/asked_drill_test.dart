@@ -35,7 +35,7 @@ Future<AppState> pumpAsked(
 }) => pumpScreen(
   tester,
   DrillPage(
-    request: DrillRequest.deck(deck, skill: skill),
+    request: DrillRequest.untaught(deck, skill: skill),
     preset: DrillPreset(target: target, ask: ask),
   ),
   state: state,
@@ -299,7 +299,7 @@ void main() {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck(spanish, skill: Skill.recognition),
+          request: DrillRequest.untaught(spanish, skill: Skill.recognition),
         ),
       );
       expect(find.byType(MatchDrill), findsOneWidget);
@@ -315,7 +315,7 @@ void main() {
       );
       await state.load();
       final items = state.sessionItems(
-        DrillRequest.deck(hindi, skill: Skill.production),
+        DrillRequest.untaught(hindi, skill: Skill.production),
       );
       final phrase = items.firstWhere((i) => i.card.target == 'आप कैसे हैं?');
       final word = items.firstWhere((i) => i.card.target == 'नमस्कार');
@@ -323,7 +323,9 @@ void main() {
       expect(word.ask, Ask.own);
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.deck(hindi, skill: Skill.production)),
+        DrillPage(
+          request: DrillRequest.untaught(hindi, skill: Skill.production),
+        ),
         state: state,
       );
       expect(find.byType(TypedDrill), findsOneWidget);

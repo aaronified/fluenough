@@ -42,11 +42,11 @@ cards:
   now: now,
 );
 
-/// Learns every pair left in [deckId], past the daily cap.
+/// Learns every word in [deckId], in every skill.
 void learnAll(AppState state, String deckId) {
-  while (state.notStudiedIn(state.deckById(deckId)!) > 0) {
-    for (final item
-        in state.buildSession(DrillRequest.learnAnyway(deckId)).items) {
+  final request = DrillRequest.untaught(deckId);
+  while (state.buildSession(request).fresh.isNotEmpty) {
+    for (final item in state.buildSession(request).fresh) {
       state.record(item, 5);
     }
   }
@@ -58,35 +58,36 @@ DeckBadgeKind badgeOf(AppState state, String deckId) =>
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('every deck starts Pending or Not done, and spending the day\'s new '
-      'cards leaves it so', () async {
-    final state = AppState.test();
-    addTearDown(state.dispose);
-    await state.load();
-    final decks = state.decks.where(state.canDrill).toList();
-    expect(decks, isNotEmpty);
-    // Pending: in the first two units of its course's path (ADR-0013).
-    DeckBadgeKind expected(DeckEntry entry) =>
-        state.pathOf(entry)!.units.take(2).expand((u) => u).contains(entry.id)
-        ? DeckBadgeKind.pending
-        : DeckBadgeKind.notDone;
-    // Hindi starts with words, not its script.
-    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
-    expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.notDone);
-    expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
-    for (final entry in decks) {
-      expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
-    }
+  test(
+    'every deck starts Pending or Not done, and a lesson leaves it so',
+    () async {
+      final state = AppState.test();
+      addTearDown(state.dispose);
+      await state.load();
+      final decks = state.decks.where(state.canDrill).toList();
+      expect(decks, isNotEmpty);
+      // Pending: in the first two units of its course's path (ADR-0013).
+      DeckBadgeKind expected(DeckEntry entry) =>
+          state.pathOf(entry)!.units.take(2).expand((u) => u).contains(entry.id)
+          ? DeckBadgeKind.pending
+          : DeckBadgeKind.notDone;
+      // Hindi starts with words, not its script.
+      expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
+      expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.notDone);
+      expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
+      for (final entry in decks) {
+        expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
+      }
 
-    // The first session takes the whole day's allowance of new cards.
-    for (final item in state.buildSession(const DrillRequest.today()).items) {
-      state.record(item, 5);
-    }
-    expect(state.newCardsLeftToday, 0);
-    for (final entry in decks) {
-      expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
-    }
-  });
+      // A lesson teaches a few words of the first units.
+      for (final item in state.lessonFor(DrillRequest.lesson(language: 'hi'))) {
+        if (item.ask != Ask.teach) state.record(item, 5);
+      }
+      for (final entry in decks) {
+        expect(badgeOf(state, entry.id), expected(entry), reason: entry.id);
+      }
+    },
+  );
 
   test('a deck is Done once every card is learned in every skill on, and '
       'says how many are due again when they are', () async {
@@ -188,29 +189,24 @@ void main() {
     }
   });
 
-  testWidgets('once the day\'s new cards are spent, a deck offers Learn '
-      'anyway, and it starts', (tester) async {
+  testWidgets('with nothing due, a deck offers a lesson of its words, and '
+      'it starts', (tester) async {
     usePhone(tester);
-    final settings = SettingsNotifier(spokenLanguages: const <String>['en'])
-      ..newCardsPerDay = 0;
+    final settings = SettingsNotifier(spokenLanguages: const <String>['en']);
     addTearDown(settings.dispose);
     final state = tinyState(settings: settings);
     await pumpScreen(tester, const DeckDetailPage(deckId: tiny), state: state);
     final l10n = l10nOf(tester);
 
     expect(find.text(l10n.deckReviewAll(0)), findsNothing);
-    expect(find.text(l10n.deckLearnAnywayNote), findsOneWidget);
-    await tester.tap(find.text(l10n.deckLearnAnyway(2)));
+    expect(find.text(l10n.deckLessonNote), findsOneWidget);
+    await tester.tap(find.text(l10n.deckLesson(2)));
     await tester.pumpAndSettle();
     expect(find.byType(DrillPage), findsOneWidget);
+    // The first word, taught.
+    expect(find.text(l10n.drillTeachTitle), findsOneWidget);
     expect(find.text('hola'), findsOneWidget);
-
-    // Learning past the cap is recorded like any new card.
-    await tester.tap(find.text(l10n.drillShowAnswer));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.rateGood));
-    await tester.pumpAndSettle();
-    expect(state.progress.log, hasLength(1));
+    expect(state.progress.log, isEmpty);
   });
 
   testWidgets('a finished deck offers Revise, and revising records nothing', (

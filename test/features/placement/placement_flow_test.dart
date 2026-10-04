@@ -355,7 +355,7 @@ void main() {
     for (final entry in units.first) {
       while (state.notStudiedIn(entry) > 0) {
         for (final item
-            in state.buildSession(DrillRequest.learnAnyway(entry.id)).items) {
+            in state.buildSession(DrillRequest.untaught(entry.id)).items) {
           state.record(item, 5);
         }
       }

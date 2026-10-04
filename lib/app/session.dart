@@ -9,17 +9,18 @@ class DrillRequest {
     this.skill,
     this.tags = const <String>{},
     this.newOnly = false,
-    this.newLimit,
     this.numbers = false,
-    this.pastDailyCap = false,
+    this.untaught = false,
     this.revise = false,
+    this.lesson = false,
     this.language,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
   /// the learner has switched on. With [language], only that language's
   /// part of it: Start review and the summary take a learner through their
-  /// languages one at a time.
+  /// languages one at a time. New words come in lessons, not here
+  /// (ADR-0024).
   const DrillRequest.today({String? language}) : this(language: language);
 
   /// One deck: "Review all due", or with [skill] "Practise one skill", or
@@ -30,23 +31,25 @@ class DrillRequest {
     Set<String> tags = const <String>{},
   }) : this(deckIds: <String>{deckId}, skill: skill, tags: tags);
 
-  /// Only new pairs, at most [count]: the summary's "Learn 5 new cards".
-  const DrillRequest.learnNew(int count) : this(newOnly: true, newLimit: count);
+  /// A lesson (ADR-0024): new words from [language]'s pending units, or with
+  /// [deckId] from that deck, taught, checked and practised.
+  DrillRequest.lesson({required String language, String? deckId})
+    : this(
+        deckIds: deckId == null ? null : <String>{deckId},
+        lesson: true,
+        language: language,
+      );
 
   /// Number practice in the language of [deckId], a number deck: generated
   /// numbers, drilled and not recorded (#54, ADR-0011).
   DrillRequest.numbers(String deckId)
     : this(deckIds: <String>{deckId}, numbers: true);
 
-  /// Every new pair left in one deck, past what today's cap allows: a
-  /// deck's "Learn anyway" once the day's new cards are spent.
-  DrillRequest.learnAnyway(String deckId, {Set<String> tags = const <String>{}})
-    : this(
-        deckIds: <String>{deckId},
-        tags: tags,
-        newOnly: true,
-        pastDailyCap: true,
-      );
+  /// One deck, in [skill] if given, its words taught or not: what is due
+  /// and every new pair left, so that its new pairs are what is left to
+  /// learn in it. No screen offers it: new words come in lessons.
+  DrillRequest.untaught(String deckId, {Skill? skill})
+    : this(deckIds: <String>{deckId}, skill: skill, untaught: true);
 
   /// Every card already learned in one deck, due or not, and not recorded:
   /// a finished deck's "Revise". Recording an early review would stretch
@@ -67,18 +70,18 @@ class DrillRequest {
   /// Leave out due reviews and drill only new pairs.
   final bool newOnly;
 
-  /// At most this many new pairs, within what the daily cap still allows.
-  final int? newLimit;
-
   /// Generated numbers instead of the decks' cards; nothing is recorded.
   final bool numbers;
 
-  /// New pairs are not held to today's cap; [newLimit] still applies.
-  final bool pastDailyCap;
+  /// New pairs of words not taught yet are taken too.
+  final bool untaught;
 
   /// Every reviewed pair counts as due and no new pair is taken; nothing is
   /// recorded.
   final bool revise;
+
+  /// A lesson, in [language], from [deckIds] if given.
+  final bool lesson;
 
   /// Only decks in this language, by code; null for every language.
   final String? language;
@@ -86,8 +89,8 @@ class DrillRequest {
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
-      'tags: $tags, newOnly: $newOnly, newLimit: $newLimit, '
-      'numbers: $numbers, pastDailyCap: $pastDailyCap, revise: $revise, '
+      'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
+      'untaught: $untaught, revise: $revise, lesson: $lesson, '
       'language: $language)';
 }
 

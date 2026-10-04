@@ -16,10 +16,6 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
 
-/// How many new cards the summary offers to teach next, as the design does.
-/// Fewer are offered when today's cap leaves fewer, and none hides the button.
-const int summaryLearnNewCount = 5;
-
 /// Above this text scale the three numbers stack, so each keeps its width.
 const double _rowMaxScale = 1.5;
 
@@ -27,8 +23,8 @@ const double _rowMaxScale = 1.5;
 ///
 /// Design screen `summary`. The numbers come from [result] and from the
 /// progress store, never from the design's sample (whose streak, 13, did not
-/// match Today's 12). Done returns to Today; "Learn 5 new cards" starts a
-/// session of new cards only.
+/// match Today's 12). Done returns to Today; the language's lesson, today's
+/// or another, is offered once no other language waits (ADR-0024).
 ///
 /// After one language's part of Today, it is the break between languages:
 /// that language is done for today, and each other language with something
@@ -57,13 +53,12 @@ class SummaryPage extends StatelessWidget {
             for (final language in state.todayLanguages)
               if (language.code != finished.code) language,
           ];
-    // New cards of every language at once would undo taking them one at a
-    // time, so the offer waits until no other language is.
-    final learnNew = next.isNotEmpty
-        ? 0
-        : state
-              .buildSession(const DrillRequest.learnNew(summaryLearnNewCount))
-              .length;
+    // A lesson in the language just finished (ADR-0024), once no other
+    // language is waiting for its reviews: today's, or another.
+    final lesson = finished == null || next.isNotEmpty
+        ? null
+        : DrillRequest.lesson(language: finished.code);
+    final offersLesson = lesson != null && state.lessonFor(lesson).isNotEmpty;
 
     return Scaffold(
       body: SafeArea(
@@ -164,14 +159,16 @@ class SummaryPage extends StatelessWidget {
                         ),
                         child: Text(l10n.commonDone),
                       ),
-                      if (learnNew > 0)
+                      if (offersLesson)
                         FilledButton.tonal(
                           style: AppButtonStyles.secondary(context),
-                          onPressed: () => AppNavigator.startDrill(
-                            context,
-                            DrillRequest.learnNew(learnNew),
+                          onPressed: () =>
+                              AppNavigator.startDrill(context, lesson),
+                          child: Text(
+                            state.lessonDoneToday(lesson.language!)
+                                ? l10n.summaryAnotherLesson
+                                : l10n.summaryLesson,
                           ),
-                          child: Text(l10n.summaryLearnNew(learnNew)),
                         ),
                     ],
                   ),

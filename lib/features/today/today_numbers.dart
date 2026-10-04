@@ -5,6 +5,8 @@ import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/reading.dart';
+import '../../core/scheduling/ask.dart';
 
 /// How long the design allows for one card when it estimates a session:
 /// "about 4 min" for 12 cards.
@@ -34,6 +36,16 @@ enum WeekDayStatus {
 /// One of the last seven days, and whether it was practised.
 typedef WeekDay = ({DateTime date, WeekDayStatus status});
 
+/// A language's next lesson (ADR-0024): how many words it teaches, or
+/// whether it is a passage to read, and whether today's is done already,
+/// so that this one is another.
+typedef TodayLesson = ({
+  LanguageInfo language,
+  int words,
+  bool reading,
+  bool done,
+});
+
 /// Everything Today shows, computed from the state rather than drawn from the
 /// design's sample numbers (streak 12, 8 new cards, and so on).
 ///
@@ -47,10 +59,10 @@ class TodayNumbers {
     required this.bySkill,
     required this.noVoice,
     required this.streak,
-    required this.newDone,
-    required this.newLimit,
+    required this.newWords,
     required this.week,
     this.languages = const <LanguageInfo>[],
+    this.lessons = const <TodayLesson>[],
   });
 
   factory TodayNumbers.of(AppState state) {
@@ -71,6 +83,32 @@ class TodayNumbers {
         );
 
     final today = dateOnly(now);
+    // Words taught today: first drilled today, in any skill.
+    final earlier = <String>{
+      for (final e in progress.log)
+        if (e.at.isBefore(today)) e.cardId,
+    };
+    final newWords = <String>{
+      for (final e in progress.log)
+        if (isSameDay(e.at, now) && !earlier.contains(e.cardId)) e.cardId,
+    }.length;
+
+    // Each language's next lesson, in the order the learner chose them.
+    final chosen = state.settings.learningLanguages;
+    final lessons = <TodayLesson>[
+      for (final code in <String>[
+        ...chosen.where(languages.containsKey),
+        ...languages.keys.where((code) => !chosen.contains(code)),
+      ])
+        if (state.lessonFor(DrillRequest.lesson(language: code))
+            case final items when items.isNotEmpty)
+          (
+            language: languages[code]!,
+            words: items.where((i) => i.ask == Ask.teach).length,
+            reading: items.first.card is QuestionCard,
+            done: state.lessonDoneToday(code),
+          ),
+    ];
     WeekDay dayOf(int back) {
       final date = addDays(today, -back);
       final status = progress.practisedOn(date)
@@ -90,17 +128,18 @@ class TodayNumbers {
       },
       noVoice: noVoice,
       streak: progress.streakAt(now),
-      newDone: progress.newIntroducedOn(now),
-      newLimit: state.settings.newCardsPerDay,
+      newWords: newWords,
       week: <WeekDay>[for (var back = 6; back >= 0; back--) dayOf(back)],
       languages: state.todayLanguages,
+      lessons: lessons,
     );
   }
 
   /// Whether the profile learns any language that has a deck.
   final bool hasDecks;
 
-  /// Cards in today's session: due reviews and new cards within the cap.
+  /// Cards in today's session: due reviews, and the new skills of words
+  /// already taught. New words come in [lessons] (ADR-0024).
   final int due;
 
   /// Today's session per skill, for every skill in [todaySkills].
@@ -113,11 +152,12 @@ class TodayNumbers {
   /// Days in a row with a review, ending today or yesterday.
   final int streak;
 
-  /// New pairs introduced today, which the daily cap counts.
-  final int newDone;
+  /// Words taught today, in lessons.
+  final int newWords;
 
-  /// The daily cap on new pairs, from Settings.
-  final int newLimit;
+  /// Each language's next lesson, in the order the learner chose them; a
+  /// language with nothing left to teach has none.
+  final List<TodayLesson> lessons;
 
   /// The last seven days, oldest first, ending today.
   final List<WeekDay> week;

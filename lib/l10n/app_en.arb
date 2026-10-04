@@ -565,6 +565,70 @@
       }
     }
   },
+  "todayLessonSection": "Lessons",
+  "@todayLessonSection": {
+    "description": "Screen-reader label of Today's card of lessons (ADR-0024), above the reviews."
+  },
+  "todayLessonTitle": "Today’s lesson",
+  "@todayLessonTitle": {
+    "description": "Title of Today's lesson card, while the day's lesson is not done."
+  },
+  "todayLessonTitleIn": "Today’s {language} lesson",
+  "@todayLessonTitleIn": {
+    "description": "Title of a lesson card on Today when more than one language is learned.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "todayLessonDoneTitle": "Today’s lesson is done",
+  "@todayLessonDoneTitle": {
+    "description": "Title of Today's lesson card once the day's lesson is finished; Another lesson is offered under it."
+  },
+  "todayLessonDoneTitleIn": "Today’s {language} lesson is done",
+  "@todayLessonDoneTitleIn": {
+    "description": "As todayLessonDoneTitle, when more than one language is learned.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "todayLessonWords": "{count, plural, =1{1 new word, taught then practised} other{{count} new words, easy to hard, taught then practised}}",
+  "@todayLessonWords": {
+    "description": "Under a lesson card's title: how many new words the lesson teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "todayLessonReading": "A passage to hear and read, with questions",
+  "@todayLessonReading": {
+    "description": "Under a lesson card's title when the next lesson is a reading passage."
+  },
+  "todayLessonStart": "Start lesson",
+  "@todayLessonStart": {
+    "description": "Button on a lesson card that starts the day's lesson."
+  },
+  "todayAnotherLesson": "Another lesson",
+  "@todayAnotherLesson": {
+    "description": "Button on a lesson card once the day's lesson is done: one more, optional."
+  },
+  "todayNewWords": "{count, plural, =0{No new words yet today} =1{1 new word today} other{{count} new words today}}",
+  "@todayNewWords": {
+    "description": "Under the streak: the words taught today in lessons.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
   "todayStartReview": "Start review",
   "@todayStartReview": {
     "description": "The main button on Today, which starts a session of everything due."
@@ -583,7 +647,7 @@
   "@todayAllDoneTitle": {
     "description": "Shown on Today when nothing is due."
   },
-  "todayAllDoneBody": "Nothing is due. New cards arrive tomorrow.",
+  "todayAllDoneBody": "No reviews are due. New words come in lessons.",
   "@todayAllDoneBody": {
     "description": "Under todayAllDoneTitle."
   },
@@ -598,20 +662,6 @@
       "count": {
         "type": "int",
         "example": "12"
-      }
-    }
-  },
-  "todayNewCards": "New cards today: {done} of {limit}",
-  "@todayNewCards": {
-    "description": "Under the streak: new cards introduced today against the daily cap.",
-    "placeholders": {
-      "done": {
-        "type": "int",
-        "example": "8"
-      },
-      "limit": {
-        "type": "int",
-        "example": "20"
       }
     }
   },
@@ -1070,19 +1120,23 @@
       }
     }
   },
-  "deckLearnAnyway": "Learn anyway · {count}",
-  "@deckLearnAnyway": {
-    "description": "The button at the foot of a deck's screen when today's new cards are spent but the deck still has cards to learn. The count is how many it would introduce.",
+  "deckLesson": "{count, plural, =1{Learn 1 new word} other{Learn {count} new words}}",
+  "@deckLesson": {
+    "description": "The button at the foot of a deck's screen when nothing is due and the deck has words not taught yet: a lesson from this deck. The count is how many the lesson teaches.",
     "placeholders": {
       "count": {
         "type": "int",
-        "example": "13"
+        "example": "9"
       }
     }
   },
-  "deckLearnAnywayNote": "Today’s new cards are used up. You can keep going with this deck anyway.",
-  "@deckLearnAnywayNote": {
-    "description": "Above Learn anyway on a deck's screen: nothing is due and the daily allowance of new cards is spent (or set to none), but the learner may still go on."
+  "deckLessonReading": "Read the next passage",
+  "@deckLessonReading": {
+    "description": "The button at the foot of a reading deck's screen when nothing is due and a passage is left: a lesson of its next passage and questions."
+  },
+  "deckLessonNote": "Nothing is due here. A lesson teaches this deck’s next words.",
+  "@deckLessonNote": {
+    "description": "Above the deck lesson button."
   },
   "deckRevise": "Revise · {count}",
   "@deckRevise": {
@@ -1923,6 +1977,10 @@
       }
     }
   },
+  "drillTeachTitle": "New",
+  "@drillTeachTitle": {
+    "description": "A lesson teaching a word (ADR-0024): above the word, its reading and meaning, before it is asked."
+  },
   "drillChooseMeaning": "What does it mean?",
   "@drillChooseMeaning": {
     "description": "Multiple choice (ADR-0024): above a word in the language learned, whose meaning is chosen from the options under it."
@@ -2025,7 +2083,7 @@
   "@drillEmptyTitle": {
     "description": "Shown when a session has no cards."
   },
-  "drillEmptyBody": "Everything here is scheduled for later. New cards arrive tomorrow.",
+  "drillEmptyBody": "Everything here is scheduled for later. New words come in lessons.",
   "@drillEmptyBody": {
     "description": "Under drillEmptyTitle."
   },
@@ -2258,6 +2316,14 @@
       }
     }
   },
+  "summaryLesson": "Today’s lesson",
+  "@summaryLesson": {
+    "description": "Button on the summary that starts the day's lesson in the language just reviewed, while it is not done."
+  },
+  "summaryAnotherLesson": "Another lesson",
+  "@summaryAnotherLesson": {
+    "description": "Button on the summary that starts one more lesson, once the day's is done."
+  },
   "summaryNextLanguage": "Do you want to start another?",
   "@summaryNextLanguage": {
     "description": "Over the buttons that start the next language's part of the day, on the summary after one language."
@@ -2353,16 +2419,6 @@
       "count": {
         "type": "int",
         "example": "14"
-      }
-    }
-  },
-  "summaryLearnNew": "{count, plural, =1{Learn 1 new card} other{Learn {count} new cards}}",
-  "@summaryLearnNew": {
-    "description": "Button that starts a short session of new cards.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "5"
       }
     }
   },
@@ -2641,10 +2697,6 @@
   "settingsSectionLearning": "Learning",
   "@settingsSectionLearning": {
     "description": "Settings section heading."
-  },
-  "settingsNewCardsPerDay": "New cards per day",
-  "@settingsNewCardsPerDay": {
-    "description": "Slider: the daily cap on new cards."
   },
   "settingsRomanisation": "Show romanisation",
   "@settingsRomanisation": {

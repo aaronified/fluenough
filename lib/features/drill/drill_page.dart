@@ -23,6 +23,7 @@ import 'rearrange_drill.dart';
 import 'reading_drill.dart';
 import 'recognition_drill.dart';
 import 'speaking_drill.dart';
+import 'teach_drill.dart';
 import 'typed_drill.dart';
 
 /// A drill session: recognition, production and listening, one card at a
@@ -115,7 +116,9 @@ class _DrillPageState extends State<DrillPage> {
       return;
     }
     // A preset keeps each item asked its own way, but for its first.
-    var items = preset == null
+    var items = request.lesson
+        ? state.lessonFor(request)
+        : preset == null
         ? state.sessionItems(request)
         : state.buildSession(request).items;
     if (preset != null) {
@@ -177,6 +180,11 @@ class _DrillPageState extends State<DrillPage> {
     final session = _session!;
     if (session.finished && !_summaryShown) {
       _summaryShown = true;
+      final request = widget.request;
+      if (request.lesson) {
+        final state = AppScope.read(context);
+        state.settings.markLessonDone(request.language!, state.now());
+      }
       AppNavigator.showSummary(
         context,
         session.result.inLanguage(widget.request.language),
@@ -288,7 +296,13 @@ class _DrillPageState extends State<DrillPage> {
             session: session,
             onClose: _close,
           ),
-          // Asked another way than the mode's own (ADR-0024).
+          // A lesson teaching a word, and the questions asked another way
+          // than the mode's own (ADR-0024).
+          _ when session.ask == Ask.teach => TeachDrill(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
           _ when session.ask.chooses => ChoiceDrill(
             key: ValueKey<int>(session.position),
             session: session,
