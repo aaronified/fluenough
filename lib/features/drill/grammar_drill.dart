@@ -14,6 +14,7 @@ import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
@@ -42,7 +43,8 @@ const List<GrammarPick> grammarFixturePicks = <GrammarPick>[
 /// Design screen `drill-grammar`. [GrammarDrill.live] drills a session's
 /// grammar card (#14): the card is an expanded cell (#2), and the session
 /// grades it with `AnswerGrader` as the production drill does, records it,
-/// and moves on. Behind `Feature.drillGrammar`.
+/// and moves on, and once it is answered the form has its speaker. Behind
+/// `Feature.drillGrammar`.
 ///
 /// The unnamed constructor is the gallery's: it runs on [GrammarCell]s
 /// shaped from the real pattern of [deckId], picked by [picks], graded
@@ -209,6 +211,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
       latin: session.transliterating,
       reading: session.transliterating ? reading : null,
       readingFirst: !session.learnsAlphabet,
+      speaker: session.canPlay
+          ? Speaker(onPlay: session.play, playing: session.playing)
+          : null,
       onClose: widget.onClose!,
       moves: (
         dontKnow: session.dontKnow,
@@ -234,6 +239,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     bool latin = false,
     String? reading,
     bool readingFirst = false,
+    Widget? speaker,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final language = deck.language;
@@ -251,6 +257,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
         language,
         answered: answer != null,
         readingFirst: readingFirst,
+        speaker: speaker,
       ),
       belowCard: answer != null
           ? null
@@ -292,6 +299,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     LanguageInfo language, {
     required bool answered,
     bool readingFirst = false,
+    Widget? speaker,
   }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
@@ -349,6 +357,8 @@ class _GrammarDrillState extends State<GrammarDrill> {
         ),
       ),
       if (answered) ...<Widget>[
+        // Only once answered: hearing the form would give it away.
+        ?speaker,
         Padding(
           padding: const EdgeInsetsDirectional.only(top: 8),
           child: _GrammarTable(
