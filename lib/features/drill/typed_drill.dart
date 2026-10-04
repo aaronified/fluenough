@@ -9,8 +9,8 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
-import '../../ui/widgets/play_button.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
@@ -25,6 +25,9 @@ import 'keyboard_hint.dart';
 ///   (#47, incoming) and, while typing in the script, the keyboard hint.
 /// - **Listening** plays the word with the phone's voice, at the learner's
 ///   rate or 0.7 times it, and takes what was heard.
+///
+/// Production's word has its speaker once the answer is in; before, hearing
+/// it would give the answer away.
 ///
 /// Then the feedback: Continue, or for a near miss the learner's own
 /// judgement, "Count it wrong" or "I knew it".
@@ -60,6 +63,10 @@ class _TypedDrillState extends State<TypedDrill> {
   late final TextEditingController _controller = TextEditingController(
     text: widget.initialText,
   );
+
+  /// The listening card's speaker, kept as the keyboard comes and goes and
+  /// the card is laid out again, so that it does not play again.
+  final GlobalKey _speaker = GlobalKey();
 
   @override
   void dispose() {
@@ -159,6 +166,13 @@ class _TypedDrillState extends State<TypedDrill> {
       ),
       if (answered) ...<Widget>[
         _word(card, language, scheme),
+        // Only now: hearing the word would give the answer away.
+        if (_session.canPlay)
+          Speaker(
+            key: const ValueKey<String>('speaker'),
+            onPlay: _session.play,
+            playing: _session.playing,
+          ),
         if (notes != null)
           // Padding, not a max-width box: DrillFrame measures the card's
           // intrinsic height, and a ConstrainedBox reports its child's
@@ -189,8 +203,9 @@ class _TypedDrillState extends State<TypedDrill> {
     final scheme = theme.colorScheme;
     final session = _session;
     final slower = session.slower;
-    final play = PlayButton(
-      onPressed: session.play,
+    final play = Speaker(
+      key: _speaker,
+      onPlay: session.play,
       playing: session.playing,
       size: typing ? 64 : 136,
     );

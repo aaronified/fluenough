@@ -10,7 +10,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
-import '../../ui/widgets/play_button.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
@@ -125,10 +125,14 @@ class _PairDrillState extends State<PairDrill> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        PlayButton(
+        // A speaker of its own each round, which plays it as it shows when
+        // words play automatically.
+        Speaker(
+          key: ValueKey<int>(_index),
           size: 104,
           playing: _playing,
-          onPressed: incoming ? null : _play,
+          enabled: !incoming,
+          onPlay: _play,
         ),
         Padding(
           padding: const EdgeInsetsDirectional.only(top: 8),

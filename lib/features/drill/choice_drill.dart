@@ -8,8 +8,8 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
-import '../../ui/widgets/play_button.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
@@ -23,7 +23,9 @@ import 'drill_session.dart';
 ///   Listening.
 ///
 /// Words to choose show their reading first until the script is expected
-/// of the learner, as typed answers start in Latin letters then. Build one
+/// of the learner, as typed answers start in Latin letters then. The word
+/// has its speaker from the start when it is shown, and once answered when
+/// it is chosen. Build one
 /// per card (key it by the card's position).
 class ChoiceDrill extends StatelessWidget {
   const ChoiceDrill({super.key, required this.session, required this.onClose});
@@ -155,9 +157,21 @@ class ChoiceDrill extends StatelessWidget {
             ),
           ),
       ],
+      // From the start: the word is shown anyway.
+      ?_speaker(),
       if (answered) _notes(context, card),
     ];
   }
+
+  /// The word's speaker, where the phone has a voice. Keyed, so that what
+  /// comes after it does not make it play again.
+  Widget? _speaker() => session.canPlay
+      ? Speaker(
+          key: const ValueKey<String>('speaker'),
+          onPlay: session.play,
+          playing: session.playing,
+        )
+      : null;
 
   /// The meaning; once answered, the word.
   List<Widget> _wordCard(
@@ -184,7 +198,8 @@ class ChoiceDrill extends StatelessWidget {
           fontWeight: FontWeight.w600,
         ),
       ),
-      if (answered) _notes(context, card),
+      // Only once answered: hearing the word would give the answer away.
+      if (answered) ...<Widget>[?_speaker(), _notes(context, card)],
     ];
   }
 
@@ -200,7 +215,7 @@ class ChoiceDrill extends StatelessWidget {
     final scheme = theme.colorScheme;
     final slower = session.slower;
     return <Widget>[
-      PlayButton(onPressed: session.play, playing: session.playing),
+      Speaker(onPlay: session.play, playing: session.playing, size: 136),
       Text(
         l10n.drillChooseHeard,
         textAlign: TextAlign.center,

@@ -535,14 +535,14 @@ class DrillSession extends ChangeNotifier {
   bool get playing => _playing;
 
   /// Speaks the current card's target at the learner's rate, or slower: for
-  /// a reading question, its whole passage, a sentence at a time.
+  /// a reading question, its whole passage, a sentence at a time. Every
+  /// card's speaker plays through this, whatever its mode.
   Future<void> play() async {
     if (question case final card?) {
       return _speakPassage(<String>[
         for (final sentence in card.passage.sentences) sentence.text,
       ], null);
     }
-    if (item.mode != DrillMode.listening && ask != Ask.teach) return;
     final playingIndex = _index;
     _playing = true;
     notifyListeners();
@@ -555,6 +555,14 @@ class DrillSession extends ChangeNotifier {
       }
     }
   }
+
+  /// Speaks [card]'s target once, at the learner's rate: a word tile of a
+  /// match, tapped while words play automatically.
+  Future<void> playCard(Card card) => _state.speak(
+    card.target,
+    _state.deckOf(card)?.language ?? deck.language,
+    slower: _slower,
+  );
 
   // ---------------------------------------------------------------------------
   // Speaking (#89, ADR-0014)
@@ -677,7 +685,9 @@ class DrillSession extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Teaching (ADR-0024)
 
-  /// Whether the phone has a voice for the current card's language.
+  /// Whether the phone has a voice for the current card's language: whether
+  /// its speaker shows. With sound off in Settings it still shows, greyed
+  /// out ([soundOn]).
   bool get canPlay => _state.hasVoice(deck.language);
 
   /// Whether sound is on in Settings.
