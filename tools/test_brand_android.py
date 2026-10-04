@@ -153,6 +153,14 @@ class ApplyTest(unittest.TestCase):
         actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
         self.assertIn("android.speech.RecognitionService", actions)
 
+    def test_the_text_to_speech_engine_is_declared(self) -> None:
+        # Android 11+ shows the app no TTS engine without the query, so
+        # nothing is ever spoken.
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
+        self.assertEqual(actions.count("android.intent.action.TTS_SERVICE"), 1)
+
     def test_the_internet_and_https_links_are_declared(self) -> None:
         # A release build has no internet unless the main manifest asks, and
         # url_launcher finds no browser on Android 11+ without the query.
@@ -194,7 +202,11 @@ class ApplyTest(unittest.TestCase):
         )
         self.assertEqual(
             sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
-            ["android.intent.action.VIEW", "android.speech.RecognitionService"],
+            [
+                "android.intent.action.TTS_SERVICE",
+                "android.intent.action.VIEW",
+                "android.speech.RecognitionService",
+            ],
         )
 
     def test_a_view_query_for_another_scheme_does_not_count(self) -> None:
@@ -233,6 +245,7 @@ class ApplyTest(unittest.TestCase):
             sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
             [
                 "android.intent.action.PROCESS_TEXT",
+                "android.intent.action.TTS_SERVICE",
                 "android.intent.action.VIEW",
                 "android.speech.RecognitionService",
             ],
