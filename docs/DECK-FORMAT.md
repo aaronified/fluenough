@@ -90,7 +90,7 @@ cards:
 | `notes` | no | Usage note shown after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs. |
-| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking. |
+| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 
 ### A note on `id`
 
@@ -375,8 +375,9 @@ A day, and Hindi and Telugu do not.
   file's order unless the learner picks a theme. Nothing is locked. A
   course with a [path](#course-paths) is ordered by that instead.
 - **Phrases are not typed.** Mark a card of more than one word `pos: phrase`:
-  it gets recognition and listening, and no production drill, since a whole
-  sentence is too hard to grade fairly.
+  a whole sentence is too hard to grade fairly when typed, so it is
+  produced by putting its words in order instead (ADR-0024). Any card of
+  three words or more is produced that way too.
 - **Grammar decks are not themes.** A course's path places them beside the
   theme decks they go with.
 

@@ -71,10 +71,13 @@ void main() {
         now: now.subtract(Duration(days: daysAgo)),
       );
     }
+    // Rated, as recognition is where it cannot be chosen (ADR-0024): a
+    // preset keeps each card asked its own way.
     final state = await pumpDrill(
       tester,
       DrillRequest.deck(spanish, skill: Skill.recognition),
       state: AppState.test(progress: progress),
+      preset: const DrillPreset(),
     );
     final l10n = l10nOf(tester);
     final total = state.buildSession(DrillRequest.deck(spanish)).length;
@@ -430,7 +433,13 @@ void main() {
     for (final code in <String>['as', 'bn', 'gu', 'hi', 'kn', 'mr', 'te']) {
       state.settings.markScriptGuideSeen(code);
     }
-    await pumpDrill(tester, const DrillRequest.learnNew(1), state: state);
+    // Rated, as a preset keeps it (ADR-0024).
+    await pumpDrill(
+      tester,
+      const DrillRequest.learnNew(1),
+      state: state,
+      preset: const DrillPreset(),
+    );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillPositionShort(1, 1)), findsOneWidget);
     await tester.tap(find.text(l10n.drillShowAnswer));
@@ -453,6 +462,8 @@ void main() {
       MaterialPageRoute<void>(
         builder: (_) => DrillPage(
           request: DrillRequest.deck(spanish, skill: Skill.recognition),
+          // Rated, as a preset keeps it (ADR-0024).
+          preset: const DrillPreset(),
         ),
       ),
     );

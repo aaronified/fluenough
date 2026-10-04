@@ -1,7 +1,10 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
+import 'ask.dart';
 import 'sm2.dart';
+
+export 'ask.dart';
 
 /// One card, drilled in one mode, in a session.
 class SessionItem {
@@ -9,6 +12,8 @@ class SessionItem {
     required this.card,
     required this.mode,
     required this.state,
+    this.ask = Ask.own,
+    this.group = const <SessionItem>[],
   });
 
   final Card card;
@@ -18,12 +23,28 @@ class SessionItem {
   /// has never been reviewed.
   final Sm2State? state;
 
+  /// How it is asked; whichever way, it records [mode] (ADR-0024).
+  final Ask ask;
+
+  /// For [Ask.matchPairs], the items matched together, this one first, each
+  /// recorded on its own. Empty otherwise.
+  final List<SessionItem> group;
+
+  /// This item asked as [ask], with [group] for match pairs.
+  SessionItem askedAs(
+    Ask ask, {
+    List<SessionItem> group = const <SessionItem>[],
+  }) =>
+      SessionItem(card: card, mode: mode, state: state, ask: ask, group: group);
+
   /// Whether this is the pair's first review. New items are what the daily
   /// new-card cap counts.
   bool get isNew => state == null;
 
   @override
-  String toString() => 'SessionItem(${card.id}, ${mode.name})';
+  String toString() => ask == Ask.own
+      ? 'SessionItem(${card.id}, ${mode.name})'
+      : 'SessionItem(${card.id}, ${mode.name}, ${ask.name})';
 }
 
 /// Looks up the scheduling state of [card] in [mode], or null if that pair

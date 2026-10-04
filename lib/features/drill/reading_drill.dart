@@ -12,6 +12,7 @@ import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/play_button.dart';
 import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
+import 'choice_tile.dart';
 import 'drill_session.dart';
 
 /// Reading comprehension (#98, ADR-0019): a passage on its own, then its
@@ -144,13 +145,16 @@ class ReadingDrill extends StatelessWidget {
           children: <Widget>[
             for (final (place, i) in session.choiceOrder.indexed) ...<Widget>[
               if (place > 0) const SizedBox(height: 10),
-              _Choice(
-                text: _choiceText(l10n, question, i, shown),
-                code: question.isTrueFalse ? null : shown,
+              ChoiceTile(
                 right: answered && question.isRight(i),
                 chosen: choice == i,
                 answered: answered,
                 onTap: () => session.choose(i),
+                label: (style) => _InLanguage(
+                  _choiceText(l10n, question, i, shown),
+                  code: question.isTrueFalse ? null : shown,
+                  style: style,
+                ),
               ),
             ],
           ],
@@ -493,104 +497,6 @@ class _ListenRow extends StatelessWidget {
     runSpacing: 12,
     children: children,
   );
-}
-
-/// One choice: a large target, the whole width. Once answered, the right
-/// one is marked, and the one chosen if it was wrong, each in words for
-/// screen readers as well as by colour and icon.
-class _Choice extends StatelessWidget {
-  const _Choice({
-    required this.text,
-    required this.code,
-    required this.right,
-    required this.chosen,
-    required this.answered,
-    required this.onTap,
-  });
-
-  final String text;
-
-  /// The language of [text], or null for the interface's: True and False.
-  final String? code;
-  final bool right;
-  final bool chosen;
-  final bool answered;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final wrong = chosen && !right;
-    final (Color bg, Color fg, IconData icon) = right
-        ? (
-            scheme.primaryContainer,
-            scheme.onPrimaryContainer,
-            Icons.check_circle_outline,
-          )
-        : wrong
-        ? (scheme.errorContainer, scheme.onErrorContainer, Icons.highlight_off)
-        : (
-            scheme.surfaceContainerLow,
-            scheme.onSurface,
-            Icons.radio_button_unchecked,
-          );
-    return MergeSemantics(
-      child: Semantics(
-        button: true,
-        enabled: !answered,
-        selected: chosen,
-        value: right
-            ? l10n.readingChoiceRight
-            : wrong
-            ? l10n.readingChoiceChosen
-            : null,
-        child: Material(
-          color: bg,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadii.small),
-            side: BorderSide(
-              color: answered && !right && !wrong
-                  ? scheme.outlineVariant
-                  : scheme.outline,
-            ),
-          ),
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: answered ? null : onTap,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minHeight: AppSizes.primaryButton,
-              ),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 16,
-                  vertical: 14,
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Icon(icon, color: fg),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: _InLanguage(
-                        text,
-                        code: code,
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          color: fg,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }
 
 /// Words: opens the passage's glossary.

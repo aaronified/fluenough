@@ -18,6 +18,7 @@ class DrillPreset {
     this.inputMode,
     this.questions = false,
     this.choice,
+    this.ask = Ask.own,
   });
 
   /// Starts on the first card of the request's decks whose target is this,
@@ -45,6 +46,10 @@ class DrillPreset {
   /// This records it, as a check does.
   final int? choice;
 
+  /// How the preset's card is asked (ADR-0024). For match pairs, the next
+  /// cards of the session whose meanings differ are matched with it.
+  final Ask ask;
+
   /// [items] with the preset's card first. [cards] are the request's decks'
   /// cards, [mode] its skill's, and [stateOf] finds the card's state.
   List<SessionItem> reorder(
@@ -57,15 +62,33 @@ class DrillPreset {
     if (wanted == null) return items;
     for (final card in cards) {
       if (card.target != wanted) continue;
-      final first = SessionItem(
+      final own = SessionItem(
         card: card,
         mode: mode,
         state: stateOf(card, mode),
       );
-      return <SessionItem>[
-        first,
+      final rest = <SessionItem>[
         for (final item in items)
           if (item.card.id != card.id) item,
+      ];
+      if (ask != Ask.matchPairs) {
+        return <SessionItem>[own.askedAs(ask), ...rest];
+      }
+      final group = <SessionItem>[own];
+      for (final item in rest) {
+        if (group.length == matchSize) break;
+        if (group.every(
+          (g) =>
+              g.card.native != item.card.native &&
+              g.card.target != item.card.target,
+        )) {
+          group.add(item);
+        }
+      }
+      return <SessionItem>[
+        own.askedAs(Ask.matchPairs, group: group),
+        for (final item in rest)
+          if (!group.contains(item)) item,
       ];
     }
     return items;

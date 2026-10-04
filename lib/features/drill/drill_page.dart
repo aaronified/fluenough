@@ -14,9 +14,12 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../script/script_guide_page.dart';
+import 'choice_drill.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
 import 'grammar_drill.dart';
+import 'match_drill.dart';
+import 'rearrange_drill.dart';
 import 'reading_drill.dart';
 import 'recognition_drill.dart';
 import 'speaking_drill.dart';
@@ -111,7 +114,10 @@ class _DrillPageState extends State<DrillPage> {
         ..addListener(_onSession);
       return;
     }
-    var items = state.buildSession(request).items;
+    // A preset keeps each item asked its own way, but for its first.
+    var items = preset == null
+        ? state.sessionItems(request)
+        : state.buildSession(request).items;
     if (preset != null) {
       final ids = request.deckIds;
       items = preset.reorder(
@@ -279,6 +285,22 @@ class _DrillPageState extends State<DrillPage> {
               session.position,
               session.showsPassage,
             )),
+            session: session,
+            onClose: _close,
+          ),
+          // Asked another way than the mode's own (ADR-0024).
+          _ when session.ask.chooses => ChoiceDrill(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
+          _ when session.ask == Ask.matchPairs => MatchDrill(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
+          _ when session.ask == Ask.rearrange => RearrangeDrill(
+            key: ValueKey<int>(session.position),
             session: session,
             onClose: _close,
           ),
