@@ -1923,6 +1923,82 @@
       }
     }
   },
+  "drillChooseMeaning": "What does it mean?",
+  "@drillChooseMeaning": {
+    "description": "Multiple choice (ADR-0024): above a word in the language learned, whose meaning is chosen from the options under it."
+  },
+  "drillChooseWord": "Which is it in {language}?",
+  "@drillChooseWord": {
+    "description": "Multiple choice (ADR-0024): above a meaning, whose word in the language learned is chosen from the options under it.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "drillChooseHeard": "Which one did you hear?",
+  "@drillChooseHeard": {
+    "description": "Multiple choice (ADR-0024): under the play button, above the words to choose from."
+  },
+  "drillOptionsGroup": "Options",
+  "@drillOptionsGroup": {
+    "description": "Screen-reader label of the group of options of a multiple-choice question."
+  },
+  "drillMatchPrompt": "Match the pairs",
+  "@drillMatchPrompt": {
+    "description": "Match pairs (ADR-0024): above two columns, words in the language learned and their meanings, to be matched by dragging or tapping."
+  },
+  "drillMatchHint": "Drag a word onto its meaning, or tap one, then the other.",
+  "@drillMatchHint": {
+    "description": "Match pairs: how to match, under the prompt."
+  },
+  "drillMatchWords": "Words",
+  "@drillMatchWords": {
+    "description": "Screen-reader label of the column of words in the language learned, in match pairs."
+  },
+  "drillMatchMeanings": "Meanings",
+  "@drillMatchMeanings": {
+    "description": "Screen-reader label of the column of meanings, in match pairs."
+  },
+  "drillMatchMatched": "matched",
+  "@drillMatchMatched": {
+    "description": "Read by screen readers after a word or meaning once it is matched."
+  },
+  "drillMatchSelected": "selected",
+  "@drillMatchSelected": {
+    "description": "Read by screen readers after the word or meaning tapped first, waiting for the other half of its pair."
+  },
+  "drillMatchMissed": "Not those two",
+  "@drillMatchMissed": {
+    "description": "Announced to screen readers when a word was matched with the wrong meaning."
+  },
+  "drillMatchAgain": "{count, plural, =1{All matched, one after a slip} other{All matched, {count} after a slip}}",
+  "@drillMatchAgain": {
+    "description": "Match pairs: the feedback once everything is matched, when some words were first matched wrongly. Those come back sooner.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "drillRearrangePrompt": "Put the words in order",
+  "@drillRearrangePrompt": {
+    "description": "Rearrange (ADR-0024): above a meaning, whose sentence in the language learned is built from the shuffled words below."
+  },
+  "drillRearrangeAnswer": "Your answer",
+  "@drillRearrangeAnswer": {
+    "description": "Screen-reader label of the line the words are put on, in order. Tapping a word there takes it back."
+  },
+  "drillRearrangeWords": "Words to place",
+  "@drillRearrangeWords": {
+    "description": "Screen-reader label of the shuffled words. Tapping one puts it next on the answer line."
+  },
+  "drillRearrangeTakeBack": "Tap to take it back",
+  "@drillRearrangeTakeBack": {
+    "description": "Screen-reader hint on a word already placed on the answer line."
+  },
   "drillPairQuestion": "Which one did you hear?",
   "@drillPairQuestion": {
     "description": "Minimal pairs: above the two choices."
