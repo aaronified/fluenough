@@ -13,6 +13,7 @@ import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
@@ -207,6 +208,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
           : null,
       latin: session.transliterating,
       reading: session.transliterating ? reading : null,
+      readingFirst: !session.learnsAlphabet,
       onClose: widget.onClose!,
       moves: (
         dontKnow: session.dontKnow,
@@ -231,6 +233,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     Widget? inputChoice,
     bool latin = false,
     String? reading,
+    bool readingFirst = false,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final language = deck.language;
@@ -242,7 +245,13 @@ class _GrammarDrillState extends State<GrammarDrill> {
       reportDetail: '${cell.entry.lemma}, ${cell.slot} in ${deck.id}',
       progress: (position - 1 + (answer == null ? 0 : 0.5)) / total,
       onClose: onClose,
-      card: _card(context, cell, language, answered: answer != null),
+      card: _card(
+        context,
+        cell,
+        language,
+        answered: answer != null,
+        readingFirst: readingFirst,
+      ),
       belowCard: answer != null
           ? null
           : <Widget>[
@@ -274,22 +283,35 @@ class _GrammarDrillState extends State<GrammarDrill> {
     );
   }
 
+  /// The prompt, the slot and, once answered, the table; with
+  /// [readingFirst], for a language learned without its alphabet, the
+  /// readings first.
   List<Widget> _card(
     BuildContext context,
     GrammarCell cell,
     LanguageInfo language, {
     required bool answered,
+    bool readingFirst = false,
   }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final notes = cell.pattern.notes;
+    final readingPrompt = readingFirst ? cell.readingPrompt : null;
     return <Widget>[
-      TargetText.card(
-        cell.prompt,
-        language: language,
-        fontSize: 32,
-        fontWeight: FontWeight.w600,
-      ),
+      if (readingPrompt != null)
+        ReadingFirst(
+          reading: readingPrompt,
+          target: cell.prompt,
+          language: language,
+          fontSize: 32,
+        )
+      else
+        TargetText.card(
+          cell.prompt,
+          language: language,
+          fontSize: 32,
+          fontWeight: FontWeight.w600,
+        ),
       Padding(
         padding: const EdgeInsetsDirectional.only(top: 8),
         child: Wrap(
@@ -329,7 +351,11 @@ class _GrammarDrillState extends State<GrammarDrill> {
       if (answered) ...<Widget>[
         Padding(
           padding: const EdgeInsetsDirectional.only(top: 8),
-          child: _GrammarTable(cell: cell, language: language),
+          child: _GrammarTable(
+            cell: cell,
+            language: language,
+            readingFirst: readingFirst,
+          ),
         ),
         if (notes != null)
           // Padding, not a max-width box: the frame measures the card's
@@ -493,10 +519,17 @@ class _GrammarDrillState extends State<GrammarDrill> {
 /// also marked selected for screen readers, so the colour never stands
 /// alone. Slots and forms are deck content, laid out in the deck's direction.
 class _GrammarTable extends StatelessWidget {
-  const _GrammarTable({required this.cell, required this.language});
+  const _GrammarTable({
+    required this.cell,
+    required this.language,
+    this.readingFirst = false,
+  });
 
   final GrammarCell cell;
   final LanguageInfo language;
+
+  /// Each form's reading first, then the form, smaller.
+  final bool readingFirst;
 
   @override
   Widget build(BuildContext context) {
@@ -523,12 +556,13 @@ class _GrammarTable extends StatelessWidget {
 
   Widget _row(
     ColorScheme scheme,
-    ({String slot, String? form}) row, {
+    ({String slot, String? form, String? reading}) row, {
     required bool asked,
   }) {
     final fg = asked ? scheme.onPrimaryContainer : scheme.onSurface;
     final weight = asked ? FontWeight.w700 : FontWeight.w400;
     final form = row.form;
+    final reading = readingFirst ? row.reading : null;
     return MergeSemantics(
       child: Semantics(
         selected: asked ? true : null,
@@ -561,6 +595,29 @@ class _GrammarTable extends StatelessWidget {
                           '—', // ui-literal-ok: an em dash is not language
                           textAlign: TextAlign.end,
                           style: TextStyle(color: fg),
+                        )
+                      : reading != null
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              reading,
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: weight,
+                                color: fg,
+                              ),
+                            ),
+                            TargetText.card(
+                              form,
+                              language: language,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: fg,
+                              textAlign: TextAlign.end,
+                            ),
+                          ],
                         )
                       : TargetText.card(
                           form,

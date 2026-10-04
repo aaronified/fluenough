@@ -15,7 +15,7 @@ class DrillPreset {
     this.typed,
     this.check = false,
     this.reveal = false,
-    this.inputMode = InputMode.script,
+    this.inputMode,
     this.questions = false,
     this.choice,
   });
@@ -35,8 +35,8 @@ class DrillPreset {
   final bool reveal;
 
   /// Script or transliteration, where the card offers the choice and
-  /// `Feature.translitInput` is on.
-  final InputMode inputMode;
+  /// `Feature.translitInput` is on. Null for the language's own.
+  final InputMode? inputMode;
 
   /// A reading question: past the passage, to its first question.
   final bool questions;

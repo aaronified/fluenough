@@ -9,6 +9,7 @@ import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/data/log_jsonl.dart';
+import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -194,9 +195,78 @@ class SettingsPage extends StatelessWidget {
           value: settings.showRomanisation,
           onChanged: (on) => settings.showRomanisation = on,
         ),
+        if (_withAlphabet(state).isNotEmpty)
+          GroupedTile(
+            leading: const Icon(Icons.abc),
+            title: l10n.settingsAlphabet,
+            subtitle: _alphabetLine(l10n, state),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => _chooseAlphabets(context, state),
+          ),
       ],
     );
   }
+
+  /// The languages the profile learns whose course has decks that need the
+  /// alphabet.
+  static List<LanguageInfo> _withAlphabet(AppState state) => <LanguageInfo>[
+    for (final language in state.languages)
+      if (state.currentProfile.learns(language.code) &&
+          state.hasAlphabet(language.code))
+        language,
+  ];
+
+  /// "Learning every alphabet", or the languages learned in Latin letters.
+  String _alphabetLine(AppLocalizations l10n, AppState state) {
+    final latin = <String>[
+      for (final language in _withAlphabet(state))
+        if (!state.settings.learnsAlphabet(language.code)) language.name,
+    ];
+    return latin.isEmpty
+        ? l10n.settingsAlphabetAll
+        : l10n.settingsAlphabetLatin(latin.join(l10n.commonListSeparator));
+  }
+
+  /// A switch per language: its alphabet, or Latin letters only.
+  Future<void> _chooseAlphabets(BuildContext context, AppState state) =>
+      showDialog<void>(
+        context: context,
+        builder: (context) {
+          final l10n = AppLocalizations.of(context)!;
+          final settings = state.settings;
+          return AlertDialog(
+            title: Text(l10n.settingsAlphabetTitle),
+            content: ListenableBuilder(
+              listenable: settings,
+              builder: (context, _) => SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    for (final language in _withAlphabet(state))
+                      SwitchListTile(
+                        title: Text(language.name),
+                        subtitle:
+                            !settings.learnsAlphabet(language.code) &&
+                                state.courseUnits(language.code).isEmpty
+                            ? Text(l10n.settingsAlphabetEmpty)
+                            : null,
+                        value: settings.learnsAlphabet(language.code),
+                        onChanged: (on) =>
+                            settings.setLearnsAlphabet(language.code, on),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text(l10n.commonDone),
+              ),
+            ],
+          );
+        },
+      );
 
   /// "On for every language", or the ones [skill] is off for.
   String _offForLine(AppLocalizations l10n, AppState state, Skill skill) {

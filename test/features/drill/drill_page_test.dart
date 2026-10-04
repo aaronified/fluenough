@@ -274,8 +274,9 @@ void main() {
     expect(copied, AppLinks.heliboard);
     expect(find.text(l10n.drillHeliboardCopied), findsOneWidget);
 
-    // Latin letters are offered beside the script, live (#47).
-    expect(find.text(l10n.drillInputTranslit), findsOneWidget);
+    // Not on a deck that teaches the script itself, whose prompts give the
+    // reading away (#47).
+    expect(find.text(l10n.drillInputTranslit), findsNothing);
     expect(find.text(l10n.incomingBadge), findsNothing);
   });
 
@@ -284,21 +285,25 @@ void main() {
     usePhone(tester);
     final state = await pumpDrill(
       tester,
-      DrillRequest.deck(hiragana, skill: Skill.production),
-      preset: const DrillPreset(target: 'か', inputMode: InputMode.translit),
+      DrillRequest.deck('hi-en-first-words', skill: Skill.production),
+      preset: const DrillPreset(
+        target: 'नमस्कार',
+        inputMode: InputMode.translit,
+      ),
     );
     final l10n = l10nOf(tester);
+    expect(find.text(l10n.drillInputTranslit), findsOneWidget);
     expect(find.text(l10n.incomingBadge), findsNothing);
     expect(find.text(l10n.drillGetHeliboard), findsNothing);
     final field = tester.widget<TextField>(find.byType(TextField));
     expect(field.textDirection, TextDirection.ltr);
-    // The example is another card's reading (あ), never this card's.
-    expect(find.text(l10n.drillTypeLatin('a')), findsOneWidget);
+    // The example is another card's reading (नमस्ते), never this card's.
+    expect(find.text(l10n.drillTypeLatin('namaste')), findsOneWidget);
 
-    await typeAndCheck(tester, 'ka');
+    await typeAndCheck(tester, 'namaskaar');
     expect(find.text(l10n.feedbackCorrect), findsOneWidget);
     expect(
-      find.text(l10n.feedbackReadingWithTarget('ka', 'か')),
+      find.text(l10n.feedbackReadingWithTarget('namaskar', 'नमस्कार')),
       findsOneWidget,
     );
     expect(state.progress.log.single.grade, DrillSession.romanisedGrade);
@@ -359,8 +364,11 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpDrill(
       tester,
-      DrillRequest.deck(hiragana, skill: Skill.production),
-      preset: const DrillPreset(target: 'か', inputMode: InputMode.translit),
+      DrillRequest.deck('hi-en-first-words', skill: Skill.production),
+      preset: const DrillPreset(
+        target: 'नमस्कार',
+        inputMode: InputMode.translit,
+      ),
       state: scaled(extra: const <Feature>{Feature.translitInput}),
     );
     expect(fieldSize(), 22);
