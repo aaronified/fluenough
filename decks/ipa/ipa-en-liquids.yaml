@@ -1,0 +1,102 @@
+schema: 1
+id: ipa-en-liquids
+name: "r, l and the glides"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "The chart's approximants, trills, taps and laterals: the many kinds of r and l, and the glides between a consonant and a vowel."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0079
+    target: "ʋ"
+    native: "v without a buzz, lip near the teeth (labiodental approximant)"
+    notes: "The lower lip comes close to the upper teeth, as for v, but not close enough to buzz. Hindi and Marathi व, Gujarati વ, Telugu వ and Kannada ವ are usually ʋ, which English ears hear sometimes as v and sometimes as w. Its letter is a v with a rounded bottom and a hook."
+    examples:
+      - { target: "वहाँ", native: "there (Hindi)", language: hi }
+      - { target: "వేడి", native: "hot (Telugu)", language: te }
+    tags: [hi, mr, gu, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0080
+    target: "ɹ"
+    native: "the r of English (alveolar approximant)"
+    notes: "The r of most English: the tongue comes up towards the ridge but never touches it. Its letter is r turned upside down, because plain r is the rolled r; English dictionaries often write r anyway, for convenience. Assamese ৰ is close to it, as in ৰাতি, night."
+    examples:
+      - { target: "rain", native: "rain (English)", language: en, ipa: "ɹeɪn" }
+      - { target: "ৰাতি", native: "night (Assamese)", language: as }
+    tags: [as, en]
+    modes: [recognition, production]
+  - id: ipa-0081
+    target: "r"
+    native: "a rolled r (alveolar trill)"
+    notes: "The rolled r of Spanish perro, dog: the tongue tip vibrates against the ridge several times. Spanish tells it from the single tap ɾ, as in perro against pero, but. Indian r is usually a tap and sometimes rolled, and many transcriptions write it r, since these languages have only one r."
+    examples:
+      - { target: "perro", native: "dog (Spanish)", language: es, ipa: "ˈpero" }
+      - { target: "rojo", native: "red (Spanish)", language: es, ipa: "ˈroxo" }
+    tags: [hi, mr, gu, bn, te, kn, es]
+    modes: [recognition, production]
+  - id: ipa-0082
+    target: "ɾ"
+    native: "a single quick tap of r (alveolar tap)"
+    notes: "One quick tap of the tongue tip on the ridge: Spanish r between vowels, as in pero, and the usual r of Hindi र, Bengali র and Telugu ర. American English says the t of water this way. Its letter is called the fish-hook r."
+    examples:
+      - { target: "pero", native: "but (Spanish)", language: es, ipa: "ˈpeɾo" }
+      - { target: "परिवार", native: "family (Hindi)", language: hi }
+    tags: [hi, mr, gu, bn, te, kn, es]
+    modes: [recognition, production]
+  - id: ipa-0083
+    target: "ɰ"
+    native: "a g that glides, with no touch (velar approximant)"
+    notes: "The back of the tongue rises towards the soft palate, as for ɡ, but leaves a gap: like a w without rounded lips. Spanish g between vowels can soften this far, as in agua. Its letter is a turned m with a long leg, the consonant partner of the vowel ɯ."
+    modes: [recognition, production]
+  - id: ipa-0084
+    target: "ʍ"
+    native: "a w blown without voice (voiceless labial-velar fricative)"
+    notes: "w without voice, blown out: the wh of which as some Scottish, Irish and older American speakers say it, against witch with w. Its letter is w turned upside down."
+    modes: [recognition, production]
+  - id: ipa-0085
+    target: "ɥ"
+    native: "a w with the tongue placed for y (labial-palatal approximant)"
+    notes: "Lips rounded as for w and the tongue raised as for j, both at once: French huit, eight. It is the glide of the vowel y. Its letter is h turned upside down."
+    modes: [recognition, production]
+  - id: ipa-0086
+    target: "ʀ"
+    native: "an r rolled at the uvula (uvular trill)"
+    notes: "The uvula vibrates against the back of the tongue: a trill heard from some speakers of French, German and Dutch. Its letter is a small capital R, which fits the rule that small capitals are mostly sounds made further back."
+    modes: [recognition, production]
+  - id: ipa-0087
+    target: "ʙ"
+    native: "a brr with flapping lips (bilabial trill)"
+    notes: "The lips vibrate against each other, as in the brr of someone cold. A few languages of Papua New Guinea and Brazil use it in words. Its letter is a small capital B."
+    modes: [recognition, production]
+  - id: ipa-0088
+    target: "ⱱ"
+    native: "the lower lip flicked off the teeth (labiodental flap)"
+    notes: "The lower lip is drawn back and flicked forward against the upper teeth in one stroke. It is found in languages of central Africa such as Mono, and it was the last letter added to the chart, in 2005. Its letter is v with a hook on the right."
+    modes: [recognition, production]
+  - id: ipa-0089
+    target: "ɺ"
+    native: "an l flicked like a tap (alveolar lateral flap)"
+    notes: "A single tap like ɾ, but with the air passing round the sides of the tongue as for l. Japanese r is sometimes said this way, which is one reason English ears hear it between r and l. Its letter is a turned r with a long leg."
+    modes: [recognition, production]
+  - id: ipa-0090
+    target: "ʎ"
+    native: "an l at the hard palate, like ly (palatal lateral approximant)"
+    notes: "An l made with the middle of the tongue against the hard palate: Italian gli, and the ll of traditional Castilian calle, though most speakers in Spain now say ʝ there. Its letter is y turned upside down."
+    modes: [recognition, production]
+  - id: ipa-0091
+    target: "ʟ"
+    native: "an l at the soft palate (velar lateral approximant)"
+    notes: "An l made with the back of the tongue against the soft palate, where k is made, and the air flowing round its sides. It is rare: a few languages of New Guinea have it. Its letter is a small capital L."
+    modes: [recognition, production]
+  - id: ipa-0092
+    target: "ɬ"
+    native: "a hissing l (voiceless alveolar lateral fricative)"
+    notes: "Place the tongue for l and blow hard, without voice: the ll of Welsh Llanelli. Its letter is l with a belt round it. The lateral fricative row has just these two letters, ɬ and ɮ."
+    modes: [recognition, production]
+  - id: ipa-0093
+    target: "ɮ"
+    native: "a buzzing l (voiced alveolar lateral fricative)"
+    notes: "ɬ with voice: the tongue placed for l, with the air buzzing round its sides. Zulu dl is the usual example. Its letter joins l and ʒ: an l with an ezh tail."
+    modes: [recognition, production]

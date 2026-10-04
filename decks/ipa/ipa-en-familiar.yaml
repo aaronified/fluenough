@@ -1,0 +1,168 @@
+schema: 1
+id: ipa-en-familiar
+name: "Letters you already know"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "The letters that keep their usual Latin sound, and the few that look familiar but work differently: j is the y of yes, ɡ has an open tail, and x is a rasp."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0007
+    target: "p"
+    native: "p, closing both lips (voiceless bilabial plosive)"
+    notes: "Both lips close and open, with no voice. It is the first letter of the consonant chart: the plosive row, where the air is stopped and let go, in the bilabial column, on the voiceless left. Indian p has no puff of breath after it; with a puff it is pʰ, another sound."
+    examples:
+      - { target: "पानी", native: "water (Hindi)", language: hi }
+      - { target: "pan", native: "bread (Spanish)", language: es, ipa: "pan" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0008
+    target: "b"
+    native: "b, closing both lips with voice (voiced bilabial plosive)"
+    notes: "The lips close and open while the voice hums. It shares p's cell on the chart, on the voiced right. Spanish writes this sound with both b and v, so vivir is biˈbiɾ; between vowels Spanish b softens to β."
+    examples:
+      - { target: "बेटी", native: "daughter (Hindi)", language: hi }
+      - { target: "vivir", native: "to live (Spanish)", language: es, ipa: "biˈbiɾ" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0009
+    target: "t"
+    native: "t with the tongue on the ridge behind the teeth (voiceless alveolar plosive)"
+    notes: "The t of English ten: the tongue tip touches the ridge just behind the upper teeth, the alveolar column. Assamese t is this sound. Hindi, Marathi, Gujarati, Bengali, Telugu and Kannada have t̪ on the teeth and ʈ curled back instead, and hear English t as ʈ. Spanish t is on the teeth too, but a broad transcription of Spanish writes it t, as Spanish has no other t."
+    examples:
+      - { target: "তিনি", native: "three (Assamese)", language: as }
+      - { target: "tea", native: "tea (English)", language: en, ipa: "tiː" }
+      - { target: "tomate", native: "tomato (Spanish)", language: es, ipa: "toˈmate" }
+    tags: [as, es, en]
+    modes: [recognition, production]
+  - id: ipa-0010
+    target: "d"
+    native: "d with the tongue on the ridge behind the teeth (voiced alveolar plosive)"
+    notes: "The d of English day, made where t is but with voice. Assamese has this d; the other Indian languages here split it into d̪ on the teeth and ɖ curled back. Spanish d is on the teeth and is written d, and between vowels it softens to ð."
+    examples:
+      - { target: "দহ", native: "ten (Assamese)", language: as }
+      - { target: "day", native: "day (English)", language: en, ipa: "deɪ" }
+    tags: [as, es, en]
+    modes: [recognition, production]
+  - id: ipa-0011
+    target: "k"
+    native: "k, the back of the tongue on the soft palate (voiceless velar plosive)"
+    notes: "The back of the tongue presses against the soft palate and lets go. It sits in the velar column, far to the right, because the chart's columns run from the lips back towards the throat. Like p, Indian k has no puff of breath; the puffed one is kʰ."
+    examples:
+      - { target: "कमरा", native: "room (Hindi)", language: hi }
+      - { target: "casa", native: "house (Spanish)", language: es, ipa: "ˈkasa" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0012
+    target: "ɡ"
+    native: "g as in go, with an open tail (voiced velar plosive)"
+    notes: "Always the g of go, never the g of gem. The IPA prints it with an open tail, ɡ, not the two-loop g of many typefaces, and Unicode gives it a code of its own. It is the voiced partner of k."
+    examples:
+      - { target: "आगे", native: "ahead (Hindi)", language: hi }
+      - { target: "grande", native: "big (Spanish)", language: es, ipa: "ˈɡɾande" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0013
+    target: "m"
+    native: "m, through the nose with closed lips (bilabial nasal)"
+    notes: "The lips close as for p and b, but the air flows out through the nose. It is the nasal of the bilabial column. Nasals are voiced, so each cell of the nasal row holds one letter, on the right."
+    examples:
+      - { target: "মা", native: "mother (Bengali)", language: bn }
+      - { target: "mesa", native: "table (Spanish)", language: es, ipa: "ˈmesa" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0014
+    target: "n"
+    native: "n, through the nose with the tongue on the ridge (alveolar nasal)"
+    notes: "The tongue closes the mouth where t is made, and the air goes out through the nose. In Hindi and the other Indian languages n is on the teeth, like t̪, but a broad transcription still writes n. The curled-back n of Marathi ण is another letter, ɳ."
+    examples:
+      - { target: "नाम", native: "name (Hindi)", language: hi }
+      - { target: "noche", native: "night (Spanish)", language: es, ipa: "ˈnotʃe" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0015
+    target: "f"
+    native: "f, lower lip on upper teeth (voiceless labiodental fricative)"
+    notes: "The lower lip rests on the upper teeth and air hisses through: the labiodental column, second from the left, in the fricative row. Hindi writes f as फ़, फ with a dot below, in words from Persian and English, as in दफ़्तर, office. Plain फ is pʰ, a p with a puff of breath."
+    examples:
+      - { target: "दफ़्तर", native: "office (Hindi)", language: hi }
+      - { target: "café", native: "coffee (Spanish)", language: es, ipa: "kaˈfe" }
+    tags: [hi, es, en]
+    modes: [recognition, production]
+  - id: ipa-0016
+    target: "v"
+    native: "v as in van, with a buzz (voiced labiodental fricative)"
+    notes: "The v of English van: lip on teeth, with voice and a buzz. Spanish has no v sound, whatever its spelling: v is said b. The softer v of Hindi व and Telugu వ, with no buzz, is another letter, ʋ."
+    examples:
+      - { target: "van", native: "van (English)", language: en, ipa: "væn" }
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0017
+    target: "s"
+    native: "s as in sun (voiceless alveolar fricative)"
+    notes: "Always the s of sun, never the z sound of rose. Assamese says চ and ছ as s, while its স, শ and ষ are x. Bengali says most of its স as ʃ, and keeps s for a few words and clusters."
+    examples:
+      - { target: "सात", native: "seven (Hindi)", language: hi }
+      - { target: "চাহ", native: "tea (Assamese)", language: as }
+      - { target: "mesa", native: "table (Spanish)", language: es, ipa: "ˈmesa" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0018
+    target: "z"
+    native: "z as in zoo (voiced alveolar fricative)"
+    notes: "s with voice, the z of English zoo. Hindi writes it ज़, ज with a dot below, in words from Persian and English, and Assamese says জ, ঝ and য as z. Spanish has no z sound: in Spain its letter z is θ."
+    examples:
+      - { target: "मेज़", native: "table (Hindi)", language: hi }
+      - { target: "জল", native: "water (Assamese)", language: as }
+      - { target: "zoo", native: "zoo (English)", language: en, ipa: "zuː" }
+    tags: [hi, as, en]
+    modes: [recognition, production]
+  - id: ipa-0019
+    target: "h"
+    native: "h, just breath (voiceless glottal fricative)"
+    notes: "Breath through the open vocal folds, as in English hat. The glottal column is the last on the right, the furthest back a sound can be made. Hindi and Gujarati ह and હ are usually said with voice, ɦ, and Spanish h is silent."
+    examples:
+      - { target: "হাত", native: "hand (Bengali)", language: bn }
+      - { target: "hat", native: "hat (English)", language: en, ipa: "hæt" }
+    tags: [hi, mr, gu, bn, as, te, kn, en]
+    modes: [recognition, production]
+  - id: ipa-0020
+    target: "l"
+    native: "l, air round the sides of the tongue (alveolar lateral approximant)"
+    notes: "The tongue tip touches the ridge and the air flows round its sides, which is what lateral means. Indian and Spanish l is clear all through the word, without the dark, hollow l at the end of English feel. Its curled-back partner is ɭ."
+    examples:
+      - { target: "साल", native: "year (Hindi)", language: hi }
+      - { target: "libro", native: "book (Spanish)", language: es, ipa: "ˈlibɾo" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0021
+    target: "w"
+    native: "w, rounded lips and raised tongue (voiced labial-velar approximant)"
+    notes: "The lips round while the back of the tongue rises, so w is made at two places at once and sits among the chart's other symbols, not in a column. Spanish has it in ue and ua, as in bueno, ˈbweno, and Assamese writes it ৱ. Hindi व is usually the softer ʋ."
+    examples:
+      - { target: "win", native: "win (English)", language: en, ipa: "wɪn" }
+      - { target: "bueno", native: "good (Spanish)", language: es, ipa: "ˈbweno" }
+      - { target: "দুৱাৰ", native: "door (Assamese)", language: as }
+    tags: [as, es, en]
+    modes: [recognition, production]
+  - id: ipa-0022
+    target: "j"
+    native: "y as in yes, written j (voiced palatal approximant)"
+    notes: "The IPA uses j for the y of yes, as German and Dutch spell it, never for the j of jam, which is dʒ. It is the approximant of the palatal column: the tongue rises towards the hard palate without touching it. Every language here has it: Hindi य, Telugu య, Spanish i in bien."
+    examples:
+      - { target: "यहाँ", native: "here (Hindi)", language: hi }
+      - { target: "yes", native: "yes (English)", language: en, ipa: "jɛs" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0023
+    target: "x"
+    native: "a rasp at the back of the mouth, as in loch (voiceless velar fricative)"
+    notes: "Not ks: x is the rasp of Scottish loch and German Bach, made where k is but without closing. Assamese says স, শ and ষ as x, as in অসম, Assam, and Spanish j is x, as in ajo. Hindi writes it ख़, ख with a dot below, in words from Persian and Arabic; plain ख is kʰ."
+    examples:
+      - { target: "অসম", native: "Assam (Assamese)", language: as }
+      - { target: "ajo", native: "garlic (Spanish)", language: es, ipa: "ˈaxo" }
+      - { target: "तारीख़", native: "date (Hindi)", language: hi }
+    tags: [hi, as, es]
+    modes: [recognition, production]

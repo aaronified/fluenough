@@ -1,0 +1,109 @@
+schema: 1
+id: ipa-en-places
+name: "From the lips to the throat"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "The chart's columns, through its stops and nasals: the lips, lip and teeth, the teeth, curled back, the hard palate, the soft palate, the uvula and the glottis."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0024
+    target: "ɱ"
+    native: "m made with lip on teeth (labiodental nasal)"
+    notes: "An m made with the lower lip against the upper teeth, where f is made: the labiodental column. It is what m or n becomes before f in many languages, as in English comfort and Spanish enfermo, so a broad transcription rarely needs it. Its letter is m with a tail below."
+    modes: [recognition, production]
+  - id: ipa-0025
+    target: "t̪"
+    native: "t with the tongue on the teeth (voiceless dental plosive)"
+    notes: "The small bridge below a letter, shown here on t, moves it onto the teeth: t̪ is a t with the tongue tip against the back of the upper teeth. This is Hindi त, Bengali ত and Telugu త, and Spanish t too. For plosives the chart puts dental, alveolar and postalveolar in one wide column, and the bridge tells them apart."
+    examples:
+      - { target: "तीन", native: "three (Hindi)", language: hi }
+      - { target: "తాత", native: "grandfather (Telugu)", language: te }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0026
+    target: "d̪"
+    native: "d with the tongue on the teeth (voiced dental plosive)"
+    notes: "t̪ with voice: Hindi द, Bengali দ, Telugu ద. To Indian ears English d sounds curled back, which is why English words written in Indian scripts take ड, as in डॉक्टर. The bridge also goes under n and l, but broad transcriptions leave it off where the language has only one n or l."
+    examples:
+      - { target: "दस", native: "ten (Hindi)", language: hi }
+      - { target: "দুধ", native: "milk (Bengali)", language: bn }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0027
+    target: "ʈ"
+    native: "t with the tongue curled back (voiceless retroflex plosive)"
+    notes: "Retroflex means bent back: the tongue tip curls up behind the ridge. Every retroflex letter is the ordinary letter with a hook below turning right, so ʈ is t with the hook. Hindi ट, Bengali ট and Telugu ట are ʈ, against t̪ on the teeth: English t is in between, nearer ʈ to an Indian ear."
+    examples:
+      - { target: "टमाटर", native: "tomato (Hindi)", language: hi }
+      - { target: "টাকা", native: "money; rupee (Bengali)", language: bn }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0028
+    target: "ɖ"
+    native: "d with the tongue curled back (voiced retroflex plosive)"
+    notes: "d with the retroflex hook: the tongue curls back as for ʈ, with voice. Hindi ड, Bengali ড and Telugu డ are ɖ, and borrowed English words take it for d, as in Hindi डॉक्टर. Between vowels, Hindi and Bengali usually have the flap ɽ instead, written with a dot below: ड़, ড়."
+    examples:
+      - { target: "डॉक्टर", native: "doctor (Hindi)", language: hi }
+      - { target: "ડાબે", native: "on the left (Gujarati)", language: gu }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0029
+    target: "ɳ"
+    native: "n with the tongue curled back (retroflex nasal)"
+    notes: "n with the retroflex hook: the tongue curls back as for ɖ while the air flows through the nose. Marathi ण, Gujarati ણ, Telugu ణ and Kannada ಣ are ɳ, as in Marathi पाणी, water. Bengali and Assamese still write ণ, but say it n."
+    examples:
+      - { target: "पाणी", native: "water (Marathi)", language: mr }
+      - { target: "ಕೋಣೆ", native: "room (Kannada)", language: kn }
+    tags: [hi, mr, gu, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0030
+    target: "c"
+    native: "k made at the hard palate (voiceless palatal plosive)"
+    notes: "Not s and not k: c is a stop made with the middle of the tongue against the hard palate, between t and k, like Hungarian ty. It heads the palatal column, with j and ɲ further down. Some descriptions write Hindi च as c, but most, and this course, write it tʃ."
+    modes: [recognition, production]
+  - id: ipa-0031
+    target: "ɟ"
+    native: "g made at the hard palate (voiced palatal plosive)"
+    notes: "c with voice, like Hungarian gy. Its letter is a dotless j with a bar across it. Some descriptions write Hindi ज as ɟ, but most write it dʒ."
+    modes: [recognition, production]
+  - id: ipa-0032
+    target: "ɲ"
+    native: "ny, as in Spanish ñ (palatal nasal)"
+    notes: "The middle of the tongue presses the hard palate while the air flows through the nose, as in Spanish año and niño. Its letter is n with a tail on its left leg. Hindi ञ and its partners in the other Indian scripts stand for it, though they are heard mostly before च and ज."
+    examples:
+      - { target: "año", native: "year (Spanish)", language: es, ipa: "ˈaɲo" }
+      - { target: "niño", native: "boy (Spanish)", language: es, ipa: "ˈniɲo" }
+    tags: [es]
+    modes: [recognition, production]
+  - id: ipa-0033
+    target: "ŋ"
+    native: "ng as in sing (velar nasal)"
+    notes: "The ng of English sing is one sound, not n and g: the back of the tongue closes against the soft palate as for k, and the air flows through the nose. Its letter is n with a long tail. Bengali writes it ং or ঙ, as in বাঙালি, and the other Indian scripts have ङ and the dot ं before k and g."
+    examples:
+      - { target: "বাঙালি", native: "a Bengali, a person from Bengal (Bengali)", language: bn }
+      - { target: "sing", native: "sing (English)", language: en, ipa: "sɪŋ" }
+    tags: [bn, as, en]
+    modes: [recognition, production]
+  - id: ipa-0034
+    target: "q"
+    native: "k made at the uvula (voiceless uvular plosive)"
+    notes: "A stop further back than k, with the back of the tongue against the uvula, the soft flap at the back of the mouth. It is Arabic qaf, and Hindi and Urdu write it क़ in words from Arabic and Persian, though most Hindi speakers say k. The uvular column comes right after the velar one."
+    modes: [recognition, production]
+  - id: ipa-0035
+    target: "ɢ"
+    native: "g made at the uvula (voiced uvular plosive)"
+    notes: "q with voice. Its letter is a small capital G: the chart uses small capitals mostly for sounds made further back than the ordinary letter. It is rare as a sound of its own."
+    modes: [recognition, production]
+  - id: ipa-0036
+    target: "ɴ"
+    native: "ng made at the uvula (uvular nasal)"
+    notes: "A nasal with the back of the tongue against the uvula, written as a small capital N. Japanese ん at the end of a word is often said this way. It completes the nasal row from the lips back: m ɱ n ɳ ɲ ŋ ɴ."
+    modes: [recognition, production]
+  - id: ipa-0037
+    target: "ʔ"
+    native: "a catch in the throat (glottal stop)"
+    notes: "The vocal folds snap shut and let go, as in the middle of English uh-oh, or the t that many British speakers say in water. Its letter is a question mark without the dot, the one plosive of the glottal column. Arabic and Hawaiian write it as a letter of their own."
+    modes: [recognition, production]

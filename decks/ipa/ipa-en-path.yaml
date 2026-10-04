@@ -1,0 +1,36 @@
+# The order the IPA is taught in from English: one unit per deck. First what
+# a transcription is and the marks every one uses; then the letters that
+# keep their Latin sound; then the chart's columns, place by place, through
+# its stops and nasals; then breath and voice, which give Indian languages
+# their four stops at each place; then one rule, the retroflex hook, for
+# every curled-back sound; then the chart's rows that are left, fricatives
+# and the r's, l's and glides; then the vowel chart; then the diacritics.
+# The last two units, rare sounds and fine detail, are for the whole chart.
+#
+# A symbol is taught once, in the unit whose idea explains it. The app
+# offers two courses from these decks, sharing one schedule: the whole
+# chart, and the symbols of the languages the learner learns, chosen by the
+# language codes in each card's tags (and `core` for every learner).
+#
+# Every ipa-en deck is listed exactly once. See ADR-0013 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: ipa-en-path
+language: ipa
+native: en
+# No theme decks here, so no unit but the last can end in "*": a deck a
+# learner adds goes in the last unit.
+units:
+  - [ipa-en-basics]
+  - [ipa-en-familiar]
+  - [ipa-en-places]
+  - [ipa-en-breath]
+  - [ipa-en-retroflex]
+  - [ipa-en-fricatives]
+  - [ipa-en-liquids]
+  - [ipa-en-vowels]
+  - [ipa-en-diacritics]
+  - [ipa-en-rare]
+  - [ipa-en-narrow]
+  - ["*"]

@@ -1,0 +1,75 @@
+schema: 1
+id: ipa-en-retroflex
+name: "Curled back: the retroflex hook"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "One rule for every sound made with the tongue curled back: the ordinary letter with a hook below, turning right. ʈ ɖ ɳ came in the last unit; here are the rest."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0055
+    target: "ʈʰ"
+    native: "t curled back with a puff of breath (aspirated voiceless retroflex plosive)"
+    notes: "ʈ followed by a puff of breath: Hindi ठ, Bengali ঠ, Telugu ఠ, as at the end of Hindi आठ, eight. The hook says where the tongue is and the raised h says what the breath does, so the two marks combine freely."
+    examples:
+      - { target: "आठ", native: "eight (Hindi)", language: hi }
+      - { target: "મીઠું", native: "salt (Gujarati)", language: gu }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0056
+    target: "ɖʱ"
+    native: "d curled back with a breathy voice (breathy-voiced retroflex plosive)"
+    notes: "ɖ said with a murmur of breath: Hindi ढ, Bengali ঢ. It mostly begins a word, as in Hindi ढाई, two and a half; between vowels Hindi usually has the flap ɽʱ instead, written ढ़."
+    examples:
+      - { target: "ढाई", native: "two and a half (Hindi)", language: hi }
+      - { target: "ঢাক", native: "a big drum (Bengali)", language: bn }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0057
+    target: "ʂ"
+    native: "sh with the tongue curled back (voiceless retroflex fricative)"
+    notes: "s with the retroflex hook: a hiss with the tongue tip curled back, darker than ʃ. Telugu ష and Kannada ಷ are ʂ, as in భాష, language, while their శ and ಶ are ʃ; Hindi, Bengali and Gujarati now say ष, ষ and ષ as ʃ. Mandarin sh, as in Shanghai, is often written ʂ too."
+    examples:
+      - { target: "భాష", native: "language (Telugu)", language: te }
+      - { target: "ಭಾಷೆ", native: "language (Kannada)", language: kn }
+    tags: [te, kn]
+    modes: [recognition, production]
+  - id: ipa-0058
+    target: "ʐ"
+    native: "zh with the tongue curled back (voiced retroflex fricative)"
+    notes: "ʂ with voice: z with the retroflex hook. None of the languages in this app has it. Mandarin r, as in rén, person, is often written ʐ, and so is Polish ż."
+    modes: [recognition, production]
+  - id: ipa-0059
+    target: "ɭ"
+    native: "l with the tongue curled back (retroflex lateral approximant)"
+    notes: "l with the retroflex hook: the tongue tip curls back and the air flows round its sides. Marathi ळ, Gujarati ળ, Telugu ళ and Kannada ಳ are ɭ, and each language tells it apart from l, as in Marathi पोळी, chapati. Hindi and Bengali have no ɭ."
+    examples:
+      - { target: "पोळी", native: "chapati (Marathi)", language: mr }
+      - { target: "నీళ్ళు", native: "water (Telugu)", language: te }
+      - { target: "ಮಗಳು", native: "daughter (Kannada)", language: kn }
+    tags: [mr, gu, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0060
+    target: "ɻ"
+    native: "a gliding r with the tongue curled back (retroflex approximant)"
+    notes: "ɹ with the retroflex hook: the tongue curls back towards the roof of the mouth without touching it. It is the ழ of Tamil, in the name Tamil itself, and Malayalam has it too; none of the languages in this app does. The letter is a turned r with the hook."
+    modes: [recognition, production]
+  - id: ipa-0061
+    target: "ɽ"
+    native: "r flapped with the tongue curled back (retroflex flap)"
+    notes: "The tongue curls back and flicks forward against the roof of the mouth in one quick stroke. Hindi ड़ and Bengali ড়, ड and ড with a dot below, are ɽ, as in Hindi सड़क, road, and Bengali বাড়ি, home. Romanisations write it r, but it is neither the r of र nor d."
+    examples:
+      - { target: "सड़क", native: "road (Hindi)", language: hi }
+      - { target: "বাড়ি", native: "home; house (Bengali)", language: bn }
+    tags: [hi, bn]
+    modes: [recognition, production]
+  - id: ipa-0062
+    target: "ɽʱ"
+    native: "r flapped and curled back, with a breathy voice (breathy-voiced retroflex flap)"
+    notes: "ɽ said with a murmur of breath: Hindi ढ़, as in पढ़ना, to read. Bengali writes ঢ় for it, but most Bengali speakers now say it as plain ɽ."
+    examples:
+      - { target: "पढ़ना", native: "to read (Hindi)", language: hi }
+    tags: [hi]
+    modes: [recognition, production]

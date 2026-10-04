@@ -1,0 +1,121 @@
+schema: 1
+id: ipa-en-fricatives
+name: "Hisses and rasps"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "The fricative row, where air hisses through a narrow gap, from the lips to the throat: two letters to a cell, voiceless on the left and voiced on the right."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0063
+    target: "ɸ"
+    native: "f blown between both lips (voiceless bilabial fricative)"
+    notes: "Air hisses between the two lips, as when blowing out a candle, with no teeth involved. It is the Greek letter phi, and it opens the fricative row on the far left. Japanese ふ (fu) begins with it, and some Bengali speakers say ফ close to it."
+    modes: [recognition, production]
+  - id: ipa-0064
+    target: "β"
+    native: "v made with both lips (voiced bilabial fricative)"
+    notes: "ɸ with voice, the Greek letter beta. Spanish b and v soften to it between vowels, so beber, to drink, is said [beˈβeɾ]. A broad transcription still writes beˈbeɾ, because β is only how Spanish b is said there, never a sound that tells words apart."
+    examples:
+      - { target: "beber", native: "to drink (Spanish)", language: es, ipa: "beˈbeɾ" }
+    modes: [recognition, production]
+  - id: ipa-0065
+    target: "θ"
+    native: "th as in thin (voiceless dental fricative)"
+    notes: "The th of English thin: the tongue tip at the teeth, with air hissing past it. It is the Greek letter theta. Spanish in Spain says z, and c before e and i, this way, as in gracias; romanisations of Indian languages write th for tʰ and t̪ʰ, which are not this sound."
+    examples:
+      - { target: "gracias", native: "thank you (Spanish)", language: es, ipa: "ˈɡɾaθjas" }
+      - { target: "thin", native: "thin (English)", language: en, ipa: "θɪn" }
+    tags: [es, en]
+    modes: [recognition, production]
+  - id: ipa-0066
+    target: "ð"
+    native: "th as in this (voiced dental fricative)"
+    notes: "θ with voice: the th of English this. The letter is eth, from Old English and Icelandic. Spanish d softens to it between vowels, as in nada, but a broad transcription of Spanish writes d."
+    examples:
+      - { target: "this", native: "this (English)", language: en, ipa: "ðɪs" }
+      - { target: "nada", native: "nothing (Spanish)", language: es, ipa: "ˈnada" }
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0067
+    target: "ʃ"
+    native: "sh as in she (voiceless postalveolar fricative)"
+    notes: "The sh of English she, with the tongue a little behind where s is made: the postalveolar column. Hindi श, Bengali শ and Telugu శ are ʃ, and Bengali says most of its স as ʃ too. Its letter, esh, is a tall s with a tail."
+    examples:
+      - { target: "शाम", native: "evening (Hindi)", language: hi }
+      - { target: "দেশ", native: "country (Bengali)", language: bn }
+      - { target: "she", native: "she (English)", language: en, ipa: "ʃiː" }
+    tags: [hi, mr, gu, bn, te, kn, en]
+    modes: [recognition, production]
+  - id: ipa-0068
+    target: "ʒ"
+    native: "zh as in vision (voiced postalveolar fricative)"
+    notes: "ʃ with voice: the s of English vision and measure, and French j, as in je. Its letter, ezh, is a z with a tail below. None of the Indian languages in this app has it as a sound of its own."
+    examples:
+      - { target: "vision", native: "vision (English)", language: en, ipa: "ˈvɪʒən" }
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0069
+    target: "ɕ"
+    native: "a soft sh, the tongue flat to the palate (voiceless alveolo-palatal fricative)"
+    notes: "A sh made with the middle of the tongue raised flat towards the hard palate, softer than ʃ: Polish ś and Mandarin x, as in xiè. It is among the chart's other symbols: c with a curl. Some descriptions of Telugu give శ this sound."
+    modes: [recognition, production]
+  - id: ipa-0070
+    target: "ʑ"
+    native: "a soft zh, the tongue flat to the palate (voiced alveolo-palatal fricative)"
+    notes: "ɕ with voice, as in Polish ź. Its letter is z with a curl. It is rare as a sound of its own."
+    modes: [recognition, production]
+  - id: ipa-0071
+    target: "ç"
+    native: "a hiss at the hard palate, as in German ich (voiceless palatal fricative)"
+    notes: "The hiss of German ich: the tongue is placed for j, and air is pushed through without voice. English h before a y sound, as in huge, often comes out this way. Its letter is c with a cedilla, from the palatal column."
+    modes: [recognition, production]
+  - id: ipa-0072
+    target: "ʝ"
+    native: "a buzzing y (voiced palatal fricative)"
+    notes: "ç with voice: a y said with the tongue so close to the palate that it buzzes. Spanish y, and ll for most speakers in Spain, is ʝ, as in playa and calle; at the start of a phrase it can sound nearly like the j of jam. Its letter is j with a curl on its tail."
+    examples:
+      - { target: "playa", native: "beach (Spanish)", language: es, ipa: "ˈplaʝa" }
+      - { target: "calle", native: "street (Spanish)", language: es, ipa: "ˈkaʝe" }
+    tags: [es]
+    modes: [recognition, production]
+  - id: ipa-0073
+    target: "ɣ"
+    native: "a voiced rasp at the back of the mouth (voiced velar fricative)"
+    notes: "x with voice: the γ of modern Greek, and Hindi ग़, ग with a dot below, in words from Persian and Arabic such as ग़लती, mistake, though many speakers say ɡ. Spanish g softens to it between vowels, as in agua, but a broad transcription writes ɡ. Its letter is the Latin gamma."
+    examples:
+      - { target: "ग़लती करना", native: "to make a mistake (Hindi)", language: hi }
+      - { target: "agua", native: "water (Spanish)", language: es, ipa: "ˈaɡwa" }
+    tags: [hi]
+    modes: [recognition, production]
+  - id: ipa-0074
+    target: "χ"
+    native: "a rasp at the uvula (voiceless uvular fricative)"
+    notes: "A rougher rasp than x, made further back against the uvula: Dutch g, and Spanish j as many speakers in Spain say it. The letter is the Greek chi. The uvular column comes after the velar one, as for q."
+    modes: [recognition, production]
+  - id: ipa-0075
+    target: "ʁ"
+    native: "a gargled r at the uvula (voiced uvular fricative)"
+    notes: "χ with voice, close to the r of French rouge and of most German speakers. Its letter is a small capital R turned upside down, one of many chart letters made by turning another."
+    modes: [recognition, production]
+  - id: ipa-0076
+    target: "ħ"
+    native: "a hoarse h deep in the throat (voiceless pharyngeal fricative)"
+    notes: "A strong, breathy h made by pulling the root of the tongue back towards the throat wall: Arabic ح, as in the name Muhammad. Its letter is h with a bar. The pharyngeal column lies between the uvula and the glottis."
+    modes: [recognition, production]
+  - id: ipa-0077
+    target: "ʕ"
+    native: "a voiced squeeze in the throat (voiced pharyngeal fricative)"
+    notes: "ħ with voice: Arabic ع, often more an approximant than a fricative. Its letter is the glottal stop ʔ flipped left to right."
+    modes: [recognition, production]
+  - id: ipa-0078
+    target: "ɦ"
+    native: "a voiced, breathy h (voiced glottal fricative)"
+    notes: "h said with a breathy voice, the vocal folds humming while air escapes: Hindi ह and Gujarati હ are usually ɦ, as in Hindi बहन, sister. English h between vowels, as in ahead, can come out this way. Its letter is h with a hook on top, the shape that ʱ makes small."
+    examples:
+      - { target: "बहन", native: "sister (Hindi)", language: hi }
+      - { target: "હા", native: "yes (Gujarati)", language: gu }
+    tags: [hi, gu]
+    modes: [recognition, production]
