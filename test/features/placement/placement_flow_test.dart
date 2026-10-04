@@ -16,13 +16,19 @@ import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
+import '../../support/script_only_course.dart';
 
 /// Choosing what to learn and placement (#117, ADR-0013), from first launch
 /// and from Settings.
 
-/// The app on first launch after the languages the learner speaks.
-Future<AppState> pumpFirstLaunch(WidgetTester tester) async {
+/// The app on first launch after the languages the learner speaks, on the
+/// bundled decks unless [decks] is given.
+Future<AppState> pumpFirstLaunch(
+  WidgetTester tester, {
+  DeckSource? decks,
+}) async {
   final state = AppState.test(
+    decks: decks,
     settings: SettingsNotifier(spokenLanguages: const <String>['en']),
   );
   addTearDown(state.dispose);
@@ -307,20 +313,20 @@ void main() {
         ),
         profiles: const <Profile>[
           Profile.defaultProfile,
-          Profile(id: 'mira', name: 'Mira', languages: <String>{'ja'}),
+          Profile(id: 'mira', name: 'Mira', languages: <String>{'bn'}),
         ],
         currentProfileId: 'mira',
       ),
     );
     final l10n = l10nOf(tester);
-    final japanese = nameOf(state, 'ja');
+    final bengali = nameOf(state, 'bn');
     final hindi = nameOf(state, 'hi');
     await tapText(tester, l10n.navSettings);
     await tapText(tester, l10n.settingsLearn);
     bool ticked(String name) => tester
         .widget<CheckboxListTile>(find.widgetWithText(CheckboxListTile, name))
         .value!;
-    expect(ticked(japanese), isTrue);
+    expect(ticked(bengali), isTrue);
     expect(ticked(hindi), isFalse);
 
     await tapText(tester, hindi);
@@ -328,7 +334,7 @@ void main() {
     await tapText(tester, l10n.alphabetLearn);
     await tapText(tester, l10n.placementNew(hindi));
     await tapText(tester, l10n.placementDone);
-    expect(state.currentProfile.languages, <String>{'hi', 'ja'});
+    expect(state.currentProfile.languages, <String>{'hi', 'bn'});
     expect(state.settings.learningLanguages, isEmpty);
   });
 
@@ -416,14 +422,17 @@ void main() {
   testWidgets('a course with nothing but its script says so without the '
       'alphabet', (tester) async {
     usePhone(tester);
-    final state = await pumpFirstLaunch(tester);
+    final state = await pumpFirstLaunch(
+      tester,
+      decks: MemoryDeckSource(scriptOnlyCourse()),
+    );
     final l10n = l10nOf(tester);
-    final japanese = nameOf(state, 'ja');
-    await tapText(tester, japanese);
+    final hindi = nameOf(state, 'hi');
+    await tapText(tester, hindi);
     await tapText(tester, l10n.commonContinue);
     await tapText(tester, l10n.alphabetSkip);
-    await tapText(tester, l10n.placementNew(japanese));
-    expect(find.text(l10n.placementNoAlphabet(japanese)), findsOneWidget);
+    await tapText(tester, l10n.placementNew(hindi));
+    expect(find.text(l10n.placementNoAlphabet(hindi)), findsOneWidget);
   });
 
   testWidgets('a language with no alphabet decks is not asked', (tester) async {

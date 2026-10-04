@@ -25,7 +25,7 @@ import '../../support/harness.dart';
 /// off for one language or everywhere, from a drill and from Settings.
 
 const String spanish = 'es-en-core-100';
-const String hiragana = 'ja-en-hiragana';
+const String hindi = 'hi-en-script-vowels';
 final DateTime noon = DateTime(2026, 9, 28, 12);
 
 AppState soundState({
@@ -34,7 +34,7 @@ AppState soundState({
   MemoryProgress? progress,
   FixedSpeechEngine? speech,
 }) => AppState.test(
-  tts: FixedTtsEngine(<String>{'es', 'ja'}),
+  tts: FixedTtsEngine(<String>{'es', 'hi'}),
   speech: speech ?? FixedSpeechEngine(onDevice: <String>{'es'}, granted: true),
   settings:
       settings ??
@@ -136,7 +136,7 @@ void main() {
     expect(drillsIn(state, spanish, Skill.listening), isTrue);
     state.settings.setOffFor(Skill.listening, 'es', true);
     expect(drillsIn(state, spanish, Skill.listening), isFalse);
-    expect(drillsIn(state, hiragana, Skill.listening), isTrue);
+    expect(drillsIn(state, hindi, Skill.listening), isTrue);
     expect(drillsIn(state, spanish, Skill.speaking), isTrue);
   });
 
@@ -253,7 +253,7 @@ cards:
           .toList();
       final session = DrillSession(
         state: state,
-        items: <SessionItem>[...listening(spanish), ...listening(hiragana)],
+        items: <SessionItem>[...listening(spanish), ...listening(hindi)],
       );
       addTearDown(session.dispose);
       await pumpScreen(
@@ -276,7 +276,7 @@ cards:
       await tapText(tester, l10n.drillCantListen);
       await tapText(tester, l10n.cantNowOffFor('Spanish'));
       expect(state.settings.offFor(Skill.listening), <String>{'es'});
-      expect(find.text(hiragana), findsOneWidget);
+      expect(find.text(hindi), findsOneWidget);
       expect(state.progress.log, isEmpty);
     });
 

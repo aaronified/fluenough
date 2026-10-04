@@ -175,10 +175,10 @@ void main() {
     late LanguageLookup languageOf;
     setUpAll(() => languageOf = languageLookupOf(app));
 
-    /// A Japanese review on each of [days], counted from today, beside the
+    /// A Hindi review on each of [days], counted from today, beside the
     /// Spanish log.
-    void addJapanese(MemoryProgress progress, List<int> days) {
-      final deck = app.deckById('ja-en-hiragana')!;
+    void addHindi(MemoryProgress progress, List<int> days) {
+      final deck = app.deckById('hi-en-script-vowels')!;
       for (final day in days) {
         progress.record(
           deckId: deck.id,
@@ -199,19 +199,19 @@ void main() {
     );
 
     test('one language counts its own reviews, with its own streak', () {
-      addJapanese(progress, <int>[-6, -5]);
+      addHindi(progress, <int>[-6, -5]);
       final spanish = numbersIn('es');
       expect(spanish.reviews, 5);
       expect(spanish.streak, 4);
       expect(spanish.heatmapReviews, 8);
 
-      final japanese = numbersIn('ja');
-      expect(japanese.reviews, 2);
-      expect(japanese.remembered, 1.0);
-      expect(japanese.streak, 0, reason: 'nothing since five days ago');
-      expect(japanese.learned, 1);
-      expect(japanese.weakestTags.keys, isNot(contains('home')));
-      expect(japanese.heatmapReviews, 2);
+      final hindi = numbersIn('hi');
+      expect(hindi.reviews, 2);
+      expect(hindi.remembered, 1.0);
+      expect(hindi.streak, 0, reason: 'nothing since five days ago');
+      expect(hindi.learned, 1);
+      expect(hindi.weakestTags.keys, isNot(contains('home')));
+      expect(hindi.heatmapReviews, 2);
 
       final all = numbersIn(null);
       expect(all.reviews, 7);
@@ -230,16 +230,16 @@ void main() {
       ];
       // Recorded after the Spanish log, as an imported backup would be,
       // but older: Spanish was reviewed today.
-      addJapanese(progress, <int>[-6]);
-      expect(order(), <String>['es', 'ja']);
+      addHindi(progress, <int>[-6]);
+      expect(order(), <String>['es', 'hi']);
       progress.record(
-        deckId: 'ja-en-hiragana',
-        cardId: app.deckById('ja-en-hiragana')!.cards.first.id,
+        deckId: 'hi-en-script-vowels',
+        cardId: app.deckById('hi-en-script-vowels')!.cards.first.id,
         mode: DrillMode.recognition,
         grade: 4,
         now: app.now(),
       );
-      expect(order(), <String>['ja', 'es']);
+      expect(order(), <String>['hi', 'es']);
       expect(
         practisedLanguages(
           MemoryProgress(),

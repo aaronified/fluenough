@@ -106,10 +106,10 @@ void main() {
     test('are checked once the catalog is in', () async {
       final state = await loaded(tts: FixedTtsEngine({'es'}));
       final spanish = state.deckById('es-en-core-100')!.language;
-      final japanese = state.deckById('ja-en-hiragana')!.language;
+      final hindi = state.deckById('hi-en-script-vowels')!.language;
       expect(state.voiceStatus(spanish), VoiceStatus.available);
-      expect(state.voiceStatus(japanese), VoiceStatus.missing);
-      expect(state.hasVoice(japanese), isFalse);
+      expect(state.voiceStatus(hindi), VoiceStatus.missing);
+      expect(state.hasVoice(hindi), isFalse);
     });
 
     test('speak uses the language tag and the learner\'s rate', () async {
@@ -158,11 +158,11 @@ void main() {
       final spanish = state.buildSession(
         DrillRequest.deck('es-en-core-100', skill: Skill.listening),
       );
-      final japanese = state.buildSession(
-        DrillRequest.deck('ja-en-hiragana', skill: Skill.listening),
+      final hindi = state.buildSession(
+        DrillRequest.deck('hi-en-script-vowels', skill: Skill.listening),
       );
       expect(spanish.isNotEmpty, isTrue);
-      expect(japanese.isEmpty, isTrue);
+      expect(hindi.isEmpty, isTrue);
     });
 
     test('an incoming skill never enters a session', () async {
@@ -201,15 +201,17 @@ void main() {
     test('a profile sees only its own languages', () async {
       final state = await loaded(
         profiles: const [
-          Profile(id: 'mira', name: 'Mira', languages: {'ja'}),
+          Profile(id: 'mira', name: 'Mira', languages: {'hi'}),
         ],
       );
-      expect(state.profileDecks.map((d) => d.id), ['ja-en-hiragana']);
+      final hindi = <String>{
+        for (final d in state.decks)
+          if (d.language.code == 'hi') d.id,
+      };
+      expect(state.profileDecks.map((d) => d.id).toSet(), hindi);
       final queue = state.buildSession(const DrillRequest.today());
-      expect(
-        queue.items.every((i) => i.card.deckId == 'ja-en-hiragana'),
-        isTrue,
-      );
+      expect(queue.isNotEmpty, isTrue);
+      expect(queue.items.every((i) => hindi.contains(i.card.deckId)), isTrue);
     });
 
     test('learnNew drills only new pairs, at most the number asked', () async {
@@ -281,7 +283,7 @@ themes:
 
     test('deck counts agree with the deck\'s session', () async {
       final state = await loaded(settings: SettingsNotifier(newCardsPerDay: 7));
-      final deck = state.deckById('ja-en-hiragana')!;
+      final deck = state.deckById('hi-en-script-vowels')!;
       final counts = state.countsFor(deck);
       expect(counts.due, 0);
       expect(counts.fresh, 7);

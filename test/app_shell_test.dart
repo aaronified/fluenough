@@ -25,7 +25,7 @@ void main() {
 
     expect(state.status, CatalogStatus.ready);
     expect(state.deckById('es-en-core-100'), isNotNull);
-    expect(state.deckById('ja-en-hiragana'), isNotNull);
+    expect(state.deckById('hi-en-script-vowels'), isNotNull);
     expect(state.brokenDecks, isEmpty);
     expect(state.currentProfile.id, Profile.defaultProfile.id);
 

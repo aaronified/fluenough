@@ -28,7 +28,7 @@ import 'package:fluenough/ui/widgets/target_text.dart';
 import '../../support/harness.dart';
 
 const String spanish = 'es-en-core-100';
-const String hiragana = 'ja-en-hiragana';
+const String consonants = 'hi-en-script-consonants';
 
 Future<AppState> pumpDrill(
   WidgetTester tester,
@@ -249,13 +249,13 @@ void main() {
     final links = FixedLinks();
     await pumpDrill(
       tester,
-      DrillRequest.deck(hiragana, skill: Skill.production),
-      preset: const DrillPreset(target: 'か'),
+      DrillRequest.deck(consonants, skill: Skill.production),
+      preset: const DrillPreset(target: 'क'),
       state: AppState.test(links: links),
     );
     final l10n = l10nOf(tester);
 
-    expect(find.text(l10n.drillTypeInScript('Japanese')), findsOneWidget);
+    expect(find.text(l10n.drillTypeInScript('Hindi')), findsOneWidget);
 
     // Below the fold on a phone: the body scrolls, as the design's does.
     await tester.ensureVisible(find.text(l10n.drillGetHeliboard));
@@ -351,15 +351,15 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpDrill(
       tester,
-      DrillRequest.deck(hiragana, skill: Skill.production),
-      preset: const DrillPreset(target: 'か'),
+      DrillRequest.deck(consonants, skill: Skill.production),
+      preset: const DrillPreset(target: 'क'),
       state: scaled(),
     );
     expect(fieldSize(), closeTo(22 * 1.4, 1e-9));
-    await typeAndCheck(tester, 'か');
+    await typeAndCheck(tester, 'क');
     final answer = find.descendant(
       of: find.byType(TargetText),
-      matching: find.text('か'),
+      matching: find.text('क'),
     );
     expect(sizeOf(answer), closeTo(28 * 1.4, 1e-9));
 
@@ -415,7 +415,7 @@ void main() {
     // Listening, with no voice on the phone: nothing to drill.
     await pumpDrill(
       tester,
-      DrillRequest.deck('ja-en-hiragana', skill: Skill.listening),
+      DrillRequest.deck(consonants, skill: Skill.listening),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillEmptyTitle), findsOneWidget);
@@ -427,16 +427,7 @@ void main() {
     usePhone(tester);
     // The first new card is a script's first letter: past its guide.
     final state = AppState.test();
-    for (final code in <String>[
-      'as',
-      'bn',
-      'gu',
-      'hi',
-      'kn',
-      'mr',
-      'te',
-      'ja',
-    ]) {
+    for (final code in <String>['as', 'bn', 'gu', 'hi', 'kn', 'mr', 'te']) {
       state.settings.markScriptGuideSeen(code);
     }
     await pumpDrill(tester, const DrillRequest.learnNew(1), state: state);
@@ -519,8 +510,8 @@ void main() {
       ),
       (
         'production, script and keyboard hint',
-        DrillRequest.deck(hiragana, skill: Skill.production),
-        const DrillPreset(target: 'か'),
+        DrillRequest.deck(consonants, skill: Skill.production),
+        const DrillPreset(target: 'क'),
       ),
       (
         'production, near miss',
