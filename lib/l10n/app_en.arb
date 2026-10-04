@@ -679,6 +679,27 @@
       }
     }
   },
+  "todayRevisionTitle": "Quick revision",
+  "@todayRevisionTitle": {
+    "description": "Today: the heading of the quick revision buttons, which revise words already learned."
+  },
+  "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
+  "@todayRevisionBody": {
+    "description": "Under Quick revision: what it does. Right answers are not recorded; wrong ones are."
+  },
+  "todayRevisionNone": "Revision opens up once you've had a lesson.",
+  "@todayRevisionNone": {
+    "description": "Under Quick revision when no word has been learned yet, with the buttons off."
+  },
+  "todayRevisionCards": "{count, plural, =1{Revise 1 word} other{Revise {count} words}}",
+  "@todayRevisionCards": {
+    "description": "Screen-reader label of a quick revision button, which shows only the number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "todayYourDecks": "Your decks",
   "@todayYourDecks": {
     "description": "Heading above the decks on Today."

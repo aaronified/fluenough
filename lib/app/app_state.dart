@@ -1003,9 +1003,28 @@ class AppState extends ChangeNotifier {
   /// The items of the session for [request], each asked as a review asks it
   /// ([reviewAsks]): what a drill runs.
   List<SessionItem> sessionItems(DrillRequest request) => reviewAsks(
-    buildSession(request).items,
+    _limited(buildSession(request).items, request.limit),
     canChoose: (item) => canChoose(item.card, Ask.chooseMeaning),
   );
+
+  /// At most [limit] of [items], one per word, picked at random: a quick
+  /// revision (ADR-0029). All of them, in order, when [limit] is null.
+  List<SessionItem> _limited(List<SessionItem> items, int? limit) {
+    if (limit == null) return items;
+    final shuffled = List<SessionItem>.of(items)..shuffle(random);
+    final words = <String>{};
+    return <SessionItem>[
+      for (final item in shuffled)
+        if (words.length < limit && words.add(item.card.id)) item,
+    ];
+  }
+
+  /// How many words a quick revision can pick from: every word taught, in a
+  /// skill it can be drilled in now.
+  int get revisableCount => <String>{
+    for (final item in buildSession(const DrillRequest(revise: true)).items)
+      item.card.id,
+  }.length;
 
   // ---------------------------------------------------------------------------
   // Lessons (ADR-0024)

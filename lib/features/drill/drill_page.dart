@@ -161,6 +161,7 @@ class _DrillPageState extends State<DrillPage> {
       inputMode: preset?.inputMode,
       recorded: !request.revise,
       revising: request.revise,
+      recordsMisses: request.recordsMisses,
     );
     preset?.apply(session);
     _session = session..addListener(_onSession);
