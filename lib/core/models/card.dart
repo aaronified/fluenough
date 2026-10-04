@@ -153,16 +153,18 @@ class Card {
   /// has a voice for the language, and whether it can recognise speech in it.
   ///
   /// A card that declares no modes gets recognition, production, listening
-  /// and speaking, except a phrase (`pos: phrase`), which is not typed: a
-  /// whole sentence is too hard to grade fairly (ADR-0010). A phrase can be
-  /// spoken, since the recogniser does the writing (ADR-0014).
+  /// and speaking, except that a phrase (`pos: phrase`) is not typed: a
+  /// whole sentence is too hard to grade fairly (ADR-0010). A phrase of two
+  /// words or more is produced by putting its words in order instead
+  /// ([rearranges], ADR-0024). A phrase can be spoken, since the recogniser
+  /// does the writing (ADR-0014).
   Set<DrillMode> modesIn({
     required bool ttsAvailable,
     bool speechAvailable = false,
   }) {
     final declared = modes.isNotEmpty
         ? modes
-        : pos == 'phrase'
+        : pos == 'phrase' && !rearranges
         ? const {DrillMode.recognition, DrillMode.listening, DrillMode.speaking}
         : const {
             DrillMode.recognition,
@@ -176,6 +178,14 @@ class Card {
             (speechAvailable || mode != DrillMode.speaking))
           mode,
     };
+  }
+
+  /// Whether producing this card is asked by putting its words in order
+  /// rather than typing it (ADR-0024): a sentence of three words or more,
+  /// or a phrase of two or more.
+  bool get rearranges {
+    final words = wordsOf(target).length;
+    return words >= 3 || (pos == 'phrase' && words >= 2);
   }
 
   /// The accepted answers for [mode], the first being the canonical one.
@@ -200,3 +210,13 @@ class Card {
   @override
   String toString() => 'Card($id: $target = $native)';
 }
+
+/// The words of [text], split at spaces, without what holds no letter, such
+/// as a dash standing alone. Punctuation stays with its word.
+List<String> wordsOf(String text) => <String>[
+  for (final word in text.trim().split(_space))
+    if (_letter.hasMatch(word)) word,
+];
+
+final RegExp _letter = RegExp(r'\p{L}', unicode: true);
+final RegExp _space = RegExp(r'\s+');

@@ -172,7 +172,9 @@ class DrillSession extends ChangeNotifier {
   // Recognition
 
   void reveal() {
-    if (item.mode != DrillMode.recognition || _phase != DrillPhase.prompt) {
+    if (item.mode != DrillMode.recognition ||
+        ask != Ask.own ||
+        _phase != DrillPhase.prompt) {
       return;
     }
     _phase = DrillPhase.revealed;
@@ -265,6 +267,9 @@ class DrillSession extends ChangeNotifier {
     if (mode == inputMode || _phase != DrillPhase.prompt) return;
     if (!_state.features.isAvailable(Feature.translitInput)) return;
     _chosenMode = mode;
+    // Words to put in order come in the other letters.
+    _tiles = null;
+    _placed.clear();
     notifyListeners();
   }
 
@@ -291,6 +296,7 @@ class DrillSession extends ChangeNotifier {
   void check(String typed) {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
+    if (ask != Ask.own) return;
     final accepted = item.card.acceptedAnswers(item.mode);
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
@@ -361,7 +367,9 @@ class DrillSession extends ChangeNotifier {
   void dontKnow() {
     if (_phase != DrillPhase.prompt ||
         item.mode == DrillMode.recognition ||
-        question != null) {
+        question != null ||
+        ask.chooses ||
+        ask == Ask.matchPairs) {
       return;
     }
     const grade = 1;
@@ -382,7 +390,12 @@ class DrillSession extends ChangeNotifier {
   /// "Continue", once the feedback is showing and the answer is recorded.
   void next() {
     if (_phase != DrillPhase.feedback) return;
-    if (_choice == null && _answer?.awaitsJudgement != false) return;
+    if (_choice == null &&
+        _picked == null &&
+        ask != Ask.matchPairs &&
+        _answer?.awaitsJudgement != false) {
+      return;
+    }
     _advance();
   }
 
@@ -662,17 +675,204 @@ class DrillSession extends ChangeNotifier {
   final Set<String> _declinedOnline = <String>{};
 
   // ---------------------------------------------------------------------------
+  // Choosing, matching and rearranging (ADR-0024)
 
-  void _record(int grade, {String? answerGiven}) {
+  /// How the current item is asked.
+  Ask get ask => item.ask;
+
+  /// How many options a choice question offers at most.
+  static const int optionCount = 4;
+
+  /// The grade a right choice or match records: right, but picked from a
+  /// few rather than recalled.
+  static const int choiceGrade = 4;
+
+  List<Card>? _options;
+
+  /// The current choice question's options, the card itself among them, in
+  /// the order shown: up to [optionCount], the others from
+  /// [AppState.choicePool], each showing something different.
+  List<Card> get options => _options ??= _pickOptions();
+
+  List<Card> _pickOptions() {
+    final card = item.card;
+    final pool = _state.choicePool(card, ask)..shuffle(_random);
+    final shown = <String>{ask.optionOf(card)};
+    final picked = <Card>[card];
+    for (final other in pool) {
+      if (picked.length == optionCount) break;
+      if (shown.add(ask.optionOf(other))) picked.add(other);
+    }
+    return picked..shuffle(_random);
+  }
+
+  Card? _picked;
+
+  /// The option picked on the current question, once it is.
+  Card? get picked => _picked;
+
+  /// Whether [option] is right: it shows what the card does.
+  bool isRight(Card option) => ask.optionOf(option) == ask.optionOf(item.card);
+
+  /// Picks [option] and records it at once: [choiceGrade] if right, 1 if
+  /// not.
+  void pick(Card option) {
+    if (!ask.chooses || _phase != DrillPhase.prompt) return;
+    _picked = option;
+    _record(
+      isRight(option) ? choiceGrade : 1,
+      answerGiven: ask.optionOf(option),
+    );
+    _phase = DrillPhase.feedback;
+    notifyListeners();
+  }
+
+  List<SessionItem>? _matchTargets;
+  List<SessionItem>? _matchMeanings;
+
+  /// The current match's items by their targets, and by their meanings,
+  /// each in an order of its own.
+  List<SessionItem> get matchTargets =>
+      _matchTargets ??= <SessionItem>[...item.group]..shuffle(_random);
+  List<SessionItem> get matchMeanings =>
+      _matchMeanings ??= <SessionItem>[...item.group]..shuffle(_random);
+
+  final Set<String> _matched = <String>{};
+  final Set<String> _missed = <String>{};
+
+  /// Whether [entry] of the current match is matched.
+  bool isMatched(SessionItem entry) => _matched.contains(entry.card.id);
+
+  /// Whether [entry]'s target was matched with a wrong meaning before.
+  bool wasMissed(SessionItem entry) => _missed.contains(entry.card.id);
+
+  /// Matches [target]'s target with [meaning]'s meaning, and returns
+  /// whether that is right. A right match is recorded for [target] at
+  /// once: [choiceGrade], or 1 if its target was matched wrongly before. A
+  /// wrong one records nothing yet. Once all are matched, the feedback
+  /// shows.
+  bool match(SessionItem target, SessionItem meaning) {
+    if (ask != Ask.matchPairs ||
+        _phase != DrillPhase.prompt ||
+        isMatched(target) ||
+        isMatched(meaning)) {
+      return false;
+    }
+    if (target.card.id != meaning.card.id) {
+      _missed.add(target.card.id);
+      notifyListeners();
+      return false;
+    }
+    _matched.add(target.card.id);
+    _recordItem(
+      target,
+      wasMissed(target) ? 1 : choiceGrade,
+      answerGiven: meaning.card.native,
+    );
+    _watch
+      ..reset()
+      ..start();
+    if (_matched.length == item.group.length) _phase = DrillPhase.feedback;
+    notifyListeners();
+    return true;
+  }
+
+  /// Whether the current card's words are put in order in Latin letters:
+  /// while [transliterating], when its reading has as many words as it.
+  bool get rearrangesReading {
+    final reading = item.card.reading;
+    return transliterating &&
+        reading != null &&
+        wordsOf(reading).length == wordsOf(item.card.target).length;
+  }
+
+  List<String> get _words =>
+      wordsOf(rearrangesReading ? item.card.reading! : item.card.target);
+
+  List<String>? _tiles;
+
+  /// The current card's words to put in order, shuffled out of order where
+  /// they can be.
+  List<String> get tiles => _tiles ??= _shuffledWords();
+
+  List<String> _shuffledWords() {
+    final words = _words;
+    final tiles = <String>[...words];
+    for (var i = 0; i < 8 && listEquals(tiles, words); i++) {
+      tiles.shuffle(_random);
+    }
+    return tiles;
+  }
+
+  final List<int> _placed = <int>[];
+
+  /// The [tiles] placed so far, by index, in the order placed.
+  List<int> get placed => List<int>.unmodifiable(_placed);
+
+  /// Places tile [index] next in the answer.
+  void place(int index) {
+    if (ask != Ask.rearrange ||
+        _phase != DrillPhase.prompt ||
+        index < 0 ||
+        index >= tiles.length ||
+        _placed.contains(index)) {
+      return;
+    }
+    _placed.add(index);
+    notifyListeners();
+  }
+
+  /// Takes tile [index] out of the answer, back among the others.
+  void unplace(int index) {
+    if (_phase != DrillPhase.prompt || !_placed.remove(index)) return;
+    notifyListeners();
+  }
+
+  /// Checks the words placed, once every tile is: right, recorded 5, if
+  /// they read as the card's target or another it accepts, in Latin
+  /// letters its readings; else 1.
+  void checkOrder() {
+    if (ask != Ask.rearrange ||
+        _phase != DrillPhase.prompt ||
+        _placed.length != tiles.length) {
+      return;
+    }
+    final given = <String>[for (final i in _placed) tiles[i]].join(' ');
+    final card = item.card;
+    final accepted = rearrangesReading
+        ? card.readings
+        : card.acceptedAnswers(DrillMode.production);
+    final right = accepted.any((a) => wordsOf(a).join(' ') == given);
+    final grade = right
+        ? AnswerOutcome.exact.toSm2Grade()
+        : AnswerOutcome.wrong.toSm2Grade();
+    _answer = TypedAnswer(
+      typed: given,
+      graded: right
+          ? GradedAnswer(AnswerOutcome.exact, matched: given)
+          : const GradedAnswer(AnswerOutcome.wrong, matched: null),
+      grade: grade,
+    );
+    _record(grade, answerGiven: given);
+    _phase = DrillPhase.feedback;
+    notifyListeners();
+  }
+
+  // ---------------------------------------------------------------------------
+
+  void _record(int grade, {String? answerGiven}) =>
+      _recordItem(item, grade, answerGiven: answerGiven);
+
+  void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
     if (recorded) {
       _state.record(
-        item,
+        entry,
         grade,
         elapsed: _watch.elapsed,
         answerGiven: answerGiven,
       );
     }
-    _answers.add(SessionAnswer(skill: skill, grade: grade));
+    _answers.add(SessionAnswer(skill: Skill.of(entry.mode), grade: grade));
   }
 
   // ---------------------------------------------------------------------------
@@ -738,6 +938,14 @@ class DrillSession extends ChangeNotifier {
     _answer = null;
     _choice = null;
     _choiceOrder = null;
+    _options = null;
+    _picked = null;
+    _matchTargets = null;
+    _matchMeanings = null;
+    _matched.clear();
+    _missed.clear();
+    _tiles = null;
+    _placed.clear();
     _hearing = false;
     _unheard = null;
     _watch

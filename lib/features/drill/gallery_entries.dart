@@ -2,6 +2,7 @@ import '../../app/app_state.dart';
 import '../../app/session.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
+import '../../core/scheduling/ask.dart';
 import '../../core/speech/speech_engine.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
@@ -32,6 +33,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
         'hi-en-script-vowels',
         skill: Skill.recognition,
       ),
+      // Rated: a preset keeps a card asked its own way.
       preset: const DrillPreset(target: 'अ'),
     ),
   ),
@@ -43,6 +45,57 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     builder: (_) => DrillPage(
       request: DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
       preset: const DrillPreset(target: 'la casa', reveal: true),
+    ),
+  ),
+  GalleryEntry(
+    id: 'drill-choose-meaning',
+    section: GallerySection.drills,
+    label: 'Recognition, multiple choice', // ui-literal-ok: debug-only gallery
+    note: 'See it, choose the meaning', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
+      preset: const DrillPreset(target: 'la casa', ask: Ask.chooseMeaning),
+    ),
+  ),
+  GalleryEntry(
+    id: 'drill-match',
+    section: GallerySection.drills,
+    label: 'Recognition, match pairs', // ui-literal-ok: debug-only gallery
+    note: 'Drag or tap words to meanings', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(
+      request: DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
+      preset: const DrillPreset(target: 'la casa', ask: Ask.matchPairs),
+    ),
+  ),
+  GalleryEntry(
+    id: 'drill-choose-word',
+    section: GallerySection.drills,
+    label: 'Production, multiple choice', // ui-literal-ok: debug-only gallery
+    note:
+        'See the meaning, choose the word', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(
+      request: DrillRequest.deck('hi-en-first-words', skill: Skill.production),
+      preset: const DrillPreset(target: 'नमस्कार', ask: Ask.chooseWord),
+    ),
+  ),
+  GalleryEntry(
+    id: 'drill-rearrange',
+    section: GallerySection.drills,
+    label: 'Production, rearrange', // ui-literal-ok: debug-only gallery
+    note: 'Put the words in order', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(
+      request: DrillRequest.deck('hi-en-first-words', skill: Skill.production),
+      preset: const DrillPreset(target: 'आप कैसे हैं?', ask: Ask.rearrange),
+    ),
+  ),
+  GalleryEntry(
+    id: 'drill-choose-heard',
+    section: GallerySection.drills,
+    label: 'Listening, multiple choice', // ui-literal-ok: debug-only gallery
+    note: 'Hear it, choose the word', // ui-literal-ok: debug-only gallery
+    builder: (_) => DrillPage(
+      request: DrillRequest.deck('hi-en-first-words', skill: Skill.listening),
+      preset: const DrillPreset(target: 'नमस्कार', ask: Ask.hearAndChoose),
     ),
   ),
   GalleryEntry(

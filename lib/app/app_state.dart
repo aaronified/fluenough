@@ -9,6 +9,7 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
+import '../core/models/reading.dart';
 import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
@@ -1038,6 +1039,45 @@ class AppState extends ChangeNotifier {
     }
     return true;
   }
+
+  /// The cards a [ask] question about [card] takes its other options from
+  /// (ADR-0024): its deck's other cards of the same kind, each showing a
+  /// different option, or, when they show fewer than three, those of every
+  /// deck of its course as well.
+  List<Card> choicePool(Card card, Ask ask) {
+    final entry = deckOf(card);
+    if (entry == null) return const <Card>[];
+    final right = ask.optionOf(card);
+    final cell = card.modes.contains(DrillMode.grammar);
+    bool alike(Card c) =>
+        c.id != card.id &&
+        c is! QuestionCard &&
+        c is! NumberCard &&
+        c.modes.contains(DrillMode.grammar) == cell &&
+        ask.optionOf(c) != right;
+    final own = entry.cards.where(alike).toList();
+    if (own.map(ask.optionOf).toSet().length >= 3) return own;
+    return <Card>[
+      ...own,
+      for (final other in decks)
+        if (other.id != entry.id &&
+            other.language.code == entry.language.code &&
+            other.deck.native.code == entry.deck.native.code)
+          ...other.cards.where(alike),
+    ];
+  }
+
+  /// Whether a [ask] question about [card] has at least two wrong options
+  /// to offer. Without, it is asked its own way.
+  bool canChoose(Card card, Ask ask) =>
+      choicePool(card, ask).map(ask.optionOf).toSet().length >= 2;
+
+  /// The items of the session for [request], each asked as a review asks it
+  /// ([reviewAsks]): what a drill runs.
+  List<SessionItem> sessionItems(DrillRequest request) => reviewAsks(
+    buildSession(request).items,
+    canChoose: (item) => canChoose(item.card, Ask.chooseMeaning),
+  );
 
   /// Whether [language]'s course has decks that need its alphabet, so that
   /// it can be learned without them.
