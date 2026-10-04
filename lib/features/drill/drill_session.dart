@@ -248,6 +248,10 @@ class DrillSession extends ChangeNotifier {
     );
   }
 
+  /// [reading] as a learner types it, without ISO 15919's marks (ADR-0025):
+  /// what the Latin-letters hint shows.
+  String asTyped(String reading) => _spelling.asTyped(reading);
+
   /// Whether the current card's language is learned with its alphabet.
   bool get learnsAlphabet => _state.settings.learnsAlphabet(deck.language.code);
 
