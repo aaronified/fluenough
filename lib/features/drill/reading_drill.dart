@@ -9,6 +9,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
@@ -400,7 +401,8 @@ class _InLanguage extends StatelessWidget {
 }
 
 /// The passage, a sentence at a time: the text, its reading when Show
-/// romanisation is on, and with a voice, a button to hear it.
+/// romanisation is on, its IPA when Show IPA is, and with a voice, a button
+/// to hear it.
 class _PassageText extends StatelessWidget {
   const _PassageText({
     required this.session,
@@ -447,6 +449,12 @@ class _PassageText extends StatelessWidget {
                             style: theme.textTheme.bodyMedium!.copyWith(
                               color: scheme.onSurfaceVariant,
                             ),
+                          ),
+                        if (ipaToShow(context, sentence.ipa) case final ipa?)
+                          IpaText(
+                            ipa,
+                            fontSize: 14,
+                            textAlign: TextAlign.start,
                           ),
                       ],
                     ),
@@ -533,8 +541,9 @@ class _WordsButton extends StatelessWidget {
 }
 
 /// A passage's glossary: each older or unusual word as the passage writes
-/// it, today's form, its reading when Show romanisation is on, its meaning
-/// and any note, in the language the learner speaks best of those given.
+/// it, today's form, its reading when Show romanisation is on, its IPA when
+/// Show IPA is, its meaning and any note, in the language the learner
+/// speaks best of those given.
 class Glossary extends StatelessWidget {
   const Glossary({super.key, required this.passage, required this.language});
 
@@ -608,6 +617,8 @@ class Glossary extends StatelessWidget {
                         color: scheme.onSurfaceVariant,
                       ),
                     ),
+                  if (ipaToShow(context, entry.ipa) case final ipa?)
+                    IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
                   _InLanguage(
                     entry.meaning[bestLanguage(entry.meaning.keys, spoken)]!,
                     code: bestLanguage(entry.meaning.keys, spoken),

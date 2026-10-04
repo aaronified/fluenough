@@ -9,6 +9,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
@@ -131,6 +132,7 @@ class _TypedDrillState extends State<TypedDrill> {
               expected: session.acceptedAnswers.first,
               transliterating: translit,
               language: session.typesDigits ? null : language,
+              ipa: ipaToShow(context, card.ipa, target: card.target),
             ),
       actions: _actions(context, answer, typing: typing),
     );

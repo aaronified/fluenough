@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
@@ -41,6 +42,7 @@ class RearrangeDrill extends StatelessWidget {
     final tiles = session.tiles;
     final placed = session.placed;
     final reading = card.reading;
+    final ipa = ipaToShow(context, card.ipa, target: card.target);
 
     Widget word(int index, {required bool inAnswer}) => _WordTile(
       text: tiles[index],
@@ -150,6 +152,7 @@ class RearrangeDrill extends StatelessWidget {
           ? FeedbackBanner(
               kind: FeedbackKind.correct,
               title: l10n.feedbackCorrect,
+              ipa: ipa,
             )
           : FeedbackBanner(
               kind: FeedbackKind.wrong,
@@ -159,6 +162,7 @@ class RearrangeDrill extends StatelessWidget {
               ),
               quotes: <String>[if (!latin) card.target],
               language: latin ? null : language,
+              ipa: ipa,
             ),
       actions: <Widget>[
         if (answer == null)

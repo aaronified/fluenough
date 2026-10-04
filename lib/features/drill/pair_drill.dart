@@ -10,6 +10,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/ipa_text.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
@@ -168,6 +169,7 @@ class _PairDrillState extends State<PairDrill> {
                   ? l10n.feedbackPairCorrect(heard.reading)
                   : l10n.feedbackPairWrong(heard.reading),
               detail: l10n.feedbackPairHeard(heard.target),
+              ipa: ipaToShow(context, heard.ipa, target: heard.target),
             ),
       actions: picked == null
           ? const <Widget>[]
