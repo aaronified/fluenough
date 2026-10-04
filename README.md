@@ -109,8 +109,9 @@ writes the sound: Bengali ঈ is *i*, as ই is.
 | x | Assamese's own sound, as in Scottish *loch*; ISO 15919 has no letter for it | অসম *ôxôm* |
 
 Each language's file in `decks/<code>/<code>-romanisation.yaml` says how its
-readings are written, in a paragraph. Next to each reading the card shows how
-the word is said in the **IPA**, the International Phonetic Alphabet: /paːlu/.
+readings are written, in a paragraph. Each card also records how the word is
+said in the **IPA**, the International Phonetic Alphabet: /paːlu/. The app
+does not show it yet.
 
 A typed answer needs none of the marks. *palu*, *paalu* and *pālu* are all
 right for పాలు, as *kitna* and *kitnaa* are for कितना: answers are compared
