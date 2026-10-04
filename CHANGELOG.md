@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-04
+
+### Added
+
+- A daily lesson for each language you learn: nine new words, three easy, three medium and three hard. Each word is taught, then checked at once, then asked again in another skill, so you hear and say words from the first lesson. Once today's lesson is done, Today offers another (#174).
+- New kinds of question: choose a word's meaning, choose the word, or choose the word you heard; match four words with their meanings by dragging or tapping; and put a sentence's words in order. Reviews use them instead of rating yourself, and phrases are now practised by putting their words in order (#173).
+- Assamese, taught from English: a full course like Telugu's, with its script, 18 themes, 24 grammar decks, a reading deck written for it, facts and number rules. No Assamese speaker has checked it yet, and every deck says so (#165).
+- Marathi, Kannada and Gujarati, taught from English, each a full course like Telugu's. No speaker has checked them yet (#155).
+- Learn a language without its alphabet: asked for each language as you choose it, and switchable in Settings > Alphabets. Its script, spelling and reading decks are left out, words show their romanisation first, and you answer in Latin letters for full credit (#167).
+- Answer in Latin letters: production, listening and grammar drills offer Script or Latin letters. Common spellings such as `ee` for `i` count as the same answer (#47, #166).
+- Report a bug, a feature or a suggestion from the bug icon on every screen, from Report a mistake on unchecked decks, or from a card in Inspect. Reports are text only, and your device's details are added only if you tick the box. Until mail reports are set up, reports open GitHub's new-issue form (#157).
+- Inspect a deck: every card in one scrolling list, two or three lines each with its id, opening in place to show the rest (#159).
+- A Pure black switch in Appearance, for OLED screens: black backgrounds whenever the app is dark (#163).
+- Add your own deck from a file, placed in its course by the path's wildcards (#156).
+- Search decks word by word, by language, theme and kind (#154).
+- Review several languages one at a time, with a break between (#153).
+- Settings shows a Logs section, marked "Feature incoming" (#162).
+
+### Changed
+
+- Every course now opens with a few words and basic sentences, then the sounds English lacks and how the grammar differs, then five more themes; the script comes after those six themes. Until you reach it, typed answers start in Latin letters and count in full; after it, a right answer in Latin letters counts as a hard recall (#168).
+- New words come only in lessons. Start review is your due reviews and the other skills of words you have been taught, and the new-cards-per-day setting is gone. A deck with nothing due offers a lesson of its words (#174).
+- Every reading now follows one scheme per language, the way it is typed in chat: lowercase, with no length or retroflex marks, spelled as said (`pani`, not `paanii`). Hindi writes ड़ as `r` (`larka`) (#164).
+- Japanese is no longer in the app; for foreign languages there is Spanish for now. Its decks stay in the repository (#171).
+- The keyboard tip under a typed answer is now one line: "No Hindi keyboard? Try HeliBoard." (#158).
+- Telugu and Kannada answers accept `f` for `ph` (#172).
+
+### Fixed
+
+- The colour swatches in Appearance were invisible except for the one chosen (#161).
+- In Inspect, a card's Report button sits beside its id, and a deck that can't be found still has the bug icon (#172).
+- A report from placement didn't name its screen (#172).
+
 ## [0.2.0] - 2026-10-03
 
 ### Added
@@ -40,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release. For changes before this point, see the commit history.
 
-[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/aaronified/fluenough/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/aaronified/fluenough/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/aaronified/fluenough/releases/tag/v0.1.0
