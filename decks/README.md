@@ -75,13 +75,17 @@ speakers type it in a chat, and names that scheme in its
   are both `sh`. ड़ is `r` and ढ़ is `rh`.
 - **Retroflex and dental consonants are not told apart** in the reading. The
   script tells them apart, and the notes say so where it matters.
-- **A letter card for ङ or ञ on its own** (and their Bengali, Telugu,
-  Kannada and Gujarati twins) reads `nga` or `nya`, so that it differs from
-  न. Words write `n`.
+- **A letter card for ङ or ञ on its own** (and their Telugu, Kannada,
+  Gujarati and Assamese twins) reads `nga` or `nya`, so that it differs
+  from न; Bengali's read `ngo` and `nyo`, as every Bengali letter's name
+  ends in o. Words write `n`.
 - **A grammar row whose lemma is English** has no `reading`; its forms do.
 - **Spellings learners also type**, such as `ee` for `i` or `w` for `v`, are
   listed as `equivalents` in the romanisation file. Grading treats them as
   the decks' own.
+
+Assamese writes স, শ and ষ as `x` (*Axom*) and ও as `u` (*mur*), as it is
+typed in chat; `decks/as/as-romanisation.yaml` says so.
 
 Bengali differs in two ways, and its readings follow how it is said:
 

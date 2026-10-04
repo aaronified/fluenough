@@ -87,6 +87,8 @@ void main() {
     expect(find.text(passage.title), findsOneWidget);
     final question = passage.questions.first;
     await scrollTo(tester, find.text(l10n.inspectId(question.id)));
+    await tester.ensureVisible(find.text(l10n.inspectId(question.id)));
+    await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.inspectId(question.id)));
     await tester.pumpAndSettle();
     expect(
