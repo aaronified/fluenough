@@ -1,7 +1,8 @@
-# The order Kannada is taught from English in: one unit per line. First the
-# script, the sounds English lacks, and how Kannada grammar differs from
-# English; then a theme deck and the grammar that goes with it. Every kn-en
-# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
+# The order Kannada is taught from English in: one unit per line. First a
+# few words and basic sentences, the sounds English lacks and how Kannada
+# grammar differs from English; then five more themes, each with the grammar
+# that goes with it; then the script, before the rest. Every kn-en deck is
+# listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: kn-en-path
@@ -20,16 +21,16 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [kn-en-script-vowels, kn-en-script-consonants, kn-en-script-reading]
-  - [kn-en-script-vowel-signs, kn-en-script-conjuncts]
+  - [kn-en-first-words, kn-en-grammar-sentences, "*"]
   - [kn-en-sound-differences]
   - [kn-en-grammar-differences]
-  - [kn-en-first-words, kn-en-grammar-sentences, "*"]
   - [kn-en-questions, kn-en-grammar-questions, "*"]
   - [kn-en-addressing, kn-en-grammar-pronouns, "*"]
   - [kn-en-about-me, "*"]
   - [kn-en-family, kn-en-grammar-be, "*"]
   - [kn-en-work, kn-en-grammar-demonstratives, "*"]
+  - [kn-en-script-vowels, kn-en-script-consonants, kn-en-script-reading]
+  - [kn-en-script-vowel-signs, kn-en-script-conjuncts]
   - [kn-en-numbers-1-20, "*"]
   - [kn-en-numbers-big, "*"]
   - [kn-en-market, kn-en-grammar-nouns, kn-en-grammar-articles, "*"]

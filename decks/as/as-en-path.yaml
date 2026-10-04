@@ -1,7 +1,8 @@
-# The order Assamese is taught from English in: one unit per line. First the
-# script, the sounds English lacks, and how Assamese grammar differs from
-# English; then a theme deck and the grammar that goes with it. Every as-en
-# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
+# The order Assamese is taught from English in: one unit per line. First a
+# few words and basic sentences, the sounds English lacks and how Assamese
+# grammar differs from English; then five more themes, each with the grammar
+# that goes with it; then the script, before the rest. Every as-en deck is
+# listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: as-en-path
@@ -20,16 +21,16 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [as-en-script-vowels, as-en-script-consonants, as-en-script-reading]
-  - [as-en-script-vowel-signs, as-en-script-conjuncts]
+  - [as-en-first-words, as-en-grammar-sentences, "*"]
   - [as-en-sound-differences]
   - [as-en-grammar-differences]
-  - [as-en-first-words, as-en-grammar-sentences, "*"]
   - [as-en-questions, as-en-grammar-questions, "*"]
   - [as-en-addressing, as-en-grammar-pronouns, "*"]
   - [as-en-about-me, "*"]
   - [as-en-family, as-en-grammar-be, "*"]
   - [as-en-work, as-en-grammar-demonstratives, "*"]
+  - [as-en-script-vowels, as-en-script-consonants, as-en-script-reading]
+  - [as-en-script-vowel-signs, as-en-script-conjuncts]
   - [as-en-numbers-1-20, "*"]
   - [as-en-numbers-big, "*"]
   - [as-en-market, as-en-grammar-nouns, as-en-grammar-articles, "*"]

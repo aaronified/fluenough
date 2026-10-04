@@ -79,10 +79,13 @@ void main() {
       expect(cells, hasLength(1));
       expect(cells.single.prompt, 'one: be (exist), one');
       expect(cells.single.answer, 'am');
-      expect(cells.single.table, <({String slot, String? form})>[
-        (slot: 'one', form: 'am'),
-        (slot: 'two', form: null),
-      ]);
+      expect(
+        cells.single.table,
+        <({String slot, String? form, String? reading})>[
+          (slot: 'one', form: 'am', reading: null),
+          (slot: 'two', form: null, reading: null),
+        ],
+      );
     });
 
     test('are found in the real pattern by lemma and slot', () async {

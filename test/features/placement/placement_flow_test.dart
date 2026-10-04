@@ -12,6 +12,7 @@ import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
@@ -404,6 +405,18 @@ void main() {
     expect(without.intersection(alphabet), isEmpty);
     expect(decksOf(withAlphabet).difference(without), alphabet);
     expect(decksOf(state.pendingUnits).intersection(alphabet), isEmpty);
+  });
+
+  testWidgets("without the alphabet, placement's check shows the reading "
+      'first', (tester) async {
+    usePhone(tester);
+    final state = await pumpFirstLaunch(tester);
+    final l10n = l10nOf(tester);
+    await tapText(tester, nameOf(state, 'hi'));
+    await tapText(tester, l10n.commonContinue);
+    await tapText(tester, l10n.alphabetSkip);
+    await tapText(tester, l10n.placementFind);
+    expect(find.byType(ReadingFirst), findsOneWidget);
   });
 
   testWidgets('a course with nothing but its script says so without the '

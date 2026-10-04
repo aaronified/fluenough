@@ -1,7 +1,8 @@
-# The order Marathi is taught from English in: one unit per line. First the
-# script, the sounds English lacks, and how Marathi grammar differs from
-# English; then a theme deck and the grammar that goes with it. Every mr-en
-# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
+# The order Marathi is taught from English in: one unit per line. First a
+# few words and basic sentences, the sounds English lacks and how Marathi
+# grammar differs from English; then five more themes, each with the grammar
+# that goes with it; then the script, before the rest. Every mr-en deck is
+# listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: mr-en-path
@@ -20,16 +21,16 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [mr-en-script-vowels, mr-en-script-consonants, mr-en-script-reading]
-  - [mr-en-script-vowel-signs, mr-en-script-conjuncts]
+  - [mr-en-first-words, mr-en-grammar-sentences, "*"]
   - [mr-en-sound-differences]
   - [mr-en-grammar-differences]
-  - [mr-en-first-words, mr-en-grammar-sentences, "*"]
   - [mr-en-questions, mr-en-grammar-questions, "*"]
   - [mr-en-addressing, mr-en-grammar-pronouns, "*"]
   - [mr-en-about-me, mr-en-grammar-present, "*"]
   - [mr-en-family, mr-en-grammar-be, "*"]
   - [mr-en-work, mr-en-grammar-demonstratives, "*"]
+  - [mr-en-script-vowels, mr-en-script-consonants, mr-en-script-reading]
+  - [mr-en-script-vowel-signs, mr-en-script-conjuncts]
   - [mr-en-numbers-1-20, "*"]
   - [mr-en-numbers-big, "*"]
   - [mr-en-market, mr-en-grammar-nouns, mr-en-grammar-articles, "*"]

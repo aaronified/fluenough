@@ -92,13 +92,10 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     label: 'Production, transliteration', // ui-literal-ok: debug-only gallery
     note: 'Latin letters instead (#47)', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
-      request: DrillRequest.deck(
-        'hi-en-script-consonants',
-        skill: Skill.production,
-      ),
+      request: DrillRequest.deck('hi-en-first-words', skill: Skill.production),
       preset: const DrillPreset(
-        target: 'क',
-        typed: 'ka',
+        target: 'नमस्कार',
+        typed: 'namaskar',
         inputMode: InputMode.translit,
       ),
     ),
