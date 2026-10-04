@@ -7,7 +7,9 @@ import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_scope.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/routes.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/theme.dart';
 
@@ -118,4 +120,56 @@ class FailOnceDeckSource implements DeckSource {
 
   @override
   Future<String> read(String path) => _decks.read(path);
+}
+
+/// The state [build] makes, with the first [count] words of each of
+/// [languages]'s next lesson taught three days ago, so that they are due:
+/// new words come in lessons (ADR-0024), so a fresh learner has nothing to
+/// review. [build] is called twice, the first time to find the words.
+Future<AppState> withReviewsDue(
+  AppState Function(MemoryProgress progress) build,
+  List<String> languages, {
+  int count = 4,
+}) async {
+  final base = build(MemoryProgress());
+  await base.load();
+  final progress = MemoryProgress();
+  for (final code in languages) {
+    for (final card in base.untaughtCards(code).take(count)) {
+      progress.record(
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: base.now().subtract(const Duration(days: 3)),
+      );
+    }
+  }
+  return build(progress);
+}
+
+/// The state [build] makes, with the first [count] words of [deckId], or
+/// all of them, taught in [mode] three days ago, so that they are due and
+/// their other skills can be drilled on the deck's screen (ADR-0024).
+/// [build] is called twice, the first time to find the words.
+Future<AppState> withDeckTaught(
+  AppState Function(MemoryProgress progress) build,
+  String deckId, {
+  int? count,
+  DrillMode mode = DrillMode.recognition,
+}) async {
+  final base = build(MemoryProgress());
+  await base.load();
+  final cards = base.deckById(deckId)!.cards;
+  final progress = MemoryProgress();
+  for (final card in cards.take(count ?? cards.length)) {
+    progress.record(
+      deckId: card.deckId,
+      cardId: card.id,
+      mode: mode,
+      grade: 4,
+      now: base.now().subtract(const Duration(days: 3)),
+    );
+  }
+  return build(progress);
 }

@@ -17,7 +17,7 @@ TextStyle settingsHelpStyle(ThemeData theme) =>
     );
 
 /// A slider with its name and value above it, and an optional help line:
-/// "New cards per day", "Speech rate", "Card text size".
+/// "Speech rate", "Card text size".
 ///
 /// Live, it reads as one slider named [title], its value spoken through
 /// [semanticValue]. Incoming, it is dimmed with a badge beside the title

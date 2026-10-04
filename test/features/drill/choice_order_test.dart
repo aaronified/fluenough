@@ -24,7 +24,7 @@ void main() {
     state = AppState.test();
     await state.load();
     final items = state
-        .buildSession(DrillRequest.deck(sahajPath, skill: Skill.reading))
+        .buildSession(DrillRequest.untaught(sahajPath, skill: Skill.reading))
         .items;
     // The session from its first question with options.
     final first = items.indexWhere(

@@ -159,8 +159,7 @@ class SessionQueue {
   ///
   /// [modes] limits the session to the modes the learner has switched on, or
   /// to one mode for "practise one skill". [newCardLimit] is how many new
-  /// pairs may still be introduced today: the daily cap less those already
-  /// introduced. A negative limit counts as zero. [canHear] says whether the
+  /// pairs may be introduced. A negative limit counts as zero. [canHear] says whether the
   /// phone can recognise speech in a card's language; without it, nothing is
   /// drilled by speaking.
   ///
@@ -305,8 +304,7 @@ class SessionQueue {
 
   bool get isNotEmpty => !isEmpty;
 
-  /// The same session with the due reviews left out: only new material, as
-  /// "Learn 5 new cards" drills.
+  /// The same session with the due reviews left out: only new material.
   SessionQueue withoutDue() => SessionQueue._(const <SessionItem>[], fresh);
 
   /// How many items the session drills in each mode. Modes with none are

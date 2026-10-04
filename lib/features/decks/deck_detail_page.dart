@@ -6,6 +6,8 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/reading.dart';
+import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
@@ -22,8 +24,8 @@ import 'unreviewed_notice.dart';
 /// One deck: counts, practise one skill, only these tags, a card preview,
 /// or for a reading deck its passages (#98), licence, source, voice and id,
 /// and at the foot Review all due; once
-/// nothing is due, Learn anyway while cards are left to learn past today's
-/// cap, then Revise when every card is learned (ADR-0012).
+/// nothing is due, a lesson of its words while some are not taught yet
+/// (ADR-0024), then Revise when every card is learned (ADR-0012).
 ///
 /// Design screens `deck` and `deck-novoice`. The counts are
 /// `AppState.countsFor`, the deck's numbers whatever tags are chosen; the
@@ -108,10 +110,19 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
         final counts = state.countsFor(entry);
         final all = DrillRequest.deck(entry.id, tags: _tags);
         final allCount = state.buildSession(all).items.length;
-        final more = DrillRequest.learnAnyway(entry.id, tags: _tags);
-        final moreCount = allCount > 0
-            ? 0
-            : state.buildSession(more).items.length;
+        // Nothing due: a lesson of this deck's next words (ADR-0024).
+        final more = DrillRequest.lesson(
+          language: entry.language.code,
+          deckId: entry.id,
+        );
+        final lesson = allCount > 0
+            ? const <SessionItem>[]
+            : state.lessonFor(more);
+        // A reading deck's lesson is its next passage.
+        final reading = lesson.isNotEmpty && lesson.first.card is QuestionCard;
+        final moreCount = reading
+            ? lesson.length
+            : lesson.where((i) => i.ask == Ask.teach).length;
         final revise = DrillRequest.revise(entry.id, tags: _tags);
         final reviseCount = allCount > 0 || moreCount > 0
             ? 0
@@ -155,9 +166,11 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
           ),
           bottomNavigationBar: moreCount > 0
               ? _ReviewAllBar(
-                  note: l10n.deckLearnAnywayNote,
+                  note: l10n.deckLessonNote,
                   icon: Icons.add_rounded,
-                  label: l10n.deckLearnAnyway(moreCount),
+                  label: reading
+                      ? l10n.deckLessonReading
+                      : l10n.deckLesson(moreCount),
                   onPressed: () => AppNavigator.startDrill(context, more),
                 )
               : reviseCount > 0
@@ -373,9 +386,9 @@ class _TagFilter extends StatelessWidget {
 }
 
 /// "Review all due · 12", pinned under the scrolling content. Once nothing
-/// is due it offers what is left: "Learn anyway" while the deck has cards to
-/// learn past today's cap, then "Revise" when every card is learned, each
-/// with a [note] saying why.
+/// is due it offers what is left: a lesson while the deck has words not
+/// taught yet, then "Revise" when every card is learned, each with a [note]
+/// saying why.
 class _ReviewAllBar extends StatelessWidget {
   const _ReviewAllBar({
     required this.label,

@@ -69,7 +69,8 @@ time, so older history imported onto a new phone takes its place. See
 ## The review cycle
 
 1. `Scheduler.dueCards(deck, mode, limit)` queries `card_states` for
-   `due_at <= now`, plus new cards up to a daily cap.
+   `due_at <= now`, plus the new skills of words already taught; new words
+   come in daily lessons (ADR-0024).
 2. The drill presents the card according to its mode.
 3. The user answers. Machine-graded modes run the answer through
    `AnswerGrader`; `recognition` asks the user to self-assess.

@@ -6,6 +6,7 @@ import 'package:fluenough/app/links.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -37,8 +38,16 @@ Future<AppState> pumpDeck(
   state: state,
 );
 
-AppState withSpanishVoice() =>
-    AppState.test(tts: FixedTtsEngine(const <String>{'es'}));
+/// With a Spanish voice, and the deck's first six words taught three days
+/// ago: its skills have something to drill (ADR-0024).
+Future<AppState> withSpanishVoice() => withDeckTaught(
+  (progress) => AppState.test(
+    tts: FixedTtsEngine(const <String>{'es'}),
+    progress: progress,
+  ),
+  spanish,
+  count: 6,
+);
 
 Finder skillRow(AppLocalizations l10n, Skill skill) =>
     find.widgetWithText(GroupedTile, skill.label(l10n));
@@ -56,7 +65,11 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpDeck(tester, spanish, state: withSpanishVoice());
+    final state = await pumpDeck(
+      tester,
+      spanish,
+      state: await withSpanishVoice(),
+    );
     final l10n = l10nOf(tester);
     final entry = state.deckById(spanish)!;
     final language = entry.language;
@@ -109,8 +122,13 @@ void main() {
     expect(find.text(l10n.deckSourceBundled), findsOneWidget);
     expect(find.text(l10n.deckVoiceInstalled(language.ttsTag)), findsOneWidget);
     expect(find.text(spanish), findsOneWidget);
+    // Review all: what is due, and the new skills of the words taught.
     expect(
-      find.text(l10n.deckReviewAll(counts.due + counts.fresh)),
+      find.text(
+        l10n.deckReviewAll(
+          state.buildSession(DrillRequest.deck(spanish)).length,
+        ),
+      ),
       findsOneWidget,
     );
   });
@@ -270,7 +288,7 @@ void main() {
 
   testWidgets('a skill button starts that skill on this deck', (tester) async {
     usePhone(tester);
-    await pumpDeck(tester, spanish, state: withSpanishVoice());
+    await pumpDeck(tester, spanish, state: await withSpanishVoice());
     final l10n = l10nOf(tester);
 
     await tapVisible(
@@ -288,7 +306,15 @@ void main() {
 
   testWidgets('chosen tags narrow what Review all due starts', (tester) async {
     usePhone(tester);
-    final state = await pumpDeck(tester, spanish);
+    // Every word taught, so that each tag has something due.
+    final state = await pumpDeck(
+      tester,
+      spanish,
+      state: await withDeckTaught(
+        (progress) => AppState.test(progress: progress),
+        spanish,
+      ),
+    );
     final l10n = l10nOf(tester);
     final entry = state.deckById(spanish)!;
     final counts = state.countsFor(entry);
@@ -314,7 +340,15 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpDeck(tester, grammar);
+    final state = await pumpDeck(
+      tester,
+      grammar,
+      state: await withDeckTaught(
+        (progress) => AppState.test(progress: progress),
+        grammar,
+        mode: DrillMode.grammar,
+      ),
+    );
     final l10n = l10nOf(tester);
     final entry = state.deckById(grammar)!;
     final pattern = entry.deck.pattern!;

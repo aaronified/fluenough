@@ -542,7 +542,7 @@ class DrillSession extends ChangeNotifier {
         for (final sentence in card.passage.sentences) sentence.text,
       ], null);
     }
-    if (item.mode != DrillMode.listening) return;
+    if (item.mode != DrillMode.listening && ask != Ask.teach) return;
     final playingIndex = _index;
     _playing = true;
     notifyListeners();
@@ -673,6 +673,18 @@ class DrillSession extends ChangeNotifier {
 
   /// Languages whose online question the learner declined in this session.
   final Set<String> _declinedOnline = <String>{};
+
+  // ---------------------------------------------------------------------------
+  // Teaching (ADR-0024)
+
+  /// Whether the phone has a voice for the current card's language.
+  bool get canPlay => _state.hasVoice(deck.language);
+
+  /// On from a card being taught. Nothing is recorded: its questions are.
+  void learnt() {
+    if (ask != Ask.teach) return;
+    _advance();
+  }
 
   // ---------------------------------------------------------------------------
   // Choosing, matching and rearranging (ADR-0024)
@@ -898,6 +910,8 @@ class DrillSession extends ChangeNotifier {
   /// in a language found not to be heard at all, or whose online question
   /// the learner declined and has not since allowed.
   bool _drillable(SessionItem item) {
+    // A word is taught whatever comes of its questions.
+    if (item.ask == Ask.teach) return true;
     final itemSkill = Skill.of(item.mode);
     final language = _state.deckOf(item.card)?.language;
     final code = language?.code;

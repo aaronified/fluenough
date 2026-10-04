@@ -43,7 +43,7 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpToday(tester);
+    final state = await pumpToday(tester, state: await fixtureState());
     final l10n = l10nOf(tester);
 
     final queue = state.buildSession(const DrillRequest.today());
@@ -113,7 +113,13 @@ void main() {
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['hi'],
     );
-    await pumpToday(tester, state: AppState.test(settings: settings));
+    await pumpToday(
+      tester,
+      state: await withReviewsDue(
+        (progress) => AppState.test(settings: settings, progress: progress),
+        const <String>['hi'],
+      ),
+    );
     await tapVisible(tester, find.text(l10nOf(tester).todayStartReview));
     final drill = tester.widget<DrillPage>(find.byType(DrillPage));
     expect(drill.request.deckIds, isNull);
@@ -131,7 +137,10 @@ void main() {
     );
     final state = await pumpToday(
       tester,
-      state: AppState.test(settings: settings),
+      state: await withReviewsDue(
+        (progress) => AppState.test(settings: settings, progress: progress),
+        const <String>['bn', 'hi'],
+      ),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.todayStartReview), findsNothing);
@@ -208,7 +217,13 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    await pumpToday(tester);
+    await pumpToday(
+      tester,
+      state: await withReviewsDue(
+        (progress) => AppState.test(progress: progress),
+        const <String>['es'],
+      ),
+    );
     final l10n = l10nOf(tester);
     final tile = find.bySemanticsLabel(
       l10n.todaySkillNoVoice(l10n.skillListening),
@@ -226,7 +241,13 @@ void main() {
     usePhone(tester);
     final state = await pumpToday(
       tester,
-      state: AppState.test(tts: FixedTtsEngine(const <String>{'es', 'hi'})),
+      state: await withReviewsDue(
+        (progress) => AppState.test(
+          tts: FixedTtsEngine(const <String>{'es', 'hi'}),
+          progress: progress,
+        ),
+        const <String>['es', 'hi'],
+      ),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.commonNoVoice), findsNothing);
@@ -248,17 +269,8 @@ void main() {
     expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
     expect(find.text(l10n.todayAllDoneBody), findsOneWidget);
     expect(find.text(l10n.todayStartReview), findsNothing);
-    // Today now counts towards the streak and the new-card cap.
+    // Today now counts towards the streak.
     expect(find.text(l10n.todayStreak(13)), findsOneWidget);
-    expect(
-      find.text(
-        l10n.todayNewCards(
-          state.progress.newIntroducedOn(state.now()),
-          state.settings.newCardsPerDay,
-        ),
-      ),
-      findsOneWidget,
-    );
   });
 
   testWidgets('the streak and each day of the week come from the history', (
@@ -270,7 +282,7 @@ void main() {
     final l10n = l10nOf(tester);
 
     expect(find.text(l10n.todayStreak(12)), findsOneWidget);
-    expect(find.text(l10n.todayNewCards(0, 20)), findsOneWidget);
+    expect(find.text(l10n.todayNewWords(0)), findsOneWidget);
 
     // The fixture practised every day before today: six ticks, then today.
     final name = DateFormat.EEEE('en');
@@ -342,8 +354,7 @@ void main() {
       bySkill: const <Skill, int>{},
       noVoice: false,
       streak: 0,
-      newDone: 0,
-      newLimit: 20,
+      newWords: 0,
       week: const <WeekDay>[],
     );
     expect(withDue(0).minutes, 0);

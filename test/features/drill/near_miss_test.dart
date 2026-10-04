@@ -21,7 +21,7 @@ void main() {
     state = AppState.test();
     await state.load();
     final queue = state.buildSession(
-      DrillRequest.deck(future, skill: Skill.grammar),
+      DrillRequest.untaught(future, skill: Skill.grammar),
     );
     session = DrillSession(state: state, items: queue.items);
   });
