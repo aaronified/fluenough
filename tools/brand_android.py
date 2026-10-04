@@ -17,7 +17,9 @@ in CI, in the release workflow and on a first checkout. It
 - declares what the app asks Android for: the microphone, for the speaking
   drill (ADR-0014), and a query for the speech recogniser, which Android 11
   and later hide from an app that does not declare one. The speech_to_text
-  plugin's own manifest declares neither;
+  plugin's own manifest declares neither. Likewise a query for the
+  text-to-speech engine: without it, Android 11 and later let the app find
+  no voice to speak with, and flutter_tts's manifest does not declare one;
 - declares the internet, for the update check (ADR-0017): flutter create
   grants it to debug and profile builds only, so a release build could not
   reach GitHub without it. And a query for apps that open https links,
@@ -67,6 +69,7 @@ INTENT = re.compile(r"<intent>.*?</intent>", re.S)
 RECORD_AUDIO = "android.permission.RECORD_AUDIO"
 INTERNET = "android.permission.INTERNET"
 RECOGNITION_SERVICE = "android.speech.RecognitionService"
+TTS_SERVICE = "android.intent.action.TTS_SERVICE"
 VIEW = "android.intent.action.VIEW"
 # ota_update asks to write external storage, and the merge then adds the
 # read permission that implies. It has used neither since 7.0.1.
@@ -197,7 +200,8 @@ def query(text: str, *lines: str) -> str:
 
 def declare(text: str) -> str:
     """[text], a manifest, with the microphone and internet permissions, the
-    queries for the speech recogniser and for opening https links, and
+    queries for the speech recogniser, the text-to-speech engine and for
+    opening https links, and
     ota_update's FileProvider, each added if it is not there already, and
     external storage removed."""
     if len(MANIFEST_OPEN.findall(text)) != 1 or text.count("</manifest>") != 1:
@@ -215,8 +219,9 @@ def declare(text: str) -> str:
     for permission in STORAGE:
         text = refuse(text, permission)
     text = provide(text)
-    if not queries(text, RECOGNITION_SERVICE):
-        text = query(text, f'<action android:name="{RECOGNITION_SERVICE}"/>')
+    for service in (RECOGNITION_SERVICE, TTS_SERVICE):
+        if not queries(text, service):
+            text = query(text, f'<action android:name="{service}"/>')
     if not queries(text, VIEW, scheme="https"):
         text = query(
             text,
