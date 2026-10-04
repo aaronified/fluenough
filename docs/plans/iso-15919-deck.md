@@ -43,6 +43,14 @@ card, and the README's table is not in the app.
   learner reads.
 - Whether a letter's card plays a word with it.
 
+## To check first
+
+- **ख़ is written ḵ** in the readings and the README (*ḵatm*). ISO 15919 may
+  write it k͟h, k with a double macron below spanning the h. A rater raised
+  this, and no copy of the standard could be reached from the session to
+  check. If it is k͟h, the readings, the README table, the romanisation
+  files' typed spellings and the grader's folding of marks change with it.
+
 ## Estimate
 
 About 3 hours for seven decks, the validator and the path changes.
