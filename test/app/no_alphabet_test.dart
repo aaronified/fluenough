@@ -95,16 +95,57 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
+    // Everything else placed as known: only the decks left out are not, so
+    // without the filter they would be the ones listed.
+    final base = hindiWithout();
+    await base.load();
+    final placed = <String>{
+      for (final entry in base.decks)
+        if (entry.language.code == 'hi' && !base.needsAlphabet(entry)) entry.id,
+    };
+    base.dispose();
     final state = await pumpScreen(
       tester,
       const TodayPage(),
-      state: hindiWithout(),
+      state: AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['hi'],
+          learningChosen: true,
+          noAlphabet: const <String>{'hi'},
+          placedDecks: placed,
+        ),
+      ),
     );
-    final shown = tester
-        .widgetList<DeckTile>(find.byType(DeckTile, skipOffstage: false))
-        .map((tile) => tile.entry);
-    expect(shown, isNotEmpty);
-    expect(shown.where(state.leavesOut), isEmpty);
+    expect(state.decks.where(state.leavesOut), isNotEmpty);
+    expect(
+      tester
+          .widgetList<DeckTile>(find.byType(DeckTile, skipOffstage: false))
+          .map((tile) => tile.entry)
+          .where(state.leavesOut),
+      isEmpty,
+    );
+  });
+
+  testWidgets('the grammar drill shows the readings first', (tester) async {
+    usePhone(tester);
+    final state = hindiWithout();
+    await state.load();
+    final entry = state.decks.firstWhere(
+      (e) =>
+          e.language.code == 'hi' &&
+          e.deck.pattern != null &&
+          e.deck.pattern!.entries.any((row) => row.reading != null),
+    );
+    await pumpScreen(
+      tester,
+      DrillPage(request: DrillRequest.deck(entry.id, skill: Skill.grammar)),
+      state: state,
+    );
+    final first = tester.widget<ReadingFirst>(find.byType(ReadingFirst));
+    // The lemma in Latin letters; the slot, a pronoun, has no reading.
+    expect(first.reading, isNot(first.target));
+    expect(first.reading, matches(RegExp('^[a-z]')));
   });
 
   testWidgets('a word is typed in Latin letters by default, counts in full, '

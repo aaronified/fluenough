@@ -49,8 +49,27 @@ void main() {
     return session;
   }
 
-  test('the reading is right, and counts as a hard recall', () {
+  test('before the script units, the reading counts in full', () {
     final session = latin('hi-en-market', Skill.production);
+    expect(session.expectsScript, isFalse);
+    session.check(session.item.card.reading!);
+    expect(session.answer!.graded!.outcome, AnswerOutcome.exact);
+    expect(session.answer!.grade, 5);
+  });
+
+  test('past the script units, the reading counts as a hard recall', () {
+    // Placed past Hindi's script units: the script is expected now.
+    state.settings.placedDecks = <String>{
+      for (final unit in state.courseUnits('hi'))
+        for (final entry in unit)
+          if (entry.id.contains('-script-')) entry.id,
+    };
+    final session = latin('hi-en-market', Skill.production);
+    expect(session.expectsScript, isTrue);
+    expect(
+      DrillSession(state: state, items: session.items).inputMode,
+      InputMode.script,
+    );
     session.check(session.item.card.reading!);
     expect(session.answer!.graded!.outcome, AnswerOutcome.exact);
     expect(session.answer!.grade, DrillSession.romanisedGrade);
