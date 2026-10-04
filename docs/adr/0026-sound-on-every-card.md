@@ -54,6 +54,12 @@ while sound remains off." They approved a package to read the volume.
   until they turn it back on. The greyed speakers are the reminder.
 - Autoplay off by default means a new learner hears words only where a
   card plays them itself (the teach card) or when they tap.
+- **Match pairs has no speaker.** Its words are tiles, not one card's word.
+  A tile tapped says its word only while autoplay is on, so with autoplay
+  off a match is silent. Whether it should get a speaker is the owner's to
+  decide.
+- A heard reading passage, like a heard word, is greyed and asks for the
+  volume while the phone is at zero.
 - One more dependency, a small plugin for Android and iOS. Where it is
   missing, as in widget tests, the volume reads as up.
 

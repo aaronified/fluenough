@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
@@ -8,6 +9,8 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/tts/volume_monitor.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
+import 'package:fluenough/features/drill/pair_drill.dart';
+import 'package:fluenough/features/drill/reading_fixture.dart';
 
 import '../../support/harness.dart';
 
@@ -29,6 +32,20 @@ Future<AppState> pumpHeard(
   state: AppState.test(tts: FixedTtsEngine(<String>{'hi'}), volume: volume),
 );
 
+Future<AppState> pumpPassage(
+  WidgetTester tester,
+  Skill skill,
+  FixedVolumeMonitor volume,
+) => pumpScreen(
+  tester,
+  DrillPage(request: DrillRequest.untaught(readingFixtureDeckId, skill: skill)),
+  state: AppState.test(
+    decks: readingFixtureDecks(),
+    tts: FixedTtsEngine(<String>{'bn'}),
+    volume: volume,
+  ),
+);
+
 void main() {
   testWidgets('a heard question asks for the volume while the phone is at '
       'zero, and is asked as usual once it is raised', (tester) async {
@@ -48,6 +65,39 @@ void main() {
   testWidgets('a typed listening card asks for it too', (tester) async {
     usePhone(tester);
     await pumpHeard(tester, FixedVolumeMonitor(muted: true), ask: Ask.own);
+    expect(find.text(l10nOf(tester).drillRaiseVolume), findsOneWidget);
+  });
+
+  testWidgets('a heard passage asks for it', (tester) async {
+    usePhone(tester);
+    final volume = FixedVolumeMonitor(muted: true);
+    await pumpPassage(tester, Skill.listening, volume);
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.drillRaiseVolume), findsOneWidget);
+    volume.muted = false;
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.drillRaiseVolume), findsNothing);
+  });
+
+  testWidgets('a read passage does not', (tester) async {
+    usePhone(tester);
+    await pumpPassage(tester, Skill.reading, FixedVolumeMonitor(muted: true));
+    expect(find.text(l10nOf(tester).drillRaiseVolume), findsNothing);
+  });
+
+  testWidgets('a minimal pair asks for it until a sound is picked', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const PairDrill(),
+      state: AppState.test(
+        features: FeatureRegistry.all(),
+        tts: FixedTtsEngine(const <String>{'hi'}),
+        volume: FixedVolumeMonitor(muted: true),
+      ),
+    );
     expect(find.text(l10nOf(tester).drillRaiseVolume), findsOneWidget);
   });
 
