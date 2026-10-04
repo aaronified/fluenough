@@ -13,7 +13,7 @@ decks/
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
        hi-en-path.yaml
-  ja/  ja-en-hiragana.yaml
+  ja/  ja-en-hiragana.yaml        kept in the repository but not bundled in the app for now
        ja-en-path.yaml
   te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
@@ -38,7 +38,8 @@ asset entry bundles only the files directly inside the directory it names, so
 whole of `decks/` — which is what CI does — fails if a directory holding decks
 has no entry, because the alternative is an app that builds and ships without
 that language in it. Validating a single deck or one language directory only
-checks what you pointed it at.
+checks what you pointed it at. `decks/ja/` is left out on purpose for now: it
+is listed in `NOT_BUNDLED` in `tools/validate_decks.py`, and still validated.
 
 Validate before committing — CI runs exactly this:
 

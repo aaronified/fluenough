@@ -1,25 +1,36 @@
-# The order Hindi is taught from English in: one unit per line. First the
-# script, the sounds English lacks, and how Hindi grammar differs from
-# English; then a theme deck and the grammar that goes with it. Every hi-en
-# deck is listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
+# The order Hindi is taught from English in: one unit per line. First a
+# few words and basic sentences, the sounds English lacks and how Hindi
+# grammar differs from English; then five more themes, each with the grammar
+# that goes with it; then the script, before the rest. Every hi-en deck is
+# listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: hi-en-path
 language: hi
 native: en
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - hi-en-script-vowels
+  - hi-en-script-consonants
+  - hi-en-script-reading
+  - hi-en-script-vowel-signs
+  - hi-en-script-conjuncts
+  - hi-en-spelling
+  - hi-en-reading-panch-parmeshwar
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [hi-en-script-vowels, hi-en-script-consonants, hi-en-script-reading]
-  - [hi-en-script-vowel-signs, hi-en-script-conjuncts]
+  - [hi-en-first-words, hi-en-grammar-sentences, "*"]
   - [hi-en-sound-differences]
   - [hi-en-grammar-differences]
-  - [hi-en-first-words, hi-en-grammar-sentences, "*"]
   - [hi-en-questions, hi-en-grammar-questions, "*"]
   - [hi-en-addressing, hi-en-grammar-pronouns, "*"]
   - [hi-en-about-me, hi-en-grammar-present, hi-en-grammar-possessives, "*"]
   - [hi-en-family, hi-en-grammar-be, "*"]
   - [hi-en-work, hi-en-grammar-demonstratives, "*"]
+  - [hi-en-script-vowels, hi-en-script-consonants, hi-en-script-reading]
+  - [hi-en-script-vowel-signs, hi-en-script-conjuncts]
   - [hi-en-numbers-1-20, "*"]
   - [hi-en-numbers-big, "*"]
   - [hi-en-market, hi-en-grammar-nouns, hi-en-grammar-articles, "*"]

@@ -61,7 +61,8 @@ flutter:
   # One entry per language directory. A Flutter asset entry bundles only the
   # files directly inside the directory it names, not its subdirectories, so
   # `- decks/` alone would ship decks/README.md and none of the decks. Adding
-  # a language means adding its directory here.
+  # a language means adding its directory here. decks/ja/ is kept in the
+  # repository but not bundled for now (NOT_BUNDLED in validate_decks.py).
   assets:
     - assets/deck-template.yaml
     - assets/languages.yaml
@@ -71,7 +72,6 @@ flutter:
     - decks/es/
     - decks/gu/
     - decks/hi/
-    - decks/ja/
     - decks/kn/
     - decks/mr/
     - decks/te/

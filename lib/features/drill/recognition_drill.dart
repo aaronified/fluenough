@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 import 'rating_buttons.dart';
@@ -55,8 +56,18 @@ class RecognitionDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       card: <Widget>[
-        TargetText.hero(card.target, language: language),
-        if (reading != null && settings.showRomanisation)
+        if (reading != null && !session.learnsAlphabet)
+          ReadingFirst(
+            reading: reading,
+            target: card.target,
+            language: language,
+            fontSize: 48,
+          )
+        else
+          TargetText.hero(card.target, language: language),
+        if (reading != null &&
+            settings.showRomanisation &&
+            session.learnsAlphabet)
           Text(
             reading,
             textAlign: TextAlign.center,

@@ -285,8 +285,8 @@ void main() {
     ),
     (
       'production in a script, with the keyboard hint',
-      DrillRequest.deck('ja-en-hiragana', skill: Skill.production),
-      const DrillPreset(target: 'か'),
+      DrillRequest.deck('hi-en-script-consonants', skill: Skill.production),
+      const DrillPreset(target: 'क'),
     ),
     (
       'listening',

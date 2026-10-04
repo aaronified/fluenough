@@ -43,11 +43,28 @@ class GrammarCell {
     },
   );
 
+  /// [prompt] with the lemma's reading in place of the lemma, or null if
+  /// the entry gives none (#47).
+  String? get readingPrompt {
+    final reading = entry.reading;
+    if (reading == null) return null;
+    return pattern.prompt.replaceAllMapped(
+      _placeholder,
+      (m) => switch (m[1]) {
+        'lemma' => reading,
+        'gloss' => entry.gloss,
+        _ => slot,
+      },
+    );
+  }
+
   /// The entry's whole row of the table, in slot order: each slot with its
-  /// form, or null where the pattern marks the cell as having none.
-  List<({String slot, String? form})> get table =>
-      <({String slot, String? form})>[
-        for (final s in pattern.slots) (slot: s, form: entry.forms[s]),
+  /// form and the form's reading, each null where the pattern marks the
+  /// cell as having none or gives no reading.
+  List<({String slot, String? form, String? reading})> get table =>
+      <({String slot, String? form, String? reading})>[
+        for (final s in pattern.slots)
+          (slot: s, form: entry.forms[s], reading: entry.readings[s]?.first),
       ];
 
   static final RegExp _placeholder = RegExp(r'\{(lemma|gloss|slot)\}');

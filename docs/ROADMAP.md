@@ -10,7 +10,8 @@ uses daily for a month without losing progress. F-Droid and the deck authoring
 guide wait for 1.0.
 
 - **Decks** are all taught from English: Hindi, Bengali and Telugu, plus the
-  existing Spanish and Japanese. Deck ids name both languages (#51).
+  existing Spanish. Japanese is kept in the repository but not bundled for
+  now. Deck ids name both languages (#51).
 - **Vocabulary is taught by theme**, one deck per theme, in 18 shared themes
   aimed at minimal fluency: first words, questions, numbers, market,
   groceries, transport, directions and so on (#52).

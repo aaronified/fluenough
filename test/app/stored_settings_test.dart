@@ -20,6 +20,7 @@ void changeAll(SettingsNotifier s) {
     ..dynamicColour = true
     ..highContrast = true
     ..pureBlack = true
+    ..setLearnsAlphabet('hi', false)
     ..cardTextScale = 1.2
     ..reminder = true
     ..reminderTime = const TimeOfDay(hour: 7, minute: 5)

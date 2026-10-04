@@ -11,7 +11,7 @@ String profileName(AppLocalizations l10n, Profile profile) {
 }
 
 /// The languages [profile] learns, by the names their deck files give them,
-/// in catalog order: "Spanish, Japanese".
+/// in catalog order: "Spanish, Hindi".
 ///
 /// Only languages with a loaded deck are named, since a language's name comes
 /// from its deck (a profile may keep a code, like `hi`, whose decks are not

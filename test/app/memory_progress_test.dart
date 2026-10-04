@@ -41,7 +41,7 @@ void main() {
     answer(progress, 'a', 5, mode: DrillMode.production);
     expect(progress.states, hasLength(2));
     // The same card answered in another deck is the same pair (ADR-0018).
-    answer(progress, 'a', 5, deck: 'ja-en-hiragana');
+    answer(progress, 'a', 5, deck: 'hi-en-script-vowels');
     expect(progress.states, hasLength(2));
     expect(progress.stateOf('a', DrillMode.recognition)!.repetitions, 2);
   });
@@ -123,7 +123,7 @@ void main() {
     answer(progress, 'a', 5);
     answer(progress, 'a', 5, mode: DrillMode.production);
     answer(progress, 'b', 1);
-    answer(progress, 'c', 4, deck: 'ja-en-hiragana');
+    answer(progress, 'c', 4, deck: 'hi-en-script-vowels');
     expect(progress.learnedIn(<String>['a', 'b']), 1);
     expect(progress.learnedIn(<String>['c']), 1);
     // A card is learned in every deck that lists it (ADR-0018).

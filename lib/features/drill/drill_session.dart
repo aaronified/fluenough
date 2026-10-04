@@ -81,13 +81,14 @@ class DrillSession extends ChangeNotifier {
   DrillSession({
     required AppState state,
     required List<SessionItem> items,
-    this._inputMode = InputMode.script,
+    InputMode? inputMode,
     this.recorded = true,
     this.revising = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(!revising || !recorded, 'revising is never recorded'),
        _state = state,
+       _chosenMode = inputMode,
        _random = random ?? state.random,
        items = List<SessionItem>.unmodifiable(items),
        startedAt = state.now(),
@@ -120,7 +121,10 @@ class DrillSession extends ChangeNotifier {
   int _index = 0;
   DrillPhase _phase = DrillPhase.prompt;
   TypedAnswer? _answer;
-  InputMode _inputMode;
+
+  /// The input mode the learner, or a preset, chose; null for the
+  /// language's own: [InputMode.translit] without its alphabet.
+  InputMode? _chosenMode;
   bool _slower = false;
   bool _playing = false;
   bool _hearing = false;
@@ -196,12 +200,14 @@ class DrillSession extends ChangeNotifier {
 
   /// Whether this card can be typed as a transliteration (#47): a
   /// production, listening or grammar card with a reading, in a script that
-  /// needs one.
+  /// needs one. Not on a deck that teaches the alphabet itself, whose
+  /// prompts give the reading away ("k (ka)").
   bool get canTransliterate =>
       _typedModes.contains(item.mode) &&
       item.card is! NumberCard &&
       item.card.reading != null &&
-      deck.language.needsReading;
+      deck.language.needsReading &&
+      !_state.needsAlphabet(deck);
 
   static const Set<DrillMode> _typedModes = <DrillMode>{
     DrillMode.production,
@@ -209,10 +215,24 @@ class DrillSession extends ChangeNotifier {
     DrillMode.grammar,
   };
 
-  /// The grade a right answer in Latin letters records (#47): a learner
-  /// learning the alphabet who answers without it recalled the word, but
-  /// not how it is written.
+  /// The grade a right answer in Latin letters records (#47) for a learner
+  /// learning the alphabet who is past its script units: they recalled the
+  /// word but not how it is written. Before the script, or without the
+  /// alphabet, it counts in full.
   static const int romanisedGrade = 3;
+
+  /// Whether each language's script units are behind the learner, found
+  /// once a session.
+  final Map<String, bool> _scriptLearned = <String, bool>{};
+
+  /// Whether the script is expected of the learner now: they learn the
+  /// alphabet and are past its script units. Until then answers start in
+  /// Latin letters and count in full.
+  bool get expectsScript {
+    final code = deck.language.code;
+    return learnsAlphabet &&
+        _scriptLearned.putIfAbsent(code, () => _state.scriptLearned(code));
+  }
 
   /// Each language's romanised spelling, made once it is needed.
   final Map<String, RomanisedSpelling> _spellings =
@@ -226,19 +246,25 @@ class DrillSession extends ChangeNotifier {
     );
   }
 
-  InputMode get inputMode => _inputMode;
+  /// Whether the current card's language is learned with its alphabet.
+  bool get learnsAlphabet => _state.settings.learnsAlphabet(deck.language.code);
+
+  /// Script, or Latin letters: as chosen, or else the script once it is
+  /// [expectsScript], and Latin letters before.
+  InputMode get inputMode =>
+      _chosenMode ?? (expectsScript ? InputMode.script : InputMode.translit);
 
   /// Whether the answer is being typed in Latin letters. Only ever true
   /// while [Feature.translitInput] is on.
   bool get transliterating =>
       canTransliterate &&
-      _inputMode == InputMode.translit &&
+      inputMode == InputMode.translit &&
       _state.features.isAvailable(Feature.translitInput);
 
   set inputMode(InputMode mode) {
-    if (mode == _inputMode || _phase != DrillPhase.prompt) return;
+    if (mode == inputMode || _phase != DrillPhase.prompt) return;
     if (!_state.features.isAvailable(Feature.translitInput)) return;
-    _inputMode = mode;
+    _chosenMode = mode;
     notifyListeners();
   }
 
@@ -292,7 +318,7 @@ class DrillSession extends ChangeNotifier {
     }
     final grade = graded.outcome == AnswerOutcome.closeTypo
         ? null
-        : romanised && graded.outcome.isCorrect
+        : romanised && graded.outcome.isCorrect && expectsScript
         ? romanisedGrade
         : graded.outcome.toSm2Grade();
     _answer = TypedAnswer(typed: typed, graded: graded, grade: grade);

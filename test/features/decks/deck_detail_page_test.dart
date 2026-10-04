@@ -23,7 +23,7 @@ import 'package:fluenough/ui/widgets/mode_pill.dart';
 import '../../support/harness.dart';
 
 const String spanish = 'es-en-core-100';
-const String hiragana = 'ja-en-hiragana';
+const String vowels = 'hi-en-script-vowels';
 const String grammar = 'es-en-grammar-present-ar';
 
 Future<AppState> pumpDeck(
@@ -135,9 +135,12 @@ void main() {
   testWidgets('without a voice: listening is muted, says why, and Set up '
       'opens Voices', (tester) async {
     usePhone(tester);
-    final state = await pumpDeck(tester, hiragana);
+    // Tall enough to build every skill row under the notice that no Hindi
+    // speaker has checked the deck yet.
+    tester.view.physicalSize = const Size(390 * 3, 2000 * 3);
+    final state = await pumpDeck(tester, vowels);
     final l10n = l10nOf(tester);
-    final language = state.deckById(hiragana)!.language;
+    final language = state.deckById(vowels)!.language;
 
     final listening = skillRow(l10n, Skill.listening);
     expect(
@@ -187,10 +190,10 @@ void main() {
   testWidgets('speaking is listed where it is switched on; a language heard '
       'only online says so, and Set up opens Voices', (tester) async {
     usePhone(tester);
-    // Lists only Japanese on the device, so Spanish can only be heard
+    // Lists only Hindi on the device, so Spanish can only be heard
     // online, which the learner has not allowed.
     final speech = FixedSpeechEngine(
-      onDevice: <String>{'ja'},
+      onDevice: <String>{'hi'},
       online: <String>{'es'},
     );
     final state = AppState.test(
