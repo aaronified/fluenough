@@ -112,11 +112,25 @@ cards:
       );
     });
 
-    test('a phrase is not typed unless it says so', () {
+    test('a phrase is not typed unless it says so: one of two words or more '
+        'is produced by rearranging it (ADR-0024)', () {
       final cards = DeckParser.parse(deck, source: 'x').cards;
       final phrase = cards.first;
       final word = cards.last;
+      expect(phrase.rearranges, isTrue);
       expect(phrase.modesIn(ttsAvailable: true), {
+        DrillMode.recognition,
+        DrillMode.production,
+        DrillMode.listening,
+      });
+      const oneWord = Card(
+        id: 'y',
+        deckId: 'd',
+        target: 'नमस्ते',
+        native: 'hello',
+        pos: 'phrase',
+      );
+      expect(oneWord.modesIn(ttsAvailable: true), {
         DrillMode.recognition,
         DrillMode.listening,
       });
