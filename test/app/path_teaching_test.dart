@@ -79,14 +79,10 @@ void main() {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
-    // Hindi starts with its script.
+    // Hindi starts with words and basic sentences, not its script.
     expect(unitIds(state), <List<String>>[
-      <String>[
-        'hi-en-script-vowels',
-        'hi-en-script-consonants',
-        'hi-en-script-reading',
-      ],
-      <String>['hi-en-script-vowel-signs', 'hi-en-script-conjuncts'],
+      <String>['hi-en-first-words', 'hi-en-grammar-sentences'],
+      <String>['hi-en-sound-differences'],
     ]);
     final fresh = state.buildSession(const DrillRequest.today()).fresh;
     expect(fresh, hasLength(20));
@@ -109,32 +105,25 @@ void main() {
   test('a placed unit is skipped, and its decks read Done', () async {
     final state = learning(
       <String>['hi'],
-      placed: <String>{
-        'hi-en-script-vowels',
-        'hi-en-script-consonants',
-        'hi-en-script-reading',
-      },
+      placed: <String>{'hi-en-first-words', 'hi-en-grammar-sentences'},
     );
     addTearDown(state.dispose);
     await state.load();
-    expect(unitIds(state).first, <String>[
-      'hi-en-script-vowel-signs',
-      'hi-en-script-conjuncts',
-    ]);
-    expect(unitIds(state).last.first, 'hi-en-sound-differences');
-    expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.done);
-    expect(badgeOf(state, 'hi-en-script-vowel-signs'), DeckBadgeKind.pending);
+    expect(unitIds(state).first, <String>['hi-en-sound-differences']);
+    expect(unitIds(state).last.first, 'hi-en-grammar-differences');
+    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.done);
     expect(badgeOf(state, 'hi-en-sound-differences'), DeckBadgeKind.pending);
+    expect(badgeOf(state, 'hi-en-grammar-differences'), DeckBadgeKind.pending);
     expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
     // A placed deck can still be studied.
     expect(
-      state.buildSession(DrillRequest.deck('hi-en-script-vowels')).fresh,
+      state.buildSession(DrillRequest.deck('hi-en-first-words')).fresh,
       isNotEmpty,
     );
 
     // Placement is a setting: changing it moves the window at once.
     state.settings.placedDecks = const <String>{};
-    expect(unitIds(state).first.first, 'hi-en-script-vowels');
+    expect(unitIds(state).first.first, 'hi-en-first-words');
   });
 
   test('a deck finished inside a pending unit reads Done, its unit-mate '
@@ -142,18 +131,16 @@ void main() {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
-    final consonants = state.deckById('hi-en-script-consonants')!;
-    while (state.notStudiedIn(consonants) > 0) {
+    final sentences = state.deckById('hi-en-grammar-sentences')!;
+    while (state.notStudiedIn(sentences) > 0) {
       for (final item
-          in state
-              .buildSession(DrillRequest.learnAnyway(consonants.id))
-              .items) {
+          in state.buildSession(DrillRequest.learnAnyway(sentences.id)).items) {
         state.record(item, 5);
       }
     }
-    expect(unitIds(state).first, contains(consonants.id));
-    expect(badgeOf(state, consonants.id), DeckBadgeKind.done);
-    expect(badgeOf(state, 'hi-en-script-vowels'), DeckBadgeKind.pending);
+    expect(unitIds(state).first, contains(sentences.id));
+    expect(badgeOf(state, sentences.id), DeckBadgeKind.done);
+    expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
   });
 
   test('a finished unit is passed, and the next two are taught', () async {
@@ -227,10 +214,11 @@ void main() {
       for (final unit in everything.pendingUnits) unit.first.id,
     ];
     // Two units for each of the eight courses with more than one, and
-    // Japanese's only one, hiragana. Bengali starts with its script.
+    // Japanese's only one, hiragana. Bengali starts with words, then the
+    // sounds English lacks.
     expect(
       starts,
-      containsAll(<String>['bn-en-script-vowels', 'bn-en-script-vowel-signs']),
+      containsAll(<String>['bn-en-first-words', 'bn-en-sound-differences']),
     );
     expect(starts, containsAll(<String>['es-en-core-100', 'ja-en-hiragana']));
     expect(starts, hasLength(17));

@@ -1,9 +1,8 @@
-# The order Gujarati is taught from English in: one unit per line. First the
-# script, the sounds English lacks, and how Gujarati grammar differs from
-# English; then a theme deck and the grammar that goes with it. The present
-# comes early, with About me, because every sentence after it needs it.
-# Every gu-en deck is listed exactly once. See ADR-0013 and
-# docs/DECK-FORMAT.md.
+# The order Gujarati is taught from English in: one unit per line. First a
+# few words and basic sentences, the sounds English lacks and how Gujarati
+# grammar differs from English; then five more themes, each with the grammar
+# that goes with it; then the script, before the rest. Every gu-en deck is
+# listed exactly once. See ADR-0013 and docs/DECK-FORMAT.md.
 schema: 1
 kind: path
 id: gu-en-path
@@ -22,16 +21,16 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [gu-en-script-vowels, gu-en-script-consonants, gu-en-script-reading]
-  - [gu-en-script-vowel-signs, gu-en-script-conjuncts]
+  - [gu-en-first-words, gu-en-grammar-sentences, "*"]
   - [gu-en-sound-differences]
   - [gu-en-grammar-differences]
-  - [gu-en-first-words, gu-en-grammar-sentences, "*"]
   - [gu-en-questions, gu-en-grammar-questions, "*"]
   - [gu-en-addressing, gu-en-grammar-pronouns, "*"]
   - [gu-en-about-me, gu-en-grammar-continuous, "*"]
   - [gu-en-family, gu-en-grammar-be, "*"]
   - [gu-en-work, gu-en-grammar-demonstratives, "*"]
+  - [gu-en-script-vowels, gu-en-script-consonants, gu-en-script-reading]
+  - [gu-en-script-vowel-signs, gu-en-script-conjuncts]
   - [gu-en-numbers-1-20, "*"]
   - [gu-en-numbers-big, "*"]
   - [gu-en-market, gu-en-grammar-nouns, gu-en-grammar-articles, "*"]

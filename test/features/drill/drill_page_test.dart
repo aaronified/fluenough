@@ -280,8 +280,8 @@ void main() {
     expect(find.text(l10n.incomingBadge), findsNothing);
   });
 
-  testWidgets('transliteration types Latin letters, and a right answer in '
-      'them counts as a hard recall (#47)', (tester) async {
+  testWidgets('transliteration types Latin letters, and before the script '
+      'units a right answer in them counts in full (#47)', (tester) async {
     usePhone(tester);
     final state = await pumpDrill(
       tester,
@@ -306,7 +306,9 @@ void main() {
       find.text(l10n.feedbackReadingWithTarget('namaskar', 'नमस्कार')),
       findsOneWidget,
     );
-    expect(state.progress.log.single.grade, DrillSession.romanisedGrade);
+    // Past the script units it would be DrillSession.romanisedGrade; see
+    // test/features/drill/translit_test.dart.
+    expect(state.progress.log.single.grade, 5);
   });
 
   testWidgets('the card text size reaches the card, the typed script and the '
