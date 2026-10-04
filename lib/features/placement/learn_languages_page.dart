@@ -53,6 +53,7 @@ class _LearnLanguagesPageState extends State<LearnLanguagesPage> {
     }
     Navigator.of(context).push(
       MaterialPageRoute<void>(
+        settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
           languages: added,
           onFinished: (found) =>

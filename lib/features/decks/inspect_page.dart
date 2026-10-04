@@ -35,7 +35,7 @@ class InspectPage extends StatelessWidget {
     final entry = state.deckById(deckId);
     if (entry == null) {
       return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(actions: <Widget>[ReportButton(detail: deckId)]),
         body: EmptyState(icon: Icons.style_outlined, title: l10n.deckNotFound),
       );
     }
@@ -239,8 +239,9 @@ class _Script extends StatelessWidget {
 }
 
 /// Two or three lines: [top] (the script and its romanisation), [middle]
-/// and [bottom], then the [id]. With [more], or with a [deckId] to report it
-/// in, it opens in place: [more], then "Report this card" (#160).
+/// and [bottom], then the [id], with "Report this card" beside it when the
+/// row has a [deckId] to report it in (#160). With [more], it opens in
+/// place to show it.
 class _Line extends StatelessWidget {
   const _Line({
     required this.top,
@@ -268,7 +269,22 @@ class _Line extends StatelessWidget {
       if (middle != null && middle.isNotEmpty) _Muted(middle),
       if (bottom != null && bottom.isNotEmpty)
         Text(bottom, style: theme.textTheme.bodyLarge),
-      ?(id == null ? null : _Id(id)),
+      if (id != null)
+        if (deckId case final deck?)
+          Row(
+            children: <Widget>[
+              Flexible(child: _Id(id)),
+              const SizedBox(width: 8),
+              TextButton.icon(
+                onPressed: () =>
+                    ReportButton.open(context, detail: '$id in $deck'),
+                icon: const Icon(Icons.flag_outlined, size: 18),
+                label: Text(AppLocalizations.of(context)!.inspectReport),
+              ),
+            ],
+          )
+        else
+          _Id(id),
     ];
     final Widget? sub = subtitle.isEmpty
         ? null
@@ -276,19 +292,6 @@ class _Line extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: subtitle,
           );
-    final deck = deckId;
-    final more = <Widget>[
-      ...this.more,
-      if (id != null && deck != null)
-        Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: TextButton.icon(
-            onPressed: () => ReportButton.open(context, detail: '$id in $deck'),
-            icon: const Icon(Icons.flag_outlined),
-            label: Text(AppLocalizations.of(context)!.inspectReport),
-          ),
-        ),
-    ];
     if (more.isEmpty) {
       return ListTile(title: top, subtitle: sub);
     }

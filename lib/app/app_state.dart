@@ -222,8 +222,8 @@ class AppState extends ChangeNotifier {
   /// Opens links in the browser, or the app that handles them.
   final LinkOpener links;
 
-  /// Where a report from the bug icon goes (ADR-0021): the relay, or
-  /// nowhere in a build that was given none.
+  /// Where a report from the bug icon goes once mail is on (ADR-0021): the
+  /// reporter's mail app, or nowhere in a build that was given none.
   final ReportSender reports;
 
   /// Settings' "Check for updates", the check at launch, and installing

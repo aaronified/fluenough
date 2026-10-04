@@ -149,9 +149,8 @@ void main() {
     expect(links.asked, isEmpty);
   });
 
-  testWidgets('a card in Inspect is reported with its id and deck', (
-    tester,
-  ) async {
+  testWidgets('a card in Inspect is reported with its id and deck, from '
+      'beside its id, unopened', (tester) async {
     usePhone(tester);
     final links = FixedLinks();
     final state = await pumpScreen(
@@ -161,8 +160,14 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final card = state.deckById('hi-en-market')!.cards.first;
-    await tapInList(tester, find.text(l10n.inspectId(card.id)));
-    await tapInList(tester, find.text(l10n.inspectReport));
+    // On the row's id line, without opening the row.
+    await tapInList(
+      tester,
+      find.descendant(
+        of: find.widgetWithText(Row, l10n.inspectId(card.id)),
+        matching: find.text(l10n.inspectReport),
+      ),
+    );
     await tester.tap(find.text(l10n.reportOpenGitHub));
     await tester.pumpAndSettle();
     expect(
