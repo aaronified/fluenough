@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-10-04
+
+### Added
+
+- Quick revision on Today: revise 5, 10, 15 or 20 words you know, picked at random from every language you learn. A word you get wrong comes back sooner; one you get right keeps its date. The fact of the day follows it (#183).
+- A speaker on every card, reviews included. Long-press it to play words automatically, also in Settings > Sound; words don't play by themselves until you turn that on (#182).
+- A Sound switch in Settings. With sound off, every speaker is greyed out, and lessons and reviews skip the questions that need sound until it is back on; turning it off says so. With the phone's volume at zero, a listening card is greyed out and asks you to raise the volume (#182).
+- Every word now carries how it is said in the IPA (/paːlu/), ready for the screens to show (#180).
+
+### Changed
+
+- Readings now use the letters of ISO 15919, written as the word is said, so words that differ only by a long vowel or a curled-back consonant read differently: పాలు, milk, is *pālu* and పలు, many, is *palu*. The README has the table. Typed answers don't need the marks: *palu*, *paalu* and *pālu* are all right (#180).
+- While you type an answer, the Script / Latin letters switch hides and the card gets smaller, so it stays in view above the keyboard (#178).
+- Today no longer lists your decks; the Decks tab does (#183).
+- Each language's chip shows the first letter of its own name, so they no longer all show न, ন or న: हि Hindi, বা Bengali, తె Telugu, and so on (#179).
+
 ## [0.3.1] - 2026-10-04
 
 ### Fixed
@@ -79,7 +95,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release. For changes before this point, see the commit history.
 
-[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/aaronified/fluenough/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/aaronified/fluenough/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/aaronified/fluenough/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/aaronified/fluenough/compare/v0.1.0...v0.2.0
