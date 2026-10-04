@@ -48,8 +48,10 @@ AppState soundState({
 );
 
 /// Whether [deck] has anything to drill in [skill] alone.
-bool drillsIn(AppState state, String deck, Skill skill) =>
-    state.buildSession(DrillRequest.deck(deck, skill: skill)).items.isNotEmpty;
+bool drillsIn(AppState state, String deck, Skill skill) => state
+    .buildSession(DrillRequest.untaught(deck, skill: skill))
+    .items
+    .isNotEmpty;
 
 Future<void> tapText(WidgetTester tester, String text) async {
   await tester.ensureVisible(find.text(text).first);
@@ -119,7 +121,7 @@ void main() {
     expect(
       state
           .buildSession(
-            DrillRequest.deck(spanish, skill: Skill.listening),
+            DrillRequest.untaught(spanish, skill: Skill.listening),
             ignorePauses: true,
           )
           .items,
@@ -201,7 +203,9 @@ cards:
       final state = soundState();
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.deck(spanish, skill: Skill.listening)),
+        DrillPage(
+          request: DrillRequest.untaught(spanish, skill: Skill.listening),
+        ),
         state: state,
       );
       final l10n = l10nOf(tester);
@@ -227,7 +231,9 @@ cards:
       await state.startSpeech();
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.deck(spanish, skill: Skill.speaking)),
+        DrillPage(
+          request: DrillRequest.untaught(spanish, skill: Skill.speaking),
+        ),
         state: state,
       );
       final l10n = l10nOf(tester);
@@ -247,7 +253,7 @@ cards:
       await state.load();
       await tester.pump();
       List<SessionItem> listening(String deck) => state
-          .buildSession(DrillRequest.deck(deck, skill: Skill.listening))
+          .buildSession(DrillRequest.untaught(deck, skill: Skill.listening))
           .items
           .take(2)
           .toList();
@@ -289,7 +295,9 @@ cards:
       await state.startSpeech();
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.deck(spanish, skill: Skill.speaking)),
+        DrillPage(
+          request: DrillRequest.untaught(spanish, skill: Skill.speaking),
+        ),
         state: state,
       );
       final l10n = l10nOf(tester);

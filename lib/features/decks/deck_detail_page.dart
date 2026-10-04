@@ -6,7 +6,8 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/deck.dart';
-import '../../core/scheduling/ask.dart';
+import '../../core/models/reading.dart';
+import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
@@ -114,9 +115,14 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
           language: entry.language.code,
           deckId: entry.id,
         );
-        final moreCount = allCount > 0
-            ? 0
-            : state.lessonFor(more).where((i) => i.ask == Ask.teach).length;
+        final lesson = allCount > 0
+            ? const <SessionItem>[]
+            : state.lessonFor(more);
+        // A reading deck's lesson is its next passage.
+        final reading = lesson.isNotEmpty && lesson.first.card is QuestionCard;
+        final moreCount = reading
+            ? lesson.length
+            : lesson.where((i) => i.ask == Ask.teach).length;
         final revise = DrillRequest.revise(entry.id, tags: _tags);
         final reviseCount = allCount > 0 || moreCount > 0
             ? 0
@@ -162,7 +168,9 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
               ? _ReviewAllBar(
                   note: l10n.deckLessonNote,
                   icon: Icons.add_rounded,
-                  label: l10n.deckLesson(moreCount),
+                  label: reading
+                      ? l10n.deckLessonReading
+                      : l10n.deckLesson(moreCount),
                   onPressed: () => AppNavigator.startDrill(context, more),
                 )
               : reviseCount > 0

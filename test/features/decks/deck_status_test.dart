@@ -42,11 +42,11 @@ cards:
   now: now,
 );
 
-/// Teaches every word left in [deckId].
+/// Learns every word in [deckId], in every skill.
 void learnAll(AppState state, String deckId) {
-  while (state.notStudiedIn(state.deckById(deckId)!) > 0) {
-    for (final item
-        in state.buildSession(DrillRequest.untaught(deckId)).items) {
+  final request = DrillRequest.untaught(deckId);
+  while (state.buildSession(request).fresh.isNotEmpty) {
+    for (final item in state.buildSession(request).fresh) {
       state.record(item, 5);
     }
   }

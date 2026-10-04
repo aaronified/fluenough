@@ -43,7 +43,7 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpToday(tester);
+    final state = await pumpToday(tester, state: await fixtureState());
     final l10n = l10nOf(tester);
 
     final queue = state.buildSession(const DrillRequest.today());
@@ -113,7 +113,13 @@ void main() {
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['hi'],
     );
-    await pumpToday(tester, state: AppState.test(settings: settings));
+    await pumpToday(
+      tester,
+      state: await withReviewsDue(
+        (progress) => AppState.test(settings: settings, progress: progress),
+        const <String>['hi'],
+      ),
+    );
     await tapVisible(tester, find.text(l10nOf(tester).todayStartReview));
     final drill = tester.widget<DrillPage>(find.byType(DrillPage));
     expect(drill.request.deckIds, isNull);
@@ -131,7 +137,10 @@ void main() {
     );
     final state = await pumpToday(
       tester,
-      state: AppState.test(settings: settings),
+      state: await withReviewsDue(
+        (progress) => AppState.test(settings: settings, progress: progress),
+        const <String>['bn', 'hi'],
+      ),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.todayStartReview), findsNothing);
@@ -208,7 +217,13 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    await pumpToday(tester);
+    await pumpToday(
+      tester,
+      state: await withReviewsDue(
+        (progress) => AppState.test(progress: progress),
+        const <String>['es'],
+      ),
+    );
     final l10n = l10nOf(tester);
     final tile = find.bySemanticsLabel(
       l10n.todaySkillNoVoice(l10n.skillListening),
@@ -226,7 +241,13 @@ void main() {
     usePhone(tester);
     final state = await pumpToday(
       tester,
-      state: AppState.test(tts: FixedTtsEngine(const <String>{'es', 'hi'})),
+      state: await withReviewsDue(
+        (progress) => AppState.test(
+          tts: FixedTtsEngine(const <String>{'es', 'hi'}),
+          progress: progress,
+        ),
+        const <String>['es', 'hi'],
+      ),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.commonNoVoice), findsNothing);

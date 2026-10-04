@@ -217,7 +217,7 @@ void main() {
 
       await state.setSpeaking(true);
       final spoken = state.buildSession(
-        DrillRequest.deck(spanish, skill: Skill.speaking),
+        DrillRequest.untaught(spanish, skill: Skill.speaking),
       );
       expect(spoken.items, isNotEmpty);
       expect(spoken.items.map((i) => i.mode), everyElement(DrillMode.speaking));
@@ -228,7 +228,7 @@ void main() {
       await hindiOnly.setSpeaking(true);
       expect(
         hindiOnly
-            .buildSession(DrillRequest.deck(spanish, skill: Skill.speaking))
+            .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
             .items,
         isEmpty,
       );
@@ -285,7 +285,7 @@ void main() {
       await state.load();
       await state.startSpeech();
       final queue = state.buildSession(
-        DrillRequest.deck(spanish, skill: Skill.speaking),
+        DrillRequest.untaught(spanish, skill: Skill.speaking),
       );
       return DrillSession(state: state, items: queue.items);
     }

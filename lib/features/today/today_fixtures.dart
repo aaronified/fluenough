@@ -9,11 +9,15 @@ import '../gallery/fixtures.dart';
 // ever written here.
 
 /// Answers every item in today's session, correctly, at the state's current
-/// time: what Today looks like once the day's work is done. The catalog must
-/// be loaded, and the voices checked if listening should count.
+/// time, then the new skills of its words that answering brings, until none
+/// is left: what Today looks like once the day's work is done. The catalog
+/// must be loaded, and the voices checked if listening should count.
 void finishToday(AppState state) {
-  for (final item in state.buildSession(const DrillRequest.today()).items) {
-    state.record(item, SelfGrade.good.toSm2Grade());
+  const today = DrillRequest.today();
+  while (state.buildSession(today).isNotEmpty) {
+    for (final item in state.buildSession(today).items) {
+      state.record(item, SelfGrade.good.toSm2Grade());
+    }
   }
 }
 
