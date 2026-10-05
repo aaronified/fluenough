@@ -1,6 +1,7 @@
 # Plan: replace SM-2 with FSRS
 
-Written 2026-10-05.
+Written 2026-10-05. `difficulty-by-skill.md` builds on this plan, and on
+nothing else.
 
 ## What the owner asked
 
