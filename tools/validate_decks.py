@@ -169,6 +169,9 @@ class Report:
     # file lists, in order.
     course_deck: tuple[str, str, str] | None = None
     course_path: tuple[str, str, list[str]] | None = None
+    # For the language icons (ADR-0027): a deck's language code and the icon
+    # it gives, or None, for the check that a language's decks agree.
+    icon: tuple[str, str | None] | None = None
     # A path's units that end in the wildcard and list decks of their own,
     # each as its deck ids, for the check that one of them has a theme.
     open_units: list[list[str]] = field(default_factory=list)
@@ -254,6 +257,13 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
         r.warn(where, "no tts tag; the device will pick a default regional voice")
     if "rtl" in block and not isinstance(block["rtl"], bool):
         r.error(where, "rtl must be a boolean")
+    # A language's chip shows its icon: the first letter of its own name,
+    # such as हि for Hindi (ADR-0027). A letter or two, no more.
+    icon = block.get("icon")
+    if icon is not None and (not _is_str(icon) or len(icon.strip()) > 4
+                             or icon != icon.strip()):
+        r.error(where, f"icon must be a letter or two of the language's own "
+                       f"name, such as 'हि', got {icon!r}")
 
 
 def card_id_re(lang: str) -> re.Pattern[str]:
@@ -842,6 +852,10 @@ def validate(path: Path) -> Report:
     check_langblock(r, "language", raw.get("language"), full=True)
     if kind != "facts":
         check_langblock(r, "native", raw.get("native"), full=False)
+        lang = raw.get("language")
+        if isinstance(lang, dict) and _is_str(lang.get("code")):
+            icon = lang.get("icon")
+            r.icon = (lang["code"], icon if _is_str(icon) else None)
     elif "native" in raw:
         r.error("native", "a facts file has no native: each fact carries its text "
                           "in every language it is written in")
@@ -1550,6 +1564,25 @@ def check_themes_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+def check_icons_across(reports: list[Report]) -> list[str]:
+    """Every deck of a language gives the same icon, or none does: its chip
+    shows the icon of whichever deck the app reads first (ADR-0027)."""
+    by_language: dict[str, dict[str | None, list[Path]]] = {}
+    for rep in reports:
+        if rep.icon is not None:
+            code, icon = rep.icon
+            by_language.setdefault(code, {}).setdefault(icon, []).append(rep.path)
+    problems = []
+    for code, icons in sorted(by_language.items()):
+        if len(icons) > 1:
+            given = "; ".join(
+                f"{'no icon' if icon is None else repr(icon)} in {paths[0]}"
+                + (f" and {len(paths) - 1} more" if len(paths) > 1 else "")
+                for icon, paths in icons.items())
+            problems.append(f"the {code} decks give different icons: {given}")
+    return problems
+
+
 def check_paths_across(reports: list[Report]) -> list[str]:
     """A course has one path, which lists every deck of that course exactly
     once, and only that course's decks."""
@@ -1760,7 +1793,7 @@ def main(argv: list[str]) -> int:
         print(f"error: {problem}")
     across = (check_themes_across(reports) + check_cards_across(reports)
               + check_numbers_across(reports) + check_paths_across(reports)
-              + check_reading_across(reports))
+              + check_reading_across(reports) + check_icons_across(reports))
     for problem in across:
         print(f"error: {problem}")
 
