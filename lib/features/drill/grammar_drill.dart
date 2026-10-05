@@ -44,6 +44,10 @@ const List<GrammarPick> grammarFixturePicks = <GrammarPick>[
 /// grades it with `AnswerGrader` as the production drill does, records it,
 /// and moves on. Behind `Feature.drillGrammar`.
 ///
+/// While the keyboard is open the card is compact, so that it stays in view
+/// above the field: a smaller prompt, and the script or Latin letters choice
+/// left out until the keyboard closes.
+///
 /// The unnamed constructor is the gallery's: it runs on [GrammarCell]s
 /// shaped from the real pattern of [deckId], picked by [picks], graded
 /// locally and not recorded, and disabled and marked while the feature is
@@ -237,6 +241,8 @@ class _GrammarDrillState extends State<GrammarDrill> {
   }) {
     final l10n = AppLocalizations.of(context)!;
     final language = deck.language;
+    // Typing the answer: the keyboard is open, and the field still there.
+    final typing = keyboardOpen(context) && answer == null;
     return DrillFrame(
       skill: Skill.grammar,
       deckName: deck.name,
@@ -251,12 +257,16 @@ class _GrammarDrillState extends State<GrammarDrill> {
         language,
         answered: answer != null,
         readingFirst: readingFirst,
+        typing: typing,
       ),
       belowCard: answer != null
           ? null
           : <Widget>[
-              ?inputChoice,
+              if (!typing) ?inputChoice,
+              // Keyed, so that the field keeps its focus and text as the
+              // choice above it comes and goes with the keyboard.
               AnswerField(
+                key: const ValueKey<String>('answer'),
                 controller: _controller,
                 label: l10n.drillTypeSlot(cell.slot),
                 language: language,
@@ -292,28 +302,30 @@ class _GrammarDrillState extends State<GrammarDrill> {
     LanguageInfo language, {
     required bool answered,
     bool readingFirst = false,
+    bool typing = false,
   }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final notes = cell.pattern.notes;
     final readingPrompt = readingFirst ? cell.readingPrompt : null;
+    final promptSize = typing ? 22.0 : 32.0;
     return <Widget>[
       if (readingPrompt != null)
         ReadingFirst(
           reading: readingPrompt,
           target: cell.prompt,
           language: language,
-          fontSize: 32,
+          fontSize: promptSize,
         )
       else
         TargetText.card(
           cell.prompt,
           language: language,
-          fontSize: 32,
+          fontSize: promptSize,
           fontWeight: FontWeight.w600,
         ),
       Padding(
-        padding: const EdgeInsetsDirectional.only(top: 8),
+        padding: EdgeInsetsDirectional.only(top: typing ? 0 : 8),
         child: Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
