@@ -822,14 +822,15 @@ class AppState extends ChangeNotifier {
 
     // A named skill is drilled even if switched off in Settings, as the
     // deck page offers it, but not while it is paused.
-    final skill = request.skill;
-    final modes = skill == null
+    final named = request.named;
+    final modes = named == null
         ? _modes(ignorePauses: ignorePauses)
         : <DrillMode>{
-            if (skill.mode != null &&
-                features.isAvailable(skill.feature) &&
-                (ignorePauses || !settings.isPaused(skill, now())))
-              skill.mode!,
+            for (final skill in named)
+              if (skill.mode != null &&
+                  features.isAvailable(skill.feature) &&
+                  (ignorePauses || !settings.isPaused(skill, now())))
+                skill.mode!,
           };
 
     // A new pair is a new skill of a word already taught: a word is new
@@ -1047,8 +1048,14 @@ class AppState extends ChangeNotifier {
 
   /// How many words a quick revision can pick from: every word taught, in a
   /// skill it can be drilled in now.
-  int get revisableCount => <String>{
-    for (final item in buildSession(const DrillRequest(revise: true)).items)
+  int get revisableCount => revisableIn(null);
+
+  /// How many words a revision of [skills] can pick from, or of every skill
+  /// switched on when null.
+  int revisableIn(Set<Skill>? skills) => <String>{
+    for (final item in buildSession(
+      DrillRequest(revise: true, skills: skills),
+    ).items)
       item.card.id,
   }.length;
 
