@@ -12,6 +12,7 @@ import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/drill/grammar_cells.dart';
 import 'package:fluenough/features/drill/grammar_drill.dart';
 import 'package:fluenough/features/drill/input_mode_choice.dart';
+import 'package:fluenough/features/drill/keyboard_hint.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
 
@@ -91,6 +92,32 @@ void main() {
     expect(find.byType(InputModeChoice), findsOneWidget);
     expect(session.transliterating, transliterating);
     expect(find.text('nama'), findsOneWidget);
+  });
+
+  testWidgets('production in the script: the HeliBoard line goes while the '
+      'keyboard is open, and comes back as it closes', (tester) async {
+    usePhoneWithBars(tester);
+    await pumpScreen(
+      tester,
+      DrillPage(
+        request: DrillRequest.untaught(
+          'te-en-first-words',
+          skill: Skill.production,
+        ),
+        preset: const DrillPreset(
+          target: 'నమస్కారం',
+          inputMode: InputMode.script,
+        ),
+      ),
+    );
+    expect(find.byType(KeyboardHint), findsOneWidget);
+
+    await setKeyboard(tester, open: true);
+    expect(find.byType(KeyboardHint), findsNothing);
+    expectInView(tester, find.byType(TextField));
+
+    await setKeyboard(tester, open: false);
+    expect(find.byType(KeyboardHint), findsOneWidget);
   });
 
   testWidgets('listening: with the keyboard open the play button, the field '
