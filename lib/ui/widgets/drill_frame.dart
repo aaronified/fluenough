@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
@@ -44,10 +45,17 @@ class DrillFrame extends StatelessWidget {
     this.feedback,
     this.actions = const <Widget>[],
     this.reportDetail,
+    this.needsSound = false,
   });
 
   /// What a report from this drill says it showed: the card's id and deck.
   final String? reportDetail;
+
+  /// Whether the question cannot be answered without hearing it: a
+  /// listening card or a minimal pair. While the phone's volume is at zero
+  /// and sound is on, its card is greyed out and asks for the volume to be
+  /// raised, on the card itself (ADR-0026).
+  final bool needsSound;
 
   final Skill skill;
 
@@ -163,8 +171,15 @@ class DrillFrame extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: gap),
+                          // Always this one widget, so that the card's own
+                          // widgets, such as a speaker that played as it
+                          // appeared, keep their state as needsSound changes.
                           Expanded(
-                            child: DrillCard(compact: compact, children: card),
+                            child: _NeedsSound(
+                              card: card,
+                              active: needsSound,
+                              compact: compact,
+                            ),
                           ),
                           if (below != null)
                             for (final widget in below) ...<Widget>[
@@ -254,3 +269,65 @@ class DrillCard extends StatelessWidget {
 /// slots.
 bool keyboardOpen(BuildContext context) =>
     MediaQuery.viewInsetsOf(context).bottom > 0;
+
+/// The drill's card. One that needs sound ([active]) is greyed out with a
+/// line asking for the volume to be raised while the phone is at zero, and
+/// is as usual once it is not.
+class _NeedsSound extends StatelessWidget {
+  const _NeedsSound({
+    required this.card,
+    required this.active,
+    required this.compact,
+  });
+
+  final List<Widget> card;
+  final bool active;
+
+  /// The card as it is while a typed answer is typed: see [DrillCard].
+  final bool compact;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    return ListenableBuilder(
+      listenable: Listenable.merge(<Listenable>[state.volume, state.settings]),
+      builder: (context, _) {
+        if (!active || !state.needsVolume) {
+          return DrillCard(compact: compact, children: card);
+        }
+        final l10n = AppLocalizations.of(context)!;
+        final theme = Theme.of(context);
+        return DrillCard(
+          compact: compact,
+          children: <Widget>[
+            Semantics(
+              liveRegion: true,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.volume_off, color: theme.colorScheme.error),
+                  const SizedBox(width: 8),
+                  Flexible(
+                    child: Text(
+                      l10n.drillRaiseVolume,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.titleMedium!.copyWith(
+                        color: theme.colorScheme.error,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            for (final widget in card)
+              IgnorePointer(
+                child: ExcludeSemantics(
+                  child: Opacity(opacity: 0.38, child: widget),
+                ),
+              ),
+          ],
+        );
+      },
+    );
+  }
+}
