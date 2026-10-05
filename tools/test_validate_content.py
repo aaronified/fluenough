@@ -416,3 +416,36 @@ class Numbers(Validated):
         rules = self.write("hi-numbers.yaml", NUMBERS)
         problems = validate_decks.check_numbers_across([rules])
         self.assertTrue(any("no hi deck teaches a number theme" in p for p in problems), problems)
+
+
+class Icons(Validated):
+    """A language's icon: a letter or two, the same in all its decks (ADR-0027)."""
+
+    def with_icon(self, icon: str) -> str:
+        return VOCAB.replace("tts: hi-IN }", f"tts: hi-IN, icon: {icon} }}", 1)
+
+    def test_a_letter_or_two_is_an_icon(self) -> None:
+        self.assertValid(self.with_icon('"हि"'))
+
+    def test_too_long_or_padded_is_not(self) -> None:
+        for icon in ('"हिन्दी"', '" हि"'):
+            with self.subTest(icon=icon):
+                self.assertRejected(self.with_icon(icon), "icon must be a letter or two")
+
+    def test_across_files_a_language_gives_one_icon(self) -> None:
+        def deck(name: str, text: str) -> validate_decks.Report:
+            path = self.tmp / name
+            path.write_text(text, encoding="utf-8")
+            return validate_decks.validate(path)
+
+        first = deck("a.yaml", self.with_icon('"हि"'))
+        same = deck("b.yaml", self.with_icon('"हि"'))
+        self.assertEqual(validate_decks.check_icons_across([first, same]), [])
+        other = deck("c.yaml", self.with_icon('"न"'))
+        none = deck("d.yaml", VOCAB)
+        for odd, needle in ((other, "'न' in"), (none, "no icon in")):
+            with self.subTest(needle=needle):
+                problems = validate_decks.check_icons_across([first, same, odd])
+                self.assertEqual(len(problems), 1, problems)
+                self.assertIn("the hi decks give different icons", problems[0])
+                self.assertIn(needle, problems[0])

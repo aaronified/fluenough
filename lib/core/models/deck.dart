@@ -11,6 +11,7 @@ class LanguageInfo {
     this.script = 'latin',
     this.tts,
     this.rtl = false,
+    this.icon,
   });
 
   /// BCP-47 primary subtag, e.g. `hi`: the tag voices and the article table
@@ -28,6 +29,10 @@ class LanguageInfo {
 
   /// BCP-47 voice tag from the deck, if it declared one.
   final String? tts;
+
+  /// What the language's chip shows: the first letter of its own name, as
+  /// हि for Hindi (ADR-0027). Null for a deck that gives none.
+  final String? icon;
 
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks

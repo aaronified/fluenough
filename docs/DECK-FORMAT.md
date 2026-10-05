@@ -47,6 +47,7 @@ Common to every kind.
 | `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic` and `greek` expects a `reading` on each card. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
+| `icon` | no | What the language's chip shows: the first letter of its own name, as `"हि"` for Hindi or `"Es"` for Spanish ([ADR-0027](adr/0027-language-icons.md)). Give the same one on every deck of the language; the validator checks that they agree. Without one, a chip shows the first letter of the language's first card. |
 
 ### `native`
 
