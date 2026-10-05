@@ -29,6 +29,22 @@ The other figures check out:
 - 600 ÷ 182.5 = 3.3 years, … 2,200 ÷ 182.5 = 12.1;
 - the multipliers are hours ÷ 600.
 
+## Target level
+
+Decided with the owner: **a full course takes a learner to CEFR B1, about
+ILR 1+**, independent in daily life. A1 and A2 are milestones along the
+path.
+
+- **Words:** B1 needs roughly 2,500–3,000 words a language (Milton and
+  Alexiou, 2009, from learners of French and Greek; confidence medium).
+  Today's Indian courses teach 450–680 vocabulary cards, and Spanish 41.
+  So each course grows about fivefold, with grammar and listening to match.
+- **ILR and CEFR:** there is no official equivalence. ILR 1+ ≈ B1 and
+  ILR 3 ≈ C1 are the usual approximations.
+- **Pacing:** the scheme's FSI hours lead to ILR 3, far past B1. Its tiers
+  and phase lengths still set the pacing, but a course ends at B1. Where B1
+  falls among the phases is to decide.
+
 ## What exists
 
 - **Eight languages:** Hindi, Bengali, Assamese, Marathi, Gujarati, Telugu,
@@ -204,15 +220,20 @@ built **one full course at a time**; the script comes late everywhere.
 |---|---|
 | The app: tiers, phases, pacing, the 30-minute day, variants | 11–16 |
 | New scripts: fonts, RTL, word splitting, folds, romanisation | 25–40 |
-| Fitting the seven Indian languages | 28–42 |
-| Spanish as a full course | 12–16 |
-| 39 new languages, full courses one at a time, at 10–15 h each | 390–585 |
-| A second variant, where a language offers one, per variant | 5–8 |
+| Fitting the seven Indian languages to the scheme | 28–42 |
+| Taking the seven Indian languages to B1, about 2,000 more words each, at 40–60 h each | 280–420 |
+| Spanish as a full course to B1 | 50–75 |
+| 39 new languages, full courses to B1 one at a time, at 50–75 h each | 1,950–2,925 |
+| A second variant, where a language offers one, per variant | 25–40 |
 
-- Before the first new language: about 76–114 hours, or roughly 13–19
-  working days of 6 hours.
-- Then each new language, a full course: about 10–15 hours, or 2–3 days.
-- All 39: about 470–700 hours in all, plus the variants.
+These scale today's rate: about 10–15 hours for a course of about 500
+vocabulary cards. The listening tier and the extra word-order tiles grow
+with the cards.
+
+- Before the first new language, with the existing courses at B1: about
+  394–593 hours, or roughly 66–99 working days of 6 hours.
+- Then each new language: about 50–75 hours, or 8–13 days.
+- All of it: about 2,350–3,500 hours, plus the variants.
 
 Confidence: low. The content hours are the biggest unknown, and the scripts
 need checking on a phone.
