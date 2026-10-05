@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Speaking cards no longer stop listening 3 seconds after you tap the microphone, whatever you are saying. They listen for up to 8 seconds, and stop once you stop talking. Being cut off mid-word, or before you had begun, gave "Didn't catch that" (#193).
 - When a speaking card hears nothing, "Didn't catch that. Say it again." now shows in place of "Tap and say it", under the microphone, instead of below it, where the "Can't speak now" button covered it (#190).
 
 ## [0.3.2] - 2026-10-04
