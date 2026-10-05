@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - While you type an answer in a language's own script, the "No keyboard? Try HeliBoard." line hides too, giving the card more room; it comes back when the keyboard closes (#185).
 
+### Fixed
+
+- When a speaking card hears nothing, "Didn't catch that. Say it again." now shows in place of "Tap and say it", under the microphone, instead of below it, where the "Can't speak now" button covered it (#190).
+
 ## [0.3.2] - 2026-10-04
 
 ### Added
