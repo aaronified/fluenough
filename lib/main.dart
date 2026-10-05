@@ -16,6 +16,7 @@ import 'app/report_mail.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
+import 'core/tts/volume_monitor.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
 
@@ -41,6 +42,7 @@ Future<void> main() async {
         settings: storage.settings,
         tts: SystemTtsEngine(),
         speech: SystemSpeechEngine(),
+        volume: SystemVolumeMonitor(),
         soundCheck: SystemSoundCheck(),
         reports: const MailReportSender(
           address: AppLinks.feedbackEmail,

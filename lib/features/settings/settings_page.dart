@@ -32,7 +32,8 @@ import 'update_section.dart';
 /// backup, updates, and the footer.
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
-/// per day, the skill switches, romanisation, speech rate, and the Voices row.
+/// per day, the skill switches, romanisation, sound, playing
+/// words automatically, speech rate, and the Voices row.
 /// Export and import save the review log as a file and merge one back
 /// (#20). Updates, which the design does not draw, checks GitHub for a newer
 /// version, beside the version line, and installs it (ADR-0017). Everything
@@ -337,6 +338,25 @@ class SettingsPage extends StatelessWidget {
     return GroupedList.settings(
       header: l10n.settingsSectionSound,
       children: <Widget>[
+        GroupedTile.toggle(
+          title: l10n.settingsSound,
+          subtitle: l10n.settingsSoundDesc,
+          value: settings.soundOn,
+          onChanged: (on) {
+            settings.soundOn = on;
+            if (!on) showAppSnackBar(context, l10n.settingsSoundOffSkipped);
+          },
+        ),
+        // Shown as it is set, but cannot be changed while nothing plays.
+        GroupedTile.toggle(
+          title: l10n.settingsAutoplay,
+          subtitle: l10n.settingsAutoplayDesc,
+          value: settings.autoplay,
+          titleColor: settings.soundOn
+              ? null
+              : Theme.of(context).colorScheme.onSurfaceVariant,
+          onChanged: settings.soundOn ? (on) => settings.autoplay = on : null,
+        ),
         SettingsSlider(
           title: l10n.settingsSpeechRate,
           valueLabel: l10n.settingsSpeechRateValue(settings.speechRate),
