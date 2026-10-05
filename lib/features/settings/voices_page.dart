@@ -87,6 +87,11 @@ class _VoicesPageState extends State<VoicesPage> {
 
   Future<void> _test(AppState state, LanguageInfo language, String text) {
     final l10n = AppLocalizations.of(context)!;
+    // Nothing is spoken while sound is off: say so, rather than "Speaking".
+    if (!state.settings.soundOn) {
+      showAppSnackBar(context, l10n.speakerSoundOff);
+      return Future<void>.value();
+    }
     showAppSnackBar(context, l10n.voicesSpeaking(text));
     return state.speak(text, language);
   }

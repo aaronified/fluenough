@@ -7,12 +7,14 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 import 'rating_buttons.dart';
 
-/// Recognition: the target, big, with its reading; "Show answer"; then the
-/// meaning, the note and an example, and the four self-ratings.
+/// Recognition: the target, big, with its reading and, where the phone has
+/// a voice, its speaker; "Show answer"; then the meaning, the note and an
+/// example, and the four self-ratings.
 ///
 /// Design screens `drill-recognition` and `drill-recognition-revealed`.
 class RecognitionDrill extends StatelessWidget {
@@ -76,6 +78,14 @@ class RecognitionDrill extends StatelessWidget {
               height: 24 / 18,
               color: scheme.onSurfaceVariant,
             ),
+          ),
+        // From the start: hearing the word gives nothing away. Keyed, so
+        // that showing the answer does not play it again.
+        if (session.canPlay)
+          Speaker(
+            key: const ValueKey<String>('speaker'),
+            onPlay: session.play,
+            playing: session.playing,
           ),
         if (revealed) ...<Widget>[
           Container(

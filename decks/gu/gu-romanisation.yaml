@@ -5,7 +5,30 @@ schema: 1
 kind: romanisation
 id: gu-romanisation
 language: gu
-scheme: "Popular and unmarked, as Gujarati is texted: lowercase ASCII, no length marks, spelled as said with the dropped a left out; ch for ચ, chh for છ, j for જ, jh for ઝ, sh for શ and ષ, n for ણ, l for ળ, gn for જ્ઞ, ru for ઋ, v for વ, t and d for both rows, aspirates with h, and the dot as the n or m it is said as."
+scheme: "ISO 15919 letters, spelled as said (ADR-0025): ā for આ; i and u for both the short and the long vowel, which Gujarati says alike; e, o, ai and au; ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth; c for ચ and ch for છ; ś for શ and ષ, said alike; ḷ for ળ; ru for ઋ; ê and ô for ઍ and ઑ. The inherent a is left out where it is not said. The anusvara is written as the nasal said (pandar), or ṁ before y, r, l, v, a sibilant or h, and a nasal vowel ends in m̐ (hum̐, chum̐). જ્ઞ is gn and ક્ષ kś, as said. A typed answer needs none of the marks."
+standard: "ISO 15919"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṅkh", "nkh"]
+  - ["ṅgh", "ngh"]
+  - ["ṅk", "nk"]
+  - ["ṅg", "ng"]
+  - ["ṅ", "ng"]
+  - ["ñch", "nchh"]
+  - ["ñc", "nch"]
+  - ["ñjh", "njh"]
+  - ["ñj", "nj"]
+  - ["ñ", "ny"]
+  - ["cch", "chchh"]
+  - ["cc", "chch"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["m̐", "n"]
+  - ["ṁ", "n"]
+  - ["ḵ", "kh"]
 equivalents:
   - ["a", "aa"]
   - ["i", "ee", "ii"]

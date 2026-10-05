@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-reading-sunitacha-ravivar
 name: "Reading: Sunita's Sunday"
 kind: reading
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 source: "Written for this deck and released under CC0"
@@ -14,23 +14,30 @@ passages:
     theme: daily-life
     sentences:
       - text: "आज रविवार आहे."
-        reading: "aj ravivar ahe."
+        reading: "āj ravivār āhe."
+        ipa: "adz rəʋiʋar aɦe"
       - text: "सुनीता सात वाजता उठते."
-        reading: "sunita sat vajta uthte."
+        reading: "sunitā sāt vājtā uṭhte."
+        ipa: "sunit̪a sat̪ ʋadzt̪a uʈʰt̪e"
       - text: "ती चहा करते आणि आजीला देते."
-        reading: "ti chaha karte ani ajila dete."
+        reading: "ti cahā karte āṇi ājilā dete."
+        ipa: "t̪i tsəɦa kərt̪e aɳi adʒila d̪et̪e"
       - text: "आजी म्हणते, “आज बाजारात जा. घरात भाजी नाही.”"
-        reading: "aji mhante, 'aj bajarat ja. gharat bhaji nahi.'"
+        reading: "āji mhaṇte, 'āj bājārāt jā. gharāt bhāji nāhi.'"
+        ipa: "adʒi mɦəɳt̪e adz badzarat̪ dza ɡʱərat̪ bʱadʒi naɦi"
       - text: "सुनीता पिशवी घेते आणि बाहेर जाते."
-        reading: "sunita pishvi ghete ani baher jate."
+        reading: "sunitā piśvi ghete āṇi bāher jāte."
+        ipa: "sunit̪a piʃʋi ɡʱet̪e aɳi baɦer dzat̪e"
     glossary:
       - word: "सुनीता"
         modern: "सुनीता"
-        reading: "sunita"
+        reading: "sunitā"
+        ipa: "sunit̪a"
         meaning: { en: "Sunita, a woman's name" }
       - word: "बाहेर"
         modern: "बाहेर"
-        reading: "baher"
+        reading: "bāher"
+        ipa: "baɦer"
         meaning: { en: "out; outside" }
     questions:
       - id: mr-0656
@@ -55,35 +62,45 @@ passages:
     theme: market
     sentences:
       - text: "बाजारात खूप गर्दी आहे."
-        reading: "bajarat khup gardi ahe."
+        reading: "bājārāt khup gardi āhe."
+        ipa: "badzarat̪ kʰup ɡərd̪i aɦe"
       - text: "सुनीता भाजीवाल्या काकांना विचारते, “कांदे किती रुपये किलो?”"
-        reading: "sunita bhajivalya kakanna vicharte, 'kande kiti rupaye kilo?'"
+        reading: "sunitā bhājivālyā kākānnā vicārte, 'kānde kiti rupaye kilo?'"
+        ipa: "sunit̪a bʱadʒiʋalja kakanna ʋitsart̪e kand̪e kit̪i rupəje kilo"
       - text: "काका म्हणतात, “चाळीस रुपये.”"
-        reading: "kaka mhantat, 'chalis rupaye.'"
+        reading: "kākā mhaṇtāt, 'cāḷis rupaye.'"
+        ipa: "kaka mɦəɳt̪at̪ tsaɭis rupəje"
       - text: "“खूप महाग आहे! थोडे कमी करा.”"
-        reading: "'khup mahag ahe! thode kami kara.'"
+        reading: "'khup mahāg āhe! thoḍe kami karā.'"
+        ipa: "kʰup məɦaɡ aɦe t̪ʰoɖe kəmi kəra"
       - text: "काका हसतात आणि पस्तीस रुपये घेतात."
-        reading: "kaka hastat ani pastis rupaye ghetat."
+        reading: "kākā hastāt āṇi pastis rupaye ghetāt."
+        ipa: "kaka ɦəst̪at̪ aɳi pəst̪is rupəje ɡʱet̪at̪"
       - text: "सुनीता दोन किलो कांदे आणि एक किलो बटाटे घेते."
-        reading: "sunita don kilo kande ani ek kilo batate ghete."
+        reading: "sunitā don kilo kānde āṇi ek kilo baṭāṭe ghete."
+        ipa: "sunit̪a d̪on kilo kand̪e aɳi ek kilo bəʈaʈe ɡʱet̪e"
     glossary:
       - word: "गर्दी"
         modern: "गर्दी"
         reading: "gardi"
+        ipa: "ɡərd̪i"
         meaning: { en: "a crowd; crowded" }
       - word: "भाजीवाल्या काकांना"
         modern: "भाजीवाले काका"
-        reading: "bhajivale kaka"
+        reading: "bhājivāle kākā"
+        ipa: "bʱadʒiʋale kaka"
         meaning: { en: "(to) the vegetable seller" }
         note: { en: "भाजी, vegetables, with -वाला, the one who sells them. An older man is काका, and spoken of politely in the plural, so -ला becomes -ना: काकांना, to him." }
       - word: "विचारते"
         modern: "विचारते"
-        reading: "vicharte"
+        reading: "vicārte"
+        ipa: "ʋitsart̪e"
         meaning: { en: "asks" }
         note: { en: "from विचारणे, to ask" }
       - word: "हसतात"
         modern: "हसतात"
-        reading: "hastat"
+        reading: "hastāt"
+        ipa: "ɦəst̪at̪"
         meaning: { en: "laughs (said of him in the polite plural)" }
         note: { en: "from हसणे, to laugh" }
     questions:
@@ -109,29 +126,37 @@ passages:
     theme: eating-out
     sentences:
       - text: "घरी जाताना सुनीताला भूक लागते."
-        reading: "ghari jatana sunitala bhuk lagte."
+        reading: "ghari jātānā sunitālā bhuk lāgte."
+        ipa: "ɡʱəri dzat̪ana sunit̪ala bʱuk laɡt̪e"
       - text: "रस्त्यावर एक वडापावची गाडी आहे."
-        reading: "rastyavar ek vadapavchi gadi ahe."
+        reading: "rastyāvar ek vaḍāpāvci gāḍi āhe."
+        ipa: "rəst̪jaʋər ek ʋəɖapaʋtʃi ɡaɖi aɦe"
       - text: "ती दोन वडापाव घेते."
-        reading: "ti don vadapav ghete."
+        reading: "ti don vaḍāpāv ghete."
+        ipa: "t̪i d̪on ʋəɖapaʋ ɡʱet̪e"
       - text: "एक वडापाव ती खाते आणि एक आजीसाठी घेऊन जाते."
-        reading: "ek vadapav ti khate ani ek ajisathi gheun jate."
+        reading: "ek vaḍāpāv ti khāte āṇi ek ājisāṭhi gheun jāte."
+        ipa: "ek ʋəɖapaʋ t̪i kʰat̪e aɳi ek adʒisaʈʰi ɡʱeun dzat̪e"
       - text: "आजी म्हणते, “वा! खूप छान!”"
-        reading: "aji mhante, 'va! khup chhan!'"
+        reading: "āji mhaṇte, 'vā! khup chān!'"
+        ipa: "adʒi mɦəɳt̪e ʋa kʰup tʃʰan"
     glossary:
       - word: "जाताना"
         modern: "जाताना"
-        reading: "jatana"
+        reading: "jātānā"
+        ipa: "dzat̪ana"
         meaning: { en: "while going; on the way" }
         note: { en: "the stem with -ताना is 'while doing'" }
       - word: "सुनीताला"
         modern: "सुनीताला"
-        reading: "sunitala"
+        reading: "sunitālā"
+        ipa: "sunit̪ala"
         meaning: { en: "to Sunita" }
         note: { en: "hunger 'strikes' the one who feels it, who takes -ला: मला भूक लागते, I get hungry" }
       - word: "वा"
         modern: "वा"
-        reading: "va"
+        reading: "vā"
+        ipa: "ʋa"
         meaning: { en: "wow; how lovely" }
     questions:
       - id: mr-0662

@@ -5,7 +5,7 @@ kind: vocab
 description: >-
   High-frequency Spanish nouns, verbs, adjectives and courtesy phrases.
   A starting point rather than a complete course.
-language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
+language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES, icon: "Es" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 tags: [beginner, core]
@@ -15,18 +15,21 @@ cards:
   - id: es-0001
     target: el hombre
     native: the man
+    ipa: "el ˈombɾe"
     pos: noun
     gender: m
     tags: [people]
   - id: es-0002
     target: la mujer
     native: the woman
+    ipa: "la muˈxeɾ"
     pos: noun
     gender: f
     tags: [people]
   - id: es-0003
     target: el niño
     native: the boy
+    ipa: "el ˈniɲo"
     alt_native: [the child]
     pos: noun
     gender: m
@@ -34,12 +37,14 @@ cards:
   - id: es-0004
     target: la niña
     native: the girl
+    ipa: "la ˈniɲa"
     pos: noun
     gender: f
     tags: [people]
   - id: es-0005
     target: el amigo
     native: the friend
+    ipa: "el aˈmiɡo"
     pos: noun
     gender: m
     notes: "la amiga when the friend is female."
@@ -49,6 +54,7 @@ cards:
   - id: es-0006
     target: la casa
     native: the house
+    ipa: "la ˈkasa"
     alt_native: [the home]
     pos: noun
     gender: f
@@ -56,33 +62,39 @@ cards:
     examples:
       - target: La casa es muy grande.
         native: The house is very big.
+        ipa: "la ˈkasa es mwi ˈɡɾande"
   - id: es-0007
     target: la puerta
     native: the door
+    ipa: "la ˈpweɾta"
     pos: noun
     gender: f
     tags: [home]
   - id: es-0008
     target: la ventana
     native: the window
+    ipa: "la benˈtana"
     pos: noun
     gender: f
     tags: [home]
   - id: es-0009
     target: la mesa
     native: the table
+    ipa: "la ˈmesa"
     pos: noun
     gender: f
     tags: [home]
   - id: es-0010
     target: la silla
     native: the chair
+    ipa: "la ˈsiʝa"
     pos: noun
     gender: f
     tags: [home]
   - id: es-0011
     target: el libro
     native: the book
+    ipa: "el ˈlibɾo"
     pos: noun
     gender: m
     tags: [objects]
@@ -91,6 +103,7 @@ cards:
   - id: es-0012
     target: el agua
     native: the water
+    ipa: "el ˈaɡwa"
     pos: noun
     gender: f
     notes: >-
@@ -100,18 +113,21 @@ cards:
   - id: es-0013
     target: el pan
     native: the bread
+    ipa: "el pan"
     pos: noun
     gender: m
     tags: [food]
   - id: es-0014
     target: la leche
     native: the milk
+    ipa: "la ˈletʃe"
     pos: noun
     gender: f
     tags: [food]
   - id: es-0015
     target: la comida
     native: the food
+    ipa: "la koˈmida"
     alt_native: [the meal]
     pos: noun
     gender: f
@@ -121,24 +137,28 @@ cards:
   - id: es-0016
     target: la ciudad
     native: the city
+    ipa: "la θjuˈdad"
     pos: noun
     gender: f
     tags: [places]
   - id: es-0017
     target: la calle
     native: the street
+    ipa: "la ˈkaʝe"
     pos: noun
     gender: f
     tags: [places]
   - id: es-0018
     target: el país
     native: the country
+    ipa: "el paˈis"
     pos: noun
     gender: m
     tags: [places]
   - id: es-0019
     target: el día
     native: the day
+    ipa: "el ˈdia"
     pos: noun
     gender: m
     notes: "Masculine despite ending in -a."
@@ -146,12 +166,14 @@ cards:
   - id: es-0020
     target: la noche
     native: the night
+    ipa: "la ˈnotʃe"
     pos: noun
     gender: f
     tags: [time]
   - id: es-0021
     target: el año
     native: the year
+    ipa: "el ˈaɲo"
     pos: noun
     gender: m
     tags: [time]
@@ -160,6 +182,7 @@ cards:
   - id: es-0022
     target: ser
     native: to be
+    ipa: "seɾ"
     pos: verb
     notes: >-
       Permanent or essential qualities: identity, origin, profession.
@@ -168,9 +191,11 @@ cards:
     examples:
       - target: Ella es médica.
         native: She is a doctor.
+        ipa: "ˈeʝa es ˈmedika"
   - id: es-0023
     target: estar
     native: to be
+    ipa: "esˈtaɾ"
     pos: verb
     notes: >-
       Temporary states and location. Contrast with ser.
@@ -178,41 +203,49 @@ cards:
     examples:
       - target: Estoy cansado.
         native: I am tired.
+        ipa: "esˈtoj kanˈsado"
   - id: es-0024
     target: tener
     native: to have
+    ipa: "teˈneɾ"
     pos: verb
     tags: [verb, irregular]
   - id: es-0025
     target: hacer
     native: to do
+    ipa: "aˈθeɾ"
     alt_native: [to make]
     pos: verb
     tags: [verb, irregular]
   - id: es-0026
     target: ir
     native: to go
+    ipa: "iɾ"
     pos: verb
     tags: [verb, irregular]
   - id: es-0027
     target: hablar
     native: to speak
+    ipa: "aˈblaɾ"
     alt_native: [to talk]
     pos: verb
     tags: [verb, regular-ar]
   - id: es-0028
     target: comer
     native: to eat
+    ipa: "koˈmeɾ"
     pos: verb
     tags: [verb, regular-er]
   - id: es-0029
     target: beber
     native: to drink
+    ipa: "beˈbeɾ"
     pos: verb
     tags: [verb, regular-er]
   - id: es-0030
     target: vivir
     native: to live
+    ipa: "biˈbiɾ"
     pos: verb
     tags: [verb, regular-ir]
 
@@ -220,28 +253,33 @@ cards:
   - id: es-0031
     target: grande
     native: big
+    ipa: "ˈɡɾande"
     alt_native: [large]
     pos: adj
     tags: [adjective]
   - id: es-0032
     target: pequeño
     native: small
+    ipa: "peˈkeɲo"
     alt_native: [little]
     pos: adj
     tags: [adjective]
   - id: es-0033
     target: bueno
     native: good
+    ipa: "ˈbweno"
     pos: adj
     tags: [adjective]
   - id: es-0034
     target: malo
     native: bad
+    ipa: "ˈmalo"
     pos: adj
     tags: [adjective]
   - id: es-0035
     target: nuevo
     native: new
+    ipa: "ˈnwebo"
     pos: adj
     tags: [adjective]
 
@@ -249,33 +287,39 @@ cards:
   - id: es-0036
     target: hola
     native: hello
+    ipa: "ˈola"
     pos: phrase
     tags: [courtesy]
   - id: es-0037
     target: gracias
     native: thank you
+    ipa: "ˈɡɾaθjas"
     alt_native: [thanks]
     pos: phrase
     tags: [courtesy]
   - id: es-0038
     target: por favor
     native: please
+    ipa: "poɾ faˈboɾ"
     pos: phrase
     tags: [courtesy]
   - id: es-0039
     target: buenos días
     native: good morning
+    ipa: "ˈbwenos ˈdias"
     pos: phrase
     tags: [courtesy]
   - id: es-0040
     target: buenas noches
     native: good night
+    ipa: "ˈbwenas ˈnotʃes"
     alt_native: [good evening]
     pos: phrase
     tags: [courtesy]
   - id: es-0041
     target: lo siento
     native: I'm sorry
+    ipa: "lo ˈsjento"
     alt_native: [sorry]
     pos: phrase
     tags: [courtesy]

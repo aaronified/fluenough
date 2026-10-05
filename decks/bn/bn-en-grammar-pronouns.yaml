@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-pronouns
 name: "Pronouns and possessives"
 kind: grammar
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I, you, he and she, here, over there and not present, with my and your, and me and you as objects."
@@ -16,17 +16,22 @@ pattern:
   entries:
     - lemma: "আমি"
       key: ami
-      reading: "ami"
+      reading: "āmi"
+      ipa: "ami"
       gloss: "I"
       forms:
         "possessive: my, your …": "আমার"
         "object: me, to me …": "আমাকে"
       readings:
+        "possessive: my, your …": "āmār"
+        "object: me, to me …": "āmāke"
+      ipas:
         "possessive: my, your …": "amar"
         "object: me, to me …": "amake"
     - lemma: "তুই"
       key: tui
       reading: "tui"
+      ipa: "t̪ui"
       gloss: "you, intimate"
       forms:
         "possessive: my, your …": "তোর"
@@ -34,69 +39,97 @@ pattern:
       readings:
         "possessive: my, your …": "tor"
         "object: me, to me …": "toke"
+      ipas:
+        "possessive: my, your …": "t̪or"
+        "object: me, to me …": "t̪oke"
     - lemma: "তুমি"
       key: tumi
       reading: "tumi"
+      ipa: "t̪umi"
       gloss: "you, familiar"
       forms:
         "possessive: my, your …": "তোমার"
         "object: me, to me …": "তোমাকে"
       readings:
-        "possessive: my, your …": "tomar"
-        "object: me, to me …": "tomake"
+        "possessive: my, your …": "tomār"
+        "object: me, to me …": "tomāke"
+      ipas:
+        "possessive: my, your …": "t̪omar"
+        "object: me, to me …": "t̪omake"
     - lemma: "আপনি"
       key: apni
-      reading: "apni"
+      reading: "āpni"
+      ipa: "apni"
       gloss: "you, respectful"
       forms:
         "possessive: my, your …": "আপনার"
         "object: me, to me …": "আপনাকে"
       readings:
+        "possessive: my, your …": "āpnār"
+        "object: me, to me …": "āpnāke"
+      ipas:
         "possessive: my, your …": "apnar"
         "object: me, to me …": "apnake"
     - lemma: "সে"
       key: she
-      reading: "she"
+      reading: "śe"
+      ipa: "ʃe"
       gloss: "he or she"
       forms:
         "possessive: my, your …": "তার"
         "object: me, to me …": "তাকে"
       readings:
-        "possessive: my, your …": "tar"
-        "object: me, to me …": "take"
+        "possessive: my, your …": "tār"
+        "object: me, to me …": "tāke"
+      ipas:
+        "possessive: my, your …": "t̪ar"
+        "object: me, to me …": "t̪ake"
     - lemma: "তিনি"
       key: tini
       reading: "tini"
+      ipa: "t̪ini"
       gloss: "he or she, respectful"
       forms:
         "possessive: my, your …": "তাঁর"
         "object: me, to me …": "তাঁকে"
       readings:
-        "possessive: my, your …": "tanr"
-        "object: me, to me …": "tanke"
+        "possessive: my, your …": "tām̐r"
+        "object: me, to me …": "tām̐ke"
+      ipas:
+        "possessive: my, your …": "t̪ãr"
+        "object: me, to me …": "t̪ãke"
     - lemma: "আমরা"
       key: amra
-      reading: "amra"
+      reading: "āmrā"
+      ipa: "amra"
       gloss: "we"
       forms:
         "possessive: my, your …": "আমাদের"
         "object: me, to me …": "আমাদের"
       readings:
-        "possessive: my, your …": "amader"
-        "object: me, to me …": "amader"
+        "possessive: my, your …": "āmāder"
+        "object: me, to me …": "āmāder"
+      ipas:
+        "possessive: my, your …": "amad̪er"
+        "object: me, to me …": "amad̪er"
     - lemma: "তোমরা"
       key: tomra
-      reading: "tomra"
+      reading: "tomrā"
+      ipa: "t̪omra"
       gloss: "you all, familiar"
       forms:
         "possessive: my, your …": "তোমাদের"
         "object: me, to me …": "তোমাদের"
       readings:
-        "possessive: my, your …": "tomader"
-        "object: me, to me …": "tomader"
+        "possessive: my, your …": "tomāder"
+        "object: me, to me …": "tomāder"
+      ipas:
+        "possessive: my, your …": "t̪omad̪er"
+        "object: me, to me …": "t̪omad̪er"
     - lemma: "ওরা"
       key: ora
-      reading: "ora"
+      reading: "orā"
+      ipa: "ora"
       gloss: "they, over there"
       forms:
         "possessive: my, your …": "ওদের"
@@ -104,9 +137,13 @@ pattern:
       readings:
         "possessive: my, your …": "oder"
         "object: me, to me …": "oder"
+      ipas:
+        "possessive: my, your …": "od̪er"
+        "object: me, to me …": "od̪er"
     - lemma: "এ"
       key: e
       reading: "e"
+      ipa: "e"
       gloss: "he or she, here, familiar"
       forms:
         "possessive: my, your …": "এর"
@@ -114,9 +151,13 @@ pattern:
       readings:
         "possessive: my, your …": "er"
         "object: me, to me …": "eke"
+      ipas:
+        "possessive: my, your …": "er"
+        "object: me, to me …": "eke"
     - lemma: "ও"
       key: o
       reading: "o"
+      ipa: "o"
       gloss: "he or she, over there, familiar"
       forms:
         "possessive: my, your …": "ওর"
@@ -124,29 +165,41 @@ pattern:
       readings:
         "possessive: my, your …": "or"
         "object: me, to me …": "oke"
+      ipas:
+        "possessive: my, your …": "or"
+        "object: me, to me …": "oke"
     - lemma: "ইনি"
       key: ini
       reading: "ini"
+      ipa: "ini"
       gloss: "he or she, here, respectful"
       forms:
         "possessive: my, your …": ["এঁর", "এনার"]
         "object: me, to me …": ["এঁকে", "এনাকে"]
       readings:
-        "possessive: my, your …": ["enr", "enar"]
-        "object: me, to me …": ["enke", "enake"]
+        "possessive: my, your …": ["em̐r", "enār"]
+        "object: me, to me …": ["em̐ke", "enāke"]
+      ipas:
+        "possessive: my, your …": "ẽr"
+        "object: me, to me …": "ẽke"
     - lemma: "উনি"
       key: uni
       reading: "uni"
+      ipa: "uni"
       gloss: "he or she, over there, respectful"
       forms:
         "possessive: my, your …": ["ওঁর", "ওনার"]
         "object: me, to me …": ["ওঁকে", "ওনাকে"]
       readings:
-        "possessive: my, your …": ["onr", "onar"]
-        "object: me, to me …": ["onke", "onake"]
+        "possessive: my, your …": ["om̐r", "onār"]
+        "object: me, to me …": ["om̐ke", "onāke"]
+      ipas:
+        "possessive: my, your …": "õr"
+        "object: me, to me …": "õke"
     - lemma: "তোরা"
       key: tora
-      reading: "tora"
+      reading: "torā"
+      ipa: "t̪ora"
       gloss: "you all, intimate"
       forms:
         "possessive: my, your …": "তোদের"
@@ -154,19 +207,27 @@ pattern:
       readings:
         "possessive: my, your …": "toder"
         "object: me, to me …": "toder"
+      ipas:
+        "possessive: my, your …": "t̪od̪er"
+        "object: me, to me …": "t̪od̪er"
     - lemma: "আপনারা"
       key: apnara
-      reading: "apnara"
+      reading: "āpnārā"
+      ipa: "apnara"
       gloss: "you all, respectful"
       forms:
         "possessive: my, your …": "আপনাদের"
         "object: me, to me …": "আপনাদের"
       readings:
-        "possessive: my, your …": "apnader"
-        "object: me, to me …": "apnader"
+        "possessive: my, your …": "āpnāder"
+        "object: me, to me …": "āpnāder"
+      ipas:
+        "possessive: my, your …": "apnad̪er"
+        "object: me, to me …": "apnad̪er"
     - lemma: "এরা"
       key: era
-      reading: "era"
+      reading: "erā"
+      ipa: "era"
       gloss: "they, here"
       forms:
         "possessive: my, your …": "এদের"
@@ -174,23 +235,34 @@ pattern:
       readings:
         "possessive: my, your …": "eder"
         "object: me, to me …": "eder"
+      ipas:
+        "possessive: my, your …": "ed̪er"
+        "object: me, to me …": "ed̪er"
     - lemma: "তারা"
       key: tara
-      reading: "tara"
+      reading: "tārā"
+      ipa: "t̪ara"
       gloss: "they, not present"
       forms:
         "possessive: my, your …": "তাদের"
         "object: me, to me …": "তাদের"
       readings:
-        "possessive: my, your …": "tader"
-        "object: me, to me …": "tader"
+        "possessive: my, your …": "tāder"
+        "object: me, to me …": "tāder"
+      ipas:
+        "possessive: my, your …": "t̪ad̪er"
+        "object: me, to me …": "t̪ad̪er"
     - lemma: "তাঁরা"
       key: tanra
-      reading: "tanra"
+      reading: "tām̐rā"
+      ipa: "t̪ãra"
       gloss: "they, respectful"
       forms:
         "possessive: my, your …": "তাঁদের"
         "object: me, to me …": "তাঁদের"
       readings:
-        "possessive: my, your …": "tander"
-        "object: me, to me …": "tander"
+        "possessive: my, your …": "tām̐der"
+        "object: me, to me …": "tām̐der"
+      ipas:
+        "possessive: my, your …": "t̪ãd̪er"
+        "object: me, to me …": "t̪ãd̪er"

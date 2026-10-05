@@ -2,7 +2,7 @@ schema: 1
 id: kn-en-grammar-needs
 name: "Need and want"
 kind: vocab
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "ಬೇಕು, ಬೇಡ and ಸಾಕು: what you need, what you want, what you don't, and when it is enough. Not yet checked by a Kannada speaker: please report any mistake."
@@ -11,56 +11,66 @@ cards:
   - id: kn-0332
     target: "ಬೇಕು"
     native: "is needed; is wanted"
-    reading: "beku"
+    reading: "bēku"
+    ipa: "beːku"
     pos: "other"
     notes: "The one who wants takes -ಗೆ: ನನಗೆ ಬೇಕು, I want it. After a verb it is 'must': ಹೋಗಬೇಕು, must go."
   - id: kn-0333
     target: "ನಿಮಗೆ ಏನು ಬೇಕು?"
     native: "What would you like? (what a shopkeeper asks)"
-    reading: "nimage enu beku?"
+    reading: "nimage ēnu bēku?"
+    ipa: "nimaɡe eːnu beːku"
     alt_target: ["ನಿಮಗೆ ಏನ್ ಬೇಕು?"]
     pos: "phrase"
   - id: kn-0334
     target: "ನನಗೆ ನೀರು ಬೇಕು."
     native: "I'd like some water."
-    reading: "nanage niru beku."
+    reading: "nanage nīru bēku."
+    ipa: "nanaɡe niːru beːku"
     pos: "phrase"
   - id: kn-0335
     target: "ಬೇಡ"
     native: "is not wanted; no, thank you"
-    reading: "beda"
+    reading: "bēḍa"
+    ipa: "beːɖa"
     pos: "other"
     notes: "Waved over a plate at a second helping: ಬೇಡ, ಸಾಕು (beda, saku), no thanks, that's enough."
   - id: kn-0336
     target: "ನನಗೆ ಇದು ಬೇಡ."
     native: "I don't want this."
-    reading: "nanage idu beda."
+    reading: "nanage idu bēḍa."
+    ipa: "nanaɡe id̪u beːɖa"
     pos: "phrase"
   - id: kn-0337
     target: "ಸಾಕು"
     native: "enough; that's enough"
-    reading: "saku"
+    reading: "sāku"
+    ipa: "saːku"
     pos: "other"
   - id: kn-0338
     target: "ಅಗತ್ಯ"
     native: "need; necessary"
     reading: "agatya"
+    ipa: "aɡat̪ja"
     pos: "noun"
   - id: kn-0339
     target: "ಅಗತ್ಯ ಇಲ್ಲ."
     native: "There's no need."
     reading: "agatya illa."
+    ipa: "aɡat̪ja illa"
     alt_target: ["ಬೇಕಾಗಿಲ್ಲ."]
     pos: "phrase"
-    notes: "Also ಬೇಕಾಗಿಲ್ಲ (bekagilla), it isn't needed."
+    notes: "Also ಬೇಕಾಗಿಲ್ಲ (bēkāgilla), it isn't needed."
   - id: kn-0340
     target: "ನನಗೆ ಸಹಾಯ ಬೇಕು."
     native: "I need some help."
-    reading: "nanage sahaya beku."
+    reading: "nanage sahāya bēku."
+    ipa: "nanaɡe sahaːja beːku"
     pos: "phrase"
   - id: kn-0341
     target: "ನನಗೆ ಮನೆಗೆ ಹೋಗಬೇಕು."
     native: "I want to go home."
-    reading: "nanage manege hogabeku."
+    reading: "nanage manege hōgabēku."
+    ipa: "nanaɡe maneɡe hoːɡabeːku"
     pos: "phrase"
     notes: "With ನನಗೆ, -ಬೇಕು on a verb is more a wish; with ನಾನು, more a duty: ನಾನು ಮನೆಗೆ ಹೋಗಬೇಕು, I have to go home."

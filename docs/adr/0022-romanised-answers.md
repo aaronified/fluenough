@@ -1,6 +1,7 @@
 # ADR-0022: Answers typed in Latin letters are graded against the reading, in the language's scheme
 
-- **Status:** Accepted
+- **Status:** Accepted. Superseded in part by ADR-0025: readings are
+  ISO 15919 letters as said; typed answers are graded as this ADR says.
 - **Date:** 2026-10-03
 
 ## Context

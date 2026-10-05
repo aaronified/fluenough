@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-past
 name: "Past tense"
 kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I went, she came: the simple past of verbs without an object, by person and gender. Not yet checked by a Marathi speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "जाणे"
       key: jaane
-      reading: "jane"
+      reading: "jāṇe"
+      ipa: "dzaɳe"
       gloss: "to go"
       forms:
         "मी (m)": "गेलो"
@@ -34,17 +35,30 @@ pattern:
         "मी (m)": "gelo"
         "मी (f)": "gele"
         "आम्ही": "gelo"
-        "तू (m)": "gelas"
+        "तू (m)": "gelās"
         "तू (f)": "gelis"
-        "तुम्ही": ["gelat", "gela"]
-        "तो": "gela"
+        "तुम्ही": ["gelāt", "gelā"]
+        "तो": "gelā"
         "ती": "geli"
         "ते (it)": "gele"
         "ते (they)": "gele"
-        "त्या (they, f)": "gelya"
+        "त्या (they, f)": "gelyā"
+      ipas:
+        "मी (m)": "ɡelo"
+        "मी (f)": "ɡele"
+        "आम्ही": "ɡelo"
+        "तू (m)": "ɡelas"
+        "तू (f)": "ɡelis"
+        "तुम्ही": "ɡelat̪"
+        "तो": "ɡela"
+        "ती": "ɡeli"
+        "ते (it)": "ɡele"
+        "ते (they)": "ɡele"
+        "त्या (they, f)": "ɡelja"
     - lemma: "येणे"
       key: yene
-      reading: "yene"
+      reading: "yeṇe"
+      ipa: "jeɳe"
       gloss: "to come"
       forms:
         "मी (m)": "आलो"
@@ -59,20 +73,33 @@ pattern:
         "ते (they)": "आले"
         "त्या (they, f)": "आल्या"
       readings:
+        "मी (m)": "ālo"
+        "मी (f)": "āle"
+        "आम्ही": "ālo"
+        "तू (m)": "ālās"
+        "तू (f)": "ālis"
+        "तुम्ही": ["ālāt", "ālā"]
+        "तो": "ālā"
+        "ती": "āli"
+        "ते (it)": "āle"
+        "ते (they)": "āle"
+        "त्या (they, f)": "ālyā"
+      ipas:
         "मी (m)": "alo"
         "मी (f)": "ale"
         "आम्ही": "alo"
         "तू (m)": "alas"
         "तू (f)": "alis"
-        "तुम्ही": ["alat", "ala"]
+        "तुम्ही": "alat̪"
         "तो": "ala"
         "ती": "ali"
         "ते (it)": "ale"
         "ते (they)": "ale"
-        "त्या (they, f)": "alya"
+        "त्या (they, f)": "alja"
     - lemma: "बसणे"
       key: basne
-      reading: "basne"
+      reading: "basṇe"
+      ipa: "bəsɳe"
       gloss: "to sit"
       forms:
         "मी (m)": "बसलो"
@@ -90,17 +117,30 @@ pattern:
         "मी (m)": "baslo"
         "मी (f)": "basle"
         "आम्ही": "baslo"
-        "तू (m)": "baslas"
+        "तू (m)": "baslās"
         "तू (f)": "baslis"
-        "तुम्ही": ["baslat", "basla"]
-        "तो": "basla"
+        "तुम्ही": ["baslāt", "baslā"]
+        "तो": "baslā"
         "ती": "basli"
         "ते (it)": "basle"
         "ते (they)": "basle"
-        "त्या (they, f)": "baslya"
+        "त्या (they, f)": "baslyā"
+      ipas:
+        "मी (m)": "bəslo"
+        "मी (f)": "bəsle"
+        "आम्ही": "bəslo"
+        "तू (m)": "bəslas"
+        "तू (f)": "bəslis"
+        "तुम्ही": "bəslat̪"
+        "तो": "bəsla"
+        "ती": "bəsli"
+        "ते (it)": "bəsle"
+        "ते (they)": "bəsle"
+        "त्या (they, f)": "bəslja"
     - lemma: "उठणे"
       key: uthne
-      reading: "uthne"
+      reading: "uṭhṇe"
+      ipa: "uʈʰɳe"
       gloss: "to get up"
       forms:
         "मी (m)": "उठलो"
@@ -115,14 +155,26 @@ pattern:
         "ते (they)": "उठले"
         "त्या (they, f)": "उठल्या"
       readings:
-        "मी (m)": "uthlo"
-        "मी (f)": "uthle"
-        "आम्ही": "uthlo"
-        "तू (m)": "uthlas"
-        "तू (f)": "uthlis"
-        "तुम्ही": ["uthlat", "uthla"]
-        "तो": "uthla"
-        "ती": "uthli"
-        "ते (it)": "uthle"
-        "ते (they)": "uthle"
-        "त्या (they, f)": "uthlya"
+        "मी (m)": "uṭhlo"
+        "मी (f)": "uṭhle"
+        "आम्ही": "uṭhlo"
+        "तू (m)": "uṭhlās"
+        "तू (f)": "uṭhlis"
+        "तुम्ही": ["uṭhlāt", "uṭhlā"]
+        "तो": "uṭhlā"
+        "ती": "uṭhli"
+        "ते (it)": "uṭhle"
+        "ते (they)": "uṭhle"
+        "त्या (they, f)": "uṭhlyā"
+      ipas:
+        "मी (m)": "uʈʰlo"
+        "मी (f)": "uʈʰle"
+        "आम्ही": "uʈʰlo"
+        "तू (m)": "uʈʰlas"
+        "तू (f)": "uʈʰlis"
+        "तुम्ही": "uʈʰlat̪"
+        "तो": "uʈʰla"
+        "ती": "uʈʰli"
+        "ते (it)": "uʈʰle"
+        "ते (they)": "uʈʰle"
+        "त्या (they, f)": "uʈʰlja"

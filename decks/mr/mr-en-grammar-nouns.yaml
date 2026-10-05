@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-nouns
 name: "Nouns: plural and endings"
 kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The plural, and the endings for 'in', 'on' and 'to', added to a noun that often changes first. Not yet checked by a Marathi speaker: please report any mistake."
@@ -17,6 +17,7 @@ pattern:
     - lemma: "घर"
       key: ghar
       reading: "ghar"
+      ipa: "ɡʱər"
       gloss: "house (n)"
       forms:
         "plural": ["घरे", "घरं"]
@@ -24,13 +25,19 @@ pattern:
         "on: -वर": "घरावर"
         "to: -ला": "घराला"
       readings:
-        "plural": ["ghare", "ghara"]
-        "in: -त": "gharat"
-        "on: -वर": "gharavar"
-        "to: -ला": "gharala"
+        "plural": ["ghare", "gharam̐"]
+        "in: -त": "gharāt"
+        "on: -वर": "gharāvar"
+        "to: -ला": "gharālā"
+      ipas:
+        "plural": "ɡʱəre"
+        "in: -त": "ɡʱərat̪"
+        "on: -वर": "ɡʱəraʋər"
+        "to: -ला": "ɡʱərala"
     - lemma: "शाळा"
       key: shaalaa
-      reading: "shala"
+      reading: "śāḷā"
+      ipa: "ʃaɭa"
       gloss: "school (f)"
       forms:
         "plural": "शाळा"
@@ -38,13 +45,19 @@ pattern:
         "on: -वर": "शाळेवर"
         "to: -ला": "शाळेला"
       readings:
-        "plural": "shala"
-        "in: -त": "shalet"
-        "on: -वर": "shalevar"
-        "to: -ला": "shalela"
+        "plural": "śāḷā"
+        "in: -त": "śāḷet"
+        "on: -वर": "śāḷevar"
+        "to: -ला": "śāḷelā"
+      ipas:
+        "plural": "ʃaɭa"
+        "in: -त": "ʃaɭet̪"
+        "on: -वर": "ʃaɭeʋər"
+        "to: -ला": "ʃaɭela"
     - lemma: "खोली"
       key: kholii
       reading: "kholi"
+      ipa: "kʰoli"
       gloss: "room (f)"
       forms:
         "plural": "खोल्या"
@@ -52,13 +65,19 @@ pattern:
         "on: -वर": "खोलीवर"
         "to: -ला": "खोलीला"
       readings:
-        "plural": "kholya"
+        "plural": "kholyā"
         "in: -त": "kholit"
         "on: -वर": "kholivar"
-        "to: -ला": "kholila"
+        "to: -ला": "kholilā"
+      ipas:
+        "plural": "kʰolja"
+        "in: -त": "kʰolit̪"
+        "on: -वर": "kʰoliʋər"
+        "to: -ला": "kʰolila"
     - lemma: "रस्ता"
       key: rastaa
-      reading: "rasta"
+      reading: "rastā"
+      ipa: "rəst̪a"
       gloss: "road (m)"
       forms:
         "plural": "रस्ते"
@@ -67,12 +86,18 @@ pattern:
         "to: -ला": "रस्त्याला"
       readings:
         "plural": "raste"
-        "in: -त": "rastyat"
-        "on: -वर": "rastyavar"
-        "to: -ला": "rastyala"
+        "in: -त": "rastyāt"
+        "on: -वर": "rastyāvar"
+        "to: -ला": "rastyālā"
+      ipas:
+        "plural": "rəst̪e"
+        "in: -त": "rəst̪jat̪"
+        "on: -वर": "rəst̪jaʋər"
+        "to: -ला": "rəst̪jala"
     - lemma: "खिसा"
       key: khisaa
-      reading: "khisa"
+      reading: "khisā"
+      ipa: "kʰisa"
       gloss: "pocket (m)"
       forms:
         "plural": "खिसे"
@@ -81,12 +106,18 @@ pattern:
         "to: -ला": "खिशाला"
       readings:
         "plural": "khise"
-        "in: -त": "khishat"
-        "on: -वर": "khishavar"
-        "to: -ला": "khishala"
+        "in: -त": "khiśāt"
+        "on: -वर": "khiśāvar"
+        "to: -ला": "khiśālā"
+      ipas:
+        "plural": "kʰise"
+        "in: -त": "kʰiʃat̪"
+        "on: -वर": "kʰiʃaʋər"
+        "to: -ला": "kʰiʃala"
     - lemma: "बाटली"
       key: baatlii
-      reading: "batli"
+      reading: "bāṭli"
+      ipa: "baʈli"
       gloss: "bottle (f)"
       forms:
         "plural": "बाटल्या"
@@ -94,13 +125,19 @@ pattern:
         "on: -वर": "बाटलीवर"
         "to: -ला": "बाटलीला"
       readings:
-        "plural": "batlya"
-        "in: -त": "batlit"
-        "on: -वर": "batlivar"
-        "to: -ला": "batlila"
+        "plural": "bāṭlyā"
+        "in: -त": "bāṭlit"
+        "on: -वर": "bāṭlivar"
+        "to: -ला": "bāṭlilā"
+      ipas:
+        "plural": "baʈlja"
+        "in: -त": "baʈlit̪"
+        "on: -वर": "baʈliʋər"
+        "to: -ला": "baʈlila"
     - lemma: "पुस्तक"
       key: pustak
       reading: "pustak"
+      ipa: "pust̪ək"
       gloss: "book (n)"
       forms:
         "plural": ["पुस्तके", "पुस्तकं"]
@@ -108,13 +145,19 @@ pattern:
         "on: -वर": "पुस्तकावर"
         "to: -ला": "पुस्तकाला"
       readings:
-        "plural": ["pustake", "pustaka"]
-        "in: -त": "pustakat"
-        "on: -वर": "pustakavar"
-        "to: -ला": "pustakala"
+        "plural": ["pustake", "pustakam̐"]
+        "in: -त": "pustakāt"
+        "on: -वर": "pustakāvar"
+        "to: -ला": "pustakālā"
+      ipas:
+        "plural": "pust̪əke"
+        "in: -त": "pust̪əkat̪"
+        "on: -वर": "pust̪əkaʋər"
+        "to: -ला": "pust̪əkala"
     - lemma: "झाड"
       key: jhaad
-      reading: "jhad"
+      reading: "jhāḍ"
+      ipa: "dzʱaɖ"
       gloss: "tree (n)"
       forms:
         "plural": ["झाडे", "झाडं"]
@@ -122,13 +165,19 @@ pattern:
         "on: -वर": "झाडावर"
         "to: -ला": "झाडाला"
       readings:
-        "plural": ["jhade", "jhada"]
-        "in: -त": "jhadat"
-        "on: -वर": "jhadavar"
-        "to: -ला": "jhadala"
+        "plural": ["jhāḍe", "jhāḍam̐"]
+        "in: -त": "jhāḍāt"
+        "on: -वर": "jhāḍāvar"
+        "to: -ला": "jhāḍālā"
+      ipas:
+        "plural": "dzʱaɖe"
+        "in: -त": "dzʱaɖat̪"
+        "on: -वर": "dzʱaɖaʋər"
+        "to: -ला": "dzʱaɖala"
     - lemma: "गाडी"
       key: gaadii
-      reading: "gadi"
+      reading: "gāḍi"
+      ipa: "ɡaɖi"
       gloss: "car; vehicle (f)"
       forms:
         "plural": "गाड्या"
@@ -136,13 +185,19 @@ pattern:
         "on: -वर": "गाडीवर"
         "to: -ला": "गाडीला"
       readings:
-        "plural": "gadya"
-        "in: -त": "gadit"
-        "on: -वर": "gadivar"
-        "to: -ला": "gadila"
+        "plural": "gāḍyā"
+        "in: -त": "gāḍit"
+        "on: -वर": "gāḍivar"
+        "to: -ला": "gāḍilā"
+      ipas:
+        "plural": "ɡaɖja"
+        "in: -त": "ɡaɖit̪"
+        "on: -वर": "ɡaɖiʋər"
+        "to: -ला": "ɡaɖila"
     - lemma: "डबा"
       key: dabaa
-      reading: "daba"
+      reading: "ḍabā"
+      ipa: "ɖəba"
       gloss: "box; tiffin; train carriage (m)"
       forms:
         "plural": "डबे"
@@ -150,7 +205,12 @@ pattern:
         "on: -वर": "डब्यावर"
         "to: -ला": "डब्याला"
       readings:
-        "plural": "dabe"
-        "in: -त": "dabyat"
-        "on: -वर": "dabyavar"
-        "to: -ला": "dabyala"
+        "plural": "ḍabe"
+        "in: -त": "ḍabyāt"
+        "on: -वर": "ḍabyāvar"
+        "to: -ला": "ḍabyālā"
+      ipas:
+        "plural": "ɖəbe"
+        "in: -त": "ɖəbjat̪"
+        "on: -वर": "ɖəbjaʋər"
+        "to: -ला": "ɖəbjala"

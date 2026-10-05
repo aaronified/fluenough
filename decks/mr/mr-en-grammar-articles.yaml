@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-articles
 name: "No articles: a and the"
 kind: vocab
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Marathi has no 'a' or 'the'. How it says them anyway. Not yet checked by a Marathi speaker: please report any mistake."
@@ -12,37 +12,43 @@ cards:
     target: "पुस्तक"
     native: "book; a book; the book"
     reading: "pustak"
+    ipa: "pust̪ək"
     pos: "noun"
     gender: "n"
-    notes: "A bare noun is 'a book' or 'the book': context decides. पुस्तक टेबलावर आहे (pustak tebalavar ahe), the book is on the table."
+    notes: "A bare noun is 'a book' or 'the book': context decides. पुस्तक टेबलावर आहे (pustak ṭebalāvar āhe), the book is on the table."
   - ref: mr-0139
     notes: "एक, 'one', serves for 'a' when the 'one' matters, as when something is new to the story: एक पुस्तक घेतले, I bought a book."
   - id: mr-0385
     target: "हे पुस्तक"
     native: "this book; the book (here)"
     reading: "he pustak"
+    ipa: "ɦe pust̪ək"
     pos: "phrase"
     notes: "For 'the', point with this or that: हे पुस्तक, this book; ते पुस्तक, that book."
   - id: mr-0386
     target: "तो मुलगा"
     native: "that boy; the boy"
-    reading: "to mulga"
+    reading: "to mulgā"
+    ipa: "t̪o mulɡa"
     pos: "phrase"
     notes: "तो, 'that', often does the work of 'the' for someone already mentioned."
   - id: mr-0387
     target: "एक मुलगी"
     native: "a girl; one girl"
     reading: "ek mulgi"
+    ipa: "ek mulɡi"
     pos: "phrase"
   - id: mr-0388
     target: "कोणीतरी"
     native: "someone"
-    reading: "konitari"
+    reading: "koṇitari"
+    ipa: "koɳit̪əri"
     pos: "other"
-    notes: "कोणी, who, with -तरी, 'some': दारावर कोणीतरी आहे (daravar konitari ahe), there's someone at the door."
+    notes: "कोणी, who, with -तरी, 'some': दारावर कोणीतरी आहे (dārāvar koṇitari āhe), there's someone at the door."
   - id: mr-0389
     target: "काहीतरी"
     native: "something"
-    reading: "kahitari"
+    reading: "kāhitari"
+    ipa: "kaɦit̪əri"
     pos: "other"
-    notes: "काही, some, with -तरी: काहीतरी खा (kahitari kha), eat something."
+    notes: "काही, some, with -तरी: काहीतरी खा (kāhitari khā), eat something."
