@@ -79,8 +79,16 @@ The other figures check out:
    log's answer times.
 5. **Variants**, where the scheme says to choose: Spanish, Portuguese,
    Norwegian, Arabic, Irish, Vietnamese, Malay, Quechua, Punjabi, Serbian.
-6. **The common start for all:** sounds → script, if new → greetings →
-   survival phrases → numbers → pronouns. Then the family's own order.
+   **The learner chooses** (owner's answer). Each variant is a set of decks
+   of its own, so each of these languages carries more content.
+6. **The common start for all:** sounds → greetings → survival phrases →
+   numbers → pronouns. Then the family's own order.
+   - **The script still comes late** (owner's answer), as in today's
+     courses, and not straight after the sounds as the scheme puts it.
+   - Until then, words are read in their romanisation, and a learner who
+     learns without the alphabet still skips the script (ADR-0023).
+   - For Japanese, Korean, Thai and the others with a new script, this means
+     starting in romaji, Revised Romanization or the like.
 
 ## Fitting the existing languages to it
 
@@ -88,9 +96,8 @@ This is judged from the decks' names, not from a full read of their
 content.
 
 - **Indo-Aryan (Hindi, Marathi, Gujarati, Bengali, Assamese):**
-  - The path is reordered to the scheme. The script and numbers move up,
-    straight after the sounds. That reverses the earlier order of five
-    themes before the script.
+  - The path is reordered to the scheme's grammar order. The script keeps
+    its place, late. Numbers move up into the common start.
   - Missing everywhere: subjunctive, relative–correlative clauses, and the
     oblique case as a step of its own.
   - Ergative: Marathi, Gujarati and Assamese need it; Hindi has
@@ -177,14 +184,13 @@ Somali and Odia, carry more risk of errors.
 
 ## To decide
 
-- **Variants:** whether the learner chooses one (each a set of decks of its
-  own), or the course fixes one.
+Decided with the owner: the learner chooses a variant; new languages are
+built **one full course at a time**; the script comes late everywhere.
+
 - **The order** of the new languages: by family, by tier, or by number of
   speakers.
-- **Depth:** the first two phases (Foundations, Core) for every new language
-  first, or one full course at a time.
-- **The script first** for the Indian languages, as the scheme orders it,
-  reversing today's order.
+- **Variants:** which ones each language offers, such as Mexican and
+  Spain Spanish, and which comes first.
 - **Several languages:** whether the 30 minutes is split between them, or is
   30 minutes each.
 - **Serbian and Croatian:** one course with two scripts, or two courses.
@@ -200,12 +206,13 @@ Somali and Odia, carry more risk of errors.
 | New scripts: fonts, RTL, word splitting, folds, romanisation | 25–40 |
 | Fitting the seven Indian languages | 28–42 |
 | Spanish as a full course | 12–16 |
-| 39 new languages, Foundations and Core only, at 3–5 h each | 120–195 |
-| 39 new languages, full courses, at 10–15 h each | 390–585 |
+| 39 new languages, full courses one at a time, at 10–15 h each | 390–585 |
+| A second variant, where a language offers one, per variant | 5–8 |
 
-- Through Foundations and Core for every language: about 200–310 hours, or
-  roughly 33–52 working days of 6 hours.
-- Full courses: about 470–700 hours.
+- Before the first new language: about 76–114 hours, or roughly 13–19
+  working days of 6 hours.
+- Then each new language, a full course: about 10–15 hours, or 2–3 days.
+- All 39: about 470–700 hours in all, plus the variants.
 
 Confidence: low. The content hours are the biggest unknown, and the scripts
 need checking on a phone.
