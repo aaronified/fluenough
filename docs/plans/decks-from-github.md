@@ -24,6 +24,9 @@ Decided with the owner:
   are offered, and the app says so.
 - **Updates:** the app checks, then asks whether to update. If the learner
   says no, the update waits on a deck downloads page in Settings.
+- **Network:** downloads and updates use any connection, not only Wi-Fi.
+- **Removing a language** deletes its files.
+- **`themes.yaml` and the spoken-languages list** stay in the app.
 
 ## What exists
 
@@ -74,9 +77,9 @@ Decided with the owner:
 
    With no connection, it says so and offers Try again. Nothing is bundled
    to fall back on.
-4. **Adding a language later** downloads it the same way. Removing one keeps
-   the learner's progress, which is in the review log, so downloading it
-   again restores it.
+4. **Adding a language later** downloads it the same way. Removing one
+   deletes its files but keeps the learner's progress, which is in the
+   review log, so downloading it again restores it.
 5. **Updates:**
    - the app compares the index with its files, at most once a day;
    - when decks have changed, it asks whether to update;
@@ -87,7 +90,8 @@ Decided with the owner:
    card's progress.
 6. **A deck removed from GitHub** stays on the phone, so a learner's cards
    do not vanish.
-7. **Remove the decks from `pubspec.yaml`.** The tests then read `decks/`
+7. **Remove the language folders from `pubspec.yaml`.** `decks/themes.yaml`
+   and `assets/languages.yaml` stay bundled. The tests then read `decks/`
    through a file source. The deck format docs and the README say where
    decks come from.
 8. **Privacy:** downloads tell GitHub the phone's IP address, as the update
@@ -99,12 +103,7 @@ build carries every language: it downloads them like the app.
 
 ## To decide
 
-- Whether Wi-Fi only, or any connection, for the background downloads and
-  updates.
-- What "Remove" does to a language's files: delete them, or keep them for
-  later.
-- Whether `themes.yaml` and the spoken-languages list download too, or stay
-  in the app.
+Nothing left: the owner answered every question above.
 
 ## Estimate
 
