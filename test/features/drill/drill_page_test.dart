@@ -306,7 +306,7 @@ void main() {
     await typeAndCheck(tester, 'namaskaar');
     expect(find.text(l10n.feedbackCorrect), findsOneWidget);
     expect(
-      find.text(l10n.feedbackReadingWithTarget('namaskar', 'नमस्कार')),
+      find.text(l10n.feedbackReadingWithTarget('namaskār', 'नमस्कार')),
       findsOneWidget,
     );
     // Past the script units it would be DrillSession.romanisedGrade; see
