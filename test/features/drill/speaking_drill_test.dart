@@ -125,6 +125,44 @@ void main() {
     handle.dispose();
   });
 
+  testWidgets('the message takes the hint\'s place, clear of the buttons', (
+    tester,
+  ) async {
+    for (final scale in <double>[1.0, 2.0]) {
+      usePhone(tester, textScale: scale);
+      await tester.pumpWidget(const SizedBox.shrink());
+      final speech = FixedSpeechEngine(onDevice: <String>{'es'});
+      await pumpSpeaking(tester, speech);
+      final l10n = l10nOf(tester);
+      final mic = find.bySemanticsLabel(l10n.drillSpeak);
+      await tester.ensureVisible(mic);
+      await tester.pumpAndSettle();
+      final hint = tester.getRect(find.text(l10n.drillSpeakHint));
+      final hintGap = hint.top - tester.getRect(mic).bottom;
+      await tester.tap(mic);
+      await tester.pumpAndSettle();
+      final message = find.text(l10n.drillUnheardNoMatch);
+      expect(message, findsOneWidget, reason: 'scale $scale');
+      expect(
+        find.text(l10n.drillSpeakHint),
+        findsNothing,
+        reason: 'scale $scale',
+      );
+      // Right under the microphone, where the hint was.
+      expect(
+        tester.getRect(message).top - tester.getRect(mic).bottom,
+        hintGap,
+        reason: 'scale $scale',
+      );
+      // Where the hint is in view, so is the message: not under the foot.
+      if (scale == 1.0) {
+        final foot = tester.getRect(find.text(l10n.drillCantSpeak)).top;
+        expect(hint.bottom, lessThanOrEqualTo(foot));
+        expect(tester.getRect(message).bottom, lessThanOrEqualTo(foot));
+      }
+    }
+  });
+
   testWidgets('a language the phone cannot hear by itself asks before going '
       'online, or skips the card unrecorded', (tester) async {
     usePhone(tester);

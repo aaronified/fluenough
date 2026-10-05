@@ -136,15 +136,17 @@ class SpeakingDrill extends StatelessWidget {
         ),
       ),
       const SizedBox(height: 12),
-      Text(
-        hearing ? l10n.drillHearingHint : l10n.drillSpeakHint,
-        textAlign: TextAlign.center,
-        style: theme.textTheme.titleMedium!.copyWith(
-          color: scheme.onSurfaceVariant,
-        ),
-      ),
-      if (unheard != null && !hearing) ...<Widget>[
-        const SizedBox(height: 12),
+      // Why nothing was graded takes the hint's place, so it adds no height
+      // and stays in view above the fixed buttons.
+      if (unheard == null || hearing)
+        Text(
+          hearing ? l10n.drillHearingHint : l10n.drillSpeakHint,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.titleMedium!.copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+        )
+      else ...<Widget>[
         Semantics(
           liveRegion: true,
           child: Text(
