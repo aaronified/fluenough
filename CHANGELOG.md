@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Review by skill on Today. Tap a skill's tile to review what is due in it, in every language you learn. With nothing due, it offers to revise every word you know in that skill; as in quick revision, only the misses are recorded (#191).
+- A Speaking tile on Today, while speaking is on (#191).
+- Quick revision can take one skill, or Spoken (listening and speaking together), as well as all of them (#191).
+
 ### Changed
 
 - While you type an answer in a language's own script, the "No keyboard? Try HeliBoard." line hides too, giving the card more room; it comes back when the keyboard closes (#185).
