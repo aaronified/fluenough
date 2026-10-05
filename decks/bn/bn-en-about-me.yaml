@@ -3,7 +3,7 @@ id: bn-en-about-me
 name: "About me"
 kind: vocab
 theme: about-me
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Your name and age, where you are from, where you live, and the people around you."
@@ -12,99 +12,117 @@ cards:
   - id: bn-0191
     target: "নাম"
     native: "name"
-    reading: "nam"
+    reading: "nām"
+    ipa: "nam"
     pos: "noun"
   - id: bn-0192
     target: "আমার নাম …"
     native: "My name is …"
-    reading: "amar nam ..."
+    reading: "āmār nām..."
+    ipa: "amar nam"
     pos: "phrase"
     notes: "There is no 'is': 'my name …'. In the present, Bengali needs no verb to say what something is. To say where someone is, or how they are, it uses আছে: ভালো আছি, I'm fine."
   - id: bn-0193
     target: "আপনার নাম কী?"
     native: "What is your name?"
-    reading: "apnar nam ki?"
+    reading: "āpnār nām ki?"
+    ipa: "apnar nam ki"
     pos: "phrase"
     tags: ["polite"]
   - id: bn-0194
     target: "আমি … থেকে এসেছি।"
     native: "I'm from …"
-    reading: "ami ... theke eshechhi."
+    reading: "āmi... theke eśechi."
+    ipa: "ami t̪ʰeke eʃetʃʰi"
     pos: "phrase"
     notes: "Literally 'I have come from …'. থেকে (theke), 'from', comes after the place."
   - id: bn-0195
     target: "আমি … থাকি।"
     native: "I live in …"
-    reading: "ami ... thaki."
+    reading: "āmi... thāki."
+    ipa: "ami t̪ʰaki"
     pos: "phrase"
     notes: "The place takes -এ, or after a vowel -য় or -তে: আমি কলকাতায় থাকি, I live in Kolkata; আমি ঢাকায় থাকি, I live in Dhaka."
   - id: bn-0196
     target: "বাড়ি"
     native: "home; house"
-    reading: "bari"
+    reading: "bāṛi"
+    ipa: "baɽi"
     alt_target: ["বাসা"]
     pos: "noun"
-    notes: "বাড়ি (bari) is home, wherever you live. Also বাসা (basha), for the place you live now, with বাড়ি the family home."
+    notes: "বাড়ি (bāṛi) is home, wherever you live. Also বাসা (bāśā), for the place you live now, with বাড়ি the family home."
   - id: bn-0197
     target: "পরিবার"
     native: "family"
-    reading: "poribar"
+    reading: "poribār"
+    ipa: "poribar"
     pos: "noun"
   - id: bn-0198
     target: "কাজ"
     native: "work"
-    reading: "kaj"
+    reading: "kāj"
+    ipa: "kadʒ"
     pos: "noun"
   - id: bn-0199
     target: "শহর"
     native: "city; town"
-    reading: "shohor"
+    reading: "śôhor"
+    ipa: "ʃɔɦor"
     pos: "noun"
   - id: bn-0200
     target: "দেশ"
     native: "country"
-    reading: "desh"
+    reading: "deś"
+    ipa: "d̪eʃ"
     pos: "noun"
   - id: bn-0201
     target: "ভাষা"
     native: "language"
-    reading: "bhasha"
+    reading: "bhāśā"
+    ipa: "bʱaʃa"
     pos: "noun"
   - id: bn-0416
     target: "বয়স"
     native: "age"
-    reading: "boyosh"
+    reading: "bôyoś"
+    ipa: "bɔjoʃ"
     pos: "noun"
   - id: bn-0417
     target: "আপনার বয়স কত?"
     native: "How old are you?"
-    reading: "apnar boyosh koto?"
+    reading: "āpnār bôyoś kôto?"
+    ipa: "apnar bɔjoʃ kɔt̪o"
     pos: "phrase"
   - id: bn-0418
     target: "আমার বয়স ত্রিশ।"
     native: "I'm thirty."
-    reading: "amar boyosh trish."
+    reading: "āmār bôyoś triś."
+    ipa: "amar bɔjoʃ t̪riʃ"
     alt_target: ["আমার বয়স তিরিশ।"]
     pos: "phrase"
-    notes: "'My age thirty': no 'years' and no verb. In speech 30 is often তিরিশ (tirish)."
+    notes: "'My age thirty': no 'years' and no verb. In speech 30 is often তিরিশ (tiriś)."
   - id: bn-0419
     target: "বিদেশি"
     native: "foreigner; foreign"
-    reading: "bideshi"
+    reading: "bideśi"
+    ipa: "bid̪eʃi"
     pos: "noun"
   - id: bn-0420
     target: "বাঙালি"
     native: "a Bengali (person)"
-    reading: "bangali"
+    reading: "bāṅāli"
+    ipa: "baŋali"
     pos: "noun"
     notes: "The language is বাংলা; its people, wherever they live, are বাঙালি."
   - id: bn-0421
     target: "ভারতীয়"
     native: "Indian"
-    reading: "bharotiyo"
+    reading: "bhārotiyo"
+    ipa: "bʱarot̪ijo"
     pos: "adj"
   - id: bn-0422
     target: "বাংলাদেশি"
     native: "Bangladeshi"
-    reading: "bangladeshi"
+    reading: "bāṅlādeśi"
+    ipa: "baŋlad̪eʃi"
     pos: "adj"

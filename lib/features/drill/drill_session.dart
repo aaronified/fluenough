@@ -17,6 +17,7 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
+import '../../core/scheduling/sm2.dart';
 import '../../core/speech/speech_engine.dart';
 
 /// Where the current card is: the design's `phase`.
@@ -84,6 +85,7 @@ class DrillSession extends ChangeNotifier {
     InputMode? inputMode,
     this.recorded = true,
     this.revising = false,
+    this.recordsMisses = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(!revising || !recorded, 'revising is never recorded'),
@@ -115,6 +117,11 @@ class DrillSession extends ChangeNotifier {
   /// deck, like a recorded session, but never [recorded]: an early review
   /// would stretch the card's interval.
   final bool revising;
+
+  /// Whether a wrong answer is recorded although the session is not: a
+  /// quick revision (ADR-0029), where a lapse should bring the card back
+  /// sooner, and a right answer, given early, should not stretch it.
+  final bool recordsMisses;
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
@@ -247,6 +254,10 @@ class DrillSession extends ChangeNotifier {
       () => RomanisedSpelling(_state.romanisationFor(language)),
     );
   }
+
+  /// [reading] as a learner types it, without ISO 15919's marks (ADR-0025):
+  /// what the Latin-letters hint shows.
+  String asTyped(String reading) => _spelling.asTyped(reading);
 
   /// Whether the current card's language is learned with its alphabet.
   bool get learnsAlphabet => _state.settings.learnsAlphabet(deck.language.code);
@@ -535,14 +546,14 @@ class DrillSession extends ChangeNotifier {
   bool get playing => _playing;
 
   /// Speaks the current card's target at the learner's rate, or slower: for
-  /// a reading question, its whole passage, a sentence at a time.
+  /// a reading question, its whole passage, a sentence at a time. Every
+  /// card's speaker plays through this, whatever its mode.
   Future<void> play() async {
     if (question case final card?) {
       return _speakPassage(<String>[
         for (final sentence in card.passage.sentences) sentence.text,
       ], null);
     }
-    if (item.mode != DrillMode.listening && ask != Ask.teach) return;
     final playingIndex = _index;
     _playing = true;
     notifyListeners();
@@ -555,6 +566,14 @@ class DrillSession extends ChangeNotifier {
       }
     }
   }
+
+  /// Speaks [card]'s target once, at the learner's rate: a word tile of a
+  /// match, tapped while words play automatically.
+  Future<void> playCard(Card card) => _state.speak(
+    card.target,
+    _state.deckOf(card)?.language ?? deck.language,
+    slower: _slower,
+  );
 
   // ---------------------------------------------------------------------------
   // Speaking (#89, ADR-0014)
@@ -677,8 +696,13 @@ class DrillSession extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Teaching (ADR-0024)
 
-  /// Whether the phone has a voice for the current card's language.
+  /// Whether the phone has a voice for the current card's language: whether
+  /// its speaker shows. With sound off in Settings it still shows, greyed
+  /// out ([soundOn]).
   bool get canPlay => _state.hasVoice(deck.language);
+
+  /// Whether sound is on in Settings.
+  bool get soundOn => _state.settings.soundOn;
 
   /// On from a card being taught. Nothing is recorded: its questions are.
   void learnt() {
@@ -876,7 +900,7 @@ class DrillSession extends ChangeNotifier {
       _recordItem(item, grade, answerGiven: answerGiven);
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
-    if (recorded) {
+    if (recorded || (recordsMisses && grade < Sm2.passingGrade)) {
       _state.record(
         entry,
         grade,
@@ -906,12 +930,14 @@ class DrillSession extends ChangeNotifier {
   final Set<(Skill, String?)> _notNow = <(Skill, String?)>{};
 
   /// Whether [item] can still be drilled: not set aside on this drill, its
-  /// skill not paused since the session was built, and not a speaking card
-  /// in a language found not to be heard at all, or whose online question
-  /// the learner declined and has not since allowed.
+  /// skill not paused since the session was built, not a listening card
+  /// while sound is off, and not a speaking card in a language found not to
+  /// be heard at all, or whose online question the learner declined and has
+  /// not since allowed.
   bool _drillable(SessionItem item) {
     // A word is taught whatever comes of its questions.
     if (item.ask == Ask.teach) return true;
+    if (item.mode == DrillMode.listening && !soundOn) return false;
     final itemSkill = Skill.of(item.mode);
     final language = _state.deckOf(item.card)?.language;
     final code = language?.code;

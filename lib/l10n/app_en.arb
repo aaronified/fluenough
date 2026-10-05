@@ -679,13 +679,26 @@
       }
     }
   },
-  "todayYourDecks": "Your decks",
-  "@todayYourDecks": {
-    "description": "Heading above the decks on Today."
+  "todayRevisionTitle": "Quick revision",
+  "@todayRevisionTitle": {
+    "description": "Today: the heading of the quick revision buttons, which revise words already learned."
   },
-  "todaySeeAll": "See all",
-  "@todaySeeAll": {
-    "description": "Button that opens the Decks tab."
+  "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
+  "@todayRevisionBody": {
+    "description": "Under Quick revision: what it does. Right answers are not recorded; wrong ones are."
+  },
+  "todayRevisionNone": "Revision opens up once you've had a lesson.",
+  "@todayRevisionNone": {
+    "description": "Under Quick revision when no word has been learned yet, with the buttons off."
+  },
+  "todayRevisionCards": "{count, plural, =1{Revise 1 word} other{Revise {count} words}}",
+  "@todayRevisionCards": {
+    "description": "Screen-reader label of a quick revision button, which shows only the number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "todayNoDecks": "No decks for your languages yet.",
   "@todayNoDecks": {
@@ -906,6 +919,10 @@
   "deckTurnOn": "Turn on",
   "@deckTurnOn": {
     "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
+  },
+  "deckSoundOff": "Sound is off in Settings",
+  "@deckSoundOff": {
+    "description": "Under Listening on a deck's screen while sound is off for the whole app: listening is not drilled. Beside a button that turns sound on."
   },
   "deckInspect": "Inspect all cards",
   "@deckInspect": {
@@ -1686,6 +1703,38 @@
   "@drillPlayingHint": {
     "description": "Under the play button while it plays."
   },
+  "speakerSoundOff": "Sound is off for the whole app. Turn it on in Settings > Sound",
+  "@speakerSoundOff": {
+    "description": "Toast when a greyed-out speaker is tapped or long-pressed while sound is off in Settings. Settings > Sound names the setting's section and switch."
+  },
+  "speakerAutoplayOn": "Words will play automatically",
+  "@speakerAutoplayOn": {
+    "description": "Toast after a long press on a speaker switched Play words automatically on."
+  },
+  "speakerAutoplayOff": "Words won’t play automatically",
+  "@speakerAutoplayOff": {
+    "description": "Toast after a long press on a speaker switched Play words automatically off."
+  },
+  "speakerAutoplayTip": "Tip: long-press the speaker to play words automatically",
+  "@speakerAutoplayTip": {
+    "description": "Toast on every tenth tap on a speaker while words do not play automatically, so that those who tap it most learn of the long press."
+  },
+  "speakerMuted": "Sound off",
+  "@speakerMuted": {
+    "description": "Screen-reader value of a speaker while sound is off in Settings: it is greyed out."
+  },
+  "drillRaiseVolume": "Please raise the volume",
+  "@drillRaiseVolume": {
+    "description": "On a listening card while the phone's media volume is at zero and sound is on in the app: the card is greyed out until the volume is raised."
+  },
+  "settingsSoundOffSkipped": "Questions you need sound for are skipped while sound is off",
+  "@settingsSoundOffSkipped": {
+    "description": "SnackBar shown when Sound is turned off in Settings."
+  },
+  "speakerLongPressHint": "switch playing words automatically",
+  "@speakerLongPressHint": {
+    "description": "Screen-reader hint for a speaker's long press, after \"double tap and hold to\"."
+  },
   "skillReading": "Reading",
   "@skillReading": {
     "description": "A skill: reading passages and answering questions about them (#98)."
@@ -2098,6 +2147,10 @@
   "drillEndBodyNotRecorded": "This session isn’t recorded, so ending it changes nothing.",
   "@drillEndBodyNotRecorded": {
     "description": "Body of the end-session dialog in a session that is not recorded: number practice, or revising a finished deck."
+  },
+  "drillEndBodyMisses": "Your misses so far are already recorded.",
+  "@drillEndBodyMisses": {
+    "description": "Body of the end-session dialog in a quick revision, which records wrong answers only (ADR-0029)."
   },
   "drillEndKeepGoing": "Keep going",
   "@drillEndKeepGoing": {
@@ -2735,6 +2788,22 @@
   "settingsSectionSound": "Sound",
   "@settingsSectionSound": {
     "description": "Settings section heading."
+  },
+  "settingsSound": "Sound",
+  "@settingsSound": {
+    "description": "Switch: sound for the whole app. Off, nothing is spoken and listening is skipped."
+  },
+  "settingsSoundDesc": "Off, nothing is spoken and listening is skipped",
+  "@settingsSoundDesc": {
+    "description": "Under the Sound switch."
+  },
+  "settingsAutoplay": "Play words automatically",
+  "@settingsAutoplay": {
+    "description": "Switch: a card's word plays by itself as the card shows, or once it is answered when hearing it would give the answer away."
+  },
+  "settingsAutoplayDesc": "As each card shows, or once you answer. Long-press any speaker to switch",
+  "@settingsAutoplayDesc": {
+    "description": "Under Play words automatically. A speaker is the play button on a drill card."
   },
   "settingsSpeechRate": "Speech rate",
   "@settingsSpeechRate": {

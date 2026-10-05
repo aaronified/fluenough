@@ -2,7 +2,7 @@ schema: 1
 id: hi-en-grammar-can-must
 name: "Can, want to, have to"
 kind: vocab
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "सकना, चाहना, चाहिए, पड़ना and पाना with another verb. Not yet checked by a Hindi speaker: please report any mistake."
@@ -11,57 +11,67 @@ cards:
   - id: hi-0513
     target: "सकना"
     native: "to be able; can"
-    reading: "sakna"
+    reading: "saknā"
+    ipa: "səknaː"
     pos: "verb"
     notes: "After a verb's stem: बोल सकता हूँ, I can speak."
   - id: hi-0514
     target: "मैं हिंदी बोल सकता हूँ।"
     native: "I can speak Hindi. (said by a man)"
-    reading: "main hindi bol sakta hun."
+    reading: "maim̐ hindī bōl saktā hūm̐."
+    ipa: "mɛ̃ː ɦɪnd̪iː boːl səkt̪aː ɦũː"
     alt_target: ["मैं हिंदी बोल सकती हूँ।"]
     pos: "phrase"
   - id: hi-0515
     target: "मैं तैर नहीं सकती।"
     native: "I can't swim. (said by a woman)"
-    reading: "main tair nahin sakti."
+    reading: "maim̐ tair nahīm̐ saktī."
+    ipa: "mɛ̃ː t̪ɛːr nəɦĩː səkt̪iː"
     alt_target: ["मैं तैर नहीं सकता।"]
     pos: "phrase"
   - id: hi-0516
     target: "क्या आप मेरी मदद कर सकते हैं?"
     native: "Could you help me?"
-    reading: "kya ap meri madad kar sakte hain?"
+    reading: "kyā āp mērī madad kar saktē haim̐?"
+    ipa: "kjaː aːp meːriː məd̪əd̪ kər səkt̪eː ɦɛ̃ː"
     pos: "phrase"
   - id: hi-0517
     target: "मैं घर जाना चाहता हूँ।"
     native: "I want to go home. (said by a man)"
-    reading: "main ghar jana chahta hun."
+    reading: "maim̐ ghar jānā cāhtā hūm̐."
+    ipa: "mɛ̃ː ɡʱər dʒaːnaː tʃaːɦt̪aː ɦũː"
     alt_target: ["मैं घर जाना चाहती हूँ।"]
     pos: "phrase"
   - id: hi-0518
     target: "आपको आराम करना चाहिए।"
     native: "You should rest."
-    reading: "apko aram karna chahiye."
+    reading: "āpkō ārām karnā cāhiē."
+    ipa: "aːpkoː aːraːm kərnaː tʃaːɦɪeː"
     pos: "phrase"
     notes: "The -ना form with चाहिए is 'should'."
   - id: hi-0519
     target: "मुझे कल काम पर जाना है।"
     native: "I have to go to work tomorrow."
-    reading: "mujhe kal kam par jana hai."
+    reading: "mujhē kal kām par jānā hai."
+    ipa: "mʊdʒʱeː kəl kaːm pər dʒaːnaː ɦɛː"
     pos: "phrase"
   - id: hi-0520
     target: "मुझे जाना पड़ेगा।"
     native: "I'll have to go."
-    reading: "mujhe jana parega."
+    reading: "mujhē jānā paṛēgā."
+    ipa: "mʊdʒʱeː dʒaːnaː pəɽeːɡaː"
     pos: "phrase"
     notes: "पड़ना says you have no choice; होना है is milder."
   - id: hi-0521
     target: "मैं नहीं आ पाया।"
     native: "I couldn't make it. (said by a man)"
-    reading: "main nahin a paya."
+    reading: "maim̐ nahīm̐ ā pāyā."
+    ipa: "mɛ̃ː nəɦĩː aː paːjaː"
     pos: "phrase"
     notes: "पाना is 'to manage to'. A woman says नहीं आ पाई."
   - id: hi-0522
     target: "यहाँ फ़ोटो ले सकते हैं?"
     native: "Can one take photos here?"
-    reading: "yahan foto le sakte hain?"
+    reading: "yahām̐ fōṭō lē saktē haim̐?"
+    ipa: "jəɦãː foːʈoː leː səkt̪eː ɦɛ̃ː"
     pos: "phrase"

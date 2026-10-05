@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-sound-differences
 name: "Sounds to tell apart"
 kind: vocab
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Pairs of everyday words that differ in one sound: a breath after a consonant, the tongue on the teeth or curled back, the vowel every consonant carries against a, a nasal vowel, and the flapped r. Not yet checked by a Bengali speaker: please report any mistake."
@@ -11,132 +11,151 @@ cards:
   - id: bn-0102
     target: "করা"
     native: "to do"
-    reading: "kora"
+    reading: "kôrā"
+    ipa: "kɔra"
     tags: ["aspiration"]
-    notes: "Aspiration: খরা (khora, drought) is করা (kora, to do) with a puff of breath after the k."
+    notes: "Aspiration: খরা (khôrā, drought) is করা (kôrā, to do) with a puff of breath after the k."
   - id: bn-0103
     target: "খরা"
     native: "drought"
-    reading: "khora"
+    reading: "khôrā"
+    ipa: "kʰɔra"
     tags: ["aspiration"]
-    notes: "Aspiration: খরা (khora, drought) is করা (kora, to do) with a puff of breath after the k."
+    notes: "Aspiration: খরা (khôrā, drought) is করা (kôrā, to do) with a puff of breath after the k."
   - ref: bn-0316
     tags: ["aspiration"]
-    notes: "Aspiration: খাল (khal, canal) is কাল (kal, tomorrow) with a breath after the k."
+    notes: "Aspiration: খাল (khāl, canal) is কাল (kāl, tomorrow) with a breath after the k."
   - id: bn-0104
     target: "খাল"
     native: "canal"
-    reading: "khal"
+    reading: "khāl"
+    ipa: "kʰal"
     tags: ["aspiration"]
-    notes: "Aspiration: খাল (khal, canal) is কাল (kal, tomorrow) with a breath after the k."
+    notes: "Aspiration: খাল (khāl, canal) is কাল (kāl, tomorrow) with a breath after the k."
   - id: bn-0105
     target: "বাত"
     native: "rheumatism"
-    reading: "bat"
+    reading: "bāt"
+    ipa: "bat̪"
     tags: ["aspiration"]
-    notes: "Aspiration: ভাত (bhat, cooked rice) is বাত (bat, rheumatism) with a breath after the b. Say বাত and you've said rheumatism."
+    notes: "Aspiration: ভাত (bhāt, cooked rice) is বাত (bāt, rheumatism) with a breath after the b. Say বাত and you've said rheumatism."
   - ref: bn-0352
     native: "cooked rice"
     tags: ["aspiration"]
-    notes: "Aspiration: ভাত (bhat, cooked rice) is বাত (bat, rheumatism) with a breath after the b. Say বাত and you've said rheumatism."
+    notes: "Aspiration: ভাত (bhāt, cooked rice) is বাত (bāt, rheumatism) with a breath after the b. Say বাত and you've said rheumatism."
   - ref: bn-0272
     native: "uncooked rice"
     tags: ["aspiration"]
-    notes: "Aspiration: ছাল (chhal, bark) is চাল (chal, uncooked rice) with a breath after the ch."
+    notes: "Aspiration: ছাল (chāl, bark) is চাল (cāl, uncooked rice) with a breath after the ch."
   - id: bn-0106
     target: "ছাল"
     native: "bark (of a tree)"
-    reading: "chhal"
+    reading: "chāl"
+    ipa: "tʃʰal"
     tags: ["aspiration"]
-    notes: "Aspiration: ছাল (chhal, bark) is চাল (chal, uncooked rice) with a breath after the ch."
+    notes: "Aspiration: ছাল (chāl, bark) is চাল (cāl, uncooked rice) with a breath after the ch."
   - id: bn-0107
     target: "তাল"
     native: "rhythm; palmyra palm"
-    reading: "tal"
+    reading: "tāl"
+    ipa: "t̪al"
     tags: ["aspiration"]
-    notes: "Aspiration: থাল (thal, a large plate) is তাল (tal, rhythm) with a breath after the t."
+    notes: "Aspiration: থাল (thāl, a large plate) is তাল (tāl, rhythm) with a breath after the t."
   - id: bn-0108
     target: "থাল"
     native: "large plate"
-    reading: "thal"
+    reading: "thāl"
+    ipa: "t̪ʰal"
     tags: ["aspiration"]
-    notes: "Aspiration: থাল (thal, a large plate) is তাল (tal, rhythm) with a breath after the t."
+    notes: "Aspiration: থাল (thāl, a large plate) is তাল (tāl, rhythm) with a breath after the t."
   - id: bn-0109
     target: "ডাক"
     native: "call; post (mail)"
-    reading: "dak"
+    reading: "ḍāk"
+    ipa: "ɖak"
     tags: ["aspiration"]
-    notes: "Aspiration: ঢাক (dhak, a big drum) is like ডাক (dak, call; post), but with the tongue a little further back and a breath after the d."
+    notes: "Aspiration: ঢাক (ḍhāk, a big drum) is like ডাক (ḍāk, call; post), but with the tongue a little further back and a breath after the d."
   - id: bn-0110
     target: "ঢাক"
     native: "dhak (a big drum)"
-    reading: "dhak"
+    reading: "ḍhāk"
+    ipa: "ɖʱak"
     tags: ["aspiration"]
-    notes: "Aspiration: ঢাক (dhak, a big drum) is like ডাক (dak, call; post), but with the tongue a little further back and a breath after the d."
+    notes: "Aspiration: ঢাক (ḍhāk, a big drum) is like ডাক (ḍāk, call; post), but with the tongue a little further back and a breath after the d."
   - id: bn-0111
     target: "দান"
     native: "gift; donation"
-    reading: "dan"
+    reading: "dān"
+    ipa: "d̪an"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: দান (dan, gift) has the tongue on the teeth; ডান (dan, right) has it curled back. English 'd' is nearer ডান."
+    notes: "Dental against curled back: দান (dān, gift) has the tongue on the teeth; ডান (ḍān, right) has it curled back. English 'd' is nearer ডান."
   - ref: bn-0303
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: দান (dan, gift) has the tongue on the teeth; ডান (dan, right) has it curled back. English 'd' is nearer ডান."
+    notes: "Dental against curled back: দান (dān, gift) has the tongue on the teeth; ডান (ḍān, right) has it curled back. English 'd' is nearer ডান."
   - id: bn-0112
     target: "তাক"
     native: "shelf"
-    reading: "tak"
+    reading: "tāk"
+    ipa: "t̪ak"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: তাক (tak, shelf) has the tongue on the teeth; টাক (tak, bald patch) has it curled back."
+    notes: "Dental against curled back: তাক (tāk, shelf) has the tongue on the teeth; টাক (ṭāk, bald patch) has it curled back."
   - id: bn-0113
     target: "টাক"
     native: "bald patch"
-    reading: "tak"
+    reading: "ṭāk"
+    ipa: "ʈak"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: তাক (tak, shelf) has the tongue on the teeth; টাক (tak, bald patch) has it curled back."
+    notes: "Dental against curled back: তাক (tāk, shelf) has the tongue on the teeth; টাক (ṭāk, bald patch) has it curled back."
   - id: bn-0114
     target: "পর"
     native: "after; other"
-    reading: "por"
+    reading: "pôr"
+    ipa: "pɔr"
     alt_target: ["পরে"]
     tags: ["inherent-vowel"]
-    notes: "The open o against a: পর (por, after; other) has the vowel every consonant carries; পার (par, the far bank; across) has আ, the 'a' of 'father'."
+    notes: "The open o against a: পর (pôr, after; other) has the vowel every consonant carries; পার (pār, the far bank; across) has আ, the 'a' of 'father'."
   - id: bn-0115
     target: "পার"
     native: "the far bank; across"
-    reading: "par"
+    reading: "pār"
+    ipa: "par"
     tags: ["inherent-vowel"]
-    notes: "The open o against a: পর (por, after; other) has the vowel every consonant carries; পার (par, the far bank; across) has আ, the 'a' of 'father'."
+    notes: "The open o against a: পর (pôr, after; other) has the vowel every consonant carries; পার (pār, the far bank; across) has আ, the 'a' of 'father'."
   - ref: bn-0350
     tags: ["inherent-vowel"]
-    notes: "The open o against a: জল (jol, water) has the vowel every consonant carries; জাল (jal, net) has আ, the 'a' of 'father'. Also পানি (pani)."
+    notes: "The open o against a: জল (jôl, water) has the vowel every consonant carries; জাল (jāl, net) has আ, the 'a' of 'father'. Also পানি (pāni)."
   - id: bn-0116
     target: "জাল"
     native: "net"
-    reading: "jal"
+    reading: "jāl"
+    ipa: "dʒal"
     tags: ["inherent-vowel"]
-    notes: "The open o against a: জল (jol, water) has the vowel every consonant carries; জাল (jal, net) has আ, the 'a' of 'father'."
+    notes: "The open o against a: জল (jôl, water) has the vowel every consonant carries; জাল (jāl, net) has আ, the 'a' of 'father'."
   - id: bn-0117
     target: "বাধা"
     native: "obstacle"
-    reading: "badha"
+    reading: "bādhā"
+    ipa: "bad̪ʱa"
     tags: ["nasal"]
-    notes: "Nasal vowel: বাঁধা (bandha, tied) is বাধা (badha, obstacle) with the vowel said through the nose as well, marked by ঁ above."
+    notes: "Nasal vowel: বাঁধা (bām̐dhā, tied) is বাধা (bādhā, obstacle) with the vowel said through the nose as well, marked by ঁ above."
   - id: bn-0118
     target: "বাঁধা"
     native: "tied"
-    reading: "bandha"
+    reading: "bām̐dhā"
+    ipa: "bãd̪ʱa"
     tags: ["nasal"]
-    notes: "Nasal vowel: বাঁধা (bandha, tied) is বাধা (badha, obstacle) with the vowel said through the nose as well, marked by ঁ above."
+    notes: "Nasal vowel: বাঁধা (bām̐dhā, tied) is বাধা (bādhā, obstacle) with the vowel said through the nose as well, marked by ঁ above."
   - id: bn-0119
     target: "পড়া"
     native: "to read; to fall"
-    reading: "pora"
+    reading: "pôṛā"
+    ipa: "pɔɽa"
     tags: ["flap"]
-    notes: "The flapped r against r: পড়া (pora, to read) has ড়, the tongue placed as for ড without touching the roof of the mouth; পরা (pora, to wear) has র, a tap of the tongue tip."
+    notes: "The flapped r against r: পড়া (pôṛā, to read) has ড়, the tongue placed as for ড without touching the roof of the mouth; পরা (pôrā, to wear) has র, a tap of the tongue tip."
   - id: bn-0120
     target: "পরা"
     native: "to wear"
-    reading: "pora"
+    reading: "pôrā"
+    ipa: "pɔra"
     tags: ["flap"]
-    notes: "The flapped r against r: পড়া (pora, to read) has ড়, the tongue placed as for ড without touching the roof of the mouth; পরা (pora, to wear) has র, a tap of the tongue tip."
+    notes: "The flapped r against r: পড়া (pôṛā, to read) has ড়, the tongue placed as for ড without touching the roof of the mouth; পরা (pôrā, to wear) has র, a tap of the tongue tip."

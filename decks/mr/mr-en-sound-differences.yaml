@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-sound-differences
 name: "Sounds to tell apart"
 kind: vocab
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Pairs of everyday words that differ in one sound: a or aa, a breath after a consonant, the tongue on the teeth or curled back, the two l's, and a single or double consonant. Not yet checked by a Marathi speaker: please report any mistake."
@@ -10,119 +10,133 @@ tags: [beginner, unreviewed]
 cards:
   - ref: mr-0055
     tags: ["vowel-length"]
-    notes: "a against aa: दार (dar, door) has the long a where दर (dar, rate) has the short a, said like the u of 'but'."
+    notes: "a against aa: दार (dār, door) has the long a where दर (dar, rate) has the short a, said like the u of 'but'."
   - id: mr-0111
     target: "दार"
     native: "door"
-    reading: "dar"
+    reading: "dār"
+    ipa: "d̪ar"
     pos: "noun"
     gender: "n"
     tags: ["vowel-length", "aspiration"]
-    notes: "a against aa: दार (dar, door, with the long a) against दर (dar, rate, with the short a). And a breath: धार (dhar, edge) is दार with a breath after the d."
+    notes: "a against aa: दार (dār, door, with the long a) against दर (dar, rate, with the short a). And a breath: धार (dhār, edge) is दार with a breath after the d."
   - ref: mr-0049
     tags: ["vowel-length"]
-    notes: "a against aa: जाग (jag, waking) has the long a where जग (jag, world) has the short a."
+    notes: "a against aa: जाग (jāg, waking) has the long a where जग (jag, world) has the short a."
   - id: mr-0112
     target: "जाग"
     native: "waking; wakefulness"
-    reading: "jag"
+    reading: "jāg"
+    ipa: "dzaɡ"
     pos: "noun"
     gender: "f"
     tags: ["vowel-length"]
-    notes: "a against aa: जाग (jag, with the long a) against जग (jag, world, with the short a). मला जाग आली (mala jag ali), I woke up."
+    notes: "a against aa: जाग (jāg, with the long a) against जग (jag, world, with the short a). मला जाग आली (malā jāg āli), I woke up."
   - id: mr-0113
     target: "धार"
     native: "sharp edge; a stream (of water)"
-    reading: "dhar"
+    reading: "dhār"
+    ipa: "d̪ʱar"
     pos: "noun"
     gender: "f"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: धार (dhar, edge) is दार (dar, door) with a breath after the d."
+    notes: "A breath after the consonant: धार (dhār, edge) is दार (dār, door) with a breath after the d."
   - id: mr-0114
     target: "बाग"
     native: "garden"
-    reading: "bag"
+    reading: "bāg"
+    ipa: "baɡ"
     pos: "noun"
     gender: "f"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: भाग (bhag, part) is बाग (bag, garden) with a breath after the b."
+    notes: "A breath after the consonant: भाग (bhāg, part) is बाग (bāg, garden) with a breath after the b."
   - id: mr-0115
     target: "भाग"
     native: "part; share"
-    reading: "bhag"
+    reading: "bhāg"
+    ipa: "bʱaɡ"
     pos: "noun"
     gender: "m"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: भाग (bhag, part) is बाग (bag, garden) with a breath after the b."
+    notes: "A breath after the consonant: भाग (bhāg, part) is बाग (bāg, garden) with a breath after the b."
   - id: mr-0116
     target: "पळ"
     native: "run! (to a friend)"
-    reading: "pal"
+    reading: "paḷ"
+    ipa: "pəɭ"
     pos: "verb"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: फळ (phal, fruit) is पळ (pal, run!) with a breath after the p."
+    notes: "A breath after the consonant: फळ (phaḷ, fruit) is पळ (paḷ, run!) with a breath after the p."
   - ref: mr-0056
     tags: ["aspiration"]
-    notes: "A breath after the consonant: फळ (phal, fruit) is पळ (pal, run!) with a breath after the p."
+    notes: "A breath after the consonant: फळ (phaḷ, fruit) is पळ (paḷ, run!) with a breath after the p."
   - id: mr-0117
     target: "वात"
     native: "wick (of a lamp)"
-    reading: "vat"
+    reading: "vāt"
+    ipa: "ʋat̪"
     pos: "noun"
     gender: "f"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: वात (vat, wick) has the tongue on the teeth for t; वाट (vat, way) has it curled back."
+    notes: "Dental against curled back: वात (vāt, wick) has the tongue on the teeth for t; वाट (vāṭ, way) has it curled back."
   - id: mr-0118
     target: "वाट"
     native: "way; path; waiting"
-    reading: "vat"
+    reading: "vāṭ"
+    ipa: "ʋaʈ"
     pos: "noun"
     gender: "f"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: वाट (vat, way) has the tongue curled back for t; वात (vat, wick) has it on the teeth. वाट पाहणे (vat pahne), to wait."
+    notes: "Dental against curled back: वाट (vāṭ, way) has the tongue curled back for t; वात (vāt, wick) has it on the teeth. वाट पाहणे (vāṭ pāhṇe), to wait."
   - id: mr-0119
     target: "काल"
     native: "yesterday"
-    reading: "kal"
+    reading: "kāl"
+    ipa: "kal"
     pos: "adv"
     tags: ["lateral"]
-    notes: "The two l's: काल (kal, yesterday) has the l on the teeth; काळ (kal, time, an age) has it curled back. Unlike Hindi कल, काल is never 'tomorrow'."
+    notes: "The two l's: काल (kāl, yesterday) has the l on the teeth; काळ (kāḷ, time, an age) has it curled back. Unlike Hindi कल, काल is never 'tomorrow'."
   - id: mr-0120
     target: "काळ"
     native: "time; an age; an era"
-    reading: "kal"
+    reading: "kāḷ"
+    ipa: "kaɭ"
     pos: "noun"
     gender: "m"
     tags: ["lateral"]
-    notes: "The two l's: काळ (kal, time) has the l curled back; काल (kal, yesterday) has it on the teeth."
+    notes: "The two l's: काळ (kāḷ, time) has the l curled back; काल (kāl, yesterday) has it on the teeth."
   - id: mr-0121
     target: "वेल"
     native: "vine; creeper"
     reading: "vel"
+    ipa: "ʋel"
     pos: "noun"
     gender: "f"
     tags: ["lateral"]
-    notes: "The two l's: वेल (vel, vine) has the l on the teeth; वेळ (vel, time) has it curled back."
+    notes: "The two l's: वेल (vel, vine) has the l on the teeth; वेळ (veḷ, time) has it curled back."
   - id: mr-0122
     target: "वेळ"
     native: "time; an occasion"
-    reading: "vel"
+    reading: "veḷ"
+    ipa: "ʋeɭ"
     pos: "noun"
     gender: "f"
     tags: ["lateral"]
-    notes: "The two l's: वेळ (vel, time) has the l curled back; वेल (vel, vine) has it on the teeth. वेळ नाही (vel nahi), there's no time."
+    notes: "The two l's: वेळ (veḷ, time) has the l curled back; वेल (vel, vine) has it on the teeth. वेळ नाही (veḷ nāhi), there's no time."
   - id: mr-0123
     target: "शिका"
     native: "learn! (polite)"
-    reading: "shika"
+    reading: "śikā"
+    ipa: "ʃika"
     pos: "verb"
     tags: ["gemination"]
-    notes: "Single against double: शिक्का (shikka, stamp) holds the k longer than शिका (shika, learn!)."
+    notes: "Single against double: शिक्का (śikkā, stamp) holds the k longer than शिका (śikā, learn!)."
   - id: mr-0124
     target: "शिक्का"
     native: "stamp; seal"
-    reading: "shikka"
+    reading: "śikkā"
+    ipa: "ʃikka"
     pos: "noun"
     gender: "m"
     tags: ["gemination"]
-    notes: "Single against double: शिक्का (shikka, stamp) holds the k longer than शिका (shika, learn!)."
+    notes: "Single against double: शिक्का (śikkā, stamp) holds the k longer than शिका (śikā, learn!)."

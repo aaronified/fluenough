@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-verb-classes
 name: "The ten verb types"
 kind: grammar
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Bengali verbs fall into ten types by their vowels: learn one verb of each and you can conjugate the rest. Not yet checked by a Bengali speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "পড়া"
       key: pora
-      reading: "pora"
+      reading: "pôṛā"
+      ipa: "pɔɽa"
       gloss: "to read; to study"
       forms:
         "আমি: present": "পড়ি"
@@ -26,15 +27,23 @@ pattern:
         "আমি: will (-ব)": ["পড়ব", "পড়বো"]
         "আমি: didn't (-নি)": "পড়িনি"
       readings:
-        "আমি: present": "pori"
-        "সে: present": "pore"
-        "আমি: have done (-এছি)": "porechhi"
-        "আমি: did (-লাম)": "porlam"
-        "আমি: will (-ব)": ["porbo", "porbo"]
-        "আমি: didn't (-নি)": "porini"
+        "আমি: present": "poṛi"
+        "সে: present": "pôṛe"
+        "আমি: have done (-এছি)": "pôṛechi"
+        "আমি: did (-লাম)": "pôṛlām"
+        "আমি: will (-ব)": ["pôṛbo", "pôṛbo"]
+        "আমি: didn't (-নি)": "poṛini"
+      ipas:
+        "আমি: present": "poɽi"
+        "সে: present": "pɔɽe"
+        "আমি: have done (-এছি)": "pɔɽetʃʰi"
+        "আমি: did (-লাম)": "pɔɽlam"
+        "আমি: will (-ব)": "pɔɽbo"
+        "আমি: didn't (-নি)": "poɽini"
     - lemma: "জানা"
       key: jana
-      reading: "jana"
+      reading: "jānā"
+      ipa: "dʒana"
       gloss: "to know"
       forms:
         "আমি: present": "জানি"
@@ -44,15 +53,23 @@ pattern:
         "আমি: will (-ব)": ["জানব", "জানবো"]
         "আমি: didn't (-নি)": "জানিনি"
       readings:
-        "আমি: present": "jani"
-        "সে: present": "jane"
-        "আমি: have done (-এছি)": "jenechhi"
-        "আমি: did (-লাম)": "janlam"
-        "আমি: will (-ব)": ["janbo", "janbo"]
-        "আমি: didn't (-নি)": "janini"
+        "আমি: present": "jāni"
+        "সে: present": "jāne"
+        "আমি: have done (-এছি)": "jenechi"
+        "আমি: did (-লাম)": "jānlām"
+        "আমি: will (-ব)": ["jānbo", "jānbo"]
+        "আমি: didn't (-নি)": "jānini"
+      ipas:
+        "আমি: present": "dʒani"
+        "সে: present": "dʒane"
+        "আমি: have done (-এছি)": "dʒenetʃʰi"
+        "আমি: did (-লাম)": "dʒanlam"
+        "আমি: will (-ব)": "dʒanbo"
+        "আমি: didn't (-নি)": "dʒanini"
     - lemma: "থাকা"
       key: thaka
-      reading: "thaka"
+      reading: "thākā"
+      ipa: "t̪ʰaka"
       gloss: "to stay; to live"
       forms:
         "আমি: present": "থাকি"
@@ -62,15 +79,23 @@ pattern:
         "আমি: will (-ব)": ["থাকব", "থাকবো"]
         "আমি: didn't (-নি)": "থাকিনি"
       readings:
-        "আমি: present": "thaki"
-        "সে: present": "thake"
-        "আমি: have done (-এছি)": "thekechhi"
-        "আমি: did (-লাম)": "thaklam"
-        "আমি: will (-ব)": ["thakbo", "thakbo"]
-        "আমি: didn't (-নি)": "thakini"
+        "আমি: present": "thāki"
+        "সে: present": "thāke"
+        "আমি: have done (-এছি)": "thekechi"
+        "আমি: did (-লাম)": "thāklām"
+        "আমি: will (-ব)": ["thākbo", "thākbo"]
+        "আমি: didn't (-নি)": "thākini"
+      ipas:
+        "আমি: present": "t̪ʰaki"
+        "সে: present": "t̪ʰake"
+        "আমি: have done (-এছি)": "t̪ʰeketʃʰi"
+        "আমি: did (-লাম)": "t̪ʰaklam"
+        "আমি: will (-ব)": "t̪ʰakbo"
+        "আমি: didn't (-নি)": "t̪ʰakini"
     - lemma: "আনা"
       key: ana
-      reading: "ana"
+      reading: "ānā"
+      ipa: "ana"
       gloss: "to bring"
       forms:
         "আমি: present": "আনি"
@@ -80,15 +105,23 @@ pattern:
         "আমি: will (-ব)": ["আনব", "আনবো"]
         "আমি: didn't (-নি)": "আনিনি"
       readings:
+        "আমি: present": "āni"
+        "সে: present": "āne"
+        "আমি: have done (-এছি)": "enechi"
+        "আমি: did (-লাম)": "ānlām"
+        "আমি: will (-ব)": ["ānbo", "ānbo"]
+        "আমি: didn't (-নি)": "ānini"
+      ipas:
         "আমি: present": "ani"
         "সে: present": "ane"
-        "আমি: have done (-এছি)": "enechhi"
+        "আমি: have done (-এছি)": "enetʃʰi"
         "আমি: did (-লাম)": "anlam"
-        "আমি: will (-ব)": ["anbo", "anbo"]
+        "আমি: will (-ব)": "anbo"
         "আমি: didn't (-নি)": "anini"
     - lemma: "লেখা"
       key: lekha
-      reading: "lekha"
+      reading: "lekhā"
+      ipa: "lekʰa"
       gloss: "to write"
       forms:
         "আমি: present": "লিখি"
@@ -100,13 +133,21 @@ pattern:
       readings:
         "আমি: present": "likhi"
         "সে: present": "lekhe"
-        "আমি: have done (-এছি)": "likhechhi"
-        "আমি: did (-লাম)": "likhlam"
+        "আমি: have done (-এছি)": "likhechi"
+        "আমি: did (-লাম)": "likhlām"
         "আমি: will (-ব)": ["likhbo", "likhbo"]
         "আমি: didn't (-নি)": "likhini"
+      ipas:
+        "আমি: present": "likʰi"
+        "সে: present": "lekʰe"
+        "আমি: have done (-এছি)": "likʰetʃʰi"
+        "আমি: did (-লাম)": "likʰlam"
+        "আমি: will (-ব)": "likʰbo"
+        "আমি: didn't (-নি)": "likʰini"
     - lemma: "শেখা"
       key: shekha
-      reading: "shekha"
+      reading: "śekhā"
+      ipa: "ʃekʰa"
       gloss: "to learn"
       forms:
         "আমি: present": "শিখি"
@@ -116,15 +157,23 @@ pattern:
         "আমি: will (-ব)": ["শিখব", "শিখবো"]
         "আমি: didn't (-নি)": "শিখিনি"
       readings:
-        "আমি: present": "shikhi"
-        "সে: present": "shekhe"
-        "আমি: have done (-এছি)": "shikhechhi"
-        "আমি: did (-লাম)": "shikhlam"
-        "আমি: will (-ব)": ["shikhbo", "shikhbo"]
-        "আমি: didn't (-নি)": "shikhini"
+        "আমি: present": "śikhi"
+        "সে: present": "śekhe"
+        "আমি: have done (-এছি)": "śikhechi"
+        "আমি: did (-লাম)": "śikhlām"
+        "আমি: will (-ব)": ["śikhbo", "śikhbo"]
+        "আমি: didn't (-নি)": "śikhini"
+      ipas:
+        "আমি: present": "ʃikʰi"
+        "সে: present": "ʃekʰe"
+        "আমি: have done (-এছি)": "ʃikʰetʃʰi"
+        "আমি: did (-লাম)": "ʃikʰlam"
+        "আমি: will (-ব)": "ʃikʰbo"
+        "আমি: didn't (-নি)": "ʃikʰini"
     - lemma: "কেনা"
       key: kena
-      reading: "kena"
+      reading: "kenā"
+      ipa: "kena"
       gloss: "to buy"
       forms:
         "আমি: present": "কিনি"
@@ -136,13 +185,21 @@ pattern:
       readings:
         "আমি: present": "kini"
         "সে: present": "kene"
-        "আমি: have done (-এছি)": "kinechhi"
-        "আমি: did (-লাম)": "kinlam"
+        "আমি: have done (-এছি)": "kinechi"
+        "আমি: did (-লাম)": "kinlām"
         "আমি: will (-ব)": ["kinbo", "kinbo"]
+        "আমি: didn't (-নি)": "kinini"
+      ipas:
+        "আমি: present": "kini"
+        "সে: present": "kene"
+        "আমি: have done (-এছি)": "kinetʃʰi"
+        "আমি: did (-লাম)": "kinlam"
+        "আমি: will (-ব)": "kinbo"
         "আমি: didn't (-নি)": "kinini"
     - lemma: "দেখা"
       key: dekha
-      reading: "dekha"
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
       gloss: "to see"
       forms:
         "আমি: present": "দেখি"
@@ -154,13 +211,21 @@ pattern:
       readings:
         "আমি: present": "dekhi"
         "সে: present": "dekhe"
-        "আমি: have done (-এছি)": "dekhechhi"
-        "আমি: did (-লাম)": "dekhlam"
+        "আমি: have done (-এছি)": "dekhechi"
+        "আমি: did (-লাম)": "dekhlām"
         "আমি: will (-ব)": ["dekhbo", "dekhbo"]
         "আমি: didn't (-নি)": "dekhini"
+      ipas:
+        "আমি: present": "d̪ekʰi"
+        "সে: present": "d̪ekʰe"
+        "আমি: have done (-এছি)": "d̪ekʰetʃʰi"
+        "আমি: did (-লাম)": "d̪ekʰlam"
+        "আমি: will (-ব)": "d̪ekʰbo"
+        "আমি: didn't (-নি)": "d̪ekʰini"
     - lemma: "বোঝা"
       key: bojha
-      reading: "bojha"
+      reading: "bojhā"
+      ipa: "bodʒʱa"
       gloss: "to understand"
       forms:
         "আমি: present": "বুঝি"
@@ -172,13 +237,21 @@ pattern:
       readings:
         "আমি: present": "bujhi"
         "সে: present": "bojhe"
-        "আমি: have done (-এছি)": "bujhechhi"
-        "আমি: did (-লাম)": "bujhlam"
+        "আমি: have done (-এছি)": "bujhechi"
+        "আমি: did (-লাম)": "bujhlām"
         "আমি: will (-ব)": ["bujhbo", "bujhbo"]
         "আমি: didn't (-নি)": "bujhini"
+      ipas:
+        "আমি: present": "budʒʱi"
+        "সে: present": "bodʒʱe"
+        "আমি: have done (-এছি)": "budʒʱetʃʰi"
+        "আমি: did (-লাম)": "budʒʱlam"
+        "আমি: will (-ব)": "budʒʱbo"
+        "আমি: didn't (-নি)": "budʒʱini"
     - lemma: "শোনা"
       key: shona
-      reading: "shona"
+      reading: "śonā"
+      ipa: "ʃona"
       gloss: "to hear; to listen"
       forms:
         "আমি: present": "শুনি"
@@ -188,15 +261,23 @@ pattern:
         "আমি: will (-ব)": ["শুনব", "শুনবো"]
         "আমি: didn't (-নি)": "শুনিনি"
       readings:
-        "আমি: present": "shuni"
-        "সে: present": "shone"
-        "আমি: have done (-এছি)": "shunechhi"
-        "আমি: did (-লাম)": "shunlam"
-        "আমি: will (-ব)": ["shunbo", "shunbo"]
-        "আমি: didn't (-নি)": "shunini"
+        "আমি: present": "śuni"
+        "সে: present": "śone"
+        "আমি: have done (-এছি)": "śunechi"
+        "আমি: did (-লাম)": "śunlām"
+        "আমি: will (-ব)": ["śunbo", "śunbo"]
+        "আমি: didn't (-নি)": "śunini"
+      ipas:
+        "আমি: present": "ʃuni"
+        "সে: present": "ʃone"
+        "আমি: have done (-এছি)": "ʃunetʃʰi"
+        "আমি: did (-লাম)": "ʃunlam"
+        "আমি: will (-ব)": "ʃunbo"
+        "আমি: didn't (-নি)": "ʃunini"
     - lemma: "খোঁজা"
       key: khonja
-      reading: "khonja"
+      reading: "khom̐jā"
+      ipa: "kʰõdʒa"
       gloss: "to look for"
       forms:
         "আমি: present": "খুঁজি"
@@ -206,15 +287,23 @@ pattern:
         "আমি: will (-ব)": ["খুঁজব", "খুঁজবো"]
         "আমি: didn't (-নি)": "খুঁজিনি"
       readings:
-        "আমি: present": "khunji"
-        "সে: present": "khonje"
-        "আমি: have done (-এছি)": "khunjechhi"
-        "আমি: did (-লাম)": "khunjlam"
-        "আমি: will (-ব)": ["khunjbo", "khunjbo"]
-        "আমি: didn't (-নি)": "khunjini"
+        "আমি: present": "khum̐ji"
+        "সে: present": "khom̐je"
+        "আমি: have done (-এছি)": "khum̐jechi"
+        "আমি: did (-লাম)": "khum̐jlām"
+        "আমি: will (-ব)": ["khum̐jbo", "khum̐jbo"]
+        "আমি: didn't (-নি)": "khum̐jini"
+      ipas:
+        "আমি: present": "kʰũdʒi"
+        "সে: present": "kʰõdʒe"
+        "আমি: have done (-এছি)": "kʰũdʒetʃʰi"
+        "আমি: did (-লাম)": "kʰũdʒlam"
+        "আমি: will (-ব)": "kʰũdʒbo"
+        "আমি: didn't (-নি)": "kʰũdʒini"
     - lemma: "দেওয়া"
       key: deoa
-      reading: "deoa"
+      reading: "deoā"
+      ipa: "d̪eoa"
       gloss: "to give"
       forms:
         "আমি: present": "দিই"
@@ -224,15 +313,23 @@ pattern:
         "আমি: will (-ব)": ["দেব", "দেবো"]
         "আমি: didn't (-নি)": "দিইনি"
       readings:
-        "আমি: present": "di"
+        "আমি: present": "dii"
         "সে: present": "dey"
-        "আমি: have done (-এছি)": "diyechhi"
-        "আমি: did (-লাম)": "dilam"
+        "আমি: have done (-এছি)": "diyechi"
+        "আমি: did (-লাম)": "dilām"
         "আমি: will (-ব)": ["debo", "debo"]
-        "আমি: didn't (-নি)": "dini"
+        "আমি: didn't (-নি)": "diini"
+      ipas:
+        "আমি: present": "d̪ii"
+        "সে: present": "d̪ej"
+        "আমি: have done (-এছি)": "d̪ijetʃʰi"
+        "আমি: did (-লাম)": "d̪ilam"
+        "আমি: will (-ব)": "d̪ebo"
+        "আমি: didn't (-নি)": "d̪iini"
     - lemma: "নেওয়া"
       key: neoa
-      reading: "neoa"
+      reading: "neoā"
+      ipa: "neoa"
       gloss: "to take"
       forms:
         "আমি: present": "নিই"
@@ -242,15 +339,23 @@ pattern:
         "আমি: will (-ব)": ["নেব", "নেবো"]
         "আমি: didn't (-নি)": "নিইনি"
       readings:
-        "আমি: present": "ni"
+        "আমি: present": "nii"
         "সে: present": "ney"
-        "আমি: have done (-এছি)": "niyechhi"
-        "আমি: did (-লাম)": "nilam"
+        "আমি: have done (-এছি)": "niyechi"
+        "আমি: did (-লাম)": "nilām"
         "আমি: will (-ব)": ["nebo", "nebo"]
-        "আমি: didn't (-নি)": "nini"
+        "আমি: didn't (-নি)": "niini"
+      ipas:
+        "আমি: present": "nii"
+        "সে: present": "nej"
+        "আমি: have done (-এছি)": "nijetʃʰi"
+        "আমি: did (-লাম)": "nilam"
+        "আমি: will (-ব)": "nebo"
+        "আমি: didn't (-নি)": "niini"
     - lemma: "যাওয়া"
       key: jaoa
-      reading: "jaoa"
+      reading: "jāoā"
+      ipa: "dʒaoa"
       gloss: "to go"
       forms:
         "আমি: present": "যাই"
@@ -260,15 +365,23 @@ pattern:
         "আমি: will (-ব)": ["যাব", "যাবো"]
         "আমি: didn't (-নি)": "যাইনি"
       readings:
-        "আমি: present": "jai"
-        "সে: present": "jay"
-        "আমি: have done (-এছি)": ["giyechhi", "gechhi"]
-        "আমি: did (-লাম)": "gelam"
-        "আমি: will (-ব)": ["jabo", "jabo"]
-        "আমি: didn't (-নি)": "jaini"
+        "আমি: present": "jāi"
+        "সে: present": "jāy"
+        "আমি: have done (-এছি)": ["giyechi", "gechi"]
+        "আমি: did (-লাম)": "gelām"
+        "আমি: will (-ব)": ["jābo", "jābo"]
+        "আমি: didn't (-নি)": "jāini"
+      ipas:
+        "আমি: present": "dʒai"
+        "সে: present": "dʒaj"
+        "আমি: have done (-এছি)": "ɡijetʃʰi"
+        "আমি: did (-লাম)": "ɡelam"
+        "আমি: will (-ব)": "dʒabo"
+        "আমি: didn't (-নি)": "dʒaini"
     - lemma: "খাওয়া"
       key: khaoa
-      reading: "khaoa"
+      reading: "khāoā"
+      ipa: "kʰaoa"
       gloss: "to eat; to drink"
       forms:
         "আমি: present": "খাই"
@@ -278,15 +391,23 @@ pattern:
         "আমি: will (-ব)": ["খাব", "খাবো"]
         "আমি: didn't (-নি)": "খাইনি"
       readings:
-        "আমি: present": "khai"
-        "সে: present": "khay"
-        "আমি: have done (-এছি)": "kheyechhi"
-        "আমি: did (-লাম)": "khelam"
-        "আমি: will (-ব)": ["khabo", "khabo"]
-        "আমি: didn't (-নি)": "khaini"
+        "আমি: present": "khāi"
+        "সে: present": "khāy"
+        "আমি: have done (-এছি)": "kheyechi"
+        "আমি: did (-লাম)": "khelām"
+        "আমি: will (-ব)": ["khābo", "khābo"]
+        "আমি: didn't (-নি)": "khāini"
+      ipas:
+        "আমি: present": "kʰai"
+        "সে: present": "kʰaj"
+        "আমি: have done (-এছি)": "kʰejetʃʰi"
+        "আমি: did (-লাম)": "kʰelam"
+        "আমি: will (-ব)": "kʰabo"
+        "আমি: didn't (-নি)": "kʰaini"
     - lemma: "পাওয়া"
       key: paoa
-      reading: "paoa"
+      reading: "pāoā"
+      ipa: "paoa"
       gloss: "to get; to find"
       forms:
         "আমি: present": "পাই"
@@ -296,15 +417,23 @@ pattern:
         "আমি: will (-ব)": ["পাব", "পাবো"]
         "আমি: didn't (-নি)": "পাইনি"
       readings:
+        "আমি: present": "pāi"
+        "সে: present": "pāy"
+        "আমি: have done (-এছি)": "peyechi"
+        "আমি: did (-লাম)": "pelām"
+        "আমি: will (-ব)": ["pābo", "pābo"]
+        "আমি: didn't (-নি)": "pāini"
+      ipas:
         "আমি: present": "pai"
-        "সে: present": "pay"
-        "আমি: have done (-এছি)": "peyechhi"
+        "সে: present": "paj"
+        "আমি: have done (-এছি)": "pejetʃʰi"
         "আমি: did (-লাম)": "pelam"
-        "আমি: will (-ব)": ["pabo", "pabo"]
+        "আমি: will (-ব)": "pabo"
         "আমি: didn't (-নি)": "paini"
     - lemma: "ধোয়া"
       key: dhoya
-      reading: "dhoya"
+      reading: "dhoyā"
+      ipa: "d̪ʱoja"
       gloss: "to wash"
       forms:
         "আমি: present": "ধুই"
@@ -316,13 +445,21 @@ pattern:
       readings:
         "আমি: present": "dhui"
         "সে: present": "dhoy"
-        "আমি: have done (-এছি)": "dhuyechhi"
-        "আমি: did (-লাম)": "dhulam"
+        "আমি: have done (-এছি)": "dhuyechi"
+        "আমি: did (-লাম)": "dhulām"
         "আমি: will (-ব)": ["dhobo", "dhobo"]
         "আমি: didn't (-নি)": "dhuini"
+      ipas:
+        "আমি: present": "d̪ʱui"
+        "সে: present": "d̪ʱoj"
+        "আমি: have done (-এছি)": "d̪ʱujetʃʰi"
+        "আমি: did (-লাম)": "d̪ʱulam"
+        "আমি: will (-ব)": "d̪ʱobo"
+        "আমি: didn't (-নি)": "d̪ʱuini"
     - lemma: "হওয়া"
       key: hoa
-      reading: "hoa"
+      reading: "hoā"
+      ipa: "ɦoa"
       gloss: "to be; to become; to happen"
       forms:
         "আমি: present": "হই"
@@ -333,14 +470,22 @@ pattern:
         "আমি: didn't (-নি)": "হইনি"
       readings:
         "আমি: present": "hoi"
-        "সে: present": "hoy"
-        "আমি: have done (-এছি)": "hoyechhi"
-        "আমি: did (-লাম)": "holam"
-        "আমি: will (-ব)": ["hobo", "hobo"]
+        "সে: present": "hôy"
+        "আমি: have done (-এছি)": "hôyechi"
+        "আমি: did (-লাম)": "hôlām"
+        "আমি: will (-ব)": ["hôbo", "hôbo"]
         "আমি: didn't (-নি)": "hoini"
+      ipas:
+        "আমি: present": "ɦoi"
+        "সে: present": "ɦɔj"
+        "আমি: have done (-এছি)": "ɦɔjetʃʰi"
+        "আমি: did (-লাম)": "ɦɔlam"
+        "আমি: will (-ব)": "ɦɔbo"
+        "আমি: didn't (-নি)": "ɦoini"
     - lemma: "দৌড়ানো"
       key: dourano
-      reading: "dourano"
+      reading: "douṛāno"
+      ipa: "d̪ouɽano"
       gloss: "to run"
       forms:
         "আমি: present": ["দৌড়াই", "দৌড়োই"]
@@ -350,15 +495,23 @@ pattern:
         "আমি: will (-ব)": ["দৌড়াব", "দৌড়োব", "দৌড়াবো", "দৌড়োবো"]
         "আমি: didn't (-নি)": ["দৌড়াইনি", "দৌড়োইনি"]
       readings:
-        "আমি: present": ["dourai", "douroi"]
-        "সে: present": ["douray", "douroy"]
-        "আমি: have done (-এছি)": "dourechhi"
-        "আমি: did (-লাম)": ["douralam", "dourolam"]
-        "আমি: will (-ব)": ["dourabo", "dourobo", "dourabo", "dourobo"]
-        "আমি: didn't (-নি)": ["douraini", "douroini"]
+        "আমি: present": ["douṛāi", "douṛoi"]
+        "সে: present": ["douṛāy", "douṛoy"]
+        "আমি: have done (-এছি)": "douṛechi"
+        "আমি: did (-লাম)": ["douṛālām", "douṛolām"]
+        "আমি: will (-ব)": ["douṛābo", "douṛobo", "douṛābo", "douṛobo"]
+        "আমি: didn't (-নি)": ["douṛāini", "douṛoini"]
+      ipas:
+        "আমি: present": "d̪ouɽai"
+        "সে: present": "d̪ouɽaj"
+        "আমি: have done (-এছি)": "d̪ouɽetʃʰi"
+        "আমি: did (-লাম)": "d̪ouɽalam"
+        "আমি: will (-ব)": "d̪ouɽabo"
+        "আমি: didn't (-নি)": "d̪ouɽaini"
     - lemma: "পৌঁছানো"
       key: pounchhano
-      reading: "pounchhano"
+      reading: "poum̐chāno"
+      ipa: "poũtʃʰano"
       gloss: "to arrive; to reach"
       forms:
         "আমি: present": ["পৌঁছাই", "পৌঁছোই"]
@@ -368,9 +521,16 @@ pattern:
         "আমি: will (-ব)": ["পৌঁছাব", "পৌঁছোব", "পৌঁছাবো", "পৌঁছোবো"]
         "আমি: didn't (-নি)": ["পৌঁছাইনি", "পৌঁছোইনি"]
       readings:
-        "আমি: present": ["pounchhai", "pounchhoi"]
-        "সে: present": ["pounchhay", "pounchhoy"]
-        "আমি: have done (-এছি)": "pounchhechhi"
-        "আমি: did (-লাম)": ["pounchhalam", "pounchholam"]
-        "আমি: will (-ব)": ["pounchhabo", "pounchhobo", "pounchhabo", "pounchhobo"]
-        "আমি: didn't (-নি)": ["pounchhaini", "pounchhoini"]
+        "আমি: present": ["poum̐chāi", "poum̐choi"]
+        "সে: present": ["poum̐chāy", "poum̐choy"]
+        "আমি: have done (-এছি)": "poum̐chechi"
+        "আমি: did (-লাম)": ["poum̐chālām", "poum̐cholām"]
+        "আমি: will (-ব)": ["poum̐chābo", "poum̐chobo", "poum̐chābo", "poum̐chobo"]
+        "আমি: didn't (-নি)": ["poum̐chāini", "poum̐choini"]
+      ipas:
+        "আমি: present": "poũtʃʰai"
+        "সে: present": "poũtʃʰaj"
+        "আমি: have done (-এছি)": "poũtʃʰetʃʰi"
+        "আমি: did (-লাম)": "poũtʃʰalam"
+        "আমি: will (-ব)": "poũtʃʰabo"
+        "আমি: didn't (-নি)": "poũtʃʰaini"
