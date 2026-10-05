@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-gender-number
 name: "Gender and number"
 kind: vocab
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Three genders, masculine, feminine and neuter, and the plural of each. Not yet checked by a Marathi speaker: please report any mistake."
@@ -18,6 +18,7 @@ cards:
     target: "मुलगे"
     native: "boys; sons"
     reading: "mulge"
+    ipa: "mulɡe"
     pos: "noun"
     gender: "m"
     notes: "A masculine -आ becomes -ए in the plural: मुलगा, मुलगे; रस्ता, रस्ते. A masculine noun ending in a consonant does not change: एक देश, दोन देश."
@@ -25,6 +26,7 @@ cards:
     target: "मुली"
     native: "girls; daughters"
     reading: "muli"
+    ipa: "muli"
     pos: "noun"
     gender: "f"
     notes: "Feminine nouns form plurals several ways: मुलगी, मुली; खोली, खोल्या; बहीण, बहिणी; शाळा stays शाळा."
@@ -32,14 +34,16 @@ cards:
     target: "मुले"
     native: "children; boys"
     reading: "mule"
+    ipa: "mule"
     alt_target: ["मुलं"]
     pos: "noun"
     gender: "n"
-    notes: "The plural of मूल, and a mixed group: in speech मुलं (mula). A neuter noun ending in a consonant adds -ए, said as a nasal a in speech: घरे, घरं, houses."
+    notes: "The plural of मूल, and a mixed group: in speech मुलं (mulam̐). A neuter noun ending in a consonant adds -ए, said as a nasal a in speech: घरे, घरं, houses."
   - id: mr-0410
     target: "पुस्तके"
     native: "books"
     reading: "pustake"
+    ipa: "pust̪əke"
     alt_target: ["पुस्तकं"]
     pos: "noun"
     gender: "n"

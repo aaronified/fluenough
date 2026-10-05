@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-future
 name: "Future"
 kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I will go, they will come: the future, which does not show gender, and the -णार form everyday speech uses beside it. Not yet checked by a Marathi speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "जाणे"
       key: jaane
-      reading: "jane"
+      reading: "jāṇe"
+      ipa: "dzaɳe"
       gloss: "to go"
       forms:
         "मी": "जाईन"
@@ -26,15 +27,23 @@ pattern:
         "तो / ती / ते": "जाईल"
         "ते / त्या (they)": "जातील"
       readings:
-        "मी": "jain"
-        "आम्ही": "jau"
-        "तू": "jashil"
-        "तुम्ही": "jal"
-        "तो / ती / ते": "jail"
-        "ते / त्या (they)": "jatil"
+        "मी": "jāin"
+        "आम्ही": "jāu"
+        "तू": "jāśil"
+        "तुम्ही": "jāl"
+        "तो / ती / ते": "jāil"
+        "ते / त्या (they)": "jātil"
+      ipas:
+        "मी": "dzain"
+        "आम्ही": "dzau"
+        "तू": "dzaʃil"
+        "तुम्ही": "dzal"
+        "तो / ती / ते": "dzail"
+        "ते / त्या (they)": "dzat̪il"
     - lemma: "येणे"
       key: yene
-      reading: "yene"
+      reading: "yeṇe"
+      ipa: "jeɳe"
       gloss: "to come"
       forms:
         "मी": "येईन"
@@ -46,13 +55,21 @@ pattern:
       readings:
         "मी": "yein"
         "आम्ही": "yeu"
-        "तू": "yeshil"
-        "तुम्ही": "yal"
+        "तू": "yeśil"
+        "तुम्ही": "yāl"
         "तो / ती / ते": "yeil"
         "ते / त्या (they)": "yetil"
+      ipas:
+        "मी": "jein"
+        "आम्ही": "jeu"
+        "तू": "jeʃil"
+        "तुम्ही": "jal"
+        "तो / ती / ते": "jeil"
+        "ते / त्या (they)": "jet̪il"
     - lemma: "करणे"
       key: karne
-      reading: "karne"
+      reading: "karṇe"
+      ipa: "kərɳe"
       gloss: "to do"
       forms:
         "मी": ["करीन", "करेन"]
@@ -64,13 +81,21 @@ pattern:
       readings:
         "मी": ["karin", "karen"]
         "आम्ही": "karu"
-        "तू": "karshil"
-        "तुम्ही": "karal"
+        "तू": "karśil"
+        "तुम्ही": "karāl"
         "तो / ती / ते": "karel"
         "ते / त्या (they)": "kartil"
+      ipas:
+        "मी": "kərin"
+        "आम्ही": "kəru"
+        "तू": "kərʃil"
+        "तुम्ही": "kəral"
+        "तो / ती / ते": "kərel"
+        "ते / त्या (they)": "kərt̪il"
     - lemma: "घेणे"
       key: ghene
-      reading: "ghene"
+      reading: "gheṇe"
+      ipa: "ɡʱeɳe"
       gloss: "to take"
       forms:
         "मी": "घेईन"
@@ -82,13 +107,21 @@ pattern:
       readings:
         "मी": "ghein"
         "आम्ही": "gheu"
-        "तू": "gheshil"
-        "तुम्ही": "ghyal"
+        "तू": "gheśil"
+        "तुम्ही": "ghyāl"
         "तो / ती / ते": "gheil"
         "ते / त्या (they)": "ghetil"
+      ipas:
+        "मी": "ɡʱein"
+        "आम्ही": "ɡʱeu"
+        "तू": "ɡʱeʃil"
+        "तुम्ही": "ɡʱjal"
+        "तो / ती / ते": "ɡʱeil"
+        "ते / त्या (they)": "ɡʱet̪il"
     - lemma: "बसणे"
       key: basne
-      reading: "basne"
+      reading: "basṇe"
+      ipa: "bəsɳe"
       gloss: "to sit"
       forms:
         "मी": ["बसेन", "बसीन"]
@@ -100,7 +133,14 @@ pattern:
       readings:
         "मी": ["basen", "basin"]
         "आम्ही": "basu"
-        "तू": "basshil"
-        "तुम्ही": "basal"
+        "तू": "basśil"
+        "तुम्ही": "basāl"
         "तो / ती / ते": "basel"
         "ते / त्या (they)": "bastil"
+      ipas:
+        "मी": "bəsen"
+        "आम्ही": "bəsu"
+        "तू": "bəsʃil"
+        "तुम्ही": "bəsal"
+        "तो / ती / ते": "bəsel"
+        "ते / त्या (they)": "bəst̪il"

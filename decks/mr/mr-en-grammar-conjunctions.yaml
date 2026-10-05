@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-conjunctions
 name: "Joining words"
 kind: vocab
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "And, but, or, because, if: joining words and sentences. Not yet checked by a Marathi speaker: please report any mistake."
@@ -11,60 +11,70 @@ cards:
   - id: mr-0575
     target: "आणि"
     native: "and"
-    reading: "ani"
+    reading: "āṇi"
+    ipa: "aɳi"
     pos: "other"
-    notes: "चहा आणि बिस्किटे (chaha ani biskite), tea and biscuits."
+    notes: "चहा आणि बिस्किटे (cahā āṇi biskiṭe), tea and biscuits."
   - id: mr-0576
     target: "पण"
     native: "but; also, even"
-    reading: "pan"
+    reading: "paṇ"
+    ipa: "pəɳ"
     pos: "other"
-    notes: "Between sentences, 'but'. After a word, 'too, even': मी पण येतो (mi pan yeto), I'm coming too."
+    notes: "Between sentences, 'but'. After a word, 'too, even': मी पण येतो (mi paṇ yeto), I'm coming too."
   - id: mr-0577
     target: "किंवा"
     native: "or"
-    reading: "kinva"
+    reading: "kiṁvā"
+    ipa: "kĩʋa"
     pos: "other"
-    notes: "चहा किंवा कॉफी (chaha kinva kofi), tea or coffee. In a question, की: चहा घेणार की कॉफी?"
+    notes: "चहा किंवा कॉफी (cahā kiṁvā kôfi), tea or coffee. In a question, की: चहा घेणार की कॉफी?"
   - id: mr-0578
     target: "कारण"
     native: "because; a reason"
-    reading: "karan"
+    reading: "kāraṇ"
+    ipa: "karəɳ"
     pos: "other"
     notes: "मी आलो नाही, कारण मी आजारी होतो, I didn't come, because I was ill."
   - id: mr-0579
     target: "म्हणून"
     native: "so; that's why"
-    reading: "mhanun"
+    reading: "mhaṇun"
+    ipa: "mɦəɳun"
     pos: "other"
     notes: "Marathi often gives the reason first: पाऊस होता म्हणून मी आलो नाही, it was raining, so I didn't come."
   - id: mr-0580
     target: "जर"
     native: "if"
     reading: "jar"
+    ipa: "dzər"
     pos: "other"
     notes: "With तर, 'then', in the second half: जर पाऊस पडला तर मी येणार नाही, if it rains, I won't come. जर is often left out; तर stays."
   - id: mr-0581
     target: "तर"
     native: "then; as for"
     reading: "tar"
+    ipa: "t̪ər"
     pos: "other"
     notes: "Also 'well then, as for': मी तर येणार, I, for one, am coming."
   - id: mr-0582
     target: "की"
     native: "that; or (in a question)"
     reading: "ki"
+    ipa: "ki"
     pos: "other"
-    notes: "तो म्हणाला की तो येईल (to mhanala ki to yeil), he said that he'd come."
+    notes: "तो म्हणाला की तो येईल (to mhaṇālā ki to yeil), he said that he'd come."
   - id: mr-0583
     target: "तरी"
     native: "still; even so"
     reading: "tari"
+    ipa: "t̪əri"
     pos: "other"
     notes: "पाऊस होता, तरी तो आला, it was raining; still, he came."
   - id: mr-0584
     target: "मी आलो, पण तो घरी नव्हता."
     native: "I came, but he wasn't at home."
-    reading: "mi alo, pan to ghari navhta."
+    reading: "mi ālo, paṇ to ghari navhtā."
+    ipa: "mi alo pəɳ t̪o ɡʱəri nəʋɦt̪a"
     pos: "phrase"
     notes: "नव्हता, 'was not'. A woman says मी आले."

@@ -2,7 +2,7 @@ schema: 1
 id: te-en-grammar-future
 name: "Future and habit"
 kind: grammar
-language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I will go, she eats every day: one tense for both. Not yet checked by a Telugu speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "చేయడం"
       key: cheeyadam
-      reading: "cheyadam"
+      reading: "cēyaḍam"
+      ipa: "tʃeːjaɖam"
       gloss: "to do"
       forms:
         "నేను": "చేస్తాను"
@@ -27,16 +28,25 @@ pattern:
         "ఆమె / అది": "చేస్తుంది"
         "వాళ్ళు": "చేస్తారు"
       readings:
-        "నేను": "chestanu"
-        "మేము": "chestamu"
-        "నువ్వు": "chestavu"
-        "మీరు": "chestaru"
-        "అతను": "chestadu"
-        "ఆమె / అది": "chestundi"
-        "వాళ్ళు": "chestaru"
+        "నేను": "cēstānu"
+        "మేము": "cēstāmu"
+        "నువ్వు": "cēstāvu"
+        "మీరు": "cēstāru"
+        "అతను": "cēstāḍu"
+        "ఆమె / అది": "cēstundi"
+        "వాళ్ళు": "cēstāru"
+      ipas:
+        "నేను": "tʃeːst̪aːnu"
+        "మేము": "tʃeːst̪aːmu"
+        "నువ్వు": "tʃeːst̪aːʋu"
+        "మీరు": "tʃeːst̪aːru"
+        "అతను": "tʃeːst̪aːɖu"
+        "ఆమె / అది": "tʃeːst̪und̪i"
+        "వాళ్ళు": "tʃeːst̪aːru"
     - lemma: "వెళ్ళడం"
       key: velladam
-      reading: "velladam"
+      reading: "veḷḷaḍam"
+      ipa: "ʋeɭɭaɖam"
       gloss: "to go"
       forms:
         "నేను": "వెళ్తాను"
@@ -47,16 +57,25 @@ pattern:
         "ఆమె / అది": "వెళ్తుంది"
         "వాళ్ళు": "వెళ్తారు"
       readings:
-        "నేను": "veltanu"
-        "మేము": "veltamu"
-        "నువ్వు": "veltavu"
-        "మీరు": "veltaru"
-        "అతను": "veltadu"
-        "ఆమె / అది": "veltundi"
-        "వాళ్ళు": "veltaru"
+        "నేను": "veḷtānu"
+        "మేము": "veḷtāmu"
+        "నువ్వు": "veḷtāvu"
+        "మీరు": "veḷtāru"
+        "అతను": "veḷtāḍu"
+        "ఆమె / అది": "veḷtundi"
+        "వాళ్ళు": "veḷtāru"
+      ipas:
+        "నేను": "ʋeɭt̪aːnu"
+        "మేము": "ʋeɭt̪aːmu"
+        "నువ్వు": "ʋeɭt̪aːʋu"
+        "మీరు": "ʋeɭt̪aːru"
+        "అతను": "ʋeɭt̪aːɖu"
+        "ఆమె / అది": "ʋeɭt̪und̪i"
+        "వాళ్ళు": "ʋeɭt̪aːru"
     - lemma: "రావడం"
       key: raavadam
-      reading: "ravadam"
+      reading: "rāvaḍam"
+      ipa: "raːʋaɖam"
       gloss: "to come"
       forms:
         "నేను": "వస్తాను"
@@ -67,10 +86,18 @@ pattern:
         "ఆమె / అది": "వస్తుంది"
         "వాళ్ళు": "వస్తారు"
       readings:
-        "నేను": "vastanu"
-        "మేము": "vastamu"
-        "నువ్వు": "vastavu"
-        "మీరు": "vastaru"
-        "అతను": "vastadu"
+        "నేను": "vastānu"
+        "మేము": "vastāmu"
+        "నువ్వు": "vastāvu"
+        "మీరు": "vastāru"
+        "అతను": "vastāḍu"
         "ఆమె / అది": "vastundi"
-        "వాళ్ళు": "vastaru"
+        "వాళ్ళు": "vastāru"
+      ipas:
+        "నేను": "ʋast̪aːnu"
+        "మేము": "ʋast̪aːmu"
+        "నువ్వు": "ʋast̪aːʋu"
+        "మీరు": "ʋast̪aːru"
+        "అతను": "ʋast̪aːɖu"
+        "ఆమె / అది": "ʋast̪und̪i"
+        "వాళ్ళు": "ʋast̪aːru"

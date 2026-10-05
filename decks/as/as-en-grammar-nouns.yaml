@@ -2,7 +2,7 @@ schema: 1
 id: as-en-grammar-nouns
 name: "Nouns: the, plural and case"
 kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "A classifier for 'the', -বোৰ for the plural, and the endings for of, in and to. Not yet checked by an Assamese speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "ঘৰ"
       key: ghor
-      reading: "ghor"
+      reading: "ghôr"
+      ipa: "ɡʱɔɹ"
       gloss: "house"
       forms:
         "the one: -টো, -খন …": ["ঘৰটো", "ঘৰখন"]
@@ -25,14 +26,21 @@ pattern:
         "in, at: -ত": "ঘৰত"
         "to: -লৈ": "ঘৰলৈ"
       readings:
-        "the one: -টো, -খন …": ["ghortu", "ghorkhon"]
-        "the ones: -বোৰ": "ghorbur"
-        "of: -ৰ": "ghoror"
-        "in, at: -ত": "ghorot"
-        "to: -লৈ": "ghoroloi"
+        "the one: -টো, -খন …": ["ghôrtu", "ghôrkhôn"]
+        "the ones: -বোৰ": "ghôrbur"
+        "of: -ৰ": "ghôrôr"
+        "in, at: -ত": "ghôrôt"
+        "to: -লৈ": "ghôrôlôi"
+      ipas:
+        "the one: -টো, -খন …": "ɡʱɔɹtʊ"
+        "the ones: -বোৰ": "ɡʱɔɹbʊɹ"
+        "of: -ৰ": "ɡʱɔɹɔɹ"
+        "in, at: -ত": "ɡʱɔɹɔt"
+        "to: -লৈ": "ɡʱɔɹɔlɔi"
     - lemma: "দোকান"
       key: dukan
-      reading: "dukan"
+      reading: "dukān"
+      ipa: "dʊkan"
       gloss: "shop"
       forms:
         "the one: -টো, -খন …": "দোকানখন"
@@ -41,14 +49,21 @@ pattern:
         "in, at: -ত": "দোকানত"
         "to: -লৈ": "দোকানলৈ"
       readings:
-        "the one: -টো, -খন …": "dukankhon"
-        "the ones: -বোৰ": "dukanbur"
-        "of: -ৰ": "dukanor"
-        "in, at: -ত": "dukanot"
-        "to: -লৈ": "dukanoloi"
+        "the one: -টো, -খন …": "dukānkhôn"
+        "the ones: -বোৰ": "dukānbur"
+        "of: -ৰ": "dukānôr"
+        "in, at: -ত": "dukānôt"
+        "to: -লৈ": "dukānôlôi"
+      ipas:
+        "the one: -টো, -খন …": "dʊkankʰɔn"
+        "the ones: -বোৰ": "dʊkanbʊɹ"
+        "of: -ৰ": "dʊkanɔɹ"
+        "in, at: -ত": "dʊkanɔt"
+        "to: -লৈ": "dʊkanɔlɔi"
     - lemma: "কোঠা"
       key: kutha
-      reading: "kutha"
+      reading: "kuthā"
+      ipa: "kʊtʰa"
       gloss: "room"
       forms:
         "the one: -টো, -খন …": "কোঠাটো"
@@ -57,14 +72,21 @@ pattern:
         "in, at: -ত": "কোঠাত"
         "to: -লৈ": "কোঠালৈ"
       readings:
-        "the one: -টো, -খন …": "kuthatu"
-        "the ones: -বোৰ": "kuthabur"
-        "of: -ৰ": "kuthar"
-        "in, at: -ত": "kuthat"
-        "to: -লৈ": "kuthaloi"
+        "the one: -টো, -খন …": "kuthātu"
+        "the ones: -বোৰ": "kuthābur"
+        "of: -ৰ": "kuthār"
+        "in, at: -ত": "kuthāt"
+        "to: -লৈ": "kuthālôi"
+      ipas:
+        "the one: -টো, -খন …": "kʊtʰatʊ"
+        "the ones: -বোৰ": "kʊtʰabʊɹ"
+        "of: -ৰ": "kʊtʰaɹ"
+        "in, at: -ত": "kʊtʰat"
+        "to: -লৈ": "kʊtʰalɔi"
     - lemma: "চহৰ"
       key: sohor
-      reading: "sohor"
+      reading: "sôhôr"
+      ipa: "sɔhɔɹ"
       gloss: "town; city"
       forms:
         "the one: -টো, -খন …": "চহৰখন"
@@ -73,14 +95,21 @@ pattern:
         "in, at: -ত": "চহৰত"
         "to: -লৈ": "চহৰলৈ"
       readings:
-        "the one: -টো, -খন …": "sohorkhon"
-        "the ones: -বোৰ": "sohorbur"
-        "of: -ৰ": "sohoror"
-        "in, at: -ত": "sohorot"
-        "to: -লৈ": "sohoroloi"
+        "the one: -টো, -খন …": "sôhôrkhôn"
+        "the ones: -বোৰ": "sôhôrbur"
+        "of: -ৰ": "sôhôrôr"
+        "in, at: -ত": "sôhôrôt"
+        "to: -লৈ": "sôhôrôlôi"
+      ipas:
+        "the one: -টো, -খন …": "sɔhɔɹkʰɔn"
+        "the ones: -বোৰ": "sɔhɔɹbʊɹ"
+        "of: -ৰ": "sɔhɔɹɔɹ"
+        "in, at: -ত": "sɔhɔɹɔt"
+        "to: -লৈ": "sɔhɔɹɔlɔi"
     - lemma: "গাড়ী"
       key: gari
-      reading: "gari"
+      reading: "gāri"
+      ipa: "ɡaɹi"
       gloss: "car"
       forms:
         "the one: -টো, -খন …": "গাড়ীখন"
@@ -89,14 +118,21 @@ pattern:
         "in, at: -ত": "গাড়ীত"
         "to: -লৈ": "গাড়ীলৈ"
       readings:
-        "the one: -টো, -খন …": "garikhon"
-        "the ones: -বোৰ": "garibur"
-        "of: -ৰ": "garir"
-        "in, at: -ত": "garit"
-        "to: -লৈ": "gariloi"
+        "the one: -টো, -খন …": "gārikhôn"
+        "the ones: -বোৰ": "gāribur"
+        "of: -ৰ": "gārir"
+        "in, at: -ত": "gārit"
+        "to: -লৈ": "gārilôi"
+      ipas:
+        "the one: -টো, -খন …": "ɡaɹikʰɔn"
+        "the ones: -বোৰ": "ɡaɹibʊɹ"
+        "of: -ৰ": "ɡaɹiɹ"
+        "in, at: -ত": "ɡaɹit"
+        "to: -লৈ": "ɡaɹilɔi"
     - lemma: "গাঁও"
       key: gao
-      reading: "gao"
+      reading: "gām̐o"
+      ipa: "ɡão"
       gloss: "village"
       forms:
         "the one: -টো, -খন …": "গাঁওখন"
@@ -105,8 +141,14 @@ pattern:
         "in, at: -ত": "গাঁৱত"
         "to: -লৈ": "গাঁৱলৈ"
       readings:
-        "the one: -টো, -খন …": "gaokhon"
-        "the ones: -বোৰ": "gaobur"
-        "of: -ৰ": "gaor"
-        "in, at: -ত": "gaot"
-        "to: -লৈ": "gaoloi"
+        "the one: -টো, -খন …": "gām̐okhôn"
+        "the ones: -বোৰ": "gām̐obur"
+        "of: -ৰ": "gām̐wr"
+        "in, at: -ত": "gām̐wt"
+        "to: -লৈ": "gām̐wlôi"
+      ipas:
+        "the one: -টো, -খন …": "ɡãokʰɔn"
+        "the ones: -বোৰ": "ɡãobʊɹ"
+        "of: -ৰ": "ɡãwɹ"
+        "in, at: -ত": "ɡãwt"
+        "to: -লৈ": "ɡãwlɔi"

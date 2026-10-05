@@ -3,7 +3,7 @@ id: bn-en-transport
 name: "Bus, auto, cab"
 kind: vocab
 theme: transport
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Getting a ride, agreeing the fare and getting off where you want."
@@ -12,74 +12,87 @@ cards:
   - id: bn-0280
     target: "বাস"
     native: "bus"
-    reading: "bas"
+    reading: "bās"
+    ipa: "bas"
     pos: "noun"
   - id: bn-0281
     target: "অটো"
     native: "auto-rickshaw"
-    reading: "oto"
+    reading: "ôṭo"
+    ipa: "ɔʈo"
     alt_target: ["সিএনজি"]
     pos: "noun"
     notes: "In Kolkata many autos run fixed routes, like a shared bus. Also সিএনজি (sienji), named after the gas it runs on."
   - id: bn-0282
     target: "ট্যাক্সি"
     native: "taxi"
-    reading: "tyaksi"
+    reading: "ṭêksi"
+    ipa: "ʈæksi"
     pos: "noun"
   - id: bn-0283
     target: "ভাড়া"
     native: "fare; rent"
-    reading: "bhara"
+    reading: "bhāṛā"
+    ipa: "bʱaɽa"
     pos: "noun"
     notes: "ভাড়া কত? What's the fare?"
   - id: bn-0284
     target: "মিটারে চলুন।"
     native: "Please go by the meter."
-    reading: "mitare cholun."
+    reading: "miṭāre colun."
+    ipa: "miʈare tʃolun"
     pos: "phrase"
     tags: ["polite"]
     notes: "Ask before you get in. If the driver refuses, agree the fare first."
   - id: bn-0285
     target: "স্টেশনে যাব।"
     native: "I want to go to the station."
-    reading: "steshone jabo."
+    reading: "sṭeśone jābo."
+    ipa: "sʈeʃone dʒabo"
     pos: "phrase"
     notes: "Literally 'I'll go to the station'. Put any place with -এ, or after a vowel -য় or -তে, before যাব: এয়ারপোর্টে যাব, হাওড়ায় যাব।"
   - id: bn-0286
     target: "কতক্ষণ লাগবে?"
     native: "How long will it take?"
-    reading: "kotokkhon lagbe?"
+    reading: "kôtokkhon lāgbe?"
+    ipa: "kɔt̪okkʰon laɡbe"
     pos: "phrase"
   - id: bn-0287
     target: "এখানে থামুন।"
     native: "Stop here, please."
-    reading: "ekhane thamun."
+    reading: "ekhāne thāmun."
+    ipa: "ekʰane t̪ʰamun"
     pos: "phrase"
     tags: ["polite"]
   - id: bn-0288
     target: "স্টেশন"
     native: "station"
-    reading: "steshon"
+    reading: "sṭeśon"
+    ipa: "sʈeʃon"
     pos: "noun"
   - id: bn-0289
     target: "টিকিট"
     native: "ticket"
-    reading: "tikit"
+    reading: "ṭikiṭ"
+    ipa: "ʈikiʈ"
     pos: "noun"
   - id: bn-0290
     target: "সিট"
     native: "seat"
-    reading: "sit"
+    reading: "siṭ"
+    ipa: "siʈ"
     pos: "noun"
   - id: bn-0291
     target: "চলুন"
     native: "let's go; please go"
-    reading: "cholun"
+    reading: "colun"
+    ipa: "tʃolun"
     pos: "verb"
     tags: ["polite"]
   - id: bn-0584
     target: "রিকশা"
     native: "rickshaw"
-    reading: "riksha"
+    reading: "rikśā"
+    ipa: "rikʃa"
     alt_target: ["রিক্সা"]
     pos: "noun"

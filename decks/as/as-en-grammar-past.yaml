@@ -2,7 +2,7 @@ schema: 1
 id: as-en-grammar-past
 name: "Past: did and have done"
 kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I did, she went, I have eaten: the simple past and the present perfect, by person and respect. Not yet checked by an Assamese speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "কৰা"
       key: kora
-      reading: "kora"
+      reading: "kôrā"
+      ipa: "kɔɹa"
       gloss: "to do"
       forms:
         "did, মই / আমি": ["কৰিলোঁ", "কৰিলো"]
@@ -28,17 +29,27 @@ pattern:
         "have done, তুমি / তোমালোক": "কৰিছা"
         "have done, আপুনি / সি / তাই / তেওঁ": "কৰিছে"
       readings:
-        "did, মই / আমি": ["korilu", "korilu"]
+        "did, মই / আমি": ["korilum̐", "korilu"]
         "did, তই / তহঁত": "korili"
-        "did, তুমি / তোমালোক": "korila"
+        "did, তুমি / তোমালোক": "korilā"
         "did, আপুনি / সি / তাই / তেওঁ": "korile"
-        "have done, মই / আমি": ["korisu", "korisu"]
+        "have done, মই / আমি": ["korisum̐", "korisu"]
         "have done, তই / তহঁত": "koris"
-        "have done, তুমি / তোমালোক": "korisa"
+        "have done, তুমি / তোমালোক": "korisā"
         "have done, আপুনি / সি / তাই / তেওঁ": "korise"
+      ipas:
+        "did, মই / আমি": "koɹilʊ̃"
+        "did, তই / তহঁত": "koɹili"
+        "did, তুমি / তোমালোক": "koɹila"
+        "did, আপুনি / সি / তাই / তেওঁ": "koɹile"
+        "have done, মই / আমি": "koɹisʊ̃"
+        "have done, তই / তহঁত": "koɹis"
+        "have done, তুমি / তোমালোক": "koɹisa"
+        "have done, আপুনি / সি / তাই / তেওঁ": "koɹise"
     - lemma: "যোৱা"
       key: juwa
-      reading: "juwa"
+      reading: "zuwā"
+      ipa: "zʊwa"
       gloss: "to go"
       forms:
         "did, মই / আমি": ["গ'লোঁ", "গ'লো"]
@@ -50,17 +61,27 @@ pattern:
         "have done, তুমি / তোমালোক": "গৈছা"
         "have done, আপুনি / সি / তাই / তেওঁ": "গৈছে"
       readings:
-        "did, মই / আমি": ["golu", "golu"]
+        "did, মই / আমি": ["golum̐", "golu"]
         "did, তই / তহঁত": "goli"
-        "did, তুমি / তোমালোক": "gola"
+        "did, তুমি / তোমালোক": "golā"
         "did, আপুনি / সি / তাই / তেওঁ": "gol"
-        "have done, মই / আমি": ["goisu", "goisu"]
-        "have done, তই / তহঁত": "gois"
-        "have done, তুমি / তোমালোক": "goisa"
-        "have done, আপুনি / সি / তাই / তেওঁ": "goise"
+        "have done, মই / আমি": ["gôisum̐", "gôisu"]
+        "have done, তই / তহঁত": "gôis"
+        "have done, তুমি / তোমালোক": "gôisā"
+        "have done, আপুনি / সি / তাই / তেওঁ": "gôise"
+      ipas:
+        "did, মই / আমি": "ɡolʊ̃"
+        "did, তই / তহঁত": "ɡoli"
+        "did, তুমি / তোমালোক": "ɡola"
+        "did, আপুনি / সি / তাই / তেওঁ": "ɡol"
+        "have done, মই / আমি": "ɡɔisʊ̃"
+        "have done, তই / তহঁত": "ɡɔis"
+        "have done, তুমি / তোমালোক": "ɡɔisa"
+        "have done, আপুনি / সি / তাই / তেওঁ": "ɡɔise"
     - lemma: "অহা"
       key: oha
-      reading: "oha"
+      reading: "ôhā"
+      ipa: "ɔha"
       gloss: "to come"
       forms:
         "did, মই / আমি": ["আহিলোঁ", "আহিলো"]
@@ -72,17 +93,27 @@ pattern:
         "have done, তুমি / তোমালোক": "আহিছা"
         "have done, আপুনি / সি / তাই / তেওঁ": "আহিছে"
       readings:
-        "did, মই / আমি": ["ahilu", "ahilu"]
+        "did, মই / আমি": ["āhilum̐", "āhilu"]
+        "did, তই / তহঁত": "āhili"
+        "did, তুমি / তোমালোক": "āhilā"
+        "did, আপুনি / সি / তাই / তেওঁ": "āhil"
+        "have done, মই / আমি": ["āhisum̐", "āhisu"]
+        "have done, তই / তহঁত": "āhis"
+        "have done, তুমি / তোমালোক": "āhisā"
+        "have done, আপুনি / সি / তাই / তেওঁ": "āhise"
+      ipas:
+        "did, মই / আমি": "ahilʊ̃"
         "did, তই / তহঁত": "ahili"
         "did, তুমি / তোমালোক": "ahila"
         "did, আপুনি / সি / তাই / তেওঁ": "ahil"
-        "have done, মই / আমি": ["ahisu", "ahisu"]
+        "have done, মই / আমি": "ahisʊ̃"
         "have done, তই / তহঁত": "ahis"
         "have done, তুমি / তোমালোক": "ahisa"
         "have done, আপুনি / সি / তাই / তেওঁ": "ahise"
     - lemma: "খোৱা"
       key: khuwa
-      reading: "khuwa"
+      reading: "khuwā"
+      ipa: "kʰʊwa"
       gloss: "to eat; to drink"
       forms:
         "did, মই / আমি": ["খালোঁ", "খালো"]
@@ -94,17 +125,27 @@ pattern:
         "have done, তুমি / তোমালোক": "খাইছা"
         "have done, আপুনি / সি / তাই / তেওঁ": "খাইছে"
       readings:
-        "did, মই / আমি": ["khalu", "khalu"]
-        "did, তই / তহঁত": "khali"
-        "did, তুমি / তোমালোক": "khala"
-        "did, আপুনি / সি / তাই / তেওঁ": "khale"
-        "have done, মই / আমি": ["khaisu", "khaisu"]
-        "have done, তই / তহঁত": "khais"
-        "have done, তুমি / তোমালোক": "khaisa"
-        "have done, আপুনি / সি / তাই / তেওঁ": "khaise"
+        "did, মই / আমি": ["khālum̐", "khālu"]
+        "did, তই / তহঁত": "khāli"
+        "did, তুমি / তোমালোক": "khālā"
+        "did, আপুনি / সি / তাই / তেওঁ": "khāle"
+        "have done, মই / আমি": ["khāisum̐", "khāisu"]
+        "have done, তই / তহঁত": "khāis"
+        "have done, তুমি / তোমালোক": "khāisā"
+        "have done, আপুনি / সি / তাই / তেওঁ": "khāise"
+      ipas:
+        "did, মই / আমি": "kʰalʊ̃"
+        "did, তই / তহঁত": "kʰali"
+        "did, তুমি / তোমালোক": "kʰala"
+        "did, আপুনি / সি / তাই / তেওঁ": "kʰale"
+        "have done, মই / আমি": "kʰaisʊ̃"
+        "have done, তই / তহঁত": "kʰais"
+        "have done, তুমি / তোমালোক": "kʰaisa"
+        "have done, আপুনি / সি / তাই / তেওঁ": "kʰaise"
     - lemma: "কোৱা"
       key: kuwa
-      reading: "kuwa"
+      reading: "kuwā"
+      ipa: "kʊwa"
       gloss: "to say"
       forms:
         "did, মই / আমি": ["ক'লোঁ", "ক'লো"]
@@ -116,11 +157,20 @@ pattern:
         "have done, তুমি / তোমালোক": "কৈছা"
         "have done, আপুনি / সি / তাই / তেওঁ": "কৈছে"
       readings:
-        "did, মই / আমি": ["kolu", "kolu"]
+        "did, মই / আমি": ["kolum̐", "kolu"]
+        "did, তই / তহঁত": "koli"
+        "did, তুমি / তোমালোক": "kolā"
+        "did, আপুনি / সি / তাই / তেওঁ": "kole"
+        "have done, মই / আমি": ["kôisum̐", "kôisu"]
+        "have done, তই / তহঁত": "kôis"
+        "have done, তুমি / তোমালোক": "kôisā"
+        "have done, আপুনি / সি / তাই / তেওঁ": "kôise"
+      ipas:
+        "did, মই / আমি": "kolʊ̃"
         "did, তই / তহঁত": "koli"
         "did, তুমি / তোমালোক": "kola"
         "did, আপুনি / সি / তাই / তেওঁ": "kole"
-        "have done, মই / আমি": ["koisu", "koisu"]
-        "have done, তই / তহঁত": "kois"
-        "have done, তুমি / তোমালোক": "koisa"
-        "have done, আপুনি / সি / তাই / তেওঁ": "koise"
+        "have done, মই / আমি": "kɔisʊ̃"
+        "have done, তই / তহঁত": "kɔis"
+        "have done, তুমি / তোমালোক": "kɔisa"
+        "have done, আপুনি / সি / তাই / তেওঁ": "kɔise"

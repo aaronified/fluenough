@@ -2,7 +2,7 @@ schema: 1
 id: gu-en-grammar-continuous
 name: "Present: I do, I'm doing"
 kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Gujarati's present does for both 'I go' and 'I am going': the verb, then છું, છે or છો. For 'right now', -ઈ રહ્યો છું. Not yet checked by a Gujarati speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "કરવું"
       key: karvun
-      reading: "karvun"
+      reading: "karvum̐"
+      ipa: "kərʋũ"
       gloss: "to do"
       forms:
         "હું": "કરું છું"
@@ -26,15 +27,23 @@ pattern:
         "તમે": "કરો છો"
         "તેઓ": "કરે છે"
       readings:
-        "હું": "karun chhun"
-        "તું": "kare chhe"
-        "તે": "kare chhe"
-        "અમે": "karie chhie"
-        "તમે": "karo chho"
-        "તેઓ": "kare chhe"
+        "હું": "karum̐ chum̐"
+        "તું": "kare che"
+        "તે": "kare che"
+        "અમે": "karie chie"
+        "તમે": "karo cho"
+        "તેઓ": "kare che"
+      ipas:
+        "હું": "kərũ tʃʰũ"
+        "તું": "kəre tʃʰe"
+        "તે": "kəre tʃʰe"
+        "અમે": "kərie tʃʰie"
+        "તમે": "kəro tʃʰo"
+        "તેઓ": "kəre tʃʰe"
     - lemma: "જવું"
       key: javun
-      reading: "javun"
+      reading: "javum̐"
+      ipa: "dʒəʋũ"
       gloss: "to go"
       forms:
         "હું": "જાઉં છું"
@@ -44,15 +53,23 @@ pattern:
         "તમે": "જાઓ છો"
         "તેઓ": "જાય છે"
       readings:
-        "હું": "jaun chhun"
-        "તું": "jay chhe"
-        "તે": "jay chhe"
-        "અમે": "jaie chhie"
-        "તમે": "jao chho"
-        "તેઓ": "jay chhe"
+        "હું": "jāum̐ chum̐"
+        "તું": "jāy che"
+        "તે": "jāy che"
+        "અમે": "jaie chie"
+        "તમે": "jāo cho"
+        "તેઓ": "jāy che"
+      ipas:
+        "હું": "dʒaũ tʃʰũ"
+        "તું": "dʒaj tʃʰe"
+        "તે": "dʒaj tʃʰe"
+        "અમે": "dʒəie tʃʰie"
+        "તમે": "dʒao tʃʰo"
+        "તેઓ": "dʒaj tʃʰe"
     - lemma: "આવવું"
       key: aavvun
-      reading: "avvun"
+      reading: "āvvum̐"
+      ipa: "aʋʋũ"
       gloss: "to come"
       forms:
         "હું": "આવું છું"
@@ -62,15 +79,23 @@ pattern:
         "તમે": "આવો છો"
         "તેઓ": "આવે છે"
       readings:
-        "હું": "avun chhun"
-        "તું": "ave chhe"
-        "તે": "ave chhe"
-        "અમે": "avie chhie"
-        "તમે": "avo chho"
-        "તેઓ": "ave chhe"
+        "હું": "āvum̐ chum̐"
+        "તું": "āve che"
+        "તે": "āve che"
+        "અમે": "āvie chie"
+        "તમે": "āvo cho"
+        "તેઓ": "āve che"
+      ipas:
+        "હું": "aʋũ tʃʰũ"
+        "તું": "aʋe tʃʰe"
+        "તે": "aʋe tʃʰe"
+        "અમે": "aʋie tʃʰie"
+        "તમે": "aʋo tʃʰo"
+        "તેઓ": "aʋe tʃʰe"
     - lemma: "ખાવું"
       key: khaavun
-      reading: "khavun"
+      reading: "khāvum̐"
+      ipa: "kʰaʋũ"
       gloss: "to eat"
       forms:
         "હું": "ખાઉં છું"
@@ -80,15 +105,23 @@ pattern:
         "તમે": "ખાઓ છો"
         "તેઓ": "ખાય છે"
       readings:
-        "હું": "khaun chhun"
-        "તું": "khay chhe"
-        "તે": "khay chhe"
-        "અમે": "khaie chhie"
-        "તમે": "khao chho"
-        "તેઓ": "khay chhe"
+        "હું": "khāum̐ chum̐"
+        "તું": "khāy che"
+        "તે": "khāy che"
+        "અમે": "khāie chie"
+        "તમે": "khāo cho"
+        "તેઓ": "khāy che"
+      ipas:
+        "હું": "kʰaũ tʃʰũ"
+        "તું": "kʰaj tʃʰe"
+        "તે": "kʰaj tʃʰe"
+        "અમે": "kʰaie tʃʰie"
+        "તમે": "kʰao tʃʰo"
+        "તેઓ": "kʰaj tʃʰe"
     - lemma: "રહેવું"
       key: rahevun
-      reading: "rahevun"
+      reading: "rahevum̐"
+      ipa: "rəɦeʋũ"
       gloss: "to live; to stay"
       forms:
         "હું": "રહું છું"
@@ -98,15 +131,23 @@ pattern:
         "તમે": "રહો છો"
         "તેઓ": "રહે છે"
       readings:
-        "હું": "rahun chhun"
-        "તું": "rahe chhe"
-        "તે": "rahe chhe"
-        "અમે": "rahie chhie"
-        "તમે": "raho chho"
-        "તેઓ": "rahe chhe"
+        "હું": "rahum̐ chum̐"
+        "તું": "rahe che"
+        "તે": "rahe che"
+        "અમે": "rahie chie"
+        "તમે": "raho cho"
+        "તેઓ": "rahe che"
+      ipas:
+        "હું": "rəɦũ tʃʰũ"
+        "તું": "rəɦe tʃʰe"
+        "તે": "rəɦe tʃʰe"
+        "અમે": "rəɦie tʃʰie"
+        "તમે": "rəɦo tʃʰo"
+        "તેઓ": "rəɦe tʃʰe"
     - lemma: "કરવું, right now"
       key: karii-rahyo
-      reading: "karvun, right now"
+      reading: "karvum̐, right now"
+      ipa: "kərʋũ"
       gloss: "to be doing, said of a man or men"
       forms:
         "હું": "કરી રહ્યો છું"
@@ -116,9 +157,16 @@ pattern:
         "તમે": "કરી રહ્યા છો"
         "તેઓ": "કરી રહ્યા છે"
       readings:
-        "હું": "kari rahyo chhun"
-        "તું": "kari rahyo chhe"
-        "તે": "kari rahyo chhe"
-        "અમે": "kari rahya chhie"
-        "તમે": "kari rahya chho"
-        "તેઓ": "kari rahya chhe"
+        "હું": "kari rahyo chum̐"
+        "તું": "kari rahyo che"
+        "તે": "kari rahyo che"
+        "અમે": "kari rahyā chie"
+        "તમે": "kari rahyā cho"
+        "તેઓ": "kari rahyā che"
+      ipas:
+        "હું": "kəri rəɦjo tʃʰũ"
+        "તું": "kəri rəɦjo tʃʰe"
+        "તે": "kəri rəɦjo tʃʰe"
+        "અમે": "kəri rəɦja tʃʰie"
+        "તમે": "kəri rəɦja tʃʰo"
+        "તેઓ": "kəri rəɦja tʃʰe"

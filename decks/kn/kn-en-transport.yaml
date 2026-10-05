@@ -3,7 +3,7 @@ id: kn-en-transport
 name: "Bus, auto, cab"
 kind: vocab
 theme: transport
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Getting a ride, agreeing the fare and getting off where you want. Not yet checked by a Kannada speaker: please report any mistake."
@@ -13,75 +13,88 @@ cards:
     target: "ಬಸ್ಸು"
     native: "bus"
     reading: "bassu"
+    ipa: "bassu"
     alt_target: ["ಬಸ್"]
     pos: "noun"
     notes: "Also ಬಸ್ (bas). Kannada likes a word to end in a vowel, so many words from English gain a u."
   - id: kn-0343
     target: "ಆಟೋ"
     native: "auto-rickshaw"
-    reading: "ato"
+    reading: "āṭō"
+    ipa: "aːʈoː"
     pos: "noun"
   - id: kn-0344
     target: "ಟ್ಯಾಕ್ಸಿ"
     native: "taxi"
-    reading: "tyaksi"
+    reading: "ṭyāksi"
+    ipa: "ʈjaːksi"
     alt_target: ["ಕ್ಯಾಬ್"]
     pos: "noun"
-    notes: "A booked one is often ಕ್ಯಾಬ್ (kyab), cab."
+    notes: "A booked one is often ಕ್ಯಾಬ್ (kyāb), cab."
   - id: kn-0345
     target: "ಬಾಡಿಗೆ"
     native: "fare; hire; rent"
-    reading: "badige"
+    reading: "bāḍige"
+    ipa: "baːɖiɡe"
     pos: "noun"
   - id: kn-0346
     target: "ಮೀಟರ್ ಹಾಕಿ."
     native: "Please put the meter on."
-    reading: "mitar haki."
+    reading: "mīṭar hāki."
+    ipa: "miːʈar haːki"
     pos: "phrase"
-    notes: "ಹಾಕು (haku) is 'to put'. Otherwise agree the fare first: ಎಷ್ಟು ಆಗುತ್ತೆ? how much will it be?"
+    notes: "ಹಾಕು (hāku) is 'to put'. Otherwise agree the fare first: ಎಷ್ಟು ಆಗುತ್ತೆ? how much will it be?"
   - id: kn-0347
     target: "ನಾನು ರೈಲು ನಿಲ್ದಾಣಕ್ಕೆ ಹೋಗಬೇಕು."
     native: "I need to go to the railway station."
-    reading: "nanu railu nildanakke hogabeku."
+    reading: "nānu railu nildāṇakke hōgabēku."
+    ipa: "naːnu railu nild̪aːɳakke hoːɡabeːku"
     pos: "phrase"
-    notes: "In speech most people say ಸ್ಟೇಷನ್ (steshan). -ಬೇಕು on a verb is 'must, need to'."
+    notes: "In speech most people say ಸ್ಟೇಷನ್ (sṭēṣan). -ಬೇಕು on a verb is 'must, need to'."
   - id: kn-0348
     target: "ಎಷ್ಟು ಹೊತ್ತು ಆಗುತ್ತದೆ?"
     native: "How long will it take?"
-    reading: "eshtu hottu aguttade?"
+    reading: "eṣṭu hottu āguttade?"
+    ipa: "eʂʈu hot̪t̪u aːɡut̪t̪ad̪e"
     alt_target: ["ಎಷ್ಟು ಹೊತ್ತು ಆಗುತ್ತೆ?"]
     pos: "phrase"
-    notes: "ಹೊತ್ತು (hottu) is 'time, a while'. In speech, ಆಗುತ್ತೆ (agutte)."
+    notes: "ಹೊತ್ತು (hottu) is 'time, a while'. In speech, ಆಗುತ್ತೆ (āgutte)."
   - id: kn-0349
     target: "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ."
     native: "Stop here, please."
     reading: "illi nillisi."
+    ipa: "illi nillisi"
     pos: "phrase"
   - id: kn-0350
     target: "ನಿಲ್ದಾಣ"
     native: "station; stop"
-    reading: "nildana"
+    reading: "nildāṇa"
+    ipa: "nild̪aːɳa"
     pos: "noun"
     notes: "On signs: ಬಸ್ ನಿಲ್ದಾಣ, bus stop; ರೈಲು ನಿಲ್ದಾಣ, railway station."
   - id: kn-0351
     target: "ರೈಲು"
     native: "train"
     reading: "railu"
+    ipa: "railu"
     pos: "noun"
   - id: kn-0352
     target: "ಟಿಕೆಟ್"
     native: "ticket"
-    reading: "tiket"
+    reading: "ṭikeṭ"
+    ipa: "ʈikeʈ"
     pos: "noun"
   - id: kn-0353
     target: "ಸೀಟು"
     native: "seat"
-    reading: "situ"
+    reading: "sīṭu"
+    ipa: "siːʈu"
     alt_target: ["ಸೀಟ್"]
     pos: "noun"
   - id: kn-0354
     target: "ಹೋಗೋಣ"
     native: "let's go"
-    reading: "hogona"
+    reading: "hōgōṇa"
+    ipa: "hoːɡoːɳa"
     pos: "other"
-    notes: "-ಓಣ makes 'let's': ಮಾಡೋಣ (madona), let's do it."
+    notes: "-ಓಣ makes 'let's': ಮಾಡೋಣ (māḍōṇa), let's do it."

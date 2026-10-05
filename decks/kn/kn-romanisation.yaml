@@ -8,7 +8,30 @@ schema: 1
 kind: romanisation
 id: kn-romanisation
 language: kn
-scheme: "Popular, as Kannada is typed in a chat: lowercase, no length marks (ನೀವು nivu, ಬೇಕು beku), every vowel said is written, t and d for dental and retroflex alike, n for ಣ and ಞ, l for ಳ, sh for ಶ and ಷ, ch for ಚ, chh for ಛ, j for ಜ, ru for ಋ, aspirates with h, ಂ as the m or n said, and f for ಫ in words from English."
+scheme: "ISO 15919 letters, spelled as said (ADR-0025): ā ī ū for the long vowels, and e and ē, o and ō for the short and the long e and o (nīvu, bēku); ai and au; ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth; ḷ for ಳ and ೞ; c for ಚ and ch for ಛ; ś for ಶ and ṣ for ಷ; ñ for ಞ; r for ಱ; ru for ಋ; f for ಫ in words from English; ಂ as the nasal said (kamba, gaṅge, māmsa). Every vowel said is written. A typed answer needs none of the marks."
+standard: "ISO 15919"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṅkh", "nkh"]
+  - ["ṅgh", "ngh"]
+  - ["ṅk", "nk"]
+  - ["ṅg", "ng"]
+  - ["ṅ", "ng"]
+  - ["ñch", "nchh"]
+  - ["ñc", "nch"]
+  - ["ñjh", "njh"]
+  - ["ñj", "nj"]
+  - ["ñ", "ny"]
+  - ["cch", "chh"]
+  - ["cc", "chch"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["m̐", "n"]
+  - ["ṁ", "n"]
+  - ["ḵ", "kh"]
 equivalents:
   - ["a", "aa"]
   - ["i", "ee", "ii"]
