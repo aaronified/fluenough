@@ -231,7 +231,8 @@ String foldDiacritics(String input) {
   return buffer.toString();
 }
 
-/// Diacritic folding for Latin and Cyrillic-adjacent scripts.
+/// Diacritic folding for Latin and Cyrillic-adjacent scripts, and for the
+/// letters ISO 15919 adds, which the Indic readings use (ADR-0025).
 ///
 /// Dart's core library has no Unicode normalisation, so this is an explicit
 /// table rather than an NFD decomposition. It covers Latin-1 Supplement and
@@ -241,22 +242,23 @@ String foldDiacritics(String input) {
 final Map<String, String> _diacriticFolding = _buildFolding({
   'a': 'áàâäãåāăą',
   'c': 'çćĉċč',
-  'd': 'ďđ',
+  'd': 'ďđḍ',
   'e': 'éèêëēĕėęě',
   'g': 'ĝğġģ',
-  'h': 'ĥħ',
+  'h': 'ĥħḥ',
   'i': 'íìîïĩīĭįı',
   'j': 'ĵ',
-  'k': 'ķ',
-  'l': 'ĺļľłŀ',
-  'n': 'ñńņňŉ',
+  'k': 'ķḵ',
+  'l': 'ĺļľłŀḷḻ',
+  'm': 'ṁ',
+  'n': 'ñńņňŉṇṅṉ',
   'o': 'óòôöõōŏőø',
-  'r': 'ŕŗř',
-  's': 'śŝşš',
-  't': 'ţťŧ',
+  'r': 'ŕŗřṛṟ',
+  's': 'śŝşšṣ',
+  't': 'ţťŧṭ',
   'u': 'úùûüũūŭůűų',
   'w': 'ŵ',
-  'y': 'ýÿŷ',
+  'y': 'ýÿŷẏ',
   'z': 'źżž',
   'ae': 'æ',
   'oe': 'œ',
@@ -264,7 +266,11 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   // The nukta, which Devanagari and Bengali writers often leave off: ज for
   // ज़. After [canonical] it is always a mark of its own, so dropping it is
   // "right, but watch the nukta", not a miss.
-  '': '\u093C\u09BC',
+  '':
+      '\u093C\u09BC'
+      // And the combining marks a letter may carry in place of a composed
+      // one: macron, dot below, candrabindu, ring below, tilde.
+      '\u0304\u0323\u0310\u0325\u0303',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {

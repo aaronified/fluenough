@@ -2,7 +2,7 @@ schema: 1
 id: te-en-grammar-nouns
 name: "Nouns: plural and case"
 kind: grammar
-language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The plural, and the endings for 'in', 'to' and 'from', often on a changed stem. Not yet checked by a Telugu speaker: please report any mistake."
@@ -17,6 +17,7 @@ pattern:
     - lemma: "ఇల్లు"
       key: illu
       reading: "illu"
+      ipa: "illu"
       gloss: "house"
       forms:
         "plural": "ఇళ్ళు"
@@ -24,13 +25,19 @@ pattern:
         "to: -కి or -కు": "ఇంటికి"
         "from: నుంచి": "ఇంటి నుంచి"
       readings:
-        "plural": "illu"
-        "in: -లో": "intlo"
-        "to: -కి or -కు": "intiki"
-        "from: నుంచి": "inti nunchi"
+        "plural": "iḷḷu"
+        "in: -లో": "iṇṭlō"
+        "to: -కి or -కు": "iṇṭiki"
+        "from: నుంచి": "iṇṭi nuñci"
+      ipas:
+        "plural": "iɭɭu"
+        "in: -లో": "iɳʈloː"
+        "to: -కి or -కు": "iɳʈiki"
+        "from: నుంచి": "iɳʈi nuɲtʃi"
     - lemma: "పుస్తకం"
       key: pustakam
       reading: "pustakam"
+      ipa: "pust̪akam"
       gloss: "book"
       forms:
         "plural": "పుస్తకాలు"
@@ -38,13 +45,19 @@ pattern:
         "to: -కి or -కు": "పుస్తకానికి"
         "from: నుంచి": "పుస్తకం నుంచి"
       readings:
-        "plural": "pustakalu"
-        "in: -లో": "pustakamlo"
-        "to: -కి or -కు": "pustakaniki"
-        "from: నుంచి": "pustakam nunchi"
+        "plural": "pustakālu"
+        "in: -లో": "pustakamlō"
+        "to: -కి or -కు": "pustakāniki"
+        "from: నుంచి": "pustakam nuñci"
+      ipas:
+        "plural": "pust̪akaːlu"
+        "in: -లో": "pust̪akamloː"
+        "to: -కి or -కు": "pust̪akaːniki"
+        "from: నుంచి": "pust̪akam nuɲtʃi"
     - lemma: "దుకాణం"
       key: dukaanam
-      reading: "dukanam"
+      reading: "dukāṇam"
+      ipa: "d̪ukaːɳam"
       gloss: "shop"
       forms:
         "plural": "దుకాణాలు"
@@ -52,13 +65,19 @@ pattern:
         "to: -కి or -కు": "దుకాణానికి"
         "from: నుంచి": "దుకాణం నుంచి"
       readings:
-        "plural": "dukanalu"
-        "in: -లో": "dukanamlo"
-        "to: -కి or -కు": "dukananiki"
-        "from: నుంచి": "dukanam nunchi"
+        "plural": "dukāṇālu"
+        "in: -లో": "dukāṇamlō"
+        "to: -కి or -కు": "dukāṇāniki"
+        "from: నుంచి": "dukāṇam nuñci"
+      ipas:
+        "plural": "d̪ukaːɳaːlu"
+        "in: -లో": "d̪ukaːɳamloː"
+        "to: -కి or -కు": "d̪ukaːɳaːniki"
+        "from: నుంచి": "d̪ukaːɳam nuɲtʃi"
     - lemma: "గది"
       key: gadi
       reading: "gadi"
+      ipa: "ɡad̪i"
       gloss: "room"
       forms:
         "plural": "గదులు"
@@ -67,12 +86,18 @@ pattern:
         "from: నుంచి": "గది నుంచి"
       readings:
         "plural": "gadulu"
-        "in: -లో": "gadilo"
+        "in: -లో": "gadilō"
         "to: -కి or -కు": "gadiki"
-        "from: నుంచి": "gadi nunchi"
+        "from: నుంచి": "gadi nuñci"
+      ipas:
+        "plural": "ɡad̪ulu"
+        "in: -లో": "ɡad̪iloː"
+        "to: -కి or -కు": "ɡad̪iki"
+        "from: నుంచి": "ɡad̪i nuɲtʃi"
     - lemma: "బస్సు"
       key: bassu
       reading: "bassu"
+      ipa: "bassu"
       gloss: "bus"
       forms:
         "plural": "బస్సులు"
@@ -81,6 +106,11 @@ pattern:
         "from: నుంచి": "బస్సు నుంచి"
       readings:
         "plural": "bassulu"
-        "in: -లో": "bassulo"
+        "in: -లో": "bassulō"
         "to: -కి or -కు": "bassuki"
-        "from: నుంచి": "bassu nunchi"
+        "from: నుంచి": "bassu nuñci"
+      ipas:
+        "plural": "bassulu"
+        "in: -లో": "bassuloː"
+        "to: -కి or -కు": "bassuki"
+        "from: నుంచి": "bassu nuɲtʃi"

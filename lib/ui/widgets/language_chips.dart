@@ -22,7 +22,8 @@ class LanguageChips extends StatelessWidget {
 
   final List<LanguageInfo> languages;
 
-  /// Where each language's glyph comes from: its first deck here.
+  /// Where a language that names no icon takes its glyph from: its first
+  /// deck here.
   final List<DeckEntry> decks;
 
   /// The row's name for a screen reader: "Filter by language".
@@ -38,11 +39,14 @@ class LanguageChips extends StatelessWidget {
   /// Puts the [allLabel] chip after the languages instead of before them.
   final bool allLast;
 
-  /// The glyph of the first deck in [language], so a language's chip shows
-  /// the same character as its deck.
+  /// The language's icon, the first letter of its own name (ADR-0027),
+  /// or for a language that names none, the glyph of its first deck here.
   String _glyphOf(LanguageInfo language) {
+    if (language.icon case final icon?) return icon;
     for (final entry in decks) {
-      if (entry.language.code == language.code) return entry.glyph;
+      if (entry.language.code == language.code) {
+        return entry.language.icon ?? entry.glyph;
+      }
     }
     return '';
   }

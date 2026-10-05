@@ -14,6 +14,7 @@ import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
@@ -42,7 +43,12 @@ const List<GrammarPick> grammarFixturePicks = <GrammarPick>[
 /// Design screen `drill-grammar`. [GrammarDrill.live] drills a session's
 /// grammar card (#14): the card is an expanded cell (#2), and the session
 /// grades it with `AnswerGrader` as the production drill does, records it,
-/// and moves on. Behind `Feature.drillGrammar`.
+/// and moves on, and once it is answered the form has its speaker. Behind
+/// `Feature.drillGrammar`.
+///
+/// While the keyboard is open the card is compact, so that it stays in view
+/// above the field: a smaller prompt, and the script or Latin letters choice
+/// left out until the keyboard closes.
 ///
 /// The unnamed constructor is the gallery's: it runs on [GrammarCell]s
 /// shaped from the real pattern of [deckId], picked by [picks], graded
@@ -209,6 +215,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
       latin: session.transliterating,
       reading: session.transliterating ? reading : null,
       readingFirst: !session.learnsAlphabet,
+      speaker: session.canPlay
+          ? Speaker(onPlay: session.play, playing: session.playing)
+          : null,
       onClose: widget.onClose!,
       moves: (
         dontKnow: session.dontKnow,
@@ -234,9 +243,12 @@ class _GrammarDrillState extends State<GrammarDrill> {
     bool latin = false,
     String? reading,
     bool readingFirst = false,
+    Widget? speaker,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final language = deck.language;
+    // Typing the answer: the keyboard is open, and the field still there.
+    final typing = keyboardOpen(context) && answer == null;
     return DrillFrame(
       skill: Skill.grammar,
       deckName: deck.name,
@@ -251,12 +263,17 @@ class _GrammarDrillState extends State<GrammarDrill> {
         language,
         answered: answer != null,
         readingFirst: readingFirst,
+        typing: typing,
+        speaker: speaker,
       ),
       belowCard: answer != null
           ? null
           : <Widget>[
-              ?inputChoice,
+              if (!typing) ?inputChoice,
+              // Keyed, so that the field keeps its focus and text as the
+              // choice above it comes and goes with the keyboard.
               AnswerField(
+                key: const ValueKey<String>('answer'),
                 controller: _controller,
                 label: l10n.drillTypeSlot(cell.slot),
                 language: language,
@@ -292,28 +309,31 @@ class _GrammarDrillState extends State<GrammarDrill> {
     LanguageInfo language, {
     required bool answered,
     bool readingFirst = false,
+    bool typing = false,
+    Widget? speaker,
   }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final notes = cell.pattern.notes;
     final readingPrompt = readingFirst ? cell.readingPrompt : null;
+    final promptSize = typing ? 22.0 : 32.0;
     return <Widget>[
       if (readingPrompt != null)
         ReadingFirst(
           reading: readingPrompt,
           target: cell.prompt,
           language: language,
-          fontSize: 32,
+          fontSize: promptSize,
         )
       else
         TargetText.card(
           cell.prompt,
           language: language,
-          fontSize: 32,
+          fontSize: promptSize,
           fontWeight: FontWeight.w600,
         ),
       Padding(
-        padding: const EdgeInsetsDirectional.only(top: 8),
+        padding: EdgeInsetsDirectional.only(top: typing ? 0 : 8),
         child: Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
@@ -349,6 +369,8 @@ class _GrammarDrillState extends State<GrammarDrill> {
         ),
       ),
       if (answered) ...<Widget>[
+        // Only once answered: hearing the form would give it away.
+        ?speaker,
         Padding(
           padding: const EdgeInsetsDirectional.only(top: 8),
           child: _GrammarTable(

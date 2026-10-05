@@ -105,6 +105,49 @@ void main() {
       expect(settings.showRomanisation, isFalse);
     });
 
+    testWidgets('sound, and playing words automatically, which cannot '
+        'change while sound is off', (tester) async {
+      usePhone(tester);
+      final state = await pumpScreen(tester, const SettingsPage());
+      final l10n = l10nOf(tester);
+      final settings = state.settings;
+      Switch switchOf(Finder row) => tester.widget<Switch>(
+        find.descendant(of: row, matching: find.byType(Switch)),
+      );
+
+      final autoplay = _row(l10n.settingsAutoplay);
+      await scrollTo(tester, autoplay);
+      await tester.ensureVisible(autoplay);
+      await tester.pumpAndSettle();
+      expect(switchOf(autoplay).value, isFalse);
+      await tester.tap(autoplay);
+      await tester.pumpAndSettle();
+      expect(settings.autoplay, isTrue);
+
+      // The section is Sound too: the row is the one with a switch.
+      final sound = _row(l10n.settingsSound);
+      expect(sound, findsOneWidget);
+      await tester.ensureVisible(sound);
+      await tester.pumpAndSettle();
+      expect(switchOf(sound).value, isTrue);
+      await tester.tap(sound);
+      await tester.pumpAndSettle();
+      // Turning it off says what it does to the questions that need it.
+      expect(find.text(l10n.settingsSoundOffSkipped), findsOneWidget);
+      expect(settings.soundOn, isFalse);
+      // Kept as it was, but greyed out and not to be changed.
+      expect(switchOf(autoplay).value, isTrue);
+      expect(switchOf(autoplay).onChanged, isNull);
+      await tester.tap(autoplay);
+      await tester.pumpAndSettle();
+      expect(settings.autoplay, isTrue);
+
+      await tester.tap(sound);
+      await tester.pumpAndSettle();
+      expect(settings.soundOn, isTrue);
+      expect(switchOf(autoplay).onChanged, isNotNull);
+    });
+
     testWidgets('speech rate, which sets the rate the voice is given', (
       tester,
     ) async {

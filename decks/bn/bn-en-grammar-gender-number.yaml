@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-gender-number
 name: "No gender; plurals"
 kind: vocab
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Bengali has no grammatical gender, and its verbs ignore number."
@@ -11,36 +11,42 @@ cards:
   - id: bn-0274
     target: "সে আসছে।"
     native: "He is coming. / She is coming."
-    reading: "she ashchhe."
+    reading: "śe āśche."
+    ipa: "ʃe aʃtʃʰe"
     pos: "phrase"
     notes: "সে is he and she. Nothing in the sentence says which."
   - id: bn-0275
     target: "ভালো ছেলে"
     native: "a good boy"
-    reading: "bhalo chhele"
+    reading: "bhālo chele"
+    ipa: "bʱalo tʃʰele"
     pos: "phrase"
   - id: bn-0276
     target: "ভালো মেয়ে"
     native: "a good girl"
-    reading: "bhalo meye"
+    reading: "bhālo meye"
+    ipa: "bʱalo meje"
     pos: "phrase"
     notes: "Adjectives don't change for gender: ভালো for both. A few borrowed from Sanskrit have a feminine form, like সুন্দরী, but the plain form is always correct."
   - id: bn-0277
     target: "আমি যাই, আমরা যাই।"
     native: "I go; we go."
-    reading: "ami jai, amra jai."
+    reading: "āmi jāi, āmrā jāi."
+    ipa: "ami dʒai amra dʒai"
     pos: "phrase"
     notes: "The verb does not change for number."
   - id: bn-0278
     target: "ছেলেরা খেলছে।"
     native: "The boys are playing."
-    reading: "chhelera khelchhe."
+    reading: "chelerā khelche."
+    ipa: "tʃʰelera kʰeltʃʰe"
     pos: "phrase"
     notes: "-রা makes a plural for people: ছেলেরা, মেয়েরা."
   - id: bn-0279
     target: "তিনটে বই"
     native: "three books"
-    reading: "tinte boi"
+    reading: "tinṭe boi"
+    ipa: "t̪inʈe boi"
     alt_target: ["তিনটা বই"]
     pos: "phrase"
-    notes: "After a number, or অনেক (many), the noun stays singular. Also তিনটা বই (tinta boi)."
+    notes: "After a number, or অনেক (many), the noun stays singular. Also তিনটা বই (tinṭā boi)."

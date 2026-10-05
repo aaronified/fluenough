@@ -3,7 +3,7 @@ id: bn-en-first-words
 name: "First words"
 kind: vocab
 theme: first-words
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Greetings, the respect Bengali builds into them, and how to say you are still learning."
@@ -12,166 +12,190 @@ cards:
   - id: bn-0136
     target: "নমস্কার"
     native: "hello; goodbye"
-    reading: "nomoshkar"
+    reading: "nômośkār"
+    ipa: "nɔmoʃkar"
     alt_target: ["আসসালামু আলাইকুম"]
     pos: "other"
     tags: ["greeting"]
-    notes: "Said with palms pressed together, in many Hindu families; many Muslim families say আসসালামু আলাইকুম (assalamu alaikum). Neither is universal. In many Hindu families, younger people greet elders by touching their feet: প্রণাম (pronam)."
+    notes: "Said with palms pressed together, in many Hindu families; many Muslim families say আসসালামু আলাইকুম (āssālāmu ālāikum). Neither is universal. In many Hindu families, younger people greet elders by touching their feet: প্রণাম (prônām)."
   - id: bn-0137
     target: "প্রণাম"
     native: "a respectful greeting to an elder"
-    reading: "pronam"
+    reading: "prônām"
+    ipa: "prɔnam"
     pos: "other"
     tags: ["greeting", "honorific"]
     notes: "Bowing to an elder or touching their feet. A visitor is not expected to."
   - id: bn-0138
     target: "আপনি"
     native: "you (respectful)"
-    reading: "apni"
+    reading: "āpni"
+    ipa: "apni"
     pos: "other"
     tags: ["honorific"]
     notes: "Bengali has three words for 'you': আপনি for strangers, elders and customers; তুমি (tumi) for friends and family; তুই (tui) only for the very close, and rude to anyone else. The verb changes with each. A learner is always safe with আপনি."
   - id: bn-0139
     target: "আপনি কেমন আছেন?"
     native: "How are you? (respectful)"
-    reading: "apni kemon achhen?"
+    reading: "āpni kemon āchen?"
+    ipa: "apni kemon atʃʰen"
     pos: "phrase"
     tags: ["greeting"]
     notes: "To a friend: কেমন আছো? (kemon achho?). Bengali has no grammatical gender, so it is the same to a man or a woman."
   - id: bn-0140
     target: "ভালো আছি।"
     native: "I'm fine."
-    reading: "bhalo achhi."
+    reading: "bhālo āchi."
+    ipa: "bʱalo atʃʰi"
     pos: "phrase"
     tags: ["greeting"]
-    notes: "ভালো (bhalo) is 'good, well', one of the most useful words there is."
+    notes: "ভালো (bhālo) is 'good, well', one of the most useful words there is."
   - id: bn-0141
     target: "ধন্যবাদ"
     native: "thank you"
-    reading: "dhonnobad"
+    reading: "dhonnobād"
+    ipa: "d̪ʱonnobad̪"
     pos: "other"
     tags: ["polite"]
     notes: "Among family and friends thanks are often left unsaid. Many people say 'thank you' in English."
   - id: bn-0142
     target: "আচ্ছা"
     native: "OK; I see"
-    reading: "achchha"
+    reading: "ācchā"
+    ipa: "atʃtʃʰa"
     pos: "other"
     notes: "The all-purpose 'OK' or 'right'. Also the start of a goodbye: আচ্ছা, আসি।"
   - id: bn-0143
     target: "আসি"
     native: "bye, I'm off (said by the one leaving)"
-    reading: "ashi"
+    reading: "āśi"
+    ipa: "aʃi"
     alt_target: ["চলি"]
     pos: "other"
     tags: ["greeting"]
-    notes: "Literally 'I'll come'. On leaving, Bengali speakers say আসি rather than যাই (jai), 'I'm going', which sounds final. Also চলি (choli)."
+    notes: "Literally 'I'll come'. On leaving, Bengali speakers say আসি rather than যাই (jāi), 'I'm going', which sounds final. Also চলি (coli)."
   - id: bn-0144
     target: "আমি বাংলা জানি না।"
     native: "I don't know Bengali."
-    reading: "ami bangla jani na."
+    reading: "āmi bāṅlā jāni nā."
+    ipa: "ami baŋla dʒani na"
     pos: "phrase"
-    notes: "না (na), 'not', comes after the verb."
+    notes: "না (nā), 'not', comes after the verb."
   - id: bn-0145
     target: "আমি এখনও বাংলা শিখছি।"
     native: "I'm still learning Bengali."
-    reading: "ami ekhono bangla shikhchhi."
+    reading: "āmi ekhono bāṅlā śikhchi."
+    ipa: "ami ekʰono baŋla ʃikʰtʃʰi"
     alt_target: ["আমি এখনো বাংলা শিখছি।"]
     pos: "phrase"
     notes: "The same for a man and a woman: Bengali verbs do not show gender."
   - id: bn-0146
     target: "একটু ধীরে বলুন।"
     native: "Please speak slowly."
-    reading: "ektu dhire bolun."
+    reading: "ekṭu dhire bolun."
+    ipa: "ekʈu d̪ʱire bolun"
     alt_target: ["একটু আস্তে বলুন।", "আস্তে বলুন।"]
     pos: "phrase"
     tags: ["polite"]
-    notes: "বলুন is the polite request form of বলা (bola, to say). Most verbs take -উন for a polite request: বসুন (boshun), please sit. Verbs whose stem ends in a vowel take -ন: যান (jan), please go; খান (khan), please eat; দিন (din), please give. একটু (ektu), 'a little', softens a request."
+    notes: "বলুন is the polite request form of বলা (bôlā, to say). Most verbs take -উন for a polite request: বসুন (bośun), please sit. Verbs whose stem ends in a vowel take -ন: যান (jān), please go; খান (khān), please eat; দিন (din), please give. একটু (ekṭu), 'a little', softens a request."
   - id: bn-0147
     target: "আবার বলুন।"
     native: "Please say that again."
-    reading: "abar bolun."
+    reading: "ābār bolun."
+    ipa: "abar bolun"
     pos: "phrase"
     tags: ["polite"]
   - id: bn-0148
     target: "আবার দেখা হবে।"
     native: "See you again."
-    reading: "abar dekha hobe."
+    reading: "ābār dekhā hôbe."
+    ipa: "abar d̪ekʰa ɦɔbe"
     pos: "phrase"
     tags: ["greeting"]
     notes: "Literally 'there will be a meeting again'."
   - id: bn-0395
     target: "আসসালামু আলাইকুম"
     native: "hello (literally 'peace be upon you')"
-    reading: "assalamu alaikum"
+    reading: "āssālāmu ālāikum"
+    ipa: "assalamu alaikum"
     pos: "phrase"
     tags: ["greeting"]
-    notes: "The greeting in many Muslim families; many Hindu families say নমস্কার (nomoshkar). Neither is universal. The reply is ওয়ালাইকুম আসসালাম (walaikum assalam)."
+    notes: "The greeting in many Muslim families; many Hindu families say নমস্কার (nômośkār). Neither is universal. The reply is ওয়ালাইকুম আসসালাম (wālāikum āssālām)."
   - id: bn-0396
     target: "ওয়ালাইকুম আসসালাম"
     native: "and peace be upon you (the reply)"
-    reading: "walaikum assalam"
+    reading: "wālāikum āssālām"
+    ipa: "walaikum assalam"
     pos: "phrase"
     tags: ["greeting"]
   - id: bn-0397
     target: "খোদা হাফেজ"
     native: "goodbye"
-    reading: "khoda haphej"
+    reading: "khodā hāphej"
+    ipa: "kʰod̪a ɦapʰedʒ"
     alt_target: ["আল্লাহ হাফেজ"]
     pos: "phrase"
     tags: ["greeting"]
-    notes: "Said in many Muslim families. Also আল্লাহ হাফেজ (allah haphej)."
+    notes: "Said in many Muslim families. Also আল্লাহ হাফেজ (āllāh hāphej)."
   - id: bn-0398
     target: "কী খবর?"
     native: "What's new?"
-    reading: "ki khobor?"
+    reading: "ki khôbor?"
+    ipa: "ki kʰɔbor"
     pos: "phrase"
     tags: ["greeting"]
     notes: "To someone you know: 'what news?'"
   - id: bn-0399
     target: "মোটামুটি"
     native: "so-so; not bad"
-    reading: "motamuti"
+    reading: "moṭāmuṭi"
+    ipa: "moʈamuʈi"
     pos: "other"
   - id: bn-0400
     target: "আলাপ করে ভালো লাগল।"
     native: "Nice to meet you."
-    reading: "alap kore bhalo laglo."
+    reading: "ālāp kôre bhālo lāglo."
+    ipa: "alap kɔre bʱalo laɡlo"
     pos: "phrase"
     tags: ["polite"]
     notes: "'Talking with you felt good.'"
   - id: bn-0401
     target: "ভালো থাকবেন।"
     native: "Take care. (respectful)"
-    reading: "bhalo thakben."
+    reading: "bhālo thākben."
+    ipa: "bʱalo t̪ʰakben"
     pos: "phrase"
     tags: ["greeting"]
-    notes: "To a friend: ভালো থেকো (bhalo theko)."
+    notes: "To a friend: ভালো থেকো (bhālo theko)."
   - id: bn-0402
     target: "আবার আসবেন।"
     native: "Do come again."
-    reading: "abar ashben."
+    reading: "ābār āśben."
+    ipa: "abar aʃben"
     pos: "phrase"
     tags: ["polite"]
-    notes: "A host's goodbye. To a friend: আবার এসো (abar esho)."
+    notes: "A host's goodbye. To a friend: আবার এসো (ābār eśo)."
   - id: bn-0403
     target: "মাপ করবেন।"
     native: "Sorry; excuse me."
-    reading: "map korben."
+    reading: "māp kôrben."
+    ipa: "map kɔrben"
     alt_target: ["মাফ করবেন।"]
     pos: "phrase"
     tags: ["polite"]
-    notes: "For a small mistake, or to get past someone. Also মাফ করবেন (maph korben). A formal apology is আমি দুঃখিত (ami dukkhito)."
+    notes: "For a small mistake, or to get past someone. Also মাফ করবেন (māph kôrben). A formal apology is আমি দুঃখিত (āmi dukkhito)."
   - id: bn-0404
     target: "আমি বুঝেছি।"
     native: "I understand."
-    reading: "ami bujhechhi."
+    reading: "āmi bujhechi."
+    ipa: "ami budʒʱetʃʰi"
     pos: "phrase"
     notes: "Literally 'I have understood'. Not understanding is বুঝিনি (bujhini)."
   - id: bn-0405
     target: "বাংলায় বলুন।"
     native: "Please say it in Bengali."
-    reading: "banglay bolun."
+    reading: "bāṅlāy bolun."
+    ipa: "baŋlaj bolun"
     pos: "phrase"
     tags: ["polite"]
     notes: "বাংলা + -য়, 'in Bengali'."

@@ -2,7 +2,7 @@ schema: 1
 id: gu-en-grammar-sentences
 name: "Simple sentences"
 kind: vocab
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "How a Gujarati sentence is built: the doer first, the verb last, and everything else between. Not yet checked by a Gujarati speaker: please report any mistake."
@@ -11,60 +11,70 @@ cards:
   - id: gu-0273
     target: "આ મારું ઘર છે."
     native: "This is my house."
-    reading: "a marun ghar chhe."
+    reading: "ā mārum̐ ghar che."
+    ipa: "a marũ ɡʱər tʃʰe"
     pos: "phrase"
-    notes: "આ (a) is 'this', and છે, 'is', comes at the end."
+    notes: "આ (ā) is 'this', and છે, 'is', comes at the end."
   - id: gu-0274
     target: "મારું નામ મીના છે."
     native: "My name is Meena."
-    reading: "marun nam mina chhe."
+    reading: "mārum̐ nām minā che."
+    ipa: "marũ nam mina tʃʰe"
     pos: "phrase"
-    notes: "નામ (nam) is neuter, so 'my' is મારું."
+    notes: "નામ (nām) is neuter, so 'my' is મારું."
   - id: gu-0275
     target: "અમે અમદાવાદમાં રહીએ છીએ."
     native: "We live in Ahmedabad."
-    reading: "ame amdavadman rahie chhie."
+    reading: "ame amdāvādmām̐ rahie chie."
+    ipa: "əme əmd̪aʋad̪mã rəɦie tʃʰie"
     pos: "phrase"
     notes: "The place comes before the verb: 'we Ahmedabad-in live are'."
   - id: gu-0276
     target: "તે શાળાએ જાય છે."
     native: "She goes to school."
-    reading: "te shalae jay chhe."
+    reading: "te śāḷāe jāy che."
+    ipa: "t̪e ʃaɭae dʒaj tʃʰe"
     pos: "phrase"
     notes: "-એ on a place can mean 'to' or 'at': શાળાએ, to school; ઘરે (ghare), at home or home. તે is he or she."
   - id: gu-0277
     target: "બા રસોડામાં છે."
     native: "Ma is in the kitchen."
-    reading: "ba rasodaman chhe."
+    reading: "bā rasoḍāmām̐ che."
+    ipa: "ba rəsoɖamã tʃʰe"
     pos: "phrase"
-    notes: "Before an ending, રસોડું (rasodun, kitchen) becomes રસોડા-."
+    notes: "Before an ending, રસોડું (rasoḍum̐, kitchen) becomes રસોડા-."
   - id: gu-0278
     target: "હું રોજ દૂધ પીઉં છું."
     native: "I drink milk every day."
-    reading: "hun roj dudh piun chhun."
+    reading: "hum̐ roj dudh pium̐ chum̐."
+    ipa: "ɦũ rodʒ d̪ud̪ʱ piũ tʃʰũ"
     pos: "phrase"
     notes: "A time word such as રોજ (roj, every day) comes early, after the doer."
   - id: gu-0279
     target: "પપ્પા છાપું વાંચે છે."
     native: "Dad is reading the newspaper."
-    reading: "pappa chhapun vanche chhe."
+    reading: "pappā chāpum̐ vāñce che."
+    ipa: "pəppa tʃʰapũ ʋaɲtʃe tʃʰe"
     pos: "phrase"
     notes: "The present does for both 'reads' and 'is reading'."
   - id: gu-0280
     target: "ચા ગરમ છે."
     native: "The tea is hot."
-    reading: "cha garam chhe."
+    reading: "cā garam che."
+    ipa: "tʃa ɡərəm tʃʰe"
     pos: "phrase"
     notes: "An adjective after the noun, before છે, says what it is like."
   - id: gu-0281
     target: "તમે ક્યાં જાઓ છો?"
     native: "Where are you going?"
-    reading: "tame kyan jao chho?"
+    reading: "tame kyām̐ jāo cho?"
+    ipa: "t̪əme kjã dʒao tʃʰo"
     pos: "phrase"
     notes: "A question word sits where the answer would: 'you where go are?'. Asked in passing, it is a friendly greeting more than a question."
   - id: gu-0282
     target: "હું કાલે મુંબઈ જઈશ."
     native: "I'll go to Mumbai tomorrow."
-    reading: "hun kale mumbai jaish."
+    reading: "hum̐ kāle mumbai jaiś."
+    ipa: "ɦũ kale mumbəi dʒəiʃ"
     pos: "phrase"
     notes: "With a verb of going, the place often takes no ending at all."

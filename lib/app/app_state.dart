@@ -18,6 +18,7 @@ import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/tts_engine.dart';
+import '../core/tts/volume_monitor.dart';
 import '../core/updates/apk_install.dart';
 import '../core/updates/release_check.dart';
 import '../core/data/themes.dart';
@@ -123,11 +124,13 @@ class AppState extends ChangeNotifier {
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
     SettingsNotifier? settings,
+    VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
     Random? random,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
+       volume = volume ?? FixedVolumeMonitor(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
@@ -143,6 +146,14 @@ class AppState extends ChangeNotifier {
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
   final Random random;
+
+  /// Whether the phone's media volume is at zero (ADR-0026).
+  final VolumeMonitor volume;
+
+  /// Whether a question that needs sound should ask for the volume to be
+  /// raised: sound is on in the app, but the phone is at zero. Such
+  /// questions are still asked; with sound off they are skipped instead.
+  bool get needsVolume => settings.soundOn && volume.muted;
 
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
@@ -168,6 +179,7 @@ class AppState extends ChangeNotifier {
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
     SettingsNotifier? settings,
+    VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
   }) {
@@ -191,6 +203,7 @@ class AppState extends ChangeNotifier {
       installer: installer,
       downloads: downloads,
       settings: settings,
+      volume: volume,
       profiles: profiles,
       currentProfileId: currentProfileId,
       random: Random(0),
@@ -586,6 +599,14 @@ class AppState extends ChangeNotifier {
   bool hasVoice(LanguageInfo language) =>
       voiceStatus(language) == VoiceStatus.available;
 
+  /// Whether [language] can be heard now: the phone has a voice for it, and
+  /// sound is on in Settings. What decides whether listening is drilled;
+  /// with sound off it is skipped, as on a phone with no voice at all.
+  /// [voiceStatus] and [hasVoice] stay the phone's own, for the Voices page
+  /// and for whether a speaker shows.
+  bool canSpeak(LanguageInfo language) =>
+      settings.soundOn && hasVoice(language);
+
   /// Asks the engine about every catalog language again, for when the
   /// learner has been off to install a voice.
   Future<void> refreshVoices() async {
@@ -605,16 +626,20 @@ class AppState extends ChangeNotifier {
       _tts.voicesFor(language.ttsTag);
 
   /// Speaks [text] in [language] at the learner's speech rate, or slower.
-  /// Completes when playback ends. Does nothing without a voice.
+  /// Completes when playback ends. Does nothing without a voice, or while
+  /// sound is off in Settings.
   Future<void> speak(
     String text,
     LanguageInfo language, {
     bool slower = false,
-  }) => _tts.speak(
-    text,
-    bcp47: language.ttsTag,
-    rate: settings.ttsRate(slower: slower),
-  );
+  }) async {
+    if (!settings.soundOn) return;
+    await _tts.speak(
+      text,
+      bcp47: language.ttsTag,
+      rate: settings.ttsRate(slower: slower),
+    );
+  }
 
   Future<void> stopSpeaking() => _tts.stop();
 
@@ -812,11 +837,12 @@ class AppState extends ChangeNotifier {
     // of words not taught yet.
     final newLimit = request.revise ? 0 : cards.length;
 
-    // A skill switched off for a language is not drilled in it (#89).
+    // A skill switched off for a language is not drilled in it (#89), and
+    // nothing is heard while sound is off.
     final voiced = <String, bool>{
       for (final entry in this.decks)
         entry.id:
-            hasVoice(entry.language) &&
+            canSpeak(entry.language) &&
             !settings.isOffFor(Skill.listening, entry.language.code),
     };
     final heard = <String, bool>{
@@ -1034,8 +1060,8 @@ class AppState extends ChangeNotifier {
       DrillMode.values.any((mode) => progress.stateOf(card.id, mode) != null);
 
   /// The modes [card] can be drilled in now: those it takes, switched on
-  /// and not paused, by ear only with a voice and by mouth only with a
-  /// recogniser, each on for its language, and none set aside.
+  /// and not paused, by ear only with a voice and sound on and by mouth
+  /// only with a recogniser, each on for its language, and none set aside.
   Set<DrillMode> drillableModes(Card card) {
     final entry = deckOf(card);
     if (entry == null) return const <DrillMode>{};
@@ -1045,7 +1071,7 @@ class AppState extends ChangeNotifier {
     return <DrillMode>{
       for (final mode in card.modesIn(
         ttsAvailable:
-            hasVoice(language) &&
+            canSpeak(language) &&
             !settings.isOffFor(Skill.listening, language.code),
         speechAvailable:
             canHear(language) &&
@@ -1191,7 +1217,8 @@ class AppState extends ChangeNotifier {
   }
 
   /// Generated numbers to practise in [deck]'s language, in the skills the
-  /// learner has on, by ear only with a voice. Never recorded (ADR-0011).
+  /// learner has on, by ear only with a voice and sound on. Never recorded
+  /// (ADR-0011).
   List<SessionItem> numberPracticeFor(DeckEntry deck, {Random? random}) {
     final rules = numberRulesFor(deck.language);
     if (rules == null) return const <SessionItem>[];
@@ -1200,7 +1227,7 @@ class AppState extends ChangeNotifier {
       deckId: deck.id,
       modes: <DrillMode>{
         for (final mode in sessionModes)
-          if (mode != DrillMode.listening || hasVoice(deck.language)) mode,
+          if (mode != DrillMode.listening || canSpeak(deck.language)) mode,
       },
       random: random ?? Random(),
     );
@@ -1243,6 +1270,7 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     shellTab.dispose();
     updates.dispose();
+    volume.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();
   }

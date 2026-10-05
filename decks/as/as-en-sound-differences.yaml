@@ -2,7 +2,7 @@ schema: 1
 id: as-en-sound-differences
 name: "Sounds to tell apart"
 kind: vocab
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Pairs of everyday words that differ in one sound: a breath after a consonant, the rasp x against h, kh and s, the vowel every consonant carries against a, and a nasal vowel. Not yet checked by an Assamese speaker: please report any mistake."
@@ -11,132 +11,150 @@ cards:
   - id: as-0108
     target: "কোৱা"
     native: "to say; to tell"
-    reading: "kuwa"
+    reading: "kuwā"
+    ipa: "kʊwa"
     pos: "verb"
     tags: ["aspiration"]
-    notes: "Aspiration: খোৱা (khuwa, to eat) is কোৱা (kuwa, to say) with a puff of breath after the k."
+    notes: "Aspiration: খোৱা (khuwā, to eat) is কোৱা (kuwā, to say) with a puff of breath after the k."
   - id: as-0109
     target: "খোৱা"
     native: "to eat; to drink"
-    reading: "khuwa"
+    reading: "khuwā"
+    ipa: "kʰʊwa"
     pos: "verb"
     tags: ["aspiration"]
-    notes: "Aspiration: খোৱা (khuwa, to eat) is কোৱা (kuwa, to say) with a puff of breath after the k. Assamese eats and drinks with one verb: চাহ খোৱা (sah khuwa), to drink tea."
+    notes: "Aspiration: খোৱা (khuwā, to eat) is কোৱা (kuwā, to say) with a puff of breath after the k. Assamese eats and drinks with one verb: চাহ খোৱা (sāh khuwā), to drink tea."
   - id: as-0110
     target: "বাত"
     native: "rheumatism"
-    reading: "bat"
+    reading: "bāt"
+    ipa: "bat"
     pos: "noun"
     tags: ["aspiration"]
-    notes: "Aspiration: ভাত (bhat, cooked rice) is বাত (bat, rheumatism) with a breath after the b. Say বাত at dinner and you've asked for rheumatism."
+    notes: "Aspiration: ভাত (bhāt, cooked rice) is বাত (bāt, rheumatism) with a breath after the b. Say বাত at dinner and you've asked for rheumatism."
   - id: as-0111
     target: "ভাত"
     native: "cooked rice; a meal"
-    reading: "bhat"
+    reading: "bhāt"
+    ipa: "bʱat"
     pos: "noun"
     tags: ["aspiration"]
-    notes: "Aspiration: ভাত (bhat, cooked rice) is বাত (bat, rheumatism) with a breath after the b. Rice is the meal: ভাত খালেনে? (bhat khalene?), 'have you eaten rice?', means 'have you eaten?'."
+    notes: "Aspiration: ভাত (bhāt, cooked rice) is বাত (bāt, rheumatism) with a breath after the b. Rice is the meal: ভাত খালেনে? (bhat khalene?), 'have you eaten rice?', means 'have you eaten?'."
   - id: as-0112
     target: "দান"
     native: "gift; donation"
-    reading: "dan"
+    reading: "dān"
+    ipa: "dan"
     pos: "noun"
     tags: ["aspiration"]
-    notes: "Aspiration: ধান (dhan, paddy) is দান (dan, gift) with a breath after the d."
+    notes: "Aspiration: ধান (dhān, paddy) is দান (dān, gift) with a breath after the d."
   - id: as-0113
     target: "ধান"
     native: "paddy (rice in the husk)"
-    reading: "dhan"
+    reading: "dhān"
+    ipa: "dʱan"
     pos: "noun"
     tags: ["aspiration"]
-    notes: "Aspiration: ধান (dhan, paddy) is দান (dan, gift) with a breath after the d. Husked, it is চাউল (saul); cooked, ভাত (bhat)."
+    notes: "Aspiration: ধান (dhān, paddy) is দান (dān, gift) with a breath after the d. Husked, it is চাউল (sāul); cooked, ভাত (bhāt)."
   - id: as-0114
     target: "সাত"
     native: "7, seven"
-    reading: "xat"
+    reading: "xāt"
+    ipa: "xat"
     pos: "other"
     tags: ["x-sound"]
-    notes: "x against h: সাত (xat, seven) starts with the rasp x, at the back of the mouth; হাত (hat, hand) with a plain breath."
+    notes: "x against h: সাত (xāt, seven) starts with the rasp x, at the back of the mouth; হাত (hāt, hand) with a plain breath."
   - id: as-0115
     target: "হাত"
     native: "hand; arm"
-    reading: "hat"
+    reading: "hāt"
+    ipa: "hat"
     pos: "noun"
     tags: ["x-sound"]
-    notes: "x against h: সাত (xat, seven) starts with the rasp x, at the back of the mouth; হাত (hat, hand) with a plain breath."
+    notes: "x against h: সাত (xāt, seven) starts with the rasp x, at the back of the mouth; হাত (hāt, hand) with a plain breath."
   - id: as-0116
     target: "সাৰ"
     native: "fertiliser; the essence of a thing"
-    reading: "xar"
+    reading: "xār"
+    ipa: "xaɹ"
     pos: "noun"
     tags: ["x-sound"]
-    notes: "x against kh: সাৰ (xar) has the rasp x, the tongue not quite touching; খাৰ (khar) has a k with a breath after it. সাৰ পোৱা (xar puwa) is to wake up."
+    notes: "x against kh: সাৰ (xār) has the rasp x, the tongue not quite touching; খাৰ (khār) has a k with a breath after it. সাৰ পোৱা (xār puwā) is to wake up."
   - id: as-0117
     target: "খাৰ"
     native: "khar, an alkaline dish (and the ash water it is made with)"
-    reading: "khar"
+    reading: "khār"
+    ipa: "kʰaɹ"
     pos: "noun"
     tags: ["x-sound"]
-    notes: "x against kh: খাৰ (khar) has a k with a breath after it; সাৰ (xar) has the rasp x. Khar, made with water filtered through the ash of banana peel, starts a traditional Assamese meal, and Assamese people call themselves খাৰখোৱা (kharkhuwa), khar-eaters, in fun."
+    notes: "x against kh: খাৰ (khār) has a k with a breath after it; সাৰ (xār) has the rasp x. Khar, made with water filtered through the ash of banana peel, starts a traditional Assamese meal, and Assamese people call themselves খাৰখোৱা (khārkhuwā), khar-eaters, in fun."
   - id: as-0118
     target: "চাৰি"
     native: "4, four"
-    reading: "sari"
+    reading: "sāri"
+    ipa: "saɹi"
     pos: "other"
     tags: ["x-sound"]
-    notes: "x against s: চাৰি (sari, four) starts with s, which Assamese writes চ; শাৰী (xari, a row) with the rasp x."
+    notes: "x against s: চাৰি (sāri, four) starts with s, which Assamese writes চ; শাৰী (xāri, a row) with the rasp x."
   - id: as-0119
     target: "শাৰী"
     native: "row; line"
-    reading: "xari"
+    reading: "xāri"
+    ipa: "xaɹi"
     pos: "noun"
     tags: ["x-sound"]
-    notes: "x against s: শাৰী (xari, a row) starts with the rasp x; চাৰি (sari, four) with s."
+    notes: "x against s: শাৰী (xāri, a row) starts with the rasp x; চাৰি (sāri, four) with s."
   - ref: as-0064
     tags: ["inherent-vowel"]
-    notes: "The open o against a: কম (kom, less) has the vowel every consonant carries; কাম (kam, work) has আ, the 'a' of 'father'."
+    notes: "The open o against a: কম (kôm, less) has the vowel every consonant carries; কাম (kām, work) has আ, the 'a' of 'father'."
   - id: as-0120
     target: "কাম"
     native: "work; a job to do"
-    reading: "kam"
+    reading: "kām"
+    ipa: "kam"
     pos: "noun"
     tags: ["inherent-vowel"]
-    notes: "The open o against a: কম (kom, less) has the vowel every consonant carries; কাম (kam, work) has আ, the 'a' of 'father'."
+    notes: "The open o against a: কম (kôm, less) has the vowel every consonant carries; কাম (kām, work) has আ, the 'a' of 'father'."
   - ref: as-0065
     tags: ["inherent-vowel"]
-    notes: "The open o against a: জল (jol, water) has the vowel every consonant carries; জাল (jal, net) has আ, the 'a' of 'father'."
+    notes: "The open o against a: জল (zôl, water) has the vowel every consonant carries; জাল (zāl, net) has আ, the 'a' of 'father'."
   - id: as-0121
     target: "জাল"
     native: "net (for fishing)"
-    reading: "jal"
+    reading: "zāl"
+    ipa: "zal"
     pos: "noun"
     tags: ["inherent-vowel"]
-    notes: "The open o against a: জল (jol, water) has the vowel every consonant carries; জাল (jal, net) has আ, the 'a' of 'father'."
+    notes: "The open o against a: জল (zôl, water) has the vowel every consonant carries; জাল (zāl, net) has আ, the 'a' of 'father'."
   - id: as-0122
     target: "বাহ"
     native: "nest"
-    reading: "bah"
+    reading: "bāh"
+    ipa: "bah"
     pos: "noun"
     tags: ["nasal"]
-    notes: "Nasal vowel: বাঁহ (bah, bamboo) is বাহ (bah, nest) with the vowel said through the nose as well, marked by ঁ above. Chat and these readings leave the mark out, so listen for it."
+    notes: "Nasal vowel: বাঁহ (bām̐h, bamboo) is বাহ (bāh, nest) with the vowel said through the nose as well, marked by ঁ above. Chat and these readings leave the mark out, so listen for it."
   - id: as-0123
     target: "বাঁহ"
     native: "bamboo"
-    reading: "bah"
+    reading: "bām̐h"
+    ipa: "bãh"
     pos: "noun"
     tags: ["nasal"]
-    notes: "Nasal vowel: বাঁহ (bah, bamboo) is বাহ (bah, nest) with the vowel said through the nose as well, marked by ঁ above."
+    notes: "Nasal vowel: বাঁহ (bām̐h, bamboo) is বাহ (bāh, nest) with the vowel said through the nose as well, marked by ঁ above."
   - id: as-0124
     target: "পাছ"
     native: "the back; behind; later"
-    reading: "pas"
+    reading: "pās"
+    ipa: "pas"
     pos: "noun"
     tags: ["nasal"]
-    notes: "Nasal vowel: পাঁচ (pas, five) is said through the nose; পাছ (pas, back) is not. পাছত (pasot), later; behind."
+    notes: "Nasal vowel: পাঁচ (pām̐s, five) is said through the nose; পাছ (pās, back) is not. পাছত (pāsôt), later; behind."
   - id: as-0125
     target: "পাঁচ"
     native: "5, five"
-    reading: "pas"
+    reading: "pām̐s"
+    ipa: "pãs"
     pos: "other"
     tags: ["nasal"]
-    notes: "Nasal vowel: পাঁচ (pas, five) is said through the nose; পাছ (pas, back) is not."
+    notes: "Nasal vowel: পাঁচ (pām̐s, five) is said through the nose; পাছ (pās, back) is not."

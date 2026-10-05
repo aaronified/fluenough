@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-past
 name: "Past tense"
 kind: grammar
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I did, you went: the simple past, by person and respect."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "করা"
       key: kora
-      reading: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
       gloss: "to do"
       forms:
         "আমি / আমরা": "করলাম"
@@ -26,15 +27,23 @@ pattern:
         "সে / তারা": "করল"
         "তিনি / তাঁরা": "করলেন"
       readings:
-        "আমি / আমরা": "korlam"
-        "তুই / তোরা": "korli"
-        "তুমি / তোমরা": "korle"
-        "আপনি / আপনারা": "korlen"
-        "সে / তারা": "korlo"
-        "তিনি / তাঁরা": "korlen"
+        "আমি / আমরা": "kôrlām"
+        "তুই / তোরা": "kôrli"
+        "তুমি / তোমরা": "kôrle"
+        "আপনি / আপনারা": "kôrlen"
+        "সে / তারা": "kôrlo"
+        "তিনি / তাঁরা": "kôrlen"
+      ipas:
+        "আমি / আমরা": "kɔrlam"
+        "তুই / তোরা": "kɔrli"
+        "তুমি / তোমরা": "kɔrle"
+        "আপনি / আপনারা": "kɔrlen"
+        "সে / তারা": "kɔrlo"
+        "তিনি / তাঁরা": "kɔrlen"
     - lemma: "যাওয়া"
       key: jaoa
-      reading: "jaoa"
+      reading: "jāoā"
+      ipa: "dʒaoa"
       gloss: "to go"
       forms:
         "আমি / আমরা": "গেলাম"
@@ -44,15 +53,23 @@ pattern:
         "সে / তারা": "গেল"
         "তিনি / তাঁরা": "গেলেন"
       readings:
-        "আমি / আমরা": "gelam"
+        "আমি / আমরা": "gelām"
         "তুই / তোরা": "geli"
         "তুমি / তোমরা": "gele"
         "আপনি / আপনারা": "gelen"
         "সে / তারা": "gelo"
         "তিনি / তাঁরা": "gelen"
+      ipas:
+        "আমি / আমরা": "ɡelam"
+        "তুই / তোরা": "ɡeli"
+        "তুমি / তোমরা": "ɡele"
+        "আপনি / আপনারা": "ɡelen"
+        "সে / তারা": "ɡelo"
+        "তিনি / তাঁরা": "ɡelen"
     - lemma: "খাওয়া"
       key: khaoa
-      reading: "khaoa"
+      reading: "khāoā"
+      ipa: "kʰaoa"
       gloss: "to eat"
       forms:
         "আমি / আমরা": "খেলাম"
@@ -62,15 +79,23 @@ pattern:
         "সে / তারা": "খেল"
         "তিনি / তাঁরা": "খেলেন"
       readings:
-        "আমি / আমরা": "khelam"
+        "আমি / আমরা": "khelām"
         "তুই / তোরা": "kheli"
         "তুমি / তোমরা": "khele"
         "আপনি / আপনারা": "khelen"
         "সে / তারা": "khelo"
         "তিনি / তাঁরা": "khelen"
+      ipas:
+        "আমি / আমরা": "kʰelam"
+        "তুই / তোরা": "kʰeli"
+        "তুমি / তোমরা": "kʰele"
+        "আপনি / আপনারা": "kʰelen"
+        "সে / তারা": "kʰelo"
+        "তিনি / তাঁরা": "kʰelen"
     - lemma: "বলা"
       key: bola
-      reading: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
       gloss: "to say"
       forms:
         "আমি / আমরা": "বললাম"
@@ -80,9 +105,16 @@ pattern:
         "সে / তারা": "বলল"
         "তিনি / তাঁরা": "বললেন"
       readings:
-        "আমি / আমরা": "bollam"
-        "তুই / তোরা": "bolli"
-        "তুমি / তোমরা": "bolle"
-        "আপনি / আপনারা": "bollen"
-        "সে / তারা": "bollo"
-        "তিনি / তাঁরা": "bollen"
+        "আমি / আমরা": "bôllām"
+        "তুই / তোরা": "bôlli"
+        "তুমি / তোমরা": "bôlle"
+        "আপনি / আপনারা": "bôllen"
+        "সে / তারা": "bôllo"
+        "তিনি / তাঁরা": "bôllen"
+      ipas:
+        "আমি / আমরা": "bɔllam"
+        "তুই / তোরা": "bɔlli"
+        "তুমি / তোমরা": "bɔlle"
+        "আপনি / আপনারা": "bɔllen"
+        "সে / তারা": "bɔllo"
+        "তিনি / তাঁরা": "bɔllen"

@@ -2,7 +2,7 @@ schema: 1
 id: te-en-grammar-differences
 name: "How Telugu grammar differs from English"
 kind: vocab
-language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Before any theme: the verb last, no is, endings for in, to and with, a man's verb against a woman's or a thing's, two yous, two wes, no articles, and how Telugu says have, not and questions."
@@ -11,111 +11,129 @@ cards:
   - id: te-0117
     target: "నేను అన్నం తింటాను."
     native: "I eat rice."
-    reading: "nenu annam tintanu."
+    reading: "nēnu annam tiṇṭānu."
+    ipa: "neːnu annam t̪iɳʈaːnu"
     tags: ["grammar", "word-order"]
     notes: "The verb comes last: subject, object, verb. Word for word, 'I rice eat'."
   - id: te-0118
     target: "ఆయన డాక్టర్."
     native: "He is a doctor."
-    reading: "ayana daktar."
+    reading: "āyana ḍākṭar."
+    ipa: "aːjana ɖaːkʈar"
     tags: ["grammar", "no-is"]
     notes: "No 'is' when you say what someone is: 'he doctor'."
   - id: te-0119
     target: "గదిలో"
     native: "in the room"
-    reading: "gadilo"
+    reading: "gadilō"
+    ipa: "ɡad̪iloː"
     tags: ["grammar", "case-endings"]
     notes: "Telugu puts 'in' after the noun, as an ending: గది (gadi, room) + -లో."
   - id: te-0120
     target: "బడికి"
     native: "to school"
-    reading: "badiki"
+    reading: "baḍiki"
+    ipa: "baɖiki"
     tags: ["grammar", "case-endings"]
-    notes: "'To' is the ending -కి or -కు: బడి (badi, school) + -కి."
+    notes: "'To' is the ending -కి or -కు: బడి (baḍi, school) + -కి."
   - id: te-0121
     target: "అమ్మతో"
     native: "with mother"
-    reading: "ammato"
+    reading: "ammatō"
+    ipa: "ammat̪oː"
     tags: ["grammar", "case-endings"]
     notes: "'With' is the ending -తో: అమ్మ (amma) + -తో."
   - id: te-0122
     target: "అతను వచ్చాడు."
     native: "He came."
-    reading: "atanu vacchadu."
+    reading: "atanu vaccāḍu."
+    ipa: "at̪anu ʋatʃtʃaːɖu"
     tags: ["grammar", "gender"]
     pos: "phrase"
     notes: "The verb shows whether 'he' is a man: -డు."
   - id: te-0123
     target: "ఆమె వచ్చింది."
     native: "She came."
-    reading: "ame vacchindi."
+    reading: "āme vaccindi."
+    ipa: "aːme ʋatʃtʃind̪i"
     tags: ["grammar", "gender"]
     pos: "phrase"
     notes: "A woman takes the same verb ending as a thing, -ది, not a man's."
   - id: te-0124
     target: "అది వచ్చింది."
     native: "It came."
-    reading: "adi vacchindi."
+    reading: "adi vaccindi."
+    ipa: "ad̪i ʋatʃtʃind̪i"
     tags: ["grammar", "gender"]
     pos: "phrase"
     notes: "A thing or an animal takes -ది, like a woman: ఆమె వచ్చింది."
   - id: te-0125
     target: "నువ్వు రా."
     native: "Come! (to a friend)"
-    reading: "nuvvu ra."
+    reading: "nuvvu rā."
+    ipa: "nuʋʋu raː"
     tags: ["grammar", "two-yous"]
     notes: "Two words for 'you': నువ్వు to a friend, a child or a younger person."
   - id: te-0126
     target: "మీరు రండి."
     native: "Please come."
-    reading: "miru randi."
+    reading: "mīru raṇḍi."
+    ipa: "miːru raɳɖi"
     tags: ["grammar", "two-yous"]
     notes: "మీరు is the respectful 'you', and the plural, and its verb ends in -ండి."
   - id: te-0127
     target: "మనం"
     native: "we (you and I)"
     reading: "manam"
+    ipa: "manam"
     tags: ["grammar", "two-wes"]
     notes: "Two words for 'we': మనం includes the person you're talking to."
   - id: te-0128
     target: "మేము"
     native: "we (not you)"
-    reading: "memu"
+    reading: "mēmu"
+    ipa: "meːmu"
     tags: ["grammar", "two-wes"]
     notes: "మేము leaves the person you're talking to out."
   - id: te-0129
     target: "వస్తాను."
     native: "I'll come."
-    reading: "vastanu."
+    reading: "vastānu."
+    ipa: "ʋast̪aːnu"
     tags: ["grammar", "person-endings"]
     notes: "The ending -ను says 'I', so నేను can be left out."
   - id: te-0130
     target: "ఒక పుస్తకం"
     native: "a book; one book"
     reading: "oka pustakam"
+    ipa: "oka pust̪akam"
     tags: ["grammar", "articles"]
     notes: "No word for 'the', and ఒక, 'one', serves for 'a'."
   - id: te-0131
     target: "నా దగ్గర పుస్తకం ఉంది."
     native: "I have a book."
-    reading: "na daggara pustakam undi."
+    reading: "nā daggara pustakam undi."
+    ipa: "naː d̪aɡɡara pust̪akam und̪i"
     tags: ["grammar", "have"]
     notes: "No verb 'have': 'near me a book is'."
   - id: te-0132
     target: "నేను రాను."
     native: "I won't come."
-    reading: "nenu ranu."
+    reading: "nēnu rānu."
+    ipa: "neːnu raːnu"
     tags: ["grammar", "negation"]
     notes: "'Not' is built into the verb: రాను is 'won't come', వస్తాను 'will come'."
   - id: te-0133
     target: "సమయం లేదు."
     native: "There's no time."
-    reading: "samayam ledu."
+    reading: "samayam lēdu."
+    ipa: "samajam leːd̪u"
     tags: ["grammar", "negation"]
     notes: "లేదు is 'there is not', the opposite of ఉంది."
   - id: te-0134
     target: "మీరు వస్తారా?"
     native: "Will you come?"
-    reading: "miru vastara?"
+    reading: "mīru vastārā?"
+    ipa: "miːru ʋast̪aːraː"
     tags: ["grammar", "questions"]
     notes: "A yes-or-no question ends in -ఆ: మీరు వస్తారు (you will come) becomes మీరు వస్తారా, the last u turned into a long a."

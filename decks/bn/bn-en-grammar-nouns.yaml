@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-nouns
 name: "Nouns: the, plural and case"
 kind: grammar
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "-টা for 'the', -গুলো for the plural, and the endings for 'of' and 'in'."
@@ -17,6 +17,7 @@ pattern:
     - lemma: "বই"
       key: boi
       reading: "boi"
+      ipa: "boi"
       gloss: "book"
       forms:
         "the one: -টা": "বইটা"
@@ -24,13 +25,19 @@ pattern:
         "of: -র or -এর": "বইয়ের"
         "in, at: -এ or -তে": "বইয়ে"
       readings:
-        "the one: -টা": "boita"
+        "the one: -টা": "boiṭā"
         "the ones: -গুলো": "boigulo"
         "of: -র or -এর": "boiyer"
         "in, at: -এ or -তে": "boiye"
+      ipas:
+        "the one: -টা": "boiʈa"
+        "the ones: -গুলো": "boiɡulo"
+        "of: -র or -এর": "boijer"
+        "in, at: -এ or -তে": "boije"
     - lemma: "বাড়ি"
       key: bari
-      reading: "bari"
+      reading: "bāṛi"
+      ipa: "baɽi"
       gloss: "house"
       forms:
         "the one: -টা": "বাড়িটা"
@@ -38,13 +45,19 @@ pattern:
         "of: -র or -এর": "বাড়ির"
         "in, at: -এ or -তে": "বাড়িতে"
       readings:
-        "the one: -টা": "barita"
-        "the ones: -গুলো": "barigulo"
-        "of: -র or -এর": "barir"
-        "in, at: -এ or -তে": "barite"
+        "the one: -টা": "bāṛiṭā"
+        "the ones: -গুলো": "bāṛigulo"
+        "of: -র or -এর": "bāṛir"
+        "in, at: -এ or -তে": "bāṛite"
+      ipas:
+        "the one: -টা": "baɽiʈa"
+        "the ones: -গুলো": "baɽiɡulo"
+        "of: -র or -এর": "baɽir"
+        "in, at: -এ or -তে": "baɽit̪e"
     - lemma: "ঘর"
       key: ghor
-      reading: "ghor"
+      reading: "ghôr"
+      ipa: "ɡʱɔr"
       gloss: "room"
       forms:
         "the one: -টা": "ঘরটা"
@@ -52,13 +65,19 @@ pattern:
         "of: -র or -এর": "ঘরের"
         "in, at: -এ or -তে": "ঘরে"
       readings:
-        "the one: -টা": "ghorta"
-        "the ones: -গুলো": "ghorgulo"
-        "of: -র or -এর": "ghorer"
-        "in, at: -এ or -তে": "ghore"
+        "the one: -টা": "ghôrṭā"
+        "the ones: -গুলো": "ghôrgulo"
+        "of: -র or -এর": "ghôrer"
+        "in, at: -এ or -তে": "ghôre"
+      ipas:
+        "the one: -টা": "ɡʱɔrʈa"
+        "the ones: -গুলো": "ɡʱɔrɡulo"
+        "of: -র or -এর": "ɡʱɔrer"
+        "in, at: -এ or -তে": "ɡʱɔre"
     - lemma: "দোকান"
       key: dokan
-      reading: "dokan"
+      reading: "dokān"
+      ipa: "d̪okan"
       gloss: "shop"
       forms:
         "the one: -টা": "দোকানটা"
@@ -66,13 +85,19 @@ pattern:
         "of: -র or -এর": "দোকানের"
         "in, at: -এ or -তে": "দোকানে"
       readings:
-        "the one: -টা": "dokanta"
-        "the ones: -গুলো": "dokangulo"
-        "of: -র or -এর": "dokaner"
-        "in, at: -এ or -তে": "dokane"
+        "the one: -টা": "dokānṭā"
+        "the ones: -গুলো": "dokāngulo"
+        "of: -র or -এর": "dokāner"
+        "in, at: -এ or -তে": "dokāne"
+      ipas:
+        "the one: -টা": "d̪okanʈa"
+        "the ones: -গুলো": "d̪okanɡulo"
+        "of: -র or -এর": "d̪okaner"
+        "in, at: -এ or -তে": "d̪okane"
     - lemma: "গাড়ি"
       key: gari
-      reading: "gari"
+      reading: "gāṛi"
+      ipa: "ɡaɽi"
       gloss: "car"
       forms:
         "the one: -টা": "গাড়িটা"
@@ -80,13 +105,19 @@ pattern:
         "of: -র or -এর": "গাড়ির"
         "in, at: -এ or -তে": "গাড়িতে"
       readings:
-        "the one: -টা": "garita"
-        "the ones: -গুলো": "garigulo"
-        "of: -র or -এর": "garir"
-        "in, at: -এ or -তে": "garite"
+        "the one: -টা": "gāṛiṭā"
+        "the ones: -গুলো": "gāṛigulo"
+        "of: -র or -এর": "gāṛir"
+        "in, at: -এ or -তে": "gāṛite"
+      ipas:
+        "the one: -টা": "ɡaɽiʈa"
+        "the ones: -গুলো": "ɡaɽiɡulo"
+        "of: -র or -এর": "ɡaɽir"
+        "in, at: -এ or -তে": "ɡaɽit̪e"
     - lemma: "শহর"
       key: shohor
-      reading: "shohor"
+      reading: "śôhor"
+      ipa: "ʃɔɦor"
       gloss: "city"
       forms:
         "the one: -টা": "শহরটা"
@@ -94,7 +125,12 @@ pattern:
         "of: -র or -এর": "শহরের"
         "in, at: -এ or -তে": "শহরে"
       readings:
-        "the one: -টা": "shohorta"
-        "the ones: -গুলো": "shohorgulo"
-        "of: -র or -এর": "shohorer"
-        "in, at: -এ or -তে": "shohore"
+        "the one: -টা": "śôhorṭā"
+        "the ones: -গুলো": "śôhorgulo"
+        "of: -র or -এর": "śôhorer"
+        "in, at: -এ or -তে": "śôhore"
+      ipas:
+        "the one: -টা": "ʃɔɦorʈa"
+        "the ones: -গুলো": "ʃɔɦorɡulo"
+        "of: -র or -এর": "ʃɔɦorer"
+        "in, at: -এ or -তে": "ʃɔɦore"
