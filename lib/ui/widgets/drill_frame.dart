@@ -24,6 +24,12 @@ import 'wave_progress.dart';
 /// spaces them 12 apart. Do not put a `LayoutBuilder` in [card] or
 /// [belowCard]: the body measures their intrinsic height to let the card fill
 /// the screen.
+///
+/// While the keyboard is open ([keyboardOpen]) the frame is compact, so that
+/// the card stays in view above the answer field: the card has less padding
+/// and no minimum height, and the gaps are smaller. A drill with a typed
+/// answer does its part, building a smaller card and leaving out what can
+/// wait until the keyboard closes.
 class DrillFrame extends StatelessWidget {
   const DrillFrame({
     super.key,
@@ -79,6 +85,8 @@ class DrillFrame extends StatelessWidget {
     final scheme = theme.colorScheme;
     final done = total == 0 ? 0.0 : (position - 1) / total;
     final below = belowCard;
+    final compact = keyboardOpen(context);
+    final gap = compact ? 8.0 : 16.0;
 
     return Scaffold(
       body: SafeArea(
@@ -154,11 +162,13 @@ class DrillFrame extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 16),
-                          Expanded(child: DrillCard(children: card)),
+                          SizedBox(height: gap),
+                          Expanded(
+                            child: DrillCard(compact: compact, children: card),
+                          ),
                           if (below != null)
                             for (final widget in below) ...<Widget>[
-                              const SizedBox(height: 16),
+                              SizedBox(height: gap),
                               widget,
                             ],
                         ],
@@ -169,7 +179,9 @@ class DrillFrame extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 20),
+              padding: compact
+                  ? const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8)
+                  : const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 20),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -193,31 +205,40 @@ class DrillFrame extends StatelessWidget {
 }
 
 /// The drill's card: at least 300 tall, 40 px corners, `surfaceContainerHigh`,
-/// its children centred and 12 apart. [DrillFrame] puts one in; use it on its
-/// own only in a preview.
+/// its children centred and 12 apart; [compact], while the keyboard is open,
+/// as short as its children, with less padding and 8 apart. [DrillFrame]
+/// puts one in; use it on its own only in a preview.
 class DrillCard extends StatelessWidget {
-  const DrillCard({super.key, required this.children});
+  const DrillCard({super.key, required this.children, this.compact = false});
 
   final List<Widget> children;
+  final bool compact;
 
   @override
   Widget build(BuildContext context) => ConstrainedBox(
-    constraints: const BoxConstraints(minHeight: 300),
+    constraints: BoxConstraints(minHeight: compact ? 0 : 300),
     child: DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(AppRadii.drillCard),
+        borderRadius: BorderRadius.circular(
+          compact ? AppRadii.card : AppRadii.drillCard,
+        ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: 20,
-          vertical: 28,
-        ),
+        padding: compact
+            ? const EdgeInsetsDirectional.symmetric(
+                horizontal: 16,
+                vertical: 12,
+              )
+            : const EdgeInsetsDirectional.symmetric(
+                horizontal: 20,
+                vertical: 28,
+              ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             for (var i = 0; i < children.length; i++) ...<Widget>[
-              if (i > 0) const SizedBox(height: 12),
+              if (i > 0) SizedBox(height: compact ? 8 : 12),
               children[i],
             ],
           ],
@@ -226,3 +247,10 @@ class DrillCard extends StatelessWidget {
     ),
   );
 }
+
+/// Whether the soft keyboard is open over the screen: a typed answer is
+/// being typed. Read it above a `Scaffold`, which takes the keyboard out of
+/// its body's `MediaQuery`: in a drill's own build, not inside [DrillFrame]'s
+/// slots.
+bool keyboardOpen(BuildContext context) =>
+    MediaQuery.viewInsetsOf(context).bottom > 0;

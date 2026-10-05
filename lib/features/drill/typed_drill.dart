@@ -29,6 +29,11 @@ import 'keyboard_hint.dart';
 /// Then the feedback: Continue, or for a near miss the learner's own
 /// judgement, "Count it wrong" or "I knew it".
 ///
+/// While the keyboard is open the card is compact, so that it stays in view
+/// above the field: a smaller prompt, and the script or Latin letters choice
+/// and Can't listen now left out until the keyboard closes. The mode chosen
+/// is kept.
+///
 /// Design screens `drill-production-accent`, `drill-production-typo`,
 /// `drill-production-script`, `drill-production-translit`,
 /// `drill-listening` and `drill-rtl`. Build one per card (key it by the
@@ -75,6 +80,8 @@ class _TypedDrillState extends State<TypedDrill> {
     final listening = session.item.mode == DrillMode.listening;
     final answer = session.answer;
     final translit = session.transliterating;
+    // Typing the answer: the keyboard is open, and the field still there.
+    final typing = keyboardOpen(context) && answer == null;
 
     return DrillFrame(
       skill: session.skill,
@@ -87,14 +94,17 @@ class _TypedDrillState extends State<TypedDrill> {
       progress: session.progress,
       onClose: widget.onClose,
       card: listening
-          ? _listeningCard(context, card, language)
-          : _productionCard(context, card, language),
+          ? _listeningCard(context, card, language, typing: typing)
+          : _productionCard(context, card, language, typing: typing),
       belowCard: answer != null
           ? null
           : <Widget>[
-              if (session.canTransliterate)
+              if (session.canTransliterate && !typing)
                 InputModeChoice(session: session, onChanged: _controller.clear),
+              // Keyed, so that the field keeps its focus and text as the
+              // choice above it comes and goes with the keyboard.
               AnswerField(
+                key: const ValueKey<String>('answer'),
                 controller: _controller,
                 label: _fieldLabel(l10n, language, listening, translit),
                 language: language,
@@ -115,15 +125,16 @@ class _TypedDrillState extends State<TypedDrill> {
               transliterating: translit,
               language: session.typesDigits ? null : language,
             ),
-      actions: _actions(context, answer),
+      actions: _actions(context, answer, typing: typing),
     );
   }
 
   List<Widget> _productionCard(
     BuildContext context,
     Card card,
-    LanguageInfo language,
-  ) {
+    LanguageInfo language, {
+    required bool typing,
+  }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
@@ -140,9 +151,11 @@ class _TypedDrillState extends State<TypedDrill> {
       Text(
         card.native,
         textAlign: TextAlign.center,
-        style: theme.textTheme.displaySmall!.copyWith(
-          fontWeight: FontWeight.w600,
-        ),
+        style:
+            (typing
+                    ? theme.textTheme.headlineSmall!
+                    : theme.textTheme.displaySmall!)
+                .copyWith(fontWeight: FontWeight.w600),
       ),
       if (answered) ...<Widget>[
         _word(card, language, scheme),
@@ -168,15 +181,47 @@ class _TypedDrillState extends State<TypedDrill> {
   List<Widget> _listeningCard(
     BuildContext context,
     Card card,
-    LanguageInfo language,
-  ) {
+    LanguageInfo language, {
+    required bool typing,
+  }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final session = _session;
     final slower = session.slower;
+    final play = PlayButton(
+      onPressed: session.play,
+      playing: session.playing,
+      size: typing ? 64 : 136,
+    );
+    final slowerChip = FilterChip(
+      label: Text(l10n.drillSlower(SettingsNotifier.slowerFactor)),
+      selected: slower,
+      onSelected: (_) => session.toggleSlower(),
+      showCheckmark: false,
+      shape: const StadiumBorder(),
+      side: slower
+          ? BorderSide(color: scheme.secondaryContainer)
+          : BorderSide(color: scheme.outline),
+      labelStyle: theme.textTheme.labelLarge!.copyWith(
+        fontWeight: FontWeight.w600,
+        color: slower ? scheme.onSecondaryContainer : scheme.onSurfaceVariant,
+      ),
+    );
+    // Typing: the button smaller, beside Slower, and no hint under it.
+    if (typing) {
+      return <Widget>[
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 16,
+          runSpacing: 8,
+          children: <Widget>[play, slowerChip],
+        ),
+      ];
+    }
     return <Widget>[
-      PlayButton(onPressed: session.play, playing: session.playing),
+      play,
       Text(
         session.playing ? l10n.drillPlayingHint : l10n.drillPlayHint,
         textAlign: TextAlign.center,
@@ -184,20 +229,7 @@ class _TypedDrillState extends State<TypedDrill> {
           color: scheme.onSurfaceVariant,
         ),
       ),
-      FilterChip(
-        label: Text(l10n.drillSlower(SettingsNotifier.slowerFactor)),
-        selected: slower,
-        onSelected: (_) => session.toggleSlower(),
-        showCheckmark: false,
-        shape: const StadiumBorder(),
-        side: slower
-            ? BorderSide(color: scheme.secondaryContainer)
-            : BorderSide(color: scheme.outline),
-        labelStyle: theme.textTheme.labelLarge!.copyWith(
-          fontWeight: FontWeight.w600,
-          color: slower ? scheme.onSecondaryContainer : scheme.onSurfaceVariant,
-        ),
-      ),
+      slowerChip,
       if (session.answer != null) ...<Widget>[
         _word(card, language, scheme),
         Text(
@@ -260,7 +292,11 @@ class _TypedDrillState extends State<TypedDrill> {
     return '';
   }
 
-  List<Widget> _actions(BuildContext context, TypedAnswer? answer) {
+  List<Widget> _actions(
+    BuildContext context,
+    TypedAnswer? answer, {
+    required bool typing,
+  }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final session = _session;
@@ -284,7 +320,7 @@ class _TypedDrillState extends State<TypedDrill> {
     if (answer == null) {
       final empty = _controller.text.trim().isEmpty;
       return <Widget>[
-        if (session.item.mode == DrillMode.listening) ...<Widget>[
+        if (session.item.mode == DrillMode.listening && !typing) ...<Widget>[
           CantNowButton(session: session),
           const SizedBox(height: 4),
         ],

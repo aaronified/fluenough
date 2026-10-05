@@ -399,6 +399,7 @@ class _Reader {
           : fields.optionalString('script', allowEmpty: false) ?? 'latin',
       tts: fields.optionalString('tts', allowEmpty: false),
       rtl: fields.optionalBool('rtl') ?? false,
+      icon: fields.optionalString('icon', allowEmpty: false),
     );
   }
 
