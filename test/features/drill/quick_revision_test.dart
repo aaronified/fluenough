@@ -2,7 +2,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/speech/speech_engine.dart';
+import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/scheduling/sm2.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
@@ -10,6 +15,7 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/drill/match_drill.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
+import 'package:fluenough/features/today/quick_revision.dart';
 
 import '../../support/harness.dart';
 
@@ -29,6 +35,48 @@ Future<AppState> knowing(int count) async {
     count: count,
   );
   await state.load();
+  return state;
+}
+
+/// Eight Hindi words reviewed three days ago in each of [modes], the even
+/// ones in [even] as well and the odd ones in [odd], with a Hindi voice and
+/// recogniser, and speaking switched on.
+Future<AppState> knowingIn(
+  Set<DrillMode> modes, {
+  Set<DrillMode> even = const <DrillMode>{},
+  Set<DrillMode> odd = const <DrillMode>{},
+}) async {
+  AppState build(MemoryProgress progress) => AppState.test(
+    progress: progress,
+    tts: FixedTtsEngine(const <String>{'hi'}),
+    speech: FixedSpeechEngine(onDevice: const <String>{'hi'}),
+    settings: SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: const <String>['hi'],
+      enabledSkills: <Skill>{
+        ...Skill.values.where((s) => s.onByDefault),
+        Skill.speaking,
+      },
+    ),
+  );
+  final base = build(MemoryProgress());
+  await base.load();
+  final progress = MemoryProgress();
+  final cards = base.deckById('hi-en-first-words')!.cards.take(8);
+  for (final (i, card) in cards.indexed) {
+    for (final mode in <DrillMode>{...modes, ...i.isEven ? even : odd}) {
+      progress.record(
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: mode,
+        grade: 4,
+        now: base.now().subtract(const Duration(days: 3)),
+      );
+    }
+  }
+  final state = build(progress);
+  await state.load();
+  await state.startSpeech();
   return state;
 }
 
@@ -149,5 +197,70 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text(l10n.drillEndBodyMisses), findsOneWidget);
     expect(find.text(l10n.drillEndBodyNotRecorded), findsNothing);
+  });
+
+  group('by skill (ADR-0030)', () {
+    test(
+      'one skill revises only that skill, and counts only its words',
+      () async {
+        final state = await knowingIn(<DrillMode>{
+          DrillMode.recognition,
+          DrillMode.production,
+        });
+        expect(state.revisableIn(<Skill>{Skill.production}), 8);
+        expect(state.revisableIn(<Skill>{Skill.listening}), 0);
+        final items = asked(
+          state.sessionItems(
+            const DrillRequest.revision(20, skills: <Skill>{Skill.production}),
+          ),
+        );
+        expect(<String>{for (final item in items) item.card.id}, hasLength(8));
+        expect(
+          <DrillMode>{for (final item in items) item.mode},
+          <DrillMode>{DrillMode.production},
+        );
+      },
+    );
+
+    test(
+      'Spoken revises listening and speaking together, and nothing else',
+      () async {
+        expect(spokenSkills, <Skill>{Skill.listening, Skill.speaking});
+        // A session asks a word in one skill, so half the words are known
+        // by ear and half by mouth.
+        final state = await knowingIn(
+          <DrillMode>{DrillMode.recognition},
+          even: <DrillMode>{DrillMode.listening},
+          odd: <DrillMode>{DrillMode.speaking},
+        );
+        expect(state.revisableIn(spokenSkills), 8);
+        final queue = state.buildSession(
+          const DrillRequest(revise: true, skills: spokenSkills),
+        );
+        expect(
+          <DrillMode>{for (final item in queue.items) item.mode},
+          <DrillMode>{DrillMode.listening, DrillMode.speaking},
+        );
+      },
+    );
+
+    test("a skill's tile revises every word known in it, recording the "
+        "misses; a deck's Revise records nothing", () async {
+      const request = DrillRequest.reviseSkill(Skill.recognition);
+      expect(request.revise, isTrue);
+      expect(request.limit, isNull);
+      expect(request.recordsMisses, isTrue);
+      expect(DrillRequest.revise('hi-en-first-words').recordsMisses, isFalse);
+      final state = await knowingIn(<DrillMode>{
+        DrillMode.recognition,
+        DrillMode.production,
+      });
+      final items = asked(state.sessionItems(request));
+      expect(<String>{for (final item in items) item.card.id}, hasLength(8));
+      expect(
+        <DrillMode>{for (final item in items) item.mode},
+        <DrillMode>{DrillMode.recognition},
+      );
+    });
   });
 }
