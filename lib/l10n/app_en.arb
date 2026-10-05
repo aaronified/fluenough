@@ -555,6 +555,38 @@
       }
     }
   },
+  "todaySkillReviewHint": "Review them",
+  "@todaySkillReviewHint": {
+    "description": "Screen-reader hint of a skill tile with cards due: tapping it reviews them, in every language learned."
+  },
+  "todaySkillReviseTitle": "Nothing due in {skill}",
+  "@todaySkillReviseTitle": {
+    "description": "Title of the question asked when a skill tile with nothing due is tapped.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Speaking"
+      }
+    }
+  },
+  "todaySkillReviseBody": "Revise {count, plural, =1{the 1 word} other{all {count} words}} you know in it? A miss brings a word back sooner; a right answer keeps its date.",
+  "@todaySkillReviseBody": {
+    "description": "Body of the question asked when a skill tile with nothing due is tapped: revising records only the misses.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "42"
+      }
+    }
+  },
+  "todaySkillNotNow": "Not now",
+  "@todaySkillNotNow": {
+    "description": "Declines revising a skill with nothing due."
+  },
+  "todaySkillRevise": "Revise",
+  "@todaySkillRevise": {
+    "description": "Starts a revision of every word known in a skill with nothing due; also its tile's screen-reader hint."
+  },
   "todaySkillNoVoice": "{skill}: no voice on this phone",
   "@todaySkillNoVoice": {
     "description": "Screen-reader label of the Listening tile when no language has a voice.",
@@ -690,6 +722,28 @@
   "todayRevisionNone": "Revision opens up once you've had a lesson.",
   "@todayRevisionNone": {
     "description": "Under Quick revision when no word has been learned yet, with the buttons off."
+  },
+  "todayRevisionAll": "All",
+  "@todayRevisionAll": {
+    "description": "Quick revision's skill choice: every skill switched on."
+  },
+  "todayRevisionSpoken": "Spoken",
+  "@todayRevisionSpoken": {
+    "description": "Quick revision's skill choice: listening and speaking together."
+  },
+  "todayRevisionSkillsLabel": "Skills to revise",
+  "@todayRevisionSkillsLabel": {
+    "description": "Screen-reader label of quick revision's row of skill choices."
+  },
+  "todayRevisionNoneIn": "No words you know in {skills} yet.",
+  "@todayRevisionNoneIn": {
+    "description": "Under Quick revision when the skill chosen has no words to revise, with the buttons off.",
+    "placeholders": {
+      "skills": {
+        "type": "String",
+        "example": "Speaking"
+      }
+    }
   },
   "todayRevisionCards": "{count, plural, =1{Revise 1 word} other{Revise {count} words}}",
   "@todayRevisionCards": {

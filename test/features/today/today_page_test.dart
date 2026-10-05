@@ -9,6 +9,8 @@ import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
@@ -16,7 +18,9 @@ import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/today/today_fixtures.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/quick_revision.dart';
+import 'package:fluenough/features/today/due_card.dart';
 import 'package:fluenough/features/today/today_page.dart';
+import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 
 import '../../support/harness.dart';
@@ -37,6 +41,54 @@ Future<void> tapVisible(WidgetTester tester, Finder finder) async {
   await tester.tap(finder);
   await tester.pumpAndSettle();
 }
+
+/// Eight Hindi words, each reviewed in every mode of [ago] that long ago:
+/// due again after a day. With [speaking], speaking is on and the phone
+/// recognises Hindi.
+Future<AppState> hindiReviewed(
+  Map<DrillMode, Duration> ago, {
+  bool speaking = false,
+}) async {
+  AppState build(MemoryProgress progress) => AppState.test(
+    progress: progress,
+    speech: FixedSpeechEngine(onDevice: const <String>{'hi'}),
+    settings: SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: const <String>['hi'],
+      enabledSkills: <Skill>{
+        ...Skill.values.where((s) => s.onByDefault),
+        if (speaking) Skill.speaking,
+      },
+    ),
+  );
+  final base = build(MemoryProgress());
+  await base.load();
+  final progress = MemoryProgress();
+  for (final card in base.deckById('hi-en-first-words')!.cards.take(8)) {
+    for (final MapEntry(key: mode, value: back) in ago.entries) {
+      progress.record(
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: mode,
+        grade: 4,
+        now: base.now().subtract(back),
+      );
+    }
+  }
+  final state = build(progress);
+  await state.load();
+  if (speaking) await state.startSpeech();
+  return state;
+}
+
+/// [skill]'s tile on the due card.
+Finder tileOf(WidgetTester tester, Skill skill) => find.descendant(
+  of: find.byType(DueCard),
+  matching: find.text(skill.label(l10nOf(tester))),
+);
+
+/// The quick revision choice labelled [label].
+Finder chipOf(String label) => find.widgetWithText(ChoiceChip, label);
 
 void main() {
   testWidgets('the due count, minutes and skill tiles come from the session', (
@@ -387,6 +439,177 @@ void main() {
     expect(state.status, CatalogStatus.ready);
     expect(find.text(l10n.commonDecksFailed), findsNothing);
     expect(find.text(l10n.todayRevisionTitle), findsOneWidget);
+  });
+
+  group('review by skill (ADR-0030)', () {
+    testWidgets('a tile with cards due reviews that skill, in every '
+        'language', (tester) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.recognition: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: state);
+      expect(TodayNumbers.of(state).bySkill[Skill.recognition], 8);
+      await tapVisible(tester, tileOf(tester, Skill.recognition));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.skill, Skill.recognition);
+      expect(drill.request.revise, isFalse);
+      expect(drill.request.language, isNull);
+      final items = state.sessionItems(drill.request);
+      expect(items, isNotEmpty);
+      expect(
+        <DrillMode>{
+          for (final item in items)
+            for (final asked in item.group.isEmpty ? [item] : item.group)
+              asked.mode,
+        },
+        <DrillMode>{DrillMode.recognition},
+      );
+    });
+
+    testWidgets('a tile with nothing due asks whether to revise every word '
+        'known in it', (tester) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.recognition: const Duration(days: 3),
+        DrillMode.production: Duration.zero,
+      });
+      await pumpToday(tester, state: state);
+      final l10n = l10nOf(tester);
+      final label = Skill.production.label(l10n);
+      expect(TodayNumbers.of(state).bySkill[Skill.production], 0);
+      expect(TodayNumbers.of(state).revisable[Skill.production], 8);
+
+      await tapVisible(tester, tileOf(tester, Skill.production));
+      expect(find.text(l10n.todaySkillReviseTitle(label)), findsOneWidget);
+      expect(find.text(l10n.todaySkillReviseBody(8)), findsOneWidget);
+      await tester.tap(find.text(l10n.todaySkillNotNow));
+      await tester.pumpAndSettle();
+      expect(find.byType(DrillPage), findsNothing);
+
+      await tapVisible(tester, tileOf(tester, Skill.production));
+      await tester.tap(find.text(l10n.todaySkillRevise));
+      await tester.pumpAndSettle();
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.skill, Skill.production);
+      expect(drill.request.revise, isTrue);
+      expect(drill.request.limit, isNull);
+      expect(drill.request.recordsMisses, isTrue);
+    });
+
+    testWidgets('a tile with nothing due and nothing known starts nothing', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.recognition: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: state);
+      final l10n = l10nOf(tester);
+      // These words have no grammar: nothing due, nothing to revise.
+      expect(TodayNumbers.of(state).bySkill[Skill.grammar] ?? 0, 0);
+      expect(TodayNumbers.of(state).revisable[Skill.grammar] ?? 0, 0);
+      await tapVisible(tester, tileOf(tester, Skill.grammar));
+      expect(find.byType(AlertDialog), findsNothing);
+      expect(find.byType(DrillPage), findsNothing);
+      expect(
+        find.text(l10n.todaySkillReviseTitle(Skill.grammar.label(l10n))),
+        findsNothing,
+      );
+    });
+
+    testWidgets('Speaking has a tile only while it is on; the odd tile keeps '
+        'half the row', (tester) async {
+      usePhone(tester);
+      final off = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.recognition: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: off);
+      expect(tileOf(tester, Skill.speaking), findsNothing);
+      expect(
+        TodayNumbers.of(off).bySkill.keys,
+        isNot(contains(Skill.speaking)),
+      );
+
+      await tester.pumpWidget(const SizedBox.shrink());
+      final on = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.recognition: const Duration(days: 3),
+        DrillMode.speaking: const Duration(days: 3),
+      }, speaking: true);
+      // Today asks each word in one skill, here recognition; the speaking
+      // tile still reviews the speaking due.
+      expect(TodayNumbers.of(on).bySkill[Skill.speaking], 0);
+      expect(TodayNumbers.of(on).dueIn[Skill.speaking], 8);
+      await pumpToday(tester, state: on);
+      expect(TodayNumbers.of(on).bySkill.keys, <Skill>[
+        Skill.recognition,
+        Skill.production,
+        Skill.listening,
+        Skill.speaking,
+        Skill.grammar,
+      ]);
+      expect(tester.takeException(), isNull);
+      double widthOf(Skill skill) => tester
+          .getSize(
+            find
+                .ancestor(
+                  of: tileOf(tester, skill),
+                  matching: find.byType(Material),
+                )
+                .first,
+          )
+          .width;
+      expect(widthOf(Skill.grammar), widthOf(Skill.recognition));
+
+      await tapVisible(tester, tileOf(tester, Skill.speaking));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.skill, Skill.speaking);
+    });
+
+    testWidgets('quick revision narrows to the skills chosen', (tester) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.recognition: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: state);
+      final l10n = l10nOf(tester);
+      expect(chipOf(l10n.todayRevisionAll), findsOneWidget);
+      // Spoken only while listening and speaking are both on.
+      expect(chipOf(l10n.todayRevisionSpoken), findsNothing);
+
+      // Nothing known in production: the buttons are off, and say so.
+      final production = Skill.production.label(l10n);
+      await tapVisible(tester, chipOf(production));
+      expect(find.text(l10n.todayRevisionNoneIn(production)), findsOneWidget);
+      FilledButton five() => tester.widget<FilledButton>(
+        find.ancestor(of: find.text('5'), matching: find.byType(FilledButton)),
+      );
+      expect(five().onPressed, isNull);
+
+      await tapVisible(tester, chipOf(Skill.recognition.label(l10n)));
+      expect(find.text(l10n.todayRevisionBody), findsOneWidget);
+      await tapVisible(tester, find.text('5'));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.skills, <Skill>{Skill.recognition});
+      expect(drill.request.limit, 5);
+      expect(drill.request.recordsMisses, isTrue);
+    });
+
+    testWidgets('with speaking on, Spoken revises listening and speaking', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.speaking: const Duration(days: 3),
+      }, speaking: true);
+      await pumpToday(tester, state: state);
+      final l10n = l10nOf(tester);
+      await tapVisible(tester, chipOf(l10n.todayRevisionSpoken));
+      await tapVisible(tester, find.text('10'));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.skills, spokenSkills);
+      expect(drill.request.limit, 10);
+    });
   });
 }
 

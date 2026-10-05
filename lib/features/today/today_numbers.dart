@@ -13,11 +13,13 @@ import '../../core/scheduling/ask.dart';
 const int secondsPerCard = 20;
 
 /// The skills Today draws a tile for, in the design's order. Minimal pairs
-/// have no tile: they are drilled from their own decks (#31).
+/// have no tile: they are drilled from their own decks (#31). Speaking has
+/// one only while it is switched on (ADR-0030).
 const List<Skill> todaySkills = <Skill>[
   Skill.recognition,
   Skill.production,
   Skill.listening,
+  Skill.speaking,
   Skill.grammar,
 ];
 
@@ -63,6 +65,8 @@ class TodayNumbers {
     required this.week,
     this.languages = const <LanguageInfo>[],
     this.lessons = const <TodayLesson>[],
+    this.dueIn = const <Skill, int>{},
+    this.revisable = const <Skill, int>{},
   });
 
   factory TodayNumbers.of(AppState state) {
@@ -119,12 +123,30 @@ class TodayNumbers {
       return (date: date, status: status);
     }
 
+    final bySkill = <Skill, int>{
+      for (final skill in todaySkills)
+        if (skill != Skill.speaking ||
+            (state.settings.isEnabled(skill) &&
+                state.features.isAvailable(skill.feature)))
+          skill: skill.mode == null ? 0 : byMode[skill.mode] ?? 0,
+    };
+    // A skill switched off is not reviewed from its tile either.
+    final dueIn = <Skill, int>{
+      for (final skill in bySkill.keys)
+        skill: state.settings.isEnabled(skill)
+            ? state.buildSession(DrillRequest(skill: skill)).length
+            : 0,
+    };
     return TodayNumbers(
       hasDecks: decks.isNotEmpty,
       due: queue.length,
-      bySkill: <Skill, int>{
-        for (final skill in todaySkills)
-          skill: skill.mode == null ? 0 : byMode[skill.mode] ?? 0,
+      bySkill: bySkill,
+      dueIn: dueIn,
+      // A skill switched off has nothing to revise from its tile.
+      revisable: <Skill, int>{
+        for (final MapEntry(key: skill, value: due) in dueIn.entries)
+          if (due == 0 && state.settings.isEnabled(skill))
+            skill: state.revisableIn(<Skill>{skill}),
       },
       noVoice: noVoice,
       streak: progress.streakAt(now),
@@ -142,8 +164,19 @@ class TodayNumbers {
   /// already taught. New words come in [lessons] (ADR-0024).
   final int due;
 
-  /// Today's session per skill, for every skill in [todaySkills].
+  /// Today's session per skill, for each skill with a tile, in
+  /// [todaySkills] order.
   final Map<Skill, int> bySkill;
+
+  /// For each tile, how many cards a review of its skill alone holds, what
+  /// tapping it starts (ADR-0030). It can be more than [bySkill]'s count: a
+  /// word due in several skills is asked in one of them in today's session,
+  /// but in each skill's own review.
+  final Map<Skill, int> dueIn;
+
+  /// For a tile whose skill has nothing due: how many words it can revise
+  /// (ADR-0030). A skill not listed has none.
+  final Map<Skill, int> revisable;
 
   /// Listening is on, but no language the profile learns has a voice on
   /// this phone.
