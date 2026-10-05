@@ -7,70 +7,63 @@ Written 2026-10-05.
 > separate difficulty by skill and card (eg. recognition and reproduction
 > of a word are different skills, and so are listening and speaking)
 
+Then, on how: "2 will then build upon 1 only". Asked what to keep, the owner
+chose **FSRS's difficulty only**. This plan comes after `fsrs.md`, and adds
+no estimate of its own from length or sounds.
+
 ## What exists
 
 - **Schedules are already separate by skill.** Since ADR-0005 each
   `(card, mode)` pair has its own state: recognition, production,
-  listening, speaking, grammar and reading. Each has its own SM-2 ease. So a
-  word that is easy to recognise but hard to say already comes back sooner
-  for speaking.
+  listening, speaking, grammar and reading. Each has its own SM-2 ease.
 - **Lesson difficulty is not.** `Difficulty.of(card)` in
   `lib/core/scheduling/lesson.dart` gives one difficulty per card, for every
-  skill:
+  skill, from length alone:
   - hard: a phrase, a sentence of three words or more, or a grammar cell;
   - medium: two words, or seven letters or more, counted in the reading;
   - easy: the rest.
-- A lesson takes three cards of each difficulty and picks each card's
-  questions by that one difficulty (`lessonQuestions`):
+- Lessons use it to pick three new cards of each difficulty, and to choose
+  each card's questions (`lessonQuestions`). Nothing else uses it.
 
-  | Difficulty | Check after teaching | Exercise |
-  |---|---|---|
-  | Easy | recognition, by choosing | speaking |
-  | Medium | listening, by choosing | match pairs |
-  | Hard | production, typed or in word order | speaking |
+## What FSRS brings
 
-- So a short word with a retroflex or aspirated sound counts as easy in
-  every skill, though it may be hard to hear or to say. A long but plain
-  word counts as medium in every skill. Nothing else uses `Difficulty`.
+With FSRS (`fsrs.md`), every pair has a **difficulty** D from 1 to 10,
+learned from its own answers. Each pair is a card and a skill, so D is
+already separate by skill and by card. పాలు missed by ear gets a high D for
+listening and keeps a low one for recognition.
+
+A pair has no D until its first answer in that skill. New words are
+therefore still picked by today's `Difficulty.of(card)`, until it is
+replaced.
 
 ## What it takes
 
-1. **A difficulty per card and skill**, `Difficulty.of(card, skill)`,
-   computed from what makes that skill hard. Every card now has its IPA
-   (#180), which makes the sound-based measures computable:
+1. **Difficulty is FSRS's D**, per card and skill, read from the pair's
+   state. There is no other measure.
+2. **Where it is used:**
+   - **Reviews:** a session can order or spread its pairs by D, so that the
+     hardest skills of a word do not all come at once.
+   - **Quick revision:** words can be picked by D.
+   - **Inspect** shows a card's D in each skill it has been answered in.
 
-   | Skill | What makes it hard |
-   |---|---|
-   | Recognition (see → meaning) | length; conjunct letters; known words that look alike |
-   | Production (meaning → word) | length; conjuncts; letters written but not said, as the inherent vowel dropped |
-   | Listening (hear → meaning) | the language's contrasts in `<lang>-sounds.yaml` (aspirated or not, retroflex or dental, long or short); known words that sound alike |
-   | Speaking (meaning → say) | sounds the learner's own languages lack, from the IPA; length |
-
-2. **Learned difficulty per pair**, once the pair has reviews. Today that
-   is SM-2's ease; with FSRS (`fsrs.md`), it is the pair's difficulty D.
-   That is already per skill, and can feed lessons and quick revision.
-3. **Lessons pick by the skill asked.** The three easy, three medium and
-   three hard stay, but each card's questions are chosen by its difficulty
-   in each skill. A word easy to read but hard to hear gets an easy check
-   and a harder listening question.
-4. **Inspect** can show a card's difficulty in each skill.
-5. **Tests:** the measures on known words, such as పాలు and పలు, which
-   differ only in vowel length and so should be hard to hear; and lesson
-   plans by skill.
-
-FSRS can also keep separate parameters per skill, which would let listening
-forget faster than recognition. That depends on `fsrs.md`.
+   Lessons teach new words, which have no D yet, so lessons do not use it.
+3. **Parameters per skill**, optionally: FSRS can keep one set of 21
+   parameters per skill, so that listening can forget faster than
+   recognition. Each set needs its own history to fit, so this waits for
+   the optimiser (`fsrs.md`, "Later").
+4. **Tests:** D stays separate per skill. A miss in one skill leaves the
+   others' D alone. Reviews and quick revision read D as decided.
 
 ## To decide
 
-- Whether speaking difficulty depends on the languages the learner speaks
-  (retroflex sounds are hard for an English speaker, not for a Hindi one).
-- What a lesson's three of each difficulty counts by: the hardest skill, the
-  skill asked first, or each skill on its own.
-- Whether quick revision picks the hardest words first, by learned
-  difficulty, rather than at random as now.
+- Whether a review session orders its pairs by D, spreads them, or ignores
+  it.
+- Whether quick revision picks the hardest words first, or keeps picking at
+  random.
+- Whether to replace `Difficulty.of(card)` for new words, which have no D
+  yet, or keep it.
+- One set of FSRS parameters for all skills, or one per skill.
 
 ## Estimate
 
-About 4–6 hours. The measures need tuning on real cards. Confidence:
-medium-low.
+About 2–3 hours after `fsrs.md` lands. Confidence: medium.
