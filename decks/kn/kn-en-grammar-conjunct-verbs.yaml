@@ -2,7 +2,7 @@ schema: 1
 id: kn-en-grammar-conjunct-verbs
 name: "Noun + ಮಾಡು and ಪಡು"
 kind: vocab
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Many Kannada verbs are a noun with ಮಾಡು, do, or ಪಡು, feel: ಕೆಲಸ ಮಾಡು, to work; ಭಯಪಡು, to be afraid. Not yet checked by a Kannada speaker: please report any mistake."
@@ -11,80 +11,94 @@ cards:
   - id: kn-0467
     target: "ಕೆಲಸ ಮಾಡು"
     native: "to work"
-    reading: "kelasa madu"
+    reading: "kelasa māḍu"
+    ipa: "kelasa maːɖu"
     pos: "phrase"
     notes: "ಕೆಲಸ, work, and ಮಾಡು, to do. So too ಸ್ನಾನ ಮಾಡು, to bathe, and ಅಡುಗೆ ಮಾಡು, to cook."
   - id: kn-0468
     target: "ಫೋನ್ ಮಾಡು"
     native: "to phone"
-    reading: "fon madu"
+    reading: "fōn māḍu"
+    ipa: "foːn maːɖu"
     pos: "phrase"
     notes: "ನನಗೆ ಫೋನ್ ಮಾಡಿ, please call me."
   - id: kn-0469
     target: "ಸಹಾಯ ಮಾಡು"
     native: "to help"
-    reading: "sahaya madu"
+    reading: "sahāya māḍu"
+    ipa: "sahaːja maːɖu"
     pos: "phrase"
   - id: kn-0470
     target: "ಮದುವೆ ಆಗು"
     native: "to get married"
-    reading: "maduve agu"
+    reading: "maduve āgu"
+    ipa: "mad̪uʋe aːɡu"
     pos: "phrase"
     notes: "With ಆಗು, to become, to happen: ನನಗೆ ಮದುವೆ ಆಗಿದೆ, I'm married."
   - id: kn-0471
     target: "ಪ್ರಯತ್ನ ಮಾಡು"
     native: "to try"
-    reading: "prayatna madu"
+    reading: "prayatna māḍu"
+    ipa: "prajat̪na maːɖu"
     alt_target: ["ಪ್ರಯತ್ನಿಸು"]
     pos: "phrase"
     notes: "Also one word, ಪ್ರಯತ್ನಿಸು (prayatnisu)."
   - id: kn-0472
     target: "ಖರ್ಚು ಮಾಡು"
     native: "to spend (money)"
-    reading: "kharchu madu"
+    reading: "kharcu māḍu"
+    ipa: "kʰartʃu maːɖu"
     pos: "phrase"
   - id: kn-0473
     target: "ಸ್ವಚ್ಛ ಮಾಡು"
     native: "to clean"
-    reading: "svachha madu"
+    reading: "svaccha māḍu"
+    ipa: "sʋatʃtʃʰa maːɖu"
     alt_target: ["ಕ್ಲೀನ್ ಮಾಡು"]
     pos: "phrase"
   - id: kn-0474
     target: "ಪ್ರಯಾಣ ಮಾಡು"
     native: "to travel"
-    reading: "prayana madu"
+    reading: "prayāṇa māḍu"
+    ipa: "prajaːɳa maːɖu"
     pos: "phrase"
   - id: kn-0475
     target: "ಶುರು ಮಾಡು"
     native: "to begin"
-    reading: "shuru madu"
+    reading: "śuru māḍu"
+    ipa: "ʃuru maːɖu"
     alt_target: ["ಪ್ರಾರಂಭಿಸು"]
     pos: "phrase"
-    notes: "Formally ಪ್ರಾರಂಭಿಸು (prarambhisu)."
+    notes: "Formally ಪ್ರಾರಂಭಿಸು (prārambhisu)."
   - id: kn-0476
     target: "ತಡ ಮಾಡು"
     native: "to delay"
-    reading: "tada madu"
+    reading: "taḍa māḍu"
+    ipa: "t̪aɖa maːɖu"
     pos: "phrase"
     notes: "To be late is ತಡ ಆಗು: ತಡ ಆಯಿತು, I'm late."
   - id: kn-0477
     target: "ಭಯಪಡು"
     native: "to be afraid"
-    reading: "bhayapadu"
+    reading: "bhayapaḍu"
+    ipa: "bʱajapaɖu"
     pos: "verb"
-    notes: "ಪಡು (padu), to feel, to undergo, makes verbs of feeling. Also ಹೆದರು (hedaru)."
+    notes: "ಪಡು (paḍu), to feel, to undergo, makes verbs of feeling. Also ಹೆದರು (hedaru)."
   - id: kn-0478
     target: "ಕಷ್ಟಪಡು"
     native: "to work hard; to struggle"
-    reading: "kashtapadu"
+    reading: "kaṣṭapaḍu"
+    ipa: "kaʂʈapaɖu"
     pos: "verb"
   - id: kn-0479
     target: "ಇಷ್ಟಪಡು"
     native: "to like; to be fond of"
-    reading: "ishtapadu"
+    reading: "iṣṭapaḍu"
+    ipa: "iʂʈapaɖu"
     pos: "verb"
   - id: kn-0480
     target: "ಸಂತೋಷಪಡು"
     native: "to be glad"
-    reading: "santoshapadu"
+    reading: "santōṣapaḍu"
+    ipa: "sant̪oːʂapaɖu"
     pos: "verb"

@@ -2,7 +2,7 @@ schema: 1
 id: as-en-grammar-gender-number
 name: "No gender; number and classifiers"
 kind: vocab
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Assamese has no grammatical gender: only the pronouns সি and তাই, and the classifiers -জন and -জনী, tell a man from a woman. So this deck teaches number instead: the plurals -বোৰ, -হঁত and -সকল, and a number with its classifier. Not yet checked by an Assamese speaker: please report any mistake."
@@ -16,60 +16,70 @@ cards:
   - id: as-2052
     target: "সিহঁত আহিল।"
     native: "They came."
-    reading: "xihot ahil."
+    reading: "xihôm̐t āhil."
+    ipa: "xihɔ̃t ahil"
     pos: "phrase"
     notes: "The verb doesn't change for number: সি আহিল, সিহঁত আহিল."
   - id: as-2053
     target: "ল'ৰাবোৰ খেলি আছে।"
     native: "The boys are playing."
-    reading: "lorabur kheli ase."
+    reading: "lorābur kheli āse."
+    ipa: "loɹabʊɹ kʰeli ase"
     pos: "phrase"
     notes: "-বোৰ makes a plural of anything, people too."
   - id: as-2054
     target: "ল'ৰাহঁত"
     native: "the boys; the lads"
-    reading: "lorahot"
+    reading: "lorāhôm̐t"
+    ipa: "loɹahɔ̃t"
     pos: "noun"
     notes: "-হঁত makes a plural of people, mostly familiar: ল'ৰাহঁত, ছোৱালীহঁত."
   - id: as-2055
     target: "শিক্ষকসকল"
     native: "the teachers"
-    reading: "xikkhokxokol"
+    reading: "xikkhôkxôkôl"
+    ipa: "xikkʰɔkxɔkɔl"
     pos: "noun"
-    notes: "-সকল is a respectful plural for people. -বিলাক (bilak) is another plural, for people or things."
+    notes: "-সকল is a respectful plural for people. -বিলাক (bilāk) is another plural, for people or things."
   - id: as-2056
     target: "তিনিখন কিতাপ"
     native: "three books"
-    reading: "tinikhon kitap"
+    reading: "tinikhôn kitāp"
+    ipa: "tinikʰɔn kitap"
     pos: "phrase"
     notes: "After a number the noun stays singular, and the classifier goes on the number: তিনিখন, three (flat things)."
   - id: as-2057
     target: "দুজন মানুহ"
     native: "two people"
-    reading: "dujon manuh"
+    reading: "duzôn mānuh"
+    ipa: "duzɔn manuh"
     pos: "phrase"
     notes: "-জন counts men, and people in general; -জনী counts women: দুজনী ছোৱালী, two girls."
   - id: as-2058
     target: "বহুত মানুহ"
     native: "a lot of people"
-    reading: "bohut manuh"
+    reading: "bohut mānuh"
+    ipa: "bohut manuh"
     pos: "phrase"
     notes: "After বহুত, many, the noun stays singular too."
   - id: as-2059
     target: "ভাল ল'ৰা, ভাল ছোৱালী"
     native: "a good boy, a good girl"
-    reading: "bhal lora, bhal suwali"
+    reading: "bhāl lorā, bhāl suwāli"
+    ipa: "bʱal loɹa bʱal sʊwali"
     pos: "phrase"
     notes: "A describing word never changes for gender or number."
   - id: as-2060
     target: "ছাত্ৰ, ছাত্ৰী"
     native: "a student (a man), a student (a woman)"
-    reading: "satro, satri"
+    reading: "sātrô, sātri"
+    ipa: "satɹɔ satɹi"
     pos: "phrase"
     notes: "A few nouns from Sanskrit have a woman's form in -ঈ: ছাত্ৰী. Most nouns have one form for both."
   - id: as-2061
     target: "মানুহজন, মানুহজনী"
     native: "the man, the woman"
-    reading: "manuhjon, manuhjoni"
+    reading: "mānuhzôn, mānuhzoni"
+    ipa: "manuhzɔn manuhzoni"
     pos: "phrase"
     notes: "মানুহ is any person; the classifier can say which: -জন for a man, -জনী for a woman."

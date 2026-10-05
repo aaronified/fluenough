@@ -2,7 +2,7 @@ schema: 1
 id: kn-en-grammar-past
 name: "Past tense"
 kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I did, she went: the past, by person, number and gender. Not yet checked by a Kannada speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "ಮಾಡು"
       key: maadu
-      reading: "madu"
+      reading: "māḍu"
+      ipa: "maːɖu"
       gloss: "to do"
       forms:
         "ನಾನು": ["ಮಾಡಿದೆ", "ಮಾಡ್ದೆ"]
@@ -28,17 +29,27 @@ pattern:
         "ಅದು": ["ಮಾಡಿತು", "ಮಾಡ್ತು"]
         "ಅವರು": ["ಮಾಡಿದರು", "ಮಾಡಿದ್ರು"]
       readings:
-        "ನಾನು": ["madide", "madde"]
-        "ನಾವು": ["madidevu", "madidvi"]
-        "ನೀನು": ["madide", "madde"]
-        "ನೀವು": ["madidiri", "madidri"]
-        "ಅವನು": ["madidanu", "madida", "madda"]
-        "ಅವಳು": ["madidalu", "madidlu"]
-        "ಅದು": ["maditu", "madtu"]
-        "ಅವರು": ["madidaru", "madidru"]
+        "ನಾನು": ["māḍide", "māḍde"]
+        "ನಾವು": ["māḍidevu", "māḍidvi"]
+        "ನೀನು": ["māḍide", "māḍde"]
+        "ನೀವು": ["māḍidiri", "māḍidri"]
+        "ಅವನು": ["māḍidanu", "māḍida", "māḍda"]
+        "ಅವಳು": ["māḍidaḷu", "māḍidlu"]
+        "ಅದು": ["māḍitu", "māḍtu"]
+        "ಅವರು": ["māḍidaru", "māḍidru"]
+      ipas:
+        "ನಾನು": "maːɖid̪e"
+        "ನಾವು": "maːɖid̪eʋu"
+        "ನೀನು": "maːɖid̪e"
+        "ನೀವು": "maːɖid̪iri"
+        "ಅವನು": "maːɖid̪anu"
+        "ಅವಳು": "maːɖid̪aɭu"
+        "ಅದು": "maːɖit̪u"
+        "ಅವರು": "maːɖid̪aru"
     - lemma: "ಹೋಗು"
       key: hoogu
-      reading: "hogu"
+      reading: "hōgu"
+      ipa: "hoːɡu"
       gloss: "to go"
       forms:
         "ನಾನು": "ಹೋದೆ"
@@ -50,17 +61,27 @@ pattern:
         "ಅದು": ["ಹೋಯಿತು", "ಹೋಯ್ತು"]
         "ಅವರು": ["ಹೋದರು", "ಹೋದ್ರು"]
       readings:
-        "ನಾನು": "hode"
-        "ನಾವು": ["hodevu", "hodvi"]
-        "ನೀನು": "hode"
-        "ನೀವು": ["hodiri", "hodri"]
-        "ಅವನು": ["hodanu", "hoda"]
-        "ಅವಳು": ["hodalu", "hodlu"]
-        "ಅದು": ["hoyitu", "hoytu"]
-        "ಅವರು": ["hodaru", "hodru"]
+        "ನಾನು": "hōde"
+        "ನಾವು": ["hōdevu", "hōdvi"]
+        "ನೀನು": "hōde"
+        "ನೀವು": ["hōdiri", "hōdri"]
+        "ಅವನು": ["hōdanu", "hōda"]
+        "ಅವಳು": ["hōdaḷu", "hōdlu"]
+        "ಅದು": ["hōyitu", "hōytu"]
+        "ಅವರು": ["hōdaru", "hōdru"]
+      ipas:
+        "ನಾನು": "hoːd̪e"
+        "ನಾವು": "hoːd̪eʋu"
+        "ನೀನು": "hoːd̪e"
+        "ನೀವು": "hoːd̪iri"
+        "ಅವನು": "hoːd̪anu"
+        "ಅವಳು": "hoːd̪aɭu"
+        "ಅದು": "hoːjit̪u"
+        "ಅವರು": "hoːd̪aru"
     - lemma: "ಬರು"
       key: baru
       reading: "baru"
+      ipa: "baru"
       gloss: "to come"
       forms:
         "ನಾನು": "ಬಂದೆ"
@@ -77,6 +98,15 @@ pattern:
         "ನೀನು": "bande"
         "ನೀವು": ["bandiri", "bandri"]
         "ಅವನು": ["bandanu", "banda"]
-        "ಅವಳು": ["bandalu", "bandlu"]
+        "ಅವಳು": ["bandaḷu", "bandlu"]
         "ಅದು": ["bantu", "banditu"]
         "ಅವರು": ["bandaru", "bandru"]
+      ipas:
+        "ನಾನು": "band̪e"
+        "ನಾವು": "band̪eʋu"
+        "ನೀನು": "band̪e"
+        "ನೀವು": "band̪iri"
+        "ಅವನು": "band̪anu"
+        "ಅವಳು": "band̪aɭu"
+        "ಅದು": "bant̪u"
+        "ಅವರು": "band̪aru"

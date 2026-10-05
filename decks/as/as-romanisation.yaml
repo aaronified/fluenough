@@ -4,10 +4,33 @@ schema: 1
 kind: romanisation
 id: as-romanisation
 language: as
-scheme: "Popular Assamese chat spelling, as said: lowercase, no length marks, ঁ dropped. o for the vowel every consonant carries where it is said (ghor, moi), u for ও (mur, tumar) but o in English words (photo), a for আ, x for স, শ and ষ (oxom, the Axom of chat), s for চ and ছ (sah), j for জ, ঝ and য, though said z (jol), ph for ফ, w for ৱ, y for য়, r for ৰ and ড়, rh for ঢ়, kkh for ক্ষ, and the future -ব written bo (jabo)."
+scheme: "ISO 15919 letters, spelled as said (ADR-0025): ā for আ; ô for the inherent vowel where it is said [ɔ] and o where it is said [o], as after an apostrophe (lorā), and nothing where it is silent; i and u for both the short and the long vowel; u for ও, said [ʊ] (mur, tumār), but o in words from English; t th d dh for both rows, which Assamese says alike, on the gums; n for ন and ণ; s for চ and ছ; z for জ, ঝ and য, as said; x for স, শ and ষ (ôxôm); r for ৰ and ড়, rh for ঢ়; w for ৱ; y for য়; ṅ for ঙ and ং; m̐ for ঁ. A য-ফলা is a y glide (byôsto). ক্ষ is kkh, as said. A typed answer needs none of the marks, nor the nasal m̐, which chat leaves out."
+standard: "ISO 15919"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṅkh", "nkh"]
+  - ["ṅgh", "ngh"]
+  - ["ṅk", "nk"]
+  - ["ṅg", "ng"]
+  - ["ṅ", "ng"]
+  - ["ñch", "nchh"]
+  - ["ñc", "nch"]
+  - ["ñjh", "njh"]
+  - ["ñj", "nj"]
+  - ["ñ", "ny"]
+  - ["cch", "chh"]
+  - ["cc", "chch"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["m̐", ""]
+  - ["ṁ", "n"]
+  - ["ḵ", "kh"]
 equivalents:
   - ["i", "ee", "ii"]
-  - ["u", "oo", "uu"]
+  - ["u", "oo", "uu", "o"]
   - ["a", "aa"]
   - ["j", "z"]
   - ["ph", "f"]

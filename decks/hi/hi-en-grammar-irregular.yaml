@@ -2,7 +2,7 @@ schema: 1
 id: hi-en-grammar-irregular
 name: "Irregular verbs"
 kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The common verbs whose past and polite request break the pattern."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "करना"
       key: karnaa
-      reading: "karna"
+      reading: "karnā"
+      ipa: "kərnaː"
       gloss: "to do"
       forms:
         "past, masculine": "किया"
@@ -24,13 +25,19 @@ pattern:
         "past, masculine plural": "किए"
         "polite request": "कीजिए"
       readings:
-        "past, masculine": "kiya"
-        "past, feminine": "ki"
-        "past, masculine plural": "kiye"
-        "polite request": "kijiye"
+        "past, masculine": "kiyā"
+        "past, feminine": "kī"
+        "past, masculine plural": "kiē"
+        "polite request": "kījiē"
+      ipas:
+        "past, masculine": "kɪjaː"
+        "past, feminine": "kiː"
+        "past, masculine plural": "kɪeː"
+        "polite request": "kiːdʒɪeː"
     - lemma: "देना"
       key: denaa
-      reading: "dena"
+      reading: "dēnā"
+      ipa: "d̪eːnaː"
       gloss: "to give"
       forms:
         "past, masculine": "दिया"
@@ -38,13 +45,19 @@ pattern:
         "past, masculine plural": "दिए"
         "polite request": "दीजिए"
       readings:
-        "past, masculine": "diya"
-        "past, feminine": "di"
-        "past, masculine plural": "diye"
-        "polite request": "dijiye"
+        "past, masculine": "diyā"
+        "past, feminine": "dī"
+        "past, masculine plural": "diē"
+        "polite request": "dījiē"
+      ipas:
+        "past, masculine": "d̪ɪjaː"
+        "past, feminine": "d̪iː"
+        "past, masculine plural": "d̪ɪeː"
+        "polite request": "d̪iːdʒɪeː"
     - lemma: "लेना"
       key: lenaa
-      reading: "lena"
+      reading: "lēnā"
+      ipa: "leːnaː"
       gloss: "to take"
       forms:
         "past, masculine": "लिया"
@@ -52,13 +65,19 @@ pattern:
         "past, masculine plural": "लिए"
         "polite request": "लीजिए"
       readings:
-        "past, masculine": "liya"
-        "past, feminine": "li"
-        "past, masculine plural": "liye"
-        "polite request": "lijiye"
+        "past, masculine": "liyā"
+        "past, feminine": "lī"
+        "past, masculine plural": "liē"
+        "polite request": "lījiē"
+      ipas:
+        "past, masculine": "lɪjaː"
+        "past, feminine": "liː"
+        "past, masculine plural": "lɪeː"
+        "polite request": "liːdʒɪeː"
     - lemma: "पीना"
       key: piinaa
-      reading: "pina"
+      reading: "pīnā"
+      ipa: "piːnaː"
       gloss: "to drink"
       forms:
         "past, masculine": "पिया"
@@ -66,13 +85,19 @@ pattern:
         "past, masculine plural": "पिए"
         "polite request": "पीजिए"
       readings:
-        "past, masculine": "piya"
-        "past, feminine": "pi"
-        "past, masculine plural": "piye"
-        "polite request": "pijiye"
+        "past, masculine": "piyā"
+        "past, feminine": "pī"
+        "past, masculine plural": "piē"
+        "polite request": "pījiē"
+      ipas:
+        "past, masculine": "pɪjaː"
+        "past, feminine": "piː"
+        "past, masculine plural": "pɪeː"
+        "polite request": "piːdʒɪeː"
     - lemma: "जाना"
       key: jaanaa
-      reading: "jana"
+      reading: "jānā"
+      ipa: "dʒaːnaː"
       gloss: "to go"
       forms:
         "past, masculine": "गया"
@@ -80,13 +105,19 @@ pattern:
         "past, masculine plural": "गए"
         "polite request": "जाइए"
       readings:
-        "past, masculine": "gaya"
-        "past, feminine": "gayi"
-        "past, masculine plural": "gaye"
-        "polite request": "jaiye"
+        "past, masculine": "gayā"
+        "past, feminine": "gaī"
+        "past, masculine plural": "gaē"
+        "polite request": "jāiē"
+      ipas:
+        "past, masculine": "ɡəjaː"
+        "past, feminine": "ɡəiː"
+        "past, masculine plural": "ɡəeː"
+        "polite request": "dʒaːɪeː"
     - lemma: "होना"
       key: honaa
-      reading: "hona"
+      reading: "hōnā"
+      ipa: "ɦoːnaː"
       gloss: "to be, to happen"
       forms:
         "past, masculine": "हुआ"
@@ -94,6 +125,10 @@ pattern:
         "past, masculine plural": "हुए"
         "polite request": null
       readings:
-        "past, masculine": "hua"
-        "past, feminine": "hui"
-        "past, masculine plural": "hue"
+        "past, masculine": "huā"
+        "past, feminine": "huī"
+        "past, masculine plural": "huē"
+      ipas:
+        "past, masculine": "ɦʊaː"
+        "past, feminine": "ɦʊiː"
+        "past, masculine plural": "ɦʊeː"
