@@ -9,7 +9,7 @@ Today's due card showed four skill tiles, recognition, production, listening
 and grammar, each with its count of today's cards. The tiles started
 nothing. Only Start review did, for everything due. The owner asked: "let
 the user review stuff by skills in the homepage. e.g. want to revise all
-spoken skills" (`docs/plans/review-by-skill.md`).
+spoken skills".
 
 Asked how, they decided:
 
