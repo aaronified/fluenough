@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/routes.dart';
+import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
@@ -159,7 +160,8 @@ class _AllDone extends StatelessWidget {
   }
 }
 
-/// The four skill tiles, two by two, or in one column at large text sizes.
+/// The skill tiles, two by two, or in one column at large text sizes. An
+/// odd last tile keeps its half of the row.
 class _SkillGrid extends StatelessWidget {
   const _SkillGrid({required this.numbers});
 
@@ -168,10 +170,12 @@ class _SkillGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tiles = <Widget>[
-      for (final skill in todaySkills)
+      for (final MapEntry(key: skill, value: count) in numbers.bySkill.entries)
         _SkillTile(
           skill: skill,
-          count: numbers.bySkill[skill] ?? 0,
+          count: count,
+          due: numbers.dueIn[skill] ?? 0,
+          revisable: numbers.revisable[skill] ?? 0,
           noVoice: skill.needsVoice && numbers.noVoice,
         ),
     ];
@@ -197,13 +201,20 @@ class _SkillGrid extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 8,
       children: <Widget>[
-        for (var i = 0; i < tiles.length; i += 2) pair(tiles[i], tiles[i + 1]),
+        for (var i = 0; i < tiles.length; i += 2)
+          pair(
+            tiles[i],
+            i + 1 < tiles.length ? tiles[i + 1] : const SizedBox.shrink(),
+          ),
       ],
     );
   }
 }
 
 /// One skill: its pill, its name, and how many of today's cards drill it.
+/// Tapped, it reviews what is due in the skill, in every language learned.
+/// With nothing due, it asks whether to revise every word known in the
+/// skill (ADR-0030).
 ///
 /// Three other looks, kept apart as ADR-0008 asks:
 /// - **nothing due:** dimmed, as the design draws it;
@@ -215,12 +226,48 @@ class _SkillTile extends StatelessWidget {
   const _SkillTile({
     required this.skill,
     required this.count,
+    required this.due,
+    required this.revisable,
     required this.noVoice,
   });
 
   final Skill skill;
+
+  /// Today's cards in this skill, as the tile shows.
   final int count;
+
+  /// The cards a review of this skill alone holds, which tapping starts.
+  final int due;
+
+  /// With nothing [due], how many words the skill can revise; with none,
+  /// the tile starts nothing.
+  final int revisable;
   final bool noVoice;
+
+  Future<void> _revise(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
+    final label = skill.label(l10n);
+    final revise = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.todaySkillReviseTitle(label)),
+        content: Text(l10n.todaySkillReviseBody(revisable)),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.todaySkillNotNow),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.todaySkillRevise),
+          ),
+        ],
+      ),
+    );
+    if (revise == true && context.mounted) {
+      await AppNavigator.startDrill(context, DrillRequest.reviseSkill(skill));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -291,11 +338,17 @@ class _SkillTile extends StatelessWidget {
 
     final radius = BorderRadius.circular(AppRadii.small);
     void setUp() => AppNavigator.openVoices(context);
+    final VoidCallback? start = due > 0
+        ? () => AppNavigator.startDrill(context, DrillRequest(skill: skill))
+        : revisable > 0
+        ? () => _revise(context)
+        : null;
+    final onTap = incoming ? null : (noVoice ? setUp : start);
     final tile = Material(
       color: scheme.surfaceContainerLowest,
       borderRadius: radius,
       clipBehavior: Clip.antiAlias,
-      child: noVoice && !incoming ? InkWell(onTap: setUp, child: body) : body,
+      child: onTap == null ? body : InkWell(onTap: onTap, child: body),
     );
 
     if (incoming) {
@@ -319,7 +372,14 @@ class _SkillTile extends StatelessWidget {
     }
     return Semantics(
       container: true,
+      button: start != null,
       label: l10n.todaySkillSemantics(label, count),
+      onTap: start,
+      onTapHint: start == null
+          ? null
+          : due > 0
+          ? l10n.todaySkillReviewHint
+          : l10n.todaySkillRevise,
       excludeSemantics: true,
       child: Opacity(opacity: count == 0 ? _emptyTileOpacity : 1, child: tile),
     );

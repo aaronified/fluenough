@@ -120,7 +120,7 @@ class _TodayContent extends StatelessWidget {
         StreakCard(numbers: numbers),
         if (numbers.hasDecks) ...<Widget>[
           const SizedBox(height: 24),
-          QuickRevision(known: state.revisableCount),
+          const QuickRevision(),
         ],
         if (state.features.isIncoming(Feature.dailyFacts)) ...<Widget>[
           const SizedBox(height: 16),
