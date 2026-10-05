@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- While you type an answer in a language's own script, the "No keyboard? Try HeliBoard." line hides too, giving the card more room; it comes back when the keyboard closes (#185).
+
 ## [0.3.2] - 2026-10-04
 
 ### Added
