@@ -278,14 +278,15 @@ class _TypedDrillState extends State<TypedDrill> {
         : l10n.drillTypeIn(language.name);
   }
 
-  /// A reading from another card in the deck, to show what typing in Latin
-  /// letters looks like without giving this card's answer away.
+  /// A reading from another card in the deck, as it is typed, to show what
+  /// typing in Latin letters looks like without giving this card's answer
+  /// away.
   String _exampleReading() {
     final current = _session.item.card;
     for (final card in _session.deck.cards) {
       final reading = card.reading;
       if (card.id != current.id && reading != null && reading != '') {
-        return reading;
+        return _session.asTyped(reading);
       }
     }
     return '';

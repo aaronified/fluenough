@@ -82,7 +82,8 @@ cards:
 | `id` | yes | The language learned and a number, `es-0001`: unique in the language, across every deck and course. **Never reuse or renumber** — review history is keyed on it. |
 | `target` | yes | The text in the language being learned. |
 | `native` | yes | The meaning, in the learner's language. |
-| `reading` | no | Romanisation or phonetic reading. Required in practice for non-Latin scripts. |
+| `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, ISO 15919 letters as the word is said. Required in practice for non-Latin scripts. |
+| `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `alt_native` | no | Additional answers accepted in recognition drills. |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `phrase`, `particle`, `other`. |
@@ -90,7 +91,7 @@ cards:
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
 | `notes` | no | Usage note shown after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
-| `examples` | no | List of `{target, native}` sentence pairs. |
+| `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading` and `ipa`. |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 
 ### A note on `id`
@@ -175,7 +176,7 @@ pattern:
 | `slot_name` | yes | What the slots are: `person`, `case`, `tense`, `number`… |
 | `slots` | yes | Ordered list of slot labels. |
 | `prompt` | yes | Template. `{lemma}`, `{gloss}` and `{slot}` are substituted. |
-| `entries` | yes | List of `{lemma, gloss, forms}`, each with an optional `key`. |
+| `entries` | yes | List of `{lemma, gloss, forms}`, each with an optional `key`, and in a script that needs them `reading` and `readings`. Each may give `ipa`, the lemma in the IPA, and `ipas`, the form shown in each slot in the IPA, one per slot that has a form. |
 | `notes` | no | Shown after answering. |
 
 `forms` must supply a key for every slot. A cell with no valid form (a
@@ -295,6 +296,7 @@ and no `theme` of its own: each passage names the theme it follows.
 |---|---|---|
 | `text` | yes | The sentence in the language learned, exactly as written. Quote it. |
 | `reading` | yes, in a script that needs one | Its romanisation, written as [`decks/README.md`](../decks/README.md) says. Shown when Show romanisation is on. |
+| `ipa` | no | How it is said, in the IPA, without punctuation or slashes. |
 
 **A passage's text is kept letter for letter.** Passages may quote a book,
 so nothing in the app or the validator trims, normalises or corrects
@@ -328,6 +330,7 @@ passage's text shows.
 | `word` | yes | The word exactly as the passage writes it. It must occur in the passage's sentences, character for character. |
 | `modern` | yes | Today's standard colloquial form. |
 | `reading` | yes, in a script that needs one | `modern` in the Latin alphabet, as in a sentence's `reading`. |
+| `ipa` | no | `modern` in the IPA. |
 | `meaning` | yes | What it means, keyed by language, `en` required. |
 | `note` | no | More about it, keyed by language, `en` required: "older colloquial; the apostrophe marks a dropped ই". |
 
@@ -469,45 +472,57 @@ deck can be removed from its page; what was learned from it stays.
 
 ## Romanisation
 
-Every `reading` in a language with its own script is written the way people
-type the language in a chat, in one scheme per language, so that a learner
-sees the same spelling everywhere and can answer in it (#47).
+Every `reading` in a language with its own script is written in one scheme
+per language, so that a learner sees the same spelling everywhere (#47). For
+the Indic languages the scheme is **ISO 15919's letters, spelled as the word
+is said** ([ADR-0025](adr/0025-iso-15919-and-ipa.md)); the
+[README](../README.md#how-words-are-written-in-latin-letters-iso-15919) has
+the table.
 
-**The scheme: popular and unmarked.**
-
-- Lowercase ASCII letters only, with spaces and the sentence's own
-  punctuation. No diacritics, no capitals, and no doubled vowels for length:
-  *thora*, *kijiye*, not *thoRaa*, *kiijiye* or *thoṛā*.
+- Lowercase ISO 15919 letters, with spaces and the sentence's own
+  punctuation: ā ī ū ē ō for long vowels, ṭ ḍ ṇ ḷ for the retroflex
+  consonants, ś ṣ ṅ ñ, ṛ for ड़, ṁ for an anusvara that nasalises, m̐ for a
+  nasal vowel. Composed letters (NFC), no capitals.
 - Spelled as the word is said, not letter for letter: Hindi, Marathi and
-  Gujarati drop the inherent vowel where speakers do (*kitne*, *samajh*);
-  Bengali and Assamese write it as the *o* it is said as (*ami*, *bhalo*).
-- Consonants as people type them: *ch* for च, *chh* for छ, *sh* for श and ष,
-  *n* for ण, ञ and ङ, *r* for ड़ and *rh* for ढ़, *z* for ज़, *f* for फ़;
-  aspirates with *h* (*kh*, *gh*, *th*, *dh*, *ph*, *bh*); retroflex and
-  dental alike (*t*, *d*).
-- A letter card for ङ or ञ on its own reads *nga* or *nya*, so that it
-  differs from न; words write *n*. The same holds for those letters in the
-  other Indic scripts.
+  Gujarati leave out the inherent vowel where speakers do (*kitnā*,
+  *samajh*); Bengali and Assamese write it as the *ô* or *o* it is said as
+  (*kôthā*). A letter said as another is written as that one: Bengali ঈ is
+  *i*, Assamese স is *x*, an anusvara is the nasal said (*aṇḍā*).
+- Length is marked where the language says it long: Hindi, Telugu and
+  Kannada mark ī and ū; Bengali, Assamese, Marathi and Gujarati, which say
+  the two alike, do not.
+- A letter card for ङ or ञ on its own reads *ṅa* or *ña*.
 - A grammar row whose lemma is English, such as a demonstratives table's
   "this, that", has no `reading`; its forms do.
-- A language's own common conventions win, such as Assamese *x* for স, শ
-  and ষ (*Axom*). Its romanisation file says them in its `scheme`.
+- Each language's romanisation file says its own conventions in its
+  `scheme`. `tools/transcribe.py <code> "<word>" <as typed>` writes a
+  reading and IPA, taking the word as people type it as the hint to what is
+  said.
+
+A typed answer never needs the marks: they are folded away, and the file's
+`typed` list spells each reading as people type it before an answer is
+compared with it, so *palu*, *paalu* and *pālu* are all right for పాలు.
 
 A grammar row gives its lemma's `reading` and a `readings` map beside
 `forms`, a reading per slot that has a form, or a list of them for a cell
-that lists several forms:
+that lists several forms, and an `ipas` map, the form shown in each slot in
+the IPA:
 
 ```yaml
     - lemma: "जाना"
       key: jaanaa
-      reading: "jana"
+      reading: "jānā"
+      ipa: "dʒaːnaː"
       gloss: "to go"
       forms:
         "मैं (m)": "जाता हूँ"
         "तुम (m)": "जाते हो"
       readings:
-        "मैं (m)": "jata hun"
-        "तुम (m)": "jate ho"
+        "मैं (m)": "jātā hūm̐"
+        "तुम (m)": "jātē hō"
+      ipas:
+        "मैं (m)": "dʒaːt̪aː ɦũː"
+        "तुम (m)": "dʒaːt̪eː ɦoː"
 ```
 
 ### Romanisation files
@@ -520,7 +535,13 @@ schema: 1
 kind: romanisation
 id: hi-romanisation
 language: hi
-scheme: "Popular: lowercase, no length or retroflex marks, spelled as said."
+scheme: "ISO 15919 letters, spelled as said: …"
+standard: "ISO 15919"
+typed:
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["m̐", "n"]
 equivalents:
   - ["i", "ee", "ii"]
   - ["u", "oo", "uu"]
@@ -531,12 +552,16 @@ equivalents:
 |---|---|---|
 | `id` | yes | `<code>-romanisation`, and the filename stem. |
 | `language` | yes | The language's code. |
-| `scheme` | yes | How the language is romanised, in a line, with its own conventions. |
+| `scheme` | yes | How the language is romanised, in a paragraph, with its own conventions. |
+| `standard` | no | `"ISO 15919"` when the readings use its letters. Without it, readings are lowercase ASCII. |
+| `typed` | no, and only with `standard` | Pairs of the standard's letters and how they are typed: `["ś", "sh"]`. Each reading is spelled so, read from the left, the longest letters first, before an answer is compared with it. An empty second item means the letters are not typed, as Assamese chat leaves out m̐. |
 | `equivalents` | yes | Groups of two or more lowercase spellings. The first of each group is the one the decks use. A spelling is in one group only. |
 
 Once a language has the file, the validator checks every reading in that
 language's files, cards, refs, grammar rows, passages, glossaries, sounds and
-script guides, is in the scheme: lowercase ASCII, no diacritics or capitals.
+script guides, is in the scheme: lowercase, no capitals, and no diacritics
+but ISO 15919's letters where the file names that standard. It checks every
+`ipa` anywhere is broad IPA without slashes.
 
 ## Sounds files
 
@@ -619,6 +644,7 @@ Each feature:
 | `name` | yes | The feature in plain English. |
 | `term` | no | Its name in the language: `"মাত্রা"`. |
 | `reading` | no | The term in the Latin alphabet, shown under it when Show romanisation is on. Only with a `term`. |
+| `ipa` | no | The term in the IPA. Only with a `term`. |
 | `example` | yes | One letter or short word that shows it, drawn large. |
 | `text` | yes | What to look for, for a beginner from English. |
 | `letters` | no | More letters that share it, each quoted. |

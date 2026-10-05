@@ -6,13 +6,39 @@ schema: 1
 kind: romanisation
 id: hi-romanisation
 language: hi
-scheme: "Popular, as Hindi is typed in a chat: lowercase ASCII with no length or retroflex marks (thora, kijiye), the inherent a left out where it is not said (kitne, samajh), ch for च and chh for छ, sh for श and ष, n for a nasal vowel (hun, nahin), r and rh for ड़ and ढ़ (larka, parhna), z for ज़, f for फ़, v for व."
+scheme: "ISO 15919 letters, spelled as said (ADR-0025): ā ī ū ē ō for the long vowels, ai and au for ऐ and औ; ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth; c for च and ch for छ; ś for श and ष, said alike; ṛ and ṛh for ड़ and ढ़; q ḵ ġ z f for the letters with a nukta; ê and ô for ऍ and ऑ. The inherent a is left out where it is not said (kitnā, samajh). The anusvara is written as the nasal said (hindī, aṇḍā), or ṁ before y, r, l, v, a sibilant or h (saṁsār), and a nasal vowel ends in m̐ (hām̐, haim̐). ज्ञ is gy and क्ष kś, as said. A typed answer needs none of the marks."
+standard: "ISO 15919"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṅkh", "nkh"]
+  - ["ṅgh", "ngh"]
+  - ["ṅk", "nk"]
+  - ["ṅg", "ng"]
+  - ["ṅ", "ng"]
+  - ["ñch", "nchh"]
+  - ["ñc", "nch"]
+  - ["ñjh", "njh"]
+  - ["ñj", "nj"]
+  - ["ñ", "ny"]
+  - ["cch", "chh"]
+  - ["cc", "chch"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["m̐", "n"]
+  - ["ṁ", "n"]
+  - ["ḵ", "kh"]
 equivalents:
   - ["a", "aa"]
-  - ["i", "ee", "ii"]
+  - ["i", "ee", "ii", "yi", "y"]
   - ["u", "oo", "uu"]
   - ["v", "w"]
   - ["z", "j"]
   - ["f", "ph"]
   - ["chh", "ch"]
   - ["k", "q"]
+  - ["e", "ye"]
+  - ["mp", "np"]
+  - ["mb", "nb"]

@@ -9,6 +9,7 @@ class ScriptFeature {
     required this.text,
     this.term,
     this.reading,
+    this.ipa,
     this.letters = const <String>[],
   });
 
@@ -25,6 +26,9 @@ class ScriptFeature {
   /// The [term] in the Latin alphabet, "matra", shown under it when Show
   /// romanisation is on, as on a card.
   final String? reading;
+
+  /// How the [term] is said, in the IPA, broad, without slashes (ADR-0025).
+  final String? ipa;
 
   /// One letter, or a short word, that shows it, drawn large.
   final String example;

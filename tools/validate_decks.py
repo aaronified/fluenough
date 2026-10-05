@@ -45,6 +45,8 @@ SCRIPTS = {
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
     "kana", "han", "hangul", "thai", "other",
 }
+# Scripts whose cards need no reading: they are read as written.
+NO_READING = {"latin", "cyrillic", "greek"}
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
 KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
          "reading"}
@@ -54,14 +56,31 @@ PATH_KEYS = {"schema", "kind", "id", "language", "native", "description", "units
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
-ROMANISATION_KEYS = {"schema", "kind", "id", "language", "scheme", "equivalents"}
-# A romanisation in a language's own scheme (#47): lowercase ASCII letters,
-# digits, spaces and plain punctuation. No diacritics, no capitals.
+ROMANISATION_KEYS = {"schema", "kind", "id", "language", "scheme", "standard",
+                     "typed", "equivalents"}
+# The letters ISO 15919 adds to a-z, as the decks use them (ADR-0025): the
+# long vowels, the retroflex and other dotted consonants, ô and ê, and the
+# candrabindu m̐. Composed where Unicode has a composed letter.
+ISO15919_LETTERS = "āīūēōṭḍṇṅñḷḻṟṛśṣṁḥôêẏḵġ"
+ISO15919_MARKS = "\u0310\u0325"  # m̐, r̥
+# A romanisation (#47): lowercase letters, digits, spaces and plain
+# punctuation. A language whose romanisation file names ISO 15919 also uses
+# its letters; any other uses ASCII only.
 ROMAN_RE = re.compile(r"[a-z0-9 '.,?!;:()/\-]+")
+ISO_ROMAN_RE = re.compile(
+    rf"[a-z0-9 '.,?!;:()/\-{ISO15919_LETTERS}{ISO15919_MARKS}]+")
 ROMAN_PIECE_RE = re.compile(r"[a-z]+(?:[ '-][a-z]+)*")
+ISO_PIECE_RE = re.compile(rf"[a-z{ISO15919_LETTERS}{ISO15919_MARKS}]+")
+# A broad IPA transcription, without its slashes (ADR-0025): IPA letters,
+# modifier letters, combining diacritics, length and stress marks, and
+# spaces between words.
+IPA_RE = re.compile(
+    "[a-zæçðøħŋœθβχãẽĩõũɐ-ʯʰ-˿\u0300-\u036f ."
+    "\u02e5-\u02e9\u203f|\u2016\u2191\u2193]+")
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
-FEATURE_KEYS = {"id", "name", "term", "reading", "example", "text", "letters"}
+FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
+                "letters"}
 CODE_RE = re.compile(r"[a-z]{2,3}")
 MODES = {"recognition", "production", "listening", "grammar", "speaking"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other"}
@@ -72,22 +91,23 @@ HEADER_KEYS = {
     "theme", "passages",
 }
 CARD_KEYS = {
-    "id", "target", "native", "reading", "alt_target", "alt_native",
+    "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
 # card's own.
 REF_KEYS = {
-    "ref", "native", "reading", "alt_native", "tags", "notes", "examples",
-    "modes",
+    "ref", "native", "reading", "ipa", "alt_native", "tags", "notes",
+    "examples", "modes",
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source"}
 PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary"}
-SENTENCE_KEYS = {"text", "reading"}
+SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
-GLOSS_KEYS = {"word", "modern", "reading", "meaning", "note"}
+GLOSS_KEYS = {"word", "modern", "reading", "ipa", "meaning", "note"}
+EXAMPLE_KEYS = {"target", "native", "reading", "ipa"}
 # A reading question has this many options, and a passage this many
 # questions (#98, ADR-0019).
 CHOICES = range(2, 5)
@@ -303,7 +323,7 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         if target != target.strip():
             r.error(where, "target has leading or trailing whitespace")
 
-    if script not in ("latin", "cyrillic", "greek") and not _is_str(card.get("reading")):
+    if script not in NO_READING and not _is_str(card.get("reading")):
         r.warn(where, f"no reading, but script is {script!r}; learners will need one")
 
     for key in ("alt_target", "alt_native", "tags"):
@@ -339,8 +359,13 @@ def _check_examples(r: Report, where: str, examples: object) -> None:
             r.error(where, f"examples[{j}] must be a mapping")
         elif not _is_str(ex.get("target")) or not _is_str(ex.get("native")):
             r.error(where, f"examples[{j}] needs both target and native")
-        elif set(ex) - {"target", "native"}:
+        elif set(ex) - EXAMPLE_KEYS:
             r.error(where, f"examples[{j}] has unknown fields")
+        else:
+            for key in ("reading", "ipa"):
+                if key in ex and not _is_str(ex.get(key)):
+                    r.error(where, f"examples[{j}].{key} must be a non-empty "
+                                   f"string or omitted")
 
 
 def check_ref(r: Report, idx: int, card: dict, seen: set[str],
@@ -424,7 +449,8 @@ def check_pattern(r: Report, pattern: object) -> None:
             r.error(ewhere, "must be a mapping")
             continue
         for unknown in sorted(set(entry) - {"lemma", "key", "gloss", "forms",
-                                            "reading", "readings"}):
+                                            "reading", "readings", "ipa",
+                                            "ipas"}):
             r.error(ewhere, f"unknown field {unknown!r}")
         if "reading" in entry and not _is_str(entry.get("reading")):
             r.error(ewhere, "reading, the lemma romanised, must be a non-empty "
@@ -479,6 +505,7 @@ def check_pattern(r: Report, pattern: object) -> None:
                 r.error(ewhere, f"forms[{slot!r}] must be a form, a list of forms, "
                                 f"or null")
         check_pattern_readings(r, ewhere, entry, forms, slots)
+        check_pattern_ipas(r, ewhere, entry, forms, slots)
 
 
 def check_pattern_readings(r: Report, where: str, entry: dict, forms: dict,
@@ -508,6 +535,57 @@ def check_pattern_readings(r: Report, where: str, entry: dict, forms: dict,
             r.error(where, f"readings[{slot!r}] must be a reading or a list")
 
 
+def check_pattern_ipas(r: Report, where: str, entry: dict, forms: dict,
+                       slots: list) -> None:
+    """An entry's `ipas`, the form shown in each slot in the IPA
+    (ADR-0025): one for every slot with a form, and none for a slot
+    without."""
+    ipas = entry.get("ipas")
+    if ipas is None:
+        return
+    if not isinstance(ipas, dict):
+        r.error(where, "ipas must be a mapping of slot to IPA")
+        return
+    for extra in sorted(set(ipas) - set(slots)):
+        r.error(where, f"ipas has key {extra!r} which is not a slot")
+    for slot in slots:
+        form, ipa = forms.get(slot), ipas.get(slot)
+        if form is None:
+            if ipa is not None:
+                r.error(where, f"ipas[{slot!r}] given for a slot with no form")
+        elif ipa is None:
+            r.error(where, f"ipas[{slot!r}] is missing; every form has one")
+        elif not _is_str(ipa):
+            r.error(where, f"ipas[{slot!r}] must be text")
+
+
+def _ipas_in(node: object):
+    """Every IPA transcription in a file: the values of `ipa` and `ipas`
+    keys, wherever they are."""
+    if isinstance(node, dict):
+        for key, value in node.items():
+            if key == "ipa" and isinstance(value, str):
+                yield value
+            elif key == "ipas" and isinstance(value, dict):
+                yield from (v for v in value.values() if isinstance(v, str))
+            else:
+                yield from _ipas_in(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from _ipas_in(item)
+
+
+def check_ipa(r: Report, raw: dict) -> None:
+    """Every IPA transcription is broad IPA, without the slashes the app
+    adds (ADR-0025)."""
+    for ipa in sorted(set(_ipas_in(raw))):
+        if ipa != unicodedata.normalize("NFC", ipa):
+            r.error("ipa", f"{ipa!r} is not NFC-normalised")
+        elif ipa != ipa.strip() or not IPA_RE.fullmatch(ipa):
+            r.error("ipa", f"{ipa!r} is not a broad IPA transcription: IPA "
+                           f"letters and marks only, without / / or [ ]")
+
+
 def _readings_in(node: object):
     """Every romanisation in a file: the values of `reading` and `readings`
     keys, wherever they are."""
@@ -528,17 +606,33 @@ def _readings_in(node: object):
             yield from _readings_in(item)
 
 
+def _uses_iso15919(file: Path) -> bool:
+    try:
+        raw = yaml.load(file.read_text(encoding="utf-8"), Loader=DeckLoader)
+    except (OSError, yaml.YAMLError):
+        return False
+    return isinstance(raw, dict) and raw.get("standard") == "ISO 15919"
+
+
 def check_romanised(r: Report, raw: dict, path: Path) -> None:
     """Once a language has its romanisation file (#47), every reading in its
-    files is in that scheme: lowercase ASCII, no diacritics or capitals."""
+    files is in that scheme: lowercase, no capitals, and no diacritics but
+    ISO 15919's where the file names that standard (ADR-0025)."""
     lang = raw.get("language")
     code = lang.get("code") if isinstance(lang, dict) else lang
-    if not _is_str(code) or not (path.parent / f"{code}-romanisation.yaml").exists():
+    file = path.parent / f"{code}-romanisation.yaml" if _is_str(code) else None
+    if file is None or not file.exists():
         return
+    iso = _uses_iso15919(file)
+    pattern = ISO_ROMAN_RE if iso else ROMAN_RE
     for reading in sorted(set(_readings_in(raw))):
-        if not ROMAN_RE.fullmatch(reading):
+        if reading != unicodedata.normalize("NFC", reading):
+            r.error("reading", f"{reading!r} is not NFC-normalised")
+        elif not pattern.fullmatch(reading):
+            what = ("lowercase ISO 15919 letters, no capitals" if iso
+                    else "lowercase ASCII, no diacritics or capitals")
             r.error("reading", f"{reading!r} is not in the {code} romanisation: "
-                               f"lowercase ASCII, no diacritics or capitals")
+                               f"{what}")
 
 
 def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
@@ -557,6 +651,30 @@ def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
                       f"{lang}-romanisation")
     if not _is_str(raw.get("scheme")):
         r.error("scheme", "is required: how the language is romanised, in a line")
+    standard = raw.get("standard")
+    if standard is not None and standard != "ISO 15919":
+        r.error("standard", f"the one standard known is 'ISO 15919', got "
+                            f"{standard!r}")
+    typed = raw.get("typed")
+    if typed is not None:
+        if standard is None:
+            r.error("typed", "is for a reading in a standard's letters; name "
+                             "the standard")
+        elif not isinstance(typed, list):
+            r.error("typed", "must be a list of [letters, typed] pairs")
+        else:
+            for i, pair in enumerate(typed):
+                if (not isinstance(pair, list) or len(pair) != 2
+                        or not _is_str(pair[0]) or not isinstance(pair[1], str)):
+                    r.error(f"typed[{i}]", "must be a pair: the letters in a "
+                                           "reading, and how they are typed")
+                elif not ISO_PIECE_RE.fullmatch(pair[0]):
+                    r.error(f"typed[{i}]", f"{pair[0]!r} must be ISO 15919 "
+                                           f"letters")
+                elif pair[1] and not ROMAN_PIECE_RE.fullmatch(pair[1]):
+                    r.error(f"typed[{i}]", f"{pair[1]!r} must be lowercase "
+                                           f"ASCII letters, or empty for "
+                                           f"letters not typed")
     groups = raw.get("equivalents")
     if not isinstance(groups, list):
         r.error("equivalents", "must be a list of groups of spellings")
@@ -684,6 +802,7 @@ def validate(path: Path) -> Report:
         check_romanisation_file(r, raw, path)
         return r
     check_romanised(r, raw, path)
+    check_ipa(r, raw)
     if raw.get("kind") == "sounds":
         check_sounds_file(r, raw, path)
         return r
@@ -905,7 +1024,7 @@ def check_passages(r: Report, passages: object, script: str, lang: str
     if not isinstance(passages, list) or not passages:
         r.error("passages", "must be a non-empty list")
         return found
-    needs_reading = script not in ("latin", "cyrillic", "greek")
+    needs_reading = script not in NO_READING
     # A question is a card: its id is a card id of the language, written
     # once in it (rule 1, ADR-0018). A passage's id names the language too,
     # and passage and question ids are one namespace.

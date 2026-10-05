@@ -13,10 +13,15 @@ class RomanisedSpelling {
     : _canonical = <String, String>{
         for (final group in romanisation?.equivalents ?? const <List<String>>[])
           for (final spelling in group) spelling: group.first,
-      } {
+      },
+      _typed = <(String, String)>[...?romanisation?.typed]
+        ..sort((a, b) => b.$1.length.compareTo(a.$1.length)) {
     _spellings = _canonical.keys.toList()
       ..sort((a, b) => b.length.compareTo(a.length));
   }
+
+  /// How a reading's letters are typed, longest first (ADR-0025).
+  final List<(String, String)> _typed;
 
   /// Each spelling a learner may type, and the decks' own for its sound.
   final Map<String, String> _canonical;
@@ -49,6 +54,31 @@ class RomanisedSpelling {
     return out.toString();
   }
 
+  /// [reading], in its standard's letters, as it is typed: `cāy` as
+  /// `chāy`. Read from the left, the longest letters first, each once.
+  String typedForm(String reading) {
+    if (_typed.isEmpty) return reading;
+    final out = StringBuffer();
+    var i = 0;
+    outer:
+    while (i < reading.length) {
+      for (final (letters, typed) in _typed) {
+        if (reading.startsWith(letters, i)) {
+          out.write(typed);
+          i += letters.length;
+          continue outer;
+        }
+      }
+      out.write(reading[i]);
+      i++;
+    }
+    return out.toString();
+  }
+
+  /// [reading] as a learner would type it, without the standard's marks:
+  /// `cāy` as `chay`. For a hint, never for grading.
+  String asTyped(String reading) => foldDiacritics(typedForm(reading));
+
   /// [given] against [readings], the canonical one first. Exact, a near
   /// miss to judge, or wrong, as [AnswerGrader] says of their [key]s;
   /// `matched` is the reading itself.
@@ -56,7 +86,9 @@ class RomanisedSpelling {
     if (readings.isEmpty) {
       return const GradedAnswer(AnswerOutcome.wrong, matched: null);
     }
-    final keys = <String>[for (final reading in readings) key(reading)];
+    final keys = <String>[
+      for (final reading in readings) key(typedForm(reading)),
+    ];
     final graded = const AnswerGrader().grade(
       key(given),
       keys.first,

@@ -12,7 +12,7 @@ pattern:
   slot_name: "near or far"
   slots: ["near: આ, અ-", "far: એ, ત-"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Words for near things start with આ- or અ-; words for far ones with એ- or ત-, and most far words also have a form in તે-: એટલું or તેટલું, એવું or તેવું. આ and એ stand before a noun and never change: આ ઘર, this house; એ છોકરી, that girl. For something far off you can point at, there is also પેલું (pelun), 'that one over there', which agrees like an adjective."
+  notes: "Words for near things start with આ- or અ-; words for far ones with એ- or ત-, and most far words also have a form in તે-: એટલું or તેટલું, એવું or તેવું. આ and એ stand before a noun and never change: આ ઘર, this house; એ છોકરી, that girl. For something far off you can point at, there is also પેલું (pelum̐), 'that one over there', which agrees like an adjective."
   entries:
     - lemma: "this, that (before a noun)"
       key: adj
@@ -21,8 +21,11 @@ pattern:
         "near: આ, અ-": "આ"
         "far: એ, ત-": ["એ", "તે"]
       readings:
-        "near: આ, અ-": "a"
+        "near: આ, અ-": "ā"
         "far: એ, ત-": ["e", "te"]
+      ipas:
+        "near: આ, અ-": "a"
+        "far: એ, ત-": "e"
     - lemma: "here, there"
       key: place
       gloss: "a place"
@@ -30,8 +33,11 @@ pattern:
         "near: આ, અ-": "અહીં"
         "far: એ, ત-": "ત્યાં"
       readings:
-        "near: આ, અ-": "ahin"
-        "far: એ, ત-": "tyan"
+        "near: આ, અ-": "ahim̐"
+        "far: એ, ત-": "tyām̐"
+      ipas:
+        "near: આ, અ-": "əɦĩ"
+        "far: એ, ત-": "t̪jã"
     - lemma: "from here, from there"
       key: from-place
       gloss: "from a place"
@@ -40,7 +46,10 @@ pattern:
         "far: એ, ત-": "ત્યાંથી"
       readings:
         "near: આ, અ-": "ahinthi"
-        "far: એ, ત-": "tyanthi"
+        "far: એ, ત-": "tyānthi"
+      ipas:
+        "near: આ, અ-": "əɦint̪ʰi"
+        "far: એ, ત-": "t̪jant̪ʰi"
     - lemma: "now, then"
       key: time
       gloss: "a time"
@@ -48,8 +57,11 @@ pattern:
         "near: આ, અ-": "અત્યારે"
         "far: એ, ત-": "ત્યારે"
       readings:
-        "near: આ, અ-": "atyare"
-        "far: એ, ત-": "tyare"
+        "near: આ, અ-": "atyāre"
+        "far: એ, ત-": "tyāre"
+      ipas:
+        "near: આ, અ-": "ət̪jare"
+        "far: એ, ત-": "t̪jare"
     - lemma: "this much, that much"
       key: amount
       gloss: "an amount"
@@ -57,8 +69,11 @@ pattern:
         "near: આ, અ-": "આટલું"
         "far: એ, ત-": ["એટલું", "તેટલું"]
       readings:
-        "near: આ, અ-": "atlun"
-        "far: એ, ત-": ["etlun", "tetlun"]
+        "near: આ, અ-": "āṭlum̐"
+        "far: એ, ત-": ["eṭlum̐", "teṭlum̐"]
+      ipas:
+        "near: આ, અ-": "aʈlũ"
+        "far: એ, ત-": "eʈlũ"
     - lemma: "like this, like that"
       key: kind
       gloss: "a kind"
@@ -66,8 +81,11 @@ pattern:
         "near: આ, અ-": "આવું"
         "far: એ, ત-": ["એવું", "તેવું"]
       readings:
-        "near: આ, અ-": "avun"
-        "far: એ, ત-": ["evun", "tevun"]
+        "near: આ, અ-": "āvum̐"
+        "far: એ, ત-": ["evum̐", "tevum̐"]
+      ipas:
+        "near: આ, અ-": "aʋũ"
+        "far: એ, ત-": "eʋũ"
     - lemma: "this way, that way"
       key: manner
       gloss: "a way of doing"
@@ -75,8 +93,11 @@ pattern:
         "near: આ, અ-": "આમ"
         "far: એ, ત-": ["એમ", "તેમ"]
       readings:
-        "near: આ, અ-": "am"
+        "near: આ, અ-": "ām"
         "far: એ, ત-": ["em", "tem"]
+      ipas:
+        "near: આ, અ-": "am"
+        "far: એ, ત-": "em"
     - lemma: "to this one, to that one"
       key: to-one
       gloss: "with -ને"
@@ -84,8 +105,11 @@ pattern:
         "near: આ, અ-": "આને"
         "far: એ, ત-": ["એને", "તેને"]
       readings:
-        "near: આ, અ-": "ane"
+        "near: આ, અ-": "āne"
         "far: એ, ત-": ["ene", "tene"]
+      ipas:
+        "near: આ, અ-": "ane"
+        "far: એ, ત-": "ene"
     - lemma: "of this one, of that one"
       key: of-one
       gloss: "with -નું, before a neuter noun"
@@ -93,8 +117,11 @@ pattern:
         "near: આ, અ-": "આનું"
         "far: એ, ત-": ["એનું", "તેનું"]
       readings:
-        "near: આ, અ-": "anun"
-        "far: એ, ત-": ["enun", "tenun"]
+        "near: આ, અ-": "ānum̐"
+        "far: એ, ત-": ["enum̐", "tenum̐"]
+      ipas:
+        "near: આ, અ-": "anũ"
+        "far: એ, ત-": "enũ"
     - lemma: "in this, in that"
       key: in-one
       gloss: "with -માં"
@@ -102,5 +129,8 @@ pattern:
         "near: આ, અ-": "આમાં"
         "far: એ, ત-": ["એમાં", "તેમાં"]
       readings:
-        "near: આ, અ-": "aman"
-        "far: એ, ત-": ["eman", "teman"]
+        "near: આ, અ-": "āmām̐"
+        "far: એ, ત-": ["emām̐", "temām̐"]
+      ipas:
+        "near: આ, અ-": "amã"
+        "far: એ, ત-": "emã"
