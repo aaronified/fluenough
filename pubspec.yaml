@@ -38,6 +38,11 @@ dependencies:
   record: ^7.1.1
   audioplayers: ^6.8.1
 
+  # Reads the phone's media volume, so that a listening card can ask for it
+  # to be raised rather than play into silence. Agreed with the maintainer
+  # (ADR-0026).
+  flutter_volume_controller: ^2.0.2
+
   # Opens links in the browser: the issues page, HeliBoard, and the release
   # page when an update cannot install. Agreed with the maintainer for the
   # update check (ADR-0017).

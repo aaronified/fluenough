@@ -2,7 +2,7 @@ schema: 1
 id: hi-en-script-conjuncts
 name: "Hindi conjuncts"
 kind: vocab
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Two consonants with no vowel between them join: the first is usually written as a half letter, most without their upright stroke. Four join in their own shapes."
@@ -11,90 +11,107 @@ cards:
   - id: hi-0083
     target: "क्ष"
     native: "k + curled-back sh (ksh)"
-    reading: "ksha"
-    notes: "Its own shape, nothing like its parts: क्षमा (kshama, forgiveness)."
+    reading: "kśa"
+    ipa: "kʃə"
+    notes: "Its own shape, nothing like its parts: क्षमा (kśamā, forgiveness)."
   - id: hi-0084
     target: "त्र"
     native: "t + r (tr)"
     reading: "tra"
+    ipa: "t̪rə"
     notes: "Its own shape, त joined with र: मित्र (mitra, friend)."
   - id: hi-0085
     target: "ज्ञ"
     native: "j + ny, said gy"
     reading: "gya"
-    notes: "Its own shape, said 'g' with a 'y' glide in Hindi: ज्ञान (gyan, knowledge)."
+    ipa: "ɡjə"
+    notes: "Its own shape, said 'g' with a 'y' glide in Hindi: ज्ञान (gyān, knowledge)."
   - id: hi-0086
     target: "श्र"
     native: "sh + r (shr)"
-    reading: "shra"
-    notes: "Its own shape: श्रम (shram, labour)."
+    reading: "śra"
+    ipa: "ʃrə"
+    notes: "Its own shape: श्रम (śram, labour)."
   - id: hi-0087
     target: "प्र"
     native: "p + r (the r stroke)"
     reading: "pra"
-    notes: "A र after a consonant is a small slanting stroke at its foot: प्रेम (prem, love)."
+    ipa: "prə"
+    notes: "A र after a consonant is a small slanting stroke at its foot: प्रेम (prēm, love)."
   - id: hi-0088
     target: "ट्र"
     native: "curled-back t + r"
-    reading: "tra"
-    notes: "After ट or ड, र is written as a small caret below: ट्रेन (tren, train)."
+    reading: "ṭra"
+    ipa: "ʈrə"
+    notes: "After ट or ड, र is written as a small caret below: ट्रेन (ṭrēn, train)."
   - id: hi-0089
     target: "र्म"
     native: "r + m (the reph)"
     reading: "rma"
+    ipa: "rmə"
     notes: "A र before another consonant is a small hook above that consonant, the reph: धर्म (dharm, religion)."
   - id: hi-0090
     target: "क्क"
     native: "k + k (half क)"
     reading: "kka"
+    ipa: "kkə"
     modes: [recognition, production]
-    notes: "The first क is written as a half letter, without its hook on the right, and joins the second: पक्का (pakka, firm; certain). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
+    notes: "The first क is written as a half letter, without its hook on the right, and joins the second: पक्का (pakkā, firm; certain). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-0091
     target: "च्च"
     native: "ch + ch (half च)"
-    reading: "chcha"
+    reading: "cca"
+    ipa: "tʃtʃə"
     modes: [recognition, production]
-    notes: "Half च joined to च: बच्चा (bachcha, child). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
+    notes: "Half च joined to च: बच्चा (baccā, child). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-0092
     target: "त्त"
     native: "t + t (half त)"
     reading: "tta"
+    ipa: "t̪t̪ə"
     modes: [recognition, production]
-    notes: "Half त joined to त: पत्ता (patta, leaf). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
+    notes: "Half त joined to त: पत्ता (pattā, leaf). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-0093
     target: "स्त"
     native: "s + t (half स)"
     reading: "sta"
-    notes: "Half स joined to त: नमस्ते (namaste, hello)."
+    ipa: "st̪ə"
+    notes: "Half स joined to त: नमस्ते (namastē, hello)."
   - id: hi-0094
     target: "स्क"
     native: "s + k (half स)"
     reading: "ska"
-    notes: "Half स joined to क: स्कूल (skul, school)."
+    ipa: "skə"
+    notes: "Half स joined to क: स्कूल (skūl, school)."
   - id: hi-0095
     target: "न्द"
     native: "n + d (half न)"
     reading: "nda"
-    notes: "Half न joined to द: हिन्दी (hindi, Hindi). Often written with the anusvar instead: हिंदी."
+    ipa: "nd̪ə"
+    notes: "Half न joined to द: हिन्दी (hindī, Hindi). Often written with the anusvar instead: हिंदी."
   - id: hi-0096
     target: "द्ध"
     native: "d + dh"
     reading: "ddha"
+    ipa: "d̪d̪ʱə"
     modes: [recognition, production]
-    notes: "द and ध joined, one above the other: शुद्ध (shuddh, pure). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
+    notes: "द and ध joined, one above the other: शुद्ध (śuddh, pure). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-0097
     target: "ल्ल"
     native: "l + l (half ल)"
     reading: "lla"
+    ipa: "llə"
     modes: [recognition, production]
-    notes: "Half ल joined to ल: उल्लू (ullu, owl). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
+    notes: "Half ल joined to ल: उल्लू (ullū, owl). Said on its own, a doubled consonant sounds like the single one, so it is drilled by reading and writing only."
   - id: hi-0098
     target: "प्य"
     native: "p + y (half प)"
     reading: "pya"
-    notes: "Half प joined to य: प्यार (pyar, love)."
+    ipa: "pjə"
+    notes: "Half प joined to य: प्यार (pyār, love)."
   - id: hi-0099
     target: "क्य"
     native: "k + y (half क)"
     reading: "kya"
-    notes: "Half क joined to य: क्या (kya, what)."
+    ipa: "kjə"
+    notes: "Half क joined to य: क्या (kyā, what)."

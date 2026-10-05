@@ -2,7 +2,7 @@ schema: 1
 id: te-en-grammar-be
 name: "To be: ఉండు and కాదు"
 kind: grammar
-language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Is, was, isn't, will be: ఉండు for where and how things are, no verb at all for what someone is, and కాదు for what someone is not. Not yet checked by a Telugu speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "ఉండు, now or then"
       key: unnaanu
-      reading: "undu, now or then"
+      reading: "uṇḍu, now or then"
+      ipa: "uɳɖu"
       gloss: "to be (somewhere), now or then"
       forms:
         "నేను": "ఉన్నాను"
@@ -27,16 +28,25 @@ pattern:
         "ఆమె / అది": ["ఉంది", "ఉన్నది"]
         "వాళ్ళు": "ఉన్నారు"
       readings:
-        "నేను": "unnanu"
-        "మేము": ["unnamu", "unnam"]
-        "నువ్వు": "unnavu"
-        "మీరు": "unnaru"
-        "అతను": "unnadu"
+        "నేను": "unnānu"
+        "మేము": ["unnāmu", "unnām"]
+        "నువ్వు": "unnāvu"
+        "మీరు": "unnāru"
+        "అతను": "unnāḍu"
         "ఆమె / అది": ["undi", "unnadi"]
-        "వాళ్ళు": "unnaru"
+        "వాళ్ళు": "unnāru"
+      ipas:
+        "నేను": "unnaːnu"
+        "మేము": "unnaːmu"
+        "నువ్వు": "unnaːʋu"
+        "మీరు": "unnaːru"
+        "అతను": "unnaːɖu"
+        "ఆమె / అది": "und̪i"
+        "వాళ్ళు": "unnaːru"
     - lemma: "ఉండు, not"
       key: leenu
-      reading: "undu, not"
+      reading: "uṇḍu, not"
+      ipa: "uɳɖu"
       gloss: "not to be (somewhere)"
       forms:
         "నేను": "లేను"
@@ -47,16 +57,25 @@ pattern:
         "ఆమె / అది": "లేదు"
         "వాళ్ళు": "లేరు"
       readings:
-        "నేను": "lenu"
-        "మేము": ["lemu", "lem"]
-        "నువ్వు": "levu"
-        "మీరు": "leru"
-        "అతను": "ledu"
-        "ఆమె / అది": "ledu"
-        "వాళ్ళు": "leru"
+        "నేను": "lēnu"
+        "మేము": ["lēmu", "lēm"]
+        "నువ్వు": "lēvu"
+        "మీరు": "lēru"
+        "అతను": "lēḍu"
+        "ఆమె / అది": "lēdu"
+        "వాళ్ళు": "lēru"
+      ipas:
+        "నేను": "leːnu"
+        "మేము": "leːmu"
+        "నువ్వు": "leːʋu"
+        "మీరు": "leːru"
+        "అతను": "leːɖu"
+        "ఆమె / అది": "leːd̪u"
+        "వాళ్ళు": "leːru"
     - lemma: "ఉండు, usually or later"
       key: untaanu
-      reading: "undu, usually or later"
+      reading: "uṇḍu, usually or later"
+      ipa: "uɳɖu"
       gloss: "to be, as a habit or later"
       forms:
         "నేను": "ఉంటాను"
@@ -67,16 +86,25 @@ pattern:
         "ఆమె / అది": "ఉంటుంది"
         "వాళ్ళు": "ఉంటారు"
       readings:
-        "నేను": "untanu"
-        "మేము": ["untamu", "untam"]
-        "నువ్వు": "untavu"
-        "మీరు": "untaru"
-        "అతను": "untadu"
-        "ఆమె / అది": "untundi"
-        "వాళ్ళు": "untaru"
+        "నేను": "uṇṭānu"
+        "మేము": ["uṇṭāmu", "uṇṭām"]
+        "నువ్వు": "uṇṭāvu"
+        "మీరు": "uṇṭāru"
+        "అతను": "uṇṭāḍu"
+        "ఆమె / అది": "uṇṭundi"
+        "వాళ్ళు": "uṇṭāru"
+      ipas:
+        "నేను": "uɳʈaːnu"
+        "మేము": "uɳʈaːmu"
+        "నువ్వు": "uɳʈaːʋu"
+        "మీరు": "uɳʈaːru"
+        "అతను": "uɳʈaːɖu"
+        "ఆమె / అది": "uɳʈund̪i"
+        "వాళ్ళు": "uɳʈaːru"
     - lemma: "కాదు, not a …"
       key: kaadu
-      reading: "kadu, not a ..."
+      reading: "kādu, not a..."
+      ipa: "kaːd̪u"
       gloss: "not to be (something)"
       forms:
         "నేను": "కాను"
@@ -87,10 +115,18 @@ pattern:
         "ఆమె / అది": "కాదు"
         "వాళ్ళు": "కారు"
       readings:
-        "నేను": "kanu"
-        "మేము": ["kamu", "kam"]
-        "నువ్వు": "kavu"
-        "మీరు": "karu"
-        "అతను": "kadu"
-        "ఆమె / అది": "kadu"
-        "వాళ్ళు": "karu"
+        "నేను": "kānu"
+        "మేము": ["kāmu", "kām"]
+        "నువ్వు": "kāvu"
+        "మీరు": "kāru"
+        "అతను": "kāḍu"
+        "ఆమె / అది": "kādu"
+        "వాళ్ళు": "kāru"
+      ipas:
+        "నేను": "kaːnu"
+        "మేము": "kaːmu"
+        "నువ్వు": "kaːʋu"
+        "మీరు": "kaːru"
+        "అతను": "kaːɖu"
+        "ఆమె / అది": "kaːd̪u"
+        "వాళ్ళు": "kaːru"

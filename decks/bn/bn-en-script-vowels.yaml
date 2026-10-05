@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-script-vowels
 name: "Bengali vowels"
 kind: vocab
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The eleven vowels as they are written on their own: at the start of a word, or after another vowel. Not yet checked by a Bengali speaker: please report any mistake."
@@ -11,60 +11,71 @@ cards:
   - id: bn-0001
     target: "অ"
     native: "o, open (the vowel every consonant carries)"
-    reading: "o"
-    notes: "Said with the mouth open, like the 'o' of British 'hot' or the 'aw' of 'law'. Every consonant carries it unless a sign changes it: ক is 'ko'. On its own it starts a word: অনেক (onek, many)."
+    reading: "ô"
+    ipa: "ɔ"
+    notes: "Said with the mouth open, like the 'o' of British 'hot' or the 'aw' of 'law'. Every consonant carries it unless a sign changes it: ক is 'ko'. On its own it starts a word: অনেক (ônek, many)."
   - id: bn-0002
     target: "আ"
     native: "a (as in 'father')"
-    reading: "a"
-    notes: "Like the 'a' of 'father', never the 'a' of 'cat': আম (am, mango). Bengali has no long and short vowels, so hold it no longer than any other."
+    reading: "ā"
+    ipa: "a"
+    notes: "Like the 'a' of 'father', never the 'a' of 'cat': আম (ām, mango). Bengali has no long and short vowels, so hold it no longer than any other."
   - id: bn-0003
     target: "ই"
     native: "i, short form (hroshsho i)"
     reading: "i"
-    notes: "Like the 'ee' of 'see': ইলিশ (ilish, hilsa fish). Bengali writes i two ways, short and long, but today both sound the same: which one a word takes is spelling."
+    ipa: "i"
+    notes: "Like the 'ee' of 'see': ইলিশ (iliś, hilsa fish). Bengali writes i two ways, short and long, but today both sound the same: which one a word takes is spelling."
   - id: bn-0004
     target: "ঈ"
     native: "i, long form (dirgho i)"
     reading: "i"
+    ipa: "i"
     modes: [recognition, production]
     notes: "Sounds just like ই, the 'ee' of 'see'. The long form is kept from Sanskrit spelling: ঈদ (id, Eid). Because it sounds the same, it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-0005
     target: "উ"
     native: "u, short form (hroshsho u)"
     reading: "u"
-    notes: "Like the 'oo' of 'food': উট (ut, camel). As with i, the short and long forms of u sound the same today."
+    ipa: "u"
+    notes: "Like the 'oo' of 'food': উট (uṭ, camel). As with i, the short and long forms of u sound the same today."
   - id: bn-0006
     target: "ঊ"
     native: "u, long form (dirgho u)"
     reading: "u"
+    ipa: "u"
     modes: [recognition, production]
-    notes: "Sounds just like উ, the 'oo' of 'food'. It is rare: ঊষা (usha, dawn). Because it sounds the same, it is drilled by reading and writing only: no ear or recogniser can tell them apart."
+    notes: "Sounds just like উ, the 'oo' of 'food'. It is rare: ঊষা (uśā, dawn). Because it sounds the same, it is drilled by reading and writing only: no ear or recogniser can tell them apart."
   - id: bn-0007
     target: "ঋ"
     native: "ri (a vowel letter)"
     reading: "ri"
+    ipa: "ri"
     modes: [recognition, production]
     notes: "Said 'ri', as at the start of 'river', though it is written as one vowel. It comes in words from Sanskrit: ঋতু (ritu, season). A recogniser writes this sound as রি, so it is drilled by reading and writing only."
   - id: bn-0008
     target: "এ"
     native: "e (as in 'café'; often 'a' as in 'cat')"
     reading: "e"
+    ipa: "e"
     notes: "Usually the 'e' of 'café', without the glide of English 'say'. In many words it is said like the 'a' of 'cat': এক (ek, one) sounds close to 'ack'. The spelling doesn't show which."
   - id: bn-0009
     target: "ঐ"
     native: "oi (as in 'boy')"
     reading: "oi"
+    ipa: "oi"
     modes: [recognition, production]
     notes: "A glide from o to i, like the 'oy' of 'boy': ঐ (oi, that). A recogniser writes this sound as ওই, the commoner spelling of the same word, so it is drilled by reading and writing only."
   - id: bn-0010
     target: "ও"
     native: "o, closed (as in 'go')"
     reading: "o"
-    notes: "Like the 'o' of 'go', without the 'w' English adds at the end. Don't confuse it with অ, the open o: ওষুধ (oshudh, medicine)."
+    ipa: "o"
+    notes: "Like the 'o' of 'go', without the 'w' English adds at the end. Don't confuse it with অ, the open o: ওষুধ (ośudh, medicine)."
   - id: bn-0011
     target: "ঔ"
     native: "ou (o gliding to u)"
     reading: "ou"
+    ipa: "ou"
     modes: [recognition, production]
-    notes: "A glide from o to u, as in 'go' run into 'oo'. It is rare: ঔষধ (oushodh, medicine, a formal word). A recogniser writes this sound as ওউ, so it is drilled by reading and writing only."
+    notes: "A glide from o to u, as in 'go' run into 'oo'. It is rare: ঔষধ (ouśodh, medicine, a formal word). A recogniser writes this sound as ওউ, so it is drilled by reading and writing only."

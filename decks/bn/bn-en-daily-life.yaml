@@ -3,7 +3,7 @@ id: bn-en-daily-life
 name: "A day"
 kind: vocab
 theme: daily-life
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Getting up, meals, work and bed, and how often you do each. Not yet checked by a Bengali speaker: please report any mistake."
@@ -12,124 +12,144 @@ cards:
   - id: bn-0657
     target: "ঘুম থেকে ওঠা"
     native: "to get up"
-    reading: "ghum theke otha"
+    reading: "ghum theke oṭhā"
+    ipa: "ɡʱum t̪ʰeke oʈʰa"
     pos: "phrase"
-    notes: "'To rise from sleep'. ওঠা (otha) is to rise: আমি উঠি, I get up."
+    notes: "'To rise from sleep'. ওঠা (oṭhā) is to rise: আমি উঠি, I get up."
   - id: bn-0658
     target: "মুখ ধোয়া"
     native: "to wash one's face"
-    reading: "mukh dhoya"
+    reading: "mukh dhoyā"
+    ipa: "mukʰ d̪ʱoja"
     pos: "phrase"
-    notes: "ধোয়া (dhoya), to wash: আমি মুখ ধুই (ami mukh dhui), I wash my face."
+    notes: "ধোয়া (dhoyā), to wash: আমি মুখ ধুই (āmi mukh dhui), I wash my face."
   - id: bn-0659
     target: "দাঁত মাজা"
     native: "to brush one's teeth"
-    reading: "dant maja"
+    reading: "dām̐t mājā"
+    ipa: "d̪ãt̪ madʒa"
     pos: "phrase"
   - id: bn-0660
     target: "স্নান করা"
     native: "to bathe; to have a shower"
-    reading: "snan kora"
+    reading: "snān kôrā"
+    ipa: "snan kɔra"
     alt_target: ["গোসল করা"]
     pos: "phrase"
-    notes: "Also গোসল করা (goshol kora)."
+    notes: "Also গোসল করা (gośol kôrā)."
   - id: bn-0661
     target: "জলখাবার"
     native: "breakfast; a light meal"
-    reading: "jolkhabar"
+    reading: "jôlkhābār"
+    ipa: "dʒɔlkʰabar"
     alt_target: ["নাশ্তা", "নাশতা", "নাস্তা"]
     pos: "noun"
-    notes: "Also নাশ্তা (nashta), also written নাস্তা."
+    notes: "Also নাশ্তা (nāśtā), also written নাস্তা."
   - id: bn-0662
     target: "দুপুরের খাবার"
     native: "lunch"
-    reading: "dupurer khabar"
+    reading: "dupurer khābār"
+    ipa: "d̪upurer kʰabar"
     pos: "phrase"
     notes: "'Midday's food': দুপুর (dupur), midday, takes -এর."
   - id: bn-0663
     target: "রাতের খাবার"
     native: "dinner"
-    reading: "rater khabar"
+    reading: "rāter khābār"
+    ipa: "rat̪er kʰabar"
     pos: "phrase"
     notes: "'Night's food'."
   - id: bn-0664
     target: "কাজে যাওয়া"
     native: "to go to work"
-    reading: "kaje jaoa"
+    reading: "kāje jāoā"
+    ipa: "kadʒe dʒaoa"
     pos: "phrase"
-    notes: "কাজ (kaj), work, takes -এ for 'to': কাজে."
+    notes: "কাজ (kāj), work, takes -এ for 'to': কাজে."
   - id: bn-0665
     target: "বাড়ি ফেরা"
     native: "to come home"
-    reading: "bari phera"
+    reading: "bāṛi pherā"
+    ipa: "baɽi pʰera"
     alt_target: ["বাসায় ফেরা"]
     pos: "phrase"
-    notes: "ফেরা (phera) is to return. Also বাসায় ফেরা (bashay phera)."
+    notes: "ফেরা (pherā) is to return. Also বাসায় ফেরা (bāśāy pherā)."
   - id: bn-0666
     target: "রান্না করা"
     native: "to cook"
-    reading: "ranna kora"
+    reading: "rānnā kôrā"
+    ipa: "ranna kɔra"
     pos: "phrase"
   - id: bn-0667
     target: "ঘুমোতে যাওয়া"
     native: "to go to bed"
-    reading: "ghumote jaoa"
+    reading: "ghumote jāoā"
+    ipa: "ɡʱumot̪e dʒaoa"
     alt_target: ["ঘুমাতে যাওয়া"]
     pos: "phrase"
-    notes: "Also ঘুমাতে যাওয়া (ghumate jaoa), the form usually written."
+    notes: "Also ঘুমাতে যাওয়া (ghumāte jāoā), the form usually written."
   - id: bn-0668
     target: "প্রতিদিন"
     native: "every day"
     reading: "protidin"
+    ipa: "prot̪id̪in"
     alt_target: ["রোজ"]
     pos: "adv"
     notes: "In speech often রোজ (roj)."
   - id: bn-0669
     target: "মাঝে মাঝে"
     native: "sometimes"
-    reading: "majhe majhe"
+    reading: "mājhe mājhe"
+    ipa: "madʒʱe madʒʱe"
     pos: "phrase"
   - id: bn-0670
     target: "সবসময়"
     native: "always"
-    reading: "shobshomoy"
+    reading: "śôbśomoy"
+    ipa: "ʃɔbʃomoj"
     alt_target: ["সব সময়"]
     pos: "adv"
     notes: "Also written as two words, সব সময়: 'all the time'."
   - id: bn-0671
     target: "সাধারণত"
     native: "usually"
-    reading: "shadharonoto"
+    reading: "śādhāronoto"
+    ipa: "ʃad̪ʱaronot̪o"
     pos: "adv"
   - id: bn-0672
     target: "তারপর"
     native: "then; after that"
-    reading: "tarpor"
+    reading: "tārpor"
+    ipa: "t̪arpor"
     pos: "adv"
     notes: "The word that strings a day together: তারপর … তারপর …"
   - id: bn-0673
     target: "আমি রোজ সাতটায় উঠি।"
     native: "I get up at seven every day."
-    reading: "ami roj shattay uthi."
+    reading: "āmi roj śātṭāy uṭhi."
+    ipa: "ami rodʒ ʃat̪ʈaj uʈʰi"
     alt_target: ["আমি প্রতিদিন সাতটায় উঠি।"]
     pos: "phrase"
-    notes: "-টায় is 'at' with a time: সাতটায় (shattay), at seven. কটায়? (kotay?), at what time?"
+    notes: "-টায় is 'at' with a time: সাতটায় (śātṭāy), at seven. কটায়? (kotay?), at what time?"
   - id: bn-0674
     target: "তারপর আমি কাজে যাই।"
     native: "Then I go to work."
-    reading: "tarpor ami kaje jai."
+    reading: "tārpor āmi kāje jāi."
+    ipa: "t̪arpor ami kadʒe dʒai"
     pos: "phrase"
   - id: bn-0675
     target: "আমি রাত এগারোটায় ঘুমোতে যাই।"
     native: "I go to bed at eleven at night."
-    reading: "ami rat egarotay ghumote jai."
+    reading: "āmi rāt egāroṭāy ghumote jāi."
+    ipa: "ami rat̪ eɡaroʈaj ɡʱumot̪e dʒai"
     alt_target: ["আমি রাত এগারোটায় ঘুমাতে যাই।"]
     pos: "phrase"
-    notes: "The part of the day comes before the hour: রাত এগারোটায়, at eleven at night; সকাল সাতটায় (shokal shattay), at seven in the morning."
+    notes: "The part of the day comes before the hour: রাত এগারোটায়, at eleven at night; সকাল সাতটায় (śôkāl śātṭāy), at seven in the morning."
   - id: bn-0676
     target: "আমি কখনও দেরি করি না।"
     native: "I'm never late."
-    reading: "ami kokhono deri kori na."
+    reading: "āmi kôkhono deri kori nā."
+    ipa: "ami kɔkʰono d̪eri kori na"
     alt_target: ["আমি কখনো দেরি করি না।"]
     pos: "phrase"
-    notes: "'Never' is কখনও (kokhono), also written কখনো, with না after the verb. দেরি (deri) is delay."
+    notes: "'Never' is কখনও (kôkhono), also written কখনো, with না after the verb. দেরি (deri) is delay."

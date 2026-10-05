@@ -3,7 +3,7 @@ id: hi-en-market
 name: "Market"
 kind: vocab
 theme: market
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Asking the price, bargaining, paying: what a market stall needs."
@@ -12,79 +12,91 @@ cards:
   - id: hi-0231
     target: "कितने का है?"
     native: "How much is it?"
-    reading: "kitne ka hai?"
+    reading: "kitnē kā hai?"
+    ipa: "kɪt̪neː kaː ɦɛː"
     pos: "phrase"
     notes: "For several things: कितने के हैं? (kitne ke hain?). Often just कितने का? with a point at the thing."
   - id: hi-0232
     target: "दाम"
     native: "price"
-    reading: "dam"
+    reading: "dām"
+    ipa: "d̪aːm"
     pos: "noun"
     gender: "m"
-    notes: "Also कीमत (kimat), feminine."
+    notes: "Also कीमत (kīmat), feminine."
   - id: hi-0233
     target: "रुपया"
     native: "rupee"
-    reading: "rupaya"
+    reading: "rupayā"
+    ipa: "rʊpəjaː"
     pos: "noun"
     gender: "m"
-    notes: "More than one: रुपये (rupaye). सौ रुपये, a hundred rupees."
+    notes: "More than one: रुपये (rupayē). सौ रुपये, a hundred rupees."
   - id: hi-0234
     target: "पैसे"
     native: "money"
-    reading: "paise"
+    reading: "paisē"
+    ipa: "pɛːseː"
     pos: "noun"
     gender: "m"
-    notes: "A पैसा (paisa) is a hundredth of a rupee, but the plural पैसे is the everyday word for money: पैसे नहीं हैं, I have no money."
+    notes: "A पैसा (paisā) is a hundredth of a rupee, but the plural पैसे is the everyday word for money: पैसे नहीं हैं, I have no money."
   - id: hi-0235
     target: "खुले पैसे"
     native: "change; small notes and coins"
-    reading: "khule paise"
+    reading: "khulē paisē"
+    ipa: "kʰʊleː pɛːseː"
     pos: "phrase"
     notes: "खुले पैसे हैं? Do you have change?"
   - id: hi-0236
     target: "महँगा"
     native: "expensive"
-    reading: "mahanga"
+    reading: "maham̐gā"
+    ipa: "məɦə̃ɡaː"
     alt_target: ["महंगा"]
     pos: "adj"
-    notes: "Agrees with the thing: महँगी (mahangi) with a feminine word. बहुत महँगा है! It's very expensive!"
+    notes: "Agrees with the thing: महँगी (maham̐gī) with a feminine word. बहुत महँगा है! It's very expensive!"
   - id: hi-0237
     target: "सस्ता"
     native: "cheap"
-    reading: "sasta"
+    reading: "sastā"
+    ipa: "səst̪aː"
     pos: "adj"
-    notes: "Feminine सस्ती (sasti)."
+    notes: "Feminine सस्ती (sastī)."
   - id: hi-0238
     target: "थोड़ा कम कीजिए।"
     native: "Please lower it a little."
-    reading: "thora kam kijiye."
+    reading: "thōṛā kam kījiē."
+    ipa: "t̪ʰoːɽaː kəm kiːdʒɪeː"
     pos: "phrase"
     tags: ["polite"]
     notes: "The polite way to bargain. Bargaining is expected at street stalls and markets, not in shops with fixed prices."
   - id: hi-0239
     target: "दुकान"
     native: "shop"
-    reading: "dukan"
+    reading: "dukān"
+    ipa: "d̪ʊkaːn"
     pos: "noun"
     gender: "f"
   - id: hi-0240
     target: "दीजिए"
     native: "please give (me)"
-    reading: "dijiye"
+    reading: "dījiē"
+    ipa: "d̪iːdʒɪeː"
     pos: "verb"
     tags: ["polite"]
-    notes: "The polite request form of देना (dena, to give). एक किलो दीजिए, a kilo, please."
+    notes: "The polite request form of देना (dēnā, to give). एक किलो दीजिए, a kilo, please."
   - id: hi-0241
     target: "किलो"
     native: "kilo"
-    reading: "kilo"
+    reading: "kilō"
+    ipa: "kɪloː"
     pos: "noun"
     gender: "m"
-    notes: "आधा किलो (adha kilo) is half a kilo."
+    notes: "आधा किलो (ādhā kilō) is half a kilo."
   - id: hi-0242
     target: "बस"
     native: "that's all; enough"
     reading: "bas"
+    ipa: "bəs"
     pos: "other"
     notes: "In a shop, बस means 'that's all'. It also means 'bus'."

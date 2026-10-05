@@ -102,6 +102,22 @@ void main() {
     expect(find.text(l10n.voicesSpeaking(spoken.text)), findsOneWidget);
   });
 
+  testWidgets('with sound off, voices read as they are, and Test says sound '
+      'is off rather than speaking', (tester) async {
+    usePhone(tester);
+    final tts = FixedTtsEngine(const <String>{'es'});
+    final state = AppState.test(tts: tts)..settings.soundOn = false;
+    await pumpScreen(tester, const VoicesPage(), state: state);
+    await tester.pumpAndSettle();
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
+
+    await tester.tap(find.text(l10n.voicesTest));
+    await tester.pumpAndSettle();
+    expect(tts.spoken, isEmpty);
+    expect(find.text(l10n.speakerSoundOff), findsOneWidget);
+  });
+
   testWidgets('Check again asks the phone again, checking meanwhile', (
     tester,
   ) async {

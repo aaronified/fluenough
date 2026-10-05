@@ -3,7 +3,7 @@ id: hi-en-daily-life
 name: "A day"
 kind: vocab
 theme: daily-life
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The day from waking to sleeping, and how often things happen. Not yet checked by a Hindi speaker: please report any mistake."
@@ -12,107 +12,126 @@ cards:
   - id: hi-0441
     target: "उठना"
     native: "to get up"
-    reading: "uthna"
+    reading: "uṭhnā"
+    ipa: "ʊʈʰnaː"
     pos: "verb"
     notes: "सुबह उठना, to get up in the morning."
   - id: hi-0442
     target: "नहाना"
     native: "to bathe; to have a shower"
-    reading: "nahana"
+    reading: "nahānā"
+    ipa: "nəɦaːnaː"
     pos: "verb"
   - id: hi-0443
     target: "दाँत साफ़ करना"
     native: "to brush one's teeth"
-    reading: "dant saf karna"
+    reading: "dām̐t sāf karnā"
+    ipa: "d̪ãːt̪ saːf kərnaː"
     alt_target: ["दांत साफ करना"]
     pos: "phrase"
   - id: hi-0444
     target: "नाश्ता"
     native: "breakfast"
-    reading: "nashta"
+    reading: "nāśtā"
+    ipa: "naːʃt̪aː"
     pos: "noun"
     gender: "m"
   - id: hi-0445
     target: "दोपहर का खाना"
     native: "lunch"
-    reading: "dopahar ka khana"
+    reading: "dōpahar kā khānā"
+    ipa: "d̪oːpəɦər kaː kʰaːnaː"
     pos: "phrase"
   - id: hi-0446
     target: "रात का खाना"
     native: "dinner"
-    reading: "rat ka khana"
+    reading: "rāt kā khānā"
+    ipa: "raːt̪ kaː kʰaːnaː"
     pos: "phrase"
   - id: hi-0447
     target: "काम पर जाना"
     native: "to go to work"
-    reading: "kam par jana"
+    reading: "kām par jānā"
+    ipa: "kaːm pər dʒaːnaː"
     pos: "phrase"
   - id: hi-0448
     target: "घर लौटना"
     native: "to come home"
-    reading: "ghar lautna"
+    reading: "ghar lauṭnā"
+    ipa: "ɡʱər lɔːʈnaː"
     alt_target: ["घर आना"]
     pos: "phrase"
   - id: hi-0449
     target: "खाना बनाना"
     native: "to cook"
-    reading: "khana banana"
+    reading: "khānā banānā"
+    ipa: "kʰaːnaː bənaːnaː"
     pos: "phrase"
   - id: hi-0450
     target: "सोना"
     native: "to sleep"
-    reading: "sona"
+    reading: "sōnā"
+    ipa: "soːnaː"
     pos: "verb"
     notes: "सोना also means gold; the sentence says which."
   - id: hi-0451
     target: "रोज़"
     native: "every day"
-    reading: "roz"
+    reading: "rōz"
+    ipa: "roːz"
     alt_target: ["रोज", "हर दिन"]
     pos: "adv"
   - id: hi-0452
     target: "कभी-कभी"
     native: "sometimes"
-    reading: "kabhi-kabhi"
+    reading: "kabhī-kabhī"
+    ipa: "kəbʱiːkəbʱiː"
     alt_target: ["कभी कभी"]
     pos: "adv"
   - id: hi-0453
     target: "हमेशा"
     native: "always"
-    reading: "hamesha"
+    reading: "hamēśā"
+    ipa: "ɦəmeːʃaː"
     pos: "adv"
   - id: hi-0454
     target: "आम तौर पर"
     native: "usually"
-    reading: "am taur par"
+    reading: "ām taur par"
+    ipa: "aːm t̪ɔːr pər"
     alt_target: ["आमतौर पर"]
     pos: "phrase"
   - id: hi-0455
     target: "उसके बाद"
     native: "after that; then"
-    reading: "uske bad"
+    reading: "uskē bād"
+    ipa: "ʊskeː baːd̪"
     pos: "phrase"
   - id: hi-0456
     target: "मैं रोज़ सात बजे उठता हूँ।"
     native: "I get up at seven every day. (said by a man)"
-    reading: "main roz sat baje uthta hun."
+    reading: "maim̐ rōz sāt bajē uṭhtā hūm̐."
+    ipa: "mɛ̃ː roːz saːt̪ bədʒeː ʊʈʰt̪aː ɦũː"
     pos: "phrase"
-    notes: "A woman says उठती हूँ (uthti hun)."
+    notes: "A woman says उठती हूँ (uṭhtī hūm̐)."
   - id: hi-0457
     target: "उसके बाद मैं काम पर जाता हूँ।"
     native: "Then I go to work. (said by a man)"
-    reading: "uske bad main kam par jata hun."
+    reading: "uskē bād maim̐ kām par jātā hūm̐."
+    ipa: "ʊskeː baːd̪ mɛ̃ː kaːm pər dʒaːt̪aː ɦũː"
     pos: "phrase"
-    notes: "A woman says जाती हूँ (jati hun)."
+    notes: "A woman says जाती हूँ (jātī hūm̐)."
   - id: hi-0458
     target: "मैं रात ग्यारह बजे सोता हूँ।"
     native: "I go to bed at eleven at night. (said by a man)"
-    reading: "main rat gyarah baje sota hun."
+    reading: "maim̐ rāt gyārah bajē sōtā hūm̐."
+    ipa: "mɛ̃ː raːt̪ ɡjaːrəɦ bədʒeː soːt̪aː ɦũː"
     pos: "phrase"
-    notes: "A woman says सोती हूँ (soti hun)."
+    notes: "A woman says सोती हूँ (sōtī hūm̐)."
   - id: hi-0459
     target: "मुझे कभी देर नहीं होती।"
     native: "I'm never late."
-    reading: "mujhe kabhi der nahin hoti."
+    reading: "mujhē kabhī dēr nahīm̐ hōtī."
+    ipa: "mʊdʒʱeː kəbʱiː d̪eːr nəɦĩː ɦoːt̪iː"
     pos: "phrase"
     notes: "'Never' is कभी with नहीं: 'to me lateness never happens'."

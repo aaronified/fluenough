@@ -3,7 +3,7 @@ id: as-en-first-words
 name: "First words"
 kind: vocab
 theme: first-words
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Greetings, the respect Assamese builds into them, and how to say you are still learning. Not yet checked by an Assamese speaker: please report any mistake."
@@ -12,97 +12,111 @@ cards:
   - id: as-0126
     target: "নমস্কাৰ"
     native: "hello; goodbye"
-    reading: "nomoskar"
+    reading: "nômôskār"
+    ipa: "nɔmɔskaɹ"
     pos: "other"
     tags: ["greeting"]
     notes: "Said with palms pressed together, to anyone. স before k is said s. Many Muslim families greet with 'assalamu alaikum' instead. Neither is universal."
   - id: as-0127
     target: "আপুনি"
     native: "you (respectful)"
-    reading: "apuni"
+    reading: "āpuni"
+    ipa: "apuni"
     pos: "other"
     tags: ["honorific"]
     notes: "Assamese has three words for 'you': আপুনি for strangers, elders and customers; তুমি (tumi) for friends and family; তই (toi) only for the very close, and rude to anyone else. The verb changes with each. A learner is always safe with আপুনি."
   - id: as-0128
     target: "আপুনি কেনে আছে?"
     native: "How are you? (respectful)"
-    reading: "apuni kene ase?"
+    reading: "āpuni kene āse?"
+    ipa: "apuni kene ase"
     pos: "phrase"
     tags: ["greeting"]
     notes: "To a friend: কেনে আছা? (kene asa?). Assamese has no grammatical gender, so it is the same to a man or a woman."
   - id: as-0129
     target: "ভালে আছোঁ।"
     native: "I'm fine."
-    reading: "bhale asu."
+    reading: "bhāle āsum̐."
+    ipa: "bʱale asʊ̃"
     pos: "phrase"
     tags: ["greeting"]
-    notes: "From ভাল (bhal), good, well. The -ওঁ at the end of the verb means 'I', and chat writes it u: আছোঁ (asu), I am."
+    notes: "From ভাল (bhāl), good, well. The -ওঁ at the end of the verb means 'I', and chat writes it u: আছোঁ (āsum̐), I am."
   - id: as-0130
     target: "ধন্যবাদ"
     native: "thank you"
-    reading: "dhonyobad"
+    reading: "dhônyôbād"
+    ipa: "dʱɔnjɔbad"
     pos: "other"
     tags: ["polite"]
     notes: "Formal. Among family and friends thanks are often left unsaid, and many people say 'thank you' in English."
   - id: as-0131
     target: "বাৰু"
     native: "OK; all right; well then"
-    reading: "baru"
+    reading: "bāru"
+    ipa: "baɹu"
     alt_target: ["ঠিক আছে"]
     pos: "other"
-    notes: "The all-purpose 'all right'. Also ঠিক আছে (thik ase), and হ'ব (hobo), 'it will do'. বাৰু, যাওঁ (baru, jau): well, I'm off."
+    notes: "The all-purpose 'all right'. Also ঠিক আছে (thik āse), and হ'ব (hobo), 'it will do'. বাৰু, যাওঁ (baru, jau): well, I'm off."
   - id: as-0132
     target: "আকৌ লগ পাম।"
     native: "See you again."
-    reading: "akou log pam."
+    reading: "ākôu lôg pām."
+    ipa: "akɔu lɔɡ pam"
     pos: "phrase"
     tags: ["greeting"]
-    notes: "Literally 'I'll get your company again'. লগ (log) is company, being together."
+    notes: "Literally 'I'll get your company again'. লগ (lôg) is company, being together."
   - id: as-0133
     target: "মাফ কৰিব।"
     native: "Sorry; excuse me."
-    reading: "maph koribo."
+    reading: "māph koribô."
+    ipa: "mapʰ koɹibɔ"
     alt_target: ["ক্ষমা কৰিব।"]
     pos: "phrase"
     tags: ["polite"]
-    notes: "For a small mistake, or to get past someone. Also ক্ষমা কৰিব (khoma koribo). The polite future, 'you will forgive', makes a gentle request."
+    notes: "For a small mistake, or to get past someone. Also ক্ষমা কৰিব (khômā koribô). The polite future, 'you will forgive', makes a gentle request."
   - id: as-0134
     target: "মই অসমীয়া নাজানো।"
     native: "I don't know Assamese."
-    reading: "moi oxomiya najanu."
+    reading: "moi ôxomiyā nāzānu."
+    ipa: "moi ɔxomija nazanʊ"
     pos: "phrase"
-    notes: "'Not' is a prefix on the verb: জানো (janu), I know; নাজানো (najanu), I don't know."
+    notes: "'Not' is a prefix on the verb: জানো (zānu), I know; নাজানো (nāzānu), I don't know."
   - id: as-0135
     target: "মই এতিয়াও অসমীয়া শিকি আছোঁ।"
     native: "I'm still learning Assamese."
-    reading: "moi etiyau oxomiya xiki asu."
+    reading: "moi etiyāu ôxomiyā xiki āsum̐."
+    ipa: "moi etijaʊ ɔxomija xiki asʊ̃"
     pos: "phrase"
     notes: "The same for a man and a woman: Assamese verbs do not show gender."
   - id: as-0136
     target: "লাহে লাহে কওক।"
     native: "Please speak slowly."
-    reading: "lahe lahe kouk."
+    reading: "lāhe lāhe kôuk."
+    ipa: "lahe lahe kɔʊk"
     pos: "phrase"
     tags: ["polite"]
-    notes: "কওক is the polite request form of কোৱা (kuwa, to say). Most verbs take -ক for a polite request: বহক (bohok), please sit; আহক (ahok), please come; দিয়ক (diyok), please give. লাহে লাহে, slowly, is also how Assam likes life: unhurried."
+    notes: "কওক is the polite request form of কোৱা (kuwā, to say). Most verbs take -ক for a polite request: বহক (bôhôk), please sit; আহক (āhôk), please come; দিয়ক (diyôk), please give. লাহে লাহে, slowly, is also how Assam likes life: unhurried."
   - id: as-0137
     target: "আকৌ এবাৰ কওক।"
     native: "Please say that again."
-    reading: "akou ebar kouk."
+    reading: "ākôu ebār kôuk."
+    ipa: "akɔu ebaɹ kɔʊk"
     pos: "phrase"
     tags: ["polite"]
-    notes: "আকৌ (akou), again; এবাৰ (ebar), once."
+    notes: "আকৌ (ākôu), again; এবাৰ (ebār), once."
   - id: as-0138
     target: "আহক, বহক।"
     native: "Come in, sit down. (welcoming a guest)"
-    reading: "ahok, bohok."
+    reading: "āhôk, bôhôk."
+    ipa: "ahɔk bɔhɔk"
     pos: "phrase"
     tags: ["polite"]
-    notes: "What a host says at the door. A guest in an Assamese home is offered tea, and in many homes তামোল-পাণ (tamul-pan), betel nut and leaf."
+    notes: "What a host says at the door. A guest in an Assamese home is offered tea, and in many homes তামোল-পাণ (tāmul-pān), betel nut and leaf."
   - id: as-0139
     target: "কি খবৰ?"
     native: "What's new? How's things?"
-    reading: "ki khobor?"
+    reading: "ki khôbôr?"
+    ipa: "ki kʰɔbɔɹ"
     pos: "phrase"
     tags: ["greeting"]
     notes: "To someone you know: 'what news?'"

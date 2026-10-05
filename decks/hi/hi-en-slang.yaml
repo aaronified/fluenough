@@ -2,7 +2,7 @@ schema: 1
 id: hi-en-slang
 name: "Slang"
 kind: vocab
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Everyday slang: what friends say that a textbook doesn't. Not yet checked by a Hindi speaker: please report any mistake."
@@ -11,20 +11,23 @@ cards:
   - id: hi-0595
     target: "यार"
     native: "mate; buddy"
-    reading: "yar"
+    reading: "yār"
+    ipa: "jaːr"
     pos: "noun"
     notes: "Between friends, to anyone, man or woman: यार, चलो! Too casual for strangers."
   - id: hi-0596
     target: "जुगाड़"
     native: "a makeshift fix"
-    reading: "jugar"
+    reading: "jugāṛ"
+    ipa: "dʒʊɡaːɽ"
     pos: "noun"
     gender: "m"
     notes: "A clever fix with whatever is at hand: कोई जुगाड़ करो, find some way."
   - id: hi-0597
     target: "टाइमपास"
     native: "passing the time"
-    reading: "taimpas"
+    reading: "ṭāimpās"
+    ipa: "ʈaːɪmpaːs"
     pos: "noun"
     gender: "m"
     notes: "बस टाइमपास, just killing time."
@@ -32,35 +35,41 @@ cards:
     target: "मस्त"
     native: "great; fun"
     reading: "mast"
+    ipa: "məst̪"
     pos: "adj"
     notes: "मस्त फ़िल्म थी, it was a great film."
   - id: hi-0599
     target: "बिंदास"
     native: "carefree; bold"
-    reading: "bindas"
+    reading: "bindās"
+    ipa: "bɪnd̪aːs"
     pos: "adj"
   - id: hi-0600
     target: "बकवास"
     native: "nonsense"
-    reading: "bakvas"
+    reading: "bakvās"
+    ipa: "bəkʋaːs"
     pos: "noun"
     gender: "f"
     notes: "बकवास मत करो, don't talk nonsense."
   - id: hi-0601
     target: "चलता है"
     native: "it'll do; whatever"
-    reading: "chalta hai"
+    reading: "caltā hai"
+    ipa: "tʃəlt̪aː ɦɛː"
     pos: "phrase"
     notes: "Said of something not quite right that you let pass."
   - id: hi-0602
     target: "पीना"
     native: "to drink alcohol (said on its own)"
-    reading: "pina"
+    reading: "pīnā"
+    ipa: "piːnaː"
     pos: "verb"
     notes: "With a drink named, पीना is any drink: चाय पीना. On its own it means alcohol: वह पीता है, he drinks."
   - id: hi-0603
     target: "दारू"
     native: "booze"
-    reading: "daru"
+    reading: "dārū"
+    ipa: "d̪aːruː"
     pos: "noun"
     gender: "f"
