@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/grading/answer_grader.dart';
 import 'package:fluenough/core/grading/romanised.dart';
@@ -101,13 +102,22 @@ void main() {
   });
 
   test('a grammar cell accepts the reading of each form it lists', () {
+    // A cell whose other form is typed differently: Assamese আছোঁ and আছো
+    // are both typed asu, so either matches the first.
+    bool distinct(DeckEntry entry, Card card) {
+      final spelling = RomanisedSpelling(state.romanisationFor(entry.language));
+      String typed(String reading) => spelling.key(spelling.typedForm(reading));
+      return card.altReading.isNotEmpty &&
+          typed(card.altReading.first) != typed(card.reading!);
+    }
+
     final deck = state.decks.firstWhere(
-      (e) => e.cards.any((c) => c.altReading.isNotEmpty),
+      (e) => e.cards.any((c) => distinct(e, c)),
     );
     final session = latin(
       deck.id,
       Skill.grammar,
-      where: (c) => c.altReading.isNotEmpty,
+      where: (c) => distinct(deck, c),
     );
     final card = session.item.card;
     session.check(card.altReading.first);

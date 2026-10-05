@@ -2,7 +2,7 @@ schema: 1
 id: gu-en-grammar-negative
 name: "Not: નથી, નહીં, ન"
 kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I don't, I won't, don't!: the three words for 'not' and where each goes. Not yet checked by a Gujarati speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "કરવું"
       key: karvun
-      reading: "karvun"
+      reading: "karvum̐"
+      ipa: "kərʋũ"
       gloss: "to do"
       forms:
         "I don't (a man)": "કરતો નથી"
@@ -26,11 +27,17 @@ pattern:
       readings:
         "I don't (a man)": "karto nathi"
         "I don't (a woman)": "karti nathi"
-        "I won't": "nahin karun"
+        "I won't": "nahim̐ karum̐"
         "don't! (to તમે)": "na karo"
+      ipas:
+        "I don't (a man)": "kərt̪o nət̪ʰi"
+        "I don't (a woman)": "kərt̪i nət̪ʰi"
+        "I won't": "nəɦĩ kərũ"
+        "don't! (to તમે)": "nə kəro"
     - lemma: "જવું"
       key: javun
-      reading: "javun"
+      reading: "javum̐"
+      ipa: "dʒəʋũ"
       gloss: "to go"
       forms:
         "I don't (a man)": "જતો નથી"
@@ -40,11 +47,17 @@ pattern:
       readings:
         "I don't (a man)": "jato nathi"
         "I don't (a woman)": "jati nathi"
-        "I won't": "nahin jaun"
-        "don't! (to તમે)": "na jao"
+        "I won't": "nahim̐ jāum̐"
+        "don't! (to તમે)": "na jāo"
+      ipas:
+        "I don't (a man)": "dʒət̪o nət̪ʰi"
+        "I don't (a woman)": "dʒət̪i nət̪ʰi"
+        "I won't": "nəɦĩ dʒaũ"
+        "don't! (to તમે)": "nə dʒao"
     - lemma: "આવવું"
       key: aavvun
-      reading: "avvun"
+      reading: "āvvum̐"
+      ipa: "aʋʋũ"
       gloss: "to come"
       forms:
         "I don't (a man)": "આવતો નથી"
@@ -52,13 +65,19 @@ pattern:
         "I won't": "નહીં આવું"
         "don't! (to તમે)": "ન આવો"
       readings:
-        "I don't (a man)": "avto nathi"
-        "I don't (a woman)": "avti nathi"
-        "I won't": "nahin avun"
-        "don't! (to તમે)": "na avo"
+        "I don't (a man)": "āvto nathi"
+        "I don't (a woman)": "āvti nathi"
+        "I won't": "nahim̐ āvum̐"
+        "don't! (to તમે)": "na āvo"
+      ipas:
+        "I don't (a man)": "aʋt̪o nət̪ʰi"
+        "I don't (a woman)": "aʋt̪i nət̪ʰi"
+        "I won't": "nəɦĩ aʋũ"
+        "don't! (to તમે)": "nə aʋo"
     - lemma: "ખાવું"
       key: khaavun
-      reading: "khavun"
+      reading: "khāvum̐"
+      ipa: "kʰaʋũ"
       gloss: "to eat"
       forms:
         "I don't (a man)": "ખાતો નથી"
@@ -66,13 +85,19 @@ pattern:
         "I won't": "નહીં ખાઉં"
         "don't! (to તમે)": "ન ખાઓ"
       readings:
-        "I don't (a man)": "khato nathi"
-        "I don't (a woman)": "khati nathi"
-        "I won't": "nahin khaun"
-        "don't! (to તમે)": "na khao"
+        "I don't (a man)": "khāto nathi"
+        "I don't (a woman)": "khāti nathi"
+        "I won't": "nahim̐ khāum̐"
+        "don't! (to તમે)": "na khāo"
+      ipas:
+        "I don't (a man)": "kʰat̪o nət̪ʰi"
+        "I don't (a woman)": "kʰat̪i nət̪ʰi"
+        "I won't": "nəɦĩ kʰaũ"
+        "don't! (to તમે)": "nə kʰao"
     - lemma: "બોલવું"
       key: bolvun
-      reading: "bolvun"
+      reading: "bolvum̐"
+      ipa: "bolʋũ"
       gloss: "to speak"
       forms:
         "I don't (a man)": "બોલતો નથી"
@@ -82,5 +107,10 @@ pattern:
       readings:
         "I don't (a man)": "bolto nathi"
         "I don't (a woman)": "bolti nathi"
-        "I won't": "nahin bolun"
+        "I won't": "nahim̐ bolum̐"
         "don't! (to તમે)": "na bolo"
+      ipas:
+        "I don't (a man)": "bolt̪o nət̪ʰi"
+        "I don't (a woman)": "bolt̪i nət̪ʰi"
+        "I won't": "nəɦĩ bolũ"
+        "don't! (to તમે)": "nə bolo"

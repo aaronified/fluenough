@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-continuous
 name: "Present continuous"
 kind: grammar
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I am doing, she is going: what is happening now."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "করা"
       key: kora
-      reading: "kora"
+      reading: "kôrā"
+      ipa: "kɔra"
       gloss: "to do"
       forms:
         "আমি / আমরা": "করছি"
@@ -26,15 +27,23 @@ pattern:
         "সে / তারা": "করছে"
         "তিনি / তাঁরা": "করছেন"
       readings:
-        "আমি / আমরা": "korchhi"
-        "তুই / তোরা": "korchhish"
-        "তুমি / তোমরা": ["korchho", "korchho"]
-        "আপনি / আপনারা": "korchhen"
-        "সে / তারা": "korchhe"
-        "তিনি / তাঁরা": "korchhen"
+        "আমি / আমরা": "kôrchi"
+        "তুই / তোরা": "kôrchiś"
+        "তুমি / তোমরা": ["kôrcho", "kôrcho"]
+        "আপনি / আপনারা": "kôrchen"
+        "সে / তারা": "kôrche"
+        "তিনি / তাঁরা": "kôrchen"
+      ipas:
+        "আমি / আমরা": "kɔrtʃʰi"
+        "তুই / তোরা": "kɔrtʃʰiʃ"
+        "তুমি / তোমরা": "kɔrtʃʰo"
+        "আপনি / আপনারা": "kɔrtʃʰen"
+        "সে / তারা": "kɔrtʃʰe"
+        "তিনি / তাঁরা": "kɔrtʃʰen"
     - lemma: "যাওয়া"
       key: jaoa
-      reading: "jaoa"
+      reading: "jāoā"
+      ipa: "dʒaoa"
       gloss: "to go"
       forms:
         "আমি / আমরা": "যাচ্ছি"
@@ -44,15 +53,23 @@ pattern:
         "সে / তারা": "যাচ্ছে"
         "তিনি / তাঁরা": "যাচ্ছেন"
       readings:
-        "আমি / আমরা": "jachchhi"
-        "তুই / তোরা": "jachchhish"
-        "তুমি / তোমরা": ["jachchho", "jachchho"]
-        "আপনি / আপনারা": "jachchhen"
-        "সে / তারা": "jachchhe"
-        "তিনি / তাঁরা": "jachchhen"
+        "আমি / আমরা": "jācchi"
+        "তুই / তোরা": "jācchiś"
+        "তুমি / তোমরা": ["jāccho", "jāccho"]
+        "আপনি / আপনারা": "jācchen"
+        "সে / তারা": "jācche"
+        "তিনি / তাঁরা": "jācchen"
+      ipas:
+        "আমি / আমরা": "dʒatʃtʃʰi"
+        "তুই / তোরা": "dʒatʃtʃʰiʃ"
+        "তুমি / তোমরা": "dʒatʃtʃʰo"
+        "আপনি / আপনারা": "dʒatʃtʃʰen"
+        "সে / তারা": "dʒatʃtʃʰe"
+        "তিনি / তাঁরা": "dʒatʃtʃʰen"
     - lemma: "খাওয়া"
       key: khaoa
-      reading: "khaoa"
+      reading: "khāoā"
+      ipa: "kʰaoa"
       gloss: "to eat"
       forms:
         "আমি / আমরা": "খাচ্ছি"
@@ -62,15 +79,23 @@ pattern:
         "সে / তারা": "খাচ্ছে"
         "তিনি / তাঁরা": "খাচ্ছেন"
       readings:
-        "আমি / আমরা": "khachchhi"
-        "তুই / তোরা": "khachchhish"
-        "তুমি / তোমরা": ["khachchho", "khachchho"]
-        "আপনি / আপনারা": "khachchhen"
-        "সে / তারা": "khachchhe"
-        "তিনি / তাঁরা": "khachchhen"
+        "আমি / আমরা": "khācchi"
+        "তুই / তোরা": "khācchiś"
+        "তুমি / তোমরা": ["khāccho", "khāccho"]
+        "আপনি / আপনারা": "khācchen"
+        "সে / তারা": "khācche"
+        "তিনি / তাঁরা": "khācchen"
+      ipas:
+        "আমি / আমরা": "kʰatʃtʃʰi"
+        "তুই / তোরা": "kʰatʃtʃʰiʃ"
+        "তুমি / তোমরা": "kʰatʃtʃʰo"
+        "আপনি / আপনারা": "kʰatʃtʃʰen"
+        "সে / তারা": "kʰatʃtʃʰe"
+        "তিনি / তাঁরা": "kʰatʃtʃʰen"
     - lemma: "বলা"
       key: bola
-      reading: "bola"
+      reading: "bôlā"
+      ipa: "bɔla"
       gloss: "to say"
       forms:
         "আমি / আমরা": "বলছি"
@@ -80,9 +105,16 @@ pattern:
         "সে / তারা": "বলছে"
         "তিনি / তাঁরা": "বলছেন"
       readings:
-        "আমি / আমরা": "bolchhi"
-        "তুই / তোরা": "bolchhish"
-        "তুমি / তোমরা": ["bolchho", "bolchho"]
-        "আপনি / আপনারা": "bolchhen"
-        "সে / তারা": "bolchhe"
-        "তিনি / তাঁরা": "bolchhen"
+        "আমি / আমরা": "bôlchi"
+        "তুই / তোরা": "bôlchiś"
+        "তুমি / তোমরা": ["bôlcho", "bôlcho"]
+        "আপনি / আপনারা": "bôlchen"
+        "সে / তারা": "bôlche"
+        "তিনি / তাঁরা": "bôlchen"
+      ipas:
+        "আমি / আমরা": "bɔltʃʰi"
+        "তুই / তোরা": "bɔltʃʰiʃ"
+        "তুমি / তোমরা": "bɔltʃʰo"
+        "আপনি / আপনারা": "bɔltʃʰen"
+        "সে / তারা": "bɔltʃʰe"
+        "তিনি / তাঁরা": "bɔltʃʰen"

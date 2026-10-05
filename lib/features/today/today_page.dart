@@ -3,29 +3,24 @@ import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
 import '../../app/shell_tab.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/deck_tile.dart';
-import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/report_button.dart';
 import 'due_card.dart';
 import 'lesson_card.dart';
+import 'quick_revision.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
 
-/// How many of the profile's decks Today lists, pending ones first; "See
-/// all" opens the rest.
-const int todayDeckCount = 3;
-
 /// Today: each language's lesson (ADR-0024), cards due by skill, Start
-/// review, the streak and week, and the profile's decks.
+/// review, the streak and week, quick revision (ADR-0029), and the fact
+/// of the day.
 ///
 /// Design screen `today`. Every number is computed ([TodayNumbers]); none is
 /// the design's sample. Also here, beyond the design: the banner saying that
@@ -109,17 +104,6 @@ class _TodayContent extends StatelessWidget {
   }
 
   Widget _sections(BuildContext context) {
-    // The decks Today is teaching from first (ADR-0013), then the rest of
-    // the profile's not placed as known.
-    final pending = <DeckEntry>[for (final unit in state.pendingUnits) ...unit];
-    final decks = <DeckEntry>[
-      ...pending,
-      for (final entry in state.profileDecks)
-        if (!pending.contains(entry) &&
-            !state.isPlaced(entry) &&
-            !state.leavesOut(entry))
-          entry,
-    ].take(todayDeckCount).toList();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -134,26 +118,9 @@ class _TodayContent extends StatelessWidget {
         if (numbers.hasDecks) DueCard(numbers: numbers) else const _NoDecks(),
         const SizedBox(height: 16),
         StreakCard(numbers: numbers),
-        if (decks.isNotEmpty) ...<Widget>[
+        if (numbers.hasDecks) ...<Widget>[
           const SizedBox(height: 24),
-          _DecksHeading(
-            onSeeAll: () => AppNavigator.selectTab(context, ShellTab.decks),
-          ),
-          const SizedBox(height: 8),
-          GroupedList(
-            outerRadius: AppRadii.group,
-            innerRadius: 8,
-            gap: 4,
-            children: <Widget>[
-              for (final entry in decks)
-                DeckTile(
-                  entry: entry,
-                  glyphSize: 52,
-                  badge: DeckBadge.forEntry(state, entry),
-                  onTap: () => AppNavigator.openDeck(context, entry.id),
-                ),
-            ],
-          ),
+          QuickRevision(known: state.revisableCount),
         ],
         if (state.features.isIncoming(Feature.dailyFacts)) ...<Widget>[
           const SizedBox(height: 16),
@@ -330,41 +297,6 @@ class _NoDecks extends StatelessWidget {
             ),
             onPressed: () => AppNavigator.selectTab(context, ShellTab.decks),
             child: Text(l10n.todayBrowseDecks),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// "Your decks" and "See all", which opens the Decks tab.
-class _DecksHeading extends StatelessWidget {
-  const _DecksHeading({required this.onSeeAll});
-
-  final VoidCallback onSeeAll;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsetsDirectional.only(start: 4),
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Semantics(
-              header: true,
-              child: Text(
-                l10n.todayYourDecks,
-                style: theme.textTheme.sectionTitle,
-              ),
-            ),
-          ),
-          const SizedBox(width: 8),
-          TextButton(
-            style: AppButtonStyles.compact(context),
-            onPressed: onSeeAll,
-            child: Text(l10n.todaySeeAll),
           ),
         ],
       ),

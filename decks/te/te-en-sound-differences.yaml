@@ -2,7 +2,7 @@ schema: 1
 id: te-en-sound-differences
 name: "Sounds to tell apart"
 kind: vocab
-language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Pairs of everyday words that differ in one sound: a short or long vowel, the tongue on the teeth or curled back, and the two l's."
@@ -12,50 +12,57 @@ cards:
     target: "పలు"
     native: "many; several"
     reading: "palu"
+    ipa: "palu"
     tags: ["vowel-length"]
-    notes: "Vowel length: పాలు (palu, milk) holds the a twice as long as పలు (palu, many). Shorten it and you've said 'many'."
+    notes: "Vowel length: పాలు (pālu, milk) holds the a twice as long as పలు (palu, many). Shorten it and you've said 'many'."
   - ref: te-0265
     tags: ["vowel-length"]
-    notes: "Vowel length: పాలు (palu, milk) holds the a twice as long as పలు (palu, many). Shorten it and you've said 'many'."
+    notes: "Vowel length: పాలు (pālu, milk) holds the a twice as long as పలు (palu, many). Shorten it and you've said 'many'."
   - ref: te-0053
     tags: ["vowel-length"]
-    notes: "Vowel length: కాలం (kalam, time) has the long a where కలం (kalam, pen) has the short a."
+    notes: "Vowel length: కాలం (kālam, time) has the long a where కలం (kalam, pen) has the short a."
   - id: te-0111
     target: "కాలం"
     native: "time; season"
-    reading: "kalam"
+    reading: "kālam"
+    ipa: "kaːlam"
     tags: ["vowel-length"]
-    notes: "Vowel length: కాలం (kalam, time) has the long a where కలం (kalam, pen) has the short a."
+    notes: "Vowel length: కాలం (kālam, time) has the long a where కలం (kalam, pen) has the short a."
   - id: te-0112
     target: "పాత"
     native: "old"
-    reading: "pata"
+    reading: "pāta"
+    ipa: "paːt̪a"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: పాత (pata, old) has the tongue on the teeth for t; పాట (pata, song) has it curled back."
+    notes: "Dental against curled back: పాత (pāta, old) has the tongue on the teeth for t; పాట (pāṭa, song) has it curled back."
   - id: te-0113
     target: "పాట"
     native: "song"
-    reading: "pata"
+    reading: "pāṭa"
+    ipa: "paːʈa"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: పాత (pata, old) has the tongue on the teeth for t; పాట (pata, song) has it curled back."
+    notes: "Dental against curled back: పాత (pāta, old) has the tongue on the teeth for t; పాట (pāṭa, song) has it curled back."
   - id: te-0114
     target: "కోత"
     native: "harvest; a cut"
-    reading: "kota"
+    reading: "kōta"
+    ipa: "koːt̪a"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: కోత (kota, harvest) has the tongue on the teeth; కోట (kota, fort) has it curled back."
+    notes: "Dental against curled back: కోత (kōta, harvest) has the tongue on the teeth; కోట (kōṭa, fort) has it curled back."
   - id: te-0115
     target: "కోట"
     native: "fort"
-    reading: "kota"
+    reading: "kōṭa"
+    ipa: "koːʈa"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: కోత (kota, harvest) has the tongue on the teeth; కోట (kota, fort) has it curled back."
+    notes: "Dental against curled back: కోత (kōta, harvest) has the tongue on the teeth; కోట (kōṭa, fort) has it curled back."
   - ref: te-0050
     tags: ["lateral"]
-    notes: "The two l's: కల (kala, dream) has the l on the teeth; కళ (kala, art) has it curled back."
+    notes: "The two l's: కల (kala, dream) has the l on the teeth; కళ (kaḷa, art) has it curled back."
   - id: te-0116
     target: "కళ"
     native: "art"
-    reading: "kala"
+    reading: "kaḷa"
+    ipa: "kaɭa"
     tags: ["lateral"]
-    notes: "The two l's: కల (kala, dream) has the l on the teeth; కళ (kala, art) has it curled back."
+    notes: "The two l's: కల (kala, dream) has the l on the teeth; కళ (kaḷa, art) has it curled back."

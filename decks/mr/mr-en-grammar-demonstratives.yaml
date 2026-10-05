@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-demonstratives
 name: "This and that"
 kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "हा and तो, in three genders, and the words built on इ- and ति-: here, this way, like this, so much. Not yet checked by a Marathi speaker: please report any mistake."
@@ -21,8 +21,11 @@ pattern:
         "near: हा, इ-": "हा"
         "far: तो, ति-": "तो"
       readings:
-        "near: हा, इ-": "ha"
+        "near: हा, इ-": "hā"
         "far: तो, ति-": "to"
+      ipas:
+        "near: हा, इ-": "ɦa"
+        "far: तो, ति-": "t̪o"
     - lemma: "this, that (feminine)"
       key: fem
       gloss: "a woman, or a feminine noun"
@@ -32,6 +35,9 @@ pattern:
       readings:
         "near: हा, इ-": "hi"
         "far: तो, ति-": "ti"
+      ipas:
+        "near: हा, इ-": "ɦi"
+        "far: तो, ति-": "t̪i"
     - lemma: "this, that (neuter)"
       key: neut
       gloss: "a neuter noun; these, those (masculine)"
@@ -41,6 +47,9 @@ pattern:
       readings:
         "near: हा, इ-": "he"
         "far: तो, ति-": "te"
+      ipas:
+        "near: हा, इ-": "ɦe"
+        "far: तो, ति-": "t̪e"
     - lemma: "these, those (feminine)"
       key: fem-pl
       gloss: "women, or feminine nouns"
@@ -48,8 +57,11 @@ pattern:
         "near: हा, इ-": ["या", "ह्या"]
         "far: तो, ति-": "त्या"
       readings:
-        "near: हा, इ-": ["ya", "hya"]
-        "far: तो, ति-": "tya"
+        "near: हा, इ-": ["yā", "hyā"]
+        "far: तो, ति-": "tyā"
+      ipas:
+        "near: हा, इ-": "ja"
+        "far: तो, ति-": "t̪ja"
     - lemma: "here, there"
       key: place
       gloss: "at a place"
@@ -59,6 +71,9 @@ pattern:
       readings:
         "near: हा, इ-": ["ithe", "yethe"]
         "far: तो, ति-": ["tithe", "tethe"]
+      ipas:
+        "near: हा, इ-": "it̪ʰe"
+        "far: तो, ति-": "t̪it̪ʰe"
     - lemma: "this way, that way"
       key: way
       gloss: "towards a place"
@@ -66,8 +81,11 @@ pattern:
         "near: हा, इ-": "इकडे"
         "far: तो, ति-": "तिकडे"
       readings:
-        "near: हा, इ-": "ikde"
-        "far: तो, ति-": "tikde"
+        "near: हा, इ-": "ikḍe"
+        "far: तो, ति-": "tikḍe"
+      ipas:
+        "near: हा, इ-": "ikɖe"
+        "far: तो, ति-": "t̪ikɖe"
     - lemma: "like this, like that"
       key: manner
       gloss: "in this way"
@@ -75,8 +93,11 @@ pattern:
         "near: हा, इ-": ["असे", "असं"]
         "far: तो, ति-": ["तसे", "तसं"]
       readings:
-        "near: हा, इ-": ["ase", "asa"]
-        "far: तो, ति-": ["tase", "tasa"]
+        "near: हा, इ-": ["ase", "asam̐"]
+        "far: तो, ति-": ["tase", "tasam̐"]
+      ipas:
+        "near: हा, इ-": "əse"
+        "far: तो, ति-": "t̪əse"
     - lemma: "this much, that much"
       key: amount
       gloss: "so much"
@@ -84,5 +105,8 @@ pattern:
         "near: हा, इ-": ["इतके", "इतका", "इतकी"]
         "far: तो, ति-": ["तितके", "तितका", "तितकी"]
       readings:
-        "near: हा, इ-": ["itke", "itka", "itki"]
-        "far: तो, ति-": ["titke", "titka", "titki"]
+        "near: हा, इ-": ["itke", "itkā", "itki"]
+        "far: तो, ति-": ["titke", "titkā", "titki"]
+      ipas:
+        "near: हा, इ-": "it̪ke"
+        "far: तो, ति-": "t̪it̪ke"

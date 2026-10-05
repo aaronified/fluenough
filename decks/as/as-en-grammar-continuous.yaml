@@ -2,7 +2,7 @@ schema: 1
 id: as-en-grammar-continuous
 name: "Present continuous"
 kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN }
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I am doing, she is coming: what is happening now. Not yet checked by an Assamese speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "কৰা"
       key: kora
-      reading: "kora"
+      reading: "kôrā"
+      ipa: "kɔɹa"
       gloss: "to do"
       forms:
         "মই / আমি": ["কৰি আছোঁ", "কৰি আছো"]
@@ -24,13 +25,19 @@ pattern:
         "তুমি / তোমালোক": "কৰি আছা"
         "আপুনি / সি / তাই / তেওঁ": "কৰি আছে"
       readings:
-        "মই / আমি": ["kori asu", "kori asu"]
-        "তই / তহঁত": "kori as"
-        "তুমি / তোমালোক": "kori asa"
-        "আপুনি / সি / তাই / তেওঁ": "kori ase"
+        "মই / আমি": ["kori āsum̐", "kori āsu"]
+        "তই / তহঁত": "kori ās"
+        "তুমি / তোমালোক": "kori āsā"
+        "আপুনি / সি / তাই / তেওঁ": "kori āse"
+      ipas:
+        "মই / আমি": "koɹi asʊ̃"
+        "তই / তহঁত": "koɹi as"
+        "তুমি / তোমালোক": "koɹi asa"
+        "আপুনি / সি / তাই / তেওঁ": "koɹi ase"
     - lemma: "যোৱা"
       key: juwa
-      reading: "juwa"
+      reading: "zuwā"
+      ipa: "zʊwa"
       gloss: "to go"
       forms:
         "মই / আমি": ["গৈ আছোঁ", "গৈ আছো"]
@@ -38,13 +45,19 @@ pattern:
         "তুমি / তোমালোক": "গৈ আছা"
         "আপুনি / সি / তাই / তেওঁ": "গৈ আছে"
       readings:
-        "মই / আমি": ["goi asu", "goi asu"]
-        "তই / তহঁত": "goi as"
-        "তুমি / তোমালোক": "goi asa"
-        "আপুনি / সি / তাই / তেওঁ": "goi ase"
+        "মই / আমি": ["gôi āsum̐", "gôi āsu"]
+        "তই / তহঁত": "gôi ās"
+        "তুমি / তোমালোক": "gôi āsā"
+        "আপুনি / সি / তাই / তেওঁ": "gôi āse"
+      ipas:
+        "মই / আমি": "ɡɔi asʊ̃"
+        "তই / তহঁত": "ɡɔi as"
+        "তুমি / তোমালোক": "ɡɔi asa"
+        "আপুনি / সি / তাই / তেওঁ": "ɡɔi ase"
     - lemma: "অহা"
       key: oha
-      reading: "oha"
+      reading: "ôhā"
+      ipa: "ɔha"
       gloss: "to come"
       forms:
         "মই / আমি": ["আহি আছোঁ", "আহি আছো"]
@@ -52,13 +65,19 @@ pattern:
         "তুমি / তোমালোক": "আহি আছা"
         "আপুনি / সি / তাই / তেওঁ": "আহি আছে"
       readings:
-        "মই / আমি": ["ahi asu", "ahi asu"]
+        "মই / আমি": ["āhi āsum̐", "āhi āsu"]
+        "তই / তহঁত": "āhi ās"
+        "তুমি / তোমালোক": "āhi āsā"
+        "আপুনি / সি / তাই / তেওঁ": "āhi āse"
+      ipas:
+        "মই / আমি": "ahi asʊ̃"
         "তই / তহঁত": "ahi as"
         "তুমি / তোমালোক": "ahi asa"
         "আপুনি / সি / তাই / তেওঁ": "ahi ase"
     - lemma: "খোৱা"
       key: khuwa
-      reading: "khuwa"
+      reading: "khuwā"
+      ipa: "kʰʊwa"
       gloss: "to eat; to drink"
       forms:
         "মই / আমি": ["খাই আছোঁ", "খাই আছো"]
@@ -66,13 +85,19 @@ pattern:
         "তুমি / তোমালোক": "খাই আছা"
         "আপুনি / সি / তাই / তেওঁ": "খাই আছে"
       readings:
-        "মই / আমি": ["khai asu", "khai asu"]
-        "তই / তহঁত": "khai as"
-        "তুমি / তোমালোক": "khai asa"
-        "আপুনি / সি / তাই / তেওঁ": "khai ase"
+        "মই / আমি": ["khāi āsum̐", "khāi āsu"]
+        "তই / তহঁত": "khāi ās"
+        "তুমি / তোমালোক": "khāi āsā"
+        "আপুনি / সি / তাই / তেওঁ": "khāi āse"
+      ipas:
+        "মই / আমি": "kʰai asʊ̃"
+        "তই / তহঁত": "kʰai as"
+        "তুমি / তোমালোক": "kʰai asa"
+        "আপুনি / সি / তাই / তেওঁ": "kʰai ase"
     - lemma: "পঢ়া"
       key: porha
-      reading: "porha"
+      reading: "pôrhā"
+      ipa: "pɔɹa"
       gloss: "to read; to study"
       forms:
         "মই / আমি": ["পঢ়ি আছোঁ", "পঢ়ি আছো"]
@@ -80,7 +105,12 @@ pattern:
         "তুমি / তোমালোক": "পঢ়ি আছা"
         "আপুনি / সি / তাই / তেওঁ": "পঢ়ি আছে"
       readings:
-        "মই / আমি": ["porhi asu", "porhi asu"]
-        "তই / তহঁত": "porhi as"
-        "তুমি / তোমালোক": "porhi asa"
-        "আপুনি / সি / তাই / তেওঁ": "porhi ase"
+        "মই / আমি": ["porhi āsum̐", "porhi āsu"]
+        "তই / তহঁত": "porhi ās"
+        "তুমি / তোমালোক": "porhi āsā"
+        "আপুনি / সি / তাই / তেওঁ": "porhi āse"
+      ipas:
+        "মই / আমি": "poɹi asʊ̃"
+        "তই / তহঁত": "poɹi as"
+        "তুমি / তোমালোক": "poɹi asa"
+        "আপুনি / সি / তাই / তেওঁ": "poɹi ase"

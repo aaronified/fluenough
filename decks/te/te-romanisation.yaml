@@ -4,7 +4,30 @@ schema: 1
 kind: romanisation
 id: te-romanisation
 language: te
-scheme: "Popular, as Telugu is texted: lowercase ASCII, no length marks (miru, nenu, emi), spelled as said; t and d for retroflex and dental alike, n for ణ and ఞ, l for ళ, sh for శ and ష, ch for చ and cch for చ్చ, j for జ, r for ఱ, ru for ఋ, aspirates with h, the sunna ం as m or n as said, and a final u kept (unnaru)."
+scheme: "ISO 15919 letters, spelled as said (ADR-0025): ā ī ū for the long vowels, and e and ē, o and ō for the short and the long e and o (nēnu, kōṭa); ai and au; ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth; ḷ for ళ; c for చ and ch for ఛ; ś for శ and ṣ for ష; ñ for ఞ; r for ఱ; ru for ఋ; the sunna ం as the nasal said (aṇḍu, kālam), and the half nasal ఁ, no longer said, left out. A final u is kept (unnāru). A typed answer needs none of the marks."
+standard: "ISO 15919"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṅkh", "nkh"]
+  - ["ṅgh", "ngh"]
+  - ["ṅk", "nk"]
+  - ["ṅg", "ng"]
+  - ["ṅ", "ng"]
+  - ["ñch", "nchh"]
+  - ["ñc", "nch"]
+  - ["ñjh", "njh"]
+  - ["ñj", "nj"]
+  - ["ñ", "ny"]
+  - ["cch", "chh"]
+  - ["cc", "cch"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["m̐", "n"]
+  - ["ṁ", "n"]
+  - ["ḵ", "kh"]
 equivalents:
   - ["a", "aa"]
   - ["i", "ee", "ii"]

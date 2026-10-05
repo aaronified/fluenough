@@ -2,7 +2,7 @@ schema: 1
 id: kn-en-grammar-negative
 name: "Won't, didn't and don't"
 kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I won't go, she didn't come, don't eat: Kannada's 'not' is one ending for every person. Not yet checked by a Kannada speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "ಮಾಡು"
       key: maadu
-      reading: "madu"
+      reading: "māḍu"
+      ipa: "maːɖu"
       gloss: "to do"
       forms:
         "won't; doesn't": ["ಮಾಡುವುದಿಲ್ಲ", "ಮಾಡಲ್ಲ", "ಮಾಡೋದಿಲ್ಲ"]
@@ -25,14 +26,21 @@ pattern:
         "don't! (to ನೀನು)": "ಮಾಡಬೇಡ"
         "please don't (to ನೀವು)": "ಮಾಡಬೇಡಿ"
       readings:
-        "won't; doesn't": ["maduvudilla", "madalla", "madodilla"]
-        "didn't": ["madalilla", "madlilla"]
-        "isn't …ing now": ["maduttilla", "madtilla"]
-        "don't! (to ನೀನು)": "madabeda"
-        "please don't (to ನೀವು)": "madabedi"
+        "won't; doesn't": ["māḍuvudilla", "māḍalla", "māḍōdilla"]
+        "didn't": ["māḍalilla", "māḍlilla"]
+        "isn't …ing now": ["māḍuttilla", "māḍtilla"]
+        "don't! (to ನೀನು)": "māḍabēḍa"
+        "please don't (to ನೀವು)": "māḍabēḍi"
+      ipas:
+        "won't; doesn't": "maːɖuʋud̪illa"
+        "didn't": "maːɖalilla"
+        "isn't …ing now": "maːɖut̪t̪illa"
+        "don't! (to ನೀನು)": "maːɖabeːɖa"
+        "please don't (to ನೀವು)": "maːɖabeːɖi"
     - lemma: "ಹೋಗು"
       key: hoogu
-      reading: "hogu"
+      reading: "hōgu"
+      ipa: "hoːɡu"
       gloss: "to go"
       forms:
         "won't; doesn't": ["ಹೋಗುವುದಿಲ್ಲ", "ಹೋಗಲ್ಲ", "ಹೋಗೋದಿಲ್ಲ"]
@@ -41,14 +49,21 @@ pattern:
         "don't! (to ನೀನು)": "ಹೋಗಬೇಡ"
         "please don't (to ನೀವು)": "ಹೋಗಬೇಡಿ"
       readings:
-        "won't; doesn't": ["hoguvudilla", "hogalla", "hogodilla"]
-        "didn't": ["hogalilla", "hoglilla"]
-        "isn't …ing now": ["hoguttilla", "hogtilla"]
-        "don't! (to ನೀನು)": "hogabeda"
-        "please don't (to ನೀವು)": "hogabedi"
+        "won't; doesn't": ["hōguvudilla", "hōgalla", "hōgōdilla"]
+        "didn't": ["hōgalilla", "hōglilla"]
+        "isn't …ing now": ["hōguttilla", "hōgtilla"]
+        "don't! (to ನೀನು)": "hōgabēḍa"
+        "please don't (to ನೀವು)": "hōgabēḍi"
+      ipas:
+        "won't; doesn't": "hoːɡuʋud̪illa"
+        "didn't": "hoːɡalilla"
+        "isn't …ing now": "hoːɡut̪t̪illa"
+        "don't! (to ನೀನು)": "hoːɡabeːɖa"
+        "please don't (to ನೀವು)": "hoːɡabeːɖi"
     - lemma: "ಬರು"
       key: baru
       reading: "baru"
+      ipa: "baru"
       gloss: "to come"
       forms:
         "won't; doesn't": ["ಬರುವುದಿಲ್ಲ", "ಬರಲ್ಲ", "ಬರೋದಿಲ್ಲ"]
@@ -57,14 +72,21 @@ pattern:
         "don't! (to ನೀನು)": "ಬರಬೇಡ"
         "please don't (to ನೀವು)": "ಬರಬೇಡಿ"
       readings:
-        "won't; doesn't": ["baruvudilla", "baralla", "barodilla"]
+        "won't; doesn't": ["baruvudilla", "baralla", "barōdilla"]
         "didn't": ["baralilla", "barlilla"]
         "isn't …ing now": ["baruttilla", "bartilla"]
-        "don't! (to ನೀನು)": "barabeda"
-        "please don't (to ನೀವು)": "barabedi"
+        "don't! (to ನೀನು)": "barabēḍa"
+        "please don't (to ನೀವು)": "barabēḍi"
+      ipas:
+        "won't; doesn't": "baruʋud̪illa"
+        "didn't": "baralilla"
+        "isn't …ing now": "barut̪t̪illa"
+        "don't! (to ನೀನು)": "barabeːɖa"
+        "please don't (to ನೀವು)": "barabeːɖi"
     - lemma: "ತಿನ್ನು"
       key: tinnu
       reading: "tinnu"
+      ipa: "t̪innu"
       gloss: "to eat"
       forms:
         "won't; doesn't": ["ತಿನ್ನುವುದಿಲ್ಲ", "ತಿನ್ನಲ್ಲ", "ತಿನ್ನೋದಿಲ್ಲ"]
@@ -73,14 +95,21 @@ pattern:
         "don't! (to ನೀನು)": "ತಿನ್ನಬೇಡ"
         "please don't (to ನೀವು)": "ತಿನ್ನಬೇಡಿ"
       readings:
-        "won't; doesn't": ["tinnuvudilla", "tinnalla", "tinnodilla"]
+        "won't; doesn't": ["tinnuvudilla", "tinnalla", "tinnōdilla"]
         "didn't": ["tinnalilla", "tinlilla"]
         "isn't …ing now": ["tinnuttilla", "tintilla"]
-        "don't! (to ನೀನು)": "tinnabeda"
-        "please don't (to ನೀವು)": "tinnabedi"
+        "don't! (to ನೀನು)": "tinnabēḍa"
+        "please don't (to ನೀವು)": "tinnabēḍi"
+      ipas:
+        "won't; doesn't": "t̪innuʋud̪illa"
+        "didn't": "t̪innalilla"
+        "isn't …ing now": "t̪innut̪t̪illa"
+        "don't! (to ನೀನು)": "t̪innabeːɖa"
+        "please don't (to ನೀವು)": "t̪innabeːɖi"
     - lemma: "ಕುಡಿ"
       key: kudi
-      reading: "kudi"
+      reading: "kuḍi"
+      ipa: "kuɖi"
       gloss: "to drink"
       forms:
         "won't; doesn't": ["ಕುಡಿಯುವುದಿಲ್ಲ", "ಕುಡಿಯಲ್ಲ", "ಕುಡಿಯೋದಿಲ್ಲ"]
@@ -89,8 +118,14 @@ pattern:
         "don't! (to ನೀನು)": "ಕುಡಿಯಬೇಡ"
         "please don't (to ನೀವು)": "ಕುಡಿಯಬೇಡಿ"
       readings:
-        "won't; doesn't": ["kudiyuvudilla", "kudiyalla", "kudiyodilla"]
-        "didn't": ["kudiyalilla", "kudililla"]
-        "isn't …ing now": ["kudiyuttilla", "kuditilla"]
-        "don't! (to ನೀನು)": "kudiyabeda"
-        "please don't (to ನೀವು)": "kudiyabedi"
+        "won't; doesn't": ["kuḍiyuvudilla", "kuḍiyalla", "kuḍiyōdilla"]
+        "didn't": ["kuḍiyalilla", "kuḍīlilla"]
+        "isn't …ing now": ["kuḍiyuttilla", "kuḍītilla"]
+        "don't! (to ನೀನು)": "kuḍiyabēḍa"
+        "please don't (to ನೀವು)": "kuḍiyabēḍi"
+      ipas:
+        "won't; doesn't": "kuɖijuʋud̪illa"
+        "didn't": "kuɖijalilla"
+        "isn't …ing now": "kuɖijut̪t̪illa"
+        "don't! (to ನೀನು)": "kuɖijabeːɖa"
+        "please don't (to ನೀವು)": "kuɖijabeːɖi"
