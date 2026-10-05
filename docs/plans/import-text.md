@@ -50,8 +50,8 @@ The ROADMAP already lists "Sentence mining from imported text" under
 3. **A card maker** that writes cards into the learner's own deck, with ids
    that stay unique and permanent (AGENTS.md).
 4. **Readings and IPA in the app:** a Dart port of `transcribe.py`'s rules,
-   for the languages it knows. That is a large piece, and otherwise the
-   learner types the reading.
+   for the languages it knows (`in-app-readings.md`, which measures how
+   accurate they are). Otherwise the learner types the reading.
 5. **Meanings,** one of:
    - the learner types them (works offline, no licence question);
    - an offline dictionary per language, downloaded like the decks, built

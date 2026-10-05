@@ -17,9 +17,13 @@ answer from a session.
 - **IPA:** yes, for many Hindi and Bengali words. Coverage is thin for
   Assamese, Kannada and Gujarati, and phrases and inflected forms are mostly
   missing.
-- **ISO 15919 readings:** no. Wiktionary romanises each language in its own
-  scheme, close to ISO 15919 for some languages and not for others. The
-  readings stay as `tools/transcribe.py` writes them.
+- **ISO 15919 readings:** the owner wants these from Wiktionary or a similar
+  source too: "all decks will still get transliteration from wikitionary or
+  soemthing" (5 October). Wiktionary romanises each language in its own
+  scheme, close to ISO 15919 for some languages and not for others. Its
+  romanisations would need converting to ISO 15919 as said, and checking
+  against the decks' readings. Readings made in the app are only for
+  sentences the learner adds (`in-app-readings.md`).
 - **Licence:** Wiktionary is CC BY-SA 4.0; the decks are CC0. Every IPA
   taken from it needs attribution, and those fields are share-alike. A deck
   that takes any says so in its `license` and `source`, and the README says
