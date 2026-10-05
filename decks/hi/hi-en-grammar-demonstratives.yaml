@@ -2,7 +2,7 @@ schema: 1
 id: hi-en-grammar-demonstratives
 name: "This and that"
 kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "यह and वह, and the words built on them: here and there, this way and that, so much. Not yet checked by a Hindi speaker: please report any mistake."
@@ -23,6 +23,9 @@ pattern:
       readings:
         "near: यह, इ-": "yah"
         "far: वह, उ-": "vah"
+      ipas:
+        "near: यह, इ-": "jəɦ"
+        "far: वह, उ-": "ʋəɦ"
     - lemma: "they"
       key: people
       gloss: "people or things"
@@ -30,8 +33,11 @@ pattern:
         "near: यह, इ-": "ये"
         "far: वह, उ-": "वे"
       readings:
-        "near: यह, इ-": "ye"
-        "far: वह, उ-": "ve"
+        "near: यह, इ-": "yē"
+        "far: वह, उ-": "vē"
+      ipas:
+        "near: यह, इ-": "jeː"
+        "far: वह, उ-": "ʋeː"
     - lemma: "this, that, before a postposition"
       key: oblique
       gloss: "before में, से, को"
@@ -41,6 +47,9 @@ pattern:
       readings:
         "near: यह, इ-": "is"
         "far: वह, उ-": "us"
+      ipas:
+        "near: यह, इ-": "ɪs"
+        "far: वह, उ-": "ʊs"
     - lemma: "his, her, its"
       key: possessive
       gloss: "the owner"
@@ -48,8 +57,11 @@ pattern:
         "near: यह, इ-": "इसका"
         "far: वह, उ-": "उसका"
       readings:
-        "near: यह, इ-": "iska"
-        "far: वह, उ-": "uska"
+        "near: यह, इ-": "iskā"
+        "far: वह, उ-": "uskā"
+      ipas:
+        "near: यह, इ-": "ɪskaː"
+        "far: वह, उ-": "ʊskaː"
     - lemma: "him, her, it"
       key: object
       gloss: "the object"
@@ -57,8 +69,11 @@ pattern:
         "near: यह, इ-": "इसे"
         "far: वह, उ-": "उसे"
       readings:
-        "near: यह, इ-": "ise"
-        "far: वह, उ-": "use"
+        "near: यह, इ-": "isē"
+        "far: वह, उ-": "usē"
+      ipas:
+        "near: यह, इ-": "ɪseː"
+        "far: वह, उ-": "ʊseː"
     - lemma: "here, there"
       key: place
       gloss: "place"
@@ -66,8 +81,11 @@ pattern:
         "near: यह, इ-": "यहाँ"
         "far: वह, उ-": "वहाँ"
       readings:
-        "near: यह, इ-": "yahan"
-        "far: वह, उ-": "vahan"
+        "near: यह, इ-": "yahām̐"
+        "far: वह, उ-": "vahām̐"
+      ipas:
+        "near: यह, इ-": "jəɦãː"
+        "far: वह, उ-": "ʋəɦãː"
     - lemma: "this way, that way"
       key: direction
       gloss: "direction"
@@ -77,6 +95,9 @@ pattern:
       readings:
         "near: यह, इ-": "idhar"
         "far: वह, उ-": "udhar"
+      ipas:
+        "near: यह, इ-": "ɪd̪ʱər"
+        "far: वह, उ-": "ʊd̪ʱər"
     - lemma: "like this, like that"
       key: manner
       gloss: "manner"
@@ -84,8 +105,11 @@ pattern:
         "near: यह, इ-": "ऐसा"
         "far: वह, उ-": "वैसा"
       readings:
-        "near: यह, इ-": "aisa"
-        "far: वह, उ-": "vaisa"
+        "near: यह, इ-": "aisā"
+        "far: वह, उ-": "vaisā"
+      ipas:
+        "near: यह, इ-": "ɛːsaː"
+        "far: वह, उ-": "ʋɛːsaː"
     - lemma: "this much, that much"
       key: amount
       gloss: "amount"
@@ -93,5 +117,8 @@ pattern:
         "near: यह, इ-": "इतना"
         "far: वह, उ-": "उतना"
       readings:
-        "near: यह, इ-": "itna"
-        "far: वह, उ-": "utna"
+        "near: यह, इ-": "itnā"
+        "far: वह, उ-": "utnā"
+      ipas:
+        "near: यह, इ-": "ɪt̪naː"
+        "far: वह, उ-": "ʊt̪naː"

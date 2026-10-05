@@ -61,42 +61,46 @@ python3 tools/validate_decks.py decks/
 
 ## Romanising Indic languages
 
-A `reading` is there to help a learner say the word, and to let them answer
-in it (#47). Each language writes every reading in one scheme, the way its
-speakers type it in a chat, and names that scheme in its
-`<code>-romanisation.yaml`. The common rules are in
+A `reading` is there to help a learner say the word (#47). Each language
+writes every reading in **ISO 15919's letters, spelled as the word is said**,
+and says how in its `<code>-romanisation.yaml` ([ADR-0025](../docs/adr/0025-iso-15919-and-ipa.md)).
+The [README](../README.md#how-words-are-written-in-latin-letters-iso-15919)
+has the table; the common rules are in
 [the format specification](../docs/DECK-FORMAT.md#romanisation):
 
-- **Lowercase ASCII, no marks:** no diacritics, no capitals, and **no doubled
-  vowels** for length. पानी is `pani`, दूध is `dudh`, మీరు is `miru`.
-- **A nasal vowel is followed by `n`:** हाँ is `han`, नहीं is `nahin`.
+- **Length is marked** where the language says it: పాలు is `pālu` and పలు
+  `palu`; पानी is `pānī`, दूध `dūdh`.
+- **Retroflex is marked:** పాట is `pāṭa`, పాత `pāta`.
+- **A nasal vowel ends in `m̐`:** हाँ is `hām̐`, नहीं is `nahīm̐`.
 - **The schwa a speaker drops is not written:** कमल is `kamal`, सड़क is
-  `sarak`, not `kamala`, `saraka`.
-- **Aspiration is an `h`:** `kh`, `gh`, `chh`, `th`, `dh`, `ph`, `bh`. श and ष
-  are both `sh`. ड़ is `r` and ढ़ is `rh`.
-- **Retroflex and dental consonants are not told apart** in the reading. The
-  script tells them apart, and the notes say so where it matters.
-- **A letter card for ङ or ञ on its own** (and their Telugu, Kannada,
-  Gujarati and Assamese twins) reads `nga` or `nya`, so that it differs
-  from न; Bengali's read `ngo` and `nyo`, as every Bengali letter's name
-  ends in o. Words write `n`.
+  `saṛak`, not `kamala`, `saṛaka`.
+- **Aspiration is an `h`:** `kh`, `gh`, `ch`, `th`, `dh`, `ph`, `bh`, each one
+  sound. च is `c` and छ is `ch`, as in ISO 15919.
+- **A letter card for ङ or ञ on its own** reads `ṅa` or `ña`; Bengali's
+  read `ṅô` and `ñô`, so that ঞ differs from ন.
 - **A grammar row whose lemma is English** has no `reading`; its forms do.
-- **Spellings learners also type**, such as `ee` for `i` or `w` for `v`, are
-  listed as `equivalents` in the romanisation file. Grading treats them as
-  the decks' own.
+- **Every reading has an `ipa` beside it,** broad, without slashes.
+- **To write both for a new card,** run
+  `python3 tools/transcribe.py <code> "<word>" <how it is typed>`: the word as
+  people type it shows what is said.
 
-Assamese writes স, শ and ষ as `x` (*Axom*) and ও as `u` (*mur*), as it is
-typed in chat; `decks/as/as-romanisation.yaml` says so.
+A typed answer needs none of the marks. The romanisation file's `typed`
+list says how its letters are typed (`c` as `ch`, `ś` as `sh`), and its
+`equivalents` the spellings learners also type for one sound, such as `ee`
+for `i`; grading treats them all as the decks' own.
 
-Bengali differs in two ways, and its readings follow how it is said:
+Assamese writes স, শ and ষ as `x` (*ôxôm*) and ও as `u` (*mur*), as it is
+said; `decks/as/as-romanisation.yaml` says so.
 
-- **The inherent vowel is `o`, never `a`:** কমল is `komol`, বন is `bon`.
-  `o` stands for both অ and ও.
-- **শ, ষ and স are all `sh`,** except where a speaker says s. স is `s` when
-  it is joined in a conjunct with t, th, n, r or l (স্টেশন is `steshon`,
-  আস্তে is `aste`), and in many English words. It stays `sh` before k and p
-  (হাসপাতাল is `hashpatal`, নমস্কার is `nomoshkar`), and where it is written
-  apart from the next letter (আসতে is `ashte`, আসলাম is `ashlam`).
+Bengali's readings follow how it is said:
+
+- **The inherent vowel is `ô` where it is said [ɔ] and `o` where it is said
+  [o]:** কথা is `kôthā`, কমল is `kômol`, and it is left out where it is
+  silent: নাম is `nām`.
+- **শ, ষ and স are all `ś`,** except where a speaker says s. স is `s` when
+  it is joined in a conjunct with t, th, n, r or l (স্টেশন is `sṭeśon`,
+  আস্তে is `āste`), and in many English words. It stays `ś` before k and p
+  (হাসপাতাল is `hāśpātāl`, নমস্কার is `nômośkār`).
 
 ## Decks no speaker has checked
 

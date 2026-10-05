@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-spelling
 name: "Marathi spellings, old and new"
 kind: vocab
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Older print wrote many dots (anusvars) that were not said, and short final vowels where today's rules write long ones. The spelling rules Maharashtra adopted in the 1960s changed both, and books printed before them look like this. Recognition only. Not yet checked by a Marathi speaker: please report any mistake."
@@ -11,46 +11,53 @@ cards:
   - id: mr-0647
     target: "नाहीं"
     native: "no; not; today नाही"
-    reading: "nahi"
+    reading: "nāhim̐"
+    ipa: "naɦĩ"
     pos: "other"
     modes: [recognition]
     notes: "Older print put a dot on many final vowels, marking a nasal that had long stopped being said. Today's rules leave it out."
   - id: mr-0648
     target: "तें"
     native: "that; it; today ते"
-    reading: "te"
+    reading: "tem̐"
+    ipa: "t̪ẽ"
     pos: "other"
     modes: [recognition]
     notes: "The same unsaid dot, on a neuter word."
   - id: mr-0649
     target: "येथें"
     native: "here; today येथे"
-    reading: "yethe"
+    reading: "yethem̐"
+    ipa: "jet̪ʰẽ"
     pos: "other"
     modes: [recognition]
   - id: mr-0650
     target: "कां"
     native: "why; today का"
-    reading: "ka"
+    reading: "kām̐"
+    ipa: "kã"
     pos: "other"
     modes: [recognition]
   - id: mr-0651
     target: "घरीं"
     native: "at home; today घरी"
-    reading: "ghari"
+    reading: "gharim̐"
+    ipa: "ɡʱərĩ"
     pos: "other"
     modes: [recognition]
   - id: mr-0652
     target: "करितों"
     native: "I do; today करतो"
-    reading: "karito"
+    reading: "karitom̐"
+    ipa: "kərit̪õ"
     pos: "other"
     modes: [recognition]
     notes: "Older and bookish verb forms kept an -इ- that speech had dropped: करितो, करितात. Today: करतो, करतात."
   - id: mr-0653
     target: "आहें"
     native: "am; today आहे"
-    reading: "ahe"
+    reading: "āhem̐"
+    ipa: "aɦẽ"
     pos: "other"
     modes: [recognition]
     notes: "मी आहें, I am, in older print, told apart from तो आहे by the dot."
@@ -58,6 +65,7 @@ cards:
     target: "कवि"
     native: "poet; today कवी"
     reading: "kavi"
+    ipa: "kəʋi"
     pos: "other"
     modes: [recognition]
     notes: "Words from Sanskrit kept their short final i and u. Today's rules write them long when they stand alone, as Marathi says them: कवी, and short inside a compound: कविसंमेलन, a poets' gathering."
@@ -65,6 +73,7 @@ cards:
     target: "गुरु"
     native: "teacher; guru; today गुरू"
     reading: "guru"
+    ipa: "ɡuru"
     pos: "other"
     modes: [recognition]
     notes: "The same rule for u: गुरू alone, गुरुवार (Thursday) in a compound."

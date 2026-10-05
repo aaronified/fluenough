@@ -3,7 +3,7 @@ id: bn-en-family
 name: "Family"
 kind: vocab
 theme: family
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, with the other words many families use. Not yet checked by a Bengali speaker: please report any mistake."
@@ -12,174 +12,200 @@ cards:
   - id: bn-0423
     target: "বাবা"
     native: "father"
-    reading: "baba"
+    reading: "bābā"
+    ipa: "baba"
     alt_target: ["আব্বা", "আব্বু"]
     pos: "noun"
-    notes: "বাবা (baba) is said everywhere. Many Muslim families also say আব্বা (abba) or আব্বু (abbu)."
+    notes: "বাবা (bābā) is said everywhere. Many Muslim families also say আব্বা (ābbā) or আব্বু (ābbu)."
   - id: bn-0424
     target: "মা"
     native: "mother"
-    reading: "ma"
+    reading: "mā"
+    ipa: "ma"
     alt_target: ["আম্মা", "আম্মু"]
     pos: "noun"
-    notes: "মা (ma) is said everywhere. Many Muslim families also say আম্মা (amma) or আম্মু (ammu)."
+    notes: "মা (mā) is said everywhere. Many Muslim families also say আম্মা (āmmā) or আম্মু (āmmu)."
   - ref: bn-0186
     native: "brother; younger brother"
-    notes: "An elder brother is দাদা (dada), also বড় ভাই (boro bhai); in many families দাদা means grandfather. Cousins are brothers and sisters too: মামাতো ভাই (mamato bhai) is your mother's brother's son."
+    notes: "An elder brother is দাদা (dādā), also বড় ভাই (bôṛo bhāi); in many families দাদা means grandfather. Cousins are brothers and sisters too: মামাতো ভাই (māmāto bhāi) is your mother's brother's son."
   - ref: bn-0181
     native: "elder brother"
     tags: []
-    notes: "Also বড় ভাই (boro bhai). In many families দাদা means grandfather."
+    notes: "Also বড় ভাই (bôṛo bhāi). In many families দাদা means grandfather."
   - ref: bn-0182
     native: "elder sister"
     tags: []
-    notes: "Also আপা (apa)."
+    notes: "Also আপা (āpā)."
   - id: bn-0425
     target: "বোন"
     native: "sister; younger sister"
     reading: "bon"
+    ipa: "bon"
     pos: "noun"
-    notes: "An elder sister is দিদি (didi), also আপা (apa). Brothers and sisters are named by birth order: বড় (boro) the eldest, মেজো (mejo) the second, ছোট (chhoto) the youngest."
+    notes: "An elder sister is দিদি (didi), also আপা (āpā). Brothers and sisters are named by birth order: বড় (bôṛo) the eldest, মেজো (mejo) the second, ছোট (choṭo) the youngest."
   - id: bn-0426
     target: "ছেলে"
     native: "son; boy"
-    reading: "chhele"
+    reading: "chele"
+    ipa: "tʃʰele"
     pos: "noun"
   - id: bn-0427
     target: "মেয়ে"
     native: "daughter; girl"
     reading: "meye"
+    ipa: "meje"
     pos: "noun"
   - id: bn-0428
     target: "স্বামী"
     native: "husband"
-    reading: "shami"
+    reading: "śāmi"
+    ipa: "ʃami"
     alt_target: ["বর"]
     pos: "noun"
-    notes: "স্ব is said sh: at the start of a word the ব-sign is silent. Also বর (bor), in everyday speech."
+    notes: "স্ব is said sh: at the start of a word the ব-sign is silent. Also বর (bôr), in everyday speech."
   - id: bn-0429
     target: "স্ত্রী"
     native: "wife"
     reading: "stri"
+    ipa: "st̪ri"
     alt_target: ["বউ"]
     pos: "noun"
     notes: "In everyday speech বউ (bou), which also means bride. স্ত্র is s, t and r in one conjunct."
   - id: bn-0430
     target: "ছেলেমেয়ে"
     native: "children (one's sons and daughters)"
-    reading: "chhelemeye"
+    reading: "chelemeye"
+    ipa: "tʃʰelemeje"
     pos: "noun"
     notes: "Sons and daughters in one word."
   - id: bn-0431
     target: "ঠাকুরদা"
     native: "grandfather (father's father)"
-    reading: "thakurda"
+    reading: "ṭhākurdā"
+    ipa: "ʈʰakurd̪a"
     alt_target: ["দাদু", "দাদা"]
     pos: "noun"
-    notes: "Also দাদু (dadu), said for either grandfather, and দাদা (dada). Careful: দাদা is also an elder brother."
+    notes: "Also দাদু (dādu), said for either grandfather, and দাদা (dādā). Careful: দাদা is also an elder brother."
   - id: bn-0432
     target: "ঠাকুমা"
     native: "grandmother (father's mother)"
-    reading: "thakuma"
+    reading: "ṭhākumā"
+    ipa: "ʈʰakuma"
     alt_target: ["ঠাকুরমা", "দাদি"]
     pos: "noun"
-    notes: "Also written ঠাকুরমা. Also দাদি (dadi)."
+    notes: "Also written ঠাকুরমা. Also দাদি (dādi)."
   - id: bn-0433
     target: "দাদু"
     native: "grandfather (mother's father)"
-    reading: "dadu"
+    reading: "dādu"
+    ipa: "d̪ad̪u"
     alt_target: ["দাদামশাই", "নানা"]
     pos: "noun"
-    notes: "More formally দাদামশাই (dadamoshai). Also নানা (nana)."
+    notes: "More formally দাদামশাই (dādāmośāi). Also নানা (nānā)."
   - id: bn-0434
     target: "দিদিমা"
     native: "grandmother (mother's mother)"
-    reading: "didima"
+    reading: "didimā"
+    ipa: "d̪id̪ima"
     alt_target: ["দিদা", "নানি"]
     pos: "noun"
-    notes: "Also দিদা (dida), and নানি (nani)."
+    notes: "Also দিদা (didā), and নানি (nāni)."
   - id: bn-0435
     target: "কাকা"
     native: "uncle (father's younger brother)"
-    reading: "kaka"
+    reading: "kākā"
+    ipa: "kaka"
     alt_target: ["কাকু", "চাচা"]
     pos: "noun"
-    notes: "Fondly কাকু (kaku). Also চাচা (chacha). His wife is কাকিমা (kakima), also চাচি (chachi). Your father's elder brother is জেঠু (jethu), also বড় চাচা (boro chacha)."
+    notes: "Fondly কাকু (kāku). Also চাচা (cācā). His wife is কাকিমা (kākimā), also চাচি (cāci). Your father's elder brother is জেঠু (jeṭhu), also বড় চাচা (bôṛo cācā)."
   - id: bn-0436
     target: "পিসি"
     native: "aunt (father's sister)"
-    reading: "pishi"
+    reading: "piśi"
+    ipa: "piʃi"
     alt_target: ["পিসিমা", "ফুফু"]
     pos: "noun"
-    notes: "Also পিসিমা (pishima), and ফুফু (phuphu). Her husband is পিসেমশাই (pishemoshai), also ফুফা (phupha)."
+    notes: "Also পিসিমা (piśimā), and ফুফু (phuphu). Her husband is পিসেমশাই (piśemośāi), also ফুফা (phuphā)."
   - id: bn-0437
     target: "মামা"
     native: "uncle (mother's brother)"
-    reading: "mama"
+    reading: "māmā"
+    ipa: "mama"
     pos: "noun"
-    notes: "The same word in every family. His wife is মামি (mami), also মামিমা (mamima)."
+    notes: "The same word in every family. His wife is মামি (māmi), also মামিমা (māmimā)."
   - id: bn-0438
     target: "মাসি"
     native: "aunt (mother's sister)"
-    reading: "mashi"
+    reading: "māśi"
+    ipa: "maʃi"
     alt_target: ["মাসিমা", "খালা"]
     pos: "noun"
-    notes: "Also মাসিমা (mashima), and খালা (khala). Her husband is মেসো (mesho) or মেসোমশাই (meshomoshai), also খালু (khalu)."
+    notes: "Also মাসিমা (māśimā), and খালা (khālā). Her husband is মেসো (meśo) or মেসোমশাই (meśomośāi), also খালু (khālu)."
   - id: bn-0439
     target: "আমার এক ভাই আর দুই বোন আছে।"
     native: "I have one brother and two sisters."
-    reading: "amar ek bhai ar dui bon achhe."
+    reading: "āmār ek bhāi ār dui bon āche."
+    ipa: "amar ek bʱai ar d̪ui bon atʃʰe"
     pos: "phrase"
-    notes: "Having is আছে, 'there is', with the owner in the possessive: আমার (amar), 'of me'."
+    notes: "Having is আছে, 'there is', with the owner in the possessive: আমার (āmār), 'of me'."
   - id: bn-0440
     target: "আপনার কি ভাইবোন আছে?"
     native: "Do you have brothers and sisters?"
-    reading: "apnar ki bhaibon achhe?"
+    reading: "āpnār ki bhāibon āche?"
+    ipa: "apnar ki bʱaibon atʃʰe"
     pos: "phrase"
-    notes: "ভাইবোন (bhaibon) is brothers and sisters together. কি (ki) makes it a yes-or-no question."
+    notes: "ভাইবোন (bhāibon) is brothers and sisters together. কি (ki) makes it a yes-or-no question."
   - id: bn-0441
     target: "আমি বিবাহিত।"
     native: "I'm married."
-    reading: "ami bibahito."
+    reading: "āmi bibāhito."
+    ipa: "ami bibaɦit̪o"
     pos: "phrase"
-    notes: "Unmarried is অবিবাহিত (obibahito). In everyday speech also আমার বিয়ে হয়েছে (amar biye hoyechhe), 'my wedding has happened'."
+    notes: "Unmarried is অবিবাহিত (ôbibāhito). In everyday speech also আমার বিয়ে হয়েছে (āmār biye hôyeche), 'my wedding has happened'."
   - ref: bn-0197
   - id: bn-0442
     target: "বাবা-মা"
     native: "parents"
-    reading: "baba-ma"
+    reading: "bābā-mā"
+    ipa: "babama"
     alt_target: ["মা-বাবা"]
     pos: "noun"
   - id: bn-0443
     target: "আত্মীয়"
     native: "relative"
-    reading: "attiyo"
+    reading: "āttiyo"
+    ipa: "at̪t̪ijo"
     pos: "noun"
   - id: bn-0444
     target: "জেঠু"
     native: "uncle (father's elder brother)"
-    reading: "jethu"
+    reading: "jeṭhu"
+    ipa: "dʒeʈʰu"
     alt_target: ["জ্যাঠা", "বড় চাচা"]
     pos: "noun"
-    notes: "Formally জ্যাঠা (jyatha). Also বড় চাচা (boro chacha). His wife is জেঠিমা (jethima), also বড় চাচি (boro chachi)."
+    notes: "Formally জ্যাঠা (jêṭhā). Also বড় চাচা (bôṛo cācā). His wife is জেঠিমা (jeṭhimā), also বড় চাচি (bôṛo cāci)."
   - id: bn-0445
     target: "শ্বশুর"
     native: "father-in-law"
-    reading: "shoshur"
+    reading: "śośur"
+    ipa: "ʃoʃur"
     pos: "noun"
   - id: bn-0446
     target: "শাশুড়ি"
     native: "mother-in-law"
-    reading: "shashuri"
+    reading: "śāśuṛi"
+    ipa: "ʃaʃuɽi"
     pos: "noun"
   - id: bn-0447
     target: "নাতি"
     native: "grandson"
-    reading: "nati"
+    reading: "nāti"
+    ipa: "nat̪i"
     pos: "noun"
   - id: bn-0448
     target: "নাতনি"
     native: "granddaughter"
-    reading: "natni"
+    reading: "nātni"
+    ipa: "nat̪ni"
     alt_target: ["নাতনী"]
     pos: "noun"

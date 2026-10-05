@@ -2,7 +2,7 @@ schema: 1
 id: mr-en-grammar-continuous
 name: "Present continuous"
 kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN }
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "I am going, she is coming: what is happening now, in its full form and in the short forms of speech. Not yet checked by a Marathi speaker: please report any mistake."
@@ -16,7 +16,8 @@ pattern:
   entries:
     - lemma: "जाणे"
       key: jaane
-      reading: "jane"
+      reading: "jāṇe"
+      ipa: "dzaɳe"
       gloss: "to go"
       forms:
         "मी": ["जात आहे", "जातोय", "जातेय"]
@@ -26,15 +27,23 @@ pattern:
         "तो / ती / ते": ["जात आहे", "जातोय", "जातेय"]
         "ते / त्या (they)": ["जात आहेत", "जातायत"]
       readings:
-        "मी": ["jat ahe", "jatoy", "jatey"]
-        "आम्ही": ["jat ahot", "jatoy"]
-        "तू": ["jat ahes", "jatoyas", "jateyas"]
-        "तुम्ही": ["jat ahat", "jatay"]
-        "तो / ती / ते": ["jat ahe", "jatoy", "jatey"]
-        "ते / त्या (they)": ["jat ahet", "jatayat"]
+        "मी": ["jāt āhe", "jātoy", "jātey"]
+        "आम्ही": ["jāt āhot", "jātoy"]
+        "तू": ["jāt āhes", "jātoyas", "jāteyas"]
+        "तुम्ही": ["jāt āhāt", "jātāy"]
+        "तो / ती / ते": ["jāt āhe", "jātoy", "jātey"]
+        "ते / त्या (they)": ["jāt āhet", "jātāyat"]
+      ipas:
+        "मी": "dzat̪ aɦe"
+        "आम्ही": "dzat̪ aɦot̪"
+        "तू": "dzat̪ aɦes"
+        "तुम्ही": "dzat̪ aɦat̪"
+        "तो / ती / ते": "dzat̪ aɦe"
+        "ते / त्या (they)": "dzat̪ aɦet̪"
     - lemma: "येणे"
       key: yene
-      reading: "yene"
+      reading: "yeṇe"
+      ipa: "jeɳe"
       gloss: "to come"
       forms:
         "मी": ["येत आहे", "येतोय", "येतेय"]
@@ -44,15 +53,23 @@ pattern:
         "तो / ती / ते": ["येत आहे", "येतोय", "येतेय"]
         "ते / त्या (they)": ["येत आहेत", "येतायत"]
       readings:
-        "मी": ["yet ahe", "yetoy", "yetey"]
-        "आम्ही": ["yet ahot", "yetoy"]
-        "तू": ["yet ahes", "yetoyas", "yeteyas"]
-        "तुम्ही": ["yet ahat", "yetay"]
-        "तो / ती / ते": ["yet ahe", "yetoy", "yetey"]
-        "ते / त्या (they)": ["yet ahet", "yetayat"]
+        "मी": ["yet āhe", "yetoy", "yetey"]
+        "आम्ही": ["yet āhot", "yetoy"]
+        "तू": ["yet āhes", "yetoyas", "yeteyas"]
+        "तुम्ही": ["yet āhāt", "yetāy"]
+        "तो / ती / ते": ["yet āhe", "yetoy", "yetey"]
+        "ते / त्या (they)": ["yet āhet", "yetāyat"]
+      ipas:
+        "मी": "jet̪ aɦe"
+        "आम्ही": "jet̪ aɦot̪"
+        "तू": "jet̪ aɦes"
+        "तुम्ही": "jet̪ aɦat̪"
+        "तो / ती / ते": "jet̪ aɦe"
+        "ते / त्या (they)": "jet̪ aɦet̪"
     - lemma: "करणे"
       key: karne
-      reading: "karne"
+      reading: "karṇe"
+      ipa: "kərɳe"
       gloss: "to do"
       forms:
         "मी": ["करत आहे", "करतोय", "करतेय"]
@@ -62,15 +79,23 @@ pattern:
         "तो / ती / ते": ["करत आहे", "करतोय", "करतेय"]
         "ते / त्या (they)": ["करत आहेत", "करतायत"]
       readings:
-        "मी": ["karat ahe", "kartoy", "kartey"]
-        "आम्ही": ["karat ahot", "kartoy"]
-        "तू": ["karat ahes", "kartoyas", "karteyas"]
-        "तुम्ही": ["karat ahat", "kartay"]
-        "तो / ती / ते": ["karat ahe", "kartoy", "kartey"]
-        "ते / त्या (they)": ["karat ahet", "kartayat"]
+        "मी": ["karat āhe", "kartoy", "kartey"]
+        "आम्ही": ["karat āhot", "kartoy"]
+        "तू": ["karat āhes", "kartoyas", "karteyas"]
+        "तुम्ही": ["karat āhāt", "kartāy"]
+        "तो / ती / ते": ["karat āhe", "kartoy", "kartey"]
+        "ते / त्या (they)": ["karat āhet", "kartāyat"]
+      ipas:
+        "मी": "kərət̪ aɦe"
+        "आम्ही": "kərət̪ aɦot̪"
+        "तू": "kərət̪ aɦes"
+        "तुम्ही": "kərət̪ aɦat̪"
+        "तो / ती / ते": "kərət̪ aɦe"
+        "ते / त्या (they)": "kərət̪ aɦet̪"
     - lemma: "शिकणे"
       key: shikne
-      reading: "shikne"
+      reading: "śikṇe"
+      ipa: "ʃikɳe"
       gloss: "to learn"
       forms:
         "मी": ["शिकत आहे", "शिकतोय", "शिकतेय"]
@@ -80,9 +105,16 @@ pattern:
         "तो / ती / ते": ["शिकत आहे", "शिकतोय", "शिकतेय"]
         "ते / त्या (they)": ["शिकत आहेत", "शिकतायत"]
       readings:
-        "मी": ["shikat ahe", "shiktoy", "shiktey"]
-        "आम्ही": ["shikat ahot", "shiktoy"]
-        "तू": ["shikat ahes", "shiktoyas", "shikteyas"]
-        "तुम्ही": ["shikat ahat", "shiktay"]
-        "तो / ती / ते": ["shikat ahe", "shiktoy", "shiktey"]
-        "ते / त्या (they)": ["shikat ahet", "shiktayat"]
+        "मी": ["śikat āhe", "śiktoy", "śiktey"]
+        "आम्ही": ["śikat āhot", "śiktoy"]
+        "तू": ["śikat āhes", "śiktoyas", "śikteyas"]
+        "तुम्ही": ["śikat āhāt", "śiktāy"]
+        "तो / ती / ते": ["śikat āhe", "śiktoy", "śiktey"]
+        "ते / त्या (they)": ["śikat āhet", "śiktāyat"]
+      ipas:
+        "मी": "ʃikət̪ aɦe"
+        "आम्ही": "ʃikət̪ aɦot̪"
+        "तू": "ʃikət̪ aɦes"
+        "तुम्ही": "ʃikət̪ aɦat̪"
+        "तो / ती / ते": "ʃikət̪ aɦe"
+        "ते / त्या (they)": "ʃikət̪ aɦet̪"

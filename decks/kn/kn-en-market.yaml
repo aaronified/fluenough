@@ -3,7 +3,7 @@ id: kn-en-market
 name: "Market"
 kind: vocab
 theme: market
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Asking the price, bargaining, paying: what a market stall needs. Not yet checked by a Kannada speaker: please report any mistake."
@@ -12,7 +12,8 @@ cards:
   - id: kn-0297
     target: "ಇದು ಎಷ್ಟು?"
     native: "How much is it?"
-    reading: "idu eshtu?"
+    reading: "idu eṣṭu?"
+    ipa: "id̪u eʂʈu"
     alt_target: ["ಇದಕ್ಕೆ ಎಷ್ಟು?"]
     pos: "phrase"
     notes: "Also ಇದಕ್ಕೆ ಎಷ್ಟು? (idakke eshtu?), 'for this, how much?'."
@@ -20,64 +21,75 @@ cards:
     target: "ಬೆಲೆ"
     native: "price"
     reading: "bele"
+    ipa: "bele"
     pos: "noun"
-    notes: "Short e, plain l. Compare ಬೇಳೆ (bele), lentils, with a long e and the curled-back l."
+    notes: "Short e, plain l. Compare ಬೇಳೆ (bēḷe), lentils, with a long e and the curled-back l."
   - id: kn-0299
     target: "ರೂಪಾಯಿ"
     native: "rupee"
-    reading: "rupayi"
+    reading: "rūpāyi"
+    ipa: "ruːpaːji"
     pos: "noun"
   - id: kn-0300
     target: "ದುಡ್ಡು"
     native: "money"
-    reading: "duddu"
+    reading: "duḍḍu"
+    ipa: "d̪uɖɖu"
     pos: "noun"
-    notes: "The everyday word. ಹಣ (hana) is more formal."
+    notes: "The everyday word. ಹಣ (haṇa) is more formal."
   - id: kn-0301
     target: "ಚಿಲ್ಲರೆ"
     native: "change; small notes and coins"
-    reading: "chillare"
+    reading: "cillare"
+    ipa: "tʃillare"
     pos: "noun"
     notes: "ಚಿಲ್ಲರೆ ಇದೆಯಾ? (chillare ideya?), do you have change?"
   - id: kn-0302
     target: "ತುಂಬಾ ಜಾಸ್ತಿ!"
     native: "That's too much!"
-    reading: "tumba jasti!"
+    reading: "tumbā jāsti!"
+    ipa: "t̪umbaː dʒaːst̪i"
     pos: "phrase"
     notes: "ತುಂಬಾ, very; ಜಾಸ್ತಿ, more, too much."
   - id: kn-0303
     target: "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ."
     native: "Please lower it a little."
-    reading: "svalpa kadime madi."
+    reading: "svalpa kaḍime māḍi."
+    ipa: "sʋalpa kaɖime maːɖi"
     pos: "phrase"
-    notes: "ಕಡಿಮೆ (kadime) is 'less'."
+    notes: "ಕಡಿಮೆ (kaḍime) is 'less'."
   - id: kn-0304
     target: "ಅಂಗಡಿ"
     native: "shop"
-    reading: "angadi"
+    reading: "aṅgaḍi"
+    ipa: "aŋɡaɖi"
     pos: "noun"
   - id: kn-0305
     target: "ಕೊಡಿ"
     native: "please give (me)"
-    reading: "kodi"
+    reading: "koḍi"
+    ipa: "koɖi"
     pos: "other"
-    notes: "The polite form of ಕೊಡು (kodu): ಅರ್ಧ ಕೆಜಿ ಕೊಡಿ, half a kilo, please."
+    notes: "The polite form of ಕೊಡು (koḍu): ಅರ್ಧ ಕೆಜಿ ಕೊಡಿ, half a kilo, please."
   - id: kn-0306
     target: "ಕೆಜಿ"
     native: "kilo"
     reading: "keji"
+    ipa: "kedʒi"
     alt_target: ["ಕಿಲೋ"]
     pos: "noun"
-    notes: "Also ಕಿಲೋ (kilo). ಒಂದು ಕೆಜಿಗೆ ಎಷ್ಟು? How much for a kilo?"
+    notes: "Also ಕಿಲೋ (kilō). ಒಂದು ಕೆಜಿಗೆ ಎಷ್ಟು? How much for a kilo?"
   - id: kn-0307
     target: "ಸ್ವಲ್ಪ"
     native: "a little; a bit"
     reading: "svalpa"
+    ipa: "sʋalpa"
     pos: "other"
     notes: "Also softens a request: ಸ್ವಲ್ಪ ಬನ್ನಿ, come here a moment, please."
   - id: kn-0308
     target: "ಬೇರೆ ಏನೂ ಬೇಡ."
     native: "Nothing else."
-    reading: "bere enu beda."
+    reading: "bēre ēnū bēḍa."
+    ipa: "beːre eːnuː beːɖa"
     pos: "phrase"
     notes: "'Anything else isn't wanted'. ಬೇರೆ is 'other'."

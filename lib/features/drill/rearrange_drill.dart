@@ -6,6 +6,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/reading_first.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 import 'input_mode_choice.dart';
@@ -90,6 +91,9 @@ class RearrangeDrill extends StatelessWidget {
                   fontSize: 24,
                   color: scheme.primary,
                 ),
+        // Only once answered: hearing it would give the order away.
+        if (answer != null && session.canPlay)
+          Speaker(onPlay: session.play, playing: session.playing),
       ],
       belowCard: <Widget>[
         if (answer == null && session.canTransliterate)

@@ -2,7 +2,7 @@ schema: 1
 id: kn-en-grammar-sentences
 name: "Basic sentences"
 kind: vocab
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Word order, no 'is', and how Kannada says 'have' and 'like'. Not yet checked by a Kannada speaker: please report any mistake."
@@ -11,7 +11,8 @@ cards:
   - id: kn-0154
     target: "ನಾನು ವಿದ್ಯಾರ್ಥಿ."
     native: "I am a student."
-    reading: "nanu vidyarthi."
+    reading: "nānu vidyārthi."
+    ipa: "naːnu ʋid̪jaːrt̪ʰi"
     alt_target: ["ನಾನು ವಿದ್ಯಾರ್ಥಿನಿ."]
     pos: "phrase"
     notes: "No 'am': 'I student'. A woman says ನಾನು ವಿದ್ಯಾರ್ಥಿನಿ (vidyarthini)."
@@ -19,54 +20,63 @@ cards:
     target: "ಇದು ನನ್ನ ಮನೆ."
     native: "This is my house."
     reading: "idu nanna mane."
+    ipa: "id̪u nanna mane"
     pos: "phrase"
     notes: "There is no 'is' here either."
   - id: kn-0156
     target: "ನಾನು ಕಾಫಿ ಕುಡಿಯುತ್ತೇನೆ."
     native: "I drink coffee."
-    reading: "nanu kafi kudiyuttene."
+    reading: "nānu kāfi kuḍiyuttēne."
+    ipa: "naːnu kaːfi kuɖijut̪t̪eːne"
     alt_target: ["ನಾನು ಕಾಫಿ ಕುಡೀತೀನಿ."]
     pos: "phrase"
     notes: "Subject, object, verb: the verb comes last."
   - id: kn-0157
     target: "ಅವಳು ಕನ್ನಡ ಕಲಿಯುತ್ತಿದ್ದಾಳೆ."
     native: "She is learning Kannada."
-    reading: "avalu kannada kaliyuttiddale."
+    reading: "avaḷu kannaḍa kaliyuttiddāḷe."
+    ipa: "aʋaɭu kannaɖa kalijut̪t̪id̪d̪aːɭe"
     alt_target: ["ಅವಳು ಕನ್ನಡ ಕಲೀತಿದ್ದಾಳೆ."]
     pos: "phrase"
   - id: kn-0158
     target: "ನನಗೆ ಕನ್ನಡ ಇಷ್ಟ."
     native: "I like Kannada."
-    reading: "nanage kannada ishta."
+    reading: "nanage kannaḍa iṣṭa."
+    ipa: "nanaɡe kannaɖa iʂʈa"
     pos: "phrase"
     notes: "'To me, Kannada is liked': the one who likes takes -ಗೆ."
   - id: kn-0159
     target: "ನನ್ನ ಹತ್ತಿರ ಒಂದು ಕಾರು ಇದೆ."
     native: "I have a car."
-    reading: "nanna hattira ondu karu ide."
+    reading: "nanna hattira ondu kāru ide."
+    ipa: "nanna hat̪t̪ira ond̪u kaːru id̪e"
     pos: "phrase"
     notes: "'Near me there is a car': ಇದೆ, 'there is'. For family, 'to me': ನನಗೆ ಒಬ್ಬ ಅಣ್ಣ ಇದ್ದಾನೆ, I have an elder brother."
   - id: kn-0160
     target: "ನನ್ನ ಹತ್ತಿರ ದುಡ್ಡು ಇಲ್ಲ."
     native: "I don't have any money on me."
-    reading: "nanna hattira duddu illa."
+    reading: "nanna hattira duḍḍu illa."
+    ipa: "nanna hat̪t̪ira d̪uɖɖu illa"
     pos: "phrase"
     notes: "ಇಲ್ಲ, 'there isn't', is the same whatever is missing."
   - id: kn-0161
     target: "ಇದು ಚೆನ್ನಾಗಿಲ್ಲ."
     native: "This isn't good."
-    reading: "idu chennagilla."
+    reading: "idu cennāgilla."
+    ipa: "id̪u tʃennaːɡilla"
     pos: "phrase"
     notes: "ಚೆನ್ನಾಗಿ (well) + ಇಲ್ಲ (is not)."
   - id: kn-0162
     target: "ಹೋಗಬೇಡಿ."
     native: "Please don't go."
-    reading: "hogabedi."
+    reading: "hōgabēḍi."
+    ipa: "hoːɡabeːɖi"
     pos: "phrase"
     notes: "-ಬೇಡಿ makes a polite 'don't'; to a friend, -ಬೇಡ: ಹೋಗಬೇಡ."
   - id: kn-0163
     target: "ಇವತ್ತು ತುಂಬಾ ಸೆಕೆ ಇದೆ."
     native: "It's very hot today."
-    reading: "ivattu tumba seke ide."
+    reading: "ivattu tumbā seke ide."
+    ipa: "iʋat̪t̪u t̪umbaː seke id̪e"
     pos: "phrase"
     notes: "ಸೆಕೆ (seke) is close, sweaty heat: 'today much heat is'."

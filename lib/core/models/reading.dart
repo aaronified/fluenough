@@ -3,7 +3,7 @@ import 'drill_mode.dart';
 
 /// One sentence of a passage, as the deck gives it (#98, ADR-0019).
 class PassageSentence {
-  const PassageSentence({required this.text, this.reading});
+  const PassageSentence({required this.text, this.reading, this.ipa});
 
   /// The sentence in the language learned, exactly as written in the deck:
   /// never trimmed, normalised or tidied, since a passage may quote a book
@@ -12,6 +12,9 @@ class PassageSentence {
 
   /// Its romanisation, shown when Show romanisation is on.
   final String? reading;
+
+  /// How it is said, in the IPA, broad, without slashes (ADR-0025).
+  final String? ipa;
 }
 
 /// An older or unusual word in a passage, with today's form of it: Sahaj
@@ -23,6 +26,7 @@ class GlossEntry {
     required this.modern,
     required this.meaning,
     this.reading,
+    this.ipa,
     this.note = const <String, String>{},
   });
 
@@ -35,6 +39,9 @@ class GlossEntry {
 
   /// [modern] in the Latin alphabet, shown when Show romanisation is on.
   final String? reading;
+
+  /// [modern] in the IPA, broad, without slashes (ADR-0025).
+  final String? ipa;
 
   /// What it means, by language code; English always.
   final Map<String, String> meaning;

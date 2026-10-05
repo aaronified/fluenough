@@ -2,7 +2,7 @@ schema: 1
 id: te-en-grammar-irregular
 name: "Irregular verbs"
 kind: grammar
-language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The common verbs whose stem changes from tense to tense. Not yet checked by a Telugu speaker: please report any mistake."
@@ -16,73 +16,103 @@ pattern:
   entries:
     - lemma: "రావడం"
       key: raavadam
-      reading: "ravadam"
+      reading: "rāvaḍam"
+      ipa: "raːʋaɖam"
       gloss: "to come"
       forms:
         "past, నేను": "వచ్చాను"
         "future, నేను": "వస్తాను"
         "polite request, మీరు": "రండి"
       readings:
-        "past, నేను": "vacchanu"
-        "future, నేను": "vastanu"
-        "polite request, మీరు": "randi"
+        "past, నేను": "vaccānu"
+        "future, నేను": "vastānu"
+        "polite request, మీరు": "raṇḍi"
+      ipas:
+        "past, నేను": "ʋatʃtʃaːnu"
+        "future, నేను": "ʋast̪aːnu"
+        "polite request, మీరు": "raɳɖi"
     - lemma: "ఇవ్వడం"
       key: ivvadam
-      reading: "ivvadam"
+      reading: "ivvaḍam"
+      ipa: "iʋʋaɖam"
       gloss: "to give"
       forms:
         "past, నేను": "ఇచ్చాను"
         "future, నేను": "ఇస్తాను"
         "polite request, మీరు": "ఇవ్వండి"
       readings:
-        "past, నేను": "icchanu"
-        "future, నేను": "istanu"
-        "polite request, మీరు": "ivvandi"
+        "past, నేను": "iccānu"
+        "future, నేను": "istānu"
+        "polite request, మీరు": "ivvaṇḍi"
+      ipas:
+        "past, నేను": "itʃtʃaːnu"
+        "future, నేను": "ist̪aːnu"
+        "polite request, మీరు": "iʋʋaɳɖi"
     - lemma: "తినడం"
       key: tinadam
-      reading: "tinadam"
+      reading: "tinaḍam"
+      ipa: "t̪inaɖam"
       gloss: "to eat"
       forms:
         "past, నేను": "తిన్నాను"
         "future, నేను": "తింటాను"
         "polite request, మీరు": "తినండి"
       readings:
-        "past, నేను": "tinnanu"
-        "future, నేను": "tintanu"
-        "polite request, మీరు": "tinandi"
+        "past, నేను": "tinnānu"
+        "future, నేను": "tiṇṭānu"
+        "polite request, మీరు": "tinaṇḍi"
+      ipas:
+        "past, నేను": "t̪innaːnu"
+        "future, నేను": "t̪iɳʈaːnu"
+        "polite request, మీరు": "t̪inaɳɖi"
     - lemma: "తీసుకోవడం"
       key: tiisukoovadam
-      reading: "tisukovadam"
+      reading: "tīsukōvaḍam"
+      ipa: "t̪iːsukoːʋaɖam"
       gloss: "to take"
       forms:
         "past, నేను": "తీసుకున్నాను"
         "future, నేను": "తీసుకుంటాను"
         "polite request, మీరు": "తీసుకోండి"
       readings:
-        "past, నేను": "tisukunnanu"
-        "future, నేను": "tisukuntanu"
-        "polite request, మీరు": "tisukondi"
+        "past, నేను": "tīsukunnānu"
+        "future, నేను": "tīsukuṇṭānu"
+        "polite request, మీరు": "tīsukōṇḍi"
+      ipas:
+        "past, నేను": "t̪iːsukunnaːnu"
+        "future, నేను": "t̪iːsukuɳʈaːnu"
+        "polite request, మీరు": "t̪iːsukoːɳɖi"
     - lemma: "చూడడం"
       key: chuudadam
-      reading: "chudadam"
+      reading: "cūḍaḍam"
+      ipa: "tʃuːɖaɖam"
       gloss: "to see"
       forms:
         "past, నేను": "చూశాను"
         "future, నేను": "చూస్తాను"
         "polite request, మీరు": "చూడండి"
       readings:
-        "past, నేను": "chushanu"
-        "future, నేను": "chustanu"
-        "polite request, మీరు": "chudandi"
+        "past, నేను": "cūśānu"
+        "future, నేను": "cūstānu"
+        "polite request, మీరు": "cūḍaṇḍi"
+      ipas:
+        "past, నేను": "tʃuːʃaːnu"
+        "future, నేను": "tʃuːst̪aːnu"
+        "polite request, మీరు": "tʃuːɖaɳɖi"
     - lemma: "వెళ్ళడం"
       key: velladam
-      reading: "velladam"
+      reading: "veḷḷaḍam"
+      ipa: "ʋeɭɭaɖam"
       gloss: "to go"
       forms:
         "past, నేను": "వెళ్ళాను"
         "future, నేను": "వెళ్తాను"
         "polite request, మీరు": "వెళ్ళండి"
       readings:
-        "past, నేను": "vellanu"
-        "future, నేను": "veltanu"
-        "polite request, మీరు": "vellandi"
+        "past, నేను": "veḷḷānu"
+        "future, నేను": "veḷtānu"
+        "polite request, మీరు": "veḷḷaṇḍi"
+      ipas:
+        "past, నేను": "ʋeɭɭaːnu"
+        "future, నేను": "ʋeɭt̪aːnu"
+        "polite request, మీరు": "ʋeɭɭaɳɖi"

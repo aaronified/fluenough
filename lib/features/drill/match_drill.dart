@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/semantics.dart';
 
+import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
@@ -12,7 +13,8 @@ import 'drill_session.dart';
 
 /// Match pairs (ADR-0024): a few words in the language learned beside their
 /// meanings, shuffled, matched by dragging a word onto its meaning, or by
-/// tapping one and then the other, in either order. Each word is recorded
+/// tapping one and then the other, in either order. With Play words
+/// automatically on, a word tile tapped says its word. Each word is recorded
 /// as recognition when it is matched: right first time, or after a slip.
 ///
 /// Build one per card (key it by the card's position).
@@ -54,6 +56,15 @@ class _MatchDrillState extends State<MatchDrill> {
   }
 
   void _tap(SessionItem entry, _Side side) {
+    // A word tile speaks its word as it is tapped, when words play
+    // automatically: a match has no speaker of its own.
+    final settings = AppScope.read(context).settings;
+    if (side == _Side.word &&
+        settings.autoplay &&
+        settings.soundOn &&
+        _session.canPlay) {
+      _session.playCard(entry.card);
+    }
     final selected = _selected;
     if (selected == null || selected.$2 == side) {
       setState(() {

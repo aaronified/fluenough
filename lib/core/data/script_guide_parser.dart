@@ -17,6 +17,7 @@ const _featureFields = {
   'name',
   'term',
   'reading',
+  'ipa',
   'example',
   'text',
   'letters',
@@ -92,6 +93,10 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
         (term == null || reading is! String || reading.trim().isEmpty)) {
       throw bad('feature "$id": reading is the term\'s, as text', node);
     }
+    final ipa = node['ipa'];
+    if (ipa != null && (term == null || ipa is! String || ipa.trim().isEmpty)) {
+      throw bad('feature "$id": ipa is the term\'s, as text', node);
+    }
     final lettersNode = node.nodes['letters'];
     final letters = <String>[];
     if (lettersNode != null) {
@@ -111,6 +116,7 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
         name: required(node, 'name', 'feature "$id"'),
         term: term as String?,
         reading: reading as String?,
+        ipa: ipa as String?,
         example: required(node, 'example', 'feature "$id"'),
         text: required(node, 'text', 'feature "$id"'),
         letters: letters,

@@ -3,7 +3,7 @@ id: kn-en-first-words
 name: "First words"
 kind: vocab
 theme: first-words
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN }
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Greetings, the respect Kannada builds into them, and how to say you are still learning. Not yet checked by a Kannada speaker: please report any mistake."
@@ -12,7 +12,8 @@ cards:
   - id: kn-0142
     target: "ನಮಸ್ಕಾರ"
     native: "hello; goodbye"
-    reading: "namaskara"
+    reading: "namaskāra"
+    ipa: "namaskaːra"
     alt_target: ["ನಮಸ್ತೆ"]
     pos: "other"
     tags: ["greeting"]
@@ -20,14 +21,16 @@ cards:
   - id: kn-0143
     target: "ನೀವು"
     native: "you (respectful); you (plural)"
-    reading: "nivu"
+    reading: "nīvu"
+    ipa: "niːʋu"
     pos: "other"
     tags: ["honorific"]
-    notes: "Kannada has two words for 'you': ನೀವು for strangers, elders and anyone you respect, and ನೀನು (ninu) for friends, children and the very close. The verb changes with each. A learner is always safe with ನೀವು."
+    notes: "Kannada has two words for 'you': ನೀವು for strangers, elders and anyone you respect, and ನೀನು (nīnu) for friends, children and the very close. The verb changes with each. A learner is always safe with ನೀವು."
   - id: kn-0144
     target: "ಹೇಗಿದ್ದೀರಿ?"
     native: "How are you? (respectful)"
-    reading: "hegiddiri?"
+    reading: "hēgiddīri?"
+    ipa: "heːɡid̪d̪iːri"
     alt_target: ["ಹೇಗಿದ್ದೀರಾ?"]
     pos: "phrase"
     tags: ["greeting"]
@@ -35,15 +38,17 @@ cards:
   - id: kn-0145
     target: "ಚೆನ್ನಾಗಿದ್ದೇನೆ."
     native: "I'm fine."
-    reading: "chennagiddene."
+    reading: "cennāgiddēne."
+    ipa: "tʃennaːɡid̪d̪eːne"
     alt_target: ["ಚೆನ್ನಾಗಿದ್ದೀನಿ."]
     pos: "phrase"
     tags: ["greeting"]
-    notes: "ಚೆನ್ನಾಗಿ (chennagi) is 'well'. In speech, ಚೆನ್ನಾಗಿದ್ದೀನಿ (chennagiddini)."
+    notes: "ಚೆನ್ನಾಗಿ (cennāgi) is 'well'. In speech, ಚೆನ್ನಾಗಿದ್ದೀನಿ (cennāgiddīni)."
   - id: kn-0146
     target: "ಧನ್ಯವಾದಗಳು"
     native: "thank you"
-    reading: "dhanyavadagalu"
+    reading: "dhanyavādagaḷu"
+    ipa: "d̪ʱanjaʋaːd̪aɡaɭu"
     alt_target: ["ಧನ್ಯವಾದ"]
     pos: "other"
     tags: ["polite"]
@@ -52,46 +57,53 @@ cards:
     target: "ಸರಿ"
     native: "OK; all right; correct"
     reading: "sari"
+    ipa: "sari"
     pos: "other"
   - id: kn-0148
     target: "ಹೋಗಿ ಬರುತ್ತೇನೆ"
     native: "goodbye (said by the one leaving)"
-    reading: "hogi baruttene"
+    reading: "hōgi baruttēne"
+    ipa: "hoːɡi barut̪t̪eːne"
     alt_target: ["ಹೋಗಿ ಬರ್ತೀನಿ", "ಹೋಗಿಬರುತ್ತೇನೆ"]
     pos: "phrase"
     tags: ["greeting"]
-    notes: "Literally 'I'll go and come back'. A plain 'I'm going' can sound final. The one staying says ಹೋಗಿ ಬನ್ನಿ (hogi banni), go and come back."
+    notes: "Literally 'I'll go and come back'. A plain 'I'm going' can sound final. The one staying says ಹೋಗಿ ಬನ್ನಿ (hōgi banni), go and come back."
   - id: kn-0149
     target: "ನನಗೆ ಕನ್ನಡ ಬರುವುದಿಲ್ಲ."
     native: "I don't know Kannada."
-    reading: "nanage kannada baruvudilla."
+    reading: "nanage kannaḍa baruvudilla."
+    ipa: "nanaɡe kannaɖa baruʋud̪illa"
     alt_target: ["ನಂಗೆ ಕನ್ನಡ ಬರಲ್ಲ.", "ಕನ್ನಡ ಬರಲ್ಲ."]
     pos: "phrase"
-    notes: "Literally 'Kannada does not come to me'. In speech, ಕನ್ನಡ ಬರಲ್ಲ (kannada baralla)."
+    notes: "Literally 'Kannada does not come to me'. In speech, ಕನ್ನಡ ಬರಲ್ಲ (kannaḍa baralla)."
   - id: kn-0150
     target: "ನಾನು ಇನ್ನೂ ಕನ್ನಡ ಕಲಿಯುತ್ತಿದ್ದೇನೆ."
     native: "I'm still learning Kannada."
-    reading: "nanu innu kannada kaliyuttiddene."
+    reading: "nānu innū kannaḍa kaliyuttiddēne."
+    ipa: "naːnu innuː kannaɖa kalijut̪t̪id̪d̪eːne"
     alt_target: ["ನಾನು ಇನ್ನೂ ಕನ್ನಡ ಕಲೀತಿದ್ದೀನಿ."]
     pos: "phrase"
   - id: kn-0151
     target: "ನಿಧಾನವಾಗಿ ಮಾತಾಡಿ."
     native: "Please speak slowly."
-    reading: "nidhanavagi matadi."
+    reading: "nidhānavāgi mātāḍi."
+    ipa: "nid̪ʱaːnaʋaːɡi maːt̪aːɖi"
     alt_target: ["ನಿಧಾನವಾಗಿ ಮಾತನಾಡಿ."]
     pos: "phrase"
     tags: ["polite"]
-    notes: "The ending -ಇ makes a polite request: ಕುಳಿತುಕೊಳ್ಳಿ (kulitukolli), please sit."
+    notes: "The ending -ಇ makes a polite request: ಕುಳಿತುಕೊಳ್ಳಿ (kuḷitukoḷḷi), please sit."
   - id: kn-0152
     target: "ಇನ್ನೊಮ್ಮೆ ಹೇಳಿ."
     native: "Please say that again."
-    reading: "innomme heli."
+    reading: "innomme hēḷi."
+    ipa: "innomme heːɭi"
     pos: "phrase"
     tags: ["polite"]
   - id: kn-0153
     target: "ಕ್ಷಮಿಸಿ"
     native: "sorry; excuse me"
-    reading: "kshamisi"
+    reading: "kṣamisi"
+    ipa: "kʂamisi"
     pos: "other"
     tags: ["polite"]
     notes: "Literally 'forgive'. Also to get past someone or to get their attention."

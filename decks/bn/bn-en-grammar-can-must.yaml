@@ -2,7 +2,7 @@ schema: 1
 id: bn-en-grammar-can-must
 name: "Can, want to, have to"
 kind: vocab
-language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "The verb's -তে form with পারা, চাওয়া and হবে. Not yet checked by a Bengali speaker: please report any mistake."
@@ -11,67 +11,78 @@ cards:
   - id: bn-0736
     target: "পারা"
     native: "to be able; can"
-    reading: "para"
+    reading: "pārā"
+    ipa: "para"
     pos: "verb"
     notes: "After the verb's -তে form: বলতে পারি, I can speak."
   - id: bn-0737
     target: "আমি বাংলা বলতে পারি।"
     native: "I can speak Bengali."
-    reading: "ami bangla bolte pari."
+    reading: "āmi bāṅlā bôlte pāri."
+    ipa: "ami baŋla bɔlt̪e pari"
     pos: "phrase"
     notes: "'Can' is পারা after the verb's -তে form: বলতে, করতে, but যেতে, খেতে, দিতে, নিতে and হতে."
   - id: bn-0738
     target: "আমি সাঁতার কাটতে পারি না।"
     native: "I can't swim."
-    reading: "ami shantar katte pari na."
+    reading: "āmi śām̐tār kāṭte pāri nā."
+    ipa: "ami ʃãt̪ar kaʈt̪e pari na"
     pos: "phrase"
     notes: "না goes after পারি. Swimming is সাঁতার কাটা, 'to cut a swim'."
   - id: bn-0739
     target: "আমি যেতে পারিনি।"
     native: "I couldn't go."
-    reading: "ami jete parini."
+    reading: "āmi jete pārini."
+    ipa: "ami dʒet̪e parini"
     pos: "phrase"
     notes: "'Couldn't' is পারিনি, the present with -নি."
   - id: bn-0740
     target: "আমাকে একটু সাহায্য করতে পারবেন?"
     native: "Could you help me a little?"
-    reading: "amake ektu shahajjo korte parben?"
+    reading: "āmāke ekṭu śāhājjo kôrte pārben?"
+    ipa: "amake ekʈu ʃaɦadʒdʒo kɔrt̪e parben"
     pos: "phrase"
     tags: ["polite"]
     notes: "The future পারবেন makes the request polite. পারেন? is also right."
   - id: bn-0741
     target: "চাওয়া"
     native: "to want"
-    reading: "chaoa"
+    reading: "cāoā"
+    ipa: "tʃaoa"
     pos: "verb"
     notes: "A thing wanted comes before it: আমি চা চাই, I want tea."
   - id: bn-0742
     target: "আমি বাড়ি যেতে চাই।"
     native: "I want to go home."
-    reading: "ami bari jete chai."
+    reading: "āmi bāṛi jete cāi."
+    ipa: "ami baɽi dʒet̪e tʃai"
     pos: "phrase"
     notes: "'Want to': the -তে form, then চাওয়া."
   - id: bn-0743
     target: "আমাকে কাল কাজে যেতে হবে।"
     native: "I have to go to work tomorrow."
-    reading: "amake kal kaje jete hobe."
+    reading: "āmāke kāl kāje jete hôbe."
+    ipa: "amake kal kadʒe dʒet̪e ɦɔbe"
     pos: "phrase"
     notes: "'Have to': the one who must takes -কে, then the -তে form and হবে."
   - id: bn-0744
     target: "তোমাকে আসতে হবে না।"
     native: "You don't have to come."
-    reading: "tomake ashte hobe na."
+    reading: "tomāke āśte hôbe nā."
+    ipa: "t̪omake aʃt̪e ɦɔbe na"
     pos: "phrase"
     notes: "না after হবে: no need."
   - id: bn-0745
     target: "এখানে ছবি তোলা যায়?"
     native: "Can one take photos here?"
-    reading: "ekhane chhobi tola jay?"
+    reading: "ekhāne chobi tolā jāy?"
+    ipa: "ekʰane tʃʰobi t̪ola dʒaj"
     pos: "phrase"
     notes: "'Can one': the verbal noun (তোলা) with যায়."
   - id: bn-0746
     target: "আপনার বিশ্রাম নেওয়া উচিত।"
     native: "You should rest."
-    reading: "apnar bisram neoa uchit."
+    reading: "āpnār bisrām neoā ucit."
+    ipa: "apnar bisram neoa utʃit̪"
     pos: "phrase"
     notes: "'Should': the one who should takes -র, then the verbal noun and উচিত."

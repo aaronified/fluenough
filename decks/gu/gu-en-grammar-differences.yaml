@@ -2,7 +2,7 @@ schema: 1
 id: gu-en-grammar-differences
 name: "How Gujarati grammar differs from English"
 kind: vocab
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Before any theme: the verb last, endings for in, from and to, three genders, two yous, two wes, no articles, and how Gujarati says have, not, like and questions. Not yet checked by a Gujarati speaker: please report any mistake."
@@ -11,126 +11,147 @@ cards:
   - id: gu-0239
     target: "હું ચા પીઉં છું."
     native: "I drink tea."
-    reading: "hun cha piun chhun."
+    reading: "hum̐ cā pium̐ chum̐."
+    ipa: "ɦũ tʃa piũ tʃʰũ"
     tags: ["grammar", "word-order"]
-    notes: "The verb comes last: subject, object, verb. Word for word, 'I tea drink am'. છું (chhun) is 'am', and the present is built with it."
+    notes: "The verb comes last: subject, object, verb. Word for word, 'I tea drink am'. છું (chum̐) is 'am', and the present is built with it."
   - id: gu-0240
     target: "તે ડૉક્ટર છે."
     native: "He is a doctor; she is a doctor."
-    reading: "te doktar chhe."
+    reading: "te ḍôkṭar che."
+    ipa: "t̪e ɖɔkʈər tʃʰe"
     tags: ["grammar", "be"]
-    notes: "છે (chhe), 'is', comes last. તે is both he and she: the context, or the verb in the past, tells you which."
+    notes: "છે (che), 'is', comes last. તે is both he and she: the context, or the verb in the past, tells you which."
   - id: gu-0241
     target: "ઘરમાં"
     native: "in the house"
-    reading: "gharman"
+    reading: "gharmām̐"
+    ipa: "ɡʱərmã"
     tags: ["grammar", "case-endings"]
     notes: "Gujarati puts 'in' after the noun, and writes it joined to it: ઘર (ghar, house) + -માં."
   - id: gu-0242
     target: "સ્ટેશનથી"
     native: "from the station"
-    reading: "steshanthi"
+    reading: "sṭeśanthi"
+    ipa: "sʈeʃənt̪ʰi"
     tags: ["grammar", "case-endings"]
     notes: "'From' is the ending -થી: સ્ટેશન + -થી. It also means 'by' or 'with' a tool: બસથી (basthi), by bus."
   - id: gu-0243
     target: "મીનાને"
     native: "to Meena"
-    reading: "minane"
+    reading: "mināne"
+    ipa: "minane"
     tags: ["grammar", "case-endings"]
-    notes: "'To' a person is the ending -ને: મીનાને આપો (minane apo), give it to Meena."
+    notes: "'To' a person is the ending -ને: મીનાને આપો (mināne āpo), give it to Meena."
   - id: gu-0244
     target: "છોકરો આવ્યો."
     native: "The boy came."
-    reading: "chhokro avyo."
+    reading: "chokro āvyo."
+    ipa: "tʃʰokro aʋjo"
     tags: ["grammar", "gender"]
     notes: "Gujarati has three genders, and the past verb shows them. Masculine: -ઓ."
   - id: gu-0245
     target: "છોકરી આવી."
     native: "The girl came."
-    reading: "chhokri avi."
+    reading: "chokri āvi."
+    ipa: "tʃʰokri aʋi"
     tags: ["grammar", "gender"]
     notes: "Feminine: -ઈ."
   - id: gu-0246
     target: "બાળક આવ્યું."
     native: "The child came."
-    reading: "balak avyun."
+    reading: "bāḷak āvyum̐."
+    ipa: "baɭək aʋjũ"
     tags: ["grammar", "gender"]
     notes: "Neuter: -ઉં. Hindi lost its neuter; Gujarati kept it, for children, many things and some animals."
   - id: gu-0247
     target: "મારો ભાઈ"
     native: "my brother"
-    reading: "maro bhai"
+    reading: "māro bhāi"
+    ipa: "maro bʱai"
     tags: ["grammar", "possession"]
     notes: "'My' agrees with what is owned, not with the owner: મારો ભાઈ, my brother; મારી બહેન, my sister; મારું ઘર, my house."
   - id: gu-0248
     target: "મારી બહેન"
     native: "my sister"
-    reading: "mari bahen"
+    reading: "māri bahen"
+    ipa: "mari bəɦen"
     tags: ["grammar", "possession"]
     notes: "મારી before a feminine noun. A woman says it too: the owner's gender doesn't count."
   - id: gu-0249
     target: "મારું ઘર"
     native: "my house"
-    reading: "marun ghar"
+    reading: "mārum̐ ghar"
+    ipa: "marũ ɡʱər"
     tags: ["grammar", "possession"]
     notes: "મારું before a neuter noun. ઘર is neuter."
   - id: gu-0250
     target: "તું"
     native: "you (to a friend or a child)"
-    reading: "tun"
+    reading: "tum̐"
+    ipa: "t̪ũ"
     tags: ["grammar", "you"]
     notes: "Gujarati has two everyday words for 'you'. તું is for close friends, children and family your age or younger. The verb changes with each."
   - id: gu-0251
     target: "તમે"
     native: "you (respectful); you (plural)"
     reading: "tame"
+    ipa: "t̪əme"
     tags: ["grammar", "you"]
-    notes: "તમે is for strangers, elders and anyone you respect, and for more than one person. A learner is always safe with તમે. Very formal Gujarati has આપ (ap)."
+    notes: "તમે is for strangers, elders and anyone you respect, and for more than one person. A learner is always safe with તમે. Very formal Gujarati has આપ (āp)."
   - id: gu-0252
     target: "અમે"
     native: "we (not you)"
     reading: "ame"
+    ipa: "əme"
     tags: ["grammar", "we"]
     notes: "Gujarati has two words for 'we'. અમે leaves out the person you are talking to: 'we, my family and I, but not you'."
   - id: gu-0253
     target: "આપણે"
     native: "we (you and I)"
-    reading: "apne"
+    reading: "āpṇe"
+    ipa: "apɳe"
     tags: ["grammar", "we"]
-    notes: "આપણે takes in the person you are talking to: આપણે જઈએ (apne jaie), let's go."
+    notes: "આપણે takes in the person you are talking to: આપણે જઈએ (āpṇe jaie), let's go."
   - id: gu-0254
     target: "મારી પાસે ગાડી છે."
     native: "I have a car."
-    reading: "mari pase gadi chhe."
+    reading: "māri pāse gāḍi che."
+    ipa: "mari pase ɡaɖi tʃʰe"
     tags: ["grammar", "have"]
     notes: "There is no verb 'have'. Word for word, 'near me a car is'."
   - id: gu-0255
     target: "હું ડૉક્ટર નથી."
     native: "I am not a doctor."
-    reading: "hun doktar nathi."
+    reading: "hum̐ ḍôkṭar nathi."
+    ipa: "ɦũ ɖɔkʈər nət̪ʰi"
     tags: ["grammar", "negative"]
     notes: "નથી (nathi) is 'am not, is not, are not', for every person. It takes the place of છું or છે."
   - id: gu-0256
     target: "શું તમે ગુજરાતી બોલો છો?"
     native: "Do you speak Gujarati?"
-    reading: "shun tame gujarati bolo chho?"
+    reading: "śum̐ tame gujarāti bolo cho?"
+    ipa: "ʃũ t̪əme ɡudʒərat̪i bolo tʃʰo"
     tags: ["grammar", "questions"]
     notes: "શું at the start makes a yes-or-no question. It can be left out: then the voice rises at the end. Elsewhere in a sentence શું is 'what'."
   - id: gu-0257
     target: "મેં કેળું ખાધું."
     native: "I ate a banana."
-    reading: "men kelun khadhun."
+    reading: "mem̐ keḷum̐ khādhum̐."
+    ipa: "mẽ keɭũ kʰad̪ʱũ"
     tags: ["grammar", "past"]
     notes: "In the past, a verb with an object works differently: the doer takes the ending -એ (હું becomes મેં, men) and the verb agrees with the thing eaten. કેળું is neuter, so ખાધું."
   - id: gu-0258
     target: "મને ચા ગમે છે."
     native: "I like tea."
-    reading: "mane cha game chhe."
+    reading: "mane cā game che."
+    ipa: "məne tʃa ɡəme tʃʰe"
     tags: ["grammar", "likes"]
     notes: "Word for word, 'to me tea is pleasing'. The one who likes takes -ને: મને (mane), to me."
   - id: gu-0259
     target: "એક છોકરો"
     native: "a boy"
-    reading: "ek chhokro"
+    reading: "ek chokro"
+    ipa: "ek tʃʰokro"
     tags: ["grammar", "articles"]
     notes: "Gujarati has no 'a' or 'the'. એક, 'one', can do the work of 'a'; often nothing is needed: છોકરો આવ્યો, the boy came, or a boy came."

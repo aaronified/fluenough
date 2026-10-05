@@ -2,7 +2,7 @@ schema: 1
 id: gu-en-sound-differences
 name: "Sounds to tell apart"
 kind: vocab
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN }
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 description: "Pairs of everyday words that differ in one sound: the tongue on the teeth or curled back, the two l's, a breath after the consonant, a and aa, and a nasal vowel. Not yet checked by a Gujarati speaker: please report any mistake."
@@ -11,87 +11,100 @@ cards:
   - id: gu-0226
     target: "દાળ"
     native: "dal; lentils"
-    reading: "dal"
+    reading: "dāḷ"
+    ipa: "d̪aɭ"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: દાળ (dal, lentils) has the tongue on the teeth for d; ડાળ (dal, branch) has it curled back."
+    notes: "Dental against curled back: દાળ (dāḷ, lentils) has the tongue on the teeth for d; ડાળ (ḍāḷ, branch) has it curled back."
   - id: gu-0227
     target: "ડાળ"
     native: "branch (of a tree)"
-    reading: "dal"
+    reading: "ḍāḷ"
+    ipa: "ɖaɭ"
     tags: ["dental-retroflex"]
-    notes: "Dental against curled back: દાળ (dal, lentils) has the tongue on the teeth for d; ડાળ (dal, branch) has it curled back."
+    notes: "Dental against curled back: દાળ (dāḷ, lentils) has the tongue on the teeth for d; ડાળ (ḍāḷ, branch) has it curled back."
   - id: gu-0228
     target: "વાળ"
     native: "hair"
-    reading: "val"
+    reading: "vāḷ"
+    ipa: "ʋaɭ"
     tags: ["lateral"]
-    notes: "The two l's: વાળ (val, hair) has the l curled back; વાલ (val, field beans) has it on the teeth."
+    notes: "The two l's: વાળ (vāḷ, hair) has the l curled back; વાલ (vāl, field beans) has it on the teeth."
   - id: gu-0229
     target: "વાલ"
     native: "field beans (a dried bean)"
-    reading: "val"
+    reading: "vāl"
+    ipa: "ʋal"
     tags: ["lateral"]
-    notes: "The two l's: વાલ (val, beans) has the l on the teeth; વાળ (val, hair) has it curled back."
+    notes: "The two l's: વાલ (vāl, beans) has the l on the teeth; વાળ (vāḷ, hair) has it curled back."
   - ref: gu-0120
     tags: ["aspiration"]
-    notes: "A breath after the consonant: બાર (bar, twelve) has none; ભાર (bhar, a load) has a puff of breath after the b."
+    notes: "A breath after the consonant: બાર (bār, twelve) has none; ભાર (bhār, a load) has a puff of breath after the b."
   - id: gu-0230
     target: "ભાર"
     native: "weight; a load"
-    reading: "bhar"
+    reading: "bhār"
+    ipa: "bʱar"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: ભાર (bhar, a load) against બાર (bar, twelve)."
+    notes: "A breath after the consonant: ભાર (bhār, a load) against બાર (bār, twelve)."
   - id: gu-0231
     target: "દાન"
     native: "a gift to charity; donation"
-    reading: "dan"
+    reading: "dān"
+    ipa: "d̪an"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: દાન (dan, donation) has none; ધાન (dhan, grain) has one."
+    notes: "A breath after the consonant: દાન (dān, donation) has none; ધાન (dhān, grain) has one."
   - id: gu-0232
     target: "ધાન"
     native: "grain"
-    reading: "dhan"
+    reading: "dhān"
+    ipa: "d̪ʱan"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: ધાન (dhan, grain) against દાન (dan, donation)."
+    notes: "A breath after the consonant: ધાન (dhān, grain) against દાન (dān, donation)."
   - id: gu-0233
     target: "ચાલ"
     native: "a way of walking; a move (in a game)"
-    reading: "chal"
+    reading: "cāl"
+    ipa: "tʃal"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: ચાલ (chal, gait) has none; છાલ (chhal, peel) has one."
+    notes: "A breath after the consonant: ચાલ (cāl, gait) has none; છાલ (chāl, peel) has one."
   - id: gu-0234
     target: "છાલ"
     native: "peel; bark"
-    reading: "chhal"
+    reading: "chāl"
+    ipa: "tʃʰal"
     tags: ["aspiration"]
-    notes: "A breath after the consonant: છાલ (chhal, peel) against ચાલ (chal, gait)."
+    notes: "A breath after the consonant: છાલ (chāl, peel) against ચાલ (cāl, gait)."
   - ref: gu-0053
     tags: ["a-aa"]
-    notes: "a against aa: રસ (ras, juice) has the short a; રાસ (ras, a circle dance) has the long a."
+    notes: "a against aa: રસ (ras, juice) has the short a; રાસ (rās, a circle dance) has the long a."
   - id: gu-0235
     target: "રાસ"
     native: "raas (a circle dance with sticks)"
-    reading: "ras"
+    reading: "rās"
+    ipa: "ras"
     tags: ["a-aa"]
-    notes: "a against aa: રાસ (ras, the dance of Navratri, with the long a) against રસ (ras, juice, with the short a)."
+    notes: "a against aa: રાસ (rās, the dance of Navratri, with the long a) against રસ (ras, juice, with the short a)."
   - ref: gu-0117
     tags: ["a-aa"]
-    notes: "a against aa: નવ (nav, nine) has the short a; નાવ (nav, boat) has the long a."
+    notes: "a against aa: નવ (nav, nine) has the short a; નાવ (nāv, boat) has the long a."
   - id: gu-0236
     target: "નાવ"
     native: "boat"
-    reading: "nav"
+    reading: "nāv"
+    ipa: "naʋ"
     tags: ["a-aa"]
-    notes: "a against aa: નાવ (nav, boat, with the long a) against નવ (nav, nine, with the short a)."
+    notes: "a against aa: નાવ (nāv, boat, with the long a) against નવ (nav, nine, with the short a)."
   - id: gu-0237
     target: "વાસ"
     native: "smell"
-    reading: "vas"
+    reading: "vās"
+    ipa: "ʋas"
     tags: ["nasal"]
-    notes: "A nasal vowel: વાસ (vas, smell) is said through the mouth; વાંસ (vans, bamboo) through the nose as well."
+    notes: "A nasal vowel: વાસ (vās, smell) is said through the mouth; વાંસ (vāṁs, bamboo) through the nose as well."
   - id: gu-0238
     target: "વાંસ"
     native: "bamboo"
-    reading: "vans"
+    reading: "vāṁs"
+    ipa: "ʋãs"
     tags: ["nasal"]
-    notes: "A nasal vowel: the dot on વાંસ (vans, bamboo) sends the long a through the nose; વાસ (vas) is a smell."
+    notes: "A nasal vowel: the dot on વાંસ (vāṁs, bamboo) sends the long a through the nose; વાસ (vās) is a smell."

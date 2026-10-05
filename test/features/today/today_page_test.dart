@@ -10,12 +10,12 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
-import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/today/today_fixtures.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
+import 'package:fluenough/features/today/quick_revision.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 
@@ -152,52 +152,59 @@ void main() {
     expect(drill.request.deckIds, isNull);
   });
 
-  testWidgets('a unit placed as known gives its place in Your decks to the '
-      'next one (ADR-0013)', (tester) async {
-    usePhone(tester);
-    final settings = SettingsNotifier(
-      spokenLanguages: const <String>['en'],
-      learningLanguages: const <String>['hi'],
-      placedDecks: const <String>{
-        'hi-en-first-words',
-        'hi-en-grammar-sentences',
-      },
-    );
-    await pumpToday(tester, state: AppState.test(settings: settings));
-    final shown = <String>[
-      for (final tile in tester.widgetList<DeckTile>(find.byType(DeckTile)))
-        tile.entry.id,
-    ];
-    expect(shown, <String>[
-      'hi-en-sound-differences',
-      'hi-en-grammar-differences',
-      'hi-en-questions',
-    ]);
-  });
-
-  testWidgets('See all switches the shell to the Decks tab', (tester) async {
-    usePhone(tester);
-    final state = await pumpApp(tester);
-    expect(state.shellTab.value, ShellTab.today);
-    await tapVisible(tester, find.text(l10nOf(tester).todaySeeAll));
-    expect(state.shellTab.value, ShellTab.decks);
-  });
-
-  testWidgets('Your decks lists up to three decks, each opening its screen', (
+  testWidgets('Quick revision offers 5, 10, 15 and 20 words in place of '
+      'Your decks, and the fact of the day follows it (ADR-0029)', (
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpToday(tester);
-    final tiles = find.byType(DeckTile);
-    expect(tiles, findsNWidgets(state.profileDecks.length.clamp(0, 3)));
-    final first = tester.widget<DeckTile>(tiles.first).entry;
-    // The decks Today is teaching from come first (ADR-0013).
-    expect(state.isPending(first), isTrue);
-    await tapVisible(tester, tiles.first);
-    expect(
-      tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
-      first.id,
+    await pumpToday(tester);
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.todayRevisionTitle), findsOneWidget);
+    expect(find.byType(DeckTile), findsNothing);
+    for (final size in QuickRevision.sizes) {
+      expect(find.text('$size'), findsOneWidget);
+    }
+    // Nothing taught yet: the buttons are off, and the line says why.
+    expect(find.text(l10n.todayRevisionNone), findsOneWidget);
+    final five = tester.widget<FilledButton>(
+      find.ancestor(of: find.text('5'), matching: find.byType(FilledButton)),
     );
+    expect(five.onPressed, isNull);
+    // The fact of the day comes after it.
+    final fact = find.textContaining(l10n.todayFactTitle);
+    await tester.scrollUntilVisible(fact.first, 200);
+    expect(
+      tester.getTopLeft(fact.first).dy,
+      greaterThan(tester.getTopLeft(find.text(l10n.todayRevisionTitle)).dy),
+    );
+  });
+
+  testWidgets('once words are known, a button starts a revision of that '
+      'many', (tester) async {
+    usePhone(tester);
+    final state = await withDeckTaught(
+      (progress) => AppState.test(
+        progress: progress,
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['hi'],
+        ),
+      ),
+      'hi-en-first-words',
+      count: 8,
+    );
+    await pumpToday(tester, state: state);
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.todayRevisionBody), findsOneWidget);
+    for (final size in QuickRevision.sizes) {
+      await tapVisible(tester, find.text('$size'));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.revise, isTrue);
+      expect(drill.request.limit, size);
+      expect(drill.request.recordsMisses, isTrue);
+      tester.state<NavigatorState>(find.byType(Navigator).first).pop();
+      await tester.pumpAndSettle();
+    }
   });
 
   testWidgets('the not-saved banner shows only while progress is in memory', (
@@ -342,7 +349,7 @@ void main() {
     final l10n = l10nOf(tester);
     expect(find.text(l10n.todayNoDecks), findsOneWidget);
     expect(find.text(l10n.todayStartReview), findsNothing);
-    expect(find.text(l10n.todayYourDecks), findsNothing);
+    expect(find.text(l10n.todayRevisionTitle), findsNothing);
     await tapVisible(tester, find.text(l10n.todayBrowseDecks));
     expect(state.shellTab.value, ShellTab.decks);
   });
@@ -379,7 +386,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(state.status, CatalogStatus.ready);
     expect(find.text(l10n.commonDecksFailed), findsNothing);
-    expect(find.byType(DeckTile), findsWidgets);
+    expect(find.text(l10n.todayRevisionTitle), findsOneWidget);
   });
 }
 
