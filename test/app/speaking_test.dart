@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/session.dart';
@@ -15,6 +16,46 @@ import 'package:fluenough/features/drill/drill_session.dart';
 /// languages can be heard, and how what was heard is graded.
 
 const String spanish = 'es-en-core-100';
+
+/// The plugin, recording how it was asked to listen, and answering with
+/// [heard] as a final result.
+class _ListeningPlugin extends SpeechToText {
+  _ListeningPlugin(this.heard) : super.withMethodChannel();
+
+  final String heard;
+  SpeechListenOptions? options;
+
+  @override
+  Future<bool> initialize({
+    onError,
+    onStatus,
+    debugLogging = false,
+    Duration finalTimeout = SpeechToText.defaultFinalTimeout,
+    List<SpeechConfigOption>? options,
+  }) async => true;
+
+  @override
+  Future<void> listen({
+    onResult,
+    Duration? listenFor,
+    Duration? pauseFor,
+    String? localeId,
+    onSoundLevelChange,
+    cancelOnError = false,
+    partialResults = true,
+    onDevice = false,
+    ListenMode listenMode = ListenMode.confirmation,
+    sampleRate = 0,
+    SpeechListenOptions? listenOptions,
+  }) async {
+    options = listenOptions;
+    onResult?.call(
+      SpeechRecognitionResult(<SpeechRecognitionWords>[
+        SpeechRecognitionWords(heard, null, 0.9),
+      ], ResultType.finalResult.value),
+    );
+  }
+}
 
 AppState speaking(FixedSpeechEngine speech, {bool on = false}) => AppState.test(
   speech: speech,
@@ -359,6 +400,19 @@ void main() {
       expect(s.item.card.id, isNot(first));
       expect(state.progress.log, isEmpty);
     });
+  });
+
+  test('a listen has no pause of its own, which the plugin would count from '
+      'the tap: Android ends it once speech stops, or at 8 s', () async {
+    final plugin = _ListeningPlugin('నీళ్లు');
+    final heard = await SystemSpeechEngine(plugin)
+        .listen(bcp47: 'te-IN', onDevice: false);
+    expect(heard.alternatives.single.text, 'నీళ్లు');
+    final options = plugin.options!;
+    expect(options.pauseFor, isNull);
+    expect(options.listenFor, const Duration(seconds: 8));
+    expect(options.localeId, 'te-IN');
+    expect(options.onDevice, isFalse);
   });
 
   test('the plugin\'s error codes map to the reasons the app tells apart', () {

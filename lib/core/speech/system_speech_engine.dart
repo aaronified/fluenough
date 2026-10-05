@@ -91,7 +91,11 @@ class SystemSpeechEngine implements SpeechEngine {
           localeId: bcp47,
           onDevice: onDevice,
           listenFor: listenFor,
-          pauseFor: const Duration(seconds: 3),
+          // No pauseFor. The plugin counts it from the tap and only a
+          // partial result restarts it, and partial results are off, so a
+          // 3 s pause cut every listen off 3 s in, mid-word or before the
+          // learner had begun. Android ends a listen itself once speech
+          // stops.
           listenMode: ListenMode.confirmation,
           partialResults: false,
           cancelOnError: true,
