@@ -679,13 +679,26 @@
       }
     }
   },
-  "todayYourDecks": "Your decks",
-  "@todayYourDecks": {
-    "description": "Heading above the decks on Today."
+  "todayRevisionTitle": "Quick revision",
+  "@todayRevisionTitle": {
+    "description": "Today: the heading of the quick revision buttons, which revise words already learned."
   },
-  "todaySeeAll": "See all",
-  "@todaySeeAll": {
-    "description": "Button that opens the Decks tab."
+  "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
+  "@todayRevisionBody": {
+    "description": "Under Quick revision: what it does. Right answers are not recorded; wrong ones are."
+  },
+  "todayRevisionNone": "Revision opens up once you've had a lesson.",
+  "@todayRevisionNone": {
+    "description": "Under Quick revision when no word has been learned yet, with the buttons off."
+  },
+  "todayRevisionCards": "{count, plural, =1{Revise 1 word} other{Revise {count} words}}",
+  "@todayRevisionCards": {
+    "description": "Screen-reader label of a quick revision button, which shows only the number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "todayNoDecks": "No decks for your languages yet.",
   "@todayNoDecks": {
@@ -2134,6 +2147,10 @@
   "drillEndBodyNotRecorded": "This session isn’t recorded, so ending it changes nothing.",
   "@drillEndBodyNotRecorded": {
     "description": "Body of the end-session dialog in a session that is not recorded: number practice, or revising a finished deck."
+  },
+  "drillEndBodyMisses": "Your misses so far are already recorded.",
+  "@drillEndBodyMisses": {
+    "description": "Body of the end-session dialog in a quick revision, which records wrong answers only (ADR-0029)."
   },
   "drillEndKeepGoing": "Keep going",
   "@drillEndKeepGoing": {
