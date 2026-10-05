@@ -7,6 +7,7 @@ class DrillRequest {
   const DrillRequest({
     this.deckIds,
     this.skill,
+    this.skills,
     this.tags = const <String>{},
     this.newOnly = false,
     this.numbers = false,
@@ -63,7 +64,16 @@ class DrillRequest {
   /// a skill it has been reviewed in, due or not. A wrong answer is
   /// recorded, as a lapse that brings the card back sooner; a right one is
   /// not, since an early review would stretch the card's interval.
-  const DrillRequest.revision(int count) : this(revise: true, limit: count);
+  ///
+  /// With [skills], only those skills: "Spoken", or one skill.
+  const DrillRequest.revision(int count, {Set<Skill>? skills})
+    : this(revise: true, limit: count, skills: skills);
+
+  /// Every word known in [skill], from every language learned, due or not:
+  /// a skill's tile on Today with nothing due. Like a quick revision, a
+  /// miss is recorded and a right answer is not (ADR-0030).
+  const DrillRequest.reviseSkill(Skill skill)
+    : this(revise: true, skill: skill);
 
   /// The decks to draw from, or null for every deck the current profile
   /// learns.
@@ -71,6 +81,14 @@ class DrillRequest {
 
   /// One skill only, or null for every skill the learner has switched on.
   final Skill? skill;
+
+  /// Only these skills, such as listening and speaking together; null for
+  /// [skill], or every skill. Not given with [skill].
+  final Set<Skill>? skills;
+
+  /// The skills named by [skill] or [skills], or null for every skill the
+  /// learner has switched on.
+  Set<Skill>? get named => skills ?? (skill == null ? null : <Skill>{skill!});
 
   /// Only cards carrying at least one of these tags; empty means every card.
   final Set<String> tags;
@@ -99,12 +117,14 @@ class DrillRequest {
   final int? limit;
 
   /// Whether a wrong answer is recorded although the session is not: a
-  /// quick revision (ADR-0029).
-  bool get recordsMisses => revise && limit != null;
+  /// revision from Today, of every deck (ADR-0029, ADR-0030). A deck's
+  /// Revise records nothing.
+  bool get recordsMisses => revise && deckIds == null;
 
   @override
   String toString() =>
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
+      'skills: ${skills?.map((s) => s.name)}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
       'untaught: $untaught, revise: $revise, lesson: $lesson, '
       'language: $language, limit: $limit)';
