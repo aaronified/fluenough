@@ -13,6 +13,9 @@ Decided with the owner:
 - **"Complete"** means finishing the course content: every card on the
   language's path taught, and reviewed until it is remembered. It does not
   mean the FSI hours to fluency, or the end of the path's phases.
+- **The course ends at CEFR B1, about ILR 1+** (`language-paths.md`, "Target
+  level"). Hours left therefore count down to B1. Until the courses are
+  extended, they count down to the end of today's smaller content.
 - **Idle time** is capped: each answer counts for at most 60 seconds, so a
   question left open does not add hours.
 
