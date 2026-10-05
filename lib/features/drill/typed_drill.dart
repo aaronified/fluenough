@@ -121,7 +121,7 @@ class _TypedDrillState extends State<TypedDrill> {
                 onChanged: (_) => setState(() {}),
                 onSubmitted: (_) => _check(),
               ),
-              if (!listening && language.needsReading && !translit)
+              if (!listening && language.needsReading && !translit && !typing)
                 KeyboardHint(language: language),
             ],
       feedback: answer == null
