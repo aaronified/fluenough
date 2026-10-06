@@ -13,8 +13,8 @@ import '../../support/harness.dart';
 import 'support.dart';
 
 void main() {
-  test('cloud backup waits for #139', () {
-    expect(Feature.cloudBackup.issue, 139);
+  test('cloud backup waits for #112', () {
+    expect(Feature.cloudBackup.issue, 112);
     expect(Feature.available, isNot(contains(Feature.cloudBackup)));
   });
 

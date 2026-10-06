@@ -34,9 +34,9 @@ Flutter 3.47.1, from a clean checkout following the sequence below with
 `dart format lib test` changes nothing, and `dart run build_runner build`
 succeeds. The Python tooling is tested and working too.
 
-What this does **not** tell you: nobody has run the app on a device, or built
-it on macOS or Windows, or generated the iOS folder. #17 is still open and is
-worth closing.
+Since then the app has been built and run on Android phones for every
+release, which closed #17. What this does **not** tell you: nobody has built
+it on macOS or Windows, or generated the iOS folder.
 
 ---
 
