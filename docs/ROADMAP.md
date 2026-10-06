@@ -62,8 +62,7 @@ Each can start once what it waits for is done.
 | #219 | Conversation practice with an AI (long-term) | |
 | #99 | Culture decks | #210 |
 
-Issues outside the plans, in any order: #23 Anki import, #25 F-Droid, #26
-TalkBack pass, #46 interface language, #90 daily reminder, #92 sample deck
+Issues outside the plans, in any order: #25 F-Droid, #26 TalkBack pass, #46 interface language, #90 daily reminder, #92 sample deck
 pack, #204 profiles and PIN, then #97 child lock, #108 home-screen widget,
 #110 dialogue decks, #111 native-speaker audio, #112 backup to a folder, #141
 release tag check, #160 feedback by mail, #162 the app's log.
