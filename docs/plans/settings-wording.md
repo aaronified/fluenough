@@ -43,7 +43,7 @@ Written 2026-10-06.
 | Speaking | Say the word, your phone listens | No speaking questions. Switching on asks for the microphone |
 | Grammar | Type the right form of a word | No grammar questions |
 | Reading | Read a short passage, answer questions | No passages |
-| Phonemic contrasts | Tell apart sounds that change a word | No sound questions |
+| Phonemic contrasts | Practise the sounds the languages you speak don't have | No practice with sounds your languages lack |
 | Show romanisation → **Latin-letter readings** | A Latin-letter reading under words in other scripts | Only the script, no reading |
 | Sound | Words are spoken; listening questions are asked | Nothing is spoken; listening questions are skipped |
 | Play words automatically | Words play by themselves, as a card shows or once you answer | Words play only when you tap the speaker |
