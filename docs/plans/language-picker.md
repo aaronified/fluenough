@@ -42,8 +42,10 @@ search and list guidance.
    each, languages taught from a language the learner speaks come first.
 3. **A card per language:**
    - its icon and both names, "Telugu · తెలుగు";
-   - **course completeness**, a thin bar with "18% of B1", calculated from
-     the course's path (below), never stored;
+   - **course completeness**, a thin bar with "18% of B1 · 12 of 30
+     grammar topics": words drive the percentage and grammar topics are
+     shown beside it (owner's choice), both calculated from the course's B1
+     plan (`b1-plans.md`), never stored;
    - **taught from**, the native languages it has decks for, the learner's
      own ones highlighted. Where none is one the learner speaks: "Taught from
      English", as the deck-downloads plan decides;
@@ -119,7 +121,8 @@ start, with no version built on the bundled decks:
   before it has a planned size. It warns when a unit has more words than
   planned, since then the plan needs raising.
 - **Every path has a B1 plan** (owner's decision): "Every deck path will
-  have a B1 plan from now on. The app will use this explicitly."
+  have a B1 plan from now on. The app will use this explicitly." What it
+  holds, and its format, are in `b1-plans.md`.
   - The B1 plan is written in the path: its units up to the B1 mark, with
     their milestones and planned sizes, including units not written yet.
     It is set explicitly by whoever writes the course, not derived in the
@@ -157,7 +160,6 @@ start, with no version built on the bundled decks:
 
 ## To decide
 
-- **What counts:** vocabulary only, or grammar and passages too.
 - **Learner progress:** show the learner's own progress on the card as
   well, or only on Progress.
 - **A mockup first:** I can make a design to approve before building.

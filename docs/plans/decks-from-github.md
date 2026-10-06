@@ -1,6 +1,7 @@
 # Plan: download decks from GitHub, not bundle them
 
-Written 2026-10-05. **First in the schedule.**
+Written 2026-10-05. **First in the schedule**, after the B1 plans
+(`b1-plans.md`), which the index is designed around.
 
 ## What the owner asked
 
