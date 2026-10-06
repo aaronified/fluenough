@@ -24,11 +24,11 @@ import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
 import 'settings_controls.dart';
-import 'sources_section.dart';
+import 'sources_page.dart';
 import 'update_section.dart';
 
 /// The Settings tab: the profile card, learning, sound, look and language,
-/// reminder and privacy, your data, the sources the decks name, cloud
+/// reminder and privacy, your data, a row to the sources the decks name, cloud
 /// backup, updates, and the footer.
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
@@ -78,8 +78,9 @@ class SettingsPage extends StatelessWidget {
                     _data(context, state),
                     const SizedBox(height: 20),
                     _logs(context),
-                    // Where the decks' texts come from (#98).
-                    const SourcesSection(gap: 20),
+                    // Where the decks' texts come from (#98), on a page of
+                    // its own; no row when no deck names a source.
+                    ..._sources(context, state),
                     const SizedBox(height: 20),
                     const BackupSection(),
                     const SizedBox(height: 20),
@@ -529,6 +530,29 @@ class SettingsPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  /// The way to the sources the decks name (#98), with a gap above it, or
+  /// nothing when no deck names one.
+  List<Widget> _sources(BuildContext context, AppState state) {
+    final l10n = AppLocalizations.of(context)!;
+    final sources = sourcesOf(state.decks);
+    if (sources.isEmpty) return const <Widget>[];
+    final count = sources.fold(0, (n, source) => n + source.lines.length);
+    return <Widget>[
+      const SizedBox(height: 20),
+      GroupedList.settings(
+        children: <Widget>[
+          GroupedTile(
+            leading: const Icon(Icons.menu_book_outlined),
+            title: l10n.settingsSources,
+            subtitle: l10n.settingsSourcesSummary(count),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => AppNavigator.openSources(context),
+          ),
+        ],
+      ),
+    ];
   }
 
   /// Saves the review log as `fluenough-<profile>-reviews.jsonl`, where the

@@ -5,6 +5,7 @@ import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/report_button.dart';
 
 /// One source a deck names, and what kind of deck names it.
 typedef DeckSourceLine = ({String source, DeckKind kind});
@@ -38,34 +39,38 @@ List<({LanguageInfo language, List<DeckSourceLine> lines})> sourcesOf(
   return byLanguage.values.toList();
 }
 
-/// Settings, Sources: where the decks' texts come from, a row per language
-/// and a line per source, such as the books the Bengali passages are taken
-/// from. Not shown when no deck names a source.
-class SourcesSection extends StatelessWidget {
-  const SourcesSection({super.key, this.gap = 0});
-
-  /// Space above the section, when it shows.
-  final double gap;
+/// Where the decks' texts come from, a row per language and a line per
+/// source, such as the books the Bengali passages are taken from. Opened by
+/// Settings' Sources row (#98), which is not shown when no deck names a
+/// source.
+class SourcesPage extends StatelessWidget {
+  const SourcesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final sources = sourcesOf(AppScope.of(context).decks);
-    if (sources.isEmpty) return const SizedBox.shrink();
-    return Padding(
-      padding: EdgeInsetsDirectional.only(top: gap),
-      child: GroupedList.settings(
-        header: l10n.settingsSectionSources,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(l10n.settingsSources),
+        actions: const <Widget>[ReportButton()],
+      ),
+      body: ListView(
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
         children: <Widget>[
-          for (final (:language, :lines) in sources)
-            GroupedTile(
-              leading: const Icon(Icons.menu_book_outlined),
-              title: language.name,
-              subtitle: <String>[
-                for (final line in lines)
-                  l10n.settingsSourceLine(line.source, line.kind.name),
-              ].join('\n'),
-            ),
+          GroupedList.settings(
+            children: <Widget>[
+              for (final (:language, :lines) in sources)
+                GroupedTile(
+                  leading: const Icon(Icons.menu_book_outlined),
+                  title: language.name,
+                  subtitle: <String>[
+                    for (final line in lines)
+                      l10n.settingsSourceLine(line.source, line.kind.name),
+                  ].join('\n'),
+                ),
+            ],
+          ),
         ],
       ),
     );

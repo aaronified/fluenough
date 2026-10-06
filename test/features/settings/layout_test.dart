@@ -11,6 +11,7 @@ import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/gallery_entries.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 
 import '../../support/harness.dart';
@@ -38,6 +39,7 @@ final Map<String, (Widget, AppState Function(AppState))> screens =
         const VoicesPage(),
         (app) => AppState.test(tts: FixedTtsEngine(const <String>{'es', 'hi'})),
       ),
+      'Sources': (const SourcesPage(), GalleryFixtures.state),
     };
 
 void main() {
