@@ -216,14 +216,12 @@ void main() {
         find.descendant(
           of: row,
           matching: find.text(
-            'Tell apart sounds that change a word\u2019s meaning, '
-            'like short and long vowels',
+            'Practise the sounds the languages you speak don\u2019t have',
           ),
         ),
         findsOneWidget,
       );
-      // Neither the old title nor the old line, which was about the learner's
-      // own language.
+      // Neither the old title nor the old line.
       expect(find.text('Minimal pairs'), findsNothing);
       expect(find.text('Sounds your language may not have'), findsNothing);
       // Shown off and disabled, as an incoming feature is (ADR-0008).
