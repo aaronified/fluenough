@@ -139,7 +139,7 @@ class SettingsPage extends StatelessWidget {
         ),
         for (final skill in Skill.values) ...<Widget>[
           GroupedTile.toggle(
-            title: skill.label(l10n),
+            title: skill.settingsLabel(l10n),
             subtitle: skill.settingsDescription(l10n),
             feature: skill.feature,
             // Shown off while incoming, as the design draws it.
