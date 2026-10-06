@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
-import '../../core/models/card.dart';
-import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
@@ -11,10 +9,14 @@ import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 import 'rating_buttons.dart';
+import 'taught_details.dart';
 
 /// Recognition: the target, big, with its reading and, where the phone has
 /// a voice, its speaker; "Show answer"; then the meaning, the note and an
 /// example, and the four self-ratings.
+///
+/// What it shows once revealed is [TaughtDetails], as the other questions
+/// show it once answered.
 ///
 /// Design screens `drill-recognition` and `drill-recognition-revealed`.
 class RecognitionDrill extends StatelessWidget {
@@ -45,7 +47,6 @@ class RecognitionDrill extends StatelessWidget {
     final language = session.deck.language;
     final revealed = session.phase == DrillPhase.revealed;
     final reading = card.reading;
-    final notes = card.notes;
 
     return DrillFrame(
       skill: session.skill,
@@ -97,30 +98,14 @@ class RecognitionDrill extends StatelessWidget {
               borderRadius: BorderRadius.circular(2),
             ),
           ),
-          Text(
-            card.native,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.headlineMedium,
+          // The word is on the card already: the rest of what its lesson
+          // showed, from the meaning down.
+          TaughtDetails(
+            card: card,
+            language: language,
+            reading: TaughtReading.inReview(session),
+            word: false,
           ),
-          if (notes != null)
-            // Padding, not a max-width box: DrillFrame measures the card's
-            // intrinsic height, and a ConstrainedBox reports its child's
-            // height at the full width, so wrapped notes would overflow.
-            // 19 each side is the design's 280 on a phone's 318 card.
-            Padding(
-              padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
-              child: Text(
-                notes,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge!.copyWith(
-                  fontSize: 15,
-                  height: 22 / 15,
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ),
-          if (card.examples.isNotEmpty)
-            _Example(example: card.examples.first, language: language),
         ],
       ],
       actions: revealed
@@ -144,54 +129,6 @@ class RecognitionDrill extends StatelessWidget {
                 child: Text(l10n.drillShowAnswer),
               ),
             ],
-    );
-  }
-}
-
-/// An example sentence under the meaning: the target sentence, bold, over
-/// its translation.
-class _Example extends StatelessWidget {
-  const _Example({required this.example, required this.language});
-
-  final CardExample example;
-  final LanguageInfo language;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    return Semantics(
-      container: true,
-      label: AppLocalizations.of(context)!.drillExample,
-      child: Container(
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: 14,
-          vertical: 10,
-        ),
-        decoration: BoxDecoration(
-          color: scheme.surfaceContainerLowest,
-          borderRadius: BorderRadius.circular(AppRadii.small),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            TargetText.card(
-              example.target,
-              language: language,
-              fontSize: 16,
-              color: scheme.onSurface,
-            ),
-            const SizedBox(height: 2),
-            Text(
-              example.native,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyLarge!.copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
