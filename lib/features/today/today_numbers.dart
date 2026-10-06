@@ -52,8 +52,9 @@ typedef TodayLesson = ({
 /// design's sample numbers (streak 12, 8 new cards, and so on).
 ///
 /// The count and the skill tiles come from `buildSession(DrillRequest.today())`,
-/// the same queue Start review drills, so the number on the card is the
-/// number of cards the session holds.
+/// the same queue Start review drills. That queue holds one item per card
+/// (`SessionQueue.build`), so the number on the card is the number of words
+/// the session asks, whatever number of skills a word is due in.
 class TodayNumbers {
   const TodayNumbers({
     required this.hasDecks,
@@ -160,8 +161,10 @@ class TodayNumbers {
   /// Whether the profile learns any language that has a deck.
   final bool hasDecks;
 
-  /// Cards in today's session: due reviews, and the new skills of words
-  /// already taught. New words come in [lessons] (ADR-0024).
+  /// Words in today's session: due reviews, and the new skills of words
+  /// already taught, each word once, in the one skill it is asked in. New
+  /// words come in [lessons] (ADR-0024). A reading passage's questions are
+  /// cards of their own (ADR-0019) and count one each.
   final int due;
 
   /// Today's session per skill, for each skill with a tile, in

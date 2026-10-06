@@ -10,12 +10,15 @@ import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'match_hear_toggle.dart';
 
 /// Match pairs (ADR-0024): a few words in the language learned beside their
 /// meanings, shuffled, matched by dragging a word onto its meaning, or by
-/// tapping one and then the other, in either order. With Play words
-/// automatically on, a word tile tapped says its word. Each word is recorded
-/// as recognition when it is matched: right first time, or after a slip.
+/// tapping one and then the other, in either order. A word tile tapped says
+/// its word while the speaker button on the card is on ([MatchHearToggle],
+/// ADR-0032), whatever Play words automatically says; a meaning never
+/// speaks. Each word is recorded as recognition when it is matched: right
+/// first time, or after a slip.
 ///
 /// Build one per card (key it by the card's position).
 class MatchDrill extends StatefulWidget {
@@ -56,11 +59,11 @@ class _MatchDrillState extends State<MatchDrill> {
   }
 
   void _tap(SessionItem entry, _Side side) {
-    // A word tile speaks its word as it is tapped, when words play
-    // automatically: a match has no speaker of its own.
+    // A word tile speaks its word as it is tapped, while the card's own
+    // switch for it is on (ADR-0032). Play words automatically is not asked.
     final settings = AppScope.read(context).settings;
     if (side == _Side.word &&
-        settings.autoplay &&
+        settings.matchTapToHear &&
         settings.soundOn &&
         _session.canPlay) {
       _session.playCard(entry.card);
@@ -99,10 +102,20 @@ class _MatchDrillState extends State<MatchDrill> {
       progress: session.progress,
       onClose: widget.onClose,
       card: <Widget>[
-        Text(
-          l10n.drillMatchPrompt,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.titleLarge,
+        // The speaker button sits at the end of the prompt's line, with
+        // room of the same width before it so that the prompt stays centred.
+        Row(
+          children: <Widget>[
+            if (session.canPlay) const SizedBox(width: MatchHearToggle.size),
+            Expanded(
+              child: Text(
+                l10n.drillMatchPrompt,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleLarge,
+              ),
+            ),
+            if (session.canPlay) const MatchHearToggle(),
+          ],
         ),
         if (!done)
           Text(

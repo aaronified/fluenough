@@ -9,14 +9,13 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
-import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
-import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
 import 'input_mode_choice.dart';
 import 'keyboard_hint.dart';
+import 'taught_details.dart';
 
 /// Production and listening: a typed answer, graded by `AnswerGrader`.
 ///
@@ -27,7 +26,9 @@ import 'keyboard_hint.dart';
 ///   rate or 0.7 times it, and takes what was heard.
 ///
 /// Production's word has its speaker once the answer is in; before, hearing
-/// it would give the answer away.
+/// it would give the answer away. With the answer in, the card also shows
+/// what the word's lesson showed: its reading, its meaning, its note and its
+/// first example ([TaughtDetails]).
 ///
 /// Then the feedback: Continue, or for a near miss the learner's own
 /// judgement, "Count it wrong" or "I knew it".
@@ -147,7 +148,6 @@ class _TypedDrillState extends State<TypedDrill> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final answered = _session.answer != null;
-    final notes = card.notes;
     return <Widget>[
       Text(
         l10n.drillAskIn(language.name),
@@ -165,31 +165,24 @@ class _TypedDrillState extends State<TypedDrill> {
                     : theme.textTheme.displaySmall!)
                 .copyWith(fontWeight: FontWeight.w600),
       ),
-      if (answered) ...<Widget>[
-        _word(card, language, scheme),
-        // Only now: hearing the word would give the answer away.
-        if (_session.canPlay)
-          Speaker(
-            key: const ValueKey<String>('speaker'),
-            onPlay: _session.play,
-            playing: _session.playing,
-          ),
-        if (notes != null)
-          // Padding, not a max-width box: DrillFrame measures the card's
-          // intrinsic height, and a ConstrainedBox reports its child's
-          // height at the full width, so wrapped notes would overflow.
-          // 19 each side is the design's 280 on a phone's 318 card.
-          Padding(
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
-            child: Text(
-              notes,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyLarge!.copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ),
-      ],
+      if (answered)
+        // The meaning is the prompt above. Only now: hearing the word would
+        // give the answer away.
+        TaughtDetails(
+          card: card,
+          language: language,
+          reading: TaughtReading.inReview(_session),
+          wordSize: 28,
+          wordColor: scheme.primary,
+          meaning: false,
+          between: _session.canPlay
+              ? Speaker(
+                  key: const ValueKey<String>('speaker'),
+                  onPlay: _session.play,
+                  playing: _session.playing,
+                )
+              : null,
+        ),
     ];
   }
 
@@ -246,38 +239,15 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ),
       slowerChip,
-      if (session.answer != null) ...<Widget>[
-        _word(card, language, scheme),
-        Text(
-          card.native,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.bodyLarge!.copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
+      if (session.answer != null)
+        TaughtDetails(
+          card: card,
+          language: language,
+          reading: TaughtReading.inReview(session),
+          wordSize: 28,
+          wordColor: scheme.primary,
         ),
-      ],
     ];
-  }
-
-  /// The answer, once in: the word, or for a language learned without its
-  /// alphabet, its reading first.
-  Widget _word(Card card, LanguageInfo language, ColorScheme scheme) {
-    final reading = card.reading;
-    if (reading != null && !_session.learnsAlphabet) {
-      return ReadingFirst(
-        reading: reading,
-        target: card.target,
-        language: language,
-        fontSize: 28,
-        color: scheme.primary,
-      );
-    }
-    return TargetText.card(
-      card.target,
-      language: language,
-      fontSize: 28,
-      color: scheme.primary,
-    );
   }
 
   String _fieldLabel(

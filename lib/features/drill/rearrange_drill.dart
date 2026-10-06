@@ -5,11 +5,11 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
-import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
 import 'input_mode_choice.dart';
+import 'taught_details.dart';
 
 /// Rearrange (ADR-0024): the meaning, and the sentence's words shuffled
 /// below. Tapping a word puts it next on the answer line; tapping it there
@@ -17,8 +17,9 @@ import 'input_mode_choice.dart';
 /// if the words read as the sentence, 1 if not.
 ///
 /// The words come in Latin letters while typed answers would, and the
-/// Script or Latin letters choice switches them. Build one per card (key it
-/// by the card's position).
+/// Script or Latin letters choice switches them. Once answered, the card
+/// shows what the sentence's lesson showed ([TaughtDetails]). Build one per
+/// card (key it by the card's position).
 class RearrangeDrill extends StatelessWidget {
   const RearrangeDrill({
     super.key,
@@ -76,24 +77,20 @@ class RearrangeDrill extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
+        // The meaning is the prompt above. Only now: hearing it would give
+        // the order away.
         if (answer != null)
-          reading != null && !session.learnsAlphabet
-              ? ReadingFirst(
-                  reading: reading,
-                  target: card.target,
-                  language: language,
-                  fontSize: 24,
-                  color: scheme.primary,
-                )
-              : TargetText.card(
-                  card.target,
-                  language: language,
-                  fontSize: 24,
-                  color: scheme.primary,
-                ),
-        // Only once answered: hearing it would give the order away.
-        if (answer != null && session.canPlay)
-          Speaker(onPlay: session.play, playing: session.playing),
+          TaughtDetails(
+            card: card,
+            language: language,
+            reading: TaughtReading.inReview(session),
+            wordSize: 24,
+            wordColor: scheme.primary,
+            meaning: false,
+            between: session.canPlay
+                ? Speaker(onPlay: session.play, playing: session.playing)
+                : null,
+          ),
       ],
       belowCard: <Widget>[
         if (answer == null && session.canTransliterate)
