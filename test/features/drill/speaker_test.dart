@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/ui/widgets/snack.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
@@ -77,8 +78,7 @@ Future<void> tapVisible(WidgetTester tester, Finder finder) async {
 }
 
 Future<void> clearSnackBars(WidgetTester tester) async {
-  ScaffoldMessenger.of(tester.element(find.byType(Scaffold).first))
-      .removeCurrentSnackBar();
+  hideAppSnackBar();
   await tester.pumpAndSettle();
 }
 

@@ -7,6 +7,7 @@ import '../../app/app_scope.dart';
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
+import 'snack.dart';
 
 /// M3's disabled-content opacity, which dims a feature that is incoming.
 const double kIncomingOpacity = 0.38;
@@ -16,17 +17,10 @@ const double kIncomingOpacity = 0.38;
 bool isIncoming(BuildContext context, Feature feature) =>
     AppScope.of(context).features.isIncoming(feature);
 
-/// Says "Feature incoming. Not in this version yet." in a SnackBar, which
-/// TalkBack and VoiceOver announce.
-void showIncomingSnackBar(BuildContext context) {
-  final messenger = ScaffoldMessenger.maybeOf(context);
-  if (messenger == null) return;
-  messenger
-    ..hideCurrentSnackBar()
-    ..showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.incomingSnackBar)),
-    );
-}
+/// Says "Feature incoming. Not in this version yet." in the app's toast,
+/// which TalkBack and VoiceOver announce.
+void showIncomingSnackBar(BuildContext context) =>
+    showAppSnackBar(context, AppLocalizations.of(context)!.incomingSnackBar);
 
 /// The "Feature incoming" badge: full contrast, beside a dimmed control, so
 /// the state is never shown by colour alone.

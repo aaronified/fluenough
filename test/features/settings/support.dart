@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/ui/widgets/snack.dart';
+
 /// Scrolls the page's list until [finder] is built and on screen.
 Future<void> scrollTo(WidgetTester tester, Finder finder) async {
   await tester.scrollUntilVisible(
@@ -33,9 +35,8 @@ Future<void> tapSlider(WidgetTester tester, Finder slider, double fraction) {
   );
 }
 
-/// Hides the SnackBar, so that it covers nothing the next tap aims at.
+/// Hides the toast, so that it covers nothing the next tap aims at.
 Future<void> clearSnackBars(WidgetTester tester) async {
-  ScaffoldMessenger.of(tester.element(find.byType(Scaffold).first))
-      .removeCurrentSnackBar();
+  hideAppSnackBar();
   await tester.pumpAndSettle();
 }
