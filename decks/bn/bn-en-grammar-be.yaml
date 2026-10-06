@@ -1,18 +1,18 @@
 schema: 1
 id: bn-en-grammar-be
-name: "To be: আছে, ছিল, নয়"
+name: "To be: আছে (āche), ছিল (chil), নয় (nôy)"
 kind: grammar
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Bengali's three ways of saying be: আছে for where and how someone is, ছিল for was, and নয় for is not. Not yet checked by a Bengali speaker: please report any mistake."
+description: "Bengali's three ways of saying be: আছে (āche) for where and how someone is, ছিল (chil) for was, and নয় (nôy) for is not. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "To be"
   slot_name: "person and respect"
   slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "আছে is be for where and how: আমি ভালো আছি, I'm well; বাবা বাড়িতে আছেন, Father is at home. With the owner's -র it is have: আমার সময় আছে, I have time. Its negative is নেই, the same for every person: আমি বাড়িতে নেই, I'm not at home. With a noun or an adjective the present has no verb (আমি ছাত্র, I am a student), but 'not' has one: আমি ছাত্র নই. In speech না often stands for every নয় form: আমি ছাত্র না. ছিল is the past of both: আমি বাড়িতে ছিলাম, আমি ছাত্র ছিলাম, and its negative puts না after it: ছিলাম না. ও and এ take the same form as সে, and উনি and ইনি the same as তিনি. তুমি আছো is also written আছ, and both are accepted."
+  notes: "আছে (āche) is be for where and how: আমি ভালো আছি (āmi bhālo āchi), I'm well; বাবা বাড়িতে আছেন (bābā bāṛite āchen), Father is at home. With the owner's -র (-rô) it is have: আমার সময় আছে (āmār śômoy āche), I have time. Its negative is নেই (nei), the same for every person: আমি বাড়িতে নেই (āmi bāṛite nei), I'm not at home. With a noun or an adjective the present has no verb (আমি ছাত্র (āmi chātro), I am a student), but 'not' has one: আমি ছাত্র নই (āmi chātro noi). In speech না (nā) often stands for every নয় (nôy) form: আমি ছাত্র না (āmi chātro nā). ছিল (chil) is the past of both: আমি বাড়িতে ছিলাম (āmi bāṛite chilām), আমি ছাত্র ছিলাম (āmi chātro chilām), and its negative puts না (nā) after it: ছিলাম না (chilām nā). ও (o) and এ (e) take the same form as সে (se), and উনি (uni) and ইনি (ini) the same as তিনি (tini). তুমি আছো (tumi ācho) is also written আছ (āch), and both are accepted."
   entries:
     - lemma: "আছে"
       key: achhe

@@ -5,14 +5,14 @@ kind: grammar
 language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "The plural, and the endings for 'in', 'to', 'from' and 'of', often joined by a y or an -ಇನ-. Not yet checked by a Kannada speaker: please report any mistake."
+description: "The plural, and the endings for 'in', 'to', 'from' and 'of', often joined by a y or an -ಇನ- (-ina-). Not yet checked by a Kannada speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "Noun endings"
   slot_name: "form"
-  slots: ["plural", "in: -ಅಲ್ಲಿ", "to: -ಗೆ or -ಕ್ಕೆ", "from: -ಇಂದ", "of: -ಅ"]
+  slots: ["plural", "in: -ಅಲ್ಲಿ (-alli)", "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)", "from: -ಇಂದ (-inda)", "of: -ಅ (-a)"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "-ಗಳು makes a plural. A noun in -e or -i joins its endings with a y: ಮನೆಯಲ್ಲಿ. A noun in -a takes -ದ- before them and -ಕ್ಕೆ for 'to': ಪುಸ್ತಕದಲ್ಲಿ, ಪುಸ್ತಕಕ್ಕೆ. Many nouns in -u take -ಇನ-: ಊರಿನಲ್ಲಿ. Where two forms are given, the second is everyday speech."
+  notes: "-ಗಳು (-gaḷu) makes a plural. A noun in -e or -i joins its endings with a y: ಮನೆಯಲ್ಲಿ (maneyalli). A noun in -a takes -ದ- (-da-) before them and -ಕ್ಕೆ (-kke) for 'to': ಪುಸ್ತಕದಲ್ಲಿ (pustakadalli), ಪುಸ್ತಕಕ್ಕೆ (pustakakke). Many nouns in -u take -ಇನ- (-ina-): ಊರಿನಲ್ಲಿ (ūrinalli). Where two forms are given, the second is everyday speech."
   entries:
     - lemma: "ಮನೆ"
       key: mane
@@ -21,22 +21,22 @@ pattern:
       gloss: "house"
       forms:
         "plural": "ಮನೆಗಳು"
-        "in: -ಅಲ್ಲಿ": ["ಮನೆಯಲ್ಲಿ", "ಮನೇಲಿ"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "ಮನೆಗೆ"
-        "from: -ಇಂದ": "ಮನೆಯಿಂದ"
-        "of: -ಅ": "ಮನೆಯ"
+        "in: -ಅಲ್ಲಿ (-alli)": ["ಮನೆಯಲ್ಲಿ", "ಮನೇಲಿ"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ಮನೆಗೆ"
+        "from: -ಇಂದ (-inda)": "ಮನೆಯಿಂದ"
+        "of: -ಅ (-a)": "ಮನೆಯ"
       readings:
         "plural": "manegaḷu"
-        "in: -ಅಲ್ಲಿ": ["maneyalli", "manēli"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "manege"
-        "from: -ಇಂದ": "maneyinda"
-        "of: -ಅ": "maneya"
+        "in: -ಅಲ್ಲಿ (-alli)": ["maneyalli", "manēli"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "manege"
+        "from: -ಇಂದ (-inda)": "maneyinda"
+        "of: -ಅ (-a)": "maneya"
       ipas:
         "plural": "maneɡaɭu"
-        "in: -ಅಲ್ಲಿ": "manejalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "maneɡe"
-        "from: -ಇಂದ": "manejind̪a"
-        "of: -ಅ": "maneja"
+        "in: -ಅಲ್ಲಿ (-alli)": "manejalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "maneɡe"
+        "from: -ಇಂದ (-inda)": "manejind̪a"
+        "of: -ಅ (-a)": "maneja"
     - lemma: "ಪುಸ್ತಕ"
       key: pustaka
       reading: "pustaka"
@@ -44,22 +44,22 @@ pattern:
       gloss: "book"
       forms:
         "plural": "ಪುಸ್ತಕಗಳು"
-        "in: -ಅಲ್ಲಿ": "ಪುಸ್ತಕದಲ್ಲಿ"
-        "to: -ಗೆ or -ಕ್ಕೆ": "ಪುಸ್ತಕಕ್ಕೆ"
-        "from: -ಇಂದ": "ಪುಸ್ತಕದಿಂದ"
-        "of: -ಅ": "ಪುಸ್ತಕದ"
+        "in: -ಅಲ್ಲಿ (-alli)": "ಪುಸ್ತಕದಲ್ಲಿ"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ಪುಸ್ತಕಕ್ಕೆ"
+        "from: -ಇಂದ (-inda)": "ಪುಸ್ತಕದಿಂದ"
+        "of: -ಅ (-a)": "ಪುಸ್ತಕದ"
       readings:
         "plural": "pustakagaḷu"
-        "in: -ಅಲ್ಲಿ": "pustakadalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "pustakakke"
-        "from: -ಇಂದ": "pustakadinda"
-        "of: -ಅ": "pustakada"
+        "in: -ಅಲ್ಲಿ (-alli)": "pustakadalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "pustakakke"
+        "from: -ಇಂದ (-inda)": "pustakadinda"
+        "of: -ಅ (-a)": "pustakada"
       ipas:
         "plural": "pust̪akaɡaɭu"
-        "in: -ಅಲ್ಲಿ": "pust̪akad̪alli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "pust̪akakke"
-        "from: -ಇಂದ": "pust̪akad̪ind̪a"
-        "of: -ಅ": "pust̪akad̪a"
+        "in: -ಅಲ್ಲಿ (-alli)": "pust̪akad̪alli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "pust̪akakke"
+        "from: -ಇಂದ (-inda)": "pust̪akad̪ind̪a"
+        "of: -ಅ (-a)": "pust̪akad̪a"
     - lemma: "ಅಂಗಡಿ"
       key: angadi
       reading: "aṅgaḍi"
@@ -67,22 +67,22 @@ pattern:
       gloss: "shop"
       forms:
         "plural": "ಅಂಗಡಿಗಳು"
-        "in: -ಅಲ್ಲಿ": ["ಅಂಗಡಿಯಲ್ಲಿ", "ಅಂಗಡೀಲಿ"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "ಅಂಗಡಿಗೆ"
-        "from: -ಇಂದ": "ಅಂಗಡಿಯಿಂದ"
-        "of: -ಅ": "ಅಂಗಡಿಯ"
+        "in: -ಅಲ್ಲಿ (-alli)": ["ಅಂಗಡಿಯಲ್ಲಿ", "ಅಂಗಡೀಲಿ"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ಅಂಗಡಿಗೆ"
+        "from: -ಇಂದ (-inda)": "ಅಂಗಡಿಯಿಂದ"
+        "of: -ಅ (-a)": "ಅಂಗಡಿಯ"
       readings:
         "plural": "aṅgaḍigaḷu"
-        "in: -ಅಲ್ಲಿ": ["aṅgaḍiyalli", "aṅgaḍīli"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "aṅgaḍige"
-        "from: -ಇಂದ": "aṅgaḍiyinda"
-        "of: -ಅ": "aṅgaḍiya"
+        "in: -ಅಲ್ಲಿ (-alli)": ["aṅgaḍiyalli", "aṅgaḍīli"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "aṅgaḍige"
+        "from: -ಇಂದ (-inda)": "aṅgaḍiyinda"
+        "of: -ಅ (-a)": "aṅgaḍiya"
       ipas:
         "plural": "aŋɡaɖiɡaɭu"
-        "in: -ಅಲ್ಲಿ": "aŋɡaɖijalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "aŋɡaɖiɡe"
-        "from: -ಇಂದ": "aŋɡaɖijind̪a"
-        "of: -ಅ": "aŋɡaɖija"
+        "in: -ಅಲ್ಲಿ (-alli)": "aŋɡaɖijalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "aŋɡaɖiɡe"
+        "from: -ಇಂದ (-inda)": "aŋɡaɖijind̪a"
+        "of: -ಅ (-a)": "aŋɡaɖija"
     - lemma: "ಕೋಣೆ"
       key: koone
       reading: "kōṇe"
@@ -90,22 +90,22 @@ pattern:
       gloss: "room"
       forms:
         "plural": "ಕೋಣೆಗಳು"
-        "in: -ಅಲ್ಲಿ": "ಕೋಣೆಯಲ್ಲಿ"
-        "to: -ಗೆ or -ಕ್ಕೆ": "ಕೋಣೆಗೆ"
-        "from: -ಇಂದ": "ಕೋಣೆಯಿಂದ"
-        "of: -ಅ": "ಕೋಣೆಯ"
+        "in: -ಅಲ್ಲಿ (-alli)": "ಕೋಣೆಯಲ್ಲಿ"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ಕೋಣೆಗೆ"
+        "from: -ಇಂದ (-inda)": "ಕೋಣೆಯಿಂದ"
+        "of: -ಅ (-a)": "ಕೋಣೆಯ"
       readings:
         "plural": "kōṇegaḷu"
-        "in: -ಅಲ್ಲಿ": "kōṇeyalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "kōṇege"
-        "from: -ಇಂದ": "kōṇeyinda"
-        "of: -ಅ": "kōṇeya"
+        "in: -ಅಲ್ಲಿ (-alli)": "kōṇeyalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "kōṇege"
+        "from: -ಇಂದ (-inda)": "kōṇeyinda"
+        "of: -ಅ (-a)": "kōṇeya"
       ipas:
         "plural": "koːɳeɡaɭu"
-        "in: -ಅಲ್ಲಿ": "koːɳejalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "koːɳeɡe"
-        "from: -ಇಂದ": "koːɳejind̪a"
-        "of: -ಅ": "koːɳeja"
+        "in: -ಅಲ್ಲಿ (-alli)": "koːɳejalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "koːɳeɡe"
+        "from: -ಇಂದ (-inda)": "koːɳejind̪a"
+        "of: -ಅ (-a)": "koːɳeja"
     - lemma: "ಬಸ್ಸು"
       key: bassu
       reading: "bassu"
@@ -113,22 +113,22 @@ pattern:
       gloss: "bus"
       forms:
         "plural": "ಬಸ್ಸುಗಳು"
-        "in: -ಅಲ್ಲಿ": ["ಬಸ್ಸಿನಲ್ಲಿ", "ಬಸ್ಸಲ್ಲಿ"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "ಬಸ್ಸಿಗೆ"
-        "from: -ಇಂದ": "ಬಸ್ಸಿನಿಂದ"
-        "of: -ಅ": "ಬಸ್ಸಿನ"
+        "in: -ಅಲ್ಲಿ (-alli)": ["ಬಸ್ಸಿನಲ್ಲಿ", "ಬಸ್ಸಲ್ಲಿ"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ಬಸ್ಸಿಗೆ"
+        "from: -ಇಂದ (-inda)": "ಬಸ್ಸಿನಿಂದ"
+        "of: -ಅ (-a)": "ಬಸ್ಸಿನ"
       readings:
         "plural": "bassugaḷu"
-        "in: -ಅಲ್ಲಿ": ["bassinalli", "bassalli"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "bassige"
-        "from: -ಇಂದ": "bassininda"
-        "of: -ಅ": "bassina"
+        "in: -ಅಲ್ಲಿ (-alli)": ["bassinalli", "bassalli"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "bassige"
+        "from: -ಇಂದ (-inda)": "bassininda"
+        "of: -ಅ (-a)": "bassina"
       ipas:
         "plural": "bassuɡaɭu"
-        "in: -ಅಲ್ಲಿ": "bassinalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "bassiɡe"
-        "from: -ಇಂದ": "bassinind̪a"
-        "of: -ಅ": "bassina"
+        "in: -ಅಲ್ಲಿ (-alli)": "bassinalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "bassiɡe"
+        "from: -ಇಂದ (-inda)": "bassinind̪a"
+        "of: -ಅ (-a)": "bassina"
     - lemma: "ಊರು"
       key: uuru
       reading: "ūru"
@@ -136,19 +136,19 @@ pattern:
       gloss: "town"
       forms:
         "plural": "ಊರುಗಳು"
-        "in: -ಅಲ್ಲಿ": ["ಊರಿನಲ್ಲಿ", "ಊರಲ್ಲಿ"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "ಊರಿಗೆ"
-        "from: -ಇಂದ": "ಊರಿನಿಂದ"
-        "of: -ಅ": "ಊರಿನ"
+        "in: -ಅಲ್ಲಿ (-alli)": ["ಊರಿನಲ್ಲಿ", "ಊರಲ್ಲಿ"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ಊರಿಗೆ"
+        "from: -ಇಂದ (-inda)": "ಊರಿನಿಂದ"
+        "of: -ಅ (-a)": "ಊರಿನ"
       readings:
         "plural": "ūrugaḷu"
-        "in: -ಅಲ್ಲಿ": ["ūrinalli", "ūralli"]
-        "to: -ಗೆ or -ಕ್ಕೆ": "ūrige"
-        "from: -ಇಂದ": "ūrininda"
-        "of: -ಅ": "ūrina"
+        "in: -ಅಲ್ಲಿ (-alli)": ["ūrinalli", "ūralli"]
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "ūrige"
+        "from: -ಇಂದ (-inda)": "ūrininda"
+        "of: -ಅ (-a)": "ūrina"
       ipas:
         "plural": "uːruɡaɭu"
-        "in: -ಅಲ್ಲಿ": "uːrinalli"
-        "to: -ಗೆ or -ಕ್ಕೆ": "uːriɡe"
-        "from: -ಇಂದ": "uːrinind̪a"
-        "of: -ಅ": "uːrina"
+        "in: -ಅಲ್ಲಿ (-alli)": "uːrinalli"
+        "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)": "uːriɡe"
+        "from: -ಇಂದ (-inda)": "uːrinind̪a"
+        "of: -ಅ (-a)": "uːrina"
