@@ -79,8 +79,9 @@ then chose to make them, with books, an optional shelf the learner picks
 from by interest: `books-films-songs.md`.
 
 - They are **not units** of the B1 plan and never hold back the path.
-- Each item on the shelf carries a level, A1, A2 or B1, so a B1 film shows
-  near the end of a course, and children's songs and books near the start.
+- Each item on the shelf carries a level, A1, A2 or B1. Songs and films come
+  at every level; books only at B1, for learners who learn the script. The
+  finale, a great film without subtitles, is offered at the B1 mark.
 - They count toward neither words nor grammar topics. The picker can show
   them apart, e.g. "2 films, 1 book done".
 

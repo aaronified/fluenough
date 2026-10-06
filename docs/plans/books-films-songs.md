@@ -20,13 +20,30 @@ Then:
 > a carousel as per their interests. the catalogue will be curated (as we
 > will need to ask questions).
 
+Then:
+
+> Easy A1–A2 reading: we can only give books at B1 level and only for
+> people who have learnt the script. a little mature but beginner friendly
+> books can be added as well. Guaranteed access: user gets to choose whether
+> they want to read one of them or not or which one. music and movies: for
+> every level. at B1 level, we will ask to watch a movie without subtitle,
+> this bunch of final movies (from which the user will select) will be among
+> the greatest movies in that language. again, user gets to choose whether
+> they want to do it or not.
+
 Decided with the owner:
 
-- **Learners get the works themselves,** books included. The app ships no
-  PDFs, video or audio.
+- **Learners get the works themselves.** The app ships no PDFs, video or
+  audio.
+- **Everything is a choice:** whether to take any item, and which. A work a
+  learner cannot get is simply one they do not pick.
+- **Songs and films at every level.**
+- **Books at B1 only,** and only for learners who learn the script. Besides
+  books written for young readers, a little more mature books that are still
+  friendly to a beginner.
 - **Book questions are keyed to chapters,** since editions differ.
-- **At A1 and A2,** the shelf offers real children's books and songs,
-  nothing written by the app.
+- **The B1 finale:** a film watched without subtitles, chosen by the learner
+  from a set of the greatest films in the language.
 
 ## What exists
 
@@ -62,6 +79,9 @@ Decided with the owner:
      lines.
 4. **Curated:** an item is on the shelf only once its questions are written,
    sourced and reviewed by a speaker.
+5. **A choice, never a task:** nothing on the shelf is assigned, counted as
+   overdue, or needed for a milestone. Taking an item, and which one, is the
+   learner's call.
 
 ## Questions
 
@@ -70,7 +90,9 @@ Decided with the owner:
     remembers it;
   - each chapter has its questions: what happens, words and phrases from
     it, and its culture.
-- **Films:** by part, e.g. the first and second halves, or as a whole.
+- **Films:** by part, e.g. the first and second halves, or as a whole. A
+  film's level says whether it is watched with subtitles; the finale says
+  "without subtitles".
 - **Songs:** as a whole: what it is about, its words, its place in the
   culture.
 - **Answered by choosing,** since the app cannot check what was read,
@@ -80,10 +102,21 @@ Decided with the owner:
 
 ## Levels
 
-| Level | What the shelf offers |
-|---|---|
-| A1–A2 | Children's picture books and stories, and well-known songs, real works chosen for simple language |
-| B1 | Novels, short stories, films and popular songs |
+| Level | Songs | Films | Books |
+|---|---|---|---|
+| A1 | Well-known, slow, clear songs | Simple, well-known films, with subtitles | None |
+| A2 | Popular songs | Films with subtitles | None |
+| B1 | Popular and classic songs | Films; subtitles optional | For learners who learn the script: short novels and stories, young readers' and a little more mature but beginner-friendly |
+| End of B1 | | **The finale:** one of the language's greatest films, watched without subtitles | |
+
+- **No books before B1,** and none for a learner who learns without the
+  alphabet (ADR-0023): there is no simple reading for them before then.
+- **The finale** is a set of five or so of the greatest films in the
+  language, each with questions on the whole film, by part, on its words and
+  on its culture. The learner picks one, or none. It is offered once the B1
+  mark is reached.
+- **"Greatest"** comes from sources the catalogue names, such as national
+  film awards and critics' polls, not from the app's own taste.
 
 ## The format
 
@@ -110,8 +143,11 @@ Decided with the owner:
    - chapter progress;
    - the questions;
    - adding a word to cards.
-3. Content, per course: a first shelf of about six items across the levels
-   and themes, each with its questions, sourced and reviewed.
+3. Content, per course:
+   - a first shelf of about six songs and films across the levels and
+     themes, and two or three books at B1;
+   - the finale's set of greatest films;
+   - each with its questions, sourced and reviewed.
 4. Tests:
    - the format and the validator;
    - filtering by interest and level;
@@ -127,6 +163,7 @@ deck downloads, which the shelf's files come with.
 ## To decide
 
 - **The first items** per course, and who suggests them.
+- **The finale's sources** for "greatest", per language.
 - **The themes** offered in the interest picker.
 - **Films:** questions by part, or for the whole film only.
 
