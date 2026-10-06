@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language.
+- In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language (#195).
 
 ## [0.3.3] - 2026-10-05
 
