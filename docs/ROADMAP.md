@@ -43,6 +43,7 @@ Each can start once what it waits for is done.
 | #222 | Building sentences, and cloze | #207 |
 | #216 | A path for every language, by family | |
 | #350 | New languages, one full course each | #210, #217 |
+| #403 | A deck browser for reviewers, on GitHub Pages | #392 |
 | #217 | IPA from Wiktionary | |
 | #218 | Fluenough on the web | |
 | #220 | Read your own text, and make cards from it | |
