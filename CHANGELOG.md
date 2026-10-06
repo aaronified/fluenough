@@ -9,9 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+<<<<<<< HEAD
 - In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language.
+<<<<<<< HEAD
 - Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it will let you learn: telling apart the sounds that change a word's meaning, like short and long vowels. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards.
-- Where the decks' texts come from has a page of its own: Settings shows one Sources row that opens it, in place of the whole list, so Settings is less crowded. With no sources to show, there is no row.
+- Where the decks' texts come from has a page of its own: Settings shows one Sources row that opens it, in place of the whole list, so Settings is less crowded. With no sources to show, there is no row (#197).
+=======
+- Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it will let you learn: telling apart the sounds that change a word's meaning, like short and long vowels. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards (#196).
+=======
+- In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language (#195).
+>>>>>>> origin/feat/spoken-in-learning
+>>>>>>> origin/fix/phonemic-contrasts-setting
 
 ## [0.3.3] - 2026-10-05
 
