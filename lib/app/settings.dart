@@ -34,6 +34,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._showRomanisation = true,
     this._soundOn = true,
     this._autoplay = false,
+    this._matchTapToHear = true,
     this._speechRate = 1.0,
     this._themeMode = ThemeMode.system,
     this._seed = ThemeSeed.forest,
@@ -75,6 +76,7 @@ class SettingsNotifier extends ChangeNotifier {
   bool _showRomanisation;
   bool _soundOn;
   bool _autoplay;
+  bool _matchTapToHear;
   int _speakerTaps = 0;
   double _speechRate;
   ThemeMode _themeMode;
@@ -334,6 +336,15 @@ class SettingsNotifier extends ChangeNotifier {
   bool get autoplay => _autoplay;
   set autoplay(bool value) => _set(_autoplay, value, (v) => _autoplay = v);
 
+  /// Whether a word tile of match pairs says its word when it is tapped
+  /// (ADR-0032). Its own switch, on the match-pairs screen, and on by
+  /// default: a match has no speaker, and early learners cannot tell
+  /// minimal pairs apart by script or ISO letters. Independent of
+  /// [autoplay]; [soundOn] still wins.
+  bool get matchTapToHear => _matchTapToHear;
+  set matchTapToHear(bool value) =>
+      _set(_matchTapToHear, value, (v) => _matchTapToHear = v);
+
   /// How many times a speaker has been tapped to play while [autoplay] was
   /// off: every tenth says that a long press plays words automatically, so
   /// that those who tap it most hear of it. Not something the learner sets.
@@ -437,6 +448,7 @@ class SettingsNotifier extends ChangeNotifier {
     'show_romanisation': '$_showRomanisation',
     'sound_on': '$_soundOn',
     'autoplay': '$_autoplay',
+    'match_tap_to_hear': '$_matchTapToHear',
     'speaker_taps': '$_speakerTaps',
     'speech_rate': '$_speechRate',
     'theme_mode': _themeMode.name,
@@ -508,6 +520,7 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
     if (pick('sound_on', flag) case final v?) soundOn = v;
     if (pick('autoplay', flag) case final v?) autoplay = v;
+    if (pick('match_tap_to_hear', flag) case final v?) matchTapToHear = v;
     if (pick('speaker_taps', int.tryParse) case final v? when v >= 0) {
       _set(_speakerTaps, v, (n) => _speakerTaps = n);
     }
