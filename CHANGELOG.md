@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it will let you learn: telling apart the sounds that change a word's meaning, like short and long vowels. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards.
+
 ## [0.3.3] - 2026-10-05
 
 ### Added

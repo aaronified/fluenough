@@ -69,6 +69,16 @@ void main() {
     expect(tts.spoken.single.rate, state.settings.ttsRate());
   });
 
+  testWidgets('the drill is still called Minimal pairs: only Settings uses '
+      'the other name', (tester) async {
+    usePhone(tester);
+    await pumpScreen(tester, const PairDrill(), state: pairOn());
+    final l10n = l10nOf(tester);
+    expect(l10n.skillPair, 'Minimal pairs');
+    expect(find.text('Minimal pairs'), findsOneWidget);
+    expect(find.text('Phonemic contrasts'), findsNothing);
+  });
+
   testWidgets('choosing the sound played says so, with the contrast', (
     tester,
   ) async {
