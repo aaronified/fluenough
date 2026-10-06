@@ -32,6 +32,15 @@ extension SkillVisuals on Skill {
     Skill.pair => l10n.skillPair,
   };
 
+  /// A skill's title on its switch in Settings: [label] for every skill but
+  /// minimal pairs, which Settings calls "Phonemic contrasts". What the
+  /// switch turns on is the learning of sounds that change a word's meaning,
+  /// not the minimal-pairs drill's own name, which stays on decks and pills.
+  String settingsLabel(AppLocalizations l10n) => switch (this) {
+    Skill.pair => l10n.skillPairSettingsTitle,
+    _ => label(l10n),
+  };
+
   /// The line under a skill on a deck's screen. [language] is the deck's
   /// language name, from the deck file.
   String deckDescription(AppLocalizations l10n, String language) =>

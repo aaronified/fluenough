@@ -315,9 +315,13 @@
   "@skillGrammarSettingsDesc": {
     "description": "Under the Grammar switch in Settings."
   },
-  "skillPairSettingsDesc": "Sounds your language may not have",
+  "skillPairSettingsTitle": "Phonemic contrasts",
+  "@skillPairSettingsTitle": {
+    "description": "Title of the switch in Settings that turns the minimal-pairs skill on. Used in Settings only: everywhere else that skill is called skillPair, Minimal pairs. Switching it on lets the learner practise telling apart the sounds that change a word’s meaning in the language they learn. Sentence case, like the other Settings titles."
+  },
+  "skillPairSettingsDesc": "Tell apart sounds that change a word’s meaning, like short and long vowels",
   "@skillPairSettingsDesc": {
-    "description": "Under the Minimal pairs switch in Settings."
+    "description": "Under the Phonemic contrasts switch in Settings. Says what switching it on lets the learner learn: to tell apart the sounds that change a word’s meaning in the language they learn, for example short and long vowels. One short line, no full stop; it does not mention the learner’s own language."
   },
   "profilesTitle": "Who’s practising?",
   "@profilesTitle": {
@@ -1937,13 +1941,23 @@
       }
     }
   },
-  "settingsSectionSources": "Sources",
-  "@settingsSectionSources": {
-    "description": "Settings section heading: where the decks' texts come from, one row per language."
+  "settingsSources": "Sources",
+  "@settingsSources": {
+    "description": "Row in Settings that opens the sources screen, and that screen's title: where the decks' texts come from."
+  },
+  "settingsSourcesSummary": "{count, plural, =1{1 source} other{{count} sources}}",
+  "@settingsSourcesSummary": {
+    "description": "The line under Settings' Sources row: how many sources the decks name.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
   },
   "settingsSourceLine": "{source}: {kind, select, reading{passages for reading} grammar{grammar} other{words}}",
   "@settingsSourceLine": {
-    "description": "A row in Settings, Sources: a source the decks name, from the deck file, and what it gives the app.",
+    "description": "A row on the Sources screen: a source the decks name, from the deck file, and what it gives the app.",
     "placeholders": {
       "source": {
         "type": "String",
