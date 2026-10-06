@@ -15,6 +15,7 @@ import '../features/profiles/spoken_languages_page.dart';
 import '../features/report/report_page.dart';
 import '../features/script/script_guide_page.dart';
 import '../features/settings/appearance_page.dart';
+import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/leeches_page.dart';
@@ -50,6 +51,9 @@ abstract final class AppRoutes {
   static const String spokenLanguages = '/spoken-languages';
   static const String learnLanguages = '/learn-languages';
   static const String voices = '/voices';
+
+  /// Settings' "What's new": each release's notes, from GitHub.
+  static const String releaseNotes = '/release-notes';
 
   /// Where the decks' texts come from, opened from Settings.
   static const String sources = '/sources';
@@ -88,6 +92,7 @@ abstract final class AppRoutes {
       spokenLanguages => const SpokenLanguagesPage(),
       learnLanguages => const LearnLanguagesPage(),
       voices => const VoicesPage(),
+      releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       scriptGuide when args is String => ScriptGuidePage(languageCode: args),
       profiles => const ProfilesPage(),
@@ -151,6 +156,10 @@ abstract final class AppNavigator {
 
   static Future<void> openVoices(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.voices);
+
+  /// What changed in each release, which the page fetches from GitHub.
+  static Future<void> openReleaseNotes(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.releaseNotes);
 
   static Future<void> openSources(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.sources);
