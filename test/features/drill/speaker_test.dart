@@ -460,30 +460,33 @@ void main() {
       }
     });
 
-    testWidgets('match pairs has no speaker; a word tile tapped says its '
-        'word, and does not when words do not play automatically', (
+    testWidgets('match pairs has no speaker of its own; a word tile tapped '
+        'says its word whether or not words play automatically (ADR-0032)', (
       tester,
     ) async {
       usePhone(tester);
       for (final autoplay in <bool>[true, false]) {
         final tts = FixedTtsEngine(const <String>{'es'});
-        await pumpAsked(
+        // A key of its own, so that the second round is a new drill on its
+        // new state rather than the first round's, still on screen.
+        await pumpScreen(
           tester,
-          skill: Skill.recognition,
+          DrillPage(
+            key: UniqueKey(),
+            request: DrillRequest.untaught(spanish, skill: Skill.recognition),
+            preset: const DrillPreset(target: 'la casa', ask: Ask.matchPairs),
+          ),
           state: voiced(
             tts: tts,
             settings: settingsWith((s) => s.autoplay = autoplay),
           ),
-          ask: Ask.matchPairs,
         );
         expect(find.byType(MatchDrill), findsOneWidget);
         expect(speaker, findsNothing);
         await tapVisible(tester, find.text('la casa'));
-        expect(
-          tts.spoken.map((s) => s.text),
-          autoplay ? <String>['la casa'] : isEmpty,
-          reason: '$autoplay',
-        );
+        expect(tts.spoken.map((s) => s.text), <String>[
+          'la casa',
+        ], reason: '$autoplay');
       }
     });
 
