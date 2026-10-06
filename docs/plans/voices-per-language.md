@@ -1,6 +1,9 @@
 # Plan: one Voices entry per language, with a test for hearing and speaking
 
-Written 2026-10-06.
+Written 2026-10-06. **Part of the settings redesign,** with
+`language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
+last in the owner's order, after `skill-model.md`, `b1-plans.md` and deck
+downloads (`decks-from-github.md`).
 
 ## What the owner asked
 

@@ -1,6 +1,9 @@
 # Plan: settings that say what they do, on and off
 
-Written 2026-10-06.
+Written 2026-10-06. **Part of the settings redesign,** with
+`language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
+last in the owner's order, after `skill-model.md`, `b1-plans.md` and deck
+downloads (`decks-from-github.md`).
 
 ## What the owner asked
 
@@ -54,6 +57,9 @@ Written 2026-10-06.
 | Wallpaper colours | Colours follow your wallpaper | Fluenough's own colours |
 | A skill, by language | Asked in {language} | Not asked in {language} |
 | An alphabet, by language | Learning the {script} script | Latin letters only; script decks skipped |
+
+The skill rows change with `skill-model.md`, which lands first: one switch
+per activity, and Listening becomes "Hear the word, give its meaning".
 
 Lines that depend on the phone stay, added after the state: Listening with
 no voice reads "No voice for {language} on this phone".

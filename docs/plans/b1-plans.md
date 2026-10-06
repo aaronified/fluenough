@@ -1,6 +1,7 @@
 # Plan: a B1 plan in every path
 
-Written 2026-10-06. **Before deck downloads** (owner's choice).
+Written 2026-10-06. **After `skill-model.md`, before deck downloads**
+(owner's order).
 
 ## What the owner asked
 
@@ -71,6 +72,19 @@ The descriptors describe abilities, not word lists, so the skeleton turns
 each into themes and grammar topics. It is written once and shared. Each
 language adds its family's grammar in the scheme's order
 (`language-paths-scheme.md`).
+
+## Films, songs and books: off the path
+
+The owner first asked for films and songs "near the bottom" of the path,
+then chose to make them, with books, an optional shelf the learner picks
+from by interest: `books-films-songs.md`.
+
+- They are **not units** of the B1 plan and never hold back the path.
+- Each item on the shelf carries a level, A1, A2 or B1. Songs and films come
+  at every level; books only at B1, for learners who learn the script. The
+  finale, a great film without subtitles, is offered at the B1 mark.
+- They count toward neither words nor grammar topics. The picker can show
+  them apart, e.g. "2 films, 1 book done".
 
 ## Where the app uses it
 
