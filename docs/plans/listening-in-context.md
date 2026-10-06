@@ -15,8 +15,8 @@ Written 2026-10-05.
   - lessons ask *hear and choose*: the word is played, and the learner picks
     it among other words the app chooses (`choicePool`);
   - reviews ask *hear and type*;
-  - the minimal-pair drill (#31) plays one of two words that differ by one
-    sound.
+  - the phonemic-contrasts drill (#31), which plays one of two words that
+    differ by one sound, is built but not switched on.
 - **Heard passages** (ADR-0019) are the nearest thing to this tier. A
   reading deck's passage is read aloud with its text hidden, then 2–4
   questions are asked. Each question is a card with its own schedule, and
@@ -75,10 +75,9 @@ This example is illustrative and has not been checked by a speaker.
    - the answer is in range;
    - readings in ISO 15919 and the IPA, as on cards.
 3. **Scheduling**, one of two ways:
-   - a harder way of asking the card's listening pair, once its interval
-     (or FSRS stability) passes a threshold, with no new schedule; or
-   - a pair of its own, a new mode. Adding a mode is additive in the
-     database: modes are stored by name.
+   - a harder way of asking the word's Hear schedule (`skill-model.md`),
+     once its FSRS stability passes a threshold, with no new schedule; or
+   - a schedule of its own.
 4. **The drill:**
    - plays the sentences at the learner's rate, with replay;
    - hides the text until the question is answered, as heard passages do;
@@ -97,7 +96,7 @@ This example is illustrative and has not been checked by a speaker.
 
 ## To decide
 
-- A harder way of asking the listening pair, or a pair of its own.
+- A harder way of asking Hear, or a schedule of its own.
 - The threshold for the sentence step, and for the paragraph step.
 - The languages the question and options are written in: `en` alone, or
   `en`, `bn` and `hi`, as the facts are.

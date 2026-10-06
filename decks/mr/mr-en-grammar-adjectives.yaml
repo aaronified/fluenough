@@ -5,14 +5,14 @@ kind: grammar
 language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Big, good, new: a describing word that ends in -आ agrees with its noun in three genders. Others never change. Not yet checked by a Marathi speaker: please report any mistake."
+description: "Big, good, new: a describing word that ends in -आ (-ā) agrees with its noun in three genders. Others never change. Not yet checked by a Marathi speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "Adjective agreement"
   slot_name: "agreement"
   slots: ["with a masculine noun", "with a feminine noun", "with a neuter noun, or a masculine plural", "with a feminine plural, or before an ending"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "A describing word in -आ changes with its noun: मोठा मुलगा, a big boy; मोठी मुलगी, a big girl; मोठे घर, a big house; मोठे मुलगे, big boys; मोठ्या मुली, big girls. Before a noun with an ending, every gender takes -्या: मोठ्या घरात, in a big house. A neuter plural takes -ई: मोठी घरे. Words that don't end in -आ never change: लाल (red), सुंदर (beautiful), छान (nice), गरम (hot), थंड (cold), महाग (expensive)."
+  notes: "A describing word in -आ (-ā) changes with its noun: मोठा मुलगा (moṭhā mulgā), a big boy; मोठी मुलगी (moṭhi mulgi), a big girl; मोठे घर (moṭhe ghar), a big house; मोठे मुलगे (moṭhe mulge), big boys; मोठ्या मुली (moṭhyā muli), big girls. Before a noun with an ending, every gender takes -्या (-yā): मोठ्या घरात (moṭhyā gharāt), in a big house. A neuter plural takes -ई (-i): मोठी घरे (moṭhi ghare). Words that don't end in -आ (-ā) never change: लाल (red), सुंदर (beautiful), छान (nice), गरम (hot), थंड (cold), महाग (expensive)."
   entries:
     - lemma: "मोठा"
       key: mothaa

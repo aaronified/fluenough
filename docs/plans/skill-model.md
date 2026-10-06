@@ -45,6 +45,18 @@ Decided with the owner, after the research below:
   (`fsrs.md`); an Elo ability per skill sits on top. DAS3H is reconsidered
   later, once there are logs enough to compare the two.
 
+## Terms
+
+The owner's definitions, settled:
+
+- **Minimal pairs:** "words in the same language that sound the same",
+  such as కలం (pen) and కాలం (time).
+- **Phonemic contrasts:** "sounds that do not exist in the native
+  languages for the user but exist in the language being taught."
+
+A minimal pair can be used to practise a phonemic contrast; the two terms
+are not interchangeable.
+
 ## The research
 
 The terms are the research's, so that the app's labels match it:
@@ -130,6 +142,8 @@ before the script, six after):
 | **Write** | The meaning, or a picture, is shown; give the word | Choose the word; put words in order | Type it, in the script or ISO Latin letters |
 
 - **Understanding in writing** is taken from Write.
+- **Handwriting** (`handwriting.md`) is one way to answer Write in the
+  script, not a schedule of its own (owner's decision).
 - **Cloze** (`sentence-building.md`) is a sentence's own item, produced in
   Write: the gap is any word the learner has learnt.
 - **Proposed:** where a word has a minimal-pair partner, Hear's options

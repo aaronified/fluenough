@@ -6,10 +6,10 @@ import '../../ui/widgets/grouped_list.dart';
 import 'settings_controls.dart';
 
 /// Settings' "Back up to the cloud", under Your data: Dropbox, Box, Google
-/// Drive, OneDrive and Nextcloud, each incoming until #139 lands, and a
+/// Drive, OneDrive and Nextcloud, each incoming until #112 lands, and a
 /// line saying that progress stays on the phone.
 ///
-/// The services have no action yet even with the feature on: #139 decides
+/// The services have no action yet even with the feature on: #112 decides
 /// how each signs in and what it stores.
 class BackupSection extends StatelessWidget {
   const BackupSection({super.key});

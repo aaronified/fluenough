@@ -1,20 +1,20 @@
 schema: 1
 id: gu-en-grammar-be
-name: "To be: છે, હતું, હશે"
+name: "To be: છે (che), હતું (hatum̐), હશે (haśe)"
 kind: grammar
 language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Am, was, will be: હોવું in the present, the past and the future. Not yet checked by a Gujarati speaker: please report any mistake."
+description: "Am, was, will be: હોવું (hovum̐) in the present, the past and the future. Not yet checked by a Gujarati speaker: please report any mistake."
 tags: [beginner, grammar, unreviewed]
 pattern:
-  name: "હોવું by tense"
+  name: "હોવું (hovum̐) by tense"
   slot_name: "person and gender"
   slots: ["હું (m)", "હું (f)", "તું (m)", "તું (f)", "તે (m)", "તે (f)", "તે (it)", "અમે", "તમે", "તેઓ"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The present and the future change with the person, not the gender. The past is the other way round: it changes with gender and number, not the person, like an adjective: હતો (m), હતી (f), હતું (n), હતા (m plural). A group of women and men, or a woman spoken of with respect, takes હતાં. નથી is 'am not, is not, are not' for every person: હું ઘરે નથી, I'm not at home."
+  notes: "The present and the future change with the person, not the gender. The past is the other way round: it changes with gender and number, not the person, like an adjective: હતો (m), હતી (f), હતું (n), હતા (m plural). A group of women and men, or a woman spoken of with respect, takes હતાં (hatām̐). નથી (nathi) is 'am not, is not, are not' for every person: હું ઘરે નથી (hum̐ ghare nathi), I'm not at home."
   entries:
-    - lemma: "હોવું, now"
+    - lemma: "હોવું (hovum̐), now"
       key: chhe
       reading: "hovum̐, now"
       ipa: "ɦoʋũ"
@@ -52,7 +52,7 @@ pattern:
         "અમે": "tʃʰie"
         "તમે": "tʃʰo"
         "તેઓ": "tʃʰe"
-    - lemma: "હોવું, then"
+    - lemma: "હોવું (hovum̐), then"
       key: hatun
       reading: "hovum̐, then"
       ipa: "ɦoʋũ"
@@ -90,7 +90,7 @@ pattern:
         "અમે": "ɦət̪a"
         "તમે": "ɦət̪a"
         "તેઓ": "ɦət̪a"
-    - lemma: "હોવું, later"
+    - lemma: "હોવું (hovum̐), later"
       key: hashe
       reading: "hovum̐, later"
       ipa: "ɦoʋũ"

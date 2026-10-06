@@ -83,6 +83,9 @@ from by interest: `books-films-songs.md`.
 - Each item on the shelf carries a level, A1, A2 or B1. Songs and films come
   at every level; books only at B1, for learners who learn the script. The
   finale, a great film without subtitles, is offered at the B1 mark.
+- The words of famous songs' and films' titles are ordinary path
+  vocabulary, in early units (#169; #170 is the first), as the owner
+  confirmed. Only whole works stay on the shelf.
 - They count toward neither words nor grammar topics. The picker can show
   them apart, e.g. "2 films, 1 book done".
 
@@ -101,6 +104,52 @@ from by interest: `books-films-songs.md`.
 The words a unit has are always counted from its decks: distinct
 vocabulary cards. Script decks, grammar tables and learners' own decks
 (`"*"`) are left out.
+
+## Writing the planned decks
+
+Every deck written for a B1 plan follows "Script in prose" in
+`docs/DECK-FORMAT.md`, as the owner asked: "Always keep the transliteration,
+even in descriptions or labels." Each word quoted in a deck's notes,
+meanings, labels, descriptions and facts carries its ISO 15919 reading,
+లేదు (lēdu), so that a beginner who cannot read the script yet can read
+them. The validator rejects a deck that leaves one out.
+
+### Base words on every card
+
+The owner: "all derived words on a card will also show their base words on
+the cards (like for 'he went to our school', card shall also have 'go' and
+'we')." So a card names the base of every inflected or derived word in its
+target and in its examples:
+
+```yaml
+  - id: hi-0712
+    target: "वह हमारे स्कूल गया।"
+    native: "He went to our school."
+    reading: "vah hamāre skūl gayā"
+    bases:
+      - { word: "गया", ref: hi-0201 }     # जाना (jānā), to go
+      - { word: "हमारे", ref: hi-0045 }   # हम (ham), we
+```
+
+- **`ref`** names the card that teaches the base, so its target, reading
+  and meaning are shown from that card, in the learner's own language
+  (`native-layers.md`). A base no card teaches is written in full instead:
+  `base`, `reading`, and its meaning in the layer.
+- **Shown** on the lesson's teach card, and in reviews once the question is
+  answered, with the other taught details: "गया ← जाना (jānā), to go;
+  हमारे ← हम (ham), we". Never before an answer, since on a Write question it
+  would give the answer away.
+- **Examples** carry their own `bases` the same way.
+- **The validator,** for every deck in a B1 plan:
+  - every word of a target or example that is not itself the target of a
+    card in the course has a `bases` entry;
+  - every `ref` names a card, and every `word` occurs in its text.
+
+  Words are split at spaces, punctuation dropped. Scripts without spaces
+  need their words given (`language-paths.md`).
+- **Existing decks** gain their bases as each language's B1 plan is
+  written. A tool, `tools/suggest_bases.py`, proposes them from the course's
+  own cards, and the writer confirms each one.
 
 ## What the validator checks
 
@@ -125,8 +174,12 @@ vocabulary cards. Script decks, grammar tables and learners' own decks
    together with their reorder to the Dravidian order, which
    `language-paths.md` calls for.
 4. **"Coming"** on the Decks tab, and lessons skipping planned units.
-5. **Tests:** the parser, each validator rule, the counts, and the Decks tab
-   and lessons with planned units.
+5. **Base words:** the `bases` field in the parser, the validator and
+   `docs/DECK-FORMAT.md`; showing them with the taught details; and
+   `tools/suggest_bases.py`.
+6. **Tests:** the parser, each validator rule, the counts, the Decks tab
+   and lessons with planned units, and base words shown only after an
+   answer.
 
 ## To decide
 
@@ -144,7 +197,8 @@ vocabulary cards. Script decks, grammar tables and learners' own decks
 | Plans for the seven Indian languages | 7–14 |
 | Spanish | 2 |
 | "Coming" on the Decks tab, lessons skipping planned units | 1–2 |
-| **All** | **14–24** |
+| Base words: format, validator, display, suggestion tool | 3–5 |
+| **All** | **17–29** |
 
 Writing the plans does not write the content. The content to reach B1 is
 `language-paths.md`'s estimate. Confidence: medium.

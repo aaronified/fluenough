@@ -1,18 +1,18 @@
 schema: 1
 id: bn-en-grammar-past-negative
-name: "Didn't, haven't: -নি"
+name: "Didn't, haven't: -নি (-ni)"
 kind: grammar
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "I didn't go, she hasn't eaten: the present form with -নি joined on. Not yet checked by a Bengali speaker: please report any mistake."
+description: "I didn't go, she hasn't eaten: the present form with -নি (-ni) joined on. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "Past negative"
   slot_name: "person and respect"
   slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Take the present form and join -নি to it, written as one word: যাই, যাইনি; বোঝো, বোঝোনি, also written বোঝনি, and both are accepted. It is both 'didn't' and 'haven't': আমি খাইনি, I didn't eat, or I haven't eaten; এখনও খাইনি, I haven't eaten yet. For a state, such as knowing, 'didn't' is the -তাম form with না: আমি জানতাম না, I didn't know. ও and এ take the same form as সে, and উনি and ইনি the same as তিনি."
+  notes: "Take the present form and join -নি (-ni) to it, written as one word: যাই (jāi), যাইনি (jāini); বোঝো (bojho), বোঝোনি (bojhoni), also written বোঝনি (bojhoni), and both are accepted. It is both 'didn't' and 'haven't': আমি খাইনি (āmi khāini), I didn't eat, or I haven't eaten; এখনও খাইনি (ekhonoo khāini), I haven't eaten yet. For a state, such as knowing, 'didn't' is the -তাম (-tām) form with না (nā): আমি জানতাম না (āmi jānotām nā), I didn't know. ও (o) and এ (e) take the same form as সে (se), and উনি (uni) and ইনি (ini) the same as তিনি (tini)."
   entries:
     - lemma: "করা"
       key: kora

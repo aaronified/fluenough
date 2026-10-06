@@ -5,14 +5,14 @@ kind: grammar
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "I have done, she has gone: -এছি, which Bengali also uses for anything just done. Not yet checked by a Bengali speaker: please report any mistake."
+description: "I have done, she has gone: -এছি (-echi), which Bengali also uses for anything just done. Not yet checked by a Bengali speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "Present perfect"
   slot_name: "person and respect"
   slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The endings are -এছি, -এছিস, -এছো, -এছেন, -এছে, -এছেন. It is 'have done', and also the everyday past for something recent: আমি খেয়েছি, I've eaten, or I ate. -লাম (খেলাম) says the same, and speakers choose freely. Some verbs change their vowel: খাওয়া gives খেয়েছি, বোঝা gives বুঝেছি, আসা gives এসেছি. যাওয়া is গিয়েছি, said গেছি in everyday speech, and the drill accepts both. ও and এ take the same form as সে, and উনি and ইনি the same as তিনি. করেছো is also written করেছ, and both are accepted."
+  notes: "The endings are -এছি (-echi), -এছিস (-echis), -এছো (-echo), -এছেন (-echen), -এছে (-eche), -এছেন (-echen). It is 'have done', and also the everyday past for something recent: আমি খেয়েছি (āmi kheyechi), I've eaten, or I ate. -লাম (-lām) (খেলাম (khelām)) says the same, and speakers choose freely. Some verbs change their vowel: খাওয়া (khāoyā) gives খেয়েছি (kheyechi), বোঝা (bojhā) gives বুঝেছি (bujhechi), আসা (āsā) gives এসেছি (esechi). যাওয়া (jāoyā) is গিয়েছি (giyechi), said গেছি (gechi) in everyday speech, and the drill accepts both. ও (o) and এ (e) take the same form as সে (se), and উনি (uni) and ইনি (ini) the same as তিনি (tini). করেছো (kôrecho) is also written করেছ (kôrech), and both are accepted."
   entries:
     - lemma: "করা"
       key: kora
