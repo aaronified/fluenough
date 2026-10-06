@@ -61,7 +61,9 @@ Decided with the owner:
    - its path order;
    - each file's path, size, SHA-256 and schema;
    - for the language picker that follows (`language-picker.md`): its own
-     name, script, words taught, B1 target and whether it has script decks.
+     name, script, whether it has script decks, and the words each path
+     unit has and plans, counted by the tool, so the app can calculate
+     completeness toward B1 without downloading the decks.
 
    The validator fails when the index is out of date, so CI keeps it
    current. The app reads it from `raw.githubusercontent.com`, with no
