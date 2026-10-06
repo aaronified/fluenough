@@ -16,13 +16,12 @@ import 'import_error_card.dart';
 enum ImportSource {
   file(Feature.importFile, Icons.upload_file_outlined),
   url(Feature.importUrl, Icons.link),
-  csv(Feature.importCsv, Icons.table_chart_outlined),
-  anki(Feature.importAnki, Icons.style_outlined);
+  csv(Feature.importCsv, Icons.table_chart_outlined);
 
   const ImportSource(this.feature, this.icon);
 
   /// The feature that switches this source on: #22 for a file and a link, a
-  /// new issue for spreadsheets, #23 for Anki.
+  /// new issue for spreadsheets.
   final Feature feature;
 
   final IconData icon;
@@ -31,14 +30,12 @@ enum ImportSource {
     ImportSource.file => l10n.importFile,
     ImportSource.url => l10n.importLink,
     ImportSource.csv => l10n.importCsv,
-    ImportSource.anki => l10n.importAnki,
   };
 
   String description(AppLocalizations l10n) => switch (this) {
     ImportSource.file => l10n.importFileDesc,
     ImportSource.url => l10n.importLinkDesc,
     ImportSource.csv => l10n.importCsvDesc,
-    ImportSource.anki => l10n.importAnkiDesc,
   };
 }
 
@@ -57,7 +54,7 @@ const String deckTemplateAsset = 'assets/deck-template.yaml';
 /// The name the template is saved as.
 const String deckTemplateFile = 'fluenough-deck-template.yaml';
 
-/// Add a deck: file, link, spreadsheet or Anki, and the error state with the
+/// Add a deck: file, link or spreadsheet, and the error state with the
 /// parser's file, line and message.
 ///
 /// Design screens `import` and `import-error`. A file is added (#22): the
@@ -325,8 +322,6 @@ class _ImportPageState extends State<ImportPage> {
             l10n.importCsvHelp(importCsvColumns.join(l10n.commonListSeparator)),
           ),
         ];
-      case ImportSource.anki:
-        return <Widget>[help(l10n.importAnkiHelp)];
       case ImportSource.file:
         return <Widget>[
           help(l10n.importFileHelp),

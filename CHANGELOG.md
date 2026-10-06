@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Today now says how many words are due, not cards. Its review asks each word in one skill, so a word due in recognition and in speaking counts once. A skill's tile still reviews every word due in that skill, so it can hold more than the number on the tile (#200).
 - Every word in a script that a note, a meaning, a description, a grammar label or a fact quotes now has its reading beside it: "లేదు (lēdu) is 'there is not', the opposite of ఉంది (undi)." A learner who could not read the script yet could not read those either. New decks must do the same: the deck validator rejects a word left without its reading (#401).
 
+### Removed
+
+- Add a deck no longer offers From Anki, which was shown as coming. Decks now carry paths, readings, IPA and grammar that an Anki deck has no place for, so it is not planned (#391).
+
 ## [0.3.3] - 2026-10-05
 
 ### Added
