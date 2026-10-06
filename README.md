@@ -105,7 +105,7 @@ writes the sound: Bengali ঈ is *i*, as ই is.
 | ṛ ṛh | a flap with the tongue curled back | लड़का *laṛkā* |
 | ṁ | the anusvara where it nasalises the vowel before y, r, l, v, s or h | संसार *saṁsār* |
 | m̐ | the vowel before is said through the nose | हाँ *hām̐* |
-| ḵ q ġ z f | sounds from Persian, Arabic and English, written with a dot (nukta) | ख़त्म *ḵatm* |
+| k͟h q ġ z f | sounds from Persian, Arabic and English, written with a dot (nukta) | ख़त्म *k͟hatm* |
 | x | Assamese's own sound, as in Scottish *loch*; ISO 15919 has no letter for it | অসম *ôxôm* |
 
 Each language's file in `decks/<code>/<code>-romanisation.yaml` says how its

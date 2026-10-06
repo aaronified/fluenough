@@ -114,6 +114,14 @@ void main() {
     });
   });
 
+  group('ख़ in Latin letters', () {
+    test('k͟h typed as kh is right, with its mark flagged', () {
+      final graded = grader.grade('khatm', 'k\u035fhatm');
+      expect(graded.outcome, AnswerOutcome.closeDiacritics);
+      expect(graded.foldedDiacritics, isTrue);
+    });
+  });
+
   group('what stays different', () {
     test('a missing nukta is right but flagged, not exact', () {
       final graded = grader.grade('जरा', 'ज़रा');

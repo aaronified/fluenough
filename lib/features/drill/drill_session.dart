@@ -823,7 +823,7 @@ class DrillSession extends ChangeNotifier {
   }
 
   List<String> get _words =>
-      wordsOf(rearrangesReading ? item.card.reading! : item.card.target);
+      tilesOf(rearrangesReading ? item.card.reading! : item.card.target);
 
   List<String>? _tiles;
 
@@ -878,7 +878,7 @@ class DrillSession extends ChangeNotifier {
     final accepted = rearrangesReading
         ? card.readings
         : card.acceptedAnswers(DrillMode.production);
-    final right = accepted.any((a) => wordsOf(a).join(' ') == given);
+    final right = accepted.any((a) => tilesOf(a).join(' ') == given);
     final grade = right
         ? AnswerOutcome.exact.toSm2Grade()
         : AnswerOutcome.wrong.toSm2Grade();

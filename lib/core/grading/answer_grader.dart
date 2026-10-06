@@ -248,7 +248,7 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   'h': 'ĥħḥ',
   'i': 'íìîïĩīĭįı',
   'j': 'ĵ',
-  'k': 'ķḵ',
+  'k': 'ķ',
   'l': 'ĺļľłŀḷḻ',
   'm': 'ṁ',
   'n': 'ñńņňŉṇṅṉ',
@@ -269,8 +269,9 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   '':
       '\u093C\u09BC'
       // And the combining marks a letter may carry in place of a composed
-      // one: macron, dot below, candrabindu, ring below, tilde.
-      '\u0304\u0323\u0310\u0325\u0303',
+      // one: macron, dot below, candrabindu, ring below, tilde, and the
+      // double macron below of k͟h.
+      '\u0304\u0323\u0310\u0325\u0303\u035F',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {

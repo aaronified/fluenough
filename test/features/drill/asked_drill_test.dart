@@ -239,7 +239,7 @@ void main() {
       expect(find.byType(RearrangeDrill), findsOneWidget);
       expect(find.text(card.native), findsOneWidget);
       // Before the script units, the words come in Latin letters.
-      final words = wordsOf(card.reading!);
+      final words = tilesOf(card.reading!);
       expect(
         tester
             .widget<FilledButton>(

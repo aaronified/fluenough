@@ -43,13 +43,12 @@ card, and the README's table is not in the app.
   learner reads.
 - Whether a letter's card plays a word with it.
 
-## To check first
+## Settled
 
-- **ख़ is written ḵ** in the readings and the README (*ḵatm*). ISO 15919 may
-  write it k͟h, k with a double macron below spanning the h. A rater raised
-  this, and no copy of the standard could be reached from the session to
-  check. If it is k͟h, the readings, the README table, the romanisation
-  files' typed spellings and the grader's folding of marks change with it.
+- **ख़ is written k͟h**, k with a double macron below spanning the h (owner's
+  decision, #339), in place of ḵ. The readings, the README table, the
+  romanisation files, the transcriber, the validator and the grader's
+  folding of marks have changed with it.
 
 ## Estimate
 
