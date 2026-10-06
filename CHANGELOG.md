@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it lets you practise: the sounds the languages you speak don't have. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards (#196).
 - Where the decks' texts come from has a page of its own: Settings shows one Sources row that opens it, in place of the whole list, so Settings is less crowded. With no sources to show, there is no row (#197).
 - Messages that pop up now show at the top, just under the title bar, instead of at the bottom, where they covered the buttons you press next. A tap goes through one to whatever is under it, and it goes by itself after four seconds (#199).
+- Today now says how many words are due, not cards. Its review asks each word in one skill, so a word due in recognition and in speaking counts once. A skill's tile still reviews every word due in that skill, so it can hold more than the number on the tile (#200).
 
 ## [0.3.3] - 2026-10-05
 
