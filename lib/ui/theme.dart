@@ -223,7 +223,7 @@ abstract final class AppTheme {
 /// | 14/20, secondary lines | `bodyMedium` |
 /// | 12/16, navigation labels | `labelMedium` |
 extension AppTextStyles on TextTheme {
-  /// 72/72, extra bold, tight: the number of cards due on Today.
+  /// 72/72, extra bold, tight: the number of words due on Today.
   TextStyle get hero => displayLarge!.copyWith(
     fontSize: 72,
     height: 1,

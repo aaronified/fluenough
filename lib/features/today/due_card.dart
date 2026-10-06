@@ -18,7 +18,7 @@ const double _emptyTileOpacity = 0.55;
 /// skill's name keeps room to be read.
 const double _twoColumnMaxScale = 1.5;
 
-/// Today's first card: how many cards are due and roughly how long they take,
+/// Today's first card: how many words are due and roughly how long they take,
 /// the four skills, and Start review. Or, with nothing due, "All done".
 ///
 /// Design screen `today`, the `primaryContainer` section named "Due now".
@@ -70,7 +70,7 @@ class DueCard extends StatelessWidget {
   }
 }
 
-/// "41 cards due, about 14 min": the large number and its two lines, which
+/// "41 words due, about 14 min": the large number and its two lines, which
 /// move under the number when they do not fit beside it.
 class _DueCount extends StatelessWidget {
   const _DueCount({required this.due, required this.minutes});
@@ -101,7 +101,7 @@ class _DueCount extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  l10n.todayCardsDue(due),
+                  l10n.todayWordsDue(due),
                   style: theme.textTheme.sectionTitle.copyWith(color: fg),
                 ),
                 Text(
