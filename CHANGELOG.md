@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - What's new, in Settings > Updates: each release's notes, newest first, fetched from GitHub when you open the page, with the version you have marked Installed. "See all releases on GitHub" opens the rest in your browser. Nothing is asked of GitHub until you open it (#198).
+- A speaker button on match pairs that switches tap to hear: with it on, tapping a word says it, whether or not Play words automatically is on. It is on to begin with, and stays as you leave it. A meaning never speaks, and with sound off in Settings the button is greyed out. Early learners could not tell similar words apart by script or ISO letters alone, so a match was silent unless Play words automatically was on (#201).
 - After you answer a review question about one word or phrase, the card shows what its lesson showed: the word with its reading, its meaning, its note and its first example, laid out as on the lesson's card. Typed, listening, multiple-choice, speaking and rearrange questions now do, as recognition already did; the reading follows Show romanisation. Match pairs, which asks several words at once, does not (#202).
 
 ### Changed
@@ -17,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language (#195).
 - Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it lets you practise: the sounds the languages you speak don't have. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards (#196).
 - Where the decks' texts come from has a page of its own: Settings shows one Sources row that opens it, in place of the whole list, so Settings is less crowded. With no sources to show, there is no row (#197).
+- Messages that pop up now show at the top, just under the title bar, instead of at the bottom, where they covered the buttons you press next. A tap goes through one to whatever is under it, and it goes by itself after four seconds (#199).
+- Today now says how many words are due, not cards. Its review asks each word in one skill, so a word due in recognition and in speaking counts once. A skill's tile still reviews every word due in that skill, so it can hold more than the number on the tile (#200).
 
 ## [0.3.3] - 2026-10-05
 

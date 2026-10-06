@@ -15,6 +15,7 @@ void changeAll(SettingsNotifier s) {
     ..showRomanisation = false
     ..soundOn = false
     ..autoplay = true
+    ..matchTapToHear = false
     ..countSpeakerTap()
     ..speechRate = 0.8
     ..themeMode = ThemeMode.dark
