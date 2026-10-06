@@ -125,6 +125,12 @@ class SettingsPage extends StatelessWidget {
       header: l10n.settingsSectionLearning,
       children: <Widget>[
         GroupedTile(
+          leading: const Icon(Icons.record_voice_over_outlined),
+          title: l10n.settingsSpoken,
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => AppNavigator.openSpokenLanguages(context),
+        ),
+        GroupedTile(
           leading: const Icon(Icons.school_outlined),
           title: l10n.settingsLearn,
           subtitle: learning,
@@ -393,12 +399,6 @@ class SettingsPage extends StatelessWidget {
           trailing: const Icon(Icons.chevron_right),
           feature: Feature.appearance,
           onTap: () => AppNavigator.openAppearance(context),
-        ),
-        GroupedTile(
-          leading: const Icon(Icons.record_voice_over_outlined),
-          title: l10n.settingsSpoken,
-          trailing: const Icon(Icons.chevron_right),
-          onTap: () => AppNavigator.openSpokenLanguages(context),
         ),
         GroupedTile(
           leading: const Icon(Icons.translate),
