@@ -1941,13 +1941,23 @@
       }
     }
   },
-  "settingsSectionSources": "Sources",
-  "@settingsSectionSources": {
-    "description": "Settings section heading: where the decks' texts come from, one row per language."
+  "settingsSources": "Sources",
+  "@settingsSources": {
+    "description": "Row in Settings that opens the sources screen, and that screen's title: where the decks' texts come from."
+  },
+  "settingsSourcesSummary": "{count, plural, =1{1 source} other{{count} sources}}",
+  "@settingsSourcesSummary": {
+    "description": "The line under Settings' Sources row: how many sources the decks name.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
   },
   "settingsSourceLine": "{source}: {kind, select, reading{passages for reading} grammar{grammar} other{words}}",
   "@settingsSourceLine": {
-    "description": "A row in Settings, Sources: a source the decks name, from the deck file, and what it gives the app.",
+    "description": "A row on the Sources screen: a source the decks name, from the deck file, and what it gives the app.",
     "placeholders": {
       "source": {
         "type": "String",
