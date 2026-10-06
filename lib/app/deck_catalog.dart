@@ -24,8 +24,9 @@ import 'added_decks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
-/// [AssetDeckSource] reads the decks bundled with the app. #4 replaces the
-/// catalog's source with the deck repository; nothing above it changes.
+/// [AssetDeckSource] reads the decks bundled with the app. Deck downloads
+/// (`docs/plans/decks-from-github.md`) replace the catalog's source with the
+/// decks downloaded from the repository; nothing above it changes.
 abstract interface class DeckSource {
   /// Every deck file's path, sorted.
   Future<List<String>> list();

@@ -39,7 +39,7 @@ import 'update_section.dart';
 /// version, beside the version line, and installs it (ADR-0017). Everything
 /// else is built and shown disabled behind its [Feature]: switching profile,
 /// the app language, the reminder, the PIN lock, deleting the profile, and
-/// cloud backup (#139).
+/// cloud backup (#112).
 ///
 /// Keeps a [GalleryLink] at the foot, which draws nothing in a release build.
 class SettingsPage extends StatelessWidget {
