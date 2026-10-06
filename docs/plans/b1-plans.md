@@ -72,31 +72,17 @@ each into themes and grammar topics. It is written once and shared. Each
 language adds its family's grammar in the scheme's order
 (`language-paths-scheme.md`).
 
-## Films and songs, near the end
+## Films, songs and books: off the path
 
-The owner: "at later stages, can ask students to see particular films /
-listen to songs and then ask them questions on them (the films / songs will
-not be provided), including questions on the culture. this is something that
-comes near the bottom."
+The owner first asked for films and songs "near the bottom" of the path,
+then chose to make them, with books, an optional shelf the learner picks
+from by interest: `books-films-songs.md`.
 
-- **Where:** in the last units before the B1 mark, once listening and
-  reading passages are familiar. It is the other end of #169, which starts a
-  course from the words in famous titles.
-- **What a unit holds:** a film or a song, named with its year and where it
-  is from, and a set of questions on it:
-  - what happens or what it says, the main points, as B1 asks of listening;
-  - words and phrases from it, in its own context;
-  - its culture: where it is set, the customs it shows, why it is known.
-- **Not provided:** the app names the work and does not play, link or
-  quote it. The learner finds it themselves. No lyrics or dialogue are
-  reproduced, except from works in the public domain, under #99's rules.
-- **Answered by choosing,** since the learner's viewing cannot be checked.
-  A unit can be skipped without holding back the path.
-- **In the format:** `planned: { id: te-en-film-…, film: "…", year: … }` or
-  `song:`, with its questions as a passage deck (ADR-0019) whose passage is
-  the work's name and a short note, not its text.
-- **Completeness:** these units count toward neither words nor grammar
-  topics. The picker shows them apart, e.g. "2 of 4 films and songs".
+- They are **not units** of the B1 plan and never hold back the path.
+- Each item on the shelf carries a level, A1, A2 or B1, so a B1 film shows
+  near the end of a course, and children's songs and books near the start.
+- They count toward neither words nor grammar topics. The picker can show
+  them apart, e.g. "2 films, 1 book done".
 
 ## Where the app uses it
 
@@ -142,7 +128,6 @@ vocabulary cards. Script decks, grammar tables and learners' own decks
 
 ## To decide
 
-- Which films and songs each course names, and who chooses them.
 - The word sizes per level: how the 2,500–3,000 words split between A1, A2
   and B1.
 - Whether a planned unit also names its listening and reading passages, or
