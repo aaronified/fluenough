@@ -14,6 +14,7 @@ import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
+import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/settings/settings_controls.dart';
@@ -36,6 +37,11 @@ Finder _slider(String title) => find.descendant(
 
 Finder _row(String title) =>
     find.ancestor(of: find.text(title), matching: find.byType(GroupedTile));
+
+/// The settings group headed [header]: its heading and every row under it.
+Finder _section(String header) => find.byWidgetPredicate(
+  (widget) => widget is GroupedList && widget.header == header,
+);
 
 /// Saves into [saved] and opens [picked], in place of the phone's dialogs.
 class _FakeLogFiles implements LogFiles {
@@ -292,6 +298,97 @@ void main() {
     await tester.tap(row);
     await tester.pumpAndSettle();
     expect(find.byType(AppearancePage), findsOneWidget);
+  });
+
+  group('Languages I speak', () {
+    testWidgets('is the first row of Learning, directly above the row for '
+        'the languages you learn, and not in Look', (tester) async {
+      usePhone(tester);
+      // Tall enough to lay the whole page out at once, so that every
+      // position below is measured in one frame and nothing is scrolled
+      // out of the tree.
+      tester.view.physicalSize = const Size(390 * 3, 6000 * 3);
+      await pumpScreen(tester, const SettingsPage());
+      final l10n = l10nOf(tester);
+
+      final learning = _section(l10n.settingsSectionLearning);
+      final sound = _section(l10n.settingsSectionSound);
+      final look = _section(l10n.settingsSectionLook);
+      final spoken = _row(l10n.settingsSpoken);
+      final learn = _row(l10n.settingsLearn);
+      for (final finder in <Finder>[learning, sound, look, spoken, learn]) {
+        expect(finder, findsOneWidget);
+      }
+
+      // In the Learning section, and in no other.
+      expect(
+        find.descendant(of: learning, matching: spoken),
+        findsOneWidget,
+        reason: 'under the Learning heading',
+      );
+      expect(
+        find.descendant(of: look, matching: find.text(l10n.settingsSpoken)),
+        findsNothing,
+        reason: 'no longer under Look and language',
+      );
+      expect(
+        find.descendant(of: sound, matching: find.text(l10n.settingsSpoken)),
+        findsNothing,
+      );
+
+      // The first two rows of Learning, in that order.
+      final rows = find.descendant(
+        of: learning,
+        matching: find.byType(GroupedTile),
+      );
+      expect(
+        find.descendant(
+          of: rows.at(0),
+          matching: find.text(l10n.settingsSpoken),
+        ),
+        findsOneWidget,
+        reason: 'the first row of Learning',
+      );
+      expect(
+        find.descendant(
+          of: rows.at(1),
+          matching: find.text(l10n.settingsLearn),
+        ),
+        findsOneWidget,
+        reason: 'the row after it',
+      );
+
+      // As laid out: below the Learning heading, directly above the learn
+      // row, and the Sound heading and the Look section still further down.
+      final learningTop = tester.getTopLeft(learning).dy;
+      final spokenRect = tester.getRect(spoken);
+      final learnRect = tester.getRect(learn);
+      expect(spokenRect.top, greaterThan(learningTop));
+      expect(spokenRect.bottom, lessThanOrEqualTo(learnRect.top));
+      expect(
+        learnRect.top - spokenRect.bottom,
+        lessThan(learnRect.height / 2),
+        reason: 'nothing sits between the two rows',
+      );
+      expect(spokenRect.bottom, lessThan(tester.getTopLeft(sound).dy));
+      expect(spokenRect.bottom, lessThan(tester.getTopLeft(look).dy));
+      expect(
+        tester.getTopLeft(learning).dy,
+        lessThan(tester.getTopLeft(sound).dy),
+        reason: 'Learning is above Sound',
+      );
+    });
+
+    testWidgets('still opens the spoken-languages screen', (tester) async {
+      usePhone(tester);
+      await pumpScreen(tester, const SettingsPage());
+      final l10n = l10nOf(tester);
+      final row = find.text(l10n.settingsSpoken);
+      await scrollTo(tester, row);
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+      expect(find.byType(SpokenLanguagesPage), findsOneWidget);
+    });
   });
 
   testWidgets('the app language picker lists every translation by its own '
