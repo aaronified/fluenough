@@ -37,7 +37,6 @@ enum Feature {
   importFile(22),
   importUrl(22),
   importCsv(0),
-  importAnki(23),
 
   // Feedback: reports by mail, text only. Until it is on, every report
   // button opens a new GitHub issue instead.
