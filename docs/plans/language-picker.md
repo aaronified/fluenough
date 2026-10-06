@@ -42,8 +42,8 @@ search and list guidance.
    each, languages taught from a language the learner speaks come first.
 3. **A card per language:**
    - its icon and both names, "Telugu · తెలుగు";
-   - **course completeness**, a thin bar with "18% of B1": the words the
-     course teaches ÷ the language's B1 target, at most 100%;
+   - **course completeness**, a thin bar with "18% of B1", calculated from
+     the course's path (below), never stored;
    - **taught from**, the native languages it has decks for, the learner's
      own ones highlighted. Where none is one the learner speaks: "Taught from
      English", as the deck-downloads plan decides;
@@ -70,7 +70,7 @@ start, with no version built on the bundled decks:
   entries from `decks/index.json`:
   - code, English name, own name, icon, script;
   - native languages taught from;
-  - words taught, B1 target, script decks or not;
+  - completeness toward B1, calculated (below), script decks or not;
   - size, and whether it is on the phone.
 - The page lists every language on GitHub before any is downloaded.
 - Selecting a language starts its download, and the app is ready after its
@@ -98,16 +98,41 @@ start, with no version built on the bundled decks:
 - **Own names** for learned languages: an `own_name` in each language
   block, or read from `assets/languages.yaml` by code. Both can be filled
   from what exists.
-- **A B1 target** per language: a default of 2,500 words, overridable per
-  language in its language block, `b1_words`.
-- **Words taught:** distinct vocabulary cards on the language's path, script
-  decks and grammar tables excluded.
+- **Completeness toward B1, calculated from the path** (owner's choice).
+  Decks keep changing, so no percentage or target is stored:
+  - the path marks where each level ends: `milestone: A1`, `A2`, `B1` on a
+    unit, as the achievements plan also needs;
+  - every unit up to the B1 mark is listed, including units not written
+    yet, each with its **planned** size in words, `words: 40`. A planned
+    size describes the course plan, not its content, so a deck update does
+    not change it;
+  - the words a unit **has** are always counted from its decks: distinct
+    vocabulary cards, script decks and grammar tables excluded;
+  - completeness = Σ min(words a unit has, its planned words) ÷ Σ planned
+    words, over the units up to the B1 mark. A unit not written yet counts
+    0;
+  - the app calculates it from the decks it has, and from the index for
+    languages not yet downloaded. `tools/deck_index.py` counts the words
+    each time the index is written, and CI fails when the index is out of
+    date, so the count cannot go stale.
+- **The validator** checks that a path has a B1 mark and that every unit
+  before it has a planned size. It warns when a unit has more words than
+  planned, since then the plan needs raising.
+- **Filling the plans in:** the existing paths gain their milestone marks,
+  their planned sizes and the units still to write, from the scheme
+  (`language-paths-scheme.md`) and the target of about 2,500–3,000 words
+  by B1 (`language-paths.md`). This content work comes before the picker
+  can show a percentage. Until then, a path without a B1 mark shows "Course
+  size: 640 words" in place of a percentage.
 
 ## Tests
 
 - Search: names, own names, codes, accents, no match.
 - Ordering: chosen first, then taught from a spoken language, then English.
-- Completeness: the count, the cap at 100%, a language with no target.
+- Completeness: the sum over units up to B1, a unit over its plan capped
+  at its plan, a unit not written counting 0, a path with no B1 mark
+  showing the course size instead, and the same figure from the decks and
+  from the index.
 - Script switch: shown only for courses with script decks; its answer is
   saved and placement skips its alphabet stage.
 - Taught-from: highlighted, the English fallback line, and the choice only
@@ -125,7 +150,8 @@ start, with no version built on the bundled decks:
 
 ## To decide
 
-- **The B1 target:** 2,500 words by default, or another number.
+- **Planned unit sizes:** who fills them in for the existing paths, and
+  whether from the scheme's phase lengths or by hand.
 - **What counts:** vocabulary only, or grammar and passages too.
 - **Learner progress:** show the learner's own progress on the card as
   well, or only on Progress.
@@ -136,5 +162,8 @@ start, with no version built on the bundled decks:
 - About 9–13 hours for the page, the catalog, the download progress and
   the tests, after deck downloads.
 - About 1 hour more in the deck-downloads work, for the index fields.
+- About 1–2 hours for the path's milestone marks and planned sizes in the
+  validator and the index tool, and 2–4 hours to fill them in for the eight
+  existing courses.
 
 Confidence: medium.
