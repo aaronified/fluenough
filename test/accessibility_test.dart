@@ -28,6 +28,7 @@ import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
+import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/stats/leeches_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
@@ -307,6 +308,7 @@ void main() {
     ('leeches', const LeechesPage()),
     ('appearance', const AppearancePage()),
     ('voices', const VoicesPage()),
+    ('sources', const SourcesPage()),
     ('profiles', const ProfilesPage()),
     ('a new profile', const NewProfilePage()),
     (

@@ -16,6 +16,7 @@ import '../features/report/report_page.dart';
 import '../features/script/script_guide_page.dart';
 import '../features/settings/appearance_page.dart';
 import '../features/settings/release_notes_page.dart';
+import '../features/settings/sources_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/summary/summary_page.dart';
@@ -54,6 +55,9 @@ abstract final class AppRoutes {
   /// Settings' "What's new": each release's notes, from GitHub.
   static const String releaseNotes = '/release-notes';
 
+  /// Where the decks' texts come from, opened from Settings.
+  static const String sources = '/sources';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -89,6 +93,7 @@ abstract final class AppRoutes {
       learnLanguages => const LearnLanguagesPage(),
       voices => const VoicesPage(),
       releaseNotes => const ReleaseNotesPage(),
+      sources => const SourcesPage(),
       scriptGuide when args is String => ScriptGuidePage(languageCode: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -155,6 +160,9 @@ abstract final class AppNavigator {
   /// What changed in each release, which the page fetches from GitHub.
   static Future<void> openReleaseNotes(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.releaseNotes);
+
+  static Future<void> openSources(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.sources);
 
   /// How [languageCode]'s script works (#30): a script deck's Tips.
   static Future<void> openScriptGuide(
