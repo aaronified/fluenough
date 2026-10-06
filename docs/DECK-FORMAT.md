@@ -16,6 +16,32 @@ Validate before committing:
 python3 tools/validate_decks.py decks/
 ```
 
+## Script in prose: always with its reading
+
+The owner: "Always keep the transliteration, even in descriptions or
+labels." A learner reads a card's notes, meanings, descriptions, labels and
+facts long before they can read the script. So wherever deck text other than
+the word itself quotes a word, a letter or a sign in a script other than
+Latin, its ISO 15919 reading follows it in parentheses:
+
+```yaml
+notes: "లేదు (lēdu) is 'there is not', the opposite of ఉంది (undi)."   # right
+notes: "లేదు is 'there is not', the opposite of ఉంది."                  # rejected
+```
+
+- A suffix keeps its hyphen, `-ने (-ne)`; a vowel sign reads as its vowel,
+  `ा (ā)`; a digit as its number, `३ (3)`.
+- The reading may come first instead: `lēdu (లేదు)`.
+- **Not needed** in the fields that are the word itself (`target`,
+  `reading`, `ipa`, `forms`, `letters`, `term`, `example`, a passage's
+  `text`), for signs with no sound of their own (the virama and the nukta),
+  or, in text written for speakers of another language (a fact's `hi` or
+  `bn`), for words in that reader's own script. A word in a third script
+  there still takes one, in Latin or in the reader's script.
+
+`tools/transcribe.py` gives the reading, and `tools/validate_decks.py`
+rejects a word without one.
+
 ---
 
 ## Header

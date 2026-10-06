@@ -449,3 +449,54 @@ class Icons(Validated):
                 self.assertEqual(len(problems), 1, problems)
                 self.assertIn("the hi decks give different icons", problems[0])
                 self.assertIn(needle, problems[0])
+
+
+def vocab_note(note: str) -> str:
+    """The probe deck, its one card carrying [note]."""
+    return VOCAB + f'    notes: "{note}"\n'
+
+
+class Transliteration(Validated):
+    """Script quoted in prose carries its reading: లేదు (lēdu)."""
+
+    def test_a_word_with_its_reading_is_valid(self) -> None:
+        self.assertValid(vocab_note("नहीं (nahī̃) is 'not', the opposite of हाँ (hā̃)."))
+
+    def test_a_word_without_its_reading_is_rejected(self) -> None:
+        self.assertRejected(vocab_note("नहीं is 'not', the opposite of हाँ."),
+                            "no transliteration")
+
+    def test_each_word_needs_its_own(self) -> None:
+        self.assertRejected(vocab_note("नहीं (nahī̃) is 'not', the opposite of हाँ."),
+                            "'हाँ'")
+
+    def test_the_reading_may_come_first(self) -> None:
+        self.assertValid(vocab_note("Said nahī̃ (नहीं)."))
+
+    def test_a_question_mark_may_sit_between(self) -> None:
+        self.assertValid(vocab_note("To a friend: कैसे हो? (kaise ho?)"))
+
+    def test_a_suffix_reads_with_its_hyphen(self) -> None:
+        self.assertValid(vocab_note("-ने (-ne) marks the doer."))
+
+    def test_a_digit_reads_as_itself(self) -> None:
+        self.assertValid(vocab_note("The digit is ३ (3)."))
+
+    def test_a_virama_alone_needs_none(self) -> None:
+        self.assertValid(vocab_note("The stroke ् means no vowel follows."))
+
+    def test_the_word_fields_are_not_prose(self) -> None:
+        # target is the word itself; VOCAB's card has घर with no parentheses.
+        self.assertValid(VOCAB)
+
+    def test_a_fact_for_hindi_speakers_is_written_in_devanagari(self) -> None:
+        text = '{ en: "हाँ (hā̃) is yes.", hi: "हाँ का अर्थ है yes।" }'
+        self.assertValid(facts_file(29, fact(30, text=text)))
+
+    def test_another_script_in_it_still_needs_a_reading(self) -> None:
+        text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ का अर्थ है हाँ।" }'
+        self.assertRejected(facts_file(29, fact(30, text=text)), "'হ্যাঁ'")
+
+    def test_in_the_readers_own_script_is_enough(self) -> None:
+        text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ (हैं) का अर्थ है हाँ।" }'
+        self.assertValid(facts_file(29, fact(30, text=text)))

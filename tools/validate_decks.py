@@ -774,6 +774,103 @@ def check_facts(r: Report, facts: object) -> None:
                             f"{count} daily facts, not {MIN_FACTS}")
 
 
+# --- Transliteration in prose ------------------------------------------------
+# "Always keep the transliteration, even in descriptions or labels" (owner,
+# 2026-10-06): a word in a script other than Latin, quoted in a deck's notes,
+# meanings, labels or explanations, is followed by its reading in
+# parentheses, లేదు (lēdu), or follows it, lēdu (లేదు). A learner who cannot
+# read the script yet can read the note. See docs/DECK-FORMAT.md.
+
+_SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ"
+           "฀-๿぀-ヿ一-鿿가-힯")
+_SCRIPT_CHAR = re.compile(f"[{_SCRIPT}]")
+_SCRIPT_RUN = re.compile(
+    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍]|[ -](?=[{_SCRIPT}]))*(?:-(?!\w))?")
+_LATIN = "A-Za-zÀ-ɏḀ-ỿ"
+_DANDAS = "।॥"
+# Signs with no sound of their own: the virama and the nukta.
+_SILENT = set("़়઼಼्্્్್")
+# The script a field written for speakers of a language is in: its own words
+# need no reading there.
+_CODE_BLOCK = {"hi": 0x0900, "mr": 0x0900, "ne": 0x0900, "sa": 0x0900,
+               "bn": 0x0980, "as": 0x0980, "gu": 0x0A80, "te": 0x0C00,
+               "kn": 0x0C80}
+# Keys whose values are the word itself, not prose about it.
+_WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
+              "term", "example", "letters", "letter", "forms", "alternatives",
+              "answer", "answers", "accept", "equivalents", "words", "tiles",
+              "source", "scheme", "audio"}
+
+
+def _script_runs(text: str):
+    """Each run of one non-Latin script in [text], with where it starts."""
+    for m in _SCRIPT_RUN.finditer(text):
+        start, run, block = m.start(), "", None
+        for i, ch in enumerate(m.group(0)):
+            mark = unicodedata.category(ch).startswith("M")
+            b = ord(ch) >> 7 if _SCRIPT_CHAR.match(ch) and not mark else None
+            if b is not None and block is not None and b != block:
+                kept = run.rstrip(" -")
+                yield start, kept
+                start, run = m.start() + i, ""
+            if b is not None:
+                block = b
+            run += ch
+        yield start, run
+
+
+def _untransliterated(text: str, code: str | None) -> list[str]:
+    """The runs of script in [text] with no reading beside them."""
+    letter = _LATIN if code in (None, "en") else r"\w"
+    missing = []
+    for start, run in _script_runs(text):
+        lead = len(run) - len(run.lstrip(_DANDAS + " "))
+        run = run.strip(_DANDAS + " ")
+        start += lead
+        end = start + len(run)
+        first = next((c for c in run if _SCRIPT_CHAR.match(c)), None)
+        if first is None or all(c in _SILENT or c == "-" for c in run):
+            continue
+        if code not in (None, "en"):
+            if code in _CODE_BLOCK and ord(first) >> 7 == _CODE_BLOCK[code] >> 7:
+                continue
+        after = text[end:end + 12]
+        if re.match(rf"[?!.,;:]?\s?\(\s?[*_'\"]?-?(?:\d|[{letter}])", after):
+            continue
+        if (re.search(rf"[{_LATIN}]\S*\s?\(\s*$", text[max(0, start - 45):start])
+                and re.match(r"[?!.]?\s*\)", after)):
+            continue
+        missing.append(run)
+    return missing
+
+
+def check_transliterated(r: Report, raw: object) -> None:
+    """Every run of script in a deck's prose carries its reading."""
+    def walk(node: object, path: list[str]) -> None:
+        if isinstance(node, dict):
+            for k, v in node.items():
+                walk(v, path + [str(k)])
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, path + [str(i)])
+        elif isinstance(node, str):
+            keys = [p for p in path if not p.isdigit()]
+            key = keys[-1] if keys else ""
+            if key in _WORD_KEYS or any(k in ("forms", "ipas", "readings",
+                                              "alternatives") for k in keys[:-1]):
+                return
+            if key == "text" and "passages" in keys:
+                return
+            code = key if LANG_RE.fullmatch(key) and key not in ("name",) else None
+            if code in (None, "en") and not re.search(f"[{_LATIN}]{{2,}}", node):
+                return
+            for run in _untransliterated(node, code):
+                r.error(".".join(path),
+                        f"{run!r} has no transliteration beside it; write its "
+                        f"ISO 15919 reading in parentheses, as లేదు (lēdu)")
+    walk(raw, [])
+
+
 def validate(path: Path) -> Report:
     r = Report(path)
     try:
@@ -788,6 +885,9 @@ def validate(path: Path) -> Report:
     if not isinstance(raw, dict):
         r.error("root", "deck must be a YAML mapping")
         return r
+
+    if raw.get("kind") != "romanisation":
+        check_transliterated(r, raw)
 
     if raw.get("kind") == "themes":
         check_themes_file(r, raw)

@@ -138,7 +138,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     id: 'settings-backup',
     section: GallerySection.progressAndSettings,
     label: 'Back up to the cloud', // ui-literal-ok: debug-only gallery
-    note: 'Five services, each incoming (#139)', // ui-literal-ok: debug-only gallery
+    note: 'Five services, each incoming (#112)', // ui-literal-ok: debug-only gallery
     builder: (_) => const Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

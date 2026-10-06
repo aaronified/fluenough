@@ -27,10 +27,11 @@ no estimate of its own from length or sounds.
 
 ## What FSRS brings
 
-With FSRS (`fsrs.md`), every pair has a **difficulty** D from 1 to 10,
-learned from its own answers. Each pair is a card and a skill, so D is
-already separate by skill and by card. పాలు missed by ear gets a high D for
-listening and keeps a low one for recognition.
+With FSRS (`fsrs.md`), which lands with `skill-model.md`, every word has a
+**difficulty** D from 1 to 10 in each of its schedules (Hear, Say, Write;
+grammar understood and produced), learned from its own answers. So D is
+already separate by skill and by word. పాలు missed by ear gets a high D for
+Hear and keeps a low one for Write.
 
 A pair has no D until its first answer in that skill. New words are
 therefore still picked by today's `Difficulty.of(card)`, until it is

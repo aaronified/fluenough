@@ -52,7 +52,7 @@ GLOSSARY = """\
         modern: "করে"
         reading: "kore"
         meaning: { en: "having done" }
-        note: { en: "older spelling; the apostrophe marks a dropped ই" }
+        note: { en: "older spelling; the apostrophe marks a dropped ই (i)" }
 """
 
 

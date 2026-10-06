@@ -34,9 +34,9 @@ Flutter 3.47.1, from a clean checkout following the sequence below with
 `dart format lib test` changes nothing, and `dart run build_runner build`
 succeeds. The Python tooling is tested and working too.
 
-What this does **not** tell you: nobody has run the app on a device, or built
-it on macOS or Windows, or generated the iOS folder. #17 is still open and is
-worth closing.
+Since then the app has been built and run on Android phones for every
+release, which closed #17. What this does **not** tell you: nobody has built
+it on macOS or Windows, or generated the iOS folder.
 
 ---
 
@@ -197,6 +197,10 @@ Text(AppLocalizations.of(context)!.dueToday)   // correct
 
 Deck content — `target`, `native`, `reading`, `notes` — is not interface text
 and stays exactly as it is. So do log messages, exception text, and ids.
+
+Within deck content, a word in a script other than Latin is never left without
+its reading: a note says లేదు (lēdu), not లేదు. The validator rejects it; see
+"Script in prose" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
 
 The half that gets skipped is not the strings, it is the layout around them.
 Use `EdgeInsetsDirectional`, `AlignmentDirectional` and `TextAlign.start`, never

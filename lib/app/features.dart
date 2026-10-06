@@ -31,13 +31,12 @@ enum Feature {
   leeches(19),
   logExport(20),
   logImport(20),
-  cloudBackup(139),
+  cloudBackup(112),
 
   // Adding decks.
   importFile(22),
   importUrl(22),
   importCsv(0),
-  importAnki(23),
 
   // Feedback: reports by mail, text only. Until it is on, every report
   // button opens a new GitHub issue instead.
@@ -47,7 +46,7 @@ enum Feature {
   logs(162),
 
   // Settings.
-  reminder(21),
+  reminder(90),
   uiLanguage(46),
   voiceSettingsLink(0),
 
@@ -59,9 +58,9 @@ enum Feature {
   cardSize(26),
 
   // Profiles.
-  profiles(0),
-  pinLock(0),
-  deleteProfile(0);
+  profiles(204),
+  pinLock(204),
+  deleteProfile(204);
 
   const Feature(this.issue);
 
