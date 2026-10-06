@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - What's new, in Settings > Updates: each release's notes, newest first, fetched from GitHub when you open the page, with the version you have marked Installed. "See all releases on GitHub" opens the rest in your browser. Nothing is asked of GitHub until you open it (#198).
 - A speaker button on match pairs that switches tap to hear: with it on, tapping a word says it, whether or not Play words automatically is on. It is on to begin with, and stays as you leave it. A meaning never speaks, and with sound off in Settings the button is greyed out. Early learners could not tell similar words apart by script or ISO letters alone, so a match was silent unless Play words automatically was on (#201).
+- After you answer a review question about one word or phrase, the card shows what its lesson showed: the word with its reading, its meaning, its note and its first example, laid out as on the lesson's card. Typed, listening, multiple-choice, speaking and rearrange questions now do, as recognition already did; the reading follows Show romanisation. Match pairs, which asks several words at once, does not (#202).
 
 ### Changed
 
