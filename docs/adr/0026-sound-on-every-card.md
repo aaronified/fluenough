@@ -1,6 +1,7 @@
 # ADR-0026: Every card has a speaker, words can play by themselves, and sound can be switched off
 
-- **Status:** Accepted
+- **Status:** Accepted. Its note that match pairs has no speaker is amended by
+  [ADR-0032](0032-match-pairs-tap-to-hear.md).
 - **Date:** 2026-10-04
 
 ## Context
