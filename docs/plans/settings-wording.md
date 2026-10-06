@@ -55,6 +55,9 @@ Written 2026-10-06.
 | A skill, by language | Asked in {language} | Not asked in {language} |
 | An alphabet, by language | Learning the {script} script | Latin letters only; script decks skipped |
 
+The skill rows change with `skill-model.md`, which lands first: one switch
+per activity, and Listening becomes "Hear the word, give its meaning".
+
 Lines that depend on the phone stay, added after the state: Listening with
 no voice reads "No voice for {language} on this phone".
 
