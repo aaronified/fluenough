@@ -1,8 +1,10 @@
 # Plan: Hear, Say and Write, and what the app learns about you
 
-Written 2026-10-06. **Before the B1 plans.** The owner's order: this plan,
+Written 2026-10-06. **Before the B1 plans, and together with FSRS**
+(`fsrs.md`), in one migration and one replay. The owner's order: this plan,
 then `b1-plans.md`, then deck downloads (`decks-from-github.md`), then the
-settings redesign.
+settings redesign (`language-picker.md`, `settings-wording.md`,
+`voices-per-language.md`).
 
 ## What the owner asked
 
@@ -125,9 +127,11 @@ before the script, six after):
 |---|---|---|---|
 | **Hear** | The word is played; what does it mean? | Choose the meaning | Type the meaning |
 | **Say** | The meaning is shown; say the word | (none) | Said, and graded by the phone's recogniser |
-| **Write** | The meaning, or a picture, is shown; give the word | Choose the word; put words in order | Type it, in the script or ISO Latin letters; fill the gap in a sentence (cloze) |
+| **Write** | The meaning, or a picture, is shown; give the word | Choose the word; put words in order | Type it, in the script or ISO Latin letters |
 
 - **Understanding in writing** is taken from Write.
+- **Cloze** (`sentence-building.md`) is a sentence's own item, produced in
+  Write: the gap is any word the learner has learnt.
 - **Proposed:** where a word has a minimal-pair partner, Hear's options
   include its meaning ("time" for కలం "pen", whose partner is కాలం), so
   that a learner who confuses the two is caught (Ota et al. 2009).
@@ -176,7 +180,7 @@ before the script, six after):
 
 ## What it takes
 
-1. **Schedules:** `card_states` keyed by word and schedule (Hear, Say,
+1. **Schedules,** with FSRS in the same migration: `card_states` keyed by word and schedule (Hear, Say,
    Write; grammar understood and produced), rebuilt by replaying `reviews`.
 2. **Questions:** hear and choose the meaning, with the pair partner; hear
    and type the meaning; cloze; Write's choose grade.
@@ -202,10 +206,10 @@ before the script, six after):
   meaning) and recognition answers replay.
 - **Typed meanings:** how close counts, and where alternatives come from.
 - **Answer time:** how it changes a grammar grade.
-- **FSRS:** before this plan, with it, or after.
 - **Pictures:** where images come from.
-- **Cloze:** which word is left out, typed or chosen, and whether it is a
-  Write question for that word or a sentence's own (`sentence-building.md`).
+- **Cloze:** typed only, or also chosen as its easier grade. The gap is any
+  word the learner has learnt, and the sentence is an item of its own
+  (`sentence-building.md`).
 - **The pair partner** among Hear's options, as proposed above.
 
 ## Estimate

@@ -1,6 +1,7 @@
 # Plan: a B1 plan in every path
 
-Written 2026-10-06. **Before deck downloads** (owner's choice).
+Written 2026-10-06. **After `skill-model.md`, before deck downloads**
+(owner's order).
 
 ## What the owner asked
 

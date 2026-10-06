@@ -65,7 +65,9 @@ Then, on cloze:
      out;
    - the learner fills the gap, in the script or in ISO Latin letters, by
      the Script / Latin letters switch, as typed answers do;
-   - graded as a typed answer for that one word.
+   - graded as a typed answer for that one word;
+   - the gap is any word the learner has learnt (owner's choice), so the
+     sentence is an item of its own, asked again with another gap.
 
    It needs no bank: every sentence card and every example sentence a deck
    already has can be asked this way.
@@ -79,8 +81,6 @@ Then, on cloze:
 ## To decide
 
 - **Cloze:**
-  - which word is left out: the word under review, a word the learner has
-    learnt, or one the deck marks;
   - typed only, or also chosen from a few words as its easier grade;
   - whether it comes before the bank's sentences, from the first sentence
     cards, or with them.
