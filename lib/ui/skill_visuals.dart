@@ -34,8 +34,8 @@ extension SkillVisuals on Skill {
 
   /// A skill's title on its switch in Settings: [label] for every skill but
   /// minimal pairs, which Settings calls "Phonemic contrasts". What the
-  /// switch turns on is the learning of sounds that change a word's meaning,
-  /// not the minimal-pairs drill's own name, which stays on decks and pills.
+  /// switch turns on is practice with the sounds the learner's own languages
+  /// do not have; the minimal-pairs drill keeps its name on decks and pills.
   String settingsLabel(AppLocalizations l10n) => switch (this) {
     Skill.pair => l10n.skillPairSettingsTitle,
     _ => label(l10n),
