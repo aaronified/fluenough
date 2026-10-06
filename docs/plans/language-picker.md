@@ -118,12 +118,19 @@ start, with no version built on the bundled decks:
 - **The validator** checks that a path has a B1 mark and that every unit
   before it has a planned size. It warns when a unit has more words than
   planned, since then the plan needs raising.
-- **Filling the plans in:** the existing paths gain their milestone marks,
-  their planned sizes and the units still to write, from the scheme
-  (`language-paths-scheme.md`) and the target of about 2,500–3,000 words
-  by B1 (`language-paths.md`). This content work comes before the picker
-  can show a percentage. Until then, a path without a B1 mark shows "Course
-  size: 640 words" in place of a percentage.
+- **Every path has a B1 plan** (owner's decision): "Every deck path will
+  have a B1 plan from now on. The app will use this explicitly."
+  - The B1 plan is written in the path: its units up to the B1 mark, with
+    their milestones and planned sizes, including units not written yet.
+    It is set explicitly by whoever writes the course, not derived in the
+    app from the scheme's phase lengths. The scheme and the target of about
+    2,500–3,000 words by B1 (`language-paths.md`) guide the author.
+  - The app reads the plan as it is, and calculates completeness from it
+    and the decks.
+  - The validator fails a path without a B1 plan, so every new language
+    comes with one. The eight existing courses are given theirs before the
+    picker is built. Until then, a path without one shows "Course size: 640
+    words" in place of a percentage.
 
 ## Tests
 
@@ -150,8 +157,6 @@ start, with no version built on the bundled decks:
 
 ## To decide
 
-- **Planned unit sizes:** who fills them in for the existing paths, and
-  whether from the scheme's phase lengths or by hand.
 - **What counts:** vocabulary only, or grammar and passages too.
 - **Learner progress:** show the learner's own progress on the card as
   well, or only on Progress.
