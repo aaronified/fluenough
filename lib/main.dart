@@ -19,6 +19,7 @@ import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
+import 'core/updates/github_release_notes.dart';
 
 export 'app.dart' show FluenoughApp;
 
@@ -49,6 +50,9 @@ Future<void> main() async {
           links: LauncherLinks(),
         ),
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
+        releaseNotes: GitHubReleaseNotes(
+          userAgent: 'fluenough/${AppInfo.version}',
+        ),
         installer: OtaApkInstaller(),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
       ),

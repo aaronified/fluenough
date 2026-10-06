@@ -14,6 +14,7 @@ import '../../core/speech/speech_engine.dart';
 import '../../core/tts/fixed_tts_engine.dart';
 import '../../core/updates/apk_install.dart';
 import '../../core/updates/release_check.dart';
+import '../../core/updates/release_notes.dart';
 
 /// Fixture data for the debug gallery, and for widget tests that want the
 /// design's people and a history to show.
@@ -47,6 +48,7 @@ abstract final class GalleryFixtures {
   /// design's two profiles with [currentProfileId] current, and — unless
   /// [history] is false — twelve days of reviews, so there is a streak, cards
   /// due and a leech. The update check answers from [releases], never from
+  /// GitHub, the release notes answer from [releaseNotes], never from
   /// GitHub, and an update installs through [installer], never for real.
   ///
   /// Call `load()` on the result before showing it; the gallery does.
@@ -60,6 +62,7 @@ abstract final class GalleryFixtures {
     SettingsNotifier? settings,
     SpeechEngine speech = const NullSpeechEngine(),
     ReleaseCheckEngine releases = const NullReleaseCheck(),
+    ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
   }) {
     final progress = MemoryProgress();
@@ -72,6 +75,7 @@ abstract final class GalleryFixtures {
       features: features,
       clock: app.now,
       releases: releases,
+      releaseNotes: releaseNotes,
       installer: installer,
       settings: settings,
       profiles: profiles,

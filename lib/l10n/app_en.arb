@@ -3703,6 +3703,54 @@
   "@settingsUpdateAutoDesc": {
     "description": "Under Check automatically. Says that each check is a request to GitHub, a website."
   },
+  "settingsReleaseNotes": "What’s new",
+  "@settingsReleaseNotes": {
+    "description": "Row in Settings' Updates group that opens the release notes: what changed in each version of the app."
+  },
+  "settingsReleaseNotesDesc": "Release notes for each version. Opening them asks GitHub.",
+  "@settingsReleaseNotesDesc": {
+    "description": "Under What’s new. Says that opening the page is a request to GitHub, a website, as the update check is."
+  },
+  "releaseNotesTitle": "What’s new",
+  "@releaseNotesTitle": {
+    "description": "Title of the release notes screen, which lists each version of the app with what changed in it."
+  },
+  "releaseNotesLoading": "Loading release notes…",
+  "@releaseNotesLoading": {
+    "description": "Screen-reader label of the spinner on the release notes screen while GitHub is asked for the notes."
+  },
+  "releaseNotesInstalled": "Installed",
+  "@releaseNotesInstalled": {
+    "description": "Badge beside the version heading of the release that is the version of the app running now."
+  },
+  "releaseNotesNone": "GitHub has no release notes to show yet.",
+  "@releaseNotesNone": {
+    "description": "Shown on the release notes screen when GitHub answered, but with no published release."
+  },
+  "releaseNotesNoNotes": "No notes for this release.",
+  "@releaseNotesNoNotes": {
+    "description": "Under a release's version on the release notes screen when its notes are empty."
+  },
+  "releaseNotesOffline": "Couldn’t reach GitHub. Check your connection.",
+  "@releaseNotesOffline": {
+    "description": "On the release notes screen when there is no network, or GitHub did not answer in time. Above Try again."
+  },
+  "releaseNotesRateLimited": "GitHub has had too many requests from this network. Try again in an hour.",
+  "@releaseNotesRateLimited": {
+    "description": "On the release notes screen when GitHub refuses for now. It allows 60 requests an hour from one network. Above Try again."
+  },
+  "releaseNotesBadReply": "GitHub’s answer couldn’t be read.",
+  "@releaseNotesBadReply": {
+    "description": "On the release notes screen when GitHub answered with an error, or with something that is not a list of releases. Above Try again."
+  },
+  "releaseNotesOpenGitHub": "See all releases on GitHub",
+  "@releaseNotesOpenGitHub": {
+    "description": "Button at the foot of the release notes screen that opens the app's releases page on GitHub in the browser."
+  },
+  "releaseNotesLinkCopied": "Couldn’t open GitHub, so its link is copied.",
+  "@releaseNotesLinkCopied": {
+    "description": "SnackBar when nothing on the phone could open the releases page, so its address was copied instead."
+  },
   "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works fully offline",
   "@settingsFooter": {
     "description": "Footer of Settings.",
