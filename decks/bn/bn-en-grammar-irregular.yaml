@@ -10,9 +10,9 @@ tags: [beginner, grammar]
 pattern:
   name: "Irregular verbs"
   slot_name: "form"
-  slots: ["present, আমি", "past, আমি", "future, আমি", "polite request, আপনি"]
+  slots: ["present, আমি (āmi)", "past, আমি (āmi)", "future, আমি (āmi)", "polite request, আপনি (āpni)"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "These are among the most used verbs in Bengali, so they are worth learning by heart. The stem's vowel shifts: দেওয়া gives দিই, দিলাম, দেব. আসা and যাওয়া take different pasts: এলাম, গেলাম. আসা's past is এলাম (elām), also আসলাম (āślām); the drill accepts both. হোন, the polite request of হওয়া, is written with ো to keep it apart from the present হন."
+  notes: "These are among the most used verbs in Bengali, so they are worth learning by heart. The stem's vowel shifts: দেওয়া (deoyā) gives দিই (dii), দিলাম (dilām), দেব (deb). আসা (āsā) and যাওয়া (jāoyā) take different pasts: এলাম (elām), গেলাম (gelām). আসা (āsā)'s past is এলাম (elām), also আসলাম (āślām); the drill accepts both. হোন (hon), the polite request of হওয়া (hôoyā), is written with ো (o) to keep it apart from the present হন (hôn)."
   entries:
     - lemma: "যাওয়া"
       key: jaoa
@@ -20,117 +20,117 @@ pattern:
       ipa: "dʒaoa"
       gloss: "to go"
       forms:
-        "present, আমি": "যাই"
-        "past, আমি": "গেলাম"
-        "future, আমি": ["যাব", "যাবো"]
-        "polite request, আপনি": "যান"
+        "present, আমি (āmi)": "যাই"
+        "past, আমি (āmi)": "গেলাম"
+        "future, আমি (āmi)": ["যাব", "যাবো"]
+        "polite request, আপনি (āpni)": "যান"
       readings:
-        "present, আমি": "jāi"
-        "past, আমি": "gelām"
-        "future, আমি": ["jābo", "jābo"]
-        "polite request, আপনি": "jān"
+        "present, আমি (āmi)": "jāi"
+        "past, আমি (āmi)": "gelām"
+        "future, আমি (āmi)": ["jābo", "jābo"]
+        "polite request, আপনি (āpni)": "jān"
       ipas:
-        "present, আমি": "dʒai"
-        "past, আমি": "ɡelam"
-        "future, আমি": "dʒabo"
-        "polite request, আপনি": "dʒan"
+        "present, আমি (āmi)": "dʒai"
+        "past, আমি (āmi)": "ɡelam"
+        "future, আমি (āmi)": "dʒabo"
+        "polite request, আপনি (āpni)": "dʒan"
     - lemma: "আসা"
       key: asha
       reading: "āśā"
       ipa: "aʃa"
       gloss: "to come"
       forms:
-        "present, আমি": "আসি"
-        "past, আমি": ["এলাম", "আসলাম"]
-        "future, আমি": ["আসব", "আসবো"]
-        "polite request, আপনি": "আসুন"
+        "present, আমি (āmi)": "আসি"
+        "past, আমি (āmi)": ["এলাম", "আসলাম"]
+        "future, আমি (āmi)": ["আসব", "আসবো"]
+        "polite request, আপনি (āpni)": "আসুন"
       readings:
-        "present, আমি": "āśi"
-        "past, আমি": ["elām", "āślām"]
-        "future, আমি": ["āśbo", "āśbo"]
-        "polite request, আপনি": "āśun"
+        "present, আমি (āmi)": "āśi"
+        "past, আমি (āmi)": ["elām", "āślām"]
+        "future, আমি (āmi)": ["āśbo", "āśbo"]
+        "polite request, আপনি (āpni)": "āśun"
       ipas:
-        "present, আমি": "aʃi"
-        "past, আমি": "elam"
-        "future, আমি": "aʃbo"
-        "polite request, আপনি": "aʃun"
+        "present, আমি (āmi)": "aʃi"
+        "past, আমি (āmi)": "elam"
+        "future, আমি (āmi)": "aʃbo"
+        "polite request, আপনি (āpni)": "aʃun"
     - lemma: "দেওয়া"
       key: deoa
       reading: "deoā"
       ipa: "d̪eoa"
       gloss: "to give"
       forms:
-        "present, আমি": "দিই"
-        "past, আমি": "দিলাম"
-        "future, আমি": ["দেব", "দেবো"]
-        "polite request, আপনি": "দিন"
+        "present, আমি (āmi)": "দিই"
+        "past, আমি (āmi)": "দিলাম"
+        "future, আমি (āmi)": ["দেব", "দেবো"]
+        "polite request, আপনি (āpni)": "দিন"
       readings:
-        "present, আমি": "dii"
-        "past, আমি": "dilām"
-        "future, আমি": ["debo", "debo"]
-        "polite request, আপনি": "din"
+        "present, আমি (āmi)": "dii"
+        "past, আমি (āmi)": "dilām"
+        "future, আমি (āmi)": ["debo", "debo"]
+        "polite request, আপনি (āpni)": "din"
       ipas:
-        "present, আমি": "d̪ii"
-        "past, আমি": "d̪ilam"
-        "future, আমি": "d̪ebo"
-        "polite request, আপনি": "d̪in"
+        "present, আমি (āmi)": "d̪ii"
+        "past, আমি (āmi)": "d̪ilam"
+        "future, আমি (āmi)": "d̪ebo"
+        "polite request, আপনি (āpni)": "d̪in"
     - lemma: "নেওয়া"
       key: neoa
       reading: "neoā"
       ipa: "neoa"
       gloss: "to take"
       forms:
-        "present, আমি": "নিই"
-        "past, আমি": "নিলাম"
-        "future, আমি": ["নেব", "নেবো"]
-        "polite request, আপনি": "নিন"
+        "present, আমি (āmi)": "নিই"
+        "past, আমি (āmi)": "নিলাম"
+        "future, আমি (āmi)": ["নেব", "নেবো"]
+        "polite request, আপনি (āpni)": "নিন"
       readings:
-        "present, আমি": "nii"
-        "past, আমি": "nilām"
-        "future, আমি": ["nebo", "nebo"]
-        "polite request, আপনি": "nin"
+        "present, আমি (āmi)": "nii"
+        "past, আমি (āmi)": "nilām"
+        "future, আমি (āmi)": ["nebo", "nebo"]
+        "polite request, আপনি (āpni)": "nin"
       ipas:
-        "present, আমি": "nii"
-        "past, আমি": "nilam"
-        "future, আমি": "nebo"
-        "polite request, আপনি": "nin"
+        "present, আমি (āmi)": "nii"
+        "past, আমি (āmi)": "nilam"
+        "future, আমি (āmi)": "nebo"
+        "polite request, আপনি (āpni)": "nin"
     - lemma: "খাওয়া"
       key: khaoa
       reading: "khāoā"
       ipa: "kʰaoa"
       gloss: "to eat"
       forms:
-        "present, আমি": "খাই"
-        "past, আমি": "খেলাম"
-        "future, আমি": ["খাব", "খাবো"]
-        "polite request, আপনি": "খান"
+        "present, আমি (āmi)": "খাই"
+        "past, আমি (āmi)": "খেলাম"
+        "future, আমি (āmi)": ["খাব", "খাবো"]
+        "polite request, আপনি (āpni)": "খান"
       readings:
-        "present, আমি": "khāi"
-        "past, আমি": "khelām"
-        "future, আমি": ["khābo", "khābo"]
-        "polite request, আপনি": "khān"
+        "present, আমি (āmi)": "khāi"
+        "past, আমি (āmi)": "khelām"
+        "future, আমি (āmi)": ["khābo", "khābo"]
+        "polite request, আপনি (āpni)": "khān"
       ipas:
-        "present, আমি": "kʰai"
-        "past, আমি": "kʰelam"
-        "future, আমি": "kʰabo"
-        "polite request, আপনি": "kʰan"
+        "present, আমি (āmi)": "kʰai"
+        "past, আমি (āmi)": "kʰelam"
+        "future, আমি (āmi)": "kʰabo"
+        "polite request, আপনি (āpni)": "kʰan"
     - lemma: "হওয়া"
       key: hoa
       reading: "hoā"
       ipa: "ɦoa"
       gloss: "to be, to become"
       forms:
-        "present, আমি": "হই"
-        "past, আমি": "হলাম"
-        "future, আমি": ["হব", "হবো"]
-        "polite request, আপনি": "হোন"
+        "present, আমি (āmi)": "হই"
+        "past, আমি (āmi)": "হলাম"
+        "future, আমি (āmi)": ["হব", "হবো"]
+        "polite request, আপনি (āpni)": "হোন"
       readings:
-        "present, আমি": "hoi"
-        "past, আমি": "hôlām"
-        "future, আমি": ["hôbo", "hôbo"]
-        "polite request, আপনি": "hon"
+        "present, আমি (āmi)": "hoi"
+        "past, আমি (āmi)": "hôlām"
+        "future, আমি (āmi)": ["hôbo", "hôbo"]
+        "polite request, আপনি (āpni)": "hon"
       ipas:
-        "present, আমি": "ɦoi"
-        "past, আমি": "ɦɔlam"
-        "future, আমি": "ɦɔbo"
-        "polite request, আপনি": "ɦon"
+        "present, আমি (āmi)": "ɦoi"
+        "past, আমি (āmi)": "ɦɔlam"
+        "future, আমি (āmi)": "ɦɔbo"
+        "polite request, আপনি (āpni)": "ɦon"

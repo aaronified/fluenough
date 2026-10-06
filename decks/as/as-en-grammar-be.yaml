@@ -1,18 +1,18 @@
 schema: 1
 id: as-en-grammar-be
-name: "To be: আছে, আছিল and নহয়"
+name: "To be: আছে (āse), আছিল (āsil) and নহয় (nôhôy)"
 kind: grammar
 language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Is, was, isn't, will be: আছে for where and how things are, no verb at all for what someone is, নহয় for what someone is not, and হ'ব for will be. Not yet checked by an Assamese speaker: please report any mistake."
+description: "Is, was, isn't, will be: আছে (āse) for where and how things are, no verb at all for what someone is, নহয় (nôhôy) for what someone is not, and হ (hô)'ব (bô) for will be. Not yet checked by an Assamese speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "To be"
   slot_name: "person and respect"
   slots: ["মই / আমি", "তই / তহঁত", "তুমি / তোমালোক", "আপুনি / সি / তাই / তেওঁ"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "আছে says where or how someone is: মই ঘৰত আছোঁ, I'm at home; মই ভালে আছোঁ, I'm well. With the owner's -ৰ it is have: মোৰ সময় আছে, I have time. Its negative is নাই, the same for every person: মই ঘৰত নাই, I'm not at home. To say what someone is, the present needs no verb: মই ছাত্ৰ, I'm a student. But 'is not' has one, নহয়: মই ছাত্ৰ নহওঁ, and in speech নহয় often stands for every person. আছিল is the past of both: মই ঘৰত আছিলোঁ, I was at home; মই ছাত্ৰ আছিলোঁ, I was a student. হ'ব, will be, is the future of হোৱা, to become. আপুনি takes the same form as সি, তাই and তেওঁ, and a plural the same as its singular. The ending -ওঁ is also written -ো, without ঁ, and both are accepted."
+  notes: "আছে (āse) says where or how someone is: মই ঘৰত আছোঁ (moi ghôrôt āsum̐), I'm at home; মই ভালে আছোঁ (moi bhāle āsum̐), I'm well. With the owner's -ৰ (-rô) it is have: মোৰ সময় আছে (mur xômôy āse), I have time. Its negative is নাই (nāi), the same for every person: মই ঘৰত নাই (moi ghôrôt nāi), I'm not at home. To say what someone is, the present needs no verb: মই ছাত্ৰ (moi sātrô), I'm a student. But 'is not' has one, নহয় (nôhôy): মই ছাত্ৰ নহওঁ (moi sātrô nôhôum̐), and in speech নহয় (nôhôy) often stands for every person. আছিল (āsil) is the past of both: মই ঘৰত আছিলোঁ (moi ghôrôt āsilum̐), I was at home; মই ছাত্ৰ আছিলোঁ (moi sātrô āsilum̐), I was a student. হ (hô)'ব (bô), will be, is the future of হোৱা (huwā), to become. আপুনি (āpuni) takes the same form as সি (si), তাই (tāi) and তেওঁ (teum̐), and a plural the same as its singular. The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "আছে"
       key: ase

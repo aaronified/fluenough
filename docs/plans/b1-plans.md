@@ -105,6 +105,15 @@ The words a unit has are always counted from its decks: distinct
 vocabulary cards. Script decks, grammar tables and learners' own decks
 (`"*"`) are left out.
 
+## Writing the planned decks
+
+Every deck written for a B1 plan follows "Script in prose" in
+`docs/DECK-FORMAT.md`, as the owner asked: "Always keep the transliteration,
+even in descriptions or labels." Each word quoted in a deck's notes,
+meanings, labels, descriptions and facts carries its ISO 15919 reading,
+లేదు (lēdu), so that a beginner who cannot read the script yet can read
+them. The validator rejects a deck that leaves one out.
+
 ## What the validator checks
 
 - **Errors:**

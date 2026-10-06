@@ -10,9 +10,9 @@ tags: [beginner, grammar, unreviewed]
 pattern:
   name: "Noun forms"
   slot_name: "form"
-  slots: ["plural", "in: -त", "on: -वर", "to: -ला"]
+  slots: ["plural", "in: -त (-ta)", "on: -वर (-var)", "to: -ला (-lā)"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Before an ending a noun takes its oblique form, and Marathi writes the ending joined to it. A masculine noun in -आ changes it to -्या: रस्ता, रस्त्यावर. A feminine noun in -आ changes it to -े: शाळा, शाळेत. Most nouns ending in a consonant add -ा: घर, घरात. The plural: a masculine -आ becomes -े (रस्ते); a neuter noun ending in a consonant adds -े (घरे, in speech घरं); a feminine -ई becomes -्या (खोल्या); a feminine -आ stays (शाळा). -ला is 'to', and also marks a person as the object."
+  notes: "Before an ending a noun takes its oblique form, and Marathi writes the ending joined to it. A masculine noun in -आ (-ā) changes it to -्या (-yā): रस्ता (rastā), रस्त्यावर (rastyāvar). A feminine noun in -आ (-ā) changes it to -े (e): शाळा (śāḷā), शाळेत (śāḷet). Most nouns ending in a consonant add -ा (ā): घर (ghar), घरात (gharāt). The plural: a masculine -आ (-ā) becomes -े (e) (रस्ते (raste)); a neuter noun ending in a consonant adds -े (e) (घरे (ghare), in speech घरं (gharam̐)); a feminine -ई (-i) becomes -्या (-yā) (खोल्या (kholyā)); a feminine -आ (-ā) stays (शाळा). -ला (-lā) is 'to', and also marks a person as the object."
   entries:
     - lemma: "घर"
       key: ghar
@@ -21,19 +21,19 @@ pattern:
       gloss: "house (n)"
       forms:
         "plural": ["घरे", "घरं"]
-        "in: -त": "घरात"
-        "on: -वर": "घरावर"
-        "to: -ला": "घराला"
+        "in: -त (-ta)": "घरात"
+        "on: -वर (-var)": "घरावर"
+        "to: -ला (-lā)": "घराला"
       readings:
         "plural": ["ghare", "gharam̐"]
-        "in: -त": "gharāt"
-        "on: -वर": "gharāvar"
-        "to: -ला": "gharālā"
+        "in: -त (-ta)": "gharāt"
+        "on: -वर (-var)": "gharāvar"
+        "to: -ला (-lā)": "gharālā"
       ipas:
         "plural": "ɡʱəre"
-        "in: -त": "ɡʱərat̪"
-        "on: -वर": "ɡʱəraʋər"
-        "to: -ला": "ɡʱərala"
+        "in: -त (-ta)": "ɡʱərat̪"
+        "on: -वर (-var)": "ɡʱəraʋər"
+        "to: -ला (-lā)": "ɡʱərala"
     - lemma: "शाळा"
       key: shaalaa
       reading: "śāḷā"
@@ -41,19 +41,19 @@ pattern:
       gloss: "school (f)"
       forms:
         "plural": "शाळा"
-        "in: -त": "शाळेत"
-        "on: -वर": "शाळेवर"
-        "to: -ला": "शाळेला"
+        "in: -त (-ta)": "शाळेत"
+        "on: -वर (-var)": "शाळेवर"
+        "to: -ला (-lā)": "शाळेला"
       readings:
         "plural": "śāḷā"
-        "in: -त": "śāḷet"
-        "on: -वर": "śāḷevar"
-        "to: -ला": "śāḷelā"
+        "in: -त (-ta)": "śāḷet"
+        "on: -वर (-var)": "śāḷevar"
+        "to: -ला (-lā)": "śāḷelā"
       ipas:
         "plural": "ʃaɭa"
-        "in: -त": "ʃaɭet̪"
-        "on: -वर": "ʃaɭeʋər"
-        "to: -ला": "ʃaɭela"
+        "in: -त (-ta)": "ʃaɭet̪"
+        "on: -वर (-var)": "ʃaɭeʋər"
+        "to: -ला (-lā)": "ʃaɭela"
     - lemma: "खोली"
       key: kholii
       reading: "kholi"
@@ -61,19 +61,19 @@ pattern:
       gloss: "room (f)"
       forms:
         "plural": "खोल्या"
-        "in: -त": "खोलीत"
-        "on: -वर": "खोलीवर"
-        "to: -ला": "खोलीला"
+        "in: -त (-ta)": "खोलीत"
+        "on: -वर (-var)": "खोलीवर"
+        "to: -ला (-lā)": "खोलीला"
       readings:
         "plural": "kholyā"
-        "in: -त": "kholit"
-        "on: -वर": "kholivar"
-        "to: -ला": "kholilā"
+        "in: -त (-ta)": "kholit"
+        "on: -वर (-var)": "kholivar"
+        "to: -ला (-lā)": "kholilā"
       ipas:
         "plural": "kʰolja"
-        "in: -त": "kʰolit̪"
-        "on: -वर": "kʰoliʋər"
-        "to: -ला": "kʰolila"
+        "in: -त (-ta)": "kʰolit̪"
+        "on: -वर (-var)": "kʰoliʋər"
+        "to: -ला (-lā)": "kʰolila"
     - lemma: "रस्ता"
       key: rastaa
       reading: "rastā"
@@ -81,19 +81,19 @@ pattern:
       gloss: "road (m)"
       forms:
         "plural": "रस्ते"
-        "in: -त": "रस्त्यात"
-        "on: -वर": "रस्त्यावर"
-        "to: -ला": "रस्त्याला"
+        "in: -त (-ta)": "रस्त्यात"
+        "on: -वर (-var)": "रस्त्यावर"
+        "to: -ला (-lā)": "रस्त्याला"
       readings:
         "plural": "raste"
-        "in: -त": "rastyāt"
-        "on: -वर": "rastyāvar"
-        "to: -ला": "rastyālā"
+        "in: -त (-ta)": "rastyāt"
+        "on: -वर (-var)": "rastyāvar"
+        "to: -ला (-lā)": "rastyālā"
       ipas:
         "plural": "rəst̪e"
-        "in: -त": "rəst̪jat̪"
-        "on: -वर": "rəst̪jaʋər"
-        "to: -ला": "rəst̪jala"
+        "in: -त (-ta)": "rəst̪jat̪"
+        "on: -वर (-var)": "rəst̪jaʋər"
+        "to: -ला (-lā)": "rəst̪jala"
     - lemma: "खिसा"
       key: khisaa
       reading: "khisā"
@@ -101,19 +101,19 @@ pattern:
       gloss: "pocket (m)"
       forms:
         "plural": "खिसे"
-        "in: -त": "खिशात"
-        "on: -वर": "खिशावर"
-        "to: -ला": "खिशाला"
+        "in: -त (-ta)": "खिशात"
+        "on: -वर (-var)": "खिशावर"
+        "to: -ला (-lā)": "खिशाला"
       readings:
         "plural": "khise"
-        "in: -त": "khiśāt"
-        "on: -वर": "khiśāvar"
-        "to: -ला": "khiśālā"
+        "in: -त (-ta)": "khiśāt"
+        "on: -वर (-var)": "khiśāvar"
+        "to: -ला (-lā)": "khiśālā"
       ipas:
         "plural": "kʰise"
-        "in: -त": "kʰiʃat̪"
-        "on: -वर": "kʰiʃaʋər"
-        "to: -ला": "kʰiʃala"
+        "in: -त (-ta)": "kʰiʃat̪"
+        "on: -वर (-var)": "kʰiʃaʋər"
+        "to: -ला (-lā)": "kʰiʃala"
     - lemma: "बाटली"
       key: baatlii
       reading: "bāṭli"
@@ -121,19 +121,19 @@ pattern:
       gloss: "bottle (f)"
       forms:
         "plural": "बाटल्या"
-        "in: -त": "बाटलीत"
-        "on: -वर": "बाटलीवर"
-        "to: -ला": "बाटलीला"
+        "in: -त (-ta)": "बाटलीत"
+        "on: -वर (-var)": "बाटलीवर"
+        "to: -ला (-lā)": "बाटलीला"
       readings:
         "plural": "bāṭlyā"
-        "in: -त": "bāṭlit"
-        "on: -वर": "bāṭlivar"
-        "to: -ला": "bāṭlilā"
+        "in: -त (-ta)": "bāṭlit"
+        "on: -वर (-var)": "bāṭlivar"
+        "to: -ला (-lā)": "bāṭlilā"
       ipas:
         "plural": "baʈlja"
-        "in: -त": "baʈlit̪"
-        "on: -वर": "baʈliʋər"
-        "to: -ला": "baʈlila"
+        "in: -त (-ta)": "baʈlit̪"
+        "on: -वर (-var)": "baʈliʋər"
+        "to: -ला (-lā)": "baʈlila"
     - lemma: "पुस्तक"
       key: pustak
       reading: "pustak"
@@ -141,19 +141,19 @@ pattern:
       gloss: "book (n)"
       forms:
         "plural": ["पुस्तके", "पुस्तकं"]
-        "in: -त": "पुस्तकात"
-        "on: -वर": "पुस्तकावर"
-        "to: -ला": "पुस्तकाला"
+        "in: -त (-ta)": "पुस्तकात"
+        "on: -वर (-var)": "पुस्तकावर"
+        "to: -ला (-lā)": "पुस्तकाला"
       readings:
         "plural": ["pustake", "pustakam̐"]
-        "in: -त": "pustakāt"
-        "on: -वर": "pustakāvar"
-        "to: -ला": "pustakālā"
+        "in: -त (-ta)": "pustakāt"
+        "on: -वर (-var)": "pustakāvar"
+        "to: -ला (-lā)": "pustakālā"
       ipas:
         "plural": "pust̪əke"
-        "in: -त": "pust̪əkat̪"
-        "on: -वर": "pust̪əkaʋər"
-        "to: -ला": "pust̪əkala"
+        "in: -त (-ta)": "pust̪əkat̪"
+        "on: -वर (-var)": "pust̪əkaʋər"
+        "to: -ला (-lā)": "pust̪əkala"
     - lemma: "झाड"
       key: jhaad
       reading: "jhāḍ"
@@ -161,19 +161,19 @@ pattern:
       gloss: "tree (n)"
       forms:
         "plural": ["झाडे", "झाडं"]
-        "in: -त": "झाडात"
-        "on: -वर": "झाडावर"
-        "to: -ला": "झाडाला"
+        "in: -त (-ta)": "झाडात"
+        "on: -वर (-var)": "झाडावर"
+        "to: -ला (-lā)": "झाडाला"
       readings:
         "plural": ["jhāḍe", "jhāḍam̐"]
-        "in: -त": "jhāḍāt"
-        "on: -वर": "jhāḍāvar"
-        "to: -ला": "jhāḍālā"
+        "in: -त (-ta)": "jhāḍāt"
+        "on: -वर (-var)": "jhāḍāvar"
+        "to: -ला (-lā)": "jhāḍālā"
       ipas:
         "plural": "dzʱaɖe"
-        "in: -त": "dzʱaɖat̪"
-        "on: -वर": "dzʱaɖaʋər"
-        "to: -ला": "dzʱaɖala"
+        "in: -त (-ta)": "dzʱaɖat̪"
+        "on: -वर (-var)": "dzʱaɖaʋər"
+        "to: -ला (-lā)": "dzʱaɖala"
     - lemma: "गाडी"
       key: gaadii
       reading: "gāḍi"
@@ -181,19 +181,19 @@ pattern:
       gloss: "car; vehicle (f)"
       forms:
         "plural": "गाड्या"
-        "in: -त": "गाडीत"
-        "on: -वर": "गाडीवर"
-        "to: -ला": "गाडीला"
+        "in: -त (-ta)": "गाडीत"
+        "on: -वर (-var)": "गाडीवर"
+        "to: -ला (-lā)": "गाडीला"
       readings:
         "plural": "gāḍyā"
-        "in: -त": "gāḍit"
-        "on: -वर": "gāḍivar"
-        "to: -ला": "gāḍilā"
+        "in: -त (-ta)": "gāḍit"
+        "on: -वर (-var)": "gāḍivar"
+        "to: -ला (-lā)": "gāḍilā"
       ipas:
         "plural": "ɡaɖja"
-        "in: -त": "ɡaɖit̪"
-        "on: -वर": "ɡaɖiʋər"
-        "to: -ला": "ɡaɖila"
+        "in: -त (-ta)": "ɡaɖit̪"
+        "on: -वर (-var)": "ɡaɖiʋər"
+        "to: -ला (-lā)": "ɡaɖila"
     - lemma: "डबा"
       key: dabaa
       reading: "ḍabā"
@@ -201,16 +201,16 @@ pattern:
       gloss: "box; tiffin; train carriage (m)"
       forms:
         "plural": "डबे"
-        "in: -त": "डब्यात"
-        "on: -वर": "डब्यावर"
-        "to: -ला": "डब्याला"
+        "in: -त (-ta)": "डब्यात"
+        "on: -वर (-var)": "डब्यावर"
+        "to: -ला (-lā)": "डब्याला"
       readings:
         "plural": "ḍabe"
-        "in: -त": "ḍabyāt"
-        "on: -वर": "ḍabyāvar"
-        "to: -ला": "ḍabyālā"
+        "in: -त (-ta)": "ḍabyāt"
+        "on: -वर (-var)": "ḍabyāvar"
+        "to: -ला (-lā)": "ḍabyālā"
       ipas:
         "plural": "ɖəbe"
-        "in: -त": "ɖəbjat̪"
-        "on: -वर": "ɖəbjaʋər"
-        "to: -ला": "ɖəbjala"
+        "in: -त (-ta)": "ɖəbjat̪"
+        "on: -वर (-var)": "ɖəbjaʋər"
+        "to: -ला (-lā)": "ɖəbjala"

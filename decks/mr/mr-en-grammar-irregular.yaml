@@ -10,9 +10,9 @@ tags: [unreviewed, grammar]
 pattern:
   name: "Irregular verbs"
   slot_name: "form"
-  slots: ["past, masculine", "past, feminine", "please … (तुम्ही)"]
+  slots: ["past, masculine", "past, feminine", "please … (तुम्ही (tumhi))"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The past masculine is the form for तो with a verb that takes no object, तो गेला, he went. A verb that takes an object agrees with the object instead: त्याने चहा केला, he made tea (चहा is masculine); त्याने पोळी केली, he made a chapati (पोळी is feminine). The polite request goes with तुम्ही: या, please come; to a friend, the bare stem: ये."
+  notes: "The past masculine is the form for तो (to) with a verb that takes no object, तो गेला (to gelā), he went. A verb that takes an object agrees with the object instead: त्याने चहा केला (tyāne cahā kelā), he made tea (चहा (cahā) is masculine); त्याने पोळी केली (tyāne poḷi keli), he made a chapati (पोळी (poḷi) is feminine). The polite request goes with तुम्ही (tumhi): या (yā), please come; to a friend, the bare stem: ये (ye)."
   entries:
     - lemma: "जाणे"
       key: jaane
@@ -22,15 +22,15 @@ pattern:
       forms:
         "past, masculine": "गेला"
         "past, feminine": "गेली"
-        "please … (तुम्ही)": "जा"
+        "please … (तुम्ही (tumhi))": "जा"
       readings:
         "past, masculine": "gelā"
         "past, feminine": "geli"
-        "please … (तुम्ही)": "jā"
+        "please … (तुम्ही (tumhi))": "jā"
       ipas:
         "past, masculine": "ɡela"
         "past, feminine": "ɡeli"
-        "please … (तुम्ही)": "dza"
+        "please … (तुम्ही (tumhi))": "dza"
     - lemma: "येणे"
       key: yene
       reading: "yeṇe"
@@ -39,15 +39,15 @@ pattern:
       forms:
         "past, masculine": "आला"
         "past, feminine": "आली"
-        "please … (तुम्ही)": "या"
+        "please … (तुम्ही (tumhi))": "या"
       readings:
         "past, masculine": "ālā"
         "past, feminine": "āli"
-        "please … (तुम्ही)": "yā"
+        "please … (तुम्ही (tumhi))": "yā"
       ipas:
         "past, masculine": "ala"
         "past, feminine": "ali"
-        "please … (तुम्ही)": "ja"
+        "please … (तुम्ही (tumhi))": "ja"
     - lemma: "करणे"
       key: karne
       reading: "karṇe"
@@ -56,15 +56,15 @@ pattern:
       forms:
         "past, masculine": "केला"
         "past, feminine": "केली"
-        "please … (तुम्ही)": "करा"
+        "please … (तुम्ही (tumhi))": "करा"
       readings:
         "past, masculine": "kelā"
         "past, feminine": "keli"
-        "please … (तुम्ही)": "karā"
+        "please … (तुम्ही (tumhi))": "karā"
       ipas:
         "past, masculine": "kela"
         "past, feminine": "keli"
-        "please … (तुम्ही)": "kəra"
+        "please … (तुम्ही (tumhi))": "kəra"
     - lemma: "घेणे"
       key: ghene
       reading: "gheṇe"
@@ -73,15 +73,15 @@ pattern:
       forms:
         "past, masculine": "घेतला"
         "past, feminine": "घेतली"
-        "please … (तुम्ही)": "घ्या"
+        "please … (तुम्ही (tumhi))": "घ्या"
       readings:
         "past, masculine": "ghetlā"
         "past, feminine": "ghetli"
-        "please … (तुम्ही)": "ghyā"
+        "please … (तुम्ही (tumhi))": "ghyā"
       ipas:
         "past, masculine": "ɡʱet̪la"
         "past, feminine": "ɡʱet̪li"
-        "please … (तुम्ही)": "ɡʱja"
+        "please … (तुम्ही (tumhi))": "ɡʱja"
     - lemma: "देणे"
       key: dene
       reading: "deṇe"
@@ -90,15 +90,15 @@ pattern:
       forms:
         "past, masculine": "दिला"
         "past, feminine": "दिली"
-        "please … (तुम्ही)": "द्या"
+        "please … (तुम्ही (tumhi))": "द्या"
       readings:
         "past, masculine": "dilā"
         "past, feminine": "dili"
-        "please … (तुम्ही)": "dyā"
+        "please … (तुम्ही (tumhi))": "dyā"
       ipas:
         "past, masculine": "d̪ila"
         "past, feminine": "d̪ili"
-        "please … (तुम्ही)": "d̪ja"
+        "please … (तुम्ही (tumhi))": "d̪ja"
     - lemma: "खाणे"
       key: khaane
       reading: "khāṇe"
@@ -107,15 +107,15 @@ pattern:
       forms:
         "past, masculine": "खाल्ला"
         "past, feminine": "खाल्ली"
-        "please … (तुम्ही)": "खा"
+        "please … (तुम्ही (tumhi))": "खा"
       readings:
         "past, masculine": "khāllā"
         "past, feminine": "khālli"
-        "please … (तुम्ही)": "khā"
+        "please … (तुम्ही (tumhi))": "khā"
       ipas:
         "past, masculine": "kʰalla"
         "past, feminine": "kʰalli"
-        "please … (तुम्ही)": "kʰa"
+        "please … (तुम्ही (tumhi))": "kʰa"
     - lemma: "पिणे"
       key: pine
       reading: "piṇe"
@@ -124,15 +124,15 @@ pattern:
       forms:
         "past, masculine": ["प्यायला", "प्याला"]
         "past, feminine": ["प्यायली", "प्याली"]
-        "please … (तुम्ही)": "प्या"
+        "please … (तुम्ही (tumhi))": "प्या"
       readings:
         "past, masculine": ["pyāylā", "pyālā"]
         "past, feminine": ["pyāyli", "pyāli"]
-        "please … (तुम्ही)": "pyā"
+        "please … (तुम्ही (tumhi))": "pyā"
       ipas:
         "past, masculine": "pjajla"
         "past, feminine": "pjajli"
-        "please … (तुम्ही)": "pja"
+        "please … (तुम्ही (tumhi))": "pja"
     - lemma: "होणे"
       key: hone
       reading: "hoṇe"
@@ -141,15 +141,15 @@ pattern:
       forms:
         "past, masculine": "झाला"
         "past, feminine": "झाली"
-        "please … (तुम्ही)": "व्हा"
+        "please … (तुम्ही (tumhi))": "व्हा"
       readings:
         "past, masculine": "jhālā"
         "past, feminine": "jhāli"
-        "please … (तुम्ही)": "vhā"
+        "please … (तुम्ही (tumhi))": "vhā"
       ipas:
         "past, masculine": "dzʱala"
         "past, feminine": "dzʱali"
-        "please … (तुम्ही)": "ʋɦa"
+        "please … (तुम्ही (tumhi))": "ʋɦa"
     - lemma: "लिहिणे"
       key: lihine
       reading: "lihiṇe"
@@ -158,15 +158,15 @@ pattern:
       forms:
         "past, masculine": "लिहिला"
         "past, feminine": "लिहिली"
-        "please … (तुम्ही)": "लिहा"
+        "please … (तुम्ही (tumhi))": "लिहा"
       readings:
         "past, masculine": "lihilā"
         "past, feminine": "lihili"
-        "please … (तुम्ही)": "lihā"
+        "please … (तुम्ही (tumhi))": "lihā"
       ipas:
         "past, masculine": "liɦila"
         "past, feminine": "liɦili"
-        "please … (तुम्ही)": "liɦa"
+        "please … (तुम्ही (tumhi))": "liɦa"
     - lemma: "धुणे"
       key: dhune
       reading: "dhuṇe"
@@ -175,15 +175,15 @@ pattern:
       forms:
         "past, masculine": "धुतला"
         "past, feminine": "धुतली"
-        "please … (तुम्ही)": "धुवा"
+        "please … (तुम्ही (tumhi))": "धुवा"
       readings:
         "past, masculine": "dhutlā"
         "past, feminine": "dhutli"
-        "please … (तुम्ही)": "dhuvā"
+        "please … (तुम्ही (tumhi))": "dhuvā"
       ipas:
         "past, masculine": "d̪ʱut̪la"
         "past, feminine": "d̪ʱut̪li"
-        "please … (तुम्ही)": "d̪ʱuʋa"
+        "please … (तुम्ही (tumhi))": "d̪ʱuʋa"
     - lemma: "सांगणे"
       key: saangne
       reading: "sāṅgṇe"
@@ -192,15 +192,15 @@ pattern:
       forms:
         "past, masculine": "सांगितला"
         "past, feminine": "सांगितली"
-        "please … (तुम्ही)": "सांगा"
+        "please … (तुम्ही (tumhi))": "सांगा"
       readings:
         "past, masculine": "sāṅgitlā"
         "past, feminine": "sāṅgitli"
-        "please … (तुम्ही)": "sāṅgā"
+        "please … (तुम्ही (tumhi))": "sāṅgā"
       ipas:
         "past, masculine": "saŋɡit̪la"
         "past, feminine": "saŋɡit̪li"
-        "please … (तुम्ही)": "saŋɡa"
+        "please … (तुम्ही (tumhi))": "saŋɡa"
     - lemma: "म्हणणे"
       key: mhanne
       reading: "mhaṇṇe"
@@ -209,12 +209,12 @@ pattern:
       forms:
         "past, masculine": "म्हणाला"
         "past, feminine": "म्हणाली"
-        "please … (तुम्ही)": "म्हणा"
+        "please … (तुम्ही (tumhi))": "म्हणा"
       readings:
         "past, masculine": "mhaṇālā"
         "past, feminine": "mhaṇāli"
-        "please … (तुम्ही)": "mhaṇā"
+        "please … (तुम्ही (tumhi))": "mhaṇā"
       ipas:
         "past, masculine": "mɦəɳala"
         "past, feminine": "mɦəɳali"
-        "please … (तुम्ही)": "mɦəɳa"
+        "please … (तुम्ही (tumhi))": "mɦəɳa"

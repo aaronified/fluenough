@@ -5,14 +5,14 @@ kind: grammar
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "I, you, he and she, and the forms they take with को, से and ने."
+description: "I, you, he and she, and the forms they take with को (kō), से (sē) and ने (nē)."
 tags: [beginner, grammar]
 pattern:
   name: "Personal pronouns"
   slot_name: "form"
   slots: ["to or for (को)", "with से (from, with)", "with ने (past of a transitive verb)"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Hindi has three words for 'you': आप (respectful), तुम (familiar) and तू (intimate). यह and वह are he, she or it: यह for someone near, वह for someone further off. मुझे and मुझको mean the same; मुझे is more common."
+  notes: "Hindi has three words for 'you': आप (respectful), तुम (familiar) and तू (intimate). यह (yah) and वह (vah) are he, she or it: यह (yah) for someone near, वह (vah) for someone further off. मुझे (mujhē) and मुझको (mujhkō) mean the same; मुझे (mujhē) is more common."
   entries:
     - lemma: "मैं"
       key: main
