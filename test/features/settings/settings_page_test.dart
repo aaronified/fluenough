@@ -195,6 +195,47 @@ void main() {
     });
   });
 
+  testWidgets(
+    'the minimal-pairs switch is titled Phonemic contrasts, says what '
+    'it lets you learn, and is still incoming',
+    (tester) async {
+      usePhone(tester);
+      await pumpScreen(tester, const SettingsPage());
+      final l10n = l10nOf(tester);
+
+      final row = _row('Phonemic contrasts');
+      await scrollTo(tester, row);
+      expect(row, findsOneWidget);
+      expect(
+        find.descendant(
+          of: row,
+          matching: find.text(
+            'Tell apart sounds that change a word\u2019s meaning, '
+            'like short and long vowels',
+          ),
+        ),
+        findsOneWidget,
+      );
+      // Neither the old title nor the old line, which was about the learner's
+      // own language.
+      expect(find.text('Minimal pairs'), findsNothing);
+      expect(find.text('Sounds your language may not have'), findsNothing);
+      // Shown off and disabled, as an incoming feature is (ADR-0008).
+      final toggle = tester.widget<Switch>(
+        find.descendant(of: row, matching: find.byType(Switch)),
+      );
+      expect(toggle.value, isFalse);
+      expect(toggle.onChanged, isNull);
+
+      // Only Settings renames the skill; every other skill keeps its label.
+      expect(Skill.pair.label(l10n), 'Minimal pairs');
+      expect(Skill.pair.settingsLabel(l10n), 'Phonemic contrasts');
+      for (final skill in Skill.values.where((s) => s != Skill.pair)) {
+        expect(skill.settingsLabel(l10n), skill.label(l10n), reason: '$skill');
+      }
+    },
+  );
+
   testWidgets('every disabled row reads as incoming and says so when tapped', (
     tester,
   ) async {
@@ -206,7 +247,7 @@ void main() {
 
     final labels = <String>[
       l10n.settingsSwitchProfile,
-      l10n.skillPair,
+      l10n.skillPairSettingsTitle,
       l10n.settingsAppLanguage,
       l10n.settingsReminder,
       l10n.settingsPinLock,
