@@ -34,6 +34,11 @@ abstract final class AppLinks {
   /// app cannot install it.
   static const String latestRelease =
       'https://github.com/aaronified/fluenough/releases/latest';
+
+  /// Every release's page, where "What's new" sends the learner for the
+  /// releases it does not list.
+  static const String releases =
+      'https://github.com/aaronified/fluenough/releases';
 }
 
 /// Opens a link outside the app. An interface so that tests need no

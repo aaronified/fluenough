@@ -3,6 +3,7 @@ import 'package:flutter/semantics.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/links.dart';
+import '../../app/routes.dart';
 import '../../app/update_checker.dart';
 import '../../core/updates/apk_install.dart';
 import '../../core/updates/release_check.dart';
@@ -12,8 +13,9 @@ import '../../ui/widgets/snack.dart';
 
 /// Settings' Updates group, above the version line (ADR-0017): "Check for
 /// updates", which says what the check found, downloads it with its
-/// progress and opens Android's installer, and "Check automatically", once
-/// a day at launch, off until switched on.
+/// progress and opens Android's installer, "Check automatically", once
+/// a day at launch, off until switched on, and "What's new", which opens
+/// each release's notes (ADR-0031).
 ///
 /// The row's text is a live region, so a screen reader hears each answer
 /// arrive. A download is not, or it would be read out at every percent:
@@ -42,6 +44,13 @@ class UpdateSection extends StatelessWidget {
               subtitle: l10n.settingsUpdateAutoDesc,
               value: settings.autoUpdateCheck,
               onChanged: (on) => settings.autoUpdateCheck = on,
+            ),
+            GroupedTile(
+              leading: const Icon(Icons.new_releases_outlined),
+              title: l10n.settingsReleaseNotes,
+              subtitle: l10n.settingsReleaseNotesDesc,
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => AppNavigator.openReleaseNotes(context),
             ),
           ],
         ),
