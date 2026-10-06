@@ -5,14 +5,14 @@ kind: grammar
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Adjectives in -आ agree with their noun; the others never change."
+description: "Adjectives in -आ (-ā) agree with their noun; the others never change."
 tags: [beginner, grammar]
 pattern:
   name: "Adjective agreement"
   slot_name: "agreement"
   slots: ["with a feminine noun", "with a masculine plural, or before a postposition"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "An adjective ending in -आ agrees: अच्छा लड़का, अच्छी लड़की, अच्छे लड़के. Any other adjective stays the same: सुंदर लड़का, सुंदर लड़की. A feminine plural takes the feminine form: अच्छी लड़कियाँ."
+  notes: "An adjective ending in -आ (-ā) agrees: अच्छा लड़का (acchā laṛkā), अच्छी लड़की (acchī laṛkī), अच्छे लड़के (acchē laṛkē). Any other adjective stays the same: सुंदर लड़का (sundar laṛkā), सुंदर लड़की (sundar laṛkī). A feminine plural takes the feminine form: अच्छी लड़कियाँ (acchī laṛkiyām̐)."
   entries:
     - lemma: "अच्छा"
       key: achchhaa

@@ -1,20 +1,20 @@
 schema: 1
 id: kn-en-grammar-be
-name: "To be: ಇರು, ಇಲ್ಲ and ಅಲ್ಲ"
+name: "To be: ಇರು (iru), ಇಲ್ಲ (illa) and ಅಲ್ಲ (alla)"
 kind: grammar
 language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Is, was, will be: ಇರು for where and how things are, no verb at all for what someone is, ಇಲ್ಲ and ಅಲ್ಲ for not, and ಆಗು for became. Not yet checked by a Kannada speaker: please report any mistake."
+description: "Is, was, will be: ಇರು (iru) for where and how things are, no verb at all for what someone is, ಇಲ್ಲ (illa) and ಅಲ್ಲ (alla) for not, and ಆಗು (āgu) for became. Not yet checked by a Kannada speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
-  name: "ಇರು by tense"
+  name: "ಇರು (iru) by tense"
   slot_name: "person"
   slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "ಇರು says where or how someone is: ನಾನು ಮನೆಯಲ್ಲಿ ಇದ್ದೇನೆ, I'm at home. To say what someone is, Kannada needs no verb: ಅವರು ಡಾಕ್ಟರ್, he's a doctor. 'Is not somewhere' is ಇಲ್ಲ, the same for everyone: ನಾನು ಮನೆಯಲ್ಲಿ ಇಲ್ಲ, I'm not at home. 'Is not something' is ಅಲ್ಲ, also the same for everyone: ಇದು ನೀರು ಅಲ್ಲ, this isn't water. ಆಗು, to become, says what someone became: ಅವನು ಡಾಕ್ಟರ್ ಆದ, he became a doctor. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು, ಅವಳು ಬಂದಳು, ಅದು ಬಂತು. ನೀವು, plural or respectful, takes the plural, and so does ಅವರು, they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
+  notes: "ಇರು (iru) says where or how someone is: ನಾನು ಮನೆಯಲ್ಲಿ ಇದ್ದೇನೆ (nānu maneyalli iddēne), I'm at home. To say what someone is, Kannada needs no verb: ಅವರು ಡಾಕ್ಟರ್ (avaru ḍākṭar), he's a doctor. 'Is not somewhere' is ಇಲ್ಲ (illa), the same for everyone: ನಾನು ಮನೆಯಲ್ಲಿ ಇಲ್ಲ (nānu maneyalli illa), I'm not at home. 'Is not something' is ಅಲ್ಲ (alla), also the same for everyone: ಇದು ನೀರು ಅಲ್ಲ (idu nīru alla), this isn't water. ಆಗು (āgu), to become, says what someone became: ಅವನು ಡಾಕ್ಟರ್ ಆದ (avanu ḍākṭar āda), he became a doctor. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು (avanu bandanu), ಅವಳು ಬಂದಳು (avaḷu bandaḷu), ಅದು ಬಂತು (adu bantu). ನೀವು (nīvu), plural or respectful, takes the plural, and so does ಅವರು (avaru), they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
   entries:
-    - lemma: "ಇರು, now"
+    - lemma: "ಇರು (iru), now"
       key: iddeene
       reading: "iru, now"
       ipa: "iru"
@@ -46,7 +46,7 @@ pattern:
         "ಅವಳು": "id̪d̪aːɭe"
         "ಅದು": "id̪e"
         "ಅವರು": "id̪d̪aːre"
-    - lemma: "ಇರು, then"
+    - lemma: "ಇರು (iru), then"
       key: idde
       reading: "iru, then"
       ipa: "iru"
@@ -78,7 +78,7 @@ pattern:
         "ಅವಳು": "id̪d̪aɭu"
         "ಅದು": "it̪t̪u"
         "ಅವರು": "id̪d̪aru"
-    - lemma: "ಇರು, usually or later"
+    - lemma: "ಇರು (iru), usually or later"
       key: irutteene
       reading: "iru, usually or later"
       ipa: "iru"
@@ -110,7 +110,7 @@ pattern:
         "ಅವಳು": "irut̪t̪aːɭe"
         "ಅದು": "irut̪t̪ad̪e"
         "ಅವರು": "irut̪t̪aːre"
-    - lemma: "ಆಗು, became"
+    - lemma: "ಆಗು (āgu), became"
       key: aade
       reading: "āgu, became"
       ipa: "aːɡu"

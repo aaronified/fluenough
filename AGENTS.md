@@ -198,6 +198,10 @@ Text(AppLocalizations.of(context)!.dueToday)   // correct
 Deck content — `target`, `native`, `reading`, `notes` — is not interface text
 and stays exactly as it is. So do log messages, exception text, and ids.
 
+Within deck content, a word in a script other than Latin is never left without
+its reading: a note says లేదు (lēdu), not లేదు. The validator rejects it; see
+"Script in prose" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
+
 The half that gets skipped is not the strings, it is the layout around them.
 Use `EdgeInsetsDirectional`, `AlignmentDirectional` and `TextAlign.start`, never
 `left` or `right`. Build sentences with placeholders rather than concatenation,
