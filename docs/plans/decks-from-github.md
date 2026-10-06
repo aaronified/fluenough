@@ -1,6 +1,7 @@
 # Plan: download decks from GitHub, not bundle them
 
-Written 2026-10-05. **First in the schedule.**
+Written 2026-10-05. **First in the schedule**, after the B1 plans
+(`b1-plans.md`), which the index is designed around.
 
 ## What the owner asked
 
@@ -59,7 +60,11 @@ Decided with the owner:
    - its name, code and icon;
    - the native languages it is taught from;
    - its path order;
-   - each file's path, size, SHA-256 and schema.
+   - each file's path, size, SHA-256 and schema;
+   - for the language picker that follows (`language-picker.md`): its own
+     name, script, whether it has script decks, and the words each path
+     unit has and plans, counted by the tool, so the app can calculate
+     completeness toward B1 without downloading the decks.
 
    The validator fails when the index is out of date, so CI keeps it
    current. The app reads it from `raw.githubusercontent.com`, with no
