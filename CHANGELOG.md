@@ -13,10 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Today now says how many words are due, not cards. Its review asks each word in one skill, so a word due in recognition and in speaking counts once. A skill's tile still reviews every word due in that skill, so it can hold more than the number on the tile.
 - In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language (#195).
 - Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it lets you practise: the sounds the languages you speak don't have. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards (#196).
 - Where the decks' texts come from has a page of its own: Settings shows one Sources row that opens it, in place of the whole list, so Settings is less crowded. With no sources to show, there is no row (#197).
+- Today now says how many words are due, not cards. Its review asks each word in one skill, so a word due in recognition and in speaking counts once. A skill's tile still reviews every word due in that skill, so it can hold more than the number on the tile (#200).
 
 ## [0.3.3] - 2026-10-05
 
