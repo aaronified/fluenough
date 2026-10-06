@@ -155,7 +155,9 @@ The scheme names 47 (Serbian/Croatian as one). Eight exist, so 39 are new.
 
 Each new language needs what an existing one has:
 
-- a path;
+- a path, with its B1 plan: the units up to B1, their milestones and
+  planned sizes, which the app reads to show completeness
+  (`language-picker.md`);
 - vocabulary and grammar decks;
 - facts, 30 or more (AGENTS.md);
 - sounds, number rules, a script guide, and its romanisation.
