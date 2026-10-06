@@ -17,10 +17,12 @@ Decided with the owner:
 - **The app checks both levels.** Each stroke is compared with the model
   for order, direction and shape, within a tolerance. If the app is wrong,
   the learner can override it with "I drew it right".
-- **Handwriting is a skill of its own, with reviews:**
-  - tracing comes first;
-  - drawing blind once tracing is passed;
-  - then spaced reviews like the other skills;
+- **Handwriting answers Write** (owner's decision, 2026-10-06; it replaces
+  "a skill of its own"): writing in the script by hand is one way to answer
+  a Write question (`skill-model.md`), not a schedule of its own:
+  - a letter is traced first, in the script units;
+  - then drawn blind;
+  - after that, Write's script questions can be answered by hand;
   - it can be switched off.
 - **First the letters and vowel signs:** vowels, consonants and vowel signs,
   about 70 per Indian script, plus hiragana and katakana. Conjuncts and
@@ -76,13 +78,13 @@ Decided with the owner:
    - the same check, more forgiving of position and size, since the drawing
      is scaled to its box first;
    - afterwards the model is shown beside the drawing.
-4. **Recorded as the `writing` skill:**
+4. **Recorded as Write:**
    - right first time is 5, right with forgiveness is 3, and wrong is 1;
    - "I drew it right" counts as right with forgiveness.
 5. **Where it appears:** after a character is taught in the script units,
    and then in reviews. A learner without the alphabet never sees it.
 6. **Tests** for stroke matching on drawn fixtures, the levels, the
-   override, and the skill's scheduling.
+   override, and recording as Write.
 
 ## To decide
 
