@@ -75,6 +75,20 @@ start, with no version built on the bundled decks:
 - The page lists every language on GitHub before any is downloaded.
 - Selecting a language starts its download, and the app is ready after its
   first five decks, as the deck-downloads plan decides.
+- **A download progress indicator** on the language's card while it
+  downloads (owner's request):
+  - a bar with the share downloaded, by bytes, and "12 of 58 decks";
+  - a mark on the bar where the first five decks end, with "Ready to start
+    after 5 decks", which turns to "Ready to start" once they are in. The
+    rest keep downloading behind it;
+  - a Cancel button, which keeps what is in and stops the rest;
+  - with no connection, or a failed file, the bar stops, says why and
+    offers Try again;
+  - Continue waits only for the first five decks of each newly chosen
+    language;
+  - for a screen reader, the start, the ready point, the end and any failure
+    are announced once each, not every percent, as the app update download
+    does.
 - The deck-downloads plan's index gains the fields above.
   `tools/deck_index.py` counts the words, and the validator checks the
   counts. That is easiest done when the index is first written.
@@ -102,6 +116,12 @@ start, with no version built on the bundled decks:
 - Twice the text size, both themes, screen-reader labels.
 - The catalog read from an index fixture; a language on the phone and one
   not yet downloaded.
+- Download progress, with a fake downloader:
+  - the bar and deck count advance;
+  - "Ready to start" appears after five decks, and Continue is enabled then;
+  - Cancel keeps what is in;
+  - a failure shows its reason and Try again resumes;
+  - the screen-reader announcements happen once each.
 
 ## To decide
 
@@ -113,8 +133,8 @@ start, with no version built on the bundled decks:
 
 ## Estimate
 
-- About 8–12 hours for the page, the catalog and the tests, after deck
-  downloads.
+- About 9–13 hours for the page, the catalog, the download progress and
+  the tests, after deck downloads.
 - About 1 hour more in the deck-downloads work, for the index fields.
 
 Confidence: medium.
