@@ -49,10 +49,10 @@ void main() {
     expect(find.byType(ImportErrorCard), findsNothing);
 
     // A tap on an incoming source says so and changes nothing.
-    await tester.tap(find.widgetWithText(GroupedTile, l10n.importAnki));
+    await tester.tap(find.widgetWithText(GroupedTile, l10n.importCsv));
     await tester.pumpAndSettle();
     expect(find.text(l10n.incomingSnackBar), findsOneWidget);
-    expect(find.text(l10n.importAnkiHelp), findsNothing);
+    expect(find.text(l10n.importFileHelp), findsOneWidget);
   });
 
   testWidgets('a link opens disabled: its field and Fetch', (tester) async {
