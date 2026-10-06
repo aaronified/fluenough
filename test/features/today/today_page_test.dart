@@ -87,6 +87,11 @@ Finder tileOf(WidgetTester tester, Skill skill) => find.descendant(
   matching: find.text(skill.label(l10nOf(tester))),
 );
 
+/// The large number on the due card, when it reads [n].
+Finder heroNumber(int n) => find.byWidgetPredicate(
+  (w) => w is Text && w.data == '$n' && w.style?.fontSize == 72,
+);
+
 /// The quick revision choice labelled [label].
 Finder chipOf(String label) => find.widgetWithText(ChoiceChip, label);
 
@@ -109,7 +114,7 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text(l10n.todayCardsDue(queue.length)), findsOneWidget);
+    expect(find.text(l10n.todayWordsDue(queue.length)), findsOneWidget);
     expect(find.text(l10n.todayMinutes(numbers.minutes)), findsOneWidget);
 
     final byMode = queue.countByMode();
@@ -127,6 +132,57 @@ void main() {
         reason: skill.name,
       );
     }
+  });
+
+  testWidgets('a word due in two skills is one word due, and Today says '
+      'words', (tester) async {
+    usePhone(tester);
+    // Eight words, each due in recognition and in speaking: sixteen pairs.
+    final state = await hindiReviewed(<DrillMode, Duration>{
+      DrillMode.recognition: const Duration(days: 3),
+      DrillMode.speaking: const Duration(days: 3),
+    }, speaking: true);
+    await pumpToday(tester, state: state);
+    final l10n = l10nOf(tester);
+
+    // Reviewed on its own, each skill holds all eight words...
+    for (final skill in <Skill>[Skill.recognition, Skill.speaking]) {
+      expect(
+        state.buildSession(DrillRequest(skill: skill)).length,
+        8,
+        reason: skill.name,
+      );
+    }
+    // ...but today's session asks a word once, in one skill.
+    final queue = state.buildSession(const DrillRequest.today());
+    expect(queue.length, 8);
+    expect(<String>{
+      for (final item in queue.items) item.card.id,
+    }, hasLength(8));
+
+    final numbers = TodayNumbers.of(state);
+    expect(numbers.due, 8);
+    expect(heroNumber(8), findsOneWidget);
+    expect(heroNumber(16), findsNothing);
+    expect(find.text(l10n.todayWordsDue(8)), findsOneWidget);
+    // The estimate is of the session, as it was: 8 at 20 seconds each.
+    expect(numbers.minutes, 3);
+    expect(find.text(l10n.todayMinutes(3)), findsOneWidget);
+
+    // The tiles are as they were: the word is in recognition's, and the
+    // speaking tile reads none due, though it still reviews the word.
+    expect(
+      find.bySemanticsLabel(l10n.todaySkillSemantics(l10n.skillRecognition, 8)),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(l10n.todaySkillSemantics(l10n.skillSpeaking, 0)),
+      findsOneWidget,
+    );
+
+    // The label is the owner's "words, not cards".
+    expect(l10n.todayWordsDue(1), 'word due');
+    expect(l10n.todayWordsDue(8), 'words due');
   });
 
   testWidgets('the header greets by time of day, with or without a name', (
