@@ -26,7 +26,7 @@ class GitHubReleaseNotes implements ReleaseNotesEngine {
     <String, String>{'per_page': '20'},
   );
 
-  /// Sent as the User-Agent, which GitHub's API requires: `fluenough/0.3.3`.
+  /// Sent as the User-Agent, which GitHub's API requires: `fluenough/0.3.4`.
   final String userAgent;
 
   /// How long the whole fetch may take, from connecting to the last byte.

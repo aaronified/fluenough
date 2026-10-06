@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.4] - 2026-10-06
+
 ### Added
 
 - What's new, in Settings > Updates: each release's notes, newest first, fetched from GitHub when you open the page, with the version you have marked Installed. "See all releases on GitHub" opens the rest in your browser. Nothing is asked of GitHub until you open it (#198).
@@ -131,7 +133,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release. For changes before this point, see the commit history.
 
-[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.3...HEAD
+[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.4...HEAD
+[0.3.4]: https://github.com/aaronified/fluenough/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/aaronified/fluenough/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/aaronified/fluenough/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/aaronified/fluenough/compare/v0.3.0...v0.3.1
