@@ -7,12 +7,11 @@ import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
-import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
-import '../../ui/widgets/target_text.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'taught_details.dart';
 
 /// Speaking (#89, ADR-0014): the meaning ("Say it in Hindi"), a microphone
 /// button, and what the phone's speech recogniser heard, graded like a
@@ -24,7 +23,8 @@ import 'drill_session.dart';
 /// for that language from then on, or not now, which skips its speaking
 /// cards for the rest of the session unrecorded.
 ///
-/// Build one per card (key it by the card's position).
+/// Once answered, the card shows what the word's lesson showed
+/// ([TaughtDetails]). Build one per card (key it by the card's position).
 class SpeakingDrill extends StatelessWidget {
   const SpeakingDrill({
     super.key,
@@ -70,7 +70,6 @@ class SpeakingDrill extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final answered = session.answer != null;
-    final reading = card.reading;
     return <Widget>[
       Text(
         l10n.drillSayIn(language.name),
@@ -86,36 +85,20 @@ class SpeakingDrill extends StatelessWidget {
           fontWeight: FontWeight.w600,
         ),
       ),
-      if (answered) ...<Widget>[
-        if (reading != null && !session.learnsAlphabet)
-          ReadingFirst(
-            reading: reading,
-            target: card.target,
-            language: language,
-            fontSize: 28,
-            color: scheme.primary,
-          )
-        else ...<Widget>[
-          TargetText.card(
-            card.target,
-            language: language,
-            fontSize: 28,
-            color: scheme.primary,
-          ),
-          if (reading != null)
-            Text(
-              reading,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyLarge!.copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-        ],
-        // Only once answered: hearing it first would be saying it after
-        // the phone.
-        if (session.canPlay)
-          Speaker(onPlay: session.play, playing: session.playing),
-      ],
+      if (answered)
+        // The meaning is the prompt above. Only now: hearing it first would
+        // be saying it after the phone.
+        TaughtDetails(
+          card: card,
+          language: language,
+          reading: TaughtReading.inReview(session),
+          wordSize: 28,
+          wordColor: scheme.primary,
+          meaning: false,
+          between: session.canPlay
+              ? Speaker(onPlay: session.play, playing: session.playing)
+              : null,
+        ),
     ];
   }
 

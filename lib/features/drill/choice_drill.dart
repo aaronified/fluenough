@@ -14,6 +14,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'taught_details.dart';
 
 /// Multiple choice (ADR-0024), recorded as soon as an option is picked:
 ///
@@ -25,8 +26,8 @@ import 'drill_session.dart';
 /// Words to choose show their reading first until the script is expected
 /// of the learner, as typed answers start in Latin letters then. The word
 /// has its speaker from the start when it is shown, and once answered when
-/// it is chosen. Build one
-/// per card (key it by the card's position).
+/// it is chosen. Once answered, the card shows what the word's lesson showed
+/// ([TaughtDetails]). Build one per card (key it by the card's position).
 class ChoiceDrill extends StatelessWidget {
   const ChoiceDrill({super.key, required this.session, required this.onClose});
 
@@ -160,7 +161,14 @@ class ChoiceDrill extends StatelessWidget {
       ],
       // From the start: the word is shown anyway.
       ?_speaker(),
-      if (answered) _notes(context, card),
+      // The word is on the card already: what its lesson showed under it.
+      if (answered)
+        TaughtDetails(
+          card: card,
+          language: language,
+          reading: TaughtReading.inReview(session),
+          word: false,
+        ),
     ];
   }
 
@@ -200,7 +208,17 @@ class ChoiceDrill extends StatelessWidget {
         ),
       ),
       // Only once answered: hearing the word would give the answer away.
-      if (answered) ...<Widget>[?_speaker(), _notes(context, card)],
+      // The meaning is the prompt above.
+      if (answered)
+        TaughtDetails(
+          card: card,
+          language: language,
+          reading: TaughtReading.inReview(session),
+          wordSize: 28,
+          wordColor: scheme.primary,
+          meaning: false,
+          between: _speaker(),
+        ),
     ];
   }
 
@@ -239,35 +257,14 @@ class ChoiceDrill extends StatelessWidget {
         ),
       ),
       if (answered)
-        Text(
-          card.native,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.bodyLarge!.copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
+        TaughtDetails(
+          card: card,
+          language: language,
+          reading: TaughtReading.inReview(session),
+          wordSize: 28,
+          wordColor: scheme.primary,
         ),
     ];
-  }
-
-  /// The card's notes, once answered, or nothing.
-  Widget _notes(BuildContext context, Card card) {
-    final notes = card.notes;
-    if (notes == null) return const SizedBox.shrink();
-    final theme = Theme.of(context);
-    // Padding, not a max-width box: DrillFrame measures the card's
-    // intrinsic height (see RecognitionDrill).
-    return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
-      child: Text(
-        notes,
-        textAlign: TextAlign.center,
-        style: theme.textTheme.bodyLarge!.copyWith(
-          fontSize: 15,
-          height: 22 / 15,
-          color: theme.colorScheme.onSurfaceVariant,
-        ),
-      ),
-    );
   }
 }
 
