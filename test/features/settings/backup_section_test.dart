@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/ui/widgets/snack.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/links.dart';
@@ -125,6 +126,6 @@ void main() {
     );
     await tester.tap(dropbox);
     await tester.pumpAndSettle();
-    expect(find.byType(SnackBar), findsNothing);
+    expect(find.byType(AppToast), findsNothing);
   });
 }
