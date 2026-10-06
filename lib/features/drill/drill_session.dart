@@ -568,7 +568,7 @@ class DrillSession extends ChangeNotifier {
   }
 
   /// Speaks [card]'s target once, at the learner's rate: a word tile of a
-  /// match, tapped while words play automatically.
+  /// match, tapped while its speaker button is on (ADR-0032).
   Future<void> playCard(Card card) => _state.speak(
     card.target,
     _state.deckOf(card)?.language ?? deck.language,

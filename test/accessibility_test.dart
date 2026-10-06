@@ -15,6 +15,7 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
+import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
@@ -293,6 +294,11 @@ void main() {
       'listening',
       DrillRequest.deck('es-en-core-100', skill: Skill.listening),
       const DrillPreset(),
+    ),
+    (
+      'match pairs, with its tap-to-hear button',
+      DrillRequest.untaught('es-en-core-100', skill: Skill.recognition),
+      const DrillPreset(target: 'la casa', ask: Ask.matchPairs),
     ),
     (
       'number practice',
