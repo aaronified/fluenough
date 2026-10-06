@@ -11,7 +11,8 @@ Written 2026-10-06.
 > the script right there as well.
 
 Asked whether to build it or plan it: "plan it in a way that can adapt to
-the deck download feature" (`decks-from-github.md`).
+the deck download feature" (`decks-from-github.md`). Then: "Language picker
+will be built after the deck download feature."
 
 ## What exists
 
@@ -60,23 +61,23 @@ search and list guidance.
    name, completeness and native languages in its label. It works at twice
    the text size, and in both themes.
 
-## Adapting to deck downloads
+## Built on deck downloads
 
-The page reads a **language catalog**, not the loaded decks:
+It comes after `decks-from-github.md`, so it reads the deck index from the
+start, with no version built on the bundled decks:
 
 - `LanguageCatalog` in `lib/core`, free of Flutter, lists `CatalogLanguage`
-  entries:
+  entries from `decks/index.json`:
   - code, English name, own name, icon, script;
   - native languages taught from;
   - words taught, B1 target, script decks or not;
-  - and later size and whether it is on the phone.
-- **Today** it is built from the bundled decks.
-- **With downloads** it is built from `decks/index.json`, so the page lists
-  every language on GitHub before any is downloaded. The index gains the
-  fields above. `tools/deck_index.py` counts the words, and the validator
-  checks the counts.
-- Selecting a language then starts its download (the deck-downloads plan's
-  "ready after five decks"). The page itself does not change.
+  - size, and whether it is on the phone.
+- The page lists every language on GitHub before any is downloaded.
+- Selecting a language starts its download, and the app is ready after its
+  first five decks, as the deck-downloads plan decides.
+- The deck-downloads plan's index gains the fields above.
+  `tools/deck_index.py` counts the words, and the validator checks the
+  counts. That is easiest done when the index is first written.
 
 ## What the data needs
 
@@ -99,8 +100,8 @@ The page reads a **language catalog**, not the loaded decks:
   when there are two or more.
 - Removal asks first; first launch has no back.
 - Twice the text size, both themes, screen-reader labels.
-- The catalog built from decks and from an index fixture gives the same
-  page.
+- The catalog read from an index fixture; a language on the phone and one
+  not yet downloaded.
 
 ## To decide
 
@@ -112,7 +113,8 @@ The page reads a **language catalog**, not the loaded decks:
 
 ## Estimate
 
-- About 8–12 hours for the page, the catalog and the tests.
+- About 8–12 hours for the page, the catalog and the tests, after deck
+  downloads.
 - About 1 hour more in the deck-downloads work, for the index fields.
 
 Confidence: medium.
