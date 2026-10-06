@@ -191,6 +191,9 @@ void main() {
         200,
         scrollable: find.byType(Scrollable).first,
       );
+      // Already built below the screen, the button is only jumped to, with no
+      // drag: lay it out there before tapping it.
+      await tester.pumpAndSettle();
       expect(find.text(l10n.importChecked), findsOneWidget);
       expect(find.text('My words'), findsOneWidget);
       expect(find.text(l10n.importDeckMeta(3, 'CC0-1.0')), findsOneWidget);

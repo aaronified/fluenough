@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Messages that pop up now show at the top, just under the title bar, instead of at the bottom, where they covered the buttons you press next. A tap goes through one to whatever is under it, and it goes by itself after four seconds (#199).
 - Today now says how many words are due, not cards. Its review asks each word in one skill, so a word due in recognition and in speaking counts once. A skill's tile still reviews every word due in that skill, so it can hold more than the number on the tile (#200).
 
+### Removed
+
+- Add a deck no longer offers From Anki, which was shown as coming. Decks now carry paths, readings, IPA and grammar that an Anki deck has no place for, so it is not planned (#391).
+
 ## [0.3.3] - 2026-10-05
 
 ### Added

@@ -64,7 +64,7 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     id: 'import',
     section: GallerySection.learn,
     label: 'Add a deck', // ui-literal-ok: debug-only gallery
-    note: 'File, link, CSV or Anki', // ui-literal-ok: debug-only gallery
+    note: 'File, link or CSV', // ui-literal-ok: debug-only gallery
     builder: (_) => const ImportPage(),
   ),
   GalleryEntry(
