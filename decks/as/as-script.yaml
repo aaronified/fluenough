@@ -29,7 +29,7 @@ features:
   - id: assamese-letters
     name: "Two letters of Assamese's own"
     example: "ৰ"
-    text: "ৰ (r) is ব with a slanting stroke across it, and ৱ (w) is ব with a stroke below. Bengali writes r as র, ব with a dot below, and has no w letter at all. Look closely at ব, ৰ and ৱ: one stroke tells them apart."
+    text: "ৰ (r) is ব (bô) with a slanting stroke across it, and ৱ (w) is ব (bô) with a stroke below. Bengali writes r as র (rô), ব (bô) with a dot below, and has no w letter at all. Look closely at ব (bô), ৰ (rô) and ৱ (wô): one stroke tells them apart."
     letters: ["ব", "ৰ", "ৱ"]
   - id: rows
     name: "Rows of five"
@@ -37,22 +37,22 @@ features:
     reading: "bôrgô"
     ipa: "bɔɹɡɔ"
     example: "ক"
-    text: "Most consonants come in five rows of five, each named after its first letter: ক-বৰ্গ, চ-বৰ্গ, ট-বৰ্গ, ত-বৰ্গ and প-বৰ্গ. The columns work the same way in every row: plain (ক), with a breath (খ), voiced (গ), voiced with a breath (ঘ), and through the nose (ঙ). Assamese no longer says every row as Sanskrit did: the চ row is s and z, and the ট row sounds like the ত row."
+    text: "Most consonants come in five rows of five, each named after its first letter: ক-বৰ্গ (kô-bôrg), চ-বৰ্গ (sô-bôrg), ট-বৰ্গ (tô-bôrg), ত-বৰ্গ (tô-bôrg) and প-বৰ্গ (pô-bôrg). The columns work the same way in every row: plain (ক), with a breath (খ), voiced (গ), voiced with a breath (ঘ), and through the nose (ঙ). Assamese no longer says every row as Sanskrit did: the চ (sô) row is s and z, and the ট (tô) row sounds like the ত (tô) row."
     letters: ["ক", "খ", "গ", "ঘ", "ঙ", "চ", "ছ", "জ", "ঝ", "ঞ", "ট", "ঠ", "ড", "ঢ", "ণ", "ত", "থ", "দ", "ধ", "ন", "প", "ফ", "ব", "ভ", "ম"]
   - id: same-sound
     name: "Several letters, one sound"
     example: "স"
-    text: "Spelling keeps letters that Assamese says alike. স, শ and ষ are all x, a rasp at the back of the mouth; চ and ছ are both s; জ, ঝ and য are z, written j in chat; ত and ট are one t. Learn each word's spelling as you meet it."
+    text: "Spelling keeps letters that Assamese says alike. স (xô), শ (xô) and ষ (xô) are all x, a rasp at the back of the mouth; চ (sô) and ছ (sô) are both s; জ (zô), ঝ (zô) and য (zô) are z, written j in chat; ত (tô) and ট (tô) are one t. Learn each word's spelling as you meet it."
     letters: ["স", "শ", "ষ", "চ", "ছ", "জ", "য"]
   - id: inherent-vowel
     name: "The vowel you don't see"
     example: "ক"
-    text: "Every consonant carries a vowel unless a sign changes it: the open o of অ, like the aw in 'awe'. ক alone is ko. So কলম is kolom, with no vowel written at all."
+    text: "Every consonant carries a vowel unless a sign changes it: the open o of অ (ô), like the aw in 'awe'. ক (kô) alone is ko. So কলম (kôlôm) is kolom, with no vowel written at all."
     letters: ["ক", "কল", "কলম"]
   - id: final-vowel
     name: "The last o is usually not said"
     example: "ঘৰ"
-    text: "At the end of most words the carried o goes quiet: ঘৰ is ghor, not ghoro, and অসম is oxom. Some forms keep it, such as যাব (zābô), will go, so learn each word as it's said."
+    text: "At the end of most words the carried o goes quiet: ঘৰ (ghôr) is ghor, not ghoro, and অসম (ôxôm) is oxom. Some forms keep it, such as যাব (zābô), will go, so learn each word as it's said."
     letters: ["ঘৰ", "কলম", "অসম"]
   - id: vowel-signs
     name: "Vowels as signs on a letter"
@@ -60,12 +60,12 @@ features:
     reading: "ākār, ikār"
     ipa: "akaɹ ikaɹ"
     example: "কি"
-    text: "After a consonant a vowel is a sign on it, not a letter of its own, named after its vowel: আকাৰ is the sign for আ. ি, ে and ৈ are written before the consonant but said after it: you see ি then ক, and say ki. ো and ৌ go on both sides: কো is ko."
+    text: "After a consonant a vowel is a sign on it, not a letter of its own, named after its vowel: আকাৰ (ākār) is the sign for আ (ā). ি (i), ে (e) and ৈ (ôi) are written before the consonant but said after it: you see ি (i) then ক (kô), and say ki. ো (u) and ৌ (ôu) go on both sides: কো (ko) is ko."
     letters: ["কা", "কি", "কু", "কে", "কো", "কৌ"]
   - id: apostrophe
     name: "An apostrophe for o"
     example: "ক'ত"
-    text: "Assamese writes an apostrophe after a letter to show that its vowel is a closed o, not the open o it would carry: ক'ত (kot, where), হ'ল (hol, it became), ল'ৰা (lora, boy). Casual typing often leaves it out."
+    text: "Assamese writes an apostrophe after a letter to show that its vowel is a closed o, not the open o it would carry: ক (kô)'ত (kot, where), হ (hô)'ল (hol, it became), ল (lô)'ৰা (lora, boy). Casual typing often leaves it out."
     letters: ["ক'ত", "হ'ল", "ল'ৰা"]
   - id: hoxonto
     name: "The mark that takes the vowel away"
@@ -81,25 +81,25 @@ features:
     reading: "zuktākkhôr"
     ipa: "zuktakkʰɔɹ"
     example: "ক্ষ"
-    text: "Two consonants with no vowel between them are written as one shape, side by side or one above the other. Some look nothing like their parts: ক্ষ is ক and ষ."
+    text: "Two consonants with no vowel between them are written as one shape, side by side or one above the other. Some look nothing like their parts: ক্ষ (kkhô) is ক (kô) and ষ (xô)."
     letters: ["ক্ত", "ন্দ", "স্ত", "ক্ষ", "জ্ঞ"]
   - id: r-forms
-    name: "ৰ written as a stroke"
+    name: "ৰ (rô) written as a stroke"
     example: "প্ৰ"
-    text: "Next to another consonant ৰ isn't written in full. After it, it's a stroke at its foot (প্ৰ); before it, a small hook on top, the reph (ৰ্ম)."
+    text: "Next to another consonant ৰ (rô) isn't written in full. After it, it's a stroke at its foot (প্ৰ); before it, a small hook on top, the reph (ৰ্ম)."
     letters: ["প্ৰ", "ক্ৰ", "ত্ৰ", "ৰ্ম"]
   - id: phola
-    name: "য written as a sign"
+    name: "য (zô) written as a sign"
     term: "য-ফলা"
     reading: "zô-phôlā"
     ipa: "zɔpʰɔla"
     example: "ব্য"
-    text: "After a consonant য is written as a hook beside it (ব্য), said as a y glide: ব্যস্ত (byôstô, busy)."
+    text: "After a consonant য (zô) is written as a hook beside it (ব্য), said as a y glide: ব্যস্ত (byôstô, busy)."
     letters: ["ব্য", "ত্য"]
   - id: dot-below
     name: "A dot below makes another letter"
     example: "য়"
-    text: "Some letters differ only by a dot below: ড and ড়, ঢ and ঢ়, য and য়. Look for the dot every time. য is z, but য় is y; ড় is said like ৰ."
+    text: "Some letters differ only by a dot below: ড (dô) and ড় (rô), ঢ (dhô) and ঢ় (rhô), য (zô) and য় (yô). Look for the dot every time. য (zô) is z, but য় (yô) is y; ড় (rô) is said like ৰ (rô)."
     letters: ["ড", "ড়", "ঢ", "ঢ়", "য", "য়"]
   - id: nasal-marks
     name: "The moon and the circle"
@@ -107,10 +107,10 @@ features:
     reading: "sôndrobindu"
     ipa: "sɔndɹobindu"
     example: "বাঁ"
-    text: "The moon and dot ঁ above a letter makes its vowel nasal, said through the nose as well, and it changes the word: বাহ (bāh) is a nest, বাঁহ (bām̐h, said through the nose) bamboo. Chat leaves it out. The small circle ং after a vowel is ng: ৰং (rôṅ, colour)."
+    text: "The moon and dot ঁ (ôm̐) above a letter makes its vowel nasal, said through the nose as well, and it changes the word: বাহ (bāh) is a nest, বাঁহ (bām̐h, said through the nose) bamboo. Chat leaves it out. The small circle ং (ôṅ) after a vowel is ng: ৰং (rôṅ, colour)."
     letters: ["কাঁ", "বাঁ", "পাঁ", "ৰং"]
   - id: digits
     name: "Assamese digits"
     example: "৪"
-    text: "Assamese writes the same digits as Bengali, in prices, dates and phone numbers. ৪ is 4, though it looks like an 8, and ৮ is 8."
+    text: "Assamese writes the same digits as Bengali, in prices, dates and phone numbers. ৪ (4) is 4, though it looks like an 8, and ৮ (8) is 8."
     letters: ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]

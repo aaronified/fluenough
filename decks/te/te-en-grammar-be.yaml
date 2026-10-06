@@ -1,20 +1,20 @@
 schema: 1
 id: te-en-grammar-be
-name: "To be: ఉండు and కాదు"
+name: "To be: ఉండు (uṇḍu) and కాదు (kādu)"
 kind: grammar
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "Is, was, isn't, will be: ఉండు for where and how things are, no verb at all for what someone is, and కాదు for what someone is not. Not yet checked by a Telugu speaker: please report any mistake."
+description: "Is, was, isn't, will be: ఉండు (uṇḍu) for where and how things are, no verb at all for what someone is, and కాదు (kādu) for what someone is not. Not yet checked by a Telugu speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
-  name: "ఉండు by tense"
+  name: "ఉండు (uṇḍu) by tense"
   slot_name: "person"
   slots: ["నేను", "మేము", "నువ్వు", "మీరు", "అతను", "ఆమె / అది", "వాళ్ళు"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "ఉండు says where or how someone is: నేను ఇంట్లో ఉన్నాను, I'm at home. To say what someone is, Telugu needs no verb: ఆయన డాక్టర్, he's a doctor. With నేను, మేము and నువ్వు the noun takes an ending instead: నేను విద్యార్థిని, మేము విద్యార్థులం, నువ్వు విద్యార్థివి. ఉన్నాను is also the past: నిన్న నేను ఇంట్లో ఉన్నాను, I was at home yesterday. 'Is not somewhere' is a verb of its own, లేను, లేదు …: నేను ఇంట్లో లేను, I'm not at home. 'Is not something' is కాను, కాదు …: ఇది నీళ్ళు కాదు, this isn't water. The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing. మీరు, plural or respectful, takes the plural."
+  notes: "ఉండు (uṇḍu) says where or how someone is: నేను ఇంట్లో ఉన్నాను (nēnu iṇṭlō unnānu), I'm at home. To say what someone is, Telugu needs no verb: ఆయన డాక్టర్ (āyana ḍākṭar), he's a doctor. With నేను (nēnu), మేము (mēmu) and నువ్వు (nuvvu) the noun takes an ending instead: నేను విద్యార్థిని (nēnu vidyārthini), మేము విద్యార్థులం (mēmu vidyārthulam), నువ్వు విద్యార్థివి (nuvvu vidyārthivi). ఉన్నాను (unnānu) is also the past: నిన్న నేను ఇంట్లో ఉన్నాను (ninna nēnu iṇṭlō unnānu), I was at home yesterday. 'Is not somewhere' is a verb of its own, లేను (lēnu), లేదు (lēdu) …: నేను ఇంట్లో లేను (nēnu iṇṭlō lēnu), I'm not at home. 'Is not something' is కాను (kānu), కాదు (kādu) …: ఇది నీళ్ళు కాదు (idi nīḷḷu kādu), this isn't water. The verb agrees with the doer's person and number. In the third person a man has a form of his own; a woman takes the same form as a thing. మీరు (mīru), plural or respectful, takes the plural."
   entries:
-    - lemma: "ఉండు, now or then"
+    - lemma: "ఉండు (uṇḍu), now or then"
       key: unnaanu
       reading: "uṇḍu, now or then"
       ipa: "uɳɖu"
@@ -43,7 +43,7 @@ pattern:
         "అతను": "unnaːɖu"
         "ఆమె / అది": "und̪i"
         "వాళ్ళు": "unnaːru"
-    - lemma: "ఉండు, not"
+    - lemma: "ఉండు (uṇḍu), not"
       key: leenu
       reading: "uṇḍu, not"
       ipa: "uɳɖu"
@@ -72,7 +72,7 @@ pattern:
         "అతను": "leːɖu"
         "ఆమె / అది": "leːd̪u"
         "వాళ్ళు": "leːru"
-    - lemma: "ఉండు, usually or later"
+    - lemma: "ఉండు (uṇḍu), usually or later"
       key: untaanu
       reading: "uṇḍu, usually or later"
       ipa: "uɳɖu"
@@ -101,7 +101,7 @@ pattern:
         "అతను": "uɳʈaːɖu"
         "ఆమె / అది": "uɳʈund̪i"
         "వాళ్ళు": "uɳʈaːru"
-    - lemma: "కాదు, not a …"
+    - lemma: "కాదు (kādu), not a …"
       key: kaadu
       reading: "kādu, not a..."
       ipa: "kaːd̪u"

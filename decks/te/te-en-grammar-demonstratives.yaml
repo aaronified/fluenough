@@ -5,168 +5,168 @@ kind: grammar
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "ఈ and ఆ, and the words built on them: this one, here, this way, so much. Not yet checked by a Telugu speaker: please report any mistake."
+description: "ఈ (ī) and ఆ (ā), and the words built on them: this one, here, this way, so much. Not yet checked by a Telugu speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 pattern:
   name: "Near and far"
   slot_name: "near or far"
-  slots: ["near: ఈ, ఇ-", "far: ఆ, అ-"]
+  slots: ["near: ఈ (ī), ఇ- (i-)", "far: ఆ (ā), అ- (a-)"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Words for near things start with ఇ- or ఈ-, words for far ones with అ- or ఆ- (people: వీళ్ళు and వాళ్ళు). ఈ and ఆ stand before a noun and never change: ఈ పుస్తకం, this book; ఆ ఇల్లు, that house."
+  notes: "Words for near things start with ఇ- (i-) or ఈ- (ī-), words for far ones with అ- (a-) or ఆ- (people: వీళ్ళు (vīḷḷu) and వాళ్ళు (vāḷḷu)). ఈ (ī) and ఆ (ā) stand before a noun and never change: ఈ పుస్తకం (ī pustakam), this book; ఆ ఇల్లు (ā illu), that house."
   entries:
     - lemma: "this, that (before a noun)"
       key: adj
       gloss: "before a noun"
       forms:
-        "near: ఈ, ఇ-": "ఈ"
-        "far: ఆ, అ-": "ఆ"
+        "near: ఈ (ī), ఇ- (i-)": "ఈ"
+        "far: ఆ (ā), అ- (a-)": "ఆ"
       readings:
-        "near: ఈ, ఇ-": "ī"
-        "far: ఆ, అ-": "ā"
+        "near: ఈ (ī), ఇ- (i-)": "ī"
+        "far: ఆ (ā), అ- (a-)": "ā"
       ipas:
-        "near: ఈ, ఇ-": "iː"
-        "far: ఆ, అ-": "aː"
+        "near: ఈ (ī), ఇ- (i-)": "iː"
+        "far: ఆ (ā), అ- (a-)": "aː"
     - lemma: "this one, that one (a thing)"
       key: thing
       gloss: "a thing"
       forms:
-        "near: ఈ, ఇ-": "ఇది"
-        "far: ఆ, అ-": "అది"
+        "near: ఈ (ī), ఇ- (i-)": "ఇది"
+        "far: ఆ (ā), అ- (a-)": "అది"
       readings:
-        "near: ఈ, ఇ-": "idi"
-        "far: ఆ, అ-": "adi"
+        "near: ఈ (ī), ఇ- (i-)": "idi"
+        "far: ఆ (ā), అ- (a-)": "adi"
       ipas:
-        "near: ఈ, ఇ-": "id̪i"
-        "far: ఆ, అ-": "ad̪i"
+        "near: ఈ (ī), ఇ- (i-)": "id̪i"
+        "far: ఆ (ā), అ- (a-)": "ad̪i"
     - lemma: "these, those (things)"
       key: things
       gloss: "things"
       forms:
-        "near: ఈ, ఇ-": "ఇవి"
-        "far: ఆ, అ-": "అవి"
+        "near: ఈ (ī), ఇ- (i-)": "ఇవి"
+        "far: ఆ (ā), అ- (a-)": "అవి"
       readings:
-        "near: ఈ, ఇ-": "ivi"
-        "far: ఆ, అ-": "avi"
+        "near: ఈ (ī), ఇ- (i-)": "ivi"
+        "far: ఆ (ā), అ- (a-)": "avi"
       ipas:
-        "near: ఈ, ఇ-": "iʋi"
-        "far: ఆ, అ-": "aʋi"
+        "near: ఈ (ī), ఇ- (i-)": "iʋi"
+        "far: ఆ (ā), అ- (a-)": "aʋi"
     - lemma: "this man, that man"
       key: man
       gloss: "a man"
       forms:
-        "near: ఈ, ఇ-": "ఇతను"
-        "far: ఆ, అ-": "అతను"
+        "near: ఈ (ī), ఇ- (i-)": "ఇతను"
+        "far: ఆ (ā), అ- (a-)": "అతను"
       readings:
-        "near: ఈ, ఇ-": "itanu"
-        "far: ఆ, అ-": "atanu"
+        "near: ఈ (ī), ఇ- (i-)": "itanu"
+        "far: ఆ (ā), అ- (a-)": "atanu"
       ipas:
-        "near: ఈ, ఇ-": "it̪anu"
-        "far: ఆ, అ-": "at̪anu"
+        "near: ఈ (ī), ఇ- (i-)": "it̪anu"
+        "far: ఆ (ā), అ- (a-)": "at̪anu"
     - lemma: "this woman, that woman"
       key: woman
       gloss: "a woman"
       forms:
-        "near: ఈ, ఇ-": "ఈమె"
-        "far: ఆ, అ-": "ఆమె"
+        "near: ఈ (ī), ఇ- (i-)": "ఈమె"
+        "far: ఆ (ā), అ- (a-)": "ఆమె"
       readings:
-        "near: ఈ, ఇ-": "īme"
-        "far: ఆ, అ-": "āme"
+        "near: ఈ (ī), ఇ- (i-)": "īme"
+        "far: ఆ (ā), అ- (a-)": "āme"
       ipas:
-        "near: ఈ, ఇ-": "iːme"
-        "far: ఆ, అ-": "aːme"
+        "near: ఈ (ī), ఇ- (i-)": "iːme"
+        "far: ఆ (ā), అ- (a-)": "aːme"
     - lemma: "this man, that man (respectful)"
       key: man-resp
       gloss: "a man, with respect"
       forms:
-        "near: ఈ, ఇ-": "ఈయన"
-        "far: ఆ, అ-": "ఆయన"
+        "near: ఈ (ī), ఇ- (i-)": "ఈయన"
+        "far: ఆ (ā), అ- (a-)": "ఆయన"
       readings:
-        "near: ఈ, ఇ-": "īyana"
-        "far: ఆ, అ-": "āyana"
+        "near: ఈ (ī), ఇ- (i-)": "īyana"
+        "far: ఆ (ā), అ- (a-)": "āyana"
       ipas:
-        "near: ఈ, ఇ-": "iːjana"
-        "far: ఆ, అ-": "aːjana"
+        "near: ఈ (ī), ఇ- (i-)": "iːjana"
+        "far: ఆ (ā), అ- (a-)": "aːjana"
     - lemma: "this woman, that woman (respectful)"
       key: woman-resp
       gloss: "a woman, with respect"
       forms:
-        "near: ఈ, ఇ-": "ఈవిడ"
-        "far: ఆ, అ-": "ఆవిడ"
+        "near: ఈ (ī), ఇ- (i-)": "ఈవిడ"
+        "far: ఆ (ā), అ- (a-)": "ఆవిడ"
       readings:
-        "near: ఈ, ఇ-": "īviḍa"
-        "far: ఆ, అ-": "āviḍa"
+        "near: ఈ (ī), ఇ- (i-)": "īviḍa"
+        "far: ఆ (ā), అ- (a-)": "āviḍa"
       ipas:
-        "near: ఈ, ఇ-": "iːʋiɖa"
-        "far: ఆ, అ-": "aːʋiɖa"
+        "near: ఈ (ī), ఇ- (i-)": "iːʋiɖa"
+        "far: ఆ (ā), అ- (a-)": "aːʋiɖa"
     - lemma: "these people, those people"
       key: people
       gloss: "people"
       forms:
-        "near: ఈ, ఇ-": "వీళ్ళు"
-        "far: ఆ, అ-": "వాళ్ళు"
+        "near: ఈ (ī), ఇ- (i-)": "వీళ్ళు"
+        "far: ఆ (ā), అ- (a-)": "వాళ్ళు"
       readings:
-        "near: ఈ, ఇ-": "vīḷḷu"
-        "far: ఆ, అ-": "vāḷḷu"
+        "near: ఈ (ī), ఇ- (i-)": "vīḷḷu"
+        "far: ఆ (ā), అ- (a-)": "vāḷḷu"
       ipas:
-        "near: ఈ, ఇ-": "ʋiːɭɭu"
-        "far: ఆ, అ-": "ʋaːɭɭu"
+        "near: ఈ (ī), ఇ- (i-)": "ʋiːɭɭu"
+        "far: ఆ (ā), అ- (a-)": "ʋaːɭɭu"
     - lemma: "here, there"
       key: place
       gloss: "place"
       forms:
-        "near: ఈ, ఇ-": "ఇక్కడ"
-        "far: ఆ, అ-": "అక్కడ"
+        "near: ఈ (ī), ఇ- (i-)": "ఇక్కడ"
+        "far: ఆ (ā), అ- (a-)": "అక్కడ"
       readings:
-        "near: ఈ, ఇ-": "ikkaḍa"
-        "far: ఆ, అ-": "akkaḍa"
+        "near: ఈ (ī), ఇ- (i-)": "ikkaḍa"
+        "far: ఆ (ā), అ- (a-)": "akkaḍa"
       ipas:
-        "near: ఈ, ఇ-": "ikkaɖa"
-        "far: ఆ, అ-": "akkaɖa"
+        "near: ఈ (ī), ఇ- (i-)": "ikkaɖa"
+        "far: ఆ (ā), అ- (a-)": "akkaɖa"
     - lemma: "this way, that way"
       key: direction
       gloss: "direction"
       forms:
-        "near: ఈ, ఇ-": "ఇటు"
-        "far: ఆ, అ-": "అటు"
+        "near: ఈ (ī), ఇ- (i-)": "ఇటు"
+        "far: ఆ (ā), అ- (a-)": "అటు"
       readings:
-        "near: ఈ, ఇ-": "iṭu"
-        "far: ఆ, అ-": "aṭu"
+        "near: ఈ (ī), ఇ- (i-)": "iṭu"
+        "far: ఆ (ā), అ- (a-)": "aṭu"
       ipas:
-        "near: ఈ, ఇ-": "iʈu"
-        "far: ఆ, అ-": "aʈu"
+        "near: ఈ (ī), ఇ- (i-)": "iʈu"
+        "far: ఆ (ā), అ- (a-)": "aʈu"
     - lemma: "like this, like that"
       key: manner
       gloss: "manner"
       forms:
-        "near: ఈ, ఇ-": "ఇలా"
-        "far: ఆ, అ-": "అలా"
+        "near: ఈ (ī), ఇ- (i-)": "ఇలా"
+        "far: ఆ (ā), అ- (a-)": "అలా"
       readings:
-        "near: ఈ, ఇ-": "ilā"
-        "far: ఆ, అ-": "alā"
+        "near: ఈ (ī), ఇ- (i-)": "ilā"
+        "far: ఆ (ā), అ- (a-)": "alā"
       ipas:
-        "near: ఈ, ఇ-": "ilaː"
-        "far: ఆ, అ-": "alaː"
+        "near: ఈ (ī), ఇ- (i-)": "ilaː"
+        "far: ఆ (ā), అ- (a-)": "alaː"
     - lemma: "this much, that much"
       key: amount
       gloss: "amount"
       forms:
-        "near: ఈ, ఇ-": "ఇంత"
-        "far: ఆ, అ-": "అంత"
+        "near: ఈ (ī), ఇ- (i-)": "ఇంత"
+        "far: ఆ (ā), అ- (a-)": "అంత"
       readings:
-        "near: ఈ, ఇ-": "inta"
-        "far: ఆ, అ-": "anta"
+        "near: ఈ (ī), ఇ- (i-)": "inta"
+        "far: ఆ (ā), అ- (a-)": "anta"
       ipas:
-        "near: ఈ, ఇ-": "int̪a"
-        "far: ఆ, అ-": "ant̪a"
+        "near: ఈ (ī), ఇ- (i-)": "int̪a"
+        "far: ఆ (ā), అ- (a-)": "ant̪a"
     - lemma: "now, then"
       key: time
       gloss: "time"
       forms:
-        "near: ఈ, ఇ-": "ఇప్పుడు"
-        "far: ఆ, అ-": "అప్పుడు"
+        "near: ఈ (ī), ఇ- (i-)": "ఇప్పుడు"
+        "far: ఆ (ā), అ- (a-)": "అప్పుడు"
       readings:
-        "near: ఈ, ఇ-": "ippuḍu"
-        "far: ఆ, అ-": "appuḍu"
+        "near: ఈ (ī), ఇ- (i-)": "ippuḍu"
+        "far: ఆ (ā), అ- (a-)": "appuḍu"
       ipas:
-        "near: ఈ, ఇ-": "ippuɖu"
-        "far: ఆ, అ-": "appuɖu"
+        "near: ఈ (ī), ఇ- (i-)": "ippuɖu"
+        "far: ఆ (ā), అ- (a-)": "appuɖu"

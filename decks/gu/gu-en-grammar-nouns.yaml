@@ -5,14 +5,14 @@ kind: grammar
 language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
 native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
-description: "How a noun changes for the plural, and before an ending such as -માં, -ને or -નું. Not yet checked by a Gujarati speaker: please report any mistake."
+description: "How a noun changes for the plural, and before an ending such as -માં (-mām̐), -ને (-ne) or -નું (-num̐). Not yet checked by a Gujarati speaker: please report any mistake."
 tags: [beginner, grammar, unreviewed]
 pattern:
   name: "Noun forms"
   slot_name: "form"
-  slots: ["plural", "before an ending (-માં, -ને, -નું)"]
+  slots: ["plural", "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))"]
   prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "A masculine noun in -ઓ ends in -આ in the plural and before an ending: છોકરો, છોકરા, છોકરાને. A neuter noun in -ઉં ends in -આં in the plural and -આ before an ending: કેળું, કેળાં, કેળાનું. Other nouns add -ઓ for the plural and don't change before an ending. Many speakers add -ઓ to a plural that already shows it: છોકરાઓ."
+  notes: "A masculine noun in -ઓ (-o) ends in -આ (-ā) in the plural and before an ending: છોકરો (chokro), છોકરા (chokrā), છોકરાને (chokrāne). A neuter noun in -ઉં (-um̐) ends in -આં (-ām̐) in the plural and -આ (-ā) before an ending: કેળું (keḷum̐), કેળાં (keḷām̐), કેળાનું (keḷānum̐). Other nouns add -ઓ (-o) for the plural and don't change before an ending. Many speakers add -ઓ (-o) to a plural that already shows it: છોકરાઓ (chokrāo)."
   entries:
     - lemma: "છોકરો"
       key: chhokro
@@ -21,13 +21,13 @@ pattern:
       gloss: "boy, m"
       forms:
         "plural": ["છોકરા", "છોકરાઓ"]
-        "before an ending (-માં, -ને, -નું)": "છોકરા"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "છોકરા"
       readings:
         "plural": ["chokrā", "chokrāo"]
-        "before an ending (-માં, -ને, -નું)": "chokrā"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "chokrā"
       ipas:
         "plural": "tʃʰokra"
-        "before an ending (-માં, -ને, -નું)": "tʃʰokra"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "tʃʰokra"
     - lemma: "રસ્તો"
       key: rasto
       reading: "rasto"
@@ -35,13 +35,13 @@ pattern:
       gloss: "road, m"
       forms:
         "plural": ["રસ્તા", "રસ્તાઓ"]
-        "before an ending (-માં, -ને, -નું)": "રસ્તા"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "રસ્તા"
       readings:
         "plural": ["rastā", "rastāo"]
-        "before an ending (-માં, -ને, -નું)": "rastā"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "rastā"
       ipas:
         "plural": "rəst̪a"
-        "before an ending (-માં, -ને, -નું)": "rəst̪a"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "rəst̪a"
     - lemma: "કેળું"
       key: kelun
       reading: "keḷum̐"
@@ -49,13 +49,13 @@ pattern:
       gloss: "banana, n"
       forms:
         "plural": "કેળાં"
-        "before an ending (-માં, -ને, -નું)": "કેળા"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "કેળા"
       readings:
         "plural": "keḷām̐"
-        "before an ending (-માં, -ને, -નું)": "keḷā"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "keḷā"
       ipas:
         "plural": "keɭã"
-        "before an ending (-માં, -ને, -નું)": "keɭa"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "keɭa"
     - lemma: "રસોડું"
       key: rasodun
       reading: "rasoḍum̐"
@@ -63,13 +63,13 @@ pattern:
       gloss: "kitchen, n"
       forms:
         "plural": "રસોડાં"
-        "before an ending (-માં, -ને, -નું)": "રસોડા"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "રસોડા"
       readings:
         "plural": "rasoḍām̐"
-        "before an ending (-માં, -ને, -નું)": "rasoḍā"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "rasoḍā"
       ipas:
         "plural": "rəsoɖã"
-        "before an ending (-માં, -ને, -નું)": "rəsoɖa"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "rəsoɖa"
     - lemma: "ઘર"
       key: ghar
       reading: "ghar"
@@ -77,13 +77,13 @@ pattern:
       gloss: "house, n"
       forms:
         "plural": ["ઘરો", "ઘર"]
-        "before an ending (-માં, -ને, -નું)": "ઘર"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "ઘર"
       readings:
         "plural": ["gharo", "ghar"]
-        "before an ending (-માં, -ને, -નું)": "ghar"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "ghar"
       ipas:
         "plural": "ɡʱəro"
-        "before an ending (-માં, -ને, -નું)": "ɡʱər"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "ɡʱər"
     - lemma: "માણસ"
       key: maanas
       reading: "māṇas"
@@ -91,13 +91,13 @@ pattern:
       gloss: "person, m"
       forms:
         "plural": "માણસો"
-        "before an ending (-માં, -ને, -નું)": "માણસ"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "માણસ"
       readings:
         "plural": "māṇso"
-        "before an ending (-માં, -ને, -નું)": "māṇas"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "māṇas"
       ipas:
         "plural": "maɳso"
-        "before an ending (-માં, -ને, -નું)": "maɳəs"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "maɳəs"
     - lemma: "ભાઈ"
       key: bhaaii
       reading: "bhāi"
@@ -105,13 +105,13 @@ pattern:
       gloss: "brother, m"
       forms:
         "plural": ["ભાઈઓ", "ભાઈ"]
-        "before an ending (-માં, -ને, -નું)": "ભાઈ"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "ભાઈ"
       readings:
         "plural": ["bhāio", "bhāi"]
-        "before an ending (-માં, -ને, -નું)": "bhāi"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "bhāi"
       ipas:
         "plural": "bʱaio"
-        "before an ending (-માં, -ને, -નું)": "bʱai"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "bʱai"
     - lemma: "છોકરી"
       key: chhokrii
       reading: "chokri"
@@ -119,13 +119,13 @@ pattern:
       gloss: "girl, f"
       forms:
         "plural": "છોકરીઓ"
-        "before an ending (-માં, -ને, -નું)": "છોકરી"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "છોકરી"
       readings:
         "plural": "chokrio"
-        "before an ending (-માં, -ને, -નું)": "chokri"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "chokri"
       ipas:
         "plural": "tʃʰokrio"
-        "before an ending (-માં, -ને, -નું)": "tʃʰokri"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "tʃʰokri"
     - lemma: "વાત"
       key: vaat
       reading: "vāt"
@@ -133,13 +133,13 @@ pattern:
       gloss: "talk; a matter, f"
       forms:
         "plural": "વાતો"
-        "before an ending (-માં, -ને, -નું)": "વાત"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "વાત"
       readings:
         "plural": "vāto"
-        "before an ending (-માં, -ને, -નું)": "vāt"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "vāt"
       ipas:
         "plural": "ʋat̪o"
-        "before an ending (-માં, -ને, -નું)": "ʋat̪"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "ʋat̪"
     - lemma: "બારી"
       key: baarii
       reading: "bāri"
@@ -147,10 +147,10 @@ pattern:
       gloss: "window, f"
       forms:
         "plural": "બારીઓ"
-        "before an ending (-માં, -ને, -નું)": "બારી"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "બારી"
       readings:
         "plural": "bārio"
-        "before an ending (-માં, -ને, -નું)": "bāri"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "bāri"
       ipas:
         "plural": "bario"
-        "before an ending (-માં, -ને, -નું)": "bari"
+        "before an ending (-માં (-mām̐), -ને (-ne), -નું (-num̐))": "bari"
