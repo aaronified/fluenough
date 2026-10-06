@@ -11,9 +11,6 @@ const Set<Feature> noIssueYet = {
   Feature.importCsv,
   Feature.colourSeeds,
   Feature.dynamicColour,
-  Feature.profiles,
-  Feature.pinLock,
-  Feature.deleteProfile,
   Feature.voiceSettingsLink,
 };
 
