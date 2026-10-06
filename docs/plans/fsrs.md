@@ -1,7 +1,9 @@
 # Plan: replace SM-2 with FSRS
 
-Written 2026-10-05. `difficulty-by-skill.md` builds on this plan, and on
-nothing else.
+Written 2026-10-05. **Lands together with `skill-model.md`** (owner's
+choice, 2026-10-06): one migration and one replay of the log, keyed by the
+new schedules (Hear, Say, Write; grammar understood and produced), not by
+today's modes. `difficulty-by-skill.md` builds on this plan.
 
 ## What the owner asked
 

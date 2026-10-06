@@ -94,9 +94,10 @@ moves under it.
 
 ## To decide
 
-- **"A lot more sources":** more research and standards on the page, more
-  sources for the decks' content (dictionaries, frequency lists,
-  Wiktionary, more public-domain books), or both.
+- **Which sources first:** the owner wants both more research and
+  standards, and more sources for the decks' content (dictionaries,
+  frequency lists, Wiktionary, public-domain books). Which ones, per
+  language, is still open.
 - **The file:** a new file kind, which needs the owner's answer
   (AGENTS.md), or a section of an existing one.
 - Whether the page shows how sure each line is, as the plans do.
