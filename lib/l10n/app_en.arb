@@ -525,9 +525,9 @@
   "@todayDueSection": {
     "description": "Screen-reader name of the card showing what is due."
   },
-  "todayCardsDue": "{count, plural, =1{card due} other{cards due}}",
-  "@todayCardsDue": {
-    "description": "Beside the large number of cards due today, which is shown separately. The count only picks the form.",
+  "todayWordsDue": "{count, plural, =1{word due} other{words due}}",
+  "@todayWordsDue": {
+    "description": "Beside the large number of words due today, which is shown separately. A word counts once, however many of its skills are due: today's review asks it in one. The count only picks the form.",
     "placeholders": {
       "count": {
         "type": "int",
