@@ -238,5 +238,33 @@ List<String> wordsOf(String text) => <String>[
     if (_letter.hasMatch(word)) word,
 ];
 
+/// The tiles of [text] to put in order (#347): its [wordsOf] in lowercase,
+/// without the marks at their edges, which are tiles of their own, so that
+/// neither a capital nor a mark shows where a word goes. An apostrophe or a
+/// hyphen inside a word stays in it.
+List<String> tilesOf(String text) {
+  final tiles = <String>[];
+  for (final word in wordsOf(text)) {
+    final parts = _edges.firstMatch(word)!;
+    tiles
+      ..addAll(_characters(parts[1]!))
+      ..add(parts[2]!.toLowerCase())
+      ..addAll(_characters(parts[3]!));
+  }
+  return <String>[
+    for (final tile in tiles)
+      if (tile.isNotEmpty) tile,
+  ];
+}
+
+Iterable<String> _characters(String text) =>
+    text.runes.map(String.fromCharCode);
+
+final RegExp _edges = RegExp(
+  r'^([^\p{L}\p{M}\p{N}]*)(.*?)([^\p{L}\p{M}\p{N}]*)$',
+  unicode: true,
+  dotAll: true,
+);
+
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 final RegExp _space = RegExp(r'\s+');

@@ -68,7 +68,7 @@ Future<void> finishLesson(WidgetTester tester) async {
         }
         session.next();
       case Ask.rearrange:
-        final words = wordsOf(
+        final words = tilesOf(
           session.rearrangesReading ? card.reading! : card.target,
         );
         final tiles = session.tiles;

@@ -317,7 +317,7 @@ Future<void> arranged(
   Card card,
   Outcome o,
 ) async {
-  final words = wordsOf(card.target);
+  final words = tilesOf(card.target);
   for (final word in o == Outcome.right ? words : words.reversed) {
     await tapText(tester, word);
   }

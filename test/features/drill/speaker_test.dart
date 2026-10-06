@@ -379,7 +379,7 @@ void main() {
       final l10n = l10nOf(tester);
       final card = cardOf(state, hindi, 'आप कैसे हैं?');
       expect(speaker, findsNothing);
-      for (final word in wordsOf(card.reading!)) {
+      for (final word in tilesOf(card.reading!)) {
         await tapVisible(tester, find.text(word));
       }
       await tapVisible(tester, find.text(l10n.drillCheck));

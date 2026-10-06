@@ -107,5 +107,17 @@ void main() {
       expect(wordsOf('मैं ठीक हूँ।'), <String>['मैं', 'ठीक', 'हूँ।']);
       expect(wordsOf('¿Cómo estás?'), <String>['¿Cómo', 'estás?']);
     });
+
+    test('tilesOf gives each mark a tile, in lowercase (#347)', () {
+      expect(tilesOf('मैं ठीक हूँ।'), <String>['मैं', 'ठीक', 'हूँ', '।']);
+      expect(tilesOf('¿Cómo estás?'), <String>['¿', 'cómo', 'estás', '?']);
+      expect(tilesOf('Rock-n-roll, no!'), <String>[
+        'rock-n-roll',
+        ',',
+        'no',
+        '!',
+      ]);
+      expect(tilesOf(' uno – dos '), <String>['uno', 'dos']);
+    });
   });
 }
