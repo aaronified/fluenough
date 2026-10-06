@@ -10,6 +10,7 @@ import '../../app/shell_tab.dart';
 import '../../core/tts/tts_engine.dart';
 import '../../core/updates/apk_install.dart';
 import '../../core/updates/release_check.dart';
+import '../../core/updates/release_notes.dart';
 import '../gallery/fixtures.dart';
 
 /// Fixture states for Settings, Appearance and Voices in the gallery and the
@@ -94,6 +95,54 @@ abstract final class SettingsFixtures {
         InstallEvent.downloading(100),
         InstallEvent.failed(InstallFailure.notAllowed),
       ]);
+
+  /// "What's new" with three releases, the first newer than this build and
+  /// the second this build, so that it carries Installed. Their notes are
+  /// as GitHub writes them.
+  static AppState releaseNotesListed(AppState app) => GalleryFixtures.state(
+    app,
+    releaseNotes: FixedReleaseNotes(ReleaseNotes(sampleReleases)),
+  );
+
+  /// "What's new" when GitHub could not be reached, which is how the gallery
+  /// always finds it: Try again, and the link to GitHub.
+  static AppState releaseNotesFailed(AppState app) =>
+      GalleryFixtures.state(app, releaseNotes: const NullReleaseNotes());
+
+  /// Three releases newest first, [newerVersion], this build's and an earlier
+  /// one, with notes in the shapes the release workflow writes: a heading,
+  /// bullets that end in an author and a link, and a closing line in bold.
+  static List<PublishedRelease> get sampleReleases => <PublishedRelease>[
+    PublishedRelease(
+      tag: 'v$newerVersion',
+      publishedAt: DateTime.utc(2026, 10, 12, 12),
+      body:
+          "## What's Changed\n"
+          '* **Review by skill** on Today, in every language you learn '
+          'by @aaronified in https://example.org/pull/191\n'
+          '* Read [the guide](https://example.org/guide) before you start '
+          'by @aaronified in https://example.org/pull/195\n'
+          '\n'
+          '**Full Changelog**: https://example.org/compare/'
+          'v${AppInfo.version}...v$newerVersion',
+    ),
+    PublishedRelease(
+      tag: 'v${AppInfo.version}',
+      publishedAt: DateTime.utc(2026, 10, 5, 12),
+      body:
+          "## What's Changed\n"
+          '* Stop cutting every speaking listen off 3 seconds after the tap '
+          'by @aaronified in https://example.org/pull/193\n'
+          '\n'
+          '**Full Changelog**: https://example.org/compare/'
+          'v0.3.2...v${AppInfo.version}',
+    ),
+    PublishedRelease(
+      tag: 'v0.3.2',
+      publishedAt: DateTime.utc(2026, 10, 4, 12),
+      body: '',
+    ),
+  ];
 
   /// Settings with an install of [newerVersion] started that reports
   /// [events], waiting after the first on [gate] if given.

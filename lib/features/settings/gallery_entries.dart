@@ -6,6 +6,7 @@ import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
+import 'release_notes_page.dart';
 import 'settings_fixtures.dart';
 import 'voices_page.dart';
 
@@ -116,6 +117,22 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     note: 'How to allow installs, and the download page', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: SettingsFixtures.updateNotAllowed,
+  ),
+  GalleryEntry(
+    id: 'release-notes',
+    section: GallerySection.progressAndSettings,
+    label: "What's new", // ui-literal-ok: debug-only gallery
+    note: 'Each release, newest first, one Installed', // ui-literal-ok: debug-only gallery
+    builder: (_) => const ReleaseNotesPage(),
+    state: SettingsFixtures.releaseNotesListed,
+  ),
+  GalleryEntry(
+    id: 'release-notes-failed',
+    section: GallerySection.progressAndSettings,
+    label: "What's new, offline", // ui-literal-ok: debug-only gallery
+    note: 'GitHub not reached, with Try again', // ui-literal-ok: debug-only gallery
+    builder: (_) => const ReleaseNotesPage(),
+    state: SettingsFixtures.releaseNotesFailed,
   ),
   GalleryEntry(
     id: 'settings-backup',

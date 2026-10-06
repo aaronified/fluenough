@@ -21,6 +21,7 @@ import '../core/tts/tts_engine.dart';
 import '../core/tts/volume_monitor.dart';
 import '../core/updates/apk_install.dart';
 import '../core/updates/release_check.dart';
+import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/daily_fact.dart';
@@ -121,6 +122,7 @@ class AppState extends ChangeNotifier {
     this.links = const LauncherLinks(),
     this.reports = const NullReportSender(),
     this._releases = const NullReleaseCheck(),
+    this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
     SettingsNotifier? settings,
@@ -158,7 +160,8 @@ class AppState extends ChangeNotifier {
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
   /// progress, links that open unless [links] says otherwise, no network
-  /// for the update check unless [releases] answers, no download unless
+  /// for the update check unless [releases] answers, none for the release
+  /// notes unless [releaseNotes] does, no download unless
   /// [installer] does one, a clock fixed at [now] — by default Monday 28
   /// September 2026, 19:00, the evening the design is drawn on — and chance
   /// seeded the same every time.
@@ -176,6 +179,7 @@ class AppState extends ChangeNotifier {
     LinkOpener? links,
     ReportSender reports = const NullReportSender(),
     ReleaseCheckEngine releases = const NullReleaseCheck(),
+    ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
     SettingsNotifier? settings,
@@ -200,6 +204,7 @@ class AppState extends ChangeNotifier {
       links: links ?? FixedLinks(),
       reports: reports,
       releases: releases,
+      releaseNotes: releaseNotes,
       installer: installer,
       downloads: downloads,
       settings: settings,
@@ -252,6 +257,10 @@ class AppState extends ChangeNotifier {
     downloads: _downloads,
   );
   final ReleaseCheckEngine _releases;
+
+  /// Settings' "What's new": the app's recent releases and their notes,
+  /// fetched when the page opens and never before (ADR-0031).
+  final ReleaseNotesEngine releaseNotes;
   final ApkInstaller _installer;
   final DownloadStore _downloads;
 
