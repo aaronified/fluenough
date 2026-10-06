@@ -36,8 +36,10 @@ still unknown.
 One card per language, in the order the learner learns them:
 
 - **Its name and icon.**
-- **Listening:** the voice's status and count, and **Play**: it speaks the
-  sample phrase, as Test does today. With no voice, "Install a voice" opens
+- **Listening:** the voice's status and count, a **choice of voice** where
+  the phone has several for the language (#123, folded in by the owner),
+  and **Play**: it speaks the sample phrase in the chosen voice, as Test
+  does today. With no voice, "Install a voice" opens
   the same help as now.
 - **Speaking:** the recogniser's status, and **Say something**:
   - it shows a word from the course, with its reading, and listens;

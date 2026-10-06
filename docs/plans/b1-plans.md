@@ -83,6 +83,9 @@ from by interest: `books-films-songs.md`.
 - Each item on the shelf carries a level, A1, A2 or B1. Songs and films come
   at every level; books only at B1, for learners who learn the script. The
   finale, a great film without subtitles, is offered at the B1 mark.
+- The words of famous songs' and films' titles are ordinary path
+  vocabulary, in early units (#169; #170 is the first), as the owner
+  confirmed. Only whole works stay on the shelf.
 - They count toward neither words nor grammar topics. The picker can show
   them apart, e.g. "2 films, 1 book done".
 
