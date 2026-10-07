@@ -27,7 +27,7 @@ Up to 0.3.3; the [CHANGELOG](../CHANGELOG.md) has each change. In brief:
 | Milestone | Tracker | Plan |
 |---|---|---|
 | 1 · Skill model + FSRS | #207, #113 | Hear, Say and Write per word, and FSRS, in one migration (`skill-model.md`, `fsrs.md`) |
-| 2 · B1 plans | #209, #392 | A B1 plan in every path (`b1-plans.md`), and decks split into a core and a layer per native language (`native-layers.md`) |
+| 2 · B1 plans | #209, #392, #413 | A B1 plan in every path (`b1-plans.md`); decks split into a core and a layer per native language (`native-layers.md`); a phrasebook, then words, then rules, then sentences (`words-rules-sentences.md`) |
 | 3 · Deck downloads | #210 | Decks downloaded from GitHub, not bundled (`decks-from-github.md`) |
 | 4 · Settings redesign | #211, #212, #213 | The language picker, settings wording, and voices per language |
 
