@@ -30,6 +30,11 @@ Decided with the owner:
 - **Grammar is taught as rules,** starting with word forms, endings and
   postpositions, and conjunctions, practised across the words the learner
   knows.
+- **Grammar decks are about the rules, not the words:** "Grammar decks
+  should focus on the rules rather than the words."
+- **A grammar question chooses among forms of the same word:** "The grammar
+  drills should be like choosing between ammato, ammaki, ammalo, etc. Not
+  ammato and paalu." 
 - **When:** with the B1 plans.
 
 ## What exists
@@ -121,7 +126,16 @@ What follows for this plan (inferences):
   - each cell is a grammar question.
 
   So a postposition is practised on every known noun, not on three fixed
-  phrases. The grammar-table format already expands a table into cards;
+  phrases.
+- **Its questions test the rule, never the word:**
+  - **Choosing:** the options are the forms of the same word, అమ్మతో
+    (ammatō), అమ్మకి (ammaki), అమ్మలో (ammalō), అమ్మ నుంచి (amma nuñci),
+    never a different word such as పాలు (pālu). The meaning to express is
+    the prompt: "with mother".
+  - **Typing:** the word and the meaning are given; the learner types the
+    form.
+  - The word itself is always one the learner knows, so only the rule is
+    being tested. The grammar-table format already expands a table into cards;
   what is new is the rule card, and rows filled from known words.
 - **First come word forms:**
   - nouns: plural, the oblique stem, the case endings and postpositions;
@@ -179,7 +193,8 @@ Converted as each language's B1 plan is written:
 3. **Lessons:**
    - no fixed quota;
    - the unlock gate, with the mastery bar per word and rule;
-   - rule tables filled from taught words.
+   - rule tables filled from taught words;
+   - a grammar question's options are the other forms of the same word.
 4. **The rule card's drill:** taught, then its table's cells as grammar
    questions.
 5. **Content,** per language with its B1 plan:
@@ -190,6 +205,7 @@ Converted as each language's B1 plan is written:
    - a sentence held back until its last word and rule are taught;
    - the phrasebook never held back;
    - a rule's table growing as nouns are learned;
+   - a grammar question offering only forms of its own word;
    - lessons without the quota.
 
 ## To decide
