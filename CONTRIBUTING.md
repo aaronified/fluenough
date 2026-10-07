@@ -80,8 +80,9 @@ into Telugu.
 
 ### 3. The app itself
 
-The domain layer exists; the UI does not. [docs/ROADMAP.md](docs/ROADMAP.md)
-lists what is wanted, in order. See *Contributing code* below.
+The app is built and saves progress. [docs/ROADMAP.md](docs/ROADMAP.md)
+lists what is wanted, in order, with the plan for each. See *Contributing
+code* below.
 
 ### 4. Bug reports
 

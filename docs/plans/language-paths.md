@@ -2,6 +2,17 @@
 
 Written 2026-10-05.
 
+**Later plans change how courses are written, and are current where they
+differ from this one:**
+
+- decks are a core and a layer per native language (`native-layers.md`);
+- a course is a phrasebook, then words, then rules, then sentences, and a
+  lesson's new items come in that order (`words-rules-sentences.md`);
+- "Writing the planned decks" in `b1-plans.md`.
+
+So the parts that write or reorder courses (#298, #300, #301, #350) wait
+for #392 and #413.
+
 ## What the owner asked
 
 > this is the language path planned. all of the languages mentioned will

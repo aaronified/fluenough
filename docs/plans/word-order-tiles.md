@@ -14,32 +14,29 @@ Written 2026-10-05.
 - A sentence is produced by putting its words in order (`Ask.rearrange`,
   ADR-0024). This applies to a card of three words or more, or a phrase of
   two or more: 1,098 cards.
-- The tiles are the card's words, split at spaces (`wordsOf`). Punctuation
-  stays on its word, so the tile with "।" or "?" is plainly the last.
-  Hindi hi-0480, मैंने चाय पी। (I drank tea), gives the tiles मैंने · चाय ·
-  पी।
+- The tiles are the card's words in lowercase, without the marks at their
+  edges, and each mark is a tile of its own (`tilesOf`, #347), so neither
+  a capital nor a mark shows where a word goes. Hindi hi-0480, मैंने चाय
+  पी। (I drank tea), gives the tiles मैंने · चाय · पी · ।
 - 856 of the 1,098 cards have punctuation. Each mark appears this often:
 
   | Mark | . | । | ? | … | ' | , | ! | - |
   |---|---|---|---|---|---|---|---|---|
   | Times | 351 | 281 | 196 | 23 | 23 | 18 | 15 | 3 |
 
-- No tile has a capital today: the Indian scripts have none, and the
-  Spanish sentences are lowercase. A capitalised sentence, or a reading in
-  Latin letters, would give its first word away the same way.
 - Every tile must be placed before Check can be pressed, and the answer is
-  right when the words, joined by spaces, match an accepted answer.
+  right when the tiles, joined by spaces, match an accepted answer's tiles.
 
 ## What it takes
 
-1. **Tiles without giveaways:**
+1. **Tiles without giveaways** (done, #347):
    - the words with no punctuation at their edges;
    - in lowercase, where the script has case.
 
    An apostrophe or a hyphen inside a word stays in it.
-2. **Punctuation as tiles of their own:** each mark the sentence has
-   (। . ? , ! …) is a tile, placed like a word. The answer shown afterwards
-   is the sentence as written, with its capital and marks.
+2. **Punctuation as tiles of their own** (done, #347): each mark the
+   sentence has (। . ? , ! …) is a tile, placed like a word. The answer
+   shown afterwards is the sentence as written, with its capital and marks.
 3. **Extra tiles, written for each card:** two or three in total, words or
    marks, that are not needed but are close to the ones that are. For
    hi-0480:
