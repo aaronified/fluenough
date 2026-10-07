@@ -58,6 +58,10 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   drift_dev: ^2.35.0
   build_runner: ^2.4.0
+  # analyzer 14.5.0 (2026-10-06) removed a setter build_runner 2.16.1 uses, so
+  # build_runner no longer compiles. Remove this bound once a build_runner
+  # release supports it.
+  analyzer: ">=14.0.0 <14.5.0"
 
 flutter:
   uses-material-design: true
