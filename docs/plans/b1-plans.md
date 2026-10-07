@@ -114,6 +114,13 @@ meanings, labels, descriptions and facts carries its ISO 15919 reading,
 లేదు (lēdu), so that a beginner who cannot read the script yet can read
 them. The validator rejects a deck that leaves one out.
 
+### Phrasebook, words, rules, then sentences
+
+Each unit of a B1 plan is written in the order `words-rules-sentences.md`
+sets: its theme's words, then the rules they need, then its sentences, which
+unlock only once their words and rules are known. A small phrasebook comes
+first in the course, taught whole.
+
 ### Base words on every card
 
 The owner: "all derived words on a card will also show their base words on
