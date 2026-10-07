@@ -170,7 +170,7 @@ answers."
 
 ```yaml
     notes:
-      - { kind: pair, text: "Not కాలం (kālaṁ), time: the a is long there." }
+      - { kind: pair, ref: te-0412, text: "Not కాలం (kālaṁ), time: the a is long there." }
       - { kind: culture, text: "…", source: "…" }
       - { kind: usage, text: "Also 'pen-name' in old usage." }
 ```
@@ -191,6 +191,8 @@ answers."
 - **`pair` notes are proposed by a tool:** course words whose readings
   differ by one sound, such as కలం (kalaṁ) and కాలం (kālaṁ). The same pairs
   give Hear its sound-alike options (`skill-model.md`).
+- **A `pair` note names its partner** (`ref`, the card of the word that
+  sounds almost the same).
 - **`culture` notes follow the culture-deck rules (#99):** each checkable
   claim names its `source`, and the deck stays marked unreviewed until a
   speaker checks it (owner's choice).
@@ -198,6 +200,31 @@ answers."
   in the native layer (`native-layers.md`).
 - **Today's single `notes` string** reads as one note of kind `note`, so
   existing decks keep working until they are rewritten.
+
+**The minimal-pair button.** The owner: "the minimal pairs can be a button
+where found and clicking it will show the words side by side and let the
+user play their sounds and practice them together (like whether the speech
+is detecting kalam or kaalam) in that same card. No logging here, pure
+practice."
+
+- **Shown** on a card with a `pair` note, when it is taught and after an
+  answer, with the taught details. Never before an answer: there it would
+  give the answer away, above all when the partner is among Hear's options.
+- **It opens, on the same card, the two words side by side,** each with
+  its reading and meaning:
+  - **Play each word,** at normal and slow speed;
+  - **Say one:** the phone listens and shows what it heard ("Heard: కాలం
+    (kālaṁ), time"), and which of the two it matched, or neither. Only
+    where speaking is on;
+  - **Which did you hear?:** the app plays one of the two at random, and the
+    learner taps which. It says right or wrong.
+- **Nothing is recorded:** no review, no schedule, no strength. It is
+  practice only.
+- **The phone's recogniser prefers common words,** and may miss vowel
+  length in a single word. So the panel says what was heard, not whether
+  the learner said it right.
+- With sound off, or no voice for the language, the speakers and "Which did
+  you hear?" are greyed out, as elsewhere.
 
 **The Wiktionary link** opens the word's entry, with its etymology, in the
 browser:
@@ -243,13 +270,16 @@ browser:
    - shuffled without repeats when teaching and after answers;
    - a tool proposing `pair` notes;
    - the validator's warning, and sources on `culture`.
-7. **The Wiktionary link:** marked by a tool from Wiktionary's extracts,
+7. **The minimal-pair button and panel:** play, say one, which did you
+   hear; recording nothing.
+8. **The Wiktionary link:** marked by a tool from Wiktionary's extracts,
    and shown with the taught details.
-8. **Content:** notes for every word card, written with each language's B1
+9. **Content:** notes for every word card, written with each language's B1
    plan.
-9. **Tests:** the parser, each validator rule, the counts, the Decks tab
+10. **Tests:** the parser, each validator rule, the counts, the Decks tab
    and lessons with planned units, base words shown only after an answer,
-   every note shown once before any repeats, and the Wiktionary link only
+   every note shown once before any repeats, the minimal-pair panel shown
+   only after an answer and recording nothing, and the Wiktionary link only
    where an entry exists.
 
 ## To decide
@@ -270,8 +300,9 @@ browser:
 | "Coming" on the Decks tab, lessons skipping planned units | 1–2 |
 | Base words: format, validator, display, suggestion tool | 3–5 |
 | Notes: format, shuffle, pair tool, validator | 3–4 |
+| Minimal-pair panel: play, say one, which did you hear | 3–4 |
 | Wiktionary link: marking tool, display | 2–3 |
-| **All** | **22–36** |
+| **All** | **25–40** |
 
 Writing the notes themselves is content, per language, outside these hours:
 about 3,800 word cards today.
