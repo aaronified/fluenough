@@ -114,6 +114,13 @@ meanings, labels, descriptions and facts carries its ISO 15919 reading,
 లేదు (lēdu), so that a beginner who cannot read the script yet can read
 them. The validator rejects a deck that leaves one out.
 
+### Phrasebook, words, rules, then sentences
+
+Each unit of a B1 plan is written in the order `words-rules-sentences.md`
+sets: its theme's words, then the rules they need, then its sentences, which
+unlock only once their words and rules are known. A small phrasebook comes
+first in the course, taught whole.
+
 ### Base words on every card
 
 The owner: "all derived words on a card will also show their base words on
@@ -151,6 +158,87 @@ target and in its examples:
   written. A tool, `tools/suggest_bases.py`, proposes them from the course's
   own cards, and the writer confirms each one.
 
+### Notes, and a Wiktionary link, on every word card
+
+The owner: "we need to add a wikitionary link to every word card so that the
+user can check the word out in detail, including etymology. And add
+informative notes in every card when taught ... Multiple notes per card is
+fine. The app will randomly pick one note fact when teaching / showing after
+answers."
+
+**Notes become a list of facts,** each with its kind:
+
+```yaml
+    notes:
+      - { kind: pair, ref: te-0412, text: "Not కాలం (kālaṁ), time: the a is long there." }
+      - { kind: culture, text: "…", source: "…" }
+      - { kind: usage, text: "Also 'pen-name' in old usage." }
+```
+
+| Kind | What it says |
+|---|---|
+| `pair` | A minimal pair: a word of the language that sounds almost the same |
+| `culture` | Its cultural significance |
+| `usage` | Another context it is used in, or another sense |
+| `behaviour` | How it behaves unlike similar words: an irregular form, a gender, a use |
+| `note` | Anything else worth knowing |
+
+- **One note at a time,** shown when the word is taught, and after an
+  answer with the other taught details. Shuffled, never repeated, until every
+  note of the card has been shown once (owner's choice).
+- **Every word card should have one or more;** a word card with none gets a
+  validator *warning*, not an error (owner's choice).
+- **`pair` notes are proposed by a tool:** course words whose readings
+  differ by one sound, such as కలం (kalaṁ) and కాలం (kālaṁ). The same pairs
+  give Hear its sound-alike options (`skill-model.md`).
+- **A `pair` note names its partner** (`ref`, the card of the word that
+  sounds almost the same).
+- **`culture` notes follow the culture-deck rules (#99):** each checkable
+  claim names its `source`, and the deck stays marked unreviewed until a
+  speaker checks it (owner's choice).
+- **Transliteration** ("Script in prose") applies to every note. Notes live
+  in the native layer (`native-layers.md`).
+- **Today's single `notes` string** reads as one note of kind `note`, so
+  existing decks keep working until they are rewritten.
+
+**The minimal-pair button.** The owner: "the minimal pairs can be a button
+where found and clicking it will show the words side by side and let the
+user play their sounds and practice them together (like whether the speech
+is detecting kalam or kaalam) in that same card. No logging here, pure
+practice."
+
+- **Shown** on a card with a `pair` note, when it is taught and after an
+  answer, with the taught details. Never before an answer: there it would
+  give the answer away, above all when the partner is among Hear's options.
+- **It opens, on the same card, the two words side by side,** each with
+  its reading and meaning:
+  - **Play each word,** at normal and slow speed;
+  - **Say one:** the phone listens and shows what it heard ("Heard: కాలం
+    (kālaṁ), time"), and which of the two it matched, or neither. Only
+    where speaking is on;
+  - **Which did you hear?:** the app plays one of the two at random, and the
+    learner taps which. It says right or wrong.
+- **Nothing is recorded:** no review, no schedule, no strength. It is
+  practice only.
+- **The phone's recogniser prefers common words,** and may miss vowel
+  length in a single word. So the panel says what was heard, not whether
+  the learner said it right.
+- With sound off, or no voice for the language, the speakers and "Which did
+  you hear?" are greyed out, as elsewhere.
+
+**The Wiktionary link** opens the word's entry, with its etymology, in the
+browser:
+
+- It is built from the word and the language, not stored:
+  `en.wiktionary.org/wiki/<word>#Telugu`. For a sentence or an inflected
+  form, it is built for each base word (`bases`). A learner taught from
+  Bengali gets bn.wiktionary, with the native layers.
+- **Shown only where Wiktionary has an entry** (owner's choice). A tool
+  checks each word against Wiktionary's extracts (kaikki.org, as
+  `wiktionary-ipa.md` uses), and marks the words that have one. Many Indian
+  language words have none yet.
+- Nothing is fetched until the learner taps the link.
+
 ## What the validator checks
 
 - **Errors:**
@@ -177,9 +265,22 @@ target and in its examples:
 5. **Base words:** the `bases` field in the parser, the validator and
    `docs/DECK-FORMAT.md`; showing them with the taught details; and
    `tools/suggest_bases.py`.
-6. **Tests:** the parser, each validator rule, the counts, the Decks tab
-   and lessons with planned units, and base words shown only after an
-   answer.
+6. **Notes:**
+   - the list of typed notes, read alongside today's string;
+   - shuffled without repeats when teaching and after answers;
+   - a tool proposing `pair` notes;
+   - the validator's warning, and sources on `culture`.
+7. **The minimal-pair button and panel:** play, say one, which did you
+   hear; recording nothing.
+8. **The Wiktionary link:** marked by a tool from Wiktionary's extracts,
+   and shown with the taught details.
+9. **Content:** notes for every word card, written with each language's B1
+   plan.
+10. **Tests:** the parser, each validator rule, the counts, the Decks tab
+   and lessons with planned units, base words shown only after an answer,
+   every note shown once before any repeats, the minimal-pair panel shown
+   only after an answer and recording nothing, and the Wiktionary link only
+   where an entry exists.
 
 ## To decide
 
@@ -198,7 +299,13 @@ target and in its examples:
 | Spanish | 2 |
 | "Coming" on the Decks tab, lessons skipping planned units | 1–2 |
 | Base words: format, validator, display, suggestion tool | 3–5 |
-| **All** | **17–29** |
+| Notes: format, shuffle, pair tool, validator | 3–4 |
+| Minimal-pair panel: play, say one, which did you hear | 3–4 |
+| Wiktionary link: marking tool, display | 2–3 |
+| **All** | **25–40** |
+
+Writing the notes themselves is content, per language, outside these hours:
+about 3,800 word cards today.
 
 Writing the plans does not write the content. The content to reach B1 is
 `language-paths.md`'s estimate. Confidence: medium.
