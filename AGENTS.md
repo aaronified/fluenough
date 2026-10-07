@@ -221,6 +221,14 @@ rather than inventing scope. Comment on the issue saying what you are doing
 *and which files you expect to touch*. That second half is what prevents the
 collisions, and it is the part people skip.
 
+**Read the plan before the issue.** Most issues are parts of a tracker
+labelled `plan`, which links its plan in `docs/plans/`. Read that plan on
+`main`, and the plans it names: the issue is a summary, and where the two
+differ, the plan is current. A plan that a later one changes says so at its
+top. An issue waits for its own "Blocked by" links and for whatever its
+tracker or parent waits for, and the milestones give the order
+([docs/ROADMAP.md](docs/ROADMAP.md)).
+
 **Check for open PRs touching your files before you begin.** An agent that
 reads only the main branch will cheerfully rewrite something already under
 review.
