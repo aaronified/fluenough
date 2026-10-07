@@ -2,6 +2,10 @@
 
 Written 2026-10-05.
 
+**When a sentence is offered** is set by `words-rules-sentences.md`: only
+once its words and rules are known, phrasebook cards aside. This plan is how
+it is then built.
+
 ## What the owner asked
 
 > Sentence-building by reasoning (Language Transfer): give an English
