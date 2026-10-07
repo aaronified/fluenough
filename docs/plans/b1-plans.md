@@ -158,6 +158,60 @@ target and in its examples:
   written. A tool, `tools/suggest_bases.py`, proposes them from the course's
   own cards, and the writer confirms each one.
 
+### Notes, and a Wiktionary link, on every word card
+
+The owner: "we need to add a wikitionary link to every word card so that the
+user can check the word out in detail, including etymology. And add
+informative notes in every card when taught ... Multiple notes per card is
+fine. The app will randomly pick one note fact when teaching / showing after
+answers."
+
+**Notes become a list of facts,** each with its kind:
+
+```yaml
+    notes:
+      - { kind: pair, text: "Not కాలం (kālaṁ), time: the a is long there." }
+      - { kind: culture, text: "…", source: "…" }
+      - { kind: usage, text: "Also 'pen-name' in old usage." }
+```
+
+| Kind | What it says |
+|---|---|
+| `pair` | A minimal pair: a word of the language that sounds almost the same |
+| `culture` | Its cultural significance |
+| `usage` | Another context it is used in, or another sense |
+| `behaviour` | How it behaves unlike similar words: an irregular form, a gender, a use |
+| `note` | Anything else worth knowing |
+
+- **One note at a time,** shown when the word is taught, and after an
+  answer with the other taught details. Shuffled, never repeated, until every
+  note of the card has been shown once (owner's choice).
+- **Every word card should have one or more;** a word card with none gets a
+  validator *warning*, not an error (owner's choice).
+- **`pair` notes are proposed by a tool:** course words whose readings
+  differ by one sound, such as కలం (kalaṁ) and కాలం (kālaṁ). The same pairs
+  give Hear its sound-alike options (`skill-model.md`).
+- **`culture` notes follow the culture-deck rules (#99):** each checkable
+  claim names its `source`, and the deck stays marked unreviewed until a
+  speaker checks it (owner's choice).
+- **Transliteration** ("Script in prose") applies to every note. Notes live
+  in the native layer (`native-layers.md`).
+- **Today's single `notes` string** reads as one note of kind `note`, so
+  existing decks keep working until they are rewritten.
+
+**The Wiktionary link** opens the word's entry, with its etymology, in the
+browser:
+
+- It is built from the word and the language, not stored:
+  `en.wiktionary.org/wiki/<word>#Telugu`. For a sentence or an inflected
+  form, it is built for each base word (`bases`). A learner taught from
+  Bengali gets bn.wiktionary, with the native layers.
+- **Shown only where Wiktionary has an entry** (owner's choice). A tool
+  checks each word against Wiktionary's extracts (kaikki.org, as
+  `wiktionary-ipa.md` uses), and marks the words that have one. Many Indian
+  language words have none yet.
+- Nothing is fetched until the learner taps the link.
+
 ## What the validator checks
 
 - **Errors:**
@@ -184,9 +238,19 @@ target and in its examples:
 5. **Base words:** the `bases` field in the parser, the validator and
    `docs/DECK-FORMAT.md`; showing them with the taught details; and
    `tools/suggest_bases.py`.
-6. **Tests:** the parser, each validator rule, the counts, the Decks tab
-   and lessons with planned units, and base words shown only after an
-   answer.
+6. **Notes:**
+   - the list of typed notes, read alongside today's string;
+   - shuffled without repeats when teaching and after answers;
+   - a tool proposing `pair` notes;
+   - the validator's warning, and sources on `culture`.
+7. **The Wiktionary link:** marked by a tool from Wiktionary's extracts,
+   and shown with the taught details.
+8. **Content:** notes for every word card, written with each language's B1
+   plan.
+9. **Tests:** the parser, each validator rule, the counts, the Decks tab
+   and lessons with planned units, base words shown only after an answer,
+   every note shown once before any repeats, and the Wiktionary link only
+   where an entry exists.
 
 ## To decide
 
@@ -205,7 +269,12 @@ target and in its examples:
 | Spanish | 2 |
 | "Coming" on the Decks tab, lessons skipping planned units | 1–2 |
 | Base words: format, validator, display, suggestion tool | 3–5 |
-| **All** | **17–29** |
+| Notes: format, shuffle, pair tool, validator | 3–4 |
+| Wiktionary link: marking tool, display | 2–3 |
+| **All** | **22–36** |
+
+Writing the notes themselves is content, per language, outside these hours:
+about 3,800 word cards today.
 
 Writing the plans does not write the content. The content to reach B1 is
 `language-paths.md`'s estimate. Confidence: medium.
