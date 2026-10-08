@@ -125,6 +125,8 @@ void main() {
     addTearDown(state.dispose);
     await state.load();
     final hola = state.deckById(tiny)!.cards.first;
+    // Recognition is logged but not scheduled (ADR-0034): with no voice,
+    // Write is the only schedule here.
     for (final mode in <DrillMode>[
       DrillMode.recognition,
       DrillMode.production,
@@ -229,9 +231,11 @@ void main() {
 
     final logged = state.progress.log.length;
     final states = Map.of(state.progress.states);
-    await tester.tap(find.text(l10n.drillShowAnswer));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.rateGood));
+    // Written (ADR-0034): no voice here, and recognition is not reviewed.
+    final typed = find.text('hello').evaluate().isNotEmpty ? 'hola' : 'adiós';
+    await tester.enterText(find.byType(TextField), typed);
+    await tester.pump();
+    await tester.tap(find.text(l10n.drillCheck));
     await tester.pumpAndSettle();
     expect(state.progress.log, hasLength(logged));
     expect(state.progress.states, states);
