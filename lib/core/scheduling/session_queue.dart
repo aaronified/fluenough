@@ -89,8 +89,9 @@ typedef PairFilter = bool Function(Card card, DrillMode mode);
 /// the rest come with it, which can pass the cap by up to three. And in
 /// [items], every question of a passage follows its first.
 ///
-/// "Again" is not re-queued: a failed card is due tomorrow, as FSRS says, and
-/// is not drilled a second time in the same session.
+/// "Again" is not re-queued: FSRS sets a failed card a shorter interval, a
+/// day for a new one and often a few for one long known, and it is not
+/// drilled a second time in the same session.
 class SessionQueue {
   const SessionQueue._(this.due, this.fresh);
 

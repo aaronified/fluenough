@@ -184,6 +184,24 @@ void main() {
     );
   });
 
+  test('migration 5 cut off after its first column runs again', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/half.sqlite');
+
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await old.customStatement(
+      'ALTER TABLE reviews DROP COLUMN difficulty_after',
+    );
+    await old.customStatement('PRAGMA user_version = 4');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.reviewsDao.all(), hasLength(1));
+  });
+
   test('leech_actions: appended in order, never changed', () async {
     await db.leechActionsDao.append(leechAction(kind: LeechActionKind.reset));
     await db.leechActionsDao.append(

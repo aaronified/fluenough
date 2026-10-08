@@ -108,13 +108,13 @@ class DrillSession extends ChangeNotifier {
   final DateTime startedAt;
 
   /// Whether answers go to the review log. False for number practice, which
-  /// has no schedule, and for [revising]; recognition shows no intervals
-  /// either.
+  /// has no schedule, for [revising], and for quick revision, which
+  /// [recordsRevision] records instead.
   final bool recorded;
 
   /// Revising a finished deck's cards ahead of their dates. Titled with the
-  /// deck, like a recorded session, but never [recorded]: an early review
-  /// would stretch the card's interval.
+  /// deck, like a recorded session, but never [recorded]: a deck's Revise
+  /// records nothing.
   final bool revising;
 
   /// Whether answers are recorded although the session is not: a quick

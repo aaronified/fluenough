@@ -36,16 +36,22 @@ be discarded and regenerated.
 **`card_states`** — scheduling state, keyed by `(card_id, mode)`: a card listed
 in several decks, or learned from several languages, has one schedule
 (ADR-0018).
-Holds `interval_days`, `ease_factor`, `repetitions`, `due_at`, `lapses`. This
-is a **derived cache**: it can be rebuilt in full by replaying `reviews`.
+Holds FSRS's state (ADR-0033): `stability`, `difficulty`, `interval_days`,
+`repetitions`, `due_at`, `last_review_at`, `lapses`. This is a **derived
+cache**: it can be rebuilt in full by replaying `reviews`.
 
 **`reviews`** — the append-only log. One row per answered card, never updated
 or deleted:
 
 ```
 id, ts, deck_id, card_id, mode, grade, elapsed_ms, answer_given,
-interval_before, interval_after, ease_before, ease_after
+interval_before, interval_after, ease_before, ease_after,
+stability_after, difficulty_after
 ```
+
+`stability_after` and `difficulty_after` came with migration 5 and are null
+on older rows. Rows from then on write `ease_after` as 0 and `ease_before` as
+null: SM-2's ease belongs to the rows written before.
 
 Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one

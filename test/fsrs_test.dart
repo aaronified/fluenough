@@ -150,11 +150,18 @@ void main() {
       expect(atDue, closeTo(Fsrs.desiredRetention, 0.02));
     });
 
-    test('local due dates keep the hour across daylight saving', () {
+    test('across daylight saving, a pair is due after whole days of 24 '
+        'hours, and reviewed then is not a same-day review', () {
       final local = DateTime(2026, 3, 28, 9);
-      final state = Fsrs.next(null, 4, now: local);
-      expect(state.dueAt.hour, 9);
-      expect(state.dueAt.isUtc, isFalse);
+      final first = Fsrs.next(null, 1, now: local);
+      expect(first.dueAt.difference(local), const Duration(days: 1));
+      expect(first.dueAt.isUtc, isFalse);
+      final second = Fsrs.next(first, 4, now: first.dueAt);
+      expect(
+        second.stability,
+        Fsrs.next(first, 4, now: local.add(const Duration(days: 1))).stability,
+      );
+      expect(second.intervalDays, greaterThan(1));
     });
   });
 }

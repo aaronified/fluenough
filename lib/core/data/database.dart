@@ -77,8 +77,20 @@ class AppDatabase extends _$AppDatabase {
         // `(card_id, mode)` since 4, with FSRS's state since 5.
         await m.deleteTable('card_states');
         await m.createTable(cardStates);
-        await m.addColumn(reviews, reviews.stabilityAfter);
-        await m.addColumn(reviews, reviews.difficultyAfter);
+        // Each column once: a step cut off part-way runs again from the
+        // start, and SQLite cannot add a column only if it is missing.
+        final has = <String>{
+          for (final row in await customSelect(
+            "SELECT name FROM pragma_table_info('reviews')",
+          ).get())
+            row.read<String>('name'),
+        };
+        for (final column in <GeneratedColumn<Object>>[
+          reviews.stabilityAfter,
+          reviews.difficultyAfter,
+        ]) {
+          if (!has.contains(column.name)) await m.addColumn(reviews, column);
+        }
       }
     },
   );
