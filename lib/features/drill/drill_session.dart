@@ -17,7 +17,6 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
-import '../../core/scheduling/sm2.dart';
 import '../../core/speech/speech_engine.dart';
 
 /// Where the current card is: the design's `phase`.
@@ -52,7 +51,7 @@ class TypedAnswer {
   /// The grader's verdict, or null when the learner chose "Don't know".
   final GradedAnswer? graded;
 
-  /// The SM-2 grade recorded, or null while a near miss waits for the
+  /// The grade recorded, or null while a near miss waits for the
   /// learner's judgement.
   final int? grade;
 
@@ -85,7 +84,7 @@ class DrillSession extends ChangeNotifier {
     InputMode? inputMode,
     this.recorded = true,
     this.revising = false,
-    this.recordsMisses = false,
+    this.recordsRevision = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(!revising || !recorded, 'revising is never recorded'),
@@ -118,10 +117,11 @@ class DrillSession extends ChangeNotifier {
   /// would stretch the card's interval.
   final bool revising;
 
-  /// Whether a wrong answer is recorded although the session is not: a
-  /// quick revision (ADR-0029), where a lapse should bring the card back
-  /// sooner, and a right answer, given early, should not stretch it.
-  final bool recordsMisses;
+  /// Whether answers are recorded although the session is not: a quick
+  /// revision (ADR-0029, as ADR-0033 amends it). FSRS takes an early review
+  /// for what it is, so a right answer stretches the interval only a little,
+  /// and a miss brings the card back sooner.
+  final bool recordsRevision;
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
@@ -193,14 +193,14 @@ class DrillSession extends ChangeNotifier {
   int intervalFor(SelfGrade grade) {
     final card = item.card;
     return _state.progress
-        .preview(card.id, item.mode, grade.toSm2Grade(), now: _state.now())
+        .preview(card.id, item.mode, grade.toGrade(), now: _state.now())
         .intervalDays;
   }
 
   /// Records the learner's rating and moves on.
   void rate(SelfGrade grade) {
     if (_phase != DrillPhase.revealed) return;
-    _record(grade.toSm2Grade());
+    _record(grade.toGrade());
     _advance();
   }
 
@@ -337,7 +337,7 @@ class DrillSession extends ChangeNotifier {
         ? null
         : romanised && graded.outcome.isCorrect && expectsScript
         ? romanisedGrade
-        : graded.outcome.toSm2Grade();
+        : graded.outcome.toGrade();
     _answer = TypedAnswer(typed: typed, graded: graded, grade: grade);
     if (grade != null) _record(grade, answerGiven: typed);
     _phase = DrillPhase.feedback;
@@ -394,7 +394,7 @@ class DrillSession extends ChangeNotifier {
   void judge(TypoJudgement judgement) {
     final answer = _answer;
     if (answer == null || !answer.awaitsJudgement) return;
-    _record(judgement.toSm2Grade(), answerGiven: answer.typed);
+    _record(judgement.toGrade(), answerGiven: answer.typed);
     _advance();
   }
 
@@ -648,7 +648,7 @@ class DrillSession extends ChangeNotifier {
         }
       }
     }
-    final grade = graded.outcome.toSm2Grade();
+    final grade = graded.outcome.toGrade();
     // A wrong word that is the answer with one sound changed: the feedback
     // names the sound (ADR-0014's rule: only a slip that changes the word).
     SoundContrast? contrast;
@@ -880,8 +880,8 @@ class DrillSession extends ChangeNotifier {
         : card.acceptedAnswers(DrillMode.production);
     final right = accepted.any((a) => tilesOf(a).join(' ') == given);
     final grade = right
-        ? AnswerOutcome.exact.toSm2Grade()
-        : AnswerOutcome.wrong.toSm2Grade();
+        ? AnswerOutcome.exact.toGrade()
+        : AnswerOutcome.wrong.toGrade();
     _answer = TypedAnswer(
       typed: given,
       graded: right
@@ -900,7 +900,7 @@ class DrillSession extends ChangeNotifier {
       _recordItem(item, grade, answerGiven: answerGiven);
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
-    if (recorded || (recordsMisses && grade < Sm2.passingGrade)) {
+    if (recorded || recordsRevision) {
       _state.record(
         entry,
         grade,

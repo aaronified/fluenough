@@ -384,8 +384,8 @@ class _SkillsHero extends StatelessWidget {
   );
 }
 
-/// Slide 2: a card coming back after 1, 6 and 15 days — SM-2's gaps for an
-/// answer rated Good (`Sm2.firstInterval`, `secondInterval`, then × 2.5).
+/// Slide 2: a card coming back after 2, 11 and 46 days — FSRS's gaps for a
+/// new card answered Good each time it comes due (`Fsrs.intervalFor`).
 class _ReviewsHero extends StatelessWidget {
   const _ReviewsHero();
 
@@ -424,11 +424,11 @@ class _ReviewsHero extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        gap(1, 104),
+        gap(2, 104),
         const SizedBox(height: 8),
-        gap(6, 152),
+        gap(11, 152),
         const SizedBox(height: 8),
-        gap(15, 208, last: true),
+        gap(46, 208, last: true),
       ],
     );
   }

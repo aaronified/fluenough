@@ -13,10 +13,16 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/review_log.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
-(int, double, int, DateTime, int) fields(Sm2State s) =>
-    (s.repetitions, s.easeFactor, s.intervalDays, s.dueAt, s.lapses);
+(double, double, int, DateTime, int, int) fields(FsrsState s) => (
+  s.stability,
+  s.difficulty,
+  s.intervalDays,
+  s.dueAt,
+  s.repetitions,
+  s.lapses,
+);
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

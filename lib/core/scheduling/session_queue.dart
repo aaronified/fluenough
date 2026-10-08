@@ -2,7 +2,7 @@ import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
-import 'sm2.dart';
+import 'fsrs.dart';
 
 export 'ask.dart';
 
@@ -21,7 +21,7 @@ class SessionItem {
 
   /// The scheduling state going in, or null for a `(card, mode)` pair that
   /// has never been reviewed.
-  final Sm2State? state;
+  final FsrsState? state;
 
   /// How it is asked; whichever way, it records [mode] (ADR-0024).
   final Ask ask;
@@ -49,7 +49,7 @@ class SessionItem {
 
 /// Looks up the scheduling state of [card] in [mode], or null if that pair
 /// has never been reviewed.
-typedef StateLookup = Sm2State? Function(Card card, DrillMode mode);
+typedef StateLookup = FsrsState? Function(Card card, DrillMode mode);
 
 /// Whether the device has a voice for [card]'s language, which decides whether
 /// the card can be drilled by ear. See [Card.modesIn].
@@ -89,7 +89,7 @@ typedef PairFilter = bool Function(Card card, DrillMode mode);
 /// the rest come with it, which can pass the cap by up to three. And in
 /// [items], every question of a passage follows its first.
 ///
-/// "Again" is not re-queued: a failed card is due tomorrow, as SM-2 says, and
+/// "Again" is not re-queued: a failed card is due tomorrow, as FSRS says, and
 /// is not drilled a second time in the same session.
 class SessionQueue {
   const SessionQueue._(this.due, this.fresh);

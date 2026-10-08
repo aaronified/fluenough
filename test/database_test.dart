@@ -7,6 +7,13 @@ import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/leech_action.dart';
 
+/// [db]'s `reviews` as it was before migration 5.
+Future<void> withoutFsrsColumns(AppDatabase db) async {
+  for (final column in <String>['stability_after', 'difficulty_after']) {
+    await db.customStatement('ALTER TABLE reviews DROP COLUMN $column');
+  }
+}
+
 void main() {
   late AppDatabase db;
 
@@ -42,8 +49,8 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 4 with its six tables', () async {
-    expect(db.schemaVersion, 4);
+  test('opens at version 5 with its six tables', () async {
+    expect(db.schemaVersion, 5);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -66,10 +73,11 @@ void main() {
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/old.sqlite');
 
-    // Make a version 1 file: today's schema without what migrations 2 and 3
-    // add.
+    // Make a version 1 file: today's schema without what migrations 2, 3
+    // and 5 add.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
+    await withoutFsrsColumns(old);
     await old.customStatement('DROP TABLE settings');
     await old.customStatement('DROP TABLE leech_actions');
     await old.customStatement('PRAGMA user_version = 1');
@@ -106,6 +114,7 @@ void main() {
     // one card in two decks.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
+    await withoutFsrsColumns(old);
     await old.customStatement('DROP TABLE card_states');
     await old.customStatement(
       'CREATE TABLE card_states (deck_id TEXT NOT NULL, card_id TEXT NOT NULL, '
@@ -134,6 +143,45 @@ void main() {
       isNot(contains('deck_id')),
     );
     expect(await upgraded.reviewsDao.all(), hasLength(1));
+  });
+
+  test('a version 4 database gets FSRS\'s columns, its SM-2 state '
+      'rebuilt and its reviews kept', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/v4.sqlite');
+
+    // Make a version 4 file: SM-2's card_states, and reviews without the
+    // columns migration 5 adds.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await withoutFsrsColumns(old);
+    await old.customStatement('DROP TABLE card_states');
+    await old.customStatement(
+      'CREATE TABLE card_states (card_id TEXT NOT NULL, mode TEXT NOT NULL, '
+      'interval_days INTEGER NOT NULL, ease_factor REAL NOT NULL, '
+      'repetitions INTEGER NOT NULL, due_at INTEGER NOT NULL, '
+      'lapses INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (card_id, mode))',
+    );
+    await old.customStatement(
+      "INSERT INTO card_states VALUES ('hi-0231', 'production', "
+      '1, 2.5, 1, ${at.millisecondsSinceEpoch}, 0)',
+    );
+    await old.customStatement('PRAGMA user_version = 4');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.cardStatesDao.all(), isEmpty, reason: 'a cache');
+    final reviews = await upgraded.reviewsDao.all();
+    expect(reviews, hasLength(1));
+    expect(reviews.single.stabilityAfter, isNull);
+    expect(reviews.single.difficultyAfter, isNull);
+    await expectLater(
+      upgraded.customStatement('DELETE FROM reviews'),
+      throwsA(anything),
+      reason: 'the append-only triggers survive the upgrade',
+    );
   });
 
   test('leech_actions: appended in order, never changed', () async {
@@ -226,10 +274,12 @@ void main() {
         CardStatesCompanion.insert(
           cardId: 'hi-0231',
           mode: mode,
+          stability: interval.toDouble(),
+          difficulty: 5,
           intervalDays: interval,
-          easeFactor: 2.5,
           repetitions: 1,
           dueAt: at,
+          lastReviewAt: at,
         );
     await db.cardStatesDao.put(state(DrillMode.recognition, 1));
     await db.cardStatesDao.put(state(DrillMode.production, 6));

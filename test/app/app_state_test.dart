@@ -19,13 +19,13 @@ void main() {
     addTearDown(state.dispose);
     await state.load();
     final cards = state.deckById('es-en-core-100')!.cards;
-    // Answered today, so due tomorrow.
+    // Answered Hard today, so due tomorrow.
     for (final card in cards.take(3)) {
       state.progress.record(
         deckId: 'es-en-core-100',
         cardId: card.id,
         mode: DrillMode.recognition,
-        grade: 4,
+        grade: 3,
         now: state.now(),
       );
     }

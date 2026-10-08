@@ -5,7 +5,7 @@ import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
 import '../core/scheduling/replay.dart';
-import '../core/scheduling/sm2.dart';
+import '../core/scheduling/fsrs.dart';
 
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
@@ -21,15 +21,15 @@ abstract interface class ProgressStore implements Listenable {
 
   /// The state of one pair, or null if it has never been reviewed. A pair is
   /// a card and a mode, in whichever deck lists the card (ADR-0018).
-  Sm2State? stateOf(String cardId, DrillMode mode);
+  FsrsState? stateOf(String cardId, DrillMode mode);
 
   /// Every pair that has been reviewed, with its current state.
-  Map<ProgressKey, Sm2State> get states;
+  Map<ProgressKey, FsrsState> get states;
 
   /// Every review, oldest first. Append-only: nothing is ever removed.
   List<ReviewEvent> get log;
 
-  /// Records a review: runs [Sm2.next] on the pair's state, appends the
+  /// Records a review: runs [Fsrs.next] on the pair's state, appends the
   /// event, and returns it. Call it the moment the answer is given.
   ReviewEvent record({
     required String deckId,
@@ -62,7 +62,7 @@ abstract interface class ProgressStore implements Listenable {
   );
 }
 
-/// Progress held in memory: an SM-2 state per `(card, mode)` and the
+/// Progress held in memory: an FSRS state per `(card, mode)` and the
 /// review log, both gone when the app closes.
 ///
 /// For tests and fixtures, and the fallback when the database cannot be
@@ -87,7 +87,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       .._leechActions.addAll(actions);
   }
 
-  final Map<ProgressKey, Sm2State> _states = <ProgressKey, Sm2State>{};
+  final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
   final List<LeechAction> _leechActions = <LeechAction>[];
 
@@ -95,12 +95,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   bool get persists => false;
 
   @override
-  Sm2State? stateOf(String cardId, DrillMode mode) =>
+  FsrsState? stateOf(String cardId, DrillMode mode) =>
       _states[(cardId: cardId, mode: mode)];
 
   @override
-  Map<ProgressKey, Sm2State> get states =>
-      Map<ProgressKey, Sm2State>.unmodifiable(_states);
+  Map<ProgressKey, FsrsState> get states =>
+      Map<ProgressKey, FsrsState>.unmodifiable(_states);
 
   @override
   List<ReviewEvent> get log => List<ReviewEvent>.unmodifiable(_log);
@@ -117,7 +117,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   }) {
     final key = (cardId: cardId, mode: mode);
     final before = _states[key];
-    final after = Sm2.next(before ?? Sm2State.fresh(now), grade, now: now);
+    final after = Fsrs.next(
+      before,
+      grade,
+      now: now,
+      rated: answerGiven == null,
+    );
     final event = ReviewEvent(
       at: now,
       deckId: deckId,
@@ -219,14 +224,15 @@ extension ProgressQueries on ProgressStore {
   /// What the leech actions add up to: which pairs are reset or set aside.
   LeechEffects get leechEffects => LeechEffects(leechActions);
 
-  /// What [grade] would do to the pair, without recording anything. The
-  /// rating buttons label themselves with its `intervalDays`.
-  Sm2State preview(
+  /// What the learner's rating [grade] would do to the pair, without
+  /// recording anything. The rating buttons label themselves with its
+  /// `intervalDays`.
+  FsrsState preview(
     String cardId,
     DrillMode mode,
     int grade, {
     required DateTime now,
-  }) => Sm2.next(stateOf(cardId, mode) ?? Sm2State.fresh(now), grade, now: now);
+  }) => Fsrs.next(stateOf(cardId, mode), grade, now: now, rated: true);
 
   /// New pairs introduced on [day]'s calendar date.
   int newIntroducedOn(DateTime day) =>

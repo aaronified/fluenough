@@ -43,7 +43,8 @@ and Fluenough schedules those separately.
 
 ### Spaced repetition, with a real audit trail
 
-Scheduling is SM-2. The part that matters more is that **every review is
+Scheduling is FSRS-6 ([ADR-0033](docs/adr/0033-fsrs.md)). The part that
+matters more is that **every review is
 written to an append-only log** — not just the current interval. That means
 your statistics are recomputable, and the scheduling algorithm can be replaced
 later without throwing away your history. Most apps store only current state

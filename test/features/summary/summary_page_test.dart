@@ -110,7 +110,7 @@ void main() {
     final streak = state.progress.streakAt(state.now());
     expect(streak, 12);
     expect(statFor(tester, l10n.summaryStreak(streak)), '12');
-    final tomorrow = state.progress.dueTomorrow(state.now());
+    final tomorrow = state.dueTomorrow();
     expect(find.text(l10n.summaryNextDue(tomorrow)), findsOneWidget);
   });
 

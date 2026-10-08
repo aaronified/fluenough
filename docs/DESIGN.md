@@ -6,7 +6,7 @@
 lib/
   core/              pure Dart, no Flutter imports, fully unit-testable
     models/          Card, Deck, GrammarPattern, ReviewEvent, CardState
-    scheduling/      SM-2 and the Scheduler interface
+    scheduling/      FSRS and the Scheduler interface
     grading/         answer normalisation and comparison
     tts/             TtsEngine interface (implementations may touch platform)
     data/            drift database, deck repository, review log
@@ -74,8 +74,8 @@ time, so older history imported onto a new phone takes its place. See
 2. The drill presents the card according to its mode.
 3. The user answers. Machine-graded modes run the answer through
    `AnswerGrader`; `recognition` asks the user to self-assess.
-4. The outcome maps to an SM-2 grade of 0–5.
-5. `Sm2.next(state, grade)` returns the new state — a pure function, which is
+4. The outcome maps to a grade of 0–5, which FSRS reads as a rating.
+5. `Fsrs.next(state, grade)` returns the new state — a pure function, which is
    what makes the scheduler trivially testable.
 6. A `ReviewEvent` is appended to `reviews` **and** `card_states` is updated,
    in one transaction. Both, or neither.
@@ -84,7 +84,7 @@ time, so older history imported onto a new phone takes its place. See
 
 `AnswerGrader` returns `exact`, `closeDiacritics`, `closeTypo` or `wrong`
 rather than a boolean. The distinction drives both the UI ("right, but watch
-the accent") and the SM-2 grade, and keeps the policy decision out of the
+the accent") and the grade, and keeps the policy decision out of the
 comparison code. The pipeline is specified in
 [DECK-FORMAT.md](DECK-FORMAT.md#grading).
 

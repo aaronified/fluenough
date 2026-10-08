@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 final now = DateTime(2026, 9, 28, 19);
 
@@ -15,21 +15,23 @@ Card card(String id, {Set<DrillMode> modes = const {}}) => Card(
 );
 
 /// A state due [daysAgo] days before [now]; negative means in the future.
-Sm2State dueDaysAgo(int daysAgo) => Sm2State(
+FsrsState dueDaysAgo(int daysAgo) => FsrsState(
+  stability: 6,
+  difficulty: 5,
   repetitions: 2,
-  easeFactor: Sm2.defaultEase,
   intervalDays: 6,
   dueAt: now.subtract(Duration(days: daysAgo)),
+  lastReviewAt: now.subtract(Duration(days: daysAgo + 6)),
 );
 
 SessionQueue build(
   List<Card> cards, {
-  Map<(String, DrillMode), Sm2State> states = const {},
+  Map<(String, DrillMode), FsrsState> states = const {},
   bool voice = true,
   int newCardLimit = 20,
   Set<DrillMode>? modes,
 }) {
-  Sm2State? lookup(Card c, DrillMode m) => states[(c.id, m)];
+  FsrsState? lookup(Card c, DrillMode m) => states[(c.id, m)];
   bool hasVoice(Card _) => voice;
   return modes == null
       ? SessionQueue.build(

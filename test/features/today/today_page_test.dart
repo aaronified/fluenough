@@ -309,7 +309,7 @@ void main() {
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
       expect(drill.request.revise, isTrue);
       expect(drill.request.limit, size);
-      expect(drill.request.recordsMisses, isTrue);
+      expect(drill.request.recordsRevision, isTrue);
       tester.state<NavigatorState>(find.byType(Navigator).first).pop();
       await tester.pumpAndSettle();
     }
@@ -550,7 +550,7 @@ void main() {
       expect(drill.request.skill, Skill.production);
       expect(drill.request.revise, isTrue);
       expect(drill.request.limit, isNull);
-      expect(drill.request.recordsMisses, isTrue);
+      expect(drill.request.recordsRevision, isTrue);
     });
 
     testWidgets('a tile with nothing due and nothing known starts nothing', (
@@ -648,7 +648,7 @@ void main() {
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
       expect(drill.request.skills, <Skill>{Skill.recognition});
       expect(drill.request.limit, 5);
-      expect(drill.request.recordsMisses, isTrue);
+      expect(drill.request.recordsRevision, isTrue);
     });
 
     testWidgets('with speaking on, Spoken revises listening and speaking', (

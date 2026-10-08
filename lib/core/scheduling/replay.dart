@@ -1,6 +1,6 @@
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
-import 'sm2.dart';
+import 'fsrs.dart';
 
 /// One review as the log keeps it: enough to replay it.
 typedef LoggedReview = ({
@@ -12,7 +12,7 @@ typedef LoggedReview = ({
   String? answerGiven,
 });
 
-/// Replays [reviews], in the order given, through [Sm2.next]: every review
+/// Replays [reviews], in the order given, through [Fsrs.next]: every review
 /// with its pair's state before and after it, and each pair's state at the
 /// end (ADR-0005).
 ///
@@ -20,11 +20,11 @@ typedef LoggedReview = ({
 /// replay as they happened, the first one after it starts from a fresh
 /// state, and a pair with no review since its reset has no state at the end.
 /// An undone reset is not in [effects], so it changes nothing.
-({List<ReviewEvent> events, Map<ProgressKey, Sm2State> states}) replayReviews(
+({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states}) replayReviews(
   Iterable<LoggedReview> reviews, {
   LeechEffects effects = LeechEffects.none,
 }) {
-  final states = <ProgressKey, Sm2State>{};
+  final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
   final events = <ReviewEvent>[];
   for (final review in reviews) {
@@ -34,10 +34,11 @@ typedef LoggedReview = ({
       states.remove(key);
     }
     final before = states[key];
-    final after = Sm2.next(
-      before ?? Sm2State.fresh(review.at),
+    final after = Fsrs.next(
+      before,
       review.grade,
       now: review.at,
+      rated: review.answerGiven == null,
     );
     states[key] = after;
     events.add(

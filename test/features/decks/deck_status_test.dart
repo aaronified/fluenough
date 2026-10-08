@@ -110,7 +110,7 @@ void main() {
 
     final later = tinyState(
       progress: state.progress,
-      now: state.now().add(const Duration(days: 2)),
+      now: state.now().add(const Duration(days: 8)),
     );
     addTearDown(later.dispose);
     await later.load();
@@ -133,7 +133,7 @@ void main() {
     }
     final later = tinyState(
       progress: state.progress,
-      now: state.now().add(const Duration(days: 2)),
+      now: state.now().add(const Duration(days: 8)),
     );
     addTearDown(later.dispose);
     await later.load();
