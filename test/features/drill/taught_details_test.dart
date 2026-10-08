@@ -14,6 +14,7 @@ import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/taught_details.dart';
+import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 
@@ -280,9 +281,15 @@ typedef Answer = Future<void> Function(
 );
 
 Future<void> typed(WidgetTester tester, Rig rig, Card card, Outcome o) async {
+  // Hear types the meaning of what was heard (ADR-0034); the rest, the word.
+  final session = tester.widget<TypedDrill>(find.byType(TypedDrill)).session;
   await tester.enterText(
     find.byType(TextField),
-    o == Outcome.right ? card.target : 'zzzz',
+    o == Outcome.wrong
+        ? 'zzzz'
+        : session.hearsMeaning
+        ? card.native
+        : card.target,
   );
   await tester.pump();
   await tester.tap(find.text(l10nOf(tester).drillCheck));
@@ -296,7 +303,7 @@ Future<void> chosen(WidgetTester tester, Rig rig, Card card, Outcome o) async {
       : session.options.firstWhere((c) => c.id != card.id);
   await tapText(
     tester,
-    session.ask == Ask.chooseMeaning ? option.native : option.target,
+    session.ask.choosesMeaning ? option.native : option.target,
   );
 }
 
@@ -438,6 +445,14 @@ const List<Question> answered = <Question>[
     showsWord: false,
     showsMeaning: true,
     phrase: true,
+  ),
+  Question(
+    'hearing and choosing the meaning',
+    Skill.listening,
+    Ask.hearMeaning,
+    chosen,
+    showsWord: false,
+    showsMeaning: false,
   ),
 ];
 
