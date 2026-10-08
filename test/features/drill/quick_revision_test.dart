@@ -9,7 +9,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
@@ -111,8 +111,8 @@ void main() {
     expect(state.sessionItems(const DrillRequest.revision(5)), isEmpty);
   });
 
-  test('a right answer is not recorded and leaves the date alone; a wrong '
-      'one is recorded as a lapse', () async {
+  test('every answer is recorded (ADR-0033): a right one pushes the date '
+      'out, a wrong one is a lapse', () async {
     final state = await knowing(8);
     final items = <SessionItem>[
       for (final item
@@ -124,7 +124,7 @@ void main() {
       items: items,
       recorded: false,
       revising: true,
-      recordsMisses: true,
+      recordsRevision: true,
     );
     final first = items[0];
     final before = state.progress.log.length;
@@ -132,22 +132,25 @@ void main() {
     session.pick(
       session.options.firstWhere((option) => option.id == first.card.id),
     );
-    expect(state.progress.log, hasLength(before));
-    expect(state.progress.stateOf(first.card.id, first.mode)!.dueAt, due);
+    expect(state.progress.log, hasLength(before + 1));
+    expect(
+      state.progress.stateOf(first.card.id, first.mode)!.dueAt.isAfter(due),
+      isTrue,
+    );
 
     session.next();
     final second = items[1];
     session.pick(
       session.options.firstWhere((option) => option.id != second.card.id),
     );
-    expect(state.progress.log, hasLength(before + 1));
+    expect(state.progress.log, hasLength(before + 2));
     final miss = state.progress.log.last;
     expect(miss.cardId, second.card.id);
-    expect(miss.grade, lessThan(Sm2.passingGrade));
+    expect(miss.grade, lessThan(Fsrs.passingGrade));
   });
 
   testWidgets('from the page, a miss is recorded and ending part-way says '
-      'the misses are kept', (tester) async {
+      'the answers are kept', (tester) async {
     usePhone(tester);
     final state = await knowing(8);
     await pumpScreen(
@@ -191,11 +194,11 @@ void main() {
     }
     await tester.pumpAndSettle();
     expect(state.progress.log, hasLength(before + 1));
-    expect(state.progress.log.last.grade, lessThan(Sm2.passingGrade));
+    expect(state.progress.log.last.grade, lessThan(Fsrs.passingGrade));
 
     await tester.tap(find.byTooltip(l10n.drillEndSession));
     await tester.pumpAndSettle();
-    expect(find.text(l10n.drillEndBodyMisses), findsOneWidget);
+    expect(find.text(l10n.drillEndBody), findsOneWidget);
     expect(find.text(l10n.drillEndBodyNotRecorded), findsNothing);
   });
 
@@ -249,8 +252,8 @@ void main() {
       const request = DrillRequest.reviseSkill(Skill.recognition);
       expect(request.revise, isTrue);
       expect(request.limit, isNull);
-      expect(request.recordsMisses, isTrue);
-      expect(DrillRequest.revise('hi-en-first-words').recordsMisses, isFalse);
+      expect(request.recordsRevision, isTrue);
+      expect(DrillRequest.revise('hi-en-first-words').recordsRevision, isFalse);
       final state = await knowingIn(<DrillMode>{
         DrillMode.recognition,
         DrillMode.production,

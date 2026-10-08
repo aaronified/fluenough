@@ -2,7 +2,7 @@ import 'package:drift/drift.dart';
 
 import '../models/drill_mode.dart';
 import '../models/review_event.dart';
-import '../scheduling/sm2.dart';
+import '../scheduling/fsrs.dart';
 import 'database.dart';
 
 /// Reads the scheduling state of every `(card, mode)` pair.
@@ -14,36 +14,40 @@ class CardStateRepository {
   final AppDatabase _db;
 
   /// One pair's state, or null if it has never been reviewed.
-  Future<Sm2State?> stateOf(String cardId, DrillMode mode) async =>
-      (await _db.cardStatesDao.of(cardId, mode))?.toSm2State();
+  Future<FsrsState?> stateOf(String cardId, DrillMode mode) async =>
+      (await _db.cardStatesDao.of(cardId, mode))?.toFsrsState();
 
   /// Every pair that has been reviewed, with its state.
-  Future<Map<ProgressKey, Sm2State>> all() async => <ProgressKey, Sm2State>{
+  Future<Map<ProgressKey, FsrsState>> all() async => <ProgressKey, FsrsState>{
     for (final row in await _db.cardStatesDao.all())
-      (cardId: row.cardId, mode: row.mode): row.toSm2State(),
+      (cardId: row.cardId, mode: row.mode): row.toFsrsState(),
   };
 }
 
 /// A `card_states` row as the scheduler sees it.
-extension CardStateRowToSm2 on CardStateRow {
-  Sm2State toSm2State() => Sm2State(
-    repetitions: repetitions,
-    easeFactor: easeFactor,
+extension CardStateRowToFsrs on CardStateRow {
+  FsrsState toFsrsState() => FsrsState(
+    stability: stability,
+    difficulty: difficulty,
     intervalDays: intervalDays,
     dueAt: dueAt,
+    lastReviewAt: lastReviewAt,
+    repetitions: repetitions,
     lapses: lapses,
   );
 }
 
-/// An [Sm2State] as the `card_states` row for [key].
-extension Sm2StateToRow on Sm2State {
+/// An [FsrsState] as the `card_states` row for [key].
+extension FsrsStateToRow on FsrsState {
   CardStatesCompanion toRow(ProgressKey key) => CardStatesCompanion.insert(
     cardId: key.cardId,
     mode: key.mode,
+    stability: stability,
+    difficulty: difficulty,
     intervalDays: intervalDays,
-    easeFactor: easeFactor,
     repetitions: repetitions,
     dueAt: dueAt,
+    lastReviewAt: lastReviewAt,
     lapses: Value(lapses),
   );
 }

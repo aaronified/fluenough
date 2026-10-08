@@ -103,7 +103,7 @@ class ReadingQuestion {
 
   bool isRight(int choice) => choice == answer;
 
-  /// The SM-2 grade for [choice].
+  /// The grade for [choice].
   int gradeFor(int choice) => isRight(choice) ? rightGrade : wrongGrade;
 
   /// [choice] as the deck numbers it, for the review log: the option's
@@ -157,7 +157,7 @@ class Passage {
 }
 
 /// A reading question as a card, so that it is scheduled, recorded and
-/// counted like any other: its own SM-2 state per mode, keyed by the
+/// counted like any other: its own FSRS state per mode, keyed by the
 /// question's id, a card id of the language (ADR-0018).
 ///
 /// It is read in [DrillMode.reading], and heard in [DrillMode.listening]

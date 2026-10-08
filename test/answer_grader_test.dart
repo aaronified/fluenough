@@ -117,21 +117,21 @@ void main() {
 
   group('SM-2 grade mapping', () {
     test('a typo is not punished as a forgotten card', () {
-      expect(AnswerOutcome.closeTypo.toSm2Grade(), greaterThanOrEqualTo(3));
+      expect(AnswerOutcome.closeTypo.toGrade(), greaterThanOrEqualTo(3));
     });
 
     test('outcomes map monotonically', () {
       expect(
-        AnswerOutcome.exact.toSm2Grade(),
-        greaterThan(AnswerOutcome.closeDiacritics.toSm2Grade()),
+        AnswerOutcome.exact.toGrade(),
+        greaterThan(AnswerOutcome.closeDiacritics.toGrade()),
       );
       expect(
-        AnswerOutcome.closeDiacritics.toSm2Grade(),
-        greaterThan(AnswerOutcome.closeTypo.toSm2Grade()),
+        AnswerOutcome.closeDiacritics.toGrade(),
+        greaterThan(AnswerOutcome.closeTypo.toGrade()),
       );
       expect(
-        AnswerOutcome.closeTypo.toSm2Grade(),
-        greaterThan(AnswerOutcome.wrong.toSm2Grade()),
+        AnswerOutcome.closeTypo.toGrade(),
+        greaterThan(AnswerOutcome.wrong.toGrade()),
       );
     });
   });

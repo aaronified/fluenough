@@ -25,7 +25,7 @@ class Reviews extends Table {
   /// Stored by name, so renaming a [DrillMode] value needs a migration.
   TextColumn get mode => textEnum<DrillMode>()();
 
-  /// The SM-2 grade, 0 to 5.
+  /// The grade, 0 to 5. FSRS reads it as a rating (`Fsrs.ratingOf`).
   IntColumn get grade => integer()();
 
   IntColumn get elapsedMs => integer()();
@@ -38,10 +38,19 @@ class Reviews extends Table {
 
   IntColumn get intervalAfter => integer()();
 
-  /// Null on the pair's first review.
+  /// SM-2's ease, for the rows written before FSRS (migration 5). Since,
+  /// [easeBefore] is null and [easeAfter] is 0, meaning "not SM-2".
   RealColumn get easeBefore => real().nullable()();
 
   RealColumn get easeAfter => real()();
+
+  /// FSRS's stability after this review, in days. Added by migration 5:
+  /// null on the rows written before it.
+  RealColumn get stabilityAfter => real().nullable()();
+
+  /// FSRS's difficulty after this review, 1 to 10. Added by migration 5:
+  /// null on the rows written before it.
+  RealColumn get difficultyAfter => real().nullable()();
 
   @override
   List<String> get customConstraints => const <String>[

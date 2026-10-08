@@ -161,7 +161,7 @@ class _DrillPageState extends State<DrillPage> {
       inputMode: preset?.inputMode,
       recorded: !request.revise,
       revising: request.revise,
-      recordsMisses: request.recordsMisses,
+      recordsRevision: request.recordsRevision,
     );
     preset?.apply(session);
     _session = session..addListener(_onSession);
@@ -210,9 +210,8 @@ class _DrillPageState extends State<DrillPage> {
       builder: (context) => AlertDialog(
         title: Text(l10n.drillEndTitle),
         content: Text(switch (_session) {
-          DrillSession(recorded: false, recordsMisses: true) =>
-            l10n.drillEndBodyMisses,
-          DrillSession(recorded: false) => l10n.drillEndBodyNotRecorded,
+          DrillSession(recorded: false, recordsRevision: false) =>
+            l10n.drillEndBodyNotRecorded,
           _ => l10n.drillEndBody,
         }),
         actions: <Widget>[

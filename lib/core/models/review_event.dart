@@ -1,4 +1,4 @@
-import '../scheduling/sm2.dart';
+import '../scheduling/fsrs.dart';
 import 'drill_mode.dart';
 
 /// Identifies one scheduling state: a card, in one mode. Not a deck: a card
@@ -27,7 +27,7 @@ class ReviewEvent {
   final String cardId;
   final DrillMode mode;
 
-  /// The SM-2 grade recorded, 0–5.
+  /// The grade recorded, 0–5 ([Fsrs.ratingOf]).
   final int grade;
 
   /// How long the learner took to answer.
@@ -37,17 +37,17 @@ class ReviewEvent {
   final String? answerGiven;
 
   /// The state going in, or null if this was the pair's first review.
-  final Sm2State? before;
+  final FsrsState? before;
 
-  final Sm2State after;
+  final FsrsState after;
 
   ProgressKey get key => (cardId: cardId, mode: mode);
 
   /// Whether this review introduced a new pair.
   bool get wasNew => before == null;
 
-  /// Whether SM-2 counts this review as remembered.
-  bool get passed => grade >= Sm2.passingGrade;
+  /// Whether this review counts as remembered: not Again.
+  bool get passed => grade >= Fsrs.passingGrade;
 
   @override
   String toString() => 'ReviewEvent($deckId/$cardId ${mode.name}, $grade)';

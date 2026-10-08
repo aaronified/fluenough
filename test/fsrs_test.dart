@@ -93,6 +93,11 @@ void main() {
       );
     });
 
+    test('5 is Easy only when the learner rated it', () {
+      expect(Fsrs.ratingOf(5, rated: true), Rating.easy);
+      expect(Fsrs.ratingOf(4, rated: true), Rating.good);
+    });
+
     test('outside 0-5 are refused', () {
       expect(() => Fsrs.ratingOf(6), throwsArgumentError);
       expect(() => Fsrs.next(null, -1, now: start), throwsArgumentError);
@@ -102,8 +107,8 @@ void main() {
   group('properties', () {
     final later = start.add(const Duration(days: 10));
     final learnt = Fsrs.replay([
-      (grade: 4, at: start),
-      (grade: 4, at: start.add(const Duration(days: 3))),
+      (grade: 4, at: start, rated: false),
+      (grade: 4, at: start.add(const Duration(days: 3)), rated: false),
     ])!;
 
     test('a better rating never gives a shorter interval', () {

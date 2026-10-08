@@ -37,7 +37,7 @@ One per answered card, oldest first: a row of the `reviews` table
 | `deck` | yes | The deck it was answered in. Not part of the pair: a card listed in several decks has one schedule (ADR-0018). |
 | `card` | yes | Card id, permanent (AGENTS.md rule 1). |
 | `mode` | yes | `recognition`, `production`, `listening`, `grammar` or `speaking`. |
-| `grade` | yes | SM-2 grade, a whole number 0–5. |
+| `grade` | yes | The grade, a whole number 0–5, read by FSRS as a rating (ADR-0033). |
 | `elapsed_ms` | yes | How long the answer took, in milliseconds. |
 | `answer` | no | What was typed, or for `speaking` what the recogniser heard. Absent for a self-graded review. |
 

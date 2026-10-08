@@ -1,4 +1,4 @@
-import '../core/scheduling/sm2.dart';
+import '../core/scheduling/fsrs.dart';
 import 'skill.dart';
 
 /// What a drill session should cover. Passed to the drill route, which asks
@@ -61,17 +61,17 @@ class DrillRequest {
 
   /// Quick revision, from Today (ADR-0029): [count] words the learner has
   /// been taught, from every language they learn, picked at random, each in
-  /// a skill it has been reviewed in, due or not. A wrong answer is
-  /// recorded, as a lapse that brings the card back sooner; a right one is
-  /// not, since an early review would stretch the card's interval.
+  /// a skill it has been reviewed in, due or not. Every answer is recorded:
+  /// FSRS counts an early review for what it is, so a right one stretches
+  /// the interval only a little, and a miss brings the card back sooner.
   ///
   /// With [skills], only those skills: "Spoken", or one skill.
   const DrillRequest.revision(int count, {Set<Skill>? skills})
     : this(revise: true, limit: count, skills: skills);
 
   /// Every word known in [skill], from every language learned, due or not:
-  /// a skill's tile on Today with nothing due. Like a quick revision, a
-  /// miss is recorded and a right answer is not (ADR-0030).
+  /// a skill's tile on Today with nothing due. Like a quick revision, every
+  /// answer is recorded (ADR-0030, ADR-0033).
   const DrillRequest.reviseSkill(Skill skill)
     : this(revise: true, skill: skill);
 
@@ -116,10 +116,10 @@ class DrillRequest {
   /// all of them, in order.
   final int? limit;
 
-  /// Whether a wrong answer is recorded although the session is not: a
-  /// revision from Today, of every deck (ADR-0029, ADR-0030). A deck's
-  /// Revise records nothing.
-  bool get recordsMisses => revise && deckIds == null;
+  /// Whether answers are recorded although the session revises: a revision
+  /// from Today, of every deck (ADR-0029, ADR-0030, as ADR-0033 amends
+  /// them). A deck's Revise records nothing.
+  bool get recordsRevision => revise && deckIds == null;
 
   @override
   String toString() =>
@@ -136,13 +136,13 @@ class SessionAnswer {
 
   final Skill skill;
 
-  /// The SM-2 grade recorded, 0–5. Minimal pairs, which the scheduler does
+  /// The grade recorded, 0–5 ([Fsrs.ratingOf]). Minimal pairs, which the scheduler does
   /// not know yet, use the same scale.
   final int grade;
 
-  /// Whether the answer counts as correct in the score: the same line SM-2
+  /// Whether the answer counts as correct in the score: the same line FSRS
   /// draws, so "I knew it" on a near miss counts and "Again" does not.
-  bool get correct => grade >= Sm2.passingGrade;
+  bool get correct => grade >= Fsrs.passingGrade;
 }
 
 /// A skill's line in the summary: how many of its answers were correct.

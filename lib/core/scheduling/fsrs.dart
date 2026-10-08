@@ -86,26 +86,36 @@ abstract final class Fsrs {
 
   static final double _factor = math.pow(0.9, 1 / _decay) - 1;
 
+  /// Grades below this are Again: forgotten.
+  static const int passingGrade = 3;
+
   /// The rating a logged grade (0–5) stands for: below 3 is Again, 3 Hard,
-  /// and 4 and 5 Good. An answer typed exactly, 5, is Good rather than Easy
-  /// (owner's decision): Easy is for the learner to choose.
-  static Rating ratingOf(int grade) {
+  /// 4 Good, and 5 Good too, unless [rated]: an answer typed exactly is Good
+  /// (owner's decision), and Easy is only ever the learner's own rating.
+  /// A rated review is one the learner graded with the rating buttons, which
+  /// the log tells by its having no answer given.
+  static Rating ratingOf(int grade, {bool rated = false}) {
     if (grade < 0 || grade > 5) {
       throw ArgumentError.value(grade, 'grade', 'must be between 0 and 5');
     }
     return switch (grade) {
-      < 3 => Rating.again,
+      < passingGrade => Rating.again,
       3 => Rating.hard,
+      5 when rated => Rating.easy,
       _ => Rating.good,
     };
   }
 
   /// Applies a review [grade] (0–5) to [state], null for a pair never
-  /// reviewed, and returns the new state.
+  /// reviewed, and returns the new state. [rated] as for [ratingOf].
   ///
   /// Throws [ArgumentError] if [grade] is outside 0–5.
-  static FsrsState next(FsrsState? state, int grade, {required DateTime now}) =>
-      review(state, ratingOf(grade), now: now);
+  static FsrsState next(
+    FsrsState? state,
+    int grade, {
+    required DateTime now,
+    bool rated = false,
+  }) => review(state, ratingOf(grade, rated: rated), now: now);
 
   /// Applies [rating] to [state] at [now]. [next] for a rating chosen
   /// directly, such as Easy on the rating buttons.
@@ -161,10 +171,12 @@ abstract final class Fsrs {
   }
 
   /// Rebuilds a pair's state from its `(grade, time)` reviews, oldest first.
-  static FsrsState? replay(Iterable<({int grade, DateTime at})> reviews) {
+  static FsrsState? replay(
+    Iterable<({int grade, DateTime at, bool rated})> reviews,
+  ) {
     FsrsState? state;
     for (final review in reviews) {
-      state = next(state, review.grade, now: review.at);
+      state = next(state, review.grade, now: review.at, rated: review.rated);
     }
     return state;
   }

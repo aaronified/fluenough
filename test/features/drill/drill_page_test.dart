@@ -91,7 +91,7 @@ void main() {
 
     for (final grade in SelfGrade.values) {
       final days = progress
-          .preview(card.id, DrillMode.recognition, grade.toSm2Grade(), now: now)
+          .preview(card.id, DrillMode.recognition, grade.toGrade(), now: now)
           .intervalDays;
       expect(find.text(l10n.rateInterval(days)), findsWidgets);
     }
@@ -208,7 +208,7 @@ void main() {
           ),
         );
         await tester.pumpAndSettle();
-        expect(state.progress.log.single.grade, judgement.toSm2Grade());
+        expect(state.progress.log.single.grade, judgement.toGrade());
         expect(find.text(l10n.drillCheck), findsOneWidget, reason: 'next');
       });
     }

@@ -54,8 +54,10 @@ class AppDatabase extends _$AppDatabase {
   /// 2: `settings` (#15).
   /// 3: `leech_actions`, append-only like `reviews` (#19).
   /// 4: `card_states` keyed by `(card_id, mode)`, without the deck (ADR-0018).
+  /// 5: FSRS in place of SM-2: `card_states` holds FSRS's state, and
+  ///    `reviews` gains `stability_after` and `difficulty_after`.
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -70,10 +72,13 @@ class AppDatabase extends _$AppDatabase {
         await m.createTable(leechActions);
         await _appendOnly('leech_actions');
       }
-      if (from < 4) {
-        // A cache, refilled from `reviews` whenever progress opens.
+      if (from < 5) {
+        // A cache, refilled from `reviews` whenever progress opens: by
+        // `(card_id, mode)` since 4, with FSRS's state since 5.
         await m.deleteTable('card_states');
         await m.createTable(cardStates);
+        await m.addColumn(reviews, reviews.stabilityAfter);
+        await m.addColumn(reviews, reviews.difficultyAfter);
       }
     },
   );

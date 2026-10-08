@@ -4,7 +4,7 @@ import '../core/data/database.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/replay.dart';
-import '../core/scheduling/sm2.dart';
+import '../core/scheduling/fsrs.dart';
 import 'memory_progress.dart';
 
 /// A profile's progress, kept in its own database file (#3, #5) and read
@@ -42,11 +42,11 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   bool get persists => true;
 
   @override
-  Sm2State? stateOf(String cardId, DrillMode mode) =>
+  FsrsState? stateOf(String cardId, DrillMode mode) =>
       _memory.stateOf(cardId, mode);
 
   @override
-  Map<ProgressKey, Sm2State> get states => _memory.states;
+  Map<ProgressKey, FsrsState> get states => _memory.states;
 
   @override
   List<ReviewEvent> get log => _memory.log;

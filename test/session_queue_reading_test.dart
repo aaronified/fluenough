@@ -3,7 +3,7 @@ import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/reading.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 /// Reading questions in a session (#98, ADR-0019): each scheduled like a
 /// card, and a passage's questions kept together.
@@ -30,16 +30,18 @@ List<QuestionCard> passage(String id, int questions) {
 Card word(String id) =>
     Card(id: id, deckId: 'words', target: 'target $id', native: 'native $id');
 
-Sm2State dueDaysAgo(int daysAgo) => Sm2State(
+FsrsState dueDaysAgo(int daysAgo) => FsrsState(
+  stability: 6,
+  difficulty: 5,
   repetitions: 2,
-  easeFactor: Sm2.defaultEase,
   intervalDays: 6,
   dueAt: now.subtract(Duration(days: daysAgo)),
+  lastReviewAt: now.subtract(Duration(days: daysAgo + 6)),
 );
 
 SessionQueue build(
   List<Card> cards, {
-  Map<(String, DrillMode), Sm2State> states = const {},
+  Map<(String, DrillMode), FsrsState> states = const {},
   bool voice = true,
   int newCardLimit = 20,
 }) => SessionQueue.build(

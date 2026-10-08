@@ -4,7 +4,7 @@ import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import '../scheduling/replay.dart';
-import '../scheduling/sm2.dart';
+import '../scheduling/fsrs.dart';
 import 'card_state_repository.dart';
 import 'log_jsonl.dart';
 import 'database.dart';
@@ -21,7 +21,7 @@ class ReviewLog {
 
   final AppDatabase _db;
 
-  /// Records a review of one pair: runs [Sm2.next] on its stored state,
+  /// Records a review of one pair: runs [Fsrs.next] on its stored state,
   /// appends the review and stores the new state, atomically. Returns the
   /// event. Throws [ArgumentError], writing nothing, for a grade outside 0–5.
   Future<ReviewEvent> record({
@@ -35,7 +35,12 @@ class ReviewLog {
   }) => _db.transaction(() async {
     final key = (cardId: cardId, mode: mode);
     final before = await CardStateRepository(_db).stateOf(cardId, mode);
-    final after = Sm2.next(before ?? Sm2State.fresh(now), grade, now: now);
+    final after = Fsrs.next(
+      before,
+      grade,
+      now: now,
+      rated: answerGiven == null,
+    );
     await _db.reviewsDao.append(
       ReviewsCompanion.insert(
         ts: now,
@@ -47,8 +52,9 @@ class ReviewLog {
         answerGiven: Value(answerGiven),
         intervalBefore: Value(before?.intervalDays),
         intervalAfter: after.intervalDays,
-        easeBefore: Value(before?.easeFactor),
-        easeAfter: after.easeFactor,
+        easeAfter: 0,
+        stabilityAfter: Value(after.stability),
+        difficultyAfter: Value(after.difficulty),
       ),
     );
     await _db.cardStatesDao.put(after.toRow(key));
@@ -74,7 +80,7 @@ class ReviewLog {
   Future<List<LeechAction>> leechActions() => _db.leechActionsDao.all();
 
   /// Rebuilds `card_states` from `reviews` and `leech_actions` alone: every
-  /// pair's reviews in order through [Sm2.next], restarting a pair at a reset
+  /// pair's reviews in order through [Fsrs.next], restarting a pair at a reset
   /// that still holds. In one transaction, so the cache is never seen
   /// half-built. This is the proof that the log is enough, and the path a
   /// change of algorithm will take.
@@ -96,10 +102,10 @@ class ReviewLog {
   /// moment match ([reviewIdentity]), so importing a backup twice adds
   /// nothing the second time. Returns how many reviews were new.
   ///
-  /// A new row's interval and ease columns are what replaying the merged
-  /// log gives at that review. Rows already there keep theirs: those
-  /// columns record what was computed when the row was written, and the
-  /// state is always rebuilt from the grades.
+  /// A new row's interval, stability and difficulty columns are what
+  /// replaying the merged log gives at that review. Rows already there keep
+  /// theirs: those columns record what was computed when the row was
+  /// written, and the state is always rebuilt from the grades.
   Future<int> importAll(
     List<LoggedReview> reviews,
     List<LeechAction> leechActions,
@@ -139,8 +145,9 @@ class ReviewLog {
             answerGiven: Value(event.answerGiven),
             intervalBefore: Value(event.before?.intervalDays),
             intervalAfter: event.after.intervalDays,
-            easeBefore: Value(event.before?.easeFactor),
-            easeAfter: event.after.easeFactor,
+            easeAfter: 0,
+            stabilityAfter: Value(event.after.stability),
+            difficultyAfter: Value(event.after.difficulty),
           ),
         );
       }
@@ -165,7 +172,7 @@ class ReviewLog {
     }
   });
 
-  Future<({List<ReviewEvent> events, Map<ProgressKey, Sm2State> states})>
+  Future<({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states})>
   _replay() async => replayReviews(
     inTimeOrder(<LoggedReview>[
       for (final row in await _db.reviewsDao.all()) _logged(row),

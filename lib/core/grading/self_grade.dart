@@ -2,9 +2,10 @@
 ///
 /// Recognition is self-assessed (see `DrillMode.isMachineGraded`): the app
 /// shows the meaning and the learner rates their own recall. Four gradations,
-/// mapped onto the same SM-2 ladder that `AnswerOutcome.toSm2Grade` uses for
+/// mapped onto the same 0–5 ladder that `AnswerOutcome.toGrade` uses for
 /// machine-graded answers, so that a self-rated "Good" and a typed answer with
-/// a missing accent schedule the card the same way:
+/// a missing accent schedule the card the same way. FSRS reads [easy]'s 5 as
+/// Easy, and an exact typed answer's 5 as Good (ADR-0033):
 ///
 /// | Rating | Grade | Machine-graded equivalent |
 /// | --- | --- | --- |
@@ -13,8 +14,8 @@
 /// | [good] | 4 | closeDiacritics |
 /// | [easy] | 5 | exact |
 ///
-/// Grade 2 is deliberately unused: SM-2 treats 0–2 alike as a failure, and a
-/// fifth button would ask the learner to draw a line SM-2 ignores.
+/// Grade 2 is deliberately unused: 0–2 are all Again, and a fifth button
+/// would ask the learner to draw a line the scheduler ignores.
 enum SelfGrade {
   /// Did not remember it. The card starts again and is due tomorrow.
   again,
@@ -28,8 +29,8 @@ enum SelfGrade {
   /// Remembered it at once.
   easy;
 
-  /// The SM-2 grade (0–5) this rating records.
-  int toSm2Grade() => switch (this) {
+  /// The grade (0–5) this rating records.
+  int toGrade() => switch (this) {
     SelfGrade.again => 1,
     SelfGrade.hard => 3,
     SelfGrade.good => 4,
@@ -37,7 +38,7 @@ enum SelfGrade {
   };
 
   /// Whether this rating counts as remembering the card, in a session's score
-  /// and for SM-2 alike.
+  /// and for FSRS alike.
   bool get isCorrect => this != SelfGrade.again;
 }
 
@@ -55,8 +56,8 @@ enum TypoJudgement {
   /// `AnswerOutcome.wrong` is.
   countWrong;
 
-  /// The SM-2 grade (0–5) this verdict records.
-  int toSm2Grade() => switch (this) {
+  /// The grade (0–5) this verdict records.
+  int toGrade() => switch (this) {
     TypoJudgement.knewIt => 3,
     TypoJudgement.countWrong => 1,
   };
