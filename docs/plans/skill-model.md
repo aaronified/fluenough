@@ -209,22 +209,27 @@ before the script, six after):
    update, and that a Hear question never asks for a transliteration
    outside script practice.
 
-## To decide
+## Decided
 
-- **The Today tiles,** after more discussion of the research.
-- **Spill-over:** whether a right Write answer also counts toward Hear, or
-  the reverse.
-- **Match pairs and choose the meaning:** lesson steps only, or Write's
-  first rung.
-- **The old log:** how past listening answers (dictation, which shows no
-  meaning) and recognition answers replay.
-- **Typed meanings:** how close counts, and where alternatives come from.
-- **Answer time:** how it changes a grammar grade.
-- **Pictures:** where images come from.
-- **Cloze:** typed only, or also chosen as its easier grade. The gap is any
-  word the learner has learnt, and the sentence is an item of its own
-  (`sentence-building.md`).
-- **The pair partner** among Hear's options, as proposed above.
+The owner's answers to #235, 2026-10-08:
+
+- **The Today tiles:** Hear, Say, Write and Grammar (understood and
+  produced share one tile); Reading stays.
+- **Spill-over:** as the research says. Nothing is taken from sound to
+  writing or from saying to hearing, so no schedule counts another's
+  answers. A new schedule starts from the learner's ability there.
+- **Match pairs and choose the meaning** are lesson steps, not scheduled.
+- **The old log:** dictation replays into Hear, production into Write,
+  speaking into Say, grammar into grammar produced. Recognition answers
+  stay in the log and feed no schedule.
+- **Typed meanings** are graded by the answer grader's folding and typo
+  rules against each meaning: `native` split on `/`, `;` and `,`, and an
+  optional `meanings:` list on the card.
+- **Answer time** is recorded (`reviews.elapsed_ms` already holds it) and
+  does not change a grade for now.
+- **Pictures:** an open-licence set now, for concrete words.
+- **Cloze** is chosen as its easier grade and typed as its harder one.
+- **The pair partner** is among Hear's options where a card names one.
 
 ## Estimate
 
