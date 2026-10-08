@@ -99,17 +99,23 @@ Later: fit the parameters to each learner's history. That needs the Rust
 optimiser on the phone (through FFI) or offline, and a long enough history.
 Start with the default parameters.
 
-## To decide
+## Decided
 
-- The `fsrs` package, a new dependency (AGENTS.md asks for your answer), or
-  a port of the formulas of our own.
-- Whether an answer typed exactly is Easy or Good.
-- The desired retention: 0.9 by default.
-- What `reviews` keeps: new nullable columns, or a rebuild of the table.
-- Learning steps within a session, or none.
-- Whether quick revision then records right answers too.
-- One set of parameters for every skill, or one per skill. See
-  `difficulty-by-skill.md`.
+The owner's answers to #245, 2026-10-08:
+
+- **A port of our own** of FSRS-6, in `lib/core/scheduling/fsrs.dart`, with
+  no dependency. Tested against `py-fsrs` 6.3.2's results.
+- **An answer typed exactly is Good,** not Easy: grades 4 and 5 are both
+  Good. 1 (and 0, 2) is Again, 3 is Hard. Easy is the rating button only.
+- **Desired retention 0.9.**
+- **`reviews` gets nullable columns:** `stability_after` and
+  `difficulty_after`. `interval_after` keeps being written; `ease_after`,
+  not null, is written as 0, meaning "not SM-2".
+- **No learning steps:** a session asks each item once, and FSRS-6's
+  same-day formula handles a second review the same day.
+- **Quick revision records right answers too** (amends ADR-0029).
+- **One set of parameters** (FSRS-6's defaults) for every schedule;
+  per-skill sets wait for the optimiser (`difficulty-by-skill.md`).
 
 ## Estimate
 
