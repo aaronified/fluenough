@@ -17,7 +17,8 @@
 /// Grade 2 is deliberately unused: 0–2 are all Again, and a fifth button
 /// would ask the learner to draw a line the scheduler ignores.
 enum SelfGrade {
-  /// Did not remember it. The card starts again and is due tomorrow.
+  /// Did not remember it. FSRS cuts its stability and brings it back sooner:
+  /// the next day for a new card.
   again,
 
   /// Remembered it, with effort.

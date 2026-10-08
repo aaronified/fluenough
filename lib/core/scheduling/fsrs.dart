@@ -147,7 +147,7 @@ abstract final class Fsrs {
       stability: stability,
       difficulty: difficulty,
       intervalDays: interval,
-      dueAt: _addDays(now, interval),
+      dueAt: now.add(Duration(days: interval)),
       lastReviewAt: now,
       repetitions: missed ? 0 : (state?.repetitions ?? 0) + 1,
       lapses:
@@ -241,20 +241,10 @@ abstract final class Fsrs {
   }
 
   /// Whole days elapsed, as `py-fsrs` counts them: the duration's days,
-  /// rounded down, never below zero.
+  /// rounded down, never below zero. The due date is whole days of 24 hours
+  /// too, so a pair is never due before its interval has passed, even
+  /// across a change to daylight saving time, when it falls an hour off the
+  /// clock time it was answered at.
   static int _elapsedDays(DateTime from, DateTime to) =>
       math.max(0, to.toUtc().difference(from.toUtc()).inDays);
-
-  /// Adds whole days without tripping over daylight saving transitions, which
-  /// [DateTime.add] does not handle for local time.
-  static DateTime _addDays(DateTime from, int days) =>
-      (from.isUtc ? DateTime.utc : DateTime.new)(
-        from.year,
-        from.month,
-        from.day + days,
-        from.hour,
-        from.minute,
-        from.second,
-        from.millisecond,
-      );
 }

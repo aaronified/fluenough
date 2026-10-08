@@ -573,9 +573,9 @@
       }
     }
   },
-  "todaySkillReviseBody": "Revise {count, plural, =1{the 1 word} other{all {count} words}} you know in it? A miss brings a word back sooner; a right answer keeps its date.",
+  "todaySkillReviseBody": "Revise {count, plural, =1{the 1 word} other{all {count} words}} you know in it? Every answer counts: a miss brings a word back sooner, a right one pushes it a little further out.",
   "@todaySkillReviseBody": {
-    "description": "Body of the question asked when a skill tile with nothing due is tapped: revising records only the misses.",
+    "description": "Body of the question asked when a skill tile with nothing due is tapped: revising records every answer (ADR-0033).",
     "placeholders": {
       "count": {
         "type": "int",
@@ -721,7 +721,7 @@
   },
   "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
   "@todayRevisionBody": {
-    "description": "Under Quick revision: what it does. Right answers are not recorded; wrong ones are."
+    "description": "Under Quick revision: what it does. Every answer is recorded (ADR-0033)."
   },
   "todayRevisionNone": "Revision opens up once you've had a lesson.",
   "@todayRevisionNone": {
@@ -3005,7 +3005,7 @@
   "@onboardingTourReviewsTitle": {
     "description": "Tour slide 2, title: spaced repetition, in plain words."
   },
-  "onboardingTourReviewsBody": "Cards you know wait longer each time, cards you miss come back tomorrow, and Today shows what’s due.",
+  "onboardingTourReviewsBody": "Cards you know wait longer each time, cards you miss come back sooner, and Today shows what’s due.",
   "@onboardingTourReviewsBody": {
     "description": "Tour slide 2, body. 'Today' is the first tab (navToday): use the same word."
   },

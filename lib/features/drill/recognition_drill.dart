@@ -118,7 +118,9 @@ class RecognitionDrill extends StatelessWidget {
                 ),
               ),
               RatingButtons(
-                intervalFor: session.recorded ? session.intervalFor : null,
+                intervalFor: session.recorded || session.recordsRevision
+                    ? session.intervalFor
+                    : null,
                 onRate: session.rate,
               ),
             ]
