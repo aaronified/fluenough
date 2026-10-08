@@ -754,7 +754,9 @@ class DrillSession extends ChangeNotifier {
 
   /// The current choice question's options, the card itself among them, in
   /// the order shown: up to [optionCount], the others from
-  /// [AppState.choicePool], each showing something different.
+  /// [AppState.choicePool], each showing something different. In Hear, the
+  /// word's minimal-pair partner is one of them where it has one
+  /// ([AppState.pairOf], ADR-0034).
   List<Card> get options => _options ??= _pickOptions();
 
   List<Card> _pickOptions() {
@@ -762,6 +764,10 @@ class DrillSession extends ChangeNotifier {
     final pool = _state.choicePool(card, ask)..shuffle(_random);
     final shown = <String>{ask.optionOf(card)};
     final picked = <Card>[card];
+    final partner = ask == Ask.hearMeaning ? _state.pairOf(card) : null;
+    if (partner != null && shown.add(ask.optionOf(partner))) {
+      picked.add(partner);
+    }
     for (final other in pool) {
       if (picked.length == optionCount) break;
       if (shown.add(ask.optionOf(other))) picked.add(other);

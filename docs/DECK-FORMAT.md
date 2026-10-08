@@ -119,6 +119,7 @@ cards:
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading` and `ipa`. |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
+| `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0412` (కాలం, time) on కలం (pen). Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. |
 
 ### A note on `id`
 

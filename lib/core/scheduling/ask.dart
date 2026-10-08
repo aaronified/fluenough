@@ -62,15 +62,17 @@ const int matchSize = 4;
 ///   from, it stays rated.
 /// - **Production** of a card that [Card.rearranges] is rearranged.
 /// - **Listening** is Hear (ADR-0034): its meaning is chosen while the pair
-///   is new or was last missed, and typed once it was last remembered.
-///   Where [hearsForm] says what is heard is the form itself, as in script
-///   practice, it is typed as heard.
+///   is new or was last missed, and typed once it was last remembered. A
+///   new pair starts typed where [recallsFirst] says the learner's ability
+///   in Hear is high enough. Where [hearsForm] says what is heard is the
+///   form itself, as in script practice, it is typed as heard.
 ///
 /// Reading questions and every other mode are asked their own way.
 List<SessionItem> reviewAsks(
   List<SessionItem> items, {
   required bool Function(SessionItem item) canChoose,
   bool Function(SessionItem item)? hearsForm,
+  bool Function(SessionItem item)? recallsFirst,
 }) {
   final recognised = <int>[
     for (final (i, item) in items.indexed)
@@ -105,6 +107,7 @@ List<SessionItem> reviewAsks(
         item.card is! QuestionCard &&
         !(hearsForm?.call(item) ?? false) &&
         (item.state?.repetitions ?? 0) == 0 &&
+        !(item.state == null && (recallsFirst?.call(item) ?? false)) &&
         canChoose(item.askedAs(Ask.hearMeaning))) {
       asked[i] = item.askedAs(Ask.hearMeaning);
     }

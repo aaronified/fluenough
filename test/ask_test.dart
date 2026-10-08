@@ -114,6 +114,17 @@ void main() {
       );
     });
 
+    test('a new pair starts typed where the learner is strong in Hear', () {
+      expect(
+        reviewAsks(
+          <SessionItem>[heard('a'), heard('b', state: missed)],
+          canChoose: (_) => true,
+          recallsFirst: (_) => true,
+        ).map(shape),
+        <String>['a:own', 'b:hearMeaning'],
+      );
+    });
+
     test('is typed as heard where the form is what is heard', () {
       expect(
         reviewAsks(

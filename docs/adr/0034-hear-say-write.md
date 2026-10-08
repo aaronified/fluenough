@@ -44,6 +44,17 @@ it) and speaking (say it).
   stay in the log and schedule nothing.
 - **No spill-over.** No schedule counts another's answers: the research
   supports nothing from sound to writing, or from saying to hearing.
+- **The ability layer.** An Elo rating per language and schedule, and a
+  difficulty per pair, each moved after every answer by how surprising it
+  was, by K = 1 ÷ (1 + 0.05 n) after n answers (Pelánek 2016). Like the
+  scheduling state it is rebuilt from the log. Progress shows it as "Your
+  strengths": the chance of a right answer on a word of average
+  difficulty, per skill, for one language. A pair never asked in Hear
+  starts at recall rather than choice once the learner's Hear strength
+  there is 80% or more over at least 20 answers.
+- **A minimal-pair partner** can be named on a card (`pair:`); Hear offers
+  its meaning among the options. కలం (pen) and కాలం (time) name each
+  other.
 
 ## Consequences
 

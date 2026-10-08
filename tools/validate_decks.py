@@ -92,7 +92,7 @@ HEADER_KEYS = {
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
-    "pos", "gender", "tags", "notes", "audio", "examples", "modes",
+    "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -182,6 +182,8 @@ class Report:
     native_code: str | None = None
     card_defs: dict[str, list[str]] = field(default_factory=dict)
     refs: list[tuple[str, bool, str]] = field(default_factory=list)
+    # Each card's minimal-pair partner (ADR-0034): (partner id, where).
+    pairs: list[tuple[str, str]] = field(default_factory=list)
     # For reading decks (#98, ADR-0019): the unit each deck of a path is in;
     # the words a vocab or grammar deck teaches; and a reading deck's
     # passages, as (id, theme, words in its sentences, words it glosses).
@@ -344,6 +346,16 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             for m in modes:
                 if isinstance(m, str) and m not in MODES:
                     r.error(where, f"unknown mode {m!r}")
+
+    if "pair" in card:
+        partner = card["pair"]
+        if not _is_str(partner) or not id_re.fullmatch(partner):
+            r.error(where, f"pair must be the id of another {lang} card, "
+                           f"got {partner!r}")
+        elif partner == cid:
+            r.error(where, "pair names the card itself")
+        else:
+            r.pairs.append((partner, where))
 
     _check_examples(r, where, card.get("examples"))
 
@@ -1606,6 +1618,12 @@ def check_cards_across(reports: list[Report]) -> list[str]:
                                 f"{rep.native_code!r}, so the ref needs its own native")
             if rep.number_taught is not None:
                 rep.number_taught[1].update(w for t in words for w in t.split())
+    for rep in reports:
+        for pid, where in rep.pairs:
+            if pid not in defs and (rep.lang_code is None
+                                    or pid not in repo_defs(rep.lang_code)):
+                problems.append(f"{rep.path}: {where}: pair names card {pid}, "
+                                f"which no deck writes")
     return problems
 
 

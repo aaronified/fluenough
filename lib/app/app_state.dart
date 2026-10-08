@@ -24,6 +24,7 @@ import '../core/updates/release_check.dart';
 import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
+import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
@@ -1032,6 +1033,24 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// [card]'s minimal-pair partner (ADR-0034), as a deck of its language and
+  /// native language lists it, or null.
+  Card? pairOf(Card card) {
+    final id = card.pair;
+    final entry = deckOf(card);
+    if (id == null || entry == null) return null;
+    for (final other in decks) {
+      if (other.language.code != entry.language.code ||
+          other.deck.native.code != entry.deck.native.code) {
+        continue;
+      }
+      for (final c in other.cards) {
+        if (c.id == id) return c;
+      }
+    }
+    return null;
+  }
+
   /// Whether a [ask] question about [card] has at least two wrong options
   /// to offer. Without, it is asked its own way.
   bool canChoose(Card card, Ask ask) =>
@@ -1046,7 +1065,41 @@ class AppState extends ChangeNotifier {
       item.ask == Ask.own ? Ask.chooseMeaning : item.ask,
     ),
     hearsForm: (item) => hearsForm(item.card),
+    recallsFirst: (item) => recallsFirst(item.card, item.mode),
   );
+
+  /// The ability layer (ADR-0034), rebuilt when the log grows.
+  Abilities get abilities {
+    final log = progress.log;
+    if (_abilities == null || _abilitiesAt != log.length) {
+      _abilities = Abilities.replay(
+        <({String cardId, DrillMode mode, int grade})>[
+          for (final e in log) (cardId: e.cardId, mode: e.mode, grade: e.grade),
+        ],
+      );
+      _abilitiesAt = log.length;
+    }
+    return _abilities!;
+  }
+
+  Abilities? _abilities;
+  int _abilitiesAt = -1;
+
+  /// The strength from which a pair never asked in [mode] starts at recall
+  /// rather than choice: the learner gets most words right there.
+  static const double recallFirstStrength = 0.8;
+
+  /// How many answers a strength must rest on before it is trusted.
+  static const int recallFirstAnswers = 20;
+
+  /// Whether [card], never asked in [mode], starts at recall (ADR-0034):
+  /// the learner's ability there says a choice would be too easy.
+  bool recallsFirst(Card card, DrillMode mode) {
+    final language = Abilities.languageOf(card.id);
+    final a = abilities;
+    return a.answersIn(language, mode) >= recallFirstAnswers &&
+        a.strength(language, mode) >= recallFirstStrength;
+  }
 
   /// Whether hearing [card] asks for what was heard rather than what it
   /// means: a card of a deck that teaches the alphabet, which is script

@@ -88,6 +88,7 @@ class CardRef {
       examples:
           examples ?? (sameNative ? written.examples : const <CardExample>[]),
       modes: modes ?? written.modes,
+      pair: written.pair,
     );
   }
 }
@@ -118,6 +119,7 @@ class Card {
     this.audio,
     this.examples = const <CardExample>[],
     this.modes = const <DrillMode>{},
+    this.pair,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -168,6 +170,11 @@ class Card {
   /// Which drills this card takes part in. Empty means "all applicable",
   /// resolved against the deck by [modesIn].
   final Set<DrillMode> modes;
+
+  /// The id of a word that sounds almost the same, its minimal-pair partner,
+  /// such as కాలం (time) for కలం (pen). Hear offers its meaning among the
+  /// options, so that a learner who confuses the two is caught (ADR-0034).
+  final String? pair;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
