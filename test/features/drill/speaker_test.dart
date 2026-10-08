@@ -10,6 +10,7 @@ import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/grammar_drill.dart';
@@ -274,12 +275,18 @@ void main() {
         state: state,
       );
       final l10n = l10nOf(tester);
+      // New pairs, so Hear asks for the meaning to be chosen (ADR-0034).
       final session = tester
-          .widget<TypedDrill>(find.byType(TypedDrill))
+          .widget<ChoiceDrill>(find.byType(ChoiceDrill))
           .session;
       expect(session.total, greaterThan(1));
       state.settings.soundOn = false;
-      await tapVisible(tester, find.text(l10n.drillDontKnow));
+      session.pick(
+        session.options.firstWhere(
+          (option) => option.id != session.item.card.id,
+        ),
+      );
+      await tester.pumpAndSettle();
       await tapVisible(tester, find.text(l10n.commonContinue));
       expect(session.finished, isTrue);
       expect(find.byType(SummaryPage), findsOneWidget);
