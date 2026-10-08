@@ -16,8 +16,13 @@ enum Ask {
   /// Shown the meaning, choose the target. Production.
   chooseWord,
 
-  /// Hear the target, choose it. Listening.
+  /// Hear the target, choose it: script practice, where what is heard is
+  /// the form. Listening.
   hearAndChoose,
+
+  /// Hear the target, choose its meaning: Hear's choose grade (ADR-0034).
+  /// Listening.
+  hearMeaning,
 
   /// Match the targets of a few items with their meanings, by dragging or
   /// tapping. Recognition, for each.
@@ -32,12 +37,17 @@ enum Ask {
 
   /// Whether the learner picks one of the options the session offers.
   bool get chooses =>
-      this == chooseMeaning || this == chooseWord || this == hearAndChoose;
+      this == chooseMeaning ||
+      this == chooseWord ||
+      this == hearAndChoose ||
+      this == hearMeaning;
+
+  /// Whether the options are meanings rather than words.
+  bool get choosesMeaning => this == chooseMeaning || this == hearMeaning;
 
   /// What [card] shows as an option of this kind of question: its meaning
-  /// for [chooseMeaning], else its target.
-  String optionOf(Card card) =>
-      this == chooseMeaning ? card.native : card.target;
+  /// for [chooseMeaning] and [hearMeaning], else its target.
+  String optionOf(Card card) => choosesMeaning ? card.native : card.target;
 }
 
 /// How many items a match pairs question matches.
@@ -51,11 +61,16 @@ const int matchSize = 4;
 ///   matched, and are chosen. Where [canChoose] finds too little to choose
 ///   from, it stays rated.
 /// - **Production** of a card that [Card.rearranges] is rearranged.
+/// - **Listening** is Hear (ADR-0034): its meaning is chosen while the pair
+///   is new or was last missed, and typed once it was last remembered.
+///   Where [hearsForm] says what is heard is the form itself, as in script
+///   practice, it is typed as heard.
 ///
 /// Reading questions and every other mode are asked their own way.
 List<SessionItem> reviewAsks(
   List<SessionItem> items, {
   required bool Function(SessionItem item) canChoose,
+  bool Function(SessionItem item)? hearsForm,
 }) {
   final recognised = <int>[
     for (final (i, item) in items.indexed)
@@ -85,6 +100,13 @@ List<SessionItem> reviewAsks(
   for (final (i, item) in items.indexed) {
     if (item.mode == DrillMode.production && item.card.rearranges) {
       asked[i] = item.askedAs(Ask.rearrange);
+    }
+    if (item.mode == DrillMode.listening &&
+        item.card is! QuestionCard &&
+        !(hearsForm?.call(item) ?? false) &&
+        (item.state?.repetitions ?? 0) == 0 &&
+        canChoose(item.askedAs(Ask.hearMeaning))) {
+      asked[i] = item.askedAs(Ask.hearMeaning);
     }
   }
   return <SessionItem>[

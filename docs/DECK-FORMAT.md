@@ -111,7 +111,7 @@ cards:
 | `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, ISO 15919 letters as the word is said. Required in practice for non-Latin scripts. |
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
-| `alt_native` | no | Additional answers accepted in recognition drills. |
+| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `phrase`, `particle`, `other`. |
 | `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |

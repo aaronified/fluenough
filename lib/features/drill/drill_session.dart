@@ -213,6 +213,7 @@ class DrillSession extends ChangeNotifier {
   /// prompts give the reading away ("k (ka)").
   bool get canTransliterate =>
       _typedModes.contains(item.mode) &&
+      !hearsMeaning &&
       item.card is! NumberCard &&
       item.card.reading != null &&
       deck.language.needsReading &&
@@ -284,10 +285,24 @@ class DrillSession extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the current card is heard and its meaning typed: Hear's recall
+  /// grade (ADR-0034). Not in script practice, nor for a generated number
+  /// or a reading question, where what is heard is typed or chosen as it is.
+  bool get hearsMeaning =>
+      item.mode == DrillMode.listening &&
+      ask == Ask.own &&
+      item.card is! QuestionCard &&
+      !_state.hearsForm(item.card);
+
+  /// What a typed answer to [card] is graded against: its meanings when
+  /// [hearsMeaning], else what its mode accepts.
+  List<String> _answersOf(Card card) =>
+      hearsMeaning ? card.meanings : card.acceptedAnswers(item.mode);
+
   /// The answers the grader accepts, the canonical one first: while
   /// [transliterating], the reading, then the target, which is accepted too.
   List<String> get acceptedAnswers {
-    final accepted = item.card.acceptedAnswers(item.mode);
+    final accepted = _answersOf(item.card);
     final reading = item.card.reading;
     if (transliterating && reading != null) {
       return <String>[reading, ...accepted];
@@ -308,10 +323,14 @@ class DrillSession extends ChangeNotifier {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
     if (ask != Ask.own) return;
-    final accepted = item.card.acceptedAnswers(item.mode);
+    final accepted = _answersOf(item.card);
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
-        : AnswerGrader(articles: deck.language.articles);
+        : AnswerGrader(
+            articles: hearsMeaning
+                ? deck.deck.native.articles
+                : deck.language.articles,
+          );
     var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
       accepted.first,
@@ -349,7 +368,9 @@ class DrillSession extends ChangeNotifier {
   /// form, so never a typo.
   bool _answersAnother(String typed, {required bool romanised}) {
     final exact = AnswerGrader(
-      articles: deck.language.articles,
+      articles: hearsMeaning
+          ? deck.deck.native.articles
+          : deck.language.articles,
       typoDistance: 0,
       longTypoDistance: 0,
     );
@@ -361,7 +382,7 @@ class DrillSession extends ChangeNotifier {
         if (card.readings.any((r) => spelling.key(r) == key)) return true;
         continue;
       }
-      final answers = card.acceptedAnswers(item.mode);
+      final answers = _answersOf(card);
       if (answers.isEmpty) continue;
       final graded = exact.grade(
         typed,
@@ -719,9 +740,15 @@ class DrillSession extends ChangeNotifier {
   /// How many options a choice question offers at most.
   static const int optionCount = 4;
 
-  /// The grade a right choice or match records: right, but picked from a
-  /// few rather than recalled.
+  /// The grade a right match, or a right choice of a meaning seen, records:
+  /// right, but picked from a few rather than recalled. Recognition, which
+  /// schedules nothing (ADR-0034).
   static const int choiceGrade = 4;
+
+  /// The grade a right choice records in a schedule, Hear's or Write's:
+  /// Hard, since a right choice counts for less than a right recall
+  /// (ADR-0034).
+  static const int scheduledChoiceGrade = 3;
 
   List<Card>? _options;
 
@@ -756,7 +783,11 @@ class DrillSession extends ChangeNotifier {
     if (!ask.chooses || _phase != DrillPhase.prompt) return;
     _picked = option;
     _record(
-      isRight(option) ? choiceGrade : 1,
+      !isRight(option)
+          ? 1
+          : item.mode.isScheduled
+          ? scheduledChoiceGrade
+          : choiceGrade,
       answerGiven: ask.optionOf(option),
     );
     _phase = DrillPhase.feedback;

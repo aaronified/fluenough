@@ -132,7 +132,9 @@ class _TypedDrillState extends State<TypedDrill> {
               card: card,
               expected: session.acceptedAnswers.first,
               transliterating: translit,
-              language: session.typesDigits ? null : language,
+              language: session.typesDigits || session.hearsMeaning
+                  ? null
+                  : language,
             ),
       actions: _actions(context, answer, typing: typing),
     );
@@ -257,7 +259,11 @@ class _TypedDrillState extends State<TypedDrill> {
     bool translit,
   ) {
     if (_session.typesDigits) return l10n.numbersTypeDigits;
-    if (listening) return l10n.drillTypeHeard;
+    if (listening) {
+      return _session.hearsMeaning
+          ? l10n.drillTypeMeaning
+          : l10n.drillTypeHeard;
+    }
     if (translit) return l10n.drillTypeLatin(_exampleReading());
     return language.needsReading
         ? l10n.drillTypeInScript(language.name)

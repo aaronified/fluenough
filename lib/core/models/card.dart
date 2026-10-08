@@ -208,6 +208,34 @@ class Card {
     return words >= 3 || (pos == 'phrase' && words >= 2);
   }
 
+  /// Every meaning a typed meaning is graded against (ADR-0034): [native]
+  /// whole, then each part of it between `/`, `;` and `,` outside brackets,
+  /// then [altNative], each once. `to go, to leave` accepts `to go`.
+  List<String> get meanings {
+    final seen = <String>{};
+    return <String>[
+      for (final m in <String>[native, ..._parts(native), ...altNative])
+        if (m.isNotEmpty && seen.add(m)) m,
+    ];
+  }
+
+  static List<String> _parts(String text) {
+    final parts = <String>[];
+    var depth = 0;
+    var start = 0;
+    for (var i = 0; i < text.length; i++) {
+      final c = text[i];
+      if (c == '(' || c == '[') depth++;
+      if ((c == ')' || c == ']') && depth > 0) depth--;
+      if (depth == 0 && (c == '/' || c == ';' || c == ',')) {
+        parts.add(text.substring(start, i).trim());
+        start = i + 1;
+      }
+    }
+    if (parts.isEmpty) return const <String>[];
+    return parts..add(text.substring(start).trim());
+  }
+
   /// The accepted answers for [mode], the first being the canonical one.
   List<String> acceptedAnswers(DrillMode mode) => switch (mode) {
     DrillMode.recognition ||

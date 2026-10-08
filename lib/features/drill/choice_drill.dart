@@ -21,7 +21,9 @@ import 'taught_details.dart';
 /// - [Ask.chooseMeaning]: the word, and its meaning to choose. Recognition.
 /// - [Ask.chooseWord]: the meaning, and its word to choose. Production.
 /// - [Ask.hearAndChoose]: the word played, and the word to choose.
-///   Listening.
+///   Listening, in script practice.
+/// - [Ask.hearMeaning]: the word played, and its meaning to choose. Hear
+///   (ADR-0034).
 ///
 /// Words to choose show their reading first until the script is expected
 /// of the learner, as typed answers start in Latin letters then. The word
@@ -33,6 +35,9 @@ class ChoiceDrill extends StatelessWidget {
 
   final DrillSession session;
   final VoidCallback onClose;
+
+  bool get _hears =>
+      session.ask == Ask.hearAndChoose || session.ask == Ask.hearMeaning;
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +57,11 @@ class ChoiceDrill extends StatelessWidget {
       reportDetail: '${card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
-      needsSound: ask == Ask.hearAndChoose && !answered,
+      needsSound: _hears && !answered,
       card: switch (ask) {
         Ask.chooseMeaning => _meaningCard(context, card, language, answered),
-        Ask.hearAndChoose => _heardCard(context, card, language, answered),
+        Ask.hearAndChoose ||
+        Ask.hearMeaning => _heardCard(context, card, language, answered),
         _ => _wordCard(context, card, language, answered),
       },
       belowCard: <Widget>[
@@ -72,7 +78,7 @@ class ChoiceDrill extends StatelessWidget {
                   chosen: picked?.id == option.id,
                   answered: answered,
                   onTap: () => session.pick(option),
-                  label: (style) => ask == Ask.chooseMeaning
+                  label: (style) => ask.choosesMeaning
                       ? Text(option.native, style: style)
                       : _OptionWord(
                           card: option,
@@ -97,8 +103,8 @@ class ChoiceDrill extends StatelessWidget {
               kind: FeedbackKind.wrong,
               title: l10n.feedbackWrong,
               detail: l10n.feedbackAnswer(ask.optionOf(card)),
-              quotes: <String>[if (ask != Ask.chooseMeaning) card.target],
-              language: ask == Ask.chooseMeaning ? null : language,
+              quotes: <String>[if (!ask.choosesMeaning) card.target],
+              language: ask.choosesMeaning ? null : language,
             ),
       actions: answered
           ? <Widget>[
@@ -115,9 +121,7 @@ class ChoiceDrill extends StatelessWidget {
                 ),
               ),
             ]
-          : <Widget>[
-              if (ask == Ask.hearAndChoose) CantNowButton(session: session),
-            ],
+          : <Widget>[if (_hears) CantNowButton(session: session)],
     );
   }
 
@@ -236,7 +240,9 @@ class ChoiceDrill extends StatelessWidget {
     return <Widget>[
       Speaker(onPlay: session.play, playing: session.playing, size: 136),
       Text(
-        l10n.drillChooseHeard,
+        session.ask == Ask.hearMeaning
+            ? l10n.drillChooseHeardMeaning
+            : l10n.drillChooseHeard,
         textAlign: TextAlign.center,
         style: theme.textTheme.titleMedium!.copyWith(
           color: scheme.onSurfaceVariant,

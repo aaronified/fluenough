@@ -766,6 +766,7 @@ class AppState extends ChangeNotifier {
       now(),
       counts: (key) =>
           learned.contains(key.cardId) &&
+          key.mode.isScheduled &&
           modes.contains(key.mode) &&
           !leeches.isSetAside(key),
     );
@@ -1040,8 +1041,21 @@ class AppState extends ChangeNotifier {
   /// ([reviewAsks]): what a drill runs.
   List<SessionItem> sessionItems(DrillRequest request) => reviewAsks(
     _limited(buildSession(request).items, request.limit),
-    canChoose: (item) => canChoose(item.card, Ask.chooseMeaning),
+    canChoose: (item) => canChoose(
+      item.card,
+      item.ask == Ask.own ? Ask.chooseMeaning : item.ask,
+    ),
+    hearsForm: (item) => hearsForm(item.card),
   );
+
+  /// Whether hearing [card] asks for what was heard rather than what it
+  /// means: a card of a deck that teaches the alphabet, which is script
+  /// practice (ADR-0034), or a generated number.
+  bool hearsForm(Card card) {
+    if (card is NumberCard) return true;
+    final entry = deckOf(card);
+    return entry != null && needsAlphabet(entry);
+  }
 
   /// At most [limit] of [items], one per word, picked at random: a quick
   /// revision (ADR-0029). All of them, in order, when [limit] is null.
@@ -1148,11 +1162,19 @@ class AppState extends ChangeNotifier {
               SessionItem(card: question, mode: mode, state: null),
       ]);
     }
-    return lessonPlan(
-      lessonItems(cards.takeWhile((card) => card is! QuestionCard)),
-      modesOf: drillableModes,
-      canChoose: canChoose,
-    );
+    return <SessionItem>[
+      for (final item in lessonPlan(
+        lessonItems(cards.takeWhile((card) => card is! QuestionCard)),
+        modesOf: drillableModes,
+        canChoose: (card, ask) => canChoose(
+          card,
+          ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
+        ),
+      ))
+        item.ask == Ask.hearMeaning && hearsForm(item.card)
+            ? item.askedAs(Ask.hearAndChoose)
+            : item,
+    ];
   }
 
   /// Whether a lesson in [language] was finished today.

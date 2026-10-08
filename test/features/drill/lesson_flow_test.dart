@@ -59,7 +59,10 @@ Future<void> finishLesson(WidgetTester tester) async {
     switch (session.ask) {
       case Ask.teach:
         session.learnt();
-      case Ask.chooseMeaning || Ask.chooseWord || Ask.hearAndChoose:
+      case Ask.chooseMeaning ||
+          Ask.chooseWord ||
+          Ask.hearAndChoose ||
+          Ask.hearMeaning:
         session.pick(session.options.firstWhere((o) => o.id == card.id));
         session.next();
       case Ask.matchPairs:
@@ -84,8 +87,8 @@ Future<void> finishLesson(WidgetTester tester) async {
         session.checkOrder();
         session.next();
       case Ask.own:
-        // A grammar cell, typed.
-        session.check(card.target);
+        // A grammar cell, typed, or a word heard and its meaning typed.
+        session.check(session.acceptedAnswers.first);
         session.next();
     }
     await tester.pumpAndSettle();
