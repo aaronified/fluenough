@@ -76,10 +76,10 @@ typedef PairFilter = bool Function(Card card, DrillMode mode);
 ///   no new mode either.
 /// - **New pairs up to the cap.** A pair with no state is new. They are taken
 ///   in the order [SessionQueue.build] was given the cards, one per card, in
-///   [DrillMode] declaration order, which puts recognising a word before
-///   producing it. The cap counts new pairs rather than new cards, because
-///   scheduling is per pair (ADR-0005): a word learned by sight and never
-///   typed has a new production pair.
+///   [DrillMode] declaration order. Recognition is never one: it is a lesson
+///   step, not a schedule ([DrillMode.isScheduled]). The cap counts new
+///   pairs rather than new cards, because scheduling is per pair
+///   (ADR-0005): a word heard and never typed has a new production pair.
 ///
 /// A mode is only ever offered where [Card.modesIn] allows it, so a card is
 /// never drilled by ear on a device without a voice for its language.
@@ -213,6 +213,7 @@ class SessionQueue {
       SessionItem? mostOverdue;
       SessionItem? firstNew;
       for (final mode in DrillMode.values) {
+        if (!mode.isScheduled) continue;
         if (!allowed.contains(mode) || !modes.contains(mode)) continue;
         if (isSetAside?.call(card, mode) ?? false) continue;
         final state = stateOf(card, mode);

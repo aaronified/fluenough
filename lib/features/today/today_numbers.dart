@@ -12,14 +12,14 @@ import '../../core/scheduling/ask.dart';
 /// "about 4 min" for 12 cards.
 const int secondsPerCard = 20;
 
-/// The skills Today draws a tile for, in the design's order. Minimal pairs
-/// have no tile: they are drilled from their own decks (#31). Speaking has
-/// one only while it is switched on (ADR-0030).
+/// The skills Today draws a tile for: Hear, Say, Write and Grammar
+/// (ADR-0034). Recognition has none, being a lesson step that is never due;
+/// minimal pairs have none either: they are drilled from their own decks
+/// (#31). Speaking has one only while it is switched on (ADR-0030).
 const List<Skill> todaySkills = <Skill>[
-  Skill.recognition,
-  Skill.production,
   Skill.listening,
   Skill.speaking,
+  Skill.production,
   Skill.grammar,
 ];
 

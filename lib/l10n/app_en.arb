@@ -181,19 +181,19 @@
   },
   "skillRecognition": "Recognition",
   "@skillRecognition": {
-    "description": "The skill of seeing a word in the target language and recalling its meaning. A drill type."
+    "description": "Seeing a word in the target language and choosing or matching its meaning: a step of a lesson, not reviewed on its own (ADR-0034)."
   },
-  "skillProduction": "Production",
+  "skillProduction": "Write",
   "@skillProduction": {
-    "description": "The skill of seeing the meaning and typing the word in the target language. A drill type."
+    "description": "One of the three things the app schedules for every word (ADR-0034): seeing the meaning and giving the word in the target language, typed, chosen or put in order. A short verb, like Hear and Say."
   },
-  "skillListening": "Listening",
+  "skillListening": "Hear",
   "@skillListening": {
-    "description": "The skill of hearing a word and typing it. A drill type."
+    "description": "One of the three things the app schedules for every word (ADR-0034): hearing a word and choosing or typing what it means. A short verb, like Say and Write."
   },
-  "skillSpeaking": "Speaking",
+  "skillSpeaking": "Say",
   "@skillSpeaking": {
-    "description": "The skill of seeing a word's meaning and saying the word aloud. A drill type."
+    "description": "One of the three things the app schedules for every word (ADR-0034): seeing a word's meaning and saying the word aloud. A short verb, like Hear and Write."
   },
   "skillGrammar": "Grammar",
   "@skillGrammar": {
@@ -203,7 +203,7 @@
   "@skillPair": {
     "description": "The skill of telling two similar sounds apart, like ka and kha. A drill type."
   },
-  "skillRecognitionDeckDesc": "See {language}, recall the meaning",
+  "skillRecognitionDeckDesc": "See {language}, choose the meaning",
   "@skillRecognitionDeckDesc": {
     "description": "Under Recognition on a deck's screen.",
     "placeholders": {
@@ -213,7 +213,7 @@
       }
     }
   },
-  "skillProductionDeckDesc": "See the meaning, type {language}",
+  "skillProductionDeckDesc": "See the meaning, give it in {language}",
   "@skillProductionDeckDesc": {
     "description": "Under Production on a deck's screen.",
     "placeholders": {
@@ -223,7 +223,7 @@
       }
     }
   },
-  "skillListeningDeckDesc": "Hear it, type what you heard",
+  "skillListeningDeckDesc": "Hear it, say what it means",
   "@skillListeningDeckDesc": {
     "description": "Under Listening on a deck's screen."
   },
@@ -245,11 +245,11 @@
   "@skillPairDeckDesc": {
     "description": "Under Minimal pairs on a deck's screen."
   },
-  "skillRecognitionSettingsDesc": "You judge your own recall",
+  "skillRecognitionSettingsDesc": "Choosing and matching meanings, in lessons",
   "@skillRecognitionSettingsDesc": {
     "description": "Under the Recognition switch in Settings."
   },
-  "skillProductionSettingsDesc": "Typed, checked by the app",
+  "skillProductionSettingsDesc": "Chosen, put in order or typed, checked by the app",
   "@skillProductionSettingsDesc": {
     "description": "Under the Production switch in Settings."
   },
@@ -1673,7 +1673,11 @@
   },
   "drillTypeHeard": "Type what you hear",
   "@drillTypeHeard": {
-    "description": "Label of the answer field in listening."
+    "description": "Label of the answer field in listening, where what is heard is typed: script practice, or a number in digits."
+  },
+  "drillTypeMeaning": "Type what it means",
+  "@drillTypeMeaning": {
+    "description": "Label of the answer field in Hear (ADR-0034): the word is played and the learner types its meaning, in the language they speak."
   },
   "numbersPracticeTitle": "Number practice",
   "@numbersPracticeTitle": {
@@ -2103,6 +2107,10 @@
   "drillChooseHeard": "Which one did you hear?",
   "@drillChooseHeard": {
     "description": "Multiple choice (ADR-0024): under the play button, above the words to choose from."
+  },
+  "drillChooseHeardMeaning": "What does it mean?",
+  "@drillChooseHeardMeaning": {
+    "description": "Multiple choice in Hear (ADR-0034): under the play button, above the meanings to choose from."
   },
   "drillOptionsGroup": "Options",
   "@drillOptionsGroup": {
