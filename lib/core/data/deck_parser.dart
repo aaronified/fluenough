@@ -123,6 +123,7 @@ const _cardFields = {
   'audio',
   'examples',
   'modes',
+  'pair',
 };
 
 /// What a ref may give: the native side of a card written in another deck
@@ -507,6 +508,7 @@ class _Reader {
       audio: fields.optionalString('audio'),
       examples: examples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
+      pair: fields.optionalString('pair', allowEmpty: false),
     );
   }
 
