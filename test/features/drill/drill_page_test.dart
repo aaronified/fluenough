@@ -13,6 +13,7 @@ import 'package:fluenough/core/grading/self_grade.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
@@ -51,9 +52,8 @@ Future<void> typeAndCheck(WidgetTester tester, String typed) async {
 }
 
 void main() {
-  testWidgets('recognition: reveal, rate with the previewed interval, next', (
-    tester,
-  ) async {
+  testWidgets('recognition: reveal, rate with the previewed interval, '
+      'recorded', (tester) async {
     usePhone(tester);
     // Two good reviews, the second a week ago: due now, with an interval
     // each rating moves differently.
@@ -72,15 +72,15 @@ void main() {
       );
     }
     // Rated, as recognition is where it cannot be chosen (ADR-0024): a
-    // preset keeps each card asked its own way.
-    final state = await pumpDrill(
+    // preset keeps each card asked its own way. Recognition is a lesson
+    // step, never due (ADR-0034), so the preset puts the card in.
+    await pumpDrill(
       tester,
       DrillRequest.untaught(spanish, skill: Skill.recognition),
       state: AppState.test(progress: progress),
-      preset: const DrillPreset(),
+      preset: DrillPreset(target: card.target),
     );
     final l10n = l10nOf(tester);
-    final total = state.buildSession(DrillRequest.untaught(spanish)).length;
 
     expect(find.text(card.target), findsOneWidget);
     expect(find.text(card.native), findsNothing);
@@ -112,8 +112,8 @@ void main() {
     expect(progress.log.last.cardId, card.id);
     expect(progress.log.last.grade, 4);
     expect(progress.log.last.answerGiven, isNull);
-    expect(find.text(l10n.drillShowAnswer), findsOneWidget);
-    expect(find.text(l10n.drillPositionShort(2, total)), findsOneWidget);
+    // The only card: nothing else of recognition is ever due.
+    expect(find.byType(SummaryPage), findsOneWidget);
   });
 
   group('production records the right grade', () {
@@ -379,19 +379,30 @@ void main() {
     expect(fieldSize(), 22);
   });
 
-  testWidgets('listening speaks at the speech rate, and slower', (
-    tester,
-  ) async {
+  testWidgets('listening speaks at the speech rate, and slower, and its '
+      'meaning is typed once remembered (ADR-0034)', (tester) async {
     usePhone(tester);
     final tts = FixedTtsEngine(<String>{'es'});
+    // Heard and remembered: due, so Hear asks for the meaning to be typed.
+    final base = AppState.test();
+    await base.load();
+    final card = base.deckById(spanish)!.cards.first;
+    final progress = MemoryProgress()
+      ..record(
+        deckId: spanish,
+        cardId: card.id,
+        mode: DrillMode.listening,
+        grade: 4,
+        now: base.now().subtract(const Duration(days: 8)),
+      );
     final state = await pumpDrill(
       tester,
-      DrillRequest.untaught(spanish, skill: Skill.listening),
-      state: AppState.test(tts: tts),
+      DrillRequest.deck(spanish, skill: Skill.listening),
+      state: AppState.test(tts: tts, progress: progress),
     );
     final l10n = l10nOf(tester);
-    final card = state.deckById(spanish)!.cards.first;
-    expect(find.text(l10n.drillTypeHeard), findsOneWidget);
+    expect(find.text(l10n.drillTypeMeaning), findsOneWidget);
+    expect(find.text(l10n.drillTypeHeard), findsNothing);
     expect(find.text(card.target), findsNothing, reason: 'heard, not read');
 
     await tester.tap(find.byType(PlayButton));
@@ -408,9 +419,37 @@ void main() {
     expect(tts.spoken.last.rate, state.settings.ttsRate(slower: true));
     expect(tts.spoken.last.rate, lessThan(tts.spoken.first.rate));
 
-    await typeAndCheck(tester, card.target);
+    // The word typed as heard is not its meaning.
+    final before = state.progress.log.length;
+    await typeAndCheck(tester, card.native);
     expect(find.text(l10n.feedbackCorrect), findsOneWidget);
+    expect(state.progress.log, hasLength(before + 1));
+    expect(state.progress.log.last.mode, DrillMode.listening);
+    expect(state.progress.log.last.answerGiven, card.native);
+    expect(state.progress.log.last.grade, 5);
+  });
+
+  testWidgets('a new word heard: its meaning is chosen, and a right choice '
+      'records Hard (ADR-0034)', (tester) async {
+    usePhone(tester);
+    final state = await pumpDrill(
+      tester,
+      DrillRequest.untaught(spanish, skill: Skill.listening),
+      state: AppState.test(tts: FixedTtsEngine(<String>{'es'})),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.drillChooseHeardMeaning), findsOneWidget);
+    final session = tester
+        .widget<ChoiceDrill>(find.byType(ChoiceDrill))
+        .session;
+    final card = session.item.card;
+    expect(find.text(card.target), findsNothing, reason: 'heard, not read');
+    expect(find.text(card.native), findsOneWidget, reason: 'an option');
+    await tester.tap(find.text(card.native));
+    await tester.pumpAndSettle();
     expect(state.progress.log.single.mode, DrillMode.listening);
+    expect(state.progress.log.single.grade, DrillSession.scheduledChoiceGrade);
+    expect(state.progress.log.single.answerGiven, card.native);
   });
 
   testWidgets('an empty queue shows the empty state', (tester) async {
@@ -436,27 +475,24 @@ void main() {
       ..record(
         deckId: spanish,
         cardId: card.id,
-        mode: DrillMode.recognition,
+        mode: DrillMode.production,
         grade: 4,
         now: base.now().subtract(const Duration(days: 8)),
       );
-    // Rated, as a preset keeps it (ADR-0024).
     await pumpDrill(
       tester,
-      DrillRequest.deck(spanish, skill: Skill.recognition),
+      DrillRequest.deck(spanish, skill: Skill.production),
       state: AppState.test(progress: progress),
-      preset: const DrillPreset(),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.drillPositionShort(1, 1)), findsOneWidget);
-    await tester.tap(find.text(l10n.drillShowAnswer));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.rateEasy));
+    await typeAndCheck(tester, card.target);
+    await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
 
     final summary = tester.widget<SummaryPage>(find.byType(SummaryPage));
     expect(summary.result.answers.single.grade, 5);
-    expect(summary.result.answers.single.skill, Skill.recognition);
+    expect(summary.result.answers.single.skill, Skill.production);
     expect(find.byType(DrillPage), findsNothing);
   });
 
@@ -468,17 +504,15 @@ void main() {
     navigator.push(
       MaterialPageRoute<void>(
         builder: (_) => DrillPage(
-          request: DrillRequest.untaught(spanish, skill: Skill.recognition),
-          // Rated, as a preset keeps it (ADR-0024).
-          preset: const DrillPreset(),
+          request: DrillRequest.untaught(spanish, skill: Skill.production),
+          preset: const DrillPreset(target: 'el niño'),
         ),
       ),
     );
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
-    await tester.tap(find.text(l10n.drillShowAnswer));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.rateHard));
+    await typeAndCheck(tester, 'el nino');
+    await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byTooltip(l10n.drillEndSession));
@@ -493,7 +527,7 @@ void main() {
     await tester.tap(find.widgetWithText(TextButton, l10n.drillEndSession));
     await tester.pumpAndSettle();
     expect(find.byType(DrillPage), findsNothing);
-    expect(state.progress.log.single.grade, 3, reason: 'kept');
+    expect(state.progress.log.single.grade, 4, reason: 'kept');
   });
 
   testWidgets('a right-to-left deck types and shows right to left', (
@@ -601,7 +635,7 @@ void main() {
     usePhone(tester);
     await pumpDrill(
       tester,
-      DrillRequest.untaught(spanish, skill: Skill.recognition),
+      DrillRequest.untaught(spanish, skill: Skill.production),
       state: AppState.test(decks: FailOnceDeckSource()),
     );
     final l10n = l10nOf(tester);
