@@ -159,7 +159,7 @@ void main() {
       progress.record(
         deckId: i < 11 ? 'bn-en-transport' : 'bn-en-home',
         cardId: 'bn-0283',
-        mode: DrillMode.recognition,
+        mode: DrillMode.production,
         grade: i.isEven ? 4 : 1,
         now: start.add(Duration(days: i)),
       );
