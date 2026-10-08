@@ -133,7 +133,15 @@ void main() {
     final log = state.progress.log;
     expect(log.map((e) => e.cardId).toSet(), hasLength(9));
     expect(log, hasLength(planned));
-    expect(log.every((e) => e.grade >= 4), isTrue);
+    // A right choice in Hear or Write records 3, a right choice or match
+    // of a meaning seen 4 (ADR-0034): every answer is right.
+    expect(log.every((e) => e.grade >= 3), isTrue);
+    expect(
+      log
+          .where((e) => e.mode == DrillMode.recognition)
+          .every((e) => e.grade >= 4),
+      isTrue,
+    );
     expect(state.lessonDoneToday('es'), isTrue);
 
     // The summary offers another; back on Today, so does its card.
