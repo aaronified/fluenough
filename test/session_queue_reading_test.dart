@@ -77,7 +77,7 @@ void main() {
     ], newCardLimit: 2);
     // The passage's first question fits under the cap, so all three come.
     expect(ids(queue.fresh), [
-      'a:recognition',
+      'a:production',
       'p-q1:reading',
       'p-q2:reading',
       'p-q3:reading',
@@ -85,7 +85,7 @@ void main() {
     // With no room for its first, none comes.
     expect(
       ids(build(<Card>[word('a'), ...passage('p', 3)], newCardLimit: 1).fresh),
-      ['a:recognition'],
+      ['a:production'],
     );
   });
 
@@ -95,8 +95,8 @@ void main() {
     final queue = build(
       <Card>[word('a'), word('b'), ...p],
       states: {
-        ('a', DrillMode.recognition): dueDaysAgo(5),
-        ('b', DrillMode.recognition): dueDaysAgo(1),
+        ('a', DrillMode.production): dueDaysAgo(5),
+        ('b', DrillMode.production): dueDaysAgo(1),
         // q1 is due to be read, q2 to be heard; q3 is new.
         ('p-q1', DrillMode.reading): dueDaysAgo(3),
         ('p-q2', DrillMode.reading): dueDaysAgo(-2),
@@ -104,18 +104,18 @@ void main() {
       },
     );
     expect(ids(queue.due), [
-      'a:recognition',
+      'a:production',
       'p-q1:reading',
       'p-q2:listening',
-      'b:recognition',
+      'b:production',
     ]);
     // Heard first, so that the text is not seen before it is heard.
     expect(ids(queue.items), [
-      'a:recognition',
+      'a:production',
       'p-q2:listening',
       'p-q1:reading',
       'p-q3:reading',
-      'b:recognition',
+      'b:production',
     ]);
   });
 
@@ -136,14 +136,14 @@ void main() {
       <SessionItem>[for (final c in passage('p', 3)) fresh(c)],
       <SessionItem>[
         for (final c in <Card>[word('a'), word('b')])
-          SessionItem(card: c, mode: DrillMode.recognition, state: null),
+          SessionItem(card: c, mode: DrillMode.production, state: null),
       ],
     ], 2);
     expect(ids(shared), [
       'p-q1:reading',
       'p-q2:reading',
       'p-q3:reading',
-      'a:recognition',
+      'a:production',
     ]);
   });
 }

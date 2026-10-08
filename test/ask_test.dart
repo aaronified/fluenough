@@ -51,7 +51,13 @@ void main() {
         item(card('l0'), DrillMode.listening),
         ...recognising(4).skip(2),
       ];
-      expect(asked(items), <String>['p0:own', 'match(r0,r1,r2,r3)', 'l0:own']);
+      // A new listening pair is Hear's choice of meaning (ADR-0034), not part
+      // of the match.
+      expect(asked(items), <String>[
+        'p0:own',
+        'match(r0,r1,r2,r3)',
+        'l0:hearMeaning',
+      ]);
     });
 
     test('four that share a meaning are chosen, not matched', () {
@@ -86,7 +92,8 @@ void main() {
         's:rearrange',
         'p:rearrange',
         'w:own',
-        'l:own',
+        // Hearing a sentence is never rearranged: it asks the meaning.
+        'l:hearMeaning',
       ]);
     });
   });
