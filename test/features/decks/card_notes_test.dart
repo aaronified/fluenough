@@ -6,7 +6,9 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/features/decks/card_notes.dart';
+import 'package:fluenough/features/decks/inspect_page.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
+import 'package:fluenough/features/drill/taught_details.dart';
 import 'package:fluenough/features/review/alike_warning.dart';
 import 'package:fluenough/features/review/review_words.dart';
 
@@ -57,6 +59,14 @@ cards:
       - { kind: "pair", ref: "te-9951", text: "Keep the i short." }
       - { kind: "pair", ref: "te-9912", text: "Not the word for a pen." }
   - { id: te-9912, target: "కలం", native: "pen", reading: "kalam" }
+  - id: te-9913
+    target: "విధవా"
+    native: "widow (calling her)"
+    reading: "vidhavā"
+    notes:
+      - { kind: "pair", ref: "te-9951", text: "Keep the i short." }
+      - { kind: "usage", text: "Rare as a form of address." }
+      - { kind: "note", text: "Many find it unkind." }
 ''',
   'decks/te/te-en-notes-rude.yaml':
       '''
@@ -68,6 +78,9 @@ cards:
   - { id: te-9951, target: "వెధవ", native: "idiot", reading: "vedhava", modes: [recognition] }
 ''',
 };
+
+Future<void> _scrollTo(WidgetTester tester, Finder finder) => tester
+    .scrollUntilVisible(finder, 300, scrollable: find.byType(Scrollable).first);
 
 Future<AppState> _state() async {
   final state = AppState.test(
@@ -162,5 +175,58 @@ void main() {
     expect(find.textContaining('వెధవ'), findsNothing);
     expect(find.text(l10n.wordSheetSoundsLikeTitle), findsOneWidget);
     expect(find.text('Not the word for a pen.'), findsOneWidget);
+  });
+
+  testWidgets('a drill\'s card shows every note but the pair note, whose '
+      'text shows once, in the warning', (tester) async {
+    usePhone(tester);
+    final state = await _state();
+    final entry = state.deckById('te-en-notes-words')!;
+    final card = entry.cards.firstWhere((c) => c.id == 'te-9913');
+    await pumpScreen(
+      tester,
+      Scaffold(
+        body: SingleChildScrollView(
+          child: TaughtDetails(
+            card: card,
+            language: entry.language,
+            reading: TaughtReading.always,
+          ),
+        ),
+      ),
+      state: state,
+    );
+    expect(find.text('Rare as a form of address.'), findsOneWidget);
+    expect(find.text('Many find it unkind.'), findsOneWidget);
+    expect(find.byType(AlikeWarning), findsOneWidget);
+    expect(find.text('Keep the i short.'), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byType(AlikeWarning),
+        matching: find.text('Keep the i short.'),
+      ),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('Inspect shows every note but the pair note, a note a line', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await _state();
+    await pumpScreen(
+      tester,
+      const InspectPage(deckId: 'te-en-notes-words'),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    await _scrollTo(tester, find.text(l10n.inspectId('te-9913')));
+    await tester.tap(find.text(l10n.inspectId('te-9913')));
+    await tester.pumpAndSettle();
+    await _scrollTo(
+      tester,
+      find.textContaining('Rare as a form of address.\nMany find it unkind.'),
+    );
+    expect(find.textContaining('Keep the i short.'), findsNothing);
   });
 }
