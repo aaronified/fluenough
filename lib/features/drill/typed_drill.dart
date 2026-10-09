@@ -7,6 +7,7 @@ import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/speaker.dart';
@@ -158,6 +159,7 @@ class _TypedDrillState extends State<TypedDrill> {
           color: scheme.onSurfaceVariant,
         ),
       ),
+      if (card.picture != null) CardPicture(card, size: typing ? 56 : 88),
       Text(
         card.native,
         textAlign: TextAlign.center,

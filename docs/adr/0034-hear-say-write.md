@@ -52,6 +52,12 @@ it) and speaking (say it).
   difficulty, per skill, for one language. A pair never asked in Hear
   starts at recall rather than choice once the learner's Hear strength
   there is 80% or more over at least 20 answers.
+- **Pictures** (owner: Noto Emoji, Apache-2.0): a card may name one emoji
+  (`picture:`) for a concrete word. Write shows it above the meaning, and
+  Hear beside each meaning it offers (Carpenter & Olson 2012). Only the
+  images the decks use are bundled (`tools/pictures.py`). Each picture was
+  matched by an agent and checked by another; abstract words, kinship and
+  near misses get none.
 - **A minimal-pair partner** can be named on a card (`pair:`); Hear offers
   its meaning among the options. కలం (pen) and కాలం (time) name each
   other.

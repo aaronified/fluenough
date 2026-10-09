@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
 import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/reading_first.dart';
@@ -78,7 +79,9 @@ class ChoiceDrill extends StatelessWidget {
                   chosen: picked?.id == option.id,
                   answered: answered,
                   onTap: () => session.pick(option),
-                  label: (style) => ask.choosesMeaning
+                  label: (style) => ask == Ask.hearMeaning
+                      ? _OptionMeaning(card: option, style: style)
+                      : ask.choosesMeaning
                       ? Text(option.native, style: style)
                       : _OptionWord(
                           card: option,
@@ -204,6 +207,7 @@ class ChoiceDrill extends StatelessWidget {
           color: scheme.onSurfaceVariant,
         ),
       ),
+      if (card.picture != null) CardPicture(card, size: 88),
       Text(
         card.native,
         textAlign: TextAlign.center,
@@ -306,6 +310,28 @@ class _OptionWord extends StatelessWidget {
       children: <Widget>[
         Text(reading, style: style),
         word,
+      ],
+    );
+  }
+}
+
+/// A meaning Hear offers, with its picture where the word has one
+/// (ADR-0034).
+class _OptionMeaning extends StatelessWidget {
+  const _OptionMeaning({required this.card, required this.style});
+
+  final Card card;
+  final TextStyle style;
+
+  @override
+  Widget build(BuildContext context) {
+    final meaning = Text(card.native, style: style);
+    if (card.picture == null) return meaning;
+    return Row(
+      children: <Widget>[
+        CardPicture(card, size: 32),
+        const SizedBox(width: 12),
+        Expanded(child: meaning),
       ],
     );
   }

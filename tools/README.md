@@ -22,6 +22,18 @@ supplies every slot for every entry — and that no value has been silently eate
 That last one is the reason this exists: `native: no` on the hiragana `の`
 parses as the boolean `false`, and no reviewer reliably catches that by eye.
 
+## `pictures.py`
+
+Copies the pictures the decks name (a card's `picture`, one emoji) from a
+Noto Emoji checkout into `assets/pictures/`, and removes any no deck names,
+so that only what is used ships. Run it after adding or changing a picture.
+
+```sh
+git clone --depth 1 --filter=blob:none --sparse https://github.com/googlefonts/noto-emoji
+git -C noto-emoji sparse-checkout set 2D/png/128
+python3 tools/pictures.py noto-emoji
+```
+
 ## `import_csv.py`
 
 Turns a CSV wordlist into a deck. `target` and `native` columns are required;
