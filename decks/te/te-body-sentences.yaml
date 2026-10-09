@@ -1,0 +1,92 @@
+schema: 1
+id: "te-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0755"
+    target: "నాకు తల నొప్పిగా ఉంది."
+    reading: "nāku tala noppigā undi."
+    ipa: "naːku t̪ala noppiɡaː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "నొప్పిగా", ref: "te-0368" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0756"
+    target: "నాకు కడుపు నొప్పిగా ఉంది."
+    reading: "nāku kaḍupu noppigā undi."
+    ipa: "naːku kaɖupu noppiɡaː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "నొప్పిగా", ref: "te-0368" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0757"
+    target: "నా కాలు నొప్పిగా ఉంది."
+    reading: "nā kālu noppigā undi."
+    ipa: "naː kaːlu noppiɡaː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "నొప్పిగా", ref: "te-0368" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0758"
+    target: "చేతులు కడగండి."
+    reading: "cētulu kaḍagaṇḍi."
+    ipa: "tʃeːt̪ulu kaɖaɡaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-plural", "te-rule-polite-request"]
+    bases:
+      - { word: "చేతులు", ref: "te-0741" }
+      - { word: "కడగండి", base: "కడగడం", reading: "kaḍagaḍam" }
+  - id: "te-0759"
+    target: "కళ్ళు మూయండి."
+    reading: "kaḷḷu mūyaṇḍi."
+    ipa: "kaɭɭu muːjaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-plural", "te-rule-polite-request"]
+    bases:
+      - { word: "కళ్ళు", ref: "te-0732" }
+      - { word: "మూయండి", base: "మూయడం", reading: "mūyaḍam" }
+  - id: "te-0760"
+    target: "నోరు తెరవండి."
+    reading: "nōru teravaṇḍi."
+    ipa: "noːru t̪eraʋaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "తెరవండి", base: "తెరవడం", reading: "teravaḍam" }
+  - id: "te-0761"
+    target: "ఆమె జుట్టు పొడవుగా ఉంది."
+    reading: "āme juṭṭu poḍavugā undi."
+    ipa: "aːme dʒuʈʈu poɖaʋuɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "పొడవుగా", base: "పొడవు", reading: "poḍavu" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0762"
+    target: "నేను పళ్ళు తోముకుంటాను."
+    reading: "nēnu paḷḷu tōmukuṇṭānu."
+    ipa: "neːnu paɭɭu t̪oːmukuɳʈaːnu"
+    pos: "phrase"
+    rules: ["te-rule-plural", "te-rule-present-first"]
+    bases:
+      - { word: "పళ్ళు", ref: "te-0736" }
+      - { word: "తోముకుంటాను", base: "తోముకోవడం", reading: "tōmukōvaḍam" }
+  - id: "te-0763"
+    target: "అతని గొంతు బాగుంది."
+    reading: "atani gontu bāgundi."
+    ipa: "at̪ani ɡont̪u baːɡund̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "అతని", ref: "te-0595" }
+      - { word: "బాగుంది", base: "బాగు", reading: "bāgu" }
