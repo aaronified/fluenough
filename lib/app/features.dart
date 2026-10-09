@@ -48,6 +48,8 @@ enum Feature {
   // Settings.
   reminder(90),
   uiLanguage(46),
+  // Settings > Voices opens the phone's text-to-speech settings, through
+  // the app's own platform channel (lib/app/system_settings.dart).
   voiceSettingsLink(0),
 
   // Appearance.
@@ -70,7 +72,7 @@ enum Feature {
   /// 0 means no issue exists yet. That is allowed only for the features the
   /// UI plan lists as having none — profiles and PINs, colour seeds and
   /// wallpaper colours, in-app CSV import, and the voice settings link, which
-  /// needs a dependency first — and `test/app/features_test.dart` holds the
+  /// was built without one — and `test/app/features_test.dart` holds the
   /// list.
   final int issue;
 
@@ -98,6 +100,7 @@ enum Feature {
     Feature.logExport,
     Feature.logImport,
     Feature.importFile,
+    Feature.voiceSettingsLink,
   };
 }
 

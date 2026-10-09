@@ -60,6 +60,16 @@ flutter {
 """
 
 
+# MainActivity.kt as flutter create writes it for app.fluenough.
+ACTIVITY = """\
+package app.fluenough
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
+"""
+
+
 def granted(root: ET.Element) -> list[str]:
     """The permissions [root], a manifest, asks for, in order."""
     return [
@@ -100,6 +110,9 @@ class ApplyTest(unittest.TestCase):
         self.manifest.write_text(MANIFEST, encoding="utf-8")
         self.gradle = self.root / brand_android.GRADLE
         self.gradle.write_text(GRADLE, encoding="utf-8")
+        self.activity = self.root / brand_android.ACTIVITY
+        self.activity.parent.mkdir(parents=True)
+        self.activity.write_text(ACTIVITY, encoding="utf-8")
 
     def test_the_label_is_the_app_title(self) -> None:
         self.assertEqual(brand_android.apply(self.root), "Fluenough")
@@ -122,15 +135,15 @@ class ApplyTest(unittest.TestCase):
 
     def test_running_twice_is_the_same_as_once(self) -> None:
         brand_android.apply(self.root)
-        paths = self.root / brand_android.OTA_PATHS
-        once = [
-            f.read_text(encoding="utf-8") for f in (self.manifest, self.gradle, paths)
-        ]
-        brand_android.apply(self.root)
-        self.assertEqual(
-            [f.read_text(encoding="utf-8") for f in (self.manifest, self.gradle, paths)],
-            once,
+        files = (
+            self.manifest,
+            self.gradle,
+            self.root / brand_android.OTA_PATHS,
+            self.activity,
         )
+        once = [f.read_text(encoding="utf-8") for f in files]
+        brand_android.apply(self.root)
+        self.assertEqual([f.read_text(encoding="utf-8") for f in files], once)
 
     def test_a_name_is_escaped_for_xml(self) -> None:
         (self.root / brand_android.ARB).write_text(
@@ -206,6 +219,8 @@ class ApplyTest(unittest.TestCase):
                 "android.intent.action.TTS_SERVICE",
                 "android.intent.action.VIEW",
                 "android.speech.RecognitionService",
+                "android.speech.tts.engine.INSTALL_TTS_DATA",
+                "com.android.settings.TTS_SETTINGS",
             ],
         )
 
@@ -248,6 +263,8 @@ class ApplyTest(unittest.TestCase):
                 "android.intent.action.TTS_SERVICE",
                 "android.intent.action.VIEW",
                 "android.speech.RecognitionService",
+                "android.speech.tts.engine.INSTALL_TTS_DATA",
+                "com.android.settings.TTS_SETTINGS",
             ],
         )
         self.assertEqual(len(granted(root)), 2)
@@ -372,6 +389,131 @@ class ApplyTest(unittest.TestCase):
             brand_android.apply(self.root)
         png = self.root / brand_android.RES / "mipmap-mdpi/ic_launcher.png"
         self.assertEqual(png.read_text(encoding="utf-8"), "flutter")
+
+    def test_the_voice_settings_pages_are_queried(self) -> None:
+        # Android 11+ resolves neither for the app without a query, and the
+        # channel opens only what resolves.
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
+        self.assertEqual(actions.count("com.android.settings.TTS_SETTINGS"), 1)
+        self.assertEqual(
+            actions.count("android.speech.tts.engine.INSTALL_TTS_DATA"), 1
+        )
+        self.assertEqual(len(root.findall("queries")), 1)
+
+    # MainActivity's platform channel, for Settings > Voices. Nothing here
+    # has an Android SDK, so the Kotlin is checked by shape, not compiled.
+
+    def kotlin(self) -> str:
+        return self.activity.read_text(encoding="utf-8")
+
+    def test_activity_gets_the_channel_once(self) -> None:
+        brand_android.apply(self.root)
+        text = self.kotlin()
+        self.assertTrue(text.startswith("package app.fluenough\n"))
+        self.assertEqual(text.count('"app.fluenough/system"'), 1)
+        self.assertEqual(text.count('"openVoiceSettings" ->'), 1)
+        self.assertEqual(text.count("override fun configureFlutterEngine("), 1)
+        self.assertIn("super.configureFlutterEngine(flutterEngine)", text)
+        self.assertEqual(text.count("class MainActivity : FlutterActivity() {"), 1)
+        self.assertEqual(text.count("{"), text.count("}"))
+        self.assertEqual(text.count("("), text.count(")"))
+        # Tries the settings, then the default engine's voice data, then
+        # any engine's, each only if something handles it.
+        order = [
+            text.index('Intent("com.android.settings.TTS_SETTINGS")'),
+            text.index("ACTION_INSTALL_TTS_DATA).setPackage(engine)"),
+            text.rindex("Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA))"),
+        ]
+        self.assertEqual(order, sorted(order))
+        self.assertIn("intent.resolveActivity(packageManager) == null", text)
+        self.assertIn("Intent.FLAG_ACTIVITY_NEW_TASK", text)
+        for page in ('"textToSpeech"', '"installVoices"', '"none"'):
+            self.assertIn(f"return {page}", text)
+
+    def test_activity_imports_what_it_uses_once_each(self) -> None:
+        brand_android.apply(self.root)
+        text = self.kotlin()
+        imports = re.findall(r"^import (\S+)$", text, re.M)
+        self.assertEqual(sorted(imports), sorted(brand_android.KOTLIN_IMPORTS))
+        # Imports come before the class.
+        self.assertLess(
+            text.rindex("\nimport "), text.index("class MainActivity")
+        )
+        for name in brand_android.KOTLIN_IMPORTS:
+            used = name.rsplit(".", 1)[1]
+            self.assertGreater(text.count(used), 1, used)
+
+    def test_activity_written_once_is_left_alone(self) -> None:
+        brand_android.apply(self.root)
+        once = self.kotlin()
+        self.assertEqual(brand_android.channel(once), once)
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), once)
+
+    def test_activity_keeps_what_it_had(self) -> None:
+        self.activity.write_text(
+            "package app.fluenough\n\n"
+            "import android.os.Bundle\n"
+            "import android.content.Intent\n"
+            "import io.flutter.embedding.android.FlutterActivity\n\n"
+            "// Someone's own.\n"
+            "class MainActivity : FlutterActivity() {\n"
+            "    private val mine = 1\n"
+            "}\n",
+            encoding="utf-8",
+        )
+        brand_android.apply(self.root)
+        text = self.kotlin()
+        self.assertIn("import android.os.Bundle\n", text)
+        self.assertEqual(text.count("import android.content.Intent\n"), 1)
+        self.assertIn("// Someone's own.\nclass MainActivity", text)
+        self.assertIn("    private val mine = 1\n}\n", text)
+        self.assertEqual(text.count('"app.fluenough/system"'), 1)
+        self.assertEqual(text.count("{"), text.count("}"))
+        once = text
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), once)
+
+    def test_activity_with_its_own_engine_setup_is_an_error_and_nothing_changes(
+        self,
+    ) -> None:
+        own = ACTIVITY.replace(
+            "FlutterActivity()",
+            "FlutterActivity() {\n"
+            "    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {\n"
+            "        super.configureFlutterEngine(flutterEngine)\n"
+            "    }\n"
+            "}",
+        )
+        self.activity.write_text(own, encoding="utf-8")
+        with self.assertRaisesRegex(brand_android.BrandError, "configureFlutterEngine"):
+            brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), own)
+        self.assertEqual(self.manifest.read_text(encoding="utf-8"), MANIFEST)
+
+    def test_activity_of_another_shape_is_an_error(self) -> None:
+        for text in (
+            ACTIVITY.replace("FlutterActivity()", "FlutterFragmentActivity()"),
+            ACTIVITY.replace("FlutterActivity()", "FlutterActivity(), Other"),
+        ):
+            with self.subTest(text=text):
+                self.activity.write_text(text, encoding="utf-8")
+                with self.assertRaisesRegex(
+                    brand_android.BrandError, "flutter create"
+                ):
+                    brand_android.apply(self.root)
+                self.assertEqual(self.kotlin(), text)
+                self.assertEqual(
+                    self.manifest.read_text(encoding="utf-8"), MANIFEST
+                )
+
+    def test_activity_missing_is_an_error(self) -> None:
+        self.activity.unlink()
+        with self.assertRaisesRegex(brand_android.BrandError, "MainActivity.kt"):
+            brand_android.apply(self.root)
 
 
 class ResourcesTest(unittest.TestCase):
