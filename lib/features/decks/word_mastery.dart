@@ -68,6 +68,9 @@ class RecentAnswers {
     return _mastery(answers, window);
   }
 
+  /// When [cardId] was first answered, right or wrong, or null if never.
+  DateTime? firstAnswered(String cardId) => _byCard[cardId]?.first.at;
+
   /// When [cardId] was first answered right, or null if it never was.
   DateTime? firstPassed(String cardId) {
     for (final answer

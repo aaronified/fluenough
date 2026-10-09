@@ -243,11 +243,20 @@ enum MilestoneKind {
 
   /// The script units done.
   script,
+
+  /// A number of the course's rules known.
+  rules,
+
+  /// A reading passage's questions answered.
+  firstPassage,
 }
 
 /// The word counts a words milestone is set at: the design's, then the
 /// achievements plan's larger ones.
 const List<int> wordMilestones = <int>[50, 100, 250, 500, 1000, 2500];
+
+/// The rule counts a rules milestone is set at: the design's 10, then more.
+const List<int> ruleMilestones = <int>[10, 25, 50];
 
 /// A milestone on the path, after the unit that reaches it.
 final class MilestoneStep extends PathStep {
@@ -261,7 +270,7 @@ final class MilestoneStep extends PathStep {
 
   final MilestoneKind kind;
 
-  /// For [MilestoneKind.words], how many words.
+  /// For [MilestoneKind.words] and [MilestoneKind.rules], how many.
   final int count;
 
   final bool earned;
@@ -269,8 +278,9 @@ final class MilestoneStep extends PathStep {
   /// When it was earned, if the log says.
   final DateTime? earnedAt;
 
-  /// What is left: words for [MilestoneKind.words], script units for
-  /// [MilestoneKind.script]; 0 once earned, and for the first deck.
+  /// What is left: words for [MilestoneKind.words], rules for
+  /// [MilestoneKind.rules], script units for [MilestoneKind.script]; 0 once
+  /// earned, and for the first deck and the first passage.
   final int toGo;
 }
 
@@ -477,6 +487,58 @@ CourseView? courseView(
             ? wordDates[count - 1]
             : null,
         toGo: earned ? 0 : count - learnedWords.length,
+      ),
+    );
+  }
+
+  // Rules known, after the unit whose rules reach each count. Known is
+  // read from recent answers, so a rule forgotten counts again as to go.
+  final rules = <({int unit, bool known})>[
+    for (final (i, unit) in unitSteps.indexed)
+      for (final rule in unit.content.rules)
+        (
+          unit: i,
+          known:
+              recent.ofAll(rule.cards.map((c) => c.id)).level ==
+              MasteryLevel.known,
+        ),
+  ];
+  final rulesKnown = rules.where((r) => r.known).length;
+  for (final count in ruleMilestones) {
+    if (count > rules.length) break;
+    final earned = rulesKnown >= count;
+    place(
+      rules[count - 1].unit,
+      MilestoneStep(
+        kind: MilestoneKind.rules,
+        count: count,
+        earned: earned,
+        toGo: earned ? 0 : count - rulesKnown,
+      ),
+    );
+  }
+
+  // The first passage read, after the first unit with one: earned when any
+  // of the course's passages has a question answered.
+  final firstReading = unitSteps.indexWhere((u) => u.content.passages > 0);
+  if (firstReading >= 0) {
+    DateTime? read;
+    for (final unit in unitSteps) {
+      for (final entry in unit.decks) {
+        if (entry.deck.kind != DeckKind.reading) continue;
+        for (final card in entry.cards) {
+          final at = recent.firstAnswered(card.id);
+          if (at != null && (read == null || at.isBefore(read))) read = at;
+        }
+      }
+    }
+    place(
+      firstReading,
+      MilestoneStep(
+        kind: MilestoneKind.firstPassage,
+        earned: read != null,
+        earnedAt: read,
+        toGo: 0,
       ),
     );
   }

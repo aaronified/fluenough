@@ -10,6 +10,7 @@ import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
+import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/path_parts.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
@@ -138,6 +139,29 @@ void main() {
     // No path marks levels yet, so none is drawn.
     expect(find.byType(LevelHeader), findsNothing);
     expect(find.byType(AchievementMark), findsNothing);
+  });
+
+  testWidgets('further down: rules known and the first passage read, '
+      'each with what is left', (tester) async {
+    usePhone(tester);
+    final state = await pumpDecks(tester, state: await teluguLearner());
+    final l10n = l10nOf(tester);
+    final rules = courseView(state, 'te')!.steps
+        .whereType<MilestoneStep>()
+        .singleWhere((m) => m.kind == MilestoneKind.rules);
+    // Some of the rules of the units done are known already.
+    expect(rules.toGo, inExclusiveRange(0, 10));
+    for (final (title, line) in <(String, String)>[
+      (l10n.pathRulesKnown(10), l10n.pathRulesToGo(rules.toGo)),
+      (l10n.pathFirstPassage, l10n.pathFirstPassageToGo),
+    ]) {
+      await tester.scrollUntilVisible(
+        find.text(title),
+        300,
+        scrollable: downward.first,
+      );
+      expect(find.text(line), findsOneWidget);
+    }
   });
 
   testWidgets('Where I am scrolls back to the unit up next', (tester) async {

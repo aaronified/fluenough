@@ -1130,6 +1130,34 @@
       }
     }
   },
+  "pathRulesKnown": "{count} rules known",
+  "@pathRulesKnown": {
+    "description": "A milestone on the path: this many of the course's rules known, right on most recent answers.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "pathRulesToGo": "{count, plural, =1{1 rule to go} other{{count} rules to go}}",
+  "@pathRulesToGo": {
+    "description": "Under a rules milestone not earned yet: how many more rules.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "pathFirstPassage": "First passage read",
+  "@pathFirstPassage": {
+    "description": "A milestone on the path: the questions of one reading passage answered."
+  },
+  "pathFirstPassageToGo": "Read one story",
+  "@pathFirstPassageToGo": {
+    "description": "Under the first-passage milestone before it is earned: how to earn it."
+  },
   "pathScriptLearned": "Script learned",
   "@pathScriptLearned": {
     "description": "A milestone on the path: the course's script units done."

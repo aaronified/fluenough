@@ -2,7 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
@@ -254,6 +257,78 @@ void main() {
       containsAll(<String>['te-en-script-vowels', 'te-en-spelling']),
     );
     expect(view.otherDecks.every(state.needsAlphabet), isTrue);
+  });
+
+  test('ten rules known, after the unit whose rules reach ten, and the '
+      'first passage read, after the first unit with one', () async {
+    final state = await loaded();
+    MilestoneStep only(CourseView view, MilestoneKind kind) => view.steps
+        .whereType<MilestoneStep>()
+        .singleWhere((m) => m.kind == kind);
+    UnitStep before(CourseView view, MilestoneStep step) => view.steps
+        .sublist(0, view.steps.indexOf(step))
+        .whereType<UnitStep>()
+        .last;
+
+    final fresh = courseView(state, 'te')!;
+    final units = fresh.units.toList();
+    final rules = only(fresh, MilestoneKind.rules);
+    expect(rules.count, 10);
+    expect(rules.earned, isFalse);
+    expect(rules.toGo, 10);
+    // Right after the unit holding the course's tenth rule.
+    final tenth = before(fresh, rules);
+    final upToTenth = units
+        .take(units.indexOf(tenth) + 1)
+        .expand((u) => u.content.rules);
+    expect(upToTenth, hasLength(10));
+    expect(tenth.content.rules, isNotEmpty);
+
+    final passage = only(fresh, MilestoneKind.firstPassage);
+    expect(passage.earned, isFalse);
+    final reading = before(fresh, passage);
+    expect(reading.content.passages, greaterThan(0));
+    expect(
+      units.take(units.indexOf(reading)).map((u) => u.content.passages),
+      everyElement(0),
+    );
+
+    // Every rule right on its recent answers, and one question answered.
+    final progress = MemoryProgress();
+    final at = DateTime(2026, 9, 20);
+    for (final rule in units.expand((u) => u.content.rules).take(10)) {
+      for (final card in rule.cards) {
+        progress.record(
+          deckId: rule.id,
+          cardId: card.id,
+          mode: DrillMode.grammar,
+          grade: 4,
+          now: at,
+        );
+      }
+    }
+    final story = reading.decks.firstWhere(
+      (e) => e.deck.kind == DeckKind.reading,
+    );
+    progress.record(
+      deckId: story.id,
+      cardId: story.cards.first.id,
+      mode: DrillMode.recognition,
+      grade: 1,
+      now: at,
+    );
+    final later = courseView(
+      state,
+      'te',
+      answers: RecentAnswers(progress.log),
+    )!;
+    final known = only(later, MilestoneKind.rules);
+    expect(known.earned, isTrue);
+    expect(known.toGo, 0);
+    final read = only(later, MilestoneKind.firstPassage);
+    // Read, whether or not its answer was right.
+    expect(read.earned, isTrue);
+    expect(read.earnedAt, at);
   });
 
   test('a unit is found by any of its decks; a deck outside any path opens '
