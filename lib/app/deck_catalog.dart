@@ -15,6 +15,7 @@ import '../core/models/romanisation.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
+import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
@@ -305,9 +306,35 @@ class DeckCatalog {
         (a, b) =>
             isAdded(a) != isAdded(b) ? (isAdded(a) ? 1 : -1) : a.compareTo(b),
       );
+    final headers = <String, ({String? kind, String? part})>{
+      for (final path in paths) path: _headerOf(files[path]!),
+    };
+    // A file a learner added is single-file (OPEN-19): DeckParser.parse
+    // refuses a core or a layer among them.
+    bool isLayer(String path) =>
+        !isAdded(path) && headers[path]!.kind == 'layer';
+    bool isCore(String path) =>
+        !isAdded(path) && !isLayer(path) && headers[path]!.part == 'core';
+    // Cores first, so that a layer finds its core wherever the two sort
+    // (B1 format, spec 9.6). A core is not shown: each of its layers is,
+    // merged with it.
+    final cores = <String, DeckCore>{};
+    final brokenCores = <String>{};
+    for (final path in paths.where(isCore)) {
+      try {
+        cores[path] = DeckParser.parseCore(
+          files[path]!,
+          source: path.split('/').last,
+        );
+      } on DeckParseException catch (e) {
+        broken.add(BrokenDeck(path: path, error: e));
+        brokenCores.add(path);
+      }
+    }
     for (final path in paths) {
       final text = files[path]!;
-      final kind = kindOf(text);
+      final kind = headers[path]!.kind;
+      if (isCore(path)) continue;
       if (kind == 'facts') {
         try {
           final file = parseFacts(text, source: path.split('/').last);
@@ -375,7 +402,9 @@ class DeckCatalog {
       }
       Deck deck;
       try {
-        deck = DeckParser.parse(text, source: path.split('/').last);
+        deck = isLayer(path)
+            ? _merged(path, text, files, cores, brokenCores)
+            : DeckParser.parse(text, source: path.split('/').last);
       } on DeckParseException catch (e) {
         broken.add(BrokenDeck(path: path, error: e));
         continue;
@@ -407,7 +436,7 @@ class DeckCatalog {
         ),
       );
     }
-    final resolved = _withRefs(decks);
+    final resolved = _withRules(_withRefs(decks));
     final placed = _placed(coursePaths, resolved);
     return Catalog(
       decks: _inTeachingOrder(resolved, themes, placed),
@@ -420,6 +449,65 @@ class DeckCatalog {
       romanisations: romanisations,
       scriptGuides: scriptGuides,
     );
+  }
+
+  /// The layer at [path], whose text is [text], merged with its core: the
+  /// file `<core>.yaml` in the folder above the layer's (spec 2.6).
+  static Deck _merged(
+    String path,
+    String text,
+    Map<String, String> files,
+    Map<String, DeckCore> cores,
+    Set<String> brokenCores,
+  ) {
+    final source = path.split('/').last;
+    final layer = DeckParser.parseLayer(text, source: source);
+    final folders = path.split('/')..removeLast();
+    final above = folders.isEmpty ? '' : (folders..removeLast()).join('/');
+    final corePath = '${above.isEmpty ? '' : '$above/'}${layer.core}.yaml';
+    final core = cores[corePath];
+    if (core != null) return mergeLayer(core, layer, source: source);
+    throw DeckParseException(
+      brokenCores.contains(corePath)
+          ? 'its core, ${layer.core}.yaml, could not be read'
+          : files.containsKey(corePath)
+          ? '${layer.core}.yaml is not a core: it has no part: "core"'
+          : "no core file ${layer.core}.yaml in ${above.isEmpty ? '.' : above}; "
+                "a layer's core is in the folder above it",
+      source: source,
+    );
+  }
+
+  /// [decks] with each rules deck's table expanded into its cells (spec
+  /// 4.6), once refs are resolved: a row's word is its card as a vocab deck
+  /// of the same native language teaches it, and a row with none is left
+  /// out.
+  static List<DeckEntry> _withRules(List<DeckEntry> decks) {
+    if (!decks.any((e) => e.deck.kind == DeckKind.rules)) return decks;
+    final taught = <String, Map<String, Card>>{};
+    for (final entry in decks) {
+      if (entry.deck.kind != DeckKind.vocab) continue;
+      final words = taught[entry.deck.native.code] ??= <String, Card>{};
+      for (final card in entry.deck.cards) {
+        words.putIfAbsent(card.id, () => card);
+      }
+    }
+    return <DeckEntry>[
+      for (final entry in decks)
+        if (entry.deck.kind != DeckKind.rules)
+          entry
+        else
+          DeckEntry(
+            path: entry.path,
+            deck: entry.deck.withCards(
+              expandRules(
+                entry.deck,
+                wordOf: (id) => taught[entry.deck.native.code]?[id],
+              ),
+            ),
+            bundled: entry.bundled,
+          ),
+    ];
   }
 
   /// Each course's path with the course's decks it does not list put where
@@ -449,11 +537,17 @@ class DeckCatalog {
   /// another language that gives no native, is left out; the validator
   /// refuses both.
   static List<DeckEntry> _withRefs(List<DeckEntry> decks) {
-    final written = <String, (Card, String)>{};
+    // Each card as each native language's decks write it: a core card is
+    // written once per layer that translates it, and a ref resolves through
+    // the one of its own native language when there is one (spec 2.7).
+    final written = <String, Map<String, Card>>{};
     for (final entry in decks) {
       if (entry.deck.kind != DeckKind.vocab) continue;
       for (final card in entry.deck.cards) {
-        written.putIfAbsent(card.id, () => (card, entry.deck.native.code));
+        (written[card.id] ??= <String, Card>{}).putIfAbsent(
+          entry.deck.native.code,
+          () => card,
+        );
       }
     }
     return <DeckEntry>[
@@ -469,7 +563,10 @@ class DeckCatalog {
     ];
   }
 
-  static List<Card> _resolved(Deck deck, Map<String, (Card, String)> written) {
+  static List<Card> _resolved(
+    Deck deck,
+    Map<String, Map<String, Card>> written,
+  ) {
     final refAt = <int, CardRef>{
       for (final ref in deck.refs) ref.position: ref,
     };
@@ -481,11 +578,12 @@ class DeckCatalog {
         cards.add(deck.cards[next++]);
         continue;
       }
-      if (written[ref.id] case (final card, final native)) {
+      if (written[ref.id] case final homes?) {
+        final own = homes[deck.native.code];
         final listed = ref.resolve(
-          card,
+          own ?? homes.values.first,
           deckId: deck.id,
-          sameNative: native == deck.native.code,
+          sameNative: own != null,
         );
         if (listed != null) cards.add(listed);
       }
@@ -544,13 +642,21 @@ class DeckCatalog {
   /// decks that are not decks, or null. Decided by the file's `kind`, not
   /// its name. Text that is not a YAML mapping has none; the parser then
   /// reports what is wrong.
-  static String? kindOf(String text) {
+  static String? kindOf(String text) => _headerOf(text).kind;
+
+  /// A file's `kind` and `part`, each null when it has none: a layer is
+  /// `kind: "layer"`, a core `part: "core"` (spec 2.2).
+  static ({String? kind, String? part}) _headerOf(String text) {
     try {
       final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
       final kind = root is YamlMap ? root['kind'] : null;
-      return kind is String ? kind : null;
+      final part = root is YamlMap ? root['part'] : null;
+      return (
+        kind: kind is String ? kind : null,
+        part: part is String ? part : null,
+      );
     } catch (_) {
-      return null;
+      return (kind: null, part: null);
     }
   }
 
