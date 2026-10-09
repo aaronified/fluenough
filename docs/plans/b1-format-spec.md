@@ -7,15 +7,21 @@ For four builders working in parallel on one branch (`feat/b1-format`):
   the few app call sites the type changes reach.
 - **W**, the docs: `docs/DECK-FORMAT.md`, `docs/adr/0035-*.md`,
   `decks/README.md`, `assets/deck-template.yaml` (comments only).
-- **Q**, the grammar question: the choose question and the second grammar
-  schedule in the app (section 4.8). Q starts once D's models are on the
-  branch **and** the skill model's pull request has merged and the branch
-  is rebased on it, because both change `lib/core/scheduling/` (OPEN-23).
+- **Q**, the grammar questions: the two grammar schedules' questions in
+  the app (section 4.8). Q starts once D's models are on the branch
+  **and** the skill model's pull request (aaronified/fluenough#432,
+  branch `claude/ecstatic-wright-b1z4x5`) has merged and the branch is
+  rebased on it, because both change `lib/core/scheduling/` (OPEN-23,
+  settled).
 
 Sources: `docs/plans/b1-plans.md` (owner decisions of 2026-10-06 and
 2026-10-09), `docs/plans/words-rules-sentences.md`,
 `docs/plans/native-layers.md`, `docs/plans/skill-model.md`, ADR-0013,
-ADR-0018 and ADR-0034, and the code as it is on `main` at `81bc89e`.
+ADR-0018 and ADR-0034, the owner's answers of 2026-10-09 (the last
+section), and the code as it is on `main` at `81bc89e`. From the skill
+model's pull request (#432), not yet on `main`:
+`lib/core/scheduling/skill_map.dart`, `docs/adr/0034-hear-say-write.md`,
+`docs/research/skill-evidence.md` and `docs/plans/offensive-words.md`.
 
 **How the OPEN items work.** Where the plans leave a choice open, or where
 this spec departs from a plan line, it marks the place **OPEN-n**, says
@@ -25,14 +31,28 @@ listed in the last section, "Open for the owner", in two groups:
 - **Group A, gaps the plans leave.** The builders build the recommendation.
   An owner answer that differs changes only the section named.
 - **Group B, departures from a plan line, or a choice the owner made that
-  this spec cannot settle** (OPEN-4, 16, 20, 22, 23, 24, 25, 26). The
-  builders also build the recommendation, so that work is not held up,
-  but **the branch does not merge until the owner has answered every
-  group B item**, and ADR-0035 is written `Status: Proposed` until then
-  (section 14).
+  this spec could not settle** (OPEN-4, 16, 20, 22, 23, 24, 25, 26).
+  **The owner has answered every one (2026-10-09),** and the body of this
+  spec now says what the owner decided: each is marked *settled* where it
+  is used, citing the answer. Two answers differ from what this spec
+  first recommended, OPEN-4 (paths per language learnt, now) and OPEN-22
+  (understood is choosing the meaning), and sections 2.1, 2.8, 4.6–4.8,
+  9.5, 9.6 and 10 were rewritten for them. ADR-0035 is written
+  `Status: Accepted` (section 14).
 
 A builder who meets a case this spec does not cover asks, and does not
-decide. Nothing in this spec decides a group B item on the owner's behalf.
+decide.
+
+**Rework on the branch.** The code and docs already on `feat/b1-format`
+were built from this spec's first recommendations, so two parts of them
+are now out of date and are redone from the sections named: per-course
+paths (D: `course_path.dart`, the catalog and their tests; V:
+`check_path_file`, `check_paths_across`, `check_reading_across`'s unit
+lookups and the B1 plan checks; W: "Course paths" and "The B1 plan" in
+`docs/DECK-FORMAT.md`, ADR-0035; the `zz` fixtures' path files) from
+2.1, 2.8, 9.5, 9.6 and 10; and the grammar question (D's `promptFor` and
+`acceptedAnswers` for `grammarUnderstood`; W's drill-mode rows) from 4.6
+and 4.7. Regions (10.5, 6.1) are new to all three.
 
 ---
 
@@ -41,7 +61,10 @@ decide. Nothing in this spec decides a group B item on the owner's behalf.
 1. **Compatibility is the first acceptance test.** On today's `decks/`,
    `python3 tools/validate_decks.py decks/` must print byte-for-byte the
    same output before and after V's change: no new error, warning or info
-   line. Every deck in `decks/` must parse in D's parser into the same
+   line. The one exception is the paths: the change that makes paths per
+   language (10.6) migrates today's nine course paths in the same commit,
+   and the output on the migrated tree must equal today's output on
+   today's tree, except for the paths' own file names in it. Every deck in `decks/` must parse in D's parser into the same
    `Deck` as before (D's existing tests stay green unchanged, except where a
    type change in section 9 forces an edit to a test's construction code).
    Section 12 lists what keeps this true.
@@ -50,8 +73,13 @@ decide. Nothing in this spec decides a group B item on the owner's behalf.
    must read every accepted file the same way. Every Dart rejection in this
    spec is a validator error too. The validator may check more.
 3. **No card id changes.** Nothing in this spec renumbers or reshapes an
-   existing card id, grammar cell id, deck id or path id. New id shapes are
-   only for new things (rule ids, rule cells, core ids).
+   existing card id, grammar cell id or deck id (AGENTS.md rule 1). New id
+   shapes are only for new things (rule ids, rule cells, core ids, region
+   ids, passage ids). **Path ids change** once, from
+   `<lang>-<native>-path` to `<lang>-path`, by the owner's answer to
+   OPEN-4: a path id is stored nowhere (not in `reviews`, `card_states`,
+   settings or placement, which keep merged deck ids), so no learner's
+   progress moves.
 4. **Quoting.** Every string scalar in every example is quoted (AGENTS.md
    rule 2), **mapping keys included**: slot keys, note ids, card ids and
    example targets used as keys are written `"lo":`, `"stem":`,
@@ -113,6 +141,21 @@ decide. Nothing in this spec decides a group B item on the owner's behalf.
    if `package:yaml` turns out to read one differently, the resolver
    follows `package:yaml`, and V says so in the pull request.
 
+   **The Dart side retypes with the same patterns.** D's parser does not
+   rely on `package:yaml`'s own typing of a plain scalar: `_value` in
+   `deck_parser.dart` matches the scalar's text against the table's
+   patterns, character for character (the same regular expressions as
+   `DeckResolver`), reads `[-+]?[0-9]+` in base 10 even with leading
+   zeros, `0o` in base 8 and `0x` in base 16, and keeps an integer too
+   long for an `int` whole (Python's `int` has no limit). A scalar tagged
+   with the bare `!` is typed by its look with the same patterns, as
+   PyYAML types it. So `reading: no` is the text `"no"`, `native: 08` is
+   the number 8, and `target: 1:30` is the text `"1:30"`, in both; before
+   this, `_value` followed PyYAML's YAML 1.1 rules and read all three the
+   other way. The patterns live in two places and change together
+   (`DeckResolver`'s docstring says so). D's tests hold one case per row
+   of the table, and the cases YAML 1.1 read differently.
+
 ---
 
 ## 1. What is new, at a glance
@@ -123,20 +166,22 @@ decide. Nothing in this spec decides a group B item on the owner's behalf.
 | 2 | `phrasebook: true` | card | per-card + across (15–25 per course, first unit) | `Card.phrasebook` |
 | 3 | `bases:` | card, example | per-card + across (B1 decks) | `CardBase`, `Card.bases`, `CardExample.bases` |
 | 4 | Rules decks (`kind: rules`) | core + layer only | per-file + across | `Rule`, `RuleTable`, `RuleRow`, `RuleCell`, `expandRules` |
-| 4b | `DrillMode.grammarUnderstood` and its choose question | (not written in decks) | `MODES` | enum value (D); `Ask.chooseForm` (Q) |
+| 4b | `DrillMode.grammarUnderstood` (shown a form, choose its meaning) and the form questions of `grammar` | (not written in decks) | `MODES` | enum value (D); `Ask.chooseFormMeaning`, `Ask.chooseForm` (Q) |
 | 5 | `rules:` on a sentence | card | per-card + across | `Card.rules` |
-| 6 | Typed notes | card, ref; text in layer | per-card + layer + across | `CardNote`, `NoteKind`, `Card.notes` |
+| 6 | Typed notes, and a note's `region` | card, ref; text in layer | per-card + layer + across | `CardNote`, `NoteKind`, `Card.notes`, `CardNote.regions` |
 | 7 | `wiktionary: true` | single-file card or ref; layer entry; inline base | per-card | `Card.wiktionary`, `CardBase.wiktionary` (`bool`) |
-| 8 | B1 plan in the path | path file units | per-file + across | `PlanUnit`, `PlannedDeck`, `Milestone`, `CoursePath.plan` |
+| 8 | One path per language learnt, naming core ids, with its B1 plan | `decks/<lang>/<lang>-path.yaml` units | per-file + across | `LanguagePath`, `PlanUnit`, `PlannedDeck`, `Passage`, `Milestone`; `CoursePath` as the per-course view |
 | 9 | Script in prose for new prose | everywhere | `check_transliterated` | — |
 | 10 | `pos: "pronoun"` | card | `POS` | — (the parser does not check `pos` values) |
-| 11 | YAML 1.2 plain scalars | everywhere | `DeckLoader` | — (already) |
+| 11 | YAML 1.2 plain scalars | everywhere | `DeckLoader` | `_value` retypes by the same patterns |
+| 12 | Regions | `regions:` in `<lang>-path.yaml` | per-file + across (a note's `region`) | `Region`, `LanguagePath.regions` |
 
 **B1 decks.** Several checks apply only to the decks of a B1 plan, as
 `b1-plans.md` says ("The validator, for every deck in a B1 plan"). Section
-2.8 defines them exactly: every vocab, grammar or rules deck (merged or
-single-file) listed in a unit of a path that has a B1 plan, except the
-path's alphabet decks.
+2.8 defines them exactly: for each course of a language whose path has a
+B1 plan, the course's deck (merged or single-file) for each core id a
+unit of the path lists, if it is a vocab, grammar or rules deck, except
+the path's alphabet decks.
 
 ---
 ## 2. Core and layer files
@@ -154,9 +199,10 @@ path's alphabet decks.
 - **The merged deck's id is the layer's id.** It is exactly the id a
   single-file deck of that course has today (`te-en-home`). So splitting
   today's `decks/te/te-en-home.yaml` into `decks/te/te-home.yaml` and
-  `decks/te/en/te-en-home.yaml` keeps the deck id that paths, placement
+  `decks/te/en/te-en-home.yaml` keeps the deck id that placement
   (`placed_decks`), added-deck replacement and `reviews.deck_id` know, and
-  keeps every card id. The split deletes the single-file deck in the same
+  the core id the language's path lists (`te-home`, below), and keeps
+  every card id. The split deletes the single-file deck in the same
   change; the validator's existing duplicate-stem check refuses the two side
   by side (`duplicate deck id 'te-en-home'`).
 - **A grammar or rules core's cells** expand with the core id as the deck
@@ -167,7 +213,8 @@ path's alphabet decks.
   their order.
 - **Reserved core ids:** `<lang>-facts`, `<lang>-numbers`,
   `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds` and `<lang>-path`
-  are the names of the files beside the decks.
+  are the names of the files beside the decks (`<lang>-path` is the
+  language's path, 10.1).
 - **A core's name never starts with a native language's code.** A core
   `te-en-x` would have the layer `te-en-en-x`, and its id reads as a deck of
   the `te-en` course. V refuses a core whose `<name>`'s first segment
@@ -187,38 +234,43 @@ field, `part: "core"`, on every core; a layer is `kind: "layer"`. Inferring
 a core from a missing `native` would turn a forgotten `native` on a
 single-file deck into a confusing core error.
 
-**OPEN-4, paths per course for now (group B: departs from
-`native-layers.md`).** `native-layers.md` designs paths and B1 plans per
-language learnt: "Paths and B1 plans are per language learnt
-(`hi-path.yaml`), shared by every layer" (lines 56–57), and lists "Paths
-move to one per language learnt" as step 5 of its work (line 78). This
-spec does **not** do it: paths stay one per course (`te-en-path.yaml`),
-list merged deck ids (`te-en-home`), and the deck agents write their B1
-plans into `te-en-path.yaml` and `bn-en-path.yaml`, with planned ids as
-course ids (`te-en-health`), not core ids (`te-health`). That reverses the
-design until step 5 is done. The rework it causes then:
+**Every deck has a core id, and paths name decks by it (OPEN-4, settled:
+owner, 2026-10-09, "one per language learnt now (`<lang>-path.yaml`),
+shared by every layer").** `native-layers.md` designs paths and B1 plans
+per language learnt: "Paths and B1 plans are per language learnt
+(`hi-path.yaml`), shared by every layer" (lines 56–57). This spec first
+recommended keeping per-course paths until a second native language came;
+the owner chose the per-language path now, before the deck agents start,
+so that no unit line has to be rewritten later. So:
 
-1. **Moving the plans.** Each course path's units move into
-   `<lang>-path.yaml`: every listed deck id becomes its core id
-   (`te-en-home` → `te-home`), every planned id loses its native
-   (`te-en-health` → `te-health`), and the passage descriptions, written in
-   the course's native language, move to per-layer text. Mechanical, about
-   an hour per language with a script, but it rewrites every unit line the
-   deck agents wrote.
-2. **The code this spec avoids now:** `parseCoursePath` and `CoursePath`,
-   placement (stored per merged deck id), the catalog, `check_paths_across`,
-   `check_reading_across`'s unit lookups, and the language picker's
-   figures. `native-layers.md` estimates 2–3 hours for "paths per language,
-   index changes".
-3. **Drift:** a second native course of the same language written before
-   the move needs its own copy of the plan, and the two copies can differ.
-
-Defining the per-language path now costs item 2 on this branch, before any
-deck agent starts, and changes the shape of every path section below.
-Recommended: per course now (only English layers exist, and placement and
-progress are keyed by merged deck id), moving with native-layers step 5
-**before any second native language's layers are written**, so item 3
-never happens. The owner decides.
+- **A deck's core id** is `<lang>-<name>`: for a core, its id; for a layer
+  or a merged deck, its core's id (`te-en-home` → `te-home`); for a
+  single-file deck `<lang>-<native>-<name>`, the same id without its
+  native (`te-en-home` → `te-home`, `te-en-sound-differences` →
+  `te-sound-differences`). It is well defined because a core's name never
+  starts with a native language's code (below), and a single-file deck's
+  native is its `native.code`.
+- **The deck a learner is taught for a core id** `<lang>-<name>`, learning
+  from the native language `n`, is the deck whose id is
+  `<lang>-<n>-<name>`: the layer `decks/<lang>/<n>/<lang>-<n>-<name>.yaml`
+  merged with its core, or the single-file deck with that id. A deck not
+  yet split and the merged deck it becomes have the same id, so a path
+  never changes when a deck is split.
+- **A path lists core ids,** never a course's deck ids, in its `alphabet`,
+  its units' `decks`, and its planned ids (section 10). One path,
+  `decks/<lang>/<lang>-path.yaml`, serves every native language: a
+  learner from `n` gets, for each core id it lists, that core id's deck in
+  `n` where one exists, and nothing where none does (10.4). A deck that
+  only one native language needs, such as English learners' "sounds
+  English lacks", has a core id like any other
+  (`te-sound-differences`); a Bengali course gives its own deck for it,
+  `te-bn-sound-differences`, or none.
+- **Card ids and deck ids do not change.** Placement (`placed_decks`),
+  added-deck replacement, `reviews.deck_id` and the catalog keep merged
+  deck ids (`te-en-home`), as before: the app turns the path's core ids
+  into the learner's deck ids (10.4) before any of them sees the path.
+- **Today's course paths are migrated** in the change that makes paths per
+  language (10.6): mechanical, one file per language.
 
 **OPEN-5, reading decks.** Recommended: reading decks stay single-file;
 their questions are already keyed by language. A core with
@@ -228,9 +280,9 @@ their questions are already keyed by language. A core with
 `hi-family.en.yaml`; the owner settled only the folder,
 `decks/<lang>/<native>/`. Recommended: `<lang>-<native>-<name>.yaml`
 (`decks/te/en/te-en-home.yaml`), so that the layer's stem is the merged
-deck's id, which is today's single-file id. Paths, placement, added-deck
-replacement, `reviews.deck_id` and the duplicate-stem check then keep
-working unchanged. `te-home.en.yaml` would need a second id rule for every
+deck's id, which is today's single-file id. Placement, added-deck
+replacement, `reviews.deck_id`, the duplicate-stem check and the path's
+mapping from core id to deck id (10.4) then keep working unchanged. `te-home.en.yaml` would need a second id rule for every
 one of them.
 
 ### 2.2 Dispatch, and a core's header
@@ -701,6 +753,11 @@ deck fills them exactly as today):
 | `taught_words` | `None` | `(lang, native, _taught(merged))`, `merged` being the deck 2.7 builds from the layer and its core, written cards only (refs are not in `_taught` today either); for a rules layer, every form of every row |
 | `translated` (new) | — | the ids of the core's cards and refs whose entry gives `native` |
 | `core_cards` (new) | the ids of its cards and refs, in order, each marked written or ref | — |
+| `listed_as` (new) | its id | its core's id |
+
+A single-file deck fills `listed_as` too, with its id less its native
+(`te-en-home` → `te-home`, 2.1): `listed_as` is what the language's path
+lists for the deck, whatever its form.
 
 These are all filled in `validate()`, since a layer loads its core there.
 
@@ -723,11 +780,14 @@ deck's written cards, and its refs that resolve; a merged deck's included
 cards (2.7). **The vocab cards a course teaches** are those of its vocab
 decks.
 
-**A path has a B1 plan** as 10.1 defines. **The B1 decks** of a course are
-the deck ids listed in `decks` (or in the list form) of any unit of its
-path, when that path has a B1 plan, less `"*"`, less the path's
-`alphabet` decks, and less reading decks. A core is a **B1 core** when one
-of its layers is a B1 deck.
+**A course's path** is its language's path, `decks/<lang>/<lang>-path.yaml`
+(2.1, 10.1), read for the course's native language as 10.4 says. **A path
+has a B1 plan** as 10.1 defines. **The B1 decks** of a course, when its
+language's path has a B1 plan, are, for each core id listed in `decks`
+(or in the list form) of any unit, less `"*"` and less the path's
+`alphabet` core ids, the course's deck for that core id (2.1) where it
+exists and is not a reading deck. A core is a **B1 core** when the path
+has a B1 plan and lists its id outside `alphabet`.
 
 **Which checks use what:**
 
@@ -742,10 +802,11 @@ of its layers is a B1 deck.
 | notes warning, pair warning (6.5) | the B1 decks' cards |
 | culture review tag (6.5) | every deck |
 | bases coverage (8.3) | each B1 deck's cards, against its course's vocab cards |
-| B1 plan across checks (10.3) | the course's decks |
+| B1 plan across checks (10.3) | the language's decks, each course's for its words |
+| regions named by notes (10.5) | the language's path |
 
-Today no path has a B1 plan and no deck is a core or a layer, so none of
-these prints anything on today's `decks/`.
+Today no path has a B1 plan and no deck is a core or a layer, and no note
+names a region, so none of these prints anything on today's `decks/`.
 
 ---
 ## 3. `phrasebook: true`
@@ -789,21 +850,25 @@ B1 plan (OPEN-7). If `n` is outside 15–25:
 
 `error: {file}: phrasebook: the {lang}-{native} course has {n} phrasebook cards; a course's phrasebook has 15 to 25 ({first deck}{, and k more decks})`
 
-`{file}` is the course's path when it is given, else the first given deck
-of the course that teaches a phrasebook card; when neither is given, the
-check is not reported (ground rule 5). Counting per course, not per
+`{file}` is the language's path when it is given, else the first given
+deck of the course that teaches a phrasebook card; when neither is given,
+the check is not reported (ground rule 5). Counting per course, not per
 language, means a Bengali layer's own phrasebook cards count for Bengali
 learners only.
 
 **Across (V), the place.** In a course whose path has a B1 plan, every
-phrasebook card the course teaches is taught by a deck listed in the
-path's first unit that is not exempt (10.1), `units[{f}]`:
+phrasebook card the course teaches is taught by the course's deck for a
+core id listed in the path's first unit that is not exempt (10.1),
+`units[{f}]`:
 
 `error: {path}: units[{i}]: {deck} teaches phrasebook card {id}; the phrasebook comes first, in a deck of units[{f}]`
 
-(`units[{i}]` being the first unit whose decks teach the card, and
-`{path}` reported only when given.) A ref to a phrasebook card from a later
-deck is fine as long as a deck of `units[{f}]` teaches it too.
+(`units[{i}]` being the first unit whose decks, in this course, teach the
+card, `{deck}` the course's deck id, and `{path}` reported only when
+given.) A ref to a phrasebook card from a later deck is fine as long as a
+deck of `units[{f}]` teaches it too. Each course is checked on its own:
+a phrasebook card a Bengali layer adds must be in the Bengali course's
+deck for a first-unit core id.
 
 **Dart:** `Card.phrasebook` (`bool`, default `false`), read with
 `optionalBool`; `true` is the only value the parser accepts besides absence
@@ -823,9 +888,11 @@ readings, and the forms it makes; it is taught, then practised as a table
 whose rows are the taught words of the right kind and whose columns are the
 rule's forms; every form is **listed per word** (owner, 2026-10-09); the
 validator checks every taught word of the rule's kind has its row; a
-question tests the rule, never the word: choosing among forms of the
-**same** word, or typing the form with the word and the meaning given; and
-grammar is understood and produced as two schedules (4.7, OPEN-22).
+question tests the rule, never the word, always within the **same** word:
+shown a form, choosing what it means (grammar understood), and choosing
+the form among the word's forms, or typing it with the word and the
+meaning given (grammar produced); and grammar is understood and produced
+as two schedules (4.7; OPEN-22, settled by the owner, 2026-10-09).
 
 **OPEN-8, the unit of a rule.** The plans name rules both per ending
 (`te-rule-lo`) and as a set of forms ("the columns are the rule's forms
@@ -834,8 +901,8 @@ is one table** (one kind of word, its columns); **a rule is one or more of
 its columns**, each with its own id, name and explanation. A case-endings
 table has one rule per ending (`te-rule-lo`, `te-rule-ki`, …); a tense table
 may have one rule for all its persons. A sentence names rule ids. A
-grammar question's options are the word's other forms **across the whole
-table**, so a one-column rule still has a choice.
+grammar question's options are the word's other forms, or their meanings,
+**across the whole table**, so a one-column rule still has a choice.
 
 **OPEN-2, single-file rules decks.** Recommended: none. `kind: "rules"`
 exists only as a core with layers; the deck agents write new content as
@@ -917,8 +984,8 @@ deck is converted.
 | `word` | yes | The id of the vocab card that teaches the word, a card of the language. |
 | `key` | no | The row's id part, `[a-z0-9]+(-[a-z0-9]+)*`. Only to keep the cell ids of a single-file grammar deck when converting it: the old entry's `key` (or lemma). Without it the id part is the number of `word` (`0042` for `te-0042`). Unlike a slot key it may start with a digit, as an old entry key may: it is never a mapping key (`prompts` are keyed by `word`), so YAML cannot misread it. |
 | `forms` | yes | Every slot, as in a grammar entry: a form, a list of forms (the first shown, all accepted), or `null` where the word has no such form. At least one non-null. |
-| `readings` | yes in a script that needs a reading | As a grammar entry's `readings` (every filled slot, none for a null). |
-| `ipas` | no | As a grammar entry's. |
+| `readings` | yes in a script that needs a reading | As a grammar entry's `readings`: every slot with a form has its reading; a slot whose form is `null` has none, either left out or written `null` (both read it as none, so `{ "lo": null }` under a null form is valid, and a reading given there is an error). |
+| `ipas` | no | As a grammar entry's, with the same rule for a null form. |
 
 **`rules`:** a non-empty list.
 
@@ -1095,14 +1162,25 @@ whose form is not null **and whose rule has an entry in the layer's
 - **notes:** none; the rule's explanation is shown with the taught details.
 
 **What the learner is shown** (D, in `Card.promptFor`, so every screen
-agrees): for `grammarUnderstood`, the cell's `native` ("with mother"); for
-`grammar` on a card with a `rule`, the word and its reading, then the
-meaning to express: `'{word target} ({word reading}): {native}'`, or
-`'{word target}: {native}'` when the word has no reading
-("అమ్మ (amma): with mother"). An existing grammar cell (no `rule`) keeps
-`native`, as today. The validator holds every row's word to having a
-reading where the script needs one (4.3), and labels to `{meaning}` (4.5),
-so a typed rule cell always shows the word: only the rule is tested.
+agrees):
+
+- for `grammarUnderstood` (shown a form, choose its meaning; 4.7): the
+  cell's form with its reading, `'{target} ({reading})'`, or `'{target}'`
+  when the cell has no reading ("అమ్మతో (ammatō)"); the options are
+  meanings (4.8);
+- for `grammar` on a card with a `rule` (choose or type the form): the
+  word and its reading, then the meaning to express:
+  `'{word target} ({word reading}): {native}'`, or
+  `'{word target}: {native}'` when the word has no reading
+  ("అమ్మ (amma): with mother"); the options, when it is chosen, are forms;
+- an existing grammar cell (no `rule`) keeps `native`, as today.
+
+The validator holds every row's word to having a reading where the script
+needs one (4.3), and labels to `{meaning}` (4.5), so a produced rule cell
+always shows the word: only the rule is tested. A cell's `native` is the
+meaning the understood question asks for, so two cells of one row with the
+same `native` cannot be told apart by meaning; 4.8 leaves such options
+out.
 
 A rule card itself is not a scheduled card. `Deck.rules` carries the rules
 the layer gives, for the lesson's teach step; mastery of a rule is counted
@@ -1111,117 +1189,184 @@ format).
 
 ### 4.7 Two grammar schedules: `DrillMode.grammarUnderstood`
 
-`skill-model.md` lines 286–290: "**Grammar understood and produced** are
-built with the B1 format, not in the skill model's pull request (owner,
-2026-10-09): 'understood' chooses among forms of the same word, the rule
-cards' question (`words-rules-sentences.md`). Until then grammar keeps one
-schedule, typed." So both schedules belong to this branch: D adds the mode
-and the data (this section), Q the question and its scheduling (4.8).
+The owner, 2026-10-09: "Choosing the meaning = understood". So, in the
+skill model's words since (`skill-model.md` on #432, lines 286–291):
+"**Understood is shown a form and choosing what it means;** choosing
+among forms of the same word, the rule cards' question, or typing the
+form, is produced (owner, 2026-10-09, settling `b1-format-spec.md` #22)."
+Both schedules are built with the B1 format, not in the skill model's
+pull request (OPEN-23, settled), so both belong to this branch: D adds
+the mode and the data (this section), Q the questions and their
+scheduling (4.8).
 
-- **`grammar` keeps its name and its meaning:** type the form. It is the
-  schedule "grammar produced". Every existing grammar cell stays
+- **`grammar` keeps its name and its meaning: grammar produced.** Its
+  questions give the meaning to express and ask for the form: on an
+  existing grammar cell, typed, as today; on a rule cell, the form chosen
+  among the same word's forms (`Ask.chooseForm`, while the pair is new or
+  was last missed) or typed (once it was last remembered), as Hear
+  chooses and then types (ADR-0034). Every existing grammar cell stays
   `{grammar}` only, and every existing `reviews` and `leech_actions` row
-  with mode `grammar` keeps meaning exactly what it meant: the skill
-  model's "grammar into grammar produced" is the identity. No row is
-  rewritten (AGENTS.md rule 9).
-- **New: `grammarUnderstood`:** shown the meaning to express ("with
-  mother"), choose among the forms of the same word (అమ్మతో (ammatō), అమ్మకి
-  (ammaki), అమ్మలో (ammalō), అమ్మ నుంచి (amma nuñci)). It is stored in the log
-  by that name, `"grammarUnderstood"`, through drift's `textEnum`, so its
-  place in the enum does not matter to storage. D puts it immediately
-  before `grammar`, so that a session ordered by `DrillMode.values` asks the
-  choice before the typed form.
-- **OPEN-22, what each schedule is (group B).** The plans define the two
-  schedules differently:
-  - `skill-model.md` lines 178–179: "Two schedules per grammar item:
-    **understand** (choose what a form means) and **produce** (choose or
-    type the form)."
-  - `skill-model.md` lines 287–289: "'understood' chooses among forms of
-    the same word, the rule cards' question", and
-    `words-rules-sentences.md` §3 gives the questions as "Choosing: the
-    options are the forms of the same word ... The meaning to express is
-    the prompt" and "Typing: the word and the meaning are given; the
-    learner types the form".
-
-  Under lines 287–289 (reading A), choosing the form is *understood* and
-  typing it is *produced*. Under lines 178–179 (reading B), choosing the
-  form is *produced* (alongside typing), and *understood* is a different
-  question: shown a form (ఇంట్లో (iṇṭlō)), choose what it means among the
-  same word's meanings ("in home", "to home", "with home", "from home").
-  Reading B needs a question type of its own (`Ask.chooseFormMeaning`:
-  prompt the form, options the `prompt` of the row's other cells) and moves
-  the form choice under `grammar`. **The format serves both:** each
-  `RuleOption` carries both the form and its prompt, so neither reading
-  changes a deck, an id or the mode's stored name; only which question each
-  mode asks changes (4.8). Recommended: reading A, the owner's later and
-  dated decision (2026-10-09), which this spec builds. The owner confirms.
-- **OPEN-10, the name.** Recommended `grammarUnderstood`, the skill
-  model's own name for the schedule. Rejected: renaming `grammar` to
-  `grammarProduced` (the log is append-only and holds `grammar`; ADR-0034
-  kept old names for the same reason), and `grammarChoice` (names the
-  question, not the skill; under reading B the choice is produced).
+  with mode `grammar` keeps meaning exactly what it meant, a typed form:
+  the skill model's "grammar into grammar produced" is the identity. No
+  row is rewritten (AGENTS.md rule 9).
+- **New: `grammarUnderstood`, grammar understood:** shown a form,
+  అమ్మతో (ammatō), choose what it means among the meanings of the same
+  word's forms: "with mother", "to mother", "in mother", "from mother"
+  (`Ask.chooseFormMeaning`, 4.8). It is the rule's passive recognition:
+  form to meaning, as Recognition is for a word (Laufer & Goldstein
+  2004's order, in `docs/research/skill-evidence.md`). It is stored in
+  the log by that name, `"grammarUnderstood"`, through drift's
+  `textEnum`, so its place in the enum does not matter to storage. D puts
+  it immediately before `grammar`, so that a session ordered by
+  `DrillMode.values` asks for the meaning before the form, as
+  Recognition comes before Write.
+- **OPEN-22, settled: reading B** (owner, 2026-10-09). This spec had
+  recommended the opposite reading (choosing the form is understood),
+  from an earlier line of `skill-model.md` that the owner's answer
+  supersedes. **The format did not change for it:** each `RuleOption`
+  carries both the form and its prompt (4.6), so no deck, id or stored
+  mode name changes; only which question each mode asks.
+- **OPEN-10, the name.** `grammarUnderstood`, the skill model's own name
+  for the schedule. Rejected: renaming `grammar` to `grammarProduced`
+  (the log is append-only and holds `grammar`; ADR-0034 kept old names
+  for the same reason), and `grammarChoice` (names a question, and both
+  schedules now choose).
 - **In decks:** only a rules table's cells take it. V adds it to `MODES`
   and refuses it in a card's or a ref's `modes`:
   `card {id}: grammarUnderstood is only for a rules table's cells` (where
   `ref {id}` for a ref). D's `mode()` refuses it as it refuses `reading`.
+- **What it implies in the `SkillMap` (OPEN-11): nothing, either way.**
+  `SkillMap.impliedBy(DrillMode.grammarUnderstood, deckId)` returns `{}`,
+  and `impliedBy(DrillMode.grammar, deckId)` stays `{}`, as on #432. A
+  right answer in either grammar schedule counts for its own pair alone,
+  in FSRS and in the ability layer; a miss is blamed on its own skill
+  alone, since there is no implied skill to split it over. Only what the
+  research supports (`docs/research/skill-evidence.md` and
+  `docs/plans/skill-model.md` on #432):
+  - **For grammar, practice is skill-specific:** "understanding and
+    producing practice build partly separate skills (DeKeyser 1997;
+    Shintani et al. 2013)", and "learning to produce helps production
+    most, learning to understand helps understanding most (Steinel et al.
+    2007; Webb 2009; DeKeyser 1997)" (`skill-model.md`, "What the
+    research says").
+  - **The direction that gives Write's credit to Recognition** (production
+    implies reception in part: Laufer & Goldstein 2004; Webb 2009;
+    Steinel et al. 2007) is evidence about words. `skill-evidence.md`
+    gives no study of it, and no figure, for a rule's forms and their
+    meanings.
+  - **Its one grammar row, "the typed form implies the chosen form"**
+    (González-Fernández & Schmitt 2020; González-Fernández 2025; Medium,
+    no figure), relates two questions that both record `grammar` now
+    (the form chosen and the form typed): one schedule, so it needs no
+    `SkillMap` entry. The choose grade (below) is how the two differ.
+  - **No word skill either:** its gaps list "grammar practice crediting
+    lexical skills" as without evidence, so a rule cell's answer moves
+    neither the word's Write nor its Recognition.
+
+  Should evidence for produced implying understood appear, the change is
+  one arm, `DrillMode.grammar => {DrillMode.grammarUnderstood:
+  SkillMap.implied}`, as Write's is. Q adds the `grammarUnderstood` arm
+  (returning `{}`) to `impliedBy`'s switch, which is exhaustive.
+- **Grades:** a right `Ask.chooseFormMeaning` records 4 (Good), as a
+  right choice of a meaning seen does in Recognition; a right
+  `Ask.chooseForm` records 3 (Hard), as a right choice in Write or Hear
+  does; a typed form records as today (ADR-0034: "A right choice counts
+  for less than a right recall").
+- **Fitted per language and skill, like the others.** Nothing new is
+  needed, because #432 keys everything by mode: FSRS's parameters are
+  fitted and kept per `SkillKey`, `(language, mode)`
+  (`skill_parameters.dart`), and the ability layer rates per
+  `AbilityKey`, `(language, mode)` (`ability.dart`). So
+  `(te, grammarUnderstood)` has its own fitted set beside
+  `(te, grammar)`: FSRS-6's defaults until it has enough reviews to fit;
+  in a language with no fit of its own for it, the fit of
+  `grammarUnderstood` in the language studied most recently; refitted by
+  the Settings button, and automatically once its reviews have grown by
+  10% since its last fit; learning from its last three months or its
+  last 1,000 reviews, whichever is more; kept in the database and the
+  backup by its mode's name (`skill-model.md`, "FSRS fitted to the
+  learner, per skill"). Its Elo rating starts like any skill's. Q checks
+  that the fitting, the backup and "How you learn" walk
+  `DrillMode.values` (or a list that gains the new mode), not a fixed
+  list of today's modes, and adds it where one does not; how its name
+  reads on "How you learn" waits for `settings-wording.md`, as the other
+  skills' wording does.
 - **D's part** (so the app compiles and behaves as before for every
-  existing deck): `isMachineGraded` true; `Card.acceptedAnswers` as
-  `grammar` (target and alternatives); `promptFor` as 4.6;
-  `SkillMap.impliedBy` returns `{}` for it (OPEN-11: whether a right typed
-  form implies the choice, as Write implies Recognition; recommended none
-  until the research says); `Skill.of` maps it to `Skill.grammar`, the
-  tile "understood and produced share" (skill model, decided 2026-10-08).
+  existing deck): `isMachineGraded` true; `Card.acceptedAnswers` for
+  `grammarUnderstood` is the cell's meaning, `native` (what is chosen);
+  `promptFor` as 4.6; `Skill.of` maps it to `Skill.grammar`, the tile
+  "understood and produced share" (skill model, decided 2026-10-08).
   **Until Q's work lands, `Card.modesIn` leaves `grammarUnderstood` out**
   (a one-line filter beside the voice and recogniser filters, with a
-  `// Removed by the choose question (spec 4.8).` comment), so a rule cell
-  is asked only as `grammar`, and no session can reach a question the app
-  cannot show. The cells still declare both modes. The branch does not
-  merge with the filter in place.
+  `// Removed by the grammar questions (spec 4.8).` comment), so a rule
+  cell is asked only as `grammar`, typed, and no session can reach a
+  question the app cannot show. The cells still declare both modes. The
+  branch does not merge with the filter in place.
 - **Not added to existing grammar decks** (OPEN-12: recommended later, for
   a `kind: grammar` table whose rows give at least two forms).
 
-### 4.8 The choose question and the second schedule (Q)
+### 4.8 The grammar questions and the second schedule (Q)
 
-(OPEN-23: the owner put both schedules in the B1 format; this section
-builds them here.) Q builds on D's models, after the skill model's pull request has merged
-and the branch is rebased on `main` (the skill model rewrites
-`lib/core/scheduling/skill_map.dart`, `session_queue.dart` and the
-review question kinds; building on its old shapes would be rework).
-Behaviour, for reading A (OPEN-22):
+(OPEN-23, settled: the owner put both schedules in the B1 format.) Q
+builds on D's models, after the skill model's pull request (#432) has
+merged and the branch is rebased on `main` (the skill model rewrites
+`lib/core/scheduling/skill_map.dart`, `ask.dart`, `session_queue.dart`
+and the review question kinds; building on their old shapes would be
+rework). Behaviour, for reading B (OPEN-22, settled):
 
-1. **`Ask.chooseForm`** (new, in `lib/core/scheduling/ask.dart`): shown the
-   cell's `promptFor(grammarUnderstood)`, choose the target among the
-   target and up to three `RuleCell.options` forms, shuffled; `chooses` is
-   true; the options are forms (strings), never another word's cards.
-   Recorded as `grammarUnderstood` (Ask's rule: whichever way, it records
-   the item's own mode).
-2. **Which cells:** a rule cell with at least one option gets
-   `grammarUnderstood` from `Card.modesIn`; a cell with none does not (it
-   is only typed). Q replaces D's temporary filter with this rule.
-3. **Reviews:** a `grammarUnderstood` item is asked `Ask.chooseForm`; a
-   `grammar` item on a rule cell is asked as today's grammar question,
-   whose prompt (4.6) now shows the word.
-4. **Lessons** (`lessonQuestions` in `lib/core/scheduling/lesson.dart`): a
-   rule cell's questions are `(grammarUnderstood, chooseForm)` then
-   `(grammar, own)`; an existing grammar cell keeps
-   `[(grammar, own)]`.
-5. **The screen:** `ChoiceDrill` (`lib/features/drill/choice_drill.dart`)
-   shows `Ask.chooseForm` (prompt, then the forms as `ChoiceTile`s with
-   their readings, as `chooseWord` shows words); `drill_page.dart`
-   dispatches `grammarUnderstood` to it.
-6. **Skills and settings:** the grammar tile and the grammar switch cover
-   both modes (`Skill.of` already maps both; Q makes a grammar-skill
-   session's `modes` include `grammarUnderstood`).
-7. **Tests:** a choose question offers only forms of the same row and
-   never a form of a rule the layer leaves out; it records
-   `grammarUnderstood`; a one-form row is never asked to choose; an
-   existing grammar deck's sessions, lessons and logs are unchanged; the
-   typed rule cell shows the word and its reading.
+1. **`Ask.chooseFormMeaning`** (new, in `lib/core/scheduling/ask.dart`),
+   the question of `grammarUnderstood`: shown the cell's
+   `promptFor(grammarUnderstood)`, the form with its reading, choose its
+   meaning among the cell's `native` and up to three
+   `RuleCell.options`' `prompt`s, shuffled, keeping only options whose
+   `prompt` differs from the cell's `native` and from each other's;
+   `chooses` and `choosesMeaning` are true; the options are meanings
+   (strings) of the same row's cells, never another word's. Recorded as
+   `grammarUnderstood`.
+2. **`Ask.chooseForm`** (new), a question of `grammar` on a rule cell:
+   shown `promptFor(grammar)`, choose the target among the target and up
+   to three `RuleCell.options`' forms, shuffled; the options are forms,
+   never another word's. Recorded as `grammar` (Ask's rule: whichever
+   way, it records the item's own mode).
+3. **Which cells:** a rule cell with at least one option whose `prompt`
+   differs from its own `native` gets `grammarUnderstood` from
+   `Card.modesIn`; any other is asked only as `grammar`. Q replaces D's
+   temporary filter with this rule.
+4. **Reviews:** a `grammarUnderstood` item is asked
+   `Ask.chooseFormMeaning`. A `grammar` item on a rule cell with at least
+   one option is asked `Ask.chooseForm` while its pair is new or was last
+   missed (no repetitions), and typed once it was last remembered, as
+   `reviewAsks` asks Hear; one with no option is typed. A typed rule cell
+   shows the word and its reading (4.6). An existing grammar cell is
+   typed, as today.
+5. **Lessons** (`lessonQuestions` in `lib/core/scheduling/lesson.dart`): a
+   rule cell's questions are `(grammarUnderstood, chooseFormMeaning)`
+   then `(grammar, chooseForm)`, understood before produced; an existing
+   grammar cell keeps `[(grammar, own)]`.
+6. **The screen:** `ChoiceDrill` (`lib/features/drill/choice_drill.dart`)
+   shows both: `Ask.chooseFormMeaning` as the form with its reading, then
+   the meanings as `ChoiceTile`s, as `chooseMeaning` shows a word's;
+   `Ask.chooseForm` as the prompt, then the forms as `ChoiceTile`s with
+   their readings, as `chooseWord` shows words. `drill_page.dart`
+   dispatches `grammarUnderstood`, and a `grammar` item asked
+   `chooseForm`, to it.
+7. **Skills, settings and the scheduler:** the grammar tile and the
+   grammar switch cover both modes (`Skill.of` maps both; Q makes a
+   grammar-skill session's `modes` include `grammarUnderstood`); the
+   `SkillMap` arm, the grades and the fit as 4.7 says.
+8. **Tests:** a meaning question offers only meanings of the same row's
+   cells, distinct, never one of a rule the layer leaves out, and records
+   `grammarUnderstood` with 4 when right; a form question offers only
+   forms of the same row, records `grammar` with 3 when right, and gives
+   way to typing once the pair was remembered; a one-form row is never
+   asked to choose; a row whose other cells share its meaning gets no
+   meaning question; `SkillMap.impliedBy` gives nothing for either
+   grammar mode; FSRS fits `(language, grammarUnderstood)` on its own;
+   an existing grammar deck's sessions, lessons and logs are unchanged;
+   the typed rule cell shows the word and its reading.
 
 How the options are held on the session, and the widget's internals, are
-Q's choice. Under reading B, Q builds `Ask.chooseFormMeaning` for
-`grammarUnderstood` and moves `chooseForm` under `grammar` instead; nothing
-else changes.
+Q's choice.
 
 ---
 
@@ -1267,6 +1412,15 @@ cores given now and among the language's files.
       - { kind: "note", text: "A word from Arabic, through Persian." }
 ```
 
+A **region note** names the regions it is about (10.5). On ఉల్లిపాయ
+(ullipāya), onion, whose note in `te-en-groceries` today is the prose "In
+Telangana often ఉల్లిగడ్డ (ulligaḍḍa).":
+
+```yaml
+    notes:
+      - { kind: "usage", region: "telangana", text: "In Telangana often {1}.", words: [{ word: "ఉల్లిగడ్డ", reading: "ulligaḍḍa" }] }
+```
+
 `notes` is **either** today's string, read as one note of kind `note`
 (`id` `"1"`), **or** a non-empty list of notes. On a single-file card, a
 layer-only card, and a ref in a single-file deck (a ref's list replaces the
@@ -1284,6 +1438,7 @@ empty note.
 | `ref` | `pair` only, required there | The partner, a card of the language that sounds almost the same. |
 | `source` | `culture`: required; others: optional | Where the claim can be checked: a URL, or a book with its author and year. |
 | `words` | no | Language facts the text quotes, `{ word, reading, ipa? }`, `reading` required in a script that needs one; the text refers to them as `{1}`, `{2}`, … (6.4). |
+| `region` | no | Any kind: the note is about how the word is used, or heard, in these regions of the language (10.5). A region id, or a non-empty list of them, each a region of the language's path. A **region note**: an offensive card's note where raters from different regions differ by a band or more (`docs/plans/offensive-words.md` on #432: "a disagreement of a band or more becomes a region note"), and regional vocabulary, such as `te-facts`' Telangana words. |
 
 | where | message |
 |---|---|
@@ -1297,10 +1452,12 @@ empty note.
 | `card {id}` | `notes[{i}].ref is only for a pair note` |
 | `card {id}` | `notes[{i}].source: a culture note names where its claims can be checked` |
 | `card {id}` | `notes[{i}].words must be a list of {{ word, reading }}` / `notes[{i}].words[{k}] needs word, and its reading in a script that needs one` |
+| `card {id}` | `notes[{i}].region must be a region id, or a list of them, such as "telangana", got {v!r}` / `notes[{i}].region lists {r!r} twice` |
 | `card {id}` | (the placeholder messages of 6.4, prefixed `notes[{i}].text `) |
 
 Across: `error: {file}: card {id}: notes[{i}].ref names card {ref}, which no deck writes`
-(from `Report.note_refs`, beside today's `pair` check), and 6.5.
+(from `Report.note_refs`, beside today's `pair` check); a region note's
+regions against the language's path (10.5); and 6.5.
 
 ### 6.2 The core form
 
@@ -1314,7 +1471,11 @@ A core card's notes hold the language facts only; the text is in each layer.
 ```
 
 As 6.1, except: `id` is **required** (the layer names the note by it), and
-`text` is **not allowed**. A string is not allowed either.
+`text` is **not allowed**. A string is not allowed either. `region` is a
+fact about the language, the same for every learner, so it is in the
+core, never in a layer: `{ id: "telangana", kind: "usage", region:
+"telangana", words: [...] }`, with each layer's text keyed by
+`"telangana"`.
 
 | where | message |
 |---|---|
@@ -1391,18 +1552,14 @@ reading (Script in prose).
   with `pair: X` and no pair note naming `X`:
   `card {id}: pair names {X}, but no pair note does; the minimal-pair button needs a pair note`
   (`cards.{id}` on a layer).
-  **OPEN-16, one source of pairs (group B).** `b1-plans.md` lines 223–225
-  has one set of pairs feed both: "pair notes are proposed by a tool ...
-  The same pairs give Hear its sound-alike options". Recommended: **pair
-  notes are the one source.** A core has no `pair:` (2.3); a merged card's
-  `pair` is its first included pair note's `ref` (2.7); a single-file or
-  layer-only card's `Card.pair` is its `pair:` when written, else its first
-  pair note's `ref` (D, 9.4). `pair:` stays valid on single-file decks so
-  that today's decks keep their Hear options. The owner is asked directly:
-  should `pair:` be derived from the pair notes (this recommendation), or
-  should the two stay independent? If independent, `pair:` is allowed in a
-  core, and V warns both ways on B1 decks: the warning above, and
-  `card {id}: pair note {nid} names {Y}, which pair does not; Hear will not offer {Y} as a sound-alike`.
+  **OPEN-16, settled: pair notes are the one source** (owner,
+  2026-10-09: "derived from the pair notes, as recommended"; `b1-plans.md`
+  lines 223–225: "pair notes are proposed by a tool ... The same pairs
+  give Hear its sound-alike options"). A core has no `pair:` (2.3); a
+  merged card's `pair` is its first included pair note's `ref` (2.7); a
+  single-file or layer-only card's `Card.pair` is its `pair:` when
+  written, else its first pair note's `ref` (D, 9.4). `pair:` stays valid
+  on single-file decks so that today's decks keep their Hear options.
 - **Error, a pair note's partner is taught in the course** (`b1-plans.md`
   lines 245–246: the panel shows "the two words side by side, each with
   its reading and meaning"). For every pair note a course shows, its `ref`
@@ -1447,12 +1604,13 @@ enum NoteKind { pair, culture, usage, behaviour, note }
 
 class CardNote {
   const CardNote({required this.id, required this.kind, required this.text,
-      this.ref, this.source});
+      this.ref, this.source, this.regions = const <String>[]});
   final String id;        // the note's id, or its 1-based position
   final NoteKind kind;
   final String text;      // placeholders already filled
   final String? ref;      // a pair note's partner
   final String? source;   // required on a culture note
+  final List<String> regions; // a region note's region ids (10.5); a string reads as one
 }
 ```
 
@@ -1639,9 +1797,12 @@ whose B1 deck includes it).
   still single-file.
 - **Scripts without spaces** (`han`, `kana`, `thai`). `b1-plans.md` lines
   187–188: "Scripts without spaces need their words given
-  (`language-paths.md`)." This format has no field for that yet (OPEN-26).
-  So a B1 deck in such a script is an error, not a silent skip:
-  `error: {path}: units[{i}]: {deck} is in the {script} script, written without spaces; bases cannot be checked until the format gives its words (OPEN-26)`.
+  (`language-paths.md`)." This format has no field for that yet (OPEN-26,
+  settled: owner, 2026-10-09, "later, as recommended"; a `words` field is
+  designed with the first such language's B1 plan). So a B1 deck in such
+  a script is an error, not a silent skip:
+  `error: {path}: units[{i}]: {deck} is in the {script} script, written without spaces; bases cannot be checked until the format gives its words (OPEN-26)`
+  (`{deck}` the course's deck for the listed core id).
   No language being written for B1 now (Telugu, Bengali) uses one.
 
 ### 8.4 Dart
@@ -1680,9 +1841,12 @@ one (app behaviour).
 
 **OPEN-18:** the plans count "distinct vocabulary cards"; recommended as
 above, so that sentences and phrases do not count as words. A unit's words
-are the distinct ids of such cards written or listed by ref in its decks,
-leaving out alphabet decks (the path's `alphabet`), grammar and rules decks,
-reading decks and `"*"`.
+**in a course** are the distinct ids of such cards written, included, or
+listed by ref in the course's decks for the unit's core ids, leaving out
+alphabet decks (the path's `alphabet`), grammar and rules decks, reading
+decks and `"*"`. A unit can teach a different number of words to learners
+from different native languages (a layer may skip a card, or add its
+own), so words are counted per course, against the one planned size.
 
 ---
 ## 9. Dart: parser and models
@@ -1692,14 +1856,14 @@ reading decks and `"*"`.
 | File | Change |
 |---|---|
 | `lib/core/models/drill_mode.dart` | `grammarUnderstood`, before `grammar` (4.7). |
-| `lib/core/models/card.dart` | `Card`: `phrasebook`, `bases`, `rules`, `notes` (now `List<CardNote>`), `wiktionary` (`bool`), `rule` (`RuleCell?`); `promptFor` as 4.6. `CardExample.bases`. `CardRef`: `notes` as `List<CardNote>?`, plus `wiktionary` (`bool?`); `resolve` carries `phrasebook`, `bases`, `rules`, `rule` from the written card and treats `wiktionary` as it treats `notes`. New: `CardNote`, `NoteKind`, `CardBase`. |
+| `lib/core/models/card.dart` | `Card`: `phrasebook`, `bases`, `rules`, `notes` (now `List<CardNote>`, each with its `regions`), `wiktionary` (`bool`), `rule` (`RuleCell?`); `promptFor` as 4.6. `CardExample.bases`. `CardRef`: `notes` as `List<CardNote>?`, plus `wiktionary` (`bool?`); `resolve` carries `phrasebook`, `bases`, `rules`, `rule` from the written card and treats `wiktionary` as it treats `notes`. New: `CardNote`, `NoteKind`, `CardBase`. |
 | `lib/core/models/deck.dart` | `DeckKind.rules`; `Deck.table` (`RuleTable?`), `Deck.rules` (`List<Rule>`, empty by default); the top-level function `bool countsAsWord(Card card, DeckKind kind)` (8.5). |
 | `lib/core/models/rule.dart` (new) | `AppliesTo`, `RuleRow`, `RuleTable`, `Rule`, `RuleCell`, `RuleOption`, `NoteWord`. |
 | `lib/core/data/deck_parser.dart` | The new card fields on single-file decks; the dispatch refusals in `parse()` (9.2); `parseCore`, `parseLayer`. |
 | `lib/core/data/deck_layers.dart` (new) | `DeckCore`, `DeckLayer`, `mergeLayer`. |
 | `lib/core/data/rule_expander.dart` (new) | `expandRules`. |
-| `lib/core/data/course_path.dart` | Mapping units and the B1 plan (9.5). |
-| `lib/app/deck_catalog.dart` | Route `part: core` and `kind: layer` files, merge, expand rules (9.6). |
+| `lib/core/data/course_path.dart` | The language's path: `LanguagePath`, `parseLanguagePath`, mapping units, the B1 plan, passages, regions, and `CoursePath` as the view of it for one native language (9.5). |
+| `lib/app/deck_catalog.dart` | Route `part: core` and `kind: layer` files, merge, expand rules; read each language's path and build each course's view of it (9.6). |
 | app `switch`es on `DrillMode` / `DeckKind` | One arm each, so `flutter analyze` stays clean (4.7). |
 
 `card.dart` and `lib/core/data/*` are contention files (AGENTS.md): D keeps
@@ -1822,41 +1986,112 @@ blank `notes` string reads as no notes (6.1).
 
 ### 9.5 Paths
 
+One file per language learnt, `decks/<lang>/<lang>-path.yaml`, read into
+a `LanguagePath`; the app then works, as before, with a `CoursePath` per
+course, which is the language's path seen from one native language
+(OPEN-4, settled; section 10).
+
 ```dart
 enum Milestone { a1, a2, b1 }   // written "A1", "A2", "B1"
 
 class PlannedDeck {
-  final String id;              // te-en-health
+  final String id;              // a core id: te-health
   final String? theme;          // a theme unit, or
 }                               // a grammar unit (its topics are on PlanUnit)
 
+class Passage {
+  final String id;                    // doctor-call, unique in the path
+  final Map<String, String> texts;    // native code -> description
+  String? textIn(String native);      // texts[native], or null
+}
+
 class PlanUnit {
-  final List<String> decks;     // written decks, without "*"; empty if planned
+  final List<String> decks;     // written: core ids, or (in a CoursePath) the
+                                //   course's deck ids; without "*"
   final bool open;              // ends in "*"
   final PlannedDeck? planned;
   final int? words;             // 0 or more on a written unit, 1 or more planned
   final List<String> grammar;   // topic ids (10.1)
   final Milestone? milestone;
-  final List<String> listeningPassages;
-  final List<String> readingPassages;
+  final List<Passage> listeningPassages;
+  final List<Passage> readingPassages;
   bool get isPlanned => planned != null;
+  bool get isComing;            // planned, or (in a CoursePath) written but
+                                //   with no deck in this native language
+}
+
+class Region {
+  final String id;                    // telangana
+  final Map<String, String> names;    // language code -> name; "en" always
+  String nameIn(String code);         // names[code] ?? names['en']!
+}
+
+class LanguagePath {
+  final String id;                    // te-path
+  final String language;              // te
+  final Set<String> alphabet;         // core ids
+  final List<PlanUnit> plan;          // every unit, in file order; core ids
+  final List<Region> regions;         // in file order; the app adds Elsewhere
+  bool get hasB1Plan;
+  int? milestoneIndex(Milestone m);   // into plan
+  List<String> get grammarTopics;     // up to B1, each once
+  int get plannedWords;               // up to B1
+
+  /// The path as a learner from [native] is taught it.
+  CoursePath forNative(String native, {required bool Function(String deckId) exists});
 }
 ```
 
-`CoursePath` keeps `units`, `open` and `alphabet` **exactly as today,
-over written units only**: a planned unit is not in `units`, so Today,
-lessons and placement skip it with no change. New: `plan`
-(`List<PlanUnit>`, every unit in file order), and getters `hasB1Plan`,
-`milestoneIndex(Milestone)` (into `plan`), `grammarTopics` (up to B1),
-`plannedWords` (up to B1). `placing()` copies `plan` unchanged.
+`CoursePath` keeps its shape and its meaning to every caller: `id`,
+`language`, `native`, `units` and `open` over the units with a deck in
+this native language, `alphabet` (deck ids), `plan`, `course`
+(`'$language/$native'`), `deckIds`, `unitOf`, `placing`. It is no longer
+parsed from a file: `forNative` builds it, and Today, lessons, placement,
+the Decks tab and the language picker read it exactly as before:
 
-`parseCoursePath` accepts a unit that is a list (as today) or a mapping
-(section 10.1), and throws `DeckParseException` on the shape errors of
-section 10.2 that are about one unit (unknown field, decks and planned
-together, a `words` that is not a whole number in range, a bad milestone,
-a milestone twice, the order of milestones, a planned unit without its
-passages). The cross-file errors (a planned deck that exists, topics that
-do not resolve, word counts) are the validator's.
+- **A core id becomes the course's deck id** `<lang>-<native>-<name>`
+  (2.1), kept where `exists` says the catalog has that deck, dropped
+  where it does not. `alphabet` likewise.
+- **A written unit with at least one such deck** is in `units` (and in
+  `open` if it ends in `"*"`), with only those decks. **A written unit
+  with none** is left out of `units` and `open`, as a planned unit is,
+  so Today, lessons and placement skip it, and its `plan` entry is
+  `isComing`: the Decks tab shows it as "Coming" for this learner, as it
+  shows a planned unit (`b1-plans.md`: "Units not written yet show to
+  learners as 'Coming'"). It must not stay in `open` empty, where
+  `placing` would take it for the unit of `"*"` alone.
+- **A unit of `"*"` alone** stays as it is.
+- `plan` keeps every unit in file order, its decks mapped as above, its
+  passages and its sizes as written, so `hasB1Plan`, `milestoneIndex`,
+  `grammarTopics` and `plannedWords` give the same answer for every
+  native language. `placing()` copies `plan` unchanged.
+
+**Which native language a learner is taught from** does not change
+(`AppState.courseUnits`): of the native languages that teach the language
+(a layer or a single-file deck of it in the catalog), the learner's
+best-known spoken language (`settings.spokenLanguages`, in rank order),
+else the first in the catalog. One native language per language learnt:
+a unit whose deck that native language lacks is "Coming" for the learner,
+never filled from another native language's deck (`native-layers.md`: a
+card a layer does not translate "is not shown in English"). Card progress
+is keyed by card id (ADR-0018), so a learner whose best native language
+changes keeps every card's history; placement is by deck id, so they are
+placed afresh in the new course's decks.
+
+`parseLanguagePath(String text, {String source})` replaces
+`parseCoursePath`. It reads the file of 10.1 and throws
+`DeckParseException` on the shape errors of 10.2 that are about the file
+alone: a `native` key (the per-course form, with 10.2's message), an id
+other than `<lang>-path`, a listed or planned id that is not a core id of
+the language (`<lang>-` and a name; whether its name starts with a native
+code is the validator's, 10.3), and the unit, passage and region errors
+(unknown field, decks and planned together, a `words` that is not a whole
+number in range, a bad milestone, a milestone twice, the order of
+milestones, a planned unit without its passages, a passage without id or
+text, a duplicate passage or region id, a region without its English
+name). The cross-file errors (a listed core id with no deck, a planned
+deck that exists, topics that do not resolve, word counts, notes naming
+regions) are the validator's.
 
 ### 9.6 The catalog (`lib/app/deck_catalog.dart`)
 
@@ -1872,78 +2107,128 @@ with `wordOf` looking up the resolved card of that native language. A
 user-imported deck (`deck_import.dart`) is single-file only (OPEN-19:
 recommended).
 
+**Paths.** A `kind: path` file goes to `parseLanguagePath`, one per
+language (a second, or a file still in the per-course form, is a
+`BrokenDeck`). Once every deck is known, the catalog builds
+`paths['<lang>/<native>'] = languagePath.forNative(native, exists: ...)`
+for each course that has a deck, `exists` asking whether the catalog
+holds that deck id, merged or single-file, bundled or added. So
+`Catalog.paths`, `pathOf(entry)` and `_placed` keep their keys and their
+meaning. A course whose language has no path has none, as today.
+
 ---
 
-## 10. The B1 plan in a path
+## 10. The language's path and its B1 plan
 
 ### 10.1 Shape
+
+One path per language learnt, `decks/<lang>/<lang>-path.yaml`, shared by
+every native language (OPEN-4, settled: owner, 2026-10-09). It lists core
+ids (2.1); each learner is taught, for each, their own native language's
+deck (10.4).
 
 ```yaml
 schema: 1
 kind: "path"
-id: "te-en-path"
+id: "te-path"
 language: "te"
-native: "en"
+regions:
+  - { id: "telangana", name: { "en": "Telangana" } }
+  - { id: "coastal-andhra", name: { "en": "Coastal Andhra" } }
+  - { id: "rayalaseema", name: { "en": "Rayalaseema" } }
 alphabet:
-  - "te-en-script-vowels"
+  - "te-script-vowels"
 units:
-  - decks: ["te-en-first-words", "te-en-grammar-sentences", "*"]
+  - decks: ["te-first-words", "te-grammar-sentences", "*"]
     words: 40
     grammar: ["sentences"]
-  - decks: ["te-en-grammar-differences"]
+  - decks: ["te-grammar-differences"]
     words: 0
-  - decks: ["te-en-family", "te-en-grammar-be", "*"]
+  - decks: ["te-family", "te-grammar-be", "*"]
     words: 45
     grammar: ["be"]
-  - ["te-en-script-vowels"]
-  - decks: ["te-en-home", "te-en-grammar-case-endings", "*"]
+  - ["te-script-vowels"]
+  - decks: ["te-home", "te-grammar-case-endings", "*"]
     words: 45
     grammar: ["lo", "ki", "to", "nunci"]
     milestone: "A1"
-  - decks: ["te-en-market", "*"]
+  - decks: ["te-market", "*"]
     words: 60
     milestone: "A2"
   - planned:
-      id: "te-en-health"
+      id: "te-health"
       theme: "health"
       words: 60
-    listening_passages: ["Booking a doctor's appointment by phone"]
-    reading_passages: ["A notice at the clinic"]
-  - planned: { id: "te-en-grammar-conditional", grammar: "conditional" }
-    listening_passages: ["A friend's plans if it rains"]
-    reading_passages: ["A message: if the train is late"]
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "te-grammar-conditional", grammar: "conditional" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
     milestone: "B1"
-  - ["te-en-registers"]
+  - ["te-registers"]
   - ["*"]
 ```
 
-A unit is **a list** (today's form: deck ids, ending in `"*"` or not) **or a
+**The file:**
+
+| Field | Required | Notes |
+|---|---|---|
+| `schema`, `kind`, `description` | as today | `kind: "path"`. |
+| `id` | yes | `<lang>-path`, the filename stem. |
+| `language` | yes | The language learnt, `<lang>`, the folder's name. |
+| `native` | **not allowed** | The path is every native language's (10.2 says why it is refused). |
+| `regions` | no | The language's regions (10.5). |
+| `alphabet` | no | The core ids of the decks that need the alphabet, as today's deck ids did. |
+| `units` | yes | As below. |
+
+A unit is **a list** (today's form: core ids, ending in `"*"` or not) **or a
 mapping**:
 
 | Field | Notes |
 |---|---|
-| `decks` | The written unit's deck ids, as the list form (the wildcard rules unchanged). |
-| `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. |
-| `words` | The unit's planned size in words: a whole number, **0 or more on a written unit** (a unit whose decks teach no counted word, such as `te-en-grammar-differences`, gives 0; OPEN-31), **1 or more on a planned theme unit**. On a planned unit it may be given inside `planned` (as in `b1-plans.md`) or beside it, not both. |
+| `decks` | The written unit's core ids, as the list form (the wildcard rules unchanged). |
+| `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. `id` is the core id the unit's decks will have (`te-health`; each course's deck for it is then `te-en-health`, `te-bn-health`, …). |
+| `words` | The unit's planned size in words: a whole number, **0 or more on a written unit** (a unit whose decks teach no counted word, such as `te-grammar-differences`, gives 0; OPEN-31), **1 or more on a planned theme unit**. On a planned unit it may be given inside `planned` (as in `b1-plans.md`) or beside it, not both. One size for every native language; each course's count is checked against it (10.3). |
 | `grammar` | The grammar topics it teaches: a list of topic ids, or one id as a string (`b1-plans.md` writes `grammar: conditional` in `planned`). Inside `planned` or beside it, not both. |
 | `milestone` | `"A1"`, `"A2"` or `"B1"`: the unit where that level ends. |
-| `listening_passages`, `reading_passages` | Short descriptions of the listening and reading passages the unit will have (owner, 2026-10-09). A non-empty list of strings, in the course's native language; Script in prose applies. **Both are required on every planned unit** (OPEN-24). |
+| `listening_passages`, `reading_passages` | The listening and reading passages the unit will have (owner, 2026-10-09). A non-empty list of passages. **Both are required on every planned unit** (OPEN-24, settled: owner, 2026-10-09, "required on every planned unit, as recommended"); a written unit may give them, and need not (its passages are its reading decks). |
 
-**A grammar topic** (OPEN-25) is the name of what a unit teaches and
-counts once toward "12 of 30 grammar topics":
-`words-rules-sentences.md` §6, "Each rule counts once toward the plan's
-grammar topics". A topic id matches `[a-z0-9]+(-[a-z0-9]+)*` and, on a
-written unit, names one of:
+**A passage** is named once, in the path, and described in each native
+language:
+
+| Field | Notes |
+|---|---|
+| `id` | `[a-z0-9]+(-[a-z0-9]+)*`, unique in the path across both lists. It names the passage for every native language: when the description is reworded, the id stays, so no other native language's text comes loose. |
+| `text` | A mapping from a native language's code to a short description in that language, keyed as a facts file's texts are (`text: { en, bn, hi }`): at least one entry; each value non-empty text, held to Script in prose as written for its key's language (11.3). A native language a course of the language is taught from, with no text here, is warned of (10.3); its learners see the passage without a description. |
+
+So a Bengali course written after the English one adds `"bn":` beside
+`"en":` on each passage, in the one path, and nothing else in the path:
+its units, sizes and milestones are already there. The planned and
+written units, the sizes, the topics and the milestones are the
+language's; only the passages' descriptions, and the regions' names, are
+per native language, and those are keyed by native code in place.
+
+**A grammar topic** (OPEN-25, settled: owner, 2026-10-09, "one rule, as
+recommended; grammar decks not yet turned into rules count by deck") is
+the name of what a unit teaches and counts once toward "12 of 30 grammar
+topics": `words-rules-sentences.md` §6, "Each rule counts once toward the
+plan's grammar topics". A topic id matches `[a-z0-9]+(-[a-z0-9]+)*` and,
+on a written unit, names one of:
 
 - **a rule** of a rules deck the unit lists, by the rule id's name:
   topic `ki` is `te-rule-ki` (so a case-endings table with four rules is
-  four topics); or
+  four topics, and the shared skeleton's "of 30" is counted in rules); or
 - **a grammar deck** the unit lists, of any kind, single-file or merged,
-  whose id is `<lang>-<native>-grammar-<topic>`: topic `be` is
-  `te-en-grammar-be` (a grammar table), topic `sentences` is
-  `te-en-grammar-sentences` (today a vocab deck of example sentences). A
-  grammar deck not yet turned into rules counts as one topic; once it is
-  (`words-rules-sentences.md` §7), its topics become its rules.
+  whose core id is `<lang>-grammar-<topic>`: topic `be` is `te-grammar-be`
+  (today the single-file `te-en-grammar-be`, a grammar table), topic
+  `sentences` is `te-grammar-sentences` (today `te-en-grammar-sentences`,
+  a vocab deck of example sentences). A grammar deck not yet turned into
+  rules counts as one topic; once it is (`words-rules-sentences.md` §7),
+  its topics become its rules.
 
 On a planned unit the topic is free, and is checked once the unit is
 written. 10.3 checks this.
@@ -1956,60 +2241,57 @@ romanisation, checked against the scheme and skipped by Script in prose).
 **A path has a B1 plan** iff some unit is a mapping with `planned`,
 `words`, `grammar` or `milestone`.
 
-**OPEN-20, which paths must have a plan (group B: narrows a stated owner
-rule).** The owner: "Every deck path will have a B1 plan from now on"
-(`b1-plans.md` lines 8–9), and the plan lists as a validator error "a path
-without its A1, A2 and B1 marks, in that order" (line 277). Requiring it of
-every path now would turn all eight of today's paths red (ground rule 1)
-until eight plans are written. Options:
-
-- (a) every path, now: this branch cannot merge until all eight plans
-  exist;
-- (b) **a path whose language has a core file**: the plan becomes
-  required when the language's first deck is split, which
-  `native-layers.md` ties to the plan being written;
-- (c) `te` and `bn` paths now: breaks ground rule 1 on `main` the moment V
-  merges, before the deck agents have written anything;
-- (d) once the eight courses have one (this spec's earlier
-  recommendation), which leaves the rule unenforced for months and
-  contradicts line 277.
-
-Recommended: **(b)**, with the full rule (a) switched on by a follow-up
-once every course has its plan. Under (b), a path without a plan whose
-language has a core given now or among the language's files gets:
-`error: {path}: units: {lang} has core files ({first core}), so this path needs its B1 plan: the milestones A1, A2 and B1, in that order`.
-The owner decides.
+**OPEN-20, settled: which paths must have a plan** (owner, 2026-10-09:
+"required on a path whose language has a core, as recommended"). The
+owner: "Every deck path will have a B1 plan from now on" (`b1-plans.md`
+lines 8–9), with a validator error for "a path without its A1, A2 and B1
+marks, in that order" (line 277). Requiring it of every path at once
+would turn all nine of today's paths red (ground rule 1) until every plan
+is written, so: **a path whose language has a core file** (given now or
+among the language's files) needs its plan, which makes the plan
+required when the language's first deck is split, as `native-layers.md`
+ties the split to the plan; a follow-up switches the rule on for every
+path once every language has its plan. A path without a plan whose
+language has a core gets:
+`error: {path}: units: {lang} has core files ({first core}), so its path needs its B1 plan: the milestones A1, A2 and B1, in that order`.
 
 **Up to B1** means every unit before the one marked `B1`, and that one.
 
 **Exempt units** (no size or topic needed, and may stay lists): a unit all
-of whose decks are in `alphabet`, and the unit of `"*"` alone. "Units with
-the alphabet ... count neither words nor grammar." **Every other unit up to
-B1, in a path with a plan, is a mapping with `words` or `grammar`**: a
-list-form unit up to B1 that is not exempt is an error (10.2). A unit of
-reading decks only gives `words: 0`.
+of whose core ids are in `alphabet`, and the unit of `"*"` alone. "Units
+with the alphabet ... count neither words nor grammar." **Every other
+unit up to B1, in a path with a plan, is a mapping with `words` or
+`grammar`**: a list-form unit up to B1 that is not exempt is an error
+(10.2). A unit of reading decks only gives `words: 0`.
 
 ### 10.2 Per-file errors (path)
 
-`PATH_KEYS` is unchanged; `check_path_file` accepts mapping units.
+`PATH_KEYS` loses `native` and gains `regions`; `check_path_file` reads
+the file of 10.1. A path still in the per-course form is refused with a
+message that says what to do:
 
 | where | message |
 |---|---|
-| `units[{i}]` | `must be a list of deck ids, or a mapping with decks or planned` |
+| `native` | `a path is one per language learnt, decks/{lang}/{lang}-path.yaml, shared by every native language (ADR-0035); list core ids, such as {example!r}, and remove native` (`{example}` the first listed id with its native taken out) |
+| `id` | `a path of {lang} has id {lang}-path, the filename stem, got {id!r}` |
+| `units[{i}]` | `must be a list of core ids, or a mapping with decks or planned` |
 | `units[{i}]` | `unknown field {k!r} in a unit` |
 | `units[{i}]` | `has decks or planned, not both` / `has neither decks nor planned` |
-| `units[{i}].decks` | (today's list-form messages: `must be a non-empty list of deck ids`, the wildcard ones, `deck {d!r} is listed twice`) |
+| `units[{i}].decks` | (today's list-form messages: `must be a non-empty list of core ids`, the wildcard ones, `{id!r} is listed twice`) |
+| `units[{i}].decks` / `alphabet` | `{id!r} is not a core id of {lang}: {lang}- and a name, such as {lang}-home` |
 | `units[{i}].words` | `must be a whole number of words, 0 or more, got {v!r}` (written unit) / `must be a whole number of words, 1 or more, got {v!r}` (planned theme unit). A bool is refused; under ground rule 8, `1_000` is a string and refused. |
 | `units[{i}]` | `words is given both in planned and beside it` (and the same for `grammar`) |
 | `units[{i}].grammar` | `must be a grammar topic id or a list of them, such as ["past"], got {v!r}` / `{t!r} is listed twice` |
 | `units[{i}].milestone` | `must be "A1", "A2" or "B1", got {v!r}` |
 | `units[{i}].planned` | `must be a mapping with id, and theme or grammar` / `unknown field {k!r}` |
-| `units[{i}].planned.id` | `must be a deck id starting with {lang}-{native}-, the course, got {v!r}` |
+| `units[{i}].planned.id` | `must be a core id of {lang}, {lang}- and a name, such as {lang}-health, got {v!r}` |
 | `units[{i}].planned` | `names theme or grammar, not both` / `needs a theme or a grammar topic` |
 | `units[{i}].planned.theme` | `must be a theme id, got {v!r}` |
 | `units[{i}].planned` | `a planned theme unit gives its size in words` |
 | `units[{i}]` | `a planned unit names its listening_passages and its reading_passages (b1-plans.md: each planned unit names its listening and reading passages)` (either missing) |
-| `units[{i}].listening_passages` | `must be a non-empty list of short descriptions` (and the same for `reading_passages`) |
+| `units[{i}].listening_passages` | `must be a non-empty list of passages, each { id, text }` (and the same for `reading_passages`) |
+| `units[{i}].listening_passages[{j}]` | `unknown field {k!r}` / `id must match [a-z0-9-]+, got {v!r}` / `passage {id!r} is also in units[{k}]` (or earlier in this unit) |
+| `units[{i}].listening_passages[{j}].text` | `must be a mapping of a native language's code to the passage's description, such as {{ "en": "..." }}` / `{k!r} is not a language code` / `{k!r} is not text` (and the same for `reading_passages`) |
 | `units[{i}]` | `a unit of "*" alone cannot carry a milestone or a plan` |
 | `units` | `the B1 plan needs the milestones A1, A2 and B1, each once and in that order; found {found}` (`found` lists them in file order, or `none`) |
 | `units[{i}]` | `milestone {m!r} is already on units[{j}]` |
@@ -2018,47 +2300,79 @@ reading decks only gives `words: 0`.
 | `units[{i}]` | `grammar topic {t!r} is already planned in units[{j}]` (topics up to B1 are counted once) |
 | `units[{i}]` | `a planned unit after the B1 mark; a B1 plan ends at B1` |
 | `units[{i}].planned.id` | `{id!r} is planned twice, also in units[{j}]` / `{id!r} is planned and also listed as a deck in units[{j}]` |
+| `regions` | (10.5) |
 
-All of these, except the first four rows and the `decks` row, are only
-possible in a path with a B1 plan, so today's paths get none.
+All of these, except the first, the id row, the unit-shape rows and the
+`decks` rows, are only possible in a path with a B1 plan, so today's
+paths, once migrated (10.6), get none.
 
 ### 10.3 Across (path)
 
 Errors, each `error: {path}: {where}: {msg}`, reported when the path is
 given:
 
+- **A listed core id is a deck of the language:** for each core id in
+  `decks` and `alphabet`, a core with that id, or a single-file deck or
+  layer `<lang>-<n>-<name>` for some native language `n`, is given now or
+  among the language's files (2.8):
+  `units[{i}]: lists {id!r}, which is no deck of {lang}: no core {id}, and no deck {lang}-<native>-{name}`.
+  A listed id whose name starts with a native language's code (as 2.1
+  defines for cores) is a course's deck id, not a core id:
+  `units[{i}]: lists {id!r}, a deck of the {lang}-{n} course; a path lists core ids, here {core!r}`.
+- **Every deck of the language is on the path once:** each single-file
+  deck and each layer of the language (every course), given now, has its
+  core id in exactly one unit:
+  `units: does not list {core!r}, the core id of {deck}; every deck of {lang} is on its path`.
+  A core is on the path through its id; a core no layer names is 10.4's
+  warning.
+- **A unit ending in `"*"` needs a theme deck,** to say which added decks
+  it takes: some core id of the unit has, in some course, a deck with a
+  theme (or a core with a `theme`), when the unit's decks are given now or
+  among the language's files.
 - **A planned deck must not exist yet:**
   `units[{i}].planned.id: {id} already exists ({file}); list it under decks in place of planned`.
-  It exists if a single-file deck or a layer with **that exact id** is
-  given now or is on disk in the path file's directory or a subdirectory
-  of it one level down (`decks/te/te-en-health.yaml` or
-  `decks/te/en/te-en-health.yaml` for `decks/te/te-en-path.yaml`). A core
-  does not count: it is shared by every native, so a `te-health` core
-  with only a Bengali layer does not make `te-en-health` exist.
+  It exists if a core with that id, or a single-file deck or layer
+  `<lang>-<n>-<name>` for any native language `n`, is given now or on
+  disk in the path's directory or one level below it. A planned core id
+  whose name starts with a native code gets the second message of the
+  first bullet, with `units[{i}].planned.id` as where.
   (`b1-plans.md`: "When a planned deck's file appears ... its planned entry
-  is turned into decks in the same change.")
-- **Grammar topics resolve** (OPEN-25): each topic of a written unit names
-  a rule or a grammar deck of that unit, as 10.1 says:
-  `units[{i}].grammar: {t!r} is taught by none of the unit's decks; name a rule ({lang}-rule-{t}) of a rules deck it lists, or a deck {lang}-{native}-grammar-{t} it lists`.
-  The rules are read from the rules cores of the unit's merged decks, given
-  now or among the language's files; when a listed deck is neither, the
-  topic is not checked.
+  is turned into decks in the same change.") A unit is written once any
+  native language has its deck; the courses still without one see it as
+  "Coming" (9.5).
+- **Grammar topics resolve** (OPEN-25, settled): each topic of a written
+  unit names a rule or a grammar deck of that unit, as 10.1 says:
+  `units[{i}].grammar: {t!r} is taught by none of the unit's decks; name a rule ({lang}-rule-{t}) of a rules deck it lists, or a deck {lang}-grammar-{t} it lists`.
+  The rules are read from the rules cores the unit lists, given now or
+  among the language's files; when a listed core id is neither a rules
+  core nor `<lang>-grammar-<t>`, and has no deck to look at, the topic is
+  not checked.
 - **The plan is required** where OPEN-20 says (the message is in 10.1).
-- **Bases in a script without spaces** (8.3).
-- **The phrasebook's size and place** (3).
+- **Bases in a script without spaces** (8.3), per course.
+- **The phrasebook's size and place** (3), per course.
+- **A path for the language already:** a second path file of the language
+  (a per-course file left beside the new one, say), given or on disk:
+  `root: {lang} already has a path, {other}; a language has one`.
 
 Warnings and the info line, attached to the path's own report
 (`rep.warn`, `rep.info`):
 
 - **A B1 deck still single-file** (OPEN-30; `native-layers.md` lines 4–5:
-  "decks are split as their B1 plans are written"): for each B1 deck that
-  is a single-file deck,
+  "decks are split as their B1 plans are written"): for each course's B1
+  deck that is a single-file deck,
   `units[{i}]: {deck} is a single-file deck; a deck in a B1 plan is split into a core and its layers as the plan is written`.
   The B1 checks apply to it either way (2.8).
-- **More words than planned:** for each written unit with `words`, when the
-  decks it lists are all given or among the language's files:
-  `units[{i}]: has {n} words, more than the {words} planned; raise words`
-  (`n` by 8.5).
+- **More words than planned,** per course: for each written unit with
+  `words`, and each course whose decks for the unit's core ids are all
+  given or among the language's files, when the course's count (8.5)
+  exceeds it:
+  `units[{i}]: has {n} words for learners from {native name}, more than the {words} planned; raise words`.
+- **A passage without a description in a course's language:** for each
+  native language `n` that a deck or layer of the language is taught
+  from, each passage whose `text` has no `n`:
+  `units[{i}].{list}[{j}]: no description in {native name}, so learners from {native name} see none`.
+  One line per passage and language, so a new course sees what it has
+  left to write.
 - **The total:** planned words up to B1 (`words` of every unit up to B1)
   outside 2,000–3,500:
   `units: plans {n} words up to B1, outside 2,000–3,500; check the sizes`.
@@ -2071,21 +2385,38 @@ Warnings and the info line, attached to the path's own report
   and a **warning** only for a level outside half to one and a half times
   its size: `units: A2 plans {b} words, far from about 900 (450–1,350)`.
   Here `a` is the words of units up to and including A1's, `b` those after
-  A1 up to A2's, `c` those after A2 up to B1's.
+  A1 up to A2's, `c` those after A2 up to B1's: the planned sizes, which
+  are the language's, not a course's count.
 
 ### 10.4 Paths, decks and layers together
 
-`check_paths_across` keeps its rules, with layers as decks: a layer's
-course is `(lang, native)` and its deck id is the layer id; a core is on no
-path. Every layer is on its course's path exactly once, and "lists X, which
-is not a deck" accepts a layer id. A theme deck, for "a unit ending in `*`
-needs a theme deck", is a layer whose core has a `theme`.
+**How a course reads its language's path.** For the course `(lang, n)`,
+each listed core id `<lang>-<name>` stands for the deck `<lang>-<n>-<name>`
+(2.1). The validator's across checks and the app's `forNative` (9.5)
+read it the same way:
+
+- a core id with a deck in the course is that deck, in its unit;
+- a core id without one is skipped for the course; a written unit left
+  with no deck is, for that course, as a planned unit is: skipped by
+  lessons, shown as "Coming";
+- `alphabet` maps the same way; `"*"` takes the course's decks the path
+  does not list, as today.
+
+`check_paths_across` keeps its rules with this reading: a layer's or a
+single-file deck's place on the path is its core id's unit; a core is on
+no path by itself; the course of "lists X, which is not a deck" is
+replaced by 10.3's first two bullets. `check_reading_across` finds a
+reading deck's unit and its theme deck's unit through their core ids, in
+the course's reading of the path. The B1 checks of 2.8 run per course
+over the course's decks.
 
 Two lookups change:
 
-- **"has no path":** for a layer, the course's path is looked for in the
-  **core's** directory, `rep.path.parent.parent / f"{lang}-{native}-path.yaml"`,
-  not beside the layer; for any other deck, as today.
+- **"has no path":** for any deck of the language, single-file or layer,
+  the path is `decks/<lang>/<lang>-path.yaml`: beside a single-file deck,
+  in the folder above a layer (`rep.path.parent.parent` for a layer). The
+  message becomes
+  `{deck}: {lang} has no path; add {lang}-path.yaml in decks/{lang}/`.
 - **A core no layer names** is a warning attached to the core's report,
   `rep.warn("root", "no layer names this core, so no learner is taught it")`,
   looking for layers among the files given now **and** the language's files
@@ -2094,7 +2425,135 @@ Two lookups change:
 
 `check_themes_across` gets each layer's `theme_key` from 2.8's table.
 
+### 10.5 Regions
+
+The owner, 2026-10-09, on the offensive-word rating screen, which asks
+"Where you speak Telugu" with Telangana, Coastal Andhra, Rayalaseema and
+Elsewhere (`docs/mockups/reviewer-mode.html` on #432): "where will this be
+defined? in the decks? that needs an update to the deck plan". Defined
+here: **a language's regions are listed in its path**, since they are the
+language's and every native language shares them, as the path is shared.
+
+```yaml
+regions:
+  - id: "telangana"
+    name: { "en": "Telangana" }
+  - id: "coastal-andhra"
+    name: { "en": "Coastal Andhra" }
+  - id: "rayalaseema"
+    name: { "en": "Rayalaseema" }
+```
+
+| Field | Notes |
+|---|---|
+| `id` | A **region id**: `[a-z][a-z0-9]*(-[a-z0-9]+)*`, as a note id (it starts with a letter, and is not one of YAML 1.1's boolean words); unique in the path; not `elsewhere`, which the app keeps for its own answer. **Permanent, as a card id:** a rater's answers and the cards' region notes name it. Rename a region's `name`, never its `id`; retire one only when nothing names it. |
+| `name` | The region's name in each native language, keyed by language code as a facts text is: `en` required (the interface's base locale), any other beside it. The app shows the name in the learner's (or rater's) language where given, else the English one. Script in prose applies per key, as for a facts text: a Telugu name under `"en"` gives its reading, తెలంగాణ (telaṅgāṇa). |
+
+The list is in the order the app shows it. **The app adds "Elsewhere"**
+after the language's regions, an interface string (a token in
+`lib/l10n/app_en.arb`, AGENTS.md rule 10), never deck data; it is stored
+as `elsewhere`. A language with no `regions` shows no region question.
+
+**Where regions are used:**
+
+- **The rater's region, in reviewer mode** (`docs/plans/offensive-words.md`
+  on #432: "several native speakers, from more than one region where
+  possible, rate each word", and "a disagreement of a band or more
+  becomes a region note"): "Where you speak {language}" offers the
+  language's regions, then Elsewhere; the answer is kept with the
+  rater's ratings by region id. How ratings are stored is the reviewer
+  mode's, not this format's.
+- **A card's region note** (6.1, 6.2): a note with `region:` naming one
+  or more region ids. On an offensive card, where raters from different
+  regions differ ("Region: No note yet" on the mockup's card); and, as
+  decks are rewritten, on regional vocabulary, such as the Telangana
+  words `te-facts` and `te-en-groceries` mention today (చాయ్ (cāy), tea;
+  ఉల్లిగడ్డ (ulligaḍḍa), onion). The offensive card's other fields (its
+  level, type, "can be friendly among peers") are specified with the
+  offensive-words format, not here.
+
+**Validator, per file (path):**
+
+| where | message |
+|---|---|
+| `regions` | `must be a non-empty list of regions, each { id, name }` |
+| `regions[{i}]` | `must be a mapping` / `unknown field {k!r}` |
+| `regions[{i}].id` | `must start with a letter and match [a-z0-9-]+, and not be a YAML 1.1 boolean word, got {v!r}` / `{id!r} is used twice` / `elsewhere is the app's own answer; give the region another id` |
+| `regions[{i}].name` | `must be a mapping of a language code to the region's name, with "en"` / `has no "en"` / `{k!r} is not a language code` / `{k!r} is not text` |
+
+**Validator, across:** every region a note names is a region of its
+language's path, given now or among the language's files:
+`error: {file}: card {id}: notes[{i}].region names {r!r}, which is not a region of {lang}; its path lists {known}` (`{known}`
+the ids, or `none` when the path has no `regions`), with `cards.{id}` as
+where on a layer. A language whose path is neither given nor on disk is
+not checked (it gets "has no path" instead).
+
+**Dart:** `Region` and `LanguagePath.regions` (9.5); `CardNote.regions`
+(6.6). The parser checks the shape only; whether a note's region exists
+is the validator's.
+
+**The regions, for the two languages being written now.** Recommended
+lists, for the deck agents to write with each path (OPEN-32; the owner
+or the first raters may change them, before any rating names a region):
+
+- **Telugu:** `telangana` (Telangana), `coastal-andhra` (Coastal Andhra),
+  `rayalaseema` (Rayalaseema), as on the owner's rating screen. Sources:
+  these are the three regions Telugu's dialects are usually grouped by:
+  Telangana is a state since 2014, and Coastal Andhra and Rayalaseema
+  are the two traditional regions of Andhra Pradesh; `te-facts` already
+  says "Telangana and coastal Andhra use some different everyday words".
+  Krishnamurti and Gwynn's *A Grammar of Modern Telugu* (1985) divides
+  the dialects into four areas, splitting the north-east coast
+  (Srikakulam, Vizianagaram, Visakhapatnam, "Uttarandhra") from the
+  central coast; I am not certain of that division's details, so it is
+  offered only as the place to split Coastal Andhra if its raters differ.
+- **Bengali:** `west-bengal` (West Bengal), `bangladesh` (Bangladesh),
+  `tripura` (Tripura), `barak-valley` (Assam's Barak Valley): the places
+  where Bengali is official, as `bn-facts` lists them ("the national
+  language of Bangladesh and an official language of West Bengal,
+  Tripura and Assam's Barak Valley"), which a rater can name without
+  knowing dialect terms. The dialect literature divides Bengali
+  differently, into Rāṛhī (west-central, the standard's base), Baṅgālī or
+  Vaṅga (east), Varendrī (north-central), Kāmrūpī (north) and the
+  south-eastern dialects (Chatterji, *The Origin and Development of the
+  Bengali Language*, 1926), and Sylheti and Chittagonian are often
+  counted as languages of their own. I am unsure which division best
+  predicts how offensive a word sounds; the recommendation is the
+  political one, since the strongest differences raters report are
+  likely between West Bengal and Bangladesh. With low confidence:
+  Bangladesh may need splitting (Dhaka, Chittagong, Sylhet) once raters
+  from there disagree.
+
+### 10.6 Moving today's paths
+
+Today's nine course paths (`as`, `bn`, `es`, `gu`, `hi`, `ja`, `kn`, `mr`,
+`te`; each `decks/<lang>/<lang>-en-path.yaml`) move in the same commit as
+V's and D's path change, since each refuses the other form. For each
+language:
+
+1. Write `decks/<lang>/<lang>-path.yaml`: `id: "<lang>-path"`, `language`
+   as before, **no `native`**, `description` and the comments kept (their
+   "taught from English" wording made general where it says so).
+2. In `alphabet` and every unit, replace each deck id with its core id:
+   take out the native, `<lang>-en-<name>` → `<lang>-<name>`
+   (`te-en-home` → `te-home`, `te-en-reading-diddubatu` →
+   `te-reading-diddubatu`); `"*"` stays. Every id in today's nine paths is
+   `<lang>-en-…`, and no name collides with a reserved core id (2.1), so
+   the change is one text substitution per file, checked by the
+   validator.
+3. Delete `decks/<lang>/<lang>-en-path.yaml` (10.3 refuses two paths).
+
+Nothing else moves: no deck, card id, deck id, pubspec line, review row or
+setting changes. The tests that write per-course paths (V's
+`tools/test_validate_paths.py` and the B1 tests; D's
+`test/course_path_test.dart`, `test/b1_format_test.dart` and the
+catalog's tests; the `zz` fixtures' `zz-en-path.yaml`, which becomes
+`zz-path.yaml`) move with it, and ground rule 1's comparison is made on
+the migrated tree. The B1 plans the deck agents write go straight into
+`te-path.yaml` and `bn-path.yaml`, with core ids.
+
 ---
+
 ## 11. Script in prose for the new fields
 
 `check_transliterated` already walks every string. Changes:
@@ -2109,15 +2568,17 @@ Two lookups change:
    (`native-layers.md`: "A reading in the reader's own script also
    counts").
 2. **`_WORD_KEYS` gains** `word`, `base`, `ref`, `core`, `except`,
-   `rules`, `part`, and in a core `slots` (core slot keys and grammar slot
-   labels are the language's words). `wiktionary` is a boolean and needs
+   `rules`, `part`, `region`, and in a core `slots` (core slot keys and
+   grammar slot labels are the language's words). `wiktionary` is a boolean and needs
    nothing.
 3. **Checked as prose, as before or newly:** a layer's `name`,
    `description`, `native`, `alt_native`, note texts, example
    translations, base meanings, `table.slot_name`, slot labels, `prompts`,
    rule `name` and `explanation`, grammar `name`, `slot_name`, `prompt`,
    `entries` glosses, `notes`; a single-file card's note `text` and base
-   `meaning`; a path's `listening_passages` and `reading_passages`.
+   `meaning`; a path's passages' `text` and regions' `name`, each value
+   read as written for the language its key names, as a facts file's
+   texts are (a passage's `id` is a word key, not prose).
 4. **Placeholders** are checked unsubstituted (6.4).
 5. **Readings** in `notes[].words`, `rules[].words`, `bases` and rule rows
    are romanisations: `_readings_in` already collects every `reading` and
@@ -2132,17 +2593,20 @@ Two lookups change:
 |---|---|
 | Every single-file deck | No new required field; `part` absent means single-file; new card fields are optional; `HEADER_KEYS` is unchanged. |
 | `notes: "..."` | A string is still accepted, read as one `note`; a blank string as none. |
-| Path units as lists | Still a unit; a path without a mapping unit has no B1 plan, and gets no new message while its language has no core (OPEN-20). |
+| Course paths, `<lang>-<native>-path.yaml` | **Not valid any more** (OPEN-4, settled): all nine are moved to `<lang>-path.yaml` with core ids in the same commit (10.6), mechanically; nothing they decide (units, order, wildcards, alphabet) changes. |
+| Path units as lists | Still a unit, of core ids; a path without a mapping unit has no B1 plan, and gets no new message while its language has no core (OPEN-20, settled). |
 | `kind: grammar` decks | Unchanged; cells keep `{grammar}` and their ids. |
-| `modes:` values | `grammar` keeps its meaning; `grammarUnderstood` is new and only for rule cells. |
+| `modes:` values | `grammar` keeps its meaning, the form produced; `grammarUnderstood` (a form's meaning chosen) is new and only for rule cells. |
 | `pair:` | Still valid on single-file decks, and still Hear's sound-alike; a typed pair note only adds to it. |
 | `reviews`, `card_states`, `leech_actions` | No migration: `textEnum` stores names; no row changes. |
-| Card ids, deck ids, path ids | Unchanged. A split deck keeps its id as the layer's. |
+| Card ids, deck ids | Unchanged. A split deck keeps its id as the layer's. Path ids change (`te-en-path` → `te-path`), and are stored nowhere (ground rule 3). |
+| Placement, added decks, the catalog's course keys | Unchanged: they hold merged deck ids and `lang/native`, and each course's `CoursePath` is built from the language's path (9.5). |
 | `--next-id` | Also sees cores and layer-only cards; no existing number changes. |
 | `pos` values | `pronoun` is added; no value is removed. |
-| Plain YAML scalars | YAML 1.2 resolution (ground rule 8) changes only `yes`/`no`/`on`/`off`, leading-zero, underscore and sexagesimal numbers, none of which today's decks hold. |
+| Plain YAML scalars | YAML 1.2 resolution (ground rule 8), in the validator and the app alike, changes only `yes`/`no`/`on`/`off`, leading-zero, underscore, binary and sexagesimal numbers, none of which today's decks hold. |
+| A null reading or IPA under a null form | Read as none, by both (4.2). |
 | The new B1 checks | Bases coverage, the notes warning, the pair warning, the phrasebook's size and place, and rows run on B1 decks only (2.8), and no path has a plan today; the culture tag only where a culture note exists; the partner check only on typed pair notes. |
-| Validator output | No info line on today's decks (no layers, no plans). |
+| Validator output | No info line on today's decks (no layers, no plans, no regions). |
 
 Both V and D add a test that walks today's `decks/` (V: run the validator
 and compare its output with `main`'s; D: the existing test that parses every
@@ -2167,7 +2631,7 @@ tmp_path/
   zz/
     zz-home.yaml
     zz-grammar-case-endings.yaml
-    zz-en-path.yaml
+    zz-path.yaml
     en/
       zz-en-home.yaml
       zz-en-grammar-case-endings.yaml
@@ -2191,14 +2655,23 @@ into one directory; that still works for single-file decks.)
   English) and its place; rows (a new noun in a B1 deck without a row
   fails; with `except` passes; a noun in a deck on no plan needs none);
   bases coverage per course (a word taught only from another native fails);
-  a planned id that exists as a layer, and one whose core exists with no
-  layer of the course (not an error); grammar topics resolving to a rule
-  and to a grammar deck; milestone order; the plan required once the
-  language has a core; the romanisation check on a layer reading the core's
-  directory; "has no path" for a layer validated alone (none, with the path
-  on disk); the culture tag; the partner check; byte-identical output on
-  today's `decks/`; **`--next-id` seeing a core's card and a layer-only
-  card**, and a core card duplicated in a single-file deck caught.
+  the per-language path (10.2–10.4): a per-course path refused with its
+  message, a listed id that is a course's deck id, a core id with no deck
+  in any course, a deck of a second native language on the same path
+  through its core id, a deck of the language the path leaves out, a
+  planned core id that exists as a core, as a layer of another course, or
+  as a single-file deck (each an error), passages with ids and texts and
+  the missing-description warning for a second course, words counted per
+  course; grammar topics resolving to a rule and to a grammar deck by core
+  id; milestone order; the plan required once the language has a core;
+  regions (each per-file message; a note naming a region the path lists,
+  one it does not, and one in a language whose path has no `regions`);
+  the romanisation check on a layer reading the core's directory; "has no
+  path" for a layer validated alone (none, with the path on disk); the
+  culture tag; the partner check; byte-identical output on today's
+  `decks/` once its paths are moved (10.6); **`--next-id` seeing a core's
+  card and a layer-only card**, and a core card duplicated in a
+  single-file deck caught.
 - **D:** `parseCore`, `parseLayer`, `mergeLayer` (fields from each side,
   skipped cards, layer-only cards appended, a core ref with and without a
   layer `native`, ref positions, notes and examples left out without layer
@@ -2206,16 +2679,25 @@ into one directory; that still works for single-file decks.)
   expression); `parse()`'s refusals (9.2); typed notes, the legacy string
   and the blank string; placeholders, `{0}` and `{01}` refused; `bases`;
   `phrasebook`; `wiktionary` as a bool on cards, refs (resolved) and bases;
+  a note's `region`, a string or a list;
   `expandRules` (ids with and without `key`, prompts and overrides,
   `{meaning}` as the first part, options distinct, from the same row, never
   from a rule the layer leaves out, rows without a card skipped, cells of
-  an omitted rule skipped); `promptFor` on a rule cell for both modes;
+  an omitted rule skipped); `promptFor` on a rule cell for both modes (the
+  form for `grammarUnderstood`, the word and the meaning for `grammar`);
   `DrillMode.grammarUnderstood` refused in `modes`; `countsAsWord`;
-  `parseCoursePath` with mapping and planned units, `words: 0`, passages
-  required on planned units, `units` excluding planned ones, `plan` in
-  order; every bundled deck still parsing; the parity cases the parser
-  refuses (V owns `tools/test_validate_deck_parity.py`; D lists the cases
-  in the pull request).
+  `parseLanguagePath` with mapping and planned units, core ids, `words: 0`,
+  passages with ids and texts required on planned units, regions, and the
+  per-course form refused; `forNative`: core ids to the course's deck ids,
+  a unit with no deck in the native language left out of `units` and
+  `open` and marked coming, `plan` in order, the same `hasB1Plan`,
+  `grammarTopics` and `plannedWords` for every native language; the
+  catalog building each course's path from the language's; every bundled
+  deck still parsing; plain scalars typed as ground rule 8's table, one
+  case per row, and a null reading or IPA under a null form read as none
+  (both done: `test/deck_parser_test.dart`, "the YAML traps"); the parity
+  cases the parser refuses (V owns `tools/test_validate_deck_parity.py`;
+  D lists the cases in the pull request).
 - **Q:** the tests listed in 4.8.
 - **W:** none; the docs' YAML examples are copied from Appendix A and this
   spec, and W runs the validator on them (as `zz` fixtures, in the tree
@@ -2225,20 +2707,20 @@ into one directory; that still works for single-file decks.)
 
 ## 14. ADR-0035 (next free number; 0028 was never used and stays a gap)
 
-File: `docs/adr/0035-b1-deck-format.md`. W writes it as follows, with
-`Status: Proposed`. When the owner has answered every group B item (see
-"Open for the owner"), W replaces each OPEN choice with the owner's answer
-where it differs and sets `Status: Accepted` in the same change that
-records the answers; the branch merges after that.
+File: `docs/adr/0035-b1-deck-format.md`. The owner has answered every
+group B item (2026-10-09; see "Open for the owner"), so W writes it as
+follows, with `Status: Accepted`, replacing the version on the branch,
+which was written `Proposed` from the first recommendations (paths per
+course; choosing the form as understood).
 
 ```markdown
 # ADR-0035: Decks are a core and layers, with rules, bases, typed notes and a B1 plan
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-09
-- **Amends:** ADR-0013 (a path's units may be planned), ADR-0018 (a card
-  is written in a core or a layer), ADR-0034 (a second grammar schedule;
-  pairs from pair notes).
+- **Amends:** ADR-0013 (one path per language learnt, naming core ids; a
+  path's units may be planned), ADR-0018 (a card is written in a core or
+  a layer), ADR-0034 (a second grammar schedule; pairs from pair notes).
 
 ## Context
 
@@ -2256,7 +2738,15 @@ the rule's kind has its row; that layers live in `decks/<lang>/<native>/`;
 that notes keep their language facts in the core and each layer writes
 the explanation around them; that each planned unit names its listening
 and reading passages; and the words per level, A1 700, A2 900 more and
-B1 1,200 more.
+B1 1,200 more. Asked the format's open questions, the owner decided the
+same day that paths are one per language learnt now, shared by every
+layer; that understanding grammar is choosing what a form means, and
+choosing or typing the form is producing it; that pairs come from pair
+notes; that a plan is required once a language has a core; that every
+planned unit names its passages; that a grammar topic is one rule; and
+that scripts without spaces wait. The rating screen for offensive words
+asks where the rater speaks the language, which needed the language's
+regions defined.
 
 ## Decision
 
@@ -2270,9 +2760,17 @@ B1 1,200 more.
   single-file deck of that course has, which stays valid. A card the
   layer does not translate is not taught from that language. A layer
   may have cards of its own, numbered in the language's sequence.
-- **B1 decks.** The decks a path with a B1 plan lists, less its alphabet
-  decks, are held to the B1 checks below, whether split or not; a plan
-  is required of a path once its language has a core.
+- **One path per language learnt,** `decks/<lang>/<lang>-path.yaml`,
+  shared by every native language. It names each deck by its core id,
+  `<lang>-<name>`, and a learner from a native language is taught that
+  language's deck for it, `<lang>-<native>-<name>`, merged or
+  single-file; a unit with none is "Coming" for them. Its passages are
+  named once, with a description per native language; its regions
+  likewise. Today's nine course paths move to it once.
+- **B1 decks.** Each course's decks for the core ids a path with a B1
+  plan lists, less its alphabet decks, are held to the B1 checks below,
+  whether split or not; a plan is required of a path once its language
+  has a core.
 - **A phrasebook:** `phrasebook: true` on 15 to 25 cards per course,
   taught whole in the course's first unit, never held back.
 - **Base words:** `bases:` names the base of each derived word in a
@@ -2285,10 +2783,13 @@ B1 1,200 more.
   each with a name and an explanation. Every word of the kind a B1 deck
   teaches has its row, or is listed as an exception. Each cell is a card,
   `<core>-<word number>-<slot index>`, asked in two schedules.
-- **Two grammar schedules:** `grammar`, typing the form with the word and
-  the meaning given, keeps its name and its history and is grammar
-  produced; `grammarUnderstood`, choosing among the forms of the same
-  word, is new, with its choose question.
+- **Two grammar schedules:** `grammarUnderstood`, new, is shown a form and
+  chooses what it means among the meanings of the same word's forms;
+  `grammar`, grammar produced, chooses the form among the same word's
+  forms or types it with the word and the meaning given, and keeps its
+  name and its history. Neither implies the other, nor any word skill:
+  the research finds grammar practice skill-specific and gives no
+  figure. Each is fitted per language, as every skill is.
 - **Sentences name their rules:** `rules:` on a card, by rule id, the
   unlock gate's data beside `bases`. A path's grammar topics name rules,
   or grammar decks not yet turned into rules.
@@ -2305,8 +2806,10 @@ B1 1,200 more.
   and its listening and reading passages, or a `planned` unit not written
   yet, which lessons skip and which names its passages. A path with a
   plan has all three milestones in order.
-- **Paths stay per course for now,** moving to one per language learnt
-  before a second native language's layers are written.
+- **Regions:** a language's path may list its regions, each with an id
+  and a name per native language; the app adds "Elsewhere". A rater
+  says which region they speak in, and a note may name the regions it is
+  about.
 
 ## Consequences
 
@@ -2324,7 +2827,12 @@ B1 1,200 more.
   file of the language, so validating one file reads the rest from disk.
 - The validator reads plain YAML scalars as YAML 1.2 does, as the app
   does.
-- Moving to per-language paths will rewrite every path's unit lines.
+- Today's nine paths are rewritten once, mechanically, to core ids. A
+  second native language adds its layers and its passages' descriptions,
+  and never its own copy of a plan.
+- A unit can be written for one native language and "Coming" for
+  another; words are counted per course against one planned size.
+- Region ids are permanent, as card ids are.
 
 ## Alternatives considered
 
@@ -2337,8 +2845,16 @@ B1 1,200 more.
   and holds `grammar`.
 - **Inferring a core from a missing `native`:** a forgotten field would
   read as a different kind of file.
-- **Paths per language now:** placement, the catalog and the path
-  checks would all change before a second native language exists.
+- **Paths per course until a second native language** (this format's
+  first recommendation): every unit line would have been rewritten then,
+  and two courses' copies of a plan could drift.
+- **Choosing the form as understood:** the owner chose choosing the
+  meaning.
+- **Passages' descriptions in a path layer per native language:** one
+  more kind of file for a few lines of text; they are keyed by native
+  code in the path, as a facts file's texts are.
+- **Regions in the facts file, or in the app:** the path is already the
+  language's shared plan, and the app must stay language-agnostic.
 - **B1 checks on cores only:** a deck could escape them by staying
   single-file.
 - **A stored Wiktionary title:** the plan builds the link from the word.
@@ -2388,24 +2904,33 @@ named; "Change" edits an existing passage without rewriting the rest
 14. **New: "## Rules decks"**, after Grammar decks: section 4 (the table,
     rows, rules, coverage, the layer, expansion and cell ids, what each
     question shows, the two schedules).
-15. **Change: "## Course paths"** — the `units` row: "a list of deck ids,
-    or a mapping (see The B1 plan)"; "every deck of the course" includes
-    layers.
-16. **New: "### The B1 plan"**, under Course paths: section 10 (shape,
-    grammar topics, exempt units, which paths need one, B1 decks, errors,
-    warnings, info, how words are counted, 8.5).
-17. **Change: "## Drill modes"** — a row for `grammarUnderstood` (prompt:
-    the meaning to express; answer: the form, chosen among the word's
-    forms; automatically); the `grammar` row says "typed, with the word
-    and the meaning given: grammar produced".
-18. **Change: "## Adding your own deck"** — one line: an added deck is
+15. **Change: "## Course paths"**, renamed "## Paths": one per language
+    learnt, `<lang>-path.yaml`, listing core ids (2.1, 10.1, 10.4); how a
+    course reads it; the `units` row: "a list of core ids, or a mapping
+    (see The B1 plan)"; "every deck of the language", every course's,
+    single-file or layer, is on it once; the move from course paths
+    (10.6).
+16. **New: "### The B1 plan"**, under Paths: section 10 (shape, passages
+    and their descriptions per native language, grammar topics, exempt
+    units, which paths need one, B1 decks, errors, warnings, info, how
+    words are counted per course, 8.5).
+17. **New: "### Regions"**, under Paths: section 10.5, and the region
+    note in "Notes".
+18. **Change: "## Drill modes"** — a row for `grammarUnderstood` (prompt:
+    a form of a rules table, with its reading; answer: its meaning,
+    chosen among the meanings of the same word's forms; automatically);
+    the `grammar` row says "the form, chosen among the same word's forms
+    or typed, with the word and the meaning given: grammar produced".
+19. **Change: "## Adding your own deck"** — one line: an added deck is
     single-file; cores, layers and rules decks are for the repository.
 
 Also: `decks/README.md` (the tree gains a core and a `te/en/` layer
 folder, and the pubspec line per layer folder); `assets/deck-template.yaml`
 (comments only, showing a typed note and a base; its cards unchanged);
 `AGENTS.md`'s repo map row for `decks/<lang>/` ("one YAML file per deck,
-or a core and its layers"). `docs/ROADMAP.md` is not W's to edit
+or a core and its layers", and the path is the language's); ADR-0013's
+reader is pointed to ADR-0035 by the latter's `Amends` line (an accepted
+ADR's reasoning is not edited). `docs/ROADMAP.md` is not W's to edit
 (contention file).
 
 ---
@@ -2512,28 +3037,38 @@ except that `applies_to` is `{ pos: ["noun"] }` (no `except`), so the rows
 are `te-9001` and `te-9004`, the two nouns of the B1 decks, and the layer's
 `prompts` name only `"te-9001"`.
 
-`decks/te/te-en-path.yaml`:
+`decks/te/te-path.yaml`:
 
 ```yaml
 schema: 1
 kind: "path"
-id: "te-en-path"
+id: "te-path"
 language: "te"
-native: "en"
+regions:
+  - { id: "telangana", name: { "en": "Telangana" } }
+  - { id: "coastal-andhra", name: { "en": "Coastal Andhra" } }
+  - { id: "rayalaseema", name: { "en": "Rayalaseema" } }
 units:
-  - decks: ["te-en-home"]
+  - decks: ["te-home"]
     words: 4
     milestone: "A1"
-  - decks: ["te-en-grammar-case-endings"]
+  - decks: ["te-grammar-case-endings"]
     grammar: ["lo", "ki", "to", "nunci"]
     milestone: "A2"
-  - planned: { id: "te-en-health", theme: "health", words: 60 }
-    listening_passages: ["Booking a doctor's appointment by phone"]
-    reading_passages: ["A notice at the clinic"]
+  - planned: { id: "te-health", theme: "health", words: 60 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
     milestone: "B1"
 ```
 
-What each B1 check sees: `te-en-home` counts 4 words (ఇల్లు, అమ్మ, నేను,
+What each B1 check sees, for the one course, `te` from `en`: the path
+lists the core ids `te-home` and `te-grammar-case-endings`, whose English
+decks are the merged `te-en-home` and `te-en-grammar-case-endings`; every
+deck of the language is on the path; the planned `te-health` has no core
+and no deck in any course; both passages have an English description.
+`te-en-home` counts 4 words (ఇల్లు, అమ్మ, నేను,
 వెళ్ళు; the sentence and the phrasebook cards are not words), as planned;
 the course has 15 phrasebook cards, all in the first unit; every word card
 has a note with text; every word of every text is a word card's target or
@@ -2548,24 +3083,25 @@ needed.
 ## Open for the owner
 
 Every OPEN item in this spec, with the section it changes. Builders build
-each recommendation as written.
+each answer or recommendation as written.
 
-### Group B: answer before the branch merges
+### Group B: answered by the owner, 2026-10-09
 
-Each departs from a plan line, or settles a choice the owner made that this
-spec cannot settle alone. ADR-0035 stays `Proposed` until all are answered
-(section 14).
+Each departed from a plan line, or was a choice the owner made that this
+spec could not settle alone. **All are answered;** none is open, and
+ADR-0035 is written `Accepted` (section 14). The body says what each
+answer decided, at the section named, marked *settled*.
 
-| # | Question | The plan says | Recommended | If the answer differs | Section |
-|---|---|---|---|---|---|
-| 4 | Paths per language now, or per course until a second native language? | `native-layers.md` 56–57, 78: "Paths and B1 plans are per language learnt (`hi-path.yaml`), shared by every layer"; "Paths move to one per language learnt" | Per course now; move before any second native language's layers. Rework then: rewrite every unit line (deck and planned ids to core ids, passages to layers), plus the path code (2–3 hours) | Define `<lang>-path.yaml` now: section 10 and 9.5 are rewritten around core ids before the deck agents start | 2.1, 9.5, 10 |
-| 16 | Should `pair:` be derived from the pair notes (one source), or stay independent? | `b1-plans.md` 223–225: "pair notes are proposed by a tool ... The same pairs give Hear its sound-alike options" | Derived: no `pair:` in a core; `Card.pair` is `pair:` or else the first pair note's partner | Keep both: `pair:` allowed in cores; warn both ways on B1 decks | 2.3, 2.7, 6.5, 9.4 |
-| 20 | Which paths must have a B1 plan now? | `b1-plans.md` 8–9: "Every deck path will have a B1 plan from now on"; 277: an error for "a path without its A1, A2 and B1 marks" | (b) a path whose language has a core; every path once all eight have plans. (a) every path now cannot merge before eight plans; (c) te and bn now turns `main` red at once; (d) later contradicts 277 | One condition in 10.1 | 10.1 |
-| 22 | Which question is "understood"? | `skill-model.md` 178–179: understand "choose what a form means", produce "choose or type the form"; 287–289: "'understood' chooses among forms of the same word" | Reading A (287–289, the later dated decision): choosing the form is understood, typing is produced | Reading B: Q builds `Ask.chooseFormMeaning` for understood and asks `chooseForm` under `grammar`; no deck or id changes | 4.7, 4.8 |
-| 23 | Grammar understood and produced on this branch? | `skill-model.md` 286–290: "built with the B1 format, not in the skill model's pull request (owner, 2026-10-09)" | Yes: builder Q, after the skill model's pull request merges | Moved out: Q's section goes to its own pull request, and D's `modesIn` filter stays until then, so rule cells are typed only | 0, 4.7, 4.8 |
-| 24 | Passages: required on every planned unit, as an error? On written units too? | `b1-plans.md` 144–145: "each planned unit names its listening and reading passages too (owner)" | Error on every planned unit (theme and grammar), both lists non-empty; written units not required (their passages are their reading decks) | A warning instead; or required on written units up to B1 too | 10.1, 10.2 |
-| 25 | What is a grammar topic? | `words-rules-sentences.md` 169–170: "Each rule counts once toward the plan's grammar topics"; `b1-plans.md` 96: "grammar = topics with a written unit ÷ topics planned" | A rule (by its name), or a grammar deck not yet turned into rules (by its name). Consequence: case endings count as four topics, not one, so the shared skeleton's "of 30" must be written in rules | A deck = a topic (one per rules deck), or free labels checked against nothing | 10.1, 10.3 |
-| 26 | Scripts without spaces | `b1-plans.md` 187–188: "Scripts without spaces need their words given" | Not designed now (no such language is being written); a B1 deck in such a script is an error until a `words` field is designed with Japanese or Thai | Design the field now (a card's `words`: its text's words, in order) | 8.3 |
+| # | Question | The owner's answer | What the spec now says | Section |
+|---|---|---|---|---|
+| 4 | Paths per language now, or per course until a second native language? | "One per language learnt now (`<lang>-path.yaml`), shared by every layer" (not the recommendation, which was per course for now) | Every deck has a core id; one path per language lists core ids; each course reads it through its own decks, a unit with none being "Coming"; passages are named once with a description per native language; today's nine paths move once, mechanically | 2.1, 2.8, 9.5, 9.6, 10 |
+| 16 | Should `pair:` be derived from the pair notes, or stay independent? | "Derived from the pair notes, as recommended" | No `pair:` in a core; `Card.pair` is `pair:` or else the first pair note's partner | 2.3, 2.7, 6.5, 9.4 |
+| 20 | Which paths must have a B1 plan now? | "Required on a path whose language has a core, as recommended" | (b): a path whose language has a core; every path by a follow-up once all have plans | 10.1 |
+| 22 | Which question is "understood"? | "Choosing the meaning = understood" (reading B, not the recommendation): shown a form, choose what it means; choosing among the same word's forms, or typing the form, is produced | `grammarUnderstood` asks `Ask.chooseFormMeaning`; `grammar` asks `Ask.chooseForm` or the typed form; neither implies the other in the `SkillMap`; both fitted per language and skill | 4.1, 4.6, 4.7, 4.8 |
+| 23 | Grammar understood and produced on this branch? | Settled earlier: with the B1 format, after the skill model's pull request (`skill-model.md` 286–291) | Builder Q, after #432 merges | 0, 4.7, 4.8 |
+| 24 | Passages: required on every planned unit, as an error? | "Required on every planned unit, as recommended" | An error on every planned unit, both lists non-empty; not required on written units | 10.1, 10.2 |
+| 25 | What is a grammar topic? | "One rule, as recommended; grammar decks not yet turned into rules count by deck" | A rule by its name, or a grammar deck by its core id's name | 10.1, 10.3 |
+| 26 | Scripts without spaces | "Later, as recommended" | A B1 deck in such a script is an error until a `words` field is designed with that language | 8.3 |
 
 ### Group A: gaps the plans leave; builders proceed
 
@@ -2576,11 +3112,11 @@ spec cannot settle alone. ADR-0035 stays `Proposed` until all are answered
 | 3 | How a core is marked | `part: "core"`; a layer is `kind: "layer"`; dispatch in that order | 2.1, 2.2 |
 | 5 | Reading decks split? | No: already keyed by language | 2.1 |
 | 6 | Where layer-only cards go | After the core's cards, in the layer's order | 2.7 |
-| 7 | When a phrasebook is required | When the course's path has a B1 plan; counted per course | 3 |
+| 7 | When a phrasebook is required | When the language's path has a B1 plan; counted per course | 3 |
 | 8 | What one rule is | One or more columns of one table; options across the table's row | 4.1 |
 | 9 | Missing row: error or warning | Error, with `applies_to.except`, over the B1 decks' words | 4.3 |
 | 10 | Name of the new mode | `grammarUnderstood`; `grammar` stays as produced | 4.7 |
-| 11 | Does a typed form imply the choice? | No credit across until the research says | 4.7 |
+| 11 | What a grammar answer implies in the `SkillMap` | Nothing, either way, and no word skill: the research finds grammar practice skill-specific (DeKeyser 1997; Shintani et al. 2013) and gives no figure for form and meaning; the typed and the chosen form are one schedule now | 4.7 |
 | 12 | `grammarUnderstood` on existing grammar tables | Later, for tables whose rows give two forms or more | 4.7 |
 | 13 | Culture `source` | In the core, shared | 6.2 |
 | 14 | Language facts in notes | `words` in the core, `{1}` placeholders in the layer | 6.4 |
@@ -2594,6 +3130,11 @@ spec cannot settle alone. ADR-0035 stays `Proposed` until all are answered
 | 29 | Marking a culture deck checked | The tag `reviewed`, exclusive with `unreviewed`, in the file that holds the claim (core, or the layer for a layer-only card). **Flagged:** a new tag | 6.5, 2.7 |
 | 30 | A B1 deck still single-file | A warning on the path; the B1 checks apply either way | 10.3 |
 | 31 | A unit with no counted words | `words: 0` on a written unit; only alphabet units and `"*"` stay lists | 10.1 |
+| 32 | The regions of Telugu and Bengali | Telugu: Telangana, Coastal Andhra, Rayalaseema (the owner's rating screen). Bengali: West Bengal, Bangladesh, Tripura, Assam's Barak Valley (low confidence; the dialect divisions differ). Before any rating names a region | 10.5 |
+| 33 | Where a passage's description per native language lives | In the path, under the passage's `text`, keyed by native code, with a passage `id`; not a path layer of its own | 10.1 |
+| 34 | How a note names its regions | `region:`, one id or a list, on a typed note of any kind, in the core; checked against the path's `regions` | 6.1, 6.2, 10.5 |
+| 35 | A unit with no deck in the learner's native language | "Coming" for that learner, never filled from another native language's decks; words counted per course against one planned size | 8.5, 9.5, 10.3, 10.4 |
+| 36 | Grades and order of the grammar questions | A right meaning choice records 4, a right form choice 3, a typed form as today; the form is chosen while the pair is new or was last missed, typed once remembered, as Hear | 4.7, 4.8 |
 
 Also left to later work, not this format: the mastery bar and the number of
 cells a lesson asks (`words-rules-sentences.md` "To decide"); the
@@ -2603,21 +3144,35 @@ agent may write its own).
 
 ## Answered by the owner, 2026-10-09
 
+Each answer below is now in the body, at the sections named.
+
 - **#4 Paths:** one per language learnt now (`<lang>-path.yaml`), shared by
-  every layer. Sections 2.1, 9.5 and 10 are to be rewritten around core
-  ids before the deck agents start.
-- **#16 Pair:** derived from the pair notes, as recommended.
+  every layer. Sections 2.1, 2.8, 9.5, 9.6 and 10 are rewritten around
+  core ids, before the deck agents start.
+- **#16 Pair:** derived from the pair notes, as recommended (6.5).
 - **#20 B1 plans:** required on a path whose language has a core, as
-  recommended.
-- **#24 Passages:** required on every planned unit, as recommended.
+  recommended (10.1).
+- **#24 Passages:** required on every planned unit, as recommended (10.1).
 - **#22 Understood:** "Choosing the meaning = understood" (Reading B, not
   the recommendation): shown a form, the learner chooses what it means
   (`Ask.chooseFormMeaning`, schedule `grammarUnderstood`); choosing among
   forms of the same word (ammatō, ammaki, ammalō) or typing the form is
   produced (`grammar`). This supersedes skill-model.md's line that
-  "understood" chooses among forms.
+  "understood" chooses among forms (4.6–4.8; `skill-model.md` on #432
+  says the same now).
 - **#25 Topic:** one rule, as recommended; grammar decks not yet turned
-  into rules count by deck.
-- **#26 Scripts without spaces:** later, as recommended.
+  into rules count by deck (10.1).
+- **#26 Scripts without spaces:** later, as recommended (8.3).
 - #23 was settled earlier: grammar understood and produced come with the
-  B1 format, after the skill model's pull request.
+  B1 format, after the skill model's pull request (4.8).
+
+Asked by the owner the same day, and answered by this spec:
+
+- **Regions:** the offensive-word rating screen asks "Where you speak
+  Telugu" (Telangana, Coastal Andhra, Rayalaseema, Elsewhere): "where
+  will this be defined? in the decks? that needs an update to the deck
+  plan". In the language's path, `regions:`, each with an id and a name
+  per native language; the app adds "Elsewhere"; a rater's region and a
+  card's region note name them, and the validator checks each note's
+  regions (10.5, 6.1; OPEN-32 to 34 for what is recommended rather than
+  decided).
