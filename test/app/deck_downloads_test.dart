@@ -33,6 +33,24 @@ Map<String, String> _appendix() => <String, String>{
           file.readAsStringSync(),
 };
 
+/// [inner], calling [onFetched] once [count] deck files have been fetched:
+/// to cancel a download part-way.
+class _CallAfter implements DeckFetcher {
+  _CallAfter(this.inner, this.count, this.onFetched);
+
+  final DeckFetcher inner;
+  final int count;
+  final Future<void> Function() onFetched;
+  int _fetched = 0;
+
+  @override
+  Future<Fetched> fetch(String path) async {
+    final result = await inner.fetch(path);
+    if (path != 'decks/index.json' && ++_fetched == count) await onFetched();
+    return result;
+  }
+}
+
 void main() {
   late FakeDeckRemote remote;
   late MemoryDownloadedDecks phone;
@@ -456,6 +474,104 @@ void main() {
       remote.failAll = null;
       expect(await d.retry('hi', english), isNull);
       expect(d.missing('hi', english), isEmpty);
+    });
+  });
+
+  group('cancel', () {
+    test('keeps the decks that came whole, and stops the rest', () async {
+      final d0 = downloads();
+      await d0.open();
+      await d0.downloadFirst('hi', english);
+      final first = phone.files.length;
+      late DeckDownloads d;
+      d = DeckDownloads(
+        fetcher: _CallAfter(remote, 12, () => d.cancel('hi')),
+        files: phone,
+        clock: () => now,
+      );
+      await d.open();
+      expect(await d.downloadRest('hi', english), isNull);
+      expect(d.isPaused('hi'), isTrue);
+      expect(phone.files.length, greaterThan(first));
+      expect(d.missing('hi', english), isNotEmpty);
+      expect(d.stateOf('hi', english), LanguageDownloadState.partial);
+      final catalog = DeckCatalog.parseAll(<String, String>{
+        for (final path in await phone.list()) path: await phone.read(path),
+      });
+      expect(catalog.broken, isEmpty, reason: 'only whole decks are kept');
+
+      // Launching again does not resume it: the rest waits on Settings.
+      final again = downloads();
+      await again.open();
+      expect(again.isPaused('hi'), isTrue);
+      remote.asked.clear();
+      await again.resume(const <String>['hi'], english);
+      expect(remote.asked.where((p) => p.startsWith('decks/hi/')), isEmpty);
+
+      // Settings > Deck downloads asks for the rest.
+      expect(await again.retry('hi', english), isNull);
+      expect(again.isPaused('hi'), isFalse);
+      expect(again.missing('hi', english), isEmpty);
+    });
+
+    test('before the first decks are in, keeps whole decks and downloads '
+        'no more', () async {
+      late DeckDownloads d;
+      d = DeckDownloads(
+        fetcher: _CallAfter(remote, 4, () => d.cancel('hi')),
+        files: phone,
+        clock: () => now,
+      );
+      await d.open();
+      expect(await d.download('hi', english), isNull);
+      expect(d.isReady('hi', english), isFalse);
+      expect(d.isDownloading('hi'), isFalse);
+      final kept = phone.files.length;
+      await Future<void>.delayed(Duration.zero);
+      expect(phone.files.length, kept, reason: 'the rest did not start');
+      expect(d.stateOf('hi', english), isNot(LanguageDownloadState.failed));
+    });
+  });
+
+  group('how much of a language is in', () {
+    test('counts decks and bytes, and where it is ready', () async {
+      final d = downloads();
+      await d.open();
+      expect(await d.ensureIndex(), isTrue);
+      final none = d.languageDownload('hi', english)!;
+      expect(none.decks, 0);
+      expect(none.bytes, 0);
+      expect(none.ready, isFalse);
+      expect(none.totalDecks, greaterThan(decksBeforeReady));
+      expect(none.readyBytes, inExclusiveRange(0, none.totalBytes));
+
+      await d.downloadFirst('hi', english);
+      final first = d.languageDownload('hi', english)!;
+      expect(first.decks, decksBeforeReady);
+      expect(first.bytes, first.readyBytes);
+      expect(first.ready, isTrue);
+
+      await d.downloadRest('hi', english);
+      final all = d.languageDownload('hi', english)!;
+      expect(all.decks, all.totalDecks);
+      expect(all.bytes, all.totalBytes);
+      expect(d.languageDownload('xx', english), isNull);
+    });
+
+    test('counts what has arrived of a download under way', () async {
+      late DeckDownloads d;
+      final seen = <int>[];
+      d = DeckDownloads(
+        fetcher: _CallAfter(remote, 3, () async {
+          seen.add(d.languageDownload('hi', english)!.bytes);
+        }),
+        files: phone,
+        clock: () => now,
+      );
+      await d.open();
+      await d.downloadFirst('hi', english);
+      // The third file is still being fetched: the first two are counted.
+      expect(seen.single, greaterThan(0));
     });
   });
 
