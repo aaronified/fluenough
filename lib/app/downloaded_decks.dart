@@ -204,7 +204,14 @@ class FileDownloadedDecks implements DownloadedDecks {
 
 /// [DownloadedDecks] in memory, for tests and the gallery.
 class MemoryDownloadedDecks implements DownloadedDecks {
-  MemoryDownloadedDecks();
+  /// With [seed] on the phone already: each file as the index listed it,
+  /// with its text.
+  MemoryDownloadedDecks([Map<IndexFile, String> seed = const {}]) {
+    for (final MapEntry(key: file, value: text) in seed.entries) {
+      files[file.path] = Uint8List.fromList(utf8.encode(text));
+      _manifest[file.path] = file;
+    }
+  }
 
   /// Each file's text by path.
   final Map<String, Uint8List> files = <String, Uint8List>{};
