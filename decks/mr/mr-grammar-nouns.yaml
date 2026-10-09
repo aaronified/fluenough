@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-nouns
-name: "Nouns: plural and endings"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The plural, and the endings for 'in', 'on' and 'to', added to a noun that often changes first. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "mr-grammar-nouns"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Noun forms"
-  slot_name: "form"
   slots: ["plural", "in: -त (-ta)", "on: -वर (-var)", "to: -ला (-lā)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Before an ending a noun takes its oblique form, and Marathi writes the ending joined to it. A masculine noun in -आ (-ā) changes it to -्या (-yā): रस्ता (rastā), रस्त्यावर (rastyāvar). A feminine noun in -आ (-ā) changes it to -े (e): शाळा (śāḷā), शाळेत (śāḷet). Most nouns ending in a consonant add -ा (ā): घर (ghar), घरात (gharāt). The plural: a masculine -आ (-ā) becomes -े (e) (रस्ते (raste)); a neuter noun ending in a consonant adds -े (e) (घरे (ghare), in speech घरं (gharam̐)); a feminine -ई (-i) becomes -्या (-yā) (खोल्या (kholyā)); a feminine -आ (-ā) stays (शाळा). -ला (-lā) is 'to', and also marks a person as the object."
   entries:
     - lemma: "घर"
-      key: ghar
+      key: "ghar"
       reading: "ghar"
       ipa: "ɡʱər"
-      gloss: "house (n)"
       forms:
         "plural": ["घरे", "घरं"]
         "in: -त (-ta)": "घरात"
@@ -35,10 +28,9 @@ pattern:
         "on: -वर (-var)": "ɡʱəraʋər"
         "to: -ला (-lā)": "ɡʱərala"
     - lemma: "शाळा"
-      key: shaalaa
+      key: "shaalaa"
       reading: "śāḷā"
       ipa: "ʃaɭa"
-      gloss: "school (f)"
       forms:
         "plural": "शाळा"
         "in: -त (-ta)": "शाळेत"
@@ -55,10 +47,9 @@ pattern:
         "on: -वर (-var)": "ʃaɭeʋər"
         "to: -ला (-lā)": "ʃaɭela"
     - lemma: "खोली"
-      key: kholii
+      key: "kholii"
       reading: "kholi"
       ipa: "kʰoli"
-      gloss: "room (f)"
       forms:
         "plural": "खोल्या"
         "in: -त (-ta)": "खोलीत"
@@ -75,10 +66,9 @@ pattern:
         "on: -वर (-var)": "kʰoliʋər"
         "to: -ला (-lā)": "kʰolila"
     - lemma: "रस्ता"
-      key: rastaa
+      key: "rastaa"
       reading: "rastā"
       ipa: "rəst̪a"
-      gloss: "road (m)"
       forms:
         "plural": "रस्ते"
         "in: -त (-ta)": "रस्त्यात"
@@ -95,10 +85,9 @@ pattern:
         "on: -वर (-var)": "rəst̪jaʋər"
         "to: -ला (-lā)": "rəst̪jala"
     - lemma: "खिसा"
-      key: khisaa
+      key: "khisaa"
       reading: "khisā"
       ipa: "kʰisa"
-      gloss: "pocket (m)"
       forms:
         "plural": "खिसे"
         "in: -त (-ta)": "खिशात"
@@ -115,10 +104,9 @@ pattern:
         "on: -वर (-var)": "kʰiʃaʋər"
         "to: -ला (-lā)": "kʰiʃala"
     - lemma: "बाटली"
-      key: baatlii
+      key: "baatlii"
       reading: "bāṭli"
       ipa: "baʈli"
-      gloss: "bottle (f)"
       forms:
         "plural": "बाटल्या"
         "in: -त (-ta)": "बाटलीत"
@@ -135,10 +123,9 @@ pattern:
         "on: -वर (-var)": "baʈliʋər"
         "to: -ला (-lā)": "baʈlila"
     - lemma: "पुस्तक"
-      key: pustak
+      key: "pustak"
       reading: "pustak"
       ipa: "pust̪ək"
-      gloss: "book (n)"
       forms:
         "plural": ["पुस्तके", "पुस्तकं"]
         "in: -त (-ta)": "पुस्तकात"
@@ -155,10 +142,9 @@ pattern:
         "on: -वर (-var)": "pust̪əkaʋər"
         "to: -ला (-lā)": "pust̪əkala"
     - lemma: "झाड"
-      key: jhaad
+      key: "jhaad"
       reading: "jhāḍ"
       ipa: "dzʱaɖ"
-      gloss: "tree (n)"
       forms:
         "plural": ["झाडे", "झाडं"]
         "in: -त (-ta)": "झाडात"
@@ -175,10 +161,9 @@ pattern:
         "on: -वर (-var)": "dzʱaɖaʋər"
         "to: -ला (-lā)": "dzʱaɖala"
     - lemma: "गाडी"
-      key: gaadii
+      key: "gaadii"
       reading: "gāḍi"
       ipa: "ɡaɖi"
-      gloss: "car; vehicle (f)"
       forms:
         "plural": "गाड्या"
         "in: -त (-ta)": "गाडीत"
@@ -195,10 +180,9 @@ pattern:
         "on: -वर (-var)": "ɡaɖiʋər"
         "to: -ला (-lā)": "ɡaɖila"
     - lemma: "डबा"
-      key: dabaa
+      key: "dabaa"
       reading: "ḍabā"
       ipa: "ɖəba"
-      gloss: "box; tiffin; train carriage (m)"
       forms:
         "plural": "डबे"
         "in: -त (-ta)": "डब्यात"

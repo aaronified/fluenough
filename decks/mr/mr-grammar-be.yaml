@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-be
-name: "To be: आहे (āhe), होता (hotā), नाही (nāhi)"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Am, was, am not, will be: असणे (asṇe) in the present, the past, the negative and the future. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "mr-grammar-be"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "असणे (asṇe) by tense"
-  slot_name: "person and gender"
   slots: ["मी (m)", "मी (f)", "आम्ही", "तू (m)", "तू (f)", "तुम्ही", "तो", "ती", "ते (it)", "ते (they)", "त्या (they, f)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "आहे (āhe) comes last and says what or where someone is: मी शिक्षक आहे (mi śikṣak āhe), I'm a teacher; मी घरी आहे (mi ghari āhe), I'm at home. It is also 'there is', and with -कडे (-kaḍe) 'have': माझ्याकडे गाडी आहे (mājhyākaḍe gāḍi āhe). The present and the future do not show gender; the past does: a man says मी होतो (mi hoto), a woman मी होते (mi hote). 'Am not' replaces आहे (āhe) with नाही (nāhi): मी घरी नाही (mi ghari nāhi). 'Was not' is नव्हतो (navhato), नव्हते (navhate) …: मी घरी नव्हतो (mi ghari navhato). तुम्ही (tumhi) takes the plural, for one person or many."
   entries:
     - lemma: "असणे (asṇe), now"
-      key: aahe
+      key: "aahe"
       reading: "asṇe, now"
       ipa: "əsɳe"
-      gloss: "to be, present"
       forms:
         "मी (m)": "आहे"
         "मी (f)": "आहे"
@@ -56,10 +49,9 @@ pattern:
         "ते (they)": "aɦet̪"
         "त्या (they, f)": "aɦet̪"
     - lemma: "असणे (asṇe), then"
-      key: hotaa
+      key: "hotaa"
       reading: "asṇe, then"
       ipa: "əsɳe"
-      gloss: "to be, past"
       forms:
         "मी (m)": "होतो"
         "मी (f)": "होते"
@@ -97,10 +89,9 @@ pattern:
         "ते (they)": "ɦot̪e"
         "त्या (they, f)": "ɦot̪ja"
     - lemma: "असणे (asṇe), not"
-      key: naahii
+      key: "naahii"
       reading: "asṇe, not"
       ipa: "əsɳe"
-      gloss: "not to be, present"
       forms:
         "मी (m)": "नाही"
         "मी (f)": "नाही"
@@ -138,10 +129,9 @@ pattern:
         "ते (they)": "naɦit̪"
         "त्या (they, f)": "naɦit̪"
     - lemma: "असणे (asṇe), later"
-      key: asel
+      key: "asel"
       reading: "asṇe, later"
       ipa: "əsɳe"
-      gloss: "to be, future"
       forms:
         "मी (m)": "असेन"
         "मी (f)": "असेन"

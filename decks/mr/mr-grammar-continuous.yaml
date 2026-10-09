@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-continuous
-name: "Present continuous"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I am going, she is coming: what is happening now, in its full form and in the short forms of speech. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "mr-grammar-continuous"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Present continuous"
-  slot_name: "person"
   slots: ["मी", "आम्ही", "तू", "तुम्ही", "तो / ती / ते", "ते (te) / त्या (they)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The stem with -त (-ta), then आहे (āhe) in its person: मी जात आहे (mi jāt āhe), I'm going. The full form does not show gender. Speech runs the two together, and then gender shows: a man says जातोय (jātoy), a woman जातेय (jātey); to a man तू जातोयस (tu jātoyas), to a woman जातेयस (jāteyas). The full form comes first here, and the short forms are accepted too."
   entries:
     - lemma: "जाणे"
-      key: jaane
+      key: "jaane"
       reading: "jāṇe"
       ipa: "dzaɳe"
-      gloss: "to go"
       forms:
         "मी": ["जात आहे", "जातोय", "जातेय"]
         "आम्ही": ["जात आहोत", "जातोय"]
@@ -41,10 +34,9 @@ pattern:
         "तो / ती / ते": "dzat̪ aɦe"
         "ते (te) / त्या (they)": "dzat̪ aɦet̪"
     - lemma: "येणे"
-      key: yene
+      key: "yene"
       reading: "yeṇe"
       ipa: "jeɳe"
-      gloss: "to come"
       forms:
         "मी": ["येत आहे", "येतोय", "येतेय"]
         "आम्ही": ["येत आहोत", "येतोय"]
@@ -67,10 +59,9 @@ pattern:
         "तो / ती / ते": "jet̪ aɦe"
         "ते (te) / त्या (they)": "jet̪ aɦet̪"
     - lemma: "करणे"
-      key: karne
+      key: "karne"
       reading: "karṇe"
       ipa: "kərɳe"
-      gloss: "to do"
       forms:
         "मी": ["करत आहे", "करतोय", "करतेय"]
         "आम्ही": ["करत आहोत", "करतोय"]
@@ -93,10 +84,9 @@ pattern:
         "तो / ती / ते": "kərət̪ aɦe"
         "ते (te) / त्या (they)": "kərət̪ aɦet̪"
     - lemma: "शिकणे"
-      key: shikne
+      key: "shikne"
       reading: "śikṇe"
       ipa: "ʃikɳe"
-      gloss: "to learn"
       forms:
         "मी": ["शिकत आहे", "शिकतोय", "शिकतेय"]
         "आम्ही": ["शिकत आहोत", "शिकतोय"]

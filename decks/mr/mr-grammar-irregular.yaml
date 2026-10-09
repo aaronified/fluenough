@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-irregular
-name: "Irregular verbs"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The common verbs whose past or polite request does not follow the pattern. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [unreviewed, grammar]
+id: "mr-grammar-irregular"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["unreviewed", "grammar"]
 pattern:
-  name: "Irregular verbs"
-  slot_name: "form"
   slots: ["past, masculine", "past, feminine", "please … (तुम्ही (tumhi))"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The past masculine is the form for तो (to) with a verb that takes no object, तो गेला (to gelā), he went. A verb that takes an object agrees with the object instead: त्याने चहा केला (tyāne cahā kelā), he made tea (चहा (cahā) is masculine); त्याने पोळी केली (tyāne poḷi keli), he made a chapati (पोळी (poḷi) is feminine). The polite request goes with तुम्ही (tumhi): या (yā), please come; to a friend, the bare stem: ये (ye)."
   entries:
     - lemma: "जाणे"
-      key: jaane
+      key: "jaane"
       reading: "jāṇe"
       ipa: "dzaɳe"
-      gloss: "to go"
       forms:
         "past, masculine": "गेला"
         "past, feminine": "गेली"
@@ -32,10 +25,9 @@ pattern:
         "past, feminine": "ɡeli"
         "please … (तुम्ही (tumhi))": "dza"
     - lemma: "येणे"
-      key: yene
+      key: "yene"
       reading: "yeṇe"
       ipa: "jeɳe"
-      gloss: "to come"
       forms:
         "past, masculine": "आला"
         "past, feminine": "आली"
@@ -49,10 +41,9 @@ pattern:
         "past, feminine": "ali"
         "please … (तुम्ही (tumhi))": "ja"
     - lemma: "करणे"
-      key: karne
+      key: "karne"
       reading: "karṇe"
       ipa: "kərɳe"
-      gloss: "to do; to make"
       forms:
         "past, masculine": "केला"
         "past, feminine": "केली"
@@ -66,10 +57,9 @@ pattern:
         "past, feminine": "keli"
         "please … (तुम्ही (tumhi))": "kəra"
     - lemma: "घेणे"
-      key: ghene
+      key: "ghene"
       reading: "gheṇe"
       ipa: "ɡʱeɳe"
-      gloss: "to take"
       forms:
         "past, masculine": "घेतला"
         "past, feminine": "घेतली"
@@ -83,10 +73,9 @@ pattern:
         "past, feminine": "ɡʱet̪li"
         "please … (तुम्ही (tumhi))": "ɡʱja"
     - lemma: "देणे"
-      key: dene
+      key: "dene"
       reading: "deṇe"
       ipa: "d̪eɳe"
-      gloss: "to give"
       forms:
         "past, masculine": "दिला"
         "past, feminine": "दिली"
@@ -100,10 +89,9 @@ pattern:
         "past, feminine": "d̪ili"
         "please … (तुम्ही (tumhi))": "d̪ja"
     - lemma: "खाणे"
-      key: khaane
+      key: "khaane"
       reading: "khāṇe"
       ipa: "kʰaɳe"
-      gloss: "to eat"
       forms:
         "past, masculine": "खाल्ला"
         "past, feminine": "खाल्ली"
@@ -117,10 +105,9 @@ pattern:
         "past, feminine": "kʰalli"
         "please … (तुम्ही (tumhi))": "kʰa"
     - lemma: "पिणे"
-      key: pine
+      key: "pine"
       reading: "piṇe"
       ipa: "piɳe"
-      gloss: "to drink"
       forms:
         "past, masculine": ["प्यायला", "प्याला"]
         "past, feminine": ["प्यायली", "प्याली"]
@@ -134,10 +121,9 @@ pattern:
         "past, feminine": "pjajli"
         "please … (तुम्ही (tumhi))": "pja"
     - lemma: "होणे"
-      key: hone
+      key: "hone"
       reading: "hoṇe"
       ipa: "ɦoɳe"
-      gloss: "to become; to happen"
       forms:
         "past, masculine": "झाला"
         "past, feminine": "झाली"
@@ -151,10 +137,9 @@ pattern:
         "past, feminine": "dzʱali"
         "please … (तुम्ही (tumhi))": "ʋɦa"
     - lemma: "लिहिणे"
-      key: lihine
+      key: "lihine"
       reading: "lihiṇe"
       ipa: "liɦiɳe"
-      gloss: "to write"
       forms:
         "past, masculine": "लिहिला"
         "past, feminine": "लिहिली"
@@ -168,10 +153,9 @@ pattern:
         "past, feminine": "liɦili"
         "please … (तुम्ही (tumhi))": "liɦa"
     - lemma: "धुणे"
-      key: dhune
+      key: "dhune"
       reading: "dhuṇe"
       ipa: "d̪ʱuɳe"
-      gloss: "to wash"
       forms:
         "past, masculine": "धुतला"
         "past, feminine": "धुतली"
@@ -185,10 +169,9 @@ pattern:
         "past, feminine": "d̪ʱut̪li"
         "please … (तुम्ही (tumhi))": "d̪ʱuʋa"
     - lemma: "सांगणे"
-      key: saangne
+      key: "saangne"
       reading: "sāṅgṇe"
       ipa: "saŋɡɳe"
-      gloss: "to tell"
       forms:
         "past, masculine": "सांगितला"
         "past, feminine": "सांगितली"
@@ -202,10 +185,9 @@ pattern:
         "past, feminine": "saŋɡit̪li"
         "please … (तुम्ही (tumhi))": "saŋɡa"
     - lemma: "म्हणणे"
-      key: mhanne
+      key: "mhanne"
       reading: "mhaṇṇe"
       ipa: "mɦəɳɳe"
-      gloss: "to say"
       forms:
         "past, masculine": "म्हणाला"
         "past, feminine": "म्हणाली"
