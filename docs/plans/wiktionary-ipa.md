@@ -21,7 +21,8 @@ answer from a session.
   source too: "all decks will still get transliteration from wikitionary or
   soemthing" (5 October). Wiktionary romanises each language in its own
   scheme, close to ISO 15919 for some languages and not for others. Its
-  romanisations would need converting to ISO 15919 as said, and checking
+  romanisations would need converting to the decks' readings (letters based
+  on ISO 15919's, as said, with the departures the README lists), and checking
   against the decks' readings. Readings made in the app are only for
   sentences the learner adds (`in-app-readings.md`).
 - **Licence:** Wiktionary is CC BY-SA 4.0; the decks are CC0. Every IPA
