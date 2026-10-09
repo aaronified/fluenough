@@ -659,11 +659,13 @@ class AppState extends ChangeNotifier {
     ];
   }
 
-  /// The languages the current profile learns whose first decks are not
-  /// on the phone, and that GitHub offers or may: what the app downloads
-  /// before it opens, as after updating from a version that bundled its
-  /// decks. Empty until the catalog is read, and where decks do not
-  /// download.
+  /// The languages the current profile learns with no deck on the phone,
+  /// that GitHub offers or may: what the app downloads before it opens, as
+  /// after updating from a version that bundled its decks. A language with
+  /// some of its decks in is not one: what it lacks, such as the decks of a
+  /// language the learner has since said they speak, comes in the
+  /// background or as an update, and the app opens offline. Empty until the
+  /// catalog is read, and where decks do not download.
   List<String> get missingLanguages {
     final downloads = deckDownloads;
     if (downloads == null ||
@@ -673,8 +675,10 @@ class AppState extends ChangeNotifier {
     }
     final index = downloads.index;
     return <String>[
-      for (final code in languagesToDownload(learningCodes))
-        if (index == null || index.language(code) != null) code,
+      for (final code in learningCodes)
+        if (!downloads.hasDecks(code) &&
+            (index == null || index.language(code) != null))
+          code,
     ];
   }
 

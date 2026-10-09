@@ -252,6 +252,46 @@ void main() {
     });
   });
 
+  group('a language with some of its decks in', () {
+    testWidgets('opens offline, though a language the learner now speaks '
+        'teaches decks not yet downloaded', (tester) async {
+      remote = FakeDeckRemote(<String, String>{
+        for (final file in Directory(
+          'test/fixtures/b1/appendix-a/zz',
+        ).listSync(recursive: true))
+          if (file is File && file.path.endsWith('.yaml'))
+            'decks/zz/${file.path.substring('test/fixtures/b1/appendix-a/zz/'.length)}':
+                file.readAsStringSync(),
+        'decks/zz/bn/zz-bn-home.yaml': '''
+schema: 1
+id: "zz-bn-home"
+name: "ঘর"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+native: { code: "bn", iso639_3: "ben", name: "Bengali" }
+license: "CC0-1.0"
+cards:
+  - { id: "zz-9801", target: "ఇల్లు", reading: "illu", native: "ঘর" }
+''',
+      });
+      await downloaded(remote, phone, const <String>['zz']);
+      remote.failAll = FetchFailure.offline;
+      final settings = SettingsNotifier(
+        spokenLanguages: const <String>['bn', 'en'],
+        learningLanguages: const <String>['zz'],
+      )..learningChosen = true;
+      final state = await pump(
+        tester,
+        downloadingApp(remote: remote, phone: phone, settings: settings),
+      );
+      expect(
+        state.deckDownloads!.isReady('zz', settings.spokenLanguages),
+        isFalse,
+      );
+      expect(find.byType(AppShell), findsOneWidget);
+      expect(find.byType(DownloadPage), findsNothing);
+    });
+  });
+
   group('a language added later', () {
     testWidgets('downloads before placement', (tester) async {
       await downloaded(remote, phone, const <String>['es']);

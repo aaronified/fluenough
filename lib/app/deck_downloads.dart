@@ -262,6 +262,11 @@ class DeckDownloads extends ChangeNotifier {
         .every((f) => _onPhone.containsKey(f.path));
   }
 
+  /// Whether any deck of [language] is on the phone, whatever else is
+  /// missing: whether it can be studied at all, offline.
+  bool hasDecks(String language) =>
+      _onPhone.values.any((f) => f.language == language && !f.isLanguageFile);
+
   /// The files of [language] a learner who speaks [spoken] has yet to
   /// download, as the index lists them.
   List<IndexFile> missing(String language, List<String> spoken) {
