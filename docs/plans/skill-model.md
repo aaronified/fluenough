@@ -300,6 +300,15 @@ The owner's answers to #235, 2026-10-08:
   all skills. This reverses "one set" above. Defaults hold until a skill
   has enough reviews to fit.
 
+- **When fitting runs** (owner, 2026-10-09): "By a button, and when a
+  skill increases by 10%. The button will have an automatic option for
+  this. And this happens via a hook, do not crowd the opening." So: a
+  button in Settings refits now; beside it, an automatic option refits a
+  skill whenever its reviews have grown by 10% since its last fit, set off
+  by recording a review, never at app start, and run off the main thread.
+- **Shown on Progress** under Your strengths: a line per skill once its
+  parameters are fitted.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
