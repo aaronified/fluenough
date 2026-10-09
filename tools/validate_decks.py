@@ -3910,7 +3910,7 @@ def check_paths_across(reports: list[Report]) -> list[str]:
     # A language with a deck in this repository needs a path. A path not
     # being validated now, in the language's folder on disk, counts:
     # validating one deck is legitimate. So is drafting one outside the
-    # repository, as check_bundled also allows.
+    # repository, as check_index also allows.
     root = ROOT
     pathless: dict[str, Path] = {}
     for rep in reports:
@@ -4475,69 +4475,23 @@ def collect(target: Path) -> list[Path]:
     return sorted(p for p in target.rglob("*.yaml") if "schema" not in p.parts)
 
 
-# Language directories kept in the repository, and validated like any other,
-# but left out of the app on purpose, so that check_bundled does not ask for
-# their pubspec.yaml entry. Remove a line when its directory goes back under
-# flutter.assets.
-NOT_BUNDLED = {
-    # Hidden for now: the app teaches Spanish and the Indic languages.
-    "decks/ja",
-    # The validator's own fixtures, a B1 core and layers in a made-up
-    # language (tools/test_validate_b1.py); never part of the app.
-    "tools/fixtures/b1/zz",
-    "tools/fixtures/b1/zz/en",
-}
+def check_index(targets: list[Path], reports: list[Report]) -> list[str]:
+    """decks/index.json, the list the app downloads decks from (#210,
+    ADR-0037), must be what tools/deck_index.py writes now. Checked when the
+    repository's own decks/ is validated whole, from any working directory;
+    validating one file or a draft elsewhere is legitimate and skips it.
 
-
-def check_bundled(paths: list[Path]) -> list[str]:
-    """Every language directory holding a deck must be a Flutter asset entry.
-
-    A Flutter asset entry bundles only the files directly inside the directory
-    it names, so `- decks/` does not reach `decks/es/`. A language missing from
-    the list ships as an app with that language silently absent — it builds, it
-    validates, and it is only visible on a device. Checking it here is cheaper
-    than finding it there. The directories in NOT_BUNDLED are absent on
-    purpose, and are not asked for.
-
-    Everything here is resolved against the repository root rather than the
-    working directory. A check that quietly passes when run from the wrong
-    directory is worse than no check, because it is trusted.
-    """
-    root = Path(__file__).resolve().parent.parent
-    pubspec = root / "pubspec.yaml"
-    if not pubspec.exists():
+    Everything is resolved against the repository root rather than the
+    working directory: a check that quietly passes when run from the wrong
+    directory is worse than no check, because it is trusted."""
+    if not any(t.resolve() == ROOT / "decks" for t in targets):
         return []
-    try:
-        declared = yaml.safe_load(pubspec.read_text(encoding="utf-8"))
-    except yaml.YAMLError as exc:
-        return [f"{pubspec} is not valid YAML: {exc}"]
-
-    entries = ((declared or {}).get("flutter") or {}).get("assets") or []
-    have = {str(e).strip().rstrip("/") for e in entries}
-
-    problems = []
-    unbundled: dict[str, None] = {}
-    for p in sorted(paths):
-        try:
-            file = p.resolve().relative_to(root).as_posix()
-        except ValueError:
-            # Outside the repository, so nothing in pubspec.yaml could bundle
-            # it. Validating a deck from elsewhere is legitimate; claiming it
-            # is unbundled is not.
-            continue
-        directory = file.rsplit("/", 1)[0]
-        if directory in NOT_BUNDLED:
-            continue
-        # A directory entry bundles the files directly inside it; a file
-        # entry, such as decks/themes.yaml, bundles just that file.
-        if directory not in have and file not in have:
-            unbundled[directory] = None
-    for wanted in unbundled:
-        problems.append(
-            f"{wanted}/ holds decks but pubspec.yaml does not bundle it — "
-            f"add `- {wanted}/` under flutter.assets"
-        )
-    return problems
+    # The index tool reads decks through this module: share it, so that the
+    # checks across files are not run twice.
+    sys.modules.setdefault("validate_decks", sys.modules[__name__])
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import deck_index
+    return deck_index.stale(reports)
 
 
 def main(argv: list[str]) -> int:
@@ -4568,7 +4522,7 @@ def main(argv: list[str]) -> int:
             return 1
         ids[p.stem] = p
 
-    unbundled = check_bundled(paths)
+    unbundled = check_index(targets, reports)
     for problem in unbundled:
         print(f"error: {problem}")
     across = (check_themes_across(reports) + check_cards_across(reports)
