@@ -1,6 +1,6 @@
 # ADR-0034: Recognition, Hear, Say and Write: four schedules per word
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0036: grammar has a second schedule, understood and produced; pairs can come from pair notes.
 - **Date:** 2026-10-08
 - **Amends:** ADR-0005 (which pairs are scheduled) and ADR-0024 (how
   listening is asked, and what a right choice records).
