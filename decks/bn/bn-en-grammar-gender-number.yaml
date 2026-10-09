@@ -15,6 +15,9 @@ cards:
     ipa: "ʃe aʃtʃʰe"
     pos: "phrase"
     notes: "সে (se) is he and she. Nothing in the sentence says which."
+    bases:
+      - { word: "সে", base: "সে", reading: "śe", meaning: "he; she" }
+      - { word: "আসছে", base: "আসা", reading: "āśā", meaning: "to come" }
   - id: bn-0275
     target: "ভালো ছেলে"
     native: "a good boy"
@@ -35,6 +38,10 @@ cards:
     ipa: "ami dʒai amra dʒai"
     pos: "phrase"
     notes: "The verb does not change for number."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "যাই", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "আমরা", base: "আমরা", reading: "āmrā", meaning: "we" }
   - id: bn-0278
     target: "ছেলেরা খেলছে।"
     native: "The boys are playing."
@@ -42,6 +49,9 @@ cards:
     ipa: "tʃʰelera kʰeltʃʰe"
     pos: "phrase"
     notes: "-রা (-rā) makes a plural for people: ছেলেরা (chelerā), মেয়েরা (meyerā)."
+    bases:
+      - { word: "ছেলেরা", ref: "bn-0426" }
+      - { word: "খেলছে", base: "খেলা", reading: "khelā", meaning: "to play" }
   - id: bn-0279
     target: "তিনটে বই"
     native: "three books"
@@ -50,3 +60,6 @@ cards:
     alt_target: ["তিনটা বই"]
     pos: "phrase"
     notes: "After a number, or অনেক (many), the noun stays singular. Also তিনটা বই (tinṭā boi)."
+    bases:
+      - { word: "তিনটে", ref: "bn-0204" }
+      - { word: "বই", base: "বই", reading: "boi", meaning: "book" }

@@ -148,6 +148,9 @@ cards:
     ipa: "amar ek bʱai ar d̪ui bon atʃʰe"
     pos: "phrase"
     notes: "Having is আছে (āche), 'there is', with the owner in the possessive: আমার (āmār), 'of me'."
+    bases:
+      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0440
     target: "আপনার কি ভাইবোন আছে?"
     native: "Do you have brothers and sisters?"
@@ -155,6 +158,10 @@ cards:
     ipa: "apnar ki bʱaibon atʃʰe"
     pos: "phrase"
     notes: "ভাইবোন (bhāibon) is brothers and sisters together. কি (ki) makes it a yes-or-no question."
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "ভাইবোন", base: "ভাইবোন", reading: "bhāibon", meaning: "brothers and sisters" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0441
     target: "আমি বিবাহিত।"
     native: "I'm married."
@@ -162,6 +169,9 @@ cards:
     ipa: "ami bibaɦit̪o"
     pos: "phrase"
     notes: "Unmarried is অবিবাহিত (ôbibāhito). In everyday speech also আমার বিয়ে হয়েছে (āmār biye hôyeche), 'my wedding has happened'."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "বিবাহিত", base: "বিবাহিত", reading: "bibāhito", meaning: "married" }
   - ref: bn-0197
   - id: bn-0442
     target: "বাবা-মা"

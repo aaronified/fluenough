@@ -42,6 +42,8 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "To a friend: কেমন আছো? (kemon achho?). Bengali has no grammatical gender, so it is the same to a man or a woman."
+    bases:
+      - { word: "আছেন", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0140
     target: "ভালো আছি।"
     native: "I'm fine."
@@ -50,6 +52,8 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "ভালো (bhālo) is 'good, well', one of the most useful words there is."
+    bases:
+      - { word: "আছি", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0141
     target: "ধন্যবাদ"
     native: "thank you"
@@ -81,6 +85,10 @@ cards:
     ipa: "ami baŋla dʒani na"
     pos: "phrase"
     notes: "না (nā), 'not', comes after the verb."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
+      - { word: "জানি", base: "জানা", reading: "jānā", meaning: "to know" }
   - id: bn-0145
     target: "আমি এখনও বাংলা শিখছি।"
     native: "I'm still learning Bengali."
@@ -89,6 +97,11 @@ cards:
     alt_target: ["আমি এখনো বাংলা শিখছি।"]
     pos: "phrase"
     notes: "The same for a man and a woman: Bengali verbs do not show gender."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "এখনও", base: "এখনও", reading: "ekhono", meaning: "still; yet" }
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
+      - { word: "শিখছি", base: "শেখা", reading: "śekhā", meaning: "to learn" }
   - id: bn-0146
     target: "একটু ধীরে বলুন।"
     native: "Please speak slowly."
@@ -98,6 +111,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "বলুন (bolun) is the polite request form of বলা (bôlā, to say). Most verbs take -উন (-un) for a polite request: বসুন (bośun), please sit. Verbs whose stem ends in a vowel take -ন (-nô): যান (jān), please go; খান (khān), please eat; দিন (din), please give. একটু (ekṭu), 'a little', softens a request."
+    bases:
+      - { word: "ধীরে", base: "ধীর", reading: "dhir", meaning: "slow" }
+      - { word: "বলুন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
   - id: bn-0147
     target: "আবার বলুন।"
     native: "Please say that again."
@@ -105,6 +121,9 @@ cards:
     ipa: "abar bolun"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "আবার", base: "আবার", reading: "ābār", meaning: "again" }
+      - { word: "বলুন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
   - id: bn-0148
     target: "আবার দেখা হবে।"
     native: "See you again."
@@ -113,6 +132,10 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "Literally 'there will be a meeting again'."
+    bases:
+      - { word: "আবার", base: "আবার", reading: "ābār", meaning: "again" }
+      - { word: "দেখা", base: "দেখা", reading: "dekhā", meaning: "to see; a meeting" }
+      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
   - id: bn-0395
     target: "আসসালামু আলাইকুম"
     native: "hello (literally 'peace be upon you')"
@@ -121,6 +144,9 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "The greeting in many Muslim families; many Hindu families say নমস্কার (nômośkār). Neither is universal. The reply is ওয়ালাইকুম আসসালাম (wālāikum āssālām)."
+    bases:
+      - { word: "আসসালামু", base: "আসসালামু", reading: "āssālāmu", meaning: "peace (Arabic, in the greeting)" }
+      - { word: "আলাইকুম", base: "আলাইকুম", reading: "ālāikum", meaning: "upon you (Arabic, in the greeting)" }
   - id: bn-0396
     target: "ওয়ালাইকুম আসসালাম"
     native: "and peace be upon you (the reply)"
@@ -128,6 +154,9 @@ cards:
     ipa: "walaikum assalam"
     pos: "phrase"
     tags: ["greeting"]
+    bases:
+      - { word: "ওয়ালাইকুম", base: "ওয়ালাইকুম", reading: "wālāikum", meaning: "and upon you (Arabic, in the reply)" }
+      - { word: "আসসালাম", base: "আসসালাম", reading: "āssālām", meaning: "peace (Arabic, in the reply)" }
   - id: bn-0397
     target: "খোদা হাফেজ"
     native: "goodbye"
@@ -137,6 +166,9 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "Said in many Muslim families. Also আল্লাহ হাফেজ (āllāh hāphej)."
+    bases:
+      - { word: "খোদা", base: "খোদা", reading: "khodā", meaning: "God (from Persian)" }
+      - { word: "হাফেজ", base: "হাফেজ", reading: "hāphej", meaning: "protector, keeper (from Arabic)" }
   - id: bn-0398
     target: "কী খবর?"
     native: "What's new?"
@@ -145,6 +177,8 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "To someone you know: 'what news?'"
+    bases:
+      - { word: "খবর", base: "খবর", reading: "khôbor", meaning: "news" }
   - id: bn-0399
     target: "মোটামুটি"
     native: "so-so; not bad"
@@ -159,6 +193,10 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "'Talking with you felt good.'"
+    bases:
+      - { word: "আলাপ", base: "আলাপ", reading: "ālāp", meaning: "a talk; getting to know someone" }
+      - { word: "করে", ref: "bn-0102" }
+      - { word: "লাগল", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0401
     target: "ভালো থাকবেন।"
     native: "Take care. (respectful)"
@@ -167,6 +205,8 @@ cards:
     pos: "phrase"
     tags: ["greeting"]
     notes: "To a friend: ভালো থেকো (bhālo theko)."
+    bases:
+      - { word: "থাকবেন", base: "থাকা", reading: "thākā", meaning: "to stay; to live; to be" }
   - id: bn-0402
     target: "আবার আসবেন।"
     native: "Do come again."
@@ -175,6 +215,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "A host's goodbye. To a friend: আবার এসো (ābār eśo)."
+    bases:
+      - { word: "আবার", base: "আবার", reading: "ābār", meaning: "again" }
+      - { word: "আসবেন", base: "আসা", reading: "āśā", meaning: "to come" }
   - id: bn-0403
     target: "মাপ করবেন।"
     native: "Sorry; excuse me."
@@ -184,6 +227,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "For a small mistake, or to get past someone. Also মাফ করবেন (māph kôrben). A formal apology is আমি দুঃখিত (āmi dukkhito)."
+    bases:
+      - { word: "মাপ", base: "মাপ", reading: "māp", meaning: "pardon (also: a measure)" }
+      - { word: "করবেন", ref: "bn-0102" }
   - id: bn-0404
     target: "আমি বুঝেছি।"
     native: "I understand."
@@ -191,6 +237,9 @@ cards:
     ipa: "ami budʒʱetʃʰi"
     pos: "phrase"
     notes: "Literally 'I have understood'. Not understanding is বুঝিনি (bujhini)."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "বুঝেছি", base: "বোঝা", reading: "bojhā", meaning: "to understand" }
   - id: bn-0405
     target: "বাংলায় বলুন।"
     native: "Please say it in Bengali."
@@ -199,3 +248,6 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "বাংলা (bāṅlā) + -য় (-yô), 'in Bengali'."
+    bases:
+      - { word: "বাংলায়", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
+      - { word: "বলুন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }

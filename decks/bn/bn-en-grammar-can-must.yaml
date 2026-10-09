@@ -22,6 +22,11 @@ cards:
     ipa: "ami baŋla bɔlt̪e pari"
     pos: "phrase"
     notes: "'Can' is পারা (pārā) after the verb's -তে (-te) form: বলতে (bôlote), করতে (kôrote), but যেতে (jete), খেতে (khete), দিতে (dite), নিতে (nite) and হতে (hôte)."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
+      - { word: "বলতে", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
+      - { word: "পারি", ref: "bn-0736" }
   - id: bn-0738
     target: "আমি সাঁতার কাটতে পারি না।"
     native: "I can't swim."
@@ -29,6 +34,11 @@ cards:
     ipa: "ami ʃãt̪ar kaʈt̪e pari na"
     pos: "phrase"
     notes: "না (nā) goes after পারি (pāri). Swimming is সাঁতার কাটা (sām̐tār kāṭā), 'to cut a swim'."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "সাঁতার", base: "সাঁতার", reading: "śām̐tār", meaning: "swimming" }
+      - { word: "কাটতে", base: "কাটা", reading: "kāṭā", meaning: "to cut; to swim (সাঁতার কাটা)" }
+      - { word: "পারি", ref: "bn-0736" }
   - id: bn-0739
     target: "আমি যেতে পারিনি।"
     native: "I couldn't go."
@@ -36,6 +46,10 @@ cards:
     ipa: "ami dʒet̪e parini"
     pos: "phrase"
     notes: "'Couldn't' is পারিনি (pārini), the present with -নি (-ni)."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "পারিনি", ref: "bn-0736" }
   - id: bn-0740
     target: "আমাকে একটু সাহায্য করতে পারবেন?"
     native: "Could you help me a little?"
@@ -44,6 +58,10 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "The future পারবেন (pāroben) makes the request polite. পারেন (pāren)? is also right."
+    bases:
+      - { word: "আমাকে", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "করতে", ref: "bn-0102" }
+      - { word: "পারবেন", ref: "bn-0736" }
   - id: bn-0741
     target: "চাওয়া"
     native: "to want"
@@ -58,6 +76,10 @@ cards:
     ipa: "ami baɽi dʒet̪e tʃai"
     pos: "phrase"
     notes: "'Want to': the -তে (-te) form, then চাওয়া (cāoā)."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "চাই", ref: "bn-0741" }
   - id: bn-0743
     target: "আমাকে কাল কাজে যেতে হবে।"
     native: "I have to go to work tomorrow."
@@ -65,6 +87,11 @@ cards:
     ipa: "amake kal kadʒe dʒet̪e ɦɔbe"
     pos: "phrase"
     notes: "'Have to': the one who must takes -কে (-ke), then the -তে (-te) form and হবে (hôbe)."
+    bases:
+      - { word: "আমাকে", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "কাজে", ref: "bn-0198" }
+      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
   - id: bn-0744
     target: "তোমাকে আসতে হবে না।"
     native: "You don't have to come."
@@ -72,6 +99,10 @@ cards:
     ipa: "t̪omake aʃt̪e ɦɔbe na"
     pos: "phrase"
     notes: "না (nā) after হবে (hôbe): no need."
+    bases:
+      - { word: "তোমাকে", base: "তুমি", reading: "tumi", meaning: "you (familiar)" }
+      - { word: "আসতে", base: "আসা", reading: "āśā", meaning: "to come" }
+      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
   - id: bn-0745
     target: "এখানে ছবি তোলা যায়?"
     native: "Can one take photos here?"
@@ -79,6 +110,10 @@ cards:
     ipa: "ekʰane tʃʰobi t̪ola dʒaj"
     pos: "phrase"
     notes: "'Can one': the verbal noun (তোলা) with যায় (jāy)."
+    bases:
+      - { word: "ছবি", base: "ছবি", reading: "chobi", meaning: "a picture; a photo" }
+      - { word: "তোলা", base: "তোলা", reading: "tolā", meaning: "to lift; to take (a photo)" }
+      - { word: "যায়", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0746
     target: "আপনার বিশ্রাম নেওয়া উচিত।"
     native: "You should rest."
@@ -86,3 +121,8 @@ cards:
     ipa: "apnar bisram neoa utʃit̪"
     pos: "phrase"
     notes: "'Should': the one who should takes -র (-rô), then the verbal noun and উচিত (ucit)."
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "বিশ্রাম", base: "বিশ্রাম", reading: "bisrām", meaning: "rest" }
+      - { word: "নেওয়া", base: "নেওয়া", reading: "neoā", meaning: "to take" }
+      - { word: "উচিত", base: "উচিত", reading: "ucit", meaning: "proper; should" }

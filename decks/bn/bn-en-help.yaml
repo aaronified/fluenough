@@ -22,6 +22,8 @@ cards:
     ipa: "ʃaɦadʒdʒo korun"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "করুন", ref: "bn-0102" }
   - id: bn-0373
     target: "বাঁচাও!"
     native: "Help! (in danger)"
@@ -74,12 +76,20 @@ cards:
     reading: "āmi hāriye gechi."
     ipa: "ami ɦarije ɡetʃʰi"
     pos: "phrase"
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "হারিয়ে", base: "হারানো", reading: "hārāno", meaning: "to lose; to get lost" }
+      - { word: "গেছি", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0381
     target: "আমি বুঝতে পারিনি।"
     native: "I didn't understand."
     reading: "āmi bujhte pārini."
     ipa: "ami budʒʱt̪e parini"
     pos: "phrase"
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "বুঝতে", base: "বোঝা", reading: "bojhā", meaning: "to understand" }
+      - { word: "পারিনি", ref: "bn-0736" }
   - id: bn-0382
     target: "বাথরুম কোথায়?"
     native: "Where is the toilet?"
@@ -94,6 +104,9 @@ cards:
     ipa: "amar ʃorir kʰarap"
     pos: "phrase"
     notes: "Literally 'my body is bad'."
+    bases:
+      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "শরীর", base: "শরীর", reading: "śorir", meaning: "body" }
   - id: bn-0727
     target: "জ্বর"
     native: "fever"
@@ -153,3 +166,6 @@ cards:
     reading: "āmār peṭ bêthā kôrche."
     ipa: "amar peʈ bæt̪ʰa kɔrtʃʰe"
     pos: "phrase"
+    bases:
+      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "করছে", ref: "bn-0102" }
