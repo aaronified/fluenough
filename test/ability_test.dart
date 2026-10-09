@@ -41,21 +41,19 @@ void main() {
     expect(a.of('te', DrillMode.recognition), closeTo(0.5, 1e-9));
   });
 
-  test('an answer moves the other skills of a word by the relatedness', () {
+  test('an answer moves a skill research relates to it, by as much', () {
     final a = Abilities.replay([r('te-0001', 4)]);
-    for (final other in [
-      DrillMode.recognition,
-      DrillMode.production,
-      DrillMode.speaking,
-    ]) {
-      expect(
-        a.of('te', other),
-        closeTo(0.5 * Abilities.relatedness, 1e-9),
-        reason: '$other',
-      );
-    }
-    expect(a.of('te', DrillMode.grammar), 0);
+    expect(a.of('te', DrillMode.recognition), closeTo(0.5 * 0.68, 1e-9));
     expect(a.keys, [(language: 'te', mode: DrillMode.listening)]);
+    final b = Abilities.replay([r('te-0001', 4, DrillMode.recognition)]);
+    expect(b.of('te', DrillMode.listening), closeTo(0.5 * 0.68, 1e-9));
+  });
+
+  test('and moves no skill research has not related to it', () {
+    final a = Abilities.replay([r('te-0001', 4)]);
+    expect(a.of('te', DrillMode.production), 0);
+    expect(a.of('te', DrillMode.speaking), 0);
+    expect(a.of('te', DrillMode.grammar), 0);
   });
 
   test('grammar moves only grammar', () {
