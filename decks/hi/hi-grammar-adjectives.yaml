@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-adjectives
-name: "Adjectives: gender and number"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Adjectives in -आ (-ā) agree with their noun; the others never change."
-tags: [beginner, grammar]
+id: "hi-grammar-adjectives"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
 pattern:
-  name: "Adjective agreement"
-  slot_name: "agreement"
   slots: ["with a feminine noun", "with a masculine plural, or before a postposition"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "An adjective ending in -आ (-ā) agrees: अच्छा लड़का (acchā laṛkā), अच्छी लड़की (acchī laṛkī), अच्छे लड़के (acchē laṛkē). Any other adjective stays the same: सुंदर लड़का (sundar laṛkā), सुंदर लड़की (sundar laṛkī). A feminine plural takes the feminine form: अच्छी लड़कियाँ (acchī laṛkiyām̐)."
   entries:
     - lemma: "अच्छा"
-      key: achchhaa
+      key: "achchhaa"
       reading: "acchā"
       ipa: "ətʃtʃʰaː"
-      gloss: "good"
       forms:
         "with a feminine noun": "अच्छी"
         "with a masculine plural, or before a postposition": "अच्छे"
@@ -29,10 +22,9 @@ pattern:
         "with a feminine noun": "ətʃtʃʰiː"
         "with a masculine plural, or before a postposition": "ətʃtʃʰeː"
     - lemma: "बड़ा"
-      key: badaa
+      key: "badaa"
       reading: "baṛā"
       ipa: "bəɽaː"
-      gloss: "big"
       forms:
         "with a feminine noun": "बड़ी"
         "with a masculine plural, or before a postposition": "बड़े"
@@ -43,10 +35,9 @@ pattern:
         "with a feminine noun": "bəɽiː"
         "with a masculine plural, or before a postposition": "bəɽeː"
     - lemma: "छोटा"
-      key: chhotaa
+      key: "chhotaa"
       reading: "chōṭā"
       ipa: "tʃʰoːʈaː"
-      gloss: "small"
       forms:
         "with a feminine noun": "छोटी"
         "with a masculine plural, or before a postposition": "छोटे"
@@ -57,10 +48,9 @@ pattern:
         "with a feminine noun": "tʃʰoːʈiː"
         "with a masculine plural, or before a postposition": "tʃʰoːʈeː"
     - lemma: "नया"
-      key: nayaa
+      key: "nayaa"
       reading: "nayā"
       ipa: "nəjaː"
-      gloss: "new"
       forms:
         "with a feminine noun": "नई"
         "with a masculine plural, or before a postposition": "नए"
@@ -71,10 +61,9 @@ pattern:
         "with a feminine noun": "nəiː"
         "with a masculine plural, or before a postposition": "nəeː"
     - lemma: "सुंदर"
-      key: sundar
+      key: "sundar"
       reading: "sundar"
       ipa: "sʊnd̪ər"
-      gloss: "beautiful"
       forms:
         "with a feminine noun": "सुंदर"
         "with a masculine plural, or before a postposition": "सुंदर"
@@ -85,10 +74,9 @@ pattern:
         "with a feminine noun": "sʊnd̪ər"
         "with a masculine plural, or before a postposition": "sʊnd̪ər"
     - lemma: "लाल"
-      key: laal
+      key: "laal"
       reading: "lāl"
       ipa: "laːl"
-      gloss: "red"
       forms:
         "with a feminine noun": "लाल"
         "with a masculine plural, or before a postposition": "लाल"

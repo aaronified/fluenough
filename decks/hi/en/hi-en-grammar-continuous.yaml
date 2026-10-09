@@ -1,0 +1,16 @@
+schema: 1
+id: "hi-en-grammar-continuous"
+kind: "layer"
+core: "hi-grammar-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present continuous"
+license: "CC0-1.0"
+description: "I am doing, she is watching: what is happening now."
+pattern:
+  name: "Present continuous"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "karnaa": "to do"
+    "dekhnaa": "to watch"
+  notes: "The bare stem, then रहा (rahā), रही (rahī) or रहे (rahē) for gender and number, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐)."

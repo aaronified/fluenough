@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-irregular
-name: "Irregular verbs"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The common verbs whose past and polite request break the pattern."
-tags: [beginner, grammar]
+id: "hi-grammar-irregular"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
 pattern:
-  name: "Irregular verbs"
-  slot_name: "form"
   slots: ["past, masculine", "past, feminine", "past, masculine plural", "polite request"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "These are among the most used verbs in Hindi, so they are worth learning by heart. A regular verb forms its past from its stem (बोलना (bōlnā) → बोला (bōlā)) and its polite request with -इए (-iē) (बोलिए (bōliē))."
   entries:
     - lemma: "करना"
-      key: karnaa
+      key: "karnaa"
       reading: "karnā"
       ipa: "kərnaː"
-      gloss: "to do"
       forms:
         "past, masculine": "किया"
         "past, feminine": "की"
@@ -35,10 +28,9 @@ pattern:
         "past, masculine plural": "kɪeː"
         "polite request": "kiːdʒɪeː"
     - lemma: "देना"
-      key: denaa
+      key: "denaa"
       reading: "dēnā"
       ipa: "d̪eːnaː"
-      gloss: "to give"
       forms:
         "past, masculine": "दिया"
         "past, feminine": "दी"
@@ -55,10 +47,9 @@ pattern:
         "past, masculine plural": "d̪ɪeː"
         "polite request": "d̪iːdʒɪeː"
     - lemma: "लेना"
-      key: lenaa
+      key: "lenaa"
       reading: "lēnā"
       ipa: "leːnaː"
-      gloss: "to take"
       forms:
         "past, masculine": "लिया"
         "past, feminine": "ली"
@@ -75,10 +66,9 @@ pattern:
         "past, masculine plural": "lɪeː"
         "polite request": "liːdʒɪeː"
     - lemma: "पीना"
-      key: piinaa
+      key: "piinaa"
       reading: "pīnā"
       ipa: "piːnaː"
-      gloss: "to drink"
       forms:
         "past, masculine": "पिया"
         "past, feminine": "पी"
@@ -95,10 +85,9 @@ pattern:
         "past, masculine plural": "pɪeː"
         "polite request": "piːdʒɪeː"
     - lemma: "जाना"
-      key: jaanaa
+      key: "jaanaa"
       reading: "jānā"
       ipa: "dʒaːnaː"
-      gloss: "to go"
       forms:
         "past, masculine": "गया"
         "past, feminine": "गई"
@@ -115,10 +104,9 @@ pattern:
         "past, masculine plural": "ɡəeː"
         "polite request": "dʒaːɪeː"
     - lemma: "होना"
-      key: honaa
+      key: "honaa"
       reading: "hōnā"
       ipa: "ɦoːnaː"
-      gloss: "to be, to happen"
       forms:
         "past, masculine": "हुआ"
         "past, feminine": "हुई"

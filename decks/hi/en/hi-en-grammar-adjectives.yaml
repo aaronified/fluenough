@@ -1,0 +1,20 @@
+schema: 1
+id: "hi-en-grammar-adjectives"
+kind: "layer"
+core: "hi-grammar-adjectives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adjectives: gender and number"
+license: "CC0-1.0"
+description: "Adjectives in -आ (-ā) agree with their noun; the others never change."
+pattern:
+  name: "Adjective agreement"
+  slot_name: "agreement"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "achchhaa": "good"
+    "badaa": "big"
+    "chhotaa": "small"
+    "nayaa": "new"
+    "sundar": "beautiful"
+    "laal": "red"
+  notes: "An adjective ending in -आ (-ā) agrees: अच्छा लड़का (acchā laṛkā), अच्छी लड़की (acchī laṛkī), अच्छे लड़के (acchē laṛkē). Any other adjective stays the same: सुंदर लड़का (sundar laṛkā), सुंदर लड़की (sundar laṛkī). A feminine plural takes the feminine form: अच्छी लड़कियाँ (acchī laṛkiyām̐)."

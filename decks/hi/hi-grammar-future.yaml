@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-future
-name: "Future tense"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I will go, they will speak."
-tags: [beginner, grammar]
+id: "hi-grammar-future"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
 pattern:
-  name: "Future"
-  slot_name: "person and gender"
   slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The stem, a vowel for the person (-ऊँ (-ūm̐), -ओ (-ō), -ए (-ē), -एँ (-ēm̐)), then -गा (-gā), -गी (-gī) or -गे (-gē) for gender and number. Some writers spell जाएगा (jāēgā) as जायेगा (jāyēgā)."
   entries:
     - lemma: "जाना"
-      key: jaanaa
+      key: "jaanaa"
       reading: "jānā"
       ipa: "dʒaːnaː"
-      gloss: "to go"
       forms:
         "मैं (m)": "जाऊँगा"
         "मैं (f)": "जाऊँगी"
@@ -59,10 +52,9 @@ pattern:
         "वे (m)": "dʒaːẽːɡeː"
         "वे (f)": "dʒaːẽːɡiː"
     - lemma: "बोलना"
-      key: bolnaa
+      key: "bolnaa"
       reading: "bōlnā"
       ipa: "boːlnaː"
-      gloss: "to speak"
       forms:
         "मैं (m)": "बोलूँगा"
         "मैं (f)": "बोलूँगी"

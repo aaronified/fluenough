@@ -1,0 +1,20 @@
+schema: 1
+id: "hi-en-grammar-irregular"
+kind: "layer"
+core: "hi-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs"
+license: "CC0-1.0"
+description: "The common verbs whose past and polite request break the pattern."
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "karnaa": "to do"
+    "denaa": "to give"
+    "lenaa": "to take"
+    "piinaa": "to drink"
+    "jaanaa": "to go"
+    "honaa": "to be, to happen"
+  notes: "These are among the most used verbs in Hindi, so they are worth learning by heart. A regular verb forms its past from its stem (बोलना (bōlnā) → बोला (bōlā)) and its polite request with -इए (-iē) (बोलिए (bōliē))."

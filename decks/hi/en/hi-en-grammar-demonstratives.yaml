@@ -1,0 +1,24 @@
+schema: 1
+id: "hi-en-grammar-demonstratives"
+kind: "layer"
+core: "hi-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This and that"
+license: "CC0-1.0"
+description: "यह (yah) and वह (vah), and the words built on them: here and there, this way and that, so much. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "person": "a person or a thing"
+    "people": "people or things"
+    "oblique": "before में (mēm̐), से (sē), को (kō)"
+    "possessive": "the owner"
+    "object": "the object"
+    "place": "place"
+    "direction": "direction"
+    "manner": "manner"
+    "amount": "amount"
+  notes: "Words for near things start with य- (ya-) or इ- (or ऐ- (ai-): ऐसा (aisā)), words for far ones with व- (va-) or उ- (or वै- (vai-): वैसा (vaisā)). Before a postposition, यह (yah) and वह (vah) become इस (is) and उस (us): इस कमरे में (is kamrē mēm̐), in this room. In speech यह (yah) is often said ये (yē), and वह वो (vah vō)."

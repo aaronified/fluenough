@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-present
-name: "Present tense"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I go, she speaks: the everyday present, by person and gender."
-tags: [beginner, grammar]
+id: "hi-grammar-present"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
 pattern:
-  name: "Present habitual"
-  slot_name: "person and gender"
   slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The verb's stem, then -ता (-tā), -ती (-tī) or -ते (-tē) for the doer's gender and number, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐). वह (vah), हम (ham), आप (āp) and वे (vē) do not show gender; the verb does."
   entries:
     - lemma: "जाना"
-      key: jaanaa
+      key: "jaanaa"
       reading: "jānā"
       ipa: "dʒaːnaː"
-      gloss: "to go"
       forms:
         "मैं (m)": "जाता हूँ"
         "मैं (f)": "जाती हूँ"
@@ -59,10 +52,9 @@ pattern:
         "वे (m)": "dʒaːt̪eː ɦɛ̃ː"
         "वे (f)": "dʒaːt̪iː ɦɛ̃ː"
     - lemma: "बोलना"
-      key: bolnaa
+      key: "bolnaa"
       reading: "bōlnā"
       ipa: "boːlnaː"
-      gloss: "to speak"
       forms:
         "मैं (m)": "बोलता हूँ"
         "मैं (f)": "बोलती हूँ"
@@ -103,10 +95,9 @@ pattern:
         "वे (m)": "boːlt̪eː ɦɛ̃ː"
         "वे (f)": "boːlt̪iː ɦɛ̃ː"
     - lemma: "खाना"
-      key: khaanaa
+      key: "khaanaa"
       reading: "khānā"
       ipa: "kʰaːnaː"
-      gloss: "to eat"
       forms:
         "मैं (m)": "खाता हूँ"
         "मैं (f)": "खाती हूँ"

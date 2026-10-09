@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-past-more
-name: "Was doing, used to, had gone"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Three more pasts: what was going on, what used to happen, and what had already happened. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "hi-grammar-past-more"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Past continuous, habitual past and past perfect"
-  slot_name: "person and gender"
   slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Each joins था (thā), थी (thī), थे (thē) or थीं (thīm̐) to a form you know: कर रहा था (kar rahā thā), was doing; करता था (kartā thā), used to do; गया था (gayā thā), had gone. गया था (gayā thā) is also the plain past for something further back: पिछले साल मैं दिल्ली गया था (pichlē sāl maim̐ dillī gayā thā), I went to Delhi last year."
   entries:
     - lemma: "करना (karnā), was doing"
-      key: karnaa-rahaa
+      key: "karnaa-rahaa"
       reading: "karnā, was doing"
       ipa: "kərnaː"
-      gloss: "to do"
       forms:
         "मैं (m)": "कर रहा था"
         "मैं (f)": "कर रही थी"
@@ -59,10 +52,9 @@ pattern:
         "वे (m)": "kər rəɦeː t̪ʰeː"
         "वे (f)": "kər rəɦiː t̪ʰĩː"
     - lemma: "करना (karnā), used to"
-      key: karnaa-taa
+      key: "karnaa-taa"
       reading: "karnā, used to"
       ipa: "kərnaː"
-      gloss: "to do"
       forms:
         "मैं (m)": "करता था"
         "मैं (f)": "करती थी"
@@ -103,10 +95,9 @@ pattern:
         "वे (m)": "kərt̪eː t̪ʰeː"
         "वे (f)": "kərt̪iː t̪ʰĩː"
     - lemma: "जाना (jānā), had gone"
-      key: jaanaa-gayaa
+      key: "jaanaa-gayaa"
       reading: "jānā, had gone"
       ipa: "dʒaːnaː"
-      gloss: "to go"
       forms:
         "मैं (m)": "गया था"
         "मैं (f)": "गई थी"

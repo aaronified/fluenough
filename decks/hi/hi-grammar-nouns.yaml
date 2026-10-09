@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-nouns
-name: "Nouns: plural and oblique"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "How a noun changes for the plural, and before a postposition."
-tags: [beginner, grammar]
+id: "hi-grammar-nouns"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
 pattern:
-  name: "Noun forms"
-  slot_name: "form"
   slots: ["plural", "singular, before a postposition", "plural, before a postposition"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Before a postposition such as में (mēm̐), से (sē) or को (kō), a noun takes its oblique form: कमरा (kamrā) → कमरे में (kamrē mēm̐), in the room. Masculine nouns in -आ (-ā) change; other masculine nouns only change in the oblique plural, which always ends in -ओं (-ōm̐). Feminine nouns change only in the plural."
   entries:
     - lemma: "लड़का"
-      key: ladkaa
+      key: "ladkaa"
       reading: "laṛkā"
       ipa: "ləɽkaː"
-      gloss: "boy, m"
       forms:
         "plural": "लड़के"
         "singular, before a postposition": "लड़के"
@@ -32,10 +25,9 @@ pattern:
         "singular, before a postposition": "ləɽkeː"
         "plural, before a postposition": "ləɽkõː"
     - lemma: "कमरा"
-      key: kamraa
+      key: "kamraa"
       reading: "kamrā"
       ipa: "kəmraː"
-      gloss: "room, m"
       forms:
         "plural": "कमरे"
         "singular, before a postposition": "कमरे"
@@ -49,10 +41,9 @@ pattern:
         "singular, before a postposition": "kəmreː"
         "plural, before a postposition": "kəmrõː"
     - lemma: "घर"
-      key: ghar
+      key: "ghar"
       reading: "ghar"
       ipa: "ɡʱər"
-      gloss: "house, m"
       forms:
         "plural": "घर"
         "singular, before a postposition": "घर"
@@ -66,10 +57,9 @@ pattern:
         "singular, before a postposition": "ɡʱər"
         "plural, before a postposition": "ɡʱərõː"
     - lemma: "आदमी"
-      key: aadmii
+      key: "aadmii"
       reading: "ādmī"
       ipa: "aːd̪miː"
-      gloss: "man, m"
       forms:
         "plural": "आदमी"
         "singular, before a postposition": "आदमी"
@@ -83,10 +73,9 @@ pattern:
         "singular, before a postposition": "aːd̪miː"
         "plural, before a postposition": "aːd̪mɪjõː"
     - lemma: "लड़की"
-      key: ladkii
+      key: "ladkii"
       reading: "laṛkī"
       ipa: "ləɽkiː"
-      gloss: "girl, f"
       forms:
         "plural": "लड़कियाँ"
         "singular, before a postposition": "लड़की"
@@ -100,10 +89,9 @@ pattern:
         "singular, before a postposition": "ləɽkiː"
         "plural, before a postposition": "ləɽkɪjõː"
     - lemma: "किताब"
-      key: kitaab
+      key: "kitaab"
       reading: "kitāb"
       ipa: "kɪt̪aːb"
-      gloss: "book, f"
       forms:
         "plural": "किताबें"
         "singular, before a postposition": "किताब"
@@ -117,10 +105,9 @@ pattern:
         "singular, before a postposition": "kɪt̪aːb"
         "plural, before a postposition": "kɪt̪aːbõː"
     - lemma: "बहन"
-      key: bahan
+      key: "bahan"
       reading: "bahan"
       ipa: "bəɦən"
-      gloss: "sister, f"
       forms:
         "plural": "बहनें"
         "singular, before a postposition": "बहन"
@@ -134,10 +121,9 @@ pattern:
         "singular, before a postposition": "bəɦən"
         "plural, before a postposition": "bəɦnõː"
     - lemma: "भाषा"
-      key: bhaashaa
+      key: "bhaashaa"
       reading: "bhāśā"
       ipa: "bʱaːʃaː"
-      gloss: "language, f"
       forms:
         "plural": "भाषाएँ"
         "singular, before a postposition": "भाषा"
