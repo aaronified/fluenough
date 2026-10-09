@@ -13,6 +13,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैंने", base: "मैंने", reading: "mainnē" }
+      - { word: "खाया", base: "खाया", reading: "khāyā" }
   - id: "hi-0365"
     target: "मैंने रोटी खाई।"
     reading: "mainnē rōṭī khāī."
@@ -20,6 +23,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैंने", base: "मैंने", reading: "mainnē" }
+      - { word: "खाई", base: "खाई", reading: "khāī" }
   - id: "hi-0366"
     target: "यह मेरी गाड़ी है।"
     reading: "yah mērī gāṛī hai."
@@ -27,6 +33,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "यह", base: "यह", reading: "yah" }
+      - { word: "मेरी", base: "मेरी", reading: "mērī" }
+      - { word: "गाड़ी", base: "गाड़ी", reading: "gāṛī" }
   - id: "hi-0367"
     target: "वह आ रही है।"
     reading: "vah ā rahī hai."
@@ -34,6 +44,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "वह", base: "वह", reading: "vah" }
+      - { word: "रही", base: "रही", reading: "rahī" }
   - id: "hi-0368"
     target: "पानी ठंडा है।"
     reading: "pānī ṭhaṇḍā hai."
@@ -41,6 +54,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ठंडा", base: "ठंडा", reading: "ṭhaṇḍā" }
   - id: "hi-0369"
     target: "चाय ठंडी है।"
     reading: "cāy ṭhaṇḍī hai."
@@ -48,6 +63,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ठंडी", base: "ठंडी", reading: "ṭhaṇḍī" }
   - id: "hi-0370"
     target: "मुझे भूख लगी है।"
     reading: "mujhē bhūkh lagī hai."
@@ -55,6 +72,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "भूख", base: "भूख", reading: "bhūkh" }
+      - { word: "लगी", base: "लगी", reading: "lagī" }
   - id: "hi-0371"
     target: "मुझे जाना है।"
     reading: "mujhē jānā hai."
@@ -62,6 +83,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0372"
     target: "मुझे आपसे बात करनी है।"
     reading: "mujhē āpsē bāt karnī hai."
@@ -69,6 +93,11 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "आपसे", ref: "hi-0134" }
+      - { word: "बात", base: "बात", reading: "bāt" }
+      - { word: "करनी", base: "करनी", reading: "karnī" }
   - id: "hi-0373"
     target: "आप बैठिए।"
     reading: "āp baiṭhiē."
@@ -76,3 +105,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बैठिए", base: "बैठिए", reading: "baiṭhiē" }

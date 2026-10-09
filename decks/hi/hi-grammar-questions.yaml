@@ -13,6 +13,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "बोलते", base: "बोलते", reading: "bōltē" }
   - id: "hi-0168"
     target: "आप चाय पिएँगे?"
     reading: "āp cāy piēm̐gē?"
@@ -20,6 +23,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "पिएँगे", base: "पिएँगे", reading: "piēm̐gē" }
   - id: "hi-0169"
     target: "यह क्या है?"
     reading: "yah kyā hai?"
@@ -27,6 +32,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "यह", base: "यह", reading: "yah" }
   - id: "hi-0170"
     target: "आप कहाँ जा रहे हैं?"
     reading: "āp kahām̐ jā rahē haim̐?"
@@ -34,21 +41,32 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "जा", base: "जा", reading: "jā" }
+      - { word: "रहे", base: "रहे", reading: "rahē" }
   - id: "hi-0171"
     target: "वह कौन है?"
     reading: "vah kaun hai?"
     ipa: "ʋəɦ kɔːn ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "वह", base: "वह", reading: "vah" }
   - id: "hi-0172"
     target: "आप कब आएँगे?"
     reading: "āp kab āēm̐gē?"
     ipa: "aːp kəb aːẽːɡeː"
     pos: "phrase"
+    bases:
+      - { word: "आएँगे", base: "आएँगे", reading: "āēm̐gē" }
   - id: "hi-0173"
     target: "आप हिंदी क्यों सीख रहे हैं?"
     reading: "āp hindī kyōm̐ sīkh rahē haim̐?"
     ipa: "aːp ɦɪnd̪iː kjõː siːkʰ rəɦeː ɦɛ̃ː"
     pos: "phrase"
+    bases:
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "सीख", base: "सीख", reading: "sīkh" }
+      - { word: "रहे", base: "रहे", reading: "rahē" }
   - id: "hi-0174"
     target: "आपके कितने बच्चे हैं?"
     reading: "āpkē kitnē baccē haim̐?"
@@ -56,6 +74,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आपके", ref: "hi-0134" }
+      - { word: "कितने", ref: "hi-0163" }
   - id: "hi-0175"
     target: "आप कैसे आए?"
     reading: "āp kaisē āē?"
@@ -63,6 +84,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आए", base: "आए", reading: "āē" }
   - id: "hi-0176"
     target: "अच्छा है न?"
     reading: "acchā hai na?"
@@ -70,3 +93,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "अच्छा", base: "अच्छा", reading: "acchā" }

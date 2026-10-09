@@ -14,6 +14,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैंने", base: "मैंने", reading: "mainnē" }
+      - { word: "पी", base: "पी", reading: "pī" }
   - id: "hi-0481"
     target: "उसने किताब पढ़ी।"
     reading: "usnē kitāb paṛhī."
@@ -21,11 +24,19 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उसने", base: "उसने", reading: "usnē" }
+      - { word: "किताब", base: "किताब", reading: "kitāb" }
+      - { word: "पढ़ी", ref: "hi-0114" }
   - id: "hi-0482"
     target: "हमने फ़िल्म देखी।"
     reading: "hamnē film dēkhī."
     ipa: "ɦəmneː fɪlm d̪eːkʰiː"
     pos: "phrase"
+    bases:
+      - { word: "हमने", ref: "hi-0053" }
+      - { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }
+      - { word: "देखी", base: "देखी", reading: "dēkhī" }
   - id: "hi-0483"
     target: "राम ने पत्र लिखा।"
     reading: "rām nē patra likhā."
@@ -33,16 +44,27 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "राम", base: "राम", reading: "rām" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "पत्र", base: "पत्र", reading: "patra" }
+      - { word: "लिखा", base: "लिखा", reading: "likhā" }
   - id: "hi-0484"
     target: "आपने क्या कहा?"
     reading: "āpnē kyā kahā?"
     ipa: "aːpneː kjaː kəɦaː"
     pos: "phrase"
+    bases:
+      - { word: "आपने", ref: "hi-0134" }
+      - { word: "कहा", base: "कहा", reading: "kahā" }
   - id: "hi-0485"
     target: "उन्होंने खाना खाया।"
     reading: "unhōnnē khānā khāyā."
     ipa: "ʊnɦoːnneː kʰaːnaː kʰaːjaː"
     pos: "phrase"
+    bases:
+      - { word: "उन्होंने", base: "उन्होंने", reading: "unhōnnē" }
+      - { word: "खाया", base: "खाया", reading: "khāyā" }
   - id: "hi-0486"
     target: "मैंने उसे देखा।"
     reading: "mainnē usē dēkhā."
@@ -50,6 +72,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैंने", base: "मैंने", reading: "mainnē" }
+      - { word: "उसे", base: "उसे", reading: "usē" }
+      - { word: "देखा", base: "देखा", reading: "dēkhā" }
   - id: "hi-0487"
     target: "मैं आया।"
     reading: "maim̐ āyā."
@@ -57,3 +83,6 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "आया", base: "आया", reading: "āyā" }

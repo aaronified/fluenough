@@ -19,16 +19,26 @@ cards:
     reading: "mujhē miṭhāī pasand hai."
     ipa: "mʊdʒʱeː mɪʈʰaːiː pəsənd̪ ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "मिठाई", base: "मिठाई", reading: "miṭhāī" }
   - id: "hi-0471"
     target: "मुझे यह गाना पसंद नहीं है।"
     reading: "mujhē yah gānā pasand nahīm̐ hai."
     ipa: "mʊdʒʱeː jəɦ ɡaːnaː pəsənd̪ nəɦĩː ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "यह", base: "यह", reading: "yah" }
+      - { word: "गाना", base: "गाना", reading: "gānā" }
   - id: "hi-0472"
     target: "क्या आपको दिल्ली पसंद है?"
     reading: "kyā āpkō dillī pasand hai?"
     ipa: "kjaː aːpkoː d̪ɪlliː pəsənd̪ ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "आपको", ref: "hi-0134" }
+      - { word: "दिल्ली", base: "दिल्ली", reading: "dillī" }
   - id: "hi-0473"
     target: "मुझे अच्छा लगता है।"
     reading: "mujhē acchā lagtā hai."
@@ -36,11 +46,19 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "अच्छा", base: "अच्छा", reading: "acchā" }
+      - { word: "लगता", base: "लगता", reading: "lagtā" }
   - id: "hi-0474"
     target: "बहुत अच्छा लगा।"
     reading: "bahut acchā lagā."
     ipa: "bəɦʊt̪ ətʃtʃʰaː ləɡaː"
     pos: "phrase"
+    bases:
+      - { word: "बहुत", base: "बहुत", reading: "bahut" }
+      - { word: "अच्छा", base: "अच्छा", reading: "acchā" }
+      - { word: "लगा", base: "लगा", reading: "lagā" }
   - id: "hi-0475"
     target: "प्यार"
     reading: "pyār"
@@ -54,16 +72,27 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "तुमसे", base: "तुमसे", reading: "tumsē" }
+      - { word: "करता", base: "करता", reading: "kartā" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0477"
     target: "उसे क्रिकेट खेलना पसंद है।"
     reading: "usē krikēṭ khēlnā pasand hai."
     ipa: "ʊseː krɪkeːʈ kʰeːlnaː pəsənd̪ ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "उसे", base: "उसे", reading: "usē" }
+      - { word: "क्रिकेट", base: "क्रिकेट", reading: "krikēṭ" }
+      - { word: "खेलना", base: "खेलना", reading: "khēlnā" }
   - id: "hi-0478"
     target: "मुझे तीखा खाना पसंद नहीं।"
     reading: "mujhē tīkhā khānā pasand nahīm̐."
     ipa: "mʊdʒʱeː t̪iːkʰaː kʰaːnaː pəsənd̪ nəɦĩː"
     pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
   - id: "hi-0479"
     target: "पसंदीदा"
     reading: "pasandīdā"

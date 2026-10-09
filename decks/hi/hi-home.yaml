@@ -45,6 +45,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सोने", ref: "hi-0450" }
   - id: "hi-0424"
     target: "बैठक"
     reading: "baiṭhak"
@@ -156,8 +158,15 @@ cards:
     reading: "ghar kē sāmnē ēk pārk hai."
     ipa: "ɡʱər keː saːmneː eːk paːrk ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "सामने", base: "सामने", reading: "sāmnē" }
+      - { word: "पार्क", base: "पार्क", reading: "pārk" }
   - id: "hi-0440"
     target: "हमारा मोहल्ला बहुत शांत है।"
     reading: "hamārā mōhallā bahut śānt hai."
     ipa: "ɦəmaːraː moːɦəllaː bəɦʊt̪ ʃaːnt̪ ɦɛː"
     pos: "phrase"
+    bases:
+      - { word: "हमारा", ref: "hi-0053" }
+      - { word: "बहुत", base: "बहुत", reading: "bahut" }
+      - { word: "शांत", base: "शांत", reading: "śānt" }

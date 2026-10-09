@@ -137,18 +137,25 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "करते", base: "करते", reading: "kartē" }
   - id: "hi-0416"
     target: "मैं टीचर हूँ।"
     reading: "maim̐ ṭīcar hūm̐."
     ipa: "mɛ̃ː ʈiːtʃər ɦũː"
     alt_target: ["मैं अध्यापक हूँ।", "मैं अध्यापिका हूँ।"]
     pos: "phrase"
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0417"
     target: "आप कहाँ काम करते हैं?"
     reading: "āp kahām̐ kām kartē haim̐?"
     ipa: "aːp kəɦãː kaːm kərt̪eː ɦɛ̃ː"
     alt_target: ["आप कहाँ काम करती हैं?"]
     pos: "phrase"
+    bases:
+      - { word: "करते", base: "करते", reading: "kartē" }
   - id: "hi-0418"
     target: "मैं एक दफ़्तर में काम करता हूँ।"
     reading: "maim̐ ēk daftar mēm̐ kām kartā hūm̐."
@@ -156,3 +163,7 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "करता", base: "करता", reading: "kartā" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }

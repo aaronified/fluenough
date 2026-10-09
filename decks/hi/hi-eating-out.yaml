@@ -45,6 +45,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
   - id: "hi-0337"
     target: "और"
     reading: "aur"
@@ -79,8 +81,15 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बिल", base: "बिल", reading: "bil" }
+      - { word: "लाइए", base: "लाइए", reading: "lāiē" }
   - id: "hi-0342"
     target: "बहुत अच्छा था।"
     reading: "bahut acchā thā."
     ipa: "bəɦʊt̪ ətʃtʃʰaː t̪ʰaː"
     pos: "phrase"
+    bases:
+      - { word: "बहुत", base: "बहुत", reading: "bahut" }
+      - { word: "अच्छा", base: "अच्छा", reading: "acchā" }
+      - { word: "था", base: "था", reading: "thā" }
