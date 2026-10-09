@@ -561,6 +561,10 @@ Future<void> showSuggestSheet(
 /// the proposal's part and text; saved, it is this reviewer's own
 /// suggestion, which becomes a new proposal, and the answer to [from] is
 /// "edit". The proposal edited keeps waiting.
+///
+/// A card keeps one suggestion: where saving would replace one already
+/// made on another part, or one made before an Edit, the sheet says so and
+/// shows it.
 class SuggestSheet extends StatefulWidget {
   const SuggestSheet({
     super.key,
@@ -583,6 +587,9 @@ class _SuggestSheetState extends State<SuggestSheet> {
   final TextEditingController _why = TextEditingController();
   bool _seeded = false;
 
+  /// The suggestion already kept on the card, which saving replaces.
+  Suggestion? _old;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -591,6 +598,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
     final old = AppScope.read(context).reviewing
         .reviewOf(widget.deck, widget.card)
         ?.suggestion;
+    _old = old;
     final from = widget.from;
     if (from != null) {
       _part = partOf(from.field);
@@ -628,6 +636,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
     final now = partText(widget.card, _part);
     final changed =
         _text.text.trim().isNotEmpty && _text.text.trim() != (now ?? '');
+    final old = _old;
+    final replaces = old != null && (widget.from != null || old.part != _part);
     return _FormSheet(
       title: l10n.reviewSuggest,
       about: _about(context, widget.card, language),
@@ -656,6 +666,26 @@ class _SuggestSheetState extends State<SuggestSheet> {
             }
           : null,
       children: <Widget>[
+        if (replaces) ...<Widget>[
+          Container(
+            padding: const EdgeInsetsDirectional.all(12),
+            decoration: BoxDecoration(
+              color: scheme.tertiaryContainer,
+              borderRadius: BorderRadius.circular(AppRadii.small),
+            ),
+            child: Text.rich(
+              quotingTarget(
+                l10n.reviewSuggestReplaces(partName(l10n, old.part), old.text),
+                <String>[if (old.part == CardPart.word) old.text],
+                language,
+              ),
+              style: theme.textTheme.bodyMedium!.copyWith(
+                color: scheme.onTertiaryContainer,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
         Text(l10n.reviewSuggestWhich, style: theme.textTheme.titleSmall),
         const SizedBox(height: 8),
         Wrap(

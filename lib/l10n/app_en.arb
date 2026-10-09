@@ -6416,6 +6416,20 @@
   "@reviewSuggestWhy": {
     "description": "Label of the field for the reason."
   },
+  "reviewSuggestReplaces": "A card keeps one suggestion of yours. Saving replaces the one on its {part}: {text}",
+  "@reviewSuggestReplaces": {
+    "description": "In Suggest a change, when saving would replace the reviewer's earlier suggestion on the card, which is shown.",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "meaning"
+      },
+      "text": {
+        "type": "String",
+        "example": "the dog"
+      }
+    }
+  },
   "reviewSuggestKept": "Kept on this phone until you send your review.",
   "@reviewSuggestKept": {
     "description": "Under the fields of Suggest a change."
