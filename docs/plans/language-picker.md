@@ -178,6 +178,12 @@ start, with no version built on the bundled decks:
   chosen one goes through placement; "Learn the script" starts on; after
   a cancelled download the rest comes from Settings > Deck downloads, the
   course working with what arrived.
+- **Alpha and beta, not "Just started"** (owner, 2026-10-09: "It is not
+  'just started', start implies starting action by the learner. It is a
+  'beta deck', or alpha. I guess till A1, decks should be called alpha.
+  Post A1, they will be beta"). A course is tagged **Alpha** until every
+  A1 unit of its plan is written, **Beta** from then until every B1 unit
+  is written, and carries no tag after that.
 - **Both progresses on the card:** the course's completeness ("62% of B1
   written") and, for a language the learner learns, their own ("You: 18%
   of B1").
