@@ -5,6 +5,7 @@ import '../models/card.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
+import '../models/proposal.dart';
 import '../models/reading.dart';
 import '../models/rule.dart';
 
@@ -147,6 +148,8 @@ const _cardFields = {
   'bases',
   'rules',
   'wiktionary',
+  // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
+  'proposed',
 };
 
 /// A layer-only card's fields: a single-file card's, its id being its key.
@@ -165,6 +168,8 @@ const _refFields = {
   'examples',
   'modes',
   'wiktionary',
+  // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
+  'proposed',
 };
 
 // The B1 format (spec sections 2 to 8).
@@ -218,6 +223,8 @@ const _coreCardFields = {
   'phrasebook',
   'bases',
   'rules',
+  // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
+  'proposed',
 };
 const _coreRefFields = {
   'ref',
@@ -227,6 +234,8 @@ const _coreRefFields = {
   'modes',
   'examples',
   'notes',
+  // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
+  'proposed',
 };
 const _coreExampleFields = {'target', 'reading', 'ipa', 'bases'};
 const _layerEntryFields = {
@@ -236,6 +245,8 @@ const _layerEntryFields = {
   'examples',
   'bases',
   'wiktionary',
+  // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
+  'proposed',
 };
 const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words', 'region'};
 const _noteWordFields = {'word', 'reading', 'ipa'};
@@ -510,6 +521,9 @@ class _Reader {
       source: deckSource,
       theme: theme,
       refs: refs,
+      proposals: fields.has('cards')
+          ? proposalsIn(fields.require('cards'))
+          : const <String, List<Proposal>>{},
     );
   }
 
@@ -1275,6 +1289,9 @@ class _Reader {
       pattern: pattern,
       table: table,
       rules: rules,
+      proposals: fields.has('cards')
+          ? proposalsIn(fields.require('cards'))
+          : const <String, List<Proposal>>{},
     );
   }
 
@@ -1682,6 +1699,9 @@ class _Reader {
       node: fields.map,
       idNode: idNode,
       coreNode: coreNode,
+      proposals: fields.has('cards')
+          ? proposalsIn(fields.require('cards'))
+          : const <String, List<Proposal>>{},
     );
   }
 
@@ -2584,3 +2604,81 @@ final _coreFloat = RegExp(
   r'^(?:[-+]?(?:\.[0-9]+|[0-9]+(?:\.[0-9]*)?)(?:[eE][-+]?[0-9]+)?'
   r'|[-+]?\.(?:inf|Inf|INF)|\.(?:nan|NaN|NAN))$',
 );
+
+/// The proposals on the cards of [cards], a deck's `cards` list or a
+/// layer's `cards` mapping, by card id (ADR-0038). Read leniently: a
+/// proposal is not deck content, and one that cannot be read is left out
+/// rather than failing the deck for learners. The validator checks them.
+Map<String, List<Proposal>> proposalsIn(YamlNode cards) {
+  final out = <String, List<Proposal>>{};
+  void read(String? card, Object? entry) {
+    if (card == null || entry is! YamlMap) return;
+    final items = entry.nodes['proposed'];
+    if (items is! YamlList) return;
+    for (final item in items.nodes) {
+      final proposal = _proposal(card, item);
+      if (proposal != null) (out[card] ??= <Proposal>[]).add(proposal);
+    }
+  }
+
+  if (cards is YamlList) {
+    for (final entry in cards.nodes) {
+      if (entry is! YamlMap) continue;
+      final id = _value(
+        entry.nodes['id'] ?? entry.nodes['ref'] ?? YamlScalar.wrap(null),
+      );
+      read(id is String ? id : null, entry);
+    }
+  } else if (cards is YamlMap) {
+    for (final MapEntry(:key, :value) in cards.nodes.entries) {
+      final id = key is YamlNode ? _value(key) : key;
+      read(id is String ? id : null, value);
+    }
+  }
+  return Map<String, List<Proposal>>.unmodifiable(<String, List<Proposal>>{
+    for (final MapEntry(:key, :value) in out.entries)
+      key: List<Proposal>.unmodifiable(value),
+  });
+}
+
+Proposal? _proposal(String card, YamlNode item) {
+  if (item is! YamlMap) return null;
+  String? text(String key) {
+    final node = item.nodes[key];
+    if (node == null) return null;
+    final value = _value(node);
+    return value is String ? value : null;
+  }
+
+  final id = text('id');
+  final field = ProposalField.values.asNameMap()[text('field')];
+  final now = text('now');
+  final proposed = text('text');
+  final by = text('by');
+  final date = text('date');
+  if (id == null ||
+      field == null ||
+      now == null ||
+      proposed == null ||
+      by == null ||
+      date == null) {
+    return null;
+  }
+  final accepted = item.nodes['accepted'];
+  return Proposal(
+    id: id,
+    card: card,
+    field: field,
+    now: now,
+    text: proposed,
+    by: by,
+    date: date,
+    why: text('why') ?? '',
+    accepted: accepted is YamlList
+        ? List<String>.unmodifiable(<String>[
+            for (final a in accepted.nodes)
+              if (_value(a) case final String code) code,
+          ])
+        : const <String>[],
+  );
+}

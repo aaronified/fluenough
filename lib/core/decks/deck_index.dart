@@ -43,6 +43,7 @@ class IndexFile {
     this.native,
     this.deck,
     this.core = false,
+    this.proposed = 0,
   });
 
   /// Where it is in the repository, which is also its path on the phone
@@ -72,6 +73,10 @@ class IndexFile {
   /// Whether it is a core (`part: "core"`), shared by every native
   /// language's layer.
   final bool core;
+
+  /// How many changes reviewers have proposed in it and not yet agreed
+  /// (ADR-0038). Learners never see them.
+  final int proposed;
 
   /// The language it belongs to: its folder under `decks/`.
   String get language => path.split('/')[1];
@@ -109,6 +114,7 @@ class IndexFile {
       native: native is String ? native : null,
       deck: deck is String ? deck : null,
       core: json['part'] == 'core',
+      proposed: json['proposed'] is int ? json['proposed'] as int : 0,
     );
   }
 
@@ -121,6 +127,7 @@ class IndexFile {
     'native': ?native,
     'deck': ?deck,
     if (core) 'part': 'core',
+    if (proposed > 0) 'proposed': proposed,
   };
 
   /// What this file is to its language, so that a file it replaces can be
