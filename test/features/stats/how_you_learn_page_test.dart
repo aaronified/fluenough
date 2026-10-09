@@ -96,6 +96,46 @@ void main() {
       expect(find.text(l10n.paceAdjustedToday(24)), findsNothing);
     });
 
+    testWidgets('a fit that lost kept the start\'s pace: nothing is '
+        'adjusted, the way to Settings stays, and the skill says why', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await pacedLearner(Paced.lost);
+      await pumpScreen(tester, const HowYouLearnPage(), state: state);
+      final l10n = l10nOf(tester);
+      expect(state.progress.parameters.fitted, isNotEmpty);
+      expect(state.pacing.adjusted, isFalse);
+
+      expect(find.text(l10n.howYouLearnNone), findsOneWidget);
+      expect(find.text(l10n.howYouLearnOpenSettings), findsOneWidget);
+      expect(find.text(l10n.howYouLearnLegendYou), findsNothing);
+      for (final mode in <String>['recognition', 'listening', 'production']) {
+        await scrollTo(tester, find.text(l10n.adjustedNotYet(mode)));
+        expect(find.text(l10n.adjustedNotYet(mode)), findsOneWidget);
+      }
+      // Hear had enough answers to be fitted: it does not say it lacks
+      // them. The two never fitted still do.
+      expect(find.text(l10n.paceKeptStart(8)), findsOneWidget);
+      expect(find.text(l10n.paceNotYet(8)), findsNWidgets(2));
+      // Nothing was adjusted, today or from any answers.
+      expect(find.text(l10n.paceAdjustedToday(8)), findsNothing);
+    });
+
+    testWidgets('the footnote counts the fits that adjusted, not those that '
+        'lost', (tester) async {
+      usePhone(tester);
+      // Write adjusted, from 8 answers; Hear's fit, from 8 more, lost.
+      final state = await pacedLearner(Paced.more, also: <Paced>{Paced.lost});
+      await pumpScreen(tester, const HowYouLearnPage(), state: state);
+      final l10n = l10nOf(tester);
+      expect(state.progress.parameters.fitted, hasLength(2));
+      await scrollTo(tester, find.text(l10n.paceAdjustedToday(8)));
+      expect(find.text(l10n.paceAdjustedToday(8)), findsOneWidget);
+      expect(find.text(l10n.paceAdjustedToday(16)), findsNothing);
+      expect(find.text(l10n.howYouLearnNone), findsNothing);
+    });
+
     testWidgets('fitted slower: fewer reviews, in the plan\'s words', (
       tester,
     ) async {
@@ -238,7 +278,16 @@ void main() {
       expect(find.text(l10n.howYouLearnNone), findsOneWidget);
     });
 
-    testWidgets('once fitted, "Learn more about your pacing", for the '
+    testWidgets('after a fit that lost, the card still says what will '
+        'happen, as Today shows nothing', (tester) async {
+      await onProgress(tester, Paced.lost);
+      final l10n = l10nOf(tester);
+      await scrollToCard(tester);
+      expect(find.text(l10n.howYouLearnCardBefore), findsOneWidget);
+      expect(find.text(l10n.howYouLearnCardMore), findsNothing);
+    });
+
+    testWidgets('once adjusted, "Learn more about your pacing", for the '
         'language chosen', (tester) async {
       await onProgress(tester, Paced.fewer);
       final l10n = l10nOf(tester);

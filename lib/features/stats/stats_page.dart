@@ -270,10 +270,11 @@ class _StatsBody extends StatelessWidget {
       color: color,
     );
 
-    // Before any fit, what will happen and where: Settings.
+    // Until some skill is adjusted, what will happen and where: Settings.
+    // A fit that kept the defaults is not adjusted (Today agrees).
     final howYouLearn = PaceStrip(
       title: l10n.howYouLearnTitle,
-      subtitle: state.pacing.fitted
+      subtitle: state.pacing.adjusted
           ? l10n.howYouLearnCardMore
           : l10n.howYouLearnCardBefore,
       onTap: () => AppNavigator.openHowYouLearn(context, language: language),

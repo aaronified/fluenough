@@ -19,6 +19,14 @@ enum Paced {
 
   /// Recognition fitted, and barely moved: about the same.
   same,
+
+  /// Hear fitted, but the fit lost to FSRS-6's defaults, which are kept
+  /// and stored: fitted, yet nothing adjusted.
+  lost;
+
+  /// Whether some skill is adjusted: not before a fit, nor after one that
+  /// lost.
+  bool get adjusts => this != none && this != lost;
 }
 
 /// FSRS-6's defaults with w8, how much a right answer lengthens the gap,
@@ -33,6 +41,7 @@ final Map<Paced, (DrillMode, List<double>)> pacedFits =
       Paced.fewer: (DrillMode.listening, w8By(0.6)),
       Paced.more: (DrillMode.production, w8By(-0.6)),
       Paced.same: (DrillMode.recognition, w8By(0.001)),
+      Paced.lost: (DrillMode.listening, <double>[...Fsrs.w]),
     };
 
 /// A Hindi learner whose first eight words were answered Good three days
@@ -82,8 +91,8 @@ Future<AppState> pacedLearner(
         values: fit.$2,
         fittedAt: base.now(),
         reviewCount: 8,
-        lossBefore: 0.4,
-        lossAfter: 0.3,
+        lossBefore: c == Paced.lost ? 0.3 : 0.4,
+        lossAfter: c == Paced.lost ? 0.4 : 0.3,
       ),
     );
   }

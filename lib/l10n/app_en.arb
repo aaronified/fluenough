@@ -3679,6 +3679,17 @@
       }
     }
   },
+  "paceKeptStart": "When last checked, your answers fitted the starting pace best, so it stays for now. You have {count, plural, =1{1 answer} other{{count} answers}} so far.",
+  "@paceKeptStart": {
+    "description": "How you learn, for a skill that was fitted but whose fit did not beat the starting pace, so the start's pace was kept.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "212",
+        "format": "decimalPattern"
+      }
+    }
+  },
   "paceReviews": "About {reviews, plural, =1{1 review} other{{reviews} reviews}} in the next 30 days, was\u00a0{was}",
   "@paceReviews": {
     "description": "How you learn and Today's strip: reviews of the next 30 days now, and at the start.",

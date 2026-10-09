@@ -66,10 +66,14 @@ typedef TodayPace = ({
 
 /// [state]'s [TodayPace], or null before any skill is adjusted, which is
 /// read from the stored fits alone: nothing is worked out until then.
-TodayPace? todayPaceOf(AppState state) {
+///
+/// Only [onScreen] does it ask for the paces to be worked out; else it
+/// takes the last worked out, so that Today, built behind a drill or
+/// another tab, starts no job for each answer recorded there.
+TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   final pacing = state.pacing;
   if (!pacing.adjusted) return null;
-  final paces = pacing.paces;
+  final paces = onScreen ? pacing.paces : pacing.latest;
   if (paces == null) {
     return (totals: null, marks: const <Skill, PaceDirection>{});
   }
@@ -118,7 +122,9 @@ class TodayNumbers {
     this.pace,
   });
 
-  factory TodayNumbers.of(AppState state) {
+  /// [onScreen]: whether Today is on view, so that the pace may be worked
+  /// out ([todayPaceOf]).
+  factory TodayNumbers.of(AppState state, {bool onScreen = true}) {
     final now = state.now();
     final progress = state.progress;
     final decks = state.profileDecks;
@@ -203,7 +209,7 @@ class TodayNumbers {
       week: <WeekDay>[for (var back = 6; back >= 0; back--) dayOf(back)],
       languages: state.todayLanguages,
       lessons: lessons,
-      pace: todayPaceOf(state),
+      pace: todayPaceOf(state, onScreen: onScreen),
     );
   }
 

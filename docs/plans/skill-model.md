@@ -390,14 +390,21 @@ The owner's answers to #235, 2026-10-08:
     copy of the defaults is not.
   - **Today shows once a fit has kept a set other than the defaults.**
     The strip counts every skill of the languages learned; a tile's mark
-    adds its skill's languages together.
+    adds its skill's languages together. The Progress card and How you
+    learn's "Nothing is adjusted yet" go by the same test, so a learner
+    whose every fit lost to the defaults is told nothing is adjusted on
+    all three screens.
   - **A skill not adjusted says how many answers it has,** not how many
     it needs: the gate counts reviews a day or more apart and first
     ratings, so no answer count is the threshold ("Needs 400 answers" in
-    the mockup is not shown).
+    the mockup is not shown). A skill whose fit lost says instead that its
+    answers fitted the starting pace best, so it stays.
   - **The figures are worked out, not stored:** on an isolate, when a
     screen asks, again when the log, the fits or the day change. Storing
-    them would need a migration, and they move with the day.
+    them would need a migration, and they move with the day. One job runs
+    at a time, and Today asks only while it is on view, so for an adjusted
+    learner a job runs as the app opens and when Today comes back after a
+    drill, not after every answer.
   - **The Progress card** sits at the foot of "Correct, by skill", for the
     language chosen; from Today and the result sheet the page shows every
     language learned.

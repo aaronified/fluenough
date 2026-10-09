@@ -70,8 +70,16 @@ class TodayPage extends StatelessWidget {
           state.settings,
           state.pacing,
         ]),
-        builder: (context, _) =>
-            _TodayContent(state: state, numbers: TodayNumbers.of(state)),
+        // Today stays built behind the other tabs and under a drill; there
+        // it works nothing out for the answers recorded.
+        builder: (context, _) => _TodayContent(
+          state: state,
+          numbers: TodayNumbers.of(
+            state,
+            onScreen:
+                Visibility.of(context) && TickerMode.valuesOf(context).enabled,
+          ),
+        ),
       ),
     };
     return Scaffold(body: SafeArea(bottom: false, child: body));

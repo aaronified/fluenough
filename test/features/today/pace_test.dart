@@ -1,9 +1,15 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/pacing.dart';
+import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/grading/self_grade.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/today/due_card.dart';
 import 'package:fluenough/features/today/today_fixtures.dart';
@@ -28,6 +34,49 @@ Finder markOn(WidgetTester tester, Skill skill) => find.descendant(
       .first,
   matching: find.byType(PaceMark),
 );
+
+/// The contrast [text] has where it is drawn on Today's due card: its
+/// colour and every fill under it, back to the card's own, as the screen
+/// composes them, each faded by every [Opacity] above it.
+double contrastOnCard(WidgetTester tester, Finder text) {
+  final above = <Widget>[];
+  tester.element(text).visitAncestorElements((element) {
+    above.add(element.widget);
+    return element.widget is! DueCard;
+  });
+  Color? under;
+  var alpha = 1.0;
+  void fill(Color? colour) {
+    if (colour == null) return;
+    final faded = colour.withValues(alpha: colour.a * alpha);
+    under = under == null ? faded : Color.alphaBlend(faded, under!);
+  }
+
+  for (final widget in above.reversed) {
+    switch (widget) {
+      case Opacity(:final opacity):
+        alpha *= opacity;
+      case Material(:final color, :final type)
+          when type != MaterialType.transparency:
+        fill(color);
+      case Container(:final BoxDecoration decoration):
+        fill(decoration.color);
+      case DecoratedBox(:final BoxDecoration decoration):
+        fill(decoration.color);
+      default:
+    }
+  }
+  final background = under!;
+  expect(background.a, 1.0, reason: 'the due card is opaque');
+  final colour = tester.widget<Text>(text).style!.color!;
+  final shown = Color.alphaBlend(
+    colour.withValues(alpha: colour.a * alpha),
+    background,
+  );
+  final a = shown.computeLuminance();
+  final b = background.computeLuminance();
+  return (math.max(a, b) + 0.05) / (math.min(a, b) + 0.05);
+}
 
 Future<AppState> onToday(
   WidgetTester tester,
@@ -62,6 +111,117 @@ void main() {
     expect(find.byType(PaceStrip), findsNothing);
     expect(find.byType(PaceMark), findsNothing);
     expect(runs, 0, reason: 'only stored fits are read before a fit');
+  });
+
+  testWidgets('a fit that lost: no strip, no marks, and nothing worked out, '
+      'as on Progress and How you learn', (tester) async {
+    var runs = 0;
+    final state = await onToday(
+      tester,
+      Paced.lost,
+      paceRunner: (job) {
+        runs++;
+        return paceInPlace(job);
+      },
+    );
+    expect(state.progress.parameters.fitted, isNotEmpty);
+    expect(find.byType(PaceStrip), findsNothing);
+    expect(find.byType(PaceMark), findsNothing);
+    expect(runs, 0);
+  });
+
+  for (final seed in ThemeSeed.values) {
+    for (final high in <bool>[false, true]) {
+      for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+        testWidgets('a marked tile with nothing due keeps its mark legible: '
+            '${seed.name}, ${high ? 'high' : 'standard'} contrast, '
+            '${mode.name}', (tester) async {
+          usePhone(tester);
+          final state = await pacedLearner(Paced.fewer);
+          // Hear reviewed on its own: nothing left due in it, while the
+          // others still are.
+          final hear = state.buildSession(
+            const DrillRequest(skill: Skill.listening),
+          );
+          expect(hear.items, isNotEmpty);
+          for (final item in hear.items) {
+            state.record(item, SelfGrade.good.toGrade());
+          }
+          state.settings
+            ..seed = seed
+            ..highContrast = high
+            ..themeMode = mode;
+          await pumpApp(tester, state: state);
+          final l10n = l10nOf(tester);
+          expect(TodayNumbers.of(state).bySkill[Skill.listening], 0);
+          final mark = find.descendant(
+            of: markOn(tester, Skill.listening),
+            matching: find.text(l10n.paceFewer),
+          );
+          await tester.ensureVisible(mark);
+          await tester.pumpAndSettle();
+          // The tile's name is dimmed, as the design has it; its mark is
+          // the only place Today shows the pace, and is not.
+          expect(
+            contrastOnCard(tester, nameOf(tester, Skill.listening)),
+            lessThan(contrastOnCard(tester, nameOf(tester, Skill.recognition))),
+          );
+          expect(contrastOnCard(tester, mark), greaterThanOrEqualTo(4.5));
+        });
+      }
+    }
+  }
+
+  testWidgets('behind a drill or another tab, Today works nothing out for '
+      'the answers recorded; back on view, it works out the latest once', (
+    tester,
+  ) async {
+    usePhone(tester);
+    var runs = 0;
+    final state = await pacedLearner(
+      Paced.fewer,
+      paceRunner: (job) {
+        runs++;
+        return paceInPlace(job);
+      },
+    );
+    await pumpApp(tester, state: state);
+    expect(find.byType(PaceStrip), findsOneWidget);
+    expect(runs, 1, reason: 'Today on view at launch asks once');
+
+    state.shellTab.value = ShellTab.progress;
+    await tester.pumpAndSettle();
+    final items = state.buildSession(const DrillRequest.today()).items;
+    expect(items.length, greaterThan(2));
+    for (final item in items.take(3)) {
+      state.record(item, SelfGrade.good.toGrade());
+      await tester.pumpAndSettle();
+    }
+    expect(runs, 1, reason: 'Today was not on view');
+
+    state.shellTab.value = ShellTab.today;
+    await tester.pumpAndSettle();
+    expect(runs, 2);
+    int answers() =>
+        state.pacing.latest!.values.fold<int>(0, (n, p) => n + p.answers);
+    expect(answers(), state.progress.log.length);
+
+    // Under a screen pushed over the shell, as a drill is.
+    final navigator = tester.state<NavigatorState>(
+      find.byType(Navigator).first,
+    );
+    navigator.push(MaterialPageRoute<void>(builder: (_) => const Scaffold()));
+    await tester.pumpAndSettle();
+    for (final item
+        in state.buildSession(const DrillRequest.today()).items.take(3)) {
+      state.record(item, SelfGrade.good.toGrade());
+      await tester.pumpAndSettle();
+    }
+    expect(runs, 2, reason: 'Today was covered');
+    navigator.pop();
+    await tester.pumpAndSettle();
+    expect(runs, 3);
+    expect(answers(), state.progress.log.length);
   });
 
   testWidgets('fitted slower: the settled strip, and Hear marked "Fewer '
