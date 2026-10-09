@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/repository_decks.dart';
+import 'package:fluenough/core/decks/deck_index.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:yaml/yaml.dart';
 
@@ -51,24 +53,17 @@ void main() {
     late Catalog catalog;
 
     setUpAll(() async {
-      catalog = await DeckCatalog.bundled().load();
+      catalog = await DeckCatalog(RepositoryDeckSource()).load();
     });
 
-    test('every bundled deck file is listed and parses', () {
-      // The directories pubspec.yaml bundles. A directory left out, as
-      // decks/ja/ is for now, stays in the repository but not in the app.
-      final pubspec = loadYaml(File('pubspec.yaml').readAsStringSync());
-      final bundled = <String>{
-        for (final asset in pubspec['flutter']['assets'] as YamlList) '$asset',
-      };
-      final onDisk = Directory('decks')
-          .listSync(recursive: true)
-          .whereType<File>()
-          .map((f) => f.path.replaceAll(r'\', '/'))
-          .where(AssetDeckSource.isDeckPath)
-          .where(
-            (p) => bundled.contains(p.substring(0, p.lastIndexOf('/') + 1)),
-          )
+    test('every deck file the index lists is read and parses', () {
+      // What a phone that downloaded every language has (#210): the files
+      // decks/index.json lists. A language left out of it, as decks/ja/ is
+      // for now, stays in the repository but not in the app.
+      final index = DeckIndex.parse(
+        File('decks/index.json').readAsStringSync(),
+      );
+      final onDisk = index.filesByPath.keys
           // Facts, themes, number rules, course paths, sounds and
           // romanisation files sit beside the decks but are not decks.
           .where(
@@ -82,6 +77,8 @@ void main() {
               'romanisation',
             }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
           )
+          // A core is read through its layers.
+          .where((p) => !index.filesByPath[p]!.core)
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
@@ -281,10 +278,33 @@ void main() {
       expect(AssetDeckSource.isDeckPath('fonts/x.yaml'), isFalse);
     });
 
-    test('the asset manifest lists the bundled decks', () async {
+    test('the app bundles the theme list and no deck (#210)', () {
+      final pubspec = loadYaml(File('pubspec.yaml').readAsStringSync());
+      final assets = <String>[
+        for (final asset in pubspec['flutter']['assets'] as YamlList) '$asset',
+      ];
+      expect(assets.where((a) => a.startsWith('decks/')), <String>[
+        'decks/themes.yaml',
+      ]);
+      expect(assets, contains('assets/languages.yaml'));
+    });
+
+    test('the bundled assets hold the theme list', () async {
       final paths = await AssetDeckSource(rootBundle).list();
-      expect(paths, contains('decks/es/es-en-core-100.yaml'));
-      expect(paths.every(AssetDeckSource.isDeckPath), isTrue);
+      expect(paths, <String>['decks/themes.yaml']);
+    });
+
+    test('several sources read as one, the first winning', () async {
+      final sources = DeckSources(<DeckSource>[
+        MemoryDeckSource(const <String, String>{'decks/a.yaml': 'first'}),
+        MemoryDeckSource(const <String, String>{
+          'decks/a.yaml': 'second',
+          'decks/b.yaml': 'b',
+        }),
+      ]);
+      expect(await sources.list(), <String>['decks/a.yaml', 'decks/b.yaml']);
+      expect(await sources.read('decks/a.yaml'), 'first');
+      expect(await sources.read('decks/b.yaml'), 'b');
     });
   });
 

@@ -43,6 +43,7 @@ import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'repository_decks.dart';
 import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
@@ -200,8 +201,8 @@ class AppState extends ChangeNotifier {
   /// questions are still asked; with sound off they are skipped instead.
   bool get needsVolume => settings.soundOn && volume.muted;
 
-  /// An app on fakes, for widget tests: the real bundled decks unless
-  /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
+  /// An app on fakes, for widget tests: the repository's decks, as a phone
+  /// that downloaded every language has them, unless [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
   /// progress, links that open unless [links] says otherwise, phone settings
   /// that open nothing unless [systemSettings] does, no network
   /// for the update check unless [releases] answers, none for the release
@@ -240,7 +241,7 @@ class AppState extends ChangeNotifier {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
     final state = AppState(
       catalog: DeckCatalog(
-        decks ?? AssetDeckSource(),
+        decks ?? RepositoryDeckSource(),
         added: addedDecks ?? MemoryDeckStore(),
       ),
       progress: progress ?? MemoryProgress(),

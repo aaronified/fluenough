@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/sounds_parser.dart';
 import 'package:fluenough/core/models/sound_contrasts.dart';
@@ -141,7 +142,7 @@ contrasts:
 
   test('the bundled Bengali, Hindi and Telugu sounds files load', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    final catalog = await DeckCatalog.bundled().load();
+    final catalog = await DeckCatalog(RepositoryDeckSource()).load();
     expect(catalog.broken, isEmpty);
     expect(catalog.sounds.keys, containsAll(<String>['bn', 'hi', 'te']));
     final hindi = catalog.sounds['hi']!;
