@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'app.dart';
 import 'app/app_info.dart';
 import 'app/added_decks.dart';
+import 'app/app_log.dart';
 import 'app/app_state.dart';
 import 'app/deck_catalog.dart';
 import 'app/links.dart';
@@ -29,10 +30,15 @@ export 'app.dart' show FluenoughApp;
 /// (docs/adr/0007).
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final storage = await openProfileStorage(Profile.defaultProfile);
   // Where ota_update downloads: files/ota_update in the app's own storage,
-  // which getApplicationSupportDirectory is on Android.
+  // which getApplicationSupportDirectory is on Android. The app log is
+  // there too, in logs/, so that it outlives a crash (#162).
   final files = await getApplicationSupportDirectory();
+  final log = AppLog(store: FileLogStore(File('${files.path}/logs/app.log')));
+  logErrors(log);
+  await log.open();
+  log.event('App started: ${AppInfo.version}');
+  final storage = await openProfileStorage(Profile.defaultProfile);
   runApp(
     FluenoughApp(
       state: AppState(
@@ -51,6 +57,7 @@ Future<void> main() async {
           address: AppLinks.feedbackEmail,
           links: LauncherLinks(),
         ),
+        log: log,
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
         releaseNotes: GitHubReleaseNotes(
           userAgent: 'fluenough/${AppInfo.version}',

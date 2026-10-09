@@ -14,6 +14,7 @@ import '../features/profiles/profiles_page.dart';
 import '../features/profiles/spoken_languages_page.dart';
 import '../features/report/report_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/settings/app_log_page.dart';
 import '../features/settings/appearance_page.dart';
 import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
@@ -64,6 +65,9 @@ abstract final class AppRoutes {
   /// Where the decks' texts come from, opened from Settings.
   static const String sources = '/sources';
 
+  /// The app's own log (#162), opened from Settings and from a report.
+  static const String appLog = '/app-log';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -101,6 +105,7 @@ abstract final class AppRoutes {
       voices => const VoicesPage(),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
+      appLog => const AppLogPage(),
       scriptGuide when args is String => ScriptGuidePage(languageCode: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -182,6 +187,10 @@ abstract final class AppNavigator {
 
   static Future<void> openSources(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.sources);
+
+  /// The app's own log, a line an entry.
+  static Future<void> openAppLog(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.appLog);
 
   /// How [languageCode]'s script works (#30): a script deck's Tips.
   static Future<void> openScriptGuide(
