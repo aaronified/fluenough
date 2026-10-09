@@ -2,8 +2,8 @@
 
 Written 2026-10-06. **Part of the settings redesign,** with
 `language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
-last in the owner's order, after `skill-model.md`, `b1-plans.md` and deck
-downloads (`decks-from-github.md`).
+last in the owner's order, after the skill model (done), `b1-plans.md` and
+deck downloads (`decks-from-github.md`).
 
 ## What the owner asked
 
@@ -58,8 +58,8 @@ downloads (`decks-from-github.md`).
 | A skill, by language | Asked in {language} | Not asked in {language} |
 | An alphabet, by language | Learning the {script} script | Latin letters only; script decks skipped |
 
-The skill rows change with `skill-model.md`, which lands first: one switch
-per activity, and Listening becomes "Hear the word, give its meaning".
+The skill rows change with the skill model, which is done (ADR-0034): one
+switch per activity, and Listening becomes "Hear the word, give its meaning".
 
 Lines that depend on the phone stay, added after the state: Listening with
 no voice reads "No voice for {language} on this phone".
