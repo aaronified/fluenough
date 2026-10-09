@@ -58,9 +58,11 @@ it) and speaking (say it).
 - **The ability layer.** An Elo rating per language and schedule, and a
   difficulty per pair, each moved after every answer by how surprising it
   was, by K = 1 ÷ (1 + 0.05 n) after n answers (Pelánek 2016). Like the
-  scheduling state it is rebuilt from the log. Progress shows it as "Your
-  strengths": the chance of a right answer on a word of average
-  difficulty, per skill, for one language. A pair never asked in Hear
+  scheduling state it is rebuilt from the log. Its reading is the
+  chance of a right answer on a word of average difficulty, per skill, for
+  one language. Progress was to show it as "Your strengths"; the owner
+  removed that section on 2026-10-09 as saying the same as "Correct, by
+  skill" (ADR-0035). A pair never asked in Hear
   starts at recall rather than choice once the learner's Hear strength
   there is 80% or more over at least 20 answers.
 - **Pictures** (owner: Noto Emoji, Apache-2.0): a card may name one emoji
@@ -256,8 +258,7 @@ before the script, six after):
   were taken from the research before they were built
   (`docs/research/skill-evidence.md`, every claim checked against its source
   by a second agent; the checked claims are in
-  `docs/research/skill-evidence-claims.json`, which is on branch
-  `feat/b1-format`, not yet on `main`).
+  `docs/research/skill-evidence-claims.json`).
 - **Decided from the evidence** (owner, 2026-10-09):
   - **Ability:** a Q-matrix with multi-skill Elo. Each question lists the
     skills it judges, primary or secondary; one answer's update is shared
