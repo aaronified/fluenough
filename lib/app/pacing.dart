@@ -33,8 +33,8 @@ Future<List<SkillPace>> paceInIsolate(PaceJob job) =>
 /// [SkillFit.paces] in place: for tests, which run on a fake clock.
 Future<List<SkillPace>> paceInPlace(PaceJob job) async => _paces(job);
 
-/// How each skill is paced for the learner beside how it started (`docs/
-/// plans/skill-model.md`, "Shown prominently"): what How you learn shows,
+/// How each skill is paced for the learner beside how it started (ADR-0035,
+/// "Shown prominently"): what How you learn shows,
 /// and Today's strip and tile marks.
 ///
 /// Worked out only when asked for ([paces]), on an isolate, and again when

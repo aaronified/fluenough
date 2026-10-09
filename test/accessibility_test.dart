@@ -686,7 +686,7 @@ void main() {
     }
   });
 
-  // Adjusted to you (docs/plans/skill-model.md): How you learn, and the
+  // Adjusted to you (ADR-0035): How you learn, and the
   // Today and Progress tabs, before any fit and after each kind of fit.
   group('adjusted to you', () {
     for (final paced in Paced.values) {
