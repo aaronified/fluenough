@@ -1154,10 +1154,12 @@ class AppState extends ChangeNotifier {
   /// The cards a [ask] question about [card] takes its other options from
   /// (ADR-0024): its deck's other cards of the same kind, each showing a
   /// different option, or, when they show fewer than three, those of every
-  /// deck of its course as well.
+  /// deck of its course as well. A rules table's form, or its meaning, is
+  /// chosen among its own row's alone ([formChoices], spec 4.8).
   List<Card> choicePool(Card card, Ask ask) {
     final entry = deckOf(card);
     if (entry == null) return const <Card>[];
+    if (ask.choosesAmongForms) return formChoices(card, ask, entry.cards);
     final right = ask.optionOf(card);
     final cell = card.modes.contains(DrillMode.grammar);
     bool alike(Card c) =>
@@ -1197,9 +1199,12 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether a [ask] question about [card] has at least two wrong options
-  /// to offer. Without, it is asked its own way.
+  /// to offer, or, choosing among a rules table's forms or their meanings,
+  /// one (spec 4.8: a row of two forms is still a choice). Without, it is
+  /// asked its own way.
   bool canChoose(Card card, Ask ask) =>
-      choicePool(card, ask).map(ask.optionOf).toSet().length >= 2;
+      choicePool(card, ask).map(ask.optionOf).toSet().length >=
+      (ask.choosesAmongForms ? 1 : 2);
 
   /// The items of the session for [request], each asked as a review asks it
   /// ([reviewAsks]): what a drill runs.

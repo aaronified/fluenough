@@ -17,7 +17,8 @@ const int secondsPerCard = 20;
 /// The skills Today draws a tile for: Recognition, Hear, Say, Write and
 /// Grammar (ADR-0034). Minimal pairs have none: they are drilled from their
 /// own decks (#31). Speaking has one only while it is switched on
-/// (ADR-0030).
+/// (ADR-0030). Grammar understood has none of its own: it shares Grammar's
+/// ([Skill.tile]).
 const List<Skill> todaySkills = <Skill>[
   Skill.recognition,
   Skill.listening,
@@ -25,6 +26,17 @@ const List<Skill> todaySkills = <Skill>[
   Skill.production,
   Skill.grammar,
 ];
+
+/// The skills [tile]'s tile on Today counts and starts that are switched on
+/// and available: its own, and, on Grammar's, grammar understood
+/// ([Skill.tile]). Empty when none is on.
+Set<Skill> tileSkillsOn(AppState state, Skill tile) => <Skill>{
+  for (final skill in Skill.values)
+    if (skill.tile == tile &&
+        state.settings.isEnabled(skill) &&
+        state.features.isAvailable(skill.feature))
+      skill,
+};
 
 /// One day in Today's week row.
 enum WeekDayStatus {
@@ -91,7 +103,7 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
       for (final skill in todaySkills)
         if (SkillFit.together(<SkillPace>[
               for (final p in shown)
-                if (p.adjusted && p.key.mode == skill.mode) p,
+                if (p.adjusted && Skill.of(p.key.mode).tile == skill) p,
             ])
             case final moved?)
           skill: PaceDirection.of(moved.start, moved.now),
@@ -119,6 +131,7 @@ class TodayNumbers {
     this.lessons = const <TodayLesson>[],
     this.dueIn = const <Skill, int>{},
     this.revisable = const <Skill, int>{},
+    this.starts = const <Skill, Set<Skill>>{},
     this.pace,
   });
 
@@ -183,14 +196,20 @@ class TodayNumbers {
         if (skill != Skill.speaking ||
             (state.settings.isEnabled(skill) &&
                 state.features.isAvailable(skill.feature)))
-          skill: skill.mode == null ? 0 : byMode[skill.mode] ?? 0,
+          skill: <int>[
+            for (final MapEntry(key: mode, value: n) in byMode.entries)
+              if (Skill.of(mode).tile == skill) n,
+          ].fold(0, (a, b) => a + b),
     };
     // A skill switched off is not reviewed from its tile either.
+    final starts = <Skill, Set<Skill>>{
+      for (final skill in bySkill.keys) skill: tileSkillsOn(state, skill),
+    };
     final dueIn = <Skill, int>{
-      for (final skill in bySkill.keys)
-        skill: state.settings.isEnabled(skill)
-            ? state.buildSession(DrillRequest(skill: skill)).length
-            : 0,
+      for (final MapEntry(key: skill, value: on) in starts.entries)
+        skill: on.isEmpty
+            ? 0
+            : state.buildSession(DrillRequest(skills: on)).length,
     };
     return TodayNumbers(
       hasDecks: decks.isNotEmpty,
@@ -200,9 +219,10 @@ class TodayNumbers {
       // A skill switched off has nothing to revise from its tile.
       revisable: <Skill, int>{
         for (final MapEntry(key: skill, value: due) in dueIn.entries)
-          if (due == 0 && state.settings.isEnabled(skill))
-            skill: state.revisableIn(<Skill>{skill}),
+          if (due == 0 && starts[skill]!.isNotEmpty)
+            skill: state.revisableIn(starts[skill]),
       },
+      starts: starts,
       noVoice: noVoice,
       streak: progress.streakAt(now),
       newWords: newWords,
@@ -235,6 +255,10 @@ class TodayNumbers {
   /// For a tile whose skill has nothing due: how many words it can revise
   /// (ADR-0030). A skill not listed has none.
   final Map<Skill, int> revisable;
+
+  /// For each tile, the skills tapping it reviews or revises: those of
+  /// [tileSkillsOn]. A tile not listed starts its own skill alone.
+  final Map<Skill, Set<Skill>> starts;
 
   /// Listening is on, but no language the profile learns has a voice on
   /// this phone.
