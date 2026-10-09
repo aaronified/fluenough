@@ -17,7 +17,7 @@ import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
 
-/// A reading deck (#98) outside the drill: an ordinary deck on the Decks tab
+/// A reading deck (#98) outside the drill: a unit on the Decks tab's path
 /// and its own page, and nothing placement asks about.
 
 AppState readingApp() => AppState.test(
@@ -85,11 +85,9 @@ void main() {
     state.shellTab.value = ShellTab.decks;
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester, find.byType(AppShell));
+    // A unit of its own on the path, its line counting its passages.
     expect(find.text('Bengali reading (fixture)'), findsOneWidget);
-    expect(
-      find.text(l10n.deckMetaReading('Bengali', 'ben', 2)),
-      findsOneWidget,
-    );
+    expect(find.text(l10n.pathUnitPassages(2)), findsOneWidget);
   });
 
   test('placement asks nothing from a reading deck', () async {

@@ -12,6 +12,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/grammar_cells.dart';
+import 'card_notes.dart';
 
 /// Every card of a deck as one scrolling list, for reviewers: two or three
 /// lines a card, its script and romanisation, its meaning, and its id, so
@@ -358,7 +359,7 @@ class _CardRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final language = entry.language;
     final separator = l10n.commonListSeparator;
-    final notes = card.notes.firstOrNull?.text;
+    final notes = notesText(card);
     final skills = <String>[
       for (final skill in Skill.values)
         if (skill.modes.any(card.modes.contains)) skill.label(l10n),
@@ -380,7 +381,7 @@ class _CardRow extends StatelessWidget {
         // A card that names no skills is drilled in all that apply.
         if (skills.isNotEmpty)
           _Field(l10n.inspectOnlyIn, skills.join(separator)),
-        if (notes != null && notes.isNotEmpty) _Field(l10n.inspectNotes, notes),
+        if (notes != null) _Field(l10n.inspectNotes, notes),
         if (card.examples.isNotEmpty) ...<Widget>[
           _Field(l10n.inspectExamples, ''),
           for (final example in card.examples)

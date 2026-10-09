@@ -25,6 +25,12 @@ enum Feature {
   // Today.
   dailyFacts(48),
 
+  // The Decks tab's path: newer decks downloaded, hours left to B1, and
+  // books, films and songs beyond the course.
+  deckUpdates(210),
+  hoursLeft(227),
+  beyondCourse(215),
+
   // Data.
   persistence(5),
   stats(18),

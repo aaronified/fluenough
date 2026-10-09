@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import base64
 import email
+import json
 import email.message
 import email.policy
 import unittest
@@ -179,6 +180,139 @@ class IssueFrom(unittest.TestCase):
         self.assertEqual(issue["labels"], ["from-app"])
 
 
+CODE = "FL-7K3M-Q9TD-6"
+OTHER = "FL-0000-0000-0"
+
+
+def review_file(code: str | None = CODE, language: str = "te",
+                deck: str = "te-family") -> dict:
+    """A review file as the app writes it (lib/core/review/review_file.dart)."""
+    data = {"format": "fluenough-review", "version": 1, "language": language,
+            "deck": deck, "app_version": "0.3.4",
+            "made": "2026-10-09T09:41:00.000Z", "signed_off": False,
+            "cards": [{"card": "te-0384", "at": "2026-10-09T09:40:00.000Z",
+                       "suggestion": {"part": "notes", "now": "Formally",
+                                      "text": "SECRET SUGGESTION",
+                                      "why": "As common"}}]}
+    if code is not None:
+        data["rater_code"] = code
+    return data
+
+
+def review_mail(subject: str | None, files: list[dict], *,
+                sender: str = "reviewer@example.com",
+                text: str = "12 reviews of te-family.") -> email.message.EmailMessage:
+    message = email.message.EmailMessage()
+    if subject is not None:
+        message["Subject"] = subject
+    message["From"] = f"A Reviewer <{sender}>"
+    message["To"] = "fluenough@example.com"
+    message.set_content(text)
+    for data in files:
+        message.add_attachment(json.dumps(data).encode("utf-8"),
+                               maintype="application", subtype="json",
+                               filename=f"fluenough-review-{data['deck']}.json")
+    return message
+
+
+class RaterCode(unittest.TestCase):
+    def test_the_check_symbol_is_the_apps(self) -> None:
+        # The same vectors as test/core/review/rater_code_test.dart.
+        for body, check in (("7K3MQ9TD", "6"), ("00000000", "0"),
+                            ("ZZZZZZZZ", "3"), ("ABCDEFGH", "2")):
+            with self.subTest(body=body):
+                self.assertEqual(mail_to_issues.check_symbol(body), check)
+
+    def test_read_loosely_and_checked(self) -> None:
+        for text in (CODE, "fl-7k3m-q9td-6", "7K3MQ9TD6", "FL 7K3M Q9TD 6"):
+            with self.subTest(text=text):
+                self.assertEqual(mail_to_issues.rater_code(text), CODE)
+        for text in ("FL-7K3M-Q9TD-7", "FL-K73M-Q9TD-6", "FL-7K3M-Q9TD",
+                     "", None, 42):
+            with self.subTest(text=text):
+                self.assertIsNone(mail_to_issues.rater_code(text))
+
+
+class ReviewIssueFrom(unittest.TestCase):
+    def test_a_review_mail_names_only_the_code_and_languages(self) -> None:
+        issue = mail_to_issues.review_issue_from(review_mail(
+            f"[Fluenough review] {CODE} (te)", [review_file()]))
+        self.assertEqual(issue["title"], f"Review: {CODE} (te)")
+        self.assertEqual(issue["labels"], ["review", "from-app", "lang: te"])
+        self.assertIn(f"Rater code: {CODE}", issue["body"])
+        self.assertIn("Language: te", issue["body"])
+        for private in ("SECRET SUGGESTION", "As common", "te-family",
+                        "te-0384", "reviewer@example.com", "A Reviewer",
+                        "12 reviews"):
+            self.assertNotIn(private, str(issue))
+
+    def test_several_decks_in_one_mail_are_one_issue(self) -> None:
+        issue = mail_to_issues.review_issue_from(review_mail(
+            f"[Fluenough review] {CODE} (te, bn)",
+            [review_file(), review_file(language="bn", deck="bn-family"),
+             review_file(deck="te-work")]))
+        self.assertEqual(issue["title"], f"Review: {CODE} (te, bn)")
+        self.assertEqual(issue["labels"],
+                         ["review", "from-app", "lang: te", "lang: bn"])
+        self.assertIn("Languages: te, bn", issue["body"])
+
+    def test_a_changed_or_missing_subject_goes_by_the_files(self) -> None:
+        for subject in (None, "Here you go", "[Fluenough review]",
+                        f"[Fluenough review] {OTHER} (te)",
+                        f"[Fluenough review] {CODE} (bn)",
+                        f"[Fluenough review] {CODE}"):
+            with self.subTest(subject=subject):
+                issue = mail_to_issues.review_issue_from(
+                    review_mail(subject, [review_file()]))
+                self.assertEqual(issue["title"], f"Review: {CODE} (te)")
+                self.assertIn("subject changed", issue["labels"])
+                self.assertNotIn("check the files", issue["labels"])
+                self.assertIn("Subject changed", issue["body"])
+
+    def test_files_with_different_codes_or_none_are_checked(self) -> None:
+        for files in ([review_file(), review_file(OTHER, deck="te-work")],
+                      [review_file(None)],
+                      [review_file("FL-7K3M-Q9TD-7")],
+                      [review_file(), review_file(None, deck="te-work")]):
+            with self.subTest(files=[f.get("rater_code") for f in files]):
+                issue = mail_to_issues.review_issue_from(review_mail(
+                    f"[Fluenough review] {CODE} (te)", files))
+                self.assertIn("check the files", issue["labels"])
+                self.assertIn("Check the files", issue["body"])
+
+    def test_different_codes_are_both_named(self) -> None:
+        issue = mail_to_issues.review_issue_from(review_mail(
+            f"[Fluenough review] {CODE} (te)",
+            [review_file(), review_file(OTHER, deck="te-work")]))
+        self.assertIn(f"Rater codes: {CODE}, {OTHER}", issue["body"])
+        self.assertNotIn("subject changed", issue["labels"])
+
+    def test_a_review_subject_without_files_is_checked(self) -> None:
+        issue = mail_to_issues.review_issue_from(review_mail(
+            f"[Fluenough review] {CODE} (te)", []))
+        self.assertEqual(issue["title"], f"Review: {CODE} (te)")
+        self.assertEqual(issue["labels"],
+                         ["review", "from-app", "lang: te", "check the files"])
+
+    def test_nothing_from_a_file_but_a_valid_code_and_language(self) -> None:
+        bad = review_file("@everyone <script>", language="te) @someone")
+        issue = mail_to_issues.review_issue_from(
+            review_mail("[Fluenough review]", [bad]))
+        self.assertNotIn("@", str(issue))
+        self.assertNotIn("script", str(issue))
+        self.assertEqual(issue["title"], "Review: no code")
+
+    def test_other_mail_is_not_a_review(self) -> None:
+        self.assertIsNone(mail_to_issues.review_issue_from(
+            mail("[Fluenough] Bug: x", body("Bug"), log=True)))
+        self.assertIsNone(mail_to_issues.review_issue_from(mail("Hello")))
+        # JSON that is not a review file.
+        message = review_mail("Data", [])
+        message.add_attachment(b'{"a": 1}', maintype="application",
+                               subtype="json", filename="data.json")
+        self.assertIsNone(mail_to_issues.review_issue_from(message))
+
+
 class FakeImap:
     """Gmail over IMAP, as far as the tool uses it."""
 
@@ -249,6 +383,20 @@ class Run(unittest.TestCase):
         self.assertEqual(mail_to_issues.run(ENV, imap, filed.append), 1)
         self.assertEqual([i["title"] for i in filed], ["Bug: one"])
         self.assertEqual(imap.labelled, [b"2"])
+
+    def test_review_mails_are_filed_with_reports(self) -> None:
+        imap = FakeImap([mail("[Fluenough] Bug: one"),
+                         review_mail(f"[Fluenough review] {CODE} (te)",
+                                     [review_file()]),
+                         review_mail(None, [review_file()])])
+        filed: list[dict] = []
+        self.assertEqual(mail_to_issues.run(ENV, imap, filed.append), 3)
+        self.assertEqual([i["title"] for i in filed],
+                         ["Bug: one", f"Review: {CODE} (te)",
+                          f"Review: {CODE} (te)"])
+        self.assertEqual(imap.labelled, [b"1", b"2", b"3"])
+        # Found by its files too, when the subject was deleted.
+        self.assertIn("filename:fluenough-review", imap.searched[-1])
 
     def test_without_the_inbox_it_does_nothing(self) -> None:
         def never(_host: str):

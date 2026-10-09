@@ -43,6 +43,7 @@ Future<void> main() async {
   // A report's app log is written to shared/ in the cache, the folder
   // MainActivity's FileProvider lends to the mail app (ADR-0021).
   final cache = await getTemporaryDirectory();
+  final share = ChannelMailShare(folder: Directory('${cache.path}/shared'));
   runApp(
     FluenoughApp(
       state: AppState(
@@ -60,8 +61,10 @@ Future<void> main() async {
         reports: MailReportSender(
           address: AppLinks.feedbackEmail,
           links: const LauncherLinks(),
-          share: ChannelMailShare(folder: Directory('${cache.path}/shared')),
+          share: share,
         ),
+        // Review files go the same way (docs/plans/deck-browser.md).
+        mailShare: share,
         log: log,
         releases: GitHubReleaseCheck(userAgent: 'fluenough/${AppInfo.version}'),
         releaseNotes: GitHubReleaseNotes(
