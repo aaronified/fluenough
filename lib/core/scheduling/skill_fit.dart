@@ -57,6 +57,27 @@ typedef SkillFitResult = ({
 /// answered right.
 typedef SkillOutlook = ({int days, int reviews});
 
+/// How one skill in one language is paced for the learner, beside how it
+/// was paced at the start: How you learn's figures, and the marks on
+/// Today's skill tiles.
+typedef SkillPace = ({
+  SkillKey key,
+
+  /// Every review of the skill, a reset's earlier ones included.
+  int answers,
+
+  /// Whether a set other than FSRS-6's defaults schedules the skill: its
+  /// own fit, or the baseline of another language.
+  bool adjusted,
+
+  /// The outlook on FSRS-6's defaults, as every skill starts.
+  SkillOutlook start,
+
+  /// The outlook on the set that schedules the skill now: [start] when it
+  /// is not [adjusted].
+  SkillOutlook now,
+});
+
 /// Fitting FSRS to the learner, one skill in one language at a time
 /// (`docs/plans/skill-model.md`; [FsrsFit] does the fitting). Pure, so
 /// that it runs off the main thread.
@@ -198,6 +219,71 @@ abstract final class SkillFit {
       lossBefore: lossBefore,
       lossAfter: lossAfter,
     );
+  }
+
+  /// How [history] is paced at [now] by [inUse], the set that schedules
+  /// it, beside FSRS-6's defaults: two [outlook]s, the second only when
+  /// the two sets differ.
+  static SkillPace pace(
+    SkillHistory history,
+    List<double> inUse,
+    DateTime now,
+  ) {
+    final adjusted = !isDefaults(inUse);
+    final start = outlook(history.pairs, Fsrs.w, now);
+    return (
+      key: history.key,
+      answers: history.reviewCount,
+      adjusted: adjusted,
+      start: start,
+      now: adjusted ? outlook(history.pairs, inUse, now) : start,
+    );
+  }
+
+  /// The [pace] of every skill [reviews] hold, oldest first, as
+  /// [parameters] schedule them at [now]: what How you learn shows. Pure,
+  /// so that it runs off the main thread.
+  static List<SkillPace> paces(
+    Iterable<LoggedReview> reviews, {
+    required SkillParameters parameters,
+    required DateTime now,
+    LeechEffects effects = LeechEffects.none,
+  }) => <SkillPace>[
+    for (final MapEntry(:key, :value) in histories(
+      reviews,
+      effects: effects,
+    ).entries)
+      pace(value, parameters.of(key.language, key.mode), now),
+  ];
+
+  /// [paces], of one skill in several languages or of several skills, as
+  /// one outlook at the start and one now: their reviews added, and the
+  /// days of the one with the most answers. Null for none.
+  static ({SkillOutlook start, SkillOutlook now})? together(
+    Iterable<SkillPace> paces,
+  ) {
+    SkillPace? most;
+    var start = 0;
+    var now = 0;
+    for (final pace in paces) {
+      start += pace.start.reviews;
+      now += pace.now.reviews;
+      if (most == null || pace.answers > most.answers) most = pace;
+    }
+    if (most == null) return null;
+    return (
+      start: (days: most.start.days, reviews: start),
+      now: (days: most.now.days, reviews: now),
+    );
+  }
+
+  /// Whether [values] are FSRS-6's defaults exactly.
+  static bool isDefaults(List<double> values) {
+    if (values.length != Fsrs.w.length) return false;
+    for (var i = 0; i < values.length; i++) {
+      if (values[i] != Fsrs.w[i]) return false;
+    }
+    return true;
   }
 
   /// Which way a fit moved a skill, from the outlook [before] it to the
