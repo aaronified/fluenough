@@ -40,7 +40,13 @@ import 'word_sheet.dart';
 /// Review, at the top end, is for speakers who check decks: a stub until
 /// reviewer mode is built.
 class UnitPage extends StatefulWidget {
-  const UnitPage({super.key, required this.deckId, this.plan, this.openWord});
+  const UnitPage({
+    super.key,
+    required this.deckId,
+    this.plan,
+    this.openWord,
+    this.openTables = false,
+  });
 
   /// A deck in the unit, by id: the unit is the one holding it.
   final String deckId;
@@ -53,6 +59,9 @@ class UnitPage extends StatefulWidget {
   /// gallery.
   final String? openWord;
 
+  /// Whether every rule's table starts open, for the debug gallery.
+  final bool openTables;
+
   @override
   State<UnitPage> createState() => _UnitPageState();
 }
@@ -63,6 +72,7 @@ class _UnitPageState extends State<UnitPage> {
 
   bool _allWords = false;
   final Set<String> _openTables = <String>{};
+  bool _tablesSeeded = false;
   bool _opened = false;
 
   void _openWordOnce(AppState state, LanguageInfo language) {
@@ -99,6 +109,13 @@ class _UnitPageState extends State<UnitPage> {
     final first = decks.first;
     final language = first.language;
     _openWordOnce(state, language);
+    if (widget.openTables && !_tablesSeeded) {
+      _tablesSeeded = true;
+      _openTables.addAll(<String>[
+        for (final entry in decks)
+          if (entry.deck.pattern != null) entry.id,
+      ]);
+    }
 
     return ListenableBuilder(
       listenable: Listenable.merge(<Listenable>[
