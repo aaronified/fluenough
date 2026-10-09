@@ -100,7 +100,8 @@ units:
   - decks: ["te-groceries", "te-grammar-gender-number", "te-grammar-needs", "*"]
     words: 16
     grammar: ["gender-number", "needs"]
-  - planned: { id: "te-food", theme: "food", words: 47 }
+  - decks: ["te-food", "te-food-sentences", "*"]
+    words: 64
     listening_passages:
       - { id: "at-the-tiffin-stall", text: { "en": "Ordering breakfast at a tiffin stall" } }
     reading_passages:
@@ -111,6 +112,11 @@ units:
   - decks: ["te-directions", "te-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
+  - planned: { id: "te-body", theme: "body", words: 25 }
+    listening_passages:
+      - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
+    reading_passages:
+      - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   - planned: { id: "te-places", theme: "places", words: 44 }
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
@@ -144,11 +150,6 @@ units:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "te-body", theme: "body", words: 25 }
-    listening_passages:
-      - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
-    reading_passages:
-      - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   - planned: { id: "te-quantities", theme: "quantities", words: 26 }
     listening_passages:
       - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
