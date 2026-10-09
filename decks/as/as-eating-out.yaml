@@ -45,6 +45,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোক", base: "মোক", reading: "muk" }
   - id: "as-0412"
     target: "আৰু"
     reading: "āru"
@@ -91,6 +93,8 @@ cards:
     ipa: "biltʊ dijɔk"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "বিলটো", base: "বিলটো", reading: "biltu" }
   - id: "as-0419"
     target: "বৰ সোৱাদ লাগিল।"
     reading: "bôr xuwād lāgil."
@@ -98,6 +102,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "সোৱাদ", base: "সোৱাদ", reading: "xuwād" }
+      - { word: "লাগিল", ref: "as-2062" }
   - id: "as-0420"
     target: "ভাত খালেনে?"
     reading: "bhāt khālene?"
@@ -106,3 +113,5 @@ cards:
     tags: ["greeting"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খালেনে", base: "খালেনে", reading: "khālene" }

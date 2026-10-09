@@ -65,6 +65,9 @@ cards:
     reading: "eikhôn bhāl kitāp."
     ipa: "eikʰɔn bʱal kitap"
     pos: "phrase"
+    bases:
+      - { word: "এইখন", base: "এইখন", reading: "eikhôn" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
   - id: "as-2095"
     target: "কোঠাটো ডাঙৰ।"
     reading: "kuthātu dāṅôr."
@@ -72,11 +75,15 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কোঠাটো", ref: "as-0328" }
   - id: "as-2096"
     target: "চাহখিনি বৰ গৰম।"
     reading: "sāhkhini bôr gôrôm."
     ipa: "sahkʰini bɔɹ ɡɔɹɔm"
     pos: "phrase"
+    bases:
+      - { word: "চাহখিনি", ref: "as-0409" }
   - id: "as-2097"
     target: "এইটো সেইটোতকৈ ডাঙৰ।"
     reading: "eitu xeitutkôi dāṅôr."
@@ -84,6 +91,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এইটো", base: "এইটো", reading: "eitu" }
+      - { word: "সেইটোতকৈ", base: "সেইটোতকৈ", reading: "xeitutkôi" }
   - id: "as-2098"
     target: "সকলোতকৈ ভাল"
     reading: "xôkôlutkôi bhāl"
@@ -91,3 +101,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "সকলোতকৈ", base: "সকলোতকৈ", reading: "xôkôlutkôi" }

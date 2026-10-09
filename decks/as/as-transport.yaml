@@ -49,6 +49,10 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মিটাৰ", base: "মিটাৰ", reading: "mitār" }
+      - { word: "অন", base: "অন", reading: "ôn" }
+      - { word: "কৰক", base: "কৰক", reading: "kôrôk" }
   - id: "as-0304"
     target: "ষ্টেচনলৈ যাব লাগে।"
     reading: "stesônôlôi zābô lāge."
@@ -56,6 +60,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ষ্টেচনলৈ", ref: "as-0307" }
+      - { word: "যাব", base: "যাব", reading: "zābô" }
   - id: "as-0305"
     target: "কিমান সময় লাগিব?"
     reading: "kimān xômôy lāgibô?"
@@ -63,6 +70,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "লাগিব", ref: "as-2062" }
   - id: "as-0306"
     target: "ইয়াতে ৰখাই দিয়ক।"
     reading: "iyāte rôkhāi diyôk."
@@ -71,6 +80,9 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ইয়াতে", ref: "as-0323" }
+      - { word: "ৰখাই", base: "ৰখাই", reading: "rôkhāi" }
   - id: "as-0307"
     target: "ষ্টেচন"
     picture: "🚉"

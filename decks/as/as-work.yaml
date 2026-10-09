@@ -136,11 +136,15 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বাগান", base: "বাগান", reading: "bāgān" }
   - id: "as-0218"
     target: "আপুনি কি কাম কৰে?"
     reading: "āpuni ki kām kôre?"
     ipa: "apuni ki kam kɔɹe"
     pos: "phrase"
+    bases:
+      - { word: "কৰে", base: "কৰে", reading: "kôre" }
   - id: "as-0219"
     target: "মই শিক্ষক।"
     reading: "moi xikkhôk."
@@ -148,11 +152,15 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
   - id: "as-0220"
     target: "আপুনি ক'ত কাম কৰে?"
     reading: "āpuni kot kām kôre?"
     ipa: "apuni kot kam kɔɹe"
     pos: "phrase"
+    bases:
+      - { word: "কৰে", base: "কৰে", reading: "kôre" }
   - id: "as-0221"
     target: "মই এটা অফিচত কাম কৰোঁ।"
     reading: "moi etā ôphisôt kām kôrum̐."
@@ -160,3 +168,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "এটা", base: "এটা", reading: "etā" }
+      - { word: "অফিচত", ref: "as-0200" }
+      - { word: "কৰোঁ", base: "কৰোঁ", reading: "kôrum̐" }

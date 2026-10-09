@@ -21,6 +21,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "গা", base: "গা", reading: "gā" }
+      - { word: "ধোৱা", base: "ধোৱা", reading: "dhuwā" }
   - id: "as-0372"
     target: "দাঁত ঘঁহা"
     reading: "dām̐t ghôm̐hā"
@@ -28,6 +31,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দাঁত", base: "দাঁত", reading: "dām̐t" }
+      - { word: "ঘঁহা", base: "ঘঁহা", reading: "ghôm̐hā" }
   - id: "as-0373"
     target: "জলপান"
     reading: "zôlpān"
@@ -42,6 +48,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দুপৰীয়াৰ", ref: "as-0355" }
   - id: "as-0375"
     target: "ৰাতিৰ ভাত"
     reading: "rātir bhāt"
@@ -49,16 +57,24 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ৰাতিৰ", ref: "as-0357" }
   - id: "as-0376"
     target: "কামলৈ যোৱা"
     reading: "kāmôlôi zuwā"
     ipa: "kamɔlɔi zʊwa"
     pos: "phrase"
+    bases:
+      - { word: "কামলৈ", ref: "as-0120" }
+      - { word: "যোৱা", base: "যোৱা", reading: "zuwā" }
   - id: "as-0377"
     target: "ঘৰলৈ অহা"
     reading: "ghôrôlôi ôhā"
     ipa: "ɡʱɔɹɔlɔi ɔha"
     pos: "phrase"
+    bases:
+      - { word: "ঘৰলৈ", base: "ঘৰলৈ", reading: "ghôrôlôi" }
+      - { word: "অহা", base: "অহা", reading: "ôhā" }
   - id: "as-0378"
     target: "ৰন্ধা"
     reading: "rôndhā"
@@ -107,6 +123,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তাৰ", base: "তাৰ", reading: "tār" }
+      - { word: "পাছত", ref: "as-0124" }
   - id: "as-0386"
     target: "মই সদায় সাত বজাত উঠোঁ।"
     reading: "moi xôdāi xāt bôzāt uthum̐."
@@ -114,11 +133,21 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "বজাত", ref: "as-0358" }
+      - { word: "উঠোঁ", base: "উঠোঁ", reading: "uthum̐" }
   - id: "as-0387"
     target: "তাৰ পাছত মই কামলৈ যাওঁ।"
     reading: "tār pāsôt moi kāmôlôi zāum̐."
     ipa: "taɹ pasɔt moi kamɔlɔi zaʊ̃"
     pos: "phrase"
+    bases:
+      - { word: "তাৰ", base: "তাৰ", reading: "tār" }
+      - { word: "পাছত", ref: "as-0124" }
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "কামলৈ", ref: "as-0120" }
+      - { word: "যাওঁ", base: "যাওঁ", reading: "zāum̐" }
   - id: "as-0388"
     target: "মই ৰাতি এঘাৰ বজাত শুবলৈ যাওঁ।"
     reading: "moi rāti eghār bôzāt xubôlôi zāum̐."
@@ -126,6 +155,11 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "বজাত", ref: "as-0358" }
+      - { word: "শুবলৈ", base: "শুবলৈ", reading: "xubôlôi" }
+      - { word: "যাওঁ", base: "যাওঁ", reading: "zāum̐" }
   - id: "as-0389"
     target: "মই কেতিয়াও পলম নকৰোঁ।"
     reading: "moi ketiyāu pôlôm nôkôrum̐."
@@ -133,3 +167,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "কেতিয়াও", ref: "as-0146" }
+      - { word: "পলম", base: "পলম", reading: "pôlôm" }
+      - { word: "নকৰোঁ", base: "নকৰোঁ", reading: "nôkôrum̐" }
