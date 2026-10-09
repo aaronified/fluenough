@@ -42,12 +42,14 @@ const String teluguRegions = '''
 /// updated deck lists the rater codes that helped build it. With [more],
 /// the words' unit has a second deck, still unchecked. The path lists
 /// [regions], `- id: …` lines, none when empty; the rude word has
-/// [rudeNotes], a deck's `notes:` list, if given.
+/// [rudeNotes], a deck's `notes:` list, if given, and the plain word
+/// [proposed], a card's `proposed:` list (ADR-0038), if given.
 Map<String, String> reviewCourse({
   List<String> authors = const <String>[],
   bool more = false,
   String regions = teluguRegions,
   String? rudeNotes,
+  String? proposed,
 }) {
   const header = '''
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
@@ -67,7 +69,7 @@ tags: [unreviewed]
 $credited
 cards:
   - { id: $alikeCard, target: "విధవ", native: "widow", reading: "vidhava", ipa: "ʋid̪ʱaʋa", pos: "noun", pair: $rudeCard }
-  - { id: $plainCard, target: "అమ్మ", native: "mother", reading: "amma", notes: "Also అమ్మా (ammā) when calling her." }
+  - { id: $plainCard, target: "అమ్మ", native: "mother", reading: "amma", notes: "Also అమ్మా (ammā) when calling her."${proposed == null ? '' : ', proposed: $proposed'} }
 ''',
     'decks/te/$rudeDeck.yaml':
         '''
@@ -112,6 +114,7 @@ Future<AppState> reviewState({
   bool more = false,
   String regions = teluguRegions,
   String? rudeNotes,
+  String? proposed,
   TtsEngine tts = const NullTtsEngine(),
   MailShare share = const NullMailShare(),
   bool reviewing = false,
@@ -124,6 +127,7 @@ Future<AppState> reviewState({
         more: more,
         regions: regions,
         rudeNotes: rudeNotes,
+        proposed: proposed,
       ),
     ),
     tts: tts,

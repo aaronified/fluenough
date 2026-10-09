@@ -15,6 +15,7 @@ import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/path_model.dart';
 import '../decks/word_sheet.dart' show adultContentOn;
+import 'proposal_card.dart';
 import 'review_sheets.dart';
 import 'review_waiting.dart';
 import 'review_words.dart';
@@ -390,7 +391,9 @@ class _ReviewRow extends StatelessWidget {
         label: said(l10n.reviewCheck, l10n.reviewCheckFor(meaning)),
       ),
     };
+    final proposals = waitingProposals(deck, card).length;
     final extra = <String>[
+      if (proposals > 0) l10n.reviewProposalsWaiting(proposals),
       if (review?.rating case final r?) l10n.reviewRated(r.score),
       if (review?.alike case final a?)
         a.real ? l10n.reviewAlikeConfirmed : l10n.reviewAlikeRejected,
