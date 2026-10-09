@@ -1,24 +1,17 @@
 schema: 1
-id: gu-en-grammar-past-more
-name: "Past tense with an object"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I ate, she saw: in the past a verb with an object agrees with the object, and the doer takes -એ (-e). Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-past-more"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Simple past, verbs with an object"
-  slot_name: "the object"
   slots: ["a masculine object", "a feminine object", "a neuter object, or none", "a neuter plural object"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "With an object, the doer takes -એ (-e): હું (hum̐) → મેં (mem̐), તું (tum̐) → તેં (tem̐), તે (te) → તેણે (teṇe), તેઓ (teo) → તેમણે (temṇe), મીના (minā) → મીનાએ (mināe); અમે (ame) and તમે (tame) stay the same. The verb then agrees with the object, not with the doer: મેં ચા પીધી (mem̐ cā pidhi) (ચા (cā) is feminine), મેં પાણી પીધું (neuter), મેં રોટલો ખાધો (masculine). With no object named, the verb is neuter: મેં ખાધું (mem̐ khādhum̐), I ate. A woman and a man say it alike."
   entries:
     - lemma: "ખાવું"
-      key: khaavun
+      key: "khaavun"
       reading: "khāvum̐"
       ipa: "kʰaʋũ"
-      gloss: "to eat"
       forms:
         "a masculine object": "ખાધો"
         "a feminine object": "ખાધી"
@@ -35,10 +28,9 @@ pattern:
         "a neuter object, or none": "kʰad̪ʱũ"
         "a neuter plural object": "kʰad̪ʱã"
     - lemma: "પીવું"
-      key: piivun
+      key: "piivun"
       reading: "pivum̐"
       ipa: "piʋũ"
-      gloss: "to drink"
       forms:
         "a masculine object": "પીધો"
         "a feminine object": "પીધી"
@@ -55,10 +47,9 @@ pattern:
         "a neuter object, or none": "pid̪ʱũ"
         "a neuter plural object": "pid̪ʱã"
     - lemma: "લેવું"
-      key: levun
+      key: "levun"
       reading: "levum̐"
       ipa: "leʋũ"
-      gloss: "to take; to buy"
       forms:
         "a masculine object": "લીધો"
         "a feminine object": "લીધી"
@@ -75,10 +66,9 @@ pattern:
         "a neuter object, or none": "lid̪ʱũ"
         "a neuter plural object": "lid̪ʱã"
     - lemma: "કરવું"
-      key: karvun
+      key: "karvun"
       reading: "karvum̐"
       ipa: "kərʋũ"
-      gloss: "to do"
       forms:
         "a masculine object": "કર્યો"
         "a feminine object": "કરી"
@@ -95,10 +85,9 @@ pattern:
         "a neuter object, or none": "kərjũ"
         "a neuter plural object": "kərjã"
     - lemma: "જોવું"
-      key: jovun
+      key: "jovun"
       reading: "jovum̐"
       ipa: "dʒoʋũ"
-      gloss: "to see"
       forms:
         "a masculine object": "જોયો"
         "a feminine object": "જોઈ"
@@ -115,10 +104,9 @@ pattern:
         "a neuter object, or none": "dʒojũ"
         "a neuter plural object": "dʒojã"
     - lemma: "આપવું"
-      key: aapvun
+      key: "aapvun"
       reading: "āpvum̐"
       ipa: "apʋũ"
-      gloss: "to give"
       forms:
         "a masculine object": "આપ્યો"
         "a feminine object": "આપી"
@@ -135,10 +123,9 @@ pattern:
         "a neuter object, or none": "apjũ"
         "a neuter plural object": "apjã"
     - lemma: "વાંચવું"
-      key: vaanchvun
+      key: "vaanchvun"
       reading: "vāñcvum̐"
       ipa: "ʋaɲtʃʋũ"
-      gloss: "to read"
       forms:
         "a masculine object": "વાંચ્યો"
         "a feminine object": "વાંચી"

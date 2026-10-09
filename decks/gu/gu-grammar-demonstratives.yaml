@@ -1,22 +1,15 @@
 schema: 1
-id: gu-en-grammar-demonstratives
-name: "This and that"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "આ (ā) and એ (e), and the words built on them: here and there, now and then, this much, like this. Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Near and far"
-  slot_name: "near or far"
   slots: ["near: આ (ā), અ- (a-)", "far: એ (e), ત- (ta-)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Words for near things start with આ- (ā-) or અ- (a-); words for far ones with એ- (e-) or ત- (ta-), and most far words also have a form in તે- (te-): એટલું (eṭlum̐) or તેટલું (teṭlum̐), એવું (evum̐) or તેવું (tevum̐). આ (ā) and એ (e) stand before a noun and never change: આ ઘર (ā ghar), this house; એ છોકરી (e chokri), that girl. For something far off you can point at, there is also પેલું (pelum̐), 'that one over there', which agrees like an adjective."
   entries:
     - lemma: "this, that (before a noun)"
-      key: adj
-      gloss: "before a noun"
+      key: "adj"
       forms:
         "near: આ (ā), અ- (a-)": "આ"
         "far: એ (e), ત- (ta-)": ["એ", "તે"]
@@ -27,8 +20,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "a"
         "far: એ (e), ત- (ta-)": "e"
     - lemma: "here, there"
-      key: place
-      gloss: "a place"
+      key: "place"
       forms:
         "near: આ (ā), અ- (a-)": "અહીં"
         "far: એ (e), ત- (ta-)": "ત્યાં"
@@ -39,8 +31,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "əɦĩ"
         "far: એ (e), ત- (ta-)": "t̪jã"
     - lemma: "from here, from there"
-      key: from-place
-      gloss: "from a place"
+      key: "from-place"
       forms:
         "near: આ (ā), અ- (a-)": "અહીંથી"
         "far: એ (e), ત- (ta-)": "ત્યાંથી"
@@ -51,8 +42,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "əɦint̪ʰi"
         "far: એ (e), ત- (ta-)": "t̪jant̪ʰi"
     - lemma: "now, then"
-      key: time
-      gloss: "a time"
+      key: "time"
       forms:
         "near: આ (ā), અ- (a-)": "અત્યારે"
         "far: એ (e), ત- (ta-)": "ત્યારે"
@@ -63,8 +53,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "ət̪jare"
         "far: એ (e), ત- (ta-)": "t̪jare"
     - lemma: "this much, that much"
-      key: amount
-      gloss: "an amount"
+      key: "amount"
       forms:
         "near: આ (ā), અ- (a-)": "આટલું"
         "far: એ (e), ત- (ta-)": ["એટલું", "તેટલું"]
@@ -75,8 +64,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "aʈlũ"
         "far: એ (e), ત- (ta-)": "eʈlũ"
     - lemma: "like this, like that"
-      key: kind
-      gloss: "a kind"
+      key: "kind"
       forms:
         "near: આ (ā), અ- (a-)": "આવું"
         "far: એ (e), ત- (ta-)": ["એવું", "તેવું"]
@@ -87,8 +75,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "aʋũ"
         "far: એ (e), ત- (ta-)": "eʋũ"
     - lemma: "this way, that way"
-      key: manner
-      gloss: "a way of doing"
+      key: "manner"
       forms:
         "near: આ (ā), અ- (a-)": "આમ"
         "far: એ (e), ત- (ta-)": ["એમ", "તેમ"]
@@ -99,8 +86,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "am"
         "far: એ (e), ત- (ta-)": "em"
     - lemma: "to this one, to that one"
-      key: to-one
-      gloss: "with -ને (-ne)"
+      key: "to-one"
       forms:
         "near: આ (ā), અ- (a-)": "આને"
         "far: એ (e), ત- (ta-)": ["એને", "તેને"]
@@ -111,8 +97,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "ane"
         "far: એ (e), ત- (ta-)": "ene"
     - lemma: "of this one, of that one"
-      key: of-one
-      gloss: "with -નું (-num̐), before a neuter noun"
+      key: "of-one"
       forms:
         "near: આ (ā), અ- (a-)": "આનું"
         "far: એ (e), ત- (ta-)": ["એનું", "તેનું"]
@@ -123,8 +108,7 @@ pattern:
         "near: આ (ā), અ- (a-)": "anũ"
         "far: એ (e), ત- (ta-)": "enũ"
     - lemma: "in this, in that"
-      key: in-one
-      gloss: "with -માં (-mām̐)"
+      key: "in-one"
       forms:
         "near: આ (ā), અ- (a-)": "આમાં"
         "far: એ (e), ત- (ta-)": ["એમાં", "તેમાં"]

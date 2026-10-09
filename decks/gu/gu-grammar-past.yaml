@@ -1,24 +1,17 @@
 schema: 1
-id: gu-en-grammar-past
-name: "Past tense"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I came, she went: the simple past of verbs without an object, which agrees with the doer's gender and number. Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-past"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Simple past, verbs without an object"
-  slot_name: "person and gender"
   slots: ["હું (m)", "હું (f)", "તે (m)", "તે (f)", "તે (it)", "અમે (m)", "અમે (mixed)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "With a verb that takes no object, the past agrees with the doer like an adjective: -યો (m), -ઈ (f), -યું (n), -યા (men), -યાં (a mixed group, or a woman spoken of with respect). It shows no person: હું ગયો (hum̐ gayo), તે ગયો (te gayo). જવું (javum̐) and બેસવું (besvum̐) are irregular: ગયો (gayo), બેઠો (beṭho). Add છું (chum̐) or છે (che) for 'have': હું આવ્યો છું (hum̐ āvyo chum̐), I have come. With an object the rule is different: see the next deck."
   entries:
     - lemma: "જવું"
-      key: javun
+      key: "javun"
       reading: "javum̐"
       ipa: "dʒəʋũ"
-      gloss: "to go"
       forms:
         "હું (m)": "ગયો"
         "હું (f)": "ગઈ"
@@ -44,10 +37,9 @@ pattern:
         "અમે (m)": "ɡəja"
         "અમે (mixed)": "ɡəjã"
     - lemma: "આવવું"
-      key: aavvun
+      key: "aavvun"
       reading: "āvvum̐"
       ipa: "aʋʋũ"
-      gloss: "to come"
       forms:
         "હું (m)": "આવ્યો"
         "હું (f)": "આવી"
@@ -73,10 +65,9 @@ pattern:
         "અમે (m)": "aʋja"
         "અમે (mixed)": "aʋjã"
     - lemma: "ઊઠવું"
-      key: uuthvun
+      key: "uuthvun"
       reading: "uṭhvum̐"
       ipa: "uʈʰʋũ"
-      gloss: "to get up"
       forms:
         "હું (m)": "ઊઠ્યો"
         "હું (f)": "ઊઠી"
@@ -102,10 +93,9 @@ pattern:
         "અમે (m)": "uʈʰja"
         "અમે (mixed)": "uʈʰjã"
     - lemma: "બેસવું"
-      key: besvun
+      key: "besvun"
       reading: "besvum̐"
       ipa: "besʋũ"
-      gloss: "to sit"
       forms:
         "હું (m)": "બેઠો"
         "હું (f)": "બેઠી"

@@ -1,24 +1,17 @@
 schema: 1
-id: gu-en-grammar-irregular
-name: "Irregular verbs"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The common verbs whose past breaks the pattern, with their future and polite request. Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-irregular"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Irregular verbs"
-  slot_name: "form"
   slots: ["past (it, or a neuter object)", "future, તે (te)", "request, તમે (tame)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "A regular verb makes its past with -યું (-yum̐) on the stem: બોલવું (bolvum̐), બોલ્યું (bolyum̐); આવવું (āvvum̐), આવ્યું (āvyum̐). These, among the most used verbs, don't: જવું (javum̐) gives ગયું (gayum̐), લેવું લીધું (levum̐ lidhum̐), ખાવું ખાધું (khāvum̐ khādhum̐). Their future and request are regular. The past here is neuter; it agrees as usual: ગયો (gayo), ગઈ (gai), ગયું (gayum̐)."
   entries:
     - lemma: "જવું"
-      key: javun
+      key: "javun"
       reading: "javum̐"
       ipa: "dʒəʋũ"
-      gloss: "to go"
       forms:
         "past (it, or a neuter object)": "ગયું"
         "future, તે (te)": "જશે"
@@ -32,10 +25,9 @@ pattern:
         "future, તે (te)": "dʒəʃe"
         "request, તમે (tame)": "dʒao"
     - lemma: "કરવું"
-      key: karvun
+      key: "karvun"
       reading: "karvum̐"
       ipa: "kərʋũ"
-      gloss: "to do"
       forms:
         "past (it, or a neuter object)": "કર્યું"
         "future, તે (te)": "કરશે"
@@ -49,10 +41,9 @@ pattern:
         "future, તે (te)": "kərʃe"
         "request, તમે (tame)": "kəro"
     - lemma: "લેવું"
-      key: levun
+      key: "levun"
       reading: "levum̐"
       ipa: "leʋũ"
-      gloss: "to take"
       forms:
         "past (it, or a neuter object)": "લીધું"
         "future, તે (te)": "લેશે"
@@ -66,10 +57,9 @@ pattern:
         "future, તે (te)": "leʃe"
         "request, તમે (tame)": "lo"
     - lemma: "દેવું"
-      key: devun
+      key: "devun"
       reading: "devum̐"
       ipa: "d̪eʋũ"
-      gloss: "to give"
       forms:
         "past (it, or a neuter object)": "દીધું"
         "future, તે (te)": "દેશે"
@@ -83,10 +73,9 @@ pattern:
         "future, તે (te)": "d̪eʃe"
         "request, તમે (tame)": "d̪o"
     - lemma: "ખાવું"
-      key: khaavun
+      key: "khaavun"
       reading: "khāvum̐"
       ipa: "kʰaʋũ"
-      gloss: "to eat"
       forms:
         "past (it, or a neuter object)": "ખાધું"
         "future, તે (te)": "ખાશે"
@@ -100,10 +89,9 @@ pattern:
         "future, તે (te)": "kʰaʃe"
         "request, તમે (tame)": "kʰao"
     - lemma: "પીવું"
-      key: piivun
+      key: "piivun"
       reading: "pivum̐"
       ipa: "piʋũ"
-      gloss: "to drink"
       forms:
         "past (it, or a neuter object)": "પીધું"
         "future, તે (te)": "પીશે"
@@ -117,10 +105,9 @@ pattern:
         "future, તે (te)": "piʃe"
         "request, તમે (tame)": "pio"
     - lemma: "બેસવું"
-      key: besvun
+      key: "besvun"
       reading: "besvum̐"
       ipa: "besʋũ"
-      gloss: "to sit"
       forms:
         "past (it, or a neuter object)": "બેઠું"
         "future, તે (te)": "બેસશે"
@@ -134,10 +121,9 @@ pattern:
         "future, તે (te)": "besʃe"
         "request, તમે (tame)": "beso"
     - lemma: "કહેવું"
-      key: kahevun
+      key: "kahevun"
       reading: "kahevum̐"
       ipa: "kəɦeʋũ"
-      gloss: "to say; to tell"
       forms:
         "past (it, or a neuter object)": "કહ્યું"
         "future, તે (te)": "કહેશે"
@@ -151,10 +137,9 @@ pattern:
         "future, તે (te)": "kəɦeʃe"
         "request, તમે (tame)": "kəɦo"
     - lemma: "થવું"
-      key: thavun
+      key: "thavun"
       reading: "thavum̐"
       ipa: "t̪ʰəʋũ"
-      gloss: "to become; to happen"
       forms:
         "past (it, or a neuter object)": "થયું"
         "future, તે (te)": "થશે"
@@ -168,10 +153,9 @@ pattern:
         "future, તે (te)": "t̪ʰəʃe"
         "request, તમે (tame)": "t̪ʰao"
     - lemma: "સૂવું"
-      key: suuvun
+      key: "suuvun"
       reading: "suvum̐"
       ipa: "suʋũ"
-      gloss: "to sleep; to lie down"
       forms:
         "past (it, or a neuter object)": "સૂતું"
         "future, તે (te)": "સૂશે"

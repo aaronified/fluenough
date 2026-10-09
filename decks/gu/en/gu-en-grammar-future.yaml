@@ -1,0 +1,19 @@
+schema: 1
+id: "gu-en-grammar-future"
+kind: "layer"
+core: "gu-grammar-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Future tense"
+license: "CC0-1.0"
+description: "I will go, they will come: one ending for each person, and no gender. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Future"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "karvun": "to do"
+    "javun": "to go"
+    "aavvun": "to come"
+    "khaavun": "to eat"
+  notes: "The stem and an ending with શ (śa): -ઈશ (-iś) (હું (hum̐), તું (tum̐)), -શે (-śe) (તે (te), તેઓ (teo)), -ઈશું (-iśum̐) (અમે (ame)), -શો (-śo) (તમે (tame)). Unlike Hindi, the future shows no gender. In everyday speech તું (tum̐) often takes -શે (-śe) too: તું ક્યારે આવશે (tum̐ kyāre āvśe)? A request put in the future is polite: બેસશો (besśo)? won't you sit?"
