@@ -38,12 +38,6 @@ class Reviews extends Table {
 
   IntColumn get intervalAfter => integer()();
 
-  /// SM-2's ease, for the rows written before FSRS (migration 5). Since,
-  /// [easeBefore] is null and [easeAfter] is 0, meaning "not SM-2".
-  RealColumn get easeBefore => real().nullable()();
-
-  RealColumn get easeAfter => real()();
-
   /// FSRS's stability after this review, in days. Added by migration 5:
   /// null on the rows written before it.
   RealColumn get stabilityAfter => real().nullable()();

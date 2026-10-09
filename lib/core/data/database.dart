@@ -56,8 +56,10 @@ class AppDatabase extends _$AppDatabase {
   /// 4: `card_states` keyed by `(card_id, mode)`, without the deck (ADR-0018).
   /// 5: FSRS in place of SM-2: `card_states` holds FSRS's state, and
   ///    `reviews` gains `stability_after` and `difficulty_after`.
+  /// 6: `reviews` loses SM-2's `ease_before` and `ease_after`; every row is
+  ///    kept (owner, 2026-10-09).
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -90,6 +92,21 @@ class AppDatabase extends _$AppDatabase {
           reviews.difficultyAfter,
         ]) {
           if (!has.contains(column.name)) await m.addColumn(reviews, column);
+        }
+      }
+      if (from < 6) {
+        // Dropping a column rewrites no row, so the append-only triggers
+        // stay and are not set off. Each once, as in step 5.
+        final has = <String>{
+          for (final row in await customSelect(
+            "SELECT name FROM pragma_table_info('reviews')",
+          ).get())
+            row.read<String>('name'),
+        };
+        for (final column in const <String>['ease_before', 'ease_after']) {
+          if (has.contains(column)) {
+            await customStatement('ALTER TABLE reviews DROP COLUMN $column');
+          }
         }
       }
     },

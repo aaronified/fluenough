@@ -15,7 +15,8 @@ no estimate of its own from length or sounds.
 
 - **Schedules are already separate by skill.** Since ADR-0005 each
   `(card, mode)` pair has its own state: recognition, production,
-  listening, speaking, grammar and reading. Each has its own SM-2 ease.
+  listening, speaking, grammar and reading. Each has its own FSRS
+  difficulty and stability.
 - **Lesson difficulty is not.** `Difficulty.of(card)` in
   `lib/core/scheduling/lesson.dart` gives one difficulty per card, for every
   skill, from length alone:

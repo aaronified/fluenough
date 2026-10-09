@@ -260,6 +260,11 @@ The owner's answers to #235, 2026-10-08:
   bring in script only options for a picture" (a picture shown, the word
   chosen from options written in the script only).
 
+- **SM-2 goes, all but its history** (owner, 2026-10-09): migration 6
+  drops `reviews.ease_before` and `ease_after`, keeping every row; tests
+  and plans no longer name it. ADRs keep it, as the record of what was
+  decided.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
