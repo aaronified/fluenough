@@ -34,6 +34,28 @@ checked against them. Lines marked `info` (a layer's coverage of its core, a
 plan's sizes) never fail the build. `tools/fixtures/b1/zz/` is a valid set in
 a made-up language, used by `test_validate_b1.py`.
 
+## `deck_index.py`
+
+Writes `decks/index.json`, the list the app downloads decks from (#210,
+ADR-0037). Run it after changing anything under `decks/`, and commit the
+result with your change.
+
+```sh
+python3 tools/deck_index.py            # write it
+python3 tools/deck_index.py --check    # exit 1 if it is out of date
+```
+
+For each language it lists its name, own name, icon and script, whether it
+has script decks, the native languages it is taught from, its path's order,
+each unit's planned words and the words its decks have (counted as the
+validator counts them, for completeness toward B1), and every file with its
+path, size, SHA-256, schema, kind, and the native language and core id of a
+deck. Languages in `HIDDEN` are left out; `decks/themes.yaml` stays bundled
+in the app. One file is one line, so a changed deck is a one-line diff.
+
+`validate_decks.py decks/` fails while the index is out of date, so CI keeps
+it current.
+
 ## `pictures.py`
 
 Copies the pictures the decks name (a card's `picture`, one emoji) from a
