@@ -1,92 +1,87 @@
 schema: 1
-id: kn-en-help
-name: "Help"
-kind: vocab
-theme: help
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Asking for help, doctors and medicine, and saying you are lost. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "kn-help"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
 cards:
-  - id: kn-0523
+  - id: "kn-0523"
     target: "ಸಹಾಯ"
-    native: "help"
     reading: "sahāya"
     ipa: "sahaːja"
     pos: "noun"
-  - id: kn-0524
+  - id: "kn-0524"
     target: "ದಯವಿಟ್ಟು ಸಹಾಯ ಮಾಡಿ!"
-    native: "Please help!"
     reading: "dayaviṭṭu sahāya māḍi!"
     ipa: "d̪ajaʋiʈʈu sahaːja maːɖi"
     pos: "phrase"
-    notes: "ದಯವಿಟ್ಟು (dayaviṭṭu) is a formal 'please'."
-  - id: kn-0525
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0525"
     target: "ಕಾಪಾಡಿ!"
-    native: "Help! Save me!"
     reading: "kāpāḍi!"
     ipa: "kaːpaːɖi"
     pos: "phrase"
-  - id: kn-0526
+  - id: "kn-0526"
     target: "ನಿಲ್ಲಿ!"
-    native: "Stop! Wait, please!"
     reading: "nilli!"
     ipa: "nilli"
     pos: "phrase"
-    notes: "To a friend: ನಿಲ್ಲು! (nillu!)."
-  - id: kn-0527
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0527"
     target: "ಪೊಲೀಸ್"
-    native: "police"
     picture: "👮"
     reading: "polīs"
     ipa: "poliːs"
     pos: "noun"
-  - ref: kn-0235
-  - id: kn-0528
+  - ref: "kn-0235"
+  - id: "kn-0528"
     target: "ಆಸ್ಪತ್ರೆ"
-    native: "hospital"
     picture: "🏥"
     reading: "āspatre"
     ipa: "aːspat̪re"
     pos: "noun"
-    notes: "From the English 'hospital'."
-  - id: kn-0529
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0529"
     target: "ಔಷಧಿ"
-    native: "medicine"
     picture: "💊"
     reading: "auṣadhi"
     ipa: "auʂad̪ʱi"
     alt_target: ["ಔಷಧ"]
     pos: "noun"
-    notes: "Also ಔಷಧ (auṣadha). A chemist's is a ಮೆಡಿಕಲ್ ಶಾಪ್ (meḍikal śāp)."
-  - id: kn-0530
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0530"
     target: "ನೋವು"
-    native: "pain"
     reading: "nōvu"
     ipa: "noːʋu"
     pos: "noun"
-    notes: "ತಲೆ ನೋವು (tale nōvu), a headache; ಹೊಟ್ಟೆ ನೋವು (hoṭṭe nōvu), a stomach ache."
-  - id: kn-0531
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0531"
     target: "ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ."
-    native: "I'm lost."
     reading: "nānu dāri tappiddēne."
     ipa: "naːnu d̪aːri t̪appid̪d̪eːne"
     pos: "phrase"
-    notes: "'I have missed the way'."
-  - id: kn-0532
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0532"
     target: "ನನಗೆ ಅರ್ಥ ಆಗಲಿಲ್ಲ."
-    native: "I didn't understand."
     reading: "nanage artha āgalilla."
     ipa: "nanaɡe art̪ʰa aːɡalilla"
     alt_target: ["ನಂಗೆ ಅರ್ಥ ಆಗ್ಲಿಲ್ಲ."]
     pos: "phrase"
-    notes: "'To me the meaning did not come about'."
-  - id: kn-0533
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0533"
     target: "ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ?"
-    native: "Where is the toilet?"
     reading: "śaucālaya ellide?"
     ipa: "ʃautʃaːlaja ellid̪e"
     alt_target: ["ಟಾಯ್ಲೆಟ್ ಎಲ್ಲಿದೆ?"]
     pos: "phrase"
-    notes: "ಶೌಚಾಲಯ (śaucālaya) is the word on signs; many say ಟಾಯ್ಲೆಟ್ (ṭāyleṭ)."
+    notes:
+      - { id: "n1", kind: "note" }

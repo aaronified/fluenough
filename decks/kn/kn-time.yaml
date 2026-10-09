@@ -1,141 +1,132 @@
 schema: 1
-id: kn-en-time
-name: "Time and days"
-kind: vocab
-theme: time
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Today and tomorrow, telling the time, and the days of the week. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "kn-time"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
 cards:
-  - id: kn-0413
+  - id: "kn-0413"
     target: "ಇವತ್ತು"
-    native: "today"
     reading: "ivattu"
     ipa: "iʋat̪t̪u"
     alt_target: ["ಇಂದು"]
     pos: "other"
-    notes: "Written also ಇಂದು (indu)."
-  - id: kn-0414
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0414"
     target: "ನಾಳೆ"
-    native: "tomorrow"
     reading: "nāḷe"
     ipa: "naːɭe"
     pos: "other"
-  - id: kn-0415
+  - id: "kn-0415"
     target: "ನಿನ್ನೆ"
-    native: "yesterday"
     reading: "ninne"
     ipa: "ninne"
     pos: "other"
-  - id: kn-0416
+  - id: "kn-0416"
     target: "ಈಗ"
-    native: "now"
     reading: "īga"
     ipa: "iːɡa"
     pos: "other"
-  - id: kn-0417
+  - id: "kn-0417"
     target: "ಬೆಳಿಗ್ಗೆ"
-    native: "morning; in the morning"
     reading: "beḷigge"
     ipa: "beɭiɡɡe"
     alt_target: ["ಬೆಳಗ್ಗೆ"]
     pos: "other"
-  - id: kn-0418
+  - id: "kn-0418"
     target: "ಸಂಜೆ"
-    native: "evening"
     reading: "sañje"
     ipa: "saɲdʒe"
     pos: "other"
-  - id: kn-0419
+  - id: "kn-0419"
     target: "ರಾತ್ರಿ"
-    native: "night"
     reading: "rātri"
     ipa: "raːt̪ri"
     pos: "other"
-  - id: kn-0420
+  - id: "kn-0420"
     target: "ಗಂಟೆ"
-    native: "o'clock; hours; a bell"
     reading: "gaṇṭe"
     ipa: "ɡaɳʈe"
     pos: "noun"
-    notes: "ಐದು ಗಂಟೆ (aidu gaṇṭe), five o'clock; ಐದು ಗಂಟೆಗೆ (aidu gaṇṭege), at five."
-  - id: kn-0421
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0421"
     target: "ನಾಲ್ಕೂವರೆ"
-    native: "half past four; 4½"
     reading: "nālkūvare"
     ipa: "naːlkuːʋare"
     pos: "other"
-    notes: "Half past is the number with -ಊವರೆ (-ūvare): ನಾಲ್ಕೂವರೆ ಗಂಟೆ (nālkūvare gaṇṭe), half past four."
-  - id: kn-0422
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0422"
     target: "ಈಗ ಎಷ್ಟು ಗಂಟೆ?"
-    native: "What time is it?"
     reading: "īga eṣṭu gaṇṭe?"
     ipa: "iːɡa eʂʈu ɡaɳʈe"
     alt_target: ["ಟೈಮ್ ಎಷ್ಟು?"]
     pos: "phrase"
-    notes: "Many simply ask ಟೈಮ್ ಎಷ್ಟು? (taim eshtu?)."
-  - id: kn-0423
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0423"
     target: "ದಿನ"
-    native: "day"
     reading: "dina"
     ipa: "d̪ina"
     pos: "noun"
-  - id: kn-0424
+  - id: "kn-0424"
     target: "ವಾರ"
-    native: "week"
     reading: "vāra"
     ipa: "ʋaːra"
     pos: "noun"
-    notes: "Each weekday is a name and ವಾರ (vāra): ಸೋಮ (sōma) + ವಾರ (vāra), Monday."
-  - id: kn-0425
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0425"
     target: "ಸೋಮವಾರ"
-    native: "Monday"
     reading: "sōmavāra"
     ipa: "soːmaʋaːra"
     pos: "noun"
-    notes: "ಸೋಮ (sōma), the moon."
-  - id: kn-0426
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0426"
     target: "ಮಂಗಳವಾರ"
-    native: "Tuesday"
     reading: "maṅgaḷavāra"
     ipa: "maŋɡaɭaʋaːra"
     pos: "noun"
-    notes: "ಮಂಗಳ (maṅgaḷa), Mars."
-  - id: kn-0427
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0427"
     target: "ಬುಧವಾರ"
-    native: "Wednesday"
     reading: "budhavāra"
     ipa: "bud̪ʱaʋaːra"
     pos: "noun"
-    notes: "ಬುಧ (budha), Mercury."
-  - id: kn-0428
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0428"
     target: "ಗುರುವಾರ"
-    native: "Thursday"
     reading: "guruvāra"
     ipa: "ɡuruʋaːra"
     pos: "noun"
-    notes: "ಗುರು (guru), Jupiter."
-  - id: kn-0429
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0429"
     target: "ಶುಕ್ರವಾರ"
-    native: "Friday"
     reading: "śukravāra"
     ipa: "ʃukraʋaːra"
     pos: "noun"
-    notes: "ಶುಕ್ರ (śukra), Venus."
-  - id: kn-0430
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0430"
     target: "ಶನಿವಾರ"
-    native: "Saturday"
     reading: "śanivāra"
     ipa: "ʃaniʋaːra"
     pos: "noun"
-    notes: "ಶನಿ (śani), Saturn."
-  - id: kn-0431
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0431"
     target: "ಭಾನುವಾರ"
-    native: "Sunday"
     reading: "bhānuvāra"
     ipa: "bʱaːnuʋaːra"
     alt_target: ["ರವಿವಾರ"]
     pos: "noun"
-    notes: "ಭಾನು (bhānu), the sun. Also ರವಿವಾರ (ravivāra)."
+    notes:
+      - { id: "n1", kind: "note" }
