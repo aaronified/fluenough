@@ -73,13 +73,14 @@ moves to "only online".
    - a test records nothing;
    - twice the text size, both themes, screen-reader labels.
 
-## To decide
+## Decided (owner, 2026-10-09)
 
-- Whether a failed speaking test also shows the recogniser's own error code
-  in small print, such as `error_no_match`. It would let a learner, or a bug
-  report, say exactly what failed, which would settle the Telugu question.
-- Whether the card shows a word from the course to say, or lets the learner
-  say anything.
+- **The speaking test offers a word from the course to say, and also lets
+  the learner say anything,** shown as heard.
+- **A failed test shows the recogniser's error code in small print**
+  (`error_no_match`), and **every speech and voice error also goes to the
+  app log** (#162), so a report can say exactly what failed.
+- Built now, with the rest of the settings redesign.
 
 ## Estimate
 
