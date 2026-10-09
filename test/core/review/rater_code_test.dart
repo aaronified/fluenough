@@ -23,6 +23,16 @@ void main() {
     }
   });
 
+  test('the check symbol is the mail tool\'s', () {
+    // The same vectors as tools/test_mail_to_issues.py: the mockup's code,
+    // FL-7K3M-Q9TD-6, is a valid one.
+    expect(RaterCode.checkSymbol('7K3MQ9TD'), '6');
+    expect(RaterCode.checkSymbol('00000000'), '0');
+    expect(RaterCode.checkSymbol('ZZZZZZZZ'), '3');
+    expect(RaterCode.checkSymbol('ABCDEFGH'), '2');
+    expect('${RaterCode.tryParse('FL-7K3M-Q9TD-6')}', 'FL-7K3M-Q9TD-6');
+  });
+
   test('the alphabet leaves out I, L, O and U', () {
     expect(RaterCode.alphabet, hasLength(32));
     for (final letter in <String>['I', 'L', 'O', 'U']) {
