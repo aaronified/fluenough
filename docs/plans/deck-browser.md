@@ -45,6 +45,38 @@ Beyond per-card suggestions, the pages handle:
   keeps it in the browser. Ratings and sign-offs count per code, so one
   person cannot stack votes. Plain suggestions still need no code.
 
+### The owner's Sheet, 2026-10-09
+
+> you will generate an unique rater-code generation function (for the
+> google sheet). and i will use that to generate the codes and hand them
+> out. this will be a google sheet that only I will have access to, it will
+> have the email id of the participant and their details. the same sheet
+> will have the reviewer results.
+>
+> since the sheet can only be accessed by me directly, and by my github,
+> the security risk looks small, unless the secret spills out.
+
+So:
+
+- **One private Sheet,** shared with the owner and the workflow's service
+  account only. A **Raters** tab holds each participant: email, name,
+  languages, region, adult content confirmed, their code, when it was
+  made, and whether it is active. The **responses** (suggestions,
+  sign-offs, ratings, similarity checks) land in the same Sheet.
+- **Codes are made in the Sheet** by an Apps Script function the
+  repository provides: random and unguessable (the Form is public, so a
+  guessed code is the risk), unique in the Sheet, with a check character
+  that catches a mistyped code, and revocable.
+- **What keeps the emails private,** since the repository and its
+  workflow logs are public:
+  - the workflow reads only the columns it needs (code, languages, adult
+    confirmed, active), never email, name or other details;
+  - it writes no row to a log, an issue or the repository, only counts and
+    ids; an issue carries no code, email or name unless the reviewer typed
+    a name into the suggestion themselves;
+  - the service-account key is a secret available only to the scheduled
+    workflow on `main`, never to pull requests from forks.
+
 ## The form's link is not private
 
 A GitHub secret keeps a value out of the repository and the logs, but the
