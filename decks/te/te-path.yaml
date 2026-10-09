@@ -151,7 +151,8 @@ units:
       - { id: "how-do-you-feel", text: { "en": "A friend asks how you feel, and you answer" } }
     reading_passages:
       - { id: "postcard", text: { "en": "A short postcard: the weather and the food" } }
-  - planned: { id: "te-animals", theme: "animals", words: 28 }
+  - decks: ["te-animals", "te-animals-sentences", "*"]
+    words: 30
     listening_passages:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:

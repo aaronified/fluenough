@@ -1,0 +1,99 @@
+schema: 1
+id: "te-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-1014"
+    target: "కుక్క ఇంటి బయట ఉంది."
+    reading: "kukka iṇṭi bayaṭa undi."
+    ipa: "kukka iɳʈi bajaʈa und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఇంటి", ref: "te-0195" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1015"
+    target: "పిల్లి పాలు తాగుతుంది."
+    reading: "pilli pālu tāgutundi."
+    ipa: "pilli paːlu t̪aːɡut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "తాగుతుంది", ref: "te-0625" }
+  - id: "te-1016"
+    target: "ఆవు గడ్డి తింటుంది."
+    reading: "āvu gaḍḍi tiṇṭundi."
+    ipa: "aːʋu ɡaɖɖi t̪iɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "గడ్డి", base: "గడ్డి", reading: "gaḍḍi" }
+      - { word: "తింటుంది", ref: "te-0624" }
+  - id: "te-1017"
+    target: "రైతు ఎడ్లను పొలంలో ఉపయోగిస్తాడు."
+    reading: "raitu eḍlanu polamlō upayōgistāḍu."
+    ipa: "rait̪u eɖlanu polamloː upajoːɡist̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-plural", "te-rule-ni", "te-rule-lo", "te-rule-present-third"]
+    bases:
+      - { word: "ఎడ్లను", ref: "te-0990" }
+      - { word: "పొలంలో", ref: "te-0781" }
+      - { word: "ఉపయోగిస్తాడు", base: "ఉపయోగించడం", reading: "upayōgiñcaḍam" }
+  - id: "te-1018"
+    target: "పక్షులు చెట్టు మీద ఉన్నాయి."
+    reading: "pakṣulu ceṭṭu mīda unnāyi."
+    ipa: "pakʂulu tʃeʈʈu miːd̪a unnaːji"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "పక్షులు", ref: "te-0995" }
+      - { word: "చెట్టు", base: "చెట్టు", reading: "ceṭṭu" }
+      - { word: "ఉన్నాయి", ref: "te-0633" }
+  - id: "te-1019"
+    target: "ఏనుగు చాలా పెద్దది."
+    reading: "ēnugu cālā peddadi."
+    ipa: "eːnuɡu tʃaːlaː ped̪d̪ad̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā" }
+      - { word: "పెద్దది", ref: "te-0502" }
+  - id: "te-1020"
+    target: "ఈ పాము చాలా పొడవుగా ఉంది."
+    reading: "ī pāmu cālā poḍavugā undi."
+    ipa: "iː paːmu tʃaːlaː poɖaʋuɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā" }
+      - { word: "పొడవుగా", ref: "te-0945" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1021"
+    target: "కోతులు చెట్టు ఎక్కుతాయి."
+    reading: "kōtulu ceṭṭu ekkutāyi."
+    ipa: "koːt̪ulu tʃeʈʈu ekkut̪aːji"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "కోతులు", ref: "te-1002" }
+      - { word: "చెట్టు", base: "చెట్టు", reading: "ceṭṭu" }
+      - { word: "ఎక్కుతాయి", ref: "te-0827" }
+  - id: "te-1022"
+    target: "నాకు పిల్లులు ఇష్టం."
+    reading: "nāku pillulu iṣṭam."
+    ipa: "naːku pillulu iʂʈam"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat", "te-rule-plural"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "పిల్లులు", ref: "te-0987" }
+  - id: "te-1023"
+    target: "నేను ఆవు పాలు తాగుతాను."
+    reading: "nēnu āvu pālu tāgutānu."
+    ipa: "neːnu aːʋu paːlu t̪aːɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "తాగుతాను", ref: "te-0625" }
