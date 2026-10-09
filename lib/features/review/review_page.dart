@@ -371,47 +371,38 @@ class _ReviewRow extends StatelessWidget {
     final reading = card.reading;
     final review = this.review;
     final LanguageInfo language = deck.language;
+    // The label inside each button, so that the button keeps its own tap
+    // for screen readers. It starts with the button's word, for voice
+    // control, and names the card, as a list of rows reads alike.
+    Widget said(String text, String label) =>
+        Semantics(label: label, excludeSemantics: true, child: Text(text));
+    final meaning = card.native;
     final Widget mark = switch (review) {
       _ when onRate != null => FilledButton.tonalIcon(
         onPressed: onRate,
         icon: const Icon(Icons.bar_chart, size: 18),
-        label: Text(
-          review?.rating == null ? l10n.reviewRateShort : l10n.reviewRatedShort,
-        ),
+        label: review?.rating == null
+            ? said(l10n.reviewRateShort, l10n.reviewRateFor(meaning))
+            : said(l10n.reviewRatedShort, l10n.reviewRatedFor(meaning)),
       ),
-      CardReview(suggestion: _?) => Semantics(
-        label: l10n.reviewSuggestionSaved,
-        excludeSemantics: true,
-        button: true,
-        child: FilledButton.tonalIcon(
-          onPressed: onSuggest,
-          icon: const Icon(Icons.edit_outlined, size: 18),
-          label: Text(l10n.reviewSuggested),
-        ),
+      CardReview(suggestion: _?) => FilledButton.tonalIcon(
+        onPressed: onSuggest,
+        icon: const Icon(Icons.edit_outlined, size: 18),
+        label: said(l10n.reviewSuggested, l10n.reviewSuggestedFor(meaning)),
       ),
-      CardReview(right: true) => Semantics(
-        label: l10n.reviewUnmarkRight,
-        excludeSemantics: true,
-        button: true,
-        child: FilledButton.icon(
-          onPressed: () => state.reviewing.markRight(deck, card, right: false),
-          icon: const Icon(Icons.check, size: 18),
-          label: Text(l10n.reviewRight),
-        ),
+      CardReview(right: true) => FilledButton.icon(
+        onPressed: () => state.reviewing.markRight(deck, card, right: false),
+        icon: const Icon(Icons.check, size: 18),
+        label: said(l10n.reviewRight, l10n.reviewRightFor(meaning)),
       ),
-      _ => Semantics(
-        label: l10n.reviewMarkRight,
-        excludeSemantics: true,
-        button: true,
-        child: FilledButton.tonalIcon(
-          style: FilledButton.styleFrom(
-            backgroundColor: scheme.surfaceContainerHighest,
-            foregroundColor: scheme.onSurface,
-          ),
-          onPressed: () => state.reviewing.markRight(deck, card),
-          icon: const Icon(Icons.check, size: 18),
-          label: Text(l10n.reviewCheck),
+      _ => FilledButton.tonalIcon(
+        style: FilledButton.styleFrom(
+          backgroundColor: scheme.surfaceContainerHighest,
+          foregroundColor: scheme.onSurface,
         ),
+        onPressed: () => state.reviewing.markRight(deck, card),
+        icon: const Icon(Icons.check, size: 18),
+        label: said(l10n.reviewCheck, l10n.reviewCheckFor(meaning)),
       ),
     };
     final extra = <String>[

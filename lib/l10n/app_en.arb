@@ -1494,6 +1494,38 @@
       }
     }
   },
+  "wordSheetLine": "{id} · {state}",
+  "@wordSheetLine": {
+    "description": "Top line of a word's card on a unit's screen: its id and where the learner stands with it, as the word's row says it.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "state": {
+        "type": "String",
+        "example": "Learning 58%"
+      }
+    }
+  },
+  "wordSheetLinePos": "{id} · {pos} · {state}",
+  "@wordSheetLinePos": {
+    "description": "Top line of a word's card on a unit's screen: its id, its part of speech as the deck gives it, and where the learner stands with it.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "pos": {
+        "type": "String",
+        "example": "noun"
+      },
+      "state": {
+        "type": "String",
+        "example": "Learning 58%"
+      }
+    }
+  },
   "wordSheetSoundsLike": "Sounds almost like {word} ({reading}), {meaning}. Take care when you say it.",
   "@wordSheetSoundsLike": {
     "description": "Warning on a word's card: another word sounds almost the same.",
@@ -1525,10 +1557,6 @@
         "example": "but"
       }
     }
-  },
-  "wordSheetSoundsRude": "Careful: said slightly wrong, this sounds like a rude word.",
-  "@wordSheetSoundsRude": {
-    "description": "Warning on a word's card when the word it sounds like is rude. The rude word is shown only with adult content on."
   },
   "wordSheetSoundsLikeTitle": "Sounds like another word",
   "@wordSheetSoundsLikeTitle": {
@@ -5368,17 +5396,55 @@
   "@reviewSuggested": {
     "description": "A card's mark on the review screen once a change is suggested."
   },
-  "reviewMarkRight": "Mark as right",
-  "@reviewMarkRight": {
-    "description": "Read by a screen reader for a card's Check button."
+  "reviewCheckFor": "Check {meaning}: mark it right",
+  "@reviewCheckFor": {
+    "description": "Read by a screen reader for a card's Check button on the review screen. Starts with the button's word, then names the card by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
   },
-  "reviewUnmarkRight": "Marked right. Tap to take it back",
-  "@reviewUnmarkRight": {
-    "description": "Read by a screen reader for a card's Right button."
+  "reviewRightFor": "Right: {meaning}. Tap to take it back",
+  "@reviewRightFor": {
+    "description": "Read by a screen reader for a card's Right button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
   },
-  "reviewSuggestionSaved": "Suggestion saved. Tap to change it",
-  "@reviewSuggestionSaved": {
-    "description": "Read by a screen reader for a card's Suggested button."
+  "reviewSuggestedFor": "Suggested: {meaning}. Tap to change it",
+  "@reviewSuggestedFor": {
+    "description": "Read by a screen reader for a card's Suggested button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewRateFor": "Rate {meaning}",
+  "@reviewRateFor": {
+    "description": "Read by a screen reader for a rude word's Rate button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "idiot"
+      }
+    }
+  },
+  "reviewRatedFor": "Rated: {meaning}. Tap to change it",
+  "@reviewRatedFor": {
+    "description": "Read by a screen reader for a rude word's Rated button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "idiot"
+      }
+    }
   },
   "reviewRudeHidden": "{count, plural, =1{1 rude word is hidden} other{{count} rude words are hidden}}. Rude words show only with adult content on (18+).",
   "@reviewRudeHidden": {

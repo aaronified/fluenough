@@ -4,8 +4,9 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
 /// On a unit whose decks list the reviewer's rater code, in place of the
-/// notice that no speaker has checked it: thanks, and who checked it
-/// (docs/plans/deck-browser.md, "No reply mail; thanks in the app").
+/// notice that no speaker has checked those decks: thanks, and who checked
+/// it (docs/plans/deck-browser.md, "No reply mail; thanks in the app").
+/// Another deck of the unit still unchecked keeps its notice beside it.
 class ThanksNotice extends StatelessWidget {
   const ThanksNotice({super.key, required this.code, required this.others});
 

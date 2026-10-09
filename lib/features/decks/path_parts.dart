@@ -68,32 +68,45 @@ class MasteryChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final (text, bg, fg) = notOpen
-        ? (
-            l10n.unitNotOpen,
-            scheme.surfaceContainerHighest,
-            scheme.onSurfaceVariant,
-          )
+    final (bg, fg) = notOpen
+        ? (scheme.surfaceContainerHighest, scheme.onSurfaceVariant)
         : switch (mastery.level) {
             MasteryLevel.known => (
-              l10n.unitKnown,
               scheme.primaryContainer,
               scheme.onPrimaryContainer,
             ),
             MasteryLevel.learning => (
-              l10n.unitLearning((mastery.share * 100).round()),
               scheme.secondaryContainer,
               scheme.onSecondaryContainer,
             ),
             MasteryLevel.fresh => (
-              l10n.unitNew,
               scheme.surfaceContainerHighest,
               scheme.onSurfaceVariant,
             ),
           };
-    return Pill(text: text, background: bg, foreground: fg);
+    return Pill(
+      text: masteryName(l10n, mastery, notOpen: notOpen),
+      background: bg,
+      foreground: fg,
+    );
   }
 }
+
+/// Where a word, rule or sentence stands, as its chip says it: Known,
+/// Learning 64%, New, or for a sentence no lesson has taught, Not open yet.
+String masteryName(
+  AppLocalizations l10n,
+  Mastery mastery, {
+  bool notOpen = false,
+}) => notOpen
+    ? l10n.unitNotOpen
+    : switch (mastery.level) {
+        MasteryLevel.known => l10n.unitKnown,
+        MasteryLevel.learning => l10n.unitLearning(
+          (mastery.share * 100).round(),
+        ),
+        MasteryLevel.fresh => l10n.unitNew,
+      };
 
 /// A small rounded label: a status, a level, a count.
 class Pill extends StatelessWidget {
