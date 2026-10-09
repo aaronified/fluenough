@@ -25,8 +25,10 @@ them in Settings; any connection, not only Wi-Fi; removing a language
 deletes its files; `themes.yaml` and the spoken-languages list stay in the
 app; no token, ever.
 
-Three things constrain it. The app works offline (the Settings footer says
-so), so it may go online only for something the learner wants. A learner's
+Three things constrain it. The app works offline (the welcome screen and
+the Settings footer said so), so it may go online only for something the
+learner wants; the app update check (ADR-0017) asks GitHub by itself only
+once the learner switches that on. A learner's
 progress is keyed by card id (AGENTS.md rule 1) and must never be lost,
 whatever happens to the files. And the project adds no dependency without
 agreement (rule 6): there is no HTTP or hashing package.
@@ -53,12 +55,15 @@ agreement (rule 6): there is no HTTP or hashing package.
   its repository path, so that the catalog reads a downloaded deck as it
   read a bundled one; beside them, what the index said of each file, the
   last index read, and when GitHub was last asked.
-- **Checked before use.** Each file must match the index's size and
-  SHA-256 (computed by a SHA-256 in `lib/core/decks/`, not a package), and
-  must then parse as the app reads it. A batch is written beside its place
-  and moved in only when every file is written; a part-file left by a
-  crash is deleted at launch. A batch with any file that fails is not used
-  at all: the decks already on the phone stay.
+- **Checked before use.** Each file must match the index's size and SHA-256
+  (computed by a SHA-256 in `lib/core/decks/`, not a package), and must then
+  parse as the app reads it. A file that does not match may have changed on
+  `main` since the index was read, days ago perhaps: the index is read
+  again, once, and the download or update tried again with it, so Try again
+  is not stuck on an old index. A batch is written beside its place and
+  moved in only when every file is written; a part-file left by a crash is
+  deleted at launch. A batch with any file that fails is not used at all:
+  the decks already on the phone stay.
 - **What a learner gets.** For a language, its own files (path, facts,
   romanisation, sounds, numbers, script guide), its cores, and its decks
   and layers for the native languages the learner speaks; where it has
@@ -79,7 +84,21 @@ agreement (rule 6): there is no HTTP or hashing package.
   compares it with its files. When a downloaded language has new or changed
   files it asks once; "Not now" leaves the update on Settings > Deck
   downloads and is remembered until the update changes. Card ids are
-  permanent, so an update keeps every card's progress.
+  permanent, so an update keeps every card's progress. Try again on a
+  language whose update failed tries the update again, not only the files
+  still missing.
+- **The daily check has its own switch, on by default.** "Check
+  automatically", on Settings > Deck downloads, kept beside the files
+  (`state.json`), not among the settings. Off, the app asks GitHub at
+  launch only to finish a download the learner started; "Check for deck
+  updates" still works. This differs from ADR-0017, whose automatic check is
+  off until switched on, on purpose: the owner asked that the app check for
+  deck updates and ask (#210, plan item 5), and the learner chose to get
+  decks from GitHub when choosing a language. The request carries what a
+  download does: the address, the index's path and the user agent.
+- **What the app says.** The welcome screen says "Works offline once your
+  language is downloaded", and the Settings footer "Works offline once
+  decks are downloaded", not "Works fully offline".
 - **Removed upstream.** A file GitHub no longer lists stays on the phone,
   so a learner's cards do not vanish, unless a new file takes its role: a
   deck's core and layer replacing its single file, or a language's new path
@@ -95,7 +114,11 @@ agreement (rule 6): there is no HTTP or hashing package.
   a new language the moment its index line is merged.
 - The first launch needs a connection. The app is offline only once its
   decks are in. A learner offline at first launch cannot start, and is
-  told why.
+  told why. The welcome screen, the footer and the README no longer say
+  the app is fully offline.
+- With the daily check on, as it is unless turned off, the app asks GitHub
+  for the index once a day at launch: GitHub learns the phone's address
+  daily. The README says so, and where to turn it off.
 - `main` is now what learners run. A broken deck merged to `main` reaches
   phones, although each file must still parse before it replaces a working
   one. CI's validator is the gate that protects learners now, not the
@@ -126,5 +149,10 @@ agreement (rule 6): there is no HTTP or hashing package.
 - **Bundling the decks as a fallback.** Keeps the first launch offline, but
   ships stale decks that an update then replaces, and the owner chose a
   smaller install that lists what is on GitHub.
+- **The daily check off until switched on, like ADR-0017's.** Kinder to
+  privacy, but a learner who never finds the switch would never get a
+  fixed deck, which is what the owner asked this for. Reusing ADR-0017's
+  switch has the same cost, and mixes two checks the learner may want
+  apart.
 - **A hashing package (`crypto`).** A new dependency for one function
   (rule 6); SHA-256 is short, and tested against the standard's examples.

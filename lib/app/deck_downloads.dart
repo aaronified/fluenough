@@ -78,17 +78,21 @@ typedef DeckFileCheck = String? Function(String path, String text);
 /// - **A language** downloads its first [decksBeforeReady] decks on its
 ///   path, with its own files, and can then be learned
 ///   ([downloadFirst]); the rest follow ([downloadRest]).
-/// - **Updates** are looked for at most once a day ([checkForUpdates]).
-///   When decks have changed the app asks; "Not now" leaves them waiting on
-///   Settings > Deck downloads.
+/// - **Updates** are looked for at most once a day ([checkForUpdates]),
+///   unless the learner turns that off ([checksAutomatically]). When decks
+///   have changed the app asks; "Not now" leaves them waiting on Settings >
+///   Deck downloads.
 /// - **Removing** a language deletes its files ([remove]). Progress is in
 ///   the review log, by card id, so it stays, and comes back with the
 ///   decks.
 ///
 /// Every file is checked against the index's SHA-256, then read as the app
 /// reads it ([DeckCatalog.checkFile]), before it replaces one on the phone;
-/// a batch with any file that fails is not used at all. A file GitHub no
-/// longer lists stays on the phone unless a new file takes its place.
+/// a batch with any file that fails is not used at all. A file that does
+/// not match may have changed on `main` since the index was read, so the
+/// index is read again once, and the download tried again with it. A file
+/// GitHub no longer lists stays on the phone unless a new file takes its
+/// place.
 class DeckDownloads extends ChangeNotifier {
   DeckDownloads({
     required this.fetcher,
@@ -124,6 +128,8 @@ class DeckDownloads extends ChangeNotifier {
   Map<String, IndexFile> _onPhone = const <String, IndexFile>{};
   DateTime? _checkedAt;
   String? _declined;
+  bool _autoCheck = true;
+  List<String>? _spoken;
   Set<String> _complete = <String>{};
   final Map<String, DownloadProgress> _progress = <String, DownloadProgress>{};
   final Map<String, DeckDownloadFailure> _failures =
@@ -174,6 +180,7 @@ class DeckDownloads extends ChangeNotifier {
           _checkedAt = checked is String ? DateTime.tryParse(checked) : null;
           final declined = json['declined'];
           _declined = declined is String ? declined : null;
+          _autoCheck = json['auto'] != false;
           _complete = <String>{
             if (json['complete'] case final List<Object?> codes)
               for (final code in codes)
@@ -233,6 +240,25 @@ class DeckDownloads extends ChangeNotifier {
 
   /// Makes sure an index is known: the one kept, or one read now.
   Future<bool> ensureIndex() async => _index != null || await refreshIndex();
+
+  /// Runs [attempt], [language]'s download or update. When a file did not
+  /// match the index, it may have changed on `main` since the index was
+  /// read: the index is read again, the updates waiting worked out again
+  /// from it, and [attempt] run once more. Returns why it failed, if it did.
+  Future<DeckDownloadFailure?> _againIfStale(
+    String language,
+    Future<DeckDownloadFailure?> Function() attempt,
+  ) async {
+    final failure = await attempt();
+    if (failure != DeckDownloadFailure.badFile) return failure;
+    _log?.event('Deck files did not match the index: reading it again');
+    if (!await refreshIndex()) {
+      return _failed(language, _indexFailure ?? DeckDownloadFailure.badFile);
+    }
+    if (_spoken case final spoken?) _findUpdates(spoken);
+    _failures.remove(language);
+    return attempt();
+  }
 
   // ---------------------------------------------------------------------------
   // What is on the phone
@@ -325,16 +351,19 @@ class DeckDownloads extends ChangeNotifier {
   Future<DeckDownloadFailure?> downloadFirst(
     String language,
     List<String> spoken,
-  ) => _job(language, () async {
-    if (!await ensureIndex()) return _indexFailure;
-    final entry = _index!.language(language);
-    if (entry == null) return DeckDownloadFailure.notOffered;
-    final first = entry.firstFiles(
-      entry.nativesFor(spoken),
-      count: decksBeforeReady,
-    );
-    return _fetchAndKeep(language, first, groups: false);
-  });
+  ) => _job(
+    language,
+    () => _againIfStale(language, () async {
+      if (!await ensureIndex()) return _indexFailure;
+      final entry = _index!.language(language);
+      if (entry == null) return DeckDownloadFailure.notOffered;
+      final first = entry.firstFiles(
+        entry.nativesFor(spoken),
+        count: decksBeforeReady,
+      );
+      return _fetchAndKeep(language, first, groups: false);
+    }),
+  );
 
   /// Downloads the rest of [language] for someone who speaks [spoken], a
   /// few decks at a time, and marks it complete. Returns null when all of
@@ -342,21 +371,32 @@ class DeckDownloads extends ChangeNotifier {
   Future<DeckDownloadFailure?> downloadRest(
     String language,
     List<String> spoken,
-  ) => _job(language, () async {
-    if (!await ensureIndex()) return _indexFailure;
-    final entry = _index!.language(language);
-    if (entry == null) return DeckDownloadFailure.notOffered;
-    final failure = await _fetchAndKeep(
-      language,
-      entry.filesFor(entry.nativesFor(spoken)),
-      groups: true,
-    );
-    if (failure == null) {
-      _complete.add(language);
-      await _saveState();
-    }
-    return failure;
-  });
+  ) => _job(
+    language,
+    () => _againIfStale(language, () async {
+      if (!await ensureIndex()) return _indexFailure;
+      final entry = _index!.language(language);
+      if (entry == null) return DeckDownloadFailure.notOffered;
+      final failure = await _fetchAndKeep(
+        language,
+        entry.filesFor(entry.nativesFor(spoken)),
+        groups: true,
+      );
+      if (failure == null) {
+        _complete.add(language);
+        await _saveState();
+      }
+      return failure;
+    }),
+  );
+
+  /// "Try again" for [language], on the phone, whose last download or
+  /// update failed: its update again, when one is waiting, else the rest
+  /// of its decks. The rest alone would skip the files an update changes.
+  Future<DeckDownloadFailure?> retry(String language, List<String> spoken) =>
+      _updates.containsKey(language)
+      ? update(<String>[language])
+      : downloadRest(language, spoken);
 
   /// Downloads [language]'s first decks, then the rest in the background,
   /// as on first launch and when a language is added. Completes once it is
@@ -590,6 +630,19 @@ class DeckDownloads extends ChangeNotifier {
   /// Whether an update is downloading.
   bool get updating => _updating;
 
+  /// Whether the app looks for deck updates by itself, at launch, at most
+  /// once a day. On unless the learner turns it off: each check is a
+  /// request to GitHub (ADR-0037). "Check for deck updates" works either
+  /// way.
+  bool get checksAutomatically => _autoCheck;
+
+  Future<void> setChecksAutomatically(bool on) async {
+    if (on == _autoCheck) return;
+    _autoCheck = on;
+    _notify();
+    await _saveState();
+  }
+
   /// Compares the index with the files on the phone, at most once a day
   /// unless [force]. Reads the index first. Afterwards [updates] says what
   /// changed, and [askToUpdate] whether to ask.
@@ -597,6 +650,7 @@ class DeckDownloads extends ChangeNotifier {
     List<String> spoken, {
     bool force = false,
   }) async {
+    _spoken = spoken;
     final last = _checkedAt;
     if (!force && last != null && _clock().difference(last) < interval) {
       _findUpdates(spoken);
@@ -656,11 +710,14 @@ class DeckDownloads extends ChangeNotifier {
     var changed = false;
     try {
       for (final language in (languages ?? _updates.keys).toList()) {
-        final changes = _updates[language];
-        if (changes == null) continue;
+        if (!_updates.containsKey(language)) continue;
         final failure = await _job(
           language,
-          () => _applyUpdate(language, changes),
+          () => _againIfStale(language, () async {
+            // Read here, as the index read again may have changed them.
+            final changes = _updates[language];
+            return changes == null ? null : _applyUpdate(language, changes);
+          }),
         );
         if (failure == null) {
           changed = true;
@@ -765,6 +822,7 @@ class DeckDownloads extends ChangeNotifier {
         jsonEncode(<String, Object?>{
           'checked': ?_checkedAt?.toIso8601String(),
           'declined': ?_declined,
+          if (!_autoCheck) 'auto': false,
           'complete': _complete.toList()..sort(),
         }),
       );

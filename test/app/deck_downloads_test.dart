@@ -146,6 +146,8 @@ void main() {
       await d.open();
       expect(await d.downloadFirst('hi', english), DeckDownloadFailure.badFile);
       expect(phone.files, isEmpty);
+      // The index was read again once, in case it was old, and no more.
+      expect(remote.asked.where((p) => p == 'decks/index.json'), hasLength(2));
     });
 
     test('keeps nothing when a file fails its check', () async {
@@ -365,6 +367,111 @@ void main() {
       });
       expect(catalog.broken, isEmpty);
       expect(catalog.byId('zz-en-home'), isNotNull);
+    });
+  });
+
+  group('an index read before a file changed on GitHub', () {
+    const path = 'decks/hi/hi-path.yaml';
+
+    test('is read again, and the download goes on', () async {
+      final d = downloads();
+      await d.open();
+      await d.download('es', english);
+      // A day later, main has moved; the index kept has not.
+      remote.files[path] = '${remote.files[path]!}# a fix\n';
+      final again = downloads();
+      await again.open();
+      expect(await again.downloadFirst('hi', english), isNull);
+      expect(await phone.read(path), endsWith('# a fix\n'));
+      expect(again.failureOf('hi'), isNull);
+    });
+
+    test('is read again for the rest of a language', () async {
+      final d = downloads();
+      await d.open();
+      await d.downloadFirst('hi', english);
+      final rest = d.missing('hi', english).last.path;
+      remote.files[rest] = '${remote.files[rest]!}# a fix\n';
+      expect(await d.downloadRest('hi', english), isNull);
+      expect(await phone.read(rest), endsWith('# a fix\n'));
+      expect(d.missing('hi', english), isEmpty);
+    });
+
+    test('is read again for an update found before', () async {
+      final d = downloads();
+      await d.open();
+      await d.download('es', english);
+      await d.downloadRest('es', english);
+      const deck = 'decks/es/es-en-core-100.yaml';
+      final was = remote.files[deck]!;
+      remote.files[deck] = '$was# a fix\n';
+      await d.checkForUpdates(english, force: true);
+      // "Not now", and days later main has changed the deck again.
+      remote.files[deck] = '$was# another fix\n';
+      expect(await d.update(), isNull);
+      expect(await phone.read(deck), endsWith('# another fix\n'));
+      expect(d.updates, isEmpty);
+      expect(d.stateOf('es', english), LanguageDownloadState.upToDate);
+    });
+
+    test('says why when it cannot be read again', () async {
+      final d = downloads();
+      await d.open();
+      await d.refreshIndex();
+      remote.files[path] = '${remote.files[path]!}# a fix\n';
+      remote.failures['decks/index.json'] = FetchFailure.offline;
+      expect(await d.downloadFirst('hi', english), DeckDownloadFailure.offline);
+      expect(d.failureOf('hi'), DeckDownloadFailure.offline);
+      expect(phone.files, isEmpty);
+    });
+  });
+
+  group('Try again', () {
+    test('after a failed update tries the update again', () async {
+      final d = downloads();
+      await d.open();
+      await d.download('es', english);
+      await d.downloadRest('es', english);
+      const deck = 'decks/es/es-en-core-100.yaml';
+      remote.files[deck] = '${remote.files[deck]!}# a fix\n';
+      await d.checkForUpdates(english, force: true);
+      remote.failAll = FetchFailure.offline;
+      expect(await d.update(), DeckDownloadFailure.offline);
+      expect(d.stateOf('es', english), LanguageDownloadState.failed);
+
+      // Nothing is missing, so the rest alone would fetch nothing.
+      remote.failAll = null;
+      expect(await d.retry('es', english), isNull);
+      expect(await phone.read(deck), endsWith('# a fix\n'));
+      expect(d.updates, isEmpty);
+      expect(d.stateOf('es', english), LanguageDownloadState.upToDate);
+    });
+
+    test('after a download cut short downloads the rest', () async {
+      final d = downloads();
+      await d.open();
+      await d.downloadFirst('hi', english);
+      remote.failAll = FetchFailure.offline;
+      expect(await d.downloadRest('hi', english), DeckDownloadFailure.offline);
+      remote.failAll = null;
+      expect(await d.retry('hi', english), isNull);
+      expect(d.missing('hi', english), isEmpty);
+    });
+  });
+
+  group('the daily check', () {
+    test('is on unless turned off, and stays off', () async {
+      final d = downloads();
+      await d.open();
+      expect(d.checksAutomatically, isTrue);
+      await d.setChecksAutomatically(false);
+      final again = downloads();
+      await again.open();
+      expect(again.checksAutomatically, isFalse);
+      await again.setChecksAutomatically(true);
+      final third = downloads();
+      await third.open();
+      expect(third.checksAutomatically, isTrue);
     });
   });
 

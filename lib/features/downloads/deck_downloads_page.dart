@@ -14,9 +14,9 @@ import 'download_text.dart';
 
 /// Settings > Deck downloads (#210, ADR-0037): each language
 /// on the phone, its size and state, with Update when an update waits,
-/// Try again when a download failed, and Remove, which asks first. Above
-/// them, "Check for deck updates", with when GitHub was last asked, and
-/// Update all.
+/// Try again when a download or update failed, and Remove, which asks
+/// first. Above them, "Check for deck updates", with when GitHub was last
+/// asked, the switch for checking by itself, and Update all.
 ///
 /// An update a learner answered "Not now" to waits here. Card ids are
 /// permanent (AGENTS.md), so an update keeps every card's progress, and
@@ -153,6 +153,13 @@ class _DeckDownloadsPageState extends State<DeckDownloadsPage> {
                 ),
               ),
             ),
+            GroupedTile.toggle(
+              leading: const Icon(Icons.update),
+              title: l10n.deckDownloadsAuto,
+              subtitle: l10n.deckDownloadsAutoDesc,
+              value: downloads.checksAutomatically,
+              onChanged: downloads.setChecksAutomatically,
+            ),
           ],
         ),
         if (downloads.updates.isNotEmpty) ...<Widget>[
@@ -231,7 +238,7 @@ class _DeckDownloadsPageState extends State<DeckDownloadsPage> {
         onPressed: busy
             ? null
             : () => downloads.languagesOnPhone.contains(code)
-                  ? downloads.downloadRest(code, spoken)
+                  ? downloads.retry(code, spoken)
                   : state.downloadLanguage(code),
         child: Text(
           status == LanguageDownloadState.failed

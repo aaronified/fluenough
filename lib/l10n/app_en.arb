@@ -3682,9 +3682,9 @@
   "@onboardingWelcomeBody": {
     "description": "First screen of the first launch, under the motto: what the app does, in one sentence. 'Drills' are short exercises on words and sentences; they are scheduled by spaced repetition."
   },
-  "onboardingWelcomeNote": "No account needed. Works offline.",
+  "onboardingWelcomeNote": "No account needed. Works offline once your language is downloaded.",
   "@onboardingWelcomeNote": {
-    "description": "First screen of the first launch, small print above Get started, beside an offline icon. Both are true: there is no sign-in, and nothing in the app needs the internet."
+    "description": "First screen of the first launch, small print above Get started, beside an offline icon. Both are true: there is no sign-in, and the app needs the internet to download a language's decks the first time it is chosen; after that it works offline."
   },
   "onboardingStart": "Get started",
   "@onboardingStart": {
@@ -4113,6 +4113,14 @@
   "deckDownloadsChecking": "Checking…",
   "@deckDownloadsChecking": {
     "description": "Line under the check row while GitHub is asked."
+  },
+  "deckDownloadsAuto": "Check automatically",
+  "@deckDownloadsAuto": {
+    "description": "Switch on Settings > Deck downloads: look for deck updates by itself. On unless the learner turns it off."
+  },
+  "deckDownloadsAutoDesc": "Once a day, when the app opens. Each check asks GitHub.",
+  "@deckDownloadsAutoDesc": {
+    "description": "Under Check automatically, on Deck downloads. Says that each check is a request to GitHub, a website."
   },
   "deckDownloadsUpdateAll": "Update all, {size}",
   "@deckDownloadsUpdateAll": {
@@ -5310,9 +5318,9 @@
   "@releaseNotesLinkCopied": {
     "description": "SnackBar when nothing on the phone could open the releases page, so its address was copied instead."
   },
-  "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works fully offline",
+  "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works offline once decks are downloaded",
   "@settingsFooter": {
-    "description": "Footer of Settings.",
+    "description": "Footer of Settings. The app needs the internet only to download decks, to check for updates and to send a report; with its decks on the phone, it works offline.",
     "placeholders": {
       "version": {
         "type": "String",
