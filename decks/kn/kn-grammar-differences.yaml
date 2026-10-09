@@ -16,7 +16,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
-      - { word: "ತಿನ್ನುತ್ತೇನೆ", base: "ತಿನ್ನುತ್ತೇನೆ", reading: "tinnuttēne" }
+      - { word: "ತಿನ್ನುತ್ತೇನೆ", base: "ತಿನ್ನು", reading: "tinnu" }
   - id: "kn-0125"
     target: "ಅವರು ಡಾಕ್ಟರ್."
     reading: "avaru ḍākṭar."
@@ -46,7 +46,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ಅಮ್ಮನ", base: "ಅಮ್ಮನ", reading: "ammana" }
+      - { word: "ಅಮ್ಮನ", ref: "kn-0058" }
       - { word: "ಜೊತೆ", base: "ಜೊತೆ", reading: "jote" }
   - id: "kn-0129"
     target: "ಅವನು ಬಂದನು."
@@ -58,7 +58,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ಅವನು", base: "ಅವನು", reading: "avanu" }
-      - { word: "ಬಂದನು", base: "ಬಂದನು", reading: "bandanu" }
+      - { word: "ಬಂದನು", base: "ಬರು", reading: "baru" }
   - id: "kn-0130"
     target: "ಅವಳು ಬಂದಳು."
     reading: "avaḷu bandaḷu."
@@ -68,7 +68,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ಅವಳು", base: "ಅವಳು", reading: "avaḷu" }
-      - { word: "ಬಂದಳು", base: "ಬಂದಳು", reading: "bandaḷu" }
+      - { word: "ಬಂದಳು", base: "ಬರು", reading: "baru" }
   - id: "kn-0131"
     target: "ಅದು ಬಂತು."
     reading: "adu bantu."
@@ -79,7 +79,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ಅದು", base: "ಅದು", reading: "adu" }
-      - { word: "ಬಂತು", base: "ಬಂತು", reading: "bantu" }
+      - { word: "ಬಂತು", base: "ಬರು", reading: "baru" }
   - id: "kn-0132"
     target: "ನೀನು ಬಾ."
     reading: "nīnu bā."
@@ -89,7 +89,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ನೀನು", base: "ನೀನು", reading: "nīnu" }
-      - { word: "ಬಾ", base: "ಬಾ", reading: "bā" }
+      - { word: "ಬಾ", base: "ಬರು", reading: "baru" }
   - id: "kn-0133"
     target: "ನೀವು ಬನ್ನಿ."
     reading: "nīvu banni."
@@ -98,7 +98,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ಬನ್ನಿ", base: "ಬನ್ನಿ", reading: "banni" }
+      - { word: "ಬನ್ನಿ", base: "ಬರು", reading: "baru" }
   - id: "kn-0134"
     target: "ಬರುತ್ತೇನೆ."
     reading: "baruttēne."
@@ -125,9 +125,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ನನ್ನ", base: "ನನ್ನ", reading: "nanna" }
+      - { word: "ನನ್ನ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಪುಸ್ತಕ", base: "ಪುಸ್ತಕ", reading: "pustaka" }
-      - { word: "ಇದೆ", base: "ಇದೆ", reading: "ide" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
   - id: "kn-0137"
     target: "ನನಗೆ ಕನ್ನಡ ಬರುತ್ತದೆ."
     reading: "nanage kannaḍa baruttade."
@@ -137,7 +137,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಕನ್ನಡ", base: "ಕನ್ನಡ", reading: "kannaḍa" }
   - id: "kn-0138"
     target: "ನಾನು ಬರುವುದಿಲ್ಲ."
@@ -149,7 +149,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
-      - { word: "ಬರುವುದಿಲ್ಲ", base: "ಬರುವುದಿಲ್ಲ", reading: "baruvudilla" }
+      - { word: "ಬರುವುದಿಲ್ಲ", base: "ಬರು", reading: "baru" }
   - id: "kn-0139"
     target: "ಸಮಯ ಇಲ್ಲ."
     reading: "samaya illa."
@@ -158,7 +158,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ಇಲ್ಲ", base: "ಇಲ್ಲ", reading: "illa" }
+      - { word: "ಇಲ್ಲ", ref: "kn-0165" }
   - id: "kn-0140"
     target: "ನಾನು ಡಾಕ್ಟರ್ ಅಲ್ಲ."
     reading: "nānu ḍākṭar alla."
@@ -177,4 +177,4 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ಬರುತ್ತೀರಾ", base: "ಬರುತ್ತೀರಾ", reading: "baruttīrā" }
+      - { word: "ಬರುತ್ತೀರಾ", base: "ಬರು", reading: "baru" }
