@@ -222,41 +222,44 @@ Settled with the owner, 2026-10-09:
   tickets. so i know that a reviewer has sent something and then consult
   the mail." One issue per review mail received: the rater code, the
   language and decks reviewed, counts at most; no suggestion text.
-- **Two reviewers make a change; the owner can override** (owner,
-  2026-10-09: "One reviewer's reviews should be shown to other reviewers
-  via a provisional acceptance (which is what I will do). If at least
-  another reviewer accepts that verbatim, the change will be in a
-  learner's deck (unless I override)"). Settled the same day:
-  - **Provisional acceptance by the owner:** a suggestion the owner
-    accepts becomes a proposal. It lives in the deck file, as a
-    `proposed` block on the card, which only reviewer mode shows; it
-    reaches reviewers through deck downloads. Learners never see it.
-    This is a deck-format change and needs its ADR.
-  - **Another reviewer accepts it verbatim:** a different rater code, in
-    that language, accepts the proposal unchanged. The mail bot then
-    opens a PR that applies it (#441), and the PR merges after three days
-    unless the owner closes it (the override; owner, 2026-10-09: "3 days").
+- **Reviewers change the decks, with no wait** (owner, 2026-10-09:
+  "Make it totally automated then. The first review auto merges the PR
+  and shows all changes to all applicable reviewers. If anyone agrees,
+  that gets an instant merge to learner decks. This number can be a
+  github secret so that I can update it easily. Like maybe once the app
+  gains traction, i change it to two reviewers"). This supersedes the
+  owner's provisional acceptance and the three-day wait, decided earlier
+  the same day.
+  - **A review becomes proposals at once:** the mail bot opens a PR that
+    adds each suggested change as a `proposed` block on its card, and
+    merges it as soon as the required checks pass. Proposals reach every
+    reviewer of that language through deck downloads; learners never see
+    them. This is a deck-format change and needs its ADR.
+  - **Agreement merges it to learners at once:** when enough other
+    reviewers accept a proposal verbatim, the bot opens a PR applying it
+    and merges it once the checks pass. "Enough" is the repository
+    variable `REVIEW_AGREEMENTS_NEEDED` (default 1), a variable rather
+    than a secret so the owner can read it back. Each agreement must come
+    from a different rater code from the proposer's and each other's.
+  - **Accept, edit or reject:** a reviewer who edits a proposal makes a
+    new proposal of their own, which goes in the same way; the old one
+    keeps waiting. The first proposal on a field to reach enough
+    agreements wins; the others on that field are closed as outdated. A
+    rejection only flags the change to the owner.
+  - **The owner's override** is any later commit: reverting the change or
+    editing the card. Every bot PR names the rater codes involved.
   - **Past the branch rules:** a dedicated GitHub App merges these PRs.
     It is the only actor allowed to skip the approval rule; the three
     required checks still apply to it. The owner creates and installs the
-    App, adds it to the protection's bypass list and stores its key as a
-    secret.
+    App, adds it to the protection's bypass list and stores its id and key
+    as the secrets `FLUENOUGH_BOT_APP_ID` and `FLUENOUGH_BOT_PRIVATE_KEY`.
   - **No merge conflicts:** the bot never stores a diff. A proposal is a
-    fact about one card: its id, the field, the text both reviewers saw
-    and the new text. On the third day the bot starts a fresh branch from
-    `main`, finds the card by id (ids are permanent, so a moved card is
-    still found), and writes the new text only if the field still holds
-    the text the reviewers saw. It then removes the `proposed` block,
-    rebuilds `decks/index.json` with the tool, and merges once CI is
-    green. If the field has changed or the card is gone, it does not
-    merge: the PR is labelled "proposal outdated" for the owner. During
-    the three days the PR is a preview only.
-  - **Accept, edit or reject:** a reviewer who edits a proposal instead
-    makes a new suggestion, back to the owner; the old proposal keeps
-    waiting.
-  - **First acceptance wins:** the first verbatim acceptance by another
-    reviewer is enough; a later rejection only flags the change to the
-    owner.
+    fact about one card: its id, the field, the text the proposer saw and
+    the new text. Each bot PR starts a fresh branch from `main`, finds the
+    card by id (ids are permanent, so a moved card is still found), and
+    writes only if the field still holds the text the proposer saw. It
+    rebuilds `decks/index.json` with the tool. A proposal whose field has
+    changed, or whose card is gone, is closed as outdated, not merged.
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
