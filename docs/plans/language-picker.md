@@ -173,6 +173,11 @@ start, with no version built on the bundled decks:
   two-way switch: up to three options can sit side by side; beyond that
   it becomes a list (a radio list in a sheet), each with its coverage,
   the learner's own languages first.
+- **Answers to the mockup's questions** (owner, 2026-10-09): a language
+  the learner already learns opens its course at once, and only a newly
+  chosen one goes through placement; "Learn the script" starts on; after
+  a cancelled download the rest comes from Settings > Deck downloads, the
+  course working with what arrived.
 - **Both progresses on the card:** the course's completeness ("62% of B1
   written") and, for a language the learner learns, their own ("You: 18%
   of B1").
