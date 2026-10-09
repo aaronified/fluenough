@@ -106,6 +106,11 @@ Settled with the owner, 2026-10-09:
   reviewer whose code is among them sees "thank you" in the app. So rater
   codes are public; that is safe because a review is accepted only from
   the email its code belongs to.
+- **Issues say who sent something, not what:** "the public issues can
+  contain the rater id and language, the data may be skipped in the
+  tickets. so i know that a reviewer has sent something and then consult
+  the mail." One issue per review mail received: the rater code, the
+  language and decks reviewed, counts at most; no suggestion text.
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
