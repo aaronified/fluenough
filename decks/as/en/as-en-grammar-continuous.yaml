@@ -1,0 +1,20 @@
+schema: 1
+id: "as-en-grammar-continuous"
+kind: "layer"
+core: "as-grammar-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present continuous"
+license: "CC0-1.0"
+description: "I am doing, she is coming: what is happening now. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Present continuous"
+  slot_name: "person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "juwa": "to go"
+    "oha": "to come"
+    "khuwa": "to eat; to drink"
+    "porha": "to read; to study"
+  notes: "The verb in -ই (-i), then আছ- (ās-) with the person's ending: কৰি আছোঁ (kori āsum̐), I am doing, 'doing I am'. যোৱা (zuwā) takes the stem গৈ (gôi): গৈ আছোঁ (gôi āsum̐), I am going. The verb changes for person and respect, never for gender or number: মই (moi) and আমি (āmi) take the same form, and আপুনি (āpuni) the same as সি (si), তাই (tāi) and তেওঁ (teum̐). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."

@@ -1,0 +1,20 @@
+schema: 1
+id: "as-en-grammar-negative"
+kind: "layer"
+core: "as-grammar-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Don't and won't"
+license: "CC0-1.0"
+description: "I don't go, she won't come: Assamese says not with ন- (nô-) at the front of the verb. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Negative"
+  slot_name: "tense, person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "juwa": "to go"
+    "oha": "to come"
+    "xuna": "to listen; to hear"
+    "khela": "to play"
+  notes: "Not is ন- (nô-) before the verb, and its vowel echoes the verb's first vowel: কৰোঁ (kôrum̐), নকৰোঁ (nôkôrum̐); যাওঁ (zāum̐), নাযাওঁ (nāzāum̐); শুনোঁ (xunum̐), নুশুনোঁ (nuxunum̐); খেলোঁ (khelum̐), নেখেলোঁ (nekhelum̐). Before a verb that starts with a vowel the two run together: আহোঁ (āhum̐), নাহোঁ (nāhum̐), I don't come. In the past, ন- (nô-) goes on the past form, নকৰিলোঁ (nôkorilum̐), I didn't do it, or the verb noun takes নাই (nāi): মই কৰা নাই (moi kôrā nāi), I haven't done it. A 'don't' said to someone is the negative future: নকৰিবা (nôkoribā), don't, to a friend; নকৰিব (nôkorib), to someone you respect. আপুনি (āpuni) takes the same form as সি (si), তাই (tāi) and তেওঁ (teum̐). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."

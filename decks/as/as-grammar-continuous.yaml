@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-continuous
-name: "Present continuous"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I am doing, she is coming: what is happening now. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-continuous"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Present continuous"
-  slot_name: "person and respect"
   slots: ["মই / আমি", "তই / তহঁত", "তুমি / তোমালোক", "আপুনি / সি / তাই / তেওঁ"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The verb in -ই (-i), then আছ- (ās-) with the person's ending: কৰি আছোঁ (kori āsum̐), I am doing, 'doing I am'. যোৱা (zuwā) takes the stem গৈ (gôi): গৈ আছোঁ (gôi āsum̐), I am going. The verb changes for person and respect, never for gender or number: মই (moi) and আমি (āmi) take the same form, and আপুনি (āpuni) the same as সি (si), তাই (tāi) and তেওঁ (teum̐). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "কৰা"
-      key: kora
+      key: "kora"
       reading: "kôrā"
       ipa: "kɔɹa"
-      gloss: "to do"
       forms:
         "মই / আমি": ["কৰি আছোঁ", "কৰি আছো"]
         "তই / তহঁত": "কৰি আছ"
@@ -35,10 +28,9 @@ pattern:
         "তুমি / তোমালোক": "koɹi asa"
         "আপুনি / সি / তাই / তেওঁ": "koɹi ase"
     - lemma: "যোৱা"
-      key: juwa
+      key: "juwa"
       reading: "zuwā"
       ipa: "zʊwa"
-      gloss: "to go"
       forms:
         "মই / আমি": ["গৈ আছোঁ", "গৈ আছো"]
         "তই / তহঁত": "গৈ আছ"
@@ -55,10 +47,9 @@ pattern:
         "তুমি / তোমালোক": "ɡɔi asa"
         "আপুনি / সি / তাই / তেওঁ": "ɡɔi ase"
     - lemma: "অহা"
-      key: oha
+      key: "oha"
       reading: "ôhā"
       ipa: "ɔha"
-      gloss: "to come"
       forms:
         "মই / আমি": ["আহি আছোঁ", "আহি আছো"]
         "তই / তহঁত": "আহি আছ"
@@ -75,10 +66,9 @@ pattern:
         "তুমি / তোমালোক": "ahi asa"
         "আপুনি / সি / তাই / তেওঁ": "ahi ase"
     - lemma: "খোৱা"
-      key: khuwa
+      key: "khuwa"
       reading: "khuwā"
       ipa: "kʰʊwa"
-      gloss: "to eat; to drink"
       forms:
         "মই / আমি": ["খাই আছোঁ", "খাই আছো"]
         "তই / তহঁত": "খাই আছ"
@@ -95,10 +85,9 @@ pattern:
         "তুমি / তোমালোক": "kʰai asa"
         "আপুনি / সি / তাই / তেওঁ": "kʰai ase"
     - lemma: "পঢ়া"
-      key: porha
+      key: "porha"
       reading: "pôrhā"
       ipa: "pɔɹa"
-      gloss: "to read; to study"
       forms:
         "মই / আমি": ["পঢ়ি আছোঁ", "পঢ়ি আছো"]
         "তই / তহঁত": "পঢ়ি আছ"

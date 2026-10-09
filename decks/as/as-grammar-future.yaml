@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-future
-name: "Present and future"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I go, I will go: the simple present, for habits and facts, and the future. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-future"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Simple present and future"
-  slot_name: "tense, person and respect"
   slots: ["present, মই (moi) / আমি (āmi)", "present, তই (toi) / তহঁত (tôhôm̐t)", "present, তুমি (tumi) / তোমালোক (tumāluk)", "present, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)", "future, মই (moi) / আমি (āmi)", "future, তই (toi) / তহঁত (tôhôm̐t)", "future, তুমি (tumi) / তোমালোক (tumāluk)", "future, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The present is for habits and facts: মই চাহ খাওঁ (moi sāh khāum̐), I drink tea. Its endings are -ওঁ (-um̐), none, -আ (-ā) and -এ (-e). The future's are -ইম (-im), -ইবি (-ibi), -ইবা (-ibā) and -ইব (-ib): কৰিম (korim), I will do; a stem ending in a vowel takes them without the -ই- (-i-): যাম (zām), খাম (khām). With তুমি (tumi), যোৱা (zuwā) and খোৱা (khuwā) change their vowel: তুমি যোৱা (tumi zuwā), you go. The future with আপুনি (āpuni), সি (si), তাই (tāi) and তেওঁ (teum̐) ends in a vowel said but not written: কৰিব (korib). The verb changes for person and respect, never for gender or number. The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "কৰা"
-      key: kora
+      key: "kora"
       reading: "kôrā"
       ipa: "kɔɹa"
-      gloss: "to do"
       forms:
         "present, মই (moi) / আমি (āmi)": ["কৰোঁ", "কৰো"]
         "present, তই (toi) / তহঁত (tôhôm̐t)": "কৰ"
@@ -47,10 +40,9 @@ pattern:
         "future, তুমি (tumi) / তোমালোক (tumāluk)": "koɹiba"
         "future, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "koɹibɔ"
     - lemma: "যোৱা"
-      key: juwa
+      key: "juwa"
       reading: "zuwā"
       ipa: "zʊwa"
-      gloss: "to go"
       forms:
         "present, মই (moi) / আমি (āmi)": ["যাওঁ", "যাও"]
         "present, তই (toi) / তহঁত (tôhôm̐t)": "যাৱ"
@@ -79,10 +71,9 @@ pattern:
         "future, তুমি (tumi) / তোমালোক (tumāluk)": "zaba"
         "future, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "zabɔ"
     - lemma: "অহা"
-      key: oha
+      key: "oha"
       reading: "ôhā"
       ipa: "ɔha"
-      gloss: "to come"
       forms:
         "present, মই (moi) / আমি (āmi)": ["আহোঁ", "আহো"]
         "present, তই (toi) / তহঁত (tôhôm̐t)": "আহ"
@@ -111,10 +102,9 @@ pattern:
         "future, তুমি (tumi) / তোমালোক (tumāluk)": "ahiba"
         "future, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "ahibɔ"
     - lemma: "খোৱা"
-      key: khuwa
+      key: "khuwa"
       reading: "khuwā"
       ipa: "kʰʊwa"
-      gloss: "to eat; to drink"
       forms:
         "present, মই (moi) / আমি (āmi)": ["খাওঁ", "খাও"]
         "present, তই (toi) / তহঁত (tôhôm̐t)": "খাৱ"

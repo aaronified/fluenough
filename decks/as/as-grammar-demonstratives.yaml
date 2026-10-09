@@ -1,22 +1,15 @@
 schema: 1
-id: as-en-grammar-demonstratives
-name: "This and that"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "এই (ei) and সেই (sei), and the words built on them: this one, here, like this, so much. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Near and far"
-  slot_name: "near or far"
   slots: ["near: এই (ei), ই- (i-)", "far: সেই (sei), সি- (si-), ত- (tô-)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Words for near things start with এ- (e-) or ই- (i-), words for far ones with সে- (se-), সি- (si-), তে- (te-) or ত- (tô-). এই (ei) and সেই (sei) stand before a noun and never change, and the noun keeps its classifier: এই কিতাপখন (ei kitāpkhôn), this book; সেই ঘৰটো (sei ghôrôtu), that house. For something far off and in sight, ঐ (ôi) is also 'that': ঐটো (ôitu), that one over there."
   entries:
     - lemma: "this, that"
-      key: adj
-      gloss: "before a noun"
+      key: "adj"
       forms:
         "near: এই (ei), ই- (i-)": "এই"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সেই"
@@ -27,8 +20,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "ei"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "xei"
     - lemma: "this one, that one"
-      key: thing
-      gloss: "a thing"
+      key: "thing"
       forms:
         "near: এই (ei), ই- (i-)": "এইটো"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সেইটো"
@@ -39,8 +31,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "eitʊ"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "xeitʊ"
     - lemma: "these, those"
-      key: things
-      gloss: "things"
+      key: "things"
       forms:
         "near: এই (ei), ই- (i-)": "এইবোৰ"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সেইবোৰ"
@@ -51,8 +42,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "eibʊɹ"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "xeibʊɹ"
     - lemma: "he"
-      key: man
-      gloss: "this man, that man"
+      key: "man"
       forms:
         "near: এই (ei), ই- (i-)": "ই"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সি"
@@ -63,8 +53,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "i"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "xi"
     - lemma: "she"
-      key: woman
-      gloss: "this woman, that woman"
+      key: "woman"
       forms:
         "near: এই (ei), ই- (i-)": "এই"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তাই"
@@ -75,8 +64,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "ei"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "tai"
     - lemma: "he or she, respectful"
-      key: resp
-      gloss: "this person, that person"
+      key: "resp"
       forms:
         "near: এই (ei), ই- (i-)": "এওঁ"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তেওঁ"
@@ -87,8 +75,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "eʊ̃"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "teʊ̃"
     - lemma: "they"
-      key: people
-      gloss: "these people, those people"
+      key: "people"
       forms:
         "near: এই (ei), ই- (i-)": "ইহঁত"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সিহঁত"
@@ -99,8 +86,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "ihɔ̃t"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "xihɔ̃t"
     - lemma: "here, there"
-      key: place
-      gloss: "a place"
+      key: "place"
       forms:
         "near: এই (ei), ই- (i-)": "ইয়াত"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তাত"
@@ -111,8 +97,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "ijat"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "tat"
     - lemma: "to here, to there"
-      key: toward
-      gloss: "going towards a place"
+      key: "toward"
       forms:
         "near: এই (ei), ই- (i-)": "ইয়ালৈ"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তালৈ"
@@ -123,8 +108,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "ijalɔi"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "talɔi"
     - lemma: "this way, that way"
-      key: side
-      gloss: "side or direction"
+      key: "side"
       forms:
         "near: এই (ei), ই- (i-)": "ইফালে"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সিফালে"
@@ -135,8 +119,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "ipʰale"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "xipʰale"
     - lemma: "like this, like that"
-      key: manner
-      gloss: "how"
+      key: "manner"
       forms:
         "near: এই (ei), ই- (i-)": "এনেকৈ"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তেনেকৈ"
@@ -147,8 +130,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "enekɔi"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "tenekɔi"
     - lemma: "this kind of, that kind of"
-      key: kind
-      gloss: "what sort"
+      key: "kind"
       forms:
         "near: এই (ei), ই- (i-)": "এনেকুৱা"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তেনেকুৱা"
@@ -159,8 +141,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "enekuwa"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "tenekuwa"
     - lemma: "this much, that much"
-      key: amount
-      gloss: "how much"
+      key: "amount"
       forms:
         "near: এই (ei), ই- (i-)": "ইমান"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "সিমান"
@@ -171,8 +152,7 @@ pattern:
         "near: এই (ei), ই- (i-)": "iman"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "ximan"
     - lemma: "now, then"
-      key: time
-      gloss: "when"
+      key: "time"
       forms:
         "near: এই (ei), ই- (i-)": "এতিয়া"
         "far: সেই (sei), সি- (si-), ত- (tô-)": "তেতিয়া"

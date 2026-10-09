@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-pronouns
-name: "Pronouns and possessives"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I, you, he and she, with my and your, me as an object, and for me. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Personal pronouns"
-  slot_name: "form"
   slots: ["possessive: my, your …", "object: me, you …", "for: for me, to me …"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Assamese has three words for 'you': আপুনি (respectful), তুমি (familiar) and তই (intimate, only for the very close or a child). 'He' is সি (si) and 'she' is তাই (tāi); তেওঁ (teum̐) is a respectful he or she, and ই (i) is 'he' for someone here. Plurals add -হঁত (-hôm̐t) or -লোক (-luk): সিহঁত (sihôm̐t), তেওঁলোক (teum̐luk). A possessive never changes for the thing owned: মোৰ কিতাপ (mur kitāp), মোৰ ঘৰ (mur ghôr). -ক (-kô) marks the object and the one given to: মোক দিয়া (muk diyā), give it to me. -লৈ (-lôi) is for or towards: মোলৈ (mulôi), for me. মই (moi) takes the stem মো- (mo-) before an ending, and তুমি (tumi) and আপুনি (āpuni) take তোমা- (tumā-) and আপোনা- (āpunā-)."
   entries:
     - lemma: "মই"
-      key: moi
+      key: "moi"
       reading: "moi"
       ipa: "moi"
-      gloss: "I"
       forms:
         "possessive: my, your …": "মোৰ"
         "object: me, you …": "মোক"
@@ -32,10 +25,9 @@ pattern:
         "object: me, you …": "mʊk"
         "for: for me, to me …": "mʊlɔi"
     - lemma: "তই"
-      key: toi
+      key: "toi"
       reading: "toi"
       ipa: "toi"
-      gloss: "you, intimate"
       forms:
         "possessive: my, your …": "তোৰ"
         "object: me, you …": "তোক"
@@ -49,10 +41,9 @@ pattern:
         "object: me, you …": "tʊk"
         "for: for me, to me …": "tʊlɔi"
     - lemma: "তুমি"
-      key: tumi
+      key: "tumi"
       reading: "tumi"
       ipa: "tumi"
-      gloss: "you, familiar"
       forms:
         "possessive: my, your …": "তোমাৰ"
         "object: me, you …": "তোমাক"
@@ -66,10 +57,9 @@ pattern:
         "object: me, you …": "tʊmak"
         "for: for me, to me …": "tʊmalɔi"
     - lemma: "আপুনি"
-      key: apuni
+      key: "apuni"
       reading: "āpuni"
       ipa: "apuni"
-      gloss: "you, respectful"
       forms:
         "possessive: my, your …": "আপোনাৰ"
         "object: me, you …": "আপোনাক"
@@ -83,10 +73,9 @@ pattern:
         "object: me, you …": "apʊnak"
         "for: for me, to me …": "apʊnalɔi"
     - lemma: "সি"
-      key: xi
+      key: "xi"
       reading: "xi"
       ipa: "xi"
-      gloss: "he"
       forms:
         "possessive: my, your …": "তাৰ"
         "object: me, you …": "তাক"
@@ -100,10 +89,9 @@ pattern:
         "object: me, you …": "tak"
         "for: for me, to me …": "talɔi"
     - lemma: "তাই"
-      key: tai
+      key: "tai"
       reading: "tāi"
       ipa: "tai"
-      gloss: "she"
       forms:
         "possessive: my, your …": "তাইৰ"
         "object: me, you …": "তাইক"
@@ -117,10 +105,9 @@ pattern:
         "object: me, you …": "taik"
         "for: for me, to me …": "tailɔi"
     - lemma: "তেওঁ"
-      key: teu
+      key: "teu"
       reading: "teum̐"
       ipa: "teʊ̃"
-      gloss: "he or she, respectful"
       forms:
         "possessive: my, your …": "তেওঁৰ"
         "object: me, you …": "তেওঁক"
@@ -134,10 +121,9 @@ pattern:
         "object: me, you …": "teʊ̃k"
         "for: for me, to me …": "teʊ̃lɔi"
     - lemma: "ই"
-      key: i
+      key: "i"
       reading: "i"
       ipa: "i"
-      gloss: "he, here; this one"
       forms:
         "possessive: my, your …": "ইয়াৰ"
         "object: me, you …": "ইয়াক"
@@ -151,10 +137,9 @@ pattern:
         "object: me, you …": "ijak"
         "for: for me, to me …": "ijalɔi"
     - lemma: "আমি"
-      key: ami
+      key: "ami"
       reading: "āmi"
       ipa: "ami"
-      gloss: "we"
       forms:
         "possessive: my, your …": "আমাৰ"
         "object: me, you …": "আমাক"
@@ -168,10 +153,9 @@ pattern:
         "object: me, you …": "amak"
         "for: for me, to me …": "amalɔi"
     - lemma: "তহঁত"
-      key: tohot
+      key: "tohot"
       reading: "tôhôm̐t"
       ipa: "tɔhɔ̃t"
-      gloss: "you all, intimate"
       forms:
         "possessive: my, your …": "তহঁতৰ"
         "object: me, you …": "তহঁতক"
@@ -185,10 +169,9 @@ pattern:
         "object: me, you …": "tɔhɔ̃tɔk"
         "for: for me, to me …": "tɔhɔ̃tɔlɔi"
     - lemma: "তোমালোক"
-      key: tumaluk
+      key: "tumaluk"
       reading: "tumāluk"
       ipa: "tʊmalʊk"
-      gloss: "you all, familiar"
       forms:
         "possessive: my, your …": "তোমালোকৰ"
         "object: me, you …": "তোমালোকক"
@@ -202,10 +185,9 @@ pattern:
         "object: me, you …": "tʊmalʊkɔk"
         "for: for me, to me …": "tʊmalʊkɔlɔi"
     - lemma: "আপোনালোক"
-      key: apunaluk
+      key: "apunaluk"
       reading: "āpunāluk"
       ipa: "apʊnalʊk"
-      gloss: "you all, respectful"
       forms:
         "possessive: my, your …": "আপোনালোকৰ"
         "object: me, you …": "আপোনালোকক"
@@ -219,10 +201,9 @@ pattern:
         "object: me, you …": "apʊnalʊkɔk"
         "for: for me, to me …": "apʊnalʊkɔlɔi"
     - lemma: "সিহঁত"
-      key: xihot
+      key: "xihot"
       reading: "xihôm̐t"
       ipa: "xihɔ̃t"
-      gloss: "they"
       forms:
         "possessive: my, your …": "সিহঁতৰ"
         "object: me, you …": "সিহঁতক"
@@ -236,10 +217,9 @@ pattern:
         "object: me, you …": "xihɔ̃tɔk"
         "for: for me, to me …": "xihɔ̃tɔlɔi"
     - lemma: "তেওঁলোক"
-      key: teuluk
+      key: "teuluk"
       reading: "teum̐luk"
       ipa: "teʊ̃lʊk"
-      gloss: "they, respectful"
       forms:
         "possessive: my, your …": "তেওঁলোকৰ"
         "object: me, you …": "তেওঁলোকক"

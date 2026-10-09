@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-past-more
-name: "Was doing, had done, used to"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I was eating, I had gone, I used to go: the past continuous, and the -ইছিল (-isil) past, which says had done and used to. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-past-more"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Past continuous and past perfect"
-  slot_name: "tense, person and respect"
   slots: ["was doing, মই (moi) / আমি (āmi)", "was doing, তই (toi) / তহঁত (tôhôm̐t)", "was doing, তুমি (tumi) / তোমালোক (tumāluk)", "was doing, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)", "had done, used to, মই (moi) / আমি (āmi)", "had done, used to, তই (toi) / তহঁত (tôhôm̐t)", "had done, used to, তুমি (tumi) / তোমালোক (tumāluk)", "had done, used to, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Was doing is the present continuous with আছিল (āsil) in place of আছে (āse): কৰি আছোঁ (kori āsum̐), I am doing; কৰি আছিলোঁ (kori āsilum̐), I was doing. The -ইছিল (-isil) past says had done: মই অহাৰ আগতে সি গৈছিল (moi ôhār āgôte si gôisil), he had gone before I came. It is also the plain past for something further back, and for what used to happen: সৰুতে মই তাত থাকিছিলোঁ (sorute moi tāt thākisilum̐), I lived there as a child. যোৱা (zuwā) takes গৈ (gôi): গৈ আছিলোঁ (gôi āsilum̐), গৈছিলোঁ (gôisilum̐). আপুনি (āpuni) takes the same form as সি (si), তাই (tāi) and তেওঁ (teum̐). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "কৰা"
-      key: kora
+      key: "kora"
       reading: "kôrā"
       ipa: "kɔɹa"
-      gloss: "to do"
       forms:
         "was doing, মই (moi) / আমি (āmi)": ["কৰি আছিলোঁ", "কৰি আছিলো"]
         "was doing, তই (toi) / তহঁত (tôhôm̐t)": "কৰি আছিলি"
@@ -47,10 +40,9 @@ pattern:
         "had done, used to, তুমি (tumi) / তোমালোক (tumāluk)": "koɹisila"
         "had done, used to, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "koɹisil"
     - lemma: "যোৱা"
-      key: juwa
+      key: "juwa"
       reading: "zuwā"
       ipa: "zʊwa"
-      gloss: "to go"
       forms:
         "was doing, মই (moi) / আমি (āmi)": ["গৈ আছিলোঁ", "গৈ আছিলো"]
         "was doing, তই (toi) / তহঁত (tôhôm̐t)": "গৈ আছিলি"
@@ -79,10 +71,9 @@ pattern:
         "had done, used to, তুমি (tumi) / তোমালোক (tumāluk)": "ɡɔisila"
         "had done, used to, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "ɡɔisil"
     - lemma: "অহা"
-      key: oha
+      key: "oha"
       reading: "ôhā"
       ipa: "ɔha"
-      gloss: "to come"
       forms:
         "was doing, মই (moi) / আমি (āmi)": ["আহি আছিলোঁ", "আহি আছিলো"]
         "was doing, তই (toi) / তহঁত (tôhôm̐t)": "আহি আছিলি"
@@ -111,10 +102,9 @@ pattern:
         "had done, used to, তুমি (tumi) / তোমালোক (tumāluk)": "ahisila"
         "had done, used to, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "ahisil"
     - lemma: "খোৱা"
-      key: khuwa
+      key: "khuwa"
       reading: "khuwā"
       ipa: "kʰʊwa"
-      gloss: "to eat; to drink"
       forms:
         "was doing, মই (moi) / আমি (āmi)": ["খাই আছিলোঁ", "খাই আছিলো"]
         "was doing, তই (toi) / তহঁত (tôhôm̐t)": "খাই আছিলি"
