@@ -39,7 +39,7 @@ List<Leech> findLeeches(
     for (final MapEntry(:key, :value) in replayReviews(
       progress.log.map(logged),
     ).states.entries)
-      if (key.mode.isScheduled && value.lapses >= threshold)
+      if (value.lapses >= threshold)
         if (cardOf(key.cardId, deckId: lastDeck[key]) case final card?)
           Leech(key: key, card: card, state: value),
   ];

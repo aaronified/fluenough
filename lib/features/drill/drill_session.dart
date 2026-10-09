@@ -741,11 +741,11 @@ class DrillSession extends ChangeNotifier {
   static const int optionCount = 4;
 
   /// The grade a right match, or a right choice of a meaning seen, records:
-  /// right, but picked from a few rather than recalled. Recognition, which
-  /// schedules nothing (ADR-0034).
+  /// right, but picked from a few rather than recalled. Recognition's
+  /// choice, its easiest way of asking (ADR-0034).
   static const int choiceGrade = 4;
 
-  /// The grade a right choice records in a schedule, Hear's or Write's:
+  /// The grade a right choice records in Hear or Write:
   /// Hard, since a right choice counts for less than a right recall
   /// (ADR-0034).
   static const int scheduledChoiceGrade = 3;
@@ -791,9 +791,9 @@ class DrillSession extends ChangeNotifier {
     _record(
       !isRight(option)
           ? 1
-          : item.mode.isScheduled
-          ? scheduledChoiceGrade
-          : choiceGrade,
+          : item.mode == DrillMode.recognition
+          ? choiceGrade
+          : scheduledChoiceGrade,
       answerGiven: ask.optionOf(option),
     );
     _phase = DrillPhase.feedback;

@@ -30,13 +30,38 @@ void main() {
     expect(a.of('te', DrillMode.listening), greaterThan(0));
     expect(a.of('te', DrillMode.speaking), greaterThan(0));
     expect(a.of('hi', DrillMode.listening), lessThan(0));
-    expect(a.of('hi', DrillMode.speaking), 0);
+    expect(a.of('ta', DrillMode.listening), 0);
     expect(a.answersIn('te', DrillMode.listening), 1);
+    expect(a.answersIn('te', DrillMode.production), 0);
   });
 
-  test('recognition, which schedules nothing, is left out', () {
+  test('recognition is a skill of its own', () {
     final a = Abilities.replay([r('te-0001', 4, DrillMode.recognition)]);
-    expect(a.keys, isEmpty);
+    expect(a.keys, [(language: 'te', mode: DrillMode.recognition)]);
+    expect(a.of('te', DrillMode.recognition), closeTo(0.5, 1e-9));
+  });
+
+  test('an answer moves the other skills of a word by the relatedness', () {
+    final a = Abilities.replay([r('te-0001', 4)]);
+    for (final other in [
+      DrillMode.recognition,
+      DrillMode.production,
+      DrillMode.speaking,
+    ]) {
+      expect(
+        a.of('te', other),
+        closeTo(0.5 * Abilities.relatedness, 1e-9),
+        reason: '$other',
+      );
+    }
+    expect(a.of('te', DrillMode.grammar), 0);
+    expect(a.keys, [(language: 'te', mode: DrillMode.listening)]);
+  });
+
+  test('grammar moves only grammar', () {
+    final a = Abilities.replay([r('te-0001', 4, DrillMode.grammar)]);
+    expect(a.of('te', DrillMode.grammar), closeTo(0.5, 1e-9));
+    expect(a.of('te', DrillMode.listening), 0);
   });
 
   test('moves less as answers add up', () {

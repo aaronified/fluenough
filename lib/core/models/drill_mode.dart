@@ -5,14 +5,13 @@
 /// recognising it by ear, and one shared interval would over-drill the easy
 /// direction while under-drilling the hard one.
 ///
-/// The skill model (ADR-0034) keeps three schedules per word: **Hear**
-/// ([listening]), **Say** ([speaking]) and **Write** ([production]), and
-/// grammar's. The names are stored in the review log, which is never
+/// The skill model (ADR-0034) keeps four schedules per word:
+/// **Recognition** ([recognition]), **Hear** ([listening]), **Say**
+/// ([speaking]) and **Write** ([production]), and grammar's. The names are stored in the review log, which is never
 /// rewritten, so they stay as they were.
 enum DrillMode {
-  /// Shown the target, choose or recall the meaning. A lesson step only,
-  /// not scheduled ([isScheduled]): understanding in writing is taken from
-  /// Write (ADR-0034).
+  /// Recognition: shown the target, choose or recall the meaning. A skill
+  /// of its own, scheduled like the others (ADR-0034).
   recognition,
 
   /// Write: shown the meaning, give the word, typed, chosen or put in order.
@@ -37,11 +36,6 @@ enum DrillMode {
   /// speech recogniser heard, so it needs one for the language (#89,
   /// ADR-0014).
   speaking;
-
-  /// Whether this mode is a schedule: due in reviews, and introduced as a
-  /// new pair. Recognition is asked in lessons and logged, but schedules
-  /// nothing (ADR-0034).
-  bool get isScheduled => this != DrillMode.recognition;
 
   /// Whether the app grades this mode itself.
   ///

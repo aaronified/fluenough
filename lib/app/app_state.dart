@@ -767,7 +767,6 @@ class AppState extends ChangeNotifier {
       now(),
       counts: (key) =>
           learned.contains(key.cardId) &&
-          key.mode.isScheduled &&
           modes.contains(key.mode) &&
           !leeches.isSetAside(key),
     );
