@@ -36,6 +36,7 @@ import 'links.dart';
 import 'log_files.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
+import 'pacing.dart';
 import 'profile.dart';
 import 'session.dart';
 import 'settings.dart';
@@ -129,6 +130,7 @@ class AppState extends ChangeNotifier {
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
     this._fitRunner = fitInIsolate,
+    this._paceRunner = paceInIsolate,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -187,6 +189,7 @@ class AppState extends ChangeNotifier {
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
     FitRunner fitRunner = fitInPlace,
+    PaceRunner paceRunner = paceInPlace,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -213,6 +216,7 @@ class AppState extends ChangeNotifier {
       installer: installer,
       downloads: downloads,
       fitRunner: fitRunner,
+      paceRunner: paceRunner,
       settings: settings,
       volume: volume,
       profiles: profiles,
@@ -279,6 +283,16 @@ class AppState extends ChangeNotifier {
     runner: _fitRunner,
   );
   final FitRunner _fitRunner;
+
+  /// How each skill is paced beside how it started: How you learn, and
+  /// Today's strip and tile marks. Worked out off the main thread, only
+  /// when asked for. Has its own notifier.
+  late final Pacing pacing = Pacing(
+    progress: progress,
+    clock: _clock,
+    runner: _paceRunner,
+  );
+  final PaceRunner _paceRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -1403,6 +1417,7 @@ class AppState extends ChangeNotifier {
     shellTab.dispose();
     updates.dispose();
     tuner.dispose();
+    pacing.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();
