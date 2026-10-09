@@ -31,11 +31,15 @@ import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
+import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/stats/leeches_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
+import 'package:fluenough/features/today/due_card.dart';
+import 'package:fluenough/ui/widgets/pace_parts.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import 'support/harness.dart';
+import 'support/paced_learner.dart';
 
 /// Flutter's accessibility guidelines on every drill state (#26): tap targets
 /// big enough for a drill used fast, every tap target labelled, and text at
@@ -434,6 +438,98 @@ void main() {
       }
     });
   }
+
+  // Adjusted to you (docs/plans/skill-model.md): How you learn, and the
+  // Today and Progress tabs, before any fit and after each kind of fit.
+  group('adjusted to you', () {
+    for (final paced in Paced.values) {
+      for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+        testWidgets('How you learn, ${paced.name}, ${themeMode.name}', (
+          tester,
+        ) async {
+          usePhone(tester);
+          final semantics = tester.ensureSemantics();
+          await pumpScreen(
+            tester,
+            const HowYouLearnPage(),
+            state: await pacedLearner(paced),
+            themeMode: themeMode,
+          );
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+
+        for (final tab in <ShellTab>[ShellTab.today, ShellTab.progress]) {
+          testWidgets('the ${tab.name} tab, ${paced.name}, ${themeMode.name}', (
+            tester,
+          ) async {
+            usePhone(tester);
+            final semantics = tester.ensureSemantics();
+            final state = await pacedLearner(paced);
+            state.settings.themeMode = themeMode;
+            await pumpApp(tester, state: state);
+            state.shellTab.value = tab;
+            await tester.pumpAndSettle();
+            if (tab == ShellTab.today) {
+              // The state checked is the one asked for.
+              expect(
+                find.descendant(
+                  of: find.byType(DueCard),
+                  matching: find.byType(PaceStrip),
+                ),
+                paced == Paced.none ? findsNothing : findsOneWidget,
+              );
+              // The tiles and their marks on screen, to be measured.
+              final marks = find.byType(PaceMark);
+              if (paced != Paced.none) {
+                await tester.ensureVisible(marks.first);
+                await tester.pumpAndSettle();
+              }
+            }
+            await meetsEveryGuideline(tester);
+            semantics.dispose();
+          });
+        }
+      }
+
+      testWidgets('How you learn, ${paced.name}, at text scale 2.0: nothing '
+          'clipped, targets still big enough', (tester) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        await pumpScreen(
+          tester,
+          const HowYouLearnPage(),
+          state: await pacedLearner(
+            paced,
+            also: <Paced>{Paced.fewer, Paced.more, Paced.same},
+          ),
+        );
+        expect(tester.takeException(), isNull);
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+
+    for (final tab in <ShellTab>[ShellTab.today, ShellTab.progress]) {
+      testWidgets('the ${tab.name} tab, every kind of fit, at text scale '
+          '2.0: nothing clipped, targets still big enough', (tester) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        final state = await pacedLearner(
+          Paced.fewer,
+          also: <Paced>{Paced.more, Paced.same},
+        );
+        await pumpApp(tester, state: state);
+        state.shellTab.value = tab;
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull);
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+  });
 
   group('the first launch in every colour', () {
     setUp(rootBundle.clear);
