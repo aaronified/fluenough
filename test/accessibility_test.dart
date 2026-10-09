@@ -31,7 +31,9 @@ import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
+import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
+import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
@@ -43,6 +45,7 @@ import 'package:fluenough/ui/widgets/target_text.dart';
 
 import 'support/harness.dart';
 import 'support/paced_learner.dart';
+import 'support/review_fixture.dart';
 
 /// Flutter's accessibility guidelines on every drill state (#26): tap targets
 /// big enough for a drill used fast, every tap target labelled, and text at
@@ -69,6 +72,20 @@ Map<String, String> quotedIn(WidgetTester tester, Finder finder) {
 FinderBase<SemanticsNode> readsOut(String text) => find.semantics.byPredicate(
   (node) => node.label.contains(text) || node.value.contains(text),
 );
+
+/// Taps [finder], scrolling the screen's list to it first.
+Future<void> tapShown(WidgetTester tester, Finder finder) async {
+  if (finder.evaluate().isEmpty) {
+    await tester.scrollUntilVisible(
+      finder,
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+  }
+  await tester.ensureVisible(finder);
+  await tester.pumpAndSettle();
+  await tester.tap(finder);
+}
 
 void main() {
   group('deck content in an interface string is read in its language', () {
@@ -507,6 +524,126 @@ void main() {
       }
     });
   }
+
+  // Reviewer mode (docs/plans/deck-browser.md): Settings' Reviewing group
+  // and How reviewing works, a unit's review and each of its sheets, the
+  // rude-word rating and the pair check with adult content on, the send
+  // sheet, and the drill card's sound-alike warning.
+  final reviewScreens =
+      <
+        (
+          String,
+          Widget,
+          Future<void> Function(WidgetTester tester, AppState state)?,
+        )
+      >[
+        ('settings, reviewing on', const SettingsPage(), null),
+        (
+          'how reviewing works',
+          const SettingsPage(),
+          (tester, state) async {
+            await tapShown(tester, find.text(l10nOf(tester).reviewSettingsHow));
+          },
+        ),
+        ('review a unit', const ReviewPage(deckId: wordsDeck), null),
+        (
+          'review a unit, a card open',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async => tapShown(tester, find.text('mother')),
+        ),
+        (
+          'review a unit, suggest a change',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            await tapShown(tester, find.text('mother'));
+            await tester.pumpAndSettle();
+            await tapShown(
+              tester,
+              find.widgetWithText(OutlinedButton, l10nOf(tester).reviewSuggest),
+            );
+          },
+        ),
+        (
+          'review a unit, the pair with adult content on',
+          const ReviewPage(deckId: wordsDeck, adult: true),
+          (tester, state) async => tapShown(tester, find.text('widow')),
+        ),
+        (
+          'review rude words, rating one',
+          const ReviewPage(deckId: rudeDeck, adult: true),
+          (tester, state) async {
+            await tapShown(tester, find.text('idiot, good-for-nothing'));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10nOf(tester).reviewRate));
+          },
+        ),
+        (
+          'review a unit, the send sheet',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            final words = state.deckById(wordsDeck)!;
+            state.reviewing.markRight(words, words.cards.first);
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10nOf(tester).reviewSend));
+          },
+        ),
+        (
+          'a seen word like a rude one, answer shown',
+          DrillPage(
+            request: DrillRequest.deck(wordsDeck, skill: Skill.recognition),
+            preset: const DrillPreset(target: 'విధవ', reveal: true),
+          ),
+          null,
+        ),
+      ];
+
+  Future<void> pumpReview(
+    WidgetTester tester,
+    Widget page,
+    Future<void> Function(WidgetTester, AppState)? open, {
+    ThemeMode themeMode = ThemeMode.light,
+  }) async {
+    final state = await pumpScreen(
+      tester,
+      page,
+      state: await reviewState(reviewing: true),
+      themeMode: themeMode,
+    );
+    if (open != null) {
+      await open(tester, state);
+      await tester.pumpAndSettle();
+    }
+  }
+
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    group('reviewer mode, ${themeMode.name} theme', () {
+      for (final (name, page, open) in reviewScreens) {
+        testWidgets(name, (tester) async {
+          usePhone(tester);
+          final semantics = tester.ensureSemantics();
+          await pumpReview(tester, page, open, themeMode: themeMode);
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+      }
+    });
+  }
+
+  group('reviewer mode at the largest font size, 2.0 on Android', () {
+    for (final (name, page, open) in reviewScreens) {
+      testWidgets('$name: nothing clipped, targets still big enough', (
+        tester,
+      ) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        await pumpReview(tester, page, open);
+        expect(tester.takeException(), isNull);
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+  });
 
   // Adjusted to you (docs/plans/skill-model.md): How you learn, and the
   // Today and Progress tabs, before any fit and after each kind of fit.
