@@ -16,8 +16,8 @@ cards:
     tags: ["grammar", "word-order"]
     notes: "The verb comes last: subject, object, verb. Word for word, 'I rice eat'."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
-      - { word: "తింటాను", base: "తినడం", reading: "tinaḍam", meaning: "to eat" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తింటాను", ref: "te-0624" }
   - id: te-0118
     target: "ఆయన డాక్టర్."
     native: "He is a doctor."
@@ -26,7 +26,7 @@ cards:
     tags: ["grammar", "no-is"]
     notes: "No 'is' when you say what someone is: 'he doctor'."
     bases:
-      - { word: "ఆయన", base: "ఆయన", reading: "āyana", meaning: "he (respectful)" }
+      - { word: "ఆయన", ref: "te-0597" }
   - id: te-0119
     target: "గదిలో"
     native: "in the room"
@@ -57,8 +57,8 @@ cards:
     pos: "phrase"
     notes: "The verb shows whether 'he' is a man: -డు (-ḍu)."
     bases:
-      - { word: "అతను", base: "అతను", reading: "atanu", meaning: "he" }
-      - { word: "వచ్చాడు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "వచ్చాడు", ref: "te-0623" }
   - id: te-0123
     target: "ఆమె వచ్చింది."
     native: "She came."
@@ -68,8 +68,8 @@ cards:
     pos: "phrase"
     notes: "A woman takes the same verb ending as a thing, -ది (-di), not a man's."
     bases:
-      - { word: "ఆమె", base: "ఆమె", reading: "āme", meaning: "she" }
-      - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "వచ్చింది", ref: "te-0623" }
   - id: te-0124
     target: "అది వచ్చింది."
     native: "It came."
@@ -79,8 +79,8 @@ cards:
     pos: "phrase"
     notes: "A thing or an animal takes -ది (-di), like a woman: ఆమె వచ్చింది (āme vaccindi)."
     bases:
-      - { word: "అది", base: "అది", reading: "adi", meaning: "that (a thing)" }
-      - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "అది", ref: "te-0599" }
+      - { word: "వచ్చింది", ref: "te-0623" }
   - id: te-0125
     target: "నువ్వు రా."
     native: "Come! (to a friend)"
@@ -89,8 +89,8 @@ cards:
     tags: ["grammar", "two-yous"]
     notes: "Two words for 'you': నువ్వు (nuvvu) to a friend, a child or a younger person."
     bases:
-      - { word: "నువ్వు", base: "నువ్వు", reading: "nuvvu", meaning: "you (to a friend)" }
-      - { word: "రా", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "రా", ref: "te-0623" }
   - id: te-0126
     target: "మీరు రండి."
     native: "Please come."
@@ -99,7 +99,7 @@ cards:
     tags: ["grammar", "two-yous"]
     notes: "మీరు (mīru) is the respectful 'you', and the plural, and its verb ends in -ండి (-aṇḍi)."
     bases:
-      - { word: "రండి", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "రండి", ref: "te-0623" }
   - id: te-0127
     target: "మనం"
     native: "we (you and I)"
@@ -130,8 +130,8 @@ cards:
     tags: ["grammar", "articles"]
     notes: "No word for 'the', and ఒక (oka), 'one', serves for 'a'."
     bases:
-      - { word: "ఒక", base: "ఒక", reading: "oka", meaning: "a; one" }
-      - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakam", meaning: "book" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "పుస్తకం", ref: "te-0865" }
   - id: te-0131
     target: "నా దగ్గర పుస్తకం ఉంది."
     native: "I have a book."
@@ -140,9 +140,9 @@ cards:
     tags: ["grammar", "have"]
     notes: "No verb 'have': 'near me a book is'."
     bases:
-      - { word: "నా", base: "నేను", reading: "nēnu", meaning: "I; my" }
-      - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakam", meaning: "book" }
-      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
+      - { word: "నా", ref: "te-0593" }
+      - { word: "పుస్తకం", ref: "te-0865" }
+      - { word: "ఉంది", ref: "te-0633" }
   - id: te-0132
     target: "నేను రాను."
     native: "I won't come."
@@ -151,8 +151,8 @@ cards:
     tags: ["grammar", "negation"]
     notes: "'Not' is built into the verb: రాను (rānu) is 'won't come', వస్తాను (vastānu) 'will come'."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
-      - { word: "రాను", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రాను", ref: "te-0623" }
   - id: te-0133
     target: "సమయం లేదు."
     native: "There's no time."
@@ -168,4 +168,4 @@ cards:
     tags: ["grammar", "questions"]
     notes: "A yes-or-no question ends in -ఆ (-ā): మీరు వస్తారు (you will come) becomes మీరు వస్తారా (mīru vastārā), the last u turned into a long a."
     bases:
-      - { word: "వస్తారా", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "వస్తారా", ref: "te-0623" }

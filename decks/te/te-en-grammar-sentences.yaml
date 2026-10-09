@@ -16,7 +16,7 @@ cards:
     pos: "phrase"
     notes: "No separate 'am': the ending -ని (-ni) on విద్యార్థి (vidyārthi) says it."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నేను", ref: "te-0593" }
       - { word: "విద్యార్థిని", ref: "te-0412" }
   - id: te-0148
     target: "ఇది నా ఇల్లు."
@@ -26,8 +26,8 @@ cards:
     pos: "phrase"
     notes: "There is no 'is' in the present."
     bases:
-      - { word: "ఇది", base: "ఇది", reading: "idi", meaning: "this (a thing)" }
-      - { word: "నా", base: "నేను", reading: "nēnu", meaning: "I; my" }
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "నా", ref: "te-0593" }
   - id: te-0149
     target: "నేను టీ తాగుతాను."
     native: "I drink tea."
@@ -36,8 +36,8 @@ cards:
     pos: "phrase"
     notes: "Subject, object, verb: the verb comes last."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
-      - { word: "తాగుతాను", base: "తాగడం", reading: "tāgaḍam", meaning: "to drink" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తాగుతాను", ref: "te-0625" }
   - id: te-0150
     target: "ఆమె తెలుగు నేర్చుకుంటోంది."
     native: "She is learning Telugu."
@@ -45,9 +45,9 @@ cards:
     ipa: "aːme t̪eluɡu neːrtʃukuɳʈoːnd̪i"
     pos: "phrase"
     bases:
-      - { word: "ఆమె", base: "ఆమె", reading: "āme", meaning: "she" }
+      - { word: "ఆమె", ref: "te-0596" }
       - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
-      - { word: "నేర్చుకుంటోంది", base: "నేర్చుకోవడం", reading: "nērcukōvaḍam", meaning: "to learn" }
+      - { word: "నేర్చుకుంటోంది", ref: "te-0645" }
   - id: te-0151
     target: "నాకు తెలుగు ఇష్టం."
     native: "I like Telugu."
@@ -56,7 +56,7 @@ cards:
     pos: "phrase"
     notes: "'To me, Telugu is liked': the one who likes takes -కి (-ki) or -కు (-ku)."
     bases:
-      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నాకు", ref: "te-0593" }
       - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
   - id: te-0152
     target: "నాకు ఒక కారు ఉంది."
@@ -66,10 +66,10 @@ cards:
     pos: "phrase"
     notes: "'To me there is a car': ఉంది (undi), 'there is'."
     bases:
-      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
-      - { word: "ఒక", base: "ఒక", reading: "oka", meaning: "a; one" }
-      - { word: "కారు", base: "కారు", reading: "kāru", meaning: "car" }
-      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "కారు", ref: "te-0879" }
+      - { word: "ఉంది", ref: "te-0633" }
   - id: te-0153
     target: "నా దగ్గర డబ్బులు లేవు."
     native: "I don't have any money on me."
@@ -78,7 +78,7 @@ cards:
     pos: "phrase"
     notes: "లేవు (lēvu), 'there aren't', agrees with the plural డబ్బులు (ḍabbulu)."
     bases:
-      - { word: "నా", base: "నేను", reading: "nēnu", meaning: "I; my" }
+      - { word: "నా", ref: "te-0593" }
       - { word: "లేవు", ref: "te-0159" }
   - id: te-0154
     target: "ఇది బాగా లేదు."
@@ -87,7 +87,7 @@ cards:
     ipa: "id̪i baːɡaː leːd̪u"
     pos: "phrase"
     bases:
-      - { word: "ఇది", base: "ఇది", reading: "idi", meaning: "this (a thing)" }
+      - { word: "ఇది", ref: "te-0600" }
       - { word: "బాగా", base: "బాగు", reading: "bāgu", meaning: "good; well" }
   - id: te-0155
     target: "వెళ్ళకండి."
@@ -103,6 +103,6 @@ cards:
     ipa: "iːroːdʒu tʃaːlaː ʋeːɖiɡaː und̪i"
     pos: "phrase"
     bases:
-      - { word: "చాలా", base: "చాలా", reading: "cālā", meaning: "very; a lot" }
+      - { word: "చాలా", ref: "te-1026" }
       - { word: "వేడిగా", ref: "te-0505" }
-      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
+      - { word: "ఉంది", ref: "te-0633" }

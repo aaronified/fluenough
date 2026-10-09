@@ -16,9 +16,9 @@ cards:
     pos: "phrase"
     notes: "Telugu has no word for 'the' or 'a'; the context says which."
     bases:
-      - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakam", meaning: "book" }
-      - { word: "మీద", base: "మీద", reading: "mīda", meaning: "on; about (after a noun)" }
-      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
+      - { word: "పుస్తకం", ref: "te-0865" }
+      - { word: "మీద", ref: "te-0805" }
+      - { word: "ఉంది", ref: "te-0633" }
   - id: te-0251
     target: "ఒక అబ్బాయి వచ్చాడు."
     native: "A boy came."
@@ -27,9 +27,9 @@ cards:
     pos: "phrase"
     notes: "ఒక (oka), 'one', can do the work of 'a'."
     bases:
-      - { word: "ఒక", base: "ఒక", reading: "oka", meaning: "a; one" }
+      - { word: "ఒక", ref: "te-1034" }
       - { word: "అబ్బాయి", base: "అబ్బాయి", reading: "abbāyi", meaning: "boy; young man" }
-      - { word: "వచ్చాడు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "వచ్చాడు", ref: "te-0623" }
   - id: te-0252
     target: "అబ్బాయి వచ్చాడు."
     native: "The boy came."
@@ -38,7 +38,7 @@ cards:
     pos: "phrase"
     bases:
       - { word: "అబ్బాయి", base: "అబ్బాయి", reading: "abbāyi", meaning: "boy; young man" }
-      - { word: "వచ్చాడు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "వచ్చాడు", ref: "te-0623" }
   - id: te-0253
     target: "ఒక టీ ఇవ్వండి."
     native: "One tea, please."
@@ -46,7 +46,7 @@ cards:
     ipa: "oka ʈiː iʋʋaɳɖi"
     pos: "phrase"
     bases:
-      - { word: "ఒక", base: "ఒక", reading: "oka", meaning: "a; one" }
+      - { word: "ఒక", ref: "te-1034" }
   - id: te-0254
     target: "ఎవరో వచ్చారు."
     native: "Someone has come."
@@ -56,4 +56,4 @@ cards:
     notes: "ఎవరో (evarō) is 'someone'; ఏదో (ēdō), 'something'."
     bases:
       - { word: "ఎవరో", ref: "te-0161" }
-      - { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "వచ్చారు", ref: "te-0623" }

@@ -16,9 +16,9 @@ cards:
     pos: "phrase"
     notes: "Can is the verb with -గల- (-gala-), then the person: మాట్లాడగలను (māṭlāḍagalanu), I can speak."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నేను", ref: "te-0593" }
       - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
-      - { word: "మాట్లాడగలను", base: "మాట్లాడడం", reading: "māṭlāḍaḍam", meaning: "to speak" }
+      - { word: "మాట్లాడగలను", ref: "te-0644" }
   - id: te-0493
     target: "మీరు రేపు రాగలరా?"
     native: "Can you come tomorrow?"
@@ -26,7 +26,7 @@ cards:
     ipa: "miːru reːpu raːɡalaraː"
     pos: "phrase"
     bases:
-      - { word: "రాగలరా", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "రాగలరా", ref: "te-0623" }
   - id: te-0494
     target: "నేను రాలేను."
     native: "I can't come."
@@ -35,8 +35,8 @@ cards:
     pos: "phrase"
     notes: "Can't is the verb with లేను (lēnu), లేవు (lēvu), లేదు (lēdu) …: రాలేను (rālēnu), I can't come."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
-      - { word: "రాలేను", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రాలేను", ref: "te-0623" }
   - id: te-0495
     target: "నాకు ఈత వచ్చు."
     native: "I can swim."
@@ -45,9 +45,9 @@ cards:
     pos: "phrase"
     notes: "For a skill, the one who knows takes -కు (-ku) and the verb is వచ్చు (vaccu), comes: 'to me swimming comes'. The negative is రాదు (rādu)."
     bases:
-      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నాకు", ref: "te-0593" }
       - { word: "ఈత", base: "ఈత", reading: "īta", meaning: "swimming" }
-      - { word: "వచ్చు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "వచ్చు", ref: "te-0623" }
   - ref: te-0143
   - id: te-0496
     target: "మీరు లోపలికి రావచ్చు."
@@ -57,8 +57,8 @@ cards:
     pos: "phrase"
     notes: "May is the verb with -వచ్చు (-vaccu): రావచ్చు (rāvaccu), may come."
     bases:
-      - { word: "లోపలికి", base: "లోపల", reading: "lōpala", meaning: "inside" }
-      - { word: "రావచ్చు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "లోపలికి", ref: "te-0800" }
+      - { word: "రావచ్చు", ref: "te-0623" }
   - id: te-0497
     target: "ఇక్కడ ఫోటోలు తీయకూడదు."
     native: "You mustn't take photos here."
@@ -67,8 +67,8 @@ cards:
     pos: "phrase"
     notes: "Must not is the verb with -కూడదు (-kūḍadu)."
     bases:
-      - { word: "ఫోటోలు", base: "ఫోటో", reading: "phōṭō", meaning: "photo" }
-      - { word: "తీయకూడదు", base: "తీయడం", reading: "tīyaḍam", meaning: "to take; to take out" }
+      - { word: "ఫోటోలు", ref: "te-0895" }
+      - { word: "తీయకూడదు", ref: "te-0836" }
   - ref: te-0377
   - id: te-0498
     target: "మీరు రేపు రావాలి."
@@ -78,7 +78,7 @@ cards:
     pos: "phrase"
     notes: "Must is the verb with -ఆలి (-āli), the same for everyone: నేను వెళ్ళాలి (nēnu veḷḷāli), ఆమె వెళ్ళాలి (āme veḷḷāli)."
     bases:
-      - { word: "రావాలి", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }
+      - { word: "రావాలి", ref: "te-0623" }
   - id: te-0499
     target: "నేను వెళ్ళనక్కర్లేదు."
     native: "I don't have to go."
@@ -88,5 +88,5 @@ cards:
     pos: "phrase"
     notes: "Don't have to is the verb with -అక్కర్లేదు (-akkarlēdu), 'there is no need'."
     bases:
-      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
-      - { word: "వెళ్ళనక్కర్లేదు", base: "వెళ్ళడం", reading: "veḷḷaḍam", meaning: "to go" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "వెళ్ళనక్కర్లేదు", ref: "te-0622" }

@@ -26,13 +26,13 @@ cards:
       - { word: "మీ", ref: "te-0136" }
   - id: "te-0905"
     target: "నాకు ఒక కొత్త ఫోన్ కావాలి."
-    reading: "nāku oka kotta phōn kāvāli."
-    ipa: "naːku oka kot̪t̪a pʰoːn kaːʋaːli"
+    reading: "nāku oka kotta fōn kāvāli."
+    ipa: "naːku oka kot̪t̪a foːn kaːʋaːli"
     pos: "phrase"
     rules: ["te-rule-pronoun-dat"]
     bases:
       - { word: "నాకు", ref: "te-0593" }
-      - { word: "ఒక", base: "ఒక", reading: "oka" }
+      - { word: "ఒక", ref: "te-1034" }
   - id: "te-0906"
     target: "నా గొడుగు ఎక్కడ ఉంది?"
     reading: "nā goḍugu ekkaḍa undi?"
@@ -77,3 +77,11 @@ cards:
     rules: ["te-rule-polite-request"]
     bases:
       - { word: "ఇవ్వండి", ref: "te-0630" }
+  - id: "te-0619"
+    target: "అవి ఎవరి కుర్చీలు?"
+    reading: "avi evari kurcīlu?"
+    ipa: "aʋi eʋari kurtʃiːlu"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "కుర్చీలు", ref: "te-0431" }

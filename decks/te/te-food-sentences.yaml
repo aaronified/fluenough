@@ -40,11 +40,11 @@ cards:
     rules: ["te-rule-pronoun-dat"]
     bases:
       - { word: "నాకు", ref: "te-0593" }
-      - { word: "ఒక", base: "ఒక", reading: "oka" }
+      - { word: "ఒక", ref: "te-1034" }
   - id: "te-0720"
     target: "మీరు కాఫీ తాగుతారా?"
-    reading: "mīru kāphī tāgutārā?"
-    ipa: "miːru kaːpʰiː t̪aːɡut̪aːraː"
+    reading: "mīru kāfī tāgutārā?"
+    ipa: "miːru kaːfiː t̪aːɡut̪aːraː"
     pos: "phrase"
     rules: ["te-rule-present-second"]
     bases:
@@ -55,7 +55,7 @@ cards:
     ipa: "iː kuːra tʃaːlaː baːɡund̪i"
     pos: "phrase"
     bases:
-      - { word: "చాలా", base: "చాలా", reading: "cālā" }
+      - { word: "చాలా", ref: "te-1026" }
       - { word: "బాగుంది", base: "బాగు", reading: "bāgu" }
   - id: "te-0722"
     target: "పళ్ళెంలో అన్నం ఉంది."
