@@ -38,7 +38,8 @@ speaker reviews every card before it ships, Telugu included.
   tool compares every word of a language with its offensive words twice,
   by sound (IPA) and by writing (the script and ISO 15919 letters), and
   lists the close pairs. A reviewer keeps the real ones, each with a note
-  on what to take care of ("keep the long ā"): "sounds like" means care
+  on what to take care of ("keep the long ā"), at most 40 letters, with
+  the budget shown as you type ("30/40 letters"; owner, 2026-10-09): "sounds like" means care
   when speaking, "looks like" care when writing. The validator warns about
   a close pair left unexplained.
 - **Without adult content on,** a learner meeting such a word sees the

@@ -181,7 +181,7 @@ svg.i{width:24px;height:24px;fill:currentColor;flex:none;display:block}
 .field .lb{position:absolute;top:-9px;left:12px;padding:0 4px;background:var(--sLow);font-size:12px;line-height:16px;color:var(--onSv)}
 .field.focus .lb{color:var(--primary);left:11px;top:-10px}
 .field .caret{display:inline-block;width:2px;height:20px;background:var(--primary);vertical-align:-4px;margin-left:1px}
-.fhelp{font-size:12px;line-height:16px;color:var(--onSv);padding:4px 16px 0}
+.fhelp{font-size:12px;line-height:16px;color:var(--onSv);padding:4px 16px 0;display:flex;justify-content:space-between;gap:16px}
 .dlg{position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);background:var(--sHigh);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:16px}
 .dlg .acts2{margin-top:8px}
 /* a long explanation: a scroll-controlled sheet with a drag handle; its body scrolls, Got it stays put */
@@ -508,7 +508,7 @@ function alikeSheet(reviewer){
   <div style="align-self:stretch;text-align:start;margin-top:4px"><div class="flabel">Is this a real risk?</div>
    <div class="seg" role="radiogroup"><span class="sel" role="radio" aria-checked="true">${I('check','s18')}Confirm</span><span role="radio" aria-checked="false">Reject</span></div></div>
   <div style="align-self:stretch;text-align:start;margin-top:8px"><div class="field focus tBodyL" style="background:var(--sLow)"><span class="lb">Care note</span>Keep the short i at the start.<span class="caret"></span></div>
-   <div class="fhelp">Learners see this. Short and plain.</div></div>`:'';
+   <div class="fhelp"><span>Learners see this. Short and plain.</span><span>30/40 letters</span></div></div>`:'';
  const inner=`<div class="cardv">
   <div class="ctop"><span class="tSmall muted">te-04xx · noun${reviewer?' · Not reviewed':''}</span><span class="ibtn">${I('sound')}</span></div>
   <div class="word te">విధవ</div>
