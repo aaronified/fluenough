@@ -42,7 +42,10 @@ have it.
 ## 3. Let it past the approval rule, and only that
 
 The App may merge without an approving review. It must still wait for the
-three required checks, which the bot waits for too.
+three required checks, which the bot waits for too: `Validate decks`,
+`Analyse and test` and `Build debug APK`, by name. Other checks on a
+commit do not hold a bot PR back. If none of the three has started on a
+bot PR an hour after it was last pushed, the log says so each run.
 
 **With a classic branch protection rule** (Settings > Branches):
 
@@ -107,7 +110,14 @@ end, `Agreed proposals: …`. The bot's PRs are labelled `review-bot`, with
 ## Overriding it, and turning it off
 
 - **Any later commit wins:** revert a bot PR, edit the card, or delete a
-  proposal's line from the deck. A bot PR you close is never opened again.
+  proposal's line from the deck. A bot PR is built again from `main`
+  before it merges whenever `main` has moved, and an open agreement PR
+  whose proposal you deleted is closed. A bot PR you close is never
+  opened again.
+- **What a review left for you:** suggestions on an example or a
+  picture, on a field the bot cannot write, or outdated, are counted in
+  the log as `Review by FL-…: n suggestion(s) left for the owner, n
+  outdated`; the text is in the mail.
 - **A bot PR whose checks fail** stays open, labelled `review-bot: checks
   failed`, for you to fix or close.
 - **To stop the bot,** delete either secret, or uninstall the App. Reviews

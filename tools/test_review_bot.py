@@ -40,6 +40,8 @@ class FakeGit:
         shutil.copytree(TOOLS / "fixtures" / "b1" / "zz", self.main / "decks" / "zz")
         (self.main / "decks" / "zz" / "zz-en-extra.yaml").write_text(SINGLE, encoding="utf-8")
         self.branches: dict[str, dict[str, str]] = {}
+        # What main held when each branch was last pushed.
+        self.bases: dict[str, dict[str, str]] = {}
         self.pushes: list[str] = []
         self.made = 0
         self.invalid = False
@@ -60,6 +62,7 @@ class FakeGit:
         if files == self.snapshot(self.main):
             return False
         self.branches[branch] = files
+        self.bases[branch] = self.snapshot(self.main)
         self.pushes.append(branch)
         return True
 
@@ -82,8 +85,9 @@ class FakeGitHub:
         self.git = git
         self.prs: list[dict] = []
         self.check = "passed"
-        self.behind = 0
+        self.dirty = 0
         self.closed: list[int] = []
+        self.merged_at: list[str] = []
 
     def find_pr(self, branch: str) -> dict | None:
         found = [p for p in self.prs if p["head"]["ref"] == branch]
@@ -97,13 +101,22 @@ class FakeGitHub:
         self.prs.append(made)
         return made
 
+    def open_prs(self, prefix: str) -> list[dict]:
+        return [p for p in self.prs
+                if p["state"] == "open" and p["head"]["ref"].startswith(prefix)]
+
     def checks(self, sha: str) -> str:
         return self.check
 
-    def merge(self, found: dict) -> str:
-        if self.behind:
-            self.behind -= 1
+    def behind(self, sha: str) -> bool | None:
+        branch = next(p["head"]["ref"] for p in self.prs if p["head"]["sha"] == sha)
+        return self.git.bases[branch] != self.git.snapshot(self.git.main)
+
+    def merge(self, found: dict, sha: str) -> str:
+        if self.dirty:
+            self.dirty -= 1
             return "behind"
+        self.merged_at.append(sha)
         self.git.merge(found["head"]["ref"])
         found.update(state="closed", merged_at="2026-10-09T12:00:00Z")
         return "merged"
@@ -191,6 +204,72 @@ class ReadingReviews(unittest.TestCase):
         self.assertEqual(review.edits, 1)
 
 
+    def test_a_file_whose_language_is_not_a_code_is_dropped(self) -> None:
+        files = []
+        for lang in ("", ".", "..", "../x", "zz/..", "ZZ", "*", "zzzz"):
+            f = review_file([suggestion("zz-9201", "meaning", "milk", "cow's milk")])
+            f["language"] = lang
+            files.append(f)
+        review = rb.read_review(files, ALICE)
+        self.assertEqual(review.suggestions, [])
+        self.assertEqual(review.dropped, len(files))
+
+
+class Checks(unittest.TestCase):
+    """Only the checks `main` requires gate a merge."""
+
+    @staticmethod
+    def run_(name: str, status: str = "completed", conclusion: str | None = "success") -> dict:
+        return {"name": name, "status": status, "conclusion": conclusion}
+
+    def test_the_required_checks_and_only_those(self) -> None:
+        ok = [self.run_(n) for n in rb.REQUIRED_CHECKS]
+        self.assertEqual(rb.required_state(ok), "passed")
+        self.assertEqual(rb.required_state(ok + [self.run_("Other", conclusion="failure")]),
+                         "passed")
+        self.assertEqual(rb.required_state(ok + [self.run_("Other", "in_progress", None)]),
+                         "passed")
+        self.assertEqual(rb.required_state([]), "missing")
+        self.assertEqual(rb.required_state([self.run_("Other")]), "missing")
+        self.assertEqual(rb.required_state(ok[:2]), "pending")
+        self.assertEqual(rb.required_state(
+            ok[:2] + [self.run_(rb.REQUIRED_CHECKS[2], "queued", None)]), "pending")
+        self.assertEqual(rb.required_state(
+            ok[:1] + [self.run_(rb.REQUIRED_CHECKS[1], conclusion="failure")]), "failed")
+
+    def test_they_are_the_jobs_of_ci(self) -> None:
+        import yaml
+        ci = yaml.safe_load((TOOLS.parent / ".github" / "workflows" / "ci.yml")
+                            .read_text(encoding="utf-8"))
+        self.assertEqual(sorted(j["name"] for j in ci["jobs"].values()),
+                         sorted(rb.REQUIRED_CHECKS))
+
+    def test_rest_reads_the_latest_runs_and_merges_at_the_checked_head(self) -> None:
+        calls: list[tuple] = []
+
+        class Stub(rb.RestGitHub):
+            def _call(self, method, path, body=None, token=None):
+                calls.append((method, path, body, token))
+                if "/check-runs" in path:
+                    return 200, {"check_runs": [Checks.run_(n) for n in rb.REQUIRED_CHECKS]}
+                if path.startswith("/compare/"):
+                    return 200, {"behind_by": 2}
+                if method == "GET":
+                    return 200, {"merged": False, "mergeable_state": "clean",
+                                 "head": {"sha": "moved"}}
+                return 200, {}
+        gh = Stub("o/r", "app", "reader")
+        self.assertEqual(gh.checks("abc"), "passed")
+        self.assertIn("filter=latest", calls[0][1])
+        self.assertEqual(calls[0][3], "reader")
+        self.assertTrue(gh.behind("abc"))
+        # The head moved since its checks passed: not merged.
+        self.assertEqual(gh.merge({"number": 3}, "abc"), "pending")
+        self.assertFalse(any(m == "PUT" for m, *_ in calls))
+        self.assertEqual(gh.merge({"number": 3}, "moved"), "merged")
+        self.assertEqual(calls[-1][2]["sha"], "moved")
+
+
 class Reviews(Base):
     def review(self) -> rb.Review:
         return rb.read_review([review_file([
@@ -249,10 +328,34 @@ class Reviews(Base):
         self.assertEqual(len(self.github.prs), 1)
 
     def test_behind_main_it_is_built_again_from_main(self) -> None:
-        self.github.behind = 1
+        self.github.dirty = 1
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
         self.assertEqual(self.git.pushes, ["review-bot/review/mail1"] * 2)
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "merged")
+
+    def test_a_review_with_nothing_to_propose_logs_what_was_left(self) -> None:
+        review = rb.read_review([review_file([
+            suggestion("zz-9201", "meaning", "milkk", SECRET),
+            suggestion("zz-9201", "example", "x", SECRET),
+            suggestion("zz-9004", "meaning", "mother", "mother")])], ALICE)
+        self.assertEqual(self.bot.review("mail2", ALICE, review), "nothing")
+        line = self.logged[-1]
+        self.assertIn(f"Review by {ALICE}: 2 suggestion(s) left for the owner, "
+                      f"1 outdated", line)
+        self.assertIn("the PR: nothing", line)
+        self.assertNotIn(SECRET, " ".join(self.logged))
+
+    def test_a_head_is_merged_at_the_sha_its_checks_passed_on(self) -> None:
+        self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "merged")
+        self.assertEqual(self.github.merged_at, [self.github.prs[0]["head"]["sha"]])
+
+    def test_no_checks_for_long_is_logged(self) -> None:
+        self.github.check = "missing"
+        self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
+        self.assertFalse(any("checks" in line for line in self.logged))
+        self.github.prs[0]["updated_at"] = "2026-01-01T00:00:00Z"
+        self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
+        self.assertIn("none of the required checks has started", self.logged[-1])
 
     def test_an_acceptance_is_recorded_by_the_reviewers_pr(self) -> None:
         p = self.p()
@@ -281,7 +384,8 @@ class Agreement(Base):
         self.assertIn(f"Proposed by {ALICE}", body)
         self.assertIn(f"Accepted by {BOB}", body)
         self.assertIn(f"`{rival.id}` by {BOB}", body)
-        self.assertEqual(self.github.prs[0]["head"]["ref"], f"review-bot/apply/{win.id}")
+        self.assertEqual(self.github.prs[0]["head"]["ref"], rb.apply_branch(win))
+        self.assertEqual(rb.apply_branch(win), f"review-bot/apply/{win.id}-2026-10-09")
         # Again: nothing left, nothing opened.
         self.bot.sweep()
         self.assertEqual(len(self.github.prs), 1)
@@ -310,8 +414,101 @@ class Agreement(Base):
         self.github.close(1, "no")
         self.github.check = "passed"
         self.bot.sweep()
-        self.assertEqual(self.github.prs[-1]["head"]["ref"], f"review-bot/apply/{second.id}")
+        self.assertEqual(self.github.prs[-1]["head"]["ref"], rb.apply_branch(second))
         self.assertIn('native: "milk (cow\'s)"', self.main_text())
+
+    def accept_on_main(self, p: pr.Proposal, code: str) -> None:
+        result = pr.Proposed()
+        pr.accept(self.git.main, "zz", p.id, code, p.text, result)
+        self.assertEqual(result.accepted, [(p.id, code)])
+
+    def test_the_first_to_reach_the_agreement_wins_not_the_first_in_the_file(self) -> None:
+        self.github.check = "pending"
+        earlier = self.p(text="milk (cow's)", by=BOB)
+        later = self.p(accepted=(BOB,))
+        self.put_on_main(earlier)
+        self.put_on_main(later)
+        self.bot.sweep()
+        self.assertEqual([p["head"]["ref"] for p in self.github.prs],
+                         [rb.apply_branch(later)])
+        # The earlier one reaches it too while the later's PR is open.
+        self.accept_on_main(earlier, ALICE)
+        self.github.check = "passed"
+        self.bot.sweep()   # main moved: the open PR is built again
+        self.bot.sweep()
+        self.assertEqual([p["head"]["ref"] for p in self.github.prs],
+                         [rb.apply_branch(later)])
+        self.assertIn('native: "cow\'s milk"', self.main_text())
+        self.assertNotIn("proposed", self.main_text())
+
+    def test_two_open_for_one_field_keep_only_the_first(self) -> None:
+        self.github.check = "pending"
+        a = self.p(accepted=(BOB,))
+        b = self.p(text="milk (cow's)", by=BOB, accepted=(ALICE,))
+        self.put_on_main(a)
+        self.put_on_main(b)
+        # As an older run might have left them: both open.
+        self.bot.apply("zz", b)
+        self.bot.apply("zz", a)
+        self.bot.sweep()
+        self.assertEqual([p["state"] for p in self.github.prs], ["open", "closed"])
+
+    def test_a_proposal_deleted_on_main_is_not_applied(self) -> None:
+        self.github.check = "pending"
+        p = self.p(accepted=(BOB,))
+        self.put_on_main(p)
+        self.bot.sweep()
+        self.assertEqual(self.github.prs[0]["state"], "open")
+        # The owner deletes the proposal: the open PR is closed, not merged.
+        pr.close(self.git.main, "zz", [p.id])
+        self.github.check = "passed"
+        self.bot.sweep()
+        self.assertEqual(self.github.prs[0]["state"], "closed")
+        self.assertIn('native: "milk"', self.main_text())
+        self.assertEqual(self.github.merged_at, [])
+
+    def test_a_pr_built_on_an_older_main_is_built_again_before_merging(self) -> None:
+        self.github.check = "pending"
+        p = self.p(accepted=(BOB,))
+        self.put_on_main(p)
+        self.bot.sweep()
+        other = self.git.main / "decks" / "zz" / "zz-en-extra.yaml"
+        other.write_text(self.main_text().replace('native: "water"', 'native: "fresh water"'),
+                         encoding="utf-8")
+        self.github.check = "passed"
+        self.bot.sweep()
+        self.assertEqual(self.git.pushes, [rb.apply_branch(p)] * 2)
+        self.assertEqual(self.github.merged_at, [])
+        self.bot.sweep()
+        text = self.main_text()
+        self.assertIn('native: "cow\'s milk"', text)
+        self.assertIn('native: "fresh water"', text)
+
+    def test_the_same_proposal_made_again_later_is_applied_again(self) -> None:
+        p = self.p(accepted=(BOB,))
+        self.put_on_main(p)
+        self.bot.sweep()
+        self.assertIn('native: "cow\'s milk"', self.main_text())
+        path = self.git.main / "decks" / "zz" / "zz-en-extra.yaml"
+        path.write_text(self.main_text().replace('native: "cow\'s milk"', 'native: "milk"'),
+                        encoding="utf-8")
+        again = self.p(date="2026-10-20", accepted=(BOB,))
+        self.assertEqual(again.id, p.id)
+        self.put_on_main(again)
+        self.bot.sweep()
+        self.assertEqual(len(self.github.prs), 2)
+        self.assertIn('native: "cow\'s milk"', self.main_text())
+
+    def test_the_owners_revert_of_an_agreement_is_not_applied_again(self) -> None:
+        p = self.p(accepted=(BOB,))
+        self.put_on_main(p)
+        before = self.main_text()
+        self.bot.sweep()
+        path = self.git.main / "decks" / "zz" / "zz-en-extra.yaml"
+        path.write_text(before, encoding="utf-8")   # the revert
+        self.bot.sweep()
+        self.assertEqual(len(self.github.prs), 1)
+        self.assertEqual(self.main_text(), before)
 
     def test_an_outdated_proposal_is_closed_not_applied(self) -> None:
         p = self.p(accepted=(BOB,))

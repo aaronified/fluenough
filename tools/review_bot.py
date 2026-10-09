@@ -10,17 +10,27 @@ branch of its own under `review-bot/`, each started afresh from `main`:
   of one review mail becomes a proposal on its card, and each acceptance
   is recorded on the proposal it accepts. Merged as soon as the required
   checks pass.
-- **An agreement** (`review-bot/apply/<proposal>`): once
+- **An agreement** (`review-bot/apply/<proposal>-<date>`): once
   REVIEW_AGREEMENTS_NEEDED rater codes other than the proposer's have
   accepted a proposal, its text is written into the field, and it and the
   other proposals on that field are removed. Merged the same way.
 - **Outdated proposals** (`review-bot/outdated/<language>-<ids>`):
   proposals whose field has changed since are removed.
 
-The branch name comes from the mail or the proposals, so a rerun finds its
-own PR instead of opening another; a PR the owner closed is never opened
-again. A PR whose checks fail stays open for the owner. A PR that falls
-behind `main` is built again from `main` and pushed over.
+The branch name comes from the mail, or from the proposals and their
+dates, so a rerun finds its own PR instead of opening another; a PR the
+owner closed is never opened again. A proposal made again later, after its
+field was changed back, has a new date and so a new branch. A PR whose
+checks fail stays open for the owner. A PR whose branch does not hold all
+of `main` is built again from `main` and pushed over before it merges, and
+an agreement or outdated PR that a run no longer asks for, because the
+owner changed `main` under it, is closed.
+
+On one field, one agreement at a time: while one proposal's agreement PR
+is open, no other proposal on that field is applied. When several reach
+the agreement needed before any PR is open, the one proposed first goes:
+proposals are written in the order they are made, so the first in the
+file.
 
 Every edit to a deck is made by `tools/proposals.py`, one line at a time;
 the index is written by `tools/deck_index.py` and the language validated
@@ -45,6 +55,7 @@ import base64
 import datetime
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -68,6 +79,12 @@ KIND_LABELS = {
 }
 FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
+# The checks branch protection requires on `main`: the job names in
+# .github/workflows/ci.yml. Other check runs on a commit do not gate a merge.
+REQUIRED_CHECKS = ("Validate decks", "Analyse and test", "Build debug APK")
+# How long a PR's head may go without any required check before the log
+# says so.
+CHECKS_LATE = datetime.timedelta(hours=1)
 FOOTER = ("<sub>Opened by the review bot (ADR-0038). The owner overrides it "
           "with any later commit: a revert, an edit, or a deleted proposal."
           "</sub>")
@@ -97,6 +114,8 @@ class Review:
     edits: int = 0
     # Suggestions on a part the bot does not write: an example, a picture.
     left: int = 0
+    # Review files dropped for a language that is not a language code.
+    dropped: int = 0
 
 
 def _date(made: object) -> str:
@@ -116,6 +135,11 @@ def read_review(files: list[dict], code: str) -> Review:
         lang, deck = f.get("language"), f.get("deck")
         if not isinstance(lang, str) or not isinstance(deck, str) \
                 or rater_code(f.get("rater_code")) != code:
+            continue
+        # The language names a folder of decks/: anything but a language
+        # code ("", ".", "../x") could reach another language's decks.
+        if not pr.vd.LANG_RE.fullmatch(lang):
+            out.dropped += 1
             continue
         date = _date(f.get("made"))
         cards = f.get("cards") if isinstance(f.get("cards"), list) else []
@@ -158,9 +182,11 @@ class Git(Protocol):
 
 class GitHub(Protocol):
     def find_pr(self, branch: str) -> dict | None: ...
+    def open_prs(self, prefix: str) -> list[dict]: ...
     def open_pr(self, branch: str, title: str, body: str, labels: list[str]) -> dict: ...
     def checks(self, sha: str) -> str: ...
-    def merge(self, pr: dict) -> str: ...
+    def behind(self, sha: str) -> bool | None: ...
+    def merge(self, pr: dict, sha: str) -> str: ...
     def label(self, number: int, labels: list[str]) -> None: ...
     def close(self, number: int, comment: str) -> None: ...
     def refresh(self, number: int) -> dict: ...
@@ -262,6 +288,21 @@ class RestGitHub:
             return None
         return found[0]
 
+    def open_prs(self, prefix: str) -> list[dict]:
+        """The open PRs from this repository's branches under [prefix]."""
+        out: list[dict] = []
+        for page in range(1, 11):
+            status, found = self._call(
+                "GET", f"/pulls?state=open&per_page=100&page={page}")
+            if status != 200 or not isinstance(found, list):
+                raise RuntimeError(f"listing open PRs failed: {status}")
+            out += [p for p in found if isinstance(p, dict)
+                    and str(p.get("head", {}).get("ref", "")).startswith(prefix)
+                    and (p.get("head", {}).get("repo") or {}).get("full_name") == self.repo]
+            if len(found) < 100:
+                break
+        return out
+
     def open_pr(self, branch: str, title: str, body: str, labels: list[str]) -> dict:
         status, made = self._call("POST", "/pulls", {
             "title": title, "head": branch, "base": "main", "body": body,
@@ -278,26 +319,37 @@ class RestGitHub:
         return found
 
     def checks(self, sha: str) -> str:
+        """The required checks on [sha]: "passed", "failed", "pending", or
+        "missing" when none has started."""
         status, found = self._call(
-            "GET", f"/commits/{sha}/check-runs?per_page=100", token=self.reader)
-        runs = found.get("check_runs") if status == 200 and isinstance(found, dict) else None
-        if not runs:
+            "GET", f"/commits/{sha}/check-runs?per_page=100&filter=latest",
+            token=self.reader)
+        if status != 200 or not isinstance(found, dict):
             return "pending"
-        if any(r.get("status") != "completed" for r in runs):
-            return "pending"
-        good = {"success", "neutral", "skipped"}
-        return "passed" if all(r.get("conclusion") in good for r in runs) else "failed"
+        return required_state(found.get("check_runs") or [])
 
-    def merge(self, pr: dict) -> str:
+    def behind(self, sha: str) -> bool | None:
+        """Whether `main` has commits [sha] does not; None when unknown."""
+        status, found = self._call("GET", f"/compare/main...{sha}")
+        if status != 200 or not isinstance(found, dict) \
+                or not isinstance(found.get("behind_by"), int):
+            return None
+        return found["behind_by"] > 0
+
+    def merge(self, pr: dict, sha: str) -> str:
+        """Merges [pr] at [sha], the head its checks passed on: a head
+        that has moved since is not merged."""
         found = self.refresh(pr["number"])
         if found.get("merged"):
             return "merged"
         if found.get("mergeable_state") in ("behind", "dirty"):
             return "behind"
+        if found.get("head", {}).get("sha") != sha:
+            return "pending"
         for method in ("squash", "merge"):
             status, answer = self._call(
                 "PUT", f"/pulls/{pr['number']}/merge",
-                {"merge_method": method, "sha": found["head"]["sha"]})
+                {"merge_method": method, "sha": sha})
             if status == 200:
                 return "merged"
             message = str((answer or {}).get("message", "")) if isinstance(answer, dict) else ""
@@ -312,6 +364,51 @@ class RestGitHub:
     def close(self, number: int, comment: str) -> None:
         self._call("POST", f"/issues/{number}/comments", {"body": comment})
         self._call("PATCH", f"/pulls/{number}", {"state": "closed"})
+
+
+def required_state(runs: list[dict]) -> str:
+    """What [runs], a commit's latest check runs, say of REQUIRED_CHECKS:
+    "failed" once one has failed, "passed" once all have passed,
+    "missing" when none has started, else "pending"."""
+    good = {"success", "neutral", "skipped"}
+    named = {r.get("name"): r for r in runs
+             if isinstance(r, dict) and r.get("name") in REQUIRED_CHECKS}
+    if not named:
+        return "missing"
+    done = [r for r in named.values() if r.get("status") == "completed"]
+    if any(r.get("conclusion") not in good for r in done):
+        return "failed"
+    return "passed" if len(done) == len(REQUIRED_CHECKS) else "pending"
+
+
+def _since(stamp: object) -> datetime.timedelta | None:
+    """How long ago [stamp], GitHub's ISO time, was; None if unreadable."""
+    if not isinstance(stamp, str):
+        return None
+    try:
+        then = datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if then.tzinfo is None:
+        return None
+    return datetime.datetime.now(datetime.timezone.utc) - then
+
+
+def _dated(p: pr.Proposal) -> str:
+    """[p]'s id and date, for a branch name: the same proposal made again
+    on another day is another attempt."""
+    date = p.date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", p.date) \
+        else hashlib.sha256(p.date.encode()).hexdigest()[:8]
+    return f"{p.id}-{date}"
+
+
+def apply_branch(p: pr.Proposal) -> str:
+    return f"{PREFIX}apply/{_dated(p)}"
+
+
+def outdated_branch(lang: str, stale: list[pr.Proposal]) -> str:
+    key = hashlib.sha256(",".join(sorted(_dated(p) for p in stale)).encode())
+    return f"{PREFIX}outdated/{lang}-{key.hexdigest()[:10]}"
 
 
 # --- The bot ----------------------------------------------------------------------
@@ -371,7 +468,15 @@ class Bot:
 
     def _advance(self, found: dict, branch: str, build: Build) -> str:
         number = found["number"]
-        state = self.github.checks(found["head"]["sha"])
+        sha = found["head"]["sha"]
+        state = self.github.checks(sha)
+        if state == "missing":
+            late = _since(found.get("updated_at"))
+            if late is not None and late > CHECKS_LATE:
+                self.log(f"::warning::PR #{number}: none of the required "
+                         f"checks has started on its head after "
+                         f"{int(late.total_seconds() // 3600)} hour(s).")
+            return "pending"
         if state == "pending":
             return "pending"
         if state == "failed":
@@ -381,7 +486,13 @@ class Bot:
                 self.log(f"::warning::PR #{number}'s checks failed; left open "
                          f"for the owner.")
             return "failed"
-        result = self.github.merge(found)
+        # Built on an older `main`, it is built again: the owner may have
+        # changed the card or deleted the proposal since, and git would
+        # merge the old edit over that cleanly.
+        behind = self.github.behind(sha)
+        if behind is None:
+            return "pending"
+        result = "behind" if behind else self.github.merge(found, sha)
         if result == "merged":
             self.log(f"Merged PR #{number}.")
             return "merged"
@@ -397,9 +508,12 @@ class Bot:
 
     def review(self, key: str, code: str, review: Review) -> str:
         """The PR of one review mail, by [code]: its proposals and
-        acceptances."""
+        acceptances. What is left out is logged, as counts."""
+        made: list[pr.Proposed] = []
+
         def build(root: Path) -> Built | None:
             result = pr.Proposed()
+            made.append(result)
             for s in review.suggestions:
                 pr.propose(root, s, result)
             for lang, pid, text in review.accepts:
@@ -427,10 +541,25 @@ class Bot:
                 body="\n".join(lines),
                 labels=[LABEL, KIND_LABELS["review"]],
                 langs=langs)
-        return self.job(f"{PREFIX}review/{key}", build)
+        outcome = self.job(f"{PREFIX}review/{key}", build)
+        left = review.left + (len(made[-1].unsupported) if made else 0)
+        outdated = len(made[-1].outdated) if made else 0
+        if left or outdated or review.dropped:
+            self.log(f"Review by {code}: {left} suggestion(s) left for the "
+                     f"owner, {outdated} outdated, {review.dropped} file(s) "
+                     f"with no good language; the PR: {outcome}.")
+        return outcome
 
-    def apply(self, lang: str, pid: str) -> str:
+    def apply(self, lang: str, proposal: pr.Proposal) -> str:
+        """The agreement PR of [proposal], as it is on `main` now."""
+        pid = proposal.id
+
         def build(root: Path) -> Built | None:
+            found = pr.find(root, lang, pid)
+            # Still there, the same attempt, and still agreed enough.
+            if found is None or found[1].date != proposal.date \
+                    or len(found[1].accepted) < self.threshold:
+                return None
             applied = pr.apply(root, lang, pid)
             if applied.outcome != "applied":
                 return None
@@ -449,10 +578,10 @@ class Bot:
                 body="\n".join(lines),
                 labels=[LABEL, KIND_LABELS["apply"]],
                 langs=[lang])
-        return self.job(f"{PREFIX}apply/{pid}", build)
+        return self.job(apply_branch(proposal), build)
 
-    def close_outdated(self, lang: str, pids: list[str]) -> str:
-        key = hashlib.sha256(",".join(sorted(pids)).encode()).hexdigest()[:10]
+    def close_outdated(self, lang: str, stale: list[pr.Proposal]) -> str:
+        pids = sorted(p.id for p in stale)
 
         def build(root: Path) -> Built | None:
             closed = pr.close(root, lang, pids)
@@ -467,28 +596,52 @@ class Bot:
                 body="\n".join(lines),
                 labels=[LABEL, KIND_LABELS["outdated"]],
                 langs=[lang])
-        return self.job(f"{PREFIX}outdated/{lang}-{key}", build)
+        return self.job(outdated_branch(lang, stale), build)
+
+    def _open(self, branch: str) -> dict | None:
+        """[branch]'s PR, if it is open."""
+        found = self.github.find_pr(branch)
+        if found is None or found.get("merged_at") or found.get("state") == "closed":
+            return None
+        return found
 
     def sweep(self) -> dict[str, int]:
-        """On `main`: applies each proposal with enough agreement, the
-        first on its field winning, and closes the outdated ones."""
+        """On `main`: applies each proposal with enough agreement, one per
+        field, and closes the outdated ones. Then closes the agreement and
+        outdated PRs that `main` no longer asks for."""
         counts = {"applied": 0, "waiting": 0, "outdated": 0}
         root = self.git.fresh(f"{PREFIX}read-main")
+        wanted: set[str] = set()
         for lang in pr.languages(root):
             found = pr.all_proposals(root, lang)
-            stale = {p.id for _, p in pr.outdated(root, lang)}
+            stale = {p.id: p for _, p in pr.outdated(root, lang)}
             groups: dict[tuple, list[pr.Proposal]] = {}
             for e, p in found:
                 if p.id not in stale and len(p.accepted) >= self.threshold:
                     groups.setdefault((str(e.path), p.card, p.field), []).append(p)
             for ready in groups.values():
-                for p in ready:
-                    outcome = self.apply(lang, p.id)
+                # The first to reach the agreement wins: the one whose PR
+                # was opened first goes on, and the rest wait behind it.
+                opened = {p.id: self._open(apply_branch(p)) for p in ready}
+                started = sorted((p for p in ready if opened[p.id]),
+                                 key=lambda p: opened[p.id]["number"])
+                for p in started[:1] or ready:
+                    wanted.add(apply_branch(p))
+                    outcome = self.apply(lang, p)
                     if outcome == "closed":
                         continue
                     counts["applied" if outcome == "merged" else "waiting"] += 1
                     break
             if stale:
                 counts["outdated"] += len(stale)
-                self.close_outdated(lang, sorted(stale))
+                gone = sorted(stale.values(), key=lambda p: p.id)
+                wanted.add(outdated_branch(lang, gone))
+                self.close_outdated(lang, gone)
+        for kind in ("apply", "outdated"):
+            for left in self.github.open_prs(f"{PREFIX}{kind}/"):
+                if left["head"]["ref"] not in wanted:
+                    self.github.close(left["number"], "No longer needed: `main` "
+                                      "has changed since this was opened.")
+                    self.log(f"Closed PR #{left['number']}: main no longer "
+                             f"asks for it.")
         return counts
