@@ -38,9 +38,15 @@ Future<List<SkillPace>> paceInPlace(PaceJob job) async => _paces(job);
 /// and Today's strip and tile marks.
 ///
 /// Worked out only when asked for ([paces]), on an isolate, and again when
-/// the log, the leech actions, the parameters or the day change. Nothing
-/// is worked out at app start: Today asks only once [adjusted], a cheap
-/// read of the stored fits, says that some skill is adjusted.
+/// the log, the leech actions, the parameters or the day change. One job
+/// runs at a time: asked again while one runs, [Pacing] works out only
+/// the latest once it ends, however many answers came in between.
+///
+/// Before any skill is adjusted nothing is worked out: Today asks only
+/// once [adjusted], a cheap read of the stored fits, says that some skill
+/// is, and then only while it is on screen ([latest] otherwise). So for
+/// an adjusted learner a job runs as the app opens on Today, and again
+/// when Today comes back after answers, not after every answer.
 class Pacing extends ChangeNotifier {
   Pacing({
     required this.progress,
@@ -52,24 +58,35 @@ class Pacing extends ChangeNotifier {
   final DateTime Function() _clock;
   final PaceRunner _runner;
 
-  /// Whether any skill has been fitted, kept or not.
-  bool get fitted => progress.parameters.fitted.isNotEmpty;
-
   /// Whether some fit kept a set other than FSRS-6's defaults, so that
-  /// some skill is paced for the learner. Reads the stored fits only.
+  /// some skill is paced for the learner. Reads the stored fits only: a
+  /// fit that lost to the defaults stores them, and is not adjusted.
   bool get adjusted => progress.parameters.fitted.values.any(
     (f) => !SkillFit.isDefaults(f.values),
   );
 
   Object? _key;
   Object? _running;
+  bool _askedAgain = false;
   Map<SkillKey, SkillPace>? _paces;
   bool _disposed = false;
 
   /// Every skill with reviews, by language and mode, as worked out last;
   /// null until the first is. Asking starts working them out again if
-  /// what they come from has changed since; [Pacing] notifies when done.
+  /// what they come from has changed since, once any job running ends;
+  /// [Pacing] notifies when done.
   Map<SkillKey, SkillPace>? get paces {
+    _ask();
+    return _paces;
+  }
+
+  /// [paces] as worked out last, without starting any work: for a screen
+  /// built while it is not on view.
+  Map<SkillKey, SkillPace>? get latest => _paces;
+
+  /// Starts working [paces] out if what they come from has changed, or
+  /// marks them to be once the job running ends.
+  void _ask() {
     final now = _clock();
     final log = progress.log;
     final actions = progress.leechActions;
@@ -81,21 +98,27 @@ class Pacing extends ChangeNotifier {
       DateTime(now.year, now.month, now.day),
     );
     if (key != _key && key != _running) {
-      _running = key;
-      _work(key, (
-        log: log,
-        leechActions: actions,
-        parameters: progress.parameters,
-        now: now,
-      ));
+      if (_running != null) {
+        // Worked out when the running job ends, from what is there then.
+        _askedAgain = true;
+      } else {
+        _running = key;
+        _work(key, (
+          log: log,
+          leechActions: actions,
+          parameters: progress.parameters,
+          now: now,
+        ));
+      }
     }
-    return _paces;
   }
 
   Future<void> _work(Object key, PaceJob job) async {
     try {
       final paces = await _runner(job);
-      if (_disposed || _running != key) return;
+      if (_disposed) return;
+      // Kept even when asked again since: a moment out of date, and
+      // better than nothing while the next is worked out.
       _paces = <SkillKey, SkillPace>{for (final p in paces) p.key: p};
       _key = key;
     } catch (error, stack) {
@@ -111,9 +134,14 @@ class Pacing extends ChangeNotifier {
       _key = key;
       _paces ??= const <SkillKey, SkillPace>{};
     } finally {
-      if (_running == key) _running = null;
+      _running = null;
     }
-    if (!_disposed) notifyListeners();
+    if (_disposed) return;
+    if (_askedAgain) {
+      _askedAgain = false;
+      _ask();
+    }
+    notifyListeners();
   }
 
   @override

@@ -35,8 +35,10 @@ const List<DrillMode> _order = <DrillMode>[
 /// right comes back in 6 days, not 4."), a bar of the gap a right answer
 /// gives, the learner's filled and the start's as a tick, which way that
 /// moved the reviews in the plan's words, and the next 30 days' reviews.
-/// A skill not adjusted yet says how many answers it has. Before any fit
-/// the page says what will happen, and points to Settings.
+/// A skill not adjusted yet says how many answers it has, and, if a fit
+/// kept the start's pace, that it did. Until some skill is adjusted (a
+/// fit that kept the defaults is not, as on Today and Progress) the page
+/// says what will happen, and points to Settings.
 ///
 /// [language] alone, when given (Progress's chosen language); else every
 /// language the profile learns, with a heading each when there are
@@ -75,7 +77,7 @@ class HowYouLearnPage extends StatelessWidget {
             return _Body(
               state: state,
               paces: _shown(state, paces.values),
-              fitted: state.pacing.fitted,
+              someAdjusted: state.pacing.adjusted,
             );
           },
         ),
@@ -105,13 +107,17 @@ class HowYouLearnPage extends StatelessWidget {
 }
 
 class _Body extends StatelessWidget {
-  const _Body({required this.state, required this.paces, required this.fitted});
+  const _Body({
+    required this.state,
+    required this.paces,
+    required this.someAdjusted,
+  });
 
   final AppState state;
   final List<SkillPace> paces;
 
-  /// Whether any skill has been fitted yet.
-  final bool fitted;
+  /// Whether some fit kept a set other than the defaults, in any language.
+  final bool someAdjusted;
 
   @override
   Widget build(BuildContext context) {
@@ -129,15 +135,18 @@ class _Body extends StatelessWidget {
       (most, p) => math.max(most, math.max(p.start.days, p.now.days)),
     );
     final axis = _roundUp((longest * 4 / 3).ceil());
-    final adjusted = paces.any((p) => p.adjusted);
+    final shownAdjusted = paces.any((p) => p.adjusted);
 
     final children = <Widget>[
       Text(l10n.howYouLearnIntro, style: theme.textTheme.bodyLarge),
-      if (!fitted) ...<Widget>[
+      if (!someAdjusted) ...<Widget>[
         const SizedBox(height: 16),
         _NotYet(state: state),
       ],
-      if (adjusted) ...<Widget>[const SizedBox(height: 16), const _Legend()],
+      if (shownAdjusted) ...<Widget>[
+        const SizedBox(height: 16),
+        const _Legend(),
+      ],
     ];
     for (final code in languages) {
       final group = <Widget>[
@@ -204,7 +213,9 @@ class _Body extends StatelessWidget {
   }
 
   /// "Adjusted today, from 2,140 of your answers.": the latest fit of the
-  /// [languages] shown, and the answers their fits were made from.
+  /// [languages] shown that adjusted its skill, and the answers those fits
+  /// were made from. A fit that kept the defaults adjusted nothing, so it
+  /// is not counted; with only those, there is no footnote.
   String? _lastFit(BuildContext context, Set<String> languages) {
     final l10n = AppLocalizations.of(context)!;
     DateTime? last;
@@ -212,6 +223,7 @@ class _Body extends StatelessWidget {
     for (final MapEntry(:key, :value)
         in state.progress.parameters.fitted.entries) {
       if (!languages.contains(key.language)) continue;
+      if (SkillFit.isDefaults(value.values)) continue;
       answers += value.reviewCount;
       if (last == null || value.fittedAt.isAfter(last)) last = value.fittedAt;
     }
@@ -222,8 +234,8 @@ class _Body extends StatelessWidget {
   }
 }
 
-/// Before any fit: what will happen, and the way to Settings, where
-/// "Adjust to me" is.
+/// Until some skill is adjusted: what will happen, and the way to
+/// Settings, where "Adjust to me" is.
 class _NotYet extends StatelessWidget {
   const _NotYet({required this.state});
 
@@ -345,7 +357,14 @@ class _SkillRow extends StatelessWidget {
     final body = <Widget>[];
     if (!pace.adjusted) {
       body.addAll(<Widget>[
-        Text(l10n.paceNotYet(pace.answers), style: theme.textTheme.bodyMedium),
+        Text(
+          // A fit that lost to the start's pace kept it: the skill did
+          // have enough answers.
+          state.progress.parameters.fitted.containsKey(pace.key)
+              ? l10n.paceKeptStart(pace.answers)
+              : l10n.paceNotYet(pace.answers),
+          style: theme.textTheme.bodyMedium,
+        ),
         _Track(days: null, start: start.days, axis: axis),
         _Verdict(
           icon: Icons.hourglass_empty,

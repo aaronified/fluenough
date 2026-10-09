@@ -477,11 +477,11 @@ void main() {
                   of: find.byType(DueCard),
                   matching: find.byType(PaceStrip),
                 ),
-                paced == Paced.none ? findsNothing : findsOneWidget,
+                paced.adjusts ? findsOneWidget : findsNothing,
               );
               // The tiles and their marks on screen, to be measured.
               final marks = find.byType(PaceMark);
-              if (paced != Paced.none) {
+              if (paced.adjusts) {
                 await tester.ensureVisible(marks.first);
                 await tester.pumpAndSettle();
               }

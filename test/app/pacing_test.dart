@@ -52,8 +52,8 @@ void main() {
     );
   }
 
-  test('whether anything is fitted or adjusted is read from the stored '
-      'fits, without working anything out', () async {
+  test('whether anything is adjusted is read from the stored fits, '
+      'without working anything out', () async {
     final runner = counting();
     final progress = learner();
     final pacing = Pacing(
@@ -61,12 +61,11 @@ void main() {
       clock: () => now,
       runner: runner.run,
     );
-    expect(pacing.fitted, isFalse);
     expect(pacing.adjusted, isFalse);
 
-    // A first fit that lost keeps FSRS-6's defaults: fitted, not adjusted.
+    // A first fit that lost keeps FSRS-6's defaults: stored, not adjusted.
     await progress.putFitted(write, fit(Fsrs.w));
-    expect(pacing.fitted, isTrue);
+    expect(progress.parameters.fitted, isNotEmpty);
     expect(pacing.adjusted, isFalse);
 
     await progress.putFitted(write, fit(<double>[...Fsrs.w]..[8] += 0.5));
@@ -156,20 +155,65 @@ void main() {
     expect(reported, hasLength(1));
   });
 
-  test('a run overtaken by a newer one is dropped', () async {
+  test('one job at a time: asked again while one runs, only the latest '
+      'is worked out, once it ends', () async {
     final gates = <Completer<void>>[];
+    final jobs = <PaceJob>[];
     final progress = learner();
     final pacing = Pacing(
       progress: progress,
       clock: () => now,
       runner: (job) async {
+        jobs.add(job);
         final gate = Completer<void>();
         gates.add(gate);
         await gate.future;
         return paceInPlace(job);
       },
     );
+    final first = progress.log.length;
+    expect(pacing.paces, isNull);
+    // Three answers while it runs, each asking again, as Today would.
+    for (var i = 0; i < 3; i++) {
+      progress.record(
+        deckId: 'deck',
+        cardId: 'hi-0001',
+        mode: DrillMode.production,
+        grade: 3,
+        now: now,
+      );
+      expect(pacing.paces, isNull);
+    }
+    expect(jobs, hasLength(1), reason: 'none started beside the running one');
+
+    gates.first.complete();
+    await pumpEventQueue();
+    // Its figures stand, a moment out of date, while the latest are
+    // worked out: one job for the three answers, from the log as it is.
+    expect(pacing.latest![write]!.answers, first);
+    expect(jobs, hasLength(2));
+    expect(jobs.last.log.length, progress.log.length);
+
+    gates.last.complete();
+    await pumpEventQueue();
+    expect(pacing.paces![write]!.answers, progress.log.length);
+    await pumpEventQueue();
+    expect(jobs, hasLength(2));
+  });
+
+  test('the latest figures are read without starting anything', () async {
+    final runner = counting();
+    final progress = learner();
+    final pacing = Pacing(
+      progress: progress,
+      clock: () => now,
+      runner: runner.run,
+    );
+    expect(pacing.latest, isNull);
+    await pumpEventQueue();
+    expect(runner.jobs, isEmpty);
     pacing.paces;
+    await pumpEventQueue();
     progress.record(
       deckId: 'deck',
       cardId: 'hi-0001',
@@ -177,13 +221,8 @@ void main() {
       grade: 3,
       now: now,
     );
-    pacing.paces;
-    expect(gates, hasLength(2));
-    gates.first.complete();
+    expect(pacing.latest, isNotNull);
     await pumpEventQueue();
-    expect(pacing.paces, isNull, reason: 'the first run is out of date');
-    gates.last.complete();
-    await pumpEventQueue();
-    expect(pacing.paces![write]!.answers, progress.log.length);
+    expect(runner.jobs, hasLength(1));
   });
 }

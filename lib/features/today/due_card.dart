@@ -12,7 +12,9 @@ import '../../ui/widgets/mode_pill.dart';
 import '../../ui/widgets/pace_parts.dart';
 import 'today_numbers.dart';
 
-/// The design's opacity for a skill tile with nothing due.
+/// The design's opacity for a skill tile with nothing due: its fill and
+/// its content, but not its pace mark, which is the only place Today shows
+/// a skill's pace and keeps its full contrast.
 const double _emptyTileOpacity = 0.55;
 
 /// Above this text scale the skill tiles stack in one column, so that a
@@ -346,7 +348,13 @@ class _SkillTile extends StatelessWidget {
   /// With marks shown (mockup screen 2): the pill and the count on top,
   /// the name under them, then the mark's line, kept even when empty, at
   /// the foot, so that the lines of the two tiles of a row sit level.
-  Widget _markedBody(BuildContext context, Widget name, Widget trailing) {
+  /// [opacity] dims all but the mark.
+  Widget _markedBody(
+    BuildContext context,
+    Widget name,
+    Widget trailing, {
+    required double opacity,
+  }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
@@ -362,47 +370,50 @@ class _SkillTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  ModePill(
-                    skill: skill,
-                    size: ModePillSize.small,
-                    muted: noVoice,
-                  ),
-                  const Spacer(),
-                  // As tall as a count in every tile, an hourglass's or a
-                  // chevron's too, so that the names sit level.
-                  Stack(
-                    alignment: AlignmentDirectional.centerEnd,
-                    children: <Widget>[
-                      Visibility.maintain(
-                        visible: false,
-                        child: Text(
-                          NumberFormat.decimalPattern(locale).format(0),
-                          style: theme.textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.w700,
+          Opacity(
+            opacity: opacity,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    ModePill(
+                      skill: skill,
+                      size: ModePillSize.small,
+                      muted: noVoice,
+                    ),
+                    const Spacer(),
+                    // As tall as a count in every tile, an hourglass's or a
+                    // chevron's too, so that the names sit level.
+                    Stack(
+                      alignment: AlignmentDirectional.centerEnd,
+                      children: <Widget>[
+                        Visibility.maintain(
+                          visible: false,
+                          child: Text(
+                            NumberFormat.decimalPattern(locale).format(0),
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
-                      ),
-                      trailing,
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 4),
-              name,
-              if (noVoice)
-                Text(
-                  l10n.commonNoVoice,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: small.copyWith(color: scheme.onSurfaceVariant),
+                        trailing,
+                      ],
+                    ),
+                  ],
                 ),
-            ],
+                const SizedBox(height: 4),
+                name,
+                if (noVoice)
+                  Text(
+                    l10n.commonNoVoice,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: small.copyWith(color: scheme.onSurfaceVariant),
+                  ),
+              ],
+            ),
           ),
           if (moved != null || keepMarkLine)
             Padding(
@@ -449,45 +460,52 @@ class _SkillTile extends StatelessWidget {
             ),
           );
 
+    // Incoming and voiceless tiles have their own look, never dimmed.
+    final opacity = count == 0 && !incoming && !noVoice
+        ? _emptyTileOpacity
+        : 1.0;
     final body = marked
-        ? _markedBody(context, name, trailing)
-        : ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 48),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
-              child: Row(
-                children: <Widget>[
-                  ModePill(
-                    skill: skill,
-                    size: ModePillSize.small,
-                    muted: noVoice,
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: noVoice
-                        ? Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              name,
-                              Text(
-                                l10n.commonNoVoice,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: theme.textTheme.bodySmall!.copyWith(
-                                  color: scheme.onSurfaceVariant,
+        ? _markedBody(context, name, trailing, opacity: opacity)
+        : Opacity(
+            opacity: opacity,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 48),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
+                child: Row(
+                  children: <Widget>[
+                    ModePill(
+                      skill: skill,
+                      size: ModePillSize.small,
+                      muted: noVoice,
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: noVoice
+                          ? Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                name,
+                                Text(
+                                  l10n.commonNoVoice,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: theme.textTheme.bodySmall!.copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )
-                        : name,
-                  ),
-                  const SizedBox(width: 10),
-                  trailing,
-                ],
+                              ],
+                            )
+                          : name,
+                    ),
+                    const SizedBox(width: 10),
+                    trailing,
+                  ],
+                ),
               ),
             ),
           );
@@ -500,8 +518,10 @@ class _SkillTile extends StatelessWidget {
         ? () => _revise(context)
         : null;
     final onTap = incoming ? null : (noVoice ? setUp : start);
+    // The fill is dimmed as the content is, so that the tile looks as one
+    // dimmed whole, while the mark keeps its contrast.
     final tile = Material(
-      color: scheme.surfaceContainerLowest,
+      color: scheme.surfaceContainerLowest.withValues(alpha: opacity),
       borderRadius: radius,
       clipBehavior: Clip.antiAlias,
       child: onTap == null ? body : InkWell(onTap: onTap, child: body),
@@ -540,7 +560,7 @@ class _SkillTile extends StatelessWidget {
           ? l10n.todaySkillReviewHint
           : l10n.todaySkillRevise,
       excludeSemantics: true,
-      child: Opacity(opacity: count == 0 ? _emptyTileOpacity : 1, child: tile),
+      child: tile,
     );
   }
 }
