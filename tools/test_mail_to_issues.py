@@ -5,13 +5,18 @@ issue says, and what it never says. Stdlib `unittest`, like the tool."""
 from __future__ import annotations
 
 import base64
+import contextlib
 import email
 import json
 import email.message
 import email.policy
+import io
 import unittest
 
 import mail_to_issues
+
+SENDER_DIFFERS = "sender does not match"
+SENDER_UNCHECKED = "sender not checked"
 
 
 def mail(subject: str, text: str = "It shows twice", *, sender: str =
@@ -313,12 +318,31 @@ class ReviewIssueFrom(unittest.TestCase):
         self.assertIsNone(mail_to_issues.review_issue_from(message))
 
 
+def record(code: str, address: str) -> bytes:
+    """A rater record as the owner might leave one in the label."""
+    message = email.message.EmailMessage()
+    message["Subject"] = code
+    message.set_content(address)
+    return message.as_bytes()
+
+
 class FakeImap:
-    """Gmail over IMAP, as far as the tool uses it."""
+    """Gmail over IMAP, as far as the tool uses it: the inbox, and the
+    label of rater records, which APPEND adds to."""
 
     def __init__(self,
-                 mails: list[email.message.EmailMessage | bytes]) -> None:
+                 mails: list[email.message.EmailMessage | bytes],
+                 raters: list[bytes] | None = None, *,
+                 label: bool = True, append_fails: bool = False,
+                 append_raises: bool = False) -> None:
         self.mails = {str(i + 1).encode(): m for i, m in enumerate(mails)}
+        self.raters = list(raters or [])
+        self.label = label
+        self.append_fails = append_fails
+        self.append_raises = append_raises
+        self.selected = ""
+        self.created: list[str] = []
+        self.appended: list[tuple] = []
         self.labelled: list[bytes] = []
         self.searched: tuple = ()
         self.logged_out = False
@@ -330,20 +354,54 @@ class FakeImap:
     def login(self, user: str, password: str) -> None:
         assert (user, password) == ("inbox@example.com", "app-password")
 
-    def select(self, box: str) -> None:
-        assert box == "INBOX"
+    def create(self, box: str):
+        assert box == "fluenough/raters"
+        self.created.append(box)
+        if not self.label:
+            return "NO", [b"[CANNOT] cannot create"]
+        return "NO", [b"[ALREADYEXISTS] Duplicate folder name"]
+
+    def select(self, box: str, readonly: bool = False):
+        if box == "fluenough/raters":
+            assert readonly, "the records are only read"
+            if not self.label:
+                return "NO", [b"[NONEXISTENT] Unknown Mailbox"]
+        else:
+            assert box == "INBOX"
+        self.selected = box
+        return "OK", [b"1"]
+
+    def _box(self) -> dict:
+        if self.selected == "fluenough/raters":
+            return {str(i + 1).encode(): r for i, r in enumerate(self.raters)}
+        assert self.selected == "INBOX"
+        return self.mails
 
     def search(self, charset, *criteria):
-        self.searched = criteria
-        return "OK", [b" ".join(self.mails)]
+        if self.selected == "INBOX":
+            self.searched = criteria
+        else:
+            assert criteria == ("ALL",)
+        return "OK", [b" ".join(self._box())]
 
     def fetch(self, number: bytes, what: str):
         assert what == "(BODY.PEEK[])", "reading must not mark mail read"
-        found = self.mails[number]
+        found = self._box()[number]
         raw = found if isinstance(found, bytes) else found.as_bytes()
         return "OK", [(b"1 (BODY[] {n}", raw), b")"]
 
+    def append(self, box: str, flags, date_time, message: bytes):
+        assert box == "fluenough/raters"
+        if self.append_raises:
+            raise OSError("connection reset")
+        if self.append_fails:
+            return "NO", [b"[OVERQUOTA] no"]
+        self.appended.append((flags, message))
+        self.raters.append(message)
+        return "OK", [b"APPEND completed"]
+
     def store(self, number: bytes, command: str, label: str) -> None:
+        assert self.selected == "INBOX"
         assert (command, label) == ("+X-GM-LABELS", "fluenough-filed")
         self.labelled.append(number)
 
@@ -412,6 +470,184 @@ class Run(unittest.TestCase):
             mail_to_issues.run(ENV, imap, fail)
         self.assertEqual(imap.labelled, [])
         self.assertTrue(imap.logged_out)
+
+
+def review_from(sender: str, code: str = CODE) -> email.message.EmailMessage:
+    return review_mail(f"[Fluenough review] {code} (te)",
+                       [review_file(code)], sender=sender)
+
+
+class NormalAddress(unittest.TestCase):
+    def test_gmail_dots_and_plus_are_ignored(self) -> None:
+        for address in ("ra.vi+fluenough@gmail.com", "R.A.V.I@Gmail.com",
+                        "ravi+x+y@gmail.com", " ravi@GMAIL.COM "):
+            with self.subTest(address=address):
+                self.assertEqual(mail_to_issues.normal_address(address),
+                                 "ravi@gmail.com")
+        self.assertEqual(
+            mail_to_issues.normal_address("Ra.Vi+x@googlemail.com"),
+            "ravi@googlemail.com")
+
+    def test_other_domains_keep_dots_and_plus_and_lose_case(self) -> None:
+        self.assertEqual(mail_to_issues.normal_address("Ra.Vi+x@Example.COM"),
+                         "ra.vi+x@example.com")
+        self.assertNotEqual(mail_to_issues.normal_address("ravi@example.com"),
+                            mail_to_issues.normal_address("ra.vi@example.com"))
+
+
+class SenderCheck(unittest.TestCase):
+    def run_tool(self, imap: FakeImap) -> tuple[list[dict], str]:
+        filed: list[dict] = []
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), \
+                contextlib.redirect_stderr(out):
+            mail_to_issues.run(ENV, imap, filed.append)
+        return filed, out.getvalue()
+
+    def assertNoAddress(self, filed: list[dict], log: str,
+                        *addresses: str) -> None:
+        for address in addresses:
+            local = address.split("@")[0]
+            for text in (str(filed), log):
+                self.assertNotIn(address.lower(), text.lower())
+                self.assertNotIn(local.lower(), text.lower())
+
+    def test_the_first_mail_ties_the_code_to_its_sender(self) -> None:
+        imap = FakeImap([review_from("first@example.com")])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(imap.created, ["fluenough/raters"])
+        self.assertEqual(len(imap.appended), 1)
+        flags, written = imap.appended[0]
+        self.assertIn("Seen", flags)
+        tied = email.message_from_bytes(written, policy=email.policy.default)
+        self.assertEqual(tied["Subject"], CODE)
+        self.assertEqual(tied.get_content().strip(), "first@example.com")
+        self.assertEqual(filed[0]["labels"], ["review", "from-app", "lang: te"])
+        self.assertIn("1 tied", log)
+        self.assertNoAddress(filed, log, "first@example.com")
+
+    def test_the_same_sender_passes_and_writes_nothing(self) -> None:
+        imap = FakeImap([review_from("same@example.com")],
+                        [record(CODE, "same@example.com")])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(imap.appended, [])
+        self.assertEqual(filed[0]["labels"], ["review", "from-app", "lang: te"])
+        self.assertIn("1 matched", log)
+
+    def test_a_second_mail_in_the_same_run_meets_the_new_record(self) -> None:
+        imap = FakeImap([review_from("first@example.com"),
+                         review_from("first@example.com"),
+                         review_from("other@example.com")])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(len(imap.appended), 1)
+        self.assertEqual([SENDER_DIFFERS in i["labels"] for i in filed],
+                         [False, False, True])
+        self.assertIn("1 tied, 1 matched, 1 did not match, 0 not checked", log)
+
+    def test_another_sender_is_flagged_and_not_named(self) -> None:
+        imap = FakeImap([review_from("intruder@example.com")],
+                        [record(CODE, "owner.of.code@example.com")])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(imap.appended, [])
+        issue = filed[0]
+        self.assertEqual(issue["title"], f"Review: {CODE} (te)")
+        self.assertEqual(issue["labels"],
+                         ["review", "from-app", "lang: te", SENDER_DIFFERS])
+        self.assertIn("Sender does not match", issue["body"])
+        self.assertIn("1 did not match", log)
+        self.assertNoAddress(filed, log, "intruder@example.com",
+                             "owner.of.code@example.com")
+
+    def test_each_code_has_its_own_record(self) -> None:
+        imap = FakeImap([review_from("b@example.com", OTHER)],
+                        [record(CODE, "a@example.com")])
+        filed, _ = self.run_tool(imap)
+        self.assertEqual(len(imap.appended), 1)
+        self.assertNotIn(SENDER_DIFFERS, filed[0]["labels"])
+
+    def test_gmail_dot_and_plus_forms_match(self) -> None:
+        for sender in ("ra.vi@gmail.com", "ravi+reviews@gmail.com",
+                       "R.a.Vi+x@GMAIL.com"):
+            with self.subTest(sender=sender):
+                imap = FakeImap([review_from(sender)],
+                                [record(CODE, "ravi@gmail.com")])
+                filed, log = self.run_tool(imap)
+                self.assertNotIn(SENDER_DIFFERS, filed[0]["labels"])
+                self.assertIn("1 matched", log)
+                self.assertNoAddress(filed, log, sender)
+
+    def test_case_is_ignored(self) -> None:
+        imap = FakeImap([review_from("Reviewer@Example.COM")],
+                        [record(CODE, "reviewer@example.com")])
+        filed, _ = self.run_tool(imap)
+        self.assertEqual(filed[0]["labels"], ["review", "from-app", "lang: te"])
+
+    def test_dots_count_outside_gmail(self) -> None:
+        imap = FakeImap([review_from("re.viewer@example.com")],
+                        [record(CODE, "reviewer@example.com")])
+        filed, _ = self.run_tool(imap)
+        self.assertIn(SENDER_DIFFERS, filed[0]["labels"])
+
+    def test_a_record_the_owner_deleted_is_tied_again(self) -> None:
+        # The owner deleted the record: the next mail ties the code anew.
+        imap = FakeImap([review_from("new@example.com")], [])
+        filed, _ = self.run_tool(imap)
+        self.assertEqual(len(imap.appended), 1)
+        self.assertNotIn(SENDER_DIFFERS, filed[0]["labels"])
+
+    def test_a_record_the_owner_added_is_respected(self) -> None:
+        # The owner allowed a second address for the code.
+        imap = FakeImap([review_from("second@example.com")],
+                        [record(CODE, "first@example.com"),
+                         record(CODE, "second@example.com")])
+        filed, _ = self.run_tool(imap)
+        self.assertEqual(imap.appended, [])
+        self.assertNotIn(SENDER_DIFFERS, filed[0]["labels"])
+
+    def test_a_record_without_an_address_is_passed_over(self) -> None:
+        imap = FakeImap([review_from("new@example.com")],
+                        [record(CODE, "deleted by the owner"),
+                         record("not a code", "x@example.com")])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(len(imap.appended), 1)
+        self.assertIn("Read 0 rater record(s).", log)
+
+    def test_an_append_failure_files_the_mail_unchecked(self) -> None:
+        for kwargs in ({"append_fails": True}, {"append_raises": True}):
+            with self.subTest(**kwargs):
+                imap = FakeImap([review_from("first@example.com")], **kwargs)
+                filed, log = self.run_tool(imap)
+                self.assertEqual(len(filed), 1)
+                self.assertEqual(filed[0]["labels"],
+                                 ["review", "from-app", "lang: te",
+                                  SENDER_UNCHECKED])
+                self.assertIn("Sender not checked", filed[0]["body"])
+                self.assertEqual(imap.labelled, [b"1"])
+                self.assertIn("1 not checked", log)
+                self.assertNoAddress(filed, log, "first@example.com")
+
+    def test_without_the_label_mails_are_filed_unchecked(self) -> None:
+        imap = FakeImap([review_from("first@example.com"),
+                         mail("[Fluenough] Bug: one")], label=False)
+        filed, log = self.run_tool(imap)
+        self.assertEqual(len(filed), 2)
+        self.assertIn(SENDER_UNCHECKED, filed[0]["labels"])
+        self.assertEqual(filed[1]["labels"], ["bug", "from-app"])
+        self.assertEqual(imap.appended, [])
+        self.assertEqual(imap.labelled, [b"1", b"2"])
+        self.assertIn("::warning::", log)
+
+    def test_reports_and_unsure_files_are_not_checked(self) -> None:
+        # A bug report has no code; files with two codes are for the owner.
+        imap = FakeImap([mail("[Fluenough] Bug: one"),
+                         review_mail(f"[Fluenough review] {CODE} (te)",
+                                     [review_file(),
+                                      review_file(OTHER, deck="te-work")])])
+        filed, log = self.run_tool(imap)
+        self.assertEqual(imap.appended, [])
+        self.assertNotIn(SENDER_UNCHECKED, filed[1]["labels"])
+        self.assertIn("0 tied, 0 matched, 0 did not match, 0 not checked",
+                      log)
 
 
 if __name__ == "__main__":
