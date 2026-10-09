@@ -299,7 +299,7 @@ void main() {
       }
     });
 
-    test('with text in no English, or keyed by a bare no', () {
+    test('with text in no English, or keyed by a bare false', () {
       expect(
         () => parse(
           deck(
@@ -317,7 +317,7 @@ void main() {
           deck(
             questions: '''
       - id: q1
-        prompt: { en: "Rice?", no: "Ris?" }
+        prompt: { en: "Rice?", false: "Ris?" }
         answer: true
 ''',
           ),
