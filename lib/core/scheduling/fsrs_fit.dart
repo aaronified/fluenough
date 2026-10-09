@@ -114,6 +114,23 @@ class FsrsFitGate {
 /// A fit is not always better than the set in use. `fsrs-rs`, like Anki,
 /// keeps a new set only when its log loss on the same history is lower:
 /// compare [logLoss] for both.
+///
+/// Two additions of the app's own, both off unless asked for, so that
+/// without them every result is `fsrs-rs`'s:
+///
+/// - **A window** (`from`): every review still builds its pair's history,
+///   but only those given at or after `from` are predicted, so only they
+///   are learnt from, gated on, weighted and scored. A skill's window is
+///   its reviews of the last three months or its last 1,000, whichever is
+///   more (`docs/plans/skill-model.md`).
+/// - **A start** (`start`): 21 values that fitting starts from in place of
+///   FSRS-6's defaults, such as the skill's previous fit. They are what
+///   the search for the first stabilities is pulled towards and fills in
+///   from, what training starts from, and what its L2 term pulls towards,
+///   as `fsrs-rs` does with the parameters its model starts from; with
+///   only the first stabilities fitted, the rest are the start's. A refit
+///   so starts from the last instead of from scratch, and moves from it
+///   only as far as the new answers argue.
 abstract final class FsrsFit {
   /// Seeds the shuffle of the batch order: `fsrs-rs`'s seed.
   static const int seed = 2023;
@@ -125,9 +142,12 @@ abstract final class FsrsFit {
   static const double _l2Weight = 0.5; // PENALTY_W_L2 x gamma 1.0
 
   /// [histories], one per pair of the skill, each oldest first, as items.
-  /// What fitting would do with them, without fitting.
-  static FsrsFitGate gate(Iterable<Iterable<FitReview>> histories) =>
-      _Prepared(_items(histories)).gate;
+  /// What fitting would do with them, without fitting. With [from], only
+  /// the reviews given at or after it are items.
+  static FsrsFitGate gate(
+    Iterable<Iterable<FitReview>> histories, {
+    DateTime? from,
+  }) => _Prepared(_items(histories, from)).gate;
 
   /// Parameters fitted to [histories], one per pair of the skill, each
   /// oldest first: 21 values for `Fsrs`'s `parameters`. Null when
@@ -140,23 +160,46 @@ abstract final class FsrsFit {
   ///
   /// A pair reset since (a leech's fresh start) should pass only its
   /// reviews since the reset, as the scheduler replays it.
-  static List<double>? fit(Iterable<Iterable<FitReview>> histories) {
-    final prepared = _Prepared(_items(histories));
+  ///
+  /// With [from], only the reviews given at or after it are predicted;
+  /// those before still build each pair's history. With [start], 21
+  /// values, fitting starts from them and is pulled towards them instead
+  /// of FSRS-6's defaults (see the class), and with
+  /// [FsrsFitOutcome.pretrainOnly] w4 to w20 are [start]'s exactly. Throws
+  /// [ArgumentError] for a [start] that is not 21 values.
+  static List<double>? fit(
+    Iterable<Iterable<FitReview>> histories, {
+    List<double>? start,
+    DateTime? from,
+  }) {
+    if (start != null && start.length != Fsrs.w.length) {
+      throw ArgumentError.value(
+        start.length,
+        'start',
+        'must hold ${Fsrs.w.length} values, w0 to w20',
+      );
+    }
+    final base = start == null
+        ? _defaults
+        : <double>[for (final v in start) _f32(v)];
+    final prepared = _Prepared(_items(histories, from));
     final train = prepared.train;
     if (train.length < 8) return null;
 
     final ratingCount = <int, int>{};
-    final pretrained = _pretrain(prepared, ratingCount);
+    final pretrained = _pretrain(prepared, ratingCount, base);
     if (pretrained == null) return null; // fsrs-rs: NotEnoughData
     if (prepared.gate.outcome == FsrsFitOutcome.pretrainOnly) {
-      return _output(pretrained, Fsrs.w.sublist(4));
+      return _output(pretrained, (start ?? Fsrs.w).sublist(4));
     }
 
-    final trained = _train(train, pretrained);
+    final trained = _train(train, pretrained, base);
     if (trained == null) return null; // fsrs-rs: InvalidInput
-    final first = _smoothAndFill({
-      for (var r = 1; r <= 4; r++) r: trained[r - 1],
-    }, ratingCount);
+    final first = _smoothAndFill(
+      {for (var r = 1; r <= 4; r++) r: trained[r - 1]},
+      ratingCount,
+      base,
+    );
     if (first == null) return null;
     return _output(first, <double>[
       for (var i = 4; i < 21; i++) _shortest(trained[i]),
@@ -167,17 +210,20 @@ abstract final class FsrsFit {
   /// run with them, predicts each review that is not a pair's first and
   /// comes a day or more after the one before. Weighted towards recent
   /// reviews, as `fsrs-rs`'s `evaluate` weights it. Null when there is no
-  /// such review. Lower is better.
+  /// such review. Lower is better. With [from], only the reviews given at
+  /// or after it are predicted, as [fit] predicts them.
   static double? logLoss(
     Iterable<Iterable<FitReview>> histories, {
     List<double> parameters = Fsrs.w,
+    DateTime? from,
   }) {
     final predictions = <(DateTime, int, int, double, bool)>[];
     for (final (p, history) in histories.indexed) {
       FsrsState? state;
       for (final (i, review) in history.indexed) {
         if (state != null &&
-            Fsrs.elapsedDays(state.lastReviewAt, review.at) >= 1) {
+            Fsrs.elapsedDays(state.lastReviewAt, review.at) >= 1 &&
+            (from == null || !review.at.isBefore(from))) {
           predictions.add((
             review.at,
             p,
@@ -243,15 +289,19 @@ abstract final class FsrsFit {
 
   /// One item per review that is not a pair's first and comes a day or
   /// more after the one before, in the order the reviews were given; ties
-  /// by pair, then by review.
-  static List<_Item> _items(Iterable<Iterable<FitReview>> histories) {
+  /// by pair, then by review. With [from], only reviews given at or after
+  /// it.
+  static List<_Item> _items(
+    Iterable<Iterable<FitReview>> histories, [
+    DateTime? from,
+  ]) {
     final keyed = <(DateTime, int, int, _Item, Object?)>[];
     for (final (p, history) in histories.indexed) {
       final reviews = history.toList();
       if (reviews.isEmpty) continue;
       final pair = _Pair(reviews);
       for (var i = 1; i < reviews.length; i++) {
-        if (pair.dt[i] > 0) {
+        if (pair.dt[i] > 0 && (from == null || !reviews[i].at.isBefore(from))) {
           keyed.add((reviews[i].at, p, i, _Item(pair, i), null));
         }
       }
@@ -279,9 +329,12 @@ abstract final class FsrsFit {
   // Pretrain: w0..w3 from first long-term reviews
   // (fsrs-rs parameter_initialization.rs)
 
+  /// [base]: the start, as 32-bit floats: what each first stability is
+  /// pulled towards, and the curve's decay.
   static List<double>? _pretrain(
     _Prepared prepared,
     Map<int, int> ratingCount,
+    List<double> base,
   ) {
     final train = prepared.train;
     var recalled = 0;
@@ -313,21 +366,23 @@ abstract final class FsrsFit {
       ];
       ratingCount[r0] = count.fold(0.0, (a, b) => a + b).toInt();
       stabilities[r0] = _f32(
-        _searchStability(t, recall, count, _defaults[r0 - 1]),
+        _searchStability(t, recall, count, base[r0 - 1], base[20]),
       );
     }
-    return _smoothAndFill(stabilities, ratingCount);
+    return _smoothAndFill(stabilities, ratingCount, base);
   }
 
   /// Ternary search for the first stability that best fits the recall
-  /// at each gap, pulled towards the default (fsrs-rs :126-171).
+  /// at each gap, pulled towards the start's (fsrs-rs :126-171), on the
+  /// curve of the start's [w20].
   static double _searchStability(
     List<double> t,
     List<double> recall,
     List<double> count,
     double defaultS0,
+    double w20,
   ) {
-    final decay = -_defaultDecay;
+    final decay = -w20;
     final factor = math.pow(0.9, 1 / decay).toDouble() - 1;
     double loss(double s) {
       var sum = 0.0;
@@ -358,10 +413,11 @@ abstract final class FsrsFit {
 
   /// Keeps the first stabilities in rating order and fills in those of
   /// first ratings with no data from the rest (fsrs-rs :173-283), in f32.
-  /// Null with none to fill from.
+  /// Null with none to fill from. One rating alone scales [base]'s.
   static List<double>? _smoothAndFill(
     Map<int, double> stability,
     Map<int, int> count,
+    List<double> base,
   ) {
     final s = <int, double>{
       for (final MapEntry(:key, :value) in stability.entries)
@@ -399,8 +455,8 @@ abstract final class FsrsFit {
         return null;
       case 1:
         final MapEntry(key: rating, value: value) = s.entries.single;
-        final factor = _f32(value / _defaults[rating - 1]);
-        init = <double>[for (var r = 0; r < 4; r++) mul(_defaults[r], factor)]
+        final factor = _f32(value / base[rating - 1]);
+        init = <double>[for (var r = 0; r < 4; r++) mul(base[r], factor)]
           ..sort();
       case 2 || 3:
         final r = <double?>[null, s[1], s[2], s[3], s[4]];
@@ -457,7 +513,11 @@ abstract final class FsrsFit {
   // ---------------------------------------------------------------------
   // Training (fsrs-rs training.rs:1245-1419)
 
-  static Float32List? _train(List<_Item> train, List<double> pretrained) {
+  static Float32List? _train(
+    List<_Item> train,
+    List<double> pretrained,
+    List<double> base,
+  ) {
     final weights = _recencyWeights(train.length);
     final kept = <(_Item, double)>[
       for (final (i, item) in train.indexed)
@@ -477,10 +537,7 @@ abstract final class FsrsFit {
         ],
     ];
 
-    final w = Float32List.fromList(<double>[
-      ...pretrained,
-      ..._defaults.sublist(4),
-    ]);
+    final w = Float32List.fromList(<double>[...pretrained, ...base.sublist(4)]);
     final initial = Float32List.fromList(w);
     final adam = _Adam();
     final schedule = _CosineAnnealing(
@@ -583,7 +640,6 @@ final double _minProb = _f32(1e-7);
 final double _maxProb = _f32(1 - _f32(1e-7));
 
 final List<double> _defaults = <double>[for (final v in Fsrs.w) _f32(v)];
-final double _defaultDecay = _defaults[20];
 
 final List<double> _paramsStddev = <double>[
   for (final v in const <double>[
