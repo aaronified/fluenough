@@ -336,6 +336,10 @@ void main() {
     await tester.tap(find.text(l10n.reportKindSupport));
     await tester.pumpAndSettle();
     expect(find.text(l10n.reportDetailsHintSupport), findsOneWidget);
+    await tester.enterText(
+      find.widgetWithText(TextField, l10n.reportTitleLabel),
+      'No sound',
+    );
     await tester.scrollUntilVisible(
       find.text(l10n.reportEditable),
       200,
@@ -343,11 +347,6 @@ void main() {
     );
     expect(find.text(l10n.reportPrivate), findsOneWidget);
     expect(find.text(l10n.reportPublic), findsNothing);
-
-    await tester.enterText(
-      find.widgetWithText(TextField, l10n.reportTitleLabel),
-      'No sound',
-    );
     await tapInList(tester, find.text(l10n.reportSend));
     final report = reports.sent.single;
     expect(report.kind, ReportKind.support);

@@ -1389,6 +1389,33 @@
   "@reportDeviceInfo": {
     "description": "Checkbox on a report, unticked until the reporter ticks it: adds the device details shown under it (app and system versions, screen size, text scale, languages)."
   },
+  "reportLog": "Attach the app log",
+  "@reportLog": {
+    "description": "Checkbox on a report, unticked until the reporter ticks it: attaches the app's own log as a file (#162)."
+  },
+  "reportLogSummary": "{count, plural, =1{1 line} other{{count} lines}} from the last 7 days at most: screens opened, decks loaded, fits run, imports, exports, warnings and errors. Never your answers or cards. The newest:",
+  "@reportLogSummary": {
+    "description": "Under Attach the app log: what the file holds, above its newest lines.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "reportLogEmpty": "The app log is empty, so there is nothing to attach.",
+  "@reportLogEmpty": {
+    "description": "Under Attach the app log, when the log holds nothing."
+  },
+  "reportLogSeeAll": "See the whole log",
+  "@reportLogSeeAll": {
+    "description": "Button under Attach the app log that opens the app log, to see all that would be attached."
+  },
+  "reportInMailAppNoLog": "Your mail app has the report, but the app log couldn’t be attached. You can export it from Settings > Logs and attach it yourself.",
+  "@reportInMailAppNoLog": {
+    "description": "Shown when the report reached the mail app without the app log, because the phone could not share the file."
+  },
   "reportGitHubTitle": "Report on GitHub",
   "@reportGitHubTitle": {
     "description": "Title of the sheet shown before a report opens GitHub's new-issue form."
