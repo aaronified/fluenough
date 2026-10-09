@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The bug icon on every screen now offers three things: Get support, Report a bug and Give feedback, in place of Bug, Feature and Suggestion. Feature requests are feedback. You still write a title and details first; then your mail app opens to fluenough@gmail.com with a subject and questions of the kind's own filled in, which you can change before you send. Bug reports and feedback become public GitHub issues, without your email address. Support mails stay private in the Fluenough inbox, and are never made issues (#160).
 - ख़ is now written k͟h in the Latin readings, as ISO 15919 writes it, in place of ḵ: the decks' readings, the romanisation files, the README table, the transcriber and the validator. Typing kh is still right, with its mark flagged (#339).
 - Putting a sentence's words in order no longer gives the answer away: the tiles have no capitals, and each mark (। . ? , ! …) is a tile of its own, placed like a word. The card shown afterwards is unchanged (#347).
 

@@ -1277,29 +1277,77 @@
       }
     }
   },
-  "reportOpen": "Report a problem or idea",
+  "reportOpen": "Get support or report a problem",
   "@reportOpen": {
-    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen."
+    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback."
   },
-  "reportTitle": "Report a problem or idea",
+  "reportTitle": "Support and feedback",
   "@reportTitle": {
-    "description": "Title of the report screen."
+    "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
   },
-  "reportKindGroup": "What kind of report?",
+  "reportKindGroup": "What would you like to do?",
   "@reportKindGroup": {
-    "description": "Accessibility label of the bug / feature / suggestion choice."
+    "description": "Accessibility label of the choice between getting support, reporting a bug and giving feedback."
   },
-  "reportKindBug": "Bug",
+  "reportKindSupport": "Get support",
+  "@reportKindSupport": {
+    "description": "A report asking for help. Its mail stays private."
+  },
+  "reportKindSupportDesc": "A question, or help with the app. Private.",
+  "@reportKindSupportDesc": {
+    "description": "Under Get support on the report screen."
+  },
+  "reportKindBug": "Report a bug",
   "@reportKindBug": {
-    "description": "A report that something is wrong."
+    "description": "A report that something is wrong. Becomes a public GitHub issue."
   },
-  "reportKindFeature": "Feature",
-  "@reportKindFeature": {
-    "description": "A report asking for something new."
+  "reportKindBugDesc": "Something went wrong. Becomes a public issue.",
+  "@reportKindBugDesc": {
+    "description": "Under Report a bug on the report screen. The issue is on GitHub."
   },
-  "reportKindSuggestion": "Suggestion",
-  "@reportKindSuggestion": {
-    "description": "A report suggesting a change."
+  "reportKindFeedback": "Give feedback",
+  "@reportKindFeedback": {
+    "description": "A report with an idea, a wish or a feature request. Becomes a public GitHub issue."
+  },
+  "reportKindFeedbackDesc": "An idea, a wish or a new feature. Becomes a public issue.",
+  "@reportKindFeedbackDesc": {
+    "description": "Under Give feedback on the report screen. The issue is on GitHub."
+  },
+  "reportDetailsHintSupport": "What do you need help with?",
+  "@reportDetailsHintSupport": {
+    "description": "Hint in the details field when getting support."
+  },
+  "reportDetailsHintBug": "What did you do, and what happened?",
+  "@reportDetailsHintBug": {
+    "description": "Hint in the details field when reporting a bug."
+  },
+  "reportDetailsHintFeedback": "What would make Fluenough better for you?",
+  "@reportDetailsHintFeedback": {
+    "description": "Hint in the details field when giving feedback."
+  },
+  "reportPromptSupportTried": "What have you tried so far?",
+  "@reportPromptSupportTried": {
+    "description": "A question set in a support mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptBugSteps": "How can we make it happen again?",
+  "@reportPromptBugSteps": {
+    "description": "A question set in a bug report mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptBugExpected": "What did you expect instead?",
+  "@reportPromptBugExpected": {
+    "description": "A question set in a bug report mail's body, after the steps, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptFeedbackWhy": "How would it help you?",
+  "@reportPromptFeedbackWhy": {
+    "description": "A question set in a feedback mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPrivate": "Support mails stay private, between you and Fluenough. They never become public issues.",
+  "@reportPrivate": {
+    "description": "Note above Send when getting support."
+  },
+  "reportEditable": "Your mail app opens with all this filled in. Change anything you like before you send it.",
+  "@reportEditable": {
+    "description": "Note above Send on the report screen: the mail's subject and text can be edited in the mail app."
   },
   "reportTitleLabel": "Title",
   "@reportTitleLabel": {
@@ -1312,10 +1360,6 @@
   "reportDetailsLabel": "Details",
   "@reportDetailsLabel": {
     "description": "Label of the report's longer text."
-  },
-  "reportDetailsHint": "What did you do, and what happened? Or what would help?",
-  "@reportDetailsHint": {
-    "description": "Hint in the report's details field."
   },
   "reportInMailApp": "Your mail app has the report. Send it from there.",
   "@reportInMailApp": {
@@ -1333,9 +1377,9 @@
   "@reportLinkCopied": {
     "description": "SnackBar when nothing on the phone could open the GitHub link for a report, so it was copied instead."
   },
-  "reportPublic": "Reports become public GitHub issues. Your email address is not shown; leave out anything private.",
+  "reportPublic": "Bug reports and feedback become public GitHub issues. Your email address is not shown; leave out anything private.",
   "@reportPublic": {
-    "description": "Warning above Send, on the mail report."
+    "description": "Warning above Send, when reporting a bug or giving feedback."
   },
   "reportAlsoSent": "Always sent: this screen and what it showed.",
   "@reportAlsoSent": {
