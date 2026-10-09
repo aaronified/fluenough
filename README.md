@@ -27,23 +27,29 @@ than hard-coded rules. Adding a language means adding files, never code.
 
 ## What it does
 
-| Drill | Direction | Graded by |
+| Skill | Direction | Graded by |
 |---|---|---|
-| **Recognition** | see target → recall meaning | you (self-assessed) |
-| **Production** | see meaning → type target | the app, with diacritic and typo tolerance |
-| **Listening** | hear target → answer | the app |
+| **Seen words** (recognition) | see target → recall or choose the meaning | you, or the app for a choice |
+| **Heard words** (listening) | hear target → choose, then type, the meaning | the app |
+| **Spoken words** (speaking) | see meaning → say target | the app, through the phone's speech recognition |
+| **Written words** (production) | see meaning → type target | the app, with diacritic and typo tolerance |
 | **Grammar** | prompt + slot → inflected form | the app |
 
-A fifth, minimal-pair discrimination, is planned for sound contrasts the
-learner's own language does not make.
+Reading passages, match pairs, multiple choice and word order come on top.
+Minimal-pair discrimination, for sound contrasts the learner's own language
+does not make, is planned; a word can already name its minimal-pair partner,
+which listening offers among the meanings.
 
-All four share one card model and one scheduler, so a card's difficulty is
-tracked per *skill* — you can recognise a word long before you can produce it,
-and Fluenough schedules those separately.
+All share one card model, and each word is scheduled separately in each
+skill: you can recognise a word long before you can produce it. A right
+answer also counts in part for the skills it implies, as the research finds
+([ADR-0034](docs/adr/0034-hear-say-write.md)).
 
 ### Spaced repetition, with a real audit trail
 
-Scheduling is FSRS-6 ([ADR-0033](docs/adr/0033-fsrs.md)). The part that
+Scheduling is FSRS-6 ([ADR-0033](docs/adr/0033-fsrs.md)), fitted on the
+phone to each learner, per language and skill, from their own answers;
+nothing is sent anywhere ([ADR-0035](docs/adr/0035-fsrs-fitted-per-skill.md)). The part that
 matters more is that **every review is
 written to an append-only log** — not just the current interval. That means
 your statistics are recomputable, and the scheduling algorithm can be replaced
@@ -66,9 +72,9 @@ A neural backend (Kokoro) is a candidate for a later release; see
 Where a language uses an unfamiliar writing system, learning the script and its
 pronunciation *is* the first task, not a preliminary to it. Fluenough treats
 script decks as ordinary decks — `decks/hi/hi-en-script-vowels.yaml` is a
-worked example — and the starter set being built out (Bengali, Hindi, Gujarati,
-Telugu, Urdu) each pair a script deck with a vocabulary deck. See
-[docs/ROADMAP.md](docs/ROADMAP.md).
+worked example. The courses taught from English (Assamese, Bengali, Gujarati,
+Hindi, Kannada, Marathi and Telugu) each start with their script decks and a
+script guide; Spanish is started. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 Japanese (`decks/ja/`) is kept in the repository but not bundled in the app for
 now.
