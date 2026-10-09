@@ -60,7 +60,11 @@ another review, may change it first.
   writes `text` into the field, removes that proposal and every other
   proposal on the same field of the card, and merges it once the checks
   pass. The first proposal on a field to reach the number wins; the
-  others are closed as outdated with it.
+  others are closed as outdated with it. The bot does not record when an
+  acceptance came, so "first" is the proposal whose agreement PR opened
+  first: while it is open no other on that field is applied, and
+  several that reach the number before any PR opens go in the order
+  they were proposed, which is their order in the file.
 - **Accept, edit or reject.** In reviewer mode a proposal shows Accept,
   Edit and Reject, and the review file records the answer. An edit is a
   suggestion of the reviewer's own, which becomes a new proposal; the old
@@ -72,9 +76,16 @@ another review, may change it first.
   `decks/index.json` rebuilt by `tools/deck_index.py`; the validator run
   before anything is pushed. A proposal whose field has changed is closed
   as outdated, by a bot PR that removes it, never written. A branch that
-  falls behind `main` is rebuilt from `main` the same way. Branch names
-  come from the mail or the proposal, so an hourly rerun finds its own PR
-  and never opens a second; a PR the owner closes is never reopened.
+  falls behind `main` is rebuilt from `main` the same way, and a PR is
+  never merged unless its branch holds all of `main`, so a change the
+  owner made meanwhile is never merged over. An agreement or outdated PR
+  that `main` no longer calls for is closed. Branch names come from the
+  mail, or from the proposals' ids and dates, so an hourly rerun finds
+  its own PR and never opens a second; a PR the owner closes is never
+  reopened, while the same proposal made again on a later day is a new
+  attempt with a branch of its own. Only the three checks branch
+  protection requires gate a merge, named in `tools/review_bot.py` and
+  tested against `.github/workflows/ci.yml`.
 - **A GitHub App merges.** The bot's PRs are opened and merged with an
   App's installation token (`FLUENOUGH_BOT_APP_ID`,
   `FLUENOUGH_BOT_PRIVATE_KEY`), the one actor allowed to skip the approval

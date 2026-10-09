@@ -250,10 +250,16 @@ Settled with the owner, 2026-10-09:
   - **Accept, edit or reject:** a reviewer who edits a proposal makes a
     new proposal of their own, which goes in the same way; the old one
     keeps waiting. The first proposal on a field to reach enough
-    agreements wins; the others on that field are closed as outdated. A
-    rejection only flags the change to the owner.
-  - **The owner's override** is any later commit: reverting the change or
-    editing the card. Every bot PR names the rater codes involved.
+    agreements wins; the others on that field are closed as outdated.
+    "First" is the one whose agreement PR opened first: while it is open,
+    no other proposal on the field is applied. Several that reach it
+    before any PR opens go in the order they were proposed, which is
+    their order in the file. A rejection only flags the change to the
+    owner.
+  - **The owner's override** is any later commit: reverting the change,
+    editing the card, or deleting a proposal. The bot builds a PR again
+    from `main` before merging it whenever `main` has moved, and closes
+    an agreement PR whose proposal is no longer there. Every bot PR names the rater codes involved.
   - **Past the branch rules:** a dedicated GitHub App merges these PRs.
     It is the only actor allowed to skip the approval rule; the three
     required checks still apply to it. The owner creates and installs the
