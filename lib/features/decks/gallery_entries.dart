@@ -1,4 +1,5 @@
 import '../../app.dart';
+import '../../app/features.dart';
 import '../../app/shell_tab.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
@@ -69,6 +70,14 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     state: PathFixtures.state,
   ),
   GalleryEntry(
+    id: 'decks-incoming-live',
+    section: GallerySection.learn,
+    label: 'Decks, incoming features live', // ui-literal-ok: debug-only gallery
+    note: 'Updates, hours left, Beyond the course', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DecksPage(planOf: PathFixtures.planOf),
+    state: (app) => PathFixtures.state(app, features: FeatureRegistry.all()),
+  ),
+  GalleryEntry(
     id: 'unit',
     section: GallerySection.learn,
     label: 'Unit: Family', // ui-literal-ok: debug-only gallery
@@ -76,6 +85,18 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     builder: (_) => const UnitPage(
       deckId: PathFixtures.familyDeck,
       plan: PathFixtures.telugu,
+    ),
+    state: PathFixtures.state,
+  ),
+  GalleryEntry(
+    id: 'unit-rules',
+    section: GallerySection.learn,
+    label: 'Unit, rule tables open', // ui-literal-ok: debug-only gallery
+    note: 'Each rule on the words it is practised on', // ui-literal-ok: debug-only gallery
+    builder: (_) => const UnitPage(
+      deckId: PathFixtures.familyDeck,
+      plan: PathFixtures.telugu,
+      openTables: true,
     ),
     state: PathFixtures.state,
   ),

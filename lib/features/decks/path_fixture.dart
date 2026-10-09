@@ -1,5 +1,6 @@
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/features.dart';
 import '../../app/memory_progress.dart';
 import '../../app/profile.dart';
 import '../../core/models/drill_mode.dart';
@@ -57,12 +58,18 @@ abstract final class PathFixtures {
   /// before [upTo] done over the past weeks, and in that unit, about two
   /// thirds of the words answered, some well and some not, three days ago,
   /// so that some are due. By default the unit up next is Family; with
-  /// [upTo] past A1's end, A1 is reached.
-  static AppState state(AppState app, {String upTo = familyDeck}) {
+  /// [upTo] past A1's end, A1 is reached. [features] are those shipped
+  /// unless given, such as all of them to show the path's incoming ones live.
+  static AppState state(
+    AppState app, {
+    String upTo = familyDeck,
+    FeatureRegistry features = const FeatureRegistry.shipped(),
+  }) {
     final state = GalleryFixtures.state(
       app,
       profiles: const <Profile>[aro, GalleryFixtures.mira],
       history: false,
+      features: features,
     );
     seed(state.progress as MemoryProgress, app, upTo: upTo);
     return state;
