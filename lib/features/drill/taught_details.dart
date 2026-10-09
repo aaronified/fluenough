@@ -96,11 +96,12 @@ class TaughtDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = AppScope.read(context);
     final settings = state.settings;
-    final warnings = AlikeWarning.forCard(state, card, language);
-    // Live, as the reading's line follows Latin-letter readings.
+    // Live, as the reading's line follows Latin-letter readings, and the
+    // warnings name a rude word only while adult content is on.
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) {
+        final warnings = AlikeWarning.forCard(state, card, language);
         final theme = Theme.of(context);
         final scheme = theme.colorScheme;
         final notes = shownNotes(card);
