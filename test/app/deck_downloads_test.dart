@@ -533,6 +533,42 @@ void main() {
     });
   });
 
+  group('cancel, before and after', () {
+    test('a download has a job from the moment it is asked for, before its '
+        'files are known', () async {
+      final d = downloads();
+      await d.open();
+      final job = d.download('hi', english);
+      expect(d.isDownloading('hi'), isFalse, reason: 'its files not known');
+      expect(d.hasJob('hi'), isTrue);
+      expect(await job, isNull);
+      // The rest, behind it, is a job too, until it is done.
+      for (var i = 0; i < 100 && d.hasJob('hi'); i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 5));
+      }
+      expect(d.hasJob('hi'), isFalse);
+      expect(d.missing('hi', english), isEmpty);
+    });
+
+    test('removing a language cancelled forgets that it was', () async {
+      late DeckDownloads d;
+      d = DeckDownloads(
+        fetcher: _CallAfter(remote, 4, () => d.cancel('hi')),
+        files: phone,
+        clock: () => now,
+      );
+      await d.open();
+      await d.download('hi', english);
+      expect(d.isPaused('hi'), isTrue);
+
+      await d.remove('hi');
+      expect(d.isPaused('hi'), isFalse);
+      final again = downloads();
+      await again.open();
+      expect(again.isPaused('hi'), isFalse, reason: 'nor the state note');
+    });
+  });
+
   group('how much of a language is in', () {
     test('counts decks and bytes, and where it is ready', () async {
       final d = downloads();

@@ -403,6 +403,12 @@ class DeckDownloads extends ChangeNotifier {
 
   bool isDownloading(String language) => _progress.containsKey(language);
 
+  /// Whether [language] has a job under way or waiting, from the moment it
+  /// is asked for: [isDownloading] only once the index is read and its
+  /// files are known. What [cancel] needs to stop.
+  bool hasJob(String language) =>
+      _jobs.containsKey(language) || _progress.containsKey(language);
+
   // ---------------------------------------------------------------------------
   // Downloading a language
 
@@ -935,6 +941,9 @@ class DeckDownloads extends ChangeNotifier {
       _onPhone = await files.manifest();
       _complete.remove(language);
       _failures.remove(language);
+      // Nothing of it is left to finish: no longer cancelled.
+      _paused.remove(language);
+      _stopping.remove(language);
       _updates = Map<String, LanguageChanges>.of(_updates)..remove(language);
       await _saveState();
       _log?.event('Language removed from the phone: $language');
