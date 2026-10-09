@@ -82,7 +82,7 @@ SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
 FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
                 "letters"}
 CODE_RE = re.compile(r"[a-z]{2,3}")
-# `grammarUnderstood` is only for a rules table's cells (ADR-0035): a card or
+# `grammarUnderstood` is only for a rules table's cells (ADR-0036): a card or
 # a ref that names it is refused.
 MODES = {"recognition", "production", "listening", "grammar", "speaking",
          "grammarUnderstood"}
@@ -117,7 +117,7 @@ EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases"}
 CHOICES = range(2, 5)
 
 # --- The B1 format: cores, layers, rules decks, notes, bases, plans ---------
-# See ADR-0035 and docs/DECK-FORMAT.md. A core (`part: "core"`) holds what
+# See ADR-0036 and docs/DECK-FORMAT.md. A core (`part: "core"`) holds what
 # belongs to the language learnt; a layer (`kind: "layer"`) what belongs to
 # one native language. Merged, they are the deck the layer's id names.
 CORE_HEADER_KEYS = {"schema", "id", "part", "kind", "language", "license",
@@ -323,7 +323,7 @@ class TableInfo:
 
 @dataclass
 class Unit:
-    """A unit of a course path, list or mapping (ADR-0035)."""
+    """A unit of a course path, list or mapping (ADR-0036)."""
     i: int
     decks: list[str]           # its written decks, without "*"
     mapping: bool = False
@@ -384,7 +384,7 @@ class Report:
     course_units: tuple[str, str, dict[str, int]] | None = None
     taught_words: tuple[str, str, set[str]] | None = None
     passages: tuple[str, str, list[tuple[str, str | None, list[str], set[str]]]] | None = None
-    # The B1 format (ADR-0035). `part` is "core", "layer" or None (a
+    # The B1 format (ADR-0036). `part` is "core", "layer" or None (a
     # single-file deck, or another file); `core_id` a layer's core.
     part: str | None = None
     core_id: str | None = None
@@ -516,7 +516,7 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
                key: str | None = None) -> None:
     """A card of a single-file deck (`form` "single"), of a core ("core"), or
     a layer's own card ("layer"), whose id is its key in the layer's
-    `cards` mapping. A core card has the language side only (ADR-0035)."""
+    `cards` mapping. A core card has the language side only (ADR-0036)."""
     where = f"cards[{idx}]" if key is None else f"cards.{key}"
     if not isinstance(card, dict):
         r.error(where, "must be a mapping")
@@ -692,7 +692,7 @@ def _check_card_rules(r: Report, where: str, rules: object, lang: str) -> None:
 
 
 def rule_id_re(lang: str) -> re.Pattern[str]:
-    """A rule id names the language and the rule (ADR-0035)."""
+    """A rule id names the language and the rule (ADR-0036)."""
     return re.compile(rf"{re.escape(lang)}-rule-[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
@@ -845,7 +845,7 @@ def check_bases(r: Report, where: str, prefix: str, bases: object,
                 text: str | None, cid: str | None, lang: str, script: str, *,
                 core: bool) -> list[dict]:
     """A card's or an example's `bases`: the base word of each derived word
-    in its text, by the card that teaches it or written in full (ADR-0035).
+    in its text, by the card that teaches it or written in full (ADR-0036).
     Returns the well-formed entries."""
     if bases is None:
         return []
@@ -1029,7 +1029,7 @@ def check_ref(r: Report, idx: int, card: dict, seen: set[str],
     _check_examples(r, where, card.get("examples"), form=form, cid=rid, lang=lang,
                     script=script)
     # A core's refs are only checked to exist: whether a learner sees one is
-    # the merge's (ADR-0035), not an error.
+    # the merge's (ADR-0036), not an error.
     r.refs.append((rid, core or _is_str(card.get("native")), where))
 
 
@@ -1459,7 +1459,7 @@ _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
               "source", "scheme", "audio",
-              # The B1 format's (ADR-0035): a base's word, a card or a rule
+              # The B1 format's (ADR-0036): a base's word, a card or a rule
               # named by id.
               "word", "base", "ref", "core", "except", "rules", "part"}
 
@@ -1562,7 +1562,7 @@ def validate(path: Path) -> Report:
         r.error("root", "deck must be a YAML mapping")
         return r
 
-    # What the file is, before any other check (ADR-0035): a layer, a core,
+    # What the file is, before any other check (ADR-0036): a layer, a core,
     # or anything else as today.
     if raw.get("kind") == "layer":
         validate_layer(r, raw, path)
@@ -1757,7 +1757,7 @@ def _check_common_header(r: Report, raw: dict) -> None:
 
 def _check_review_tags(r: Report, raw: dict) -> None:
     """A file that holds a culture note's claim is tagged "unreviewed" until
-    a speaker checks it, then "reviewed": exactly one of them (ADR-0035)."""
+    a speaker checks it, then "reviewed": exactly one of them (ADR-0036)."""
     if not r.culture:
         return
     tags = raw.get("tags") if isinstance(raw.get("tags"), list) else []
@@ -1769,7 +1769,7 @@ def _check_review_tags(r: Report, raw: dict) -> None:
                         'speaker checks them, then "reviewed" (#99)')
 
 
-# --- Cores and layers (ADR-0035) ---------------------------------------------
+# --- Cores and layers (ADR-0036) ---------------------------------------------
 
 def _load_raw(path: Path) -> object:
     try:
@@ -1936,7 +1936,7 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
 
 def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
     """A rules deck's core: one table, whose rows are words of one kind with
-    every form listed, and whose columns belong to its rules (ADR-0035)."""
+    every form listed, and whose columns belong to its rules (ADR-0036)."""
     slots: list[str] = []
     table = raw.get("table")
     if "table" not in raw:
@@ -2935,7 +2935,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
                 decks.append(deck)
         return None if unit == [WILDCARD] else decks
 
-    # A path has a B1 plan when a unit is a mapping that plans (ADR-0035).
+    # A path has a B1 plan when a unit is a mapping that plans (ADR-0036).
     has_plan = any(isinstance(u, dict) and any(k in u for k in
                                                 ("planned", "words", "grammar", "milestone"))
                    for u in units)
@@ -3326,7 +3326,7 @@ def _lang_of(rep: Report) -> str | None:
 
 class _Context:
     """What the checks across files read besides the files given: the other
-    files of each language, read once per run (ADR-0035). Nothing is ever
+    files of each language, read once per run (ADR-0036). Nothing is ever
     reported on a file read only for context."""
 
     def __init__(self, reports: list[Report]) -> None:
@@ -3450,7 +3450,7 @@ class _Language:
 
     def deck_cards(self, rep: Report) -> list[TCard]:
         """The cards a course deck teaches: a single-file deck's written cards
-        and its refs that resolve; a merged deck's included cards (ADR-0035)."""
+        and its refs that resolve; a merged deck's included cards (ADR-0036)."""
         native = rep.native_code
         defs, tcards = self.defs(), self.tcards()
         cards = list(rep.merged) + list(rep.cards)
@@ -3532,7 +3532,7 @@ def check_cards_across(reports: list[Report]) -> list[str]:
     layer, and every ref names a card written in another deck of that
     language. A ref from a course taught from another language gives its
     own native (ADR-0018); a ref to a core's card resolves through a layer
-    of the same native (ADR-0035)."""
+    of the same native (ADR-0036)."""
     ctx = _context(reports)
     problems = []
     defs: dict[str, CardDef] = {}
@@ -3775,7 +3775,7 @@ def check_reading_across(reports: list[Report]) -> list[str]:
     return problems
 
 
-# --- The B1 checks across files (ADR-0035) -----------------------------------
+# --- The B1 checks across files (ADR-0036) -----------------------------------
 
 def counts_as_word(card: object, deck_kind: str) -> bool:
     """Whether a card counts as one of a unit's words: a card of a vocab

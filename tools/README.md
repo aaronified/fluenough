@@ -24,7 +24,7 @@ parses as the boolean `false`, and no reviewer reliably catches that by eye.
 It reads plain YAML values as the app does (YAML 1.2: a bare `no` is the text
 "no", only `true` and `false` are booleans), so the two never disagree.
 
-It also checks the B1 format (ADR-0035): cores (`part: "core"`) and their
+It also checks the B1 format (ADR-0036): cores (`part: "core"`) and their
 layers (`kind: "layer"`, in `decks/<lang>/<native>/`), rules decks, the
 phrasebook, typed notes, `bases`, `wiktionary`, and a path's B1 plan. Some of
 these read the language's other files from disk, so a file validated alone is

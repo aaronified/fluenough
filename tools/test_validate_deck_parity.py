@@ -102,7 +102,7 @@ class ParserParity(unittest.TestCase):
                 self.assertRejected(text, "not text")
 
     def test_free_text_that_is_a_list_or_mapping_is_rejected(self) -> None:
-        # Notes may now be a list of typed notes (ADR-0035), each a mapping.
+        # Notes may now be a list of typed notes (ADR-0036), each a mapping.
         for value, needle in (("[a]", "notes[0] must be a mapping"),
                               ("{ a: b }", "must be text")):
             with self.subTest(value=value):
@@ -145,7 +145,7 @@ pattern:
 
 class PlainScalars(unittest.TestCase):
     """The validator reads plain (unquoted) scalars as YAML 1.2's core schema
-    does, which is how the app's `package:yaml` reads them (ADR-0035). One
+    does, which is how the app's `package:yaml` reads them (ADR-0036). One
     case per row of the table in docs/DECK-FORMAT.md, "YAML values"; each
     value here was checked against `package:yaml` 3.1 (`loadYaml`), which
     agrees with the table in every case."""

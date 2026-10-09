@@ -133,7 +133,7 @@ number 1, and must be written `"1":`.
 ## Core and layer files
 
 A deck may be written as two kinds of file instead of one
-([ADR-0035](adr/0035-b1-deck-format.md)):
+([ADR-0036](adr/0036-b1-deck-format.md)):
 
 - **The core** holds what belongs to the language learnt, the same for
   every learner: card ids, targets, readings, IPA, parts of speech,
@@ -547,7 +547,7 @@ card is in the language learned, its `target`, `alt_target`, `pos`,
 
 A course starts with a small phrasebook: 15 to 25 survival phrases, taught
 whole from the first lesson, never held back until their words are known
-([ADR-0035](adr/0035-b1-deck-format.md)). Greetings, thanks and sorry, yes
+([ADR-0036](adr/0036-b1-deck-format.md)). Greetings, thanks and sorry, yes
 and no, "I don't know Telugu", "I don't understand", "please speak slowly",
 and the like.
 
@@ -890,7 +890,7 @@ that kind the course teaches, not a few chosen ones.
 ## Rules decks
 
 Grammar taught as rules, practised over the words the learner knows
-([ADR-0035](adr/0035-b1-deck-format.md)). A rules deck is **one table**:
+([ADR-0036](adr/0036-b1-deck-format.md)). A rules deck is **one table**:
 its rows are the words of one kind, each with every form listed; its
 columns are the forms, and each column belongs to a **rule**, which has an
 id, a name and an explanation. A case-endings table has a rule for each
@@ -1302,7 +1302,7 @@ units:
 ### The B1 plan
 
 Every path is to carry a plan of the course up to B1, written by whoever
-writes the course and read by the app ([ADR-0035](adr/0035-b1-deck-format.md)).
+writes the course and read by the app ([ADR-0036](adr/0036-b1-deck-format.md)).
 The app shows from it how far a course reaches ("18% of B1 · 12 of 30
 grammar topics"), shows the units not written yet as "Coming", and skips
 them in lessons.
