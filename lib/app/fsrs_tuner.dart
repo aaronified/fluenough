@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/skill_fit.dart';
+import 'app_log.dart';
 import 'memory_progress.dart';
 
 /// Runs one skill's fit and gives what it found.
@@ -17,7 +18,7 @@ Future<SkillFitResult> fitInIsolate(SkillFitJob job) =>
 /// [SkillFit.run] in place: for tests, which run on a fake clock.
 Future<SkillFitResult> fitInPlace(SkillFitJob job) async => SkillFit.run(job);
 
-/// Fits FSRS to the learner (`docs/plans/skill-model.md`): every skill on
+/// Fits FSRS to the learner (ADR-0035): every skill on
 /// Settings' "Adjust to me" ([adjustAll]), and one skill in the background
 /// once it has 10% more answers than at its last fit ([afterReview]).
 ///
@@ -29,9 +30,14 @@ class FsrsTuner extends ChangeNotifier {
     required this.progress,
     required this._clock,
     this._runner = fitInIsolate,
+    this.log,
   });
 
   final ProgressStore progress;
+
+  /// Where each fit run is logged, as its skill and whether it was kept
+  /// (#162).
+  final AppLog? log;
   final DateTime Function() _clock;
   final FitRunner _runner;
 
@@ -206,6 +212,10 @@ class FsrsTuner extends ChangeNotifier {
     if (fitted != null && !_disposed) {
       await progress.putFitted(key, fitted);
     }
+    log?.event(
+      'Fit run: ${key.language} ${key.mode.name}, '
+      '${fitted == null ? 'nothing kept' : 'kept'}',
+    );
     return result;
   }
 

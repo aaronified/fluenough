@@ -1,14 +1,23 @@
 import '../../app.dart';
+import '../../app/features.dart';
 import '../../app/shell_tab.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'deck_detail_page.dart';
 import 'import_fixture.dart';
 import 'import_page.dart';
+import 'decks_page.dart';
 import 'inspect_page.dart';
+import 'path_fixture.dart';
+import 'unit_page.dart';
 
-/// Decks, a deck, and Add a deck, as the design's Gallery lists them. Owned
-/// by B2.
+/// Decks, a unit, a deck, and Add a deck, as the design's Gallery lists
+/// them. Owned by B2.
+///
+/// The path's entries are Aro learning Telugu (`PathFixtures`), as the
+/// owner's design draws it; all but `decks`, which is the tab as it ships,
+/// pass the design's plan of levels and coming units, which no path marks
+/// yet.
 ///
 /// The design's deck is Hindi Core, which is not on this branch (#41), so
 /// `deck` shows Spanish Core for Aro, with a Spanish voice. `deck-novoice` is
@@ -18,10 +27,90 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
   GalleryEntry(
     id: 'decks',
     section: GallerySection.learn,
-    label: 'Decks', // ui-literal-ok: debug-only gallery
-    note: 'Search and language filter', // ui-literal-ok: debug-only gallery
+    label: 'Decks: the path', // ui-literal-ok: debug-only gallery
+    note: 'Opens where you are', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
-    state: (app) => GalleryFixtures.state(app)..shellTab.value = ShellTab.decks,
+    state: (app) => PathFixtures.state(app)..shellTab.value = ShellTab.decks,
+  ),
+  GalleryEntry(
+    id: 'decks-levels',
+    section: GallerySection.learn,
+    label: 'Decks: toward B1', // ui-literal-ok: debug-only gallery
+    note:
+        'Levels, milestones, coming units', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DecksPage(planOf: PathFixtures.planOf),
+    state: PathFixtures.state,
+  ),
+  GalleryEntry(
+    id: 'decks-a1-earned',
+    section: GallerySection.learn,
+    label: 'Decks: A1 earned', // ui-literal-ok: debug-only gallery
+    note: 'A CEFR level as an achievement', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DecksPage(planOf: PathFixtures.planOf),
+    state: (app) => PathFixtures.state(app, upTo: 'te-en-market'),
+  ),
+  GalleryEntry(
+    id: 'decks-another-course',
+    section: GallerySection.learn,
+    label: 'Decks: another course', // ui-literal-ok: debug-only gallery
+    note: 'Course chips switch the path', // ui-literal-ok: debug-only gallery
+    builder: (_) =>
+        const DecksPage(planOf: PathFixtures.planOf, initialLanguage: 'hi'),
+    state: PathFixtures.state,
+  ),
+  GalleryEntry(
+    id: 'decks-search',
+    section: GallerySection.learn,
+    label: 'Decks: search', // ui-literal-ok: debug-only gallery
+    note: 'Units across courses', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DecksPage(
+      planOf: PathFixtures.planOf,
+      initialQuery: 'family', // ui-literal-ok: debug-only gallery
+    ),
+    state: PathFixtures.state,
+  ),
+  GalleryEntry(
+    id: 'decks-incoming-live',
+    section: GallerySection.learn,
+    label: 'Decks, incoming features live', // ui-literal-ok: debug-only gallery
+    note: 'Updates, hours left, Beyond the course', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DecksPage(planOf: PathFixtures.planOf),
+    state: (app) => PathFixtures.state(app, features: FeatureRegistry.all()),
+  ),
+  GalleryEntry(
+    id: 'unit',
+    section: GallerySection.learn,
+    label: 'Unit: Family', // ui-literal-ok: debug-only gallery
+    note: 'Words, then rules, then sentences', // ui-literal-ok: debug-only gallery
+    builder: (_) => const UnitPage(
+      deckId: PathFixtures.familyDeck,
+      plan: PathFixtures.telugu,
+    ),
+    state: PathFixtures.state,
+  ),
+  GalleryEntry(
+    id: 'unit-rules',
+    section: GallerySection.learn,
+    label: 'Unit, rule tables open', // ui-literal-ok: debug-only gallery
+    note: 'Each rule on the words it is practised on', // ui-literal-ok: debug-only gallery
+    builder: (_) => const UnitPage(
+      deckId: PathFixtures.familyDeck,
+      plan: PathFixtures.telugu,
+      openTables: true,
+    ),
+    state: PathFixtures.state,
+  ),
+  GalleryEntry(
+    id: 'unit-word',
+    section: GallerySection.learn,
+    label: 'Unit: a word\'s card', // ui-literal-ok: debug-only gallery
+    note: 'With the sound-alike warning', // ui-literal-ok: debug-only gallery
+    builder: (_) => const UnitPage(
+      deckId: 'te-en-sound-differences',
+      plan: PathFixtures.telugu,
+      openWord: PathFixtures.soundAlikeCard,
+    ),
+    state: PathFixtures.state,
   ),
   GalleryEntry(
     id: 'deck',

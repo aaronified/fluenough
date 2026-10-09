@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
@@ -29,15 +30,18 @@ import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
+import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
 import 'log_files.dart';
+import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
@@ -133,6 +137,8 @@ class AppState extends ChangeNotifier {
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
     this.reports = const NullReportSender(),
+    this._mailShare = const NullMailShare(),
+    AppLog? log,
     this._releases = const NullReleaseCheck(),
     this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
@@ -144,12 +150,15 @@ class AppState extends ChangeNotifier {
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
     Random? random,
+    this._secureRandom,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
        volume = volume ?? FixedVolumeMonitor(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
+       log = log ?? AppLog(),
+       _ownsLog = log == null,
        _profiles = List<Profile>.of(profiles),
        _currentProfileId = currentProfileId ?? profiles.first.id {
     // What is pending follows progress, settings and this state's own
@@ -157,7 +166,10 @@ class AppState extends ChangeNotifier {
     for (final source in <Listenable>[this, this.settings, progress]) {
       source.addListener(_forgetPending);
     }
+    shellTab.addListener(_logTab);
   }
+
+  void _logTab() => log.event('Opened tab ${shellTab.value.name}');
 
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
@@ -194,6 +206,8 @@ class AppState extends ChangeNotifier {
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
     ReportSender reports = const NullReportSender(),
+    MailShare mailShare = const NullMailShare(),
+    AppLog? log,
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
@@ -222,6 +236,8 @@ class AppState extends ChangeNotifier {
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
       reports: reports,
+      mailShare: mailShare,
+      log: log,
       releases: releases,
       releaseNotes: releaseNotes,
       installer: installer,
@@ -233,6 +249,7 @@ class AppState extends ChangeNotifier {
       profiles: profiles,
       currentProfileId: currentProfileId,
       random: Random(0),
+      secureRandom: Random(1),
     );
     // Past the first-launch setup (#53, #117), unless a test brings its
     // own: speaking English, and learning every language.
@@ -271,6 +288,29 @@ class AppState extends ChangeNotifier {
   /// reporter's mail app, or nowhere in a build that was given none.
   final ReportSender reports;
 
+  /// Reviewer mode (docs/plans/deck-browser.md): the rater code, the
+  /// reviews kept until sent, and the mail that sends them to [AppLinks.feedbackEmail]
+  /// through [_mailShare], the phone's share.
+  late final Reviewing reviewing = Reviewing(
+    settings: settings,
+    clock: _clock,
+    random: _secureRandom ?? Random.secure(),
+    share: _mailShare,
+    address: AppLinks.feedbackEmail,
+    deckById: deckById,
+    log: log,
+  );
+  final MailShare _mailShare;
+
+  /// Where rater codes come from: the phone's secure source, unless a test
+  /// gives a seeded one.
+  final Random? _secureRandom;
+
+  /// The app's own log (#162): errors, warnings and key events, which
+  /// Settings shows and a report attaches if the reporter agrees.
+  final AppLog log;
+  final bool _ownsLog;
+
   /// Settings' "Check for updates", the check at launch, and installing
   /// what it finds (ADR-0017). Has its own notifier; what it finds is kept
   /// in [settings].
@@ -290,12 +330,13 @@ class AppState extends ChangeNotifier {
   final DownloadStore _downloads;
 
   /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
-  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// refit after a review (ADR-0035). Has its own
   /// notifier.
   late final FsrsTuner tuner = FsrsTuner(
     progress: progress,
     clock: _clock,
     runner: _fitRunner,
+    log: log,
   );
   final FitRunner _fitRunner;
 
@@ -422,6 +463,12 @@ class AppState extends ChangeNotifier {
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
 
+  /// [language]'s own path (ADR-0036), shared by every native language it
+  /// is taught from, with the units it plans and its regions; null if it
+  /// has none.
+  LanguagePath? languagePathOf(String language) =>
+      _catalog.languagePaths[language];
+
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 
@@ -485,6 +532,7 @@ class AppState extends ChangeNotifier {
   /// it where its wildcards say (`CoursePath.placing`).
   Future<void> addDeck(Deck deck, String text) async {
     await deckCatalog.added!.save(deck.id, text);
+    log.event('Deck added: ${deck.id}');
     await _reloadDecks();
   }
 
@@ -492,6 +540,7 @@ class AppState extends ChangeNotifier {
   /// back if the deck is added again.
   Future<void> removeDeck(String deckId) async {
     await deckCatalog.added!.remove(deckId);
+    log.event('Deck removed: $deckId');
     await _reloadDecks();
   }
 
@@ -522,9 +571,11 @@ class AppState extends ChangeNotifier {
       _catalog = await deckCatalog.load();
       _status = CatalogStatus.ready;
       _mapSkills();
-    } catch (error) {
+      log.event('Decks loaded: ${decks.length}');
+    } catch (error, stack) {
       _loadError = error;
       _status = CatalogStatus.failed;
+      log.error(describeError('Decks failed to load', error, stack));
     }
     notifyListeners();
     await refreshVoices();
@@ -1585,12 +1636,15 @@ class AppState extends ChangeNotifier {
     _disposed = true;
     settings.removeListener(_forgetPending);
     progress.removeListener(_forgetPending);
-    shellTab.dispose();
+    shellTab
+      ..removeListener(_logTab)
+      ..dispose();
     updates.dispose();
     tuner.dispose();
     pacing.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
+    if (_ownsLog) log.dispose();
     super.dispose();
   }
 }

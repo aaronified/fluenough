@@ -59,14 +59,17 @@ the ISO 15919 readings (#180) and an earlier head of the sound work (#182,
   `drill_page_test.dart`, "at text scale 2.0 nothing overflows production,
   near miss, card text at 1.0" and "… at 1.4", and `accessibility_test.dart`,
   "at the largest font size, 2.0 on Android production, near miss".
-- Rebase it onto `main` once #180 and #182 merge, and run the full suite.
+- #180 and #182 are merged (0.3.2), so rebase it onto `main` and run the full suite.
 - A grammar question does not show the IPA of the word it asks about; only
   Inspect does.
 
-Branch `claude/ecstatic-wright-b1z4x5` has a draft of the app side:
-`LanguageInfo.typed` and `scoped`, `CardExample.language`, and the `ipa`
-script needing no reading. It also has a draft ADR,
-`docs/adr/0026-ipa-course-and-icons.md`, to renumber.
+The draft of the app side (`LanguageInfo.typed` and `scoped`,
+`CardExample.language`, and the `ipa` script needing no reading), and a
+draft ADR, `docs/adr/0026-ipa-course-and-icons.md`, are not on `main`, and no
+longer on branch `claude/ecstatic-wright-b1z4x5`: that branch was reused for
+the skill model and the support mails (#432, #433), and `LanguageInfo` on
+`main` has no `typed` or `scoped`. The app side is still to be written; the
+next free ADR number is 0037.
 
 ## What is left
 

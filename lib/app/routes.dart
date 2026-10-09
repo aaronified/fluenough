@@ -5,6 +5,7 @@ import '../core/feedback/report.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
 import '../features/decks/inspect_page.dart';
+import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
 import '../features/gallery/gallery_page.dart';
 import '../features/placement/learn_languages_page.dart';
@@ -13,7 +14,10 @@ import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
 import '../features/profiles/spoken_languages_page.dart';
 import '../features/report/report_page.dart';
+import '../features/review/review_page.dart';
+import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/settings/app_log_page.dart';
 import '../features/settings/appearance_page.dart';
 import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
@@ -35,6 +39,10 @@ import 'shell_tab.dart';
 abstract final class AppRoutes {
   /// A deck's screen. Argument: the deck id, a [String].
   static const String deck = '/deck';
+
+  /// A unit of a course's path. Argument: the id of a deck in it, a
+  /// [String].
+  static const String unit = '/unit';
 
   /// Add a deck.
   static const String import = '/import';
@@ -64,6 +72,9 @@ abstract final class AppRoutes {
   /// Where the decks' texts come from, opened from Settings.
   static const String sources = '/sources';
 
+  /// The app's own log (#162), opened from Settings and from a report.
+  static const String appLog = '/app-log';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -84,12 +95,20 @@ abstract final class AppRoutes {
   /// [String].
   static const String inspect = '/inspect';
 
+  /// Reviewing a unit's cards (docs/plans/deck-browser.md). Argument: the
+  /// id of a deck in the unit, a [String].
+  static const String review = '/review';
+
+  /// What waits for review in the reviewer's languages.
+  static const String waitingForReview = '/waiting-for-review';
+
   /// The page for [settings], or null for an unknown name or a wrong
   /// argument, which Flutter reports.
   static Route<void>? onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
     final Widget? page = switch (settings.name) {
       deck when args is String => DeckDetailPage(deckId: args),
+      unit when args is String => UnitPage(deckId: args),
       import => const ImportPage(),
       drill when args is DrillRequest => DrillPage(request: args),
       summary when args is SessionResult => SummaryPage(result: args),
@@ -101,6 +120,7 @@ abstract final class AppRoutes {
       voices => const VoicesPage(),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
+      appLog => const AppLogPage(),
       scriptGuide when args is String => ScriptGuidePage(languageCode: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -108,6 +128,8 @@ abstract final class AppRoutes {
       gallery when kDebugMode => const GalleryPage(),
       report when args is ReportRequest => ReportPage(request: args),
       inspect when args is String => InspectPage(deckId: args),
+      review when args is String => ReviewPage(deckId: args),
+      waitingForReview => const WaitingForReviewPage(),
       _ => null,
     };
     if (page == null) return null;
@@ -121,6 +143,10 @@ abstract final class AppNavigator {
   static Future<void> openDeck(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.deck, arguments: deckId);
 
+  /// The unit of its course's path that [deckId] is in.
+  static Future<void> openUnit(BuildContext context, String deckId) =>
+      Navigator.of(context).pushNamed(AppRoutes.unit, arguments: deckId);
+
   /// A report from the screen [request] was raised on.
   static Future<void> openReport(BuildContext context, ReportRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.report, arguments: request);
@@ -128,6 +154,14 @@ abstract final class AppNavigator {
   /// Every card of [deckId] in full, with its id.
   static Future<void> openInspect(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.inspect, arguments: deckId);
+
+  /// Reviewing the unit of its course's path that [deckId] is in.
+  static Future<void> openReview(BuildContext context, String deckId) =>
+      Navigator.of(context).pushNamed(AppRoutes.review, arguments: deckId);
+
+  /// What waits for review in the reviewer's languages.
+  static Future<void> openWaitingForReview(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.waitingForReview);
 
   static Future<void> openImport(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.import);
@@ -182,6 +216,10 @@ abstract final class AppNavigator {
 
   static Future<void> openSources(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.sources);
+
+  /// The app's own log, a line an entry.
+  static Future<void> openAppLog(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.appLog);
 
   /// How [languageCode]'s script works (#30): a script deck's Tips.
   static Future<void> openScriptGuide(

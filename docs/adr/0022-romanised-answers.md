@@ -4,6 +4,10 @@
   ISO 15919 letters as said; typed answers are graded as this ADR says.
 - **Date:** 2026-10-03
 
+> **Note, 2026-10-09.** The readings ADR-0025 introduced are based on ISO
+> 15919's letters, with deliberate deviations, not strictly ISO 15919; see
+> the [list of deviations](../../README.md#where-the-readings-depart-from-iso-15919).
+
 ## Context
 
 The owner asked for "transliteration support for answers, as no script

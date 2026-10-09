@@ -134,7 +134,7 @@ class FsrsFitGate {
 ///   but only those given at or after `from` are predicted, so only they
 ///   are learnt from, gated on, weighted and scored. A skill's window is
 ///   its reviews of the last three months or its last 1,000, whichever is
-///   more (`docs/plans/skill-model.md`).
+///   more (ADR-0035).
 /// - **A start** (`start`): 21 values that fitting starts from in place of
 ///   FSRS-6's defaults, such as the skill's previous fit. They are what
 ///   the search for the first stabilities is pulled towards and fills in
