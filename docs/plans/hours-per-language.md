@@ -52,8 +52,7 @@ Decided with the owner:
    - **Remembered:** an interval of 21 days or more, Anki's "mature".
    - **Reviews it still needs:** from its schedule, the right answers it
      takes to reach 21 days, raised by this learner's share of misses.
-     - Under SM-2, a new pair needs four: 1, 6, 15, then 38 days.
-     - Under FSRS (`fsrs.md`), it is simulated from the pair's stability.
+     - Under FSRS, it is simulated from the pair's stability.
    - **Time per answer:** the learner's median for that skill, capped. Until
      there are 20 answers in a skill, it uses the 20 seconds Today uses.
    - **The cards counted:** the path's decks. The script decks are left out

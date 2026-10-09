@@ -88,6 +88,8 @@ class CardRef {
       examples:
           examples ?? (sameNative ? written.examples : const <CardExample>[]),
       modes: modes ?? written.modes,
+      pair: written.pair,
+      picture: written.picture,
     );
   }
 }
@@ -118,6 +120,8 @@ class Card {
     this.audio,
     this.examples = const <CardExample>[],
     this.modes = const <DrillMode>{},
+    this.pair,
+    this.picture,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -169,6 +173,16 @@ class Card {
   /// resolved against the deck by [modesIn].
   final Set<DrillMode> modes;
 
+  /// The id of a word that sounds almost the same, its minimal-pair partner,
+  /// such as కాలం (time) for కలం (pen). Hear offers its meaning among the
+  /// options, so that a learner who confuses the two is caught (ADR-0034).
+  final String? pair;
+
+  /// A picture of what the word means, for a concrete word: one emoji, drawn
+  /// from Noto Emoji ([picturePath]). A cue beside the meaning in Write, and
+  /// beside each meaning Hear offers (ADR-0034).
+  final String? picture;
+
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
   ///
@@ -206,6 +220,34 @@ class Card {
   bool get rearranges {
     final words = wordsOf(target).length;
     return words >= 3 || (pos == 'phrase' && words >= 2);
+  }
+
+  /// Every meaning a typed meaning is graded against (ADR-0034): [native]
+  /// whole, then each part of it between `/`, `;` and `,` outside brackets,
+  /// then [altNative], each once. `to go, to leave` accepts `to go`.
+  List<String> get meanings {
+    final seen = <String>{};
+    return <String>[
+      for (final m in <String>[native, ..._parts(native), ...altNative])
+        if (m.isNotEmpty && seen.add(m)) m,
+    ];
+  }
+
+  static List<String> _parts(String text) {
+    final parts = <String>[];
+    var depth = 0;
+    var start = 0;
+    for (var i = 0; i < text.length; i++) {
+      final c = text[i];
+      if (c == '(' || c == '[') depth++;
+      if ((c == ')' || c == ']') && depth > 0) depth--;
+      if (depth == 0 && (c == '/' || c == ';' || c == ',')) {
+        parts.add(text.substring(start, i).trim());
+        start = i + 1;
+      }
+    }
+    if (parts.isEmpty) return const <String>[];
+    return parts..add(text.substring(start).trim());
   }
 
   /// The accepted answers for [mode], the first being the canonical one.
@@ -268,3 +310,15 @@ final RegExp _edges = RegExp(
 
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 final RegExp _space = RegExp(r'\s+');
+
+/// The bundled image of [emoji], a card's [Card.picture]: Noto Emoji's
+/// picture of it, named by its code points in hex of at least four digits,
+/// joined by `_`, without the variation selector U+FE0F
+/// (`tools/pictures.py` copies it under this name).
+String picturePath(String emoji) {
+  final points = <String>[
+    for (final rune in emoji.runes)
+      if (rune != 0xfe0f) rune.toRadixString(16).padLeft(4, '0'),
+  ];
+  return 'assets/pictures/emoji_u${points.join('_')}.png';
+}

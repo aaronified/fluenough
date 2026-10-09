@@ -123,6 +123,7 @@ void main() {
   testWidgets('listening: with the keyboard open the play button, the field '
       'and Check are in view, and Can\'t listen now waits', (tester) async {
     usePhoneWithBars(tester);
+    // Hear typed, as a remembered word is asked: its meaning (ADR-0034).
     await pumpScreen(
       tester,
       DrillPage(
@@ -130,13 +131,15 @@ void main() {
           'es-en-core-100',
           skill: Skill.listening,
         ),
+        preset: const DrillPreset(target: 'el hombre'),
       ),
       state: AppState.test(tts: FixedTtsEngine(const <String>{'es'})),
     );
     final l10n = l10nOf(tester);
+    expect(sessionOf(tester).hearsMeaning, isTrue);
     expect(find.byType(CantNowButton), findsOneWidget);
 
-    await tester.enterText(find.byType(TextField), 'el');
+    await tester.enterText(find.byType(TextField), 'the');
     await setKeyboard(tester, open: true);
     expect(find.byType(CantNowButton), findsNothing);
     expectInView(tester, find.byType(PlayButton));
@@ -146,7 +149,7 @@ void main() {
 
     await setKeyboard(tester, open: false);
     expect(find.byType(CantNowButton), findsOneWidget);
-    expect(find.text('el'), findsOneWidget);
+    expect(find.text('the'), findsOneWidget);
   });
 
   testWidgets('grammar: with the keyboard open the prompt, the slot, the '

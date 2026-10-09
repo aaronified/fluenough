@@ -15,8 +15,8 @@ import 'today_numbers.dart';
 const Set<Skill> spokenSkills = <Skill>{Skill.listening, Skill.speaking};
 
 /// Quick revision on Today (ADR-0029): 5, 10, 15 or 20 words the learner
-/// has been taught, picked at random, due or not. A miss is recorded; a
-/// right answer is not.
+/// has been taught, picked at random, due or not. Every answer is recorded
+/// (ADR-0029, as ADR-0033 amends it).
 ///
 /// A row of choices above the sizes narrows it to some skills (ADR-0030):
 /// all of them, the spoken ones, or one skill switched on.

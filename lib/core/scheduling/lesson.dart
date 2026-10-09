@@ -71,11 +71,11 @@ List<LessonQuestion> lessonQuestions(Card card) {
     Difficulty.easy => const <LessonQuestion>[
       (mode: DrillMode.recognition, ask: Ask.chooseMeaning),
       (mode: DrillMode.speaking, ask: Ask.own),
-      (mode: DrillMode.listening, ask: Ask.hearAndChoose),
+      (mode: DrillMode.listening, ask: Ask.hearMeaning),
       (mode: DrillMode.production, ask: Ask.chooseWord),
     ],
     Difficulty.medium => const <LessonQuestion>[
-      (mode: DrillMode.listening, ask: Ask.hearAndChoose),
+      (mode: DrillMode.listening, ask: Ask.hearMeaning),
       (mode: DrillMode.recognition, ask: Ask.matchPairs),
       (mode: DrillMode.production, ask: Ask.chooseWord),
       (mode: DrillMode.speaking, ask: Ask.own),
@@ -86,7 +86,7 @@ List<LessonQuestion> lessonQuestions(Card card) {
         ask: card.rearranges ? Ask.rearrange : Ask.own,
       ),
       (mode: DrillMode.speaking, ask: Ask.own),
-      (mode: DrillMode.listening, ask: Ask.hearAndChoose),
+      (mode: DrillMode.listening, ask: Ask.hearMeaning),
       (mode: DrillMode.recognition, ask: Ask.chooseMeaning),
     ],
   };

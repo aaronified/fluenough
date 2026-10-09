@@ -1,0 +1,129 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/ability.dart';
+import 'package:fluenough/core/scheduling/skill_map.dart';
+
+typedef R = ({String cardId, String deckId, DrillMode mode, int grade});
+
+R r(
+  String cardId,
+  int grade, [
+  DrillMode mode = DrillMode.listening,
+  String deckId = 'te-en-words',
+]) => (cardId: cardId, deckId: deckId, mode: mode, grade: grade);
+
+void main() {
+  test('starts even: ability 0, strength one half', () {
+    final a = Abilities.replay(const <R>[]);
+    expect(a.of('te', DrillMode.listening), 0);
+    expect(a.strength('te', DrillMode.listening), 0.5);
+  });
+
+  test('a right answer raises the ability, a miss lowers it', () {
+    final right = Abilities.replay([r('te-0001', 4)]);
+    final wrong = Abilities.replay([r('te-0001', 1)]);
+    expect(right.of('te', DrillMode.listening), closeTo(0.5, 1e-9));
+    expect(wrong.of('te', DrillMode.listening), closeTo(-0.5, 1e-9));
+  });
+
+  test('is kept per language and schedule, from the card id', () {
+    final a = Abilities.replay([
+      r('te-0001', 4),
+      r('te-0002', 4, DrillMode.speaking),
+      r('hi-0001', 1),
+    ]);
+    expect(a.of('te', DrillMode.listening), greaterThan(0));
+    expect(a.of('te', DrillMode.speaking), greaterThan(0));
+    expect(a.of('hi', DrillMode.listening), lessThan(0));
+    expect(a.of('ta', DrillMode.listening), 0);
+    expect(a.answersIn('te', DrillMode.listening), 1);
+    expect(a.answersIn('te', DrillMode.production), 0);
+  });
+
+  test('recognition is a skill of its own', () {
+    final a = Abilities.replay([r('te-0001', 4, DrillMode.recognition)]);
+    expect(a.keys, [(language: 'te', mode: DrillMode.recognition)]);
+    expect(a.of('te', DrillMode.recognition), closeTo(0.5, 1e-9));
+  });
+
+  test('a right answer moves the skill it implies, by its share', () {
+    final a = Abilities.replay([r('te-0001', 4)]);
+    expect(
+      a.of('te', DrillMode.recognition),
+      closeTo(0.5 * SkillMap.implied, 1e-9),
+      reason: 'hearing the meaning implies recognising it',
+    );
+    expect(a.keys, [(language: 'te', mode: DrillMode.listening)]);
+    final b = Abilities.replay([r('te-0001', 4, DrillMode.production)]);
+    expect(b.of('te', DrillMode.recognition), closeTo(0.5 * 0.5, 1e-9));
+    expect(b.of('te', DrillMode.listening), 0);
+  });
+
+  test('a miss is blamed on the skills it implies too, by their share', () {
+    final a = Abilities.replay([r('te-0001', 1, DrillMode.production)]);
+    expect(a.of('te', DrillMode.production), closeTo(-0.5, 1e-9));
+    expect(
+      a.of('te', DrillMode.recognition),
+      closeTo(-0.5 * SkillMap.implied, 1e-9),
+    );
+    expect(a.of('te', DrillMode.listening), 0);
+    expect(a.answersIn('te', DrillMode.recognition), 0);
+  });
+
+  test('recognition implies nothing: the easier skill', () {
+    final a = Abilities.replay([r('te-0001', 4, DrillMode.recognition)]);
+    for (final other in [
+      DrillMode.production,
+      DrillMode.listening,
+      DrillMode.speaking,
+    ]) {
+      expect(a.of('te', other), 0, reason: '$other');
+    }
+  });
+
+  test('hearing in script practice implies writing, not recognition', () {
+    final a = Abilities.replay([
+      r('te-0001', 4, DrillMode.listening, 'te-en-script-vowels'),
+    ], skills: const SkillMap(formHeardIn: <String>{'te-en-script-vowels'}));
+    expect(a.of('te', DrillMode.production), closeTo(0.25, 1e-9));
+    expect(a.of('te', DrillMode.recognition), 0);
+  });
+
+  test('grammar moves only grammar', () {
+    final a = Abilities.replay([r('te-0001', 4, DrillMode.grammar)]);
+    expect(a.of('te', DrillMode.grammar), closeTo(0.5, 1e-9));
+    expect(a.of('te', DrillMode.listening), 0);
+  });
+
+  test('moves less as answers add up', () {
+    expect(Abilities.k(0), 1);
+    expect(Abilities.k(20), 0.5);
+    final early = Abilities.replay([r('te-0001', 4)]);
+    final late = Abilities.replay([
+      for (var i = 0; i < 40; i++) r('te-${1000 + i}', i.isEven ? 4 : 1),
+    ]);
+    final before = late.of('te', DrillMode.listening);
+    late.add(cardId: 'te-2000', mode: DrillMode.listening, grade: 4);
+    expect(
+      late.of('te', DrillMode.listening) - before,
+      lessThan(early.of('te', DrillMode.listening)),
+    );
+  });
+
+  test('a pair answered right again and again comes to look easy, so '
+      'another right answer there says less', () {
+    final a = Abilities.replay([for (var i = 0; i < 10; i++) r('te-0001', 4)]);
+    final b = Abilities.replay([
+      for (var i = 0; i < 10; i++) r('te-${i + 1}', 4),
+    ]);
+    expect(
+      a.of('te', DrillMode.listening),
+      lessThan(b.of('te', DrillMode.listening)),
+    );
+  });
+
+  test('the language of a card id', () {
+    expect(Abilities.languageOf('te-0053'), 'te');
+    expect(Abilities.languageOf('yue-0001'), 'yue');
+  });
+}

@@ -90,6 +90,22 @@ class CardIds(unittest.TestCase):
         self.assertEqual(len(problems), 1)
         self.assertIn("no deck writes card es-9999", problems[0])
 
+    def test_a_pair_names_a_card_written_in_the_language(self) -> None:
+        paired = WRITTEN + '    pair: es-9002\n'
+        partner = '  - id: es-9002\n    target: "pero"\n    native: "but"\n'
+        self.assertEqual(self.across(es_en_a=vocab("es-en-a", paired),
+                                     es_en_b=vocab("es-en-b", partner)), [])
+        problems = self.across(es_en_a=vocab("es-en-a", paired))
+        self.assertEqual(len(problems), 1)
+        self.assertIn("pair names card es-9002", problems[0])
+
+    def test_a_pair_is_another_card_of_the_language(self) -> None:
+        for bad in ("es-9001", "hi-0001", "dog"):
+            with self.subTest(bad=bad):
+                (rep,) = self.reports(es_en_a=vocab(
+                    "es-en-a", WRITTEN + f'    pair: "{bad}"\n'))
+                self.assertTrue(any("pair" in e for e in rep.errors), rep.errors)
+
     def test_a_ref_to_a_card_its_own_deck_writes(self) -> None:
         (rep,) = self.reports(es_en_a=vocab("es-en-a", WRITTEN + "  - ref: es-9001\n"))
         self.assertTrue(any("already in the deck" in e for e in rep.errors), rep.errors)

@@ -20,6 +20,8 @@ final Map<String, Future<AppState> Function()> states =
       'with voices': () async =>
           AppState.test(tts: FixedTtsEngine(const <String>{'es', 'hi'})),
       'mid-streak': () async => GalleryFixtures.state(await _loaded()),
+      'adjusted to you': () async =>
+          GalleryFixtures.adjusted(GalleryFixtures.state(await _loaded())),
       'all done': () async {
         final state = GalleryFixtures.state(await _loaded());
         await state.load();

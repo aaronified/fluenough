@@ -45,6 +45,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
     this._autoUpdateCheck = false,
+    this._autoAdjust = true,
     List<String> spokenLanguages = const <String>[],
     List<String> learningLanguages = const <String>[],
     Set<String> placedDecks = const <String>{},
@@ -88,6 +89,7 @@ class SettingsNotifier extends ChangeNotifier {
   bool _reminder;
   TimeOfDay _reminderTime;
   bool _autoUpdateCheck;
+  bool _autoAdjust;
   DateTime? _lastUpdateCheck;
   String? _latestRelease;
   String? _pendingUpdate;
@@ -415,6 +417,13 @@ class SettingsNotifier extends ChangeNotifier {
   set autoUpdateCheck(bool value) =>
       _set(_autoUpdateCheck, value, (v) => _autoUpdateCheck = v);
 
+  /// Whether a skill is fitted again, in the background, once it has 10%
+  /// more answers than at its last fit (`docs/plans/skill-model.md`). On
+  /// by default (owner, 2026-10-09).
+  bool get autoAdjust => _autoAdjust;
+  set autoAdjust(bool value) =>
+      _set(_autoAdjust, value, (v) => _autoAdjust = v);
+
   /// When a check last reached GitHub, and the newest version it found
   /// there, such as `0.2.0`. Like [factShownAt], not something the learner
   /// sets: kept so that a restart neither asks again within the day nor
@@ -460,6 +469,7 @@ class SettingsNotifier extends ChangeNotifier {
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
     'auto_update_check': '$_autoUpdateCheck',
+    'auto_adjust': '$_autoAdjust',
     'last_update_check': '${_lastUpdateCheck?.millisecondsSinceEpoch ?? ''}',
     'latest_release': _latestRelease ?? '',
     'pending_update': _pendingUpdate ?? '',
@@ -540,6 +550,7 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('reminder', flag) case final v?) reminder = v;
     if (pick('reminder_time', _parseTime) case final v?) reminderTime = v;
     if (pick('auto_update_check', flag) case final v?) autoUpdateCheck = v;
+    if (pick('auto_adjust', flag) case final v?) autoAdjust = v;
     if (pick('last_update_check', int.tryParse) case final v?) {
       lastUpdateCheck = DateTime.fromMillisecondsSinceEpoch(v);
     }

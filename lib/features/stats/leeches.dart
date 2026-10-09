@@ -3,21 +3,21 @@ import 'package:flutter/foundation.dart';
 import '../../app/memory_progress.dart';
 import '../../core/models/card.dart';
 import '../../core/scheduling/replay.dart';
-import '../../core/scheduling/sm2.dart';
+import '../../core/scheduling/fsrs.dart';
 import 'stats_numbers.dart';
 
 /// Lapses at which a pair counts as a leech: #19's default. The copy takes it
 /// as a placeholder (`leechesIntro`), so making it a setting changes no text.
 const int kLeechThreshold = 5;
 
-/// One pair missed again and again: [Sm2State.lapses] at or over the
+/// One pair missed again and again: [FsrsState.lapses] at or over the
 /// threshold.
 class Leech {
   const Leech({required this.key, required this.card, required this.state});
 
   final ProgressKey key;
   final Card card;
-  final Sm2State state;
+  final FsrsState state;
 
   int get lapses => state.lapses;
 }

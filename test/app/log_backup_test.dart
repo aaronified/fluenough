@@ -6,15 +6,15 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
-Map<ProgressKey, (int, double, int, DateTime, int)> byValue(
-  Map<ProgressKey, Sm2State> states,
+Map<ProgressKey, (double, double, int, DateTime, int)> byValue(
+  Map<ProgressKey, FsrsState> states,
 ) => {
   for (final e in states.entries)
     e.key: (
-      e.value.repetitions,
-      e.value.easeFactor,
+      e.value.stability,
+      e.value.difficulty,
       e.value.intervalDays,
       e.value.dueAt,
       e.value.lapses,
@@ -28,7 +28,11 @@ List<(String, int, int)> reviewsOf(ProgressStore p) => [
 /// Imports [p]'s own export into [into]. How many reviews were new.
 Future<int> restore(ProgressStore p, ProgressStore into) {
   final backup = LogJsonl.decode(p.exportJsonl());
-  return into.importLog(backup.reviews, backup.leechActions);
+  return into.importLog(
+    backup.reviews,
+    backup.leechActions,
+    fitted: backup.fitted,
+  );
 }
 
 void main() {

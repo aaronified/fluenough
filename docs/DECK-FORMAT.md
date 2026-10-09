@@ -111,7 +111,7 @@ cards:
 | `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, ISO 15919 letters as the word is said. Required in practice for non-Latin scripts. |
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
-| `alt_native` | no | Additional answers accepted in recognition drills. |
+| `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `phrase`, `particle`, `other`. |
 | `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
@@ -119,6 +119,8 @@ cards:
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading` and `ipa`. |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
+| `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0412` (కాలం, time) on కలం (pen). Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. |
+| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
 
 ### A note on `id`
 

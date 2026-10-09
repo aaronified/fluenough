@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 final now = DateTime(2026, 9, 28, 19);
 
@@ -15,21 +15,23 @@ Card card(String id, {Set<DrillMode> modes = const {}}) => Card(
 );
 
 /// A state due [daysAgo] days before [now]; negative means in the future.
-Sm2State dueDaysAgo(int daysAgo) => Sm2State(
+FsrsState dueDaysAgo(int daysAgo) => FsrsState(
+  stability: 6,
+  difficulty: 5,
   repetitions: 2,
-  easeFactor: Sm2.defaultEase,
   intervalDays: 6,
   dueAt: now.subtract(Duration(days: daysAgo)),
+  lastReviewAt: now.subtract(Duration(days: daysAgo + 6)),
 );
 
 SessionQueue build(
   List<Card> cards, {
-  Map<(String, DrillMode), Sm2State> states = const {},
+  Map<(String, DrillMode), FsrsState> states = const {},
   bool voice = true,
   int newCardLimit = 20,
   Set<DrillMode>? modes,
 }) {
-  Sm2State? lookup(Card c, DrillMode m) => states[(c.id, m)];
+  FsrsState? lookup(Card c, DrillMode m) => states[(c.id, m)];
   bool hasVoice(Card _) => voice;
   return modes == null
       ? SessionQueue.build(
@@ -71,7 +73,7 @@ void main() {
       );
     });
 
-    test('a new card starts with recognition', () {
+    test('a new card starts with Recognition', () {
       final queue = build([card('a'), card('b')]);
       expect(ids(queue.fresh), ['a:recognition', 'b:recognition']);
       expect(queue.due, isEmpty);
@@ -111,7 +113,7 @@ void main() {
         for (var i = 0; i < n; i++)
           SessionItem(
             card: card('$name$i'),
-            mode: DrillMode.recognition,
+            mode: DrillMode.production,
             state: null,
           ),
       ];
@@ -139,6 +141,33 @@ void main() {
       );
       expect(ids(queue.fresh), ['a:production']);
     });
+
+    test('the cap counts pairs: a card known in writing is new to hear', () {
+      final queue = build(
+        [card('a')],
+        states: {
+          ('a', DrillMode.recognition): dueDaysAgo(-3),
+          ('a', DrillMode.production): dueDaysAgo(-3),
+        },
+      );
+      expect(ids(queue.fresh), ['a:listening']);
+    });
+
+    test('recognition is a schedule: a new pair, and due like the others '
+        '(ADR-0034)', () {
+      final queue = build(
+        [
+          card('a', modes: {DrillMode.recognition}),
+          card('b', modes: {DrillMode.recognition}),
+        ],
+        states: {('b', DrillMode.recognition): dueDaysAgo(5)},
+      );
+      expect(ids(queue.due), ['b:recognition']);
+      expect(ids(queue.fresh), ['a:recognition']);
+      expect(ids(build([card('c')]).fresh), [
+        'c:recognition',
+      ], reason: 'a new word starts with Recognition');
+    });
   });
 
   group('due cards', () {
@@ -146,15 +175,15 @@ void main() {
       final queue = build(
         [card('a'), card('b'), card('c'), card('new')],
         states: {
-          ('a', DrillMode.recognition): dueDaysAgo(1),
-          ('b', DrillMode.recognition): dueDaysAgo(5),
-          ('c', DrillMode.recognition): dueDaysAgo(3),
+          ('a', DrillMode.production): dueDaysAgo(1),
+          ('b', DrillMode.production): dueDaysAgo(5),
+          ('c', DrillMode.production): dueDaysAgo(3),
         },
       );
       expect(ids(queue.items), [
-        'b:recognition',
-        'c:recognition',
-        'a:recognition',
+        'b:production',
+        'c:production',
+        'a:production',
         'new:recognition',
       ]);
       expect(queue.due.every((i) => !i.isNew), isTrue);
@@ -164,19 +193,19 @@ void main() {
       final queue = build(
         [card('z'), card('y')],
         states: {
-          ('z', DrillMode.recognition): dueDaysAgo(2),
-          ('y', DrillMode.recognition): dueDaysAgo(2),
+          ('z', DrillMode.production): dueDaysAgo(2),
+          ('y', DrillMode.production): dueDaysAgo(2),
         },
       );
-      expect(ids(queue.due), ['z:recognition', 'y:recognition']);
+      expect(ids(queue.due), ['z:production', 'y:production']);
     });
 
     test('reviews are never held back by the new-card cap', () {
       final queue = build(
         [card('a'), card('b')],
         states: {
-          ('a', DrillMode.recognition): dueDaysAgo(1),
-          ('b', DrillMode.recognition): dueDaysAgo(1),
+          ('a', DrillMode.production): dueDaysAgo(1),
+          ('b', DrillMode.production): dueDaysAgo(1),
         },
         newCardLimit: 0,
       );
@@ -197,7 +226,7 @@ void main() {
       final queue = build(
         [card('a')],
         states: {
-          ('a', DrillMode.recognition): dueDaysAgo(1),
+          ('a', DrillMode.listening): dueDaysAgo(1),
           ('a', DrillMode.production): dueDaysAgo(4),
         },
       );
@@ -207,9 +236,9 @@ void main() {
     test('a card with a due mode adds no new mode as well', () {
       final queue = build(
         [card('a')],
-        states: {('a', DrillMode.recognition): dueDaysAgo(1)},
+        states: {('a', DrillMode.production): dueDaysAgo(1)},
       );
-      expect(ids(queue.items), ['a:recognition']);
+      expect(ids(queue.items), ['a:production']);
     });
 
     test('no card appears twice', () {
@@ -253,7 +282,7 @@ void main() {
     test('a mode the learner switched off is never offered', () {
       final queue = build(
         [card('a')],
-        states: {('a', DrillMode.recognition): dueDaysAgo(1)},
+        states: {('a', DrillMode.listening): dueDaysAgo(1)},
         modes: {DrillMode.production},
       );
       expect(ids(queue.items), ['a:production']);
@@ -270,10 +299,10 @@ void main() {
     test('counts items per mode', () {
       final queue = build(
         [card('a'), card('b'), card('c')],
-        states: {('c', DrillMode.production): dueDaysAgo(1)},
+        states: {('c', DrillMode.listening): dueDaysAgo(1)},
       );
       expect(queue.countByMode(), {
-        DrillMode.production: 1,
+        DrillMode.listening: 1,
         DrillMode.recognition: 2,
       });
       expect(queue.length, 3);
@@ -287,9 +316,9 @@ void main() {
     final queue = SessionQueue.build(
       cards: [early, later, unseen],
       stateOf: (c, m) => switch ((c.id, m)) {
-        ('early', DrillMode.recognition) => dueDaysAgo(-5),
+        ('early', DrillMode.listening) => dueDaysAgo(-5),
         ('early', DrillMode.production) => dueDaysAgo(-2),
-        ('later', DrillMode.recognition) => dueDaysAgo(-9),
+        ('later', DrillMode.listening) => dueDaysAgo(-9),
         _ => null,
       },
       hasVoice: (_) => true,
@@ -301,7 +330,7 @@ void main() {
     // One mode per card, the one due soonest; soonest card first.
     expect(queue.due.map((i) => (i.card.id, i.mode)), [
       ('early', DrillMode.production),
-      ('later', DrillMode.recognition),
+      ('later', DrillMode.listening),
     ]);
     // Without it, nothing is due yet.
     expect(
@@ -319,7 +348,7 @@ void main() {
   test('withoutDue keeps only the new pairs', () {
     final queue = build(
       [card('a'), card('b')],
-      states: {('a', DrillMode.recognition): dueDaysAgo(1)},
+      states: {('a', DrillMode.production): dueDaysAgo(1)},
     ).withoutDue();
     expect(ids(queue.items), ['b:recognition']);
     expect(queue.due, isEmpty);

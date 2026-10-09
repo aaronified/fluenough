@@ -6,6 +6,7 @@ import 'database.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/decks.dart';
+import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
@@ -136,4 +137,23 @@ class LeechActionsDao extends DatabaseAccessor<AppDatabase>
         kind: row.kind,
       ),
   ];
+}
+
+/// FSRS's parameters fitted to the learner, by language and skill.
+@DriftAccessor(tables: [FsrsParameters])
+class FsrsParametersDao extends DatabaseAccessor<AppDatabase>
+    with _$FsrsParametersDaoMixin {
+  FsrsParametersDao(super.attachedDatabase);
+
+  /// Every fitted set, by language and mode.
+  Future<List<FsrsParametersRow>> all() =>
+      (select(fsrsParameters)..orderBy([
+            (p) => OrderingTerm.asc(p.language),
+            (p) => OrderingTerm.asc(p.mode),
+          ]))
+          .get();
+
+  /// Adds [row], or replaces the one for its language and mode.
+  Future<void> put(FsrsParametersCompanion row) =>
+      into(fsrsParameters).insertOnConflictUpdate(row);
 }

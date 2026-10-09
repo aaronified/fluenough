@@ -94,10 +94,45 @@ void main() {
     expect(session.answer!.grade, 5);
   });
 
-  test('what was heard can be typed in Latin letters', () {
-    final session = latin('hi-en-market', Skill.listening);
-    expect(session.canTransliterate, isTrue);
-    session.check(session.item.card.reading!);
+  test('what was heard is typed in the script, in script practice', () {
+    // Hear types what was heard only in script practice (ADR-0034), whose
+    // prompts give the reading away: so the script, not Latin letters.
+    final card = state
+        .deckById('hi-en-script-reading')!
+        .cards
+        .firstWhere((c) => c.reading != null);
+    final session = DrillSession(
+      state: state,
+      items: <SessionItem>[
+        SessionItem(card: card, mode: Skill.listening.mode!, state: null),
+      ],
+      inputMode: InputMode.translit,
+    );
+    addTearDown(session.dispose);
+    expect(session.hearsMeaning, isFalse);
+    expect(session.canTransliterate, isFalse);
+    expect(session.acceptedAnswers.first, card.target);
+    session.check(card.target);
+    expect(session.answer!.graded!.outcome, AnswerOutcome.exact);
+  });
+
+  test('a meaning heard is typed as it is, never in Latin letters', () {
+    // Elsewhere Hear types the meaning, in the language the learner speaks
+    // (ADR-0034): there is nothing to transliterate.
+    final cards = state.deckById('hi-en-market')!.cards;
+    final card = cards.firstWhere((c) => c.reading != null);
+    final session = DrillSession(
+      state: state,
+      items: <SessionItem>[
+        SessionItem(card: card, mode: Skill.listening.mode!, state: null),
+      ],
+      inputMode: InputMode.translit,
+    );
+    addTearDown(session.dispose);
+    expect(session.hearsMeaning, isTrue);
+    expect(session.canTransliterate, isFalse);
+    expect(session.transliterating, isFalse);
+    session.check(card.native);
     expect(session.answer!.graded!.outcome, AnswerOutcome.exact);
   });
 

@@ -77,7 +77,7 @@ void main() {
     Map<ProgressKey, String> byValue() => {
       for (final MapEntry(:key, :value) in state.progress.states.entries)
         key:
-            '${value.repetitions} ${value.easeFactor} ${value.intervalDays} '
+            '${value.stability} ${value.difficulty} ${value.intervalDays} '
             '${value.dueAt} ${value.lapses}',
     };
     final statesBefore = byValue();

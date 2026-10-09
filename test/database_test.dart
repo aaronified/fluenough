@@ -7,6 +7,13 @@ import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/leech_action.dart';
 
+/// [db]'s `reviews` as it was before migration 5.
+Future<void> withoutFsrsColumns(AppDatabase db) async {
+  for (final column in <String>['stability_after', 'difficulty_after']) {
+    await db.customStatement('ALTER TABLE reviews DROP COLUMN $column');
+  }
+}
+
 void main() {
   late AppDatabase db;
 
@@ -31,8 +38,6 @@ void main() {
     answerGiven: const Value('kitne ka hai'),
     intervalBefore: first ? const Value.absent() : const Value(1),
     intervalAfter: 6,
-    easeBefore: first ? const Value.absent() : const Value(2.5),
-    easeAfter: 2.6,
   );
 
   LeechAction leechAction({LeechActionKind kind = LeechActionKind.setAside}) =>
@@ -42,8 +47,8 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 4 with its six tables', () async {
-    expect(db.schemaVersion, 4);
+  test('opens at version 7 with its seven tables', () async {
+    expect(db.schemaVersion, 7);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -55,6 +60,7 @@ void main() {
       'card_states',
       'cards',
       'decks',
+      'fsrs_parameters',
       'leech_actions',
       'reviews',
       'settings',
@@ -66,10 +72,12 @@ void main() {
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/old.sqlite');
 
-    // Make a version 1 file: today's schema without what migrations 2 and 3
-    // add.
+    // Make a version 1 file: today's schema without what migrations 2, 3,
+    // 5 and 7 add.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
+    await withoutFsrsColumns(old);
+    await old.customStatement('DROP TABLE fsrs_parameters');
     await old.customStatement('DROP TABLE settings');
     await old.customStatement('DROP TABLE leech_actions');
     await old.customStatement('PRAGMA user_version = 1');
@@ -106,6 +114,7 @@ void main() {
     // one card in two decks.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
+    await withoutFsrsColumns(old);
     await old.customStatement('DROP TABLE card_states');
     await old.customStatement(
       'CREATE TABLE card_states (deck_id TEXT NOT NULL, card_id TEXT NOT NULL, '
@@ -134,6 +143,169 @@ void main() {
       isNot(contains('deck_id')),
     );
     expect(await upgraded.reviewsDao.all(), hasLength(1));
+  });
+
+  test('a version 4 database gets FSRS\'s columns, its old state '
+      'rebuilt and its reviews kept', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/v4.sqlite');
+
+    // Make a version 4 file: the old card_states, and reviews without the
+    // columns migration 5 adds.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await withoutFsrsColumns(old);
+    await old.customStatement('DROP TABLE card_states');
+    await old.customStatement(
+      'CREATE TABLE card_states (card_id TEXT NOT NULL, mode TEXT NOT NULL, '
+      'interval_days INTEGER NOT NULL, ease_factor REAL NOT NULL, '
+      'repetitions INTEGER NOT NULL, due_at INTEGER NOT NULL, '
+      'lapses INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (card_id, mode))',
+    );
+    await old.customStatement(
+      "INSERT INTO card_states VALUES ('hi-0231', 'production', "
+      '1, 2.5, 1, ${at.millisecondsSinceEpoch}, 0)',
+    );
+    await old.customStatement('PRAGMA user_version = 4');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.cardStatesDao.all(), isEmpty, reason: 'a cache');
+    final reviews = await upgraded.reviewsDao.all();
+    expect(reviews, hasLength(1));
+    expect(reviews.single.stabilityAfter, isNull);
+    expect(reviews.single.difficultyAfter, isNull);
+    await expectLater(
+      upgraded.customStatement('DELETE FROM reviews'),
+      throwsA(anything),
+      reason: 'the append-only triggers survive the upgrade',
+    );
+  });
+
+  test(
+    'a version 5 database loses SM-2\'s ease and keeps its reviews',
+    () async {
+      final dir = Directory.systemTemp.createTempSync('fluenough');
+      addTearDown(() => dir.deleteSync(recursive: true));
+      final file = File('${dir.path}/v5.sqlite');
+
+      // Make a version 5 file: reviews with SM-2's two ease columns.
+      final old = AppDatabase(NativeDatabase(file));
+      await old.reviewsDao.append(review());
+      await old.customStatement(
+        'ALTER TABLE reviews ADD COLUMN ease_before REAL',
+      );
+      await old.customStatement(
+        'ALTER TABLE reviews ADD COLUMN ease_after REAL NOT NULL DEFAULT 2.5',
+      );
+      await old.customStatement('PRAGMA user_version = 5');
+      await old.close();
+
+      final upgraded = AppDatabase(NativeDatabase(file));
+      addTearDown(upgraded.close);
+      final columns = await upgraded
+          .customSelect("SELECT name FROM pragma_table_info('reviews')")
+          .get();
+      expect(
+        columns.map((r) => r.read<String>('name')),
+        isNot(anyOf(contains('ease_before'), contains('ease_after'))),
+      );
+      final reviews = await upgraded.reviewsDao.all();
+      expect(reviews, hasLength(1));
+      expect(reviews.single.grade, 4);
+      await expectLater(
+        upgraded.customStatement('DELETE FROM reviews'),
+        throwsA(anything),
+        reason: 'the append-only triggers survive the upgrade',
+      );
+    },
+  );
+
+  test('migration 5 cut off after its first column runs again', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/half.sqlite');
+
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await old.customStatement(
+      'ALTER TABLE reviews DROP COLUMN difficulty_after',
+    );
+    await old.customStatement('PRAGMA user_version = 4');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.reviewsDao.all(), hasLength(1));
+  });
+
+  FsrsParametersCompanion fit(String language, double w0, {int count = 400}) =>
+      FsrsParametersCompanion.insert(
+        language: language,
+        mode: DrillMode.listening,
+        parameters: <double>[w0, ...List<double>.filled(20, 0.5)].join(','),
+        fittedAt: at,
+        reviewCount: count,
+        lossBefore: const Value(0.41),
+        lossAfter: const Value(0.38),
+      );
+
+  test(
+    'a version 6 database gains fsrs_parameters and keeps its reviews',
+    () async {
+      final dir = Directory.systemTemp.createTempSync('fluenough');
+      addTearDown(() => dir.deleteSync(recursive: true));
+      final file = File('${dir.path}/v6.sqlite');
+
+      final old = AppDatabase(NativeDatabase(file));
+      await old.reviewsDao.append(review());
+      await old.customStatement('DROP TABLE fsrs_parameters');
+      await old.customStatement('PRAGMA user_version = 6');
+      await old.close();
+
+      final upgraded = AppDatabase(NativeDatabase(file));
+      addTearDown(upgraded.close);
+      expect(await upgraded.reviewsDao.all(), hasLength(1));
+      expect(await upgraded.fsrsParametersDao.all(), isEmpty);
+      await upgraded.fsrsParametersDao.put(fit('hi', 0.3));
+      expect(await upgraded.fsrsParametersDao.all(), hasLength(1));
+    },
+  );
+
+  test('migration 7 run again keeps the table and its rows', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/again.sqlite');
+
+    // The table made and written, but the version not yet raised: a step
+    // cut off at its end.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.fsrsParametersDao.put(fit('hi', 0.3));
+    await old.customStatement('PRAGMA user_version = 6');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    final rows = await upgraded.fsrsParametersDao.all();
+    expect(rows, hasLength(1));
+    expect(rows.single.language, 'hi');
+  });
+
+  test('fsrs_parameters: one row per language and skill, replaced by the '
+      'next fit', () async {
+    await db.fsrsParametersDao.put(fit('hi', 0.3));
+    await db.fsrsParametersDao.put(fit('bn', 0.4));
+    await db.fsrsParametersDao.put(fit('hi', 0.35, count: 440));
+    final rows = await db.fsrsParametersDao.all();
+    expect(rows.map((r) => r.language), <String>['bn', 'hi']);
+    final hi = rows.last;
+    expect(hi.parameters.split(',').first, '0.35');
+    expect(hi.reviewCount, 440);
+    expect(hi.fittedAt, at);
+    expect(hi.lossBefore, 0.41);
+    expect(hi.lossAfter, 0.38);
   });
 
   test('leech_actions: appended in order, never changed', () async {
@@ -226,10 +398,12 @@ void main() {
         CardStatesCompanion.insert(
           cardId: 'hi-0231',
           mode: mode,
+          stability: interval.toDouble(),
+          difficulty: 5,
           intervalDays: interval,
-          easeFactor: 2.5,
           repetitions: 1,
           dueAt: at,
+          lastReviewAt: at,
         );
     await db.cardStatesDao.put(state(DrillMode.recognition, 1));
     await db.cardStatesDao.put(state(DrillMode.production, 6));
@@ -263,9 +437,8 @@ void main() {
       expect(log.first.grade, 3);
       expect(log.first.elapsedMs, 3200);
       expect(log.first.answerGiven, 'kitne ka hai');
-      expect((log.first.intervalBefore, log.first.easeBefore), (null, null));
-      expect((log.last.intervalBefore, log.last.easeBefore), (1, 2.5));
-      expect((log.last.intervalAfter, log.last.easeAfter), (6, 2.6));
+      expect(log.first.intervalBefore, isNull);
+      expect((log.last.intervalBefore, log.last.intervalAfter), (1, 6));
     },
   );
 

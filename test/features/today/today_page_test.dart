@@ -118,6 +118,14 @@ void main() {
     expect(find.text(l10n.todayMinutes(numbers.minutes)), findsOneWidget);
 
     final byMode = queue.countByMode();
+    // Recognition is scheduled, so it has a tile (ADR-0034).
+    expect(
+      find.descendant(
+        of: find.byType(DueCard),
+        matching: find.text(l10n.skillRecognition),
+      ),
+      findsOneWidget,
+    );
     for (final (skill, label) in <(Skill, String)>[
       (Skill.recognition, l10n.skillRecognition),
       (Skill.production, l10n.skillProduction),
@@ -137,16 +145,16 @@ void main() {
   testWidgets('a word due in two skills is one word due, and Today says '
       'words', (tester) async {
     usePhone(tester);
-    // Eight words, each due in recognition and in speaking: sixteen pairs.
+    // Eight words, each due in production and in speaking: sixteen pairs.
     final state = await hindiReviewed(<DrillMode, Duration>{
-      DrillMode.recognition: const Duration(days: 3),
+      DrillMode.production: const Duration(days: 3),
       DrillMode.speaking: const Duration(days: 3),
     }, speaking: true);
     await pumpToday(tester, state: state);
     final l10n = l10nOf(tester);
 
     // Reviewed on its own, each skill holds all eight words...
-    for (final skill in <Skill>[Skill.recognition, Skill.speaking]) {
+    for (final skill in <Skill>[Skill.production, Skill.speaking]) {
       expect(
         state.buildSession(DrillRequest(skill: skill)).length,
         8,
@@ -169,10 +177,10 @@ void main() {
     expect(numbers.minutes, 3);
     expect(find.text(l10n.todayMinutes(3)), findsOneWidget);
 
-    // The tiles are as they were: the word is in recognition's, and the
-    // speaking tile reads none due, though it still reviews the word.
+    // The tiles are as they were: the word is in Write's, and the Say tile
+    // reads none due, though it still reviews the word.
     expect(
-      find.bySemanticsLabel(l10n.todaySkillSemantics(l10n.skillRecognition, 8)),
+      find.bySemanticsLabel(l10n.todaySkillSemantics(l10n.skillProduction, 8)),
       findsOneWidget,
     );
     expect(
@@ -300,6 +308,8 @@ void main() {
       ),
       'hi-en-first-words',
       count: 8,
+      // Known in Write, one of the schedules (ADR-0034).
+      mode: DrillMode.production,
     );
     await pumpToday(tester, state: state);
     final l10n = l10nOf(tester);
@@ -309,7 +319,7 @@ void main() {
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
       expect(drill.request.revise, isTrue);
       expect(drill.request.limit, size);
-      expect(drill.request.recordsMisses, isTrue);
+      expect(drill.request.recordsRevision, isTrue);
       tester.state<NavigatorState>(find.byType(Navigator).first).pop();
       await tester.pumpAndSettle();
     }
@@ -502,13 +512,13 @@ void main() {
         'language', (tester) async {
       usePhone(tester);
       final state = await hindiReviewed(<DrillMode, Duration>{
-        DrillMode.recognition: const Duration(days: 3),
+        DrillMode.production: const Duration(days: 3),
       });
       await pumpToday(tester, state: state);
-      expect(TodayNumbers.of(state).bySkill[Skill.recognition], 8);
-      await tapVisible(tester, tileOf(tester, Skill.recognition));
+      expect(TodayNumbers.of(state).bySkill[Skill.production], 8);
+      await tapVisible(tester, tileOf(tester, Skill.production));
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-      expect(drill.request.skill, Skill.recognition);
+      expect(drill.request.skill, Skill.production);
       expect(drill.request.revise, isFalse);
       expect(drill.request.language, isNull);
       final items = state.sessionItems(drill.request);
@@ -519,17 +529,18 @@ void main() {
             for (final asked in item.group.isEmpty ? [item] : item.group)
               asked.mode,
         },
-        <DrillMode>{DrillMode.recognition},
+        <DrillMode>{DrillMode.production},
       );
     });
 
     testWidgets('a tile with nothing due asks whether to revise every word '
         'known in it', (tester) async {
       usePhone(tester);
+      // Say is due, so Today has tiles; Write was reviewed just now.
       final state = await hindiReviewed(<DrillMode, Duration>{
-        DrillMode.recognition: const Duration(days: 3),
+        DrillMode.speaking: const Duration(days: 3),
         DrillMode.production: Duration.zero,
-      });
+      }, speaking: true);
       await pumpToday(tester, state: state);
       final l10n = l10nOf(tester);
       final label = Skill.production.label(l10n);
@@ -550,7 +561,7 @@ void main() {
       expect(drill.request.skill, Skill.production);
       expect(drill.request.revise, isTrue);
       expect(drill.request.limit, isNull);
-      expect(drill.request.recordsMisses, isTrue);
+      expect(drill.request.recordsRevision, isTrue);
     });
 
     testWidgets('a tile with nothing due and nothing known starts nothing', (
@@ -558,7 +569,7 @@ void main() {
     ) async {
       usePhone(tester);
       final state = await hindiReviewed(<DrillMode, Duration>{
-        DrillMode.recognition: const Duration(days: 3),
+        DrillMode.production: const Duration(days: 3),
       });
       await pumpToday(tester, state: state);
       final l10n = l10nOf(tester);
@@ -577,34 +588,6 @@ void main() {
     testWidgets('Speaking has a tile only while it is on; the odd tile keeps '
         'half the row', (tester) async {
       usePhone(tester);
-      final off = await hindiReviewed(<DrillMode, Duration>{
-        DrillMode.recognition: const Duration(days: 3),
-      });
-      await pumpToday(tester, state: off);
-      expect(tileOf(tester, Skill.speaking), findsNothing);
-      expect(
-        TodayNumbers.of(off).bySkill.keys,
-        isNot(contains(Skill.speaking)),
-      );
-
-      await tester.pumpWidget(const SizedBox.shrink());
-      final on = await hindiReviewed(<DrillMode, Duration>{
-        DrillMode.recognition: const Duration(days: 3),
-        DrillMode.speaking: const Duration(days: 3),
-      }, speaking: true);
-      // Today asks each word in one skill, here recognition; the speaking
-      // tile still reviews the speaking due.
-      expect(TodayNumbers.of(on).bySkill[Skill.speaking], 0);
-      expect(TodayNumbers.of(on).dueIn[Skill.speaking], 8);
-      await pumpToday(tester, state: on);
-      expect(TodayNumbers.of(on).bySkill.keys, <Skill>[
-        Skill.recognition,
-        Skill.production,
-        Skill.listening,
-        Skill.speaking,
-        Skill.grammar,
-      ]);
-      expect(tester.takeException(), isNull);
       double widthOf(Skill skill) => tester
           .getSize(
             find
@@ -615,6 +598,43 @@ void main() {
                 .first,
           )
           .width;
+
+      final off = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.production: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: off);
+      expect(tileOf(tester, Skill.speaking), findsNothing);
+      expect(TodayNumbers.of(off).bySkill.keys, <Skill>[
+        Skill.recognition,
+        Skill.listening,
+        Skill.production,
+        Skill.grammar,
+      ]);
+      // Four tiles, two to a row.
+      expect(tester.takeException(), isNull);
+      expect(widthOf(Skill.grammar), widthOf(Skill.recognition));
+      expect(widthOf(Skill.listening), widthOf(Skill.recognition));
+
+      await tester.pumpWidget(const SizedBox.shrink());
+      final on = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.production: const Duration(days: 3),
+        DrillMode.speaking: const Duration(days: 3),
+      }, speaking: true);
+      // Today asks each word in one skill, here Write; the Say tile still
+      // reviews the speaking due.
+      expect(TodayNumbers.of(on).bySkill[Skill.speaking], 0);
+      expect(TodayNumbers.of(on).dueIn[Skill.speaking], 8);
+      await pumpToday(tester, state: on);
+      // Recognition, Hear, Say, Write and Grammar (ADR-0034): five tiles,
+      // and the odd one, Grammar, keeps half the row.
+      expect(TodayNumbers.of(on).bySkill.keys, <Skill>[
+        Skill.recognition,
+        Skill.listening,
+        Skill.speaking,
+        Skill.production,
+        Skill.grammar,
+      ]);
+      expect(tester.takeException(), isNull);
       expect(widthOf(Skill.grammar), widthOf(Skill.recognition));
 
       await tapVisible(tester, tileOf(tester, Skill.speaking));
@@ -625,30 +645,32 @@ void main() {
     testWidgets('quick revision narrows to the skills chosen', (tester) async {
       usePhone(tester);
       final state = await hindiReviewed(<DrillMode, Duration>{
-        DrillMode.recognition: const Duration(days: 3),
+        DrillMode.production: const Duration(days: 3),
       });
       await pumpToday(tester, state: state);
       final l10n = l10nOf(tester);
       expect(chipOf(l10n.todayRevisionAll), findsOneWidget);
       // Spoken only while listening and speaking are both on.
       expect(chipOf(l10n.todayRevisionSpoken), findsNothing);
+      // Recognition is a skill of its own, revised on its own (ADR-0034).
+      expect(chipOf(Skill.recognition.label(l10n)), findsOneWidget);
 
-      // Nothing known in production: the buttons are off, and say so.
-      final production = Skill.production.label(l10n);
-      await tapVisible(tester, chipOf(production));
-      expect(find.text(l10n.todayRevisionNoneIn(production)), findsOneWidget);
+      // Nothing known in grammar: the buttons are off, and say so.
+      final grammar = Skill.grammar.label(l10n);
+      await tapVisible(tester, chipOf(grammar));
+      expect(find.text(l10n.todayRevisionNoneIn(grammar)), findsOneWidget);
       FilledButton five() => tester.widget<FilledButton>(
         find.ancestor(of: find.text('5'), matching: find.byType(FilledButton)),
       );
       expect(five().onPressed, isNull);
 
-      await tapVisible(tester, chipOf(Skill.recognition.label(l10n)));
+      await tapVisible(tester, chipOf(Skill.production.label(l10n)));
       expect(find.text(l10n.todayRevisionBody), findsOneWidget);
       await tapVisible(tester, find.text('5'));
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-      expect(drill.request.skills, <Skill>{Skill.recognition});
+      expect(drill.request.skills, <Skill>{Skill.production});
       expect(drill.request.limit, 5);
-      expect(drill.request.recordsMisses, isTrue);
+      expect(drill.request.recordsRevision, isTrue);
     });
 
     testWidgets('with speaking on, Spoken revises listening and speaking', (

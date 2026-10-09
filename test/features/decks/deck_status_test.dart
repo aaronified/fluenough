@@ -110,7 +110,7 @@ void main() {
 
     final later = tinyState(
       progress: state.progress,
-      now: state.now().add(const Duration(days: 2)),
+      now: state.now().add(const Duration(days: 8)),
     );
     addTearDown(later.dispose);
     await later.load();
@@ -125,6 +125,8 @@ void main() {
     addTearDown(state.dispose);
     await state.load();
     final hola = state.deckById(tiny)!.cards.first;
+    // With no voice, Recognition and Write are the schedules here
+    // (ADR-0034): both are learned for hola, and both come due.
     for (final mode in <DrillMode>[
       DrillMode.recognition,
       DrillMode.production,
@@ -133,7 +135,7 @@ void main() {
     }
     final later = tinyState(
       progress: state.progress,
-      now: state.now().add(const Duration(days: 2)),
+      now: state.now().add(const Duration(days: 8)),
     );
     addTearDown(later.dispose);
     await later.load();
@@ -229,6 +231,8 @@ void main() {
 
     final logged = state.progress.log.length;
     final states = Map.of(state.progress.states);
+    // Recognition comes first (ADR-0034), rated with only two cards to
+    // choose among.
     await tester.tap(find.text(l10n.drillShowAnswer));
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.rateGood));

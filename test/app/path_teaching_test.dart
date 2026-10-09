@@ -47,7 +47,7 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
 native: { code: $native, iso639_3: ${native == 'en' ? 'eng' : 'ben'}, name: ${native == 'en' ? 'English' : 'Bengali'} }
 license: CC0-1.0
 cards:
-  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [recognition] }
+  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [production] }
 ''';
   final order = <String>[
     first,
@@ -178,7 +178,7 @@ void main() {
       ..record(
         deckId: market.id,
         cardId: market.cards.first.id,
-        mode: DrillMode.recognition,
+        mode: DrillMode.production,
         grade: 4,
         now: base.now().subtract(const Duration(days: 3)),
       );
@@ -287,14 +287,14 @@ void main() {
     final base = learning(<String>['hi']);
     await base.load();
     final market = base.deckById('hi-en-market')!;
-    // Every card seen in recognition three days ago, so due again today,
-    // and none yet in production.
+    // Every card written three days ago, so due again today, and none yet
+    // heard or said.
     final progress = MemoryProgress();
     for (final card in market.cards) {
       progress.record(
         deckId: market.id,
         cardId: card.id,
-        mode: DrillMode.recognition,
+        mode: DrillMode.production,
         grade: 4,
         now: base.now().subtract(const Duration(days: 3)),
       );

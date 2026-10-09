@@ -12,6 +12,7 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
+import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/drill/match_drill.dart';
 import 'package:fluenough/features/drill/rearrange_drill.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
@@ -24,6 +25,7 @@ import '../../support/harness.dart';
 
 const String spanish = 'es-en-core-100';
 const String hindi = 'hi-en-first-words';
+const String script = 'hi-en-script-reading';
 
 Future<AppState> pumpAsked(
   WidgetTester tester, {
@@ -50,6 +52,49 @@ Future<void> tapText(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
   await tester.tap(finder);
   await tester.pumpAndSettle();
+}
+
+/// A match pairs question of [target] and the next words of [deck] with
+/// other meanings, in recognition, as a lesson asks it (ADR-0034). The
+/// match shows until it is answered and continued.
+Future<(AppState, DrillSession)> pumpMatch(
+  WidgetTester tester, {
+  required String deck,
+  required String target,
+}) async {
+  final state = AppState.test();
+  await state.load();
+  final cards = state.deckById(deck)!.cards;
+  final first = cards.firstWhere((c) => c.target == target);
+  final group = <SessionItem>[
+    SessionItem(card: first, mode: DrillMode.recognition, state: null),
+  ];
+  for (final card in cards) {
+    if (group.length == matchSize) break;
+    if (group.every(
+      (g) => g.card.native != card.native && g.card.target != card.target,
+    )) {
+      group.add(
+        SessionItem(card: card, mode: DrillMode.recognition, state: null),
+      );
+    }
+  }
+  final session = DrillSession(
+    state: state,
+    items: <SessionItem>[group.first.askedAs(Ask.matchPairs, group: group)],
+  );
+  addTearDown(session.dispose);
+  await pumpScreen(
+    tester,
+    ListenableBuilder(
+      listenable: session,
+      builder: (context, _) => session.finished
+          ? const SizedBox.shrink()
+          : MatchDrill(session: session, onClose: () {}),
+    ),
+    state: state,
+  );
+  return (state, session);
 }
 
 void main() {
@@ -122,32 +167,41 @@ void main() {
       await tapText(tester, card.reading!);
       final event = state.progress.log.single;
       expect(event.mode, DrillMode.production);
-      expect(event.grade, 4);
+      // A right choice in Write counts for less than a recall (ADR-0034).
+      expect(event.grade, DrillSession.scheduledChoiceGrade);
+      expect(event.grade, 3);
     });
 
-    testWidgets('hearing and choosing plays the word and records listening', (
-      tester,
-    ) async {
+    testWidgets('hearing and choosing, in script practice, plays the word and '
+        'records listening, graded 3', (tester) async {
       usePhone(tester);
       final tts = FixedTtsEngine(<String>{'hi'});
       final state = await pumpAsked(
         tester,
-        deck: hindi,
+        deck: script,
         skill: Skill.listening,
-        target: 'नमस्कार',
+        target: 'जल',
         ask: Ask.hearAndChoose,
         state: AppState.test(tts: tts),
       );
       final l10n = l10nOf(tester);
-      final card = cardOf(state, hindi, 'नमस्कार');
+      final card = cardOf(state, script, 'जल');
+      expect(state.hearsForm(card), isTrue);
       expect(find.text(l10n.drillChooseHeard), findsOneWidget);
       // The meaning is not given away.
       expect(find.text(card.native), findsNothing);
       await tester.tap(find.byType(PlayButton));
       await tester.pumpAndSettle();
       expect(tts.spoken.last.text, card.target);
-      await tapText(tester, card.reading!);
-      expect(state.progress.log.single.mode, DrillMode.listening);
+      final session = tester.widget<ChoiceDrill>(find.byType(ChoiceDrill));
+      // Words to choose from, not meanings.
+      for (final option in session.session.options) {
+        expect(find.text(option.native), findsNothing);
+      }
+      await tapText(tester, card.target);
+      final event = state.progress.log.single;
+      expect(event.mode, DrillMode.listening);
+      expect(event.grade, DrillSession.scheduledChoiceGrade);
       expect(find.text(card.native), findsOneWidget);
     });
   });
@@ -156,12 +210,10 @@ void main() {
     testWidgets('tapping a word and then its meaning matches them, and each '
         'records recognition as it is matched', (tester) async {
       usePhone(tester);
-      final state = await pumpAsked(
+      final (state, _) = await pumpMatch(
         tester,
         deck: spanish,
-        skill: Skill.recognition,
         target: 'la casa',
-        ask: Ask.matchPairs,
       );
       final l10n = l10nOf(tester);
       final drill = tester.widget<MatchDrill>(find.byType(MatchDrill));
@@ -198,12 +250,10 @@ void main() {
 
     testWidgets('a word dragged onto its meaning is matched', (tester) async {
       usePhone(tester);
-      final state = await pumpAsked(
+      final (state, _) = await pumpMatch(
         tester,
         deck: spanish,
-        skill: Skill.recognition,
         target: 'la casa',
-        ask: Ask.matchPairs,
       );
       final card = cardOf(state, spanish, 'la casa');
       final word = find.text(card.target);
@@ -294,13 +344,45 @@ void main() {
 
   group('a session', () {
     testWidgets('asks recognition by match pairs and multiple choice, never '
-        'by rating', (tester) async {
+        'by rating; a lesson does too', (tester) async {
       usePhone(tester);
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es'],
+        ),
+      );
+      await state.load();
+      // Recognition is a schedule of its own (ADR-0034): a review asks it,
+      // by choosing the meaning, with options enough to choose among.
+      final reviewed = state.sessionItems(
+        DrillRequest.untaught(spanish, skill: Skill.recognition),
+      );
+      expect(reviewed, isNotEmpty);
+      expect(reviewed.map((i) => i.mode).toSet(), {DrillMode.recognition});
+      expect(
+        <Ask>{for (final item in reviewed) item.ask},
+        <Ask>{Ask.chooseMeaning, Ask.matchPairs},
+      );
+      expect(
+        state.sessionItems(DrillRequest.untaught(spanish)).map((i) => i.mode),
+        contains(DrillMode.recognition),
+        reason: 'a new word starts with Recognition',
+      );
+      final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
+      final recognised = <Ask>{
+        for (final item in lesson)
+          if (item.mode == DrillMode.recognition && item.ask != Ask.teach)
+            item.ask,
+      };
+      expect(recognised, <Ask>{Ask.chooseMeaning, Ask.matchPairs});
+
       await pumpScreen(
         tester,
         DrillPage(
           request: DrillRequest.untaught(spanish, skill: Skill.recognition),
         ),
+        state: state,
       );
       expect(find.byType(MatchDrill), findsOneWidget);
       expect(find.byType(RecognitionDrill), findsNothing);

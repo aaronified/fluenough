@@ -1,6 +1,7 @@
 # ADR-0029: Quick revision revises known words, and records only the misses
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0033: a revision from Today records
+  every answer.
 - **Date:** 2026-10-04
 
 ## Context

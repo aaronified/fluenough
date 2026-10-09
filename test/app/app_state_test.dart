@@ -19,24 +19,24 @@ void main() {
     addTearDown(state.dispose);
     await state.load();
     final cards = state.deckById('es-en-core-100')!.cards;
-    // Answered today, so due tomorrow.
+    // Answered Hard today, so due tomorrow.
     for (final card in cards.take(3)) {
       state.progress.record(
         deckId: 'es-en-core-100',
         cardId: card.id,
-        mode: DrillMode.recognition,
-        grade: 4,
+        mode: DrillMode.production,
+        grade: 3,
         now: state.now(),
       );
     }
     expect(state.dueTomorrow(), 3);
     state.progress.actOnLeech(
-      (cardId: cards.first.id, mode: DrillMode.recognition),
+      (cardId: cards.first.id, mode: DrillMode.production),
       LeechActionKind.setAside,
       now: state.now(),
     );
     expect(state.dueTomorrow(), 2);
-    state.settings.setSkillEnabled(Skill.recognition, false);
+    state.settings.setSkillEnabled(Skill.production, false);
     expect(state.dueTomorrow(), 0);
   });
 
@@ -189,10 +189,18 @@ void main() {
 
     test('a skill switched off in settings is left out', () async {
       final settings = SettingsNotifier();
-      final state = await loaded(settings: settings, features: vocabOnly);
-      settings.setSkillEnabled(Skill.recognition, false);
+      final state = await loaded(
+        tts: FixedTtsEngine({'es'}),
+        settings: settings,
+        features: vocabOnly,
+      );
+      // A taught word's other skills join the reviews, Write first; with
+      // Write switched off, Hear comes in its place.
+      state.record(state.lessonFor(DrillRequest.lesson(language: 'es'))[1], 4);
+      settings.setSkillEnabled(Skill.production, false);
       final queue = state.buildSession(const DrillRequest.today());
-      expect(queue.items.every((i) => i.mode == DrillMode.production), isTrue);
+      expect(queue.isNotEmpty, isTrue);
+      expect(queue.items.every((i) => i.mode != DrillMode.production), isTrue);
     });
 
     test('tags narrow a deck to the cards that carry them', () async {

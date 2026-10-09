@@ -13,10 +13,16 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/review_log.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
-(int, double, int, DateTime, int) fields(Sm2State s) =>
-    (s.repetitions, s.easeFactor, s.intervalDays, s.dueAt, s.lapses);
+(double, double, int, DateTime, int, int) fields(FsrsState s) => (
+  s.stability,
+  s.difficulty,
+  s.intervalDays,
+  s.dueAt,
+  s.repetitions,
+  s.lapses,
+);
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -136,19 +142,23 @@ void main() {
       final cards = deck.cards.take(4).toList();
       final now = at;
 
-      // Seed: two recognition pairs due by now, one due in the future.
+      // Seed: two Write pairs due by now, one due in the future.
       final db = AppDatabase(NativeDatabase.memory());
       final seed = ReviewLog(db);
       final day = const Duration(days: 1);
       for (final (card, grade, time) in [
-        (cards[0], 4, now.subtract(day * 3)), // interval 1: due 2 days ago
-        (cards[1], 1, now.subtract(day * 2)), // failed: due yesterday
-        (cards[2], 5, now.subtract(const Duration(hours: 2))), // due tomorrow
+        (cards[0], 4, now.subtract(day * 3)), // Good: 2 days, due yesterday
+        (cards[1], 1, now.subtract(day * 2)), // Again: 1 day, due yesterday
+        (
+          cards[2],
+          5,
+          now.subtract(const Duration(hours: 2)),
+        ), // Easy: 8 days, not due
       ]) {
         await seed.record(
           deckId: deck.id,
           cardId: card.id,
-          mode: DrillMode.recognition,
+          mode: DrillMode.production,
           grade: grade,
           now: time,
         );
@@ -163,11 +173,11 @@ void main() {
       expect(state.progressIsSaved, isTrue);
 
       final queue = state.buildSession(DrillRequest.deck(deck.id));
-      final due = queue.due.where((i) => i.mode == DrillMode.recognition);
+      final due = queue.due.where((i) => i.mode == DrillMode.production);
       expect(due.map((i) => i.card.id).toSet(), {cards[0].id, cards[1].id});
       expect(
         queue.items.any(
-          (i) => i.card.id == cards[2].id && i.mode == DrillMode.recognition,
+          (i) => i.card.id == cards[2].id && i.mode == DrillMode.production,
         ),
         isFalse,
         reason: 'reviewed and not yet due',
@@ -262,7 +272,7 @@ void main() {
       await state.load();
       final deck = state.decks.firstWhere((d) => d.cards.length >= 2);
       final card = deck.cards.first;
-      const mode = DrillMode.recognition;
+      const mode = DrillMode.production;
       progress.record(
         deckId: deck.id,
         cardId: card.id,

@@ -87,10 +87,9 @@ Decided with the owner:
 
 ## To decide
 
-- Where the layer's files live: beside the core, or in `decks/<lang>/<native>/`.
-- Whether notes about the language learnt itself (e.g. "In speech also
-  माँ-बाप (mām̐-bāp)") stay in each layer, or move to a shared core note
-  that layers translate around.
+Settled 2026-10-09 (owner): layers live in `decks/<lang>/<native>/`; notes
+about the language learnt keep their language facts in the core, and each
+layer writes the explanation around them.
 
 ## Estimate
 

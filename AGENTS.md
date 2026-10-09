@@ -73,7 +73,7 @@ and why Waydroid cannot test audio, is in
 | Path | What it is | Conflict risk |
 |---|---|---|
 | `lib/core/models/` | Card, Deck, DrillMode | medium |
-| `lib/core/scheduling/` | SM-2. Pure functions | low |
+| `lib/core/scheduling/` | FSRS. Pure functions | low |
 | `lib/core/grading/` | Answer comparison | low |
 | `lib/core/tts/` | `TtsEngine` + system implementation | low |
 | `lib/core/speech/`, `lib/core/sound/` | `SpeechEngine`, `SoundCheckEngine` + system implementations | low |

@@ -156,11 +156,11 @@ void main() {
         'e2:recognition:teach',
         'e2:recognition:chooseMeaning',
         'm0:listening:teach',
-        'm0:listening:hearAndChoose',
+        'm0:listening:hearMeaning',
         'm1:listening:teach',
-        'm1:listening:hearAndChoose',
+        'm1:listening:hearMeaning',
         'm2:listening:teach',
-        'm2:listening:hearAndChoose',
+        'm2:listening:hearMeaning',
         'h0:production:teach',
         'h0:production:rearrange',
         'h1:production:teach',
@@ -178,10 +178,10 @@ void main() {
       ]);
     });
 
-    test('where the phone cannot hear, words are heard and chosen instead', () {
+    test('where the phone cannot hear, words are heard and their meaning chosen instead (ADR-0034)', () {
       final exercise = plan(nine, speech: false).skip(18);
-      expect(exercise, contains('e0:listening:hearAndChoose'));
-      expect(exercise, contains('h0:listening:hearAndChoose'));
+      expect(exercise, contains('e0:listening:hearMeaning'));
+      expect(exercise, contains('h0:listening:hearMeaning'));
       expect(exercise, isNot(contains(matches('speaking'))));
     });
 

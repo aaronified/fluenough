@@ -9,7 +9,6 @@ import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/script_guide_parser.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
-import 'package:fluenough/features/drill/recognition_drill.dart';
 import 'package:fluenough/features/script/script_guide_page.dart';
 
 import 'package:fluenough/ui/widgets/drill_frame.dart';
@@ -137,10 +136,10 @@ void main() {
     expect(find.text('How Bengali script works'), findsOneWidget);
     expect(find.text('The headline'), findsOneWidget);
     expect(find.text('মাত্রা'), findsOneWidget);
-    expect(find.byType(RecognitionDrill), findsNothing);
+    expect(find.byType(DrillFrame), findsNothing);
     await tapText(tester, l10n.scriptGuideStart);
     expect(state.settings.hasSeenScriptGuide('bn'), isTrue);
-    expect(find.byType(RecognitionDrill), findsOneWidget);
+    expect(find.byType(DrillFrame), findsOneWidget);
 
     // Seen: the next session starts on the letters.
     await tester.pumpWidget(const SizedBox.shrink());
@@ -150,7 +149,7 @@ void main() {
       state: state,
     );
     expect(find.text('How Bengali script works'), findsNothing);
-    expect(find.byType(RecognitionDrill), findsOneWidget);
+    expect(find.byType(DrillFrame), findsOneWidget);
   });
 
   testWidgets('a session with two scripts shows each unseen guide in turn, '
@@ -192,12 +191,12 @@ void main() {
       (title) => find.text(title).evaluate().isNotEmpty,
     );
     final second = titles.firstWhere((title) => title != first);
-    expect(find.byType(RecognitionDrill), findsNothing);
+    expect(find.byType(DrillFrame), findsNothing);
     await tapText(tester, l10n.scriptGuideStart);
     expect(find.text(second), findsOneWidget);
-    expect(find.byType(RecognitionDrill), findsNothing);
+    expect(find.byType(DrillFrame), findsNothing);
     await tapText(tester, l10n.scriptGuideStart);
-    // The session, its letters asked by choosing (ADR-0024).
+    // Then the session.
     expect(find.byType(DrillFrame), findsOneWidget);
     expect(state.settings.hasSeenScriptGuide('bn'), isTrue);
     expect(state.settings.hasSeenScriptGuide('hi'), isTrue);
@@ -239,7 +238,7 @@ void main() {
       DrillPage(request: DrillRequest.untaught('bn-en-letters')),
       state: guided(withGuide: false),
     );
-    expect(find.byType(RecognitionDrill), findsOneWidget);
+    expect(find.byType(DrillFrame), findsOneWidget);
   });
 
   testWidgets('Tips on a script deck opens the guide, and Done closes it', (

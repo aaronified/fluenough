@@ -181,19 +181,19 @@
   },
   "skillRecognition": "Recognition",
   "@skillRecognition": {
-    "description": "The skill of seeing a word in the target language and recalling its meaning. A drill type."
+    "description": "Seeing a word in the target language and choosing or matching its meaning: a step of a lesson, not reviewed on its own (ADR-0034)."
   },
-  "skillProduction": "Production",
+  "skillProduction": "Write",
   "@skillProduction": {
-    "description": "The skill of seeing the meaning and typing the word in the target language. A drill type."
+    "description": "One of the three things the app schedules for every word (ADR-0034): seeing the meaning and giving the word in the target language, typed, chosen or put in order. A short verb, like Hear and Say."
   },
-  "skillListening": "Listening",
+  "skillListening": "Hear",
   "@skillListening": {
-    "description": "The skill of hearing a word and typing it. A drill type."
+    "description": "One of the three things the app schedules for every word (ADR-0034): hearing a word and choosing or typing what it means. A short verb, like Say and Write."
   },
-  "skillSpeaking": "Speaking",
+  "skillSpeaking": "Say",
   "@skillSpeaking": {
-    "description": "The skill of seeing a word's meaning and saying the word aloud. A drill type."
+    "description": "One of the three things the app schedules for every word (ADR-0034): seeing a word's meaning and saying the word aloud. A short verb, like Hear and Write."
   },
   "skillGrammar": "Grammar",
   "@skillGrammar": {
@@ -203,7 +203,7 @@
   "@skillPair": {
     "description": "The skill of telling two similar sounds apart, like ka and kha. A drill type."
   },
-  "skillRecognitionDeckDesc": "See {language}, recall the meaning",
+  "skillRecognitionDeckDesc": "See {language}, choose the meaning",
   "@skillRecognitionDeckDesc": {
     "description": "Under Recognition on a deck's screen.",
     "placeholders": {
@@ -213,7 +213,7 @@
       }
     }
   },
-  "skillProductionDeckDesc": "See the meaning, type {language}",
+  "skillProductionDeckDesc": "See the meaning, give it in {language}",
   "@skillProductionDeckDesc": {
     "description": "Under Production on a deck's screen.",
     "placeholders": {
@@ -223,7 +223,7 @@
       }
     }
   },
-  "skillListeningDeckDesc": "Hear it, type what you heard",
+  "skillListeningDeckDesc": "Hear it, say what it means",
   "@skillListeningDeckDesc": {
     "description": "Under Listening on a deck's screen."
   },
@@ -245,11 +245,11 @@
   "@skillPairDeckDesc": {
     "description": "Under Minimal pairs on a deck's screen."
   },
-  "skillRecognitionSettingsDesc": "You judge your own recall",
+  "skillRecognitionSettingsDesc": "See the word, choose or recall its meaning",
   "@skillRecognitionSettingsDesc": {
     "description": "Under the Recognition switch in Settings."
   },
-  "skillProductionSettingsDesc": "Typed, checked by the app",
+  "skillProductionSettingsDesc": "Chosen, put in order or typed, checked by the app",
   "@skillProductionSettingsDesc": {
     "description": "Under the Production switch in Settings."
   },
@@ -573,9 +573,9 @@
       }
     }
   },
-  "todaySkillReviseBody": "Revise {count, plural, =1{the 1 word} other{all {count} words}} you know in it? A miss brings a word back sooner; a right answer keeps its date.",
+  "todaySkillReviseBody": "Revise {count, plural, =1{the 1 word} other{all {count} words}} you know in it? Every answer counts: a miss brings a word back sooner, a right one pushes it a little further out.",
   "@todaySkillReviseBody": {
-    "description": "Body of the question asked when a skill tile with nothing due is tapped: revising records only the misses.",
+    "description": "Body of the question asked when a skill tile with nothing due is tapped: revising records every answer (ADR-0033).",
     "placeholders": {
       "count": {
         "type": "int",
@@ -721,7 +721,7 @@
   },
   "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
   "@todayRevisionBody": {
-    "description": "Under Quick revision: what it does. Right answers are not recorded; wrong ones are."
+    "description": "Under Quick revision: what it does. Every answer is recorded (ADR-0033)."
   },
   "todayRevisionNone": "Revision opens up once you've had a lesson.",
   "@todayRevisionNone": {
@@ -1673,7 +1673,11 @@
   },
   "drillTypeHeard": "Type what you hear",
   "@drillTypeHeard": {
-    "description": "Label of the answer field in listening."
+    "description": "Label of the answer field in listening, where what is heard is typed: script practice, or a number in digits."
+  },
+  "drillTypeMeaning": "Type what it means",
+  "@drillTypeMeaning": {
+    "description": "Label of the answer field in Hear (ADR-0034): the word is played and the learner types its meaning, in the language they speak."
   },
   "numbersPracticeTitle": "Number practice",
   "@numbersPracticeTitle": {
@@ -2104,6 +2108,10 @@
   "@drillChooseHeard": {
     "description": "Multiple choice (ADR-0024): under the play button, above the words to choose from."
   },
+  "drillChooseHeardMeaning": "What does it mean?",
+  "@drillChooseHeardMeaning": {
+    "description": "Multiple choice in Hear (ADR-0034): under the play button, above the meanings to choose from."
+  },
   "drillOptionsGroup": "Options",
   "@drillOptionsGroup": {
     "description": "Screen-reader label of the group of options of a multiple-choice question."
@@ -2211,10 +2219,6 @@
   "drillEndBodyNotRecorded": "This session isn’t recorded, so ending it changes nothing.",
   "@drillEndBodyNotRecorded": {
     "description": "Body of the end-session dialog in a session that is not recorded: number practice, or revising a finished deck."
-  },
-  "drillEndBodyMisses": "Your misses so far are already recorded.",
-  "@drillEndBodyMisses": {
-    "description": "Body of the end-session dialog in a quick revision, which records wrong answers only (ADR-0029)."
   },
   "drillEndKeepGoing": "Keep going",
   "@drillEndKeepGoing": {
@@ -3009,7 +3013,7 @@
   "@onboardingTourReviewsTitle": {
     "description": "Tour slide 2, title: spaced repetition, in plain words."
   },
-  "onboardingTourReviewsBody": "Cards you know wait longer each time, cards you miss come back tomorrow, and Today shows what’s due.",
+  "onboardingTourReviewsBody": "Cards you know wait longer each time, cards you miss come back sooner, and Today shows what’s due.",
   "@onboardingTourReviewsBody": {
     "description": "Tour slide 2, body. 'Today' is the first tab (navToday): use the same word."
   },
@@ -3422,6 +3426,399 @@
   "settingsPinLockDesc": "Ask for a PIN when opening this profile",
   "@settingsPinLockDesc": {
     "description": "Under PIN lock."
+  },
+  "settingsAdjust": "Adjust to me",
+  "@settingsAdjust": {
+    "description": "Settings row that fits the app's review schedule to how well the learner remembers each skill. Worked out from the learner's own answers."
+  },
+  "settingsAdjustButton": "Adjust",
+  "@settingsAdjustButton": {
+    "description": "Button on the Adjust to me row: fits the schedule now."
+  },
+  "settingsAdjustNeedsMore": "Needs more answers first",
+  "@settingsAdjustNeedsMore": {
+    "description": "Under Adjust to me while no skill has enough answers to fit."
+  },
+  "settingsAdjustNotYet": "Not adjusted yet",
+  "@settingsAdjustNotYet": {
+    "description": "Under Adjust to me when a skill could be fitted but none has been."
+  },
+  "settingsAdjustLastToday": "Last adjusted today",
+  "@settingsAdjustLastToday": {
+    "description": "Under Adjust to me after a fit today."
+  },
+  "settingsAdjustLast": "Last adjusted {date}",
+  "@settingsAdjustLast": {
+    "description": "Under Adjust to me: the day of the last fit.",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "MMMd",
+        "example": "2026-10-02"
+      }
+    }
+  },
+  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}}… {current} of {total}",
+  "@settingsAdjusting": {
+    "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammar or reading), named by what the words were; current and total count the skills being fitted.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "current": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "settingsAdjustingLabel": "Adjusting",
+  "@settingsAdjustingLabel": {
+    "description": "Screen-reader name of the progress bar while fitting."
+  },
+  "settingsAdjustAuto": "Adjust automatically",
+  "@settingsAdjustAuto": {
+    "description": "Switch: fit a skill again in the background once it has more answers."
+  },
+  "settingsAdjustAutoDesc": "When a skill has 10% more answers",
+  "@settingsAdjustAutoDesc": {
+    "description": "Under Adjust automatically."
+  },
+  "settingsAdjustHelp": "Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.",
+  "@settingsAdjustHelp": {
+    "description": "Line under the Adjust to me rows."
+  },
+  "adjustedTitle": "Adjusted to you",
+  "@adjustedTitle": {
+    "description": "Title of the sheet shown after Adjust to me."
+  },
+  "adjustedSubtitle": "Your reviews now fit how you remember.",
+  "@adjustedSubtitle": {
+    "description": "Line under Adjusted to you."
+  },
+  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}} well: fewer reviews",
+  "@adjustedFewer": {
+    "description": "A skill the learner remembers better than the defaults assume. mode is the skill, named by what the words were.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammar{Grammar slips} reading{Passages slip} other{Words slip}} faster: more reviews",
+  "@adjustedMore": {
+    "description": "A skill the learner forgets faster than the defaults assume. 'Slip', never 'fade'.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: about the same",
+  "@adjustedSame": {
+    "description": "A skill whose schedule barely changed.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: not adjusted yet",
+  "@adjustedNotYet": {
+    "description": "A skill without enough answers to fit.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedChange": "A word you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}. About {reviews, plural, =1{1 review} other{{reviews} reviews}} in the next 30 days, was {wasReviews}.",
+  "@adjustedChange": {
+    "description": "What a fit changed for one skill: days until a word answered right comes back, now and before, and the reviews of the next 30 days, now and before.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "6"
+      },
+      "was": {
+        "type": "int",
+        "example": "4"
+      },
+      "reviews": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      },
+      "wasReviews": {
+        "type": "int",
+        "example": "160",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "adjustedSameDetail": "A word you get right still comes back in {days, plural, =1{1 day} other{{days} days}}.",
+  "@adjustedSameDetail": {
+    "description": "Under a skill whose schedule barely changed.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "adjustedNotYetDetail": "It needs more answers first.",
+  "@adjustedNotYetDetail": {
+    "description": "Under a skill without enough answers to fit."
+  },
+  "adjustedPrivacy": "Worked out on this phone from your answers. Nothing is sent anywhere.",
+  "@adjustedPrivacy": {
+    "description": "Foot of the Adjusted to you sheet."
+  },
+  "howYouLearnTitle": "How you learn",
+  "@howYouLearnTitle": {
+    "description": "Title of the page that shows, per skill, how fast the learner forgets against how every skill starts; also the card on Progress and the link on the Adjusted to you sheet that open it."
+  },
+  "howYouLearnCardMore": "Learn more about your pacing",
+  "@howYouLearnCardMore": {
+    "description": "Under How you learn on its Progress card, once some skill is adjusted."
+  },
+  "howYouLearnCardBefore": "Your reviews will fit how you remember once a skill has enough answers. Adjust to me is in Settings.",
+  "@howYouLearnCardBefore": {
+    "description": "Under How you learn on its Progress card, before any skill is adjusted: what will happen, and where."
+  },
+  "howYouLearnOpenHint": "Open How you learn",
+  "@howYouLearnOpenHint": {
+    "description": "Screen-reader hint on the cards that open How you learn."
+  },
+  "howYouLearnIntro": "Fluenough brings a word back just before you would forget it. Each skill keeps its own pace, worked out from your answers.",
+  "@howYouLearnIntro": {
+    "description": "Opening paragraph of How you learn."
+  },
+  "howYouLearnNone": "Nothing is adjusted yet. Once a skill has enough answers, Adjust to me in Settings fits its reviews to how you remember, and with Adjust automatically on it does so by itself.",
+  "@howYouLearnNone": {
+    "description": "How you learn before any skill is adjusted."
+  },
+  "howYouLearnOpenSettings": "Open Settings",
+  "@howYouLearnOpenSettings": {
+    "description": "Button on How you learn before any skill is adjusted: goes to Settings, where Adjust to me is."
+  },
+  "howYouLearnWorking": "Working out your pacing",
+  "@howYouLearnWorking": {
+    "description": "Screen-reader name of the spinner while How you learn's figures are worked out."
+  },
+  "howYouLearnLegendYou": "You",
+  "@howYouLearnLegendYou": {
+    "description": "Legend of How you learn's bars: the filled part is the gap the learner's own pace gives."
+  },
+  "howYouLearnLegendStart": "At the start",
+  "@howYouLearnLegendStart": {
+    "description": "Legend of How you learn's bars: the tick is the gap every skill starts with."
+  },
+  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}",
+  "@paceSkillName": {
+    "description": "A skill's heading on How you learn, named by what the words were.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammar{grammar question} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
+  "@paceComesBack": {
+    "description": "How you learn: days until a word of the skill answered right comes back now, and at the start.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "days": {
+        "type": "int",
+        "example": "6"
+      },
+      "was": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammar{grammar question} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
+  "@paceComesBackSame": {
+    "description": "How you learn: days until a word of the skill answered right comes back, the same as at the start.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "days": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "paceNotYet": "Every skill starts at the same pace until it has enough answers. You have {count, plural, =1{1 answer} other{{count} answers}} so far.",
+  "@paceNotYet": {
+    "description": "How you learn, for a skill not adjusted yet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "212",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "paceKeptStart": "When last checked, your answers fitted the starting pace best, so it stays for now. You have {count, plural, =1{1 answer} other{{count} answers}} so far.",
+  "@paceKeptStart": {
+    "description": "How you learn, for a skill that was fitted but whose fit did not beat the starting pace, so the start's pace was kept.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "212",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "paceReviews": "About {reviews, plural, =1{1 review} other{{reviews} reviews}} in the next 30 days, was\u00a0{was}",
+  "@paceReviews": {
+    "description": "How you learn and Today's strip: reviews of the next 30 days now, and at the start.",
+    "placeholders": {
+      "reviews": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      },
+      "was": {
+        "type": "int",
+        "example": "160",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "paceReviewsSteady": "About {reviews, plural, =1{1 review} other{{reviews} reviews}} in the next 30 days",
+  "@paceReviewsSteady": {
+    "description": "How you learn and Today's strip: reviews of the next 30 days, the same as at the start.",
+    "placeholders": {
+      "reviews": {
+        "type": "int",
+        "example": "300",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "paceBorrowed": "Paced from your {language} answers until there are enough here.",
+  "@paceBorrowed": {
+    "description": "How you learn: a skill with too few answers of its own in this language, paced by its fit in another.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "paceAxisEnd": "{days, plural, =1{1 day} other{{days} days}}",
+  "@paceAxisEnd": {
+    "description": "The far end of How you learn's bars.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "paceTrackLabel": "{days, plural, =1{1 day} other{{days} days}} for you, {was} at the start",
+  "@paceTrackLabel": {
+    "description": "Screen-reader label of one How you learn bar.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "6"
+      },
+      "was": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "paceAdjustedToday": "Adjusted today, from {count, plural, =1{1 of your answers} other{{count} of your answers}}.",
+  "@paceAdjustedToday": {
+    "description": "Foot of How you learn: when the skills were last fitted, and from how many answers.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2140",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "paceAdjustedOn": "Adjusted {date}, from {count, plural, =1{1 of your answers} other{{count} of your answers}}.",
+  "@paceAdjustedOn": {
+    "description": "Foot of How you learn: when the skills were last fitted, and from how many answers.",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "MMMd",
+        "example": "2026-10-02"
+      },
+      "count": {
+        "type": "int",
+        "example": "2140",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "paceFewer": "Fewer reviews",
+  "@paceFewer": {
+    "description": "Mark on a Today skill tile: the learner remembers this skill well, so it has fewer reviews. Shortened to paceFewerShort at large text sizes."
+  },
+  "paceMore": "More reviews",
+  "@paceMore": {
+    "description": "Mark on a Today skill tile: this skill slips faster, so it has more reviews. Never shown as an error."
+  },
+  "paceSame": "About the same",
+  "@paceSame": {
+    "description": "Mark on a Today skill tile: this skill's reviews barely changed."
+  },
+  "paceFewerShort": "Fewer",
+  "@paceFewerShort": {
+    "description": "paceFewer at large text sizes."
+  },
+  "paceMoreShort": "More",
+  "@paceMoreShort": {
+    "description": "paceMore at large text sizes."
+  },
+  "paceSameShort": "Same",
+  "@paceSameShort": {
+    "description": "paceSame at large text sizes."
+  },
+  "todaySkillAdjustedSemantics": "{skill}: {count, plural, =0{none due} =1{1 due} other{{count} due}}. Adjusted to you: {direction, select, fewer{fewer reviews} more{more reviews} other{about the same}}.",
+  "@todaySkillAdjustedSemantics": {
+    "description": "Screen-reader label of a Today skill tile whose skill is adjusted to the learner. direction is fewer, more or same.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Recognition"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      },
+      "direction": {
+        "type": "String",
+        "example": "fewer"
+      }
+    }
   },
   "settingsSectionData": "Your data",
   "@settingsSectionData": {

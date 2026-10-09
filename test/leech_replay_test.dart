@@ -3,7 +3,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/leech_action.dart';
 import 'package:fluenough/core/models/review_event.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 const ProgressKey pair = (cardId: 'hi-0231', mode: DrillMode.production);
 const ProgressKey other = (cardId: 'hi-0232', mode: DrillMode.production);
@@ -23,8 +23,14 @@ LoggedReview review(ProgressKey key, int d, int grade) => (
 LeechAction act(LeechActionKind kind, int d, {ProgressKey key = pair}) =>
     LeechAction(at: day(d).add(const Duration(hours: 1)), key: key, kind: kind);
 
-(int, double, int, DateTime, int) fields(Sm2State s) =>
-    (s.repetitions, s.easeFactor, s.intervalDays, s.dueAt, s.lapses);
+(double, double, int, DateTime, int, int) fields(FsrsState s) => (
+  s.stability,
+  s.difficulty,
+  s.intervalDays,
+  s.dueAt,
+  s.repetitions,
+  s.lapses,
+);
 
 void main() {
   final history = <LoggedReview>[
@@ -35,13 +41,13 @@ void main() {
     review(pair, 5, 2),
   ];
 
-  test('with no actions, replay is Sm2.next review by review', () {
-    var state = Sm2State.fresh(day(0));
+  test('with no actions, replay is Fsrs.next review by review', () {
+    FsrsState? state;
     for (final r in history.where((r) => r.key == pair)) {
-      state = Sm2.next(state, r.grade, now: r.at);
+      state = Fsrs.next(state, r.grade, now: r.at, rated: true);
     }
     final replayed = replayReviews(history);
-    expect(fields(replayed.states[pair]!), fields(state));
+    expect(fields(replayed.states[pair]!), fields(state!));
     expect(replayed.events, hasLength(5));
     expect(replayed.events.first.before, isNull);
   });
@@ -58,8 +64,8 @@ void main() {
     expect(firstAfter.at, day(3));
     expect(firstAfter.before, isNull);
 
-    var expected = Sm2.next(Sm2State.fresh(day(3)), 4, now: day(3));
-    expected = Sm2.next(expected, 2, now: day(5));
+    var expected = Fsrs.next(null, 4, now: day(3), rated: true);
+    expected = Fsrs.next(expected, 2, now: day(5), rated: true);
     expect(fields(replayed.states[pair]!), fields(expected));
     expect(
       fields(replayed.states[other]!),
