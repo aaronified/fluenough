@@ -1,619 +1,536 @@
 schema: 1
-id: mr-en-numbers-big
-name: "Tens and big numbers"
-kind: vocab
-theme: numbers-big
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Every number from 21 to 99, the hundreds, a thousand, lakh and crore, and the quarters and halves every market uses. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "mr-numbers-big"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+theme: "numbers-big"
+tags: ["beginner", "unreviewed"]
 cards:
-  - id: mr-0272
+  - id: "mr-0272"
     target: "तीस"
-    native: "30, thirty"
     reading: "tis"
     ipa: "t̪is"
     pos: "other"
-    notes: "Every number from 21 to 99 has its own word in Marathi, as in Hindi: 26 is सव्वीस (savvis), not 'twenty six'. This deck teaches every one."
-  - id: mr-0273
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0273"
     target: "चाळीस"
-    native: "40, forty"
     reading: "cāḷis"
     ipa: "tsaɭis"
     pos: "other"
-    notes: "With the curled-back ळ (ḷa)."
-  - id: mr-0274
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0274"
     target: "पन्नास"
-    native: "50, fifty"
     reading: "pannās"
     ipa: "pənnas"
     pos: "other"
-  - id: mr-0275
+  - id: "mr-0275"
     target: "साठ"
-    native: "60, sixty"
     reading: "sāṭh"
     ipa: "saʈʰ"
     pos: "other"
-  - id: mr-0276
+  - id: "mr-0276"
     target: "सत्तर"
-    native: "70, seventy"
     reading: "sattar"
     ipa: "sət̪t̪ər"
     pos: "other"
-  - id: mr-0277
+  - id: "mr-0277"
     target: "ऐंशी"
-    native: "80, eighty"
     reading: "aiṁśi"
     ipa: "əĩʃi"
     pos: "other"
-  - id: mr-0278
+  - id: "mr-0278"
     target: "नव्वद"
-    native: "90, ninety"
     reading: "navvad"
     ipa: "nəʋʋəd̪"
     pos: "other"
-  - id: mr-0279
+  - id: "mr-0279"
     target: "शंभर"
-    native: "100, a hundred"
     reading: "śambhar"
     ipa: "ʃəmbʱər"
     pos: "other"
-    notes: "A hundred on its own. After a number, 'hundred' is -शे (-śe), written as one word with it: दोनशे (donśe), 200."
-  - id: mr-0280
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0280"
     target: "एकशे"
-    native: "one hundred (with more after it)"
     reading: "ekśe"
     ipa: "ekʃe"
     pos: "other"
-    notes: "Before more digits a hundred is एकशे (ekśe): एकशे वीस (ekśe vis), 120. Many prices are said in hundreds: अकराशे (akrāśe), eleven hundred, 1,100."
-  - id: mr-0281
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0281"
     target: "दोनशे"
-    native: "200, two hundred"
     reading: "donśe"
     ipa: "d̪onʃe"
     pos: "other"
-  - id: mr-0282
+  - id: "mr-0282"
     target: "तीनशे"
-    native: "300, three hundred"
     reading: "tinśe"
     ipa: "t̪inʃe"
     pos: "other"
-  - id: mr-0283
+  - id: "mr-0283"
     target: "चारशे"
-    native: "400, four hundred"
     reading: "cārśe"
     ipa: "tsarʃe"
     pos: "other"
-  - id: mr-0284
+  - id: "mr-0284"
     target: "पाचशे"
-    native: "500, five hundred"
     reading: "pācśe"
     ipa: "patsʃe"
     pos: "other"
-    notes: "पाचशेची नोट (pācśeci noṭ), a 500-rupee note."
-  - id: mr-0285
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0285"
     target: "सहाशे"
-    native: "600, six hundred"
     reading: "sahāśe"
     ipa: "səɦaʃe"
     pos: "other"
-  - id: mr-0286
+  - id: "mr-0286"
     target: "सातशे"
-    native: "700, seven hundred"
     reading: "sātśe"
     ipa: "sat̪ʃe"
     pos: "other"
-  - id: mr-0287
+  - id: "mr-0287"
     target: "आठशे"
-    native: "800, eight hundred"
     reading: "āṭhśe"
     ipa: "aʈʰʃe"
     pos: "other"
-  - id: mr-0288
+  - id: "mr-0288"
     target: "नऊशे"
-    native: "900, nine hundred"
     reading: "nauśe"
     ipa: "nəuʃe"
     pos: "other"
-  - id: mr-0289
+  - id: "mr-0289"
     target: "हजार"
-    native: "1,000, a thousand"
     reading: "hajār"
     ipa: "ɦədzar"
     pos: "other"
-    notes: "दोन हजार पंचवीस (don hajār pañcvis), 2025. Marathi writes it without the dot below that Hindi puts in हज़ार (hazār)."
-  - id: mr-0290
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0290"
     target: "लाख"
-    native: "1,00,000, a lakh (a hundred thousand)"
     reading: "lākh"
     ipa: "lakʰ"
     pos: "other"
-    notes: "Indian numbering counts in lakhs and crores, and places its commas to match: 1,00,000 is one lakh, 10,00,000 ten lakh. Prices, salaries and populations are all given this way."
-  - id: mr-0291
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0291"
     target: "कोटी"
-    native: "1,00,00,000, a crore (ten million)"
     reading: "koṭi"
     ipa: "koʈi"
     pos: "other"
-    notes: "A hundred lakh."
-  - id: mr-0292
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0292"
     target: "सव्वा"
-    native: "1¼; and a quarter"
     reading: "savvā"
     ipa: "səʋʋa"
     pos: "other"
-    notes: "Before another number, a quarter more: सव्वादोन (savvādon), 2¼, and on the clock 2:15. सव्वाशे (savvāśe) is 125."
-  - id: mr-0293
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0293"
     target: "दीड"
-    native: "1½, one and a half"
     reading: "diḍ"
     ipa: "d̪iɖ"
     pos: "other"
-    notes: "With शे (śe) and हजार (hajār) too: दीडशे (diḍśe) is 150, दीड हजार (diḍ hajār) 1,500. On the clock, दीड वाजता (diḍ vājtā) is at 1:30. Heard constantly in markets."
-  - id: mr-0294
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0294"
     target: "अडीच"
-    native: "2½, two and a half"
     reading: "aḍic"
     ipa: "əɖits"
     pos: "other"
-    notes: "अडीचशे (aḍicśe) is 250, and अडीच वाजता (aḍic vājtā) at 2:30. From 3½ on, Marathi says साडे (sāḍe)."
-  - id: mr-0295
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0295"
     target: "साडे"
-    native: "and a half (from 3½ on)"
     reading: "sāḍe"
     ipa: "saɖe"
     pos: "other"
-    notes: "Joined to the number: साडेतीन (sāḍetin), 3½; साडेतीनशे (sāḍetinśe), 350; साडेचार वाजता (sāḍecār vājtā), at 4:30."
-  - id: mr-0296
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0296"
     target: "पावणे"
-    native: "a quarter less"
     reading: "pāvṇe"
     ipa: "paʋɳe"
     pos: "other"
-    notes: "Joined to the number: पावणेदोन (pāvṇedon), 1¾; पावणेपाच वाजता (pāvṇepāc vājtā), at a quarter to five."
-  - id: mr-0297
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0297"
     target: "एकवीस"
-    native: "21, twenty-one"
     reading: "ekvis"
     ipa: "ekʋis"
     pos: "other"
-    notes: "Each number from 21 to 99 is one word, the unit blended into the ten, often irregularly: learn them as words. Before each ten comes एकोण- (ekoṇ-), 'one less': एकोणतीस (ekoṇtis), 29."
-  - id: mr-0298
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0298"
     target: "बावीस"
-    native: "22, twenty-two"
     reading: "bāvis"
     ipa: "baʋis"
     pos: "other"
-  - id: mr-0299
+  - id: "mr-0299"
     target: "तेवीस"
-    native: "23, twenty-three"
     reading: "tevis"
     ipa: "t̪eʋis"
     pos: "other"
-  - id: mr-0300
+  - id: "mr-0300"
     target: "चोवीस"
-    native: "24, twenty-four"
     reading: "covis"
     ipa: "tsoʋis"
     pos: "other"
-  - id: mr-0301
+  - id: "mr-0301"
     target: "पंचवीस"
-    native: "25, twenty-five"
     reading: "pañcvis"
     ipa: "pəɲtsʋis"
     pos: "other"
-  - id: mr-0302
+  - id: "mr-0302"
     target: "सव्वीस"
-    native: "26, twenty-six"
     reading: "savvis"
     ipa: "səʋʋis"
     pos: "other"
-  - id: mr-0303
+  - id: "mr-0303"
     target: "सत्तावीस"
-    native: "27, twenty-seven"
     reading: "sattāvis"
     ipa: "sət̪t̪aʋis"
     pos: "other"
-  - id: mr-0304
+  - id: "mr-0304"
     target: "अठ्ठावीस"
-    native: "28, twenty-eight"
     reading: "aṭṭhāvis"
     ipa: "əʈʈʰaʋis"
     pos: "other"
-  - id: mr-0305
+  - id: "mr-0305"
     target: "एकोणतीस"
-    native: "29, twenty-nine"
     reading: "ekoṇtis"
     ipa: "ekoɳt̪is"
     pos: "other"
-  - id: mr-0306
+  - id: "mr-0306"
     target: "एकतीस"
-    native: "31, thirty-one"
     reading: "ektis"
     ipa: "ekt̪is"
     pos: "other"
-  - id: mr-0307
+  - id: "mr-0307"
     target: "बत्तीस"
-    native: "32, thirty-two"
     reading: "battis"
     ipa: "bət̪t̪is"
     pos: "other"
-  - id: mr-0308
+  - id: "mr-0308"
     target: "तेहतीस"
-    native: "33, thirty-three"
     reading: "tehtis"
     ipa: "t̪eɦt̪is"
     alt_target: ["तेहेतीस"]
     pos: "other"
-  - id: mr-0309
+  - id: "mr-0309"
     target: "चौतीस"
-    native: "34, thirty-four"
     reading: "cautis"
     ipa: "tsəut̪is"
     pos: "other"
-  - id: mr-0310
+  - id: "mr-0310"
     target: "पस्तीस"
-    native: "35, thirty-five"
     reading: "pastis"
     ipa: "pəst̪is"
     pos: "other"
-  - id: mr-0311
+  - id: "mr-0311"
     target: "छत्तीस"
-    native: "36, thirty-six"
     reading: "chattis"
     ipa: "tʃʰət̪t̪is"
     pos: "other"
-  - id: mr-0312
+  - id: "mr-0312"
     target: "सदतीस"
-    native: "37, thirty-seven"
     reading: "sadtis"
     ipa: "səd̪t̪is"
     pos: "other"
-  - id: mr-0313
+  - id: "mr-0313"
     target: "अडतीस"
-    native: "38, thirty-eight"
     reading: "aḍtis"
     ipa: "əɖt̪is"
     pos: "other"
-  - id: mr-0314
+  - id: "mr-0314"
     target: "एकोणचाळीस"
-    native: "39, thirty-nine"
     reading: "ekoṇcāḷis"
     ipa: "ekoɳtsaɭis"
     pos: "other"
-  - id: mr-0315
+  - id: "mr-0315"
     target: "एक्केचाळीस"
-    native: "41, forty-one"
     reading: "ekkecāḷis"
     ipa: "ekketsaɭis"
     pos: "other"
-  - id: mr-0316
+  - id: "mr-0316"
     target: "बेचाळीस"
-    native: "42, forty-two"
     reading: "becāḷis"
     ipa: "betsaɭis"
     pos: "other"
-  - id: mr-0317
+  - id: "mr-0317"
     target: "त्रेचाळीस"
-    native: "43, forty-three"
     reading: "trecāḷis"
     ipa: "t̪retsaɭis"
     pos: "other"
-  - id: mr-0318
+  - id: "mr-0318"
     target: "चव्वेचाळीस"
-    native: "44, forty-four"
     reading: "cavvecāḷis"
     ipa: "tsəʋʋetsaɭis"
     pos: "other"
-  - id: mr-0319
+  - id: "mr-0319"
     target: "पंचेचाळीस"
-    native: "45, forty-five"
     reading: "pañcecāḷis"
     ipa: "pəɲtʃetsaɭis"
     pos: "other"
-  - id: mr-0320
+  - id: "mr-0320"
     target: "सेहेचाळीस"
-    native: "46, forty-six"
     reading: "sehecāḷis"
     ipa: "seɦetsaɭis"
     pos: "other"
-  - id: mr-0321
+  - id: "mr-0321"
     target: "सत्तेचाळीस"
-    native: "47, forty-seven"
     reading: "sattecāḷis"
     ipa: "sət̪t̪etsaɭis"
     pos: "other"
-  - id: mr-0322
+  - id: "mr-0322"
     target: "अठ्ठेचाळीस"
-    native: "48, forty-eight"
     reading: "aṭṭhecāḷis"
     ipa: "əʈʈʰetsaɭis"
     pos: "other"
-  - id: mr-0323
+  - id: "mr-0323"
     target: "एकोणपन्नास"
-    native: "49, forty-nine"
     reading: "ekoṇpannās"
     ipa: "ekoɳpənnas"
     pos: "other"
-  - id: mr-0324
+  - id: "mr-0324"
     target: "एक्कावन्न"
-    native: "51, fifty-one"
     reading: "ekkāvanna"
     ipa: "ekkaʋənnə"
     pos: "other"
-  - id: mr-0325
+  - id: "mr-0325"
     target: "बावन्न"
-    native: "52, fifty-two"
     reading: "bāvanna"
     ipa: "baʋənnə"
     pos: "other"
-  - id: mr-0326
+  - id: "mr-0326"
     target: "त्रेपन्न"
-    native: "53, fifty-three"
     reading: "trepanna"
     ipa: "t̪repənnə"
     pos: "other"
-  - id: mr-0327
+  - id: "mr-0327"
     target: "चोपन्न"
-    native: "54, fifty-four"
     reading: "copanna"
     ipa: "tsopənnə"
     pos: "other"
-  - id: mr-0328
+  - id: "mr-0328"
     target: "पंचावन्न"
-    native: "55, fifty-five"
     reading: "pañcāvanna"
     ipa: "pəɲtsaʋənnə"
     pos: "other"
-  - id: mr-0329
+  - id: "mr-0329"
     target: "छप्पन्न"
-    native: "56, fifty-six"
     reading: "chappanna"
     ipa: "tʃʰəppənnə"
     pos: "other"
-  - id: mr-0330
+  - id: "mr-0330"
     target: "सत्तावन्न"
-    native: "57, fifty-seven"
     reading: "sattāvanna"
     ipa: "sət̪t̪aʋənnə"
     pos: "other"
-  - id: mr-0331
+  - id: "mr-0331"
     target: "अठ्ठावन्न"
-    native: "58, fifty-eight"
     reading: "aṭṭhāvanna"
     ipa: "əʈʈʰaʋənnə"
     pos: "other"
-  - id: mr-0332
+  - id: "mr-0332"
     target: "एकोणसाठ"
-    native: "59, fifty-nine"
     reading: "ekoṇsāṭh"
     ipa: "ekoɳsaʈʰ"
     pos: "other"
-  - id: mr-0333
+  - id: "mr-0333"
     target: "एकसष्ठ"
-    native: "61, sixty-one"
     reading: "eksaṣṭha"
     ipa: "eksəʂʈʰə"
     alt_target: ["एकसष्ट"]
     pos: "other"
-    notes: "The sixties end in -सष्ठ (-saṣṭh), also printed -सष्ट (-saṣṭ)."
-  - id: mr-0334
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0334"
     target: "बासष्ठ"
-    native: "62, sixty-two"
     reading: "bāsaṣṭha"
     ipa: "basəʂʈʰə"
     alt_target: ["बासष्ट"]
     pos: "other"
-  - id: mr-0335
+  - id: "mr-0335"
     target: "त्रेसष्ठ"
-    native: "63, sixty-three"
     reading: "tresaṣṭha"
     ipa: "t̪resəʂʈʰə"
     alt_target: ["त्रेसष्ट"]
     pos: "other"
-  - id: mr-0336
+  - id: "mr-0336"
     target: "चौसष्ठ"
-    native: "64, sixty-four"
     reading: "causaṣṭha"
     ipa: "tsəusəʂʈʰə"
     alt_target: ["चौसष्ट"]
     pos: "other"
-  - id: mr-0337
+  - id: "mr-0337"
     target: "पासष्ठ"
-    native: "65, sixty-five"
     reading: "pāsaṣṭha"
     ipa: "pasəʂʈʰə"
     alt_target: ["पासष्ट"]
     pos: "other"
-  - id: mr-0338
+  - id: "mr-0338"
     target: "सहासष्ठ"
-    native: "66, sixty-six"
     reading: "sahāsaṣṭha"
     ipa: "səɦasəʂʈʰə"
     alt_target: ["सहासष्ट"]
     pos: "other"
-  - id: mr-0339
+  - id: "mr-0339"
     target: "सदुसष्ठ"
-    native: "67, sixty-seven"
     reading: "sadusaṣṭha"
     ipa: "səd̪usəʂʈʰə"
     alt_target: ["सदुसष्ट"]
     pos: "other"
-  - id: mr-0340
+  - id: "mr-0340"
     target: "अडुसष्ठ"
-    native: "68, sixty-eight"
     reading: "aḍusaṣṭha"
     ipa: "əɖusəʂʈʰə"
     alt_target: ["अडुसष्ट"]
     pos: "other"
-  - id: mr-0341
+  - id: "mr-0341"
     target: "एकोणसत्तर"
-    native: "69, sixty-nine"
     reading: "ekoṇsattar"
     ipa: "ekoɳsət̪t̪ər"
     pos: "other"
-  - id: mr-0342
+  - id: "mr-0342"
     target: "एक्काहत्तर"
-    native: "71, seventy-one"
     reading: "ekkāhattar"
     ipa: "ekkaɦət̪t̪ər"
     pos: "other"
-  - id: mr-0343
+  - id: "mr-0343"
     target: "बाहत्तर"
-    native: "72, seventy-two"
     reading: "bāhattar"
     ipa: "baɦət̪t̪ər"
     pos: "other"
-  - id: mr-0344
+  - id: "mr-0344"
     target: "त्र्याहत्तर"
-    native: "73, seventy-three"
     reading: "tryāhattar"
     ipa: "t̪rjaɦət̪t̪ər"
     pos: "other"
-  - id: mr-0345
+  - id: "mr-0345"
     target: "चौऱ्याहत्तर"
-    native: "74, seventy-four"
     reading: "cauryāhattar"
     ipa: "tsəurjaɦət̪t̪ər"
     pos: "other"
-    notes: "With the eyelash r, ऱ्या (ryā)."
-  - id: mr-0346
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0346"
     target: "पंच्याहत्तर"
-    native: "75, seventy-five"
     reading: "pañcyāhattar"
     ipa: "pəɲtʃjaɦət̪t̪ər"
     pos: "other"
-  - id: mr-0347
+  - id: "mr-0347"
     target: "शहात्तर"
-    native: "76, seventy-six"
     reading: "śahāttar"
     ipa: "ʃəɦat̪t̪ər"
     pos: "other"
-  - id: mr-0348
+  - id: "mr-0348"
     target: "सत्याहत्तर"
-    native: "77, seventy-seven"
     reading: "satyāhattar"
     ipa: "sət̪jaɦət̪t̪ər"
     alt_target: ["सत्त्याहत्तर"]
     pos: "other"
-  - id: mr-0349
+  - id: "mr-0349"
     target: "अठ्ठ्याहत्तर"
-    native: "78, seventy-eight"
     reading: "aṭṭhyāhattar"
     ipa: "əʈʈʰjaɦət̪t̪ər"
     pos: "other"
-  - id: mr-0350
+  - id: "mr-0350"
     target: "एकोणऐंशी"
-    native: "79, seventy-nine"
     reading: "ekoṇaiṁśi"
     ipa: "ekoɳəĩʃi"
     pos: "other"
-  - id: mr-0351
+  - id: "mr-0351"
     target: "एक्याऐंशी"
-    native: "81, eighty-one"
     reading: "ekyāaiṁśi"
     ipa: "ekjaəĩʃi"
     pos: "other"
-  - id: mr-0352
+  - id: "mr-0352"
     target: "ब्याऐंशी"
-    native: "82, eighty-two"
     reading: "byāaiṁśi"
     ipa: "bjaəĩʃi"
     pos: "other"
-  - id: mr-0353
+  - id: "mr-0353"
     target: "त्र्याऐंशी"
-    native: "83, eighty-three"
     reading: "tryāaiṁśi"
     ipa: "t̪rjaəĩʃi"
     pos: "other"
-  - id: mr-0354
+  - id: "mr-0354"
     target: "चौऱ्याऐंशी"
-    native: "84, eighty-four"
     reading: "cauryāaiṁśi"
     ipa: "tsəurjaəĩʃi"
     pos: "other"
-  - id: mr-0355
+  - id: "mr-0355"
     target: "पंच्याऐंशी"
-    native: "85, eighty-five"
     reading: "pañcyāaiṁśi"
     ipa: "pəɲtʃjaəĩʃi"
     pos: "other"
-  - id: mr-0356
+  - id: "mr-0356"
     target: "शहाऐंशी"
-    native: "86, eighty-six"
     reading: "śahāaiṁśi"
     ipa: "ʃəɦaəĩʃi"
     pos: "other"
-  - id: mr-0357
+  - id: "mr-0357"
     target: "सत्त्याऐंशी"
-    native: "87, eighty-seven"
     reading: "sattyāaiṁśi"
     ipa: "sət̪t̪jaəĩʃi"
     pos: "other"
-  - id: mr-0358
+  - id: "mr-0358"
     target: "अठ्ठ्याऐंशी"
-    native: "88, eighty-eight"
     reading: "aṭṭhyāaiṁśi"
     ipa: "əʈʈʰjaəĩʃi"
     pos: "other"
-  - id: mr-0359
+  - id: "mr-0359"
     target: "एकोणनव्वद"
-    native: "89, eighty-nine"
     reading: "ekoṇnavvad"
     ipa: "ekoɳnəʋʋəd̪"
     pos: "other"
-  - id: mr-0360
+  - id: "mr-0360"
     target: "एक्याण्णव"
-    native: "91, ninety-one"
     reading: "ekyāṇṇav"
     ipa: "ekjaɳɳəʋ"
     pos: "other"
-  - id: mr-0361
+  - id: "mr-0361"
     target: "ब्याण्णव"
-    native: "92, ninety-two"
     reading: "byāṇṇav"
     ipa: "bjaɳɳəʋ"
     pos: "other"
-  - id: mr-0362
+  - id: "mr-0362"
     target: "त्र्याण्णव"
-    native: "93, ninety-three"
     reading: "tryāṇṇav"
     ipa: "t̪rjaɳɳəʋ"
     pos: "other"
-  - id: mr-0363
+  - id: "mr-0363"
     target: "चौऱ्याण्णव"
-    native: "94, ninety-four"
     reading: "cauryāṇṇav"
     ipa: "tsəurjaɳɳəʋ"
     pos: "other"
-  - id: mr-0364
+  - id: "mr-0364"
     target: "पंच्याण्णव"
-    native: "95, ninety-five"
     reading: "pañcyāṇṇav"
     ipa: "pəɲtʃjaɳɳəʋ"
     pos: "other"
-  - id: mr-0365
+  - id: "mr-0365"
     target: "शहाण्णव"
-    native: "96, ninety-six"
     reading: "śahāṇṇav"
     ipa: "ʃəɦaɳɳəʋ"
     pos: "other"
-  - id: mr-0366
+  - id: "mr-0366"
     target: "सत्त्याण्णव"
-    native: "97, ninety-seven"
     reading: "sattyāṇṇav"
     ipa: "sət̪t̪jaɳɳəʋ"
     pos: "other"
-  - id: mr-0367
+  - id: "mr-0367"
     target: "अठ्ठ्याण्णव"
-    native: "98, ninety-eight"
     reading: "aṭṭhyāṇṇav"
     ipa: "əʈʈʰjaɳɳəʋ"
     pos: "other"
-  - id: mr-0368
+  - id: "mr-0368"
     target: "नव्व्याण्णव"
-    native: "99, ninety-nine"
     reading: "navvyāṇṇav"
     ipa: "nəʋʋjaɳɳəʋ"
     pos: "other"
