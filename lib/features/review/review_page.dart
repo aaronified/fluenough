@@ -26,8 +26,9 @@ import 'send_reviews_sheet.dart';
 /// a card opens it whole. Sign off once every card is checked; Send review
 /// opens the send sheet, which sends every deck waiting, in one mail.
 ///
-/// Rude words show only with adult content on (#96); until then the screen
-/// says how many are hidden, and they count as left to check.
+/// Rude words show only with adult content on (#96); while it is off the
+/// screen says how many are hidden, and they count as left to check.
+/// Switching it off in Settings hides them again at once.
 class ReviewPage extends StatelessWidget {
   const ReviewPage({super.key, required this.deckId, this.plan, this.adult});
 
@@ -52,7 +53,6 @@ class ReviewPage extends StatelessWidget {
         body: EmptyState(icon: Icons.style_outlined, title: l10n.deckNotFound),
       );
     }
-    final adultOn = adult ?? adultContentOn(state);
     return ListenableBuilder(
       listenable: state.settings,
       builder: (context, _) => _build(
@@ -60,7 +60,7 @@ class ReviewPage extends StatelessWidget {
         state,
         unitTitle(state, unit.decks),
         unit.decks,
-        adultOn,
+        adult ?? adultContentOn(state),
       ),
     );
   }

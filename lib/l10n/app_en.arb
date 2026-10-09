@@ -245,21 +245,53 @@
   "@skillPairDeckDesc": {
     "description": "Under Minimal pairs on a deck's screen."
   },
-  "skillRecognitionSettingsDesc": "See the word, choose or recall its meaning",
-  "@skillRecognitionSettingsDesc": {
-    "description": "Under the Recognition switch in Settings."
+  "skillRecognitionSettingsTitle": "Seen words",
+  "@skillRecognitionSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is recognition: the learner sees a word and recalls or chooses its meaning. Sentence case. Elsewhere the skill keeps its short name."
   },
-  "skillProductionSettingsDesc": "Chosen, put in order or typed, checked by the app",
-  "@skillProductionSettingsDesc": {
-    "description": "Under the Production switch in Settings."
+  "skillRecognitionSettingsOn": "See the word, recall its meaning",
+  "@skillRecognitionSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is recognition: the learner sees a word and recalls or chooses its meaning. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
-  "skillListeningSettingsDesc": "Needs a voice for the language",
-  "@skillListeningSettingsDesc": {
-    "description": "Under the Listening switch in Settings."
+  "skillRecognitionSettingsOff": "No see-the-word questions",
+  "@skillRecognitionSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is recognition: the learner sees a word and recalls or chooses its meaning. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
-  "skillSpeakingSettingsDesc": "Said aloud, heard by your phone. Uses the microphone",
-  "@skillSpeakingSettingsDesc": {
-    "description": "Under the Speaking switch in Settings. Switching it on asks for the microphone."
+  "skillProductionSettingsTitle": "Written words",
+  "@skillProductionSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is production: the learner sees the meaning and writes the word, by choosing, putting tiles in order or typing. Sentence case. Elsewhere the skill keeps its short name."
+  },
+  "skillProductionSettingsOn": "See the meaning, write the word",
+  "@skillProductionSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is production: the learner sees the meaning and writes the word, by choosing, putting tiles in order or typing. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillProductionSettingsOff": "No written answers",
+  "@skillProductionSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is production: the learner sees the meaning and writes the word, by choosing, putting tiles in order or typing. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "skillListeningSettingsTitle": "Heard words",
+  "@skillListeningSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is listening: the learner hears a word and gives its meaning. Sentence case. Elsewhere the skill keeps its short name."
+  },
+  "skillListeningSettingsOn": "Hear the word, give its meaning",
+  "@skillListeningSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is listening: the learner hears a word and gives its meaning. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillListeningSettingsOff": "No listening questions",
+  "@skillListeningSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is listening: the learner hears a word and gives its meaning. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "skillSpeakingSettingsTitle": "Spoken words",
+  "@skillSpeakingSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is speaking: the learner says the word and the phone recognises it. Sentence case. Elsewhere the skill keeps its short name."
+  },
+  "skillSpeakingSettingsOn": "Say the word, your phone listens",
+  "@skillSpeakingSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is speaking: the learner says the word and the phone recognises it. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillSpeakingSettingsOff": "No speaking questions. Switching on asks for the microphone",
+  "@skillSpeakingSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is speaking: the learner says the word and the phone recognises it. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsSpeakingRefused": "Speaking needs the microphone, so it stays off. Allow the microphone to switch it on.",
   "@settingsSpeakingRefused": {
@@ -311,17 +343,73 @@
       }
     }
   },
-  "skillGrammarSettingsDesc": "What a form of a word means, and the right form to use",
-  "@skillGrammarSettingsDesc": {
-    "description": "Under the Grammar switch in Settings. The one switch covers both grammar questions: seeing a form of a word and choosing what it means, and choosing or typing the right form."
+  "skillGrammarSettingsOn": "Understand a form of a word, and use the right one",
+  "@skillGrammarSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is grammar: one switch for both grammar questions, understanding what a form of a word means and choosing or typing the right form. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillGrammarSettingsOff": "No grammar questions",
+  "@skillGrammarSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is grammar: one switch for both grammar questions, understanding what a form of a word means and choosing or typing the right form. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "skillPairSettingsTitle": "Phonemic contrasts",
   "@skillPairSettingsTitle": {
     "description": "Title of the switch in Settings that turns the minimal-pairs skill on. Used in Settings only: everywhere else that skill is called skillPair, Minimal pairs. Switching it on lets the learner practise the sounds of the language they learn that the languages they speak do not have, and the differences between them. Sentence case, like the other Settings titles."
   },
-  "skillPairSettingsDesc": "Practise the sounds the languages you speak don’t have",
-  "@skillPairSettingsDesc": {
-    "description": "Under the Phonemic contrasts switch in Settings. Says what switching it on lets the learner practise: the sounds of the language they learn that the languages they speak (Settings, Languages I speak) do not have. One short line, no full stop."
+  "skillPairSettingsOn": "Practise the sounds the languages you speak don’t have",
+  "@skillPairSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner speaks (Languages I speak) do not have. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillPairSettingsOff": "No practice with sounds your languages lack",
+  "@skillPairSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner speaks (Languages I speak) do not have. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsSkillNoVoice": "{line}. No voice for {languages} on this phone",
+  "@settingsSkillNoVoice": {
+    "description": "A skill switch’s line in Settings, when the phone has no voice for some of the languages learned. {line} is the switch’s line for its state, skillListeningSettingsOn or skillListeningSettingsOff, with no full stop; the languages are joined by commonListSeparator.",
+    "placeholders": {
+      "line": {
+        "type": "String",
+        "example": "Hear the word, give its meaning"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Telugu, Bengali"
+      }
+    }
+  },
+  "settingsSkillNoRecogniser": "{line}. {languages} not recognised on this phone",
+  "@settingsSkillNoRecogniser": {
+    "description": "The Spoken words switch’s line in Settings, when the phone’s speech recogniser does not know some of the languages learned. {line} is skillSpeakingSettingsOn or skillSpeakingSettingsOff, with no full stop; the languages are joined by commonListSeparator.",
+    "placeholders": {
+      "line": {
+        "type": "String",
+        "example": "Say the word, your phone listens"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Telugu, Bengali"
+      }
+    }
+  },
+  "settingsSkillAskedIn": "Asked in {language}",
+  "@settingsSkillAskedIn": {
+    "description": "In the dialog that turns a skill on or off per language, under a language whose switch is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "settingsSkillNotAskedIn": "Not asked in {language}",
+  "@settingsSkillNotAskedIn": {
+    "description": "In the dialog that turns a skill on or off per language, under a language whose switch is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
   "profilesTitle": "Who’s practising?",
   "@profilesTitle": {
@@ -2518,9 +2606,13 @@
   "@skillReadingDeckDesc": {
     "description": "Under Reading on a reading deck's screen."
   },
-  "skillReadingSettingsDesc": "Short passages, with questions",
-  "@skillReadingSettingsDesc": {
-    "description": "Under the Reading switch in Settings."
+  "skillReadingSettingsOn": "Read a short passage, answer questions",
+  "@skillReadingSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is reading: short passages with questions. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillReadingSettingsOff": "No passages",
+  "@skillReadingSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is reading: short passages with questions. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "skillListeningReadingDeckDesc": "Hear a passage, answer questions",
   "@skillListeningReadingDeckDesc": {
@@ -3548,13 +3640,41 @@
   "@settingsSectionLearning": {
     "description": "Settings section heading."
   },
-  "settingsRomanisation": "Show romanisation",
+  "settingsRomanisation": "Latin-letter readings",
   "@settingsRomanisation": {
-    "description": "Switch: show the reading line."
+    "description": "Switch: show a reading in Latin letters under words written in other scripts. Was “Latin-letter readings”. Also the label of the chip that shows readings on a passage."
   },
-  "settingsRomanisationDesc": "Reading line under non-Latin scripts",
-  "@settingsRomanisationDesc": {
-    "description": "Under Show romanisation."
+  "settingsRomanisationOn": "A Latin-letter reading under words in other scripts",
+  "@settingsRomanisationOn": {
+    "description": "Under Latin-letter readings, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsRomanisationOff": "Only the script, no reading",
+  "@settingsRomanisationOff": {
+    "description": "Under Latin-letter readings, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdult": "Adult content (18+)",
+  "@settingsAdult": {
+    "description": "Switch in Settings (#96): show rude and offensive words, which are otherwise hidden behind a warning. Off by default; switching it on asks the learner to confirm they are 18 or over. Other strings quote this name: keep them the same."
+  },
+  "settingsAdultOn": "Rude words and offensive cards are shown",
+  "@settingsAdultOn": {
+    "description": "Under Adult content (18+), while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdultOff": "Rude words stay hidden behind their warnings",
+  "@settingsAdultOff": {
+    "description": "Under Adult content (18+), while it is off. A warning is the notice on a word that sounds or looks like a rude one. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdultConfirmTitle": "Are you 18 or over?",
+  "@settingsAdultConfirmTitle": {
+    "description": "Title of the dialog shown as Adult content (18+) is switched on."
+  },
+  "settingsAdultConfirmBody": "Adult content shows rude and offensive words, so that you know one when you hear it and never use one by mistake. They can offend. Turn it on only if you are 18 or over.",
+  "@settingsAdultConfirmBody": {
+    "description": "Body of the dialog shown as Adult content (18+) is switched on."
+  },
+  "settingsAdultConfirm": "I’m 18 or over",
+  "@settingsAdultConfirm": {
+    "description": "Button in the dialog shown as Adult content (18+) is switched on: confirms the learner’s age and switches it on."
   },
   "settingsAlphabet": "Alphabets",
   "@settingsAlphabet": {
@@ -3578,9 +3698,27 @@
   "@settingsAlphabetTitle": {
     "description": "Title of the dialog with a switch per language: learn its alphabet, or Latin letters only."
   },
-  "settingsAlphabetEmpty": "No decks without the alphabet yet",
-  "@settingsAlphabetEmpty": {
-    "description": "Under a language in the Alphabets dialog whose course has nothing to teach without its alphabet."
+  "settingsAlphabetOn": "Learning the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} kana{kana} other{{language}}} script",
+  "@settingsAlphabetOn": {
+    "description": "In the Alphabets dialog, under a language whose switch is on. {script} is the deck files’ script code; other scripts take the language’s name. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "telugu"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "settingsAlphabetOff": "Latin letters only; script decks skipped",
+  "@settingsAlphabetOff": {
+    "description": "In the Alphabets dialog, under a language whose switch is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAlphabetOffEmpty": "Latin letters only. No decks without the alphabet yet",
+  "@settingsAlphabetOffEmpty": {
+    "description": "In the Alphabets dialog, under a language whose switch is off and whose course has nothing yet to teach without its alphabet. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsSectionSound": "Sound",
   "@settingsSectionSound": {
@@ -3590,17 +3728,37 @@
   "@settingsSound": {
     "description": "Switch: sound for the whole app. Off, nothing is spoken and listening is skipped."
   },
-  "settingsSoundDesc": "Off, nothing is spoken and listening is skipped",
-  "@settingsSoundDesc": {
-    "description": "Under the Sound switch."
+  "settingsSoundOn": "Words are spoken; listening questions are asked",
+  "@settingsSoundOn": {
+    "description": "Under the Sound switch, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsSoundOff": "Nothing is spoken; listening questions are skipped",
+  "@settingsSoundOff": {
+    "description": "Under the Sound switch, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsAutoplay": "Play words automatically",
   "@settingsAutoplay": {
     "description": "Switch: a card's word plays by itself as the card shows, or once it is answered when hearing it would give the answer away."
   },
-  "settingsAutoplayDesc": "As each card shows, or once you answer. Long-press any speaker to switch",
-  "@settingsAutoplayDesc": {
-    "description": "Under Play words automatically. A speaker is the play button on a drill card."
+  "settingsAutoplayOn": "Words play by themselves, as a card shows or once you answer",
+  "@settingsAutoplayOn": {
+    "description": "Under Play words automatically, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAutoplayOff": "Words play only when you tap the speaker",
+  "@settingsAutoplayOff": {
+    "description": "Under Play words automatically, while it is off. The speaker is the play button on a card. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAutoplayOnSoundOff": "Nothing plays while sound is off; then words play by themselves",
+  "@settingsAutoplayOnSoundOff": {
+    "description": "Under Play words automatically, while it is on but the Sound switch is off, which greys it out: nothing plays now, and once sound is on words play by themselves."
+  },
+  "settingsAutoplayOffSoundOff": "Nothing plays while sound is off; then only when you tap the speaker",
+  "@settingsAutoplayOffSoundOff": {
+    "description": "Under Play words automatically, while it is off and the Sound switch is off too, which greys it out: nothing plays now, and once sound is on words play only from the speaker button on a card."
+  },
+  "settingsSkillSoundOff": "Skipped while sound is off",
+  "@settingsSkillSoundOff": {
+    "description": "Under a skill switch in Settings that needs sound (Heard words, Phonemic contrasts), while it is on but the Sound switch is off: its questions are skipped now."
   },
   "settingsSpeechRate": "Speech rate",
   "@settingsSpeechRate": {
@@ -4208,9 +4366,19 @@
   "@settingsReminder": {
     "description": "Switch: a daily notification."
   },
-  "settingsReminderDesc": "Only when cards are due",
-  "@settingsReminderDesc": {
-    "description": "Under Daily reminder."
+  "settingsReminderOn": "A reminder at {time} on days with cards due",
+  "@settingsReminderOn": {
+    "description": "Under Daily reminder, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "7:30 PM"
+      }
+    }
+  },
+  "settingsReminderOff": "No reminders",
+  "@settingsReminderOff": {
+    "description": "Under Daily reminder, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsReminderTime": "Reminder time",
   "@settingsReminderTime": {
@@ -4220,9 +4388,13 @@
   "@settingsPinLock": {
     "description": "Switch: ask for a PIN."
   },
-  "settingsPinLockDesc": "Ask for a PIN when opening this profile",
-  "@settingsPinLockDesc": {
-    "description": "Under PIN lock."
+  "settingsPinLockOn": "This profile asks for its PIN when it opens",
+  "@settingsPinLockOn": {
+    "description": "Under PIN lock, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsPinLockOff": "This profile opens without a PIN",
+  "@settingsPinLockOff": {
+    "description": "Under PIN lock, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsAdjust": "Adjust to me",
   "@settingsAdjust": {
@@ -4285,9 +4457,13 @@
   "@settingsAdjustAuto": {
     "description": "Switch: fit a skill again in the background once it has more answers."
   },
-  "settingsAdjustAutoDesc": "When a skill has 10% more answers",
-  "@settingsAdjustAutoDesc": {
-    "description": "Under Adjust automatically."
+  "settingsAdjustAutoOn": "Adjusts by itself when a skill has 10% more answers",
+  "@settingsAdjustAutoOn": {
+    "description": "Under Adjust automatically, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdjustAutoOff": "Only when you tap Adjust",
+  "@settingsAdjustAutoOff": {
+    "description": "Under Adjust automatically, while it is off. Adjust is the button on the row above. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsAdjustHelp": "Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.",
   "@settingsAdjustHelp": {
@@ -4952,9 +5128,13 @@
   "@settingsUpdateAuto": {
     "description": "Switch: check for updates by itself. Off unless the learner turns it on."
   },
-  "settingsUpdateAutoDesc": "Once a day, when the app opens. Each check asks GitHub.",
-  "@settingsUpdateAutoDesc": {
-    "description": "Under Check automatically. Says that each check is a request to GitHub, a website."
+  "settingsUpdateAutoOn": "Checks GitHub once a day, when the app opens",
+  "@settingsUpdateAutoOn": {
+    "description": "Under Check automatically, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsUpdateAutoOff": "Only when you tap Check for updates",
+  "@settingsUpdateAutoOff": {
+    "description": "Under Check automatically, while it is off. The quoted name must match settingsUpdateCheck. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsReleaseNotes": "What’s new",
   "@settingsReleaseNotes": {
@@ -5042,17 +5222,25 @@
   "@appearancePureBlack": {
     "description": "Switch under the theme choice: black backgrounds whenever the app is dark."
   },
-  "appearancePureBlackDesc": "Black backgrounds when the app is dark, for OLED screens",
-  "@appearancePureBlackDesc": {
-    "description": "Under Pure black. Applies with Dark, and with System when the phone is dark; OLED is a screen type."
+  "appearancePureBlackOn": "Dark mode uses black backgrounds",
+  "@appearancePureBlackOn": {
+    "description": "Under Pure black, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "appearancePureBlackOff": "Dark mode uses dark grey backgrounds",
+  "@appearancePureBlackOff": {
+    "description": "Under Pure black, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "appearanceWallpaper": "Wallpaper colours",
   "@appearanceWallpaper": {
     "description": "Switch: take colours from the wallpaper."
   },
-  "appearanceWallpaperDesc": "Use your phone’s Material You palette (Android 12+)",
-  "@appearanceWallpaperDesc": {
-    "description": "Under Wallpaper colours. Material You is a product name."
+  "appearanceWallpaperOn": "Colours follow your wallpaper",
+  "@appearanceWallpaperOn": {
+    "description": "Under Wallpaper colours, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "appearanceWallpaperOff": "Fluenough’s own colours",
+  "@appearanceWallpaperOff": {
+    "description": "Under Wallpaper colours, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "appearanceColour": "Colour",
   "@appearanceColour": {
@@ -5120,17 +5308,17 @@
   "@voicesChecking": {
     "description": "Status while asking the phone."
   },
-  "voicesTest": "Test",
-  "@voicesTest": {
-    "description": "Button that speaks a sample."
+  "voicesPlay": "Play",
+  "@voicesPlay": {
+    "description": "Button on a language’s card on the Voices page: speaks a word from the course in the chosen voice."
   },
-  "voicesTestLabel": "Test {language} voice",
-  "@voicesTestLabel": {
-    "description": "Screen-reader label of Test.",
+  "voicesPlayLabel": "Play the {language} voice",
+  "@voicesPlayLabel": {
+    "description": "Screen-reader label of Play on a language’s card.",
     "placeholders": {
       "language": {
         "type": "String",
-        "example": "Hindi"
+        "example": "Telugu"
       }
     }
   },
@@ -5160,13 +5348,97 @@
   "@voicesCheckAgain": {
     "description": "Button that asks the phone about voices again."
   },
-  "voicesSpeechHeading": "Recognising your speech",
-  "@voicesSpeechHeading": {
-    "description": "Heading of the speech-recognition section on the voices screen."
+  "voicesListening": "Listening",
+  "@voicesListening": {
+    "description": "Heading of the part of a language’s card on the Voices page about its voice: how the phone speaks it."
   },
-  "voicesSpeechIntro": "Speaking drills use your phone’s own speech recogniser. Where it can, it listens on the phone, and nothing you say leaves it.",
-  "@voicesSpeechIntro": {
-    "description": "Explanation of the speech-recognition section."
+  "voicesSpeakingPart": "Speaking",
+  "@voicesSpeakingPart": {
+    "description": "Heading of the part of a language’s card on the Voices page about recognising the learner’s speech in it."
+  },
+  "voicesVoice": "Voice",
+  "@voicesVoice": {
+    "description": "Label of the menu on a language’s card that chooses which of the phone’s voices speaks it."
+  },
+  "voicesVoiceDefault": "Phone default",
+  "@voicesVoiceDefault": {
+    "description": "In the voice menu: the voice the phone’s text-to-speech uses for the language unless one is chosen. The first choice, and the default."
+  },
+  "voicesVoiceOnline": "{name} · needs a connection",
+  "@voicesVoiceOnline": {
+    "description": "In the voice menu: a voice that speaks only with an internet connection. {name} is the phone’s name for the voice.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "te-in-x-tem-network"
+      }
+    }
+  },
+  "voicesInstallOne": "Install a voice",
+  "@voicesInstallOne": {
+    "description": "Button on a language’s card when the phone has no voice for it: explains how to install one, or opens the phone’s voice settings."
+  },
+  "voicesPlayFailed": "Couldn’t play it",
+  "@voicesPlayFailed": {
+    "description": "On a language’s card, when the phone’s voice gave an error as Play was tapped."
+  },
+  "voicesErrorCode": "Error code: {code}",
+  "@voicesErrorCode": {
+    "description": "Small print under a failed test on the Voices page: the phone’s own error code, for a report. Keep the code as it is.",
+    "placeholders": {
+      "code": {
+        "type": "String",
+        "example": "error_no_match"
+      }
+    }
+  },
+  "voicesSay": "Say something",
+  "@voicesSay": {
+    "description": "Button on a language’s card on the Voices page: opens a test of the phone’s speech recognition in that language."
+  },
+  "voicesSayLabel": "Say something in {language}",
+  "@voicesSayLabel": {
+    "description": "Screen-reader label of Say something, and the title of the speaking test.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesSayIntro": "Say this word, or anything you like. It doesn’t count as practice.",
+  "@voicesSayIntro": {
+    "description": "Under the title of the speaking test on the Voices page."
+  },
+  "voicesSayWord": "Say this word",
+  "@voicesSayWord": {
+    "description": "Button in the speaking test: listens for the word shown."
+  },
+  "voicesSayAnything": "Say anything",
+  "@voicesSayAnything": {
+    "description": "Button in the speaking test: listens and shows whatever the phone heard."
+  },
+  "voicesAnotherWord": "Another word",
+  "@voicesAnotherWord": {
+    "description": "Button in the speaking test: shows another word from the course to say."
+  },
+  "voicesHeard": "Heard: {text}",
+  "@voicesHeard": {
+    "description": "Result of the speaking test: what the phone heard. {text} is in the language tested.",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "నమస్కారం"
+      }
+    }
+  },
+  "voicesHeardMatch": "That’s the word",
+  "@voicesHeardMatch": {
+    "description": "Result of the speaking test, under what was heard: it matches the word asked for."
+  },
+  "voicesHeardNoMatch": "That isn’t the word",
+  "@voicesHeardNoMatch": {
+    "description": "Result of the speaking test, under what was heard: it does not match the word asked for."
   },
   "voicesSpeechOff": "Speaking is off. Switching it on asks for the microphone.",
   "@voicesSpeechOff": {
@@ -5180,13 +5452,21 @@
   "@voicesSpeechOnDevice": {
     "description": "Status: the phone recognises this language itself."
   },
-  "voicesSpeechOnlineOnly": "Only online. Allow it to send what you say to your phone’s speech service",
-  "@voicesSpeechOnlineOnly": {
-    "description": "Status: the phone recognises this language only online, not yet allowed. Beside a switch."
+  "voicesSpeechOnlyOnline": "This phone recognises it only online",
+  "@voicesSpeechOnlyOnline": {
+    "description": "Under the Speaking heading of a language’s card on the Voices page: the phone recognises this language only online. The Online recognition switch follows."
   },
-  "voicesSpeechOnline": "Heard online, as you allowed",
+  "voicesOnlineSwitch": "Online recognition",
+  "@voicesOnlineSwitch": {
+    "description": "Switch on a language’s card on the Voices page, under Speaking, for a language the phone recognises only online: whether what the learner says in it may be sent to the phone’s speech service. Not the same as switching speaking off."
+  },
+  "voicesSpeechOnlineOnly": "Off, so not heard. Switching it on sends what you say to your phone’s speech service",
+  "@voicesSpeechOnlineOnly": {
+    "description": "Under the Online recognition switch, while it is off: the language is recognised only online, so speaking in it is not heard. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "voicesSpeechOnline": "What you say goes to your phone’s speech service to be heard",
   "@voicesSpeechOnline": {
-    "description": "Status: online recognition allowed for this language. Beside a switch to take it back."
+    "description": "Under the Online recognition switch, while it is on: speaking in this language is heard online. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
   "voicesSpeechMissing": "Not recognised on this phone",
   "@voicesSpeechMissing": {
@@ -5212,9 +5492,13 @@
   "@reviewSettingsSwitch": {
     "description": "Settings switch that turns reviewer mode on: the reviewer checks cards and sends reviews by mail. The app calls this switch Review decks everywhere."
   },
-  "reviewSettingsSwitchDesc": "Check cards and send your suggestions by mail. The two buttons are “Looks right” and “Suggest a change”.",
-  "@reviewSettingsSwitchDesc": {
-    "description": "Under the Review decks switch. The two quoted names must match reviewLooksRight and reviewSuggest."
+  "reviewSettingsSwitchOn": "Check cards, then send your suggestions by mail",
+  "@reviewSettingsSwitchOn": {
+    "description": "Under Review decks, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "reviewSettingsSwitchOff": "No reviewing on this phone. Switching on asks first",
+  "@reviewSettingsSwitchOff": {
+    "description": "Under Review decks, while it is off. Switching it on shows a dialog first. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "reviewSettingsCode": "Your rater code",
   "@reviewSettingsCode": {

@@ -89,7 +89,7 @@ void main() {
         Skill.production,
         Skill.listening,
       ]) {
-        final row = _row(skill.label(l10n));
+        final row = _row(skill.settingsLabel(l10n));
         await scrollTo(tester, row);
         expect(settings.isEnabled(skill), isTrue);
         await tester.tap(row);
@@ -207,7 +207,7 @@ void main() {
 
   testWidgets(
     'the minimal-pairs switch is titled Phonemic contrasts, says what '
-    'it lets you learn, and is still incoming',
+    'is missing while off, and is still incoming',
     (tester) async {
       usePhone(tester);
       await pumpScreen(tester, const SettingsPage());
@@ -219,9 +219,7 @@ void main() {
       expect(
         find.descendant(
           of: row,
-          matching: find.text(
-            'Practise the sounds the languages you speak don\u2019t have',
-          ),
+          matching: find.text('No practice with sounds your languages lack'),
         ),
         findsOneWidget,
       );
@@ -235,10 +233,12 @@ void main() {
       expect(toggle.value, isFalse);
       expect(toggle.onChanged, isNull);
 
-      // Only Settings renames the skill; every other skill keeps its label.
+      // Only Settings renames the skill. Settings names the others in the
+      // learner's words too (switch_lines_test.dart), and grammar and
+      // reading keep their labels.
       expect(Skill.pair.label(l10n), 'Minimal pairs');
       expect(Skill.pair.settingsLabel(l10n), 'Phonemic contrasts');
-      for (final skill in Skill.values.where((s) => s != Skill.pair)) {
+      for (final skill in <Skill>[Skill.grammar, Skill.reading]) {
         expect(skill.settingsLabel(l10n), skill.label(l10n), reason: '$skill');
       }
     },

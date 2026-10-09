@@ -62,7 +62,8 @@ class ReviewSection extends StatelessWidget {
         GroupedTile.toggle(
           leading: const Icon(Icons.rate_review_outlined),
           title: l10n.reviewSettingsSwitch,
-          subtitle: l10n.reviewSettingsSwitchDesc,
+          subtitleOn: l10n.reviewSettingsSwitchOn,
+          subtitleOff: l10n.reviewSettingsSwitchOff,
           value: on,
           onChanged: (value) =>
               value ? _turnOn(context, state) : reviewing.turnOff(),
