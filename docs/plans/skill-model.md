@@ -265,6 +265,11 @@ The owner's answers to #235, 2026-10-08:
   and plans no longer name it. ADRs keep it, as the record of what was
   decided.
 
+- **The evidence for both** is in `docs/research/skill-evidence.md`, every
+  claim checked against its source by a second agent (the checked claims:
+  `docs/research/skill-evidence-claims.json`). Its options are put to the
+  owner before anything is built from them.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
