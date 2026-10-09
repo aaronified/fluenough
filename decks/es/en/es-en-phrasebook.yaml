@@ -1,0 +1,56 @@
+schema: 1
+id: "es-en-phrasebook"
+kind: "layer"
+core: "es-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+description: "Fifteen things to say whole from the first day, before their words are taught: hello, thank you, please, good morning and good night, sorry, asking for water and food, the street, and the verbs to be, to have, to go, to speak and to eat. Not yet checked by a Spanish speaker: please report any mistake."
+license: "CC0-1.0"
+cards:
+  "es-0036":
+    native: "hello"
+  "es-0037":
+    native: "thank you"
+    alt_native: ["thanks"]
+  "es-0038":
+    native: "please"
+  "es-0039":
+    native: "good morning"
+  "es-0040":
+    native: "good night"
+    alt_native: ["good evening"]
+  "es-0041":
+    native: "I'm sorry"
+    alt_native: ["sorry"]
+  "es-0012":
+    native: "the water"
+    notes:
+      "n1": "Feminine, but takes el in the singular because it begins with a stressed a. The plural is las aguas."
+  "es-0015":
+    native: "the food"
+    alt_native: ["the meal"]
+  "es-0017":
+    native: "the street"
+  "es-0022":
+    native: "to be"
+    notes:
+      "n1": "Permanent or essential qualities: identity, origin, profession. Contrast with estar."
+    examples:
+      "Ella es médica.":
+        native: "She is a doctor."
+  "es-0023":
+    native: "to be"
+    notes:
+      "n1": "Temporary states and location. Contrast with ser."
+    examples:
+      "Estoy cansado.":
+        native: "I am tired."
+  "es-0024":
+    native: "to have"
+  "es-0026":
+    native: "to go"
+  "es-0027":
+    native: "to speak"
+    alt_native: ["to talk"]
+  "es-0028":
+    native: "to eat"
