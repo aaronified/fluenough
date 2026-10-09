@@ -46,9 +46,10 @@ Roughly in order of how much they help right now.
 The most useful thing you can contribute, and it needs **no Flutter toolchain
 at all** — just a text editor and Python.
 
-The app ships with decks for eight languages (Assamese, Bengali, Gujarati,
-Hindi, Kannada, Marathi, Spanish and Telugu); Japanese is kept in the
-repository but not bundled. It needs many more, in many more
+The app offers decks for eight languages (Assamese, Bengali, Gujarati,
+Hindi, Kannada, Marathi, Spanish and Telugu), downloaded from this
+repository when a learner chooses one; Japanese is kept in the repository
+but not offered. It needs many more, in many more
 languages, and the people best placed to write a good Hungarian deck are not
 necessarily Flutter developers. That asymmetry is the whole reason the deck
 format is plain text validated by a standalone Python script.
@@ -135,14 +136,17 @@ python3 tools/import_csv.py words.csv \
 
 Then **read the generated card ids before committing.** They are permanent.
 
-### Validate it
+### Index it, then validate it
 
 ```sh
+python3 tools/deck_index.py
 python3 tools/validate_decks.py decks/
 ```
 
-CI runs exactly this. Errors fail the build; warnings do not, but are usually
-worth fixing.
+The first writes `decks/index.json`, the list the app downloads decks by;
+commit it with your deck. CI runs the second, which fails while the index is
+out of date. Errors fail the build; warnings do not, but are usually worth
+fixing.
 
 ### The four things reviewers check
 
@@ -232,6 +236,7 @@ in this codebase was decided, and the reasoning is written down.
 ### Before opening the pull request
 
 ```sh
+python3 tools/deck_index.py              # if decks changed
 python3 tools/validate_decks.py decks/   # if decks changed
 python3 tools/check_ui_strings.py lib/   # if you added a widget
 dart format lib test

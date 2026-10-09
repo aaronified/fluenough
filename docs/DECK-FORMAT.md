@@ -1334,7 +1334,7 @@ Progress is kept by card id, so changing loses nothing the cores share.
   at the bottom of the first unit ending in `"*"` that holds a theme deck
   of its theme, and otherwise into the unit of `"*"` alone, at the end of
   the course. So a unit ending in `"*"` needs a theme deck in some course,
-  which the validator checks. Every bundled path ends each unit that has a
+  which the validator checks. Every path in the repository ends each unit that has a
   theme deck in `"*"`, and has a last unit of `"*"` alone.
 - **Order is a teaching decision.** Grammar goes with the theme that first
   needs it, and a [reading deck](#reading-decks) in a unit after the themes
@@ -1667,10 +1667,62 @@ error before moving on. Read the warnings; do not leave them unexplained.
     - each unit's `words` at least what it counts, and the levels near 700,
       900 and 1,200 words;
     - every deck on the path once, and every split deck's old file gone;
+    - `python3 tools/deck_index.py` run, and its `decks/index.json`
+      committed with the decks;
     - `python3 tools/validate_decks.py decks/` with no error, and
-      `flutter test`, which parses every bundled deck;
+      `flutter test`, which parses every deck the index lists;
     - the work rated by an independent rater, as
       [AGENTS.md](../AGENTS.md) asks.
+
+## How the app gets decks: `index.json`
+
+The app bundles no deck. It downloads each language's files from this
+repository's `main` branch, on `raw.githubusercontent.com`, the first time
+a learner chooses the language, and checks for changes at most once a day
+after that ([ADR-0037](adr/0037-decks-download-from-main.md)). What it
+downloads is listed in `decks/index.json`:
+
+- **Every language** in `decks/`, except those in `HIDDEN` in
+  `tools/deck_index.py` (Japanese, for now): its name, own name, icon and
+  script, whether it has script decks, the native languages it is taught
+  from, its path's order, and each unit's planned words and the words its
+  decks have, per native language.
+- **Every file** of the language: its path, size, SHA-256, `schema` and
+  `kind`, and for a deck its native language and the core id its path
+  lists it by. A core is marked `"part": "core"`.
+- **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
+  not downloaded.
+
+**After changing anything under `decks/`, write the index again and commit
+it with your change:**
+
+```sh
+python3 tools/deck_index.py
+```
+
+`tools/validate_decks.py decks/` fails while the index is out of date, and
+so does CI: a phone checks each file against its hash and refuses one that
+does not match. One file is one line of the index, so a changed deck is a
+one-line diff there too.
+
+What a learner downloads for a language: its own files (path, facts,
+romanisation, sounds, number rules, script guide), its cores, and its decks
+and layers for the native languages they speak, or its English ones where
+it has none in theirs. They can start once the first five decks of its path
+are in; the rest follow. A file of a `schema` newer than the app reads is
+skipped until the app is updated.
+
+So that an update never costs a learner anything:
+
+- **Card ids are permanent** (AGENTS.md, rule 1): progress is keyed by card
+  id, so a changed deck keeps every card's history.
+- **Deleting a deck does not delete it from phones.** A file the index no
+  longer lists stays on the phone, unless a new file takes its place: a
+  deck split into a core and its layer replaces its single file, and a new
+  path replaces the language's old one. To retire cards, delete them from
+  the deck, which the update then carries.
+- **Every file must parse.** A phone checks each downloaded file as it reads
+  it, and keeps none of a language's update if any file fails.
 
 ## Adding your own deck
 
@@ -1682,10 +1734,10 @@ deck is single-file: cores, layers and rules decks are for the repository.
 The app checks it first, and refuses:
 
 - a file that is not a deck, or that does not parse: the file, line and
-  message are shown, as for a bundled deck;
+  message are shown, as for any deck;
 - the id of a deck that comes with the app;
 - a card id that another deck has. Write `<language>-my-NNNN`, which no
-  bundled deck uses, and list a word another deck has by `ref`.
+  deck in the repository uses, and list a word another deck has by `ref`.
 
 Adding a deck with the id of one added before replaces it. Its `theme` puts
 it at the bottom of that theme's unit, through the path's wildcards; a deck

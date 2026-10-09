@@ -6,9 +6,10 @@ so a deck contributor can run these without a Flutter toolchain.
 
 Every test here builds a throwaway repository in a temporary directory and
 runs the validator as a subprocess against it. That is deliberate: the bug
-these exist for was one of resolution — the check read `pubspec.yaml` from the
-working directory, so it passed silently when run from anywhere else — and a
-test that imports the function and calls it in-process cannot see that.
+these were first written for was one of resolution — a check read
+`pubspec.yaml` from the working directory, so it passed silently when run from
+anywhere else — and a test that imports the function and calls it in-process
+cannot see that. The check now is that decks/index.json is current (#210).
 """
 
 from __future__ import annotations
@@ -22,19 +23,12 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VALIDATOR = REPO / "tools" / "validate_decks.py"
+INDEXER = REPO / "tools" / "deck_index.py"
 SAMPLE_DECK = REPO / "decks" / "es" / "es-en-core-100.yaml"
 
-PUBSPEC = """\
-name: fluenough
-flutter:
-  uses-material-design: true
-  assets:
-    - decks/es/
-"""
 
-
-class BundledAssetCheck(unittest.TestCase):
-    """`decks/<lang>/` must appear under flutter.assets, from any directory."""
+class IndexCheck(unittest.TestCase):
+    """decks/index.json must be current, from any directory (#210)."""
 
     def setUp(self) -> None:
         self.tmp = Path(tempfile.mkdtemp())
@@ -42,7 +36,7 @@ class BundledAssetCheck(unittest.TestCase):
 
         (self.tmp / "tools").mkdir()
         shutil.copy(VALIDATOR, self.tmp / "tools" / "validate_decks.py")
-        (self.tmp / "pubspec.yaml").write_text(PUBSPEC, encoding="utf-8")
+        shutil.copy(INDEXER, self.tmp / "tools" / "deck_index.py")
 
         (self.tmp / "decks" / "es").mkdir(parents=True)
         shutil.copy(SAMPLE_DECK, self.tmp / "decks" / "es")
@@ -51,6 +45,7 @@ class BundledAssetCheck(unittest.TestCase):
         # the tools directory it runs from.
         shutil.copytree(VALIDATOR.parent.parent / "assets" / "pictures",
                         self.tmp / "assets" / "pictures")
+        self.write_index()
 
     def write_path(self, lang: str, decks: list[str]) -> None:
         """The path every language with a deck needs (ADR-0013, ADR-0036),
@@ -61,8 +56,14 @@ class BundledAssetCheck(unittest.TestCase):
             encoding="utf-8",
         )
 
-    def add_unbundled_language(self) -> None:
-        """A second language directory that pubspec.yaml does not list."""
+    def write_index(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(self.tmp / "tools" / "deck_index.py")],
+            cwd=self.tmp, capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def add_language(self) -> None:
+        """A second language, after the index was written."""
         hi = self.tmp / "decks" / "hi"
         hi.mkdir()
         deck = SAMPLE_DECK.read_text(encoding="utf-8")
@@ -70,6 +71,7 @@ class BundledAssetCheck(unittest.TestCase):
         deck = deck.replace("code: es", "code: hi")
         deck = deck.replace("name: Spanish", "name: Hindi")
         deck = deck.replace("tts: es-ES", "tts: hi-IN")
+        deck = deck.replace("id: es-0", "id: hi-0")
         (hi / "hi-en-probe.yaml").write_text(deck, encoding="utf-8")
         self.write_path("hi", ["hi-probe"])
 
@@ -85,35 +87,37 @@ class BundledAssetCheck(unittest.TestCase):
             check=False,
         )
 
-    def test_passes_when_every_language_is_bundled(self) -> None:
+    def test_passes_when_the_index_is_current(self) -> None:
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
-    def test_a_file_entry_bundles_just_that_file(self) -> None:
-        themes = "schema: 1\nkind: themes\nthemes:\n  - { id: market, name: Market }\n"
-        (self.tmp / "decks" / "themes.yaml").write_text(themes, encoding="utf-8")
+    def test_fails_when_the_index_is_missing(self) -> None:
+        (self.tmp / "decks" / "index.json").unlink()
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 1, result.stdout)
-        self.assertIn("decks/ holds decks", result.stdout)
+        self.assertIn("decks/index.json is missing", result.stdout)
 
-        (self.tmp / "pubspec.yaml").write_text(
-            PUBSPEC + "    - decks/themes.yaml\n", encoding="utf-8"
-        )
+    def test_fails_when_a_language_is_added_after_it(self) -> None:
+        self.add_language()
+        result = self.run_validator("decks/", self.tmp)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("decks/index.json is out of date", result.stdout)
+        self.write_index()
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
-    def test_fails_when_a_language_is_not_bundled(self) -> None:
-        self.add_unbundled_language()
+    def test_fails_when_a_deck_changes_after_it(self) -> None:
+        deck = self.tmp / "decks" / "es" / "es-en-core-100.yaml"
+        deck.write_text(deck.read_text(encoding="utf-8") + "\n", encoding="utf-8")
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 1, result.stdout)
-        self.assertIn("decks/hi/", result.stdout)
+        self.assertIn("out of date", result.stdout)
 
-    def test_a_directory_kept_out_on_purpose_is_still_validated(self) -> None:
-        """decks/ja/ is in NOT_BUNDLED: not asked for, but still checked."""
+    def test_a_hidden_language_is_still_validated(self) -> None:
+        """decks/ja/ is hidden: left out of the index, but still checked."""
         shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertNotIn("decks/ja/ holds decks", result.stdout)
 
         deck = self.tmp / "decks" / "ja" / "ja-en-hiragana.yaml"
         deck.write_text(
@@ -123,38 +127,35 @@ class BundledAssetCheck(unittest.TestCase):
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 1, result.stdout)
         self.assertIn("ja-en-hiragana.yaml", result.stdout)
+        self.assertNotIn("index.json", result.stdout)
 
     def test_fails_from_a_different_working_directory(self) -> None:
-        """The regression: the check used to read pubspec.yaml from the CWD.
-
-        Run from the parent, it found no pubspec.yaml, returned no problems,
-        and reported every deck valid — a guard that fails open.
-        """
-        self.add_unbundled_language()
+        """The check reads decks/ beside the tools, not the working
+        directory's: run from the parent, it still finds the stale index."""
+        self.add_language()
         result = self.run_validator(f"{self.tmp.name}/decks/", self.tmp.parent)
         self.assertEqual(result.returncode, 1, result.stdout)
-        self.assertIn("decks/hi/", result.stdout)
+        self.assertIn("out of date", result.stdout)
 
     def test_absolute_paths_do_not_produce_false_failures(self) -> None:
-        """The other half: absolute paths used to be compared verbatim.
-
-        Every deck was reported unbundled, naming an absolute path that could
-        never appear in pubspec.yaml.
-        """
         result = self.run_validator(str(self.tmp / "decks"), self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout)
 
     def test_absolute_path_still_catches_a_real_miss(self) -> None:
-        self.add_unbundled_language()
+        self.add_language()
         result = self.run_validator(str(self.tmp / "decks"), self.tmp)
         self.assertEqual(result.returncode, 1, result.stdout)
-        self.assertIn("decks/hi/", result.stdout)
+        self.assertIn("out of date", result.stdout)
 
-    def test_a_deck_outside_the_repo_is_not_called_unbundled(self) -> None:
-        """Validating a deck you are drafting elsewhere is legitimate.
+    def test_one_deck_alone_skips_the_index(self) -> None:
+        """Validating one file cannot say the index is current; the run over
+        decks/ does."""
+        self.add_language()
+        result = self.run_validator("decks/hi/hi-en-probe.yaml", self.tmp)
+        self.assertEqual(result.returncode, 0, result.stdout)
 
-        Nothing in pubspec.yaml could bundle it, so it is not a finding.
-        """
+    def test_a_deck_outside_the_repo_skips_the_index(self) -> None:
+        """Validating a deck you are drafting elsewhere is legitimate."""
         elsewhere = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, elsewhere, True)
         shutil.copy(SAMPLE_DECK, elsewhere)
