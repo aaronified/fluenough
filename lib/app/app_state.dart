@@ -593,13 +593,16 @@ class AppState extends ChangeNotifier {
   }
 
   /// At launch, once the catalog is read: finishes downloads cut short,
-  /// then looks for deck updates, at most once a day. In the background.
+  /// then looks for deck updates, at most once a day, unless the learner
+  /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
     final downloads = deckDownloads;
     if (downloads == null || !settings.learningChosen || _disposed) return;
     final spoken = settings.spokenLanguages;
     await downloads.resume(learningCodes, spoken);
-    if (!_disposed) await downloads.checkForUpdates(spoken);
+    if (!_disposed && downloads.checksAutomatically) {
+      await downloads.checkForUpdates(spoken);
+    }
   }
 
   /// The codes of the languages the current profile learns.

@@ -433,6 +433,88 @@ cards:
       expect(find.text(l10n.deckDownloadsUpdated), findsOneWidget);
     });
 
+    testWidgets('Try again after a failed update updates', (tester) async {
+      await downloaded(remote, phone, const <String>['es']);
+      const deck = 'decks/es/es-en-core-100.yaml';
+      remote.files[deck] = '${remote.files[deck]!}# a fix\n';
+      final state = await pump(
+        tester,
+        downloadingApp(
+          remote: remote,
+          phone: phone,
+          settings: learning(const <String>['es']),
+          now: _now.add(const Duration(days: 2)),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      await tapText(tester, l10n.deckUpdatePromptLater);
+      await tester.tap(find.text(l10n.navSettings));
+      await tester.pumpAndSettle();
+      await tapText(tester, l10n.deckDownloadsTitle);
+
+      remote.failAll = FetchFailure.offline;
+      await tapText(tester, l10n.deckDownloadsUpdate);
+      expect(find.text(l10n.commonRetry), findsOneWidget);
+      expect(find.text(l10n.deckDownloadsUpdate), findsNothing);
+
+      remote.failAll = null;
+      await tapText(tester, l10n.commonRetry);
+      expect(await phone.read(deck), endsWith('# a fix\n'));
+      expect(find.textContaining('Up to date'), findsOneWidget);
+      expect(state.deckDownloads!.updates, isEmpty);
+    });
+
+    testWidgets('with the daily check off, the app does not look', (
+      tester,
+    ) async {
+      await downloaded(remote, phone, const <String>['es']);
+      final before = DeckDownloads(
+        fetcher: remote,
+        files: phone,
+        clock: () => _now,
+      );
+      await before.open();
+      await before.setChecksAutomatically(false);
+      const deck = 'decks/es/es-en-core-100.yaml';
+      remote.files[deck] = '${remote.files[deck]!}# a fix\n';
+      final state = await pump(
+        tester,
+        downloadingApp(
+          remote: remote,
+          phone: phone,
+          settings: learning(const <String>['es']),
+          now: _now.add(const Duration(days: 2)),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.deckUpdatePromptTitle), findsNothing);
+      expect(remote.asked, isEmpty);
+
+      // Check for deck updates still looks, when asked.
+      await tester.tap(find.text(l10n.navSettings));
+      await tester.pumpAndSettle();
+      await tapText(tester, l10n.deckDownloadsTitle);
+      await tapText(tester, l10n.deckDownloadsCheck);
+      expect(remote.asked, <String>['decks/index.json']);
+      expect(state.deckDownloads!.updates.keys, <String>['es']);
+    });
+
+    testWidgets('the daily check is switched on the page', (tester) async {
+      await downloaded(remote, phone, const <String>['es']);
+      final state = await openPage(tester);
+      final l10n = l10nOf(tester);
+      expect(state.deckDownloads!.checksAutomatically, isTrue);
+      await tapText(tester, l10n.deckDownloadsAuto);
+      expect(state.deckDownloads!.checksAutomatically, isFalse);
+      final again = DeckDownloads(
+        fetcher: remote,
+        files: phone,
+        clock: () => _now,
+      );
+      await again.open();
+      expect(again.checksAutomatically, isFalse);
+    });
+
     testWidgets('a deck removed upstream stays on the phone', (tester) async {
       await downloaded(remote, phone, const <String>['es']);
       remote.files.remove('decks/es/es-en-grammar-present-ar.yaml');
