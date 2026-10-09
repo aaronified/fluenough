@@ -7,6 +7,7 @@ import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/converters.dart';
 import 'tables/decks.dart';
+import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
@@ -37,7 +38,15 @@ part 'database.g.dart';
 ///    `cards` and `card_states` may be rebuilt, since the first two come from
 ///    the deck files and the last from replaying `reviews`.
 @DriftDatabase(
-  tables: [Decks, Cards, CardStates, Reviews, Settings, LeechActions],
+  tables: [
+    Decks,
+    Cards,
+    CardStates,
+    Reviews,
+    Settings,
+    LeechActions,
+    FsrsParameters,
+  ],
   daos: [
     DecksDao,
     CardsDao,
@@ -45,6 +54,7 @@ part 'database.g.dart';
     ReviewsDao,
     SettingsDao,
     LeechActionsDao,
+    FsrsParametersDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -58,8 +68,10 @@ class AppDatabase extends _$AppDatabase {
   ///    `reviews` gains `stability_after` and `difficulty_after`.
   /// 6: `reviews` loses SM-2's `ease_before` and `ease_after`; every row is
   ///    kept (owner, 2026-10-09).
+  /// 7: `fsrs_parameters`, FSRS fitted to the learner per language and
+  ///    skill (`docs/plans/skill-model.md`).
   @override
-  int get schemaVersion => 6;
+  int get schemaVersion => 7;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -108,6 +120,14 @@ class AppDatabase extends _$AppDatabase {
             await customStatement('ALTER TABLE reviews DROP COLUMN $column');
           }
         }
+      }
+      if (from < 7) {
+        // Once, as in step 5: a step cut off part-way runs again.
+        final exists = await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'fsrs_parameters'",
+        ).get();
+        if (exists.isEmpty) await m.createTable(fsrsParameters);
       }
     },
   );

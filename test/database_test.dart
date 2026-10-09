@@ -47,8 +47,8 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 6 with its six tables', () async {
-    expect(db.schemaVersion, 6);
+  test('opens at version 7 with its seven tables', () async {
+    expect(db.schemaVersion, 7);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -60,6 +60,7 @@ void main() {
       'card_states',
       'cards',
       'decks',
+      'fsrs_parameters',
       'leech_actions',
       'reviews',
       'settings',
@@ -71,11 +72,12 @@ void main() {
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/old.sqlite');
 
-    // Make a version 1 file: today's schema without what migrations 2, 3
-    // and 5 add.
+    // Make a version 1 file: today's schema without what migrations 2, 3,
+    // 5 and 7 add.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
     await withoutFsrsColumns(old);
+    await old.customStatement('DROP TABLE fsrs_parameters');
     await old.customStatement('DROP TABLE settings');
     await old.customStatement('DROP TABLE leech_actions');
     await old.customStatement('PRAGMA user_version = 1');
@@ -237,6 +239,73 @@ void main() {
     final upgraded = AppDatabase(NativeDatabase(file));
     addTearDown(upgraded.close);
     expect(await upgraded.reviewsDao.all(), hasLength(1));
+  });
+
+  FsrsParametersCompanion fit(String language, double w0, {int count = 400}) =>
+      FsrsParametersCompanion.insert(
+        language: language,
+        mode: DrillMode.listening,
+        parameters: <double>[w0, ...List<double>.filled(20, 0.5)].join(','),
+        fittedAt: at,
+        reviewCount: count,
+        lossBefore: const Value(0.41),
+        lossAfter: const Value(0.38),
+      );
+
+  test(
+    'a version 6 database gains fsrs_parameters and keeps its reviews',
+    () async {
+      final dir = Directory.systemTemp.createTempSync('fluenough');
+      addTearDown(() => dir.deleteSync(recursive: true));
+      final file = File('${dir.path}/v6.sqlite');
+
+      final old = AppDatabase(NativeDatabase(file));
+      await old.reviewsDao.append(review());
+      await old.customStatement('DROP TABLE fsrs_parameters');
+      await old.customStatement('PRAGMA user_version = 6');
+      await old.close();
+
+      final upgraded = AppDatabase(NativeDatabase(file));
+      addTearDown(upgraded.close);
+      expect(await upgraded.reviewsDao.all(), hasLength(1));
+      expect(await upgraded.fsrsParametersDao.all(), isEmpty);
+      await upgraded.fsrsParametersDao.put(fit('hi', 0.3));
+      expect(await upgraded.fsrsParametersDao.all(), hasLength(1));
+    },
+  );
+
+  test('migration 7 run again keeps the table and its rows', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/again.sqlite');
+
+    // The table made and written, but the version not yet raised: a step
+    // cut off at its end.
+    final old = AppDatabase(NativeDatabase(file));
+    await old.fsrsParametersDao.put(fit('hi', 0.3));
+    await old.customStatement('PRAGMA user_version = 6');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    final rows = await upgraded.fsrsParametersDao.all();
+    expect(rows, hasLength(1));
+    expect(rows.single.language, 'hi');
+  });
+
+  test('fsrs_parameters: one row per language and skill, replaced by the '
+      'next fit', () async {
+    await db.fsrsParametersDao.put(fit('hi', 0.3));
+    await db.fsrsParametersDao.put(fit('bn', 0.4));
+    await db.fsrsParametersDao.put(fit('hi', 0.35, count: 440));
+    final rows = await db.fsrsParametersDao.all();
+    expect(rows.map((r) => r.language), <String>['bn', 'hi']);
+    final hi = rows.last;
+    expect(hi.parameters.split(',').first, '0.35');
+    expect(hi.reviewCount, 440);
+    expect(hi.fittedAt, at);
+    expect(hi.lossBefore, 0.41);
+    expect(hi.lossAfter, 0.38);
   });
 
   test('leech_actions: appended in order, never changed', () async {
