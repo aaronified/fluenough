@@ -241,10 +241,12 @@ The owner's answers to #235, 2026-10-08:
   recognition-only decks (the `-registers` and `-spelling` decks, and
   `bn-en-sadhu-cholito`) are reviewed again with it.
 - **Shared ability:** "Our research said everything is interdependent."
-  The research finds the skills related (about .68) but separable, so an
-  answer in one skill moves the learner's ability and the word's
-  difficulty in every skill, weighted by how related they are. Due dates
-  stay per skill.
+  An answer in one skill moves the learner's ability and the word's
+  difficulty in another **only where research has found the two related,
+  and by as much as it found** (owner: "It should only be used where
+  research has found correlation and with the strength that research has
+  found"). So far: Recognition and Hear, .68 (Milton & Hopkins 2006,
+  recognising words in writing and by ear). Due dates stay per skill.
 
 - **One question, several skills; partial implication.** The owner:
   "Same questions can judge multiple skills. And one skill may partially
