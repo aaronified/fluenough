@@ -344,6 +344,158 @@ void main() {
     });
   });
 
+  group('a window: whole histories, only the window predicted', () {
+    // Every review time in [histories], sorted.
+    List<DateTime> times(List<List<FitReview>> histories) => <DateTime>[
+      for (final h in histories)
+        for (final r in h) r.at,
+    ]..sort();
+
+    test('a window that holds everything changes nothing', () {
+      for (final name in ['small', 'quick', 'mixed']) {
+        final c = _Case.load(name);
+        final from = times(c.histories).first;
+        expect(
+          FsrsFit.gate(c.histories, from: from).toString(),
+          FsrsFit.gate(c.histories).toString(),
+        );
+        expect(FsrsFit.fit(c.histories, from: from), FsrsFit.fit(c.histories));
+        expect(
+          FsrsFit.logLoss(c.histories, from: from),
+          FsrsFit.logLoss(c.histories),
+        );
+      }
+    });
+
+    test('only reviews at or after the window are items', () {
+      final c = _Case.load('quick');
+      final all = times(c.histories);
+      final from = all[all.length ~/ 2];
+      var inWindow = 0;
+      for (final h in c.histories) {
+        for (var i = 1; i < h.length; i++) {
+          if (Fsrs.elapsedDays(h[i - 1].at, h[i].at) >= 1 &&
+              !h[i].at.isBefore(from)) {
+            inWindow++;
+          }
+        }
+      }
+      final gate = FsrsFit.gate(c.histories, from: from);
+      expect(gate.items, inWindow);
+      expect(gate.items, lessThan(FsrsFit.gate(c.histories).items));
+      expect(gate.items, greaterThan(0));
+    });
+
+    test('reviews before the window still build each pair\'s memory', () {
+      final c = _Case.load('quick');
+      final all = times(c.histories);
+      final from = all[all.length ~/ 2];
+      // The same reviews predicted, but with the history before the
+      // window cut off: the pairs start from nothing at the window.
+      final cut = <List<FitReview>>[
+        for (final h in c.histories)
+          <FitReview>[
+            for (final r in h)
+              if (!r.at.isBefore(from)) r,
+          ],
+      ];
+      expect(
+        FsrsFit.logLoss(c.histories, from: from),
+        isNot(closeTo(FsrsFit.logLoss(cut)!, 1e-9)),
+      );
+      expect(FsrsFit.fit(c.histories, from: from), isNot(FsrsFit.fit(cut)));
+    });
+
+    test('a window after every review predicts nothing', () {
+      final c = _Case.load('quick');
+      final after = times(c.histories).last.add(const Duration(days: 1));
+      expect(FsrsFit.gate(c.histories, from: after).items, 0);
+      expect(FsrsFit.fit(c.histories, from: after), isNull);
+      expect(FsrsFit.logLoss(c.histories, from: after), isNull);
+    });
+  });
+
+  group('a start: where fitting begins, and what it is pulled to', () {
+    // How far apart two sets are, parameter by parameter in units of
+    // fsrs-rs's spread for each, over w4 to w20.
+    double distance(List<double> a, List<double> b) {
+      const spread = <double>[
+        6.43, 9.66, 17.58, 27.85, 0.57, 0.28, 0.6, 0.12, 0.39, 0.18, 0.33, //
+        0.3, 0.09, 0.16, 0.57, 0.25, 1.03, 0.31, 0.32, 0.14, 0.27,
+      ];
+      var sum = 0.0;
+      for (var i = 4; i < 21; i++) {
+        final d = (a[i] - b[i]) / spread[i];
+        sum += d * d;
+      }
+      return math.sqrt(sum);
+    }
+
+    test('the defaults, as the start, change nothing', () {
+      for (final name in ['small', 'fill_13', 'onebatch', 'quick', 'slow']) {
+        final c = _Case.load(name);
+        expect(
+          FsrsFit.fit(c.histories, start: Fsrs.w),
+          FsrsFit.fit(c.histories),
+          reason: name,
+        );
+      }
+    });
+
+    test('fitting only the first stabilities keeps the start\'s rest', () {
+      final start = FsrsFit.fit(_Case.load('slow').histories)!;
+      final c = _Case.load('small');
+      expect(FsrsFit.gate(c.histories).outcome, FsrsFitOutcome.pretrainOnly);
+      final fitted = FsrsFit.fit(c.histories, start: start)!;
+      expect(fitted.sublist(4), start.sublist(4));
+    });
+
+    test('a full fit ends nearer its start than a fit from the defaults', () {
+      final start = FsrsFit.fit(_Case.load('slow').histories)!;
+      for (final name in ['quick', 'mixed', 'onebatch']) {
+        final c = _Case.load(name);
+        final cold = FsrsFit.fit(c.histories)!;
+        final warm = FsrsFit.fit(c.histories, start: start)!;
+        expect(warm, isNot(cold), reason: name);
+        expect(
+          distance(warm, start),
+          lessThan(distance(cold, start)),
+          reason: name,
+        );
+      }
+    });
+
+    test('a refit from its own result moves little', () {
+      final c = _Case.load('quick');
+      final first = FsrsFit.fit(c.histories)!;
+      final again = FsrsFit.fit(c.histories, start: first)!;
+      expect(distance(again, first), lessThan(distance(first, Fsrs.w)));
+      expect(
+        FsrsFit.logLoss(c.histories, parameters: again)!,
+        lessThan(FsrsFit.logLoss(c.histories)! + 1e-3),
+      );
+    });
+
+    test('the same start always gives the same parameters', () {
+      final start = FsrsFit.fit(_Case.load('slow').histories)!;
+      final c = _Case.load('mixed');
+      expect(
+        FsrsFit.fit(c.histories, start: start),
+        FsrsFit.fit(c.histories, start: start),
+      );
+    });
+
+    test('a start that is not 21 values is refused', () {
+      expect(
+        () => FsrsFit.fit(
+          _Case.load('quick').histories,
+          start: Fsrs.w.sublist(1),
+        ),
+        throwsArgumentError,
+      );
+    });
+  });
+
   group('Fsrs with fitted parameters', () {
     final at = DateTime.utc(2026, 1, 5, 9);
     final fitted = FsrsFit.fit(_Case.load('slow').histories)!;
