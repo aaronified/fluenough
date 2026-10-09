@@ -15,8 +15,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "હું", base: "હું", reading: "hum̐" }
-      - { word: "પીઉં", base: "પીઉં", reading: "pium̐" }
-      - { word: "છું", base: "છું", reading: "chum̐" }
+      - { word: "પીઉં", ref: "gu-0506" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0240"
     target: "તે ડૉક્ટર છે."
     reading: "te ḍôkṭar che."
@@ -26,7 +26,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "તે", base: "તે", reading: "te" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0241"
     target: "ઘરમાં"
     reading: "gharmām̐"
@@ -56,7 +56,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "આવ્યો", base: "આવ્યો", reading: "āvyo" }
+      - { word: "આવ્યો", ref: "gu-0509" }
   - id: "gu-0245"
     target: "છોકરી આવી."
     reading: "chokri āvi."
@@ -65,7 +65,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "આવી", base: "આવી", reading: "āvi" }
+      - { word: "આવી", ref: "gu-0509" }
   - id: "gu-0246"
     target: "બાળક આવ્યું."
     reading: "bāḷak āvyum̐."
@@ -74,7 +74,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "આવ્યું", base: "આવ્યું", reading: "āvyum̐" }
+      - { word: "આવ્યું", ref: "gu-0509" }
   - id: "gu-0247"
     target: "મારો ભાઈ"
     reading: "māro bhāi"
@@ -83,7 +83,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારો", base: "મારો", reading: "māro" }
+      - { word: "મારો", base: "મારું", reading: "mārum̐" }
   - id: "gu-0248"
     target: "મારી બહેન"
     reading: "māri bahen"
@@ -92,7 +92,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારી", base: "મારી", reading: "māri" }
+      - { word: "મારી", base: "મારું", reading: "mārum̐" }
   - id: "gu-0249"
     target: "મારું ઘર"
     reading: "mārum̐ ghar"
@@ -138,8 +138,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારી", base: "મારી", reading: "māri" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "મારી", base: "મારું", reading: "mārum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0255"
     target: "હું ડૉક્ટર નથી."
     reading: "hum̐ ḍôkṭar nathi."
@@ -159,8 +159,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ગુજરાતી", base: "ગુજરાતી", reading: "gujarāti" }
-      - { word: "બોલો", base: "બોલો", reading: "bolo" }
-      - { word: "છો", base: "છો", reading: "cho" }
+      - { word: "બોલો", ref: "gu-0512" }
+      - { word: "છો", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0257"
     target: "મેં કેળું ખાધું."
     reading: "mem̐ keḷum̐ khādhum̐."
@@ -169,8 +169,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મેં", base: "મેં", reading: "mem̐" }
-      - { word: "ખાધું", base: "ખાધું", reading: "khādhum̐" }
+      - { word: "મેં", base: "હું", reading: "hum̐" }
+      - { word: "ખાધું", ref: "gu-0504" }
   - id: "gu-0258"
     target: "મને ચા ગમે છે."
     reading: "mane cā game che."
@@ -179,9 +179,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મને", base: "મને", reading: "mane" }
-      - { word: "ગમે", base: "ગમે", reading: "game" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "મને", base: "હું", reading: "hum̐" }
+      - { word: "ગમે", base: "ગમવું", reading: "gamvum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0259"
     target: "એક છોકરો"
     picture: "👦"
