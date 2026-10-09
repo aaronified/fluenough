@@ -146,6 +146,8 @@ class MilestoneMark extends StatelessWidget {
       MilestoneKind.firstDeck => l10n.pathFirstDeck,
       MilestoneKind.words => l10n.pathWordsLearned(step.count),
       MilestoneKind.script => l10n.pathScriptLearned,
+      MilestoneKind.rules => l10n.pathRulesKnown(step.count),
+      MilestoneKind.firstPassage => l10n.pathFirstPassage,
     };
     final line = step.earned
         ? earnedLine(context, step.earnedAt, now)
@@ -153,6 +155,8 @@ class MilestoneMark extends StatelessWidget {
             MilestoneKind.firstDeck => l10n.pathFirstDeckToGo,
             MilestoneKind.words => l10n.pathWordsToGo(step.toGo),
             MilestoneKind.script => l10n.pathScriptToGo(step.toGo),
+            MilestoneKind.rules => l10n.pathRulesToGo(step.toGo),
+            MilestoneKind.firstPassage => l10n.pathFirstPassageToGo,
           };
     final fg = step.earned ? scheme.onTertiaryContainer : scheme.onSurface;
     return MergeSemantics(
