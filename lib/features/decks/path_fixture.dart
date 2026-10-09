@@ -33,13 +33,41 @@ abstract final class PathFixtures {
       CefrLevel.a2: 'te-en-help',
     },
     coming: <ComingUnit>[
-      (title: 'Health', level: CefrLevel.b1, words: 60),
-      (title: 'Travel', level: CefrLevel.b1, words: 60),
-      (title: 'Feelings', level: CefrLevel.b1, words: 50),
-      (title: 'Opinions', level: CefrLevel.b1, words: 50),
-      (title: 'Events and news', level: CefrLevel.b1, words: 60),
-      (title: 'Conditionals', level: CefrLevel.b1, words: null),
-      (title: 'Reported speech', level: CefrLevel.b1, words: null),
+      (
+        title: 'Health', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: 60,
+      ),
+      (
+        title: 'Travel', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: 60,
+      ),
+      (
+        title: 'Feelings', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: 50,
+      ),
+      (
+        title: 'Opinions', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: 50,
+      ),
+      (
+        title: 'Events and news', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: 60,
+      ),
+      (
+        title: 'Conditionals', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: null,
+      ),
+      (
+        title: 'Reported speech', // ui-literal-ok: debug-gallery fixture, as deck data
+        level: CefrLevel.b1,
+        words: null,
+      ),
     ],
   );
 
