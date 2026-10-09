@@ -31,6 +31,7 @@ void changeAll(SettingsNotifier s) {
     ..placedDecks = const <String>{'hi-en-first-words', 'hi-en-questions'}
     ..learningChosen = true
     ..autoUpdateCheck = true
+    ..autoAdjust = false
     ..lastUpdateCheck = DateTime(2026, 10, 1, 8, 30)
     ..latestRelease = '0.2.0'
     ..pendingUpdate = '0.2.0';
@@ -45,6 +46,8 @@ void main() {
     // Saved at all: a key left out of toStored would round-trip as its
     // default on both sides, and pass.
     expect(changed.toStored()['pure_black'], 'true');
+    expect(changed.toStored()['auto_adjust'], 'false');
+    expect(SettingsNotifier().autoAdjust, isTrue, reason: 'on by default');
     final restored = SettingsNotifier()..restore(changed.toStored());
     expect(restored.toStored(), changed.toStored());
     expect(restored.toStored(), isNot(SettingsNotifier().toStored()));

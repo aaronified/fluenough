@@ -34,6 +34,7 @@ import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
 import 'log_files.dart';
+import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'profile.dart';
 import 'session.dart';
@@ -127,6 +128,7 @@ class AppState extends ChangeNotifier {
     this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
+    this._fitRunner = fitInIsolate,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -184,6 +186,7 @@ class AppState extends ChangeNotifier {
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
+    FitRunner fitRunner = fitInPlace,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -209,6 +212,7 @@ class AppState extends ChangeNotifier {
       releaseNotes: releaseNotes,
       installer: installer,
       downloads: downloads,
+      fitRunner: fitRunner,
       settings: settings,
       volume: volume,
       profiles: profiles,
@@ -265,6 +269,16 @@ class AppState extends ChangeNotifier {
   final ReleaseNotesEngine releaseNotes;
   final ApkInstaller _installer;
   final DownloadStore _downloads;
+
+  /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
+  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// notifier.
+  late final FsrsTuner tuner = FsrsTuner(
+    progress: progress,
+    clock: _clock,
+    runner: _fitRunner,
+  );
+  final FitRunner _fitRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -1357,21 +1371,27 @@ class AppState extends ChangeNotifier {
   }
 
   /// Records [grade] for [item] the moment the answer is given, and returns
-  /// the review. Minimal pairs have no mode and are not recorded.
+  /// the review. Minimal pairs have no mode and are not recorded. With
+  /// "Adjust automatically" on, the review's skill is then refitted in the
+  /// background if it has grown enough ([FsrsTuner.afterReview]).
   ReviewEvent record(
     SessionItem item,
     int grade, {
     Duration elapsed = Duration.zero,
     String? answerGiven,
-  }) => progress.record(
-    deckId: item.card.deckId,
-    cardId: item.card.id,
-    mode: item.mode,
-    grade: grade,
-    now: now(),
-    elapsed: elapsed,
-    answerGiven: answerGiven,
-  );
+  }) {
+    final event = progress.record(
+      deckId: item.card.deckId,
+      cardId: item.card.id,
+      mode: item.mode,
+      grade: grade,
+      now: now(),
+      elapsed: elapsed,
+      answerGiven: answerGiven,
+    );
+    if (settings.autoAdjust) tuner.afterReview(event);
+    return event;
+  }
 
   bool _disposed = false;
 
@@ -1382,6 +1402,7 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     shellTab.dispose();
     updates.dispose();
+    tuner.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();
