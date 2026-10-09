@@ -121,6 +121,18 @@ void main() {
     expect(pacing.paces![write]!.answers, paces[write]!.answers + 1);
   });
 
+  test('on an isolate, as in place', () async {
+    final progress = learner();
+    await progress.putFitted(write, fit(<double>[...Fsrs.w]..[8] += 0.5));
+    final PaceJob job = (
+      log: progress.log,
+      leechActions: progress.leechActions,
+      parameters: progress.parameters,
+      now: now,
+    );
+    expect(await paceInIsolate(job), await paceInPlace(job));
+  });
+
   test('a run that fails is reported, gives nothing, and is not retried '
       'until something changes', () async {
     var runs = 0;

@@ -381,6 +381,29 @@ The owner's answers to #235, 2026-10-08:
   - **The fit sees each word's own reviews only;** the half credit from
     implied skills is not modelled.
 
+- **Settled while building the display** (builder's reading, 2026-10-09;
+  the owner may overrule any of them):
+  - **"At the start" is FSRS-6's defaults.** How you learn and Today's
+    marks compare the set that schedules a skill with them, using the
+    result sheet's figures (`SkillFit.outlook` and `direction`). A skill
+    paced by another language's fit is adjusted, and says so; a stored
+    copy of the defaults is not.
+  - **Today shows once a fit has kept a set other than the defaults.**
+    The strip counts every skill of the languages learned; a tile's mark
+    adds its skill's languages together.
+  - **A skill not adjusted says how many answers it has,** not how many
+    it needs: the gate counts reviews a day or more apart and first
+    ratings, so no answer count is the threshold ("Needs 400 answers" in
+    the mockup is not shown).
+  - **The figures are worked out, not stored:** on an isolate, when a
+    screen asks, again when the log, the fits or the day change. Storing
+    them would need a migration, and they move with the day.
+  - **The Progress card** sits at the foot of "Correct, by skill", for the
+    language chosen; from Today and the result sheet the page shows every
+    language learned.
+  - **Large text:** from text scale 1.3 a tile's mark is its arrow and one
+    word; in one column, from 1.5, the full words again.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
