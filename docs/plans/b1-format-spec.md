@@ -2610,7 +2610,14 @@ agent may write its own).
 - **#20 B1 plans:** required on a path whose language has a core, as
   recommended.
 - **#24 Passages:** required on every planned unit, as recommended.
-- Still open: #22 (which grammar question is "understood"), #25 (what a
-  grammar topic is), #26 (scripts without spaces). #23 was settled
-  earlier: grammar understood and produced come with the B1 format, after
-  the skill model's pull request.
+- **#22 Understood:** "Choosing the meaning = understood" (Reading B, not
+  the recommendation): shown a form, the learner chooses what it means
+  (`Ask.chooseFormMeaning`, schedule `grammarUnderstood`); choosing among
+  forms of the same word (ammatō, ammaki, ammalō) or typing the form is
+  produced (`grammar`). This supersedes skill-model.md's line that
+  "understood" chooses among forms.
+- **#25 Topic:** one rule, as recommended; grammar decks not yet turned
+  into rules count by deck.
+- **#26 Scripts without spaces:** later, as recommended.
+- #23 was settled earlier: grammar understood and produced come with the
+  B1 format, after the skill model's pull request.
