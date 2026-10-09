@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'fsrs.dart';
+import 'rust_std_rng.dart';
 
 /// One review in a pair's history, as [Fsrs.replay] takes it: the grade
 /// as the log keeps it (0–5), when it was given, and whether the learner
@@ -82,22 +83,21 @@ class FsrsFitGate {
 /// cosine schedule, over batches of 512 items sorted by length, on the
 /// recency-weighted log loss plus an L2 pull towards the starting values,
 /// with the gradient computed by hand as `fsrs-rs` does, and the
-/// parameters clipped after every step. Two things differ, and neither is
-/// worth closing:
+/// parameters clipped after every step. The batches are shuffled with a
+/// port of Rust's `StdRng` ([RustStdRng]) from `fsrs-rs`'s seed, so they
+/// run in `fsrs-rs`'s order.
 ///
-/// - **The batch order.** `fsrs-rs` shuffles the batches with Rust's
-///   `StdRng` (ChaCha12); this shuffles them with a small generator of its
-///   own, from a fixed seed. With up to 512 items there is one batch and
-///   nothing to shuffle. With more, the fit lands elsewhere in the spread
-///   that `fsrs-rs` itself gives across seeds: about 0.002 of log loss.
-/// - **Arithmetic.** `fsrs-rs` runs the model in 32-bit floats; this runs
-///   it in 64-bit and rounds only the parameters and Adam's state to 32
-///   bits, as `fsrs-rs` stores them.
+/// One thing differs: **arithmetic.** `fsrs-rs` runs the model in 32-bit
+/// floats; this runs it in 64-bit and rounds only the parameters and
+/// Adam's state to 32 bits, as `fsrs-rs` stores them. Each step's
+/// gradient therefore differs from `fsrs-rs`'s in its last bits, and the
+/// difference grows a little with every step.
 ///
-/// On the reference cases, the gate's counts and the first stabilities
-/// match `fsrs-rs` exactly, a fit of one batch matches every parameter to
-/// within 1e-6, and a fit of several batches reaches a log loss within
-/// 0.0003 of `fsrs-rs`'s (`test/fsrs_fit_test.dart`).
+/// On the reference cases (`test/fsrs_fit_test.dart`) the gate's counts
+/// match `fsrs-rs` exactly, the first stabilities to within one unit in
+/// the last place of a 32-bit float, and a full fit every parameter to
+/// within 2e-6, but for one learner's w3, on which the loss is nearly
+/// flat: 7e-6.
 ///
 /// While training, stability is floored at `fsrs-rs`'s 0.0001 days, not
 /// the scheduler's [Fsrs.minStability] of 0.001; the two differ only
@@ -115,8 +115,7 @@ class FsrsFitGate {
 /// keeps a new set only when its log loss on the same history is lower:
 /// compare [logLoss] for both.
 abstract final class FsrsFit {
-  /// Shuffles the batch order. `fsrs-rs`'s seed, though the generator
-  /// differs.
+  /// Seeds the shuffle of the batch order: `fsrs-rs`'s seed.
   static const int seed = 2023;
 
   static const int _batchSize = 512;
@@ -488,7 +487,7 @@ abstract final class FsrsFit {
       ((total ~/ _batchSize + 1) * _epochs).toDouble(),
       _learningRate,
     );
-    final random = _Lehmer(seed);
+    final random = RustStdRng.seedFromU64(seed);
     final order = <int>[for (var i = 0; i < batches.length; i++) i];
     final model = _Model(w, _maxSeqLen);
     final grad64 = Float64List(21);
@@ -1058,25 +1057,5 @@ class _CosineAnnealing {
           _current;
     }
     return _current;
-  }
-}
-
-/// The Lehmer generator MINSTD: small, the same on every platform, and
-/// only ever used to shuffle the batch order.
-class _Lehmer {
-  _Lehmer(int seed) : _state = seed % 2147483647 == 0 ? 1 : seed % 2147483647;
-
-  int _state;
-
-  int _next() => _state = _state * 48271 % 2147483647;
-
-  /// Fisher–Yates.
-  void shuffle(List<int> list) {
-    for (var i = list.length - 1; i > 0; i--) {
-      final j = _next() % (i + 1);
-      final swap = list[i];
-      list[i] = list[j];
-      list[j] = swap;
-    }
   }
 }
