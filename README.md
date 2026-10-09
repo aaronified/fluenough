@@ -1,9 +1,11 @@
+<div align="center">
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="fluenough-brand/fluenough-lockup-dark.svg">
-  <img src="fluenough-brand/fluenough-lockup.svg" alt="" width="320">
+  <img src="fluenough-brand/fluenough-lockup.svg" alt="Fluenough" width="320">
 </picture>
 
-# Fluenough
+<br>
 
 *Fluent enough.*
 
@@ -11,13 +13,34 @@ A language-agnostic drilling app for basic language skills — vocabulary,
 production, listening and grammar — scheduled by spaced repetition, running
 entirely offline on your phone.
 
+<p>
+  <a href="https://github.com/aaronified/fluenough/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/aaronified/fluenough/ci.yml?branch=main&amp;label=CI&amp;logo=github" alt="CI status"></a>
+  <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/github/v/release/aaronified/fluenough?label=release" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/aaronified/fluenough" alt="Licence: GPL-3.0"></a>
+  <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&amp;logoColor=white" alt="Platform: Android"></a>
+  <a href="docs/DEVELOPMENT.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
+  <a href="#why-fluenough-is-different"><img src="https://img.shields.io/badge/works-offline-2E7D32" alt="Works offline"></a>
+  <a href="#courses"><img src="https://img.shields.io/badge/languages-8-C2621D" alt="8 languages"></a>
+  <a href="https://github.com/aaronified/fluenough/issues"><img src="https://img.shields.io/github/issues/aaronified/fluenough" alt="Open issues"></a>
+</p>
+
+<p>
+  <a href="https://github.com/aaronified/fluenough/releases/latest"><b>Download</b></a> ·
+  <a href="#courses">Courses</a> ·
+  <a href="#decks">Decks</a> ·
+  <a href="#contributing">Contribute</a> ·
+  <a href="docs/ROADMAP.md">Roadmap</a>
+</p>
+
+</div>
+
 > **Status: early development.** The architecture, deck format, example
 > decks, deck parser and validator are in, and the app's screens are built
 > from the design. Progress is saved on the phone, one database per profile,
 > and features not built yet are shown disabled, marked "Feature incoming". See
 > [docs/ROADMAP.md](docs/ROADMAP.md).
 
-## Why "language-agnostic"
+## Why Fluenough is different
 
 Most drilling apps are built around one language and then stretched to fit
 others. Fluenough inverts that: **a language is just data.** A deck is a text
@@ -25,7 +48,45 @@ file, the card model is a superset that accommodates Latin, syllabic and
 logographic scripts alike, and grammar is described by pattern tables rather
 than hard-coded rules. Adding a language means adding files, never code.
 
-## What it does
+- **Each skill is scheduled separately.** Seen, heard, spoken and written
+  words, and grammar, each have their own schedule for each word: you can
+  recognise a word long before you can produce it.
+- **FSRS is fitted on the phone.** The scheduler learns how you forget, per
+  language and skill, from your own answers.
+- **Your learning stays on the phone.** There is no account, progress is
+  saved on the phone, and nothing is sent anywhere to fit your schedule. The
+  app goes online only to check for updates and to send a report you choose
+  to send.
+
+## Courses
+
+Taught from English: Assamese, Bengali, Gujarati, Hindi, Kannada, Marathi and
+Telugu, each starting with its script decks and a script guide. Spanish is
+started. Japanese (`decks/ja/`) is kept in the repository but not bundled in
+the app for now. See [docs/ROADMAP.md](docs/ROADMAP.md).
+
+<!--
+Screenshots: the owner will add the app screenshots here (a "Screenshots"
+heading and a row of images) once all the visuals are complete. Nothing is
+shown until then.
+-->
+
+## Get it
+
+Fluenough is an Android app, built and run on Android phones for every
+release. Download `app-release.apk` from the
+[latest release](https://github.com/aaronified/fluenough/releases/latest) and
+open it on the phone, allowing installs from your browser or file manager when
+Android asks (sideloading).
+
+To build it yourself, see [Building](#building) below.
+
+## Read more
+
+Each part opens in place.
+
+<details>
+<summary><b>Skills and drills</b></summary>
 
 | Skill | Direction | Graded by |
 |---|---|---|
@@ -33,7 +94,7 @@ than hard-coded rules. Adding a language means adding files, never code.
 | **Heard words** (listening) | hear target → choose, then type, the meaning | the app |
 | **Spoken words** (speaking) | see meaning → say target | the app, through the phone's speech recognition |
 | **Written words** (production) | see meaning → type target | the app, with diacritic and typo tolerance |
-| **Grammar** | prompt + slot → inflected form | the app |
+| **Grammar** | understood: see a form → choose what it means; produced: prompt + slot → choose the form, then type it | the app |
 
 Reading passages, match pairs, multiple choice and word order come on top.
 Minimal-pair discrimination, for sound contrasts the learner's own language
@@ -45,7 +106,10 @@ skill: you can recognise a word long before you can produce it. A right
 answer also counts in part for the skills it implies, as the research finds
 ([ADR-0034](docs/adr/0034-hear-say-write.md)).
 
-### Spaced repetition, with a real audit trail
+</details>
+
+<details>
+<summary><b>Spaced repetition, with a real audit trail</b></summary>
 
 Scheduling is FSRS-6 ([ADR-0033](docs/adr/0033-fsrs.md)), fitted on the
 phone to each learner, per language and skill, from their own answers;
@@ -56,7 +120,11 @@ your statistics are recomputable, and the scheduling algorithm can be replaced
 later without throwing away your history. Most apps store only current state
 and can never go back.
 
-### Text to speech
+</details>
+
+<details>
+<summary><b>Text to speech</b></summary>
+
 
 Listening drills use the **operating system's own TTS** — `android.speech.tts`
 on Android, `AVSpeechSynthesizer` on iOS — through a pluggable `TtsEngine`
@@ -67,7 +135,11 @@ through system settings.
 A neural backend (Kokoro) is a candidate for a later release; see
 [ADR-0002](docs/adr/0002-system-tts.md) for why it is not in v1.
 
-## Scripts are first-class
+</details>
+
+<details>
+<summary><b>Scripts are first-class</b></summary>
+
 
 Where a language uses an unfamiliar writing system, learning the script and its
 pronunciation *is* the first task, not a preliminary to it. Fluenough treats
@@ -79,7 +151,11 @@ script guide; Spanish is started. See [docs/ROADMAP.md](docs/ROADMAP.md).
 Japanese (`decks/ja/`) is kept in the repository but not bundled in the app for
 now.
 
-## How words are written in Latin letters: ISO 15919
+</details>
+
+<details>
+<summary><b>How words are written in Latin letters: ISO 15919</b></summary>
+
 
 Every word in an Indian language has a reading, its Latin letters, shown on the
 card. The readings are **based on the letters of ISO 15919**, the international
@@ -121,7 +197,13 @@ writes the sound: Bengali ঈ is *i*, as ই is.
 | k͟h q ġ z f | sounds from Persian, Arabic and English, written with a dot (nukta) | ख़त्म *k͟hatm* |
 | x | Assamese's own sound, as in Scottish *loch*; ISO 15919 has no letter for it | অসম *ôxôm* |
 
-### Where the readings depart from ISO 15919
+</details>
+
+<a id="where-the-readings-depart-from-iso-15919"></a>
+
+<details>
+<summary><b>Where the readings depart from ISO 15919</b></summary>
+
 
 Each row is a deliberate departure, made because the learner is better served
 by the sound than by the spelling. "ISO 15919 writes" is the letter-for-letter
@@ -160,10 +242,16 @@ after the marks are taken away, and each romanisation file lists the spellings
 people type for one sound. To write a reading and IPA for a new card, run
 `python3 tools/transcribe.py <code> "<word>" <how it is typed>`.
 
+</details>
+
 ## Decks
 
 Decks are YAML files under [`decks/`](decks/), versioned in git like any other
 source. They are diffable, reviewable, and contributed as pull requests.
+
+<details>
+<summary><b>A deck, and how to validate it</b></summary>
+
 
 ```yaml
 schema: 1
@@ -188,7 +276,11 @@ python3 tools/validate_decks.py decks/
 
 The validator needs only Python 3.11+ and PyYAML — no Flutter toolchain.
 
-### The Telugu, Marathi, Kannada, Gujarati and Assamese decks have not been checked by a speaker
+</details>
+
+<details>
+<summary><b>The Telugu, Marathi, Kannada, Gujarati and Assamese decks have not been checked by a speaker</b></summary>
+
 
 A deck no speaker has checked yet is tagged unreviewed and says so: some
 Hindi and Bengali decks, and all the Telugu, Marathi, Kannada, Gujarati and
@@ -202,7 +294,11 @@ speak one of these languages, please
 fix; a review by a speaker is the most useful contribution these decks could
 get.
 
-### Sources
+</details>
+
+<details>
+<summary><b>Sources</b></summary>
+
 
 Most decks are written for Fluenough. Where a deck's text comes from
 elsewhere, the deck names the source in its `source` field, and the app shows
@@ -229,7 +325,13 @@ letter:
 
 A new source gets a line here, and its decks name it in `source`.
 
+</details>
+
 ## Building
+
+<details>
+<summary><b>Building from source</b></summary>
+
 
 You need the Flutter SDK (3.47+) and, for Android, a JDK and the Android SDK.
 The platform folders are **not** committed; generate them on first checkout:
@@ -244,6 +346,8 @@ flutter run
 
 See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for toolchain setup, including
 notes for immutable Linux distributions and a warning about Waydroid and TTS.
+
+</details>
 
 ## Contributing
 
@@ -263,7 +367,11 @@ to one concern each.
 
 ## Licence
 
-**GPL-3.0, with an App Store Distribution Exception.**
+**GPL-3.0, with an App Store Distribution Exception.** See [LICENSE](LICENSE)
+and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md).
+
+<details>
+<summary><b>The licence in detail</b></summary>
 
 Fluenough is free software and every fork must stay free software. The
 exception exists solely so the app can be distributed through stores whose
@@ -273,6 +381,8 @@ the source. See [LICENSE](LICENSE) and
 [ADR-0003](docs/adr/0003-licence.md) for the reasoning.
 
 Deck content carries its own licence, declared per file.
+
+</details>
 
 The pictures on cards are from [Noto Emoji](https://github.com/googlefonts/noto-emoji),
 by Google, under the Apache License 2.0; the licence ships with them in

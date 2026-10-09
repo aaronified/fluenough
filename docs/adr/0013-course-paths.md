@@ -1,6 +1,6 @@
 # ADR-0013: Each course is taught along a curated path, as data
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0036: one path per language learnt, naming core ids; a path's units may be planned.
 - **Date:** 2026-10-02
 
 ## Context

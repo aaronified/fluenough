@@ -30,7 +30,8 @@ database; what the backend lacks is shown disabled, marked "Feature incoming"
 SDK available, and for a while nobody had run it. That has been done: on
 Flutter 3.47.1, from a clean checkout following the sequence below with
 `--platforms=android`,
-`flutter analyze` reports no issues, `flutter test` passes 35 tests,
+`flutter analyze` reports no issues, `flutter test` passes (35 tests then;
+over 2,200 now),
 `dart format lib test` changes nothing, and `dart run build_runner build`
 succeeds. The Python tooling is tested and working too.
 

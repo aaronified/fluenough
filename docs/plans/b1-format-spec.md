@@ -1,5 +1,15 @@
 # The B1 deck format: implementation spec
 
+> **Status, 2026-10-09: built and merged in #434** (branch `feat/b1-format`,
+> ADR-0036 Accepted), after the skill model (#432) merged. This spec is kept
+> as the record of what was settled and why; where it says the skill model is
+> "not yet on `main`", or names the branch, read it as history. Left to do:
+> the B1 plans themselves (#257 to #263), the tool that splits the decks into
+> cores and layers (#397), the deck index (#399), the app side of the rules
+> and the base words and notes (#410, #416 to #418, #421 to #423), and the
+> "Coming" label on the Decks tab (#264). #209, #392 and #413 stay open for
+> them.
+
 For four builders working in parallel on one branch (`feat/b1-format`):
 
 - **V**, the Python validator: `tools/validate_decks.py` and its tests in `tools/`.
@@ -16,10 +26,11 @@ For four builders working in parallel on one branch (`feat/b1-format`):
 
 Sources: `docs/plans/b1-plans.md` (owner decisions of 2026-10-06 and
 2026-10-09), `docs/plans/words-rules-sentences.md`,
-`docs/plans/native-layers.md`, `docs/plans/skill-model.md`, ADR-0013,
-ADR-0018 and ADR-0034, the owner's answers of 2026-10-09 (the last
+`docs/plans/native-layers.md`, ADR-0013, ADR-0018, ADR-0034 and ADR-0035
+(the skill model's plan, `skill-model.md`, was deleted when #207 closed;
+its decisions are in those two), the owner's answers of 2026-10-09 (the last
 section), and the code as it is on `main` at `81bc89e`. From the skill
-model's pull request (#432), not yet on `main`:
+model's pull request (#432), now on `main`:
 `lib/core/scheduling/skill_map.dart`, `docs/adr/0034-hear-say-write.md`,
 `docs/research/skill-evidence.md` and `docs/plans/offensive-words.md`.
 
@@ -1190,7 +1201,7 @@ format).
 ### 4.7 Two grammar schedules: `DrillMode.grammarUnderstood`
 
 The owner, 2026-10-09: "Choosing the meaning = understood". So, in the
-skill model's words since (`skill-model.md` on #432, lines 286–291):
+skill model's words since (ADR-0034, "Decided with the owner, 2026-10-09"):
 "**Understood is shown a form and choosing what it means;** choosing
 among forms of the same word, the rule cards' question, or typing the
 form, is produced (owner, 2026-10-09, settling `b1-format-spec.md` #22)."
@@ -1242,13 +1253,13 @@ scheduling (4.8).
   in FSRS and in the ability layer; a miss is blamed on its own skill
   alone, since there is no implied skill to split it over. Only what the
   research supports (`docs/research/skill-evidence.md` and
-  `docs/plans/skill-model.md` on #432):
+  ADR-0034):
   - **For grammar, practice is skill-specific:** "understanding and
     producing practice build partly separate skills (DeKeyser 1997;
     Shintani et al. 2013)", and "learning to produce helps production
     most, learning to understand helps understanding most (Steinel et al.
-    2007; Webb 2009; DeKeyser 1997)" (`skill-model.md`, "The
-    research").
+    2007; Webb 2009; DeKeyser 1997)"
+    (`docs/research/skill-evidence.md`).
   - **The direction that gives Write's credit to Recognition** (production
     implies reception in part: Laufer & Goldstein 2004; Webb 2009;
     Steinel et al. 2007) is evidence about words. `skill-evidence.md`
@@ -1284,8 +1295,7 @@ scheduling (4.8).
   the Settings button, and automatically once its reviews have grown by
   10% since its last fit; learning from its last three months or its
   last 1,000 reviews, whichever is more; kept in the database and the
-  backup by its mode's name (`skill-model.md`, "Decided": "FSRS fitted
-  to the learner, per skill"). Its Elo rating starts like any skill's. Q checks
+  backup by its mode's name (ADR-0035). Its Elo rating starts like any skill's. Q checks
   that the fitting, the backup and "How you learn" walk
   `DrillMode.values` (or a list that gains the new mode), not a fixed
   list of today's modes, and adds it where one does not; how its name
@@ -2776,7 +2786,7 @@ small phrasebook first and grammar taught as rules over known words
 (`docs/plans/words-rules-sentences.md`), and for each deck to keep the
 learner's language in a layer of its own (`docs/plans/native-layers.md`).
 The skill model left grammar understood and produced to this format
-(`docs/plans/skill-model.md`, 2026-10-09). On 2026-10-09 the owner
+(ADR-0034, 2026-10-09). On 2026-10-09 the owner
 decided that the format is built in the parser, the validator and
 `docs/DECK-FORMAT.md` before any B1 deck is written; that a rule's forms
 are listed for every word, and the validator checks every taught word of
@@ -3149,7 +3159,7 @@ answer decided, at the section named, marked *settled*.
 | 16 | Should `pair:` be derived from the pair notes, or stay independent? | "Derived from the pair notes, as recommended" | No `pair:` in a core; `Card.pair` is `pair:` or else the first pair note's partner | 2.3, 2.7, 6.5, 9.4 |
 | 20 | Which paths must have a B1 plan now? | "Required on a path whose language has a core, as recommended" | (b): a path whose language has a core; every path by a follow-up once all have plans | 10.1 |
 | 22 | Which question is "understood"? | "Choosing the meaning = understood" (reading B, not the recommendation): shown a form, choose what it means; choosing among the same word's forms, or typing the form, is produced | `grammarUnderstood` asks `Ask.chooseFormMeaning`; `grammar` asks `Ask.chooseForm` or the typed form; neither implies the other in the `SkillMap`; both fitted per language and skill | 4.1, 4.6, 4.7, 4.8 |
-| 23 | Grammar understood and produced on this branch? | Settled earlier: with the B1 format, after the skill model's pull request (`skill-model.md` 286–291) | Builder Q, after #432 merges | 0, 4.7, 4.8 |
+| 23 | Grammar understood and produced on this branch? | Settled earlier: with the B1 format, after the skill model's pull request (ADR-0034) | Builder Q, after #432 merges | 0, 4.7, 4.8 |
 | 24 | Passages: required on every planned unit, as an error? | "Required on every planned unit, as recommended" | An error on every planned unit, both lists non-empty; not required on written units | 10.1, 10.2 |
 | 25 | What is a grammar topic? | "One rule, as recommended; grammar decks not yet turned into rules count by deck" | A rule by its name, or a grammar deck by its core id's name | 10.1, 10.3 |
 | 26 | Scripts without spaces | "Later, as recommended" | A B1 deck in such a script is an error until a `words` field is designed with that language | 8.3 |
@@ -3208,9 +3218,9 @@ Each answer below is now in the body, at the sections named.
   the recommendation): shown a form, the learner chooses what it means
   (`Ask.chooseFormMeaning`, schedule `grammarUnderstood`); choosing among
   forms of the same word (ammatō, ammaki, ammalō) or typing the form is
-  produced (`grammar`). This supersedes skill-model.md's line that
-  "understood" chooses among forms (4.6–4.8; `skill-model.md` on #432
-  says the same now).
+  produced (`grammar`). This supersedes an earlier line of the
+  skill model's plan (since deleted) that "understood" chooses among forms
+  (4.6–4.8; ADR-0034 says the same now).
 - **#25 Topic:** one rule, as recommended; grammar decks not yet turned
   into rules count by deck (10.1).
 - **#26 Scripts without spaces:** later, as recommended (8.3).
