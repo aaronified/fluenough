@@ -1,24 +1,17 @@
 schema: 1
-id: gu-en-grammar-continuous
-name: "Present: I do, I'm doing"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Gujarati's present does for both 'I go' and 'I am going': the verb, then છું (chum̐), છે (che) or છો (cho). For 'right now', -ઈ રહ્યો છું (-i rahyo chum̐). Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-continuous"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Present"
-  slot_name: "person"
   slots: ["હું", "તું", "તે", "અમે", "તમે", "તેઓ"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The stem, an ending for the person, then the present of 'be': હું કરું છું (hum̐ karum̐ chum̐), તું કરે છે (tum̐ kare che), અમે કરીએ છીએ (ame karie chie), તમે કરો છો (tame karo cho). The same form is 'I do' and 'I am doing'. To stress 'right now', put -ઈ (-i) on the stem and add રહ્યો (a man), રહી (a woman) or રહ્યું (a thing): હું કરી રહ્યો છું (hum̐ kari rahyo chum̐)."
   entries:
     - lemma: "કરવું"
-      key: karvun
+      key: "karvun"
       reading: "karvum̐"
       ipa: "kərʋũ"
-      gloss: "to do"
       forms:
         "હું": "કરું છું"
         "તું": "કરે છે"
@@ -41,10 +34,9 @@ pattern:
         "તમે": "kəro tʃʰo"
         "તેઓ": "kəre tʃʰe"
     - lemma: "જવું"
-      key: javun
+      key: "javun"
       reading: "javum̐"
       ipa: "dʒəʋũ"
-      gloss: "to go"
       forms:
         "હું": "જાઉં છું"
         "તું": "જાય છે"
@@ -67,10 +59,9 @@ pattern:
         "તમે": "dʒao tʃʰo"
         "તેઓ": "dʒaj tʃʰe"
     - lemma: "આવવું"
-      key: aavvun
+      key: "aavvun"
       reading: "āvvum̐"
       ipa: "aʋʋũ"
-      gloss: "to come"
       forms:
         "હું": "આવું છું"
         "તું": "આવે છે"
@@ -93,10 +84,9 @@ pattern:
         "તમે": "aʋo tʃʰo"
         "તેઓ": "aʋe tʃʰe"
     - lemma: "ખાવું"
-      key: khaavun
+      key: "khaavun"
       reading: "khāvum̐"
       ipa: "kʰaʋũ"
-      gloss: "to eat"
       forms:
         "હું": "ખાઉં છું"
         "તું": "ખાય છે"
@@ -119,10 +109,9 @@ pattern:
         "તમે": "kʰao tʃʰo"
         "તેઓ": "kʰaj tʃʰe"
     - lemma: "રહેવું"
-      key: rahevun
+      key: "rahevun"
       reading: "rahevum̐"
       ipa: "rəɦeʋũ"
-      gloss: "to live; to stay"
       forms:
         "હું": "રહું છું"
         "તું": "રહે છે"
@@ -145,10 +134,9 @@ pattern:
         "તમે": "rəɦo tʃʰo"
         "તેઓ": "rəɦe tʃʰe"
     - lemma: "કરવું (karvum̐), right now"
-      key: karii-rahyo
+      key: "karii-rahyo"
       reading: "karvum̐, right now"
       ipa: "kərʋũ"
-      gloss: "to be doing, said of a man or men"
       forms:
         "હું": "કરી રહ્યો છું"
         "તું": "કરી રહ્યો છે"

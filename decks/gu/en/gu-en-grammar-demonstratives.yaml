@@ -1,0 +1,25 @@
+schema: 1
+id: "gu-en-grammar-demonstratives"
+kind: "layer"
+core: "gu-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This and that"
+license: "CC0-1.0"
+description: "આ (ā) and એ (e), and the words built on them: here and there, now and then, this much, like this. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "adj": "before a noun"
+    "place": "a place"
+    "from-place": "from a place"
+    "time": "a time"
+    "amount": "an amount"
+    "kind": "a kind"
+    "manner": "a way of doing"
+    "to-one": "with -ને (-ne)"
+    "of-one": "with -નું (-num̐), before a neuter noun"
+    "in-one": "with -માં (-mām̐)"
+  notes: "Words for near things start with આ- (ā-) or અ- (a-); words for far ones with એ- (e-) or ત- (ta-), and most far words also have a form in તે- (te-): એટલું (eṭlum̐) or તેટલું (teṭlum̐), એવું (evum̐) or તેવું (tevum̐). આ (ā) and એ (e) stand before a noun and never change: આ ઘર (ā ghar), this house; એ છોકરી (e chokri), that girl. For something far off you can point at, there is also પેલું (pelum̐), 'that one over there', which agrees like an adjective."

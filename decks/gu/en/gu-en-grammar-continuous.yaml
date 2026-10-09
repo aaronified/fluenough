@@ -1,0 +1,21 @@
+schema: 1
+id: "gu-en-grammar-continuous"
+kind: "layer"
+core: "gu-grammar-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present: I do, I'm doing"
+license: "CC0-1.0"
+description: "Gujarati's present does for both 'I go' and 'I am going': the verb, then છું (chum̐), છે (che) or છો (cho). For 'right now', -ઈ રહ્યો છું (-i rahyo chum̐). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Present"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "karvun": "to do"
+    "javun": "to go"
+    "aavvun": "to come"
+    "khaavun": "to eat"
+    "rahevun": "to live; to stay"
+    "karii-rahyo": "to be doing, said of a man or men"
+  notes: "The stem, an ending for the person, then the present of 'be': હું કરું છું (hum̐ karum̐ chum̐), તું કરે છે (tum̐ kare che), અમે કરીએ છીએ (ame karie chie), તમે કરો છો (tame karo cho). The same form is 'I do' and 'I am doing'. To stress 'right now', put -ઈ (-i) on the stem and add રહ્યો (a man), રહી (a woman) or રહ્યું (a thing): હું કરી રહ્યો છું (hum̐ kari rahyo chum̐)."

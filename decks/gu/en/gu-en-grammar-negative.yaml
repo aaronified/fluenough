@@ -1,0 +1,20 @@
+schema: 1
+id: "gu-en-grammar-negative"
+kind: "layer"
+core: "gu-grammar-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Not: નથી (nathi), નહીં (nahim̐), ન (na)"
+license: "CC0-1.0"
+description: "I don't, I won't, don't!: the three words for 'not' and where each goes. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Negative"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "karvun": "to do"
+    "javun": "to go"
+    "aavvun": "to come"
+    "khaavun": "to eat"
+    "bolvun": "to speak"
+  notes: "In the present, the stem takes -તો (-to), -તી (-ti) or -તું (like an adjective, for the doer's gender) and નથી (nathi) follows: હું જતો નથી (hum̐ jato nathi), I don't go. નથી (nathi) can also come first: હું નથી જતો (hum̐ nathi jato). In the future, નહીં (nahim̐) comes before a short form of the verb: હું નહીં જાઉં (hum̐ nahim̐ jāum̐). A request takes ન (na): ન જાઓ (na jāo), don't go. In the past: મેં નથી ખાધું (mem̐ nathi khādhum̐), I haven't eaten; હું ગયો નહીં (hum̐ gayo nahim̐), I didn't go."

@@ -1,0 +1,25 @@
+schema: 1
+id: "gu-en-grammar-pronouns"
+kind: "layer"
+core: "gu-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns"
+license: "CC0-1.0"
+description: "I, you, he and she, and the forms they take with -ને (to), -નું (of) and -એ (the doer in the past). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "hun": "I"
+    "tun": "you, familiar"
+    "tame": "you, respectful or plural"
+    "aap": "you, very formal"
+    "te": "he, she, it"
+    "e": "he, she, it: that one"
+    "aa": "he, she, it: this one, near"
+    "ame": "we, not you"
+    "aapne": "we, you and I"
+    "teo": "they; he or she, with respect"
+  notes: "'Of' agrees with what is owned: મારો ભાઈ (māro bhāi), મારી બહેન (māri bahen), મારું ઘર (mārum̐ ghar). The -એ (-e) form is the doer of a past verb with an object: મેં ખાધું (mem̐ khādhum̐), I ate. તે (te) and એ (e) are both he, she or it; આ (ā) is someone near. અમે (ame) leaves out the person you talk to, આપણે (āpṇe) takes them in."

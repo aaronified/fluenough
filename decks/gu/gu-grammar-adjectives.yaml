@@ -1,24 +1,17 @@
 schema: 1
-id: gu-en-grammar-adjectives
-name: "Adjectives: gender and number"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Adjectives in -ઓ (-o) agree with their noun in all three genders; the others never change. Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-adjectives"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Adjective agreement"
-  slot_name: "agreement"
   slots: ["with a feminine noun", "with a neuter noun", "with a masculine plural", "with a neuter plural"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "An adjective in -ઓ (-o) agrees: સારો છોકરો (sāro chokro), સારી છોકરી (sāri chokri), સારું ઘર (sārum̐ ghar), સારા છોકરા (sārā chokrā), સારાં કેળાં (sārām̐ keḷām̐). Before an ending a masculine or neuter adjective takes -આ (-ā): સારા છોકરાને (sārā chokrāne). Any other adjective stays the same: ગરમ ચા (garam cā), ગરમ દૂધ (garam dudh); સુંદર (sundar), ખરાબ (kharāb), લાલ (lāl). A feminine plural keeps -ઈ (-i): સારી છોકરીઓ (sāri chokrio)."
   entries:
     - lemma: "સારો"
-      key: saaro
+      key: "saaro"
       reading: "sāro"
       ipa: "saro"
-      gloss: "good"
       forms:
         "with a feminine noun": "સારી"
         "with a neuter noun": "સારું"
@@ -35,10 +28,9 @@ pattern:
         "with a masculine plural": "sara"
         "with a neuter plural": "sarã"
     - lemma: "મોટો"
-      key: moto
+      key: "moto"
       reading: "moṭo"
       ipa: "moʈo"
-      gloss: "big; older"
       forms:
         "with a feminine noun": "મોટી"
         "with a neuter noun": "મોટું"
@@ -55,10 +47,9 @@ pattern:
         "with a masculine plural": "moʈa"
         "with a neuter plural": "moʈã"
     - lemma: "નાનો"
-      key: naano
+      key: "naano"
       reading: "nāno"
       ipa: "nano"
-      gloss: "small; younger"
       forms:
         "with a feminine noun": "નાની"
         "with a neuter noun": "નાનું"
@@ -75,10 +66,9 @@ pattern:
         "with a masculine plural": "nana"
         "with a neuter plural": "nanã"
     - lemma: "નવો"
-      key: navo
+      key: "navo"
       reading: "navo"
       ipa: "nəʋo"
-      gloss: "new"
       forms:
         "with a feminine noun": "નવી"
         "with a neuter noun": "નવું"
@@ -95,10 +85,9 @@ pattern:
         "with a masculine plural": "nəʋa"
         "with a neuter plural": "nəʋã"
     - lemma: "જૂનો"
-      key: juuno
+      key: "juuno"
       reading: "juno"
       ipa: "dʒuno"
-      gloss: "old (a thing)"
       forms:
         "with a feminine noun": "જૂની"
         "with a neuter noun": "જૂનું"
@@ -115,10 +104,9 @@ pattern:
         "with a masculine plural": "dʒuna"
         "with a neuter plural": "dʒunã"
     - lemma: "ઠંડો"
-      key: thando
+      key: "thando"
       reading: "ṭhaṇḍo"
       ipa: "ʈʰəɳɖo"
-      gloss: "cold"
       forms:
         "with a feminine noun": "ઠંડી"
         "with a neuter noun": "ઠંડું"
@@ -135,10 +123,9 @@ pattern:
         "with a masculine plural": "ʈʰəɳɖa"
         "with a neuter plural": "ʈʰəɳɖã"
     - lemma: "કાળો"
-      key: kaalo
+      key: "kaalo"
       reading: "kāḷo"
       ipa: "kaɭo"
-      gloss: "black"
       forms:
         "with a feminine noun": "કાળી"
         "with a neuter noun": "કાળું"
@@ -155,10 +142,9 @@ pattern:
         "with a masculine plural": "kaɭa"
         "with a neuter plural": "kaɭã"
     - lemma: "લીલો"
-      key: liilo
+      key: "liilo"
       reading: "lilo"
       ipa: "lilo"
-      gloss: "green"
       forms:
         "with a feminine noun": "લીલી"
         "with a neuter noun": "લીલું"

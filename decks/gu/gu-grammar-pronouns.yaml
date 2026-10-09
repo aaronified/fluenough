@@ -1,24 +1,17 @@
 schema: 1
-id: gu-en-grammar-pronouns
-name: "Pronouns"
-kind: grammar
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I, you, he and she, and the forms they take with -ને (to), -નું (of) and -એ (the doer in the past). Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, grammar, unreviewed]
+id: "gu-grammar-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
 pattern:
-  name: "Personal pronouns"
-  slot_name: "form"
   slots: ["to or for (-ને)", "of (-નું (-num̐), before a neuter noun)", "the doer in the past (-એ)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "'Of' agrees with what is owned: મારો ભાઈ (māro bhāi), મારી બહેન (māri bahen), મારું ઘર (mārum̐ ghar). The -એ (-e) form is the doer of a past verb with an object: મેં ખાધું (mem̐ khādhum̐), I ate. તે (te) and એ (e) are both he, she or it; આ (ā) is someone near. અમે (ame) leaves out the person you talk to, આપણે (āpṇe) takes them in."
   entries:
     - lemma: "હું"
-      key: hun
+      key: "hun"
       reading: "hum̐"
       ipa: "ɦũ"
-      gloss: "I"
       forms:
         "to or for (-ને)": "મને"
         "of (-નું (-num̐), before a neuter noun)": "મારું"
@@ -32,10 +25,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "marũ"
         "the doer in the past (-એ)": "mẽ"
     - lemma: "તું"
-      key: tun
+      key: "tun"
       reading: "tum̐"
       ipa: "t̪ũ"
-      gloss: "you, familiar"
       forms:
         "to or for (-ને)": "તને"
         "of (-નું (-num̐), before a neuter noun)": "તારું"
@@ -49,10 +41,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "t̪arũ"
         "the doer in the past (-એ)": "t̪ẽ"
     - lemma: "તમે"
-      key: tame
+      key: "tame"
       reading: "tame"
       ipa: "t̪əme"
-      gloss: "you, respectful or plural"
       forms:
         "to or for (-ને)": "તમને"
         "of (-નું (-num̐), before a neuter noun)": "તમારું"
@@ -66,10 +57,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "t̪əmarũ"
         "the doer in the past (-એ)": "t̪əme"
     - lemma: "આપ"
-      key: aap
+      key: "aap"
       reading: "āp"
       ipa: "ap"
-      gloss: "you, very formal"
       forms:
         "to or for (-ને)": "આપને"
         "of (-નું (-num̐), before a neuter noun)": "આપનું"
@@ -83,10 +73,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "apnũ"
         "the doer in the past (-એ)": "ape"
     - lemma: "તે"
-      key: te
+      key: "te"
       reading: "te"
       ipa: "t̪e"
-      gloss: "he, she, it"
       forms:
         "to or for (-ને)": "તેને"
         "of (-નું (-num̐), before a neuter noun)": "તેનું"
@@ -100,10 +89,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "t̪enũ"
         "the doer in the past (-એ)": "t̪eɳe"
     - lemma: "એ"
-      key: e
+      key: "e"
       reading: "e"
       ipa: "e"
-      gloss: "he, she, it: that one"
       forms:
         "to or for (-ને)": "એને"
         "of (-નું (-num̐), before a neuter noun)": "એનું"
@@ -117,10 +105,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "enũ"
         "the doer in the past (-એ)": "eɳe"
     - lemma: "આ"
-      key: aa
+      key: "aa"
       reading: "ā"
       ipa: "a"
-      gloss: "he, she, it: this one, near"
       forms:
         "to or for (-ને)": "આને"
         "of (-નું (-num̐), before a neuter noun)": "આનું"
@@ -134,10 +121,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "anũ"
         "the doer in the past (-એ)": "aɳe"
     - lemma: "અમે"
-      key: ame
+      key: "ame"
       reading: "ame"
       ipa: "əme"
-      gloss: "we, not you"
       forms:
         "to or for (-ને)": "અમને"
         "of (-નું (-num̐), before a neuter noun)": "અમારું"
@@ -151,10 +137,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "əmarũ"
         "the doer in the past (-એ)": "əme"
     - lemma: "આપણે"
-      key: aapne
+      key: "aapne"
       reading: "āpṇe"
       ipa: "apɳe"
-      gloss: "we, you and I"
       forms:
         "to or for (-ને)": "આપણને"
         "of (-નું (-num̐), before a neuter noun)": "આપણું"
@@ -168,10 +153,9 @@ pattern:
         "of (-નું (-num̐), before a neuter noun)": "apɳũ"
         "the doer in the past (-એ)": "apɳe"
     - lemma: "તેઓ"
-      key: teo
+      key: "teo"
       reading: "teo"
       ipa: "t̪eo"
-      gloss: "they; he or she, with respect"
       forms:
         "to or for (-ને)": "તેમને"
         "of (-નું (-num̐), before a neuter noun)": "તેમનું"
