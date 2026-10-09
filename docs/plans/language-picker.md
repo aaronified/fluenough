@@ -166,6 +166,13 @@ start, with no version built on the bundled decks:
 - **Built now,** on the bundled decks, ready for deck downloads later
   (the order above is changed: "Do the settings redesign here as well").
 - **A mockup first,** to approve before building.
+- **The mockup is approved** (owner, 2026-10-09: "The mockups look great",
+  `docs/mockups/language-picker.html`), with one change: "a language may
+  be available in more than 2 native languages ... It will not be there
+  anytime soon, but still." The "taught from" choice must not be a
+  two-way switch: up to three options can sit side by side; beyond that
+  it becomes a list (a radio list in a sheet), each with its coverage,
+  the learner's own languages first.
 - **Both progresses on the card:** the course's completeness ("62% of B1
   written") and, for a language the learner learns, their own ("You: 18%
   of B1").
