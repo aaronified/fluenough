@@ -241,7 +241,7 @@ void main() {
       'bn-en-first-words',
     ]);
     expect(bengaliUnits.last.first, 'bn-en-sound-differences');
-    expect(starts, contains('es-en-core-100'));
+    expect(starts, contains('es-en-phrasebook'));
     expect(starts, hasLength(16));
   });
 
