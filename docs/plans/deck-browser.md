@@ -34,7 +34,7 @@ Beyond per-card suggestions, the pages handle:
   what he/she is getting into": it states what it holds before showing
   anything, and asks for a rater code and an 18+ confirmation.
 - **Offensive-word ratings:** each rater scores each offensive word 1 to 9
-  ("How offensive is this word to people in general?") and gives their
+  ("How offensive is this word to native speakers in general?") and gives their
   region; the Sheet takes the median band and flags a disagreement of a
   band or more as a region note (`offensive-words.md`).
 - **Similarity confirmations:** reviewers confirm or reject the tool's
