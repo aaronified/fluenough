@@ -2,7 +2,7 @@
 
 Written 2026-10-05. **After the B1 plans** (`b1-plans.md`), which the index
 is designed around, and before the settings redesign (owner's order:
-`skill-model.md`, `b1-plans.md`, this plan, then the settings redesign).
+the skill model (done), `b1-plans.md`, this plan, then the settings redesign).
 
 ## What the owner asked
 

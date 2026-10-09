@@ -259,3 +259,27 @@ Assigning question types to these levels is my inference (Low). Citations are li
 - Almost all evidence comes from English as the L2. Nothing covers Indic or other new-script target languages, where the aural–written gap may be larger. The faster aural than written learning in the Arabic L1 group is the only hint.
 - Asymmetric credit (successes propagate, failures barely do) is supported only indirectly, by PFA and Koedinger 2011.
 - Most checks relied on abstracts or secondary text. No full texts were read.
+
+## Appendix: the evidence behind Hear, Say and Write
+
+Moved here from `docs/plans/skill-model.md` (deleted when #207 closed); the design it led to is ADR-0034. It was read from abstracts and summaries, not full texts, and the checks above did not cover it. Full citations are to go in the Research and standards page (`docs/plans/research-and-standards.md`).
+
+The terms are the research's, so that the app's labels match it:
+
+| Axis | Values | Source |
+|---|---|---|
+| Direction | Understand (the word → its meaning), produce (the meaning → the word) | Nation 2022 |
+| Response | Choose (recognition), recall (type, say, write) | Laufer & Goldstein 2004 |
+| Channel | Sound, Latin letters, script; a picture is another way to show the meaning | Nation 2022; Milton & Hopkins 2006 |
+
+What decided the design:
+
+- **Recalling is harder than choosing, and producing harder than understanding:** recall the word > recall the meaning > choose the word > choose the meaning, in every frequency band (Laufer & Goldstein 2004). Recognition is learnt before recall in every part of word knowledge (González-Fernández & Schmitt 2020).
+- **Channels are related but separable.** Knowing words by ear and in writing correlate at about .68 (Milton & Hopkins 2006); knowing them by sound predicts listening, in writing reading (Cheng & Matthews 2018).
+- **What you practise is what improves.** Learning to produce helps production most, learning to understand helps understanding most (Steinel et al. 2007; Webb 2009; DeKeyser 1997), as the match between practice and test predicts (Morris et al. 1977).
+- **Hearing a contrast is not keeping two words apart.** Learners can hear or say a contrast and still not store it in their words (Hayes-Harb & Masuda 2008; Llompart 2021). A blurred form retrieves the wrong meaning (Cook et al. 2016), and questions on meaning catch near-homophones that questions on form miss (Ota et al. 2009). Hence Hear asks for the meaning. Writing down a heard word still tests its form (Matthews & Cheng 2015), which is why script practice keeps it.
+- **Recall with feedback** gives the best long-term retention (Kang et al. 2007), and retrieval beats repeating after the audio (Kang, Gollan & Pashler 2013).
+- **Grammar:** understanding and producing practice build partly separate skills (DeKeyser 1997; Shintani et al. 2013). Timed and untimed tests measure different knowledge (Ellis 2005; Suzuki & DeKeyser 2015).
+- **Learner models:** a model with several skills per item and forgetting per skill, DAS3H, did best in its comparison (Choffin et al. 2019); Elo estimates ability and difficulty after each answer with nothing to fit (Pelánek 2016; Pelánek et al. 2017). FSRS's peer-reviewed precursors are Ye et al. 2022 and Su et al. 2023.
+- **Pictures** help concrete words (Carpenter & Olson 2012; Lotto & de Groot 1998).
+- **Tracked for the learner, not per word:** accent, from hearing several voices (Bradlow & Bent 2008; Baese-Berk et al. 2013); phonemic contrasts, as identification with feedback (Logan et al. 1991; Thomson 2018).

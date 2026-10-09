@@ -52,7 +52,11 @@ class _FakeLogFiles implements LogFiles {
   String? title;
 
   @override
-  Future<bool> save(String fileName, String contents) async {
+  Future<bool> save(
+    String fileName,
+    String contents, {
+    String mimeType = 'application/jsonl',
+  }) async {
     saved[fileName] = contents;
     return true;
   }
@@ -256,7 +260,6 @@ void main() {
       l10n.settingsReminder,
       l10n.settingsPinLock,
       l10n.settingsDeleteProfile,
-      l10n.settingsAppLog,
     ];
     for (final label in labels) {
       final node = find.bySemanticsLabel(l10n.incomingSemanticsLabel(label));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
@@ -9,6 +10,7 @@ import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/data/log_jsonl.dart';
+import '../../core/logs/log_entry.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
@@ -38,7 +40,8 @@ import 'update_section.dart';
 /// per day, the skill switches, romanisation, sound, playing
 /// words automatically, speech rate, and the Voices row.
 /// Export and import save the review log as a file and merge one back
-/// (#20). Updates, which the design does not draw, checks GitHub for a newer
+/// (#20). Logs shows, copies, exports and clears the app's own log (#162).
+/// Updates, which the design does not draw, checks GitHub for a newer
 /// version, beside the version line, and installs it (ADR-0017). Everything
 /// else is built and shown disabled behind its [Feature]: switching profile,
 /// the app language, the reminder, the PIN lock, deleting the profile, and
@@ -82,7 +85,7 @@ class SettingsPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     _data(context, state),
                     const SizedBox(height: 20),
-                    _logs(context),
+                    _logs(context, state),
                     // Where the decks' texts come from (#98), on a page of
                     // its own; no row when no deck names a source.
                     ..._sources(context, state),
@@ -549,22 +552,116 @@ class SettingsPage extends StatelessWidget {
     );
   }
 
-  /// The app's own log, for reports (#162). Incoming: the app keeps none
-  /// yet.
-  Widget _logs(BuildContext context) {
+  /// The app's own log, for reports (#162): view it, copy it, export it as
+  /// a file, or clear it.
+  Widget _logs(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
-    return GroupedList.settings(
-      header: l10n.settingsSectionLogs,
-      children: <Widget>[
-        GroupedTile(
-          leading: const Icon(Icons.receipt_long_outlined),
-          title: l10n.settingsAppLog,
-          subtitle: l10n.settingsAppLogDesc,
-          feature: Feature.logs,
-          padding: _tallRow,
-        ),
-      ],
+    final log = state.log;
+    return ListenableBuilder(
+      listenable: log,
+      builder: (context, _) {
+        final empty = log.isEmpty;
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            GroupedList.settings(
+              header: l10n.settingsSectionLogs,
+              children: <Widget>[
+                GroupedTile(
+                  leading: const Icon(Icons.receipt_long_outlined),
+                  title: l10n.settingsLogView,
+                  subtitle: l10n.settingsLogViewDesc(log.entries.length),
+                  trailing: const Icon(Icons.chevron_right),
+                  feature: Feature.logs,
+                  onTap: () => AppNavigator.openAppLog(context),
+                ),
+                GroupedTile(
+                  leading: const Icon(Icons.copy_outlined),
+                  title: l10n.settingsLogCopy,
+                  feature: Feature.logs,
+                  onTap: empty ? null : () => _copyLog(context, state),
+                ),
+                GroupedTile(
+                  leading: const Icon(Icons.file_download_outlined),
+                  title: l10n.settingsLogExport,
+                  subtitle: l10n.settingsLogExportDesc,
+                  feature: Feature.logs,
+                  onTap: empty ? null : () => _exportLog(context, state),
+                ),
+                GroupedTile(
+                  leading: const Icon(Icons.delete_outline),
+                  title: l10n.settingsLogClear,
+                  feature: Feature.logs,
+                  onTap: empty ? null : () => _clearLog(context, state),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
+              child: Text(
+                l10n.settingsLogAbout,
+                style: settingsHelpStyle(Theme.of(context)),
+              ),
+            ),
+          ],
+        );
+      },
     );
+  }
+
+  Future<void> _copyLog(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    await Clipboard.setData(ClipboardData(text: state.log.text));
+    if (context.mounted) showAppSnackBar(context, l10n.settingsLogCopied);
+  }
+
+  /// Saves the app log as [appLogFileName], where the learner picks.
+  Future<void> _exportLog(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    final bool saved;
+    try {
+      saved = await state.logFiles.save(
+        appLogFileName,
+        state.log.text,
+        mimeType: 'text/plain',
+      );
+    } on Exception catch (e) {
+      state.log.warning('App log not exported: ${e.runtimeType}');
+      if (context.mounted) {
+        showAppSnackBar(context, l10n.settingsLogExportFailed);
+      }
+      return;
+    }
+    if (!saved) return;
+    state.log.event('App log exported');
+    if (context.mounted) {
+      showAppSnackBar(context, l10n.settingsExported(appLogFileName));
+    }
+  }
+
+  /// Asks, then clears the app log.
+  Future<void> _clearLog(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    final clear = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.settingsLogClearTitle),
+        content: Text(l10n.settingsLogClearBody),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.commonCancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.settingsLogClearConfirm),
+          ),
+        ],
+      ),
+    );
+    if (clear != true) return;
+    await state.log.clear();
+    if (context.mounted) showAppSnackBar(context, l10n.settingsLogCleared);
   }
 
   /// The way to the sources the decks name (#98), with a gap above it, or
@@ -598,13 +695,14 @@ class SettingsPage extends StatelessWidget {
     final bool saved;
     try {
       saved = await state.logFiles.save(name, state.progress.exportJsonl());
-    } on Exception {
+    } on Exception catch (e) {
+      state.log.warning('Review log not exported: ${e.runtimeType}');
       if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
       return;
     }
-    if (saved && context.mounted) {
-      showAppSnackBar(context, l10n.settingsExported(name));
-    }
+    if (!saved) return;
+    state.log.event('Review log exported');
+    if (context.mounted) showAppSnackBar(context, l10n.settingsExported(name));
   }
 
   /// Merges a picked backup into this profile's log and says how many
@@ -615,6 +713,7 @@ class SettingsPage extends StatelessWidget {
     try {
       text = await state.logFiles.open(title: l10n.settingsImportPick);
     } on Exception catch (e) {
+      state.log.warning('Review log not imported: ${e.runtimeType}');
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsImportFailed('$e'));
       }
@@ -630,11 +729,13 @@ class SettingsPage extends StatelessWidget {
         fitted: backup.fitted,
       );
     } on FormatException catch (e) {
+      state.log.warning('Review log not imported: not a backup');
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsImportFailed(e.message));
       }
       return;
     }
+    state.log.event('Review log imported: $added new');
     if (context.mounted) showAppSnackBar(context, l10n.settingsImported(added));
   }
 
