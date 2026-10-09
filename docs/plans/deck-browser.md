@@ -236,6 +236,21 @@ Settled with the owner, 2026-10-09:
     that language, accepts the proposal unchanged. The mail bot then
     opens a PR that applies it (#441), and the PR merges after three days
     unless the owner closes it (the override; owner, 2026-10-09: "3 days").
+  - **Past the branch rules:** a dedicated GitHub App merges these PRs.
+    It is the only actor allowed to skip the approval rule; the three
+    required checks still apply to it. The owner creates and installs the
+    App, adds it to the protection's bypass list and stores its key as a
+    secret.
+  - **No merge conflicts:** the bot never stores a diff. A proposal is a
+    fact about one card: its id, the field, the text both reviewers saw
+    and the new text. On the third day the bot starts a fresh branch from
+    `main`, finds the card by id (ids are permanent, so a moved card is
+    still found), and writes the new text only if the field still holds
+    the text the reviewers saw. It then removes the `proposed` block,
+    rebuilds `decks/index.json` with the tool, and merges once CI is
+    green. If the field has changed or the card is gone, it does not
+    merge: the PR is labelled "proposal outdated" for the owner. During
+    the three days the PR is a preview only.
   - **Accept, edit or reject:** a reviewer who edits a proposal instead
     makes a new suggestion, back to the owner; the old proposal keeps
     waiting.
