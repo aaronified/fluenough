@@ -1,12 +1,16 @@
 # Deck format, schema 1
 
-A deck is a single UTF-8 YAML file. Filenames are `<deck-id>.yaml` and live
-under `decks/<language-code>/`.
+A deck is a single UTF-8 YAML file, or a core and its layers (see
+[Core and layer files](#core-and-layer-files)). Filenames are
+`<deck-id>.yaml` and live under `decks/<language-code>/`; a layer lives one
+folder down, in `decks/<language-code>/<native-code>/`.
 
-Three kinds of deck exist: `vocab` (a list of cards), `grammar` (a pattern
-table that expands into cards) and `reading` (passages with questions about
-them). Another kind of file, `facts`, holds a language's daily facts rather
-than anything drilled. All four share the same header. Beside them sit files that are not decks: the shared
+Four kinds of deck exist: `vocab` (a list of cards), `grammar` (a pattern
+table that expands into cards), `rules` (a table of a rule's forms over the
+words of one kind, which expands into cards; see [Rules decks](#rules-decks))
+and `reading` (passages with questions about them). Another kind of file,
+`facts`, holds a language's daily facts rather than anything drilled. All
+five share the same header, with the differences a core and a layer make. Beside them sit files that are not decks: the shared
 [themes](#themes), each language's [number rules](#number-rules), and each
 course's [path](#course-paths).
 
@@ -38,6 +42,24 @@ notes: "లేదు is 'there is not', the opposite of ఉంది."          
   or, in text written for speakers of another language (a fact's `hi` or
   `bn`), for words in that reader's own script. A word in a third script
   there still takes one, in Latin or in the reader's script.
+- **In a [core and its layers](#core-and-layer-files),** every string of a
+  layer is read as written for the layer's native language, whatever its
+  key, and every string of a core is the language learnt's. So a Bengali
+  layer's own Bengali words need no reading, and a Telugu word in it does.
+  A key never decides the language there: the slot keys `"lo"` and `"to"`
+  are not Lao and Tongan.
+- **The new prose fields** are held to it as every other: a note's `text`
+  and a layer's note texts, a base's `meaning`, example translations, a
+  rules layer's `slot_name`, slot labels, `prompts`, and each rule's `name`
+  and `explanation`, a grammar layer's `name`, `slot_name`, `prompt`,
+  glosses and `notes`, a layer's `name` and `description`, and a path's
+  `listening_passages` and `reading_passages`. The language facts beside
+  them (`word`, `base`, `ref`, `words`, a core's slot keys) are the word
+  itself and need none.
+- **Placeholders are checked before they are filled.** A layer that quotes
+  its core's words as `{1}`, `{2}` (see [Notes](#notes)) holds no script at
+  that point, so it needs no reading there: the reading comes with the word
+  from the core.
 
 `tools/transcribe.py` gives the reading, and `tools/validate_decks.py`
 rejects a word without one.
@@ -51,16 +73,18 @@ Common to every kind.
 | Field | Required | Notes |
 |---|---|---|
 | `schema` | yes | Must be `1`. |
-| `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. |
-| `name` | yes | Human-readable title. |
-| `kind` | no | `vocab` (default), `grammar`, `reading` for [passages](#reading-decks), or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path`, `sounds` and `script`. |
-| `language` | yes | The language being learned. See below. |
-| `native` | yes, except on a facts file | The language explanations are written in. |
+| `id` | yes | Unique, `[a-z0-9-]+`, must equal the filename stem. A vocab or grammar deck's id starts with the language learned and then the language it is taught from: `hi-en-market` is Hindi from English. A facts file is about one language: `hi-facts`. A core's id is the language and a name, `te-home`; its layer's is the language, the native language and the same name, `te-en-home`, which is also the merged deck's id ([Core and layer files](#core-and-layer-files)). |
+| `name` | yes, except on a core | Human-readable title. A core has none: each layer gives it, in its own language. |
+| `kind` | no | `vocab` (default), `grammar`, `rules` for a [rules deck](#rules-decks) (a core and layers only), `reading` for [passages](#reading-decks), `layer` for a [layer](#a-layer), or `facts` for a [facts file](#facts-files). The files beside the decks have their own: `themes`, `numbers`, `path`, `sounds` and `script`. |
+| `part` | on a core | `"core"`, and only on a core ([A core](#a-core)). Left out everywhere else. |
+| `core` | on a layer | The id of the core the layer translates, `"te-home"`. |
+| `language` | yes, except on a layer | The language being learned. See below. A layer takes its core's. |
+| `native` | yes, except on a facts file or a core | The language explanations are written in. A core has none: each layer names its own. |
 | `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | Where the content comes from: a URL, or for a book its title, author, year and licence, as in `"Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"`. The app shows it on the deck's page, and Settings lists it under Sources. |
 | `description` | no | One or two sentences. |
-| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. |
+| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
 
 ### `language`
@@ -79,6 +103,345 @@ Common to every kind.
 
 `{code, iso639_3, name}` — same meaning, for the learner's own language. Every
 language named anywhere, learned or native, carries its ISO 639-3 code.
+
+### YAML values
+
+The validator and the app read a plain (unquoted) value the same way, as
+YAML 1.2 does:
+
+| Plain value | Read as |
+|---|---|
+| `true`, `True`, `TRUE`, `false`, `False`, `FALSE` | a boolean |
+| `[-+]?[0-9]+` | a whole number, in base 10: `060` is 60 |
+| `0o17`, `0x1F` | a whole number in base 8 or 16 |
+| `1.5`, `.5`, `1e3`, `.inf`, `.nan` | a number with a fraction |
+| `null`, `Null`, `NULL`, `~`, nothing | null |
+| anything else: `yes`, `no`, `on`, `off`, `y`, `n`, `1_000`, `1:30`, `0b101` | text |
+
+So `phrasebook: yes` is the text `"yes"`, not true, and is refused. Do not
+lean on the table: **quote every value that is text, and every key that is
+text too** (`"lo":`, `"stem":`, `"te-9001":`), as the examples below do.
+Only three kinds of value stay unquoted, because they are meant as what
+they are: booleans (`phrasebook: true`, `rtl: true`), whole numbers
+(`schema: 1`, `words: 45`) and `null` for an empty grammar cell. A quoted
+`"true"` is refused where a boolean is wanted. In a layer, and in a rules
+core's `table` and `rules`, a key that is not text is an error: `1:` is the
+number 1, and must be written `"1":`.
+
+---
+
+## Core and layer files
+
+A deck may be written as two kinds of file instead of one
+([ADR-0035](adr/0035-b1-deck-format.md)):
+
+- **The core** holds what belongs to the language learnt, the same for
+  every learner: card ids, targets, readings, IPA, parts of speech,
+  pictures, forms, [base words](#base-words-bases), the
+  [rules](#sentences-and-their-rules-rules) a sentence uses, and the
+  language facts of [notes](#notes).
+- **A layer** holds what belongs to one native language: the deck's name
+  and description, each card's meaning, its note texts, its examples'
+  translations, and a grammar or rules deck's labels and explanations, keyed
+  by card id.
+- **Merged, they are one deck,** whose id is the layer's. A card the layer
+  does not translate is not taught from that language: it is left out, not
+  shown in English.
+
+So teaching a language from Bengali as well as English means adding Bengali
+layers; the core does not change. Every deck in a [B1 plan](#the-b1-plan)
+is split into a core and its layers as the plan is written. A single-file
+deck stays valid in every form it has, and may use every new card field.
+[Rules decks](#rules-decks) exist only as a core and layers; reading decks
+stay single-file, since their questions are already keyed by language; a
+deck a learner adds in the app is single-file.
+
+The ids in the examples below, `te-9001` and on, are made up. Take real ones
+from `python3 tools/validate_decks.py --next-id te`.
+
+### Files and ids
+
+| File | Where | Id |
+|---|---|---|
+| Core | `decks/<lang>/<lang>-<name>.yaml` | `<lang>-<name>`: `te-home` |
+| Layer | `decks/<lang>/<native>/<lang>-<native>-<name>.yaml` | `<lang>-<native>-<name>`: `te-en-home` |
+| The merged deck | (none) | the layer's id, `te-en-home` |
+
+- **`<name>`** matches `[a-z0-9]+(-[a-z0-9]+)*`, and is the same in the core
+  and every layer of it.
+- **The merged deck's id is the id a single-file deck of that course has
+  today,** so a path, placement, a learner's added deck and the review log
+  all know it unchanged. Splitting `decks/te/te-en-home.yaml` into
+  `decks/te/te-home.yaml` and `decks/te/en/te-en-home.yaml` keeps the deck id
+  and every card id.
+- **Reserved names:** a core is never `<lang>-facts`, `<lang>-numbers`,
+  `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds` or `<lang>-path`,
+  the files beside the decks.
+- **A core's name never starts with a native language's code,** nor with the
+  name of a folder beside it: a core `te-en-x` would read as a deck of the
+  `te-en` course. Nor is a core's id the id of any other file of the
+  language.
+- **A grammar or rules core's cells** take the core's id as their deck name:
+  `te-grammar-past` expands to `te-grammar-past-<key>-<i>`, exactly as the
+  single-file `te-en-grammar-past` does ([Expansion](#expansion)). Splitting
+  a grammar deck keeps every cell id as long as the core's id is the old
+  deck id without its native language, and the slots keep their order.
+- **One namespace of card ids per language.** A card is written once in the
+  language, in a core, a layer or a single-file deck, and
+  `--next-id` sees all three.
+
+### A core
+
+```yaml
+schema: 1
+id: "te-home"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-9001"
+    target: "ఇల్లు"
+    reading: "illu"
+    ipa: "illu"
+    pos: "noun"
+    picture: "🏠"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "ఇంటి-", reading: "iṇṭi-" }] }
+  - id: "te-9002"
+    target: "నేను ఇంటికి వెళ్తాను."
+    reading: "nēnu iṇṭiki veḷtānu."
+    pos: "phrase"
+    rules: ["te-rule-ki"]
+    bases:
+      - { word: "ఇంటికి", ref: "te-9001" }
+      - { word: "వెళ్తాను", ref: "te-9003" }
+  - ref: "te-9010"
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `schema` | yes | `1`. |
+| `id` | yes | `<lang>-<name>`, the filename stem. |
+| `part` | yes | `"core"`. It is what marks the file as a core. |
+| `kind` | no | `"vocab"` (default), `"grammar"` or `"rules"`. Not `"reading"`: a reading deck stays a single-file deck. |
+| `language` | yes | The full language block, `icon` included where the language's other decks give one. |
+| `license` | yes | SPDX, for the core's content. |
+| `authors`, `source`, `tags` | no | As on any deck. |
+| `theme` | no | On a vocab core: the theme it teaches. |
+| `cards` | on a vocab core | A non-empty list, below. |
+| `pattern` | on a grammar core | [A grammar core](#a-grammar-core). |
+| `table`, `rules` | on a rules core | [Rules decks](#rules-decks). |
+| `native`, `name`, `description` | **not allowed** | They are the learner's language: each layer gives them. |
+
+The file sits in `decks/<language.code>/`. A core no layer names is warned
+of: no learner is taught it.
+
+**A core card** has the language side only. It may give `id`, `target`,
+`reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio`,
+`examples`, `modes`, `picture`, `notes` (the core form, below),
+`phrasebook`, `bases` and `rules`. It may **not** give `native`,
+`alt_native` or `wiktionary`, which are the native language's and go in each
+layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
+the card's sound-alike is taken from it.
+
+**A core example** is `{ target, reading?, ipa?, bases? }`. Its translation
+is in each layer, keyed by its target, so two examples of one card may not
+have the same target, and the target is written in Unicode's composed form
+(NFC), as every layer key that names it is.
+
+**A core ref**, `- ref: "te-9010"`, lists a card written in another deck. It
+may give `reading`, `ipa`, `tags`, `modes`, and `examples` and `notes` in the
+core form; not `native`, `alt_native` or `wiktionary`.
+
+### A grammar core
+
+The core keeps the table's language side, and the slot labels stay the keys
+of `forms`:
+
+```yaml
+schema: 1
+id: "te-grammar-past"
+part: "core"
+kind: "grammar"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+pattern:
+  slots: ["నేను", "నువ్వు"]
+  entries:
+    - lemma: "వెళ్ళు"
+      key: "vellu"
+      reading: "veḷḷu"
+      forms: { "నేను": "వెళ్ళాను", "నువ్వు": "వెళ్ళావు" }
+      readings: { "నేను": "veḷḷānu", "నువ్వు": "veḷḷāvu" }
+```
+
+A core `pattern` gives `slots` and `entries`, and each entry `lemma`, `key`,
+`forms`, `reading`, `readings`, `ipa` and `ipas`, under every rule of
+[Grammar decks](#grammar-decks). Its `name`, `slot_name`, `prompt` and
+`notes`, and each entry's `gloss`, are in each layer.
+
+### A layer
+
+```yaml
+schema: 1
+id: "te-en-home"
+kind: "layer"
+core: "te-home"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home and neighbourhood"
+description: "Rooms, the house and the street."
+license: "CC0-1.0"
+tags: ["unreviewed"]
+cards:
+  "te-9001":
+    native: "home; house"
+    wiktionary: true
+    notes:
+      "stem": "Before an ending, it becomes {1}: ఇంట్లో (iṇṭlō), at home."
+  "te-9002":
+    native: "I will go home."
+  "te-9010":
+    native: "door"
+  "te-9020":
+    target: "ఇంటి పేరు"
+    reading: "iṇṭi pēru"
+    native: "surname (literally 'house name')"
+    bases:
+      - { word: "ఇంటి", ref: "te-9001" }
+      - { word: "పేరు", base: "పేరు", reading: "pēru", meaning: "name" }
+    notes:
+      - { kind: "culture", text: "A Telugu surname often comes first, before the given name.", source: "https://en.wikipedia.org/wiki/Telugu_people#Names" }
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `schema` | yes | `1`. |
+| `id` | yes | `<lang>-<native>-<name>`, the filename stem, where the core is `<lang>-<name>`. |
+| `kind` | yes | `"layer"`. |
+| `core` | yes | The core's id. The core is `<core>.yaml` in the folder above the layer's. |
+| `native` | yes | The native language block, `{ code, iso639_3, name }`. |
+| `name` | yes | The deck's title, in this language. |
+| `license` | yes | SPDX, for the layer's text. |
+| `description`, `authors`, `source`, `tags` | no | As on any deck. |
+| `cards` | on a layer of a vocab core | A **mapping** from card id to what this language gives the card. |
+| `pattern` | on a layer of a grammar core | Below. |
+| `table`, `rules` | on a layer of a rules core | [The layer of a rules core](#the-layer-of-a-rules-core). |
+| `language`, `theme`, `part` | **not allowed** | They are the core's. |
+
+The file sits in `decks/<lang>/<native.code>/`. The validator reads the core
+beside it even when the layer is validated alone, and checks the layer's
+readings against the core's language and its
+[romanisation file](#romanisation-files).
+
+**An entry for a card the core writes:**
+
+| Field | Notes |
+|---|---|
+| `native` | **Required.** The meaning. A card with no entry, or an entry with no `native`, is not taught from this language. |
+| `alt_native` | As on any card. |
+| `notes` | A mapping from the core note's `id` to its text in this language ([Notes](#notes)). |
+| `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
+| `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
+| `wiktionary` | `true` ([The Wiktionary link](#the-wiktionary-link)). |
+
+Anything else, `target`, `reading`, `ipa`, `pos`, `tags`, `modes` and the
+rest, is an error on such an entry: a layer cannot change the word.
+
+**An entry for a card the core lists by `ref`:** the same fields, but
+`native` is optional. With it, the card has its own meaning in this deck, as
+a ref with `native` has today. Without it, the card takes the meaning of
+the card it names, through a deck of the same native language, as
+[a ref](#a-word-in-more-than-one-deck-ref) does; the entry may still give
+`alt_native` and `wiktionary`. It gives `notes` and `examples` only where
+the core's ref gives core-form ones for it to key on.
+
+**A card only this layer has** is an entry whose id the core does not have:
+a whole single-file card without its `id` line, since the key is its id.
+`target` and `native` are required and every card field is allowed, `pair`
+included, with notes in the [single-file form](#notes) and bases written in
+full. Its id is taken from the language's sequence like any other. Use it
+for what only these learners need: Bengali false friends for a Bengali
+speaker learning Hindi, say. A layer whose own card has a culture note is
+tagged `unreviewed`, as the one above is, since the claim is in the layer.
+
+**A layer of a grammar core** gives the learner's side of the pattern:
+
+```yaml
+pattern:
+  name: "Past tense"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "నేను": "I, నేను (nēnu)", "నువ్వు": "you, నువ్వు (nuvvu)" }
+  entries: { "vellu": "to go" }
+  notes: "The past adds -ఆ- (-ā-) before the person ending."
+```
+
+`name`, `slot_name`, `prompt` and `entries` are required; `entries` maps each
+core entry's `key`, or its lemma where it has none, to its gloss, and an
+entry without one is left out. `slots` is optional: it maps a core slot to
+the label `{slot}` shows, and a slot without one shows its key. `notes` is
+optional.
+
+**What the validator checks on a layer:**
+
+- **Errors:** an entry that names nothing in the core (a note id, an
+  example's target, an inline base's word or a grammar entry the core does
+  not have), so that a core edit cannot silently lose a translation; a
+  missing `native` on a card the core writes; a field that belongs to the
+  word; a text key that is not in Unicode's composed form (NFC), since a
+  key must match the core's text letter for letter.
+- **Warnings:** a core note with no text here, an example with no
+  translation, and an inline base with no meaning: learners from this
+  language do not see them, or see the base without one.
+- **One info line:** `covers n of m cards of te-home (p%)`, how much of the
+  core this layer teaches.
+
+### What the merged deck is
+
+The app merges each layer with its core into one deck, and the validator
+checks the same deck:
+
+- **The deck:** the layer's id, `name` and `description`; the core's `kind`,
+  `language` and `theme`; the layer's `native`. Its `license` is the core's
+  when the two agree, else `"<core's> AND <layer's>"`. Its tags are the
+  core's, then the layer's, and `reviewed` is dropped when either says
+  `unreviewed`, so a deck reads as unreviewed until both files are checked.
+  Its authors are the core's then the layer's.
+- **Its cards,** in the core's order: each written card the layer gives a
+  `native`, and each ref that has a meaning in this language, by the layer
+  or through a deck of the same native language. The layer's own cards
+  follow, in the layer's order.
+- **A merged card** takes the word from the core and the meaning,
+  `alt_native` and `wiktionary` from the layer. Its notes are the core's, in
+  order, each with the layer's text, its placeholders filled; a note with
+  no text in this layer is left out. Its examples are the core's, each with
+  the layer's translation; one without is left out. Its `pair` is the
+  partner of its first pair note.
+
+### Splitting a deck
+
+1. The core is `decks/<lang>/<lang>-<name>.yaml`, its id the old deck id
+   without the native language: `te-en-home` gives `te-home`.
+2. The layer is `decks/<lang>/<native>/<old id>.yaml`, with the old id.
+3. **Every card id stays as it is.** A card the old deck wrote is written in
+   the core, with its meaning, notes and translations in the layer; a ref
+   stays a ref.
+4. A grammar deck keeps every entry's `key` and the order of its slots, so
+   its cells keep their ids.
+5. **The old file is deleted in the same change.** The validator refuses the
+   two side by side: they have the same id.
+6. **The first layer folder of a language** needs its line in
+   `pubspec.yaml`, `- decks/<lang>/<native>/`, under `flutter.assets`, in a
+   one-line commit of its own: the app bundles only the folders listed
+   there, and the validator fails a folder of decks that is not.
+7. The path does not change: it lists the merged deck's id, which is the
+   old one. Once a language has a core, its path needs its
+   [B1 plan](#the-b1-plan).
 
 ---
 
@@ -112,15 +475,24 @@ cards:
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
-| `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `phrase`, `particle`, `other`. |
+| `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
-| `notes` | no | Usage note shown after answering. |
+| `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
-| `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading` and `ipa`. |
+| `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading`, `ipa` and [`bases`](#base-words-bases). |
+| `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
+| `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). |
+| `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
+| `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
-| `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0412` (కాలం, time) on కలం (pen). Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. |
+| `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
 | `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+
+In a [core and its layers](#core-and-layer-files), the core card gives
+every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
+layer gives `native`, `alt_native` and `wiktionary`, and the texts of the
+core's notes and examples.
 
 ### A note on `id`
 
@@ -150,9 +522,10 @@ cards:
 ```
 
 A ref may give the card's native side for this deck: `native`, `alt_native`,
-`reading`, `notes`, `tags`, `examples` and `modes`. What the card is in the
-language learned, its `target`, `alt_target`, `pos`, `gender` and `audio`,
-stays where it is written.
+`reading`, `notes`, `tags`, `examples`, `modes` and `wiktionary`. What the
+card is in the language learned, its `target`, `alt_target`, `pos`,
+`gender` and `audio`, stays where it is written, and so do `phrasebook`,
+`bases`, `rules`, `pair` and `picture`: a ref cannot give them.
 
 - **The same native language:** what the ref does not give comes from the
   card.
@@ -161,8 +534,257 @@ stays where it is written.
   `alt_native` and `examples`, written for English speakers, do not come
   across; its `reading` and `modes`, which belong to the word, do unless the
   ref gives its own.
+- **A card written in a core** has its meaning in each layer. A ref to it
+  from a single-file `te-en` deck takes the meaning the core's English layer
+  gives it; with no English layer that translates it, the ref gives its own
+  `native`.
+- `wiktionary` on a ref is its own where given; otherwise it comes from the
+  card, as `notes` does, when the deck has the card's native language.
 - The validator checks that each ref names a card written in another deck
   of the language, and that no card is written twice.
+
+### The phrasebook
+
+A course starts with a small phrasebook: 15 to 25 survival phrases, taught
+whole from the first lesson, never held back until their words are known
+([ADR-0035](adr/0035-b1-deck-format.md)). Greetings, thanks and sorry, yes
+and no, "I don't know Telugu", "I don't understand", "please speak slowly",
+and the like.
+
+```yaml
+  - id: "te-9100"
+    target: "నాకు తెలుగు రాదు."
+    reading: "nāku telugu rādu."
+    native: "I don't know Telugu."
+    pos: "phrase"
+    phrasebook: true
+    bases:
+      - { word: "నాకు", ref: "te-9101" }
+      - { word: "తెలుగు", ref: "te-9102" }
+      - { word: "రాదు", base: "రా", reading: "rā", meaning: "to come; here, to know (a language)" }
+```
+
+That is the single-file form. In a core the card has no `native`, and the
+inline base no `meaning`: the layer gives both.
+
+- **`phrasebook: true`, unquoted,** or nothing. `false`, `"true"` and `yes`
+  are refused. It goes on a card where the card is written, never on a ref.
+- **15 to 25 per course,** counted over every deck of the course, by
+  distinct card id. The validator checks the count once a course has one
+  phrasebook card, or a [B1 plan](#the-b1-plan). A Bengali layer's own
+  phrasebook cards count for Bengali learners only.
+- **In the course's first unit.** In a course with a B1 plan, every
+  phrasebook card is taught by a deck of the path's first unit. A later
+  deck may list one by `ref`, as long as a first-unit deck teaches it too.
+- **Its words are not counted as taught by it.** Each word of a phrase comes
+  again later as a word card, and its `bases` say which. A phrasebook card
+  is never counted as a word of the course: not in a unit's words, not as a
+  row of a rule's table, and not as the card that covers a word of another
+  text ([Base words](#base-words-bases)).
+
+### Base words: `bases`
+
+A card names the base word of every inflected or derived word in its target
+and its examples. For "He went to our school" the card also gives "go" and
+"we". They are shown with the taught details: on the lesson's teach card,
+and in reviews once the question is answered, never before, since on a
+Write question they would give the answer away.
+
+**Single-file deck, or a layer's own card:**
+
+```yaml
+    bases:
+      - { word: "ఇంటికి", ref: "te-9001" }
+      - { word: "రాదు", base: "రా", reading: "rā", meaning: "to come", wiktionary: true }
+```
+
+**In a core,** the meaning and the Wiktionary mark of a base written in full
+are in each layer:
+
+```yaml
+    bases:
+      - { word: "ఇంటికి", ref: "te-9001" }
+      - { word: "రాదు", base: "రా", reading: "rā" }
+```
+
+```yaml
+  "te-9100":
+    native: "I don't know Telugu."
+    bases:
+      "రాదు": { meaning: "to come; here, to know (a language)", wiktionary: true }
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `word` | yes | The word as it stands in the text, ఇంటికి (iṇṭiki): one of the text's words, compared in Unicode's composed form and ignoring case. |
+| `ref` | one of `ref` and `base` | The card that teaches the base, ఇల్లు (illu). Its target, reading and meaning are shown, in the learner's language. Prefer it. |
+| `base` | one of `ref` and `base` | The base written in full, when no card teaches it. |
+| `reading` | with `base`, in a script that needs one | The base's reading. A missing one is an error here, not a warning: the app shows it. |
+| `ipa` | no, with `base` | The base in the IPA. |
+| `meaning` | with `base`, single-file only | Its meaning. In a core it is in the layer. |
+| `wiktionary` | no, with `base`, single-file only | `true` ([The Wiktionary link](#the-wiktionary-link)). In a core it is in the layer. |
+
+- **Examples** take `bases` the same way, on the example:
+  `examples: [{ target: "...", reading: "...", bases: [...] }]`. A layer
+  gives an example's inline bases their meanings under
+  `examples: { "<target>": { native: "...", bases: { "<word>": ... } } }`.
+- **Not on a ref:** a base belongs to the text it is a word of.
+- A `word` is given once per text, and is a word of that text. A `ref` names
+  a card of the language, not the card itself. `reading`, `ipa`, `meaning`
+  and `wiktionary` are only for a base written in full.
+- **Words** are the text split at spaces and punctuation (an apostrophe
+  inside a word is kept), with digits dropped.
+
+**In a [B1 deck](#the-b1-plan), every word is covered.** Each word of a
+target, and of each example's target, is either the target, or an
+`alt_target`, of a word card the course teaches (a vocab card that is
+neither a phrasebook card nor a phrase), or has a `bases` entry. A grammar
+or rules cell does not count, since an inflected form taught as a cell is
+still a derived word that names its base, and nor does a card taught only
+from another native language. Phrasebook cards are checked too. Decks on no
+B1 plan are not checked: they gain their bases as their language's plan is
+written. A language written without spaces (`han`, `kana`, `thai`) cannot
+have a B1 deck until the format can give its words.
+
+### Notes
+
+Notes are a list of facts about the word, each of a kind. The app shows one
+at a time, when the word is taught and after an answer: shuffled, never
+repeated until every note of the card has been shown once.
+
+| Kind | What it says |
+|---|---|
+| `pair` | A minimal pair: a word of the language that sounds almost the same. It names that word, the partner, by `ref`. |
+| `culture` | The word's cultural significance. It names its `source`. |
+| `usage` | Another context it is used in, or another sense. |
+| `behaviour` | How it behaves unlike similar words: an irregular form, a gender, a use. |
+| `note` | Anything else worth knowing. |
+
+**Single-file deck, or a layer's own card:**
+
+```yaml
+    notes:
+      - { kind: "pair", ref: "te-9007", text: "Not కాలం (kālam), time: the a is long there." }
+      - { kind: "culture", text: "A pen was a gift for the first day at school.", source: "https://example.org/telugu-school-customs" }
+      - { kind: "usage", text: "Also a pen-name, in old usage." }
+      - { kind: "behaviour", id: "plural", text: "Its plural is {1}.", words: [{ word: "కలాలు", reading: "kalālu" }] }
+      - { kind: "note", text: "A word from Arabic, through Persian." }
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `kind` | yes | `pair`, `culture`, `usage`, `behaviour` or `note`. |
+| `text` | yes | The note, in the deck's native language. [Script in prose](#script-in-prose-always-with-its-reading) applies. |
+| `id` | no | The note's id: starts with a letter, `[a-z0-9-]+`, not one of `yes`, `no`, `on`, `off`, `true`, `false`, `y`, `n`, and unique in the card. Without one, a note's id is its place, `"1"`, `"2"`. The app remembers which notes it has shown by card and note id, so give ids once a card's notes may be reordered. |
+| `ref` | on a `pair` note, and only there | The partner: another card of the language that sounds almost the same. |
+| `source` | on a `culture` note; optional on the rest | Where the claim can be checked: a URL, or a book with its author and year. |
+| `words` | no | The words of the language the text quotes, `{ word, reading, ipa? }`, `reading` required in a script that needs one. The text names them `{1}`, `{2}` (below). |
+
+`notes` may still be text, as every deck had it: it reads as one note of
+kind `note`. An empty string is no notes. A list may not be empty.
+
+**In a core,** a note keeps its language facts, and each layer writes the
+explanation around them. A core note has an `id`, required, and no `text`;
+a culture note's `source` is in the core, shared by every layer:
+
+```yaml
+    notes:
+      - { id: "pair", kind: "pair", ref: "te-9007" }
+      - { id: "school", kind: "culture", source: "https://example.org/telugu-school-customs" }
+      - { id: "plural", kind: "behaviour", words: [{ word: "కలాలు", reading: "kalālu" }] }
+```
+
+The layer gives each note's text by its id:
+
+```yaml
+  "te-9005":
+    native: "pen"
+    notes:
+      "pair": "Not to be confused with కాలం (kālam), time: the a is long there."
+      "school": "A new pen was a gift for the first day at school."
+      "plural": "Its plural is {1}."
+```
+
+**Placeholders.** In a note's text, and in a rule's explanation, `{1}`,
+`{2}` … `{12}` stand for the first, second and twelfth of the note's (or the
+rule's) `words`, shown as the word and its reading in brackets: `{1}` above
+reads కలాలు (kalālu). So the word and its reading are written once, in the
+core, and every layer shows the same. `{0}` and `{01}` are errors, and so is
+a number past the last word; a word the text never uses is warned of. Any
+other brace is just a brace. A layer may still quote a word directly, with
+its reading.
+
+**What the validator checks on notes:**
+
+- **A warning on a word card with no notes,** in a [B1 deck](#the-b1-plan):
+  every word card should have one or more. A word card is a vocab card that
+  is not a phrasebook card or a phrase, and is one word, or a noun, verb,
+  adjective, adverb or pronoun of several.
+- **A pair note's partner is taught in the same course,** so that it has a
+  meaning in the learner's language: the minimal-pair panel shows the two
+  words side by side, each with its reading and meaning. It is an error
+  when no deck of the course teaches the partner. A layer that cannot
+  teach the partner leaves that note's text out. When the panel is built,
+  it shows its button only where the partner is in the catalog in the
+  learner's native language, so a deck a learner adds cannot open a panel
+  on a word with no meaning.
+- **A warning on a card with `pair` and no pair note naming the partner,**
+  in a B1 deck: the minimal-pair button needs the note.
+- **Culture notes keep a deck marked.** A file that holds a culture note's
+  claim (a core with one, a single-file deck with one, a layer whose own
+  card has one) carries `unreviewed` until a speaker checks it, then
+  `reviewed`: one of the two, never both (#99).
+
+### The Wiktionary link
+
+The app links a word to its Wiktionary entry, with its etymology, in the
+learner's own language's edition:
+`https://en.wiktionary.org/wiki/ఇల్లు#Telugu` for ఇల్లు (illu), taught from
+English. The link is built from the word, not stored. What is stored is that
+the entry exists:
+
+```yaml
+  "te-9001":
+    native: "home; house"
+    wiktionary: true
+```
+
+- **`true`, or left out where that Wiktionary has no entry.** Nothing else
+  is accepted. Many words of the Indian languages have none yet.
+- **It belongs with the native language,** since en.wiktionary may have a
+  Telugu word that bn.wiktionary lacks: on a single-file card or ref, in a
+  layer's entry, or on a base written in full. Never in a core.
+- **The title is the target.** For a base given by `ref`, it is that card's
+  target; for a base written in full, its `base`. A card whose target is not
+  an entry's title, such as a sentence or an inflected form, is not marked:
+  its bases carry the mark for their words.
+- **Mark only an entry you have seen:** the word's own page, with a section
+  for the language. A tool will mark them from Wiktionary's extracts; until
+  then, check each one.
+
+### Sentences and their rules: `rules`
+
+A sentence names the rules it uses, by their ids:
+
+```yaml
+  - id: "te-9002"
+    target: "నేను ఇంటికి వెళ్తాను."
+    reading: "nēnu iṇṭiki veḷtānu."
+    pos: "phrase"
+    rules: ["te-rule-ki"]
+    bases:
+      - { word: "ఇంటికి", ref: "te-9001" }
+      - { word: "వెళ్తాను", ref: "te-9003" }
+```
+
+With `bases`, it is what decides when the sentence is offered: once every
+word in it, by its base, and every rule it names are known. Until then it
+does not hold back its unit.
+
+- A list of rule ids, each `<lang>-rule-<name>`, none twice, each defined by
+  a [rules deck](#rules-decks) of the language.
+- Written where the sentence is written: a single-file card, a core card or
+  a layer's own card. Not on a ref.
 
 ---
 
@@ -254,6 +876,203 @@ Each `(entry, slot)` pair becomes one production card:
   **alt_target** the rest
 - **native** — `prompt` with substitutions applied
 - **modes** — `grammar` only
+
+A grammar deck may also be written as [a core and its
+layers](#a-grammar-core). Split, it keeps every cell id, as long as the
+core's id is the old deck id without its native language and every entry
+keeps its `key` and the slots their order. A grammar table whose rows are
+the words of one kind, a noun's case endings or a verb's persons, is better
+written as a [rules deck](#rules-decks): its rows are then every word of
+that kind the course teaches, not a few chosen ones.
+
+---
+
+## Rules decks
+
+Grammar taught as rules, practised over the words the learner knows
+([ADR-0035](adr/0035-b1-deck-format.md)). A rules deck is **one table**:
+its rows are the words of one kind, each with every form listed; its
+columns are the forms, and each column belongs to a **rule**, which has an
+id, a name and an explanation. A case-endings table has a rule for each
+ending; a tense table may have one rule for all its persons. Each cell is a
+card, and its questions test the rule, never the word: the word is always
+one the learner was taught.
+
+A rules deck is a core and its layers; there is no single-file form.
+
+### The core
+
+`decks/te/te-grammar-case-endings.yaml`:
+
+```yaml
+schema: 1
+id: "te-grammar-case-endings"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+    except: ["te-9030"]
+  slots: ["lo", "ki", "to", "nunci"]
+  rows:
+    - word: "te-9001"
+      forms: { "lo": "ఇంట్లో", "ki": "ఇంటికి", "to": "ఇంటితో", "nunci": "ఇంటి నుంచి" }
+      readings: { "lo": "iṇṭlō", "ki": "iṇṭiki", "to": "iṇṭitō", "nunci": "iṇṭi nuñci" }
+    - word: "te-9004"
+      forms: { "lo": "అమ్మలో", "ki": "అమ్మకి", "to": "అమ్మతో", "nunci": "అమ్మ నుంచి" }
+      readings: { "lo": "ammalō", "ki": "ammaki", "to": "ammatō", "nunci": "amma nuñci" }
+rules:
+  - id: "te-rule-lo"
+    slots: ["lo"]
+    words:
+      - { word: "-లో", reading: "-lō" }
+      - { word: "ఇల్లు", reading: "illu" }
+      - { word: "ఇంట్లో", reading: "iṇṭlō" }
+  - id: "te-rule-ki"
+    slots: ["ki"]
+    words:
+      - { word: "-కి", reading: "-ki" }
+      - { word: "-కు", reading: "-ku" }
+  - id: "te-rule-to"
+    slots: ["to"]
+    words: [{ word: "-తో", reading: "-tō" }]
+  - id: "te-rule-nunci"
+    slots: ["nunci"]
+    words: [{ word: "నుంచి", reading: "nuñci" }]
+```
+
+The header is a core's, `kind: "rules"`, with `table` and `rules` in place
+of `cards`, and no `theme`.
+
+**`table`:**
+
+| Field | Required | Notes |
+|---|---|---|
+| `applies_to` | yes | Which words are its rows. `pos`, required: a non-empty list of parts of speech, not `phrase`. `tags`, optional: a word qualifies only with one of them. `except`, optional: card ids of words of that kind the rule does not apply to, such as an indeclinable loanword. |
+| `slots` | yes | The column keys, in order: distinct **slot keys**. **Permanent in order:** a cell's id holds its slot's place. Add new slots at the end. |
+| `rows` | yes | A non-empty list, below. |
+
+**A slot key** starts with a letter and matches `[a-z0-9-]+`, as `"lo"` or
+`"past-1"`, and is none of `yes`, `no`, `on`, `off`, `true`, `false`, `y` and
+`n`. Quote it wherever it is a key.
+
+**A row:**
+
+| Field | Required | Notes |
+|---|---|---|
+| `word` | yes | The id of the vocab card that teaches the word. |
+| `key` | no | The row's part of its cells' ids, `[a-z0-9-]+`. Only to keep the cell ids of a grammar deck being turned into rules: the old entry's `key`, or its lemma. Without it, the row's part is the number of `word`, `9001` for `te-9001`. |
+| `forms` | yes | Every slot: a form, a list of forms (the first shown, all accepted), or `null` where the word has no such form. At least one is not null. |
+| `readings` | in a script that needs one | Every filled slot's reading, as a [grammar entry's](#romanisation). |
+| `ipas` | no | As a grammar entry's. |
+
+**`rules`,** a non-empty list:
+
+| Field | Required | Notes |
+|---|---|---|
+| `id` | yes | `<lang>-rule-<name>`, `<name>` matching `[a-z0-9]+(-[a-z0-9]+)*`, unique in the language. **Permanent:** sentences and a path's grammar topics name it, and its mastery is counted from its cells. |
+| `slots` | yes | The table's slots this rule makes. Every slot belongs to exactly one rule. |
+| `words` | no | The words of the language its explanation quotes, `{ word, reading, ipa? }`: the layer's explanation names them `{1}`, `{2}` ([placeholders](#notes)). |
+
+### Every word of its kind has its row
+
+The validator holds the table to the course, not to a list someone keeps:
+
+- each row's `word` is a vocab card of the language, of a part of speech in
+  `applies_to.pos` (with one of its `tags`, when given), not a phrasebook
+  card, not in `except`, and with a reading where the script needs one,
+  since every typed cell shows the word with its reading;
+- each `except` id is a card of the language;
+- **every word of the kind that a [B1 deck](#the-b1-plan) of the language
+  teaches has its row,** or is in `except`. It is an error, naming the word
+  and the deck that teaches it. So a noun added to a B1 deck needs its row
+  in every noun table in the same change. A noun only a Bengali layer
+  teaches needs its row too; English learners never see that row.
+
+A row with one form only is warned of: its questions cannot offer a choice.
+
+### The layer of a rules core
+
+`decks/te/en/te-en-grammar-case-endings.yaml`:
+
+```yaml
+schema: 1
+id: "te-en-grammar-case-endings"
+kind: "layer"
+core: "te-grammar-case-endings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "In, to, with, from: case endings"
+license: "CC0-1.0"
+table:
+  slot_name: "case"
+  slots:
+    "lo": "in {meaning}"
+    "ki": "to {meaning}"
+    "to": "with {meaning}"
+    "nunci": "from {meaning}"
+  prompts:
+    "te-9001": { "lo": "at home", "ki": "home (going there)" }
+rules:
+  "te-rule-lo":
+    name: "-లో (-lō): in"
+    explanation: "{1} means in. It joins the noun's oblique stem: {2} becomes {3}."
+  "te-rule-ki":
+    name: "-కి (-ki): to"
+    explanation: "{1}, or {2} after some nouns, means to: to a place, or to the person given or told something."
+  "te-rule-to":
+    name: "-తో (-tō): with"
+    explanation: "{1} means with: with a person, or with a tool."
+  "te-rule-nunci":
+    name: "నుంచి (nuñci): from"
+    explanation: "{1} follows the noun as a separate word and means from."
+```
+
+- **`table`,** required: `slot_name`, what the columns are; `slots`, a label
+  for **every** core slot, which is also its cells' prompt; and `prompts`,
+  optional, the whole prompt of a cell the label gets wrong, by row `word`
+  and slot.
+- **A label's only placeholder is `{meaning}`,** the word's meaning in this
+  language. The word itself is never written into a label: the app shows it,
+  with its reading, on every typed cell. A label without `{meaning}` is shown
+  after the meaning, as `mother: plural`.
+- **`rules`,** required: each rule id with its `name` and `explanation`.
+  **A rule the layer leaves out is not taught from this language,** and its
+  cells are not asked. The validator's info line counts the rules covered.
+
+### Its cells
+
+For each row whose word is taught in the learner's language, and each slot
+with a form whose rule the layer explains, the deck has one card:
+
+- **id:** `<core id>-<row part>-<slot index>`: `te-grammar-case-endings-9001-0`
+  is ఇంట్లో (iṇṭlō). It stays the same while the core's id, the row's word
+  or key, and the order of the slots stay the same. A row or slot left out
+  shifts no other cell's id.
+- **target:** the slot's first form, and the rest as alternatives, with
+  their readings and IPA.
+- **native:** the layer's `prompts` for the cell, or else the slot's label
+  with `{meaning}` filled. The meaning is the first meaning of the word's
+  card in this language, up to its first `/`, `;` or `,`: "with mother".
+- **modes:** `grammarUnderstood` and `grammar` (below).
+
+A rule itself is not a card. It is taught before its cells, with its name
+and explanation, and it counts as known once its cells are.
+
+**What each question shows:**
+
+| Mode | Shown | Answer |
+|---|---|---|
+| `grammarUnderstood` | The meaning to express, "with mother" | Chosen among the same word's other forms in the table: అమ్మతో (ammatō), అమ్మకి (ammaki), అమ్మలో (ammalō), అమ్మ నుంచి (amma nuñci). Never another word's form, such as పాలు (pālu), and never a form of a rule this layer leaves out. |
+| `grammar` | The word and its reading, then the meaning: "అమ్మ (amma): with mother" | The form, typed |
+
+These are the two grammar schedules: **grammar understood**, choosing, and
+**grammar produced**, typing. `grammar` keeps its name and meaning, so every
+grammar answer already logged keeps its meaning. A card or ref cannot list
+`grammarUnderstood` in its `modes`: only a rules table's cells take it. A
+cell whose row has no other form is only typed.
 
 ---
 
@@ -437,7 +1256,7 @@ units:
 | `id` | yes | `<language>-<native>-path`, and the filename stem. |
 | `language` | yes | The code of the language learned, such as `hi`. |
 | `native` | yes | The code of the language it is taught from, such as `en`. |
-| `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids, which may end in the wildcard `"*"`. |
+| `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids, which may end in the wildcard `"*"`, or a mapping (see [The B1 plan](#the-b1-plan)). |
 | `alphabet` | no | The decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
 | `description` | no | Free text. |
 
@@ -447,9 +1266,10 @@ units:
   or places a unit whole (ADR-0013), so keep a unit to what a learner would
   take in together.
 - **Every deck of the course is on its path, exactly once,** and only the
-  course's decks. The validator fails a deck left out, one listed twice, one
-  from another course, and an id that is no deck. Adding a deck means adding
-  it to its course's path.
+  course's decks. A layer is a deck of its course, listed by its id, which is
+  the merged deck's; a core is on no path. The validator fails a deck left
+  out, one listed twice, one from another course, and an id that is no deck.
+  Adding a deck means adding it to its course's path.
 - **One path per course,** and every course with a deck in `decks/` has
   one: the validator fails a course without. A deck added in the app to a
   course with no path is taught in its course's theme order, and then its
@@ -479,13 +1299,266 @@ units:
   ear and no recogniser can tell them apart; so is a mark that is not a
   sound of its own, written on a host letter (কং).
 
+### The B1 plan
+
+Every path is to carry a plan of the course up to B1, written by whoever
+writes the course and read by the app ([ADR-0035](adr/0035-b1-deck-format.md)).
+The app shows from it how far a course reaches ("18% of B1 · 12 of 30
+grammar topics"), shows the units not written yet as "Coming", and skips
+them in lessons.
+
+```yaml
+schema: 1
+kind: "path"
+id: "te-en-path"
+language: "te"
+native: "en"
+alphabet:
+  - "te-en-script-vowels"
+units:
+  - decks: ["te-en-phrasebook", "te-en-first-words", "te-en-grammar-sentences", "*"]
+    words: 40
+    grammar: ["sentences"]
+  - decks: ["te-en-grammar-differences"]
+    words: 0
+  - decks: ["te-en-family", "te-en-grammar-be", "*"]
+    words: 45
+    grammar: ["be"]
+  - ["te-en-script-vowels"]
+  - decks: ["te-en-home", "te-en-grammar-case-endings", "te-en-home-sentences", "*"]
+    words: 45
+    grammar: ["lo", "ki", "to", "nunci"]
+    milestone: "A1"
+  - decks: ["te-en-market", "*"]
+    words: 60
+    milestone: "A2"
+  - planned:
+      id: "te-en-health"
+      theme: "health"
+      words: 60
+    listening_passages: ["Booking a doctor's appointment by phone"]
+    reading_passages: ["A notice at the clinic"]
+  - planned: { id: "te-en-grammar-conditional", grammar: "conditional" }
+    listening_passages: ["A friend's plans if it rains"]
+    reading_passages: ["A message: if the train is late"]
+    milestone: "B1"
+  - ["te-en-registers"]
+  - ["*"]
+```
+
+A unit is a list of deck ids, as before, or a mapping:
+
+| Field | Notes |
+|---|---|
+| `decks` | A written unit's deck ids, as the list form, wildcard and all. |
+| `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. `id` is the deck it will be, a deck of the course (`te-en-health`), which must not exist yet: when its file is written, the unit turns into `decks` in the same change. A core of that name with no layer for this course does not count as written. |
+| `words` | The unit's planned size in words, a whole number: 0 or more on a written unit (a unit of grammar or reading decks gives 0), 1 or more on a planned theme unit. On a planned unit, inside `planned` or beside it, not both. |
+| `grammar` | The grammar topics it teaches, below: a list, or one as text. On a planned unit, inside `planned` or beside it, not both. |
+| `milestone` | `"A1"`, `"A2"` or `"B1"`, on the unit where that level ends. A unit of `"*"` alone carries none. |
+| `listening_passages`, `reading_passages` | Short descriptions of the unit's listening and reading passages, in the course's native language, with [Script in prose](#script-in-prose-always-with-its-reading) applying. **Both are required on every planned unit.** A written unit's passages are its [reading decks](#reading-decks). |
+
+- **A path has a B1 plan** when some unit is a mapping with `planned`,
+  `words`, `grammar` or `milestone`. Then it has the three milestones, `A1`,
+  `A2` and `B1`, each once and in that order. **A path needs one** once its
+  language has a core file; every path will need one once every course has
+  its plan.
+- **Up to B1** is every unit before the one marked `B1`, and that one. Every
+  unit up to B1 is a mapping with `words` or `grammar`, except two kinds
+  that may stay lists and count nothing: a unit all of whose decks are in
+  `alphabet`, and the unit of `"*"` alone. A planned unit after the B1 mark
+  is an error: the units after it are written as before.
+- **A grammar topic** counts once toward the plan's figure, and is listed
+  once up to B1. On a written unit, a topic names one of:
+  - **a rule** of a rules deck the unit lists, by the rule id's name: topic
+    `ki` is `te-rule-ki`, so a table of four rules is four topics;
+  - **a grammar deck** the unit lists, by its name: topic `be` is
+    `te-en-grammar-be`. A grammar deck not yet turned into rules counts as
+    one topic; once it is, its topics are its rules.
+
+  A planned unit's topic is any name, `[a-z0-9-]+`, checked once the unit is
+  written.
+- **Words are counted** from a unit's decks, as distinct card ids written or
+  listed by ref: the vocab cards that are not phrasebook cards, not
+  `pos: phrase`, and are one word, or a noun, verb, adjective, adverb or
+  pronoun of several. Alphabet decks, grammar and rules decks, reading decks
+  and `"*"` count none.
+- **The B1 decks** of a course are the decks its plan's units list, less its
+  alphabet decks and reading decks. They are held to the B1 checks: every
+  word covered by a word card or a [base](#base-words-bases), every word
+  card with a [note](#notes) (a warning), every word of a rule's kind with
+  its [row](#every-word-of-its-kind-has-its-row), and the
+  [phrasebook](#the-phrasebook)'s size and place. A B1 deck still
+  single-file is warned of: it is split into a core and its layers as the
+  plan is written.
+- **The sizes:** about 700 words for A1, 900 more for A2 and 1,200 more for
+  B1, about 2,800 in all (owner, 2026-10-09; low confidence). The
+  validator's info line gives each level's words, the grammar topics and the
+  units planned. It warns of a level outside half to one and a half times
+  its size, of planned words up to B1 outside 2,000–3,500, of a written unit
+  with more words than it plans (raise `words`), and of a planned theme not
+  yet in `decks/themes.yaml`.
+
+## Writing a B1 course
+
+The checklist for writing a course up to B1, deck by deck, in the order
+below. Each step is one or more small commits that validate on their own:
+run `python3 tools/validate_decks.py decks/` after every one, and fix every
+error before moving on. Read the warnings; do not leave them unexplained.
+
+**Before you start:**
+
+- Read [AGENTS.md](../AGENTS.md), `docs/plans/b1-plans.md`,
+  `docs/plans/words-rules-sentences.md` and `docs/plans/native-layers.md`,
+  and this file through.
+- **Card ids are permanent.** Splitting, moving or converting a deck keeps
+  every id it has. A new card takes
+  `python3 tools/validate_decks.py --next-id <lang>`, and nothing else does.
+- **Quote every text value and every text key** ([YAML values](#yaml-values)).
+- **Every word of the script quoted in prose carries its ISO 15919 reading**
+  ([Script in prose](#script-in-prose-always-with-its-reading)): in
+  meanings, notes, labels, explanations, descriptions and passage
+  descriptions. `python3 tools/transcribe.py <code> "<word>" <as typed>`
+  writes the reading and the IPA.
+- **Each deck is a core and its English layer**
+  ([Core and layer files](#core-and-layer-files)): the phrasebook, theme,
+  sound, script, number, rules and sentence decks alike. Reading decks stay
+  single-file, and so do the files beside the decks (facts, number rules,
+  romanisation, sounds, script guide, path).
+
+**In this order:**
+
+1. **The romanisation file**, `<lang>-romanisation.yaml`
+   ([Romanisation files](#romanisation-files)). Every reading you write is
+   checked against it, so settle it first. Where it exists, check it rather
+   than rewrite it.
+2. **The path's B1 plan**, in `<lang>-en-path.yaml`
+   ([The B1 plan](#the-b1-plan)). Write every unit up to B1 in teaching
+   order: the written units as mappings with `words` and `grammar`, the rest
+   as `planned` units with their listening and reading passages, and the
+   three milestones, about 700, 1,600 and 2,800 words in. Take the themes
+   and grammar of each level from the CEFR skeleton in `b1-plans.md`, and
+   their order from `docs/plans/language-paths-scheme.md` for the language's
+   family. The first unit holds the phrasebook. The plan comes before the
+   first core: once the language has one, the path must have its plan. A
+   new theme goes into `decks/themes.yaml` in a small change of its own,
+   agreed with whoever is writing the other courses, since every course
+   shares the file and theme ids are permanent.
+3. **Split the existing decks** the plan lists into a core and an English
+   layer ([Splitting a deck](#splitting-a-deck)), one deck per commit, each
+   old file deleted in the same commit. The first commit adds
+   `- decks/<lang>/en/` to `pubspec.yaml`, alone. Give each word its `pos`
+   as you go (a pronoun is `pronoun`): rules decks select their rows by it.
+4. **The sounds file and the script guide**, `<lang>-sounds.yaml` and
+   `<lang>-script.yaml` ([Sounds files](#sounds-files),
+   [Script guides](#script-guides)): every contrast of sounds the language
+   has and English lacks, with its pairs, and every feature of the script a
+   learner from English misses. Check them where they exist.
+5. **The phrasebook**, the core `<lang>-phrasebook` and its layer
+   `<lang>-en-phrasebook` ([The phrasebook](#the-phrasebook)): 15 to 25
+   survival phrases, `pos: "phrase"` and `phrasebook: true`, listed in the
+   first unit. Every word of each has a `bases` entry: by `ref` where a
+   word card teaches it, else written in full, and turned into a `ref`
+   when its word card is written. A phrase moved out of `first-words` keeps
+   its id.
+6. **Sounds and minimal pairs**, the sound-differences deck and its layer:
+   pairs of everyday words that differ in one contrast of the sounds file,
+   each card tagged with the contrast's `id`. Each word of a pair has a
+   `pair` note naming the other ([Notes](#notes)), and both are taught in
+   the course: in this deck, or in a theme deck by `ref`.
+7. **Then each unit, in the path's order,** and within it:
+   1. **Its theme's words**, the theme core `<lang>-<theme>` and its layer
+      `<lang>-en-<theme>`: single words first, each with
+      - its `reading` and `ipa`, and a `pos`;
+      - **one or more typed notes** (`behaviour`, `usage`, `culture`,
+        `note`, `pair`): their words and readings in the core, their texts
+        in the layer. A culture note names its `source`, and the file that
+        holds it is tagged `unreviewed`;
+      - **`wiktionary: true` in the layer** only where you have seen
+        en.wiktionary's page for the target, with a section for the
+        language ([The Wiktionary link](#the-wiktionary-link));
+      - **a `picture`** only from `tools/data/picture-mapping.json`: an
+        emoji whose `kept` meaning is the card's meaning, never one of its
+        `dropped` matches, and only for a concrete word. Its image must be in
+        `assets/pictures/`, or the validator fails;
+        `python3 tools/pictures.py path/to/noto-emoji` copies it there. A
+        card that has a picture keeps it;
+      - **a `pair` note** where a word of the course sounds almost the same
+        (a short or a long vowel, the tongue on the teeth or curled back,
+        a single or a double consonant), naming the partner, which must be
+        taught in the course; the partner gets the note naming this word;
+      - **`bases`** on every inflected or derived word, in the target and
+        in each example.
+   2. **Its rules**, a rules core `<lang>-grammar-<topic>` and its layer
+      ([Rules decks](#rules-decks)): word forms first (a noun's plural,
+      oblique stem, case endings and postpositions; pronouns and their
+      forms; a verb's person and tense endings), then conjunctions. **Every
+      form is listed for every word,** and every word of the table's kind
+      that a B1 deck teaches has its row: the words of this unit and of
+      every earlier one. A word added later adds its row to every table of
+      its kind in the same change; only a word the rule does not apply to,
+      such as an indeclinable loanword, goes in `applies_to.except`
+      instead. Each rule's explanation quotes its words
+      through `{1}`, `{2}`. The unit's `grammar` lists the rules' names. A
+      grammar deck turned into rules keeps its cell ids: the core's id is
+      the old id without `en`, each row's `key` is the old entry's key, and
+      the slots keep their order. An old grammar deck of fixed phrases
+      becomes words, a rules deck and sentences instead.
+   3. **Its sentences**, a core `<lang>-<theme>-sentences` and its layer,
+      with no `theme`, since a course has one deck per theme: sentences
+      built from the words and rules taught so far, `pos: "phrase"`, each
+      with `rules` naming every rule it uses
+      ([Sentences and their rules](#sentences-and-their-rules-rules)), and
+      `bases` for every word that is not a word card's target. An old
+      deck's sentences move here with their ids.
+   4. **Its passages**, when the unit has any: a
+      [reading deck](#reading-decks) `<lang>-en-reading-<name>`,
+      single-file, in a unit after the themes its words come from, its
+      questions' ids from `--next-id`, every prompt in English (and in
+      Bengali and Hindi where you can). It is also the unit's listening
+      passage: a reading question is heard in `listening`, its text hidden
+      until it is answered, so a passage written to be heard, a
+      conversation or an announcement, is a reading deck too. Use the
+      words the course teaches: the validator lists those it does not. A
+      reading deck that needs the script is listed in `alphabet`; a unit of
+      reading decks that are not gives `words: 0`.
+
+   When a planned unit's deck is written, the unit's `planned` becomes
+   `decks` in the same change, and its `words` is checked against what it
+   now counts.
+8. **Numbers**, in their place on the path: the `numbers-1-20` and
+   `numbers-big` decks and their layers, then `<lang>-numbers.yaml`
+   ([Number rules](#number-rules)), which may spell only with the words
+   those decks teach.
+9. **Script decks**, in their place on the path: the letters, vowel signs,
+   conjuncts and script reading decks, each listed in `alphabet`, split like
+   the rest. A letter that sounds exactly like another is drilled by reading
+   and writing only ([Course paths](#course-paths)). The B1 checks pass them
+   by.
+10. **The facts file**, `<lang>-facts.yaml` ([Facts files](#facts-files)):
+    at least 30 facts without a `contrast`, each in English, Bengali and
+    Hindi, with a `source` for anything a reader could doubt, and every word
+    they quote carrying its reading in each language's text.
+11. **Last, across the course:**
+    - every pair note's partner taught in the course, and every pair noted
+      on both of its words;
+    - every word card with a note, and every word of every text covered by
+      a word card or a base: the validator lists what is missing;
+    - each unit's `words` at least what it counts, and the levels near 700,
+      900 and 1,200 words;
+    - every deck on the path once, and every split deck's old file gone;
+    - `python3 tools/validate_decks.py decks/` with no error, and
+      `flutter test`, which parses every bundled deck;
+    - the work rated by an independent rater, as
+      [AGENTS.md](../AGENTS.md) asks.
+
 ## Adding your own deck
 
 In the app, Decks > Add a deck > From a file saves a template,
 [`assets/deck-template.yaml`](../assets/deck-template.yaml), and adds a deck
 written from it. It is a [vocab deck](#vocab-decks) like any other, and any
-deck the app can read can be added, grammar and reading decks too. The app
-checks it first, and refuses:
+deck the app can read can be added, grammar and reading decks too. An added
+deck is single-file: cores, layers and rules decks are for the repository.
+The app checks it first, and refuses:
 
 - a file that is not a deck, or that does not parse: the file, line and
   message are shown, as for a bundled deck;
@@ -807,13 +1880,15 @@ rules file that spells with a word that no card in the language's
 | `recognition` | `target` | `native` | self-assessed |
 | `production` | `native` | `target` | automatically |
 | `listening` | TTS audio of `target` | `target` | automatically |
-| `grammar` | expanded `prompt` | inflected form | automatically |
+| `grammarUnderstood` | the meaning to express, from a [rules deck](#rules-decks)'s cell | the form, chosen among the same word's other forms | automatically |
+| `grammar` | expanded `prompt`; on a rules deck's cell, the word with its reading and the meaning to express | inflected form, typed: grammar produced | automatically |
 | `speaking` | `native` | `target`, said aloud | automatically, from what the phone's speech recogniser heard |
 | `reading` | a passage, then a question about it | the right choice | automatically |
 
 A reading question is also heard, in `listening`: the passage is read aloud
 and its text is hidden until the question is answered. A card cannot take
-`reading`; only a [reading deck](#reading-decks)'s questions do.
+`reading`; only a [reading deck](#reading-decks)'s questions do. Nor can it
+take `grammarUnderstood`; only a rules table's cells do.
 
 `listening` is offered only when a TTS voice for `language.tts` is available on
 the device. `speaking` is offered only once the learner has switched it on,

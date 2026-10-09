@@ -41,3 +41,29 @@ cards:
 
   # A word another deck already has: list it by its id instead.
   - ref: hi-0231
+
+  # More a card may give, all optional. Remove the # signs to use it.
+  #
+  # - id: hi-my-0003
+  #   target: "मैं बाज़ार गया।"
+  #   native: "I went to the market."
+  #   reading: "maim̐ bāzār gayā."
+  #   pos: "phrase"
+  #   # The base word of each inflected word, by the id of the card that
+  #   # teaches it, or written in full with its reading and meaning.
+  #   # wiktionary: true where en.wiktionary.org has a page for the base.
+  #   bases:
+  #     - { word: "गया", base: "जाना", reading: "jānā", meaning: "to go", wiktionary: true }
+  #     - { word: "मैं", ref: "hi-my-0004" }
+  #   # Notes: text, or a list of notes, each with its kind: pair, culture,
+  #   # usage, behaviour or note. A word of the script in a note keeps its
+  #   # reading beside it. A culture note names its source.
+  #   notes:
+  #     - { kind: "behaviour", text: "गया (gayā) is said by a man; a woman says गई (gaī)." }
+  #     - { kind: "usage", text: "After another verb it says the act is done: खा गया (khā gayā), ate it up." }
+  # - id: hi-my-0004
+  #   target: "मैं"
+  #   native: "I"
+  #   reading: "maim̐"
+  #   pos: "pronoun"
+  #   wiktionary: true
