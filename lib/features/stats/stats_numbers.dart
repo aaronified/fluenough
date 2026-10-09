@@ -114,10 +114,11 @@ const List<Skill> strengthSkills = <Skill>[
 /// Skills with no answer yet are absent.
 Map<Skill, double> strengthsIn(ProgressStore progress, String language) {
   final abilities = Abilities.replay(
-    <({String cardId, DrillMode mode, int grade})>[
+    <({String cardId, String deckId, DrillMode mode, int grade})>[
       for (final e in progress.log)
-        (cardId: e.cardId, mode: e.mode, grade: e.grade),
+        (cardId: e.cardId, deckId: e.deckId, mode: e.mode, grade: e.grade),
     ],
+    skills: progress.skills,
   );
   return <Skill, double>{
     for (final skill in strengthSkills)

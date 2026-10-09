@@ -170,6 +170,29 @@ abstract final class Fsrs {
     return days.round().clamp(1, maximumInterval);
   }
 
+  /// [state] after a right answer in another skill that implies this one
+  /// (`SkillMap`): its stability moves [share] of the way to what a Good
+  /// review at [now] would give. Its difficulty, due date and last review
+  /// stay as they were, so it is never asked sooner or later because of it;
+  /// only the next review of its own starts from more.
+  static FsrsState implied(
+    FsrsState state,
+    double share, {
+    required DateTime now,
+  }) {
+    final good = review(state, Rating.good, now: now).stability;
+    if (good <= state.stability) return state;
+    return FsrsState(
+      stability: state.stability + share * (good - state.stability),
+      difficulty: state.difficulty,
+      intervalDays: state.intervalDays,
+      dueAt: state.dueAt,
+      lastReviewAt: state.lastReviewAt,
+      repetitions: state.repetitions,
+      lapses: state.lapses,
+    );
+  }
+
   /// Rebuilds a pair's state from its `(grade, time)` reviews, oldest first.
   static FsrsState? replay(
     Iterable<({int grade, DateTime at, bool rated})> reviews,

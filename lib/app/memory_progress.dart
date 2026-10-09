@@ -6,6 +6,7 @@ import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
+import '../core/scheduling/skill_map.dart';
 
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
@@ -44,6 +45,11 @@ abstract interface class ProgressStore implements Listenable {
   /// What the learner has done about leeches, oldest first. Append-only.
   List<LeechAction> get leechActions;
 
+  /// Which skills a right answer implies (ADR-0034). Setting it rebuilds
+  /// every state from the log with it.
+  SkillMap get skills;
+  set skills(SkillMap value);
+
   /// Records [kind] for [key] and applies it: a reset restarts the pair's
   /// scheduling, and a set-aside keeps it out of sessions. No review is
   /// touched. Returns the action.
@@ -75,13 +81,16 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   factory MemoryProgress.replaying(
     Iterable<ReviewEvent> events, {
     Iterable<LeechAction> leechActions = const <LeechAction>[],
+    SkillMap skills = const SkillMap(),
   }) {
     final actions = leechActions.toList();
     final replayed = replayReviews(
       events.map(logged),
       effects: LeechEffects(actions),
+      skills: skills,
     );
     return MemoryProgress()
+      .._skills = skills
       .._log.addAll(replayed.events)
       .._states.addAll(replayed.states)
       .._leechActions.addAll(actions);
@@ -90,9 +99,20 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
   final List<LeechAction> _leechActions = <LeechAction>[];
+  SkillMap _skills = const SkillMap();
 
   @override
   bool get persists => false;
+
+  @override
+  SkillMap get skills => _skills;
+
+  @override
+  set skills(SkillMap value) {
+    if (value == _skills) return;
+    _skills = value;
+    _replace(_log.map(logged).toList(), _leechActions.toList());
+  }
 
   @override
   FsrsState? stateOf(String cardId, DrillMode mode) =>
@@ -135,6 +155,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       after: after,
     );
     _states[key] = after;
+    implyReview(_states, _skills, logged(event));
     _log.add(event);
     notifyListeners();
     return event;
@@ -155,6 +176,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     final replayed = replayReviews(
       _log.map(logged),
       effects: LeechEffects(_leechActions),
+      skills: _skills,
     );
     _states
       ..clear()
@@ -198,7 +220,11 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 
   /// [reviews] and [actions] are oldest first.
   void _replace(List<LoggedReview> reviews, List<LeechAction> actions) {
-    final replayed = replayReviews(reviews, effects: LeechEffects(actions));
+    final replayed = replayReviews(
+      reviews,
+      effects: LeechEffects(actions),
+      skills: _skills,
+    );
     _log
       ..clear()
       ..addAll(replayed.events);
