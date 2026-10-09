@@ -470,7 +470,7 @@ const Question recognition = Question(
 void expectDetails(WidgetTester tester, Card card, {required bool shown}) {
   final example = card.examples.first;
   final matcher = shown ? findsOneWidget : findsNothing;
-  expect(find.text(card.notes!), matcher, reason: 'the note');
+  expect(find.text(card.notes.first.text), matcher, reason: 'the note');
   expect(find.text(example.target), matcher, reason: 'the example');
   expect(find.text(example.native), matcher, reason: 'its translation');
   expect(exampleNamed(tester), matcher, reason: 'the example, named');
@@ -530,7 +530,7 @@ void main() {
           expect(inCard(find.text(card.target)), findsOneWidget);
           expect(inCard(find.text(card.native)), findsOneWidget);
           // On the card, which scrolls, not in the frame's fixed foot.
-          expect(inCard(find.text(card.notes!)), findsOneWidget);
+          expect(inCard(find.text(card.notes.first.text)), findsOneWidget);
           expect(find.byType(TaughtDetails), findsOneWidget);
         });
       }
@@ -555,13 +555,13 @@ void main() {
         // The word is there; the example and the note are not.
         expect(inCard(find.text(card.target)), findsOneWidget);
         expect(exampleNamed(tester), findsNothing);
-        expect(find.text(rich.notes!), findsNothing);
+        expect(find.text(rich.notes.first.text), findsNothing);
         expect(find.text(rich.examples.first.target), findsNothing);
         // Nothing but the answer's own texts: no text of a note's kind.
         final details = tester.widget<TaughtDetails>(
           find.byType(TaughtDetails),
         );
-        expect(details.card.notes, isNull);
+        expect(details.card.notes, isEmpty);
         expect(details.card.examples, isEmpty);
       });
     }
@@ -797,7 +797,7 @@ void main() {
         }
         // The note is the interface's own language, left to right.
         expect(
-          tester.widget<Text>(find.text(card.notes!)).textDirection,
+          tester.widget<Text>(find.text(card.notes.first.text)).textDirection,
           isNull,
         );
       });
@@ -840,7 +840,7 @@ void main() {
           // the card can be covered by it.
           expect(viewport.bottom, lessThanOrEqualTo(foot + 0.5));
           for (final text in <String>[
-            card.notes!,
+            card.notes.first.text,
             card.examples.first.target,
             card.examples.first.native,
           ]) {
@@ -899,7 +899,7 @@ void main() {
           scheme.surfaceContainerLowest,
         );
         expect(
-          tester.widget<Text>(find.text(card.notes!)).style!.color,
+          tester.widget<Text>(find.text(card.notes.first.text)).style!.color,
           scheme.onSurfaceVariant,
         );
       });
@@ -961,7 +961,7 @@ void main() {
         state: rig.state,
       );
       final meaning = tester.getRect(find.text(card.native));
-      final note = tester.getRect(find.text(card.notes!));
+      final note = tester.getRect(find.text(card.notes.first.text));
       final example = tester.getRect(
         find
             .ancestor(

@@ -46,7 +46,8 @@ class InspectPage extends StatelessWidget {
         for (final passage in entry.deck.passages)
           ..._passageRows(passage, entry, spoken),
       ],
-      DeckKind.vocab => <WidgetBuilder>[
+      // A rules deck's cells are cards, listed as a vocab deck's are.
+      DeckKind.vocab || DeckKind.rules => <WidgetBuilder>[
         for (final card in entry.cards)
           (_) => _CardRow(card: card, entry: entry),
       ],
@@ -357,7 +358,7 @@ class _CardRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final language = entry.language;
     final separator = l10n.commonListSeparator;
-    final notes = card.notes;
+    final notes = card.notes.firstOrNull?.text;
     final skills = <String>[
       for (final skill in Skill.values)
         if (skill.mode != null && card.modes.contains(skill.mode))

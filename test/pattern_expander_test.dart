@@ -36,7 +36,7 @@ void main() {
     for (final card in expandPattern(bundled)) {
       expect(card.modes, {DrillMode.grammar});
       expect(card.modesIn(ttsAvailable: true), {DrillMode.grammar});
-      expect(card.notes, bundled.pattern!.notes);
+      expect(card.notes.single.text, bundled.pattern!.notes);
       expect(card.deckId, bundled.id);
     }
   });

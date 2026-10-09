@@ -35,7 +35,9 @@ enum Skill {
     DrillMode.production => Skill.production,
     DrillMode.reading => Skill.reading,
     DrillMode.listening => Skill.listening,
-    DrillMode.grammar => Skill.grammar,
+    // Understood and produced share the grammar tile (skill model,
+    // 2026-10-08).
+    DrillMode.grammarUnderstood || DrillMode.grammar => Skill.grammar,
     DrillMode.speaking => Skill.speaking,
   };
 

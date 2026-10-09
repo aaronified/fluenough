@@ -29,7 +29,17 @@ enum DrillMode {
   /// is read aloud and its text is hidden until the question is answered.
   listening,
 
-  /// Shown an inflection prompt, type the inflected form. Machine-graded.
+  /// Grammar understood: shown the meaning to express ("with mother"),
+  /// choose its form among the forms of the same word. Only a rules
+  /// table's cells take it (B1 format, spec 4.7). Stored by this name, so
+  /// its place here does not matter to the log; it comes before [grammar]
+  /// so that a session ordered by [values] asks the choice before the typed
+  /// form. Machine-graded.
+  grammarUnderstood,
+
+  /// Grammar produced: shown an inflection prompt, type the inflected form.
+  /// Machine-graded. Its name, and what every logged review in it means, is
+  /// unchanged by [grammarUnderstood].
   grammar,
 
   /// Say: shown the meaning, say the target. Graded from what the phone's
