@@ -2066,32 +2066,35 @@ the Decks tab and the language picker read it exactly as before:
   `grammarTopics` and `plannedWords` give the same answer for every
   native language. `placing()` copies `plan` unchanged.
 
-**Which native language a learner is taught from** (OPEN-35, put to the
-owner; builders build this recommendation until the owner answers).
-Today `AppState.courseUnits` takes, of the native languages that teach
-the language, the learner's best-known spoken language with **any** deck
-of it. Kept as it is, that rule would collapse a learner's course the day
-a second native language's first layer lands: one `te-bn-*` layer makes a
-Bengali-first learner's Telugu course the Bengali one, every unit but that
-layer's "Coming" and skipped, where the day before they were taught the
-whole English course. So the choice gains a coverage test:
+**Which native language a learner is taught from** (OPEN-35, settled by
+the owner, 2026-10-09: "ask the user"). When more than one of the
+learner's spoken languages teaches a language, the app asks the learner
+which to learn from, instead of choosing for them:
 
-- a native language's **coverage** is the number of written units in its
-  `forNative(...).units`, a unit of `"*"` alone not counted;
-- the native languages with the **highest coverage** of any are
-  eligible; of those, the learner's best-known spoken language
+- **When:** on opening the course the first time, and once more when a
+  new native language starts teaching a course already in progress
+  (never again for the same pair after an answer).
+- **What it shows:** each native language that teaches the course, with
+  its **coverage**, the written units of its `forNative(...).units`, a
+  unit of `"*"` alone not counted ("From English: 30 of 34 units"; "From
+  Bengali: 1 of 34 units so far"). The one with the highest coverage is
+  pre-selected, ties going to the best-known spoken language
   (`settings.spokenLanguages`, in rank order), else the first in the
-  catalog;
-- a language with no path: every native language that teaches it is
-  eligible, as today.
+  catalog.
+- **After the answer:** the course is taught from that native language
+  alone. A unit with no deck in it is "Coming", never filled from another
+  native language's decks. Progress is kept per card id, so changing
+  later loses nothing already learned in the cores both share.
+- **Changing it:** a per-course choice in Settings ("Learn Telugu from"),
+  listing the same options and coverage.
+- **Only one native language teaches it,** or the learner speaks only
+  one of them: no question; that one is used, as today.
+- A language with no path: coverage is not defined; the question lists
+  the native languages without counts.
 
-So a Bengali course is chosen for a Bengali-first learner once it has a
-deck in as many written units as the English one, and not before; until
-then they are taught from English. Every course in the repository today
-is taught from English, so the choice today is unchanged. The owner may
-prefer another threshold (a share of the units, or every unit up to A1)
-or a fallback that fills a missing unit from the next native language;
-either changes only this paragraph and `courseUnits`, not the format.
+Every course in the repository today is taught from English, so no
+learner is asked yet. `AppState.courseUnits` reads the stored choice; the
+question and the Settings row are new UI for builder D.
 
 One native language per language learnt: a unit whose deck that native
 language lacks is "Coming" for the learner, never filled from another
@@ -2433,7 +2436,7 @@ read it the same way:
   with no deck is, for that course, as a planned unit is: skipped by
   lessons, shown as "Coming" (which course a learner is given, so that a
   second native language's first layers do not empty their course, is
-  9.5's coverage test, OPEN-35);
+  the learner's own choice, asked with each course's coverage: 9.5, OPEN-35);
 - `alphabet` maps the same way; `"*"` takes the course's decks the path
   does not list, as today.
 
@@ -2542,22 +2545,21 @@ or the first raters may change them, before any rating names a region):
   (Srikakulam, Vizianagaram, Visakhapatnam, "Uttarandhra") from the
   central coast; I am not certain of that division's details, so it is
   offered only as the place to split Coastal Andhra if its raters differ.
-- **Bengali:** `west-bengal` (West Bengal), `bangladesh` (Bangladesh),
-  `tripura` (Tripura), `barak-valley` (Assam's Barak Valley): the places
-  where Bengali is official, as `bn-facts` lists them ("the national
-  language of Bangladesh and an official language of West Bengal,
-  Tripura and Assam's Barak Valley"), which a rater can name without
-  knowing dialect terms. The dialect literature divides Bengali
-  differently, into Rāṛhī (west-central, the standard's base), Baṅgālī or
-  Vaṅga (east), Varendrī (north-central), Kāmrūpī (north) and the
-  south-eastern dialects (Chatterji, *The Origin and Development of the
-  Bengali Language*, 1926), and Sylheti and Chittagonian are often
-  counted as languages of their own. I am unsure which division best
-  predicts how offensive a word sounds; the recommendation is the
-  political one, since the strongest differences raters report are
-  likely between West Bengal and Bangladesh. With low confidence:
-  Bangladesh may need splitting (Dhaka, Chittagong, Sylhet) once raters
-  from there disagree.
+- **Bengali, by dialect group** (owner, 2026-10-09: "By dialect group",
+  over the political list): `rarhi` (Rāṛhī, west-central: Kolkata,
+  Nadia, Bardhaman; the standard's base), `vangiya` (Vaṅgīya, east:
+  Dhaka, Mymensingh, Barishal), `varendri` (Varendrī, north-central:
+  Rajshahi, Malda, Dinajpur), `kamrupi` (Kāmarūpī or Rangpuri, north:
+  Rangpur, Cooch Behar, Jalpaiguri), `manbhumi` (Mānbhūmī, west: Purulia,
+  Bankura, Bengali-speaking Jharkhand) and `south-eastern` (Chittagong,
+  Noakhali, Sylhet, Tripura, Assam's Barak Valley). The groups follow
+  Chatterji, *The Origin and Development of the Bengali Language*
+  (1926), and its successors; each name carries example districts so a
+  rater who does not know the dialect terms can still place themselves.
+  Low confidence on the districts at each group's edges, and on whether
+  Sylheti and Chittagonian, often counted as languages of their own,
+  belong in one south-eastern group: a native reviewer checks this list
+  before any rating names a region.
 
 ### 10.6 Moving today's paths
 
@@ -3174,10 +3176,10 @@ answer decided, at the section named, marked *settled*.
 | 29 | Marking a culture deck checked | The tag `reviewed`, exclusive with `unreviewed`, in the file that holds the claim (core, or the layer for a layer-only card). **Flagged:** a new tag | 6.5, 2.7 |
 | 30 | A B1 deck still single-file | A warning on the path; the B1 checks apply either way | 10.3 |
 | 31 | A unit with no counted words | `words: 0` on a written unit; only alphabet units and `"*"` stay lists | 10.1 |
-| 32 | The regions of Telugu and Bengali | Telugu: Telangana, Coastal Andhra, Rayalaseema (the owner's rating screen). Bengali: West Bengal, Bangladesh, Tripura, Assam's Barak Valley (low confidence; the dialect divisions differ). Before any rating names a region | 10.5 |
+| 32 | The regions of Telugu and Bengali | Telugu: Telangana, Coastal Andhra, Rayalaseema (the owner's rating screen). Bengali: by dialect group (owner, 2026-10-09), six groups with example districts, checked by a native reviewer before any rating names a region | 10.5 |
 | 33 | Where a passage's description per native language lives | In the path, under the passage's `text`, keyed by native code, with a passage `id`; not a path layer of its own | 10.1 |
 | 34 | How a note names its regions | `region:`, one id or a list, on a typed note of any kind, in the core; checked against the path's `regions` | 6.1, 6.2, 10.5 |
-| 35 | A unit with no deck in the learner's native language, and which native language teaches the learner | "Coming" for that learner, never filled from another native language's decks; words counted per course against one planned size. **Put to the owner:** today's choice (the best-known native language with any deck) would turn a Bengali-first learner's full English course into a Bengali course of one unit the day the first `te-bn-*` layer lands, so the native language is chosen among those whose course has a deck in the most written units (9.5). Other answers: a share of the units, every unit up to A1, or filling a missing unit from the next native language | 8.5, 9.5, 10.3, 10.4 |
+| 35 | Which native language teaches the learner | **Settled by the owner, 2026-10-09: "ask the user".** The app asks when more than one of the learner's spoken languages teaches the course, showing each one's coverage, the highest pre-selected; changeable per course in Settings. A unit with no deck in the chosen language is "Coming" | 8.5, 9.5, 10.3, 10.4 |
 | 36 | Grades and order of the grammar questions | A right meaning choice records 4, a right form choice 3, a typed form as today; the form is chosen while the pair is new or was last missed, typed once remembered, as Hear | 4.7, 4.8 |
 
 Also left to later work, not this format: the mastery bar and the number of
