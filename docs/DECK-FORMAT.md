@@ -1371,9 +1371,12 @@ A unit is a list of deck ids, as before, or a mapping:
   once up to B1. On a written unit, a topic names one of:
   - **a rule** of a rules deck the unit lists, by the rule id's name: topic
     `ki` is `te-rule-ki`, so a table of four rules is four topics;
-  - **a grammar deck** the unit lists, by its name: topic `be` is
-    `te-en-grammar-be`. A grammar deck not yet turned into rules counts as
-    one topic; once it is, its topics are its rules.
+  - **a grammar deck** the unit lists, by its name, if it is not a rules
+    deck: topic `be` is `te-en-grammar-be`. A grammar deck not yet turned
+    into rules counts as one topic; once it is, its topics are its rules,
+    and its own name is no topic unless a rule has it: `case-endings` next
+    to `lo`, `ki`, `to` and `nunci` would count the table twice, and is an
+    error.
 
   A planned unit's topic is any name, `[a-z0-9-]+`, checked once the unit is
   written.
