@@ -46,11 +46,14 @@ Merged since 0.3.4, not yet released (#432, #433, #434):
 | `feat/reviewer-mode` (PR #436) | The new Decks path and Unit screens (`path-redesign.md`), and reviewing in the app, sent by mail (`deck-browser.md`, `offensive-words.md`). Not in it yet: the 18+ setting (#96) and the sender check in the Fluenough Gmail | #403 |
 | `deck/a1-te-bn` | Telugu and Bengali A1 decks, with their B1 plans (`b1-plans.md`) | #209, #419 |
 
+Next: the settings redesign (milestone 4), which takes the 18+ setting (#96) that
+PR #436 leaves out.
+
 ## In order
 
 | Milestone | Tracker | Plan |
 |---|---|---|
-| 1 · Skill model + FSRS | #207, #113 (done, #432) | What is left of them: the rating buttons' interval previews (#249), a switch for the other activities (#243), the phonemic contrasts drill (#31), pictures beyond Noto Emoji (#91), grammar exercises (#93) and the script TTS fallback (#32) |
+| 1 · Skill model + FSRS | #207, #113 (done, #432) | What is left of them: a switch for the other activities (#243), the phonemic contrasts drill (#31), pictures beyond Noto Emoji (#91), grammar exercises (#93) and the script TTS fallback (#32). #249 (quick revision, rating-button interval previews, leeches) is done in #432 and can be closed |
 | 2 · B1 plans | #209, #392, #413 | A B1 plan in every path (`b1-plans.md`); decks split into a core and a layer per native language (`native-layers.md`); a phrasebook, then words, then rules, then sentences (`words-rules-sentences.md`); then the Bengali and Telugu B1 decks |
 | 3 · Deck downloads | #210 | Decks downloaded from GitHub, not bundled (`decks-from-github.md`) |
 | 4 · Settings redesign | #211, #212, #213 | The language picker, settings wording, and voices per language |
