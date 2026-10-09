@@ -4,7 +4,10 @@ name: Feedback mail to issues
 # ADR-0021). Every hour this files the new bug reports and feedback as
 # issues: text only, the sender's address never written. Review mails
 # (docs/plans/deck-browser.md) become issues naming only the rater code and
-# the languages. Support mails stay private in the inbox. Until the repository has the two FEEDBACK_GMAIL_*
+# the languages; the first review with a code ties it to its sender in a
+# private record in the Gmail label fluenough/raters, and a later one from
+# another address is marked "sender does not match". The log says counts
+# only. Support mails stay private in the inbox. Until the repository has the two FEEDBACK_GMAIL_*
 # secrets it does nothing and says so.
 
 on:
