@@ -135,6 +135,9 @@ void main() {
       state: await reviewState(reviewing: true),
     );
     final l10n = l10nOf(tester);
+    // Rated, not marked right.
+    expect(rowButton(l10n.reviewRateShort), findsOneWidget);
+    expect(rowButton(l10n.reviewCheck), findsNothing);
     await tester.tap(find.text('idiot, good-for-nothing'));
     await tester.pumpAndSettle();
     for (final row in <String>[
@@ -180,6 +183,7 @@ void main() {
     expect(rating.region, 'coastal-andhra');
     expect(rating.friendly, Friendly.sometimes);
     expect(find.text(l10n.reviewRated(4)), findsOneWidget);
+    expect(rowButton(l10n.reviewRatedShort), findsOneWidget);
     expect(find.text(l10n.reviewSignOffReady), findsOneWidget);
   });
 
