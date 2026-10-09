@@ -62,10 +62,14 @@ python3 tools/validate_decks.py decks/
 ## Romanising Indic languages
 
 A `reading` is there to help a learner say the word (#47). Each language
-writes every reading in **ISO 15919's letters, spelled as the word is said**,
-and says how in its `<code>-romanisation.yaml` ([ADR-0025](../docs/adr/0025-iso-15919-and-ipa.md)).
-The [README](../README.md#how-words-are-written-in-latin-letters-iso-15919)
-has the table; the common rules are in
+writes every reading in **letters based on ISO 15919's, spelled as the word is
+said**, and says how in its `<code>-romanisation.yaml`
+([ADR-0025](../docs/adr/0025-iso-15919-and-ipa.md)). It is not strict ISO 15919:
+the readings depart from it wherever a learner is better served. The
+[README](../README.md#how-words-are-written-in-latin-letters-iso-15919)
+has the table of letters and the
+[list of departures](../README.md#where-the-readings-depart-from-iso-15919);
+the common rules are in
 [the format specification](../docs/DECK-FORMAT.md#romanisation):
 
 - **Length is marked** where the language says it: పాలు is `pālu` and పలు
@@ -75,7 +79,7 @@ has the table; the common rules are in
 - **The schwa a speaker drops is not written:** कमल is `kamal`, सड़क is
   `saṛak`, not `kamala`, `saṛaka`.
 - **Aspiration is an `h`:** `kh`, `gh`, `ch`, `th`, `dh`, `ph`, `bh`, each one
-  sound. च is `c` and छ is `ch`, as in ISO 15919.
+  sound. च is `c` and छ is `ch`, as ISO 15919 writes them.
 - **A letter card for ङ or ञ on its own** reads `ṅa` or `ña`; Bengali's
   read `ṅô` and `ñô`, so that ঞ differs from ন.
 - **A grammar row whose lemma is English** has no `reading`; its forms do.
@@ -89,8 +93,8 @@ list says how its letters are typed (`c` as `ch`, `ś` as `sh`), and its
 `equivalents` the spellings learners also type for one sound, such as `ee`
 for `i`; grading treats them all as the decks' own.
 
-Assamese writes স, শ and ষ as `x` (*ôxôm*) and ও as `u` (*mur*), as it is
-said; `decks/as/as-romanisation.yaml` says so.
+Assamese writes স, শ and ষ as `x` (*ôxôm*) and the vowel sign ো as `u` (*mur*,
+*muk*), as it is said (the letter ও alone is `o`); `decks/as/as-romanisation.yaml` says so.
 
 Bengali's readings follow how it is said:
 

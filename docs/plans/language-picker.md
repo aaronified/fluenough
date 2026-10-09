@@ -2,8 +2,8 @@
 
 Written 2026-10-06. **Part of the settings redesign,** with
 `language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
-last in the owner's order, after `skill-model.md`, `b1-plans.md` and deck
-downloads (`decks-from-github.md`).
+last in the owner's order, after the skill model (done), `b1-plans.md` and
+deck downloads (`decks-from-github.md`).
 
 ## What the owner asked
 
