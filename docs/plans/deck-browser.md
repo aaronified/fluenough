@@ -113,7 +113,9 @@ Settled with the owner, 2026-10-09:
   issue marked "sender does not match", for the owner to decide.
 - **The deck screen in reviewer mode comes from the owner** (2026-10-09:
   "deck in reviewer mode will be handed to you. drop that part"), with
-  the decks redesign mockup; the reviewer-mode mockup drops it.
+  the decks redesign mockup; the reviewer-mode mockup drops it. The card
+  in reviewer mode (the sheet with "Looks right" and "Suggest a change")
+  is approved as mocked.
 - **"How reviewing works"** is explained in a popup the reviewer can open
   again from Settings at any time (owner, 2026-10-09).
 - **Joining is automatic:** a join mail makes the sender a reviewer at
