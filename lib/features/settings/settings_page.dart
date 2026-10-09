@@ -22,6 +22,7 @@ import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
+import '../downloads/deck_downloads_section.dart';
 import '../gallery/gallery_link.dart';
 import '../review/review_section.dart';
 import '../placement/native_choice.dart';
@@ -97,6 +98,8 @@ class SettingsPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     const BackupSection(),
                     const SizedBox(height: 20),
+                    // Deck downloads (#210), with its own gap below it.
+                    const DeckDownloadsSection(),
                     const UpdateSection(),
                     const SizedBox(height: 20),
                     Padding(
