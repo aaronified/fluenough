@@ -28,7 +28,11 @@ List<(String, int, int)> reviewsOf(ProgressStore p) => [
 /// Imports [p]'s own export into [into]. How many reviews were new.
 Future<int> restore(ProgressStore p, ProgressStore into) {
   final backup = LogJsonl.decode(p.exportJsonl());
-  return into.importLog(backup.reviews, backup.leechActions);
+  return into.importLog(
+    backup.reviews,
+    backup.leechActions,
+    fitted: backup.fitted,
+  );
 }
 
 void main() {

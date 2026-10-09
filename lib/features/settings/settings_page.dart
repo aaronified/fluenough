@@ -592,6 +592,7 @@ class SettingsPage extends StatelessWidget {
       added = await state.progress.importLog(
         backup.reviews,
         backup.leechActions,
+        fitted: backup.fitted,
       );
     } on FormatException catch (e) {
       if (context.mounted) {
