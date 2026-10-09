@@ -86,9 +86,9 @@ cards:
     pos: "phrase"
     notes: "না (nā), 'not', comes after the verb."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
       - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
-      - { word: "জানি", base: "জানা", reading: "jānā", meaning: "to know" }
+      - { word: "জানি", ref: "bn-0881" }
   - id: bn-0145
     target: "আমি এখনও বাংলা শিখছি।"
     native: "I'm still learning Bengali."
@@ -98,10 +98,10 @@ cards:
     pos: "phrase"
     notes: "The same for a man and a woman: Bengali verbs do not show gender."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
       - { word: "এখনও", base: "এখনও", reading: "ekhono", meaning: "still; yet" }
       - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
-      - { word: "শিখছি", base: "শেখা", reading: "śekhā", meaning: "to learn" }
+      - { word: "শিখছি", ref: "bn-0883" }
   - id: bn-0146
     target: "একটু ধীরে বলুন।"
     native: "Please speak slowly."
@@ -113,7 +113,7 @@ cards:
     notes: "বলুন (bolun) is the polite request form of বলা (bôlā, to say). Most verbs take -উন (-un) for a polite request: বসুন (bośun), please sit. Verbs whose stem ends in a vowel take -ন (-nô): যান (jān), please go; খান (khān), please eat; দিন (din), please give. একটু (ekṭu), 'a little', softens a request."
     bases:
       - { word: "ধীরে", base: "ধীর", reading: "dhir", meaning: "slow" }
-      - { word: "বলুন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
+      - { word: "বলুন", ref: "bn-0879" }
   - id: bn-0147
     target: "আবার বলুন।"
     native: "Please say that again."
@@ -123,7 +123,7 @@ cards:
     tags: ["polite"]
     bases:
       - { word: "আবার", base: "আবার", reading: "ābār", meaning: "again" }
-      - { word: "বলুন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
+      - { word: "বলুন", ref: "bn-0879" }
   - id: bn-0148
     target: "আবার দেখা হবে।"
     native: "See you again."
@@ -134,8 +134,8 @@ cards:
     notes: "Literally 'there will be a meeting again'."
     bases:
       - { word: "আবার", base: "আবার", reading: "ābār", meaning: "again" }
-      - { word: "দেখা", base: "দেখা", reading: "dekhā", meaning: "to see; a meeting" }
-      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
+      - { word: "দেখা", ref: "bn-0877" }
+      - { word: "হবে", ref: "bn-0874" }
   - id: bn-0395
     target: "আসসালামু আলাইকুম"
     native: "hello (literally 'peace be upon you')"
@@ -206,7 +206,7 @@ cards:
     tags: ["greeting"]
     notes: "To a friend: ভালো থেকো (bhālo theko)."
     bases:
-      - { word: "থাকবেন", base: "থাকা", reading: "thākā", meaning: "to stay; to live; to be" }
+      - { word: "থাকবেন", ref: "bn-0875" }
   - id: bn-0402
     target: "আবার আসবেন।"
     native: "Do come again."
@@ -217,7 +217,7 @@ cards:
     notes: "A host's goodbye. To a friend: আবার এসো (ābār eśo)."
     bases:
       - { word: "আবার", base: "আবার", reading: "ābār", meaning: "again" }
-      - { word: "আসবেন", base: "আসা", reading: "āśā", meaning: "to come" }
+      - { word: "আসবেন", ref: "bn-0872" }
   - id: bn-0403
     target: "মাপ করবেন।"
     native: "Sorry; excuse me."
@@ -238,8 +238,8 @@ cards:
     pos: "phrase"
     notes: "Literally 'I have understood'. Not understanding is বুঝিনি (bujhini)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "বুঝেছি", base: "বোঝা", reading: "bojhā", meaning: "to understand" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "বুঝেছি", ref: "bn-0882" }
   - id: bn-0405
     target: "বাংলায় বলুন।"
     native: "Please say it in Bengali."
@@ -250,4 +250,4 @@ cards:
     notes: "বাংলা (bāṅlā) + -য় (-yô), 'in Bengali'."
     bases:
       - { word: "বাংলায়", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
-      - { word: "বলুন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
+      - { word: "বলুন", ref: "bn-0879" }

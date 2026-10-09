@@ -16,7 +16,7 @@ cards:
     pos: "phrase"
     notes: "No 'is' in the present: 'I student'. A woman says আমি ছাত্রী (chhatri)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
   - id: bn-0150
     target: "এটা আমার বাড়ি।"
     native: "This is my house."
@@ -24,8 +24,8 @@ cards:
     ipa: "eʈa amar baɽi"
     pos: "phrase"
     bases:
-      - { word: "এটা", base: "এটা", reading: "eṭā", meaning: "this (thing)" }
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "এটা", ref: "bn-0849" }
+      - { word: "আমার", ref: "bn-0833" }
   - id: bn-0151
     target: "আমি চা খাই।"
     native: "I drink tea."
@@ -34,8 +34,8 @@ cards:
     pos: "phrase"
     notes: "Subject, object, verb. Bengali 'eats' tea: খাওয়া (khāoyā) covers drinking too."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "খাই", base: "খাওয়া", reading: "khāoā", meaning: "to eat; to drink" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "খাই", ref: "bn-0876" }
   - id: bn-0152
     target: "ও বাংলা শিখছে।"
     native: "She is learning Bengali. / He is learning Bengali."
@@ -44,7 +44,7 @@ cards:
     pos: "phrase"
     bases:
       - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
-      - { word: "শিখছে", base: "শেখা", reading: "śekhā", meaning: "to learn" }
+      - { word: "শিখছে", ref: "bn-0883" }
   - id: bn-0153
     target: "আমার বাংলা ভালো লাগে।"
     native: "I like Bengali."
@@ -53,7 +53,7 @@ cards:
     pos: "phrase"
     notes: "'To me, Bengali feels good': the liker takes the possessive."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
       - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
       - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0154
@@ -64,9 +64,9 @@ cards:
     pos: "phrase"
     notes: "'Of me there is a car': আছে (āche), 'there is', with the owner's possessive."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
       - { word: "একটা", ref: "bn-0202" }
-      - { word: "গাড়ি", base: "গাড়ি", reading: "gāṛi", meaning: "car; vehicle" }
+      - { word: "গাড়ি", ref: "bn-1163" }
       - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0155
     target: "আমার টাকা নেই।"
@@ -76,7 +76,7 @@ cards:
     pos: "phrase"
     notes: "নেই (nei), 'there isn't', is the negative of আছে (āche)."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
       - { word: "নেই", base: "নেই", reading: "nei", meaning: "there is not" }
   - id: bn-0156
     target: "এটা ভালো না।"
@@ -86,7 +86,7 @@ cards:
     pos: "phrase"
     notes: "না (nā) comes at the end: 'this good not'."
     bases:
-      - { word: "এটা", base: "এটা", reading: "eṭā", meaning: "this (thing)" }
+      - { word: "এটা", ref: "bn-0849" }
   - id: bn-0157
     target: "যাবেন না।"
     native: "Please don't go."
@@ -95,7 +95,7 @@ cards:
     pos: "phrase"
     notes: "না (nā) comes after the verb, even for 'don't'."
     bases:
-      - { word: "যাবেন", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "যাবেন", ref: "bn-0873" }
   - id: bn-0158
     target: "আজ খুব গরম।"
     native: "It's very hot today."

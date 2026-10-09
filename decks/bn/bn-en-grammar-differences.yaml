@@ -16,8 +16,8 @@ cards:
     tags: ["grammar", "word-order"]
     notes: "The verb comes last: subject, object, verb. Word for word, 'I rice eat'."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "খাই", base: "খাওয়া", reading: "khāoā", meaning: "to eat; to drink" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "খাই", ref: "bn-0876" }
   - id: bn-0122
     target: "আপনি ডাক্তার।"
     native: "You are a doctor."
@@ -48,7 +48,7 @@ cards:
     notes: "'Of' is an ending on the owner, which comes first: বাবা (bābā) + -র (-rô). It is -র (-rô) after a vowel sign, -এর (-er) after a consonant (ঘরের), and -য়ের (-yer) after a full vowel letter (বইয়ের)."
     bases:
       - { word: "বাবার", ref: "bn-0423" }
-      - { word: "বই", base: "বই", reading: "boi", meaning: "book" }
+      - { word: "বই", ref: "bn-1139" }
   - id: bn-0126
     target: "সে যায়।"
     native: "He goes. / She goes."
@@ -57,8 +57,8 @@ cards:
     tags: ["grammar", "no-gender"]
     notes: "No grammatical gender: সে (se) is both 'he' and 'she', and nothing else in the sentence changes."
     bases:
-      - { word: "সে", base: "সে", reading: "śe", meaning: "he; she" }
-      - { word: "যায়", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "সে", ref: "bn-0839" }
+      - { word: "যায়", ref: "bn-0873" }
   - id: bn-0127
     target: "আপনি যান।"
     native: "You go. (respectful)"
@@ -67,7 +67,7 @@ cards:
     tags: ["grammar", "three-yous"]
     notes: "Three words for 'you', each with its own verb ending: আপনি (āpni) for strangers and elders takes -ন (-nô)."
     bases:
-      - { word: "যান", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "যান", ref: "bn-0873" }
   - id: bn-0128
     target: "তুমি যাও।"
     native: "You go. (familiar)"
@@ -76,8 +76,8 @@ cards:
     tags: ["grammar", "three-yous"]
     notes: "তুমি (tumi), for friends and family, takes -ও (-o)."
     bases:
-      - { word: "তুমি", base: "তুমি", reading: "tumi", meaning: "you (familiar)" }
-      - { word: "যাও", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "তুমি", ref: "bn-0835" }
+      - { word: "যাও", ref: "bn-0873" }
   - id: bn-0129
     target: "তুই যাস।"
     native: "You go. (intimate)"
@@ -86,8 +86,8 @@ cards:
     tags: ["grammar", "three-yous"]
     notes: "তুই (tui), only for the very close or a child, takes -স (-śô). To anyone else it is rude."
     bases:
-      - { word: "তুই", base: "তুই", reading: "tui", meaning: "you (intimate)" }
-      - { word: "যাস", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "তুই", ref: "bn-0837" }
+      - { word: "যাস", ref: "bn-0873" }
   - id: bn-0130
     target: "একটা বই"
     native: "a book; one book"
@@ -98,7 +98,7 @@ cards:
     notes: "No word for 'a': a number takes the classifier -টা (-ṭā), and একটা (ekoṭā) is 'one' or 'a'."
     bases:
       - { word: "একটা", ref: "bn-0202" }
-      - { word: "বই", base: "বই", reading: "boi", meaning: "book" }
+      - { word: "বই", ref: "bn-1139" }
   - id: bn-0131
     target: "বইটা"
     native: "the book"
@@ -115,9 +115,9 @@ cards:
     tags: ["grammar", "have"]
     notes: "No verb 'have': 'of me a book there is', with আছে (āche), 'there is'."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
       - { word: "একটা", ref: "bn-0202" }
-      - { word: "বই", base: "বই", reading: "boi", meaning: "book" }
+      - { word: "বই", ref: "bn-1139" }
       - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0133
     target: "আমি যাই না।"
@@ -127,8 +127,8 @@ cards:
     tags: ["grammar", "negation"]
     notes: "না (nā) comes after the verb: 'I go not'."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "যাই", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "যাই", ref: "bn-0873" }
   - id: bn-0134
     target: "খাবার নেই।"
     native: "There is no food."
@@ -146,4 +146,4 @@ cards:
     tags: ["grammar", "questions"]
     notes: "A yes-or-no question adds কি (ki) and keeps the statement's word order: আপনি যাবেন (you will go). Don't confuse it with কী (ki), 'what'."
     bases:
-      - { word: "যাবেন", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "যাবেন", ref: "bn-0873" }

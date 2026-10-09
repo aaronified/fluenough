@@ -16,7 +16,7 @@ cards:
     pos: "phrase"
     notes: "The liker takes -র (-rô): 'to me sweets feel good'. লাগে (lāge) stays the same for everyone: তোর (tor), তোমার (tomār), আপনার (āponār), ওর (or), ওঁর মিষ্টি ভালো লাগে (om̐r miśṭi bhālo lāge)."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
       - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0716
     target: "আমার এই গানটা ভালো লাগে না।"
@@ -25,7 +25,7 @@ cards:
     ipa: "amar ei ɡanʈa bʱalo laɡe na"
     pos: "phrase"
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
       - { word: "এই", base: "এই", reading: "ei", meaning: "this" }
       - { word: "গানটা", base: "গান", reading: "gān", meaning: "song" }
       - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
@@ -49,7 +49,7 @@ cards:
     pos: "phrase"
     notes: "উনি (uni) takes -র (-rô) as ওঁর (om̐r), often said ওনার (onār); both are accepted."
     bases:
-      - { word: "ওঁর", base: "উনি", reading: "uni", meaning: "he; she (respectful, a person over there)" }
+      - { word: "ওঁর", ref: "bn-0846" }
       - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0719
     target: "খুব ভালো লাগল।"
@@ -68,7 +68,7 @@ cards:
     pos: "phrase"
     notes: "ভালোবাসা (bhālobāsā) is an ordinary verb: no -র (-rô) on the subject, and the verb changes for the person: আমি ভালোবাসি (āmi bhālobāsi), তুই ভালোবাসিস (tui bhālobāsis), তুমি ভালোবাসো (tumi bhālobāso), আপনি ভালোবাসেন (āpni bhālobāsen), ও ভালোবাসে (o bhālobāse), উনি ভালোবাসেন (uni bhālobāsen). It is used for food and pastimes as much as for people."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
       - { word: "ভালোবাসি", base: "ভালোবাসা", reading: "bhālobāśā", meaning: "to love" }
   - id: bn-0721
     target: "আমি তোমাকে ভালোবাসি।"
@@ -78,8 +78,8 @@ cards:
     pos: "phrase"
     notes: "The person loved takes -কে (-ke)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "তোমাকে", base: "তুমি", reading: "tumi", meaning: "you (familiar)" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "তোমাকে", ref: "bn-0835" }
       - { word: "ভালোবাসি", base: "ভালোবাসা", reading: "bhālobāśā", meaning: "to love" }
   - id: bn-0722
     target: "ও ক্রিকেট খেলতে ভালোবাসে।"
@@ -90,7 +90,7 @@ cards:
     notes: "'Loves doing': the verb's -তে (-te) form, then ভালোবাসা (bhālobāsā)."
     bases:
       - { word: "ক্রিকেট", base: "ক্রিকেট", reading: "krikeṭ", meaning: "cricket" }
-      - { word: "খেলতে", base: "খেলা", reading: "khelā", meaning: "to play" }
+      - { word: "খেলতে", ref: "bn-0895" }
       - { word: "ভালোবাসে", base: "ভালোবাসা", reading: "bhālobāśā", meaning: "to love" }
   - id: bn-0723
     target: "আমি ঝাল খাবার পছন্দ করি না।"
@@ -100,7 +100,7 @@ cards:
     pos: "phrase"
     notes: "পছন্দ করা (pôchondo kôrā) is a noun with করা (kôrā), and only করা (kôrā) changes: আপনি পছন্দ করেন (āpni pôchondo kôren), ও পছন্দ করে (o pôchondo kôre). In the negative it is 'don't like': ঝাল খাবার পছন্দ করি না (jhāl khābār pôchondo kori nā)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
       - { word: "করি", ref: "bn-0102" }
   - id: bn-0724
     target: "পছন্দ"
@@ -117,6 +117,6 @@ cards:
     pos: "phrase"
     notes: "প্রিয় (priyo) is an adjective, so there is no verb. 'Not my favourite' is আমার প্রিয় নয় (āmār priyo nôy), or in speech না (nā)."
     bases:
-      - { word: "রসগোল্লা", base: "রসগোল্লা", reading: "rôśogollā", meaning: "rosogolla (a sweet of cheese in syrup)" }
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "রসগোল্লা", ref: "bn-0967" }
+      - { word: "আমার", ref: "bn-0833" }
   - ref: bn-0640

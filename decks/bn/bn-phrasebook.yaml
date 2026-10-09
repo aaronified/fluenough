@@ -58,7 +58,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ঠিক আছে?", reading: "ṭhik āche?" }] }
     bases:
-      - { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }
+      - { word: "ঠিক", ref: "bn-1243" }
       - { word: "আছে", base: "আছে", reading: "āche" }
   - id: "bn-0818"
     target: "কোনো সমস্যা নেই।"
@@ -69,7 +69,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "অসুবিধা নেই", reading: "ôśubidhā nei" }] }
     bases:
-      - { word: "কোনো", base: "কোনো", reading: "kono" }
+      - { word: "কোনো", ref: "bn-1333" }
       - { word: "সমস্যা", base: "সমস্যা", reading: "śômośśā" }
       - { word: "নেই", base: "নেই", reading: "nei" }
   - id: "bn-0819"
@@ -118,8 +118,8 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "না", reading: "nā" }] }
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi" }
-      - { word: "বুঝতে", base: "বোঝা", reading: "bojhā" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "বুঝতে", ref: "bn-0882" }
       - { word: "পারছি", ref: "bn-0736" }
   - id: "bn-0824"
     target: "আপনি কি ইংরেজি বলতে পারেন?"
@@ -130,9 +130,9 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "কি", reading: "ki" }, { word: "ি", reading: "i" }, { word: "কী", reading: "ki" }, { word: "ী", reading: "i" }] }
     bases:
-      - { word: "কি", base: "কি", reading: "ki" }
+      - { word: "কি", ref: "bn-0064" }
       - { word: "ইংরেজি", base: "ইংরেজি", reading: "iṅreji" }
-      - { word: "বলতে", base: "বলা", reading: "bôlā" }
+      - { word: "বলতে", ref: "bn-0879" }
       - { word: "পারেন", ref: "bn-0736" }
   - id: "bn-0825"
     target: "একটু অপেক্ষা করুন।"
@@ -207,7 +207,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "-বেন", reading: "-ben" }] }
     bases:
-      - { word: "চিন্তা", base: "চিন্তা", reading: "cintā" }
+      - { word: "চিন্তা", ref: "bn-1253" }
       - { word: "করবেন", ref: "bn-0102" }
   - id: "bn-0832"
     target: "কী হয়েছে?"
@@ -218,4 +218,4 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases:
-      - { word: "হয়েছে", base: "হওয়া", reading: "hoā" }
+      - { word: "হয়েছে", ref: "bn-0874" }
