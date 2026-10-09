@@ -21,6 +21,16 @@ every `ref` names a card another deck writes (ADR-0018), that a grammar deck
 supplies every slot for every entry — and that no value has been silently eaten by YAML's type resolution.
 That last one is the reason this exists: `native: no` on the hiragana `の`
 parses as the boolean `false`, and no reviewer reliably catches that by eye.
+It reads plain YAML values as the app does (YAML 1.2: a bare `no` is the text
+"no", only `true` and `false` are booleans), so the two never disagree.
+
+It also checks the B1 format (ADR-0035): cores (`part: "core"`) and their
+layers (`kind: "layer"`, in `decks/<lang>/<native>/`), rules decks, the
+phrasebook, typed notes, `bases`, `wiktionary`, and a path's B1 plan. Some of
+these read the language's other files from disk, so a file validated alone is
+checked against them. Lines marked `info` (a layer's coverage of its core, a
+plan's sizes) never fail the build. `tools/fixtures/b1/zz/` is a valid set in
+a made-up language, used by `test_validate_b1.py`.
 
 ## `pictures.py`
 

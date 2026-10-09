@@ -95,15 +95,16 @@ class PathFile(Paths):
 
     def test_the_codes_are_language_codes(self) -> None:
         report = self.write("hi-en-path.yaml",
-                            path_file("  - [hi-en-market]\n", native="no"))
-        # YAML reads a bare no as false; the message says so.
+                            path_file("  - [hi-en-market]\n", native="false"))
+        # YAML reads a bare false as a boolean; the message says so. (A bare
+        # no is the string "no", YAML 1.2, as the app reads it.)
         self.assertRejected(report, "boolean")
         self.assertIsNone(report.course_path)
 
     def test_units_are_non_empty_lists_of_deck_ids(self) -> None:
         for units, needle in (
             ("  []\n", "non-empty list"),
-            ("  - hi-en-market\n", "non-empty list of deck ids"),
+            ("  - hi-en-market\n", "must be a list of deck ids, or a mapping"),
             ("  - []\n", "non-empty list of deck ids"),
             ("  - [Hi_Market]\n", "must list deck ids"),
             ("  - [hi-en-market]\n  - [hi-en-market]\n", "listed twice"),

@@ -137,9 +137,10 @@ class ReadingDeck(Reading):
             self.write(deck(questions=question('        prompt: { bn: "ভাত?" }\n'
                                                '        answer: true\n'))),
             "prompt needs en")
-        # A bare no reads as false, so the key is no language code.
+        # A bare false is a boolean, so the key is no language code. (A bare
+        # no is the string "no" to both the validator and the app, YAML 1.2.)
         self.assertRejected(
-            self.write(deck(questions=question('        prompt: { en: "A.", no: "B." }\n'
+            self.write(deck(questions=question('        prompt: { en: "A.", false: "B." }\n'
                                                '        answer: true\n'))),
             "boolean")
 
@@ -154,7 +155,7 @@ class ReadingDeck(Reading):
             self.write(deck(sentences='      - text: "সে যায়।"\n')),
             "reading is required")
         self.assertRejected(
-            self.write(deck(sentences='      - text: yes\n        reading: "x"\n')),
+            self.write(deck(sentences='      - text: true\n        reading: "x"\n')),
             "boolean")
         self.assertRejected(self.write(deck(sentences="      []\n")),
                             "sentences must be a non-empty list")

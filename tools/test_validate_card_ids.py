@@ -95,6 +95,9 @@ class CardIds(unittest.TestCase):
         partner = '  - id: es-9002\n    target: "pero"\n    native: "but"\n'
         self.assertEqual(self.across(es_en_a=vocab("es-en-a", paired),
                                      es_en_b=vocab("es-en-b", partner)), [])
+        # The language's files on disk beside a given file count (ADR-0035),
+        # so the partner's deck goes before the deck is checked without it.
+        (self.tmp / "es-en-b.yaml").unlink()
         problems = self.across(es_en_a=vocab("es-en-a", paired))
         self.assertEqual(len(problems), 1)
         self.assertIn("pair names card es-9002", problems[0])
