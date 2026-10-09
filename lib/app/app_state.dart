@@ -586,8 +586,21 @@ class AppState extends ChangeNotifier {
   }
 
   Future<void> _checkSpeechQuietly() async {
-    if (await _speech.hasPermission() && !_disposed) await startSpeech();
+    try {
+      if (!await _speech.hasPermission() || _disposed) return;
+    } catch (e) {
+      log.warning('Speech error: permission ${_errorCode(e)}');
+      return;
+    }
+    await startSpeech();
   }
+
+  /// A speech or voice error's code for the app log: the engine's own, or
+  /// else the error's type. Never what was said or spoken.
+  static String _errorCode(Object error) => switch (error) {
+    SpeechError(:final code) || TtsFailure(:final code) => code,
+    _ => '${error.runtimeType}',
+  };
 
   // ---------------------------------------------------------------------------
   // Speech recognition (#89, ADR-0014)
@@ -610,7 +623,7 @@ class AppState extends ChangeNotifier {
     try {
       final ready = await _speech.start();
       _speechReady = ready;
-      _speechLanguages = ready ? await _speech.languages() : const <String>{};
+      _speechLanguages = ready ? await _recognised() : const <String>{};
       setup = ready
           ? SpeechSetup.ready
           : await _speech.hasPermission()
@@ -620,7 +633,7 @@ class AppState extends ChangeNotifier {
         log.warning('Speech error: start ${setup.name}');
       }
     } catch (e) {
-      log.warning('Speech error: start ${e.runtimeType}');
+      log.warning('Speech error: start ${_errorCode(e)}');
       _speechReady = false;
       _speechLanguages = const <String>{};
     } finally {
@@ -628,6 +641,17 @@ class AppState extends ChangeNotifier {
       if (!_disposed) notifyListeners();
     }
     return setup;
+  }
+
+  /// The languages the recogniser lists, or none when it cannot say, which
+  /// goes to the app log: every language is then tried on the device.
+  Future<Set<String>> _recognised() async {
+    try {
+      return await _speech.languages();
+    } catch (e) {
+      log.warning('Speech error: languages ${_errorCode(e)}');
+      return const <String>{};
+    }
   }
 
   /// Asks the recogniser again which languages it knows, and forgets what
@@ -733,8 +757,15 @@ class AppState extends ChangeNotifier {
     return heard;
   }
 
-  /// Stops a listen early, keeping what was heard.
-  Future<void> stopListening() => _speech.stop();
+  /// Stops a listen early, keeping what was heard. A failure goes to the
+  /// app log.
+  Future<void> stopListening() async {
+    try {
+      await _speech.stop();
+    } catch (e) {
+      log.warning('Speech error: stop ${_errorCode(e)}');
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // Voices
@@ -768,7 +799,7 @@ class AppState extends ChangeNotifier {
       try {
         _voices[tag] = await _tts.isLanguageAvailable(tag);
       } catch (e) {
-        log.warning('Voice error: $tag availability ${e.runtimeType}');
+        log.warning('Voice error: $tag availability ${_errorCode(e)}');
         _voices[tag] = false;
       }
     }
@@ -781,7 +812,7 @@ class AppState extends ChangeNotifier {
     try {
       return await _tts.voicesFor(language.ttsTag);
     } catch (e) {
-      log.warning('Voice error: ${language.ttsTag} voices ${e.runtimeType}');
+      log.warning('Voice error: ${language.ttsTag} voices ${_errorCode(e)}');
       return const <TtsVoice>[];
     }
   }
@@ -808,11 +839,8 @@ class AppState extends ChangeNotifier {
         voice: settings.voiceFor(language.code),
       );
       return null;
-    } on TtsFailure catch (e) {
-      log.warning('Voice error: ${language.ttsTag} ${e.code}');
-      return e.code;
     } catch (e) {
-      final code = '${e.runtimeType}';
+      final code = _errorCode(e);
       log.warning('Voice error: ${language.ttsTag} $code');
       return code;
     }
