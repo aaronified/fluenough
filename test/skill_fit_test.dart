@@ -3,6 +3,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/leech_action.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/fsrs_fit.dart';
+import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/scheduling/skill_fit.dart';
 import 'package:fluenough/core/scheduling/skill_parameters.dart';
 
@@ -281,6 +282,128 @@ void main() {
       expect(
         SkillFit.direction((days: 4, reviews: 0), (days: 6, reviews: 0)),
         -1,
+      );
+    });
+  });
+
+  group('the pace: the set in use beside FSRS-6\'s defaults', () {
+    // Words that come back later or sooner than on the defaults: w8 sets
+    // how much a right answer lengthens the gap.
+    List<double> slower(double by) => <double>[
+      for (final (i, w) in Fsrs.w.indexed) i == 8 ? w + by : w,
+    ];
+    // Words still young, so that the next 30 days hold reviews.
+    final recent = now.subtract(const Duration(days: 40));
+    final reviews = inTimeOrder([
+      ...simulate(language: 'hi', start: recent, until: now, cards: 20),
+      ...simulate(
+        language: 'hi',
+        start: recent,
+        until: now,
+        cards: 10,
+        mode: hear,
+      ),
+      ...simulate(language: 'bn', start: recent, until: now, cards: 10),
+    ]);
+    FittedParameters fit(List<double> values) =>
+        FittedParameters(values: values, fittedAt: now, reviewCount: 100);
+
+    test('nothing fitted: every skill as at the start', () {
+      final paces = SkillFit.paces(
+        reviews,
+        parameters: SkillParameters.none,
+        now: now,
+      );
+      expect(paces, hasLength(3));
+      for (final p in paces) {
+        expect(p.adjusted, isFalse);
+        expect(p.now, p.start);
+        expect(
+          p.start,
+          SkillFit.outlook(
+            SkillFit.histories(reviews)[p.key]!.pairs,
+            Fsrs.w,
+            now,
+          ),
+        );
+      }
+      final hi = paces.firstWhere(
+        (p) => p.key == (language: 'hi', mode: write),
+      );
+      expect(hi.answers, SkillFit.histories(reviews)[hi.key]!.reviewCount);
+    });
+
+    test('a set that keeps words longer: fewer reviews, later', () {
+      final parameters = SkillParameters(
+        fitted: {(language: 'hi', mode: write): fit(slower(0.6))},
+      );
+      final paces = SkillFit.paces(reviews, parameters: parameters, now: now);
+      final hi = paces.firstWhere(
+        (p) => p.key == (language: 'hi', mode: write),
+      );
+      expect(hi.adjusted, isTrue);
+      expect(hi.now.days, greaterThan(hi.start.days));
+      expect(hi.now.reviews, lessThan(hi.start.reviews));
+      expect(SkillFit.direction(hi.start, hi.now), -1);
+      // Hear has no fit of its own and no baseline: as at the start.
+      final heard = paces.firstWhere(
+        (p) => p.key == (language: 'hi', mode: hear),
+      );
+      expect(heard.adjusted, isFalse);
+    });
+
+    test('a set that keeps words shorter: more reviews, sooner', () {
+      final parameters = SkillParameters(
+        fitted: {(language: 'hi', mode: write): fit(slower(-0.6))},
+      );
+      final hi = SkillFit.paces(
+        reviews,
+        parameters: parameters,
+        now: now,
+      ).firstWhere((p) => p.key == (language: 'hi', mode: write));
+      expect(hi.now.days, lessThan(hi.start.days));
+      expect(hi.now.reviews, greaterThan(hi.start.reviews));
+      expect(SkillFit.direction(hi.start, hi.now), 1);
+    });
+
+    test('another language\'s fit, as the baseline, adjusts it too', () {
+      final parameters = SkillParameters(
+        fitted: {(language: 'hi', mode: write): fit(slower(0.6))},
+      );
+      final bn = SkillFit.paces(
+        reviews,
+        parameters: parameters,
+        now: now,
+      ).firstWhere((p) => p.key == (language: 'bn', mode: write));
+      expect(bn.adjusted, isTrue);
+      expect(bn.now.reviews, lessThan(bn.start.reviews));
+    });
+
+    test('a kept copy of the defaults is not adjusted', () {
+      final parameters = SkillParameters(
+        fitted: {(language: 'hi', mode: write): fit(Fsrs.w)},
+      );
+      final hi = SkillFit.paces(
+        reviews,
+        parameters: parameters,
+        now: now,
+      ).firstWhere((p) => p.key == (language: 'hi', mode: write));
+      expect(hi.adjusted, isFalse);
+      expect(hi.now, hi.start);
+    });
+
+    test('together: reviews added, the days of the most answered', () {
+      SkillPace pace(String language, int answers, int days, int reviews) => (
+        key: (language: language, mode: write),
+        answers: answers,
+        adjusted: true,
+        start: (days: 4, reviews: reviews + 10),
+        now: (days: days, reviews: reviews),
+      );
+      expect(SkillFit.together(const []), isNull);
+      expect(
+        SkillFit.together([pace('hi', 300, 6, 100), pace('bn', 50, 2, 40)]),
+        (start: (days: 4, reviews: 160), now: (days: 6, reviews: 140)),
       );
     });
   });
