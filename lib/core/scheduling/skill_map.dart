@@ -26,7 +26,8 @@ class SkillMap {
   /// own. No study gives the fraction; this is the ratio of the transfer
   /// found when a test is answered differently from practice to when it is
   /// answered the same way, d 0.28 against 0.58 (Pan & Rickard 2018),
-  /// rounded. Low confidence: to be fitted from the app's own logs.
+  /// rounded. Low confidence: to be fitted, on the phone, from the
+  /// learner's own log.
   static const double implied = 0.5;
 
   /// The skills a right answer in [mode], in [deckId], implies, each with
