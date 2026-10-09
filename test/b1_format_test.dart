@@ -1224,9 +1224,14 @@ void main() {
 
     test('what each grammar mode shows', () {
       final card = cells(rulesCore, rulesLayer)[6];
-      expect(card.promptFor(DrillMode.grammarUnderstood), 'with mother');
+      // Understood: the form is shown, and its meaning chosen (OPEN-22).
+      expect(card.promptFor(DrillMode.grammarUnderstood), 'అమ్మతో (ammatō)');
+      expect(card.acceptedAnswers(DrillMode.grammarUnderstood), [
+        'with mother',
+      ]);
+      // Produced: the word and the meaning, and the form given.
       expect(card.promptFor(DrillMode.grammar), 'అమ్మ (amma): with mother');
-      expect(card.acceptedAnswers(DrillMode.grammarUnderstood), ['అమ్మతో']);
+      expect(card.acceptedAnswers(DrillMode.grammar), ['అమ్మతో']);
       final unread = cells(
         rulesCore,
         rulesLayer,
@@ -1243,8 +1248,11 @@ void main() {
         },
       )[6];
       expect(unread.promptFor(DrillMode.grammar), 'అమ్మ: with mother');
-      // Until the choose question is built, a cell is only typed.
-      expect(card.modesIn(ttsAvailable: true), {DrillMode.grammar});
+      // Both schedules, now that both questions are built (4.8).
+      expect(card.modesIn(ttsAvailable: true), {
+        DrillMode.grammarUnderstood,
+        DrillMode.grammar,
+      });
       // A grammar cell of a pattern keeps its prompt.
       final past = expandPattern(merge(pastCore, pastLayer)).first;
       expect(past.promptFor(DrillMode.grammar), past.native);
@@ -1888,7 +1896,8 @@ $units''';
     });
 
     test('shares the grammar tile, and implies nothing yet', () {
-      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammar);
+      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammarUnderstood);
+      expect(Skill.grammarUnderstood.tile, Skill.grammar);
       expect(
         const SkillMap().impliedBy(DrillMode.grammarUnderstood, 'd'),
         isEmpty,

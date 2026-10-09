@@ -321,6 +321,10 @@ class Card {
   /// words or more is produced by putting its words in order instead
   /// ([rearranges], ADR-0024). A phrase can be spoken, since the recogniser
   /// does the writing (ADR-0014).
+  ///
+  /// A rules table's cell is understood ([DrillMode.grammarUnderstood]) only
+  /// where its form can be told from the row's others by what it means
+  /// ([choosesMeaning]); otherwise it is only produced (spec 4.8).
   Set<DrillMode> modesIn({
     required bool ttsAvailable,
     bool speechAvailable = false,
@@ -339,11 +343,21 @@ class Card {
       for (final mode in declared)
         if ((ttsAvailable || mode != DrillMode.listening) &&
             (speechAvailable || mode != DrillMode.speaking) &&
-            // Removed by the choose question (spec 4.8).
-            mode != DrillMode.grammarUnderstood)
+            (mode != DrillMode.grammarUnderstood || choosesMeaning))
           mode,
     };
   }
+
+  /// Whether this rules table's cell can be asked what its form means
+  /// (`Ask.chooseFormMeaning`, spec 4.8): another form of its row means
+  /// something else. False for any other card.
+  bool get choosesMeaning =>
+      rule?.options.any((option) => option.prompt != native) ?? false;
+
+  /// Whether this rules table's cell can be asked to choose its form among
+  /// its row's (`Ask.chooseForm`, spec 4.8): the row has another form.
+  /// False for any other card.
+  bool get choosesForm => rule?.options.isNotEmpty ?? false;
 
   /// Whether producing this card is asked by putting its words in order
   /// rather than typing it (ADR-0024): a sentence of three words or more,
@@ -388,31 +402,35 @@ class Card {
     return parts..add(text.substring(start).trim());
   }
 
-  /// The accepted answers for [mode], the first being the canonical one.
+  /// The accepted answers for [mode], the first being the canonical one. A
+  /// rules table's cell understood is answered with its meaning, [native],
+  /// chosen.
   List<String> acceptedAnswers(DrillMode mode) => switch (mode) {
     DrillMode.recognition ||
     DrillMode.reading => <String>[native, ...altNative],
+    DrillMode.grammarUnderstood => <String>[native],
     DrillMode.production ||
     DrillMode.listening ||
-    DrillMode.grammarUnderstood ||
     DrillMode.grammar ||
     DrillMode.speaking => <String>[target, ...altTarget],
   };
 
-  /// What the learner is shown. A rules table's cell typed as
-  /// [DrillMode.grammar] shows its word, with its reading, before the
-  /// meaning to express, so that only the rule is tested:
-  /// "అమ్మ (amma): with mother".
+  /// What the learner is shown (spec 4.6). A rules table's cell understood
+  /// ([DrillMode.grammarUnderstood]) shows its form with its reading, whose
+  /// meaning is chosen: "అమ్మతో (ammatō)". Produced ([DrillMode.grammar]),
+  /// it shows its word, with its reading, before the meaning to express, so
+  /// that only the rule is tested: "అమ్మ (amma): with mother".
   String promptFor(DrillMode mode) => switch (mode) {
     DrillMode.recognition || DrillMode.reading => target,
+    DrillMode.grammarUnderstood => switch (reading) {
+      final reading? => '$target ($reading)',
+      null => target,
+    },
     DrillMode.grammar when rule != null => switch (rule!.wordReading) {
       final reading? => '${rule!.wordTarget} ($reading): $native',
       null => '${rule!.wordTarget}: $native',
     },
-    DrillMode.production ||
-    DrillMode.grammarUnderstood ||
-    DrillMode.grammar ||
-    DrillMode.speaking => native,
+    DrillMode.production || DrillMode.grammar || DrillMode.speaking => native,
     // The listening prompt is the audio itself; the text is withheld until
     // the answer is in.
     DrillMode.listening => '',

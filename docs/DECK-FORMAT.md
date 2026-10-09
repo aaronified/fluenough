@@ -1084,14 +1084,16 @@ and explanation, and it counts as known once its cells are.
 
 | Mode | Shown | Answer |
 |---|---|---|
-| `grammarUnderstood` | The meaning to express, "with mother" | Chosen among the same word's other forms in the table: అమ్మతో (ammatō), అమ్మకి (ammaki), అమ్మలో (ammalō), అమ్మ నుంచి (amma nuñci). Never another word's form, such as పాలు (pālu), and never a form of a rule this layer leaves out. |
-| `grammar` | The word and its reading, then the meaning: "అమ్మ (amma): with mother" | The form, typed |
+| `grammarUnderstood` | The form and its reading: అమ్మతో (ammatō) | Its meaning, "with mother", chosen among the meanings of the same word's other forms in the table: "in mother", "to mother", "from mother". Never another word's, and never one of a rule this layer leaves out. |
+| `grammar` | The word and its reading, then the meaning: "అమ్మ (amma): with mother" | The form, chosen among the same word's forms while the cell is new or was last missed, typed once it was last remembered |
 
-These are the two grammar schedules: **grammar understood**, choosing, and
-**grammar produced**, typing. `grammar` keeps its name and meaning, so every
-grammar answer already logged keeps its meaning. A card or ref cannot list
-`grammarUnderstood` in its `modes`: only a rules table's cells take it. A
-cell whose row has no other form is only typed.
+These are the two grammar schedules: **grammar understood**, shown a form
+and choosing what it means, and **grammar produced**, giving the form.
+`grammar` keeps its name and meaning, so every grammar answer already logged
+keeps its meaning. A card or ref cannot list `grammarUnderstood` in its
+`modes`: only a rules table's cells take it. A cell whose row has no other
+form is only typed, and one whose row's other forms all mean the same as it
+is not asked its meaning.
 
 ---
 
@@ -1999,8 +2001,8 @@ rules file that spells with a word that no card in the language's
 | `recognition` | `target` | `native` | self-assessed |
 | `production` | `native` | `target` | automatically |
 | `listening` | TTS audio of `target` | `target` | automatically |
-| `grammarUnderstood` | the meaning to express, from a [rules deck](#rules-decks)'s cell | the form, chosen among the same word's other forms | automatically |
-| `grammar` | expanded `prompt`; on a rules deck's cell, the word with its reading and the meaning to express | inflected form, typed: grammar produced | automatically |
+| `grammarUnderstood` | a form of a [rules deck](#rules-decks)'s table, with its reading | its meaning, chosen among the meanings of the same word's forms: grammar understood | automatically |
+| `grammar` | expanded `prompt`; on a rules deck's cell, the word with its reading and the meaning to express | the form, chosen among the same word's forms or typed: grammar produced | automatically |
 | `speaking` | `native` | `target`, said aloud | automatically, from what the phone's speech recogniser heard |
 | `reading` | a passage, then a question about it | the right choice | automatically |
 
