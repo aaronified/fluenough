@@ -30,7 +30,8 @@ speaker reviews every card before it ships, Telugu included.
 - **Levels set by several native raters per language:** agents draft the
   list and a provisional level; several native speakers, from more than
   one region where possible, rate each word ("How offensive is this word
-  to people in general?", 1 to 9); the median sets the band, by written
+  to native speakers in general?", 1 to 9; the owner's wording, after
+  Janschewitz 2008's "to people in general"); the median sets the band, by written
   cut-offs; slurs strongest by rule; a disagreement of a band or more
   becomes a region note. Nothing ships before (owner).
 - **Two similarity lists, found by a tool and confirmed by a person:** a
