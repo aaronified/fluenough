@@ -7,6 +7,7 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
+import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/number_practice_tile.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
@@ -16,8 +17,10 @@ import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/review/alike_warning.dart';
 import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
+import 'package:fluenough/ui/widgets/speaker.dart';
 
 import '../../support/harness.dart';
 
@@ -426,8 +429,8 @@ void main() {
     );
   });
 
-  testWidgets('a rude word it sounds like is hidden unless adult content is '
-      'on', (tester) async {
+  testWidgets('a rude word it sounds like carries the drill card\'s '
+      'warning, the word hidden unless adult content is on', (tester) async {
     usePhone(tester);
     final state = AppState.test(decks: tinyCourse());
     await state.load();
@@ -442,7 +445,13 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(adultContentOn(state), isFalse);
-    expect(find.text(l10n.wordSheetSoundsRude), findsOneWidget);
+    // The same warning as on a drill card, not "Sounds like another word".
+    expect(find.byType(AlikeWarning), findsOneWidget);
+    expect(find.text(l10n.alikeCarefulSpeaking), findsOneWidget);
+    expect(find.text(l10n.alikeSpeakingRude), findsOneWidget);
+    expect(find.text(l10n.alikeHidden), findsOneWidget);
+    expect(find.byIcon(Icons.visibility_off_outlined), findsOneWidget);
+    expect(find.text(l10n.wordSheetSoundsLikeTitle), findsNothing);
     expect(find.textContaining('gatu', findRichText: true), findsNothing);
 
     await pumpScreen(
@@ -452,17 +461,67 @@ void main() {
       ),
       state: state,
     );
-    expect(find.text(l10n.wordSheetSoundsRude), findsOneWidget);
+    expect(find.text(l10n.alikeCarefulSpeaking), findsOneWidget);
+    expect(find.text(l10n.alikeHidden), findsNothing);
     expect(
-      find.text(
-        l10n.wordSheetSoundsLikeNoReading('gatu', 'a rude word'),
-        findRichText: true,
-      ),
+      find.text(l10n.reviewAlikeSoundsNoReading('gatu'), findRichText: true),
       findsOneWidget,
     );
     // No picture, no reading, but the IPA and the note.
     expect(find.text(l10n.wordSheetIpa('ˈɡato')), findsOneWidget);
     expect(find.text('A plain note.'), findsOneWidget);
+  });
+
+  testWidgets('a word\'s card has its top line, where the learner stands '
+      'with it, and a speaker that says the word', (tester) async {
+    usePhone(tester);
+    final tts = FixedTtsEngine(<String>{'es'});
+    final state = AppState.test(decks: tinyCourse(), tts: tts);
+    await state.load();
+    final deck = state.deckById('es-en-tiny')!;
+    final word = deck.cards.first;
+    await pumpScreen(
+      tester,
+      Scaffold(
+        body: WordSheet(card: word, language: deck.language),
+      ),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    expect(
+      find.text(l10n.wordSheetLine(word.id, l10n.unitNew)),
+      findsOneWidget,
+    );
+    await tester.tap(find.bySemanticsLabel(l10n.drillPlay));
+    await tester.pumpAndSettle();
+    expect(tts.spoken.single.text, 'gato');
+
+    // A sentence no lesson has taught is not open yet.
+    final phrase = deck.cards.last;
+    await pumpScreen(
+      tester,
+      Scaffold(
+        body: WordSheet(card: phrase, language: deck.language),
+      ),
+      state: state,
+    );
+    expect(
+      find.text(l10n.wordSheetLinePos(phrase.id, 'phrase', l10n.unitNotOpen)),
+      findsOneWidget,
+    );
+
+    // With no voice for the language, no speaker.
+    final mute = AppState.test(decks: tinyCourse());
+    await mute.load();
+    await pumpScreen(
+      tester,
+      Scaffold(
+        body: WordSheet(card: word, language: deck.language),
+      ),
+      state: mute,
+    );
+    expect(find.byType(SpeakerIcon), findsNothing);
+    expect(find.byType(ReportButton), findsOneWidget);
   });
 
   testWidgets('a deck outside any path has no unit: its screen says not '

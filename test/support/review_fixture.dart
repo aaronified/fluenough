@@ -2,6 +2,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
 
 /// A small Telugu course for reviewer mode's tests: a unit of words, one
 /// of which sounds like a rude word, and a unit of rude words.
@@ -18,6 +19,10 @@ const String otherCode = 'FL-0000-0000-0';
 const String wordsDeck = 'te-en-review-words';
 const String rudeDeck = 'te-en-review-rude';
 
+/// A second deck of words, no speaker has checked, in the words' unit when
+/// [reviewCourse] is asked to put it there.
+const String moreDeck = 'te-en-review-more';
+
 /// The word that sounds like a rude one: విధవ (vidhava), widow.
 const String alikeCard = 'te-9901';
 
@@ -28,8 +33,12 @@ const String plainCard = 'te-9902';
 const String rudeCard = 'te-9951';
 
 /// The course's deck files. [authors] are listed on the words deck, as an
-/// updated deck lists the rater codes that helped build it.
-Map<String, String> reviewCourse({List<String> authors = const <String>[]}) {
+/// updated deck lists the rater codes that helped build it. With [more],
+/// the words' unit has a second deck, still unchecked.
+Map<String, String> reviewCourse({
+  List<String> authors = const <String>[],
+  bool more = false,
+}) {
   const header = '''
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
 native: { code: en, iso639_3: eng, name: English }
@@ -60,6 +69,17 @@ tags: [offensive, unreviewed]
 cards:
   - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [recognition] }
 ''',
+    if (more)
+      'decks/te/$moreDeck.yaml':
+          '''
+schema: 1
+id: $moreDeck
+name: "More family words"
+$header
+tags: [unreviewed]
+cards:
+  - { id: te-9903, target: "నాన్న", native: "father", reading: "nānna" }
+''',
     'decks/te/te-en-path.yaml':
         '''
 schema: 1
@@ -68,7 +88,7 @@ id: te-en-path
 language: te
 native: en
 units:
-  - [$wordsDeck]
+  - [$wordsDeck${more ? ', $moreDeck' : ''}]
   - [$rudeDeck]
 ''',
   };
@@ -78,12 +98,15 @@ units:
 /// mail and reviewing on when [reviewing] is set.
 Future<AppState> reviewState({
   List<String> authors = const <String>[],
+  bool more = false,
+  TtsEngine tts = const NullTtsEngine(),
   MailShare share = const NullMailShare(),
   bool reviewing = false,
   SettingsNotifier? settings,
 }) async {
   final state = AppState.test(
-    decks: MemoryDeckSource(reviewCourse(authors: authors)),
+    decks: MemoryDeckSource(reviewCourse(authors: authors, more: more)),
+    tts: tts,
     mailShare: share,
     settings:
         settings ??

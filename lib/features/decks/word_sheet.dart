@@ -8,8 +8,13 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
+import '../review/alike_warning.dart';
+import '../review/review_words.dart';
+import 'card_top_line.dart';
+import 'path_model.dart' show isSentence;
+import 'path_parts.dart' show masteryName;
+import 'word_mastery.dart';
 
 /// Opens [card]'s card in a sheet over a unit's screen.
 Future<void> showWordSheet(
@@ -35,11 +40,16 @@ bool isRude(Card card, DeckEntry? deck) =>
 /// setting yet (#96): until there is, a rude word is always hidden.
 bool adultContentOn(AppState state) => false;
 
-/// The card of a word on a unit's screen: its picture, the word and its
-/// reading, how it is said in the IPA, its meaning, its note and its first
-/// example. Where it has a minimal-pair partner, a word that sounds almost
-/// the same, it warns of it; a rude partner is not named unless adult
-/// content is on (docs/plans/offensive-words.md).
+/// The card of a word on a unit's screen: a top line with its id, part of
+/// speech and where the learner stands with it, a speaker and the bug icon;
+/// then its picture, the word and its reading, how it is said in the IPA,
+/// its meaning, its note and its first example.
+///
+/// Where its minimal-pair partner, a word that sounds almost the same, is
+/// rude, it carries the warning the drill cards carry, "Careful when
+/// speaking" ([AlikeWarning]), which names the rude word only with adult
+/// content on (docs/plans/offensive-words.md). Any other partner it names,
+/// as "Sounds like another word".
 class WordSheet extends StatelessWidget {
   const WordSheet({
     super.key,
@@ -52,7 +62,7 @@ class WordSheet extends StatelessWidget {
   final LanguageInfo language;
 
   /// Whether a rude partner is named; by default, whether adult content is
-  /// on. For tests.
+  /// on. For tests, until there is such a setting.
   final bool? showRude;
 
   @override
@@ -65,16 +75,28 @@ class WordSheet extends StatelessWidget {
     final ipa = card.ipa;
     final notes = card.notes;
     final example = card.examples.firstOrNull;
-    final partner = _partner(state);
+    final rudeAlikes = rudeAlikesOf(state, card);
+    final partner = rudeAlikes.isEmpty ? _partner(state) : null;
+    final named = showRude ?? adultContentOn(state);
+    final status = masteryName(
+      l10n,
+      RecentAnswers(state.progress.log).of(card.id),
+      notOpen: isSentence(card) && !state.isTaught(card),
+    );
+    final pos = card.pos;
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: ReportButton(detail: card.id),
+            CardTopLine(
+              text: pos == null
+                  ? l10n.wordSheetLine(card.id, status)
+                  : l10n.wordSheetLinePos(card.id, pos, status),
+              card: card,
+              language: language,
+              report: card.id,
             ),
             if (card.picture != null) ...<Widget>[
               Center(child: CardPicture(card, size: 88)),
@@ -160,14 +182,17 @@ class WordSheet extends StatelessWidget {
                 ),
               ),
             ],
+            for (final alike in rudeAlikes) ...<Widget>[
+              const SizedBox(height: 16),
+              AlikeWarning(
+                kind: alike.kind,
+                named: named ? alike.partner : null,
+                language: language,
+              ),
+            ],
             if (partner != null) ...<Widget>[
               const SizedBox(height: 16),
-              _SoundsLike(
-                partner: partner,
-                language: language,
-                rude: isRude(partner, state.deckOf(partner)),
-                showRude: showRude ?? adultContentOn(state),
-              ),
+              _SoundsLike(partner: partner, language: language),
             ],
           ],
         ),
@@ -188,20 +213,13 @@ class WordSheet extends StatelessWidget {
   }
 }
 
-/// "Sounds almost like కలం (kalam), pen. Take care when you say it." Or for a
-/// rude word with adult content off, the warning without the word.
+/// "Sounds almost like కలం (kalam), pen. Take care when you say it.": a
+/// partner that is not rude. A rude one has [AlikeWarning] instead.
 class _SoundsLike extends StatelessWidget {
-  const _SoundsLike({
-    required this.partner,
-    required this.language,
-    required this.rude,
-    required this.showRude,
-  });
+  const _SoundsLike({required this.partner, required this.language});
 
   final Card partner;
   final LanguageInfo language;
-  final bool rude;
-  final bool showRude;
 
   @override
   Widget build(BuildContext context) {
@@ -212,7 +230,6 @@ class _SoundsLike extends StatelessWidget {
     final named = reading == null
         ? l10n.wordSheetSoundsLikeNoReading(partner.target, partner.native)
         : l10n.wordSheetSoundsLike(partner.target, reading, partner.native);
-    final hidden = rude && !showRude;
     return MergeSemantics(
       child: Container(
         padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 14, 12),
@@ -242,24 +259,11 @@ class _SoundsLike extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text.rich(
-                    hidden
-                        ? TextSpan(text: l10n.wordSheetSoundsRude)
-                        : quotingTarget(named, <String>[
-                            partner.target,
-                          ], language),
+                    quotingTarget(named, <String>[partner.target], language),
                     style: theme.textTheme.bodyMedium!.copyWith(
                       color: scheme.onTertiaryContainer,
                     ),
                   ),
-                  if (rude && showRude) ...<Widget>[
-                    const SizedBox(height: 4),
-                    Text(
-                      l10n.wordSheetSoundsRude,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onTertiaryContainer,
-                      ),
-                    ),
-                  ],
                 ],
               ),
             ),

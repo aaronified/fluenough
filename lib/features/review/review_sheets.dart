@@ -8,8 +8,8 @@ import '../../core/review/deck_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/card_top_line.dart';
 import 'alike_warning.dart';
 import 'review_words.dart';
 
@@ -107,20 +107,13 @@ class ReviewCardSheet extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    pos == null
-                        ? l10n.reviewCardLine(card.id, status)
-                        : l10n.reviewCardLinePos(card.id, pos, status),
-                    style: theme.textTheme.bodySmall!.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-                ReportButton(detail: '${card.id} in ${deck.id}'),
-              ],
+            CardTopLine(
+              text: pos == null
+                  ? l10n.reviewCardLine(card.id, status)
+                  : l10n.reviewCardLinePos(card.id, pos, status),
+              card: card,
+              language: language,
+              report: '${card.id} in ${deck.id}',
             ),
             CardFace(card: card, language: language),
             if (rude) ...<Widget>[
@@ -753,21 +746,9 @@ class _RateSheetState extends State<RateSheet> {
             },
       children: <Widget>[
         Text(l10n.reviewRateQuestion, style: theme.textTheme.titleMedium),
-        const SizedBox(height: 8),
-        Text(
-          score == null ? '' : l10n.reviewRateScore(score),
-          textAlign: TextAlign.center,
-          style: theme.textTheme.headlineSmall,
-        ),
-        Slider(
-          value: (score ?? 5).toDouble(),
-          min: WordRating.minScore.toDouble(),
-          max: WordRating.maxScore.toDouble(),
-          divisions: WordRating.maxScore - WordRating.minScore,
-          label: score == null ? null : '$score',
-          semanticFormatterCallback: (v) => l10n.reviewRateScore(v.round()),
-          onChanged: (v) => setState(() => _score = v.round()),
-        ),
+        const SizedBox(height: 12),
+        _Scale(score: score, onChosen: (n) => setState(() => _score = n)),
+        const SizedBox(height: 4),
         Row(
           children: <Widget>[
             Expanded(child: Text(l10n.reviewRateLow, style: muted)),
@@ -817,6 +798,68 @@ class _RateSheetState extends State<RateSheet> {
               ),
           ],
         ),
+      ],
+    );
+  }
+}
+
+/// The 1 to 9 of "Rate this word", as the design draws it: nine numbers,
+/// one of them chosen, none at first, so that no score is given before the
+/// rater picks one. Each is a 48 by 48 target, so on a phone the nine wrap
+/// onto a second line.
+class _Scale extends StatelessWidget {
+  const _Scale({required this.score, required this.onChosen});
+
+  final int? score;
+  final ValueChanged<int> onChosen;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 4,
+      runSpacing: 4,
+      children: <Widget>[
+        for (var n = WordRating.minScore; n <= WordRating.maxScore; n++)
+          Semantics(
+            inMutuallyExclusiveGroup: true,
+            checked: score == n,
+            button: true,
+            label: l10n.reviewRateScore(n),
+            child: Material(
+              color: score == n
+                  ? scheme.primary
+                  : scheme.surfaceContainerHighest,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(AppRadii.small),
+              ),
+              child: InkWell(
+                onTap: () => onChosen(n),
+                borderRadius: BorderRadius.circular(AppRadii.small),
+                child: SizedBox.square(
+                  dimension: 48,
+                  // The label above says "4 of 9"; the bare number is not
+                  // read as well. The tap stays the InkWell's own.
+                  child: ExcludeSemantics(
+                    child: Center(
+                      child: Text(
+                        '$n',
+                        style: theme.textTheme.titleMedium!.copyWith(
+                          color: score == n
+                              ? scheme.onPrimary
+                              : scheme.onSurface,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
       ],
     );
   }

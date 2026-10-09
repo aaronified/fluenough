@@ -382,9 +382,15 @@ class _Header extends StatelessWidget {
         .nonNulls
         .where((d) => d.isNotEmpty)
         .firstOrNull;
-    final unchecked = decks.where(UnreviewedNotice.appliesTo).firstOrNull;
     final reviewing = AppScope.of(context).reviewing;
     final helped = decks.where(reviewing.helpedBuild).firstOrNull;
+    // Thanks take the place of the notice only on the decks the reviewer
+    // helped build: another deck of the unit still unchecked keeps it.
+    final unchecked = decks
+        .where(
+          (e) => UnreviewedNotice.appliesTo(e) && !reviewing.helpedBuild(e),
+        )
+        .firstOrNull;
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
       child: Column(
@@ -430,7 +436,8 @@ class _Header extends StatelessWidget {
               code: '${reviewing.code}',
               others: reviewing.reviewerCount(helped) - 1,
             ),
-          ] else if (unchecked != null) ...<Widget>[
+          ],
+          if (unchecked != null) ...<Widget>[
             const SizedBox(height: 12),
             UnreviewedNotice(entry: unchecked),
           ],

@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/core/review/deck_review.dart';
+import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/thanks_notice.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/unreviewed_notice.dart';
@@ -12,6 +13,7 @@ import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/review_sheets.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/ui/widgets/speaker.dart';
 
 import '../../support/harness.dart';
 import '../../support/review_fixture.dart';
@@ -165,13 +167,40 @@ void main() {
     }
     final save = find.widgetWithText(FilledButton, l10n.reviewSave);
     expect(tester.widget<FilledButton>(save).onPressed, isNull);
-    // 1 at the start, 9 at the end: 4 is three eighths along.
-    final slider = tester.getRect(find.byType(Slider));
-    await tester.tapAt(
-      Offset(slider.left + 24 + (slider.width - 48) * 3 / 8, slider.center.dy),
-    );
+    // Nine numbers, none chosen until the rater picks one: no score is
+    // given before then, 5 no more than any other.
+    expect(find.byType(Slider), findsNothing);
+    final handle = tester.ensureSemantics();
+    for (var n = 1; n <= 9; n++) {
+      expect(
+        tester.getSemantics(find.bySemanticsLabel(l10n.reviewRateScore(n))),
+        isSemantics(
+          label: l10n.reviewRateScore(n),
+          isButton: true,
+          hasCheckedState: true,
+          isChecked: false,
+          isInMutuallyExclusiveGroup: true,
+          hasTapAction: true,
+        ),
+        reason: '$n',
+      );
+    }
+    expect(find.text(l10n.reviewRateLow), findsOneWidget);
+    expect(find.text(l10n.reviewRateHigh), findsOneWidget);
+    await tester.tap(find.text('4'));
     await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewRateScore(4)), findsOneWidget);
+    expect(
+      tester.getSemantics(find.bySemanticsLabel(l10n.reviewRateScore(4))),
+      isSemantics(
+        label: l10n.reviewRateScore(4),
+        isButton: true,
+        hasCheckedState: true,
+        isChecked: true,
+        isInMutuallyExclusiveGroup: true,
+        hasTapAction: true,
+      ),
+    );
+    handle.dispose();
     await tester.tap(find.text('Coastal Andhra'));
     await tester.tap(find.text(l10n.reviewFriendlySometimes));
     await tester.pumpAndSettle();
@@ -332,5 +361,86 @@ void main() {
     expect(find.byType(UnreviewedNotice), findsNothing);
     expect(find.text(l10n.reviewThanksTitle), findsOneWidget);
     expect(find.text(l10n.reviewThanksBy(1, reviewerCode)), findsOneWidget);
+  });
+
+  testWidgets('beside the thanks, another deck of the unit still unchecked '
+      'keeps its notice', (tester) async {
+    useTallPhone(tester);
+    await pumpScreen(
+      tester,
+      const UnitPage(deckId: wordsDeck),
+      state: await reviewState(
+        authors: const <String>[reviewerCode],
+        more: true,
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['te'],
+          learningChosen: true,
+        )..raterCode = reviewerCode,
+      ),
+    );
+    expect(find.byType(ThanksNotice), findsOneWidget);
+    expect(
+      tester.widget<UnreviewedNotice>(find.byType(UnreviewedNotice)).entry.id,
+      moreDeck,
+    );
+  });
+
+  testWidgets('each row\'s button keeps its own tap for screen readers, '
+      'starts with its word and names its card', (tester) async {
+    useTallPhone(tester);
+    final handle = tester.ensureSemantics();
+    final state = await pumpScreen(
+      tester,
+      const ReviewPage(deckId: wordsDeck),
+      state: await reviewState(reviewing: true),
+    );
+    final l10n = l10nOf(tester);
+    Finder node(String label) => find.bySemanticsLabel(label);
+    expect(
+      tester.getSemantics(node(l10n.reviewCheckFor('mother'))),
+      isSemantics(isButton: true, hasTapAction: true),
+    );
+    expect(node(l10n.reviewCheckFor('widow')), findsOneWidget);
+    // A screen reader's tap marks it right.
+    tester.semantics.tap(find.semantics.byLabel(l10n.reviewCheckFor('mother')));
+    await tester.pumpAndSettle();
+    final words = state.deckById(wordsDeck)!;
+    expect(state.reviewing.reviewOf(words, words.cards.last)!.right, isTrue);
+    expect(
+      tester.getSemantics(node(l10n.reviewRightFor('mother'))),
+      isSemantics(isButton: true, hasTapAction: true),
+    );
+    handle.dispose();
+  });
+
+  testWidgets('a card in review says the word from its top line', (
+    tester,
+  ) async {
+    useTallPhone(tester);
+    final tts = FixedTtsEngine(<String>{'te'});
+    await pumpScreen(
+      tester,
+      const ReviewPage(deckId: wordsDeck),
+      state: await reviewState(reviewing: true, tts: tts),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    final sheet = find.byType(ReviewCardSheet);
+    await tester.tap(
+      find.descendant(of: sheet, matching: find.byType(SpeakerIcon)),
+    );
+    await tester.pumpAndSettle();
+    expect(tts.spoken.single.text, 'అమ్మ');
+    expect(
+      find.descendant(
+        of: sheet,
+        matching: find.text(
+          l10n.reviewCardLine(plainCard, l10n.reviewStateNot),
+        ),
+      ),
+      findsOneWidget,
+    );
   });
 }
