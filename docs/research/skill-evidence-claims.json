@@ -1,0 +1,1316 @@
+[
+ {
+  "angle": "qmatrix",
+  "report": {
+   "claims": [
+    {
+     "claim": "The Q-matrix is a binary item-by-attribute incidence matrix: a 1 where an attribute (skill) is needed to solve the item, a 0 where it is not. It is attributed to Tatsuoka's rule-space work, which modelled misconceptions in fraction arithmetic. It is the standard way to say 'this question judges these skills', and every model below takes it as input.",
+     "source": "Tatsuoka, K. K. (1983). Rule space: An approach for dealing with misconceptions based on item response theory. Journal of Educational Measurement 20(4), 345-354",
+     "url": "https://doi.org/10.1111/j.1745-3984.1983.tb00212.x",
+     "confidence": "Medium",
+     "numbers": "",
+     "population": "US school students, fraction arithmetic",
+     "relevance": "For Fluenough this is a question-type by skill matrix. Example rows: chooseMeaning = {Recognition}, hearMeaning = {Hear, Recognition}, speak = {Say, recall-production}, cloze-typed = {Write, Grammar?}. Write it down explicitly instead of crediting one skill per question type. Secondary sources say other works share credit for the Q-matrix, so do not claim Tatsuoka 1983 invented it."
+    },
+    {
+     "claim": "DINA (deterministic input, noisy AND) is conjunctive: to answer correctly a learner must have mastered ALL the attributes the Q-matrix lists for the item, apart from a slip parameter and a guess parameter. A failure is therefore evidence that at least one required skill is missing.",
+     "source": "Junker, B. W. & Sijtsma, K. (2001). Cognitive assessment models with few assumptions, and connections with nonparametric item response theory. Applied Psychological Measurement 25(3), 258-272",
+     "url": "https://doi.org/10.1177/01466210122032064",
+     "confidence": "Medium",
+     "numbers": "2 parameters per item (slip, guess)",
+     "population": "Methodological (psychometrics)",
+     "relevance": "Fits the questions where every listed skill is needed, e.g. dictation or hear-and-type, which need both hearing and spelling. A wrong answer should spread blame across skills, not put full blame on each one."
+    },
+    {
+     "claim": "DINO (deterministic input, noisy OR) is the compensatory counterpart: one mastered required attribute is enough to answer correctly. It still has only a guess and a slip parameter per item, however many attributes there are.",
+     "source": "Templin, J. L. & Henson, R. A. (2006). Measurement of psychological disorders using cognitive diagnosis models. Psychological Methods 11(3), 287-305",
+     "url": "https://doi.org/10.1037/1082-989X.11.3.287",
+     "confidence": "Medium",
+     "numbers": "",
+     "population": "Diagnosis of pathological gamblers (illustrative)",
+     "relevance": "Fits questions that can be solved through any of several routes, e.g. a meaning question answerable by sound OR by spelling. Under OR logic a success says little about any single skill, so credit per skill should be small."
+    },
+    {
+     "claim": "The Additive Factors Model (AFM), used in Learning Factors Analysis, generalises the Rasch model to learning over time. Success can depend on several skills, linked to items through a Q-matrix. In the standard formulation, the logit adds student ability plus, for EACH skill the item requires, that skill's easiness and its learning rate times the number of prior opportunities. Credit is compensatory and additive, and every tagged skill gets a full practice opportunity.",
+     "source": "Cen, H., Koedinger, K. & Junker, B. (2006). Learning Factors Analysis - A general method for cognitive model evaluation and improvement. ITS 2006, LNCS 4053, 164-175 (Springer)",
+     "url": "https://link.springer.com/chapter/10.1007/11774303_17",
+     "confidence": "Medium",
+     "numbers": "",
+     "population": "Intelligent tutor (geometry) log data",
+     "relevance": "In AFM, one answer increments the opportunity count of every skill in the item, each with its own learning rate. This is the simplest principled replacement for one global .68 weight: a separate gain per (question type, skill) pair, fitted from data."
+    },
+    {
+     "claim": "Performance Factors Analysis (PFA) adapts AFM for adaptive practice. It counts prior successes and prior failures separately per skill, with separate weights, and sums over all the skills tagged to the item. The authors say it was motivated partly because knowledge tracing 'has not been used to capture learning where multiple skills are needed to perform a single action'.",
+     "source": "Pavlik, P. I., Cen, H. & Koedinger, K. R. (2009). Performance Factors Analysis - A new alternative to knowledge tracing. AIED 2009, 531-538 (IOS Press)",
+     "url": "https://eric.ed.gov/?id=ED506305",
+     "confidence": "High",
+     "numbers": "",
+     "population": "Cognitive Tutor (algebra/geometry) data",
+     "relevance": "Separate success and failure weights per skill match the owner's point that one skill partly implies another. A correct Say answer may say a lot about Recognition, while a failed Say says little about Recognition. The weights in the two directions should differ."
+    },
+    {
+     "claim": "Gong, Beck & Heffernan's journal version compares models on predicting individual student practice opportunities. It finds that PFA has considerably higher predictive accuracy than knowledge tracing, with more plausible parameters. Treatment of multi-skill items is one of the design choices compared, but I could not open the text to check how multi-skill items were handled.",
+     "source": "Gong, Y., Beck, J. E. & Heffernan, N. T. (2011). How to construct more accurate student models: Comparing and optimizing knowledge tracing and performance factor analysis. International Journal of Artificial Intelligence in Education 21(1-2), 27-46",
+     "url": "https://journals.sagepub.com/doi/10.3233/JAI-2011-016",
+     "confidence": "Medium",
+     "numbers": "",
+     "population": "ASSISTments (US middle-school math)",
+     "relevance": "Supports a logistic, additive, multi-skill model (PFA/AFM style) over separate per-skill binary trackers. This is relevant to Fluenough's Elo layer, which is logistic."
+    },
+    {
+     "claim": "Conjunctive knowledge tracing addresses blame assignment. When several knowledge components are needed for one correct step, the simple update lowers ALL of them after an error even though only one may be to blame. In tutor logs this caused 'problem selection thrashing'. Applied to those logs, a conjunctive (Bayes-net) update suggests that about a third of assigned problems may have been unnecessary.",
+     "source": "Koedinger, K. R., Pavlik, P. I., Stamper, J., Nixon, T. & Ritter, S. (2011). Avoiding problem selection thrashing with conjunctive knowledge tracing. EDM 2011, 91-100",
+     "url": "https://digitalcommons.memphis.edu/facpubs/7461",
+     "confidence": "High",
+     "numbers": "441 of 1370 problems (about one third) possibly unnecessary",
+     "population": "Cognitive Tutor (math) log data",
+     "relevance": "This is a direct warning for a fixed cross-skill weight on failures. If a failed hear-and-type question lowers Hear AND Write at full weight, the scheduler may keep resurfacing a skill that is fine. Split blame in proportion to how likely each skill is to be the cause."
+    },
+    {
+     "claim": "Knowledge Tracing Machines (factorization machines) contain AFM, PFA and multidimensional IRT as special cases. They handle side information such as multiple knowledge components per item and attempt counts at item or skill level. They estimate knowledge accurately even when data is sparse, on real datasets with tens of thousands of users and items.",
+     "source": "Vie, J.-J. & Kashima, H. (2019). Knowledge Tracing Machines: Factorization machines for knowledge tracing. AAAI-19, 33(01), 750-757",
+     "url": "https://doi.org/10.1609/aaai.v33i01.3301750",
+     "confidence": "High",
+     "numbers": "",
+     "population": "Several public education datasets (math tutors, etc.)",
+     "relevance": "KTM is the general frame: the features of one answer are the word, each skill it touches and per-skill win/fail counts, and an FM learns interactions between them, including skill-skill transfer. It is a fitting target once Fluenough has review logs."
+    },
+    {
+     "claim": "In an independent benchmark (ASSIST2009, Algebra06, EdNet), DAS3H AUC was 0.785 / 0.793 / 0.731 and KTM 0.792 / 0.794 / 0.730. AFM was much lower at 0.624 / 0.699 / 0.641. The search summary noted that the table's headers were partly garbled when extracted.",
+     "source": "Zhang, M., Zhu, X., Zhang, C., Ji, Y., Pan, F. & Yin, C. (2021). Multi-Factors Aware Dual-Attentional Knowledge Tracing. CIKM 2021 (arXiv 2108.04741)",
+     "url": "https://arxiv.org/abs/2108.04741",
+     "confidence": "Medium",
+     "numbers": "AUC DAS3H .785/.793/.731; KTM .792/.794/.730; AFM .624/.699/.641",
+     "population": "ASSIST2009, Algebra 2006-07, EdNet (math / TOEIC English)",
+     "relevance": "Multi-skill models that also track time and per-item difficulty clearly beat additive skill-only models. Per-(word, skill) difficulty plus per-skill ability plus time is the right shape."
+    },
+    {
+     "claim": "DAS3H combines item difficulty, student ability, and per-skill learning and forgetting. For each skill an item involves, it counts past attempts and wins in several time windows, so learning and forgetting curves can differ by skill. A multi-skill item's logit sums these terms over all its skills. The authors state that no earlier knowledge tracing model handled both memory decay and multiple skill tagging. The model beat other state-of-the-art EDM models on 3 real datasets and won the EDM 2019 best full paper award.",
+     "source": "Choffin, B., Popineau, F., Bourda, Y. & Vie, J.-J. (2019). DAS3H: Modeling student learning and forgetting for optimally scheduling distributed practice of skills. EDM 2019 (arXiv 1905.06873)",
+     "url": "https://arxiv.org/abs/1905.06873",
+     "confidence": "High",
+     "numbers": "Repo-reported AUC 0.826 +/- 0.003 (Algebra 2005-06), 0.790 +/- 0.004 (Bridge to Algebra 2006-07); window lengths (I recall 1/24, 1, 7, 30 days and all time) not verified",
+     "population": "Algebra 2005-06, Bridge to Algebra 2006-07 (KDD Cup), ASSISTments 2012 (US math)",
+     "relevance": "This is the closest published analogue to Fluenough: one answer updates several skills' memory traces, and each skill has its own forgetting. It argues for per-skill FSRS stability updates from multi-skill questions, with a decay per skill, e.g. Say may fade faster than Recognition."
+    },
+    {
+     "claim": "Choffin et al. adapt three spacing heuristics to choose which skill to review, and add a multi-skill heuristic that picks the most promising SUBSET of skills. In simulation (cohorts of 500 simulated students) the subset choice gave better retention than choosing only the single best skill.",
+     "source": "Choffin, B., Popineau, F. & Bourda, Y. (2021). Extending adaptive spacing heuristics to multi-skill items. Journal of Educational Data Mining 13(3), 69-102",
+     "url": "https://doi.org/10.5281/zenodo.5634220",
+     "confidence": "High",
+     "numbers": "500 simulated students per cohort; no effect size retrieved",
+     "population": "Simulated learners (DAS3H-based student model)",
+     "relevance": "Supports scheduling question types that exercise several due skills of a word at once, e.g. a hear-and-type question covering due Hear and Write. Evidence is simulated only."
+    },
+    {
+     "claim": "Multidimensional Elo (M-ERS) builds a compensatory multidimensional IRT model into Elo. One response updates SEVERAL ability parameters at once, weighted by the item's loadings on each dimension (Q-matrix with weights). In simulations, unidimensional Elo had much lower prediction accuracy than M-ERS when the data were multidimensional. Adding response speed improved it further.",
+     "source": "Park, J. Y., Cornillie, F., van der Maas, H. L. J. & Van Den Noortgate, W. (2019). A multidimensional IRT approach for dynamically monitoring ability growth in computerized practice environments. Frontiers in Psychology 10:620",
+     "url": "https://doi.org/10.3389/fpsyg.2019.00620",
+     "confidence": "High",
+     "numbers": "3 simulation studies; no exact accuracy figures retrieved",
+     "population": "Simulation plus real data from a math practice platform (not language)",
+     "relevance": "This is the principled form of Fluenough's Elo cross-skill update. Instead of one .68 for every pair, each question type gets a loading vector over skills (e.g. hearMeaning: Hear 1.0, Recognition 0.5), and the Elo error is shared out by those loadings."
+    },
+    {
+     "claim": "M-Elo (Abdi et al.) keeps a separate rating per concept for items tagged with one or more concepts. It beats plain Elo as learners' abilities across concepts become more diverse, i.e. as the simulation's sigma rises. A 2025 comparison found M-Elo converges faster but shows significant bias and lower prediction accuracy than M-ERS. M-ERS was robust to misspecification of the Q-matrix and its weights.",
+     "source": "Abdi, S., Khosravi, H., Sadiq, S. & Gasevic, D. (2019). A multivariate Elo-based learner model for adaptive educational systems. EDM 2019 (arXiv 1910.12581); Vermeiren, Hofman & Bolsinova (2025). Evaluating multidimensional extensions of the Elo rating systems for tracking ability in online learning environments. EDM 2025",
+     "url": "https://arxiv.org/abs/1910.12581",
+     "confidence": "High",
+     "numbers": "",
+     "population": "Simulation; learnersourced course data (Abdi); simulation (Vermeiren)",
+     "relevance": "If Fluenough's skills really differ per learner (e.g. strong reader, weak listener), per-skill ratings are worth having. A weighted compensatory update (M-ERS) is preferable to splitting the update evenly. Robustness to a wrong Q-matrix matters because the weights will be hand-set at first."
+    },
+    {
+     "claim": "On geography-fact data (prior knowledge), basic Elo gave good prediction accuracy. A hierarchical model and a networked model (multivariate Elo, in which an answer on one item also updates related items) improved predictions only slightly. Their main value was information about learners and the domain.",
+     "source": "Nižnan, J., Pelánek, R. & Řihák, J. (2015). Student models for prior knowledge estimation. EDM 2015, 109-116",
+     "url": "https://www.educationaldatamining.org/EDM2015/proceedings/full109-116.pdf",
+     "confidence": "High",
+     "numbers": "'only slightly' better; exact figures not retrieved",
+     "population": "Users of an adaptive geography practice system (Czech, outlinemaps.org)",
+     "relevance": "Spreading credit to related items across items within a skill tends to give small accuracy gains. Do not expect large gains from the cross-skill layer. Validate it on logs before treating it as the backbone."
+    },
+    {
+     "claim": "Half-life regression (HLR) estimates each word's memory half-life from features of the learner's history and lexeme tag features (word difficulty). It cut error by 45%+ over baselines at predicting recall. Each lexeme is a separate indicator feature (in the released data, a lemma with its POS and morphology), so there is no explicit credit-sharing across skills or forms. Exercise formats are pooled into one recall trace.",
+     "source": "Settles, B. & Meeder, B. (2016). A trainable spaced repetition model for language learning. ACL 2016, 1848-1858",
+     "url": "https://doi.org/10.18653/v1/P16-1174",
+     "confidence": "High",
+     "numbers": "45%+ error reduction vs baselines; about 13M learning traces",
+     "population": "Duolingo learners, several L2s",
+     "relevance": "Duolingo's published scheduler does NOT split credit per skill. Different formats all count as exposures of one lexeme. Fluenough's per-skill FSRS plus cross-skill transfer goes beyond HLR, and the size of the transfer has no HLR evidence behind it. The lexeme-level detail is my recollection of the dataset (Medium)."
+    },
+    {
+     "claim": "The Duolingo SLAM corpus has token-level errors for over 6k learners (English, Spanish, French tracks, more than 7M words). Exercise format is a feature of each item. The logistic regression baseline reached AUC .774 on English. The best system reached AUC .861.",
+     "source": "Settles, B., Brust, C., Gustafson, E., Hagiwara, M. & Madnani, N. (2018). Second language acquisition modeling. BEA Workshop at NAACL 2018, 56-65",
+     "url": "https://aclanthology.org/W18-0506/",
+     "confidence": "High",
+     "numbers": "baseline AUC .774 (en); top AUC .861; 15 teams",
+     "population": "Duolingo learners of English (from Spanish), Spanish and French (from English)",
+     "relevance": "This is a public dataset where the same word appears in different formats (I believe reverse_translate, reverse_tap, listen; field names not verified). It could be used to estimate how much success in one format predicts another for the same word, i.e. empirical cross-skill weights."
+    },
+    {
+     "claim": "Fractional Implicit Repetition (FIRe) at Math Academy: practising an advanced topic gives discounted ('fractional') implicit repetition credit to the simpler topics it contains. The credit trickles down the knowledge graph, and choosing reviews that clear other due reviews ('repetition compression') reduces review load. I found no independent or peer-reviewed evaluation.",
+     "source": "Skycak, J. (2023 approx.). Optimized, individualized spaced repetition in hierarchical knowledge structures (blog; The Math Academy Way, draft). Not peer-reviewed",
+     "url": "https://www.justinmath.com/individualized-spaced-repetition-in-hierarchical-knowledge-structures",
+     "confidence": "Medium",
+     "numbers": "none published",
+     "population": "Math Academy students (math)",
+     "relevance": "This is the nearest SRS analogue to 'one skill partially implies others'. A production skill (Say/Write) passed early could give fractional FSRS credit to the receptive skills (Recognition/Hear). It is a design precedent only, not evidence. I could not read the page (proxy blocked) to report its weights."
+    },
+    {
+     "claim": "A controlled study asked whether retrieval practice of translations in one direction transfers to the other. Across 3 experiments, learners practised receptively (L2 to English) or productively (English to L2) to a criterion of 3 correct recalls, then practised the opposite direction. I could not retrieve which direction transferred more, or by how much.",
+     "source": "Bernardi, Vaughn, Dunlosky & Rawson (2024). Toward mastering foreign-language translations: transfer between productive and receptive learning. Memory (PMID 39222444)",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39222444/",
+     "confidence": "Medium",
+     "numbers": "not retrieved",
+     "population": "English-speaking adults learning foreign-language translations (likely Swahili or similar; not verified)",
+     "relevance": "This is the direct empirical source for asymmetric transfer between Recognition and Say/Write. Read the full text to get the trials-to-criterion savings and use them as the cross-skill weight in each direction."
+    },
+    {
+     "claim": "Anki's 'siblings' (cards generated from the same note, such as front-to-back and back-to-front) are not given shared credit. The option only buries siblings for the day to avoid interference. There is no peer-reviewed source for this; it is Anki's documentation and my inference.",
+     "source": "Anki Manual (documentation, not peer-reviewed)",
+     "url": "https://docs.ankiweb.net/studying.html#siblings-and-burying",
+     "confidence": "Low",
+     "numbers": "",
+     "population": "",
+     "relevance": "FSRS as deployed in Anki schedules each direction independently. So Fluenough's cross-skill transfer is an extension beyond FSRS and has to be validated by Fluenough itself."
+    }
+   ],
+   "gaps": [
+    "Full texts could not be opened: the egress proxy blocked arxiv.org, aclanthology.org, educationaldatamining.org, fi.muni.cz, justinmath.com and others. Claims come from abstracts and search summaries. Exact update equations were not read in the papers themselves: DAS3H time windows, the M-ERS weighting formula, M-Elo's split rule and FIRe's discount fractions.",
+    "I found no peer-reviewed study that fits cross-skill weights between receptive, aural and productive word skills inside an SRS or Elo system. The .68 weight (Milton & Hopkins 2006) is a correlation between vocabulary SIZES across learners. It is not a within-word transfer rate per item, and using it as an update weight is an inference.",
+    "Pelánek's own multi-concept Elo variants (e.g. UMUAI 2017 overview; Computers & Education 2016) may treat multi-KC items, but I could not confirm how.",
+    "Bernardi et al. 2024 transfer numbers (receptive vs productive) were not retrieved, and they are the most directly useful figures.",
+    "No head-to-head DAS3H vs single-skill DAS3H on language data was found. Zylich & Lan 'Linguistic skill modeling for SLA' (LAK 2021) and Ma et al. 'Each encounter counts' (LAK 2023) exist but their results were not retrieved.",
+    "I found no source evaluating asymmetric credit, i.e. a success giving credit to other skills while a failure spreads little blame. It is supported only indirectly by PFA's separate success/failure weights and by Koedinger et al. 2011 on blame.",
+    "Recommended next step: once logs exist, fit a PFA/KTM-style model with per-(question type, skill) Q-matrix weights. Alternatively, estimate cross-format transfer on the public Duolingo SLAM data, instead of using a single literature weight."
+   ]
+  },
+  "verdict": {
+   "checked": [
+    {
+     "claim": "Q-matrix is a binary item-by-attribute matrix attributed to Tatsuoka's rule-space work, which modelled misconceptions in fraction arithmetic",
+     "source": "Tatsuoka, K. K. (1983). Rule space. Journal of Educational Measurement 20(4), 345-354",
+     "status": "corrected",
+     "correction": "The citation is correct: JEM 20(4), 345-354. The 1983 abstract describes rule space as a way to classify misconceptions by combining IRT with Lee's (1983) algebraic database theory. The fraction work is mainly in Tatsuoka's 1984 technical report on fraction addition and subtraction (20 items, 536 middle-school students) and in later papers such as 'Bug distribution and statistical pattern classification' (Psychometrika, 1987), which uses fraction arithmetic. I could not confirm that the 1983 article itself uses fractions or prints a Q-matrix. The standard 20x8 fraction-subtraction Q-matrix comes from the 1984 data, as reproduced by de la Torre & Douglas (2004) and DeCarlo (2011). Cite Tatsuoka 1983 for rule space and the 1984 report for the fraction Q-matrix. Confidence: Medium (secondary sources only).",
+     "url": "https://doi.org/10.1111/j.1745-3984.1983.tb00212.x"
+    },
+    {
+     "claim": "DINA is conjunctive: all required attributes are needed, apart from one slip and one guess parameter per item",
+     "source": "Junker & Sijtsma (2001). Applied Psychological Measurement 25(3), 258-272",
+     "status": "confirmed",
+     "correction": "The citation is correct. The abstract describes a 'stochastic conjunctive relationship' between attributes and task performance. Secondary sources (GDINA manual, CDM texts) confirm that DINA has only two parameters per item, whatever the number of attributes K. Medium for the parameter count, from secondary sources. The Fluenough inference that a failure should spread blame across skills is the claimant's own.",
+     "url": "https://doi.org/10.1177/01466210122032064"
+    },
+    {
+     "claim": "DINO (noisy OR) is the compensatory counterpart with guess/slip per item; illustrated on pathological gamblers",
+     "source": "Templin & Henson (2006). Psychological Methods 11(3), 287-305",
+     "status": "confirmed",
+     "correction": "The citation and DOI are correct. The abstract introduces DINO ('deterministic input, noisy or gate') and illustrates it by diagnosing pathological gamblers against the DSM-IV-TR criteria. The two parameters per item (guess and slip) are a standard secondary description; the abstract I saw does not state it. Medium.",
+     "url": "https://doi.org/10.1037/1082-989X.11.3.287"
+    },
+    {
+     "claim": "AFM/LFA: logit = student ability + sum over Q-matrix skills of (easiness + learning rate x prior opportunities); geometry tutor data",
+     "source": "Cen, Koedinger & Junker (2006). ITS 2006, LNCS 4053, 164-175",
+     "status": "confirmed",
+     "correction": "The citation and pages are correct. The abstract describes LFA as combining a statistical model, human expertise and combinatorial search. I could not read the AFM equation in the text, so the formula and the geometry dataset are confirmed only from secondary knowledge (Medium). Note that the abstract presents LFA as a method for evaluating cognitive models. AFM is its statistical component.",
+     "url": "https://link.springer.com/chapter/10.1007/11774303_17"
+    },
+    {
+     "claim": "PFA counts prior successes and failures per skill; motivated because KT 'has not been used to capture learning where multiple skills are needed to perform a single action'",
+     "source": "Pavlik, Cen & Koedinger (2009). AIED 2009, 531-538, IOS Press",
+     "status": "confirmed",
+     "correction": "The quote appears verbatim in the abstract. The abstract also describes 'a logistic regression equation that models changes in performance in terms of the number of student successes and failures ... for each skill'. The canonical record is DOI 10.3233/978-1-60750-028-5-531. I could not verify the ERIC ID ED506305; a better repository link is digitalcommons.memphis.edu/facpubs/8350. The population (Cognitive Tutor algebra/geometry) was not verified. The claimant's Say/Recognition example is inference.",
+     "url": "https://ebooks.iospress.nl/doi/10.3233/978-1-60750-028-5-531"
+    },
+    {
+     "claim": "Gong, Beck & Heffernan 2011: PFA has considerably higher predictive accuracy than KT, with more plausible parameters; ASSISTments",
+     "source": "Gong, Beck & Heffernan (2011). IJAIED 21(1-2), 27-46",
+     "status": "confirmed",
+     "correction": "The abstract states that PFA 'has considerably higher predictive accuracy than KT' and that its 'parameter estimates were more plausible'. On multi-skill items, a summary of the issue (not the abstract) reports that the best model was a PFA variant that ignored the tutor's transfer model, i.e. it assumed every skill affects every problem. That is relevant: a hand-made Q-matrix was not the best performer. I did not verify the page numbers 27-46. Medium for the multi-skill detail.",
+     "url": "https://journals.sagepub.com/doi/10.3233/JAI-2011-016"
+    },
+    {
+     "claim": "Conjunctive KT avoids problem selection thrashing; 441 of 1370 problems possibly unnecessary",
+     "source": "Koedinger, Pavlik, Stamper, Nixon & Ritter (2011). EDM 2011, 91-100",
+     "status": "confirmed",
+     "correction": "The abstract confirms the claim: a simple update lowers all knowledge components (KCs) after an error, thrashing was seen in tutor logs, and the conjunctive (Bayes-net and psychometrics) approach suggests that 441 of 1,370 assigned problems may have been unnecessary. The 'math' population was not verified from the abstract.",
+     "url": "https://digitalcommons.memphis.edu/facpubs/7461"
+    },
+    {
+     "claim": "Knowledge Tracing Machines subsume AFM, PFA, MIRT; handle multiple KCs and attempt counts; accurate on sparse data with tens of thousands of users and items",
+     "source": "Vie & Kashima (2019). AAAI-19 33(01), 750-757",
+     "status": "confirmed",
+     "correction": "The abstract confirms all of this: factorization machines contain several existing educational models as special cases, they handle side information such as multiple knowledge components and attempt counts, and they estimate knowledge accurately and quickly with sparse data on real datasets of tens of thousands of users and items. arXiv: 1811.03388.",
+     "url": "https://doi.org/10.1609/aaai.v33i01.3301750"
+    },
+    {
+     "claim": "MF-DAKT benchmark AUC: DAS3H .785/.793/.731; KTM .792/.794/.730; AFM .624/.699/.641",
+     "source": "Zhang et al. (2021). CIKM 2021, arXiv 2108.04741",
+     "status": "confirmed",
+     "correction": "Table 2, as extracted from search, gives exactly these AUCs (ASSIST2009 / Algebra06 / EdNet): AFM .624/.699/.641, PFA .705/.741/.655, KTM .792/.794/.730, DAS3H .785/.793/.731, MF-DAKT .851/.844/.776. The EdNet column header was garbled in extraction. The paper's text gives KTM on EdNet as 73.1%, so KTM and DAS3H may be swapped in that column. All baselines were run by the MF-DAKT authors, and the dataset statistics differ from other papers. DOI 10.1145/3459637.3482372. Caveat: KTM and DAS3H beat AFM by a lot, but they are within about 0.01 AUC of each other, so the time-window features add little over KTM here. That weakens the conclusion that time 'clearly' helps.",
+     "url": "https://arxiv.org/abs/2108.04741"
+    },
+    {
+     "claim": "DAS3H: item difficulty, ability, per-skill learning/forgetting over time windows; no earlier KT model handled both memory decay and multiple skill tagging; beat SOTA on 3 datasets; EDM 2019 best full paper; repo AUC 0.826/0.790; windows 1/24,1,7,30,inf",
+     "source": "Choffin, Popineau, Bourda & Vie (2019). EDM 2019, arXiv 1905.06873",
+     "status": "corrected",
+     "correction": "The abstract confirms the model description, the sentence 'no knowledge tracing model takes both memory decay and multiple skill tagging into account', the 3 real datasets and the out-performance claim. The EDM 2019 awards page and a RIKEN AIP notice confirm the Best (Full) Paper Award. I could NOT verify the repo-reported AUCs (0.826 ± 0.003 and 0.790 ± 0.004) or the window lengths (1/24, 1, 7, 30 days, all time), so treat those as unsupported until the GitHub README or Table 3 of the paper is read.",
+     "url": "https://arxiv.org/abs/1905.06873"
+    },
+    {
+     "claim": "Choffin et al. 2021 extend spacing heuristics to multi-skill items; subset selection beats single best skill in simulation; 500 simulated students per cohort",
+     "source": "Choffin, Popineau & Bourda (2021). JEDM 13(3), 69-102",
+     "status": "corrected",
+     "correction": "The paper exists (JEDM 13(3), 2021; HAL hal-03418179; JEDM article 510). The abstract confirms that three spacing heuristics were adapted, multi-skill variants that select a subset of skills were added for two of them (five heuristics in total), and in a simulation of learning and forgetting, a well-chosen subset gave better retention than the single best skill. I could NOT verify the '500 simulated students per cohort', the pages 69-102 or the Zenodo DOI 10.5281/zenodo.5634220. The canonical URL is https://jedm.educationaldatamining.org/index.php/JEDM/article/view/510.",
+     "url": "https://jedm.educationaldatamining.org/index.php/JEDM/article/view/510"
+    },
+    {
+     "claim": "M-ERS: compensatory MIRT in Elo, multiple abilities updated at once; unidimensional Elo much lower accuracy on multidimensional data; response speed helps further",
+     "source": "Park, Cornillie, van der Maas & Van Den Noortgate (2019). Frontiers in Psychology 10:620",
+     "status": "confirmed",
+     "correction": "The abstract confirms the claim: there were 3 simulation studies, the unidimensional version had 'seriously lower prediction accuracy' than M-ERS, and modelling response speed together with accuracy improved performance. The real data came from a popular platform for practising math skills. The abstract does not give exact accuracy figures.",
+     "url": "https://doi.org/10.3389/fpsyg.2019.00620"
+    },
+    {
+     "claim": "M-Elo (Abdi 2019) beats plain Elo as abilities across concepts become more diverse (sigma rises); Vermeiren 2025: M-Elo converges faster but has significant bias and lower accuracy than M-ERS; M-ERS robust to Q-matrix misspecification",
+     "source": "Abdi, Khosravi, Sadiq & Gasevic (2019) EDM 2019 / arXiv 1910.12581; Vermeiren, Hofman & Bolsinova (2025) EDM 2025",
+     "status": "corrected",
+     "correction": "The Vermeiren et al. 2025 part is confirmed by its abstract: MELO converges faster but 'exhibits significant bias and lower prediction accuracy' than MERS, MERS is robust to misspecification of the Q-matrix and its weights, and both beat unidimensional Elo on multidimensional data. The study used simulation only. For Abdi et al. 2019, the abstract says only that the model has superior predictive performance over standard Elo on synthetic and public data, 'but the difference is rather small'. I could NOT verify the claim that it wins more as sigma rises. Report the gain as small. Vermeiren 2025 URL: https://educationaldatamining.org/EDM2025/proceedings/2025.EDM.long-papers.99/index.html",
+     "url": "https://arxiv.org/abs/1910.12581"
+    },
+    {
+     "claim": "On geography data basic Elo gave good accuracy; hierarchical and networked (multivariate Elo) models improved predictions only slightly; main value is information about students and domain",
+     "source": "Nizan, Pelanek & Rihak (2015). EDM 2015, 109-116",
+     "status": "confirmed",
+     "correction": "The abstract confirms the claim. It compares four models (Elo, a Bayesian extension of Elo, a hierarchical model, and a networked model, multivariate Elo) on data from a geography-learning application: basic Elo performs well and the complex models improve predictions 'only slightly', being more useful for insight into students and the domain. The repository lists the author order as Rihak, Pelanek, Niznan (Nižnan, Pelánek, Řihák in the claim's order), so check the PDF. No numbers are in the abstract.",
+     "url": "https://www.educationaldatamining.org/EDM2015/proceedings/full109-116.pdf"
+    },
+    {
+     "claim": "HLR estimates per-word half-life from history and lexeme features; 45%+ error reduction; Duolingo; formats pooled, no cross-skill credit",
+     "source": "Settles & Meeder (2016). ACL 2016, 1848-1858",
+     "status": "confirmed",
+     "correction": "The abstract and the ACL Anthology confirm the citation, the pages, the Duolingo data and the '45%+' error reduction versus several baselines at predicting student recall rates. I did not verify the '13M learning traces' or the lexeme-tag and format-pooling details (Medium or Low). The statement that HLR has no cross-skill credit is the claimant's inference.",
+     "url": "https://doi.org/10.18653/v1/P16-1174"
+    },
+    {
+     "claim": "SLAM 2018: >6k learners, 3 tracks, >7M words; exercise format a feature; baseline AUC .774 (en); top AUC .861; 15 teams",
+     "source": "Settles, Brust, Gustafson, Hagiwara & Madnani (2018). BEA Workshop at NAACL 2018, 56-65",
+     "status": "confirmed",
+     "correction": "The citation, pages, 3 tracks and 15 teams are confirmed. Secondary papers confirm about 6.4k learners (en 2.6k, es 2.6k, fr 1.2k). Their token tables sum to about 7.1M (my arithmetic). They also confirm exercise formats reverse_translate, reverse_tap and listen as a per-exercise field, the English-track baseline AUC .774, and the English-track best AUC .861 (Spanish .835, French .854). The figures come from Vie 2018 (W18-0545), a Stanford report and a poster, not from the overview paper itself (Medium). The data covers each learner's first 30 days only.",
+     "url": "https://aclanthology.org/W18-0506/"
+    },
+    {
+     "claim": "FIRe at Math Academy: practising an advanced topic gives discounted implicit credit to the topics it contains; repetition compression; no peer-reviewed evaluation",
+     "source": "Skycak (blog; The Math Academy Way)",
+     "status": "confirmed",
+     "correction": "Skycak's post (search excerpt) confirms trickle-down implicit repetitions that are discounted ('fractional') and the selection of reviews that knock out other due reviews. No formula or weights are published in what I saw, and I found no peer-reviewed evaluation. This is a design precedent only, as the claimant says.",
+     "url": "https://www.justinmath.com/individualized-spaced-repetition-in-hierarchical-knowledge-structures"
+    },
+    {
+     "claim": "Bernardi et al. 2024: 3 experiments, receptive or productive practice to a criterion of 3 correct, then the opposite direction; direction and size of transfer not retrieved",
+     "source": "Bernardi, Vaughn, Dunlosky & Rawson (2024). Memory, PMID 39222444",
+     "status": "corrected",
+     "correction": "The design is confirmed (3 experiments, dropout to 3 correct recalls, then the opposite direction to the same criterion). The abstract does give the headline result: across all experiments transfer was PARTIAL (practice in one direction did not remove the need to practise the other), and transfer occurred whichever direction came first. The abstract reports no clear asymmetry and no savings figures. Population and language (Swahili?) are not verified. The full text is needed for trials-to-criterion savings.",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39222444/"
+    },
+    {
+     "claim": "Anki siblings get no shared credit; burying only hides them for the day",
+     "source": "Anki Manual",
+     "status": "confirmed",
+     "correction": "The manual confirms that siblings are cards from the same note and that burying hides new or review siblings until the next day (learning cards are never buried), with separate options for new and review cards. The manual does not describe any shared scheduling credit, so 'no shared credit' is a reasonable inference (Low or Medium). The current URL is docs.ankiweb.net/studying.html.",
+     "url": "https://docs.ankiweb.net/studying.html#siblings-and-burying"
+    }
+   ]
+  }
+ },
+ {
+  "angle": "transfer",
+  "report": {
+   "claims": [
+    {
+     "claim": "Form-meaning knowledge has four strength levels that form a difficulty hierarchy: active recall (supply the L2 word from the meaning) is hardest, then passive recall (supply the meaning of the L2 word), then active recognition (pick the L2 word), then passive recognition (pick the meaning) is easiest. The abstract says the hierarchy held at every word-frequency level. The authors framed the levels as an implicational scale: knowing a word at a harder level implies knowing it at the easier ones.",
+     "source": "Laufer, B. & Goldstein, Z. (2004). Testing vocabulary knowledge: Size, strength, and computer adaptiveness. Language Learning 54(3), 399-436. DOI 10.1111/j.0023-8333.2004.00260.x",
+     "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0023-8333.2004.00260.x",
+     "confidence": "Medium",
+     "numbers": "N = 435 high-school and university EFL learners (secondary sources say mostly L1 Hebrew); 30 words per frequency band plus Academic Word List items. A secondary summary says passive recall had the highest correlation with L2 achievement (.65); not checked against the paper. Scale reproducibility and scalability coefficients not found.",
+     "population": "L2 English learners in Israel, mostly L1 Hebrew, high school and university",
+     "relevance": "This hierarchy is the main basis for asymmetric, directional transfer between skills. Mapped to app skills: typing the word (Write type, and Say) = active recall; chooseWord, cloze choose and rearrange = active recognition; recalled meaning (recognition self-rated reveal, hear-and-type meaning) = passive recall; chooseMeaning, matchPairs and hearMeaning = passive recognition. A pass at a harder level should raise the easier skills a lot. A pass at an easier level should raise the harder skills only a little. A fail at an easier level is strong evidence that the harder skills would fail too. One symmetric weight (.68) does not capture this."
+    },
+    {
+     "claim": "Across four word-knowledge components (form-meaning link, derivatives, multiple meanings, collocations), recognition knowledge of every component came before recall knowledge of any component. Implicational scaling found a consistent order of acquisition, and the components were closely related to one another.",
+     "source": "González-Fernández, B. & Schmitt, N. (2020). Word knowledge: Exploring the relationships and order of acquisition of vocabulary knowledge components. Applied Linguistics 41(4), 481-505. DOI 10.1093/applin/amy057 (one secondary source gives amy052)",
+     "url": "https://academic.oup.com/applij/article-abstract/41/4/481/5270836",
+     "confidence": "Medium",
+     "numbers": "N = 144 L1 Spanish learners of English; 8 measures (4 components x recognition/recall). Correlation values and scaling coefficients not retrieved (publisher page unreachable from this environment).",
+     "population": "Adult L1 Spanish EFL learners, mixed proficiency",
+     "relevance": "Supports a one-way rule: success in recall implies recognition, but recognition does not imply recall. Grammar recognition (choose the form) should come before grammar recall (type the form), and a typed grammar form should credit the choose-form skill."
+    },
+    {
+     "claim": "A follow-up with a larger, cross-L1 sample found the same order: recognition came before recall for every component, and the order of acquisition was consistent across L1 backgrounds.",
+     "source": "González-Fernández, B. (2025). How is vocabulary learnt? An acquisitional sequence of L2 word knowledge. TESOL Quarterly. DOI 10.1002/tesq.3342",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/tesq.3342",
+     "confidence": "Medium",
+     "numbers": "N = 314 EFL learners, L1 Chinese and L1 Spanish",
+     "population": "EFL learners, L1 Chinese and Spanish",
+     "relevance": "Suggests the recognition-before-recall implication holds across languages. This matters because Fluenough teaches many target languages and has learners with different L1s."
+    },
+    {
+     "claim": "Phonological (aural) and orthographic (written) receptive vocabulary sizes correlated at 0.68. They do not grow in proportion: at the start of learning, aural vocabulary is often larger than written vocabulary, but written vocabulary then grows faster and is larger at intermediate and advanced levels. L1 Arabic learners were slower to build written vocabulary.",
+     "source": "Milton, J. & Hopkins, N. (2006). Comparing phonological and orthographic vocabulary size: Do vocabulary tests underestimate the knowledge of some learners? Canadian Modern Language Review 63(1), 127-147. DOI 10.1353/cml.2006.0048",
+     "url": "https://www.researchgate.net/publication/249909133_Comparing_Phonological_and_Orthographic_Vocabulary_Size_Do_Vocabulary_Tests_Underestimate_the_Knowledge_of_Some_Learners",
+     "confidence": "High",
+     "numbers": "r = 0.68 between AuralLex and X-Lex (yes/no tests); N = 126 (38 L1 Arabic, 88 L1 Greek)",
+     "population": "L1 Greek and L1 Arabic learners of English, beginner to advanced",
+     "relevance": "This is the source of the app's .68 weight. It is a person-level correlation of overall vocabulary size, not a word-level transfer rate. It measures receptive aural vs receptive written recognition only, which is closest to Hear vs Recognition in the app and says nothing about Say or Write. The aural-written gap also depends on proficiency and script (Arabic speakers were slower on written forms), so for learners of Indic scripts, Hear should lead Recognition early on rather than be tied to it symmetrically."
+    },
+    {
+     "claim": "Aural vocabulary size (AuralLex) predicted IELTS listening better than written vocabulary size (X-Lex), and AuralLex also correlated with IELTS speaking. In this smaller sample, aural and written size correlated only at about .46.",
+     "source": "Milton, J., Wade, J. & Hopkins, N. (2010). Aural word recognition and oral competence in English as a foreign language. In Chacón-Beltrán et al. (eds.), Insights into Non-native Vocabulary Teaching and Learning, Multilingual Matters, 83-98. DOI 10.21832/9781847692900-007",
+     "url": "https://www.degruyterbrill.com/document/doi/10.21832/9781847692900-007/html?lang=en",
+     "confidence": "Medium",
+     "numbers": "AuralLex with IELTS listening r = .67; X-Lex with IELTS listening r = .48; AuralLex with IELTS speaking r = .71; AuralLex with X-Lex r = .46 (per a secondary review)",
+     "population": "EFL learners (small sample, details not retrieved)",
+     "relevance": "Aural word knowledge goes with oral skills (listening and speaking) more closely than written knowledge does. This argues for a larger cross-weight between Hear and Say than between Hear and Write, and shows that the aural-written link (.46 to .68) varies a lot from study to study."
+    },
+    {
+     "claim": "Studies that measured receptive written and aural vocabulary directly report correlations from moderate to very high. No meta-analysis pooling aural-written vocabulary correlations was found; the expected 'Uchihara et al. ~2024' meta-analysis of aural vs written vocabulary could not be located.",
+     "source": "Masrai, A. (2019/2020). Exploring the impact of individual differences in aural vocabulary knowledge, written vocabulary knowledge and working memory capacity on explaining L2 learners' listening comprehension (journal details not verified). And: Exploring the relationships between various dimensions of receptive vocabulary knowledge and L2 listening and reading comprehension (2021), Language Testing in Asia 11, DOI 10.1186/s40468-021-00131-8",
+     "url": "https://link.springer.com/article/10.1186/s40468-021-00131-8",
+     "confidence": "Medium",
+     "numbers": "Masrai: written-aural receptive r = .58 (p < .001). Language Testing in Asia 2021: orthographic-aural r = .88 (SEM latent correlation, N = 234 Chinese EFL students).",
+     "population": "Saudi (Masrai) and Chinese university EFL learners",
+     "relevance": "Puts .68 in context: reported values run from .46 to .88, and latent (error-corrected) correlations are higher. Treat .68 as a midpoint, not a settled constant."
+    },
+    {
+     "claim": "Meta-analysis: overall vocabulary knowledge correlates about .57 with L2 reading and .56 with L2 listening. All three form-meaning mastery levels (meaning recognition, meaning recall, form recall) correlate moderately to highly with both. Meaning recall correlates most strongly with reading, and form recall most strongly with listening. Written vocabulary measures predict reading better; aural measures predict listening better.",
+     "source": "Zhang, S. & Zhang, X. (2022; online 2020). The relationship between vocabulary knowledge and L2 reading/listening comprehension: A meta-analysis. Language Teaching Research 26(4), 696-725. DOI 10.1177/1362168820913998",
+     "url": "https://journals.sagepub.com/doi/10.1177/1362168820913998",
+     "confidence": "High",
+     "numbers": "276 effect sizes, more than 100 studies, about 21,000 learners. r = .57 with reading, r = .56 with listening; disattenuated range .56-.67 (31%-45% of variance). Per-mode coefficients not retrieved; for reading, meaning recall > form recall > meaning recognition.",
+     "population": "L2 learners across many L1s and L2s (mostly EFL)",
+     "relevance": "Reading-passage questions are evidence about written-meaning skills (Recognition, especially recall). Listening content is evidence about Hear. The skill whose test matches the modality is the best predictor, which supports weighting answers by modality match rather than with one shared weight."
+    },
+    {
+     "claim": "Meaning recall and meaning recognition behave as separate constructs. In regression on reading proficiency, meaning recall added significant unique variance beyond recognition, but recognition added nothing beyond recall.",
+     "source": "Stewart, J., Gyllstad, H., Nicklin, C. & McLean, S. (2024). Establishing meaning recall and meaning recognition vocabulary knowledge as distinct psychometric constructs in relation to reading proficiency. Language Testing 41(1), 89-108. DOI 10.1177/02655322231162853",
+     "url": "https://doi.org/10.1177/02655322231162853",
+     "confidence": "Medium",
+     "numbers": "Factor-fit and correlation values not retrieved",
+     "population": "Japanese university EFL learners (TOEIC-based sample, not verified)",
+     "relevance": "Gives a direction: the recall result (self-rated reveal, typed meaning) contains the recognition information but not the reverse. A correct multiple-choice answer (chooseMeaning, matchPairs) should count for less, and should move the recall estimate less, than a correct recall."
+    },
+    {
+     "claim": "For aural (phonological) vocabulary, meaning recognition and meaning recall load on one 'declarative' factor. A timed lexicosemantic judgment task (judging whether a heard word is used correctly in a sentence) loads on a separate 'automatized' factor and best predicts real listening comprehension (TOEIC).",
+     "source": "Uchihara, T., Saito, K., Kurokawa, S., Takizawa, K. & Suzukida, Y. (2025). Declarative and automatized phonological vocabulary knowledge: Recognition, recall, lexicosemantic judgment, and listening-focused employability of second language words. Language Learning 75(2), 458-492. DOI 10.1111/lang.12668",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1111/lang.12668",
+     "confidence": "Medium",
+     "numbers": "N = 114 L1 Japanese learners of English; SEM with two latent factors (exact loadings not retrieved; the paper has a 2026 correction)",
+     "population": "Japanese university EFL learners",
+     "relevance": "Within Hear, choosing a heard word's meaning and typing it are close to interchangeable (one factor), so they can share one schedule. Fast, in-context listening (heard words inside sentences or passages) is a further level that isolated-word recognition does not imply. This is probably the closest Uchihara work to what the brief asked for; it is not a meta-analysis."
+    },
+    {
+     "claim": "Productive phonological vocabulary (partial dictation) correlated more strongly with listening than with reading. Productive written vocabulary correlated about equally with both.",
+     "source": "Cheng, J. & Matthews, J. (2018). The relationship between three measures of L2 vocabulary knowledge and L2 listening and reading. Language Testing 35(1), 3-25. DOI 10.1177/0265532216676851",
+     "url": "https://dx.doi.org/10.1177/0265532216676851",
+     "confidence": "Medium",
+     "numbers": "N = 250 EFL students. Productive phonological with listening r = .71, with reading r = .46. Productive orthographic with listening r = .55, with reading r = .57 (from citing studies; secondary sources disagree slightly on the reading figure).",
+     "population": "Chinese university EFL learners",
+     "relevance": "Dictation (hear the word, type it) is a productive phonological task and is the best vocabulary predictor of listening. It is evidence for Hear and for spelling (Write type), so one dictation answer could update both."
+    },
+    {
+     "claim": "Receptive vocabulary (L2 to L1 translation) was larger than productive vocabulary (L1 to L2 translation). With full-knowledge scoring, the gap widened as word frequency fell. With partial-knowledge scoring, there was little difference. Learners with larger receptive vocabularies also knew more of those words productively.",
+     "source": "Webb, S. (2008). Receptive and productive vocabulary sizes of L2 learners. Studies in Second Language Acquisition 30(1), 79-95. DOI 10.1017/S0272263108080042",
+     "url": "https://www.researchgate.net/publication/231866684_Receptive_and_productive_vocabulary_sizes_of_L2_learners",
+     "confidence": "High",
+     "numbers": "N = 83 L1 Japanese second-year EFL university students; bands 701-1,900, 1,901-3,400, 3,401-6,600. A secondary source gives the productive-to-receptive ratio as 77% (not verified); reviews give 50-80% across studies.",
+     "population": "Japanese university EFL learners",
+     "relevance": "Knowing a word receptively predicts productive knowledge only partly (roughly 50-80%), and less for rarer words. Credit from Recognition to Write or Say should be smaller for low-frequency words. Partial credit (near-misses in typed or spoken answers) closes much of the gap."
+    },
+    {
+     "claim": "Passive (receptive) vocabulary was always significantly larger than controlled active and free active vocabulary. The gap was smaller for foreign-language learners in Israel than for second-language learners in Canada, and it narrowed only after about two years of living in the L2 setting. A companion study found that passive and controlled active sizes correlated well, but free active (spontaneous use in writing) did not correlate with either.",
+     "source": "Laufer, B. & Paribakht, T. S. (1998). The relationship between passive and active vocabularies: Effects of language learning context. Language Learning 48(3), 365-391. DOI 10.1111/0023-8333.00046. Companion: Laufer, B. (1998). The development of passive and active vocabulary in a second language: Same or different? Applied Linguistics 19(2), 255-271",
+     "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/0023-8333.00046",
+     "confidence": "Medium",
+     "numbers": "N = 79 (Israel) and N = 103 (Canada) adult EFL/ESL learners. Correlation coefficients not retrieved.",
+     "population": "Adult learners of English, L1 Hebrew/Arabic (Israel) and mixed L1 (Canada)",
+     "relevance": "Controlled production (typing a word when prompted) follows receptive knowledge closely. Free production does not. Inside the app, all production is prompted, so a moderate cross-weight from Recognition to Write is defensible. It should not be taken to mean free speaking ability."
+    },
+    {
+     "claim": "Direction of learning matters. Productive learning of word pairs gave larger gains in orthography (both receptive and productive) and in productive knowledge of meaning, syntax and grammatical functions. Receptive learning was better only for receptive knowledge of meaning. Webb concludes that if only one method is used, productive learning may be more effective.",
+     "source": "Webb, S. (2009). The effects of receptive and productive learning of word pairs on vocabulary knowledge. RELC Journal 40(3), 360-376. DOI 10.1177/0033688209343854",
+     "url": "https://journals.sagepub.com/doi/10.1177/0033688209343854",
+     "confidence": "High",
+     "numbers": "10 test formats per word across 5 aspects; scores and effect sizes not retrieved",
+     "population": "Japanese EFL learners",
+     "relevance": "Direct evidence of asymmetric transfer between practice directions. Practicing production (chooseWord, typing, Say) transfers to receptive skills. Practicing reception transfers to production less. So the transfer weight from Write/Say to Recognition should be larger than the weight from Recognition to Write/Say."
+    },
+    {
+     "claim": "When time on task was equal, a productive task (writing sentences with target words) produced more receptive and more productive knowledge than a receptive task (reading glossed sentences).",
+     "source": "Webb, S. (2005). Receptive and productive vocabulary learning: The effects of reading and writing on word knowledge. Studies in Second Language Acquisition 27(1), 33-52. DOI 10.1017/S0272263105050023",
+     "url": "https://eric.ed.gov/?id=EJ777295",
+     "confidence": "Medium",
+     "numbers": "Effect sizes not retrieved",
+     "population": "Japanese EFL learners",
+     "relevance": "Supports the same direction as Webb 2009: success at production is good evidence of receptive knowledge as well."
+    },
+    {
+     "claim": "Across a review of word-list learning experiments, receptive learning is easier and gives higher receptive scores. Scores are highest when the direction of learning matches the direction of testing. Productive learning yields a considerable amount of receptive knowledge, while receptive learning yields less productive knowledge.",
+     "source": "Mondria, J.-A. & Wiersma, B. (2004). Receptive, productive, and receptive + productive L2 vocabulary learning: What difference does it make? In Bogaards & Laufer (eds.), Vocabulary in a Second Language, John Benjamins, 79-100. DOI 10.1075/lllt.10.08mon",
+     "url": "https://www.degruyterbrill.com/document/doi/10.1075/lllt.10.08mon/html?lang=en",
+     "confidence": "Medium",
+     "numbers": "Not retrieved",
+     "population": "Dutch secondary-school learners of French (from memory of the chapter; not verified here)",
+     "relevance": "Another source for asymmetric transfer: productive success should credit receptive skills strongly, receptive success should credit productive skills weakly. Because of the direction-matching effect, each skill still needs its own schedule; cross-skill credit should be partial, not full."
+    },
+    {
+     "claim": "For idioms learned as paired associates, direction of learning affected performance, with an especially large effect on the productive test that persisted at a 3-week delayed test. Productive learners did better on productive tests, and receptive learners did better on receptive tests.",
+     "source": "Steinel, M. P., Hulstijn, J. H. & Steinel, W. (2007). Second language idiom learning in a paired-associate paradigm: Effects of direction of learning, direction of testing, idiom imageability, and idiom transparency. Studies in Second Language Acquisition 29(3), 449-484. DOI 10.1017/S0272263107070271",
+     "url": "https://www.researchgate.net/publication/38306117_Second_language_idiom_learning_in_a_paired-associate_paradigm_Effects_of_direction_of_testing_idiom_imageability_and_idiom_transparency",
+     "confidence": "Medium",
+     "numbers": "20 English idioms; Dutch university students; 80 raters in the norming study; effect sizes not retrieved",
+     "population": "Dutch university learners of English",
+     "relevance": "Transfer between directions is incomplete even for multiword units. Separate Recognition and Write schedules are justified; cross-skill updates should be partial."
+    },
+    {
+     "claim": "Size and depth relate in a way that depends on frequency and learner level. For high-frequency words and learners with small vocabularies, there is often little difference between size and depth measures. For rarer words and larger vocabularies, depth falls behind size. Some depth aspects (for example derivatives) correlate with size less strongly than others, and depth usually adds explanatory power beyond size.",
+     "source": "Schmitt, N. (2014). Size and depth of vocabulary knowledge: What the research shows. Language Learning 64(4), 913-951. DOI 10.1111/lang.12077",
+     "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/lang.12077",
+     "confidence": "Medium",
+     "numbers": "The abstract gives no single coefficient",
+     "population": "Review of L2 studies (mostly EFL)",
+     "relevance": "Cross-skill implication should be stronger for frequent words and beginners, and weaker for rare words and advanced learners. The transfer weight could be made to depend on word frequency or difficulty instead of being a constant."
+    }
+   ],
+   "gaps": [
+    "WebFetch and direct access to publisher pages (Wiley, OUP, SAGE, ERIC, White Rose, Project MUSE) were blocked in this environment, so most numbers come from abstracts and citing studies returned by WebSearch. Before hard-coding any number, check it against the original paper.",
+    "No 'Uchihara et al. ~2024' meta-analysis of aural vs written vocabulary was found. Uchihara's related work is the 2025 Language Learning study (declarative vs automatized phonological knowledge) and Uchihara & Clenton 2020 (vocabulary size and speaking, LTR, DOI 10.1177/1362168818799371, not examined). No pooled aural-written correlation exists in what was found; individual studies range from r = .46 to .88.",
+    "Milton (2009), Measuring Second Language Vocabulary Acquisition (Multilingual Matters), was not retrieved; its aural/written figures are unverified.",
+    "González-Fernández & Schmitt 2020: the component correlation coefficients and the implicational-scaling reproducibility and scalability coefficients were not retrieved. Laufer & Goldstein 2004: scale coefficients not retrieved, and the .65 correlation with achievement comes only from a secondary summary.",
+    "No study found gives word-level transfer probabilities (P(skill B correct | skill A correct on the same word)), which is what an FSRS/Elo cross-update actually needs. The correlations above are person-level vocabulary-size correlations. That makes them an upper bound on how much one answer about one word should move another skill. Logging the app's own same-word, cross-skill outcomes would allow this to be fitted directly.",
+    "No research found on transfer to speaking graded by speech recognition (Say) from other skills, beyond Milton et al. 2010 (AuralLex with IELTS speaking r = .71). Nothing specific was found on transfer for script dictation, transliteration typing, or Indic-script learners.",
+    "Mondria & Wiersma 2004 population details are from memory, not verified."
+   ]
+  },
+  "verdict": {
+   "checked": [
+    {
+     "claim": "Laufer & Goldstein (2004): four strength levels form a difficulty hierarchy (active recall hardest, then passive recall, active recognition, passive recognition easiest); the abstract says it held at every frequency level; the levels are framed as an implicational scale.",
+     "source": "Laufer, B. & Goldstein, Z. (2004). Testing vocabulary knowledge: Size, strength, and computer adaptiveness. Language Learning 54(3), 399-436. DOI 10.1111/j.0023-8333.2004.00260.x",
+     "status": "corrected",
+     "correction": "The source exists as cited (Language Learning 54(3), 399-436; N = 435 learners of English). Several secondary sources (reviews, and the CATSS test site, which calls the levels an implicational scale) give the hierarchy in this order: passive recognition easiest, then active recognition, then passive recall, with active recall hardest. I could not open the abstract, because the Wiley, Crossref and OpenAlex pages were all unreachable. So the claim that 'the abstract says the hierarchy held at every frequency level' is unverified. The .65 correlation with achievement and the 'mostly L1 Hebrew' description come only from an auto-generated FAQ on the academia.edu page; treat both as unverified. Lower confidence to Medium for the order of the hierarchy and Low for the frequency-level and implicational-scale details. Do not confuse this paper with Laufer, Elder, Hill & Congdon (2004), Language Testing, which is a separate paper about the same test.",
+     "url": "https://www.researchgate.net/publication/227507992_Testing_Vocabulary_Knowledge_Size_Strength_and_Computer_Adaptiveness"
+    },
+    {
+     "claim": "González-Fernández & Schmitt (2020): across four components (form-meaning, derivatives, multiple meanings, collocations), recognition of every component came before recall of any component; implicational scaling found a consistent order; the components were closely related.",
+     "source": "González-Fernández, B. & Schmitt, N. (2020; online Jan 2019). Applied Linguistics 41(4), 481-505. DOI 10.1093/applin/amy057",
+     "status": "corrected",
+     "correction": "The source exists, and the DOI amy057 is correct; amy052 is wrong. N = 144 Spanish learners of English. The abstract, as summarised in search results, says the components were strongly intercorrelated. Implicational scaling showed a consistent order, with recognition knowledge emerging before recall knowledge for each component. SEM showed that all components contribute to the overall construct, but that recognition and recall mastery of a given component should be treated as separate constructs. The wording 'recognition of every component came before recall of ANY component' is stronger than what I could verify. The source says recognition comes before recall within each component. The year is often cited as 2019 because of the online-first date. Correlation values were not retrieved.",
+     "url": "https://academic.oup.com/applij/article-abstract/41/4/481/5270836"
+    },
+    {
+     "claim": "González-Fernández (2025): with a larger cross-L1 sample, recognition came before recall for every component, and the order was consistent across L1 backgrounds.",
+     "source": "González-Fernández, B. (2025; online July 2024). How is vocabulary learnt? An acquisitional sequence of L2 word knowledge. TESOL Quarterly 59(2), 755-784. DOI 10.1002/tesq.3342",
+     "status": "confirmed",
+     "correction": "Confirmed from the abstract text shown on Wiley and ERIC. N = 314 EFL learners with L1 Chinese and L1 Spanish. Implicational and Mokken scaling found a reliable hierarchy in which recognition came before recall across all components. The scale held for both L1 groups, analysed separately and together, at 75% and 80% accuracy thresholds. Missing details: volume, issue and pages (59(2), 755-784). Note that only written form and meaning tests were used, so this says nothing about aural or spoken skills. It is open access (White Rose repository).",
+     "url": "https://eprints.whiterose.ac.uk/id/eprint/214823/"
+    },
+    {
+     "claim": "Milton & Hopkins (2006): phonological and orthographic receptive vocabulary sizes correlated at 0.68; they do not grow in proportion (aural larger at the start, written grows faster and is larger at intermediate and advanced levels); L1 Arabic learners were slower to build written vocabulary.",
+     "source": "Milton, J. & Hopkins, N. (2006). Canadian Modern Language Review 63(1), 127-147. DOI 10.1353/cml.2006.0048",
+     "status": "corrected",
+     "correction": "The citation is correct. Several citing sources confirm r = 0.68 between the AuralLex (A-Lex) and X-Lex yes/no tests, with samples of 38 Arabic-speaking and 88 Greek-speaking learners. A secondary summary supports 'Arabic speakers rather slower to develop the orthographic side'. Another secondary summary adds that the two groups scored similarly on X-Lex, but the Arabic group scored significantly higher on AuralLex (p < .01). I could NOT verify the growth pattern ('written grows faster and is larger at intermediate/advanced') from any text I could reach. Downgrade confidence from High to Medium: the abstract and full text were not reachable. The researcher's point that this is a person-level correlation from receptive yes/no tests is correct, and later authors make the same criticism of the yes/no format.",
+     "url": "https://www.researchgate.net/publication/249909133_Comparing_Phonological_and_Orthographic_Vocabulary_Size_Do_Vocabulary_Tests_Underestimate_the_Knowledge_of_Some_Learners"
+    },
+    {
+     "claim": "Milton, Wade & Hopkins (2010): AuralLex predicted IELTS listening better than X-Lex; AuralLex correlated with IELTS speaking; aural-written size correlated at about .46.",
+     "source": "Milton, J., Wade, J. & Hopkins, N. (2010). Aural word recognition and oral competence in English as a foreign language. Multilingual Matters, 83-98. DOI 10.21832/9781847692900-007",
+     "status": "corrected",
+     "correction": "The book title is wrong. The chapter is in Chacón-Beltrán, Abello-Contesse & Torreblanca-López (eds.), *Further* Insights into Non-native Vocabulary Teaching and Learning (2010), pp. 83-98. 'Insights into...' is the earlier 2006 volume. All figures come from citing papers, not the chapter itself. AuralLex: IELTS listening r = .67 and speaking r = .71; reading .22 and writing .44. X-Lex: listening .48 and speaking .35; reading .70 and writing .76. One secondary source, which is somewhat garbled, gives aural-written r = 0.46 with N = 30 (10 Arabic, 10 Chinese, 10 Japanese/European learners). Treat .46 as Low confidence. The sample is very small (about 30).",
+     "url": "https://www.researchgate.net/publication/312922572_Aural_word_recognition_and_oral_competence_in_English_as_a_foreign_language"
+    },
+    {
+     "claim": "Masrai: written-aural receptive r = .58; Language Testing in Asia 2021: orthographic-aural r = .88 (SEM latent, N = 234 Chinese EFL); no meta-analysis pooling aural-written correlations was found.",
+     "source": "Masrai, A. (2020; online 2019). Applied Linguistics Review 11(3), 423-447. DOI 10.1515/applirev-2018-0106. Ha, H. T. (2021). Language Testing in Asia 11, article 20. DOI 10.1186/s40468-021-00131-8",
+     "status": "corrected",
+     "correction": "There are two errors. (1) The Language Testing in Asia 2021 paper is by Hung Tan Ha, not Masrai. Its sample was 234 tertiary-level VIETNAMESE EFL learners, not Chinese. It used the UVLT, a Vietnamese version of the LVLT, and IELTS listening and academic reading. It reports orthographic-aural r = .88 and calls the two 'of equal significance' to listening and reading. I could not confirm whether .88 is a latent SEM correlation or an observed one. (2) The Masrai paper is in Applied Linguistics Review 11(3), 423-447 (2020; online 2019), with N = 130 non-native speakers of English. In it, aural vocabulary was the strongest predictor of listening, then working memory, and written vocabulary added only marginally. I could not find the r = .58 figure in any accessible text, so it is unsupported. I also found no meta-analysis pooling aural-written vocabulary correlations. Zhang & Zhang (2022) treats modality only as a moderator of the vocabulary-comprehension correlation.",
+     "url": "https://languagetestingasia.springeropen.com/articles/10.1186/s40468-021-00131-8"
+    },
+    {
+     "claim": "Zhang & Zhang meta-analysis: vocabulary correlates about .57 with L2 reading and .56 with listening; all three mastery levels correlate moderately to highly; meaning recall correlates most with reading and form recall most with listening; written measures predict reading better and aural measures predict listening better.",
+     "source": "Zhang, S. & Zhang, X. (2022; online 31 Mar 2020). Language Teaching Research 26(4), 696-725. DOI 10.1177/1362168820913998",
+     "status": "confirmed",
+     "correction": "Confirmed from abstract text: r = .57 with reading and .56 with listening (p < .01); true correlation likely .56-.67 (31%-45% of variance); more than 100 studies and 276 effect sizes. Meaning recall correlated most strongly with reading and form recall most strongly with listening. Orthographic measures correlated more strongly with reading than auditory measures did, and auditory measures were better predictors of listening. Caveat: Stewart et al. (2021, VLI 10(2)) note that form recall's lead over meaning recall for listening was not statistically significant.",
+     "url": "https://journals.sagepub.com/doi/10.1177/1362168820913998"
+    },
+    {
+     "claim": "Stewart et al. (2024): meaning recall and meaning recognition are separate constructs; meaning recall added unique variance in reading beyond recognition, but recognition added nothing beyond recall.",
+     "source": "Stewart, J., Gyllstad, H., Nicklin, C. & McLean, S. (2024). Language Testing 41(1), 89-108. DOI 10.1177/02655322231162853",
+     "status": "confirmed",
+     "correction": "Confirmed from the abstract. A two-factor model fit better than one factor, but the authors say discriminant validity between the factors is questionable, so the 'separate constructs' framing should be hedged. Recognition made no significant contribution beyond recall, while recall did contribute beyond recognition. The authors conclude that recognition does not tap unique aspects of vocabulary knowledge. The population ('Japanese university EFL, TOEIC-based') was not verified. Effect sizes were not retrieved, although the paper is open access.",
+     "url": "https://journals.sagepub.com/doi/full/10.1177/02655322231162853"
+    },
+    {
+     "claim": "Uchihara et al. (2025): for aural vocabulary, meaning recognition and recall form one declarative factor; a timed lexicosemantic judgment task loads on a separate automatized factor and best predicts TOEIC listening.",
+     "source": "Uchihara, T., Saito, K., Kurokawa, S., Takizawa, K. & Suzukida, Y. (2025; online Aug 2024). Language Learning 75(2), 458-492. DOI 10.1111/lang.12668",
+     "status": "confirmed",
+     "correction": "Confirmed from abstract text. N = 114 Japanese learners of English took TOEIC Listening plus aural meaning recognition, meaning recall and the LJT. The LJT best predicted access to target words in real listening, measured by TOEIC. SEM showed the LJT was distinct from both recognition and recall. The detail that recognition and recall grouped on one factor comes from a later paper by the same group (Saito et al.) describing this study. Loadings were not retrieved. A follow-up study by the same group reports LJT-TOEIC r = .64 against about .45 for recognition; that figure is from the follow-up, not this paper.",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1111/lang.12668"
+    },
+    {
+     "claim": "Cheng & Matthews (2018): productive phonological vocabulary correlated more with listening (.71) than reading (.46); productive written vocabulary correlated about equally with both (.55 listening, .57 reading).",
+     "source": "Cheng, J. & Matthews, J. (2018). Language Testing 35(1), 3-25. DOI 10.1177/0265532216676851",
+     "status": "confirmed",
+     "correction": "Confirmed. The ERIC abstract gives N = 250 tertiary-level Chinese EFL learners. Productive phonological knowledge correlated most strongly with listening (r = .71) and explained 51% of the variance in listening. Productive orthographic knowledge correlated most strongly with reading (r = .57) and explained 33% of the variance in reading. The other figures come from Ha (2021): productive phonological with reading .46, productive orthographic with listening .55. I could not confirm from accessible text that the phonological test was a 'partial dictation' format.",
+     "url": "https://eric.ed.gov/?id=EJ1163897"
+    },
+    {
+     "claim": "Webb (2008): receptive (L2 to L1) vocabulary larger than productive; with full-knowledge scoring the gap widened as frequency fell; with partial scoring there was little difference; larger receptive vocabularies go with more productive knowledge of those words.",
+     "source": "Webb, S. (2008). Studies in Second Language Acquisition 30(1), 79-95. DOI 10.1017/S0272263108080042",
+     "status": "confirmed",
+     "correction": "Confirmed from the ERIC abstract and summaries. N = 83 L1 Japanese second-year EFL university students. Frequency bands were 701-1,900, 1,901-3,400 and 3,401-6,600. The ratio claim needs correcting. An unofficial copy of the paper reports productive-to-receptive ratios of roughly 91-95% under sensitive (partial) scoring and 65-88% under strict scoring. Lee (2025) cites a single 77%. The '50-80%' figure in the relevance note comes from reviews of other studies, not from Webb 2008.",
+     "url": "https://eric.ed.gov/?id=EJ784734"
+    },
+    {
+     "claim": "Laufer & Paribakht (1998): passive vocabulary always larger than controlled and free active; gap smaller in FL Israel than L2 Canada; narrowed only after about 2 years of residence. Companion Laufer (1998): passive and controlled active correlated well, free active did not correlate with either.",
+     "source": "Laufer, B. & Paribakht, T. S. (1998). Language Learning 48(3), 365-391. DOI 10.1111/0023-8333.00046. Laufer, B. (1998). Applied Linguistics 19(2), 255-271",
+     "status": "confirmed",
+     "correction": "Both are confirmed from abstract text. Laufer & Paribakht: N = 79 adults in Israel and 103 in Canada. Passive vocabulary was always significantly larger, and the passive-active gap was smaller in the FL context than the L2 context. Residence in the L2 context began to help only after about 2 years. Knowledge of French helped Canadian learners at early stages. Laufer (1998): N = 48 Israeli high-school ESL students over one year. Passive and controlled active correlated well, while free active did not correlate with either. Some reference lists wrongly give vol. 12; the correct volume is 19. The L1s (Hebrew/Arabic) were not verified, and correlation coefficients were not retrieved.",
+     "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/0023-8333.00046"
+    },
+    {
+     "claim": "Webb (2009): productive learning of word pairs gave larger gains in orthography (receptive and productive) and productive meaning, syntax and grammatical functions; receptive learning better only for receptive meaning; if only one method, productive may be more effective.",
+     "source": "Webb, S. (2009). RELC Journal 40(3), 360-376. DOI 10.1177/0033688209343854",
+     "status": "confirmed",
+     "correction": "Confirmed from abstract text, which matches nearly verbatim. Population: N = 84 Japanese EFL students. Five aspects of word knowledge were tested in 10 ways. Effect sizes were not retrieved.",
+     "url": "https://eric.ed.gov/?id=EJ865637"
+    },
+    {
+     "claim": "Webb (2005): with equal time on task, a productive task (writing sentences) produced more receptive and productive knowledge than a receptive task (reading glossed sentences).",
+     "source": "Webb, S. (2005). Studies in Second Language Acquisition 27(1), 33-52. DOI 10.1017/S0272263105050023",
+     "status": "corrected",
+     "correction": "This claim reverses the finding. In Experiment 1, with EQUAL time on both tasks, the READING (receptive) task was superior. The writing task was more effective only in Experiment 2, where time depended on how long each task took to complete, and writing needed more time. Webb argues for productive tasks only if Experiment 2 represents authentic learning. The study does not support 'production beats reception at equal time'.",
+     "url": "https://www.semanticscholar.org/paper/RECEPTIVE-AND-PRODUCTIVE-VOCABULARY-LEARNING:-The-Webb/40b3cf0cbaa428089a82f617d2abc9d0de5ef77b"
+    },
+    {
+     "claim": "Mondria & Wiersma (2004): a review of word-list learning experiments finds receptive learning easier with higher receptive scores; scores highest when learning direction matches test direction; productive learning yields considerable receptive knowledge, receptive learning yields less productive knowledge.",
+     "source": "Mondria, J.-A. & Wiersma, B. (2004). In Bogaards & Laufer (eds.), Vocabulary in a Second Language, John Benjamins, 79-100. DOI 10.1075/lllt.10.08mon",
+     "status": "corrected",
+     "correction": "The chapter exists as cited, and a Dutch version is in Levende Talen Tijdschrift 5(3), 29-37. It reports the authors' own experiment, not a review of experiments. Only secondary sources were available. One review says the authors conclude that receptive learning is easier and gives higher receptive scores, and that productive learning yields a considerable amount of receptive knowledge while the reverse effect is less strong. Other sources cite the chapter for a direction-matching effect. The participants were not verified: the Dutch secondary-school context is implied by the motivation (Dutch exams), but the target language and N were not confirmed. Medium confidence for the conclusions, Low for the population.",
+     "url": "https://www.benjamins.com/catalog/lllt.10.08mon"
+    },
+    {
+     "claim": "Steinel, Hulstijn & Steinel (2007): for idioms learned as paired associates, direction of learning affected performance, with an especially large effect on the productive test that persisted at a 3-week delayed test; productive learners did better on productive tests, receptive learners on receptive tests.",
+     "source": "Steinel, M. P., Hulstijn, J. H. & Steinel, W. (2007). Studies in Second Language Acquisition 29(3), 449-484. DOI 10.1017/S0272263107070271",
+     "status": "corrected",
+     "correction": "The citation is correct; the ResearchGate title is truncated, and the full title includes 'direction of learning'. What I could verify: Dutch university students learned English idioms as L1-L2 or L2-L1 pairs, and direction of learning affected both receptive and productive performance. Imageability predicted performance, and receptive learning was especially weak for low-imageability idioms. Transparency affected only recognition. The n = 80 is described as an independent follow-up sample that qualified the findings, not as 80 norming raters. I could NOT verify the 'especially large effect on the productive test' or the '3-week delayed test', so treat both as unsupported until the abstract is read.",
+     "url": "https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/abs/second-language-idiom-learning-in-a-pairedassociate-paradigm-effects-of-direction-of-learning-direction-of-testing-idiom-imageability-and-idiom-transparency/0737B52D9F3AAEED194A6AE6E845EB3A"
+    },
+    {
+     "claim": "Schmitt (2014): size-depth relation depends on frequency and learner level; little difference for high-frequency words and small vocabularies; depth lags size for rarer words and larger vocabularies; derivatives correlate less with size; depth usually adds explanatory power beyond size.",
+     "source": "Schmitt, N. (2014). Size and depth of vocabulary knowledge: What the research shows. Language Learning 64(4), 913-951. DOI 10.1111/lang.12077",
+     "status": "confirmed",
+     "correction": "Confirmed from abstract text: each point matches. It is a critical synthesis, not new data, and gives no single coefficient. An author version is in the Nottingham repository. Process note for all rows: WebFetch and direct API access (Wiley, Crossref, OpenAlex, ERIC pages) failed in this environment, so every check relied on search-result abstract text. The web-search budget ran out before a final Steinel check.",
+     "url": "https://nottingham-repository.worktribe.com/output/738909/size-and-depth-of-vocabulary-knowledge-what-the-research-shows"
+    }
+   ]
+  }
+ },
+ {
+  "angle": "tasks",
+  "report": {
+   "claims": [
+    {
+     "claim": "Laufer and Goldstein treat word-meaning knowledge as four 'strength' modalities, ordered by difficulty from easiest to hardest: passive recognition (see L2 word, pick meaning), active recognition (see meaning, pick L2 word), passive recall (see L2 word, supply meaning), active recall (see meaning, supply L2 word). The hierarchy held at every word-frequency level. Passive recall was the best predictor of classroom language performance.",
+     "source": "Laufer, B. & Goldstein, Z. (2004). Testing vocabulary knowledge: Size, strength, and computer adaptiveness. Language Learning 54(3), 399-436.",
+     "url": "https://doi.org/10.1111/j.0023-8333.2004.00260.x",
+     "population": "435 learners of English as an L2 (Israeli high school and university students), Hebrew-English bilingual computerized test",
+     "numbers": "N=435. Order: passive recognition < active recognition < passive recall < active recall. One third-party summary gives passive recall's correlation with classroom performance as about .65; not checked against the paper.",
+     "confidence": "Medium",
+     "relevance": "This is the backbone mapping. chooseMeaning = meaning recognition. chooseWord = form recognition. Self-rated reveal and hear-and-type-meaning = meaning recall. Typing the word from its meaning (and speak) = form recall. Because the scale is implicational, a correct answer at a harder level implies the easier levels, but an easier success says little about harder ones. Cross-skill updates should therefore be asymmetric: a correct form recall should move recognition strongly, while a correct recognition should move recall only weakly. A failed recognition should move recall down strongly. Confidence is Medium because I could not open the abstract myself; I read it through search snippets of ResearchGate and Semantic Scholar listings."
+    },
+    {
+     "claim": "Across four word-knowledge components (form-meaning link, derivatives, multiple meanings, collocations), all components were strongly intercorrelated. Implicational scaling showed a consistent acquisition order, with recognition mastered before recall for every component.",
+     "source": "González-Fernández, B. & Schmitt, N. (2020). Word knowledge: Exploring the relationships and order of acquisition of vocabulary knowledge components. Applied Linguistics 41(4), 481-505.",
+     "url": "https://doi.org/10.1093/applin/amy057",
+     "population": "144 Spanish L1 learners of English (EFL)",
+     "numbers": "N=144. 'Strongly intercorrelated' (I did not retrieve the exact r values). Recognition precedes recall for all four components.",
+     "confidence": "Medium",
+     "relevance": "This supports one shared latent ability with ordered thresholds rather than independent skills. A single global cross-skill weight is too coarse: recognition-to-recall implication runs one way. Collocation and form-meaning knowledge correlate, so cloze answers carry some information about the word's form-meaning link. The DOI was recalled from memory; the search confirmed only the journal, volume and pages."
+    },
+    {
+     "claim": "Meaning recall and meaning recognition were examined as possibly psychometrically distinct constructs, using confirmatory factor analysis and hierarchical regression on L2 reading proficiency. A citing paper reports the conclusion that meaning-recall tests predict reading better than multiple-choice meaning-recognition tests.",
+     "source": "Stewart, J., Gyllstad, H., Nicklin, C. & McLean, S. (2024; online 2023). Establishing meaning recall and meaning recognition vocabulary knowledge as distinct psychometric constructs in relation to reading proficiency. Language Testing 41(1), 89-108.",
+     "url": "https://doi.org/10.1177/02655322231162853",
+     "population": "Japanese university EFL learners (assumed from the authors' usual samples; not confirmed)",
+     "numbers": "I did not retrieve the factor loadings or the incremental R².",
+     "confidence": "Medium",
+     "relevance": "chooseMeaning (recognition) and recall formats (self-rated reveal, hear-and-type) should not be treated as the same evidence. Recall answers should carry more weight for the Recognition skill's ability estimate, and MC answers less."
+    },
+    {
+     "claim": "Multiple-choice meaning-recognition tests (Vocabulary Size Test variants) correlate highly with meaning recall, at r = .88 to .91 for three variants and r = .77 for the bilingual variant with an 'I don't know' option. The authors recommend measuring meaning recall, or adjusting raw MC scores, because MC overestimates.",
+     "source": "Stoeckel, T. et al. (2019), comparing four VST variants against a meaning-recall criterion (reported through a secondary summary; I did not confirm the exact title or venue)",
+     "url": "https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/abs/what-the-research-shows-about-written-receptive-vocabulary-testing/6AD9545F1222519998577D96F265BE83",
+     "population": "Japanese university EFL learners (per secondary summary)",
+     "numbers": "r = .88-.91 (three variants); r = .77 (bilingual with 'I don't know' option)",
+     "confidence": "Medium",
+     "relevance": "Use this to weight transfer from chooseMeaning to meaning recall: a correct 4-option MC answer is noisy evidence of recall because of guessing (25% chance) and elimination. Discount MC successes before propagating them. The URL is the review where I found this claim (Stoeckel, McLean & Nation 2021, SSLA), not the 2019 paper itself."
+    },
+    {
+     "claim": "A meaning-recognition test and a parallel meaning-recall test correlated almost identically with reading comprehension, with no significant difference between them.",
+     "source": "Laufer, B. & Aviad-Levitzky, T. (2017). What type of vocabulary knowledge predicts reading comprehension: Word meaning recall or word meaning recognition? Modern Language Journal 101(4).",
+     "url": "https://www.researchgate.net/publication/321126728_What_Type_of_Vocabulary_Knowledge_Predicts_Reading_Comprehension_Word_Meaning_Recall_or_Word_Meaning_Recognition",
+     "population": "Hebrew L1 EFL learners (Israel)",
+     "numbers": "r = .91 and .92 with reading",
+     "confidence": "Medium",
+     "relevance": "At the level of the learner's ability, recognition and recall share most of their variance (correlation about .9), so updating the language-level ability across these formats is justified. Per-word implication is weaker, as the claims above show. The venue was recalled from memory; the numbers come from a secondary summary."
+    },
+    {
+     "claim": "The Vocabulary Levels Test, in its 2017 update, uses a matching format (three definitions matched to words from a set of six) to measure recognition of form-meaning connections at the 1000-5000 frequency levels. It was validated with Rasch analysis under Messick's framework.",
+     "source": "Webb, S., Sasao, Y. & Ballance, O. (2017). The updated Vocabulary Levels Test: Developing and validating two new forms of the VLT. ITL - International Journal of Applied Linguistics 168(1), 33-69.",
+     "url": "https://www.lextutor.ca/tests/webb_sasao_ballance_2017.pdf",
+     "population": "1,463 test takers to select items, plus 250 to evaluate the forms; EFL learners from several L1s",
+     "numbers": "N=1,463 + 250",
+     "confidence": "Medium",
+     "relevance": "matchPairs measures form-meaning recognition, much like chooseMeaning and chooseWord. In a 4-pair match, the last pair is forced by elimination, so it carries little evidence and should be weighted lower. The 3-from-6 item format comes from memory of the original VLT; search results only confirmed 'recognize the form-meaning connections'."
+    },
+    {
+     "claim": "Kremmel and Schmitt question whether scores on the common item formats (VLT matching, VST multiple choice, form recall, meaning recall) show that learners can actually use the words in the four skills or know deeper aspects such as derivatives and collocations. They report that little is known about how informative each format is about 'lexical employability'.",
+     "source": "Kremmel, B. & Schmitt, N. (2016). Interpreting vocabulary test scores: What do various item formats tell us about learners' ability to employ words? Language Assessment Quarterly 13(4), 377-392.",
+     "url": "https://eric.ed.gov/?id=EJ1120126",
+     "population": "L2 English learners",
+     "numbers": "I did not retrieve per-format agreement rates.",
+     "confidence": "Medium",
+     "relevance": "This is a caution: no single format implies use in all skills. Writing transfer weights per format, instead of one global .68, follows the authors' call for format-specific interpretation."
+    },
+    {
+     "claim": "Schmitt, Nation and Kremmel argue that most recently published vocabulary tests lack adequate validation. They call for tests to state their purpose and intended score interpretation precisely, including which kind of knowledge each format measures.",
+     "source": "Schmitt, N., Nation, P. & Kremmel, B. (2020). Moving the field of vocabulary assessment forward: The need for more rigorous test development and validation. Language Teaching 53(1), 109-120.",
+     "url": "https://doi.org/10.1017/S0261444819000326",
+     "population": "Position/review paper",
+     "numbers": "",
+     "confidence": "High",
+     "relevance": "This supports the principle that each question type should be mapped to an explicit knowledge component (meaning recognition, form recall, and so on) instead of a generic 'skill'."
+    },
+    {
+     "claim": "Aural (phonological) and written (orthographic) vocabulary size, each measured with a yes/no checklist (AuralLex and X_Lex), correlated at r = .68. Arabic L1 learners scored similarly to Greek learners on the written test but significantly higher on the aural test, so written tests may underestimate some learners.",
+     "source": "Milton, J. & Hopkins, N. (2006). Comparing phonological and orthographic vocabulary size: Do vocabulary tests underestimate the knowledge of some learners? Canadian Modern Language Review 63(1), 127-147.",
+     "url": "https://doi.org/10.1353/cml.2006.0048",
+     "population": "38 Arabic L1 and 88 Greek L1 learners of English",
+     "numbers": "r = .68. Arabic > Greek on AuralLex, p < .01.",
+     "confidence": "Medium",
+     "relevance": "This is the source of the app's current .68 weight. It is a between-learner correlation of yes/no form-recognition size estimates, not a within-word transfer rate, and it covers only Hear versus written recognition. It does not justify using .68 for Say or Write (form recall), and the gap depends on the script (L1 script distance). A later review cautions that yes/no formats limit what can be concluded."
+    },
+    {
+     "claim": "Among Chinese EFL learners, productive phonological vocabulary knowledge correlated most strongly with L2 listening (r = .71), and productive orthographic vocabulary knowledge correlated most strongly with L2 reading (r = .57).",
+     "source": "Cheng, J. & Matthews, J. (2018). The relationship between three measures of L2 vocabulary knowledge and L2 listening and reading. Language Testing 35(1). (Venue from memory; the title is confirmed in the UNE repository.)",
+     "url": "https://rune.une.edu.au/web/handle/1959.11/22276",
+     "population": "250 tertiary Chinese EFL learners",
+     "numbers": "r = .71 (phonological, with listening); r = .57 (orthographic, with reading)",
+     "confidence": "Medium",
+     "relevance": "Modality-specific knowledge predicts its matching skill best. Hear questions (hearMeaning, hear-and-type) are the best evidence for aural form knowledge; written chooseMeaning is weaker evidence for Hear. This supports separate Hear and Recognition abilities with partial, not full, transfer."
+    },
+    {
+     "claim": "Aural vocabulary knowledge was the strongest predictor of listening comprehension, followed by working memory; written vocabulary knowledge added only marginally.",
+     "source": "Masrai, A. (2020). Applied Linguistics Review (aural vocabulary, written vocabulary, working memory and listening comprehension).",
+     "url": "https://revista-hsj-filologia.unavarra.es/hsj-Filologia/article/view/3673",
+     "population": "Arabic L1 EFL learners (Saudi Arabia; assumed)",
+     "numbers": "Not retrieved",
+     "confidence": "Medium",
+     "relevance": "This shows aural and written form knowledge are dissociable. Evidence from written questions should transfer to Hear only partially. The URL is the review that summarises the study, not the study itself."
+    },
+    {
+     "claim": "In paired-associate learning of L2 idioms, learning direction interacted with test direction. Productive learners had a sizable advantage on production tests, and receptive learners outperformed them on recognition tests. The authors say this parallels findings for single L2 words.",
+     "source": "Steinel, M. P., Hulstijn, J. H. & Steinel, W. (2007). Second language idiom learning in a paired-associate paradigm: Effects of direction of learning, direction of testing, idiom imageability, and idiom transparency. Studies in Second Language Acquisition 29, 449-484.",
+     "url": "https://doi.org/10.1017/S0272263107070271",
+     "population": "129 Dutch university students learning 20 English idioms; tested immediately and after 3 weeks",
+     "numbers": "N=129; 20 idioms. The effect sizes were not retrieved.",
+     "confidence": "High",
+     "relevance": "Practising in one direction (chooseMeaning, L2 to meaning) builds that direction best, and transfer to the other direction (chooseWord, typing, speak) is partial. A recognition success should update production schedules much less than a same-direction success."
+    },
+    {
+     "claim": "Webb's thesis experiments, reported in RELC Journal 40(3), found that productive word-pair learning develops productive knowledge more, and receptive learning develops receptive knowledge more. In Webb (2005, SSLA), each word was tested in 10 ways across five aspects (orthography, syntax, association, grammatical functions, meaning and form), and both receptive and productive tasks produced gains in several aspects.",
+     "source": "Webb, S. (2009). The effects of receptive and productive learning of word pairs on vocabulary knowledge. RELC Journal 40(3), 360ff; Webb, S. (2005). Receptive and productive vocabulary learning: The effects of reading and writing on word knowledge. SSLA 27, 33-52.",
+     "url": "https://doi.org/10.1017/S0272263105050023",
+     "population": "Japanese EFL learners",
+     "numbers": "Not retrieved",
+     "confidence": "Medium",
+     "relevance": "One kind of practice yields knowledge in several components, but most strongly in the component it exercises (transfer-appropriate). This supports a primary-plus-secondary mapping for each question. The 2009 result comes from the thesis summary, and I am inferring that the article reports the same experiments. The DOI for the 2005 paper is from memory."
+    },
+    {
+     "claim": "Transfer-appropriate processing: semantic encoding beat rhyme encoding on a standard recognition test, but rhyme encoding beat semantic encoding on a rhyme-recognition test. How well memory performs depends on the match between processing at study and at test, not on depth alone.",
+     "source": "Morris, C. D., Bransford, J. D. & Franks, J. J. (1977). Levels of processing versus transfer appropriate processing. Journal of Verbal Learning and Verbal Behavior 16, 519-533.",
+     "url": "https://doi.org/10.1016/S0022-5371(77)80016-9",
+     "population": "Adult L1 English undergraduates",
+     "numbers": "I did not retrieve the exact proportions.",
+     "confidence": "Medium",
+     "relevance": "This is the theoretical basis for treating each question as strongest evidence for the skill whose processing it shares (sound-based questions for Hear, meaning-to-form questions for Say and Write), with weaker evidence for the others. Meaning-only practice may not build phonological form, which supports a low transfer from Recognition to Say. The DOI was recalled from memory."
+    },
+    {
+     "claim": "Retrieval practice transfers to different final tests with an overall mean of about d = 0.40. Without response congruency between the practice and final test, the effect is about d = 0.28; with congruency (overlapping answers), it is about d = 0.58. Elaborated retrieval practice adds about d = 0.23.",
+     "source": "Pan, S. C. & Rickard, T. C. (2018). Transfer of test-enhanced learning: Meta-analytic review and synthesis. Psychological Bulletin 144(7), 710-756.",
+     "url": "https://doi.org/10.1037/bul0000151",
+     "population": "Meta-analysis of 192 transfer effect sizes, mostly adult L1 learners across many materials",
+     "numbers": "d ≈ 0.40 overall; d = 0.28 with no response congruency; d = 0.58 with congruency; +0.23 for elaborated feedback",
+     "confidence": "Medium",
+     "relevance": "This gives rough magnitudes: practising the same answer in another format (for example, chooseWord then type the word, both producing the L2 form) transfers about twice as well as practice with a different answer (chooseMeaning, whose answer is the meaning, then speak, whose answer is the form). It supports response-overlap-based cross-skill weights."
+    },
+    {
+     "claim": "Multiple-choice and short-answer initial tests differ in their benefit to retention. Without feedback, an MC test helped more than a short-answer test, because short-answer accuracy was low. With corrective feedback, a short-answer test gave the best final performance, consistent with more effortful retrieval producing more learning.",
+     "source": "Kang, S. H. K., McDermott, K. B. & Roediger, H. L. (2007). Test format and corrective feedback modify the effect of testing on long-term retention. European Journal of Cognitive Psychology 19(4-5), 528-558.",
+     "url": "https://www.gwern.net/docs/spaced-repetition/2007-kang.pdf",
+     "population": "US undergraduates learning facts from journal papers; final test after 3 days",
+     "numbers": "Not retrieved",
+     "confidence": "Medium",
+     "relevance": "Recall formats (type the word, hear-and-type, speak) are stronger learning events and stronger evidence than recognition formats, so a successful recall should earn a larger FSRS stability gain and Elo move than a recognition success."
+    },
+    {
+     "claim": "Rational-deletion cloze scores were significantly predicted by vocabulary and grammar knowledge. A think-aloud study found that proficient readers used lexical and grammatical knowledge to fill gaps. A factor analysis found that grammar and reading, but not nonverbal closure or reasoning, indicated cloze performance.",
+     "source": "Rational Cloze Test: A Valid Measure of Vocabulary? Veridian E-Journal (Thai EFL, 2015); McKamey, T. (2006). Getting closure on cloze: A validation study of the 'rational deletion' method. Second Language Studies (University of Hawai'i).",
+     "url": "https://scholarspace.manoa.hawaii.edu/handle/10125/20213",
+     "population": "104 Thai EFL students (2015 study); 48 learners (McKamey 2006); 16 proficient readers (2022 think-aloud)",
+     "numbers": "N=104, 48, 16. Vocabulary and grammar were significant predictors (coefficients not retrieved).",
+     "confidence": "Medium",
+     "relevance": "Cloze (choose or type the missing word) judges Write form knowledge (form recognition if chosen, form recall if typed) in context, plus grammar and collocation. A cloze success should update the word's Write schedule as primary and the related grammar ability as secondary. A failure is ambiguous between vocabulary and grammar. The 2015 study's author is not given here, and these are not top-tier sources."
+    },
+    {
+     "claim": "Dictation was argued to tap general language processing ('analysis by synthesis') and to sample structural and lexical items in context, not just sound-to-letter copying. In a university placement battery, dictation correlated with the total score better than any of the other four subtests, and correlated highly with cloze.",
+     "source": "Oller, J. W. (1971). Dictation as a device for testing foreign language proficiency. English Language Teaching 25, 254-259; Oller, J. W. & Streiff, V. (1975). Dictation: A test of grammar-based expectancies. ELT Journal 30(1).",
+     "url": "https://www.tirfonline.org/wp-content/uploads/2017/10/Dictation_SelectedReferences_4September2017.docx",
+     "population": "ESL students at UCLA (placement battery)",
+     "numbers": "Not retrieved",
+     "confidence": "Medium",
+     "relevance": "Script-practice dictation judges aural form recognition plus orthographic (spelling or script) form recall, and in sentences, grammar. It is good evidence for Hear and for the script skill, and partial evidence for Write (typing). Critics (Lado 1956; Morrow 1979) question whether it shows communicative use. The URL is a reference list; I read these claims in secondary sources."
+    },
+    {
+     "claim": "No validation study of jumbled-word sentence rearrangement as a measure of L2 grammar or vocabulary was found. The closest evidence is that elicited-imitation reconstruction involves working memory, comprehension and syntax, and taps implicit or explicit knowledge depending on time pressure. A word-order test predicted L2 Chinese reading better than grammaticality judgment or correction.",
+     "source": "Inference from related tasks. Lab vs web-based elicited imitation study, Studies in Second Language Acquisition (2024) (authors not recorded).",
+     "url": "https://www.cambridge.org/core/product/1E9151CA630EC7B73C1537787FB10D09",
+     "population": "Adult L2 learners",
+     "numbers": "",
+     "confidence": "Low",
+     "relevance": "Treat rearrange as primarily syntax (sentence or grammar ability) plus written form recognition of the words on the tiles. Give it only a small update to individual words' Write schedules, and none to Say or Hear, unless audio is played. Several orders may be correct, so scoring must accept them all."
+    },
+    {
+     "claim": "No study was found that reports a correlation between spoken and written form recall (saying versus typing the word from its meaning) for the same L2 learners. Related work shows that oral and written production give different lexical profiles from the same learners.",
+     "source": "No direct source found. Son (2022) is adjacent: picture description in speech and writing, 86 learners.",
+     "url": "https://pure.seoultech.ac.kr/en/publications/the-role-of-modality-and-working-memory-capacity-in-l2-production/",
+     "population": "86 L2 learners",
+     "numbers": "",
+     "confidence": "Low",
+     "relevance": "The speak question taps phonological form recall plus articulation, graded by speech recognition, which adds error. By the Laufer and Goldstein hierarchy, a correct speak implies meaning recognition and recall strongly. Its link to Write (typing) and Hear is unknown, so use a moderate, not high, weight. This is inference."
+    }
+   ],
+   "gaps": [
+    "WebFetch and direct HTTP failed (DNS errors and proxy 403), so no paper or abstract page could be opened. Every 'Medium' claim rests on search-engine summaries of abstracts or citing papers. Only Schmitt, Nation & Kremmel 2020 and Steinel et al. 2007 had abstract text quoted closely enough for High.",
+    "Milton & Hopkins (2006) r = .68 is a between-learner correlation of yes/no recognition size scores, not a per-word transfer rate. I found no study that reports per-word conditional transfer, i.e. P(know in skill B | correct in skill A), which is what the cross-skill update actually needs.",
+    "No direct evidence on how well speaking (oral form recall) and typing (written form recall) agree for the same words and learners. No evidence was found on ASR-graded speaking as a measure.",
+    "No validation study of rearrange (jumbled-word) items as a vocabulary or grammar measure.",
+    "No validation evidence was found for self-rated reveal (self-scored meaning recall); the yes/no checklist literature on overclaiming, with pseudowords, may be relevant but was not searched.",
+    "I did not retrieve McLean, Kramer & Beglar (2015) Listening Vocabulary Levels Test figures (Language Teaching Research 19(6), 741-760, DOI 10.1177/1362168814567889). I did not retrieve Read (2000) on cloze or Schneider, Healy & Bourne (2002) and Griffin & Harley on translation-direction transfer.",
+    "Most evidence comes from English as the L2 and from Japanese, Arabic, Greek, Spanish, Chinese, Dutch or Hebrew L1 learners. None comes from Indic target languages or learners of new scripts, where the gap between aural and written knowledge may be larger, as the Arabic-learner result suggests.",
+    "Exact correlations among the four modalities were not retrieved: González-Fernández & Schmitt (2020) inter-component r values, and the Laufer & Goldstein correlation matrix."
+   ]
+  },
+  "verdict": {
+   "checked": [
+    {
+     "claim": "Laufer & Goldstein (2004): four strength modalities ordered passive recognition < active recognition < passive recall < active recall; hierarchy held at every frequency level; passive recall best predictor of classroom performance (about .65 per a third-party summary).",
+     "source": "Laufer, B. & Goldstein, Z. (2004). Language Learning 54(3), 399-436.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1111/j.0023-8333.2004.00260.x",
+     "correction": "NOT VERIFIED IN THIS SESSION. The shared web-search budget for this turn was already used up (200 calls, shared by all agents), and every WebFetch failed: doi.org, wiley.com, eric.ed.gov, semanticscholar.org, lextutor.ca and scholarspace all returned DNS errors (ENOTFOUND), and the egress proxy refused Crossref and OpenAlex with 403. From memory only, so Low confidence: the citation, N=435 and the order look right, and the abstract names passive recall as the best predictor of classroom performance. The '.65' figure is unchecked and should not be used. The rule that hierarchy held at every frequency level is also unchecked."
+    },
+    {
+     "claim": "González-Fernández & Schmitt (2020): four components strongly intercorrelated; implicational scaling shows recognition before recall for every component.",
+     "source": "González-Fernández, B. & Schmitt, N. (2020). Applied Linguistics 41(4), 481-505.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1093/applin/amy057",
+     "correction": "Not verified: no network access (search budget used up; all fetches failed). From memory, the bibliographic details and N=144 Spanish EFL learners look plausible. 'Strongly intercorrelated' has no r values attached, and the rule that recognition precedes recall for all four components needs checking against the paper."
+    },
+    {
+     "claim": "Stewart, Gyllstad, Nicklin & McLean (2024): meaning recall and meaning recognition are distinct psychometric constructs; recall predicts reading better than MC recognition.",
+     "source": "Language Testing 41(1), 89-108.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1177/02655322231162853",
+     "correction": "Not verified: no network access. The claim already says its population is assumed and its numbers were not retrieved. The 'recall predicts better' conclusion comes from a citing paper, not this one. Do not set weights from it until the abstract has been read."
+    },
+    {
+     "claim": "Stoeckel et al. (2019): VST variants correlate with meaning recall at r = .88-.91 (three variants) and r = .77 (bilingual with 'I don't know'); MC overestimates.",
+     "source": "Stoeckel et al. 2019, via the Stoeckel, McLean & Nation (2021) SSLA review",
+     "status": "unsupported",
+     "url": "https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/abs/what-the-research-shows-about-written-receptive-vocabulary-testing/6AD9545F1222519998577D96F265BE83",
+     "correction": "Not verified: no network access, and the primary source is not identified. From memory, the likely primary paper is Stoeckel, Stewart, McLean, Ishii, Kramer & Matsumoto (2019), 'The relationship of four variants of the Vocabulary Size Test to a criterion measure of meaning recall vocabulary knowledge', System 87. This is unconfirmed. The r values are secondhand and unchecked."
+    },
+    {
+     "claim": "Laufer & Aviad-Levitzky (2017): recognition and recall correlated almost identically with reading (r = .91 and .92), with no significant difference.",
+     "source": "Modern Language Journal 101(4).",
+     "status": "unsupported",
+     "url": "https://www.researchgate.net/publication/321126728_What_Type_of_Vocabulary_Knowledge_Predicts_Reading_Comprehension_Word_Meaning_Recall_or_Word_Meaning_Recognition",
+     "correction": "Not verified: no network access. The venue (MLJ 101(4), about pp. 729-741) is from memory, and the .91/.92 figures come from a secondary summary. Also, a correlation between two tests across learners does not tell you how much evidence one item gives about another."
+    },
+    {
+     "claim": "Webb, Sasao & Ballance (2017) updated VLT: 3 definitions matched to 6 words, 1000-5000 levels, Rasch and Messick validation, N=1,463 + 250.",
+     "source": "ITL 168(1), 33-69.",
+     "status": "unsupported",
+     "url": "https://www.lextutor.ca/tests/webb_sasao_ballance_2017.pdf",
+     "correction": "Not verified: lextutor.ca would not resolve. From memory, the venue, the 1000-5000 levels and the 6-words/3-definitions cluster format all look right. The two Ns are unchecked."
+    },
+    {
+     "claim": "Kremmel & Schmitt (2016): little is known about how informative each format is about 'lexical employability'.",
+     "source": "Language Assessment Quarterly 13(4), 377-392.",
+     "status": "unsupported",
+     "url": "https://eric.ed.gov/?id=EJ1120126",
+     "correction": "Not verified: eric.ed.gov would not resolve. From memory this is an empirical study, not only a call for research. It compared item formats with learners' ability to use the words, so it probably does report per-format figures. The claim's description of it as 'little is known' undersells the paper and should be checked against it."
+    },
+    {
+     "claim": "Schmitt, Nation & Kremmel (2020): most recent vocabulary tests lack adequate validation; tests should state purpose and score interpretation.",
+     "source": "Language Teaching 53(1), 109-120.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1017/S0261444819000326",
+     "correction": "Not verified in this session (no network), so the claim's 'High' confidence cannot be confirmed here. From memory, the citation and the gist look right."
+    },
+    {
+     "claim": "Milton & Hopkins (2006): AuralLex and X_Lex correlated r = .68; Arabic learners scored higher on the aural test than Greek learners.",
+     "source": "Canadian Modern Language Review 63(1), 127-147.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1353/cml.2006.0048",
+     "correction": "Not verified: no network access. This is the source of the app's current .68 weight, so it should be checked first. The group sizes (38 and 88) and the p value are unchecked. The claim's own caveat stands: .68 is a between-learner correlation of yes/no size scores, not a within-word transfer rate."
+    },
+    {
+     "claim": "Cheng & Matthews (2018): productive phonological knowledge correlated with listening at r = .71; productive orthographic knowledge with reading at r = .57; 250 Chinese EFL learners.",
+     "source": "Language Testing 35(1).",
+     "status": "unsupported",
+     "url": "https://rune.une.edu.au/web/handle/1959.11/22276",
+     "correction": "Not verified: no network access. From memory the venue (Language Testing 35(1), about pp. 3-25) is plausible. Both r values and the N are unchecked."
+    },
+    {
+     "claim": "Masrai (2020): aural vocabulary was the strongest predictor of listening, then working memory; written vocabulary added marginally.",
+     "source": "Applied Linguistics Review (2020).",
+     "status": "unsupported",
+     "url": "https://revista-hsj-filologia.unavarra.es/hsj-Filologia/article/view/3673",
+     "correction": "Not verified, and the cited URL is a secondary review. From memory the likely title is 'Exploring the impact of individual differences in aural vocabulary knowledge, written vocabulary knowledge and working memory capacity on explaining L2 learners' listening comprehension', Applied Linguistics Review 11(3), 2020. This is unconfirmed, and no numbers are available."
+    },
+    {
+     "claim": "Steinel, Hulstijn & Steinel (2007): learning direction interacted with test direction for L2 idioms; 129 Dutch students, 20 idioms.",
+     "source": "SSLA 29, 449-484.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1017/S0272263107070271",
+     "correction": "Not verified in this session (no network), so the claim's 'High' confidence cannot be confirmed. From memory, the citation and the direction-by-direction interaction look right. N, the item count and the effect sizes are unchecked."
+    },
+    {
+     "claim": "Webb (2009, RELC 40(3)) and Webb (2005, SSLA 27, 33-52): learning tends to build the type of knowledge (receptive or productive) that was practised; 10 tests across five aspects.",
+     "source": "Webb 2009 RELC Journal 40(3); Webb 2005 SSLA 27(1), 33-52.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1017/S0272263105050023",
+     "correction": "Not verified: no network access. From memory the bibliographic details are plausible (RELC 40(3), about pp. 360-376). The claim itself admits that the 2009 content is inferred from a thesis summary."
+    },
+    {
+     "claim": "Morris, Bransford & Franks (1977): semantic encoding beat rhyme encoding on standard recognition, and rhyme beat semantic on a rhyme test.",
+     "source": "Journal of Verbal Learning and Verbal Behavior 16, 519-533.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1016/S0022-5371(77)80016-9",
+     "correction": "Not verified: no network access. From memory the citation and the crossover finding are correct; this is the classic transfer-appropriate processing result. No proportions are available."
+    },
+    {
+     "claim": "Pan & Rickard (2018): transfer d about 0.40 overall; 0.28 without response congruency, 0.58 with; elaborated retrieval practice adds about 0.23; 192 effect sizes.",
+     "source": "Psychological Bulletin 144(7), 710-756.",
+     "status": "unsupported",
+     "url": "https://doi.org/10.1037/bul0000151",
+     "correction": "Not verified: no network access. From memory the overall d of about 0.40 and the 192 effect sizes look right. The 0.28, 0.58 and 0.23 subgroup figures are unchecked, and the claim's own 'numbers' field describes the 0.23 inconsistently (once as elaborated retrieval practice, once as elaborated feedback). Check those figures against the paper before using them for weights."
+    },
+    {
+     "claim": "Kang, McDermott & Roediger (2007): without feedback, MC helped more; with feedback, short answer gave the best final performance.",
+     "source": "European Journal of Cognitive Psychology 19(4-5), 528-558.",
+     "status": "unsupported",
+     "url": "https://www.gwern.net/docs/spaced-repetition/2007-kang.pdf",
+     "correction": "Not verified: no network access. From memory the citation and the pattern (feedback flips the advantage to short answer) look right, and the materials were psychology journal articles. No numbers are available."
+    },
+    {
+     "claim": "Rational-deletion cloze is predicted by vocabulary and grammar (Thai EFL 2015, N=104; McKamey 2006, N=48; 2022 think-aloud, N=16).",
+     "source": "Veridian E-Journal 2015 (no author given); McKamey 2006, Second Language Studies (University of Hawai'i).",
+     "status": "unsupported",
+     "url": "https://scholarspace.manoa.hawaii.edu/handle/10125/20213",
+     "correction": "Not verified: the site would not resolve. The 2015 study has no author, and the 2022 think-aloud has no source at all. The claim admits these are not peer-reviewed or top-tier sources, so they fail the task's sourcing rule as cited."
+    },
+    {
+     "claim": "Oller (1971) and Oller & Streiff (1975): dictation taps general processing, and correlated best with the total score in the UCLA placement battery and highly with cloze.",
+     "source": "English Language Teaching 25, 254-259; ELT Journal 30(1).",
+     "status": "unsupported",
+     "url": "https://www.tirfonline.org/wp-content/uploads/2017/10/Dictation_SelectedReferences_4September2017.docx",
+     "correction": "Not verified: no network access, and the URL is a reference list. From memory the citations exist, with Oller & Streiff at ELT Journal 30(1), about pp. 25-36. No numbers are available, and the claims were read secondhand."
+    },
+    {
+     "claim": "No validation study of jumbled-sentence rearrangement was found; the evidence comes from elicited imitation and a word-order test in L2 Chinese.",
+     "source": "Inference; unnamed SSLA 2024 elicited-imitation study.",
+     "status": "unsupported",
+     "url": "https://www.cambridge.org/core/product/1E9151CA630EC7B73C1537787FB10D09",
+     "correction": "Not verified, and the cited study has no authors. The 'L2 Chinese word-order test' has no source at all. The weights proposed for rearrange are inference only."
+    },
+    {
+     "claim": "No study correlates spoken and written form recall for the same L2 learners; Son (2022) is the nearest related work.",
+     "source": "Son (2022), SeoulTech repository.",
+     "status": "unsupported",
+     "url": "https://pure.seoultech.ac.kr/en/publications/the-role-of-modality-and-working-memory-capacity-in-l2-production/",
+     "correction": "Not verified: no network access. A claim that no study exists cannot be confirmed without searching. Son (2022) is cited without its venue, and the proposed Say-to-Write weight is inference."
+    }
+   ]
+  }
+ },
+ {
+  "angle": "retrieval",
+  "report": {
+   "claims": [
+    {
+     "claim": "Retrieval practice transfers to tests that differ from the practice test. Against a re-exposure (restudy) control, the overall random-effects transfer effect is d = 0.40.",
+     "source": "Pan, S. C., & Rickard, T. C. (2018). Transfer of test-enhanced learning: Meta-analytic review and synthesis. Psychological Bulletin, 144(7), 710-756",
+     "url": "https://doi.org/10.1037/bul0000151",
+     "confidence": "High",
+     "numbers": "d = 0.40, 95% CI [0.31, 0.50]; 192 transfer effect sizes from 122 experiments (67 published and unpublished studies, about 10,000 participants). One secondary source lists a weighted mean of 0.49, which conflicts with 0.40.",
+     "population": "Mixed. Mostly adult and student samples across many materials, not specific to L2.",
+     "relevance": "This is the general ceiling for partial credit. A success on a different format is worth about half the direct testing effect, not the whole of it (testing effects on identical tests are typically larger; see the gaps). It supports a weight below 1 for cross-skill credit."
+    },
+    {
+     "claim": "Response congruency is the strongest moderator. When the final test asks for the same response as the practice test, transfer is much larger than when the response differs.",
+     "source": "Pan & Rickard 2018, Psychological Bulletin 144(7), moderator analysis (as quoted in secondary summaries)",
+     "url": "https://doi.org/10.1037/bul0000151",
+     "confidence": "Medium",
+     "numbers": "No response congruency: d = 0.28. Congruent responses: +0.30, about d = 0.58. Elaborated retrieval practice: +0.23. Higher initial-test accuracy predicts more transfer.",
+     "population": "Mixed meta-analytic sample",
+     "relevance": "Fluenough mapping: chooseMeaning, hearMeaning and hear-and-type-meaning all retrieve the same response (the meaning). They should give each other large credit (Recognition and Hear, d about 0.58). Say and Write retrieve the L2 form instead, so credit flowing from Recognition or Hear to them should be smaller (d about 0.28). The initial-accuracy moderator means only successful answers should transfer credit; failures should not."
+    },
+    {
+     "claim": "Transfer is greatest across test formats (for example free recall to multiple choice on the same information) and weakest for rearranged stimulus-response items (cue and target swapped) and for untested material seen only at study.",
+     "source": "Pan & Rickard 2018, Psychological Bulletin 144(7)",
+     "url": "https://doi.org/10.1037/bul0000151",
+     "confidence": "Medium",
+     "numbers": "Across formats: d = 0.58 (secondary notes). Untested material seen during study: d = 0.16, p = .20, k = 17 (not significant). I did not find a category-specific d for rearrangement.",
+     "population": "Mixed meta-analytic sample",
+     "relevance": "Same direction, different format (choose versus type, MCQ versus cloze, recognition reveal versus chooseMeaning) deserves near-full credit. Reversing direction (meaning to word versus word to meaning: Recognition versus Write or Say) is the weakest case. Words shown only as distractors or in a passage should get almost no credit."
+    },
+    {
+     "claim": "Testing enhances transfer across temporal contexts, test formats and knowledge domains; the small but growing literature reports robust benefits of testing on transfer.",
+     "source": "Carpenter, S. K. (2012). Testing enhances the transfer of learning. Current Directions in Psychological Science, 21(5), 279-283",
+     "url": "https://doi.org/10.1177/0963721412452728",
+     "confidence": "Medium",
+     "numbers": "Narrative review with no pooled effect size",
+     "population": "Mostly adult and student samples",
+     "relevance": "Qualitative support for letting one question type update other formats of the same skill, and for some cross-skill credit"
+    },
+    {
+     "claim": "Testing the forward direction of a pair (cue to target) also improves later recall in the backward direction (target to cue) compared with restudy: the 'backward transfer effect'. A later source notes it had been shown only with simple native-language word pairs.",
+     "source": "Carpenter, S. K., Pashler, H., & Vul, E. (2006). What types of learning are enhanced by a cued recall test? Psychonomic Bulletin & Review, 13(5), 826-830 (citation from memory, described by a later paper)",
+     "url": "https://doi.org/10.3758/BF03194004",
+     "confidence": "Medium",
+     "numbers": "Not found",
+     "population": "Adult English speakers; L1 word pairs",
+     "relevance": "Direct evidence that a Recognition success (L2 to L1) should give partial credit to Write or Say (L1 to L2), and vice versa, but less than a same-direction review. The DOI comes from memory and needs checking."
+    },
+    {
+     "claim": "Associative symmetry: in paired-associate memory, accuracy on forward and backward probes of the same pair is very highly correlated, nearly as high as two probes in the same direction. The fitted forward-backward storage correlation was close to 1.0. Symmetry weakens to mid-range correlations in other paradigms (Caplan 2005, 19-word lists), and for semantically related pairs the two directions can be modified separately.",
+     "source": "Rizzuto, D. S., & Kahana, M. J. (2001). An autoassociative neural network model of paired-associate learning. Neural Computation, 13, 2075-2092; Kahana, M. J. (2002). Associative symmetry and memory theory. Memory & Cognition, 30(6), 823-840",
+     "url": "https://doi.org/10.1162/089976601750399317",
+     "confidence": "Medium",
+     "numbers": "Forward-backward correlation parameter close to 1.0 for all participants (model fit). Caplan 2005: mid-range values.",
+     "population": "Adult native speakers; L1 word pairs",
+     "relevance": "The two directions largely share one memory trace in strength, which argues for strong coupling of Recognition and Write or Say stability. The L2 evidence below shows direction still matters for what is learned (form versus meaning), so the coupling is strong but well below 1."
+    },
+    {
+     "claim": "Learning direction determines what gets better. On a production test, L1-to-L2 (productive) learners had a sizable advantage over L2-to-L1 (receptive) learners. On recognition, receptive learners did better. Testing was immediate and after 3 weeks.",
+     "source": "Steinel, M. P., Hulstijn, J. H., & Steinel, W. (2007). Second language idiom learning in a paired-associate paradigm: Effects of direction of learning, direction of testing, idiom imageability, and idiom transparency. Studies in Second Language Acquisition, 29, 449-484",
+     "url": "https://doi.org/10.1017/S0272263107070271",
+     "confidence": "High",
+     "numbers": "n = 129, 20 idioms. Exact effect sizes not retrieved.",
+     "population": "Dutch university students learning English L2 idioms",
+     "relevance": "Credit across directions is asymmetric and less than full. Practice in a direction helps that same direction most."
+    },
+    {
+     "claim": "Productive learning of word pairs gave larger gains than receptive learning on receptive and productive orthography, and on productive meaning, syntax and grammatical functions. Receptive learning gave larger gains only on receptive knowledge of meaning. If only one method is used, productive learning may be more effective.",
+     "source": "Webb, S. (2009). The effects of receptive and productive learning of word pairs on vocabulary knowledge. RELC Journal, 40(3), 360-376",
+     "url": "https://doi.org/10.1177/0033688209343854",
+     "confidence": "High",
+     "numbers": "MANOVA over 10 measures: F(10,51) = 3.73, p < .001 (from an auto-summary; verify). Exact gains not retrieved.",
+     "population": "Japanese EFL learners (84 per abstract summary)",
+     "relevance": "Asymmetric transfer. A Write or Say success (production) should give more credit to Recognition than a Recognition success gives to Write or Say. Production largely implies reception, but not the reverse."
+    },
+    {
+     "claim": "Webb (2005) found the opposite pattern when time on task was equalised: receptive learning (glossed sentences) produced greater receptive and productive knowledge than a sentence-production task.",
+     "source": "Webb, S. (2005). Receptive and productive vocabulary learning: The effects of reading and writing on word knowledge. Studies in Second Language Acquisition, 27(1), 33-52",
+     "url": "https://doi.org/10.1017/S0272263105050023",
+     "confidence": "Medium",
+     "numbers": "Not retrieved",
+     "population": "Japanese EFL learners",
+     "relevance": "The size of production-to-reception transfer depends on task and time. It cautions against hard-coding a large asymmetric weight without in-app calibration."
+    },
+    {
+     "claim": "Productive learning was more beneficial for learning the form and receptive learning for learning the meaning. Learners did best when the test direction matched the study direction.",
+     "source": "Mondria, J.-A., & Wiersma, B. (2004). Receptive, productive, and receptive + productive L2 vocabulary learning: What difference does it make? In P. Bogaards & B. Laufer (Eds.), Vocabulary in a Second Language (pp. 79-100). John Benjamins",
+     "url": "https://doi.org/10.1075/lllt.10.08mon",
+     "confidence": "Medium",
+     "numbers": "From a secondary summary: word-list learners gained 53% on immediate form recall and 12% on delayed form recall after 13 days. Results for the receptive + productive condition not found.",
+     "population": "Dutch secondary-school learners of French (population inferred, not verified)",
+     "relevance": "Supports a same-direction-is-best rule: the full review applies to the practised skill, and only partial credit to the other direction."
+    },
+    {
+     "claim": "Training L1 cue to L2 response (productive direction) gave better retention on both comprehension and production tests than the easier L2-to-L1 direction. Receptive test scores were higher than productive scores whatever the learning direction.",
+     "source": "Griffin, G., & Harley, T. A. (1996). List learning of second language vocabulary. Applied Psycholinguistics, 17, 443-460",
+     "url": "https://doi.org/10.1017/S0142716400008195",
+     "confidence": "Medium",
+     "numbers": "Not retrieved",
+     "population": "English secondary-school learners of French aged 11-13 (from Griffin's 1992 thesis; journal sample not verified)",
+     "relevance": "A production success implies a recognition success more strongly than the reverse. This supports larger credit from Write or Say to Recognition or Hear than the other way. The DOI comes from memory and needs checking."
+    },
+    {
+     "claim": "The harder English-to-French direction during learning produced higher accuracy on the 1-week retention test and somewhat higher relearning accuracy, regardless of which direction was used at relearning. Difficulty aided both retention and transfer to the other task. A 2025 six-experiment follow-up found difficult conditions hurt during learning and immediate testing but made no difference or helped at relearning and delayed testing.",
+     "source": "Schneider, V. I., Healy, A. F., & Bourne, L. E., Jr. (2002). What is learned under difficult conditions is hard to forget: Contextual interference effects in foreign vocabulary acquisition, retention, and transfer. Journal of Memory and Language, 46, 419-440; Healy, Schneider & Kole (2025), Behavioral Sciences 15(5), 692",
+     "url": "https://doi.org/10.1006/jmla.2001.2813",
+     "confidence": "Medium",
+     "numbers": "Not retrieved",
+     "population": "English-speaking US undergraduates learning French vocabulary",
+     "relevance": "A productive (L1-to-L2) success transfers to relearning in the receptive direction too. It supports giving Recognition credit for Write or Say successes, and giving productive successes more weight as evidence of durable knowledge."
+    },
+    {
+     "claim": "The better learning direction depends on proficiency. For lower-proficiency learners, L2-to-L1 retrieval practice was more effective; for higher-proficiency learners, L1-to-L2 was more effective. Earlier studies comparing directions are inconsistent.",
+     "source": "Terai, M., Yamashita, J., & Pasich, K. E. (2021). Effects of learning direction in retrieval practice on EFL vocabulary learning. Studies in Second Language Acquisition, 43(5)",
+     "url": "https://doi.org/10.1017/S0272263121000346",
+     "confidence": "Medium",
+     "numbers": "Not retrieved",
+     "population": "Japanese EFL learners",
+     "relevance": "The cross-skill weight could be conditioned on the learner's Elo ability. Beginners get more from receptive success, so do not over-credit early receptive-only learners in production. The DOI comes from memory and needs checking."
+    },
+    {
+     "claim": "For productive knowledge of spelling, recall formats beat recognition. When spelling was not required, recognition formats were the more useful choice, and better performance during learning did not necessarily mean better posttest performance.",
+     "source": "Nakata, T. (2016). Effects of retrieval formats on second language vocabulary learning. International Review of Applied Linguistics in Language Teaching, 54(3), 257-289",
+     "url": "https://doi.org/10.1515/iral-2015-0022",
+     "confidence": "Medium",
+     "numbers": "N = 64, 60 Swahili-English pairs, 4 conditions. Effect sizes not retrieved.",
+     "population": "English-speaking college students learning Swahili words",
+     "relevance": "Choose-type questions (chooseWord, MCQ cloze) do not imply typed-form knowledge. A chooseWord success should give only partial credit to type-the-word or Write-typed, while a typed success largely implies the choose form. This argues for a separate typed-form strength or a lower weight for choose-to-type."
+    },
+    {
+     "claim": "Testing a subset of prose material improved recall of related untested material 24 hours later ('retrieval-induced facilitation'). Extra study time without a test did not produce the benefit. A 2010 follow-up found the benefit grows from 20 minutes to 24 hours and then levels off.",
+     "source": "Chan, J. C. K., McDermott, K. B., & Roediger, H. L. (2006). Retrieval-induced facilitation: Initially nontested material can benefit from prior testing of related material. Journal of Experimental Psychology: General, 135(4), 553-571",
+     "url": "https://doi.org/10.1037/0096-3445.135.4.553",
+     "confidence": "Medium",
+     "numbers": "3 experiments, N = 210. Effect sizes not retrieved.",
+     "population": "US undergraduates, L1 prose",
+     "relevance": "Partial support for crediting a word's other skills, or related words, after a success, mainly for integrated or coherent material. Pan & Rickard's pooled estimate for untested items (d = 0.16, n.s.) says this credit should be small."
+    },
+    {
+     "claim": "Testing with keyword mediators beat restudy-only by almost three times on a one-week final test. Keywords were remembered more often after test-restudy (51%) than after restudy only (34%).",
+     "source": "Pyc, M. A., & Rawson, K. A. (2010). Why testing improves memory: Mediator effectiveness hypothesis. Science, 330(6002), 335",
+     "url": "https://doi.org/10.1126/science.1191465",
+     "confidence": "Medium",
+     "numbers": "N = 118, 48 Swahili-English pairs. Mediator recall 51% vs 34%. Final-test performance about 3x restudy.",
+     "population": "US undergraduates learning Swahili-English pairs",
+     "relevance": "Shows why an L2-to-L1 test can help other directions: it strengthens a shared mediator. It supports partial cross-direction credit."
+    },
+    {
+     "claim": "Retrieval practice beat imitation (repeating after a model) for foreign vocabulary learning, measured on comprehension and production or pronunciation.",
+     "source": "Kang, S. H. K., Gollan, T. H., & Pashler, H. (2013). Don't just repeat after me: Retrieval practice is better than imitation for foreign vocabulary learning. Psychonomic Bulletin & Review, 20(6), 1259-1265",
+     "url": "https://doi.org/10.3758/s13423-013-0450-z",
+     "confidence": "Low",
+     "numbers": "Not retrieved; the direction of the result is inferred from the title",
+     "population": "US undergraduates learning Hebrew words",
+     "relevance": "A Say item answered from the meaning, without a model to copy, is a real retrieval and should count as a review. A shadowing or read-aloud item should count little toward FSRS."
+    },
+    {
+     "claim": "Mode of input changes which word knowledge develops. Reading while listening gave more spoken-form recall (picture naming) than listening only. Groups that heard the words (reading while listening, listening only) were rated less accented and more comprehensible than the reading-only group. Sound-spelling consistency also moderated results.",
+     "source": "Uchihara, T., Webb, S., Saito, K., & Trofimovich, P. (2022). Does mode of input affect how second language learners create form-meaning connections and pronounce second language words? The Modern Language Journal",
+     "url": "https://doi.org/10.1111/modl.12775",
+     "confidence": "High",
+     "numbers": "N = 75, 40 low-frequency words. Tests at pretest, immediately after, and about 6 days later. Effect sizes not retrieved.",
+     "population": "Japanese EFL learners",
+     "relevance": "Written-only practice transfers only partially to spoken skills. A Recognition or Write success should give the Say skill reduced credit, and should not credit Say pronunciation quality at all. Credit to Say or Hear from written skills should be lower in scripts with low sound-spelling consistency."
+    },
+    {
+     "claim": "The modality of video input (audio, captions, or both) affected learning of written versus aural word forms. The captioned groups (audio plus captions, and captions only) scored higher on written-form tests.",
+     "source": "Sydorenko, T. (2010). Modality of input and vocabulary acquisition. Language Learning & Technology, 14(2), 50-73",
+     "url": "https://hdl.handle.net/10125/44214",
+     "confidence": "Medium",
+     "numbers": "Groups: VAC n = 8, VA n = 9, VC n = 9 (N = 26). Aural-form results not retrieved.",
+     "population": "Second-semester US learners of Russian",
+     "relevance": "Written and aural form knowledge develop partly separately, so Hear and Recognition (written) should be coupled, not merged"
+    },
+    {
+     "claim": "Aural (phonological) and written (orthographic) vocabulary sizes are related but distinct. The 0.68 coupling weight Fluenough uses comes from this paper.",
+     "source": "Milton, J., & Hopkins, N. (2006). Comparing phonological and orthographic vocabulary size: Do vocabulary tests underestimate the knowledge of some learners? Canadian Modern Language Review, 63(1), 127-147",
+     "url": "https://doi.org/10.1353/cml.2006.0048",
+     "confidence": "Low",
+     "numbers": "I could not verify the correlation value (.68) in this session",
+     "population": "L2 English learners (Arabic and Greek L1 per later citations; not verified)",
+     "relevance": "A between-learner correlation of vocabulary sizes is evidence for coupling the ability (Elo) layer. It is not a measure of how much one review strengthens memory in another skill, so it should not be reused unchanged as the FSRS review-credit weight."
+    },
+    {
+     "claim": "Proposed quantification, inferred from the claims above and not reported by any single study. Same skill, different format: about 0.8-1.0 of a review. Same direction and same response, different channel (Recognition and Hear): about 0.5-0.6. Production success to reception (Write or Say to Recognition or Hear): about 0.5. Reception success to production: about 0.25-0.3. Choose-form to typed-form: about 0.3-0.5. Untested distractors or related words: about 0-0.15. Failures give no credit to other skills.",
+     "source": "Inference from Pan & Rickard 2018 (d 0.28 vs 0.58 vs untested 0.16, against a direct testing effect of roughly d 0.5-0.8 in other meta-analyses, not retrieved here), Webb 2009, Griffin & Harley 1996, Steinel et al. 2007, Nakata 2016, Uchihara et al. 2022",
+     "url": "https://doi.org/10.1037/bul0000151",
+     "confidence": "Low",
+     "numbers": "Ratios such as 0.28/0.58 ≈ 0.48 of the congruent-transfer effect",
+     "population": "Mixed",
+     "relevance": "In FSRS, implement this as a fractional stability update, or a partial review, on the other skills' schedules. Do not reset their due dates. Calibrate the weights later from Fluenough's own review logs: how a success in skill A predicts the next answer in skill B."
+    }
+   ],
+   "gaps": [
+    "WebFetch and direct downloads were blocked in this session (DNS failure or the proxy refused the connection for pubmed, cambridge.org, researchgate and retrievalpractice.org). No full text or abstract page could be opened. Every claim comes from search-engine extracts of abstracts or secondary summaries. 'High' is used only where the search extract reproduced the abstract's own statements.",
+    "Pan & Rickard 2018: the category-specific d for rearranged stimulus-response items (direction reversal) was not retrieved. Check the paper's moderator tables (sc-pan.github.io/pdf/PR_2018W.pdf hosts a preprint).",
+    "The Milton & Hopkins (2006) correlation value used by the app (.68) could not be confirmed. It is a between-learner size correlation, not a within-learner review-transfer rate.",
+    "Exact effect sizes were not found for: Griffin & Harley 1996, Mondria & Wiersma 2004 (including the receptive+productive condition), Webb 2009 per-measure gains, Schneider et al. 2002 direction effects, Kang et al. 2013, Carpenter et al. 2006 backward-transfer size, Sydorenko 2010 aural results, Uchihara et al. 2022.",
+    "No study found reports a 'transfer rate' in FSRS or stability terms (for example: one review in skill A equals x reviews in skill B). Any numeric cross-skill weight must be inferred, and should then be fitted on the app's own review logs.",
+    "No direct evidence was found on speaking-practice (ASR-graded) transfer to listening or reading, on dictation or script practice transferring to word skills, or on whether grammar-form practice credits lexical skills.",
+    "DOIs given from memory and not confirmed in this session: Carpenter, Pashler & Vul 2006; Griffin & Harley 1996; Terai et al. 2021; Webb 2005; Pyc & Rawson 2010; Chan et al. 2006. Verify them before citing.",
+    "The direct testing effect (same test) used as the denominator in the quantification claim was not retrieved. Rowland 2014 or Adesope et al. 2017 would give it."
+   ]
+  },
+  "verdict": {
+   "checked": [
+    {
+     "claim": "Pan & Rickard 2018: retrieval practice transfers to tests that differ from the practice test. Against a re-exposure (restudy) control, the overall random-effects transfer effect is d = 0.40, 95% CI [0.31, 0.50], from 192 effect sizes in 122 experiments (67 articles).",
+     "source": "Pan, S. C., & Rickard, T. C. (2018). Psychological Bulletin, 144(7), 710-756. DOI 10.1037/bul0000151",
+     "status": "confirmed",
+     "correction": "The abstract (PubMed 29733621, seen through search snippets) states the figures as claimed: d = 0.40, 95% CI [0.31, 0.50], 192 effect sizes, 122 experiments, 67 published and unpublished articles. The exact N is 10,382, not 'about 10,000'. The abstract adds that after publication-bias correction the intercept predictions were 'substantially reduced, often indicating no positive transfer' when none of the moderators were present. I could not trace the 'weighted mean 0.49' figure, so the abstract value 0.40 stands. Caveat: the line 'a success on a different format is worth about half the direct testing effect' is the researcher's inference, not a finding of the paper. Confidence: High for the numbers (abstract wording returned by search). Network limits blocked fetching the PDF directly.",
+     "url": "https://doi.org/10.1037/bul0000151"
+    },
+    {
+     "claim": "Response congruency is the strongest moderator: no congruency d = 0.28; congruent about d = 0.58 (+0.30); elaborated retrieval practice +0.23; higher initial-test accuracy predicts more transfer.",
+     "source": "Pan & Rickard 2018, moderator analysis (via secondary summary)",
+     "status": "confirmed",
+     "correction": "Only the qualitative part is in the abstract: response congruency, elaborated retrieval practice and initial test performance 'strongly influence the likelihood of positive transfer'. The numbers (0.28, +0.30 giving about 0.58, +0.23, and about +0.0058 d per percentage point of initial accuracy) come only from a secondary note (Matuschak's notes) and a 2025 citing paper. I could not check them against the paper's tables. Confidence stays Medium. The step from 'initial accuracy' to 'only successes should transfer credit' is an inference. The moderator concerns accuracy at the level of a whole study, not individual items.",
+     "url": "https://notes.andymatuschak.org/zC1oBp6yE72b7YHzaJZmjXf"
+    },
+    {
+     "claim": "Transfer is greatest across test formats and weakest for rearranged stimulus-response items and for untested material seen at study. Across formats d = 0.58; untested material d = 0.16, p = .20, k = 17.",
+     "source": "Pan & Rickard 2018",
+     "status": "corrected",
+     "correction": "The abstract confirms the ranking. Transfer was greatest across test formats, to application and inference questions, to medical-diagnosis problems, and to mediator and related-word cues. It was weakest to rearranged stimulus-response items, to untested materials seen during initial study, and to worked-example problems. The figure 'across formats d = 0.58' is not supported. The secondary notes give 0.58 as the congruent-response estimate, and the claim appears to merge the two. The figure d = 0.16, p = .20, k = 17 for untested material is quoted by Glaser & Richter (2025, Teaching of Psychology, doi 10.1177/00986283231218943), which cites Pan & Rickard. I did not check it in the primary paper, so confidence is Medium. No category-specific d for rearranged items was found.",
+     "url": "https://doi.org/10.1037/bul0000151"
+    },
+    {
+     "claim": "Carpenter 2012: testing enhances transfer across temporal contexts, test formats and knowledge domains, with robust benefits in a small but growing literature.",
+     "source": "Carpenter, S. K. (2012). Current Directions in Psychological Science, 21(5), 279-283",
+     "status": "confirmed",
+     "correction": "The abstract (paraphrased in search results) reviews research on how testing affects transfer across temporal contexts, test formats and knowledge domains, and says the small but growing literature shows robust benefits. It is a narrative review with no pooled effect size. The citation details and DOI are correct.",
+     "url": "https://doi.org/10.1177/0963721412452728"
+    },
+    {
+     "claim": "Testing forward (cue to target) improves later backward recall (target to cue) compared with restudy: the backward transfer effect. A later source says it had been shown only with native-language word pairs.",
+     "source": "Carpenter, S. K., Pashler, H., & Vul, E. (2006). Psychonomic Bulletin & Review, 13(5), 826-830",
+     "status": "corrected",
+     "correction": "The paper exists as cited: title, authors, PB&R volume 13, pages 826-830. Citing sources describe its finding as substantial transfer to the reversed, untested direction on a delayed final test. I did not see the DOI 10.3758/BF03194004 in any source, so it remains unverified. The 'only native-language pairs' statement is incomplete. The same later source says the effect has been shown with simple native-language pairs (Carpenter et al. 2006; Cheng 2014; Rickard & Pan 2020) and with native-foreign pairs (Barenberg et al. 2021). That makes it more relevant to L2 than the claim suggests. No effect sizes were retrieved. Confidence: Medium (secondary descriptions).",
+     "url": "https://www.thomas-camlab.org/_files/ugd/b8cc16_7ff666604b89401f86a4503ce174af9b.pdf"
+    },
+    {
+     "claim": "Associative symmetry: forward and backward probes are very highly correlated, and the fitted forward-backward storage correlation is close to 1.0. Symmetry weakens to mid-range correlations in other paradigms (Caplan 2005, 19-word lists). For semantically related pairs the two directions can be modified separately.",
+     "source": "Rizzuto & Kahana (2001) Neural Computation 13, 2075-2092; Kahana (2002) Memory & Cognition 30(6), 823-840",
+     "status": "corrected",
+     "correction": "Rizzuto & Kahana 2001 is confirmed. The abstract says the model fits significantly better when forward and backward storage strengths are highly correlated, and it favours a single blended unit over separately modifiable associations. 'Close to 1.0 for all participants' is how Aenugu & Huber (2021, Neural Computation 33(12)) describe the result; it is not quoted from the 2001 abstract. Kahana 2002 exists as cited. The Caplan 2005 detail is unsupported. Caplan 2005 (J. Math. Psych. 49, 383-402) is 'Associative isolation', and I found no '19-word list, mid-range correlation' result. The closest support is Caplan, Glaholt & McIntosh (2006, JEP:LMC 32(6)): forward and backward probes were highly correlated for pairs and less so for triples. Kahana & Caplan (2002) found a forward-recall advantage for triples and serial lists. The claim about semantically related pairs is unsupported because no source was found.",
+     "url": "https://doi.org/10.1162/089976601750399317"
+    },
+    {
+     "claim": "Steinel et al. 2007: productive (L1 to L2) learners had a sizable advantage on production tests and receptive learners did better on recognition. Testing was immediate and after 3 weeks. n = 129, 20 idioms, Dutch university students.",
+     "source": "Steinel, M. P., Hulstijn, J. H., & Steinel, W. (2007). SSLA 29, 449-484",
+     "status": "confirmed",
+     "correction": "The abstract (Leiden open-access copy, hdl 1887/14200) confirms n = 129 Dutch university students, 20 English idioms, receptive or productive learning, tests in both directions immediately and after 3 weeks. Productive learners had a 'sizable advantage' on the productive test, and receptive learners did better on recognition. No effect sizes were retrieved. The DOI is given as 10.1017/S0272263107070271 in the search result, which I did not resolve independently.",
+     "url": "https://hdl.handle.net/1887/14200"
+    },
+    {
+     "claim": "Webb 2009: productive learning of word pairs gave larger gains on most measures, receptive learning only on receptive meaning, and if only one method is used productive learning may be more effective. MANOVA F(10,51) = 3.73.",
+     "source": "Webb, S. (2009). RELC Journal, 40(3), 360-376",
+     "status": "confirmed",
+     "correction": "The abstract (ERIC EJ865637) confirms Japanese EFL students, five aspects each tested receptively and productively, larger receptive-meaning gains from receptive learning, and 'if only one method is used, productive learning of word pairs might be more effective'. The exact set of aspects where productive learning won could not be checked against the full text. One citing review lists productive orthography, meaning, association, syntax and grammar, plus receptive orthography and meaning. That conflicts with the claim's 'receptive learning larger only on receptive meaning' if receptive meaning is included. The MANOVA F(10,51) = 3.73 and n = 84 were not verified. Treat them as unsupported until the full text is read.",
+     "url": "https://eric.ed.gov/?id=EJ865637"
+    },
+    {
+     "claim": "Webb 2005: with time on task equalised, receptive learning (glossed sentences) produced greater receptive and productive knowledge than sentence production, which is the opposite of Webb 2009.",
+     "source": "Webb, S. (2005). SSLA 27(1), 33-52",
+     "status": "corrected",
+     "correction": "The abstract says that with equal time on both tasks the reading (glossed-sentence) task was superior (Experiment 1). When time depended on what each task needed to complete, so that writing took longer, the writing task was more effective (Experiment 2). Webb concludes that if Experiment 2 reflects authentic learning, the case for productive tasks is stronger. So 'opposite pattern' holds only under equal time, and the paper's own conclusion leans toward productive tasks. The detail 'greater receptive and productive knowledge' was not confirmed beyond 'reading task was superior'.",
+     "url": "https://doi.org/10.1017/S0272263105050023"
+    },
+    {
+     "claim": "Mondria & Wiersma 2004: productive learning better for form, receptive better for meaning, and learners best when test direction matched study direction. Word-list learners gained 53% on immediate form recall and 12% on delayed recall after 13 days.",
+     "source": "Mondria & Wiersma (2004), in Bogaards & Laufer (Eds.), Vocabulary in a Second Language, pp. 79-100, John Benjamins",
+     "status": "unsupported",
+     "correction": "The chapter exists as cited (DOI 10.1075/lllt.10.08mon; Groningen portal; Dutch version in Levende Talen Tijdschrift 2004). I found no abstract or summary that states its findings. Citing papers use it only for 'productive knowledge is acquired more slowly and is more susceptible to forgetting'. The 53% and 12% (13 days) figures were not found anywhere. Population is unverified.",
+     "url": "https://doi.org/10.1075/lllt.10.08mon"
+    },
+    {
+     "claim": "Griffin & Harley 1996: L1-to-L2 training gave better retention on both comprehension and production tests than L2-to-L1. Receptive scores were higher than productive whatever the direction. Learners were English school learners of French aged 11-13.",
+     "source": "Griffin, G., & Harley, T. A. (1996). Applied Psycholinguistics, 17, 443-460",
+     "status": "corrected",
+     "correction": "The paper exists (Applied Psycholinguistics 17(4), 443-460; Cambridge). The abstract reports a study of comprehensive-school pupils aged 11-13 learning French. Its conclusion is narrower than claimed: L1-L2 presentation was 'the more versatile form of presentation if both production and comprehension of L2 items were required'. 'Better retention on both tests' and 'receptive scores higher than productive regardless of direction' were not verified. The DOI 10.1017/S0142716400008195 was not seen in any result and is unverified.",
+     "url": "https://www.cambridge.org/core/journals/applied-psycholinguistics/article/list-learning-of-second-language-vocabulary/F00040624B9C1370140CF398F9A1E0B0"
+    },
+    {
+     "claim": "Schneider, Healy & Bourne 2002: the harder English-to-French direction produced higher 1-week retention and somewhat higher relearning accuracy regardless of relearning direction. Healy, Schneider & Kole 2025 (6 experiments): difficulty hurt during learning and immediate testing but made no difference or helped at relearning and delayed testing.",
+     "source": "Schneider, Healy & Bourne (2002) JML 46, 419-440; Healy, Schneider & Kole (2025) Behavioral Sciences 15(5), 692",
+     "status": "confirmed",
+     "correction": "Healy et al. 2025 (doi 10.3390/bs15050692, PMC12108878) confirms the six-experiment summary: four earlier and two new experiments, French-English pairs, with difficult conditions at a disadvantage during learning and immediate testing and no difference or an advantage at relearning and delayed testing. It also concludes that harder initial learning 'does not always lead to superior retention', which the claim leaves out. The 2002 result ('more accurate on the 1-week retention test, somewhat more accurate during relearning, regardless of direction at relearning') comes from Healy et al. 2025's description of it, not the 2002 abstract, so confidence is Medium. Participants were native English speakers with no prior French who typed responses.",
+     "url": "https://doi.org/10.3390/bs15050692"
+    },
+    {
+     "claim": "Terai, Yamashita & Pasich 2021: L2-to-L1 retrieval was more effective for lower-proficiency learners and L1-to-L2 for higher-proficiency learners. Earlier studies are inconsistent.",
+     "source": "Terai, M., Yamashita, J., & Pasich, K. E. (2021). SSLA 43(5)",
+     "status": "confirmed",
+     "correction": "The ERIC record (EJ1319303) and abstract confirm the finding and the DOI 10.1017/S0272263121000346. Details: SSLA 43(5), 1116-1137. N = 28 native Japanese speakers learning English, which is a small sample. A minor erratum (a misspelled name in the running head) was issued.",
+     "url": "https://doi.org/10.1017/S0272263121000346"
+    },
+    {
+     "claim": "Nakata 2016: recall formats beat recognition for productive spelling knowledge, recognition is preferable when spelling is not required, and better learning-phase performance did not mean better posttest performance. N = 64, 60 Swahili-English pairs, 4 conditions.",
+     "source": "Nakata, T. (2016). IRAL, 54(3), 257-289",
+     "status": "confirmed",
+     "correction": "The abstract (researchmap listing) confirms 64 English-speaking college students, 60 Swahili-English pairs, flashcard software, and four conditions (recognition, recall, hybrid, productive recall only). It also confirms recall over recognition for productive spelling and recognition as more useful when spelling is not required. The 'learning-phase versus posttest' point is supported by the thesis summary: productive recall 'may decrease learning phase performance'. No effect sizes were retrieved. The DOI 10.1515/iral-2015-0022 matches.",
+     "url": "https://doi.org/10.1515/iral-2015-0022"
+    },
+    {
+     "claim": "Chan, McDermott & Roediger 2006: testing part of prose material improved recall of related untested material 24 h later, and extra study without testing did not. N = 210, 3 experiments. A 2010 follow-up found the benefit grows from 20 min to 24 h and then levels off.",
+     "source": "Chan, McDermott & Roediger (2006). JEP: General, 135(4), 553-571",
+     "status": "confirmed",
+     "correction": "The abstract confirms 3 experiments, N = 210, prose materials, facilitation at 24 h, and no facilitation from additional study without testing. Experiment 3 showed that conscious strategies can modulate the effect. The follow-up is Chan, J. C. K. (2010), Memory, 18(1), 49-57 (doi 10.1080/09658210903405737). Its abstract says the effect grows between 20 min and 24 h and levels off between 24 h and 7 days. Note also Oliva & Storm (2022, PMC9425789): the effect replicated but was 'somewhat smaller than previously observed', and Chan (2009) ties it to well-integrated material.",
+     "url": "https://doi.org/10.1037/0096-3445.135.4.553"
+    },
+    {
+     "claim": "Pyc & Rawson 2010: testing with keyword mediators beat restudy-only by almost three times on a one-week final test, and keywords were remembered more often after test-restudy (51%) than restudy (34%). N = 118, 48 Swahili-English pairs.",
+     "source": "Pyc, M. A., & Rawson, K. A. (2010). Science, 330(6002), 335",
+     "status": "corrected",
+     "correction": "The citation exists (PubMed 20947756). Supported: test-restudy produced mediators that were more likely to be retrieved and more likely to elicit targets. Mediator recall at final test was 51% after test-restudy versus 34% after restudy, according to a citing paper and press coverage. When mediators were supplied at test, recall improved after restudy but not after test-restudy. The 'almost three times' final-test advantage was not found in any source and is unsupported. N = 118, 48 pairs, the one-week delay and the Swahili materials were not verified by the sources I reached.",
+     "url": "https://doi.org/10.1126/science.1191465"
+    },
+    {
+     "claim": "Kang, Gollan & Pashler 2013: retrieval practice beat imitation for foreign vocabulary, measured on comprehension and production or pronunciation. US undergraduates, Hebrew words.",
+     "source": "Kang, Gollan & Pashler (2013). PB&R, 20(6), 1259-1265",
+     "status": "confirmed",
+     "correction": "The citation and DOI are confirmed. Two experiments: US undergraduates learned 40 Hebrew nouns over 3 or 6 cycles. A summary of the abstract (Semantic Scholar) reports that retrieval practice gave better comprehension and production with no loss of pronunciation quality. Pronunciation was therefore not better, only no worse. Confidence rises from Low to Medium because the source is a secondary summary, not the verbatim abstract.",
+     "url": "https://doi.org/10.3758/s13423-013-0450-z"
+    },
+    {
+     "claim": "Uchihara et al. 2022: reading-while-listening gave more spoken-form recall than listening-only. Groups that heard the words were less accented and more comprehensible than reading-only. Sound-spelling consistency moderated results. N = 75, 40 words, tests about 6 days later.",
+     "source": "Uchihara, Webb, Saito & Trofimovich (2022). The Modern Language Journal",
+     "status": "confirmed",
+     "correction": "The abstract confirms all of the claim: 75 Japanese EFL learners, 3 conditions, 40 low-frequency words with pictures, picture naming at pretest, immediately after and about 6 days later. It adds that only spoken input without spelling (listening-only) retained the more target-like accent over time. The authors conclude that simultaneous written and spoken input is best for form-meaning connections and comprehensibility.",
+     "url": "https://doi.org/10.1111/modl.12775"
+    },
+    {
+     "claim": "Sydorenko 2010: input modality affected learning of written versus aural forms, and the captioned groups scored higher on written-form tests. VAC n = 8, VA n = 9, VC n = 9.",
+     "source": "Sydorenko, T. (2010). Language Learning & Technology, 14(2), 50-73",
+     "status": "confirmed",
+     "correction": "Confirmed: 26 second-semester learners of Russian with the group sizes as stated. Captioned groups did better on written than aural recognition. The VA (no-caption) group showed the reverse pattern, better aural than written, and VAC learned more meanings than VA. This supports keeping written and aural forms separate.",
+     "url": "https://hdl.handle.net/10125/44214"
+    },
+    {
+     "claim": "Milton & Hopkins 2006: aural and written vocabulary sizes are related but distinct, and the 0.68 coupling weight comes from this paper.",
+     "source": "Milton, J., & Hopkins, N. (2006). Canadian Modern Language Review, 63(1), 127-147",
+     "status": "confirmed",
+     "correction": "The citation and DOI are confirmed. Later citing papers report a correlation of 0.68 between Aural Lex (phonological) and X-Lex (orthographic) scores in 126 learners of English (38 Arabic L1, 88 Greek L1). Arabic speakers had a nearly balanced aural and written lexicon, while Greek speakers knew more words in writing. Both tests are yes/no recognition checklists. I found the figure only in secondary sources (Medium), not in the primary text. The researcher's caveat stands: this is a correlation between learners, not a measure of transfer between skills within one learner.",
+     "url": "https://doi.org/10.1353/cml.2006.0048"
+    },
+    {
+     "claim": "Proposed weights: same skill different format 0.8-1.0; Recognition and Hear 0.5-0.6; production to reception 0.5; reception to production 0.25-0.3; choose to type 0.3-0.5; untested 0-0.15; failures give no credit.",
+     "source": "Inference from Pan & Rickard 2018 and the L2 studies above",
+     "status": "unsupported",
+     "correction": "No study reports these weights. They are an inference, labelled Low. Two inputs are weaker than presented. First, 0.58 is the congruent-response moderator estimate from a secondary summary, not an 'across formats' value. Second, the untested d = 0.16 comes from a secondary citation. The direction of asymmetry (production implies reception more than the reverse) is supported by Webb 2009, Steinel et al. 2007 and Griffin & Harley 1996. It is contradicted under equal time by Webb 2005 (Exp. 1) and depends on proficiency (Terai et al. 2021). That supports the researcher's recommendation to calibrate from Fluenough's own review logs rather than hard-coding the weights.",
+     "url": "https://doi.org/10.1037/bul0000151"
+    }
+   ]
+  }
+ }
+]

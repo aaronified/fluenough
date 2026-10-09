@@ -114,6 +114,20 @@ meanings, labels, descriptions and facts carries its ISO 15919 reading,
 లేదు (lēdu), so that a beginner who cannot read the script yet can read
 them. The validator rejects a deck that leaves one out.
 
+### Decided, 2026-10-09
+
+- **The format first:** the B1 format (phrasebook, rule cards, `rules:`,
+  `bases:`, typed notes, planned units, core and layer) is built in the
+  parser, the validator and `docs/DECK-FORMAT.md` before any B1 deck is
+  written, so that what is written validates. Then one agent writes the
+  whole Bengali B1 course and another the Telugu one.
+- **Pictures:** the agents use `tools/data/picture-mapping.json`, the
+  meanings already matched to Noto Emoji pictures and checked, with the
+  matches dropped and why. The 330 cards given pictures keep them.
+- **Colours:** a shade of the accent colour each for a card's word in the
+  script, its ISO reading, its IPA and its meaning, on every screen that
+  shows a card, checked for contrast in light and dark.
+
 ### Phrasebook, words, rules, then sentences
 
 Each unit of a B1 plan is written in the order `words-rules-sentences.md`
