@@ -89,6 +89,7 @@ class CardRef {
           examples ?? (sameNative ? written.examples : const <CardExample>[]),
       modes: modes ?? written.modes,
       pair: written.pair,
+      picture: written.picture,
     );
   }
 }
@@ -120,6 +121,7 @@ class Card {
     this.examples = const <CardExample>[],
     this.modes = const <DrillMode>{},
     this.pair,
+    this.picture,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -175,6 +177,11 @@ class Card {
   /// such as కాలం (time) for కలం (pen). Hear offers its meaning among the
   /// options, so that a learner who confuses the two is caught (ADR-0034).
   final String? pair;
+
+  /// A picture of what the word means, for a concrete word: one emoji, drawn
+  /// from Noto Emoji ([picturePath]). A cue beside the meaning in Write, and
+  /// beside each meaning Hear offers (ADR-0034).
+  final String? picture;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
@@ -303,3 +310,15 @@ final RegExp _edges = RegExp(
 
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 final RegExp _space = RegExp(r'\s+');
+
+/// The bundled image of [emoji], a card's [Card.picture]: Noto Emoji's
+/// picture of it, named by its code points in hex of at least four digits,
+/// joined by `_`, without the variation selector U+FE0F
+/// (`tools/pictures.py` copies it under this name).
+String picturePath(String emoji) {
+  final points = <String>[
+    for (final rune in emoji.runes)
+      if (rune != 0xfe0f) rune.toRadixString(16).padLeft(4, '0'),
+  ];
+  return 'assets/pictures/emoji_u${points.join('_')}.png';
+}
