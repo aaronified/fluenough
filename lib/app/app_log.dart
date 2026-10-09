@@ -142,8 +142,8 @@ class AppLog extends ChangeNotifier {
   /// Something that did not work, after which the app went on.
   void warning(String message) => add(LogLevel.warning, message);
 
-  /// Something that went wrong. [describeError] writes an error and its
-  /// stack.
+  /// Something that went wrong. [describeError] writes an error's type and
+  /// its stack, never its text.
   void error(String message) => add(LogLevel.error, message);
 
   void add(LogLevel level, String message) {
