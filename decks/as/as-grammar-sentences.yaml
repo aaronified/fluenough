@@ -15,7 +15,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "এজন", base: "এজন", reading: "ezôn" }
+      - { word: "এজন", ref: "as-0222" }
   - id: "as-2020"
     target: "এইটো মোৰ ঘৰ।"
     reading: "eitu mur ghôr."
@@ -24,8 +24,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "এইটো", base: "এইটো", reading: "eitu" }
-      - { word: "মোৰ", base: "মোৰ", reading: "mur" }
+      - { word: "এইটো", base: "এই", reading: "ei" }
+      - { word: "মোৰ", base: "মই", reading: "moi" }
   - id: "as-2021"
     target: "মই চাহ খাওঁ।"
     reading: "moi sāh khāum̐."
@@ -36,7 +36,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "খাওঁ", base: "খাওঁ", reading: "khāum̐" }
+      - { word: "খাওঁ", ref: "as-0109" }
   - id: "as-2022"
     target: "তাই অসমীয়া শিকি আছে।"
     reading: "tāi ôxomiyā xiki āse."
@@ -44,8 +44,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "তাই", base: "তাই", reading: "tāi" }
-      - { word: "শিকি", base: "শিকি", reading: "xiki" }
-      - { word: "আছে", base: "আছে", reading: "āse" }
+      - { word: "শিকি", base: "শিকা", reading: "xikā" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
   - id: "as-2023"
     target: "মই অসমীয়া ভাল পাওঁ।"
     reading: "moi ôxomiyā bhāl pāum̐."
@@ -56,7 +56,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "পাওঁ", base: "পাওঁ", reading: "pāum̐" }
+      - { word: "পাওঁ", base: "পোৱা", reading: "puwā" }
   - id: "as-2024"
     target: "মোৰ এখন গাড়ী আছে।"
     reading: "mur ekhôn gāri āse."
@@ -65,10 +65,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "মোৰ", base: "মোৰ", reading: "mur" }
-      - { word: "এখন", base: "এখন", reading: "ekhôn" }
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "এখন", ref: "as-0222" }
       - { word: "গাড়ী", base: "গাড়ী", reading: "gāri" }
-      - { word: "আছে", base: "আছে", reading: "āse" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
   - id: "as-2025"
     target: "মোৰ লগত টকা নাই।"
     reading: "mur lôgôt tôkā nāi."
@@ -77,9 +77,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "মোৰ", base: "মোৰ", reading: "mur" }
-      - { word: "লগত", base: "লগত", reading: "lôgôt" }
-      - { word: "নাই", base: "নাই", reading: "nāi" }
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "লগত", base: "লগ", reading: "lôg" }
+      - { word: "নাই", ref: "as-0142" }
   - id: "as-2026"
     target: "এইটো ভাল নহয়।"
     reading: "eitu bhāl nôhôy."
@@ -88,7 +88,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "এইটো", base: "এইটো", reading: "eitu" }
+      - { word: "এইটো", base: "এই", reading: "ei" }
   - id: "as-2027"
     target: "নাযাব।"
     reading: "nāzābô."

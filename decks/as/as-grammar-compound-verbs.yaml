@@ -15,8 +15,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "খাই", base: "খাই", reading: "khāi" }
-      - { word: "পেলালোঁ", base: "পেলালোঁ", reading: "pelālum̐" }
+      - { word: "খাই", ref: "as-0109" }
+      - { word: "পেলালোঁ", base: "পেলোৱা", reading: "peluwā" }
   - id: "as-2114"
     target: "কৈ পেলালোঁ।"
     reading: "kôi pelālum̐."
@@ -24,7 +24,7 @@ cards:
     alt_target: ["কৈ পেলালো।"]
     pos: "phrase"
     bases:
-      - { word: "পেলালোঁ", base: "পেলালোঁ", reading: "pelālum̐" }
+      - { word: "পেলালোঁ", base: "পেলোৱা", reading: "peluwā" }
   - id: "as-2115"
     target: "পাহৰি গ'লোঁ।"
     reading: "pāhori golum̐."
@@ -34,8 +34,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "পাহৰি", base: "পাহৰি", reading: "pāhori" }
-      - { word: "গ'লোঁ", base: "গ'লোঁ", reading: "golum̐" }
+      - { word: "পাহৰি", base: "পাহৰা", reading: "pāhôrā" }
+      - { word: "গ'লোঁ", base: "যোৱা", reading: "zuwā" }
   - id: "as-2116"
     target: "সি পৰি গ'ল।"
     reading: "xi pori gol."
@@ -43,8 +43,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "সি", base: "সি", reading: "xi" }
-      - { word: "পৰি", base: "পৰি", reading: "pori" }
-      - { word: "গ'ল", base: "গ'ল", reading: "gol" }
+      - { word: "পৰি", base: "পৰা", reading: "pôrā" }
+      - { word: "গ'ল", base: "যোৱা", reading: "zuwā" }
   - id: "as-2117"
     target: "সি গুচি গ'ল।"
     reading: "xi gusi gol."
@@ -52,8 +52,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "সি", base: "সি", reading: "xi" }
-      - { word: "গুচি", base: "গুচি", reading: "gusi" }
-      - { word: "গ'ল", base: "গ'ল", reading: "gol" }
+      - { word: "গুচি", base: "গুচা", reading: "gusā" }
+      - { word: "গ'ল", base: "যোৱা", reading: "zuwā" }
   - id: "as-2118"
     target: "সি গ'লগৈ।"
     reading: "xi golgôi."
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "সি", base: "সি", reading: "xi" }
-      - { word: "গ'লগৈ", base: "গ'লগৈ", reading: "golgôi" }
+      - { word: "গ'লগৈ", base: "যোৱা", reading: "zuwā" }
   - id: "as-2119"
     target: "কিনি ল'লোঁ।"
     reading: "kini lolum̐."
@@ -73,8 +73,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "কিনি", base: "কিনি", reading: "kini" }
-      - { word: "ল'লোঁ", base: "ল'লোঁ", reading: "lolum̐" }
+      - { word: "কিনি", base: "কিনা", reading: "kinā" }
+      - { word: "ল'লোঁ", base: "লোৱা", reading: "luwā" }
   - id: "as-2120"
     target: "শিকি ল'লোঁ।"
     reading: "xiki lolum̐."
@@ -82,8 +82,8 @@ cards:
     alt_target: ["শিকি ল'লো।"]
     pos: "phrase"
     bases:
-      - { word: "শিকি", base: "শিকি", reading: "xiki" }
-      - { word: "ল'লোঁ", base: "ল'লোঁ", reading: "lolum̐" }
+      - { word: "শিকি", base: "শিকা", reading: "xikā" }
+      - { word: "ল'লোঁ", base: "লোৱা", reading: "luwā" }
   - id: "as-2121"
     target: "আনি দিয়ক।"
     reading: "āni diyôk."
@@ -92,7 +92,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "আনি", base: "আনি", reading: "āni" }
+      - { word: "আনি", base: "আনা", reading: "ānā" }
   - id: "as-2122"
     target: "কৰি দিয়া।"
     reading: "kori diyā."
@@ -101,7 +101,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "কৰি", base: "কৰি", reading: "kori" }
+      - { word: "কৰি", base: "কৰা", reading: "kôrā" }
       - { word: "দিয়া", base: "দিয়া", reading: "diyā" }
   - id: "as-2123"
     target: "খাই চোৱা।"
@@ -111,7 +111,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "খাই", base: "খাই", reading: "khāi" }
+      - { word: "খাই", ref: "as-0109" }
       - { word: "চোৱা", base: "চোৱা", reading: "suwā" }
   - id: "as-2124"
     target: "কৰি থাকা।"
@@ -121,7 +121,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "কৰি", base: "কৰি", reading: "kori" }
+      - { word: "কৰি", base: "কৰা", reading: "kôrā" }
       - { word: "থাকা", base: "থাকা", reading: "thākā" }
   - id: "as-2125"
     target: "ল'ৰাটো কান্দি উঠিল।"
@@ -131,6 +131,6 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "কান্দি", base: "কান্দি", reading: "kāndi" }
-      - { word: "উঠিল", base: "উঠিল", reading: "uthil" }
-      - { word: "ল'ৰাটো", base: "ল'ৰাটো", reading: "lorātu" }
+      - { word: "কান্দি", base: "কান্দা", reading: "kāndā" }
+      - { word: "উঠিল", ref: "as-0370" }
+      - { word: "ল'ৰাটো", ref: "as-0184" }
