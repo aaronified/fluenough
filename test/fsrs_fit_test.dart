@@ -22,6 +22,16 @@ import 'package:fluenough/core/scheduling/fsrs_fit.dart';
 ///   saying which. Their cards are templates, `[start day, [code, days,
 ///   ...], copies]`, repeated in place. Codes are ratings, Again to Easy,
 ///   except 5: an unrated grade 5, which the app counts as Good.
+/// - Cases of the app's two additions, a window and a start
+///   (`window_*`, `start_*`), whose cards are another case's
+///   (`cards_of`). A window, `from`, is the time of one review, given as
+///   [pair, review]: fsrs-rs is given only the items whose last review is
+///   at or after it, each with its pair's whole history. A start was fed
+///   to a copy of fsrs-rs whose FSRS-6 defaults are the start, so that it
+///   is what the search is pulled to and fills in from, and what training
+///   starts from and is pulled to. With no surviving first long-term item
+///   in the window, that copy holds w0 to w3 at the start's with fsrs-rs's
+///   own `freeze_initial_stability` instead of refusing.
 ///
 /// How closely each can agree:
 ///
@@ -45,23 +55,7 @@ void main() {
     for (final name in _all) {
       test(name, () {
         final c = _Case.load(name);
-        final gate = FsrsFit.gate(c.histories);
-        final expected = c.expected['gate'] as Map<String, dynamic>;
-        expect(gate.items, expected['items']);
-        expect(
-          gate.firstLongTermItems,
-          expected['first_long_term_items_before_filter'],
-        );
-        expect(
-          gate.survivingFirstLongTermItems,
-          expected['first_long_term_items_after_filter'],
-        );
-        expect(
-          gate.survivingFirstLongTermByRating,
-          expected['first_long_term_items_after_filter_by_first_rating'],
-        );
-        expect(gate.trainItems, expected['train_items_after_filter']);
-        expect(gate.outcome, _outcomes[expected['outcome']]);
+        _expectGate(FsrsFit.gate(c.histories), c.expected);
       });
     }
   });
@@ -156,6 +150,16 @@ void main() {
       }
       expect(FsrsFit.fit(_Case.load('gate_7').histories), isNull);
       expect(FsrsFit.fit(_Case.load('gate_8').histories), isNotNull);
+    });
+
+    test('the gate at 63 and 64 items to train on', () {
+      final below = FsrsFit.gate(_Case.load('gate_63').histories);
+      expect(below.trainItems, 63);
+      expect(below.outcome, FsrsFitOutcome.pretrainOnly);
+      final at = FsrsFit.gate(_Case.load('gate_64').histories);
+      expect(at.trainItems, 64);
+      expect(at.survivingFirstLongTermItems, lessThan(64));
+      expect(at.outcome, FsrsFitOutcome.trained);
     });
 
     test('only first long-term reviews: pretrain only, even past 64', () {
@@ -592,6 +596,88 @@ void main() {
     });
   });
 
+  group('a window and a start, against fsrs-rs given the same', () {
+    // fsrs-rs has neither: a window case gives it only the window's items,
+    // each with its pair's whole history, and a start case runs a copy of
+    // fsrs-rs whose defaults are the start (see the file's comment).
+    for (final name in _windowAndStart.keys) {
+      final tolerance = _windowAndStart[name]!;
+      test('$name, to $tolerance: ${_Case.load(name).about}', () {
+        final c = _Case.load(name);
+        _expectGate(FsrsFit.gate(c.histories, from: c.from), c.expected);
+        final fitted = FsrsFit.fit(c.histories, start: c.start, from: c.from)!;
+        for (var i = 0; i < 21; i++) {
+          final expected = c.fsrsRsFit[i];
+          expect(
+            fitted[i],
+            closeTo(expected, tolerance * math.max(1, expected.abs())),
+            reason: 'w$i',
+          );
+          expect(fitted[i], _shortestF32(fitted[i]), reason: 'w$i');
+        }
+        expect(
+          FsrsFit.logLoss(
+            c.histories,
+            parameters: c.start ?? Fsrs.w,
+            from: c.from,
+          ),
+          closeTo(c.defaultLogLoss, 1e-5),
+        );
+        expect(
+          FsrsFit.logLoss(c.histories, parameters: c.fsrsRsFit, from: c.from),
+          closeTo(c.fsrsRsLogLoss, 1e-5),
+        );
+      });
+    }
+
+    test('only first stabilities fitted from a start: the rest are the '
+        'start\'s exactly', () {
+      final c = _Case.load('start_first_only');
+      final fitted = FsrsFit.fit(c.histories, start: c.start)!;
+      expect(fitted.sublist(4), c.start!.sublist(4));
+      for (var i = 0; i < 4; i++) {
+        expect(_ulps(fitted[i], c.fsrsRsFit[i]), lessThanOrEqualTo(1));
+      }
+    });
+
+    test('no first long-term review in the window: w0 to w3 are the '
+        'start\'s exactly', () {
+      final c = _Case.load('window_no_first');
+      final fitted = FsrsFit.fit(c.histories, start: c.start, from: c.from)!;
+      expect(fitted.sublist(0, 4), c.start!.sublist(0, 4));
+    });
+
+    test('a window starting on a predicted review predicts it', () {
+      // As SkillFit.windowStart gives: the time of a review, here one a
+      // day or more after the one before.
+      final c = _Case.load('window_quick');
+      final from = c.from!;
+      const tick = Duration(microseconds: 1);
+      final before = from.subtract(tick);
+      final after = from.add(tick);
+      expect(
+        FsrsFit.gate(c.histories, from: from).toString(),
+        FsrsFit.gate(c.histories, from: before).toString(),
+      );
+      expect(
+        FsrsFit.gate(c.histories, from: after).items,
+        FsrsFit.gate(c.histories, from: from).items - 1,
+      );
+      expect(
+        FsrsFit.logLoss(c.histories, from: from),
+        FsrsFit.logLoss(c.histories, from: before),
+      );
+      expect(
+        FsrsFit.logLoss(c.histories, from: after),
+        isNot(FsrsFit.logLoss(c.histories, from: from)),
+      );
+      expect(
+        FsrsFit.fit(c.histories, from: from),
+        FsrsFit.fit(c.histories, from: before),
+      );
+    });
+  });
+
   group('Fsrs with fitted parameters', () {
     final at = DateTime.utc(2026, 1, 5, 9);
     final fitted = FsrsFit.fit(_Case.load('slow').histories)!;
@@ -641,6 +727,15 @@ void main() {
   });
 }
 
+/// The window and start cases, and how closely each parameter must agree
+/// with fsrs-rs given the same.
+const _windowAndStart = <String, double>{
+  'window_quick': 2e-6,
+  'window_no_first': 2e-6,
+  'start_first_only': 2e-6,
+  'start_quick': 2e-6,
+};
+
 /// fsrs-rs gives the defaults.
 const _defaults = <String>['tiny', 'probe_c16x4', 'probe_c19x7', 'gate_7'];
 
@@ -664,6 +759,7 @@ const _pretrainOnly = <String>[
   'fill_123',
   'fill_monotone',
   'fill_clamp',
+  'gate_63',
 ];
 
 /// fsrs-rs trains all 21, and how closely each parameter must agree
@@ -684,6 +780,7 @@ const _trained = <String, double>{
   'same_day_ceiling': 2e-6,
   'probability_clamp': 5e-7,
   'difficulty_floor': 2e-6,
+  'gate_64': 2e-6,
 };
 
 final _all = <String>[..._defaults, ..._pretrainOnly, ..._trained.keys];
@@ -693,6 +790,34 @@ const _outcomes = <String, FsrsFitOutcome>{
   'pretrain only': FsrsFitOutcome.pretrainOnly,
   'trained': FsrsFitOutcome.trained,
 };
+
+/// The shortest decimal that reads back as the same 32-bit float as [x]:
+/// what fsrs-rs prints, and what a fit gives.
+double _shortestF32(double x) {
+  final f = Float32List.fromList([x])[0];
+  for (var digits = 1; digits <= 9; digits++) {
+    final candidate = double.parse(f.toStringAsPrecision(digits));
+    if (Float32List.fromList([candidate])[0] == f) return candidate;
+  }
+  return f;
+}
+
+/// [gate] is what fsrs-rs's gate gave, in [expected].
+void _expectGate(FsrsFitGate gate, Map<String, dynamic> expected) {
+  final g = expected['gate'] as Map<String, dynamic>;
+  expect(gate.items, g['items']);
+  expect(gate.firstLongTermItems, g['first_long_term_items_before_filter']);
+  expect(
+    gate.survivingFirstLongTermItems,
+    g['first_long_term_items_after_filter'],
+  );
+  expect(
+    gate.survivingFirstLongTermByRating,
+    g['first_long_term_items_after_filter_by_first_rating'],
+  );
+  expect(gate.trainItems, g['train_items_after_filter']);
+  expect(gate.outcome, _outcomes[g['outcome']]);
+}
 
 /// How many 32-bit floats apart [a] and [b] are, both positive.
 int _ulps(double a, double b) {
@@ -706,16 +831,24 @@ List<double> _doubles(Object? list) => <double>[
 
 /// One reference case and what fsrs-rs gave for it.
 class _Case {
-  _Case(this.about, this.histories, this.expected);
+  _Case(this.about, this.histories, this.expected, {this.from, this.start});
 
   factory _Case.load(String name) => _cache.putIfAbsent(name, () {
-    final doc = jsonDecode(
-      File('test/fixtures/fsrs_fit/$name.json').readAsStringSync(),
-    ) as Map<String, dynamic>;
+    Map<String, dynamic> read(String name) =>
+        jsonDecode(File('test/fixtures/fsrs_fit/$name.json').readAsStringSync())
+            as Map<String, dynamic>;
+    final doc = read(name);
+    final cardsOf = doc['cards_of'] as String?;
+    final histories = _histories(
+      (cardsOf == null ? doc : read(cardsOf))['cards'] as List,
+    );
+    final from = doc['from'] as List?;
     return _Case(
       doc['about'] as String? ?? 'a simulated learner',
-      _histories(doc['cards'] as List),
+      histories,
       doc['expected'] as Map<String, dynamic>,
+      from: from == null ? null : histories[from[0] as int][from[1] as int].at,
+      start: doc['start'] == null ? null : _doubles(doc['start']),
     );
   });
 
@@ -724,6 +857,14 @@ class _Case {
   final String about;
   final List<List<FitReview>> histories;
   final Map<String, dynamic> expected;
+
+  /// The window's start, the time of one of [histories]' reviews: fsrs-rs
+  /// was given only the items whose last review is at or after it.
+  final DateTime? from;
+
+  /// What fitting starts from: fsrs-rs was patched to take it in place of
+  /// FSRS-6's defaults wherever it uses them.
+  final List<double>? start;
 
   Map<String, dynamic> get _fit => expected['fit'] as Map<String, dynamic>;
 
