@@ -92,8 +92,8 @@ void main() {
         expect(find.text(l10n.adjustedNotYet(mode)), findsOneWidget);
       }
       expect(find.text(l10n.paceNotYet(8)), findsNWidgets(3));
-      expect(find.textContaining('Adjusted today'), findsNothing);
-
+      expect(state.progress.parameters.fitted, isEmpty);
+      expect(find.text(l10n.paceAdjustedToday(24)), findsNothing);
     });
 
     testWidgets('fitted slower: fewer reviews, in the plan\'s words', (
