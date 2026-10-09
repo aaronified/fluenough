@@ -63,6 +63,13 @@ Validating a single deck or one language directory only checks what you
 pointed it at. `decks/ja/` is left out of the index on purpose for now: it is
 listed in `HIDDEN` in `tools/deck_index.py`, and still validated.
 
+**Reviewers change these files too** (ADR-0038). A native speaker's
+suggestion arrives as a `proposed` line on its card, written by the review
+bot, and when enough other reviewers accept it the bot writes it into the
+card and removes the line. Learners never see a proposal. Do not write or
+edit one by hand; to overrule one, delete its line or change the field.
+See "Proposals" in the format specification.
+
 Validate before committing — CI runs exactly this:
 
 ```sh
