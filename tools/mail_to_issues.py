@@ -80,6 +80,10 @@ import urllib.error
 import urllib.request
 from typing import Callable
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from rater_codes import CROCKFORD, check_symbol, rater_code  # noqa: E402,F401
+
 PREFIX = "[Fluenough]"
 FILED = "fluenough-filed"
 FROM_APP = "from-app"
@@ -115,8 +119,6 @@ CHECK_FILES = "check the files"
 REVIEW_SUBJECT = re.compile(
     r"^\[Fluenough review\]\s*([^\s(]+)?\s*(?:\(([^)]*)\))?", re.I)
 LANGUAGE = re.compile(r"^[a-z]{2,3}$")
-# Crockford's base32, without I, L, O and U, as lib/core/review/rater_code.dart.
-CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"
 # The sender check: the Gmail label holding one record per rater code, and
 # the marks of a review whose sender differs or could not be compared.
 RATERS = "fluenough/raters"
@@ -204,45 +206,6 @@ def issue_from(message: email.message.Message) -> dict | None:
         "body": "\n\n".join(body),
         "labels": labels,
     }
-
-
-def _gf_times(a: int, b: int) -> int:
-    """[a] times [b] in GF(32), modulo x^5 + x^2 + 1."""
-    product = 0
-    while b:
-        if b & 1:
-            product ^= a
-        b >>= 1
-        a <<= 1
-        if a & 0x20:
-            a ^= 0x25
-    return product
-
-
-def check_symbol(body: str) -> str:
-    """The check symbol of a rater code's eight symbols, as the app makes
-    it: a weighted sum in GF(32), the weights 2, 4, 8, ... in turn."""
-    total, weight = 0, 1
-    for symbol in body:
-        weight = _gf_times(weight, 2)
-        total ^= _gf_times(weight, CROCKFORD.index(symbol))
-    return CROCKFORD[total]
-
-
-def rater_code(text: object) -> str | None:
-    """[text] as a rater code, written FL-XXXX-XXXX-C, or None if it is not
-    one or its check fails. Read as loosely as the app reads it."""
-    if not isinstance(text, str):
-        return None
-    plain = re.sub(r"[\s-]", "", text.upper())
-    if plain.startswith("FL") and len(plain) == 11:
-        plain = plain[2:]
-    plain = plain.replace("I", "1").replace("L", "1").replace("O", "0")
-    if len(plain) != 9 or any(c not in CROCKFORD for c in plain):
-        return None
-    if check_symbol(plain[:8]) != plain[8]:
-        return None
-    return f"FL-{plain[:4]}-{plain[4:8]}-{plain[8]}"
 
 
 def review_files(message: email.message.Message) -> list[dict]:
