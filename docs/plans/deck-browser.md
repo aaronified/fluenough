@@ -132,6 +132,24 @@ Settled with the owner, 2026-10-09:
   the files; when the subject is missing or disagrees with them it goes by
   the files and marks the issue "subject changed"; files in one mail with
   different codes, or none, mark it "check the files", for the owner.
+- **What is waiting for review, in the reviewer's languages** (owner,
+  2026-10-09: "any reviewer should also know what all is pending
+  unreviewed in their chosen languages"). The reviewer chooses the
+  languages they review (by default the languages they speak that the
+  app teaches). Reviewer mode then shows, per language, what still needs
+  a native speaker: the units and decks not yet signed off, with how many
+  cards each has left, the offensive words not yet rated and the
+  sound-alike and look-alike pairs not yet confirmed, and what the
+  reviewer has already reviewed but not sent. It shows in Settings under
+  "Review decks" and as a "To review" mark on each unit of the path.
+- **The sender check lives in the Fluenough Gmail** (owner, 2026-10-09,
+  replacing the keyed hash in the repository below): the hourly mail job
+  keeps one private record per rater code in a Gmail label
+  (`fluenough/raters`), holding the address its first review came from.
+  Addresses are matched with case ignored, and for Gmail with dots and
+  `+…` ignored. A later review from another address gets a "sender does
+  not match" issue; the owner decides. No new secret, nothing written to
+  the repository, and the job logs only counts.
 - **The first mail binds the code to its sender** (owner, 2026-10-09): the
   first review mail with a new code ties that code to the sender's
   address. The workflow keeps, in a file in the repository, the code with

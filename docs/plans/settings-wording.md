@@ -2,8 +2,8 @@
 
 Written 2026-10-06. **Part of the settings redesign,** with
 `language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
-last in the owner's order, after `skill-model.md`, `b1-plans.md` and deck
-downloads (`decks-from-github.md`).
+last in the owner's order, after the skill model (done), `b1-plans.md` and
+deck downloads (`decks-from-github.md`).
 
 ## What the owner asked
 
@@ -58,8 +58,8 @@ downloads (`decks-from-github.md`).
 | A skill, by language | Asked in {language} | Not asked in {language} |
 | An alphabet, by language | Learning the {script} script | Latin letters only; script decks skipped |
 
-The skill rows change with `skill-model.md`, which lands first: one switch
-per activity, and Listening becomes "Hear the word, give its meaning".
+The skill rows change with the skill model, which is done (ADR-0034): one
+switch per activity, and Listening becomes "Hear the word, give its meaning".
 
 Lines that depend on the phone stay, added after the state: Listening with
 no voice reads "No voice for {language} on this phone".
@@ -76,10 +76,13 @@ no voice reads "No voice for {language} on this phone".
    that no switch in Settings keeps the same line in both states, so a new
    switch cannot skip the rule.
 
-## To decide
+## Decided (owner, 2026-10-09)
 
-- The wording above, row by row.
-- Whether "Show romanisation" is renamed.
+- **The table is approved,** with the skill rows in the learner's words
+  (seen, heard, spoken and written words; grammar understood and produced
+  under the one Grammar switch, ADR-0036).
+- **"Show romanisation" becomes "Latin-letter readings".**
+- Built now, with the rest of the settings redesign, before deck downloads.
 
 ## Estimate
 
