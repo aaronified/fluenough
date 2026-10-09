@@ -126,6 +126,49 @@ void main() {
     expect(find.text(l10n.reviewProposalEdited), findsOneWidget);
   });
 
+  testWidgets('Edit says it replaces a suggestion already on the card, '
+      'and shows it', (tester) async {
+    final state = await open(tester);
+    final l10n = l10nOf(tester);
+    final words = state.deckById(wordsDeck)!;
+    final mother = words.cards.last;
+    state.reviewing.suggest(
+      words,
+      mother,
+      const Suggestion(part: CardPart.notes, now: '', text: 'Said to elders.'),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewProposalEdit));
+    await tester.pumpAndSettle();
+    final notice = l10n.reviewSuggestReplaces(
+      l10n.reviewPartNotes,
+      'Said to elders.',
+    );
+    expect(find.text(notice), findsOneWidget);
+    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
+    await tester.pumpAndSettle();
+    final review = state.reviewing.reviewOf(words, mother)!;
+    expect(review.suggestion!.part, CardPart.meaning);
+    expect(review.suggestion!.text, 'mum');
+  });
+
+  testWidgets('Suggest a change on a card with no suggestion yet says '
+      'nothing of replacing', (tester) async {
+    await open(tester);
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewProposalEdit));
+    await tester.pumpAndSettle();
+    expect(find.byType(SuggestSheet), findsOneWidget);
+    expect(
+      find.textContaining(l10n.reviewSuggestReplaces('', '').split(':').first),
+      findsNothing,
+    );
+  });
+
   testWidgets('without proposals a card shows none', (tester) async {
     useTallPhone(tester);
     await pumpScreen(
