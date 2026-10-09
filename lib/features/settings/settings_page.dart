@@ -38,9 +38,10 @@ import 'update_section.dart';
 /// row to the sources the decks name, cloud backup, updates, and the
 /// footer.
 ///
-/// Design screen `settings`. Live, in memory until #15 stores them: new cards
-/// per day, the skill switches, romanisation, sound, playing
-/// words automatically, speech rate, and the Voices row.
+/// Design screen `settings`. Live: the skill switches, Latin-letter
+/// readings, adult content (18+, #96), sound, playing words automatically,
+/// speech rate, and the Voices row. Every switch's line says what happens
+/// in its state (docs/plans/settings-wording.md).
 /// Export and import save the review log as a file and merge one back
 /// (#20). Logs shows, copies, exports and clears the app's own log (#162).
 /// Updates, which the design does not draw, checks GitHub for a newer
@@ -206,6 +207,13 @@ class SettingsPage extends StatelessWidget {
           subtitleOff: l10n.settingsRomanisationOff,
           value: settings.showRomanisation,
           onChanged: (on) => settings.showRomanisation = on,
+        ),
+        GroupedTile.toggle(
+          title: l10n.settingsAdult,
+          subtitleOn: l10n.settingsAdultOn,
+          subtitleOff: l10n.settingsAdultOff,
+          value: settings.adultContent,
+          onChanged: (on) => _setAdult(context, settings, on),
         ),
         if (_withAlphabet(state).isNotEmpty)
           GroupedTile(
@@ -424,6 +432,42 @@ class SettingsPage extends StatelessWidget {
       );
     },
   );
+
+  /// Adult content asks the learner to confirm their age as it is switched
+  /// on (#96), and is off again at once, hiding every rude word.
+  static Future<void> _setAdult(
+    BuildContext context,
+    SettingsNotifier settings,
+    bool on,
+  ) async {
+    if (!on) {
+      settings.adultContent = false;
+      return;
+    }
+    final adult = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(l10n.settingsAdultConfirmTitle),
+          content: SingleChildScrollView(
+            child: Text(l10n.settingsAdultConfirmBody),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.commonCancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.settingsAdultConfirm),
+            ),
+          ],
+        );
+      },
+    );
+    if (adult == true) settings.adultContent = true;
+  }
 
   /// Speaking asks for the microphone as it is switched on (ADR-0014), and
   /// stays off, saying why, when it cannot be had.

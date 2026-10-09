@@ -200,6 +200,15 @@ void main() {
     for (var i = 0; i < 2; i++) {
       await _flip(
         tester,
+        l10n.settingsAdult,
+        on: l10n.settingsAdultOn,
+        off: l10n.settingsAdultOff,
+        confirm: l10n.settingsAdultConfirm,
+      );
+    }
+    for (var i = 0; i < 2; i++) {
+      await _flip(
+        tester,
         l10n.reviewSettingsSwitch,
         on: l10n.reviewSettingsSwitchOn,
         off: l10n.reviewSettingsSwitchOff,
@@ -390,6 +399,7 @@ void main() {
         containsAll(<String>[
           for (final skill in Skill.values) skill.settingsLabel(l10n),
           l10n.settingsRomanisation,
+          l10n.settingsAdult,
           l10n.settingsAdjustAuto,
           l10n.settingsSound,
           l10n.settingsAutoplay,
