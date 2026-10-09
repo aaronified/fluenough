@@ -1,0 +1,110 @@
+schema: 1
+id: "te-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0716"
+    target: "నాకు అరటిపండు ఇష్టం."
+    reading: "nāku araṭipaṇḍu iṣṭam."
+    ipa: "naːku araʈipaɳɖu iʂʈam"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: "te-0717"
+    target: "నేను పొద్దున ఇడ్లీ తింటాను."
+    reading: "nēnu podduna iḍlī tiṇṭānu."
+    ipa: "neːnu pod̪d̪una iɖliː t̪iɳʈaːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "తింటాను", ref: "te-0624" }
+  - id: "te-0718"
+    target: "ఆమె రోజూ పెరుగు తింటుంది."
+    reading: "āme rōjū perugu tiṇṭundi."
+    ipa: "aːme roːdʒuː peruɡu t̪iɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "తింటుంది", ref: "te-0624" }
+  - id: "te-0719"
+    target: "నాకు ఒక గ్లాసు నీళ్ళు కావాలి."
+    reading: "nāku oka glāsu nīḷḷu kāvāli."
+    ipa: "naːku oka ɡlaːsu niːɭɭu kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఒక", base: "ఒక", reading: "oka" }
+  - id: "te-0720"
+    target: "మీరు కాఫీ తాగుతారా?"
+    reading: "mīru kāphī tāgutārā?"
+    ipa: "miːru kaːpʰiː t̪aːɡut̪aːraː"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "తాగుతారా", ref: "te-0625" }
+  - id: "te-0721"
+    target: "ఈ కూర చాలా బాగుంది."
+    reading: "ī kūra cālā bāgundi."
+    ipa: "iː kuːra tʃaːlaː baːɡund̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā" }
+      - { word: "బాగుంది", base: "బాగు", reading: "bāgu" }
+  - id: "te-0722"
+    target: "పళ్ళెంలో అన్నం ఉంది."
+    reading: "paḷḷemlō annam undi."
+    ipa: "paɭɭemloː annam und̪i"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "పళ్ళెంలో", ref: "te-0707" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0723"
+    target: "గిన్నెలో పాలు ఉన్నాయి."
+    reading: "ginnelō pālu unnāyi."
+    ipa: "ɡinneloː paːlu unnaːji"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "గిన్నెలో", ref: "te-0708" }
+      - { word: "ఉన్నాయి", ref: "te-0633" }
+  - id: "te-0724"
+    target: "నాకు మామిడిపండు కావాలి."
+    reading: "nāku māmiḍipaṇḍu kāvāli."
+    ipa: "naːku maːmiɖipaɳɖu kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: "te-0725"
+    target: "అమ్మ కూర వండుతుంది."
+    reading: "amma kūra vaṇḍutundi."
+    ipa: "amma kuːra ʋaɳɖut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "వండుతుంది", ref: "te-0643" }
+  - id: "te-0726"
+    target: "ఈ పండు తీపిగా ఉంది."
+    reading: "ī paṇḍu tīpigā undi."
+    ipa: "iː paɳɖu t̪iːpiɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "తీపిగా", ref: "te-0348" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0727"
+    target: "అతను పండ్లు కొంటాడు."
+    reading: "atanu paṇḍlu koṇṭāḍu."
+    ipa: "at̪anu paɳɖlu koɳʈaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-plural"]
+    bases:
+      - { word: "పండ్లు", ref: "te-0664" }
+      - { word: "కొంటాడు", ref: "te-0641" }
