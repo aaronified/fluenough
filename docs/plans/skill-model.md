@@ -252,6 +252,12 @@ The owner's answers to #235, 2026-10-08:
   app." Which skills each question judges, and how much one skill implies
   another, are being taken from the research before they are built.
 
+- **Reading is a skill of the script.** The owner: "Reading is a skill
+  related to script." **Later,** recognition can be checked together with
+  reading: "Recognition can later be checked along with read, e.g. when we
+  bring in script only options for a picture" (a picture shown, the word
+  chosen from options written in the script only).
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
