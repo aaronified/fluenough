@@ -283,6 +283,14 @@ The owner's answers to #235, 2026-10-08:
   - **Order:** the skill model and FSRS are finished, rated and opened as
     a pull request first; then the B1 format; then the colours.
 
+- **Grammar understood and produced** are built with the B1 format, not
+  in the skill model's pull request (owner, 2026-10-09): "understood"
+  chooses among forms of the same word, the rule cards' question
+  (`words-rules-sentences.md`). Until then grammar keeps one schedule,
+  typed.
+- **Settings** already has one switch per skill, so one per activity;
+  their wording waits for `settings-wording.md`.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
