@@ -1,0 +1,221 @@
+schema: 1
+id: "bn-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0813"
+    target: "শুভ সকাল!"
+    reading: "śubho śôkāl!"
+    ipa: "ʃubʱo ʃɔkal"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সুপ্রভাত", reading: "suprobhāt" }, { word: "নমস্কার", reading: "nômośkār" }] }
+    bases:
+      - { word: "শুভ", base: "শুভ", reading: "śubho" }
+  - id: "bn-0814"
+    target: "শুভ রাত্রি!"
+    reading: "śubho rātri!"
+    ipa: "ʃubʱo rat̪ri"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শুভরাত্রি", reading: "śubhorātri" }] }
+    bases:
+      - { word: "শুভ", base: "শুভ", reading: "śubho" }
+      - { word: "রাত্রি", base: "রাত্রি", reading: "rātri" }
+  - id: "bn-0815"
+    target: "স্বাগতম!"
+    reading: "śāgotom!"
+    ipa: "ʃaɡot̪om"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "স্বাগতম", base: "স্বাগতম", reading: "śāgotom" }
+  - id: "bn-0816"
+    target: "দুঃখিত।"
+    reading: "dukkhito."
+    ipa: "d̪ukkʰit̪o"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মাপ করবেন", reading: "māp kôrben" }] }
+    bases:
+      - { word: "দুঃখিত", base: "দুঃখিত", reading: "dukkhito" }
+  - id: "bn-0817"
+    target: "ঠিক আছে।"
+    reading: "ṭhik āche."
+    ipa: "ʈʰik atʃʰe"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঠিক আছে?", reading: "ṭhik āche?" }] }
+    bases:
+      - { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-0818"
+    target: "কোনো সমস্যা নেই।"
+    reading: "kono śômośśā nei."
+    ipa: "kono ʃɔmoʃʃa nei"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অসুবিধা নেই", reading: "ôśubidhā nei" }] }
+    bases:
+      - { word: "কোনো", base: "কোনো", reading: "kono" }
+      - { word: "সমস্যা", base: "সমস্যা", reading: "śômośśā" }
+      - { word: "নেই", base: "নেই", reading: "nei" }
+  - id: "bn-0819"
+    target: "অনেক ধন্যবাদ।"
+    reading: "ônek dhonnobād."
+    ipa: "ɔnek d̪ʱonnobad̪"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অনেক", reading: "ônek" }] }
+  - id: "bn-0820"
+    target: "না, ধন্যবাদ।"
+    reading: "nā, dhonnobād."
+    ipa: "na d̪ʱonnobad̪"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-0821"
+    target: "হ্যাঁ, অবশ্যই।"
+    reading: "hêm̐, ôbośśoi."
+    ipa: "ɦæ̃ ɔboʃʃoi"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অবশ্যই", reading: "ôbośśoi" }, { word: "-ই", reading: "-i" }] }
+    bases:
+      - { word: "অবশ্যই", base: "অবশ্যই", reading: "ôbośśoi" }
+  - id: "bn-0822"
+    target: "দয়া করে।"
+    reading: "dôyā kôre."
+    ipa: "d̪ɔja kɔre"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দয়া করে বসুন", reading: "dôyā kôre bośun" }] }
+    bases:
+      - { word: "দয়া", base: "দয়া", reading: "dôyā" }
+      - { word: "করে", ref: "bn-0102" }
+  - id: "bn-0823"
+    target: "আমি বুঝতে পারছি না।"
+    reading: "āmi bujhte pārchi nā."
+    ipa: "ami budʒʱt̪e partʃʰi na"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "না", reading: "nā" }] }
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi" }
+      - { word: "বুঝতে", base: "বোঝা", reading: "bojhā" }
+      - { word: "পারছি", ref: "bn-0736" }
+  - id: "bn-0824"
+    target: "আপনি কি ইংরেজি বলতে পারেন?"
+    reading: "āpni ki iṅreji bôlte pāren?"
+    ipa: "apni ki iŋredʒi bɔlt̪e paren"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "কি", reading: "ki" }, { word: "ি", reading: "i" }, { word: "কী", reading: "ki" }, { word: "ী", reading: "i" }] }
+    bases:
+      - { word: "কি", base: "কি", reading: "ki" }
+      - { word: "ইংরেজি", base: "ইংরেজি", reading: "iṅreji" }
+      - { word: "বলতে", base: "বলা", reading: "bôlā" }
+      - { word: "পারেন", ref: "bn-0736" }
+  - id: "bn-0825"
+    target: "একটু অপেক্ষা করুন।"
+    reading: "ekṭu ôpekkhā korun."
+    ipa: "ekʈu ɔpekkʰa korun"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "একটু", reading: "ekṭu" }] }
+    bases:
+      - { word: "অপেক্ষা", base: "অপেক্ষা", reading: "ôpekkhā" }
+      - { word: "করুন", ref: "bn-0102" }
+  - id: "bn-0826"
+    target: "তাড়াতাড়ি করুন!"
+    reading: "tāṛātāṛi korun!"
+    ipa: "t̪aɽat̪aɽi korun"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "তাড়াতাড়ি", base: "তাড়াতাড়ি", reading: "tāṛātāṛi" }
+      - { word: "করুন", ref: "bn-0102" }
+  - id: "bn-0827"
+    target: "সাবধান!"
+    reading: "śābdhān!"
+    ipa: "ʃabd̪ʱan"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "সাবধান", base: "সাবধান", reading: "śābdhān" }
+  - id: "bn-0828"
+    target: "শুভ জন্মদিন!"
+    reading: "śubho jônmodin!"
+    ipa: "ʃubʱo dʒɔnmod̪in"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শুভ", reading: "śubho" }] }
+    bases:
+      - { word: "শুভ", base: "শুভ", reading: "śubho" }
+      - { word: "জন্মদিন", base: "জন্মদিন", reading: "jônmodin" }
+  - id: "bn-0829"
+    target: "শুভ নববর্ষ!"
+    reading: "śubho nôboborśo!"
+    ipa: "ʃubʱo nɔboborʃo"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Pohela_Boishakh", words: [{ word: "শুভ নববর্ষ", reading: "śubho nôboborśo" }] }
+    bases:
+      - { word: "শুভ", base: "শুভ", reading: "śubho" }
+      - { word: "নববর্ষ", base: "নববর্ষ", reading: "nôboborśo" }
+  - id: "bn-0830"
+    target: "অভিনন্দন!"
+    reading: "ôbhinondon!"
+    ipa: "ɔbʱinond̪on"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "অভিনন্দন", base: "অভিনন্দন", reading: "ôbhinondon" }
+  - id: "bn-0831"
+    target: "চিন্তা করবেন না।"
+    reading: "cintā kôrben nā."
+    ipa: "tʃint̪a kɔrben na"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "-বেন", reading: "-ben" }] }
+    bases:
+      - { word: "চিন্তা", base: "চিন্তা", reading: "cintā" }
+      - { word: "করবেন", ref: "bn-0102" }
+  - id: "bn-0832"
+    target: "কী হয়েছে?"
+    reading: "ki hôyeche?"
+    ipa: "ki ɦɔjetʃʰe"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "হয়েছে", base: "হওয়া", reading: "hoā" }
