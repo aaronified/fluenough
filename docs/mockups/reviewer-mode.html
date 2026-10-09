@@ -333,7 +333,7 @@ function settings(state,extra=''){
  const top=`<div class="tabh tHeadL">Settings</div>
  <div style="padding:8px 16px 24px">
   <div class="profile"><div class="av">A</div><div style="min-width:0"><div class="tTitleM">Aro</div><div class="tBody muted">Learning Telugu</div></div></div>
-  <div class="glabel tBody"${state==='thanks'?' data-anchor="8"':''}>Your data</div>
+  <div class="glabel tBody" data-anchor="0">Your data</div>
   <div class="group">
    <div class="srow">${I('upload')}<div class="tx"><div class="tTitleM">Export review log</div><div class="tBody muted">1,204 reviews · JSONL file</div></div><span></span></div>
    <div class="srow">${I('download')}<div class="tx"><div class="tTitleM">Import review log</div><div class="tBody muted">Merges with this profile’s history</div></div><span></span></div>
@@ -341,38 +341,38 @@ function settings(state,extra=''){
   <div class="glabel tBody">Reviewing</div>`;
  let rev;
  if(state==='off'||state==='ask'){
-  rev=`<div class="group"><div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Become a reviewer</div><div class="tBody muted">Help check the decks. You send your reviews from your own mail.</div></div><span class="sw off" role="switch" aria-checked="false"></span></div>
+  rev=`<div class="group"><div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Review decks</div><div class="tBody muted">Check cards and send your suggestions by mail. The two buttons are “Looks right” and “Suggest a change”.</div></div><span class="sw off" role="switch" aria-checked="false"></span></div>
    <div class="srow one" role="button">${I('info')}<div class="tx"><div class="tTitleM">How reviewing works</div></div>${I('chev')}</div></div>`;
  } else {
   const thanks=state==='thanks'?`<div class="srow">${I('heart')}<div class="tx"><div class="tTitleM">Decks you helped build</div><div class="tBody muted">Family (Telugu)</div></div>${I('chev')}</div>`:'';
   rev=`<div class="group">
-   <div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Review decks</div><div class="tBody muted">Cards show Looks right and Suggest a change</div></div><span class="sw" role="switch" aria-checked="true"></span></div>
+   <div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Review decks</div><div class="tBody muted">Check cards and send your suggestions by mail. The two buttons are “Looks right” and “Suggest a change”.</div></div><span class="sw" role="switch" aria-checked="true"></span></div>
    <div class="srow">${I('key')}<div class="tx"><div class="tBody muted">Your rater code</div><div class="code mono">${CODE}</div></div><span class="ibtn" role="button" aria-label="Copy code">${I('copy')}</span></div>
    ${thanks}
    <div class="srow one" role="button">${I('info')}<div class="tx"><div class="tTitleM">How reviewing works</div></div>${I('chev')}</div>
   </div>`;
  }
- // With reviewing on, the frame ends after the reviewing group, so the nav never cuts a line in half.
- const tail=state==='on'?`</div>`:`<div class="glabel tBody">Logs</div>
+ // Every state ends with Logs and the footer; the list is scrolled to its end so the nav never cuts them.
+ const tail=`<div class="glabel tBody">Logs</div>
   <div class="group"><div class="srow">${I('log')}<div class="tx"><div class="tTitleM">App log</div><div class="tBody muted">What the app did and what went wrong, to add to a report</div></div>${I('chev')}</div></div>
   <div class="sfoot tSmall">Fluenough 0.3.4 · GPL-3.0<br>Free software · Works fully offline</div>
  </div>`;
- const overlay=state==='ask'?`<div class="scrim"></div><div class="dlg" role="dialog" aria-label="Become a reviewer?">
-  <div class="tHeadS">Become a reviewer?</div>
-  <div class="tBody muted">You get a rater code. Send your reviews to Fluenough from your own mail, always from the same address.</div>
+ const overlay=state==='ask'?`<div class="scrim"></div><div class="dlg" role="dialog" aria-label="Review decks?">
+  <div class="tHeadS">Review decks?</div>
+  <div class="tBody muted">You get a rater code. Send your reviews to Fluenough from your own mail, always from the same mail address.</div>
   <div class="tBody muted">Rater codes are public, to thank you. Your mail address is not.</div>
   <div class="acts2"><span class="btn t">Cancel</span><span class="btn t">Turn on</span></div></div>`:extra;
- // With "Decks you helped build" the reviewing group is one row longer: the list is scrolled to 8px above "Your data", so the group shows whole and the App log card ends above the nav.
- return frame(top+rev+tail,{tab:'Settings',overlay,scrollTo:state==='thanks'?'anchor':null});
+ // Off and Turning on start at the top so the profile card is whole. The other states start at the Your data header, so no row is half hidden at the top.
+ return frame(top+rev+tail,{tab:'Settings',overlay,scrollTo:(state==='off'||state==='ask')?'top':'anchor'});
 }
 
 /* ---------- 2. How reviewing works ---------- */
 const HOW=[
  ['Your rater code','Turning on reviewing gives you a code, made on this phone. Nothing is sent when you turn it on.'],
- ['Check cards','Open a deck and tap a card. Choose “Looks right”, or “Suggest a change” and say what should change and why. Your reviews stay on this phone until you send them.'],
- ['Send by mail','Tap “Send review” on the deck. Your mail app opens with the review attached and Fluenough’s address filled in. Read it, then send it.'],
- ['Always use the same address','Your first review links your code to the address you send it from. A review sent with your code from any other address is held back until the Fluenough team checks it. This stops anyone else using your code. If you change your address, send your next review from the new one and say so in the mail. The team will move your code to it.'],
- ['What is public','Fluenough’s public issue list shows your code and the language you reviewed, so the team knows a review arrived. Your address and what you wrote stay private, in Fluenough’s mailbox.'],
+ ['Check cards','Open a deck and tap a card. Choose “Looks right” or “Suggest a change”, and say what should change and why.'],
+ ['Send by mail','Your reviews stay on this phone until you send them. Tap “Send review” on the deck. Your mail app opens with the review attached and Fluenough’s mail address filled in. Read it, then send it.'],
+ ['Always use the same address','Your first review ties your code to that mail address. A review from another mail address waits until the Fluenough team has checked it. If you change mail address, say so in the mail.'],
+ ['What is public','Fluenough’s public issue list shows your code and the language you reviewed, so the team knows a review arrived. Your mail address and what you wrote stay private.'],
  ['Thank you','When a deck you checked is updated, your code is listed among its reviewers, and the app says thank you.']
 ];
 function howSheet(atEnd=false){
@@ -380,7 +380,7 @@ function howSheet(atEnd=false){
   <div class="shead tTitleL">How reviewing works</div>
   <div class="scroll sbody" data-scroll-to="${atEnd?'end':'top'}">
    <ol class="steps">${HOW.map(([t,b],i)=>`<li><span class="n" aria-hidden="true">${i+1}</span><div class="tx"><div class="tTitleM">${t}</div><div class="tBody">${b}</div></div></li>`).join('')}</ol>
-   <div class="aside">${I('warn','s20')}<div class="tBody">Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to people in general, not to you.</div></div>
+   <div class="aside">${I('warn','s20')}<div class="tBody">Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to native speakers in general, not to you.</div></div>
    <div class="tBody muted" style="margin-top:16px;text-wrap:pretty">You can turn reviewing off at any time; your code is kept.</div>
   </div>
   <div class="sact"><span class="btn f c">Got it</span></div>
@@ -484,7 +484,7 @@ function rudeCard(){
 function rateSheet(){
  const inner=`<div class="tTitleL">Rate this word</div>
  <div class="tBody muted" style="margin-top:4px"><span class="te">వెధవ</span> · vedhava · idiot, good-for-nothing</div>
- <div class="tTitleM" style="margin-top:20px">How offensive is this word to people in general?</div>
+ <div class="tTitleM" style="margin-top:20px">How offensive is this word to native speakers in general?</div>
  <div class="scale" role="radiogroup" style="margin-top:12px">${[1,2,3,4,5,6,7,8,9].map(n=>`<span role="radio" aria-checked="${n===4}" class="${n===4?'sel':''}">${n}</span>`).join('')}</div>
  <div class="ends tSmall muted"><span>1 Not at all</span><span>9 Extremely</span></div>
  <div class="tSmall muted" style="margin-top:8px">Not how it feels to you: how people around you hear it.</div>
@@ -530,7 +530,7 @@ function deckLearner(overlay,reviewer){
 function confirmSend(){
  const overlay=`<div class="scrim"></div><div class="dlg" role="dialog" aria-label="Send review">
   <div class="tHeadS">Send 12 reviews of Family by mail?</div>
-  <div class="tBody muted">Your mail app opens with the review attached. Send it from the address you always use. From any other address, a review with your code is held back until the Fluenough team checks it.</div>
+  <div class="tBody muted">Your mail app opens with the review attached. Send it from the mail address you always use. From any other mail address, a review with your code is held back until the Fluenough team checks it.</div>
   <div class="acts2"><span class="btn t">Cancel</span><span class="btn t">Send</span></div></div>`;
  return deckReviewer({overlay});
 }
@@ -563,7 +563,7 @@ function deckThanks(){
 
 /* ---------- Layout ---------- */
 const SCREENS=[
- {t:'1. Settings: becoming a reviewer',w:'Everyone sees "Become a reviewer" and "How reviewing works". Turning reviewing on asks once, then shows the rater code the phone made (FL-XXXX-XXXX-C, Crockford base32 with a check character), with Copy, and opens "How reviewing works" by itself, that one time. The same switch turns reviewing off and keeps the code.',
+ {t:'1. Settings: becoming a reviewer',w:'Everyone sees "Review decks" and "How reviewing works". Turning reviewing on asks once, then shows the rater code the phone made (FL-XXXX-XXXX-C, Crockford base32 with a check character), with Copy, and opens "How reviewing works" by itself, that one time. The same switch turns reviewing off and keeps the code.',
   s:[['Off',()=>settings('off')],['Turning on',()=>settings('ask')],['Just turned on: shown once',()=>settings('on',howSheet())],['On: the code',()=>settings('on')]]},
  {t:'2. How reviewing works',w:'One sheet explains reviewing in six steps, in the order it happens. It opens by itself once, right after turning reviewing on, and again whenever the reviewer taps "How reviewing works" in Settings, with reviewing on or off. It is a scroll-controlled bottom sheet with a drag handle, as the app\'s other long sheets are (the report sheet): the text scrolls under the title, and Got it stays in place. Shown here opened from Settings before turning on.',
   s:[['Opened from Settings',()=>settings('off',howSheet())],['Scrolled to the end',()=>settings('off',howSheet(true))]]},
@@ -575,7 +575,7 @@ const SCREENS=[
   s:[['The card and its level',()=>rudeCard()],['Rating',()=>rateSheet()]]},
  {t:'6. A word with a sound-alike warning',w:'A learner without adult content sees the warning with the rude word hidden. A reviewer, with adult content on, sees the word the check found, confirms or rejects the pair, and writes the care note learners will read.',
   s:[['Learner, adult content off',()=>alikeSheet(false)],['Reviewer, adult content on',()=>alikeSheet(true)]]},
- {t:'7. Sending',w:'One confirm, which repeats the rule from step 4 of "How reviewing works" (always send from the same address), then the reviewer\'s own mail app opens (Android share, ACTION_SEND) with the Fluenough address, the subject with the rater code and language, and the file. The public issue the workflow opens names only the rater code and language, so the owner knows to read the mail.',
+ {t:'7. Sending',w:'One confirm, which repeats the rule from step 4 of "How reviewing works" (always send from the same mail address), then the reviewer\'s own mail app opens (Android share, ACTION_SEND) with the Fluenough address, the subject with the rater code and language, and the file. The public issue the workflow opens names only the rater code and language, so the owner knows to read the mail.',
   s:[['Confirm',()=>confirmSend()],['The mail app',()=>gmail()]],extra:['The public issue',issue]},
  {t:'8. Thank you',w:'When an updated deck lists the reviewer\'s code, the deck says thank you where the "not yet checked" notice was, and Settings lists the decks they helped build.',
   s:[['The deck',()=>deckThanks()],['Settings',()=>settings('thanks')]]}
