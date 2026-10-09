@@ -34,6 +34,10 @@ features the UI plan lists as having none — profiles and PINs, colour seeds an
 wallpaper colours, in-app CSV import, and the voice settings link, which needs a
 dependency before it can have an issue — and `test/app/features_test.dart`
 holds that list. Every other feature that is not available must name an issue.
+(Amended 9 October 2026: the voice settings link needed no dependency in the
+end. It opens through the app's own platform channel, which
+`tools/brand_android.py` writes into MainActivity, and is switched on, still
+with no issue.)
 
 **How a feature is switched on.** The PR that completes a feature's backend
 adds it to `Feature.available` — a one-line diff in a file nobody else edits —
