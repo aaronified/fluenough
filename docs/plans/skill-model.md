@@ -306,6 +306,7 @@ The owner's answers to #235, 2026-10-08:
   button in Settings refits now; beside it, an automatic option refits a
   skill whenever its reviews have grown by 10% since its last fit, set off
   by recording a review, never at app start, and run off the main thread.
+  The automatic option is on by default (owner, 2026-10-09).
 - **Shown prominently** (owner: "Yes. Prominently. Figure out how"), on
   Progress under Your strengths and where the learner will see it; the
   design is put to the owner before it is built.
