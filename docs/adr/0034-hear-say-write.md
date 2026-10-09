@@ -1,4 +1,4 @@
-# ADR-0034: Hear, Say and Write: three schedules per word
+# ADR-0034: Recognition, Hear, Say and Write: four schedules per word
 
 - **Status:** Accepted
 - **Date:** 2026-10-08
@@ -19,8 +19,12 @@ it) and speaking (say it).
 
 ## Decision
 
-- **Three schedules per word: Hear, Say and Write,** and grammar's. Hear is
-  the `listening` mode, Write `production`, Say `speaking`. The names stay
+- **Four schedules per word: Recognition, Hear, Say and Write,** and
+  grammar's. Hear is the `listening` mode, Write `production`, Say
+  `speaking`. Recognition was first made a lesson step only; the owner
+  then ruled it "a skill on its own right. The research says it is
+  important" (2026-10-09), so it is scheduled like the others, and the
+  recognition-only decks are reviewed. The names stay
   as they were: they are stored in the review log, which is never
   rewritten.
 - **Hear asks for the meaning.** The word is played; its meaning is chosen
@@ -28,10 +32,6 @@ it) and speaking (say it).
   remembered. Where what is heard is the form itself, it is still typed as
   heard: script practice (a deck that teaches the alphabet) and generated
   numbers.
-- **Recognition is a lesson step, not a schedule.** Choosing the meaning
-  and matching pairs still teach and check a word in its lesson, and are
-  logged, but recognition is never due and never introduced as a new pair.
-  Understanding in writing is taken from Write.
 - **A right choice counts for less than a right recall:** a right choice in
   Hear or Write records 3 (Hard); recalling records as before. A right
   choice of a meaning seen, recognition, records 4, as it did.
@@ -42,8 +42,16 @@ it) and speaking (say it).
 - **The old log replays as it is:** dictation answers into Hear, production
   into Write, speaking into Say, grammar into grammar. Recognition answers
   stay in the log and schedule nothing.
-- **No spill-over.** No schedule counts another's answers: the research
-  supports nothing from sound to writing, or from saying to hearing.
+- **One answer judges its own skill, and in part the skills it implies**
+  (`SkillMap`, a Q-matrix; owner, from `docs/research/skill-evidence.md`).
+  Write and Say imply Recognition; Hear implies Recognition, and in script
+  practice, where what is heard is written, Write. A right answer counts
+  for half a review there (Pan & Rickard 2018, d 0.28 against 0.58;
+  low confidence, to be fitted from the app's logs): FSRS moves the
+  implied pair's stability half way to a Good review, never its due date,
+  and never starts a pair not yet asked; the ability layer moves the
+  implied skill by half its own surprise. A miss counts against its own
+  skill alone.
 - **The ability layer.** An Elo rating per language and schedule, and a
   difficulty per pair, each moved after every answer by how surprising it
   was, by K = 1 ÷ (1 + 0.05 n) after n answers (Pelánek 2016). Like the
@@ -64,7 +72,8 @@ it) and speaking (say it).
 
 ## Consequences
 
-- A learner's recognition reviews stop coming due. Their history stays.
+- A word practised in Write comes due for Recognition later than it
+  would alone, but no sooner.
 - Hear's typed recall is in the language the learner speaks, so a near
   homophone (కలం pen, కాలం time) is caught by its meaning, not passed by
   its sound.
@@ -76,6 +85,13 @@ it) and speaking (say it).
   `reviews` and `leech_actions` holds the old names, and both tables are
   append-only.
 - **Recognition as Write's first rung:** it tests the opposite direction to
-  Write. The owner chose lesson steps.
+  Write.
+- **Recognition as a lesson step only:** chosen first, then reversed by
+  the owner: it is a skill of its own.
+- **One weight, .68, between every pair of skills:** a correlation of
+  vocabulary sizes across learners (Milton & Hopkins 2006), not of one
+  word's skills; other studies give .46 to .88.
+- **No credit across skills,** or **a full review for every skill a
+  question touches:** the research finds transfer real but partial.
 - **Dictation kept as Hear's recall:** it tests the form, not the meaning,
   so pen and time could not be told apart.
