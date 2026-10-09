@@ -21,6 +21,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "अंघोळ", base: "अंघोळ", reading: "aṅghoḷ" }
+      - { word: "करणे", base: "करणे", reading: "karṇe" }
   - id: "mr-0496"
     target: "दात घासणे"
     reading: "dāt ghāsṇe"
@@ -28,6 +31,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "दात", base: "दात", reading: "dāt" }
+      - { word: "घासणे", base: "घासणे", reading: "ghāsṇe" }
   - id: "mr-0497"
     target: "नाश्ता"
     reading: "nāśtā"
@@ -65,6 +71,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कामावर", ref: "mr-0234" }
+      - { word: "जाणे", base: "जाणे", reading: "jāṇe" }
   - id: "mr-0502"
     target: "घरी परत येणे"
     reading: "ghari parat yeṇe"
@@ -72,11 +81,17 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "परत", base: "परत", reading: "parat" }
+      - { word: "येणे", base: "येणे", reading: "yeṇe" }
   - id: "mr-0503"
     target: "स्वयंपाक करणे"
     reading: "svayampāk karṇe"
     ipa: "sʋəjəmpak kərɳe"
     pos: "phrase"
+    bases:
+      - { word: "स्वयंपाक", base: "स्वयंपाक", reading: "svayampāk" }
+      - { word: "करणे", base: "करणे", reading: "karṇe" }
   - id: "mr-0504"
     target: "कपडे धुणे"
     reading: "kapḍe dhuṇe"
@@ -84,6 +99,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कपडे", base: "कपडे", reading: "kapḍe" }
+      - { word: "धुणे", base: "धुणे", reading: "dhuṇe" }
   - id: "mr-0505"
     target: "रोज"
     reading: "roj"
@@ -110,6 +128,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कधीच", ref: "mr-0173" }
+      - { word: "नाही", base: "नाही", reading: "nāhi" }
   - id: "mr-0509"
     target: "लवकर"
     reading: "lavkar"
@@ -132,6 +153,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उठतो", base: "उठतो", reading: "uṭhto" }
   - id: "mr-0512"
     target: "चालणे"
     reading: "cālṇe"

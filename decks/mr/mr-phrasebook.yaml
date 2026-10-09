@@ -15,6 +15,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }
   - id: "mr-0146"
     target: "कसे आहात?"
     reading: "kase āhāt?"
@@ -24,6 +26,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आहात", base: "आहात", reading: "āhāt" }
   - id: "mr-0147"
     target: "मी ठीक आहे."
     reading: "mi ṭhik āhe."
@@ -33,6 +37,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ठीक", base: "ठीक", reading: "ṭhik" }
+      - { word: "आहे", base: "आहे", reading: "āhe" }
   - id: "mr-0148"
     target: "धन्यवाद"
     reading: "dhanyavād"
@@ -42,6 +49,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }
   - id: "mr-0149"
     target: "आभारी आहे."
     reading: "ābhāri āhe."
@@ -51,6 +60,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आभारी", base: "आभारी", reading: "ābhāri" }
+      - { word: "आहे", base: "आहे", reading: "āhe" }
   - id: "mr-0150"
     target: "ठीक आहे"
     reading: "ṭhik āhe"
@@ -59,6 +71,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ठीक", base: "ठीक", reading: "ṭhik" }
+      - { word: "आहे", base: "आहे", reading: "āhe" }
   - id: "mr-0151"
     target: "येतो"
     reading: "yeto"
@@ -69,6 +84,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "येतो", base: "येतो", reading: "yeto" }
   - id: "mr-0156"
     target: "माफ करा."
     reading: "māf karā."
@@ -78,6 +95,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "माफ", base: "माफ", reading: "māf" }
+      - { word: "करा", base: "करा", reading: "karā" }
   - id: "mr-0157"
     target: "कृपया"
     reading: "krupayā"
@@ -87,6 +107,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कृपया", base: "कृपया", reading: "krupayā" }
   - id: "mr-0168"
     target: "हो"
     reading: "ho"
@@ -96,6 +118,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "हो", base: "हो", reading: "ho" }
   - id: "mr-0169"
     target: "नाही"
     reading: "nāhi"
@@ -104,6 +128,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नाही", base: "नाही", reading: "nāhi" }
   - id: "mr-0205"
     target: "माझे नाव अनिता आहे."
     reading: "mājhe nāv anitā āhe."
@@ -112,6 +138,10 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "माझे", base: "माझे", reading: "mājhe" }
+      - { word: "अनिता", base: "अनिता", reading: "anitā" }
+      - { word: "आहे", base: "आहे", reading: "āhe" }
   - id: "mr-0152"
     target: "मला मराठी येत नाही."
     reading: "malā marāṭhi yet nāhi."
@@ -120,12 +150,22 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", base: "मला", reading: "malā" }
+      - { word: "मराठी", base: "मराठी", reading: "marāṭhi" }
+      - { word: "येत", base: "येत", reading: "yet" }
+      - { word: "नाही", base: "नाही", reading: "nāhi" }
   - id: "mr-0153"
     target: "मी अजून मराठी शिकत आहे."
     reading: "mi ajun marāṭhi śikat āhe."
     ipa: "mi ədzun məraʈʰi ʃikət̪ aɦe"
     pos: "phrase"
     phrasebook: true
+    bases:
+      - { word: "अजून", base: "अजून", reading: "ajun" }
+      - { word: "मराठी", base: "मराठी", reading: "marāṭhi" }
+      - { word: "शिकत", base: "शिकत", reading: "śikat" }
+      - { word: "आहे", base: "आहे", reading: "āhe" }
   - id: "mr-0154"
     target: "जरा हळू बोला."
     reading: "jarā haḷu bolā."
@@ -135,6 +175,10 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "जरा", base: "जरा", reading: "jarā" }
+      - { word: "हळू", base: "हळू", reading: "haḷu" }
+      - { word: "बोला", base: "बोला", reading: "bolā" }
   - id: "mr-0155"
     target: "पुन्हा सांगा."
     reading: "punhā sāṅgā."
@@ -142,18 +186,30 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
+    bases:
+      - { word: "पुन्हा", base: "पुन्हा", reading: "punhā" }
+      - { word: "सांगा", base: "सांगा", reading: "sāṅgā" }
   - id: "mr-0180"
     target: "मला माहीत नाही."
     reading: "malā māhit nāhi."
     ipa: "məla maɦit̪ naɦi"
     pos: "phrase"
     phrasebook: true
+    bases:
+      - { word: "मला", base: "मला", reading: "malā" }
+      - { word: "माहीत", base: "माहीत", reading: "māhit" }
+      - { word: "नाही", base: "नाही", reading: "nāhi" }
   - id: "mr-0603"
     target: "मला बरे वाटत नाही."
     reading: "malā bare vāṭat nāhi."
     ipa: "məla bəre ʋaʈət̪ naɦi"
     pos: "phrase"
     phrasebook: true
+    bases:
+      - { word: "मला", base: "मला", reading: "malā" }
+      - { word: "बरे", base: "बरे", reading: "bare" }
+      - { word: "वाटत", base: "वाटत", reading: "vāṭat" }
+      - { word: "नाही", base: "नाही", reading: "nāhi" }
   - id: "mr-0599"
     target: "मी हरवलो आहे."
     reading: "mi haravlo āhe."
@@ -163,6 +219,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "हरवलो", base: "हरवलो", reading: "haravlo" }
+      - { word: "आहे", base: "आहे", reading: "āhe" }
   - id: "mr-0594"
     target: "मदत करा!"
     reading: "madat karā!"
@@ -171,3 +230,6 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मदत", base: "मदत", reading: "madat" }
+      - { word: "करा", base: "करा", reading: "karā" }
