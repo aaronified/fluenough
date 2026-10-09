@@ -1,0 +1,189 @@
+schema: 1
+id: "bn-animals"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "animals"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1273"
+    target: "গরু"
+    reading: "goru"
+    ipa: "ɡoru"
+    alt_target: ["গোরু"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Cattle_in_religion_and_mythology" }
+      - { id: "n2", kind: "usage", words: [{ word: "গোরু", reading: "goru" }] }
+  - id: "bn-1274"
+    target: "মোষ"
+    reading: "moś"
+    ipa: "moʃ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1275"
+    target: "ছাগল"
+    reading: "chāgol"
+    ipa: "tʃʰaɡol"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1276"
+    target: "ভেড়া"
+    reading: "bheṛā"
+    ipa: "bʱeɽa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খাসির মাংস", reading: "khāśir māṅśo" }] }
+  - id: "bn-1277"
+    target: "কুকুর"
+    reading: "kukur"
+    ipa: "kukur"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "কুকুর", reading: "kukur" }] }
+  - id: "bn-1278"
+    target: "বিড়াল"
+    reading: "biṛāl"
+    ipa: "biɽal"
+    alt_target: ["বেড়াল"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বেড়াল", reading: "beṛāl" }] }
+  - id: "bn-1279"
+    target: "ঘোড়া"
+    reading: "ghoṛā"
+    ipa: "ɡʱoɽa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1280"
+    target: "হাতি"
+    reading: "hāti"
+    ipa: "ɦat̪i"
+    pos: "noun"
+    picture: "🐘"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1281"
+    target: "বাঘ"
+    reading: "bāgh"
+    ipa: "baɡʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Bengal_tiger" }
+      - { id: "pair", kind: "pair", ref: "bn-1328", words: [{ word: "বাঘ", reading: "bāgh" }, { word: "ভাগ", reading: "bhāg" }] }
+  - id: "bn-1282"
+    target: "সিংহ"
+    reading: "śiṅho"
+    ipa: "ʃiŋɦo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সিংহ", reading: "śiṅho" }, { word: "সিং", reading: "śiṅ" }] }
+  - id: "bn-1283"
+    target: "ভালুক"
+    reading: "bhāluk"
+    ipa: "bʱaluk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1284"
+    target: "বাঁদর"
+    reading: "bām̐dor"
+    ipa: "bãd̪or"
+    pos: "noun"
+    picture: "🐒"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1285"
+    target: "হরিণ"
+    reading: "horin"
+    ipa: "ɦorin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চিত্রা হরিণ", reading: "citrā horin" }] }
+  - id: "bn-1286"
+    target: "শেয়াল"
+    reading: "śeyāl"
+    ipa: "ʃejal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1287"
+    target: "সাপ"
+    reading: "śāp"
+    ipa: "ʃap"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Manasa" }
+  - id: "bn-1288"
+    target: "ইঁদুর"
+    reading: "im̐dur"
+    ipa: "ĩd̪ur"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1289"
+    target: "পাখি"
+    reading: "pākhi"
+    ipa: "pakʰi"
+    pos: "noun"
+    picture: "🐦"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1290"
+    target: "হাঁস"
+    reading: "hām̐s"
+    ipa: "ɦãs"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1291"
+    target: "কাক"
+    reading: "kāk"
+    ipa: "kak"
+    pos: "noun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0435", words: [{ word: "কাক", reading: "kāk" }, { word: "কাকা", reading: "kākā" }] }
+  - id: "bn-1292"
+    target: "ময়ূর"
+    reading: "moyur"
+    ipa: "mojur"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1293"
+    target: "টিয়া"
+    reading: "ṭiyā"
+    ipa: "ʈija"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টিয়া পাখি", reading: "ṭiyā pākhi" }] }
+  - id: "bn-1294"
+    target: "ব্যাঙ"
+    reading: "bêṅ"
+    ipa: "bæŋ"
+    alt_target: ["ব্যাং"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যাং", reading: "bêṅ" }] }
+  - id: "bn-1295"
+    target: "মশা"
+    reading: "môśā"
+    ipa: "mɔʃa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মশারি", reading: "môśāri" }] }
+  - id: "bn-1296"
+    target: "প্রজাপতি"
+    reading: "prôjāpoti"
+    ipa: "prɔdʒapot̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "bn-0266"
+  - ref: "bn-0269"

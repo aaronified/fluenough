@@ -47,6 +47,8 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "Ask before you get in. If the driver refuses, agree the fare first."
+    bases:
+      - { word: "মিটারে", base: "মিটার", reading: "miṭār", meaning: "meter (a taxi's)" }
   - id: bn-0285
     target: "স্টেশনে যাব।"
     native: "I want to go to the station."
@@ -54,12 +56,18 @@ cards:
     ipa: "sʈeʃone dʒabo"
     pos: "phrase"
     notes: "Literally 'I'll go to the station'. Put any place with -এ (-e), or after a vowel -য় (-yô) or -তে (-te), before যাব (jāb): এয়ারপোর্টে যাব (eyāroporṭe jāb), হাওড়ায় যাব (hāoṛāy jāb)।"
+    bases:
+      - { word: "স্টেশনে", ref: "bn-0288" }
+      - { word: "যাব", ref: "bn-0873" }
   - id: bn-0286
     target: "কতক্ষণ লাগবে?"
     native: "How long will it take?"
     reading: "kôtokkhon lāgbe?"
     ipa: "kɔt̪okkʰon laɡbe"
     pos: "phrase"
+    bases:
+      - { word: "কতক্ষণ", base: "কতক্ষণ", reading: "kôtokkhon", meaning: "how long" }
+      - { word: "লাগবে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0287
     target: "এখানে থামুন।"
     native: "Stop here, please."
@@ -67,6 +75,8 @@ cards:
     ipa: "ekʰane t̪ʰamun"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "থামুন", ref: "bn-1111" }
   - id: bn-0288
     target: "স্টেশন"
     native: "station"

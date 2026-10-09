@@ -1,0 +1,177 @@
+schema: 1
+id: "bn-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1169"
+    target: "এটা আমার বই।"
+    reading: "eṭā āmār boi."
+    ipa: "eʈa amar boi"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-1170"
+    target: "টেবিলে একটা বই আছে।"
+    reading: "ṭebile ekṭā boi āche."
+    ipa: "ʈebile ekʈa boi atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "টেবিলে", ref: "bn-0608" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1171"
+    target: "আমার কলম নেই।"
+    reading: "āmār kôlom nei."
+    ipa: "amar kɔlom nei"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "নেই", base: "নেই", reading: "nei" }
+  - id: "bn-1172"
+    target: "ব্যাগে একটা ছাতা আছে।"
+    reading: "bêge ekṭā chātā āche."
+    ipa: "bæɡe ekʈa tʃʰat̪a atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "ব্যাগে", ref: "bn-1149" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1173"
+    target: "আমার একটা মোবাইল আছে।"
+    reading: "āmār ekṭā mobāil āche."
+    ipa: "amar ekʈa mobail atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1174"
+    target: "ওর হাতে একটা ঘড়ি।"
+    reading: "or hāte ekṭā ghoṛi."
+    ipa: "or ɦat̪e ekʈa ɡʱoɽi"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-loc"]
+    bases:
+      - { word: "ওর", ref: "bn-0844" }
+      - { word: "হাতে", ref: "bn-0730" }
+      - { word: "একটা", ref: "bn-0202" }
+  - id: "bn-1175"
+    target: "দরজায় তালা লাগান।"
+    reading: "dôrjāy tālā lāgān."
+    ipa: "d̪ɔrdʒaj t̪ala laɡan"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-polite-request"]
+    bases:
+      - { word: "দরজায়", ref: "bn-0599" }
+      - { word: "লাগান", base: "লাগানো", reading: "lāgāno" }
+  - id: "bn-1176"
+    target: "চাবি কোথায়?"
+    reading: "cābi kothāy?"
+    ipa: "tʃabi kot̪ʰaj"
+    pos: "phrase"
+  - id: "bn-1177"
+    target: "আমি কাগজে লিখি।"
+    reading: "āmi kāgoje likhi."
+    ipa: "ami kaɡodʒe likʰi"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "কাগজে", ref: "bn-1143" }
+      - { word: "লিখি", ref: "bn-0880" }
+  - id: "bn-1178"
+    target: "আপনি কলম দিয়ে লেখেন।"
+    reading: "āpni kôlom diye lekhen."
+    ipa: "apni kɔlom d̪ije lekʰen"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "লেখেন", ref: "bn-0880" }
+  - id: "bn-1179"
+    target: "আমার ঘড়িটা নতুন।"
+    reading: "āmār ghoṛiṭā notun."
+    ipa: "amar ɡʱoɽiʈa not̪un"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "ঘড়িটা", ref: "bn-1146" }
+  - id: "bn-1180"
+    target: "ওই ব্যাগটা ভারী।"
+    reading: "oi bêgṭā bhāri."
+    ipa: "oi bæɡʈa bʱari"
+    pos: "phrase"
+    bases:
+      - { word: "ওই", base: "ওই", reading: "oi" }
+      - { word: "ব্যাগটা", ref: "bn-1149" }
+  - id: "bn-1181"
+    target: "এই বইটা পুরোনো।"
+    reading: "ei boiṭā purono."
+    ipa: "ei boiʈa purono"
+    pos: "phrase"
+    bases:
+      - { word: "এই", base: "এই", reading: "ei" }
+      - { word: "বইটা", ref: "bn-1139" }
+  - id: "bn-1182"
+    target: "আমি ট্রেনে যাই।"
+    reading: "āmi ṭrene jāi."
+    ipa: "ami ʈrene dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "ট্রেনে", ref: "bn-1164" }
+      - { word: "যাই", ref: "bn-0873" }
+  - id: "bn-1183"
+    target: "সে সাইকেলে কাজে যায়।"
+    reading: "śe sāikele kāje jāy."
+    ipa: "ʃe saikele kadʒe dʒaj"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "সাইকেলে", ref: "bn-1165" }
+      - { word: "কাজে", ref: "bn-0198" }
+      - { word: "যায়", ref: "bn-0873" }
+  - id: "bn-1184"
+    target: "আপনার ছাতাটা কোথায়?"
+    reading: "āpnār chātāṭā kothāy?"
+    ipa: "apnar tʃʰat̪aʈa kot̪ʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "ছাতাটা", ref: "bn-1148" }
+  - id: "bn-1185"
+    target: "আমরা টিভি দেখি।"
+    reading: "āmrā ṭibhi dekhi."
+    ipa: "amra ʈibʱi d̪ekʰi"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "দেখি", ref: "bn-0877" }
+  - id: "bn-1186"
+    target: "বোতলে জল আছে।"
+    reading: "botole jôl āche."
+    ipa: "bot̪ole dʒɔl atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "বোতলে", ref: "bn-1157" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1187"
+    target: "বালতিতে জল নেই।"
+    reading: "bāltite jôl nei."
+    ipa: "balt̪it̪e dʒɔl nei"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "বালতিতে", ref: "bn-1158" }
+      - { word: "নেই", base: "নেই", reading: "nei" }

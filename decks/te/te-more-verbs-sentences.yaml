@@ -1,0 +1,105 @@
+schema: 1
+id: "te-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0853"
+    target: "తలుపు తెరవండి."
+    reading: "talupu teravaṇḍi."
+    ipa: "t̪alupu t̪eraʋaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "తెరవండి", ref: "te-0825" }
+  - id: "te-0854"
+    target: "కిటికీ మూయండి."
+    reading: "kiṭikī mūyaṇḍi."
+    ipa: "kiʈikiː muːjaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "మూయండి", ref: "te-0826" }
+  - id: "te-0855"
+    target: "బస్సు ఎక్కండి."
+    reading: "bassu ekkaṇḍi."
+    ipa: "bassu ekkaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "ఎక్కండి", ref: "te-0827" }
+  - id: "te-0856"
+    target: "ఇక్కడ దిగండి."
+    reading: "ikkaḍa digaṇḍi."
+    ipa: "ikkaɖa d̪iɡaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "దిగండి", ref: "te-0828" }
+  - id: "te-0857"
+    target: "నేను గిన్నెలు కడుగుతాను."
+    reading: "nēnu ginnelu kaḍugutānu."
+    ipa: "neːnu ɡinnelu kaɖuɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first", "te-rule-plural"]
+    bases:
+      - { word: "గిన్నెలు", ref: "te-0708" }
+      - { word: "కడుగుతాను", ref: "te-0824" }
+  - id: "te-0858"
+    target: "పిల్లలు పాట పాడతారు."
+    reading: "pillalu pāṭa pāḍatāru."
+    ipa: "pillalu paːʈa paːɖat̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "పాడతారు", ref: "te-0821" }
+  - ref: "te-0727"
+  - id: "te-0860"
+    target: "నేను తాళం చెవి వెతుకుతాను."
+    reading: "nēnu tāḷam cevi vetukutānu."
+    ipa: "neːnu t̪aːɭam tʃeʋi ʋet̪ukut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "తాళం", ref: "te-0876" }
+      - { word: "చెవి", ref: "te-0733" }
+      - { word: "వెతుకుతాను", ref: "te-0835" }
+  - id: "te-0861"
+    target: "ఆమె రోజూ నది దగ్గర నడుస్తుంది."
+    reading: "āme rōjū nadi daggara naḍustundi."
+    ipa: "aːme roːdʒuː nad̪i d̪aɡɡara naɖust̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "నడుస్తుంది", ref: "te-0636" }
+  - id: "te-0862"
+    target: "పిల్లలు నవ్వుతారు."
+    reading: "pillalu navvutāru."
+    ipa: "pillalu naʋʋut̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "నవ్వుతారు", ref: "te-0822" }
+  - id: "te-0863"
+    target: "మీరు ఆ దుకాణంలో ఏం కొంటారు?"
+    reading: "mīru ā dukāṇamlō ēm koṇṭāru?"
+    ipa: "miːru aː d̪ukaːɳamloː eːm koɳʈaːru"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-present-second"]
+    bases:
+      - { word: "దుకాణంలో", ref: "te-0246" }
+      - { word: "ఏం", ref: "te-0160" }
+      - { word: "కొంటారు", ref: "te-0641" }
+  - id: "te-0864"
+    target: "గిన్నెలో పాలు పోయండి."
+    reading: "ginnelō pālu pōyaṇḍi."
+    ipa: "ɡinneloː paːlu poːjaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-polite-request"]
+    bases:
+      - { word: "గిన్నెలో", ref: "te-0708" }
+      - { word: "పోయండి", base: "పోయడం", reading: "pōyaḍam" }

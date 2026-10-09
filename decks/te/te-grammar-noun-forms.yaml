@@ -1,0 +1,1102 @@
+schema: 1
+id: "te-grammar-noun-forms"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+    except: ["te-0179", "te-0180", "te-0310", "te-0455", "te-0489", "te-0490", "te-0491", "te-0512", "te-0513", "te-0514", "te-0515", "te-0516", "te-0517", "te-0518", "te-0519", "te-0520", "te-0521", "te-0524", "te-0529", "te-0531"]
+  slots: ["plural", "lo", "ki", "to", "nunci", "ni"]
+  rows:
+    - word: "te-0181"
+      forms: { "plural": "తమ్ముళ్ళు", "lo": "తమ్ముడిలో", "ki": "తమ్ముడికి", "to": "తమ్ముడితో", "nunci": "తమ్ముడి నుంచి", "ni": "తమ్ముడిని" }
+      readings: { "plural": "tammuḷḷu", "lo": "tammuḍilō", "ki": "tammuḍiki", "to": "tammuḍitō", "nunci": "tammuḍi nuñci", "ni": "tammuḍini" }
+    - word: "te-0182"
+      forms: { "plural": "చెల్లెళ్ళు", "lo": "చెల్లిలో", "ki": "చెల్లికి", "to": "చెల్లితో", "nunci": "చెల్లి నుంచి", "ni": "చెల్లిని" }
+      readings: { "plural": "celleḷḷu", "lo": "cellilō", "ki": "celliki", "to": "cellitō", "nunci": "celli nuñci", "ni": "cellini" }
+    - word: "te-0185"
+      forms: { "plural": "సార్లు", "lo": "సార్‌లో", "ki": "సార్‌కి", "to": "సార్‌తో", "nunci": "సార్ నుంచి", "ni": "సార్‌ని" }
+      readings: { "plural": "sārlu", "lo": "sārlō", "ki": "sārki", "to": "sārtō", "nunci": "sār nuñci", "ni": "sārni" }
+    - word: "te-0186"
+      forms: { "plural": "మేడమ్‌లు", "lo": "మేడమ్‌లో", "ki": "మేడమ్‌కి", "to": "మేడమ్‌తో", "nunci": "మేడమ్ నుంచి", "ni": "మేడమ్‌ని" }
+      readings: { "plural": "mēḍamlu", "lo": "mēḍamlō", "ki": "mēḍamki", "to": "mēḍamtō", "nunci": "mēḍam nuñci", "ni": "mēḍamni" }
+    - word: "te-0187"
+      forms: { "plural": "బాబాయ్‌లు", "lo": "బాబాయ్‌లో", "ki": "బాబాయ్‌కి", "to": "బాబాయ్‌తో", "nunci": "బాబాయ్ నుంచి", "ni": "బాబాయ్‌ని" }
+      readings: { "plural": "bābāylu", "lo": "bābāylō", "ki": "bābāyki", "to": "bābāytō", "nunci": "bābāy nuñci", "ni": "bābāyni" }
+    - word: "te-0188"
+      forms: { "plural": "ఆంటీలు", "lo": "ఆంటీలో", "ki": "ఆంటీకి", "to": "ఆంటీతో", "nunci": "ఆంటీ నుంచి", "ni": "ఆంటీని" }
+      readings: { "plural": "āṇṭīlu", "lo": "āṇṭīlō", "ki": "āṇṭīki", "to": "āṇṭītō", "nunci": "āṇṭī nuñci", "ni": "āṇṭīni" }
+    - word: "te-0189"
+      forms: { "plural": "స్నేహితులు", "lo": "స్నేహితుడిలో", "ki": "స్నేహితుడికి", "to": "స్నేహితుడితో", "nunci": "స్నేహితుడి నుంచి", "ni": "స్నేహితుడిని" }
+      readings: { "plural": "snēhitulu", "lo": "snēhituḍilō", "ki": "snēhituḍiki", "to": "snēhituḍitō", "nunci": "snēhituḍi nuñci", "ni": "snēhituḍini" }
+    - word: "te-0190"
+      forms: { "plural": "పేర్లు", "lo": "పేరులో", "ki": "పేరుకి", "to": "పేరుతో", "nunci": "పేరు నుంచి", "ni": "పేరును" }
+      readings: { "plural": "pērlu", "lo": "pērulō", "ki": "pēruki", "to": "pērutō", "nunci": "pēru nuñci", "ni": "pērunu" }
+    - word: "te-0195"
+      forms: { "plural": "ఇళ్ళు", "lo": "ఇంట్లో", "ki": "ఇంటికి", "to": "ఇంటితో", "nunci": "ఇంటి నుంచి", "ni": "ఇంటిని" }
+      readings: { "plural": "iḷḷu", "lo": "iṇṭlō", "ki": "iṇṭiki", "to": "iṇṭitō", "nunci": "iṇṭi nuñci", "ni": "iṇṭini" }
+    - word: "te-0196"
+      forms: { "plural": "కుటుంబాలు", "lo": "కుటుంబంలో", "ki": "కుటుంబానికి", "to": "కుటుంబంతో", "nunci": "కుటుంబం నుంచి", "ni": "కుటుంబాన్ని" }
+      readings: { "plural": "kuṭumbālu", "lo": "kuṭumbamlō", "ki": "kuṭumbāniki", "to": "kuṭumbantō", "nunci": "kuṭumbam nuñci", "ni": "kuṭumbānni" }
+    - word: "te-0197"
+      forms: { "plural": "పనులు", "lo": "పనిలో", "ki": "పనికి", "to": "పనితో", "nunci": "పని నుంచి", "ni": "పనిని" }
+      readings: { "plural": "panulu", "lo": "panilō", "ki": "paniki", "to": "panitō", "nunci": "pani nuñci", "ni": "panini" }
+    - word: "te-0198"
+      forms: { "plural": "ఊళ్ళు", "lo": "ఊరిలో", "ki": "ఊరికి", "to": "ఊరితో", "nunci": "ఊరి నుంచి", "ni": "ఊరిని" }
+      readings: { "plural": "ūḷḷu", "lo": "ūrilō", "ki": "ūriki", "to": "ūritō", "nunci": "ūri nuñci", "ni": "ūrini" }
+    - word: "te-0199"
+      forms: { "plural": "దేశాలు", "lo": "దేశంలో", "ki": "దేశానికి", "to": "దేశంతో", "nunci": "దేశం నుంచి", "ni": "దేశాన్ని" }
+      readings: { "plural": "dēśālu", "lo": "dēśamlō", "ki": "dēśāniki", "to": "dēśantō", "nunci": "dēśam nuñci", "ni": "dēśānni" }
+    - word: "te-0200"
+      forms: { "plural": "భాషలు", "lo": "భాషలో", "ki": "భాషకి", "to": "భాషతో", "nunci": "భాష నుంచి", "ni": "భాషను" }
+      readings: { "plural": "bhāṣalu", "lo": "bhāṣalō", "ki": "bhāṣaki", "to": "bhāṣatō", "nunci": "bhāṣa nuñci", "ni": "bhāṣanu" }
+    - word: "te-0240"
+      forms: { "plural": "ధరలు", "lo": "ధరలో", "ki": "ధరకి", "to": "ధరతో", "nunci": "ధర నుంచి", "ni": "ధరను" }
+      readings: { "plural": "dharalu", "lo": "dharalō", "ki": "dharaki", "to": "dharatō", "nunci": "dhara nuñci", "ni": "dharanu" }
+    - word: "te-0241"
+      forms: { "plural": "రూపాయలు", "lo": "రూపాయిలో", "ki": "రూపాయికి", "to": "రూపాయితో", "nunci": "రూపాయి నుంచి", "ni": "రూపాయిని" }
+      readings: { "plural": "rūpāyalu", "lo": "rūpāyilō", "ki": "rūpāyiki", "to": "rūpāyitō", "nunci": "rūpāyi nuñci", "ni": "rūpāyini" }
+    - word: "te-0242"
+      forms: { "plural": null, "lo": "డబ్బుల్లో", "ki": "డబ్బులకు", "to": "డబ్బులతో", "nunci": "డబ్బుల నుంచి", "ni": "డబ్బులను" }
+      readings: { "lo": "ḍabbullō", "ki": "ḍabbulaku", "to": "ḍabbulatō", "nunci": "ḍabbula nuñci", "ni": "ḍabbulanu" }
+    - word: "te-0243"
+      forms: { "plural": null, "lo": "చిల్లరలో", "ki": "చిల్లరకి", "to": "చిల్లరతో", "nunci": "చిల్లర నుంచి", "ni": "చిల్లరను" }
+      readings: { "lo": "cillaralō", "ki": "cillaraki", "to": "cillaratō", "nunci": "cillara nuñci", "ni": "cillaranu" }
+    - word: "te-0246"
+      forms: { "plural": "దుకాణాలు", "lo": "దుకాణంలో", "ki": "దుకాణానికి", "to": "దుకాణంతో", "nunci": "దుకాణం నుంచి", "ni": "దుకాణాన్ని" }
+      readings: { "plural": "dukāṇālu", "lo": "dukāṇamlō", "ki": "dukāṇāniki", "to": "dukāṇantō", "nunci": "dukāṇam nuñci", "ni": "dukāṇānni" }
+    - word: "te-0248"
+      forms: { "plural": "కిలోలు", "lo": "కిలోలో", "ki": "కిలోకి", "to": "కిలోతో", "nunci": "కిలో నుంచి", "ni": "కిలోని" }
+      readings: { "plural": "kilōlu", "lo": "kilōlō", "ki": "kilōki", "to": "kilōtō", "nunci": "kilō nuñci", "ni": "kilōni" }
+    - word: "te-0255"
+      forms: { "plural": null, "lo": "కూరగాయల్లో", "ki": "కూరగాయలకు", "to": "కూరగాయలతో", "nunci": "కూరగాయల నుంచి", "ni": "కూరగాయలను" }
+      readings: { "lo": "kūragāyallō", "ki": "kūragāyalaku", "to": "kūragāyalatō", "nunci": "kūragāyala nuñci", "ni": "kūragāyalanu" }
+    - word: "te-0256"
+      forms: { "plural": "బంగాళాదుంపలు", "lo": "బంగాళాదుంపలో", "ki": "బంగాళాదుంపకి", "to": "బంగాళాదుంపతో", "nunci": "బంగాళాదుంప నుంచి", "ni": "బంగాళాదుంపను" }
+      readings: { "plural": "baṅgāḷādumpalu", "lo": "baṅgāḷādumpalō", "ki": "baṅgāḷādumpaki", "to": "baṅgāḷādumpatō", "nunci": "baṅgāḷādumpa nuñci", "ni": "baṅgāḷādumpanu" }
+    - word: "te-0257"
+      forms: { "plural": "ఉల్లిపాయలు", "lo": "ఉల్లిపాయలో", "ki": "ఉల్లిపాయకి", "to": "ఉల్లిపాయతో", "nunci": "ఉల్లిపాయ నుంచి", "ni": "ఉల్లిపాయను" }
+      readings: { "plural": "ullipāyalu", "lo": "ullipāyalō", "ki": "ullipāyaki", "to": "ullipāyatō", "nunci": "ullipāya nuñci", "ni": "ullipāyanu" }
+    - word: "te-0258"
+      forms: { "plural": "టమాటాలు", "lo": "టమాటాలో", "ki": "టమాటాకి", "to": "టమాటాతో", "nunci": "టమాటా నుంచి", "ni": "టమాటాని" }
+      readings: { "plural": "ṭamāṭālu", "lo": "ṭamāṭālō", "ki": "ṭamāṭāki", "to": "ṭamāṭātō", "nunci": "ṭamāṭā nuñci", "ni": "ṭamāṭāni" }
+    - word: "te-0259"
+      forms: { "plural": "మిరపకాయలు", "lo": "మిరపకాయలో", "ki": "మిరపకాయకి", "to": "మిరపకాయతో", "nunci": "మిరపకాయ నుంచి", "ni": "మిరపకాయను" }
+      readings: { "plural": "mirapakāyalu", "lo": "mirapakāyalō", "ki": "mirapakāyaki", "to": "mirapakāyatō", "nunci": "mirapakāya nuñci", "ni": "mirapakāyanu" }
+    - word: "te-0260"
+      forms: { "plural": null, "lo": "వెల్లుల్లిలో", "ki": "వెల్లుల్లికి", "to": "వెల్లుల్లితో", "nunci": "వెల్లుల్లి నుంచి", "ni": "వెల్లుల్లిని" }
+      readings: { "lo": "vellullilō", "ki": "vellulliki", "to": "vellullitō", "nunci": "vellulli nuñci", "ni": "vellullini" }
+    - word: "te-0261"
+      forms: { "plural": "చేపలు", "lo": "చేపలో", "ki": "చేపకి", "to": "చేపతో", "nunci": "చేప నుంచి", "ni": "చేపను" }
+      readings: { "plural": "cēpalu", "lo": "cēpalō", "ki": "cēpaki", "to": "cēpatō", "nunci": "cēpa nuñci", "ni": "cēpanu" }
+    - word: "te-0262"
+      forms: { "plural": null, "lo": "మటన్‌లో", "ki": "మటన్‌కి", "to": "మటన్‌తో", "nunci": "మటన్ నుంచి", "ni": "మటన్‌ని" }
+      readings: { "lo": "maṭanlō", "ki": "maṭanki", "to": "maṭantō", "nunci": "maṭan nuñci", "ni": "maṭanni" }
+    - word: "te-0263"
+      forms: { "plural": "కోళ్ళు", "lo": "కోడిలో", "ki": "కోడికి", "to": "కోడితో", "nunci": "కోడి నుంచి", "ni": "కోడిని" }
+      readings: { "plural": "kōḷḷu", "lo": "kōḍilō", "ki": "kōḍiki", "to": "kōḍitō", "nunci": "kōḍi nuñci", "ni": "kōḍini" }
+    - word: "te-0264"
+      forms: { "plural": "గుడ్లు", "lo": "గుడ్డులో", "ki": "గుడ్డుకి", "to": "గుడ్డుతో", "nunci": "గుడ్డు నుంచి", "ni": "గుడ్డును" }
+      readings: { "plural": "guḍlu", "lo": "guḍḍulō", "ki": "guḍḍuki", "to": "guḍḍutō", "nunci": "guḍḍu nuñci", "ni": "guḍḍunu" }
+    - word: "te-0265"
+      forms: { "plural": null, "lo": "పాలలో", "ki": "పాలకు", "to": "పాలతో", "nunci": "పాల నుంచి", "ni": "పాలను" }
+      readings: { "lo": "pālalō", "ki": "pālaku", "to": "pālatō", "nunci": "pāla nuñci", "ni": "pālanu" }
+    - word: "te-0266"
+      forms: { "plural": null, "lo": "బియ్యంలో", "ki": "బియ్యానికి", "to": "బియ్యంతో", "nunci": "బియ్యం నుంచి", "ni": "బియ్యాన్ని" }
+      readings: { "lo": "biyyamlō", "ki": "biyyāniki", "to": "biyyantō", "nunci": "biyyam nuñci", "ni": "biyyānni" }
+    - word: "te-0267"
+      forms: { "plural": "పప్పులు", "lo": "పప్పులో", "ki": "పప్పుకి", "to": "పప్పుతో", "nunci": "పప్పు నుంచి", "ni": "పప్పును" }
+      readings: { "plural": "pappulu", "lo": "pappulō", "ki": "pappuki", "to": "papputō", "nunci": "pappu nuñci", "ni": "pappunu" }
+    - word: "te-0271"
+      forms: { "plural": "బస్సులు", "lo": "బస్సులో", "ki": "బస్సుకి", "to": "బస్సుతో", "nunci": "బస్సు నుంచి", "ni": "బస్సును" }
+      readings: { "plural": "bassulu", "lo": "bassulō", "ki": "bassuki", "to": "bassutō", "nunci": "bassu nuñci", "ni": "bassunu" }
+    - word: "te-0272"
+      forms: { "plural": "ఆటోలు", "lo": "ఆటోలో", "ki": "ఆటోకి", "to": "ఆటోతో", "nunci": "ఆటో నుంచి", "ni": "ఆటోని" }
+      readings: { "plural": "āṭōlu", "lo": "āṭōlō", "ki": "āṭōki", "to": "āṭōtō", "nunci": "āṭō nuñci", "ni": "āṭōni" }
+    - word: "te-0273"
+      forms: { "plural": "టాక్సీలు", "lo": "టాక్సీలో", "ki": "టాక్సీకి", "to": "టాక్సీతో", "nunci": "టాక్సీ నుంచి", "ni": "టాక్సీని" }
+      readings: { "plural": "ṭāksīlu", "lo": "ṭāksīlō", "ki": "ṭāksīki", "to": "ṭāksītō", "nunci": "ṭāksī nuñci", "ni": "ṭāksīni" }
+    - word: "te-0274"
+      forms: { "plural": "చార్జీలు", "lo": "చార్జీలో", "ki": "చార్జీకి", "to": "చార్జీతో", "nunci": "చార్జీ నుంచి", "ni": "చార్జీని" }
+      readings: { "plural": "cārjīlu", "lo": "cārjīlō", "ki": "cārjīki", "to": "cārjītō", "nunci": "cārjī nuñci", "ni": "cārjīni" }
+    - word: "te-0279"
+      forms: { "plural": "స్టేషన్లు", "lo": "స్టేషన్‌లో", "ki": "స్టేషన్‌కి", "to": "స్టేషన్‌తో", "nunci": "స్టేషన్ నుంచి", "ni": "స్టేషన్‌ని" }
+      readings: { "plural": "sṭēṣanlu", "lo": "sṭēṣanlō", "ki": "sṭēṣanki", "to": "sṭēṣantō", "nunci": "sṭēṣan nuñci", "ni": "sṭēṣanni" }
+    - word: "te-0280"
+      forms: { "plural": "టికెట్లు", "lo": "టికెట్‌లో", "ki": "టికెట్‌కి", "to": "టికెట్‌తో", "nunci": "టికెట్ నుంచి", "ni": "టికెట్‌ని" }
+      readings: { "plural": "ṭikeṭlu", "lo": "ṭikeṭlō", "ki": "ṭikeṭki", "to": "ṭikeṭtō", "nunci": "ṭikeṭ nuñci", "ni": "ṭikeṭni" }
+    - word: "te-0281"
+      forms: { "plural": "సీట్లు", "lo": "సీటులో", "ki": "సీటుకి", "to": "సీటుతో", "nunci": "సీటు నుంచి", "ni": "సీటును" }
+      readings: { "plural": "sīṭlu", "lo": "sīṭulō", "ki": "sīṭuki", "to": "sīṭutō", "nunci": "sīṭu nuñci", "ni": "sīṭunu" }
+    - word: "te-0301"
+      forms: { "plural": "దూరాలు", "lo": "దూరంలో", "ki": "దూరానికి", "to": "దూరంతో", "nunci": "దూరం నుంచి", "ni": "దూరాన్ని" }
+      readings: { "plural": "dūrālu", "lo": "dūramlō", "ki": "dūrāniki", "to": "dūrantō", "nunci": "dūram nuñci", "ni": "dūrānni" }
+    - word: "te-0304"
+      forms: { "plural": "దారులు", "lo": "దారిలో", "ki": "దారికి", "to": "దారితో", "nunci": "దారి నుంచి", "ni": "దారిని" }
+      readings: { "plural": "dārulu", "lo": "dārilō", "ki": "dāriki", "to": "dāritō", "nunci": "dāri nuñci", "ni": "dārini" }
+    - word: "te-0305"
+      forms: { "plural": "రోడ్లు", "lo": "రోడ్డులో", "ki": "రోడ్డుకి", "to": "రోడ్డుతో", "nunci": "రోడ్డు నుంచి", "ni": "రోడ్డును" }
+      readings: { "plural": "rōḍlu", "lo": "rōḍḍulō", "ki": "rōḍḍuki", "to": "rōḍḍutō", "nunci": "rōḍḍu nuñci", "ni": "rōḍḍunu" }
+    - word: "te-0311"
+      forms: { "plural": "సాయంత్రాలు", "lo": "సాయంత్రంలో", "ki": "సాయంత్రానికి", "to": "సాయంత్రంతో", "nunci": "సాయంత్రం నుంచి", "ni": "సాయంత్రాన్ని" }
+      readings: { "plural": "sāyantrālu", "lo": "sāyantramlō", "ki": "sāyantrāniki", "to": "sāyantrantō", "nunci": "sāyantram nuñci", "ni": "sāyantrānni" }
+    - word: "te-0312"
+      forms: { "plural": "రాత్రులు", "lo": "రాత్రిలో", "ki": "రాత్రికి", "to": "రాత్రితో", "nunci": "రాత్రి నుంచి", "ni": "రాత్రిని" }
+      readings: { "plural": "rātrulu", "lo": "rātrilō", "ki": "rātriki", "to": "rātritō", "nunci": "rātri nuñci", "ni": "rātrini" }
+    - word: "te-0313"
+      forms: { "plural": null, "lo": "గంటల్లో", "ki": "గంటలకు", "to": "గంటలతో", "nunci": "గంటల నుంచి", "ni": "గంటలను" }
+      readings: { "lo": "gaṇṭallō", "ki": "gaṇṭalaku", "to": "gaṇṭalatō", "nunci": "gaṇṭala nuñci", "ni": "gaṇṭalanu" }
+    - word: "te-0316"
+      forms: { "plural": "రోజులు", "lo": "రోజులో", "ki": "రోజుకి", "to": "రోజుతో", "nunci": "రోజు నుంచి", "ni": "రోజును" }
+      readings: { "plural": "rōjulu", "lo": "rōjulō", "ki": "rōjuki", "to": "rōjutō", "nunci": "rōju nuñci", "ni": "rōjunu" }
+    - word: "te-0317"
+      forms: { "plural": "వారాలు", "lo": "వారంలో", "ki": "వారానికి", "to": "వారంతో", "nunci": "వారం నుంచి", "ni": "వారాన్ని" }
+      readings: { "plural": "vārālu", "lo": "vāramlō", "ki": "vārāniki", "to": "vārantō", "nunci": "vāram nuñci", "ni": "vārānni" }
+    - word: "te-0318"
+      forms: { "plural": "సోమవారాలు", "lo": "సోమవారంలో", "ki": "సోమవారానికి", "to": "సోమవారంతో", "nunci": "సోమవారం నుంచి", "ni": "సోమవారాన్ని" }
+      readings: { "plural": "sōmavārālu", "lo": "sōmavāramlō", "ki": "sōmavārāniki", "to": "sōmavārantō", "nunci": "sōmavāram nuñci", "ni": "sōmavārānni" }
+    - word: "te-0319"
+      forms: { "plural": "మంగళవారాలు", "lo": "మంగళవారంలో", "ki": "మంగళవారానికి", "to": "మంగళవారంతో", "nunci": "మంగళవారం నుంచి", "ni": "మంగళవారాన్ని" }
+      readings: { "plural": "maṅgaḷavārālu", "lo": "maṅgaḷavāramlō", "ki": "maṅgaḷavārāniki", "to": "maṅgaḷavārantō", "nunci": "maṅgaḷavāram nuñci", "ni": "maṅgaḷavārānni" }
+    - word: "te-0320"
+      forms: { "plural": "బుధవారాలు", "lo": "బుధవారంలో", "ki": "బుధవారానికి", "to": "బుధవారంతో", "nunci": "బుధవారం నుంచి", "ni": "బుధవారాన్ని" }
+      readings: { "plural": "budhavārālu", "lo": "budhavāramlō", "ki": "budhavārāniki", "to": "budhavārantō", "nunci": "budhavāram nuñci", "ni": "budhavārānni" }
+    - word: "te-0321"
+      forms: { "plural": "గురువారాలు", "lo": "గురువారంలో", "ki": "గురువారానికి", "to": "గురువారంతో", "nunci": "గురువారం నుంచి", "ni": "గురువారాన్ని" }
+      readings: { "plural": "guruvārālu", "lo": "guruvāramlō", "ki": "guruvārāniki", "to": "guruvārantō", "nunci": "guruvāram nuñci", "ni": "guruvārānni" }
+    - word: "te-0322"
+      forms: { "plural": "శుక్రవారాలు", "lo": "శుక్రవారంలో", "ki": "శుక్రవారానికి", "to": "శుక్రవారంతో", "nunci": "శుక్రవారం నుంచి", "ni": "శుక్రవారాన్ని" }
+      readings: { "plural": "śukravārālu", "lo": "śukravāramlō", "ki": "śukravārāniki", "to": "śukravārantō", "nunci": "śukravāram nuñci", "ni": "śukravārānni" }
+    - word: "te-0323"
+      forms: { "plural": "శనివారాలు", "lo": "శనివారంలో", "ki": "శనివారానికి", "to": "శనివారంతో", "nunci": "శనివారం నుంచి", "ni": "శనివారాన్ని" }
+      readings: { "plural": "śanivārālu", "lo": "śanivāramlō", "ki": "śanivārāniki", "to": "śanivārantō", "nunci": "śanivāram nuñci", "ni": "śanivārānni" }
+    - word: "te-0324"
+      forms: { "plural": "ఆదివారాలు", "lo": "ఆదివారంలో", "ki": "ఆదివారానికి", "to": "ఆదివారంతో", "nunci": "ఆదివారం నుంచి", "ni": "ఆదివారాన్ని" }
+      readings: { "plural": "ādivārālu", "lo": "ādivāramlō", "ki": "ādivārāniki", "to": "ādivārantō", "nunci": "ādivāram nuñci", "ni": "ādivārānni" }
+    - word: "te-0325"
+      forms: { "plural": "నెలలు", "lo": "నెలలో", "ki": "నెలకి", "to": "నెలతో", "nunci": "నెల నుంచి", "ni": "నెలను" }
+      readings: { "plural": "nelalu", "lo": "nelalō", "ki": "nelaki", "to": "nelatō", "nunci": "nela nuñci", "ni": "nelanu" }
+    - word: "te-0326"
+      forms: { "plural": "సంవత్సరాలు", "lo": "సంవత్సరంలో", "ki": "సంవత్సరానికి", "to": "సంవత్సరంతో", "nunci": "సంవత్సరం నుంచి", "ni": "సంవత్సరాన్ని" }
+      readings: { "plural": "samvatsarālu", "lo": "samvatsaramlō", "ki": "samvatsarāniki", "to": "samvatsarantō", "nunci": "samvatsaram nuñci", "ni": "samvatsarānni" }
+    - word: "te-0327"
+      forms: { "plural": "తేదీలు", "lo": "తేదీలో", "ki": "తేదీకి", "to": "తేదీతో", "nunci": "తేదీ నుంచి", "ni": "తేదీని" }
+      readings: { "plural": "tēdīlu", "lo": "tēdīlō", "ki": "tēdīki", "to": "tēdītō", "nunci": "tēdī nuñci", "ni": "tēdīni" }
+    - word: "te-0328"
+      forms: { "plural": null, "lo": "జనవరిలో", "ki": "జనవరికి", "to": "జనవరితో", "nunci": "జనవరి నుంచి", "ni": "జనవరిని" }
+      readings: { "lo": "janavarilō", "ki": "janavariki", "to": "janavaritō", "nunci": "janavari nuñci", "ni": "janavarini" }
+    - word: "te-0329"
+      forms: { "plural": null, "lo": "ఫిబ్రవరిలో", "ki": "ఫిబ్రవరికి", "to": "ఫిబ్రవరితో", "nunci": "ఫిబ్రవరి నుంచి", "ni": "ఫిబ్రవరిని" }
+      readings: { "lo": "fibravarilō", "ki": "fibravariki", "to": "fibravaritō", "nunci": "fibravari nuñci", "ni": "fibravarini" }
+    - word: "te-0330"
+      forms: { "plural": null, "lo": "మార్చిలో", "ki": "మార్చికి", "to": "మార్చితో", "nunci": "మార్చి నుంచి", "ni": "మార్చిని" }
+      readings: { "lo": "mārcilō", "ki": "mārciki", "to": "mārcitō", "nunci": "mārci nuñci", "ni": "mārcini" }
+    - word: "te-0331"
+      forms: { "plural": null, "lo": "ఏప్రిల్‌లో", "ki": "ఏప్రిల్‌కి", "to": "ఏప్రిల్‌తో", "nunci": "ఏప్రిల్ నుంచి", "ni": "ఏప్రిల్‌ని" }
+      readings: { "lo": "ēprillō", "ki": "ēprilki", "to": "ēpriltō", "nunci": "ēpril nuñci", "ni": "ēprilni" }
+    - word: "te-0332"
+      forms: { "plural": null, "lo": "మేలో", "ki": "మేకి", "to": "మేతో", "nunci": "మే నుంచి", "ni": "మేని" }
+      readings: { "lo": "mēlō", "ki": "mēki", "to": "mētō", "nunci": "mē nuñci", "ni": "mēni" }
+    - word: "te-0333"
+      forms: { "plural": null, "lo": "జూన్‌లో", "ki": "జూన్‌కి", "to": "జూన్‌తో", "nunci": "జూన్ నుంచి", "ni": "జూన్‌ని" }
+      readings: { "lo": "jūnlō", "ki": "jūnki", "to": "jūntō", "nunci": "jūn nuñci", "ni": "jūnni" }
+    - word: "te-0334"
+      forms: { "plural": null, "lo": "జులైలో", "ki": "జులైకి", "to": "జులైతో", "nunci": "జులై నుంచి", "ni": "జులైని" }
+      readings: { "lo": "julailō", "ki": "julaiki", "to": "julaitō", "nunci": "julai nuñci", "ni": "julaini" }
+    - word: "te-0335"
+      forms: { "plural": null, "lo": "ఆగస్టులో", "ki": "ఆగస్టుకి", "to": "ఆగస్టుతో", "nunci": "ఆగస్టు నుంచి", "ni": "ఆగస్టును" }
+      readings: { "lo": "āgasṭulō", "ki": "āgasṭuki", "to": "āgasṭutō", "nunci": "āgasṭu nuñci", "ni": "āgasṭunu" }
+    - word: "te-0336"
+      forms: { "plural": null, "lo": "సెప్టెంబర్‌లో", "ki": "సెప్టెంబర్‌కి", "to": "సెప్టెంబర్‌తో", "nunci": "సెప్టెంబర్ నుంచి", "ni": "సెప్టెంబర్‌ని" }
+      readings: { "lo": "sepṭembarlō", "ki": "sepṭembarki", "to": "sepṭembartō", "nunci": "sepṭembar nuñci", "ni": "sepṭembarni" }
+    - word: "te-0337"
+      forms: { "plural": null, "lo": "అక్టోబర్‌లో", "ki": "అక్టోబర్‌కి", "to": "అక్టోబర్‌తో", "nunci": "అక్టోబర్ నుంచి", "ni": "అక్టోబర్‌ని" }
+      readings: { "lo": "akṭōbarlō", "ki": "akṭōbarki", "to": "akṭōbartō", "nunci": "akṭōbar nuñci", "ni": "akṭōbarni" }
+    - word: "te-0338"
+      forms: { "plural": null, "lo": "నవంబర్‌లో", "ki": "నవంబర్‌కి", "to": "నవంబర్‌తో", "nunci": "నవంబర్ నుంచి", "ni": "నవంబర్‌ని" }
+      readings: { "lo": "navambarlō", "ki": "navambarki", "to": "navambartō", "nunci": "navambar nuñci", "ni": "navambarni" }
+    - word: "te-0339"
+      forms: { "plural": null, "lo": "డిసెంబర్‌లో", "ki": "డిసెంబర్‌కి", "to": "డిసెంబర్‌తో", "nunci": "డిసెంబర్ నుంచి", "ni": "డిసెంబర్‌ని" }
+      readings: { "lo": "ḍisembarlō", "ki": "ḍisembarki", "to": "ḍisembartō", "nunci": "ḍisembar nuñci", "ni": "ḍisembarni" }
+    - word: "te-0340"
+      forms: { "plural": "భోజనాలు", "lo": "భోజనంలో", "ki": "భోజనానికి", "to": "భోజనంతో", "nunci": "భోజనం నుంచి", "ni": "భోజనాన్ని" }
+      readings: { "plural": "bhōjanālu", "lo": "bhōjanamlō", "ki": "bhōjanāniki", "to": "bhōjanantō", "nunci": "bhōjanam nuñci", "ni": "bhōjanānni" }
+    - word: "te-0341"
+      forms: { "plural": null, "lo": "నీళ్ళలో", "ki": "నీళ్ళకు", "to": "నీళ్ళతో", "nunci": "నీళ్ళ నుంచి", "ni": "నీళ్ళను" }
+      readings: { "lo": "nīḷḷalō", "ki": "nīḷḷaku", "to": "nīḷḷatō", "nunci": "nīḷḷa nuñci", "ni": "nīḷḷanu" }
+    - word: "te-0342"
+      forms: { "plural": "టీలు", "lo": "టీలో", "ki": "టీకి", "to": "టీతో", "nunci": "టీ నుంచి", "ni": "టీని" }
+      readings: { "plural": "ṭīlu", "lo": "ṭīlō", "ki": "ṭīki", "to": "ṭītō", "nunci": "ṭī nuñci", "ni": "ṭīni" }
+    - word: "te-0343"
+      forms: { "plural": "కాఫీలు", "lo": "కాఫీలో", "ki": "కాఫీకి", "to": "కాఫీతో", "nunci": "కాఫీ నుంచి", "ni": "కాఫీని" }
+      readings: { "plural": "kāfīlu", "lo": "kāfīlō", "ki": "kāfīki", "to": "kāfītō", "nunci": "kāfī nuñci", "ni": "kāfīni" }
+    - word: "te-0344"
+      forms: { "plural": null, "lo": "అన్నంలో", "ki": "అన్నానికి", "to": "అన్నంతో", "nunci": "అన్నం నుంచి", "ni": "అన్నాన్ని" }
+      readings: { "lo": "annamlō", "ki": "annāniki", "to": "annantō", "nunci": "annam nuñci", "ni": "annānni" }
+    - word: "te-0347"
+      forms: { "plural": null, "lo": "కారంలో", "ki": "కారానికి", "to": "కారంతో", "nunci": "కారం నుంచి", "ni": "కారాన్ని" }
+      readings: { "lo": "kāramlō", "ki": "kārāniki", "to": "kārantō", "nunci": "kāram nuñci", "ni": "kārānni" }
+    - word: "te-0349"
+      forms: { "plural": null, "lo": "శాకాహారంలో", "ki": "శాకాహారానికి", "to": "శాకాహారంతో", "nunci": "శాకాహారం నుంచి", "ni": "శాకాహారాన్ని" }
+      readings: { "lo": "śākāhāramlō", "ki": "śākāhārāniki", "to": "śākāhārantō", "nunci": "śākāhāram nuñci", "ni": "śākāhārānni" }
+    - word: "te-0360"
+      forms: { "plural": "సహాయాలు", "lo": "సహాయంలో", "ki": "సహాయానికి", "to": "సహాయంతో", "nunci": "సహాయం నుంచి", "ni": "సహాయాన్ని" }
+      readings: { "plural": "sahāyālu", "lo": "sahāyamlō", "ki": "sahāyāniki", "to": "sahāyantō", "nunci": "sahāyam nuñci", "ni": "sahāyānni" }
+    - word: "te-0364"
+      forms: { "plural": "పోలీసులు", "lo": "పోలీసులో", "ki": "పోలీసుకి", "to": "పోలీసుతో", "nunci": "పోలీసు నుంచి", "ni": "పోలీసును" }
+      readings: { "plural": "pōlīsulu", "lo": "pōlīsulō", "ki": "pōlīsuki", "to": "pōlīsutō", "nunci": "pōlīsu nuñci", "ni": "pōlīsunu" }
+    - word: "te-0365"
+      forms: { "plural": "డాక్టర్లు", "lo": "డాక్టర్‌లో", "ki": "డాక్టర్‌కి", "to": "డాక్టర్‌తో", "nunci": "డాక్టర్ నుంచి", "ni": "డాక్టర్‌ని" }
+      readings: { "plural": "ḍākṭarlu", "lo": "ḍākṭarlō", "ki": "ḍākṭarki", "to": "ḍākṭartō", "nunci": "ḍākṭar nuñci", "ni": "ḍākṭarni" }
+    - word: "te-0366"
+      forms: { "plural": "ఆసుపత్రులు", "lo": "ఆసుపత్రిలో", "ki": "ఆసుపత్రికి", "to": "ఆసుపత్రితో", "nunci": "ఆసుపత్రి నుంచి", "ni": "ఆసుపత్రిని" }
+      readings: { "plural": "āsupatrulu", "lo": "āsupatrilō", "ki": "āsupatriki", "to": "āsupatritō", "nunci": "āsupatri nuñci", "ni": "āsupatrini" }
+    - word: "te-0367"
+      forms: { "plural": "మందులు", "lo": "మందులో", "ki": "మందుకి", "to": "మందుతో", "nunci": "మందు నుంచి", "ni": "మందును" }
+      readings: { "plural": "mandulu", "lo": "mandulō", "ki": "manduki", "to": "mandutō", "nunci": "mandu nuñci", "ni": "mandunu" }
+    - word: "te-0368"
+      forms: { "plural": "నొప్పులు", "lo": "నొప్పిలో", "ki": "నొప్పికి", "to": "నొప్పితో", "nunci": "నొప్పి నుంచి", "ni": "నొప్పిని" }
+      readings: { "plural": "noppulu", "lo": "noppilō", "ki": "noppiki", "to": "noppitō", "nunci": "noppi nuñci", "ni": "noppini" }
+    - word: "te-0380"
+      forms: { "plural": null, "lo": "తల్లిదండ్రుల్లో", "ki": "తల్లిదండ్రులకు", "to": "తల్లిదండ్రులతో", "nunci": "తల్లిదండ్రుల నుంచి", "ni": "తల్లిదండ్రులను" }
+      readings: { "lo": "tallidaṇḍrullō", "ki": "tallidaṇḍrulaku", "to": "tallidaṇḍrulatō", "nunci": "tallidaṇḍrula nuñci", "ni": "tallidaṇḍrulanu" }
+    - word: "te-0381"
+      forms: { "plural": "నాన్నలు", "lo": "నాన్నలో", "ki": "నాన్నకి", "to": "నాన్నతో", "nunci": "నాన్న నుంచి", "ni": "నాన్నను" }
+      readings: { "plural": "nānnalu", "lo": "nānnalō", "ki": "nānnaki", "to": "nānnatō", "nunci": "nānna nuñci", "ni": "nānnanu" }
+    - word: "te-0382"
+      forms: { "plural": null, "lo": "అన్నదమ్ముల్లో", "ki": "అన్నదమ్ములకు", "to": "అన్నదమ్ములతో", "nunci": "అన్నదమ్ముల నుంచి", "ni": "అన్నదమ్ములను" }
+      readings: { "lo": "annadammullō", "ki": "annadammulaku", "to": "annadammulatō", "nunci": "annadammula nuñci", "ni": "annadammulanu" }
+    - word: "te-0383"
+      forms: { "plural": "కొడుకులు", "lo": "కొడుకులో", "ki": "కొడుక్కి", "to": "కొడుకుతో", "nunci": "కొడుకు నుంచి", "ni": "కొడుకును" }
+      readings: { "plural": "koḍukulu", "lo": "koḍukulō", "ki": "koḍukki", "to": "koḍukutō", "nunci": "koḍuku nuñci", "ni": "koḍukunu" }
+    - word: "te-0384"
+      forms: { "plural": "కూతుళ్ళు", "lo": "కూతురిలో", "ki": "కూతురికి", "to": "కూతురితో", "nunci": "కూతురి నుంచి", "ni": "కూతురిని" }
+      readings: { "plural": "kūtuḷḷu", "lo": "kūturilō", "ki": "kūturiki", "to": "kūturitō", "nunci": "kūturi nuñci", "ni": "kūturini" }
+    - word: "te-0385"
+      forms: { "plural": "భర్తలు", "lo": "భర్తలో", "ki": "భర్తకి", "to": "భర్తతో", "nunci": "భర్త నుంచి", "ni": "భర్తను" }
+      readings: { "plural": "bhartalu", "lo": "bhartalō", "ki": "bhartaki", "to": "bhartatō", "nunci": "bharta nuñci", "ni": "bhartanu" }
+    - word: "te-0386"
+      forms: { "plural": "భార్యలు", "lo": "భార్యలో", "ki": "భార్యకి", "to": "భార్యతో", "nunci": "భార్య నుంచి", "ni": "భార్యను" }
+      readings: { "plural": "bhāryalu", "lo": "bhāryalō", "ki": "bhāryaki", "to": "bhāryatō", "nunci": "bhārya nuñci", "ni": "bhāryanu" }
+    - word: "te-0387"
+      forms: { "plural": null, "lo": "పిల్లల్లో", "ki": "పిల్లలకు", "to": "పిల్లలతో", "nunci": "పిల్లల నుంచి", "ni": "పిల్లలను" }
+      readings: { "lo": "pillallō", "ki": "pillalaku", "to": "pillalatō", "nunci": "pillala nuñci", "ni": "pillalanu" }
+    - word: "te-0388"
+      forms: { "plural": "తాతలు", "lo": "తాతలో", "ki": "తాతకి", "to": "తాతతో", "nunci": "తాత నుంచి", "ni": "తాతను" }
+      readings: { "plural": "tātalu", "lo": "tātalō", "ki": "tātaki", "to": "tātatō", "nunci": "tāta nuñci", "ni": "tātanu" }
+    - word: "te-0389"
+      forms: { "plural": "నానమ్మలు", "lo": "నానమ్మలో", "ki": "నానమ్మకి", "to": "నానమ్మతో", "nunci": "నానమ్మ నుంచి", "ni": "నానమ్మను" }
+      readings: { "plural": "nānammalu", "lo": "nānammalō", "ki": "nānammaki", "to": "nānammatō", "nunci": "nānamma nuñci", "ni": "nānammanu" }
+    - word: "te-0390"
+      forms: { "plural": "అమ్మమ్మలు", "lo": "అమ్మమ్మలో", "ki": "అమ్మమ్మకి", "to": "అమ్మమ్మతో", "nunci": "అమ్మమ్మ నుంచి", "ni": "అమ్మమ్మను" }
+      readings: { "plural": "ammammalu", "lo": "ammammalō", "ki": "ammammaki", "to": "ammammatō", "nunci": "ammamma nuñci", "ni": "ammammanu" }
+    - word: "te-0391"
+      forms: { "plural": "పెదనాన్నలు", "lo": "పెదనాన్నలో", "ki": "పెదనాన్నకి", "to": "పెదనాన్నతో", "nunci": "పెదనాన్న నుంచి", "ni": "పెదనాన్నను" }
+      readings: { "plural": "pedanānnalu", "lo": "pedanānnalō", "ki": "pedanānnaki", "to": "pedanānnatō", "nunci": "pedanānna nuñci", "ni": "pedanānnanu" }
+    - word: "te-0392"
+      forms: { "plural": "మామయ్యలు", "lo": "మామయ్యలో", "ki": "మామయ్యకి", "to": "మామయ్యతో", "nunci": "మామయ్య నుంచి", "ni": "మామయ్యను" }
+      readings: { "plural": "māmayyalu", "lo": "māmayyalō", "ki": "māmayyaki", "to": "māmayyatō", "nunci": "māmayya nuñci", "ni": "māmayyanu" }
+    - word: "te-0393"
+      forms: { "plural": "పిన్నులు", "lo": "పిన్నిలో", "ki": "పిన్నికి", "to": "పిన్నితో", "nunci": "పిన్ని నుంచి", "ni": "పిన్నిని" }
+      readings: { "plural": "pinnulu", "lo": "pinnilō", "ki": "pinniki", "to": "pinnitō", "nunci": "pinni nuñci", "ni": "pinnini" }
+    - word: "te-0394"
+      forms: { "plural": null, "lo": "మామగారిలో", "ki": "మామగారికి", "to": "మామగారితో", "nunci": "మామగారి నుంచి", "ni": "మామగారిని" }
+      readings: { "lo": "māmagārilō", "ki": "māmagāriki", "to": "māmagāritō", "nunci": "māmagāri nuñci", "ni": "māmagārini" }
+    - word: "te-0395"
+      forms: { "plural": null, "lo": "అత్తగారిలో", "ki": "అత్తగారికి", "to": "అత్తగారితో", "nunci": "అత్తగారి నుంచి", "ni": "అత్తగారిని" }
+      readings: { "lo": "attagārilō", "ki": "attagāriki", "to": "attagāritō", "nunci": "attagāri nuñci", "ni": "attagārini" }
+    - word: "te-0396"
+      forms: { "plural": "బంధువులు", "lo": "బంధువులో", "ki": "బంధువుకి", "to": "బంధువుతో", "nunci": "బంధువు నుంచి", "ni": "బంధువును" }
+      readings: { "plural": "bandhuvulu", "lo": "bandhuvulō", "ki": "bandhuvuki", "to": "bandhuvutō", "nunci": "bandhuvu nuñci", "ni": "bandhuvunu" }
+    - word: "te-0400"
+      forms: { "plural": "ఉద్యోగాలు", "lo": "ఉద్యోగంలో", "ki": "ఉద్యోగానికి", "to": "ఉద్యోగంతో", "nunci": "ఉద్యోగం నుంచి", "ni": "ఉద్యోగాన్ని" }
+      readings: { "plural": "udyōgālu", "lo": "udyōgamlō", "ki": "udyōgāniki", "to": "udyōgantō", "nunci": "udyōgam nuñci", "ni": "udyōgānni" }
+    - word: "te-0401"
+      forms: { "plural": "ఆఫీసులు", "lo": "ఆఫీసులో", "ki": "ఆఫీసుకి", "to": "ఆఫీసుతో", "nunci": "ఆఫీసు నుంచి", "ni": "ఆఫీసును" }
+      readings: { "plural": "āfīsulu", "lo": "āfīsulō", "ki": "āfīsuki", "to": "āfīsutō", "nunci": "āfīsu nuñci", "ni": "āfīsunu" }
+    - word: "te-0402"
+      forms: { "plural": "ఉపాధ్యాయులు", "lo": "ఉపాధ్యాయుడిలో", "ki": "ఉపాధ్యాయుడికి", "to": "ఉపాధ్యాయుడితో", "nunci": "ఉపాధ్యాయుడి నుంచి", "ni": "ఉపాధ్యాయుడిని" }
+      readings: { "plural": "upādhyāyulu", "lo": "upādhyāyuḍilō", "ki": "upādhyāyuḍiki", "to": "upādhyāyuḍitō", "nunci": "upādhyāyuḍi nuñci", "ni": "upādhyāyuḍini" }
+    - word: "te-0403"
+      forms: { "plural": "దుకాణదారులు", "lo": "దుకాణదారులో", "ki": "దుకాణదారుకి", "to": "దుకాణదారుతో", "nunci": "దుకాణదారు నుంచి", "ni": "దుకాణదారును" }
+      readings: { "plural": "dukāṇadārulu", "lo": "dukāṇadārulō", "ki": "dukāṇadāruki", "to": "dukāṇadārutō", "nunci": "dukāṇadāru nuñci", "ni": "dukāṇadārunu" }
+    - word: "te-0404"
+      forms: { "plural": "డ్రైవర్లు", "lo": "డ్రైవర్‌లో", "ki": "డ్రైవర్‌కి", "to": "డ్రైవర్‌తో", "nunci": "డ్రైవర్ నుంచి", "ni": "డ్రైవర్‌ని" }
+      readings: { "plural": "ḍraivarlu", "lo": "ḍraivarlō", "ki": "ḍraivarki", "to": "ḍraivartō", "nunci": "ḍraivar nuñci", "ni": "ḍraivarni" }
+    - word: "te-0405"
+      forms: { "plural": "ఇంజనీర్లు", "lo": "ఇంజనీర్‌లో", "ki": "ఇంజనీర్‌కి", "to": "ఇంజనీర్‌తో", "nunci": "ఇంజనీర్ నుంచి", "ni": "ఇంజనీర్‌ని" }
+      readings: { "plural": "iñjanīrlu", "lo": "iñjanīrlō", "ki": "iñjanīrki", "to": "iñjanīrtō", "nunci": "iñjanīr nuñci", "ni": "iñjanīrni" }
+    - word: "te-0406"
+      forms: { "plural": "లాయర్లు", "lo": "లాయర్‌లో", "ki": "లాయర్‌కి", "to": "లాయర్‌తో", "nunci": "లాయర్ నుంచి", "ni": "లాయర్‌ని" }
+      readings: { "plural": "lāyarlu", "lo": "lāyarlō", "ki": "lāyarki", "to": "lāyartō", "nunci": "lāyar nuñci", "ni": "lāyarni" }
+    - word: "te-0407"
+      forms: { "plural": "నర్సులు", "lo": "నర్సులో", "ki": "నర్సుకి", "to": "నర్సుతో", "nunci": "నర్సు నుంచి", "ni": "నర్సును" }
+      readings: { "plural": "narsulu", "lo": "narsulō", "ki": "narsuki", "to": "narsutō", "nunci": "narsu nuñci", "ni": "narsunu" }
+    - word: "te-0408"
+      forms: { "plural": "రైతులు", "lo": "రైతులో", "ki": "రైతుకి", "to": "రైతుతో", "nunci": "రైతు నుంచి", "ni": "రైతును" }
+      readings: { "plural": "raitulu", "lo": "raitulō", "ki": "raituki", "to": "raitutō", "nunci": "raitu nuñci", "ni": "raitunu" }
+    - word: "te-0409"
+      forms: { "plural": "వంటవాళ్ళు", "lo": "వంటవాడిలో", "ki": "వంటవాడికి", "to": "వంటవాడితో", "nunci": "వంటవాడి నుంచి", "ni": "వంటవాడిని" }
+      readings: { "plural": "vaṇṭavāḷḷu", "lo": "vaṇṭavāḍilō", "ki": "vaṇṭavāḍiki", "to": "vaṇṭavāḍitō", "nunci": "vaṇṭavāḍi nuñci", "ni": "vaṇṭavāḍini" }
+    - word: "te-0410"
+      forms: { "plural": "రచయితలు", "lo": "రచయితలో", "ki": "రచయితకి", "to": "రచయితతో", "nunci": "రచయిత నుంచి", "ni": "రచయితను" }
+      readings: { "plural": "racayitalu", "lo": "racayitalō", "ki": "racayitaki", "to": "racayitatō", "nunci": "racayita nuñci", "ni": "racayitanu" }
+    - word: "te-0411"
+      forms: { "plural": "విలేకరులు", "lo": "విలేకరిలో", "ki": "విలేకరికి", "to": "విలేకరితో", "nunci": "విలేకరి నుంచి", "ni": "విలేకరిని" }
+      readings: { "plural": "vilēkarulu", "lo": "vilēkarilō", "ki": "vilēkariki", "to": "vilēkaritō", "nunci": "vilēkari nuñci", "ni": "vilēkarini" }
+    - word: "te-0412"
+      forms: { "plural": "విద్యార్థులు", "lo": "విద్యార్థిలో", "ki": "విద్యార్థికి", "to": "విద్యార్థితో", "nunci": "విద్యార్థి నుంచి", "ni": "విద్యార్థిని" }
+      readings: { "plural": "vidyārthulu", "lo": "vidyārthilō", "ki": "vidyārthiki", "to": "vidyārthitō", "nunci": "vidyārthi nuñci", "ni": "vidyārthini" }
+    - word: "te-0413"
+      forms: { "plural": "సెలవులు", "lo": "సెలవులో", "ki": "సెలవుకి", "to": "సెలవుతో", "nunci": "సెలవు నుంచి", "ni": "సెలవును" }
+      readings: { "plural": "selavulu", "lo": "selavulō", "ki": "selavuki", "to": "selavutō", "nunci": "selavu nuñci", "ni": "selavunu" }
+    - word: "te-0414"
+      forms: { "plural": "జీతాలు", "lo": "జీతంలో", "ki": "జీతానికి", "to": "జీతంతో", "nunci": "జీతం నుంచి", "ni": "జీతాన్ని" }
+      readings: { "plural": "jītālu", "lo": "jītamlō", "ki": "jītāniki", "to": "jītantō", "nunci": "jītam nuñci", "ni": "jītānni" }
+    - word: "te-0415"
+      forms: { "plural": "వ్యాపారాలు", "lo": "వ్యాపారంలో", "ki": "వ్యాపారానికి", "to": "వ్యాపారంతో", "nunci": "వ్యాపారం నుంచి", "ni": "వ్యాపారాన్ని" }
+      readings: { "plural": "vyāpārālu", "lo": "vyāpāramlō", "ki": "vyāpārāniki", "to": "vyāpārantō", "nunci": "vyāpāram nuñci", "ni": "vyāpārānni" }
+    - word: "te-0420"
+      forms: { "plural": "గదులు", "lo": "గదిలో", "ki": "గదికి", "to": "గదితో", "nunci": "గది నుంచి", "ni": "గదిని" }
+      readings: { "plural": "gadulu", "lo": "gadilō", "ki": "gadiki", "to": "gaditō", "nunci": "gadi nuñci", "ni": "gadini" }
+    - word: "te-0421"
+      forms: { "plural": "వంటిళ్ళు", "lo": "వంటింట్లో", "ki": "వంటింటికి", "to": "వంటింటితో", "nunci": "వంటింటి నుంచి", "ni": "వంటింటిని" }
+      readings: { "plural": "vaṇṭiḷḷu", "lo": "vaṇṭiṇṭlō", "ki": "vaṇṭiṇṭiki", "to": "vaṇṭiṇṭitō", "nunci": "vaṇṭiṇṭi nuñci", "ni": "vaṇṭiṇṭini" }
+    - word: "te-0422"
+      forms: { "plural": "పడకగదులు", "lo": "పడకగదిలో", "ki": "పడకగదికి", "to": "పడకగదితో", "nunci": "పడకగది నుంచి", "ni": "పడకగదిని" }
+      readings: { "plural": "paḍakagadulu", "lo": "paḍakagadilō", "ki": "paḍakagadiki", "to": "paḍakagaditō", "nunci": "paḍakagadi nuñci", "ni": "paḍakagadini" }
+    - word: "te-0423"
+      forms: { "plural": "హాళ్ళు", "lo": "హాలులో", "ki": "హాలుకి", "to": "హాలుతో", "nunci": "హాలు నుంచి", "ni": "హాలును" }
+      readings: { "plural": "hāḷḷu", "lo": "hālulō", "ki": "hāluki", "to": "hālutō", "nunci": "hālu nuñci", "ni": "hālunu" }
+    - word: "te-0424"
+      forms: { "plural": "బాత్‌రూమ్‌లు", "lo": "బాత్‌రూమ్‌లో", "ki": "బాత్‌రూమ్‌కి", "to": "బాత్‌రూమ్‌తో", "nunci": "బాత్‌రూమ్ నుంచి", "ni": "బాత్‌రూమ్‌ని" }
+      readings: { "plural": "bātrūmlu", "lo": "bātrūmlō", "ki": "bātrūmki", "to": "bātrūmtō", "nunci": "bātrūm nuñci", "ni": "bātrūmni" }
+    - word: "te-0425"
+      forms: { "plural": "తలుపులు", "lo": "తలుపులో", "ki": "తలుపుకి", "to": "తలుపుతో", "nunci": "తలుపు నుంచి", "ni": "తలుపును" }
+      readings: { "plural": "talupulu", "lo": "talupulō", "ki": "talupuki", "to": "taluputō", "nunci": "talupu nuñci", "ni": "talupunu" }
+    - word: "te-0426"
+      forms: { "plural": "కిటికీలు", "lo": "కిటికీలో", "ki": "కిటికీకి", "to": "కిటికీతో", "nunci": "కిటికీ నుంచి", "ni": "కిటికీని" }
+      readings: { "plural": "kiṭikīlu", "lo": "kiṭikīlō", "ki": "kiṭikīki", "to": "kiṭikītō", "nunci": "kiṭikī nuñci", "ni": "kiṭikīni" }
+    - word: "te-0427"
+      forms: { "plural": null, "lo": "మెట్లలో", "ki": "మెట్లకు", "to": "మెట్లతో", "nunci": "మెట్ల నుంచి", "ni": "మెట్లను" }
+      readings: { "lo": "meṭlalō", "ki": "meṭlaku", "to": "meṭlatō", "nunci": "meṭla nuñci", "ni": "meṭlanu" }
+    - word: "te-0428"
+      forms: { "plural": "అంతస్తులు", "lo": "అంతస్తులో", "ki": "అంతస్తుకి", "to": "అంతస్తుతో", "nunci": "అంతస్తు నుంచి", "ni": "అంతస్తును" }
+      readings: { "plural": "antastulu", "lo": "antastulō", "ki": "antastuki", "to": "antastutō", "nunci": "antastu nuñci", "ni": "antastunu" }
+    - word: "te-0430"
+      forms: { "plural": "మంచాలు", "lo": "మంచంలో", "ki": "మంచానికి", "to": "మంచంతో", "nunci": "మంచం నుంచి", "ni": "మంచాన్ని" }
+      readings: { "plural": "mañcālu", "lo": "mañcamlō", "ki": "mañcāniki", "to": "mañcantō", "nunci": "mañcam nuñci", "ni": "mañcānni" }
+    - word: "te-0431"
+      forms: { "plural": "కుర్చీలు", "lo": "కుర్చీలో", "ki": "కుర్చీకి", "to": "కుర్చీతో", "nunci": "కుర్చీ నుంచి", "ni": "కుర్చీని" }
+      readings: { "plural": "kurcīlu", "lo": "kurcīlō", "ki": "kurcīki", "to": "kurcītō", "nunci": "kurcī nuñci", "ni": "kurcīni" }
+    - word: "te-0432"
+      forms: { "plural": "బల్లలు", "lo": "బల్లలో", "ki": "బల్లకి", "to": "బల్లతో", "nunci": "బల్ల నుంచి", "ni": "బల్లను" }
+      readings: { "plural": "ballalu", "lo": "ballalō", "ki": "ballaki", "to": "ballatō", "nunci": "balla nuñci", "ni": "ballanu" }
+    - word: "te-0433"
+      forms: { "plural": "ఫ్యాన్లు", "lo": "ఫ్యాన్‌లో", "ki": "ఫ్యాన్‌కి", "to": "ఫ్యాన్‌తో", "nunci": "ఫ్యాన్ నుంచి", "ni": "ఫ్యాన్‌ని" }
+      readings: { "plural": "fyānlu", "lo": "fyānlō", "ki": "fyānki", "to": "fyāntō", "nunci": "fyān nuñci", "ni": "fyānni" }
+    - word: "te-0434"
+      forms: { "plural": "లైట్లు", "lo": "లైటులో", "ki": "లైటుకి", "to": "లైటుతో", "nunci": "లైటు నుంచి", "ni": "లైటును" }
+      readings: { "plural": "laiṭlu", "lo": "laiṭulō", "ki": "laiṭuki", "to": "laiṭutō", "nunci": "laiṭu nuñci", "ni": "laiṭunu" }
+    - word: "te-0435"
+      forms: { "plural": null, "lo": "ఇరుగుపొరుగులో", "ki": "ఇరుగుపొరుగుకి", "to": "ఇరుగుపొరుగుతో", "nunci": "ఇరుగుపొరుగు నుంచి", "ni": "ఇరుగుపొరుగును" }
+      readings: { "lo": "iruguporugulō", "ki": "iruguporuguki", "to": "iruguporugutō", "nunci": "iruguporugu nuñci", "ni": "iruguporugunu" }
+    - word: "te-0436"
+      forms: { "plural": "అద్దెలు", "lo": "అద్దెలో", "ki": "అద్దెకి", "to": "అద్దెతో", "nunci": "అద్దె నుంచి", "ni": "అద్దెని" }
+      readings: { "plural": "addelu", "lo": "addelō", "ki": "addeki", "to": "addetō", "nunci": "adde nuñci", "ni": "addeni" }
+    - word: "te-0437"
+      forms: { "plural": "ఫ్లాట్లు", "lo": "ఫ్లాట్‌లో", "ki": "ఫ్లాట్‌కి", "to": "ఫ్లాట్‌తో", "nunci": "ఫ్లాట్ నుంచి", "ni": "ఫ్లాట్‌ని" }
+      readings: { "plural": "flāṭlu", "lo": "flāṭlō", "ki": "flāṭki", "to": "flāṭtō", "nunci": "flāṭ nuñci", "ni": "flāṭni" }
+    - word: "te-0438"
+      forms: { "plural": "వీధులు", "lo": "వీధిలో", "ki": "వీధికి", "to": "వీధితో", "nunci": "వీధి నుంచి", "ni": "వీధిని" }
+      readings: { "plural": "vīdhulu", "lo": "vīdhilō", "ki": "vīdhiki", "to": "vīdhitō", "nunci": "vīdhi nuñci", "ni": "vīdhini" }
+    - word: "te-0444"
+      forms: { "plural": "టిఫిన్లు", "lo": "టిఫిన్‌లో", "ki": "టిఫిన్‌కి", "to": "టిఫిన్‌తో", "nunci": "టిఫిన్ నుంచి", "ni": "టిఫిన్‌ని" }
+      readings: { "plural": "ṭifinlu", "lo": "ṭifinlō", "ki": "ṭifinki", "to": "ṭifintō", "nunci": "ṭifin nuñci", "ni": "ṭifinni" }
+    - word: "te-0465"
+      forms: { "plural": "అవసరాలు", "lo": "అవసరంలో", "ki": "అవసరానికి", "to": "అవసరంతో", "nunci": "అవసరం నుంచి", "ni": "అవసరాన్ని" }
+      readings: { "plural": "avasarālu", "lo": "avasaramlō", "ki": "avasarāniki", "to": "avasarantō", "nunci": "avasaram nuñci", "ni": "avasarānni" }
+    - word: "te-0469"
+      forms: { "plural": "ఇష్టాలు", "lo": "ఇష్టంలో", "ki": "ఇష్టానికి", "to": "ఇష్టంతో", "nunci": "ఇష్టం నుంచి", "ni": "ఇష్టాన్ని" }
+      readings: { "plural": "iṣṭālu", "lo": "iṣṭamlō", "ki": "iṣṭāniki", "to": "iṣṭantō", "nunci": "iṣṭam nuñci", "ni": "iṣṭānni" }
+    - word: "te-0525"
+      forms: { "plural": "కేకలు", "lo": "కేకలో", "ki": "కేకకి", "to": "కేకతో", "nunci": "కేక నుంచి", "ni": "కేకను" }
+      readings: { "plural": "kēkalu", "lo": "kēkalō", "ki": "kēkaki", "to": "kēkatō", "nunci": "kēka nuñci", "ni": "kēkanu" }
+    - word: "te-0528"
+      forms: { "plural": "బిల్డప్‌లు", "lo": "బిల్డప్‌లో", "ki": "బిల్డప్‌కి", "to": "బిల్డప్‌తో", "nunci": "బిల్డప్ నుంచి", "ni": "బిల్డప్‌ని" }
+      readings: { "plural": "bilḍaplu", "lo": "bilḍaplō", "ki": "bilḍapki", "to": "bilḍaptō", "nunci": "bilḍap nuñci", "ni": "bilḍapni" }
+    - word: "te-0530"
+      forms: { "plural": "జంప్‌లు", "lo": "జంప్‌లో", "ki": "జంప్‌కి", "to": "జంప్‌తో", "nunci": "జంప్ నుంచి", "ni": "జంప్‌ని" }
+      readings: { "plural": "jamplu", "lo": "jamplō", "ki": "jampki", "to": "jamptō", "nunci": "jamp nuñci", "ni": "jampni" }
+    - word: "te-0664"
+      forms: { "plural": "పండ్లు", "lo": "పండులో", "ki": "పండుకి", "to": "పండుతో", "nunci": "పండు నుంచి", "ni": "పండును" }
+      readings: { "plural": "paṇḍlu", "lo": "paṇḍulō", "ki": "paṇḍuki", "to": "paṇḍutō", "nunci": "paṇḍu nuñci", "ni": "paṇḍunu" }
+    - word: "te-0665"
+      forms: { "plural": "అరటిపండ్లు", "lo": "అరటిపండులో", "ki": "అరటిపండుకి", "to": "అరటిపండుతో", "nunci": "అరటిపండు నుంచి", "ni": "అరటిపండును" }
+      readings: { "plural": "araṭipaṇḍlu", "lo": "araṭipaṇḍulō", "ki": "araṭipaṇḍuki", "to": "araṭipaṇḍutō", "nunci": "araṭipaṇḍu nuñci", "ni": "araṭipaṇḍunu" }
+    - word: "te-0666"
+      forms: { "plural": "మామిడిపండ్లు", "lo": "మామిడిపండులో", "ki": "మామిడిపండుకి", "to": "మామిడిపండుతో", "nunci": "మామిడిపండు నుంచి", "ni": "మామిడిపండును" }
+      readings: { "plural": "māmiḍipaṇḍlu", "lo": "māmiḍipaṇḍulō", "ki": "māmiḍipaṇḍuki", "to": "māmiḍipaṇḍutō", "nunci": "māmiḍipaṇḍu nuñci", "ni": "māmiḍipaṇḍunu" }
+    - word: "te-0667"
+      forms: { "plural": "ఆపిళ్ళు", "lo": "ఆపిల్‌లో", "ki": "ఆపిల్‌కి", "to": "ఆపిల్‌తో", "nunci": "ఆపిల్ నుంచి", "ni": "ఆపిల్‌ని" }
+      readings: { "plural": "āpiḷḷu", "lo": "āpillō", "ki": "āpilki", "to": "āpiltō", "nunci": "āpil nuñci", "ni": "āpilni" }
+    - word: "te-0668"
+      forms: { "plural": "ద్రాక్షలు", "lo": "ద్రాక్షలో", "ki": "ద్రాక్షకి", "to": "ద్రాక్షతో", "nunci": "ద్రాక్ష నుంచి", "ni": "ద్రాక్షను" }
+      readings: { "plural": "drākṣalu", "lo": "drākṣalō", "ki": "drākṣaki", "to": "drākṣatō", "nunci": "drākṣa nuñci", "ni": "drākṣanu" }
+    - word: "te-0669"
+      forms: { "plural": "కొబ్బరికాయలు", "lo": "కొబ్బరికాయలో", "ki": "కొబ్బరికాయకి", "to": "కొబ్బరికాయతో", "nunci": "కొబ్బరికాయ నుంచి", "ni": "కొబ్బరికాయను" }
+      readings: { "plural": "kobbarikāyalu", "lo": "kobbarikāyalō", "ki": "kobbarikāyaki", "to": "kobbarikāyatō", "nunci": "kobbarikāya nuñci", "ni": "kobbarikāyanu" }
+    - word: "te-0670"
+      forms: { "plural": "నిమ్మకాయలు", "lo": "నిమ్మకాయలో", "ki": "నిమ్మకాయకి", "to": "నిమ్మకాయతో", "nunci": "నిమ్మకాయ నుంచి", "ni": "నిమ్మకాయను" }
+      readings: { "plural": "nimmakāyalu", "lo": "nimmakāyalō", "ki": "nimmakāyaki", "to": "nimmakāyatō", "nunci": "nimmakāya nuñci", "ni": "nimmakāyanu" }
+    - word: "te-0671"
+      forms: { "plural": "నారింజలు", "lo": "నారింజలో", "ki": "నారింజకి", "to": "నారింజతో", "nunci": "నారింజ నుంచి", "ni": "నారింజను" }
+      readings: { "plural": "nāriñjalu", "lo": "nāriñjalō", "ki": "nāriñjaki", "to": "nāriñjatō", "nunci": "nāriñja nuñci", "ni": "nāriñjanu" }
+    - word: "te-0672"
+      forms: { "plural": "జామపండ్లు", "lo": "జామపండులో", "ki": "జామపండుకి", "to": "జామపండుతో", "nunci": "జామపండు నుంచి", "ni": "జామపండును" }
+      readings: { "plural": "jāmapaṇḍlu", "lo": "jāmapaṇḍulō", "ki": "jāmapaṇḍuki", "to": "jāmapaṇḍutō", "nunci": "jāmapaṇḍu nuñci", "ni": "jāmapaṇḍunu" }
+    - word: "te-0673"
+      forms: { "plural": "బొప్పాయిలు", "lo": "బొప్పాయిలో", "ki": "బొప్పాయికి", "to": "బొప్పాయితో", "nunci": "బొప్పాయి నుంచి", "ni": "బొప్పాయిని" }
+      readings: { "plural": "boppāyilu", "lo": "boppāyilō", "ki": "boppāyiki", "to": "boppāyitō", "nunci": "boppāyi nuñci", "ni": "boppāyini" }
+    - word: "te-0674"
+      forms: { "plural": "పుచ్చకాయలు", "lo": "పుచ్చకాయలో", "ki": "పుచ్చకాయకి", "to": "పుచ్చకాయతో", "nunci": "పుచ్చకాయ నుంచి", "ni": "పుచ్చకాయను" }
+      readings: { "plural": "puccakāyalu", "lo": "puccakāyalō", "ki": "puccakāyaki", "to": "puccakāyatō", "nunci": "puccakāya nuñci", "ni": "puccakāyanu" }
+    - word: "te-0675"
+      forms: { "plural": "దోసకాయలు", "lo": "దోసకాయలో", "ki": "దోసకాయకి", "to": "దోసకాయతో", "nunci": "దోసకాయ నుంచి", "ni": "దోసకాయను" }
+      readings: { "plural": "dōsakāyalu", "lo": "dōsakāyalō", "ki": "dōsakāyaki", "to": "dōsakāyatō", "nunci": "dōsakāya nuñci", "ni": "dōsakāyanu" }
+    - word: "te-0676"
+      forms: { "plural": "కూరలు", "lo": "కూరలో", "ki": "కూరకి", "to": "కూరతో", "nunci": "కూర నుంచి", "ni": "కూరను" }
+      readings: { "plural": "kūralu", "lo": "kūralō", "ki": "kūraki", "to": "kūratō", "nunci": "kūra nuñci", "ni": "kūranu" }
+    - word: "te-0677"
+      forms: { "plural": null, "lo": "సాంబారులో", "ki": "సాంబారుకి", "to": "సాంబారుతో", "nunci": "సాంబారు నుంచి", "ni": "సాంబారును" }
+      readings: { "lo": "sāmbārulō", "ki": "sāmbāruki", "to": "sāmbārutō", "nunci": "sāmbāru nuñci", "ni": "sāmbārunu" }
+    - word: "te-0678"
+      forms: { "plural": null, "lo": "రసంలో", "ki": "రసానికి", "to": "రసంతో", "nunci": "రసం నుంచి", "ni": "రసాన్ని" }
+      readings: { "lo": "rasamlō", "ki": "rasāniki", "to": "rasantō", "nunci": "rasam nuñci", "ni": "rasānni" }
+    - word: "te-0679"
+      forms: { "plural": null, "lo": "పెరుగులో", "ki": "పెరుగుకి", "to": "పెరుగుతో", "nunci": "పెరుగు నుంచి", "ni": "పెరుగును" }
+      readings: { "lo": "perugulō", "ki": "peruguki", "to": "perugutō", "nunci": "perugu nuñci", "ni": "perugunu" }
+    - word: "te-0680"
+      forms: { "plural": "పచ్చళ్ళు", "lo": "పచ్చడిలో", "ki": "పచ్చడికి", "to": "పచ్చడితో", "nunci": "పచ్చడి నుంచి", "ni": "పచ్చడిని" }
+      readings: { "plural": "paccaḷḷu", "lo": "paccaḍilō", "ki": "paccaḍiki", "to": "paccaḍitō", "nunci": "paccaḍi nuñci", "ni": "paccaḍini" }
+    - word: "te-0681"
+      forms: { "plural": "ఇడ్లీలు", "lo": "ఇడ్లీలో", "ki": "ఇడ్లీకి", "to": "ఇడ్లీతో", "nunci": "ఇడ్లీ నుంచి", "ni": "ఇడ్లీని" }
+      readings: { "plural": "iḍlīlu", "lo": "iḍlīlō", "ki": "iḍlīki", "to": "iḍlītō", "nunci": "iḍlī nuñci", "ni": "iḍlīni" }
+    - word: "te-0682"
+      forms: { "plural": "దోశలు", "lo": "దోశలో", "ki": "దోశకి", "to": "దోశతో", "nunci": "దోశ నుంచి", "ni": "దోశను" }
+      readings: { "plural": "dōśalu", "lo": "dōśalō", "ki": "dōśaki", "to": "dōśatō", "nunci": "dōśa nuñci", "ni": "dōśanu" }
+    - word: "te-0683"
+      forms: { "plural": "వడలు", "lo": "వడలో", "ki": "వడకి", "to": "వడతో", "nunci": "వడ నుంచి", "ni": "వడను" }
+      readings: { "plural": "vaḍalu", "lo": "vaḍalō", "ki": "vaḍaki", "to": "vaḍatō", "nunci": "vaḍa nuñci", "ni": "vaḍanu" }
+    - word: "te-0684"
+      forms: { "plural": null, "lo": "ఉప్మాలో", "ki": "ఉప్మాకి", "to": "ఉప్మాతో", "nunci": "ఉప్మా నుంచి", "ni": "ఉప్మాని" }
+      readings: { "lo": "upmālō", "ki": "upmāki", "to": "upmātō", "nunci": "upmā nuñci", "ni": "upmāni" }
+    - word: "te-0685"
+      forms: { "plural": "పూరీలు", "lo": "పూరీలో", "ki": "పూరీకి", "to": "పూరీతో", "nunci": "పూరీ నుంచి", "ni": "పూరీని" }
+      readings: { "plural": "pūrīlu", "lo": "pūrīlō", "ki": "pūrīki", "to": "pūrītō", "nunci": "pūrī nuñci", "ni": "pūrīni" }
+    - word: "te-0686"
+      forms: { "plural": null, "lo": "బిర్యానీలో", "ki": "బిర్యానీకి", "to": "బిర్యానీతో", "nunci": "బిర్యానీ నుంచి", "ni": "బిర్యానీని" }
+      readings: { "lo": "biryānīlō", "ki": "biryānīki", "to": "biryānītō", "nunci": "biryānī nuñci", "ni": "biryānīni" }
+    - word: "te-0687"
+      forms: { "plural": "రొట్టెలు", "lo": "రొట్టెలో", "ki": "రొట్టెకి", "to": "రొట్టెతో", "nunci": "రొట్టె నుంచి", "ni": "రొట్టెని" }
+      readings: { "plural": "roṭṭelu", "lo": "roṭṭelō", "ki": "roṭṭeki", "to": "roṭṭetō", "nunci": "roṭṭe nuñci", "ni": "roṭṭeni" }
+    - word: "te-0688"
+      forms: { "plural": null, "lo": "బ్రెడ్‌లో", "ki": "బ్రెడ్‌కి", "to": "బ్రెడ్‌తో", "nunci": "బ్రెడ్ నుంచి", "ni": "బ్రెడ్‌ని" }
+      readings: { "lo": "breḍlō", "ki": "breḍki", "to": "breḍtō", "nunci": "breḍ nuñci", "ni": "breḍni" }
+    - word: "te-0689"
+      forms: { "plural": null, "lo": "పాయసంలో", "ki": "పాయసానికి", "to": "పాయసంతో", "nunci": "పాయసం నుంచి", "ni": "పాయసాన్ని" }
+      readings: { "lo": "pāyasamlō", "ki": "pāyasāniki", "to": "pāyasantō", "nunci": "pāyasam nuñci", "ni": "pāyasānni" }
+    - word: "te-0690"
+      forms: { "plural": "లడ్డూలు", "lo": "లడ్డులో", "ki": "లడ్డుకి", "to": "లడ్డుతో", "nunci": "లడ్డు నుంచి", "ni": "లడ్డును" }
+      readings: { "plural": "laḍḍūlu", "lo": "laḍḍulō", "ki": "laḍḍuki", "to": "laḍḍutō", "nunci": "laḍḍu nuñci", "ni": "laḍḍunu" }
+    - word: "te-0691"
+      forms: { "plural": null, "lo": "మిఠాయిలో", "ki": "మిఠాయికి", "to": "మిఠాయితో", "nunci": "మిఠాయి నుంచి", "ni": "మిఠాయిని" }
+      readings: { "lo": "miṭhāyilō", "ki": "miṭhāyiki", "to": "miṭhāyitō", "nunci": "miṭhāyi nuñci", "ni": "miṭhāyini" }
+    - word: "te-0692"
+      forms: { "plural": "విందులు", "lo": "విందులో", "ki": "విందుకి", "to": "విందుతో", "nunci": "విందు నుంచి", "ni": "విందును" }
+      readings: { "plural": "vindulu", "lo": "vindulō", "ki": "vinduki", "to": "vindutō", "nunci": "vindu nuñci", "ni": "vindunu" }
+    - word: "te-0693"
+      forms: { "plural": null, "lo": "నెయ్యిలో", "ki": "నెయ్యికి", "to": "నెయ్యితో", "nunci": "నెయ్యి నుంచి", "ni": "నెయ్యిని" }
+      readings: { "lo": "neyyilō", "ki": "neyyiki", "to": "neyyitō", "nunci": "neyyi nuñci", "ni": "neyyini" }
+    - word: "te-0694"
+      forms: { "plural": null, "lo": "వెన్నలో", "ki": "వెన్నకి", "to": "వెన్నతో", "nunci": "వెన్న నుంచి", "ni": "వెన్నను" }
+      readings: { "lo": "vennalō", "ki": "vennaki", "to": "vennatō", "nunci": "venna nuñci", "ni": "vennanu" }
+    - word: "te-0695"
+      forms: { "plural": null, "lo": "నూనెలో", "ki": "నూనెకి", "to": "నూనెతో", "nunci": "నూనె నుంచి", "ni": "నూనెని" }
+      readings: { "lo": "nūnelō", "ki": "nūneki", "to": "nūnetō", "nunci": "nūne nuñci", "ni": "nūneni" }
+    - word: "te-0696"
+      forms: { "plural": null, "lo": "ఉప్పులో", "ki": "ఉప్పుకి", "to": "ఉప్పుతో", "nunci": "ఉప్పు నుంచి", "ni": "ఉప్పును" }
+      readings: { "lo": "uppulō", "ki": "uppuki", "to": "upputō", "nunci": "uppu nuñci", "ni": "uppunu" }
+    - word: "te-0697"
+      forms: { "plural": null, "lo": "పంచదారలో", "ki": "పంచదారకి", "to": "పంచదారతో", "nunci": "పంచదార నుంచి", "ni": "పంచదారను" }
+      readings: { "lo": "pañcadāralō", "ki": "pañcadāraki", "to": "pañcadāratō", "nunci": "pañcadāra nuñci", "ni": "pañcadāranu" }
+    - word: "te-0698"
+      forms: { "plural": null, "lo": "మిరియాల్లో", "ki": "మిరియాలకు", "to": "మిరియాలతో", "nunci": "మిరియాల నుంచి", "ni": "మిరియాలను" }
+      readings: { "lo": "miriyāllō", "ki": "miriyālaku", "to": "miriyālatō", "nunci": "miriyāla nuñci", "ni": "miriyālanu" }
+    - word: "te-0699"
+      forms: { "plural": null, "lo": "పసుపులో", "ki": "పసుపుకి", "to": "పసుపుతో", "nunci": "పసుపు నుంచి", "ni": "పసుపును" }
+      readings: { "lo": "pasupulō", "ki": "pasupuki", "to": "pasuputō", "nunci": "pasupu nuñci", "ni": "pasupunu" }
+    - word: "te-0700"
+      forms: { "plural": null, "lo": "తేనెలో", "ki": "తేనెకి", "to": "తేనెతో", "nunci": "తేనె నుంచి", "ni": "తేనెని" }
+      readings: { "lo": "tēnelō", "ki": "tēneki", "to": "tēnetō", "nunci": "tēne nuñci", "ni": "tēneni" }
+    - word: "te-0701"
+      forms: { "plural": null, "lo": "మసాలాలో", "ki": "మసాలాకి", "to": "మసాలాతో", "nunci": "మసాలా నుంచి", "ni": "మసాలాని" }
+      readings: { "lo": "masālālō", "ki": "masālāki", "to": "masālātō", "nunci": "masālā nuñci", "ni": "masālāni" }
+    - word: "te-0702"
+      forms: { "plural": null, "lo": "అల్లంలో", "ki": "అల్లానికి", "to": "అల్లంతో", "nunci": "అల్లం నుంచి", "ni": "అల్లాన్ని" }
+      readings: { "lo": "allamlō", "ki": "allāniki", "to": "allantō", "nunci": "allam nuñci", "ni": "allānni" }
+    - word: "te-0703"
+      forms: { "plural": null, "lo": "జ్యూస్‌లో", "ki": "జ్యూస్‌కి", "to": "జ్యూస్‌తో", "nunci": "జ్యూస్ నుంచి", "ni": "జ్యూస్‌ని" }
+      readings: { "lo": "jyūslō", "ki": "jyūski", "to": "jyūstō", "nunci": "jyūs nuñci", "ni": "jyūsni" }
+    - word: "te-0704"
+      forms: { "plural": null, "lo": "మజ్జిగలో", "ki": "మజ్జిగకి", "to": "మజ్జిగతో", "nunci": "మజ్జిగ నుంచి", "ni": "మజ్జిగను" }
+      readings: { "lo": "majjigalō", "ki": "majjigaki", "to": "majjigatō", "nunci": "majjiga nuñci", "ni": "majjiganu" }
+    - word: "te-0705"
+      forms: { "plural": null, "lo": "సోడాలో", "ki": "సోడాకి", "to": "సోడాతో", "nunci": "సోడా నుంచి", "ni": "సోడాని" }
+      readings: { "lo": "sōḍālō", "ki": "sōḍāki", "to": "sōḍātō", "nunci": "sōḍā nuñci", "ni": "sōḍāni" }
+    - word: "te-0706"
+      forms: { "plural": "గ్లాసులు", "lo": "గ్లాసులో", "ki": "గ్లాసుకి", "to": "గ్లాసుతో", "nunci": "గ్లాసు నుంచి", "ni": "గ్లాసును" }
+      readings: { "plural": "glāsulu", "lo": "glāsulō", "ki": "glāsuki", "to": "glāsutō", "nunci": "glāsu nuñci", "ni": "glāsunu" }
+    - word: "te-0707"
+      forms: { "plural": "పళ్ళాలు", "lo": "పళ్ళెంలో", "ki": "పళ్ళానికి", "to": "పళ్ళెంతో", "nunci": "పళ్ళెం నుంచి", "ni": "పళ్ళాన్ని" }
+      readings: { "plural": "paḷḷālu", "lo": "paḷḷemlō", "ki": "paḷḷāniki", "to": "paḷḷentō", "nunci": "paḷḷem nuñci", "ni": "paḷḷānni" }
+    - word: "te-0708"
+      forms: { "plural": "గిన్నెలు", "lo": "గిన్నెలో", "ki": "గిన్నెకి", "to": "గిన్నెతో", "nunci": "గిన్నె నుంచి", "ni": "గిన్నెని" }
+      readings: { "plural": "ginnelu", "lo": "ginnelō", "ki": "ginneki", "to": "ginnetō", "nunci": "ginne nuñci", "ni": "ginneni" }
+    - word: "te-0709"
+      forms: { "plural": "చెంచాలు", "lo": "చెంచాలో", "ki": "చెంచాకి", "to": "చెంచాతో", "nunci": "చెంచా నుంచి", "ni": "చెంచాని" }
+      readings: { "plural": "ceñcālu", "lo": "ceñcālō", "ki": "ceñcāki", "to": "ceñcātō", "nunci": "ceñcā nuñci", "ni": "ceñcāni" }
+    - word: "te-0710"
+      forms: { "plural": "కత్తులు", "lo": "కత్తిలో", "ki": "కత్తికి", "to": "కత్తితో", "nunci": "కత్తి నుంచి", "ni": "కత్తిని" }
+      readings: { "plural": "kattulu", "lo": "kattilō", "ki": "kattiki", "to": "kattitō", "nunci": "katti nuñci", "ni": "kattini" }
+    - word: "te-0711"
+      forms: { "plural": "కప్పులు", "lo": "కప్పులో", "ki": "కప్పుకి", "to": "కప్పుతో", "nunci": "కప్పు నుంచి", "ni": "కప్పును" }
+      readings: { "plural": "kappulu", "lo": "kappulō", "ki": "kappuki", "to": "kapputō", "nunci": "kappu nuñci", "ni": "kappunu" }
+    - word: "te-0712"
+      forms: { "plural": "సీసాలు", "lo": "సీసాలో", "ki": "సీసాకి", "to": "సీసాతో", "nunci": "సీసా నుంచి", "ni": "సీసాని" }
+      readings: { "plural": "sīsālu", "lo": "sīsālō", "ki": "sīsāki", "to": "sīsātō", "nunci": "sīsā nuñci", "ni": "sīsāni" }
+    - word: "te-0713"
+      forms: { "plural": null, "lo": "పులుపులో", "ki": "పులుపుకి", "to": "పులుపుతో", "nunci": "పులుపు నుంచి", "ni": "పులుపును" }
+      readings: { "lo": "pulupulō", "ki": "pulupuki", "to": "puluputō", "nunci": "pulupu nuñci", "ni": "pulupunu" }
+    - word: "te-0714"
+      forms: { "plural": null, "lo": "చేదులో", "ki": "చేదుకి", "to": "చేదుతో", "nunci": "చేదు నుంచి", "ni": "చేదును" }
+      readings: { "lo": "cēdulō", "ki": "cēduki", "to": "cēdutō", "nunci": "cēdu nuñci", "ni": "cēdunu" }
+    - word: "te-0715"
+      forms: { "plural": null, "lo": "రుచిలో", "ki": "రుచికి", "to": "రుచితో", "nunci": "రుచి నుంచి", "ni": "రుచిని" }
+      readings: { "lo": "rucilō", "ki": "ruciki", "to": "rucitō", "nunci": "ruci nuñci", "ni": "rucini" }
+    - word: "te-0728"
+      forms: { "plural": null, "lo": "శరీరంలో", "ki": "శరీరానికి", "to": "శరీరంతో", "nunci": "శరీరం నుంచి", "ni": "శరీరాన్ని" }
+      readings: { "lo": "śarīramlō", "ki": "śarīrāniki", "to": "śarīrantō", "nunci": "śarīram nuñci", "ni": "śarīrānni" }
+    - word: "te-0729"
+      forms: { "plural": "తలలు", "lo": "తలలో", "ki": "తలకి", "to": "తలతో", "nunci": "తల నుంచి", "ni": "తలను" }
+      readings: { "plural": "talalu", "lo": "talalō", "ki": "talaki", "to": "talatō", "nunci": "tala nuñci", "ni": "talanu" }
+    - word: "te-0730"
+      forms: { "plural": null, "lo": "జుట్టులో", "ki": "జుట్టుకి", "to": "జుట్టుతో", "nunci": "జుట్టు నుంచి", "ni": "జుట్టును" }
+      readings: { "lo": "juṭṭulō", "ki": "juṭṭuki", "to": "juṭṭutō", "nunci": "juṭṭu nuñci", "ni": "juṭṭunu" }
+    - word: "te-0731"
+      forms: { "plural": "ముఖాలు", "lo": "ముఖంలో", "ki": "ముఖానికి", "to": "ముఖంతో", "nunci": "ముఖం నుంచి", "ni": "ముఖాన్ని" }
+      readings: { "plural": "mukhālu", "lo": "mukhamlō", "ki": "mukhāniki", "to": "mukhantō", "nunci": "mukham nuñci", "ni": "mukhānni" }
+    - word: "te-0732"
+      forms: { "plural": "కళ్ళు", "lo": "కంట్లో", "ki": "కంటికి", "to": "కంటితో", "nunci": "కంటి నుంచి", "ni": "కంటిని" }
+      readings: { "plural": "kaḷḷu", "lo": "kaṇṭlō", "ki": "kaṇṭiki", "to": "kaṇṭitō", "nunci": "kaṇṭi nuñci", "ni": "kaṇṭini" }
+    - word: "te-0733"
+      forms: { "plural": "చెవులు", "lo": "చెవిలో", "ki": "చెవికి", "to": "చెవితో", "nunci": "చెవి నుంచి", "ni": "చెవిని" }
+      readings: { "plural": "cevulu", "lo": "cevilō", "ki": "ceviki", "to": "cevitō", "nunci": "cevi nuñci", "ni": "cevini" }
+    - word: "te-0734"
+      forms: { "plural": "ముక్కులు", "lo": "ముక్కులో", "ki": "ముక్కుకి", "to": "ముక్కుతో", "nunci": "ముక్కు నుంచి", "ni": "ముక్కును" }
+      readings: { "plural": "mukkulu", "lo": "mukkulō", "ki": "mukkuki", "to": "mukkutō", "nunci": "mukku nuñci", "ni": "mukkunu" }
+    - word: "te-0735"
+      forms: { "plural": "నోళ్ళు", "lo": "నోట్లో", "ki": "నోటికి", "to": "నోటితో", "nunci": "నోటి నుంచి", "ni": "నోటిని" }
+      readings: { "plural": "nōḷḷu", "lo": "nōṭlō", "ki": "nōṭiki", "to": "nōṭitō", "nunci": "nōṭi nuñci", "ni": "nōṭini" }
+    - word: "te-0736"
+      forms: { "plural": "పళ్ళు", "lo": "పంట్లో", "ki": "పంటికి", "to": "పంటితో", "nunci": "పంటి నుంచి", "ni": "పంటిని" }
+      readings: { "plural": "paḷḷu", "lo": "paṇṭlō", "ki": "paṇṭiki", "to": "paṇṭitō", "nunci": "paṇṭi nuñci", "ni": "paṇṭini" }
+    - word: "te-0737"
+      forms: { "plural": "నాలుకలు", "lo": "నాలుకలో", "ki": "నాలుకకి", "to": "నాలుకతో", "nunci": "నాలుక నుంచి", "ni": "నాలుకను" }
+      readings: { "plural": "nālukalu", "lo": "nālukalō", "ki": "nālukaki", "to": "nālukatō", "nunci": "nāluka nuñci", "ni": "nālukanu" }
+    - word: "te-0738"
+      forms: { "plural": "పెదవులు", "lo": "పెదవిలో", "ki": "పెదవికి", "to": "పెదవితో", "nunci": "పెదవి నుంచి", "ni": "పెదవిని" }
+      readings: { "plural": "pedavulu", "lo": "pedavilō", "ki": "pedaviki", "to": "pedavitō", "nunci": "pedavi nuñci", "ni": "pedavini" }
+    - word: "te-0739"
+      forms: { "plural": "మెడలు", "lo": "మెడలో", "ki": "మెడకి", "to": "మెడతో", "nunci": "మెడ నుంచి", "ni": "మెడను" }
+      readings: { "plural": "meḍalu", "lo": "meḍalō", "ki": "meḍaki", "to": "meḍatō", "nunci": "meḍa nuñci", "ni": "meḍanu" }
+    - word: "te-0740"
+      forms: { "plural": "భుజాలు", "lo": "భుజంలో", "ki": "భుజానికి", "to": "భుజంతో", "nunci": "భుజం నుంచి", "ni": "భుజాన్ని" }
+      readings: { "plural": "bhujālu", "lo": "bhujamlō", "ki": "bhujāniki", "to": "bhujantō", "nunci": "bhujam nuñci", "ni": "bhujānni" }
+    - word: "te-0741"
+      forms: { "plural": "చేతులు", "lo": "చేతిలో", "ki": "చేతికి", "to": "చేతితో", "nunci": "చేతి నుంచి", "ni": "చేతిని" }
+      readings: { "plural": "cētulu", "lo": "cētilō", "ki": "cētiki", "to": "cētitō", "nunci": "cēti nuñci", "ni": "cētini" }
+    - word: "te-0742"
+      forms: { "plural": "వేళ్ళు", "lo": "వేలిలో", "ki": "వేలికి", "to": "వేలితో", "nunci": "వేలి నుంచి", "ni": "వేలిని" }
+      readings: { "plural": "vēḷḷu", "lo": "vēlilō", "ki": "vēliki", "to": "vēlitō", "nunci": "vēli nuñci", "ni": "vēlini" }
+    - word: "te-0743"
+      forms: { "plural": "గోర్లు", "lo": "గోటిలో", "ki": "గోటికి", "to": "గోటితో", "nunci": "గోటి నుంచి", "ni": "గోటిని" }
+      readings: { "plural": "gōrlu", "lo": "gōṭilō", "ki": "gōṭiki", "to": "gōṭitō", "nunci": "gōṭi nuñci", "ni": "gōṭini" }
+    - word: "te-0744"
+      forms: { "plural": "కడుపులు", "lo": "కడుపులో", "ki": "కడుపుకి", "to": "కడుపుతో", "nunci": "కడుపు నుంచి", "ni": "కడుపును" }
+      readings: { "plural": "kaḍupulu", "lo": "kaḍupulō", "ki": "kaḍupuki", "to": "kaḍuputō", "nunci": "kaḍupu nuñci", "ni": "kaḍupunu" }
+    - word: "te-0745"
+      forms: { "plural": "వీపులు", "lo": "వీపులో", "ki": "వీపుకి", "to": "వీపుతో", "nunci": "వీపు నుంచి", "ni": "వీపును" }
+      readings: { "plural": "vīpulu", "lo": "vīpulō", "ki": "vīpuki", "to": "vīputō", "nunci": "vīpu nuñci", "ni": "vīpunu" }
+    - word: "te-0746"
+      forms: { "plural": "గుండెలు", "lo": "గుండెలో", "ki": "గుండెకి", "to": "గుండెతో", "nunci": "గుండె నుంచి", "ni": "గుండెని" }
+      readings: { "plural": "guṇḍelu", "lo": "guṇḍelō", "ki": "guṇḍeki", "to": "guṇḍetō", "nunci": "guṇḍe nuñci", "ni": "guṇḍeni" }
+    - word: "te-0747"
+      forms: { "plural": "కాళ్ళు", "lo": "కాలిలో", "ki": "కాలికి", "to": "కాలితో", "nunci": "కాలి నుంచి", "ni": "కాలిని" }
+      readings: { "plural": "kāḷḷu", "lo": "kālilō", "ki": "kāliki", "to": "kālitō", "nunci": "kāli nuñci", "ni": "kālini" }
+    - word: "te-0748"
+      forms: { "plural": "మోకాళ్ళు", "lo": "మోకాలిలో", "ki": "మోకాలికి", "to": "మోకాలితో", "nunci": "మోకాలి నుంచి", "ni": "మోకాలిని" }
+      readings: { "plural": "mōkāḷḷu", "lo": "mōkālilō", "ki": "mōkāliki", "to": "mōkālitō", "nunci": "mōkāli nuñci", "ni": "mōkālini" }
+    - word: "te-0749"
+      forms: { "plural": "గొంతులు", "lo": "గొంతులో", "ki": "గొంతుకి", "to": "గొంతుతో", "nunci": "గొంతు నుంచి", "ni": "గొంతును" }
+      readings: { "plural": "gontulu", "lo": "gontulō", "ki": "gontuki", "to": "gontutō", "nunci": "gontu nuñci", "ni": "gontunu" }
+    - word: "te-0750"
+      forms: { "plural": "చర్మాలు", "lo": "చర్మంలో", "ki": "చర్మానికి", "to": "చర్మంతో", "nunci": "చర్మం నుంచి", "ni": "చర్మాన్ని" }
+      readings: { "plural": "carmālu", "lo": "carmamlō", "ki": "carmāniki", "to": "carmantō", "nunci": "carmam nuñci", "ni": "carmānni" }
+    - word: "te-0751"
+      forms: { "plural": "ఎముకలు", "lo": "ఎముకలో", "ki": "ఎముకకి", "to": "ఎముకతో", "nunci": "ఎముక నుంచి", "ni": "ఎముకను" }
+      readings: { "plural": "emukalu", "lo": "emukalō", "ki": "emukaki", "to": "emukatō", "nunci": "emuka nuñci", "ni": "emukanu" }
+    - word: "te-0752"
+      forms: { "plural": null, "lo": "రక్తంలో", "ki": "రక్తానికి", "to": "రక్తంతో", "nunci": "రక్తం నుంచి", "ni": "రక్తాన్ని" }
+      readings: { "lo": "raktamlō", "ki": "raktāniki", "to": "raktantō", "nunci": "raktam nuñci", "ni": "raktānni" }
+    - word: "te-0753"
+      forms: { "plural": "గడ్డాలు", "lo": "గడ్డంలో", "ki": "గడ్డానికి", "to": "గడ్డంతో", "nunci": "గడ్డం నుంచి", "ni": "గడ్డాన్ని" }
+      readings: { "plural": "gaḍḍālu", "lo": "gaḍḍamlō", "ki": "gaḍḍāniki", "to": "gaḍḍantō", "nunci": "gaḍḍam nuñci", "ni": "gaḍḍānni" }
+    - word: "te-0754"
+      forms: { "plural": null, "lo": "నుదుటిలో", "ki": "నుదుటికి", "to": "నుదుటితో", "nunci": "నుదుటి నుంచి", "ni": "నుదుటిని" }
+      readings: { "lo": "nuduṭilō", "ki": "nuduṭiki", "to": "nuduṭitō", "nunci": "nuduṭi nuñci", "ni": "nuduṭini" }
+    - word: "te-0764"
+      forms: { "plural": "బడులు", "lo": "బడిలో", "ki": "బడికి", "to": "బడితో", "nunci": "బడి నుంచి", "ni": "బడిని" }
+      readings: { "plural": "baḍulu", "lo": "baḍilō", "ki": "baḍiki", "to": "baḍitō", "nunci": "baḍi nuñci", "ni": "baḍini" }
+    - word: "te-0765"
+      forms: { "plural": "కళాశాలలు", "lo": "కళాశాలలో", "ki": "కళాశాలకి", "to": "కళాశాలతో", "nunci": "కళాశాల నుంచి", "ni": "కళాశాలను" }
+      readings: { "plural": "kaḷāśālalu", "lo": "kaḷāśālalō", "ki": "kaḷāśālaki", "to": "kaḷāśālatō", "nunci": "kaḷāśāla nuñci", "ni": "kaḷāśālanu" }
+    - word: "te-0766"
+      forms: { "plural": "విశ్వవిద్యాలయాలు", "lo": "విశ్వవిద్యాలయంలో", "ki": "విశ్వవిద్యాలయానికి", "to": "విశ్వవిద్యాలయంతో", "nunci": "విశ్వవిద్యాలయం నుంచి", "ni": "విశ్వవిద్యాలయాన్ని" }
+      readings: { "plural": "viśvavidyālayālu", "lo": "viśvavidyālayamlō", "ki": "viśvavidyālayāniki", "to": "viśvavidyālayantō", "nunci": "viśvavidyālayam nuñci", "ni": "viśvavidyālayānni" }
+    - word: "te-0767"
+      forms: { "plural": "గుళ్ళు", "lo": "గుడిలో", "ki": "గుడికి", "to": "గుడితో", "nunci": "గుడి నుంచి", "ni": "గుడిని" }
+      readings: { "plural": "guḷḷu", "lo": "guḍilō", "ki": "guḍiki", "to": "guḍitō", "nunci": "guḍi nuñci", "ni": "guḍini" }
+    - word: "te-0768"
+      forms: { "plural": "మసీదులు", "lo": "మసీదులో", "ki": "మసీదుకి", "to": "మసీదుతో", "nunci": "మసీదు నుంచి", "ni": "మసీదును" }
+      readings: { "plural": "masīdulu", "lo": "masīdulō", "ki": "masīduki", "to": "masīdutō", "nunci": "masīdu nuñci", "ni": "masīdunu" }
+    - word: "te-0769"
+      forms: { "plural": "చర్చిలు", "lo": "చర్చిలో", "ki": "చర్చికి", "to": "చర్చితో", "nunci": "చర్చి నుంచి", "ni": "చర్చిని" }
+      readings: { "plural": "carcilu", "lo": "carcilō", "ki": "carciki", "to": "carcitō", "nunci": "carci nuñci", "ni": "carcini" }
+    - word: "te-0770"
+      forms: { "plural": "బ్యాంకులు", "lo": "బ్యాంకులో", "ki": "బ్యాంకుకి", "to": "బ్యాంకుతో", "nunci": "బ్యాంకు నుంచి", "ni": "బ్యాంకును" }
+      readings: { "plural": "byāṅkulu", "lo": "byāṅkulō", "ki": "byāṅkuki", "to": "byāṅkutō", "nunci": "byāṅku nuñci", "ni": "byāṅkunu" }
+    - word: "te-0771"
+      forms: { "plural": "పోస్టాఫీసులు", "lo": "పోస్టాఫీసులో", "ki": "పోస్టాఫీసుకి", "to": "పోస్టాఫీసుతో", "nunci": "పోస్టాఫీసు నుంచి", "ni": "పోస్టాఫీసును" }
+      readings: { "plural": "pōsṭāfīsulu", "lo": "pōsṭāfīsulō", "ki": "pōsṭāfīsuki", "to": "pōsṭāfīsutō", "nunci": "pōsṭāfīsu nuñci", "ni": "pōsṭāfīsunu" }
+    - word: "te-0772"
+      forms: { "plural": "పార్కులు", "lo": "పార్కులో", "ki": "పార్కుకి", "to": "పార్కుతో", "nunci": "పార్కు నుంచి", "ni": "పార్కును" }
+      readings: { "plural": "pārkulu", "lo": "pārkulō", "ki": "pārkuki", "to": "pārkutō", "nunci": "pārku nuñci", "ni": "pārkunu" }
+    - word: "te-0773"
+      forms: { "plural": "బజార్లు", "lo": "బజారులో", "ki": "బజారుకి", "to": "బజారుతో", "nunci": "బజారు నుంచి", "ni": "బజారును" }
+      readings: { "plural": "bajārlu", "lo": "bajārulō", "ki": "bajāruki", "to": "bajārutō", "nunci": "bajāru nuñci", "ni": "bajārunu" }
+    - word: "te-0774"
+      forms: { "plural": "థియేటర్లు", "lo": "థియేటర్‌లో", "ki": "థియేటర్‌కి", "to": "థియేటర్‌తో", "nunci": "థియేటర్ నుంచి", "ni": "థియేటర్‌ని" }
+      readings: { "plural": "thiyēṭarlu", "lo": "thiyēṭarlō", "ki": "thiyēṭarki", "to": "thiyēṭartō", "nunci": "thiyēṭar nuñci", "ni": "thiyēṭarni" }
+    - word: "te-0775"
+      forms: { "plural": "హోటళ్ళు", "lo": "హోటల్‌లో", "ki": "హోటల్‌కి", "to": "హోటల్‌తో", "nunci": "హోటల్ నుంచి", "ni": "హోటల్‌ని" }
+      readings: { "plural": "hōṭaḷḷu", "lo": "hōṭallō", "ki": "hōṭalki", "to": "hōṭaltō", "nunci": "hōṭal nuñci", "ni": "hōṭalni" }
+    - word: "te-0776"
+      forms: { "plural": "విమానాశ్రయాలు", "lo": "విమానాశ్రయంలో", "ki": "విమానాశ్రయానికి", "to": "విమానాశ్రయంతో", "nunci": "విమానాశ్రయం నుంచి", "ni": "విమానాశ్రయాన్ని" }
+      readings: { "plural": "vimānāśrayālu", "lo": "vimānāśrayamlō", "ki": "vimānāśrayāniki", "to": "vimānāśrayantō", "nunci": "vimānāśrayam nuñci", "ni": "vimānāśrayānni" }
+    - word: "te-0777"
+      forms: { "plural": "బస్టాండ్లు", "lo": "బస్టాండ్‌లో", "ki": "బస్టాండ్‌కి", "to": "బస్టాండ్‌తో", "nunci": "బస్టాండ్ నుంచి", "ni": "బస్టాండ్‌ని" }
+      readings: { "plural": "basṭāṇḍlu", "lo": "basṭāṇḍlō", "ki": "basṭāṇḍki", "to": "basṭāṇḍtō", "nunci": "basṭāṇḍ nuñci", "ni": "basṭāṇḍni" }
+    - word: "te-0778"
+      forms: { "plural": "పట్నాలు", "lo": "పట్నంలో", "ki": "పట్నానికి", "to": "పట్నంతో", "nunci": "పట్నం నుంచి", "ni": "పట్నాన్ని" }
+      readings: { "plural": "paṭnālu", "lo": "paṭnamlō", "ki": "paṭnāniki", "to": "paṭnantō", "nunci": "paṭnam nuñci", "ni": "paṭnānni" }
+    - word: "te-0779"
+      forms: { "plural": "గ్రామాలు", "lo": "గ్రామంలో", "ki": "గ్రామానికి", "to": "గ్రామంతో", "nunci": "గ్రామం నుంచి", "ni": "గ్రామాన్ని" }
+      readings: { "plural": "grāmālu", "lo": "grāmamlō", "ki": "grāmāniki", "to": "grāmantō", "nunci": "grāmam nuñci", "ni": "grāmānni" }
+    - word: "te-0780"
+      forms: { "plural": "పల్లెలు", "lo": "పల్లెలో", "ki": "పల్లెకి", "to": "పల్లెతో", "nunci": "పల్లె నుంచి", "ni": "పల్లెని" }
+      readings: { "plural": "pallelu", "lo": "pallelō", "ki": "palleki", "to": "palletō", "nunci": "palle nuñci", "ni": "palleni" }
+    - word: "te-0781"
+      forms: { "plural": "పొలాలు", "lo": "పొలంలో", "ki": "పొలానికి", "to": "పొలంతో", "nunci": "పొలం నుంచి", "ni": "పొలాన్ని" }
+      readings: { "plural": "polālu", "lo": "polamlō", "ki": "polāniki", "to": "polantō", "nunci": "polam nuñci", "ni": "polānni" }
+    - word: "te-0782"
+      forms: { "plural": "తోటలు", "lo": "తోటలో", "ki": "తోటకి", "to": "తోటతో", "nunci": "తోట నుంచి", "ni": "తోటను" }
+      readings: { "plural": "tōṭalu", "lo": "tōṭalō", "ki": "tōṭaki", "to": "tōṭatō", "nunci": "tōṭa nuñci", "ni": "tōṭanu" }
+    - word: "te-0783"
+      forms: { "plural": "నదులు", "lo": "నదిలో", "ki": "నదికి", "to": "నదితో", "nunci": "నది నుంచి", "ni": "నదిని" }
+      readings: { "plural": "nadulu", "lo": "nadilō", "ki": "nadiki", "to": "naditō", "nunci": "nadi nuñci", "ni": "nadini" }
+    - word: "te-0784"
+      forms: { "plural": "సముద్రాలు", "lo": "సముద్రంలో", "ki": "సముద్రానికి", "to": "సముద్రంతో", "nunci": "సముద్రం నుంచి", "ni": "సముద్రాన్ని" }
+      readings: { "plural": "samudrālu", "lo": "samudramlō", "ki": "samudrāniki", "to": "samudrantō", "nunci": "samudram nuñci", "ni": "samudrānni" }
+    - word: "te-0785"
+      forms: { "plural": "కొండలు", "lo": "కొండలో", "ki": "కొండకి", "to": "కొండతో", "nunci": "కొండ నుంచి", "ni": "కొండను" }
+      readings: { "plural": "koṇḍalu", "lo": "koṇḍalō", "ki": "koṇḍaki", "to": "koṇḍatō", "nunci": "koṇḍa nuñci", "ni": "koṇḍanu" }
+    - word: "te-0786"
+      forms: { "plural": "అడవులు", "lo": "అడవిలో", "ki": "అడవికి", "to": "అడవితో", "nunci": "అడవి నుంచి", "ni": "అడవిని" }
+      readings: { "plural": "aḍavulu", "lo": "aḍavilō", "ki": "aḍaviki", "to": "aḍavitō", "nunci": "aḍavi nuñci", "ni": "aḍavini" }
+    - word: "te-0787"
+      forms: { "plural": "వంతెనలు", "lo": "వంతెనలో", "ki": "వంతెనకి", "to": "వంతెనతో", "nunci": "వంతెన నుంచి", "ni": "వంతెనను" }
+      readings: { "plural": "vantenalu", "lo": "vantenalō", "ki": "vantenaki", "to": "vantenatō", "nunci": "vantena nuñci", "ni": "vantenanu" }
+    - word: "te-0788"
+      forms: { "plural": "కర్మాగారాలు", "lo": "కర్మాగారంలో", "ki": "కర్మాగారానికి", "to": "కర్మాగారంతో", "nunci": "కర్మాగారం నుంచి", "ni": "కర్మాగారాన్ని" }
+      readings: { "plural": "karmāgārālu", "lo": "karmāgāramlō", "ki": "karmāgārāniki", "to": "karmāgārantō", "nunci": "karmāgāram nuñci", "ni": "karmāgārānni" }
+    - word: "te-0789"
+      forms: { "plural": "మేడలు", "lo": "మేడలో", "ki": "మేడకి", "to": "మేడతో", "nunci": "మేడ నుంచి", "ni": "మేడను" }
+      readings: { "plural": "mēḍalu", "lo": "mēḍalō", "ki": "mēḍaki", "to": "mēḍatō", "nunci": "mēḍa nuñci", "ni": "mēḍanu" }
+    - word: "te-0790"
+      forms: { "plural": "గ్రంథాలయాలు", "lo": "గ్రంథాలయంలో", "ki": "గ్రంథాలయానికి", "to": "గ్రంథాలయంతో", "nunci": "గ్రంథాలయం నుంచి", "ni": "గ్రంథాలయాన్ని" }
+      readings: { "plural": "granthālayālu", "lo": "granthālayamlō", "ki": "granthālayāniki", "to": "granthālayantō", "nunci": "granthālayam nuñci", "ni": "granthālayānni" }
+    - word: "te-0791"
+      forms: { "plural": "మైదానాలు", "lo": "మైదానంలో", "ki": "మైదానానికి", "to": "మైదానంతో", "nunci": "మైదానం నుంచి", "ni": "మైదానాన్ని" }
+      readings: { "plural": "maidānālu", "lo": "maidānamlō", "ki": "maidānāniki", "to": "maidānantō", "nunci": "maidānam nuñci", "ni": "maidānānni" }
+    - word: "te-0792"
+      forms: { "plural": "కూడళ్ళు", "lo": "కూడలిలో", "ki": "కూడలికి", "to": "కూడలితో", "nunci": "కూడలి నుంచి", "ni": "కూడలిని" }
+      readings: { "plural": "kūḍaḷḷu", "lo": "kūḍalilō", "ki": "kūḍaliki", "to": "kūḍalitō", "nunci": "kūḍali nuñci", "ni": "kūḍalini" }
+    - word: "te-0793"
+      forms: { "plural": "బీచ్‌లు", "lo": "బీచ్‌లో", "ki": "బీచ్‌కి", "to": "బీచ్‌తో", "nunci": "బీచ్ నుంచి", "ni": "బీచ్‌ని" }
+      readings: { "plural": "bīclu", "lo": "bīclō", "ki": "bīcki", "to": "bīctō", "nunci": "bīc nuñci", "ni": "bīcni" }
+    - word: "te-0794"
+      forms: { "plural": "సరస్సులు", "lo": "సరస్సులో", "ki": "సరస్సుకి", "to": "సరస్సుతో", "nunci": "సరస్సు నుంచి", "ni": "సరస్సును" }
+      readings: { "plural": "sarassulu", "lo": "sarassulō", "ki": "sarassuki", "to": "sarassutō", "nunci": "sarassu nuñci", "ni": "sarassunu" }
+    - word: "te-0795"
+      forms: { "plural": "రాష్ట్రాలు", "lo": "రాష్ట్రంలో", "ki": "రాష్ట్రానికి", "to": "రాష్ట్రంతో", "nunci": "రాష్ట్రం నుంచి", "ni": "రాష్ట్రాన్ని" }
+      readings: { "plural": "rāṣṭrālu", "lo": "rāṣṭramlō", "ki": "rāṣṭrāniki", "to": "rāṣṭrantō", "nunci": "rāṣṭram nuñci", "ni": "rāṣṭrānni" }
+    - word: "te-0796"
+      forms: { "plural": "జిల్లాలు", "lo": "జిల్లాలో", "ki": "జిల్లాకి", "to": "జిల్లాతో", "nunci": "జిల్లా నుంచి", "ni": "జిల్లాని" }
+      readings: { "plural": "jillālu", "lo": "jillālō", "ki": "jillāki", "to": "jillātō", "nunci": "jillā nuñci", "ni": "jillāni" }
+    - word: "te-0797"
+      forms: { "plural": "రాజధానులు", "lo": "రాజధానిలో", "ki": "రాజధానికి", "to": "రాజధానితో", "nunci": "రాజధాని నుంచి", "ni": "రాజధానిని" }
+      readings: { "plural": "rājadhānulu", "lo": "rājadhānilō", "ki": "rājadhāniki", "to": "rājadhānitō", "nunci": "rājadhāni nuñci", "ni": "rājadhānini" }
+    - word: "te-0865"
+      forms: { "plural": "పుస్తకాలు", "lo": "పుస్తకంలో", "ki": "పుస్తకానికి", "to": "పుస్తకంతో", "nunci": "పుస్తకం నుంచి", "ni": "పుస్తకాన్ని" }
+      readings: { "plural": "pustakālu", "lo": "pustakamlō", "ki": "pustakāniki", "to": "pustakantō", "nunci": "pustakam nuñci", "ni": "pustakānni" }
+    - word: "te-0866"
+      forms: { "plural": "పెన్సిళ్ళు", "lo": "పెన్సిల్‌లో", "ki": "పెన్సిల్‌కి", "to": "పెన్సిల్‌తో", "nunci": "పెన్సిల్ నుంచి", "ni": "పెన్సిల్‌ని" }
+      readings: { "plural": "pensiḷḷu", "lo": "pensillō", "ki": "pensilki", "to": "pensiltō", "nunci": "pensil nuñci", "ni": "pensilni" }
+    - word: "te-0867"
+      forms: { "plural": "కాగితాలు", "lo": "కాగితంలో", "ki": "కాగితానికి", "to": "కాగితంతో", "nunci": "కాగితం నుంచి", "ni": "కాగితాన్ని" }
+      readings: { "plural": "kāgitālu", "lo": "kāgitamlō", "ki": "kāgitāniki", "to": "kāgitantō", "nunci": "kāgitam nuñci", "ni": "kāgitānni" }
+    - word: "te-0868"
+      forms: { "plural": "సంచులు", "lo": "సంచిలో", "ki": "సంచికి", "to": "సంచితో", "nunci": "సంచి నుంచి", "ni": "సంచిని" }
+      readings: { "plural": "sañculu", "lo": "sañcilō", "ki": "sañciki", "to": "sañcitō", "nunci": "sañci nuñci", "ni": "sañcini" }
+    - word: "te-0869"
+      forms: { "plural": "గొడుగులు", "lo": "గొడుగులో", "ki": "గొడుగుకి", "to": "గొడుగుతో", "nunci": "గొడుగు నుంచి", "ni": "గొడుగును" }
+      readings: { "plural": "goḍugulu", "lo": "goḍugulō", "ki": "goḍuguki", "to": "goḍugutō", "nunci": "goḍugu nuñci", "ni": "goḍugunu" }
+    - word: "te-0870"
+      forms: { "plural": "గడియారాలు", "lo": "గడియారంలో", "ki": "గడియారానికి", "to": "గడియారంతో", "nunci": "గడియారం నుంచి", "ni": "గడియారాన్ని" }
+      readings: { "plural": "gaḍiyārālu", "lo": "gaḍiyāramlō", "ki": "gaḍiyārāniki", "to": "gaḍiyārantō", "nunci": "gaḍiyāram nuñci", "ni": "gaḍiyārānni" }
+    - word: "te-0871"
+      forms: { "plural": null, "lo": "కళ్ళద్దాల్లో", "ki": "కళ్ళద్దాలకు", "to": "కళ్ళద్దాలతో", "nunci": "కళ్ళద్దాల నుంచి", "ni": "కళ్ళద్దాలను" }
+      readings: { "lo": "kaḷḷaddāllō", "ki": "kaḷḷaddālaku", "to": "kaḷḷaddālatō", "nunci": "kaḷḷaddāla nuñci", "ni": "kaḷḷaddālanu" }
+    - word: "te-0872"
+      forms: { "plural": "ఫోన్లు", "lo": "ఫోన్‌లో", "ki": "ఫోన్‌కి", "to": "ఫోన్‌తో", "nunci": "ఫోన్ నుంచి", "ni": "ఫోన్‌ని" }
+      readings: { "plural": "fōnlu", "lo": "fōnlō", "ki": "fōnki", "to": "fōntō", "nunci": "fōn nuñci", "ni": "fōnni" }
+    - word: "te-0873"
+      forms: { "plural": "మొబైళ్ళు", "lo": "మొబైల్‌లో", "ki": "మొబైల్‌కి", "to": "మొబైల్‌తో", "nunci": "మొబైల్ నుంచి", "ni": "మొబైల్‌ని" }
+      readings: { "plural": "mobaiḷḷu", "lo": "mobaillō", "ki": "mobailki", "to": "mobailtō", "nunci": "mobail nuñci", "ni": "mobailni" }
+    - word: "te-0874"
+      forms: { "plural": "కంప్యూటర్లు", "lo": "కంప్యూటర్‌లో", "ki": "కంప్యూటర్‌కి", "to": "కంప్యూటర్‌తో", "nunci": "కంప్యూటర్ నుంచి", "ni": "కంప్యూటర్‌ని" }
+      readings: { "plural": "kampyūṭarlu", "lo": "kampyūṭarlō", "ki": "kampyūṭarki", "to": "kampyūṭartō", "nunci": "kampyūṭar nuñci", "ni": "kampyūṭarni" }
+    - word: "te-0875"
+      forms: { "plural": "టీవీలు", "lo": "టీవీలో", "ki": "టీవీకి", "to": "టీవీతో", "nunci": "టీవీ నుంచి", "ni": "టీవీని" }
+      readings: { "plural": "ṭīvīlu", "lo": "ṭīvīlō", "ki": "ṭīvīki", "to": "ṭīvītō", "nunci": "ṭīvī nuñci", "ni": "ṭīvīni" }
+    - word: "te-0876"
+      forms: { "plural": "తాళాలు", "lo": "తాళంలో", "ki": "తాళానికి", "to": "తాళంతో", "nunci": "తాళం నుంచి", "ni": "తాళాన్ని" }
+      readings: { "plural": "tāḷālu", "lo": "tāḷamlō", "ki": "tāḷāniki", "to": "tāḷantō", "nunci": "tāḷam nuñci", "ni": "tāḷānni" }
+    - word: "te-0877"
+      forms: { "plural": "సైకిళ్ళు", "lo": "సైకిల్‌లో", "ki": "సైకిల్‌కి", "to": "సైకిల్‌తో", "nunci": "సైకిల్ నుంచి", "ni": "సైకిల్‌ని" }
+      readings: { "plural": "saikiḷḷu", "lo": "saikillō", "ki": "saikilki", "to": "saikiltō", "nunci": "saikil nuñci", "ni": "saikilni" }
+    - word: "te-0878"
+      forms: { "plural": "బళ్ళు", "lo": "బండిలో", "ki": "బండికి", "to": "బండితో", "nunci": "బండి నుంచి", "ni": "బండిని" }
+      readings: { "plural": "baḷḷu", "lo": "baṇḍilō", "ki": "baṇḍiki", "to": "baṇḍitō", "nunci": "baṇḍi nuñci", "ni": "baṇḍini" }
+    - word: "te-0879"
+      forms: { "plural": "కార్లు", "lo": "కారులో", "ki": "కారుకి", "to": "కారుతో", "nunci": "కారు నుంచి", "ni": "కారును" }
+      readings: { "plural": "kārlu", "lo": "kārulō", "ki": "kāruki", "to": "kārutō", "nunci": "kāru nuñci", "ni": "kārunu" }
+    - word: "te-0880"
+      forms: { "plural": "స్కూటర్లు", "lo": "స్కూటర్‌లో", "ki": "స్కూటర్‌కి", "to": "స్కూటర్‌తో", "nunci": "స్కూటర్ నుంచి", "ni": "స్కూటర్‌ని" }
+      readings: { "plural": "skūṭarlu", "lo": "skūṭarlō", "ki": "skūṭarki", "to": "skūṭartō", "nunci": "skūṭar nuñci", "ni": "skūṭarni" }
+    - word: "te-0881"
+      forms: { "plural": "సబ్బులు", "lo": "సబ్బులో", "ki": "సబ్బుకి", "to": "సబ్బుతో", "nunci": "సబ్బు నుంచి", "ni": "సబ్బును" }
+      readings: { "plural": "sabbulu", "lo": "sabbulō", "ki": "sabbuki", "to": "sabbutō", "nunci": "sabbu nuñci", "ni": "sabbunu" }
+    - word: "te-0882"
+      forms: { "plural": "దువ్వెనలు", "lo": "దువ్వెనలో", "ki": "దువ్వెనకి", "to": "దువ్వెనతో", "nunci": "దువ్వెన నుంచి", "ni": "దువ్వెనను" }
+      readings: { "plural": "duvvenalu", "lo": "duvvenalō", "ki": "duvvenaki", "to": "duvvenatō", "nunci": "duvvena nuñci", "ni": "duvvenanu" }
+    - word: "te-0883"
+      forms: { "plural": "అద్దాలు", "lo": "అద్దంలో", "ki": "అద్దానికి", "to": "అద్దంతో", "nunci": "అద్దం నుంచి", "ni": "అద్దాన్ని" }
+      readings: { "plural": "addālu", "lo": "addamlō", "ki": "addāniki", "to": "addantō", "nunci": "addam nuñci", "ni": "addānni" }
+    - word: "te-0884"
+      forms: { "plural": "చీపుర్లు", "lo": "చీపురులో", "ki": "చీపురుకి", "to": "చీపురుతో", "nunci": "చీపురు నుంచి", "ni": "చీపురును" }
+      readings: { "plural": "cīpurlu", "lo": "cīpurulō", "ki": "cīpuruki", "to": "cīpurutō", "nunci": "cīpuru nuñci", "ni": "cīpurunu" }
+    - word: "te-0885"
+      forms: { "plural": "బకెట్లు", "lo": "బకెట్‌లో", "ki": "బకెట్‌కి", "to": "బకెట్‌తో", "nunci": "బకెట్ నుంచి", "ni": "బకెట్‌ని" }
+      readings: { "plural": "bakeṭlu", "lo": "bakeṭlō", "ki": "bakeṭki", "to": "bakeṭtō", "nunci": "bakeṭ nuñci", "ni": "bakeṭni" }
+    - word: "te-0886"
+      forms: { "plural": "దిండ్లు", "lo": "దిండులో", "ki": "దిండుకి", "to": "దిండుతో", "nunci": "దిండు నుంచి", "ni": "దిండును" }
+      readings: { "plural": "diṇḍlu", "lo": "diṇḍulō", "ki": "diṇḍuki", "to": "diṇḍutō", "nunci": "diṇḍu nuñci", "ni": "diṇḍunu" }
+    - word: "te-0887"
+      forms: { "plural": "దుప్పట్లు", "lo": "దుప్పటిలో", "ki": "దుప్పటికి", "to": "దుప్పటితో", "nunci": "దుప్పటి నుంచి", "ni": "దుప్పటిని" }
+      readings: { "plural": "duppaṭlu", "lo": "duppaṭilō", "ki": "duppaṭiki", "to": "duppaṭitō", "nunci": "duppaṭi nuñci", "ni": "duppaṭini" }
+    - word: "te-0888"
+      forms: { "plural": "చాపలు", "lo": "చాపలో", "ki": "చాపకి", "to": "చాపతో", "nunci": "చాప నుంచి", "ni": "చాపను" }
+      readings: { "plural": "cāpalu", "lo": "cāpalō", "ki": "cāpaki", "to": "cāpatō", "nunci": "cāpa nuñci", "ni": "cāpanu" }
+    - word: "te-0889"
+      forms: { "plural": "టవళ్ళు", "lo": "టవల్‌లో", "ki": "టవల్‌కి", "to": "టవల్‌తో", "nunci": "టవల్ నుంచి", "ni": "టవల్‌ని" }
+      readings: { "plural": "ṭavaḷḷu", "lo": "ṭavallō", "ki": "ṭavalki", "to": "ṭavaltō", "nunci": "ṭaval nuñci", "ni": "ṭavalni" }
+    - word: "te-0890"
+      forms: { "plural": "వస్తువులు", "lo": "వస్తువులో", "ki": "వస్తువుకి", "to": "వస్తువుతో", "nunci": "వస్తువు నుంచి", "ni": "వస్తువును" }
+      readings: { "plural": "vastuvulu", "lo": "vastuvulō", "ki": "vastuvuki", "to": "vastuvutō", "nunci": "vastuvu nuñci", "ni": "vastuvunu" }
+    - word: "te-0891"
+      forms: { "plural": null, "lo": "సామానులో", "ki": "సామానుకి", "to": "సామానుతో", "nunci": "సామాను నుంచి", "ni": "సామానును" }
+      readings: { "lo": "sāmānulō", "ki": "sāmānuki", "to": "sāmānutō", "nunci": "sāmānu nuñci", "ni": "sāmānunu" }
+    - word: "te-0892"
+      forms: { "plural": "నోట్లు", "lo": "నోటులో", "ki": "నోటుకి", "to": "నోటుతో", "nunci": "నోటు నుంచి", "ni": "నోటును" }
+      readings: { "plural": "nōṭlu", "lo": "nōṭulō", "ki": "nōṭuki", "to": "nōṭutō", "nunci": "nōṭu nuñci", "ni": "nōṭunu" }
+    - word: "te-0893"
+      forms: { "plural": "నాణేలు", "lo": "నాణెంలో", "ki": "నాణేనికి", "to": "నాణెంతో", "nunci": "నాణెం నుంచి", "ni": "నాణేన్ని" }
+      readings: { "plural": "nāṇēlu", "lo": "nāṇemlō", "ki": "nāṇēniki", "to": "nāṇentō", "nunci": "nāṇem nuñci", "ni": "nāṇēnni" }
+    - word: "te-0894"
+      forms: { "plural": "పెట్టెలు", "lo": "పెట్టెలో", "ki": "పెట్టెకి", "to": "పెట్టెతో", "nunci": "పెట్టె నుంచి", "ni": "పెట్టెని" }
+      readings: { "plural": "peṭṭelu", "lo": "peṭṭelō", "ki": "peṭṭeki", "to": "peṭṭetō", "nunci": "peṭṭe nuñci", "ni": "peṭṭeni" }
+    - word: "te-0895"
+      forms: { "plural": "ఫోటోలు", "lo": "ఫోటోలో", "ki": "ఫోటోకి", "to": "ఫోటోతో", "nunci": "ఫోటో నుంచి", "ni": "ఫోటోని" }
+      readings: { "plural": "fōṭōlu", "lo": "fōṭōlō", "ki": "fōṭōki", "to": "fōṭōtō", "nunci": "fōṭō nuñci", "ni": "fōṭōni" }
+    - word: "te-0896"
+      forms: { "plural": "లేఖలు", "lo": "లేఖలో", "ki": "లేఖకి", "to": "లేఖతో", "nunci": "లేఖ నుంచి", "ni": "లేఖను" }
+      readings: { "plural": "lēkhalu", "lo": "lēkhalō", "ki": "lēkhaki", "to": "lēkhatō", "nunci": "lēkha nuñci", "ni": "lēkhanu" }
+    - word: "te-0897"
+      forms: { "plural": "వార్తాపత్రికలు", "lo": "వార్తాపత్రికలో", "ki": "వార్తాపత్రికకి", "to": "వార్తాపత్రికతో", "nunci": "వార్తాపత్రిక నుంచి", "ni": "వార్తాపత్రికను" }
+      readings: { "plural": "vārtāpatrikalu", "lo": "vārtāpatrikalō", "ki": "vārtāpatrikaki", "to": "vārtāpatrikatō", "nunci": "vārtāpatrika nuñci", "ni": "vārtāpatrikanu" }
+    - word: "te-0898"
+      forms: { "plural": "బొమ్మలు", "lo": "బొమ్మలో", "ki": "బొమ్మకి", "to": "బొమ్మతో", "nunci": "బొమ్మ నుంచి", "ni": "బొమ్మను" }
+      readings: { "plural": "bommalu", "lo": "bommalō", "ki": "bommaki", "to": "bommatō", "nunci": "bomma nuñci", "ni": "bommanu" }
+    - word: "te-0899"
+      forms: { "plural": "బంతులు", "lo": "బంతిలో", "ki": "బంతికి", "to": "బంతితో", "nunci": "బంతి నుంచి", "ni": "బంతిని" }
+      readings: { "plural": "bantulu", "lo": "bantilō", "ki": "bantiki", "to": "bantitō", "nunci": "banti nuñci", "ni": "bantini" }
+    - word: "te-0900"
+      forms: { "plural": "కొవ్వొత్తులు", "lo": "కొవ్వొత్తిలో", "ki": "కొవ్వొత్తికి", "to": "కొవ్వొత్తితో", "nunci": "కొవ్వొత్తి నుంచి", "ni": "కొవ్వొత్తిని" }
+      readings: { "plural": "kovvottulu", "lo": "kovvottilō", "ki": "kovvottiki", "to": "kovvottitō", "nunci": "kovvotti nuñci", "ni": "kovvottini" }
+    - word: "te-0901"
+      forms: { "plural": "అగ్గిపెట్టెలు", "lo": "అగ్గిపెట్టెలో", "ki": "అగ్గిపెట్టెకి", "to": "అగ్గిపెట్టెతో", "nunci": "అగ్గిపెట్టె నుంచి", "ni": "అగ్గిపెట్టెని" }
+      readings: { "plural": "aggipeṭṭelu", "lo": "aggipeṭṭelō", "ki": "aggipeṭṭeki", "to": "aggipeṭṭetō", "nunci": "aggipeṭṭe nuñci", "ni": "aggipeṭṭeni" }
+    - word: "te-0902"
+      forms: { "plural": null, "lo": "చెత్తలో", "ki": "చెత్తకి", "to": "చెత్తతో", "nunci": "చెత్త నుంచి", "ni": "చెత్తను" }
+      readings: { "lo": "cettalō", "ki": "cettaki", "to": "cettatō", "nunci": "cetta nuñci", "ni": "cettanu" }
+    - word: "te-0911"
+      forms: { "plural": null, "lo": "బట్టల్లో", "ki": "బట్టలకు", "to": "బట్టలతో", "nunci": "బట్టల నుంచి", "ni": "బట్టలను" }
+      readings: { "lo": "baṭṭallō", "ki": "baṭṭalaku", "to": "baṭṭalatō", "nunci": "baṭṭala nuñci", "ni": "baṭṭalanu" }
+    - word: "te-0912"
+      forms: { "plural": "చొక్కాలు", "lo": "చొక్కాలో", "ki": "చొక్కాకి", "to": "చొక్కాతో", "nunci": "చొక్కా నుంచి", "ni": "చొక్కాని" }
+      readings: { "plural": "cokkālu", "lo": "cokkālō", "ki": "cokkāki", "to": "cokkātō", "nunci": "cokkā nuñci", "ni": "cokkāni" }
+    - word: "te-0913"
+      forms: { "plural": "ప్యాంట్లు", "lo": "ప్యాంటులో", "ki": "ప్యాంటుకి", "to": "ప్యాంటుతో", "nunci": "ప్యాంటు నుంచి", "ni": "ప్యాంటును" }
+      readings: { "plural": "pyāṇṭlu", "lo": "pyāṇṭulō", "ki": "pyāṇṭuki", "to": "pyāṇṭutō", "nunci": "pyāṇṭu nuñci", "ni": "pyāṇṭunu" }
+    - word: "te-0914"
+      forms: { "plural": "చీరలు", "lo": "చీరలో", "ki": "చీరకి", "to": "చీరతో", "nunci": "చీర నుంచి", "ni": "చీరను" }
+      readings: { "plural": "cīralu", "lo": "cīralō", "ki": "cīraki", "to": "cīratō", "nunci": "cīra nuñci", "ni": "cīranu" }
+    - word: "te-0915"
+      forms: { "plural": "పంచెలు", "lo": "పంచెలో", "ki": "పంచెకి", "to": "పంచెతో", "nunci": "పంచె నుంచి", "ni": "పంచెని" }
+      readings: { "plural": "pañcelu", "lo": "pañcelō", "ki": "pañceki", "to": "pañcetō", "nunci": "pañce nuñci", "ni": "pañceni" }
+    - word: "te-0916"
+      forms: { "plural": "లంగాలు", "lo": "లంగాలో", "ki": "లంగాకి", "to": "లంగాతో", "nunci": "లంగా నుంచి", "ni": "లంగాని" }
+      readings: { "plural": "laṅgālu", "lo": "laṅgālō", "ki": "laṅgāki", "to": "laṅgātō", "nunci": "laṅgā nuñci", "ni": "laṅgāni" }
+    - word: "te-0917"
+      forms: { "plural": "కోట్లు", "lo": "కోటులో", "ki": "కోటుకి", "to": "కోటుతో", "nunci": "కోటు నుంచి", "ni": "కోటును" }
+      readings: { "plural": "kōṭlu", "lo": "kōṭulō", "ki": "kōṭuki", "to": "kōṭutō", "nunci": "kōṭu nuñci", "ni": "kōṭunu" }
+    - word: "te-0918"
+      forms: { "plural": "టోపీలు", "lo": "టోపీలో", "ki": "టోపీకి", "to": "టోపీతో", "nunci": "టోపీ నుంచి", "ni": "టోపీని" }
+      readings: { "plural": "ṭōpīlu", "lo": "ṭōpīlō", "ki": "ṭōpīki", "to": "ṭōpītō", "nunci": "ṭōpī nuñci", "ni": "ṭōpīni" }
+    - word: "te-0919"
+      forms: { "plural": null, "lo": "బూట్లలో", "ki": "బూట్లకు", "to": "బూట్లతో", "nunci": "బూట్ల నుంచి", "ni": "బూట్లను" }
+      readings: { "lo": "būṭlalō", "ki": "būṭlaku", "to": "būṭlatō", "nunci": "būṭla nuñci", "ni": "būṭlanu" }
+    - word: "te-0920"
+      forms: { "plural": null, "lo": "చెప్పుల్లో", "ki": "చెప్పులకు", "to": "చెప్పులతో", "nunci": "చెప్పుల నుంచి", "ni": "చెప్పులను" }
+      readings: { "lo": "ceppullō", "ki": "ceppulaku", "to": "ceppulatō", "nunci": "ceppula nuñci", "ni": "ceppulanu" }
+    - word: "te-0921"
+      forms: { "plural": null, "lo": "సాక్సుల్లో", "ki": "సాక్సులకు", "to": "సాక్సులతో", "nunci": "సాక్సుల నుంచి", "ni": "సాక్సులను" }
+      readings: { "lo": "sāksullō", "ki": "sāksulaku", "to": "sāksulatō", "nunci": "sāksula nuñci", "ni": "sāksulanu" }
+    - word: "te-0922"
+      forms: { "plural": "రుమాలులు", "lo": "రుమాలులో", "ki": "రుమాలుకి", "to": "రుమాలుతో", "nunci": "రుమాలు నుంచి", "ni": "రుమాలును" }
+      readings: { "plural": "rumālulu", "lo": "rumālulō", "ki": "rumāluki", "to": "rumālutō", "nunci": "rumālu nuñci", "ni": "rumālunu" }
+    - word: "te-0923"
+      forms: { "plural": "జేబులు", "lo": "జేబులో", "ki": "జేబుకి", "to": "జేబుతో", "nunci": "జేబు నుంచి", "ni": "జేబును" }
+      readings: { "plural": "jēbulu", "lo": "jēbulō", "ki": "jēbuki", "to": "jēbutō", "nunci": "jēbu nuñci", "ni": "jēbunu" }
+    - word: "te-0924"
+      forms: { "plural": "బెల్టులు", "lo": "బెల్టులో", "ki": "బెల్టుకి", "to": "బెల్టుతో", "nunci": "బెల్టు నుంచి", "ni": "బెల్టును" }
+      readings: { "plural": "belṭulu", "lo": "belṭulō", "ki": "belṭuki", "to": "belṭutō", "nunci": "belṭu nuñci", "ni": "belṭunu" }
+    - word: "te-0925"
+      forms: { "plural": null, "lo": "నగల్లో", "ki": "నగలకు", "to": "నగలతో", "nunci": "నగల నుంచి", "ni": "నగలను" }
+      readings: { "lo": "nagallō", "ki": "nagalaku", "to": "nagalatō", "nunci": "nagala nuñci", "ni": "nagalanu" }
+    - word: "te-0926"
+      forms: { "plural": null, "lo": "గాజుల్లో", "ki": "గాజులకు", "to": "గాజులతో", "nunci": "గాజుల నుంచి", "ni": "గాజులను" }
+      readings: { "lo": "gājullō", "ki": "gājulaku", "to": "gājulatō", "nunci": "gājula nuñci", "ni": "gājulanu" }
+    - word: "te-0927"
+      forms: { "plural": "రంగులు", "lo": "రంగులో", "ki": "రంగుకి", "to": "రంగుతో", "nunci": "రంగు నుంచి", "ni": "రంగును" }
+      readings: { "plural": "raṅgulu", "lo": "raṅgulō", "ki": "raṅguki", "to": "raṅgutō", "nunci": "raṅgu nuñci", "ni": "raṅgunu" }
+    - word: "te-0928"
+      forms: { "plural": null, "lo": "ఎరుపులో", "ki": "ఎరుపుకి", "to": "ఎరుపుతో", "nunci": "ఎరుపు నుంచి", "ni": "ఎరుపును" }
+      readings: { "lo": "erupulō", "ki": "erupuki", "to": "eruputō", "nunci": "erupu nuñci", "ni": "erupunu" }
+    - word: "te-0929"
+      forms: { "plural": null, "lo": "నీలంలో", "ki": "నీలానికి", "to": "నీలంతో", "nunci": "నీలం నుంచి", "ni": "నీలాన్ని" }
+      readings: { "lo": "nīlamlō", "ki": "nīlāniki", "to": "nīlantō", "nunci": "nīlam nuñci", "ni": "nīlānni" }
+    - word: "te-0930"
+      forms: { "plural": null, "lo": "ఆకుపచ్చలో", "ki": "ఆకుపచ్చకి", "to": "ఆకుపచ్చతో", "nunci": "ఆకుపచ్చ నుంచి", "ni": "ఆకుపచ్చను" }
+      readings: { "lo": "ākupaccalō", "ki": "ākupaccaki", "to": "ākupaccatō", "nunci": "ākupacca nuñci", "ni": "ākupaccanu" }
+    - word: "te-0931"
+      forms: { "plural": null, "lo": "తెలుపులో", "ki": "తెలుపుకి", "to": "తెలుపుతో", "nunci": "తెలుపు నుంచి", "ni": "తెలుపును" }
+      readings: { "lo": "telupulō", "ki": "telupuki", "to": "teluputō", "nunci": "telupu nuñci", "ni": "telupunu" }
+    - word: "te-0932"
+      forms: { "plural": null, "lo": "నలుపులో", "ki": "నలుపుకి", "to": "నలుపుతో", "nunci": "నలుపు నుంచి", "ni": "నలుపును" }
+      readings: { "lo": "nalupulō", "ki": "nalupuki", "to": "naluputō", "nunci": "nalupu nuñci", "ni": "nalupunu" }
+    - word: "te-0933"
+      forms: { "plural": null, "lo": "గులాబీలో", "ki": "గులాబీకి", "to": "గులాబీతో", "nunci": "గులాబీ నుంచి", "ni": "గులాబీని" }
+      readings: { "lo": "gulābīlō", "ki": "gulābīki", "to": "gulābītō", "nunci": "gulābī nuñci", "ni": "gulābīni" }
+    - word: "te-0934"
+      forms: { "plural": null, "lo": "ఊదాలో", "ki": "ఊదాకి", "to": "ఊదాతో", "nunci": "ఊదా నుంచి", "ni": "ఊదాని" }
+      readings: { "lo": "ūdālō", "ki": "ūdāki", "to": "ūdātō", "nunci": "ūdā nuñci", "ni": "ūdāni" }
+    - word: "te-0966"
+      forms: { "plural": null, "lo": "ఆకలిలో", "ki": "ఆకలికి", "to": "ఆకలితో", "nunci": "ఆకలి నుంచి", "ni": "ఆకలిని" }
+      readings: { "lo": "ākalilō", "ki": "ākaliki", "to": "ākalitō", "nunci": "ākali nuñci", "ni": "ākalini" }
+    - word: "te-0967"
+      forms: { "plural": null, "lo": "దాహంలో", "ki": "దాహానికి", "to": "దాహంతో", "nunci": "దాహం నుంచి", "ni": "దాహాన్ని" }
+      readings: { "lo": "dāhamlō", "ki": "dāhāniki", "to": "dāhantō", "nunci": "dāham nuñci", "ni": "dāhānni" }
+    - word: "te-0968"
+      forms: { "plural": null, "lo": "నిద్రలో", "ki": "నిద్రకి", "to": "నిద్రతో", "nunci": "నిద్ర నుంచి", "ni": "నిద్రను" }
+      readings: { "lo": "nidralō", "ki": "nidraki", "to": "nidratō", "nunci": "nidra nuñci", "ni": "nidranu" }
+    - word: "te-0969"
+      forms: { "plural": null, "lo": "అలసటలో", "ki": "అలసటకి", "to": "అలసటతో", "nunci": "అలసట నుంచి", "ni": "అలసటను" }
+      readings: { "lo": "alasaṭalō", "ki": "alasaṭaki", "to": "alasaṭatō", "nunci": "alasaṭa nuñci", "ni": "alasaṭanu" }
+    - word: "te-0970"
+      forms: { "plural": null, "lo": "సంతోషంలో", "ki": "సంతోషానికి", "to": "సంతోషంతో", "nunci": "సంతోషం నుంచి", "ni": "సంతోషాన్ని" }
+      readings: { "lo": "santōṣamlō", "ki": "santōṣāniki", "to": "santōṣantō", "nunci": "santōṣam nuñci", "ni": "santōṣānni" }
+    - word: "te-0971"
+      forms: { "plural": null, "lo": "బాధలో", "ki": "బాధకి", "to": "బాధతో", "nunci": "బాధ నుంచి", "ni": "బాధను" }
+      readings: { "lo": "bādhalō", "ki": "bādhaki", "to": "bādhatō", "nunci": "bādha nuñci", "ni": "bādhanu" }
+    - word: "te-0972"
+      forms: { "plural": null, "lo": "కోపంలో", "ki": "కోపానికి", "to": "కోపంతో", "nunci": "కోపం నుంచి", "ni": "కోపాన్ని" }
+      readings: { "lo": "kōpamlō", "ki": "kōpāniki", "to": "kōpantō", "nunci": "kōpam nuñci", "ni": "kōpānni" }
+    - word: "te-0973"
+      forms: { "plural": null, "lo": "భయంలో", "ki": "భయానికి", "to": "భయంతో", "nunci": "భయం నుంచి", "ni": "భయాన్ని" }
+      readings: { "lo": "bhayamlō", "ki": "bhayāniki", "to": "bhayantō", "nunci": "bhayam nuñci", "ni": "bhayānni" }
+    - word: "te-0974"
+      forms: { "plural": null, "lo": "చలిలో", "ki": "చలికి", "to": "చలితో", "nunci": "చలి నుంచి", "ni": "చలిని" }
+      readings: { "lo": "calilō", "ki": "caliki", "to": "calitō", "nunci": "cali nuñci", "ni": "calini" }
+    - word: "te-0986"
+      forms: { "plural": "కుక్కలు", "lo": "కుక్కలో", "ki": "కుక్కకి", "to": "కుక్కతో", "nunci": "కుక్క నుంచి", "ni": "కుక్కను" }
+      readings: { "plural": "kukkalu", "lo": "kukkalō", "ki": "kukkaki", "to": "kukkatō", "nunci": "kukka nuñci", "ni": "kukkanu" }
+    - word: "te-0987"
+      forms: { "plural": "పిల్లులు", "lo": "పిల్లిలో", "ki": "పిల్లికి", "to": "పిల్లితో", "nunci": "పిల్లి నుంచి", "ni": "పిల్లిని" }
+      readings: { "plural": "pillulu", "lo": "pillilō", "ki": "pilliki", "to": "pillitō", "nunci": "pilli nuñci", "ni": "pillini" }
+    - word: "te-0988"
+      forms: { "plural": "ఆవులు", "lo": "ఆవులో", "ki": "ఆవుకి", "to": "ఆవుతో", "nunci": "ఆవు నుంచి", "ni": "ఆవును" }
+      readings: { "plural": "āvulu", "lo": "āvulō", "ki": "āvuki", "to": "āvutō", "nunci": "āvu nuñci", "ni": "āvunu" }
+    - word: "te-0989"
+      forms: { "plural": "గేదెలు", "lo": "గేదెలో", "ki": "గేదెకి", "to": "గేదెతో", "nunci": "గేదె నుంచి", "ni": "గేదెని" }
+      readings: { "plural": "gēdelu", "lo": "gēdelō", "ki": "gēdeki", "to": "gēdetō", "nunci": "gēde nuñci", "ni": "gēdeni" }
+    - word: "te-0990"
+      forms: { "plural": "ఎడ్లు", "lo": "ఎద్దులో", "ki": "ఎద్దుకి", "to": "ఎద్దుతో", "nunci": "ఎద్దు నుంచి", "ni": "ఎద్దును" }
+      readings: { "plural": "eḍlu", "lo": "eddulō", "ki": "edduki", "to": "eddutō", "nunci": "eddu nuñci", "ni": "eddunu" }
+    - word: "te-0991"
+      forms: { "plural": "గుర్రాలు", "lo": "గుర్రంలో", "ki": "గుర్రానికి", "to": "గుర్రంతో", "nunci": "గుర్రం నుంచి", "ni": "గుర్రాన్ని" }
+      readings: { "plural": "gurrālu", "lo": "gurramlō", "ki": "gurrāniki", "to": "gurrantō", "nunci": "gurram nuñci", "ni": "gurrānni" }
+    - word: "te-0992"
+      forms: { "plural": "మేకలు", "lo": "మేకలో", "ki": "మేకకి", "to": "మేకతో", "nunci": "మేక నుంచి", "ni": "మేకను" }
+      readings: { "plural": "mēkalu", "lo": "mēkalō", "ki": "mēkaki", "to": "mēkatō", "nunci": "mēka nuñci", "ni": "mēkanu" }
+    - word: "te-0993"
+      forms: { "plural": "గొర్రెలు", "lo": "గొర్రెలో", "ki": "గొర్రెకి", "to": "గొర్రెతో", "nunci": "గొర్రె నుంచి", "ni": "గొర్రెని" }
+      readings: { "plural": "gorrelu", "lo": "gorrelō", "ki": "gorreki", "to": "gorretō", "nunci": "gorre nuñci", "ni": "gorreni" }
+    - word: "te-0994"
+      forms: { "plural": "బాతులు", "lo": "బాతులో", "ki": "బాతుకి", "to": "బాతుతో", "nunci": "బాతు నుంచి", "ni": "బాతును" }
+      readings: { "plural": "bātulu", "lo": "bātulō", "ki": "bātuki", "to": "bātutō", "nunci": "bātu nuñci", "ni": "bātunu" }
+    - word: "te-0995"
+      forms: { "plural": "పక్షులు", "lo": "పక్షిలో", "ki": "పక్షికి", "to": "పక్షితో", "nunci": "పక్షి నుంచి", "ni": "పక్షిని" }
+      readings: { "plural": "pakṣulu", "lo": "pakṣilō", "ki": "pakṣiki", "to": "pakṣitō", "nunci": "pakṣi nuñci", "ni": "pakṣini" }
+    - word: "te-0996"
+      forms: { "plural": "చిలుకలు", "lo": "చిలుకలో", "ki": "చిలుకకి", "to": "చిలుకతో", "nunci": "చిలుక నుంచి", "ni": "చిలుకను" }
+      readings: { "plural": "cilukalu", "lo": "cilukalō", "ki": "cilukaki", "to": "cilukatō", "nunci": "ciluka nuñci", "ni": "cilukanu" }
+    - word: "te-0997"
+      forms: { "plural": "కాకులు", "lo": "కాకిలో", "ki": "కాకికి", "to": "కాకితో", "nunci": "కాకి నుంచి", "ni": "కాకిని" }
+      readings: { "plural": "kākulu", "lo": "kākilō", "ki": "kākiki", "to": "kākitō", "nunci": "kāki nuñci", "ni": "kākini" }
+    - word: "te-0998"
+      forms: { "plural": "నెమళ్ళు", "lo": "నెమలిలో", "ki": "నెమలికి", "to": "నెమలితో", "nunci": "నెమలి నుంచి", "ni": "నెమలిని" }
+      readings: { "plural": "nemaḷḷu", "lo": "nemalilō", "ki": "nemaliki", "to": "nemalitō", "nunci": "nemali nuñci", "ni": "nemalini" }
+    - word: "te-0999"
+      forms: { "plural": "ఏనుగులు", "lo": "ఏనుగులో", "ki": "ఏనుగుకి", "to": "ఏనుగుతో", "nunci": "ఏనుగు నుంచి", "ni": "ఏనుగును" }
+      readings: { "plural": "ēnugulu", "lo": "ēnugulō", "ki": "ēnuguki", "to": "ēnugutō", "nunci": "ēnugu nuñci", "ni": "ēnugunu" }
+    - word: "te-1000"
+      forms: { "plural": "పులులు", "lo": "పులిలో", "ki": "పులికి", "to": "పులితో", "nunci": "పులి నుంచి", "ni": "పులిని" }
+      readings: { "plural": "pululu", "lo": "pulilō", "ki": "puliki", "to": "pulitō", "nunci": "puli nuñci", "ni": "pulini" }
+    - word: "te-1001"
+      forms: { "plural": "సింహాలు", "lo": "సింహంలో", "ki": "సింహానికి", "to": "సింహంతో", "nunci": "సింహం నుంచి", "ni": "సింహాన్ని" }
+      readings: { "plural": "simhālu", "lo": "simhamlō", "ki": "simhāniki", "to": "simhantō", "nunci": "simham nuñci", "ni": "simhānni" }
+    - word: "te-1002"
+      forms: { "plural": "కోతులు", "lo": "కోతిలో", "ki": "కోతికి", "to": "కోతితో", "nunci": "కోతి నుంచి", "ni": "కోతిని" }
+      readings: { "plural": "kōtulu", "lo": "kōtilō", "ki": "kōtiki", "to": "kōtitō", "nunci": "kōti nuñci", "ni": "kōtini" }
+    - word: "te-1003"
+      forms: { "plural": "పాములు", "lo": "పాములో", "ki": "పాముకి", "to": "పాముతో", "nunci": "పాము నుంచి", "ni": "పామును" }
+      readings: { "plural": "pāmulu", "lo": "pāmulō", "ki": "pāmuki", "to": "pāmutō", "nunci": "pāmu nuñci", "ni": "pāmunu" }
+    - word: "te-1004"
+      forms: { "plural": "ఎలుకలు", "lo": "ఎలుకలో", "ki": "ఎలుకకి", "to": "ఎలుకతో", "nunci": "ఎలుక నుంచి", "ni": "ఎలుకను" }
+      readings: { "plural": "elukalu", "lo": "elukalō", "ki": "elukaki", "to": "elukatō", "nunci": "eluka nuñci", "ni": "elukanu" }
+    - word: "te-1005"
+      forms: { "plural": "దోమలు", "lo": "దోమలో", "ki": "దోమకి", "to": "దోమతో", "nunci": "దోమ నుంచి", "ni": "దోమను" }
+      readings: { "plural": "dōmalu", "lo": "dōmalō", "ki": "dōmaki", "to": "dōmatō", "nunci": "dōma nuñci", "ni": "dōmanu" }
+    - word: "te-1006"
+      forms: { "plural": "ఈగలు", "lo": "ఈగలో", "ki": "ఈగకి", "to": "ఈగతో", "nunci": "ఈగ నుంచి", "ni": "ఈగను" }
+      readings: { "plural": "īgalu", "lo": "īgalō", "ki": "īgaki", "to": "īgatō", "nunci": "īga nuñci", "ni": "īganu" }
+    - word: "te-1007"
+      forms: { "plural": "చీమలు", "lo": "చీమలో", "ki": "చీమకి", "to": "చీమతో", "nunci": "చీమ నుంచి", "ni": "చీమను" }
+      readings: { "plural": "cīmalu", "lo": "cīmalō", "ki": "cīmaki", "to": "cīmatō", "nunci": "cīma nuñci", "ni": "cīmanu" }
+    - word: "te-1008"
+      forms: { "plural": "సీతాకోకచిలుకలు", "lo": "సీతాకోకచిలుకలో", "ki": "సీతాకోకచిలుకకి", "to": "సీతాకోకచిలుకతో", "nunci": "సీతాకోకచిలుక నుంచి", "ni": "సీతాకోకచిలుకను" }
+      readings: { "plural": "sītākōkacilukalu", "lo": "sītākōkacilukalō", "ki": "sītākōkacilukaki", "to": "sītākōkacilukatō", "nunci": "sītākōkaciluka nuñci", "ni": "sītākōkacilukanu" }
+    - word: "te-1009"
+      forms: { "plural": "తేనెటీగలు", "lo": "తేనెటీగలో", "ki": "తేనెటీగకి", "to": "తేనెటీగతో", "nunci": "తేనెటీగ నుంచి", "ni": "తేనెటీగను" }
+      readings: { "plural": "tēneṭīgalu", "lo": "tēneṭīgalō", "ki": "tēneṭīgaki", "to": "tēneṭīgatō", "nunci": "tēneṭīga nuñci", "ni": "tēneṭīganu" }
+    - word: "te-1010"
+      forms: { "plural": "ఒంటెలు", "lo": "ఒంటెలో", "ki": "ఒంటెకి", "to": "ఒంటెతో", "nunci": "ఒంటె నుంచి", "ni": "ఒంటెని" }
+      readings: { "plural": "oṇṭelu", "lo": "oṇṭelō", "ki": "oṇṭeki", "to": "oṇṭetō", "nunci": "oṇṭe nuñci", "ni": "oṇṭeni" }
+    - word: "te-1011"
+      forms: { "plural": "జింకలు", "lo": "జింకలో", "ki": "జింకకి", "to": "జింకతో", "nunci": "జింక నుంచి", "ni": "జింకను" }
+      readings: { "plural": "jiṅkalu", "lo": "jiṅkalō", "ki": "jiṅkaki", "to": "jiṅkatō", "nunci": "jiṅka nuñci", "ni": "jiṅkanu" }
+    - word: "te-1012"
+      forms: { "plural": "కప్పలు", "lo": "కప్పలో", "ki": "కప్పకి", "to": "కప్పతో", "nunci": "కప్ప నుంచి", "ni": "కప్పను" }
+      readings: { "plural": "kappalu", "lo": "kappalō", "ki": "kappaki", "to": "kappatō", "nunci": "kappa nuñci", "ni": "kappanu" }
+    - word: "te-1013"
+      forms: { "plural": "తాబేళ్ళు", "lo": "తాబేలులో", "ki": "తాబేలుకి", "to": "తాబేలుతో", "nunci": "తాబేలు నుంచి", "ni": "తాబేలును" }
+      readings: { "plural": "tābēḷḷu", "lo": "tābēlulō", "ki": "tābēluki", "to": "tābēlutō", "nunci": "tābēlu nuñci", "ni": "tābēlunu" }
+    - word: "te-1031"
+      forms: { "plural": null, "lo": "సగంలో", "ki": "సగానికి", "to": "సగంతో", "nunci": "సగం నుంచి", "ni": "సగాన్ని" }
+      readings: { "lo": "sagamlō", "ki": "sagāniki", "to": "sagantō", "nunci": "sagam nuñci", "ni": "sagānni" }
+    - word: "te-1044"
+      forms: { "plural": null, "lo": "మొత్తంలో", "ki": "మొత్తానికి", "to": "మొత్తంతో", "nunci": "మొత్తం నుంచి", "ni": "మొత్తాన్ని" }
+      readings: { "lo": "mottamlō", "ki": "mottāniki", "to": "mottantō", "nunci": "mottam nuñci", "ni": "mottānni" }
+    - word: "te-1045"
+      forms: { "plural": "జంటలు", "lo": "జంటలో", "ki": "జంటకి", "to": "జంటతో", "nunci": "జంట నుంచి", "ni": "జంటను" }
+      readings: { "plural": "jaṇṭalu", "lo": "jaṇṭalō", "ki": "jaṇṭaki", "to": "jaṇṭatō", "nunci": "jaṇṭa nuñci", "ni": "jaṇṭanu" }
+    - word: "te-1046"
+      forms: { "plural": null, "lo": "డజనులో", "ki": "డజనుకి", "to": "డజనుతో", "nunci": "డజను నుంచి", "ni": "డజనును" }
+      readings: { "lo": "ḍajanulō", "ki": "ḍajanuki", "to": "ḍajanutō", "nunci": "ḍajanu nuñci", "ni": "ḍajanunu" }
+rules:
+  - id: "te-rule-plural"
+    slots: ["plural"]
+    words: [{ word: "-లు", reading: "-lu" }, { word: "పుస్తకం", reading: "pustakam" }, { word: "పుస్తకాలు", reading: "pustakālu" }, { word: "తలుపు", reading: "talupu" }, { word: "తలుపులు", reading: "talupulu" }, { word: "ఇల్లు", reading: "illu" }, { word: "ఇళ్ళు", reading: "iḷḷu" }]
+  - id: "te-rule-lo"
+    slots: ["lo"]
+    words: [{ word: "-లో", reading: "-lō" }, { word: "గది", reading: "gadi" }, { word: "గదిలో", reading: "gadilō" }, { word: "ఇల్లు", reading: "illu" }, { word: "ఇంట్లో", reading: "iṇṭlō" }, { word: "-ం", reading: "-am" }, { word: "పుస్తకం", reading: "pustakam" }, { word: "పుస్తకంలో", reading: "pustakamlō" }]
+  - id: "te-rule-ki"
+    slots: ["ki"]
+    words: [{ word: "-కి", reading: "-ki" }, { word: "-కు", reading: "-ku" }, { word: "బడి", reading: "baḍi" }, { word: "బడికి", reading: "baḍiki" }, { word: "-ం", reading: "-am" }, { word: "-ఆని-", reading: "-āni-" }, { word: "పుస్తకం", reading: "pustakam" }, { word: "పుస్తకానికి", reading: "pustakāniki" }, { word: "-డు", reading: "-ḍu" }, { word: "-ి", reading: "-i" }, { word: "తమ్ముడు", reading: "tammuḍu" }, { word: "తమ్ముడికి", reading: "tammuḍiki" }]
+  - id: "te-rule-to"
+    slots: ["to"]
+    words: [{ word: "-తో", reading: "-tō" }, { word: "అమ్మ", reading: "amma" }, { word: "అమ్మతో", reading: "ammatō" }, { word: "ఇల్లు", reading: "illu" }, { word: "ఇంటితో", reading: "iṇṭitō" }]
+  - id: "te-rule-nunci"
+    slots: ["nunci"]
+    words: [{ word: "నుంచి", reading: "nuñci" }, { word: "ఇల్లు", reading: "illu" }, { word: "ఇంటి నుంచి", reading: "iṇṭi nuñci" }, { word: "పుస్తకం", reading: "pustakam" }, { word: "-ం", reading: "-am" }, { word: "పుస్తకం నుంచి", reading: "pustakam nuñci" }]
+  - id: "te-rule-ni"
+    slots: ["ni"]
+    words: [{ word: "-ని", reading: "-ni" }, { word: "-ను", reading: "-nu" }, { word: "అమ్మ", reading: "amma" }, { word: "అమ్మను", reading: "ammanu" }, { word: "ఇల్లు", reading: "illu" }, { word: "ఇంటిని", reading: "iṇṭini" }, { word: "పుస్తకం", reading: "pustakam" }, { word: "పుస్తకాన్ని", reading: "pustakānni" }, { word: "టీ తాగుతాను", reading: "ṭī tāgutānu" }]

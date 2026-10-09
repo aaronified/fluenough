@@ -32,6 +32,13 @@ Future<AppState> teluguLearner() async {
   return PathFixtures.state(app);
 }
 
+/// Family's number on the Telugu path: its unit's place in the course.
+int familyNumber(AppState state) =>
+    state
+        .courseUnits('te')
+        .indexWhere((u) => u.any((e) => e.id == PathFixtures.familyDeck)) +
+    1;
+
 /// A phone tall enough for the unit's lazy list to build every row.
 void useTallPhone(WidgetTester tester) {
   usePhone(tester);
@@ -90,7 +97,9 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(find.text('A1'), findsOneWidget);
-    expect(find.text(l10n.pathUnitNumber(7)), findsOneWidget);
+    // Family is the eighth unit of Telugu's path.
+    expect(familyNumber(state), 8);
+    expect(find.text(l10n.pathUnitNumber(8)), findsOneWidget);
     expect(find.text('Family'), findsOneWidget);
     expect(
       find.text(state.deckById('te-en-family')!.deck.description!),
@@ -108,13 +117,34 @@ void main() {
 
   testWidgets('without a plan, no level is shown', (tester) async {
     usePhone(tester);
-    await pumpScreen(
+    final state = await pumpScreen(
+      tester,
+      const UnitPage(deckId: 'te-en-family', plan: CoursePlan.none),
+      state: await teluguLearner(),
+    );
+    expect(find.text('A1'), findsNothing);
+    expect(
+      find.text(l10nOf(tester).pathUnitNumber(familyNumber(state))),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('with no plan given, the level is the one its path marks', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpScreen(
       tester,
       const UnitPage(deckId: 'te-en-family'),
       state: await teluguLearner(),
     );
-    expect(find.text('A1'), findsNothing);
-    expect(find.text(l10nOf(tester).pathUnitNumber(7)), findsOneWidget);
+    // Telugu's path marks where A1 ends, after Family (ADR-0036).
+    expect(coursePlanOf(state, 'te').levelEnds, contains(CefrLevel.a1));
+    expect(find.text('A1'), findsOneWidget);
+    expect(
+      find.text(l10nOf(tester).pathUnitNumber(familyNumber(state))),
+      findsOneWidget,
+    );
   });
 
   testWidgets('tiles and words: each word Known, Learning n% or New, from '
@@ -191,6 +221,45 @@ void main() {
     await tester.tap(find.text(l10n.unitRuleHideTable));
     await tester.pumpAndSettle();
     expect(find.text(l10n.unitRuleWord), findsNothing);
+  });
+
+  testWidgets('a rules deck is a rule: its table is its cells, a column per '
+      'form, and its cells are not listed as words (ADR-0036)', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpScreen(
+      tester,
+      const UnitPage(deckId: 'te-en-pronouns'),
+      state: await teluguLearner(),
+    );
+    final l10n = l10nOf(tester);
+    final rules = state.deckById('te-en-grammar-pronoun-forms')!;
+    final content = UnitContent(unitOfDeck(state, 'te-en-pronouns')!.decks);
+    expect(content.rules, [rules]);
+    expect(content.words.where((c) => c.rule != null), isEmpty);
+    expect(find.text(rules.deck.name), findsWidgets);
+    final show = find.text(l10n.unitRuleShowTable);
+    await tester.scrollUntilVisible(show, 200, scrollable: downward.first);
+    await tester.tap(show);
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.unitRuleWord), findsOneWidget);
+    // Each column is headed by its slot's label without the word's
+    // meaning, "{meaning}: with" being "with".
+    for (final head in <String>[
+      'the form before a noun (of)',
+      'to, for',
+      'the one acted on',
+      'with',
+    ]) {
+      expect(find.text(head), findsOneWidget, reason: head);
+    }
+    // A row per word: నేను (nēnu), I, and its forms, each with its reading.
+    final mine = rules.cards.firstWhere(
+      (c) => c.rule!.word == 'te-0593' && c.rule!.slot == 'ki',
+    );
+    expect(mine.target, 'నాకు');
+    expect(find.text(mine.target), findsWidgets);
+    expect(find.text(mine.reading!), findsWidgets);
+    expect(find.text(mine.rule!.wordTarget), findsWidgets);
   });
 
   testWidgets('sentences: how many are open, each open or not yet', (

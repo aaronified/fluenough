@@ -9,8 +9,8 @@ import 'path_model.dart';
 
 /// The design's Telugu path, for the debug gallery and the decks tests:
 /// Aro learning Telugu as well, with the first units done and Family under
-/// way, and the plan the design draws, which no path marks yet
-/// ([CoursePlan]).
+/// way, and the plan the design draws ([CoursePlan]), in place of the one
+/// Telugu's path marks (ADR-0036).
 ///
 /// Built on the real bundled Telugu decks: no card id is invented
 /// (AGENTS.md rule 1).

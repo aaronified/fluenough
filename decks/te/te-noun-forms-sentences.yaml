@@ -1,0 +1,37 @@
+schema: 1
+id: "te-noun-forms-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0614"
+    target: "వాళ్ళు నా స్నేహితులు."
+    reading: "vāḷḷu nā snēhitulu."
+    ipa: "ʋaːɭɭu naː sneːhit̪ulu"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen", "te-rule-plural"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "స్నేహితులు", ref: "te-0189" }
+  - id: "te-0654"
+    target: "ఆయన రోజూ పనికి వెళ్తారు."
+    reading: "āyana rōjū paniki veḷtāru."
+    ipa: "aːjana roːdʒuː paniki ʋeɭt̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-ki"]
+    bases:
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్తారు", ref: "te-0622" }
+  - id: "te-0658"
+    target: "అతను ఆఫీసులో పని చేస్తాడు."
+    reading: "atanu āfīsulō pani cēstāḍu."
+    ipa: "at̪anu aːfiːsuloː pani tʃeːst̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-lo"]
+    bases:
+      - { word: "ఆఫీసులో", ref: "te-0401" }
+      - { word: "చేస్తాడు", ref: "te-0621" }
