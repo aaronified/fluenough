@@ -11,8 +11,8 @@ typedef AbilityKey = ({String language, DrillMode mode});
 /// rating per language and schedule, and a difficulty per pair, each moved
 /// after every answer by how surprising it was (Pelánek 2016). One answer
 /// can judge several skills (a Q-matrix, as in multi-skill Elo: Park et al.
-/// 2019): a right answer also moves the skills it implies ([SkillMap]), by
-/// their share. A miss moves its own skill alone.
+/// 2019): an answer also moves the skills it implies ([SkillMap]), by their
+/// share: a right one up, and a miss down, its blame split over them.
 ///
 /// Derived from the review log alone, like every scheduling state, so it can
 /// always be rebuilt.
@@ -62,9 +62,9 @@ class Abilities {
   static double expected(double ability, double difficulty) =>
       1 / (1 + math.exp(difficulty - ability));
 
-  /// Plays one answer through the model: in its own skill, and, if right,
-  /// in each skill [skills] says it implies, by that skill's own surprise
-  /// times its share.
+  /// Plays one answer through the model: in its own skill, and in each
+  /// skill [skills] says it implies, by that skill's own surprise times its
+  /// share. A miss is blamed on those skills in the same shares.
   void add({
     required String cardId,
     required DrillMode mode,
@@ -72,12 +72,11 @@ class Abilities {
     String deckId = '',
     SkillMap skills = const SkillMap(),
   }) {
-    final right = grade >= Fsrs.passingGrade;
-    _move(cardId, mode, right ? 1.0 : 0.0, 1);
-    if (!right) return;
+    final result = grade >= Fsrs.passingGrade ? 1.0 : 0.0;
+    _move(cardId, mode, result, 1);
     for (final MapEntry(key: other, value: share)
         in skills.impliedBy(mode, deckId).entries) {
-      _move(cardId, other, 1.0, share, counted: false);
+      _move(cardId, other, result, share, counted: false);
     }
   }
 

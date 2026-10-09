@@ -7,9 +7,12 @@ import '../core/models/review_event.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
+import '../core/scheduling/skill_parameters.dart';
 
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
+export '../core/scheduling/skill_parameters.dart'
+    show FittedParameters, SkillKey, SkillParameters, skillOf;
 
 /// Scheduling state and the review log, as the interface reads them.
 ///
@@ -30,8 +33,9 @@ abstract interface class ProgressStore implements Listenable {
   /// Every review, oldest first. Append-only: nothing is ever removed.
   List<ReviewEvent> get log;
 
-  /// Records a review: runs [Fsrs.next] on the pair's state, appends the
-  /// event, and returns it. Call it the moment the answer is given.
+  /// Records a review: runs [Fsrs.next] on the pair's state, with the
+  /// parameters that schedule its skill ([parameters]), appends the event,
+  /// and returns it. Call it the moment the answer is given.
   ReviewEvent record({
     required String deckId,
     required String cardId,
@@ -59,13 +63,26 @@ abstract interface class ProgressStore implements Listenable {
     required DateTime now,
   });
 
+  /// FSRS's parameters fitted to the learner, by language and skill, and
+  /// which set schedules each pair (`SkillParameters`).
+  SkillParameters get parameters;
+
+  /// Keeps [value] as the fit of [key], replacing the one before, and
+  /// rebuilds every state with the parameters it gives: the skill's pairs
+  /// in that language, and those of any language that takes its fit as a
+  /// baseline.
+  Future<void> putFitted(SkillKey key, FittedParameters value);
+
   /// Merges a backup (#20): adds the [reviews] and [leechActions] not
-  /// already here, then rebuilds every state from the whole log. Importing
-  /// the same backup twice adds nothing. Returns how many reviews were new.
+  /// already here, and each of the [fitted] parameters unless this store
+  /// has a later fit of its skill, then rebuilds every state from the
+  /// whole log. Importing the same backup twice adds nothing. Returns how
+  /// many reviews were new.
   Future<int> importLog(
     List<LoggedReview> reviews,
-    List<LeechAction> leechActions,
-  );
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted,
+  });
 }
 
 /// Progress held in memory: an FSRS state per `(card, mode)` and the
@@ -76,21 +93,31 @@ abstract interface class ProgressStore implements Listenable {
 class MemoryProgress extends ChangeNotifier implements ProgressStore {
   MemoryProgress();
 
-  /// Progress rebuilt from [events], oldest first, and [leechActions], by
-  /// replaying them as the database does (ADR-0005, [replayReviews]).
+  /// Progress rebuilt from [events], oldest first, [leechActions] and the
+  /// [fitted] parameters, by replaying them as the database does
+  /// (ADR-0005, [replayReviews]).
   factory MemoryProgress.replaying(
     Iterable<ReviewEvent> events, {
     Iterable<LeechAction> leechActions = const <LeechAction>[],
     SkillMap skills = const SkillMap(),
+    Map<SkillKey, FittedParameters> fitted =
+        const <SkillKey, FittedParameters>{},
   }) {
     final actions = leechActions.toList();
+    final reviews = events.map(logged).toList();
+    final parameters = SkillParameters(
+      fitted: fitted,
+      lastStudied: _lastStudied(reviews),
+    );
     final replayed = replayReviews(
-      events.map(logged),
+      reviews,
       effects: LeechEffects(actions),
       skills: skills,
+      parameters: parameters,
     );
     return MemoryProgress()
       .._skills = skills
+      .._parameters = parameters
       .._log.addAll(replayed.events)
       .._states.addAll(replayed.states)
       .._leechActions.addAll(actions);
@@ -100,6 +127,21 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   final List<ReviewEvent> _log = <ReviewEvent>[];
   final List<LeechAction> _leechActions = <LeechAction>[];
   SkillMap _skills = const SkillMap();
+  SkillParameters _parameters = SkillParameters.none;
+
+  @override
+  SkillParameters get parameters => _parameters;
+
+  static Map<String, DateTime> _lastStudied(Iterable<LoggedReview> reviews) =>
+      SkillParameters.lastStudiedIn(<({String cardId, DateTime at})>[
+        for (final r in reviews) (cardId: r.key.cardId, at: r.at),
+      ]);
+
+  @override
+  Future<void> putFitted(SkillKey key, FittedParameters value) async {
+    _parameters = _parameters.withFit(key, value);
+    _replace(_log.map(logged).toList(), _leechActions.toList());
+  }
 
   @override
   bool get persists => false;
@@ -142,6 +184,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       grade,
       now: now,
       rated: answerGiven == null,
+      parameters: _parameters.forPair(key),
     );
     final event = ReviewEvent(
       at: now,
@@ -155,9 +198,19 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       after: after,
     );
     _states[key] = after;
-    implyReview(_states, _skills, logged(event));
+    implyReview(_states, _skills, logged(event), parameters: _parameters);
     _log.add(event);
-    notifyListeners();
+    // A language studied now may become another's baseline: when that
+    // changes which set schedules a pair, every state is replayed with the
+    // new choice, so that the states are always what the replay gives.
+    final studied = _parameters.studied(skillOf(key).language, now);
+    if (studied.sameAs(_parameters)) {
+      _parameters = studied;
+      notifyListeners();
+    } else {
+      _parameters = studied;
+      _replace(_log.map(logged).toList(), _leechActions.toList());
+    }
     return event;
   }
 
@@ -177,6 +230,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       _log.map(logged),
       effects: LeechEffects(_leechActions),
       skills: _skills,
+      parameters: _parameters,
     );
     _states
       ..clear()
@@ -188,8 +242,10 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   @override
   Future<int> importLog(
     List<LoggedReview> reviews,
-    List<LeechAction> leechActions,
-  ) async {
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted =
+        const <SkillKey, FittedParameters>{},
+  }) async {
     final known = <String>{for (final e in _log) reviewIdentity(logged(e))};
     final fresh = <LoggedReview>[
       for (final r in reviews)
@@ -203,6 +259,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       for (final a in leechActions)
         if (knownActions.add(leechIdentity(a))) a,
     ]);
+    _parameters = _parameters.merged(fitted);
     _replace(
       inTimeOrder(<LoggedReview>[..._log.map(logged), ...fresh]),
       actions,
@@ -210,20 +267,29 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     return fresh.length;
   }
 
-  /// Everything replaced by [events] and [leechActions], and the states
-  /// rebuilt from them. For an import (#20).
-  void replaceWith(List<ReviewEvent> events, List<LeechAction> leechActions) =>
-      _replace(
-        inTimeOrder(events.map(logged)),
-        actionsInTimeOrder(leechActions),
-      );
+  /// Everything replaced by [events], [leechActions] and the [fitted]
+  /// parameters, and the states rebuilt from them. For an import (#20).
+  void replaceWith(
+    List<ReviewEvent> events,
+    List<LeechAction> leechActions, {
+    required Map<SkillKey, FittedParameters> fitted,
+  }) {
+    _parameters = SkillParameters(fitted: fitted);
+    _replace(inTimeOrder(events.map(logged)), actionsInTimeOrder(leechActions));
+  }
 
-  /// [reviews] and [actions] are oldest first.
+  /// [reviews] and [actions] are oldest first. The languages' last studies
+  /// are taken from [reviews].
   void _replace(List<LoggedReview> reviews, List<LeechAction> actions) {
+    _parameters = SkillParameters(
+      fitted: _parameters.fitted,
+      lastStudied: _lastStudied(reviews),
+    );
     final replayed = replayReviews(
       reviews,
       effects: LeechEffects(actions),
       skills: _skills,
+      parameters: _parameters,
     );
     _log
       ..clear()
@@ -241,10 +307,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 /// Questions every screen asks of a [ProgressStore], answered the same way
 /// everywhere. Pure reads of [ProgressStore.states] and [ProgressStore.log].
 extension ProgressQueries on ProgressStore {
-  /// The review log and leech actions as a JSONL backup (#20).
+  /// The review log, leech actions and fitted parameters as a JSONL
+  /// backup (#20).
   String exportJsonl() => LogJsonl.encode(
     inTimeOrder(log.map(logged)),
     actionsInTimeOrder(leechActions),
+    fitted: parameters.fitted,
   );
 
   /// What the leech actions add up to: which pairs are reset or set aside.
@@ -258,7 +326,13 @@ extension ProgressQueries on ProgressStore {
     DrillMode mode,
     int grade, {
     required DateTime now,
-  }) => Fsrs.next(stateOf(cardId, mode), grade, now: now, rated: true);
+  }) => Fsrs.next(
+    stateOf(cardId, mode),
+    grade,
+    now: now,
+    rated: true,
+    parameters: parameters.forPair((cardId: cardId, mode: mode)),
+  );
 
   /// New pairs introduced on [day]'s calendar date.
   int newIntroducedOn(DateTime day) =>

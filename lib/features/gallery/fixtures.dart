@@ -4,12 +4,14 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
 import '../../app/memory_progress.dart';
+import '../../app/pacing.dart';
 import '../../app/profile.dart';
 import '../../app/session.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/scheduling/fsrs.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../core/tts/fixed_tts_engine.dart';
 import '../../core/updates/apk_install.dart';
@@ -82,7 +84,31 @@ abstract final class GalleryFixtures {
       currentProfileId: currentProfileId,
       // The same order of options in every screenshot.
       random: Random(0),
+      // How you learn's figures at once, on the fixture's few reviews, so
+      // that a preview never waits on an isolate.
+      paceRunner: paceInPlace,
     );
+  }
+
+  /// [state] with Spanish fitted to its learner, as Settings' "Adjust to
+  /// me" would keep it: Recognition remembered well (fewer reviews), Write
+  /// slipping faster (more reviews). w8 is how much a right answer
+  /// lengthens the gap.
+  static AppState adjusted(AppState state) {
+    FittedParameters fit(double w8) => FittedParameters(
+      values: <double>[
+        for (final (i, w) in Fsrs.w.indexed) i == 8 ? w + w8 : w,
+      ],
+      fittedAt: state.now(),
+      reviewCount: 12,
+      lossBefore: 0.4,
+      lossAfter: 0.3,
+    );
+    // A store in memory keeps a fit at once.
+    state.progress
+      ..putFitted((language: 'es', mode: DrillMode.recognition), fit(0.6))
+      ..putFitted((language: 'es', mode: DrillMode.production), fit(-0.6));
+    return state;
   }
 
   /// The decks the design's history is drawn on. Only these get history,

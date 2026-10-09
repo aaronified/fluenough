@@ -13,6 +13,7 @@ import 'app/ota_installer.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/report_mail.dart';
+import 'app/system_settings.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
@@ -45,6 +46,7 @@ Future<void> main() async {
         speech: SystemSpeechEngine(),
         volume: SystemVolumeMonitor(),
         soundCheck: SystemSoundCheck(),
+        systemSettings: const ChannelSystemSettings(),
         reports: const MailReportSender(
           address: AppLinks.feedbackEmail,
           links: LauncherLinks(),

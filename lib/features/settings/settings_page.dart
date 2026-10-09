@@ -21,13 +21,15 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
+import 'adjust_section.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
 import 'settings_controls.dart';
 import 'sources_page.dart';
 import 'update_section.dart';
 
-/// The Settings tab: the profile card, learning, sound, look and language,
+/// The Settings tab: the profile card, learning, "Adjust to me" (FSRS fitted
+/// to the learner, [AdjustSection]), sound, look and language,
 /// reminder and privacy, your data, a row to the sources the decks name, cloud
 /// backup, updates, and the footer.
 ///
@@ -68,6 +70,8 @@ class SettingsPage extends StatelessWidget {
                     const _ProfileCard(),
                     const SizedBox(height: 20),
                     _learning(context, state),
+                    const SizedBox(height: 20),
+                    const AdjustSection(),
                     const SizedBox(height: 20),
                     _sound(context, state),
                     const SizedBox(height: 20),
@@ -592,6 +596,7 @@ class SettingsPage extends StatelessWidget {
       added = await state.progress.importLog(
         backup.reviews,
         backup.leechActions,
+        fitted: backup.fitted,
       );
     } on FormatException catch (e) {
       if (context.mounted) {
