@@ -29,6 +29,12 @@ mockups.
 - Related: `achievements.md` (#223) plans badges and a summary; this plan
   places them on the path.
 
+## The owner's mockup
+
+The owner is making a mockup of the decks redesign (2026-10-09) and will
+share it; it is the starting point for the discussion and any further
+mockups.
+
 ## Before any code
 
 1. Discuss with the owner: what the path shows, which milestones, and how
