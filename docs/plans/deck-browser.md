@@ -1,7 +1,9 @@
 # Plan: a deck browser for reviewers, on GitHub Pages
 
-Written 2026-10-06. **After the native layers** (`native-layers.md`), the
-owner's order, so that it shows cores and layers as they will be.
+Written 2026-10-06. **Moved ahead, 2026-10-09:** built now, on today's
+deck format, before the native layers (`native-layers.md`), so that
+reviewers can check the Bengali and Telugu B1 decks as they arrive; layer
+support is added when #392 lands (owner).
 
 ## What the owner asked
 
@@ -17,6 +19,31 @@ Decided with the owner:
 - **No sign-in;** a name is optional.
 - **Suggestions go to the Sheet, then become GitHub issues,** labelled
   `priority: highest` and `deck:<deck-id>`, plus the language's label.
+
+## Widened, 2026-10-09 (owner)
+
+> We will also have to build a review pipeline via a github page and
+> linked google sheet
+
+Beyond per-card suggestions, the pages handle:
+
+- **Sign-off per card and deck.** A reviewer marks each card checked or
+  not; once a native speaker has signed off every card of a deck, its
+  `unreviewed` tag can be removed. B1 and offensive decks ship only then.
+- **A separate screen for offensive words,** "so that the reviewer knows
+  what he/she is getting into": it states what it holds before showing
+  anything, and asks for a rater code and an 18+ confirmation.
+- **Offensive-word ratings:** each rater scores each offensive word 1 to 9
+  ("How offensive is this word to people in general?") and gives their
+  region; the Sheet takes the median band and flags a disagreement of a
+  band or more as a region note (`offensive-words.md`).
+- **Similarity confirmations:** reviewers confirm or reject the tool's
+  sound-alike and look-alike pairs and write the care note.
+- **Level suggestions** through the ordinary suggestion box as well.
+- **Rater codes:** the owner gives each reviewer a short private code,
+  kept in the Sheet, not the repository; the page asks for it once and
+  keeps it in the browser. Ratings and sign-offs count per code, so one
+  person cannot stack votes. Plain suggestions still need no code.
 
 ## The form's link is not private
 
