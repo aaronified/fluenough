@@ -15,7 +15,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "खातो", base: "खातो", reading: "khāto" }
+      - { word: "खातो", base: "खाणे", reading: "khāṇe" }
   - id: "mr-0126"
     target: "तो डॉक्टर आहे."
     reading: "to ḍôkṭar āhe."
@@ -25,7 +25,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "तो", base: "तो", reading: "to" }
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
   - id: "mr-0127"
     target: "घरात"
     reading: "gharāt"
@@ -55,7 +55,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "आलो", base: "आलो", reading: "ālo" }
+      - { word: "आलो", base: "येणे", reading: "yeṇe" }
   - id: "mr-0131"
     target: "मी आले."
     reading: "mi āle."
@@ -64,7 +64,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "आले", base: "आले", reading: "āle" }
+      - { word: "आले", base: "येणे", reading: "yeṇe" }
   - id: "mr-0132"
     target: "तो आला."
     reading: "to ālā."
@@ -72,7 +72,7 @@ cards:
     tags: ["grammar", "gender"]
     bases:
       - { word: "तो", base: "तो", reading: "to" }
-      - { word: "आला", base: "आला", reading: "ālā" }
+      - { word: "आला", base: "येणे", reading: "yeṇe" }
   - id: "mr-0133"
     target: "ती आली."
     reading: "ti āli."
@@ -80,7 +80,7 @@ cards:
     tags: ["grammar", "gender"]
     bases:
       - { word: "ती", base: "ती", reading: "ti" }
-      - { word: "आली", base: "आली", reading: "āli" }
+      - { word: "आली", base: "येणे", reading: "yeṇe" }
   - id: "mr-0134"
     target: "ते आले."
     reading: "te āle."
@@ -90,7 +90,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ते", base: "ते", reading: "te" }
-      - { word: "आले", base: "आले", reading: "āle" }
+      - { word: "आले", base: "येणे", reading: "yeṇe" }
   - id: "mr-0135"
     target: "तू ये."
     reading: "tu ye."
@@ -100,7 +100,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "तू", base: "तू", reading: "tu" }
-      - { word: "ये", base: "ये", reading: "ye" }
+      - { word: "ये", base: "येणे", reading: "yeṇe" }
   - id: "mr-0136"
     target: "तुम्ही या."
     reading: "tumhi yā."
@@ -109,7 +109,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "या", base: "या", reading: "yā" }
+      - { word: "या", base: "येणे", reading: "yeṇe" }
   - id: "mr-0137"
     target: "आपण"
     reading: "āpaṇ"
@@ -140,8 +140,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "माझ्याकडे", base: "माझ्याकडे", reading: "mājhyākaḍe" }
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "माझ्याकडे", ref: "mr-0080" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
   - id: "mr-0141"
     target: "मी येणार नाही."
     reading: "mi yeṇār nāhi."
@@ -150,8 +150,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "येणार", base: "येणार", reading: "yeṇār" }
-      - { word: "नाही", base: "नाही", reading: "nāhi" }
+      - { word: "येणार", base: "येणे", reading: "yeṇe" }
+      - { word: "नाही", ref: "mr-0169" }
   - id: "mr-0142"
     target: "वेळ नाही."
     reading: "veḷ nāhi."
@@ -160,7 +160,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "नाही", base: "नाही", reading: "nāhi" }
+      - { word: "नाही", ref: "mr-0169" }
   - id: "mr-0143"
     target: "तुम्ही येणार का?"
     reading: "tumhi yeṇār kā?"
@@ -169,4 +169,4 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "येणार", base: "येणार", reading: "yeṇār" }
+      - { word: "येणार", base: "येणे", reading: "yeṇe" }
