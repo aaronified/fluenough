@@ -7,6 +7,8 @@ import 'app/app_state.dart';
 import 'app/routes.dart';
 import 'app/shell_tab.dart';
 import 'features/decks/decks_page.dart';
+import 'features/downloads/deck_update_prompt.dart';
+import 'features/downloads/download_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
 import 'features/placement/learn_languages_page.dart';
 import 'features/settings/settings_page.dart';
@@ -75,17 +77,39 @@ class _FluenoughAppState extends State<FluenoughApp> {
           onGenerateRoute: AppRoutes.onGenerateRoute,
           navigatorObservers: _observers,
           // The first launch: welcome, tour and the languages the learner
-          // speaks (#118, #53), then which they want to learn, and placement
-          // (#117). Each answer saved rebuilds this on settings. An install
-          // from before #117 is asked the second once.
+          // speaks (#118, #53), then which they want to learn, their first
+          // decks downloaded (#210), and placement (#117). Each answer saved
+          // rebuilds this on settings. An install from before #117 is asked
+          // the second once.
           home: settings.spokenLanguages.isEmpty
               ? const OnboardingFlow()
               : !settings.learningChosen
               ? const LearnLanguagesPage(firstRun: true)
-              : const AppShell(),
+              : const _Home(),
         ),
       ),
     );
+  }
+}
+
+/// The app once the first launch is done: [AppShell], or, while a language
+/// the learner learns has none of its first decks on the phone, the page
+/// that downloads them (#210), as after updating from a version that
+/// bundled its decks. Decided once the catalog is read, so that it never
+/// shows for a moment at launch.
+class _Home extends StatelessWidget {
+  const _Home();
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    final missing = state.missingLanguages;
+    return missing.isEmpty
+        ? const AppShell()
+        : DownloadPage(
+            key: ValueKey<String>(missing.join()),
+            languages: missing,
+          );
   }
 }
 
@@ -110,41 +134,44 @@ class AppShell extends StatelessWidget {
         onPopInvokedWithResult: (didPop, _) {
           if (!didPop) tab.value = ShellTab.today;
         },
-        child: Scaffold(
-          body: IndexedStack(
-            index: current.index,
-            children: const <Widget>[
-              TodayPage(),
-              DecksPage(),
-              StatsPage(),
-              SettingsPage(),
-            ],
-          ),
-          bottomNavigationBar: NavigationBar(
-            selectedIndex: current.index,
-            onDestinationSelected: (i) => tab.value = ShellTab.values[i],
-            destinations: <Widget>[
-              NavigationDestination(
-                icon: const Icon(Icons.home_outlined),
-                selectedIcon: const Icon(Icons.home),
-                label: l10n.navToday,
-              ),
-              NavigationDestination(
-                icon: const Icon(Icons.style_outlined),
-                selectedIcon: const Icon(Icons.style),
-                label: l10n.navDecks,
-              ),
-              NavigationDestination(
-                icon: const Icon(Icons.insert_chart_outlined),
-                selectedIcon: const Icon(Icons.insert_chart),
-                label: l10n.navProgress,
-              ),
-              NavigationDestination(
-                icon: const _SettingsIcon(Icons.settings_outlined),
-                selectedIcon: const _SettingsIcon(Icons.settings),
-                label: l10n.navSettings,
-              ),
-            ],
+        // Asks whether to download a deck update the daily check found.
+        child: DeckUpdatePrompt(
+          child: Scaffold(
+            body: IndexedStack(
+              index: current.index,
+              children: const <Widget>[
+                TodayPage(),
+                DecksPage(),
+                StatsPage(),
+                SettingsPage(),
+              ],
+            ),
+            bottomNavigationBar: NavigationBar(
+              selectedIndex: current.index,
+              onDestinationSelected: (i) => tab.value = ShellTab.values[i],
+              destinations: <Widget>[
+                NavigationDestination(
+                  icon: const Icon(Icons.home_outlined),
+                  selectedIcon: const Icon(Icons.home),
+                  label: l10n.navToday,
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.style_outlined),
+                  selectedIcon: const Icon(Icons.style),
+                  label: l10n.navDecks,
+                ),
+                NavigationDestination(
+                  icon: const Icon(Icons.insert_chart_outlined),
+                  selectedIcon: const Icon(Icons.insert_chart),
+                  label: l10n.navProgress,
+                ),
+                NavigationDestination(
+                  icon: const _SettingsIcon(Icons.settings_outlined),
+                  selectedIcon: const _SettingsIcon(Icons.settings),
+                  label: l10n.navSettings,
+                ),
+              ],
+            ),
           ),
         ),
       ),

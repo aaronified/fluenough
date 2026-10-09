@@ -45,6 +45,7 @@ it on macOS or Windows, or generated the iOS folder.
 
 ```sh
 # Decks — no Flutter toolchain needed, just Python 3.11+ and PyYAML
+python3 tools/deck_index.py                     # after any change to decks/
 python3 tools/validate_decks.py decks/          # 0 ok, 1 errors, 2 bad args
 
 # Code — needs the Flutter SDK (3.47+)
@@ -81,7 +82,8 @@ and why Waydroid cannot test audio, is in
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
-| `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`); the language's path, `<lang>-path.yaml`, shared by every native language | very low |
+| `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`); the language's path, `<lang>-path.yaml`, shared by every native language. The app downloads them from `main` (ADR-0037) | very low |
+| `decks/index.json` | What the app downloads, written by `tools/deck_index.py`; CI fails while it is stale | low — regenerate, never hand-edit |
 | `tools/` | Python deck validator and importer | low |
 | `docs/adr/` | Architecture decision records | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
