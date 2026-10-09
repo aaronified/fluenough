@@ -91,6 +91,18 @@ void main() {
       ]);
     });
 
+    test('a first word on the edge of the biased zone draws no more', () {
+      // Seed 6067767's first word, 1128267775, makes the low half of its
+      // product with 12! (the range of the first draw) exactly 2^32 - 12!:
+      // `lo_order > range.wrapping_neg()` is false there, so no extra word
+      // is drawn, and what follows is Rust's. Found by scanning seeds.
+      expect(words(6067767, 2), <int>[1128267775, 1307703374]);
+      expect(shuffles(6067767, 20, 2).map((order) => order.join(' ')), <String>[
+        '13 10 19 15 1 18 9 4 7 8 2 6 5 3 17 11 0 12 14 16',
+        '9 18 13 1 0 2 8 3 5 19 4 15 12 10 16 17 7 11 14 6',
+      ]);
+    });
+
     test('nothing to shuffle draws nothing', () {
       final rng = RustStdRng.seedFromU64(2023);
       rng
