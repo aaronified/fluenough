@@ -248,6 +248,9 @@ class ReviewPage extends StatelessWidget {
               review: state.reviewing.reviewOf(deck, card),
               onOpen: () => _open(context, state, deck, card, adult),
               onSuggest: () => _suggest(context, state, deck, card),
+              onRate: isRudeIn(deck, card)
+                  ? () => _rate(context, deck, card)
+                  : null,
             ),
         ],
       ),
@@ -282,6 +285,14 @@ class ReviewPage extends StatelessWidget {
         if (pair != null) {
           await showAlikeSheet(context, deck: deck, card: card, pair: pair);
         }
+    }
+  }
+
+  /// Rates the rude word [card], and suggests a change if asked from there.
+  Future<void> _rate(BuildContext context, DeckEntry deck, Card card) async {
+    final suggest = await showRateSheet(context, deck: deck, card: card);
+    if (suggest == true && context.mounted) {
+      await showSuggestSheet(context, deck: deck, card: card);
     }
   }
 
@@ -338,6 +349,7 @@ class _ReviewRow extends StatelessWidget {
     required this.review,
     required this.onOpen,
     required this.onSuggest,
+    this.onRate,
   });
 
   final DeckEntry deck;
@@ -346,16 +358,27 @@ class _ReviewRow extends StatelessWidget {
   final VoidCallback onOpen;
   final VoidCallback onSuggest;
 
+  /// For a rude word, which is rated rather than marked right.
+  final VoidCallback? onRate;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final state = AppScope.read(context);
+    final onRate = this.onRate;
     final reading = card.reading;
     final review = this.review;
     final LanguageInfo language = deck.language;
     final Widget mark = switch (review) {
+      _ when onRate != null => FilledButton.tonalIcon(
+        onPressed: onRate,
+        icon: const Icon(Icons.bar_chart, size: 18),
+        label: Text(
+          review?.rating == null ? l10n.reviewRateShort : l10n.reviewRatedShort,
+        ),
+      ),
       CardReview(suggestion: _?) => Semantics(
         label: l10n.reviewSuggestionSaved,
         excludeSemantics: true,
