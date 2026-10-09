@@ -88,6 +88,36 @@ Future<void> tapShown(WidgetTester tester, Finder finder) async {
   await tester.tap(finder);
 }
 
+/// Scrolls the screen's list, where a tap target is cut by the list's top
+/// edge, until that target is whole at the top. A screen that opens part
+/// way down a list, as the path opens at the unit up next, cuts the row
+/// above wherever it stops; the tap-target guidelines skip a node cut by
+/// the screen's edge for that reason, but not one cut by a list's edge
+/// below the app bar. Every target on the screen is still checked.
+Future<void> noTargetCutAtTop(WidgetTester tester) async {
+  final list = find.byWidgetPredicate(
+    (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+  );
+  if (list.evaluate().isEmpty) return;
+  final top = tester.getTopLeft(list.first).dy;
+  final targets = find.descendant(
+    of: list.first,
+    matching: find.byWidgetPredicate(
+      (w) => w is InkWell || (w is Semantics && w.properties.button == true),
+    ),
+  );
+  for (final element in targets.evaluate()) {
+    final box = element.renderObject;
+    if (box is! RenderBox || !box.hasSize) continue;
+    final rect = box.localToGlobal(Offset.zero) & box.size;
+    if (rect.top < top - 0.5 && rect.bottom > top + 0.5) {
+      await Scrollable.ensureVisible(element);
+      await tester.pumpAndSettle();
+      return;
+    }
+  }
+}
+
 void main() {
   group('deck content in an interface string is read in its language', () {
     const spanish = LanguageInfo(
@@ -426,6 +456,7 @@ void main() {
             state: await teluguLearner(),
             themeMode: themeMode,
           );
+          await noTargetCutAtTop(tester);
           await meetsEveryGuideline(tester);
           semantics.dispose();
         });
