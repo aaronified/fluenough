@@ -36,6 +36,8 @@ class PlacementPage extends StatefulWidget {
     required this.onFinished,
     this.random,
     this.checking = false,
+    this.alphabet = const <String, bool>{},
+    this.natives = const <String, String>{},
   });
 
   /// Language codes, in the order they are placed.
@@ -50,6 +52,15 @@ class PlacementPage extends StatefulWidget {
   /// level had been chosen.
   final bool checking;
 
+  /// Whether to learn each language's alphabet, by code, where the
+  /// language picker has asked already ("Learn the script", #211): its
+  /// alphabet stage is skipped.
+  final Map<String, bool> alphabet;
+
+  /// The language each is learned from, by code, where the picker has
+  /// asked already: its native stage is skipped.
+  final Map<String, String> natives;
+
   @override
   State<PlacementPage> createState() => _PlacementPageState();
 }
@@ -61,8 +72,8 @@ class _PlacementPageState extends State<PlacementPage> {
   _Stage? _stageSet;
   Placement? _placement;
   final Map<String, Set<String>> _placed = <String, Set<String>>{};
-  final Map<String, bool> _alphabet = <String, bool>{};
-  final Map<String, String> _natives = <String, String>{};
+  late final Map<String, bool> _alphabet = <String, bool>{...widget.alphabet};
+  late final Map<String, String> _natives = <String, String>{...widget.natives};
 
   String get _code => widget.languages[_index];
 
@@ -71,7 +82,8 @@ class _PlacementPageState extends State<PlacementPage> {
   /// [_afterNative].
   _Stage get _stage =>
       _stageSet ??
-      (AppScope.read(context).needsNativeChoice(_code)
+      (!_natives.containsKey(_code) &&
+              AppScope.read(context).needsNativeChoice(_code)
           ? _Stage.native
           : _afterNative);
   set _stage(_Stage stage) => _stageSet = stage;
@@ -79,7 +91,9 @@ class _PlacementPageState extends State<PlacementPage> {
   /// The alphabet, for a course that has decks needing it, else whether the
   /// learner knows any.
   _Stage get _afterNative =>
-      AppScope.read(context).hasAlphabet(_code) ? _Stage.alphabet : _Stage.ask;
+      !_alphabet.containsKey(_code) && AppScope.read(context).hasAlphabet(_code)
+      ? _Stage.alphabet
+      : _Stage.ask;
 
   void _chooseNative(String native) => setState(() {
     _natives[_code] = native;
