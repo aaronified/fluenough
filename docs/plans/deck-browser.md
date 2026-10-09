@@ -105,6 +105,20 @@ Settled with the owner, 2026-10-09:
   the Fluenough address and the subject (with the rater code) filled in,
   opening the reviewer's mail app; the reviewer sends it (owner,
   2026-10-09). iOS needs its own later.
+- **Several decks in one mail** (owner, 2026-10-09: "the reviewer should
+  be able to send multiple decks for review at the same time as well. and
+  this needs to be communicated at every important juncture as well (when
+  signing up, or when sending the mail)"). Reviews of every deck stay on
+  the phone until sent. "Send review", on any deck or from Settings'
+  "Reviews to send" row, opens one send sheet listing every deck with
+  unsent reviews, all ticked; the reviewer can untick any. One mail goes
+  out (ACTION_SEND_MULTIPLE) with one file per deck; its subject carries
+  the rater code and the languages, its body lists each deck and its
+  count. The workflow opens one issue per mail, with the code and the
+  languages. Said at each step: the turn-on dialog ("review as many decks
+  as you like, and send them together in one mail"), "How reviewing
+  works", the deck's foot ("3 decks waiting to send"), the send sheet, and
+  the mail's body.
 - **The first mail binds the code to its sender** (owner, 2026-10-09): the
   first review mail with a new code ties that code to the sender's
   address. The workflow keeps, in a file in the repository, the code with
