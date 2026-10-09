@@ -1,82 +1,73 @@
 schema: 1
-id: hi-en-grammar-likes
-name: "Likes and dislikes"
-kind: vocab
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "पसंद (pasand), अच्छा लगना (acchā lagnā) and प्यार करना (pyār karnā): what you like, enjoy and love. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "hi-grammar-likes"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 cards:
-  - id: hi-0469
+  - id: "hi-0469"
     target: "पसंद"
-    native: "liking; choice"
     reading: "pasand"
     ipa: "pəsənd̪"
     pos: "noun"
     gender: "f"
-    notes: "The liker takes को (kō): मुझे (mujhē), उसे (usē), आपको (āpkō) … पसंद है (pasand hai)."
-  - id: hi-0470
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0470"
     target: "मुझे मिठाई पसंद है।"
-    native: "I like sweets."
     reading: "mujhē miṭhāī pasand hai."
     ipa: "mʊdʒʱeː mɪʈʰaːiː pəsənd̪ ɦɛː"
     pos: "phrase"
-  - id: hi-0471
+  - id: "hi-0471"
     target: "मुझे यह गाना पसंद नहीं है।"
-    native: "I don't like this song."
     reading: "mujhē yah gānā pasand nahīm̐ hai."
     ipa: "mʊdʒʱeː jəɦ ɡaːnaː pəsənd̪ nəɦĩː ɦɛː"
     pos: "phrase"
-  - id: hi-0472
+  - id: "hi-0472"
     target: "क्या आपको दिल्ली पसंद है?"
-    native: "Do you like Delhi?"
     reading: "kyā āpkō dillī pasand hai?"
     ipa: "kjaː aːpkoː d̪ɪlliː pəsənd̪ ɦɛː"
     pos: "phrase"
-  - id: hi-0473
+  - id: "hi-0473"
     target: "मुझे अच्छा लगता है।"
-    native: "I like it; I enjoy it."
     reading: "mujhē acchā lagtā hai."
     ipa: "mʊdʒʱeː ətʃtʃʰaː ləɡt̪aː ɦɛː"
     pos: "phrase"
-    notes: "'To me it feels good'. For a single moment: मुझे अच्छा लगा (mujhē acchā lagā), I enjoyed it."
-  - id: hi-0474
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0474"
     target: "बहुत अच्छा लगा।"
-    native: "I really enjoyed it."
     reading: "bahut acchā lagā."
     ipa: "bəɦʊt̪ ətʃtʃʰaː ləɡaː"
     pos: "phrase"
-  - id: hi-0475
+  - id: "hi-0475"
     target: "प्यार"
-    native: "love"
     reading: "pyār"
     ipa: "pjaːr"
     pos: "noun"
     gender: "m"
-  - id: hi-0476
+  - id: "hi-0476"
     target: "मैं तुमसे प्यार करता हूँ।"
-    native: "I love you. (said by a man)"
     reading: "maim̐ tumsē pyār kartā hūm̐."
     ipa: "mɛ̃ː t̪ʊmseː pjaːr kərt̪aː ɦũː"
     pos: "phrase"
-    notes: "A woman says प्यार करती हूँ (pyār kartī hūm̐). You love से (sē) someone, not को (kō)."
-  - id: hi-0477
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0477"
     target: "उसे क्रिकेट खेलना पसंद है।"
-    native: "He likes playing cricket. / She likes playing cricket."
     reading: "usē krikēṭ khēlnā pasand hai."
     ipa: "ʊseː krɪkeːʈ kʰeːlnaː pəsənd̪ ɦɛː"
     pos: "phrase"
-  - id: hi-0478
+  - id: "hi-0478"
     target: "मुझे तीखा खाना पसंद नहीं।"
-    native: "I don't like spicy food."
     reading: "mujhē tīkhā khānā pasand nahīm̐."
     ipa: "mʊdʒʱeː t̪iːkʰaː kʰaːnaː pəsənd̪ nəɦĩː"
     pos: "phrase"
-  - id: hi-0479
+  - id: "hi-0479"
     target: "पसंदीदा"
-    native: "favourite"
     reading: "pasandīdā"
     ipa: "pəsənd̪iːd̪aː"
     pos: "adj"
-    notes: "मेरा पसंदीदा गाना (mērā pasandīdā gānā), my favourite song."
+    notes:
+      - { id: "n1", kind: "note" }
