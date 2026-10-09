@@ -55,15 +55,23 @@ than hard-coded rules. Adding a language means adding files, never code.
   language and skill, from your own answers.
 - **Your learning stays on the phone.** There is no account, progress is
   saved on the phone, and nothing is sent anywhere to fit your schedule. The
-  app goes online only to check for updates and to send a report you choose
-  to send.
+  app goes online only to download decks, to check for updates and to send a
+  report you choose to send. Downloading decks, like the update check, tells
+  GitHub the phone's IP address and which files it asked for; nothing else.
 
 ## Courses
 
 Taught from English: Assamese, Bengali, Gujarati, Hindi, Kannada, Marathi and
 Telugu, each starting with its script decks and a script guide. Spanish is
-started. Japanese (`decks/ja/`) is kept in the repository but not bundled in
+started. Japanese (`decks/ja/`) is kept in the repository but not offered in
 the app for now. See [docs/ROADMAP.md](docs/ROADMAP.md).
+
+The app comes with no decks. It downloads a language's decks from this
+repository's `main` branch when you choose it, and you can start once its
+first five are in; after that it works offline. Fixed and new decks arrive
+without an app update: once a day at most it asks whether to fetch them, and
+Settings > Deck downloads lists each language, with Update and Remove
+([ADR-0037](docs/adr/0037-decks-download-from-main.md)).
 
 <!--
 Screenshots: the owner will add the app screenshots here (a "Screenshots"
@@ -148,8 +156,8 @@ worked example. The courses taught from English (Assamese, Bengali, Gujarati,
 Hindi, Kannada, Marathi and Telugu) each start with their script decks and a
 script guide; Spanish is started. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
-Japanese (`decks/ja/`) is kept in the repository but not bundled in the app for
-now.
+Japanese (`decks/ja/`) is kept in the repository but not offered in the app
+for now.
 
 </details>
 
@@ -247,7 +255,9 @@ people type for one sound. To write a reading and IPA for a new card, run
 ## Decks
 
 Decks are YAML files under [`decks/`](decks/), versioned in git like any other
-source. They are diffable, reviewable, and contributed as pull requests.
+source. They are diffable, reviewable, and contributed as pull requests. The
+app downloads them from `main`, by `decks/index.json`, so a merged deck
+reaches learners without a release.
 
 <details>
 <summary><b>A deck, and how to validate it</b></summary>
@@ -271,10 +281,12 @@ The full specification is in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
 Validate any deck before opening a pull request:
 
 ```sh
+python3 tools/deck_index.py            # write decks/index.json again
 python3 tools/validate_decks.py decks/
 ```
 
-The validator needs only Python 3.11+ and PyYAML — no Flutter toolchain.
+The validator needs only Python 3.11+ and PyYAML — no Flutter toolchain. It
+fails while `decks/index.json` is out of date.
 
 </details>
 
