@@ -23,6 +23,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
+import '../review/review_section.dart';
 import 'adjust_section.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
@@ -32,8 +33,9 @@ import 'update_section.dart';
 
 /// The Settings tab: the profile card, learning, "Adjust to me" (FSRS fitted
 /// to the learner, [AdjustSection]), sound, look and language,
-/// reminder and privacy, your data, a row to the sources the decks name, cloud
-/// backup, updates, and the footer.
+/// reminder and privacy, your data, reviewing ([ReviewSection]), logs, a
+/// row to the sources the decks name, cloud backup, updates, and the
+/// footer.
 ///
 /// Design screen `settings`. Live, in memory until #15 stores them: new cards
 /// per day, the skill switches, romanisation, sound, playing
@@ -83,6 +85,9 @@ class SettingsPage extends StatelessWidget {
                     _reminder(context, state),
                     const SizedBox(height: 20),
                     _data(context, state),
+                    const SizedBox(height: 20),
+                    // Reviewer mode (docs/plans/deck-browser.md).
+                    const ReviewSection(),
                     const SizedBox(height: 20),
                     _logs(context, state),
                     // Where the decks' texts come from (#98), on a page of

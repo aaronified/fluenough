@@ -1,0 +1,135 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
+import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/snack.dart';
+import 'how_reviewing_works.dart';
+import 'send_reviews_sheet.dart';
+
+/// Settings' Reviewing group (docs/plans/deck-browser.md): the "Review
+/// decks" switch, which asks once and then shows the rater code the phone
+/// made, with Copy; the decks waiting to send; the decks the reviewer
+/// helped build; and "How reviewing works", which opens by itself the
+/// first time reviewing is turned on.
+///
+/// Turning reviewing off keeps the code and the reviews.
+class ReviewSection extends StatelessWidget {
+  const ReviewSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    // What it shows is kept in the settings, which notify on their own.
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) => _build(context, state),
+    );
+  }
+
+  Widget _build(BuildContext context, AppState state) {
+    final l10n = AppLocalizations.of(context)!;
+    final reviewing = state.reviewing;
+    final code = reviewing.code;
+    final on = reviewing.on && code != null;
+    final waiting = reviewing.unsent.length;
+    final helped = <String>[
+      if (code != null)
+        for (final entry in state.decks)
+          if (reviewing.helpedBuild(entry))
+            l10n.reviewSettingsHelpedDeck(entry.deck.name, entry.language.name),
+    ];
+    return GroupedList.settings(
+      header: l10n.reviewSettingsSection,
+      children: <Widget>[
+        GroupedTile.toggle(
+          leading: const Icon(Icons.rate_review_outlined),
+          title: l10n.reviewSettingsSwitch,
+          subtitle: l10n.reviewSettingsSwitchDesc,
+          value: on,
+          onChanged: (value) =>
+              value ? _turnOn(context, state) : reviewing.turnOff(),
+        ),
+        if (on)
+          GroupedTile(
+            leading: const Icon(Icons.key_outlined),
+            title: l10n.reviewSettingsCode,
+            subtitle: '$code',
+            trailing: IconButton(
+              tooltip: l10n.reviewSettingsCopy,
+              icon: const Icon(Icons.copy_outlined),
+              onPressed: () async {
+                await Clipboard.setData(ClipboardData(text: '$code'));
+                if (context.mounted) {
+                  showAppSnackBar(context, l10n.reviewSettingsCopied);
+                }
+              },
+            ),
+          ),
+        if (waiting > 0)
+          GroupedTile(
+            leading: const Icon(Icons.outbox_outlined),
+            title: l10n.reviewSettingsToSend,
+            subtitle: l10n.reviewDecksWaiting(waiting),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => showSendReviews(context),
+          ),
+        if (helped.isNotEmpty)
+          GroupedTile(
+            leading: const Icon(Icons.favorite_outline),
+            title: l10n.reviewSettingsHelped,
+            subtitle: helped.join('\n'),
+          ),
+        GroupedTile(
+          leading: const Icon(Icons.info_outline),
+          title: l10n.reviewSettingsHow,
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => showHowReviewingWorks(context),
+        ),
+      ],
+    );
+  }
+
+  /// Asks once, then turns reviewing on, and the first time opens "How
+  /// reviewing works" by itself.
+  static Future<void> _turnOn(BuildContext context, AppState state) async {
+    final yes = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        final muted = Theme.of(context).textTheme.bodyMedium!
+            .copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant);
+        return AlertDialog(
+          title: Text(l10n.reviewTurnOnTitle),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 12,
+              children: <Widget>[
+                Text(l10n.reviewTurnOnBody, style: muted),
+                Text(l10n.reviewTurnOnMany, style: muted),
+                Text(l10n.reviewTurnOnPublic, style: muted),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.commonCancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.reviewTurnOn),
+            ),
+          ],
+        );
+      },
+    );
+    if (yes != true) return;
+    final first = state.reviewing.turnOn();
+    if (first && context.mounted) await showHowReviewingWorks(context);
+  }
+}

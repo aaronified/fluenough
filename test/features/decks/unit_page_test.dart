@@ -5,6 +5,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/number_practice_tile.dart';
@@ -15,6 +16,7 @@ import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
 
 import '../../support/harness.dart';
@@ -294,19 +296,48 @@ void main() {
     expect(button.onPressed, isNull);
   });
 
-  testWidgets('Review is a stub until reviewer mode: it says so', (
-    tester,
-  ) async {
+  testWidgets('Review, with reviewing off, says to turn it on in Settings '
+      'first, and goes there', (tester) async {
     usePhone(tester);
-    await pumpScreen(
+    final state = await pumpScreen(
       tester,
       const UnitPage(deckId: 'te-en-family'),
       state: await teluguLearner(),
     );
     final l10n = l10nOf(tester);
     await tester.tap(find.text(l10n.unitReview));
-    await tester.pump();
-    expect(find.text(l10n.incomingSnackBar), findsOneWidget);
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reviewFirstTitle), findsOneWidget);
+    expect(find.text(l10n.reviewFirstBody('Telugu')), findsOneWidget);
+    await tester.tap(find.text(l10n.reviewFirstNotNow));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reviewFirstTitle), findsNothing);
+    expect(state.shellTab.value, isNot(ShellTab.settings));
+
+    await tester.tap(find.text(l10n.unitReview));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewFirstOpenSettings));
+    await tester.pumpAndSettle();
+    expect(state.shellTab.value, ShellTab.settings);
+  });
+
+  testWidgets('Review, with reviewing on, opens the unit\'s review', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final learner = await teluguLearner();
+    learner.reviewing.turnOn();
+    await pumpScreen(
+      tester,
+      const UnitPage(deckId: 'te-en-family'),
+      state: learner,
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text(l10n.unitReview));
+    await tester.pumpAndSettle();
+    expect(find.byType(ReviewPage), findsOneWidget);
+    expect(find.text(l10n.reviewPageTitle('Family')), findsOneWidget);
+    expect(find.text('${learner.reviewing.code}'), findsOneWidget);
   });
 
   testWidgets('the unit\'s decks open their own screens, and the numbers '

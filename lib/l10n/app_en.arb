@@ -5103,5 +5103,796 @@
   "localeOwnIso639_3": "eng",
   "@localeOwnIso639_3": {
     "description": "The ISO 639-3 code of THIS translation's language: hin, urd. Shown beside localeOwnName in the language picker. Not translated."
+  },
+  "reviewSettingsSection": "Reviewing",
+  "@reviewSettingsSection": {
+    "description": "Settings heading over Review decks, the rater code and How reviewing works (docs/plans/deck-browser.md)."
+  },
+  "reviewSettingsSwitch": "Review decks",
+  "@reviewSettingsSwitch": {
+    "description": "Settings switch that turns reviewer mode on: the reviewer checks cards and sends reviews by mail. The app calls this switch Review decks everywhere."
+  },
+  "reviewSettingsSwitchDesc": "Check cards and send your suggestions by mail. The two buttons are “Looks right” and “Suggest a change”.",
+  "@reviewSettingsSwitchDesc": {
+    "description": "Under the Review decks switch. The two quoted names must match reviewLooksRight and reviewSuggest."
+  },
+  "reviewSettingsCode": "Your rater code",
+  "@reviewSettingsCode": {
+    "description": "Settings row label over the reviewer's rater code, FL-XXXX-XXXX-C."
+  },
+  "reviewSettingsCopy": "Copy code",
+  "@reviewSettingsCopy": {
+    "description": "Tooltip of the button that copies the rater code."
+  },
+  "reviewSettingsCopied": "Rater code copied",
+  "@reviewSettingsCopied": {
+    "description": "Shown once the rater code is copied."
+  },
+  "reviewSettingsToSend": "Reviews to send",
+  "@reviewSettingsToSend": {
+    "description": "Settings row that opens the send sheet listing every deck with reviews not sent yet."
+  },
+  "reviewSettingsHelped": "Decks you helped build",
+  "@reviewSettingsHelped": {
+    "description": "Settings row listing the decks that list this reviewer's rater code among their reviewers."
+  },
+  "reviewSettingsHelpedDeck": "{deck} ({language})",
+  "@reviewSettingsHelpedDeck": {
+    "description": "One deck in the Decks you helped build row: the deck's name and its language.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewSettingsHow": "How reviewing works",
+  "@reviewSettingsHow": {
+    "description": "Settings row, and the title of the sheet, that explains reviewing step by step."
+  },
+  "reviewTurnOnTitle": "Review decks?",
+  "@reviewTurnOnTitle": {
+    "description": "Title of the dialog shown when turning Review decks on."
+  },
+  "reviewTurnOnBody": "You get a rater code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
+  "@reviewTurnOnBody": {
+    "description": "First paragraph of the dialog shown when turning Review decks on."
+  },
+  "reviewTurnOnMany": "Review as many decks as you like, and send them together in one mail.",
+  "@reviewTurnOnMany": {
+    "description": "Second paragraph of the turn-on dialog: several decks go in one mail (owner, 2026-10-09)."
+  },
+  "reviewTurnOnPublic": "Rater codes are public, to thank you. Your mail address is not.",
+  "@reviewTurnOnPublic": {
+    "description": "Last paragraph of the turn-on dialog."
+  },
+  "reviewTurnOn": "Turn on",
+  "@reviewTurnOn": {
+    "description": "Button of the turn-on dialog that turns reviewing on."
+  },
+  "reviewHowCodeTitle": "Your rater code",
+  "@reviewHowCodeTitle": {
+    "description": "Step 1 of How reviewing works."
+  },
+  "reviewHowCodeBody": "Turning on reviewing gives you a code, made on this phone. Nothing is sent when you turn it on.",
+  "@reviewHowCodeBody": {
+    "description": "Step 1 of How reviewing works."
+  },
+  "reviewHowCheckTitle": "Check cards",
+  "@reviewHowCheckTitle": {
+    "description": "Step 2 of How reviewing works."
+  },
+  "reviewHowCheckBody": "Open a unit and tap Review. Mark each card that is right, or tap it to suggest a change and say why.",
+  "@reviewHowCheckBody": {
+    "description": "Step 2 of How reviewing works."
+  },
+  "reviewHowSendTitle": "Send by mail",
+  "@reviewHowSendTitle": {
+    "description": "Step 3 of How reviewing works."
+  },
+  "reviewHowSendBody": "Your reviews stay on this phone until you send them. Review as many decks as you like, then tap Send review: one mail takes them all, a file for each deck. Your mail app opens with Fluenough’s address filled in. Read it, then send it.",
+  "@reviewHowSendBody": {
+    "description": "Step 3 of How reviewing works."
+  },
+  "reviewHowSameTitle": "Always use the same address",
+  "@reviewHowSameTitle": {
+    "description": "Step 4 of How reviewing works."
+  },
+  "reviewHowSameBody": "Your first review ties your code to that mail address. A review from another mail address waits until the Fluenough team has checked it. If you change mail address, say so in the mail.",
+  "@reviewHowSameBody": {
+    "description": "Step 4 of How reviewing works."
+  },
+  "reviewHowPublicTitle": "What is public, and thanks",
+  "@reviewHowPublicTitle": {
+    "description": "Step 5 of How reviewing works."
+  },
+  "reviewHowPublicBody": "Fluenough’s public issue list shows your code and the languages you reviewed, so the team knows a review arrived. Your mail address and what you wrote stay private. When a deck you checked is updated, it lists your code, and the app says thank you.",
+  "@reviewHowPublicBody": {
+    "description": "Step 5 of How reviewing works."
+  },
+  "reviewHowAdult": "Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to native speakers in general, not to you.",
+  "@reviewHowAdult": {
+    "description": "Aside in How reviewing works."
+  },
+  "reviewHowOff": "You can turn reviewing off at any time; your code is kept.",
+  "@reviewHowOff": {
+    "description": "Last line of How reviewing works."
+  },
+  "reviewHowGotIt": "Got it",
+  "@reviewHowGotIt": {
+    "description": "Button that closes How reviewing works."
+  },
+  "reviewHowStep": "Step {number}",
+  "@reviewHowStep": {
+    "description": "Read by a screen reader before each step of How reviewing works.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewFirstTitle": "Turn on reviewing first",
+  "@reviewFirstTitle": {
+    "description": "Title of the dialog from a unit's Review button while reviewing is off."
+  },
+  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your rater code. Then come back here.",
+  "@reviewFirstBody": {
+    "description": "Body of the Turn on reviewing first dialog. The quoted name must match reviewSettingsSwitch.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewFirstNotNow": "Not now",
+  "@reviewFirstNotNow": {
+    "description": "Button that closes the Turn on reviewing first dialog."
+  },
+  "reviewFirstOpenSettings": "Open Settings",
+  "@reviewFirstOpenSettings": {
+    "description": "Button of the Turn on reviewing first dialog that goes to Settings."
+  },
+  "reviewThanksTitle": "Thanks for checking this unit",
+  "@reviewThanksTitle": {
+    "description": "On a unit whose decks list the reviewer's rater code, in place of the not-yet-checked notice."
+  },
+  "reviewThanksBy": "{count, plural, =0{Checked by {code}} =1{Checked by {code} and 1 other} other{Checked by {code} and {count} others}}",
+  "@reviewThanksBy": {
+    "description": "Under reviewThanksTitle: the reviewer's own code, and how many other reviewers the unit lists.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      },
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      }
+    }
+  },
+  "reviewPageTitle": "Review · {unit}",
+  "@reviewPageTitle": {
+    "description": "Title of the screen that reviews a unit's cards.",
+    "placeholders": {
+      "unit": {
+        "type": "String",
+        "example": "Family"
+      }
+    }
+  },
+  "reviewPageProgress": "{done}/{total}",
+  "@reviewPageProgress": {
+    "description": "At the top end of the review screen: cards checked of all.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewPageProgressLabel": "{done} of {total} cards checked",
+  "@reviewPageProgressLabel": {
+    "description": "Read by a screen reader for the review screen's progress.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your rater code.",
+  "@reviewPageInfo": {
+    "description": "At the top of the review screen."
+  },
+  "reviewSectionCards": "{count, plural, =1{1 card} other{{count} cards}}",
+  "@reviewSectionCards": {
+    "description": "Beside a deck's name on the review screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewSectionTally": "{right} right · {suggested} suggested",
+  "@reviewSectionTally": {
+    "description": "At the end of a deck's heading on the review screen.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "10"
+      },
+      "suggested": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewRight": "Right",
+  "@reviewRight": {
+    "description": "A card's button on the review screen once it is marked right."
+  },
+  "reviewCheck": "Check",
+  "@reviewCheck": {
+    "description": "A card's button on the review screen before it is marked: tapping it marks it right."
+  },
+  "reviewSuggested": "Suggested",
+  "@reviewSuggested": {
+    "description": "A card's mark on the review screen once a change is suggested."
+  },
+  "reviewMarkRight": "Mark as right",
+  "@reviewMarkRight": {
+    "description": "Read by a screen reader for a card's Check button."
+  },
+  "reviewUnmarkRight": "Marked right. Tap to take it back",
+  "@reviewUnmarkRight": {
+    "description": "Read by a screen reader for a card's Right button."
+  },
+  "reviewSuggestionSaved": "Suggestion saved. Tap to change it",
+  "@reviewSuggestionSaved": {
+    "description": "Read by a screen reader for a card's Suggested button."
+  },
+  "reviewRudeHidden": "{count, plural, =1{1 rude word is hidden} other{{count} rude words are hidden}}. Rude words show only with adult content on (18+).",
+  "@reviewRudeHidden": {
+    "description": "On the review screen of a unit with rude words while adult content is off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSignOff": "Sign off · {count} left",
+  "@reviewSignOff": {
+    "description": "Review screen button, disabled until every card is checked.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewSignOffReady": "Sign off",
+  "@reviewSignOffReady": {
+    "description": "Review screen button once every card is checked: the reviewer vouches for the unit."
+  },
+  "reviewSignedOff": "Signed off",
+  "@reviewSignedOff": {
+    "description": "Review screen button once the unit is signed off."
+  },
+  "reviewSignedOffDone": "Signed off. Send your review when you are ready.",
+  "@reviewSignedOffDone": {
+    "description": "Shown once a unit is signed off."
+  },
+  "reviewSend": "Send review",
+  "@reviewSend": {
+    "description": "Button that opens the send sheet, on the review screen."
+  },
+  "reviewDecksWaiting": "{count, plural, =1{1 deck waiting to send} other{{count} decks waiting to send}}",
+  "@reviewDecksWaiting": {
+    "description": "Over the review screen's buttons, and under Reviews to send in Settings.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewCardLine": "{id} · {state}",
+  "@reviewCardLine": {
+    "description": "Top line of a card in review: its id and where its review stands.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "state": {
+        "type": "String",
+        "example": "Not reviewed"
+      }
+    }
+  },
+  "reviewCardLinePos": "{id} · {pos} · {state}",
+  "@reviewCardLinePos": {
+    "description": "Top line of a card in review: its id, its part of speech as the deck gives it, and where its review stands.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "pos": {
+        "type": "String",
+        "example": "noun"
+      },
+      "state": {
+        "type": "String",
+        "example": "Not reviewed"
+      }
+    }
+  },
+  "reviewStateNot": "Not reviewed",
+  "@reviewStateNot": {
+    "description": "A card's review state."
+  },
+  "reviewStateRight": "Looks right",
+  "@reviewStateRight": {
+    "description": "A card's review state."
+  },
+  "reviewStateSuggested": "Suggested",
+  "@reviewStateSuggested": {
+    "description": "A card's review state."
+  },
+  "reviewLooksRight": "Looks right",
+  "@reviewLooksRight": {
+    "description": "Button on a card in review that marks it right."
+  },
+  "reviewSuggest": "Suggest a change",
+  "@reviewSuggest": {
+    "description": "Button on a card in review, and the title of its sheet."
+  },
+  "reviewSuggestOn": "Suggest a change to {word}",
+  "@reviewSuggestOn": {
+    "description": "Read by a screen reader for the pencil button on a card's row.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "daughter"
+      }
+    }
+  },
+  "reviewSuggestWhich": "Which part?",
+  "@reviewSuggestWhich": {
+    "description": "Over the part chips in Suggest a change."
+  },
+  "reviewPartWord": "Word",
+  "@reviewPartWord": {
+    "description": "Part of a card: the word in the language learned."
+  },
+  "reviewPartReading": "Reading",
+  "@reviewPartReading": {
+    "description": "Part of a card: its romanisation."
+  },
+  "reviewPartIpa": "IPA",
+  "@reviewPartIpa": {
+    "description": "Part of a card: how it is said, in the IPA."
+  },
+  "reviewPartMeaning": "Meaning",
+  "@reviewPartMeaning": {
+    "description": "Part of a card: its meaning."
+  },
+  "reviewPartNotes": "Notes",
+  "@reviewPartNotes": {
+    "description": "Part of a card: its note."
+  },
+  "reviewPartExample": "Example",
+  "@reviewPartExample": {
+    "description": "Part of a card: its example sentence."
+  },
+  "reviewPartPicture": "Picture",
+  "@reviewPartPicture": {
+    "description": "Part of a card: its picture."
+  },
+  "reviewSuggestNow": "Now",
+  "@reviewSuggestNow": {
+    "description": "Over what the chosen part of the card says now."
+  },
+  "reviewSuggestNothing": "Nothing yet",
+  "@reviewSuggestNothing": {
+    "description": "When the chosen part of the card is empty."
+  },
+  "reviewSuggestYours": "Your suggestion",
+  "@reviewSuggestYours": {
+    "description": "Label of the field for the suggested text."
+  },
+  "reviewSuggestWhy": "Why",
+  "@reviewSuggestWhy": {
+    "description": "Label of the field for the reason."
+  },
+  "reviewSuggestKept": "Kept on this phone until you send your review.",
+  "@reviewSuggestKept": {
+    "description": "Under the fields of Suggest a change."
+  },
+  "reviewSave": "Save",
+  "@reviewSave": {
+    "description": "Saves a suggestion, a rating or a pair check."
+  },
+  "reviewRudeLevel": "Level",
+  "@reviewRudeLevel": {
+    "description": "Row of a rude card: how offensive it is, as a band."
+  },
+  "reviewRudeType": "Type",
+  "@reviewRudeType": {
+    "description": "Row of a rude card: swear, slur, sexual or family insult."
+  },
+  "reviewRudeFriends": "Among friends",
+  "@reviewRudeFriends": {
+    "description": "Row of a rude card: whether it can be friendly among peers."
+  },
+  "reviewRudeRegion": "Region",
+  "@reviewRudeRegion": {
+    "description": "Row of a rude card: its region note."
+  },
+  "reviewRudeNotSet": "Not set yet",
+  "@reviewRudeNotSet": {
+    "description": "A rude card's level, type, friendliness or region note when the deck does not give it yet."
+  },
+  "reviewRudeOnly": "Recognition only: learners are never asked to type or say it.",
+  "@reviewRudeOnly": {
+    "description": "Under a rude card in review."
+  },
+  "reviewRate": "Rate this word",
+  "@reviewRate": {
+    "description": "Button on a rude card in review, and the title of its sheet."
+  },
+  "reviewRated": "Rated {score} of 9",
+  "@reviewRated": {
+    "description": "On a rude card in review once rated.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewRateQuestion": "How offensive is this word to native speakers in general?",
+  "@reviewRateQuestion": {
+    "description": "The rating question (docs/plans/offensive-words.md): keep \"to native speakers in general\"."
+  },
+  "reviewRateLow": "1 Not at all",
+  "@reviewRateLow": {
+    "description": "Under the start of the 1 to 9 scale."
+  },
+  "reviewRateHigh": "9 Extremely",
+  "@reviewRateHigh": {
+    "description": "Under the end of the 1 to 9 scale."
+  },
+  "reviewRateScore": "{score} of 9",
+  "@reviewRateScore": {
+    "description": "Read by a screen reader for one step of the scale.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewRateNote": "Not how it feels to you: how native speakers around you hear it.",
+  "@reviewRateNote": {
+    "description": "Under the 1 to 9 scale."
+  },
+  "reviewRateWhere": "Where you speak {language}",
+  "@reviewRateWhere": {
+    "description": "Over the region chips.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewRateElsewhere": "Elsewhere",
+  "@reviewRateElsewhere": {
+    "description": "The last region chip, after the language's own regions."
+  },
+  "reviewRateFriendly": "Can it be friendly among friends?",
+  "@reviewRateFriendly": {
+    "description": "Over the Yes, No and Sometimes chips."
+  },
+  "reviewFriendlyYes": "Yes",
+  "@reviewFriendlyYes": {
+    "description": "Can it be friendly among friends: yes."
+  },
+  "reviewFriendlyNo": "No",
+  "@reviewFriendlyNo": {
+    "description": "Can it be friendly among friends: no."
+  },
+  "reviewFriendlySometimes": "Sometimes",
+  "@reviewFriendlySometimes": {
+    "description": "Can it be friendly among friends: sometimes."
+  },
+  "reviewAlikeSounds": "Sounds like {word} ({reading})",
+  "@reviewAlikeSounds": {
+    "description": "Title of a sound-alike pair in review: the rude word and its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "వెధవ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "vedhava"
+      }
+    }
+  },
+  "reviewAlikeSoundsNoReading": "Sounds like {word}",
+  "@reviewAlikeSoundsNoReading": {
+    "description": "Title of a sound-alike pair in review, for a word in Latin letters.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "puta"
+      }
+    }
+  },
+  "reviewAlikeLooks": "Looks like {word} ({reading})",
+  "@reviewAlikeLooks": {
+    "description": "Title of a look-alike pair in review: the rude word and its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "వెధవ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "vedhava"
+      }
+    }
+  },
+  "reviewAlikeLooksNoReading": "Looks like {word}",
+  "@reviewAlikeLooksNoReading": {
+    "description": "Title of a look-alike pair in review, for a word in Latin letters.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "puta"
+      }
+    }
+  },
+  "reviewAlikeSoundsAbout": "A rude word, found by the sound check. Learners are told to take care when speaking.",
+  "@reviewAlikeSoundsAbout": {
+    "description": "Under the title of a sound-alike pair in review."
+  },
+  "reviewAlikeLooksAbout": "A rude word, found by the writing check. Learners are told to take care when writing.",
+  "@reviewAlikeLooksAbout": {
+    "description": "Under the title of a look-alike pair in review."
+  },
+  "reviewAlikeCheck": "Check this pair",
+  "@reviewAlikeCheck": {
+    "description": "Button that opens a sound-alike or look-alike pair to confirm or reject."
+  },
+  "reviewAlikeReal": "Is this a real risk?",
+  "@reviewAlikeReal": {
+    "description": "Over Confirm and Reject."
+  },
+  "reviewAlikeConfirm": "Confirm",
+  "@reviewAlikeConfirm": {
+    "description": "The pair is a real risk."
+  },
+  "reviewAlikeReject": "Reject",
+  "@reviewAlikeReject": {
+    "description": "The pair is not a real risk."
+  },
+  "reviewAlikeConfirmed": "Pair confirmed",
+  "@reviewAlikeConfirmed": {
+    "description": "On a card in review once its pair is confirmed."
+  },
+  "reviewAlikeRejected": "Pair rejected",
+  "@reviewAlikeRejected": {
+    "description": "On a card in review once its pair is rejected."
+  },
+  "reviewAlikeCare": "Care note",
+  "@reviewAlikeCare": {
+    "description": "Label of the field for what learners should take care of, at most 40 letters."
+  },
+  "reviewAlikeCareHint": "Keep the long ā",
+  "@reviewAlikeCareHint": {
+    "description": "Hint in the empty care note field."
+  },
+  "reviewAlikeCareHelp": "Learners see this. Short and plain.",
+  "@reviewAlikeCareHelp": {
+    "description": "Under the care note field."
+  },
+  "reviewAlikeCareCount": "{count}/{limit} letters",
+  "@reviewAlikeCareCount": {
+    "description": "The care note's budget, counted as the reviewer types.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "30"
+      },
+      "limit": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "reviewSendTitle": "Send reviews",
+  "@reviewSendTitle": {
+    "description": "Title of the send sheet."
+  },
+  "reviewSendBody": "One mail takes every deck you tick, a file for each. Your mail app opens with Fluenough’s address and the files filled in. Read it, then send it.",
+  "@reviewSendBody": {
+    "description": "At the top of the send sheet."
+  },
+  "reviewSendSame": "Send it from the mail address you always use. From any other address, a review with your code waits until the Fluenough team checks it.",
+  "@reviewSendSame": {
+    "description": "In the send sheet, under reviewSendBody."
+  },
+  "reviewSendDeck": "{deck} ({language})",
+  "@reviewSendDeck": {
+    "description": "A deck in the send sheet: its name and language.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewSendDeckCount": "{count, plural, =0{Signed off} =1{1 card} other{{count} cards}}",
+  "@reviewSendDeckCount": {
+    "description": "Under a deck in the send sheet: how many card reviews it sends.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewSendDeckSigned": "{count, plural, =1{1 card, signed off} other{{count} cards, signed off}}",
+  "@reviewSendDeckSigned": {
+    "description": "Under a signed-off deck in the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewSendButton": "{count, plural, =0{Send} =1{Send 1 deck} other{Send {count} decks}}",
+  "@reviewSendButton": {
+    "description": "Button of the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSendNothing": "Nothing to send yet.",
+  "@reviewSendNothing": {
+    "description": "When there is no review to send."
+  },
+  "reviewSendOpened": "Your mail app is open. Send the mail from there.",
+  "@reviewSendOpened": {
+    "description": "Once the mail app has the review."
+  },
+  "reviewSendNoApp": "No mail app took the review. It stays on this phone.",
+  "@reviewSendNoApp": {
+    "description": "When no app on the phone took the mail."
+  },
+  "reviewSendFailed": "The review could not be shared. It stays on this phone.",
+  "@reviewSendFailed": {
+    "description": "When the phone's share failed."
+  },
+  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "@reviewMailBody": {
+    "description": "Body of the review mail, for people only: the files are the record.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.3.4"
+      },
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      },
+      "decks": {
+        "type": "String",
+        "example": "• Family (te-family): 12 cards"
+      }
+    }
+  },
+  "reviewMailDeck": "• {deck} ({id}): {count, plural, =0{signed off} =1{1 card} other{{count} cards}}",
+  "@reviewMailDeck": {
+    "description": "One deck in the review mail's body.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "id": {
+        "type": "String",
+        "example": "te-family"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewMailDeckSigned": "• {deck} ({id}): {count, plural, =1{1 card, signed off} other{{count} cards, signed off}}",
+  "@reviewMailDeckSigned": {
+    "description": "One signed-off deck in the review mail's body.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "id": {
+        "type": "String",
+        "example": "te-family"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "alikeCarefulSpeaking": "Careful when speaking",
+  "@alikeCarefulSpeaking": {
+    "description": "Title of the warning on a word that sounds like a rude word (docs/plans/offensive-words.md)."
+  },
+  "alikeCarefulWriting": "Careful when writing",
+  "@alikeCarefulWriting": {
+    "description": "Title of the warning on a word that looks like a rude word when written."
+  },
+  "alikeSpeakingRude": "Said slightly wrong, this sounds like a rude word.",
+  "@alikeSpeakingRude": {
+    "description": "The warning on a word that sounds like a rude word."
+  },
+  "alikeWritingRude": "Written slightly wrong, this looks like a rude word.",
+  "@alikeWritingRude": {
+    "description": "The warning on a word that looks like a rude word."
+  },
+  "alikeHidden": "The rude word shows only with adult content on.",
+  "@alikeHidden": {
+    "description": "Under the warning while adult content is off."
+  },
+  "reviewCardAbout": "{word} · {reading} · {meaning} · {id}",
+  "@reviewCardAbout": {
+    "description": "Under the title of Suggest a change, Rate this word and Check this pair: the card's word, its reading, its meaning and its id.",
+    "placeholders": {
+      "word": {"type": "String", "example": "కూతురు"},
+      "reading": {"type": "String", "example": "kūturu"},
+      "meaning": {"type": "String", "example": "daughter"},
+      "id": {"type": "String", "example": "te-0384"}
+    }
+  },
+  "reviewCardAboutNoReading": "{word} · {meaning} · {id}",
+  "@reviewCardAboutNoReading": {
+    "description": "As reviewCardAbout, for a word in Latin letters, which has no reading.",
+    "placeholders": {
+      "word": {"type": "String", "example": "la casa"},
+      "meaning": {"type": "String", "example": "the house"},
+      "id": {"type": "String", "example": "es-0001"}
+    }
   }
 }
