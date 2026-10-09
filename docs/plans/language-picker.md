@@ -166,6 +166,24 @@ start, with no version built on the bundled decks:
 - **Built now,** on the bundled decks, ready for deck downloads later
   (the order above is changed: "Do the settings redesign here as well").
 - **A mockup first,** to approve before building.
+- **The mockup is approved** (owner, 2026-10-09: "The mockups look great",
+  `docs/mockups/language-picker.html`), with one change: "a language may
+  be available in more than 2 native languages ... It will not be there
+  anytime soon, but still." The "taught from" choice must not be a
+  two-way switch: up to three options can sit side by side; beyond that
+  it becomes a list (a radio list in a sheet), each with its coverage,
+  the learner's own languages first.
+- **Answers to the mockup's questions** (owner, 2026-10-09): a language
+  the learner already learns opens its course at once, and only a newly
+  chosen one goes through placement; "Learn the script" starts on; after
+  a cancelled download the rest comes from Settings > Deck downloads, the
+  course working with what arrived.
+- **Alpha and beta, not "Just started"** (owner, 2026-10-09: "It is not
+  'just started', start implies starting action by the learner. It is a
+  'beta deck', or alpha. I guess till A1, decks should be called alpha.
+  Post A1, they will be beta"). A course is tagged **Alpha** until every
+  A1 unit of its plan is written, **Beta** from then until every B1 unit
+  is written, and carries no tag after that.
 - **Both progresses on the card:** the course's completeness ("62% of B1
   written") and, for a language the learner learns, their own ("You: 18%
   of B1").
