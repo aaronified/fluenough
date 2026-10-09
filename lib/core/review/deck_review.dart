@@ -148,6 +148,51 @@ class AlikeCheck {
   }
 }
 
+/// What a reviewer answers to another reviewer's proposed change
+/// (ADR-0038). An edit is a suggestion of the reviewer's own, sent with the
+/// card; the proposal it edits keeps waiting. The names are written to the
+/// review file, so they are permanent.
+enum ProposalVerdict { accept, edit, reject }
+
+/// A reviewer's answer to the proposal [id]: what they said, and the
+/// proposal's [field] and [text], so that the file stands on its own and an
+/// acceptance is of the text verbatim.
+class ProposalAnswer {
+  const ProposalAnswer({
+    required this.id,
+    required this.verdict,
+    required this.field,
+    required this.text,
+  });
+
+  final String id;
+  final ProposalVerdict verdict;
+  final String field;
+  final String text;
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'id': id,
+    'answer': verdict.name,
+    'field': field,
+    'text': text,
+  };
+
+  static ProposalAnswer? fromJson(Object? json) {
+    if (json is! Map) return null;
+    final id = json['id'];
+    final verdict = ProposalVerdict.values.asNameMap()[json['answer']];
+    final field = json['field'];
+    final text = json['text'];
+    if (id is! String ||
+        verdict == null ||
+        field is! String ||
+        text is! String) {
+      return null;
+    }
+    return ProposalAnswer(id: id, verdict: verdict, field: field, text: text);
+  }
+}
+
 /// Everything a reviewer has said about one card, and when they last
 /// changed it.
 class CardReview {
@@ -157,6 +202,7 @@ class CardReview {
     this.suggestion,
     this.rating,
     this.alike,
+    this.answers = const <String, ProposalAnswer>{},
   });
 
   final DateTime at;
@@ -167,11 +213,16 @@ class CardReview {
   final WordRating? rating;
   final AlikeCheck? alike;
 
+  /// The reviewer's answers to other reviewers' proposals on the card, by
+  /// proposal id.
+  final Map<String, ProposalAnswer> answers;
+
   /// Whether the card is marked: right, or with a suggestion.
   bool get marked => right || suggestion != null;
 
   /// Whether there is anything to send.
-  bool get isEmpty => !marked && rating == null && alike == null;
+  bool get isEmpty =>
+      !marked && rating == null && alike == null && answers.isEmpty;
 
   Map<String, Object?> toJson() => <String, Object?>{
     'at': at.toUtc().toIso8601String(),
@@ -179,6 +230,8 @@ class CardReview {
     'suggestion': ?suggestion?.toJson(),
     'rating': ?rating?.toJson(),
     'alike': ?alike?.toJson(),
+    if (answers.isNotEmpty)
+      'proposals': <Object?>[for (final a in answers.values) a.toJson()],
   };
 
   static CardReview? fromJson(Object? json) {
@@ -186,12 +239,20 @@ class CardReview {
     final at = DateTime.tryParse('${json['at']}');
     if (at == null) return null;
     final suggestion = Suggestion.fromJson(json['suggestion']);
+    final proposals = json['proposals'];
     return CardReview(
       at: at,
       right: json['looks_right'] == true && suggestion == null,
       suggestion: suggestion,
       rating: WordRating.fromJson(json['rating']),
       alike: AlikeCheck.fromJson(json['alike']),
+      answers: Map<String, ProposalAnswer>.unmodifiable(
+        <String, ProposalAnswer>{
+          if (proposals is List)
+            for (final a in proposals.map(ProposalAnswer.fromJson).nonNulls)
+              a.id: a,
+        },
+      ),
     );
   }
 }

@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/proposal.dart';
 import '../../core/review/deck_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -13,6 +14,7 @@ import '../decks/card_notes.dart';
 import '../decks/card_top_line.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'alike_warning.dart';
+import 'proposal_card.dart';
 import 'review_words.dart';
 
 /// What a reviewer can do from a card's sheet: the sheet closes, then the
@@ -101,6 +103,7 @@ class ReviewCardSheet extends StatelessWidget {
     final pos = card.pos;
     final rating = review?.rating;
     final alike = review?.alike;
+    final proposals = waitingProposals(deck, card);
     void close(ReviewCardAction? action) => Navigator.of(context).pop(action);
 
     return SafeArea(
@@ -118,6 +121,10 @@ class ReviewCardSheet extends StatelessWidget {
               report: '${card.id} in ${deck.id}',
             ),
             CardFace(card: card, language: language),
+            for (final proposal in proposals) ...<Widget>[
+              const SizedBox(height: 16),
+              ProposalCard(deck: deck, card: card, proposal: proposal),
+            ],
             if (rude) ...<Widget>[
               const SizedBox(height: 16),
               _RudeFacts(
@@ -532,26 +539,39 @@ Widget _about(BuildContext context, Card card, LanguageInfo language) {
   );
 }
 
-/// Opens "Suggest a change" on [card] of [deck].
+/// Opens "Suggest a change" on [card] of [deck], or, [from] another
+/// reviewer's proposal, to edit it into one of this reviewer's own.
 Future<void> showSuggestSheet(
   BuildContext context, {
   required DeckEntry deck,
   required Card card,
+  Proposal? from,
 }) => showModalBottomSheet<void>(
   context: context,
   showDragHandle: true,
   isScrollControlled: true,
   useSafeArea: true,
-  builder: (_) => SuggestSheet(deck: deck, card: card),
+  builder: (_) => SuggestSheet(deck: deck, card: card, from: from),
 );
 
 /// "Suggest a change": which part, what it says now, the suggestion and
 /// why. Kept on the phone until the review is sent.
+///
+/// Opened [from] another reviewer's proposal (ADR-0038), it starts with
+/// the proposal's part and text; saved, it is this reviewer's own
+/// suggestion, which becomes a new proposal, and the answer to [from] is
+/// "edit". The proposal edited keeps waiting.
 class SuggestSheet extends StatefulWidget {
-  const SuggestSheet({super.key, required this.deck, required this.card});
+  const SuggestSheet({
+    super.key,
+    required this.deck,
+    required this.card,
+    this.from,
+  });
 
   final DeckEntry deck;
   final Card card;
+  final Proposal? from;
 
   @override
   State<SuggestSheet> createState() => _SuggestSheetState();
@@ -571,6 +591,13 @@ class _SuggestSheetState extends State<SuggestSheet> {
     final old = AppScope.read(context).reviewing
         .reviewOf(widget.deck, widget.card)
         ?.suggestion;
+    final from = widget.from;
+    if (from != null) {
+      _part = partOf(from.field);
+      _text.text = from.text;
+      _why.text = old?.part == _part ? old!.why : '';
+      return;
+    }
     _part = old?.part ?? CardPart.word;
     _text.text = old?.text ?? partText(widget.card, _part) ?? '';
     _why.text = old?.why ?? '';
@@ -606,7 +633,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
       about: _about(context, widget.card, language),
       onSave: changed
           ? () {
-              AppScope.read(context).reviewing.suggest(
+              final reviewing = AppScope.read(context).reviewing;
+              reviewing.suggest(
                 widget.deck,
                 widget.card,
                 Suggestion(
@@ -616,6 +644,14 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   why: _why.text.trim(),
                 ),
               );
+              if (widget.from case final from?) {
+                reviewing.answer(
+                  widget.deck,
+                  widget.card,
+                  from,
+                  ProposalVerdict.edit,
+                );
+              }
               Navigator.of(context).pop();
             }
           : null,

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import '../core/feedback/report.dart';
 import '../core/models/card.dart';
+import '../core/models/proposal.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_file.dart';
@@ -108,6 +109,7 @@ class Reviewing {
       right: right,
       rating: old?.rating,
       alike: old?.alike,
+      answers: old?.answers ?? const <String, ProposalAnswer>{},
     ),
   );
 
@@ -121,6 +123,7 @@ class Reviewing {
       suggestion: suggestion,
       rating: old?.rating,
       alike: old?.alike,
+      answers: old?.answers ?? const <String, ProposalAnswer>{},
     ),
   );
 
@@ -134,6 +137,7 @@ class Reviewing {
       suggestion: old?.suggestion,
       rating: rating,
       alike: old?.alike,
+      answers: old?.answers ?? const <String, ProposalAnswer>{},
     ),
   );
 
@@ -147,8 +151,44 @@ class Reviewing {
       suggestion: old?.suggestion,
       rating: old?.rating,
       alike: check,
+      answers: old?.answers ?? const <String, ProposalAnswer>{},
     ),
   );
+
+  /// The answer to [proposal] on [card], or with [verdict] null, the answer
+  /// taken back (ADR-0038). Sent with the review, like any mark.
+  void answer(
+    DeckEntry deck,
+    Card card,
+    Proposal proposal,
+    ProposalVerdict? verdict,
+  ) => _change(deck, card, (old, at) {
+    final answers = Map<String, ProposalAnswer>.of(
+      old?.answers ?? const <String, ProposalAnswer>{},
+    );
+    if (verdict == null) {
+      answers.remove(proposal.id);
+    } else {
+      answers[proposal.id] = ProposalAnswer(
+        id: proposal.id,
+        verdict: verdict,
+        field: proposal.field.name,
+        text: proposal.text,
+      );
+    }
+    return CardReview(
+      at: at,
+      right: old?.right ?? false,
+      suggestion: old?.suggestion,
+      rating: old?.rating,
+      alike: old?.alike,
+      answers: Map<String, ProposalAnswer>.unmodifiable(answers),
+    );
+  });
+
+  /// [proposal]'s answer on [card], or null.
+  ProposalVerdict? answerTo(DeckEntry deck, Card card, Proposal proposal) =>
+      reviewOf(deck, card)?.answers[proposal.id]?.verdict;
 
   /// Signs [deck] off: the reviewer has checked every card.
   void signOff(DeckEntry deck) =>
