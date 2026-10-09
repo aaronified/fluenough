@@ -187,6 +187,9 @@ start, with no version built on the bundled decks:
 - **Both progresses on the card:** the course's completeness ("62% of B1
   written") and, for a language the learner learns, their own ("You: 18%
   of B1").
+- **One release with deck downloads** (owner, 2026-10-09: "After the
+  picker"): deck downloads (#440) ships in the same release as the picker,
+  not on its own.
 
 ## Estimate
 
