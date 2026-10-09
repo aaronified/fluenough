@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
+import '../../app/shell_tab.dart';
 import '../../app/session.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
@@ -13,7 +14,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
@@ -22,6 +22,7 @@ import 'deck_content.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
 import 'path_parts.dart';
+import 'thanks_notice.dart';
 import 'unreviewed_notice.dart';
 import 'word_mastery.dart';
 import 'word_sheet.dart';
@@ -37,8 +38,10 @@ import 'word_sheet.dart';
 /// B1 format's rule cards and unlocking (`words-rules-sentences.md`) change
 /// what they count, not this screen.
 ///
-/// Review, at the top end, is for speakers who check decks: a stub until
-/// reviewer mode is built.
+/// Review, at the top end, is for speakers who check decks: with "Review
+/// decks" on in Settings it opens the unit's review (`ReviewPage`), and
+/// otherwise says to turn it on first. A unit whose decks list the
+/// reviewer's rater code thanks them where the not-yet-checked notice was.
 class UnitPage extends StatefulWidget {
   const UnitPage({
     super.key,
@@ -86,6 +89,43 @@ class _UnitPageState extends State<UnitPage> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) showWordSheet(context, card: card, language: language);
     });
+  }
+
+  /// Opens the unit's review, or with reviewing off, says to turn it on in
+  /// Settings first.
+  Future<void> _review(
+    BuildContext context,
+    AppState state,
+    LanguageInfo language,
+  ) async {
+    if (state.reviewing.on && state.reviewing.code != null) {
+      await AppNavigator.openReview(context, widget.deckId);
+      return;
+    }
+    final settings = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          icon: const Icon(Icons.fact_check_outlined),
+          title: Text(l10n.reviewFirstTitle),
+          content: Text(l10n.reviewFirstBody(language.name)),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.reviewFirstNotNow),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.reviewFirstOpenSettings),
+            ),
+          ],
+        );
+      },
+    );
+    if (settings == true && context.mounted) {
+      AppNavigator.backToShell(context, tab: ShellTab.settings);
+    }
   }
 
   @override
@@ -160,13 +200,13 @@ class _UnitPageState extends State<UnitPage> {
                 IconButton(
                   tooltip: l10n.unitReview,
                   icon: const Icon(Icons.fact_check_outlined),
-                  onPressed: () => showIncomingSnackBar(context),
+                  onPressed: () => _review(context, state, language),
                 )
               else
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 4),
                   child: FilledButton.tonalIcon(
-                    onPressed: () => showIncomingSnackBar(context),
+                    onPressed: () => _review(context, state, language),
                     icon: const Icon(Icons.fact_check_outlined, size: 20),
                     label: Text(l10n.unitReview),
                   ),
@@ -343,6 +383,8 @@ class _Header extends StatelessWidget {
         .where((d) => d.isNotEmpty)
         .firstOrNull;
     final unchecked = decks.where(UnreviewedNotice.appliesTo).firstOrNull;
+    final reviewing = AppScope.of(context).reviewing;
+    final helped = decks.where(reviewing.helpedBuild).firstOrNull;
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
       child: Column(
@@ -382,7 +424,13 @@ class _Header extends StatelessWidget {
               ),
             ),
           ],
-          if (unchecked != null) ...<Widget>[
+          if (helped != null) ...<Widget>[
+            const SizedBox(height: 12),
+            ThanksNotice(
+              code: '${reviewing.code}',
+              others: reviewing.reviewerCount(helped) - 1,
+            ),
+          ] else if (unchecked != null) ...<Widget>[
             const SizedBox(height: 12),
             UnreviewedNotice(entry: unchecked),
           ],
