@@ -472,7 +472,7 @@
       "script": "latin",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 10602,
+      "size": 11585,
       "path": ["es-core-100", "es-grammar-present-ar"],
       "units": [
         {"decks": ["es-core-100"], "has": {"en": 35}},
@@ -480,9 +480,10 @@
         {"decks": []}
       ],
       "files": [
-        {"deck": "es-core-100", "kind": "vocab", "native": "en", "path": "decks/es/es-en-core-100.yaml", "schema": 1, "sha256": "48e67cb0cfd137585fc4d379172dc2195e17de09c096648262cb96bb82a8d052", "size": 7098},
+        {"deck": "es-core-100", "kind": "vocab", "part": "core", "path": "decks/es/es-core-100.yaml", "schema": 1, "sha256": "b06de703ec85a148bf981fb08c473c301cdc1edd2860de114e9a22795192237a", "size": 5383},
         {"deck": "es-grammar-present-ar", "kind": "grammar", "native": "en", "path": "decks/es/es-en-grammar-present-ar.yaml", "schema": 1, "sha256": "077c9352c04f11e5102207fa1ef73f32f21aa5f5b2b286b8c9fa7d1eb0ba8b80", "size": 2934},
-        {"kind": "path", "path": "decks/es/es-path.yaml", "schema": 1, "sha256": "48d43cd4f444d9fa1270f02bc20f245beb442396688c7b3d4e66514904f0eef7", "size": 570}
+        {"kind": "path", "path": "decks/es/es-path.yaml", "schema": 1, "sha256": "48d43cd4f444d9fa1270f02bc20f245beb442396688c7b3d4e66514904f0eef7", "size": 570},
+        {"deck": "es-core-100", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-core-100.yaml", "schema": 1, "sha256": "c5f1e93e361741a530e1c8476a06564717a56129edc2e824adfd9d39fdef5f4c", "size": 2698}
       ]
     },
     {

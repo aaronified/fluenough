@@ -1,0 +1,260 @@
+schema: 1
+id: "es-core-100"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC0-1.0"
+tags: ["beginner", "core"]
+cards:
+  - id: "es-0001"
+    target: "el hombre"
+    picture: "👨"
+    ipa: "el ˈombɾe"
+    pos: "noun"
+    gender: "m"
+    tags: ["people"]
+  - id: "es-0002"
+    target: "la mujer"
+    picture: "👩"
+    ipa: "la muˈxeɾ"
+    pos: "noun"
+    gender: "f"
+    tags: ["people"]
+  - id: "es-0003"
+    target: "el niño"
+    picture: "👦"
+    ipa: "el ˈniɲo"
+    pos: "noun"
+    gender: "m"
+    tags: ["people"]
+  - id: "es-0004"
+    target: "la niña"
+    picture: "👧"
+    ipa: "la ˈniɲa"
+    pos: "noun"
+    gender: "f"
+    tags: ["people"]
+  - id: "es-0005"
+    target: "el amigo"
+    ipa: "el aˈmiɡo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["people"]
+  - id: "es-0006"
+    target: "la casa"
+    ipa: "la ˈkasa"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+    examples:
+      - { target: "La casa es muy grande.", ipa: "la ˈkasa es mwi ˈɡɾande" }
+  - id: "es-0007"
+    target: "la puerta"
+    picture: "🚪"
+    ipa: "la ˈpweɾta"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+  - id: "es-0008"
+    target: "la ventana"
+    picture: "🪟"
+    ipa: "la benˈtana"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+  - id: "es-0009"
+    target: "la mesa"
+    ipa: "la ˈmesa"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+  - id: "es-0010"
+    target: "la silla"
+    picture: "🪑"
+    ipa: "la ˈsiʝa"
+    pos: "noun"
+    gender: "f"
+    tags: ["home"]
+  - id: "es-0011"
+    target: "el libro"
+    picture: "📖"
+    ipa: "el ˈlibɾo"
+    pos: "noun"
+    gender: "m"
+    tags: ["objects"]
+  - id: "es-0012"
+    target: "el agua"
+    ipa: "el ˈaɡwa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["food"]
+  - id: "es-0013"
+    target: "el pan"
+    picture: "🍞"
+    ipa: "el pan"
+    pos: "noun"
+    gender: "m"
+    tags: ["food"]
+  - id: "es-0014"
+    target: "la leche"
+    picture: "🥛"
+    ipa: "la ˈletʃe"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+  - id: "es-0015"
+    target: "la comida"
+    ipa: "la koˈmida"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+  - id: "es-0016"
+    target: "la ciudad"
+    ipa: "la θjuˈdad"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+  - id: "es-0017"
+    target: "la calle"
+    ipa: "la ˈkaʝe"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+  - id: "es-0018"
+    target: "el país"
+    ipa: "el paˈis"
+    pos: "noun"
+    gender: "m"
+    tags: ["places"]
+  - id: "es-0019"
+    target: "el día"
+    ipa: "el ˈdia"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["time"]
+  - id: "es-0020"
+    target: "la noche"
+    ipa: "la ˈnotʃe"
+    pos: "noun"
+    gender: "f"
+    tags: ["time"]
+  - id: "es-0021"
+    target: "el año"
+    ipa: "el ˈaɲo"
+    pos: "noun"
+    gender: "m"
+    tags: ["time"]
+  - id: "es-0022"
+    target: "ser"
+    ipa: "seɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["verb", "irregular"]
+    examples:
+      - { target: "Ella es médica.", ipa: "ˈeʝa es ˈmedika" }
+  - id: "es-0023"
+    target: "estar"
+    ipa: "esˈtaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["verb", "irregular"]
+    examples:
+      - { target: "Estoy cansado.", ipa: "esˈtoj kanˈsado" }
+  - id: "es-0024"
+    target: "tener"
+    ipa: "teˈneɾ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+  - id: "es-0025"
+    target: "hacer"
+    ipa: "aˈθeɾ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+  - id: "es-0026"
+    target: "ir"
+    ipa: "iɾ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+  - id: "es-0027"
+    target: "hablar"
+    ipa: "aˈblaɾ"
+    pos: "verb"
+    tags: ["verb", "regular-ar"]
+  - id: "es-0028"
+    target: "comer"
+    ipa: "koˈmeɾ"
+    pos: "verb"
+    tags: ["verb", "regular-er"]
+  - id: "es-0029"
+    target: "beber"
+    ipa: "beˈbeɾ"
+    pos: "verb"
+    tags: ["verb", "regular-er"]
+  - id: "es-0030"
+    target: "vivir"
+    ipa: "biˈbiɾ"
+    pos: "verb"
+    tags: ["verb", "regular-ir"]
+  - id: "es-0031"
+    target: "grande"
+    ipa: "ˈɡɾande"
+    pos: "adj"
+    tags: ["adjective"]
+  - id: "es-0032"
+    target: "pequeño"
+    ipa: "peˈkeɲo"
+    pos: "adj"
+    tags: ["adjective"]
+  - id: "es-0033"
+    target: "bueno"
+    ipa: "ˈbweno"
+    pos: "adj"
+    tags: ["adjective"]
+  - id: "es-0034"
+    target: "malo"
+    ipa: "ˈmalo"
+    pos: "adj"
+    tags: ["adjective"]
+  - id: "es-0035"
+    target: "nuevo"
+    ipa: "ˈnwebo"
+    pos: "adj"
+    tags: ["adjective"]
+  - id: "es-0036"
+    target: "hola"
+    ipa: "ˈola"
+    pos: "phrase"
+    tags: ["courtesy"]
+  - id: "es-0037"
+    target: "gracias"
+    ipa: "ˈɡɾaθjas"
+    pos: "phrase"
+    tags: ["courtesy"]
+  - id: "es-0038"
+    target: "por favor"
+    ipa: "poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["courtesy"]
+  - id: "es-0039"
+    target: "buenos días"
+    ipa: "ˈbwenos ˈdias"
+    pos: "phrase"
+    tags: ["courtesy"]
+  - id: "es-0040"
+    target: "buenas noches"
+    ipa: "ˈbwenas ˈnotʃes"
+    pos: "phrase"
+    tags: ["courtesy"]
+  - id: "es-0041"
+    target: "lo siento"
+    ipa: "lo ˈsjento"
+    pos: "phrase"
+    tags: ["courtesy"]
