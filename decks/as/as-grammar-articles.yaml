@@ -13,6 +13,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মেজৰ", ref: "as-0340" }
+      - { word: "ওপৰত", base: "ওপৰত", reading: "upôrôt" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
   - id: "as-2042"
     target: "এজন মানুহ আহিছে।"
     reading: "ezôn mānuh āhise."
@@ -20,11 +24,18 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এজন", base: "এজন", reading: "ezôn" }
+      - { word: "মানুহ", base: "মানুহ", reading: "mānuh" }
+      - { word: "আহিছে", base: "আহিছে", reading: "āhise" }
   - id: "as-2043"
     target: "মানুহজন আহিছে।"
     reading: "mānuhzôn āhise."
     ipa: "manuhzɔn ahise"
     pos: "phrase"
+    bases:
+      - { word: "মানুহজন", base: "মানুহজন", reading: "mānuhzôn" }
+      - { word: "আহিছে", base: "আহিছে", reading: "āhise" }
   - id: "as-2044"
     target: "ছোৱালীজনী ক'ত?"
     reading: "suwālizoni kot?"
@@ -32,6 +43,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ছোৱালীজনী", ref: "as-0185" }
   - id: "as-2045"
     target: "এটা আম দিয়ক।"
     reading: "etā ām diyôk."
@@ -39,6 +52,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এটা", base: "এটা", reading: "etā" }
+      - { word: "আম", base: "আম", reading: "ām" }
   - id: "as-2046"
     target: "আমবোৰ ক'ত?"
     reading: "āmbur kot?"
@@ -46,6 +62,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমবোৰ", base: "আমবোৰ", reading: "āmbur" }
   - id: "as-2047"
     target: "দুকাপ চাহ দিয়ক।"
     reading: "dukāp sāh diyôk."
@@ -53,6 +71,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দুকাপ", base: "দুকাপ", reading: "dukāp" }
   - id: "as-2048"
     target: "কোনোবা আহিছে।"
     reading: "kunubā āhise."
@@ -60,6 +80,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কোনোবা", ref: "as-0144" }
+      - { word: "আহিছে", base: "আহিছে", reading: "āhise" }
   - id: "as-2049"
     target: "গাড়ীখন"
     picture: "🚗"

@@ -13,6 +13,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "জানেনে", base: "জানেনে", reading: "zānene" }
   - id: "as-2030"
     target: "চাহ খাবনে?"
     reading: "sāh khābône?"
@@ -20,6 +22,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খাবনে", base: "খাবনে", reading: "khābône" }
   - id: "as-2031"
     target: "এইটো কি?"
     reading: "eitu ki?"
@@ -27,6 +31,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এইটো", base: "এইটো", reading: "eitu" }
   - id: "as-2032"
     target: "তুমি ক'লৈ গৈ আছা?"
     reading: "tumi kolôi gôi āsā?"
@@ -34,6 +40,11 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তুমি", base: "তুমি", reading: "tumi" }
+      - { word: "গৈ", base: "গৈ", reading: "gôi" }
+      - { word: "আছা", base: "আছা", reading: "āsā" }
+      - { word: "ক'লৈ", base: "ক'লৈ", reading: "kolôi" }
   - id: "as-2033"
     target: "তেওঁ কোন?"
     reading: "teum̐ kun?"
@@ -41,16 +52,23 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তেওঁ", base: "তেওঁ", reading: "teum̐" }
   - id: "as-2034"
     target: "আপুনি কেতিয়া আহিব?"
     reading: "āpuni ketiyā āhibô?"
     ipa: "apuni ketija ahibɔ"
     pos: "phrase"
+    bases:
+      - { word: "আহিব", base: "আহিব", reading: "āhibô" }
   - id: "as-2035"
     target: "আপুনি অসমীয়া কিয় শিকি আছে?"
     reading: "āpuni ôxomiyā kiyô xiki āse?"
     ipa: "apuni ɔxomija kijɔ xiki ase"
     pos: "phrase"
+    bases:
+      - { word: "শিকি", base: "শিকি", reading: "xiki" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
   - id: "as-2036"
     target: "আপোনাৰ ল'ৰা-ছোৱালী কেইজন?"
     reading: "āpunār lorā-suwāli keizôn?"
@@ -58,6 +76,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আপোনাৰ", base: "আপোনাৰ", reading: "āpunār" }
+      - { word: "কেইজন", base: "কেইজন", reading: "keizôn" }
   - id: "as-2037"
     target: "কিমান হ'ল?"
     reading: "kimān hol?"
@@ -65,6 +86,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "হ'ল", base: "হ'ল", reading: "hol" }
   - id: "as-2038"
     target: "কেনে আছে?"
     reading: "kene āse?"
@@ -72,6 +95,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কেনে", base: "কেনে", reading: "kene" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
   - id: "as-2039"
     target: "ভাল, নহয়নে?"
     reading: "bhāl, nôhôyne?"
@@ -79,6 +105,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "নহয়নে", ref: "as-0141" }
   - id: "as-2040"
     target: "ভাত খালা নেকি?"
     reading: "bhāt khālā neki?"
@@ -86,3 +114,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খালা", base: "খালা", reading: "khālā" }

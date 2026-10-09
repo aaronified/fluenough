@@ -18,11 +18,15 @@ cards:
     reading: "āpunāk ki lāge?"
     ipa: "apʊnak ki laɡe"
     pos: "phrase"
+    bases:
+      - { word: "আপোনাক", base: "আপোনাক", reading: "āpunāk" }
   - id: "as-2064"
     target: "মোক পানী লাগে।"
     reading: "muk pāni lāge."
     ipa: "mʊk pani laɡe"
     pos: "phrase"
+    bases:
+      - { word: "মোক", base: "মোক", reading: "muk" }
   - id: "as-2065"
     target: "নালাগে"
     reading: "nālāge"
@@ -35,6 +39,9 @@ cards:
     reading: "muk eitu nālāge."
     ipa: "mʊk eitʊ nalaɡe"
     pos: "phrase"
+    bases:
+      - { word: "মোক", base: "মোক", reading: "muk" }
+      - { word: "এইটো", base: "এইটো", reading: "eitu" }
   - id: "as-2067"
     target: "দৰকাৰ"
     reading: "dôrkār"
@@ -47,11 +54,16 @@ cards:
     reading: "dôrkār nāi."
     ipa: "dɔɹkaɹ nai"
     pos: "phrase"
+    bases:
+      - { word: "নাই", base: "নাই", reading: "nāi" }
   - id: "as-2069"
     target: "মোক অলপ সহায় লাগে।"
     reading: "muk ôlôp xôhāy lāge."
     ipa: "mʊk ɔlɔp xɔhaj laɡe"
     pos: "phrase"
+    bases:
+      - { word: "মোক", base: "মোক", reading: "muk" }
+      - { word: "অলপ", base: "অলপ", reading: "ôlôp" }
   - id: "as-2070"
     target: "মই ঘৰলৈ যাব খুজিছোঁ।"
     reading: "moi ghôrôlôi zābô khuzisum̐."
@@ -60,6 +72,11 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "ঘৰলৈ", base: "ঘৰলৈ", reading: "ghôrôlôi" }
+      - { word: "যাব", base: "যাব", reading: "zābô" }
+      - { word: "খুজিছোঁ", base: "খুজিছোঁ", reading: "khuzisum̐" }
   - id: "as-2071"
     target: "আৰু অলপ ভাত লাগে।"
     reading: "āru ôlôp bhāt lāge."
@@ -67,3 +84,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "অলপ", base: "অলপ", reading: "ôlôp" }

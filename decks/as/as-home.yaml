@@ -29,6 +29,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "শোৱনি", ref: "as-0379" }
   - id: "as-0331"
     target: "বহা কোঠা"
     reading: "bôhā kuthā"
@@ -36,6 +38,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বহা", base: "বহা", reading: "bôhā" }
   - id: "as-0332"
     target: "বাথৰুম"
     reading: "bāthrum"
@@ -138,6 +142,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তামোল", base: "তামোল", reading: "tāmul" }
+      - { word: "পাণ", base: "পাণ", reading: "pān" }
   - id: "as-0348"
     target: "ঘৰৰ সন্মুখত এখন পাৰ্ক আছে।"
     reading: "ghôrôr xonmukhôt ekhôn pārk āse."
@@ -145,6 +152,12 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ঘৰৰ", base: "ঘৰৰ", reading: "ghôrôr" }
+      - { word: "সন্মুখত", base: "সন্মুখত", reading: "xonmukhôt" }
+      - { word: "এখন", base: "এখন", reading: "ekhôn" }
+      - { word: "পাৰ্ক", base: "পাৰ্ক", reading: "pārk" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
   - id: "as-0349"
     target: "আমাৰ আলিটো বৰ শান্ত।"
     reading: "āmār ālitu bôr xāntô."
@@ -152,3 +165,7 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমাৰ", base: "আমাৰ", reading: "āmār" }
+      - { word: "আলিটো", ref: "as-0326" }
+      - { word: "শান্ত", base: "শান্ত", reading: "xāntô" }

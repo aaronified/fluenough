@@ -14,6 +14,9 @@ cards:
     tags: ["grammar", "word-order"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "খাওঁ", base: "খাওঁ", reading: "khāum̐" }
   - id: "as-2002"
     target: "তেওঁ ডাক্তৰ।"
     reading: "teum̐ dāktôr."
@@ -21,6 +24,8 @@ cards:
     tags: ["grammar", "no-is"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তেওঁ", base: "তেওঁ", reading: "teum̐" }
   - id: "as-2003"
     target: "ঘৰত"
     reading: "ghôrôt"
@@ -42,6 +47,9 @@ cards:
     tags: ["grammar", "case-endings"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দেউতাৰ", ref: "as-0179" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
   - id: "as-2006"
     target: "ৰামে ভাত খালে।"
     reading: "rāme bhāt khāle."
@@ -49,6 +57,9 @@ cards:
     tags: ["grammar", "doer"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ৰামে", base: "ৰামে", reading: "rāme" }
+      - { word: "খালে", base: "খালে", reading: "khāle" }
   - id: "as-2007"
     target: "সি আহিল।"
     reading: "xi āhil."
@@ -56,6 +67,9 @@ cards:
     tags: ["grammar", "gender"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "সি", base: "সি", reading: "xi" }
+      - { word: "আহিল", base: "আহিল", reading: "āhil" }
   - id: "as-2008"
     target: "তাই আহিল।"
     reading: "tāi āhil."
@@ -63,6 +77,9 @@ cards:
     tags: ["grammar", "gender"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তাই", base: "তাই", reading: "tāi" }
+      - { word: "আহিল", base: "আহিল", reading: "āhil" }
   - id: "as-2009"
     target: "আপুনি বহক।"
     reading: "āpuni bôhôk."
@@ -70,6 +87,8 @@ cards:
     tags: ["grammar", "three-yous"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বহক", base: "বহক", reading: "bôhôk" }
   - id: "as-2010"
     target: "তুমি বহা।"
     reading: "tumi bôhā."
@@ -77,6 +96,9 @@ cards:
     tags: ["grammar", "three-yous"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তুমি", base: "তুমি", reading: "tumi" }
+      - { word: "বহা", base: "বহা", reading: "bôhā" }
   - id: "as-2011"
     target: "তই বহ।"
     reading: "toi bôh."
@@ -84,6 +106,9 @@ cards:
     tags: ["grammar", "three-yous"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তই", base: "তই", reading: "toi" }
+      - { word: "বহ", base: "বহ", reading: "bôh" }
   - id: "as-2012"
     target: "যাম।"
     reading: "zām."
@@ -99,6 +124,9 @@ cards:
     tags: ["grammar", "classifiers"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এখন", base: "এখন", reading: "ekhôn" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
   - id: "as-2014"
     target: "কিতাপখন"
     picture: "📖"
@@ -114,6 +142,11 @@ cards:
     tags: ["grammar", "have"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোৰ", base: "মোৰ", reading: "mur" }
+      - { word: "এখন", base: "এখন", reading: "ekhôn" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
   - id: "as-2016"
     target: "মই নাযাওঁ।"
     reading: "moi nāzāum̐."
@@ -122,6 +155,9 @@ cards:
     tags: ["grammar", "negation"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "নাযাওঁ", base: "নাযাওঁ", reading: "nāzāum̐" }
   - id: "as-2017"
     target: "সময় নাই।"
     reading: "xômôy nāi."
@@ -129,6 +165,8 @@ cards:
     tags: ["grammar", "negation"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "নাই", base: "নাই", reading: "nāi" }
   - id: "as-2018"
     target: "আপুনি যাবনে?"
     reading: "āpuni zābône?"
@@ -136,3 +174,5 @@ cards:
     tags: ["grammar", "questions"]
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "যাবনে", base: "যাবনে", reading: "zābône" }
