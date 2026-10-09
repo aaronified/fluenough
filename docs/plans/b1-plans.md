@@ -120,7 +120,14 @@ them. The validator rejects a deck that leaves one out.
   `bases:`, typed notes, planned units, core and layer) is built in the
   parser, the validator and `docs/DECK-FORMAT.md` before any B1 deck is
   written, so that what is written validates. Then one agent writes the
-  whole Bengali B1 course and another the Telugu one.
+  Bengali course and another the Telugu one (Sonnet writes the decks;
+  CLAUDE.md).
+- **A1 decks only, for now** (owner, 2026-10-09: "once B1 plan is done,
+  we will only create A1 level decks (if any existing deck goes beyond,
+  that's okay) for Bengali and Telugu"). The B1 plan is still written in
+  full, every unit to B1 with its passages, but the deck agents write
+  decks for the A1 units only; A2 and B1 units stay planned ("Coming").
+  An existing deck that already reaches past A1 stays as it is.
 - **Pictures:** the agents use `tools/data/picture-mapping.json`, the
   meanings already matched to Noto Emoji pictures and checked, with the
   matches dropped and why. The 330 cards given pictures keep them.

@@ -161,11 +161,14 @@ start, with no version built on the bundled decks:
   - a failure shows its reason and Try again resumes;
   - the screen-reader announcements happen once each.
 
-## To decide
+## Decided (owner, 2026-10-09)
 
-- **Learner progress:** show the learner's own progress on the card as
-  well, or only on Progress.
-- **A mockup first:** I can make a design to approve before building.
+- **Built now,** on the bundled decks, ready for deck downloads later
+  (the order above is changed: "Do the settings redesign here as well").
+- **A mockup first,** to approve before building.
+- **Both progresses on the card:** the course's completeness ("62% of B1
+  written") and, for a language the learner learns, their own ("You: 18%
+  of B1").
 
 ## Estimate
 
