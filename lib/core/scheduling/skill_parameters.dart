@@ -4,7 +4,7 @@ import 'ability.dart';
 import 'fsrs.dart';
 
 /// One skill in one language: what FSRS's parameters are fitted and kept
-/// for (`docs/plans/skill-model.md`).
+/// for (ADR-0035).
 typedef SkillKey = ({String language, DrillMode mode});
 
 /// The skill a pair is scheduled in: its card's language, and its mode.

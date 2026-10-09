@@ -27,7 +27,7 @@ const List<DrillMode> _order = <DrillMode>[
   DrillMode.reading,
 ];
 
-/// How you learn (`docs/plans/skill-model.md`, "Shown prominently"; mockup
+/// How you learn (ADR-0035, "Shown prominently"; mockup
 /// `docs/mockups/adapted-to-you.html`, screen 4): per skill, how fast the
 /// learner forgets beside how every skill starts.
 ///

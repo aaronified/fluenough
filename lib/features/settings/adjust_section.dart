@@ -11,7 +11,7 @@ import '../../ui/widgets/mode_pill.dart';
 import 'settings_controls.dart';
 
 /// Settings' "Adjust to me": FSRS fitted to the learner, per skill and
-/// language (`docs/plans/skill-model.md`; mockup
+/// language (ADR-0035; mockup
 /// `docs/mockups/adapted-to-you.html`, Settings).
 ///
 /// The row's Adjust button fits every skill that can be fitted now, with a

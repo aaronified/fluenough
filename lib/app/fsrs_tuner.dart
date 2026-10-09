@@ -18,7 +18,7 @@ Future<SkillFitResult> fitInIsolate(SkillFitJob job) =>
 /// [SkillFit.run] in place: for tests, which run on a fake clock.
 Future<SkillFitResult> fitInPlace(SkillFitJob job) async => SkillFit.run(job);
 
-/// Fits FSRS to the learner (`docs/plans/skill-model.md`): every skill on
+/// Fits FSRS to the learner (ADR-0035): every skill on
 /// Settings' "Adjust to me" ([adjustAll]), and one skill in the background
 /// once it has 10% more answers than at its last fit ([afterReview]).
 ///
