@@ -16,7 +16,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "খাওঁ", base: "খাওঁ", reading: "khāum̐" }
+      - { word: "খাওঁ", ref: "as-0109" }
   - id: "as-2002"
     target: "তেওঁ ডাক্তৰ।"
     reading: "teum̐ dāktôr."
@@ -58,8 +58,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ৰামে", base: "ৰামে", reading: "rāme" }
-      - { word: "খালে", base: "খালে", reading: "khāle" }
+      - { word: "ৰামে", base: "ৰাম", reading: "rām" }
+      - { word: "খালে", ref: "as-0109" }
   - id: "as-2007"
     target: "সি আহিল।"
     reading: "xi āhil."
@@ -69,7 +69,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "সি", base: "সি", reading: "xi" }
-      - { word: "আহিল", base: "আহিল", reading: "āhil" }
+      - { word: "আহিল", base: "অহা", reading: "ôhā" }
   - id: "as-2008"
     target: "তাই আহিল।"
     reading: "tāi āhil."
@@ -79,7 +79,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "তাই", base: "তাই", reading: "tāi" }
-      - { word: "আহিল", base: "আহিল", reading: "āhil" }
+      - { word: "আহিল", base: "অহা", reading: "ôhā" }
   - id: "as-2009"
     target: "আপুনি বহক।"
     reading: "āpuni bôhôk."
@@ -88,7 +88,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "বহক", base: "বহক", reading: "bôhôk" }
+      - { word: "বহক", base: "বহা", reading: "bôhā" }
   - id: "as-2010"
     target: "তুমি বহা।"
     reading: "tumi bôhā."
@@ -108,7 +108,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "তই", base: "তই", reading: "toi" }
-      - { word: "বহ", base: "বহ", reading: "bôh" }
+      - { word: "বহ", base: "বহা", reading: "bôhā" }
   - id: "as-2012"
     target: "যাম।"
     reading: "zām."
@@ -125,7 +125,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "এখন", base: "এখন", reading: "ekhôn" }
+      - { word: "এখন", ref: "as-0222" }
       - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
   - id: "as-2014"
     target: "কিতাপখন"
@@ -143,10 +143,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "মোৰ", base: "মোৰ", reading: "mur" }
-      - { word: "এখন", base: "এখন", reading: "ekhôn" }
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "এখন", ref: "as-0222" }
       - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
-      - { word: "আছে", base: "আছে", reading: "āse" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
   - id: "as-2016"
     target: "মই নাযাওঁ।"
     reading: "moi nāzāum̐."
@@ -157,7 +157,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "নাযাওঁ", base: "নাযাওঁ", reading: "nāzāum̐" }
+      - { word: "নাযাওঁ", base: "যোৱা", reading: "zuwā" }
   - id: "as-2017"
     target: "সময় নাই।"
     reading: "xômôy nāi."
@@ -166,7 +166,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "নাই", base: "নাই", reading: "nāi" }
+      - { word: "নাই", ref: "as-0142" }
   - id: "as-2018"
     target: "আপুনি যাবনে?"
     reading: "āpuni zābône?"
@@ -175,4 +175,4 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "যাবনে", base: "যাবনে", reading: "zābône" }
+      - { word: "যাবনে", base: "যোৱা", reading: "zuwā" }

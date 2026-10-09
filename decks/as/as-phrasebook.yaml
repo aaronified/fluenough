@@ -28,7 +28,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "কেনে", base: "কেনে", reading: "kene" }
-      - { word: "আছে", base: "আছে", reading: "āse" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
   - id: "as-0129"
     target: "ভালে আছোঁ।"
     reading: "bhāle āsum̐."
@@ -40,7 +40,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ভালে", ref: "as-2084" }
-      - { word: "আছোঁ", base: "আছোঁ", reading: "āsum̐" }
+      - { word: "আছোঁ", base: "আছ", reading: "āsô" }
   - id: "as-0130"
     target: "ধন্যবাদ"
     reading: "dhônyôbād"
@@ -75,7 +75,7 @@ cards:
     bases:
       - { word: "আকৌ", base: "আকৌ", reading: "ākôu" }
       - { word: "লগ", base: "লগ", reading: "lôg" }
-      - { word: "পাম", base: "পাম", reading: "pām" }
+      - { word: "পাম", base: "পোৱা", reading: "puwā" }
   - id: "as-0133"
     target: "মাফ কৰিব।"
     reading: "māph koribô."
@@ -88,7 +88,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মাফ", base: "মাফ", reading: "māph" }
-      - { word: "কৰিব", base: "কৰিব", reading: "koribô" }
+      - { word: "কৰিব", base: "কৰা", reading: "kôrā" }
   - id: "as-0134"
     target: "মই অসমীয়া নাজানো।"
     reading: "moi ôxomiyā nāzānu."
@@ -99,7 +99,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "নাজানো", base: "নাজানো", reading: "nāzānu" }
+      - { word: "নাজানো", base: "জনা", reading: "zônā" }
   - id: "as-0135"
     target: "মই এতিয়াও অসমীয়া শিকি আছোঁ।"
     reading: "moi etiyāu ôxomiyā xiki āsum̐."
@@ -111,8 +111,8 @@ cards:
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
       - { word: "এতিয়াও", ref: "as-0353" }
-      - { word: "শিকি", base: "শিকি", reading: "xiki" }
-      - { word: "আছোঁ", base: "আছোঁ", reading: "āsum̐" }
+      - { word: "শিকি", base: "শিকা", reading: "xikā" }
+      - { word: "আছোঁ", base: "আছ", reading: "āsô" }
   - id: "as-0136"
     target: "লাহে লাহে কওক।"
     reading: "lāhe lāhe kôuk."
@@ -124,7 +124,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "লাহে", base: "লাহে", reading: "lāhe" }
-      - { word: "কওক", base: "কওক", reading: "kôuk" }
+      - { word: "কওক", ref: "as-0108" }
   - id: "as-0137"
     target: "আকৌ এবাৰ কওক।"
     reading: "ākôu ebār kôuk."
@@ -137,7 +137,7 @@ cards:
     bases:
       - { word: "আকৌ", base: "আকৌ", reading: "ākôu" }
       - { word: "এবাৰ", base: "এবাৰ", reading: "ebār" }
-      - { word: "কওক", base: "কওক", reading: "kôuk" }
+      - { word: "কওক", ref: "as-0108" }
   - id: "as-0140"
     target: "হয়"
     reading: "hôy"
@@ -165,7 +165,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "মোৰ", base: "মোৰ", reading: "mur" }
+      - { word: "মোৰ", base: "মই", reading: "moi" }
   - id: "as-0168"
     target: "আপোনাৰ নাম কি?"
     reading: "āpunār nām ki?"
@@ -176,7 +176,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "আপোনাৰ", base: "আপোনাৰ", reading: "āpunār" }
+      - { word: "আপোনাৰ", ref: "as-0127" }
   - id: "as-0422"
     target: "সহায় কৰক!"
     reading: "xôhāy kôrôk!"
@@ -185,7 +185,7 @@ cards:
     tags: ["polite"]
     phrasebook: true
     bases:
-      - { word: "কৰক", base: "কৰক", reading: "kôrôk" }
+      - { word: "কৰক", base: "কৰা", reading: "kôrā" }
   - id: "as-0423"
     target: "বচাওক!"
     reading: "bôsāuk!"
@@ -193,7 +193,7 @@ cards:
     pos: "phrase"
     phrasebook: true
     bases:
-      - { word: "বচাওক", base: "বচাওক", reading: "bôsāuk" }
+      - { word: "বচাওক", base: "বচোৱা", reading: "bôsuwā" }
   - id: "as-0428"
     target: "মই বাট হেৰুৱালোঁ।"
     reading: "moi bāt heruwālum̐."
@@ -204,7 +204,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "হেৰুৱালোঁ", base: "হেৰুৱালোঁ", reading: "heruwālum̐" }
+      - { word: "হেৰুৱালোঁ", base: "হেৰুৱা", reading: "heruwā" }
   - id: "as-0429"
     target: "মই বুজি নাপালোঁ।"
     reading: "moi buzi nāpālum̐."
@@ -215,8 +215,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "মই", base: "মই", reading: "moi" }
-      - { word: "বুজি", base: "বুজি", reading: "buzi" }
-      - { word: "নাপালোঁ", base: "নাপালোঁ", reading: "nāpālum̐" }
+      - { word: "বুজি", base: "বুজা", reading: "buzā" }
+      - { word: "নাপালোঁ", base: "পোৱা", reading: "puwā" }
   - id: "as-0430"
     target: "বাথৰুম ক'ত?"
     reading: "bāthrum kot?"
