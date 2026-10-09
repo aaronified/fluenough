@@ -19,13 +19,27 @@ CardPart partOf(ProposalField field) => switch (field) {
   ProposalField.notes => CardPart.notes,
 };
 
-/// The proposals waiting on [card] of [deck] (ADR-0038): those whose field
-/// still says what the proposer saw. One whose field has changed since is
-/// outdated, and the review bot removes it.
-List<Proposal> waitingProposals(DeckEntry deck, Card card) => <Proposal>[
-  for (final p in deck.deck.proposals[card.id] ?? const <Proposal>[])
-    if ((partText(card, partOf(p.field)) ?? '') == p.now) p,
-];
+/// The proposals waiting on [card] of [deck] (ADR-0038), from every deck
+/// of its language in [decks], each once: a proposal is kept in the file
+/// that holds the field, which may be another deck's when [deck] lists the
+/// card by ref. Only those whose field still says, in [deck], what the
+/// proposer saw: one whose field has changed since is outdated, and the
+/// review bot removes it.
+List<Proposal> waitingProposals(
+  Iterable<DeckEntry> decks,
+  DeckEntry deck,
+  Card card,
+) {
+  final seen = <String>{};
+  return <Proposal>[
+    for (final d in <DeckEntry>[deck, ...decks])
+      if (d.language.code == deck.language.code)
+        for (final p in d.deck.proposals[card.id] ?? const <Proposal>[])
+          if ((partText(card, partOf(p.field)) ?? '') == p.now &&
+              seen.add(p.id))
+            p,
+  ];
+}
 
 /// Another reviewer's proposed change to [card], with Accept, Edit and
 /// Reject; the reviewer's own, without them. The answer is kept with the
