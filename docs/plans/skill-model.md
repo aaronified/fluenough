@@ -309,6 +309,9 @@ The owner's answers to #235, 2026-10-08:
   The automatic option is on by default (owner, 2026-10-09).
 - **Each fit starts from the last** (owner: "Absolutely"): a refit warm
   starts from the skill's previous parameters, so it needs fewer passes.
+  Each skill's parameters are therefore kept, not recomputed: in the
+  profile's database and in the JSONL backup, so a restored phone
+  schedules exactly as before (owner, 2026-10-09).
 - **Shown prominently** (owner: "Yes. Prominently. Figure out how"), on
   Progress under Your strengths and where the learner will see it; the
   design is put to the owner before it is built.
