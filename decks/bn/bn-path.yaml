@@ -141,7 +141,8 @@ units:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - planned: { id: "bn-more-verbs", theme: "more-verbs", words: 26 }
+  - decks: ["bn-more-verbs", "bn-more-verbs-sentences", "*"]
+    words: 25
     listening_passages:
       - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
