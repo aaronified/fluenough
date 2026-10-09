@@ -1,0 +1,131 @@
+schema: 1
+id: "bn-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1085"
+    target: "স্কুল বাড়ির কাছে।"
+    reading: "skul bāṛir kāche."
+    ipa: "skul baɽir katʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "বাড়ির", ref: "bn-0196" }
+      - { word: "কাছে", ref: "bn-0309" }
+  - id: "bn-1086"
+    target: "ব্যাংক স্টেশনের পাশে।"
+    reading: "bêṅk sṭeśoner pāśe."
+    ipa: "bæŋk sʈeʃoner paʃe"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "স্টেশনের", ref: "bn-0288" }
+  - id: "bn-1087"
+    target: "আমি বাজারে যাই।"
+    reading: "āmi bājāre jāi."
+    ipa: "ami badʒare dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "বাজারে", ref: "bn-1040" }
+      - { word: "যাই", ref: "bn-0873" }
+  - id: "bn-1088"
+    target: "ছেলেরা মাঠে খেলে।"
+    reading: "chelerā māṭhe khele."
+    ipa: "tʃʰelera maʈʰe kʰele"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "ছেলেরা", ref: "bn-0426" }
+      - { word: "মাঠে", ref: "bn-1045" }
+      - { word: "খেলে", ref: "bn-0895" }
+  - id: "bn-1089"
+    target: "আমরা পার্কে হাঁটি।"
+    reading: "āmrā pārke hām̐ṭi."
+    ipa: "amra parke ɦãʈi"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "পার্কে", ref: "bn-1044" }
+      - { word: "হাঁটি", ref: "bn-0896" }
+  - id: "bn-1090"
+    target: "তিনি হাসপাতালে কাজ করেন।"
+    reading: "tini hāśpātāle kāj kôren."
+    ipa: "t̪ini ɦaʃpat̪ale kadʒ kɔren"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "হাসপাতালে", ref: "bn-0377" }
+      - { word: "করেন", ref: "bn-0102" }
+  - id: "bn-1091"
+    target: "ডাকঘর কোথায়?"
+    reading: "ḍākghor kothāy?"
+    ipa: "ɖakɡʱor kot̪ʰaj"
+    pos: "phrase"
+  - id: "bn-1092"
+    target: "আমি স্কুল থেকে বাড়ি যাই।"
+    reading: "āmi skul theke bāṛi jāi."
+    ipa: "ami skul t̪ʰeke baɽi dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-theke", "bn-rule-present-first"]
+    bases:
+      - { word: "যাই", ref: "bn-0873" }
+  - id: "bn-1093"
+    target: "নদীর পাশে একটা মন্দির আছে।"
+    reading: "nodir pāśe ekṭā mondir āche."
+    ipa: "nod̪ir paʃe ekʈa mond̪ir atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "নদীর", ref: "bn-1050" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1094"
+    target: "গ্রামে একটা পুকুর আছে।"
+    reading: "grāme ekṭā pukur āche."
+    ipa: "ɡrame ekʈa pukur atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "গ্রামে", ref: "bn-1053" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1095"
+    target: "থানা কোন দিকে?"
+    reading: "thānā kon dike?"
+    ipa: "t̪ʰana kon d̪ike"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "দিকে", ref: "bn-1076" }
+  - id: "bn-1096"
+    target: "উত্তর দিকে সোজা যান।"
+    reading: "uttor dike śojā jān."
+    ipa: "ut̪t̪or d̪ike ʃodʒa dʒan"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-polite-request"]
+    bases:
+      - { word: "দিকে", ref: "bn-1076" }
+      - { word: "যান", ref: "bn-0873" }
+  - id: "bn-1097"
+    target: "দোকানটা মোড়ের উল্টোদিকে।"
+    reading: "dokānṭā moṛer ulṭodike."
+    ipa: "d̪okanʈa moɽer ulʈod̪ike"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "দোকানটা", ref: "bn-0250" }
+      - { word: "মোড়ের", ref: "bn-0314" }
+  - id: "bn-1098"
+    target: "মন্দির নদীর ওপারে।"
+    reading: "mondir nodir opāre."
+    ipa: "mond̪ir nod̪ir opare"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "নদীর", ref: "bn-1050" }
