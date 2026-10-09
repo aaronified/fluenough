@@ -98,6 +98,11 @@ Settled with the owner, 2026-10-09:
   once. "I will also ask the people to either share their email or
   rater_id to me in person to filter, if needed. We need maximum
   participation. I do not see a huge risk of ghost reviews."
+- **No Sheet:** "no sheet needed anymore. the mail will have all the data.
+  i then open the mail myself and consult with you on updating the decks."
+  The workflow only opens the issue (rater code, language); the owner
+  reads the mail and the decks are updated with him. This supersedes the
+  Sheet and the automatic PR below.
 - **Results reach the decks through a PR the owner merges:** one per
   language, with sign-offs (unreviewed tags removed), offensiveness levels
   and confirmed similarity notes; suggestions stay as issues.
