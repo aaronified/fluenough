@@ -21,11 +21,17 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કેટલાનું", ref: "gu-0291" }
+      - { word: "છે", base: "છે", reading: "che" }
   - id: "gu-0374"
     target: "કેટલા રૂપિયા?"
     reading: "keṭlā rupiyā?"
     ipa: "keʈla rupija"
     pos: "phrase"
+    bases:
+      - { word: "કેટલા", ref: "gu-0291" }
+      - { word: "રૂપિયા", ref: "gu-0375" }
   - id: "gu-0375"
     target: "રૂપિયો"
     reading: "rupiyo"
@@ -64,6 +70,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "બહુ", base: "બહુ", reading: "bahu" }
+      - { word: "છે", base: "છે", reading: "che" }
   - id: "gu-0380"
     target: "થોડું ઓછું કરો."
     reading: "thoḍum̐ ochum̐ karo."
@@ -71,6 +80,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "થોડું", base: "થોડું", reading: "thoḍum̐" }
+      - { word: "ઓછું", base: "ઓછું", reading: "ochum̐" }
+      - { word: "કરો", base: "કરો", reading: "karo" }
   - id: "gu-0381"
     target: "છૂટા પૈસા"
     reading: "chuṭā paisā"
@@ -78,6 +91,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "છૂટા", base: "છૂટા", reading: "chuṭā" }
   - id: "gu-0382"
     target: "થેલી"
     reading: "theli"
@@ -91,6 +106,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કિલો", base: "કિલો", reading: "kilo" }
+      - { word: "આપો", base: "આપો", reading: "āpo" }
   - id: "gu-0384"
     target: "બીજું કંઈ?"
     reading: "bijum̐ kaim̐?"
@@ -98,3 +116,6 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "બીજું", base: "બીજું", reading: "bijum̐" }
+      - { word: "કંઈ", base: "કંઈ", reading: "kaim̐" }

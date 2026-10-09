@@ -124,6 +124,9 @@ cards:
     reading: "tame śum̐ kām karo cho?"
     ipa: "t̪əme ʃũ kam kəro tʃʰo"
     pos: "phrase"
+    bases:
+      - { word: "કરો", base: "કરો", reading: "karo" }
+      - { word: "છો", base: "છો", reading: "cho" }
   - id: "gu-0368"
     target: "હું બૅન્કમાં કામ કરું છું."
     reading: "hum̐ bênkmām̐ kām karum̐ chum̐."
@@ -131,6 +134,11 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "બૅન્કમાં", base: "બૅન્કમાં", reading: "bênkmām̐" }
+      - { word: "કરું", base: "કરું", reading: "karum̐" }
+      - { word: "છું", base: "છું", reading: "chum̐" }
   - id: "gu-0369"
     target: "મારો પોતાનો ધંધો છે."
     reading: "māro potāno dhandho che."
@@ -138,13 +146,23 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારો", base: "મારો", reading: "māro" }
+      - { word: "પોતાનો", base: "પોતાનો", reading: "potāno" }
+      - { word: "છે", base: "છે", reading: "che" }
   - id: "gu-0370"
     target: "આજે મારે રજા છે."
     reading: "āje māre rajā che."
     ipa: "adʒe mare rədʒa tʃʰe"
     pos: "phrase"
+    bases:
+      - { word: "મારે", base: "મારે", reading: "māre" }
+      - { word: "છે", base: "છે", reading: "che" }
   - id: "gu-0371"
     target: "સાહેબ મીટિંગમાં છે."
     reading: "sāheb miṭiṅgmām̐ che."
     ipa: "saɦeb miʈiŋɡmã tʃʰe"
     pos: "phrase"
+    bases:
+      - { word: "મીટિંગમાં", ref: "gu-0366" }
+      - { word: "છે", base: "છે", reading: "che" }
