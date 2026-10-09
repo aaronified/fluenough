@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/features.dart';
 import '../../core/feedback/report.dart';
+import '../../core/logs/log_entry.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import 'log_consent.dart';
 
 /// What each [ReportKind] looks like and asks, in the reporter's language.
 extension ReportKindText on ReportKind {
@@ -51,7 +54,8 @@ extension ReportKindText on ReportKind {
 
 /// Get support, report a bug or give feedback, by mail from the reporter's
 /// own mail app (#160, ADR-0021): the kind, a title, details, the screen it
-/// was raised on, and the device's details if the reporter ticks the box.
+/// was raised on, the device's details if the reporter ticks that box, and
+/// the app log, as a file, if they tick its box (#162).
 /// The mail app opens with the kind's subject and text preset, which the
 /// reporter can change before sending. Text only. Bugs and feedback become
 /// public issues; support stays private. Behind `Feature.feedbackMail`:
@@ -71,6 +75,7 @@ class _ReportPageState extends State<ReportPage> {
   final FocusNode _titleFocus = FocusNode();
   ReportKind _kind = ReportKind.bug;
   bool _withDevice = false;
+  bool _withLog = false;
   bool _titleMissing = false;
   bool _sending = false;
   ReportFailure? _failure;
@@ -102,6 +107,10 @@ class _ReportPageState extends State<ReportPage> {
         ...widget.request.always,
         if (_withDevice) ...widget.request.device,
       },
+      files: <AttachedFile>[
+        if (_withLog && !state.log.isEmpty)
+          AttachedFile(name: appLogFileName, text: state.log.text),
+      ],
     );
     setState(() {
       _sending = true;
@@ -109,11 +118,24 @@ class _ReportPageState extends State<ReportPage> {
     });
     final outcome = await state.reports.send(report);
     if (!mounted) return;
+    final kind = report.kind.label;
     switch (outcome) {
-      case ReportInMailApp():
-        showAppSnackBar(context, l10n.reportInMailApp);
+      case ReportInMailApp(:final filesLeftOut):
+        if (filesLeftOut) {
+          state.log.warning('Report in mail app ($kind), the log not attached');
+        } else {
+          state.log.event(
+            'Report in mail app ($kind)'
+            '${report.files.isEmpty ? '' : ', the log attached'}',
+          );
+        }
+        showAppSnackBar(
+          context,
+          filesLeftOut ? l10n.reportInMailAppNoLog : l10n.reportInMailApp,
+        );
         await Navigator.of(context).maybePop();
       case ReportFailed(:final reason):
+        state.log.warning('Report not sent ($kind): ${reason.name}');
         setState(() {
           _sending = false;
           _failure = reason;
@@ -136,6 +158,7 @@ class _ReportPageState extends State<ReportPage> {
       color: scheme.onSurfaceVariant,
     );
     final failure = _failure;
+    final state = AppScope.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reportTitle)),
       body: ListView(
@@ -205,6 +228,14 @@ class _ReportPageState extends State<ReportPage> {
             value: _withDevice,
             onChanged: (value) => setState(() => _withDevice = value),
           ),
+          if (state.features.isAvailable(Feature.logs)) ...<Widget>[
+            const SizedBox(height: 8),
+            LogConsent(
+              log: state.log,
+              value: _withLog,
+              onChanged: (value) => setState(() => _withLog = value),
+            ),
+          ],
           const SizedBox(height: 16),
           Text(
             _kind.public ? l10n.reportPublic : l10n.reportPrivate,
