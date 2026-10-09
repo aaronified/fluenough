@@ -16,8 +16,23 @@ speaker reviews every card before it ships, Telugu included.
 
 ## Decided with the owner, 2026-10-09
 
-- **A level on every offensive card.** Which scale is being researched
-  first (the owner asked: "Is ofcom the only research here?").
+- **A level on every offensive card,** from the research in
+  `docs/research/offensiveness-scale.md` (owner, 2026-10-09):
+  - **Four bands:** mild, medium, strong, strongest, meaning how a native
+    speaker hears the word in general (Janschewitz 2008's question), not
+    how strong it feels to the learner, since learners misjudge both ways
+    (Dewaele 2004, 2016).
+  - **Slurs** (caste, religion, ethnicity, disability, gender) are always
+    strongest, with their own warning.
+  - Each card also has a **type** (swear, slur, sexual, family insult),
+    whether it **can be friendly among peers**, and a **region note**
+    where speakers differ.
+- **Levels set by several native raters per language:** agents draft the
+  list and a provisional level; several native speakers, from more than
+  one region where possible, rate each word ("How offensive is this word
+  to people in general?", 1 to 9); the median sets the band, by written
+  cut-offs; slurs strongest by rule; a disagreement of a band or more
+  becomes a region note. Nothing ships before (owner).
 - **Two similarity lists, found by a tool and confirmed by a person:** a
   tool compares every word of a language with its offensive words twice,
   by sound (IPA) and by writing (the script and ISO 15919 letters), and
