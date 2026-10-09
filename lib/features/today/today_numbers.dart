@@ -51,7 +51,7 @@ typedef TodayLesson = ({
   bool done,
 });
 
-/// What Today shows of the learner's pace (`docs/plans/skill-model.md`,
+/// What Today shows of the learner's pace (ADR-0035,
 /// "Shown prominently"): the strip on the due card, and a mark on each
 /// adjusted skill's tile.
 typedef TodayPace = ({

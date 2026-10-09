@@ -104,7 +104,10 @@ Settled with the owner, 2026-10-09:
   ACTION_SEND intent with the review file shared through a FileProvider,
   the Fluenough address and the subject (with the rater code) filled in,
   opening the reviewer's mail app; the reviewer sends it (owner,
-  2026-10-09). iOS needs its own later.
+  2026-10-09). iOS needs its own later. The share is built, for reports
+  with the app log: `shareFiles` on the `app.fluenough/system` channel,
+  through `MailShare` in `lib/app/mail_share.dart`, which takes a list of
+  files (ADR-0021, amended 2026-10-09).
 - **Several decks in one mail** (owner, 2026-10-09: "the reviewer should
   be able to send multiple decks for review at the same time as well. and
   this needs to be communicated at every important juncture as well (when

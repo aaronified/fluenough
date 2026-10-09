@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
@@ -29,6 +30,7 @@ import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
+import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'deck_import.dart';
 import 'features.dart';
@@ -127,6 +129,7 @@ class AppState extends ChangeNotifier {
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
     this.reports = const NullReportSender(),
+    AppLog? log,
     this._releases = const NullReleaseCheck(),
     this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
@@ -144,6 +147,8 @@ class AppState extends ChangeNotifier {
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
+       log = log ?? AppLog(),
+       _ownsLog = log == null,
        _profiles = List<Profile>.of(profiles),
        _currentProfileId = currentProfileId ?? profiles.first.id {
     // What is pending follows progress, settings and this state's own
@@ -151,7 +156,10 @@ class AppState extends ChangeNotifier {
     for (final source in <Listenable>[this, this.settings, progress]) {
       source.addListener(_forgetPending);
     }
+    shellTab.addListener(_logTab);
   }
+
+  void _logTab() => log.event('Opened tab ${shellTab.value.name}');
 
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
@@ -188,6 +196,7 @@ class AppState extends ChangeNotifier {
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
     ReportSender reports = const NullReportSender(),
+    AppLog? log,
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
@@ -216,6 +225,7 @@ class AppState extends ChangeNotifier {
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
       reports: reports,
+      log: log,
       releases: releases,
       releaseNotes: releaseNotes,
       installer: installer,
@@ -265,6 +275,11 @@ class AppState extends ChangeNotifier {
   /// reporter's mail app, or nowhere in a build that was given none.
   final ReportSender reports;
 
+  /// The app's own log (#162): errors, warnings and key events, which
+  /// Settings shows and a report attaches if the reporter agrees.
+  final AppLog log;
+  final bool _ownsLog;
+
   /// Settings' "Check for updates", the check at launch, and installing
   /// what it finds (ADR-0017). Has its own notifier; what it finds is kept
   /// in [settings].
@@ -284,12 +299,13 @@ class AppState extends ChangeNotifier {
   final DownloadStore _downloads;
 
   /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
-  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// refit after a review (ADR-0035). Has its own
   /// notifier.
   late final FsrsTuner tuner = FsrsTuner(
     progress: progress,
     clock: _clock,
     runner: _fitRunner,
+    log: log,
   );
   final FitRunner _fitRunner;
 
@@ -470,6 +486,7 @@ class AppState extends ChangeNotifier {
   /// it where its wildcards say (`CoursePath.placing`).
   Future<void> addDeck(Deck deck, String text) async {
     await deckCatalog.added!.save(deck.id, text);
+    log.event('Deck added: ${deck.id}');
     await _reloadDecks();
   }
 
@@ -477,6 +494,7 @@ class AppState extends ChangeNotifier {
   /// back if the deck is added again.
   Future<void> removeDeck(String deckId) async {
     await deckCatalog.added!.remove(deckId);
+    log.event('Deck removed: $deckId');
     await _reloadDecks();
   }
 
@@ -507,9 +525,11 @@ class AppState extends ChangeNotifier {
       _catalog = await deckCatalog.load();
       _status = CatalogStatus.ready;
       _mapSkills();
-    } catch (error) {
+      log.event('Decks loaded: ${decks.length}');
+    } catch (error, stack) {
       _loadError = error;
       _status = CatalogStatus.failed;
+      log.error(describeError('Decks failed to load', error, stack));
     }
     notifyListeners();
     await refreshVoices();
@@ -1423,12 +1443,15 @@ class AppState extends ChangeNotifier {
     _disposed = true;
     settings.removeListener(_forgetPending);
     progress.removeListener(_forgetPending);
-    shellTab.dispose();
+    shellTab
+      ..removeListener(_logTab)
+      ..dispose();
     updates.dispose();
     tuner.dispose();
     pacing.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
+    if (_ownsLog) log.dispose();
     super.dispose();
   }
 }

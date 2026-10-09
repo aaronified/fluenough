@@ -418,7 +418,7 @@ class SettingsNotifier extends ChangeNotifier {
       _set(_autoUpdateCheck, value, (v) => _autoUpdateCheck = v);
 
   /// Whether a skill is fitted again, in the background, once it has 10%
-  /// more answers than at its last fit (`docs/plans/skill-model.md`). On
+  /// more answers than at its last fit (ADR-0035). On
   /// by default (owner, 2026-10-09).
   bool get autoAdjust => _autoAdjust;
   set autoAdjust(bool value) =>
