@@ -24,15 +24,6 @@ cards:
     rules: ["te-rule-pronoun-gen"]
     bases:
       - { word: "నా", ref: "te-0593" }
-  - id: "te-0614"
-    target: "వాళ్ళు నా స్నేహితులు."
-    reading: "vāḷḷu nā snēhitulu."
-    ipa: "ʋaːɭɭu naː sneːhit̪ulu"
-    pos: "phrase"
-    rules: ["te-rule-pronoun-gen", "te-rule-plural"]
-    bases:
-      - { word: "నా", ref: "te-0593" }
-      - { word: "స్నేహితులు", ref: "te-0189" }
   - id: "te-0615"
     target: "అతను నా తమ్ముడు."
     reading: "atanu nā tammuḍu."
@@ -62,14 +53,6 @@ cards:
     reading: "adi evari illu?"
     ipa: "ad̪i eʋari illu"
     pos: "phrase"
-  - id: "te-0619"
-    target: "అవి ఎవరి కుర్చీలు?"
-    reading: "avi evari kurcīlu?"
-    ipa: "aʋi eʋari kurtʃiːlu"
-    pos: "phrase"
-    rules: ["te-rule-plural"]
-    bases:
-      - { word: "కుర్చీలు", ref: "te-0431" }
   - id: "te-0620"
     target: "మీరు ఎవరు?"
     reading: "mīru evaru?"

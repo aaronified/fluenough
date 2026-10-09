@@ -57,15 +57,7 @@ cards:
     rules: ["te-rule-present-third"]
     bases:
       - { word: "పాడతారు", ref: "te-0821" }
-  - id: "te-0859"
-    target: "అతను పండ్లు కొంటాడు."
-    reading: "atanu paṇḍlu koṇṭāḍu."
-    ipa: "at̪anu paɳɖlu koɳʈaːɖu"
-    pos: "phrase"
-    rules: ["te-rule-present-third", "te-rule-plural"]
-    bases:
-      - { word: "పండ్లు", ref: "te-0664" }
-      - { word: "కొంటాడు", ref: "te-0641" }
+  - ref: "te-0727"
   - id: "te-0860"
     target: "నేను తాళం చెవి వెతుకుతాను."
     reading: "nēnu tāḷam cevi vetukutānu."
@@ -73,7 +65,7 @@ cards:
     pos: "phrase"
     rules: ["te-rule-present-first"]
     bases:
-      - { word: "తాళం", base: "తాళం", reading: "tāḷam" }
+      - { word: "తాళం", ref: "te-0876" }
       - { word: "చెవి", ref: "te-0733" }
       - { word: "వెతుకుతాను", ref: "te-0835" }
   - id: "te-0861"
