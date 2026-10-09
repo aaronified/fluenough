@@ -13,6 +13,9 @@ cards:
     pos: "noun"
     gender: "m"
     tags: ["people"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "hombre", base: "hombre" }
   - id: "es-0002"
     target: "la mujer"
     picture: "👩"
@@ -20,6 +23,9 @@ cards:
     pos: "noun"
     gender: "f"
     tags: ["people"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "mujer", base: "mujer" }
   - id: "es-0003"
     target: "el niño"
     picture: "👦"
@@ -27,6 +33,9 @@ cards:
     pos: "noun"
     gender: "m"
     tags: ["people"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "niño", base: "niño" }
   - id: "es-0004"
     target: "la niña"
     picture: "👧"
@@ -34,6 +43,9 @@ cards:
     pos: "noun"
     gender: "f"
     tags: ["people"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "niña", base: "niña" }
   - id: "es-0005"
     target: "el amigo"
     ipa: "el aˈmiɡo"
@@ -42,6 +54,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     tags: ["people"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "amigo", base: "amigo" }
   - id: "es-0006"
     target: "la casa"
     ipa: "la ˈkasa"
@@ -49,7 +64,10 @@ cards:
     gender: "f"
     tags: ["home"]
     examples:
-      - { target: "La casa es muy grande.", ipa: "la ˈkasa es mwi ˈɡɾande" }
+      - { target: "La casa es muy grande.", ipa: "la ˈkasa es mwi ˈɡɾande", bases: [{ word: "La", base: "La" }, { word: "casa", base: "casa" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }] }
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "casa", base: "casa" }
   - id: "es-0007"
     target: "la puerta"
     picture: "🚪"
@@ -57,6 +75,9 @@ cards:
     pos: "noun"
     gender: "f"
     tags: ["home"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "puerta", base: "puerta" }
   - id: "es-0008"
     target: "la ventana"
     picture: "🪟"
@@ -64,12 +85,18 @@ cards:
     pos: "noun"
     gender: "f"
     tags: ["home"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "ventana", base: "ventana" }
   - id: "es-0009"
     target: "la mesa"
     ipa: "la ˈmesa"
     pos: "noun"
     gender: "f"
     tags: ["home"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "mesa", base: "mesa" }
   - id: "es-0010"
     target: "la silla"
     picture: "🪑"
@@ -77,6 +104,9 @@ cards:
     pos: "noun"
     gender: "f"
     tags: ["home"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "silla", base: "silla" }
   - id: "es-0011"
     target: "el libro"
     picture: "📖"
@@ -84,14 +114,9 @@ cards:
     pos: "noun"
     gender: "m"
     tags: ["objects"]
-  - id: "es-0012"
-    target: "el agua"
-    ipa: "el ˈaɡwa"
-    pos: "noun"
-    gender: "f"
-    notes:
-      - { id: "n1", kind: "note" }
-    tags: ["food"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "libro", base: "libro" }
   - id: "es-0013"
     target: "el pan"
     picture: "🍞"
@@ -99,6 +124,9 @@ cards:
     pos: "noun"
     gender: "m"
     tags: ["food"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "pan", base: "pan" }
   - id: "es-0014"
     target: "la leche"
     picture: "🥛"
@@ -106,30 +134,27 @@ cards:
     pos: "noun"
     gender: "f"
     tags: ["food"]
-  - id: "es-0015"
-    target: "la comida"
-    ipa: "la koˈmida"
-    pos: "noun"
-    gender: "f"
-    tags: ["food"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "leche", base: "leche" }
   - id: "es-0016"
     target: "la ciudad"
     ipa: "la θjuˈdad"
     pos: "noun"
     gender: "f"
     tags: ["places"]
-  - id: "es-0017"
-    target: "la calle"
-    ipa: "la ˈkaʝe"
-    pos: "noun"
-    gender: "f"
-    tags: ["places"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "ciudad", base: "ciudad" }
   - id: "es-0018"
     target: "el país"
     ipa: "el paˈis"
     pos: "noun"
     gender: "m"
     tags: ["places"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "país", base: "país" }
   - id: "es-0019"
     target: "el día"
     ipa: "el ˈdia"
@@ -138,61 +163,32 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     tags: ["time"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "día", base: "día" }
   - id: "es-0020"
     target: "la noche"
     ipa: "la ˈnotʃe"
     pos: "noun"
     gender: "f"
     tags: ["time"]
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "noche", base: "noche" }
   - id: "es-0021"
     target: "el año"
     ipa: "el ˈaɲo"
     pos: "noun"
     gender: "m"
     tags: ["time"]
-  - id: "es-0022"
-    target: "ser"
-    ipa: "seɾ"
-    pos: "verb"
-    notes:
-      - { id: "n1", kind: "note" }
-    tags: ["verb", "irregular"]
-    examples:
-      - { target: "Ella es médica.", ipa: "ˈeʝa es ˈmedika" }
-  - id: "es-0023"
-    target: "estar"
-    ipa: "esˈtaɾ"
-    pos: "verb"
-    notes:
-      - { id: "n1", kind: "note" }
-    tags: ["verb", "irregular"]
-    examples:
-      - { target: "Estoy cansado.", ipa: "esˈtoj kanˈsado" }
-  - id: "es-0024"
-    target: "tener"
-    ipa: "teˈneɾ"
-    pos: "verb"
-    tags: ["verb", "irregular"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "año", base: "año" }
   - id: "es-0025"
     target: "hacer"
     ipa: "aˈθeɾ"
     pos: "verb"
     tags: ["verb", "irregular"]
-  - id: "es-0026"
-    target: "ir"
-    ipa: "iɾ"
-    pos: "verb"
-    tags: ["verb", "irregular"]
-  - id: "es-0027"
-    target: "hablar"
-    ipa: "aˈblaɾ"
-    pos: "verb"
-    tags: ["verb", "regular-ar"]
-  - id: "es-0028"
-    target: "comer"
-    ipa: "koˈmeɾ"
-    pos: "verb"
-    tags: ["verb", "regular-er"]
   - id: "es-0029"
     target: "beber"
     ipa: "beˈbeɾ"
@@ -228,33 +224,3 @@ cards:
     ipa: "ˈnwebo"
     pos: "adj"
     tags: ["adjective"]
-  - id: "es-0036"
-    target: "hola"
-    ipa: "ˈola"
-    pos: "phrase"
-    tags: ["courtesy"]
-  - id: "es-0037"
-    target: "gracias"
-    ipa: "ˈɡɾaθjas"
-    pos: "phrase"
-    tags: ["courtesy"]
-  - id: "es-0038"
-    target: "por favor"
-    ipa: "poɾ faˈboɾ"
-    pos: "phrase"
-    tags: ["courtesy"]
-  - id: "es-0039"
-    target: "buenos días"
-    ipa: "ˈbwenos ˈdias"
-    pos: "phrase"
-    tags: ["courtesy"]
-  - id: "es-0040"
-    target: "buenas noches"
-    ipa: "ˈbwenas ˈnotʃes"
-    pos: "phrase"
-    tags: ["courtesy"]
-  - id: "es-0041"
-    target: "lo siento"
-    ipa: "lo ˈsjento"
-    pos: "phrase"
-    tags: ["courtesy"]
