@@ -284,10 +284,11 @@ The owner's answers to #235, 2026-10-08:
     a pull request first; then the B1 format; then the colours.
 
 - **Grammar understood and produced** are built with the B1 format, not
-  in the skill model's pull request (owner, 2026-10-09): "understood"
-  chooses among forms of the same word, the rule cards' question
-  (`words-rules-sentences.md`). Until then grammar keeps one schedule,
-  typed.
+  in the skill model's pull request (owner, 2026-10-09). **Understood is
+  shown a form and choosing what it means;** choosing among forms of the
+  same word, the rule cards' question, or typing the form, is produced
+  (owner, 2026-10-09, settling `b1-format-spec.md` #22). Until then
+  grammar keeps one schedule, typed.
 - **Settings** already has one switch per skill, so one per activity;
   their wording waits for `settings-wording.md`.
 
