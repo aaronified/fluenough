@@ -44,11 +44,12 @@ enum Feature {
   importUrl(22),
   importCsv(0),
 
-  // Feedback: reports by mail, text only. Until it is on, every report
-  // button opens a new GitHub issue instead.
+  // Feedback: support, bug reports and feedback by mail. Until it is on,
+  // every report button opens a new GitHub issue instead.
   feedbackMail(160),
 
-  // The app's own log, for reports, and its section in Settings.
+  // The app's own log, its section in Settings, and the box that attaches
+  // it to a report.
   logs(162),
 
   // Settings.
@@ -107,6 +108,8 @@ enum Feature {
     Feature.logImport,
     Feature.importFile,
     Feature.voiceSettingsLink,
+    Feature.feedbackMail,
+    Feature.logs,
   };
 }
 

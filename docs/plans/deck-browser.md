@@ -104,7 +104,10 @@ Settled with the owner, 2026-10-09:
   ACTION_SEND intent with the review file shared through a FileProvider,
   the Fluenough address and the subject (with the rater code) filled in,
   opening the reviewer's mail app; the reviewer sends it (owner,
-  2026-10-09). iOS needs its own later.
+  2026-10-09). iOS needs its own later. The share is built, for reports
+  with the app log: `shareFiles` on the `app.fluenough/system` channel,
+  through `MailShare` in `lib/app/mail_share.dart`, which takes a list of
+  files (ADR-0021, amended 2026-10-09).
 - **Several decks in one mail** (owner, 2026-10-09: "the reviewer should
   be able to send multiple decks for review at the same time as well. and
   this needs to be communicated at every important juncture as well (when
@@ -119,6 +122,16 @@ Settled with the owner, 2026-10-09:
   as you like, and send them together in one mail"), "How reviewing
   works", the deck's foot ("3 decks waiting to send"), the send sheet, and
   the mail's body.
+- **The files are the record, not the mail** (owner, 2026-10-09: "the
+  rater code and languages in the subject (and also in the json files).
+  the reviewer may accidentally delete or change the body / title of the
+  mail"). Every review file carries the rater code, the language, the
+  deck id, the app version and when it was made, so the files stand on
+  their own. The subject also carries the code and the languages, and the
+  body is for people only. The workflow reads the code and languages from
+  the files; when the subject is missing or disagrees with them it goes by
+  the files and marks the issue "subject changed"; files in one mail with
+  different codes, or none, mark it "check the files", for the owner.
 - **The first mail binds the code to its sender** (owner, 2026-10-09): the
   first review mail with a new code ties that code to the sender's
   address. The workflow keeps, in a file in the repository, the code with
