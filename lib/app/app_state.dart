@@ -330,7 +330,7 @@ class AppState extends ChangeNotifier {
   final DownloadStore _downloads;
 
   /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
-  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// refit after a review (ADR-0035). Has its own
   /// notifier.
   late final FsrsTuner tuner = FsrsTuner(
     progress: progress,
