@@ -105,6 +105,14 @@ Settled with the owner, 2026-10-09:
   the Fluenough address and the subject (with the rater code) filled in,
   opening the reviewer's mail app; the reviewer sends it (owner,
   2026-10-09). iOS needs its own later.
+- **The first mail binds the code to its sender** (owner, 2026-10-09): the
+  first review mail with a new code ties that code to the sender's
+  address. The workflow keeps, in a file in the repository, the code with
+  a keyed hash of the address (the key a GitHub secret), never the address
+  itself. A later mail with the same code from another address gets an
+  issue marked "sender does not match", for the owner to decide.
+- **"How reviewing works"** is explained in a popup the reviewer can open
+  again from Settings at any time (owner, 2026-10-09).
 - **Joining is automatic:** a join mail makes the sender a reviewer at
   once. "I will also ask the people to either share their email or
   rater_id to me in person to filter, if needed. We need maximum
