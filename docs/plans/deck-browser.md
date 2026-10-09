@@ -77,6 +77,23 @@ So:
   - the service-account key is a secret available only to the scheduled
     workflow on `main`, never to pull requests from forks.
 
+### Review in the app, by mail (owner, 2026-10-09)
+
+> no, only the emails will be allowed to participate in the review.
+
+> no. the reviewer reviews in the app itself. no extra screen. they share
+> their reviewed file via email to a fluenough email ID. this mail will
+> include their reviewer code. think along this line. for maximum
+> automation and seamless review
+
+This replaces the web page and the Google Form above for reviewing: the
+reviewer reviews inside the app, on the screens that already show decks
+and cards, and sends a review file by mail, with their code, to the
+Fluenough address, where the hourly workflow that already reads that
+mailbox (`tools/mail_to_issues.py`) takes it in. Only enrolled emails take
+part: a review is accepted only from the email its code was made for.
+The design is being settled with the owner before anything is built.
+
 ## The form's link is not private
 
 A GitHub secret keeps a value out of the repository and the logs, but the
