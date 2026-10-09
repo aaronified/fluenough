@@ -1,6 +1,6 @@
 # Plan: a Research and standards page, with the sources
 
-Written 2026-10-06. **After FSRS (`fsrs.md`) and the B1 plans
+Written 2026-10-06. **After FSRS (done: ADR-0033) and the B1 plans
 (`b1-plans.md`)**, the owner's order, since the page cites both.
 
 ## What the owner asked
@@ -21,7 +21,8 @@ Written 2026-10-06. **After FSRS (`fsrs.md`) and the B1 plans
   lists the same.
 - **The README** explains ISO 15919 and the IPA. Nothing in the app or the
   README names the research behind the design.
-- **The research** for `skill-model.md` was gathered from abstracts and
+- **The research** for the skill model (ADR-0034; summarised in
+  `docs/research/skill-evidence.md`) was gathered from abstracts and
   summaries; the full texts were not read (the network blocked the
   publishers).
 
@@ -56,8 +57,10 @@ sections:
    | Grammar | Understanding and producing apart, timed | DeKeyser 1997; Ellis 2005; Shintani et al. 2013 |
    | Your strengths | FSRS per word, an Elo ability per skill | Pelánek 2016; Choffin et al. 2019; Settles & Meeder 2016 |
 
-   A group shows only once the app does what it says. Skills, Listening
-   for meaning and Your strengths wait for `skill-model.md`.
+   A group shows only once the app does what it says. The skill model is
+   done (ADR-0034), so Skills and Listening for meaning can show. Your
+   strengths: the owner removed that section from Progress (2026-10-09;
+   ADR-0035), so reword the group for what the app shows.
 
 3. **Sources of the decks' texts,** as the Sources page shows them now.
 
