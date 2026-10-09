@@ -463,8 +463,7 @@ class ModeColors extends ThemeExtension<ModeColors> {
     Skill.production => production,
     Skill.listening => listening,
     Skill.speaking => speaking,
-    // Understood and produced are one tile on Today, in one colour.
-    Skill.grammar || Skill.grammarUnderstood => grammar,
+    Skill.grammar => grammar,
     Skill.reading => reading,
     Skill.pair => pair,
   };

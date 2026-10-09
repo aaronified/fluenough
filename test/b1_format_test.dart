@@ -1896,8 +1896,8 @@ $units''';
     });
 
     test('shares the grammar tile, and implies nothing yet', () {
-      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammarUnderstood);
-      expect(Skill.grammarUnderstood.tile, Skill.grammar);
+      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammar);
+      expect(Skill.grammar.modes, contains(DrillMode.grammarUnderstood));
       expect(
         const SkillMap().impliedBy(DrillMode.grammarUnderstood, 'd'),
         isEmpty,

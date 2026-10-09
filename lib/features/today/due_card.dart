@@ -232,7 +232,6 @@ class _SkillGrid extends StatelessWidget {
           count: count,
           due: numbers.dueIn[skill] ?? 0,
           revisable: numbers.revisable[skill] ?? 0,
-          starts: numbers.starts[skill] ?? <Skill>{skill},
           noVoice: skill.needsVoice && numbers.noVoice,
           marked: pace != null,
           mark: pace?.marks[skill],
@@ -291,7 +290,6 @@ class _SkillTile extends StatelessWidget {
     required this.due,
     required this.revisable,
     required this.noVoice,
-    this.starts = const <Skill>{},
     this.marked = false,
     this.mark,
     this.keepMarkLine = true,
@@ -322,17 +320,6 @@ class _SkillTile extends StatelessWidget {
   final int revisable;
   final bool noVoice;
 
-  /// The skills tapping the tile reviews or revises: its own, and grammar
-  /// understood on Grammar's ([tileSkillsOn]). Empty for its own alone.
-  final Set<Skill> starts;
-
-  /// What tapping the tile reviews, or with [revise] revises: its own
-  /// skill, or the skills sharing it when more than its own is on.
-  DrillRequest _request({bool revise = false}) =>
-      starts.isEmpty || (starts.length == 1 && starts.single == skill)
-      ? (revise ? DrillRequest.reviseSkill(skill) : DrillRequest(skill: skill))
-      : DrillRequest(skills: starts, revise: revise);
-
   Future<void> _revise(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
     final label = skill.label(l10n);
@@ -354,7 +341,7 @@ class _SkillTile extends StatelessWidget {
       ),
     );
     if (revise == true && context.mounted) {
-      await AppNavigator.startDrill(context, _request(revise: true));
+      await AppNavigator.startDrill(context, DrillRequest.reviseSkill(skill));
     }
   }
 
@@ -526,7 +513,7 @@ class _SkillTile extends StatelessWidget {
     final radius = BorderRadius.circular(AppRadii.small);
     void setUp() => AppNavigator.openVoices(context);
     final VoidCallback? start = due > 0
-        ? () => AppNavigator.startDrill(context, _request())
+        ? () => AppNavigator.startDrill(context, DrillRequest(skill: skill))
         : revisable > 0
         ? () => _revise(context)
         : null;

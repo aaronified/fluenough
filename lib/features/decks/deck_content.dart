@@ -30,7 +30,7 @@ List<Skill> deckSkills(DeckEntry entry, SettingsNotifier settings) {
       if (settings.isEnabled(skill) &&
           (skill == Skill.pair
               ? declaresPairs(entry)
-              : modes.contains(skill.mode)))
+              : skill.modes.any(modes.contains)))
         skill,
   ];
 }

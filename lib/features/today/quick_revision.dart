@@ -37,8 +37,7 @@ class _QuickRevisionState extends State<QuickRevision> {
   String _chosen = 'all';
 
   /// All, Spoken while listening and speaking are both on, then each skill
-  /// with a tile on Today that is switched on, or whose tile shares a skill
-  /// that is.
+  /// with a tile on Today that is switched on.
   List<_Choice> _choices(AppState state, AppLocalizations l10n) {
     bool on(Skill skill) =>
         state.settings.isEnabled(skill) &&
@@ -47,10 +46,9 @@ class _QuickRevisionState extends State<QuickRevision> {
       (key: 'all', label: l10n.todayRevisionAll, skills: null),
       if (spokenSkills.every(on))
         (key: 'spoken', label: l10n.todayRevisionSpoken, skills: spokenSkills),
-      // Grammar's tile revises grammar understood too ([Skill.tile]).
       for (final skill in todaySkills)
-        if (tileSkillsOn(state, skill) case final skills when skills.isNotEmpty)
-          (key: skill.name, label: skill.label(l10n), skills: skills),
+        if (on(skill))
+          (key: skill.name, label: skill.label(l10n), skills: <Skill>{skill}),
     ];
   }
 

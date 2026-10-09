@@ -7,9 +7,9 @@ import '../l10n/app_localizations.dart';
 ///
 /// The design's Tabler icons map onto Material ones: an eye for recognition, a
 /// keyboard for production, an ear for listening, a microphone for speaking,
-/// a letter form for grammar, a magnifier over lines for grammar understood
-/// (a form looked into for its meaning), an open book for reading,
-/// headphones for minimal pairs. Colours are in `ModeColors`.
+/// a letter form for grammar, an open book for reading, headphones for
+/// minimal pairs. Colours are in
+/// `ModeColors`.
 extension SkillVisuals on Skill {
   IconData get icon => switch (this) {
     Skill.recognition => Icons.visibility_outlined,
@@ -17,7 +17,6 @@ extension SkillVisuals on Skill {
     Skill.listening => Icons.hearing,
     Skill.speaking => Icons.mic_none,
     Skill.grammar => Icons.text_fields,
-    Skill.grammarUnderstood => Icons.manage_search,
     Skill.reading => Icons.menu_book_outlined,
     Skill.pair => Icons.headphones_outlined,
   };
@@ -29,7 +28,6 @@ extension SkillVisuals on Skill {
     Skill.listening => l10n.skillListening,
     Skill.speaking => l10n.skillSpeaking,
     Skill.grammar => l10n.skillGrammar,
-    Skill.grammarUnderstood => l10n.skillGrammarUnderstood,
     Skill.reading => l10n.skillReading,
     Skill.pair => l10n.skillPair,
   };
@@ -52,7 +50,6 @@ extension SkillVisuals on Skill {
         Skill.listening => l10n.skillListeningDeckDesc,
         Skill.speaking => l10n.skillSpeakingDeckDesc(language),
         Skill.grammar => l10n.skillGrammarDeckDesc,
-        Skill.grammarUnderstood => l10n.skillGrammarUnderstoodDeckDesc,
         Skill.reading => l10n.skillReadingDeckDesc,
         Skill.pair => l10n.skillPairDeckDesc,
       };
@@ -64,7 +61,6 @@ extension SkillVisuals on Skill {
     Skill.listening => l10n.skillListeningSettingsDesc,
     Skill.speaking => l10n.skillSpeakingSettingsDesc,
     Skill.grammar => l10n.skillGrammarSettingsDesc,
-    Skill.grammarUnderstood => l10n.skillGrammarUnderstoodSettingsDesc,
     Skill.reading => l10n.skillReadingSettingsDesc,
     Skill.pair => l10n.skillPairSettingsDesc,
   };
