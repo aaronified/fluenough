@@ -15,6 +15,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्ते", base: "नमस्ते", reading: "namastē" }
   - id: "hi-0133"
     target: "नमस्कार"
     reading: "namaskār"
@@ -24,6 +26,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }
   - id: "hi-0136"
     target: "आप कैसे हैं?"
     reading: "āp kaisē haim̐?"
@@ -42,6 +46,10 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0144"
     target: "फिर मिलेंगे।"
     reading: "phir milēṅgē."
@@ -51,6 +59,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मिलेंगे", base: "मिलेंगे", reading: "milēṅgē" }
   - id: "hi-0138"
     target: "धन्यवाद"
     reading: "dhanyavād"
@@ -60,6 +70,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }
   - id: "hi-0139"
     target: "शुक्रिया"
     reading: "śukriyā"
@@ -69,6 +81,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शुक्रिया", base: "शुक्रिया", reading: "śukriyā" }
   - id: "hi-0188"
     target: "मेरा नाम … है।"
     reading: "mērā nām... hai."
@@ -77,6 +91,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरा", base: "मेरा", reading: "mērā" }
   - id: "hi-0189"
     target: "आपका नाम क्या है?"
     reading: "āpkā nām kyā hai?"
@@ -84,6 +100,8 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
+    bases:
+      - { word: "आपका", ref: "hi-0134" }
   - id: "hi-0190"
     target: "मैं … से हूँ।"
     reading: "maim̐... sē hūm̐."
@@ -92,6 +110,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0140"
     target: "मुझे हिंदी नहीं आती।"
     reading: "mujhē hindī nahīm̐ ātī."
@@ -100,6 +121,10 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "आती", base: "आती", reading: "ātī" }
   - id: "hi-0141"
     target: "मैं अभी हिंदी सीख रहा हूँ।"
     reading: "maim̐ abhī hindī sīkh rahā hūm̐."
@@ -108,6 +133,12 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "सीख", base: "सीख", reading: "sīkh" }
+      - { word: "रहा", base: "रहा", reading: "rahā" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0142"
     target: "धीरे बोलिए।"
     reading: "dhīrē bōliē."
@@ -117,6 +148,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धीरे", base: "धीरे", reading: "dhīrē" }
+      - { word: "बोलिए", base: "बोलिए", reading: "bōliē" }
   - id: "hi-0143"
     target: "फिर से बोलिए।"
     reading: "phir sē bōliē."
@@ -124,12 +158,18 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
+    bases:
+      - { word: "बोलिए", base: "बोलिए", reading: "bōliē" }
   - id: "hi-0362"
     target: "मुझे समझ नहीं आया।"
     reading: "mujhē samajh nahīm̐ āyā."
     ipa: "mʊdʒʱeː səmədʒʱ nəɦĩː aːjaː"
     pos: "phrase"
     phrasebook: true
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "समझ", base: "समझ", reading: "samajh" }
+      - { word: "आया", base: "आया", reading: "āyā" }
   - id: "hi-0363"
     target: "टॉयलेट कहाँ है?"
     reading: "ṭôylēṭ kahām̐ hai?"
@@ -138,6 +178,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "टॉयलेट", base: "टॉयलेट", reading: "ṭôylēṭ" }
   - id: "hi-0361"
     target: "मैं खो गया हूँ।"
     reading: "maim̐ khō gayā hūm̐."
@@ -146,6 +188,11 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "खो", base: "खो", reading: "khō" }
+      - { word: "गया", base: "गया", reading: "gayā" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0353"
     target: "मदद कीजिए!"
     reading: "madad kījiē!"
@@ -153,6 +200,8 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
+    bases:
+      - { word: "कीजिए", base: "कीजिए", reading: "kījiē" }
   - id: "hi-0354"
     target: "बचाओ!"
     reading: "bacāō!"
@@ -161,6 +210,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बचाओ", base: "बचाओ", reading: "bacāō" }
   - id: "hi-0355"
     target: "रुकिए!"
     reading: "rukiē!"
@@ -168,3 +219,5 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
+    bases:
+      - { word: "रुकिए", base: "रुकिए", reading: "rukiē" }

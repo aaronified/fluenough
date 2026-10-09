@@ -11,6 +11,8 @@ cards:
     reading: "kām karnā"
     ipa: "kaːm kərnaː"
     pos: "phrase"
+    bases:
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0489"
     target: "बात करना"
     reading: "bāt karnā"
@@ -18,6 +20,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बात", base: "बात", reading: "bāt" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0490"
     target: "मदद करना"
     reading: "madad karnā"
@@ -25,6 +30,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0491"
     target: "इंतज़ार करना"
     reading: "intazār karnā"
@@ -33,55 +40,85 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "इंतज़ार", base: "इंतज़ार", reading: "intazār" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0492"
     target: "शुरू करना"
     reading: "śurū karnā"
     ipa: "ʃʊruː kərnaː"
     pos: "phrase"
+    bases:
+      - { word: "शुरू", base: "शुरू", reading: "śurū" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0493"
     target: "ख़त्म करना"
     reading: "k͟hatm karnā"
     ipa: "xət̪m kərnaː"
     alt_target: ["खत्म करना"]
     pos: "phrase"
+    bases:
+      - { word: "ख़त्म", base: "ख़त्म", reading: "k͟hatm" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0494"
     target: "कोशिश करना"
     reading: "kōśiś karnā"
     ipa: "koːʃɪʃ kərnaː"
     pos: "phrase"
+    bases:
+      - { word: "कोशिश", base: "कोशिश", reading: "kōśiś" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0495"
     target: "फ़ोन करना"
     reading: "fōn karnā"
     ipa: "foːn kərnaː"
     alt_target: ["फोन करना"]
     pos: "phrase"
+    bases:
+      - { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0496"
     target: "साफ़ करना"
     reading: "sāf karnā"
     ipa: "saːf kərnaː"
     alt_target: ["साफ करना"]
     pos: "phrase"
+    bases:
+      - { word: "साफ़", base: "साफ़", reading: "sāf" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0497"
     target: "शादी करना"
     reading: "śādī karnā"
     ipa: "ʃaːd̪iː kərnaː"
     pos: "phrase"
+    bases:
+      - { word: "शादी", base: "शादी", reading: "śādī" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0498"
     target: "आराम करना"
     reading: "ārām karnā"
     ipa: "aːraːm kərnaː"
     pos: "phrase"
+    bases:
+      - { word: "आराम", base: "आराम", reading: "ārām" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0499"
     target: "याद करना"
     reading: "yād karnā"
     ipa: "jaːd̪ kərnaː"
     pos: "phrase"
+    bases:
+      - { word: "याद", base: "याद", reading: "yād" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0500"
     target: "ग़लती करना"
     reading: "ġaltī karnā"
     ipa: "ɣəlt̪iː kərnaː"
     alt_target: ["गलती करना"]
     pos: "phrase"
+    bases:
+      - { word: "ग़लती", base: "ग़लती", reading: "ġaltī" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0501"
     target: "याद आना"
     reading: "yād ānā"
@@ -89,6 +126,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "याद", base: "याद", reading: "yād" }
+      - { word: "आना", base: "आना", reading: "ānā" }
   - id: "hi-0502"
     target: "देर होना"
     reading: "dēr hōnā"
@@ -96,6 +136,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "देर", base: "देर", reading: "dēr" }
+      - { word: "होना", base: "होना", reading: "hōnā" }
   - id: "hi-0503"
     target: "डर लगना"
     reading: "ḍar lagnā"
@@ -103,3 +146,6 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "डर", base: "डर", reading: "ḍar" }
+      - { word: "लगना", base: "लगना", reading: "lagnā" }

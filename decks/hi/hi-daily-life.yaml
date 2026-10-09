@@ -25,6 +25,10 @@ cards:
     ipa: "d̪ãːt̪ saːf kərnaː"
     alt_target: ["दांत साफ करना"]
     pos: "phrase"
+    bases:
+      - { word: "दाँत", base: "दाँत", reading: "dām̐t" }
+      - { word: "साफ़", base: "साफ़", reading: "sāf" }
+      - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0444"
     target: "नाश्ता"
     reading: "nāśtā"
@@ -36,6 +40,8 @@ cards:
     reading: "dōpahar kā khānā"
     ipa: "d̪oːpəɦər kaː kʰaːnaː"
     pos: "phrase"
+    bases:
+      - { word: "दोपहर", base: "दोपहर", reading: "dōpahar" }
   - id: "hi-0446"
     target: "रात का खाना"
     reading: "rāt kā khānā"
@@ -46,17 +52,23 @@ cards:
     reading: "kām par jānā"
     ipa: "kaːm pər dʒaːnaː"
     pos: "phrase"
+    bases:
+      - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0448"
     target: "घर लौटना"
     reading: "ghar lauṭnā"
     ipa: "ɡʱər lɔːʈnaː"
     alt_target: ["घर आना"]
     pos: "phrase"
+    bases:
+      - { word: "लौटना", base: "लौटना", reading: "lauṭnā" }
   - id: "hi-0449"
     target: "खाना बनाना"
     reading: "khānā banānā"
     ipa: "kʰaːnaː bənaːnaː"
     pos: "phrase"
+    bases:
+      - { word: "बनाना", base: "बनाना", reading: "banānā" }
   - id: "hi-0450"
     target: "सोना"
     reading: "sōnā"
@@ -76,6 +88,8 @@ cards:
     ipa: "kəbʱiːkəbʱiː"
     alt_target: ["कभी कभी"]
     pos: "adv"
+    bases:
+      - { word: "कभी", base: "कभी", reading: "kabhī" }
   - id: "hi-0453"
     target: "हमेशा"
     reading: "hamēśā"
@@ -87,11 +101,17 @@ cards:
     ipa: "aːm t̪ɔːr pər"
     alt_target: ["आमतौर पर"]
     pos: "phrase"
+    bases:
+      - { word: "आम", base: "आम", reading: "ām" }
+      - { word: "तौर", base: "तौर", reading: "taur" }
   - id: "hi-0455"
     target: "उसके बाद"
     reading: "uskē bād"
     ipa: "ʊskeː baːd̪"
     pos: "phrase"
+    bases:
+      - { word: "उसके", base: "उसके", reading: "uskē" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
   - id: "hi-0456"
     target: "मैं रोज़ सात बजे उठता हूँ।"
     reading: "maim̐ rōz sāt bajē uṭhtā hūm̐."
@@ -99,6 +119,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "उठता", ref: "hi-0441" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0457"
     target: "उसके बाद मैं काम पर जाता हूँ।"
     reading: "uskē bād maim̐ kām par jātā hūm̐."
@@ -106,6 +130,12 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उसके", base: "उसके", reading: "uskē" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "जाता", base: "जाता", reading: "jātā" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0458"
     target: "मैं रात ग्यारह बजे सोता हूँ।"
     reading: "maim̐ rāt gyārah bajē sōtā hūm̐."
@@ -113,6 +143,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "सोता", ref: "hi-0450" }
+      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
   - id: "hi-0459"
     target: "मुझे कभी देर नहीं होती।"
     reading: "mujhē kabhī dēr nahīm̐ hōtī."
@@ -120,3 +154,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "कभी", base: "कभी", reading: "kabhī" }
+      - { word: "देर", base: "देर", reading: "dēr" }
+      - { word: "होती", base: "होती", reading: "hōtī" }

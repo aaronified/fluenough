@@ -172,11 +172,16 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरे", base: "मेरे", reading: "mērē" }
   - id: "hi-0397"
     target: "आपके कितने भाई-बहन हैं?"
     reading: "āpkē kitnē bhāī-bahan haim̐?"
     ipa: "aːpkeː kɪt̪neː bʱaːiːbəɦən ɦɛ̃ː"
     pos: "phrase"
+    bases:
+      - { word: "आपके", ref: "hi-0134" }
+      - { word: "कितने", ref: "hi-0163" }
   - id: "hi-0398"
     target: "मेरी शादी हो गई है।"
     reading: "mērī śādī hō gaī hai."
@@ -185,3 +190,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरी", base: "मेरी", reading: "mērī" }
+      - { word: "शादी", base: "शादी", reading: "śādī" }
+      - { word: "हो", base: "हो", reading: "hō" }
+      - { word: "गई", base: "गई", reading: "gaī" }
