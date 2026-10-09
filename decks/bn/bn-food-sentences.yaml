@@ -1,0 +1,110 @@
+schema: 1
+id: "bn-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0990"
+    target: "আমি ভাত, ডাল, মাছ খাই।"
+    reading: "āmi bhāt, ḍāl, māch khāi."
+    ipa: "ami bʱat̪ ɖal matʃʰ kʰai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-0991"
+    target: "আমি মাংস খাই না।"
+    reading: "āmi māṅśo khāi nā."
+    ipa: "ami maŋʃo kʰai na"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-0992"
+    target: "আপনি ইলিশ খান?"
+    reading: "āpni iliś khān?"
+    ipa: "apni iliʃ kʰan"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "খান", ref: "bn-0876" }
+  - id: "bn-0993"
+    target: "সে দুধ খায়।"
+    reading: "śe dudh khāy."
+    ipa: "ʃe d̪ud̪ʱ kʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "খায়", ref: "bn-0876" }
+  - id: "bn-0994"
+    target: "দাদু চা খান।"
+    reading: "dādu cā khān."
+    ipa: "d̪ad̪u tʃa kʰan"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "খান", ref: "bn-0876" }
+  - id: "bn-0995"
+    target: "আমরা ফল খাই।"
+    reading: "āmrā phôl khāi."
+    ipa: "amra pʰɔl kʰai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-0996"
+    target: "ডালের সঙ্গে ভাত খাই।"
+    reading: "ḍāler śôṅge bhāt khāi."
+    ipa: "ɖaler ʃɔŋɡe bʱat̪ kʰai"
+    pos: "phrase"
+    rules: ["bn-rule-sathe", "bn-rule-present-first"]
+    bases:
+      - { word: "ডালের", ref: "bn-0273" }
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-0997"
+    target: "আমি চায়ে চিনি নিই না।"
+    reading: "āmi cāye cini nii nā."
+    ipa: "ami tʃaje tʃini nii na"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "চায়ে", ref: "bn-0351" }
+      - { word: "নিই", ref: "bn-0889" }
+  - id: "bn-0998"
+    target: "আমাকে একটা আপেল দিন।"
+    reading: "āmāke ekṭā āpel din."
+    ipa: "amake ekʈa apel d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-obj", "bn-rule-polite-request"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-0999"
+    target: "দুটো ডিম দিন।"
+    reading: "duṭo ḍim din."
+    ipa: "d̪uʈo ɖim d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "দুটো", ref: "bn-0203" }
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-1000"
+    target: "মাছটা কত?"
+    reading: "māchṭā kôto?"
+    ipa: "matʃʰʈa kɔt̪o"
+    pos: "phrase"
+    bases:
+      - { word: "মাছটা", ref: "bn-0266" }
+  - id: "bn-1001"
+    target: "আপনি কী কেনেন?"
+    reading: "āpni ki kenen?"
+    ipa: "apni ki kenen"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "কেনেন", ref: "bn-0890" }
