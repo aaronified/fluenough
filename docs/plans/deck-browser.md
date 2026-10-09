@@ -175,8 +175,12 @@ Settled with the owner, 2026-10-09:
   the address. Records are read afresh each run, so one the owner deletes
   is tied again by the code's next mail, and a sender matching any record
   of its code passes, so the owner can allow a second address by adding
-  one. When the label cannot be read or a record cannot be written, the
-  mail is still filed, marked "sender not checked".
+  one, its body's first line the address, bare or as `Name <address>`.
+  When the label cannot be read or a record cannot be written, or the
+  mail has no single sender, the mail is still filed, marked "sender not
+  checked". When the connection drops while a record is written, the run
+  stops before filing that mail, and the next run files it, so it is not
+  filed twice.
 - **The first mail binds the code to its sender** (owner, 2026-10-09; *the
   keyed hash in the repository was replaced the same day by the Gmail
   record above, and is not built*): the
