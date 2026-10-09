@@ -156,7 +156,8 @@ class _DeckDownloadsPageState extends State<DeckDownloadsPage> {
             GroupedTile.toggle(
               leading: const Icon(Icons.update),
               title: l10n.deckDownloadsAuto,
-              subtitle: l10n.deckDownloadsAutoDesc,
+              subtitleOn: l10n.deckDownloadsAutoOn,
+              subtitleOff: l10n.deckDownloadsAutoOff,
               value: downloads.checksAutomatically,
               onChanged: downloads.setChecksAutomatically,
             ),
