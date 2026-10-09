@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-nouns
-name: "Nouns: plural and case"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The plural, and the endings for 'in', 'to', 'from' and 'of', often joined by a y or an -ಇನ- (-ina-). Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-nouns"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Noun endings"
-  slot_name: "form"
   slots: ["plural", "in: -ಅಲ್ಲಿ (-alli)", "to: -ಗೆ (-ge) or -ಕ್ಕೆ (-kke)", "from: -ಇಂದ (-inda)", "of: -ಅ (-a)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "-ಗಳು (-gaḷu) makes a plural. A noun in -e or -i joins its endings with a y: ಮನೆಯಲ್ಲಿ (maneyalli). A noun in -a takes -ದ- (-da-) before them and -ಕ್ಕೆ (-kke) for 'to': ಪುಸ್ತಕದಲ್ಲಿ (pustakadalli), ಪುಸ್ತಕಕ್ಕೆ (pustakakke). Many nouns in -u take -ಇನ- (-ina-): ಊರಿನಲ್ಲಿ (ūrinalli). Where two forms are given, the second is everyday speech."
   entries:
     - lemma: "ಮನೆ"
-      key: mane
+      key: "mane"
       reading: "mane"
       ipa: "mane"
-      gloss: "house"
       forms:
         "plural": "ಮನೆಗಳು"
         "in: -ಅಲ್ಲಿ (-alli)": ["ಮನೆಯಲ್ಲಿ", "ಮನೇಲಿ"]
@@ -38,10 +31,9 @@ pattern:
         "from: -ಇಂದ (-inda)": "manejind̪a"
         "of: -ಅ (-a)": "maneja"
     - lemma: "ಪುಸ್ತಕ"
-      key: pustaka
+      key: "pustaka"
       reading: "pustaka"
       ipa: "pust̪aka"
-      gloss: "book"
       forms:
         "plural": "ಪುಸ್ತಕಗಳು"
         "in: -ಅಲ್ಲಿ (-alli)": "ಪುಸ್ತಕದಲ್ಲಿ"
@@ -61,10 +53,9 @@ pattern:
         "from: -ಇಂದ (-inda)": "pust̪akad̪ind̪a"
         "of: -ಅ (-a)": "pust̪akad̪a"
     - lemma: "ಅಂಗಡಿ"
-      key: angadi
+      key: "angadi"
       reading: "aṅgaḍi"
       ipa: "aŋɡaɖi"
-      gloss: "shop"
       forms:
         "plural": "ಅಂಗಡಿಗಳು"
         "in: -ಅಲ್ಲಿ (-alli)": ["ಅಂಗಡಿಯಲ್ಲಿ", "ಅಂಗಡೀಲಿ"]
@@ -84,10 +75,9 @@ pattern:
         "from: -ಇಂದ (-inda)": "aŋɡaɖijind̪a"
         "of: -ಅ (-a)": "aŋɡaɖija"
     - lemma: "ಕೋಣೆ"
-      key: koone
+      key: "koone"
       reading: "kōṇe"
       ipa: "koːɳe"
-      gloss: "room"
       forms:
         "plural": "ಕೋಣೆಗಳು"
         "in: -ಅಲ್ಲಿ (-alli)": "ಕೋಣೆಯಲ್ಲಿ"
@@ -107,10 +97,9 @@ pattern:
         "from: -ಇಂದ (-inda)": "koːɳejind̪a"
         "of: -ಅ (-a)": "koːɳeja"
     - lemma: "ಬಸ್ಸು"
-      key: bassu
+      key: "bassu"
       reading: "bassu"
       ipa: "bassu"
-      gloss: "bus"
       forms:
         "plural": "ಬಸ್ಸುಗಳು"
         "in: -ಅಲ್ಲಿ (-alli)": ["ಬಸ್ಸಿನಲ್ಲಿ", "ಬಸ್ಸಲ್ಲಿ"]
@@ -130,10 +119,9 @@ pattern:
         "from: -ಇಂದ (-inda)": "bassinind̪a"
         "of: -ಅ (-a)": "bassina"
     - lemma: "ಊರು"
-      key: uuru
+      key: "uuru"
       reading: "ūru"
       ipa: "uːru"
-      gloss: "town"
       forms:
         "plural": "ಊರುಗಳು"
         "in: -ಅಲ್ಲಿ (-alli)": ["ಊರಿನಲ್ಲಿ", "ಊರಲ್ಲಿ"]

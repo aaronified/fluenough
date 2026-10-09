@@ -1,22 +1,15 @@
 schema: 1
-id: kn-en-grammar-demonstratives
-name: "This and that"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "ಈ (ī) and ಆ (ā), and the words built on them: this one, here, this way, so much. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Near and far"
-  slot_name: "near or far"
   slots: ["near: ಈ (ī), ಇ- (i-)", "far: ಆ (ā), ಅ- (a-)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Words for near things start with ಇ- (i-) or ಈ- (ī-), words for far ones with ಅ- (a-) or ಆ- (ā-); 'like this' and 'like that' take an h: ಹೀಗೆ (hīge), ಹಾಗೆ (hāge). ಈ (ī) and ಆ (ā) stand before a noun and never change: ಈ ಪುಸ್ತಕ (ī pustaka), this book; ಆ ಮನೆ (ā mane), that house. The far words are also the everyday 'he', 'she', 'it' and 'they'."
   entries:
     - lemma: "this, that (before a noun)"
-      key: before-noun
-      gloss: "before a noun"
+      key: "before-noun"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಈ"
         "far: ಆ (ā), ಅ- (a-)": "ಆ"
@@ -27,8 +20,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iː"
         "far: ಆ (ā), ಅ- (a-)": "aː"
     - lemma: "this one, that one (a thing)"
-      key: thing
-      gloss: "a thing"
+      key: "thing"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇದು"
         "far: ಆ (ā), ಅ- (a-)": "ಅದು"
@@ -39,8 +31,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "id̪u"
         "far: ಆ (ā), ಅ- (a-)": "ad̪u"
     - lemma: "these, those (things)"
-      key: things
-      gloss: "things"
+      key: "things"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇವು"
         "far: ಆ (ā), ಅ- (a-)": "ಅವು"
@@ -51,8 +42,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iʋu"
         "far: ಆ (ā), ಅ- (a-)": "aʋu"
     - lemma: "this man, that man"
-      key: man
-      gloss: "a man"
+      key: "man"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇವನು"
         "far: ಆ (ā), ಅ- (a-)": "ಅವನು"
@@ -63,8 +53,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iʋanu"
         "far: ಆ (ā), ಅ- (a-)": "aʋanu"
     - lemma: "this woman, that woman"
-      key: woman
-      gloss: "a woman"
+      key: "woman"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇವಳು"
         "far: ಆ (ā), ಅ- (a-)": "ಅವಳು"
@@ -75,8 +64,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iʋaɭu"
         "far: ಆ (ā), ಅ- (a-)": "aʋaɭu"
     - lemma: "these people, those people"
-      key: people
-      gloss: "people, or one person with respect"
+      key: "people"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇವರು"
         "far: ಆ (ā), ಅ- (a-)": "ಅವರು"
@@ -87,8 +75,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iʋaru"
         "far: ಆ (ā), ಅ- (a-)": "aʋaru"
     - lemma: "here, there"
-      key: place
-      gloss: "place"
+      key: "place"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇಲ್ಲಿ"
         "far: ಆ (ā), ಅ- (a-)": "ಅಲ್ಲಿ"
@@ -99,8 +86,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "illi"
         "far: ಆ (ā), ಅ- (a-)": "alli"
     - lemma: "this way, that way"
-      key: direction
-      gloss: "direction"
+      key: "direction"
       forms:
         "near: ಈ (ī), ಇ- (i-)": ["ಈ ಕಡೆ", "ಈಕಡೆ"]
         "far: ಆ (ā), ಅ- (a-)": ["ಆ ಕಡೆ", "ಆಕಡೆ"]
@@ -111,8 +97,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iː kaɖe"
         "far: ಆ (ā), ಅ- (a-)": "aː kaɖe"
     - lemma: "like this, like that"
-      key: manner
-      gloss: "manner"
+      key: "manner"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಹೀಗೆ"
         "far: ಆ (ā), ಅ- (a-)": "ಹಾಗೆ"
@@ -123,8 +108,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "hiːɡe"
         "far: ಆ (ā), ಅ- (a-)": "haːɡe"
     - lemma: "this much, that much"
-      key: amount
-      gloss: "amount"
+      key: "amount"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಇಷ್ಟು"
         "far: ಆ (ā), ಅ- (a-)": "ಅಷ್ಟು"
@@ -135,8 +119,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iʂʈu"
         "far: ಆ (ā), ಅ- (a-)": "aʂʈu"
     - lemma: "now, then"
-      key: time
-      gloss: "time"
+      key: "time"
       forms:
         "near: ಈ (ī), ಇ- (i-)": "ಈಗ"
         "far: ಆ (ā), ಅ- (a-)": "ಆಗ"
@@ -147,8 +130,7 @@ pattern:
         "near: ಈ (ī), ಇ- (i-)": "iːɡa"
         "far: ಆ (ā), ಅ- (a-)": "aːɡa"
     - lemma: "such as this, such as that"
-      key: kind
-      gloss: "kind"
+      key: "kind"
       forms:
         "near: ಈ (ī), ಇ- (i-)": ["ಇಂಥ", "ಇಂತಹ"]
         "far: ಆ (ā), ಅ- (a-)": ["ಅಂಥ", "ಅಂತಹ"]

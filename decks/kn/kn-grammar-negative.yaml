@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-negative
-name: "Won't, didn't and don't"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I won't go, she didn't come, don't eat: Kannada's 'not' is one ending for every person. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-negative"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Negatives"
-  slot_name: "form"
   slots: ["won't; doesn't", "didn't", "isn't …ing now", "don't! (to ನೀನು (nīnu))", "please don't (to ನೀವು (nīvu))"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The negative is the same for every person: ನಾನು ಬರುವುದಿಲ್ಲ (nānu baruvudilla), ಅವಳು ಬರುವುದಿಲ್ಲ (avaḷu baruvudilla), I won't come, she won't come. The future and the habit take -ಉವುದಿಲ್ಲ (-uvudilla), in speech -ಅಲ್ಲ (-alla); the past takes -ಅಲಿಲ್ಲ (-alilla); what is not happening now takes -ಉತ್ತಿಲ್ಲ (-uttilla). 'Don't!' is -ಬೇಡ (-bēḍa), and -ಬೇಡಿ (-bēḍi) to someone you respect. Where several forms are given, the first is written Kannada; all are accepted."
   entries:
     - lemma: "ಮಾಡು"
-      key: maadu
+      key: "maadu"
       reading: "māḍu"
       ipa: "maːɖu"
-      gloss: "to do"
       forms:
         "won't; doesn't": ["ಮಾಡುವುದಿಲ್ಲ", "ಮಾಡಲ್ಲ", "ಮಾಡೋದಿಲ್ಲ"]
         "didn't": ["ಮಾಡಲಿಲ್ಲ", "ಮಾಡ್ಲಿಲ್ಲ"]
@@ -38,10 +31,9 @@ pattern:
         "don't! (to ನೀನು (nīnu))": "maːɖabeːɖa"
         "please don't (to ನೀವು (nīvu))": "maːɖabeːɖi"
     - lemma: "ಹೋಗು"
-      key: hoogu
+      key: "hoogu"
       reading: "hōgu"
       ipa: "hoːɡu"
-      gloss: "to go"
       forms:
         "won't; doesn't": ["ಹೋಗುವುದಿಲ್ಲ", "ಹೋಗಲ್ಲ", "ಹೋಗೋದಿಲ್ಲ"]
         "didn't": ["ಹೋಗಲಿಲ್ಲ", "ಹೋಗ್ಲಿಲ್ಲ"]
@@ -61,10 +53,9 @@ pattern:
         "don't! (to ನೀನು (nīnu))": "hoːɡabeːɖa"
         "please don't (to ನೀವು (nīvu))": "hoːɡabeːɖi"
     - lemma: "ಬರು"
-      key: baru
+      key: "baru"
       reading: "baru"
       ipa: "baru"
-      gloss: "to come"
       forms:
         "won't; doesn't": ["ಬರುವುದಿಲ್ಲ", "ಬರಲ್ಲ", "ಬರೋದಿಲ್ಲ"]
         "didn't": ["ಬರಲಿಲ್ಲ", "ಬರ್ಲಿಲ್ಲ"]
@@ -84,10 +75,9 @@ pattern:
         "don't! (to ನೀನು (nīnu))": "barabeːɖa"
         "please don't (to ನೀವು (nīvu))": "barabeːɖi"
     - lemma: "ತಿನ್ನು"
-      key: tinnu
+      key: "tinnu"
       reading: "tinnu"
       ipa: "t̪innu"
-      gloss: "to eat"
       forms:
         "won't; doesn't": ["ತಿನ್ನುವುದಿಲ್ಲ", "ತಿನ್ನಲ್ಲ", "ತಿನ್ನೋದಿಲ್ಲ"]
         "didn't": ["ತಿನ್ನಲಿಲ್ಲ", "ತಿನ್ಲಿಲ್ಲ"]
@@ -107,10 +97,9 @@ pattern:
         "don't! (to ನೀನು (nīnu))": "t̪innabeːɖa"
         "please don't (to ನೀವು (nīvu))": "t̪innabeːɖi"
     - lemma: "ಕುಡಿ"
-      key: kudi
+      key: "kudi"
       reading: "kuḍi"
       ipa: "kuɖi"
-      gloss: "to drink"
       forms:
         "won't; doesn't": ["ಕುಡಿಯುವುದಿಲ್ಲ", "ಕುಡಿಯಲ್ಲ", "ಕುಡಿಯೋದಿಲ್ಲ"]
         "didn't": ["ಕುಡಿಯಲಿಲ್ಲ", "ಕುಡೀಲಿಲ್ಲ"]

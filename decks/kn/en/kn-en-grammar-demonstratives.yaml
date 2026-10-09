@@ -1,0 +1,27 @@
+schema: 1
+id: "kn-en-grammar-demonstratives"
+kind: "layer"
+core: "kn-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This and that"
+license: "CC0-1.0"
+description: "ಈ (ī) and ಆ (ā), and the words built on them: this one, here, this way, so much. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "before-noun": "before a noun"
+    "thing": "a thing"
+    "things": "things"
+    "man": "a man"
+    "woman": "a woman"
+    "people": "people, or one person with respect"
+    "place": "place"
+    "direction": "direction"
+    "manner": "manner"
+    "amount": "amount"
+    "time": "time"
+    "kind": "kind"
+  notes: "Words for near things start with ಇ- (i-) or ಈ- (ī-), words for far ones with ಅ- (a-) or ಆ- (ā-); 'like this' and 'like that' take an h: ಹೀಗೆ (hīge), ಹಾಗೆ (hāge). ಈ (ī) and ಆ (ā) stand before a noun and never change: ಈ ಪುಸ್ತಕ (ī pustaka), this book; ಆ ಮನೆ (ā mane), that house. The far words are also the everyday 'he', 'she', 'it' and 'they'."
