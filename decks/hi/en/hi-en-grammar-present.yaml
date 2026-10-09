@@ -1,0 +1,17 @@
+schema: 1
+id: "hi-en-grammar-present"
+kind: "layer"
+core: "hi-grammar-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present tense"
+license: "CC0-1.0"
+description: "I go, she speaks: the everyday present, by person and gender."
+pattern:
+  name: "Present habitual"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaanaa": "to go"
+    "bolnaa": "to speak"
+    "khaanaa": "to eat"
+  notes: "The verb's stem, then -ता (-tā), -ती (-tī) or -ते (-tē) for the doer's gender and number, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐). वह (vah), हम (ham), आप (āp) and वे (vē) do not show gender; the verb does."

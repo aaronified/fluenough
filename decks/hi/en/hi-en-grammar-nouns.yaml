@@ -1,0 +1,22 @@
+schema: 1
+id: "hi-en-grammar-nouns"
+kind: "layer"
+core: "hi-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural and oblique"
+license: "CC0-1.0"
+description: "How a noun changes for the plural, and before a postposition."
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "ladkaa": "boy, m"
+    "kamraa": "room, m"
+    "ghar": "house, m"
+    "aadmii": "man, m"
+    "ladkii": "girl, f"
+    "kitaab": "book, f"
+    "bahan": "sister, f"
+    "bhaashaa": "language, f"
+  notes: "Before a postposition such as में (mēm̐), से (sē) or को (kō), a noun takes its oblique form: कमरा (kamrā) → कमरे में (kamrē mēm̐), in the room. Masculine nouns in -आ (-ā) change; other masculine nouns only change in the oblique plural, which always ends in -ओं (-ōm̐). Feminine nouns change only in the plural."

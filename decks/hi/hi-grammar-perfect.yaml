@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-perfect
-name: "Present perfect"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I have come, she has gone: the present perfect of verbs without an object. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "hi-grammar-perfect"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Present perfect, intransitive verbs"
-  slot_name: "person and gender"
   slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The past form of the verb, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): आया हूँ (āyā hūm̐), I have come. With an object, the doer takes ने (nē) as in the simple past: मैंने खाना खाया है (mainnē khānā khāyā hai)."
   entries:
     - lemma: "आना"
-      key: aanaa
+      key: "aanaa"
       reading: "ānā"
       ipa: "aːnaː"
-      gloss: "to come"
       forms:
         "मैं (m)": "आया हूँ"
         "मैं (f)": "आई हूँ"
@@ -59,10 +52,9 @@ pattern:
         "वे (m)": "aːeː ɦɛ̃ː"
         "वे (f)": "aːiː ɦɛ̃ː"
     - lemma: "जाना"
-      key: jaanaa
+      key: "jaanaa"
       reading: "jānā"
       ipa: "dʒaːnaː"
-      gloss: "to go"
       forms:
         "मैं (m)": "गया हूँ"
         "मैं (f)": "गई हूँ"
@@ -103,10 +95,9 @@ pattern:
         "वे (m)": "ɡəeː ɦɛ̃ː"
         "वे (f)": "ɡəiː ɦɛ̃ː"
     - lemma: "पहुँचना"
-      key: pahunchnaa
+      key: "pahunchnaa"
       reading: "pahum̐cnā"
       ipa: "pəɦʊ̃tʃnaː"
-      gloss: "to arrive"
       forms:
         "मैं (m)": "पहुँचा हूँ"
         "मैं (f)": "पहुँची हूँ"
@@ -147,10 +138,9 @@ pattern:
         "वे (m)": "pəɦʊ̃tʃeː ɦɛ̃ː"
         "वे (f)": "pəɦʊ̃tʃiː ɦɛ̃ː"
     - lemma: "बैठना"
-      key: baithnaa
+      key: "baithnaa"
       reading: "baiṭhnā"
       ipa: "bɛːʈʰnaː"
-      gloss: "to sit"
       forms:
         "मैं (m)": "बैठा हूँ"
         "मैं (f)": "बैठी हूँ"

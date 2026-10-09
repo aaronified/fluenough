@@ -1,24 +1,17 @@
 schema: 1
-id: hi-en-grammar-continuous
-name: "Present continuous"
-kind: grammar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I am doing, she is watching: what is happening now."
-tags: [beginner, grammar]
+id: "hi-grammar-continuous"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
 pattern:
-  name: "Present continuous"
-  slot_name: "person and gender"
   slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The bare stem, then रहा (rahā), रही (rahī) or रहे (rahē) for gender and number, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐)."
   entries:
     - lemma: "करना"
-      key: karnaa
+      key: "karnaa"
       reading: "karnā"
       ipa: "kərnaː"
-      gloss: "to do"
       forms:
         "मैं (m)": "कर रहा हूँ"
         "मैं (f)": "कर रही हूँ"
@@ -59,10 +52,9 @@ pattern:
         "वे (m)": "kər rəɦeː ɦɛ̃ː"
         "वे (f)": "kər rəɦiː ɦɛ̃ː"
     - lemma: "देखना"
-      key: dekhnaa
+      key: "dekhnaa"
       reading: "dēkhnā"
       ipa: "d̪eːkʰnaː"
-      gloss: "to watch"
       forms:
         "मैं (m)": "देख रहा हूँ"
         "मैं (f)": "देख रही हूँ"
