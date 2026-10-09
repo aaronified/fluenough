@@ -13,6 +13,7 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/downloads/deck_downloads_page.dart';
+import 'package:fluenough/features/downloads/download_fixtures.dart';
 import 'package:fluenough/features/downloads/download_page.dart';
 import 'package:fluenough/features/placement/learn_languages_page.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
@@ -498,6 +499,38 @@ cards:
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
       semantics.dispose();
+    });
+  });
+
+  group('the gallery', () {
+    testWidgets('shows an update waiting for Hindi, Telugu up to date', (
+      tester,
+    ) async {
+      final app = AppState.test();
+      addTearDown(app.dispose);
+      final state = DownloadFixtures.updateWaiting(app);
+      addTearDown(state.dispose);
+      await pumpScreen(tester, const DeckDownloadsPage(), state: state);
+      await tester.pumpAndSettle();
+      expect(find.text('Hindi'), findsOneWidget);
+      expect(find.textContaining('Update waiting'), findsOneWidget);
+      expect(find.textContaining('Up to date'), findsOneWidget);
+      expect(find.text('Spanish'), findsNothing);
+    });
+
+    testWidgets('shows the first decks failing with no network', (
+      tester,
+    ) async {
+      final app = AppState.test();
+      addTearDown(app.dispose);
+      final state = DownloadFixtures.offline(app);
+      addTearDown(state.dispose);
+      await pumpScreen(
+        tester,
+        const DownloadPage(languages: <String>['es']),
+        state: state,
+      );
+      expect(find.text(l10nOf(tester).downloadsOffline), findsOneWidget);
     });
   });
 }

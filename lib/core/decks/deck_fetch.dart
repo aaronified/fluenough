@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -48,6 +49,24 @@ class NullDeckFetcher implements DeckFetcher {
   @override
   Future<Fetched> fetch(String path) async =>
       const Fetched.failed(FetchFailure.offline);
+}
+
+/// Files held in memory, by path, as GitHub would serve them: for the
+/// gallery, which never reaches the network. While [failure] is set, every
+/// download fails that way.
+class MemoryDeckFetcher implements DeckFetcher {
+  MemoryDeckFetcher(this.files, {this.failure});
+
+  final Map<String, String> files;
+  FetchFailure? failure;
+
+  @override
+  Future<Fetched> fetch(String path) async {
+    if (failure case final failure?) return Fetched.failed(failure);
+    final text = files[path];
+    if (text == null) return const Fetched.failed(FetchFailure.notFound);
+    return Fetched(Uint8List.fromList(utf8.encode(text)));
+  }
 }
 
 /// The decks on GitHub, from `raw.githubusercontent.com` through dart:io's
