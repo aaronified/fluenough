@@ -108,26 +108,35 @@ void main() {
     expect(steps.last, isA<ComingStep>());
   });
 
-  test('a course whose path plans nothing has no plan', () async {
-    final app = AppState.test();
-    await app.load();
-    // The bundled paths that mark no level and plan no unit: Hindi's among
-    // them, Telugu's and Bengali's not, since they have their B1 plans.
-    final unplanned = <String>{
-      for (final language in app.languages)
-        if (app.languagePathOf(language.code)?.plan case final plan?)
-          if (plan.every((u) => u.milestone == null && u.planned == null))
-            language.code,
-    };
-    expect(unplanned, contains('hi'));
-    expect(unplanned, isNot(anyOf(contains('te'), contains('bn'))));
-    for (final code in unplanned) {
-      expect(coursePlanOf(app, code).isEmpty, isTrue, reason: code);
-    }
-    for (final code in <String>['te', 'bn']) {
-      expect(coursePlanOf(app, code).isEmpty, isFalse, reason: code);
-    }
-  });
+  test(
+    'every bundled path has its B1 plan, and a course a plan to show',
+    () async {
+      final app = AppState.test();
+      await app.load();
+      // A path that marks no level and plans no unit shows no plan (the first
+      // test above); since ADR-0036 every language that has a core has its
+      // plan, so none of the bundled paths is one.
+      final unplanned = <String>{
+        for (final language in app.languages)
+          if (app.languagePathOf(language.code)?.plan case final plan?)
+            if (plan.every((u) => u.milestone == null && u.planned == null))
+              language.code,
+      };
+      expect(unplanned, isEmpty);
+      for (final code in <String>[
+        'as',
+        'bn',
+        'es',
+        'gu',
+        'hi',
+        'kn',
+        'mr',
+        'te',
+      ]) {
+        expect(coursePlanOf(app, code).isEmpty, isFalse, reason: code);
+      }
+    },
+  );
 
   testWidgets('the Decks path shows the levels the path marks, and the '
       'planned unit as coming, not opened', (tester) async {

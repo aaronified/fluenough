@@ -122,7 +122,10 @@ void main() {
       await d.open();
       await d.downloadFirst('hi', english);
       final first = phone.files.length;
-      remote.failAfter = remote.asked.length + 15;
+      // Cut short a few files before the end: the layers of the rest come
+      // before their cores in the index, so decks are whole only near it.
+      remote.failAfter =
+          remote.asked.length + d.missing('hi', english).length - 5;
       expect(await d.downloadRest('hi', english), DeckDownloadFailure.offline);
       expect(phone.files.length, greaterThan(first));
       expect(d.missing('hi', english), isNotEmpty);
@@ -154,7 +157,7 @@ void main() {
       remote = FakeDeckRemote(<String, String>{
         ...repoFiles(const <String>['es']),
         // Listed with its own hash, so it arrives whole: but no deck.
-        'decks/es/es-en-core-100.yaml': 'schema: 1\nid: es-en-core-100\n',
+        'decks/es/en/es-en-core-100.yaml': 'schema: 1\nid: es-en-core-100\n',
       });
       final d = downloads();
       await d.open();
@@ -174,7 +177,9 @@ void main() {
       for (final language in index['languages']! as List<Object?>) {
         for (final file in (language! as Map)['files'] as List<Object?>) {
           final entry = file! as Map<String, Object?>;
-          if (entry['path'] == 'decks/hi/hi-en-slang.yaml') entry['schema'] = 2;
+          if (entry['path'] == 'decks/hi/en/hi-en-slang.yaml') {
+            entry['schema'] = 2;
+          }
         }
       }
       remote.index = jsonEncode(index);
@@ -183,7 +188,7 @@ void main() {
       expect(await d.download('hi', english), isNull);
       await d.downloadRest('hi', english);
       expect(d.needsNewerApp('hi', english), isTrue);
-      expect(phone.files.keys, isNot(contains('decks/hi/hi-en-slang.yaml')));
+      expect(phone.files.keys, isNot(contains('decks/hi/en/hi-en-slang.yaml')));
     });
 
     test('asks for an app update for an index it cannot read', () async {
@@ -244,7 +249,7 @@ void main() {
       return d;
     }
 
-    const deck = 'decks/es/es-en-core-100.yaml';
+    const deck = 'decks/es/en/es-en-core-100.yaml';
 
     test('are looked for at most once a day', () async {
       final d = await withEs();
@@ -327,7 +332,7 @@ void main() {
 
     test('keep a deck GitHub removed', () async {
       final d = await withEs();
-      const gone = 'decks/es/es-en-grammar-present-ar.yaml';
+      const gone = 'decks/es/en/es-en-grammar-present-ar.yaml';
       remote.files.remove(gone);
       await d.checkForUpdates(english, force: true);
       expect(d.updates, isEmpty);
@@ -402,7 +407,7 @@ void main() {
       await d.open();
       await d.download('es', english);
       await d.downloadRest('es', english);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       final was = remote.files[deck]!;
       remote.files[deck] = '$was# a fix\n';
       await d.checkForUpdates(english, force: true);
@@ -432,7 +437,7 @@ void main() {
       await d.open();
       await d.download('es', english);
       await d.downloadRest('es', english);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       remote.files[deck] = '${remote.files[deck]!}# a fix\n';
       await d.checkForUpdates(english, force: true);
       remote.failAll = FetchFailure.offline;
