@@ -168,7 +168,8 @@ units:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
       - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
-  - planned: { id: "bn-animals", theme: "animals", words: 24 }
+  - decks: ["bn-animals", "bn-animals-sentences", "*"]
+    words: 26
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
