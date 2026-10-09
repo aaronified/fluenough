@@ -93,8 +93,8 @@ list says how its letters are typed (`c` as `ch`, `ś` as `sh`), and its
 `equivalents` the spellings learners also type for one sound, such as `ee`
 for `i`; grading treats them all as the decks' own.
 
-Assamese writes স, শ and ষ as `x` (*ôxôm*) and ও as `u` (*mur*), as it is
-said; `decks/as/as-romanisation.yaml` says so.
+Assamese writes স, শ and ষ as `x` (*ôxôm*) and the vowel sign ো as `u` (*mur*,
+*muk*), as it is said (the letter ও alone is `o`); `decks/as/as-romanisation.yaml` says so.
 
 Bengali's readings follow how it is said:
 
