@@ -28,7 +28,7 @@ class DeckIndex(unittest.TestCase):
         self.tmp = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, self.tmp, True)
         (self.tmp / "tools").mkdir()
-        for name in ("validate_decks.py", "deck_index.py"):
+        for name in ("validate_decks.py", "deck_index.py", "rater_codes.py"):
             shutil.copy(TOOLS / name, self.tmp / "tools" / name)
         shutil.copytree(REPO / "assets" / "pictures", self.tmp / "assets" / "pictures")
         (self.tmp / "assets" / "languages.yaml").write_text(
@@ -107,6 +107,22 @@ class DeckIndex(unittest.TestCase):
         self.assertEqual(layer["native"], "en")
         self.assertEqual(layer["deck"], "zz-home")
         self.assertEqual(zz["natives"], [{"code": "en", "name": "English"}])
+
+    def test_a_file_with_proposals_counts_them(self) -> None:
+        # ADR-0038: reviewers' proposals, which learners never see.
+        shutil.copytree(B1, self.tmp / "decks" / "zz")
+        layer = self.tmp / "decks" / "zz" / "en" / "zz-en-home.yaml"
+        sys.path.insert(0, str(TOOLS))
+        import proposals
+        p = proposals.Proposal("zz-9004", "native", "mother", "mum",
+                               "FL-7K3M-Q9TD-6", "2026-10-09")
+        text = layer.read_text(encoding="utf-8").replace(
+            '    native: "mother"\n',
+            f'    native: "mother"\n    proposed:\n      {p.line()}\n')
+        layer.write_text(text, encoding="utf-8")
+        files = {f["path"]: f for f in self.language(self.index(), "zz")["files"]}
+        self.assertEqual(files["decks/zz/en/zz-en-home.yaml"]["proposed"], 1)
+        self.assertNotIn("proposed", files["decks/zz/zz-home.yaml"])
 
     def test_units_carry_their_planned_and_counted_words(self) -> None:
         shutil.copytree(B1, self.tmp / "decks" / "zz")
