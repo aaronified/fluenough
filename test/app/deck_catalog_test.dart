@@ -29,7 +29,8 @@ facts:
     text: { en: "Spanish has two verbs for to be." }
 ''';
 
-/// Line 10 has an unquoted `no`, the bug rule 2 is about.
+/// Line 10 has an unquoted `true`, the bug rule 2 is about. (A bare `no`
+/// is text, as YAML 1.2 reads it.)
 const String brokenDeck = '''
 schema: 1
 id: xx-broken
@@ -39,8 +40,8 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: xx-broken-0001
-    target: の
-    native: no
+    target: ほんとう
+    native: true
 ''';
 
 void main() {
