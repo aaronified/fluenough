@@ -2,15 +2,17 @@ import 'dart:math' as math;
 
 import '../models/drill_mode.dart';
 import 'fsrs.dart';
+import 'skill_map.dart';
 
 /// One ability: a language learned, in one schedule.
 typedef AbilityKey = ({String language, DrillMode mode});
 
 /// What the app has learned about a learner's strengths (ADR-0034): an Elo
 /// rating per language and schedule, and a difficulty per pair, each moved
-/// after every answer by how surprising it was (Pelánek 2016). Skills that
-/// research relates share what is learned, weighted by [relatedness]; each
-/// keeps its own schedule.
+/// after every answer by how surprising it was (Pelánek 2016). One answer
+/// can judge several skills (a Q-matrix, as in multi-skill Elo: Park et al.
+/// 2019): a right answer also moves the skills it implies ([SkillMap]), by
+/// their share. A miss moves its own skill alone.
 ///
 /// Derived from the review log alone, like every scheduling state, so it can
 /// always be rebuilt.
@@ -19,8 +21,10 @@ class Abilities {
 
   /// Every answer in [reviews], oldest first, played through the model.
   factory Abilities.replay(
-    Iterable<({String cardId, DrillMode mode, int grade})> reviews,
-  ) {
+    Iterable<({String cardId, String deckId, DrillMode mode, int grade})>
+    reviews, {
+    SkillMap skills = const SkillMap(),
+  }) {
     final abilities = Abilities._(
       <AbilityKey, double>{},
       <AbilityKey, int>{},
@@ -28,7 +32,13 @@ class Abilities {
       <String, int>{},
     );
     for (final r in reviews) {
-      abilities.add(cardId: r.cardId, mode: r.mode, grade: r.grade);
+      abilities.add(
+        cardId: r.cardId,
+        deckId: r.deckId,
+        mode: r.mode,
+        grade: r.grade,
+        skills: skills,
+      );
     }
     return abilities;
   }
@@ -44,23 +54,6 @@ class Abilities {
     return dash < 0 ? cardId : cardId.substring(0, dash);
   }
 
-  /// How much an answer in one skill moves another, against its own: only
-  /// where research has measured how the two are related, and by as much as
-  /// it found (owner, 2026-10-09). Symmetric; a pair not listed moves
-  /// nothing.
-  ///
-  /// - Recognition and Hear: recognising words in writing and by ear
-  ///   correlate at about .68 (Milton & Hopkins 2006).
-  static const Map<(DrillMode, DrillMode), double> relatedness =
-      <(DrillMode, DrillMode), double>{
-        (DrillMode.recognition, DrillMode.listening): 0.68,
-      };
-
-  /// How related [a] and [b] are, from [relatedness]: 1 for a skill and
-  /// itself, 0 where no research says.
-  static double related(DrillMode a, DrillMode b) =>
-      a == b ? 1 : relatedness[(a, b)] ?? relatedness[(b, a)] ?? 0;
-
   /// How far one answer moves an estimate made from [n] answers before it:
   /// large at first, smaller as answers add up (Pelánek 2016, α 1, β 0.05).
   static double k(int n) => 1 / (1 + 0.05 * n);
@@ -69,32 +62,43 @@ class Abilities {
   static double expected(double ability, double difficulty) =>
       1 / (1 + math.exp(difficulty - ability));
 
-  /// Plays one answer through the model.
+  /// Plays one answer through the model: in its own skill, and, if right,
+  /// in each skill [skills] says it implies, by that skill's own surprise
+  /// times its share.
   void add({
     required String cardId,
     required DrillMode mode,
     required int grade,
+    String deckId = '',
+    SkillMap skills = const SkillMap(),
   }) {
-    final language = languageOf(cardId);
-    final key = (language: language, mode: mode);
-    final pair = '$cardId/${mode.name}';
-    final result = grade >= Fsrs.passingGrade ? 1.0 : 0.0;
-    final surprise =
-        result - expected(_ability[key] ?? 0, _difficulty[pair] ?? 0);
-    // An answer moves the skills research relates to its own too, by how
-    // related they are (ADR-0034).
-    for (final other in DrillMode.values) {
-      final weight = related(mode, other);
-      if (weight == 0) continue;
-      final otherKey = (language: language, mode: other);
-      final otherPair = '$cardId/${other.name}';
-      _ability[otherKey] =
-          (_ability[otherKey] ?? 0) +
-          weight * k(_answers[otherKey] ?? 0) * surprise;
-      _difficulty[otherPair] =
-          (_difficulty[otherPair] ?? 0) -
-          weight * k(_seen[otherPair] ?? 0) * surprise;
+    final right = grade >= Fsrs.passingGrade;
+    _move(cardId, mode, right ? 1.0 : 0.0, 1);
+    if (!right) return;
+    for (final MapEntry(key: other, value: share)
+        in skills.impliedBy(mode, deckId).entries) {
+      _move(cardId, other, 1.0, share, counted: false);
     }
+  }
+
+  /// Moves the ability in [mode] and the pair's difficulty by [share] of
+  /// how surprising [result] was. Only an answer in the skill itself is
+  /// [counted] toward how many answers an estimate rests on.
+  void _move(
+    String cardId,
+    DrillMode mode,
+    double result,
+    double share, {
+    bool counted = true,
+  }) {
+    final key = (language: languageOf(cardId), mode: mode);
+    final pair = '$cardId/${mode.name}';
+    final ability = _ability[key] ?? 0;
+    final difficulty = _difficulty[pair] ?? 0;
+    final surprise = result - expected(ability, difficulty);
+    _ability[key] = ability + share * k(_answers[key] ?? 0) * surprise;
+    _difficulty[pair] = difficulty - share * k(_seen[pair] ?? 0) * surprise;
+    if (!counted) return;
     _answers[key] = (_answers[key] ?? 0) + 1;
     _seen[pair] = (_seen[pair] ?? 0) + 1;
   }

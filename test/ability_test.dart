@@ -1,11 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/ability.dart';
+import 'package:fluenough/core/scheduling/skill_map.dart';
 
-typedef R = ({String cardId, DrillMode mode, int grade});
+typedef R = ({String cardId, String deckId, DrillMode mode, int grade});
 
-R r(String cardId, int grade, [DrillMode mode = DrillMode.listening]) =>
-    (cardId: cardId, mode: mode, grade: grade);
+R r(
+  String cardId,
+  int grade, [
+  DrillMode mode = DrillMode.listening,
+  String deckId = 'te-en-words',
+]) => (cardId: cardId, deckId: deckId, mode: mode, grade: grade);
 
 void main() {
   test('starts even: ability 0, strength one half', () {
@@ -41,19 +46,42 @@ void main() {
     expect(a.of('te', DrillMode.recognition), closeTo(0.5, 1e-9));
   });
 
-  test('an answer moves a skill research relates to it, by as much', () {
+  test('a right answer moves the skill it implies, by its share', () {
     final a = Abilities.replay([r('te-0001', 4)]);
-    expect(a.of('te', DrillMode.recognition), closeTo(0.5 * 0.68, 1e-9));
+    expect(
+      a.of('te', DrillMode.recognition),
+      closeTo(0.5 * SkillMap.implied, 1e-9),
+      reason: 'hearing the meaning implies recognising it',
+    );
     expect(a.keys, [(language: 'te', mode: DrillMode.listening)]);
-    final b = Abilities.replay([r('te-0001', 4, DrillMode.recognition)]);
-    expect(b.of('te', DrillMode.listening), closeTo(0.5 * 0.68, 1e-9));
+    final b = Abilities.replay([r('te-0001', 4, DrillMode.production)]);
+    expect(b.of('te', DrillMode.recognition), closeTo(0.5 * 0.5, 1e-9));
+    expect(b.of('te', DrillMode.listening), 0);
   });
 
-  test('and moves no skill research has not related to it', () {
-    final a = Abilities.replay([r('te-0001', 4)]);
-    expect(a.of('te', DrillMode.production), 0);
-    expect(a.of('te', DrillMode.speaking), 0);
-    expect(a.of('te', DrillMode.grammar), 0);
+  test('a miss moves its own skill alone', () {
+    final a = Abilities.replay([r('te-0001', 1, DrillMode.production)]);
+    expect(a.of('te', DrillMode.production), closeTo(-0.5, 1e-9));
+    expect(a.of('te', DrillMode.recognition), 0);
+  });
+
+  test('recognition implies nothing: the easier skill', () {
+    final a = Abilities.replay([r('te-0001', 4, DrillMode.recognition)]);
+    for (final other in [
+      DrillMode.production,
+      DrillMode.listening,
+      DrillMode.speaking,
+    ]) {
+      expect(a.of('te', other), 0, reason: '$other');
+    }
+  });
+
+  test('hearing in script practice implies writing, not recognition', () {
+    final a = Abilities.replay([
+      r('te-0001', 4, DrillMode.listening, 'te-en-script-vowels'),
+    ], skills: const SkillMap(formHeardIn: <String>{'te-en-script-vowels'}));
+    expect(a.of('te', DrillMode.production), closeTo(0.25, 1e-9));
+    expect(a.of('te', DrillMode.recognition), 0);
   });
 
   test('grammar moves only grammar', () {

@@ -5,6 +5,7 @@ import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
+import '../core/scheduling/skill_map.dart';
 import 'memory_progress.dart';
 
 /// A profile's progress, kept in its own database file (#3, #5) and read
@@ -53,6 +54,15 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
 
   @override
   List<LeechAction> get leechActions => _memory.leechActions;
+
+  /// Kept in memory only: `card_states` caches each pair's own reviews, and
+  /// what other skills imply is worked out again from the log when the app
+  /// opens.
+  @override
+  SkillMap get skills => _memory.skills;
+
+  @override
+  set skills(SkillMap value) => _memory.skills = value;
 
   @override
   LeechAction actOnLeech(

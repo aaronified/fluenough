@@ -1,6 +1,7 @@
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import 'fsrs.dart';
+import 'skill_map.dart';
 
 /// One review as the log keeps it: enough to replay it.
 typedef LoggedReview = ({
@@ -20,9 +21,13 @@ typedef LoggedReview = ({
 /// replay as they happened, the first one after it starts from a fresh
 /// state, and a pair with no review since its reset has no state at the end.
 /// An undone reset is not in [effects], so it changes nothing.
+///
+/// A right answer also counts in part for the skills [skills] says it
+/// implies, of the same card, where that pair has a state ([implyReview]).
 ({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states}) replayReviews(
   Iterable<LoggedReview> reviews, {
   LeechEffects effects = LeechEffects.none,
+  SkillMap skills = const SkillMap(),
 }) {
   final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
@@ -41,6 +46,7 @@ typedef LoggedReview = ({
       rated: review.answerGiven == null,
     );
     states[key] = after;
+    implyReview(states, skills, review);
     events.add(
       ReviewEvent(
         at: review.at,
@@ -59,6 +65,25 @@ typedef LoggedReview = ({
     if (!restarted.contains(key)) states.remove(key);
   }
   return (events: events, states: states);
+}
+
+/// Credits [review], if right, in part to each skill [skills] says it
+/// implies, of the same card, in [states] (ADR-0034). A pair with no state
+/// is not started by it: it is new until it is asked itself.
+void implyReview(
+  Map<ProgressKey, FsrsState> states,
+  SkillMap skills,
+  LoggedReview review,
+) {
+  if (review.grade < Fsrs.passingGrade) return;
+  for (final MapEntry(key: mode, value: share)
+      in skills.impliedBy(review.key.mode, review.deckId).entries) {
+    final key = (cardId: review.key.cardId, mode: mode);
+    final state = states[key];
+    if (state != null) {
+      states[key] = Fsrs.implied(state, share, now: review.at);
+    }
+  }
 }
 
 /// [event] as the log keeps it.

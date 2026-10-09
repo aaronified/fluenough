@@ -14,6 +14,7 @@ import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
+import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
@@ -447,14 +448,28 @@ class AppState extends ChangeNotifier {
   Future<void> _reloadDecks() async {
     deckCatalog.invalidate();
     _catalog = await deckCatalog.load();
+    _mapSkills();
     notifyListeners();
     await refreshVoices();
+  }
+
+  /// Tells progress which decks ask for what is heard rather than what it
+  /// means, so that a right answer there implies Write, not Recognition
+  /// (ADR-0034).
+  void _mapSkills() {
+    progress.skills = SkillMap(
+      formHeardIn: <String>{
+        for (final entry in decks)
+          if (needsAlphabet(entry)) entry.id,
+      },
+    );
   }
 
   Future<void> _load() async {
     try {
       _catalog = await deckCatalog.load();
       _status = CatalogStatus.ready;
+      _mapSkills();
     } catch (error) {
       _loadError = error;
       _status = CatalogStatus.failed;
@@ -1070,19 +1085,26 @@ class AppState extends ChangeNotifier {
   /// The ability layer (ADR-0034), rebuilt when the log grows.
   Abilities get abilities {
     final log = progress.log;
-    if (_abilities == null || _abilitiesAt != log.length) {
+    final skills = progress.skills;
+    if (_abilities == null ||
+        _abilitiesAt != log.length ||
+        _abilitiesSkills != skills) {
       _abilities = Abilities.replay(
-        <({String cardId, DrillMode mode, int grade})>[
-          for (final e in log) (cardId: e.cardId, mode: e.mode, grade: e.grade),
+        <({String cardId, String deckId, DrillMode mode, int grade})>[
+          for (final e in log)
+            (cardId: e.cardId, deckId: e.deckId, mode: e.mode, grade: e.grade),
         ],
+        skills: skills,
       );
       _abilitiesAt = log.length;
+      _abilitiesSkills = skills;
     }
     return _abilities!;
   }
 
   Abilities? _abilities;
   int _abilitiesAt = -1;
+  SkillMap? _abilitiesSkills;
 
   /// The strength from which a pair never asked in [mode] starts at recall
   /// rather than choice: the learner gets most words right there.
