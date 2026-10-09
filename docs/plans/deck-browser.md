@@ -94,6 +94,12 @@ mailbox (`tools/mail_to_issues.py`) takes it in. Only enrolled emails take
 part: a review is accepted only from the email its code was made for.
 Settled with the owner, 2026-10-09:
 
+- **The rater code is made by the app** when the reviewer turns reviewer
+  mode on: random, from the phone's secure random source (about 50 bits),
+  written `FL-XXXX-XXXX-C` in Crockford base32 (no I, L, O or U) with a
+  check character that catches a single typo or two swapped neighbours.
+  **No join mail:** the owner first hears of a reviewer with their first
+  review (owner, 2026-10-09).
 - **Joining is automatic:** a join mail makes the sender a reviewer at
   once. "I will also ask the people to either share their email or
   rater_id to me in person to filter, if needed. We need maximum
