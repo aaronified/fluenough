@@ -2600,3 +2600,17 @@ cells a lesson asks (`words-rules-sentences.md` "To decide"); the
 minimal-pair panel; the Wiktionary marking tool; `tools/suggest_bases.py`;
 the pair-note tool; the split tool (`native-layers.md` step 4; a deck
 agent may write its own).
+
+## Answered by the owner, 2026-10-09
+
+- **#4 Paths:** one per language learnt now (`<lang>-path.yaml`), shared by
+  every layer. Sections 2.1, 9.5 and 10 are to be rewritten around core
+  ids before the deck agents start.
+- **#16 Pair:** derived from the pair notes, as recommended.
+- **#20 B1 plans:** required on a path whose language has a core, as
+  recommended.
+- **#24 Passages:** required on every planned unit, as recommended.
+- Still open: #22 (which grammar question is "understood"), #25 (what a
+  grammar topic is), #26 (scripts without spaces). #23 was settled
+  earlier: grammar understood and produced come with the B1 format, after
+  the skill model's pull request.
