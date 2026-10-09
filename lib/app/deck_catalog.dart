@@ -25,9 +25,10 @@ import 'added_decks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
-/// [AssetDeckSource] reads the decks bundled with the app. Deck downloads
-/// (`docs/plans/decks-from-github.md`) replace the catalog's source with the
-/// decks downloaded from the repository; nothing above it changes.
+/// [AssetDeckSource] reads what is bundled with the app, which is now only
+/// `decks/themes.yaml`; the decks themselves are downloaded from the
+/// repository (#210, ADR-0037) and read from `DownloadedDecks`, under the
+/// same paths. [DeckSources] reads both as one; nothing above it changes.
 abstract interface class DeckSource {
   /// Every deck file's path, sorted.
   Future<List<String>> list();
@@ -66,6 +67,34 @@ class AssetDeckSource implements DeckSource {
       (path.endsWith('.yaml') || path.endsWith('.yml'));
 }
 
+/// Several sources read as one: every path of each, and a path two list read
+/// from the first that lists it. The app reads its bundled theme list and
+/// its downloaded decks so.
+class DeckSources implements DeckSource {
+  DeckSources(this.sources);
+
+  final List<DeckSource> sources;
+  final Map<String, DeckSource> _owner = <String, DeckSource>{};
+
+  @override
+  Future<List<String>> list() async {
+    _owner.clear();
+    for (final source in sources) {
+      for (final path in await source.list()) {
+        _owner.putIfAbsent(path, () => source);
+      }
+    }
+    return _owner.keys.toList()..sort();
+  }
+
+  @override
+  Future<String> read(String path) {
+    final source = _owner[path];
+    if (source == null) throw StateError('no deck file at $path');
+    return source.read(path);
+  }
+}
+
 /// Deck files held in memory, keyed by path. For tests and the gallery.
 class MemoryDeckSource implements DeckSource {
   MemoryDeckSource(Map<String, String> files)
@@ -102,7 +131,8 @@ final class DeckEntry extends CatalogEntry {
 
   final Deck deck;
 
-  /// Whether the deck shipped with the app rather than being imported.
+  /// Whether the deck is one of the app's own, bundled or downloaded from
+  /// the repository (#210), rather than added by the learner from a file.
   final bool bundled;
 
   String get id => deck.id;
@@ -258,10 +288,6 @@ class Catalog {
 /// rather than an exception.
 class DeckCatalog {
   DeckCatalog(this.source, {this.added});
-
-  /// The decks bundled with the app, and those added to [added].
-  factory DeckCatalog.bundled([AssetBundle? bundle, DeckStore? added]) =>
-      DeckCatalog(AssetDeckSource(bundle), added: added);
 
   final DeckSource source;
 
@@ -696,6 +722,44 @@ class DeckCatalog {
       );
     } catch (_) {
       return (kind: null, part: null);
+    }
+  }
+
+  /// What is wrong with [text], the file at [path], read on its own as its
+  /// `kind` says, or null if nothing is. A downloaded file is checked so
+  /// before it replaces one on the phone (ADR-0037). A layer is read without
+  /// its core, which the catalog merges it with.
+  static String? checkFile(String path, String text) {
+    final source = path.split('/').last;
+    final header = _headerOf(text);
+    try {
+      switch (header.kind) {
+        case 'layer':
+          DeckParser.parseLayer(text, source: source);
+        case 'facts':
+          parseFacts(text, source: source);
+        case 'numbers':
+          parseNumberRules(text, source: source);
+        case 'path':
+          parseLanguagePath(text, source: source);
+        case 'romanisation':
+          parseRomanisation(text, source: source);
+        case 'sounds':
+          parseSounds(text, source: source);
+        case 'script':
+          parseScriptGuide(text, source: source);
+        case 'themes':
+          parseThemes(text, source: source);
+        default:
+          header.part == 'core'
+              ? DeckParser.parseCore(text, source: source)
+              : DeckParser.parse(text, source: source);
+      }
+      return null;
+    } on DeckParseException catch (e) {
+      return e.toString();
+    } on Object catch (e) {
+      return '$source: $e';
     }
   }
 

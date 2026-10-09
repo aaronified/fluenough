@@ -9,6 +9,8 @@ import 'app/added_decks.dart';
 import 'app/app_log.dart';
 import 'app/app_state.dart';
 import 'app/deck_catalog.dart';
+import 'app/deck_downloads.dart';
+import 'app/downloaded_decks.dart';
 import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
@@ -16,6 +18,7 @@ import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/report_mail.dart';
 import 'app/system_settings.dart';
+import 'core/decks/deck_fetch.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
@@ -44,12 +47,21 @@ Future<void> main() async {
   // MainActivity's FileProvider lends to the mail app (ADR-0021).
   final cache = await getTemporaryDirectory();
   final share = ChannelMailShare(folder: Directory('${cache.path}/shared'));
+  // The decks, downloaded from GitHub into the app's own storage (#210,
+  // ADR-0037); only the theme list is bundled.
+  final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
   runApp(
     FluenoughApp(
       state: AppState(
-        catalog: DeckCatalog.bundled(
-          null,
-          FileDeckStore(Directory('${files.path}/decks')),
+        catalog: DeckCatalog(
+          DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
+          added: FileDeckStore(Directory('${files.path}/decks')),
+        ),
+        deckDownloads: DeckDownloads(
+          fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
+          files: downloaded,
+          clock: DateTime.now,
+          log: log,
         ),
         progress: storage.progress,
         settings: storage.settings,

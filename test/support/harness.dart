@@ -8,6 +8,7 @@ import 'package:fluenough/app/app_scope.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -103,10 +104,10 @@ double textStart(WidgetTester tester, Finder text, {double width = 390}) {
 AppLocalizations l10nOf(WidgetTester tester, [Finder? under]) =>
     AppLocalizations.of(tester.element(under ?? find.byType(Scaffold).first))!;
 
-/// The bundled decks, except that the first listing fails: a catalog that
-/// fails to load, then loads on "Try again" (`AppState.reload`).
+/// The repository's decks, except that the first listing fails: a catalog
+/// that fails to load, then loads on "Try again" (`AppState.reload`).
 class FailOnceDeckSource implements DeckSource {
-  final DeckSource _decks = AssetDeckSource();
+  final DeckSource _decks = RepositoryDeckSource();
   bool _failed = false;
 
   @override

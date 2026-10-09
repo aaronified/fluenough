@@ -30,8 +30,10 @@ import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
+import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
+import 'deck_downloads.dart';
 import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
@@ -41,6 +43,7 @@ import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'repository_decks.dart';
 import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
@@ -57,6 +60,19 @@ typedef NativeOption = ({LanguageInfo native, int? covered, int? total});
 
 /// The current time. Injected so that tests and the gallery can fix it.
 typedef Clock = DateTime Function();
+
+/// A language the learner can choose to learn: from the decks on GitHub's
+/// index (#210), or the catalog's where nothing downloads. [taughtFrom] is
+/// the name of the language its decks teach from when the learner speaks
+/// none of those it is taught from ("Taught from English"); [size] what
+/// choosing it downloads, 0 when it is on the phone.
+typedef OfferedLanguage = ({
+  String code,
+  String name,
+  String? icon,
+  String? taughtFrom,
+  int size,
+});
 
 /// Where the deck catalog is in loading.
 enum CatalogStatus { loading, ready, failed }
@@ -145,6 +161,7 @@ class AppState extends ChangeNotifier {
     this._downloads = const NullDownloadStore(),
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
+    this.deckDownloads,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -167,6 +184,7 @@ class AppState extends ChangeNotifier {
       source.addListener(_forgetPending);
     }
     shellTab.addListener(_logTab);
+    deckDownloads?.onFilesChanged = _filesDownloaded;
   }
 
   void _logTab() => log.event('Opened tab ${shellTab.value.name}');
@@ -183,8 +201,8 @@ class AppState extends ChangeNotifier {
   /// questions are still asked; with sound off they are skipped instead.
   bool get needsVolume => settings.soundOn && volume.muted;
 
-  /// An app on fakes, for widget tests: the real bundled decks unless
-  /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
+  /// An app on fakes, for widget tests: the repository's decks, as a phone
+  /// that downloaded every language has them, unless [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
   /// progress, links that open unless [links] says otherwise, phone settings
   /// that open nothing unless [systemSettings] does, no network
   /// for the update check unless [releases] answers, none for the release
@@ -214,6 +232,7 @@ class AppState extends ChangeNotifier {
     DownloadStore downloads = const NullDownloadStore(),
     FitRunner fitRunner = fitInPlace,
     PaceRunner paceRunner = paceInPlace,
+    DeckDownloads? deckDownloads,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -222,7 +241,7 @@ class AppState extends ChangeNotifier {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
     final state = AppState(
       catalog: DeckCatalog(
-        decks ?? AssetDeckSource(),
+        decks ?? RepositoryDeckSource(),
         added: addedDecks ?? MemoryDeckStore(),
       ),
       progress: progress ?? MemoryProgress(),
@@ -244,6 +263,7 @@ class AppState extends ChangeNotifier {
       downloads: downloads,
       fitRunner: fitRunner,
       paceRunner: paceRunner,
+      deckDownloads: deckDownloads,
       settings: settings,
       volume: volume,
       profiles: profiles,
@@ -353,6 +373,11 @@ class AppState extends ChangeNotifier {
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
   final DeckCatalog deckCatalog;
+
+  /// Downloads the decks from GitHub and keeps them up to date (#210,
+  /// ADR-0037). Has its own notifier. Null where decks do not download, as
+  /// in tests and the gallery: the catalog's decks are then all there is.
+  final DeckDownloads? deckDownloads;
 
   final TtsEngine _tts;
   final SpeechEngine _speech;
@@ -549,9 +574,133 @@ class AppState extends ChangeNotifier {
   Future<void> _reloadDecks() async {
     deckCatalog.invalidate();
     _catalog = await deckCatalog.load();
+    _status = CatalogStatus.ready;
+    _loadError = null;
     _mapSkills();
     notifyListeners();
     await refreshVoices();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Deck downloads (#210, ADR-0037)
+
+  /// Reads the catalog again once downloaded files are on the phone, after
+  /// the first load if it is still under way.
+  Future<void> _filesDownloaded() async {
+    if (_disposed) return;
+    await _loading;
+    if (!_disposed) await _reloadDecks();
+  }
+
+  /// At launch, once the catalog is read: finishes downloads cut short,
+  /// then looks for deck updates, at most once a day, unless the learner
+  /// has turned that off. In the background.
+  Future<void> _afterLaunch() async {
+    final downloads = deckDownloads;
+    if (downloads == null || !settings.learningChosen || _disposed) return;
+    final spoken = settings.spokenLanguages;
+    await downloads.resume(learningCodes, spoken);
+    if (!_disposed && downloads.checksAutomatically) {
+      await downloads.checkForUpdates(spoken);
+    }
+  }
+
+  /// The codes of the languages the current profile learns.
+  Set<String> get learningCodes =>
+      currentProfile.languages ?? settings.learningLanguages.toSet();
+
+  /// The languages the learner can choose to learn, in the index's order
+  /// then the catalog's: every language on GitHub, and every one on the
+  /// phone. Where decks do not download, the catalog's languages.
+  List<OfferedLanguage> get languagesOnOffer {
+    final spoken = settings.spokenLanguages;
+    final index = deckDownloads?.index;
+    final onPhone = deckDownloads?.languagesOnPhone ?? const <String>{};
+    final offered = <String, OfferedLanguage>{};
+    for (final language in index?.languages ?? const <IndexLanguage>[]) {
+      final natives = language.nativesFor(spoken);
+      offered[language.code] = (
+        code: language.code,
+        name: language.name,
+        icon: language.icon,
+        taughtFrom: language.taughtFromOther(spoken)
+            ? language.natives
+                  .where((n) => n.code == natives.first)
+                  .firstOrNull
+                  ?.name
+            : null,
+        size: onPhone.contains(language.code)
+            ? 0
+            : language
+                  .filesFor(natives)
+                  .fold(0, (sum, file) => sum + file.size),
+      );
+    }
+    for (final language in languages) {
+      offered.putIfAbsent(
+        language.code,
+        () => (
+          code: language.code,
+          name: language.name,
+          icon: language.icon,
+          taughtFrom: null,
+          size: 0,
+        ),
+      );
+    }
+    return offered.values.toList();
+  }
+
+  /// Those of [codes] that must download before they can be learned.
+  List<String> languagesToDownload(Iterable<String> codes) {
+    final downloads = deckDownloads;
+    if (downloads == null) return const <String>[];
+    final spoken = settings.spokenLanguages;
+    return <String>[
+      for (final code in codes)
+        if (!downloads.isReady(code, spoken)) code,
+    ];
+  }
+
+  /// The languages the current profile learns with no deck on the phone,
+  /// that GitHub offers or may: what the app downloads before it opens, as
+  /// after updating from a version that bundled its decks. A language with
+  /// some of its decks in is not one: what it lacks, such as the decks of a
+  /// language the learner has since said they speak, comes in the
+  /// background or as an update, and the app opens offline. Empty until the
+  /// catalog is read, and where decks do not download.
+  List<String> get missingLanguages {
+    final downloads = deckDownloads;
+    if (downloads == null ||
+        _status == CatalogStatus.loading ||
+        !settings.learningChosen) {
+      return const <String>[];
+    }
+    final index = downloads.index;
+    return <String>[
+      for (final code in learningCodes)
+        if (!downloads.hasDecks(code) &&
+            (index == null || index.language(code) != null))
+          code,
+    ];
+  }
+
+  /// Downloads [language]'s first decks, and the rest behind them. Null
+  /// once it can be learned, else why not.
+  Future<DeckDownloadFailure?> downloadLanguage(String language) =>
+      deckDownloads!.download(language, settings.spokenLanguages);
+
+  /// Deletes [language]'s decks from the phone, and stops learning it. Its
+  /// progress stays in the review log, by card id, and comes back with its
+  /// decks.
+  Future<void> removeLanguage(String language) async {
+    if (learningCodes.contains(language)) {
+      setLearningLanguages(<String>[
+        for (final code in learningCodes)
+          if (code != language) code,
+      ]);
+    }
+    await deckDownloads!.remove(language);
   }
 
   /// Tells progress which decks ask for what is heard rather than what it
@@ -568,10 +717,13 @@ class AppState extends ChangeNotifier {
 
   Future<void> _load() async {
     try {
+      // What is downloaded, before the catalog reads it. Never the network.
+      await deckDownloads?.open();
       _catalog = await deckCatalog.load();
       _status = CatalogStatus.ready;
       _mapSkills();
       log.event('Decks loaded: ${decks.length}');
+      unawaited(_afterLaunch());
     } catch (error, stack) {
       _loadError = error;
       _status = CatalogStatus.failed;
@@ -1717,6 +1869,7 @@ class AppState extends ChangeNotifier {
       ..removeListener(_logTab)
       ..dispose();
     updates.dispose();
+    deckDownloads?.onFilesChanged = null;
     tuner.dispose();
     pacing.dispose();
     volume.dispose();
