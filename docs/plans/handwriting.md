@@ -19,7 +19,7 @@ Decided with the owner:
   the learner can override it with "I drew it right".
 - **Handwriting answers Write** (owner's decision, 2026-10-06; it replaces
   "a skill of its own"): writing in the script by hand is one way to answer
-  a Write question (`skill-model.md`), not a schedule of its own:
+  a Write question (ADR-0034), not a schedule of its own:
   - a letter is traced first, in the script units;
   - then drawn blind;
   - after that, Write's script questions can be answered by hand;

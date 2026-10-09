@@ -8,8 +8,8 @@ Written 2026-10-05.
 > of a word are different skills, and so are listening and speaking)
 
 Then, on how: "2 will then build upon 1 only". Asked what to keep, the owner
-chose **FSRS's difficulty only**. This plan comes after `fsrs.md`, and adds
-no estimate of its own from length or sounds.
+chose **FSRS's difficulty only**. This plan comes after FSRS (done: ADR-0033),
+and adds no estimate of its own from length or sounds.
 
 ## What exists
 
@@ -28,10 +28,10 @@ no estimate of its own from length or sounds.
 
 ## What FSRS brings
 
-With FSRS (`fsrs.md`), which lands with `skill-model.md`, every word has a
-**difficulty** D from 1 to 10 in each of its schedules (Hear, Say, Write;
-grammar understood and produced), learned from its own answers. So D is
-already separate by skill and by word. పాలు missed by ear gets a high D for
+With FSRS (ADR-0033), which landed with the skill model (ADR-0034), every
+word has a **difficulty** D from 1 to 10 in each of its schedules (Hear, Say,
+Write; grammar understood and produced), learned from its own answers. So D
+is already separate by skill and by word. పాలు missed by ear gets a high D for
 Hear and keeps a low one for Write.
 
 A pair has no D until its first answer in that skill. New words are
@@ -49,10 +49,10 @@ replaced.
    - **Inspect** shows a card's D in each skill it has been answered in.
 
    Lessons teach new words, which have no D yet, so lessons do not use it.
-3. **Parameters per skill**, optionally: FSRS can keep one set of 21
-   parameters per skill, so that listening can forget faster than
-   recognition. Each set needs its own history to fit, so this waits for
-   the optimiser (`fsrs.md`, "Later").
+3. **Parameters per skill:** done. FSRS keeps one set of 21 parameters per
+   language and skill, fitted from the learner's own history, so that
+   listening can forget faster than recognition (ADR-0035, owner,
+   2026-10-09).
 4. **Tests:** D stays separate per skill. A miss in one skill leaves the
    others' D alone. Reviews and quick revision read D as decided.
 
@@ -64,8 +64,9 @@ replaced.
   random.
 - Whether to replace `Difficulty.of(card)` for new words, which have no D
   yet, or keep it.
-- One set of FSRS parameters for all skills, or one per skill.
+- ~~One set of FSRS parameters for all skills, or one per skill.~~ Settled:
+  one per language and skill (ADR-0035).
 
 ## Estimate
 
-About 2–3 hours after `fsrs.md` lands. Confidence: medium.
+About 2–3 hours, now that FSRS has landed. Confidence: medium.

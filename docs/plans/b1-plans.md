@@ -1,7 +1,7 @@
 # Plan: a B1 plan in every path
 
-Written 2026-10-06. **After `skill-model.md`, before deck downloads**
-(owner's order).
+Written 2026-10-06. **After the skill model (done: ADR-0034), before deck
+downloads** (owner's order).
 
 ## What the owner asked
 
@@ -230,7 +230,7 @@ answers."
   validator *warning*, not an error (owner's choice).
 - **`pair` notes are proposed by a tool:** course words whose readings
   differ by one sound, such as కలం (kalaṁ) and కాలం (kālaṁ). The same pairs
-  give Hear its sound-alike options (`skill-model.md`).
+  give Hear its sound-alike options (ADR-0034).
 - **A `pair` note names its partner** (`ref`, the card of the word that
   sounds almost the same).
 - **`culture` notes follow the culture-deck rules (#99):** each checkable
