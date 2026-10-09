@@ -361,6 +361,26 @@ The owner's answers to #235, 2026-10-08:
   "fitted from the app's logs", it means the learner's own log, on the
   phone.
 
+- **Settled while building the fit** (builder's reading, 2026-10-09; the
+  owner may overrule any of them):
+  - **Baseline:** of the other languages with a fit for the skill, the one
+    studied last (latest review in any skill). A set equal to FSRS-6's
+    defaults is never a baseline.
+  - **States follow the current choice:** when studying another language
+    changes a baseline, every state is replayed, as a leech action does.
+  - **A fit that loses** stores the set in use with the new count, so the
+    next automatic refit waits for 10% more answers.
+  - **Restore:** when a backup and the phone both hold a fit for a skill,
+    the later fit wins. A restored set must lie in fitting's clip ranges.
+  - **A window with no first long-term review** keeps the start's w0 to w3
+    and trains w4 to w20.
+  - **Result sheet figures:** "comes back in N days" is the median
+    interval a right answer would give now; "reviews in the next 30 days"
+    assumes each is answered right on its day; within 5% is "about the
+    same".
+  - **The fit sees each word's own reviews only;** the half credit from
+    implied skills is not modelled.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
