@@ -84,6 +84,10 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   final Map<String, GlobalKey> _cardKeys = <String, GlobalKey>{};
   final ScrollController _scroll = ScrollController();
 
+  /// The languages whose download has shown on their card: it stays, to
+  /// say when all of it is in.
+  final Set<String> _downloadShown = <String>{};
+
   /// What the current profile learns, once the learner has chosen;
   /// nothing on first launch.
   static Set<String> _learningOf(AppState state) => <String>{
@@ -384,8 +388,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            if (widget.firstRun)
-              TabHeader(title: AppLocalizations.of(context)!.learnTitle),
             Expanded(
               child: downloads == null
                   ? _body(context, state)
@@ -406,6 +408,24 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   /// none and nothing on the phone, the page waits for it, or says why it
   /// could not be read and offers Try again.
   Widget _body(
+    BuildContext context,
+    AppState state, {
+    DeckDownloads? indexing,
+  }) {
+    final waiting = _waitingBody(context, state, indexing: indexing);
+    if (waiting == null) return _list(context, state);
+    if (!widget.firstRun) return waiting;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        TabHeader(title: AppLocalizations.of(context)!.learnTitle),
+        Expanded(child: waiting),
+      ],
+    );
+  }
+
+  /// Why there is no list yet, or null once there is one.
+  Widget? _waitingBody(
     BuildContext context,
     AppState state, {
     DeckDownloads? indexing,
@@ -444,7 +464,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           child: Text(l10n.commonRetry),
         ),
       ),
-      CatalogStatus.ready => _list(context, state),
+      CatalogStatus.ready => null,
     };
   }
 
@@ -514,87 +534,114 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(
-            AppSizes.gutter,
-            8,
-            AppSizes.gutter,
-            4,
-          ),
-          // One screen-reader node, the bar's full 56 in height, named by
-          // its hint even once the hint gives way to a search, as on Decks;
-          // the clear button sits over it, a node of its own.
-          child: Stack(
-            alignment: AlignmentDirectional.centerEnd,
-            children: <Widget>[
-              MergeSemantics(
-                child: Semantics(
-                  label: query.isEmpty ? null : l10n.pickerSearchHint,
-                  child: SearchBar(
-                    controller: _search,
-                    hintText: l10n.pickerSearchHint,
-                    elevation: const WidgetStatePropertyAll<double>(0),
-                    constraints: const BoxConstraints(minHeight: 56),
-                    padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-                      EdgeInsetsDirectional.symmetric(horizontal: 16),
+        Expanded(
+          // On first launch the title scrolls away and the search stays: at
+          // large text sizes, a title fixed above it would leave the list no
+          // room.
+          child: CustomScrollView(
+            controller: _scroll,
+            slivers: <Widget>[
+              if (widget.firstRun)
+                SliverToBoxAdapter(child: TabHeader(title: l10n.learnTitle)),
+              PinnedHeaderSliver(
+                child: ColoredBox(
+                  color: theme.scaffoldBackgroundColor,
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      AppSizes.gutter,
+                      8,
+                      AppSizes.gutter,
+                      4,
                     ),
-                    leading: const Icon(Icons.search),
-                    trailing: <Widget>[
-                      if (query.isNotEmpty) const SizedBox(width: 40),
-                    ],
+                    // One screen-reader node, the bar's full 56 in height,
+                    // named by its hint even once the hint gives way to a
+                    // search, as on Decks; the clear button sits over it,
+                    // a node of its own.
+                    child: Stack(
+                      alignment: AlignmentDirectional.centerEnd,
+                      children: <Widget>[
+                        MergeSemantics(
+                          child: Semantics(
+                            label: query.isEmpty ? null : l10n.pickerSearchHint,
+                            child: SearchBar(
+                              controller: _search,
+                              hintText: l10n.pickerSearchHint,
+                              elevation: const WidgetStatePropertyAll<double>(
+                                0,
+                              ),
+                              constraints: const BoxConstraints(minHeight: 56),
+                              padding:
+                                  const WidgetStatePropertyAll<
+                                    EdgeInsetsGeometry
+                                  >(
+                                    EdgeInsetsDirectional.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                  ),
+                              leading: const Icon(Icons.search),
+                              trailing: <Widget>[
+                                if (query.isNotEmpty) const SizedBox(width: 40),
+                              ],
+                            ),
+                          ),
+                        ),
+                        if (query.isNotEmpty)
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(end: 4),
+                            child: IconButton(
+                              tooltip: l10n.pickerClearSearch,
+                              icon: const Icon(Icons.close),
+                              onPressed: _search.clear,
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-              if (query.isNotEmpty)
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 4),
-                  child: IconButton(
-                    tooltip: l10n.pickerClearSearch,
-                    icon: const Icon(Icons.close),
-                    onPressed: _search.clear,
+              if (shown.isEmpty)
+                SliverFillRemaining(
+                  child: EmptyState(
+                    icon: Icons.search,
+                    title: l10n.pickerNoMatchTitle(query.trim()),
+                    body: l10n.pickerNoMatchBody,
+                  ),
+                )
+              else
+                SliverPadding(
+                  padding: const EdgeInsetsDirectional.only(bottom: 16),
+                  sliver: SliverList.list(
+                    children: <Widget>[
+                      // The intro scrolls with the list: at large text sizes,
+                      // it and the button would not leave the list any room.
+                      if (widget.firstRun && query.isEmpty)
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            AppSizes.gutter + 8,
+                            8,
+                            AppSizes.gutter,
+                            0,
+                          ),
+                          child: Text(
+                            l10n.learnBody,
+                            style: theme.textTheme.bodyLarge!.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      if (learning.isNotEmpty) ...<Widget>[
+                        heading(l10n.pickerGroupLearning(learning.length)),
+                        for (final language in learning) card(language),
+                      ],
+                      if (available.isNotEmpty) ...<Widget>[
+                        heading(l10n.pickerGroupAvailable(available.length)),
+                        for (final language in available) card(language),
+                      ],
+                    ],
                   ),
                 ),
             ],
           ),
-        ),
-        Expanded(
-          child: shown.isEmpty
-              ? EmptyState(
-                  icon: Icons.search,
-                  title: l10n.pickerNoMatchTitle(query.trim()),
-                  body: l10n.pickerNoMatchBody,
-                )
-              : ListView(
-                  controller: _scroll,
-                  padding: const EdgeInsetsDirectional.only(bottom: 16),
-                  children: <Widget>[
-                    // The intro scrolls with the list: at large text sizes,
-                    // it and the button would not leave the list any room.
-                    if (widget.firstRun && query.isEmpty)
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                          AppSizes.gutter + 8,
-                          8,
-                          AppSizes.gutter,
-                          0,
-                        ),
-                        child: Text(
-                          l10n.learnBody,
-                          style: theme.textTheme.bodyLarge!.copyWith(
-                            color: theme.colorScheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ),
-                    if (learning.isNotEmpty) ...<Widget>[
-                      heading(l10n.pickerGroupLearning(learning.length)),
-                      for (final language in learning) card(language),
-                    ],
-                    if (available.isNotEmpty) ...<Widget>[
-                      heading(l10n.pickerGroupAvailable(available.length)),
-                      for (final language in available) card(language),
-                    ],
-                  ],
-                ),
         ),
         Material(
           color: theme.colorScheme.surfaceContainer,
@@ -611,13 +658,12 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   if (hint != null) ...<Widget>[
-                    Semantics(
-                      liveRegion: true,
-                      child: Text(
-                        hint,
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.bodyMedium,
-                      ),
+                    // Not a live region: a download's ready point is
+                    // announced from its card, once.
+                    Text(
+                      hint,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodyMedium,
                     ),
                     const SizedBox(height: 12),
                   ],
@@ -633,6 +679,21 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         ),
       ],
     );
+  }
+
+  /// Whether [code]'s card shows its download: while it downloads, after
+  /// it failed or stopped part way, and once shown, until the page closes.
+  bool _showsDownload(
+    DeckDownloads downloads,
+    LanguageDownload download,
+    String code,
+  ) {
+    final active =
+        downloads.isDownloading(code) ||
+        downloads.failureOf(code) != null ||
+        (download.decks > 0 && download.decks < download.totalDecks);
+    if (active) _downloadShown.add(code);
+    return active || _downloadShown.contains(code);
   }
 
   Widget _card(
@@ -676,9 +737,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           CardNotice(text: l10n.pickerAlphaNotice(language.name)),
         if (downloads != null &&
             download != null &&
-            (downloads.isDownloading(code) ||
-                downloads.failureOf(code) != null ||
-                (download.decks > 0 && download.decks < download.totalDecks)))
+            _showsDownload(downloads, download, code))
           LanguageDownloadBlock(
             name: language.name,
             download: download,

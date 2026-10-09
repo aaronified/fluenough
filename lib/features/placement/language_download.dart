@@ -62,11 +62,26 @@ class _LanguageDownloadBlockState extends State<LanguageDownloadBlock> {
   @override
   void initState() {
     super.initState();
-    // What was so before the block was shown is not news.
-    _ready = widget.download.ready;
-    _done = _isDone(widget.download);
+    // What was so before the block was shown is not news, but for a
+    // download that starts with it: the block shows as it starts.
+    final d = widget.download;
+    _ready = d.ready;
+    _done = _isDone(d);
     _started = widget.downloading;
     _failed = widget.failure;
+    // A failure that came before the block could show is told too.
+    final failure = widget.failure;
+    if ((widget.downloading && d.bytes == 0) || failure != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        final l10n = AppLocalizations.of(context)!;
+        _announce(
+          failure != null
+              ? downloadFailureText(l10n, failure)
+              : l10n.deckDownloadsProgressLabel(widget.name),
+        );
+      });
+    }
   }
 
   static bool _isDone(LanguageDownload d) =>
@@ -94,7 +109,6 @@ class _LanguageDownloadBlockState extends State<LanguageDownloadBlock> {
       _announce(downloadFailureText(l10n, failure));
     }
     _failed = failure;
-    if (failure == null && widget.downloading) _failed = null;
   }
 
   void _announce(String text) => unawaited(
@@ -199,7 +213,8 @@ class _LanguageDownloadBlockState extends State<LanguageDownloadBlock> {
           label: l10n.deckDownloadsProgressLabel(widget.name),
         ),
         const SizedBox(height: 8),
-        Semantics(liveRegion: failure != null, child: status),
+        // Not a live region: what changes here is announced once each.
+        status,
         if (widget.downloading || failure != null) ...<Widget>[
           const SizedBox(height: 8),
           Wrap(
