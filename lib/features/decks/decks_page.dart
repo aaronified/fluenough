@@ -211,19 +211,25 @@ class _DecksPageState extends State<DecksPage> {
                 padding: const EdgeInsetsDirectional.symmetric(
                   horizontal: AppSizes.gutter,
                 ),
-                // One screen-reader node, the bar's full 56 in height (#26).
+                // One screen-reader node, the bar's full 56 in height (#26),
+                // named by its hint even once the hint gives way to a search.
                 child: MergeSemantics(
-                  child: SearchBar(
-                    controller: _search,
-                    autoFocus: widget.initialQuery == null,
-                    hintText: l10n.decksUnitSearchHint,
-                    leading: const Icon(Icons.search),
-                    elevation: const WidgetStatePropertyAll<double>(0),
-                    constraints: const BoxConstraints(minHeight: 56),
-                    padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-                      EdgeInsetsDirectional.symmetric(horizontal: 16),
+                  child: Semantics(
+                    label: _search.text.isEmpty
+                        ? null
+                        : l10n.decksUnitSearchHint,
+                    child: SearchBar(
+                      controller: _search,
+                      autoFocus: widget.initialQuery == null,
+                      hintText: l10n.decksUnitSearchHint,
+                      leading: const Icon(Icons.search),
+                      elevation: const WidgetStatePropertyAll<double>(0),
+                      constraints: const BoxConstraints(minHeight: 56),
+                      padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+                        EdgeInsetsDirectional.symmetric(horizontal: 16),
+                      ),
+                      onChanged: (_) => setState(() {}),
                     ),
-                    onChanged: (_) => setState(() {}),
                   ),
                 ),
               ),

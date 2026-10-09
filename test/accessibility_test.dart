@@ -18,7 +18,10 @@ import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
+import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
+import 'package:fluenough/features/decks/path_fixture.dart';
+import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
@@ -361,6 +364,72 @@ void main() {
     ('languages, from Settings', SpokenLanguagesPage(choices: choices)),
   ];
   pages.addAll(firstLaunch);
+
+  // The Decks tab's path and a unit's screen (the owner's design), on the
+  // design's Telugu learner: levels, milestones and coming units, a search
+  // across courses, a unit part learned, and a word's card.
+  final pathScreens = <(String, Widget)>[
+    ('the path, toward B1', const DecksPage(planOf: PathFixtures.planOf)),
+    (
+      'the path, searched',
+      const DecksPage(planOf: PathFixtures.planOf, initialQuery: 'family'),
+    ),
+    (
+      'a unit',
+      const UnitPage(
+        deckId: PathFixtures.familyDeck,
+        plan: PathFixtures.telugu,
+      ),
+    ),
+    (
+      'a unit, a word\'s card open',
+      const UnitPage(
+        deckId: 'te-en-sound-differences',
+        plan: PathFixtures.telugu,
+        openWord: PathFixtures.soundAlikeCard,
+      ),
+    ),
+  ];
+  Future<AppState> teluguLearner() async {
+    final app = AppState.test();
+    await app.load();
+    return PathFixtures.state(app);
+  }
+
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    group('the path and a unit, ${themeMode.name} theme', () {
+      for (final (name, page) in pathScreens) {
+        testWidgets(name, (tester) async {
+          usePhone(tester);
+          final semantics = tester.ensureSemantics();
+          await pumpScreen(
+            tester,
+            page,
+            state: await teluguLearner(),
+            themeMode: themeMode,
+          );
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+      }
+    });
+  }
+
+  group('the path and a unit at the largest font size, 2.0 on Android', () {
+    for (final (name, page) in pathScreens) {
+      testWidgets('$name: nothing clipped, targets still big enough', (
+        tester,
+      ) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        await pumpScreen(tester, page, state: await teluguLearner());
+        expect(tester.takeException(), isNull);
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+  });
 
   group('at the largest font size, 2.0 on Android', () {
     for (final (name, page) in firstLaunch) {
