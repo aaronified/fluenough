@@ -1,0 +1,60 @@
+# A core (ADR-0035), from Appendix A of the B1 format spec with te -> zz:
+# a language with no decks in the repository, so the validator's tests
+# read no real cards. Used by tools/test_validate_b1.py.
+schema: 1
+id: "zz-home"
+part: "core"
+kind: "vocab"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+tags: ["unreviewed"]
+cards:
+  - id: "zz-9001"
+    target: "ఇల్లు"
+    reading: "illu"
+    pos: "noun"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "ఇంటి-", reading: "iṇṭi-" }] }
+  - id: "zz-9004"
+    target: "అమ్మ"
+    reading: "amma"
+    pos: "noun"
+    notes:
+      - { id: "address", kind: "usage" }
+  - id: "zz-9006"
+    target: "నేను"
+    reading: "nēnu"
+    pos: "pronoun"
+    notes:
+      - { id: "drop", kind: "note" }
+  - id: "zz-9003"
+    target: "వెళ్ళు"
+    reading: "veḷḷu"
+    pos: "verb"
+    notes:
+      - { id: "future", kind: "behaviour", words: [{ word: "వెళ్తాను", reading: "veḷtānu" }] }
+  - id: "zz-9002"
+    target: "నేను ఇంటికి వెళ్తాను."
+    reading: "nēnu iṇṭiki veḷtānu."
+    pos: "phrase"
+    rules: ["zz-rule-ki"]
+    bases:
+      - { word: "ఇంటికి", ref: "zz-9001" }
+      - { word: "వెళ్తాను", ref: "zz-9003" }
+  # Fifteen phrasebook cards. Their one word, అమ్మ (amma), is the target of
+  # zz-9004, so they need no bases: the digit is not a word.
+  - { id: "zz-9101", target: "అమ్మ 1!", reading: "amma 1!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9102", target: "అమ్మ 2!", reading: "amma 2!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9103", target: "అమ్మ 3!", reading: "amma 3!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9104", target: "అమ్మ 4!", reading: "amma 4!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9105", target: "అమ్మ 5!", reading: "amma 5!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9106", target: "అమ్మ 6!", reading: "amma 6!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9107", target: "అమ్మ 7!", reading: "amma 7!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9108", target: "అమ్మ 8!", reading: "amma 8!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9109", target: "అమ్మ 9!", reading: "amma 9!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9110", target: "అమ్మ 10!", reading: "amma 10!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9111", target: "అమ్మ 11!", reading: "amma 11!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9112", target: "అమ్మ 12!", reading: "amma 12!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9113", target: "అమ్మ 13!", reading: "amma 13!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9114", target: "అమ్మ 14!", reading: "amma 14!", pos: "phrase", phrasebook: true }
+  - { id: "zz-9115", target: "అమ్మ 15!", reading: "amma 15!", pos: "phrase", phrasebook: true }

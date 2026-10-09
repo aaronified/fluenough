@@ -1,0 +1,38 @@
+# A rules core (ADR-0035): one table, its rows the language's nouns with
+# every form listed, its columns belonging to four rules.
+schema: 1
+id: "zz-grammar-case-endings"
+part: "core"
+kind: "rules"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+  slots: ["lo", "ki", "to", "nunci"]
+  rows:
+    - word: "zz-9001"
+      forms: { "lo": "ఇంట్లో", "ki": "ఇంటికి", "to": "ఇంటితో", "nunci": "ఇంటి నుంచి" }
+      readings: { "lo": "iṇṭlō", "ki": "iṇṭiki", "to": "iṇṭitō", "nunci": "iṇṭi nuñci" }
+    - word: "zz-9004"
+      forms: { "lo": "అమ్మలో", "ki": "అమ్మకి", "to": "అమ్మతో", "nunci": "అమ్మ నుంచి" }
+      readings: { "lo": "ammalō", "ki": "ammaki", "to": "ammatō", "nunci": "amma nuñci" }
+rules:
+  - id: "zz-rule-lo"
+    slots: ["lo"]
+    words:
+      - { word: "-లో", reading: "-lō" }
+      - { word: "ఇల్లు", reading: "illu" }
+      - { word: "ఇంట్లో", reading: "iṇṭlō" }
+  - id: "zz-rule-ki"
+    slots: ["ki"]
+    words:
+      - { word: "-కి", reading: "-ki" }
+      - { word: "-కు", reading: "-ku" }
+  - id: "zz-rule-to"
+    slots: ["to"]
+    words: [{ word: "-తో", reading: "-tō" }]
+  - id: "zz-rule-nunci"
+    slots: ["nunci"]
+    words: [{ word: "నుంచి", reading: "nuñci" }]
