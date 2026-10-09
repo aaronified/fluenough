@@ -1,5 +1,6 @@
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/card_state_repository.dart';
 import 'package:fluenough/core/data/database.dart';
@@ -185,9 +186,29 @@ void main() {
     }
   });
 
-  test('the database and the in-memory store agree', () async {
+  test('the database caches each pair\'s own reviews, as replaying them '
+      'without implied credit gives', () async {
     final recorded = await recordTwenty();
-    final memory = MemoryProgress.replaying(recorded);
-    expect(byValue(await states.all()), byValue(memory.states));
+    expect(
+      byValue(await states.all()),
+      byValue(replayReviews(recorded.map(logged)).states),
+    );
   });
+
+  test(
+    'the in-memory store adds implied credit, and moves no due date',
+    () async {
+      final recorded = await recordTwenty();
+      final memory = MemoryProgress.replaying(recorded);
+      final cached = await states.all();
+      for (final MapEntry(:key, :value) in memory.states.entries) {
+        expect(value.dueAt, cached[key]!.dueAt, reason: '$key');
+        expect(
+          value.stability,
+          greaterThanOrEqualTo(cached[key]!.stability),
+          reason: '$key',
+        );
+      }
+    },
+  );
 }
