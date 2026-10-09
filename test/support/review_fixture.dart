@@ -32,12 +32,22 @@ const String plainCard = 'te-9902';
 /// The rude word: వెధవ (vedhava), idiot.
 const String rudeCard = 'te-9951';
 
+/// Telugu's regions, as its path lists them: `- id: …` lines of a path.
+const String teluguRegions = '''
+  - { id: "telangana", name: { "en": "Telangana" } }
+  - { id: "coastal-andhra", name: { "en": "Coastal Andhra" } }
+  - { id: "rayalaseema", name: { "en": "Rayalaseema" } }''';
+
 /// The course's deck files. [authors] are listed on the words deck, as an
 /// updated deck lists the rater codes that helped build it. With [more],
-/// the words' unit has a second deck, still unchecked.
+/// the words' unit has a second deck, still unchecked. The path lists
+/// [regions], `- id: …` lines, none when empty; the rude word has
+/// [rudeNotes], a deck's `notes:` list, if given.
 Map<String, String> reviewCourse({
   List<String> authors = const <String>[],
   bool more = false,
+  String regions = teluguRegions,
+  String? rudeNotes,
 }) {
   const header = '''
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
@@ -67,7 +77,7 @@ name: "Rude words"
 $header
 tags: [offensive, unreviewed]
 cards:
-  - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [recognition] }
+  - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [recognition]${rudeNotes == null ? '' : ', notes: $rudeNotes'} }
 ''',
     if (more)
       'decks/te/$moreDeck.yaml':
@@ -87,6 +97,7 @@ schema: 1
 kind: path
 id: te-path
 language: te
+${regions.isEmpty ? '' : 'regions:\n$regions'}
 units:
   - [te-review-words${more ? ', te-review-more' : ''}]
   - [te-review-rude]
@@ -99,13 +110,22 @@ units:
 Future<AppState> reviewState({
   List<String> authors = const <String>[],
   bool more = false,
+  String regions = teluguRegions,
+  String? rudeNotes,
   TtsEngine tts = const NullTtsEngine(),
   MailShare share = const NullMailShare(),
   bool reviewing = false,
   SettingsNotifier? settings,
 }) async {
   final state = AppState.test(
-    decks: MemoryDeckSource(reviewCourse(authors: authors, more: more)),
+    decks: MemoryDeckSource(
+      reviewCourse(
+        authors: authors,
+        more: more,
+        regions: regions,
+        rudeNotes: rudeNotes,
+      ),
+    ),
     tts: tts,
     mailShare: share,
     settings:

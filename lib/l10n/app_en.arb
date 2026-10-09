@@ -5698,6 +5698,20 @@
   "@reviewRudeRegion": {
     "description": "Row of a rude card: its region note."
   },
+  "reviewRudeRegionNote": "{regions}: {note}",
+  "@reviewRudeRegionNote": {
+    "description": "A rude card's region note: the regions it names, joined, then the note's text, both from the deck.",
+    "placeholders": {
+      "regions": {
+        "type": "String",
+        "example": "Telangana · Rayalaseema"
+      },
+      "note": {
+        "type": "String",
+        "example": "Heard as a joke among friends here."
+      }
+    }
+  },
   "reviewRudeNotSet": "Not set yet",
   "@reviewRudeNotSet": {
     "description": "A rude card's level, type, friendliness or region note when the deck does not give it yet."

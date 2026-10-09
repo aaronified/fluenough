@@ -463,6 +463,12 @@ class AppState extends ChangeNotifier {
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
 
+  /// [language]'s own path (ADR-0036), shared by every native language it
+  /// is taught from, with the units it plans and its regions; null if it
+  /// has none.
+  LanguagePath? languagePathOf(String language) =>
+      _catalog.languagePaths[language];
+
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 

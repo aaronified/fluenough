@@ -1,5 +1,6 @@
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../core/data/course_path.dart' show Region;
 import '../../core/models/card.dart';
 import '../../core/review/deck_review.dart';
 import '../decks/card_notes.dart';
@@ -9,46 +10,40 @@ import '../decks/word_sheet.dart' show isRude;
 /// Telugu" (docs/plans/offensive-words.md).
 typedef RaterRegion = ({String id, String name});
 
-/// [language]'s regions, in the order the rating sheet offers them, before
-/// Elsewhere; none for a language without them, which asks no region
-/// question.
-///
-/// **A fixed list until feat/b1-format's regions land.** That branch lists
-/// a language's regions in its path (ADR-0036, `CoursePath.regions`); the
-/// ids and names here are copied from its `te-path.yaml` and
-/// `bn-path.yaml`, so that a rating made now names the same region ids.
-/// Once it is merged, this reads `state.pathOf(entry)?.regions` instead.
-/// The names are the decks' data, in English, not interface text.
-List<RaterRegion> raterRegions(String language) => switch (language) {
-  'te' => const <RaterRegion>[
-    (id: 'telangana', name: 'Telangana'),
-    (id: 'coastal-andhra', name: 'Coastal Andhra'),
-    (id: 'rayalaseema', name: 'Rayalaseema'),
-  ],
-  'bn' => const <RaterRegion>[
-    (id: 'rarhi', name: 'Rāṛhī (west-central: Kolkata, Nadia, Bardhaman)'),
-    (id: 'vangiya', name: 'Vaṅgīya (east: Dhaka, Mymensingh, Barishal)'),
-    (
-      id: 'varendri',
-      name: 'Varendrī (north-central: Rajshahi, Malda, Dinajpur)',
-    ),
-    (
-      id: 'kamrupi',
-      name: 'Kāmarūpī or Rangpuri (north: Rangpur, Cooch Behar, Jalpaiguri)',
-    ),
-    (
-      id: 'manbhumi',
-      name: 'Mānbhūmī (west: Purulia, Bankura, Bengali-speaking Jharkhand)',
-    ),
-    (
-      id: 'south-eastern',
-      name:
-          'South-eastern (Chittagong, Noakhali, Sylhet, Tripura, '
-          'Assam\'s Barak Valley)',
-    ),
-  ],
-  _ => const <RaterRegion>[],
-};
+/// [language]'s regions, in the order its path lists them (ADR-0036), each
+/// named in [code], else in English; none for a language whose path lists
+/// none, which asks no region question. The rating sheet offers them
+/// before Elsewhere. The names are the decks' data, not interface text.
+List<RaterRegion> raterRegions(
+  AppState state,
+  String language, {
+  String code = 'en',
+}) => <RaterRegion>[
+  for (final region
+      in state.languagePathOf(language)?.regions ?? const <Region>[])
+    (id: region.id, name: region.nameIn(code)),
+];
+
+/// The regions [card]'s region note names, as [raterRegions] names them,
+/// with the note's text: what a rude word's card says under "Region".
+/// Null when it has no region note. A region its path does not list is
+/// named by its id.
+({String text, List<String> regions})? regionNote(
+  AppState state,
+  String language,
+  Card card, {
+  String code = 'en',
+}) {
+  final note = regionNoteOf(card);
+  if (note == null) return null;
+  final names = <String, String>{
+    for (final r in raterRegions(state, language, code: code)) r.id: r.name,
+  };
+  return (
+    text: note.text,
+    regions: <String>[for (final id in note.regions) names[id] ?? id],
+  );
+}
 
 /// A rude word that [card] sounds or looks like: the pair a learner is
 /// warned of, and a reviewer confirms or rejects, with the pair note's
