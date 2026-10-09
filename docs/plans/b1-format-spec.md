@@ -2101,8 +2101,13 @@ language lacks is "Coming" for the learner, never filled from another
 native language's deck (`native-layers.md`: a card a layer does not
 translate "is not shown in English"). Card progress
 is keyed by card id (ADR-0018), so a learner whose best native language
-changes keeps every card's history; placement is by deck id, so they are
-placed afresh in the new course's decks.
+changes keeps every card's history. Placement is saved by deck id, in
+the course it was taken in, and read across the language's courses: a
+deck whose core's deck was placed in another course, or whose unit was
+placed whole there, reads as placed (`AppState.isPlaced`), so changing
+the course's native language keeps it. (Changed on review, 2026-10-09:
+this line first said they are "placed afresh", which nothing built, so
+the units placed past came back to be taught.)
 
 `parseLanguagePath(String text, {String source})` replaces
 `parseCoursePath`. It reads the file of 10.1 and throws
