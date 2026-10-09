@@ -270,6 +270,19 @@ The owner's answers to #235, 2026-10-08:
   `docs/research/skill-evidence-claims.json`). Its options are put to the
   owner before anything is built from them.
 
+- **Decided from the evidence** (owner, 2026-10-09):
+  - **Ability:** a Q-matrix with multi-skill Elo. Each question lists the
+    skills it judges, primary or secondary; one answer's update is shared
+    over them, and a miss's blame split (Park et al. 2019; Koedinger et al.
+    2011). The single .68 goes: it is a correlation of vocabulary sizes
+    across learners, not of one word's skills.
+  - **Scheduling:** a full review for each skill a question exercises; on
+    a right answer only, a partial stability gain for the skills it
+    implies, never moving their due date (Choffin et al. 2019; Pan &
+    Rickard 2018).
+  - **Order:** the skill model and FSRS are finished, rated and opened as
+    a pull request first; then the B1 format; then the colours.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
