@@ -14,9 +14,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મને", base: "મને", reading: "mane" }
+      - { word: "મને", base: "હું", reading: "hum̐" }
       - { word: "જોઈએ", base: "જોઈએ", reading: "joie" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0411"
     target: "તમારે શું જોઈએ?"
     reading: "tamāre śum̐ joie?"
@@ -25,7 +25,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "તમારે", base: "તમારે", reading: "tamāre" }
+      - { word: "તમારે", base: "તમારું", reading: "tamārum̐" }
       - { word: "જોઈએ", base: "જોઈએ", reading: "joie" }
   - id: "gu-0412"
     target: "મને મદદ જોઈએ છે."
@@ -33,9 +33,9 @@ cards:
     ipa: "məne məd̪əd̪ dʒoie tʃʰe"
     pos: "phrase"
     bases:
-      - { word: "મને", base: "મને", reading: "mane" }
+      - { word: "મને", base: "હું", reading: "hum̐" }
       - { word: "જોઈએ", base: "જોઈએ", reading: "joie" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0413"
     target: "મને કંઈ નથી જોઈતું."
     reading: "mane kaim̐ nathi joitum̐."
@@ -44,10 +44,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મને", base: "મને", reading: "mane" }
+      - { word: "મને", base: "હું", reading: "hum̐" }
       - { word: "કંઈ", base: "કંઈ", reading: "kaim̐" }
       - { word: "નથી", base: "નથી", reading: "nathi" }
-      - { word: "જોઈતું", base: "જોઈતું", reading: "joitum̐" }
+      - { word: "જોઈતું", base: "જોઈએ", reading: "joie" }
   - id: "gu-0414"
     target: "મારે ઘરે જવું છે."
     reading: "māre ghare javum̐ che."
@@ -56,9 +56,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારે", base: "મારે", reading: "māre" }
-      - { word: "ઘરે", base: "ઘરે", reading: "ghare" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "મારે", base: "મારું", reading: "mārum̐" }
+      - { word: "ઘરે", ref: "gu-0048" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0415"
     target: "મારે ટિકિટ લેવી છે."
     reading: "māre ṭikiṭ levi che."
@@ -67,9 +67,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારે", base: "મારે", reading: "māre" }
-      - { word: "લેવી", base: "લેવી", reading: "levi" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "મારે", base: "મારું", reading: "mārum̐" }
+      - { word: "લેવી", base: "લેવું", reading: "levum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0416"
     target: "મારે ચા પીવી છે."
     reading: "māre cā pivi che."
@@ -78,9 +78,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારે", base: "મારે", reading: "māre" }
+      - { word: "મારે", base: "મારું", reading: "mārum̐" }
       - { word: "પીવી", ref: "gu-0506" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0417"
     target: "મારી પાસે સમય નથી."
     reading: "māri pāse samay nathi."
@@ -89,7 +89,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "મારી", base: "મારી", reading: "māri" }
+      - { word: "મારી", base: "મારું", reading: "mārum̐" }
       - { word: "નથી", base: "નથી", reading: "nathi" }
   - id: "gu-0418"
     target: "મારી પાસે પૈસા નથી."
@@ -97,7 +97,7 @@ cards:
     ipa: "mari pase pəisa nət̪ʰi"
     pos: "phrase"
     bases:
-      - { word: "મારી", base: "મારી", reading: "māri" }
+      - { word: "મારી", base: "મારું", reading: "mārum̐" }
       - { word: "નથી", base: "નથી", reading: "nathi" }
   - id: "gu-0419"
     target: "તમારી પાસે છૂટા છે?"
@@ -105,9 +105,9 @@ cards:
     ipa: "t̪əmari pase tʃʰuʈa tʃʰe"
     pos: "phrase"
     bases:
-      - { word: "તમારી", base: "તમારી", reading: "tamāri" }
-      - { word: "છૂટા", base: "છૂટા", reading: "chuṭā" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "તમારી", base: "તમારું", reading: "tamārum̐" }
+      - { word: "છૂટા", base: "છૂટું", reading: "chuṭum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0420"
     target: "બસ, બીજું કંઈ નહીં."
     reading: "bas, bijum̐ kaim̐ nahim̐."

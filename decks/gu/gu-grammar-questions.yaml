@@ -15,36 +15,36 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "તમારું", base: "તમારું", reading: "tamārum̐" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0297"
     target: "તમે ક્યાં રહો છો?"
     reading: "tame kyām̐ raho cho?"
     ipa: "t̪əme kjã rəɦo tʃʰo"
     pos: "phrase"
     bases:
-      - { word: "રહો", base: "રહો", reading: "raho" }
-      - { word: "છો", base: "છો", reading: "cho" }
+      - { word: "રહો", base: "રહેવું", reading: "rahevum̐" }
+      - { word: "છો", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0298"
     target: "આ શું છે?"
     reading: "ā śum̐ che?"
     ipa: "a ʃũ tʃʰe"
     pos: "phrase"
     bases:
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0299"
     target: "એ કોણ છે?"
     reading: "e koṇ che?"
     ipa: "e koɳ tʃʰe"
     pos: "phrase"
     bases:
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0300"
     target: "તમે ક્યારે આવશો?"
     reading: "tame kyāre āvśo?"
     ipa: "t̪əme kjare aʋʃo"
     pos: "phrase"
     bases:
-      - { word: "આવશો", base: "આવશો", reading: "āvśo" }
+      - { word: "આવશો", ref: "gu-0509" }
   - id: "gu-0301"
     target: "કેટલા લોકો છે?"
     reading: "keṭlā loko che?"
@@ -54,8 +54,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "કેટલા", ref: "gu-0291" }
-      - { word: "લોકો", base: "લોકો", reading: "loko" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "લોકો", base: "લોક", reading: "lok" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0302"
     target: "તમે કેમ ન આવ્યા?"
     reading: "tame kem na āvyā?"
@@ -64,7 +64,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "આવ્યા", base: "આવ્યા", reading: "āvyā" }
+      - { word: "આવ્યા", ref: "gu-0509" }
   - id: "gu-0303"
     target: "ચા પીશો?"
     reading: "cā piśo?"
@@ -73,7 +73,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "પીશો", base: "પીશો", reading: "piśo" }
+      - { word: "પીશો", ref: "gu-0506" }
   - id: "gu-0304"
     target: "તમને ગુજરાતી આવડે છે?"
     reading: "tamne gujarāti āvḍe che?"
@@ -82,10 +82,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "તમને", base: "તમને", reading: "tamne" }
+      - { word: "તમને", ref: "gu-0251" }
       - { word: "ગુજરાતી", base: "ગુજરાતી", reading: "gujarāti" }
-      - { word: "આવડે", base: "આવડે", reading: "āvḍe" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "આવડે", base: "આવડવું", reading: "āvaḍvum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
   - id: "gu-0305"
     target: "તમે થાકી ગયા છો, ને?"
     reading: "tame thāki gayā cho, ne?"
@@ -94,9 +94,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "થાકી", base: "થાકી", reading: "thāki" }
-      - { word: "ગયા", base: "ગયા", reading: "gayā" }
-      - { word: "છો", base: "છો", reading: "cho" }
+      - { word: "થાકી", base: "થાકવું", reading: "thākvum̐" }
+      - { word: "ગયા", ref: "gu-0508" }
+      - { word: "છો", base: "હોવું", reading: "hovum̐" }
       - { word: "ને", base: "ને", reading: "ne" }
   - id: "gu-0306"
     target: "કઈ બસ સ્ટેશન જાય છે?"
@@ -106,6 +106,6 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "કઈ", base: "કઈ", reading: "kai" }
-      - { word: "જાય", base: "જાય", reading: "jāy" }
-      - { word: "છે", base: "છે", reading: "che" }
+      - { word: "કઈ", ref: "gu-0292" }
+      - { word: "જાય", ref: "gu-0508" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
