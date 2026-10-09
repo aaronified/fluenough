@@ -66,9 +66,17 @@ aside, Bring back (migration 3). Append-only and guarded like `reviews`.
 Replaying the log reads it: a pair restarts after a reset that still holds,
 and a set-aside pair is left out of every session. No review is touched.
 
-**Backup.** Settings → Export review log writes both logs as one JSONL file,
-and Import merges such a file back, adding only the reviews not already
-there and rebuilding `card_states` from the whole log. The log replays by
+**`fsrs_parameters`** — FSRS's parameters fitted to the learner, one row per
+language and skill (migration 7, ADR-0035): the 21 values, when the fit ran,
+the review count it ran at, and the log loss before and after. Not a cache:
+each fit starts from the one before, so it cannot be rebuilt from `reviews`.
+A pair is scheduled with its skill's set in its language, else that skill's
+set in the language studied most recently, else the defaults.
+
+**Backup.** Settings → Export review log writes both logs, and the fitted
+parameters, as one JSONL file, and Import merges such a file back, adding
+only the reviews not already there and rebuilding `card_states` from the
+whole log. The log replays by
 time, so older history imported onto a new phone takes its place. See
 [LOG-FORMAT.md](LOG-FORMAT.md).
 

@@ -7,6 +7,8 @@ import '../../app/skill.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart';
 import '../../core/scheduling/ask.dart';
+import '../../core/scheduling/skill_fit.dart';
+import '../../ui/widgets/pace_parts.dart';
 
 /// How long the design allows for one card when it estimates a session:
 /// "about 4 min" for 12 cards.
@@ -49,6 +51,54 @@ typedef TodayLesson = ({
   bool done,
 });
 
+/// What Today shows of the learner's pace (`docs/plans/skill-model.md`,
+/// "Shown prominently"): the strip on the due card, and a mark on each
+/// adjusted skill's tile.
+typedef TodayPace = ({
+  /// The next 30 days' reviews in every skill of the languages learned,
+  /// now and as at the start; null while they are worked out.
+  ({int reviews, int was})? totals,
+
+  /// Which way each adjusted skill moved, in the languages learned
+  /// together. A skill not adjusted has none.
+  Map<Skill, PaceDirection> marks,
+});
+
+/// [state]'s [TodayPace], or null before any skill is adjusted, which is
+/// read from the stored fits alone: nothing is worked out until then.
+///
+/// Only [onScreen] does it ask for the paces to be worked out; else it
+/// takes the last worked out, so that Today, built behind a drill or
+/// another tab, starts no job for each answer recorded there.
+TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
+  final pacing = state.pacing;
+  if (!pacing.adjusted) return null;
+  final paces = onScreen ? pacing.paces : pacing.latest;
+  if (paces == null) {
+    return (totals: null, marks: const <Skill, PaceDirection>{});
+  }
+  final learned = <SkillPace>[
+    for (final p in paces.values)
+      if (state.currentProfile.learns(p.key.language)) p,
+  ];
+  final shown = learned.isEmpty ? paces.values.toList() : learned;
+  final all = SkillFit.together(shown);
+  return (
+    totals: all == null
+        ? null
+        : (reviews: all.now.reviews, was: all.start.reviews),
+    marks: <Skill, PaceDirection>{
+      for (final skill in todaySkills)
+        if (SkillFit.together(<SkillPace>[
+              for (final p in shown)
+                if (p.adjusted && p.key.mode == skill.mode) p,
+            ])
+            case final moved?)
+          skill: PaceDirection.of(moved.start, moved.now),
+    },
+  );
+}
+
 /// Everything Today shows, computed from the state rather than drawn from the
 /// design's sample numbers (streak 12, 8 new cards, and so on).
 ///
@@ -69,9 +119,12 @@ class TodayNumbers {
     this.lessons = const <TodayLesson>[],
     this.dueIn = const <Skill, int>{},
     this.revisable = const <Skill, int>{},
+    this.pace,
   });
 
-  factory TodayNumbers.of(AppState state) {
+  /// [onScreen]: whether Today is on view, so that the pace may be worked
+  /// out ([todayPaceOf]).
+  factory TodayNumbers.of(AppState state, {bool onScreen = true}) {
     final now = state.now();
     final progress = state.progress;
     final decks = state.profileDecks;
@@ -156,6 +209,7 @@ class TodayNumbers {
       week: <WeekDay>[for (var back = 6; back >= 0; back--) dayOf(back)],
       languages: state.todayLanguages,
       lessons: lessons,
+      pace: todayPaceOf(state, onScreen: onScreen),
     );
   }
 
@@ -208,6 +262,9 @@ class TodayNumbers {
   DrillRequest get start => languages.length > 1
       ? DrillRequest.today(language: languages.first.code)
       : const DrillRequest.today();
+
+  /// The learner's pace, once some skill is adjusted; null before.
+  final TodayPace? pace;
 
   /// Nothing to drill now.
   bool get allDone => due == 0;

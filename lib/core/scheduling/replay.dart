@@ -2,6 +2,7 @@ import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import 'fsrs.dart';
 import 'skill_map.dart';
+import 'skill_parameters.dart';
 
 /// One review as the log keeps it: enough to replay it.
 typedef LoggedReview = ({
@@ -26,11 +27,17 @@ typedef LoggedReview = ({
 /// implies, of the same card, where that pair has a state ([implyReview]).
 /// Without, each pair is its own reviews alone: what the database's
 /// `card_states` caches.
+///
+/// Each pair is scheduled with the parameters [parameters] gives its skill
+/// in its language: the same for the whole log, so that the replay is
+/// deterministic, and gives what recording each review with them gave.
 ({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states}) replayReviews(
   Iterable<LoggedReview> reviews, {
   LeechEffects effects = LeechEffects.none,
   SkillMap? skills,
+  SkillParameters? parameters,
 }) {
+  final chosen = parameters ?? SkillParameters.none;
   final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
   final events = <ReviewEvent>[];
@@ -46,9 +53,12 @@ typedef LoggedReview = ({
       review.grade,
       now: review.at,
       rated: review.answerGiven == null,
+      parameters: chosen.forPair(key),
     );
     states[key] = after;
-    if (skills != null) implyReview(states, skills, review);
+    if (skills != null) {
+      implyReview(states, skills, review, parameters: chosen);
+    }
     events.add(
       ReviewEvent(
         at: review.at,
@@ -71,19 +81,26 @@ typedef LoggedReview = ({
 
 /// Credits [review], if right, in part to each skill [skills] says it
 /// implies, of the same card, in [states] (ADR-0034). A pair with no state
-/// is not started by it: it is new until it is asked itself.
+/// is not started by it: it is new until it is asked itself. Each implied
+/// pair moves with its own skill's [parameters].
 void implyReview(
   Map<ProgressKey, FsrsState> states,
   SkillMap skills,
-  LoggedReview review,
-) {
+  LoggedReview review, {
+  SkillParameters? parameters,
+}) {
   if (review.grade < Fsrs.passingGrade) return;
   for (final MapEntry(key: mode, value: share)
       in skills.impliedBy(review.key.mode, review.deckId).entries) {
     final key = (cardId: review.key.cardId, mode: mode);
     final state = states[key];
     if (state != null) {
-      states[key] = Fsrs.implied(state, share, now: review.at);
+      states[key] = Fsrs.implied(
+        state,
+        share,
+        now: review.at,
+        parameters: (parameters ?? SkillParameters.none).forPair(key),
+      );
     }
   }
 }

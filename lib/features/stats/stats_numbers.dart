@@ -3,8 +3,6 @@ import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
-import '../../core/models/drill_mode.dart';
-import '../../core/scheduling/ability.dart';
 
 /// Finds a card by its id, as [deckId] lists it if that deck still does,
 /// or else as the first deck listing it does; null if no deck does. Retired
@@ -99,38 +97,6 @@ class Tally {
 /// How many days the activity grid shows: twelve weeks.
 const int kHeatmapWeeks = 12;
 const int kHeatmapDays = kHeatmapWeeks * 7;
-
-/// The skills Progress shows a strength for (ADR-0034), in order.
-const List<Skill> strengthSkills = <Skill>[
-  Skill.listening,
-  Skill.speaking,
-  Skill.production,
-  Skill.grammar,
-];
-
-/// The learner's strength in each of [strengthSkills] in [language]: the
-/// chance, from the ability the app has learned from every answer, of
-/// getting a word of average difficulty right (`Abilities.strength`).
-/// Skills with no answer yet are absent.
-Map<Skill, double> strengthsIn(ProgressStore progress, String language) {
-  final abilities = Abilities.replay(
-    <({String cardId, String deckId, DrillMode mode, int grade})>[
-      for (final e in progress.log)
-        (cardId: e.cardId, deckId: e.deckId, mode: e.mode, grade: e.grade),
-    ],
-    skills: progress.skills,
-  );
-  return <Skill, double>{
-    for (final skill in strengthSkills)
-      if (abilities.answersIn(language, skill.mode!) > 0)
-        skill: abilities.strength(language, skill.mode!),
-  };
-}
-
-/// The languages [progress] has answers in, by the card ids (ADR-0018).
-Set<String> languagesAnswered(ProgressStore progress) => <String>{
-  for (final e in progress.log) Abilities.languageOf(e.cardId),
-};
 
 /// The number of colour steps in the grid, the empty one included.
 const int kHeatmapLevels = 5;

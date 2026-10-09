@@ -284,10 +284,11 @@ The owner's answers to #235, 2026-10-08:
     a pull request first; then the B1 format; then the colours.
 
 - **Grammar understood and produced** are built with the B1 format, not
-  in the skill model's pull request (owner, 2026-10-09): "understood"
-  chooses among forms of the same word, the rule cards' question
-  (`words-rules-sentences.md`). Until then grammar keeps one schedule,
-  typed.
+  in the skill model's pull request (owner, 2026-10-09). **Understood is
+  shown a form and choosing what it means;** choosing among forms of the
+  same word, the rule cards' question, or typing the form, is produced
+  (owner, 2026-10-09, settling `b1-format-spec.md` #22). Until then
+  grammar keeps one schedule, typed.
 - **Settings** already has one switch per skill, so one per activity;
   their wording waits for `settings-wording.md`.
 
@@ -343,12 +344,72 @@ The owner's answers to #235, 2026-10-08:
   - **Today:** ambient's strip on the due card and the marks on the skill
     tiles, aligned properly ("your render has everything misaligned. That
     won't do").
-  - Revised mockups before any of it is built.
+  - Revised mockups before any of it is built (docs/mockups/
+    adapted-to-you.html). The owner then refined them, 2026-10-09:
+    - **Today always uses the settled strip;** the larger "just
+      refitted" one goes.
+    - **Progress keeps one skills section:** "Correct, by skill" and
+      "Weakest tags", as before; the "Your strengths" section, which said
+      the same thing, goes. The "How you learn" card stays.
+    - **Skills named by what the words were:** "seen words"
+      (Recognition; not "read", which is the script's and passages'),
+      "heard words", "spoken words", "written words" ("You remember heard
+      words well: fewer reviews"), not "Hear words".
 - **Nothing is gathered** (owner: "We do not gather any data at all").
   Every fit runs on the phone, from that learner's own review log; nothing
   leaves it. Where this plan or the research says a figure could be
   "fitted from the app's logs", it means the learner's own log, on the
   phone.
+
+- **Settled while building the fit** (builder's reading, 2026-10-09; the
+  owner may overrule any of them):
+  - **Baseline:** of the other languages with a fit for the skill, the one
+    studied last (latest review in any skill). A set equal to FSRS-6's
+    defaults is never a baseline.
+  - **States follow the current choice:** when studying another language
+    changes a baseline, every state is replayed, as a leech action does.
+  - **A fit that loses** stores the set in use with the new count, so the
+    next automatic refit waits for 10% more answers.
+  - **Restore:** when a backup and the phone both hold a fit for a skill,
+    the later fit wins. A restored set must lie in fitting's clip ranges.
+  - **A window with no first long-term review** keeps the start's w0 to w3
+    and trains w4 to w20.
+  - **Result sheet figures:** "comes back in N days" is the median
+    interval a right answer would give now; "reviews in the next 30 days"
+    assumes each is answered right on its day; within 5% is "about the
+    same".
+  - **The fit sees each word's own reviews only;** the half credit from
+    implied skills is not modelled.
+
+- **Settled while building the display** (builder's reading, 2026-10-09;
+  the owner may overrule any of them):
+  - **"At the start" is FSRS-6's defaults.** How you learn and Today's
+    marks compare the set that schedules a skill with them, using the
+    result sheet's figures (`SkillFit.outlook` and `direction`). A skill
+    paced by another language's fit is adjusted, and says so; a stored
+    copy of the defaults is not.
+  - **Today shows once a fit has kept a set other than the defaults.**
+    The strip counts every skill of the languages learned; a tile's mark
+    adds its skill's languages together. The Progress card and How you
+    learn's "Nothing is adjusted yet" go by the same test, so a learner
+    whose every fit lost to the defaults is told nothing is adjusted on
+    all three screens.
+  - **A skill not adjusted says how many answers it has,** not how many
+    it needs: the gate counts reviews a day or more apart and first
+    ratings, so no answer count is the threshold ("Needs 400 answers" in
+    the mockup is not shown). A skill whose fit lost says instead that its
+    answers fitted the starting pace best, so it stays.
+  - **The figures are worked out, not stored:** on an isolate, when a
+    screen asks, again when the log, the fits or the day change. Storing
+    them would need a migration, and they move with the day. One job runs
+    at a time, and Today asks only while it is on view, so for an adjusted
+    learner a job runs as the app opens and when Today comes back after a
+    drill, not after every answer.
+  - **The Progress card** sits at the foot of "Correct, by skill", for the
+    language chosen; from Today and the result sheet the page shows every
+    language learned.
+  - **Large text:** from text scale 1.3 a tile's mark is its arrow and one
+    word; in one column, from 1.5, the full words again.
 
 ### How the work is run
 

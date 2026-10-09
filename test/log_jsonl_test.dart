@@ -5,7 +5,9 @@ import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/leech_action.dart';
 import 'package:fluenough/core/models/review_event.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
+import 'package:fluenough/core/scheduling/skill_parameters.dart';
 
 const ProgressKey pair = (cardId: 'hi-0231', mode: DrillMode.production);
 
@@ -215,6 +217,141 @@ void main() {
         () => LogJsonl.decode(withLine('{"type":"leech",$good,"kind":"x"}')),
         failsWith('line 2: unknown kind'),
       );
+    });
+  });
+
+  group('fitted parameters', () {
+    final hear = FittedParameters(
+      values: <double>[for (final (i, v) in Fsrs.w.indexed) v * (1 + i / 100)],
+      fittedAt: at.add(const Duration(days: 3)),
+      reviewCount: 1234,
+      lossBefore: 0.4123456789,
+      lossAfter: 0.3987654321,
+    );
+    final write = FittedParameters(
+      values: Fsrs.w,
+      fittedAt: at.add(const Duration(days: 4)),
+      reviewCount: 800,
+    );
+    final fitted = <SkillKey, FittedParameters>{
+      (language: 'hi', mode: DrillMode.production): write,
+      (language: 'hi', mode: DrillMode.listening): hear,
+    };
+
+    test('are written after the log, and read back exactly', () {
+      final text = LogJsonl.encode(reviews, actions, fitted: fitted);
+      final lines = const LineSplitter().convert(text);
+      expect(lines, hasLength(6));
+      // By language, then in the order of the modes.
+      expect(jsonDecode(lines[5]), {
+        'type': 'parameters',
+        'ts': hear.fittedAt.toUtc().toIso8601String(),
+        'language': 'hi',
+        'mode': 'listening',
+        'w': hear.values,
+        'reviews': 1234,
+        'loss_before': 0.4123456789,
+        'loss_after': 0.3987654321,
+      });
+      expect((jsonDecode(lines[4]) as Map).containsKey('loss_before'), isFalse);
+      expect((jsonDecode(lines[4]) as Map)['mode'], 'production');
+
+      final back = LogJsonl.decode(text);
+      expect(back.reviews.map(fieldsOf), reviews.map(fieldsOf));
+      expect(back.fitted, fitted);
+      final values =
+          back.fitted[(language: 'hi', mode: DrillMode.listening)]!.values;
+      for (var i = 0; i < 21; i++) {
+        expect(values[i], hear.values[i], reason: 'w$i, to the last bit');
+      }
+    });
+
+    test('a backup from before fitting has none, and still reads', () {
+      final back = LogJsonl.decode(LogJsonl.encode(reviews, actions));
+      expect(back.fitted, isEmpty);
+      expect(back.reviews, hasLength(2));
+    });
+
+    test('of two for one skill, the later is kept', () {
+      final older = FittedParameters(
+        values: Fsrs.w,
+        fittedAt: at,
+        reviewCount: 10,
+      );
+      final text = LogJsonl.encode(reviews, actions, fitted: fitted);
+      final line = LogJsonl.encode(
+        const [],
+        const [],
+        fitted: {(language: 'hi', mode: DrillMode.listening): older},
+      ).split('\n')[1];
+      final back = LogJsonl.decode('$text$line\n');
+      expect(back.fitted[(language: 'hi', mode: DrillMode.listening)], hear);
+    });
+
+    test('a malformed set refuses the file, naming the line', () {
+      String withLine(String line) => '$header\n$line\n';
+      final w = jsonEncode(Fsrs.w);
+      const ts = '"ts":"2026-09-28T13:34:05Z"';
+      expect(
+        () => LogJsonl.decode(
+          withLine(
+            '{"type":"parameters",$ts,"mode":"listening","w":$w,'
+            '"reviews":1}',
+          ),
+        ),
+        failsWith('line 2: language or mode is missing'),
+      );
+      expect(
+        () => LogJsonl.decode(
+          withLine(
+            '{"type":"parameters",$ts,"language":"hi",'
+            '"mode":"listening","w":[1,2],"reviews":1}',
+          ),
+        ),
+        failsWith('line 2: w is not 21 numbers'),
+      );
+      expect(
+        () => LogJsonl.decode(
+          withLine(
+            '{"type":"parameters",$ts,"language":"hi",'
+            '"mode":"listening","w":$w}',
+          ),
+        ),
+        failsWith('line 2: reviews is not a whole number'),
+      );
+      expect(
+        () => LogJsonl.decode(
+          withLine(
+            '{"type":"parameters",$ts,"language":"hi",'
+            '"mode":"listening","w":$w,"reviews":1,"loss_after":"x"}',
+          ),
+        ),
+        failsWith('line 2: loss_after is not a number'),
+      );
+    });
+
+    test('a set no fit could give refuses the file, naming the line', () {
+      String withLine(List<double> w) =>
+          '$header\n{"type":"parameters","ts":"2026-09-28T13:34:05Z",'
+          '"language":"hi","mode":"listening","w":${jsonEncode(w)},'
+          '"reviews":1}\n';
+      // w20 at 0 would divide by zero in the scheduler; a first stability
+      // of 0 or below, and a negative value, are not stabilities.
+      for (final w in <List<double>>[
+        List<double>.filled(21, 0),
+        <double>[...Fsrs.w]..[20] = 0,
+        <double>[...Fsrs.w]..[0] = 0,
+        <double>[...Fsrs.w]..[2] = -1,
+        <double>[...Fsrs.w]..[8] = -0.5,
+        <double>[...Fsrs.w]..[20] = 5,
+      ]) {
+        expect(
+          () => LogJsonl.decode(withLine(w)),
+          failsWith('line 2: w is out of range'),
+          reason: '$w',
+        );
+      }
+      expect(LogJsonl.decode(withLine(Fsrs.w)).fitted, hasLength(1));
     });
   });
 

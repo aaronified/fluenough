@@ -34,12 +34,15 @@ import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
 import 'log_files.dart';
+import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
+import 'pacing.dart';
 import 'profile.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
 import 'skill.dart';
+import 'system_settings.dart';
 import 'update_checker.dart';
 
 /// The current time. Injected so that tests and the gallery can fix it.
@@ -122,11 +125,14 @@ class AppState extends ChangeNotifier {
     this.logFiles = const PickerLogFiles(),
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
+    this.systemSettings = const NullSystemSettings(),
     this.reports = const NullReportSender(),
     this._releases = const NullReleaseCheck(),
     this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
+    this._fitRunner = fitInIsolate,
+    this._paceRunner = paceInIsolate,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -161,7 +167,8 @@ class AppState extends ChangeNotifier {
 
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
-  /// progress, links that open unless [links] says otherwise, no network
+  /// progress, links that open unless [links] says otherwise, phone settings
+  /// that open nothing unless [systemSettings] does, no network
   /// for the update check unless [releases] answers, none for the release
   /// notes unless [releaseNotes] does, no download unless
   /// [installer] does one, a clock fixed at [now] — by default Monday 28
@@ -179,11 +186,14 @@ class AppState extends ChangeNotifier {
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
     LinkOpener? links,
+    SystemSettings systemSettings = const NullSystemSettings(),
     ReportSender reports = const NullReportSender(),
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
+    FitRunner fitRunner = fitInPlace,
+    PaceRunner paceRunner = paceInPlace,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -204,11 +214,14 @@ class AppState extends ChangeNotifier {
       logFiles: logFiles,
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
+      systemSettings: systemSettings,
       reports: reports,
       releases: releases,
       releaseNotes: releaseNotes,
       installer: installer,
       downloads: downloads,
+      fitRunner: fitRunner,
+      paceRunner: paceRunner,
       settings: settings,
       volume: volume,
       profiles: profiles,
@@ -244,6 +257,10 @@ class AppState extends ChangeNotifier {
   /// Opens links in the browser, or the app that handles them.
   final LinkOpener links;
 
+  /// Opens the phone's own settings: Settings > Voices' "Install voices in
+  /// phone settings".
+  final SystemSettings systemSettings;
+
   /// Where a report from the bug icon goes once mail is on (ADR-0021): the
   /// reporter's mail app, or nowhere in a build that was given none.
   final ReportSender reports;
@@ -265,6 +282,26 @@ class AppState extends ChangeNotifier {
   final ReleaseNotesEngine releaseNotes;
   final ApkInstaller _installer;
   final DownloadStore _downloads;
+
+  /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
+  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// notifier.
+  late final FsrsTuner tuner = FsrsTuner(
+    progress: progress,
+    clock: _clock,
+    runner: _fitRunner,
+  );
+  final FitRunner _fitRunner;
+
+  /// How each skill is paced beside how it started: How you learn, and
+  /// Today's strip and tile marks. Worked out off the main thread, only
+  /// when asked for. Has its own notifier.
+  late final Pacing pacing = Pacing(
+    progress: progress,
+    clock: _clock,
+    runner: _paceRunner,
+  );
+  final PaceRunner _paceRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -1357,21 +1394,27 @@ class AppState extends ChangeNotifier {
   }
 
   /// Records [grade] for [item] the moment the answer is given, and returns
-  /// the review. Minimal pairs have no mode and are not recorded.
+  /// the review. Minimal pairs have no mode and are not recorded. With
+  /// "Adjust automatically" on, the review's skill is then refitted in the
+  /// background if it has grown enough ([FsrsTuner.afterReview]).
   ReviewEvent record(
     SessionItem item,
     int grade, {
     Duration elapsed = Duration.zero,
     String? answerGiven,
-  }) => progress.record(
-    deckId: item.card.deckId,
-    cardId: item.card.id,
-    mode: item.mode,
-    grade: grade,
-    now: now(),
-    elapsed: elapsed,
-    answerGiven: answerGiven,
-  );
+  }) {
+    final event = progress.record(
+      deckId: item.card.deckId,
+      cardId: item.card.id,
+      mode: item.mode,
+      grade: grade,
+      now: now(),
+      elapsed: elapsed,
+      answerGiven: answerGiven,
+    );
+    if (settings.autoAdjust) tuner.afterReview(event);
+    return event;
+  }
 
   bool _disposed = false;
 
@@ -1382,6 +1425,8 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     shellTab.dispose();
     updates.dispose();
+    tuner.dispose();
+    pacing.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();

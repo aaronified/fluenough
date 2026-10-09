@@ -52,7 +52,8 @@ it) and speaking (say it).
   its due date, and never starts a pair not yet asked; the ability layer
   moves the
   implied skill by half its own surprise. A miss counts against its own
-  skill alone.
+  pair alone in FSRS; in the ability layer its blame is split the same way
+  (owner, 2026-10-09: "a miss's blame split", Park et al. 2019).
 - **The ability layer.** An Elo rating per language and schedule, and a
   difficulty per pair, each moved after every answer by how surprising it
   was, by K = 1 ÷ (1 + 0.05 n) after n answers (Pelánek 2016). Like the
