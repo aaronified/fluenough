@@ -211,6 +211,7 @@ class _Summary extends StatelessWidget {
                 language: language,
                 spoken: card.spoken,
                 stage: stage,
+                planned: progress?.hasPlan ?? false,
               ),
               if (!language.taughtFromSpoken(card.spoken) &&
                   language.natives.isNotEmpty) ...<Widget>[
@@ -349,11 +350,17 @@ class _TaughtFrom extends StatelessWidget {
     required this.language,
     required this.spoken,
     required this.stage,
+    required this.planned,
   });
 
   final CatalogLanguage language;
   final List<String> spoken;
   final CourseStage? stage;
+
+  /// Whether the course's path has a B1 plan. Without one it is Alpha too,
+  /// but nothing says how much of A1 is written, so its label does not
+  /// claim that A1 is unfinished.
+  final bool planned;
 
   @override
   Widget build(BuildContext context) {
@@ -362,7 +369,10 @@ class _TaughtFrom extends StatelessWidget {
     final scheme = theme.colorScheme;
     final natives = language.nativesInOrder(spoken);
     final tag = switch (stage) {
-      CourseStage.alpha => (l10n.pickerAlpha, l10n.pickerAlphaLabel),
+      CourseStage.alpha => (
+        l10n.pickerAlpha,
+        planned ? l10n.pickerAlphaLabel : l10n.pickerAlphaUnplannedLabel,
+      ),
       CourseStage.beta => (l10n.pickerBeta, l10n.pickerBetaLabel),
       _ => null,
     };
@@ -625,15 +635,23 @@ class NativeChoiceField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        heading,
+        // The row below says it, to a screen reader.
+        ExcludeSemantics(child: heading),
         const SizedBox(height: 4),
+        // One node for one action: the row, "Taught from English, change",
+        // its Change button only for the eye.
         ListTile(
           contentPadding: EdgeInsetsDirectional.zero,
-          title: Text(current.name),
+          title: Text(
+            current.name,
+            semanticsLabel: l10n.pickerNativeChoiceLabel(current.name),
+          ),
           subtitle: Text(coverage(l10n, current.progress)),
-          trailing: TextButton(
-            onPressed: () => _openSheet(context),
-            child: Text(l10n.pickerChangeNative),
+          trailing: ExcludeSemantics(
+            child: TextButton(
+              onPressed: () => _openSheet(context),
+              child: Text(l10n.pickerChangeNative),
+            ),
           ),
           onTap: () => _openSheet(context),
         ),

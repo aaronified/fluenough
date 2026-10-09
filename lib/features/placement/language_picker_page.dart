@@ -14,6 +14,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'language_card.dart';
@@ -35,6 +36,7 @@ import 'placement_page.dart';
 /// decks, then runs placement for the new ones (ADR-0013) and saves; a
 /// language already learned needs none. Un-ticking a language the learner
 /// learns asks first: its progress is kept, but its decks leave Today.
+/// Leaving without saving stops the downloads of the languages it chose.
 class LanguagePickerPage extends StatefulWidget {
   const LanguagePickerPage({
     super.key,
@@ -64,7 +66,11 @@ class LanguagePickerPage extends StatefulWidget {
 }
 
 class _LanguagePickerPageState extends State<LanguagePickerPage> {
-  late final Set<String> _learning = _learningOf(AppScope.read(context));
+  /// The app, kept from initState: [_learning] is read first once the
+  /// list shows, when the courses are known, which may be in [dispose],
+  /// where the tree can no longer be read.
+  late final AppState _app;
+  late final Set<String> _learning = _learningOf(_app);
   late Set<String> _ticked = <String>{..._learning, ...widget.initialChosen};
 
   /// "Learn the script", for each language newly chosen with script decks.
@@ -88,6 +94,10 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   /// say when all of it is in.
   final Set<String> _downloadShown = <String>{};
 
+  /// Whether what was chosen here was saved. A language newly chosen but
+  /// not saved stops downloading when the page closes.
+  bool _saved = false;
+
   /// What the current profile learns, once the learner has chosen;
   /// nothing on first launch.
   static Set<String> _learningOf(AppState state) => <String>{
@@ -100,7 +110,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   void initState() {
     super.initState();
     // The list of courses, read from GitHub the first time (#210).
-    final state = AppScope.read(context);
+    final state = _app = AppScope.read(context);
     final downloads = state.deckDownloads;
     if (downloads != null && downloads.index == null) {
       WidgetsBinding.instance.addPostFrameCallback(
@@ -132,6 +142,15 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
 
   @override
   void dispose() {
+    // Leaving without saving (Back, or a placement abandoned): a language
+    // chosen here is not learned, so its download stops. What is in stays,
+    // and Settings > Deck downloads can finish it.
+    final downloads = _app.deckDownloads;
+    if (!_saved && downloads != null) {
+      for (final code in _ticked.difference(_learning)) {
+        if (downloads.hasJob(code)) unawaited(downloads.cancel(code));
+      }
+    }
     _search.dispose();
     _scroll.dispose();
     super.dispose();
@@ -144,8 +163,10 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
 
   Future<void> _toggle(AppState state, CatalogLanguage language) async {
     final code = language.code;
+    final l10n = AppLocalizations.of(context)!;
     if (!_ticked.contains(code)) {
       setState(() => _ticked = <String>{..._ticked, code});
+      _announce(l10n.pickerAnnounceChosen(language.name));
       _startDownload(state, code);
       _showCard(code);
       return;
@@ -155,13 +176,25 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     }
     if (!mounted) return;
     final downloads = state.deckDownloads;
+    // From the moment it is asked for, not only once its files are known.
     if (!_learning.contains(code) &&
         downloads != null &&
-        downloads.isDownloading(code)) {
+        downloads.hasJob(code)) {
       unawaited(downloads.cancel(code));
     }
     setState(() => _ticked = <String>{..._ticked}..remove(code));
+    _announce(l10n.pickerAnnounceUnchosen(language.name));
   }
+
+  /// Tells a screen reader of a change it would not otherwise hear: a card
+  /// that moves between the groups.
+  void _announce(String text) => unawaited(
+    SemanticsService.sendAnnouncement(
+      View.of(context),
+      text,
+      Directionality.of(context),
+    ),
+  );
 
   /// A language not on the phone starts downloading as it is chosen.
   void _startDownload(AppState state, String code) {
@@ -236,14 +269,22 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     return stop ?? false;
   }
 
-  void _cancel(AppState state, String code) {
+  void _cancel(AppState state, CatalogLanguage language) {
+    final code = language.code;
     final downloads = state.deckDownloads!;
     final ready = downloads.isReady(code, _spoken);
     unawaited(downloads.cancel(code));
     // Before its first decks are in, a cancelled language cannot be
     // started, so it is no longer chosen. After, the course works with
     // what arrived, and the rest comes from Settings > Deck downloads.
-    if (!ready) setState(() => _ticked = <String>{..._ticked}..remove(code));
+    if (ready) return;
+    setState(() => _ticked = <String>{..._ticked}..remove(code));
+    // Its card closes, taking the line that says where the rest comes
+    // from, so that is a toast, which a screen reader announces.
+    showAppSnackBar(
+      context,
+      AppLocalizations.of(context)!.pickerCancelledUnchosen(language.name),
+    );
   }
 
   void _retry(AppState state, String code) {
@@ -344,6 +385,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     Map<String, bool> alphabet = const <String, bool>{},
     Map<String, String> natives = const <String, String>{},
   }) {
+    _saved = true;
     final settings = state.settings;
     for (final MapEntry(:key, :value) in alphabet.entries) {
       settings.setLearnsAlphabet(key, value);
@@ -601,10 +643,20 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
               ),
               if (shown.isEmpty)
                 SliverFillRemaining(
-                  child: EmptyState(
-                    icon: Icons.search,
-                    title: l10n.pickerNoMatchTitle(query.trim()),
-                    body: l10n.pickerNoMatchBody,
+                  // Announced as it appears, title and body as one node: the
+                  // list empties silently.
+                  child: Semantics(
+                    container: true,
+                    liveRegion: true,
+                    label:
+                        '${l10n.pickerNoMatchTitle(query.trim())}\n'
+                        '${l10n.pickerNoMatchBody}',
+                    excludeSemantics: true,
+                    child: EmptyState(
+                      icon: Icons.search,
+                      title: l10n.pickerNoMatchTitle(query.trim()),
+                      body: l10n.pickerNoMatchBody,
+                    ),
                   ),
                 )
               else
@@ -734,7 +786,11 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             onChosen: (picked) => setState(() => _native[code] = picked),
           ),
         if (progress?.stage == CourseStage.alpha)
-          CardNotice(text: l10n.pickerAlphaNotice(language.name)),
+          CardNotice(
+            text: progress!.hasPlan
+                ? l10n.pickerAlphaNotice(language.name)
+                : l10n.pickerAlphaUnplannedNotice(language.name),
+          ),
         if (downloads != null &&
             download != null &&
             _showsDownload(downloads, download, code))
@@ -744,7 +800,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             downloading: downloads.isDownloading(code),
             paused: downloads.isPaused(code),
             failure: downloads.failureOf(code),
-            onCancel: () => _cancel(state, code),
+            onCancel: () => _cancel(state, language),
             onRetry: () => _retry(state, code),
           ),
       ],

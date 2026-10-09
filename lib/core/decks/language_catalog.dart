@@ -57,7 +57,9 @@ class B1Unit {
 /// A course's stage of writing (owner, 2026-10-09): **Alpha** until every
 /// A1 unit of its plan is written, **Beta** until every B1 unit is, and
 /// [complete] after, which carries no tag. A course whose path has no B1
-/// plan cannot show that its A1 units are written, so it is Alpha.
+/// plan cannot show that its A1 units are written, so it is Alpha; the
+/// picker then says only that its levels are not mapped out, not that A1 is
+/// unfinished ([B1Progress.hasPlan]).
 enum CourseStage { alpha, beta, complete }
 
 /// [name], `A1`, `A2` or `B1`, as a [Milestone]; null for anything else.

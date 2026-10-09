@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/deck_downloads.dart';
 import 'package:fluenough/app/downloaded_decks.dart';
 import 'package:fluenough/app/settings.dart';
@@ -14,6 +15,7 @@ import 'package:fluenough/core/data/course_path.dart' show Milestone;
 import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/core/decks/deck_index.dart' show decksBeforeReady;
 import 'package:fluenough/core/decks/language_catalog.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/placement/language_card.dart';
@@ -21,6 +23,7 @@ import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/widgets/page_parts.dart';
 
 import '../../support/deck_remote.dart';
 import '../../support/harness.dart';
@@ -131,6 +134,56 @@ String decksLine(AppLocalizations l10n, LanguageDownload d) =>
       d.totalDecks,
     );
 
+/// Deck downloads whose jobs never get as far as their files: each
+/// language asked for has a job ([hasJob]) but is not [isDownloading], as
+/// in the moment before the index is read and its files are known. Records
+/// what is cancelled.
+class PendingDownloads extends DeckDownloads {
+  PendingDownloads(String index)
+    : super(
+        fetcher: MemoryDeckFetcher(<String, String>{
+          'decks/index.json': index,
+        }, failure: FetchFailure.offline),
+        files: MemoryDownloadedDecks()..notes['index.json'] = index,
+        clock: DateTime.now,
+      );
+
+  final Set<String> pending = <String>{};
+  final List<String> cancelled = <String>[];
+
+  @override
+  bool hasJob(String language) => pending.contains(language);
+
+  @override
+  bool isDownloading(String language) => false;
+
+  @override
+  Future<DeckDownloadFailure?> download(
+    String language,
+    List<String> spoken,
+  ) async {
+    pending.add(language);
+    return null;
+  }
+
+  @override
+  Future<void> cancel(String language) async {
+    pending.remove(language);
+    cancelled.add(language);
+  }
+}
+
+/// A first launch, for a learner who speaks English, on [downloads].
+AppState Function(AppState) withDownloads(DeckDownloads downloads) =>
+    (app) => AppState(
+      catalog: DeckCatalog(MemoryDeckSource(const <String, String>{})),
+      progress: MemoryProgress(),
+      tts: const NullTtsEngine(),
+      clock: app.now,
+      settings: SettingsNotifier(spokenLanguages: const <String>['en']),
+      deckDownloads: downloads,
+    );
+
 Finder continueButton(AppLocalizations l10n) =>
     find.widgetWithText(FilledButton, l10n.commonContinue);
 
@@ -168,6 +221,7 @@ void main() {
 
     testWidgets('with no match, says so; clearing brings every language '
         'back', (tester) async {
+      final handle = tester.ensureSemantics();
       useTallPhone(tester);
       await pumpPicker(tester, PickerFixtures.taughtFromTwo);
       final l10n = l10nOf(tester);
@@ -176,11 +230,16 @@ void main() {
       expect(cardOrder(tester), isEmpty);
       expect(find.text(l10n.pickerNoMatchTitle('tamil')), findsOneWidget);
       expect(find.text(l10n.pickerNoMatchBody), findsOneWidget);
+      // Announced as it appears, title and body together.
+      final notice = tester.getSemantics(find.byType(EmptyState));
+      expect(notice, isSemantics(isLiveRegion: true));
+      expect(notice.label, contains(l10n.pickerNoMatchBody));
 
       await tester.tap(find.byTooltip(l10n.pickerClearSearch));
       await tester.pumpAndSettle();
       expect(cardOrder(tester), hasLength(8));
       expect(find.byTooltip(l10n.pickerClearSearch), findsNothing);
+      handle.dispose();
     });
   });
 
@@ -354,6 +413,24 @@ void main() {
       ], null);
     });
 
+    testWidgets('a path with no level plan is Alpha, without saying that A1 '
+        'is unfinished', (tester) async {
+      final handle = tester.ensureSemantics();
+      await pumpCard(
+        tester,
+        telugu(course: const <B1Unit>[B1Unit(has: 300), B1Unit(has: 340)]),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.pickerAlpha), findsOneWidget);
+      final label = tester
+          .getSemantics(find.byType(Checkbox))
+          .getSemanticsData()
+          .label;
+      expect(label, contains(l10n.pickerAlphaUnplannedLabel));
+      expect(label, isNot(contains(l10n.pickerAlphaLabel)));
+      handle.dispose();
+    });
+
     testWidgets('taught from: the learner\'s own first, and a line when none '
         'is theirs', (tester) async {
       await pumpCard(
@@ -474,6 +551,24 @@ void main() {
       });
     });
 
+    testWidgets('taught from three: still side by side, the most that are', (
+      tester,
+    ) async {
+      useTallPhone(tester);
+      await pumpPicker(tester, PickerFixtures.taughtFromThree);
+      await pickLanguage(tester, 'te');
+      final choice = inCard('te', find.byType(SegmentedButton<String>));
+      expect(choice, findsOneWidget);
+      expect(
+        tester
+            .widget<SegmentedButton<String>>(choice)
+            .segments
+            .map((s) => s.value),
+        <String>['bn', 'hi', 'gu'],
+      );
+      expect(NativeChoiceField.sideBySide, 3);
+    });
+
     testWidgets('taught from more than three: a radio list in a sheet, each '
         'with its coverage, the learner\'s own order', (tester) async {
       useTallPhone(tester);
@@ -484,6 +579,16 @@ void main() {
       final change = inCard('te', find.text(l10n.pickerChangeNative));
       expect(change, findsOneWidget);
       expect(inCard('te', find.widgetWithText(ListTile, 'Bengali')), findsOne);
+      // To a screen reader, one node for one action, saying what changes.
+      final handle = tester.ensureSemantics();
+      expect(
+        find.bySemanticsLabel(
+          RegExp('^${RegExp.escape(l10n.pickerNativeChoiceLabel('Bengali'))}'),
+        ),
+        findsOneWidget,
+      );
+      expect(find.bySemanticsLabel(l10n.pickerChangeNative), findsNothing);
+      handle.dispose();
 
       await tester.tap(change);
       await tester.pumpAndSettle();
@@ -504,6 +609,30 @@ void main() {
   });
 
   group('leaving and removing', () {
+    testWidgets('un-ticking a language whose download was asked for stops it, '
+        'even before its files are known', (tester) async {
+      useTallPhone(tester);
+      final downloads = PendingDownloads(PickerFixtures.index());
+      await pumpPicker(tester, withDownloads(downloads));
+      await pickLanguage(tester, 'kn');
+      expect(downloads.hasJob('kn'), isTrue);
+      expect(downloads.isDownloading('kn'), isFalse);
+      await pickLanguage(tester, 'kn');
+      expect(downloads.cancelled, <String>['kn']);
+    });
+
+    testWidgets('closing the page unsaved stops the downloads it started', (
+      tester,
+    ) async {
+      useTallPhone(tester);
+      final downloads = PendingDownloads(PickerFixtures.index());
+      await pumpPicker(tester, withDownloads(downloads));
+      await pickLanguage(tester, 'kn');
+      await pickLanguage(tester, 'es');
+      await tester.pumpWidget(const SizedBox());
+      expect(downloads.cancelled..sort(), <String>['es', 'kn']);
+    });
+
     testWidgets('first launch has no way back', (tester) async {
       usePhone(tester);
       final state = AppState.test(
@@ -645,8 +774,24 @@ void main() {
         findsOneWidget,
       );
       expect(tester.takeAnnouncements(), <Matcher>[
+        isAccessibilityAnnouncement(l10n.pickerAnnounceChosen('Hindi')),
         isAccessibilityAnnouncement(l10n.deckDownloadsProgressLabel('Hindi')),
       ]);
+      // Its Cancel says whose download it stops.
+      expect(
+        inCard(
+          'hi',
+          find.bySemanticsLabel(l10n.pickerCancelDownloadLabel('Hindi')),
+        ),
+        findsOneWidget,
+      );
+      // A course with no level plan yet: Alpha, without saying A1 is
+      // unfinished.
+      expect(
+        inCard('hi', find.text(l10n.pickerAlphaUnplannedNotice('Hindi'))),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.pickerAlphaNotice('Hindi')), findsNothing);
 
       remote.release(firstFiles(state));
       await tester.pumpAndSettle();
@@ -747,6 +892,29 @@ void main() {
       expect(isPicked(tester, 'hi'), isFalse);
       expect(state.deckDownloads!.isPaused('hi'), isTrue);
       expect(canContinue(tester, l10n), isFalse);
+      // Its card closed, so a toast, which a screen reader announces, says
+      // where the rest comes from.
+      expect(find.text(l10n.pickerCancelledUnchosen('Hindi')), findsOneWidget);
+      await tester.pump(const Duration(seconds: 5));
+      await tester.pumpAndSettle();
+    });
+
+    testWidgets('leaving without saving stops a new language\'s download', (
+      tester,
+    ) async {
+      final state = await start(tester);
+      final downloads = state.deckDownloads!;
+      await pickLanguage(tester, 'hi');
+      remote.release(firstFiles(state));
+      await tester.pumpAndSettle();
+      expect(downloads.hasJob('hi'), isTrue, reason: 'the rest is coming');
+
+      // First launch has no Back: the page goes as an abandoned flow would.
+      await tester.pumpWidget(const SizedBox());
+      remote.releaseAll();
+      await tester.pumpAndSettle();
+      expect(downloads.isPaused('hi'), isTrue);
+      expect(downloads.missing('hi', const <String>['en']), isNotEmpty);
     });
 
     testWidgets('a failure stops the bar and says why; Try again resumes; '
@@ -773,9 +941,17 @@ void main() {
       );
       expect(canContinue(tester, l10n), isFalse);
       expect(tester.takeAnnouncements(), <Matcher>[
+        isAccessibilityAnnouncement(l10n.pickerAnnounceChosen('Hindi')),
         isAccessibilityAnnouncement(l10n.deckDownloadsProgressLabel('Hindi')),
         isAccessibilityAnnouncement(l10n.downloadsOffline),
       ]);
+      expect(
+        inCard(
+          'hi',
+          find.bySemanticsLabel(l10n.pickerRetryDownloadLabel('Hindi')),
+        ),
+        findsOneWidget,
+      );
 
       remote.failAll = null;
       final retry = inCard('hi', find.text(l10n.commonRetry));
@@ -829,6 +1005,7 @@ void main() {
           'picker-script',
           'picker-alpha',
           'picker-taught-from',
+          'picker-taught-from-three',
           'picker-taught-from-list',
           'picker-on-phone',
           'picker-downloading',
@@ -839,6 +1016,27 @@ void main() {
       );
     });
 
+    /// The phone, at [scale], tall enough for every card to be built.
+    void useTallPhoneAt(WidgetTester tester, double scale) {
+      usePhone(tester, textScale: scale);
+      tester.view.physicalSize = const Size(390 * 3, 6000 * 3);
+    }
+
+    /// The theme [mode] asks for is the one the page is drawn in.
+    void expectTheme(WidgetTester tester, ThemeMode mode, String id) {
+      expect(
+        Theme.of(tester.element(find.byType(LanguagePickerPage))).brightness,
+        mode == ThemeMode.dark ? Brightness.dark : Brightness.light,
+        reason: id,
+      );
+    }
+
+    Future<void> expectGuidelines(WidgetTester tester) async {
+      await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+      await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+      await expectLater(tester, meetsGuideline(textContrastGuideline));
+    }
+
     testWidgets('nothing overflows at twice the text size, light and dark, '
         'scrolled through', (tester) async {
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
@@ -846,6 +1044,7 @@ void main() {
           usePhone(tester, textScale: 2.0);
           await pumpEntry(tester, entry.id, mode);
           expect(tester.takeException(), isNull, reason: entry.id);
+          expectTheme(tester, mode, entry.id);
           final list = pickerList();
           if (list.evaluate().isNotEmpty) {
             for (var i = 0; i < 4; i++) {
@@ -858,29 +1057,58 @@ void main() {
       }
     });
 
-    testWidgets('the opened cards meet the tap-target, label and contrast '
-        'guidelines, light and dark', (tester) async {
+    testWidgets('the taught-from sheet and the "Stop learning" dialog fit '
+        'and meet the guidelines at twice the text size, light and dark', (
+      tester,
+    ) async {
       final handle = tester.ensureSemantics();
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-        for (final id in <String>[
-          'picker-settings',
-          'picker-search',
-          'picker-script',
-          'picker-taught-from',
-          'picker-taught-from-list',
-          'picker-downloading',
-          'picker-ready',
-          'picker-offline',
-          'picker-cancelled',
-        ]) {
-          usePhone(tester);
-          await pumpEntry(tester, id, mode);
-          await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-          await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-          await expectLater(tester, meetsGuideline(textContrastGuideline));
-        }
+        usePhone(tester, textScale: 2.0);
+        await pumpEntry(tester, 'picker-taught-from-list', mode);
+        expectTheme(tester, mode, 'sheet');
+        final l10n = l10nOf(tester);
+        final change = inCard('te', find.text(l10n.pickerChangeNative));
+        await scrollToInPicker(tester, change);
+        await tester.tap(change);
+        await tester.pumpAndSettle();
+        expect(find.byType(RadioListTile<String>), findsWidgets);
+        expect(tester.takeException(), isNull, reason: 'sheet');
+        await expectGuidelines(tester);
+        // Choosing another closes it.
+        await tester.tap(
+          find.widgetWithText(RadioListTile<String>, 'Gujarati'),
+        );
+        await tester.pumpAndSettle();
+        expect(find.byType(RadioListTile<String>), findsNothing);
+
+        // From Settings, learning Hindi, Spanish and Telugu.
+        usePhone(tester, textScale: 2.0);
+        await pumpEntry(tester, 'picker-on-phone', mode);
+        expectTheme(tester, mode, 'dialog');
+        await pickLanguage(tester, 'hi');
+        expect(find.text(l10n.pickerStopTitle('Hindi')), findsOneWidget);
+        expect(tester.takeException(), isNull, reason: 'dialog');
+        await expectGuidelines(tester);
+        await tester.tap(find.text(l10n.commonCancel));
+        await tester.pumpAndSettle();
       }
       handle.dispose();
     });
+
+    for (final scale in <double>[1.0, 2.0]) {
+      testWidgets('every state meets the tap-target, label and contrast '
+          'guidelines, light and dark, at text size $scale', (tester) async {
+        final handle = tester.ensureSemantics();
+        for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+          for (final entry in pickerEntries) {
+            useTallPhoneAt(tester, scale);
+            await pumpEntry(tester, entry.id, mode);
+            expectTheme(tester, mode, entry.id);
+            await expectGuidelines(tester);
+          }
+        }
+        handle.dispose();
+      });
+    }
   });
 }
