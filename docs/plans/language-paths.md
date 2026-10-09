@@ -200,7 +200,7 @@ Each new language needs what an existing one has:
 - `decks-from-github.md` first: new languages then reach learners without
   an app release, and the APK does not grow with them.
 - `wiktionary-ipa.md` before the new languages, for their IPA.
-- The 30-minute day can use FSRS (`fsrs.md`) for the review block, and the
+- The 30-minute day can use FSRS (done: ADR-0033) for the review block, and the
   listening tier (`listening-in-context.md`) for the listening block, but
   needs neither to start.
 

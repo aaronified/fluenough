@@ -26,7 +26,7 @@ The owner: "Always keep the transliteration, even in descriptions or
 labels." A learner reads a card's notes, meanings, descriptions, labels and
 facts long before they can read the script. So wherever deck text other than
 the word itself quotes a word, a letter or a sign in a script other than
-Latin, its ISO 15919 reading follows it in parentheses:
+Latin, its reading (in letters based on ISO 15919) follows it in parentheses:
 
 ```yaml
 notes: "లేదు (lēdu) is 'there is not', the opposite of ఉంది (undi)."   # right
@@ -473,7 +473,7 @@ cards:
 | `id` | yes | The language learned and a number, `es-0001`: unique in the language, across every deck and course. **Never reuse or renumber** — review history is keyed on it. |
 | `target` | yes | The text in the language being learned. |
 | `native` | yes | The meaning, in the learner's language. |
-| `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, ISO 15919 letters as the word is said. Required in practice for non-Latin scripts. |
+| `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, letters based on ISO 15919, as the word is said. Required in practice for non-Latin scripts. |
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
@@ -1696,12 +1696,15 @@ deck can be removed from its page; what was learned from it stays.
 
 Every `reading` in a language with its own script is written in one scheme
 per language, so that a learner sees the same spelling everywhere (#47). For
-the Indic languages the scheme is **ISO 15919's letters, spelled as the word
-is said** ([ADR-0025](adr/0025-iso-15919-and-ipa.md)); the
+the Indic languages the scheme is **letters based on ISO 15919's, spelled as
+the word is said** ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). It is not
+strict ISO 15919: where a learner is better served, it departs from the
+standard. The
 [README](../README.md#how-words-are-written-in-latin-letters-iso-15919) has
-the table.
+the table of letters and the
+[list of departures](../README.md#where-the-readings-depart-from-iso-15919).
 
-- Lowercase ISO 15919 letters, with spaces and the sentence's own
+- Lowercase letters of ISO 15919, with spaces and the sentence's own
   punctuation: ā ī ū ē ō for long vowels, ṭ ḍ ṇ ḷ for the retroflex
   consonants, ś ṣ ṅ ñ, ṛ for ड़, ṁ for an anusvara that nasalises, m̐ for a
   nasal vowel. Composed letters (NFC), no capitals.
@@ -1757,7 +1760,7 @@ schema: 1
 kind: romanisation
 id: hi-romanisation
 language: hi
-scheme: "ISO 15919 letters, spelled as said: …"
+scheme: "Based on ISO 15919's letters, spelled as said: …"
 standard: "ISO 15919"
 typed:
   - ["ch", "chh"]
@@ -1775,14 +1778,14 @@ equivalents:
 | `id` | yes | `<code>-romanisation`, and the filename stem. |
 | `language` | yes | The language's code. |
 | `scheme` | yes | How the language is romanised, in a paragraph, with its own conventions. |
-| `standard` | no | `"ISO 15919"` when the readings use its letters. Without it, readings are lowercase ASCII. |
+| `standard` | no | `"ISO 15919"` when the readings are based on its letters, with the departures the `scheme` names. Without it, readings are lowercase ASCII. |
 | `typed` | no, and only with `standard` | Pairs of the standard's letters and how they are typed: `["ś", "sh"]`. Each reading is spelled so, read from the left, the longest letters first, before an answer is compared with it. An empty second item means the letters are not typed, as Assamese chat leaves out m̐. |
 | `equivalents` | yes | Groups of two or more lowercase spellings. The first of each group is the one the decks use. A spelling is in one group only. |
 
 Once a language has the file, the validator checks every reading in that
 language's files, cards, refs, grammar rows, passages, glossaries, sounds and
 script guides, is in the scheme: lowercase, no capitals, and no diacritics
-but ISO 15919's letters where the file names that standard. It checks every
+but the letters of ISO 15919 where the file names that standard. It checks every
 `ipa` anywhere is broad IPA without slashes.
 
 ## Sounds files
