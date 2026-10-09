@@ -1294,9 +1294,8 @@ scheduling (4.8).
 - **D's part** (so the app compiles and behaves as before for every
   existing deck): `isMachineGraded` true; `Card.acceptedAnswers` for
   `grammarUnderstood` is the cell's meaning, `native` (what is chosen);
-  `promptFor` as 4.6; `Skill.of` maps it to `Skill.grammarUnderstood`,
-  whose tile is grammar's, the tile "understood and produced share"
-  (skill model, decided 2026-10-08; 4.8, 7).
+  `promptFor` as 4.6; `Skill.of` maps it to `Skill.grammar`, the tile
+  "understood and produced share" (skill model, decided 2026-10-08).
   **Until Q's work lands, `Card.modesIn` leaves `grammarUnderstood` out**
   (a one-line filter beside the voice and recogniser filters, with a
   `// Removed by the grammar questions (spec 4.8).` comment), so a rule
@@ -1351,14 +1350,10 @@ rework). Behaviour, for reading B (OPEN-22, settled):
    their readings, as `chooseWord` shows words. `drill_page.dart`
    dispatches `grammarUnderstood`, and a `grammar` item asked
    `chooseForm`, to it.
-7. **Skills, settings and the scheduler:** the grammar tile on Today
-   covers both modes; Settings has one switch per skill (ADR-0034), so
-   grammar understood is a skill of its own, `Skill.grammarUnderstood`,
-   with its own switch, named in the learner's words where skills are
-   shown, and sharing the Grammar tile (`Skill.tile`), whose count and
-   review take both while each is on (as built by Q, 2026-10-09; this
-   line first had one switch for both); the `SkillMap` arm, the grades
-   and the fit as 4.7 says.
+7. **Skills, settings and the scheduler:** the grammar tile and the
+   grammar switch cover both modes (`Skill.of` maps both; Q makes a
+   grammar-skill session's `modes` include `grammarUnderstood`); the
+   `SkillMap` arm, the grades and the fit as 4.7 says.
 8. **Tests:** a meaning question offers only meanings of the same row's
    cells, distinct, never one of a rule the layer leaves out, and records
    `grammarUnderstood` with 4 when right; a form question offers only

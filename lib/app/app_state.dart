@@ -805,11 +805,10 @@ class AppState extends ChangeNotifier {
 
   Set<DrillMode> _modes({required bool ignorePauses}) => <DrillMode>{
     for (final skill in Skill.values)
-      if (skill.mode != null &&
-          settings.isEnabled(skill) &&
+      if (settings.isEnabled(skill) &&
           (ignorePauses || !settings.isPaused(skill, now())) &&
           features.isAvailable(skill.feature))
-        skill.mode!,
+        ...skill.modes,
   };
 
   /// Cards due tomorrow, as Today will count them: in the decks the profile
@@ -836,8 +835,7 @@ class AppState extends ChangeNotifier {
   bool canDrill(DeckEntry entry) {
     final shipped = <DrillMode>{
       for (final skill in Skill.values)
-        if (skill.mode != null && features.isAvailable(skill.feature))
-          skill.mode!,
+        if (features.isAvailable(skill.feature)) ...skill.modes,
     };
     return entry.cards.any(
       (card) => card.modesIn(ttsAvailable: true).any(shipped.contains),
@@ -895,10 +893,9 @@ class AppState extends ChangeNotifier {
         ? _modes(ignorePauses: ignorePauses)
         : <DrillMode>{
             for (final skill in named)
-              if (skill.mode != null &&
-                  features.isAvailable(skill.feature) &&
+              if (features.isAvailable(skill.feature) &&
                   (ignorePauses || !settings.isPaused(skill, now())))
-                skill.mode!,
+                ...skill.modes,
           };
 
     // A new pair is a new skill of a word already taught: a word is new

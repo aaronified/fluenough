@@ -1,6 +1,7 @@
-// Grammar understood where skills are shown (B1 format spec 4.7): its own
-// switch in Settings, its own row on the Adjust sheet and on How you learn,
-// named in the learner's words, and a share of the Grammar tile on Today.
+// Grammar understood where skills are shown (B1 format spec 4.7, 4.8 item
+// 7): the Grammar switch in Settings and the Grammar tile on Today cover it
+// with grammar produced; its own row on the Adjust sheet and on How you
+// learn, where each schedule is fitted, named in the learner's words.
 import 'dart:io';
 
 import 'package:flutter/material.dart' hide Card;
@@ -100,7 +101,6 @@ void main() {
     test('grammar understood is named apart from grammar used', () {
       expect(l10n.paceSkillName('grammarUnderstood'), 'Grammar understood');
       expect(l10n.paceSkillName('grammar'), 'Grammar used');
-      expect(Skill.grammarUnderstood.label(l10n), 'Understanding grammar');
       expect(Skill.grammar.label(l10n), 'Grammar');
       // Never the fallback, "Words", in any of the pace strings.
       for (final mode in ['grammarUnderstood', 'grammar']) {
@@ -125,35 +125,43 @@ void main() {
       );
     });
 
-    test('it wears grammar\'s colour, and an icon of its own', () {
+    test('it is Grammar\'s skill: its colour, icon and label', () {
+      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammar);
+      expect(
+        Skill.values.map((s) => s.name),
+        isNot(contains('grammarUnderstood')),
+      );
       for (final colours in [ModeColors.light, ModeColors.dark]) {
         expect(
-          colours.forSkill(Skill.grammarUnderstood),
+          colours.forSkill(Skill.of(DrillMode.grammarUnderstood)),
           colours.forSkill(Skill.grammar),
         );
       }
-      expect(Skill.grammarUnderstood.icon, isNot(Skill.grammar.icon));
     });
   });
 
-  testWidgets('Settings has a switch for it, which stops its questions', (
+  testWidgets('Settings\' one Grammar switch stops both schedules', (
     tester,
   ) async {
     usePhone(tester);
     final state = await zzLearner();
     await pumpScreen(tester, const SettingsPage(), state: state);
     final l10n = l10nOf(tester);
-    final title = find.text(l10n.skillGrammarUnderstood);
+    final title = find.text(l10n.skillGrammar);
     await scrollTo(tester, title);
     expect(title, findsOneWidget);
-    expect(find.text(l10n.skillGrammarUnderstoodSettingsDesc), findsOneWidget);
-    expect(state.sessionModes, contains(DrillMode.grammarUnderstood));
+    expect(find.text(l10n.skillGrammarSettingsDesc), findsOneWidget);
+    expect(
+      state.sessionModes,
+      containsAll(<DrillMode>[DrillMode.grammarUnderstood, DrillMode.grammar]),
+    );
     final toggle = find.ancestor(of: title, matching: find.byType(GroupedTile));
     await tester.tap(toggle.first);
     await tester.pumpAndSettle();
-    expect(state.settings.isEnabled(Skill.grammarUnderstood), isFalse);
-    expect(state.settings.isEnabled(Skill.grammar), isTrue);
+    expect(state.settings.isEnabled(Skill.grammar), isFalse);
     expect(state.sessionModes, isNot(contains(DrillMode.grammarUnderstood)));
+    expect(state.sessionModes, isNot(contains(DrillMode.grammar)));
+    expect(state.buildSession(const DrillRequest.today()).items, isEmpty);
   });
 
   testWidgets('Today\'s Grammar tile counts and starts both', (tester) async {
@@ -161,7 +169,6 @@ void main() {
     final state = await zzLearner();
     await pumpScreen(tester, const SizedBox(), state: state);
     var numbers = TodayNumbers.of(state);
-    expect(numbers.bySkill.keys, isNot(contains(Skill.grammarUnderstood)));
     // Today's session asks some cells understood and some produced: one
     // tile counts them all, and starts both.
     final byMode = state.buildSession(const DrillRequest.today()).countByMode();
@@ -169,28 +176,18 @@ void main() {
     expect(byMode[DrillMode.grammar], 4);
     expect(numbers.bySkill[Skill.grammar], 8);
     expect(numbers.dueIn[Skill.grammar], 8);
-    expect(numbers.starts[Skill.grammar], {
-      Skill.grammarUnderstood,
-      Skill.grammar,
-    });
-
-    // Grammar used switched off: the tile still asks grammar understood.
-    state.settings.setSkillEnabled(Skill.grammar, false);
-    numbers = TodayNumbers.of(state);
-    expect(numbers.starts[Skill.grammar], {Skill.grammarUnderstood});
-    expect(numbers.bySkill[Skill.grammar], 8);
     expect(
       state
-          .buildSession(DrillRequest(skills: numbers.starts[Skill.grammar]))
+          .buildSession(const DrillRequest(skill: Skill.grammar))
           .items
-          .map((i) => i.mode),
-      everyElement(DrillMode.grammarUnderstood),
+          .map((i) => i.mode)
+          .toSet(),
+      {DrillMode.grammarUnderstood, DrillMode.grammar},
     );
 
-    // Both off: nothing.
-    state.settings.setSkillEnabled(Skill.grammarUnderstood, false);
+    // Grammar switched off: neither is counted or asked.
+    state.settings.setSkillEnabled(Skill.grammar, false);
     numbers = TodayNumbers.of(state);
-    expect(numbers.starts[Skill.grammar], isEmpty);
     expect(numbers.bySkill[Skill.grammar], 0);
     expect(numbers.dueIn[Skill.grammar], 0);
   });
@@ -314,8 +311,16 @@ void main() {
         'remembered, with the word shown', (tester) async {
       usePhone(tester);
       final state = await zzLearner();
-      // Only grammar used, so the produced cells come first.
-      state.settings.setSkillEnabled(Skill.grammarUnderstood, false);
+      // Every cell understood just now, so the produced cells come first.
+      for (final card in state.deckById(rulesDeck)!.cards) {
+        state.progress.record(
+          deckId: card.deckId,
+          cardId: card.id,
+          mode: DrillMode.grammarUnderstood,
+          grade: 3,
+          now: now,
+        );
+      }
       await pumpScreen(
         tester,
         const DrillPage(

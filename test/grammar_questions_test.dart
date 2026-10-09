@@ -343,16 +343,20 @@ void main() {
       expect(states, before);
     });
 
-    test('each is its own skill, sharing the Grammar tile', () {
-      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammarUnderstood);
+    test('both are the Grammar skill, one tile and one switch (4.8, 7)', () {
+      expect(Skill.of(DrillMode.grammarUnderstood), Skill.grammar);
       expect(Skill.of(DrillMode.grammar), Skill.grammar);
-      expect(Skill.grammarUnderstood.mode, DrillMode.grammarUnderstood);
-      expect(Skill.grammarUnderstood.tile, Skill.grammar);
-      expect(Skill.grammar.tile, Skill.grammar);
+      expect(Skill.grammar.modes, {
+        DrillMode.grammarUnderstood,
+        DrillMode.grammar,
+      });
       for (final skill in Skill.values) {
-        if (skill != Skill.grammarUnderstood) expect(skill.tile, skill);
+        if (skill != Skill.grammar) expect(skill.modes, {?skill.mode});
       }
-      expect(Skill.grammarUnderstood.onByDefault, isTrue);
+      // Every mode is some skill's, and one skill's only.
+      final covered = [for (final skill in Skill.values) ...skill.modes];
+      expect(covered.toSet(), DrillMode.values.toSet());
+      expect(covered, hasLength(DrillMode.values.length));
     });
   });
 
@@ -492,35 +496,64 @@ void main() {
       }
     });
 
-    test('grammar understood has its own switch', () async {
+    test('the Grammar switch covers both', () async {
       final settings = SettingsNotifier();
       final state = await loaded(settings: settings);
-      expect(settings.isEnabled(Skill.grammarUnderstood), isTrue);
-      settings.setSkillEnabled(Skill.grammarUnderstood, false);
-      expect(state.sessionModes, isNot(contains(DrillMode.grammarUnderstood)));
-      expect(state.sessionModes, contains(DrillMode.grammar));
-      final items = state.sessionItems(
-        const DrillRequest(deckIds: {rulesDeck}, untaught: true),
+      expect(
+        state.sessionModes,
+        containsAll(<DrillMode>[
+          DrillMode.grammarUnderstood,
+          DrillMode.grammar,
+        ]),
       );
-      expect(items.map((i) => i.mode), everyElement(DrillMode.grammar));
-      expect(items.map((i) => i.ask), everyElement(Ask.chooseForm));
+      settings.setSkillEnabled(Skill.grammar, false);
+      expect(state.sessionModes, isNot(contains(DrillMode.grammarUnderstood)));
+      expect(state.sessionModes, isNot(contains(DrillMode.grammar)));
+      expect(
+        state.sessionItems(
+          const DrillRequest(deckIds: {rulesDeck}, untaught: true),
+        ),
+        isEmpty,
+      );
     });
 
-    test('a switch stored before it existed keeps its default', () {
-      final settings = SettingsNotifier();
-      settings.restore(<String, String>{
-        'enabled_skills':
-            '+,recognition,production,listening,!speaking,grammar,reading,pair',
-      });
-      expect(settings.isEnabled(Skill.grammarUnderstood), isTrue);
-      settings.setSkillEnabled(Skill.grammarUnderstood, false);
-      final again = SettingsNotifier()..restore(settings.toStored());
-      expect(again.isEnabled(Skill.grammarUnderstood), isFalse);
-      expect(again.isEnabled(Skill.grammar), isTrue);
+    test(
+      'grammar switched off before this update stays off for both',
+      () async {
+        final settings = SettingsNotifier();
+        settings.restore(<String, String>{
+          'enabled_skills': '+,recognition,production,listening,!speaking,!grammar,reading,pair',
+        });
+        final state = await loaded(settings: settings);
+        expect(settings.isEnabled(Skill.grammar), isFalse);
+        expect(
+          state.sessionModes,
+          isNot(contains(DrillMode.grammarUnderstood)),
+        );
+        expect(
+          state.sessionItems(
+            const DrillRequest(deckIds: {rulesDeck}, untaught: true),
+          ),
+          isEmpty,
+        );
+      },
+    );
+
+    test('a request for Grammar asks grammar understood too', () async {
+      final state = await loaded();
+      final items = state.sessionItems(
+        const DrillRequest(
+          deckIds: {rulesDeck},
+          skill: Skill.grammar,
+          untaught: true,
+        ),
+      );
+      expect(items, isNotEmpty);
+      expect(items.first.mode, DrillMode.grammarUnderstood);
     });
 
     test('the grammar feature gates both', () {
-      expect(Skill.grammarUnderstood.feature, Feature.drillGrammar);
+      expect(Skill.grammar.feature, Feature.drillGrammar);
     });
   });
 }

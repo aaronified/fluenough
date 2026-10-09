@@ -361,8 +361,7 @@ class _CardRow extends StatelessWidget {
     final notes = card.notes.firstOrNull?.text;
     final skills = <String>[
       for (final skill in Skill.values)
-        if (skill.mode != null && card.modes.contains(skill.mode))
-          skill.label(l10n),
+        if (skill.modes.any(card.modes.contains)) skill.label(l10n),
     ];
     return _Line(
       top: _Script(card.target, card.reading, language: language),
