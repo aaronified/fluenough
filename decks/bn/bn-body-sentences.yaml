@@ -1,0 +1,107 @@
+schema: 1
+id: "bn-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1026"
+    target: "আমার মাথায় ব্যথা।"
+    reading: "āmār māthāy bêthā."
+    ipa: "amar mat̪ʰaj bæt̪ʰa"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-loc"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "মাথায়", ref: "bn-0728" }
+  - id: "bn-1027"
+    target: "আমার পেটে ব্যথা।"
+    reading: "āmār peṭe bêthā."
+    ipa: "amar peʈe bæt̪ʰa"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-loc"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "পেটে", ref: "bn-0729" }
+  - id: "bn-1028"
+    target: "আমার পিঠে ব্যথা।"
+    reading: "āmār piṭhe bêthā."
+    ipa: "amar piʈʰe bæt̪ʰa"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-loc"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "পিঠে", ref: "bn-1013" }
+  - id: "bn-1029"
+    target: "আমার হাঁটুতে ব্যথা।"
+    reading: "āmār hām̐ṭute bêthā."
+    ipa: "amar ɦãʈut̪e bæt̪ʰa"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-loc"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "হাঁটুতে", ref: "bn-1019" }
+  - id: "bn-1030"
+    target: "আমার জ্বর।"
+    reading: "āmār jôr."
+    ipa: "amar dʒɔr"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-1031"
+    target: "আপনি মুখ খুলুন।"
+    reading: "āpni mukh khulun."
+    ipa: "apni mukʰ kʰulun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "খুলুন", ref: "bn-0897" }
+  - id: "bn-1032"
+    target: "আমি হাত দিয়ে ভাত খাই।"
+    reading: "āmi hāt diye bhāt khāi."
+    ipa: "ami ɦat̪ d̪ije bʱat̪ kʰai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-1033"
+    target: "চোখ দিয়ে দেখি, কান দিয়ে শুনি।"
+    reading: "cokh diye dekhi, kān diye śuni."
+    ipa: "tʃokʰ d̪ije d̪ekʰi kan d̪ije ʃuni"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "দেখি", ref: "bn-0877" }
+      - { word: "শুনি", ref: "bn-0878" }
+  - id: "bn-1034"
+    target: "আপনার হাতে কী?"
+    reading: "āpnār hāte ki?"
+    ipa: "apnar ɦat̪e ki"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-loc"]
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "হাতে", ref: "bn-0730" }
+  - id: "bn-1035"
+    target: "ডাক্তারের কাছ থেকে ওষুধ নিন।"
+    reading: "ḍāktārer kāch theke ośudh nin."
+    ipa: "ɖakt̪arer katʃʰ t̪ʰeke oʃud̪ʱ nin"
+    pos: "phrase"
+    rules: ["bn-rule-theke", "bn-rule-polite-request"]
+    bases:
+      - { word: "ডাক্তারের", ref: "bn-0376" }
+      - { word: "কাছ", base: "কাছ", reading: "kāch" }
+      - { word: "নিন", ref: "bn-0889" }
+  - id: "bn-1036"
+    target: "ডাক্তার আমার জিভ দেখেন।"
+    reading: "ḍāktār āmār jibh dekhen."
+    ipa: "ɖakt̪ar amar dʒibʱ d̪ekʰen"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-present-third"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "দেখেন", ref: "bn-0877" }
