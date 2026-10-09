@@ -5,6 +5,7 @@ import '../core/feedback/report.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
 import '../features/decks/inspect_page.dart';
+import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
 import '../features/gallery/gallery_page.dart';
 import '../features/placement/learn_languages_page.dart';
@@ -35,6 +36,10 @@ import 'shell_tab.dart';
 abstract final class AppRoutes {
   /// A deck's screen. Argument: the deck id, a [String].
   static const String deck = '/deck';
+
+  /// A unit of a course's path. Argument: the id of a deck in it, a
+  /// [String].
+  static const String unit = '/unit';
 
   /// Add a deck.
   static const String import = '/import';
@@ -90,6 +95,7 @@ abstract final class AppRoutes {
     final args = settings.arguments;
     final Widget? page = switch (settings.name) {
       deck when args is String => DeckDetailPage(deckId: args),
+      unit when args is String => UnitPage(deckId: args),
       import => const ImportPage(),
       drill when args is DrillRequest => DrillPage(request: args),
       summary when args is SessionResult => SummaryPage(result: args),
@@ -120,6 +126,10 @@ abstract final class AppRoutes {
 abstract final class AppNavigator {
   static Future<void> openDeck(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.deck, arguments: deckId);
+
+  /// The unit of its course's path that [deckId] is in.
+  static Future<void> openUnit(BuildContext context, String deckId) =>
+      Navigator.of(context).pushNamed(AppRoutes.unit, arguments: deckId);
 
   /// A report from the screen [request] was raised on.
   static Future<void> openReport(BuildContext context, ReportRequest request) =>

@@ -908,6 +908,604 @@
   "@decksBrokenBadge": {
     "description": "Badge on a row for a deck file that failed to parse."
   },
+  "decksSearchOpen": "Search units",
+  "@decksSearchOpen": {
+    "description": "Tooltip of the search button on the Decks tab: opens a search across every course's units."
+  },
+  "decksSearchClose": "Close search",
+  "@decksSearchClose": {
+    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again."
+  },
+  "decksUnitSearchHint": "Search units in every course",
+  "@decksUnitSearchHint": {
+    "description": "Hint in the Decks tab's search field. A search finds units by their name, their decks' names, their theme or their language."
+  },
+  "decksCoursesLabel": "Courses",
+  "@decksCoursesLabel": {
+    "description": "What a screen reader calls the row of course chips on the Decks tab, one per language."
+  },
+  "decksCourseChipDue": "{language}, {count, plural, =1{1 due} other{{count} due}}",
+  "@decksCourseChipDue": {
+    "description": "What a screen reader hears for a course chip with reviews due: the language, then how many reviews are due in it.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      },
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "decksWhereIAm": "Where I am",
+  "@decksWhereIAm": {
+    "description": "Button floating over the Decks tab's path: scrolls the path back to the unit the learner is on."
+  },
+  "pathCourseProgress": "{done} of {total, plural, =1{1 unit} other{{total} units}} done",
+  "@pathCourseProgress": {
+    "description": "Line on the card at the top of a course's path: how many of its units are done.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "7"
+      },
+      "total": {
+        "type": "int",
+        "example": "29"
+      }
+    }
+  },
+  "pathUpdatesTitle": "Deck updates",
+  "@pathUpdatesTitle": {
+    "description": "Row on the course card: newer versions of the course's decks, downloaded on request. Shown with \"Feature incoming\" until decks download (#210)."
+  },
+  "pathUpdatesBody": "Your progress is kept",
+  "@pathUpdatesBody": {
+    "description": "Second line of the deck updates row: updating a deck keeps the learner's history."
+  },
+  "pathUpdatesButton": "Update",
+  "@pathUpdatesButton": {
+    "description": "Button on the deck updates row."
+  },
+  "pathHoursTitle": "Hours left to B1",
+  "@pathHoursTitle": {
+    "description": "Row on the course card: about how many hours of study are left to finish the course, at level B1. Shown with \"Feature incoming\" until it is built (#227)."
+  },
+  "pathHoursBody": "And the hours spent so far",
+  "@pathHoursBody": {
+    "description": "Second line of the hours row: it also says how many hours have been spent."
+  },
+  "pathUpNext": "Up next",
+  "@pathUpNext": {
+    "description": "Label over the unit the learner is on, on a course's path."
+  },
+  "pathUnitWords": "{count, plural, =1{1 word} other{{count} words}}",
+  "@pathUnitWords": {
+    "description": "Part of a unit's line on the path and in search: how many words it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "pathUnitRules": "{count, plural, =1{1 rule} other{{count} rules}}",
+  "@pathUnitRules": {
+    "description": "Part of a unit's line: how many grammar rules (tables) it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathUnitSentences": "{open}/{total} sentences",
+  "@pathUnitSentences": {
+    "description": "Part of a unit's line: how many of its sentences are open, out of all of them.",
+    "placeholders": {
+      "open": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "pathUnitLetters": "Script · {count, plural, =1{1 letter} other{{count} letters}}",
+  "@pathUnitLetters": {
+    "description": "A script unit's line on the path: how many letters it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "62"
+      }
+    }
+  },
+  "pathUnitPassages": "{count, plural, =1{1 reading passage} other{{count} reading passages}}",
+  "@pathUnitPassages": {
+    "description": "Part of a unit's line: how many passages it has to read.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "pathMetaJoin": "{first} · {rest}",
+  "@pathMetaJoin": {
+    "description": "Joins two parts of a line such as \"18 words · 2 rules\". Change the separator if your language uses another.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "18 words"
+      },
+      "rest": {
+        "type": "String",
+        "example": "2 rules"
+      }
+    }
+  },
+  "pathUnitNumber": "Unit {number}",
+  "@pathUnitNumber": {
+    "description": "A unit's place in its course, on the unit's screen.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathUnitDone": "Done",
+  "@pathUnitDone": {
+    "description": "What a screen reader hears of a unit on the path whose decks are all finished."
+  },
+  "pathUnitAhead": "Not started",
+  "@pathUnitAhead": {
+    "description": "What a screen reader hears of a unit on the path after the one the learner is on."
+  },
+  "pathUnitSemantics": "{title}, unit {number}, {status}. {meta}",
+  "@pathUnitSemantics": {
+    "description": "What a screen reader hears for a unit on the path: its name, its number, where it stands (Done, Up next, Not started) and its line.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Family"
+      },
+      "number": {
+        "type": "int",
+        "example": "7"
+      },
+      "status": {
+        "type": "String",
+        "example": "Up next"
+      },
+      "meta": {
+        "type": "String",
+        "example": "18 words · 2 rules"
+      }
+    }
+  },
+  "pathComing": "Coming",
+  "@pathComing": {
+    "description": "Badge and status of a unit that is planned but not written yet."
+  },
+  "pathComingWords": "Coming · about {count} words",
+  "@pathComingWords": {
+    "description": "Line of a unit still being written: about how many words it will teach.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "60"
+      }
+    }
+  },
+  "pathFirstDeck": "First deck finished",
+  "@pathFirstDeck": {
+    "description": "A milestone on the path: every word of one deck learned."
+  },
+  "pathFirstDeckToGo": "Finish every word of one deck",
+  "@pathFirstDeckToGo": {
+    "description": "Under the first-deck milestone before it is earned: how to earn it."
+  },
+  "pathWordsLearned": "{count} words learned",
+  "@pathWordsLearned": {
+    "description": "A milestone on the path: this many of the course's words learned.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  "pathWordsToGo": "{count, plural, =1{1 word to go} other{{count} words to go}}",
+  "@pathWordsToGo": {
+    "description": "Under a words milestone not earned yet: how many more words.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "21"
+      }
+    }
+  },
+  "pathScriptLearned": "Script learned",
+  "@pathScriptLearned": {
+    "description": "A milestone on the path: the course's script units done."
+  },
+  "pathScriptToGo": "{count, plural, =1{1 script unit to go} other{{count} script units to go}}",
+  "@pathScriptToGo": {
+    "description": "Under the script milestone not earned yet: how many script units are left.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathEarnedOn": "Earned {date}",
+  "@pathEarnedOn": {
+    "description": "Under a milestone or achievement: the day it was earned.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "24 Sep"
+      }
+    }
+  },
+  "pathEarnedToday": "Earned today",
+  "@pathEarnedToday": {
+    "description": "Under a milestone or achievement earned today."
+  },
+  "pathEarned": "Earned",
+  "@pathEarned": {
+    "description": "Under a milestone or achievement earned on a day the review log does not tell, such as by placement."
+  },
+  "pathLevelA1": "Introduce yourself, ask about people and places",
+  "@pathLevelA1": {
+    "description": "What a learner can do at CEFR level A1, at the start of its part of a course's path."
+  },
+  "pathLevelA2": "Shop, ask the way, talk about your day",
+  "@pathLevelA2": {
+    "description": "What a learner can do at CEFR level A2, at the start of its part of the path."
+  },
+  "pathLevelB1": "Travel, describe plans, give reasons",
+  "@pathLevelB1": {
+    "description": "What a learner can do at CEFR level B1, at the start of its part of the path."
+  },
+  "pathLevelUnits": "{count, plural, =1{1 unit} other{{count} units}}",
+  "@pathLevelUnits": {
+    "description": "Part of a level's line on the path: how many units it has.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "pathLevelDone": "{count} done",
+  "@pathLevelDone": {
+    "description": "Part of a level's line on the path: how many of its units are done.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathLevelComing": "{count} coming",
+  "@pathLevelComing": {
+    "description": "Part of a level's line on the path: how many of its units are still being written.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathAchievement": "{level} achievement",
+  "@pathAchievement": {
+    "description": "An achievement on the path: reaching a CEFR level. The level is its code, such as A1.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "pathLevelReached": "{level} reached",
+  "@pathLevelReached": {
+    "description": "An achievement on the path once it is earned: the CEFR level reached.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "pathUnitsToGo": "{count, plural, =1{1 unit to go} other{{count} units to go}}",
+  "@pathUnitsToGo": {
+    "description": "Under a level achievement not earned yet: how many units are left.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "pathUnitsToGoComing": "{count, plural, =1{1 unit to go} other{{count} units to go}}, {coming} still being written",
+  "@pathUnitsToGoComing": {
+    "description": "Under a level achievement not earned yet, when some of its units are not written yet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      },
+      "coming": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathBeyondTitle": "Beyond the course",
+  "@pathBeyondTitle": {
+    "description": "Heading at the end of a course's path: songs, films and books to choose by interest. Shown with \"Feature incoming\" until it is built (#215)."
+  },
+  "pathBeyondBody": "Optional. Pick by interest; nothing here holds back the path.",
+  "@pathBeyondBody": {
+    "description": "Under the \"Beyond the course\" heading."
+  },
+  "pathBeyondSong": "Song",
+  "@pathBeyondSong": {
+    "description": "Kind of a \"Beyond the course\" item: a song."
+  },
+  "pathBeyondFilm": "Film",
+  "@pathBeyondFilm": {
+    "description": "Kind of a \"Beyond the course\" item: a film."
+  },
+  "pathBeyondBook": "Book",
+  "@pathBeyondBook": {
+    "description": "Kind of a \"Beyond the course\" item: a book."
+  },
+  "pathOtherDecks": "Other decks",
+  "@pathOtherDecks": {
+    "description": "Heading under a course's path: the language's decks its path leaves out, each opening its own screen."
+  },
+  "pathBrokenFiles": "Files that couldn’t be read",
+  "@pathBrokenFiles": {
+    "description": "Heading under a course's path: deck files that failed to parse."
+  },
+  "unitReview": "Review",
+  "@unitReview": {
+    "description": "Button at the top end of a unit's screen: checks the unit's cards before they ship, for speakers who review decks."
+  },
+  "unitLettersKnown": "letters known",
+  "@unitLettersKnown": {
+    "description": "Under a number on a script unit's screen: how many of its letters are known."
+  },
+  "unitWordsKnown": "words known",
+  "@unitWordsKnown": {
+    "description": "Under a number on a unit's screen: how many of its words are known."
+  },
+  "unitRulesKnown": "rules known",
+  "@unitRulesKnown": {
+    "description": "Under a number on a unit's screen: how many of its rules are known."
+  },
+  "unitSentencesOpen": "sentences open",
+  "@unitSentencesOpen": {
+    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught."
+  },
+  "unitFraction": "{count}/{total}",
+  "@unitFraction": {
+    "description": "A count out of a total on a unit's tile, such as 12/18.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "12"
+      },
+      "total": {
+        "type": "String",
+        "example": "18"
+      }
+    }
+  },
+  "unitSectionWords": "{number} · Words",
+  "@unitSectionWords": {
+    "description": "Heading of a unit's words, numbered in the order the unit teaches them.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitSectionLetters": "{number} · Letters",
+  "@unitSectionLetters": {
+    "description": "Heading of a script unit's letters.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitSectionRules": "{number} · Rules",
+  "@unitSectionRules": {
+    "description": "Heading of a unit's grammar rules.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "unitSectionSentences": "{number} · Sentences",
+  "@unitSectionSentences": {
+    "description": "Heading of a unit's sentences.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "unitKnownMeans": "Known means right on {percent}% of recent answers",
+  "@unitKnownMeans": {
+    "description": "Beside the words heading: what \"Known\" means.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "unitKnown": "Known",
+  "@unitKnown": {
+    "description": "Status of a word, rule or sentence answered right on most of its recent answers."
+  },
+  "unitLearning": "Learning {percent}%",
+  "@unitLearning": {
+    "description": "Status of a word, rule or sentence being learned: the share of its recent answers that were right.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "64"
+      }
+    }
+  },
+  "unitNew": "New",
+  "@unitNew": {
+    "description": "Status of a word or rule never answered yet."
+  },
+  "unitNotOpen": "Not open yet",
+  "@unitNotOpen": {
+    "description": "Status of a sentence a lesson has not taught yet."
+  },
+  "unitShowAll": "Show all {count}",
+  "@unitShowAll": {
+    "description": "Button under a unit's first words: shows every one.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "unitShowFewer": "Show fewer",
+  "@unitShowFewer": {
+    "description": "Button under a unit's words once all show: shows the first few again."
+  },
+  "unitRuleShowTable": "Show the table",
+  "@unitRuleShowTable": {
+    "description": "Button on a rule: shows its table of forms."
+  },
+  "unitRuleHideTable": "Hide the table",
+  "@unitRuleHideTable": {
+    "description": "Button on a rule whose table shows: hides it."
+  },
+  "unitRuleWord": "Word",
+  "@unitRuleWord": {
+    "description": "Heading of the first column of a rule's table: the word each row inflects."
+  },
+  "unitRuleCells": "Each cell is a question.",
+  "@unitRuleCells": {
+    "description": "Under a rule's table: each form in it is asked in grammar drills."
+  },
+  "unitSentencesCount": "{open} of {total} open",
+  "@unitSentencesCount": {
+    "description": "Beside the sentences heading: how many of the unit's sentences are open.",
+    "placeholders": {
+      "open": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "unitSentencesNote": "A sentence opens when a lesson teaches it. Reviews never wait.",
+  "@unitSentencesNote": {
+    "description": "Under a unit's sentences."
+  },
+  "unitDecks": "Decks in this unit",
+  "@unitDecks": {
+    "description": "Heading of the list of a unit's decks, each opening its own screen."
+  },
+  "unitContinue": "Continue · {fresh} new, {due} due",
+  "@unitContinue": {
+    "description": "Button at the foot of a unit's screen: reviews its cards due, or teaches its next words. Says how many new words the next lesson teaches and how many reviews are due.",
+    "placeholders": {
+      "fresh": {
+        "type": "int",
+        "example": "5"
+      },
+      "due": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "unitNothingLeft": "Nothing new or due",
+  "@unitNothingLeft": {
+    "description": "The button at the foot of a unit's screen, off, when the unit has nothing new to teach and nothing due."
+  },
+  "unitOpenWord": "Opens its card",
+  "@unitOpenWord": {
+    "description": "What a screen reader hears after a word's row on a unit's screen: tapping it opens the word's card."
+  },
+  "wordSheetIpa": "/{ipa}/",
+  "@wordSheetIpa": {
+    "description": "How a word is said, in the IPA, on its card. The slashes mark IPA; keep them.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "kaːlam"
+      }
+    }
+  },
+  "wordSheetSoundsLike": "Sounds almost like {word} ({reading}), {meaning}. Take care when you say it.",
+  "@wordSheetSoundsLike": {
+    "description": "Warning on a word's card: another word sounds almost the same.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కలం"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kalam"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "pen"
+      }
+    }
+  },
+  "wordSheetSoundsLikeNoReading": "Sounds almost like {word}, {meaning}. Take care when you say it.",
+  "@wordSheetSoundsLikeNoReading": {
+    "description": "Warning on a word's card: another word, with no reading, sounds almost the same.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "pero"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "but"
+      }
+    }
+  },
+  "wordSheetSoundsRude": "Careful: said slightly wrong, this sounds like a rude word.",
+  "@wordSheetSoundsRude": {
+    "description": "Warning on a word's card when the word it sounds like is rude. The rude word is shown only with adult content on."
+  },
+  "wordSheetSoundsLikeTitle": "Sounds like another word",
+  "@wordSheetSoundsLikeTitle": {
+    "description": "Heading of the warning on a word's card that another word sounds almost the same."
+  },
   "deckKindScript": "Script",
   "@deckKindScript": {
     "description": "A deck that teaches a writing system."
