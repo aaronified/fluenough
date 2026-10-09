@@ -40,20 +40,26 @@ enum SpeechFailure {
 /// What one listen produced: the recogniser's readings, best first, or why
 /// there are none.
 class SpeechHeard {
-  const SpeechHeard(this.alternatives) : failure = null;
+  const SpeechHeard(this.alternatives) : failure = null, code = null;
 
-  const SpeechHeard.failed(SpeechFailure this.failure)
+  const SpeechHeard.failed(SpeechFailure this.failure, {this.code})
     : alternatives = const <SpeechAlternative>[];
 
   final List<SpeechAlternative> alternatives;
   final SpeechFailure? failure;
+
+  /// The recogniser's own error code, such as `error_no_match`, when it gave
+  /// one: what a report needs to say exactly what failed. Null when it
+  /// failed without one, such as a listen that never answered, or when the
+  /// app knew beforehand that it could not listen.
+  final String? code;
 
   bool get failed => failure != null || alternatives.isEmpty;
 
   @override
   String toString() => failure == null
       ? 'SpeechHeard($alternatives)'
-      : 'SpeechHeard.failed($failure)';
+      : 'SpeechHeard.failed($failure${code == null ? '' : ', $code'})';
 }
 
 /// The phone's speech recogniser, narrow enough that tests can fake it and a
@@ -149,6 +155,10 @@ class FixedSpeechEngine implements SpeechEngine {
   /// What the next listen hears, in order, best first. Empty: no match.
   List<SpeechAlternative> next = const <SpeechAlternative>[];
 
+  /// A failure the next listens give, in place of hearing [next], with the
+  /// code Android gives for it: a network failure, say.
+  SpeechHeard? failing;
+
   /// Every listen asked for, in order.
   final List<({String bcp47, bool onDevice})> listens =
       <({String bcp47, bool onDevice})>[];
@@ -175,16 +185,31 @@ class FixedSpeechEngine implements SpeechEngine {
   }) async {
     listens.add((bcp47: bcp47, onDevice: onDevice));
     if (!granted) {
-      return const SpeechHeard.failed(SpeechFailure.permissionDenied);
+      return const SpeechHeard.failed(
+        SpeechFailure.permissionDenied,
+        code: 'error_permission',
+      );
     }
     final code = bcp47.split(RegExp('[-_]')).first.toLowerCase();
     if (onDevice && !this.onDevice.contains(code)) {
-      return const SpeechHeard.failed(SpeechFailure.notOnDevice);
+      return const SpeechHeard.failed(
+        SpeechFailure.notOnDevice,
+        code: 'error_language_unavailable',
+      );
     }
     if (!this.onDevice.contains(code) && !online.contains(code)) {
-      return const SpeechHeard.failed(SpeechFailure.unsupported);
+      return const SpeechHeard.failed(
+        SpeechFailure.unsupported,
+        code: 'error_language_not_supported',
+      );
     }
-    if (next.isEmpty) return const SpeechHeard.failed(SpeechFailure.noMatch);
+    if (failing case final failure?) return failure;
+    if (next.isEmpty) {
+      return const SpeechHeard.failed(
+        SpeechFailure.noMatch,
+        code: 'error_no_match',
+      );
+    }
     return SpeechHeard(next);
   }
 

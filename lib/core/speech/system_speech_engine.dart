@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart' show PlatformException;
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -101,8 +102,12 @@ class SystemSpeechEngine implements SpeechEngine {
           cancelOnError: true,
         ),
       );
-    } catch (_) {
-      _finish(const SpeechHeard.failed(SpeechFailure.other));
+    } on PlatformException catch (e) {
+      _finish(SpeechHeard.failed(SpeechFailure.other, code: e.code));
+    } catch (e) {
+      _finish(
+        SpeechHeard.failed(SpeechFailure.other, code: '${e.runtimeType}'),
+      );
     }
     return done.future.timeout(
       listenFor + _grace,
@@ -154,7 +159,10 @@ class SystemSpeechEngine implements SpeechEngine {
   ];
 
   void _onError(SpeechRecognitionError error) => _finish(
-    SpeechHeard.failed(failureOf(error.errorMsg, onDevice: _listeningOnDevice)),
+    SpeechHeard.failed(
+      failureOf(error.errorMsg, onDevice: _listeningOnDevice),
+      code: error.errorMsg,
+    ),
   );
 
   void _onStatus(String status) {
