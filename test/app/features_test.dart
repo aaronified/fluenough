@@ -41,8 +41,8 @@ void main() {
   test('this version ships the drills, speaking and reading among them, '
       'answers in Latin letters, saved progress, '
       'appearance but for wallpaper colours, stats, leeches, daily facts, '
-      'the log backup, adding a deck from a file and opening the phone\'s '
-      'voice settings', () {
+      'the log backup, adding a deck from a file, opening the phone\'s '
+      'voice settings and reports by mail', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -63,6 +63,7 @@ void main() {
       Feature.logImport,
       Feature.importFile,
       Feature.voiceSettingsLink,
+      Feature.feedbackMail,
     });
   });
 
