@@ -104,22 +104,26 @@ void main() {
       expect(script.earned, isFalse);
       expect(script.toGo, 2);
 
-      // Word counts in order, each placed after the unit whose words reach it.
+      // Word counts in order, each placed after the unit whose words reach
+      // it. A script unit's letters are not words.
       final counts = steps
           .whereType<MilestoneStep>()
           .where((m) => m.kind == MilestoneKind.words)
           .toList();
       expect(counts.map((m) => m.count), [50, 100, 250]);
+      Set<String> wordsUpTo(int end) => <String>{
+        for (final u in units.take(end))
+          if (!u.content.isScript) ...u.content.words.map((c) => c.id),
+      };
+      expect(units.where((u) => u.content.isScript), isNotEmpty);
       for (final milestone in counts) {
         final unit = steps
             .sublist(0, steps.indexOf(milestone))
             .whereType<UnitStep>()
             .last;
-        var words = <String>{};
-        for (final u in units.take(units.indexOf(unit) + 1)) {
-          words = {...words, ...u.content.words.map((c) => c.id)};
-        }
-        expect(words.length, greaterThanOrEqualTo(milestone.count));
+        final at = units.indexOf(unit);
+        expect(wordsUpTo(at + 1).length, greaterThanOrEqualTo(milestone.count));
+        expect(wordsUpTo(at).length, lessThan(milestone.count));
         expect(milestone.earned, isFalse);
         expect(milestone.toGo, milestone.count);
       }
@@ -214,6 +218,20 @@ void main() {
     // The level the learner is in is highlighted.
     final headers = steps.whereType<LevelStep>().toList();
     expect(headers.map((h) => h.current), [true, false, false]);
+    // Each header counts its units' words, not a script unit's letters.
+    for (final header in headers) {
+      final inLevel = units.where((u) => u.level == header.level);
+      expect(
+        header.words,
+        inLevel
+            .where((u) => !u.content.isScript)
+            .fold(0, (sum, u) => sum + u.content.words.length),
+      );
+    }
+    expect(
+      units.where((u) => u.content.isScript).map((u) => u.level).toSet(),
+      isNotEmpty,
+    );
     expect(headers.last.coming, 7);
   });
 
