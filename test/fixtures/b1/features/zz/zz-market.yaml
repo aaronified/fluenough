@@ -1,0 +1,59 @@
+# A vocab core for the parser's tests (B1 format, spec 2.3): written cards
+# with typed notes, examples and bases, a phrasebook chunk, a card only the
+# Bengali layer translates, and two refs. Card ids zz-9xxx are made up.
+schema: 1
+id: "zz-market"
+part: "core"
+kind: "vocab"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Core author" }
+source: "https://example.org/core"
+theme: "market"
+tags: ["market", "reviewed"]
+cards:
+  - id: "zz-9301"
+    target: "కలం"
+    reading: "kalam"
+    pos: "noun"
+    picture: "🖊"
+    notes:
+      - { id: "pair", kind: "pair", ref: "zz-9302" }
+      - { id: "school", kind: "culture", source: "https://example.org/school" }
+      - { id: "plural", kind: "behaviour", words: [{ word: "కలాలు", reading: "kalālu" }] }
+    examples:
+      - target: "నా కలం."
+        reading: "nā kalam."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+      - { target: "కలం ఎక్కడ?", reading: "kalam ekkaḍa?" }
+  - id: "zz-9302"
+    target: "కాలం"
+    reading: "kālam"
+    pos: "noun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "zz-9301" }
+  - id: "zz-9303"
+    target: "నాకు రాదు."
+    reading: "nāku rādu."
+    pos: "phrase"
+    phrasebook: true
+    rules: ["zz-rule-ki"]
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu" }
+      - { word: "రాదు", base: "రా", reading: "rā" }
+  - id: "zz-9304"
+    target: "బజారు"
+    reading: "bajāru"
+    pos: "noun"
+  - ref: "zz-9401"
+  - ref: "zz-9402"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "పండు తిను.", reading: "paṇḍu tinu." }
+  - id: "zz-9305"
+    target: "ధర"
+    reading: "dhara"
+    pos: "noun"

@@ -2,6 +2,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/card.dart';
 import '../../core/review/deck_review.dart';
+import '../decks/card_notes.dart';
 import '../decks/word_sheet.dart' show isRude;
 
 /// One of a language's regions, as a rater answers "Where you speak
@@ -50,26 +51,32 @@ List<RaterRegion> raterRegions(String language) => switch (language) {
 };
 
 /// A rude word that [card] sounds or looks like: the pair a learner is
-/// warned of, and a reviewer confirms or rejects.
-typedef RudeAlike = ({Card partner, AlikeKind kind});
+/// warned of, and a reviewer confirms or rejects, with the pair note's
+/// text where it has one, what to take care of.
+typedef RudeAlike = ({Card partner, AlikeKind kind, String? care});
 
-/// The rude words [card] is like (docs/plans/offensive-words.md).
+/// The rude words [card] is like (docs/plans/offensive-words.md): each of
+/// its pairs ([pairsOf]), its `pair` and its pair notes' partners, that is
+/// rude, in order.
 ///
-/// Today's deck format gives a card one partner, its minimal pair (`pair`),
-/// a word that sounds almost the same: a sound-alike when that partner is
-/// rude. The look-alike list, and the similarity tool that finds both, come
-/// with the B1 format; [AlikeKind.look] is ready for them.
+/// A pair is a word that sounds almost the same, a sound-alike. The deck
+/// format has no look-alike note yet; [AlikeKind.look] is ready for one.
 List<RudeAlike> rudeAlikesOf(AppState state, Card card) {
-  final id = card.pair;
-  if (id == null) return const <RudeAlike>[];
-  for (final entry in state.decks) {
-    for (final other in entry.cards) {
-      if (other.id == id && isRude(other, entry)) {
-        return <RudeAlike>[(partner: other, kind: AlikeKind.sound)];
+  final pairs = pairsOf(card);
+  if (pairs.isEmpty) return const <RudeAlike>[];
+  final out = <RudeAlike>[];
+  for (final pair in pairs) {
+    found:
+    for (final entry in state.decks) {
+      for (final other in entry.cards) {
+        if (other.id == pair.id && isRude(other, entry)) {
+          out.add((partner: other, kind: AlikeKind.sound, care: pair.care));
+          break found;
+        }
       }
     }
   }
-  return const <RudeAlike>[];
+  return out;
 }
 
 /// Whether [card] in [deck] is rude: recognition only, and shown to a

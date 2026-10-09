@@ -80,16 +80,16 @@ tags: [unreviewed]
 cards:
   - { id: te-9903, target: "నాన్న", native: "father", reading: "nānna" }
 ''',
-    'decks/te/te-en-path.yaml':
+    // One path per language, naming core ids (ADR-0036).
+    'decks/te/te-path.yaml':
         '''
 schema: 1
 kind: path
-id: te-en-path
+id: te-path
 language: te
-native: en
 units:
-  - [$wordsDeck${more ? ', $moreDeck' : ''}]
-  - [$rudeDeck]
+  - [te-review-words${more ? ', te-review-more' : ''}]
+  - [te-review-rude]
 ''',
   };
 }

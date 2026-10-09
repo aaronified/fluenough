@@ -6,18 +6,20 @@ Deck content, one YAML file per deck, organised by language code.
 decks/
   bn/  bn-en-first-words.yaml     one deck per theme in themes.yaml
        bn-en-questions.yaml …
-       bn-en-path.yaml            the order the course is taught in
+       bn-path.yaml               the order Bengali is taught in, from every language
   es/  es-en-core-100.yaml
        es-en-grammar-present-ar.yaml
-       es-en-path.yaml
+       es-path.yaml
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
-       hi-en-path.yaml
+       hi-path.yaml
   ja/  ja-en-hiragana.yaml        kept in the repository but not bundled in the app for now
-       ja-en-path.yaml
+       ja-path.yaml
   te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
-       te-en-path.yaml
+       te-home.yaml               a core: the Telugu side of a deck, for every learner
+       en/  te-en-home.yaml       its English layer; merged, they are the deck te-en-home
+       te-path.yaml               the path, by core id, with Telugu's regions
   mr/  mr-en-first-words.yaml     the same, for Marathi; not yet checked by a Marathi speaker
   kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker
   gu/  gu-en-first-words.yaml     the same, for Gujarati; not yet checked by a Gujarati speaker
@@ -25,9 +27,19 @@ decks/
   themes.yaml
 ```
 
-**Every deck is on its course's path.** `<lang>-<native>-path.yaml` lists the
-course's decks in teaching order, in units, and the validator fails a deck
-left off it. See "Course paths" in the format specification.
+**A deck may be a core and its layers.** The core,
+`decks/<lang>/<lang>-<name>.yaml`, holds the language learnt; each layer,
+`decks/<lang>/<native>/<lang>-<native>-<name>.yaml`, holds one native
+language's meanings, notes and labels, and the two merged are the deck
+`<lang>-<native>-<name>`. Every deck in a B1 plan is split as its plan is
+written. See "Core and layer files" in the format specification.
+
+**Every deck is on its language's path.** `<lang>-path.yaml` lists the
+language's decks in teaching order, in units, by core id (`te-home` for
+`te-en-home`), once for every language it is taught from; each course reads
+it through its own decks, and a unit with none of them is "Coming" for that
+course. The validator fails a deck left off it. See "Paths" in the format
+specification.
 
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)
 - How to contribute one: [../CONTRIBUTING.md](../CONTRIBUTING.md)
@@ -37,7 +49,8 @@ asset entry bundles only the files directly inside the directory it names, so
 `flutter.assets` needs one `- decks/<lang>/` line per language. Validating the
 whole of `decks/` — which is what CI does — fails if a directory holding decks
 has no entry, because the alternative is an app that builds and ships without
-that language in it. Validating a single deck or one language directory only
+that language in it. A layer folder needs its own line too, `- decks/te/en/`,
+added in a one-line commit with the language's first layer. Validating a single deck or one language directory only
 checks what you pointed it at. `decks/ja/` is left out on purpose for now: it
 is listed in `NOT_BUNDLED` in `tools/validate_decks.py`, and still validated.
 
@@ -107,7 +120,9 @@ Bengali's readings follow how it is said:
 Tag a deck `unreviewed` when no native speaker has checked it. The app then
 says so on the deck's screen and asks speakers to report mistakes, and the
 deck's `description` should say so too. The Telugu decks carry it (#39), and
-so do the Marathi, Kannada, Gujarati and Assamese ones.
+so do the Marathi, Kannada, Gujarati and Assamese ones. Once a speaker has
+checked a deck, tag it `reviewed` instead: a deck is one or the other, and a
+file with a culture note must carry one of the two.
 
 ## Two rules that matter more than the rest
 

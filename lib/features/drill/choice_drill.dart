@@ -25,6 +25,12 @@ import 'taught_details.dart';
 ///   Listening, in script practice.
 /// - [Ask.hearMeaning]: the word played, and its meaning to choose. Hear
 ///   (ADR-0034).
+/// - [Ask.chooseFormMeaning]: a rules table's form with its reading, as a
+///   word is shown, and its meaning to choose among those of the same
+///   word's forms. Grammar understood (spec 4.8).
+/// - [Ask.chooseForm]: a rules table's word and the meaning to express, and
+///   the form to choose among the same word's, with their readings. Grammar
+///   produced (spec 4.8).
 ///
 /// Words to choose show their reading first until the script is expected
 /// of the learner, as typed answers start in Latin letters then. The word
@@ -60,7 +66,12 @@ class ChoiceDrill extends StatelessWidget {
       onClose: onClose,
       needsSound: _hears && !answered,
       card: switch (ask) {
-        Ask.chooseMeaning => _meaningCard(context, card, language, answered),
+        Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
+          context,
+          card,
+          language,
+          answered,
+        ),
         Ask.hearAndChoose ||
         Ask.hearMeaning => _heardCard(context, card, language, answered),
         _ => _wordCard(context, card, language, answered),
@@ -189,7 +200,8 @@ class ChoiceDrill extends StatelessWidget {
         )
       : null;
 
-  /// The meaning; once answered, the word.
+  /// The meaning, after its word for a rules table's form; once answered,
+  /// the word.
   List<Widget> _wordCard(
     BuildContext context,
     Card card,
@@ -201,7 +213,9 @@ class ChoiceDrill extends StatelessWidget {
     final scheme = theme.colorScheme;
     return <Widget>[
       Text(
-        l10n.drillChooseWord(language.name),
+        session.ask == Ask.chooseForm
+            ? l10n.drillChooseForm
+            : l10n.drillChooseWord(language.name),
         textAlign: TextAlign.center,
         style: theme.textTheme.labelLarge!.copyWith(
           color: scheme.onSurfaceVariant,
@@ -209,7 +223,7 @@ class ChoiceDrill extends StatelessWidget {
       ),
       if (card.picture != null) CardPicture(card, size: 88),
       Text(
-        card.native,
+        card.promptFor(session.item.mode),
         textAlign: TextAlign.center,
         style: theme.textTheme.displaySmall!.copyWith(
           fontWeight: FontWeight.w600,

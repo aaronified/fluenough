@@ -101,7 +101,7 @@ class TaughtDetails extends StatelessWidget {
       builder: (context, _) {
         final theme = Theme.of(context);
         final scheme = theme.colorScheme;
-        final notes = card.notes;
+        final notes = card.notes.firstOrNull?.text;
         final children = <Widget>[
           if (word) ..._word(theme, showReading: _showsReading(settings)),
           if (meaning)

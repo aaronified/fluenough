@@ -42,10 +42,13 @@ List<Card> expandPattern(Deck deck) {
               (m) => switch (m[1]) {
                 'lemma' => entry.lemma,
                 'gloss' => entry.gloss,
-                _ => slot,
+                _ => pattern.slotLabels[slot] ?? slot,
               },
             ),
-            notes: pattern.notes,
+            notes: <CardNote>[
+              if (pattern.notes case final notes? when notes.trim().isNotEmpty)
+                CardNote(id: '1', kind: NoteKind.note, text: notes),
+            ],
             modes: const <DrillMode>{DrillMode.grammar},
           ),
   ];

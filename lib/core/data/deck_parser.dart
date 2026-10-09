@@ -6,6 +6,9 @@ import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
 import '../models/reading.dart';
+import '../models/rule.dart';
+
+part 'deck_layers.dart';
 
 /// A deck file that could not be read, and where in it the problem is.
 ///
@@ -53,10 +56,10 @@ class DeckParseException implements Exception {
 ///
 /// The exception is YAML that PyYAML loads and package:yaml does not, which no
 /// rule here decides: a tag package:yaml does not build, or builds more
-/// strictly, like `!!timestamp`, `!!float 1` or `!!bool yes`; two keys that
-/// YAML 1.2 reads as the same number and YAML 1.1 does not, like `010` and
-/// `10`; and oddities such as a `"\uD800"` escape or a U+2028 line break. A
-/// deck using one passes CI and fails here.
+/// strictly, like `!!timestamp`, `!!float 1` or `!!bool yes`; and oddities
+/// such as a `"\uD800"` escape or a U+2028 line break. A deck using one
+/// passes CI and fails here. Plain scalars are not among them: both read them
+/// as YAML 1.2's core schema does ([_value]).
 ///
 /// Parsing stops at the first problem.
 abstract final class DeckParser {
@@ -67,7 +70,22 @@ abstract final class DeckParser {
   ///
   /// A grammar deck comes back with [Deck.pattern] set and no cards. Expanding
   /// the pattern into cards is a separate step.
-  static Deck parse(String yaml, {required String source}) {
+  static Deck parse(String yaml, {required String source}) =>
+      _Reader(source).deck(_load(yaml, source));
+
+  /// Parses [yaml], a core file (`part: "core"`, B1 format spec 2.2), into a
+  /// [DeckCore], or throws a [DeckParseException]. A core is not a deck: it
+  /// is merged with each of its layers by [mergeLayer].
+  static DeckCore parseCore(String yaml, {required String source}) =>
+      _Reader(source).core(_load(yaml, source));
+
+  /// Parses [yaml], a layer (`kind: "layer"`, spec 2.6), into a
+  /// [DeckLayer], or throws a [DeckParseException]. What it says about its
+  /// core's cards is checked when the two are merged, by [mergeLayer].
+  static DeckLayer parseLayer(String yaml, {required String source}) =>
+      _Reader(source).layer(_load(yaml, source));
+
+  static YamlNode _load(String yaml, String source) {
     final YamlNode root;
     try {
       // PyYAML, and so CI, skips a byte order mark. package:yaml does not.
@@ -86,7 +104,7 @@ abstract final class DeckParser {
       // StackOverflowError on nesting thousands of levels deep.
       throw DeckParseException('could not be read as YAML: $e', source: source);
     }
-    return _Reader(source).deck(root);
+    return root;
   }
 }
 
@@ -125,7 +143,14 @@ const _cardFields = {
   'modes',
   'pair',
   'picture',
+  'phrasebook',
+  'bases',
+  'rules',
+  'wiktionary',
 };
+
+/// A layer-only card's fields: a single-file card's, its id being its key.
+final _layerCardFields = _cardFields.difference(const {'id'});
 
 /// What a ref may give: the native side of a card written in another deck
 /// (ADR-0018).
@@ -139,7 +164,107 @@ const _refFields = {
   'notes',
   'examples',
   'modes',
+  'wiktionary',
 };
+
+// The B1 format (spec sections 2 to 8).
+const _coreHeaderFields = {
+  'schema',
+  'id',
+  'part',
+  'kind',
+  'language',
+  'license',
+  'authors',
+  'source',
+  'tags',
+  'theme',
+  'cards',
+  'pattern',
+  'table',
+  'rules',
+};
+const _layerHeaderFields = {
+  'schema',
+  'id',
+  'kind',
+  'core',
+  'native',
+  'name',
+  'description',
+  'license',
+  'authors',
+  'source',
+  'tags',
+  'cards',
+  'pattern',
+  'table',
+  'rules',
+};
+const _coreCardFields = {
+  'id',
+  'target',
+  'reading',
+  'ipa',
+  'alt_target',
+  'pos',
+  'gender',
+  'tags',
+  'audio',
+  'examples',
+  'modes',
+  'picture',
+  'notes',
+  'phrasebook',
+  'bases',
+  'rules',
+};
+const _coreRefFields = {
+  'ref',
+  'reading',
+  'ipa',
+  'tags',
+  'modes',
+  'examples',
+  'notes',
+};
+const _coreExampleFields = {'target', 'reading', 'ipa', 'bases'};
+const _layerEntryFields = {
+  'native',
+  'alt_native',
+  'notes',
+  'examples',
+  'bases',
+  'wiktionary',
+};
+const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words', 'region'};
+const _noteWordFields = {'word', 'reading', 'ipa'};
+const _baseFields = {
+  'word',
+  'ref',
+  'base',
+  'reading',
+  'ipa',
+  'meaning',
+  'wiktionary',
+};
+const _tableFields = {'applies_to', 'slots', 'rows'};
+const _appliesToFields = {'pos', 'tags', 'except'};
+const _rowFields = {'word', 'key', 'forms', 'readings', 'ipas'};
+const _ruleFields = {'id', 'slots', 'words'};
+
+/// YAML 1.1's boolean words, which a slot key or a note id may not be:
+/// other tools may still read them as booleans.
+const _yaml11Words = {'yes', 'no', 'on', 'off', 'true', 'false', 'y', 'n'};
+
+/// A slot key or a written note id: it starts with a letter, so it is never
+/// a number, nor a note's position.
+final _letterKey = RegExp(r'^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$');
+
+/// A placeholder in a note's text or a rule's explanation (spec 6.4), and
+/// anything that looks like one.
+final _placeholder = RegExp(r'\{([1-9][0-9]*)\}');
+final _bracedNumber = RegExp(r'\{([0-9]+)\}');
 
 const _patternFields = {
   'name',
@@ -172,7 +297,7 @@ const _passageFields = {
 const _sentenceFields = {'text', 'reading', 'ipa'};
 const _glossFields = {'word', 'modern', 'reading', 'ipa', 'meaning', 'note'};
 const _questionFields = {'id', 'prompt', 'options', 'answer'};
-const _exampleFields = {'target', 'native', 'reading', 'ipa'};
+const _exampleFields = {'target', 'native', 'reading', 'ipa', 'bases'};
 const _authorFields = {'name', 'url'};
 
 /// Deck and card ids: lowercase letters and digits, joined by single hyphens.
@@ -188,6 +313,11 @@ class _Reader {
 
   final String source;
 
+  /// The code of the language the file teaches, once it is known: what its
+  /// rule ids start with. A layer, which has no language block, takes it
+  /// from its id.
+  String lang = '';
+
   Never fail(YamlNode node, String message) {
     final start = node.span.start;
     throw DeckParseException(
@@ -198,7 +328,8 @@ class _Reader {
     );
   }
 
-  Deck deck(YamlNode root) {
+  /// The top-level fields of a deck, a core or a layer, its schema checked.
+  _Fields top(YamlNode root) {
     if (root is! YamlMap) {
       fail(
         root,
@@ -208,14 +339,57 @@ class _Reader {
       );
     }
     final fields = _Fields(this, root, '');
-
     final schemaNode = fields.require('schema');
     final schema = _value(schemaNode);
-    if (schema is! num || schema != 1) {
+    if (!_isNumber(schema) || schema != 1) {
       fail(schemaNode, 'schema must be 1, got ${_describe(schemaNode)}');
     }
+    return fields;
+  }
+
+  /// Refuses a core, a layer, and what only they have, in a single-file
+  /// deck, in the order the validator tells them apart (spec 2.2).
+  void refuseCoreAndLayer(_Fields fields, YamlNode? kindNode) {
+    if (kindNode != null && _value(kindNode) == 'layer') {
+      fail(kindNode, 'this is a layer; it is read with DeckParser.parseLayer');
+    }
+    final partNode = fields.node('part');
+    if (partNode != null) {
+      if (_value(partNode) == 'core') {
+        fail(
+          partNode,
+          'this is a core file; it is read with DeckParser.parseCore and '
+          'merged with a layer',
+        );
+      }
+      fail(
+        partNode,
+        'part must be "core", or left out on a single-file deck; got '
+        '${_describe(partNode)}',
+      );
+    }
+    if (fields.has('core')) {
+      fail(fields.keyNode('core'), 'only a layer names a core (kind: "layer")');
+    }
+    for (final key in const <String>['table', 'rules']) {
+      if (fields.has(key)) {
+        fail(
+          fields.keyNode(key),
+          'only a rules core has $key; a rules deck is written as a core and '
+          'layers',
+        );
+      }
+    }
+    if (kindNode != null && _value(kindNode) == 'rules') {
+      fail(kindNode, 'a rules deck is written as a core and layers');
+    }
+  }
+
+  Deck deck(YamlNode root) {
+    final fields = top(root);
 
     final kindNode = fields.node('kind');
+    refuseCoreAndLayer(fields, kindNode);
     final kind = kindNode == null
         ? DeckKind.vocab
         : switch (_value(kindNode)) {
@@ -253,6 +427,7 @@ class _Reader {
       'language',
       full: true,
     );
+    lang = language.code;
     final native = this.language(
       fields.require('native'),
       'native',
@@ -314,6 +489,9 @@ class _Reader {
                 source: passage.source ?? deckSource,
               ),
         ]);
+      case DeckKind.rules:
+        // Refused above, with the reason, before the fields are read.
+        fail(kindNode!, 'a rules deck is written as a core and layers');
     }
 
     return Deck(
@@ -465,34 +643,43 @@ class _Reader {
       ipa: fields.optionalString('ipa', allowEmpty: false),
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
       tags: fields.has('tags') ? fields.strings('tags') : null,
-      notes: fields.optionalString('notes'),
+      notes: fields.has('notes')
+          ? notes(fields.node('notes'), '$path.notes')
+          : null,
       examples: fields.has('examples')
           ? examples(fields.node('examples'), '$path.examples')
           : null,
       modes: fields.has('modes')
           ? modes(fields.node('modes'), '$path.modes')
           : null,
+      wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule)
+          ? true
+          : null,
     );
   }
 
   /// One card. [seen] maps each card id so far to where it was declared.
+  /// A layer-only card is written without an id: its [key] in the layer's
+  /// `cards` is its id.
   Card card(
     YamlNode node,
     String path,
     String deckId,
-    Map<String, YamlNode> seen,
-  ) {
+    Map<String, YamlNode> seen, {
+    YamlNode? key,
+  }) {
     final fields = this.fields(node, path);
-    fields.allowOnly(_cardFields);
+    fields.allowOnly(key == null ? _cardFields : _layerCardFields);
 
-    final idNode = fields.require('id');
-    final id = this.id(idNode, '$path.id');
+    final idNode = key ?? fields.require('id');
+    final id = this.id(idNode, key == null ? '$path.id' : path);
     final first = seen[id];
     if (first != null) {
       fail(idNode, '$path.id: duplicate card id "$id", ${_firstUsed(first)}');
     }
     seen[id] = idNode;
 
+    final notes = this.notes(fields.node('notes'), '$path.notes');
     return Card(
       id: id,
       deckId: deckId,
@@ -505,12 +692,20 @@ class _Reader {
       pos: fields.optionalString('pos', allowEmpty: false),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
-      notes: fields.optionalString('notes'),
+      notes: notes,
       audio: fields.optionalString('audio'),
       examples: examples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
-      pair: fields.optionalString('pair', allowEmpty: false),
+      // Pair notes are the one source of pairs (OPEN-16); a written pair
+      // stays valid, and comes first.
+      pair:
+          fields.optionalString('pair', allowEmpty: false) ??
+          notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
+      phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
+      bases: bases(fields.node('bases'), '$path.bases', core: false),
+      rules: ruleIds(fields.node('rules'), '$path.rules'),
+      wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule),
     );
   }
 
@@ -530,6 +725,7 @@ class _Reader {
       native: fields.string('native'),
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
+      bases: bases(fields.node('bases'), '$path.bases', core: false),
     );
   }
 
@@ -545,11 +741,17 @@ class _Reader {
   DrillMode mode(YamlNode node, String path) {
     final name = text(node, path);
     final mode = DrillMode.tryParse(name);
+    // Grammar understood is asked of a rules table's cells, which the
+    // expander makes; a card cannot declare it (spec 4.7).
+    if (mode == DrillMode.grammarUnderstood) {
+      fail(node, "$path: grammarUnderstood is only for a rules table's cells");
+    }
     // Only a reading deck's questions are read; a card has nothing to read.
     if (mode == null || mode == DrillMode.reading) {
       final modes = <String>[
         for (final m in DrillMode.values)
-          if (m != DrillMode.reading) m.name,
+          if (m != DrillMode.reading && m != DrillMode.grammarUnderstood)
+            m.name,
       ];
       fail(
         node,
@@ -557,6 +759,1124 @@ class _Reader {
       );
     }
     return mode;
+  }
+
+  // The B1 format's card fields (spec 3 to 8).
+
+  /// A mark such as `phrasebook: true`: true, or left out. False is refused
+  /// too, as the validator refuses it. [rule] says what it must be.
+  bool mark(_Fields fields, String key, String path, String rule) {
+    final node = fields.node(key);
+    if (node == null) return false;
+    if (_value(node) == true) return true;
+    fail(node, '$path: $key must be $rule; got ${_describe(node)}');
+  }
+
+  /// A card's notes (spec 6.1): text, read as one note of kind `note`, or a
+  /// list of typed notes, their placeholders filled. Blank text is no notes.
+  List<CardNote> notes(YamlNode? node, String path) =>
+      List<CardNote>.unmodifiable(<CardNote>[
+        for (final note in noteItems(node, path, core: false))
+          CardNote(
+            id: note.id,
+            kind: note.kind,
+            text: _filled(note.text!, note.words),
+            ref: note.ref,
+            source: note.source,
+            regions: note.regions,
+          ),
+      ]);
+
+  /// A core card's notes (spec 6.2): each with its id and its language
+  /// facts, its text being in each layer.
+  List<CoreNote> coreNotes(YamlNode? node, String path) =>
+      List<CoreNote>.unmodifiable(<CoreNote>[
+        for (final note in noteItems(node, path, core: true))
+          CoreNote(
+            id: note.id,
+            kind: note.kind,
+            ref: note.ref,
+            source: note.source,
+            words: note.words,
+            regions: note.regions,
+          ),
+      ]);
+
+  List<_NoteItem> noteItems(YamlNode? node, String path, {required bool core}) {
+    if (node == null || _value(node) == null) return const <_NoteItem>[];
+    if (core && node is! YamlList) {
+      fail(
+        node,
+        '$path must be a list of notes in a core file; their text is in each '
+        'layer',
+      );
+    }
+    if (node is YamlScalar) {
+      final value = _value(node);
+      if (value is! String) fail(node, _notText(node, path));
+      // Today's validator accepts a blank note, which must not become one
+      // empty note.
+      if (_blank.hasMatch(value)) return const <_NoteItem>[];
+      return <_NoteItem>[
+        (
+          id: '1',
+          kind: NoteKind.note,
+          text: value,
+          ref: null,
+          source: null,
+          words: const <NoteWord>[],
+          regions: const <String>[],
+        ),
+      ];
+    }
+    if (node is! YamlList) {
+      fail(
+        node,
+        '$path must be text, or a list of notes, each with a kind and its '
+        'text',
+      );
+    }
+    if (node.nodes.isEmpty) {
+      fail(node, '$path must not be an empty list; leave it out');
+    }
+    final ids = <String, YamlNode>{};
+    return <_NoteItem>[
+      for (final (i, item) in node.nodes.indexed)
+        noteItem(item, '$path[$i]', i, ids, core: core),
+    ];
+  }
+
+  _NoteItem noteItem(
+    YamlNode node,
+    String path,
+    int index,
+    Map<String, YamlNode> ids, {
+    required bool core,
+  }) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_noteFields);
+    final kindNode = fields.require('kind');
+    final kind = switch (_value(kindNode)) {
+      'pair' => NoteKind.pair,
+      'culture' => NoteKind.culture,
+      'usage' => NoteKind.usage,
+      'behaviour' => NoteKind.behaviour,
+      'note' => NoteKind.note,
+      _ => fail(
+        kindNode,
+        '$path.kind must be one of behaviour, culture, note, pair, usage, '
+        'got ${_describe(kindNode)}',
+      ),
+    };
+
+    final idNode = fields.node('id');
+    final String id;
+    if (idNode == null) {
+      if (core) {
+        fail(
+          node,
+          '$path.id is required in a core file: each layer names the note by '
+          'it',
+        );
+      }
+      // A note written without an id has its position: digits, which a
+      // written id, starting with a letter, never is.
+      id = '${index + 1}';
+    } else {
+      id = text(idNode, '$path.id');
+      if (!_letterKey.hasMatch(id) || _yaml11Words.contains(id)) {
+        fail(
+          idNode,
+          '$path.id must start with a letter and match [a-z0-9-]+, and not '
+          'be a YAML 1.1 boolean word, got ${_describe(idNode)}',
+        );
+      }
+      if (ids[id] case final first?) {
+        fail(idNode, '$path.id "$id" is used twice, ${_firstUsed(first)}');
+      }
+      ids[id] = idNode;
+    }
+
+    String? noteText;
+    final textNode = fields.node('text');
+    if (core) {
+      if (textNode != null) {
+        fail(
+          fields.keyNode('text'),
+          "$path.text: a core note's text is in each layer, under "
+          'cards.<id>.notes.$id',
+        );
+      }
+    } else {
+      noteText = text(fields.require('text'), '$path.text');
+    }
+
+    final refNode = fields.node('ref');
+    String? ref;
+    if (kind == NoteKind.pair) {
+      ref = this.id(
+        refNode ??
+            fail(
+              node,
+              '$path.ref: a pair note names its partner, the id of another '
+              '$lang card',
+            ),
+        '$path.ref',
+      );
+    } else if (refNode != null) {
+      fail(fields.keyNode('ref'), '$path.ref is only for a pair note');
+    }
+
+    final String? source;
+    if (kind == NoteKind.culture && !fields.has('source')) {
+      fail(
+        node,
+        '$path.source: a culture note names where its claims can be checked',
+      );
+    }
+    source = fields.has('source')
+        ? text(fields.require('source'), '$path.source')
+        : null;
+
+    final words = noteWords(fields.node('words'), '$path.words');
+    if (noteText != null) {
+      placeholders(textNode!, noteText, words.length, '$path.text', 'note');
+    }
+    return (
+      id: id,
+      kind: kind,
+      text: noteText,
+      ref: ref,
+      source: source,
+      words: words,
+      regions: noteRegions(fields.node('region'), '$path.region'),
+    );
+  }
+
+  /// A region note's regions (spec 10.5): a region id, or a non-empty list
+  /// of them. Whether each is a region of the language's path is the
+  /// validator's to say.
+  List<String> noteRegions(YamlNode? node, String path) {
+    if (node == null) return const <String>[];
+    final items = node is YamlList ? node.nodes : <YamlNode>[node];
+    final regions = <String>[];
+    for (final item in items) {
+      final value = _value(item);
+      if (value is! String ||
+          !_letterKey.hasMatch(value) ||
+          _yaml11Words.contains(value)) {
+        fail(
+          item,
+          '$path must be a region id, or a list of them, such as '
+          '"telangana", got ${_describe(node)}',
+        );
+      }
+      if (regions.contains(value)) {
+        fail(item, '$path lists "$value" twice');
+      }
+      regions.add(value);
+    }
+    if (regions.isEmpty) {
+      fail(
+        node,
+        '$path must be a region id, or a list of them, such as "telangana", '
+        'got ${_describe(node)}',
+      );
+    }
+    return List<String>.unmodifiable(regions);
+  }
+
+  /// The language facts a note or a rule quotes: `{ word, reading, ipa? }`.
+  List<NoteWord> noteWords(YamlNode? node, String path) {
+    if (node == null || _value(node) == null) return const <NoteWord>[];
+    if (node is! YamlList) {
+      fail(node, '$path must be a list of { word, reading }');
+    }
+    return List<NoteWord>.unmodifiable(<NoteWord>[
+      for (final (k, item) in node.nodes.indexed) noteWord(item, '$path[$k]'),
+    ]);
+  }
+
+  NoteWord noteWord(YamlNode node, String path) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_noteWordFields);
+    return NoteWord(
+      word: fields.string('word'),
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
+    );
+  }
+
+  /// Fails on a placeholder in [text] past its [count] words, and on a
+  /// braced number that is not a placeholder, such as `{0}` or `{01}`
+  /// (spec 6.4). [owner] is what has the words: a note or a rule.
+  void placeholders(
+    YamlNode node,
+    String text,
+    int count,
+    String path,
+    String owner,
+  ) {
+    for (final match in _bracedNumber.allMatches(text)) {
+      final token = match[0]!;
+      if (_placeholder.matchAsPrefix(token)?.end != token.length) {
+        fail(
+          node,
+          '$path: $token is not a placeholder: placeholders count from {1}, '
+          'without leading zeros',
+        );
+      }
+      final n = int.tryParse(match[1]!);
+      if (n == null || n > count) {
+        fail(node, '$path uses $token, but the $owner has $count words');
+      }
+    }
+  }
+
+  /// A card's or an example's base words (spec 8.1). A [core] file gives a
+  /// base written in full without its meaning, which is in each layer.
+  List<CardBase> bases(YamlNode? node, String path, {required bool core}) {
+    if (node == null || _value(node) == null) return const <CardBase>[];
+    if (node is! YamlList) {
+      fail(
+        node,
+        '$path must be a list of { word, ref } or { word, base, reading }',
+      );
+    }
+    return List<CardBase>.unmodifiable(<CardBase>[
+      for (final (i, item) in node.nodes.indexed)
+        base(item, '$path[$i]', core: core),
+    ]);
+  }
+
+  CardBase base(YamlNode node, String path, {required bool core}) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(_baseFields);
+    final word = fields.string('word');
+    final byRef = fields.has('ref');
+    final inFull = fields.has('base');
+    if (byRef && inFull) fail(node, '$path gives ref or base, not both');
+    if (!byRef && !inFull) {
+      fail(node, '$path needs ref, or base and its reading');
+    }
+    if (byRef) {
+      for (final key in const <String>[
+        'reading',
+        'ipa',
+        'meaning',
+        'wiktionary',
+      ]) {
+        if (fields.has(key)) {
+          fail(
+            fields.keyNode(key),
+            '$path.$key is only for a base written in full',
+          );
+        }
+      }
+      return CardBase(word: word, ref: id(fields.require('ref'), '$path.ref'));
+    }
+    if (core) {
+      for (final key in const <String>['meaning', 'wiktionary']) {
+        if (fields.has(key)) {
+          fail(
+            fields.keyNode(key),
+            "$path.$key: a core file's meanings are in each layer, under "
+            'cards.<id>.bases',
+          );
+        }
+      }
+    } else if (!fields.has('meaning')) {
+      fail(node, '$path.meaning is required beside base');
+    }
+    return CardBase(
+      word: word,
+      base: fields.string('base'),
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
+      meaning: core ? null : fields.string('meaning'),
+      wiktionary: !core && mark(fields, 'wiktionary', path, _wiktionaryRule),
+    );
+  }
+
+  /// The rules a sentence uses, by rule id (spec 5).
+  List<String> ruleIds(YamlNode? node, String path) {
+    if (node == null || _value(node) == null) return const <String>[];
+    if (node is! YamlList) {
+      fail(
+        node,
+        '$path must be a list of rule ids, such as ["$lang-rule-past"]',
+      );
+    }
+    final ids = <String>[];
+    for (final (i, item) in node.nodes.indexed) {
+      final id = text(item, '$path[$i]');
+      if (!_ruleId(lang).hasMatch(id)) {
+        fail(
+          item,
+          '$path[$i] must be a $lang rule id, $lang-rule- and a name, got '
+          '"$id"',
+        );
+      }
+      if (ids.contains(id)) fail(item, '$path lists "$id" twice');
+      ids.add(id);
+    }
+    return List<String>.unmodifiable(ids);
+  }
+
+  /// The key of a mapping entry as text. A key YAML reads as anything else
+  /// is refused, so that `1:` is never the number 1 (spec 2.6).
+  String keyText(YamlNode key, String path) {
+    final value = _value(key);
+    if (value is String) return value;
+    fail(
+      key,
+      '$path: key ${_pythonRepr(key)} was read as ${_pythonType(value)}; '
+      'quote it',
+    );
+  }
+
+  /// The entries of the mapping [node], each key read as text. [what] says
+  /// what the mapping should be, for a node that is not one.
+  List<(String, YamlNode, YamlNode)> keyed(
+    YamlNode node,
+    String path,
+    String what,
+  ) {
+    if (node is! YamlMap) fail(node, '$path: $what');
+    return <(String, YamlNode, YamlNode)>[
+      for (final entry in node.nodes.entries)
+        (
+          keyText(entry.key as YamlNode, path),
+          entry.key as YamlNode,
+          entry.value,
+        ),
+    ];
+  }
+
+  // A core file (spec 2.2 to 2.5, 4.2).
+
+  DeckCore core(YamlNode root) {
+    final fields = top(root);
+    final partNode = fields.node('part');
+    final kindNode = fields.node('kind');
+    if (kindNode != null && _value(kindNode) == 'layer') {
+      fail(
+        partNode ?? kindNode,
+        'a layer has no part; only a core is marked part: "core"',
+      );
+    }
+    if (partNode == null || _value(partNode) != 'core') {
+      fail(
+        partNode ?? fields.map,
+        'a core file is marked part: "core"${partNode == null ? '' : ', got ${_describe(partNode)}'}',
+      );
+    }
+    final kind = kindNode == null
+        ? DeckKind.vocab
+        : switch (_value(kindNode)) {
+            'vocab' => DeckKind.vocab,
+            'grammar' => DeckKind.grammar,
+            'rules' => DeckKind.rules,
+            'reading' => fail(
+              kindNode,
+              'a core is vocab, grammar or rules, got "reading"; a reading '
+              'deck stays a single-file deck',
+            ),
+            _ => fail(
+              kindNode,
+              'a core is vocab, grammar or rules, got ${_describe(kindNode)}',
+            ),
+          };
+    final language = this.language(
+      fields.require('language'),
+      'language',
+      full: true,
+    );
+    lang = language.code;
+    for (final (key, message) in <(String, String)>[
+      (
+        'native',
+        'a core file has no native: the language it is taught from is in '
+            'each layer, in decks/$lang/<native>/',
+      ),
+      (
+        'name',
+        "a core file's name is in each layer, in the learner's language",
+      ),
+      (
+        'description',
+        "a core file's description is in each layer, in the learner's "
+            'language',
+      ),
+    ]) {
+      if (fields.has(key)) fail(fields.keyNode(key), message);
+    }
+    fields.allowOnly(_coreHeaderFields);
+
+    final idNode = fields.require('id');
+    final id = this.id(idNode, 'id');
+    if (!_coreId(lang).hasMatch(id)) {
+      fail(
+        idNode,
+        'id must be $lang- and a name, the filename stem, got "$id"',
+      );
+    }
+    final license = fields.string('license');
+    final tags = fields.strings('tags');
+    final authors = this.authors(fields.node('authors'));
+    final coreSource = fields.optionalString('source');
+
+    void refuse(String key, String message) {
+      if (fields.has(key)) fail(fields.keyNode(key), message);
+    }
+
+    var cards = const <CoreCard>[];
+    CorePattern? pattern;
+    RuleTable? table;
+    var rules = const <CoreRule>[];
+    switch (kind) {
+      case DeckKind.vocab:
+        refuse(
+          'pattern',
+          'pattern is only for a grammar deck; add "kind: grammar" or remove '
+              'it',
+        );
+        refuse('table', 'only a rules core has table');
+        refuse('rules', 'only a rules core has rules');
+        cards = coreCards(fields.require('cards'));
+      case DeckKind.grammar:
+        refuse('cards', 'a grammar deck has a pattern, not cards');
+        refuse('table', 'only a rules core has table');
+        refuse('rules', 'only a rules core has rules');
+        pattern = corePattern(fields.require('pattern'));
+      case DeckKind.rules:
+        refuse('cards', 'a rules deck has a table and rules, not cards');
+        refuse('pattern', 'a rules deck has a table and rules, not a pattern');
+        refuse('theme', 'a rules deck has no theme');
+        table = ruleTable(fields.require('table'));
+        rules = coreRules(fields.require('rules'), table.slots);
+      case DeckKind.reading:
+        fail(kindNode!, 'a core is vocab, grammar or rules');
+    }
+    final theme = fields.has('theme')
+        ? this.id(fields.require('theme'), 'theme')
+        : null;
+
+    return DeckCore(
+      id: id,
+      kind: kind,
+      language: language,
+      license: license,
+      authors: authors,
+      source: coreSource,
+      tags: tags,
+      theme: theme,
+      cards: cards,
+      pattern: pattern,
+      table: table,
+      rules: rules,
+    );
+  }
+
+  /// A core's cards: each written, with the language side only, or listed
+  /// by ref (spec 2.3).
+  List<CoreCard> coreCards(YamlNode node) {
+    final seen = <String, YamlNode>{};
+    return List<CoreCard>.unmodifiable(<CoreCard>[
+      for (final (i, item) in list(node, 'cards').indexed)
+        if (item is YamlMap && item.nodes.containsKey('ref'))
+          coreRef(item, 'cards[$i]', seen)
+        else
+          coreCard(item, 'cards[$i]', seen),
+    ]);
+  }
+
+  /// [node]'s card id, failing if [seen] has it already.
+  String cardId(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final id = this.id(node, path);
+    final first = seen[id];
+    if (first != null) {
+      fail(
+        node,
+        '$path: card "$id" is already in the deck, ${_firstUsed(first)}',
+      );
+    }
+    seen[id] = node;
+    return id;
+  }
+
+  CoreWritten coreCard(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final fields = this.fields(node, path);
+    final id = cardId(fields.require('id'), '$path.id', seen);
+    for (final key in const <String>['native', 'alt_native', 'wiktionary']) {
+      if (fields.has(key)) {
+        fail(
+          fields.keyNode(key),
+          '$path: a core card\'s "$key" is in each layer, under cards.$id',
+        );
+      }
+    }
+    if (fields.has('pair')) {
+      fail(
+        fields.keyNode('pair'),
+        '$path: pair: in a core file a pair note names the partner, '
+        '{ kind: "pair", ref: ... }; Hear takes its sound-alike from there',
+      );
+    }
+    fields.allowOnly(_coreCardFields);
+    return CoreWritten(
+      id: id,
+      target: fields.string('target'),
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
+      altTarget: fields.strings('alt_target'),
+      pos: fields.optionalString('pos', allowEmpty: false),
+      gender: fields.optionalString('gender'),
+      tags: fields.strings('tags'),
+      audio: fields.optionalString('audio'),
+      examples: coreExamples(fields.node('examples'), '$path.examples'),
+      modes: modes(fields.node('modes'), '$path.modes'),
+      picture: fields.optionalString('picture', allowEmpty: false),
+      notes: coreNotes(fields.node('notes'), '$path.notes'),
+      phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
+      bases: bases(fields.node('bases'), '$path.bases', core: true),
+      rules: ruleIds(fields.node('rules'), '$path.rules'),
+    );
+  }
+
+  CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final fields = this.fields(node, path);
+    final id = cardId(fields.require('ref'), '$path.ref', seen);
+    for (final key in const <String>['native', 'alt_native', 'wiktionary']) {
+      if (fields.has(key)) {
+        fail(
+          fields.keyNode(key),
+          '$path: a core card\'s "$key" is in each layer, under cards.$id',
+        );
+      }
+    }
+    fields.allowOnly(_coreRefFields);
+    return CoreRef(
+      id: id,
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
+      tags: fields.has('tags') ? fields.strings('tags') : null,
+      modes: fields.has('modes')
+          ? modes(fields.node('modes'), '$path.modes')
+          : null,
+      examples: fields.has('examples')
+          ? coreExamples(fields.node('examples'), '$path.examples')
+          : null,
+      notes: fields.has('notes')
+          ? coreNotes(fields.node('notes'), '$path.notes')
+          : null,
+    );
+  }
+
+  /// A core card's examples, without their translations, which each layer
+  /// gives keyed by the example's target: so no two targets are the same.
+  List<CoreExample> coreExamples(YamlNode? node, String path) {
+    if (node == null || _value(node) == null) return const <CoreExample>[];
+    final targets = <String, int>{};
+    final examples = <CoreExample>[];
+    for (final (j, item) in list(node, path, allowEmpty: true).indexed) {
+      final where = '$path[$j]';
+      final fields = this.fields(item, where);
+      if (fields.has('native')) {
+        fail(
+          fields.keyNode('native'),
+          "$where: a core example's translation is in each layer, keyed by "
+          'its target',
+        );
+      }
+      fields.allowOnly(_coreExampleFields);
+      final targetNode = fields.require('target');
+      final target = text(targetNode, '$where.target');
+      if (targets[target] case final k?) {
+        fail(
+          targetNode,
+          '$where has the same target as $path[$k]; a layer names an example '
+          'by its target',
+        );
+      }
+      targets[target] = j;
+      examples.add(
+        CoreExample(
+          target: target,
+          reading: fields.optionalString('reading', allowEmpty: false),
+          ipa: fields.optionalString('ipa', allowEmpty: false),
+          bases: bases(fields.node('bases'), '$where.bases', core: true),
+        ),
+      );
+    }
+    return List<CoreExample>.unmodifiable(examples);
+  }
+
+  /// A grammar core's pattern: its slots and its entries' forms, without
+  /// the names, prompt, notes and glosses, which each layer gives.
+  CorePattern corePattern(YamlNode node) {
+    final fields = this.fields(node, 'pattern');
+    for (final key in const <String>['name', 'slot_name', 'prompt', 'notes']) {
+      if (fields.has(key)) {
+        fail(
+          fields.keyNode(key),
+          'pattern: a core pattern\'s "$key" is in each layer, under pattern',
+        );
+      }
+    }
+    fields.allowOnly(const {'slots', 'entries'});
+    final slots = this.slots(fields.require('slots'));
+    final lemmas = <String, YamlNode>{};
+    final keys = <String, YamlNode>{};
+    return CorePattern(
+      slots: slots,
+      entries: List<PatternEntry>.unmodifiable(<PatternEntry>[
+        for (final (i, item) in list(
+          fields.require('entries'),
+          'pattern.entries',
+        ).indexed)
+          entry(item, 'pattern.entries[$i]', slots, lemmas, keys, core: true),
+      ]),
+    );
+  }
+
+  /// A rules core's table (spec 4.2): which words are its rows, its slots,
+  /// and each row's forms. Its labels are each layer's.
+  RuleTable ruleTable(YamlNode node) {
+    final fields = this.fields(node, 'table');
+    keyed(node, 'table', 'must be a mapping');
+    fields.allowOnly(_tableFields);
+    final appliesTo = this.appliesTo(fields.require('applies_to'));
+    final slots = slotKeys(fields.require('slots'));
+    final words = <String, YamlNode>{};
+    final parts = <String, YamlNode>{};
+    return RuleTable(
+      appliesTo: appliesTo,
+      slots: slots,
+      slotName: '',
+      labels: const <String, String>{},
+      rows: List<RuleRow>.unmodifiable(<RuleRow>[
+        for (final (i, item) in list(
+          fields.require('rows'),
+          'table.rows',
+        ).indexed)
+          ruleRow(item, 'table.rows[$i]', slots, words, parts),
+      ]),
+    );
+  }
+
+  AppliesTo appliesTo(YamlNode node) {
+    final fields = this.fields(node, 'table.applies_to');
+    keyed(node, 'table.applies_to', 'must be a mapping');
+    fields.allowOnly(_appliesToFields);
+    final posNode = fields.require('pos');
+    final pos = fields.strings('pos');
+    if (pos.isEmpty) {
+      fail(
+        posNode,
+        'table.applies_to.pos must be a non-empty list of parts of speech',
+      );
+    }
+    final exceptNode = fields.node('except');
+    return AppliesTo(
+      pos: pos,
+      tags: fields.strings('tags'),
+      except: Set<String>.unmodifiable(<String>{
+        if (exceptNode != null && _value(exceptNode) != null)
+          for (final (i, item) in list(
+            exceptNode,
+            'table.applies_to.except',
+            allowEmpty: true,
+          ).indexed)
+            id(item, 'table.applies_to.except[$i]'),
+      }),
+    );
+  }
+
+  /// A rules table's slot keys, in order: each starts with a letter, so it
+  /// is never a number, and is not a YAML 1.1 boolean word.
+  List<String> slotKeys(YamlNode node) {
+    final slots = <String>[];
+    for (final (i, item) in list(node, 'table.slots').indexed) {
+      final slot = text(item, 'table.slots[$i]');
+      if (!_letterKey.hasMatch(slot) || _yaml11Words.contains(slot)) {
+        fail(
+          item,
+          'table.slots[$i] must start with a letter and match [a-z0-9-]+, and '
+          'not be a YAML 1.1 boolean word, got "$slot"',
+        );
+      }
+      if (slots.contains(slot)) {
+        fail(item, 'table.slots contains duplicates: "$slot"');
+      }
+      slots.add(slot);
+    }
+    return List<String>.unmodifiable(slots);
+  }
+
+  RuleRow ruleRow(
+    YamlNode node,
+    String path,
+    List<String> slots,
+    Map<String, YamlNode> words,
+    Map<String, YamlNode> parts,
+  ) {
+    final fields = this.fields(node, path);
+    keyed(node, path, 'must be a mapping');
+    fields.allowOnly(_rowFields);
+    final wordNode = fields.require('word');
+    final word = id(wordNode, '$path.word');
+    final where = 'table.rows[$word]';
+    if (words[word] case final first?) {
+      fail(wordNode, '$where: $word has a row already, ${_firstUsed(first)}');
+    }
+    words[word] = wordNode;
+    final keyNode = fields.node('key');
+    final key = keyNode == null ? null : id(keyNode, '$where.key');
+    final part = key ?? word.substring(word.lastIndexOf('-') + 1);
+    if (parts[part] != null) {
+      fail(
+        keyNode ?? wordNode,
+        '$where: "$part" already names another row; give one of them a key',
+      );
+    }
+    parts[part] = keyNode ?? wordNode;
+    final (:forms, :alternatives) = this.forms(
+      fields.require('forms'),
+      '$where.forms',
+      slots,
+    );
+    return RuleRow(
+      word: word,
+      key: key,
+      forms: forms,
+      alternatives: alternatives,
+      readings: fields.has('readings')
+          ? readings(fields.require('readings'), '$where.readings', forms)
+          : const <String, List<String>>{},
+      ipas: fields.has('ipas')
+          ? ipas(fields.require('ipas'), '$where.ipas', forms)
+          : const <String, String>{},
+    );
+  }
+
+  /// A rules core's rules: each owns one or more of the table's slots, and
+  /// every slot belongs to exactly one rule.
+  List<CoreRule> coreRules(YamlNode node, List<String> slots) {
+    final owner = <String, String>{};
+    final ids = <String, YamlNode>{};
+    final rules = <CoreRule>[];
+    for (final (i, item) in list(node, 'rules').indexed) {
+      final path = 'rules[$i]';
+      final fields = this.fields(item, path);
+      keyed(item, path, 'must be a mapping');
+      fields.allowOnly(_ruleFields);
+      final idNode = fields.require('id');
+      final id = text(idNode, '$path.id');
+      if (!_ruleId(lang).hasMatch(id)) {
+        fail(
+          idNode,
+          '$path: id must be $lang-rule- and a name, such as $lang-rule-past, '
+          'got "$id"',
+        );
+      }
+      if (ids[id] case final first?) {
+        fail(idNode, 'rule $id: duplicate rule id, ${_firstUsed(first)}');
+      }
+      ids[id] = idNode;
+      final slotsNode = fields.require('slots');
+      if (slotsNode is! YamlList || slotsNode.nodes.isEmpty) {
+        fail(
+          slotsNode,
+          "rule $id: slots must be a non-empty list of the table's slots",
+        );
+      }
+      final own = <String>[];
+      for (final (k, item) in slotsNode.nodes.indexed) {
+        final slot = text(item, 'rule $id: slots[$k]');
+        if (!slots.contains(slot)) {
+          fail(item, 'rule $id: "$slot" is not a slot of the table');
+        }
+        if (owner[slot] case final other?) {
+          fail(
+            item,
+            'rule $id: "$slot" is also in rule $other; a slot belongs to one '
+            'rule',
+          );
+        }
+        owner[slot] = id;
+        own.add(slot);
+      }
+      rules.add(
+        CoreRule(
+          id: id,
+          slots: List<String>.unmodifiable(own),
+          words: noteWords(fields.node('words'), 'rule $id: words'),
+        ),
+      );
+    }
+    for (final slot in slots) {
+      if (!owner.containsKey(slot)) {
+        fail(node, 'table.slots: "$slot" belongs to no rule');
+      }
+    }
+    return List<CoreRule>.unmodifiable(rules);
+  }
+
+  // A layer (spec 2.6, 4.5).
+
+  DeckLayer layer(YamlNode root) {
+    final fields = top(root);
+    final kindNode = fields.require('kind');
+    if (_value(kindNode) != 'layer') {
+      fail(
+        kindNode,
+        'a layer is marked kind: "layer", got ${_describe(kindNode)}',
+      );
+    }
+    final coreNode = fields.require('core');
+    final core = text(coreNode, 'core');
+    if (!_idPattern.hasMatch(core)) {
+      fail(
+        coreNode,
+        "core must be the id of a core file, such as 'te-home', got \"$core\"",
+      );
+    }
+    for (final (key, message) in <(String, String)>[
+      ('language', 'a layer takes its language from its core, $core'),
+      ('theme', 'a layer takes its theme from its core, $core'),
+      ('part', 'a layer has no part; only a core is marked part: "core"'),
+    ]) {
+      if (fields.has(key)) fail(fields.keyNode(key), message);
+    }
+    fields.allowOnly(_layerHeaderFields);
+
+    final idNode = fields.require('id');
+    final id = this.id(idNode, 'id');
+    // A layer has no language block: its id starts with the language's
+    // code, which merging checks against the core's.
+    lang = id.split('-').first;
+    final native = language(fields.require('native'), 'native', full: false);
+    final name = fields.string('name');
+    final license = fields.string('license');
+    return DeckLayer(
+      id: id,
+      core: core,
+      native: native,
+      name: name,
+      description: fields.optionalString('description'),
+      license: license,
+      authors: authors(fields.node('authors')),
+      source: fields.optionalString('source'),
+      tags: fields.strings('tags'),
+      cards: fields.has('cards')
+          ? layerCards(fields.require('cards'), id)
+          : const <String, LayerCard>{},
+      pattern: fields.has('pattern')
+          ? layerPattern(fields.require('pattern'))
+          : null,
+      table: fields.has('table') ? layerTable(fields.require('table')) : null,
+      rules: fields.has('rules')
+          ? layerRules(fields.require('rules'))
+          : const <String, LayerRule>{},
+      node: fields.map,
+      idNode: idNode,
+      coreNode: coreNode,
+    );
+  }
+
+  /// A layer's cards, by id: what this language gives each card of the
+  /// core, or, for an entry with a target, a card only this layer has.
+  Map<String, LayerCard> layerCards(YamlNode node, String deckId) {
+    final cards = <String, LayerCard>{};
+    for (final (id, key, value) in keyed(
+      node,
+      'cards',
+      "a layer's cards is a mapping of card id to what this language gives it",
+    )) {
+      final path = 'cards.$id';
+      this.id(key, path);
+      cards[id] = value is YamlMap && value.nodes.containsKey('target')
+          ? LayerOnlyCard(
+              card: card(value, path, deckId, <String, YamlNode>{}, key: key),
+              key: key,
+            )
+          : layerEntry(value, path, key);
+    }
+    return Map<String, LayerCard>.unmodifiable(cards);
+  }
+
+  LayerEntry layerEntry(YamlNode node, String path, YamlNode key) {
+    final fields = this.fields(node, path);
+    for (final (name, at, _) in keyed(node, path, 'must be a mapping')) {
+      if (!_layerEntryFields.contains(name)) {
+        fail(
+          at,
+          '$path: "$name" belongs to the word, in the core; a layer gives '
+          'native, alt_native, notes, examples, bases and wiktionary',
+        );
+      }
+    }
+    return LayerEntry(
+      native: fields.has('native') ? fields.string('native') : null,
+      altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
+      notes: fields.has('notes')
+          ? layerTexts(
+              fields.require('notes'),
+              '$path.notes',
+              "a mapping of the core note's id to its text",
+            )
+          : null,
+      examples: fields.has('examples')
+          ? layerExamples(fields.require('examples'), '$path.examples')
+          : null,
+      bases: fields.has('bases')
+          ? layerBases(fields.require('bases'), '$path.bases')
+          : null,
+      wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule)
+          ? true
+          : null,
+      key: key,
+    );
+  }
+
+  /// A mapping of keys to text in the learner's language.
+  Map<String, LayerText> layerTexts(YamlNode node, String path, String what) =>
+      Map<String, LayerText>.unmodifiable(<String, LayerText>{
+        for (final (name, key, value) in keyed(node, path, what))
+          name: LayerText(
+            text: text(value, '$path.$name'),
+            key: key,
+            node: value,
+          ),
+      });
+
+  Map<String, LayerExample> layerExamples(YamlNode node, String path) {
+    final examples = <String, LayerExample>{};
+    for (final (target, key, value) in keyed(
+      node,
+      path,
+      "a mapping of an example's target, as the core writes it, to its "
+      'translation',
+    )) {
+      final where = '$path.$target';
+      if (value is YamlMap) {
+        final fields = this.fields(value, where);
+        fields.allowOnly(const {'native', 'bases'});
+        examples[target] = LayerExample(
+          native: fields.string('native'),
+          bases: fields.has('bases')
+              ? layerBases(fields.require('bases'), '$where.bases')
+              : const <String, LayerBase>{},
+          key: key,
+        );
+      } else {
+        examples[target] = LayerExample(native: text(value, where), key: key);
+      }
+    }
+    return Map<String, LayerExample>.unmodifiable(examples);
+  }
+
+  /// An inline base's meaning, by its word: text, or `{ meaning,
+  /// wiktionary }`.
+  Map<String, LayerBase> layerBases(YamlNode node, String path) {
+    final bases = <String, LayerBase>{};
+    for (final (word, key, value) in keyed(
+      node,
+      path,
+      "a mapping of an inline base's word to its meaning",
+    )) {
+      final where = '$path.$word';
+      if (value is YamlMap) {
+        final fields = this.fields(value, where);
+        fields.allowOnly(const {'meaning', 'wiktionary'});
+        bases[word] = LayerBase(
+          meaning: fields.string('meaning'),
+          wiktionary: mark(fields, 'wiktionary', where, _wiktionaryRule),
+          key: key,
+        );
+      } else {
+        bases[word] = LayerBase(meaning: text(value, where), key: key);
+      }
+    }
+    return Map<String, LayerBase>.unmodifiable(bases);
+  }
+
+  LayerPattern layerPattern(YamlNode node) {
+    final fields = this.fields(node, 'pattern');
+    keyed(node, 'pattern', 'must be a mapping');
+    fields.allowOnly(_patternFields);
+    return LayerPattern(
+      name: fields.string('name'),
+      slotName: fields.string('slot_name'),
+      prompt: fields.string('prompt'),
+      slots: fields.has('slots')
+          ? layerTexts(
+              fields.require('slots'),
+              'pattern.slots',
+              'a mapping of a slot of the core to its label',
+            )
+          : const <String, LayerText>{},
+      entries: layerTexts(
+        fields.require('entries'),
+        'pattern.entries',
+        "a mapping of each core entry's id part to its gloss",
+      ),
+      notes: fields.optionalString('notes'),
+    );
+  }
+
+  LayerTable layerTable(YamlNode node) {
+    final fields = this.fields(node, 'table');
+    keyed(node, 'table', 'must be a mapping');
+    fields.allowOnly(const {'slot_name', 'slots', 'prompts'});
+    final promptsNode = fields.node('prompts');
+    return LayerTable(
+      slotName: fields.string('slot_name'),
+      labels: layerTexts(
+        fields.require('slots'),
+        'table.slots',
+        'a mapping of each slot of the core to its label',
+      ),
+      prompts: promptsNode == null
+          ? const <String, LayerPrompts>{}
+          : Map<String, LayerPrompts>.unmodifiable(<String, LayerPrompts>{
+              for (final (word, key, value) in keyed(
+                promptsNode,
+                'table.prompts',
+                "a mapping of a row's word to its prompts, by slot",
+              ))
+                word: LayerPrompts(
+                  texts: layerTexts(
+                    value,
+                    'table.prompts.$word',
+                    'a mapping of a slot to its prompt',
+                  ),
+                  key: key,
+                ),
+            }),
+    );
+  }
+
+  Map<String, LayerRule> layerRules(YamlNode node) {
+    final rules = <String, LayerRule>{};
+    for (final (id, key, value) in keyed(
+      node,
+      'rules',
+      'a mapping of each rule id to its name and explanation',
+    )) {
+      final where = 'rules.$id';
+      final fields = this.fields(value, where);
+      fields.allowOnly(const {'name', 'explanation'});
+      final explanation = fields.require('explanation');
+      rules[id] = LayerRule(
+        name: fields.string('name'),
+        explanation: text(explanation, '$where.explanation'),
+        key: key,
+        node: explanation,
+      );
+    }
+    return Map<String, LayerRule>.unmodifiable(rules);
   }
 
   /// A reading deck's passages. Passage and question ids share one
@@ -724,7 +2044,7 @@ class _Reader {
     for (final entry in map.nodes.entries) {
       final key = entry.key as YamlNode;
       final code = _value(key);
-      if (code is bool || code is num) {
+      if (code is bool || _isNumber(code)) {
         fail(key, _notText(key, 'the key ${_plainText(key)} in $path'));
       }
       if (code is! String || !_languageCode.hasMatch(code)) {
@@ -784,13 +2104,17 @@ class _Reader {
   /// One pattern row. [lemmas] and [keys] map each lemma and id part so far
   /// to where it was declared: the id part, the row's `key` or else its
   /// lemma, is in every expanded card id in its row.
+  ///
+  /// A [core] pattern's entry has no gloss: each layer gives it, keyed by
+  /// the entry's id part, and until then it is empty.
   PatternEntry entry(
     YamlNode node,
     String path,
     List<String> slots,
     Map<String, YamlNode> lemmas,
-    Map<String, YamlNode> keys,
-  ) {
+    Map<String, YamlNode> keys, {
+    bool core = false,
+  }) {
     final fields = this.fields(node, path);
     fields.allowOnly(_entryFields);
 
@@ -833,6 +2157,13 @@ class _Reader {
       );
     }
     keys[idPart] = idNode;
+    if (core && fields.has('gloss')) {
+      fail(
+        fields.keyNode('gloss'),
+        "$path: a core entry's gloss is in each layer, under "
+        'pattern.entries.$idPart',
+      );
+    }
 
     final (:forms, :alternatives) = this.forms(
       fields.require('forms'),
@@ -842,7 +2173,7 @@ class _Reader {
     return PatternEntry(
       lemma: lemma,
       key: key,
-      gloss: fields.string('gloss'),
+      gloss: core ? '' : fields.string('gloss'),
       forms: forms,
       alternatives: alternatives,
       reading: fields.has('reading')
@@ -859,7 +2190,7 @@ class _Reader {
   }
 
   /// Each form romanised (#47): a reading or a list of them for every slot
-  /// with a form, and none for a slot without.
+  /// with a form, and none for a slot without: left out, or null.
   Map<String, List<String>> readings(
     YamlNode node,
     String path,
@@ -873,10 +2204,13 @@ class _Reader {
       if (slot is! String || !forms.containsKey(slot)) {
         fail(key, '$path: ${_describe(key)} is not a slot');
       }
+      final value = entry.value;
       if (forms[slot] == null) {
+        // A null reading under a null form is a reading left out, as the
+        // validator reads it (spec 4.2).
+        if (value is YamlScalar && _value(value) == null) continue;
         fail(key, '$path: "$slot" has no form, so it has no reading');
       }
-      final value = entry.value;
       found[slot] = value is YamlList
           ? List.unmodifiable(<String>[
               for (final (i, item) in list(value, '$path.$slot').indexed)
@@ -895,7 +2229,7 @@ class _Reader {
   }
 
   /// The form shown in each slot, in the IPA (ADR-0025): one for every slot
-  /// with a form, and none for a slot without.
+  /// with a form, and none for a slot without: left out, or null.
   Map<String, String> ipas(
     YamlNode node,
     String path,
@@ -910,6 +2244,8 @@ class _Reader {
         fail(key, '$path: ${_describe(key)} is not a slot');
       }
       if (forms[slot] == null) {
+        // As a null reading under a null form: left out.
+        if (entry.value is YamlScalar && _value(entry.value) == null) continue;
         fail(key, '$path: "$slot" has no form, so it has no IPA');
       }
       found[slot] = text(entry.value, '$path.$slot');
@@ -938,7 +2274,7 @@ class _Reader {
     for (final entry in map.nodes.entries) {
       final key = entry.key as YamlNode;
       final slot = _value(key);
-      if (slot is bool || slot is num) {
+      if (slot is bool || _isNumber(slot)) {
         fail(key, _notText(key, 'the key ${_plainText(key)} in $path'));
       }
       if (slot is! String || !slots.contains(slot)) {
@@ -1056,65 +2392,118 @@ class _Fields {
   }
 }
 
-/// What [node] holds, typed the way PyYAML types it.
+/// A note as read, before it becomes a [CardNote] or a [CoreNote]: [text] is
+/// null in a core.
+typedef _NoteItem = ({
+  String id,
+  NoteKind kind,
+  String? text,
+  String? ref,
+  String? source,
+  List<NoteWord> words,
+  List<String> regions,
+});
+
+const _phrasebookRule = 'true, unquoted, or left out';
+const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
+
+/// [text] with each placeholder replaced by the word it counts to, shown
+/// with its reading (spec 6.4). One past [words] stays as written; the
+/// reader refuses it first.
+String _filled(String text, List<NoteWord> words) =>
+    text.replaceAllMapped(_placeholder, (m) {
+      final n = int.tryParse(m[1]!);
+      return n != null && n <= words.length ? words[n - 1].shown : m[0]!;
+    });
+
+/// A rule id of the language [lang]: `te-rule-lo`.
+RegExp _ruleId(String lang) =>
+    RegExp('^${RegExp.escape(lang)}-rule-[a-z0-9]+(?:-[a-z0-9]+)*\$');
+
+/// A core id of the language [lang]: `te-home`.
+RegExp _coreId(String lang) =>
+    RegExp('^${RegExp.escape(lang)}-[a-z0-9]+(?:-[a-z0-9]+)*\$');
+
+/// How Python, and so the validator, writes [key]'s value: `True`, `1`.
+String _pythonRepr(YamlNode key) => switch (_value(key)) {
+  true => 'True',
+  false => 'False',
+  null => 'None',
+  final int value => '$value',
+  final BigInt value => '$value',
+  final double value when value.isNaN => 'nan',
+  final double value when value.isInfinite => value > 0 ? 'inf' : '-inf',
+  final double value => '$value',
+  _ => _plainText(key),
+};
+
+/// The name Python gives [value]'s type, as the validator says it.
+String _pythonType(Object? value) => switch (value) {
+  bool() => 'bool',
+  int() || BigInt() => 'int',
+  double() => 'float',
+  null => 'NoneType',
+  Map() => 'dict',
+  List() => 'list',
+  _ => value.runtimeType.toString(),
+};
+
+/// What [node] holds, typed the way the validator types it.
 ///
-/// `tools/validate_decks.py` reads decks with PyYAML, which follows YAML 1.1:
-/// there a bare `no`, `yes`, `on` or `off` is a boolean, `1:30` is a number and
-/// `08` is text. package:yaml follows YAML 1.2, which disagrees on all of
-/// those. So an unquoted scalar is retyped here by PyYAML's rules, and
-/// `native: no` is the boolean false in both places, rather than the text "no"
-/// in one of them.
+/// `tools/validate_decks.py` reads plain scalars as YAML 1.2's core schema
+/// does (its `DeckResolver`; spec ground rule 8): only `true` and `false` in
+/// three spellings are booleans, so a bare `no`, `yes`, `on` or `off` is text;
+/// digits are a decimal integer (`060` is 60), `0o` and `0x` octal and
+/// hexadecimal; `1_000`, `1:30` and `0b101` are text. package:yaml reads
+/// nearly the same, but builds a few scalars by Dart's rules rather than the
+/// schema's, so an unquoted scalar is retyped here by the validator's
+/// patterns, character for character, and the two can never disagree.
 ///
-/// Only nulls, booleans and numbers are retyped. PyYAML also reads a bare
-/// `2001-12-14` as a date, which the validator rejects wherever it wants text,
-/// and refuses a bare `=` outright. Reading both as text only accepts more.
+/// A tag types a scalar in both parsers, as in `!!str 007`. The bare `!` is
+/// the exception: after it PyYAML types even a quoted scalar by its look,
+/// with the same patterns.
 Object? _value(YamlNode node) {
   final value = node.value;
   if (node is! YamlScalar) return value;
-  // A tag types the scalar in both parsers, as in `!!str 007`. The bare `!`
-  // is the exception: after it PyYAML types even a quoted scalar by its look.
   final tag = _tag(node);
   if (tag == null ? node.style != ScalarStyle.PLAIN : tag != '!') return value;
 
   final text = _plainText(node);
-  // PyYAML picks its patterns by the first character, then matches with
-  // Python's `$`, which also matches before a final newline. Only a quoted
-  // scalar tagged `!` can end in one.
-  final look = text.length > 1 && text.endsWith('\n')
-      ? text.substring(0, text.length - 1)
-      : text;
-  if (_yaml11Null.hasMatch(look)) return null;
-  if (_yaml11True.hasMatch(look)) return true;
-  if (_yaml11False.hasMatch(look)) return false;
-  if (_yaml11Int.hasMatch(look) || _yaml11Float.hasMatch(look)) {
-    return _yaml11Number(look);
-  }
+  if (_coreNull.hasMatch(text)) return null;
+  if (_coreTrue.hasMatch(text)) return true;
+  if (_coreFalse.hasMatch(text)) return false;
+  if (_coreInt.hasMatch(text)) return _coreInteger(text);
+  if (_coreFloat.hasMatch(text)) return _coreDouble(text);
   return text;
 }
 
-/// [text], which PyYAML types as a number, as a number with the same answer
-/// to the one question asked of it.
-///
-/// Only `schema` uses the value, to ask whether it is 1, and CI says yes to
-/// `0b1` and `0:1.0` as well as to `01` and `0x1`. So binary and base 60 are
-/// read as PyYAML reads them, in yaml/constructor.py. Octal is read as decimal,
-/// which gives the same answer, and whatever Dart cannot read, like `.inf`, is
-/// NaN: still a number, and never 1.
-num _yaml11Number(String text) {
-  var digits = text.replaceAll('_', '');
-  final sign = digits.startsWith('-') ? -1 : 1;
-  if (digits.startsWith('-') || digits.startsWith('+')) {
-    digits = digits.substring(1);
-  }
-  if (digits.contains(':')) {
-    // In doubles, so that a long one cannot wrap round to a small int.
-    return sign *
-        digits.split(':').fold(0.0, (sum, part) => sum * 60 + _double(part));
-  }
-  if (digits.startsWith('0b')) {
-    return sign * (int.tryParse(digits.substring(2), radix: 2) ?? double.nan);
-  }
-  return sign * (num.tryParse(digits) ?? double.nan);
+/// [text], which the validator reads as an integer, as the same integer:
+/// decimal even with leading zeros, `0o` octal, `0x` hexadecimal. One too
+/// long for an `int` is a [BigInt], as Python's int has no limit.
+Object _coreInteger(String text) {
+  final (digits, radix) = text.startsWith('0o')
+      ? (text.substring(2), 8)
+      : text.startsWith('0x')
+      ? (text.substring(2), 16)
+      : (text.startsWith('+') ? text.substring(1) : text, 10);
+  return int.tryParse(digits, radix: radix) ??
+      BigInt.parse(digits, radix: radix);
+}
+
+/// Whether [value] is a number: a Dart [num], or a [BigInt] for an integer
+/// too long for an `int`.
+bool _isNumber(Object? value) => value is num || value is BigInt;
+
+/// [text], which the validator reads as a float, as the same double.
+double _coreDouble(String text) {
+  final lower = text.toLowerCase();
+  final sign = lower.startsWith('-') ? -1.0 : 1.0;
+  final unsigned = lower.startsWith('-') || lower.startsWith('+')
+      ? lower.substring(1)
+      : lower;
+  if (unsigned == '.inf') return sign * double.infinity;
+  if (unsigned == '.nan') return double.nan;
+  return sign * double.parse(unsigned);
 }
 
 /// A scalar's text as written, without its anchor, tag or quotes.
@@ -1146,7 +2535,7 @@ String _describe(YamlNode node) {
 /// value is typed by how it looks, and a tagged one by its tag.
 String _notText(YamlNode node, String name) {
   final value = _value(node);
-  if (value is! bool && value is! num) {
+  if (value is! bool && !_isNumber(value)) {
     return value == null
         ? '$name has no value'
         : '$name must be text, not ${_describe(node)}';
@@ -1156,8 +2545,7 @@ String _notText(YamlNode node, String name) {
     // Quoting alone is not enough, because a tag types a quoted value too.
     final tag? => 'it is tagged $tag. Remove the tag and quote it',
     null when value is bool =>
-      'YAML reads a bare no, yes, on, off, true or false as a boolean. '
-          'Quote it',
+      'YAML reads a bare true or false as a boolean. Quote it',
     null => 'YAML reads a bare $text as a number. Quote it',
   };
   final read = value is bool ? 'the boolean $value' : 'a number';
@@ -1171,9 +2559,6 @@ String _wrongType(YamlNode node, String name, String expected) =>
 
 String _firstUsed(YamlNode node) =>
     'first used on line ${node.span.start.line + 1}';
-
-/// [text] as a double, or NaN if it is not one.
-double _double(String text) => double.tryParse(text) ?? double.nan;
 
 /// Blank as Python's `str.strip()` sees it, which is what the validator tests.
 /// Dart's `trim()` differs: it also strips U+FEFF, and not U+001C to U+001F.
@@ -1189,21 +2574,13 @@ final _properties = RegExp(r'^(?:[&!]\S*(?:\s+|$))*');
 /// is the first group.
 final _tagged = RegExp(r'^(?:&\S+\s+)?(!\S*)');
 
-// PyYAML's implicit resolvers for plain scalars, from yaml/resolver.py.
-final _yaml11Null = RegExp(r'^(?:~|null|Null|NULL|)$');
-final _yaml11True = RegExp(r'^(?:yes|Yes|YES|true|True|TRUE|on|On|ON)$');
-final _yaml11False = RegExp(r'^(?:no|No|NO|false|False|FALSE|off|Off|OFF)$');
-final _yaml11Int = RegExp(
-  r'^(?:[-+]?0b[0-1_]+'
-  r'|[-+]?0[0-7_]+'
-  r'|[-+]?(?:0|[1-9][0-9_]*)'
-  r'|[-+]?0x[0-9a-fA-F_]+'
-  r'|[-+]?[1-9][0-9_]*(?::[0-5]?[0-9])+)$',
-);
-final _yaml11Float = RegExp(
-  r'^(?:[-+]?(?:[0-9][0-9_]*)\.[0-9_]*(?:[eE][-+][0-9]+)?'
-  r'|\.[0-9][0-9_]*(?:[eE][-+][0-9]+)?'
-  r'|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\.[0-9_]*'
-  r'|[-+]?\.(?:inf|Inf|INF)'
-  r'|\.(?:nan|NaN|NAN))$',
+// The validator's resolvers for plain scalars, `DeckResolver` in
+// tools/validate_decks.py: YAML 1.2's core schema.
+final _coreNull = RegExp(r'^(?:null|Null|NULL|~|)$');
+final _coreTrue = RegExp(r'^(?:true|True|TRUE)$');
+final _coreFalse = RegExp(r'^(?:false|False|FALSE)$');
+final _coreInt = RegExp(r'^(?:[-+]?[0-9]+|0o[0-7]+|0x[0-9a-fA-F]+)$');
+final _coreFloat = RegExp(
+  r'^(?:[-+]?(?:\.[0-9]+|[0-9]+(?:\.[0-9]*)?)(?:[eE][-+]?[0-9]+)?'
+  r'|[-+]?\.(?:inf|Inf|INF)|\.(?:nan|NaN|NAN))$',
 );

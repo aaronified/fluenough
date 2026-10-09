@@ -12,19 +12,23 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../../ui/widgets/reading_first.dart';
+import 'native_choice.dart';
 
-/// What placement found, by language: the decks placed as known, and for a
-/// language with an alphabet, whether it is learned.
+/// What placement found, by language: the decks placed as known; for a
+/// language with an alphabet, whether it is learned; and for a language
+/// taught from more than one the learner speaks, which they chose.
 typedef PlacementFound = ({
   Map<String, Set<String>> placed,
   Map<String, bool> alphabet,
+  Map<String, String> natives,
 });
 
-/// Placement for each of [languages] in turn (#117, ADR-0013): whether to
-/// learn its alphabet, for a course with decks that need it; whether the
-/// learner knows any of it, a short check if they do, and where they will
-/// start. [onFinished] gets what was found; nothing is saved or recorded
-/// here.
+/// Placement for each of [languages] in turn (#117, ADR-0013): which of the
+/// languages the learner speaks to learn it from, when more than one
+/// teaches it (ADR-0036); whether to learn its alphabet, for a course with
+/// decks that need it; whether the learner knows any of it, a short check
+/// if they do, and where they will start. [onFinished] gets what was found;
+/// nothing is saved or recorded here.
 class PlacementPage extends StatefulWidget {
   const PlacementPage({
     super.key,
@@ -50,7 +54,7 @@ class PlacementPage extends StatefulWidget {
   State<PlacementPage> createState() => _PlacementPageState();
 }
 
-enum _Stage { alphabet, ask, check, result }
+enum _Stage { native, alphabet, ask, check, result }
 
 class _PlacementPageState extends State<PlacementPage> {
   int _index = 0;
@@ -58,25 +62,40 @@ class _PlacementPageState extends State<PlacementPage> {
   Placement? _placement;
   final Map<String, Set<String>> _placed = <String, Set<String>>{};
   final Map<String, bool> _alphabet = <String, bool>{};
+  final Map<String, String> _natives = <String, String>{};
 
   String get _code => widget.languages[_index];
 
-  /// A language's first stage: the alphabet, for a course that has decks
-  /// needing it, else whether the learner knows any.
+  /// A language's first stage: which language to learn it from, when more
+  /// than one the learner speaks teaches it and they have not chosen; else
+  /// [_afterNative].
   _Stage get _stage =>
       _stageSet ??
-      (AppScope.read(context).hasAlphabet(_code)
-          ? _Stage.alphabet
-          : _Stage.ask);
+      (AppScope.read(context).needsNativeChoice(_code)
+          ? _Stage.native
+          : _afterNative);
   set _stage(_Stage stage) => _stageSet = stage;
+
+  /// The alphabet, for a course that has decks needing it, else whether the
+  /// learner knows any.
+  _Stage get _afterNative =>
+      AppScope.read(context).hasAlphabet(_code) ? _Stage.alphabet : _Stage.ask;
+
+  void _chooseNative(String native) => setState(() {
+    _natives[_code] = native;
+    _stage = _afterNative;
+  });
 
   void _chooseAlphabet(bool learns) => setState(() {
     _alphabet[_code] = learns;
     _stage = _Stage.ask;
   });
 
-  List<List<DeckEntry>> _units(AppState state) =>
-      state.courseUnits(_code, alphabet: _alphabet[_code]);
+  List<List<DeckEntry>> _units(AppState state) => state.courseUnits(
+    _code,
+    alphabet: _alphabet[_code],
+    native: _natives[_code],
+  );
 
   @override
   void didChangeDependencies() {
@@ -129,6 +148,7 @@ class _PlacementPageState extends State<PlacementPage> {
       widget.onFinished((
         placed: Map<String, Set<String>>.unmodifiable(_placed),
         alphabet: Map<String, bool>.unmodifiable(_alphabet),
+        natives: Map<String, String>.unmodifiable(_natives),
       ));
     }
   }
@@ -160,6 +180,10 @@ class _PlacementPageState extends State<PlacementPage> {
       body: SafeArea(
         top: false,
         child: switch (_stage) {
+          _Stage.native => NativeChoice(
+            language: language,
+            onChosen: _chooseNative,
+          ),
           _Stage.alphabet => _Alphabet(
             language: language,
             onChoose: _chooseAlphabet,

@@ -52,6 +52,7 @@ class AlikeWarning extends StatelessWidget {
           kind: pair.kind,
           named: adult ? pair.partner : null,
           language: language,
+          care: pair.care,
         ),
     ];
   }
