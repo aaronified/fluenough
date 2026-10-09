@@ -11,6 +11,7 @@ import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_notes.dart';
 import '../decks/card_top_line.dart';
+import '../decks/path_parts.dart' show joinParts;
 import 'alike_warning.dart';
 import 'review_words.dart';
 
@@ -119,7 +120,15 @@ class ReviewCardSheet extends StatelessWidget {
             CardFace(card: card, language: language),
             if (rude) ...<Widget>[
               const SizedBox(height: 16),
-              _RudeFacts(rating: rating),
+              _RudeFacts(
+                rating: rating,
+                region: regionNote(
+                  state,
+                  language.code,
+                  card,
+                  code: Localizations.localeOf(context).languageCode,
+                ),
+              ),
               const SizedBox(height: 12),
               Text(
                 l10n.reviewRudeOnly,
@@ -285,13 +294,18 @@ class CardFace extends StatelessWidget {
 /// its region note (docs/plans/offensive-words.md), and this rater's
 /// rating once made.
 ///
-/// Today's deck format has no fields for the first four yet: they come
-/// with the B1 format's offensive words, set from several native raters'
-/// medians. Until then each reads "Not set yet".
+/// The region note is the card's own, a note naming regions of its
+/// language's path (ADR-0036). The deck format has no fields for the
+/// other three yet: they come with the offensive words, set from several
+/// native raters' medians. Until then each, and a card with no region
+/// note, reads "Not set yet".
 class _RudeFacts extends StatelessWidget {
-  const _RudeFacts({required this.rating});
+  const _RudeFacts({required this.rating, this.region});
 
   final WordRating? rating;
+
+  /// The card's region note, its regions named ([regionNote]), or null.
+  final ({String text, List<String> regions})? region;
 
   @override
   Widget build(BuildContext context) {
@@ -303,7 +317,16 @@ class _RudeFacts extends StatelessWidget {
       (l10n.reviewRudeLevel, l10n.reviewRudeNotSet),
       (l10n.reviewRudeType, l10n.reviewRudeNotSet),
       (l10n.reviewRudeFriends, l10n.reviewRudeNotSet),
-      (l10n.reviewRudeRegion, l10n.reviewRudeNotSet),
+      (
+        l10n.reviewRudeRegion,
+        switch (region) {
+          null => l10n.reviewRudeNotSet,
+          final r => l10n.reviewRudeRegionNote(
+            joinParts(l10n, r.regions),
+            r.text,
+          ),
+        },
+      ),
     ];
     return Container(
       padding: const EdgeInsetsDirectional.all(14),
@@ -721,7 +744,11 @@ class _RateSheetState extends State<RateSheet> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final language = widget.deck.language;
-    final regions = raterRegions(language.code);
+    final regions = raterRegions(
+      AppScope.read(context),
+      language.code,
+      code: Localizations.localeOf(context).languageCode,
+    );
     final score = _score;
     final muted = theme.textTheme.bodySmall!.copyWith(
       color: scheme.onSurfaceVariant,

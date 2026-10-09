@@ -216,6 +216,81 @@ void main() {
     expect(find.text(l10n.reviewSignOffReady), findsOneWidget);
   });
 
+  Future<void> openRating(WidgetTester tester, String regions) async {
+    await pumpScreen(
+      tester,
+      const ReviewPage(deckId: rudeDeck, adult: true),
+      state: await reviewState(reviewing: true, regions: regions),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('idiot, good-for-nothing'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewRate));
+    await tester.pumpAndSettle();
+  }
+
+  testWidgets('the rating sheet offers the regions the language\'s path '
+      'lists, in its order, then Elsewhere', (tester) async {
+    useTallPhone(tester);
+    await openRating(tester, '''
+  - { id: "north", name: { "en": "The north", "te": "ఉత్తరం" } }
+  - { id: "coastal-andhra", name: { "en": "The coast" } }''');
+    final l10n = l10nOf(tester);
+    final chips = <String>['The north', 'The coast', l10n.reviewRateElsewhere];
+    for (final chip in chips) {
+      expect(find.text(chip), findsOneWidget);
+    }
+    for (var i = 1; i < chips.length; i++) {
+      expect(
+        tester.getTopLeft(find.text(chips[i - 1])).dy,
+        lessThan(tester.getTopLeft(find.text(chips[i])).dy),
+      );
+    }
+    // Nothing of the fixed list there was before the paths had regions.
+    expect(find.text('Telangana'), findsNothing);
+    expect(find.text('Rayalaseema'), findsNothing);
+  });
+
+  testWidgets('a language whose path lists no regions asks no region '
+      'question', (tester) async {
+    useTallPhone(tester);
+    await openRating(tester, '');
+    final l10n = l10nOf(tester);
+    expect(find.byType(RateSheet), findsOneWidget);
+    expect(find.text(l10n.reviewRateWhere('Telugu')), findsNothing);
+    expect(find.text(l10n.reviewRateElsewhere), findsNothing);
+  });
+
+  testWidgets('a rude word\'s Region row is its region note, its regions '
+      'named as the path names them', (tester) async {
+    useTallPhone(tester);
+    await pumpScreen(
+      tester,
+      const ReviewPage(deckId: rudeDeck, adult: true),
+      state: await reviewState(
+        reviewing: true,
+        rudeNotes:
+            '[{ kind: "usage", text: "A plain note." }, '
+            '{ kind: "usage", region: ["telangana", "rayalaseema"], '
+            'text: "Milder among friends here." }]',
+      ),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('idiot, good-for-nothing'));
+    await tester.pumpAndSettle();
+    expect(
+      find.text(
+        l10n.reviewRudeRegionNote(
+          l10n.pathMetaJoin('Telangana', 'Rayalaseema'),
+          'Milder among friends here.',
+        ),
+      ),
+      findsOneWidget,
+    );
+    // Level, type and friendliness are still not set; the region is.
+    expect(find.text(l10n.reviewRudeNotSet), findsNWidgets(3));
+  });
+
   testWidgets('a sound-alike pair is confirmed with a care note of at most '
       '40 letters, its budget shown as it is typed', (tester) async {
     useTallPhone(tester);
