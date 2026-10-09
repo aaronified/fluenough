@@ -6,6 +6,7 @@ import '../../app/app_state.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
+import '../review/review_waiting.dart' show unitToReview;
 import 'deck_content.dart';
 import 'path_model.dart';
 import 'path_parts.dart';
@@ -248,9 +249,13 @@ class _UnitNode extends StatelessWidget {
       UnitStatus.upNext => l10n.pathUpNext,
       UnitStatus.ahead => l10n.pathUnitAhead,
     };
+    // In reviewer mode, a unit with a deck no native speaker has signed
+    // off, in a language the reviewer reviews (docs/plans/deck-browser.md).
+    final toReview = unitToReview(state, step.decks);
     final semantics = joinParts(l10n, <String>[
       l10n.pathUnitSemantics(step.title, step.number, statusWord, meta),
       if (step.due > 0) l10n.commonDueBadge(step.due),
+      if (toReview) l10n.pathToReview,
     ]);
     final leading = switch (status) {
       UnitStatus.done => Icon(Icons.check_rounded, color: fg, size: 22),
@@ -324,6 +329,15 @@ class _UnitNode extends StatelessWidget {
                             color: sub,
                           ),
                         ),
+                      if (toReview) ...<Widget>[
+                        const SizedBox(height: 4),
+                        Pill(
+                          key: const ValueKey<String>('to-review'),
+                          text: l10n.pathToReview,
+                          background: scheme.tertiaryContainer,
+                          foreground: scheme.onTertiaryContainer,
+                        ),
+                      ],
                     ],
                   ),
                 ),
