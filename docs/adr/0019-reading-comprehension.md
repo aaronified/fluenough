@@ -1,6 +1,7 @@
 # ADR-0019: Reading comprehension is passages whose questions are scheduled like cards
 
-- **Status:** Accepted
+- **Status:** Accepted. SM-2 is superseded by ADR-0033 (FSRS-6): where this
+  record says SM-2, read FSRS-6.
 - **Date:** 2026-10-03
 
 ## Context

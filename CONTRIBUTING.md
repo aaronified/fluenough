@@ -46,7 +46,9 @@ Roughly in order of how much they help right now.
 The most useful thing you can contribute, and it needs **no Flutter toolchain
 at all** — just a text editor and Python.
 
-The app ships with three starter decks. It needs many more, in many more
+The app ships with decks for eight languages (Assamese, Bengali, Gujarati,
+Hindi, Kannada, Marathi, Spanish and Telugu); Japanese is kept in the
+repository but not bundled. It needs many more, in many more
 languages, and the people best placed to write a good Hungarian deck are not
 necessarily Flutter developers. That asymmetry is the whole reason the deck
 format is plain text validated by a standalone Python script.
