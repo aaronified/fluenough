@@ -80,7 +80,7 @@ and why Waydroid cannot test audio, is in
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
-| `decks/<lang>/` | Content, one YAML file per deck | very low |
+| `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`) | very low |
 | `tools/` | Python deck validator and importer | low |
 | `docs/adr/` | Architecture decision records | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
