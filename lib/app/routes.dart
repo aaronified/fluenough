@@ -18,6 +18,7 @@ import '../features/settings/appearance_page.dart';
 import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
 import '../features/settings/voices_page.dart';
+import '../features/stats/how_you_learn_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/summary/summary_page.dart';
 import 'app_scope.dart';
@@ -47,6 +48,11 @@ abstract final class AppRoutes {
   /// Leeches. Argument: a language code, a [String], for that language's
   /// only; none for every language.
   static const String leeches = '/leeches';
+
+  /// How you learn: each skill's pace beside how it started. Argument: a
+  /// language code, a [String], for that language's only; none for every
+  /// language learned.
+  static const String howYouLearn = '/how-you-learn';
   static const String appearance = '/appearance';
   static const String spokenLanguages = '/spoken-languages';
   static const String learnLanguages = '/learn-languages';
@@ -88,6 +94,7 @@ abstract final class AppRoutes {
       drill when args is DrillRequest => DrillPage(request: args),
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => LeechesPage(language: args is String ? args : null),
+      howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
       spokenLanguages => const SpokenLanguagesPage(),
       learnLanguages => const LearnLanguagesPage(),
@@ -144,6 +151,18 @@ abstract final class AppNavigator {
   /// Leeches, in [language] only when given.
   static Future<void> openLeeches(BuildContext context, {String? language}) =>
       Navigator.of(context).pushNamed(AppRoutes.leeches, arguments: language);
+
+  /// How you learn, in [language] only when given. With [replacing], in
+  /// place of the route on top, such as the sheet that links to it.
+  static Future<void> openHowYouLearn(
+    BuildContext context, {
+    String? language,
+    bool replacing = false,
+  }) => replacing
+      ? Navigator.of(context)
+            .popAndPushNamed(AppRoutes.howYouLearn, arguments: language)
+      : Navigator.of(context)
+            .pushNamed(AppRoutes.howYouLearn, arguments: language);
 
   static Future<void> openAppearance(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.appearance);
