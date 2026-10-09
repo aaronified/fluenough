@@ -118,7 +118,8 @@ units:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
-  - planned: { id: "te-places", theme: "places", words: 44 }
+  - decks: ["te-places", "te-location", "te-places-sentences", "*"]
+    words: 56
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
