@@ -145,6 +145,7 @@ class CoreNote {
     this.ref,
     this.source,
     this.words = const <NoteWord>[],
+    this.regions = const <String>[],
   });
 
   final String id;
@@ -152,6 +153,9 @@ class CoreNote {
   final String? ref;
   final String? source;
   final List<NoteWord> words;
+
+  /// A fact about the language, the same for every learner, so in the core.
+  final List<String> regions;
 }
 
 /// A grammar core's pattern: its slots and its entries, without glosses.
@@ -629,6 +633,7 @@ class _Merge {
           text: _filled(text.text, note.words),
           ref: note.ref,
           source: note.source,
+          regions: note.regions,
         ),
       );
     }

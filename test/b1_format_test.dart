@@ -246,6 +246,61 @@ void main() {
       }
     });
 
+    test('a region note names its regions, one or a list (10.5)', () {
+      final notes = parse(
+        oneCard('''
+    notes:
+      - { kind: "usage", region: "telangana", text: "In Telangana often {1}.", words: [{ word: "ఉల్లిగడ్డ", reading: "ulligaḍḍa" }] }
+      - { kind: "note", region: ["coastal-andhra", "rayalaseema"], text: "Heard so on the coast and in the south." }
+      - { kind: "note", text: "Everywhere." }
+'''),
+      ).cards.single.notes;
+      expect(notes[0].regions, ['telangana']);
+      expect(notes[0].text, 'In Telangana often ఉల్లిగడ్డ (ulligaḍḍa).');
+      expect(notes[1].regions, ['coastal-andhra', 'rayalaseema']);
+      expect(notes[2].regions, isEmpty);
+      for (final (region, why) in <(String, String)>[
+        ('5', 'notes[0].region must be a region id, or a list of them'),
+        ('[]', 'notes[0].region must be a region id, or a list of them'),
+        ('"Telangana"', 'notes[0].region must be a region id'),
+        ('"no"', 'notes[0].region must be a region id'),
+        (
+          '["telangana", "telangana"]',
+          'notes[0].region lists "telangana" twice',
+        ),
+      ]) {
+        expect(
+          () => parse(
+            oneCard(
+              '    notes: [{ kind: "usage", text: "x", region: $region }]\n',
+            ),
+          ),
+          fails(why),
+          reason: region,
+        );
+      }
+    });
+
+    test('a core note\'s regions are the core\'s, kept when merged', () {
+      final core = homeCore.replaceFirst(
+        '{ id: "address", kind: "usage" }',
+        '{ id: "address", kind: "usage", region: ["telangana", "rayalaseema"] }',
+      );
+      final note = merge(
+        core,
+        homeLayer,
+      ).cards.firstWhere((c) => c.id == 'zz-9004').notes.single;
+      expect(note.id, 'address');
+      expect(note.regions, ['telangana', 'rayalaseema']);
+      expect(
+        merge(
+          homeCore,
+          homeLayer,
+        ).cards.firstWhere((c) => c.id == 'zz-9004').notes.single.regions,
+        isEmpty,
+      );
+    });
+
     test('placeholders count from {1}, without leading zeros, to the words '
         '(6.4)', () {
       for (final (text, why) in <(String, String)>[
