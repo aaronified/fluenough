@@ -37,9 +37,11 @@ const String rudeTag = 'offensive';
 bool isRude(Card card, DeckEntry? deck) =>
     card.tags.contains(rudeTag) || (deck?.deck.tags.contains(rudeTag) ?? false);
 
-/// Whether the learner has turned adult content on. There is no such
-/// setting yet (#96): until there is, a rude word is always hidden.
-bool adultContentOn(AppState state) => false;
+/// Whether the learner has turned adult content on, in Settings' "Adult
+/// content (18+)" (#96). Off, a rude word is hidden. Read it inside a
+/// `ListenableBuilder` on the settings, so that switching it off hides the
+/// word at once.
+bool adultContentOn(AppState state) => state.settings.adultContent;
 
 /// The card of a word on a unit's screen: a top line with its id, part of
 /// speech and where the learner stands with it, a speaker and the bug icon;
@@ -64,11 +66,17 @@ class WordSheet extends StatelessWidget {
   final LanguageInfo language;
 
   /// Whether a rude partner is named; by default, whether adult content is
-  /// on. For tests, until there is such a setting.
+  /// on. For tests and the gallery.
   final bool? showRude;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(
+    // Adult content is a setting: off again, the word hides at once.
+    listenable: AppScope.of(context).settings,
+    builder: (context, _) => _build(context),
+  );
+
+  Widget _build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
