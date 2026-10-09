@@ -22,9 +22,9 @@ cards:
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
       - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
-      - { word: "बोल", base: "बोल", reading: "bōl" }
+      - { word: "बोल", base: "बोलना", reading: "bōlnā" }
       - { word: "सकता", ref: "hi-0513" }
-      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0515"
     target: "मैं तैर नहीं सकती।"
     reading: "maim̐ tair nahīm̐ saktī."
@@ -33,7 +33,7 @@ cards:
     pos: "phrase"
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
-      - { word: "तैर", base: "तैर", reading: "tair" }
+      - { word: "तैर", base: "तैरना", reading: "tairnā" }
       - { word: "सकती", ref: "hi-0513" }
   - id: "hi-0516"
     target: "क्या आप मेरी मदद कर सकते हैं?"
@@ -41,8 +41,8 @@ cards:
     ipa: "kjaː aːp meːriː məd̪əd̪ kər səkt̪eː ɦɛ̃ː"
     pos: "phrase"
     bases:
-      - { word: "मेरी", base: "मेरी", reading: "mērī" }
-      - { word: "कर", base: "कर", reading: "kar" }
+      - { word: "मेरी", base: "मेरा", reading: "mērā" }
+      - { word: "कर", base: "करना", reading: "karnā" }
       - { word: "सकते", ref: "hi-0513" }
   - id: "hi-0517"
     target: "मैं घर जाना चाहता हूँ।"
@@ -53,8 +53,8 @@ cards:
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
       - { word: "जाना", base: "जाना", reading: "jānā" }
-      - { word: "चाहता", base: "चाहता", reading: "cāhtā" }
-      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
+      - { word: "चाहता", base: "चाहना", reading: "cāhnā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0518"
     target: "आपको आराम करना चाहिए।"
     reading: "āpkō ārām karnā cāhiē."
@@ -72,7 +72,7 @@ cards:
     ipa: "mʊdʒʱeː kəl kaːm pər dʒaːnaː ɦɛː"
     pos: "phrase"
     bases:
-      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0520"
     target: "मुझे जाना पड़ेगा।"
@@ -82,9 +82,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
       - { word: "जाना", base: "जाना", reading: "jānā" }
-      - { word: "पड़ेगा", base: "पड़ेगा", reading: "paṛēgā" }
+      - { word: "पड़ेगा", ref: "hi-0115" }
   - id: "hi-0521"
     target: "मैं नहीं आ पाया।"
     reading: "maim̐ nahīm̐ ā pāyā."
@@ -94,7 +94,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
-      - { word: "पाया", base: "पाया", reading: "pāyā" }
+      - { word: "पाया", base: "पाना", reading: "pānā" }
   - id: "hi-0522"
     target: "यहाँ फ़ोटो ले सकते हैं?"
     reading: "yahām̐ fōṭō lē saktē haim̐?"
@@ -102,5 +102,5 @@ cards:
     pos: "phrase"
     bases:
       - { word: "फ़ोटो", base: "फ़ोटो", reading: "fōṭō" }
-      - { word: "ले", base: "ले", reading: "lē" }
+      - { word: "ले", base: "लेना", reading: "lēnā" }
       - { word: "सकते", ref: "hi-0513" }
