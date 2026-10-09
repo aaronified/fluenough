@@ -13,7 +13,7 @@ decks/
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
        hi-path.yaml
-  ja/  ja-en-hiragana.yaml        kept in the repository but not bundled in the app for now
+  ja/  ja-en-hiragana.yaml        kept in the repository but not offered in the app for now
        ja-path.yaml
   te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
@@ -26,7 +26,8 @@ decks/
   kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker
   gu/  gu-en-first-words.yaml     the same, for Gujarati; not yet checked by a Gujarati speaker
   as/  as-en-first-words.yaml     the same, for Assamese; not yet checked by an Assamese speaker
-  themes.yaml
+  themes.yaml                   the shared themes; the one file the app bundles
+  index.json                    what the app downloads, written by tools/deck_index.py
 ```
 
 **A deck may be a core and its layers.** The core,
@@ -46,15 +47,21 @@ specification.
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)
 - How to contribute one: [../CONTRIBUTING.md](../CONTRIBUTING.md)
 
-**Adding a language means adding its directory to `pubspec.yaml`.** A Flutter
-asset entry bundles only the files directly inside the directory it names, so
-`flutter.assets` needs one `- decks/<lang>/` line per language. Validating the
-whole of `decks/` — which is what CI does — fails if a directory holding decks
-has no entry, because the alternative is an app that builds and ships without
-that language in it. A layer folder needs its own line too, `- decks/te/en/`,
-added in a one-line commit with the language's first layer. Validating a single deck or one language directory only
-checks what you pointed it at. `decks/ja/` is left out on purpose for now: it
-is listed in `NOT_BUNDLED` in `tools/validate_decks.py`, and still validated.
+**The app downloads these files; it does not bundle them** (#210, ADR-0037).
+`index.json` lists every language with its files, each with its size and
+SHA-256, and the app reads it from `main` on GitHub. Only `themes.yaml`
+ships inside the app. After changing anything here, write the index again
+and commit it with your change:
+
+```sh
+python3 tools/deck_index.py
+```
+
+Validating the whole of `decks/`, which is what CI does, fails while the
+index is out of date, because the app would then refuse the changed files.
+Validating a single deck or one language directory only checks what you
+pointed it at. `decks/ja/` is left out of the index on purpose for now: it is
+listed in `HIDDEN` in `tools/deck_index.py`, and still validated.
 
 Validate before committing — CI runs exactly this:
 
