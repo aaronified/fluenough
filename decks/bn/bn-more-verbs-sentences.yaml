@@ -1,0 +1,147 @@
+schema: 1
+id: "bn-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1123"
+    target: "মা ভাত রাঁধেন।"
+    reading: "mā bhāt rām̐dhen."
+    ipa: "ma bʱat̪ rãd̪ʱen"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "রাঁধেন", ref: "bn-1099" }
+  - id: "bn-1124"
+    target: "আমি হাত ধুই।"
+    reading: "āmi hāt dhui."
+    ipa: "ami ɦat̪ d̪ʱui"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "ধুই", ref: "bn-1100" }
+  - id: "bn-1125"
+    target: "আপনি হাত ধুন।"
+    reading: "āpni hāt dhun."
+    ipa: "apni ɦat̪ d̪ʱun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "ধুন", ref: "bn-1100" }
+  - id: "bn-1126"
+    target: "সে ফল কাটে।"
+    reading: "śe phôl kāṭe."
+    ipa: "ʃe pʰɔl kaʈe"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "কাটে", ref: "bn-1101" }
+  - id: "bn-1127"
+    target: "ছুরি দিয়ে সবজি কাটুন।"
+    reading: "churi diye śôbji kāṭun."
+    ipa: "tʃʰuri d̪ije ʃɔbdʒi kaʈun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "কাটুন", ref: "bn-1101" }
+  - id: "bn-1128"
+    target: "আমি আমার বন্ধুকে খুঁজি।"
+    reading: "āmi āmār bondhuke khum̐ji."
+    ipa: "ami amar bond̪ʱuke kʰũdʒi"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-ke", "bn-rule-present-first"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "বন্ধুকে", ref: "bn-0189" }
+      - { word: "খুঁজি", ref: "bn-1105" }
+  - id: "bn-1129"
+    target: "সে টাকা হারায়।"
+    reading: "śe ṭākā hārāy."
+    ipa: "ʃe ʈaka ɦaraj"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "হারায়", ref: "bn-1106" }
+  - id: "bn-1130"
+    target: "আমি মাকে টাকা পাঠাই।"
+    reading: "āmi māke ṭākā pāṭhāi."
+    ipa: "ami make ʈaka paʈʰai"
+    pos: "phrase"
+    rules: ["bn-rule-ke", "bn-rule-present-first"]
+    bases:
+      - { word: "মাকে", ref: "bn-0424" }
+      - { word: "পাঠাই", ref: "bn-1108" }
+  - id: "bn-1131"
+    target: "আমরা বাড়ি ফিরি।"
+    reading: "āmrā bāṛi phiri."
+    ipa: "amra baɽi pʰiri"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "ফিরি", ref: "bn-1110" }
+  - id: "bn-1132"
+    target: "বাস এখানে থামে।"
+    reading: "bās ekhāne thāme."
+    ipa: "bas ekʰane t̪ʰame"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "থামে", ref: "bn-1111" }
+  - id: "bn-1133"
+    target: "জল ঢালুন।"
+    reading: "jôl ḍhālun."
+    ipa: "dʒɔl ɖʱalun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "ঢালুন", ref: "bn-1112" }
+  - id: "bn-1134"
+    target: "ছেলেরা মাঠে দৌড়ায়।"
+    reading: "chelerā māṭhe douṛāy."
+    ipa: "tʃʰelera maʈʰe d̪ouɽaj"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "ছেলেরা", ref: "bn-0426" }
+      - { word: "মাঠে", ref: "bn-1045" }
+      - { word: "দৌড়ায়", ref: "bn-1115" }
+  - id: "bn-1135"
+    target: "আমি তিনটে আপেল গুনি।"
+    reading: "āmi tinṭe āpel guni."
+    ipa: "ami t̪inʈe apel ɡuni"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "তিনটে", ref: "bn-0204" }
+      - { word: "গুনি", ref: "bn-1113" }
+  - id: "bn-1136"
+    target: "দিদি আমাকে বাংলা শেখান।"
+    reading: "didi āmāke bāṅlā śekhān."
+    ipa: "d̪id̪i amake baŋla ʃekʰan"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-obj", "bn-rule-present-third"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "শেখান", ref: "bn-1114" }
+  - id: "bn-1137"
+    target: "আপনি কী ভাবেন?"
+    reading: "āpni ki bhāben?"
+    ipa: "apni ki bʱaben"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "ভাবেন", ref: "bn-1118" }
+  - id: "bn-1138"
+    target: "ছেলেটা কাঁদে।"
+    reading: "cheleṭā kām̐de."
+    ipa: "tʃʰeleʈa kãd̪e"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "ছেলেটা", ref: "bn-0426" }
+      - { word: "কাঁদে", ref: "bn-1119" }

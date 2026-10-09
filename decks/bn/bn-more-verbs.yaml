@@ -1,0 +1,185 @@
+schema: 1
+id: "bn-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1099"
+    target: "রাঁধা"
+    reading: "rām̐dhā"
+    ipa: "rãd̪ʱa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রান্না", reading: "rānnā" }, { word: "রাঁধুনি", reading: "rām̐dhuni" }] }
+  - id: "bn-1100"
+    target: "ধোয়া"
+    reading: "dhoyā"
+    ipa: "d̪ʱoja"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ধুই", reading: "dhui" }, { word: "ধোও", reading: "dhoo" }, { word: "ধোয়", reading: "dhoy" }, { word: "ধুন", reading: "dhun" }, { word: "ধোওয়া", reading: "dhooā" }] }
+  - id: "bn-1101"
+    target: "কাটা"
+    reading: "kāṭā"
+    ipa: "kaʈa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাঁতার কাটা", reading: "śām̐tār kāṭā" }] }
+  - id: "bn-1102"
+    target: "ভাঙা"
+    reading: "bhāṅā"
+    ipa: "bʱaŋa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভেঙে যাওয়া", reading: "bheṅe jāoā" }] }
+  - id: "bn-1103"
+    target: "ফেলা"
+    reading: "phelā"
+    ipa: "pʰela"
+    pos: "verb"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-1110", words: [{ word: "ফেরা", reading: "pherā" }, { word: "ফেলা", reading: "phelā" }] }
+      - { id: "n2", kind: "behaviour", words: [{ word: "খেয়ে ফেলা", reading: "kheye phelā" }] }
+  - id: "bn-1104"
+    target: "তোলা"
+    reading: "tolā"
+    ipa: "t̪ola"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "তুলি", reading: "tuli" }, { word: "তোলো", reading: "tolo" }, { word: "ছবি তোলা", reading: "chobi tolā" }] }
+  - id: "bn-1105"
+    target: "খোঁজা"
+    reading: "khom̐jā"
+    ipa: "kʰõdʒa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খোঁজ", reading: "khom̐j" }, { word: "খোঁজ নেওয়া", reading: "khom̐j neoā" }] }
+  - id: "bn-1106"
+    target: "হারানো"
+    reading: "hārāno"
+    ipa: "ɦarano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আমি হারিয়ে গেছি", reading: "āmi hāriye gechi" }] }
+  - id: "bn-1107"
+    target: "ধরা"
+    reading: "dhôrā"
+    ipa: "d̪ʱɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হাত ধরা", reading: "hāt dhôrā" }, { word: "ধর", reading: "dhôr" }] }
+  - id: "bn-1108"
+    target: "পাঠানো"
+    reading: "pāṭhāno"
+    ipa: "paʈʰano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টাকা পাঠানো", reading: "ṭākā pāṭhāno" }] }
+  - id: "bn-1109"
+    target: "পৌঁছানো"
+    reading: "poum̐chāno"
+    ipa: "poũtʃʰano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্টেশনে পৌঁছানো", reading: "sṭeśone poum̐chāno" }] }
+  - id: "bn-1110"
+    target: "ফেরা"
+    reading: "pherā"
+    ipa: "pʰera"
+    pos: "verb"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-1103", words: [{ word: "ফেলা", reading: "phelā" }, { word: "ফেরা", reading: "pherā" }] }
+      - { id: "n2", kind: "behaviour", words: [{ word: "ফিরি", reading: "phiri" }, { word: "ফেরে", reading: "phere" }, { word: "বাড়ি ফেরা", reading: "bāṛi pherā" }] }
+  - id: "bn-1111"
+    target: "থামা"
+    reading: "thāmā"
+    ipa: "t̪ʰama"
+    pos: "verb"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-1043", words: [{ word: "থানা", reading: "thānā" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "থামানো", reading: "thāmāno" }] }
+  - id: "bn-1112"
+    target: "ঢালা"
+    reading: "ḍhālā"
+    ipa: "ɖʱala"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জল ঢালা", reading: "jôl ḍhālā" }] }
+  - id: "bn-1113"
+    target: "গোনা"
+    reading: "gonā"
+    ipa: "ɡona"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "গুনি", reading: "guni" }, { word: "গোনো", reading: "gono" }] }
+  - id: "bn-1114"
+    target: "শেখানো"
+    reading: "śekhāno"
+    ipa: "ʃekʰano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "শেখা", reading: "śekhā" }, { word: "-নো", reading: "-no" }] }
+  - id: "bn-1115"
+    target: "দৌড়ানো"
+    reading: "douṛāno"
+    ipa: "d̪ouɽano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দৌড়", reading: "douṛ" }] }
+  - id: "bn-1116"
+    target: "ওড়া"
+    reading: "oṛā"
+    ipa: "oɽa"
+    pos: "verb"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0848", words: [{ word: "ওরা", reading: "orā" }, { word: "ওড়া", reading: "oṛā" }] }
+      - { id: "n2", kind: "behaviour", words: [{ word: "উড়ি", reading: "uṛi" }, { word: "ওড়ে", reading: "oṛe" }] }
+  - id: "bn-1117"
+    target: "লাফানো"
+    reading: "lāphāno"
+    ipa: "lapʰano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লাফানো", reading: "lāphāno" }] }
+  - id: "bn-1118"
+    target: "ভাবা"
+    reading: "bhābā"
+    ipa: "bʱaba"
+    pos: "verb"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0423", words: [{ word: "বাবা", reading: "bābā" }, { word: "ভাবা", reading: "bhābā" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "ভাবনা", reading: "bhābnā" }] }
+  - id: "bn-1119"
+    target: "কাঁদা"
+    reading: "kām̐dā"
+    ipa: "kãd̪a"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কান্না", reading: "kānnā" }] }
+  - id: "bn-1120"
+    target: "শোয়া"
+    reading: "śoyā"
+    ipa: "ʃoja"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "সোয়া", reading: "śoyā" }, { word: "শুই", reading: "śui" }, { word: "শোও", reading: "śoo" }, { word: "শোওয়া", reading: "śooā" }] }
+  - id: "bn-1121"
+    target: "মোছা"
+    reading: "mochā"
+    ipa: "motʃʰa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘর মোছা", reading: "ghôr mochā" }] }
+  - id: "bn-1122"
+    target: "ঘোরা"
+    reading: "ghorā"
+    ipa: "ɡʱora"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘুরে আসা", reading: "ghure āśā" }, { word: "ঘুরুন", reading: "ghurun" }] }
+  - ref: "bn-0120"
