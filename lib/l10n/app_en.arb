@@ -3748,6 +3748,18 @@
   "@settingsAutoplayOff": {
     "description": "Under Play words automatically, while it is off. The speaker is the play button on a card. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
+  "settingsAutoplayOnSoundOff": "Nothing plays while sound is off; then words play by themselves",
+  "@settingsAutoplayOnSoundOff": {
+    "description": "Under Play words automatically, while it is on but the Sound switch is off, which greys it out: nothing plays now, and once sound is on words play by themselves."
+  },
+  "settingsAutoplayOffSoundOff": "Nothing plays while sound is off; then only when you tap the speaker",
+  "@settingsAutoplayOffSoundOff": {
+    "description": "Under Play words automatically, while it is off and the Sound switch is off too, which greys it out: nothing plays now, and once sound is on words play only from the speaker button on a card."
+  },
+  "settingsSkillSoundOff": "Skipped while sound is off",
+  "@settingsSkillSoundOff": {
+    "description": "Under a skill switch in Settings that needs sound (Heard words, Phonemic contrasts), while it is on but the Sound switch is off: its questions are skipped now."
+  },
   "settingsSpeechRate": "Speech rate",
   "@settingsSpeechRate": {
     "description": "Slider: how fast the voice speaks."
@@ -5440,13 +5452,21 @@
   "@voicesSpeechOnDevice": {
     "description": "Status: the phone recognises this language itself."
   },
-  "voicesSpeechOnlineOnly": "Only online. Allow it to send what you say to your phone’s speech service",
-  "@voicesSpeechOnlineOnly": {
-    "description": "Status: the phone recognises this language only online, not yet allowed. Beside a switch."
+  "voicesSpeechOnlyOnline": "This phone recognises it only online",
+  "@voicesSpeechOnlyOnline": {
+    "description": "Under the Speaking heading of a language’s card on the Voices page: the phone recognises this language only online. The Online recognition switch follows."
   },
-  "voicesSpeechOnline": "Heard online, as you allowed",
+  "voicesOnlineSwitch": "Online recognition",
+  "@voicesOnlineSwitch": {
+    "description": "Switch on a language’s card on the Voices page, under Speaking, for a language the phone recognises only online: whether what the learner says in it may be sent to the phone’s speech service. Not the same as switching speaking off."
+  },
+  "voicesSpeechOnlineOnly": "Off, so not heard. Switching it on sends what you say to your phone’s speech service",
+  "@voicesSpeechOnlineOnly": {
+    "description": "Under the Online recognition switch, while it is off: the language is recognised only online, so speaking in it is not heard. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "voicesSpeechOnline": "What you say goes to your phone’s speech service to be heard",
   "@voicesSpeechOnline": {
-    "description": "Status: online recognition allowed for this language. Beside a switch to take it back."
+    "description": "Under the Online recognition switch, while it is on: speaking in this language is heard online. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
   "voicesSpeechMissing": "Not recognised on this phone",
   "@voicesSpeechMissing": {

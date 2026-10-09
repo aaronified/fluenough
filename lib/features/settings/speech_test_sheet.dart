@@ -11,6 +11,7 @@ import '../../core/numbers/number_practice.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 
 /// Opens the speaking test for [language] (docs/plans/voices-per-language.md).
@@ -24,7 +25,8 @@ Future<void> showSpeechTest(BuildContext context, LanguageInfo language) =>
 
 /// The words of [language]'s course a speaking test offers, in the course's
 /// order: its units' word decks, or any of its word decks when it has no
-/// path. No script, grammar or number cards.
+/// path. No script, grammar or number cards, and no rude word: those are
+/// never said (docs/plans/offensive-words.md).
 List<Card> speechTestWords(AppState state, LanguageInfo language) {
   bool words(DeckEntry deck) =>
       deck.language.code == language.code &&
@@ -40,7 +42,8 @@ List<Card> speechTestWords(AppState state, LanguageInfo language) {
   return <Card>[
     for (final deck in decks)
       for (final card in deck.cards)
-        if (card is! NumberCard && seen.add(card.id)) card,
+        if (card is! NumberCard && !isRude(card, deck) && seen.add(card.id))
+          card,
   ];
 }
 
@@ -84,6 +87,10 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
   int _index = 0;
   bool _listening = false;
 
+  /// The app a listen is under way in, so that closing the sheet can stop
+  /// it: the microphone is not left on until the recogniser gives up.
+  AppState? _hearing;
+
   /// What the last listen gave, or null before one.
   late SpeechHeard? _heard = widget.heard;
 
@@ -94,18 +101,25 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
 
   Future<void> _listen(Card? word) async {
     if (_listening) return;
-    final state = AppScope.read(context);
+    final state = _hearing = AppScope.read(context);
     setState(() {
       _listening = true;
       _heard = null;
       _for = word;
     });
     final heard = await state.listenFor(widget.language);
+    _hearing = null;
     if (!mounted) return;
     setState(() {
       _listening = false;
       _heard = heard;
     });
+  }
+
+  @override
+  void dispose() {
+    _hearing?.stopListening();
+    super.dispose();
   }
 
   /// Whether what was heard is [word], as the speaking drill grades it: its

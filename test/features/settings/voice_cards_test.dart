@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/deck.dart';
@@ -14,6 +17,7 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
+import '../../support/review_fixture.dart';
 
 // One Voices card per language, with a test for hearing it and for
 // speaking it (docs/plans/voices-per-language.md).
@@ -22,6 +26,32 @@ import '../../support/harness.dart';
 void _useTallPhone(WidgetTester tester, {double textScale = 1.0}) {
   usePhone(tester, textScale: textScale);
   tester.view.physicalSize = const Size(390 * 3, 9000 * 3);
+}
+
+/// A recogniser whose listen goes on until it is stopped, as a phone's
+/// does while the learner has not spoken.
+class _UntilStopped extends FixedSpeechEngine {
+  _UntilStopped() : super(onDevice: <String>{'hi', 'es'});
+
+  Completer<SpeechHeard>? _pending;
+  int stops = 0;
+
+  @override
+  Future<SpeechHeard> listen({
+    required String bcp47,
+    required bool onDevice,
+    Duration listenFor = const Duration(seconds: 8),
+  }) {
+    listens.add((bcp47: bcp47, onDevice: onDevice));
+    return (_pending = Completer<SpeechHeard>()).future;
+  }
+
+  @override
+  Future<void> stop() async {
+    stops++;
+    _pending?.complete(const SpeechHeard.failed(SpeechFailure.noMatch));
+    _pending = null;
+  }
 }
 
 /// A state with [speech] set up and speaking on, and voices for [voices].
@@ -355,6 +385,90 @@ void main() {
     expect(tester.widget<GroupedTile>(online).line, l10n.voicesSpeechOnline);
     await _tap(tester, online);
     expect(state.settings.allowsOnlineSpeech('hi'), isFalse);
+  });
+
+  testWidgets('the online switch is named for what it allows, not Speaking, '
+      'which stays the heading above it', (tester) async {
+    _useTallPhone(tester);
+    final speech = FixedSpeechEngine(
+      onDevice: <String>{'es'},
+      online: <String>{'hi'},
+    );
+    final state = await _speaking(speech);
+    await pumpScreen(tester, const VoicesPage(), state: state);
+    final l10n = l10nOf(tester);
+    final hindi = _card('Hindi');
+    final online = tester.widget<GroupedTile>(
+      find.descendant(
+        of: hindi,
+        matching: find.byWidgetPredicate(
+          (w) => w is GroupedTile && w.toggleValue != null,
+        ),
+      ),
+    );
+    expect(online.title, l10n.voicesOnlineSwitch);
+    expect(online.title, isNot(l10n.voicesSpeakingPart));
+    expect(
+      find.descendant(of: hindi, matching: find.text(l10n.voicesSpeakingPart)),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: hindi,
+        matching: find.text(l10n.voicesSpeechOnlyOnline),
+      ),
+      findsOneWidget,
+    );
+    expect(online.subtitleOn, isNot(online.subtitleOff));
+  });
+
+  group('a rude word is never offered to say or played', () {
+    test('the speaking test passes over it', () async {
+      final state = await reviewState();
+      addTearDown(state.dispose);
+      final telugu = _language(state, 'te');
+      final words = speechTestWords(state, telugu).map((c) => c.id);
+      expect(words, isNot(contains(rudeCard)));
+      expect(words, containsAll(<String>[alikeCard, plainCard]));
+    });
+
+    test('Play passes over it, though its deck comes first', () async {
+      // With no path, the decks come in the order of their files, and the
+      // rude deck's sorts before the words'.
+      final state = AppState.test(
+        decks: MemoryDeckSource(
+          reviewCourse()..remove('decks/te/te-path.yaml'),
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      final telugu = _language(state, 'te');
+      expect(
+        state.decks.where((d) => d.language.code == 'te').first.id,
+        rudeDeck,
+      );
+      expect(VoicesPage.sampleFor(state, telugu), 'విధవ');
+    });
+  });
+
+  testWidgets('closing the speaking test while it listens stops the '
+      'microphone; closing it otherwise stops nothing', (tester) async {
+    _useTallPhone(tester);
+    final speech = _UntilStopped();
+    final state = await _speaking(speech);
+    final l10n = await _openTest(tester, state);
+    Navigator.of(tester.element(find.byType(SpeechTestSheet))).pop();
+    await tester.pumpAndSettle();
+    expect(speech.stops, 0);
+
+    await _tap(tester, find.bySemanticsLabel(l10n.voicesSayLabel('Hindi')));
+    await _tap(tester, find.text(l10n.voicesSayAnything));
+    expect(speech.listens, hasLength(1));
+    expect(find.text(l10n.drillHearingHint), findsOneWidget);
+    Navigator.of(tester.element(find.byType(SpeechTestSheet))).pop();
+    await tester.pumpAndSettle();
+    expect(find.byType(SpeechTestSheet), findsNothing);
+    expect(speech.stops, 1);
   });
 
   testWidgets('a test that finds the language not on the phone moves it to '
