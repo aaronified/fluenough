@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
+import '../../app/system_settings.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -22,9 +23,11 @@ import '../../ui/widgets/snack.dart';
 /// set up), for after installing a voice or a language pack.
 ///
 /// The design's "Install voices in phone settings" opens Android's
-/// text-to-speech settings. Nothing in the repository can open them yet
-/// (`Feature.voiceSettingsLink` needs a dependency, AGENTS.md rule 6), so
-/// until then the button explains how to get there, in a dialog.
+/// text-to-speech settings, or failing that the voice engine's page for
+/// installing voice data, through `AppState.systemSettings`
+/// (`Feature.voiceSettingsLink`). Where neither opens — a phone with
+/// neither, a platform error, not Android — it explains how to get there,
+/// in a dialog.
 class VoicesPage extends StatefulWidget {
   const VoicesPage({super.key});
 
@@ -96,6 +99,21 @@ class _VoicesPageState extends State<VoicesPage> {
     return state.speak(text, language);
   }
 
+  /// Opens the phone's voice settings, or explains the way there when
+  /// nothing opens.
+  Future<void> _installVoices() async {
+    final state = AppScope.read(context);
+    if (state.features.isAvailable(Feature.voiceSettingsLink)) {
+      try {
+        final opened = await state.systemSettings.openVoiceSettings();
+        if (opened != VoiceSettingsPage.none) return;
+      } on Exception {
+        // Explained below instead.
+      }
+    }
+    if (mounted) await _explainInstall();
+  }
+
   Future<void> _explainInstall() => showDialog<void>(
     context: context,
     builder: (context) {
@@ -163,7 +181,7 @@ class _VoicesPageState extends State<VoicesPage> {
               minimumSize: const Size.fromHeight(AppSizes.primaryButton),
               textStyle: theme.textTheme.titleMedium,
             ),
-            onPressed: _explainInstall,
+            onPressed: _installVoices,
             icon: const Icon(Icons.settings_outlined),
             label: Text(l10n.voicesInstall, textAlign: TextAlign.center),
           ),

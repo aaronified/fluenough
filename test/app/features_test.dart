@@ -4,8 +4,8 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 
 /// Features the UI plan (§2, "Design features with no issue") lists as having
-/// no issue yet, plus the voice settings link, which needs a dependency before
-/// it can have one. Only these may carry issue 0. Adding to this list is a
+/// no issue yet, plus the voice settings link, which was built without one,
+/// on the owner's word. Only these may carry issue 0. Adding to this list is a
 /// decision: open the issue instead, and put its number on the feature.
 const Set<Feature> noIssueYet = {
   Feature.importCsv,
@@ -41,7 +41,8 @@ void main() {
   test('this version ships the drills, speaking and reading among them, '
       'answers in Latin letters, saved progress, '
       'appearance but for wallpaper colours, stats, leeches, daily facts, '
-      'the log backup and adding a deck from a file', () {
+      'the log backup, adding a deck from a file and opening the phone\'s '
+      'voice settings', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -61,6 +62,7 @@ void main() {
       Feature.logExport,
       Feature.logImport,
       Feature.importFile,
+      Feature.voiceSettingsLink,
     });
   });
 

@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
+### Added
+
+- Install voices in phone settings, in Settings > Voices, now opens the phone's text-to-speech settings, where a voice is installed, instead of only saying how to find them. On a phone without that page it opens the voice engine's own page for installing voices; where neither opens, it explains the way there as before. No new dependency: the app asks Android through a small channel of its own, which `tools/brand_android.py` writes into the generated Android project.
 
 - ख़ is now written k͟h in the Latin readings, as ISO 15919 writes it, in place of ḵ: the decks' readings, the romanisation files, the README table, the transcriber and the validator. Typing kh is still right, with its mark flagged (#339).
 - Putting a sentence's words in order no longer gives the answer away: the tiles have no capitals, and each mark (। . ? , ! …) is a tile of its own, placed like a word. The card shown afterwards is unchanged (#347).

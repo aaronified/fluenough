@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/system_settings.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
@@ -162,20 +165,82 @@ void main() {
     expect(find.text(l10n.voicesTest), findsOneWidget);
   });
 
-  testWidgets('Install explains how, in a dialog', (tester) async {
+  Future<void> tapInstall(WidgetTester tester, AppState state) async {
     usePhone(tester);
     // Tall enough for every bundled language's row and what is under them.
     tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
-    await pumpScreen(tester, const VoicesPage());
-    final l10n = l10nOf(tester);
-    await tester.tap(find.text(l10n.voicesInstall));
+    await pumpScreen(tester, const VoicesPage(), state: state);
+    await tester.tap(find.text(l10nOf(tester).voicesInstall));
     await tester.pumpAndSettle();
+  }
+
+  void expectExplained(WidgetTester tester) {
+    final l10n = l10nOf(tester);
     expect(find.byType(AlertDialog), findsOneWidget);
     expect(find.text(l10n.voicesInstallTitle), findsOneWidget);
     expect(find.text(l10n.voicesInstallSteps), findsOneWidget);
-    await tester.tap(find.text(l10n.commonGotIt));
+  }
+
+  testWidgets("Install opens the phone's text-to-speech settings", (
+    tester,
+  ) async {
+    final phone = FixedSystemSettings();
+    await tapInstall(tester, AppState.test(systemSettings: phone));
+    expect(phone.voiceSettingsAsked, 1);
+    expect(find.byType(AlertDialog), findsNothing);
+  });
+
+  testWidgets("Install opens an engine's voice data where there are no "
+      'text-to-speech settings', (tester) async {
+    final phone = FixedSystemSettings(opens: VoiceSettingsPage.installVoices);
+    await tapInstall(tester, AppState.test(systemSettings: phone));
+    expect(phone.voiceSettingsAsked, 1);
+    expect(find.byType(AlertDialog), findsNothing);
+  });
+
+  testWidgets('Install explains how, in a dialog, when nothing opens', (
+    tester,
+  ) async {
+    final phone = FixedSystemSettings(opens: VoiceSettingsPage.none);
+    await tapInstall(tester, AppState.test(systemSettings: phone));
+    expect(phone.voiceSettingsAsked, 1);
+    expectExplained(tester);
+    await tester.tap(find.text(l10nOf(tester).commonGotIt));
     await tester.pumpAndSettle();
     expect(find.byType(AlertDialog), findsNothing);
+  });
+
+  testWidgets('Install explains how when the phone cannot be asked', (
+    tester,
+  ) async {
+    final phone = FixedSystemSettings(
+      error: PlatformException(code: 'unavailable'),
+    );
+    await tapInstall(tester, AppState.test(systemSettings: phone));
+    expect(phone.voiceSettingsAsked, 1);
+    expectExplained(tester);
+  });
+
+  testWidgets('Install explains how where there are no phone settings to '
+      'open, as off Android', (tester) async {
+    // AppState.test's own: settings that open nothing.
+    await tapInstall(tester, AppState.test());
+    expectExplained(tester);
+  });
+
+  testWidgets('with the link switched off, Install only explains', (
+    tester,
+  ) async {
+    final phone = FixedSystemSettings();
+    await tapInstall(
+      tester,
+      AppState.test(
+        systemSettings: phone,
+        features: const FeatureRegistry.only(<Feature>{}),
+      ),
+    );
+    expect(phone.voiceSettingsAsked, 0);
+    expectExplained(tester);
   });
 
   testWidgets('the checking and no-decks states', (tester) async {
