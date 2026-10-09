@@ -98,7 +98,9 @@ units:
   - decks: ["bn-work", "bn-grammar-demonstratives", "*"]
     words: 21
     grammar: ["demonstratives"]
-  - planned: { id: "bn-grammar-noun-forms", grammar: ["plural", "gen", "loc", "ke", "theke", "sathe"] }
+  - decks: ["bn-grammar-noun-forms", "bn-noun-forms-sentences"]
+    words: 0
+    grammar: ["plural", "gen", "loc", "ke", "theke", "sathe"]
     listening_passages:
       - { id: "way-to-school", text: { "en": "Two children say where they go, with whom, and where from" } }
     reading_passages:

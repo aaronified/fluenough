@@ -1,0 +1,565 @@
+schema: 1
+id: "bn-grammar-noun-forms"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+    except: ["bn-0560"]
+  slots: ["plural", "gen", "loc", "ke", "theke", "sathe"]
+  rows:
+    - word: "bn-0350"
+      forms: { "plural": null, "gen": "জলের", "loc": "জলে", "ke": null, "theke": "জল থেকে", "sathe": "জলের সঙ্গে" }
+      readings: { "plural": null, "gen": "jôler", "loc": "jôle", "ke": null, "theke": "jôl theke", "sathe": "jôler śôṅge" }
+    - word: "bn-0352"
+      forms: { "plural": null, "gen": "ভাতের", "loc": "ভাতে", "ke": null, "theke": "ভাত থেকে", "sathe": "ভাতের সঙ্গে" }
+      readings: { "plural": null, "gen": "bhāter", "loc": "bhāte", "ke": null, "theke": "bhāt theke", "sathe": "bhāter śôṅge" }
+    - word: "bn-0272"
+      forms: { "plural": null, "gen": "চালের", "loc": "চালে", "ke": null, "theke": "চাল থেকে", "sathe": "চালের সঙ্গে" }
+      readings: { "plural": null, "gen": "cāler", "loc": "cāle", "ke": null, "theke": "cāl theke", "sathe": "cāler śôṅge" }
+    - word: "bn-0181"
+      forms: { "plural": "দাদারা", "gen": "দাদার", "loc": null, "ke": "দাদাকে", "theke": "দাদার কাছ থেকে", "sathe": "দাদার সঙ্গে" }
+      readings: { "plural": "dādārā", "gen": "dādār", "loc": null, "ke": "dādāke", "theke": "dādār kāch theke", "sathe": "dādār śôṅge" }
+    - word: "bn-0182"
+      forms: { "plural": "দিদিরা", "gen": "দিদির", "loc": null, "ke": "দিদিকে", "theke": "দিদির কাছ থেকে", "sathe": "দিদির সঙ্গে" }
+      readings: { "plural": "didirā", "gen": "didir", "loc": null, "ke": "didike", "theke": "didir kāch theke", "sathe": "didir śôṅge" }
+    - word: "bn-0183"
+      forms: { "plural": "কাকুরা", "gen": "কাকুর", "loc": null, "ke": "কাকুকে", "theke": "কাকুর কাছ থেকে", "sathe": "কাকুর সঙ্গে" }
+      readings: { "plural": "kākurā", "gen": "kākur", "loc": null, "ke": "kākuke", "theke": "kākur kāch theke", "sathe": "kākur śôṅge" }
+    - word: "bn-0184"
+      forms: { "plural": "মাসিমারা", "gen": "মাসিমার", "loc": null, "ke": "মাসিমাকে", "theke": "মাসিমার কাছ থেকে", "sathe": "মাসিমার সঙ্গে" }
+      readings: { "plural": "māśimārā", "gen": "māśimār", "loc": null, "ke": "māśimāke", "theke": "māśimār kāch theke", "sathe": "māśimār śôṅge" }
+    - word: "bn-0185"
+      forms: { "plural": "দাদুরা", "gen": "দাদুর", "loc": null, "ke": "দাদুকে", "theke": "দাদুর কাছ থেকে", "sathe": "দাদুর সঙ্গে" }
+      readings: { "plural": "dādurā", "gen": "dādur", "loc": null, "ke": "dāduke", "theke": "dādur kāch theke", "sathe": "dādur śôṅge" }
+    - word: "bn-0186"
+      forms: { "plural": "ভাইরা", "gen": "ভাইয়ের", "loc": null, "ke": "ভাইকে", "theke": "ভাইয়ের কাছ থেকে", "sathe": "ভাইয়ের সঙ্গে" }
+      readings: { "plural": "bhāirā", "gen": "bhāiyer", "loc": null, "ke": "bhāike", "theke": "bhāiyer kāch theke", "sathe": "bhāiyer śôṅge" }
+    - word: "bn-0187"
+      forms: { "plural": ["স্যাররা", "স্যারেরা"], "gen": "স্যারের", "loc": null, "ke": "স্যারকে", "theke": "স্যারের কাছ থেকে", "sathe": "স্যারের সঙ্গে" }
+      readings: { "plural": ["sêrrā", "sêrerā"], "gen": "sêrer", "loc": null, "ke": "sêrke", "theke": "sêrer kāch theke", "sathe": "sêrer śôṅge" }
+    - word: "bn-0188"
+      forms: { "plural": ["ম্যাডামরা", "ম্যাডামেরা"], "gen": "ম্যাডামের", "loc": null, "ke": "ম্যাডামকে", "theke": "ম্যাডামের কাছ থেকে", "sathe": "ম্যাডামের সঙ্গে" }
+      readings: { "plural": ["mêḍāmrā", "mêḍāmerā"], "gen": "mêḍāmer", "loc": null, "ke": "mêḍāmke", "theke": "mêḍāmer kāch theke", "sathe": "mêḍāmer śôṅge" }
+    - word: "bn-0189"
+      forms: { "plural": "বন্ধুরা", "gen": "বন্ধুর", "loc": null, "ke": "বন্ধুকে", "theke": "বন্ধুর কাছ থেকে", "sathe": "বন্ধুর সঙ্গে" }
+      readings: { "plural": "bondhurā", "gen": "bondhur", "loc": null, "ke": "bondhuke", "theke": "bondhur kāch theke", "sathe": "bondhur śôṅge" }
+    - word: "bn-0414"
+      forms: { "plural": "আপারা", "gen": "আপার", "loc": null, "ke": "আপাকে", "theke": "আপার কাছ থেকে", "sathe": "আপার সঙ্গে" }
+      readings: { "plural": "āpārā", "gen": "āpār", "loc": null, "ke": "āpāke", "theke": "āpār kāch theke", "sathe": "āpār śôṅge" }
+    - word: "bn-0191"
+      forms: { "plural": "নামগুলো", "gen": "নামের", "loc": "নামে", "ke": null, "theke": "নাম থেকে", "sathe": null }
+      readings: { "plural": "nāmgulo", "gen": "nāmer", "loc": "nāme", "ke": null, "theke": "nām theke", "sathe": null }
+    - word: "bn-0196"
+      forms: { "plural": "বাড়িগুলো", "gen": "বাড়ির", "loc": "বাড়িতে", "ke": null, "theke": "বাড়ি থেকে", "sathe": "বাড়ির সঙ্গে" }
+      readings: { "plural": "bāṛigulo", "gen": "bāṛir", "loc": "bāṛite", "ke": null, "theke": "bāṛi theke", "sathe": "bāṛir śôṅge" }
+    - word: "bn-0197"
+      forms: { "plural": "পরিবারগুলো", "gen": "পরিবারের", "loc": "পরিবারে", "ke": null, "theke": "পরিবার থেকে", "sathe": "পরিবারের সঙ্গে" }
+      readings: { "plural": "poribārgulo", "gen": "poribārer", "loc": "poribāre", "ke": null, "theke": "poribār theke", "sathe": "poribārer śôṅge" }
+    - word: "bn-0198"
+      forms: { "plural": "কাজগুলো", "gen": "কাজের", "loc": "কাজে", "ke": null, "theke": "কাজ থেকে", "sathe": null }
+      readings: { "plural": "kājgulo", "gen": "kājer", "loc": "kāje", "ke": null, "theke": "kāj theke", "sathe": null }
+    - word: "bn-0199"
+      forms: { "plural": "শহরগুলো", "gen": "শহরের", "loc": "শহরে", "ke": null, "theke": "শহর থেকে", "sathe": "শহরের সঙ্গে" }
+      readings: { "plural": "śôhorgulo", "gen": "śôhorer", "loc": "śôhore", "ke": null, "theke": "śôhor theke", "sathe": "śôhorer śôṅge" }
+    - word: "bn-0200"
+      forms: { "plural": "দেশগুলো", "gen": "দেশের", "loc": "দেশে", "ke": null, "theke": "দেশ থেকে", "sathe": "দেশের সঙ্গে" }
+      readings: { "plural": "deśgulo", "gen": "deśer", "loc": "deśe", "ke": null, "theke": "deś theke", "sathe": "deśer śôṅge" }
+    - word: "bn-0201"
+      forms: { "plural": null, "gen": "ভাষার", "loc": "ভাষায়", "ke": null, "theke": "ভাষা থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bhāśār", "loc": "bhāśāy", "ke": null, "theke": "bhāśā theke", "sathe": null }
+    - word: "bn-0416"
+      forms: { "plural": null, "gen": "বয়সের", "loc": "বয়সে", "ke": null, "theke": "বয়স থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bôyośer", "loc": "bôyośe", "ke": null, "theke": "bôyoś theke", "sathe": null }
+    - word: "bn-0419"
+      forms: { "plural": "বিদেশিরা", "gen": "বিদেশির", "loc": null, "ke": "বিদেশিকে", "theke": "বিদেশির কাছ থেকে", "sathe": "বিদেশির সঙ্গে" }
+      readings: { "plural": "bideśirā", "gen": "bideśir", "loc": null, "ke": "bideśike", "theke": "bideśir kāch theke", "sathe": "bideśir śôṅge" }
+    - word: "bn-0420"
+      forms: { "plural": "বাঙালিরা", "gen": "বাঙালির", "loc": null, "ke": "বাঙালিকে", "theke": "বাঙালির কাছ থেকে", "sathe": "বাঙালির সঙ্গে" }
+      readings: { "plural": "bāṅālirā", "gen": "bāṅālir", "loc": null, "ke": "bāṅālike", "theke": "bāṅālir kāch theke", "sathe": "bāṅālir śôṅge" }
+    - word: "bn-0423"
+      forms: { "plural": "বাবারা", "gen": "বাবার", "loc": null, "ke": "বাবাকে", "theke": "বাবার কাছ থেকে", "sathe": "বাবার সঙ্গে" }
+      readings: { "plural": "bābārā", "gen": "bābār", "loc": null, "ke": "bābāke", "theke": "bābār kāch theke", "sathe": "bābār śôṅge" }
+    - word: "bn-0424"
+      forms: { "plural": "মায়েরা", "gen": "মায়ের", "loc": null, "ke": "মাকে", "theke": "মায়ের কাছ থেকে", "sathe": "মায়ের সঙ্গে" }
+      readings: { "plural": "māyerā", "gen": "māyer", "loc": null, "ke": "māke", "theke": "māyer kāch theke", "sathe": "māyer śôṅge" }
+    - word: "bn-0425"
+      forms: { "plural": ["বোনেরা", "বোনরা"], "gen": "বোনের", "loc": null, "ke": "বোনকে", "theke": "বোনের কাছ থেকে", "sathe": "বোনের সঙ্গে" }
+      readings: { "plural": ["bonerā", "bonrā"], "gen": "boner", "loc": null, "ke": "bonke", "theke": "boner kāch theke", "sathe": "boner śôṅge" }
+    - word: "bn-0426"
+      forms: { "plural": "ছেলেরা", "gen": "ছেলের", "loc": null, "ke": "ছেলেকে", "theke": "ছেলের কাছ থেকে", "sathe": "ছেলের সঙ্গে" }
+      readings: { "plural": "chelerā", "gen": "cheler", "loc": null, "ke": "cheleke", "theke": "cheler kāch theke", "sathe": "cheler śôṅge" }
+    - word: "bn-0427"
+      forms: { "plural": "মেয়েরা", "gen": "মেয়ের", "loc": null, "ke": "মেয়েকে", "theke": "মেয়ের কাছ থেকে", "sathe": "মেয়ের সঙ্গে" }
+      readings: { "plural": "meyerā", "gen": "meyer", "loc": null, "ke": "meyeke", "theke": "meyer kāch theke", "sathe": "meyer śôṅge" }
+    - word: "bn-0428"
+      forms: { "plural": "স্বামীরা", "gen": "স্বামীর", "loc": null, "ke": "স্বামীকে", "theke": "স্বামীর কাছ থেকে", "sathe": "স্বামীর সঙ্গে" }
+      readings: { "plural": "śāmirā", "gen": "śāmir", "loc": null, "ke": "śāmike", "theke": "śāmir kāch theke", "sathe": "śāmir śôṅge" }
+    - word: "bn-0429"
+      forms: { "plural": "স্ত্রীরা", "gen": "স্ত্রীর", "loc": null, "ke": "স্ত্রীকে", "theke": "স্ত্রীর কাছ থেকে", "sathe": "স্ত্রীর সঙ্গে" }
+      readings: { "plural": "strirā", "gen": "strir", "loc": null, "ke": "strike", "theke": "strir kāch theke", "sathe": "strir śôṅge" }
+    - word: "bn-0430"
+      forms: { "plural": "ছেলেমেয়েরা", "gen": "ছেলেমেয়ের", "loc": null, "ke": "ছেলেমেয়েকে", "theke": "ছেলেমেয়ের কাছ থেকে", "sathe": "ছেলেমেয়ের সঙ্গে" }
+      readings: { "plural": "chelemeyerā", "gen": "chelemeyer", "loc": null, "ke": "chelemeyeke", "theke": "chelemeyer kāch theke", "sathe": "chelemeyer śôṅge" }
+    - word: "bn-0431"
+      forms: { "plural": "ঠাকুরদারা", "gen": "ঠাকুরদার", "loc": null, "ke": "ঠাকুরদাকে", "theke": "ঠাকুরদার কাছ থেকে", "sathe": "ঠাকুরদার সঙ্গে" }
+      readings: { "plural": "ṭhākurdārā", "gen": "ṭhākurdār", "loc": null, "ke": "ṭhākurdāke", "theke": "ṭhākurdār kāch theke", "sathe": "ṭhākurdār śôṅge" }
+    - word: "bn-0432"
+      forms: { "plural": "ঠাকুমারা", "gen": "ঠাকুমার", "loc": null, "ke": "ঠাকুমাকে", "theke": "ঠাকুমার কাছ থেকে", "sathe": "ঠাকুমার সঙ্গে" }
+      readings: { "plural": "ṭhākumārā", "gen": "ṭhākumār", "loc": null, "ke": "ṭhākumāke", "theke": "ṭhākumār kāch theke", "sathe": "ṭhākumār śôṅge" }
+    - word: "bn-0433"
+      forms: { "plural": "দাদুরা", "gen": "দাদুর", "loc": null, "ke": "দাদুকে", "theke": "দাদুর কাছ থেকে", "sathe": "দাদুর সঙ্গে" }
+      readings: { "plural": "dādurā", "gen": "dādur", "loc": null, "ke": "dāduke", "theke": "dādur kāch theke", "sathe": "dādur śôṅge" }
+    - word: "bn-0434"
+      forms: { "plural": "দিদিমারা", "gen": "দিদিমার", "loc": null, "ke": "দিদিমাকে", "theke": "দিদিমার কাছ থেকে", "sathe": "দিদিমার সঙ্গে" }
+      readings: { "plural": "didimārā", "gen": "didimār", "loc": null, "ke": "didimāke", "theke": "didimār kāch theke", "sathe": "didimār śôṅge" }
+    - word: "bn-0435"
+      forms: { "plural": "কাকারা", "gen": "কাকার", "loc": null, "ke": "কাকাকে", "theke": "কাকার কাছ থেকে", "sathe": "কাকার সঙ্গে" }
+      readings: { "plural": "kākārā", "gen": "kākār", "loc": null, "ke": "kākāke", "theke": "kākār kāch theke", "sathe": "kākār śôṅge" }
+    - word: "bn-0436"
+      forms: { "plural": "পিসিরা", "gen": "পিসির", "loc": null, "ke": "পিসিকে", "theke": "পিসির কাছ থেকে", "sathe": "পিসির সঙ্গে" }
+      readings: { "plural": "piśirā", "gen": "piśir", "loc": null, "ke": "piśike", "theke": "piśir kāch theke", "sathe": "piśir śôṅge" }
+    - word: "bn-0437"
+      forms: { "plural": "মামারা", "gen": "মামার", "loc": null, "ke": "মামাকে", "theke": "মামার কাছ থেকে", "sathe": "মামার সঙ্গে" }
+      readings: { "plural": "māmārā", "gen": "māmār", "loc": null, "ke": "māmāke", "theke": "māmār kāch theke", "sathe": "māmār śôṅge" }
+    - word: "bn-0438"
+      forms: { "plural": "মাসিরা", "gen": "মাসির", "loc": null, "ke": "মাসিকে", "theke": "মাসির কাছ থেকে", "sathe": "মাসির সঙ্গে" }
+      readings: { "plural": "māśirā", "gen": "māśir", "loc": null, "ke": "māśike", "theke": "māśir kāch theke", "sathe": "māśir śôṅge" }
+    - word: "bn-0442"
+      forms: { "plural": null, "gen": "বাবা-মায়ের", "loc": null, "ke": "বাবা-মাকে", "theke": "বাবা-মায়ের কাছ থেকে", "sathe": "বাবা-মায়ের সঙ্গে" }
+      readings: { "plural": null, "gen": "bābā-māyer", "loc": null, "ke": "bābā-māke", "theke": "bābā-māyer kāch theke", "sathe": "bābā-māyer śôṅge" }
+    - word: "bn-0443"
+      forms: { "plural": ["আত্মীয়রা", "আত্মীয়েরা"], "gen": "আত্মীয়ের", "loc": null, "ke": "আত্মীয়কে", "theke": "আত্মীয়ের কাছ থেকে", "sathe": "আত্মীয়ের সঙ্গে" }
+      readings: { "plural": ["āttiyorā", "āttiyerā"], "gen": "āttiyer", "loc": null, "ke": "āttiyoke", "theke": "āttiyer kāch theke", "sathe": "āttiyer śôṅge" }
+    - word: "bn-0444"
+      forms: { "plural": "জেঠুরা", "gen": "জেঠুর", "loc": null, "ke": "জেঠুকে", "theke": "জেঠুর কাছ থেকে", "sathe": "জেঠুর সঙ্গে" }
+      readings: { "plural": "jeṭhurā", "gen": "jeṭhur", "loc": null, "ke": "jeṭhuke", "theke": "jeṭhur kāch theke", "sathe": "jeṭhur śôṅge" }
+    - word: "bn-0445"
+      forms: { "plural": ["শ্বশুররা", "শ্বশুরেরা"], "gen": "শ্বশুরের", "loc": null, "ke": "শ্বশুরকে", "theke": "শ্বশুরের কাছ থেকে", "sathe": "শ্বশুরের সঙ্গে" }
+      readings: { "plural": ["śośurrā", "śośurerā"], "gen": "śośurer", "loc": null, "ke": "śośurke", "theke": "śośurer kāch theke", "sathe": "śośurer śôṅge" }
+    - word: "bn-0446"
+      forms: { "plural": "শাশুড়িরা", "gen": "শাশুড়ির", "loc": null, "ke": "শাশুড়িকে", "theke": "শাশুড়ির কাছ থেকে", "sathe": "শাশুড়ির সঙ্গে" }
+      readings: { "plural": "śāśuṛirā", "gen": "śāśuṛir", "loc": null, "ke": "śāśuṛike", "theke": "śāśuṛir kāch theke", "sathe": "śāśuṛir śôṅge" }
+    - word: "bn-0447"
+      forms: { "plural": "নাতিরা", "gen": "নাতির", "loc": null, "ke": "নাতিকে", "theke": "নাতির কাছ থেকে", "sathe": "নাতির সঙ্গে" }
+      readings: { "plural": "nātirā", "gen": "nātir", "loc": null, "ke": "nātike", "theke": "nātir kāch theke", "sathe": "nātir śôṅge" }
+    - word: "bn-0448"
+      forms: { "plural": "নাতনিরা", "gen": "নাতনির", "loc": null, "ke": "নাতনিকে", "theke": "নাতনির কাছ থেকে", "sathe": "নাতনির সঙ্গে" }
+      readings: { "plural": "nātnirā", "gen": "nātnir", "loc": null, "ke": "nātnike", "theke": "nātnir kāch theke", "sathe": "nātnir śôṅge" }
+    - word: "bn-0376"
+      forms: { "plural": ["ডাক্তাররা", "ডাক্তারেরা"], "gen": "ডাক্তারের", "loc": null, "ke": "ডাক্তারকে", "theke": "ডাক্তারের কাছ থেকে", "sathe": "ডাক্তারের সঙ্গে" }
+      readings: { "plural": ["ḍāktārrā", "ḍāktārerā"], "gen": "ḍāktārer", "loc": null, "ke": "ḍāktārke", "theke": "ḍāktārer kāch theke", "sathe": "ḍāktārer śôṅge" }
+    - word: "bn-0449"
+      forms: { "plural": "চাকরিগুলো", "gen": "চাকরির", "loc": "চাকরিতে", "ke": null, "theke": "চাকরি থেকে", "sathe": null }
+      readings: { "plural": "cākrigulo", "gen": "cākrir", "loc": "cākrite", "ke": null, "theke": "cākri theke", "sathe": null }
+    - word: "bn-0450"
+      forms: { "plural": "অফিসগুলো", "gen": "অফিসের", "loc": "অফিসে", "ke": null, "theke": "অফিস থেকে", "sathe": "অফিসের সঙ্গে" }
+      readings: { "plural": "ôphisgulo", "gen": "ôphiser", "loc": "ôphise", "ke": null, "theke": "ôphis theke", "sathe": "ôphiser śôṅge" }
+    - word: "bn-0451"
+      forms: { "plural": ["শিক্ষকরা", "শিক্ষকেরা"], "gen": "শিক্ষকের", "loc": null, "ke": "শিক্ষককে", "theke": "শিক্ষকের কাছ থেকে", "sathe": "শিক্ষকের সঙ্গে" }
+      readings: { "plural": ["śikkhokrā", "śikkhokerā"], "gen": "śikkhoker", "loc": null, "ke": "śikkhokke", "theke": "śikkhoker kāch theke", "sathe": "śikkhoker śôṅge" }
+    - word: "bn-0452"
+      forms: { "plural": ["দোকানদাররা", "দোকানদারেরা"], "gen": "দোকানদারের", "loc": null, "ke": "দোকানদারকে", "theke": "দোকানদারের কাছ থেকে", "sathe": "দোকানদারের সঙ্গে" }
+      readings: { "plural": ["dokāndārrā", "dokāndārerā"], "gen": "dokāndārer", "loc": null, "ke": "dokāndārke", "theke": "dokāndārer kāch theke", "sathe": "dokāndārer śôṅge" }
+    - word: "bn-0453"
+      forms: { "plural": ["ড্রাইভাররা", "ড্রাইভারেরা"], "gen": "ড্রাইভারের", "loc": null, "ke": "ড্রাইভারকে", "theke": "ড্রাইভারের কাছ থেকে", "sathe": "ড্রাইভারের সঙ্গে" }
+      readings: { "plural": ["ḍrāibhārrā", "ḍrāibhārerā"], "gen": "ḍrāibhārer", "loc": null, "ke": "ḍrāibhārke", "theke": "ḍrāibhārer kāch theke", "sathe": "ḍrāibhārer śôṅge" }
+    - word: "bn-0454"
+      forms: { "plural": ["ইঞ্জিনিয়াররা", "ইঞ্জিনিয়ারেরা"], "gen": "ইঞ্জিনিয়ারের", "loc": null, "ke": "ইঞ্জিনিয়ারকে", "theke": "ইঞ্জিনিয়ারের কাছ থেকে", "sathe": "ইঞ্জিনিয়ারের সঙ্গে" }
+      readings: { "plural": ["injiniyārrā", "injiniyārerā"], "gen": "injiniyārer", "loc": null, "ke": "injiniyārke", "theke": "injiniyārer kāch theke", "sathe": "injiniyārer śôṅge" }
+    - word: "bn-0455"
+      forms: { "plural": ["উকিলরা", "উকিলেরা"], "gen": "উকিলের", "loc": null, "ke": "উকিলকে", "theke": "উকিলের কাছ থেকে", "sathe": "উকিলের সঙ্গে" }
+      readings: { "plural": ["ukilrā", "ukilerā"], "gen": "ukiler", "loc": null, "ke": "ukilke", "theke": "ukiler kāch theke", "sathe": "ukiler śôṅge" }
+    - word: "bn-0456"
+      forms: { "plural": ["নার্সরা", "নার্সেরা"], "gen": "নার্সের", "loc": null, "ke": "নার্সকে", "theke": "নার্সের কাছ থেকে", "sathe": "নার্সের সঙ্গে" }
+      readings: { "plural": ["nārsrā", "nārserā"], "gen": "nārser", "loc": null, "ke": "nārske", "theke": "nārser kāch theke", "sathe": "nārser śôṅge" }
+    - word: "bn-0457"
+      forms: { "plural": "কর্মচারীরা", "gen": "কর্মচারীর", "loc": null, "ke": "কর্মচারীকে", "theke": "কর্মচারীর কাছ থেকে", "sathe": "কর্মচারীর সঙ্গে" }
+      readings: { "plural": "kôrmocārirā", "gen": "kôrmocārir", "loc": null, "ke": "kôrmocārike", "theke": "kôrmocārir kāch theke", "sathe": "kôrmocārir śôṅge" }
+    - word: "bn-0458"
+      forms: { "plural": "মিস্ত্রিরা", "gen": "মিস্ত্রির", "loc": null, "ke": "মিস্ত্রিকে", "theke": "মিস্ত্রির কাছ থেকে", "sathe": "মিস্ত্রির সঙ্গে" }
+      readings: { "plural": "mistrirā", "gen": "mistrir", "loc": null, "ke": "mistrike", "theke": "mistrir kāch theke", "sathe": "mistrir śôṅge" }
+    - word: "bn-0459"
+      forms: { "plural": ["কৃষকরা", "কৃষকেরা"], "gen": "কৃষকের", "loc": null, "ke": "কৃষককে", "theke": "কৃষকের কাছ থেকে", "sathe": "কৃষকের সঙ্গে" }
+      readings: { "plural": ["kriśokrā", "kriśokerā"], "gen": "kriśoker", "loc": null, "ke": "kriśokke", "theke": "kriśoker kāch theke", "sathe": "kriśoker śôṅge" }
+    - word: "bn-0460"
+      forms: { "plural": "রাঁধুনিরা", "gen": "রাঁধুনির", "loc": null, "ke": "রাঁধুনিকে", "theke": "রাঁধুনির কাছ থেকে", "sathe": "রাঁধুনির সঙ্গে" }
+      readings: { "plural": "rām̐dhunirā", "gen": "rām̐dhunir", "loc": null, "ke": "rām̐dhunike", "theke": "rām̐dhunir kāch theke", "sathe": "rām̐dhunir śôṅge" }
+    - word: "bn-0461"
+      forms: { "plural": ["লেখকরা", "লেখকেরা"], "gen": "লেখকের", "loc": null, "ke": "লেখককে", "theke": "লেখকের কাছ থেকে", "sathe": "লেখকের সঙ্গে" }
+      readings: { "plural": ["lekhokrā", "lekhokerā"], "gen": "lekhoker", "loc": null, "ke": "lekhokke", "theke": "lekhoker kāch theke", "sathe": "lekhoker śôṅge" }
+    - word: "bn-0462"
+      forms: { "plural": ["সাংবাদিকরা", "সাংবাদিকেরা"], "gen": "সাংবাদিকের", "loc": null, "ke": "সাংবাদিককে", "theke": "সাংবাদিকের কাছ থেকে", "sathe": "সাংবাদিকের সঙ্গে" }
+      readings: { "plural": ["śāṅbādikrā", "śāṅbādikerā"], "gen": "śāṅbādiker", "loc": null, "ke": "śāṅbādikke", "theke": "śāṅbādiker kāch theke", "sathe": "śāṅbādiker śôṅge" }
+    - word: "bn-0463"
+      forms: { "plural": "ছুটিগুলো", "gen": "ছুটির", "loc": "ছুটিতে", "ke": null, "theke": "ছুটি থেকে", "sathe": null }
+      readings: { "plural": "chuṭigulo", "gen": "chuṭir", "loc": "chuṭite", "ke": null, "theke": "chuṭi theke", "sathe": null }
+    - word: "bn-0375"
+      forms: { "plural": ["পুলিশরা", "পুলিশেরা"], "gen": "পুলিশের", "loc": null, "ke": "পুলিশকে", "theke": "পুলিশের কাছ থেকে", "sathe": "পুলিশের সঙ্গে" }
+      readings: { "plural": ["puliśrā", "puliśerā"], "gen": "puliśer", "loc": null, "ke": "puliśke", "theke": "puliśer kāch theke", "sathe": "puliśer śôṅge" }
+    - word: "bn-0470"
+      forms: { "plural": ["ছাত্ররা", "ছাত্রেরা"], "gen": "ছাত্রের", "loc": null, "ke": "ছাত্রকে", "theke": "ছাত্রের কাছ থেকে", "sathe": "ছাত্রের সঙ্গে" }
+      readings: { "plural": ["chātrorā", "chātrerā"], "gen": "chātrer", "loc": null, "ke": "chātroke", "theke": "chātrer kāch theke", "sathe": "chātrer śôṅge" }
+    - word: "bn-0471"
+      forms: { "plural": null, "gen": "ব্যবসার", "loc": "ব্যবসায়", "ke": null, "theke": "ব্যবসা থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bêbśār", "loc": "bêbśāy", "ke": null, "theke": "bêbśā theke", "sathe": null }
+    - word: "bn-0472"
+      forms: { "plural": null, "gen": "বেতনের", "loc": "বেতনে", "ke": null, "theke": "বেতন থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "betoner", "loc": "betone", "ke": null, "theke": "beton theke", "sathe": null }
+    - word: "bn-0056"
+      forms: { "plural": "ফলগুলো", "gen": "ফলের", "loc": "ফলে", "ke": null, "theke": "ফল থেকে", "sathe": "ফলের সঙ্গে" }
+      readings: { "plural": "phôlgulo", "gen": "phôler", "loc": "phôle", "ke": null, "theke": "phôl theke", "sathe": "phôler śôṅge" }
+    - word: "bn-0051"
+      forms: { "plural": "ঘরগুলো", "gen": "ঘরের", "loc": "ঘরে", "ke": null, "theke": "ঘর থেকে", "sathe": "ঘরের সঙ্গে" }
+      readings: { "plural": "ghôrgulo", "gen": "ghôrer", "loc": "ghôre", "ke": null, "theke": "ghôr theke", "sathe": "ghôrer śôṅge" }
+    - word: "bn-0244"
+      forms: { "plural": "দামগুলো", "gen": "দামের", "loc": "দামে", "ke": null, "theke": "দাম থেকে", "sathe": null }
+      readings: { "plural": "dāmgulo", "gen": "dāmer", "loc": "dāme", "ke": null, "theke": "dām theke", "sathe": null }
+    - word: "bn-0245"
+      forms: { "plural": "টাকাগুলো", "gen": "টাকার", "loc": "টাকায়", "ke": null, "theke": "টাকা থেকে", "sathe": "টাকার সঙ্গে" }
+      readings: { "plural": "ṭākāgulo", "gen": "ṭākār", "loc": "ṭākāy", "ke": null, "theke": "ṭākā theke", "sathe": "ṭākār śôṅge" }
+    - word: "bn-0246"
+      forms: { "plural": "খুচরোগুলো", "gen": "খুচরোর", "loc": "খুচরোতে", "ke": null, "theke": "খুচরো থেকে", "sathe": "খুচরোর সঙ্গে" }
+      readings: { "plural": "khucrogulo", "gen": "khucror", "loc": "khucrote", "ke": null, "theke": "khucro theke", "sathe": "khucror śôṅge" }
+    - word: "bn-0250"
+      forms: { "plural": "দোকানগুলো", "gen": "দোকানের", "loc": "দোকানে", "ke": null, "theke": "দোকান থেকে", "sathe": "দোকানের সঙ্গে" }
+      readings: { "plural": "dokāngulo", "gen": "dokāner", "loc": "dokāne", "ke": null, "theke": "dokān theke", "sathe": "dokāner śôṅge" }
+    - word: "bn-0252"
+      forms: { "plural": "কিলোগুলো", "gen": "কিলোর", "loc": "কিলোতে", "ke": null, "theke": "কিলো থেকে", "sathe": "কিলোর সঙ্গে" }
+      readings: { "plural": "kilogulo", "gen": "kilor", "loc": "kilote", "ke": null, "theke": "kilo theke", "sathe": "kilor śôṅge" }
+    - word: "bn-0577"
+      forms: { "plural": null, "gen": "দরকারের", "loc": "দরকারে", "ke": null, "theke": "দরকার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "dôrkārer", "loc": "dôrkāre", "ke": null, "theke": "dôrkār theke", "sathe": null }
+    - word: "bn-0260"
+      forms: { "plural": "সবজিগুলো", "gen": "সবজির", "loc": "সবজিতে", "ke": null, "theke": "সবজি থেকে", "sathe": "সবজির সঙ্গে" }
+      readings: { "plural": "śôbjigulo", "gen": "śôbjir", "loc": "śôbjite", "ke": null, "theke": "śôbji theke", "sathe": "śôbjir śôṅge" }
+    - word: "bn-0261"
+      forms: { "plural": "আলুগুলো", "gen": "আলুর", "loc": "আলুতে", "ke": null, "theke": "আলু থেকে", "sathe": "আলুর সঙ্গে" }
+      readings: { "plural": "ālugulo", "gen": "ālur", "loc": "ālute", "ke": null, "theke": "ālu theke", "sathe": "ālur śôṅge" }
+    - word: "bn-0262"
+      forms: { "plural": "পেঁয়াজগুলো", "gen": "পেঁয়াজের", "loc": "পেঁয়াজে", "ke": null, "theke": "পেঁয়াজ থেকে", "sathe": "পেঁয়াজের সঙ্গে" }
+      readings: { "plural": "pem̐yājgulo", "gen": "pem̐yājer", "loc": "pem̐yāje", "ke": null, "theke": "pem̐yāj theke", "sathe": "pem̐yājer śôṅge" }
+    - word: "bn-0263"
+      forms: { "plural": "টমেটোগুলো", "gen": "টমেটোর", "loc": "টমেটোতে", "ke": null, "theke": "টমেটো থেকে", "sathe": "টমেটোর সঙ্গে" }
+      readings: { "plural": "ṭômeṭogulo", "gen": "ṭômeṭor", "loc": "ṭômeṭote", "ke": null, "theke": "ṭômeṭo theke", "sathe": "ṭômeṭor śôṅge" }
+    - word: "bn-0264"
+      forms: { "plural": "লঙ্কাগুলো", "gen": "লঙ্কার", "loc": "লঙ্কায়", "ke": null, "theke": "লঙ্কা থেকে", "sathe": "লঙ্কার সঙ্গে" }
+      readings: { "plural": "lôṅkāgulo", "gen": "lôṅkār", "loc": "lôṅkāy", "ke": null, "theke": "lôṅkā theke", "sathe": "lôṅkār śôṅge" }
+    - word: "bn-0265"
+      forms: { "plural": "রসুনগুলো", "gen": "রসুনের", "loc": "রসুনে", "ke": null, "theke": "রসুন থেকে", "sathe": "রসুনের সঙ্গে" }
+      readings: { "plural": "rośungulo", "gen": "rośuner", "loc": "rośune", "ke": null, "theke": "rośun theke", "sathe": "rośuner śôṅge" }
+    - word: "bn-0266"
+      forms: { "plural": "মাছগুলো", "gen": "মাছের", "loc": "মাছে", "ke": null, "theke": "মাছ থেকে", "sathe": "মাছের সঙ্গে" }
+      readings: { "plural": "māchgulo", "gen": "mācher", "loc": "māche", "ke": null, "theke": "māch theke", "sathe": "mācher śôṅge" }
+    - word: "bn-0267"
+      forms: { "plural": null, "gen": "মাংসের", "loc": "মাংসে", "ke": null, "theke": "মাংস থেকে", "sathe": "মাংসের সঙ্গে" }
+      readings: { "plural": null, "gen": "māṅśer", "loc": "māṅśe", "ke": null, "theke": "māṅśo theke", "sathe": "māṅśer śôṅge" }
+    - word: "bn-0269"
+      forms: { "plural": "মুরগিগুলো", "gen": "মুরগির", "loc": "মুরগিতে", "ke": null, "theke": "মুরগি থেকে", "sathe": "মুরগির সঙ্গে" }
+      readings: { "plural": "murgigulo", "gen": "murgir", "loc": "murgite", "ke": null, "theke": "murgi theke", "sathe": "murgir śôṅge" }
+    - word: "bn-0270"
+      forms: { "plural": "ডিমগুলো", "gen": "ডিমের", "loc": "ডিমে", "ke": null, "theke": "ডিম থেকে", "sathe": "ডিমের সঙ্গে" }
+      readings: { "plural": "ḍimgulo", "gen": "ḍimer", "loc": "ḍime", "ke": null, "theke": "ḍim theke", "sathe": "ḍimer śôṅge" }
+    - word: "bn-0271"
+      forms: { "plural": null, "gen": "দুধের", "loc": "দুধে", "ke": null, "theke": "দুধ থেকে", "sathe": "দুধের সঙ্গে" }
+      readings: { "plural": null, "gen": "dudher", "loc": "dudhe", "ke": null, "theke": "dudh theke", "sathe": "dudher śôṅge" }
+    - word: "bn-0273"
+      forms: { "plural": null, "gen": "ডালের", "loc": "ডালে", "ke": null, "theke": "ডাল থেকে", "sathe": "ডালের সঙ্গে" }
+      readings: { "plural": null, "gen": "ḍāler", "loc": "ḍāle", "ke": null, "theke": "ḍāl theke", "sathe": "ḍāler śôṅge" }
+    - word: "bn-0561"
+      forms: { "plural": "কলাগুলো", "gen": "কলার", "loc": "কলায়", "ke": null, "theke": "কলা থেকে", "sathe": "কলার সঙ্গে" }
+      readings: { "plural": "kôlāgulo", "gen": "kôlār", "loc": "kôlāy", "ke": null, "theke": "kôlā theke", "sathe": "kôlār śôṅge" }
+    - word: "bn-0562"
+      forms: { "plural": "আমগুলো", "gen": "আমের", "loc": "আমে", "ke": null, "theke": "আম থেকে", "sathe": "আমের সঙ্গে" }
+      readings: { "plural": "āmgulo", "gen": "āmer", "loc": "āme", "ke": null, "theke": "ām theke", "sathe": "āmer śôṅge" }
+    - word: "bn-0563"
+      forms: { "plural": "পেঁপেগুলো", "gen": "পেঁপের", "loc": "পেঁপেতে", "ke": null, "theke": "পেঁপে থেকে", "sathe": "পেঁপের সঙ্গে" }
+      readings: { "plural": "pem̐pegulo", "gen": "pem̐per", "loc": "pem̐pete", "ke": null, "theke": "pem̐pe theke", "sathe": "pem̐per śôṅge" }
+    - word: "bn-0564"
+      forms: { "plural": "লেবুগুলো", "gen": "লেবুর", "loc": "লেবুতে", "ke": null, "theke": "লেবু থেকে", "sathe": "লেবুর সঙ্গে" }
+      readings: { "plural": "lebugulo", "gen": "lebur", "loc": "lebute", "ke": null, "theke": "lebu theke", "sathe": "lebur śôṅge" }
+    - word: "bn-0565"
+      forms: { "plural": "ফুলকপিগুলো", "gen": "ফুলকপির", "loc": "ফুলকপিতে", "ke": null, "theke": "ফুলকপি থেকে", "sathe": "ফুলকপির সঙ্গে" }
+      readings: { "plural": "phulkopigulo", "gen": "phulkopir", "loc": "phulkopite", "ke": null, "theke": "phulkopi theke", "sathe": "phulkopir śôṅge" }
+    - word: "bn-0566"
+      forms: { "plural": "বেগুনগুলো", "gen": "বেগুনের", "loc": "বেগুনে", "ke": null, "theke": "বেগুন থেকে", "sathe": "বেগুনের সঙ্গে" }
+      readings: { "plural": "begungulo", "gen": "beguner", "loc": "begune", "ke": null, "theke": "begun theke", "sathe": "beguner śôṅge" }
+    - word: "bn-0567"
+      forms: { "plural": null, "gen": "নুনের", "loc": "নুনে", "ke": null, "theke": "নুন থেকে", "sathe": "নুনের সঙ্গে" }
+      readings: { "plural": null, "gen": "nuner", "loc": "nune", "ke": null, "theke": "nun theke", "sathe": "nuner śôṅge" }
+    - word: "bn-0569"
+      forms: { "plural": null, "gen": "তেলের", "loc": "তেলে", "ke": null, "theke": "তেল থেকে", "sathe": "তেলের সঙ্গে" }
+      readings: { "plural": null, "gen": "teler", "loc": "tele", "ke": null, "theke": "tel theke", "sathe": "teler śôṅge" }
+    - word: "bn-0570"
+      forms: { "plural": null, "gen": "চিনির", "loc": "চিনিতে", "ke": null, "theke": "চিনি থেকে", "sathe": "চিনির সঙ্গে" }
+      readings: { "plural": null, "gen": "cinir", "loc": "cinite", "ke": null, "theke": "cini theke", "sathe": "cinir śôṅge" }
+    - word: "bn-0280"
+      forms: { "plural": "বাসগুলো", "gen": "বাসের", "loc": "বাসে", "ke": null, "theke": "বাস থেকে", "sathe": "বাসের সঙ্গে" }
+      readings: { "plural": "bāsgulo", "gen": "bāser", "loc": "bāse", "ke": null, "theke": "bās theke", "sathe": "bāser śôṅge" }
+    - word: "bn-0281"
+      forms: { "plural": "অটোগুলো", "gen": "অটোর", "loc": "অটোতে", "ke": null, "theke": "অটো থেকে", "sathe": "অটোর সঙ্গে" }
+      readings: { "plural": "ôṭogulo", "gen": "ôṭor", "loc": "ôṭote", "ke": null, "theke": "ôṭo theke", "sathe": "ôṭor śôṅge" }
+    - word: "bn-0282"
+      forms: { "plural": "ট্যাক্সিগুলো", "gen": "ট্যাক্সির", "loc": "ট্যাক্সিতে", "ke": null, "theke": "ট্যাক্সি থেকে", "sathe": "ট্যাক্সির সঙ্গে" }
+      readings: { "plural": "ṭêksigulo", "gen": "ṭêksir", "loc": "ṭêksite", "ke": null, "theke": "ṭêksi theke", "sathe": "ṭêksir śôṅge" }
+    - word: "bn-0283"
+      forms: { "plural": "ভাড়াগুলো", "gen": "ভাড়ার", "loc": "ভাড়ায়", "ke": null, "theke": "ভাড়া থেকে", "sathe": "ভাড়ার সঙ্গে" }
+      readings: { "plural": "bhāṛāgulo", "gen": "bhāṛār", "loc": "bhāṛāy", "ke": null, "theke": "bhāṛā theke", "sathe": "bhāṛār śôṅge" }
+    - word: "bn-0288"
+      forms: { "plural": "স্টেশনগুলো", "gen": "স্টেশনের", "loc": "স্টেশনে", "ke": null, "theke": "স্টেশন থেকে", "sathe": "স্টেশনের সঙ্গে" }
+      readings: { "plural": "sṭeśongulo", "gen": "sṭeśoner", "loc": "sṭeśone", "ke": null, "theke": "sṭeśon theke", "sathe": "sṭeśoner śôṅge" }
+    - word: "bn-0289"
+      forms: { "plural": "টিকিটগুলো", "gen": "টিকিটের", "loc": "টিকিটে", "ke": null, "theke": "টিকিট থেকে", "sathe": "টিকিটের সঙ্গে" }
+      readings: { "plural": "ṭikiṭgulo", "gen": "ṭikiṭer", "loc": "ṭikiṭe", "ke": null, "theke": "ṭikiṭ theke", "sathe": "ṭikiṭer śôṅge" }
+    - word: "bn-0290"
+      forms: { "plural": "সিটগুলো", "gen": "সিটের", "loc": "সিটে", "ke": null, "theke": "সিট থেকে", "sathe": "সিটের সঙ্গে" }
+      readings: { "plural": "siṭgulo", "gen": "siṭer", "loc": "siṭe", "ke": null, "theke": "siṭ theke", "sathe": "siṭer śôṅge" }
+    - word: "bn-0584"
+      forms: { "plural": "রিকশাগুলো", "gen": "রিকশার", "loc": "রিকশায়", "ke": null, "theke": "রিকশা থেকে", "sathe": "রিকশার সঙ্গে" }
+      readings: { "plural": "rikśāgulo", "gen": "rikśār", "loc": "rikśāy", "ke": null, "theke": "rikśā theke", "sathe": "rikśār śôṅge" }
+    - word: "bn-0313"
+      forms: { "plural": "রাস্তাগুলো", "gen": "রাস্তার", "loc": "রাস্তায়", "ke": null, "theke": "রাস্তা থেকে", "sathe": "রাস্তার সঙ্গে" }
+      readings: { "plural": "rāstāgulo", "gen": "rāstār", "loc": "rāstāy", "ke": null, "theke": "rāstā theke", "sathe": "rāstār śôṅge" }
+    - word: "bn-0314"
+      forms: { "plural": "মোড়গুলো", "gen": "মোড়ের", "loc": "মোড়ে", "ke": null, "theke": "মোড় থেকে", "sathe": "মোড়ের সঙ্গে" }
+      readings: { "plural": "moṛgulo", "gen": "moṛer", "loc": "moṛe", "ke": null, "theke": "moṛ theke", "sathe": "moṛer śôṅge" }
+    - word: "bn-0594"
+      forms: { "plural": "ফ্ল্যাটগুলো", "gen": "ফ্ল্যাটের", "loc": "ফ্ল্যাটে", "ke": null, "theke": "ফ্ল্যাট থেকে", "sathe": "ফ্ল্যাটের সঙ্গে" }
+      readings: { "plural": "flêṭgulo", "gen": "flêṭer", "loc": "flêṭe", "ke": null, "theke": "flêṭ theke", "sathe": "flêṭer śôṅge" }
+    - word: "bn-0595"
+      forms: { "plural": "রান্নাঘরগুলো", "gen": "রান্নাঘরের", "loc": "রান্নাঘরে", "ke": null, "theke": "রান্নাঘর থেকে", "sathe": "রান্নাঘরের সঙ্গে" }
+      readings: { "plural": "rānnāghorgulo", "gen": "rānnāghorer", "loc": "rānnāghore", "ke": null, "theke": "rānnāghor theke", "sathe": "rānnāghorer śôṅge" }
+    - word: "bn-0598"
+      forms: { "plural": "বাথরুমগুলো", "gen": "বাথরুমের", "loc": "বাথরুমে", "ke": null, "theke": "বাথরুম থেকে", "sathe": "বাথরুমের সঙ্গে" }
+      readings: { "plural": "bāthrumgulo", "gen": "bāthrumer", "loc": "bāthrume", "ke": null, "theke": "bāthrum theke", "sathe": "bāthrumer śôṅge" }
+    - word: "bn-0599"
+      forms: { "plural": "দরজাগুলো", "gen": "দরজার", "loc": "দরজায়", "ke": null, "theke": "দরজা থেকে", "sathe": "দরজার সঙ্গে" }
+      readings: { "plural": "dôrjāgulo", "gen": "dôrjār", "loc": "dôrjāy", "ke": null, "theke": "dôrjā theke", "sathe": "dôrjār śôṅge" }
+    - word: "bn-0600"
+      forms: { "plural": "জানালাগুলো", "gen": "জানালার", "loc": "জানালায়", "ke": null, "theke": "জানালা থেকে", "sathe": "জানালার সঙ্গে" }
+      readings: { "plural": "jānālāgulo", "gen": "jānālār", "loc": "jānālāy", "ke": null, "theke": "jānālā theke", "sathe": "jānālār śôṅge" }
+    - word: "bn-0601"
+      forms: { "plural": "বারান্দাগুলো", "gen": "বারান্দার", "loc": "বারান্দায়", "ke": null, "theke": "বারান্দা থেকে", "sathe": "বারান্দার সঙ্গে" }
+      readings: { "plural": "bārāndāgulo", "gen": "bārāndār", "loc": "bārāndāy", "ke": null, "theke": "bārāndā theke", "sathe": "bārāndār śôṅge" }
+    - word: "bn-0602"
+      forms: { "plural": "ছাদগুলো", "gen": "ছাদের", "loc": "ছাদে", "ke": null, "theke": "ছাদ থেকে", "sathe": "ছাদের সঙ্গে" }
+      readings: { "plural": "chādgulo", "gen": "chāder", "loc": "chāde", "ke": null, "theke": "chād theke", "sathe": "chāder śôṅge" }
+    - word: "bn-0603"
+      forms: { "plural": "সিঁড়িগুলো", "gen": "সিঁড়ির", "loc": "সিঁড়িতে", "ke": null, "theke": "সিঁড়ি থেকে", "sathe": "সিঁড়ির সঙ্গে" }
+      readings: { "plural": "śim̐ṛigulo", "gen": "śim̐ṛir", "loc": "śim̐ṛite", "ke": null, "theke": "śim̐ṛi theke", "sathe": "śim̐ṛir śôṅge" }
+    - word: "bn-0604"
+      forms: { "plural": "তলাগুলো", "gen": "তলার", "loc": "তলায়", "ke": null, "theke": "তলা থেকে", "sathe": "তলার সঙ্গে" }
+      readings: { "plural": "tôlāgulo", "gen": "tôlār", "loc": "tôlāy", "ke": null, "theke": "tôlā theke", "sathe": "tôlār śôṅge" }
+    - word: "bn-0605"
+      forms: { "plural": "চাবিগুলো", "gen": "চাবির", "loc": "চাবিতে", "ke": null, "theke": "চাবি থেকে", "sathe": "চাবির সঙ্গে" }
+      readings: { "plural": "cābigulo", "gen": "cābir", "loc": "cābite", "ke": null, "theke": "cābi theke", "sathe": "cābir śôṅge" }
+    - word: "bn-0606"
+      forms: { "plural": "বিছানাগুলো", "gen": "বিছানার", "loc": "বিছানায়", "ke": null, "theke": "বিছানা থেকে", "sathe": "বিছানার সঙ্গে" }
+      readings: { "plural": "bichānāgulo", "gen": "bichānār", "loc": "bichānāy", "ke": null, "theke": "bichānā theke", "sathe": "bichānār śôṅge" }
+    - word: "bn-0607"
+      forms: { "plural": "চেয়ারগুলো", "gen": "চেয়ারের", "loc": "চেয়ারে", "ke": null, "theke": "চেয়ার থেকে", "sathe": "চেয়ারের সঙ্গে" }
+      readings: { "plural": "ceyārgulo", "gen": "ceyārer", "loc": "ceyāre", "ke": null, "theke": "ceyār theke", "sathe": "ceyārer śôṅge" }
+    - word: "bn-0608"
+      forms: { "plural": "টেবিলগুলো", "gen": "টেবিলের", "loc": "টেবিলে", "ke": null, "theke": "টেবিল থেকে", "sathe": "টেবিলের সঙ্গে" }
+      readings: { "plural": "ṭebilgulo", "gen": "ṭebiler", "loc": "ṭebile", "ke": null, "theke": "ṭebil theke", "sathe": "ṭebiler śôṅge" }
+    - word: "bn-0609"
+      forms: { "plural": "পাখাগুলো", "gen": "পাখার", "loc": "পাখায়", "ke": null, "theke": "পাখা থেকে", "sathe": "পাখার সঙ্গে" }
+      readings: { "plural": "pākhāgulo", "gen": "pākhār", "loc": "pākhāy", "ke": null, "theke": "pākhā theke", "sathe": "pākhār śôṅge" }
+    - word: "bn-0610"
+      forms: { "plural": "পাড়াগুলো", "gen": "পাড়ার", "loc": "পাড়ায়", "ke": null, "theke": "পাড়া থেকে", "sathe": "পাড়ার সঙ্গে" }
+      readings: { "plural": "pāṛāgulo", "gen": "pāṛār", "loc": "pāṛāy", "ke": null, "theke": "pāṛā theke", "sathe": "pāṛār śôṅge" }
+    - word: "bn-0611"
+      forms: { "plural": "প্রতিবেশীরা", "gen": "প্রতিবেশীর", "loc": null, "ke": "প্রতিবেশীকে", "theke": "প্রতিবেশীর কাছ থেকে", "sathe": "প্রতিবেশীর সঙ্গে" }
+      readings: { "plural": "protibeśirā", "gen": "protibeśir", "loc": null, "ke": "protibeśike", "theke": "protibeśir kāch theke", "sathe": "protibeśir śôṅge" }
+    - word: "bn-0615"
+      forms: { "plural": "আলোগুলো", "gen": "আলোর", "loc": "আলোতে", "ke": null, "theke": "আলো থেকে", "sathe": "আলোর সঙ্গে" }
+      readings: { "plural": "ālogulo", "gen": "ālor", "loc": "ālote", "ke": null, "theke": "ālo theke", "sathe": "ālor śôṅge" }
+    - word: "bn-0616"
+      forms: { "plural": "আলমারিগুলো", "gen": "আলমারির", "loc": "আলমারিতে", "ke": null, "theke": "আলমারি থেকে", "sathe": "আলমারির সঙ্গে" }
+      readings: { "plural": "ālmārigulo", "gen": "ālmārir", "loc": "ālmārite", "ke": null, "theke": "ālmāri theke", "sathe": "ālmārir śôṅge" }
+    - word: "bn-0318"
+      forms: { "plural": null, "gen": "সকালের", "loc": "সকালে", "ke": null, "theke": "সকাল থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śôkāler", "loc": "śôkāle", "ke": null, "theke": "śôkāl theke", "sathe": null }
+    - word: "bn-0319"
+      forms: { "plural": null, "gen": "বিকেলের", "loc": "বিকেলে", "ke": null, "theke": "বিকেল থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bikeler", "loc": "bikele", "ke": null, "theke": "bikel theke", "sathe": null }
+    - word: "bn-0320"
+      forms: { "plural": null, "gen": "সন্ধ্যার", "loc": "সন্ধ্যায়", "ke": null, "theke": "সন্ধ্যা থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śônddhār", "loc": "śônddhāy", "ke": null, "theke": "śônddhā theke", "sathe": null }
+    - word: "bn-0321"
+      forms: { "plural": null, "gen": "রাতের", "loc": "রাতে", "ke": null, "theke": "রাত থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "rāter", "loc": "rāte", "ke": null, "theke": "rāt theke", "sathe": null }
+    - word: "bn-0325"
+      forms: { "plural": "দিনগুলো", "gen": "দিনের", "loc": "দিনে", "ke": null, "theke": "দিন থেকে", "sathe": null }
+      readings: { "plural": "dingulo", "gen": "diner", "loc": "dine", "ke": null, "theke": "din theke", "sathe": null }
+    - word: "bn-0326"
+      forms: { "plural": "সপ্তাহগুলো", "gen": "সপ্তাহের", "loc": "সপ্তাহে", "ke": null, "theke": "সপ্তাহ থেকে", "sathe": null }
+      readings: { "plural": "śôptāhogulo", "gen": "śôptāher", "loc": "śôptāhe", "ke": null, "theke": "śôptāho theke", "sathe": null }
+    - word: "bn-0327"
+      forms: { "plural": null, "gen": "সোমবারের", "loc": "সোমবারে", "ke": null, "theke": "সোমবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śombārer", "loc": "śombāre", "ke": null, "theke": "śombār theke", "sathe": null }
+    - word: "bn-0328"
+      forms: { "plural": null, "gen": "মঙ্গলবারের", "loc": "মঙ্গলবারে", "ke": null, "theke": "মঙ্গলবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "môṅgolbārer", "loc": "môṅgolbāre", "ke": null, "theke": "môṅgolbār theke", "sathe": null }
+    - word: "bn-0329"
+      forms: { "plural": null, "gen": "বুধবারের", "loc": "বুধবারে", "ke": null, "theke": "বুধবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "budhbārer", "loc": "budhbāre", "ke": null, "theke": "budhbār theke", "sathe": null }
+    - word: "bn-0330"
+      forms: { "plural": null, "gen": "বৃহস্পতিবারের", "loc": "বৃহস্পতিবারে", "ke": null, "theke": "বৃহস্পতিবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "brihośpotibārer", "loc": "brihośpotibāre", "ke": null, "theke": "brihośpotibār theke", "sathe": null }
+    - word: "bn-0331"
+      forms: { "plural": null, "gen": "শুক্রবারের", "loc": "শুক্রবারে", "ke": null, "theke": "শুক্রবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śukrobārer", "loc": "śukrobāre", "ke": null, "theke": "śukrobār theke", "sathe": null }
+    - word: "bn-0332"
+      forms: { "plural": null, "gen": "শনিবারের", "loc": "শনিবারে", "ke": null, "theke": "শনিবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śonibārer", "loc": "śonibāre", "ke": null, "theke": "śonibār theke", "sathe": null }
+    - word: "bn-0333"
+      forms: { "plural": null, "gen": "রবিবারের", "loc": "রবিবারে", "ke": null, "theke": "রবিবার থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "robibārer", "loc": "robibāre", "ke": null, "theke": "robibār theke", "sathe": null }
+    - word: "bn-0645"
+      forms: { "plural": null, "gen": "দুপুরের", "loc": "দুপুরে", "ke": null, "theke": "দুপুর থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "dupurer", "loc": "dupure", "ke": null, "theke": "dupur theke", "sathe": null }
+    - word: "bn-0646"
+      forms: { "plural": null, "gen": "ভোরের", "loc": "ভোরে", "ke": null, "theke": "ভোর থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bhorer", "loc": "bhore", "ke": null, "theke": "bhor theke", "sathe": null }
+    - word: "bn-0655"
+      forms: { "plural": "ঘণ্টাগুলো", "gen": "ঘণ্টার", "loc": "ঘণ্টায়", "ke": null, "theke": "ঘণ্টা থেকে", "sathe": null }
+      readings: { "plural": "ghônṭāgulo", "gen": "ghônṭār", "loc": "ghônṭāy", "ke": null, "theke": "ghônṭā theke", "sathe": null }
+    - word: "bn-0656"
+      forms: { "plural": "মিনিটগুলো", "gen": "মিনিটের", "loc": "মিনিটে", "ke": null, "theke": "মিনিট থেকে", "sathe": null }
+      readings: { "plural": "miniṭgulo", "gen": "miniṭer", "loc": "miniṭe", "ke": null, "theke": "miniṭ theke", "sathe": null }
+    - word: "bn-0661"
+      forms: { "plural": null, "gen": "জলখাবারের", "loc": "জলখাবারে", "ke": null, "theke": "জলখাবার থেকে", "sathe": "জলখাবারের সঙ্গে" }
+      readings: { "plural": null, "gen": "jôlkhābārer", "loc": "jôlkhābāre", "ke": null, "theke": "jôlkhābār theke", "sathe": "jôlkhābārer śôṅge" }
+    - word: "bn-0334"
+      forms: { "plural": "মাসগুলো", "gen": "মাসের", "loc": "মাসে", "ke": null, "theke": "মাস থেকে", "sathe": null }
+      readings: { "plural": "māśgulo", "gen": "māśer", "loc": "māśe", "ke": null, "theke": "māś theke", "sathe": null }
+    - word: "bn-0335"
+      forms: { "plural": "বছরগুলো", "gen": "বছরের", "loc": "বছরে", "ke": null, "theke": "বছর থেকে", "sathe": null }
+      readings: { "plural": "bôchorgulo", "gen": "bôchorer", "loc": "bôchore", "ke": null, "theke": "bôchor theke", "sathe": null }
+    - word: "bn-0336"
+      forms: { "plural": "তারিখগুলো", "gen": "তারিখের", "loc": "তারিখে", "ke": null, "theke": "তারিখ থেকে", "sathe": null }
+      readings: { "plural": "tārikhgulo", "gen": "tārikher", "loc": "tārikhe", "ke": null, "theke": "tārikh theke", "sathe": null }
+    - word: "bn-0337"
+      forms: { "plural": null, "gen": "জানুয়ারি মাসের", "loc": "জানুয়ারি মাসে", "ke": null, "theke": "জানুয়ারি মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "jānuāri māśer", "loc": "jānuāri māśe", "ke": null, "theke": "jānuāri māś theke", "sathe": null }
+    - word: "bn-0338"
+      forms: { "plural": null, "gen": "ফেব্রুয়ারি মাসের", "loc": "ফেব্রুয়ারি মাসে", "ke": null, "theke": "ফেব্রুয়ারি মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "phebruāri māśer", "loc": "phebruāri māśe", "ke": null, "theke": "phebruāri māś theke", "sathe": null }
+    - word: "bn-0339"
+      forms: { "plural": null, "gen": "মার্চ মাসের", "loc": "মার্চ মাসে", "ke": null, "theke": "মার্চ মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "mārc māśer", "loc": "mārc māśe", "ke": null, "theke": "mārc māś theke", "sathe": null }
+    - word: "bn-0340"
+      forms: { "plural": null, "gen": "এপ্রিল মাসের", "loc": "এপ্রিল মাসে", "ke": null, "theke": "এপ্রিল মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "epril māśer", "loc": "epril māśe", "ke": null, "theke": "epril māś theke", "sathe": null }
+    - word: "bn-0341"
+      forms: { "plural": null, "gen": "মে মাসের", "loc": "মে মাসে", "ke": null, "theke": "মে মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "me māśer", "loc": "me māśe", "ke": null, "theke": "me māś theke", "sathe": null }
+    - word: "bn-0342"
+      forms: { "plural": null, "gen": "জুন মাসের", "loc": "জুন মাসে", "ke": null, "theke": "জুন মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "jun māśer", "loc": "jun māśe", "ke": null, "theke": "jun māś theke", "sathe": null }
+    - word: "bn-0343"
+      forms: { "plural": null, "gen": "জুলাই মাসের", "loc": "জুলাই মাসে", "ke": null, "theke": "জুলাই মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "julāi māśer", "loc": "julāi māśe", "ke": null, "theke": "julāi māś theke", "sathe": null }
+    - word: "bn-0344"
+      forms: { "plural": null, "gen": "আগস্ট মাসের", "loc": "আগস্ট মাসে", "ke": null, "theke": "আগস্ট মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "āgosṭ māśer", "loc": "āgosṭ māśe", "ke": null, "theke": "āgosṭ māś theke", "sathe": null }
+    - word: "bn-0345"
+      forms: { "plural": null, "gen": "সেপ্টেম্বর মাসের", "loc": "সেপ্টেম্বর মাসে", "ke": null, "theke": "সেপ্টেম্বর মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "sepṭembor māśer", "loc": "sepṭembor māśe", "ke": null, "theke": "sepṭembor māś theke", "sathe": null }
+    - word: "bn-0346"
+      forms: { "plural": null, "gen": "অক্টোবর মাসের", "loc": "অক্টোবর মাসে", "ke": null, "theke": "অক্টোবর মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "ôkṭobor māśer", "loc": "ôkṭobor māśe", "ke": null, "theke": "ôkṭobor māś theke", "sathe": null }
+    - word: "bn-0347"
+      forms: { "plural": null, "gen": "নভেম্বর মাসের", "loc": "নভেম্বর মাসে", "ke": null, "theke": "নভেম্বর মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "nôbhembor māśer", "loc": "nôbhembor māśe", "ke": null, "theke": "nôbhembor māś theke", "sathe": null }
+    - word: "bn-0348"
+      forms: { "plural": null, "gen": "ডিসেম্বর মাসের", "loc": "ডিসেম্বর মাসে", "ke": null, "theke": "ডিসেম্বর মাস থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "ḍisembor māśer", "loc": "ḍisembor māśe", "ke": null, "theke": "ḍisembor māś theke", "sathe": null }
+    - word: "bn-0706"
+      forms: { "plural": null, "gen": "ঋতুর", "loc": "ঋতুতে", "ke": null, "theke": "ঋতু থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "ritur", "loc": "ritute", "ke": null, "theke": "ritu theke", "sathe": null }
+    - word: "bn-0707"
+      forms: { "plural": null, "gen": "গরমকালের", "loc": "গরমকালে", "ke": null, "theke": "গরমকাল থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "gôromkāler", "loc": "gôromkāle", "ke": null, "theke": "gôromkāl theke", "sathe": null }
+    - word: "bn-0708"
+      forms: { "plural": null, "gen": "বর্ষাকালের", "loc": "বর্ষাকালে", "ke": null, "theke": "বর্ষাকাল থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bôrśākāler", "loc": "bôrśākāle", "ke": null, "theke": "bôrśākāl theke", "sathe": null }
+    - word: "bn-0709"
+      forms: { "plural": null, "gen": "শীতকালের", "loc": "শীতকালে", "ke": null, "theke": "শীতকাল থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śitkāler", "loc": "śitkāle", "ke": null, "theke": "śitkāl theke", "sathe": null }
+    - word: "bn-0710"
+      forms: { "plural": null, "gen": "বসন্তকালের", "loc": "বসন্তকালে", "ke": null, "theke": "বসন্তকাল থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bôśontokāler", "loc": "bôśontokāle", "ke": null, "theke": "bôśontokāl theke", "sathe": null }
+    - word: "bn-0349"
+      forms: { "plural": null, "gen": "খাবারের", "loc": "খাবারে", "ke": null, "theke": "খাবার থেকে", "sathe": "খাবারের সঙ্গে" }
+      readings: { "plural": null, "gen": "khābārer", "loc": "khābāre", "ke": null, "theke": "khābār theke", "sathe": "khābārer śôṅge" }
+    - word: "bn-0351"
+      forms: { "plural": null, "gen": "চায়ের", "loc": "চায়ে", "ke": null, "theke": "চা থেকে", "sathe": "চায়ের সঙ্গে" }
+      readings: { "plural": null, "gen": "cāyer", "loc": "cāye", "ke": null, "theke": "cā theke", "sathe": "cāyer śôṅge" }
+    - word: "bn-0353"
+      forms: { "plural": "রুটিগুলো", "gen": "রুটির", "loc": "রুটিতে", "ke": null, "theke": "রুটি থেকে", "sathe": "রুটির সঙ্গে" }
+      readings: { "plural": "ruṭigulo", "gen": "ruṭir", "loc": "ruṭite", "ke": null, "theke": "ruṭi theke", "sathe": "ruṭir śôṅge" }
+    - word: "bn-0724"
+      forms: { "plural": null, "gen": "পছন্দের", "loc": "পছন্দে", "ke": null, "theke": "পছন্দ থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "pôchonder", "loc": "pôchonde", "ke": null, "theke": "pôchondo theke", "sathe": null }
+    - word: "bn-0371"
+      forms: { "plural": null, "gen": "সাহায্যের", "loc": "সাহায্যে", "ke": null, "theke": "সাহায্য থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "śāhājjer", "loc": "śāhājje", "ke": null, "theke": "śāhājjo theke", "sathe": null }
+    - word: "bn-0377"
+      forms: { "plural": "হাসপাতালগুলো", "gen": "হাসপাতালের", "loc": "হাসপাতালে", "ke": null, "theke": "হাসপাতাল থেকে", "sathe": "হাসপাতালের সঙ্গে" }
+      readings: { "plural": "hāśpātālgulo", "gen": "hāśpātāler", "loc": "hāśpātāle", "ke": null, "theke": "hāśpātāl theke", "sathe": "hāśpātāler śôṅge" }
+    - word: "bn-0378"
+      forms: { "plural": "ওষুধগুলো", "gen": "ওষুধের", "loc": "ওষুধে", "ke": null, "theke": "ওষুধ থেকে", "sathe": "ওষুধের সঙ্গে" }
+      readings: { "plural": "ośudhgulo", "gen": "ośudher", "loc": "ośudhe", "ke": null, "theke": "ośudh theke", "sathe": "ośudher śôṅge" }
+    - word: "bn-0379"
+      forms: { "plural": null, "gen": "ব্যথার", "loc": "ব্যথায়", "ke": null, "theke": "ব্যথা থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "bthār", "loc": "bthāy", "ke": null, "theke": "bthā theke", "sathe": null }
+    - word: "bn-0727"
+      forms: { "plural": null, "gen": "জ্বরের", "loc": "জ্বরে", "ke": null, "theke": "জ্বর থেকে", "sathe": null }
+      readings: { "plural": null, "gen": "jôrer", "loc": "jôre", "ke": null, "theke": "jôr theke", "sathe": null }
+    - word: "bn-0728"
+      forms: { "plural": "মাথাগুলো", "gen": "মাথার", "loc": "মাথায়", "ke": null, "theke": "মাথা থেকে", "sathe": "মাথার সঙ্গে" }
+      readings: { "plural": "māthāgulo", "gen": "māthār", "loc": "māthāy", "ke": null, "theke": "māthā theke", "sathe": "māthār śôṅge" }
+    - word: "bn-0729"
+      forms: { "plural": "পেটগুলো", "gen": "পেটের", "loc": "পেটে", "ke": null, "theke": "পেট থেকে", "sathe": "পেটের সঙ্গে" }
+      readings: { "plural": "peṭgulo", "gen": "peṭer", "loc": "peṭe", "ke": null, "theke": "peṭ theke", "sathe": "peṭer śôṅge" }
+    - word: "bn-0730"
+      forms: { "plural": "হাতগুলো", "gen": "হাতের", "loc": "হাতে", "ke": null, "theke": "হাত থেকে", "sathe": "হাতের সঙ্গে" }
+      readings: { "plural": "hātgulo", "gen": "hāter", "loc": "hāte", "ke": null, "theke": "hāt theke", "sathe": "hāter śôṅge" }
+    - word: "bn-0731"
+      forms: { "plural": "পাগুলো", "gen": "পায়ের", "loc": "পায়ে", "ke": null, "theke": "পা থেকে", "sathe": "পায়ের সঙ্গে" }
+      readings: { "plural": "pāgulo", "gen": "pāyer", "loc": "pāye", "ke": null, "theke": "pā theke", "sathe": "pāyer śôṅge" }
+    - word: "bn-0732"
+      forms: { "plural": "চোখগুলো", "gen": "চোখের", "loc": "চোখে", "ke": null, "theke": "চোখ থেকে", "sathe": "চোখের সঙ্গে" }
+      readings: { "plural": "cokhgulo", "gen": "cokher", "loc": "cokhe", "ke": null, "theke": "cokh theke", "sathe": "cokher śôṅge" }
+    - word: "bn-0733"
+      forms: { "plural": "দাঁতগুলো", "gen": "দাঁতের", "loc": "দাঁতে", "ke": null, "theke": "দাঁত থেকে", "sathe": "দাঁতের সঙ্গে" }
+      readings: { "plural": "dām̐tgulo", "gen": "dām̐ter", "loc": "dām̐te", "ke": null, "theke": "dām̐t theke", "sathe": "dām̐ter śôṅge" }
+    - word: "bn-0734"
+      forms: { "plural": "গলাগুলো", "gen": "গলার", "loc": "গলায়", "ke": null, "theke": "গলা থেকে", "sathe": "গলার সঙ্গে" }
+      readings: { "plural": "gôlāgulo", "gen": "gôlār", "loc": "gôlāy", "ke": null, "theke": "gôlā theke", "sathe": "gôlār śôṅge" }
+rules:
+  - id: "bn-rule-plural"
+    slots: ["plural"]
+    words: [{ word: "-রা", reading: "-rā" }, { word: "ছেলে", reading: "chele" }, { word: "ছেলেরা", reading: "chelerā" }, { word: "-েরা", reading: "-era" }, { word: "শিক্ষকরা", reading: "śikkhokrā" }, { word: "শিক্ষকেরা", reading: "śikkhokerā" }, { word: "-গুলো", reading: "-gulo" }, { word: "বাড়ি", reading: "bāṛi" }, { word: "বাড়িগুলো", reading: "bāṛigulo" }, { word: "তিনটে বই", reading: "tinṭe boi" }]
+  - id: "bn-rule-gen"
+    slots: ["gen"]
+    words: [{ word: "-র", reading: "-r" }, { word: "বাড়ি", reading: "bāṛi" }, { word: "বাড়ির", reading: "bāṛir" }, { word: "-ের", reading: "-er" }, { word: "ঘর", reading: "ghôr" }, { word: "ঘরের", reading: "ghôrer" }, { word: "ভাই", reading: "bhāi" }, { word: "মা", reading: "mā" }, { word: "-য়ের", reading: "-yer" }, { word: "ভাইয়ের", reading: "bhāiyer" }, { word: "মায়ের", reading: "māyer" }, { word: "বাবার বই", reading: "bābār boi" }, { word: "মাসের", reading: "māśer" }, { word: "জুন মাসের", reading: "jun māśer" }]
+  - id: "bn-rule-loc"
+    slots: ["loc"]
+    words: [{ word: "-ে", reading: "-e" }, { word: "ঘর", reading: "ghôr" }, { word: "ঘরে", reading: "ghôre" }, { word: "-তে", reading: "-te" }, { word: "বাড়ি", reading: "bāṛi" }, { word: "বাড়িতে", reading: "bāṛite" }, { word: "-া", reading: "-a" }, { word: "-য়", reading: "-y" }, { word: "রাস্তা", reading: "rāstā" }, { word: "রাস্তায়", reading: "rāstāy" }, { word: "মাসে", reading: "māśe" }, { word: "জুন মাসে", reading: "jun māśe" }, { word: "কাছে", reading: "kāche" }]
+  - id: "bn-rule-ke"
+    slots: ["ke"]
+    words: [{ word: "-কে", reading: "-ke" }, { word: "মা", reading: "mā" }, { word: "মাকে", reading: "māke" }, { word: "মাকে দিন", reading: "māke din" }]
+  - id: "bn-rule-theke"
+    slots: ["theke"]
+    words: [{ word: "থেকে", reading: "theke" }, { word: "বাড়ি", reading: "bāṛi" }, { word: "বাড়ি থেকে", reading: "bāṛi theke" }, { word: "কাছ", reading: "kāch" }, { word: "মায়ের কাছ থেকে", reading: "māyer kāch theke" }]
+  - id: "bn-rule-sathe"
+    slots: ["sathe"]
+    words: [{ word: "সঙ্গে", reading: "śôṅge" }, { word: "মায়ের সঙ্গে", reading: "māyer śôṅge" }, { word: "সাথে", reading: "sāthe" }, { word: "দিয়ে", reading: "diye" }, { word: "কলম দিয়ে", reading: "kôlom diye" }]

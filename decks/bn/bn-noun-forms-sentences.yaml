@@ -1,0 +1,126 @@
+schema: 1
+id: "bn-noun-forms-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0924"
+    target: "ছেলেরা বাড়ি যায়।"
+    reading: "chelerā bāṛi jāy."
+    ipa: "tʃʰelera baɽi dʒaj"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-present-third"]
+    bases:
+      - { word: "ছেলেরা", ref: "bn-0426" }
+      - { word: "যায়", ref: "bn-0873" }
+  - id: "bn-0925"
+    target: "মেয়েরা ভাত খায়।"
+    reading: "meyerā bhāt khāy."
+    ipa: "mejera bʱat̪ kʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-present-third"]
+    bases:
+      - { word: "মেয়েরা", ref: "bn-0427" }
+      - { word: "খায়", ref: "bn-0876" }
+  - id: "bn-0926"
+    target: "বাবা বাড়িতে থাকেন।"
+    reading: "bābā bāṛite thāken."
+    ipa: "baba baɽit̪e t̪ʰaken"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "বাড়িতে", ref: "bn-0196" }
+      - { word: "থাকেন", ref: "bn-0875" }
+  - id: "bn-0927"
+    target: "দাদা অফিসে কাজ করেন।"
+    reading: "dādā ôphise kāj kôren."
+    ipa: "d̪ad̪a ɔpʰise kadʒ kɔren"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "অফিসে", ref: "bn-0450" }
+      - { word: "করেন", ref: "bn-0102" }
+  - id: "bn-0928"
+    target: "আমি বাবার সঙ্গে কাজে যাই।"
+    reading: "āmi bābār śôṅge kāje jāi."
+    ipa: "ami babar ʃɔŋɡe kadʒe dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-sathe", "bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "বাবার", ref: "bn-0423" }
+      - { word: "কাজে", ref: "bn-0198" }
+      - { word: "যাই", ref: "bn-0873" }
+  - id: "bn-0929"
+    target: "আমি বাড়ি থেকে কাজে যাই।"
+    reading: "āmi bāṛi theke kāje jāi."
+    ipa: "ami baɽi t̪ʰeke kadʒe dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-theke", "bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "কাজে", ref: "bn-0198" }
+      - { word: "যাই", ref: "bn-0873" }
+  - id: "bn-0930"
+    target: "আমি অফিস থেকে বাড়ি যাই।"
+    reading: "āmi ôphis theke bāṛi jāi."
+    ipa: "ami ɔpʰis t̪ʰeke baɽi dʒai"
+    pos: "phrase"
+    rules: ["bn-rule-theke", "bn-rule-present-first"]
+    bases:
+      - { word: "যাই", ref: "bn-0873" }
+  - id: "bn-0931"
+    target: "আমরা দাদুর বাড়িতে থাকি।"
+    reading: "āmrā dādur bāṛite thāki."
+    ipa: "amra d̪ad̪ur baɽit̪e t̪ʰaki"
+    pos: "phrase"
+    rules: ["bn-rule-gen", "bn-rule-loc", "bn-rule-present-first"]
+    bases:
+      - { word: "দাদুর", ref: "bn-0185" }
+      - { word: "বাড়িতে", ref: "bn-0196" }
+      - { word: "থাকি", ref: "bn-0875" }
+  - id: "bn-0932"
+    target: "মায়ের নাম কী?"
+    reading: "māyer nām ki?"
+    ipa: "majer nam ki"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "মায়ের", ref: "bn-0424" }
+  - id: "bn-0933"
+    target: "এটা বাবার বাড়ি।"
+    reading: "eṭā bābār bāṛi."
+    ipa: "eʈa babar baɽi"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "বাবার", ref: "bn-0423" }
+  - id: "bn-0934"
+    target: "আমি মাকে ডাকি।"
+    reading: "āmi māke ḍāki."
+    ipa: "ami make ɖaki"
+    pos: "phrase"
+    rules: ["bn-rule-ke", "bn-rule-present-first"]
+    bases:
+      - { word: "মাকে", ref: "bn-0424" }
+      - { word: "ডাকি", ref: "bn-0898" }
+  - id: "bn-0935"
+    target: "বাবা ছেলেকে দেখেন।"
+    reading: "bābā cheleke dekhen."
+    ipa: "baba tʃʰeleke d̪ekʰen"
+    pos: "phrase"
+    rules: ["bn-rule-ke", "bn-rule-present-third"]
+    bases:
+      - { word: "ছেলেকে", ref: "bn-0426" }
+      - { word: "দেখেন", ref: "bn-0877" }
+  - id: "bn-0936"
+    target: "ওরা বন্ধুর সঙ্গে আসে।"
+    reading: "orā bondhur śôṅge āśe."
+    ipa: "ora bond̪ʱur ʃɔŋɡe aʃe"
+    pos: "phrase"
+    rules: ["bn-rule-sathe", "bn-rule-present-third"]
+    bases:
+      - { word: "বন্ধুর", ref: "bn-0189" }
+      - { word: "আসে", ref: "bn-0872" }
