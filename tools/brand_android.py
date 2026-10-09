@@ -171,7 +171,6 @@ CHANNEL_MEMBERS = """
     // Starts intent if an activity on the phone handles it. False if none
     // does, or it would not start.
     private fun startIfHandled(intent: Intent): Boolean {
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         if (intent.resolveActivity(packageManager) == null) return false
         return try {
             startActivity(intent)

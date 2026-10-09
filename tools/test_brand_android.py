@@ -429,7 +429,8 @@ class ApplyTest(unittest.TestCase):
         ]
         self.assertEqual(order, sorted(order))
         self.assertIn("intent.resolveActivity(packageManager) == null", text)
-        self.assertIn("Intent.FLAG_ACTIVITY_NEW_TASK", text)
+        # Started from the activity, in its task, so Back returns to the app.
+        self.assertNotIn("FLAG_ACTIVITY_NEW_TASK", text)
         for page in ('"textToSpeech"', '"installVoices"', '"none"'):
             self.assertIn(f"return {page}", text)
 
@@ -437,7 +438,20 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         text = self.kotlin()
         imports = re.findall(r"^import (\S+)$", text, re.M)
-        self.assertEqual(sorted(imports), sorted(brand_android.KOTLIN_IMPORTS))
+        # Written out here, not read from brand_android, so that dropping
+        # one there fails the test.
+        self.assertEqual(
+            sorted(imports),
+            sorted([
+                "android.content.ActivityNotFoundException",
+                "android.content.Intent",
+                "android.provider.Settings",
+                "android.speech.tts.TextToSpeech",
+                "io.flutter.embedding.android.FlutterActivity",
+                "io.flutter.embedding.engine.FlutterEngine",
+                "io.flutter.plugin.common.MethodChannel",
+            ]),
+        )
         # Imports come before the class.
         self.assertLess(
             text.rindex("\nimport "), text.index("class MainActivity")

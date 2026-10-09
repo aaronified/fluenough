@@ -54,6 +54,7 @@ class VoicesPage extends StatefulWidget {
 class _VoicesPageState extends State<VoicesPage> {
   /// Asking the phone again, after Check again.
   bool _rechecking = false;
+  bool _opening = false;
 
   /// How many voices each available tag has, once asked.
   final Map<String, int> _counts = <String, int>{};
@@ -102,16 +103,23 @@ class _VoicesPageState extends State<VoicesPage> {
   /// Opens the phone's voice settings, or explains the way there when
   /// nothing opens.
   Future<void> _installVoices() async {
-    final state = AppScope.read(context);
-    if (state.features.isAvailable(Feature.voiceSettingsLink)) {
-      try {
-        final opened = await state.systemSettings.openVoiceSettings();
-        if (opened != VoiceSettingsPage.none) return;
-      } on Exception {
-        // Explained below instead.
+    // A second tap while the first is still asking the phone does nothing.
+    if (_opening) return;
+    _opening = true;
+    try {
+      final state = AppScope.read(context);
+      if (state.features.isAvailable(Feature.voiceSettingsLink)) {
+        try {
+          final opened = await state.systemSettings.openVoiceSettings();
+          if (opened != VoiceSettingsPage.none) return;
+        } catch (_) {
+          // Whatever went wrong, the way there is explained below instead.
+        }
       }
+      if (mounted) await _explainInstall();
+    } finally {
+      _opening = false;
     }
-    if (mounted) await _explainInstall();
   }
 
   Future<void> _explainInstall() => showDialog<void>(
