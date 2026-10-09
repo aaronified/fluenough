@@ -67,21 +67,11 @@ flutter:
   uses-material-design: true
   # Builds AppLocalizations from lib/l10n/*.arb on `flutter pub get`.
   generate: true
-  # One entry per language directory. A Flutter asset entry bundles only the
-  # files directly inside the directory it names, not its subdirectories, so
-  # `- decks/` alone would ship decks/README.md and none of the decks. Adding
-  # a language means adding its directory here. decks/ja/ is kept in the
-  # repository but not bundled for now (NOT_BUNDLED in validate_decks.py).
+  # The decks are not bundled: the app downloads them from the repository's
+  # main branch, by decks/index.json (#210, ADR-0037). Only the theme list
+  # and the spoken languages ship inside the app.
   assets:
     - assets/deck-template.yaml
     - assets/languages.yaml
     - assets/pictures/
     - decks/themes.yaml
-    - decks/as/
-    - decks/bn/
-    - decks/es/
-    - decks/gu/
-    - decks/hi/
-    - decks/kn/
-    - decks/mr/
-    - decks/te/

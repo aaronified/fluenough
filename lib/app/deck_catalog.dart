@@ -289,10 +289,6 @@ class Catalog {
 class DeckCatalog {
   DeckCatalog(this.source, {this.added});
 
-  /// The decks bundled with the app, and those added to [added].
-  factory DeckCatalog.bundled([AssetBundle? bundle, DeckStore? added]) =>
-      DeckCatalog(AssetDeckSource(bundle), added: added);
-
   final DeckSource source;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
