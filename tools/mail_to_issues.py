@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Turn report mails from the app into GitHub issues (#160, ADR-0021).
 
-Run hourly by `.github/workflows/feedback-mail.yml`. Stdlib only.
+Run hourly by `.github/workflows/feedback-mail.yml`. Filing needs only
+the standard library.
 
 It reads the Fluenough Gmail over IMAP with an app password and takes only
 mails whose subject starts with `[Fluenough]`, as the app writes it. Any
@@ -58,10 +59,26 @@ which stays in the inbox for the next run: filing it unchecked would leave
 it unlabelled, and filed again an hour later. No address and no record's
 body is ever printed: the job's log is public, so it says counts only.
 
+A review's issue also counts the changes it suggests and the proposals
+it accepts and rejects, and names each rejected proposal by id and card,
+marked "proposal rejected": a rejection only flags the change to the owner
+(ADR-0038).
+
+The review bot (`tools/review_bot.py`, ADR-0038) runs after the filing,
+once its GitHub App is set up: each filed review mail whose sender passed
+becomes a PR of proposals, and the mail gets the Gmail label
+`fluenough-proposed` once that PR is merged or closed; then the proposals
+agreed on `main` are applied. A mail with no single good code, or from
+another sender, is labelled and left to the owner. The bot needs PyYAML;
+filing does not.
+
 Environment:
     FEEDBACK_GMAIL_ADDRESS, FEEDBACK_GMAIL_APP_PASSWORD  the inbox. Without
         them it does nothing and says so: the inbox is not set up yet.
     GITHUB_TOKEN, GITHUB_REPOSITORY  where issues go.
+    FLUENOUGH_BOT_TOKEN, REVIEW_AGREEMENTS_NEEDED  the review bot's; see
+        tools/review_bot.py. Without the token there is no bot, and the
+        log says so.
 """
 
 from __future__ import annotations
