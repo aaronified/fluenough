@@ -11,6 +11,7 @@ import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/scheduling/skill_fit.dart';
 import 'package:fluenough/features/settings/adjust_section.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/stats/how_you_learn_page.dart';
 
 import '../../support/fit_learner.dart';
 import '../../support/harness.dart';
@@ -206,5 +207,46 @@ void main() {
     expect(find.text(name('hi')), findsOneWidget);
     expect(find.text(name('bn')), findsOneWidget);
     expect(find.text(l10n.adjustedNotYet('production')), findsNWidgets(2));
+  });
+
+  testWidgets('the sheet\'s "How you learn" opens that page in its place', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = learner();
+    await pumpScreen(
+      tester,
+      Scaffold(body: ListView(children: const <Widget>[AdjustSection()])),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    final context = tester.element(find.byType(AdjustSection));
+    const none = (days: 0, reviews: 0);
+    unawaited(
+      showAdjustedSheet(context, state, [
+        (
+          key: (language: 'hi', mode: DrillMode.production),
+          fitted: null,
+          before: none,
+          after: none,
+        ),
+      ]),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.adjustedTitle), findsOneWidget);
+    final link = find.widgetWithText(TextButton, l10n.howYouLearnTitle);
+    await tester.ensureVisible(link);
+    await tester.pumpAndSettle();
+    await tester.tap(link);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(HowYouLearnPage), findsOneWidget);
+    expect(find.text(l10n.adjustedTitle), findsNothing);
+    // Back from it: Settings, not the sheet.
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(find.byType(HowYouLearnPage), findsNothing);
+    expect(find.text(l10n.adjustedSubtitle), findsNothing);
+    expect(find.byType(AdjustSection), findsOneWidget);
   });
 }
