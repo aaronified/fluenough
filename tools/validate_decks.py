@@ -4145,8 +4145,19 @@ def check_plans_across(reports: list[Report]) -> list[str]:
                 continue
             rules = {rid for d in u.decks for rid in decks[d].core_rules}
             for t in u.grammar:
-                if f"{plan.lang}-rule-{t}" in rules \
-                        or f"{plan.lang}-{native}-grammar-{t}" in u.decks:
+                if f"{plan.lang}-rule-{t}" in rules:
+                    continue
+                named = f"{plan.lang}-{native}-grammar-{t}"
+                if named in u.decks:
+                    # A rules deck's topics are its rules, so its own name
+                    # is none: the deck and its rules would count twice.
+                    if decks[named].core_rules:
+                        names = ", ".join(
+                            repr(rid.removeprefix(f"{plan.lang}-rule-"))
+                            for rid in decks[named].core_rules)
+                        problems.append(f"{rep.path}: units[{u.i}].grammar: {t!r} names "
+                                        f"the rules deck {decks[named].core_id!r}; its "
+                                        f"topics are its rules, {names}")
                     continue
                 problems.append(f"{rep.path}: units[{u.i}].grammar: {t!r} is taught by "
                                 f"none of the unit's decks; name a rule "

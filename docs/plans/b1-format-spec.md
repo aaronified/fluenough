@@ -2245,13 +2245,17 @@ on a written unit, names one of:
 - **a rule** of a rules deck the unit lists, by the rule id's name:
   topic `ki` is `te-rule-ki` (so a case-endings table with four rules is
   four topics, and the shared skeleton's "of 30" is counted in rules); or
-- **a grammar deck** the unit lists, of any kind, single-file or merged,
-  whose core id is `<lang>-grammar-<topic>`: topic `be` is `te-grammar-be`
-  (today the single-file `te-en-grammar-be`, a grammar table), topic
-  `sentences` is `te-grammar-sentences` (today `te-en-grammar-sentences`,
-  a vocab deck of example sentences). A grammar deck not yet turned into
-  rules counts as one topic; once it is (`words-rules-sentences.md` §7),
-  its topics become its rules.
+- **a grammar deck** the unit lists, of any kind **but `rules`**,
+  single-file or merged, whose core id is `<lang>-grammar-<topic>`: topic
+  `be` is `te-grammar-be` (today the single-file `te-en-grammar-be`, a
+  grammar table), topic `sentences` is `te-grammar-sentences` (today
+  `te-en-grammar-sentences`, a vocab deck of example sentences). A
+  grammar deck not yet turned into rules counts as one topic; once it is
+  (`words-rules-sentences.md` §7), its topics become its rules, and its
+  own name, unless a rule has it, is no topic: `case-endings` does not name
+  `te-grammar-case-endings`, whose topics are `lo`, `ki`, `to` and
+  `nunci`. So one rule counts once, never again as its deck (10.3 refuses
+  it).
 
 On a planned unit the topic is free, and is checked once the unit is
 written. 10.3 checks this.
@@ -2369,7 +2373,13 @@ given:
   The rules are read from the rules cores the unit lists, given now or
   among the language's files; when a listed core id is neither a rules
   core nor `<lang>-grammar-<t>`, and has no deck to look at, the topic is
-  not checked.
+  not checked. A topic that is the name of a rules core the unit lists,
+  and no rule's name, is refused in place of that message, since the
+  deck's rules are its topics (a one-rule table whose rule shares the
+  deck's name, `te-rule-past` in `te-grammar-past`, names the rule and
+  counts once):
+  `units[{i}].grammar: {t!r} names the rules deck {core!r}; its topics are its rules, {rules}`
+  (`rules` the rule names in the order the core lists them, such as `"lo", "ki", "to", "nunci"`).
 - **The plan is required** where OPEN-20 says (the message is in 10.1).
 - **Bases in a script without spaces** (8.3), per course.
 - **The phrasebook's size and place** (3), per course.
@@ -2688,7 +2698,7 @@ into one directory; that still works for single-file decks.)
   as a single-file deck (each an error), passages with ids and texts and
   the missing-description warning for a second course, words counted per
   course; grammar topics resolving to a rule and to a grammar deck by core
-  id; milestone order; the plan required once the language has a core;
+  id, and a topic naming a rules deck refused; milestone order; the plan required once the language has a core;
   regions (each per-file message; a note naming a region the path lists,
   one it does not, and one in a language whose path has no `regions`);
   the romanisation check on a layer reading the core's directory; "has no

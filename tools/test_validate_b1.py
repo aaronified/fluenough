@@ -1662,6 +1662,13 @@ class PlansAcross(B1Case):
         self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-en-missing"))
         self.assertNotAcross(".grammar:")
 
+    def test_a_grammar_topic_does_not_name_a_rules_deck(self) -> None:
+        # Its rules are its topics; the deck too would count them twice.
+        self.edit(PATH, lambda d: d["units"][1]["grammar"].append("case-endings"))
+        self.assertAcross(f"{self.p(PATH)}: units[1].grammar: 'case-endings' names the "
+                          f"rules deck 'zz-grammar-case-endings'; its topics are its "
+                          f"rules, 'lo', 'ki', 'to', 'nunci'")
+
     def test_a_path_needs_its_plan_once_the_language_has_a_core(self) -> None:
         self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-en-path", "language": "zz",
                         "native": "en", "units": [["zz-en-home", "zz-en-grammar-case-endings"]]})
