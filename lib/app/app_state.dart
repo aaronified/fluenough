@@ -427,15 +427,24 @@ class AppState extends ChangeNotifier {
 
   /// The decks in the languages the current profile learns.
   ///
-  /// Decks taught from a language the learner speaks come first, best known
-  /// first (#53); otherwise the catalog's order holds.
+  /// Each language's decks taught from the language its course is learned
+  /// from ([courseNative]) come first, then those taught from a language
+  /// the learner speaks, best known first (#53); otherwise the catalog's
+  /// order holds. A review takes a card shared across native languages from
+  /// the first deck that has it, so it is shown as the course teaches it.
   List<DeckEntry> get profileDecks {
     final mine = <DeckEntry>[
       for (final entry in decks)
         if (currentProfile.learns(entry.language.code)) entry,
     ];
-    int rank(DeckEntry e) =>
-        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final natives = <String, String?>{
+      for (final code in <String>{for (final e in mine) e.language.code})
+        code: courseNative(code),
+    };
+    int rank(DeckEntry e) => e.deck.native.code == natives[e.language.code]
+        ? -1
+        : settings.rankOf(e.deck.native.code) ??
+              settings.spokenLanguages.length;
     final byRank = mine.indexed.toList()
       ..sort((a, b) {
         final order = rank(a.$2).compareTo(rank(b.$2));
@@ -952,12 +961,69 @@ class AppState extends ChangeNotifier {
   // The path (#117, ADR-0013)
 
   List<List<DeckEntry>>? _pendingUnits;
+  Set<String>? _placed;
 
-  void _forgetPending() => _pendingUnits = null;
+  void _forgetPending() {
+    _pendingUnits = null;
+    _placed = null;
+  }
 
   /// Whether placement found the learner already knows [entry]. It reads
   /// Done and Today does not teach it, though it can still be studied.
-  bool isPlaced(DeckEntry entry) => settings.isPlaced(entry.id);
+  ///
+  /// Placement is saved by deck id, in the course it was taken in. What it
+  /// found holds in the language's other courses too (ADR-0036), so that
+  /// changing the language a course is learned from keeps it: a deck reads
+  /// as placed where its core's deck in another course was placed, and so
+  /// does every deck of a unit of the language's path placed whole in
+  /// another course.
+  bool isPlaced(DeckEntry entry) =>
+      (_placed ??= _placedAcross()).contains(entry.id);
+
+  Set<String> _placedAcross() {
+    final placed = settings.placedDecks;
+    if (placed.isEmpty) return const <String>{};
+    final out = <String>{...placed};
+    final natives = <String, Set<String>>{};
+    for (final entry in decks) {
+      natives
+          .putIfAbsent(entry.language.code, () => <String>{})
+          .add(entry.deck.native.code);
+    }
+    // The same core's deck in each course: hi-en-market is hi-bn-market.
+    for (final id in placed) {
+      final entry = deckById(id);
+      if (entry == null) continue;
+      final language = entry.language.code;
+      final prefix = '$language-${entry.deck.native.code}-';
+      if (!id.startsWith(prefix)) continue;
+      final name = id.substring(prefix.length);
+      for (final native in natives[language] ?? const <String>{}) {
+        final sibling = '$language-$native-$name';
+        if (deckById(sibling) != null) out.add(sibling);
+      }
+    }
+    // A unit placed whole in one course is placed in each, decks its
+    // native language alone has included: the courses read one path, so
+    // their plans' units line up.
+    final byLanguage = <String, List<CoursePath>>{};
+    for (final path in _catalog.paths.values) {
+      byLanguage.putIfAbsent(path.language, () => <CoursePath>[]).add(path);
+    }
+    for (final paths in byLanguage.values) {
+      for (final from in paths) {
+        for (final (i, unit) in from.plan.indexed) {
+          if (unit.decks.isEmpty || !unit.decks.every(placed.contains)) {
+            continue;
+          }
+          for (final to in paths) {
+            if (i < to.plan.length) out.addAll(to.plan[i].decks);
+          }
+        }
+      }
+    }
+    return out;
+  }
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
@@ -966,8 +1032,8 @@ class AppState extends ChangeNotifier {
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and
-  /// the one after it. The course is the one taught from the best-known
-  /// language the learner speaks, as [profileDecks] orders them. A course
+  /// the one after it. The course is the one taught from [courseNative]
+  /// ([courseUnits]). A course
   /// without a path is taught as if each deck were a unit, in catalog order,
   /// and a deck its path leaves out follows it as a unit of its own.
   List<List<DeckEntry>> get pendingUnits => _pendingUnits ??= _findPending();

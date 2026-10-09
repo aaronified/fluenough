@@ -1,8 +1,13 @@
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 
 import '../support/hindi_courses.dart';
 
@@ -14,9 +19,11 @@ Future<AppState> learner(
   Map<String, String> files, {
   List<String> spoken = const <String>['bn', 'en'],
   SettingsNotifier? settings,
+  MemoryProgress? progress,
 }) async {
   final state = AppState.test(
     decks: MemoryDeckSource(files),
+    progress: progress,
     settings:
         settings ??
         SettingsNotifier(
@@ -149,5 +156,99 @@ void main() {
       'bn': (null, null),
     });
     expect(state.suggestedNative('hi'), 'bn', reason: 'best known');
+  });
+
+  test('a review shows a shared card as the chosen course teaches it, not '
+      'as the best-known language\'s deck does', () async {
+    final progress = MemoryProgress();
+    final state = await learner(
+      hindi(bengali: const <String>{'a', 'b', 'c'}),
+      progress: progress,
+    );
+    // Bengali is the learner's best known, but they chose English.
+    state.chooseNative('hi', 'en');
+    progress.record(
+      deckId: 'hi-en-a',
+      cardId: 'hi-0001',
+      mode: DrillMode.production,
+      grade: 3,
+      now: state.now().subtract(const Duration(days: 30)),
+    );
+    final reviews = state
+        .buildSession(const DrillRequest.today(language: 'hi'))
+        .items
+        .where((i) => i.card.id == 'hi-0001')
+        .toList();
+    expect(reviews, isNotEmpty);
+    for (final item in reviews) {
+      expect(item.card.deckId, 'hi-en-a');
+      expect(item.card.native, 'k (en)');
+    }
+
+    // Changed to Bengali, the same card is reviewed as Bengali teaches it.
+    state.chooseNative('hi', 'bn');
+    final again = state
+        .buildSession(const DrillRequest.today(language: 'hi'))
+        .items
+        .firstWhere((i) => i.card.id == 'hi-0001');
+    expect(again.card.native, 'k (bn)');
+  });
+
+  test('changing the language a course is learned from keeps what '
+      'placement found', () async {
+    final state = await learner(hindi(bengali: const <String>{'a', 'b', 'c'}));
+    state.chooseNative('hi', 'en');
+    state.settings.placedDecks = const <String>{'hi-en-a', 'hi-en-b'};
+    expect(state.pendingUnits.map((u) => [for (final e in u) e.id]), [
+      ['hi-en-c'],
+    ]);
+
+    state.chooseNative('hi', 'bn');
+    expect(state.isPlaced(state.deckById('hi-bn-a')!), isTrue, reason: 'core');
+    expect(state.isPlaced(state.deckById('hi-bn-b')!), isTrue);
+    expect(state.isPlaced(state.deckById('hi-bn-c')!), isFalse);
+    expect(state.pendingUnits.map((u) => [for (final e in u) e.id]), [
+      ['hi-bn-c'],
+    ]);
+    // Saved as placement saved it: by the decks of the course placed.
+    expect(state.settings.placedDecks, {'hi-en-a', 'hi-en-b'});
+  });
+
+  test('a unit placed whole in one course is placed in another, a deck '
+      'only the other has included', () async {
+    final files = hindi(bengali: const <String>{'a', 'b', 'c'});
+    files['decks/hi/hi-path.yaml'] = files['decks/hi/hi-path.yaml']!
+        .replaceFirst('  - [hi-a]', '  - [hi-a, hi-d]');
+    files['decks/hi/hi-bn-d.yaml'] = '''
+schema: 1
+id: hi-bn-d
+name: "d"
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: bn, iso639_3: ben, name: Bengali }
+license: CC0-1.0
+cards:
+  - { id: hi-bn-0009, target: "ग", native: "g", reading: "ga" }
+''';
+    final state = await learner(files);
+    expect(state.brokenDecks, isEmpty, reason: '${state.brokenDecks}');
+    expect(unitIds(state, native: 'en').first, ['hi-en-a']);
+    expect(unitIds(state, native: 'bn').first, ['hi-bn-a', 'hi-bn-d']);
+    state.chooseNative('hi', 'en');
+    state.settings.placedDecks = const <String>{'hi-en-a'};
+    state.chooseNative('hi', 'bn');
+    expect(state.isPlaced(state.deckById('hi-bn-d')!), isTrue);
+    expect(state.pendingUnits.first.map((e) => e.id), ['hi-bn-b']);
+
+    // Placed only in part, a unit is not carried whole.
+    state.settings.placedDecks = const <String>{'hi-bn-d'};
+    expect(state.isPlaced(state.deckById('hi-en-a')!), isFalse);
+  });
+
+  test('the question promises only what is built: no "Coming" label, which '
+      'no screen shows', () {
+    final body = lookupAppLocalizations(const Locale('en'))
+        .nativeChoiceBody('Hindi');
+    expect(body, isNot(contains('Coming')));
+    expect(body, contains('keep what you have learned'));
   });
 }
