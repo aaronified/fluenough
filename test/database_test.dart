@@ -38,8 +38,6 @@ void main() {
     answerGiven: const Value('kitne ka hai'),
     intervalBefore: first ? const Value.absent() : const Value(1),
     intervalAfter: 6,
-    easeBefore: first ? const Value.absent() : const Value(2.5),
-    easeAfter: 2.6,
   );
 
   LeechAction leechAction({LeechActionKind kind = LeechActionKind.setAside}) =>
@@ -49,8 +47,8 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 5 with its six tables', () async {
-    expect(db.schemaVersion, 5);
+  test('opens at version 6 with its six tables', () async {
+    expect(db.schemaVersion, 6);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -145,13 +143,13 @@ void main() {
     expect(await upgraded.reviewsDao.all(), hasLength(1));
   });
 
-  test('a version 4 database gets FSRS\'s columns, its SM-2 state '
+  test('a version 4 database gets FSRS\'s columns, its old state '
       'rebuilt and its reviews kept', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
     addTearDown(() => dir.deleteSync(recursive: true));
     final file = File('${dir.path}/v4.sqlite');
 
-    // Make a version 4 file: SM-2's card_states, and reviews without the
+    // Make a version 4 file: the old card_states, and reviews without the
     // columns migration 5 adds.
     final old = AppDatabase(NativeDatabase(file));
     await old.reviewsDao.append(review());
@@ -183,6 +181,45 @@ void main() {
       reason: 'the append-only triggers survive the upgrade',
     );
   });
+
+  test(
+    'a version 5 database loses SM-2\'s ease and keeps its reviews',
+    () async {
+      final dir = Directory.systemTemp.createTempSync('fluenough');
+      addTearDown(() => dir.deleteSync(recursive: true));
+      final file = File('${dir.path}/v5.sqlite');
+
+      // Make a version 5 file: reviews with SM-2's two ease columns.
+      final old = AppDatabase(NativeDatabase(file));
+      await old.reviewsDao.append(review());
+      await old.customStatement(
+        'ALTER TABLE reviews ADD COLUMN ease_before REAL',
+      );
+      await old.customStatement(
+        'ALTER TABLE reviews ADD COLUMN ease_after REAL NOT NULL DEFAULT 2.5',
+      );
+      await old.customStatement('PRAGMA user_version = 5');
+      await old.close();
+
+      final upgraded = AppDatabase(NativeDatabase(file));
+      addTearDown(upgraded.close);
+      final columns = await upgraded
+          .customSelect("SELECT name FROM pragma_table_info('reviews')")
+          .get();
+      expect(
+        columns.map((r) => r.read<String>('name')),
+        isNot(anyOf(contains('ease_before'), contains('ease_after'))),
+      );
+      final reviews = await upgraded.reviewsDao.all();
+      expect(reviews, hasLength(1));
+      expect(reviews.single.grade, 4);
+      await expectLater(
+        upgraded.customStatement('DELETE FROM reviews'),
+        throwsA(anything),
+        reason: 'the append-only triggers survive the upgrade',
+      );
+    },
+  );
 
   test('migration 5 cut off after its first column runs again', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
@@ -331,9 +368,8 @@ void main() {
       expect(log.first.grade, 3);
       expect(log.first.elapsedMs, 3200);
       expect(log.first.answerGiven, 'kitne ka hai');
-      expect((log.first.intervalBefore, log.first.easeBefore), (null, null));
-      expect((log.last.intervalBefore, log.last.easeBefore), (1, 2.5));
-      expect((log.last.intervalAfter, log.last.easeAfter), (6, 2.6));
+      expect(log.first.intervalBefore, isNull);
+      expect((log.last.intervalBefore, log.last.intervalAfter), (1, 6));
     },
   );
 

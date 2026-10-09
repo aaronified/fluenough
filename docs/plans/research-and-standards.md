@@ -19,9 +19,8 @@ Written 2026-10-06. **After FSRS (`fsrs.md`) and the B1 plans
   each deck's `source` field: *Sahaj Path*, *Abol Tabol*, *Panch Parmeshwar*,
   *Diddubatu*, and the Bengali spelling rules. The README's Sources section
   lists the same.
-- **The README** explains ISO 15919 and the IPA, and says scheduling is
-  SM-2. Nothing in the app or the README names the research behind the
-  design.
+- **The README** explains ISO 15919 and the IPA. Nothing in the app or the
+  README names the research behind the design.
 - **The research** for `skill-model.md` was gathered from abstracts and
   summaries; the full texts were not read (the network blocked the
   publishers).
@@ -40,7 +39,7 @@ sections:
    | IPA | How a word is said |
    | ISO 639 and BCP 47 | Language codes, and the voices and recognisers asked for |
    | Unicode | Every script |
-   | FSRS | Scheduling, once `fsrs.md` lands; SM-2 until then |
+   | FSRS | Scheduling |
 
 2. **Research behind the design,** grouped by what it decided, each with a
    plain line on what the app does because of it, then the citation:

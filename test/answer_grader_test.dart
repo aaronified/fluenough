@@ -115,7 +115,7 @@ void main() {
     });
   });
 
-  group('SM-2 grade mapping', () {
+  group('grade mapping', () {
     test('a typo is not punished as a forgotten card', () {
       expect(AnswerOutcome.closeTypo.toGrade(), greaterThanOrEqualTo(3));
     });

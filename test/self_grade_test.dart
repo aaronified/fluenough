@@ -7,7 +7,7 @@ void main() {
   final now = DateTime(2026, 9, 28, 19);
 
   group('SelfGrade', () {
-    test('maps Again, Hard, Good, Easy to SM-2 grades 1, 3, 4, 5', () {
+    test('maps Again, Hard, Good, Easy to grades 1, 3, 4, 5', () {
       expect(SelfGrade.values.map((g) => g.toGrade()), [1, 3, 4, 5]);
     });
 
@@ -18,7 +18,7 @@ void main() {
       expect(SelfGrade.easy.toGrade(), AnswerOutcome.exact.toGrade());
     });
 
-    test('only Again fails, for SM-2 and for the session score alike', () {
+    test('only Again fails, for FSRS and for the session score alike', () {
       for (final grade in SelfGrade.values) {
         expect(
           grade.isCorrect,
