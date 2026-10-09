@@ -52,6 +52,8 @@ cards:
     ipa: "naːku kaːʋaːli"
     pos: "phrase"
     notes: "'To me … is needed': నాకు నీళ్ళు కావాలి (nāku nīḷḷu kāvāli), I'd like some water."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
   - id: te-0346
     target: "ఇంకా"
     native: "more; still"
@@ -86,9 +88,14 @@ cards:
     ipa: "billu iʋʋaɳɖi"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "బిల్లు", base: "బిల్లు", reading: "billu", meaning: "bill" }
   - id: te-0351
     target: "చాలా బాగుంది."
     native: "It's very good."
     reading: "cālā bāgundi."
     ipa: "tʃaːlaː baːɡund̪i"
     pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "బాగుంది", base: "బాగు", reading: "bāgu", meaning: "good; well" }

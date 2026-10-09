@@ -19,6 +19,8 @@ cards:
     ipa: "ramer baɽi"
     pos: "phrase"
     notes: "-এর (-er) or -র (-rô) is 'of, 's'."
+    bases:
+      - { word: "রামের", base: "রাম", reading: "rām", meaning: "Ram (a man's name)" }
   - id: bn-0293
     target: "রামকে দিন।"
     native: "Give it to Ram, please."
@@ -26,6 +28,8 @@ cards:
     ipa: "ramke d̪in"
     pos: "phrase"
     notes: "-কে (-ke) marks a person as the object: the one given or told something (রামকে দিন), or the one seen or known (আমি রামকে চিনি). Things usually take no ending."
+    bases:
+      - { word: "রামকে", base: "রাম", reading: "rām", meaning: "Ram (a man's name)" }
   - id: bn-0294
     target: "থেকে"
     native: "from"
@@ -147,6 +151,9 @@ cards:
     ipa: "ami oke tʃini"
     pos: "phrase"
     notes: "A person as the object takes -কে (-ke); a thing usually doesn't: আমি বইটা চাই (āmi boiṭā cāi)."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "ওকে", ref: "bn-0844" }
   - id: bn-0593
     target: "কাঠের টেবিল"
     native: "a wooden table"
@@ -154,3 +161,5 @@ cards:
     ipa: "kaʈʰer ʈebil"
     pos: "phrase"
     notes: "-এর (-er) is also 'made of' and 'aged': দশ বছরের ছেলে (dôś bôchorer chele), a ten-year-old boy."
+    bases:
+      - { word: "কাঠের", base: "কাঠ", reading: "kāṭh", meaning: "wood" }

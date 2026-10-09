@@ -45,6 +45,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "Ask before you get in. If the driver refuses, agree the fare first."
+    bases:
+      - { word: "మీటర్", base: "మీటర్", reading: "mīṭar", meaning: "meter" }
+      - { word: "వేయండి", ref: "te-0837" }
   - id: te-0276
     target: "స్టేషన్‌కి వెళ్ళాలి."
     native: "I need to go to the station."
@@ -52,12 +55,18 @@ cards:
     ipa: "sʈeːʂanki ʋeɭɭaːli"
     pos: "phrase"
     notes: "-కి (ki), 'to', joins the end of the place: ఎయిర్‌పోర్ట్‌కి వెళ్ళాలి (eyirpōrṭki veḷḷāli)."
+    bases:
+      - { word: "స్టేషన్‌కి", ref: "te-0279" }
+      - { word: "వెళ్ళాలి", ref: "te-0622" }
   - id: te-0277
     target: "ఎంత సేపు పడుతుంది?"
     native: "How long will it take?"
     reading: "enta sēpu paḍutundi?"
     ipa: "ent̪a seːpu paɖut̪und̪i"
     pos: "phrase"
+    bases:
+      - { word: "సేపు", base: "సేపు", reading: "sēpu", meaning: "a length of time" }
+      - { word: "పడుతుంది", ref: "te-0839" }
   - id: te-0278
     target: "ఇక్కడ ఆపండి."
     native: "Stop here, please."
@@ -65,6 +74,8 @@ cards:
     ipa: "ikkaɖa aːpaɳɖi"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "ఆపండి", ref: "te-0840" }
   - id: te-0279
     target: "స్టేషన్"
     native: "station"

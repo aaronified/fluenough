@@ -1,0 +1,37 @@
+schema: 1
+id: "bn-en-grammar-noun-forms"
+kind: "layer"
+core: "bn-grammar-noun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: more than one, of, in, to, from, with"
+description: "Every noun the course teaches, in its plural and with the endings for of, in, to, from and with. A person has no cell for in, and a thing none for to. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "plural": "{meaning}, more than one"
+    "gen": "of {meaning}"
+    "loc": "in {meaning}"
+    "ke": "to or for {meaning}"
+    "theke": "from {meaning}"
+    "sathe": "with {meaning}"
+rules:
+  "bn-rule-plural":
+    name: "-রা (-rā), -গুলো (-gulo): more than one"
+    explanation: "For people, {1} makes the plural: {2}, boy, becomes {3}, boys. After a consonant a person's plural is also {4}: {5} or {6}. For things and animals the ending is {7}: {8}, house, becomes {9}. The plural is used when the number matters; after a number the noun stays singular: {10}, three books. Words for stuff, like water, and the names of days and months have no plural cell."
+  "bn-rule-gen":
+    name: "-র (-r), -ের (-er): of"
+    explanation: "The possessive goes before the thing owned and means 'of'. After a vowel the ending is {1}: {2}, house, becomes {3}. After a consonant it is {4}: {5}, room, becomes {6}. A word that ends in a vowel letter of its own, such as {7}, and one-syllable {8} take {9}: {10}, {11}, of mother. {12} is father's book. A month takes {13}: {14}."
+  "bn-rule-loc":
+    name: "-তে (-te), -এ (-e): in, at"
+    explanation: "The locative says where or when. After a consonant it is {1}: {2}, room, becomes {3}. After a vowel it is {4}: {5}, house, becomes {6}. A word that ends in {7} takes {8}: {9}, road, becomes {10}. A month is said with {11}: {12}. A person has no locative: for a person Bengali says 'near', {13}."
+  "bn-rule-ke":
+    name: "-কে (-ke): to, for, the one acted on"
+    explanation: "{1} follows a person or an animal that is given something, told something or acted on: {2}, mother, becomes {3}, to mother or mother. {4} is 'give it to mother'. For a thing the plain noun is enough, so a thing has no cell here."
+  "bn-rule-theke":
+    name: "থেকে (theke): from"
+    explanation: "{1} follows the noun as a separate word and means 'from': {2}, house, becomes {3}, from the house. For a person 'from' is 'from near' someone: the possessive, then {4}, 'place', then {1}: {5}, from mother."
+  "bn-rule-sathe":
+    name: "সঙ্গে (śôṅge): with"
+    explanation: "{1} follows the possessive and means 'with': {2}, with mother. It is also said {3}. With a tool or a means Bengali says {4} after the plain noun: {5}, with a pen. Days, months and words like help have no 'with' cell."

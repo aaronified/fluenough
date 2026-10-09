@@ -1,0 +1,32 @@
+schema: 1
+id: "bn-en-grammar-verb-present"
+kind: "layer"
+core: "bn-grammar-verb-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: I, you, he, she, we, they"
+description: "Every verb the course teaches, in the present for habits and general facts, for each person and each level of respect, and in the polite request. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "ami": "I or we, in the present"
+    "tui": "you (intimate), in the present"
+    "tumi": "you (familiar), in the present"
+    "apni": "you (respectful), in the present"
+    "se": "he, she or they, in the present"
+    "tini": "he or she (respectful), in the present"
+    "please": "please do it (a polite request to someone you respect)"
+rules:
+  "bn-rule-present-first":
+    name: "-ি (-i): I, we"
+    explanation: "{1} joins the stem and is for 'I' and for 'we' alike: {2}, {3}. A stem that ends in a vowel takes {4}: {5}, {6}. In a few verbs the stem's vowel changes before it: {7} gives {8}, and {9} gives {10}. One form serves for what you do as a habit and for what is true in general."
+  "bn-rule-present-second":
+    name: "-িস (-iś), -ো (-o), -েন (-en): you"
+    explanation: "Bengali has three words for you and three endings. {1}, for a friend or a younger person, takes {2}: {3}. {4}, the respectful one, takes {5}: {6}. {7}, for the very close, takes {8}: {9}. After a vowel the endings are {10}, {11} and {12}: {13}, {14}, {15}."
+  "bn-rule-present-third":
+    name: "-ে (-e), -েন (-en): he, she, they"
+    explanation: "For someone who is not there, {1} is the ordinary ending: {2}, {3}. It does not change for one or for many. For someone you respect it is {4}, as for {5}: {6}. After a vowel the endings are {7} and {8}: {9}, {10}."
+  "bn-rule-polite-request":
+    name: "-ুন (-un): please"
+    explanation: "A polite request to someone you respect takes {1} on the stem: {2}, please look. After a vowel the stem takes {3}, as in the present: {4}, please eat. A few verbs are irregular: {5}, please give, and {6}, please take."

@@ -20,7 +20,7 @@ import 'drill_session.dart';
 /// wrong and recorded at once. Then the feedback, with the right answer.
 ///
 /// - **Read**: the passage a sentence at a time, each with its reading when
-///   Show romanisation is on and a button to hear it, and a speaker for the
+///   Latin-letter readings is on and a button to hear it, and a speaker for the
 ///   whole passage. Each question has its
 ///   choices, and the passage again under them, to look back at.
 /// - **Heard**, a reading question in listening: the passage is read aloud
@@ -287,7 +287,7 @@ class ReadingDrill extends StatelessWidget {
 }
 
 /// Small text over the card's main line.
-/// Show romanisation, on the passage itself: a learner who reads by the
+/// Latin-letter readings, on the passage itself: a learner who reads by the
 /// romanisation, without the script, can still take the passage as the
 /// test of its words and grammar. The same setting as in Settings, so it
 /// holds for every passage and the glossary. Only for a passage that has
@@ -535,7 +535,7 @@ class _WordsButton extends StatelessWidget {
 }
 
 /// A passage's glossary: each older or unusual word as the passage writes
-/// it, today's form, its reading when Show romanisation is on, its meaning
+/// it, today's form, its reading when Latin-letter readings is on, its meaning
 /// and any note, in the language the learner speaks best of those given.
 class Glossary extends StatelessWidget {
   const Glossary({super.key, required this.passage, required this.language});

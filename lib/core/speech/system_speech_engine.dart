@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart' show PlatformException;
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -35,8 +36,8 @@ class SystemSpeechEngine implements SpeechEngine {
   Future<bool> hasPermission() async {
     try {
       return await _plugin.hasPermission;
-    } catch (_) {
-      return false;
+    } catch (e) {
+      throw SpeechError(codeOf(e));
     }
   }
 
@@ -48,8 +49,9 @@ class SystemSpeechEngine implements SpeechEngine {
         onError: _onError,
         onStatus: _onStatus,
       );
-    } catch (_) {
+    } catch (e) {
       _started = false;
+      throw SpeechError(codeOf(e));
     }
     return _started;
   }
@@ -63,10 +65,18 @@ class SystemSpeechEngine implements SpeechEngine {
         for (final locale in locales)
           locale.localeId.split(RegExp('[-_]')).first.toLowerCase(),
       };
-    } catch (_) {
-      return const <String>{};
+    } catch (e) {
+      throw SpeechError(codeOf(e));
     }
   }
+
+  /// An error's code for the app log: a platform error's own, `timeout`
+  /// for a deadline passed, or else its type.
+  static String codeOf(Object error) => switch (error) {
+    PlatformException(:final code) => code,
+    TimeoutException() => 'timeout',
+    _ => '${error.runtimeType}',
+  };
 
   @override
   Future<SpeechHeard> listen({
@@ -74,12 +84,16 @@ class SystemSpeechEngine implements SpeechEngine {
     required bool onDevice,
     Duration listenFor = const Duration(seconds: 8),
   }) async {
-    if (!_started && !await start()) {
-      return SpeechHeard.failed(
-        await hasPermission()
-            ? SpeechFailure.noRecogniser
-            : SpeechFailure.permissionDenied,
-      );
+    try {
+      if (!_started && !await start()) {
+        return SpeechHeard.failed(
+          await hasPermission()
+              ? SpeechFailure.noRecogniser
+              : SpeechFailure.permissionDenied,
+        );
+      }
+    } on SpeechError catch (e) {
+      return SpeechHeard.failed(SpeechFailure.noRecogniser, code: e.code);
     }
     _listening?.complete(const SpeechHeard.failed(SpeechFailure.other));
     final done = _listening = Completer<SpeechHeard>();
@@ -101,15 +115,15 @@ class SystemSpeechEngine implements SpeechEngine {
           cancelOnError: true,
         ),
       );
-    } catch (_) {
-      _finish(const SpeechHeard.failed(SpeechFailure.other));
+    } catch (e) {
+      _finish(SpeechHeard.failed(SpeechFailure.other, code: codeOf(e)));
     }
     return done.future.timeout(
       listenFor + _grace,
       onTimeout: () {
         _plugin.cancel();
         _listening = null;
-        return const SpeechHeard.failed(SpeechFailure.noMatch);
+        return const SpeechHeard.failed(SpeechFailure.noMatch, code: 'timeout');
       },
     );
   }
@@ -118,7 +132,9 @@ class SystemSpeechEngine implements SpeechEngine {
   Future<void> stop() async {
     try {
       await _plugin.stop();
-    } catch (_) {}
+    } catch (e) {
+      throw SpeechError(codeOf(e));
+    }
   }
 
   void _finish(SpeechHeard heard) {
@@ -154,7 +170,10 @@ class SystemSpeechEngine implements SpeechEngine {
   ];
 
   void _onError(SpeechRecognitionError error) => _finish(
-    SpeechHeard.failed(failureOf(error.errorMsg, onDevice: _listeningOnDevice)),
+    SpeechHeard.failed(
+      failureOf(error.errorMsg, onDevice: _listeningOnDevice),
+      code: error.errorMsg,
+    ),
   );
 
   void _onStatus(String status) {

@@ -44,6 +44,9 @@ const List<String> designIds = <String>[
 const Set<String> notScreens = <String>{
   'drill-reading-glossary', // a sheet over the reading drill
   'settings-backup', // a section of Settings
+  'voices-test', // a sheet over Voices
+  'voices-test-heard', // a sheet over Voices
+  'voices-test-failed', // a sheet over Voices
 };
 
 void main() {

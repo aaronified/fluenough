@@ -16,6 +16,9 @@ cards:
     alt_target: ["তামাক সেবন করা"]
     pos: "phrase"
     notes: "Literally 'taking tobacco', and exactly সিগারেট খাওয়া (sigāreṭ khāoā), smoking. As a verb, তামাক সেবন করা (tāmāk sebon kôrā)."
+    bases:
+      - { word: "তামাক", base: "তামাক", reading: "tāmāk", meaning: "tobacco" }
+      - { word: "সেবন", base: "সেবন", reading: "śebon", meaning: "taking (formal)" }
   - id: bn-0748
     target: "পান করা"
     native: "to drink alcohol (slang)"
@@ -23,3 +26,5 @@ cards:
     ipa: "pan kɔra"
     pos: "phrase"
     notes: "Formally just 'to drink', as in writing: জল পান করা (jôl pān kôrā). In speech it usually means drinking alcohol, so for tea or water say খাওয়া (khāoyā). Not পান খাওয়া (pān khāoyā), which is chewing a betel leaf."
+    bases:
+      - { word: "পান", base: "পান", reading: "pān", meaning: "drinking (also: a betel leaf)" }

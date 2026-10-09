@@ -1,0 +1,210 @@
+schema: 1
+id: "te-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-1024"
+    target: "కొంచెం"
+    reading: "koñcem"
+    ipa: "koɲtʃem"
+    alt_target: ["కొంచం"]
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కొంచం", reading: "koñcam" }] }
+  - id: "te-1025"
+    target: "కొన్ని"
+    reading: "konni"
+    ipa: "konni"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కొంతమంది", reading: "kontamandi" }] }
+  - id: "te-1026"
+    target: "చాలా"
+    reading: "cālā"
+    ipa: "tʃaːlaː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చాలా పెద్ద", reading: "cālā pedda" }] }
+  - id: "te-1027"
+    target: "అన్ని"
+    reading: "anni"
+    ipa: "anni"
+    pos: "adj"
+    tags: ["gemination"]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అందరూ", reading: "andarū" }] }
+      - { id: "pair", kind: "pair", ref: "te-0357", words: [{ word: "అన్ని", reading: "anni" }, { word: "అని", reading: "ani" }] }
+  - id: "te-1028"
+    target: "అంతా"
+    reading: "antā"
+    ipa: "ant̪aː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-1029"
+    target: "ఎక్కువ"
+    reading: "ekkuva"
+    ipa: "ekkuʋa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చాలా ఎక్కువ!", reading: "cālā ekkuva!" }] }
+  - id: "te-1030"
+    target: "తక్కువ"
+    reading: "takkuva"
+    ipa: "t̪akkuʋa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఎక్కువ", reading: "ekkuva" }] }
+  - id: "te-1031"
+    target: "సగం"
+    reading: "sagam"
+    ipa: "saɡam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఒకటిన్నర", reading: "okaṭinnara" }] }
+  - id: "te-1032"
+    target: "పూర్తి"
+    reading: "pūrti"
+    ipa: "puːrt̪i"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పూర్తి చేయడం", reading: "pūrti cēyaḍam" }] }
+  - id: "te-1033"
+    target: "మాత్రమే"
+    reading: "mātramē"
+    ipa: "maːt̪rameː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మాత్రం", reading: "mātram" }, { word: "-ఏ", reading: "-ē" }] }
+  - id: "te-1034"
+    target: "ఒక"
+    reading: "oka"
+    ipa: "oka"
+    pos: "adj"
+    tags: ["gemination"]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఒక పుస్తకం", reading: "oka pustakam" }, { word: "ఒకటి", reading: "okaṭi" }] }
+      - { id: "pair", kind: "pair", ref: "te-1035", words: [{ word: "ఒక", reading: "oka" }, { word: "ఒక్క", reading: "okka" }] }
+  - id: "te-1035"
+    target: "ఒక్క"
+    reading: "okka"
+    ipa: "okka"
+    pos: "adj"
+    tags: ["gemination"]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఒక్క నిమిషం", reading: "okka nimiṣam" }] }
+      - { id: "pair", kind: "pair", ref: "te-1034", words: [{ word: "ఒక్క", reading: "okka" }, { word: "ఒక", reading: "oka" }] }
+  - id: "te-1036"
+    target: "ప్రతి"
+    reading: "prati"
+    ipa: "prat̪i"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రతి రోజు", reading: "prati rōju" }] }
+  - id: "te-1037"
+    target: "ఏమీ"
+    reading: "ēmī"
+    ipa: "eːmiː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఏమీ లేదు", reading: "ēmī lēdu" }] }
+  - id: "te-1038"
+    target: "ఎవరూ"
+    reading: "evarū"
+    ipa: "eʋaruː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "te-1039"
+    target: "ఎక్కడా"
+    reading: "ekkaḍā"
+    ipa: "ekkaɖaː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "te-1040"
+    target: "ఇంత"
+    reading: "inta"
+    ipa: "int̪a"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఇంత పెద్ద", reading: "inta pedda" }] }
+  - id: "te-1041"
+    target: "అంత"
+    reading: "anta"
+    ipa: "ant̪a"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అంత పెద్ద", reading: "anta pedda" }] }
+  - id: "te-1042"
+    target: "ఎన్ని"
+    reading: "enni"
+    ipa: "enni"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఎంతమంది", reading: "entamandi" }] }
+  - id: "te-1043"
+    target: "ఎంతమంది"
+    reading: "entamandi"
+    ipa: "ent̪amand̪i"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మంది", reading: "mandi" }] }
+  - id: "te-1044"
+    target: "మొత్తం"
+    reading: "mottam"
+    ipa: "mot̪t̪am"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మొత్తం ఎంత", reading: "mottam enta" }] }
+  - id: "te-1045"
+    target: "జంట"
+    reading: "jaṇṭa"
+    ipa: "dʒaɳʈa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-1046"
+    target: "డజను"
+    reading: "ḍajanu"
+    ipa: "ɖadʒanu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-1047"
+    target: "చాలు"
+    reading: "cālu"
+    ipa: "tʃaːlu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చాలు!", reading: "cālu!" }] }
+  - id: "te-1048"
+    target: "మళ్ళీ"
+    reading: "maḷḷī"
+    ipa: "maɭɭiː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మళ్లీ", reading: "maḷlī" }] }
+  - id: "te-1049"
+    target: "మొదటి"
+    reading: "modaṭi"
+    ipa: "mod̪aʈi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మొదటి రోజు", reading: "modaṭi rōju" }] }
+  - id: "te-1050"
+    target: "చివరి"
+    reading: "civari"
+    ipa: "tʃiʋari"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చివరి బస్సు", reading: "civari bassu" }] }
+  - ref: "te-0346"
+  - ref: "te-0359"
+  - ref: "te-0166"

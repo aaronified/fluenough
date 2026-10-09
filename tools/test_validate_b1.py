@@ -1988,7 +1988,19 @@ class Compatibility(unittest.TestCase):
                                         str(validate_decks.ROOT / "decks")])
         lines = out.getvalue().splitlines()
         self.assertEqual(code, 0, lines)
-        self.assertEqual([x for x in lines if x.startswith(("info ", "  info"))], [])
+        # A language that has written its B1 plan prints its info lines by
+        # design (a course's coverage, the plan's sizes): leave those files
+        # out, and check the decks that are still today's.
+        planned = {p.parent.name for p in (validate_decks.ROOT / "decks").glob("*/*-path.yaml")
+                   if "milestone:" in p.read_text(encoding="utf-8")}
+        kept: list[str] = []
+        skipping = False
+        for x in lines:
+            if x and not x.startswith(" "):
+                skipping = any(f"/decks/{lang}/" in x for lang in planned)
+            if not skipping:
+                kept.append(x)
+        self.assertEqual([x for x in kept if x.startswith(("info ", "  info"))], [])
         self.assertEqual([x for x in lines if x.startswith(("error", "FAIL"))], [])
 
 

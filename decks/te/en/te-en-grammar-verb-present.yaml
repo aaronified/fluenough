@@ -1,0 +1,34 @@
+schema: 1
+id: "te-en-grammar-verb-present"
+kind: "layer"
+core: "te-grammar-verb-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: I, you, he, she, we, they"
+description: "Every verb the course teaches, in the tense for habits and for what will happen, for each person, and in the polite request. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "nenu": "I (do it, or will)"
+    "memu": "we, not including you"
+    "manam": "we, including you"
+    "nuvvu": "you, to a friend or child"
+    "miru": "you, respectful or plural"
+    "atanu": "he"
+    "ame-adi": "she; it"
+    "vallu": "they (people)"
+    "please": "please do it (a polite request)"
+rules:
+  "te-rule-present-first":
+    name: "-ాను (-ānu), -ాము (-āmu), -ాం (-ām): I and we"
+    explanation: "These endings follow the verb's {1} stem. {2} is I, {3} is we without you and {4} is we with you: {5}, I eat or will eat; {6}; {7}. One form serves for what you do as a habit and for what you will do."
+  "te-rule-present-second":
+    name: "-ావు (-āvu), -ారు (-āru): you"
+    explanation: "{1} is for {2}, a friend or a child, and {3} for {4}, someone you respect, or more than one person: {5}, {6}."
+  "te-rule-present-third":
+    name: "-ాడు (-āḍu), -ుంది (-undi), -ారు (-āru): he, she, it, they"
+    explanation: "{1} is for a man, {2} for a woman or a thing, and {3} for people together, and as a sign of respect for one person: {4}, {5}, {6}."
+  "te-rule-polite-request":
+    name: "-ండి (-aṇḍi): please"
+    explanation: "{1} after the verb's stem asks politely: {2}, please eat. {3}, to come, is irregular: {4}."

@@ -147,12 +147,20 @@ cards:
     ipa: "naːku id̪d̪aru t̪ammuɭɭu unnaːru"
     pos: "phrase"
     notes: "'To me two younger brothers are': people take ఉన్నారు (unnāru), things ఉన్నాయి (unnāyi)."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇద్దరు", base: "ఇద్దరు", reading: "iddaru", meaning: "two people" }
+      - { word: "తమ్ముళ్ళు", ref: "te-0181" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
   - id: te-0398
     target: "మీకు అన్నదమ్ములు ఉన్నారా?"
     native: "Do you have any brothers?"
     reading: "mīku annadammulu unnārā?"
     ipa: "miːku annad̪ammulu unnaːraː"
     pos: "phrase"
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "ఉన్నారా", ref: "te-0633" }
   - id: te-0399
     target: "నాకు పెళ్ళైంది."
     native: "I'm married."
@@ -161,3 +169,6 @@ cards:
     alt_target: ["నాకు పెళ్లయింది.", "నాకు పెళ్ళయింది."]
     pos: "phrase"
     notes: "Literally 'to me the wedding has happened'."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "పెళ్ళైంది", base: "పెళ్ళి", reading: "peḷḷi", meaning: "wedding; marriage" }

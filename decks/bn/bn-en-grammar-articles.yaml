@@ -16,6 +16,9 @@ cards:
     pos: "phrase"
     alt_target: ["বইটা টেবিলের ওপরে আছে।"]
     notes: "Bengali has no 'the': -টা (-ṭā) after the noun does its work. In speech the 'is' can be left out here; in full, বইটা টেবিলের ওপরে আছে (boiṭā ṭebiler opore āche)."
+    bases:
+      - { word: "টেবিলের", ref: "bn-0608" }
+      - { word: "ওপর", base: "ওপর", reading: "opor", meaning: "top; above; on" }
   - id: bn-0255
     target: "একটা বই দিন।"
     native: "A book, please."
@@ -23,12 +26,18 @@ cards:
     ipa: "ekʈa boi d̪in"
     pos: "phrase"
     notes: "একটা (ekoṭā), 'one' with -টা (-ṭā), does the work of 'a'."
+    bases:
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "বই", ref: "bn-1139" }
   - id: bn-0256
     target: "ছেলেটা এসেছে।"
     native: "The boy has come."
     reading: "cheleṭā eśeche."
     ipa: "tʃʰeleʈa eʃetʃʰe"
     pos: "phrase"
+    bases:
+      - { word: "ছেলেটা", ref: "bn-0426" }
+      - { word: "এসেছে", ref: "bn-0872" }
   - id: bn-0257
     target: "একটি মেয়ে গান গাইছে।"
     native: "A girl is singing."
@@ -36,6 +45,10 @@ cards:
     ipa: "ekʈi meje ɡan ɡaitʃʰe"
     pos: "phrase"
     notes: "-টি (-ṭi) is a gentler, more formal -টা (-ṭā), often used for people and small things."
+    bases:
+      - { word: "একটি", ref: "bn-0202" }
+      - { word: "গান", base: "গান", reading: "gān", meaning: "song" }
+      - { word: "গাইছে", base: "গাওয়া", reading: "gāoā", meaning: "to sing" }
   - id: bn-0258
     target: "বইগুলো কোথায়?"
     native: "Where are the books?"
@@ -43,6 +56,8 @@ cards:
     ipa: "boiɡulo kot̪ʰaj"
     pos: "phrase"
     notes: "-গুলো (-gulo), 'the several', makes a plural."
+    bases:
+      - { word: "বইগুলো", ref: "bn-1139" }
   - id: bn-0259
     target: "দুটো চা দিন।"
     native: "Two teas, please."
@@ -51,6 +66,8 @@ cards:
     alt_target: ["দুইটা চা দিন।"]
     pos: "phrase"
     notes: "Numbers take the classifier too: দুটো (duṭo), তিনটে (tinoṭe), চারটে (duto, tinte, charte), also দুইটা (duiṭā), তিনটা (tinoṭā), চারটা (duita, tinta, charta)."
+    bases:
+      - { word: "দুটো", ref: "bn-0203" }
   - id: bn-0557
     target: "একজন লোক"
     native: "a man; one person"
@@ -58,12 +75,17 @@ cards:
     ipa: "ekdʒon lok"
     pos: "phrase"
     notes: "-জন (-jôn) counts people: একজন (ekojon), দুজন (dujon), কয়েকজন (kôyekojon). Not for things, and not usually for small children."
+    bases:
+      - { word: "একজন", ref: "bn-0202" }
+      - { word: "লোক", base: "লোক", reading: "lok", meaning: "person; man" }
   - id: bn-0558
     target: "কয়েকজন বন্ধু"
     native: "a few friends"
     reading: "kôyekjon bondhu"
     ipa: "kɔjekdʒon bond̪ʱu"
     pos: "phrase"
+    bases:
+      - { word: "কয়েকজন", ref: "bn-1312" }
   - id: bn-0559
     target: "দু কেজি আলু"
     native: "two kilos of potatoes"

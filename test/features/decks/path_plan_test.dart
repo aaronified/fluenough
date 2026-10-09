@@ -111,8 +111,21 @@ void main() {
   test('a course whose path plans nothing has no plan', () async {
     final app = AppState.test();
     await app.load();
-    for (final code in <String>['te', 'bn', 'hi']) {
+    // The bundled paths that mark no level and plan no unit: Hindi's among
+    // them, Telugu's and Bengali's not, since they have their B1 plans.
+    final unplanned = <String>{
+      for (final language in app.languages)
+        if (app.languagePathOf(language.code)?.plan case final plan?)
+          if (plan.every((u) => u.milestone == null && u.planned == null))
+            language.code,
+    };
+    expect(unplanned, contains('hi'));
+    expect(unplanned, isNot(anyOf(contains('te'), contains('bn'))));
+    for (final code in unplanned) {
       expect(coursePlanOf(app, code).isEmpty, isTrue, reason: code);
+    }
+    for (final code in <String>['te', 'bn']) {
+      expect(coursePlanOf(app, code).isEmpty, isFalse, reason: code);
     }
   });
 

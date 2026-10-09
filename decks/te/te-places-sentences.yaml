@@ -1,0 +1,107 @@
+schema: 1
+id: "te-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0809"
+    target: "బ్యాంకు పక్కన ఒక పార్కు ఉంది."
+    reading: "byāṅku pakkana oka pārku undi."
+    ipa: "bjaːŋku pakkana oka paːrku und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0810"
+    target: "మా ఊరు నది పక్కన ఉంది."
+    reading: "mā ūru nadi pakkana undi."
+    ipa: "maː uːru nad̪i pakkana und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "మా", ref: "te-0128" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0811"
+    target: "బడి ఎక్కడ ఉంది?"
+    reading: "baḍi ekkaḍa undi?"
+    ipa: "baɖi ekkaɖa und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0812"
+    target: "ఆసుపత్రి బస్టాండ్ దగ్గర ఉంది."
+    reading: "āsupatri basṭāṇḍ daggara undi."
+    ipa: "aːsupat̪ri basʈaːɳɖ d̪aɡɡara und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0813"
+    target: "మేము రేపు గుడికి వెళ్తాము."
+    reading: "mēmu rēpu guḍiki veḷtāmu."
+    ipa: "meːmu reːpu ɡuɖiki ʋeɭt̪aːmu"
+    pos: "phrase"
+    rules: ["te-rule-ki", "te-rule-present-first"]
+    bases:
+      - { word: "గుడికి", ref: "te-0767" }
+      - { word: "వెళ్తాము", ref: "te-0622" }
+  - id: "te-0814"
+    target: "అతను రోజూ బ్యాంకులో పని చేస్తాడు."
+    reading: "atanu rōjū byāṅkulō pani cēstāḍu."
+    ipa: "at̪anu roːdʒuː bjaːŋkuloː pani tʃeːst̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-present-third"]
+    bases:
+      - { word: "బ్యాంకులో", ref: "te-0770" }
+      - { word: "చేస్తాడు", ref: "te-0621" }
+  - id: "te-0815"
+    target: "వంతెన కింద నది ఉంది."
+    reading: "vantena kinda nadi undi."
+    ipa: "ʋant̪ena kind̪a nad̪i und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0816"
+    target: "నేను పొలంలో ఉన్నాను."
+    reading: "nēnu polamlō unnānu."
+    ipa: "neːnu polamloː unnaːnu"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "పొలంలో", ref: "te-0781" }
+      - { word: "ఉన్నాను", ref: "te-0633" }
+  - id: "te-0817"
+    target: "పిల్లలు మైదానంలో ఆడతారు."
+    reading: "pillalu maidānamlō āḍatāru."
+    ipa: "pillalu maid̪aːnamloː aːɖat̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-present-third"]
+    bases:
+      - { word: "మైదానంలో", ref: "te-0791" }
+      - { word: "ఆడతారు", ref: "te-0637" }
+  - id: "te-0818"
+    target: "విమానాశ్రయం నగరానికి దూరంగా ఉంది."
+    reading: "vimānāśrayam nagarāniki dūraṅgā undi."
+    ipa: "ʋimaːnaːʃrajam naɡaraːniki d̪uːraŋɡaː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-ki"]
+    bases:
+      - { word: "నగరానికి", ref: "te-0058" }
+      - { word: "దూరంగా", ref: "te-0301" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0819"
+    target: "కూడలి దగ్గర ఆగండి."
+    reading: "kūḍali daggara āgaṇḍi."
+    ipa: "kuːɖali d̪aɡɡara aːɡaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "ఆగండి", ref: "te-0648" }
+  - id: "te-0820"
+    target: "రాజధాని పెద్ద నగరం."
+    reading: "rājadhāni pedda nagaram."
+    ipa: "raːdʒad̪ʱaːni ped̪d̪a naɡaram"
+    pos: "phrase"

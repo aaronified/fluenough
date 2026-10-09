@@ -82,7 +82,45 @@ void main() {
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
-      expect(catalog.decks.map((d) => d.path).toSet(), onDisk);
+
+      // Each is a deck the catalog lists by its path, single-file or a
+      // layer merged with its core, or a core (ADR-0036). A core is not
+      // listed itself: it is merged into each of its layers, the files in
+      // a folder below it whose `core` names it, and one of them at least
+      // is listed.
+      final listed = catalog.decks.map((d) => d.path).toSet();
+      String folderOf(String path) => path.substring(0, path.lastIndexOf('/'));
+      String stemOf(String path) =>
+          path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+      final header = <String, YamlMap>{
+        for (final path in onDisk)
+          path: loadYaml(File(path).readAsStringSync()) as YamlMap,
+      };
+      final cores = {
+        for (final path in onDisk)
+          if (header[path]!['part'] == 'core') path,
+      };
+      expect(cores, isNotEmpty);
+      expect(listed, onDisk.difference(cores));
+      for (final core in cores) {
+        final layers = listed.where(
+          (path) =>
+              header[path]!['kind'] == 'layer' &&
+              header[path]!['core'] == stemOf(core) &&
+              folderOf(folderOf(path)) == folderOf(core),
+        );
+        expect(layers, isNotEmpty, reason: '$core is in no deck listed');
+        for (final layer in layers) {
+          final deck = catalog.decks.singleWhere((d) => d.path == layer).deck;
+          // Merged: the deck has the core's language and its layer's id.
+          expect(deck.id, header[layer]!['id'], reason: layer);
+          expect(
+            deck.language.code,
+            header[core]!['language']['code'],
+            reason: layer,
+          );
+        }
+      }
     });
 
     test('each language with number decks has its number rules (#54)', () {
