@@ -68,6 +68,7 @@ class TodayPage extends StatelessWidget {
         listenable: Listenable.merge(<Listenable>[
           state.progress,
           state.settings,
+          state.pacing,
         ]),
         builder: (context, _) =>
             _TodayContent(state: state, numbers: TodayNumbers.of(state)),
