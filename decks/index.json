@@ -10,7 +10,7 @@
       "script": "bengali",
       "script_decks": true,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 447385,
+      "size": 447388,
       "path": ["as-phrasebook", "as-first-words", "as-grammar-sentences", "as-sound-differences", "as-grammar-differences", "as-questions", "as-grammar-questions", "as-addressing", "as-grammar-pronouns", "as-about-me", "as-family", "as-grammar-be", "as-work", "as-grammar-demonstratives", "as-grammar-nouns", "as-script-vowels", "as-script-consonants", "as-script-reading", "as-script-vowel-signs", "as-script-conjuncts", "as-numbers-1-20", "as-numbers-big", "as-market", "as-grammar-articles", "as-groceries", "as-grammar-gender-number", "as-grammar-needs", "as-transport", "as-grammar-postpositions", "as-directions", "as-grammar-continuous", "as-home", "as-grammar-adjectives", "as-time", "as-grammar-future", "as-daily-life", "as-grammar-negative", "as-calendar", "as-grammar-past", "as-grammar-past-more", "as-grammar-conjunct-verbs", "as-grammar-compound-verbs", "as-eating-out", "as-grammar-conjunctions", "as-grammar-likes", "as-help", "as-grammar-irregular", "as-grammar-pitfalls", "as-registers", "as-slang", "as-grammar-can-must", "as-spelling", "as-reading-aitar-mas"],
       "units": [
         {"decks": ["as-phrasebook", "as-first-words", "as-grammar-sentences"], "grammar": ["sentences"], "has": {"en": 1}, "words": 1},
@@ -159,7 +159,7 @@
         {"deck": "as-numbers-1-20", "kind": "vocab", "part": "core", "path": "decks/as/as-numbers-1-20.yaml", "schema": 1, "sha256": "0c8111dcf71e3a4e09b2141a4f7fc817acdc2408b8d6cc1d99b52bdd9740e52a", "size": 2278},
         {"deck": "as-numbers-big", "kind": "vocab", "part": "core", "path": "decks/as/as-numbers-big.yaml", "schema": 1, "sha256": "94f2973097fdfcf08c6baf2f20cf5a54dfd9ef09e38d2dee63f9a2f0a84fca4a", "size": 3797},
         {"kind": "numbers", "path": "decks/as/as-numbers.yaml", "schema": 1, "sha256": "11543f5017cc51ab8ffdba8eb401ff49911b7bf8c9c3c970d43f77366e505779", "size": 2004},
-        {"kind": "path", "path": "decks/as/as-path.yaml", "schema": 1, "sha256": "0a31e44ad4c0882c37b2a43fce9a54c2245a62a87880f2662dc8f17712db881a", "size": 26183},
+        {"kind": "path", "path": "decks/as/as-path.yaml", "schema": 1, "sha256": "fe2cce349212b46c73a180d58e236d9f9b41b6b15ac96d263681329507d26b64", "size": 26186},
         {"deck": "as-phrasebook", "kind": "vocab", "part": "core", "path": "decks/as/as-phrasebook.yaml", "schema": 1, "sha256": "caf974cf590d51f921e6ba9d50a0a8b06b368fd54d5ecef38142104c9cb2c20f", "size": 7137},
         {"deck": "as-questions", "kind": "vocab", "part": "core", "path": "decks/as/as-questions.yaml", "schema": 1, "sha256": "b2da75cf88fa5089cfe964915948937816f55b52209498d82b8428ee975affef", "size": 1885},
         {"deck": "as-registers", "kind": "vocab", "part": "core", "path": "decks/as/as-registers.yaml", "schema": 1, "sha256": "702115912234afba10107c6523abca6cda9ed17beb2484955471c5ec01a82c89", "size": 3297},
@@ -472,7 +472,7 @@
       "script": "latin",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 11585,
+      "size": 11914,
       "path": ["es-core-100", "es-grammar-present-ar"],
       "units": [
         {"decks": ["es-core-100"], "has": {"en": 35}},
@@ -481,9 +481,10 @@
       ],
       "files": [
         {"deck": "es-core-100", "kind": "vocab", "part": "core", "path": "decks/es/es-core-100.yaml", "schema": 1, "sha256": "b06de703ec85a148bf981fb08c473c301cdc1edd2860de114e9a22795192237a", "size": 5383},
-        {"deck": "es-grammar-present-ar", "kind": "grammar", "native": "en", "path": "decks/es/es-en-grammar-present-ar.yaml", "schema": 1, "sha256": "077c9352c04f11e5102207fa1ef73f32f21aa5f5b2b286b8c9fa7d1eb0ba8b80", "size": 2934},
+        {"deck": "es-grammar-present-ar", "kind": "grammar", "part": "core", "path": "decks/es/es-grammar-present-ar.yaml", "schema": 1, "sha256": "8268dcaec71a0c694f54ddf2d62941c3dcd303d3c5b0680a0dfbe3027ad72082", "size": 2431},
         {"kind": "path", "path": "decks/es/es-path.yaml", "schema": 1, "sha256": "48d43cd4f444d9fa1270f02bc20f245beb442396688c7b3d4e66514904f0eef7", "size": 570},
-        {"deck": "es-core-100", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-core-100.yaml", "schema": 1, "sha256": "c5f1e93e361741a530e1c8476a06564717a56129edc2e824adfd9d39fdef5f4c", "size": 2698}
+        {"deck": "es-core-100", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-core-100.yaml", "schema": 1, "sha256": "c5f1e93e361741a530e1c8476a06564717a56129edc2e824adfd9d39fdef5f4c", "size": 2698},
+        {"deck": "es-grammar-present-ar", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-grammar-present-ar.yaml", "schema": 1, "sha256": "d9ea9da4f1d198c3fce697ad4ac8267b1d91af764c9e1dc8cc627eae02a69a81", "size": 832}
       ]
     },
     {
@@ -493,7 +494,7 @@
       "script": "gujarati",
       "script_decks": true,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 421293,
+      "size": 421296,
       "path": ["gu-phrasebook", "gu-first-words", "gu-grammar-sentences", "gu-sound-differences", "gu-grammar-differences", "gu-questions", "gu-grammar-questions", "gu-addressing", "gu-grammar-pronouns", "gu-about-me", "gu-grammar-continuous", "gu-family", "gu-grammar-be", "gu-work", "gu-grammar-demonstratives", "gu-grammar-nouns", "gu-script-vowels", "gu-script-consonants", "gu-script-reading", "gu-script-vowel-signs", "gu-script-conjuncts", "gu-numbers-1-20", "gu-numbers-big", "gu-market", "gu-grammar-articles", "gu-groceries", "gu-grammar-gender-number", "gu-grammar-needs", "gu-transport", "gu-grammar-postpositions", "gu-directions", "gu-home", "gu-grammar-adjectives", "gu-time", "gu-grammar-future", "gu-daily-life", "gu-grammar-negative", "gu-calendar", "gu-grammar-past", "gu-grammar-past-more", "gu-grammar-conjunct-verbs", "gu-grammar-compound-verbs", "gu-eating-out", "gu-grammar-conjunctions", "gu-grammar-likes", "gu-help", "gu-grammar-irregular", "gu-grammar-pitfalls", "gu-registers", "gu-slang", "gu-grammar-can-must", "gu-spelling", "gu-reading-keri"],
       "units": [
         {"decks": ["gu-phrasebook", "gu-first-words", "gu-grammar-sentences"], "grammar": ["sentences"], "has": {"en": 1}, "words": 1},
@@ -642,7 +643,7 @@
         {"deck": "gu-numbers-1-20", "kind": "vocab", "part": "core", "path": "decks/gu/gu-numbers-1-20.yaml", "schema": 1, "sha256": "c1c0c809232c877320e59a022385f737ee087f1e5cf71cd7ee410b306d4821c6", "size": 2996},
         {"deck": "gu-numbers-big", "kind": "vocab", "part": "core", "path": "decks/gu/gu-numbers-big.yaml", "schema": 1, "sha256": "4cdd150f28a3c5f216b86bf848662e315e265faa6cdc78e2ac80f510283fbc21", "size": 13238},
         {"kind": "numbers", "path": "decks/gu/gu-numbers.yaml", "schema": 1, "sha256": "dca7df2e754140e1645cb289e063175b1a9d95be1f4738c186656be059b00cd2", "size": 4477},
-        {"kind": "path", "path": "decks/gu/gu-path.yaml", "schema": 1, "sha256": "3a5942e6c8edb72ec1b64a245aba0ce1ffa2b996a8b7bfffd1d0405ce8868045", "size": 26172},
+        {"kind": "path", "path": "decks/gu/gu-path.yaml", "schema": 1, "sha256": "dbfe0ae78def65d4805def99abecf411010c97258ebb738bcba73f25043d342d", "size": 26175},
         {"deck": "gu-phrasebook", "kind": "vocab", "part": "core", "path": "decks/gu/gu-phrasebook.yaml", "schema": 1, "sha256": "b677b4d71536433b08a23f5057101ae0c7976f802adf5506d71eb196e45185f5", "size": 8146},
         {"deck": "gu-questions", "kind": "vocab", "part": "core", "path": "decks/gu/gu-questions.yaml", "schema": 1, "sha256": "8d6f378b85b908922058aa24b50a83a6d978f2406e57e800da1bdf45e35ed4ec", "size": 1873},
         {"deck": "gu-registers", "kind": "vocab", "part": "core", "path": "decks/gu/gu-registers.yaml", "schema": 1, "sha256": "faf594b782e33a9261c25a6aa1391947468f1fcb0f65bab36ab162278f698e91", "size": 3631},
@@ -954,7 +955,7 @@
       "script": "kannada",
       "script_decks": true,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 385534,
+      "size": 385536,
       "path": ["kn-phrasebook", "kn-first-words", "kn-grammar-sentences", "kn-sound-differences", "kn-grammar-differences", "kn-questions", "kn-grammar-questions", "kn-addressing", "kn-grammar-pronouns", "kn-about-me", "kn-family", "kn-grammar-be", "kn-work", "kn-grammar-demonstratives", "kn-grammar-nouns", "kn-script-vowels", "kn-script-consonants", "kn-script-reading", "kn-script-vowel-signs", "kn-script-conjuncts", "kn-numbers-1-20", "kn-numbers-big", "kn-market", "kn-grammar-articles", "kn-groceries", "kn-grammar-gender-number", "kn-grammar-needs", "kn-transport", "kn-grammar-postpositions", "kn-directions", "kn-grammar-continuous", "kn-home", "kn-grammar-adjectives", "kn-time", "kn-grammar-future", "kn-daily-life", "kn-grammar-negative", "kn-calendar", "kn-grammar-past", "kn-grammar-past-more", "kn-grammar-conjunct-verbs", "kn-grammar-compound-verbs", "kn-eating-out", "kn-grammar-conjunctions", "kn-grammar-likes", "kn-help", "kn-grammar-irregular", "kn-grammar-pitfalls", "kn-registers", "kn-slang", "kn-grammar-can-must", "kn-spelling", "kn-reading-ravi"],
       "units": [
         {"decks": ["kn-phrasebook", "kn-first-words", "kn-grammar-sentences"], "grammar": ["sentences"], "has": {"en": 1}, "words": 1},
@@ -1103,7 +1104,7 @@
         {"deck": "kn-numbers-1-20", "kind": "vocab", "part": "core", "path": "decks/kn/kn-numbers-1-20.yaml", "schema": 1, "sha256": "8426cb15b98409f9a479859d88fe281e5cc4c46aae81fcaf166a7b7f4acb1716", "size": 2844},
         {"deck": "kn-numbers-big", "kind": "vocab", "part": "core", "path": "decks/kn/kn-numbers-big.yaml", "schema": 1, "sha256": "73de735089f19504e8b4d369dc8c8b53788a84d74ae81e94e9fbb64972da8db2", "size": 5926},
         {"kind": "numbers", "path": "decks/kn/kn-numbers.yaml", "schema": 1, "sha256": "d79b229c6f43f41cdd27bd2a369a74b1fc2a2f0e1c3fe0951435c89ef072a858", "size": 3252},
-        {"kind": "path", "path": "decks/kn/kn-path.yaml", "schema": 1, "sha256": "9978f83283de702f444d1a53a1729bf74c73c9e5edb133014b0067c7ae837211", "size": 26164},
+        {"kind": "path", "path": "decks/kn/kn-path.yaml", "schema": 1, "sha256": "dd77b145aa01652f4e1168a85fb9f9c1f46bcdd1a8b7238ddecbc2e2df3ff3aa", "size": 26166},
         {"deck": "kn-phrasebook", "kind": "vocab", "part": "core", "path": "decks/kn/kn-phrasebook.yaml", "schema": 1, "sha256": "a6fa90355445ce457c2dcfc64d9388fabbeb5335ecec91d428e71270ba3a846b", "size": 8184},
         {"deck": "kn-questions", "kind": "vocab", "part": "core", "path": "decks/kn/kn-questions.yaml", "schema": 1, "sha256": "be584e7d6bc1b954a608f5c34d3e1c46a4cc2ba23f512c2bea0e50143547e8cb", "size": 1586},
         {"deck": "kn-registers", "kind": "vocab", "part": "core", "path": "decks/kn/kn-registers.yaml", "schema": 1, "sha256": "156c6b89fbb87d8a42b8bfc44b6b4da138fd26a8cab09e6504ea1efb982385ff", "size": 3180},
@@ -1182,7 +1183,7 @@
       "script": "devanagari",
       "script_decks": true,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 431667,
+      "size": 431669,
       "path": ["mr-phrasebook", "mr-first-words", "mr-grammar-sentences", "mr-sound-differences", "mr-grammar-differences", "mr-questions", "mr-grammar-questions", "mr-addressing", "mr-grammar-pronouns", "mr-about-me", "mr-grammar-present", "mr-family", "mr-grammar-be", "mr-work", "mr-grammar-demonstratives", "mr-grammar-nouns", "mr-script-vowels", "mr-script-consonants", "mr-script-reading", "mr-script-vowel-signs", "mr-script-conjuncts", "mr-numbers-1-20", "mr-numbers-big", "mr-market", "mr-grammar-articles", "mr-groceries", "mr-grammar-gender-number", "mr-grammar-needs", "mr-transport", "mr-grammar-postpositions", "mr-directions", "mr-grammar-continuous", "mr-home", "mr-grammar-adjectives", "mr-time", "mr-grammar-future", "mr-daily-life", "mr-grammar-negative", "mr-calendar", "mr-grammar-past", "mr-grammar-past-more", "mr-grammar-conjunct-verbs", "mr-grammar-compound-verbs", "mr-eating-out", "mr-grammar-conjunctions", "mr-grammar-likes", "mr-help", "mr-grammar-irregular", "mr-grammar-pitfalls", "mr-registers", "mr-slang", "mr-grammar-can-must", "mr-spelling", "mr-reading-sunitacha-ravivar"],
       "units": [
         {"decks": ["mr-phrasebook", "mr-first-words", "mr-grammar-sentences"], "grammar": ["sentences"], "has": {"en": 1}, "words": 2},
@@ -1332,7 +1333,7 @@
         {"deck": "mr-numbers-1-20", "kind": "vocab", "part": "core", "path": "decks/mr/mr-numbers-1-20.yaml", "schema": 1, "sha256": "b4243150afdbed5b83c7323491036aa7c2e48ec1ef8b027564396ce6d24f003c", "size": 2507},
         {"deck": "mr-numbers-big", "kind": "vocab", "part": "core", "path": "decks/mr/mr-numbers-big.yaml", "schema": 1, "sha256": "04819baa2f3e35a8bff134cd28e7d0afb194a552dd694325c4f08f9ab95e6b0c", "size": 13223},
         {"kind": "numbers", "path": "decks/mr/mr-numbers.yaml", "schema": 1, "sha256": "3b6c5544c680cc2bfe057398cd7a1820fd8f6928b029a8fe203d1ba3a6cdd23e", "size": 4589},
-        {"kind": "path", "path": "decks/mr/mr-path.yaml", "schema": 1, "sha256": "b328d0d6ffed913d9a595a897cba61b3e823674962375e9f9562bdb6f9256d80", "size": 26238},
+        {"kind": "path", "path": "decks/mr/mr-path.yaml", "schema": 1, "sha256": "bd8a3fb185163a40bc0e74e9a01d953af7f9d6f0ab2ac5c4c18c010324c649a3", "size": 26240},
         {"deck": "mr-phrasebook", "kind": "vocab", "part": "core", "path": "decks/mr/mr-phrasebook.yaml", "schema": 1, "sha256": "a48ef4ea7bf37611db42ce94acfcd862cf9ade5a2fcf027470fa35d227273281", "size": 7745},
         {"deck": "mr-questions", "kind": "vocab", "part": "core", "path": "decks/mr/mr-questions.yaml", "schema": 1, "sha256": "aee281088458d4105857b9863d8770c9f5da0e27a080914526121cda964d6a70", "size": 2191},
         {"deck": "mr-registers", "kind": "vocab", "part": "core", "path": "decks/mr/mr-registers.yaml", "schema": 1, "sha256": "a2364c1fcdd25f45fefd1e6e672fab041b6ea730bb0f57effe11b9fdceef6429", "size": 3145},
