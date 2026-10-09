@@ -88,7 +88,8 @@ units:
   - decks: ["bn-family", "bn-grammar-be", "*"]
     words: 27
     grammar: ["be"]
-  - planned: { id: "bn-verbs", theme: "everyday-verbs", words: 28 }
+  - decks: ["bn-verbs", "bn-grammar-verb-present", "bn-verbs-sentences", "*"]
+    words: 30
     grammar: ["present-first", "present-second", "present-third", "polite-request"]
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
