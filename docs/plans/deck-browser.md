@@ -100,6 +100,11 @@ Settled with the owner, 2026-10-09:
   check character that catches a single typo or two swapped neighbours.
   **No join mail:** the owner first hears of a reviewer with their first
   review (owner, 2026-10-09).
+- **Sending:** the app's own Android share, no new dependency: an
+  ACTION_SEND intent with the review file shared through a FileProvider,
+  the Fluenough address and the subject (with the rater code) filled in,
+  opening the reviewer's mail app; the reviewer sends it (owner,
+  2026-10-09). iOS needs its own later.
 - **Joining is automatic:** a join mail makes the sender a reviewer at
   once. "I will also ask the people to either share their email or
   rater_id to me in person to filter, if needed. We need maximum
