@@ -1,4 +1,5 @@
 import '../../app.dart';
+import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'today_fixtures.dart';
 
@@ -36,6 +37,14 @@ final List<GalleryEntry> todayGalleryStates = <GalleryEntry>[
     note: 'Session finished, streak kept', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: todayAllDoneState,
+  ),
+  GalleryEntry(
+    id: 'today-adjusted',
+    section: GallerySection.learn,
+    label: 'Today, adjusted to you', // ui-literal-ok: debug-only gallery
+    note: 'The settled strip, marks on the tiles', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: (app) => GalleryFixtures.adjusted(GalleryFixtures.state(app)),
   ),
   GalleryEntry(
     id: 'today-no-voice',

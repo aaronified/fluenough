@@ -48,10 +48,11 @@ Future<AppState> pacedLearner(
     progress: progress,
     paceRunner: paceRunner,
     tts: FixedTtsEngine(const <String>{'hi'}),
+    // Past the first launch, as AppState.test's own settings are.
     settings: SettingsNotifier(
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['hi'],
-    ),
+    )..learningChosen = true,
   );
   final base = build(MemoryProgress());
   await base.load();
