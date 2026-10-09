@@ -156,7 +156,8 @@ units:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - planned: { id: "bn-clothes", theme: "clothes", words: 22 }
+  - decks: ["bn-clothes", "bn-clothes-sentences", "*"]
+    words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
