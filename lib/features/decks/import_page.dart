@@ -117,10 +117,12 @@ class _ImportPageState extends State<ImportPage> {
     try {
       final text = await bundle.loadString(deckTemplateAsset);
       saved = await state.deckFiles.save(deckTemplateFile, text);
-    } on Exception {
+    } on Exception catch (e) {
+      state.log.warning('Deck template not saved: ${e.runtimeType}');
       if (mounted) showAppSnackBar(context, l10n.importTemplateFailed);
       return;
     }
+    if (saved) state.log.event('Deck template saved');
     if (saved && mounted) {
       showAppSnackBar(context, l10n.importTemplateSaved(deckTemplateFile));
     }
@@ -133,6 +135,7 @@ class _ImportPageState extends State<ImportPage> {
     try {
       picked = await state.deckFiles.open(title: l10n.importPickTitle);
     } on Exception catch (e) {
+      state.log.warning('Deck file not read: ${e.runtimeType}');
       if (mounted) showAppSnackBar(context, l10n.importReadFailed('$e'));
       return;
     }
@@ -147,9 +150,11 @@ class _ImportPageState extends State<ImportPage> {
   Future<void> _add(DeckAccepted check) async {
     final l10n = AppLocalizations.of(context)!;
     setState(() => _adding = true);
+    final state = AppScope.read(context);
     try {
-      await AppScope.read(context).addDeck(check.deck, _picked!.text);
-    } on Exception {
+      await state.addDeck(check.deck, _picked!.text);
+    } on Exception catch (e) {
+      state.log.warning('Deck not added: ${e.runtimeType}');
       if (!mounted) return;
       setState(() => _adding = false);
       showAppSnackBar(context, l10n.importAddFailed);

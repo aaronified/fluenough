@@ -3872,13 +3872,76 @@
   "@settingsSectionLogs": {
     "description": "Settings section heading, for the app's own log (#162)."
   },
-  "settingsAppLog": "App log",
-  "@settingsAppLog": {
-    "description": "Settings row: the app's own log of what it did and what went wrong (#162). Feature incoming."
+  "settingsLogAbout": "What the app did and what went wrong, kept on this phone for 7 days, to add to a report if you choose. Never your answers or cards.",
+  "@settingsLogAbout": {
+    "description": "Under the Logs section in Settings: what the app log holds (#162)."
   },
-  "settingsAppLogDesc": "What the app did and what went wrong, to add to a report",
-  "@settingsAppLogDesc": {
-    "description": "Subtitle of the App log row in Settings."
+  "settingsLogView": "View app log",
+  "@settingsLogView": {
+    "description": "Settings row that opens the app's own log (#162)."
+  },
+  "settingsLogViewDesc": "{count, plural, =0{Nothing logged yet} =1{1 line} other{{count} lines}}",
+  "@settingsLogViewDesc": {
+    "description": "Under View app log: how many lines the app log holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "settingsLogCopy": "Copy app log",
+  "@settingsLogCopy": {
+    "description": "Settings row that copies the app log as text."
+  },
+  "settingsLogCopied": "App log copied",
+  "@settingsLogCopied": {
+    "description": "SnackBar after the app log is copied."
+  },
+  "settingsLogExport": "Export app log",
+  "@settingsLogExport": {
+    "description": "Settings row that saves the app log as a file."
+  },
+  "settingsLogExportDesc": "Text file",
+  "@settingsLogExportDesc": {
+    "description": "Under Export app log: the kind of file it saves."
+  },
+  "settingsLogExportFailed": "Couldn’t save the app log",
+  "@settingsLogExportFailed": {
+    "description": "SnackBar when saving the app log fails."
+  },
+  "settingsLogClear": "Clear app log",
+  "@settingsLogClear": {
+    "description": "Settings row that deletes everything in the app log."
+  },
+  "settingsLogClearTitle": "Clear the app log?",
+  "@settingsLogClearTitle": {
+    "description": "Title of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearBody": "Everything in it is deleted. Your progress and review log stay.",
+  "@settingsLogClearBody": {
+    "description": "Text of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearConfirm": "Clear",
+  "@settingsLogClearConfirm": {
+    "description": "Button in the dialog that clears the app log."
+  },
+  "settingsLogCleared": "App log cleared",
+  "@settingsLogCleared": {
+    "description": "SnackBar after the app log is cleared."
+  },
+  "appLogTitle": "App log",
+  "@appLogTitle": {
+    "description": "Title of the page that shows the app's own log (#162)."
+  },
+  "appLogEmpty": "Nothing logged yet.",
+  "@appLogEmpty": {
+    "description": "Shown on the App log page when the log is empty."
+  },
+  "appLogLabel": "The app log, oldest first",
+  "@appLogLabel": {
+    "description": "Accessibility label of the list of log lines on the App log page."
   },
   "settingsExport": "Export review log",
   "@settingsExport": {

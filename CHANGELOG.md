@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- An app log, in Settings > Logs, for reports. It records what went wrong, errors and warnings, and key events: screens opened, decks loaded, fits run, imports and exports. It never records your answers or the cards. It is kept on the phone, so it survives a crash, for 7 days and at most 2,000 lines, whichever is fewer. You can view it, copy it, export it as a file, or clear it (#162).
 - Install voices in phone settings, in Settings > Voices, now opens the phone's text-to-speech settings, where a voice is installed, instead of only saying how to find them. On a phone without that page it opens the voice engine's own page for installing voices; where neither opens, it explains the way there as before. No new dependency: the app asks Android through a small channel of its own, which `tools/brand_android.py` writes into the generated Android project.
 
 ### Changed

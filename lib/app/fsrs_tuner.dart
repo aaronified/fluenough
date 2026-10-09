@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/skill_fit.dart';
+import 'app_log.dart';
 import 'memory_progress.dart';
 
 /// Runs one skill's fit and gives what it found.
@@ -29,9 +30,14 @@ class FsrsTuner extends ChangeNotifier {
     required this.progress,
     required this._clock,
     this._runner = fitInIsolate,
+    this.log,
   });
 
   final ProgressStore progress;
+
+  /// Where each fit run is logged, as its skill and whether it was kept
+  /// (#162).
+  final AppLog? log;
   final DateTime Function() _clock;
   final FitRunner _runner;
 
@@ -206,6 +212,10 @@ class FsrsTuner extends ChangeNotifier {
     if (fitted != null && !_disposed) {
       await progress.putFitted(key, fitted);
     }
+    log?.event(
+      'Fit run: ${key.language} ${key.mode.name}, '
+      '${fitted == null ? 'nothing kept' : 'kept'}',
+    );
     return result;
   }
 
