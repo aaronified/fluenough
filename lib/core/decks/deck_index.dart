@@ -9,7 +9,7 @@ const int supportedIndexVersion = 1;
 const int supportedDeckSchema = 1;
 
 /// How many decks of a language's path must be on the phone before it can
-/// be learned: the rest download behind them (`decks-from-github.md`).
+/// be learned: the rest download behind them (ADR-0037).
 const int decksBeforeReady = 5;
 
 /// Kinds of file that hold no deck: at most one of each per language.
@@ -227,7 +227,7 @@ class IndexLanguage {
   /// The native languages a learner who speaks [spoken], best known first,
   /// is taught this language from: those of [spoken] it has decks for, or
   /// where it has none, English, or failing that every one it has
-  /// (`decks-from-github.md`).
+  /// (ADR-0037).
   List<String> nativesFor(List<String> spoken) {
     final have = <String>{for (final n in natives) n.code};
     final mine = <String>[
@@ -445,7 +445,7 @@ class LanguageChanges {
   /// Files on the phone that a file in [fetch] replaces under another name:
   /// a deck split into a core and its layer, a path renamed. A file GitHub
   /// no longer lists, that nothing replaces, is never removed, so that a
-  /// learner's cards do not vanish (`decks-from-github.md`, item 6).
+  /// learner's cards do not vanish (ADR-0037).
   final List<String> remove;
 
   int get bytes => fetch.fold(0, (sum, f) => sum + f.size);

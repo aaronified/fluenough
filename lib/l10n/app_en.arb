@@ -3948,6 +3948,312 @@
   "@learnLoading": {
     "description": "Screen-reader label while the courses load on the choose-what-to-learn screen."
   },
+  "downloadsTaughtFrom": "Taught from {language}",
+  "@downloadsTaughtFrom": {
+    "description": "Under a language on the choose-what-to-learn screen, when none of the languages the learner speaks teaches it: its decks teach from this language instead (ADR-0037).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "downloadsToDownload": "{size} to download",
+  "@downloadsToDownload": {
+    "description": "Under a language on the choose-what-to-learn screen that is not on the phone yet: how much choosing it downloads. {size} is a size such as 310 KB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "310 KB"
+      }
+    }
+  },
+  "downloadsSizeKb": "{kb} KB",
+  "@downloadsSizeKb": {
+    "description": "A download size in kilobytes.",
+    "placeholders": {
+      "kb": {
+        "type": "int",
+        "example": "310"
+      }
+    }
+  },
+  "downloadsSizeMb": "{mb} MB",
+  "@downloadsSizeMb": {
+    "description": "A download size in megabytes, with one decimal.",
+    "placeholders": {
+      "mb": {
+        "type": "String",
+        "example": "1.2"
+      }
+    }
+  },
+  "downloadsIndexLoading": "Finding the courses…",
+  "@downloadsIndexLoading": {
+    "description": "Screen-reader label while the list of courses is read from GitHub on the choose-what-to-learn screen."
+  },
+  "downloadsIndexFailed": "Couldn’t get the list of courses",
+  "@downloadsIndexFailed": {
+    "description": "Title shown when the list of courses could not be read from GitHub. Followed by why, and a Try again button."
+  },
+  "downloadsOffline": "No connection. Fluenough downloads a language’s decks the first time you choose it; after that it works offline. Connect to the internet and try again.",
+  "@downloadsOffline": {
+    "description": "Why decks could not be downloaded: the phone is offline, or the connection broke."
+  },
+  "downloadsRateLimited": "GitHub has had too many requests from this network. Try again in a few minutes.",
+  "@downloadsRateLimited": {
+    "description": "Why decks could not be downloaded: GitHub limited requests from this network."
+  },
+  "downloadsBadFile": "A deck didn’t arrive whole. Try again.",
+  "@downloadsBadFile": {
+    "description": "Why decks could not be downloaded: a file did not match the list of decks, or was cut short."
+  },
+  "downloadsInvalid": "A deck on GitHub couldn’t be read, so nothing was changed. Try again later.",
+  "@downloadsInvalid": {
+    "description": "Why decks could not be downloaded: a file arrived whole but the app could not read it. The decks already on the phone are kept."
+  },
+  "downloadsStorage": "The phone couldn’t keep the decks. It may be full.",
+  "@downloadsStorage": {
+    "description": "Why decks could not be downloaded: writing them to the phone failed."
+  },
+  "downloadsAppTooOld": "These decks need a newer version of Fluenough. Update the app in Settings, then try again.",
+  "@downloadsAppTooOld": {
+    "description": "Why decks could not be downloaded: the list of decks is in a newer format than this version reads."
+  },
+  "downloadsNotOffered": "GitHub no longer offers this language.",
+  "@downloadsNotOffered": {
+    "description": "Why a language could not be downloaded: it is no longer in the list of decks."
+  },
+  "downloadsTitle": "Getting your decks",
+  "@downloadsTitle": {
+    "description": "Title of the screen that downloads the first decks of the languages chosen."
+  },
+  "downloadsBody": "Each language’s decks come from GitHub. You can start once its first five are in; the rest follow while you learn.",
+  "@downloadsBody": {
+    "description": "Explanation on the screen that downloads the first decks of the languages chosen."
+  },
+  "downloadsProgress": "{total, plural, =1{{done} of 1 file} other{{done} of {total} files}}",
+  "@downloadsProgress": {
+    "description": "How far a language's download has got, in files.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "downloadsReady": "Ready",
+  "@downloadsReady": {
+    "description": "A language whose first decks are on the phone, on the download screen."
+  },
+  "downloadsWaiting": "Waiting",
+  "@downloadsWaiting": {
+    "description": "A language waiting for another to finish downloading."
+  },
+  "downloadsChooseOther": "Choose other languages",
+  "@downloadsChooseOther": {
+    "description": "Button on the download screen, when it fails, that opens the choose-what-to-learn screen."
+  },
+  "settingsSectionDecks": "Decks",
+  "@settingsSectionDecks": {
+    "description": "Header of the Settings group for the decks downloaded from GitHub."
+  },
+  "deckDownloadsTitle": "Deck downloads",
+  "@deckDownloadsTitle": {
+    "description": "Settings row, and the title of its page, listing each language's decks on the phone, with updates."
+  },
+  "deckDownloadsRowUpToDate": "Your decks are up to date",
+  "@deckDownloadsRowUpToDate": {
+    "description": "Line under the Deck downloads row when no update is waiting."
+  },
+  "deckDownloadsRowWaiting": "{count, plural, =1{An update is waiting for 1 language} other{Updates are waiting for {count} languages}}",
+  "@deckDownloadsRowWaiting": {
+    "description": "Line under the Deck downloads row when updates are waiting.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "deckDownloadsRowDownloading": "Downloading decks…",
+  "@deckDownloadsRowDownloading": {
+    "description": "Line under the Deck downloads row while decks download."
+  },
+  "deckDownloadsRowNone": "No languages on this phone yet",
+  "@deckDownloadsRowNone": {
+    "description": "Line under the Deck downloads row when no language is downloaded."
+  },
+  "deckDownloadsIntro": "Decks come from Fluenough’s page on GitHub. Your progress is kept on this phone, card by card, so updating or removing a language never loses it.",
+  "@deckDownloadsIntro": {
+    "description": "Explanation at the top of the Deck downloads page."
+  },
+  "deckDownloadsCheck": "Check for deck updates",
+  "@deckDownloadsCheck": {
+    "description": "Row on the Deck downloads page that checks GitHub for changed decks."
+  },
+  "deckDownloadsChecked": "Last checked {when}",
+  "@deckDownloadsChecked": {
+    "description": "Line under the check row: when GitHub was last asked. {when} is a date and time.",
+    "placeholders": {
+      "when": {
+        "type": "String",
+        "example": "9 Oct 2026, 09:00"
+      }
+    }
+  },
+  "deckDownloadsNeverChecked": "Not checked yet",
+  "@deckDownloadsNeverChecked": {
+    "description": "Line under the check row before GitHub was ever asked."
+  },
+  "deckDownloadsChecking": "Checking…",
+  "@deckDownloadsChecking": {
+    "description": "Line under the check row while GitHub is asked."
+  },
+  "deckDownloadsUpdateAll": "Update all, {size}",
+  "@deckDownloadsUpdateAll": {
+    "description": "Button on the Deck downloads page that downloads every waiting update. {size} is how much, such as 120 KB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "120 KB"
+      }
+    }
+  },
+  "deckDownloadsUpdate": "Update",
+  "@deckDownloadsUpdate": {
+    "description": "Button on a language's row that downloads its waiting update."
+  },
+  "deckDownloadsRemove": "Remove",
+  "@deckDownloadsRemove": {
+    "description": "Button on a language's row that deletes its decks from the phone, after asking."
+  },
+  "deckDownloadsGetRest": "Download the rest",
+  "@deckDownloadsGetRest": {
+    "description": "Button on a language's row when some of its decks are still to download."
+  },
+  "deckDownloadsUpToDate": "Up to date · {size}",
+  "@deckDownloadsUpToDate": {
+    "description": "A language's line on the Deck downloads page. {size} is what it takes on the phone.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "310 KB"
+      }
+    }
+  },
+  "deckDownloadsWaiting": "Update waiting · {size} to download",
+  "@deckDownloadsWaiting": {
+    "description": "A language's line when an update is waiting.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "12 KB"
+      }
+    }
+  },
+  "deckDownloadsPartial": "Some decks still to download · {size} on the phone",
+  "@deckDownloadsPartial": {
+    "description": "A language's line when its first decks are in but not the rest.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "80 KB"
+      }
+    }
+  },
+  "deckDownloadsNotOffered": "No longer on GitHub, kept on this phone · {size}",
+  "@deckDownloadsNotOffered": {
+    "description": "A language's line when GitHub no longer offers it.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "310 KB"
+      }
+    }
+  },
+  "deckDownloadsNeedsNewerApp": "Some decks need a newer version of the app.",
+  "@deckDownloadsNeedsNewerApp": {
+    "description": "Added to a language's line when some of its decks are in a newer format than this version reads."
+  },
+  "deckDownloadsRemoveTitle": "Remove {language}?",
+  "@deckDownloadsRemoveTitle": {
+    "description": "Title of the dialog that asks before deleting a language's decks.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckDownloadsRemoveBody": "Its decks are deleted from this phone, and it leaves the languages you learn. Your progress is kept, and comes back if you download {language} again.",
+  "@deckDownloadsRemoveBody": {
+    "description": "Body of the dialog that asks before deleting a language's decks.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckDownloadsRemoved": "{language} removed",
+  "@deckDownloadsRemoved": {
+    "description": "Toast after a language's decks are deleted.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckDownloadsUpdated": "Decks updated",
+  "@deckDownloadsUpdated": {
+    "description": "Toast after an update is downloaded."
+  },
+  "deckDownloadsEmpty": "No languages on this phone yet. Choose one in Languages I’m learning.",
+  "@deckDownloadsEmpty": {
+    "description": "The Deck downloads page when no language is downloaded."
+  },
+  "deckDownloadsProgressLabel": "Downloading {language}",
+  "@deckDownloadsProgressLabel": {
+    "description": "Screen-reader label of a language's download progress bar.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckUpdatePromptTitle": "Deck updates",
+  "@deckUpdatePromptTitle": {
+    "description": "Title of the dialog, at launch, that asks whether to download changed decks."
+  },
+  "deckUpdatePromptBody": "New or changed decks for {languages}, {size}. Update now? Your progress is kept.",
+  "@deckUpdatePromptBody": {
+    "description": "Body of the dialog that asks whether to download changed decks. {languages} is a list of language names; {size} how much it downloads.",
+    "placeholders": {
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Telugu"
+      },
+      "size": {
+        "type": "String",
+        "example": "120 KB"
+      }
+    }
+  },
+  "deckUpdatePromptLater": "Not now",
+  "@deckUpdatePromptLater": {
+    "description": "Button that leaves a deck update waiting on Settings > Deck downloads."
+  },
+  "deckUpdatePromptUpdate": "Update",
+  "@deckUpdatePromptUpdate": {
+    "description": "Button that downloads a deck update."
+  },
   "nativeChoiceTitle": "Learn {language} from",
   "@nativeChoiceTitle": {
     "description": "Title of the question, and of the Settings row, choosing which of the languages the learner speaks a course is taught from (ADR-0036). Followed by the choices, each a language name.",
