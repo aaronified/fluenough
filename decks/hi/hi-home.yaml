@@ -1,184 +1,163 @@
 schema: 1
-id: hi-en-home
-name: "Home and neighbourhood"
-kind: vocab
-theme: home
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The rooms of a home, what is in them, and the people next door. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "hi-home"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
 cards:
-  - ref: hi-0192
-  - id: hi-0419
+  - ref: "hi-0192"
+  - id: "hi-0419"
     target: "मकान"
-    native: "house (the building)"
     picture: "🏠"
     reading: "makān"
     ipa: "məkaːn"
     pos: "noun"
     gender: "m"
-    notes: "घर (ghar) is home; मकान (makān) is the building, as in मकान मालिक (makān mālik), landlord."
-  - id: hi-0420
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0420"
     target: "फ़्लैट"
-    native: "flat; apartment"
     reading: "flaiṭ"
     ipa: "flɛːʈ"
     alt_target: ["फ्लैट"]
     pos: "noun"
     gender: "m"
-  - id: hi-0421
+  - id: "hi-0421"
     target: "कमरा"
-    native: "room"
     reading: "kamrā"
     ipa: "kəmraː"
     pos: "noun"
     gender: "m"
-  - id: hi-0422
+  - id: "hi-0422"
     target: "रसोई"
-    native: "kitchen"
     reading: "rasōī"
     ipa: "rəsoːiː"
     alt_target: ["रसोईघर"]
     pos: "noun"
     gender: "f"
-  - id: hi-0423
+  - id: "hi-0423"
     target: "सोने का कमरा"
-    native: "bedroom"
     reading: "sōnē kā kamrā"
     ipa: "soːneː kaː kəmraː"
     alt_target: ["बेडरूम"]
     pos: "phrase"
-    notes: "In speech, often बेडरूम (bēḍrūm)."
-  - id: hi-0424
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0424"
     target: "बैठक"
-    native: "sitting room"
     reading: "baiṭhak"
     ipa: "bɛːʈʰək"
     alt_target: ["ड्राइंग रूम"]
     pos: "noun"
     gender: "f"
-  - id: hi-0425
+  - id: "hi-0425"
     target: "बाथरूम"
-    native: "bathroom"
     reading: "bāthrūm"
     ipa: "baːt̪ʰruːm"
     alt_target: ["स्नानघर"]
     pos: "noun"
     gender: "m"
-  - id: hi-0426
+  - id: "hi-0426"
     target: "दरवाज़ा"
-    native: "door"
     picture: "🚪"
     reading: "darvāzā"
     ipa: "d̪ərʋaːzaː"
     alt_target: ["दरवाजा"]
     pos: "noun"
     gender: "m"
-  - id: hi-0427
+  - id: "hi-0427"
     target: "खिड़की"
-    native: "window"
     picture: "🪟"
     reading: "khiṛkī"
     ipa: "kʰɪɽkiː"
     pos: "noun"
     gender: "f"
-  - id: hi-0428
+  - id: "hi-0428"
     target: "छत"
-    native: "roof; roof terrace"
     reading: "chat"
     ipa: "tʃʰət̪"
     pos: "noun"
     gender: "f"
-  - id: hi-0429
+  - id: "hi-0429"
     target: "सीढ़ियाँ"
-    native: "stairs"
     reading: "sīṛhiyām̐"
     ipa: "siːɽʱɪjãː"
     alt_target: ["सीढ़ियां"]
     pos: "noun"
-  - id: hi-0430
+  - id: "hi-0430"
     target: "मंज़िल"
-    native: "floor; storey"
     reading: "maṁzil"
     ipa: "mə̃zɪl"
     alt_target: ["मंजिल"]
     pos: "noun"
     gender: "f"
-  - id: hi-0431
+  - id: "hi-0431"
     target: "चाबी"
-    native: "key"
     picture: "🔑"
     reading: "cābī"
     ipa: "tʃaːbiː"
     alt_target: ["चाभी"]
     pos: "noun"
     gender: "f"
-  - id: hi-0432
+  - id: "hi-0432"
     target: "बिस्तर"
-    native: "bed"
     picture: "🛏"
     reading: "bistar"
     ipa: "bɪst̪ər"
     pos: "noun"
     gender: "m"
-  - id: hi-0433
+  - id: "hi-0433"
     target: "कुर्सी"
-    native: "chair"
     picture: "🪑"
     reading: "kursī"
     ipa: "kʊrsiː"
     pos: "noun"
     gender: "f"
-  - id: hi-0434
+  - id: "hi-0434"
     target: "मेज़"
-    native: "table"
     reading: "mēz"
     ipa: "meːz"
     alt_target: ["मेज"]
     pos: "noun"
     gender: "f"
-  - id: hi-0435
+  - id: "hi-0435"
     target: "पंखा"
-    native: "fan"
     reading: "paṅkhā"
     ipa: "pəŋkʰaː"
     pos: "noun"
     gender: "m"
-  - id: hi-0436
+  - id: "hi-0436"
     target: "बत्ती"
-    native: "light"
     reading: "battī"
     ipa: "bət̪t̪iː"
     pos: "noun"
     gender: "f"
-    notes: "बत्ती जलाइए (battī jalāiē), please switch on the light."
-  - id: hi-0437
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0437"
     target: "पड़ोसी"
-    native: "neighbour"
     reading: "paṛōsī"
     ipa: "pəɽoːsiː"
     pos: "noun"
     gender: "m"
-  - id: hi-0438
+  - id: "hi-0438"
     target: "मोहल्ला"
-    native: "neighbourhood"
     reading: "mōhallā"
     ipa: "moːɦəllaː"
     pos: "noun"
     gender: "m"
-  - ref: hi-0265
-    native: "rent"
-    notes: "Also the fare for a bus or a taxi."
-  - id: hi-0439
+  - ref: "hi-0265"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0439"
     target: "घर के सामने एक पार्क है।"
-    native: "There's a park in front of the house."
     reading: "ghar kē sāmnē ēk pārk hai."
     ipa: "ɡʱər keː saːmneː eːk paːrk ɦɛː"
     pos: "phrase"
-  - id: hi-0440
+  - id: "hi-0440"
     target: "हमारा मोहल्ला बहुत शांत है।"
-    native: "Our neighbourhood is very quiet."
     reading: "hamārā mōhallā bahut śānt hai."
     ipa: "ɦəmaːraː moːɦəllaː bəɦʊt̪ ʃaːnt̪ ɦɛː"
     pos: "phrase"

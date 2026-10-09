@@ -1,100 +1,90 @@
 schema: 1
-id: hi-en-directions
-name: "Directions"
-kind: vocab
-theme: directions
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Left, right, straight on, and asking where something is."
-tags: [beginner]
+id: "hi-directions"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "directions"
+tags: ["beginner"]
 cards:
-  - id: hi-0286
+  - id: "hi-0286"
     target: "… कहाँ है?"
-    native: "Where is …?"
     reading: "... kahām̐ hai?"
     ipa: "kəɦãː ɦɛː"
     pos: "phrase"
-    notes: "Put the place first: स्टेशन कहाँ है (sṭēśan kahām̐ hai)? Where is the station?"
-  - id: hi-0287
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0287"
     target: "दाएँ"
-    native: "right; to the right"
     reading: "dāēm̐"
     ipa: "d̪aːẽː"
     alt_target: ["दाएं", "दायें"]
     pos: "adv"
-    notes: "Also दाहिने (dāhinē). दाएँ मुड़िए (dāēm̐ muṛiē), turn right."
-  - id: hi-0288
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0288"
     target: "बाएँ"
-    native: "left; to the left"
     reading: "bāēm̐"
     ipa: "baːẽː"
     alt_target: ["बाएं", "बायें"]
     pos: "adv"
-  - id: hi-0289
+  - id: "hi-0289"
     target: "सीधे"
-    native: "straight on"
     reading: "sīdhē"
     ipa: "siːd̪ʱeː"
     pos: "adv"
-  - id: hi-0290
+  - id: "hi-0290"
     target: "मुड़िए"
-    native: "please turn"
     reading: "muṛiē"
     ipa: "mʊɽɪeː"
     pos: "verb"
     tags: ["polite"]
-  - id: hi-0291
+  - id: "hi-0291"
     target: "आगे"
-    native: "ahead; further on"
     reading: "āgē"
     ipa: "aːɡeː"
     pos: "adv"
-  - id: hi-0292
+  - id: "hi-0292"
     target: "पीछे"
-    native: "behind; back"
     reading: "pīchē"
     ipa: "piːtʃʰeː"
     pos: "adv"
-  - id: hi-0293
+  - id: "hi-0293"
     target: "पास"
-    native: "near"
     reading: "pās"
     ipa: "paːs"
     pos: "adv"
-    notes: "स्टेशन के पास (sṭēśan kē pās), near the station."
-  - id: hi-0294
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0294"
     target: "दूर"
-    native: "far"
     reading: "dūr"
     ipa: "d̪uːr"
     pos: "adv"
-    notes: "कितनी दूर है (kitnī dūr hai)? How far is it?"
-  - id: hi-0295
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0295"
     target: "यहाँ"
-    native: "here"
     reading: "yahām̐"
     ipa: "jəɦãː"
     alt_target: ["यहां"]
     pos: "adv"
-  - id: hi-0296
+  - id: "hi-0296"
     target: "वहाँ"
-    native: "there"
     reading: "vahām̐"
     ipa: "ʋəɦãː"
     alt_target: ["वहां"]
     pos: "adv"
-  - id: hi-0297
+  - id: "hi-0297"
     target: "रास्ता"
-    native: "way; route"
     reading: "rāstā"
     ipa: "raːst̪aː"
     pos: "noun"
     gender: "m"
-    notes: "रास्ता बताइए (rāstā batāiē), please tell me the way."
-  - id: hi-0298
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0298"
     target: "सड़क"
-    native: "road; street"
     reading: "saṛak"
     ipa: "səɽək"
     pos: "noun"

@@ -1,171 +1,158 @@
 schema: 1
-id: hi-en-work
-name: "Work"
-kind: vocab
-theme: work
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Jobs, the workplace, and how to ask and say what someone does. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "hi-work"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
 cards:
-  - id: hi-0399
+  - id: "hi-0399"
     target: "नौकरी"
-    native: "job (employment)"
     reading: "naukrī"
     ipa: "nɔːkriː"
     pos: "noun"
     gender: "f"
-    notes: "मैं नौकरी करता हूँ (maim̐ naukrī kartā hūm̐), I have a job. काम (kām) is work of any kind."
-  - ref: hi-0194
-  - id: hi-0400
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "hi-0194"
+  - id: "hi-0400"
     target: "दफ़्तर"
-    native: "office"
     picture: "🏢"
     reading: "daftar"
     ipa: "d̪əft̪ər"
     alt_target: ["दफ्तर", "ऑफ़िस", "ऑफिस"]
     pos: "noun"
     gender: "m"
-    notes: "Also ऑफ़िस (ôfis), from English."
-  - id: hi-0401
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0401"
     target: "अध्यापक"
-    native: "teacher"
     picture: "🧑‍🏫"
     reading: "adhyāpak"
     ipa: "əd̪ʱjaːpək"
     alt_target: ["टीचर"]
     pos: "noun"
     gender: "m"
-    notes: "A woman teacher is अध्यापिका (adhyāpikā). In speech, often टीचर (ṭīcar)."
-  - id: hi-0402
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0402"
     target: "दुकानदार"
-    native: "shopkeeper"
     reading: "dukāndār"
     ipa: "d̪ʊkaːnd̪aːr"
     pos: "noun"
     gender: "m"
-  - id: hi-0403
+  - id: "hi-0403"
     target: "ड्राइवर"
-    native: "driver"
     reading: "ḍrāivar"
     ipa: "ɖraːɪʋər"
     pos: "noun"
     gender: "m"
-  - id: hi-0404
+  - id: "hi-0404"
     target: "इंजीनियर"
-    native: "engineer"
     reading: "iñjīniyar"
     ipa: "ɪɲdʒiːnɪjər"
     pos: "noun"
     gender: "m"
-  - id: hi-0405
+  - id: "hi-0405"
     target: "वकील"
-    native: "lawyer"
     reading: "vakīl"
     ipa: "ʋəkiːl"
     pos: "noun"
     gender: "m"
-  - id: hi-0406
+  - id: "hi-0406"
     target: "नर्स"
-    native: "nurse"
     reading: "nars"
     ipa: "nərs"
     pos: "noun"
     gender: "f"
-  - id: hi-0407
+  - id: "hi-0407"
     target: "किसान"
-    native: "farmer"
     picture: "🧑‍🌾"
     reading: "kisān"
     ipa: "kɪsaːn"
     pos: "noun"
     gender: "m"
-  - id: hi-0408
+  - id: "hi-0408"
     target: "रसोइया"
-    native: "cook"
     picture: "🧑‍🍳"
     reading: "rasōiyā"
     ipa: "rəsoːɪjaː"
     pos: "noun"
     gender: "m"
-  - id: hi-0409
+  - id: "hi-0409"
     target: "लेखक"
-    native: "writer"
     reading: "lēkhak"
     ipa: "leːkʰək"
     pos: "noun"
     gender: "m"
-    notes: "A woman writer is लेखिका (lēkhikā)."
-  - id: hi-0410
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0410"
     target: "पत्रकार"
-    native: "journalist"
     reading: "patrakār"
     ipa: "pət̪rəkaːr"
     pos: "noun"
     gender: "m"
-  - ref: hi-0357
-  - ref: hi-0356
-  - id: hi-0411
+  - ref: "hi-0357"
+  - ref: "hi-0356"
+  - id: "hi-0411"
     target: "छात्र"
-    native: "student"
     picture: "🧑‍🎓"
     reading: "chātra"
     ipa: "tʃʰaːt̪rə"
     alt_target: ["छात्रा"]
     pos: "noun"
     gender: "m"
-    notes: "A woman student is छात्रा (chātrā, ending in a long a)."
-  - id: hi-0412
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0412"
     target: "छुट्टी"
-    native: "day off; holiday; leave"
     reading: "chuṭṭī"
     ipa: "tʃʰʊʈʈiː"
     pos: "noun"
     gender: "f"
-    notes: "आज मेरी छुट्टी है (āj mērī chuṭṭī hai), I have the day off today."
-  - id: hi-0413
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0413"
     target: "तनख़्वाह"
-    native: "salary; pay"
     reading: "tank͟hvāh"
     ipa: "t̪ənxʋaːɦ"
     alt_target: ["तनख्वाह", "वेतन"]
     pos: "noun"
     gender: "f"
-    notes: "Formally वेतन (vētan)."
-  - id: hi-0414
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0414"
     target: "व्यापार"
-    native: "business; trade"
     reading: "vyāpār"
     ipa: "ʋjaːpaːr"
     pos: "noun"
     gender: "m"
-  - id: hi-0415
+  - id: "hi-0415"
     target: "आप क्या करते हैं?"
-    native: "What do you do (for a living)?"
     reading: "āp kyā kartē haim̐?"
     ipa: "aːp kjaː kərt̪eː ɦɛ̃ː"
     alt_target: ["आप क्या करती हैं?"]
     pos: "phrase"
-    notes: "To a woman: आप क्या करती हैं (āp kyā kartī haim̐)?"
-  - id: hi-0416
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0416"
     target: "मैं टीचर हूँ।"
-    native: "I'm a teacher."
     reading: "maim̐ ṭīcar hūm̐."
     ipa: "mɛ̃ː ʈiːtʃər ɦũː"
     alt_target: ["मैं अध्यापक हूँ।", "मैं अध्यापिका हूँ।"]
     pos: "phrase"
-  - id: hi-0417
+  - id: "hi-0417"
     target: "आप कहाँ काम करते हैं?"
-    native: "Where do you work?"
     reading: "āp kahām̐ kām kartē haim̐?"
     ipa: "aːp kəɦãː kaːm kərt̪eː ɦɛ̃ː"
     alt_target: ["आप कहाँ काम करती हैं?"]
     pos: "phrase"
-  - id: hi-0418
+  - id: "hi-0418"
     target: "मैं एक दफ़्तर में काम करता हूँ।"
-    native: "I work in an office. (said by a man)"
     reading: "maim̐ ēk daftar mēm̐ kām kartā hūm̐."
     ipa: "mɛ̃ː eːk d̪əft̪ər mẽː kaːm kərt̪aː ɦũː"
     pos: "phrase"
-    notes: "A woman says काम करती हूँ (kām kartī hūm̐)."
+    notes:
+      - { id: "n1", kind: "note" }
