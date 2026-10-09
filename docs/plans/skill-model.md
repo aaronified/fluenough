@@ -309,6 +309,13 @@ The owner's answers to #235, 2026-10-08:
   The automatic option is on by default (owner, 2026-10-09).
 - **Each fit starts from the last** (owner: "Absolutely"): a refit warm
   starts from the skill's previous parameters, so it needs fewer passes.
+- **Per language too** (owner, 2026-10-09: "the fit on one language
+  should be used as the baseline on the next language (the latest learnt
+  one), but each language will eventually get their own learning fits").
+  Parameters are kept per language and skill. A language with no fit of
+  its own for a skill starts from that skill's fit in the language most
+  recently learned, not the defaults; once it has enough reviews it is
+  fitted on its own, starting from that baseline.
   Each skill's parameters are therefore kept, not recomputed: in the
   profile's database and in the JSONL backup, so a restored phone
   schedules exactly as before (owner, 2026-10-09).
