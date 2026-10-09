@@ -1247,8 +1247,8 @@ scheduling (4.8).
     producing practice build partly separate skills (DeKeyser 1997;
     Shintani et al. 2013)", and "learning to produce helps production
     most, learning to understand helps understanding most (Steinel et al.
-    2007; Webb 2009; DeKeyser 1997)" (`skill-model.md`, "What the
-    research says").
+    2007; Webb 2009; DeKeyser 1997)" (`skill-model.md`, "The
+    research").
   - **The direction that gives Write's credit to Recognition** (production
     implies reception in part: Laufer & Goldstein 2004; Webb 2009;
     Steinel et al. 2007) is evidence about words. `skill-evidence.md`
@@ -1284,8 +1284,8 @@ scheduling (4.8).
   the Settings button, and automatically once its reviews have grown by
   10% since its last fit; learning from its last three months or its
   last 1,000 reviews, whichever is more; kept in the database and the
-  backup by its mode's name (`skill-model.md`, "FSRS fitted to the
-  learner, per skill"). Its Elo rating starts like any skill's. Q checks
+  backup by its mode's name (`skill-model.md`, "Decided": "FSRS fitted
+  to the learner, per skill"). Its Elo rating starts like any skill's. Q checks
   that the fitting, the backup and "How you learn" walk
   `DrillMode.values` (or a list that gains the new mode), not a fixed
   list of today's modes, and adds it where one does not; how its name
