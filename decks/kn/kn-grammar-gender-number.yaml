@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-grammar-gender-number"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - ref: "kn-0129"
+  - ref: "kn-0130"
+  - ref: "kn-0131"
+  - id: "kn-0328"
+    target: "ಅವರು ಬಂದರು."
+    reading: "avaru bandaru."
+    ipa: "aʋaru band̪aru"
+    alt_target: ["ಅವರು ಬಂದ್ರು."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0329"
+    target: "ಹಸುಗಳು ಬಂದವು."
+    reading: "hasugaḷu bandavu."
+    ipa: "hasuɡaɭu band̪aʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0330"
+    target: "ಮಕ್ಕಳು ಆಡುತ್ತಿದ್ದಾರೆ."
+    reading: "makkaḷu āḍuttiddāre."
+    ipa: "makkaɭu aːɖut̪t̪id̪d̪aːre"
+    alt_target: ["ಮಕ್ಕಳು ಆಡ್ತಿದ್ದಾರೆ."]
+    pos: "phrase"
+  - id: "kn-0331"
+    target: "ಮೂರು ಪುಸ್ತಕಗಳು"
+    reading: "mūru pustakagaḷu"
+    ipa: "muːru pust̪akaɡaɭu"
+    alt_target: ["ಮೂರು ಪುಸ್ತಕ"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }

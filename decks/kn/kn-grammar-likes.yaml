@@ -1,81 +1,73 @@
 schema: 1
-id: kn-en-grammar-likes
-name: "Likes"
-kind: vocab
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "ಇಷ್ಟ (iṣṭa) and ಇಷ್ಟವಾಗು (iṣṭavāgu): what you like, and what you liked. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-likes"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 cards:
-  - ref: kn-0158
-  - id: kn-0513
+  - ref: "kn-0158"
+  - id: "kn-0513"
     target: "ಇಷ್ಟ"
-    native: "liking; dear to someone"
     reading: "iṣṭa"
     ipa: "iʂʈa"
     pos: "noun"
-    notes: "The one who likes takes -ಗೆ (-ge), and nothing else changes: ನನಗೆ ಇಷ್ಟ (nanage iṣṭa), ಅವಳಿಗೆ ಇಷ್ಟ (avaḷige iṣṭa), I like it, she likes it."
-  - id: kn-0514
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0514"
     target: "ನನಗೆ ಮಾವಿನಹಣ್ಣು ಇಷ್ಟ."
-    native: "I like mangoes."
     reading: "nanage māvinahaṇṇu iṣṭa."
     ipa: "nanaɡe maːʋinahaɳɳu iʂʈa"
     pos: "phrase"
-  - id: kn-0515
+  - id: "kn-0515"
     target: "ನನಗೆ ಕಾಫಿ ಇಷ್ಟ ಇಲ್ಲ."
-    native: "I don't like coffee."
     reading: "nanage kāfi iṣṭa illa."
     ipa: "nanaɡe kaːfi iʂʈa illa"
     alt_target: ["ನನಗೆ ಕಾಫಿ ಇಷ್ಟವಿಲ್ಲ."]
     pos: "phrase"
-  - id: kn-0516
+  - id: "kn-0516"
     target: "ನಿಮಗೆ ಏನು ಇಷ್ಟ?"
-    native: "What do you like?"
     reading: "nimage ēnu iṣṭa?"
     ipa: "nimaɡe eːnu iʂʈa"
     pos: "phrase"
-  - id: kn-0517
+  - id: "kn-0517"
     target: "ನನಗೆ ಸಿನಿಮಾ ನೋಡುವುದು ಇಷ್ಟ."
-    native: "I like watching films."
     reading: "nanage sinimā nōḍuvudu iṣṭa."
     ipa: "nanaɡe sinimaː noːɖuʋud̪u iʂʈa"
     alt_target: ["ನನಗೆ ಸಿನಿಮಾ ನೋಡೋದು ಇಷ್ಟ."]
     pos: "phrase"
-    notes: "ನೋಡುವುದು (nōḍuvudu), watching, is the verb made a noun. In speech, ನೋಡೋದು (nōḍōdu)."
-  - id: kn-0518
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0518"
     target: "ಇಷ್ಟವಾಗು"
-    native: "to be liked; to please"
     reading: "iṣṭavāgu"
     ipa: "iʂʈaʋaːɡu"
     pos: "verb"
-    notes: "What happened: 'it became liked to me'."
-  - id: kn-0519
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0519"
     target: "ನನಗೆ ಇಷ್ಟವಾಯಿತು."
-    native: "I liked it."
     reading: "nanage iṣṭavāyitu."
     ipa: "nanaɡe iʂʈaʋaːjit̪u"
     alt_target: ["ನನಗೆ ಇಷ್ಟ ಆಯ್ತು.", "ನಂಗೆ ಇಷ್ಟ ಆಯ್ತು."]
     pos: "phrase"
-  - id: kn-0520
+  - id: "kn-0520"
     target: "ನನಗೆ ಇಷ್ಟವಾಗಲಿಲ್ಲ."
-    native: "I didn't like it."
     reading: "nanage iṣṭavāgalilla."
     ipa: "nanaɡe iʂʈaʋaːɡalilla"
     alt_target: ["ನನಗೆ ಇಷ್ಟ ಆಗ್ಲಿಲ್ಲ."]
     pos: "phrase"
-  - id: kn-0521
+  - id: "kn-0521"
     target: "ನಿಮಗೆ ಇದು ಇಷ್ಟವಾಯಿತಾ?"
-    native: "Did you like it?"
     reading: "nimage idu iṣṭavāyitā?"
     ipa: "nimaɡe id̪u iʂʈaʋaːjit̪aː"
     alt_target: ["ನಿಮಗೆ ಇದು ಇಷ್ಟ ಆಯ್ತಾ?"]
     pos: "phrase"
-  - ref: kn-0479
-    notes: "With the one who likes as the doer: ಅವನು ಅವಳನ್ನು ಇಷ್ಟಪಡುತ್ತಾನೆ (avanu avaḷannu iṣṭapaḍuttāne), he is fond of her."
-  - id: kn-0522
+  - ref: "kn-0479"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0522"
     target: "ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ."
-    native: "I love you."
     reading: "nānu ninnannu prītisuttēne."
     ipa: "naːnu ninnannu priːt̪isut̪t̪eːne"
     alt_target: ["ನಾನು ನಿನ್ನ ಪ್ರೀತಿಸ್ತೀನಿ."]
