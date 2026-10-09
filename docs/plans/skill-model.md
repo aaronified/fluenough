@@ -233,17 +233,18 @@ The owner's answers to #235, 2026-10-08:
 - **Cloze** is chosen as its easier grade and typed as its harder one.
 - **The pair partner** is among Hear's options where a card names one.
 
-### Still open, 2026-10-09
+### Decided, 2026-10-09
 
-- **Recognition-only decks.** Fourteen decks (the `-registers` and
-  `-spelling` decks, and `bn-en-sadhu-cholito`) are `modes: [recognition]`,
-  so with recognition unscheduled they have nothing to review and read Done
-  early. Options put to the owner: a reading schedule for recognition-only
-  cards; Write; or lesson-only, left out of Done.
-- **Spill-over.** The owner: "Our research said everything is
-  interdependent." The research above finds the channels related (about
-  .68) but separable, with practice helping most the skill practised. How
-  the schedules should inform each other is to be settled with the owner.
+- **Recognition is a skill in its own right,** scheduled like the others:
+  "Recognition is a skill on its own right. The research says it is
+  important." This reverses "lesson steps, not scheduled" above. The
+  recognition-only decks (the `-registers` and `-spelling` decks, and
+  `bn-en-sadhu-cholito`) are reviewed again with it.
+- **Shared ability:** "Our research said everything is interdependent."
+  The research finds the skills related (about .68) but separable, so an
+  answer in one skill moves the learner's ability and the word's
+  difficulty in every skill, weighted by how related they are. Due dates
+  stay per skill.
 
 ### How the work is run
 
