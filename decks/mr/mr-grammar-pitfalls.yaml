@@ -13,6 +13,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "वाचले", ref: "mr-0513" }
   - id: "mr-0608"
     target: "त्याने आंबा खाल्ला."
     reading: "tyāne āmbā khāllā."
@@ -20,6 +22,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "त्याने", base: "त्याने", reading: "tyāne" }
+      - { word: "खाल्ला", base: "खाल्ला", reading: "khāllā" }
   - id: "mr-0609"
     target: "तिने चहा केला."
     reading: "tine cahā kelā."
@@ -27,6 +32,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तिने", base: "तिने", reading: "tine" }
+      - { word: "केला", base: "केला", reading: "kelā" }
   - id: "mr-0610"
     target: "मला मराठी येते."
     reading: "malā marāṭhi yete."
@@ -34,6 +42,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", base: "मला", reading: "malā" }
+      - { word: "मराठी", base: "मराठी", reading: "marāṭhi" }
+      - { word: "येते", base: "येते", reading: "yete" }
   - id: "mr-0611"
     target: "मी उद्या येईन."
     reading: "mi udyā yein."
@@ -41,6 +53,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "येईन", base: "येईन", reading: "yein" }
   - id: "mr-0612"
     target: "आपण जाऊया."
     reading: "āpaṇ jāuyā."
@@ -49,6 +63,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "जाऊया", base: "जाऊया", reading: "jāuyā" }
   - id: "mr-0613"
     target: "तुम्ही कुठे होता?"
     reading: "tumhi kuṭhe hotā?"
@@ -56,6 +72,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "होता", base: "होता", reading: "hotā" }
   - id: "mr-0614"
     target: "मी गेले."
     reading: "mi gele."
@@ -63,3 +81,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "गेले", base: "गेले", reading: "gele" }
