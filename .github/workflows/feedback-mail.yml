@@ -9,28 +9,84 @@ name: Feedback mail to issues
 # another address is marked "sender does not match". The log says counts
 # only. Support mails stay private in the inbox. Until the repository has the two FEEDBACK_GMAIL_*
 # secrets it does nothing and says so.
+#
+# The review bot (ADR-0038, docs/review-bot-setup.md): a review mail's
+# suggestions become proposals in the decks, through a PR merged once the
+# required checks pass, and a proposal enough other reviewers accept goes to
+# learners the same way. "Enough" is the repository variable
+# REVIEW_AGREEMENTS_NEEDED, 1 when unset. The PRs are opened and merged by a
+# GitHub App; until the secrets FLUENOUGH_BOT_APP_ID and
+# FLUENOUGH_BOT_PRIVATE_KEY are set, the bot does nothing and says so.
+#
+# Besides the hour, it runs when CI finishes on one of the bot's branches,
+# to merge its PR at once, and when decks change on main, to apply what
+# was agreed.
 
 on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ["decks/**"]
+
+# One run at a time: two would file the same mail twice.
+concurrency:
+  group: feedback-mail
+  cancel-in-progress: false
 
 permissions:
   contents: read
   issues: write
+  # To read the bot's PRs' check runs with this workflow's own token.
+  checks: read
+  pull-requests: read
 
 jobs:
   file:
     name: File report mails as issues
     runs-on: ubuntu-latest
+    # After CI, only for the bot's own branches.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      startsWith(github.event.workflow_run.head_branch, 'review-bot/')
+    env:
+      HAS_BOT_APP: ${{ secrets.FLUENOUGH_BOT_APP_ID != '' && secrets.FLUENOUGH_BOT_PRIVATE_KEY != '' }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          # The bot fetches main and pushes with the App's token, never
+          # with this workflow's.
+          persist-credentials: false
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      # The bot reads decks with PyYAML, as the validator does. Filing
+      # issues needs only the standard library.
+      - run: pip install pyyaml
+      - name: Make the review bot's token
+        id: bot
+        if: env.HAS_BOT_APP == 'true'
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.FLUENOUGH_BOT_APP_ID }}
+          private-key: ${{ secrets.FLUENOUGH_BOT_PRIVATE_KEY }}
+      - name: Say the review bot is not set up
+        if: env.HAS_BOT_APP != 'true'
+        run: >-
+          echo "::notice::FLUENOUGH_BOT_APP_ID and FLUENOUGH_BOT_PRIVATE_KEY
+          are not set: reviews are filed as issues, nothing is proposed or
+          merged. See docs/review-bot-setup.md."
       - run: python3 tools/mail_to_issues.py
         env:
           FEEDBACK_GMAIL_ADDRESS: ${{ secrets.FEEDBACK_GMAIL_ADDRESS }}
           FEEDBACK_GMAIL_APP_PASSWORD: ${{ secrets.FEEDBACK_GMAIL_APP_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          FLUENOUGH_BOT_TOKEN: ${{ steps.bot.outputs.token }}
+          # A variable, so the owner can read it back; a secret of the same
+          # name is read if there is no variable (owner, 2026-10-09).
+          REVIEW_AGREEMENTS_NEEDED: ${{ vars.REVIEW_AGREEMENTS_NEEDED || secrets.REVIEW_AGREEMENTS_NEEDED }}
