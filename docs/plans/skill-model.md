@@ -314,7 +314,8 @@ The owner's answers to #235, 2026-10-08:
   one), but each language will eventually get their own learning fits").
   Parameters are kept per language and skill. A language with no fit of
   its own for a skill starts from that skill's fit in the language most
-  recently learned, not the defaults; once it has enough reviews it is
+  recently studied (by its last review; owner confirmed), not the
+  defaults; once it has enough reviews it is
   fitted on its own, starting from that baseline.
   Each skill's parameters are therefore kept, not recomputed: in the
   profile's database and in the JSONL backup, so a restored phone
