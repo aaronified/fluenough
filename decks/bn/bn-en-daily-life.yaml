@@ -16,6 +16,9 @@ cards:
     ipa: "ɡʱum t̪ʰeke oʈʰa"
     pos: "phrase"
     notes: "'To rise from sleep'. ওঠা (oṭhā) is to rise: আমি উঠি (āmi uṭhi), I get up."
+    bases:
+      - { word: "ঘুম", base: "ঘুম", reading: "ghum", meaning: "sleep" }
+      - { word: "ওঠা", base: "ওঠা", reading: "oṭhā", meaning: "to get up; to rise" }
   - id: bn-0658
     target: "মুখ ধোয়া"
     native: "to wash one's face"
@@ -23,12 +26,17 @@ cards:
     ipa: "mukʰ d̪ʱoja"
     pos: "phrase"
     notes: "ধোয়া (dhoyā), to wash: আমি মুখ ধুই (āmi mukh dhui), I wash my face."
+    bases:
+      - { word: "মুখ", base: "মুখ", reading: "mukh", meaning: "mouth; face" }
+      - { word: "ধোয়া", base: "ধোয়া", reading: "dhoyā", meaning: "to wash" }
   - id: bn-0659
     target: "দাঁত মাজা"
     native: "to brush one's teeth"
     reading: "dām̐t mājā"
     ipa: "d̪ãt̪ madʒa"
     pos: "phrase"
+    bases:
+      - { word: "মাজা", base: "মাজা", reading: "mājā", meaning: "to scrub; to brush (teeth)" }
   - id: bn-0660
     target: "স্নান করা"
     native: "to bathe; to have a shower"
@@ -37,6 +45,8 @@ cards:
     alt_target: ["গোসল করা"]
     pos: "phrase"
     notes: "Also গোসল করা (gośol kôrā)."
+    bases:
+      - { word: "স্নান", base: "স্নান", reading: "snān", meaning: "a bath; bathing" }
   - id: bn-0661
     target: "জলখাবার"
     native: "breakfast; a light meal"
@@ -52,6 +62,8 @@ cards:
     ipa: "d̪upurer kʰabar"
     pos: "phrase"
     notes: "'Midday's food': দুপুর (dupur), midday, takes -এর (-er)."
+    bases:
+      - { word: "দুপুরের", ref: "bn-0645" }
   - id: bn-0663
     target: "রাতের খাবার"
     native: "dinner"
@@ -59,6 +71,8 @@ cards:
     ipa: "rat̪er kʰabar"
     pos: "phrase"
     notes: "'Night's food'."
+    bases:
+      - { word: "রাতের", ref: "bn-0321" }
   - id: bn-0664
     target: "কাজে যাওয়া"
     native: "to go to work"
@@ -66,6 +80,9 @@ cards:
     ipa: "kadʒe dʒaoa"
     pos: "phrase"
     notes: "কাজ (kāj), work, takes -এ (-e) for 'to': কাজে (kāje)."
+    bases:
+      - { word: "কাজে", ref: "bn-0198" }
+      - { word: "যাওয়া", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0665
     target: "বাড়ি ফেরা"
     native: "to come home"
@@ -74,12 +91,16 @@ cards:
     alt_target: ["বাসায় ফেরা"]
     pos: "phrase"
     notes: "ফেরা (pherā) is to return. Also বাসায় ফেরা (bāśāy pherā)."
+    bases:
+      - { word: "ফেরা", base: "ফেরা", reading: "pherā", meaning: "to return" }
   - id: bn-0666
     target: "রান্না করা"
     native: "to cook"
     reading: "rānnā kôrā"
     ipa: "ranna kɔra"
     pos: "phrase"
+    bases:
+      - { word: "রান্না", base: "রান্না", reading: "rānnā", meaning: "cooking" }
   - id: bn-0667
     target: "ঘুমোতে যাওয়া"
     native: "to go to bed"
@@ -88,6 +109,9 @@ cards:
     alt_target: ["ঘুমাতে যাওয়া"]
     pos: "phrase"
     notes: "Also ঘুমাতে যাওয়া (ghumāte jāoā), the form usually written."
+    bases:
+      - { word: "ঘুমোতে", base: "ঘুমোনো", reading: "ghumono", meaning: "to sleep" }
+      - { word: "যাওয়া", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0668
     target: "প্রতিদিন"
     native: "every day"
@@ -102,6 +126,8 @@ cards:
     reading: "mājhe mājhe"
     ipa: "madʒʱe madʒʱe"
     pos: "phrase"
+    bases:
+      - { word: "মাঝে", base: "মাঝে", reading: "mājhe", meaning: "in the middle; at times" }
   - id: bn-0670
     target: "সবসময়"
     native: "always"
@@ -131,12 +157,20 @@ cards:
     alt_target: ["আমি প্রতিদিন সাতটায় উঠি।"]
     pos: "phrase"
     notes: "-টায় (-ṭāy) is 'at' with a time: সাতটায় (śātṭāy), at seven. কটায়? (kotay?), at what time?"
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "সাতটায়", ref: "bn-0208" }
+      - { word: "উঠি", base: "ওঠা", reading: "oṭhā", meaning: "to get up; to rise" }
   - id: bn-0674
     target: "তারপর আমি কাজে যাই।"
     native: "Then I go to work."
     reading: "tārpor āmi kāje jāi."
     ipa: "t̪arpor ami kadʒe dʒai"
     pos: "phrase"
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "কাজে", ref: "bn-0198" }
+      - { word: "যাই", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0675
     target: "আমি রাত এগারোটায় ঘুমোতে যাই।"
     native: "I go to bed at eleven at night."
@@ -145,6 +179,11 @@ cards:
     alt_target: ["আমি রাত এগারোটায় ঘুমাতে যাই।"]
     pos: "phrase"
     notes: "The part of the day comes before the hour: রাত এগারোটায় (rāt egāroṭāy), at eleven at night; সকাল সাতটায় (śôkāl śātṭāy), at seven in the morning."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "এগারোটায়", ref: "bn-0212" }
+      - { word: "ঘুমোতে", base: "ঘুমোনো", reading: "ghumono", meaning: "to sleep" }
+      - { word: "যাই", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0676
     target: "আমি কখনও দেরি করি না।"
     native: "I'm never late."
@@ -153,3 +192,8 @@ cards:
     alt_target: ["আমি কখনো দেরি করি না।"]
     pos: "phrase"
     notes: "'Never' is কখনও (kôkhono), also written কখনো (kôkhono), with না (nā) after the verb. দেরি (deri) is delay."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "কখনও", base: "কখনও", reading: "kôkhono", meaning: "ever; at any time" }
+      - { word: "দেরি", base: "দেরি", reading: "deri", meaning: "delay; lateness" }
+      - { word: "করি", ref: "bn-0102" }

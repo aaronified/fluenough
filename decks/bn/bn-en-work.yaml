@@ -125,6 +125,8 @@ cards:
     ipa: "apni ki kɔren"
     pos: "phrase"
     notes: "কী (ki), with the long ই (i), is 'what'."
+    bases:
+      - { word: "করেন", ref: "bn-0102" }
   - id: bn-0465
     target: "আমি একজন শিক্ষক।"
     native: "I'm a teacher."
@@ -133,12 +135,17 @@ cards:
     alt_target: ["আমি শিক্ষক।"]
     pos: "phrase"
     notes: "একজন (ekjon), 'one person', is optional: আমি শিক্ষক (āmi śikkhok) is just as right. There is no 'am'."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "একজন", ref: "bn-0202" }
   - id: bn-0466
     target: "আপনি কোথায় কাজ করেন?"
     native: "Where do you work?"
     reading: "āpni kothāy kāj kôren?"
     ipa: "apni kot̪ʰaj kadʒ kɔren"
     pos: "phrase"
+    bases:
+      - { word: "করেন", ref: "bn-0102" }
   - id: bn-0467
     target: "আমি একটা অফিসে কাজ করি।"
     native: "I work in an office."
@@ -146,6 +153,11 @@ cards:
     ipa: "ami ekʈa ɔpʰise kadʒ kori"
     pos: "phrase"
     notes: "The place takes -এ (-e): অফিসে (ôphise), in an office."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "অফিসে", ref: "bn-0450" }
+      - { word: "করি", ref: "bn-0102" }
   - id: bn-0468
     target: "উনি ডাক্তার।"
     native: "He is a doctor. / She is a doctor."
@@ -153,6 +165,8 @@ cards:
     ipa: "uni ɖakt̪ar"
     pos: "phrase"
     notes: "উনি (uni) is a respectful he or she for someone over there; ইনি (ini) for someone right here. No 'is'."
+    bases:
+      - { word: "উনি", base: "উনি", reading: "uni", meaning: "he; she (respectful, a person over there)" }
   - ref: bn-0376
   - id: bn-0375
     target: "পুলিশ"

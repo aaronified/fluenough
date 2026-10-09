@@ -31,6 +31,8 @@ cards:
     alt_target: ["শোবার ঘর"]
     pos: "phrase"
     notes: "'The room for lying down'. Also শোবার ঘর (śobār ghôr)."
+    bases:
+      - { word: "শোয়ার", base: "শোয়া", reading: "śoyā", meaning: "to lie down; to sleep" }
   - id: bn-0597
     target: "বসার ঘর"
     native: "living room"
@@ -38,6 +40,8 @@ cards:
     ipa: "bɔʃar ɡʱɔr"
     pos: "phrase"
     notes: "'The room for sitting'."
+    bases:
+      - { word: "বসার", base: "বসা", reading: "bôśā", meaning: "to sit" }
   - id: bn-0598
     target: "বাথরুম"
     native: "bathroom"
@@ -143,6 +147,11 @@ cards:
     ipa: "baɽir ʃamne ekʈa park atʃʰe"
     pos: "phrase"
     notes: "'In front of the house' is বাড়ির সামনে (bāṛir śāmne): the house takes -র (-rô), and সামনে (śāmne) comes after it. আছে (āche), 'there is', comes last."
+    bases:
+      - { word: "বাড়ির", ref: "bn-0196" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "পার্ক", base: "পার্ক", reading: "pārk", meaning: "park" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0613
     target: "আমাদের পাড়াটা খুব শান্ত।"
     native: "Our neighbourhood is very quiet."
@@ -150,6 +159,10 @@ cards:
     ipa: "amad̪er paɽaʈa kʰub ʃant̪o"
     pos: "phrase"
     notes: "No 'is': 'our neighbourhood very quiet'."
+    bases:
+      - { word: "আমাদের", base: "আমরা", reading: "āmrā", meaning: "we" }
+      - { word: "পাড়াটা", ref: "bn-0610" }
+      - { word: "শান্ত", base: "শান্ত", reading: "śānto", meaning: "quiet; calm" }
   - ref: bn-0196
     native: "house; home"
     notes: "Where you live now is also বাসা (bāśā); বাড়ি (bāṛi) is the house, or the family home."

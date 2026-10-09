@@ -54,6 +54,8 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "The thing wanted goes in the gap: আমাকে এক কাপ চা দিন (āmāke ek kāp cā din), a cup of tea, please."
+    bases:
+      - { word: "আমাকে", base: "আমি", reading: "āmi", meaning: "I" }
   - id: bn-0355
     target: "আরও"
     native: "more"
@@ -90,12 +92,16 @@ cards:
     ipa: "bilʈa d̪in"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "বিলটা", base: "বিল", reading: "bil", meaning: "bill" }
   - id: bn-0360
     target: "খুব ভালো হয়েছে।"
     native: "It was very good."
     reading: "khub bhālo hôyeche."
     ipa: "kʰub bʱalo ɦɔjetʃʰe"
     pos: "phrase"
+    bases:
+      - { word: "হয়েছে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
   - id: bn-0749
     target: "চা খাবেন?"
     native: "Will you have some tea?"
@@ -104,3 +110,5 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "Drinks are eaten in Bengali: চা (cā), জল (jôl), শরবত (śôrbot), all খাওয়া (khāoyā). জল খাবেন (jôl khāben)? Will you have some water?"
+    bases:
+      - { word: "খাবেন", base: "খাওয়া", reading: "khāoā", meaning: "to eat; to drink" }

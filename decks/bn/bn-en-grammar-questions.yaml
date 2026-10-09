@@ -15,6 +15,9 @@ cards:
     ipa: "apni ki baŋla bɔlen"
     pos: "phrase"
     notes: "কি (ki) after the subject makes a yes/no question."
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
+      - { word: "বলেন", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
   - id: bn-0172
     target: "আপনি চা খাবেন?"
     native: "Will you have tea?"
@@ -22,6 +25,8 @@ cards:
     ipa: "apni tʃa kʰaben"
     pos: "phrase"
     notes: "The voice rising at the end is enough to make a question."
+    bases:
+      - { word: "খাবেন", base: "খাওয়া", reading: "khāoā", meaning: "to eat; to drink" }
   - id: bn-0173
     target: "এটা কী?"
     native: "What is this?"
@@ -29,12 +34,16 @@ cards:
     ipa: "eʈa ki"
     pos: "phrase"
     notes: "The question word goes where the answer would: এটা বই (eṭā boi) → এটা কী (eṭā ki)?"
+    bases:
+      - { word: "এটা", base: "এটা", reading: "eṭā", meaning: "this (thing)" }
   - id: bn-0174
     target: "আপনি কোথায় যাচ্ছেন?"
     native: "Where are you going?"
     reading: "āpni kothāy jācchen?"
     ipa: "apni kot̪ʰaj dʒatʃtʃʰen"
     pos: "phrase"
+    bases:
+      - { word: "যাচ্ছেন", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
   - id: bn-0175
     target: "উনি কে?"
     native: "Who is he? / Who is she?"
@@ -42,18 +51,25 @@ cards:
     ipa: "uni ke"
     pos: "phrase"
     notes: "উনি (uni) is the respectful 'he or she' for someone over there; ইনি (ini) is for someone right here. তিনি (tini), for someone not present, is more common in writing."
+    bases:
+      - { word: "উনি", base: "উনি", reading: "uni", meaning: "he; she (respectful, a person over there)" }
   - id: bn-0176
     target: "আপনি কখন আসবেন?"
     native: "When will you come?"
     reading: "āpni kôkhon āśben?"
     ipa: "apni kɔkʰon aʃben"
     pos: "phrase"
+    bases:
+      - { word: "আসবেন", base: "আসা", reading: "āśā", meaning: "to come" }
   - id: bn-0177
     target: "আপনি বাংলা কেন শিখছেন?"
     native: "Why are you learning Bengali?"
     reading: "āpni bāṅlā keno śikhchen?"
     ipa: "apni baŋla keno ʃikʰtʃʰen"
     pos: "phrase"
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
+      - { word: "শিখছেন", base: "শেখা", reading: "śekhā", meaning: "to learn" }
   - id: bn-0178
     target: "আপনার কটি ছেলেমেয়ে?"
     native: "How many children do you have?"
@@ -61,12 +77,17 @@ cards:
     ipa: "apnar koʈi tʃʰelemeje"
     pos: "phrase"
     notes: "ছেলেমেয়ে (chelemeye), 'sons and daughters', is 'children'."
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "কটি", ref: "bn-0411" }
   - id: bn-0179
     target: "কেমন লাগল?"
     native: "How was it? Did you like it?"
     reading: "kemon lāglo?"
     ipa: "kemon laɡlo"
     pos: "phrase"
+    bases:
+      - { word: "লাগল", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0180
     target: "ভালো, তাই না?"
     native: "It's good, isn't it?"

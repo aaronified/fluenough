@@ -22,6 +22,8 @@ cards:
     ipa: "amar nam"
     pos: "phrase"
     notes: "There is no 'is': 'my name …'. In the present, Bengali needs no verb to say what something is. To say where someone is, or how they are, it uses আছে (āche): ভালো আছি (bhālo āchi), I'm fine."
+    bases:
+      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
   - id: bn-0193
     target: "আপনার নাম কী?"
     native: "What is your name?"
@@ -29,6 +31,8 @@ cards:
     ipa: "apnar nam ki"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
   - id: bn-0194
     target: "আমি … থেকে এসেছি।"
     native: "I'm from …"
@@ -36,6 +40,9 @@ cards:
     ipa: "ami t̪ʰeke eʃetʃʰi"
     pos: "phrase"
     notes: "Literally 'I have come from …'. থেকে (theke), 'from', comes after the place."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "এসেছি", base: "আসা", reading: "āśā", meaning: "to come" }
   - id: bn-0195
     target: "আমি … থাকি।"
     native: "I live in …"
@@ -43,6 +50,9 @@ cards:
     ipa: "ami t̪ʰaki"
     pos: "phrase"
     notes: "The place takes -এ (-e), or after a vowel -য় (-yô) or -তে (-te): আমি কলকাতায় থাকি (āmi kôlokātāy thāki), I live in Kolkata; আমি ঢাকায় থাকি (āmi ḍhākāy thāki), I live in Dhaka."
+    bases:
+      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "থাকি", base: "থাকা", reading: "thākā", meaning: "to stay; to live; to be" }
   - id: bn-0196
     target: "বাড়ি"
     native: "home; house"
@@ -95,6 +105,8 @@ cards:
     reading: "āpnār bôyoś kôto?"
     ipa: "apnar bɔjoʃ kɔt̪o"
     pos: "phrase"
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
   - id: bn-0418
     target: "আমার বয়স ত্রিশ।"
     native: "I'm thirty."
@@ -103,6 +115,8 @@ cards:
     alt_target: ["আমার বয়স তিরিশ।"]
     pos: "phrase"
     notes: "'My age thirty': no 'years' and no verb. In speech 30 is often তিরিশ (tiriś)."
+    bases:
+      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
   - id: bn-0419
     target: "বিদেশি"
     native: "foreigner; foreign"

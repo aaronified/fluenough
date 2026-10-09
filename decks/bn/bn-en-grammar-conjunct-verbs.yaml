@@ -24,6 +24,8 @@ cards:
     ipa: "badʒar kɔra"
     pos: "verb"
     notes: "Food shopping, at the market."
+    bases:
+      - { word: "বাজার", base: "বাজার", reading: "bājār", meaning: "market" }
   - ref: bn-0660
     modes: [recognition, production, listening, speaking]
     native: "to have a bath; to shower"
@@ -35,6 +37,8 @@ cards:
     ipa: "pʰon kɔra"
     pos: "verb"
     notes: "The one phoned takes -কে (-ke): মাকে ফোন করো (māke phon kôro), phone Mum."
+    bases:
+      - { word: "ফোন", base: "ফোন", reading: "phon", meaning: "phone" }
   - id: bn-0680
     target: "গল্প করা"
     native: "to chat"
@@ -42,6 +46,8 @@ cards:
     ipa: "ɡɔlpo kɔra"
     pos: "verb"
     notes: "গল্প (gôlp) is a story; গল্প করা (gôlpo kôrā) is a long, easy talk."
+    bases:
+      - { word: "গল্প", base: "গল্প", reading: "gôlpo", meaning: "a story; a chat" }
   - id: bn-0681
     target: "বিশ্রাম করা"
     native: "to rest"
@@ -50,12 +56,16 @@ cards:
     alt_target: ["বিশ্রাম নেওয়া"]
     pos: "verb"
     notes: "Also বিশ্রাম নেওয়া (bisrām neoā), with নেওয়া (neoyā), to take."
+    bases:
+      - { word: "বিশ্রাম", base: "বিশ্রাম", reading: "bisrām", meaning: "rest" }
   - id: bn-0682
     target: "ব্যায়াম করা"
     native: "to exercise"
     reading: "bêyām kôrā"
     ipa: "bæjam kɔra"
     pos: "verb"
+    bases:
+      - { word: "ব্যায়াম", base: "ব্যায়াম", reading: "bêyām", meaning: "exercise" }
   - id: bn-0683
     target: "পরিষ্কার করা"
     native: "to clean"
@@ -68,6 +78,8 @@ cards:
     reading: "biye kôrā"
     ipa: "bije kɔra"
     pos: "verb"
+    bases:
+      - { word: "বিয়ে", base: "বিয়ে", reading: "biye", meaning: "marriage; wedding" }
   - id: bn-0685
     target: "জিজ্ঞেস করা"
     native: "to ask"
@@ -76,30 +88,40 @@ cards:
     alt_target: ["জিজ্ঞাসা করা"]
     pos: "verb"
     notes: "The one asked takes -কে (-ke): ওকে জিজ্ঞেস করুন (oke jigges korun), ask him. জিজ্ঞাসা করা (jiggāśā kôrā) is the more formal form."
+    bases:
+      - { word: "জিজ্ঞেস", base: "জিজ্ঞেস", reading: "jiggeś", meaning: "asking; a question" }
   - id: bn-0686
     target: "শুরু করা"
     native: "to start"
     reading: "śuru kôrā"
     ipa: "ʃuru kɔra"
     pos: "verb"
+    bases:
+      - { word: "শুরু", base: "শুরু", reading: "śuru", meaning: "start; beginning" }
   - id: bn-0687
     target: "শেষ করা"
     native: "to finish"
     reading: "śeś kôrā"
     ipa: "ʃeʃ kɔra"
     pos: "verb"
+    bases:
+      - { word: "শেষ", base: "শেষ", reading: "śeś", meaning: "end; finish" }
   - id: bn-0688
     target: "ভুল করা"
     native: "to make a mistake"
     reading: "bhul kôrā"
     ipa: "bʱul kɔra"
     pos: "verb"
+    bases:
+      - { word: "ভুল", base: "ভুল", reading: "bhul", meaning: "a mistake; wrong" }
   - id: bn-0689
     target: "ঠিক করা"
     native: "to decide; to fix"
     reading: "ṭhik kôrā"
     ipa: "ʈʰik kɔra"
     pos: "verb"
+    bases:
+      - { word: "ঠিক", base: "ঠিক", reading: "ṭhik", meaning: "right; correct; all right" }
   - id: bn-0690
     target: "সাহায্য করা"
     native: "to help"
@@ -113,6 +135,8 @@ cards:
     reading: "ceśṭā kôrā"
     ipa: "tʃeʃʈa kɔra"
     pos: "verb"
+    bases:
+      - { word: "চেষ্টা", base: "চেষ্টা", reading: "ceśṭā", meaning: "effort; an attempt" }
   - id: bn-0692
     target: "অপেক্ষা করা"
     native: "to wait"
@@ -120,6 +144,8 @@ cards:
     ipa: "ɔpekkʰa kɔra"
     pos: "verb"
     notes: "Waiting for someone is -র জন্য (-rô jonno): তোমার জন্য অপেক্ষা করছি (tomār jonno ôpekkhā kôrochi), I'm waiting for you."
+    bases:
+      - { word: "অপেক্ষা", base: "অপেক্ষা", reading: "ôpekkhā", meaning: "waiting" }
   - id: bn-0693
     target: "পছন্দ করা"
     native: "to like"
@@ -135,12 +161,16 @@ cards:
     alt_target: ["গান গাওয়া"]
     pos: "verb"
     notes: "Also গান গাওয়া (gān gāoā)."
+    bases:
+      - { word: "গান", base: "গান", reading: "gān", meaning: "song" }
   - id: bn-0695
     target: "রাগ করা"
     native: "to get angry"
     reading: "rāg kôrā"
     ipa: "raɡ kɔra"
     pos: "verb"
+    bases:
+      - { word: "রাগ", base: "রাগ", reading: "rāg", meaning: "anger" }
   - id: bn-0696
     target: "মনে পড়া"
     native: "to remember (to come to mind)"
@@ -148,6 +178,8 @@ cards:
     ipa: "mɔne pɔɽa"
     pos: "verb"
     notes: "With পড়া (pôṛā), not করা (kôrā), and the one who remembers takes -র (-rô): আমার মনে পড়েছে (āmār mône pôṛeche), I've remembered."
+    bases:
+      - { word: "মনে", base: "মন", reading: "môn", meaning: "mind; heart" }
   - id: bn-0697
     target: "দেরি হওয়া"
     native: "to be late"
@@ -155,3 +187,6 @@ cards:
     ipa: "d̪eri ɦoa"
     pos: "verb"
     notes: "With হওয়া (hôoyā), and the one who is late takes -র (-rô): আমার দেরি হয়ে গেছে (āmār deri hôye geche), I'm late."
+    bases:
+      - { word: "দেরি", base: "দেরি", reading: "deri", meaning: "delay; lateness" }
+      - { word: "হওয়া", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
