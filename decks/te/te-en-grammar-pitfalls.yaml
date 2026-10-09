@@ -15,6 +15,8 @@ cards:
     ipa: "manam ʋeɭd̪aːm"
     pos: "phrase"
     notes: "Telugu has two 'we': మనం (manam) includes the listener, మేము (mēmu) leaves them out."
+    bases:
+      - { word: "వెళ్దాం", base: "వెళ్ళడం", reading: "veḷḷaḍam", meaning: "to go" }
   - id: te-0373
     target: "మేము వెళ్తున్నాము."
     native: "We are going (not you)."
@@ -22,6 +24,8 @@ cards:
     ipa: "meːmu ʋeɭt̪unnaːmu"
     pos: "phrase"
     notes: "Said to someone who is staying behind."
+    bases:
+      - { word: "వెళ్తున్నాము", base: "వెళ్ళడం", reading: "veḷḷaḍam", meaning: "to go" }
   - id: te-0374
     target: "ఇది నీళ్ళు కాదు."
     native: "This isn't water."
@@ -29,6 +33,8 @@ cards:
     ipa: "id̪i niːɭɭu kaːd̪u"
     pos: "phrase"
     notes: "కాదు (kādu) denies what something is."
+    bases:
+      - { word: "ఇది", base: "ఇది", reading: "idi", meaning: "this (a thing)" }
   - id: te-0375
     target: "నీళ్ళు లేవు."
     native: "There's no water."
@@ -36,6 +42,8 @@ cards:
     ipa: "niːɭɭu leːʋu"
     pos: "phrase"
     notes: "లేదు (lēdu) or లేవు (lēvu) denies that something is there."
+    bases:
+      - { word: "లేవు", ref: "te-0159" }
   - id: te-0376
     target: "నాకు ఆకలిగా ఉంది."
     native: "I'm hungry."
@@ -43,6 +51,10 @@ cards:
     ipa: "naːku aːkaliɡaː und̪i"
     pos: "phrase"
     notes: "'To me there is hunger'."
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "ఆకలిగా", base: "ఆకలి", reading: "ākali", meaning: "hunger" }
+      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
   - id: te-0377
     target: "నేను వెళ్ళాలి."
     native: "I have to go."
@@ -50,6 +62,9 @@ cards:
     ipa: "neːnu ʋeɭɭaːli"
     pos: "phrase"
     notes: "-ఆలి (-āli) on the stem says 'must'."
+    bases:
+      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "వెళ్ళాలి", base: "వెళ్ళడం", reading: "veḷḷaḍam", meaning: "to go" }
   - id: te-0378
     target: "మీరు కూర్చోండి."
     native: "Please sit down."
@@ -57,6 +72,8 @@ cards:
     ipa: "miːru kuːrtʃoːɳɖi"
     pos: "phrase"
     notes: "With మీరు (mīru), a request ends in -అండి (-aṇḍi). నువ్వు కూర్చో (nuvvu kūrcō) is for friends and children."
+    bases:
+      - { word: "కూర్చోండి", base: "కూర్చోవడం", reading: "kūrcōvaḍam", meaning: "to sit" }
   - id: te-0379
     target: "రాము గారు వచ్చారు."
     native: "Mr Ramu has come."
@@ -64,3 +81,6 @@ cards:
     ipa: "raːmu ɡaːru ʋatʃtʃaːru"
     pos: "phrase"
     notes: "Respect for one person takes the plural verb: వచ్చారు (vaccāru), not వచ్చాడు (vaccāḍu)."
+    bases:
+      - { word: "రాము", base: "రాము", reading: "rāmu", meaning: "Ramu (a man's name)" }
+      - { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍam", meaning: "to come" }

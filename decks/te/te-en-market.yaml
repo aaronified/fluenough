@@ -50,6 +50,9 @@ cards:
     ipa: "tʃaːlaː ekkuʋa"
     pos: "phrase"
     notes: "ఎక్కువ (ekkuva) is 'more, too much'; its opposite is తక్కువ (takkuva), 'less'."
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā", meaning: "very; a lot" }
+      - { word: "ఎక్కువ", base: "ఎక్కువ", reading: "ekkuva", meaning: "more; too much" }
   - id: te-0245
     target: "కొంచెం తగ్గించండి."
     native: "Please lower it a little."
@@ -58,6 +61,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "The polite way to bargain. Bargaining is expected at markets, not in shops with fixed prices."
+    bases:
+      - { word: "కొంచెం", base: "కొంచెం", reading: "koñcem", meaning: "a little" }
+      - { word: "తగ్గించండి", base: "తగ్గించడం", reading: "taggiñcaḍam", meaning: "to lower; to reduce" }
   - id: te-0246
     target: "దుకాణం"
     native: "shop"
@@ -87,3 +93,5 @@ cards:
     ipa: "iŋkeːmiː ʋad̪d̪u"
     pos: "phrase"
     notes: "వద్దు (vaddu) is 'don't want, no need'."
+    bases:
+      - { word: "ఇంకేమీ", ref: "te-0346" }
