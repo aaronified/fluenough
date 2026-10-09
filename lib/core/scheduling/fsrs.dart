@@ -60,6 +60,10 @@ class FsrsState {
 /// parameters and no learning steps: every pair is in review from its first
 /// answer, and a second answer the same day takes FSRS-6's same-day formula.
 ///
+/// Every method that schedules takes an optional `parameters`, 21 values in
+/// the order of [w], for a set fitted to one learner (`FsrsFit`). Left out,
+/// it is [w], and the method behaves exactly as it always has.
+///
 /// A port of `py-fsrs` 6.3.2's scheduler, with fuzzing off so that replaying
 /// the log always gives the same dates (`docs/plans/fsrs.md`). Pure: nothing
 /// here imports Flutter.
@@ -82,9 +86,23 @@ abstract final class Fsrs {
 
   static const double maxDifficulty = 10;
 
-  static final double _decay = -w[20];
+  static double _decay(List<double> w) => -w[20];
 
-  static final double _factor = math.pow(0.9, 1 / _decay) - 1;
+  /// Chosen so that the chance of recall is 90% when the days elapsed equal
+  /// the stability.
+  static double _factor(List<double> w) =>
+      math.pow(0.9, 1 / _decay(w)).toDouble() - 1;
+
+  static List<double> _checked(List<double> parameters) {
+    if (parameters.length != w.length) {
+      throw ArgumentError.value(
+        parameters.length,
+        'parameters',
+        'must hold ${w.length} values, w0 to w20',
+      );
+    }
+    return parameters;
+  }
 
   /// Grades below this are Again: forgotten.
   static const int passingGrade = 3;
@@ -109,13 +127,20 @@ abstract final class Fsrs {
   /// Applies a review [grade] (0–5) to [state], null for a pair never
   /// reviewed, and returns the new state. [rated] as for [ratingOf].
   ///
-  /// Throws [ArgumentError] if [grade] is outside 0–5.
+  /// Throws [ArgumentError] if [grade] is outside 0–5, or if [parameters]
+  /// does not hold 21 values.
   static FsrsState next(
     FsrsState? state,
     int grade, {
     required DateTime now,
     bool rated = false,
-  }) => review(state, ratingOf(grade, rated: rated), now: now);
+    List<double> parameters = w,
+  }) => review(
+    state,
+    ratingOf(grade, rated: rated),
+    now: now,
+    parameters: parameters,
+  );
 
   /// Applies [rating] to [state] at [now]. [next] for a rating chosen
   /// directly, such as Easy on the rating buttons.
@@ -123,25 +148,28 @@ abstract final class Fsrs {
     FsrsState? state,
     Rating rating, {
     required DateTime now,
+    List<double> parameters = w,
   }) {
+    final w = _checked(parameters);
     final double stability;
     final double difficulty;
     if (state == null) {
-      stability = _initialStability(rating);
-      difficulty = _clampDifficulty(_initialDifficulty(rating));
+      stability = _initialStability(w, rating);
+      difficulty = _clampDifficulty(_initialDifficulty(w, rating));
     } else {
-      final elapsed = _elapsedDays(state.lastReviewAt, now);
+      final elapsed = elapsedDays(state.lastReviewAt, now);
       stability = elapsed < 1
-          ? _shortTermStability(state.stability, rating)
+          ? _shortTermStability(w, state.stability, rating)
           : _nextStability(
+              w,
               state.difficulty,
               state.stability,
-              _retrievability(elapsed, state.stability),
+              _retrievability(w, elapsed, state.stability),
               rating,
             );
-      difficulty = _nextDifficulty(state.difficulty, rating);
+      difficulty = _nextDifficulty(w, state.difficulty, rating);
     }
-    final interval = intervalFor(stability);
+    final interval = intervalFor(stability, parameters: w);
     final missed = rating == Rating.again;
     return FsrsState(
       stability: stability,
@@ -158,15 +186,25 @@ abstract final class Fsrs {
 
   /// The chance, from 0 to 1, that [state] is recalled at [now]: 0 for a
   /// pair never reviewed.
-  static double retrievability(FsrsState? state, DateTime now) => state == null
+  static double retrievability(
+    FsrsState? state,
+    DateTime now, {
+    List<double> parameters = w,
+  }) => state == null
       ? 0
-      : _retrievability(_elapsedDays(state.lastReviewAt, now), state.stability);
+      : _retrievability(
+          _checked(parameters),
+          elapsedDays(state.lastReviewAt, now),
+          state.stability,
+        );
 
   /// Whole days until a pair of this [stability] falls to the desired
   /// retention, from 1 to [maximumInterval].
-  static int intervalFor(double stability) {
+  static int intervalFor(double stability, {List<double> parameters = w}) {
+    final w = _checked(parameters);
     final days =
-        (stability / _factor) * (math.pow(desiredRetention, 1 / _decay) - 1);
+        (stability / _factor(w)) *
+        (math.pow(desiredRetention, 1 / _decay(w)) - 1);
     return days.round().clamp(1, maximumInterval);
   }
 
@@ -179,8 +217,14 @@ abstract final class Fsrs {
     FsrsState state,
     double share, {
     required DateTime now,
+    List<double> parameters = w,
   }) {
-    final good = review(state, Rating.good, now: now).stability;
+    final good = review(
+      state,
+      Rating.good,
+      now: now,
+      parameters: parameters,
+    ).stability;
     if (good <= state.stability) return state;
     return FsrsState(
       stability: state.stability + share * (good - state.stability),
@@ -195,28 +239,42 @@ abstract final class Fsrs {
 
   /// Rebuilds a pair's state from its `(grade, time)` reviews, oldest first.
   static FsrsState? replay(
-    Iterable<({int grade, DateTime at, bool rated})> reviews,
-  ) {
+    Iterable<({int grade, DateTime at, bool rated})> reviews, {
+    List<double> parameters = w,
+  }) {
     FsrsState? state;
     for (final review in reviews) {
-      state = next(state, review.grade, now: review.at, rated: review.rated);
+      state = next(
+        state,
+        review.grade,
+        now: review.at,
+        rated: review.rated,
+        parameters: parameters,
+      );
     }
     return state;
   }
 
-  static double _retrievability(int elapsedDays, double stability) =>
-      math.pow(1 + _factor * elapsedDays / stability, _decay).toDouble();
+  static double _retrievability(
+    List<double> w,
+    int elapsedDays,
+    double stability,
+  ) => math.pow(1 + _factor(w) * elapsedDays / stability, _decay(w)).toDouble();
 
-  static double _initialStability(Rating rating) =>
+  static double _initialStability(List<double> w, Rating rating) =>
       math.max(w[rating.value - 1], minStability);
 
-  static double _initialDifficulty(Rating rating) =>
+  static double _initialDifficulty(List<double> w, Rating rating) =>
       w[4] - math.exp(w[5] * (rating.value - 1)) + 1;
 
   static double _clampDifficulty(double d) =>
       d.clamp(minDifficulty, maxDifficulty);
 
-  static double _shortTermStability(double stability, Rating rating) {
+  static double _shortTermStability(
+    List<double> w,
+    double stability,
+    Rating rating,
+  ) {
     var increase =
         math.exp(w[17] * (rating.value - 3 + w[18])) *
         math.pow(stability, -w[19]);
@@ -224,15 +282,20 @@ abstract final class Fsrs {
     return math.max(stability * increase, minStability);
   }
 
-  static double _nextDifficulty(double difficulty, Rating rating) {
+  static double _nextDifficulty(
+    List<double> w,
+    double difficulty,
+    Rating rating,
+  ) {
     final delta = -(w[6] * (rating.value - 3));
     final damped = difficulty + (10 - difficulty) * delta / 9;
     final reverted =
-        w[7] * _initialDifficulty(Rating.easy) + (1 - w[7]) * damped;
+        w[7] * _initialDifficulty(w, Rating.easy) + (1 - w[7]) * damped;
     return _clampDifficulty(reverted);
   }
 
   static double _nextStability(
+    List<double> w,
     double difficulty,
     double stability,
     double retrievability,
@@ -267,7 +330,8 @@ abstract final class Fsrs {
   /// rounded down, never below zero. The due date is whole days of 24 hours
   /// too, so a pair is never due before its interval has passed, even
   /// across a change to daylight saving time, when it falls an hour off the
-  /// clock time it was answered at.
-  static int _elapsedDays(DateTime from, DateTime to) =>
+  /// clock time it was answered at. Fitting counts days the same way
+  /// (`FsrsFit`), so that it fits the model this scheduler runs.
+  static int elapsedDays(DateTime from, DateTime to) =>
       math.max(0, to.toUtc().difference(from.toUtc()).inDays);
 }
