@@ -13,9 +13,11 @@ marking them read.
 Bug reports and feedback become issues. Support mails stay private: a mail
 is skipped, and left in the inbox untouched, when its subject says
 `[Fluenough] Support: …` or its body's `Kind:` line says `Support`, so
-that a reporter who edits one of the two still is not made public. Mails
-from older versions of the app, `Feature: …` and `Suggestion: …`, are filed
-as feedback.
+that a reporter who edits one of the two still is not made public. Both
+are read loosely, failing closed: in any case, with or without the colon,
+and with the CRLF line ends that mail arrives with. Mails from older
+versions of the app, `Feature: …` and `Suggestion: …`, are filed as
+feedback.
 
 The issue is text only: the subject, as `Bug: …`, and the mail's text. A
 screenshot or the app log stays in the mail, and the issue says one came.
@@ -54,9 +56,13 @@ KINDS = {
     "Feature": "feedback",
     "Suggestion": "feedback",
 }
-# Never filed: support mails stay private in the inbox.
-PRIVATE = "Support"
-KIND_LINE = re.compile(r"^Kind:[ \t]*(\S+)[ \t]*$", re.M)
+# Never filed: support mails stay private in the inbox. Matched as the start
+# of a kind's first word, in any case, so that `support`, `SUPPORT` and
+# `Support -` are private too.
+PRIVATE = "support"
+# Mail comes with CRLF line ends, which [text_of] makes LF; the `\r` here
+# is for text that did not come through it.
+KIND_LINE = re.compile(r"^Kind:[ \t]*(\S+)[ \t\r]*$", re.M | re.I)
 MAX_BODY = 60_000
 SCREENSHOT_NOTE = ("_A screenshot came with this report. It is in the "
                    "Fluenough inbox, not here._")
@@ -76,13 +82,15 @@ def subject_of(message: email.message.Message) -> str:
 
 
 def text_of(message: email.message.Message) -> str:
-    """The mail's first plain-text part that is not an attachment."""
+    """The mail's first plain-text part that is not an attachment, with
+    LF line ends: mail, over SMTP and IMAP, has CRLF."""
     for part in message.walk():
         if (part.get_content_type() == "text/plain"
                 and part.get_content_disposition() != "attachment"):
             payload = part.get_payload(decode=True) or b""
             charset = part.get_content_charset() or "utf-8"
-            return payload.decode(charset, errors="replace").strip()
+            text = payload.decode(charset, errors="replace")
+            return text.replace("\r\n", "\n").replace("\r", "\n").strip()
     return ""
 
 
@@ -99,11 +107,19 @@ def has_log(message: email.message.Message) -> bool:
     )
 
 
-def is_private(kind: str, text: str) -> bool:
-    """Whether a mail is for support, by its subject's [kind] or its
-    [text]'s `Kind:` line, either of which the reporter may have edited."""
-    return kind.strip() == PRIVATE or any(
-        found == PRIVATE for found in KIND_LINE.findall(text))
+def is_support(word: str) -> bool:
+    """Whether [word], a kind, says support, loosely: a near miss is
+    private, not public."""
+    return word.strip().casefold().startswith(PRIVATE)
+
+
+def is_private(rest: str, text: str) -> bool:
+    """Whether a mail is for support, by the first word of its subject
+    after the prefix, [rest], or its [text]'s `Kind:` line, either of which
+    the reporter may have edited."""
+    first = rest.split(maxsplit=1)[0] if rest.split() else ""
+    return is_support(first) or any(
+        is_support(found) for found in KIND_LINE.findall(text))
 
 
 def issue_from(message: email.message.Message) -> dict | None:
@@ -116,9 +132,9 @@ def issue_from(message: email.message.Message) -> dict | None:
     rest = subject[len(PREFIX):].strip()
     kind, colon, title = rest.partition(":")
     text = text_of(message)
-    if is_private(kind if colon else "", text):
+    if is_private(rest, text):
         return None
-    label = KINDS.get(kind.strip()) if colon else None
+    label = KINDS.get(kind.strip().capitalize()) if colon else None
     labels = [label, FROM_APP] if label and title.strip() else [FROM_APP]
     body = [quiet(text)[:MAX_BODY] or "_No details given._"]
     if has_image(message):
