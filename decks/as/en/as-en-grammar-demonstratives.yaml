@@ -1,0 +1,29 @@
+schema: 1
+id: "as-en-grammar-demonstratives"
+kind: "layer"
+core: "as-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This and that"
+license: "CC0-1.0"
+description: "এই (ei) and সেই (sei), and the words built on them: this one, here, like this, so much. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "adj": "before a noun"
+    "thing": "a thing"
+    "things": "things"
+    "man": "this man, that man"
+    "woman": "this woman, that woman"
+    "resp": "this person, that person"
+    "people": "these people, those people"
+    "place": "a place"
+    "toward": "going towards a place"
+    "side": "side or direction"
+    "manner": "how"
+    "kind": "what sort"
+    "amount": "how much"
+    "time": "when"
+  notes: "Words for near things start with এ- (e-) or ই- (i-), words for far ones with সে- (se-), সি- (si-), তে- (te-) or ত- (tô-). এই (ei) and সেই (sei) stand before a noun and never change, and the noun keeps its classifier: এই কিতাপখন (ei kitāpkhôn), this book; সেই ঘৰটো (sei ghôrôtu), that house. For something far off and in sight, ঐ (ôi) is also 'that': ঐটো (ôitu), that one over there."

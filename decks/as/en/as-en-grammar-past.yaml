@@ -1,0 +1,20 @@
+schema: 1
+id: "as-en-grammar-past"
+kind: "layer"
+core: "as-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past: did and have done"
+license: "CC0-1.0"
+description: "I did, she went, I have eaten: the simple past and the present perfect, by person and respect. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Simple past and present perfect"
+  slot_name: "tense, person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "juwa": "to go"
+    "oha": "to come"
+    "khuwa": "to eat; to drink"
+    "kuwa": "to say"
+  notes: "The simple past ends in -ইলোঁ (-ilum̐), -ইলি (-ili), -ইলা (-ilā) and -ইলে (-ile): কৰিলোঁ (korilum̐), I did. A verb with no object ends in -ইল (-il) with আপুনি (āpuni), সি (si), তাই (tāi) and তেওঁ (teum̐): সি আহিল (xi āhil), he came; and so does গ (gô)'ল (lô), went, the past of যোৱা (zuwā). A stem ending in a vowel drops the -ই- (-i-): খালোঁ (khālum̐), I ate; ক (kô)'লোঁ (lum̐), I said. The present perfect, for what has just happened, ends in -ইছোঁ (-isum̐), -ইছ (-is), -ইছা (-isā) and -ইছে (-ise): খাইছোঁ (khāisum̐), I have eaten; যোৱা (zuwā) takes গৈ (gôi): গৈছোঁ (gôisum̐), I have gone. The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."

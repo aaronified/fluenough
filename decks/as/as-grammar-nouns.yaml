@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-nouns
-name: "Nouns: the, plural and case"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "A classifier for 'the', -বোৰ (-bur) for the plural, and the endings for of, in and to. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-nouns"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Noun forms"
-  slot_name: "form"
   slots: ["the one: -টো (-tu), -খন (-khôn) …", "the ones: -বোৰ (-bur)", "of: -ৰ (-rô)", "in, at: -ত (-tô)", "to: -লৈ (-lôi)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Assamese has no 'the': a classifier after the noun does its work. -টো (-tu) is for most things and animals, -খন (-khôn) for flat or large things, vehicles, books and places, -জন (-zôn) for a man and -জনী (-zoni) for a woman. -বোৰ (-bur) makes a plural of anything; people also take -হঁত (-hôm̐t), or -সকল (-sôkôl) with respect: ল (lô)'ৰাহঁত (rāhôm̐t), the boys. The endings go straight onto the noun: ঘৰৰ (ghôrôr), ঘৰত (ghôrôt), ঘৰলৈ (ghôrôlôi). 'From' is -ৰ পৰা (-rô pôrā): ঘৰৰ পৰা (ghôrôr pôrā), from home. A few nouns change before an ending: গাঁও (gām̐o), village, becomes গাঁৱ- (gām̐w-): গাঁৱত (gām̐wôt), in the village."
   entries:
     - lemma: "ঘৰ"
-      key: ghor
+      key: "ghor"
       reading: "ghôr"
       ipa: "ɡʱɔɹ"
-      gloss: "house"
       forms:
         "the one: -টো (-tu), -খন (-khôn) …": ["ঘৰটো", "ঘৰখন"]
         "the ones: -বোৰ (-bur)": "ঘৰবোৰ"
@@ -38,10 +31,9 @@ pattern:
         "in, at: -ত (-tô)": "ɡʱɔɹɔt"
         "to: -লৈ (-lôi)": "ɡʱɔɹɔlɔi"
     - lemma: "দোকান"
-      key: dukan
+      key: "dukan"
       reading: "dukān"
       ipa: "dʊkan"
-      gloss: "shop"
       forms:
         "the one: -টো (-tu), -খন (-khôn) …": "দোকানখন"
         "the ones: -বোৰ (-bur)": "দোকানবোৰ"
@@ -61,10 +53,9 @@ pattern:
         "in, at: -ত (-tô)": "dʊkanɔt"
         "to: -লৈ (-lôi)": "dʊkanɔlɔi"
     - lemma: "কোঠা"
-      key: kutha
+      key: "kutha"
       reading: "kuthā"
       ipa: "kʊtʰa"
-      gloss: "room"
       forms:
         "the one: -টো (-tu), -খন (-khôn) …": "কোঠাটো"
         "the ones: -বোৰ (-bur)": "কোঠাবোৰ"
@@ -84,10 +75,9 @@ pattern:
         "in, at: -ত (-tô)": "kʊtʰat"
         "to: -লৈ (-lôi)": "kʊtʰalɔi"
     - lemma: "চহৰ"
-      key: sohor
+      key: "sohor"
       reading: "sôhôr"
       ipa: "sɔhɔɹ"
-      gloss: "town; city"
       forms:
         "the one: -টো (-tu), -খন (-khôn) …": "চহৰখন"
         "the ones: -বোৰ (-bur)": "চহৰবোৰ"
@@ -107,10 +97,9 @@ pattern:
         "in, at: -ত (-tô)": "sɔhɔɹɔt"
         "to: -লৈ (-lôi)": "sɔhɔɹɔlɔi"
     - lemma: "গাড়ী"
-      key: gari
+      key: "gari"
       reading: "gāri"
       ipa: "ɡaɹi"
-      gloss: "car"
       forms:
         "the one: -টো (-tu), -খন (-khôn) …": "গাড়ীখন"
         "the ones: -বোৰ (-bur)": "গাড়ীবোৰ"
@@ -130,10 +119,9 @@ pattern:
         "in, at: -ত (-tô)": "ɡaɹit"
         "to: -লৈ (-lôi)": "ɡaɹilɔi"
     - lemma: "গাঁও"
-      key: gao
+      key: "gao"
       reading: "gām̐o"
       ipa: "ɡão"
-      gloss: "village"
       forms:
         "the one: -টো (-tu), -খন (-khôn) …": "গাঁওখন"
         "the ones: -বোৰ (-bur)": "গাঁওবোৰ"

@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-past
-name: "Past: did and have done"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I did, she went, I have eaten: the simple past and the present perfect, by person and respect. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-past"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Simple past and present perfect"
-  slot_name: "tense, person and respect"
   slots: ["did, মই (moi) / আমি (āmi)", "did, তই (toi) / তহঁত (tôhôm̐t)", "did, তুমি (tumi) / তোমালোক (tumāluk)", "did, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)", "have done, মই (moi) / আমি (āmi)", "have done, তই (toi) / তহঁত (tôhôm̐t)", "have done, তুমি (tumi) / তোমালোক (tumāluk)", "have done, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The simple past ends in -ইলোঁ (-ilum̐), -ইলি (-ili), -ইলা (-ilā) and -ইলে (-ile): কৰিলোঁ (korilum̐), I did. A verb with no object ends in -ইল (-il) with আপুনি (āpuni), সি (si), তাই (tāi) and তেওঁ (teum̐): সি আহিল (xi āhil), he came; and so does গ (gô)'ল (lô), went, the past of যোৱা (zuwā). A stem ending in a vowel drops the -ই- (-i-): খালোঁ (khālum̐), I ate; ক (kô)'লোঁ (lum̐), I said. The present perfect, for what has just happened, ends in -ইছোঁ (-isum̐), -ইছ (-is), -ইছা (-isā) and -ইছে (-ise): খাইছোঁ (khāisum̐), I have eaten; যোৱা (zuwā) takes গৈ (gôi): গৈছোঁ (gôisum̐), I have gone. The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "কৰা"
-      key: kora
+      key: "kora"
       reading: "kôrā"
       ipa: "kɔɹa"
-      gloss: "to do"
       forms:
         "did, মই (moi) / আমি (āmi)": ["কৰিলোঁ", "কৰিলো"]
         "did, তই (toi) / তহঁত (tôhôm̐t)": "কৰিলি"
@@ -47,10 +40,9 @@ pattern:
         "have done, তুমি (tumi) / তোমালোক (tumāluk)": "koɹisa"
         "have done, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "koɹise"
     - lemma: "যোৱা"
-      key: juwa
+      key: "juwa"
       reading: "zuwā"
       ipa: "zʊwa"
-      gloss: "to go"
       forms:
         "did, মই (moi) / আমি (āmi)": ["গ'লোঁ", "গ'লো"]
         "did, তই (toi) / তহঁত (tôhôm̐t)": "গ'লি"
@@ -79,10 +71,9 @@ pattern:
         "have done, তুমি (tumi) / তোমালোক (tumāluk)": "ɡɔisa"
         "have done, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "ɡɔise"
     - lemma: "অহা"
-      key: oha
+      key: "oha"
       reading: "ôhā"
       ipa: "ɔha"
-      gloss: "to come"
       forms:
         "did, মই (moi) / আমি (āmi)": ["আহিলোঁ", "আহিলো"]
         "did, তই (toi) / তহঁত (tôhôm̐t)": "আহিলি"
@@ -111,10 +102,9 @@ pattern:
         "have done, তুমি (tumi) / তোমালোক (tumāluk)": "ahisa"
         "have done, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "ahise"
     - lemma: "খোৱা"
-      key: khuwa
+      key: "khuwa"
       reading: "khuwā"
       ipa: "kʰʊwa"
-      gloss: "to eat; to drink"
       forms:
         "did, মই (moi) / আমি (āmi)": ["খালোঁ", "খালো"]
         "did, তই (toi) / তহঁত (tôhôm̐t)": "খালি"
@@ -143,10 +133,9 @@ pattern:
         "have done, তুমি (tumi) / তোমালোক (tumāluk)": "kʰaisa"
         "have done, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "kʰaise"
     - lemma: "কোৱা"
-      key: kuwa
+      key: "kuwa"
       reading: "kuwā"
       ipa: "kʊwa"
-      gloss: "to say"
       forms:
         "did, মই (moi) / আমি (āmi)": ["ক'লোঁ", "ক'লো"]
         "did, তই (toi) / তহঁত (tôhôm̐t)": "ক'লি"

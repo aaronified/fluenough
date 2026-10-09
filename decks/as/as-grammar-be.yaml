@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-be
-name: "To be: আছে (āse), আছিল (āsil) and নহয় (nôhôy)"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Is, was, isn't, will be: আছে (āse) for where and how things are, no verb at all for what someone is, নহয় (nôhôy) for what someone is not, and হ (hô)'ব (bô) for will be. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-be"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "To be"
-  slot_name: "person and respect"
   slots: ["মই / আমি", "তই / তহঁত", "তুমি / তোমালোক", "আপুনি / সি / তাই / তেওঁ"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "আছে (āse) says where or how someone is: মই ঘৰত আছোঁ (moi ghôrôt āsum̐), I'm at home; মই ভালে আছোঁ (moi bhāle āsum̐), I'm well. With the owner's -ৰ (-rô) it is have: মোৰ সময় আছে (mur xômôy āse), I have time. Its negative is নাই (nāi), the same for every person: মই ঘৰত নাই (moi ghôrôt nāi), I'm not at home. To say what someone is, the present needs no verb: মই ছাত্ৰ (moi sātrô), I'm a student. But 'is not' has one, নহয় (nôhôy): মই ছাত্ৰ নহওঁ (moi sātrô nôhôum̐), and in speech নহয় (nôhôy) often stands for every person. আছিল (āsil) is the past of both: মই ঘৰত আছিলোঁ (moi ghôrôt āsilum̐), I was at home; মই ছাত্ৰ আছিলোঁ (moi sātrô āsilum̐), I was a student. হ (hô)'ব (bô), will be, is the future of হোৱা (huwā), to become. আপুনি (āpuni) takes the same form as সি (si), তাই (tāi) and তেওঁ (teum̐), and a plural the same as its singular. The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "আছে"
-      key: ase
+      key: "ase"
       reading: "āse"
       ipa: "ase"
-      gloss: "am, is, are (somewhere, or how); there is"
       forms:
         "মই / আমি": ["আছোঁ", "আছো"]
         "তই / তহঁত": "আছ"
@@ -35,10 +28,9 @@ pattern:
         "তুমি / তোমালোক": "asa"
         "আপুনি / সি / তাই / তেওঁ": "ase"
     - lemma: "আছিল"
-      key: asil
+      key: "asil"
       reading: "āsil"
       ipa: "asil"
-      gloss: "was, were"
       forms:
         "মই / আমি": ["আছিলোঁ", "আছিলো"]
         "তই / তহঁত": "আছিলি"
@@ -55,10 +47,9 @@ pattern:
         "তুমি / তোমালোক": "asila"
         "আপুনি / সি / তাই / তেওঁ": "asil"
     - lemma: "নাছিল"
-      key: nasil
+      key: "nasil"
       reading: "nāsil"
       ipa: "nasil"
-      gloss: "was not, were not (somewhere); there was not"
       forms:
         "মই / আমি": ["নাছিলোঁ", "নাছিলো"]
         "তই / তহঁত": "নাছিলি"
@@ -75,10 +66,9 @@ pattern:
         "তুমি / তোমালোক": "nasila"
         "আপুনি / সি / তাই / তেওঁ": "nasil"
     - lemma: "নহয়"
-      key: nohoy
+      key: "nohoy"
       reading: "nôhôy"
       ipa: "nɔhɔj"
-      gloss: "am not, is not, are not (a student, a doctor …)"
       forms:
         "মই / আমি": ["নহওঁ", "নহও"]
         "তই / তহঁত": "নহৱ"
@@ -95,10 +85,9 @@ pattern:
         "তুমি / তোমালোক": "nʊhʊwa"
         "আপুনি / সি / তাই / তেওঁ": "nɔhɔj"
     - lemma: "হ'ব"
-      key: hobo
+      key: "hobo"
       reading: "hobô"
       ipa: "hobɔ"
-      gloss: "will be"
       forms:
         "মই / আমি": "হ'ম"
         "তই / তহঁত": "হ'বি"

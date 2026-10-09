@@ -1,24 +1,17 @@
 schema: 1
-id: as-en-grammar-negative
-name: "Don't and won't"
-kind: grammar
-language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I don't go, she won't come: Assamese says not with ন- (nô-) at the front of the verb. Not yet checked by an Assamese speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "as-grammar-negative"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Negative"
-  slot_name: "tense, person and respect"
   slots: ["don't, মই (moi) / আমি (āmi)", "don't, তই (toi) / তহঁত (tôhôm̐t)", "don't, তুমি (tumi) / তোমালোক (tumāluk)", "don't, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)", "won't, মই (moi) / আমি (āmi)", "won't, তই (toi) / তহঁত (tôhôm̐t)", "won't, তুমি (tumi) / তোমালোক (tumāluk)", "won't, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Not is ন- (nô-) before the verb, and its vowel echoes the verb's first vowel: কৰোঁ (kôrum̐), নকৰোঁ (nôkôrum̐); যাওঁ (zāum̐), নাযাওঁ (nāzāum̐); শুনোঁ (xunum̐), নুশুনোঁ (nuxunum̐); খেলোঁ (khelum̐), নেখেলোঁ (nekhelum̐). Before a verb that starts with a vowel the two run together: আহোঁ (āhum̐), নাহোঁ (nāhum̐), I don't come. In the past, ন- (nô-) goes on the past form, নকৰিলোঁ (nôkorilum̐), I didn't do it, or the verb noun takes নাই (nāi): মই কৰা নাই (moi kôrā nāi), I haven't done it. A 'don't' said to someone is the negative future: নকৰিবা (nôkoribā), don't, to a friend; নকৰিব (nôkorib), to someone you respect. আপুনি (āpuni) takes the same form as সি (si), তাই (tāi) and তেওঁ (teum̐). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."
   entries:
     - lemma: "কৰা"
-      key: kora
+      key: "kora"
       reading: "kôrā"
       ipa: "kɔɹa"
-      gloss: "to do"
       forms:
         "don't, মই (moi) / আমি (āmi)": ["নকৰোঁ", "নকৰো"]
         "don't, তই (toi) / তহঁত (tôhôm̐t)": "নকৰ"
@@ -47,10 +40,9 @@ pattern:
         "won't, তুমি (tumi) / তোমালোক (tumāluk)": "nɔkoɹiba"
         "won't, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "nɔkoɹibɔ"
     - lemma: "যোৱা"
-      key: juwa
+      key: "juwa"
       reading: "zuwā"
       ipa: "zʊwa"
-      gloss: "to go"
       forms:
         "don't, মই (moi) / আমি (āmi)": ["নাযাওঁ", "নাযাও"]
         "don't, তই (toi) / তহঁত (tôhôm̐t)": "নাযাৱ"
@@ -79,10 +71,9 @@ pattern:
         "won't, তুমি (tumi) / তোমালোক (tumāluk)": "nazaba"
         "won't, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "nazabɔ"
     - lemma: "অহা"
-      key: oha
+      key: "oha"
       reading: "ôhā"
       ipa: "ɔha"
-      gloss: "to come"
       forms:
         "don't, মই (moi) / আমি (āmi)": ["নাহোঁ", "নাহো"]
         "don't, তই (toi) / তহঁত (tôhôm̐t)": "নাহ"
@@ -111,10 +102,9 @@ pattern:
         "won't, তুমি (tumi) / তোমালোক (tumāluk)": "nahiba"
         "won't, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "nahibɔ"
     - lemma: "শুনা"
-      key: xuna
+      key: "xuna"
       reading: "xunā"
       ipa: "xuna"
-      gloss: "to listen; to hear"
       forms:
         "don't, মই (moi) / আমি (āmi)": ["নুশুনোঁ", "নুশুনো"]
         "don't, তই (toi) / তহঁত (tôhôm̐t)": "নুশুন"
@@ -143,10 +133,9 @@ pattern:
         "won't, তুমি (tumi) / তোমালোক (tumāluk)": "nuxuniba"
         "won't, আপুনি (āpuni) / সি (si) / তাই (tāi) / তেওঁ (teum̐)": "nuxunibɔ"
     - lemma: "খেলা"
-      key: khela
+      key: "khela"
       reading: "khelā"
       ipa: "kʰela"
-      gloss: "to play"
       forms:
         "don't, মই (moi) / আমি (āmi)": ["নেখেলোঁ", "নেখেলো"]
         "don't, তই (toi) / তহঁত (tôhôm̐t)": "নেখেল"
