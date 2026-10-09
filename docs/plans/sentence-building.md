@@ -76,7 +76,7 @@ Then, on cloze:
    It needs no bank: every sentence card and every example sentence a deck
    already has can be asked this way.
 6. **Scheduled** as a production pair of its own, so it is reviewed. Under
-   `skill-model.md`, a sentence is produced in Write.
+   the skill model (done: ADR-0034), a sentence is produced in Write.
 7. **Tests** for the bank, the validator's known-words check, unlocking by
    grammar step, grading with free word order, and cloze: one word left
    out, the gap filled in the script or in Latin letters, and graded as
@@ -85,7 +85,9 @@ Then, on cloze:
 ## To decide
 
 - **Cloze:**
-  - typed only, or also chosen from a few words as its easier grade;
+  - ~~typed only, or also chosen from a few words as its easier grade~~:
+    settled (owner, 2026-10-08, #235): cloze is chosen as its easier grade
+    and typed as its harder one (ADR-0034);
   - whether it comes before the bank's sentences, from the first sentence
     cards, or with them.
 - Typed, tiles or spoken, or each in turn as the sentence is learnt.
