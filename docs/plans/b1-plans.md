@@ -128,6 +128,24 @@ them. The validator rejects a deck that leaves one out.
   script, its ISO reading, its IPA and its meaning, on every screen that
   shows a card, checked for contrast in light and dark.
 
+### Format details, settled 2026-10-09
+
+- **A rule's forms are listed for every word,** not made from a stem with
+  exceptions: exact for Telugu's oblique stems (ఇల్లు (illu) → ఇంట్లో
+  (iṇṭlō)), and the validator checks every taught word of the rule's kind
+  has its row (owner).
+- **A layer's files live in `decks/<lang>/<native>/`,** the core in
+  `decks/<lang>/` (owner).
+- **Notes about the language learnt** keep their language facts (the
+  words and readings) in the core; each layer writes the explanation
+  around them in its own language (owner).
+- **Words per level:** A1 700, A2 900 more, B1 1,200 more (about 700,
+  1,600 and 2,800 in all; low confidence, scaled from English, Milton &
+  Alexiou 2009), and each planned unit names its listening and reading
+  passages too (owner).
+- The format is built on its own branch, in parallel with the skill model,
+  so that the Bengali and Telugu deck agents can start (owner).
+
 ### Phrasebook, words, rules, then sentences
 
 Each unit of a B1 plan is written in the order `words-rules-sentences.md`
@@ -298,10 +316,7 @@ browser:
 
 ## To decide
 
-- The word sizes per level: how the 2,500–3,000 words split between A1, A2
-  and B1.
-- Whether a planned unit also names its listening and reading passages, or
-  only words and grammar.
+Nothing left: see "Format details, settled" above.
 
 ## Estimate
 
