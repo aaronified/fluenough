@@ -13,8 +13,11 @@ import 'dart:math';
 /// `tools/mail_to_issues.py` checks it the same way.
 ///
 /// Rater codes are public: the issues name them, and a deck lists the codes
-/// that helped build it. A review is accepted only from the mail address
-/// the code's first review came from.
+/// that helped build it. So a code alone does not prove who sent a review.
+/// The plan ties a code to the mail address its first review came from, and
+/// marks a review from any other address for the owner; that is **not
+/// built yet**. Until it is, the owner, who reads every review mail, goes
+/// by the sender's address as well as the code.
 class RaterCode {
   const RaterCode._(this.symbols);
 

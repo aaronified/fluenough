@@ -92,6 +92,54 @@ void main() {
     expect(reviews.unsent.single.unsentSignOff, isTrue);
   });
 
+  test('the last send can be taken back once, for a mail that never went: '
+      'its decks wait again, as they did before it', () {
+    final later = monday.add(const Duration(hours: 1));
+    final latest = monday.add(const Duration(hours: 2));
+    expect(marked().lastSend, isEmpty);
+    // A first mail, then a second with the family deck again and another.
+    var reviews = marked().sentAt(<String>['te-family'], monday);
+    reviews = reviews
+        .withCard(
+          'te-family',
+          'te',
+          'te-0002',
+          later,
+          (_) => CardReview(at: later, right: true),
+        )
+        .withCard(
+          'te-rude',
+          'te',
+          'te-0900',
+          later,
+          (_) => CardReview(at: later, rating: const WordRating(score: 3)),
+        )
+        .sentAt(<String>['te-family', 'te-rude'], latest);
+    expect(reviews.unsent, isEmpty);
+    expect(reviews.lastSend.map((d) => d.deckId), <String>[
+      'te-family',
+      'te-rude',
+    ]);
+    // Stored and read back, it can still be taken back.
+    reviews = Reviews.fromJson(reviews.toJson())!;
+    expect(reviews.lastSend, hasLength(2));
+
+    reviews = reviews.unsend(reviews.lastSend.map((d) => d.deckId));
+    // What the second mail carried waits again; the first mail's stays sent.
+    expect(reviews.of('te-family')!.sent, monday);
+    expect(reviews.of('te-rude')!.sent, isNull);
+    expect(reviews.unsent.map((d) => d.deckId), <String>[
+      'te-family',
+      'te-rude',
+    ]);
+    expect(reviews.of('te-family')!.unsentCards.keys, <String>['te-0002']);
+    // Once only: nothing more can be taken back, and taking the second
+    // mail back again changes nothing.
+    expect(reviews.lastSend, isEmpty);
+    final again = reviews.unsend(<String>['te-family', 'te-rude']);
+    expect(again.toJson(), reviews.toJson());
+  });
+
   test('stored and read back whole', () {
     final reviews = marked()
         .withCard(

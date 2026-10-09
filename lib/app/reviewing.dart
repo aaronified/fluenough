@@ -13,7 +13,9 @@ import 'settings.dart';
 
 /// What came of sending reviews.
 enum ReviewSendOutcome {
-  /// The mail app opened with the files; they are marked sent.
+  /// The mail app opened with the files; they are marked sent. Only the
+  /// reviewer knows whether the mail went: [Reviewing.sendAgain] takes it
+  /// back if it did not.
   inMailApp,
 
   /// Nothing was chosen, or nothing chosen had anything to send.
@@ -157,7 +159,9 @@ class Reviewing {
 
   /// Sends [decks]' unsent reviews in one mail, one file each, through the
   /// reviewer's mail app, with [body], which is for people only. Once the
-  /// mail app has them they are marked sent; they stay on the phone.
+  /// mail app has opened with them they are marked sent; they stay on the
+  /// phone. The phone cannot tell whether the mail then went, so the send
+  /// can be taken back with [sendAgain].
   Future<ReviewSendOutcome> send(
     Iterable<DeckReview> decks, {
     required String body,
@@ -207,6 +211,22 @@ class Reviewing {
     ], made);
     _log.event('Reviews of ${chosen.length} deck(s) shared to the mail app');
     return ReviewSendOutcome.inMailApp;
+  }
+
+  /// The decks of the last send, while it can be taken back: what "Send
+  /// the last mail again" puts back. Empty when there is none.
+  List<DeckReview> get lastSent => reviews.lastSend;
+
+  /// Takes the last send back, for a mail the reviewer did not send or
+  /// lost: what it carried waits to send again, with anything reviewed
+  /// since. Once per send.
+  void sendAgain() {
+    final last = lastSent;
+    if (last.isEmpty) return;
+    settings.reviews = reviews.unsend(<String>[
+      for (final deck in last) deck.deckId,
+    ]);
+    _log.event('Last send of ${last.length} deck(s) taken back');
   }
 
   /// Whether [deck] lists this reviewer's code among the codes that

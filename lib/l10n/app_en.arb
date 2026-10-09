@@ -5132,6 +5132,20 @@
   "@reviewSettingsToSend": {
     "description": "Settings row that opens the send sheet listing every deck with reviews not sent yet."
   },
+  "reviewSettingsSendAgain": "Send the last mail again",
+  "@reviewSettingsSendAgain": {
+    "description": "Settings row for when the review mail did not go: puts the decks the last mail carried back to send, and opens the send sheet."
+  },
+  "reviewSettingsSendAgainDesc": "{count, plural, =1{If it did not go, its deck waits to send again} other{If it did not go, its {count} decks wait to send again}}",
+  "@reviewSettingsSendAgainDesc": {
+    "description": "Under Send the last mail again: how many decks the last mail carried.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
   "reviewSettingsHelped": "Decks you helped build",
   "@reviewSettingsHelped": {
     "description": "Settings row listing the decks that list this reviewer's rater code among their reviewers."
@@ -5194,7 +5208,7 @@
   "@reviewHowSendTitle": {
     "description": "Step 3 of How reviewing works."
   },
-  "reviewHowSendBody": "Your reviews stay on this phone until you send them. Review as many decks as you like, then tap Send review: one mail takes them all, a file for each deck. Your mail app opens with Fluenough’s address filled in. Read it, then send it.",
+  "reviewHowSendBody": "Your reviews stay on this phone until you send them. Review as many decks as you like, then tap Send review: one mail takes them all, a file for each deck. Your mail app opens with Fluenough’s address filled in. Read it, then send it. If the mail does not go, tap Send the last mail again in Settings.",
   "@reviewHowSendBody": {
     "description": "Step 3 of How reviewing works."
   },
@@ -5202,7 +5216,7 @@
   "@reviewHowSameTitle": {
     "description": "Step 4 of How reviewing works."
   },
-  "reviewHowSameBody": "Your first review ties your code to that mail address. A review from another mail address waits until the Fluenough team has checked it. If you change mail address, say so in the mail.",
+  "reviewHowSameBody": "Send every review from the same mail address. Your code is public, so the Fluenough team goes by the address too. If you change mail address, say so in the mail.",
   "@reviewHowSameBody": {
     "description": "Step 4 of How reviewing works."
   },
@@ -5738,7 +5752,7 @@
   "@reviewSendBody": {
     "description": "At the top of the send sheet."
   },
-  "reviewSendSame": "Send it from the mail address you always use. From any other address, a review with your code waits until the Fluenough team checks it.",
+  "reviewSendSame": "Send it from the mail address you always use. Your code is public, so the Fluenough team goes by the address too.",
   "@reviewSendSame": {
     "description": "In the send sheet, under reviewSendBody."
   },
@@ -5790,7 +5804,7 @@
   "@reviewSendNothing": {
     "description": "When there is no review to send."
   },
-  "reviewSendOpened": "Your mail app is open. Send the mail from there.",
+  "reviewSendOpened": "Your mail app is open. Send the mail from there. If it does not go, Settings can send it again.",
   "@reviewSendOpened": {
     "description": "Once the mail app has the review."
   },

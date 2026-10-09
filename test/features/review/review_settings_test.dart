@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/review/how_reviewing_works.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
@@ -124,6 +125,24 @@ void main() {
     await tester.tap(find.text(l10n.reviewSettingsToSend));
     await tester.pumpAndSettle();
     expect(find.byType(SendReviewsSheet), findsOneWidget);
+  });
+
+  testWidgets('once a mail is sent, Send the last mail again puts its decks '
+      'back and opens the send sheet', (tester) async {
+    useTallPhone(tester);
+    final state = await reviewState(share: FixedMailShare(), reviewing: true);
+    final words = state.deckById(wordsDeck)!;
+    state.reviewing.markRight(words, words.cards.first);
+    await state.reviewing.send(state.reviewing.unsent, body: '');
+    await pumpScreen(tester, const SettingsPage(), state: state);
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.reviewSettingsToSend), findsNothing);
+    expect(find.text(l10n.reviewSettingsSendAgainDesc(1)), findsOneWidget);
+    await tester.tap(find.text(l10n.reviewSettingsSendAgain));
+    await tester.pumpAndSettle();
+    expect(find.byType(SendReviewsSheet), findsOneWidget);
+    expect(state.reviewing.unsent.map((d) => d.deckId), <String>[wordsDeck]);
+    expect(find.text(l10n.reviewSendButton(1)), findsOneWidget);
   });
 
   testWidgets('Settings lists the decks the reviewer helped build', (
