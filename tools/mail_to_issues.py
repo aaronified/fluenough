@@ -47,10 +47,16 @@ from `+` ignored. A later review from another address is filed marked
 only the code and the languages. The records are read afresh on every run,
 so a record the owner deletes in Gmail is tied again by the code's next
 mail, and one the owner adds or replaces is what counts from then on: a
-sender matching any record of its code passes. When the label cannot be read or a record cannot
-be written, the mail is filed marked "sender not checked", never dropped.
-No address and no record's body is ever printed: the job's log is public,
-so it says counts only.
+sender matching any record of its code passes. A record's address is
+read from the first line of its body, bare or as `Name <address>`; a
+record whose subject is not a code or whose first line is not one address
+is passed over, and the log counts those. When the label cannot be read
+or a record cannot be written, or the mail has no single sender, the mail
+is filed marked "sender not checked", never dropped. When the connection
+drops while a record is written, the run stops before filing that mail,
+which stays in the inbox for the next run: filing it unchecked would leave
+it unlabelled, and filed again an hour later. No address and no record's
+body is ever printed: the job's log is public, so it says counts only.
 
 Environment:
     FEEDBACK_GMAIL_ADDRESS, FEEDBACK_GMAIL_APP_PASSWORD  the inbox. Without
@@ -326,7 +332,7 @@ def review_issue_from(
     if SENDER_UNCHECKED in marks:
         body.append("**Sender not checked:** the rater records in the "
                     "Fluenough Gmail could not be read or written, or the "
-                    "mail had no sender, so the sender was not compared.")
+                    "mail had no single sender, so it was not compared.")
     body.append(REVIEW_FOOTER)
     return {
         "title": title,
@@ -348,10 +354,18 @@ def normal_address(address: str) -> str:
     return f"{local}@{domain}"
 
 
-def sender_of(message: email.message.Message) -> str:
-    """The address [message] came from, or "" when it has none."""
-    _, address = email.utils.parseaddr(str(message.get("From", "")))
+def address_in(text: str) -> str:
+    """The one mail address [text] holds, bare or as `Name <address>` and
+    with any full stop or comma after it, or "" when it holds none or
+    several."""
+    _, address = email.utils.parseaddr(text.strip().rstrip(".,;"))
     return address if "@" in address else ""
+
+
+def sender_of(message: email.message.Message) -> str:
+    """The address [message] came from, or "" when it has none, or
+    several."""
+    return address_in(str(message.get("From", "")))
 
 
 class Raters:
@@ -367,13 +381,17 @@ class Raters:
         # Each code's addresses, compared normalised; None when the label
         # could not be read.
         self.known: dict[str, set[str]] | None = None
-        self.records = self.tied = self.matched = 0
+        self.records = self.passed_over = self.tied = self.matched = 0
         self.differed = self.unchecked = 0
 
     def load(self) -> None:
         """Reads every record, creating the label first if it is not there.
-        A record whose subject is not a code or whose body is not an
-        address is passed over, as if deleted."""
+        A record whose subject is not a code or whose body's first line is
+        not one address is passed over, as if deleted, and counted.
+
+        A dropped connection is read as None, like any failure here: the
+        inbox cannot be selected after it either, so the run stops before
+        filing anything, and no mail is filed twice."""
         try:
             # NO when the label is there already, which is fine.
             self.imap.create(RATERS)
@@ -392,25 +410,33 @@ class Raters:
                 record = email.message_from_bytes(
                     raw, policy=email.policy.default)
                 code = rater_code(subject_of(record))
-                lines = text_of(record).split("\n")
-                address = lines[0].strip() if lines else ""
-                if code and "@" in address:
+                address = address_in(text_of(record).split("\n", 1)[0])
+                if code and address:
                     known.setdefault(code, set()).add(normal_address(address))
                     self.records += 1
+                else:
+                    self.passed_over += 1
             self.known = known
         except (imaplib.IMAP4.error, OSError, StopIteration):
             self.known = None
 
     def _tie(self, code: str, sender: str) -> bool:
         """Writes the record tying [code] to [sender], by APPEND: no mail is
-        sent. Whether it was written."""
+        sent. Whether it was written.
+
+        A dropped connection is raised, not answered False: the mail could
+        be filed but not labelled over it, and would be filed again by the
+        next run. Raised, the mail is neither, and the next run files it."""
         record = email.message.EmailMessage()
         record["Subject"] = code
         record.set_content(sender)
         try:
             status, _ = self.imap.append(RATERS, "(\\Seen)", None,
                                          record.as_bytes())
-        except (imaplib.IMAP4.error, OSError):
+        except (imaplib.IMAP4.abort, OSError):
+            raise
+        except imaplib.IMAP4.error:
+            # A BAD answer: the connection is still good.
             return False
         if status != "OK":
             return False
@@ -488,7 +514,8 @@ def run(env: dict[str, str],
             print(f"::warning::The rater records ({RATERS}) could not be "
                   f"read; review mails are filed as {SENDER_UNCHECKED!r}.")
         else:
-            print(f"Read {raters.records} rater record(s).")
+            print(f"Read {raters.records} rater record(s), "
+                  f"{raters.passed_over} passed over.")
         imap.select("INBOX")
         # Gmail's own search, so that filed mail is left out by its label.
         # A review mail is found by its files too, in case its subject was
