@@ -140,12 +140,18 @@ List<LogEntry> parseLog(String text) => <LogEntry>[
 /// whole stack.
 const int logStackFrames = 8;
 
-/// [error] as the log records it: [what] was being done, the error, and the
-/// first [logStackFrames] lines of [stack].
+/// [error] as the log records it: [what] was being done, the error's type,
+/// and the first [logStackFrames] lines of [stack].
+///
+/// Never the error's text, which can hold what the log must not: sqlite's
+/// names the statement and its parameters, among them an answer typed; a
+/// [FormatException]'s quotes the deck it could not read, and a
+/// `FileSystemException`'s names a file the learner chose. The stack says
+/// where, and code is all it names.
 String describeError(String what, Object error, StackTrace? stack) {
   final frames = (stack?.toString() ?? '')
       .split('\n')
       .where((line) => line.trim().isNotEmpty)
       .take(logStackFrames);
-  return <String>['$what: $error', ...frames].join('\n');
+  return <String>['$what: ${error.runtimeType}', ...frames].join('\n');
 }

@@ -129,8 +129,10 @@ lines, whichever is smaller, so a crash's log survives a restart".
     (`FlutterError.onError`, `PlatformDispatcher.onError`, passed on to
     where they went before), warnings, and key events: screens opened, by
     route name only, tabs, decks loaded, added and removed, fits run, by
-    skill, imports and exports, and reports sent. An error keeps its first
-    8 stack frames; an entry is cut at 2,000 characters.
+    skill, imports and exports, and reports sent. An error keeps its type
+    and its first 8 stack frames, never its text, which can quote an
+    answer (sqlite names a failed statement's parameters), a deck or a
+    file's name; an entry is cut at 2,000 characters.
   - Settings' Logs section is no longer incoming: View, Copy, Export
     (a text file, through the review log's file dialog) and Clear.
 - **Attaching the log:** a second box, "Attach the app log", under the
@@ -165,8 +167,9 @@ lines, whichever is smaller, so a crash's log survives a restart".
   line to something else makes it public. That is their edit to make; the
   app says plainly which kinds become public.
 - The log is plain text on the phone. It holds route names, deck ids,
-  skill names and error texts, never answers or cards, but an error's text
-  can name what the app was doing. It leaves the phone only when the
+  skill names, and errors' types and stacks, never answers or cards. An
+  error's type and stack say less than its text would, which can make a
+  bug slower to find from a report alone. It leaves the phone only when the
   reporter ticks the box, or exports or copies it.
 - On iOS, which has no share yet, a report goes without the log, and says
   so.

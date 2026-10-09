@@ -119,9 +119,46 @@ void main() {
       stack,
     );
     final lines = message.split('\n');
-    expect(lines.first, 'Decks failed to load: Bad state: no');
+    expect(lines.first, 'Decks failed to load: StateError');
     expect(lines, hasLength(1 + logStackFrames));
     expect(lines.last, '#7 frame7');
-    expect(describeError('x', 'y', null), 'x: y');
+    expect(describeError('x', 'y', null), 'x: String');
   });
+
+  test("an error's text never reaches the log, which must not hold an "
+      'answer or a card', () {
+    // As sqlite's own does: the statement and its parameters, among them
+    // what was typed.
+    final message = describeError(
+      'while saving a review',
+      _Leaky(
+        'disk I/O error\n  Causing statement: INSERT INTO reviews, '
+        'parameters: es-0001, la casa secreta',
+      ),
+      StackTrace.fromString('#0 _write (database_progress.dart:160)'),
+    );
+    expect(message, isNot(contains('secreta')));
+    expect(message, isNot(contains('Causing statement')));
+    expect(
+      message,
+      'while saving a review: _Leaky\n#0 _write (database_progress.dart:160)',
+    );
+    expect(
+      describeError(
+        'Decks failed to load',
+        const FormatException('x: "no"'),
+        null,
+      ),
+      'Decks failed to load: FormatException',
+    );
+  });
+}
+
+class _Leaky implements Exception {
+  _Leaky(this.text);
+
+  final String text;
+
+  @override
+  String toString() => text;
 }

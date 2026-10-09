@@ -233,11 +233,11 @@ void main() {
         );
         expect(
           log.entries.first.message,
-          'while building Today: Bad state: layout broke\n#0 build (a.dart:1)',
+          'while building Today: StateError\n#0 build (a.dart:1)',
         );
         expect(
           log.entries.last.message,
-          'Uncaught: Invalid argument(s): bad\n#0 main (b.dart:2)',
+          'Uncaught: ArgumentError\n#0 main (b.dart:2)',
         );
       } finally {
         restore();
