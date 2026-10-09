@@ -92,8 +92,8 @@ class _Language extends StatelessWidget {
         <String>{for (final c in cards) c.deck.deck.name}.toList(),
       ),
     );
-    // A unit, or a deck outside the path, opens its unit's review, where
-    // there is one; else its deck.
+    // A unit opens its review; a deck outside the path, which has no unit
+    // to review, opens its deck.
     void open(String deckId) => AppNavigator.openReview(context, deckId);
 
     return GroupedList.settings(
