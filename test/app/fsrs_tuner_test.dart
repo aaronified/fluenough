@@ -203,6 +203,17 @@ void main() {
     });
   });
 
+  test('a fit on another isolate gives what one in place gives', () async {
+    final history = SkillFit.histories(learner('hi'))[hiWrite]!;
+    final job = SkillFit.job(history, Fsrs.w, now);
+    final away = await fitInIsolate(job);
+    final here = await fitInPlace(job);
+    expect(away.key, here.key);
+    expect(away.fitted, here.fitted);
+    expect(away.before, here.before);
+    expect(away.after, here.after);
+  });
+
   group('adjusting automatically', () {
     test(
       'refits a skill once it has 10% more answers than at its fit',
