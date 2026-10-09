@@ -406,7 +406,7 @@ void main() {
       await pumpCard(tester, telugu());
       final l10n = l10nOf(tester);
       final node = tester.getSemantics(find.byType(Checkbox));
-      expect(node, containsSemantics(hasCheckedState: true, isChecked: false));
+      expect(node, isSemantics(hasCheckedState: true, isChecked: false));
       final label = node.getSemanticsData().label;
       for (final part in <String>[
         'Telugu',
@@ -704,9 +704,34 @@ void main() {
       expect(isPicked(tester, 'hi'), isTrue, reason: 'it works with those');
       expect(canContinue(tester, l10n), isTrue);
 
+      // The course starts with what arrived.
+      await tester.tap(continueButton(l10n));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.placementNew('Hindi')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.placementDone));
+      await tester.pumpAndSettle();
+      expect(state.settings.learningLanguages, <String>['hi']);
+
       // At the next launch, the rest is not downloaded on its own.
       await downloads.resume(const <String>['hi'], const <String>['en']);
       expect(downloads.missing('hi', const <String>['en']), isNotEmpty);
+
+      // It is, from Settings > Deck downloads.
+      await tester.tap(find.text(l10n.navSettings));
+      await tester.pumpAndSettle();
+      final page = find.text(l10n.deckDownloadsTitle);
+      await tester.ensureVisible(page);
+      await tester.pumpAndSettle();
+      await tester.tap(page);
+      await tester.pumpAndSettle();
+      final rest = find.text(l10n.deckDownloadsGetRest);
+      await tester.ensureVisible(rest);
+      await tester.pumpAndSettle();
+      await tester.tap(rest);
+      await tester.pumpAndSettle();
+      expect(downloads.isPaused('hi'), isFalse);
+      expect(downloads.missing('hi', const <String>['en']), isEmpty);
     });
 
     testWidgets('Cancel before the first decks are in un-chooses the '
