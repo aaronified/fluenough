@@ -1,16 +1,65 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/features.dart';
 import '../../core/feedback/report.dart';
+import '../../core/logs/log_entry.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import 'log_consent.dart';
 
-/// A bug, a feature or a suggestion, sent by mail from the reporter's own
-/// mail app (#160, ADR-0021): a title, details, the screen it was raised on,
-/// and the device's details if the reporter ticks the box. Text only. Behind
-/// `Feature.feedbackMail`: until it is on, report buttons open GitHub.
+/// What each [ReportKind] looks like and asks, in the reporter's language.
+extension ReportKindText on ReportKind {
+  IconData get icon => switch (this) {
+    ReportKind.support => Icons.support_agent,
+    ReportKind.bug => Icons.bug_report_outlined,
+    ReportKind.feedback => Icons.lightbulb_outline,
+  };
+
+  /// "Get support", "Report a bug", "Give feedback".
+  String title(AppLocalizations l10n) => switch (this) {
+    ReportKind.support => l10n.reportKindSupport,
+    ReportKind.bug => l10n.reportKindBug,
+    ReportKind.feedback => l10n.reportKindFeedback,
+  };
+
+  /// Under [title]: what the kind is for, and whether it becomes public.
+  String description(AppLocalizations l10n) => switch (this) {
+    ReportKind.support => l10n.reportKindSupportDesc,
+    ReportKind.bug => l10n.reportKindBugDesc,
+    ReportKind.feedback => l10n.reportKindFeedbackDesc,
+  };
+
+  /// The hint in the details field.
+  String hint(AppLocalizations l10n) => switch (this) {
+    ReportKind.support => l10n.reportDetailsHintSupport,
+    ReportKind.bug => l10n.reportDetailsHintBug,
+    ReportKind.feedback => l10n.reportDetailsHintFeedback,
+  };
+
+  /// The questions its mail is preset with, under the details
+  /// ([Report.prompts]).
+  List<String> prompts(AppLocalizations l10n) => switch (this) {
+    ReportKind.support => <String>[l10n.reportPromptSupportTried],
+    ReportKind.bug => <String>[
+      l10n.reportPromptBugSteps,
+      l10n.reportPromptBugExpected,
+    ],
+    ReportKind.feedback => <String>[l10n.reportPromptFeedbackWhy],
+  };
+}
+
+/// Get support, report a bug or give feedback, by mail from the reporter's
+/// own mail app (#160, ADR-0021): the kind, a title, details, the screen it
+/// was raised on, the device's details if the reporter ticks that box, and
+/// the app log, as a file, if they tick its box (#162).
+/// The mail app opens with the kind's subject and text preset, which the
+/// reporter can change before sending. Text only. Bugs and feedback become
+/// public issues; support stays private. Behind `Feature.feedbackMail`:
+/// until it is on, report buttons open GitHub.
 class ReportPage extends StatefulWidget {
   const ReportPage({super.key, required this.request});
 
@@ -26,6 +75,7 @@ class _ReportPageState extends State<ReportPage> {
   final FocusNode _titleFocus = FocusNode();
   ReportKind _kind = ReportKind.bug;
   bool _withDevice = false;
+  bool _withLog = false;
   bool _titleMissing = false;
   bool _sending = false;
   ReportFailure? _failure;
@@ -52,10 +102,15 @@ class _ReportPageState extends State<ReportPage> {
       kind: _kind,
       title: title,
       details: _details.text.trim(),
+      prompts: _kind.prompts(l10n),
       context: <String, String>{
         ...widget.request.always,
         if (_withDevice) ...widget.request.device,
       },
+      files: <AttachedFile>[
+        if (_withLog && !state.log.isEmpty)
+          AttachedFile(name: appLogFileName, text: state.log.text),
+      ],
     );
     setState(() {
       _sending = true;
@@ -63,11 +118,24 @@ class _ReportPageState extends State<ReportPage> {
     });
     final outcome = await state.reports.send(report);
     if (!mounted) return;
+    final kind = report.kind.label;
     switch (outcome) {
-      case ReportInMailApp():
-        showAppSnackBar(context, l10n.reportInMailApp);
+      case ReportInMailApp(:final filesLeftOut):
+        if (filesLeftOut) {
+          state.log.warning('Report in mail app ($kind), the log not attached');
+        } else {
+          state.log.event(
+            'Report in mail app ($kind)'
+            '${report.files.isEmpty ? '' : ', the log attached'}',
+          );
+        }
+        showAppSnackBar(
+          context,
+          filesLeftOut ? l10n.reportInMailAppNoLog : l10n.reportInMailApp,
+        );
         await Navigator.of(context).maybePop();
       case ReportFailed(:final reason):
+        state.log.warning('Report not sent ($kind): ${reason.name}');
         setState(() {
           _sending = false;
           _failure = reason;
@@ -90,6 +158,7 @@ class _ReportPageState extends State<ReportPage> {
       color: scheme.onSurfaceVariant,
     );
     final failure = _failure;
+    final state = AppScope.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reportTitle)),
       body: ListView(
@@ -97,29 +166,34 @@ class _ReportPageState extends State<ReportPage> {
         children: <Widget>[
           Semantics(
             container: true,
+            explicitChildNodes: true,
             label: l10n.reportKindGroup,
-            child: SegmentedButton<ReportKind>(
-              segments: <ButtonSegment<ReportKind>>[
-                ButtonSegment<ReportKind>(
-                  value: ReportKind.bug,
-                  icon: const Icon(Icons.bug_report_outlined),
-                  label: Text(l10n.reportKindBug),
-                ),
-                ButtonSegment<ReportKind>(
-                  value: ReportKind.feature,
-                  icon: const Icon(Icons.lightbulb_outline),
-                  label: Text(l10n.reportKindFeature),
-                ),
-                ButtonSegment<ReportKind>(
-                  value: ReportKind.suggestion,
-                  icon: const Icon(Icons.chat_bubble_outline),
-                  label: Text(l10n.reportKindSuggestion),
-                ),
-              ],
-              selected: <ReportKind>{_kind},
-              showSelectedIcon: false,
-              onSelectionChanged: (kinds) =>
-                  setState(() => _kind = kinds.first),
+            child: RadioGroup<ReportKind>(
+              groupValue: _kind,
+              onChanged: (kind) {
+                if (kind != null) setState(() => _kind = kind);
+              },
+              child: GroupedList(
+                children: <Widget>[
+                  for (final kind in ReportKind.values)
+                    GroupedTile(
+                      selected: kind == _kind,
+                      padding: const EdgeInsetsDirectional.symmetric(
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
+                      trailingGap: 12,
+                      leading: Icon(kind.icon),
+                      title: kind.title(l10n),
+                      subtitle: kind.description(l10n),
+                      onTap: () => setState(() => _kind = kind),
+                      trailing: Radio<ReportKind>(
+                        value: kind,
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -144,7 +218,7 @@ class _ReportPageState extends State<ReportPage> {
             maxLength: 4000,
             decoration: InputDecoration(
               labelText: l10n.reportDetailsLabel,
-              hintText: l10n.reportDetailsHint,
+              hintText: _kind.hint(l10n),
               alignLabelWithHint: true,
             ),
           ),
@@ -154,10 +228,23 @@ class _ReportPageState extends State<ReportPage> {
             value: _withDevice,
             onChanged: (value) => setState(() => _withDevice = value),
           ),
+          if (state.features.isAvailable(Feature.logs)) ...<Widget>[
+            const SizedBox(height: 8),
+            LogConsent(
+              log: state.log,
+              value: _withLog,
+              onChanged: (value) => setState(() => _withLog = value),
+            ),
+          ],
           const SizedBox(height: 16),
-          Text(l10n.reportPublic, style: muted),
+          Text(
+            _kind.public ? l10n.reportPublic : l10n.reportPrivate,
+            style: muted,
+          ),
           const SizedBox(height: 8),
           Text(l10n.reportAlsoSent, style: muted),
+          const SizedBox(height: 8),
+          Text(l10n.reportEditable, style: muted),
           if (failure != null) ...<Widget>[
             const SizedBox(height: 16),
             Semantics(

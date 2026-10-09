@@ -58,7 +58,7 @@ One per action taken on a leech, oldest first: a row of `leech_actions`.
 ## `parameters` lines
 
 One per language and skill that has been fitted (Settings → Adjust to me,
-or the automatic refit; `docs/plans/skill-model.md`), after the reviews and
+or the automatic refit; [ADR-0035](adr/0035-fsrs-fitted-per-skill.md)), after the reviews and
 leech actions, by language and then mode: a row of `fsrs_parameters`.
 
 A fit starts from the one before it, so these cannot be worked out again

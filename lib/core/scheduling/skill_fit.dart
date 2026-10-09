@@ -79,7 +79,7 @@ typedef SkillPace = ({
 });
 
 /// Fitting FSRS to the learner, one skill in one language at a time
-/// (`docs/plans/skill-model.md`; [FsrsFit] does the fitting). Pure, so
+/// (ADR-0035; [FsrsFit] does the fitting). Pure, so
 /// that it runs off the main thread.
 abstract final class SkillFit {
   /// The days the outlook looks ahead.
