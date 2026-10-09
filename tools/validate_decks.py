@@ -182,7 +182,9 @@ class DeckResolver(yaml.resolver.BaseResolver):
     app's `package:yaml` reads them: `yes`, `no`, `on` and `off` are
     strings, `060` is 60, and `1_000` is a string. PyYAML's own resolver
     follows YAML 1.1, so without this the validator and the app would read
-    the same deck differently."""
+    the same deck differently. The app's deck parser retypes plain scalars
+    by exactly these patterns (`_value` in lib/core/data/deck_parser.dart);
+    change both together."""
 
 
 for _tag, _pattern in (
@@ -573,10 +575,11 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         if key == "reading" and val is None:
             continue
         if isinstance(val, bool):
-            # YAML 1.1 resolves no/yes/on/off/true/false to booleans. This bites
-            # romanisation decks hard: the hiragana の romanises to "no".
+            # A bare true or false is a boolean. YAML 1.1 also read no, yes,
+            # on and off as booleans, which bit romanisation decks hard (the
+            # hiragana の romanises to "no"); DeckResolver reads them as text.
             r.error(where, f"{key} parsed as the boolean {val!r} -- YAML read a "
-                           f"bare no/yes/on/off as a bool. Quote the value.")
+                           f"bare true or false as a bool. Quote the value.")
         elif not _is_str(val):
             if key == "reading":
                 r.error(where, "reading must be a non-empty string or omitted")
@@ -1347,7 +1350,7 @@ def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
 
 def _code_error(value: object) -> str:
     if isinstance(value, bool):
-        return (f"got the boolean {value!r} -- YAML read a bare no/yes/on/off "
+        return (f"got the boolean {value!r} -- YAML read a bare true or false "
                 f"as a bool. Quote the code.")
     return f"got {value!r}"
 
@@ -2306,7 +2309,7 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
     if "native" in entry:
         if isinstance(native, bool):
             r.error(where, f"native parsed as the boolean {native!r} -- YAML read a "
-                           f"bare no/yes/on/off as a bool. Quote the value.")
+                           f"bare true or false as a bool. Quote the value.")
         elif not _is_str(native):
             r.error(where, "native must be a non-empty string")
     elif known.written:
@@ -2685,7 +2688,7 @@ def _check_passage_text(r: Report, where: str, block: dict, key: str) -> None:
     val = block.get(key)
     if isinstance(val, bool):
         r.error(where, f"{key} parsed as the boolean {val!r} -- YAML read a "
-                       f"bare no/yes/on/off as a bool. Quote the value.")
+                       f"bare true or false as a bool. Quote the value.")
     elif isinstance(val, (int, float)):
         r.error(where, f"{key} parsed as the number {val!r}, not text. Quote the value.")
     elif not _is_str(val):

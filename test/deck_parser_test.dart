@@ -94,6 +94,14 @@ pattern:
         él: llueve
 ''';
 
+/// [grammar] with readings and IPA on its second entry, `llover`, whose
+/// first two slots have no form: [readings] and [ipas] are the mappings.
+String grammarWith({required String readings, required String ipas}) =>
+    grammar.replaceFirst(
+      '        él: llueve\n',
+      '        él: llueve\n      readings: $readings\n      ipas: $ipas\n',
+    );
+
 void main() {
   group('the decks in decks/', () {
     final paths =
@@ -588,15 +596,30 @@ cards:
   });
 
   group('the YAML traps', () {
-    test('a bare no is a boolean, and the message says to quote it', () {
-      final yaml = vocab().replaceFirst('native: the house', 'native: no');
+    test('a bare false is a boolean, and the message says to quote it', () {
+      final yaml = vocab().replaceFirst('native: the house', 'native: false');
       expect(
         () => parse(yaml),
         throwsParseError(
-          line: lineOf(yaml, 'native: no'),
-          mentions: ['cards[0].native', 'boolean false', 'Quote it: "no"'],
+          line: lineOf(yaml, 'native: false'),
+          mentions: [
+            'cards[0].native',
+            'boolean false',
+            'YAML reads a bare true or false as a boolean',
+            'Quote it: "false"',
+          ],
         ),
       );
+    });
+
+    // The validator reads plain scalars as YAML 1.2 does (spec ground rule
+    // 8), so the hiragana の's romanisation is text in both, as package:yaml
+    // reads it too.
+    test('a bare no is text, as in CI', () {
+      final card = parse(vocab(cards: '$oneCard    reading: no\n'))
+          .cards
+          .single;
+      expect(card.reading, 'no');
     });
 
     test('a bare 007 is a number, and the message says to quote it', () {
@@ -620,60 +643,81 @@ cards:
       expect(card.native, 'no');
     });
 
-    test('the language code for Norwegian must be quoted too', () {
-      final yaml = vocab().replaceFirst('code: es', 'code: no');
+    test('the language code for Norwegian needs no quotes, as in CI', () {
+      final deck = parse(vocab().replaceFirst('code: es', 'code: no'));
+      expect(deck.language.code, 'no');
+
+      final yaml = vocab().replaceFirst('code: es', 'code: false');
       expect(
         () => parse(yaml),
         throwsParseError(
-          line: lineOf(yaml, 'code: no'),
+          line: lineOf(yaml, 'code: false'),
           mentions: ['language.code', 'boolean false'],
         ),
       );
     });
 
-    // PyYAML, which CI validates with, reads YAML 1.1. package:yaml reads
-    // YAML 1.2. A deck CI accepts must parse here, so the 1.1 reading wins.
-    test('unquoted values are typed as PyYAML types them', () {
+    // tools/validate_decks.py reads plain scalars by YAML 1.2's core schema
+    // (its DeckResolver). A deck CI accepts must parse here, and read the
+    // same, so the parser retypes plain scalars by the same patterns.
+    test('unquoted values are typed as the validator types them', () {
       final deck = parse(
         vocab(
           cards: '''
   - id: test-0001
-    target: 08
+    target: 1:30
     native: !!str 007
 ''',
-        ).replaceFirst('script: latin}', 'script: latin, rtl: yes}'),
+        ).replaceFirst('script: latin}', 'script: latin, rtl: True}'),
       );
       expect(deck.language.rtl, isTrue);
-      expect(deck.cards.single.target, '08');
+      expect(deck.cards.single.target, '1:30');
       expect(deck.cards.single.native, '007');
 
-      final yaml = vocab().replaceFirst('native: the house', 'native: 1:30');
+      // 08 is the number 8 in YAML 1.2; YAML 1.1 read it as text.
+      final yaml = vocab().replaceFirst('native: the house', 'native: 08');
       expect(
         () => parse(yaml),
-        throwsParseError(line: lineOf(yaml, '1:30'), mentions: ['number']),
+        throwsParseError(line: lineOf(yaml, '08'), mentions: ['number']),
       );
     });
 
-    // These are what package:yaml alone would get wrong, so each one fails if
-    // the retyping of a word or a number form is lost.
+    // Each of these fails if the parser's reading of a word or a number form
+    // drifts from the validator's.
     String withRtl(String value) =>
         vocab().replaceFirst('script: latin}', 'script: latin, rtl: $value}');
 
-    test('yes, on and true are true, and no, off and false are false', () {
-      for (final word in ['yes', 'on', 'true', 'no', 'off', 'false']) {
-        final value = const {'yes', 'on', 'true'}.contains(word);
+    test('true and false in three spellings are booleans', () {
+      for (final word in ['true', 'false']) {
         for (final written in [
           word,
           '${word[0].toUpperCase()}${word.substring(1)}',
           word.toUpperCase(),
         ]) {
-          expect(parse(withRtl(written)).language.rtl, value, reason: written);
+          expect(
+            parse(withRtl(written)).language.rtl,
+            word == 'true',
+            reason: written,
+          );
         }
       }
     });
 
-    test('other spellings of them are text, as in CI', () {
-      for (final written in ['y', 'n', 'yEs', 'oN']) {
+    // YAML 1.1's other boolean words are text in YAML 1.2, so a bare yes
+    // where a boolean is wanted is refused, as the validator refuses it.
+    test('yes, no, on, off and other spellings are text, as in CI', () {
+      for (final written in [
+        'yes',
+        'no',
+        'on',
+        'off',
+        'Yes',
+        'NO',
+        'y',
+        'n',
+        'yEs',
+        'tRUE',
+      ]) {
         expect(
           () => parse(withRtl(written)),
           throwsParseError(
@@ -685,19 +729,28 @@ cards:
       }
     });
 
-    test('what PyYAML reads as a number is a number', () {
+    test('what the validator reads as a number is a number', () {
       for (final number in [
         '0x1A',
-        '0b11',
+        '0x1f',
+        '0o17',
         '017',
+        '08',
         '+12',
+        '-5',
         '1.5',
         '.5',
+        '1.',
+        '+.5',
+        '-.5',
+        '1e5',
+        '1.0e5',
         '6.8523015e+5',
         '.inf',
         '-.Inf',
+        '+.INF',
         '.nan',
-        '1:30.5',
+        '123456789012345678901234567890',
       ]) {
         final yaml = vocab().replaceFirst('la casa', number);
         expect(
@@ -715,35 +768,54 @@ cards:
       }
     });
 
-    // In YAML 1.1 an octal number is 017, not 0o17, and an exponent needs a
-    // dot and a sign.
-    test('what only YAML 1.2 reads as a number is text, as in CI', () {
-      for (final text in ['08', '09', '0o17', '1e5', '1.0e5', '+.5', '-.5']) {
+    // YAML 1.1 read these as numbers: binary, base 60, and digits with
+    // underscores. YAML 1.2, and so the validator, reads them as text.
+    test('what only YAML 1.1 reads as a number is text, as in CI', () {
+      for (final text in [
+        '0b11',
+        '1:30.5',
+        '1_000',
+        '+0x1F',
+        '-0x1F',
+        '0O17',
+        '-.nan',
+        '1e',
+        '2001-12-14',
+        '=',
+      ]) {
         final card = parse(vocab().replaceFirst('la casa', text)).cards.single;
-        expect(card.target, text);
+        expect(card.target, text, reason: text);
       }
     });
 
-    test('schema is 1 however PyYAML can write 1', () {
+    test('schema is 1 however the validator can write 1', () {
       for (final one in [
         '+1',
         '01',
         '0x1',
-        '0b1',
-        '+0b1',
-        '1_',
+        '0o1',
         '1.',
+        '1.0',
+        '1e0',
         '.1e+1',
-        '0:1.0',
       ]) {
         final yaml = vocab().replaceFirst('schema: 1', 'schema: $one');
         expect(parse(yaml).id, 'test-deck', reason: one);
       }
     });
 
-    // 0o1 and 1e0 are 1 in YAML 1.2, and yes and true are 1 to Python's ==.
+    // 0b1, 1_ and 0:1.0 are text in YAML 1.2, and true is not a number,
+    // though Python's == says True is 1.
     test('schema is not 1 when it only looks like 1', () {
-      for (final other in ['0o1', '1e0', 'yes', 'true', '!!str 1']) {
+      for (final other in [
+        '0b1',
+        '+0b1',
+        '1_',
+        '0:1.0',
+        'yes',
+        'true',
+        '!!str 1',
+      ]) {
         final yaml = vocab().replaceFirst('schema: 1', 'schema: $other');
         expect(
           () => parse(yaml),
@@ -774,15 +846,22 @@ cards:
       expect(card.native, '007');
     });
 
-    // PyYAML types a scalar tagged `!` by its look, even quoted. package:yaml
-    // makes it text.
+    // PyYAML types a scalar tagged `!` by its look, even quoted, with the
+    // validator's patterns. package:yaml makes it text.
     test('a value tagged with a bare ! is typed by its look', () {
-      expect(parse(withRtl('! "yes"')).language.rtl, isTrue);
-      final one = vocab().replaceFirst('schema: 1', r'schema: ! "1\n"');
+      expect(parse(withRtl('! "true"')).language.rtl, isTrue);
+      final one = vocab().replaceFirst('schema: 1', 'schema: ! "0x1"');
       expect(parse(one).id, 'test-deck');
 
-      // A lone newline stays text: PyYAML picks its patterns by the first
-      // character, and none of them starts with one.
+      // The patterns match the whole text: a 1 followed by a newline is
+      // text, and so not the schema 1.
+      final newline = vocab().replaceFirst('schema: 1', r'schema: ! "1\n"');
+      expect(
+        () => parse(newline),
+        throwsParseError(line: 1, mentions: ['schema must be 1, got']),
+      );
+
+      // So is a lone newline, which is not the empty null.
       final blank = vocab(cards: '$oneCard    reading: ! "\\n"\n');
       expect(
         () => parse(blank),
@@ -800,6 +879,41 @@ cards:
           mentions: ['read as a number', 'it is tagged !. Remove the tag'],
         ),
       );
+    });
+
+    // The validator reads a null reading as one left out (spec 4.2): so a
+    // slot with no form may give its reading and IPA as null, and only as
+    // null.
+    test('a null reading or IPA under a null form is none, as in CI', () {
+      final entry = parse(
+        grammarWith(
+          readings: '{yo: null, tú: ~, él: yueve}',
+          ipas: '{yo: ~, él: ʎweβe}',
+        ),
+      ).pattern!.entries.last;
+      expect(entry.readings, {
+        'él': ['yueve'],
+      });
+      expect(entry.ipas, {'él': 'ʎweβe'});
+
+      for (final (readings, ipas, slot) in [
+        ('{yo: yo, él: yueve}', '{él: ʎweβe}', 'readings'),
+        ('{él: yueve}', '{tú: tu, él: ʎweβe}', 'ipas'),
+      ]) {
+        final yaml = grammarWith(readings: readings, ipas: ipas);
+        expect(
+          () => parse(yaml),
+          throwsParseError(
+            line: lineOf(yaml, '$slot:', occurrence: 1),
+            mentions: ['has no form, so it has no'],
+          ),
+          reason: '$readings $ipas',
+        );
+      }
+
+      // A null under a slot with a form is a reading missing.
+      final missing = grammarWith(readings: '{él: null}', ipas: '{él: ʎweβe}');
+      expect(() => parse(missing), throwsA(isA<DeckParseException>()));
     });
 
     test('a tagged value is not called bare', () {
@@ -1084,13 +1198,13 @@ cards:
 
   group('messages', () {
     test('start with the source, line and column', () {
-      final yaml = vocab().replaceFirst('native: the house', 'native: no');
+      final yaml = vocab().replaceFirst('native: the house', 'native: false');
       try {
         DeckParser.parse(yaml, source: 'es-en-core-100.yaml');
         fail('expected a DeckParseException');
       } on DeckParseException catch (e) {
         expect(e.source, 'es-en-core-100.yaml');
-        expect(e.line, lineOf(yaml, 'native: no'));
+        expect(e.line, lineOf(yaml, 'native: false'));
         expect(e.column, 13);
         expect(e.toString(), 'es-en-core-100.yaml:${e.line}:13: ${e.message}');
       }

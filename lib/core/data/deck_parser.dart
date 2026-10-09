@@ -56,10 +56,10 @@ class DeckParseException implements Exception {
 ///
 /// The exception is YAML that PyYAML loads and package:yaml does not, which no
 /// rule here decides: a tag package:yaml does not build, or builds more
-/// strictly, like `!!timestamp`, `!!float 1` or `!!bool yes`; two keys that
-/// YAML 1.2 reads as the same number and YAML 1.1 does not, like `010` and
-/// `10`; and oddities such as a `"\uD800"` escape or a U+2028 line break. A
-/// deck using one passes CI and fails here.
+/// strictly, like `!!timestamp`, `!!float 1` or `!!bool yes`; and oddities
+/// such as a `"\uD800"` escape or a U+2028 line break. A deck using one
+/// passes CI and fails here. Plain scalars are not among them: both read them
+/// as YAML 1.2's core schema does ([_value]).
 ///
 /// Parsing stops at the first problem.
 abstract final class DeckParser {
@@ -341,7 +341,7 @@ class _Reader {
     final fields = _Fields(this, root, '');
     final schemaNode = fields.require('schema');
     final schema = _value(schemaNode);
-    if (schema is! num || schema != 1) {
+    if (!_isNumber(schema) || schema != 1) {
       fail(schemaNode, 'schema must be 1, got ${_describe(schemaNode)}');
     }
     return fields;
@@ -2007,7 +2007,7 @@ class _Reader {
     for (final entry in map.nodes.entries) {
       final key = entry.key as YamlNode;
       final code = _value(key);
-      if (code is bool || code is num) {
+      if (code is bool || _isNumber(code)) {
         fail(key, _notText(key, 'the key ${_plainText(key)} in $path'));
       }
       if (code is! String || !_languageCode.hasMatch(code)) {
@@ -2153,7 +2153,7 @@ class _Reader {
   }
 
   /// Each form romanised (#47): a reading or a list of them for every slot
-  /// with a form, and none for a slot without.
+  /// with a form, and none for a slot without: left out, or null.
   Map<String, List<String>> readings(
     YamlNode node,
     String path,
@@ -2167,10 +2167,13 @@ class _Reader {
       if (slot is! String || !forms.containsKey(slot)) {
         fail(key, '$path: ${_describe(key)} is not a slot');
       }
+      final value = entry.value;
       if (forms[slot] == null) {
+        // A null reading under a null form is a reading left out, as the
+        // validator reads it (spec 4.2).
+        if (value is YamlScalar && _value(value) == null) continue;
         fail(key, '$path: "$slot" has no form, so it has no reading');
       }
-      final value = entry.value;
       found[slot] = value is YamlList
           ? List.unmodifiable(<String>[
               for (final (i, item) in list(value, '$path.$slot').indexed)
@@ -2189,7 +2192,7 @@ class _Reader {
   }
 
   /// The form shown in each slot, in the IPA (ADR-0025): one for every slot
-  /// with a form, and none for a slot without.
+  /// with a form, and none for a slot without: left out, or null.
   Map<String, String> ipas(
     YamlNode node,
     String path,
@@ -2204,6 +2207,8 @@ class _Reader {
         fail(key, '$path: ${_describe(key)} is not a slot');
       }
       if (forms[slot] == null) {
+        // As a null reading under a null form: left out.
+        if (entry.value is YamlScalar && _value(entry.value) == null) continue;
         fail(key, '$path: "$slot" has no form, so it has no IPA');
       }
       found[slot] = text(entry.value, '$path.$slot');
@@ -2232,7 +2237,7 @@ class _Reader {
     for (final entry in map.nodes.entries) {
       final key = entry.key as YamlNode;
       final slot = _value(key);
-      if (slot is bool || slot is num) {
+      if (slot is bool || _isNumber(slot)) {
         fail(key, _notText(key, 'the key ${_plainText(key)} in $path'));
       }
       if (slot is! String || !slots.contains(slot)) {
@@ -2386,13 +2391,18 @@ String _pythonRepr(YamlNode key) => switch (_value(key)) {
   true => 'True',
   false => 'False',
   null => 'None',
+  final int value => '$value',
+  final BigInt value => '$value',
+  final double value when value.isNaN => 'nan',
+  final double value when value.isInfinite => value > 0 ? 'inf' : '-inf',
+  final double value => '$value',
   _ => _plainText(key),
 };
 
 /// The name Python gives [value]'s type, as the validator says it.
 String _pythonType(Object? value) => switch (value) {
   bool() => 'bool',
-  int() => 'int',
+  int() || BigInt() => 'int',
   double() => 'float',
   null => 'NoneType',
   Map() => 'dict',
@@ -2400,65 +2410,62 @@ String _pythonType(Object? value) => switch (value) {
   _ => value.runtimeType.toString(),
 };
 
-/// What [node] holds, typed the way PyYAML types it.
+/// What [node] holds, typed the way the validator types it.
 ///
-/// `tools/validate_decks.py` reads decks with PyYAML, which follows YAML 1.1:
-/// there a bare `no`, `yes`, `on` or `off` is a boolean, `1:30` is a number and
-/// `08` is text. package:yaml follows YAML 1.2, which disagrees on all of
-/// those. So an unquoted scalar is retyped here by PyYAML's rules, and
-/// `native: no` is the boolean false in both places, rather than the text "no"
-/// in one of them.
+/// `tools/validate_decks.py` reads plain scalars as YAML 1.2's core schema
+/// does (its `DeckResolver`; spec ground rule 8): only `true` and `false` in
+/// three spellings are booleans, so a bare `no`, `yes`, `on` or `off` is text;
+/// digits are a decimal integer (`060` is 60), `0o` and `0x` octal and
+/// hexadecimal; `1_000`, `1:30` and `0b101` are text. package:yaml reads
+/// nearly the same, but builds a few scalars by Dart's rules rather than the
+/// schema's, so an unquoted scalar is retyped here by the validator's
+/// patterns, character for character, and the two can never disagree.
 ///
-/// Only nulls, booleans and numbers are retyped. PyYAML also reads a bare
-/// `2001-12-14` as a date, which the validator rejects wherever it wants text,
-/// and refuses a bare `=` outright. Reading both as text only accepts more.
+/// A tag types a scalar in both parsers, as in `!!str 007`. The bare `!` is
+/// the exception: after it PyYAML types even a quoted scalar by its look,
+/// with the same patterns.
 Object? _value(YamlNode node) {
   final value = node.value;
   if (node is! YamlScalar) return value;
-  // A tag types the scalar in both parsers, as in `!!str 007`. The bare `!`
-  // is the exception: after it PyYAML types even a quoted scalar by its look.
   final tag = _tag(node);
   if (tag == null ? node.style != ScalarStyle.PLAIN : tag != '!') return value;
 
   final text = _plainText(node);
-  // PyYAML picks its patterns by the first character, then matches with
-  // Python's `$`, which also matches before a final newline. Only a quoted
-  // scalar tagged `!` can end in one.
-  final look = text.length > 1 && text.endsWith('\n')
-      ? text.substring(0, text.length - 1)
-      : text;
-  if (_yaml11Null.hasMatch(look)) return null;
-  if (_yaml11True.hasMatch(look)) return true;
-  if (_yaml11False.hasMatch(look)) return false;
-  if (_yaml11Int.hasMatch(look) || _yaml11Float.hasMatch(look)) {
-    return _yaml11Number(look);
-  }
+  if (_coreNull.hasMatch(text)) return null;
+  if (_coreTrue.hasMatch(text)) return true;
+  if (_coreFalse.hasMatch(text)) return false;
+  if (_coreInt.hasMatch(text)) return _coreInteger(text);
+  if (_coreFloat.hasMatch(text)) return _coreDouble(text);
   return text;
 }
 
-/// [text], which PyYAML types as a number, as a number with the same answer
-/// to the one question asked of it.
-///
-/// Only `schema` uses the value, to ask whether it is 1, and CI says yes to
-/// `0b1` and `0:1.0` as well as to `01` and `0x1`. So binary and base 60 are
-/// read as PyYAML reads them, in yaml/constructor.py. Octal is read as decimal,
-/// which gives the same answer, and whatever Dart cannot read, like `.inf`, is
-/// NaN: still a number, and never 1.
-num _yaml11Number(String text) {
-  var digits = text.replaceAll('_', '');
-  final sign = digits.startsWith('-') ? -1 : 1;
-  if (digits.startsWith('-') || digits.startsWith('+')) {
-    digits = digits.substring(1);
-  }
-  if (digits.contains(':')) {
-    // In doubles, so that a long one cannot wrap round to a small int.
-    return sign *
-        digits.split(':').fold(0.0, (sum, part) => sum * 60 + _double(part));
-  }
-  if (digits.startsWith('0b')) {
-    return sign * (int.tryParse(digits.substring(2), radix: 2) ?? double.nan);
-  }
-  return sign * (num.tryParse(digits) ?? double.nan);
+/// [text], which the validator reads as an integer, as the same integer:
+/// decimal even with leading zeros, `0o` octal, `0x` hexadecimal. One too
+/// long for an `int` is a [BigInt], as Python's int has no limit.
+Object _coreInteger(String text) {
+  final (digits, radix) = text.startsWith('0o')
+      ? (text.substring(2), 8)
+      : text.startsWith('0x')
+      ? (text.substring(2), 16)
+      : (text.startsWith('+') ? text.substring(1) : text, 10);
+  return int.tryParse(digits, radix: radix) ??
+      BigInt.parse(digits, radix: radix);
+}
+
+/// Whether [value] is a number: a Dart [num], or a [BigInt] for an integer
+/// too long for an `int`.
+bool _isNumber(Object? value) => value is num || value is BigInt;
+
+/// [text], which the validator reads as a float, as the same double.
+double _coreDouble(String text) {
+  final lower = text.toLowerCase();
+  final sign = lower.startsWith('-') ? -1.0 : 1.0;
+  final unsigned = lower.startsWith('-') || lower.startsWith('+')
+      ? lower.substring(1)
+      : lower;
+  if (unsigned == '.inf') return sign * double.infinity;
+  if (unsigned == '.nan') return double.nan;
+  return sign * double.parse(unsigned);
 }
 
 /// A scalar's text as written, without its anchor, tag or quotes.
@@ -2490,7 +2497,7 @@ String _describe(YamlNode node) {
 /// value is typed by how it looks, and a tagged one by its tag.
 String _notText(YamlNode node, String name) {
   final value = _value(node);
-  if (value is! bool && value is! num) {
+  if (value is! bool && !_isNumber(value)) {
     return value == null
         ? '$name has no value'
         : '$name must be text, not ${_describe(node)}';
@@ -2500,8 +2507,7 @@ String _notText(YamlNode node, String name) {
     // Quoting alone is not enough, because a tag types a quoted value too.
     final tag? => 'it is tagged $tag. Remove the tag and quote it',
     null when value is bool =>
-      'YAML reads a bare no, yes, on, off, true or false as a boolean. '
-          'Quote it',
+      'YAML reads a bare true or false as a boolean. Quote it',
     null => 'YAML reads a bare $text as a number. Quote it',
   };
   final read = value is bool ? 'the boolean $value' : 'a number';
@@ -2515,9 +2521,6 @@ String _wrongType(YamlNode node, String name, String expected) =>
 
 String _firstUsed(YamlNode node) =>
     'first used on line ${node.span.start.line + 1}';
-
-/// [text] as a double, or NaN if it is not one.
-double _double(String text) => double.tryParse(text) ?? double.nan;
 
 /// Blank as Python's `str.strip()` sees it, which is what the validator tests.
 /// Dart's `trim()` differs: it also strips U+FEFF, and not U+001C to U+001F.
@@ -2533,21 +2536,13 @@ final _properties = RegExp(r'^(?:[&!]\S*(?:\s+|$))*');
 /// is the first group.
 final _tagged = RegExp(r'^(?:&\S+\s+)?(!\S*)');
 
-// PyYAML's implicit resolvers for plain scalars, from yaml/resolver.py.
-final _yaml11Null = RegExp(r'^(?:~|null|Null|NULL|)$');
-final _yaml11True = RegExp(r'^(?:yes|Yes|YES|true|True|TRUE|on|On|ON)$');
-final _yaml11False = RegExp(r'^(?:no|No|NO|false|False|FALSE|off|Off|OFF)$');
-final _yaml11Int = RegExp(
-  r'^(?:[-+]?0b[0-1_]+'
-  r'|[-+]?0[0-7_]+'
-  r'|[-+]?(?:0|[1-9][0-9_]*)'
-  r'|[-+]?0x[0-9a-fA-F_]+'
-  r'|[-+]?[1-9][0-9_]*(?::[0-5]?[0-9])+)$',
-);
-final _yaml11Float = RegExp(
-  r'^(?:[-+]?(?:[0-9][0-9_]*)\.[0-9_]*(?:[eE][-+][0-9]+)?'
-  r'|\.[0-9][0-9_]*(?:[eE][-+][0-9]+)?'
-  r'|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\.[0-9_]*'
-  r'|[-+]?\.(?:inf|Inf|INF)'
-  r'|\.(?:nan|NaN|NAN))$',
+// The validator's resolvers for plain scalars, `DeckResolver` in
+// tools/validate_decks.py: YAML 1.2's core schema.
+final _coreNull = RegExp(r'^(?:null|Null|NULL|~|)$');
+final _coreTrue = RegExp(r'^(?:true|True|TRUE)$');
+final _coreFalse = RegExp(r'^(?:false|False|FALSE)$');
+final _coreInt = RegExp(r'^(?:[-+]?[0-9]+|0o[0-7]+|0x[0-9a-fA-F]+)$');
+final _coreFloat = RegExp(
+  r'^(?:[-+]?(?:\.[0-9]+|[0-9]+(?:\.[0-9]*)?)(?:[eE][-+]?[0-9]+)?'
+  r'|[-+]?\.(?:inf|Inf|INF)|\.(?:nan|NaN|NAN))$',
 );
