@@ -312,6 +312,11 @@ The owner's answers to #235, 2026-10-08:
   Each skill's parameters are therefore kept, not recomputed: in the
   profile's database and in the JSONL backup, so a restored phone
   schedules exactly as before (owner, 2026-10-09).
+- **What a fit learns from** (owner: "don't use fixed row count. Use last 3
+  month's data, or last 1,000 rows, whichever is longer"): a skill's
+  reviews from the last three months, or its last 1,000, whichever is more.
+  Earlier reviews still build each word's memory state up to that window;
+  only the window's answers are what the fit learns from.
 - **Shown prominently** (owner: "Yes. Prominently. Figure out how"), on
   Progress under Your strengths and where the learner will see it; the
   design is put to the owner before it is built.
