@@ -1,113 +1,100 @@
 schema: 1
-id: hi-en-calendar
-name: "Months and years"
-kind: vocab
-theme: calendar
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The months as Hindi says them, and how to read a year."
-tags: [beginner]
+id: "hi-calendar"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "calendar"
+tags: ["beginner"]
 cards:
-  - id: hi-0317
+  - id: "hi-0317"
     target: "महीना"
-    native: "month"
     reading: "mahīnā"
     ipa: "məɦiːnaː"
     pos: "noun"
     gender: "m"
-    notes: "The Gregorian months are used for almost everything; the Hindu calendar's months matter mainly for festivals."
-  - id: hi-0318
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0318"
     target: "साल"
-    native: "year"
     reading: "sāl"
     ipa: "saːl"
     pos: "noun"
     gender: "m"
-    notes: "Years before 2000 are read in hundreds: 1950 is उन्नीस सौ पचास (unnīs sau pacās), 'nineteen hundred fifty'. From 2000, in thousands: 2020 is दो हज़ार बीस (dō hazār bīs)."
-  - id: hi-0319
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0319"
     target: "तारीख़"
-    native: "date"
     reading: "tārīk͟h"
     ipa: "t̪aːriːx"
     alt_target: ["तारीख"]
     pos: "noun"
     gender: "f"
-    notes: "आज कौन-सी तारीख़ है (āj kaun-sī tārīk͟h hai)? What's the date today?"
-  - id: hi-0320
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0320"
     target: "जनवरी"
-    native: "January"
     reading: "janvarī"
     ipa: "dʒənʋəriː"
     pos: "noun"
-    notes: "The months come from English. Speakers differ on their gender, so the verb may agree either way."
-  - id: hi-0321
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0321"
     target: "फ़रवरी"
-    native: "February"
     reading: "farvarī"
     ipa: "fərʋəriː"
     alt_target: ["फरवरी"]
     pos: "noun"
-  - id: hi-0322
+  - id: "hi-0322"
     target: "मार्च"
-    native: "March"
     reading: "mārc"
     ipa: "maːrtʃ"
     pos: "noun"
-  - id: hi-0323
+  - id: "hi-0323"
     target: "अप्रैल"
-    native: "April"
     reading: "aprail"
     ipa: "əprɛːl"
     pos: "noun"
-  - id: hi-0324
+  - id: "hi-0324"
     target: "मई"
-    native: "May"
     reading: "maī"
     ipa: "məiː"
     pos: "noun"
-  - id: hi-0325
+  - id: "hi-0325"
     target: "जून"
-    native: "June"
     reading: "jūn"
     ipa: "dʒuːn"
     pos: "noun"
-  - id: hi-0326
+  - id: "hi-0326"
     target: "जुलाई"
-    native: "July"
     reading: "julāī"
     ipa: "dʒʊlaːiː"
     pos: "noun"
-  - id: hi-0327
+  - id: "hi-0327"
     target: "अगस्त"
-    native: "August"
     reading: "agast"
     ipa: "əɡəst̪"
     pos: "noun"
-  - id: hi-0328
+  - id: "hi-0328"
     target: "सितंबर"
-    native: "September"
     reading: "sitambar"
     ipa: "sɪt̪əmbər"
     alt_target: ["सितम्बर"]
     pos: "noun"
-  - id: hi-0329
+  - id: "hi-0329"
     target: "अक्तूबर"
-    native: "October"
     reading: "aktūbar"
     ipa: "əkt̪uːbər"
     alt_target: ["अक्टूबर"]
     pos: "noun"
-  - id: hi-0330
+  - id: "hi-0330"
     target: "नवंबर"
-    native: "November"
     reading: "navambar"
     ipa: "nəʋəmbər"
     alt_target: ["नवम्बर"]
     pos: "noun"
-  - id: hi-0331
+  - id: "hi-0331"
     target: "दिसंबर"
-    native: "December"
     reading: "disambar"
     ipa: "d̪ɪsəmbər"
     alt_target: ["दिसम्बर"]

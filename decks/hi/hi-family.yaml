@@ -1,200 +1,187 @@
 schema: 1
-id: hi-en-family
-name: "Family"
-kind: vocab
-theme: family
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, each with its own word. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "hi-family"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
 cards:
-  - ref: hi-0193
-  - id: hi-0375
+  - ref: "hi-0193"
+  - id: "hi-0375"
     target: "माता-पिता"
-    native: "parents"
     reading: "mātā-pitā"
     ipa: "maːt̪aːpɪt̪aː"
     alt_target: ["माँ-बाप"]
     pos: "noun"
-    notes: "In speech also माँ-बाप (mām̐-bāp)."
-  - id: hi-0376
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0376"
     target: "पिता"
-    native: "father"
     reading: "pitā"
     ipa: "pɪt̪aː"
     alt_target: ["पिताजी", "पापा"]
     pos: "noun"
     gender: "m"
-    notes: "पिताजी (pitājī) adds respect; many children say पापा (pāpā)."
-  - id: hi-0377
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0377"
     target: "माँ"
-    native: "mother"
     reading: "mām̐"
     ipa: "mãː"
     alt_target: ["माता", "मम्मी"]
     pos: "noun"
     gender: "f"
-    notes: "Formally माता (mātā); many children say मम्मी (mammī)."
-  - id: hi-0378
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0378"
     target: "भाई"
-    native: "brother"
     reading: "bhāī"
     ipa: "bʱaːiː"
     pos: "noun"
     gender: "m"
-    notes: "An elder brother is बड़ा भाई (baṛā bhāī), and is often called भैया (bhaiyā)."
-  - id: hi-0379
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0379"
     target: "बहन"
-    native: "sister"
     reading: "bahan"
     ipa: "bəɦən"
     pos: "noun"
     gender: "f"
-    notes: "An elder sister is बड़ी बहन (baṛī bahan), and is often called दीदी (dīdī)."
-  - ref: hi-0184
-    native: "son"
-    notes: "Also how an elder addresses any younger person, a girl too: see Addressing people."
-  - id: hi-0380
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "hi-0184"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0380"
     target: "बेटी"
-    native: "daughter"
     reading: "bēṭī"
     ipa: "beːʈiː"
     pos: "noun"
     gender: "f"
-  - id: hi-0381
+  - id: "hi-0381"
     target: "पति"
-    native: "husband"
     reading: "pati"
     ipa: "pət̪ɪ"
     pos: "noun"
     gender: "m"
-  - id: hi-0382
+  - id: "hi-0382"
     target: "पत्नी"
-    native: "wife"
     reading: "patnī"
     ipa: "pət̪niː"
     pos: "noun"
     gender: "f"
-  - id: hi-0383
+  - id: "hi-0383"
     target: "बच्चे"
-    native: "children"
     reading: "baccē"
     ipa: "bətʃtʃeː"
     pos: "noun"
-    notes: "The plural of बच्चा (baccā), child."
-  - id: hi-0384
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0384"
     target: "दादा"
-    native: "grandfather (father's father)"
     reading: "dādā"
     ipa: "d̪aːd̪aː"
     alt_target: ["दादाजी"]
     pos: "noun"
     gender: "m"
-  - id: hi-0385
+  - id: "hi-0385"
     target: "दादी"
-    native: "grandmother (father's mother)"
     reading: "dādī"
     ipa: "d̪aːd̪iː"
     alt_target: ["दादीजी"]
     pos: "noun"
     gender: "f"
-  - id: hi-0386
+  - id: "hi-0386"
     target: "नाना"
-    native: "grandfather (mother's father)"
     reading: "nānā"
     ipa: "naːnaː"
     alt_target: ["नानाजी"]
     pos: "noun"
     gender: "m"
-  - id: hi-0387
+  - id: "hi-0387"
     target: "नानी"
-    native: "grandmother (mother's mother)"
     reading: "nānī"
     ipa: "naːniː"
     alt_target: ["नानीजी"]
     pos: "noun"
     gender: "f"
-  - id: hi-0388
+  - id: "hi-0388"
     target: "चाचा"
-    native: "uncle (father's younger brother)"
     reading: "cācā"
     ipa: "tʃaːtʃaː"
     pos: "noun"
     gender: "m"
-    notes: "His wife is चाची (cācī)."
-  - id: hi-0389
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0389"
     target: "ताऊ"
-    native: "uncle (father's elder brother)"
     reading: "tāū"
     ipa: "t̪aːuː"
     alt_target: ["ताया"]
     pos: "noun"
     gender: "m"
-    notes: "Also ताया (tāyā). His wife is ताई (tāī)."
-  - id: hi-0390
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0390"
     target: "बुआ"
-    native: "aunt (father's sister)"
     reading: "buā"
     ipa: "bʊaː"
     pos: "noun"
     gender: "f"
-    notes: "Her husband is फूफा (phūphā)."
-  - id: hi-0391
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0391"
     target: "मामा"
-    native: "uncle (mother's brother)"
     reading: "māmā"
     ipa: "maːmaː"
     pos: "noun"
     gender: "m"
-    notes: "His wife is मामी (māmī)."
-  - id: hi-0392
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0392"
     target: "मौसी"
-    native: "aunt (mother's sister)"
     reading: "mausī"
     ipa: "mɔːsiː"
     pos: "noun"
     gender: "f"
-    notes: "Her husband is मौसा (mausā)."
-  - id: hi-0393
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0393"
     target: "ससुर"
-    native: "father-in-law"
     reading: "sasur"
     ipa: "səsʊr"
     pos: "noun"
     gender: "m"
-  - id: hi-0394
+  - id: "hi-0394"
     target: "सास"
-    native: "mother-in-law"
     reading: "sās"
     ipa: "saːs"
     pos: "noun"
     gender: "f"
-  - id: hi-0395
+  - id: "hi-0395"
     target: "रिश्तेदार"
-    native: "relative"
     reading: "riśtēdār"
     ipa: "rɪʃt̪eːd̪aːr"
     pos: "noun"
     gender: "m"
-  - id: hi-0396
+  - id: "hi-0396"
     target: "मेरे दो भाई और एक बहन हैं।"
-    native: "I have two brothers and a sister."
     reading: "mērē dō bhāī aur ēk bahan haim̐."
     ipa: "meːreː d̪oː bʱaːiː ɔːr eːk bəɦən ɦɛ̃ː"
     pos: "phrase"
-    notes: "Family takes the possessive, not के पास (kē pās): 'my two brothers are'."
-  - id: hi-0397
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0397"
     target: "आपके कितने भाई-बहन हैं?"
-    native: "How many brothers and sisters do you have?"
     reading: "āpkē kitnē bhāī-bahan haim̐?"
     ipa: "aːpkeː kɪt̪neː bʱaːiːbəɦən ɦɛ̃ː"
     pos: "phrase"
-  - id: hi-0398
+  - id: "hi-0398"
     target: "मेरी शादी हो गई है।"
-    native: "I'm married."
     reading: "mērī śādī hō gaī hai."
     ipa: "meːriː ʃaːd̪iː ɦoː ɡəiː ɦɛː"
     alt_target: ["मैं शादीशुदा हूँ।"]
     pos: "phrase"
-    notes: "Literally 'my wedding has happened'. Also मैं शादीशुदा हूँ (maim̐ śādīśudā hūm̐)."
+    notes:
+      - { id: "n1", kind: "note" }

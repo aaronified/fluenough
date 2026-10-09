@@ -1,103 +1,95 @@
 schema: 1
-id: hi-en-help
-name: "Help"
-kind: vocab
-theme: help
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Asking for help, doctors and medicine, and saying you are lost."
-tags: [beginner]
+id: "hi-help"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner"]
 cards:
-  - id: hi-0352
+  - id: "hi-0352"
     target: "मदद"
-    native: "help"
     reading: "madad"
     ipa: "məd̪əd̪"
     pos: "noun"
     gender: "f"
-  - id: hi-0353
+  - id: "hi-0353"
     target: "मदद कीजिए!"
-    native: "Please help!"
     reading: "madad kījiē!"
     ipa: "məd̪əd̪ kiːdʒɪeː"
     pos: "phrase"
     tags: ["polite"]
-  - id: hi-0354
+  - id: "hi-0354"
     target: "बचाओ!"
-    native: "Help! (in danger)"
     reading: "bacāō!"
     ipa: "bətʃaːoː"
     pos: "phrase"
-    notes: "What you shout in danger: literally 'save me!'"
-  - id: hi-0355
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0355"
     target: "रुकिए!"
-    native: "Stop! Wait, please!"
     reading: "rukiē!"
     ipa: "rʊkɪeː"
     pos: "phrase"
     tags: ["polite"]
-  - id: hi-0356
+  - id: "hi-0356"
     target: "पुलिस"
-    native: "police"
     picture: "👮"
     reading: "pulis"
     ipa: "pʊlɪs"
     pos: "noun"
     gender: "f"
-    notes: "Feminine: पुलिस आ गई (pulis ā gaī), the police have come. The emergency number in India is 112."
-  - id: hi-0357
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0357"
     target: "डॉक्टर"
-    native: "doctor"
     picture: "🧑‍⚕"
     reading: "ḍôkṭar"
     ipa: "ɖɔkʈər"
     alt_target: ["डाक्टर"]
     pos: "noun"
     gender: "m"
-  - id: hi-0358
+  - id: "hi-0358"
     target: "अस्पताल"
-    native: "hospital"
     picture: "🏥"
     reading: "aspatāl"
     ipa: "əspət̪aːl"
     pos: "noun"
     gender: "m"
-  - id: hi-0359
+  - id: "hi-0359"
     target: "दवाई"
-    native: "medicine"
     picture: "💊"
     reading: "davāī"
     ipa: "d̪əʋaːiː"
     alt_target: ["दवा"]
     pos: "noun"
     gender: "f"
-    notes: "Also दवा (davā). A chemist's is दवाई की दुकान (davāī kī dukān)."
-  - id: hi-0360
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0360"
     target: "दर्द"
-    native: "pain"
     reading: "dard"
     ipa: "d̪ərd̪"
     pos: "noun"
     gender: "m"
-    notes: "सिर में दर्द है (sir mēm̐ dard hai), I have a headache: 'there is pain in the head'."
-  - id: hi-0361
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0361"
     target: "मैं खो गया हूँ।"
-    native: "I'm lost. (said by a man)"
     reading: "maim̐ khō gayā hūm̐."
     ipa: "mɛ̃ː kʰoː ɡəjaː ɦũː"
     pos: "phrase"
-    notes: "A woman says खो गई हूँ (khō gaī hūm̐)."
-  - id: hi-0362
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0362"
     target: "मुझे समझ नहीं आया।"
-    native: "I didn't understand."
     reading: "mujhē samajh nahīm̐ āyā."
     ipa: "mʊdʒʱeː səmədʒʱ nəɦĩː aːjaː"
     pos: "phrase"
-  - id: hi-0363
+  - id: "hi-0363"
     target: "टॉयलेट कहाँ है?"
-    native: "Where is the toilet?"
     reading: "ṭôylēṭ kahām̐ hai?"
     ipa: "ʈɔjleːʈ kəɦãː ɦɛː"
     pos: "phrase"
-    notes: "Signs say शौचालय (śaucālay). Speakers say टॉयलेट (ṭôylēṭ) or बाथरूम (bāthrūm)."
+    notes:
+      - { id: "n1", kind: "note" }
