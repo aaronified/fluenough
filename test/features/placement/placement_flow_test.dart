@@ -315,7 +315,6 @@ void main() {
       ),
     );
     final l10n = l10nOf(tester);
-    final bengali = nameOf(state, 'bn');
     final hindi = nameOf(state, 'hi');
     await tapText(tester, l10n.navSettings);
     await tapText(tester, l10n.settingsLearn);
@@ -405,7 +404,7 @@ void main() {
   testWidgets("without the alphabet, placement's check shows the reading "
       'first', (tester) async {
     usePhone(tester);
-    final state = await pumpFirstLaunch(tester);
+    await pumpFirstLaunch(tester);
     final l10n = l10nOf(tester);
     await pickLanguage(tester, 'hi');
     await flipScript(tester, 'hi');

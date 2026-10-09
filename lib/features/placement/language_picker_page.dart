@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
@@ -81,6 +82,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   late Map<String, String> _ownNames =
       widget.ownNames ?? const <String, String>{};
   final Map<String, GlobalKey> _cardKeys = <String, GlobalKey>{};
+  final ScrollController _scroll = ScrollController();
 
   /// What the current profile learns, once the learner has chosen;
   /// nothing on first launch.
@@ -127,6 +129,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   @override
   void dispose() {
     _search.dispose();
+    _scroll.dispose();
     super.dispose();
   }
 
@@ -167,18 +170,39 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     unawaited(state.downloadLanguage(code));
   }
 
-  /// Keeps a card in view after it moves to "Learning".
+  /// Keeps a card in view after it moves to "Learning", at the top of the
+  /// list: when the move takes it out of what the list has built, back to
+  /// the top first.
   void _showCard(String code) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final context = _cardKeys[code]?.currentContext;
-      if (context != null && context.mounted) {
-        Scrollable.ensureVisible(
-          context,
-          duration: const Duration(milliseconds: 250),
-          alignmentPolicy: ScrollPositionAlignmentPolicy.keepVisibleAtEnd,
-        );
+      if (!mounted) return;
+      if (_cardKeys[code]?.currentContext == null && _scroll.hasClients) {
+        _scroll.jumpTo(0);
+        WidgetsBinding.instance.addPostFrameCallback((_) => _reveal(code));
+        WidgetsBinding.instance.scheduleFrame();
+        return;
       }
+      _reveal(code);
     });
+  }
+
+  void _reveal(String code) {
+    final context = _cardKeys[code]?.currentContext;
+    if (context == null || !context.mounted || !_scroll.hasClients) return;
+    // Above the screen, its top comes to the top; below, its end to the
+    // bottom.
+    final box = context.findRenderObject();
+    if (box == null) return;
+    final above =
+        RenderAbstractViewport.of(box).getOffsetToReveal(box, 0).offset <
+        _scroll.offset;
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(milliseconds: 250),
+      alignmentPolicy: above
+          ? ScrollPositionAlignmentPolicy.keepVisibleAtStart
+          : ScrollPositionAlignmentPolicy.keepVisibleAtEnd,
+    );
   }
 
   Future<bool> _confirmStop(AppState state, CatalogLanguage language) async {
@@ -227,6 +251,27 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     }
   }
 
+  /// The language [language] is to be learned from, where the learner
+  /// speaks more than one that teaches it: what they picked on its card,
+  /// else what the app suggests, the best covered. Placement does not ask
+  /// again. Null when there is no choice to make.
+  String? _nativeChoice(AppState state, CatalogLanguage language) {
+    final spoken = state.settings.spokenLanguages;
+    final options = language.spokenNatives(spoken);
+    if (options.length < 2) return null;
+    final code = language.code;
+    final suggested = state.courseNative(code);
+    if (_native[code] case final picked?) return picked;
+    if (options.any((o) => o.code == suggested)) return suggested;
+    // Before its decks are on the phone, the best covered by the index,
+    // ties to the language the learner knows best.
+    int covered(CatalogNative o) =>
+        o.progress.hasPlan ? o.progress.writtenWords : o.progress.courseWords;
+    return options
+        .reduce((best, o) => covered(o) > covered(best) ? o : best)
+        .code;
+  }
+
   // ---------------------------------------------------------------------------
   // Continue
 
@@ -269,7 +314,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 code: _script[code] ?? true,
           },
           natives: <String, String>{
-            for (final code in added) code: ?_native[code],
+            for (final code in added)
+              if (byCode[code] case final language?)
+                code: ?_nativeChoice(state, language),
           },
           onFinished: (found) => _save(
             state,
@@ -474,17 +521,38 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             AppSizes.gutter,
             4,
           ),
-          child: SearchBar(
-            controller: _search,
-            hintText: l10n.pickerSearchHint,
-            elevation: const WidgetStatePropertyAll<double>(0),
-            leading: const Icon(Icons.search),
-            trailing: <Widget>[
+          // One screen-reader node, the bar's full 56 in height, named by
+          // its hint even once the hint gives way to a search, as on Decks;
+          // the clear button sits over it, a node of its own.
+          child: Stack(
+            alignment: AlignmentDirectional.centerEnd,
+            children: <Widget>[
+              MergeSemantics(
+                child: Semantics(
+                  label: query.isEmpty ? null : l10n.pickerSearchHint,
+                  child: SearchBar(
+                    controller: _search,
+                    hintText: l10n.pickerSearchHint,
+                    elevation: const WidgetStatePropertyAll<double>(0),
+                    constraints: const BoxConstraints(minHeight: 56),
+                    padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+                      EdgeInsetsDirectional.symmetric(horizontal: 16),
+                    ),
+                    leading: const Icon(Icons.search),
+                    trailing: <Widget>[
+                      if (query.isNotEmpty) const SizedBox(width: 40),
+                    ],
+                  ),
+                ),
+              ),
               if (query.isNotEmpty)
-                IconButton(
-                  tooltip: l10n.pickerClearSearch,
-                  icon: const Icon(Icons.close),
-                  onPressed: _search.clear,
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(end: 4),
+                  child: IconButton(
+                    tooltip: l10n.pickerClearSearch,
+                    icon: const Icon(Icons.close),
+                    onPressed: _search.clear,
+                  ),
                 ),
             ],
           ),
@@ -497,6 +565,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                   body: l10n.pickerNoMatchBody,
                 )
               : ListView(
+                  controller: _scroll,
                   padding: const EdgeInsetsDirectional.only(bottom: 16),
                   children: <Widget>[
                     // The intro scrolls with the list: at large text sizes,
@@ -578,11 +647,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final ticked = _ticked.contains(code);
     final learns = _learning.contains(code);
     final options = language.spokenNatives(spoken);
-    final chosenNative = !learns && options.length > 1
-        ? _native[code] ??
-              state.courseNative(code) ??
-              language.nativeFor(spoken)?.code
-        : null;
+    final chosenNative = learns ? null : _nativeChoice(state, language);
     final native = learns ? state.courseNative(code) : chosenNative;
     final progress = language.progressFor(spoken, native: native);
     final downloads = state.deckDownloads;
