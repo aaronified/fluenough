@@ -99,6 +99,15 @@ final List<GalleryEntry> placementGalleryEntries = <GalleryEntry>[
     state: PickerFixtures.taughtFromTwo,
   ),
   GalleryEntry(
+    id: 'picker-taught-from-three',
+    section: GallerySection.profiles,
+    label: 'Languages, taught from three', // ui-literal-ok: debug-only gallery
+    note: 'Illustrative: three, still side by side', // ui-literal-ok: debug-only gallery
+    builder: (_) =>
+        const LanguagePickerPage(firstRun: true, initialChosen: <String>{'te'}),
+    state: PickerFixtures.taughtFromThree,
+  ),
+  GalleryEntry(
     id: 'picker-taught-from-list',
     section: GallerySection.profiles,
     label: 'Languages, taught from four', // ui-literal-ok: debug-only gallery

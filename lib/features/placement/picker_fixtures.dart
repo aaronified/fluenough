@@ -207,6 +207,11 @@ abstract final class PickerFixtures {
   static AppState taughtFromTwo(AppState app) =>
       _taughtFrom(app, const <String>['bn', 'hi']);
 
+  /// As [taughtFromTwo], for a learner who speaks three languages that all
+  /// teach Telugu: the most that sit side by side, the widest of them.
+  static AppState taughtFromThree(AppState app) =>
+      _taughtFrom(app, const <String>['bn', 'hi', 'gu']);
+
   /// As [taughtFromTwo], for a learner who speaks four languages that all
   /// teach Telugu: too many to sit side by side, so a list in a sheet.
   static AppState taughtFromFour(AppState app) =>
@@ -325,6 +330,9 @@ class _FrozenDownloads extends DeckDownloads {
 
   @override
   bool isDownloading(String language) => downloading.contains(language);
+
+  @override
+  bool hasJob(String language) => downloading.contains(language);
 
   @override
   DeckDownloadFailure? failureOf(String language) => failures[language];

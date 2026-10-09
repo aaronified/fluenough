@@ -222,15 +222,23 @@ class _LanguageDownloadBlockState extends State<LanguageDownloadBlock> {
             spacing: 8,
             runSpacing: 8,
             children: <Widget>[
+              // Named with the language: with two downloading, a screen
+              // reader would otherwise meet two of each.
               TextButton(
                 onPressed: widget.onCancel,
-                child: Text(l10n.commonCancel),
+                child: Text(
+                  l10n.commonCancel,
+                  semanticsLabel: l10n.pickerCancelDownloadLabel(widget.name),
+                ),
               ),
               if (failure != null)
                 FilledButton.tonalIcon(
                   onPressed: widget.onRetry,
                   icon: const Icon(Icons.refresh),
-                  label: Text(l10n.commonRetry),
+                  label: Text(
+                    l10n.commonRetry,
+                    semanticsLabel: l10n.pickerRetryDownloadLabel(widget.name),
+                  ),
                 ),
             ],
           ),

@@ -6948,6 +6948,19 @@
   "@pickerBetaLabel": {
     "description": "What a screen reader says for the Beta tag."
   },
+  "pickerAlphaUnplannedLabel": "Alpha: its levels are not mapped out yet",
+  "@pickerAlphaUnplannedLabel": {
+    "description": "What a screen reader says for the Alpha tag of a course whose path has no level plan yet, so nothing says how much of A1 is written."
+  },
+  "pickerAlphaUnplannedNotice": "{language} is in alpha: its course has no level plan yet, so how far it goes is not known. Start with what is there. More decks arrive as they are written.",
+  "@pickerAlphaUnplannedNotice": {
+    "description": "Notice inside an Alpha course's card once it is chosen, when its path has no level plan yet.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
   "pickerAlphaNotice": "{language} is in alpha: its first level, A1, is still being written. Start with what is there. More decks arrive as they are written.",
   "@pickerAlphaNotice": {
     "description": "Notice inside an Alpha course's card once it is chosen.",
@@ -7080,6 +7093,60 @@
     "placeholders": {
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "pickerCancelledUnchosen": "{language}’s download stopped, and {language} is no longer chosen. Any of its decks that arrived stay on the phone: Settings, Deck downloads can finish them.",
+  "@pickerCancelledUnchosen": {
+    "description": "Toast after a language's download is cancelled before its first decks are in: it is no longer chosen, and what arrived can be finished from Settings, Deck downloads.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceChosen": "{language} chosen, now under Learning",
+  "@pickerAnnounceChosen": {
+    "description": "Announced to a screen reader when a language is ticked in the picker and its card moves to the Learning group.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceUnchosen": "{language} no longer chosen, now under Available",
+  "@pickerAnnounceUnchosen": {
+    "description": "Announced to a screen reader when a language is un-ticked in the picker and its card moves back to the Available group.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerCancelDownloadLabel": "Cancel the {language} download",
+  "@pickerCancelDownloadLabel": {
+    "description": "What a screen reader says for the Cancel button of a language's download in the picker.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerRetryDownloadLabel": "Try the {language} download again",
+  "@pickerRetryDownloadLabel": {
+    "description": "What a screen reader says for the Try again button of a language's failed download in the picker.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNativeChoiceLabel": "Taught from {native}, change",
+  "@pickerNativeChoiceLabel": {
+    "description": "What a screen reader says for the row that shows which of the learner's languages a course is taught from, when there are more than three; tapping it opens the choice.",
+    "placeholders": {
+      "native": {
+        "type": "String"
       }
     }
   },
