@@ -92,7 +92,22 @@ and cards, and sends a review file by mail, with their code, to the
 Fluenough address, where the hourly workflow that already reads that
 mailbox (`tools/mail_to_issues.py`) takes it in. Only enrolled emails take
 part: a review is accepted only from the email its code was made for.
-The design is being settled with the owner before anything is built.
+Settled with the owner, 2026-10-09:
+
+- **Joining is automatic:** a join mail makes the sender a reviewer at
+  once. "I will also ask the people to either share their email or
+  rater_id to me in person to filter, if needed. We need maximum
+  participation. I do not see a huge risk of ghost reviews."
+- **Results reach the decks through a PR the owner merges:** one per
+  language, with sign-offs (unreviewed tags removed), offensiveness levels
+  and confirmed similarity notes; suggestions stay as issues.
+- **No reply mail; thanks in the app:** issues and mails carry the rater
+  code; an updated deck lists the rater codes that helped build it, and a
+  reviewer whose code is among them sees "thank you" in the app. So rater
+  codes are public; that is safe because a review is accepted only from
+  the email its code belongs to.
+- **Reviewer mode is hidden until a code is set;** everyone sees only
+  "Become a reviewer" in Settings.
 
 ## The form's link is not private
 
