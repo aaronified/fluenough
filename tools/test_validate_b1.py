@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The B1 deck format in the validator (ADR-0035): cores and layers, the
+"""The B1 deck format in the validator (ADR-0036): cores and layers, the
 phrasebook, rules decks, sentences' rules, typed notes, the Wiktionary mark,
 bases, and the B1 plan in a path.
 

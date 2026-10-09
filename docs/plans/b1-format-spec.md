@@ -5,7 +5,7 @@ For four builders working in parallel on one branch (`feat/b1-format`):
 - **V**, the Python validator: `tools/validate_decks.py` and its tests in `tools/`.
 - **D**, the Dart parser and models: `lib/core/models/`, `lib/core/data/`, and
   the few app call sites the type changes reach.
-- **W**, the docs: `docs/DECK-FORMAT.md`, `docs/adr/0035-*.md`,
+- **W**, the docs: `docs/DECK-FORMAT.md`, `docs/adr/0036-*.md`,
   `decks/README.md`, `assets/deck-template.yaml` (comments only).
 - **Q**, the grammar questions: the two grammar schedules' questions in
   the app (section 4.8). Q starts once D's models are on the branch
@@ -37,7 +37,7 @@ listed in the last section, "Open for the owner", in two groups:
   is used, citing the answer. Two answers differ from what this spec
   first recommended, OPEN-4 (paths per language learnt, now) and OPEN-22
   (understood is choosing the meaning), and sections 2.1, 2.8, 4.6–4.8,
-  9.5, 9.6 and 10 were rewritten for them. ADR-0035 is written
+  9.5, 9.6 and 10 were rewritten for them. ADR-0036 is written
   `Status: Accepted` (section 14).
 
 A builder who meets a case this spec does not cover asks, and does not
@@ -49,7 +49,7 @@ are now out of date and are redone from the sections named: per-course
 paths (D: `course_path.dart`, the catalog and their tests; V:
 `check_path_file`, `check_paths_across`, `check_reading_across`'s unit
 lookups and the B1 plan checks; W: "Course paths" and "The B1 plan" in
-`docs/DECK-FORMAT.md`, ADR-0035; the `zz` fixtures' path files) from
+`docs/DECK-FORMAT.md`, ADR-0036; the `zz` fixtures' path files) from
 2.1, 2.8, 9.5, 9.6 and 10; and the grammar question (D's `promptFor` and
 `acceptedAnswers` for `grammarUnderstood`; W's drill-mode rows) from 4.6
 and 4.7. Regions (10.5, 6.1) are new to all three.
@@ -2302,7 +2302,7 @@ message that says what to do:
 
 | where | message |
 |---|---|
-| `native` | `a path is one per language learnt, decks/{lang}/{lang}-path.yaml, shared by every native language (ADR-0035); list core ids, such as {example!r}, and remove native` (`{example}` the first listed id with its native taken out) |
+| `native` | `a path is one per language learnt, decks/{lang}/{lang}-path.yaml, shared by every native language (ADR-0036); list core ids, such as {example!r}, and remove native` (`{example}` the first listed id with its native taken out) |
 | `id` | `a path of {lang} has id {lang}-path, the filename stem, got {id!r}` |
 | `units[{i}]` | `must be a list of core ids, or a mapping with decks or planned` |
 | `units[{i}]` | `unknown field {k!r} in a unit` |
@@ -2746,16 +2746,16 @@ into one directory; that still works for single-file decks.)
 
 ---
 
-## 14. ADR-0035 (next free number; 0028 was never used and stays a gap)
+## 14. ADR-0036 (next free number; 0028 was never used and stays a gap)
 
-File: `docs/adr/0035-b1-deck-format.md`. The owner has answered every
+File: `docs/adr/0036-b1-deck-format.md`. The owner has answered every
 group B item (2026-10-09; see "Open for the owner"), so W writes it as
 follows, with `Status: Accepted`, replacing the version on the branch,
 which was written `Proposed` from the first recommendations (paths per
 course; choosing the form as understood).
 
 ```markdown
-# ADR-0035: Decks are a core and layers, with rules, bases, typed notes and a B1 plan
+# ADR-0036: Decks are a core and layers, with rules, bases, typed notes and a B1 plan
 
 - **Status:** Accepted
 - **Date:** 2026-10-09
@@ -2975,7 +2975,7 @@ language's path, `decks/<lang>/<lang>-path.yaml`, in the unit it is taught
 with; a new course of a language that has a path adds no path, and a new
 language adds `<lang>-path.yaml`; "Course paths" becomes "Paths");
 ADR-0013's
-reader is pointed to ADR-0035 by the latter's `Amends` line (an accepted
+reader is pointed to ADR-0036 by the latter's `Amends` line (an accepted
 ADR's reasoning is not edited). `docs/ROADMAP.md` is not W's to edit
 (contention file).
 
@@ -3135,7 +3135,7 @@ each answer or recommendation as written.
 
 Each departed from a plan line, or was a choice the owner made that this
 spec could not settle alone. **All are answered;** none is open, and
-ADR-0035 is written `Accepted` (section 14). The body says what each
+ADR-0036 is written `Accepted` (section 14). The body says what each
 answer decided, at the section named, marked *settled*.
 
 | # | Question | The owner's answer | What the spec now says | Section |

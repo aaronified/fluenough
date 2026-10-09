@@ -1,4 +1,4 @@
-# ADR-0035: Decks are a core and layers, with rules, bases, typed notes and a B1 plan
+# ADR-0036: Decks are a core and layers, with rules, bases, typed notes and a B1 plan
 
 - **Status:** Proposed
 - **Date:** 2026-10-09
