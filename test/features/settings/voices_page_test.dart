@@ -221,6 +221,14 @@ void main() {
     expectExplained(tester);
   });
 
+  testWidgets('Install explains how even when the answer is not an '
+      'Exception, such as a TypeError from a bad reply', (tester) async {
+    final phone = FixedSystemSettings(error: TypeError());
+    await tapInstall(tester, AppState.test(systemSettings: phone));
+    expect(phone.voiceSettingsAsked, 1);
+    expectExplained(tester);
+  });
+
   testWidgets('Install explains how where there are no phone settings to '
       'open, as off Android', (tester) async {
     // AppState.test's own: settings that open nothing.
