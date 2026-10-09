@@ -174,7 +174,8 @@ units:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "bn-quantities", theme: "quantities", words: 24 }
+  - decks: ["bn-quantities", "bn-quantities-sentences", "*"]
+    words: 23
     listening_passages:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
     reading_passages:
