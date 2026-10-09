@@ -49,6 +49,7 @@ class CardNote {
     required this.text,
     this.ref,
     this.source,
+    this.regions = const <String>[],
   });
 
   /// The note's id, or its 1-based position for a note written without one.
@@ -65,6 +66,11 @@ class CardNote {
 
   /// Where a culture note's claim can be checked.
   final String? source;
+
+  /// A region note's regions (ADR-0036): ids of regions of the language's
+  /// path, where the word is used or heard as the note says. Empty for a
+  /// note about every region.
+  final List<String> regions;
 }
 
 /// The base word of an inflected or derived word in a card's target or in

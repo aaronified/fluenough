@@ -10,6 +10,17 @@ schema: 1
 kind: path
 id: te-path
 language: te
+# Where Telugu is spoken, for a rater's region and a card's region note
+# (ADR-0036): the three regions its dialects are usually grouped by. The
+# ids are permanent, as card ids are; rename a name, never an id. The app
+# adds "Elsewhere" after them.
+regions:
+  - id: "telangana"
+    name: { "en": "Telangana" }
+  - id: "coastal-andhra"
+    name: { "en": "Coastal Andhra" }
+  - id: "rayalaseema"
+    name: { "en": "Rayalaseema" }
 # The decks that need the alphabet: a learner who learns without it
 # skips them.
 alphabet:

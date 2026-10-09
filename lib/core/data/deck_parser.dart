@@ -237,7 +237,7 @@ const _layerEntryFields = {
   'bases',
   'wiktionary',
 };
-const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words'};
+const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words', 'region'};
 const _noteWordFields = {'word', 'reading', 'ipa'};
 const _baseFields = {
   'word',
@@ -783,6 +783,7 @@ class _Reader {
             text: _filled(note.text!, note.words),
             ref: note.ref,
             source: note.source,
+            regions: note.regions,
           ),
       ]);
 
@@ -797,6 +798,7 @@ class _Reader {
             ref: note.ref,
             source: note.source,
             words: note.words,
+            regions: note.regions,
           ),
       ]);
 
@@ -823,6 +825,7 @@ class _Reader {
           ref: null,
           source: null,
           words: const <NoteWord>[],
+          regions: const <String>[],
         ),
       ];
     }
@@ -946,7 +949,41 @@ class _Reader {
       ref: ref,
       source: source,
       words: words,
+      regions: noteRegions(fields.node('region'), '$path.region'),
     );
+  }
+
+  /// A region note's regions (spec 10.5): a region id, or a non-empty list
+  /// of them. Whether each is a region of the language's path is the
+  /// validator's to say.
+  List<String> noteRegions(YamlNode? node, String path) {
+    if (node == null) return const <String>[];
+    final items = node is YamlList ? node.nodes : <YamlNode>[node];
+    final regions = <String>[];
+    for (final item in items) {
+      final value = _value(item);
+      if (value is! String ||
+          !_letterKey.hasMatch(value) ||
+          _yaml11Words.contains(value)) {
+        fail(
+          item,
+          '$path must be a region id, or a list of them, such as '
+          '"telangana", got ${_describe(node)}',
+        );
+      }
+      if (regions.contains(value)) {
+        fail(item, '$path lists "$value" twice');
+      }
+      regions.add(value);
+    }
+    if (regions.isEmpty) {
+      fail(
+        node,
+        '$path must be a region id, or a list of them, such as "telangana", '
+        'got ${_describe(node)}',
+      );
+    }
+    return List<String>.unmodifiable(regions);
   }
 
   /// The language facts a note or a rule quotes: `{ word, reading, ipa? }`.
@@ -2364,6 +2401,7 @@ typedef _NoteItem = ({
   String? ref,
   String? source,
   List<NoteWord> words,
+  List<String> regions,
 });
 
 const _phrasebookRule = 'true, unquoted, or left out';

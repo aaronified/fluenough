@@ -151,6 +151,21 @@ void main() {
         catalog.languagePaths['hi']!.plan.first.decks,
         contains('hi-first-words'),
       );
+      // The regions of the two languages being written now (spec 10.5).
+      expect(catalog.languagePaths['te']!.regions.map((r) => r.id), [
+        'telangana',
+        'coastal-andhra',
+        'rayalaseema',
+      ]);
+      expect(catalog.languagePaths['bn']!.regions.map((r) => r.id), [
+        'rarhi',
+        'vangiya',
+        'varendri',
+        'kamrupi',
+        'manbhumi',
+        'south-eastern',
+      ]);
+      expect(catalog.languagePaths['hi']!.regions, isEmpty);
       expect(
         catalog.pathOf(hindi)!.units[catalog.pathOf(hindi)!.unitOf(hindi.id)!],
         contains('hi-en-grammar-pronouns'),
