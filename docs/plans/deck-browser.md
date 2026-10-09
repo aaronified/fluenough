@@ -169,7 +169,14 @@ Settled with the owner, 2026-10-09:
   Addresses are matched with case ignored, and for Gmail with dots and
   `+…` ignored. A later review from another address gets a "sender does
   not match" issue; the owner decides. No new secret, nothing written to
-  the repository, and the job logs only counts.
+  the repository, and the job logs only counts. **Built** (2026-10-09) in
+  `tools/mail_to_issues.py`: the tool creates the label and writes a record
+  with IMAP APPEND (no mail is sent), its subject the code and its body
+  the address. Records are read afresh each run, so one the owner deletes
+  is tied again by the code's next mail, and a sender matching any record
+  of its code passes, so the owner can allow a second address by adding
+  one. When the label cannot be read or a record cannot be written, the
+  mail is still filed, marked "sender not checked".
 - **The first mail binds the code to its sender** (owner, 2026-10-09; *the
   keyed hash in the repository was replaced the same day by the Gmail
   record above, and is not built*): the
