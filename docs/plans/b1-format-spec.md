@@ -2066,14 +2066,37 @@ the Decks tab and the language picker read it exactly as before:
   `grammarTopics` and `plannedWords` give the same answer for every
   native language. `placing()` copies `plan` unchanged.
 
-**Which native language a learner is taught from** does not change
-(`AppState.courseUnits`): of the native languages that teach the language
-(a layer or a single-file deck of it in the catalog), the learner's
-best-known spoken language (`settings.spokenLanguages`, in rank order),
-else the first in the catalog. One native language per language learnt:
-a unit whose deck that native language lacks is "Coming" for the learner,
-never filled from another native language's deck (`native-layers.md`: a
-card a layer does not translate "is not shown in English"). Card progress
+**Which native language a learner is taught from** (OPEN-35, put to the
+owner; builders build this recommendation until the owner answers).
+Today `AppState.courseUnits` takes, of the native languages that teach
+the language, the learner's best-known spoken language with **any** deck
+of it. Kept as it is, that rule would collapse a learner's course the day
+a second native language's first layer lands: one `te-bn-*` layer makes a
+Bengali-first learner's Telugu course the Bengali one, every unit but that
+layer's "Coming" and skipped, where the day before they were taught the
+whole English course. So the choice gains a coverage test:
+
+- a native language's **coverage** is the number of written units in its
+  `forNative(...).units`, a unit of `"*"` alone not counted;
+- the native languages with the **highest coverage** of any are
+  eligible; of those, the learner's best-known spoken language
+  (`settings.spokenLanguages`, in rank order), else the first in the
+  catalog;
+- a language with no path: every native language that teaches it is
+  eligible, as today.
+
+So a Bengali course is chosen for a Bengali-first learner once it has a
+deck in as many written units as the English one, and not before; until
+then they are taught from English. Every course in the repository today
+is taught from English, so the choice today is unchanged. The owner may
+prefer another threshold (a share of the units, or every unit up to A1)
+or a fallback that fills a missing unit from the next native language;
+either changes only this paragraph and `courseUnits`, not the format.
+
+One native language per language learnt: a unit whose deck that native
+language lacks is "Coming" for the learner, never filled from another
+native language's deck (`native-layers.md`: a card a layer does not
+translate "is not shown in English"). Card progress
 is keyed by card id (ADR-0018), so a learner whose best native language
 changes keeps every card's history; placement is by deck id, so they are
 placed afresh in the new course's decks.
@@ -2398,7 +2421,9 @@ read it the same way:
 - a core id with a deck in the course is that deck, in its unit;
 - a core id without one is skipped for the course; a written unit left
   with no deck is, for that course, as a planned unit is: skipped by
-  lessons, shown as "Coming";
+  lessons, shown as "Coming" (which course a learner is given, so that a
+  second native language's first layers do not empty their course, is
+  9.5's coverage test, OPEN-35);
 - `alphabet` maps the same way; `"*"` takes the course's decks the path
   does not list, as today.
 
@@ -2691,7 +2716,11 @@ into one directory; that still works for single-file decks.)
   per-course form refused; `forNative`: core ids to the course's deck ids,
   a unit with no deck in the native language left out of `units` and
   `open` and marked coming, `plan` in order, the same `hasB1Plan`,
-  `grammarTopics` and `plannedWords` for every native language; the
+  `grammarTopics` and `plannedWords` for every native language;
+  `courseUnits` choosing the native language by coverage (9.5): a
+  Bengali-first learner is taught from English while the Bengali course
+  has one layer, and from Bengali once it has a deck in as many written
+  units; the
   catalog building each course's path from the language's; every bundled
   deck still parsing; plain scalars typed as ground rule 8's table, one
   case per row, and a null reading or IPA under a null form read as none
@@ -3133,7 +3162,7 @@ answer decided, at the section named, marked *settled*.
 | 32 | The regions of Telugu and Bengali | Telugu: Telangana, Coastal Andhra, Rayalaseema (the owner's rating screen). Bengali: West Bengal, Bangladesh, Tripura, Assam's Barak Valley (low confidence; the dialect divisions differ). Before any rating names a region | 10.5 |
 | 33 | Where a passage's description per native language lives | In the path, under the passage's `text`, keyed by native code, with a passage `id`; not a path layer of its own | 10.1 |
 | 34 | How a note names its regions | `region:`, one id or a list, on a typed note of any kind, in the core; checked against the path's `regions` | 6.1, 6.2, 10.5 |
-| 35 | A unit with no deck in the learner's native language | "Coming" for that learner, never filled from another native language's decks; words counted per course against one planned size | 8.5, 9.5, 10.3, 10.4 |
+| 35 | A unit with no deck in the learner's native language, and which native language teaches the learner | "Coming" for that learner, never filled from another native language's decks; words counted per course against one planned size. **Put to the owner:** today's choice (the best-known native language with any deck) would turn a Bengali-first learner's full English course into a Bengali course of one unit the day the first `te-bn-*` layer lands, so the native language is chosen among those whose course has a deck in the most written units (9.5). Other answers: a share of the units, every unit up to A1, or filling a missing unit from the next native language | 8.5, 9.5, 10.3, 10.4 |
 | 36 | Grades and order of the grammar questions | A right meaning choice records 4, a right form choice 3, a typed form as today; the form is chosen while the pair is new or was last missed, typed once remembered, as Hear | 4.7, 4.8 |
 
 Also left to later work, not this format: the mastery bar and the number of
