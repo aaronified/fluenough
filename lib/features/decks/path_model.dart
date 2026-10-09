@@ -199,7 +199,8 @@ final class LevelStep extends PathStep {
   final int units;
   final int done;
 
-  /// The words its written units teach.
+  /// The words its written units teach, not counting a script unit's
+  /// letters.
   final int words;
 
   /// Its units still being written.
@@ -459,11 +460,14 @@ CourseView? courseView(
     );
   }
 
-  // Words learned, after the unit whose words reach each count.
+  // Words learned, after the unit whose words reach each count. A script
+  // unit's letters are not words: its own line calls them letters, and the
+  // script has its own milestone.
   final words = <String>[];
   final counted = <String>{};
   final reachedAt = <int>[];
   for (final (i, unit) in unitSteps.indexed) {
+    if (unit.content.isScript) continue;
     for (final card in unit.content.words) {
       if (counted.add(card.id)) {
         words.add(card.id);
@@ -558,7 +562,9 @@ CourseView? courseView(
         level: level,
         units: inLevel.length,
         done: inLevel.where((u) => u.status == UnitStatus.done).length,
-        words: inLevel.fold(0, (sum, u) => sum + u.content.words.length),
+        words: inLevel
+            .where((u) => !u.content.isScript)
+            .fold(0, (sum, u) => sum + u.content.words.length),
         coming: thePlan.coming.where((c) => c.level == level).length,
         current: upNextLevel == level,
       ),
