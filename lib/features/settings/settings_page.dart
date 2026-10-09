@@ -271,16 +271,20 @@ class SettingsPage extends StatelessWidget {
   }
 
   /// A skill switch's line for [on] (docs/plans/settings-wording.md): what
-  /// is asked, or not, then what the phone lacks for the languages the
-  /// profile learns: a voice for a skill that needs one, a recogniser for
-  /// speaking.
+  /// is asked, or not, or that it is skipped while sound is off, then what
+  /// the phone lacks for the languages the profile learns: a voice for a
+  /// skill that needs one, a recogniser for speaking.
   static String _skillLine(
     AppLocalizations l10n,
     AppState state,
     Skill skill, {
     required bool on,
   }) {
-    final line = on ? skill.settingsOn(l10n) : skill.settingsOff(l10n);
+    final line = !on
+        ? skill.settingsOff(l10n)
+        : skill.needsVoice && !state.settings.soundOn
+        ? l10n.settingsSkillSoundOff
+        : skill.settingsOn(l10n);
     if (!state.features.isAvailable(skill.feature)) return line;
     final learned = <LanguageInfo>[
       for (final language in state.languages)
@@ -506,11 +510,16 @@ class SettingsPage extends StatelessWidget {
             if (!on) showAppSnackBar(context, l10n.settingsSoundOffSkipped);
           },
         ),
-        // Shown as it is set, but cannot be changed while nothing plays.
+        // Shown as it is set, but cannot be changed while nothing plays,
+        // and its line says so.
         GroupedTile.toggle(
           title: l10n.settingsAutoplay,
-          subtitleOn: l10n.settingsAutoplayOn,
-          subtitleOff: l10n.settingsAutoplayOff,
+          subtitleOn: settings.soundOn
+              ? l10n.settingsAutoplayOn
+              : l10n.settingsAutoplayOnSoundOff,
+          subtitleOff: settings.soundOn
+              ? l10n.settingsAutoplayOff
+              : l10n.settingsAutoplayOffSoundOff,
           value: settings.autoplay,
           titleColor: settings.soundOn
               ? null

@@ -13,6 +13,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 import 'speech_test_sheet.dart';
 
@@ -48,19 +49,25 @@ class VoicesPage extends StatefulWidget {
   const VoicesPage({super.key});
 
   /// What Play says for [language]: the first card of its first vocabulary
-  /// deck, or of a script deck when that is all there is. Null when no deck
-  /// in the language has cards, such as a grammar deck on its own.
+  /// deck, or of a script deck when that is all there is, passing over any
+  /// rude word. Null when no deck in the language has a card to say, such as
+  /// a grammar deck on its own.
   static String? sampleFor(AppState state, LanguageInfo language) {
     final decks = <DeckEntry>[
       for (final deck in state.decks)
         if (deck.language.code == language.code && deck.cards.isNotEmpty) deck,
     ];
     if (decks.isEmpty) return null;
-    final deck = decks.firstWhere(
-      (d) => !d.isScript,
-      orElse: () => decks.first,
-    );
-    return deck.cards.first.target;
+    // Never a rude word (docs/plans/offensive-words.md).
+    for (final deck in <DeckEntry>[
+      ...decks.where((d) => !d.isScript),
+      ...decks.where((d) => d.isScript),
+    ]) {
+      for (final card in deck.cards) {
+        if (!isRude(card, deck)) return card.target;
+      }
+    }
+    return null;
   }
 
   /// [state]'s languages in the order the learner learns them: those the
@@ -509,8 +516,8 @@ class LanguageVoiceCard extends StatelessWidget {
       SpeechStatus.off => l10n.voicesSpeechOff,
       SpeechStatus.checking => l10n.voicesChecking,
       SpeechStatus.onDevice => l10n.voicesSpeechOnDevice,
-      SpeechStatus.online => l10n.voicesSpeechOnline,
-      SpeechStatus.onlineOnly => l10n.voicesSpeechOnlineOnly,
+      SpeechStatus.online ||
+      SpeechStatus.onlineOnly => l10n.voicesSpeechOnlyOnline,
       SpeechStatus.missing => l10n.voicesSpeechMissing,
     };
     final canTest = switch (status) {
@@ -520,26 +527,28 @@ class LanguageVoiceCard extends StatelessWidget {
       _ => false,
     };
     return <Widget>[
-      // Where it is heard only online, the switch carries the line.
-      if (online)
+      _Part(
+        icon: status == SpeechStatus.missing
+            ? Icons.mic_off_outlined
+            : Icons.mic_none,
+        title: l10n.voicesSpeakingPart,
+        line: line,
+      ),
+      // Where it is heard only online, a switch of its own allows it: not
+      // named Speaking, which it does not switch off.
+      if (online) ...<Widget>[
+        const SizedBox(height: 8),
         GroupedTile.toggle(
           leading: const Icon(Icons.cloud_outlined, size: 22),
           leadingGap: 12,
-          title: l10n.voicesSpeakingPart,
+          title: l10n.voicesOnlineSwitch,
           subtitleOn: l10n.voicesSpeechOnline,
           subtitleOff: l10n.voicesSpeechOnlineOnly,
           padding: EdgeInsetsDirectional.zero,
           value: allowsOnline,
           onChanged: onAllowOnline,
-        )
-      else
-        _Part(
-          icon: status == SpeechStatus.missing
-              ? Icons.mic_off_outlined
-              : Icons.mic_none,
-          title: l10n.voicesSpeakingPart,
-          line: line,
         ),
+      ],
       if (status == SpeechStatus.off || canTest)
         _Actions(
           children: <Widget>[

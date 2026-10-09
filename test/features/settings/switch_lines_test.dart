@@ -368,6 +368,72 @@ void main() {
     );
   });
 
+  testWidgets('with Sound off, Play words automatically and the skills that '
+      'need sound say that nothing plays, rather than what would', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = await pumpScreen(
+      tester,
+      const SettingsPage(),
+      state: _everythingOn(),
+    );
+    final l10n = l10nOf(tester);
+    state.settings.autoplay = true;
+    await tester.pumpAndSettle();
+    await _flip(
+      tester,
+      l10n.settingsSound,
+      on: l10n.settingsSoundOn,
+      off: l10n.settingsSoundOff,
+    );
+    expect(state.settings.soundOn, isFalse);
+
+    final autoplay = _switchRow(l10n.settingsAutoplay);
+    await scrollTo(tester, autoplay);
+    expect(tester.widget<GroupedTile>(autoplay).toggleValue, isTrue);
+    expect(
+      tester.widget<GroupedTile>(autoplay).line,
+      l10n.settingsAutoplayOnSoundOff,
+    );
+    state.settings.autoplay = false;
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<GroupedTile>(autoplay).line,
+      l10n.settingsAutoplayOffSoundOff,
+    );
+    expect(find.text(l10n.settingsAutoplayOff), findsNothing);
+
+    // Both say the same while on, so each is checked by its own row.
+    for (final skill in Skill.values.where((s) => s.needsVoice)) {
+      final row = _switchRow(skill.settingsLabel(l10n));
+      await scrollTo(tester, row);
+      await tester.ensureVisible(row);
+      await tester.pumpAndSettle();
+      expect(tester.widget<GroupedTile>(row).toggleValue, isTrue);
+      expect(
+        tester.widget<GroupedTile>(row).line,
+        l10n.settingsSkillSoundOff,
+        reason: skill.name,
+      );
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+      expect(
+        tester.widget<GroupedTile>(row).line,
+        skill.settingsOff(l10n),
+        reason: skill.name,
+      );
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+    }
+    expect(find.text(Skill.listening.settingsOn(l10n)), findsNothing);
+    // Sound back on: the lines say what plays again.
+    state.settings.soundOn = true;
+    await tester.pumpAndSettle();
+    await scrollTo(tester, autoplay);
+    expect(tester.widget<GroupedTile>(autoplay).line, l10n.settingsAutoplayOff);
+  });
+
   testWidgets('Languages I speak shows the languages chosen', (tester) async {
     usePhone(tester);
     final state = await pumpScreen(tester, const SettingsPage());
