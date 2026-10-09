@@ -1,117 +1,105 @@
 schema: 1
-id: hi-en-grammar-conjunct-verbs
-name: "Noun + करना (karnā)"
-kind: vocab
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN, icon: "हि" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Many Hindi verbs are a noun with करना (karnā), होना (hōnā) or लगना (lagnā): only the verb part changes. Not yet checked by a Hindi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "hi-grammar-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 cards:
-  - id: hi-0488
+  - id: "hi-0488"
     target: "काम करना"
-    native: "to work"
     reading: "kām karnā"
     ipa: "kaːm kərnaː"
     pos: "phrase"
-  - id: hi-0489
+  - id: "hi-0489"
     target: "बात करना"
-    native: "to talk"
     reading: "bāt karnā"
     ipa: "baːt̪ kərnaː"
     pos: "phrase"
-    notes: "You talk से (sē) someone: मुझसे बात कीजिए (mujhsē bāt kījiē)."
-  - id: hi-0490
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0490"
     target: "मदद करना"
-    native: "to help"
     reading: "madad karnā"
     ipa: "məd̪əd̪ kərnaː"
     pos: "phrase"
-    notes: "The person helped takes की (kī): मेरी मदद कीजिए (mērī madad kījiē)."
-  - id: hi-0491
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0491"
     target: "इंतज़ार करना"
-    native: "to wait"
     reading: "intazār karnā"
     ipa: "ɪnt̪əzaːr kərnaː"
     alt_target: ["इंतजार करना"]
     pos: "phrase"
-    notes: "You wait for someone with का (kā): मेरा इंतज़ार कीजिए (mērā intazār kījiē)."
-  - id: hi-0492
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0492"
     target: "शुरू करना"
-    native: "to start"
     reading: "śurū karnā"
     ipa: "ʃʊruː kərnaː"
     pos: "phrase"
-  - id: hi-0493
+  - id: "hi-0493"
     target: "ख़त्म करना"
-    native: "to finish"
     reading: "k͟hatm karnā"
     ipa: "xət̪m kərnaː"
     alt_target: ["खत्म करना"]
     pos: "phrase"
-  - id: hi-0494
+  - id: "hi-0494"
     target: "कोशिश करना"
-    native: "to try"
     reading: "kōśiś karnā"
     ipa: "koːʃɪʃ kərnaː"
     pos: "phrase"
-  - id: hi-0495
+  - id: "hi-0495"
     target: "फ़ोन करना"
-    native: "to phone"
     reading: "fōn karnā"
     ipa: "foːn kərnaː"
     alt_target: ["फोन करना"]
     pos: "phrase"
-  - id: hi-0496
+  - id: "hi-0496"
     target: "साफ़ करना"
-    native: "to clean"
     reading: "sāf karnā"
     ipa: "saːf kərnaː"
     alt_target: ["साफ करना"]
     pos: "phrase"
-  - id: hi-0497
+  - id: "hi-0497"
     target: "शादी करना"
-    native: "to marry"
     reading: "śādī karnā"
     ipa: "ʃaːd̪iː kərnaː"
     pos: "phrase"
-  - id: hi-0498
+  - id: "hi-0498"
     target: "आराम करना"
-    native: "to rest"
     reading: "ārām karnā"
     ipa: "aːraːm kərnaː"
     pos: "phrase"
-  - id: hi-0499
+  - id: "hi-0499"
     target: "याद करना"
-    native: "to remember; to memorise"
     reading: "yād karnā"
     ipa: "jaːd̪ kərnaː"
     pos: "phrase"
-  - id: hi-0500
+  - id: "hi-0500"
     target: "ग़लती करना"
-    native: "to make a mistake"
     reading: "ġaltī karnā"
     ipa: "ɣəlt̪iː kərnaː"
     alt_target: ["गलती करना"]
     pos: "phrase"
-  - id: hi-0501
+  - id: "hi-0501"
     target: "याद आना"
-    native: "to come to mind; to be missed"
     reading: "yād ānā"
     ipa: "jaːd̪ aːnaː"
     pos: "phrase"
-    notes: "The one who remembers takes को (kō): मुझे घर की याद आती है (mujhē ghar kī yād ātī hai), I miss home."
-  - id: hi-0502
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0502"
     target: "देर होना"
-    native: "to be late"
     reading: "dēr hōnā"
     ipa: "d̪eːr ɦoːnaː"
     pos: "phrase"
-    notes: "मुझे देर हो गई (mujhē dēr hō gaī), I'm late."
-  - id: hi-0503
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0503"
     target: "डर लगना"
-    native: "to be afraid"
     reading: "ḍar lagnā"
     ipa: "ɖər ləɡnaː"
     pos: "phrase"
-    notes: "मुझे कुत्तों से डर लगता है (mujhē kuttōm̐ sē ḍar lagtā hai), I'm afraid of dogs."
+    notes:
+      - { id: "n1", kind: "note" }
