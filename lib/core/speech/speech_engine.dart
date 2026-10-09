@@ -37,6 +37,18 @@ enum SpeechFailure {
   other,
 }
 
+/// Why the recogniser could not be readied, asked or stopped: its own
+/// error code, such as a platform error's, or `timeout` for a question it
+/// never answered. What the app log needs to say what failed (#162).
+class SpeechError implements Exception {
+  const SpeechError(this.code);
+
+  final String code;
+
+  @override
+  String toString() => 'SpeechError($code)';
+}
+
 /// What one listen produced: the recogniser's readings, best first, or why
 /// there are none.
 class SpeechHeard {
@@ -49,9 +61,9 @@ class SpeechHeard {
   final SpeechFailure? failure;
 
   /// The recogniser's own error code, such as `error_no_match`, when it gave
-  /// one: what a report needs to say exactly what failed. Null when it
-  /// failed without one, such as a listen that never answered, or when the
-  /// app knew beforehand that it could not listen.
+  /// one: what a report needs to say exactly what failed. `timeout` for a
+  /// listen that never answered. Null when it failed without one, or when
+  /// the app knew beforehand that it could not listen.
   final String? code;
 
   bool get failed => failure != null || alternatives.isEmpty;
@@ -71,6 +83,9 @@ class SpeechHeard {
 /// allowed.
 abstract interface class SpeechEngine {
   /// Whether the microphone permission is granted. Never asks.
+  ///
+  /// This, [start], [languages] and [stop] throw a [SpeechError] when the
+  /// recogniser fails, so that the caller can log why.
   Future<bool> hasPermission();
 
   /// Readies the recogniser, asking for the microphone permission if it
@@ -81,8 +96,8 @@ abstract interface class SpeechEngine {
 
   /// The languages the recogniser lists, by BCP-47 primary subtag (`hi`),
   /// after [start]. On Android 13 and later these are the on-device
-  /// recogniser's; earlier, the default recogniser's. Empty when it cannot
-  /// say.
+  /// recogniser's; earlier, the default recogniser's. Empty when it lists
+  /// none.
   Future<Set<String>> languages();
 
   /// Listens once, for a word or a short phrase in [bcp47], for at most
