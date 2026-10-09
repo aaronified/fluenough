@@ -59,10 +59,15 @@ void main() {
     expect(b.of('te', DrillMode.listening), 0);
   });
 
-  test('a miss moves its own skill alone', () {
+  test('a miss is blamed on the skills it implies too, by their share', () {
     final a = Abilities.replay([r('te-0001', 1, DrillMode.production)]);
     expect(a.of('te', DrillMode.production), closeTo(-0.5, 1e-9));
-    expect(a.of('te', DrillMode.recognition), 0);
+    expect(
+      a.of('te', DrillMode.recognition),
+      closeTo(-0.5 * SkillMap.implied, 1e-9),
+    );
+    expect(a.of('te', DrillMode.listening), 0);
+    expect(a.answersIn('te', DrillMode.recognition), 0);
   });
 
   test('recognition implies nothing: the easier skill', () {
