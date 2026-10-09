@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart' show PlatformException;
 import 'package:flutter_tts/flutter_tts.dart';
 
 import 'tts_engine.dart';
@@ -22,6 +23,13 @@ class SystemTtsEngine implements TtsEngine {
 
   String? _currentLanguage;
   double? _currentRate;
+
+  /// The voice chosen last, by name, or null for the language's default.
+  String? _currentVoice;
+
+  /// The engine's last error while speaking, from its error handler.
+  String? _error;
+  bool _handling = false;
 
   @override
   Future<bool> isLanguageAvailable(String bcp47) async {
@@ -56,7 +64,15 @@ class SystemTtsEngine implements TtsEngine {
       final locale = entry['locale']?.toString();
       if (name == null || locale == null) continue;
       if (!locale.toLowerCase().startsWith(prefix)) continue;
-      voices.add(TtsVoice(name: name, locale: locale));
+      // Android gives "1" or "0", or a bool, as the plugin's version does.
+      final network = entry['network_required']?.toString();
+      voices.add(
+        TtsVoice(
+          name: name,
+          locale: locale,
+          networkRequired: network == '1' || network == 'true',
+        ),
+      );
     }
     return voices;
   }
@@ -66,24 +82,55 @@ class SystemTtsEngine implements TtsEngine {
     String text, {
     required String bcp47,
     double rate = 0.5,
+    String? voice,
   }) async {
     if (text.trim().isEmpty) return;
     if (!await isLanguageAvailable(bcp47)) return;
-
-    if (_currentLanguage != bcp47) {
-      await _tts.setLanguage(bcp47);
-      _currentLanguage = bcp47;
-    }
-    if (_currentRate != rate) {
-      await _tts.setSpeechRate(rate);
-      _currentRate = rate;
+    if (!_handling) {
+      // The plugin reports an error while speaking here, not by throwing.
+      // Its message names the engine's error, never the text.
+      _tts.setErrorHandler((message) => _error = '$message');
+      _handling = true;
     }
 
-    // awaitSpeakCompletion makes speak() resolve when playback ends rather
-    // than when it starts, so a drill can await the audio before accepting an
-    // answer.
-    await _tts.awaitSpeakCompletion(true);
-    await _tts.speak(text);
+    try {
+      // A voice the engine no longer lists, removed since it was chosen,
+      // is the default (#123).
+      final chosen = voice == null
+          ? null
+          : (await voicesFor(bcp47)).where((v) => v.name == voice).firstOrNull;
+      if (_currentLanguage != bcp47 ||
+          (_currentVoice != null && chosen == null)) {
+        // Setting the language goes back to its default voice.
+        await _tts.setLanguage(bcp47);
+        _currentLanguage = bcp47;
+        _currentVoice = null;
+      }
+      if (chosen != null && _currentVoice != chosen.name) {
+        await _tts.setVoice(<String, String>{
+          'name': chosen.name,
+          'locale': chosen.locale,
+        });
+        _currentVoice = chosen.name;
+      }
+      if (_currentRate != rate) {
+        await _tts.setSpeechRate(rate);
+        _currentRate = rate;
+      }
+
+      _error = null;
+      // awaitSpeakCompletion makes speak() resolve when playback ends rather
+      // than when it starts, so a drill can await the audio before accepting
+      // an answer.
+      await _tts.awaitSpeakCompletion(true);
+      await _tts.speak(text);
+    } on PlatformException catch (e) {
+      throw TtsFailure(e.code);
+    }
+    if (_error case final error?) {
+      _error = null;
+      throw TtsFailure(error);
+    }
   }
 
   @override

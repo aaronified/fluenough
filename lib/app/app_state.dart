@@ -616,7 +616,11 @@ class AppState extends ChangeNotifier {
           : await _speech.hasPermission()
           ? SpeechSetup.noRecogniser
           : SpeechSetup.refused;
-    } catch (_) {
+      if (setup != SpeechSetup.ready) {
+        log.warning('Speech error: start ${setup.name}');
+      }
+    } catch (e) {
+      log.warning('Speech error: start ${e.runtimeType}');
       _speechReady = false;
       _speechLanguages = const <String>{};
     } finally {
@@ -688,16 +692,26 @@ class AppState extends ChangeNotifier {
       case SpeechStatus.online:
         onDevice = false;
       case SpeechStatus.onlineOnly:
-        return const SpeechHeard.failed(SpeechFailure.notOnDevice);
+        return _logUnheard(
+          language,
+          const SpeechHeard.failed(SpeechFailure.notOnDevice),
+        );
       case SpeechStatus.missing:
-        return const SpeechHeard.failed(SpeechFailure.unsupported);
+        return _logUnheard(
+          language,
+          const SpeechHeard.failed(SpeechFailure.unsupported),
+        );
       case SpeechStatus.off || SpeechStatus.checking:
-        return const SpeechHeard.failed(SpeechFailure.noRecogniser);
+        return _logUnheard(
+          language,
+          const SpeechHeard.failed(SpeechFailure.noRecogniser),
+        );
     }
     final heard = await _speech.listen(
       bcp47: language.ttsTag,
       onDevice: onDevice,
     );
+    if (heard.failed) _logUnheard(language, heard);
     switch (heard.failure) {
       case SpeechFailure.notOnDevice when onDevice:
         settings.foundSpeech(code);
@@ -705,6 +719,17 @@ class AppState extends ChangeNotifier {
         settings.foundSpeech(code, unsupported: true);
       default:
     }
+    return heard;
+  }
+
+  /// Puts a listen that gave nothing to grade in the app log (#162): the
+  /// language, why, and the recogniser's own code, or "none" when the app
+  /// knew beforehand. Never what was said. Returns [heard].
+  SpeechHeard _logUnheard(LanguageInfo language, SpeechHeard heard) {
+    final why = heard.failure ?? SpeechFailure.noMatch;
+    log.warning(
+      'Speech error: ${language.ttsTag} ${why.name} ${heard.code ?? 'none'}',
+    );
     return heard;
   }
 
@@ -742,31 +767,55 @@ class AppState extends ChangeNotifier {
       final tag = language.ttsTag;
       try {
         _voices[tag] = await _tts.isLanguageAvailable(tag);
-      } catch (_) {
+      } catch (e) {
+        log.warning('Voice error: $tag availability ${e.runtimeType}');
         _voices[tag] = false;
       }
     }
     notifyListeners();
   }
 
-  /// The voices the engine offers for [language].
-  Future<List<TtsVoice>> voicesFor(LanguageInfo language) =>
-      _tts.voicesFor(language.ttsTag);
+  /// The voices the engine offers for [language]: none when it cannot say,
+  /// which goes to the app log.
+  Future<List<TtsVoice>> voicesFor(LanguageInfo language) async {
+    try {
+      return await _tts.voicesFor(language.ttsTag);
+    } catch (e) {
+      log.warning('Voice error: ${language.ttsTag} voices ${e.runtimeType}');
+      return const <TtsVoice>[];
+    }
+  }
 
-  /// Speaks [text] in [language] at the learner's speech rate, or slower.
-  /// Completes when playback ends. Does nothing without a voice, or while
-  /// sound is off in Settings.
-  Future<void> speak(
+  /// Speaks [text] in [language] at the learner's speech rate, or slower,
+  /// in the voice chosen for it on the Voices page (#123). Completes when
+  /// playback ends. Does nothing without a voice, or while sound is off in
+  /// Settings.
+  ///
+  /// Returns the engine's error code when it could not speak, or null. The
+  /// error goes to the app log too, by its code and the language, never
+  /// the text.
+  Future<String?> speak(
     String text,
     LanguageInfo language, {
     bool slower = false,
   }) async {
-    if (!settings.soundOn) return;
-    await _tts.speak(
-      text,
-      bcp47: language.ttsTag,
-      rate: settings.ttsRate(slower: slower),
-    );
+    if (!settings.soundOn) return null;
+    try {
+      await _tts.speak(
+        text,
+        bcp47: language.ttsTag,
+        rate: settings.ttsRate(slower: slower),
+        voice: settings.voiceFor(language.code),
+      );
+      return null;
+    } on TtsFailure catch (e) {
+      log.warning('Voice error: ${language.ttsTag} ${e.code}');
+      return e.code;
+    } catch (e) {
+      final code = '${e.runtimeType}';
+      log.warning('Voice error: ${language.ttsTag} $code');
+      return code;
+    }
   }
 
   Future<void> stopSpeaking() => _tts.stop();

@@ -5296,17 +5296,17 @@
   "@voicesChecking": {
     "description": "Status while asking the phone."
   },
-  "voicesTest": "Test",
-  "@voicesTest": {
-    "description": "Button that speaks a sample."
+  "voicesPlay": "Play",
+  "@voicesPlay": {
+    "description": "Button on a language’s card on the Voices page: speaks a word from the course in the chosen voice."
   },
-  "voicesTestLabel": "Test {language} voice",
-  "@voicesTestLabel": {
-    "description": "Screen-reader label of Test.",
+  "voicesPlayLabel": "Play the {language} voice",
+  "@voicesPlayLabel": {
+    "description": "Screen-reader label of Play on a language’s card.",
     "placeholders": {
       "language": {
         "type": "String",
-        "example": "Hindi"
+        "example": "Telugu"
       }
     }
   },
@@ -5336,13 +5336,97 @@
   "@voicesCheckAgain": {
     "description": "Button that asks the phone about voices again."
   },
-  "voicesSpeechHeading": "Recognising your speech",
-  "@voicesSpeechHeading": {
-    "description": "Heading of the speech-recognition section on the voices screen."
+  "voicesListening": "Listening",
+  "@voicesListening": {
+    "description": "Heading of the part of a language’s card on the Voices page about its voice: how the phone speaks it."
   },
-  "voicesSpeechIntro": "Speaking drills use your phone’s own speech recogniser. Where it can, it listens on the phone, and nothing you say leaves it.",
-  "@voicesSpeechIntro": {
-    "description": "Explanation of the speech-recognition section."
+  "voicesSpeakingPart": "Speaking",
+  "@voicesSpeakingPart": {
+    "description": "Heading of the part of a language’s card on the Voices page about recognising the learner’s speech in it."
+  },
+  "voicesVoice": "Voice",
+  "@voicesVoice": {
+    "description": "Label of the menu on a language’s card that chooses which of the phone’s voices speaks it."
+  },
+  "voicesVoiceDefault": "Phone default",
+  "@voicesVoiceDefault": {
+    "description": "In the voice menu: the voice the phone’s text-to-speech uses for the language unless one is chosen. The first choice, and the default."
+  },
+  "voicesVoiceOnline": "{name} · needs a connection",
+  "@voicesVoiceOnline": {
+    "description": "In the voice menu: a voice that speaks only with an internet connection. {name} is the phone’s name for the voice.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "te-in-x-tem-network"
+      }
+    }
+  },
+  "voicesInstallOne": "Install a voice",
+  "@voicesInstallOne": {
+    "description": "Button on a language’s card when the phone has no voice for it: explains how to install one, or opens the phone’s voice settings."
+  },
+  "voicesPlayFailed": "Couldn’t play it",
+  "@voicesPlayFailed": {
+    "description": "On a language’s card, when the phone’s voice gave an error as Play was tapped."
+  },
+  "voicesErrorCode": "Error code: {code}",
+  "@voicesErrorCode": {
+    "description": "Small print under a failed test on the Voices page: the phone’s own error code, for a report. Keep the code as it is.",
+    "placeholders": {
+      "code": {
+        "type": "String",
+        "example": "error_no_match"
+      }
+    }
+  },
+  "voicesSay": "Say something",
+  "@voicesSay": {
+    "description": "Button on a language’s card on the Voices page: opens a test of the phone’s speech recognition in that language."
+  },
+  "voicesSayLabel": "Say something in {language}",
+  "@voicesSayLabel": {
+    "description": "Screen-reader label of Say something, and the title of the speaking test.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesSayIntro": "Say this word, or anything you like. It doesn’t count as practice.",
+  "@voicesSayIntro": {
+    "description": "Under the title of the speaking test on the Voices page."
+  },
+  "voicesSayWord": "Say this word",
+  "@voicesSayWord": {
+    "description": "Button in the speaking test: listens for the word shown."
+  },
+  "voicesSayAnything": "Say anything",
+  "@voicesSayAnything": {
+    "description": "Button in the speaking test: listens and shows whatever the phone heard."
+  },
+  "voicesAnotherWord": "Another word",
+  "@voicesAnotherWord": {
+    "description": "Button in the speaking test: shows another word from the course to say."
+  },
+  "voicesHeard": "Heard: {text}",
+  "@voicesHeard": {
+    "description": "Result of the speaking test: what the phone heard. {text} is in the language tested.",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "నమస్కారం"
+      }
+    }
+  },
+  "voicesHeardMatch": "That’s the word",
+  "@voicesHeardMatch": {
+    "description": "Result of the speaking test, under what was heard: it matches the word asked for."
+  },
+  "voicesHeardNoMatch": "That isn’t the word",
+  "@voicesHeardNoMatch": {
+    "description": "Result of the speaking test, under what was heard: it does not match the word asked for."
   },
   "voicesSpeechOff": "Speaking is off. Switching it on asks for the microphone.",
   "@voicesSpeechOff": {
