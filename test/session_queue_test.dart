@@ -65,7 +65,7 @@ void main() {
         native: 'native a, as the other deck glosses it',
       );
       final queue = build([card('a'), listed, card('b')]);
-      expect(ids(queue.fresh), ['a:production', 'b:production']);
+      expect(ids(queue.fresh), ['a:recognition', 'b:recognition']);
       expect(
         queue.fresh.first.card.deckId,
         'test',
@@ -73,9 +73,9 @@ void main() {
       );
     });
 
-    test('a new card starts with Write (production)', () {
+    test('a new card starts with Recognition', () {
       final queue = build([card('a'), card('b')]);
-      expect(ids(queue.fresh), ['a:production', 'b:production']);
+      expect(ids(queue.fresh), ['a:recognition', 'b:recognition']);
       expect(queue.due, isEmpty);
       expect(queue.items.every((i) => i.isNew), isTrue);
     });
@@ -84,7 +84,7 @@ void main() {
       final queue = build([
         for (final id in ['a', 'b', 'c', 'd']) card(id),
       ], newCardLimit: 2);
-      expect(ids(queue.fresh), ['a:production', 'b:production']);
+      expect(ids(queue.fresh), ['a:recognition', 'b:recognition']);
     });
 
     test('a cap of zero, or less, adds nothing new', () {
@@ -97,14 +97,14 @@ void main() {
       final queue = SessionQueue.build(
         cards: [card('a'), card('b'), card('c')],
         stateOf: (c, m) =>
-            c.id == 'c' && m == DrillMode.production ? dueDaysAgo(1) : null,
+            c.id == 'c' && m == DrillMode.recognition ? dueDaysAgo(1) : null,
         hasVoice: (_) => true,
         now: now,
         newCardLimit: 20,
         canIntroduce: (c) => c.id == 'b',
       );
-      expect(ids(queue.fresh), ['b:production']);
-      expect(ids(queue.due), ['c:production']);
+      expect(ids(queue.fresh), ['b:recognition']);
+      expect(ids(queue.due), ['c:recognition']);
     });
 
     test('fairShares splits new pairs equally, in blocks, and passes a short '
@@ -134,16 +134,27 @@ void main() {
       expect(SessionQueue.fairShares(<List<SessionItem>>[], 7), isEmpty);
     });
 
+    test('the cap counts pairs: a card known by sight is new to type', () {
+      final queue = build(
+        [card('a')],
+        states: {('a', DrillMode.recognition): dueDaysAgo(-3)},
+      );
+      expect(ids(queue.fresh), ['a:production']);
+    });
+
     test('the cap counts pairs: a card known in writing is new to hear', () {
       final queue = build(
         [card('a')],
-        states: {('a', DrillMode.production): dueDaysAgo(-3)},
+        states: {
+          ('a', DrillMode.recognition): dueDaysAgo(-3),
+          ('a', DrillMode.production): dueDaysAgo(-3),
+        },
       );
       expect(ids(queue.fresh), ['a:listening']);
     });
 
-    test('recognition is never a new pair, nor due: a lesson step, not a '
-        'schedule (ADR-0034)', () {
+    test('recognition is a schedule: a new pair, and due like the others '
+        '(ADR-0034)', () {
       final queue = build(
         [
           card('a', modes: {DrillMode.recognition}),
@@ -151,10 +162,11 @@ void main() {
         ],
         states: {('b', DrillMode.recognition): dueDaysAgo(5)},
       );
-      expect(queue.isEmpty, isTrue);
+      expect(ids(queue.due), ['b:recognition']);
+      expect(ids(queue.fresh), ['a:recognition']);
       expect(ids(build([card('c')]).fresh), [
-        'c:production',
-      ], reason: 'a new word starts with Write, not recognition');
+        'c:recognition',
+      ], reason: 'a new word starts with Recognition');
     });
   });
 
@@ -172,7 +184,7 @@ void main() {
         'b:production',
         'c:production',
         'a:production',
-        'new:production',
+        'new:recognition',
       ]);
       expect(queue.due.every((i) => !i.isNew), isTrue);
     });
@@ -258,6 +270,7 @@ void main() {
           card('b'),
         ],
         states: {
+          ('b', DrillMode.recognition): dueDaysAgo(-2),
           ('b', DrillMode.production): dueDaysAgo(-2),
           ('b', DrillMode.listening): dueDaysAgo(1),
         },
@@ -280,7 +293,7 @@ void main() {
         card('verb', modes: {DrillMode.grammar}),
         card('word'),
       ]);
-      expect(ids(queue.items), ['verb:grammar', 'word:production']);
+      expect(ids(queue.items), ['verb:grammar', 'word:recognition']);
     });
 
     test('counts items per mode', () {
@@ -290,7 +303,7 @@ void main() {
       );
       expect(queue.countByMode(), {
         DrillMode.listening: 1,
-        DrillMode.production: 2,
+        DrillMode.recognition: 2,
       });
       expect(queue.length, 3);
     });
@@ -337,7 +350,7 @@ void main() {
       [card('a'), card('b')],
       states: {('a', DrillMode.production): dueDaysAgo(1)},
     ).withoutDue();
-    expect(ids(queue.items), ['b:production']);
+    expect(ids(queue.items), ['b:recognition']);
     expect(queue.due, isEmpty);
   });
 

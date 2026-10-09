@@ -55,8 +55,7 @@ Future<void> tapText(WidgetTester tester, String text) async {
 }
 
 /// A match pairs question of [target] and the next words of [deck] with
-/// other meanings, in recognition, as a lesson asks it (ADR-0034): a
-/// review never asks recognition, so no session is built for it. The
+/// other meanings, in recognition, as a lesson asks it (ADR-0034). The
 /// match shows until it is answered and continued.
 Future<(AppState, DrillSession)> pumpMatch(
   WidgetTester tester, {
@@ -344,8 +343,8 @@ void main() {
   });
 
   group('a session', () {
-    testWidgets('never asks recognition: a lesson does, by match pairs and '
-        'multiple choice, never by rating', (tester) async {
+    testWidgets('asks recognition by match pairs and multiple choice, never '
+        'by rating; a lesson does too', (tester) async {
       usePhone(tester);
       final state = AppState.test(
         settings: SettingsNotifier(
@@ -354,16 +353,21 @@ void main() {
         ),
       );
       await state.load();
-      // Recognition is a lesson step, not a schedule (ADR-0034).
+      // Recognition is a schedule of its own (ADR-0034): a review asks it,
+      // by choosing the meaning, with options enough to choose among.
+      final reviewed = state.sessionItems(
+        DrillRequest.untaught(spanish, skill: Skill.recognition),
+      );
+      expect(reviewed, isNotEmpty);
+      expect(reviewed.map((i) => i.mode).toSet(), {DrillMode.recognition});
       expect(
-        state.sessionItems(
-          DrillRequest.untaught(spanish, skill: Skill.recognition),
-        ),
-        isEmpty,
+        <Ask>{for (final item in reviewed) item.ask},
+        <Ask>{Ask.chooseMeaning, Ask.matchPairs},
       );
       expect(
         state.sessionItems(DrillRequest.untaught(spanish)).map((i) => i.mode),
-        isNot(contains(DrillMode.recognition)),
+        contains(DrillMode.recognition),
+        reason: 'a new word starts with Recognition',
       );
       final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
       final recognised = <Ask>{
@@ -375,9 +379,12 @@ void main() {
 
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.lesson(language: 'es')),
+        DrillPage(
+          request: DrillRequest.untaught(spanish, skill: Skill.recognition),
+        ),
         state: state,
       );
+      expect(find.byType(MatchDrill), findsOneWidget);
       expect(find.byType(RecognitionDrill), findsNothing);
     });
 

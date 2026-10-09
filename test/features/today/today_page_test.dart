@@ -118,15 +118,16 @@ void main() {
     expect(find.text(l10n.todayMinutes(numbers.minutes)), findsOneWidget);
 
     final byMode = queue.countByMode();
-    // Recognition is a lesson step, never due, so it has no tile (ADR-0034).
+    // Recognition is scheduled, so it has a tile (ADR-0034).
     expect(
       find.descendant(
         of: find.byType(DueCard),
         matching: find.text(l10n.skillRecognition),
       ),
-      findsNothing,
+      findsOneWidget,
     );
     for (final (skill, label) in <(Skill, String)>[
+      (Skill.recognition, l10n.skillRecognition),
       (Skill.production, l10n.skillProduction),
       // The grammar drill ships (#14).
       (Skill.grammar, l10n.skillGrammar),
@@ -307,7 +308,7 @@ void main() {
       ),
       'hi-en-first-words',
       count: 8,
-      // Recognition schedules nothing (ADR-0034): known in Write.
+      // Known in Write, one of the schedules (ADR-0034).
       mode: DrillMode.production,
     );
     await pumpToday(tester, state: state);
@@ -604,13 +605,15 @@ void main() {
       await pumpToday(tester, state: off);
       expect(tileOf(tester, Skill.speaking), findsNothing);
       expect(TodayNumbers.of(off).bySkill.keys, <Skill>[
+        Skill.recognition,
         Skill.listening,
         Skill.production,
         Skill.grammar,
       ]);
-      // Three tiles: the odd one, Grammar, keeps half the row.
+      // Four tiles, two to a row.
       expect(tester.takeException(), isNull);
-      expect(widthOf(Skill.grammar), widthOf(Skill.listening));
+      expect(widthOf(Skill.grammar), widthOf(Skill.recognition));
+      expect(widthOf(Skill.listening), widthOf(Skill.recognition));
 
       await tester.pumpWidget(const SizedBox.shrink());
       final on = await hindiReviewed(<DrillMode, Duration>{
@@ -622,15 +625,17 @@ void main() {
       expect(TodayNumbers.of(on).bySkill[Skill.speaking], 0);
       expect(TodayNumbers.of(on).dueIn[Skill.speaking], 8);
       await pumpToday(tester, state: on);
-      // Hear, Say, Write and Grammar (ADR-0034): no tile for recognition.
+      // Recognition, Hear, Say, Write and Grammar (ADR-0034): five tiles,
+      // and the odd one, Grammar, keeps half the row.
       expect(TodayNumbers.of(on).bySkill.keys, <Skill>[
+        Skill.recognition,
         Skill.listening,
         Skill.speaking,
         Skill.production,
         Skill.grammar,
       ]);
       expect(tester.takeException(), isNull);
-      expect(widthOf(Skill.grammar), widthOf(Skill.listening));
+      expect(widthOf(Skill.grammar), widthOf(Skill.recognition));
 
       await tapVisible(tester, tileOf(tester, Skill.speaking));
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
@@ -647,8 +652,8 @@ void main() {
       expect(chipOf(l10n.todayRevisionAll), findsOneWidget);
       // Spoken only while listening and speaking are both on.
       expect(chipOf(l10n.todayRevisionSpoken), findsNothing);
-      // Recognition is never revised on its own (ADR-0034).
-      expect(chipOf(Skill.recognition.label(l10n)), findsNothing);
+      // Recognition is a skill of its own, revised on its own (ADR-0034).
+      expect(chipOf(Skill.recognition.label(l10n)), findsOneWidget);
 
       // Nothing known in grammar: the buttons are off, and say so.
       final grammar = Skill.grammar.label(l10n);

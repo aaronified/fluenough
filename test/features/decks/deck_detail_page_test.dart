@@ -351,7 +351,7 @@ void main() {
       state: await withDeckTaught(
         (progress) => AppState.test(progress: progress),
         spanish,
-        // Written: recognition is not scheduled (ADR-0034).
+        // Known in Write, one of the schedules (ADR-0034).
         mode: DrillMode.production,
       ),
     );

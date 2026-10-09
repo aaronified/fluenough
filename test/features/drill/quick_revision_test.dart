@@ -33,7 +33,7 @@ Future<AppState> knowing(int count) async {
     ),
     'hi-en-first-words',
     count: count,
-    // Write, a schedule: recognition is never due (ADR-0034).
+    // Known in Write, one of the schedules (ADR-0034).
     mode: DrillMode.production,
   );
   await state.load();

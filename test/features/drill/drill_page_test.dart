@@ -72,15 +72,19 @@ void main() {
       );
     }
     // Rated, as recognition is where it cannot be chosen (ADR-0024): a
-    // preset keeps each card asked its own way. Recognition is a lesson
-    // step, never due (ADR-0034), so the preset puts the card in.
-    await pumpDrill(
+    // preset keeps each card asked its own way. Recognition is scheduled
+    // (ADR-0034): the card is due, and the new words follow it.
+    final state = await pumpDrill(
       tester,
       DrillRequest.untaught(spanish, skill: Skill.recognition),
       state: AppState.test(progress: progress),
       preset: DrillPreset(target: card.target),
     );
     final l10n = l10nOf(tester);
+    final total = state
+        .buildSession(DrillRequest.untaught(spanish, skill: Skill.recognition))
+        .length;
+    expect(total, greaterThan(1));
 
     expect(find.text(card.target), findsOneWidget);
     expect(find.text(card.native), findsNothing);
@@ -112,8 +116,10 @@ void main() {
     expect(progress.log.last.cardId, card.id);
     expect(progress.log.last.grade, 4);
     expect(progress.log.last.answerGiven, isNull);
-    // The only card: nothing else of recognition is ever due.
-    expect(find.byType(SummaryPage), findsOneWidget);
+    // The next card of the review, rated in its turn.
+    expect(progress.log.last.mode, DrillMode.recognition);
+    expect(find.text(l10n.drillShowAnswer), findsOneWidget);
+    expect(find.text(l10n.drillPositionShort(2, total)), findsOneWidget);
   });
 
   group('production records the right grade', () {
