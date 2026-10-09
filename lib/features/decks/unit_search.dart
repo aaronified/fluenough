@@ -113,7 +113,7 @@ List<SearchHit> searchCourses(
       if (matchesAll(query, <String>[
         coming.title,
         language.name,
-        coming.level.label,
+        ?coming.level?.label,
       ])) {
         hits.add(ComingHit(language, coming));
       }
@@ -248,7 +248,7 @@ class _HitTile extends StatelessWidget {
         hit.unit.title,
         joinParts(l10n, <String>[
           language,
-          hit.unit.level.label,
+          ?hit.unit.level?.label,
           if (hit.unit.words case final words?)
             l10n.pathComingWords(words)
           else

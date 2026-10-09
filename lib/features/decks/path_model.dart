@@ -1,6 +1,7 @@
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/session.dart';
+import '../../core/data/course_path.dart' show Milestone, PlanUnit;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
@@ -30,22 +31,19 @@ enum CefrLevel {
 }
 
 /// A unit a course's B1 plan names but that is not written yet: shown on the
-/// path as coming, and never opened.
+/// path as coming, and never opened. Its level is the one its path marks
+/// it in; null on a path that marks none, which shows it after the units.
 typedef ComingUnit = ({
   String title,
-  CefrLevel level,
+  CefrLevel? level,
 
   /// Its planned size in words, if the plan gives one.
   int? words,
 });
 
 /// What a course's B1 plan says beyond its written units: where each level
-/// ends, and the units still to be written (`b1-plans.md`).
-///
-/// No path on this branch marks a level yet: the B1 format adds the marks
-/// (`milestone:` on a unit). Until a path has them, [coursePlanOf] gives
-/// [CoursePlan.none] and the path shows no level and no level achievement,
-/// rather than guessing where A1 ends. Tests and the debug gallery pass a
+/// ends, and the units still to be written (`b1-plans.md`). [coursePlanOf]
+/// reads it from the course's path; tests and the debug gallery pass a
 /// plan of their own.
 class CoursePlan {
   const CoursePlan({
@@ -65,9 +63,126 @@ class CoursePlan {
   bool get isEmpty => levelEnds.isEmpty && coming.isEmpty;
 }
 
-/// The plan of [language]'s course: [CoursePlan.none] until paths mark their
-/// levels (see [CoursePlan]). The one place a path's marks will be read.
-CoursePlan coursePlanOf(AppState state, String language) => CoursePlan.none;
+/// The plan of [language]'s course, from its path (ADR-0036): where each
+/// level its path marks ends (`milestone:`), at the last unit of that level
+/// the course teaches, and each unit "Coming": planned and not written
+/// yet, or written but with no deck in the course's native language yet.
+/// [CoursePlan.none] for a course without a path, or one whose path plans
+/// nothing.
+CoursePlan coursePlanOf(AppState state, String language) {
+  final units = state.courseUnits(language);
+  if (units.isEmpty) return CoursePlan.none;
+  final path = state.pathOf(units.first.first);
+  if (path == null) return CoursePlan.none;
+  final plan = path.plan;
+  final whole = state.languagePathOf(language)?.plan;
+  final taught = <String>{
+    for (final unit in units)
+      for (final entry in unit) entry.id,
+  };
+
+  // Where each marked level ends, by its index in [plan].
+  final marks = <(int, CefrLevel)>[
+    for (final (i, unit) in plan.indexed)
+      if (unit.milestone case final m?) (i, _levelOf(m)),
+  ];
+  CefrLevel? levelAt(int index) {
+    for (final (end, level) in marks) {
+      if (index <= end) return level;
+    }
+    // After the last mark, the level after it, if there is one.
+    if (marks.isEmpty) return null;
+    final last = marks.last.$2.index + 1;
+    return last < CefrLevel.values.length ? CefrLevel.values[last] : null;
+  }
+
+  final levelEnds = <CefrLevel, String>{};
+  var start = 0;
+  for (final (end, level) in marks) {
+    for (var i = end; i >= start; i--) {
+      final deck = plan[i].decks.where(taught.contains).firstOrNull;
+      if (!plan[i].isComing && deck != null) {
+        levelEnds[level] = deck;
+        break;
+      }
+    }
+    start = end + 1;
+  }
+
+  final coming = <ComingUnit>[
+    for (final (i, unit) in plan.indexed)
+      if (unit.isComing)
+        (
+          title: _comingTitle(
+            state,
+            unit,
+            whole != null && i < whole.length ? whole[i] : null,
+            language,
+          ),
+          level: levelAt(i),
+          words: unit.words,
+        ),
+  ];
+  return CoursePlan(levelEnds: levelEnds, coming: coming);
+}
+
+CefrLevel _levelOf(Milestone milestone) => switch (milestone) {
+  Milestone.a1 => CefrLevel.a1,
+  Milestone.a2 => CefrLevel.a2,
+  Milestone.b1 => CefrLevel.b1,
+};
+
+/// A coming unit's name. A planned unit's is its theme's, or for a grammar
+/// unit its planned id read as words. A written unit with no deck in the
+/// course's native language yet takes its theme's name, or its first
+/// deck's name, from another course's deck for it, from English first;
+/// else its first core id read as words. The decks' data, as a theme's
+/// name is, not interface text.
+String _comingTitle(
+  AppState state,
+  PlanUnit unit,
+  PlanUnit? written,
+  String language,
+) {
+  String bare(String id) =>
+      id.startsWith('$language-') ? id.substring(language.length + 1) : id;
+  if (unit.planned case final planned?) {
+    if (planned.theme case final theme?) return _themeName(state, theme);
+    return _words(bare(planned.id));
+  }
+  final cores = written?.decks ?? const <String>[];
+  for (final core in cores) {
+    final others =
+        <DeckEntry>[
+          for (final entry in state.decks)
+            if (entry.id == '$language-${entry.deck.native.code}-${bare(core)}')
+              entry,
+        ]..sort(
+          (a, b) =>
+              (a.deck.native.code == 'en' ? 0 : 1) -
+              (b.deck.native.code == 'en' ? 0 : 1),
+        );
+    for (final entry in others) {
+      if (entry.deck.theme case final theme?) return _themeName(state, theme);
+    }
+    if (others.firstOrNull case final entry?) return entry.deck.name;
+  }
+  return cores.isEmpty ? '' : _words(bare(cores.first));
+}
+
+String _themeName(AppState state, String theme) {
+  for (final known in state.themes) {
+    if (known.id == theme) return known.name;
+  }
+  return _words(theme);
+}
+
+/// An id read as words: `events-and-news` is "Events and news".
+String _words(String id) {
+  final text = id.replaceAll('-', ' ').trim();
+  if (text.isEmpty) return id;
+  return text[0].toUpperCase() + text.substring(1);
+}
 
 /// Where a unit stands for the learner.
 enum UnitStatus {
@@ -617,6 +732,10 @@ CourseView? courseView(
     startLevel(level);
     endLevel(level);
   }
+  // Units coming on a path that marks no level, after the rest.
+  steps.addAll(
+    thePlan.coming.where((c) => c.level == null).map(ComingStep.new),
+  );
 
   final inCourse = <String>{
     for (final unit in units)
