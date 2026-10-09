@@ -34,9 +34,9 @@ import 'word_sheet.dart';
 /// or else teaches its next words.
 ///
 /// Rules and sentences are as far as today's decks give them: a rule is a
-/// grammar deck's table, and a sentence opens when a lesson teaches it. The
-/// B1 format's rule cards and unlocking (`words-rules-sentences.md`) change
-/// what they count, not this screen.
+/// grammar or rules deck's table, and a sentence opens when a lesson
+/// teaches it. The B1 format's rule cards and unlocking
+/// (`words-rules-sentences.md`) change what they count, not this screen.
 ///
 /// Review, at the top end, is for speakers who check decks: with "Review
 /// decks" on in Settings it opens the unit's review (`ReviewPage`), and
@@ -152,8 +152,7 @@ class _UnitPageState extends State<UnitPage> {
     if (widget.openTables && !_tablesSeeded) {
       _tablesSeeded = true;
       _openTables.addAll(<String>[
-        for (final entry in decks)
-          if (entry.deck.pattern != null) entry.id,
+        for (final entry in UnitContent(decks).rules) entry.id,
       ]);
     }
 
@@ -659,8 +658,7 @@ class _RuleCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final pattern = entry.deck.pattern!;
-    final about = entry.deck.description ?? pattern.notes;
+    final about = entry.deck.description ?? entry.deck.pattern?.notes;
     return Container(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 12, 8),
       decoration: BoxDecoration(
@@ -729,7 +727,9 @@ class _RuleCard extends StatelessWidget {
 }
 
 /// A rule's table: a row per word, a column per form, each cell its form
-/// and reading. Scrolls sideways when it is wider than the screen.
+/// and reading. Scrolls sideways when it is wider than the screen. A
+/// grammar deck's comes from its pattern; a rules deck's from its cells,
+/// so that it shows the rows its learners are taught (ADR-0036).
 class _RuleTable extends StatelessWidget {
   const _RuleTable({required this.entry});
 
@@ -740,8 +740,8 @@ class _RuleTable extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final pattern = entry.deck.pattern!;
     final language = entry.language;
+    final (heads, rows) = _rows(entry);
     Widget cell(Widget child, {bool head = false}) => Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(10, 8, 10, 8),
       child: DefaultTextStyle.merge(
@@ -783,26 +783,94 @@ class _RuleTable extends StatelessWidget {
           TableRow(
             children: <Widget>[
               cell(Text(l10n.unitRuleWord), head: true),
-              for (final slot in pattern.slots) cell(Text(slot), head: true),
+              for (final head in heads) cell(Text(head), head: true),
             ],
           ),
-          for (final row in pattern.entries)
+          for (final (word, forms) in rows)
             TableRow(
               children: <Widget>[
-                cell(form(row.lemma, row.reading)),
-                for (final slot in pattern.slots)
-                  cell(
-                    row.forms[slot] == null
-                        ? const SizedBox.shrink()
-                        : form(row.forms[slot]!, row.readings[slot]?.first),
-                  ),
+                cell(form(word.$1, word.$2)),
+                for (final f in forms)
+                  cell(f == null ? const SizedBox.shrink() : form(f.$1, f.$2)),
               ],
             ),
         ],
       ),
     );
   }
+
+  /// [entry]'s column heads, and its rows: each word, and its form in each
+  /// column, or null, each with its reading.
+  static (List<String>, List<(_Form, List<_Form?>)>) _rows(DeckEntry entry) {
+    final pattern = entry.deck.pattern;
+    if (pattern != null) {
+      return (
+        pattern.slots,
+        <(_Form, List<_Form?>)>[
+          for (final row in pattern.entries)
+            (
+              (row.lemma, row.reading),
+              <_Form?>[
+                for (final slot in pattern.slots)
+                  if (row.forms[slot] case final f?)
+                    (f, row.readings[slot]?.first)
+                  else
+                    null,
+              ],
+            ),
+        ],
+      );
+    }
+    // A rules deck: a row per word with a cell taught, in the cells' order,
+    // and a column per slot with one.
+    final table = entry.deck.table;
+    final cells = <String, Map<String, Card>>{};
+    final words = <String, _Form>{};
+    final used = <String>{};
+    for (final card in entry.cards) {
+      final rule = card.rule;
+      if (rule == null) continue;
+      words.putIfAbsent(rule.word, () => (rule.wordTarget, rule.wordReading));
+      (cells[rule.word] ??= <String, Card>{})[rule.slot] = card;
+      used.add(rule.slot);
+    }
+    final slots = <String>[
+      ...?table?.slots.where(used.contains),
+      ...used.where((s) => table == null || !table.slots.contains(s)),
+    ];
+    return (
+      <String>[for (final slot in slots) _head(table?.labels[slot] ?? slot)],
+      <(_Form, List<_Form?>)>[
+        for (final MapEntry(key: word, value: form) in words.entries)
+          (
+            form,
+            <_Form?>[
+              for (final slot in slots)
+                if (cells[word]![slot] case final card?)
+                  (card.target, card.reading)
+                else
+                  null,
+            ],
+          ),
+      ],
+    );
+  }
+
+  /// A slot's label as a column head: without the word's meaning, which
+  /// the row gives, and the punctuation that joined it ("in {meaning}" is
+  /// "in", "{meaning}: with" is "with").
+  static String _head(String label) {
+    final head = label
+        .replaceAll('{meaning}', '')
+        .trim()
+        .replaceFirst(RegExp(r'^[,:;]\s*'), '')
+        .trim();
+    return head.isEmpty ? label : head;
+  }
 }
+
+/// A form and its reading, if it has one.
+typedef _Form = (String, String?);
 
 /// "Continue · 5 new, 4 due", pinned under the scrolling content.
 class _ContinueBar extends StatelessWidget {

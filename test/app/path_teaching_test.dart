@@ -216,15 +216,23 @@ void main() {
     final everything = learning(const <String>[]);
     addTearDown(everything.dispose);
     await everything.load();
-    final starts = <String>[
-      for (final unit in everything.pendingUnits) unit.first.id,
+    final pending = <List<String>>[
+      for (final unit in everything.pendingUnits) [for (final e in unit) e.id],
     ];
-    // Two units for each of the eight courses. Bengali starts with words,
-    // then the sounds English lacks.
-    expect(
-      starts,
-      containsAll(<String>['bn-en-first-words', 'bn-en-sound-differences']),
-    );
+    final starts = [for (final unit in pending) unit.first];
+    // Two units for each of the eight courses. Bengali starts with its
+    // phrasebook and first words (ADR-0036: the phrasebook is taught in
+    // the first unit), then the sounds English lacks.
+    final bengaliUnits = [
+      for (final unit in pending)
+        if (unit.first.startsWith('bn-')) unit,
+    ];
+    expect(bengaliUnits, hasLength(2));
+    expect(bengaliUnits.first.take(2), <String>[
+      'bn-en-phrasebook',
+      'bn-en-first-words',
+    ]);
+    expect(bengaliUnits.last.first, 'bn-en-sound-differences');
     expect(starts, contains('es-en-core-100'));
     expect(starts, hasLength(16));
   });
