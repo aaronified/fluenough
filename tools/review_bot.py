@@ -217,7 +217,8 @@ class LocalGit:
 
     def valid(self, root: Path, langs: list[str]) -> bool:
         result = subprocess.run(
-            [sys.executable, "tools/validate_decks.py",
+            # The themes file too: a language's decks are checked against it.
+            [sys.executable, "tools/validate_decks.py", "decks/themes.yaml",
              *(f"decks/{lang}/" for lang in langs)],
             cwd=root, capture_output=True, text=True, check=False)
         return result.returncode == 0
