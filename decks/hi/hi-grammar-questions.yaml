@@ -15,7 +15,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
-      - { word: "बोलते", base: "बोलते", reading: "bōltē" }
+      - { word: "बोलते", base: "बोलना", reading: "bōlnā" }
   - id: "hi-0168"
     target: "आप चाय पिएँगे?"
     reading: "āp cāy piēm̐gē?"
@@ -24,7 +24,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "पिएँगे", base: "पिएँगे", reading: "piēm̐gē" }
+      - { word: "पिएँगे", ref: "hi-0602" }
   - id: "hi-0169"
     target: "यह क्या है?"
     reading: "yah kyā hai?"
@@ -42,8 +42,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "जा", base: "जा", reading: "jā" }
-      - { word: "रहे", base: "रहे", reading: "rahē" }
+      - { word: "जा", base: "जाना", reading: "jānā" }
+      - { word: "रहे", base: "रहना", reading: "rahnā" }
   - id: "hi-0171"
     target: "वह कौन है?"
     reading: "vah kaun hai?"
@@ -57,7 +57,7 @@ cards:
     ipa: "aːp kəb aːẽːɡeː"
     pos: "phrase"
     bases:
-      - { word: "आएँगे", base: "आएँगे", reading: "āēm̐gē" }
+      - { word: "आएँगे", base: "आना", reading: "ānā" }
   - id: "hi-0173"
     target: "आप हिंदी क्यों सीख रहे हैं?"
     reading: "āp hindī kyōm̐ sīkh rahē haim̐?"
@@ -65,8 +65,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
-      - { word: "सीख", base: "सीख", reading: "sīkh" }
-      - { word: "रहे", base: "रहे", reading: "rahē" }
+      - { word: "सीख", base: "सीखना", reading: "sīkhnā" }
+      - { word: "रहे", base: "रहना", reading: "rahnā" }
   - id: "hi-0174"
     target: "आपके कितने बच्चे हैं?"
     reading: "āpkē kitnē baccē haim̐?"
@@ -85,7 +85,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "आए", base: "आए", reading: "āē" }
+      - { word: "आए", base: "आना", reading: "ānā" }
   - id: "hi-0176"
     target: "अच्छा है न?"
     reading: "acchā hai na?"

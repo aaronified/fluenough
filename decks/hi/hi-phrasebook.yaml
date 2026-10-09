@@ -49,7 +49,7 @@ cards:
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
       - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
-      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0144"
     target: "फिर मिलेंगे।"
     reading: "phir milēṅgē."
@@ -60,7 +60,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मिलेंगे", base: "मिलेंगे", reading: "milēṅgē" }
+      - { word: "मिलेंगे", base: "मिलना", reading: "milnā" }
   - id: "hi-0138"
     target: "धन्यवाद"
     reading: "dhanyavād"
@@ -112,7 +112,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
-      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0140"
     target: "मुझे हिंदी नहीं आती।"
     reading: "mujhē hindī nahīm̐ ātī."
@@ -122,9 +122,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
       - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
-      - { word: "आती", base: "आती", reading: "ātī" }
+      - { word: "आती", base: "आना", reading: "ānā" }
   - id: "hi-0141"
     target: "मैं अभी हिंदी सीख रहा हूँ।"
     reading: "maim̐ abhī hindī sīkh rahā hūm̐."
@@ -136,9 +136,9 @@ cards:
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
       - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
-      - { word: "सीख", base: "सीख", reading: "sīkh" }
-      - { word: "रहा", base: "रहा", reading: "rahā" }
-      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
+      - { word: "सीख", base: "सीखना", reading: "sīkhnā" }
+      - { word: "रहा", base: "रहना", reading: "rahnā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0142"
     target: "धीरे बोलिए।"
     reading: "dhīrē bōliē."
@@ -150,7 +150,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "धीरे", base: "धीरे", reading: "dhīrē" }
-      - { word: "बोलिए", base: "बोलिए", reading: "bōliē" }
+      - { word: "बोलिए", base: "बोलना", reading: "bōlnā" }
   - id: "hi-0143"
     target: "फिर से बोलिए।"
     reading: "phir sē bōliē."
@@ -159,7 +159,7 @@ cards:
     tags: ["polite"]
     phrasebook: true
     bases:
-      - { word: "बोलिए", base: "बोलिए", reading: "bōliē" }
+      - { word: "बोलिए", base: "बोलना", reading: "bōlnā" }
   - id: "hi-0362"
     target: "मुझे समझ नहीं आया।"
     reading: "mujhē samajh nahīm̐ āyā."
@@ -167,9 +167,9 @@ cards:
     pos: "phrase"
     phrasebook: true
     bases:
-      - { word: "मुझे", base: "मुझे", reading: "mujhē" }
-      - { word: "समझ", base: "समझ", reading: "samajh" }
-      - { word: "आया", base: "आया", reading: "āyā" }
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
+      - { word: "समझ", base: "समझना", reading: "samajhnā" }
+      - { word: "आया", base: "आना", reading: "ānā" }
   - id: "hi-0363"
     target: "टॉयलेट कहाँ है?"
     reading: "ṭôylēṭ kahām̐ hai?"
@@ -190,9 +190,9 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "मैं", base: "मैं", reading: "maim̐" }
-      - { word: "खो", base: "खो", reading: "khō" }
-      - { word: "गया", base: "गया", reading: "gayā" }
-      - { word: "हूँ", base: "हूँ", reading: "hūm̐" }
+      - { word: "खो", base: "खोना", reading: "khōnā" }
+      - { word: "गया", base: "जाना", reading: "jānā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0353"
     target: "मदद कीजिए!"
     reading: "madad kījiē!"
@@ -201,7 +201,7 @@ cards:
     tags: ["polite"]
     phrasebook: true
     bases:
-      - { word: "कीजिए", base: "कीजिए", reading: "kījiē" }
+      - { word: "कीजिए", base: "करना", reading: "karnā" }
   - id: "hi-0354"
     target: "बचाओ!"
     reading: "bacāō!"
@@ -211,7 +211,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "बचाओ", base: "बचाओ", reading: "bacāō" }
+      - { word: "बचाओ", base: "बचाना", reading: "bacānā" }
   - id: "hi-0355"
     target: "रुकिए!"
     reading: "rukiē!"
@@ -220,4 +220,4 @@ cards:
     tags: ["polite"]
     phrasebook: true
     bases:
-      - { word: "रुकिए", base: "रुकिए", reading: "rukiē" }
+      - { word: "रुकिए", base: "रुकना", reading: "ruknā" }
