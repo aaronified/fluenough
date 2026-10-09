@@ -18,9 +18,9 @@
 # grammar that goes with it; the script comes after the first themes, before
 # the rest. Every deck of Telugu is listed exactly once.
 schema: 1
-kind: path
-id: te-path
-language: te
+kind: "path"
+id: "te-path"
+language: "te"
 # Where Telugu is spoken, for a rater's region and a card's region note
 # (ADR-0036): the three regions its dialects are usually grouped by. The
 # ids are permanent, as card ids are; rename a name, never an id. The app
@@ -35,13 +35,13 @@ regions:
 # The decks that need the alphabet: a learner who learns without it
 # skips them.
 alphabet:
-  - te-script-vowels
-  - te-script-consonants
-  - te-script-reading
-  - te-script-vowel-signs
-  - te-script-conjuncts
-  - te-spelling
-  - te-reading-diddubatu
+  - "te-script-vowels"
+  - "te-script-consonants"
+  - "te-script-reading"
+  - "te-script-vowel-signs"
+  - "te-script-conjuncts"
+  - "te-spelling"
+  - "te-reading-diddubatu"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
