@@ -1,0 +1,31 @@
+# The rules core's English layer (ADR-0036): the slots' labels, which are
+# the cells' prompts, and each rule's name and explanation.
+schema: 1
+id: "zz-en-grammar-case-endings"
+kind: "layer"
+core: "zz-grammar-case-endings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "In, to, with, from: case endings"
+license: "CC0-1.0"
+table:
+  slot_name: "case"
+  slots:
+    "lo": "in {meaning}"
+    "ki": "to {meaning}"
+    "to": "with {meaning}"
+    "nunci": "from {meaning}"
+  prompts:
+    "zz-9001": { "lo": "at home", "ki": "home (going there)" }
+rules:
+  "zz-rule-lo":
+    name: "-లో (-lō): in"
+    explanation: "{1} means in. It joins the noun's oblique stem: {2} becomes {3}."
+  "zz-rule-ki":
+    name: "-కి (-ki): to"
+    explanation: "{1}, or {2} after some nouns, means to: to a place, or to the person given or told something."
+  "zz-rule-to":
+    name: "-తో (-tō): with"
+    explanation: "{1} means with: with a person, or with a tool."
+  "zz-rule-nunci":
+    name: "నుంచి (nuñci): from"
+    explanation: "{1} follows the noun as a separate word and means from."

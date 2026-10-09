@@ -11,6 +11,7 @@ import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/target_text.dart';
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
+import 'card_notes.dart';
 import 'card_top_line.dart';
 import 'path_model.dart' show isSentence;
 import 'path_parts.dart' show masteryName;
@@ -43,13 +44,14 @@ bool adultContentOn(AppState state) => false;
 /// The card of a word on a unit's screen: a top line with its id, part of
 /// speech and where the learner stands with it, a speaker and the bug icon;
 /// then its picture, the word and its reading, how it is said in the IPA,
-/// its meaning, its note and its first example.
+/// its meaning, its notes and its first example.
 ///
-/// Where its minimal-pair partner, a word that sounds almost the same, is
-/// rude, it carries the warning the drill cards carry, "Careful when
+/// Where a minimal-pair partner, a word that sounds almost the same (its
+/// `pair` or a pair note's), is rude, it carries the warning the drill cards carry, "Careful when
 /// speaking" ([AlikeWarning]), which names the rude word only with adult
 /// content on (docs/plans/offensive-words.md). Any other partner it names,
-/// as "Sounds like another word".
+/// as "Sounds like another word". A pair note's text goes with its
+/// partner.
 class WordSheet extends StatelessWidget {
   const WordSheet({
     super.key,
@@ -73,10 +75,16 @@ class WordSheet extends StatelessWidget {
     final state = AppScope.of(context);
     final reading = card.reading;
     final ipa = card.ipa;
-    final notes = card.notes;
+    final notes = shownNotes(card);
     final example = card.examples.firstOrNull;
     final rudeAlikes = rudeAlikesOf(state, card);
-    final partner = rudeAlikes.isEmpty ? _partner(state) : null;
+    final rudeIds = <String>{for (final a in rudeAlikes) a.partner.id};
+    final partners = <({Card card, String? care})>[
+      for (final pair in pairsOf(card))
+        if (!rudeIds.contains(pair.id))
+          if (_find(state, pair.id) case final found?)
+            (card: found, care: pair.care),
+    ];
     final named = showRude ?? adultContentOn(state);
     final status = masteryName(
       l10n,
@@ -129,10 +137,10 @@ class WordSheet extends StatelessWidget {
               textAlign: TextAlign.center,
               style: theme.textTheme.headlineSmall,
             ),
-            if (notes != null) ...<Widget>[
+            for (final note in notes) ...<Widget>[
               const SizedBox(height: 12),
               Text(
-                notes,
+                note,
                 textAlign: TextAlign.center,
                 style: theme.textTheme.bodyLarge!.copyWith(
                   color: scheme.onSurfaceVariant,
@@ -188,11 +196,16 @@ class WordSheet extends StatelessWidget {
                 kind: alike.kind,
                 named: named ? alike.partner : null,
                 language: language,
+                care: alike.care,
               ),
             ],
-            if (partner != null) ...<Widget>[
+            for (final partner in partners) ...<Widget>[
               const SizedBox(height: 16),
-              _SoundsLike(partner: partner, language: language),
+              _SoundsLike(
+                partner: partner.card,
+                language: language,
+                care: partner.care,
+              ),
             ],
           ],
         ),
@@ -200,10 +213,8 @@ class WordSheet extends StatelessWidget {
     );
   }
 
-  /// The card [card] names as its minimal-pair partner, from any deck.
-  Card? _partner(AppState state) {
-    final id = card.pair;
-    if (id == null) return null;
+  /// The card with [id], from any deck: a partner [card] names.
+  static Card? _find(AppState state, String id) {
     for (final entry in state.decks) {
       for (final other in entry.cards) {
         if (other.id == id) return other;
@@ -216,10 +227,13 @@ class WordSheet extends StatelessWidget {
 /// "Sounds almost like కలం (kalam), pen. Take care when you say it.": a
 /// partner that is not rude. A rude one has [AlikeWarning] instead.
 class _SoundsLike extends StatelessWidget {
-  const _SoundsLike({required this.partner, required this.language});
+  const _SoundsLike({required this.partner, required this.language, this.care});
 
   final Card partner;
   final LanguageInfo language;
+
+  /// The pair note's own text, if it has one.
+  final String? care;
 
   @override
   Widget build(BuildContext context) {
@@ -264,6 +278,13 @@ class _SoundsLike extends StatelessWidget {
                       color: scheme.onTertiaryContainer,
                     ),
                   ),
+                  if (care case final care?)
+                    Text(
+                      care,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: scheme.onTertiaryContainer,
+                      ),
+                    ),
                 ],
               ),
             ),

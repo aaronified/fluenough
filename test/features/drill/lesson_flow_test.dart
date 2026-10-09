@@ -62,7 +62,9 @@ Future<void> finishLesson(WidgetTester tester) async {
       case Ask.chooseMeaning ||
           Ask.chooseWord ||
           Ask.hearAndChoose ||
-          Ask.hearMeaning:
+          Ask.hearMeaning ||
+          Ask.chooseFormMeaning ||
+          Ask.chooseForm:
         session.pick(session.options.firstWhere((o) => o.id == card.id));
         session.next();
       case Ask.matchPairs:

@@ -9,6 +9,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/card_notes.dart';
 import '../decks/card_top_line.dart';
 import 'alike_warning.dart';
 import 'review_words.dart';
@@ -42,7 +43,7 @@ String? partText(Card card, CardPart part) => switch (part) {
   CardPart.reading => card.reading,
   CardPart.ipa => card.ipa,
   CardPart.meaning => card.native,
-  CardPart.notes => card.notes,
+  CardPart.notes => notesText(card),
   CardPart.example => switch (card.examples.firstOrNull) {
     null => null,
     final e => '${e.target}\n${e.reading ?? ''}\n${e.native}'.replaceAll(
@@ -133,7 +134,7 @@ class ReviewCardSheet extends StatelessWidget {
               if (adult)
                 _AlikeFound(pair: pair, language: language, check: alike)
               else
-                AlikeWarning(kind: pair.kind),
+                AlikeWarning(kind: pair.kind, care: pair.care),
             ],
             const SizedBox(height: 20),
             if (rude)
@@ -199,7 +200,7 @@ class CardFace extends StatelessWidget {
     final scheme = theme.colorScheme;
     final reading = card.reading;
     final ipa = card.ipa;
-    final notes = card.notes;
+    final notes = shownNotes(card);
     final example = card.examples.firstOrNull;
     final muted = theme.textTheme.bodyLarge!.copyWith(
       color: scheme.onSurfaceVariant,
@@ -232,10 +233,9 @@ class CardFace extends StatelessWidget {
           textAlign: TextAlign.center,
           style: theme.textTheme.headlineSmall,
         ),
-        if (notes != null) ...<Widget>[
-          const SizedBox(height: 4),
-          Text(notes, textAlign: TextAlign.center, style: muted),
-        ],
+        if (notes.isNotEmpty) const SizedBox(height: 4),
+        for (final note in notes)
+          Text(note, textAlign: TextAlign.center, style: muted),
         if (example != null) ...<Widget>[
           const SizedBox(height: 8),
           Semantics(

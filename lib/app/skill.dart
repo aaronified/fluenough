@@ -8,6 +8,11 @@ import 'features.dart';
 /// yet, and adding the mode needs an ADR (#31). So the interface counts one
 /// more skill than the scheduler knows modes. [mode] is null for [pair].
 ///
+/// Grammar is one skill with two schedules (B1 format spec 4.7, 4.8 item
+/// 7): understood ([DrillMode.grammarUnderstood]) and produced
+/// ([DrillMode.grammar]) share its tile on Today and its switch in
+/// Settings, so [modes] gives both.
+///
 /// Icons, labels and colours for a skill are in `lib/ui`: `SkillVisuals` in
 /// `lib/ui/skill_visuals.dart` and `ModeColors` in `lib/ui/theme.dart`.
 enum Skill {
@@ -24,8 +29,20 @@ enum Skill {
 
   const Skill(this.mode, this.feature);
 
-  /// The scheduler's mode, or null for [pair], which has none yet.
+  /// The scheduler's mode, or null for [pair], which has none yet. For
+  /// [grammar], produced; [modes] adds understood.
   final DrillMode? mode;
+
+  /// Every mode this skill's switch, tile and review cover: [mode], and for
+  /// [grammar] understood before it, as a lesson asks it first. Empty for
+  /// [pair].
+  Set<DrillMode> get modes => switch (this) {
+    Skill.grammar => const <DrillMode>{
+      DrillMode.grammarUnderstood,
+      DrillMode.grammar,
+    },
+    _ => <DrillMode>{?mode},
+  };
 
   /// The feature that switches this skill's drill on.
   final Feature feature;
@@ -35,7 +52,9 @@ enum Skill {
     DrillMode.production => Skill.production,
     DrillMode.reading => Skill.reading,
     DrillMode.listening => Skill.listening,
-    DrillMode.grammar => Skill.grammar,
+    // Understood and produced share the grammar tile (skill model,
+    // 2026-10-08) and its switch (B1 format spec 4.7, 4.8 item 7).
+    DrillMode.grammarUnderstood || DrillMode.grammar => Skill.grammar,
     DrillMode.speaking => Skill.speaking,
   };
 

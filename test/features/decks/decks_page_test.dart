@@ -78,8 +78,8 @@ native:   { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: xx-fixture-broken-0001
-    target: "no"
-    native: no
+    target: "verdadero"
+    native: true
 ''',
 });
 

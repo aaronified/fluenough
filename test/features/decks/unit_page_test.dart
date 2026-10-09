@@ -8,6 +8,7 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/features/decks/card_notes.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/number_practice_tile.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
@@ -68,14 +69,13 @@ cards:
     native: "good morning, everyone"
     pos: "phrase"
 ''',
-  'decks/es/es-en-path.yaml': '''
+  'decks/es/es-path.yaml': '''
 schema: 1
 kind: path
-id: es-en-path
+id: es-path
 language: es
-native: en
 units:
-  - [es-en-tiny]
+  - [es-tiny]
 ''',
 });
 
@@ -393,7 +393,10 @@ void main() {
     expect(inSheet(word.reading!), findsOneWidget);
     expect(inSheet(l10n.wordSheetIpa(word.ipa!)), findsOneWidget);
     expect(inSheet(word.native), findsOneWidget);
-    expect(inSheet(word.notes!), findsOneWidget);
+    expect(shownNotes(word), isNotEmpty);
+    for (final note in shownNotes(word)) {
+      expect(inSheet(note), findsOneWidget);
+    }
     expect(inSheet(l10n.wordSheetSoundsLikeTitle), findsOneWidget);
     final partner = state
         .deckOf(word)!

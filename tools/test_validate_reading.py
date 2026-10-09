@@ -137,9 +137,10 @@ class ReadingDeck(Reading):
             self.write(deck(questions=question('        prompt: { bn: "ভাত?" }\n'
                                                '        answer: true\n'))),
             "prompt needs en")
-        # A bare no reads as false, so the key is no language code.
+        # A bare false is a boolean, so the key is no language code. (A bare
+        # no is the string "no" to both the validator and the app, YAML 1.2.)
         self.assertRejected(
-            self.write(deck(questions=question('        prompt: { en: "A.", no: "B." }\n'
+            self.write(deck(questions=question('        prompt: { en: "A.", false: "B." }\n'
                                                '        answer: true\n'))),
             "boolean")
 
@@ -154,7 +155,7 @@ class ReadingDeck(Reading):
             self.write(deck(sentences='      - text: "সে যায়।"\n')),
             "reading is required")
         self.assertRejected(
-            self.write(deck(sentences='      - text: yes\n        reading: "x"\n')),
+            self.write(deck(sentences='      - text: true\n        reading: "x"\n')),
             "boolean")
         self.assertRejected(self.write(deck(sentences="      []\n")),
                             "sentences must be a non-empty list")
@@ -221,12 +222,12 @@ cards:
   - { id: bn-9002, target: "ভাত খায়", native: "eats rice", reading: "bhat khay" }
 """
 
-    def course(self, units: str = "  - [bn-en-market]\n  - [bn-en-reading-probe]\n"
+    def course(self, units: str = "  - [bn-market]\n  - [bn-reading-probe]\n"
                ) -> list[validate_decks.Report]:
         themes = self.write("schema: 1\nkind: themes\nthemes:\n"
                             "  - { id: market, name: \"Market\" }\n", "themes.yaml")
-        path = self.write("schema: 1\nkind: path\nid: bn-en-path\nlanguage: bn\n"
-                          f"native: en\nunits:\n{units}", "bn-en-path.yaml")
+        path = self.write("schema: 1\nkind: path\nid: bn-path\nlanguage: bn\n"
+                          f"units:\n{units}", "bn-path.yaml")
         words = self.write(self.WORDS, "bn-en-market.yaml")
         return [themes, path, words, self.write(deck())]
 
@@ -256,7 +257,7 @@ cards:
                             for p in problems), problems)
 
     def test_a_passage_comes_after_its_theme_on_the_path(self) -> None:
-        reports = self.course("  - [bn-en-reading-probe, bn-en-market]\n")
+        reports = self.course("  - [bn-reading-probe, bn-market]\n")
         validate_decks.check_reading_across(reports)
         self.assertTrue(any("put it in a later unit" in w for w in reports[-1].warnings),
                         reports[-1].warnings)

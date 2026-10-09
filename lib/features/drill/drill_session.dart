@@ -734,18 +734,22 @@ class DrillSession extends ChangeNotifier {
   // ---------------------------------------------------------------------------
   // Choosing, matching and rearranging (ADR-0024)
 
-  /// How the current item is asked.
-  Ask get ask => item.ask;
+  /// How the current item is asked. Grammar understood is only ever
+  /// asked by choosing the meaning (spec 4.8), whatever built the item.
+  Ask get ask => item.mode == DrillMode.grammarUnderstood && item.ask == Ask.own
+      ? Ask.chooseFormMeaning
+      : item.ask;
 
   /// How many options a choice question offers at most.
   static const int optionCount = 4;
 
   /// The grade a right match, or a right choice of a meaning seen, records:
   /// right, but picked from a few rather than recalled. Recognition's
-  /// choice, its easiest way of asking (ADR-0034).
+  /// choice, its easiest way of asking (ADR-0034), and grammar
+  /// understood's ([Ask.rightChoiceGrade]).
   static const int choiceGrade = 4;
 
-  /// The grade a right choice records in Hear or Write:
+  /// The grade a right choice records in Hear, Write or grammar produced:
   /// Hard, since a right choice counts for less than a right recall
   /// (ADR-0034).
   static const int scheduledChoiceGrade = 3;
@@ -783,17 +787,13 @@ class DrillSession extends ChangeNotifier {
   /// Whether [option] is right: it shows what the card does.
   bool isRight(Card option) => ask.optionOf(option) == ask.optionOf(item.card);
 
-  /// Picks [option] and records it at once: [choiceGrade] if right, 1 if
-  /// not.
+  /// Picks [option] and records it at once: [Ask.rightChoiceGrade] if
+  /// right, 1 if not.
   void pick(Card option) {
     if (!ask.chooses || _phase != DrillPhase.prompt) return;
     _picked = option;
     _record(
-      !isRight(option)
-          ? 1
-          : item.mode == DrillMode.recognition
-          ? choiceGrade
-          : scheduledChoiceGrade,
+      isRight(option) ? ask.rightChoiceGrade(item.mode) : 1,
       answerGiven: ask.optionOf(option),
     );
     _phase = DrillPhase.feedback;

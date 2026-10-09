@@ -1,0 +1,16 @@
+# The English layer of zz-grammar-past: it labels one slot of two, and
+# glosses one entry of two, so the other is left out.
+schema: 1
+id: "zz-en-grammar-past"
+kind: "layer"
+core: "zz-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past tense"
+license: "CC0-1.0"
+pattern:
+  name: "Past tense"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "నేను": "I, నేను (nēnu)" }
+  entries: { "vellu": "to go" }
+  notes: "The past adds -ఆ- (-ā-) before the person ending."
