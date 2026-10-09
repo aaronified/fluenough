@@ -71,7 +71,8 @@ units:
   - decks: ["te-family", "te-grammar-be", "*"]
     words: 25
     grammar: ["be"]
-  - planned: { id: "te-verbs", theme: "everyday-verbs", words: 30 }
+  - decks: ["te-verbs", "te-grammar-verb-present", "te-verbs-sentences", "*"]
+    words: 33
     grammar: ["present-first", "present-second", "present-third"]
     listening_passages:
       - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
