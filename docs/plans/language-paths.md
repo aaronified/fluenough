@@ -197,7 +197,7 @@ Each new language needs what an existing one has:
 
 ## Order, and what comes first
 
-- `decks-from-github.md` first: new languages then reach learners without
+- Deck downloads first (done, ADR-0037): new languages then reach learners without
   an app release, and the APK does not grow with them.
 - `wiktionary-ipa.md` before the new languages, for their IPA.
 - The 30-minute day can use FSRS (done: ADR-0033) for the review block, and the
