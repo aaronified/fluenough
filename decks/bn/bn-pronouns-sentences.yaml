@@ -1,0 +1,119 @@
+schema: 1
+id: "bn-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0856"
+    target: "ইনি আমার দাদা।"
+    reading: "ini āmār dādā."
+    ipa: "ini amar d̪ad̪a"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0857"
+    target: "উনি আমার দিদি।"
+    reading: "uni āmār didi."
+    ipa: "uni amar d̪id̪i"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0858"
+    target: "ও আমার বন্ধু।"
+    reading: "o āmār bondhu."
+    ipa: "o amar bond̪ʱu"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0859"
+    target: "ওরা আমাদের বন্ধু।"
+    reading: "orā āmāder bondhu."
+    ipa: "ora amad̪er bond̪ʱu"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমাদের", ref: "bn-0834" }
+  - id: "bn-0860"
+    target: "সে আমার ভাই।"
+    reading: "śe āmār bhāi."
+    ipa: "ʃe amar bʱai"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0861"
+    target: "এগুলো কী?"
+    reading: "egulo ki?"
+    ipa: "eɡulo ki"
+    pos: "phrase"
+  - id: "bn-0862"
+    target: "ওটা কার?"
+    reading: "oṭā kār?"
+    ipa: "oʈa kar"
+    pos: "phrase"
+  - id: "bn-0863"
+    target: "ওগুলো কার?"
+    reading: "ogulo kār?"
+    ipa: "oɡulo kar"
+    pos: "phrase"
+  - id: "bn-0864"
+    target: "এটা তোমার না।"
+    reading: "eṭā tomār nā."
+    ipa: "eʈa t̪omar na"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "তোমার", ref: "bn-0835" }
+  - id: "bn-0865"
+    target: "সেটা আমার না।"
+    reading: "śeṭā āmār nā."
+    ipa: "ʃeʈa amar na"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0866"
+    target: "তোমার বন্ধু কোথায়?"
+    reading: "tomār bondhu kothāy?"
+    ipa: "t̪omar bond̪ʱu kot̪ʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "তোমার", ref: "bn-0835" }
+  - id: "bn-0867"
+    target: "আপনার বন্ধু কে?"
+    reading: "āpnār bondhu ke?"
+    ipa: "apnar bond̪ʱu ke"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+  - id: "bn-0868"
+    target: "সবাই কোথায়?"
+    reading: "śôbāi kothāy?"
+    ipa: "ʃɔbai kot̪ʰaj"
+    pos: "phrase"
+  - id: "bn-0869"
+    target: "তারা কারা?"
+    reading: "tārā kārā?"
+    ipa: "t̪ara kara"
+    pos: "phrase"
+  - id: "bn-0870"
+    target: "আমরা বন্ধু।"
+    reading: "āmrā bondhu."
+    ipa: "amra bond̪ʱu"
+    pos: "phrase"
+  - id: "bn-0871"
+    target: "আপনারা কেমন আছেন?"
+    reading: "āpnārā kemon āchen?"
+    ipa: "apnara kemon atʃʰen"
+    pos: "phrase"
+    bases:
+      - { word: "আছেন", base: "আছে", reading: "āche" }
