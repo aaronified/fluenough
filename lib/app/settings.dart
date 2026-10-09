@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
+import '../core/review/deck_review.dart';
+import '../core/review/rater_code.dart';
 import '../core/updates/release_check.dart';
 import 'skill.dart';
 
@@ -106,6 +108,56 @@ class SettingsNotifier extends ChangeNotifier {
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
+  bool _reviewDecks = false;
+  String? _raterCode;
+  bool _reviewIntroShown = false;
+  Reviews _reviews = const Reviews();
+  Set<String>? _reviewLanguages;
+
+  /// Settings' "Review decks" (docs/plans/deck-browser.md): whether this
+  /// profile checks decks and sends its reviews by mail. Turning it off
+  /// keeps the [raterCode] and the [reviews].
+  bool get reviewDecks => _reviewDecks;
+  set reviewDecks(bool value) =>
+      _set(_reviewDecks, value, (v) => _reviewDecks = v);
+
+  /// The rater code the phone made when reviewing was first turned on,
+  /// written `FL-XXXX-XXXX-C`, or null before. Kept when reviewing is
+  /// turned off, so that turning it on again gives the same code.
+  String? get raterCode => _raterCode;
+  set raterCode(String? value) =>
+      _set(_raterCode, value, (v) => _raterCode = v);
+
+  /// Whether "How reviewing works" has opened by itself, which it does
+  /// once, the first time reviewing is turned on.
+  bool get reviewIntroShown => _reviewIntroShown;
+  set reviewIntroShown(bool value) =>
+      _set(_reviewIntroShown, value, (v) => _reviewIntroShown = v);
+
+  /// Every deck's review on this phone, sent or not. Not something the
+  /// learner sets here: the review screens change it.
+  Reviews get reviews => _reviews;
+  set reviews(Reviews value) {
+    if (identical(value, _reviews)) return;
+    _reviews = value;
+    notifyListeners();
+  }
+
+  /// The languages this reviewer reviews, by code, as they chose them in
+  /// Settings (docs/plans/deck-browser.md, "What is waiting for review"),
+  /// or null before they chose: then the languages they speak that the
+  /// app teaches.
+  Set<String>? get reviewLanguages => _reviewLanguages;
+  set reviewLanguages(Set<String>? codes) {
+    final next = codes == null ? null : Set<String>.unmodifiable(codes);
+    final now = _reviewLanguages;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _reviewLanguages = next;
+    notifyListeners();
+  }
+
   Map<String, ({String native, Set<String> offered})> _courseNatives =
       const <String, ({String native, Set<String> offered})>{};
 
@@ -532,6 +584,15 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _lessonsDone.entries)
         key: value.millisecondsSinceEpoch,
     }),
+    'review_decks': '$_reviewDecks',
+    'rater_code': _raterCode ?? '',
+    'review_intro_shown': '$_reviewIntroShown',
+    'reviews': _reviews.toJson(),
+    // Not chosen yet is "default"; chosen, the codes, which may be none.
+    'review_languages': switch (_reviewLanguages) {
+      null => 'default',
+      final codes => (codes.toList()..sort()).join(','),
+    },
     'course_natives': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _courseNatives.entries)
         key: <String, Object>{
@@ -673,6 +734,21 @@ class SettingsNotifier extends ChangeNotifier {
           }
         }
       }
+    }
+    if (pick('review_decks', flag) case final v?) reviewDecks = v;
+    if (pick('rater_code', RaterCode.tryParse) case final v?) {
+      raterCode = '$v';
+    }
+    if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
+    if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
+    if (pick('review_languages', (t) => t) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      reviewLanguages = v == 'default'
+          ? null
+          : <String>{
+              for (final c in v.split(','))
+                if (code.hasMatch(c)) c,
+            };
     }
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');

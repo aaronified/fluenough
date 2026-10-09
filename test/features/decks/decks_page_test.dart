@@ -3,47 +3,50 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
-import 'package:fluenough/app/memory_progress.dart';
-import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/app/session.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
+import 'package:fluenough/features/decks/course_chips.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
-import 'package:fluenough/features/decks/number_practice_tile.dart';
-import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/decks/path_fixture.dart';
+import 'package:fluenough/features/decks/path_model.dart';
+import 'package:fluenough/features/decks/path_parts.dart';
+import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
+import 'package:fluenough/ui/widgets/incoming.dart';
 
 import '../../support/harness.dart';
 
-Future<AppState> pumpDecks(WidgetTester tester, {AppState? state}) =>
-    pumpScreen(tester, const DecksPage(), state: state);
+Future<AppState> pumpDecks(
+  WidgetTester tester, {
+  AppState? state,
+  DecksPage page = const DecksPage(),
+}) => pumpScreen(tester, page, state: state);
 
-/// The names of the decks the list shows, in order.
-List<String> shownDecks(WidgetTester tester) => tester
-    .widgetList<DeckTile>(find.byType(DeckTile))
-    .map((t) => t.entry.deck.name)
-    .toList();
-
-/// The row for [entry]. Two courses can each have a deck called "Market",
-/// so a row is found by its deck, not its name.
-Finder tileOf(DeckEntry entry) =>
-    find.byWidgetPredicate((w) => w is DeckTile && w.entry.id == entry.id);
-
-/// A phone tall enough for the lazy list to build every bundled deck.
-void useTallPhone(WidgetTester tester) {
-  usePhone(tester);
-  tester.view.physicalSize = const Size(390 * 3, 60000 * 3);
+/// The design's Telugu learner, with Family up next.
+Future<AppState> teluguLearner({String upTo = PathFixtures.familyDeck}) async {
+  final app = AppState.test();
+  await app.load();
+  return PathFixtures.state(app, upTo: upTo);
 }
 
-/// Taps [chip] after scrolling the chip row to it.
-Future<void> tapChip(WidgetTester tester, String label) async {
-  final chip = find.widgetWithText(FilterChip, label);
-  await tester.ensureVisible(chip);
-  await tester.pumpAndSettle();
-  await tester.tap(chip);
-  await tester.pumpAndSettle();
+/// Whether [finder]'s first widget is on the phone's screen.
+bool onScreen(WidgetTester tester, Finder finder) {
+  final rect = tester.getRect(finder.first);
+  return rect.bottom > 0 && rect.top < 844;
 }
+
+/// The page's scrolling list, not the chips' row.
+final Finder downward = find.byWidgetPredicate(
+  (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+);
+
+/// A floating button, with its label or, where two do not fit, without.
+Finder fab(String heroTag) => find.byWidgetPredicate(
+  (w) => w is FloatingActionButton && w.heroTag == heroTag,
+);
 
 Future<void> search(WidgetTester tester, String text) async {
   await tester.enterText(find.byType(TextField), text);
@@ -81,203 +84,294 @@ cards:
 });
 
 void main() {
-  testWidgets('lists every bundled deck, each Pending or Not done before anything is '
-      'studied', (tester) async {
-    useTallPhone(tester);
-    final state = await pumpDecks(tester);
+  testWidgets('a chip per language, those the profile learns first, in its '
+      'order, each with its reviews due', (tester) async {
+    usePhone(tester);
+    final state = await pumpDecks(tester, state: await teluguLearner());
     final l10n = l10nOf(tester);
-    expect(state.decks, isNotEmpty);
-    // The grammar deck has cards (#2) and its drill (#14).
-    expect(state.canDrill(state.deckById('es-en-grammar-present-ar')!), isTrue);
-    expect(shownDecks(tester), state.decks.map((e) => e.deck.name).toList());
-    for (final entry in state.decks) {
-      final tile = tileOf(entry);
-      // A grammar deck has nothing to drill until its drill ships (#14): it is
-      // incoming, never Done. Nothing is studied yet, so every other deck is
-      // Pending, in the first two units of its course's path (ADR-0013), or
-      // Not done: never Done, and new cards are not "due".
-      final firstTwo = state.pathOf(entry)!.units.take(2).expand((u) => u);
-      final badge = !state.canDrill(entry)
-          ? l10n.incomingBadge
-          : firstTwo.contains(entry.id)
-          ? l10n.commonPendingBadge
-          : l10n.commonNotDoneBadge;
-      expect(
-        find.descendant(of: tile, matching: find.text(badge)),
-        findsOneWidget,
-        reason: entry.id,
-      );
-      // A theme deck's line is its place on the path and its progress.
-      final theme = state.themeOf(entry);
-      final meta = theme == null
-          ? DeckTile.metaFor(l10n, entry)
-          : l10n.deckMetaTheme(
-              state.themes.indexOf(theme) + 1,
-              state.progress.learnedIn(entry.cards.map((card) => card.id)),
-              entry.itemCount,
-            );
-      expect(
-        find.descendant(of: tile, matching: find.text(meta)),
-        findsOneWidget,
-        reason: entry.id,
-      );
-    }
-  });
-
-  testWidgets('number practice follows each big-numbers deck, and starts '
-      'unrecorded practice (#54)', (tester) async {
-    useTallPhone(tester);
-    final state = await pumpDecks(tester);
-    final l10n = l10nOf(tester);
-    final rows = tester
-        .widgetList<NumberPracticeTile>(find.byType(NumberPracticeTile))
-        .map((t) => t.deck.id);
+    final chips = tester.widget<CourseChips>(find.byType(CourseChips));
+    expect(chips.languages.take(3).map((l) => l.code), ['te', 'hi', 'es']);
     expect(
-      rows,
-      unorderedEquals(<String>[
-        'hi-en-numbers-big',
-        'bn-en-numbers-big',
-        'te-en-numbers-big',
-        'mr-en-numbers-big',
-        'kn-en-numbers-big',
-        'gu-en-numbers-big',
-        'as-en-numbers-big',
-      ]),
+      chips.languages.map((l) => l.code).toSet(),
+      state.languages.map((l) => l.code).toSet(),
     );
-    for (final id in rows) {
-      final deck = tester.getRect(tileOf(state.deckById(id)!));
-      final practice = tester.getRect(
-        find.byWidgetPredicate(
-          (w) => w is NumberPracticeTile && w.deck.id == id,
-        ),
-      );
-      // Next in the list: only the list's gap between the two rows.
-      expect(practice.top - deck.bottom, inInclusiveRange(0, 8), reason: id);
-    }
-    expect(find.text(l10n.numbersPracticeMeta), findsNWidgets(7));
-
-    await tester.tap(
-      find.byWidgetPredicate(
-        (w) => w is NumberPracticeTile && w.deck.id == 'hi-en-numbers-big',
-      ),
+    expect(chips.selected, 'te');
+    final due = state
+        .buildSession(const DrillRequest.today(language: 'te'))
+        .due
+        .length;
+    expect(due, greaterThan(0));
+    expect(chips.due['te'], due);
+    // A language the profile does not learn has no count.
+    expect(chips.due.containsKey('bn'), isFalse);
+    expect(
+      find.bySemanticsLabel(l10n.decksCourseChipDue('Telugu', due)),
+      findsOneWidget,
     );
-    await tester.pumpAndSettle();
-    final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-    expect(drill.request.numbers, isTrue);
-    expect(drill.request.deckIds, <String>{'hi-en-numbers-big'});
-    expect(find.text(l10n.numbersPracticeTitle), findsOneWidget);
   });
 
-  testWidgets('search matches deck and language names', (tester) async {
-    usePhone(tester);
-    final state = await pumpDecks(tester);
-    final l10n = l10nOf(tester);
-
-    await search(tester, 'parmesh');
-    expect(shownDecks(tester), <String>[
-      state.deckById('hi-en-reading-panch-parmeshwar')!.deck.name,
-    ]);
-
-    await search(tester, 'SPANISH');
-    expect(shownDecks(tester), <String>[
-      for (final e in state.decks)
-        if (e.language.code == 'es') e.deck.name,
-    ]);
-
-    await search(tester, 'no deck is called this');
-    expect(find.byType(DeckTile), findsNothing);
-    expect(find.text(l10n.decksEmptySearch), findsOneWidget);
-  });
-
-  testWidgets('the language chips come from the loaded decks and filter', (
+  testWidgets('the path opens at the unit up next, after the units done', (
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpDecks(tester);
+    await pumpDecks(tester, state: await teluguLearner());
     final l10n = l10nOf(tester);
+    // Scrolled to where the learner is: Family, up next.
+    expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
+    expect(onScreen(tester, find.text('Family')), isTrue);
+    expect(
+      find.bySemanticsLabel(RegExp('^Family, unit 7, ${l10n.pathUpNext}')),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(RegExp('^About me, unit 6, ${l10n.pathUnitDone}')),
+      findsOneWidget,
+    );
+    expect(
+      find.bySemanticsLabel(RegExp('^Work, unit 8, ${l10n.pathUnitAhead}')),
+      findsOneWidget,
+    );
+    // Milestones: the first deck finished, words learned, the script.
+    expect(find.text(l10n.pathFirstDeck), findsOneWidget);
+    expect(find.text(l10n.pathWordsLearned(50)), findsOneWidget);
+    expect(find.text(l10n.pathScriptLearned), findsOneWidget);
+    expect(find.text(l10n.pathScriptToGo(2)), findsOneWidget);
+    // No path marks levels yet, so none is drawn.
+    expect(find.byType(LevelHeader), findsNothing);
+    expect(find.byType(AchievementMark), findsNothing);
+  });
 
-    expect(find.byType(FilterChip), findsNWidgets(state.languages.length + 1));
-    for (final language in state.languages) {
+  testWidgets('further down: rules known and the first passage read, '
+      'each with what is left', (tester) async {
+    usePhone(tester);
+    final state = await pumpDecks(tester, state: await teluguLearner());
+    final l10n = l10nOf(tester);
+    final rules = courseView(state, 'te')!.steps
+        .whereType<MilestoneStep>()
+        .singleWhere((m) => m.kind == MilestoneKind.rules);
+    // Some of the rules of the units done are known already.
+    expect(rules.toGo, inExclusiveRange(0, 10));
+    for (final (title, line) in <(String, String)>[
+      (l10n.pathRulesKnown(10), l10n.pathRulesToGo(rules.toGo)),
+      (l10n.pathFirstPassage, l10n.pathFirstPassageToGo),
+    ]) {
+      await tester.scrollUntilVisible(
+        find.text(title),
+        300,
+        scrollable: downward.first,
+      );
+      expect(find.text(line), findsOneWidget);
+    }
+  });
+
+  testWidgets('Where I am scrolls back to the unit up next', (tester) async {
+    usePhone(tester);
+    await pumpDecks(tester, state: await teluguLearner());
+    final l10n = l10nOf(tester);
+    await tester.drag(downward.first, const Offset(0, -3000));
+    await tester.pumpAndSettle();
+    expect(onScreen(tester, find.text(l10n.pathUpNext)), isFalse);
+    await tester.tap(fab('where-i-am'));
+    await tester.pumpAndSettle();
+    expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
+  });
+
+  testWidgets('a unit opens its screen; a course chip switches the path', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpDecks(tester, state: await teluguLearner());
+    await tester.tap(find.text('Family'));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<UnitPage>(find.byType(UnitPage)).deckId,
+      'te-en-family',
+    );
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.widgetWithText(FilterChip, 'Hindi'));
+    await tester.pumpAndSettle();
+    expect(tester.widget<CourseChips>(find.byType(CourseChips)).selected, 'hi');
+    final l10n = l10nOf(tester);
+    expect(
+      find.text(l10n.decksCourseHeading('Hindi', 'English')),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('a deck outside any path opens its own screen, as before', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpDecks(tester, state: AppState.test(decks: withBrokenDeck()));
+    await tester.tap(find.text('Fixture deck'));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
+      'xx-fixture-ok',
+    );
+  });
+
+  testWidgets('learned without the alphabet, the script decks are listed '
+      'under the path, and open their own screens', (tester) async {
+    usePhone(tester);
+    final base = AppState.test();
+    await base.load();
+    final state = PathFixtures.state(base);
+    state.settings.setLearnsAlphabet('te', false);
+    await pumpDecks(tester, state: state);
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.pathOtherDecks), findsOneWidget);
+    final vowels = state.deckById('te-en-script-vowels')!;
+    final tile = find.byWidgetPredicate(
+      (w) => w is DeckTile && w.entry.id == vowels.id,
+    );
+    await tester.scrollUntilVisible(tile, 300, scrollable: downward.first);
+    await tester.tap(tile);
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
+      vowels.id,
+    );
+  });
+
+  testWidgets('where a plan marks them, each level starts with its header '
+      'and ends in its achievement; units still being written are coming', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpDecks(
+      tester,
+      state: await teluguLearner(),
+      page: const DecksPage(planOf: PathFixtures.planOf),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.byType(LevelHeader), findsNWidgets(3));
+    expect(find.text(l10n.pathLevelA1), findsOneWidget);
+    expect(find.text(l10n.pathLevelB1), findsOneWidget);
+    expect(find.byType(AchievementMark), findsNWidgets(3));
+    expect(find.text(l10n.pathAchievement('A1')), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGo(6)), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGoComing(12, 7)), findsOneWidget);
+    expect(find.text('Health'), findsOneWidget);
+    expect(find.text(l10n.pathComingWords(60)), findsWidgets);
+    // A coming unit cannot be opened.
+    await tester.scrollUntilVisible(
+      find.text('Health'),
+      300,
+      scrollable: downward.first,
+    );
+    await tester.tap(find.text('Health'));
+    await tester.pumpAndSettle();
+    expect(find.byType(UnitPage), findsNothing);
+  });
+
+  testWidgets('a level reached is an achievement, earned', (tester) async {
+    usePhone(tester);
+    await pumpDecks(
+      tester,
+      state: await teluguLearner(upTo: 'te-en-market'),
+      page: const DecksPage(planOf: PathFixtures.planOf),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.pathLevelReached('A1')), findsOneWidget);
+    expect(find.text(l10n.pathAchievement('A2')), findsOneWidget);
+    expect(
+      find.bySemanticsLabel(RegExp('^Market, unit 13, ${l10n.pathUpNext}')),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('deck updates, hours left and Beyond the course show as '
+      'incoming', (tester) async {
+    usePhone(tester);
+    await pumpDecks(tester, state: await teluguLearner());
+    final l10n = l10nOf(tester);
+    expect(find.byType(IncomingBadge), findsNWidgets(3));
+    for (final label in <String>[
+      l10n.pathUpdatesTitle,
+      l10n.pathHoursTitle,
+      l10n.pathBeyondTitle,
+    ]) {
       expect(
-        find.widgetWithText(FilterChip, language.name),
+        find.bySemanticsLabel(l10n.incomingSemanticsLabel(label)),
         findsOneWidget,
-        reason: language.code,
+        reason: label,
       );
     }
-
-    await tapChip(tester, 'Hindi');
-    final hindi = tester.widgetList<DeckTile>(find.byType(DeckTile));
-    expect(hindi, isNotEmpty);
-    expect(hindi.map((t) => t.entry.language.code), everyElement('hi'));
-
-    // A search narrows within the chosen language.
-    await search(tester, 'core');
-    expect(find.text(l10n.decksEmptySearch), findsOneWidget);
-
-    await tapChip(tester, l10n.decksFilterAll);
-    expect(shownDecks(tester), <String>[
-      state.deckById('es-en-core-100')!.deck.name,
-    ]);
   });
 
-  testWidgets('a search finds a theme within a language, word by word', (
-    tester,
-  ) async {
-    useTallPhone(tester);
-    final state = await pumpDecks(tester);
-    await tester.enterText(find.byType(SearchBar), 'hindi market');
-    await tester.pumpAndSettle();
-    final shown = <String>{
-      for (final tile in tester.widgetList<DeckTile>(find.byType(DeckTile)))
-        tile.entry.id,
-    };
-    expect(shown, <String>{
-      'hi-en-market',
-      'hi-en-grammar-nouns',
-      'hi-en-grammar-articles',
-    });
-    expect(state.deckById('bn-en-market'), isNotNull);
-
-    await tester.enterText(find.byType(SearchBar), 'market');
-    await tester.pumpAndSettle();
-    final everyMarket = <String>{
-      for (final tile in tester.widgetList<DeckTile>(find.byType(DeckTile)))
-        tile.entry.id,
-    };
-    expect(everyMarket, containsAll(<String>['hi-en-market', 'bn-en-market']));
-  });
-
-  testWidgets('a deck in a language the profile does not learn says Start', (
-    tester,
-  ) async {
-    useTallPhone(tester);
+  testWidgets('search finds units across courses, by name, deck or '
+      'language, and opens them', (tester) async {
+    usePhone(tester);
     final state = await pumpDecks(
       tester,
-      state: AppState.test(profiles: const [GalleryFixtures.mira]),
+      state: await teluguLearner(),
+      page: const DecksPage(planOf: PathFixtures.planOf),
     );
     final l10n = l10nOf(tester);
-    for (final entry in state.decks) {
-      final badge = tester.widget<DeckTile>(tileOf(entry)).badge;
-      expect(
-        badge.kind,
-        !state.canDrill(entry)
-            ? DeckBadgeKind.incoming
-            // Mira learns Marathi, with nothing studied yet: its first
-            // units are pending, the rest not done.
-            : entry.language.code == 'mr'
-            ? (state.isPending(entry)
-                  ? DeckBadgeKind.pending
-                  : DeckBadgeKind.notDone)
-            : DeckBadgeKind.start,
-        reason: entry.id,
-      );
-    }
+    await tester.tap(find.byTooltip(l10n.decksSearchOpen));
+    await tester.pumpAndSettle();
+
+    await search(tester, 'family');
+    final families = find.text('Family');
+    // Every course with a Family unit.
+    final courses = <String>{
+      for (final code in state.languages.map((l) => l.code))
+        if (state
+            .courseUnits(code)
+            .any((u) => u.any((e) => state.themeOf(e)?.id == 'family')))
+          code,
+    };
+    expect(families, findsNWidgets(courses.length));
+    // The Telugu one first, with its level, as the plan marks it.
+    expect(find.textContaining('Telugu · A1 · '), findsOneWidget);
+
+    // A deck's name finds its unit; a language's name all its units.
+    await search(tester, 'parmesh');
+    expect(
+      find.text(state.deckById('hi-en-reading-panch-parmeshwar')!.deck.name),
+      findsOneWidget,
+    );
+    await search(tester, 'telugu health');
+    expect(find.text('Health'), findsOneWidget);
+    expect(find.text(l10n.pathComing), findsOneWidget);
+
+    await search(tester, 'no unit is called this');
+    expect(find.text(l10n.decksEmptySearch), findsOneWidget);
+
+    await search(tester, 'family');
+    await tester.tap(find.textContaining('Telugu · A1 · '));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<UnitPage>(find.byType(UnitPage)).deckId,
+      'te-en-family',
+    );
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    // Closing the search shows the path again.
+    await tester.tap(find.byTooltip(l10n.decksSearchClose));
+    await tester.pumpAndSettle();
+    expect(find.byType(TextField), findsNothing);
+    expect(find.text(l10n.pathUpNext), findsOneWidget);
+  });
+
+  testWidgets('a unit of a language the profile does not learn says Start '
+      'in search', (tester) async {
+    usePhone(tester);
+    await pumpDecks(
+      tester,
+      state: AppState.test(profiles: const [GalleryFixtures.mira]),
+      page: const DecksPage(initialQuery: 'family'),
+    );
+    final l10n = l10nOf(tester);
     expect(find.text(l10n.commonStartBadge), findsWidgets);
   });
 
-  testWidgets('a broken file is a row with its file, line and message', (
-    tester,
-  ) async {
+  testWidgets('a broken file is a row with its file, line and message, '
+      'under the path and in search', (tester) async {
     usePhone(tester);
     final state = await pumpDecks(
       tester,
@@ -285,45 +379,36 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final broken = state.brokenDecks.single;
-    final line = broken.error.line;
-    expect(line, isNotNull);
-
-    expect(shownDecks(tester), <String>['Fixture deck']);
+    expect(find.text(l10n.pathBrokenFiles), findsOneWidget);
     expect(find.byType(BrokenDeckTile), findsOneWidget);
     expect(find.text(l10n.decksBrokenTitle(broken.fileName)), findsOneWidget);
     expect(
-      find.text(l10n.decksBrokenAt(line!, broken.error.message)),
+      find.text(l10n.decksBrokenAt(broken.error.line!, broken.error.message)),
       findsOneWidget,
     );
-    expect(find.text(l10n.decksBrokenBadge), findsOneWidget);
 
-    // A broken file has no language, so a language chip hides it.
-    await tester.tap(find.widgetWithText(FilterChip, 'Spanish'));
+    await tester.tap(find.byTooltip(l10n.decksSearchOpen));
     await tester.pumpAndSettle();
-    expect(find.byType(BrokenDeckTile), findsNothing);
+    await search(tester, 'broken');
+    expect(find.byType(BrokenDeckTile), findsOneWidget);
   });
 
-  testWidgets('a deck opens its screen, and Add deck opens import', (
-    tester,
-  ) async {
-    useTallPhone(tester);
-    final state = await pumpDecks(tester);
-    final l10n = l10nOf(tester);
-
-    await tester.tap(
-      find.text(state.deckById('hi-en-script-vowels')!.deck.name),
-    );
-    await tester.pumpAndSettle();
-    expect(
-      tester.widget<DeckDetailPage>(find.byType(DeckDetailPage)).deckId,
-      'hi-en-script-vowels',
-    );
-
-    await tester.pageBack();
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.decksAdd));
+  testWidgets('Add deck opens import', (tester) async {
+    usePhone(tester);
+    await pumpDecks(tester);
+    await tester.tap(fab('add-deck'));
     await tester.pumpAndSettle();
     expect(find.byType(ImportPage), findsOneWidget);
+  });
+
+  testWidgets('at a large text size the floating buttons keep their names '
+      'as tooltips', (tester) async {
+    usePhone(tester, textScale: 2.0);
+    await pumpDecks(tester, state: await teluguLearner());
+    final l10n = l10nOf(tester);
+    expect(find.byTooltip(l10n.decksWhereIAm), findsOneWidget);
+    expect(find.byTooltip(l10n.decksAdd), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('a catalog that failed offers Try again, which reloads it', (
@@ -337,125 +422,12 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.commonDecksFailed), findsOneWidget);
-    expect(find.byType(DeckTile), findsNothing);
+    expect(find.byType(CourseChips), findsNothing);
 
     await tester.tap(find.text(l10n.commonRetry));
     await tester.pumpAndSettle();
     expect(state.status, CatalogStatus.ready);
     expect(find.text(l10n.commonDecksFailed), findsNothing);
-    expect(find.byType(DeckTile), findsWidgets);
-  });
-
-  testWidgets('a course\'s theme decks sit under it, with their progress', (
-    tester,
-  ) async {
-    usePhone(tester);
-    String deck(String id, {String? theme, int cards = 2}) =>
-        '''
-schema: 1
-id: $id
-name: "${theme ?? id}"
-${theme == null ? '' : 'theme: $theme'}
-language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
-native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-cards:
-${[for (var i = 1; i <= cards; i++) '  - { id: $id-000$i, target: "क$i", native: "k$i", reading: "k$i" }'].join('\n')}
-''';
-    final state = AppState.test(
-      decks: MemoryDeckSource(<String, String>{
-        'decks/themes.yaml': '''
-schema: 1
-kind: themes
-themes:
-  - { id: first-words, name: "First words" }
-  - { id: market, name: "Market" }
-''',
-        'decks/hi/hi-en-core.yaml': deck('hi-en-core'),
-        'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
-        'decks/hi/hi-en-first-words.yaml': deck(
-          'hi-en-first-words',
-          theme: 'first-words',
-          cards: 3,
-        ),
-      }),
-    );
-    await state.load();
-    state.progress.record(
-      deckId: 'hi-en-first-words',
-      cardId: 'hi-en-first-words-0002',
-      mode: DrillMode.recognition,
-      grade: 5,
-      now: state.now(),
-    );
-    await pumpDecks(tester, state: state);
-    final l10n = l10nOf(tester);
-
-    // The course's theme decks first, in theme order, then its other decks
-    // (#80), all under the one heading (#119).
-    expect(shownDecks(tester), <String>['first-words', 'market', 'hi-en-core']);
-    expect(
-      find.text(l10n.decksCourseHeading('Hindi', 'English')),
-      findsOneWidget,
-    );
-    expect(find.text(l10n.deckMetaTheme(1, 1, 3)), findsOneWidget);
-    expect(find.text(l10n.deckMetaTheme(2, 0, 2)), findsOneWidget);
-    // The deck outside the path keeps its usual line.
-    expect(
-      find.text(DeckTile.metaFor(l10n, state.deckById('hi-en-core')!)),
-      findsOneWidget,
-    );
-  });
-
-  test('each course is one section, grammar decks included, with or '
-      'without a language chosen (#119)', () async {
-    final state = AppState.test();
-    await state.load();
-    String courseOf(DeckEntry e) => '${e.language.code}/${e.deck.native.code}';
-
-    for (final decks in <List<DeckEntry>>[
-      state.decks,
-      for (final language in state.languages)
-        [
-          for (final e in state.decks)
-            if (e.language.code == language.code) e,
-        ],
-    ]) {
-      final sections = courseSections(decks, state);
-      final headed = [
-        for (final section in sections)
-          if (section.course case final course?) courseOf(course),
-      ];
-      expect(headed.toSet(), hasLength(headed.length), reason: '$headed');
-      for (final section in sections) {
-        final course = section.course;
-        if (course == null) continue;
-        expect(section.decks.map((e) => e.id), [
-          for (final e in decks)
-            if (courseOf(e) == courseOf(course)) e.id,
-        ]);
-      }
-    }
-    // A course's decks apart in the list still make one section, at the
-    // place of its first: grouped by course, not by neighbour.
-    final split = courseSections(<DeckEntry>[
-      state.deckById('hi-en-first-words')!,
-      state.deckById('es-en-core-100')!,
-      state.deckById('hi-en-grammar-nouns')!,
-    ], state);
-    expect(split.map((s) => s.course?.language.code), ['hi', null]);
-    expect(split.map((s) => [for (final e in s.decks) e.id]), [
-      ['hi-en-first-words', 'hi-en-grammar-nouns'],
-      ['es-en-core-100'],
-    ]);
-
-    final bengali = courseSections(
-      state.decks,
-      state,
-    ).singleWhere((s) => s.course?.language.code == 'bn');
-    expect(
-      bengali.decks.map((e) => e.id),
-      containsAll(<String>['bn-en-market', 'bn-en-grammar-nouns']),
-    );
+    expect(find.byType(CourseChips), findsOneWidget);
   });
 }

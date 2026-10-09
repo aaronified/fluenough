@@ -50,6 +50,9 @@ List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
 const List<String> darkGalleryIds = <String>[
   'profiles',
   'today',
+  'decks',
+  'decks-a1-earned',
+  'unit',
   'deck',
   'drill-production-accent',
   'stats',
