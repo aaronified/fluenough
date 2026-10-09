@@ -1,0 +1,229 @@
+schema: 1
+id: "bn-things"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "things"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1139"
+    target: "বই"
+    reading: "boi"
+    ipa: "boi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Ekushey_Book_Fair" }
+      - { id: "n2", kind: "behaviour", words: [{ word: "-য়ের", reading: "-yer" }, { word: "বইয়ের", reading: "boier" }] }
+  - id: "bn-1140"
+    target: "খাতা"
+    reading: "khātā"
+    ipa: "kʰat̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Halkhata", words: [{ word: "হালখাতা", reading: "hālkhātā" }] }
+  - id: "bn-1141"
+    target: "কলম"
+    reading: "kôlom"
+    ipa: "kɔlom"
+    pos: "noun"
+    picture: "🖊"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1142"
+    target: "পেন্সিল"
+    reading: "pensil"
+    ipa: "pensil"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1143"
+    target: "কাগজ"
+    reading: "kāgoj"
+    ipa: "kaɡodʒ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কাগজ", reading: "kāgoj" }, { word: "আজকের কাগজ", reading: "ājker kāgoj" }] }
+  - id: "bn-1144"
+    target: "চিঠি"
+    reading: "ciṭhi"
+    ipa: "tʃiʈʰi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চিঠি লেখা", reading: "ciṭhi lekhā" }] }
+  - id: "bn-1145"
+    target: "ছবি"
+    reading: "chobi"
+    ipa: "tʃʰobi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ছবি তোলা", reading: "chobi tolā" }, { word: "ছবি আঁকা", reading: "chobi ām̐kā" }] }
+  - id: "bn-1146"
+    target: "ঘড়ি"
+    reading: "ghoṛi"
+    ipa: "ɡʱoɽi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হাতঘড়ি", reading: "hātghoṛi" }, { word: "দেয়ালঘড়ি", reading: "deyālghoṛi" }] }
+  - id: "bn-1147"
+    target: "চশমা"
+    reading: "côśmā"
+    ipa: "tʃɔʃma"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "চশমা পরা", reading: "côśmā pôrā" }] }
+  - id: "bn-1148"
+    target: "ছাতা"
+    reading: "chātā"
+    ipa: "tʃʰat̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ছাতা ধরা", reading: "chātā dhôrā" }] }
+  - id: "bn-1149"
+    target: "ব্যাগ"
+    reading: "bêg"
+    ipa: "bæɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1150"
+    target: "থলে"
+    reading: "thôle"
+    ipa: "t̪ʰɔle"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাজারের থলে", reading: "bājārer thôle" }] }
+  - id: "bn-1151"
+    target: "মোবাইল"
+    reading: "mobāil"
+    ipa: "mobail"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মোবাইল", reading: "mobāil" }, { word: "ফোন", reading: "phon" }] }
+  - id: "bn-1152"
+    target: "ফোন"
+    reading: "phon"
+    ipa: "pʰon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ফোন করা", reading: "phon kôrā" }, { word: "ফোন ধরা", reading: "phon dhôrā" }] }
+  - id: "bn-1153"
+    target: "কম্পিউটার"
+    reading: "kompiuṭār"
+    ipa: "kompiuʈar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1154"
+    target: "টিভি"
+    reading: "ṭibhi"
+    ipa: "ʈibʱi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টেলিভিশন", reading: "ṭelibhiśon" }] }
+  - id: "bn-1155"
+    target: "তালা"
+    reading: "tālā"
+    ipa: "t̪ala"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "তাল", reading: "tāl" }, { word: "তালা", reading: "tālā" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "তালা লাগানো", reading: "tālā lāgāno" }, { word: "চাবি", reading: "cābi" }] }
+  - id: "bn-1156"
+    target: "বাক্স"
+    reading: "bākso"
+    ipa: "bakso"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1157"
+    target: "বোতল"
+    reading: "botol"
+    ipa: "bot̪ol"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1158"
+    target: "বালতি"
+    reading: "bālti"
+    ipa: "balt̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1159"
+    target: "সাবান"
+    reading: "śābān"
+    ipa: "ʃaban"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1160"
+    target: "আয়না"
+    reading: "āynā"
+    ipa: "ajna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1161"
+    target: "চিরুনি"
+    reading: "ciruni"
+    ipa: "tʃiruni"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চুল আঁচড়ানো", reading: "cul ām̐cṛāno" }] }
+  - id: "bn-1162"
+    target: "বাতি"
+    reading: "bāti"
+    ipa: "bat̪i"
+    pos: "noun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0979", words: [{ word: "বাটি", reading: "bāṭi" }, { word: "বাতি", reading: "bāti" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "বাতি জ্বালানো", reading: "bāti jālāno" }] }
+  - id: "bn-1163"
+    target: "গাড়ি"
+    reading: "gāṛi"
+    ipa: "ɡaɽi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গাড়ি", reading: "gāṛi" }] }
+  - id: "bn-1164"
+    target: "ট্রেন"
+    reading: "ṭren"
+    ipa: "ʈren"
+    pos: "noun"
+    picture: "🚆"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রেলগাড়ি", reading: "relgāṛi" }] }
+  - id: "bn-1165"
+    target: "সাইকেল"
+    reading: "sāikel"
+    ipa: "saikel"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাইকেল রিকশা", reading: "sāikel rikśā" }] }
+  - id: "bn-1166"
+    target: "নৌকা"
+    reading: "noukā"
+    ipa: "nouka"
+    pos: "noun"
+    picture: "🛶"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নৌকা বাওয়া", reading: "noukā bāoā" }, { word: "খেয়া", reading: "kheyā" }] }
+  - id: "bn-1167"
+    target: "বিমান"
+    reading: "bimān"
+    ipa: "biman"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "বিমানবন্দর", reading: "bimānbondor" }] }
+  - id: "bn-1168"
+    target: "তোয়ালে"
+    reading: "toyāle"
+    ipa: "t̪ojale"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গামছা", reading: "gāmchā" }] }
+  - ref: "bn-0605"
+  - ref: "bn-0615"
