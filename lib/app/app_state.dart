@@ -45,6 +45,12 @@ import 'skill.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
 
+/// A native language that teaches a course, as the learner is offered it
+/// (ADR-0036): the language, and how many of the language's written units
+/// its decks teach, of how many. Both are null for a language with no
+/// path, where coverage is not defined.
+typedef NativeOption = ({LanguageInfo native, int? covered, int? total});
+
 /// The current time. Injected so that tests and the gallery can fix it.
 typedef Clock = DateTime Function();
 
@@ -983,29 +989,117 @@ class AppState extends ChangeNotifier {
     ]);
   }
 
+  /// The native languages the learner may learn [language] from, in
+  /// catalog order, each with its coverage (ADR-0036): those that teach it
+  /// and that the learner speaks, or, when they speak none of them, every
+  /// one that teaches it. Empty if no deck teaches [language].
+  List<NativeOption> nativeOptions(String language) {
+    final natives = <String, LanguageInfo>{
+      for (final entry in decks)
+        if (entry.language.code == language)
+          entry.deck.native.code: entry.deck.native,
+    };
+    final spoken = <LanguageInfo>[
+      for (final native in natives.values)
+        if (settings.rankOf(native.code) != null) native,
+    ];
+    CoursePath? pathOf(LanguageInfo native) =>
+        _catalog.paths['$language/${native.code}'];
+    return <NativeOption>[
+      for (final native in spoken.isEmpty ? natives.values : spoken)
+        (
+          native: native,
+          covered: pathOf(native)?.coveredUnits,
+          total: pathOf(native)?.writtenUnits,
+        ),
+    ];
+  }
+
+  /// The native language [language] is offered from first: the one whose
+  /// decks teach the most of its written units, ties going to the
+  /// best-known language the learner speaks, else to the first in the
+  /// catalog. With only one to choose from, that one.
+  String? suggestedNative(String language) {
+    final options = nativeOptions(language);
+    if (options.isEmpty) return null;
+    int rank(NativeOption o) =>
+        settings.rankOf(o.native.code) ?? settings.spokenLanguages.length;
+    return options
+        .reduce((best, o) {
+          final more = (o.covered ?? 0).compareTo(best.covered ?? 0);
+          if (more != 0) return more > 0 ? o : best;
+          return rank(o) < rank(best) ? o : best;
+        })
+        .native
+        .code;
+  }
+
+  /// The native language [language]'s course is taught from: the one the
+  /// learner chose, while it still teaches it, else [suggestedNative]. A
+  /// unit with no deck in it is "Coming", never taught from another
+  /// language's decks. Null if no deck teaches [language].
+  String? courseNative(String language) {
+    final chosen = settings.courseNative(language);
+    if (chosen != null &&
+        nativeOptions(language).any((o) => o.native.code == chosen)) {
+      return chosen;
+    }
+    return suggestedNative(language);
+  }
+
+  /// Whether to ask the learner which language to learn [language] from:
+  /// more than one they speak teaches it, and they have not chosen among
+  /// these. Asked on opening the course the first time, and once more when
+  /// a native language starts teaching a course already chosen for; never
+  /// again for the same choice.
+  bool needsNativeChoice(String language) {
+    if (!offersNativeChoice(language)) return false;
+    final offered = settings.nativesOffered(language);
+    return settings.courseNative(language) == null ||
+        nativeOptions(language).any((o) => !offered.contains(o.native.code));
+  }
+
+  /// Whether the learner has a choice of languages to learn [language]
+  /// from: more than one they speak teaches it. Settings then offers
+  /// "Learn Telugu from".
+  bool offersNativeChoice(String language) {
+    final options = nativeOptions(language);
+    return options.length > 1 &&
+        options.every((o) => settings.rankOf(o.native.code) != null);
+  }
+
+  /// Records that [language] is learned from [native], among the options
+  /// offered now.
+  void chooseNative(String language, String native) => settings.setCourseNative(
+    language,
+    native,
+    offered: <String>[
+      for (final option in nativeOptions(language)) option.native.code,
+    ],
+  );
+
   /// The units of [language]'s course, in teaching order: the course taught
-  /// from the best-known language the learner speaks that has one, else the
-  /// first in the catalog. Its path's units, or without a path each deck as
-  /// a unit, in catalog order; a deck its path leaves out follows as a unit
-  /// of its own. Without its alphabet, the decks the path marks as needing
-  /// it are left out. Empty if no deck teaches [language]. Whether the profile
-  /// learns it does not matter: placement asks before it does.
+  /// from [courseNative], or [native] where given. Its path's units, or
+  /// without a path each deck as a unit, in catalog order; a deck its path
+  /// leaves out follows as a unit of its own. Without its alphabet, the
+  /// decks the path marks as needing it are left out. Empty if no deck
+  /// teaches [language]. Whether the profile learns it does not matter:
+  /// placement asks before it does.
   ///
-  /// [alphabet] overrides whether the alphabet is learned, for placement,
-  /// which asks before it is saved.
-  List<List<DeckEntry>> courseUnits(String language, {bool? alphabet}) {
+  /// [alphabet] overrides whether the alphabet is learned, and [native]
+  /// which language it is learned from, for placement, which asks before
+  /// either is saved.
+  List<List<DeckEntry>> courseUnits(
+    String language, {
+    bool? alphabet,
+    String? native,
+  }) {
     final teaching = <DeckEntry>[
       for (final entry in decks)
         if (entry.language.code == language) entry,
     ];
     if (teaching.isEmpty) return const <List<DeckEntry>>[];
-    int rank(DeckEntry e) =>
-        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
-    final native = teaching
-        .reduce((best, e) => rank(e) < rank(best) ? e : best)
-        .deck
-        .native
-        .code;
+    native ??= courseNative(language);
     final course = <DeckEntry>[
       for (final entry in teaching)
         if (entry.deck.native.code == native) entry,
