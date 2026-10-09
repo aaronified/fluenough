@@ -101,6 +101,7 @@ enum Feature {
     Feature.logImport,
     Feature.importFile,
     Feature.voiceSettingsLink,
+    Feature.feedbackMail,
   };
 }
 

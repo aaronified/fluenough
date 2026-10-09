@@ -27,11 +27,13 @@ class FakeReportSender implements ReportSender {
   }
 }
 
-/// Mail reports on, as once the Gmail exists (#160).
-const FeatureRegistry withMail = FeatureRegistry.only(<Feature>{
-  ...Feature.available,
-  Feature.feedbackMail,
-});
+/// Mail reports on, as shipped since the Gmail exists (#160).
+const FeatureRegistry withMail = FeatureRegistry.only(Feature.available);
+
+/// Mail reports off: every report button opens GitHub instead.
+final FeatureRegistry noMail = FeatureRegistry.only(
+  Feature.available.difference(<Feature>{Feature.feedbackMail}),
+);
 
 /// What the device box adds, as the bug icon would hand it on.
 const Map<String, String> device = <String, String>{
@@ -55,11 +57,11 @@ Future<void> tapInList(WidgetTester tester, Finder finder) async {
 }
 
 void main() {
-  test('mail reports and the app log are incoming until they exist '
-      '(#160, #162)', () {
-    expect(Feature.available, isNot(contains(Feature.feedbackMail)));
+  test('mail reports ship, to the Fluenough Gmail; the app log is still '
+      'incoming (#160, #162)', () {
+    expect(Feature.available, contains(Feature.feedbackMail));
+    expect(AppLinks.feedbackEmail, 'fluenough@gmail.com');
     expect(Feature.available, isNot(contains(Feature.logs)));
-    expect(AppLinks.feedbackEmail, isEmpty);
   });
 
   testWidgets('while mail is incoming, the bug icon asks first, with the '
@@ -71,7 +73,7 @@ void main() {
     await pumpScreen(
       tester,
       const DecksPage(),
-      state: AppState.test(links: links),
+      state: AppState.test(links: links, features: noMail),
     );
     final l10n = l10nOf(tester);
     await tester.tap(find.byType(ReportButton));
@@ -107,7 +109,7 @@ void main() {
     await pumpScreen(
       tester,
       const DecksPage(),
-      state: AppState.test(links: links),
+      state: AppState.test(links: links, features: noMail),
     );
     final l10n = l10nOf(tester);
     await tester.tap(find.byType(ReportButton));
@@ -139,7 +141,7 @@ void main() {
     await pumpScreen(
       tester,
       const DecksPage(),
-      state: AppState.test(links: links),
+      state: AppState.test(links: links, features: noMail),
     );
     await tester.tap(find.byType(ReportButton));
     await tester.pumpAndSettle();
@@ -156,7 +158,7 @@ void main() {
     final state = await pumpScreen(
       tester,
       const InspectPage(deckId: 'hi-en-market'),
-      state: AppState.test(links: links),
+      state: AppState.test(links: links, features: noMail),
     );
     final l10n = l10nOf(tester);
     final card = state.deckById('hi-en-market')!.cards.first;
@@ -197,7 +199,7 @@ void main() {
     await pumpScreen(
       tester,
       const DecksPage(),
-      state: AppState.test(links: FixedLinks(opens: false)),
+      state: AppState.test(links: FixedLinks(opens: false), features: noMail),
     );
     final l10n = l10nOf(tester);
     await tester.tap(find.byType(ReportButton));

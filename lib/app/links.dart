@@ -12,10 +12,9 @@ abstract final class AppLinks {
   static const String heliboard =
       'https://f-droid.org/packages/helium314.keyboard/';
 
-  /// Where reports from the app go once mail reports are set up (#160):
-  /// the Fluenough Gmail. Empty until it exists; `Feature.feedbackMail`
-  /// stays incoming until then.
-  static const String feedbackEmail = '';
+  /// Where reports from the app go (#160): the Fluenough Gmail, which
+  /// `tools/mail_to_issues.py` reads.
+  static const String feedbackEmail = 'fluenough@gmail.com';
 
   /// GitHub's form for a new issue, its body filled in with [body]: where
   /// every report button goes while mail reports are incoming (#160).
