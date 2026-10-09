@@ -4,7 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/models/card.dart' as model;
+import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/core/models/proposal.dart';
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/features/review/proposal_card.dart';
 import 'package:fluenough/features/review/review_page.dart';
@@ -132,5 +136,59 @@ void main() {
     await tester.tap(find.text('mother'));
     await tester.pumpAndSettle();
     expect(find.byType(ProposalCard), findsNothing);
+  });
+
+  test('a proposal kept in another deck of the language is shown, once', () {
+    const te = LanguageInfo(code: 'te', iso639_3: 'tel', name: 'Telugu');
+    const en = LanguageInfo(code: 'en', iso639_3: 'eng', name: 'English');
+    const card = model.Card(
+      id: 'te-9902',
+      deckId: 'te-en-a',
+      target: 'అమ్మ',
+      native: 'mother',
+    );
+    Proposal proposal(String id, String now) => Proposal(
+      id: id,
+      card: 'te-9902',
+      field: ProposalField.native,
+      now: now,
+      text: 'mum',
+      by: otherCode,
+      date: '2026-10-09',
+    );
+    DeckEntry entry(String id, LanguageInfo language, List<Proposal> found) =>
+        DeckEntry(
+          path: 'decks/te/$id.yaml',
+          deck: Deck(
+            id: id,
+            name: id,
+            kind: DeckKind.vocab,
+            language: language,
+            native: en,
+            license: 'CC0-1.0',
+            cards: const <model.Card>[card],
+            proposals: <String, List<Proposal>>{'te-9902': found},
+          ),
+        );
+    final mine = entry('te-en-a', te, const <Proposal>[]);
+    final written = entry('te-en-b', te, <Proposal>[
+      proposal('aaaaaaaaaa', 'mother'),
+      proposal('bbbbbbbbbb', 'mum'),
+    ]);
+    final again = entry('te-en-c', te, <Proposal>[
+      proposal('aaaaaaaaaa', 'mother'),
+    ]);
+    const hi = LanguageInfo(code: 'hi', iso639_3: 'hin', name: 'Hindi');
+    final other = entry('hi-en-a', hi, <Proposal>[
+      proposal('cccccccccc', 'mother'),
+    ]);
+    expect(
+      waitingProposals(
+        <DeckEntry>[mine, written, again, other],
+        mine,
+        card,
+      ).map((p) => p.id),
+      <String>['aaaaaaaaaa'],
+    );
   });
 }

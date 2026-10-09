@@ -391,7 +391,7 @@ class _ReviewRow extends StatelessWidget {
         label: said(l10n.reviewCheck, l10n.reviewCheckFor(meaning)),
       ),
     };
-    final proposals = waitingProposals(deck, card).length;
+    final proposals = waitingProposals(state.decks, deck, card).length;
     final extra = <String>[
       if (proposals > 0) l10n.reviewProposalsWaiting(proposals),
       if (review?.rating case final r?) l10n.reviewRated(r.score),
