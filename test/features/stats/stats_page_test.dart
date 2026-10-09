@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
-import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/stats/leeches.dart';
@@ -163,35 +162,6 @@ void main() {
       await scrollTo(tester, bar);
       expect(bar, findsOneWidget, reason: label);
     }
-    handle.dispose();
-  });
-
-  testWidgets('your strengths show for one language, from the ability the '
-      'app learned (ADR-0034)', (tester) async {
-    final handle = tester.ensureSemantics();
-    usePhone(tester);
-    final state = await fixture();
-    await pumpScreen(tester, const StatsPage(), state: state);
-    final l10n = l10nOf(tester);
-    await tapChip(tester, 'Spanish');
-
-    final strengths = strengthsIn(state.progress, 'es');
-    expect(strengths.keys, contains(Skill.production));
-    expect(strengths.keys, isNot(contains(Skill.recognition)));
-    final label = l10n.statsBarSemantics(
-      l10n.skillProduction,
-      strengths[Skill.production]!,
-    );
-    await scrollTo(tester, find.text(l10n.statsStrengths));
-    await scrollTo(tester, find.bySemanticsLabel(label));
-    expect(find.bySemanticsLabel(label), findsOneWidget);
-
-    await showAll(tester);
-    expect(
-      find.text(l10n.statsStrengths),
-      findsNothing,
-      reason: 'strengths are per language',
-    );
     handle.dispose();
   });
 

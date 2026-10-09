@@ -5,7 +5,6 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
-import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -262,13 +261,6 @@ class _StatsBody extends StatelessWidget {
       ),
     );
 
-    final answered = languagesAnswered(state.progress);
-    final strengthLanguage =
-        language ?? (answered.length == 1 ? answered.single : null);
-    final strengths = strengthLanguage == null
-        ? const <Skill, double>{}
-        : strengthsIn(state.progress, strengthLanguage);
-
     BarRow bar(String label, Tally tally, {Color? color}) => BarRow(
       label: label,
       value: tally.ratio,
@@ -293,32 +285,6 @@ class _StatsBody extends StatelessWidget {
               for (final MapEntry(key: skill, value: tally)
                   in numbers.bySkill.entries)
                 bar(skill.label(l10n), tally),
-            ],
-          ),
-        ],
-        if (strengths.isNotEmpty) ...<Widget>[
-          const SizedBox(height: 16),
-          StatsSection(
-            title: l10n.statsStrengths,
-            children: <Widget>[
-              Text(
-                l10n.statsStrengthsBody,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-              for (final MapEntry(key: skill, value: strength)
-                  in strengths.entries)
-                BarRow(
-                  label: skill.label(l10n),
-                  value: strength,
-                  valueText: l10n.commonPercent(strength),
-                  semanticsLabel: l10n.statsBarSemantics(
-                    skill.label(l10n),
-                    strength,
-                  ),
-                  color: scheme.secondary,
-                ),
             ],
           ),
         ],

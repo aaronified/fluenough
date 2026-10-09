@@ -343,7 +343,16 @@ The owner's answers to #235, 2026-10-08:
   - **Today:** ambient's strip on the due card and the marks on the skill
     tiles, aligned properly ("your render has everything misaligned. That
     won't do").
-  - Revised mockups before any of it is built.
+  - Revised mockups before any of it is built (docs/mockups/
+    adapted-to-you.html). The owner then refined them, 2026-10-09:
+    - **Today always uses the settled strip;** the larger "just
+      refitted" one goes.
+    - **Progress keeps one skills section:** "Correct, by skill" and
+      "Weakest tags", as before; the "Your strengths" section, which said
+      the same thing, goes. The "How you learn" card stays.
+    - **Skills named by what the words were:** "heard words", "read
+      words", "written words", "spoken words" ("You remember heard words
+      well: fewer reviews"), not "Hear words".
 - **Nothing is gathered** (owner: "We do not gather any data at all").
   Every fit runs on the phone, from that learner's own review log; nothing
   leaves it. Where this plan or the research says a figure could be
