@@ -141,6 +141,7 @@ class SettingsPage extends StatelessWidget {
         GroupedTile(
           leading: const Icon(Icons.record_voice_over_outlined),
           title: l10n.settingsSpoken,
+          subtitle: _spokenLine(l10n, state),
           trailing: const Icon(Icons.chevron_right),
           onTap: () => AppNavigator.openSpokenLanguages(context),
         ),
@@ -154,7 +155,8 @@ class SettingsPage extends StatelessWidget {
         for (final skill in Skill.values) ...<Widget>[
           GroupedTile.toggle(
             title: skill.settingsLabel(l10n),
-            subtitle: skill.settingsDescription(l10n),
+            subtitleOn: _skillLine(l10n, state, skill, on: true),
+            subtitleOff: _skillLine(l10n, state, skill, on: false),
             feature: skill.feature,
             // Shown off while incoming, as the design draws it.
             value:
@@ -200,7 +202,8 @@ class SettingsPage extends StatelessWidget {
         ],
         GroupedTile.toggle(
           title: l10n.settingsRomanisation,
-          subtitle: l10n.settingsRomanisationDesc,
+          subtitleOn: l10n.settingsRomanisationOn,
+          subtitleOff: l10n.settingsRomanisationOff,
           value: settings.showRomanisation,
           onChanged: (on) => settings.showRomanisation = on,
         ),
@@ -246,6 +249,59 @@ class SettingsPage extends StatelessWidget {
         .name;
   }
 
+  /// The languages the learner speaks, best known first, by the names the
+  /// decks give them, or their codes where no deck names them.
+  static String _spokenLine(AppLocalizations l10n, AppState state) {
+    final names = <String, String>{
+      for (final deck in state.decks)
+        deck.deck.native.code: deck.deck.native.name,
+      for (final language in state.languages) language.code: language.name,
+    };
+    return <String>[
+      for (final code in state.settings.spokenLanguages) names[code] ?? code,
+    ].join(l10n.commonListSeparator);
+  }
+
+  /// A skill switch's line for [on] (docs/plans/settings-wording.md): what
+  /// is asked, or not, then what the phone lacks for the languages the
+  /// profile learns: a voice for a skill that needs one, a recogniser for
+  /// speaking.
+  static String _skillLine(
+    AppLocalizations l10n,
+    AppState state,
+    Skill skill, {
+    required bool on,
+  }) {
+    final line = on ? skill.settingsOn(l10n) : skill.settingsOff(l10n);
+    if (!state.features.isAvailable(skill.feature)) return line;
+    final learned = <LanguageInfo>[
+      for (final language in state.languages)
+        if (state.currentProfile.learns(language.code)) language,
+    ];
+    String names(bool Function(LanguageInfo) lacks) => <String>[
+      for (final language in learned)
+        if (lacks(language)) language.name,
+    ].join(l10n.commonListSeparator);
+    if (skill.needsVoice) {
+      final missing = names((l) => state.voiceStatus(l) == VoiceStatus.missing);
+      if (missing.isNotEmpty) return l10n.settingsSkillNoVoice(line, missing);
+    }
+    if (skill.needsMicrophone) {
+      final missing = names(
+        (l) => state.speechStatus(l) == SpeechStatus.missing,
+      );
+      if (missing.isNotEmpty) {
+        return l10n.settingsSkillNoRecogniser(line, missing);
+      }
+    }
+    return line;
+  }
+
+  /// A switch's row in a dialog: no room at the sides, the dialog has it.
+  static const EdgeInsetsGeometry _dialogRow = EdgeInsetsDirectional.symmetric(
+    vertical: 10,
+  );
+
   /// The languages the profile learns whose course has decks that need the
   /// alphabet.
   static List<LanguageInfo> _withAlphabet(AppState state) => <LanguageInfo>[
@@ -282,13 +338,16 @@ class SettingsPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     for (final language in _withAlphabet(state))
-                      SwitchListTile(
-                        title: Text(language.name),
-                        subtitle:
-                            !settings.learnsAlphabet(language.code) &&
-                                state.courseUnits(language.code).isEmpty
-                            ? Text(l10n.settingsAlphabetEmpty)
-                            : null,
+                      GroupedTile.toggle(
+                        title: language.name,
+                        subtitleOn: l10n.settingsAlphabetOn(
+                          language.script,
+                          language.name,
+                        ),
+                        subtitleOff: state.courseUnits(language.code).isEmpty
+                            ? l10n.settingsAlphabetOffEmpty
+                            : l10n.settingsAlphabetOff,
+                        padding: _dialogRow,
                         value: settings.learnsAlphabet(language.code),
                         onChanged: (on) =>
                             settings.setLearnsAlphabet(language.code, on),
@@ -333,7 +392,9 @@ class SettingsPage extends StatelessWidget {
           if (state.currentProfile.learns(language.code)) language,
       ];
       return AlertDialog(
-        title: Text(l10n.settingsSkillLanguagesTitle(skill.label(l10n))),
+        title: Text(
+          l10n.settingsSkillLanguagesTitle(skill.settingsLabel(l10n)),
+        ),
         content: ListenableBuilder(
           listenable: settings,
           builder: (context, _) => SingleChildScrollView(
@@ -341,11 +402,14 @@ class SettingsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 for (final language in languages)
-                  CheckboxListTile(
-                    title: Text(language.name),
+                  GroupedTile.toggle(
+                    title: language.name,
+                    subtitleOn: l10n.settingsSkillAskedIn(language.name),
+                    subtitleOff: l10n.settingsSkillNotAskedIn(language.name),
+                    padding: _dialogRow,
                     value: !settings.isOffFor(skill, language.code),
                     onChanged: (on) =>
-                        settings.setOffFor(skill, language.code, on != true),
+                        settings.setOffFor(skill, language.code, !on),
                   ),
               ],
             ),
@@ -390,7 +454,8 @@ class SettingsPage extends StatelessWidget {
       children: <Widget>[
         GroupedTile.toggle(
           title: l10n.settingsSound,
-          subtitle: l10n.settingsSoundDesc,
+          subtitleOn: l10n.settingsSoundOn,
+          subtitleOff: l10n.settingsSoundOff,
           value: settings.soundOn,
           onChanged: (on) {
             settings.soundOn = on;
@@ -400,7 +465,8 @@ class SettingsPage extends StatelessWidget {
         // Shown as it is set, but cannot be changed while nothing plays.
         GroupedTile.toggle(
           title: l10n.settingsAutoplay,
-          subtitle: l10n.settingsAutoplayDesc,
+          subtitleOn: l10n.settingsAutoplayOn,
+          subtitleOff: l10n.settingsAutoplayOff,
           value: settings.autoplay,
           titleColor: settings.soundOn
               ? null
@@ -478,7 +544,15 @@ class SettingsPage extends StatelessWidget {
         GroupedTile.toggle(
           leading: const Icon(Icons.notifications_outlined),
           title: l10n.settingsReminder,
-          subtitle: l10n.settingsReminderDesc,
+          subtitleOn: l10n.settingsReminderOn(
+            MaterialLocalizations.of(context).formatTimeOfDay(
+              settings.reminderTime,
+              alwaysUse24HourFormat: MediaQuery.alwaysUse24HourFormatOf(
+                context,
+              ),
+            ),
+          ),
+          subtitleOff: l10n.settingsReminderOff,
           feature: Feature.reminder,
           value: reminderOn && settings.reminder,
           onChanged: (on) => settings.reminder = on,
@@ -514,7 +588,8 @@ class SettingsPage extends StatelessWidget {
         GroupedTile.toggle(
           leading: const Icon(Icons.lock_outline),
           title: l10n.settingsPinLock,
-          subtitle: l10n.settingsPinLockDesc,
+          subtitleOn: l10n.settingsPinLockOn,
+          subtitleOff: l10n.settingsPinLockOff,
           feature: Feature.pinLock,
           value: pinOn && state.currentProfile.isLocked,
           onChanged: null,

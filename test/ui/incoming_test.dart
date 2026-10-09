@@ -176,7 +176,8 @@ void main() {
                 children: <Widget>[
                   GroupedTile.toggle(
                     title: l10n.settingsReminder,
-                    subtitle: l10n.settingsReminderDesc,
+                    subtitleOn: l10n.settingsReminderOn('7:30 PM'),
+                    subtitleOff: l10n.settingsReminderOff,
                     value: false,
                     onChanged: changes.add,
                     feature: Feature.reminder,
@@ -222,7 +223,7 @@ void main() {
       final changes = await pumpToggle(tester, FeatureRegistry.all());
       final l10n = l10nOf(tester);
       expect(find.text(l10n.incomingBadge), findsNothing);
-      await tester.tap(find.text(l10n.settingsReminderDesc));
+      await tester.tap(find.text(l10n.settingsReminderOff));
       expect(changes, <bool>[true]);
     });
 
@@ -244,7 +245,7 @@ void main() {
       await pumpToggle(tester, const FeatureRegistry.shipped());
       expect(tester.takeException(), isNull);
       expect(
-        beside(tester, badge, find.text(l10n.settingsReminderDesc)),
+        beside(tester, badge, find.text(l10n.settingsReminderOff)),
         isFalse,
       );
     });
@@ -302,7 +303,7 @@ void main() {
                   ),
                   GroupedTile(
                     title: l10n.settingsReminder,
-                    subtitle: l10n.settingsReminderDesc,
+                    subtitle: l10n.settingsReminderOff,
                     selected: true,
                     trailing: FilledButton(
                       onPressed: () => pressed++,
@@ -328,7 +329,7 @@ void main() {
       expect(
         tester.getSemantics(find.text(l10n.settingsReminder)),
         isSemantics(
-          label: '${l10n.settingsReminder}\n${l10n.settingsReminderDesc}',
+          label: '${l10n.settingsReminder}\n${l10n.settingsReminderOff}',
           isButton: false,
         ),
       );

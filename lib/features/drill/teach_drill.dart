@@ -53,7 +53,7 @@ class _TeachDrillState extends State<TeachDrill> {
           card: card,
           language: language,
           // Reading first until the script is expected of the learner; else
-          // under the word, whatever Show romanisation says.
+          // under the word, whatever Latin-letter readings says.
           reading: session.expectsScript
               ? TaughtReading.always
               : TaughtReading.first,

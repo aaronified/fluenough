@@ -399,13 +399,15 @@ void main() {
     Switch toggle() => tester.widget<Switch>(
       find.descendant(of: row, matching: find.byType(Switch)),
     );
-    expect(find.text(l10n.settingsUpdateAutoDesc), findsOneWidget);
+    expect(find.text(l10n.settingsUpdateAutoOff), findsOneWidget);
     expect(settings.autoUpdateCheck, isFalse);
     expect(toggle().value, isFalse);
 
     await _tap(tester, row);
     expect(settings.autoUpdateCheck, isTrue);
     expect(toggle().value, isTrue);
+    expect(find.text(l10n.settingsUpdateAutoOn), findsOneWidget);
+    expect(find.text(l10n.settingsUpdateAutoOff), findsNothing);
     expect(fakes.engine.checks, 0, reason: 'it checks at the next launch');
 
     await _tap(tester, row);

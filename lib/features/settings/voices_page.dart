@@ -281,9 +281,8 @@ class _SpeechSection extends StatelessWidget {
                   SpeechStatus.onlineOnly ||
                   SpeechStatus.online => GroupedTile.toggle(
                     title: language.name,
-                    subtitle: settings.allowsOnlineSpeech(language.code)
-                        ? l10n.voicesSpeechOnline
-                        : l10n.voicesSpeechOnlineOnly,
+                    subtitleOn: l10n.voicesSpeechOnline,
+                    subtitleOff: l10n.voicesSpeechOnlineOnly,
                     value: settings.allowsOnlineSpeech(language.code),
                     onChanged: (on) =>
                         settings.allowOnlineSpeech(language.code, on),

@@ -24,13 +24,13 @@ enum TaughtReading {
   /// teach card.
   always,
 
-  /// The word in its script, its reading under it while Show romanisation
+  /// The word in its script, its reading under it while Latin-letter readings
   /// is on: a review of a language learned with its alphabet.
   bySetting;
 
   /// How a review shows the reading of the word [session] asks: reading
   /// first for a language learned without its alphabet (as recognition
-  /// does), else under the word as Show romanisation says.
+  /// does), else under the word as Latin-letter readings says.
   static TaughtReading inReview(DrillSession session) =>
       session.learnsAlphabet ? bySetting : first;
 }
@@ -97,7 +97,7 @@ class TaughtDetails extends StatelessWidget {
     final state = AppScope.read(context);
     final settings = state.settings;
     final warnings = AlikeWarning.forCard(state, card, language);
-    // Live, as the reading's line follows Show romanisation.
+    // Live, as the reading's line follows Latin-letter readings.
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) {
