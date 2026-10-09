@@ -10,7 +10,7 @@ class PassageSentence {
   /// letter for letter.
   final String text;
 
-  /// Its romanisation, shown when Show romanisation is on.
+  /// Its romanisation, shown when Latin-letter readings is on.
   final String? reading;
 
   /// How it is said, in the IPA, broad, without slashes (ADR-0025).
@@ -37,7 +37,7 @@ class GlossEntry {
   /// Today's standard colloquial form.
   final String modern;
 
-  /// [modern] in the Latin alphabet, shown when Show romanisation is on.
+  /// [modern] in the Latin alphabet, shown when Latin-letter readings is on.
   final String? reading;
 
   /// [modern] in the IPA, broad, without slashes (ADR-0025).

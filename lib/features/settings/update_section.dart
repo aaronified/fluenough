@@ -41,7 +41,8 @@ class UpdateSection extends StatelessWidget {
             GroupedTile.toggle(
               leading: const Icon(Icons.update),
               title: l10n.settingsUpdateAuto,
-              subtitle: l10n.settingsUpdateAutoDesc,
+              subtitleOn: l10n.settingsUpdateAutoOn,
+              subtitleOff: l10n.settingsUpdateAutoOff,
               value: settings.autoUpdateCheck,
               onChanged: (on) => settings.autoUpdateCheck = on,
             ),
