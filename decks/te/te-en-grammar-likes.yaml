@@ -22,18 +22,25 @@ cards:
     reading: "nāku ṭī iṣṭam."
     ipa: "naːku ʈiː iʂʈam"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
   - id: te-0471
     target: "నాకు కాఫీ ఇష్టం లేదు."
     native: "I don't like coffee."
     reading: "nāku kāfī iṣṭam lēdu."
     ipa: "naːku kaːfiː iʂʈam leːd̪u"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
   - id: te-0472
     target: "మీకు ఏం ఇష్టం?"
     native: "What do you like?"
     reading: "mīku ēm iṣṭam?"
     ipa: "miːku eːm iʂʈam"
     pos: "phrase"
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "ఏం", ref: "te-0160" }
   - id: te-0473
     target: "నాకు సినిమాలు చూడడం ఇష్టం."
     native: "I like watching films."
@@ -41,6 +48,10 @@ cards:
     ipa: "naːku sinimaːlu tʃuːɖaɖam iʂʈam"
     pos: "phrase"
     notes: "An action you like takes the -డం (-ḍam) form: చూడడం (cūḍaḍam), watching."
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "సినిమాలు", base: "సినిమా", reading: "sinimā", meaning: "film; cinema" }
+      - { word: "చూడడం", base: "చూడడం", reading: "cūḍaḍam", meaning: "to see; to watch" }
   - id: te-0474
     target: "నచ్చడం"
     native: "to be liked; to please"
@@ -54,21 +65,35 @@ cards:
     reading: "nāku naccindi."
     ipa: "naːku natʃtʃind̪i"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నచ్చింది", ref: "te-0474" }
   - id: te-0476
     target: "నాకు నచ్చలేదు."
     native: "I didn't like it."
     reading: "nāku naccalēdu."
     ipa: "naːku natʃtʃaleːd̪u"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నచ్చలేదు", ref: "te-0474" }
   - id: te-0477
     target: "ఇది మీకు నచ్చిందా?"
     native: "Did you like it?"
     reading: "idi mīku naccindā?"
     ipa: "id̪i miːku natʃtʃind̪aː"
     pos: "phrase"
+    bases:
+      - { word: "ఇది", base: "ఇది", reading: "idi", meaning: "this (a thing)" }
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "నచ్చిందా", ref: "te-0474" }
   - id: te-0478
     target: "నేను నిన్ను ప్రేమిస్తున్నాను."
     native: "I love you."
     reading: "nēnu ninnu prēmistunnānu."
     ipa: "neːnu ninnu preːmist̪unnaːnu"
     pos: "phrase"
+    bases:
+      - { word: "నేను", base: "నేను", reading: "nēnu", meaning: "I" }
+      - { word: "నిన్ను", base: "నువ్వు", reading: "nuvvu", meaning: "you (to a friend)" }
+      - { word: "ప్రేమిస్తున్నాను", base: "ప్రేమించడం", reading: "prēmiñcaḍam", meaning: "to love" }

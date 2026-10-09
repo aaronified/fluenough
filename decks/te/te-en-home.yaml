@@ -81,6 +81,9 @@ cards:
     alt_target: ["తాళంచెవి"]
     pos: "phrase"
     notes: "Literally 'the lock's ear'. తాళం (tāḷam) alone is the lock."
+    bases:
+      - { word: "తాళం", base: "తాళం", reading: "tāḷam", meaning: "lock" }
+      - { word: "చెవి", base: "చెవి", reading: "cevi", meaning: "ear" }
   - id: te-0430
     target: "మంచం"
     native: "bed; cot"
@@ -150,9 +153,18 @@ cards:
     reading: "iṇṭi mundu oka pārku undi."
     ipa: "iɳʈi mund̪u oka paːrku und̪i"
     pos: "phrase"
+    bases:
+      - { word: "ఇంటి", ref: "te-0195" }
+      - { word: "ఒక", base: "ఒక", reading: "oka", meaning: "a; one" }
+      - { word: "పార్కు", base: "పార్కు", reading: "pārku", meaning: "park" }
+      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
   - id: te-0440
     target: "మా వీధి చాలా ప్రశాంతంగా ఉంటుంది."
     native: "Our street is very quiet."
     reading: "mā vīdhi cālā praśāntaṅgā uṇṭundi."
     ipa: "maː ʋiːd̪ʱi tʃaːlaː praʃaːnt̪aŋɡaː uɳʈund̪i"
     pos: "phrase"
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā", meaning: "very; a lot" }
+      - { word: "ప్రశాంతంగా", base: "ప్రశాంతం", reading: "praśāntam", meaning: "peaceful; quiet" }
+      - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }

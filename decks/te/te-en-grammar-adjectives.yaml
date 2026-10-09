@@ -71,6 +71,9 @@ cards:
     reading: "idi mañci pustakam."
     ipa: "id̪i maɲtʃi pust̪akam"
     pos: "phrase"
+    bases:
+      - { word: "ఇది", base: "ఇది", reading: "idi", meaning: "this (a thing)" }
+      - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakam", meaning: "book" }
   - id: te-0510
     target: "ఈ గది పెద్దగా ఉంది."
     native: "This room is big."
@@ -78,9 +81,16 @@ cards:
     ipa: "iː ɡad̪i ped̪d̪aɡaː und̪i"
     pos: "phrase"
     notes: "To say a thing is big, the describing word takes -గా (-gā) and ఉంది (undi) follows: పెద్దగా ఉంది (peddagā undi)."
+    bases:
+      - { word: "పెద్దగా", ref: "te-0502" }
+      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
   - id: te-0511
     target: "కాఫీ చాలా వేడిగా ఉంది."
     native: "The coffee is very hot."
     reading: "kāfī cālā vēḍigā undi."
     ipa: "kaːfiː tʃaːlaː ʋeːɖiɡaː und̪i"
     pos: "phrase"
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā", meaning: "very; a lot" }
+      - { word: "వేడిగా", ref: "te-0505" }
+      - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam", meaning: "to be; to exist; to have" }
