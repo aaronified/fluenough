@@ -1,0 +1,70 @@
+schema: 1
+id: "te-grammar-pronoun-forms"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+    except: ["te-0610", "te-0611"]
+  slots: ["gen", "ki", "ni", "to"]
+  rows:
+    - word: "te-0593"
+      forms: { "gen": "నా", "ki": "నాకు", "ni": "నన్ను", "to": "నాతో" }
+      readings: { "gen": "nā", "ki": "nāku", "ni": "nannu", "to": "nātō" }
+    - word: "te-0594"
+      forms: { "gen": "నీ", "ki": "నీకు", "ni": "నిన్ను", "to": "నీతో" }
+      readings: { "gen": "nī", "ki": "nīku", "ni": "ninnu", "to": "nītō" }
+    - word: "te-0595"
+      forms: { "gen": "అతని", "ki": "అతనికి", "ni": "అతన్ని", "to": "అతనితో" }
+      readings: { "gen": "atani", "ki": "ataniki", "ni": "atanni", "to": "atanitō" }
+    - word: "te-0596"
+      forms: { "gen": "ఆమె", "ki": "ఆమెకు", "ni": "ఆమెను", "to": "ఆమెతో" }
+      readings: { "gen": "āme", "ki": "āmeku", "ni": "āmenu", "to": "āmetō" }
+    - word: "te-0597"
+      forms: { "gen": "ఆయన", "ki": "ఆయనకు", "ni": "ఆయనను", "to": "ఆయనతో" }
+      readings: { "gen": "āyana", "ki": "āyanaku", "ni": "āyananu", "to": "āyanatō" }
+    - word: "te-0598"
+      forms: { "gen": "ఆవిడ", "ki": "ఆవిడకు", "ni": "ఆవిడను", "to": "ఆవిడతో" }
+      readings: { "gen": "āviḍa", "ki": "āviḍaku", "ni": "āviḍanu", "to": "āviḍatō" }
+    - word: "te-0599"
+      forms: { "gen": "దాని", "ki": "దానికి", "ni": "దాన్ని", "to": "దానితో" }
+      readings: { "gen": "dāni", "ki": "dāniki", "ni": "dānni", "to": "dānitō" }
+    - word: "te-0600"
+      forms: { "gen": "దీని", "ki": "దీనికి", "ni": "దీన్ని", "to": "దీనితో" }
+      readings: { "gen": "dīni", "ki": "dīniki", "ni": "dīnni", "to": "dīnitō" }
+    - word: "te-0601"
+      forms: { "gen": "వాళ్ళ", "ki": "వాళ్ళకు", "ni": "వాళ్ళను", "to": "వాళ్ళతో" }
+      readings: { "gen": "vāḷḷa", "ki": "vāḷḷaku", "ni": "vāḷḷanu", "to": "vāḷḷatō" }
+    - word: "te-0602"
+      forms: { "gen": "వీళ్ళ", "ki": "వీళ్ళకు", "ni": "వీళ్ళను", "to": "వీళ్ళతో" }
+      readings: { "gen": "vīḷḷa", "ki": "vīḷḷaku", "ni": "vīḷḷanu", "to": "vīḷḷatō" }
+    - word: "te-0603"
+      forms: { "gen": "వారి", "ki": "వారికి", "ni": "వారిని", "to": "వారితో" }
+      readings: { "gen": "vāri", "ki": "vāriki", "ni": "vārini", "to": "vāritō" }
+    - word: "te-0604"
+      forms: { "gen": "వాటి", "ki": "వాటికి", "ni": "వాటిని", "to": "వాటితో" }
+      readings: { "gen": "vāṭi", "ki": "vāṭiki", "ni": "vāṭini", "to": "vāṭitō" }
+    - word: "te-0605"
+      forms: { "gen": "వీటి", "ki": "వీటికి", "ni": "వీటిని", "to": "వీటితో" }
+      readings: { "gen": "vīṭi", "ki": "vīṭiki", "ni": "vīṭini", "to": "vīṭitō" }
+    - word: "te-0606"
+      forms: { "gen": "అందరి", "ki": "అందరికీ", "ni": "అందరినీ", "to": "అందరితో" }
+      readings: { "gen": "andari", "ki": "andarikī", "ni": "andarinī", "to": "andaritō" }
+rules:
+  - id: "te-rule-pronoun-gen"
+    slots: ["gen"]
+    words: [{ word: "నేను", reading: "nēnu" }, { word: "నా", reading: "nā" }, { word: "నువ్వు", reading: "nuvvu" }, { word: "నీ", reading: "nī" }, { word: "అతను", reading: "atanu" }, { word: "అతని", reading: "atani" }, { word: "మేము", reading: "mēmu" }, { word: "మా", reading: "mā" }, { word: "నా పేరు", reading: "nā pēru" }, { word: "ఆమె", reading: "āme" }, { word: "ఆయన", reading: "āyana" }]
+  - id: "te-rule-pronoun-dat"
+    slots: ["ki"]
+    words: [{ word: "నేను", reading: "nēnu" }, { word: "నాకు", reading: "nāku" }, { word: "నువ్వు", reading: "nuvvu" }, { word: "నీకు", reading: "nīku" }, { word: "నాకు కారు ఉంది", reading: "nāku kāru undi" }]
+  - id: "te-rule-pronoun-acc"
+    slots: ["ni"]
+    words: [{ word: "నేను", reading: "nēnu" }, { word: "నన్ను", reading: "nannu" }, { word: "నువ్వు", reading: "nuvvu" }, { word: "నిన్ను", reading: "ninnu" }, { word: "అది", reading: "adi" }, { word: "దాన్ని", reading: "dānni" }, { word: "నన్ను చూడండి", reading: "nannu cūḍaṇḍi" }]
+  - id: "te-rule-pronoun-with"
+    slots: ["to"]
+    words: [{ word: "నేను", reading: "nēnu" }, { word: "నాతో", reading: "nātō" }, { word: "నువ్వు", reading: "nuvvu" }, { word: "నీతో", reading: "nītō" }, { word: "అతను", reading: "atanu" }, { word: "అతనితో", reading: "atanitō" }, { word: "నాతో రండి", reading: "nātō raṇḍi" }]

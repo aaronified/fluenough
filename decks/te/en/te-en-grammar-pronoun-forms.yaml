@@ -1,0 +1,29 @@
+schema: 1
+id: "te-en-grammar-pronoun-forms"
+kind: "layer"
+core: "te-grammar-pronoun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns: my, to, with"
+description: "How I, you, he, she, it and they change before a noun, and with to, the thing acted on and with. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "gen": "{meaning}: the form before a noun (of)"
+    "ki": "{meaning}: to, for"
+    "ni": "{meaning}: the one acted on"
+    "to": "{meaning}: with"
+rules:
+  "te-rule-pronoun-gen":
+    name: "Of: my, your, his (before a noun)"
+    explanation: "Before a noun the pronoun changes: {1}, I, becomes {2}, {3} becomes {4}, {5} becomes {6}, and {7} becomes {8}: {9}, my name. {10} and {11} stay as they are."
+  "te-rule-pronoun-dat":
+    name: "-కు (-ku): to, for"
+    explanation: "{1} becomes {2}, to me, and {3} becomes {4}. Telugu uses this form to say what someone has or likes: {5}, I have a car (literally, to me a car is)."
+  "te-rule-pronoun-acc":
+    name: "-ను (-nu): the one acted on"
+    explanation: "{1} becomes {2}, {3} becomes {4}, and {5} becomes {6}: {7}, look at me."
+  "te-rule-pronoun-with":
+    name: "-తో (-tō): with"
+    explanation: "{1} becomes {2}, with me, {3} becomes {4} and {5} becomes {6}: {7}, come with me."

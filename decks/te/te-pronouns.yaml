@@ -1,0 +1,155 @@
+schema: 1
+id: "te-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0593"
+    target: "నేను"
+    reading: "nēnu"
+    ipa: "neːnu"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నేను", reading: "nēnu" }, { word: "తింటాను", reading: "tiṇṭānu" }] }
+  - id: "te-0594"
+    target: "నువ్వు"
+    reading: "nuvvu"
+    ipa: "nuʋʋu"
+    alt_target: ["నీవు"]
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మీరు", reading: "mīru" }, { word: "నీవు", reading: "nīvu" }] }
+  - ref: "te-0136"
+  - id: "te-0595"
+    target: "అతను"
+    reading: "atanu"
+    ipa: "at̪anu"
+    alt_target: ["అతడు"]
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆయన", reading: "āyana" }] }
+  - id: "te-0596"
+    target: "ఆమె"
+    reading: "āme"
+    ipa: "aːme"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆవిడ", reading: "āviḍa" }] }
+  - id: "te-0597"
+    target: "ఆయన"
+    reading: "āyana"
+    ipa: "aːjana"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఆయన వచ్చారు", reading: "āyana vaccāru" }] }
+  - id: "te-0598"
+    target: "ఆవిడ"
+    reading: "āviḍa"
+    ipa: "aːʋiɖa"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఆవిడ వచ్చారు", reading: "āviḍa vaccāru" }, { word: "ఆమె వచ్చింది", reading: "āme vaccindi" }] }
+  - ref: "te-0128"
+  - ref: "te-0127"
+  - id: "te-0599"
+    target: "అది"
+    reading: "adi"
+    ipa: "ad̪i"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "అది", reading: "adi" }] }
+      - { id: "pair", kind: "pair", ref: "te-0600", words: [{ word: "అది", reading: "adi" }, { word: "ఇది", reading: "idi" }] }
+  - id: "te-0600"
+    target: "ఇది"
+    reading: "idi"
+    ipa: "id̪i"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఇది ఏమిటి", reading: "idi ēmiṭi" }] }
+      - { id: "pair", kind: "pair", ref: "te-0599", words: [{ word: "ఇది", reading: "idi" }, { word: "అది", reading: "adi" }] }
+  - id: "te-0601"
+    target: "వాళ్ళు"
+    reading: "vāḷḷu"
+    ipa: "ʋaːɭɭu"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "వారు", reading: "vāru" }] }
+      - { id: "pair", kind: "pair", ref: "te-0602", words: [{ word: "వాళ్ళు", reading: "vāḷḷu" }, { word: "వీళ్ళు", reading: "vīḷḷu" }] }
+  - id: "te-0602"
+    target: "వీళ్ళు"
+    reading: "vīḷḷu"
+    ipa: "ʋiːɭɭu"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "వాళ్ళు", reading: "vāḷḷu" }] }
+      - { id: "pair", kind: "pair", ref: "te-0601", words: [{ word: "వీళ్ళు", reading: "vīḷḷu" }, { word: "వాళ్ళు", reading: "vāḷḷu" }] }
+  - id: "te-0603"
+    target: "వారు"
+    reading: "vāru"
+    ipa: "ʋaːru"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "వారు", reading: "vāru" }] }
+  - id: "te-0604"
+    target: "అవి"
+    reading: "avi"
+    ipa: "aʋi"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అవి పుస్తకాలు", reading: "avi pustakālu" }] }
+      - { id: "pair", kind: "pair", ref: "te-0605", words: [{ word: "అవి", reading: "avi" }, { word: "ఇవి", reading: "ivi" }] }
+  - id: "te-0605"
+    target: "ఇవి"
+    reading: "ivi"
+    ipa: "iʋi"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair", kind: "pair", ref: "te-0604", words: [{ word: "ఇవి", reading: "ivi" }, { word: "అవి", reading: "avi" }] }
+  - id: "te-0606"
+    target: "అందరూ"
+    reading: "andarū"
+    ipa: "and̪aruː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "అందరూ వచ్చారు", reading: "andarū vaccāru" }] }
+  - id: "te-0607"
+    target: "ఈ"
+    reading: "ī"
+    ipa: "iː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఈ", reading: "ī" }, { word: "ఈ ఇల్లు", reading: "ī illu" }] }
+  - id: "te-0608"
+    target: "ఆ"
+    reading: "ā"
+    ipa: "aː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఆ", reading: "ā" }, { word: "ఆ ఇల్లు", reading: "ā illu" }] }
+  - id: "te-0609"
+    target: "ఏ"
+    reading: "ē"
+    ipa: "eː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఏ ఇల్లు", reading: "ē illu" }, { word: "ఏది", reading: "ēdi" }] }
+  - id: "te-0610"
+    target: "ఎవరి"
+    reading: "evari"
+    ipa: "eʋari"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "నా", reading: "nā" }, { word: "నీ", reading: "nī" }, { word: "ఎవరి ఇల్లు", reading: "evari illu" }] }
+  - id: "te-0611"
+    target: "ఎవరైనా"
+    reading: "evarainā"
+    ipa: "eʋarainaː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఎవరు", reading: "evaru" }, { word: "ఎవరైనా వచ్చారా", reading: "evarainā vaccārā" }] }

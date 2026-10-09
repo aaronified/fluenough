@@ -1,0 +1,77 @@
+schema: 1
+id: "te-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0612"
+    target: "ఆయన మా నాన్న."
+    reading: "āyana mā nānna."
+    ipa: "aːjana maː naːnna"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "మా", ref: "te-0128" }
+  - id: "te-0613"
+    target: "ఆమె నా అక్క."
+    reading: "āme nā akka."
+    ipa: "aːme naː akka"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+  - id: "te-0614"
+    target: "వాళ్ళు నా స్నేహితులు."
+    reading: "vāḷḷu nā snēhitulu."
+    ipa: "ʋaːɭɭu naː sneːhit̪ulu"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen", "te-rule-plural"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "స్నేహితులు", ref: "te-0189" }
+  - id: "te-0615"
+    target: "అతను నా తమ్ముడు."
+    reading: "atanu nā tammuḍu."
+    ipa: "at̪anu naː t̪ammuɖu"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+  - id: "te-0616"
+    target: "వీళ్ళు మా పిల్లలు."
+    reading: "vīḷḷu mā pillalu."
+    ipa: "ʋiːɭɭu maː pillalu"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "మా", ref: "te-0128" }
+  - id: "te-0617"
+    target: "నీ పేరు ఏమిటి?"
+    reading: "nī pēru ēmiṭi?"
+    ipa: "niː peːru eːmiʈi"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నీ", ref: "te-0594" }
+  - id: "te-0618"
+    target: "అది ఎవరి ఇల్లు?"
+    reading: "adi evari illu?"
+    ipa: "ad̪i eʋari illu"
+    pos: "phrase"
+  - id: "te-0619"
+    target: "అవి ఎవరి కుర్చీలు?"
+    reading: "avi evari kurcīlu?"
+    ipa: "aʋi eʋari kurtʃiːlu"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "కుర్చీలు", ref: "te-0431" }
+  - id: "te-0620"
+    target: "మీరు ఎవరు?"
+    reading: "mīru evaru?"
+    ipa: "miːru eʋaru"
+    pos: "phrase"
