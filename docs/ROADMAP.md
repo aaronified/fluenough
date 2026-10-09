@@ -18,7 +18,7 @@ Up to 0.3.4; the [CHANGELOG](../CHANGELOG.md) has each change. In brief:
 - Daily lessons, reviews by skill, quick revision; recognition, production,
   listening, speaking, grammar and reading drills; match pairs, multiple
   choice and word order.
-- Answers in Latin letters, readings in ISO 15919, and every word's IPA.
+- Answers in Latin letters, readings based on ISO 15919, and every word's IPA.
 - Saved progress, stats, leeches, the review log's export and import, adding
   a deck from a file, and signed releases.
 

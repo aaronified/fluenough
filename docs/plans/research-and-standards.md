@@ -30,12 +30,12 @@ Written 2026-10-06. **After FSRS (`fsrs.md`) and the B1 plans
 **Research and standards**, in place of Settings' Sources row, with three
 sections:
 
-1. **Standards the app follows,** each with a line on where:
+1. **Standards the app follows or is based on,** each with a line on where:
 
    | Standard | Where |
    |---|---|
    | CEFR (Council of Europe 2001; Companion Volume 2020) | Levels A1–B1, the B1 target, the themes of each level |
-   | ISO 15919 | Readings in Latin letters |
+   | ISO 15919 | Readings in Latin letters, based on its letters, with deliberate departures (README) |
    | IPA | How a word is said |
    | ISO 639 and BCP 47 | Language codes, and the voices and recognisers asked for |
    | Unicode | Every script |
@@ -52,7 +52,7 @@ sections:
    | Listening for meaning | Hear asks what a word means | Hayes-Harb & Masuda 2008; Cook et al. 2016; Ota et al. 2009 |
    | Phonemic contrasts | The sounds your languages lack, with feedback | Werker & Tees 1984; Logan et al. 1991; Thomson 2018; Uchihara et al. 2025 |
    | Accents | Several voices where the phone has them | Bradlow & Bent 2008; Baese-Berk et al. 2013 |
-   | Latin letters | ISO 15919, marking every contrast | Hayes-Harb & Cheng 2016; Bassetti 2017; Escudero et al. 2008 |
+   | Latin letters | Letters based on ISO 15919, marking every contrast | Hayes-Harb & Cheng 2016; Bassetti 2017; Escudero et al. 2008 |
    | Grammar | Understanding and producing apart, timed | DeKeyser 1997; Ellis 2005; Shintani et al. 2013 |
    | Your strengths | FSRS per word, an Elo ability per skill | Pelánek 2016; Choffin et al. 2019; Settles & Meeder 2016 |
 
