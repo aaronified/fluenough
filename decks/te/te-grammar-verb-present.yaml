@@ -1,0 +1,124 @@
+schema: 1
+id: "te-grammar-verb-present"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651"]
+  slots: ["nenu", "memu", "manam", "nuvvu", "miru", "atanu", "ame-adi", "vallu", "please"]
+  rows:
+    - word: "te-0441"
+      forms: { "nenu": "లేస్తాను", "memu": "లేస్తాము", "manam": "లేస్తాం", "nuvvu": "లేస్తావు", "miru": "లేస్తారు", "atanu": "లేస్తాడు", "ame-adi": "లేస్తుంది", "vallu": "లేస్తారు", "please": "లేవండి" }
+      readings: { "nenu": "lēstānu", "memu": "lēstāmu", "manam": "lēstām", "nuvvu": "lēstāvu", "miru": "lēstāru", "atanu": "lēstāḍu", "ame-adi": "lēstundi", "vallu": "lēstāru", "please": "lēvaṇḍi" }
+    - word: "te-0450"
+      forms: { "nenu": "పడుకుంటాను", "memu": "పడుకుంటాము", "manam": "పడుకుంటాం", "nuvvu": "పడుకుంటావు", "miru": "పడుకుంటారు", "atanu": "పడుకుంటాడు", "ame-adi": "పడుకుంటుంది", "vallu": "పడుకుంటారు", "please": "పడుకోండి" }
+      readings: { "nenu": "paḍukuṇṭānu", "memu": "paḍukuṇṭāmu", "manam": "paḍukuṇṭām", "nuvvu": "paḍukuṇṭāvu", "miru": "paḍukuṇṭāru", "atanu": "paḍukuṇṭāḍu", "ame-adi": "paḍukuṇṭundi", "vallu": "paḍukuṇṭāru", "please": "paḍukōṇḍi" }
+    - word: "te-0621"
+      forms: { "nenu": "చేస్తాను", "memu": "చేస్తాము", "manam": "చేస్తాం", "nuvvu": "చేస్తావు", "miru": "చేస్తారు", "atanu": "చేస్తాడు", "ame-adi": "చేస్తుంది", "vallu": "చేస్తారు", "please": "చేయండి" }
+      readings: { "nenu": "cēstānu", "memu": "cēstāmu", "manam": "cēstām", "nuvvu": "cēstāvu", "miru": "cēstāru", "atanu": "cēstāḍu", "ame-adi": "cēstundi", "vallu": "cēstāru", "please": "cēyaṇḍi" }
+    - word: "te-0622"
+      forms: { "nenu": "వెళ్తాను", "memu": "వెళ్తాము", "manam": "వెళ్తాం", "nuvvu": "వెళ్తావు", "miru": "వెళ్తారు", "atanu": "వెళ్తాడు", "ame-adi": "వెళ్తుంది", "vallu": "వెళ్తారు", "please": "వెళ్ళండి" }
+      readings: { "nenu": "veḷtānu", "memu": "veḷtāmu", "manam": "veḷtām", "nuvvu": "veḷtāvu", "miru": "veḷtāru", "atanu": "veḷtāḍu", "ame-adi": "veḷtundi", "vallu": "veḷtāru", "please": "veḷḷaṇḍi" }
+    - word: "te-0623"
+      forms: { "nenu": "వస్తాను", "memu": "వస్తాము", "manam": "వస్తాం", "nuvvu": "వస్తావు", "miru": "వస్తారు", "atanu": "వస్తాడు", "ame-adi": "వస్తుంది", "vallu": "వస్తారు", "please": "రండి" }
+      readings: { "nenu": "vastānu", "memu": "vastāmu", "manam": "vastām", "nuvvu": "vastāvu", "miru": "vastāru", "atanu": "vastāḍu", "ame-adi": "vastundi", "vallu": "vastāru", "please": "raṇḍi" }
+    - word: "te-0624"
+      forms: { "nenu": "తింటాను", "memu": "తింటాము", "manam": "తింటాం", "nuvvu": "తింటావు", "miru": "తింటారు", "atanu": "తింటాడు", "ame-adi": "తింటుంది", "vallu": "తింటారు", "please": "తినండి" }
+      readings: { "nenu": "tiṇṭānu", "memu": "tiṇṭāmu", "manam": "tiṇṭām", "nuvvu": "tiṇṭāvu", "miru": "tiṇṭāru", "atanu": "tiṇṭāḍu", "ame-adi": "tiṇṭundi", "vallu": "tiṇṭāru", "please": "tinaṇḍi" }
+    - word: "te-0625"
+      forms: { "nenu": "తాగుతాను", "memu": "తాగుతాము", "manam": "తాగుతాం", "nuvvu": "తాగుతావు", "miru": "తాగుతారు", "atanu": "తాగుతాడు", "ame-adi": "తాగుతుంది", "vallu": "తాగుతారు", "please": "తాగండి" }
+      readings: { "nenu": "tāgutānu", "memu": "tāgutāmu", "manam": "tāgutām", "nuvvu": "tāgutāvu", "miru": "tāgutāru", "atanu": "tāgutāḍu", "ame-adi": "tāgutundi", "vallu": "tāgutāru", "please": "tāgaṇḍi" }
+    - word: "te-0626"
+      forms: { "nenu": "చూస్తాను", "memu": "చూస్తాము", "manam": "చూస్తాం", "nuvvu": "చూస్తావు", "miru": "చూస్తారు", "atanu": "చూస్తాడు", "ame-adi": "చూస్తుంది", "vallu": "చూస్తారు", "please": "చూడండి" }
+      readings: { "nenu": "cūstānu", "memu": "cūstāmu", "manam": "cūstām", "nuvvu": "cūstāvu", "miru": "cūstāru", "atanu": "cūstāḍu", "ame-adi": "cūstundi", "vallu": "cūstāru", "please": "cūḍaṇḍi" }
+    - word: "te-0627"
+      forms: { "nenu": "వింటాను", "memu": "వింటాము", "manam": "వింటాం", "nuvvu": "వింటావు", "miru": "వింటారు", "atanu": "వింటాడు", "ame-adi": "వింటుంది", "vallu": "వింటారు", "please": "వినండి" }
+      readings: { "nenu": "viṇṭānu", "memu": "viṇṭāmu", "manam": "viṇṭām", "nuvvu": "viṇṭāvu", "miru": "viṇṭāru", "atanu": "viṇṭāḍu", "ame-adi": "viṇṭundi", "vallu": "viṇṭāru", "please": "vinaṇḍi" }
+    - word: "te-0628"
+      forms: { "nenu": "చెప్తాను", "memu": "చెప్తాము", "manam": "చెప్తాం", "nuvvu": "చెప్తావు", "miru": "చెప్తారు", "atanu": "చెప్తాడు", "ame-adi": "చెప్తుంది", "vallu": "చెప్తారు", "please": "చెప్పండి" }
+      readings: { "nenu": "ceptānu", "memu": "ceptāmu", "manam": "ceptām", "nuvvu": "ceptāvu", "miru": "ceptāru", "atanu": "ceptāḍu", "ame-adi": "ceptundi", "vallu": "ceptāru", "please": "ceppaṇḍi" }
+    - word: "te-0629"
+      forms: { "nenu": "అడుగుతాను", "memu": "అడుగుతాము", "manam": "అడుగుతాం", "nuvvu": "అడుగుతావు", "miru": "అడుగుతారు", "atanu": "అడుగుతాడు", "ame-adi": "అడుగుతుంది", "vallu": "అడుగుతారు", "please": "అడగండి" }
+      readings: { "nenu": "aḍugutānu", "memu": "aḍugutāmu", "manam": "aḍugutām", "nuvvu": "aḍugutāvu", "miru": "aḍugutāru", "atanu": "aḍugutāḍu", "ame-adi": "aḍugutundi", "vallu": "aḍugutāru", "please": "aḍagaṇḍi" }
+    - word: "te-0630"
+      forms: { "nenu": "ఇస్తాను", "memu": "ఇస్తాము", "manam": "ఇస్తాం", "nuvvu": "ఇస్తావు", "miru": "ఇస్తారు", "atanu": "ఇస్తాడు", "ame-adi": "ఇస్తుంది", "vallu": "ఇస్తారు", "please": "ఇవ్వండి" }
+      readings: { "nenu": "istānu", "memu": "istāmu", "manam": "istām", "nuvvu": "istāvu", "miru": "istāru", "atanu": "istāḍu", "ame-adi": "istundi", "vallu": "istāru", "please": "ivvaṇḍi" }
+    - word: "te-0631"
+      forms: { "nenu": "తీసుకుంటాను", "memu": "తీసుకుంటాము", "manam": "తీసుకుంటాం", "nuvvu": "తీసుకుంటావు", "miru": "తీసుకుంటారు", "atanu": "తీసుకుంటాడు", "ame-adi": "తీసుకుంటుంది", "vallu": "తీసుకుంటారు", "please": "తీసుకోండి" }
+      readings: { "nenu": "tīsukuṇṭānu", "memu": "tīsukuṇṭāmu", "manam": "tīsukuṇṭām", "nuvvu": "tīsukuṇṭāvu", "miru": "tīsukuṇṭāru", "atanu": "tīsukuṇṭāḍu", "ame-adi": "tīsukuṇṭundi", "vallu": "tīsukuṇṭāru", "please": "tīsukōṇḍi" }
+    - word: "te-0632"
+      forms: { "nenu": "తెస్తాను", "memu": "తెస్తాము", "manam": "తెస్తాం", "nuvvu": "తెస్తావు", "miru": "తెస్తారు", "atanu": "తెస్తాడు", "ame-adi": "తెస్తుంది", "vallu": "తెస్తారు", "please": "తీసుకురండి" }
+      readings: { "nenu": "testānu", "memu": "testāmu", "manam": "testām", "nuvvu": "testāvu", "miru": "testāru", "atanu": "testāḍu", "ame-adi": "testundi", "vallu": "testāru", "please": "tīsukuraṇḍi" }
+    - word: "te-0633"
+      forms: { "nenu": "ఉంటాను", "memu": "ఉంటాము", "manam": "ఉంటాం", "nuvvu": "ఉంటావు", "miru": "ఉంటారు", "atanu": "ఉంటాడు", "ame-adi": "ఉంటుంది", "vallu": "ఉంటారు", "please": "ఉండండి" }
+      readings: { "nenu": "uṇṭānu", "memu": "uṇṭāmu", "manam": "uṇṭām", "nuvvu": "uṇṭāvu", "miru": "uṇṭāru", "atanu": "uṇṭāḍu", "ame-adi": "uṇṭundi", "vallu": "uṇṭāru", "please": "uṇḍaṇḍi" }
+    - word: "te-0634"
+      forms: { "nenu": "కూర్చుంటాను", "memu": "కూర్చుంటాము", "manam": "కూర్చుంటాం", "nuvvu": "కూర్చుంటావు", "miru": "కూర్చుంటారు", "atanu": "కూర్చుంటాడు", "ame-adi": "కూర్చుంటుంది", "vallu": "కూర్చుంటారు", "please": "కూర్చోండి" }
+      readings: { "nenu": "kūrcuṇṭānu", "memu": "kūrcuṇṭāmu", "manam": "kūrcuṇṭām", "nuvvu": "kūrcuṇṭāvu", "miru": "kūrcuṇṭāru", "atanu": "kūrcuṇṭāḍu", "ame-adi": "kūrcuṇṭundi", "vallu": "kūrcuṇṭāru", "please": "kūrcōṇḍi" }
+    - word: "te-0635"
+      forms: { "nenu": "నిలబడతాను", "memu": "నిలబడతాము", "manam": "నిలబడతాం", "nuvvu": "నిలబడతావు", "miru": "నిలబడతారు", "atanu": "నిలబడతాడు", "ame-adi": "నిలబడుతుంది", "vallu": "నిలబడతారు", "please": "నిలబడండి" }
+      readings: { "nenu": "nilabaḍatānu", "memu": "nilabaḍatāmu", "manam": "nilabaḍatām", "nuvvu": "nilabaḍatāvu", "miru": "nilabaḍatāru", "atanu": "nilabaḍatāḍu", "ame-adi": "nilabaḍutundi", "vallu": "nilabaḍatāru", "please": "nilabaḍaṇḍi" }
+    - word: "te-0636"
+      forms: { "nenu": "నడుస్తాను", "memu": "నడుస్తాము", "manam": "నడుస్తాం", "nuvvu": "నడుస్తావు", "miru": "నడుస్తారు", "atanu": "నడుస్తాడు", "ame-adi": "నడుస్తుంది", "vallu": "నడుస్తారు", "please": "నడవండి" }
+      readings: { "nenu": "naḍustānu", "memu": "naḍustāmu", "manam": "naḍustām", "nuvvu": "naḍustāvu", "miru": "naḍustāru", "atanu": "naḍustāḍu", "ame-adi": "naḍustundi", "vallu": "naḍustāru", "please": "naḍavaṇḍi" }
+    - word: "te-0637"
+      forms: { "nenu": "ఆడతాను", "memu": "ఆడతాము", "manam": "ఆడతాం", "nuvvu": "ఆడతావు", "miru": "ఆడతారు", "atanu": "ఆడతాడు", "ame-adi": "ఆడుతుంది", "vallu": "ఆడతారు", "please": "ఆడండి" }
+      readings: { "nenu": "āḍatānu", "memu": "āḍatāmu", "manam": "āḍatām", "nuvvu": "āḍatāvu", "miru": "āḍatāru", "atanu": "āḍatāḍu", "ame-adi": "āḍutundi", "vallu": "āḍatāru", "please": "āḍaṇḍi" }
+    - word: "te-0638"
+      forms: { "nenu": "చదువుతాను", "memu": "చదువుతాము", "manam": "చదువుతాం", "nuvvu": "చదువుతావు", "miru": "చదువుతారు", "atanu": "చదువుతాడు", "ame-adi": "చదువుతుంది", "vallu": "చదువుతారు", "please": "చదవండి" }
+      readings: { "nenu": "caduvutānu", "memu": "caduvutāmu", "manam": "caduvutām", "nuvvu": "caduvutāvu", "miru": "caduvutāru", "atanu": "caduvutāḍu", "ame-adi": "caduvutundi", "vallu": "caduvutāru", "please": "cadavaṇḍi" }
+    - word: "te-0639"
+      forms: { "nenu": "రాస్తాను", "memu": "రాస్తాము", "manam": "రాస్తాం", "nuvvu": "రాస్తావు", "miru": "రాస్తారు", "atanu": "రాస్తాడు", "ame-adi": "రాస్తుంది", "vallu": "రాస్తారు", "please": "రాయండి" }
+      readings: { "nenu": "rāstānu", "memu": "rāstāmu", "manam": "rāstām", "nuvvu": "rāstāvu", "miru": "rāstāru", "atanu": "rāstāḍu", "ame-adi": "rāstundi", "vallu": "rāstāru", "please": "rāyaṇḍi" }
+    - word: "te-0640"
+      forms: { "nenu": "నిద్రపోతాను", "memu": "నిద్రపోతాము", "manam": "నిద్రపోతాం", "nuvvu": "నిద్రపోతావు", "miru": "నిద్రపోతారు", "atanu": "నిద్రపోతాడు", "ame-adi": "నిద్రపోతుంది", "vallu": "నిద్రపోతారు", "please": "నిద్రపోండి" }
+      readings: { "nenu": "nidrapōtānu", "memu": "nidrapōtāmu", "manam": "nidrapōtām", "nuvvu": "nidrapōtāvu", "miru": "nidrapōtāru", "atanu": "nidrapōtāḍu", "ame-adi": "nidrapōtundi", "vallu": "nidrapōtāru", "please": "nidrapōṇḍi" }
+    - word: "te-0641"
+      forms: { "nenu": "కొంటాను", "memu": "కొంటాము", "manam": "కొంటాం", "nuvvu": "కొంటావు", "miru": "కొంటారు", "atanu": "కొంటాడు", "ame-adi": "కొంటుంది", "vallu": "కొంటారు", "please": "కొనండి" }
+      readings: { "nenu": "koṇṭānu", "memu": "koṇṭāmu", "manam": "koṇṭām", "nuvvu": "koṇṭāvu", "miru": "koṇṭāru", "atanu": "koṇṭāḍu", "ame-adi": "koṇṭundi", "vallu": "koṇṭāru", "please": "konaṇḍi" }
+    - word: "te-0642"
+      forms: { "nenu": "అమ్ముతాను", "memu": "అమ్ముతాము", "manam": "అమ్ముతాం", "nuvvu": "అమ్ముతావు", "miru": "అమ్ముతారు", "atanu": "అమ్ముతాడు", "ame-adi": "అమ్ముతుంది", "vallu": "అమ్ముతారు", "please": "అమ్మండి" }
+      readings: { "nenu": "ammutānu", "memu": "ammutāmu", "manam": "ammutām", "nuvvu": "ammutāvu", "miru": "ammutāru", "atanu": "ammutāḍu", "ame-adi": "ammutundi", "vallu": "ammutāru", "please": "ammaṇḍi" }
+    - word: "te-0643"
+      forms: { "nenu": "వండుతాను", "memu": "వండుతాము", "manam": "వండుతాం", "nuvvu": "వండుతావు", "miru": "వండుతారు", "atanu": "వండుతాడు", "ame-adi": "వండుతుంది", "vallu": "వండుతారు", "please": "వండండి" }
+      readings: { "nenu": "vaṇḍutānu", "memu": "vaṇḍutāmu", "manam": "vaṇḍutām", "nuvvu": "vaṇḍutāvu", "miru": "vaṇḍutāru", "atanu": "vaṇḍutāḍu", "ame-adi": "vaṇḍutundi", "vallu": "vaṇḍutāru", "please": "vaṇḍaṇḍi" }
+    - word: "te-0644"
+      forms: { "nenu": "మాట్లాడతాను", "memu": "మాట్లాడతాము", "manam": "మాట్లాడతాం", "nuvvu": "మాట్లాడతావు", "miru": "మాట్లాడతారు", "atanu": "మాట్లాడతాడు", "ame-adi": "మాట్లాడుతుంది", "vallu": "మాట్లాడతారు", "please": "మాట్లాడండి" }
+      readings: { "nenu": "māṭlāḍatānu", "memu": "māṭlāḍatāmu", "manam": "māṭlāḍatām", "nuvvu": "māṭlāḍatāvu", "miru": "māṭlāḍatāru", "atanu": "māṭlāḍatāḍu", "ame-adi": "māṭlāḍutundi", "vallu": "māṭlāḍatāru", "please": "māṭlāḍaṇḍi" }
+    - word: "te-0645"
+      forms: { "nenu": "నేర్చుకుంటాను", "memu": "నేర్చుకుంటాము", "manam": "నేర్చుకుంటాం", "nuvvu": "నేర్చుకుంటావు", "miru": "నేర్చుకుంటారు", "atanu": "నేర్చుకుంటాడు", "ame-adi": "నేర్చుకుంటుంది", "vallu": "నేర్చుకుంటారు", "please": "నేర్చుకోండి" }
+      readings: { "nenu": "nērcukuṇṭānu", "memu": "nērcukuṇṭāmu", "manam": "nērcukuṇṭām", "nuvvu": "nērcukuṇṭāvu", "miru": "nērcukuṇṭāru", "atanu": "nērcukuṇṭāḍu", "ame-adi": "nērcukuṇṭundi", "vallu": "nērcukuṇṭāru", "please": "nērcukōṇḍi" }
+    - word: "te-0646"
+      forms: { "nenu": "అవుతాను", "memu": "అవుతాము", "manam": "అవుతాం", "nuvvu": "అవుతావు", "miru": "అవుతారు", "atanu": "అవుతాడు", "ame-adi": "అవుతుంది", "vallu": "అవుతారు", "please": null }
+      readings: { "nenu": "avutānu", "memu": "avutāmu", "manam": "avutām", "nuvvu": "avutāvu", "miru": "avutāru", "atanu": "avutāḍu", "ame-adi": "avutundi", "vallu": "avutāru" }
+    - word: "te-0647"
+      forms: { "nenu": "తెలుసుకుంటాను", "memu": "తెలుసుకుంటాము", "manam": "తెలుసుకుంటాం", "nuvvu": "తెలుసుకుంటావు", "miru": "తెలుసుకుంటారు", "atanu": "తెలుసుకుంటాడు", "ame-adi": "తెలుసుకుంటుంది", "vallu": "తెలుసుకుంటారు", "please": "తెలుసుకోండి" }
+      readings: { "nenu": "telusukuṇṭānu", "memu": "telusukuṇṭāmu", "manam": "telusukuṇṭām", "nuvvu": "telusukuṇṭāvu", "miru": "telusukuṇṭāru", "atanu": "telusukuṇṭāḍu", "ame-adi": "telusukuṇṭundi", "vallu": "telusukuṇṭāru", "please": "telusukōṇḍi" }
+    - word: "te-0648"
+      forms: { "nenu": "ఆగుతాను", "memu": "ఆగుతాము", "manam": "ఆగుతాం", "nuvvu": "ఆగుతావు", "miru": "ఆగుతారు", "atanu": "ఆగుతాడు", "ame-adi": "ఆగుతుంది", "vallu": "ఆగుతారు", "please": "ఆగండి" }
+      readings: { "nenu": "āgutānu", "memu": "āgutāmu", "manam": "āgutām", "nuvvu": "āgutāvu", "miru": "āgutāru", "atanu": "āgutāḍu", "ame-adi": "āgutundi", "vallu": "āgutāru", "please": "āgaṇḍi" }
+    - word: "te-0649"
+      forms: { "nenu": "కలుస్తాను", "memu": "కలుస్తాము", "manam": "కలుస్తాం", "nuvvu": "కలుస్తావు", "miru": "కలుస్తారు", "atanu": "కలుస్తాడు", "ame-adi": "కలుస్తుంది", "vallu": "కలుస్తారు", "please": "కలవండి" }
+      readings: { "nenu": "kalustānu", "memu": "kalustāmu", "manam": "kalustām", "nuvvu": "kalustāvu", "miru": "kalustāru", "atanu": "kalustāḍu", "ame-adi": "kalustundi", "vallu": "kalustāru", "please": "kalavaṇḍi" }
+    - word: "te-0650"
+      forms: { "nenu": "పంపుతాను", "memu": "పంపుతాము", "manam": "పంపుతాం", "nuvvu": "పంపుతావు", "miru": "పంపుతారు", "atanu": "పంపుతాడు", "ame-adi": "పంపుతుంది", "vallu": "పంపుతారు", "please": "పంపండి" }
+      readings: { "nenu": "pamputānu", "memu": "pamputāmu", "manam": "pamputām", "nuvvu": "pamputāvu", "miru": "pamputāru", "atanu": "pamputāḍu", "ame-adi": "pamputundi", "vallu": "pamputāru", "please": "pampaṇḍi" }
+rules:
+  - id: "te-rule-present-first"
+    slots: ["nenu", "memu", "manam"]
+    words: [{ word: "-త-", reading: "-ta-" }, { word: "-ాను", reading: "-ānu" }, { word: "-ాము", reading: "-āmu" }, { word: "-ాం", reading: "-ām" }, { word: "తింటాను", reading: "tiṇṭānu" }, { word: "తింటాము", reading: "tiṇṭāmu" }, { word: "తింటాం", reading: "tiṇṭām" }]
+  - id: "te-rule-present-second"
+    slots: ["nuvvu", "miru"]
+    words: [{ word: "-ావు", reading: "-āvu" }, { word: "నువ్వు", reading: "nuvvu" }, { word: "-ారు", reading: "-āru" }, { word: "మీరు", reading: "mīru" }, { word: "తింటావు", reading: "tiṇṭāvu" }, { word: "తింటారు", reading: "tiṇṭāru" }]
+  - id: "te-rule-present-third"
+    slots: ["atanu", "ame-adi", "vallu"]
+    words: [{ word: "-ాడు", reading: "-āḍu" }, { word: "-ుంది", reading: "-undi" }, { word: "-ారు", reading: "-āru" }, { word: "తింటాడు", reading: "tiṇṭāḍu" }, { word: "తింటుంది", reading: "tiṇṭundi" }, { word: "తింటారు", reading: "tiṇṭāru" }]
+  - id: "te-rule-polite-request"
+    slots: ["please"]
+    words: [{ word: "-ండి", reading: "-aṇḍi" }, { word: "తినండి", reading: "tinaṇḍi" }, { word: "రావడం", reading: "rāvaḍam" }, { word: "రండి", reading: "raṇḍi" }]

@@ -1,0 +1,112 @@
+schema: 1
+id: "te-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0652"
+    target: "నేను రోజూ టీ తాగుతాను."
+    reading: "nēnu rōjū ṭī tāgutānu."
+    ipa: "neːnu roːdʒuː ʈiː t̪aːɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "తాగుతాను", ref: "te-0625" }
+  - id: "te-0653"
+    target: "నువ్వు ఎక్కడికి వెళ్తావు?"
+    reading: "nuvvu ekkaḍiki veḷtāvu?"
+    ipa: "nuʋʋu ekkaɖiki ʋeɭt̪aːʋu"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "ఎక్కడికి", ref: "te-0162" }
+      - { word: "వెళ్తావు", ref: "te-0622" }
+  - id: "te-0654"
+    target: "ఆయన రోజూ పనికి వెళ్తారు."
+    reading: "āyana rōjū paniki veḷtāru."
+    ipa: "aːjana roːdʒuː paniki ʋeɭt̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-ki"]
+    bases:
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్తారు", ref: "te-0622" }
+  - id: "te-0655"
+    target: "ఆమె తెలుగు మాట్లాడుతుంది."
+    reading: "āme telugu māṭlāḍutundi."
+    ipa: "aːme t̪eluɡu maːʈlaːɖut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu" }
+      - { word: "మాట్లాడుతుంది", ref: "te-0644" }
+  - id: "te-0656"
+    target: "మేము రేపు వస్తాము."
+    reading: "mēmu rēpu vastāmu."
+    ipa: "meːmu reːpu ʋast̪aːmu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "వస్తాము", ref: "te-0623" }
+  - id: "te-0657"
+    target: "మీరు ఏం తింటారు?"
+    reading: "mīru ēm tiṇṭāru?"
+    ipa: "miːru eːm t̪iɳʈaːru"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "ఏం", ref: "te-0160" }
+      - { word: "తింటారు", ref: "te-0624" }
+  - id: "te-0658"
+    target: "అతను ఆఫీసులో పని చేస్తాడు."
+    reading: "atanu āphīsulō pani cēstāḍu."
+    ipa: "at̪anu aːpʰiːsuloː pani tʃeːst̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-lo"]
+    bases:
+      - { word: "ఆఫీసులో", ref: "te-0401" }
+      - { word: "చేస్తాడు", ref: "te-0621" }
+  - id: "te-0659"
+    target: "కూర్చోండి."
+    reading: "kūrcōṇḍi."
+    ipa: "kuːrtʃoːɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "కూర్చోండి", ref: "te-0634" }
+  - id: "te-0660"
+    target: "ఇక్కడ కూర్చోండి."
+    reading: "ikkaḍa kūrcōṇḍi."
+    ipa: "ikkaɖa kuːrtʃoːɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "కూర్చోండి", ref: "te-0634" }
+  - id: "te-0661"
+    target: "నాతో రండి."
+    reading: "nātō raṇḍi."
+    ipa: "naːt̪oː raɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request", "te-rule-pronoun-with"]
+    bases:
+      - { word: "నాతో", ref: "te-0593" }
+      - { word: "రండి", ref: "te-0623" }
+  - id: "te-0662"
+    target: "పాలు తాగండి."
+    reading: "pālu tāgaṇḍi."
+    ipa: "paːlu t̪aːɡaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "తాగండి", ref: "te-0625" }
+  - id: "te-0663"
+    target: "మనం రేపు కలుస్తాం."
+    reading: "manam rēpu kalustām."
+    ipa: "manam reːpu kalust̪aːm"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "కలుస్తాం", ref: "te-0649" }
