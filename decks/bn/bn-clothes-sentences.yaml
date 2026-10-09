@@ -1,0 +1,124 @@
+schema: 1
+id: "bn-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1212"
+    target: "আমার একটা নীল শার্ট আছে।"
+    reading: "āmār ekṭā nil śārṭ āche."
+    ipa: "amar ekʈa nil ʃarʈ atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1213"
+    target: "ও লাল শাড়ি পরে।"
+    reading: "o lāl śāṛi pôre."
+    ipa: "o lal ʃaɽi pɔre"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "পরে", ref: "bn-0120" }
+  - id: "bn-1214"
+    target: "আমি সাদা পাঞ্জাবি পরি।"
+    reading: "āmi śādā pānjābi pori."
+    ipa: "ami ʃad̪a pandʒabi pori"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "পরি", ref: "bn-0120" }
+  - id: "bn-1215"
+    target: "বাবা ধুতি পরেন।"
+    reading: "bābā dhuti pôren."
+    ipa: "baba d̪ʱut̪i pɔren"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "পরেন", ref: "bn-0120" }
+  - id: "bn-1216"
+    target: "আপনি কালো জুতো পরুন।"
+    reading: "āpni kālo juto porun."
+    ipa: "apni kalo dʒut̪o porun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "পরুন", ref: "bn-0120" }
+  - id: "bn-1217"
+    target: "আমার জুতো কোথায়?"
+    reading: "āmār juto kothāy?"
+    ipa: "amar dʒut̪o kot̪ʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-1218"
+    target: "এই জামাটা সুন্দর।"
+    reading: "ei jāmāṭā śundor."
+    ipa: "ei dʒamaʈa ʃund̪or"
+    pos: "phrase"
+    bases:
+      - { word: "এই", base: "এই", reading: "ei" }
+      - { word: "জামাটা", ref: "bn-1189" }
+  - id: "bn-1219"
+    target: "শাড়িটা কত?"
+    reading: "śāṛiṭā kôto?"
+    ipa: "ʃaɽiʈa kɔt̪o"
+    pos: "phrase"
+    bases:
+      - { word: "শাড়িটা", ref: "bn-1192" }
+  - id: "bn-1220"
+    target: "তোমার টুপির রং কী?"
+    reading: "tomār ṭupir rôṅ ki?"
+    ipa: "t̪omar ʈupir rɔŋ ki"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen", "bn-rule-gen"]
+    bases:
+      - { word: "তোমার", ref: "bn-0835" }
+      - { word: "টুপির", ref: "bn-1199" }
+  - id: "bn-1221"
+    target: "আমার প্রিয় রং নীল।"
+    reading: "āmār priyo rôṅ nil."
+    ipa: "amar prijo rɔŋ nil"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-1222"
+    target: "আমের রং হলুদ।"
+    reading: "āmer rôṅ holud."
+    ipa: "amer rɔŋ ɦolud̪"
+    pos: "phrase"
+    rules: ["bn-rule-gen"]
+    bases:
+      - { word: "আমের", ref: "bn-0562" }
+  - id: "bn-1223"
+    target: "গামছা দিয়ে মুখ মুছুন।"
+    reading: "gāmchā diye mukh muchun."
+    ipa: "ɡamtʃʰa d̪ije mukʰ mutʃʰun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "মুছুন", ref: "bn-1121" }
+  - id: "bn-1224"
+    target: "দিদি গয়না পরেন।"
+    reading: "didi gôynā pôren."
+    ipa: "d̪id̪i ɡɔjna pɔren"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "পরেন", ref: "bn-0120" }
+  - id: "bn-1225"
+    target: "আপনার হার সুন্দর।"
+    reading: "āpnār hār śundor."
+    ipa: "apnar ɦar ʃund̪or"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
