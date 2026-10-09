@@ -1,0 +1,92 @@
+schema: 1
+id: "te-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0935"
+    target: "ఆమె ఎర్రని చీర కట్టుకుంటుంది."
+    reading: "āme errani cīra kaṭṭukuṇṭundi."
+    ipa: "aːme errani tʃiːra kaʈʈukuɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "ఎర్రని", ref: "te-0928" }
+      - { word: "కట్టుకుంటుంది", base: "కట్టుకోవడం", reading: "kaṭṭukōvaḍam" }
+  - id: "te-0936"
+    target: "నాకు తెల్లని చొక్కా కావాలి."
+    reading: "nāku tellani cokkā kāvāli."
+    ipa: "naːku t̪ellani tʃokkaː kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "తెల్లని", ref: "te-0931" }
+  - id: "te-0937"
+    target: "ఈ చొక్కా నీలం రంగులో ఉంది."
+    reading: "ī cokkā nīlam raṅgulō undi."
+    ipa: "iː tʃokkaː niːlam raŋɡuloː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "రంగులో", ref: "te-0927" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0938"
+    target: "నా బూట్లు నల్లవి."
+    reading: "nā būṭlu nallavi."
+    ipa: "naː buːʈlu nallaʋi"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "నల్లవి", ref: "te-0932" }
+  - id: "te-0939"
+    target: "మీకు ఏ రంగు ఇష్టం?"
+    reading: "mīku ē raṅgu iṣṭam?"
+    ipa: "miːku eː raŋɡu iʂʈam"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+  - id: "te-0940"
+    target: "జేబులో డబ్బులు ఉన్నాయి."
+    reading: "jēbulō ḍabbulu unnāyi."
+    ipa: "dʒeːbuloː ɖabbulu unnaːji"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "జేబులో", ref: "te-0923" }
+      - { word: "ఉన్నాయి", ref: "te-0633" }
+  - id: "te-0941"
+    target: "పిల్లలు టోపీ పెట్టుకుంటారు."
+    reading: "pillalu ṭōpī peṭṭukuṇṭāru."
+    ipa: "pillalu ʈoːpiː peʈʈukuɳʈaːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "పెట్టుకుంటారు", base: "పెట్టుకోవడం", reading: "peṭṭukōvaḍam" }
+  - id: "te-0942"
+    target: "ఇది గులాబీ రంగు చీర."
+    reading: "idi gulābī raṅgu cīra."
+    ipa: "id̪i ɡulaːbiː raŋɡu tʃiːra"
+    pos: "phrase"
+  - id: "te-0943"
+    target: "నేను చెప్పులు వేసుకుంటాను."
+    reading: "nēnu ceppulu vēsukuṇṭānu."
+    ipa: "neːnu tʃeppulu ʋeːsukuɳʈaːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "వేసుకుంటాను", base: "వేసుకోవడం", reading: "vēsukōvaḍam" }
+  - id: "te-0944"
+    target: "ఆ కోటు చాలా ఖరీదైనది."
+    reading: "ā kōṭu cālā kharīdainadi."
+    ipa: "aː koːʈu tʃaːlaː kʰariːd̪ainad̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", base: "చాలా", reading: "cālā" }
+      - { word: "ఖరీదైనది", base: "ఖరీదైన", reading: "kharīdaina" }

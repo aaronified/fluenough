@@ -139,7 +139,8 @@ units:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
-  - planned: { id: "te-clothes", theme: "clothes", words: 27 }
+  - decks: ["te-clothes", "te-clothes-sentences", "*"]
+    words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
     reading_passages:
