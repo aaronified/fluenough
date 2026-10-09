@@ -23,9 +23,9 @@ cards:
     pos: "phrase"
     notes: "'Can' is পারা (pārā) after the verb's -তে (-te) form: বলতে (bôlote), করতে (kôrote), but যেতে (jete), খেতে (khete), দিতে (dite), নিতে (nite) and হতে (hôte)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
       - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā", meaning: "Bengali (the language); Bengal" }
-      - { word: "বলতে", base: "বলা", reading: "bôlā", meaning: "to say; to speak" }
+      - { word: "বলতে", ref: "bn-0879" }
       - { word: "পারি", ref: "bn-0736" }
   - id: bn-0738
     target: "আমি সাঁতার কাটতে পারি না।"
@@ -35,9 +35,9 @@ cards:
     pos: "phrase"
     notes: "না (nā) goes after পারি (pāri). Swimming is সাঁতার কাটা (sām̐tār kāṭā), 'to cut a swim'."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমি", ref: "bn-0833" }
       - { word: "সাঁতার", base: "সাঁতার", reading: "śām̐tār", meaning: "swimming" }
-      - { word: "কাটতে", base: "কাটা", reading: "kāṭā", meaning: "to cut; to swim (সাঁতার কাটা)" }
+      - { word: "কাটতে", ref: "bn-1101" }
       - { word: "পারি", ref: "bn-0736" }
   - id: bn-0739
     target: "আমি যেতে পারিনি।"
@@ -47,8 +47,8 @@ cards:
     pos: "phrase"
     notes: "'Couldn't' is পারিনি (pārini), the present with -নি (-ni)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "যেতে", ref: "bn-0873" }
       - { word: "পারিনি", ref: "bn-0736" }
   - id: bn-0740
     target: "আমাকে একটু সাহায্য করতে পারবেন?"
@@ -59,7 +59,7 @@ cards:
     tags: ["polite"]
     notes: "The future পারবেন (pāroben) makes the request polite. পারেন (pāren)? is also right."
     bases:
-      - { word: "আমাকে", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমাকে", ref: "bn-0833" }
       - { word: "করতে", ref: "bn-0102" }
       - { word: "পারবেন", ref: "bn-0736" }
   - id: bn-0741
@@ -77,8 +77,8 @@ cards:
     pos: "phrase"
     notes: "'Want to': the -তে (-te) form, then চাওয়া (cāoā)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "যেতে", ref: "bn-0873" }
       - { word: "চাই", ref: "bn-0741" }
   - id: bn-0743
     target: "আমাকে কাল কাজে যেতে হবে।"
@@ -88,10 +88,10 @@ cards:
     pos: "phrase"
     notes: "'Have to': the one who must takes -কে (-ke), then the -তে (-te) form and হবে (hôbe)."
     bases:
-      - { word: "আমাকে", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমাকে", ref: "bn-0833" }
       - { word: "কাজে", ref: "bn-0198" }
-      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
-      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
+      - { word: "যেতে", ref: "bn-0873" }
+      - { word: "হবে", ref: "bn-0874" }
   - id: bn-0744
     target: "তোমাকে আসতে হবে না।"
     native: "You don't have to come."
@@ -100,9 +100,9 @@ cards:
     pos: "phrase"
     notes: "না (nā) after হবে (hôbe): no need."
     bases:
-      - { word: "তোমাকে", base: "তুমি", reading: "tumi", meaning: "you (familiar)" }
-      - { word: "আসতে", base: "আসা", reading: "āśā", meaning: "to come" }
-      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
+      - { word: "তোমাকে", ref: "bn-0835" }
+      - { word: "আসতে", ref: "bn-0872" }
+      - { word: "হবে", ref: "bn-0874" }
   - id: bn-0745
     target: "এখানে ছবি তোলা যায়?"
     native: "Can one take photos here?"
@@ -111,9 +111,9 @@ cards:
     pos: "phrase"
     notes: "'Can one': the verbal noun (তোলা) with যায় (jāy)."
     bases:
-      - { word: "ছবি", base: "ছবি", reading: "chobi", meaning: "a picture; a photo" }
-      - { word: "তোলা", base: "তোলা", reading: "tolā", meaning: "to lift; to take (a photo)" }
-      - { word: "যায়", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
+      - { word: "ছবি", ref: "bn-1145" }
+      - { word: "তোলা", ref: "bn-1104" }
+      - { word: "যায়", ref: "bn-0873" }
   - id: bn-0746
     target: "আপনার বিশ্রাম নেওয়া উচিত।"
     native: "You should rest."
@@ -124,5 +124,5 @@ cards:
     bases:
       - { word: "আপনার", ref: "bn-0138" }
       - { word: "বিশ্রাম", base: "বিশ্রাম", reading: "bisrām", meaning: "rest" }
-      - { word: "নেওয়া", base: "নেওয়া", reading: "neoā", meaning: "to take" }
+      - { word: "নেওয়া", ref: "bn-0889" }
       - { word: "উচিত", base: "উচিত", reading: "ucit", meaning: "proper; should" }

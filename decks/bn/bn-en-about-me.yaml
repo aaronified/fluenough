@@ -23,7 +23,7 @@ cards:
     pos: "phrase"
     notes: "There is no 'is': 'my name …'. In the present, Bengali needs no verb to say what something is. To say where someone is, or how they are, it uses আছে (āche): ভালো আছি (bhālo āchi), I'm fine."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
   - id: bn-0193
     target: "আপনার নাম কী?"
     native: "What is your name?"
@@ -41,8 +41,8 @@ cards:
     pos: "phrase"
     notes: "Literally 'I have come from …'. থেকে (theke), 'from', comes after the place."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "এসেছি", base: "আসা", reading: "āśā", meaning: "to come" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "এসেছি", ref: "bn-0872" }
   - id: bn-0195
     target: "আমি … থাকি।"
     native: "I live in …"
@@ -51,8 +51,8 @@ cards:
     pos: "phrase"
     notes: "The place takes -এ (-e), or after a vowel -য় (-yô) or -তে (-te): আমি কলকাতায় থাকি (āmi kôlokātāy thāki), I live in Kolkata; আমি ঢাকায় থাকি (āmi ḍhākāy thāki), I live in Dhaka."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "থাকি", base: "থাকা", reading: "thākā", meaning: "to stay; to live; to be" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "থাকি", ref: "bn-0875" }
   - id: bn-0196
     target: "বাড়ি"
     native: "home; house"
@@ -116,7 +116,7 @@ cards:
     pos: "phrase"
     notes: "'My age thirty': no 'years' and no verb. In speech 30 is often তিরিশ (tiriś)."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
   - id: bn-0419
     target: "বিদেশি"
     native: "foreigner; foreign"

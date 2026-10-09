@@ -16,7 +16,7 @@ cards:
     pos: "phrase"
     notes: "With আপনি (āpni), the verb takes its respectful form. তুমি বসো (tumi bôso) is for friends; তুই বস (tui bôs) for the very close, and rude to a stranger."
     bases:
-      - { word: "বসুন", base: "বসা", reading: "bôśā", meaning: "to sit" }
+      - { word: "বসুন", ref: "bn-0884" }
   - id: bn-0384
     target: "আমি জানি না।"
     native: "I don't know."
@@ -25,8 +25,8 @@ cards:
     pos: "phrase"
     notes: "না (nā) comes after the verb, never before it as 'not' does in English."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "জানি", base: "জানা", reading: "jānā", meaning: "to know" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "জানি", ref: "bn-0881" }
   - id: bn-0385
     target: "আমি জল খাই।"
     native: "I drink water."
@@ -36,8 +36,8 @@ cards:
     pos: "phrase"
     notes: "Bengali eats water and tea, and even cigarettes: খাওয়া (khāoyā) covers drinking and smoking. Also পানি (pāni): আমি পানি খাই (āmi pāni khāi)."
     bases:
-      - { word: "আমি", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "খাই", base: "খাওয়া", reading: "khāoā", meaning: "to eat; to drink" }
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "খাই", ref: "bn-0876" }
   - id: bn-0386
     target: "আমার খিদে পেয়েছে।"
     native: "I'm hungry."
@@ -47,9 +47,9 @@ cards:
     pos: "phrase"
     notes: "'Hunger has come to me'. So too আমার তেষ্টা পেয়েছে (āmār teśṭā peyeche), I'm thirsty. Also আমার ক্ষুধা লেগেছে (āmār khudhā legeche) and আমার পিপাসা লেগেছে (āmār pipāśā legeche)."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "খিদে", base: "খিদে", reading: "khide", meaning: "hunger" }
-      - { word: "পেয়েছে", base: "পাওয়া", reading: "pāoā", meaning: "to get; to feel (hunger, thirst)" }
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "খিদে", ref: "bn-1245" }
+      - { word: "পেয়েছে", ref: "bn-0891" }
   - id: bn-0387
     target: "আমাকে যেতে হবে।"
     native: "I have to go."
@@ -58,9 +58,9 @@ cards:
     pos: "phrase"
     notes: "'To me, going will be': the one who must takes -কে (-ke)."
     bases:
-      - { word: "আমাকে", base: "আমি", reading: "āmi", meaning: "I" }
-      - { word: "যেতে", base: "যাওয়া", reading: "jāoā", meaning: "to go" }
-      - { word: "হবে", base: "হওয়া", reading: "hoā", meaning: "to be; to become; to happen" }
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "যেতে", ref: "bn-0873" }
+      - { word: "হবে", ref: "bn-0874" }
   - id: bn-0388
     target: "ও আমার বোন।"
     native: "She is my sister."
@@ -69,7 +69,7 @@ cards:
     pos: "phrase"
     notes: "ও (o) is he or she. Only বোন (bon), sister, says it is a woman."
     bases:
-      - { word: "আমার", base: "আমি", reading: "āmi", meaning: "I" }
+      - { word: "আমার", ref: "bn-0833" }
   - id: bn-0389
     target: "কাল আসব।"
     native: "I'll come tomorrow."
@@ -78,7 +78,7 @@ cards:
     pos: "phrase"
     notes: "The doer is often left out: the verb's ending already says 'I'."
     bases:
-      - { word: "আসব", base: "আসা", reading: "āśā", meaning: "to come" }
+      - { word: "আসব", ref: "bn-0872" }
   - id: bn-0390
     target: "দাদা, একটু সরুন।"
     native: "Excuse me, could you move a little?"
@@ -99,4 +99,4 @@ cards:
     notes: "Cigarettes are eaten too: ও সিগারেট খায় না (o sigāreṭ khāy nā), he or she doesn't smoke. Also তামাক সেবন (tāmāk śebon), the slang for it."
     bases:
       - { word: "সিগারেট", base: "সিগারেট", reading: "sigāreṭ", meaning: "cigarette" }
-      - { word: "খাওয়া", base: "খাওয়া", reading: "khāoā", meaning: "to eat; to drink" }
+      - { word: "খাওয়া", ref: "bn-0876" }
