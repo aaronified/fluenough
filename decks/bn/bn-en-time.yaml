@@ -198,6 +198,9 @@ cards:
     reading: "gôto śôptāhe"
     ipa: "ɡɔt̪o ʃɔpt̪aɦe"
     pos: "phrase"
+    bases:
+      - { word: "গত", base: "গত", reading: "gôto", meaning: "last; past" }
+      - { word: "সপ্তাহে", ref: "bn-0326" }
   - id: bn-0654
     target: "পরের সপ্তাহে"
     native: "next week"
@@ -205,6 +208,9 @@ cards:
     ipa: "pɔrer ʃɔpt̪aɦe"
     alt_target: ["আগামী সপ্তাহে"]
     pos: "phrase"
+    bases:
+      - { word: "পরের", ref: "bn-0114" }
+      - { word: "সপ্তাহে", ref: "bn-0326" }
   - id: bn-0655
     target: "ঘণ্টা"
     native: "hour"

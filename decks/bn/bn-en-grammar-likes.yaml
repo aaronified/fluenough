@@ -15,12 +15,20 @@ cards:
     ipa: "amar miʃʈi bʱalo laɡe"
     pos: "phrase"
     notes: "The liker takes -র (-rô): 'to me sweets feel good'. লাগে (lāge) stays the same for everyone: তোর (tor), তোমার (tomār), আপনার (āponār), ওর (or), ওঁর মিষ্টি ভালো লাগে (om̐r miśṭi bhālo lāge)."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0716
     target: "আমার এই গানটা ভালো লাগে না।"
     native: "I don't like this song."
     reading: "āmār ei gānṭā bhālo lāge nā."
     ipa: "amar ei ɡanʈa bʱalo laɡe na"
     pos: "phrase"
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "এই", base: "এই", reading: "ei", meaning: "this" }
+      - { word: "গানটা", base: "গান", reading: "gān", meaning: "song" }
+      - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0717
     target: "আপনার কি কলকাতা ভালো লাগে?"
     native: "Do you like Kolkata?"
@@ -28,6 +36,10 @@ cards:
     ipa: "apnar ki kɔlkat̪a bʱalo laɡe"
     pos: "phrase"
     notes: "কি (ki) after the subject turns it into a yes-or-no question."
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "কলকাতা", base: "কলকাতা", reading: "kôlkātā", meaning: "Kolkata" }
+      - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0718
     target: "ওঁর চা ভালো লাগে না।"
     native: "She doesn't like tea. / He doesn't like tea. (respectful)"
@@ -36,6 +48,9 @@ cards:
     alt_target: ["ওনার চা ভালো লাগে না।"]
     pos: "phrase"
     notes: "উনি (uni) takes -র (-rô) as ওঁর (om̐r), often said ওনার (onār); both are accepted."
+    bases:
+      - { word: "ওঁর", ref: "bn-0846" }
+      - { word: "লাগে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0719
     target: "খুব ভালো লাগল।"
     native: "I really enjoyed it."
@@ -43,6 +58,8 @@ cards:
     ipa: "kʰub bʱalo laɡlo"
     pos: "phrase"
     notes: "For one experience, the past লাগল (lāgol): সিনেমাটা ভালো লাগল (sinemāṭā bhālo lāgol), I liked the film. আলাপ করে ভালো লাগল (ālāp kôre bhālo lāglo), nice to meet you."
+    bases:
+      - { word: "লাগল", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
   - id: bn-0720
     target: "আমি মাছ ভালোবাসি।"
     native: "I love fish."
@@ -50,6 +67,9 @@ cards:
     ipa: "ami matʃʰ bʱalobaʃi"
     pos: "phrase"
     notes: "ভালোবাসা (bhālobāsā) is an ordinary verb: no -র (-rô) on the subject, and the verb changes for the person: আমি ভালোবাসি (āmi bhālobāsi), তুই ভালোবাসিস (tui bhālobāsis), তুমি ভালোবাসো (tumi bhālobāso), আপনি ভালোবাসেন (āpni bhālobāsen), ও ভালোবাসে (o bhālobāse), উনি ভালোবাসেন (uni bhālobāsen). It is used for food and pastimes as much as for people."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "ভালোবাসি", base: "ভালোবাসা", reading: "bhālobāśā", meaning: "to love" }
   - id: bn-0721
     target: "আমি তোমাকে ভালোবাসি।"
     native: "I love you."
@@ -57,6 +77,10 @@ cards:
     ipa: "ami t̪omake bʱalobaʃi"
     pos: "phrase"
     notes: "The person loved takes -কে (-ke)."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "তোমাকে", ref: "bn-0835" }
+      - { word: "ভালোবাসি", base: "ভালোবাসা", reading: "bhālobāśā", meaning: "to love" }
   - id: bn-0722
     target: "ও ক্রিকেট খেলতে ভালোবাসে।"
     native: "He loves playing cricket. / She loves playing cricket."
@@ -64,6 +88,10 @@ cards:
     ipa: "o krikeʈ kʰelt̪e bʱalobaʃe"
     pos: "phrase"
     notes: "'Loves doing': the verb's -তে (-te) form, then ভালোবাসা (bhālobāsā)."
+    bases:
+      - { word: "ক্রিকেট", base: "ক্রিকেট", reading: "krikeṭ", meaning: "cricket" }
+      - { word: "খেলতে", ref: "bn-0895" }
+      - { word: "ভালোবাসে", base: "ভালোবাসা", reading: "bhālobāśā", meaning: "to love" }
   - id: bn-0723
     target: "আমি ঝাল খাবার পছন্দ করি না।"
     native: "I don't like spicy food."
@@ -71,6 +99,9 @@ cards:
     ipa: "ami dʒʱal kʰabar pɔtʃʰond̪o kori na"
     pos: "phrase"
     notes: "পছন্দ করা (pôchondo kôrā) is a noun with করা (kôrā), and only করা (kôrā) changes: আপনি পছন্দ করেন (āpni pôchondo kôren), ও পছন্দ করে (o pôchondo kôre). In the negative it is 'don't like': ঝাল খাবার পছন্দ করি না (jhāl khābār pôchondo kori nā)."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "করি", ref: "bn-0102" }
   - id: bn-0724
     target: "পছন্দ"
     native: "liking; choice"
@@ -85,4 +116,7 @@ cards:
     ipa: "rɔʃoɡolla amar prijo miʃʈi"
     pos: "phrase"
     notes: "প্রিয় (priyo) is an adjective, so there is no verb. 'Not my favourite' is আমার প্রিয় নয় (āmār priyo nôy), or in speech না (nā)."
+    bases:
+      - { word: "রসগোল্লা", ref: "bn-0967" }
+      - { word: "আমার", ref: "bn-0833" }
   - ref: bn-0640

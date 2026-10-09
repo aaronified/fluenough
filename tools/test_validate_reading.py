@@ -13,6 +13,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import validate_decks
 
@@ -269,7 +270,10 @@ cards:
         self.course()
         (self.tmp / "pubspec.yaml").unlink(missing_ok=True)
         out = io.StringIO()
-        with contextlib.redirect_stdout(out):
+        # The probe course stands in for a language: the repository's own
+        # decks/bn, which now has cores and so needs its B1 plan, is not part of it.
+        with mock.patch.object(validate_decks, "ROOT", self.tmp), \
+                contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py", str(self.tmp)])
         self.assertEqual(code, 0, out.getvalue())
         self.assertIn("words appear in no bn-en deck", out.getvalue())

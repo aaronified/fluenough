@@ -15,13 +15,18 @@ cards:
     ipa: "pani tʃeːjaɖam"
     pos: "phrase"
     notes: "పని (pani), work, and చేయడం (cēyaḍam), to do. So too స్నానం చేయడం (snānam cēyaḍam), to bathe, and వంట చేయడం (vaṇṭa cēyaḍam), to cook."
+    bases:
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0480
     target: "ఫోన్ చేయడం"
     native: "to phone"
     reading: "fōn cēyaḍam"
     ipa: "foːn tʃeːjaɖam"
     pos: "phrase"
-    notes: "నాకు ఫోన్ చేయండి (nāku phōn cēyaṇḍi), please call me."
+    notes: "నాకు ఫోన్ చేయండి (nāku fōn cēyaṇḍi), please call me."
+    bases:
+      - { word: "ఫోన్", ref: "te-0872" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0481
     target: "సహాయం చేయడం"
     native: "to help"
@@ -29,6 +34,8 @@ cards:
     ipa: "sahaːjam tʃeːjaɖam"
     pos: "phrase"
     notes: "The one helped takes -కు (-ku): నాకు సహాయం చేయండి (nāku sahāyam cēyaṇḍi), please help me."
+    bases:
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0482
     target: "పెళ్ళి చేసుకోవడం"
     native: "to get married"
@@ -37,6 +44,9 @@ cards:
     alt_target: ["పెళ్లి చేసుకోవడం"]
     pos: "phrase"
     notes: "With -కొను (-konu), for oneself: పెళ్ళి చేసుకున్నాను (peḷḷi cēsukunnānu), I got married."
+    bases:
+      - { word: "పెళ్ళి", base: "పెళ్ళి", reading: "peḷḷi", meaning: "wedding; marriage" }
+      - { word: "చేసుకోవడం", base: "చేసుకోవడం", reading: "cēsukōvaḍam", meaning: "to do for oneself; with a wedding, to get married" }
   - id: te-0483
     target: "ప్రయత్నం చేయడం"
     native: "to try"
@@ -45,6 +55,9 @@ cards:
     alt_target: ["ప్రయత్నించడం"]
     pos: "phrase"
     notes: "Also one verb: ప్రయత్నించడం (prayatniñcaḍam)."
+    bases:
+      - { word: "ప్రయత్నం", base: "ప్రయత్నం", reading: "prayatnam", meaning: "attempt; effort" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0484
     target: "ఖర్చు పెట్టడం"
     native: "to spend (money)"
@@ -53,18 +66,27 @@ cards:
     alt_target: ["ఖర్చు చేయడం"]
     pos: "phrase"
     notes: "With పెట్టు (peṭṭu), put. Also ఖర్చు చేయడం (kharcu cēyaḍam)."
+    bases:
+      - { word: "ఖర్చు", base: "ఖర్చు", reading: "kharcu", meaning: "expense; cost" }
+      - { word: "పెట్టడం", ref: "te-0830" }
   - id: te-0485
     target: "శుభ్రం చేయడం"
     native: "to clean"
     reading: "śubhram cēyaḍam"
     ipa: "ʃubʱram tʃeːjaɖam"
     pos: "phrase"
+    bases:
+      - { word: "శుభ్రం", base: "శుభ్రం", reading: "śubhram", meaning: "clean; cleanliness" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0486
     target: "ప్రయాణం చేయడం"
     native: "to travel"
     reading: "prayāṇam cēyaḍam"
     ipa: "prajaːɳam tʃeːjaɖam"
     pos: "phrase"
+    bases:
+      - { word: "ప్రయాణం", base: "ప్రయాణం", reading: "prayāṇam", meaning: "journey; travel" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0487
     target: "మొదలు పెట్టడం"
     native: "to begin"
@@ -72,6 +94,9 @@ cards:
     ipa: "mod̪alu peʈʈaɖam"
     pos: "phrase"
     notes: "మొదలు (modalu), a beginning, with పెట్టు (peṭṭu), put."
+    bases:
+      - { word: "మొదలు", base: "మొదలు", reading: "modalu", meaning: "beginning; start" }
+      - { word: "పెట్టడం", ref: "te-0830" }
   - id: te-0488
     target: "ఆలస్యం చేయడం"
     native: "to delay; to be late"
@@ -79,6 +104,9 @@ cards:
     ipa: "aːlasjam tʃeːjaɖam"
     pos: "phrase"
     notes: "ఆలస్యం చేయకండి (ālasyam cēyakaṇḍi), please don't delay."
+    bases:
+      - { word: "ఆలస్యం", base: "ఆలస్యం", reading: "ālasyam", meaning: "delay; lateness" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0489
     target: "భయపడడం"
     native: "to be afraid"

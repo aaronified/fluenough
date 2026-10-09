@@ -15,12 +15,17 @@ cards:
     ipa: "miːru t̪eluɡu maːʈlaːɖat̪aːraː"
     pos: "phrase"
     notes: "-ఆ (-ā) at the end of the verb makes a yes/no question."
+    bases:
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
+      - { word: "మాట్లాడతారా", ref: "te-0644" }
   - id: te-0170
     target: "టీ తాగుతారా?"
     native: "Will you have tea?"
     reading: "ṭī tāgutārā?"
     ipa: "ʈiː t̪aːɡut̪aːraː"
     pos: "phrase"
+    bases:
+      - { word: "తాగుతారా", ref: "te-0625" }
   - id: te-0171
     target: "ఇది ఏమిటి?"
     native: "What is this?"
@@ -28,6 +33,8 @@ cards:
     ipa: "id̪i eːmiʈi"
     pos: "phrase"
     notes: "The question word goes where the answer would."
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
   - id: te-0172
     target: "మీరు ఎక్కడికి వెళ్తున్నారు?"
     native: "Where are you going?"
@@ -35,6 +42,9 @@ cards:
     ipa: "miːru ekkaɖiki ʋeɭt̪unnaːru"
     pos: "phrase"
     notes: "ఎక్కడికి (ekkaḍiki), 'to where', from ఎక్కడ (ekkaḍa), 'where'."
+    bases:
+      - { word: "ఎక్కడికి", ref: "te-0162" }
+      - { word: "వెళ్తున్నారు", ref: "te-0622" }
   - id: te-0173
     target: "ఆయన ఎవరు?"
     native: "Who is he?"
@@ -42,18 +52,25 @@ cards:
     ipa: "aːjana eʋaru"
     pos: "phrase"
     notes: "ఆయన (āyana) is a respectful 'he'; ఆవిడ (āviḍa), a respectful 'she'."
+    bases:
+      - { word: "ఆయన", ref: "te-0597" }
   - id: te-0174
     target: "మీరు ఎప్పుడు వస్తారు?"
     native: "When will you come?"
     reading: "mīru eppuḍu vastāru?"
     ipa: "miːru eppuɖu ʋast̪aːru"
     pos: "phrase"
+    bases:
+      - { word: "వస్తారు", ref: "te-0623" }
   - id: te-0175
     target: "మీరు తెలుగు ఎందుకు నేర్చుకుంటున్నారు?"
     native: "Why are you learning Telugu?"
     reading: "mīru telugu enduku nērcukuṇṭunnāru?"
     ipa: "miːru t̪eluɡu end̪uku neːrtʃukuɳʈunnaːru"
     pos: "phrase"
+    bases:
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
+      - { word: "నేర్చుకుంటున్నారు", ref: "te-0645" }
   - id: te-0176
     target: "మీకు ఎంత మంది పిల్లలు?"
     native: "How many children do you have?"
@@ -61,12 +78,17 @@ cards:
     ipa: "miːku ent̪a mand̪i pillalu"
     pos: "phrase"
     notes: "ఎంత మంది (enta mandi), 'how many people'."
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "మంది", base: "మంది", reading: "mandi", meaning: "people (when counting)" }
   - id: te-0177
     target: "ఎలా ఉంది?"
     native: "How is it?"
     reading: "elā undi?"
     ipa: "elaː und̪i"
     pos: "phrase"
+    bases:
+      - { word: "ఉంది", ref: "te-0633" }
   - id: te-0178
     target: "బాగుంది కదా?"
     native: "It's good, isn't it?"
@@ -74,3 +96,6 @@ cards:
     ipa: "baːɡund̪i kad̪aː"
     pos: "phrase"
     notes: "కదా (kadā) at the end asks for agreement."
+    bases:
+      - { word: "బాగుంది", base: "బాగు", reading: "bāgu", meaning: "good; well" }
+      - { word: "కదా", base: "కదా", reading: "kadā", meaning: "isn't it? (a tag question)" }

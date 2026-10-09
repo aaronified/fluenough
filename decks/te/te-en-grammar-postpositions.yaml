@@ -21,6 +21,9 @@ cards:
     reading: "haidarābād nuñci"
     ipa: "haid̪araːbaːd̪ nuɲtʃi"
     pos: "phrase"
+    bases:
+      - { word: "హైదరాబాద్", base: "హైదరాబాద్", reading: "haidarābād", meaning: "Hyderabad" }
+      - { word: "నుంచి", base: "నుంచి", reading: "nuñci", meaning: "from (after a noun)" }
   - id: te-0285
     target: "రాముకి ఇవ్వండి."
     native: "Give it to Ramu, please."
@@ -28,6 +31,8 @@ cards:
     ipa: "raːmuki iʋʋaɳɖi"
     pos: "phrase"
     notes: "-కి (-ki) or -కు (-ku) is 'to' the person something is given or said to."
+    bases:
+      - { word: "రాముకి", base: "రాము", reading: "rāmu", meaning: "Ramu (a man's name)" }
   - id: te-0286
     target: "నాతో"
     native: "with me"
@@ -41,12 +46,16 @@ cards:
     reading: "balla mīda"
     ipa: "balla miːd̪a"
     pos: "phrase"
+    bases:
+      - { word: "మీద", ref: "te-0805" }
   - id: te-0288
     target: "బల్ల కింద"
     native: "under the table"
     reading: "balla kinda"
     ipa: "balla kind̪a"
     pos: "phrase"
+    bases:
+      - { word: "కింద", ref: "te-0799" }
   - id: te-0289
     target: "స్టేషన్ దగ్గర"
     native: "near the station"
@@ -59,6 +68,8 @@ cards:
     reading: "mī kōsam"
     ipa: "miː koːsam"
     pos: "phrase"
+    bases:
+      - { word: "కోసం", base: "కోసం", reading: "kōsam", meaning: "for" }
   - id: te-0291
     target: "భోజనం తర్వాత"
     native: "after the meal"
@@ -71,3 +82,5 @@ cards:
     reading: "bhōjanāniki mundu"
     ipa: "bʱoːdʒanaːniki mund̪u"
     pos: "phrase"
+    bases:
+      - { word: "భోజనానికి", ref: "te-0340" }

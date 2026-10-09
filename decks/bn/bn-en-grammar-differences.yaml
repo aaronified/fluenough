@@ -15,6 +15,9 @@ cards:
     ipa: "ami bʱat̪ kʰai"
     tags: ["grammar", "word-order"]
     notes: "The verb comes last: subject, object, verb. Word for word, 'I rice eat'."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "খাই", ref: "bn-0876" }
   - id: bn-0122
     target: "আপনি ডাক্তার।"
     native: "You are a doctor."
@@ -43,6 +46,9 @@ cards:
     ipa: "babar boi"
     tags: ["grammar", "postpositions"]
     notes: "'Of' is an ending on the owner, which comes first: বাবা (bābā) + -র (-rô). It is -র (-rô) after a vowel sign, -এর (-er) after a consonant (ঘরের), and -য়ের (-yer) after a full vowel letter (বইয়ের)."
+    bases:
+      - { word: "বাবার", ref: "bn-0423" }
+      - { word: "বই", ref: "bn-1139" }
   - id: bn-0126
     target: "সে যায়।"
     native: "He goes. / She goes."
@@ -50,6 +56,9 @@ cards:
     ipa: "ʃe dʒaj"
     tags: ["grammar", "no-gender"]
     notes: "No grammatical gender: সে (se) is both 'he' and 'she', and nothing else in the sentence changes."
+    bases:
+      - { word: "সে", ref: "bn-0839" }
+      - { word: "যায়", ref: "bn-0873" }
   - id: bn-0127
     target: "আপনি যান।"
     native: "You go. (respectful)"
@@ -57,6 +66,8 @@ cards:
     ipa: "apni dʒan"
     tags: ["grammar", "three-yous"]
     notes: "Three words for 'you', each with its own verb ending: আপনি (āpni) for strangers and elders takes -ন (-nô)."
+    bases:
+      - { word: "যান", ref: "bn-0873" }
   - id: bn-0128
     target: "তুমি যাও।"
     native: "You go. (familiar)"
@@ -64,6 +75,9 @@ cards:
     ipa: "t̪umi dʒao"
     tags: ["grammar", "three-yous"]
     notes: "তুমি (tumi), for friends and family, takes -ও (-o)."
+    bases:
+      - { word: "তুমি", ref: "bn-0835" }
+      - { word: "যাও", ref: "bn-0873" }
   - id: bn-0129
     target: "তুই যাস।"
     native: "You go. (intimate)"
@@ -71,6 +85,9 @@ cards:
     ipa: "t̪ui dʒaʃ"
     tags: ["grammar", "three-yous"]
     notes: "তুই (tui), only for the very close or a child, takes -স (-śô). To anyone else it is rude."
+    bases:
+      - { word: "তুই", ref: "bn-0837" }
+      - { word: "যাস", ref: "bn-0873" }
   - id: bn-0130
     target: "একটা বই"
     native: "a book; one book"
@@ -79,6 +96,9 @@ cards:
     ipa: "ekʈa boi"
     tags: ["grammar", "classifiers"]
     notes: "No word for 'a': a number takes the classifier -টা (-ṭā), and একটা (ekoṭā) is 'one' or 'a'."
+    bases:
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "বই", ref: "bn-1139" }
   - id: bn-0131
     target: "বইটা"
     native: "the book"
@@ -94,6 +114,11 @@ cards:
     ipa: "amar ekʈa boi atʃʰe"
     tags: ["grammar", "have"]
     notes: "No verb 'have': 'of me a book there is', with আছে (āche), 'there is'."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "বই", ref: "bn-1139" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0133
     target: "আমি যাই না।"
     native: "I don't go."
@@ -101,6 +126,9 @@ cards:
     ipa: "ami dʒai na"
     tags: ["grammar", "negation"]
     notes: "না (nā) comes after the verb: 'I go not'."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "যাই", ref: "bn-0873" }
   - id: bn-0134
     target: "খাবার নেই।"
     native: "There is no food."
@@ -108,6 +136,8 @@ cards:
     ipa: "kʰabar nei"
     tags: ["grammar", "negation"]
     notes: "নেই (nei) is 'there is not', the opposite of আছে (āche)."
+    bases:
+      - { word: "নেই", base: "নেই", reading: "nei", meaning: "there is not" }
   - id: bn-0135
     target: "আপনি কি যাবেন?"
     native: "Will you go?"
@@ -115,3 +145,5 @@ cards:
     ipa: "apni ki dʒaben"
     tags: ["grammar", "questions"]
     notes: "A yes-or-no question adds কি (ki) and keeps the statement's word order: আপনি যাবেন (you will go). Don't confuse it with কী (ki), 'what'."
+    bases:
+      - { word: "যাবেন", ref: "bn-0873" }

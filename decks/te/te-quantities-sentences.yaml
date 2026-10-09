@@ -1,0 +1,110 @@
+schema: 1
+id: "te-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-1051"
+    target: "నాకు కొంచెం పాలు కావాలి."
+    reading: "nāku koñcem pālu kāvāli."
+    ipa: "naːku koɲtʃem paːlu kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: "te-1052"
+    target: "ఇక్కడ ఎన్ని పుస్తకాలు ఉన్నాయి?"
+    reading: "ikkaḍa enni pustakālu unnāyi?"
+    ipa: "ikkaɖa enni pust̪akaːlu unnaːji"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "పుస్తకాలు", ref: "te-0865" }
+      - { word: "ఉన్నాయి", ref: "te-0633" }
+  - id: "te-1053"
+    target: "క్లాసులో ఎంతమంది పిల్లలు ఉన్నారు?"
+    reading: "klāsulō entamandi pillalu unnāru?"
+    ipa: "klaːsuloː ent̪amand̪i pillalu unnaːru"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "క్లాసులో", base: "క్లాసు", reading: "klāsu" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+  - id: "te-1054"
+    target: "అన్ని దుకాణాలు మూసి ఉన్నాయి."
+    reading: "anni dukāṇālu mūsi unnāyi."
+    ipa: "anni d̪ukaːɳaːlu muːsi unnaːji"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "దుకాణాలు", ref: "te-0246" }
+      - { word: "మూసి", ref: "te-0826" }
+      - { word: "ఉన్నాయి", ref: "te-0633" }
+  - id: "te-1055"
+    target: "ఇంట్లో ఎవరూ లేరు."
+    reading: "iṇṭlō evarū lēru."
+    ipa: "iɳʈloː eʋaruː leːru"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "ఇంట్లో", ref: "te-0195" }
+      - { word: "లేరు", ref: "te-0159" }
+  - id: "te-1056"
+    target: "నా దగ్గర ఏమీ లేదు."
+    reading: "nā daggara ēmī lēdu."
+    ipa: "naː d̪aɡɡara eːmiː leːd̪u"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+  - id: "te-1057"
+    target: "ఒక్క నిమిషం ఆగండి."
+    reading: "okka nimiṣam āgaṇḍi."
+    ipa: "okka nimiʂam aːɡaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "నిమిషం", base: "నిమిషం", reading: "nimiṣam" }
+      - { word: "ఆగండి", ref: "te-0648" }
+  - id: "te-1058"
+    target: "ఇంకా కొంచెం కావాలా?"
+    reading: "iṅkā koñcem kāvālā?"
+    ipa: "iŋkaː koɲtʃem kaːʋaːlaː"
+    pos: "phrase"
+    bases:
+      - { word: "కావాలా", ref: "te-0460" }
+  - id: "te-1059"
+    target: "చాలు, ఇంకా వద్దు."
+    reading: "cālu, iṅkā vaddu."
+    ipa: "tʃaːlu iŋkaː ʋad̪d̪u"
+    pos: "phrase"
+  - id: "te-1060"
+    target: "నేను ప్రతి రోజు తెలుగు నేర్చుకుంటాను."
+    reading: "nēnu prati rōju telugu nērcukuṇṭānu."
+    ipa: "neːnu prat̪i roːdʒu t̪eluɡu neːrtʃukuɳʈaːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu" }
+      - { word: "నేర్చుకుంటాను", ref: "te-0645" }
+  - id: "te-1061"
+    target: "మొదటి బస్సు ఎప్పుడు వస్తుంది?"
+    reading: "modaṭi bassu eppuḍu vastundi?"
+    ipa: "mod̪aʈi bassu eppuɖu ʋast̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "వస్తుంది", ref: "te-0623" }
+  - id: "te-1062"
+    target: "చివరి బస్సు రాత్రి పదకొండు గంటలకు వస్తుంది."
+    reading: "civari bassu rātri padakoṇḍu gaṇṭalaku vastundi."
+    ipa: "tʃiʋari bassu raːt̪ri pad̪akoɳɖu ɡaɳʈalaku ʋast̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "గంటలకు", ref: "te-0313" }
+      - { word: "వస్తుంది", ref: "te-0623" }

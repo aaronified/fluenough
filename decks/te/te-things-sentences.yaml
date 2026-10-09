@@ -1,0 +1,87 @@
+schema: 1
+id: "te-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0903"
+    target: "ఇది నా పుస్తకం."
+    reading: "idi nā pustakam."
+    ipa: "id̪i naː pust̪akam"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+  - id: "te-0904"
+    target: "అది మీ సంచి కాదు."
+    reading: "adi mī sañci kādu."
+    ipa: "ad̪i miː saɲtʃi kaːd̪u"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "మీ", ref: "te-0136" }
+  - id: "te-0905"
+    target: "నాకు ఒక కొత్త ఫోన్ కావాలి."
+    reading: "nāku oka kotta fōn kāvāli."
+    ipa: "naːku oka kot̪t̪a foːn kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఒక", ref: "te-1034" }
+  - id: "te-0906"
+    target: "నా గొడుగు ఎక్కడ ఉంది?"
+    reading: "nā goḍugu ekkaḍa undi?"
+    ipa: "naː ɡoɖuɡu ekkaɖa und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0907"
+    target: "తాళం చెవి బల్ల మీద ఉంది."
+    reading: "tāḷam cevi balla mīda undi."
+    ipa: "t̪aːɭam tʃeʋi balla miːd̪a und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "తాళం", ref: "te-0876" }
+      - { word: "చెవి", ref: "te-0733" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0908"
+    target: "ఆమె రోజూ పుస్తకాలు చదువుతుంది."
+    reading: "āme rōjū pustakālu caduvutundi."
+    ipa: "aːme roːdʒuː pust̪akaːlu tʃad̪uʋut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-plural", "te-rule-present-third"]
+    bases:
+      - { word: "పుస్తకాలు", ref: "te-0865" }
+      - { word: "చదువుతుంది", ref: "te-0638" }
+  - id: "te-0909"
+    target: "నేను సైకిల్ మీద స్కూలుకు వెళ్తాను."
+    reading: "nēnu saikil mīda skūluku veḷtānu."
+    ipa: "neːnu saikil miːd̪a skuːluku ʋeɭt̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-ki", "te-rule-present-first"]
+    bases:
+      - { word: "స్కూలుకు", base: "స్కూలు", reading: "skūlu" }
+      - { word: "వెళ్తాను", ref: "te-0622" }
+  - id: "te-0910"
+    target: "దయచేసి టవల్ ఇవ్వండి."
+    reading: "dayacēsi ṭaval ivvaṇḍi."
+    ipa: "d̪ajatʃeːsi ʈaʋal iʋʋaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "ఇవ్వండి", ref: "te-0630" }
+  - id: "te-0619"
+    target: "అవి ఎవరి కుర్చీలు?"
+    reading: "avi evari kurcīlu?"
+    ipa: "aʋi eʋari kurtʃiːlu"
+    pos: "phrase"
+    rules: ["te-rule-plural"]
+    bases:
+      - { word: "కుర్చీలు", ref: "te-0431" }

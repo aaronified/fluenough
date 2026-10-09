@@ -47,9 +47,19 @@ void main() {
     expect(view.upNext, same(units.first));
     // Every unit is on the path, so each opens its screen.
     expect(units.map((u) => u.onPath), everyElement(isTrue));
-    // No plan marks levels yet: none is drawn.
-    expect(view.steps.whereType<LevelStep>(), isEmpty);
-    expect(view.steps.whereType<AchievementStep>(), isEmpty);
+    // Telugu's path marks A1, A2 and B1 (ADR-0036): each level is drawn,
+    // from the first step, with its achievement, none earned yet.
+    expect(view.levels, CefrLevel.values);
+    expect(view.steps.first, isA<LevelStep>());
+    expect(
+      view.steps.whereType<AchievementStep>().map((a) => (a.level, a.earned)),
+      [for (final level in CefrLevel.values) (level, false)],
+    );
+    // A course whose plan marks no level draws none.
+    final unplanned = courseView(state, 'te', plan: CoursePlan.none)!;
+    expect(unplanned.steps.whereType<LevelStep>(), isEmpty);
+    expect(unplanned.steps.whereType<AchievementStep>(), isEmpty);
+    expect(unplanned.units.map((u) => u.status), units.map((u) => u.status));
   });
 
   test(
@@ -78,6 +88,35 @@ void main() {
     },
   );
 
+  test('a rules deck is one of its unit\'s rules: its cells are forms of '
+      'words taught elsewhere, not words (ADR-0036)', () async {
+    final state = await loaded();
+    final units = state.courseUnits('te');
+    final nouns = units.firstWhere(
+      (u) => u.any((e) => e.id == 'te-en-grammar-noun-forms'),
+    );
+    final table = nouns.firstWhere((e) => e.id == 'te-en-grammar-noun-forms');
+    expect(table.deck.kind, DeckKind.rules);
+    expect(table.cards, isNotEmpty);
+    final content = UnitContent(nouns);
+    expect(content.rules.map((e) => e.id), ['te-en-grammar-noun-forms']);
+    expect(content.words, isEmpty);
+    // In no unit of the course is a rule's cell a word or a sentence.
+    for (final unit in units) {
+      final content = UnitContent(unit);
+      expect(
+        [...content.words, ...content.sentences].where((c) => c.rule != null),
+        isEmpty,
+        reason: unitTitle(state, unit),
+      );
+      for (final entry in unit) {
+        if (entry.deck.kind == DeckKind.rules) {
+          expect(content.rules, contains(entry));
+        }
+      }
+    }
+  });
+
   test(
     'milestones: the first deck after the first unit, the script after '
     'its units, and each word count after the unit that reaches it',
@@ -86,8 +125,10 @@ void main() {
       final view = courseView(state, 'te')!;
       final steps = view.steps;
       final units = view.units.toList();
-      expect(steps[1], isA<MilestoneStep>());
-      expect((steps[1] as MilestoneStep).kind, MilestoneKind.firstDeck);
+      // Right after the first unit, whatever level header comes before it.
+      final first = steps.indexOf(units.first);
+      expect(steps[first + 1], isA<MilestoneStep>());
+      expect((steps[first + 1] as MilestoneStep).kind, MilestoneKind.firstDeck);
 
       final script = steps.whereType<MilestoneStep>().singleWhere(
         (m) => m.kind == MilestoneKind.script,
@@ -110,7 +151,7 @@ void main() {
           .whereType<MilestoneStep>()
           .where((m) => m.kind == MilestoneKind.words)
           .toList();
-      expect(counts.map((m) => m.count), [50, 100, 250]);
+      expect(counts.map((m) => m.count), [50, 100, 250, 500]);
       Set<String> wordsUpTo(int end) => <String>{
         for (final u in units.take(end))
           if (!u.content.isScript) ...u.content.words.map((c) => c.id),
@@ -358,7 +399,13 @@ void main() {
       unitOfDeck(state, 'te-en-grammar-be', plan: PathFixtures.telugu)!.level,
       CefrLevel.a1,
     );
-    expect(unit.level, isNull);
+    // Without a plan given, the level is the one the path's plan marks;
+    // with a plan that marks none, there is none.
+    expect(unit.level, CefrLevel.a1);
+    expect(
+      unitOfDeck(state, 'te-en-grammar-be', plan: CoursePlan.none)!.level,
+      isNull,
+    );
     expect(opensUnit(state, 'te-en-family'), isTrue);
     expect(unitOfDeck(state, 'no-such-deck'), isNull);
 

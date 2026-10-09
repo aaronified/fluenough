@@ -57,6 +57,8 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "The polite way to bargain. Bargaining is expected at markets, not in shops with fixed prices."
+    bases:
+      - { word: "করুন", ref: "bn-0102" }
   - id: bn-0250
     target: "দোকান"
     native: "shop"
@@ -92,6 +94,9 @@ cards:
     reading: "āmi śudhu dekhchi."
     ipa: "ami ʃud̪ʱu d̪ekʰtʃʰi"
     pos: "phrase"
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "দেখছি", ref: "bn-0877" }
   - id: bn-0546
     target: "কত করে কেজি?"
     native: "How much a kilo?"
@@ -100,18 +105,27 @@ cards:
     alt_target: ["কত করে কিলো?"]
     pos: "phrase"
     notes: "কত করে (kôto kôre), 'at how much', asks the rate: কত করে ডজন (kôto kôre ḍôjon)? How much a dozen?"
+    bases:
+      - { word: "করে", ref: "bn-0102" }
   - id: bn-0547
     target: "এটা নেব।"
     native: "I'll take this."
     reading: "eṭā nebo."
     ipa: "eʈa nebo"
     pos: "phrase"
+    bases:
+      - { word: "এটা", ref: "bn-0849" }
+      - { word: "নেব", ref: "bn-0889" }
   - id: bn-0548
     target: "অন্য রং আছে?"
     native: "Do you have another colour?"
     reading: "ônno rôṅ āche?"
     ipa: "ɔnno rɔŋ atʃʰe"
     pos: "phrase"
+    bases:
+      - { word: "অন্য", ref: "bn-1332" }
+      - { word: "রং", ref: "bn-1203" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0549
     target: "কিছু"
     native: "some; something"

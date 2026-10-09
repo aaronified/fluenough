@@ -1,0 +1,184 @@
+schema: 1
+id: "bn-clothes"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "clothes"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1188"
+    target: "কাপড়"
+    reading: "kāpoṛ"
+    ipa: "kapoɽ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কাপড় পরা", reading: "kāpoṛ pôrā" }, { word: "কাপড় কাচা", reading: "kāpoṛ kācā" }] }
+  - id: "bn-1189"
+    target: "জামা"
+    reading: "jāmā"
+    ipa: "dʒama"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জামাকাপড়", reading: "jāmākāpoṛ" }] }
+  - id: "bn-1190"
+    target: "শার্ট"
+    reading: "śārṭ"
+    ipa: "ʃarʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "জামা", reading: "jāmā" }] }
+  - id: "bn-1191"
+    target: "প্যান্ট"
+    reading: "pênṭ"
+    ipa: "pænʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "প্যান্ট পরা", reading: "pênṭ pôrā" }] }
+  - id: "bn-1192"
+    target: "শাড়ি"
+    reading: "śāṛi"
+    ipa: "ʃaɽi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শাড়ি পরা", reading: "śāṛi pôrā" }] }
+  - id: "bn-1193"
+    target: "পাঞ্জাবি"
+    reading: "pānjābi"
+    ipa: "pandʒabi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ধুতি", reading: "dhuti" }] }
+  - id: "bn-1194"
+    target: "ধুতি"
+    reading: "dhuti"
+    ipa: "d̪ʱut̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1195"
+    target: "লুঙ্গি"
+    reading: "luṅgi"
+    ipa: "luŋɡi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1196"
+    target: "জুতো"
+    reading: "juto"
+    ipa: "dʒut̪o"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "এক জোড়া জুতো", reading: "ek joṛā juto" }, { word: "জুতো পরা", reading: "juto pôrā" }] }
+  - id: "bn-1197"
+    target: "চপ্পল"
+    reading: "côppol"
+    ipa: "tʃɔppol"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হাওয়াই চপ্পল", reading: "hāoāi côppol" }] }
+  - id: "bn-1198"
+    target: "মোজা"
+    reading: "mojā"
+    ipa: "modʒa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "এক জোড়া মোজা", reading: "ek joṛā mojā" }] }
+      - { id: "pair", kind: "pair", ref: "bn-1252", words: [{ word: "মজা", reading: "môjā" }, { word: "মোজা", reading: "mojā" }] }
+  - id: "bn-1199"
+    target: "টুপি"
+    reading: "ṭupi"
+    ipa: "ʈupi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "টুপি", reading: "ṭupi" }] }
+  - id: "bn-1200"
+    target: "গামছা"
+    reading: "gāmchā"
+    ipa: "ɡamtʃʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গা", reading: "gā" }, { word: "মোছা", reading: "mochā" }] }
+  - id: "bn-1201"
+    target: "গয়না"
+    reading: "gôynā"
+    ipa: "ɡɔjna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গয়না পরা", reading: "gôynā pôrā" }] }
+  - id: "bn-1202"
+    target: "হার"
+    reading: "hār"
+    ipa: "ɦar"
+    pos: "noun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-1021", words: [{ word: "হার", reading: "hār" }, { word: "হাড়", reading: "hāṛ" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "হার মানা", reading: "hār mānā" }] }
+  - id: "bn-1203"
+    target: "রং"
+    reading: "rôṅ"
+    ipa: "rɔŋ"
+    alt_target: ["রঙ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রঙ", reading: "rôṅ" }] }
+  - id: "bn-1204"
+    target: "লাল"
+    reading: "lāl"
+    ipa: "lal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "লাল চা", reading: "lāl cā" }] }
+  - id: "bn-1205"
+    target: "নীল"
+    reading: "nil"
+    ipa: "nil"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Indigo_revolt" }
+  - id: "bn-1206"
+    target: "সবুজ"
+    reading: "śobuj"
+    ipa: "ʃobudʒ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1207"
+    target: "সাদা"
+    reading: "śādā"
+    ipa: "ʃad̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাদা কাগজ", reading: "śādā kāgoj" }] }
+  - id: "bn-1208"
+    target: "কালো"
+    reading: "kālo"
+    ipa: "kalo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কালো চুল", reading: "kālo cul" }] }
+  - id: "bn-1209"
+    target: "বাদামি"
+    reading: "bādāmi"
+    ipa: "bad̪ami"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "বাদাম", reading: "bādām" }, { word: "-ই", reading: "-i" }] }
+  - id: "bn-1210"
+    target: "গোলাপি"
+    reading: "golāpi"
+    ipa: "ɡolapi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "গোলাপ", reading: "golāp" }, { word: "-ই", reading: "-i" }] }
+  - id: "bn-1211"
+    target: "ধূসর"
+    reading: "dhuśor"
+    ipa: "d̪ʱuʃor"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ছাই রং", reading: "chāi rôṅ" }] }
+  - ref: "bn-0959"
+  - ref: "bn-0938"

@@ -1,0 +1,95 @@
+schema: 1
+id: "te-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "te-0376"
+  - id: "te-0976"
+    target: "నాకు దాహంగా ఉంది."
+    reading: "nāku dāhaṅgā undi."
+    ipa: "naːku d̪aːhaŋɡaː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "దాహంగా", ref: "te-0967" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0977"
+    target: "అతనికి చాలా కోపంగా ఉంది."
+    reading: "ataniki cālā kōpaṅgā undi."
+    ipa: "at̪aniki tʃaːlaː koːpaŋɡaː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "అతనికి", ref: "te-0595" }
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "కోపంగా", ref: "te-0972" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0978"
+    target: "ఈ సంచి చాలా బరువుగా ఉంది."
+    reading: "ī sañci cālā baruvugā undi."
+    ipa: "iː saɲtʃi tʃaːlaː baruʋuɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "బరువుగా", ref: "te-0950" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0979"
+    target: "ఈ పని చాలా సులభం."
+    reading: "ī pani cālā sulabham."
+    ipa: "iː pani tʃaːlaː sulabʱam"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+  - id: "te-0980"
+    target: "ఆ చొక్కా ఖరీదైనది."
+    reading: "ā cokkā kharīdainadi."
+    ipa: "aː tʃokkaː kʰariːd̪ainad̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఖరీదైనది", ref: "te-0954" }
+  - id: "te-0981"
+    target: "ఈ గది పొడవుగా ఉంది."
+    reading: "ī gadi poḍavugā undi."
+    ipa: "iː ɡad̪i poɖaʋuɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "పొడవుగా", ref: "te-0945" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0982"
+    target: "నేను చాలా అలసటగా ఉన్నాను."
+    reading: "nēnu cālā alasaṭagā unnānu."
+    ipa: "neːnu tʃaːlaː alasaʈaɡaː unnaːnu"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "అలసటగా", ref: "te-0969" }
+      - { word: "ఉన్నాను", ref: "te-0633" }
+  - id: "te-0983"
+    target: "నెమ్మదిగా నడవండి."
+    reading: "nemmadigā naḍavaṇḍi."
+    ipa: "nemmad̪iɡaː naɖaʋaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "నడవండి", ref: "te-0636" }
+  - id: "te-0984"
+    target: "నేను వేగంగా పరిగెత్తగలను."
+    reading: "nēnu vēgaṅgā parigettagalanu."
+    ipa: "neːnu ʋeːɡaŋɡaː pariɡet̪t̪aɡalanu"
+    pos: "phrase"
+    bases:
+      - { word: "పరిగెత్తగలను", ref: "te-0843" }
+  - id: "te-0985"
+    target: "ఇక్కడ చలిగా ఉంది."
+    reading: "ikkaḍa caligā undi."
+    ipa: "ikkaɖa tʃaliɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చలిగా", ref: "te-0974" }
+      - { word: "ఉంది", ref: "te-0633" }

@@ -1,0 +1,137 @@
+schema: 1
+id: "bn-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1254"
+    target: "এখানে খুব গরম।"
+    reading: "ekhāne khub gôrom."
+    ipa: "ekʰane kʰub ɡɔrom"
+    pos: "phrase"
+  - id: "bn-1255"
+    target: "আমার খুব খিদে পায়।"
+    reading: "āmār khub khide pāy."
+    ipa: "amar kʰub kʰid̪e paj"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "পায়", ref: "bn-0891" }
+  - id: "bn-1256"
+    target: "আমার খিদে নেই।"
+    reading: "āmār khide nei."
+    ipa: "amar kʰid̪e nei"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "নেই", base: "নেই", reading: "nei" }
+  - id: "bn-1257"
+    target: "আমার ভয় করে।"
+    reading: "āmār bhôy kôre."
+    ipa: "amar bʱɔj kɔre"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "করে", ref: "bn-0102" }
+  - id: "bn-1258"
+    target: "ঘরটা খালি।"
+    reading: "ghôrṭā khāli."
+    ipa: "ɡʱɔrʈa kʰali"
+    pos: "phrase"
+    bases:
+      - { word: "ঘরটা", ref: "bn-0051" }
+  - id: "bn-1259"
+    target: "দোকান বন্ধ।"
+    reading: "dokān bôndho."
+    ipa: "d̪okan bɔnd̪ʱo"
+    pos: "phrase"
+  - id: "bn-1260"
+    target: "রাস্তাটা চওড়া।"
+    reading: "rāstāṭā côoṛā."
+    ipa: "rast̪aʈa tʃɔoɽa"
+    pos: "phrase"
+    bases:
+      - { word: "রাস্তাটা", ref: "bn-0313" }
+  - id: "bn-1261"
+    target: "গলিটা সরু।"
+    reading: "goliṭā soru."
+    ipa: "ɡoliʈa soru"
+    pos: "phrase"
+    bases:
+      - { word: "গলিটা", ref: "bn-1056" }
+  - id: "bn-1262"
+    target: "বাড়িটা অনেক উঁচু।"
+    reading: "bāṛiṭā ônek um̐cu."
+    ipa: "baɽiʈa ɔnek ũtʃu"
+    pos: "phrase"
+    bases:
+      - { word: "বাড়িটা", ref: "bn-0196" }
+  - id: "bn-1263"
+    target: "জামাটা ভিজে।"
+    reading: "jāmāṭā bhije."
+    ipa: "dʒamaʈa bʱidʒe"
+    pos: "phrase"
+    bases:
+      - { word: "জামাটা", ref: "bn-1189" }
+  - id: "bn-1264"
+    target: "আমার ছাতাটা শুকনো।"
+    reading: "āmār chātāṭā śukno."
+    ipa: "amar tʃʰat̪aʈa ʃukno"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "ছাতাটা", ref: "bn-1148" }
+  - id: "bn-1265"
+    target: "বোতলটা ভরা।"
+    reading: "botolṭā bhôrā."
+    ipa: "bot̪olʈa bʱɔra"
+    pos: "phrase"
+    bases:
+      - { word: "বোতলটা", ref: "bn-1157" }
+  - id: "bn-1266"
+    target: "এটা সত্যি।"
+    reading: "eṭā śotti."
+    ipa: "eʈa ʃot̪t̪i"
+    pos: "phrase"
+  - id: "bn-1267"
+    target: "এটা মিথ্যে।"
+    reading: "eṭā mitthe."
+    ipa: "eʈa mit̪t̪ʰe"
+    pos: "phrase"
+  - id: "bn-1268"
+    target: "তিনি অসুস্থ।"
+    reading: "tini ôśustho."
+    ipa: "t̪ini ɔʃust̪ʰo"
+    pos: "phrase"
+  - id: "bn-1269"
+    target: "আপনি সুস্থ আছেন।"
+    reading: "āpni śustho āchen."
+    ipa: "apni ʃust̪ʰo atʃʰen"
+    pos: "phrase"
+    bases:
+      - { word: "আছেন", base: "আছে", reading: "āche" }
+  - id: "bn-1270"
+    target: "ছেলেটা খুব শান্ত।"
+    reading: "cheleṭā khub śānto."
+    ipa: "tʃʰeleʈa kʰub ʃant̪o"
+    pos: "phrase"
+    bases:
+      - { word: "ছেলেটা", ref: "bn-0426" }
+  - id: "bn-1271"
+    target: "এটা ঠিক।"
+    reading: "eṭā ṭhik."
+    ipa: "eʈa ʈʰik"
+    pos: "phrase"
+  - id: "bn-1272"
+    target: "এটা ভুল।"
+    reading: "eṭā bhul."
+    ipa: "eʈa bʱul"
+    pos: "phrase"
