@@ -53,8 +53,10 @@ than hard-coded rules. Adding a language means adding files, never code.
   recognise a word long before you can produce it.
 - **FSRS is fitted on the phone.** The scheduler learns how you forget, per
   language and skill, from your own answers.
-- **Nothing leaves the phone.** There is no account, progress is saved on the
-  phone, and nothing is sent anywhere to fit your schedule.
+- **Your learning stays on the phone.** There is no account, progress is
+  saved on the phone, and nothing is sent anywhere to fit your schedule. The
+  app goes online only to check for updates and to send a report you choose
+  to send.
 
 ## Courses
 
