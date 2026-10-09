@@ -1,0 +1,137 @@
+schema: 1
+id: "bn-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1297"
+    target: "গরু দুধ দেয়।"
+    reading: "goru dudh dey."
+    ipa: "ɡoru d̪ud̪ʱ d̪ej"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "দেয়", ref: "bn-0888" }
+  - id: "bn-1298"
+    target: "কুকুরটা রাস্তায় দৌড়ায়।"
+    reading: "kukurṭā rāstāy douṛāy."
+    ipa: "kukurʈa rast̪aj d̪ouɽaj"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "কুকুরটা", ref: "bn-1277" }
+      - { word: "রাস্তায়", ref: "bn-0313" }
+      - { word: "দৌড়ায়", ref: "bn-1115" }
+  - id: "bn-1299"
+    target: "পাখিরা গাছে বসে।"
+    reading: "pākhirā gāche bôśe."
+    ipa: "pakʰira ɡatʃʰe bɔʃe"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "পাখিরা", ref: "bn-1289" }
+      - { word: "গাছে", base: "গাছ", reading: "gāch" }
+      - { word: "বসে", ref: "bn-0884" }
+  - id: "bn-1300"
+    target: "মাছ জলে থাকে।"
+    reading: "māch jôle thāke."
+    ipa: "matʃʰ dʒɔle t̪ʰake"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "জলে", ref: "bn-0350" }
+      - { word: "থাকে", ref: "bn-0875" }
+  - id: "bn-1301"
+    target: "বাঘ সুন্দরবনে থাকে।"
+    reading: "bāgh śundorbone thāke."
+    ipa: "baɡʱ ʃund̪orbone t̪ʰake"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "সুন্দরবনে", base: "সুন্দরবন", reading: "śundorbon" }
+      - { word: "থাকে", ref: "bn-0875" }
+  - id: "bn-1302"
+    target: "আমি সাপকে ভয় পাই।"
+    reading: "āmi śāpke bhôy pāi."
+    ipa: "ami ʃapke bʱɔj pai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first", "bn-rule-ke"]
+    bases:
+      - { word: "সাপকে", ref: "bn-1287" }
+      - { word: "পাই", ref: "bn-0891" }
+  - id: "bn-1303"
+    target: "আমাদের একটা বিড়াল আছে।"
+    reading: "āmāder ekṭā biṛāl āche."
+    ipa: "amad̪er ekʈa biɽal atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমাদের", ref: "bn-0834" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1304"
+    target: "বিড়ালটা দুধ খায়।"
+    reading: "biṛālṭā dudh khāy."
+    ipa: "biɽalʈa d̪ud̪ʱ kʰaj"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "বিড়ালটা", ref: "bn-1278" }
+      - { word: "খায়", ref: "bn-0876" }
+  - id: "bn-1305"
+    target: "হাতিটা অনেক বড়।"
+    reading: "hātiṭā ônek bôṛo."
+    ipa: "ɦat̪iʈa ɔnek bɔɽo"
+    pos: "phrase"
+    bases:
+      - { word: "হাতিটা", ref: "bn-1280" }
+  - id: "bn-1306"
+    target: "ঘোড়াগুলো মাঠে আছে।"
+    reading: "ghoṛāgulo māṭhe āche."
+    ipa: "ɡʱoɽaɡulo maʈʰe atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-plural", "bn-rule-loc"]
+    bases:
+      - { word: "ঘোড়াগুলো", ref: "bn-1279" }
+      - { word: "মাঠে", ref: "bn-1045" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1307"
+    target: "গ্রামে অনেক হাঁস আছে।"
+    reading: "grāme ônek hām̐s āche."
+    ipa: "ɡrame ɔnek ɦãs atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "গ্রামে", ref: "bn-1053" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1308"
+    target: "ছেলেটা ছাগলকে ডাকে।"
+    reading: "cheleṭā chāgolke ḍāke."
+    ipa: "tʃʰeleʈa tʃʰaɡolke ɖake"
+    pos: "phrase"
+    rules: ["bn-rule-ke", "bn-rule-present-third"]
+    bases:
+      - { word: "ছেলেটা", ref: "bn-0426" }
+      - { word: "ছাগলকে", ref: "bn-1275" }
+      - { word: "ডাকে", ref: "bn-0898" }
+  - id: "bn-1309"
+    target: "বাঁদরটা গাছে ওঠে।"
+    reading: "bām̐dorṭā gāche oṭhe."
+    ipa: "bãd̪orʈa ɡatʃʰe oʈʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc", "bn-rule-present-third"]
+    bases:
+      - { word: "বাঁদরটা", ref: "bn-1284" }
+      - { word: "গাছে", base: "গাছ", reading: "gāch" }
+      - { word: "ওঠে", ref: "bn-0885" }
+  - id: "bn-1310"
+    target: "ময়ূরটা খুব সুন্দর।"
+    reading: "moyurṭā khub śundor."
+    ipa: "mojurʈa kʰub ʃund̪or"
+    pos: "phrase"
+    bases:
+      - { word: "ময়ূরটা", ref: "bn-1292" }

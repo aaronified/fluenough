@@ -120,15 +120,15 @@ void main() {
     expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
     expect(onScreen(tester, find.text('Family')), isTrue);
     expect(
-      find.bySemanticsLabel(RegExp('^Family, unit 7, ${l10n.pathUpNext}')),
+      find.bySemanticsLabel(RegExp('^Family, unit 8, ${l10n.pathUpNext}')),
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(RegExp('^About me, unit 6, ${l10n.pathUnitDone}')),
+      find.bySemanticsLabel(RegExp('^About me, unit 7, ${l10n.pathUnitDone}')),
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(RegExp('^Work, unit 8, ${l10n.pathUnitAhead}')),
+      find.bySemanticsLabel(RegExp('^Work, unit 10, ${l10n.pathUnitAhead}')),
       findsOneWidget,
     );
     // Milestones: the first deck finished, words learned, the script.
@@ -136,9 +136,16 @@ void main() {
     expect(find.text(l10n.pathWordsLearned(50)), findsOneWidget);
     expect(find.text(l10n.pathScriptLearned), findsOneWidget);
     expect(find.text(l10n.pathScriptToGo(2)), findsOneWidget);
-    // No path marks levels yet, so none is drawn.
-    expect(find.byType(LevelHeader), findsNothing);
-    expect(find.byType(AchievementMark), findsNothing);
+    // Telugu's path marks A1, A2 and B1 (ADR-0036), so each level is
+    // drawn, with its achievement, the learner's own, A1, current.
+    expect(find.byType(LevelHeader), findsNWidgets(3));
+    expect(find.byType(AchievementMark), findsNWidgets(3));
+    expect(
+      tester
+          .widgetList<LevelHeader>(find.byType(LevelHeader))
+          .map((h) => (h.step.level, h.step.current)),
+      [(CefrLevel.a1, true), (CefrLevel.a2, false), (CefrLevel.b1, false)],
+    );
   });
 
   testWidgets('further down: rules known and the first passage read, '
@@ -252,7 +259,7 @@ void main() {
     expect(find.text(l10n.pathLevelB1), findsOneWidget);
     expect(find.byType(AchievementMark), findsNWidgets(3));
     expect(find.text(l10n.pathAchievement('A1')), findsOneWidget);
-    expect(find.text(l10n.pathUnitsToGo(6)), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGo(8)), findsOneWidget);
     expect(find.text(l10n.pathUnitsToGoComing(12, 7)), findsOneWidget);
     expect(find.text('Health'), findsOneWidget);
     expect(find.text(l10n.pathComingWords(60)), findsWidgets);
@@ -278,7 +285,7 @@ void main() {
     expect(find.text(l10n.pathLevelReached('A1')), findsOneWidget);
     expect(find.text(l10n.pathAchievement('A2')), findsOneWidget);
     expect(
-      find.bySemanticsLabel(RegExp('^Market, unit 13, ${l10n.pathUpNext}')),
+      find.bySemanticsLabel(RegExp('^Market, unit 16, ${l10n.pathUpNext}')),
       findsOneWidget,
     );
   });

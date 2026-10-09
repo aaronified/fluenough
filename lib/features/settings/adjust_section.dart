@@ -100,7 +100,8 @@ class AdjustSection extends StatelessWidget {
                 GroupedTile.toggle(
                   leading: const Icon(Icons.autorenew),
                   title: l10n.settingsAdjustAuto,
-                  subtitle: l10n.settingsAdjustAutoDesc,
+                  subtitleOn: l10n.settingsAdjustAutoOn,
+                  subtitleOff: l10n.settingsAdjustAutoOff,
                   value: state.settings.autoAdjust,
                   onChanged: (on) => state.settings.autoAdjust = on,
                 ),

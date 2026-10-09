@@ -22,6 +22,8 @@ cards:
     ipa: "sahaːjam tʃeːjaɳɖi"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "చేయండి", ref: "te-0621" }
   - id: te-0362
     target: "కాపాడండి!"
     native: "Help! Save me!"
@@ -77,12 +79,19 @@ cards:
     reading: "nēnu dāri tappipōyānu."
     ipa: "neːnu d̪aːri t̪appipoːjaːnu"
     pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తప్పిపోయాను", base: "తప్పిపోవడం", reading: "tappipōvaḍam", meaning: "to get lost; to go astray" }
   - id: te-0370
     target: "నాకు అర్థం కాలేదు."
     native: "I didn't understand."
     reading: "nāku artham kālēdu."
     ipa: "naːku art̪ʰam kaːleːd̪u"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "అర్థం", base: "అర్థం", reading: "artham", meaning: "meaning; understanding" }
+      - { word: "కాలేదు", ref: "te-0646" }
   - id: te-0371
     target: "బాత్‌రూమ్ ఎక్కడ?"
     native: "Where is the toilet?"

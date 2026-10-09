@@ -7,6 +7,9 @@ import '../../app/features.dart';
 import '../../app/memory_progress.dart';
 import '../../app/settings.dart';
 import '../../app/shell_tab.dart';
+import '../../app/skill.dart';
+import '../../core/speech/speech_engine.dart';
+import '../../core/tts/fixed_tts_engine.dart';
 import '../../core/tts/tts_engine.dart';
 import '../../core/updates/apk_install.dart';
 import '../../core/updates/release_check.dart';
@@ -26,6 +29,48 @@ abstract final class SettingsFixtures {
   /// Appearance as the design draws it: every control live.
   static AppState appearanceLive(AppState app) =>
       GalleryFixtures.state(app, features: FeatureRegistry.all());
+
+  /// Settings with adult content (18+) on: its line says rude words show.
+  static AppState adultOn(AppState app) => GalleryFixtures.state(app)
+    ..settings.adultContent = true
+    ..shellTab.value = ShellTab.settings;
+
+  /// Voices with speaking on: Hindi and Spanish heard on the phone, Telugu
+  /// only online, not yet allowed, and Spanish with two voices to choose
+  /// from, one needing a connection.
+  static AppState voicesSpeaking(AppState app) {
+    final state = AppState(
+      catalog: app.deckCatalog,
+      progress: MemoryProgress(),
+      tts: FixedTtsEngine(
+        const <String>{'hi', 'es'},
+        named: const <String, List<TtsVoice>>{
+          'es': <TtsVoice>[
+            TtsVoice(name: 'es-es-x-eea-local', locale: 'es-ES'),
+            TtsVoice(
+              name: 'es-es-x-eed-network',
+              locale: 'es-ES',
+              networkRequired: true,
+            ),
+          ],
+        },
+      ),
+      speech: FixedSpeechEngine(
+        onDevice: const <String>{'hi', 'es'},
+        online: const <String>{'te'},
+      ),
+      settings: SettingsNotifier(
+        enabledSkills: <Skill>{...Skill.values},
+        learningChosen: true,
+        spokenLanguages: const <String>['en'],
+      ),
+      clock: app.now,
+      profiles: const [GalleryFixtures.aro, GalleryFixtures.mira],
+      currentProfileId: GalleryFixtures.aro.id,
+    );
+    unawaited(state.startSpeech());
+    return state;
+  }
 
   /// Voices while the phone has not answered yet.
   static AppState voicesChecking(AppState app) => AppState(
@@ -191,8 +236,12 @@ class PendingTtsEngine implements TtsEngine {
       Completer<List<TtsVoice>>().future;
 
   @override
-  Future<void> speak(String text, {required String bcp47, double rate = 0.5}) =>
-      Future<void>.value();
+  Future<void> speak(
+    String text, {
+    required String bcp47,
+    double rate = 0.5,
+    String? voice,
+  }) => Future<void>.value();
 
   @override
   Future<void> stop() => Future<void>.value();

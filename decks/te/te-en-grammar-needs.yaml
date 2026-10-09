@@ -22,12 +22,17 @@ cards:
     reading: "mīku ēm kāvāli?"
     ipa: "miːku eːm kaːʋaːli"
     pos: "phrase"
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "ఏం", ref: "te-0160" }
   - id: te-0462
     target: "నాకు నీళ్ళు కావాలి."
     native: "I'd like some water."
     reading: "nāku nīḷḷu kāvāli."
     ipa: "naːku niːɭɭu kaːʋaːli"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
   - id: te-0463
     target: "వద్దు"
     native: "is not wanted; no, thank you"
@@ -41,6 +46,9 @@ cards:
     reading: "nāku idi vaddu."
     ipa: "naːku id̪i ʋad̪d̪u"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇది", ref: "te-0600" }
   - ref: te-0249
   - id: te-0465
     target: "అవసరం"
@@ -61,6 +69,8 @@ cards:
     reading: "nāku sahāyam kāvāli."
     ipa: "naːku sahaːjam kaːʋaːli"
     pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
   - id: te-0468
     target: "నాకు ఇంటికి వెళ్ళాలని ఉంది."
     native: "I want to go home."
@@ -68,3 +78,8 @@ cards:
     ipa: "naːku iɳʈiki ʋeɭɭaːlani und̪i"
     pos: "phrase"
     notes: "To want to do something: the verb in -ఆలని (-ālani), then ఉంది (undi), 'to me there is a wish to go'."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇంటికి", ref: "te-0195" }
+      - { word: "వెళ్ళాలని", ref: "te-0622" }
+      - { word: "ఉంది", ref: "te-0633" }

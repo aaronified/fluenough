@@ -150,7 +150,7 @@ void main() {
     final title = find.text(l10n.skillGrammar);
     await scrollTo(tester, title);
     expect(title, findsOneWidget);
-    expect(find.text(l10n.skillGrammarSettingsDesc), findsOneWidget);
+    expect(find.text(l10n.skillGrammarSettingsOn), findsOneWidget);
     expect(
       state.sessionModes,
       containsAll(<DrillMode>[DrillMode.grammarUnderstood, DrillMode.grammar]),

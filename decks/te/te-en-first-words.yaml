@@ -78,12 +78,20 @@ cards:
     ipa: "naːku t̪eluɡu raːd̪u"
     pos: "phrase"
     notes: "Literally 'Telugu does not come to me'."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
+      - { word: "రాదు", ref: "te-0623" }
   - id: te-0144
     target: "నేను ఇంకా తెలుగు నేర్చుకుంటున్నాను."
     native: "I'm still learning Telugu."
     reading: "nēnu iṅkā telugu nērcukuṇṭunnānu."
     ipa: "neːnu iŋkaː t̪eluɡu neːrtʃukuɳʈunnaːnu"
     pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
+      - { word: "నేర్చుకుంటున్నాను", ref: "te-0645" }
   - id: te-0145
     target: "నెమ్మదిగా మాట్లాడండి."
     native: "Please speak slowly."
@@ -92,6 +100,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     notes: "The ending -అండి (-aṇḍi) makes a polite request: కూర్చోండి (kūrcōṇḍi), please sit."
+    bases:
+      - { word: "నెమ్మదిగా", base: "నెమ్మది", reading: "nemmadi", meaning: "slow; calm" }
+      - { word: "మాట్లాడండి", ref: "te-0644" }
   - id: te-0146
     target: "మళ్ళీ చెప్పండి."
     native: "Please say that again."
@@ -99,3 +110,6 @@ cards:
     ipa: "maɭɭiː tʃeppaɳɖi"
     pos: "phrase"
     tags: ["polite"]
+    bases:
+      - { word: "మళ్ళీ", ref: "te-1048" }
+      - { word: "చెప్పండి", ref: "te-0628" }

@@ -22,12 +22,18 @@ cards:
     reading: "snānam cēyaḍam"
     ipa: "snaːnam tʃeːjaɖam"
     pos: "phrase"
+    bases:
+      - { word: "స్నానం", base: "స్నానం", reading: "snānam", meaning: "bath" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0443
     target: "పళ్ళు తోముకోవడం"
     native: "to brush one's teeth"
     reading: "paḷḷu tōmukōvaḍam"
     ipa: "paɭɭu t̪oːmukoːʋaɖam"
     pos: "phrase"
+    bases:
+      - { word: "పళ్ళు", ref: "te-0736" }
+      - { word: "తోముకోవడం", base: "తోముకోవడం", reading: "tōmukōvaḍam", meaning: "to scrub; to brush (oneself)" }
   - id: te-0444
     target: "టిఫిన్"
     native: "breakfast; a light meal"
@@ -41,6 +47,8 @@ cards:
     reading: "madhyāhna bhōjanam"
     ipa: "mad̪ʱjaːhna bʱoːdʒanam"
     pos: "phrase"
+    bases:
+      - { word: "మధ్యాహ్న", base: "మధ్యాహ్నం", reading: "madhyāhnam", meaning: "midday; afternoon" }
   - id: te-0446
     target: "రాత్రి భోజనం"
     native: "dinner"
@@ -53,18 +61,27 @@ cards:
     reading: "paniki veḷḷaḍam"
     ipa: "paniki ʋeɭɭaɖam"
     pos: "phrase"
+    bases:
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్ళడం", ref: "te-0622" }
   - id: te-0448
     target: "ఇంటికి రావడం"
     native: "to come home"
     reading: "iṇṭiki rāvaḍam"
     ipa: "iɳʈiki raːʋaɖam"
     pos: "phrase"
+    bases:
+      - { word: "ఇంటికి", ref: "te-0195" }
+      - { word: "రావడం", ref: "te-0623" }
   - id: te-0449
     target: "వంట చేయడం"
     native: "to cook"
     reading: "vaṇṭa cēyaḍam"
     ipa: "ʋaɳʈa tʃeːjaɖam"
     pos: "phrase"
+    bases:
+      - { word: "వంట", base: "వంట", reading: "vaṇṭa", meaning: "cooking; a cooked dish" }
+      - { word: "చేయడం", ref: "te-0621" }
   - id: te-0450
     target: "పడుకోవడం"
     native: "to go to bed; to lie down"
@@ -111,18 +128,30 @@ cards:
     reading: "nēnu rōjū ēḍu gaṇṭalaku lēstānu."
     ipa: "neːnu roːdʒuː eːɖu ɡaɳʈalaku leːst̪aːnu"
     pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "గంటలకు", ref: "te-0313" }
+      - { word: "లేస్తాను", ref: "te-0441" }
   - id: te-0457
     target: "తర్వాత నేను పనికి వెళ్తాను."
     native: "Then I go to work."
     reading: "tarvāta nēnu paniki veḷtānu."
     ipa: "t̪arʋaːt̪a neːnu paniki ʋeɭt̪aːnu"
     pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్తాను", ref: "te-0622" }
   - id: te-0458
     target: "నేను రాత్రి పదకొండు గంటలకు పడుకుంటాను."
     native: "I go to bed at eleven at night."
     reading: "nēnu rātri padakoṇḍu gaṇṭalaku paḍukuṇṭānu."
     ipa: "neːnu raːt̪ri pad̪akoɳɖu ɡaɳʈalaku paɖukuɳʈaːnu"
     pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "గంటలకు", ref: "te-0313" }
+      - { word: "పడుకుంటాను", ref: "te-0450" }
   - id: te-0459
     target: "నేను ఎప్పుడూ ఆలస్యంగా రాను."
     native: "I'm never late."
@@ -130,3 +159,7 @@ cards:
     ipa: "neːnu eppuɖuː aːlasjaŋɡaː raːnu"
     pos: "phrase"
     notes: "'Never' is ఎప్పుడూ (eppuḍū) with a negative verb: 'I always don't come late'."
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "ఆలస్యంగా", base: "ఆలస్యం", reading: "ālasyam", meaning: "delay; lateness" }
+      - { word: "రాను", ref: "te-0623" }

@@ -205,7 +205,9 @@ class UnitContent {
   UnitContent(this.decks) {
     final seen = <String>{};
     for (final entry in decks) {
-      if (entry.deck.pattern != null) {
+      // A grammar deck's table, or a rules deck's (ADR-0036): its cells
+      // are forms of words taught elsewhere, not words of their own.
+      if (entry.deck.pattern != null || entry.deck.kind == DeckKind.rules) {
         rules.add(entry);
         continue;
       }
@@ -230,7 +232,8 @@ class UnitContent {
   /// Its sentences and phrases, each once, in order.
   final List<Card> sentences = <Card>[];
 
-  /// Its rules: the grammar decks, each one table (ADR-0010).
+  /// Its rules: the grammar and rules decks, each one table (ADR-0010,
+  /// ADR-0036).
   final List<DeckEntry> rules = <DeckEntry>[];
 
   /// How many reading passages it has.

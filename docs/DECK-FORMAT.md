@@ -1163,7 +1163,7 @@ and no `theme` of its own: each passage names the theme it follows.
 | Field | Required | Notes |
 |---|---|---|
 | `text` | yes | The sentence in the language learned, exactly as written. Quote it. |
-| `reading` | yes, in a script that needs one | Its romanisation, written as [`decks/README.md`](../decks/README.md) says. Shown when Show romanisation is on. |
+| `reading` | yes, in a script that needs one | Its romanisation, written as [`decks/README.md`](../decks/README.md) says. Shown when Latin-letter readings is on. |
 | `ipa` | no | How it is said, in the IPA, without punctuation or slashes. |
 
 **A passage's text is kept letter for letter.** Passages may quote a book,
@@ -1920,7 +1920,7 @@ Each feature:
 | `id` | yes | `[a-z0-9-]+`, unique in the guide. |
 | `name` | yes | The feature in plain English. |
 | `term` | no | Its name in the language: `"মাত্রা"`. |
-| `reading` | no | The term in the Latin alphabet, shown under it when Show romanisation is on. Only with a `term`. |
+| `reading` | no | The term in the Latin alphabet, shown under it when Latin-letter readings is on. Only with a `term`. |
 | `ipa` | no | The term in the IPA. Only with a `term`. |
 | `example` | yes | One letter or short word that shows it, drawn large. |
 | `text` | yes | What to look for, for a beginner from English. |

@@ -1,0 +1,153 @@
+schema: 1
+id: "bn-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1334"
+    target: "আমি এক কিলো আলু কিনি।"
+    reading: "āmi ek kilo ālu kini."
+    ipa: "ami ek kilo alu kini"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "কিনি", ref: "bn-0890" }
+  - id: "bn-1335"
+    target: "এক ডজন ডিম কত?"
+    reading: "ek ḍôjon ḍim kôto?"
+    ipa: "ek ɖɔdʒon ɖim kɔt̪o"
+    pos: "phrase"
+  - id: "bn-1336"
+    target: "এক প্যাকেট চা দিন।"
+    reading: "ek pêkeṭ cā din."
+    ipa: "ek pækeʈ tʃa d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-1337"
+    target: "বাবা এক লিটার দুধ আনেন।"
+    reading: "bābā ek liṭār dudh ānen."
+    ipa: "baba ek liʈar d̪ud̪ʱ anen"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "আনেন", ref: "bn-0893" }
+  - id: "bn-1338"
+    target: "বাজারে প্রচুর মাছ আছে।"
+    reading: "bājāre procur māch āche."
+    ipa: "badʒare protʃur matʃʰ atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "বাজারে", ref: "bn-1040" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1339"
+    target: "ঘরে অল্প চিনি আছে।"
+    reading: "ghôre ôlpo cini āche."
+    ipa: "ɡʱɔre ɔlpo tʃini atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "ঘরে", ref: "bn-0051" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-1340"
+    target: "কয়েকটা কলা দিন।"
+    reading: "kôyekṭā kôlā din."
+    ipa: "kɔjekʈa kɔla d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "কয়েকটা", ref: "bn-1312" }
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-1341"
+    target: "প্রতি কিলো কত?"
+    reading: "proti kilo kôto?"
+    ipa: "prot̪i kilo kɔt̪o"
+    pos: "phrase"
+  - id: "bn-1342"
+    target: "আমাকে আরেকটা প্লেট দিন।"
+    reading: "āmāke ārekṭā pleṭ din."
+    ipa: "amake arekʈa pleʈ d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-obj", "bn-rule-polite-request"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "আরেকটা", ref: "bn-1331" }
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-1343"
+    target: "আমি দুবার চা খাই।"
+    reading: "āmi dubār cā khāi."
+    ipa: "ami d̪ubar tʃa kʰai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "দুবার", base: "দুবার", reading: "dubār" }
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-1344"
+    target: "এক ফোঁটা জল নেই।"
+    reading: "ek phom̐ṭā jôl nei."
+    ipa: "ek pʰõʈa dʒɔl nei"
+    pos: "phrase"
+    bases:
+      - { word: "নেই", base: "নেই", reading: "nei" }
+  - id: "bn-1345"
+    target: "ঘরে কোনো মশা নেই।"
+    reading: "ghôre kono môśā nei."
+    ipa: "ɡʱɔre kono mɔʃa nei"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "ঘরে", ref: "bn-0051" }
+      - { word: "নেই", base: "নেই", reading: "nei" }
+  - id: "bn-1346"
+    target: "এক টুকরো রুটি দিন।"
+    reading: "ek ṭukro ruṭi din."
+    ipa: "ek ʈukro ruʈi d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-1347"
+    target: "অর্ধেকটা আপনি নিন।"
+    reading: "ôrdhekṭā āpni nin."
+    ipa: "ɔrd̪ʱekʈa apni nin"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "অর্ধেকটা", ref: "bn-1317" }
+      - { word: "নিন", ref: "bn-0889" }
+  - id: "bn-1348"
+    target: "সামান্য নুন দিন।"
+    reading: "śāmānno nun din."
+    ipa: "ʃamanno nun d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "দিন", ref: "bn-0888" }
+  - id: "bn-1349"
+    target: "এটা আমার ভাগ।"
+    reading: "eṭā āmār bhāg."
+    ipa: "eʈa amar bʱaɡ"
+    pos: "phrase"
+    rules: ["bn-rule-pronoun-gen"]
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-1350"
+    target: "এক জোড়া জুতো কত?"
+    reading: "ek joṛā juto kôto?"
+    ipa: "ek dʒoɽa dʒut̪o kɔt̪o"
+    pos: "phrase"
+  - id: "bn-1351"
+    target: "ঝুড়িতে অনেক আম আছে।"
+    reading: "jhuṛite ônek ām āche."
+    ipa: "dʒʱuɽit̪e ɔnek am atʃʰe"
+    pos: "phrase"
+    rules: ["bn-rule-loc"]
+    bases:
+      - { word: "ঝুড়িতে", ref: "bn-1325" }
+      - { word: "আছে", base: "আছে", reading: "āche" }

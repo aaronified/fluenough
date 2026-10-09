@@ -1,0 +1,25 @@
+schema: 1
+id: "bn-en-grammar-pronoun-forms"
+kind: "layer"
+core: "bn-grammar-pronoun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns: my, me, with me"
+description: "How I, you, he, she, it and they change before a noun, as the one acted on, and with another word for with. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "gen": "{meaning}: of, the form before a noun"
+    "obj": "{meaning}: the one who is acted on, or given something"
+    "with": "{meaning}: with"
+rules:
+  "bn-rule-pronoun-gen":
+    name: "-র (-r): my, your, his, her"
+    explanation: "The possessive says whose it is and never changes for the thing owned: {1} is 'my', {2} 'your' to a friend, {3} 'his' or 'her', {4} 'our'. For a person you respect it is {5}, 'your', and {6}, 'his' or 'her'. It goes before the noun: {7}, my friend."
+  "bn-rule-pronoun-obj":
+    name: "-কে (-ke): me, to me"
+    explanation: "The ending {1} marks the person who receives or is acted on: {2} is 'me' or 'to me', {3} 'you' or 'to you', {4} 'him' or 'her'. In the plural the possessive and the object are alike, {5}, and many people add {1}, {6}, to make the object clear."
+  "bn-rule-pronoun-with":
+    name: "সঙ্গে (śôṅge): with"
+    explanation: "{1} follows the possessive and means with: {2}, with me, {3}, with you. People also say {4} for it."

@@ -1,0 +1,93 @@
+schema: 1
+id: "bn-grammar-pronoun-forms"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["pronoun"]
+  slots: ["gen", "obj", "with"]
+  rows:
+    - word: "bn-0833"
+      forms: { "gen": "আমার", "obj": "আমাকে", "with": "আমার সঙ্গে" }
+      readings: { "gen": "āmār", "obj": "āmāke", "with": "āmār śôṅge" }
+    - word: "bn-0834"
+      forms: { "gen": "আমাদের", "obj": ["আমাদেরকে", "আমাদের"], "with": "আমাদের সঙ্গে" }
+      readings: { "gen": "āmāder", "obj": ["āmāderke", "āmāder"], "with": "āmāder śôṅge" }
+    - word: "bn-0835"
+      forms: { "gen": "তোমার", "obj": "তোমাকে", "with": "তোমার সঙ্গে" }
+      readings: { "gen": "tomār", "obj": "tomāke", "with": "tomār śôṅge" }
+    - word: "bn-0836"
+      forms: { "gen": "তোমাদের", "obj": ["তোমাদেরকে", "তোমাদের"], "with": "তোমাদের সঙ্গে" }
+      readings: { "gen": "tomāder", "obj": ["tomāderke", "tomāder"], "with": "tomāder śôṅge" }
+    - word: "bn-0837"
+      forms: { "gen": "তোর", "obj": "তোকে", "with": "তোর সঙ্গে" }
+      readings: { "gen": "tor", "obj": "toke", "with": "tor śôṅge" }
+    - word: "bn-0838"
+      forms: { "gen": "আপনাদের", "obj": ["আপনাদেরকে", "আপনাদের"], "with": "আপনাদের সঙ্গে" }
+      readings: { "gen": "āpnāder", "obj": ["āpnāderke", "āpnāder"], "with": "āpnāder śôṅge" }
+    - word: "bn-0839"
+      forms: { "gen": "তার", "obj": "তাকে", "with": "তার সঙ্গে" }
+      readings: { "gen": "tār", "obj": "tāke", "with": "tār śôṅge" }
+    - word: "bn-0840"
+      forms: { "gen": "তাদের", "obj": ["তাদেরকে", "তাদের"], "with": "তাদের সঙ্গে" }
+      readings: { "gen": "tāder", "obj": ["tāderke", "tāder"], "with": "tāder śôṅge" }
+    - word: "bn-0841"
+      forms: { "gen": "তাঁর", "obj": "তাঁকে", "with": "তাঁর সঙ্গে" }
+      readings: { "gen": "tām̐r", "obj": "tām̐ke", "with": "tām̐r śôṅge" }
+    - word: "bn-0842"
+      forms: { "gen": "তাঁদের", "obj": ["তাঁদেরকে", "তাঁদের"], "with": "তাঁদের সঙ্গে" }
+      readings: { "gen": "tām̐der", "obj": ["tām̐derke", "tām̐der"], "with": "tām̐der śôṅge" }
+    - word: "bn-0843"
+      forms: { "gen": "এর", "obj": "একে", "with": "এর সঙ্গে" }
+      readings: { "gen": "er", "obj": "eke", "with": "er śôṅge" }
+    - word: "bn-0844"
+      forms: { "gen": "ওর", "obj": "ওকে", "with": "ওর সঙ্গে" }
+      readings: { "gen": "or", "obj": "oke", "with": "or śôṅge" }
+    - word: "bn-0845"
+      forms: { "gen": ["এঁর", "এনার"], "obj": ["এঁকে", "এনাকে"], "with": ["এঁর সঙ্গে", "এনার সঙ্গে"] }
+      readings: { "gen": ["em̐r", "enār"], "obj": ["em̐ke", "enāke"], "with": ["em̐r śôṅge", "enār śôṅge"] }
+    - word: "bn-0846"
+      forms: { "gen": ["ওঁর", "ওনার"], "obj": ["ওঁকে", "ওনাকে"], "with": ["ওঁর সঙ্গে", "ওনার সঙ্গে"] }
+      readings: { "gen": ["om̐r", "onār"], "obj": ["om̐ke", "onāke"], "with": ["om̐r śôṅge", "onār śôṅge"] }
+    - word: "bn-0847"
+      forms: { "gen": "এদের", "obj": ["এদেরকে", "এদের"], "with": "এদের সঙ্গে" }
+      readings: { "gen": "eder", "obj": ["ederke", "eder"], "with": "eder śôṅge" }
+    - word: "bn-0848"
+      forms: { "gen": "ওদের", "obj": ["ওদেরকে", "ওদের"], "with": "ওদের সঙ্গে" }
+      readings: { "gen": "oder", "obj": ["oderke", "oder"], "with": "oder śôṅge" }
+    - word: "bn-0849"
+      forms: { "gen": "এটার", "obj": "এটাকে", "with": "এটার সঙ্গে" }
+      readings: { "gen": "eṭār", "obj": "eṭāke", "with": "eṭār śôṅge" }
+    - word: "bn-0850"
+      forms: { "gen": "ওটার", "obj": "ওটাকে", "with": "ওটার সঙ্গে" }
+      readings: { "gen": "oṭār", "obj": "oṭāke", "with": "oṭār śôṅge" }
+    - word: "bn-0851"
+      forms: { "gen": "সেটার", "obj": "সেটাকে", "with": "সেটার সঙ্গে" }
+      readings: { "gen": "śeṭār", "obj": "śeṭāke", "with": "śeṭār śôṅge" }
+    - word: "bn-0852"
+      forms: { "gen": "এগুলোর", "obj": "এগুলোকে", "with": "এগুলোর সঙ্গে" }
+      readings: { "gen": "egulor", "obj": "eguloke", "with": "egulor śôṅge" }
+    - word: "bn-0853"
+      forms: { "gen": "ওগুলোর", "obj": "ওগুলোকে", "with": "ওগুলোর সঙ্গে" }
+      readings: { "gen": "ogulor", "obj": "oguloke", "with": "ogulor śôṅge" }
+    - word: "bn-0854"
+      forms: { "gen": "সবার", "obj": "সবাইকে", "with": "সবার সঙ্গে" }
+      readings: { "gen": "śôbār", "obj": "śôbāike", "with": "śôbār śôṅge" }
+    - word: "bn-0855"
+      forms: { "gen": "নিজের", "obj": "নিজেকে", "with": "নিজের সঙ্গে" }
+      readings: { "gen": "nijer", "obj": "nijeke", "with": "nijer śôṅge" }
+rules:
+  - id: "bn-rule-pronoun-gen"
+    slots: ["gen"]
+    words: [{ word: "আমার", reading: "āmār" }, { word: "তোমার", reading: "tomār" }, { word: "তার", reading: "tār" }, { word: "আমাদের", reading: "āmāder" }, { word: "আপনার", reading: "āpnār" }, { word: "তাঁর", reading: "tām̐r" }, { word: "আমার বন্ধু", reading: "āmār bondhu" }]
+  - id: "bn-rule-pronoun-obj"
+    slots: ["obj"]
+    words: [{ word: "-কে", reading: "-ke" }, { word: "আমাকে", reading: "āmāke" }, { word: "তোমাকে", reading: "tomāke" }, { word: "তাকে", reading: "tāke" }, { word: "আমাদের", reading: "āmāder" }, { word: "আমাদেরকে", reading: "āmāderke" }]
+  - id: "bn-rule-pronoun-with"
+    slots: ["with"]
+    words: [{ word: "সঙ্গে", reading: "śôṅge" }, { word: "আমার সঙ্গে", reading: "āmār śôṅge" }, { word: "তোমার সঙ্গে", reading: "tomār śôṅge" }, { word: "সাথে", reading: "sāthe" }]

@@ -1,0 +1,178 @@
+schema: 1
+id: "bn-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0833"
+    target: "আমি"
+    reading: "āmi"
+    ipa: "ami"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আমি", reading: "āmi" }] }
+  - id: "bn-0834"
+    target: "আমরা"
+    reading: "āmrā"
+    ipa: "amra"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "আমরা", reading: "āmrā" }, { word: "আমি", reading: "āmi" }, { word: "আমি যাই", reading: "āmi jāi" }, { word: "আমরা যাই", reading: "āmrā jāi" }] }
+  - id: "bn-0835"
+    target: "তুমি"
+    reading: "tumi"
+    ipa: "t̪umi"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আপনি", reading: "āpni" }] }
+  - id: "bn-0836"
+    target: "তোমরা"
+    reading: "tomrā"
+    ipa: "t̪omra"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "তুমি", reading: "tumi" }, { word: "তুমি যাও", reading: "tumi jāo" }, { word: "তোমরা যাও", reading: "tomrā jāo" }] }
+  - id: "bn-0837"
+    target: "তুই"
+    reading: "tui"
+    ipa: "t̪ui"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "তুই যাস", reading: "tui jāś" }] }
+  - id: "bn-0838"
+    target: "আপনারা"
+    reading: "āpnārā"
+    ipa: "apnara"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "আপনি", reading: "āpni" }, { word: "আপনি যান", reading: "āpni jān" }, { word: "আপনারা যান", reading: "āpnārā jān" }] }
+  - id: "bn-0839"
+    target: "সে"
+    reading: "śe"
+    ipa: "ʃe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "সে", reading: "śe" }, { word: "এ", reading: "e" }, { word: "ও", reading: "o" }] }
+  - id: "bn-0840"
+    target: "তারা"
+    reading: "tārā"
+    ipa: "t̪ara"
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0842", words: [{ word: "তাঁরা", reading: "tām̐rā" }, { word: "তারা", reading: "tārā" }] }
+  - id: "bn-0841"
+    target: "তিনি"
+    reading: "tini"
+    ipa: "t̪ini"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "তিনি যান", reading: "tini jān" }] }
+  - id: "bn-0842"
+    target: "তাঁরা"
+    reading: "tām̐rā"
+    ipa: "t̪ãra"
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0840", words: [{ word: "ঁ", reading: "m̐" }, { word: "তারা", reading: "tārā" }] }
+  - id: "bn-0843"
+    target: "এ"
+    reading: "e"
+    ipa: "e"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "এ", reading: "e" }, { word: "ও", reading: "o" }, { word: "এরা", reading: "erā" }, { word: "ওরা", reading: "orā" }] }
+  - id: "bn-0844"
+    target: "ও"
+    reading: "o"
+    ipa: "o"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ও", reading: "o" }, { word: "রাম ও শ্যাম", reading: "rām o śêm" }] }
+  - id: "bn-0845"
+    target: "ইনি"
+    reading: "ini"
+    ipa: "ini"
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0846", words: [{ word: "ইনি", reading: "ini" }, { word: "উনি", reading: "uni" }] }
+  - id: "bn-0846"
+    target: "উনি"
+    reading: "uni"
+    ipa: "uni"
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0845", words: [{ word: "উনি", reading: "uni" }, { word: "ইনি", reading: "ini" }] }
+  - id: "bn-0847"
+    target: "এরা"
+    reading: "erā"
+    ipa: "era"
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0848", words: [{ word: "এরা", reading: "erā" }, { word: "ওরা", reading: "orā" }] }
+  - id: "bn-0848"
+    target: "ওরা"
+    reading: "orā"
+    ipa: "ora"
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0847", words: [{ word: "ওরা", reading: "orā" }, { word: "এরা", reading: "erā" }] }
+  - id: "bn-0849"
+    target: "এটা"
+    reading: "eṭā"
+    ipa: "eʈa"
+    alt_target: ["এটি"]
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0850", words: [{ word: "এটা", reading: "eṭā" }, { word: "ওটা", reading: "oṭā" }] }
+  - id: "bn-0850"
+    target: "ওটা"
+    reading: "oṭā"
+    ipa: "oʈa"
+    alt_target: ["ওটি"]
+    pos: "pronoun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0849", words: [{ word: "ওটা", reading: "oṭā" }, { word: "এটা", reading: "eṭā" }] }
+  - id: "bn-0851"
+    target: "সেটা"
+    reading: "śeṭā"
+    ipa: "ʃeʈa"
+    alt_target: ["সেটি"]
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সেটা", reading: "śeṭā" }, { word: "-টা", reading: "-ṭā" }, { word: "-টি", reading: "-ṭi" }] }
+  - id: "bn-0852"
+    target: "এগুলো"
+    reading: "egulo"
+    ipa: "eɡulo"
+    alt_target: ["এগুলি"]
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "এটা", reading: "eṭā" }, { word: "এগুলো", reading: "egulo" }, { word: "-গুলো", reading: "-gulo" }, { word: "-রা", reading: "-rā" }] }
+  - id: "bn-0853"
+    target: "ওগুলো"
+    reading: "ogulo"
+    ipa: "oɡulo"
+    alt_target: ["ওগুলি"]
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ওটা", reading: "oṭā" }, { word: "ওরা", reading: "orā" }] }
+  - id: "bn-0854"
+    target: "সবাই"
+    reading: "śôbāi"
+    ipa: "ʃɔbai"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সব", reading: "śôb" }, { word: "-ই", reading: "-i" }, { word: "সে", reading: "śe" }, { word: "সবাই যায়", reading: "śôbāi jāy" }] }
+  - id: "bn-0855"
+    target: "নিজে"
+    reading: "nije"
+    ipa: "nidʒe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আমি নিজে", reading: "āmi nije" }, { word: "নিজের", reading: "nijer" }] }
+  - ref: "bn-0138"

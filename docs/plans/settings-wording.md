@@ -64,6 +64,10 @@ switch per activity, and Listening becomes "Hear the word, give its meaning".
 Lines that depend on the phone stay, added after the state: Listening with
 no voice reads "No voice for {language} on this phone".
 
+Lines that depend on Sound follow it too. While Sound is off, Play words
+automatically, greyed out, reads "Nothing plays while sound is off; then…",
+and a skill that needs sound, while on, reads "Skipped while sound is off".
+
 ## What it takes
 
 1. ARB strings in pairs (`…On`, `…Off`), with descriptions for translators.
