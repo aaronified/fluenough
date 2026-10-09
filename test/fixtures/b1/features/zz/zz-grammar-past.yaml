@@ -1,0 +1,20 @@
+# A grammar core (B1 format, spec 2.5): the table's language side.
+schema: 1
+id: "zz-grammar-past"
+part: "core"
+kind: "grammar"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC0-1.0"
+pattern:
+  slots: ["నేను", "నువ్వు"]
+  entries:
+    - lemma: "వెళ్ళు"
+      key: "vellu"
+      reading: "veḷḷu"
+      forms: { "నేను": "వెళ్ళాను", "నువ్వు": "వెళ్ళావు" }
+      readings: { "నేను": "veḷḷānu", "నువ్వు": "veḷḷāvu" }
+    - lemma: "తిను"
+      key: "tinu"
+      reading: "tinu"
+      forms: { "నేను": "తిన్నాను", "నువ్వు": "తిన్నావు" }
+      readings: { "నేను": "tinnānu", "నువ్వు": "tinnāvu" }

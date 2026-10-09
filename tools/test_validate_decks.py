@@ -46,17 +46,18 @@ class BundledAssetCheck(unittest.TestCase):
 
         (self.tmp / "decks" / "es").mkdir(parents=True)
         shutil.copy(SAMPLE_DECK, self.tmp / "decks" / "es")
-        self.write_path("es", ["es-en-core-100"])
+        self.write_path("es", ["es-core-100"])
         # The sample deck's pictures, which the validator looks for beside
         # the tools directory it runs from.
         shutil.copytree(VALIDATOR.parent.parent / "assets" / "pictures",
                         self.tmp / "assets" / "pictures")
 
     def write_path(self, lang: str, decks: list[str]) -> None:
-        """The course path every course with a deck needs (ADR-0013)."""
-        (self.tmp / "decks" / lang / f"{lang}-en-path.yaml").write_text(
-            f"schema: 1\nkind: path\nid: {lang}-en-path\nlanguage: {lang}\n"
-            f"native: en\nunits:\n  - [{', '.join(decks)}]\n",
+        """The path every language with a deck needs (ADR-0013, ADR-0036),
+        listing core ids."""
+        (self.tmp / "decks" / lang / f"{lang}-path.yaml").write_text(
+            f"schema: 1\nkind: path\nid: {lang}-path\nlanguage: {lang}\n"
+            f"units:\n  - [{', '.join(decks)}]\n",
             encoding="utf-8",
         )
 
@@ -70,7 +71,7 @@ class BundledAssetCheck(unittest.TestCase):
         deck = deck.replace("name: Spanish", "name: Hindi")
         deck = deck.replace("tts: es-ES", "tts: hi-IN")
         (hi / "hi-en-probe.yaml").write_text(deck, encoding="utf-8")
-        self.write_path("hi", ["hi-en-probe"])
+        self.write_path("hi", ["hi-probe"])
 
     def run_validator(
         self, target: str, cwd: Path
@@ -161,11 +162,11 @@ class BundledAssetCheck(unittest.TestCase):
         result = self.run_validator(str(elsewhere), self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout)
 
-    def test_a_course_with_a_deck_needs_a_path(self) -> None:
-        (self.tmp / "decks" / "es" / "es-en-path.yaml").unlink()
+    def test_a_language_with_a_deck_needs_a_path(self) -> None:
+        (self.tmp / "decks" / "es" / "es-path.yaml").unlink()
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 1, result.stdout)
-        self.assertIn("es from en has no path", result.stdout)
+        self.assertIn("es has no path; add es-path.yaml in decks/es/", result.stdout)
 
     def test_one_deck_validates_alone_when_its_path_is_on_disk(self) -> None:
         result = self.run_validator("decks/es/es-en-core-100.yaml", self.tmp)

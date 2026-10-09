@@ -47,6 +47,12 @@ import 'skill.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
 
+/// A native language that teaches a course, as the learner is offered it
+/// (ADR-0036): the language, and how many of the language's written units
+/// its decks teach, of how many. Both are null for a language with no
+/// path, where coverage is not defined.
+typedef NativeOption = ({LanguageInfo native, int? covered, int? total});
+
 /// The current time. Injected so that tests and the gallery can fix it.
 typedef Clock = DateTime Function();
 
@@ -437,15 +443,24 @@ class AppState extends ChangeNotifier {
 
   /// The decks in the languages the current profile learns.
   ///
-  /// Decks taught from a language the learner speaks come first, best known
-  /// first (#53); otherwise the catalog's order holds.
+  /// Each language's decks taught from the language its course is learned
+  /// from ([courseNative]) come first, then those taught from a language
+  /// the learner speaks, best known first (#53); otherwise the catalog's
+  /// order holds. A review takes a card shared across native languages from
+  /// the first deck that has it, so it is shown as the course teaches it.
   List<DeckEntry> get profileDecks {
     final mine = <DeckEntry>[
       for (final entry in decks)
         if (currentProfile.learns(entry.language.code)) entry,
     ];
-    int rank(DeckEntry e) =>
-        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final natives = <String, String?>{
+      for (final code in <String>{for (final e in mine) e.language.code})
+        code: courseNative(code),
+    };
+    int rank(DeckEntry e) => e.deck.native.code == natives[e.language.code]
+        ? -1
+        : settings.rankOf(e.deck.native.code) ??
+              settings.spokenLanguages.length;
     final byRank = mine.indexed.toList()
       ..sort((a, b) {
         final order = rank(a.$2).compareTo(rank(b.$2));
@@ -819,11 +834,10 @@ class AppState extends ChangeNotifier {
 
   Set<DrillMode> _modes({required bool ignorePauses}) => <DrillMode>{
     for (final skill in Skill.values)
-      if (skill.mode != null &&
-          settings.isEnabled(skill) &&
+      if (settings.isEnabled(skill) &&
           (ignorePauses || !settings.isPaused(skill, now())) &&
           features.isAvailable(skill.feature))
-        skill.mode!,
+        ...skill.modes,
   };
 
   /// Cards due tomorrow, as Today will count them: in the decks the profile
@@ -850,8 +864,7 @@ class AppState extends ChangeNotifier {
   bool canDrill(DeckEntry entry) {
     final shipped = <DrillMode>{
       for (final skill in Skill.values)
-        if (skill.mode != null && features.isAvailable(skill.feature))
-          skill.mode!,
+        if (features.isAvailable(skill.feature)) ...skill.modes,
     };
     return entry.cards.any(
       (card) => card.modesIn(ttsAvailable: true).any(shipped.contains),
@@ -909,10 +922,9 @@ class AppState extends ChangeNotifier {
         ? _modes(ignorePauses: ignorePauses)
         : <DrillMode>{
             for (final skill in named)
-              if (skill.mode != null &&
-                  features.isAvailable(skill.feature) &&
+              if (features.isAvailable(skill.feature) &&
                   (ignorePauses || !settings.isPaused(skill, now())))
-                skill.mode!,
+                ...skill.modes,
           };
 
     // A new pair is a new skill of a word already taught: a word is new
@@ -969,12 +981,69 @@ class AppState extends ChangeNotifier {
   // The path (#117, ADR-0013)
 
   List<List<DeckEntry>>? _pendingUnits;
+  Set<String>? _placed;
 
-  void _forgetPending() => _pendingUnits = null;
+  void _forgetPending() {
+    _pendingUnits = null;
+    _placed = null;
+  }
 
   /// Whether placement found the learner already knows [entry]. It reads
   /// Done and Today does not teach it, though it can still be studied.
-  bool isPlaced(DeckEntry entry) => settings.isPlaced(entry.id);
+  ///
+  /// Placement is saved by deck id, in the course it was taken in. What it
+  /// found holds in the language's other courses too (ADR-0036), so that
+  /// changing the language a course is learned from keeps it: a deck reads
+  /// as placed where its core's deck in another course was placed, and so
+  /// does every deck of a unit of the language's path placed whole in
+  /// another course.
+  bool isPlaced(DeckEntry entry) =>
+      (_placed ??= _placedAcross()).contains(entry.id);
+
+  Set<String> _placedAcross() {
+    final placed = settings.placedDecks;
+    if (placed.isEmpty) return const <String>{};
+    final out = <String>{...placed};
+    final natives = <String, Set<String>>{};
+    for (final entry in decks) {
+      natives
+          .putIfAbsent(entry.language.code, () => <String>{})
+          .add(entry.deck.native.code);
+    }
+    // The same core's deck in each course: hi-en-market is hi-bn-market.
+    for (final id in placed) {
+      final entry = deckById(id);
+      if (entry == null) continue;
+      final language = entry.language.code;
+      final prefix = '$language-${entry.deck.native.code}-';
+      if (!id.startsWith(prefix)) continue;
+      final name = id.substring(prefix.length);
+      for (final native in natives[language] ?? const <String>{}) {
+        final sibling = '$language-$native-$name';
+        if (deckById(sibling) != null) out.add(sibling);
+      }
+    }
+    // A unit placed whole in one course is placed in each, decks its
+    // native language alone has included: the courses read one path, so
+    // their plans' units line up.
+    final byLanguage = <String, List<CoursePath>>{};
+    for (final path in _catalog.paths.values) {
+      byLanguage.putIfAbsent(path.language, () => <CoursePath>[]).add(path);
+    }
+    for (final paths in byLanguage.values) {
+      for (final from in paths) {
+        for (final (i, unit) in from.plan.indexed) {
+          if (unit.decks.isEmpty || !unit.decks.every(placed.contains)) {
+            continue;
+          }
+          for (final to in paths) {
+            if (i < to.plan.length) out.addAll(to.plan[i].decks);
+          }
+        }
+      }
+    }
+    return out;
+  }
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
@@ -983,8 +1052,8 @@ class AppState extends ChangeNotifier {
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and
-  /// the one after it. The course is the one taught from the best-known
-  /// language the learner speaks, as [profileDecks] orders them. A course
+  /// the one after it. The course is the one taught from [courseNative]
+  /// ([courseUnits]). A course
   /// without a path is taught as if each deck were a unit, in catalog order,
   /// and a deck its path leaves out follows it as a unit of its own.
   List<List<DeckEntry>> get pendingUnits => _pendingUnits ??= _findPending();
@@ -1003,29 +1072,117 @@ class AppState extends ChangeNotifier {
     ]);
   }
 
+  /// The native languages the learner may learn [language] from, in
+  /// catalog order, each with its coverage (ADR-0036): those that teach it
+  /// and that the learner speaks, or, when they speak none of them, every
+  /// one that teaches it. Empty if no deck teaches [language].
+  List<NativeOption> nativeOptions(String language) {
+    final natives = <String, LanguageInfo>{
+      for (final entry in decks)
+        if (entry.language.code == language)
+          entry.deck.native.code: entry.deck.native,
+    };
+    final spoken = <LanguageInfo>[
+      for (final native in natives.values)
+        if (settings.rankOf(native.code) != null) native,
+    ];
+    CoursePath? pathOf(LanguageInfo native) =>
+        _catalog.paths['$language/${native.code}'];
+    return <NativeOption>[
+      for (final native in spoken.isEmpty ? natives.values : spoken)
+        (
+          native: native,
+          covered: pathOf(native)?.coveredUnits,
+          total: pathOf(native)?.writtenUnits,
+        ),
+    ];
+  }
+
+  /// The native language [language] is offered from first: the one whose
+  /// decks teach the most of its written units, ties going to the
+  /// best-known language the learner speaks, else to the first in the
+  /// catalog. With only one to choose from, that one.
+  String? suggestedNative(String language) {
+    final options = nativeOptions(language);
+    if (options.isEmpty) return null;
+    int rank(NativeOption o) =>
+        settings.rankOf(o.native.code) ?? settings.spokenLanguages.length;
+    return options
+        .reduce((best, o) {
+          final more = (o.covered ?? 0).compareTo(best.covered ?? 0);
+          if (more != 0) return more > 0 ? o : best;
+          return rank(o) < rank(best) ? o : best;
+        })
+        .native
+        .code;
+  }
+
+  /// The native language [language]'s course is taught from: the one the
+  /// learner chose, while it still teaches it, else [suggestedNative]. A
+  /// unit with no deck in it is "Coming", never taught from another
+  /// language's decks. Null if no deck teaches [language].
+  String? courseNative(String language) {
+    final chosen = settings.courseNative(language);
+    if (chosen != null &&
+        nativeOptions(language).any((o) => o.native.code == chosen)) {
+      return chosen;
+    }
+    return suggestedNative(language);
+  }
+
+  /// Whether to ask the learner which language to learn [language] from:
+  /// more than one they speak teaches it, and they have not chosen among
+  /// these. Asked on opening the course the first time, and once more when
+  /// a native language starts teaching a course already chosen for; never
+  /// again for the same choice.
+  bool needsNativeChoice(String language) {
+    if (!offersNativeChoice(language)) return false;
+    final offered = settings.nativesOffered(language);
+    return settings.courseNative(language) == null ||
+        nativeOptions(language).any((o) => !offered.contains(o.native.code));
+  }
+
+  /// Whether the learner has a choice of languages to learn [language]
+  /// from: more than one they speak teaches it. Settings then offers
+  /// "Learn Telugu from".
+  bool offersNativeChoice(String language) {
+    final options = nativeOptions(language);
+    return options.length > 1 &&
+        options.every((o) => settings.rankOf(o.native.code) != null);
+  }
+
+  /// Records that [language] is learned from [native], among the options
+  /// offered now.
+  void chooseNative(String language, String native) => settings.setCourseNative(
+    language,
+    native,
+    offered: <String>[
+      for (final option in nativeOptions(language)) option.native.code,
+    ],
+  );
+
   /// The units of [language]'s course, in teaching order: the course taught
-  /// from the best-known language the learner speaks that has one, else the
-  /// first in the catalog. Its path's units, or without a path each deck as
-  /// a unit, in catalog order; a deck its path leaves out follows as a unit
-  /// of its own. Without its alphabet, the decks the path marks as needing
-  /// it are left out. Empty if no deck teaches [language]. Whether the profile
-  /// learns it does not matter: placement asks before it does.
+  /// from [courseNative], or [native] where given. Its path's units, or
+  /// without a path each deck as a unit, in catalog order; a deck its path
+  /// leaves out follows as a unit of its own. Without its alphabet, the
+  /// decks the path marks as needing it are left out. Empty if no deck
+  /// teaches [language]. Whether the profile learns it does not matter:
+  /// placement asks before it does.
   ///
-  /// [alphabet] overrides whether the alphabet is learned, for placement,
-  /// which asks before it is saved.
-  List<List<DeckEntry>> courseUnits(String language, {bool? alphabet}) {
+  /// [alphabet] overrides whether the alphabet is learned, and [native]
+  /// which language it is learned from, for placement, which asks before
+  /// either is saved.
+  List<List<DeckEntry>> courseUnits(
+    String language, {
+    bool? alphabet,
+    String? native,
+  }) {
     final teaching = <DeckEntry>[
       for (final entry in decks)
         if (entry.language.code == language) entry,
     ];
     if (teaching.isEmpty) return const <List<DeckEntry>>[];
-    int rank(DeckEntry e) =>
-        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
-    final native = teaching
-        .reduce((best, e) => rank(e) < rank(best) ? e : best)
-        .deck
-        .native
-        .code;
+    native ??= courseNative(language);
     final course = <DeckEntry>[
       for (final entry in teaching)
         if (entry.deck.native.code == native) entry,
@@ -1080,10 +1237,12 @@ class AppState extends ChangeNotifier {
   /// The cards a [ask] question about [card] takes its other options from
   /// (ADR-0024): its deck's other cards of the same kind, each showing a
   /// different option, or, when they show fewer than three, those of every
-  /// deck of its course as well.
+  /// deck of its course as well. A rules table's form, or its meaning, is
+  /// chosen among its own row's alone ([formChoices], spec 4.8).
   List<Card> choicePool(Card card, Ask ask) {
     final entry = deckOf(card);
     if (entry == null) return const <Card>[];
+    if (ask.choosesAmongForms) return formChoices(card, ask, entry.cards);
     final right = ask.optionOf(card);
     final cell = card.modes.contains(DrillMode.grammar);
     bool alike(Card c) =>
@@ -1123,9 +1282,12 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether a [ask] question about [card] has at least two wrong options
-  /// to offer. Without, it is asked its own way.
+  /// to offer, or, choosing among a rules table's forms or their meanings,
+  /// one (spec 4.8: a row of two forms is still a choice). Without, it is
+  /// asked its own way.
   bool canChoose(Card card, Ask ask) =>
-      choicePool(card, ask).map(ask.optionOf).toSet().length >= 2;
+      choicePool(card, ask).map(ask.optionOf).toSet().length >=
+      (ask.choosesAmongForms ? 1 : 2);
 
   /// The items of the session for [request], each asked as a review asks it
   /// ([reviewAsks]): what a drill runs.

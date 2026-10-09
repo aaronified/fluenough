@@ -7,8 +7,9 @@
 ///
 /// The skill model (ADR-0034) keeps four schedules per word:
 /// **Recognition** ([recognition]), **Hear** ([listening]), **Say**
-/// ([speaking]) and **Write** ([production]), and grammar's. The names are stored in the review log, which is never
-/// rewritten, so they stay as they were.
+/// ([speaking]) and **Write** ([production]); and grammar's two, understood
+/// ([grammarUnderstood]) and produced ([grammar]). The names are stored in
+/// the review log, which is never rewritten, so they stay as they were.
 enum DrillMode {
   /// Recognition: shown the target, choose or recall the meaning. A skill
   /// of its own, scheduled like the others (ADR-0034).
@@ -29,7 +30,20 @@ enum DrillMode {
   /// is read aloud and its text is hidden until the question is answered.
   listening,
 
-  /// Shown an inflection prompt, type the inflected form. Machine-graded.
+  /// Grammar understood: shown a form, అమ్మతో (ammatō), choose what it
+  /// means among the meanings of the same word's forms: "with mother", "to
+  /// mother" (owner, 2026-10-09; B1 format spec 4.7, OPEN-22). Only a rules
+  /// table's cells take it. Stored by this name, so its place here does not
+  /// matter to the log; it comes before [grammar] so that a session ordered
+  /// by [values] asks the meaning before the form, as Recognition comes
+  /// before Write. Machine-graded.
+  grammarUnderstood,
+
+  /// Grammar produced: shown the meaning to express, give the form. On a
+  /// pattern deck's cell, typed; on a rules table's cell, chosen among the
+  /// same word's forms while the pair is new or was last missed, then typed
+  /// (spec 4.8). Machine-graded. Its name, and what every logged review in
+  /// it means, a typed form, is unchanged by [grammarUnderstood].
   grammar,
 
   /// Say: shown the meaning, say the target. Graded from what the phone's

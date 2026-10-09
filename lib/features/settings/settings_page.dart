@@ -23,6 +23,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
+import '../placement/native_choice.dart';
 import 'adjust_section.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
@@ -206,8 +207,38 @@ class SettingsPage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => _chooseAlphabets(context, state),
           ),
+        // "Learn Telugu from", for each course more than one of the
+        // languages the learner speaks teaches (ADR-0036).
+        for (final language in _withNatives(state))
+          GroupedTile(
+            leading: const Icon(Icons.translate),
+            title: l10n.nativeChoiceTitle(language.name),
+            subtitle: _nativeName(state, language.code),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => NativeChoicePage.open(context, language),
+          ),
       ],
     );
+  }
+
+  /// The languages the profile learns that more than one of the languages
+  /// the learner speaks teaches.
+  static List<LanguageInfo> _withNatives(AppState state) => <LanguageInfo>[
+    for (final language in state.languages)
+      if (state.currentProfile.learns(language.code) &&
+          state.offersNativeChoice(language.code))
+        language,
+  ];
+
+  /// The name of the language [language] is learned from.
+  static String? _nativeName(AppState state, String language) {
+    final code = state.courseNative(language);
+    return state
+        .nativeOptions(language)
+        .where((o) => o.native.code == code)
+        .firstOrNull
+        ?.native
+        .name;
   }
 
   /// The languages the profile learns whose course has decks that need the

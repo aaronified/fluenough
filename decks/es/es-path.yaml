@@ -1,0 +1,16 @@
+# The order Spanish is taught in, from every language it is taught from:
+# each deck is named by its core id, and a learner from English is
+# taught es-en-<name> for es-<name>. First the core vocabulary, then
+# the present tense of -ar verbs. Every deck of Spanish is listed exactly
+# once.
+# See ADR-0013, ADR-0036 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: es-path
+language: es
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [es-core-100]
+  - [es-grammar-present-ar]
+  - ["*"]

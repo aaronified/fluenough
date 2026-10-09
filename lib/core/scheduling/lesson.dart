@@ -63,7 +63,22 @@ typedef LessonQuestion = ({DrillMode mode, Ask ask});
 /// The questions a lesson can ask [card], best first (ADR-0024): the first
 /// it can is its check, straight after it is taught, and the next in
 /// another mode its question in the exercise.
+///
+/// A rules table's cell (spec 4.8) is understood before it is produced: its
+/// form's meaning chosen, then its form chosen among its word's, each where
+/// its row has the options; with none, it is typed. A pattern deck's
+/// grammar cell is typed.
 List<LessonQuestion> lessonQuestions(Card card) {
+  if (card.rule != null) {
+    return <LessonQuestion>[
+      if (card.choosesMeaning)
+        (mode: DrillMode.grammarUnderstood, ask: Ask.chooseFormMeaning),
+      (
+        mode: DrillMode.grammar,
+        ask: card.choosesForm ? Ask.chooseForm : Ask.own,
+      ),
+    ];
+  }
   if (card.modes.contains(DrillMode.grammar)) {
     return const <LessonQuestion>[(mode: DrillMode.grammar, ask: Ask.own)];
   }

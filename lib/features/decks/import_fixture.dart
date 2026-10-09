@@ -1,9 +1,10 @@
 import '../../core/data/deck_parser.dart';
 
 /// The error the `import-error` gallery entry shows: a real
-/// [DeckParseException], raised by parsing a small deck with the design's
-/// own mistake in it, a bare `native: no`, which YAML reads as the boolean
-/// false.
+/// [DeckParseException], raised by parsing a small deck with rule 2's
+/// mistake in it, a bare `native: true`, which YAML reads as the
+/// boolean true. (The design's own example, a bare `native: no`, is text
+/// now that decks are read as YAML 1.2 reads them.)
 ///
 /// A fixture, never bundled and never under `decks/`; its ids say so. The
 /// file is named after the design's example, `ja-kana.yaml`.
@@ -31,7 +32,7 @@ tags: [fixture]
 
 cards:
   - id: ja-kana-fixture-0001
-    target: "の"
-    native: no
-    reading: "no"
+    target: "ほんとう"
+    native: true
+    reading: "hontō"
 ''';

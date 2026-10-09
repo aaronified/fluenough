@@ -311,9 +311,9 @@
       }
     }
   },
-  "skillGrammarSettingsDesc": "From pattern-table decks",
+  "skillGrammarSettingsDesc": "What a form of a word means, and the right form to use",
   "@skillGrammarSettingsDesc": {
-    "description": "Under the Grammar switch in Settings."
+    "description": "Under the Grammar switch in Settings. The one switch covers both grammar questions: seeing a form of a word and choosing what it means, and choosing or typing the right form."
   },
   "skillPairSettingsTitle": "Phonemic contrasts",
   "@skillPairSettingsTitle": {
@@ -2165,6 +2165,10 @@
   "@drillChooseMeaning": {
     "description": "Multiple choice (ADR-0024): above a word in the language learned, whose meaning is chosen from the options under it."
   },
+  "drillChooseForm": "Which form says this?",
+  "@drillChooseForm": {
+    "description": "Multiple choice (B1 format spec 4.8): above a word and the meaning to express with it, like \"amma: with mother\", whose right form is chosen from the word's forms under it."
+  },
   "drillChooseWord": "Which is it in {language}?",
   "@drillChooseWord": {
     "description": "Multiple choice (ADR-0024): above a meaning, whose word in the language learned is chosen from the options under it.",
@@ -3290,6 +3294,74 @@
   "@learnLoading": {
     "description": "Screen-reader label while the courses load on the choose-what-to-learn screen."
   },
+  "nativeChoiceTitle": "Learn {language} from",
+  "@nativeChoiceTitle": {
+    "description": "Title of the question, and of the Settings row, choosing which of the languages the learner speaks a course is taught from (ADR-0036). Followed by the choices, each a language name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceBody": "{language} is taught from more than one of the languages you speak. Each teaches its own share of the course so far; a part not yet written in yours is left out until it is. You can change this in Settings, and keep what you have learned.",
+  "@nativeChoiceBody": {
+    "description": "Under the question choosing which language a course is taught from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceCoverage": "{covered} of {total, plural, =1{1 unit} other{{total} units}} so far",
+  "@nativeChoiceCoverage": {
+    "description": "Under a language a course can be taught from: how many of the course's written units it teaches yet.",
+    "placeholders": {
+      "covered": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "34"
+      }
+    }
+  },
+  "nativeChoiceCoverageAll": "{total, plural, =1{The whole unit} other{All {total} units}}",
+  "@nativeChoiceCoverageAll": {
+    "description": "Under a language a course can be taught from, when it teaches every written unit of the course.",
+    "placeholders": {
+      "total": {
+        "type": "int",
+        "example": "34"
+      }
+    }
+  },
+  "nativeChoiceGroup": "Languages to learn {language} from",
+  "@nativeChoiceGroup": {
+    "description": "Screen-reader label of the group of choices.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceNew": "{language} is now taught from more of the languages you speak",
+  "@nativeChoiceNew": {
+    "description": "Today: a card shown once a language the learner speaks starts teaching a course they learn, until they choose which to learn from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceChoose": "Choose",
+  "@nativeChoiceChoose": {
+    "description": "Button on the Today card that opens the choice of which language a course is taught from."
+  },
   "alphabetAskTitle": "Learn the {language} alphabet?",
   "@alphabetAskTitle": {
     "description": "Asked for each language chosen to learn whose course has script decks, before placement.",
@@ -3529,9 +3601,9 @@
       }
     }
   },
-  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}}… {current} of {total}",
+  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar understood} grammar{grammar used} reading{passages} other{words}}… {current} of {total}",
   "@settingsAdjusting": {
-    "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammar or reading), named by what the words were; current and total count the skills being fitted.",
+    "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading), named by what the words were: grammarUnderstood is choosing what a form of a word means, grammar is giving the form; current and total count the skills being fitted.",
     "placeholders": {
       "language": {
         "type": "String",
@@ -3575,7 +3647,7 @@
   "@adjustedSubtitle": {
     "description": "Line under Adjusted to you."
   },
-  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}} well: fewer reviews",
+  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar you understand} grammar{grammar you use} reading{passages} other{words}} well: fewer reviews",
   "@adjustedFewer": {
     "description": "A skill the learner remembers better than the defaults assume. mode is the skill, named by what the words were.",
     "placeholders": {
@@ -3585,7 +3657,7 @@
       }
     }
   },
-  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammar{Grammar slips} reading{Passages slip} other{Words slip}} faster: more reviews",
+  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammarUnderstood{Grammar understood slips} grammar{Grammar used slips} reading{Passages slip} other{Words slip}} faster: more reviews",
   "@adjustedMore": {
     "description": "A skill the learner forgets faster than the defaults assume. 'Slip', never 'fade'.",
     "placeholders": {
@@ -3595,7 +3667,7 @@
       }
     }
   },
-  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: about the same",
+  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}: about the same",
   "@adjustedSame": {
     "description": "A skill whose schedule barely changed.",
     "placeholders": {
@@ -3605,7 +3677,7 @@
       }
     }
   },
-  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: not adjusted yet",
+  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}: not adjusted yet",
   "@adjustedNotYet": {
     "description": "A skill without enough answers to fit.",
     "placeholders": {
@@ -3697,7 +3769,7 @@
   "@howYouLearnLegendStart": {
     "description": "Legend of How you learn's bars: the tick is the gap every skill starts with."
   },
-  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}",
+  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}",
   "@paceSkillName": {
     "description": "A skill's heading on How you learn, named by what the words were.",
     "placeholders": {
@@ -3707,7 +3779,7 @@
       }
     }
   },
-  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammar{grammar question} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
+  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
   "@paceComesBack": {
     "description": "How you learn: days until a word of the skill answered right comes back now, and at the start.",
     "placeholders": {
@@ -3725,7 +3797,7 @@
       }
     }
   },
-  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammar{grammar question} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
+  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
   "@paceComesBackSame": {
     "description": "How you learn: days until a word of the skill answered right comes back, the same as at the start.",
     "placeholders": {

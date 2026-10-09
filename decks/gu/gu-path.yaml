@@ -1,0 +1,55 @@
+# The order Gujarati is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught gu-en-home for gu-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Gujarati grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Gujarati is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: gu-path
+language: gu
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - gu-script-vowels
+  - gu-script-consonants
+  - gu-script-reading
+  - gu-script-vowel-signs
+  - gu-script-conjuncts
+  - gu-spelling
+  - gu-reading-keri
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [gu-first-words, gu-grammar-sentences, "*"]
+  - [gu-sound-differences]
+  - [gu-grammar-differences]
+  - [gu-questions, gu-grammar-questions, "*"]
+  - [gu-addressing, gu-grammar-pronouns, "*"]
+  - [gu-about-me, gu-grammar-continuous, "*"]
+  - [gu-family, gu-grammar-be, "*"]
+  - [gu-work, gu-grammar-demonstratives, "*"]
+  - [gu-script-vowels, gu-script-consonants, gu-script-reading]
+  - [gu-script-vowel-signs, gu-script-conjuncts]
+  - [gu-numbers-1-20, "*"]
+  - [gu-numbers-big, "*"]
+  - [gu-market, gu-grammar-nouns, gu-grammar-articles, "*"]
+  - [gu-groceries, gu-grammar-gender-number, gu-grammar-needs, "*"]
+  - [gu-transport, gu-grammar-postpositions, "*"]
+  - [gu-directions, "*"]
+  - [gu-home, gu-grammar-adjectives, "*"]
+  - [gu-time, gu-grammar-future, "*"]
+  - [gu-daily-life, gu-grammar-negative, "*"]
+  - [gu-calendar, gu-grammar-past, "*"]
+  - [gu-grammar-past-more, gu-grammar-conjunct-verbs]
+  - [gu-grammar-compound-verbs]
+  - [gu-eating-out, gu-grammar-conjunctions, gu-grammar-likes, "*"]
+  - [gu-help, gu-grammar-irregular, gu-grammar-pitfalls, "*"]
+  - [gu-registers]
+  - [gu-slang]
+  - [gu-grammar-can-must]
+  - [gu-spelling]
+  - [gu-reading-keri]
+  - ["*"]
