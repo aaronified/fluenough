@@ -205,6 +205,8 @@ class DeckReview {
     this.cards = const <String, CardReview>{},
     this.signedOff,
     this.sent,
+    this.canUnsend = false,
+    this.sentBefore,
   });
 
   final String deckId;
@@ -218,6 +220,14 @@ class DeckReview {
 
   /// When the review was last sent, or null if never.
   final DateTime? sent;
+
+  /// Whether the last send can be taken back ([Reviews.unsend]): a send
+  /// only opens the mail app, and the reviewer may not send the mail.
+  final bool canUnsend;
+
+  /// What [sent] was before the last send, which [Reviews.unsend] puts
+  /// back: null when the deck had never been sent.
+  final DateTime? sentBefore;
 
   bool _unsent(DateTime at) => sent == null || at.isAfter(sent!);
 
@@ -240,14 +250,37 @@ class DeckReview {
     Map<String, CardReview>? cards,
     DateTime? signedOff,
     bool clearSignOff = false,
-    DateTime? sent,
   }) => DeckReview(
     deckId: deckId,
     language: language,
     cards: Map<String, CardReview>.unmodifiable(cards ?? this.cards),
     signedOff: clearSignOff ? null : signedOff ?? this.signedOff,
-    sent: sent ?? this.sent,
+    sent: sent,
+    canUnsend: canUnsend,
+    sentBefore: sentBefore,
   );
+
+  /// Sent at [at], which can be taken back.
+  DeckReview sentAt(DateTime at) => DeckReview(
+    deckId: deckId,
+    language: language,
+    cards: cards,
+    signedOff: signedOff,
+    sent: at,
+    canUnsend: true,
+    sentBefore: sent,
+  );
+
+  /// With the last send taken back: [sent] as it was before it. Once only.
+  DeckReview unsent() => !canUnsend
+      ? this
+      : DeckReview(
+          deckId: deckId,
+          language: language,
+          cards: cards,
+          signedOff: signedOff,
+          sent: sentBefore,
+        );
 
   Map<String, Object?> toJson() => <String, Object?>{
     'language': language,
@@ -256,6 +289,8 @@ class DeckReview {
     },
     'signed_off': ?signedOff?.toUtc().toIso8601String(),
     'sent': ?sent?.toUtc().toIso8601String(),
+    if (canUnsend) 'can_unsend': true,
+    'sent_before': ?sentBefore?.toUtc().toIso8601String(),
   };
 
   static DeckReview? fromJson(String deckId, Object? json) {
@@ -273,6 +308,8 @@ class DeckReview {
       }),
       signedOff: DateTime.tryParse('${json['signed_off']}'),
       sent: DateTime.tryParse('${json['sent']}'),
+      canUnsend: json['can_unsend'] == true,
+      sentBefore: DateTime.tryParse('${json['sent_before']}'),
     );
   }
 }
@@ -328,12 +365,38 @@ class Reviews {
   }
 
   /// With [deckIds] marked sent at [at]: what they held stays on the phone,
-  /// to show what the reviewer has done, but is not sent again.
+  /// to show what the reviewer has done, but is not sent again, unless the
+  /// send is taken back ([unsend]).
   Reviews sentAt(Iterable<String> deckIds, DateTime at) {
     var next = this;
     for (final id in deckIds) {
       final deck = decks[id];
-      if (deck != null) next = next._with(deck.copyWith(sent: at));
+      if (deck != null) next = next._with(deck.sentAt(at));
+    }
+    return next;
+  }
+
+  /// The decks of the last send that can still be taken back: those last
+  /// sent at the latest time any such deck was. Empty when there is none.
+  List<DeckReview> get lastSend {
+    final undoable = decks.values.where((d) => d.canUnsend && d.sent != null);
+    if (undoable.isEmpty) return const <DeckReview>[];
+    final latest = undoable
+        .map((d) => d.sent!)
+        .reduce((a, b) => a.isAfter(b) ? a : b);
+    return <DeckReview>[
+      for (final deck in undoable)
+        if (deck.sent == latest) deck,
+    ];
+  }
+
+  /// With [deckIds]' last send taken back, for a mail that never went: what
+  /// it carried is waiting to send again.
+  Reviews unsend(Iterable<String> deckIds) {
+    var next = this;
+    for (final id in deckIds) {
+      final deck = decks[id];
+      if (deck != null) next = next._with(deck.unsent());
     }
     return next;
   }

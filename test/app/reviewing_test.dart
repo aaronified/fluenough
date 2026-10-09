@@ -140,6 +140,33 @@ void main() {
     expect(reviewing.reviews.of(wordsDeck)!.markedCount, 2);
   });
 
+  test('Send the last mail again puts back what the last mail carried, '
+      'once', () async {
+    final share = FixedMailShare();
+    final state = await reviewState(share: share, reviewing: true);
+    addTearDown(state.dispose);
+    final reviewing = state.reviewing;
+    final words = state.deckById(wordsDeck)!;
+    expect(reviewing.lastSent, isEmpty);
+    reviewing.markRight(words, words.cards.first);
+    await reviewing.send(reviewing.unsent, body: '');
+    expect(reviewing.unsent, isEmpty);
+    expect(reviewing.lastSent.map((d) => d.deckId), <String>[wordsDeck]);
+
+    reviewing.sendAgain();
+    expect(reviewing.unsent.map((d) => d.deckId), <String>[wordsDeck]);
+    expect(reviewing.lastSent, isEmpty);
+    reviewing.sendAgain();
+    expect(reviewing.unsent, hasLength(1));
+    // And it goes again, whole.
+    await reviewing.send(reviewing.unsent, body: '');
+    expect(share.shared, hasLength(2));
+    expect(
+      share.shared.last.files.single.text,
+      share.shared.first.files.single.text,
+    );
+  });
+
   test('nothing is marked sent when no mail app takes it, or the share '
       'fails', () async {
     final share = FixedMailShare(shares: false);

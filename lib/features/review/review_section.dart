@@ -11,9 +11,10 @@ import 'send_reviews_sheet.dart';
 
 /// Settings' Reviewing group (docs/plans/deck-browser.md): the "Review
 /// decks" switch, which asks once and then shows the rater code the phone
-/// made, with Copy; the decks waiting to send; the decks the reviewer
-/// helped build; and "How reviewing works", which opens by itself the
-/// first time reviewing is turned on.
+/// made, with Copy; the decks waiting to send; "Send the last mail again",
+/// for a mail that never went; the decks the reviewer helped build; and
+/// "How reviewing works", which opens by itself the first time reviewing is
+/// turned on.
 ///
 /// Turning reviewing off keeps the code and the reviews.
 class ReviewSection extends StatelessWidget {
@@ -35,6 +36,7 @@ class ReviewSection extends StatelessWidget {
     final code = reviewing.code;
     final on = reviewing.on && code != null;
     final waiting = reviewing.unsent.length;
+    final lastSent = reviewing.lastSent.length;
     final helped = <String>[
       if (code != null)
         for (final entry in state.decks)
@@ -75,6 +77,17 @@ class ReviewSection extends StatelessWidget {
             subtitle: l10n.reviewDecksWaiting(waiting),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => showSendReviews(context),
+          ),
+        if (code != null && lastSent > 0)
+          GroupedTile(
+            leading: const Icon(Icons.replay_outlined),
+            title: l10n.reviewSettingsSendAgain,
+            subtitle: l10n.reviewSettingsSendAgainDesc(lastSent),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              reviewing.sendAgain();
+              showSendReviews(context);
+            },
           ),
         if (helped.isNotEmpty)
           GroupedTile(
