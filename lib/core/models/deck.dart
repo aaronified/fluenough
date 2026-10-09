@@ -1,6 +1,7 @@
 import 'author.dart';
 import 'card.dart';
 import 'grammar_pattern.dart';
+import 'proposal.dart';
 import 'reading.dart';
 import 'rule.dart';
 
@@ -84,6 +85,7 @@ class Deck {
     this.refs = const <CardRef>[],
     this.table,
     this.rules = const <Rule>[],
+    this.proposals = const <String, List<Proposal>>{},
   });
 
   final String id;
@@ -128,6 +130,10 @@ class Deck {
   /// a rule its layer leaves out is not taught, and its cells are not asked.
   final List<Rule> rules;
 
+  /// What reviewers have proposed for its cards, by card id, waiting for
+  /// agreement (ADR-0038). Only reviewer mode shows them.
+  final Map<String, List<Proposal>> proposals;
+
   int get cardCount => cards.length;
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
@@ -149,6 +155,7 @@ class Deck {
     theme: theme,
     table: table,
     rules: rules,
+    proposals: proposals,
   );
 
   @override
