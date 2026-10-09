@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- An app log, in Settings > Logs, for reports. It records what went wrong, errors and warnings, and key events: screens opened, decks loaded, fits run, imports and exports. It never records your answers or the cards. It is kept on the phone, so it survives a crash, for 7 days and at most 2,000 lines, whichever is fewer. You can view it, copy it, export it as a file, or clear it (#162).
+- A report can carry the app log, as a file. Tick "Attach the app log", beside "Include device information" and unticked like it, which shows what the log holds and its newest lines. It goes with support mails too, and stays in the Fluenough inbox, never in a public issue. The mail goes through Android's share, as a mail link cannot carry a file; if the phone cannot share it, your mail app opens without the log and the app says so. No new dependency: `tools/brand_android.py` writes the share, and the FileProvider that lends the file, into the generated Android project (#160, #162).
 - Words are now scheduled by FSRS-6, in place of SM-2, and in four skills each: seen, heard, spoken and written words, plus grammar. Listening now asks what a word means, so a near homophone such as కలం (kalam, pen) and కాలం (kālam, time) is told apart by its meaning. A right answer also counts in part for the skills it implies. Your whole history is replayed once, so due dates move on the first launch (#113, #207).
 - FSRS is fitted to you on the phone, per language and skill, from your own answers: from "Adjust to me" in Settings, or by itself after 10% more answers. "How you learn" on Progress, and the marks on Today's skill tiles, show how fast you forget each skill against the start. Nothing is sent anywhere (#432).
 - Pictures on 330 cards, from Noto Emoji, shown when you type a word and beside each meaning when you listen.
@@ -17,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The bug icon on every screen now offers three things: Get support, Report a bug and Give feedback, in place of Bug, Feature and Suggestion. Feature requests are feedback. You still write a title and details first; then your mail app opens to fluenough@gmail.com with a subject and questions of the kind's own filled in, which you can change before you send. Bug reports and feedback become public GitHub issues, without your email address. Support mails stay private in the Fluenough inbox, and are never made issues (#160).
 - Progress no longer has "Your strengths"; "Correct, by skill" and "How you learn" say the same, better.
 - ख़ is now written k͟h in the Latin readings, as ISO 15919 writes it, in place of ḵ: the decks' readings, the romanisation files, the README table, the transcriber and the validator. Typing kh is still right, with its mark flagged (#339).
 - Putting a sentence's words in order no longer gives the answer away: the tiles have no capitals, and each mark (। . ? , ! …) is a tile of its own, placed like a word. The card shown afterwards is unchanged (#347).

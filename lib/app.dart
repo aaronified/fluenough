@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'app/app_log.dart';
 import 'app/app_scope.dart';
 import 'app/app_state.dart';
 import 'app/routes.dart';
@@ -32,6 +33,12 @@ class FluenoughApp extends StatefulWidget {
 }
 
 class _FluenoughAppState extends State<FluenoughApp> {
+  /// Logs each screen opened (#162). Made once, as a navigator takes an
+  /// observer only once.
+  late final List<NavigatorObserver> _observers = <NavigatorObserver>[
+    LogNavigatorObserver(widget.state.log),
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -66,6 +73,7 @@ class _FluenoughAppState extends State<FluenoughApp> {
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
+          navigatorObservers: _observers,
           // The first launch: welcome, tour and the languages the learner
           // speaks (#118, #53), then which they want to learn, and placement
           // (#117). Each answer saved rebuilds this on settings. An install
