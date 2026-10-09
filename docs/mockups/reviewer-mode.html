@@ -116,9 +116,7 @@ svg.i{width:24px;height:24px;fill:currentColor;flex:none;display:block}
 .sw::after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:var(--onPrimary);top:4px;right:4px}
 .sw.off{background:var(--sHighest);box-shadow:inset 0 0 0 2px var(--outline)}
 .sw.off::after{width:16px;height:16px;top:8px;left:8px;right:auto;background:var(--outline)}
-.help{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:16px;padding:10px 16px 0 16px;color:var(--onSv)}
-.help svg{justify-self:center;margin-top:-1px}
-.help span{text-wrap:pretty}
+.srow.one{min-height:56px}
 .profile{background:var(--sLow);border-radius:24px;padding:16px;display:flex;align-items:center;gap:16px}
 .av{width:44px;height:44px;border-radius:50%;background:var(--tc);color:var(--onTc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex:none}
 .sfoot{padding:24px 16px 0;color:var(--onSv);text-align:center;text-wrap:balance}
@@ -186,6 +184,20 @@ svg.i{width:24px;height:24px;fill:currentColor;flex:none;display:block}
 .fhelp{font-size:12px;line-height:16px;color:var(--onSv);padding:4px 16px 0}
 .dlg{position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);background:var(--sHigh);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:16px}
 .dlg .acts2{margin-top:8px}
+/* a long explanation: a scroll-controlled sheet with a drag handle; its body scrolls, Got it stays put */
+.sheet.tall{top:76px;padding-bottom:16px}
+.sheet .shead{flex:none;padding:0 0 12px}
+.sheet .sbody{margin:0 -24px;padding:4px 24px 20px}
+.sheet .sact{flex:none;display:flex;justify-content:flex-end;border-top:1px solid var(--ov);margin:0 -24px;padding:12px 24px 0}
+.sheet .thumb{position:absolute;right:6px;width:4px;border-radius:2px;background:var(--onSv);opacity:.45}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.steps li{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:14px;min-width:0}
+.steps .n{width:28px;height:28px;border-radius:14px;background:var(--sc);color:var(--onSc);font-size:14px;line-height:20px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps .tx{min-width:0;padding-top:2px}
+.steps .tx .tBody{color:var(--onSv);margin-top:2px;text-wrap:pretty}
+.aside{display:grid;grid-template-columns:20px minmax(0,1fr);column-gap:12px;background:var(--sHigh);border-radius:16px;padding:12px 14px;margin-top:20px;color:var(--onSurface)}
+.aside svg{color:var(--onSv)}
+.aside .tBody{text-wrap:pretty}
 .snack{position:absolute;left:16px;right:16px;bottom:16px;background:var(--inv);color:var(--onInv);border-radius:16px;min-height:48px;padding:6px 8px 6px 16px;display:flex;align-items:center;gap:8px}
 .snack .t{flex:1;min-width:0}
 .snack .a{color:var(--invPrimary);font-weight:600;padding:0 8px;min-height:40px;display:flex;align-items:center}
@@ -317,11 +329,11 @@ function frame(body,{tab=null,bar=null,foot='',overlay='',scrollTo=null,cls=''}=
 const appbar=(title='',acts=['bug'])=>`<div class="appbar"><span class="ibtn">${I('back')}</span><span class="abt tTitleL ell">${title}</span>${acts.map(a=>`<span class="ibtn">${I(a)}</span>`).join('')}</div>`;
 
 /* ---------- 1. Settings ---------- */
-function settings(state){
+function settings(state,extra=''){
  const top=`<div class="tabh tHeadL">Settings</div>
  <div style="padding:8px 16px 24px">
   <div class="profile"><div class="av">A</div><div style="min-width:0"><div class="tTitleM">Aro</div><div class="tBody muted">Learning Telugu</div></div></div>
-  <div class="glabel tBody">Your data</div>
+  <div class="glabel tBody"${state==='thanks'?' data-anchor':''}>Your data</div>
   <div class="group">
    <div class="srow">${I('upload')}<div class="tx"><div class="tTitleM">Export review log</div><div class="tBody muted">1,204 reviews · JSONL file</div></div><span></span></div>
    <div class="srow">${I('download')}<div class="tx"><div class="tTitleM">Import review log</div><div class="tBody muted">Merges with this profile’s history</div></div><span></span></div>
@@ -329,18 +341,19 @@ function settings(state){
   <div class="glabel tBody">Reviewing</div>`;
  let rev;
  if(state==='off'||state==='ask'){
-  rev=`<div class="group"><div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Become a reviewer</div><div class="tBody muted">Help check the decks. Your reviews go by your own mail.</div></div><span class="sw off" role="switch" aria-checked="false"></span></div></div>`;
+  rev=`<div class="group"><div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Become a reviewer</div><div class="tBody muted">Help check the decks. Your reviews go by your own mail.</div></div><span class="sw off" role="switch" aria-checked="false"></span></div>
+   <div class="srow one" role="button">${I('info')}<div class="tx"><div class="tTitleM">How reviewing works</div></div>${I('chev')}</div></div>`;
  } else {
   const thanks=state==='thanks'?`<div class="srow">${I('heart')}<div class="tx"><div class="tTitleM">Decks you helped build</div><div class="tBody muted">Family (Telugu)</div></div>${I('chev')}</div>`:'';
   rev=`<div class="group">
    <div class="srow">${I('review')}<div class="tx"><div class="tTitleM">Review decks</div><div class="tBody muted">Cards show Looks right and Suggest a change</div></div><span class="sw" role="switch" aria-checked="true"></span></div>
    <div class="srow">${I('key')}<div class="tx"><div class="tBody muted">Your rater code</div><div class="code mono">${CODE}</div></div><span class="ibtn" role="button" aria-label="Copy code">${I('copy')}</span></div>
    ${thanks}
-  </div>
-  <div class="help tSmall">${I('lock','s18')}<span>Send from one mail address; your code works only from that one.</span></div>`;
+   <div class="srow one" role="button">${I('info')}<div class="tx"><div class="tTitleM">How reviewing works</div></div>${I('chev')}</div>
+  </div>`;
  }
  // With reviewing on, the frame ends after the reviewing group, so the nav never cuts a line in half.
- const tail=(state==='on'||state==='thanks')?`</div>`:`<div class="glabel tBody">Logs</div>
+ const tail=state==='on'?`</div>`:`<div class="glabel tBody">Logs</div>
   <div class="group"><div class="srow">${I('log')}<div class="tx"><div class="tTitleM">App log</div><div class="tBody muted">What the app did and what went wrong, to add to a report</div></div>${I('chev')}</div></div>
   <div class="sfoot tSmall">Fluenough 0.3.4 · GPL-3.0<br>Free software · Works fully offline</div>
  </div>`;
@@ -348,11 +361,33 @@ function settings(state){
   <div class="tHeadS">Become a reviewer?</div>
   <div class="tBody muted">You get a rater code. Your reviews go to Fluenough from your own mail, with the code.</div>
   <div class="tBody muted">Rater codes are public, to thank you. Your mail address is not.</div>
-  <div class="acts2"><span class="btn t">Cancel</span><span class="btn t">Turn on</span></div></div>`:'';
- return frame(top+rev+tail,{tab:'Settings',overlay});
+  <div class="acts2"><span class="btn t">Cancel</span><span class="btn t">Turn on</span></div></div>`:extra;
+ // With "Decks you helped build" the reviewing group is one row longer: the list is scrolled to "Your data", so the group shows whole.
+ return frame(top+rev+tail,{tab:'Settings',overlay,scrollTo:state==='thanks'?'anchor':null});
 }
 
-/* ---------- 2. Deck screen ---------- */
+/* ---------- 2. How reviewing works ---------- */
+const HOW=[
+ ['Your rater code','Turning on reviewing gives you a code, made on this phone. Nothing is sent when you turn it on.'],
+ ['Check cards','Open a deck and tap a card. Choose “Looks right”, or “Suggest a change” and say what should change and why. Your reviews stay on this phone until you send them.'],
+ ['Send by mail','Tap “Send review” on the deck. Your mail app opens with the review attached and Fluenough’s address filled in. Read it, then send it.'],
+ ['Always use the same address','Your first review links your code to the address you send it from. A review sent with your code from any other address is held back until the Fluenough team checks it. This stops anyone else using your code.'],
+ ['What is public','Fluenough’s public issue list shows your code and the language you reviewed, so the team knows a review arrived. Your address and what you wrote stay private, in Fluenough’s mailbox.'],
+ ['Thank you','When a deck you checked is updated, your code is listed among its reviewers, and the app says thank you.']
+];
+function howSheet(atEnd=false){
+ return `<div class="scrim"></div><div class="sheet tall" role="dialog" aria-label="How reviewing works"><div class="handle"></div>
+  <div class="shead tTitleL">How reviewing works</div>
+  <div class="scroll sbody" data-scroll-to="${atEnd?'end':'top'}">
+   <ol class="steps">${HOW.map(([t,b],i)=>`<li><span class="n" aria-hidden="true">${i+1}</span><div class="tx"><div class="tTitleM">${t}</div><div class="tBody">${b}</div></div></li>`).join('')}</ol>
+   <div class="aside">${I('warn','s20')}<div class="tBody">Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to people in general, not to you.</div></div>
+   <div class="tBody muted" style="margin-top:16px;text-wrap:pretty">You can turn reviewing off at any time; your code is kept.</div>
+  </div>
+  <div class="sact"><span class="btn f c">Got it</span></div>
+  <span class="thumb" aria-hidden="true"></span></div>`;
+}
+
+/* ---------- 3. Deck screen ---------- */
 function deckHead({reviewed=false}={}){
  const desc=reviewed
   ?'Parents, brothers and sisters, grandparents, and the aunts and uncles on each side, each with its own word.'
@@ -388,7 +423,7 @@ function deckReviewer({overlay='',from=5,to=13}={}){
  return frame(body,{bar:appbar('Family'),foot:reviewFoot,scrollTo:'anchor',overlay});
 }
 
-/* ---------- 3. A card in reviewer mode ---------- */
+/* ---------- 4. A card in reviewer mode ---------- */
 const sheet=(inner,label)=>`<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${label}"><div class="handle"></div>${inner}</div>`;
 function cardSheet(){
  const inner=`<div class="cardv">
@@ -418,7 +453,7 @@ function suggestSheet(){
  return deckReviewer({overlay:sheet(inner,'Suggest a change')});
 }
 
-/* ---------- 4. An offensive card ---------- */
+/* ---------- 5. An offensive card ---------- */
 function rudeDeck(overlay){
  const body=`<div class="dpad" style="display:flex;flex-direction:column;gap:20px">
   <div class="dhead">
@@ -461,7 +496,7 @@ function rateSheet(){
  return rudeDeck(sheet(inner,'Rate this word'));
 }
 
-/* ---------- 5. A sound-alike warning ---------- */
+/* ---------- 6. A sound-alike warning ---------- */
 function alikeSheet(reviewer){
  const warn=reviewer
   ?`<div class="warn">${I('warn','s20')}<div class="tBody semi">Sounds like <span class="te">వెధవ</span> (vedhava)</div>
@@ -491,11 +526,11 @@ function deckLearner(overlay,reviewer){
  return frame(body,{bar:appbar(),foot,overlay});
 }
 
-/* ---------- 6. Sending ---------- */
+/* ---------- 7. Sending ---------- */
 function confirmSend(){
  const overlay=`<div class="scrim"></div><div class="dlg" role="dialog" aria-label="Send review">
   <div class="tHeadS">Send 12 reviews of Family by mail?</div>
-  <div class="tBody muted">Your mail app opens with the review attached. Send it from your usual address: your code works only from that one.</div>
+  <div class="tBody muted">Your mail app opens with the review attached. Send it from the address you always use. From any other address, a review with your code is held back until the Fluenough team checks it.</div>
   <div class="acts2"><span class="btn t">Cancel</span><span class="btn t">Send</span></div></div>`;
  return deckReviewer({overlay});
 }
@@ -520,7 +555,7 @@ const issue=`<div class="issue" role="img" aria-label="The public issue">
   <div style="color:var(--page-muted)">The reviews themselves stay in the mail.</div></div>
  <div class="if">Opened by the hourly mail workflow. No suggestion text, no mail address.</div></div>`;
 
-/* ---------- 7. Thank you ---------- */
+/* ---------- 8. Thank you ---------- */
 function deckThanks(){
  const body=`<div class="dpad" style="display:flex;flex-direction:column;gap:20px">${deckHead({reviewed:true})}${stats}</div>`;
  return frame(body,{bar:appbar(),foot:`<div class="foot"><div class="btn f">Review all due · 8</div></div>`});
@@ -528,19 +563,21 @@ function deckThanks(){
 
 /* ---------- Layout ---------- */
 const SCREENS=[
- {t:'1. Settings: becoming a reviewer',w:'Everyone sees only "Become a reviewer". Turning it on asks once, then shows the rater code the phone made (FL-XXXX-XXXX-C, Crockford base32 with a check character), with Copy; the same switch turns reviewing off and keeps the code.',
-  s:[['Off',()=>settings('off')],['Turning on',()=>settings('ask')],['On: the code',()=>settings('on')]]},
- {t:'2. A deck in reviewer mode',w:'The deck\'s card list gains each card\'s review state; the foot shows how far the review has got and sends it. Reviews stay on the phone until sent.',
+ {t:'1. Settings: becoming a reviewer',w:'Everyone sees "Become a reviewer" and "How reviewing works". Turning reviewing on asks once, then shows the rater code the phone made (FL-XXXX-XXXX-C, Crockford base32 with a check character), with Copy, and opens "How reviewing works" by itself, that one time. The same switch turns reviewing off and keeps the code.',
+  s:[['Off',()=>settings('off')],['Turning on',()=>settings('ask')],['Just turned on: shown once',()=>settings('on',howSheet())],['On: the code',()=>settings('on')]]},
+ {t:'2. How reviewing works',w:'One sheet explains reviewing in six steps, in the order it happens. It opens by itself once, right after turning reviewing on, and again whenever the reviewer taps "How reviewing works" in Settings, with reviewing on or off. It is a scroll-controlled bottom sheet with a drag handle, as the app\'s other long sheets are (the report sheet): the text scrolls under the title, and Got it stays in place. Shown here opened from Settings before turning on.',
+  s:[['Opened from Settings',()=>settings('off',howSheet())],['Scrolled to the end',()=>settings('off',howSheet(true))]]},
+ {t:'3. A deck in reviewer mode',w:'The deck\'s card list gains each card\'s review state; the foot shows how far the review has got and sends it. Reviews stay on the phone until sent.',
   s:[['Card list',()=>deckReviewer()]]},
- {t:'3. A card in reviewer mode',w:'Tapping a card opens it in a sheet, laid out as a lesson shows it (picture, word, reading, IPA, meaning, notes, example), with Looks right and Suggest a change. A suggestion picks the part, shows what it says now, and asks for the change and why.',
+ {t:'4. A card in reviewer mode',w:'Tapping a card opens it in a sheet, laid out as a lesson shows it (picture, word, reading, IPA, meaning, notes, example), with Looks right and Suggest a change. A suggestion picks the part, shows what it says now, and asks for the change and why.',
   s:[['The card',()=>cardSheet()],['Suggest a change',()=>suggestSheet()]]},
- {t:'4. An offensive card (adult content on)',w:'The card shows its level, type, whether it can be friendly among peers and its region note. The reviewer rates it 1 to 9 on the research\'s question, says where they speak the language, and can still suggest a change.',
+ {t:'5. An offensive card (adult content on)',w:'The card shows its level, type, whether it can be friendly among peers and its region note. The reviewer rates it 1 to 9 on the research\'s question, says where they speak the language, and can still suggest a change.',
   s:[['The card and its level',()=>rudeCard()],['Rating',()=>rateSheet()]]},
- {t:'5. A word with a sound-alike warning',w:'A learner without adult content sees the warning with the rude word hidden. A reviewer, with adult content on, sees the word the check found, confirms or rejects the pair, and writes the care note learners will read.',
+ {t:'6. A word with a sound-alike warning',w:'A learner without adult content sees the warning with the rude word hidden. A reviewer, with adult content on, sees the word the check found, confirms or rejects the pair, and writes the care note learners will read.',
   s:[['Learner, adult content off',()=>alikeSheet(false)],['Reviewer, adult content on',()=>alikeSheet(true)]]},
- {t:'6. Sending',w:'One confirm, then the reviewer\'s own mail app opens (Android share, ACTION_SEND) with the Fluenough address, the subject with the rater code and language, and the file. The public issue the workflow opens names only the rater code and language, so the owner knows to read the mail.',
+ {t:'7. Sending',w:'One confirm, which repeats the rule from step 4 of "How reviewing works" (always send from the same address), then the reviewer\'s own mail app opens (Android share, ACTION_SEND) with the Fluenough address, the subject with the rater code and language, and the file. The public issue the workflow opens names only the rater code and language, so the owner knows to read the mail.',
   s:[['Confirm',()=>confirmSend()],['The mail app',()=>gmail()]],extra:['The public issue',issue]},
- {t:'7. Thank you',w:'When an updated deck lists the reviewer\'s code, the deck says thank you where the "not yet checked" notice was, and Settings lists the decks they helped build.',
+ {t:'8. Thank you',w:'When an updated deck lists the reviewer\'s code, the deck says thank you where the "not yet checked" notice was, and Settings lists the decks they helped build.',
   s:[['The deck',()=>deckThanks()],['Settings',()=>settings('thanks')]]}
 ];
 
@@ -550,13 +587,19 @@ function render(){
   ${sc.s.map(([cap,fn])=>{const f=fn();return `<div class="pair">${['light','dark'].map(th=>`<div class="fcol"><span class="fcap">${cap} · ${th==='light'?'Light':'Dark'}</span><div class="phone ${th} ${f.cls}">${f.html}</div></div>`).join('')}</div>`;}).join('')}
   ${sc.extra?`<div class="pair"><div class="fcol"><span class="fcap">${sc.extra[0]}</span>${sc.extra[1]}</div></div>`:''}
  </div><p class="what">${sc.w}</p></section>`).join('');
- document.querySelectorAll('[data-scroll-to]').forEach(s=>{const a=s.querySelector('[data-anchor]');if(a){s.scrollTop=a.offsetTop;}});
  check();
 }
 
 /* Measures every frame: nothing may stick out of its phone sideways, nothing in a sheet, dialog or bar
    may fall below it, and no text may be cut unless it is marked to ellipsise. */
+function scrollFrames(){
+ document.querySelectorAll('[data-scroll-to]').forEach(s=>{const v=s.dataset.scrollTo;if(v==='end'){s.scrollTop=s.scrollHeight;}else if(v!=='top'){const a=s.querySelector('[data-anchor]');if(a){s.scrollTop=a.offsetTop;}}});
+ // a sheet's scroll thumb, where Android draws it while the text moves
+ document.querySelectorAll('.sheet .thumb').forEach(t=>{const b=t.parentElement.querySelector('.sbody');const h=b.clientHeight,H=b.scrollHeight;
+  if(H<=h+1){t.style.display='none';return;}t.style.top=(b.offsetTop+b.scrollTop/H*h)+'px';t.style.height=(h*h/H)+'px';});
+}
 function check(){
+ scrollFrames();
  let bad=[];const phones=[...document.querySelectorAll('.phone')];
  phones.forEach((ph,pi)=>{
   const pr=ph.getBoundingClientRect();
