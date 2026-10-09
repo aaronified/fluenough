@@ -317,9 +317,25 @@ The owner's answers to #235, 2026-10-08:
   reviews from the last three months, or its last 1,000, whichever is more.
   Earlier reviews still build each word's memory state up to that window;
   only the window's answers are what the fit learns from.
-- **Shown prominently** (owner: "Yes. Prominently. Figure out how"), on
-  Progress under Your strengths and where the learner will see it; the
-  design is put to the owner before it is built.
+- **Shown prominently** (owner: "Yes. Prominently. Figure out how").
+  Three designs were mocked up (moment, ambient, story); the owner chose,
+  2026-10-09:
+  - **Wording:** as the judge proposed: "You remember Hear words well:
+    fewer reviews", "Write words slip faster: more reviews" ("slip", never
+    "fade"); "comes back in 6 days, not 4"; "About 120 reviews in the next
+    30 days, was 160"; "more reviews" never in the error colour.
+  - **Settings:** moment's "Adjust to me" button, the automatic option
+    and the result sheet, with a progress bar while adjusting. The button
+    is disabled, "Needs more answers first", until a skill can be fitted;
+    "Worked out on this phone from your answers. Nothing is sent
+    anywhere."
+  - **Progress:** a card like ambient's strip, "How you learn" or "Learn
+    more about your pacing", that opens story's page: per skill, how fast
+    the learner forgets against the default.
+  - **Today:** ambient's strip on the due card and the marks on the skill
+    tiles, aligned properly ("your render has everything misaligned. That
+    won't do").
+  - Revised mockups before any of it is built.
 - **Nothing is gathered** (owner: "We do not gather any data at all").
   Every fit runs on the phone, from that learner's own review log; nothing
   leaves it. Where this plan or the research says a figure could be
