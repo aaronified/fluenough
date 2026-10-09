@@ -157,7 +157,10 @@ class GroupedList extends StatelessWidget {
 ///   own, so a "Start" or "Set up" button keeps its own label and action.
 ///
 /// [GroupedTile.toggle] is the switch row: the whole row toggles, and the
-/// switch is disabled M3-style while the feature is incoming.
+/// switch is disabled M3-style while the feature is incoming. It takes a
+/// line for each state, [subtitleOn] and [subtitleOff], and shows the one
+/// for its value, so the line says what happens now and changes the moment
+/// the switch is flipped (docs/plans/settings-wording.md).
 class GroupedTile extends StatelessWidget {
   const GroupedTile({
     super.key,
@@ -172,14 +175,21 @@ class GroupedTile extends StatelessWidget {
     this.padding = defaultPadding,
     this.leadingGap = 16,
     this.trailingGap = 16,
-  }) : _toggle = null;
+  }) : subtitleOn = null,
+       subtitleOff = null,
+       _toggle = null;
 
   /// A row with a [Switch] at its end. Pass null [onChanged] for a switch
   /// that cannot change.
+  ///
+  /// [subtitleOn] is the line while [value] is true, [subtitleOff] while it
+  /// is false: what happens now, in each state. A line that depends on the
+  /// phone, such as a missing voice, goes after the state in both.
   const GroupedTile.toggle({
     super.key,
     required this.title,
-    this.subtitle,
+    required String this.subtitleOn,
+    required String this.subtitleOff,
     this.leading,
     required bool value,
     required ValueChanged<bool>? onChanged,
@@ -187,7 +197,8 @@ class GroupedTile extends StatelessWidget {
     this.titleColor,
     this.padding = defaultPadding,
     this.leadingGap = 16,
-  }) : trailing = null,
+  }) : subtitle = null,
+       trailing = null,
        onTap = null,
        selected = false,
        trailingGap = 16,
@@ -198,7 +209,23 @@ class GroupedTile extends StatelessWidget {
       EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 14);
 
   final String title;
+
+  /// The line under the title. For [GroupedTile.toggle], see [line].
   final String? subtitle;
+
+  /// A [GroupedTile.toggle]'s line while it is on, and while it is off.
+  /// Null for any other row.
+  final String? subtitleOn;
+  final String? subtitleOff;
+
+  /// The line shown now: for a switch, the one for its value.
+  String? get line => switch (_toggle) {
+    null => subtitle,
+    final toggle => toggle.value ? subtitleOn : subtitleOff,
+  };
+
+  /// A switch's value, or null for any other row.
+  bool? get toggleValue => _toggle?.value;
 
   /// Usually an [Icon]; drawn in [titleColor], or `onSurfaceVariant`, unless
   /// it sets a colour.
@@ -281,9 +308,9 @@ class GroupedTile extends StatelessWidget {
             color: titleColor ?? foreground,
           ),
         ),
-        if (subtitle != null)
+        if (line case final line?)
           Text(
-            subtitle!,
+            line,
             style: theme.textTheme.bodyMedium!.copyWith(
               color: foreground ?? scheme.onSurfaceVariant,
             ),

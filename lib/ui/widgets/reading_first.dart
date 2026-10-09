@@ -5,7 +5,7 @@ import 'target_text.dart';
 
 /// A word for a language learned without its alphabet: its [reading] first,
 /// as large as the word would be, then the word in its script, smaller.
-/// Both always show, whatever Show romanisation says.
+/// Both always show, whatever Latin-letter readings says.
 class ReadingFirst extends StatelessWidget {
   const ReadingFirst({
     super.key,

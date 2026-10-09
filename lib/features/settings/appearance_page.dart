@@ -105,7 +105,8 @@ class AppearancePage extends StatelessWidget {
               _Block(
                 child: GroupedTile.toggle(
                   title: l10n.appearancePureBlack,
-                  subtitle: l10n.appearancePureBlackDesc,
+                  subtitleOn: l10n.appearancePureBlackOn,
+                  subtitleOff: l10n.appearancePureBlackOff,
                   feature: Feature.appearance,
                   padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 20,
@@ -119,7 +120,8 @@ class AppearancePage extends StatelessWidget {
               _Block(
                 child: GroupedTile.toggle(
                   title: l10n.appearanceWallpaper,
-                  subtitle: l10n.appearanceWallpaperDesc,
+                  subtitleOn: l10n.appearanceWallpaperOn,
+                  subtitleOff: l10n.appearanceWallpaperOff,
                   feature: Feature.dynamicColour,
                   padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 20,
