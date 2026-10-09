@@ -15,7 +15,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/downloads/deck_downloads_page.dart';
 import 'package:fluenough/features/downloads/download_fixtures.dart';
 import 'package:fluenough/features/downloads/download_page.dart';
-import 'package:fluenough/features/placement/learn_languages_page.dart';
+import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 
 import '../../support/deck_remote.dart';
@@ -308,7 +308,7 @@ cards:
       await tester.tap(find.text(l10n.navSettings));
       await tester.pumpAndSettle();
       await tapText(tester, l10n.settingsLearn);
-      expect(find.byType(LearnLanguagesPage), findsOneWidget);
+      expect(find.byType(LanguagePickerPage), findsOneWidget);
       await tapText(tester, 'Hindi');
       await tapText(tester, l10n.commonContinue);
       expect(find.byType(PlacementPage), findsOneWidget);
