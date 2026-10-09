@@ -32,6 +32,7 @@ import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
+import 'package:fluenough/features/review/waiting_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
@@ -432,6 +433,28 @@ void main() {
     });
   }
 
+  // In reviewer mode, each unit with a deck no native speaker has signed
+  // off carries "To review": every bundled Telugu deck is unreviewed.
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    testWidgets('the path in reviewer mode, its units marked To review, '
+        '${themeMode.name} theme', (tester) async {
+      usePhone(tester);
+      final semantics = tester.ensureSemantics();
+      final state = await teluguLearner();
+      state.reviewing.turnOn();
+      state.settings.reviewLanguages = const <String>{'te'};
+      await pumpScreen(
+        tester,
+        const DecksPage(planOf: PathFixtures.planOf),
+        state: state,
+        themeMode: themeMode,
+      );
+      expect(find.text(l10nOf(tester).pathToReview), findsWidgets);
+      await meetsEveryGuideline(tester);
+      semantics.dispose();
+    });
+  }
+
   group('the path and a unit at the largest font size, 2.0 on Android', () {
     for (final (name, page) in pathScreens) {
       testWidgets('$name: nothing clipped, targets still big enough', (
@@ -585,6 +608,24 @@ void main() {
             state.reviewing.markRight(words, words.cards.first);
             await tester.pumpAndSettle();
             await tapShown(tester, find.text(l10nOf(tester).reviewSend));
+          },
+        ),
+        (
+          'waiting for review, no language chosen',
+          const WaitingForReviewPage(),
+          null,
+        ),
+        (
+          'waiting for review, choosing the languages',
+          const WaitingForReviewPage(),
+          (tester, state) async =>
+              tapShown(tester, find.text(l10nOf(tester).reviewWaitingChoose)),
+        ),
+        (
+          'waiting for review in Telugu',
+          const WaitingForReviewPage(),
+          (tester, state) async {
+            state.settings.reviewLanguages = const <String>{'te'};
           },
         ),
         (

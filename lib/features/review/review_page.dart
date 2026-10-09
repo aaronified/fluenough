@@ -16,6 +16,7 @@ import '../../ui/widgets/target_text.dart';
 import '../decks/path_model.dart';
 import '../decks/word_sheet.dart' show adultContentOn;
 import 'review_sheets.dart';
+import 'review_waiting.dart';
 import 'review_words.dart';
 import 'send_reviews_sheet.dart';
 
@@ -84,7 +85,7 @@ class ReviewPage extends StatelessWidget {
         total++;
         if (isRudeIn(deck, card) && !adult) {
           hidden++;
-        } else if (_checked(state, deck, card, adult)) {
+        } else if (cardChecked(state, deck, card, adult)) {
           done++;
         }
       }
@@ -173,22 +174,6 @@ class ReviewPage extends StatelessWidget {
         onSend: () => showSendReviews(context),
       ),
     );
-  }
-
-  /// Whether [card] needs nothing more: marked right or suggested, rated if
-  /// rude, and its pair checked if it is like a rude word and the reviewer
-  /// can see it.
-  static bool _checked(AppState state, DeckEntry deck, Card card, bool adult) {
-    final review = state.reviewing.reviewOf(deck, card);
-    if (review == null) return false;
-    // A rude word is rated, not marked right.
-    if (isRudeIn(deck, card) ? review.rating == null : !review.marked) {
-      return false;
-    }
-    if (adult && rudeAlikesOf(state, card).isNotEmpty && review.alike == null) {
-      return false;
-    }
-    return true;
   }
 
   /// A deck's heading, its tally, and its cards.

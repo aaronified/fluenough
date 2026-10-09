@@ -5268,6 +5268,146 @@
   "@reviewSettingsHow": {
     "description": "Settings row, and the title of the sheet, that explains reviewing step by step."
   },
+  "reviewSettingsLanguages": "Languages you review",
+  "@reviewSettingsLanguages": {
+    "description": "Settings row under Review decks: the languages this reviewer checks decks in; opens a choice."
+  },
+  "reviewSettingsLanguagesNone": "None chosen",
+  "@reviewSettingsLanguagesNone": {
+    "description": "Under Languages you review when the reviewer has unticked every language."
+  },
+  "reviewLanguagesBody": "What waits for review shows for these languages, and the path marks their units \"To review\". At first, the languages you speak that the app teaches.",
+  "@reviewLanguagesBody": {
+    "description": "Under the title of the choice of languages a reviewer reviews."
+  },
+  "reviewSettingsWaiting": "Waiting for review",
+  "@reviewSettingsWaiting": {
+    "description": "Settings row under Review decks, and the title of its page: what still needs a native speaker in the reviewer's languages."
+  },
+  "reviewSettingsWaitingDesc": "{count, plural, =0{Nothing waiting in your languages} =1{1 deck waits for a native speaker} other{{count} decks wait for a native speaker}}",
+  "@reviewSettingsWaitingDesc": {
+    "description": "Under Waiting for review in Settings: how many decks in the reviewer's languages are not yet signed off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewWaitingIntro": "What still needs a native speaker in the languages you review. A deck waits until a native speaker signs it off.",
+  "@reviewWaitingIntro": {
+    "description": "At the top of the Waiting for review page."
+  },
+  "reviewWaitingNoLanguages": "You review no language yet. Choose the languages you review to see what waits in them.",
+  "@reviewWaitingNoLanguages": {
+    "description": "Waiting for review page, when the reviewer reviews no language."
+  },
+  "reviewWaitingChoose": "Choose languages",
+  "@reviewWaitingChoose": {
+    "description": "Button on the Waiting for review page that opens the choice of languages."
+  },
+  "reviewWaitingNothing": "Nothing waits for review in {language}",
+  "@reviewWaitingNothing": {
+    "description": "The one row of a language with nothing waiting.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewWaitingUnit": "Unit {number}: {title}",
+  "@reviewWaitingUnit": {
+    "description": "A unit of the path with a deck waiting for review.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      },
+      "title": {
+        "type": "String",
+        "example": "Family"
+      }
+    }
+  },
+  "reviewWaitingCardsLeft": "{count, plural, =0{Every card checked: sign it off} =1{1 card left to check} other{{count} cards left to check}}",
+  "@reviewWaitingCardsLeft": {
+    "description": "How many cards of a deck or unit waiting for review the reviewer has left to check.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewWaitingDeckCards": "{deck}: {count, plural, =0{every card checked} =1{1 card left} other{{count} cards left}}",
+  "@reviewWaitingDeckCards": {
+    "description": "One deck of a unit waiting for review, and its cards left to check.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family words"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewWaitingFrom": "From {language}",
+  "@reviewWaitingFrom": {
+    "description": "A deck waiting for review outside the reviewer's course: the language it is taught from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "reviewWaitingUnrated": "{count, plural, =1{1 offensive word not yet rated} other{{count} offensive words not yet rated}}",
+  "@reviewWaitingUnrated": {
+    "description": "Row of a language on the Waiting for review page. The words are not named.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "reviewWaitingUnconfirmed": "{count, plural, =1{1 sound-alike or look-alike pair not yet confirmed} other{{count} sound-alike and look-alike pairs not yet confirmed}}",
+  "@reviewWaitingUnconfirmed": {
+    "description": "Row of a language on the Waiting for review page: words like a rude one whose pair the reviewer has not confirmed or rejected.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewWaitingInDecks": "In {decks}",
+  "@reviewWaitingInDecks": {
+    "description": "Under a row of words waiting: the decks they are in, joined.",
+    "placeholders": {
+      "decks": {
+        "type": "String",
+        "example": "Rude words · Family words"
+      }
+    }
+  },
+  "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
+  "@reviewWaitingUnsent": {
+    "description": "Row of a language on the Waiting for review page; opens the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathToReview": "To review",
+  "@pathToReview": {
+    "description": "Mark on a unit of the path, in reviewer mode, that has a deck no native speaker has signed off yet."
+  },
   "reviewTurnOnTitle": "Review decks?",
   "@reviewTurnOnTitle": {
     "description": "Title of the dialog shown when turning Review decks on."

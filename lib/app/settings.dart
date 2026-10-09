@@ -112,6 +112,7 @@ class SettingsNotifier extends ChangeNotifier {
   String? _raterCode;
   bool _reviewIntroShown = false;
   Reviews _reviews = const Reviews();
+  Set<String>? _reviewLanguages;
 
   /// Settings' "Review decks" (docs/plans/deck-browser.md): whether this
   /// profile checks decks and sends its reviews by mail. Turning it off
@@ -139,6 +140,21 @@ class SettingsNotifier extends ChangeNotifier {
   set reviews(Reviews value) {
     if (identical(value, _reviews)) return;
     _reviews = value;
+    notifyListeners();
+  }
+
+  /// The languages this reviewer reviews, by code, as they chose them in
+  /// Settings (docs/plans/deck-browser.md, "What is waiting for review"),
+  /// or null before they chose: then the languages they speak that the
+  /// app teaches.
+  Set<String>? get reviewLanguages => _reviewLanguages;
+  set reviewLanguages(Set<String>? codes) {
+    final next = codes == null ? null : Set<String>.unmodifiable(codes);
+    final now = _reviewLanguages;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _reviewLanguages = next;
     notifyListeners();
   }
 
@@ -572,6 +588,11 @@ class SettingsNotifier extends ChangeNotifier {
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
     'reviews': _reviews.toJson(),
+    // Not chosen yet is "default"; chosen, the codes, which may be none.
+    'review_languages': switch (_reviewLanguages) {
+      null => 'default',
+      final codes => (codes.toList()..sort()).join(','),
+    },
     'course_natives': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _courseNatives.entries)
         key: <String, Object>{
@@ -720,6 +741,15 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
     if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
+    if (pick('review_languages', (t) => t) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      reviewLanguages = v == 'default'
+          ? null
+          : <String>{
+              for (final c in v.split(','))
+                if (code.hasMatch(c)) c,
+            };
+    }
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
       for (final MapEntry(:key, :value) in v.entries) {

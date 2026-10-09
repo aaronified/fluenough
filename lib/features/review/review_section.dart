@@ -3,15 +3,21 @@ import 'package:flutter/services.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/routes.dart';
+import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
+import '../decks/path_parts.dart' show joinParts;
 import 'how_reviewing_works.dart';
+import 'review_waiting.dart';
 import 'send_reviews_sheet.dart';
+import 'waiting_page.dart';
 
 /// Settings' Reviewing group (docs/plans/deck-browser.md): the "Review
 /// decks" switch, which asks once and then shows the rater code the phone
-/// made, with Copy; the decks waiting to send; "Send the last mail again",
+/// made, with Copy; the languages the reviewer reviews, and what waits for
+/// review in them; the decks waiting to send; "Send the last mail again",
 /// for a mail that never went; the decks the reviewer helped build; and
 /// "How reviewing works", which opens by itself the first time reviewing is
 /// turned on.
@@ -37,6 +43,13 @@ class ReviewSection extends StatelessWidget {
     final on = reviewing.on && code != null;
     final waiting = reviewing.unsent.length;
     final lastSent = reviewing.lastSent.length;
+    final reviewed = on ? reviewLanguagesOf(state) : const <LanguageInfo>[];
+    final toReview = <String>{
+      for (final language in reviewed)
+        for (final deck in state.decks)
+          if (deck.language.code == language.code && awaitsReview(state, deck))
+            deck.id,
+    }.length;
     final helped = <String>[
       if (code != null)
         for (final entry in state.decks)
@@ -70,6 +83,24 @@ class ReviewSection extends StatelessWidget {
               },
             ),
           ),
+        if (on) ...<Widget>[
+          GroupedTile(
+            leading: const Icon(Icons.translate_outlined),
+            title: l10n.reviewSettingsLanguages,
+            subtitle: reviewed.isEmpty
+                ? l10n.reviewSettingsLanguagesNone
+                : joinParts(l10n, <String>[for (final l in reviewed) l.name]),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => showReviewLanguages(context),
+          ),
+          GroupedTile(
+            leading: const Icon(Icons.pending_actions_outlined),
+            title: l10n.reviewSettingsWaiting,
+            subtitle: l10n.reviewSettingsWaitingDesc(toReview),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => AppNavigator.openWaitingForReview(context),
+          ),
+        ],
         if (waiting > 0)
           GroupedTile(
             leading: const Icon(Icons.outbox_outlined),
