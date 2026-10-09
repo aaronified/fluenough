@@ -22,11 +22,11 @@ Up to 0.3.4; the [CHANGELOG](../CHANGELOG.md) has each change. In brief:
 - Saved progress, stats, leeches, the review log's export and import, adding
   a deck from a file, and signed releases.
 
-Merged since 0.3.4, not yet released (#432, #433, #434):
+Merged since 0.3.4, not yet released (#432 to #440):
 
 - FSRS-6 in place of SM-2, and four schedules per word: seen, heard, spoken
   and written words, plus two grammar schedules, understood and produced. A
-  right answer counts in part for the skills it implies (ADR-0033,
+  right answer counts in part for the skills it implies (#432, ADR-0033,
   ADR-0034, ADR-0036).
 - FSRS fitted to each learner on the phone, per language and skill, by
   "Adjust to me" or after 10% more reviews; shown in Settings, Progress
@@ -37,26 +37,34 @@ Merged since 0.3.4, not yet released (#432, #433, #434):
 - The B1 deck format: a core and a layer per native language, one path per
   language learnt, regions, phrasebooks, rule decks, typed notes and base
   words, and the learner choosing which native language teaches a course
-  (#434, ADR-0036). The B1 plans and the layer split are still to write.
+  (#434, ADR-0036).
+- New Decks path and Unit screens, and reviewing decks in the app, sent by
+  mail (#436, #403).
+- Settings wording that says what each switch does now, voices per language,
+  and the 18+ setting (#437, #96).
+- B1 plans for Telugu and Bengali, and their A1 decks (#438).
+- The mail bot checks the sender of a review (#439, part of #403).
+- Decks downloaded from GitHub, not bundled: the index, the download
+  source, first launch, updates and removing a language (#440, ADR-0037,
+  closes #210).
+
+The next release ships deck downloads together with the language picker.
 
 ## Being built
 
 | Branch | What | Trackers |
 |---|---|---|
-| `feat/reviewer-mode` (PR #436) | The new Decks path and Unit screens (`path-redesign.md`), and reviewing in the app, sent by mail (`deck-browser.md`, `offensive-words.md`). Not in it yet: the 18+ setting (#96) and the sender check in the Fluenough Gmail | #403 |
-| `deck/a1-te-bn` | Telugu and Bengali A1 decks, with their B1 plans (`b1-plans.md`) | #209, #419 |
-
-Next: the settings redesign (milestone 4), which takes the 18+ setting (#96) that
-PR #436 leaves out.
+| `feat/language-picker` | The language picker, reading the deck index | #211 |
+| `deck/b1-arrange` | The other languages' decks (Hindi, Marathi, Gujarati, Kannada, Assamese, Spanish) arranged to the B1 plan, with no new content | #209 |
 
 ## In order
 
 | Milestone | Tracker | Plan |
 |---|---|---|
 | 1 · Skill model + FSRS | #207, #113 (done, #432) | What is left of them: a switch for the other activities (#243), the phonemic contrasts drill (#31), pictures beyond Noto Emoji (#91), grammar exercises (#93) and the script TTS fallback (#32). #249 (quick revision, rating-button interval previews, leeches) is done in #432 and can be closed |
-| 2 · B1 plans | #209, #392, #413 | A B1 plan in every path (`b1-plans.md`); decks split into a core and a layer per native language (`native-layers.md`); a phrasebook, then words, then rules, then sentences (`words-rules-sentences.md`); then the Bengali and Telugu B1 decks |
-| 3 · Deck downloads | #210 | Decks downloaded from GitHub, not bundled (`decks-from-github.md`) |
-| 4 · Settings redesign | #211, #212, #213 | The language picker, settings wording, and voices per language |
+| 2 · B1 plans | #209, #392, #413 | A B1 plan in every path (`b1-plans.md`; Telugu and Bengali done in #438); decks split into a core and a layer per native language (`native-layers.md`); a phrasebook, then words, then rules, then sentences (`words-rules-sentences.md`); then the Bengali and Telugu B1 decks |
+| 3 · Deck downloads (done, #440) | #210 | Decks downloaded from GitHub, not bundled ([ADR-0037](adr/0037-decks-download-from-main.md)) |
+| 4 · Settings redesign | #211, #212, #213 | Settings wording and voices per language are done (#437; trackers #212 and #213 stay open until their sub-issues close). The language picker is being built (#211) |
 
 The skill model and FSRS (#207, #113) are done, in #432; milestone 1 stays
 open until its few leftovers are done or moved.
@@ -73,7 +81,7 @@ Each can start once what it waits for is done.
 | #222 | Building sentences, and cloze | |
 | #216 | A path for every language, by family | #392, #413 (the parts that write or reorder courses) |
 | #350 | New languages, one full course each | #210, #217, #392, #413 |
-| #403 | Reviewing in the app, sent by mail: sign-off, offensive-word ratings, similarity checks (`deck-browser.md`); being built | |
+| #403 | Reviewing in the app, sent by mail: sign-off, offensive-word ratings, similarity checks (`deck-browser.md`); app side merged in #436, sender check in #439 | |
 | | Offensive words: levels, and sound-alike and look-alike warnings (`offensive-words.md`) | #403 for the ratings |
 | #217 | IPA from Wiktionary | |
 | #218 | Fluenough on the web | |

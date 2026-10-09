@@ -3,7 +3,7 @@
 Written 2026-10-06. **Part of the settings redesign,** with
 `language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
 last in the owner's order, after the skill model (done), `b1-plans.md` and
-deck downloads (`decks-from-github.md`).
+deck downloads ([ADR-0037](../adr/0037-decks-download-from-main.md)).
 
 ## What the owner asked
 
@@ -14,7 +14,7 @@ deck downloads (`decks-from-github.md`).
 > the script right there as well.
 
 Asked whether to build it or plan it: "plan it in a way that can adapt to
-the deck download feature" (`decks-from-github.md`). Then: "Language picker
+the deck download feature" ([ADR-0037](../adr/0037-decks-download-from-main.md)). Then: "Language picker
 will be built after the deck download feature."
 
 ## What exists
@@ -68,7 +68,7 @@ search and list guidance.
 
 ## Built on deck downloads
 
-It comes after `decks-from-github.md`, so it reads the deck index from the
+It comes after deck downloads (ADR-0037), so it reads the deck index from the
 start, with no version built on the bundled decks:
 
 - `LanguageCatalog` in `lib/core`, free of Flutter, lists `CatalogLanguage`
@@ -187,6 +187,9 @@ start, with no version built on the bundled decks:
 - **Both progresses on the card:** the course's completeness ("62% of B1
   written") and, for a language the learner learns, their own ("You: 18%
   of B1").
+- **One release with deck downloads** (owner, 2026-10-09: "After the
+  picker"): deck downloads (#440) ships in the same release as the picker,
+  not on its own.
 
 ## Estimate
 

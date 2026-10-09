@@ -1,6 +1,6 @@
 # ADR-0007: State reaches widgets through AppScope, with no package
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0037: decks are downloaded, not bundled.
 - **Date:** 2026-09-28
 
 ## Context
