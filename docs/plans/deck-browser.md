@@ -234,8 +234,8 @@ Settled with the owner, 2026-10-09:
     This is a deck-format change and needs its ADR.
   - **Another reviewer accepts it verbatim:** a different rater code, in
     that language, accepts the proposal unchanged. The mail bot then
-    opens a PR that applies it, and the PR merges after a waiting period
-    unless the owner closes it (the override).
+    opens a PR that applies it (#441), and the PR merges after three days
+    unless the owner closes it (the override; owner, 2026-10-09: "3 days").
   - **Accept, edit or reject:** a reviewer who edits a proposal instead
     makes a new suggestion, back to the owner; the old proposal keeps
     waiting.
