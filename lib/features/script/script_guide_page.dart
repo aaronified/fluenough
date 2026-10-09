@@ -54,7 +54,7 @@ class ScriptGuidePage extends StatelessWidget {
 /// letters that share it. Modelled on Duolingo's script tips
 /// (docs/market-research.md, "Script lessons").
 ///
-/// Only the term has a reading, under Show romanisation as on a card. The
+/// Only the term has a reading, under Latin-letter readings as on a card. The
 /// example and the letters are shapes to look at, and the text gives a
 /// sound where it matters, as a card's notes do.
 class ScriptGuideView extends StatelessWidget {

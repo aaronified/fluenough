@@ -228,7 +228,7 @@ void main() {
     await tapText(tester, l10n.navSettings);
     expect(find.byType(SettingsPage), findsOneWidget);
     expect(speech.starts, 0);
-    await tapText(tester, l10n.skillSpeaking);
+    await tapText(tester, l10n.skillSpeakingSettingsTitle);
     expect(speech.starts, 1);
     expect(state.settings.isEnabled(Skill.speaking), isFalse);
     expect(find.text(l10n.settingsSpeakingRefused), findsOneWidget);
@@ -244,7 +244,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     await tapText(tester, l10n.navSettings);
-    await tapText(tester, l10n.skillSpeaking);
+    await tapText(tester, l10n.skillSpeakingSettingsTitle);
     expect(state.settings.isEnabled(Skill.speaking), isTrue);
     expect(state.speechReady, isTrue);
   });
@@ -292,12 +292,14 @@ void main() {
     final state = speakingState(speech, on: false);
     await pumpScreen(tester, const VoicesPage(), state: state);
     final l10n = l10nOf(tester);
+    // Each language's card offers it, in place of its test.
     await tester.scrollUntilVisible(
-      find.text(l10n.voicesSpeechOff),
+      find.text(l10n.voicesSpeechOff).first,
       200,
       scrollable: find.byType(Scrollable).first,
     );
-    expect(find.text(l10n.voicesSpeechOff), findsOneWidget);
+    expect(find.text(l10n.voicesSpeechOff), findsWidgets);
+    expect(find.text(l10n.voicesSay), findsNothing);
     await tapText(tester, l10n.voicesSpeechTurnOn);
     expect(state.settings.isEnabled(Skill.speaking), isTrue);
 
@@ -315,7 +317,7 @@ void main() {
   ) async {
     usePhone(tester);
     // Tall enough for every bundled language's row and what is under them.
-    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
+    tester.view.physicalSize = const Size(390 * 3, 8000 * 3);
     final speech = FixedSpeechEngine(online: <String>{'es'});
     final state = speakingState(speech);
     await state.load();

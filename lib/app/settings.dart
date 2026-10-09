@@ -109,6 +109,8 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
   bool _reviewDecks = false;
+  bool _adultContent = false;
+  Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
   bool _reviewIntroShown = false;
   Reviews _reviews = const Reviews();
@@ -120,6 +122,15 @@ class SettingsNotifier extends ChangeNotifier {
   bool get reviewDecks => _reviewDecks;
   set reviewDecks(bool value) =>
       _set(_reviewDecks, value, (v) => _reviewDecks = v);
+
+  /// Settings' "Adult content (18+)" (#96): whether rude words show where
+  /// a sound-alike or look-alike warning would hide them, and offensive
+  /// cards, with their rating for a reviewer, are shown. Off by default;
+  /// Settings asks the learner to confirm their age before switching it on.
+  /// Per profile, like every setting.
+  bool get adultContent => _adultContent;
+  set adultContent(bool value) =>
+      _set(_adultContent, value, (v) => _adultContent = v);
 
   /// The rater code the phone made when reviewing was first turned on,
   /// written `FL-XXXX-XXXX-C`, or null before. Kept when reviewing is
@@ -250,6 +261,22 @@ class SettingsNotifier extends ChangeNotifier {
     allowed ? next.add(code) : next.remove(code);
     if (setEquals(next, _speechOnline)) return;
     _speechOnline = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The voice the learner chose for [code]'s language on the Voices page
+  /// (#123), by the engine's name for it, or null for the phone's default.
+  String? voiceFor(String code) => _voices[code];
+
+  /// Chooses [voice] for [code]'s language; null goes back to the phone's
+  /// default.
+  void chooseVoice(String code, String? voice) {
+    if (_voices[code] == voice) return;
+    _voices = Map<String, String>.unmodifiable(<String, String>{
+      for (final MapEntry(:key, :value) in _voices.entries)
+        if (key != code) key: value,
+      code: ?voice,
+    });
     notifyListeners();
   }
 
@@ -585,6 +612,8 @@ class SettingsNotifier extends ChangeNotifier {
         key: value.millisecondsSinceEpoch,
     }),
     'review_decks': '$_reviewDecks',
+    'adult_content': '$_adultContent',
+    'tts_voices': jsonEncode(_voices),
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
     'reviews': _reviews.toJson(),
@@ -736,6 +765,16 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('review_decks', flag) case final v?) reviewDecks = v;
+    if (pick('adult_content', flag) case final v?) adultContent = v;
+    if (pick('tts_voices', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
+            value is String &&
+            value.isNotEmpty) {
+          chooseVoice(key, value);
+        }
+      }
+    }
     if (pick('rater_code', RaterCode.tryParse) case final v?) {
       raterCode = '$v';
     }
