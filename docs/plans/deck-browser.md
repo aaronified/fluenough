@@ -1,4 +1,20 @@
-# Plan: a deck browser for reviewers, on GitHub Pages
+# Plan: reviewing decks in the app, sent by mail
+
+It began on 2026-10-06 as a deck browser on GitHub Pages with a Google Form
+and a Sheet. On 2026-10-09 the owner moved the review into the app, sent by
+mail, and dropped the Sheet. **What stands is "Review in the app, by mail"
+below** (tracker #403; the app side is PR #436, still open). The sections
+about the Pages site, the form and the Sheet are kept for what they decided,
+and each says where it is superseded.
+
+**What the mail design is, in short:** the reviewer turns reviewer mode on in
+Settings and the phone makes their rater code; they review on the screens
+that already show decks and cards; one mail carries a review file per deck,
+with the code and the languages, to the Fluenough address; the hourly mail
+job opens one issue per mail with only the code and languages; the owner
+reads the mail and the decks are updated with him. No Form, no Sheet.
+Whether a public deck browser on Pages survives at all is for the owner to
+decide (#404, #405).
 
 Written 2026-10-06. **Moved ahead, 2026-10-09:** built now, on today's
 deck format, before the native layers (`native-layers.md`), so that
@@ -6,6 +22,8 @@ reviewers can check the Bengali and Telugu B1 decks as they arrive; layer
 support is added when #392 lands (owner).
 
 ## What the owner asked
+
+*Superseded 2026-10-09: the page, the form and the weekly canary. See "Review in the app, by mail".*
 
 > Another plan: deck browser via github pages, which language reviewers can
 > use to check the decks and suggest changes in the page itself (which will
@@ -46,6 +64,8 @@ Beyond per-card suggestions, the pages handle:
   person cannot stack votes. Plain suggestions still need no code.
 
 ### The owner's Sheet, 2026-10-09
+
+*Superseded the same day by "No Sheet" below: the mail has all the data, and the rater code is made by the app. Kept for the reasoning about private data.*
 
 > you will generate an unique rater-code generation function (for the
 > google sheet). and i will use that to generate the codes and hand them
@@ -143,14 +163,16 @@ Settled with the owner, 2026-10-09:
   reviewer has already reviewed but not sent. It shows in Settings under
   "Review decks" and as a "To review" mark on each unit of the path.
 - **The sender check lives in the Fluenough Gmail** (owner, 2026-10-09,
-  replacing the keyed hash in the repository below): the hourly mail job
+  replacing the keyed hash in the repository; see the next bullet): the hourly mail job
   keeps one private record per rater code in a Gmail label
   (`fluenough/raters`), holding the address its first review came from.
   Addresses are matched with case ignored, and for Gmail with dots and
   `+…` ignored. A later review from another address gets a "sender does
   not match" issue; the owner decides. No new secret, nothing written to
   the repository, and the job logs only counts.
-- **The first mail binds the code to its sender** (owner, 2026-10-09): the
+- **The first mail binds the code to its sender** (owner, 2026-10-09; *the
+  keyed hash in the repository was replaced the same day by the Gmail
+  record above, and is not built*): the
   first review mail with a new code ties that code to the sender's
   address. The workflow keeps, in a file in the repository, the code with
   a keyed hash of the address (the key a GitHub secret), never the address
@@ -190,6 +212,8 @@ Settled with the owner, 2026-10-09:
 
 ## The form's link is not private
 
+*Superseded 2026-10-09: there is no form.*
+
 A GitHub secret keeps a value out of the repository and the logs, but the
 site is public. Whatever the build writes into a page can be read with View
 Source, and that includes the form's link. That is fine: the link only lets
@@ -202,6 +226,8 @@ Sheet. So:
   Only the workflow uses it, and it never reaches the site.
 
 ## The site
+
+*Not part of the mail design. Whether a public site survives is for the owner (#404, #405); the Pages workflow is also needed by `web-pwa.md` (#306).*
 
 - **Built by a workflow** from `decks/` on every push to `main`, into Pages.
   It shares the Pages setup with `web-pwa.md`.
@@ -219,6 +245,8 @@ Sheet. So:
 
 ## Suggesting a change
 
+*Superseded 2026-10-09: a suggestion is made in the app, on the card sheet, and sent in the review mail. The page and the form are not built (#406 closed).*
+
 - **"Suggest a change"** on each card, and on a deck's name and description:
   - the field (target, reading, IPA, meaning, a note, an example), its
     current text, the suggestion, why, and an optional name;
@@ -229,6 +257,8 @@ Sheet. So:
   it says "Sent" either way. The canary below is what catches a failure.
 
 ## From the Sheet to issues
+
+*Superseded 2026-10-09: there is no Sheet. The hourly mail job opens one issue per review mail (#407). The canary tested the form and is not carried over.*
 
 - **A scheduled workflow** reads new rows with the service account. Each
   becomes an issue:
@@ -248,6 +278,8 @@ Sheet. So:
 
 ## What it takes
 
+*As first planned, for the Pages and form design. Under the mail design none of 1 to 5 stands; what replaces them is the mail job (#407) and the in-app review (#427 to #430), in PR #436. The docs (6.) remain.*
+
 1. **The site generator,** `tools/deck_site.py`, and its tests.
 2. **The Pages workflow,** shared with `web-pwa.md`.
 3. **The suggestion box and its send.**
@@ -261,6 +293,11 @@ Sheet. So:
 
 ## To decide
 
+- Whether a public deck browser on Pages is built at all (#404, #405).
+- **Two bullets above disagree:** "No join mail" says the owner first hears of
+  a reviewer with their first review, and "Joining is automatic" says a join
+  mail makes the sender a reviewer at once. The first is what PR #436 builds;
+  the owner settles which stands.
 - Whether a deck's page also shows the cards' history: when a card last
   changed, and by which issue.
 - Whether reviewers can filter to unreviewed decks only.

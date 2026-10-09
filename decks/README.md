@@ -17,8 +17,10 @@ decks/
        ja-path.yaml
   te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
-       te-home.yaml               a core: the Telugu side of a deck, for every learner
-       en/  te-en-home.yaml       its English layer; merged, they are the deck te-en-home
+       te-home.yaml               planned shape: a core, the Telugu side of a deck, for every learner
+       en/  te-en-home.yaml       planned shape: its English layer; merged, they are the deck te-en-home
+                                  (neither exists yet: the split tool, #397, has not run, and
+                                  te-en-home is a single file)
        te-path.yaml               the path, by core id, with Telugu's regions
   mr/  mr-en-first-words.yaml     the same, for Marathi; not yet checked by a Marathi speaker
   kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker

@@ -33,7 +33,7 @@ than hard-coded rules. Adding a language means adding files, never code.
 | **Heard words** (listening) | hear target → choose, then type, the meaning | the app |
 | **Spoken words** (speaking) | see meaning → say target | the app, through the phone's speech recognition |
 | **Written words** (production) | see meaning → type target | the app, with diacritic and typo tolerance |
-| **Grammar** | prompt + slot → inflected form | the app |
+| **Grammar** | understood: see a form → choose what it means; produced: prompt + slot → choose the form, then type it | the app |
 
 Reading passages, match pairs, multiple choice and word order come on top.
 Minimal-pair discrimination, for sound contrasts the learner's own language
