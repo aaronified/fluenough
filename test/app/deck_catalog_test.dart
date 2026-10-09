@@ -77,8 +77,6 @@ void main() {
               'romanisation',
             }.contains(DeckCatalog.kindOf(File(p).readAsStringSync())),
           )
-          // A core is read through its layers.
-          .where((p) => !index.filesByPath[p]!.core)
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
