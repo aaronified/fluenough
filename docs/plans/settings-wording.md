@@ -76,10 +76,13 @@ no voice reads "No voice for {language} on this phone".
    that no switch in Settings keeps the same line in both states, so a new
    switch cannot skip the rule.
 
-## To decide
+## Decided (owner, 2026-10-09)
 
-- The wording above, row by row.
-- Whether "Show romanisation" is renamed.
+- **The table is approved,** with the skill rows in the learner's words
+  (seen, heard, spoken and written words; grammar understood and produced
+  under the one Grammar switch, ADR-0036).
+- **"Show romanisation" becomes "Latin-letter readings".**
+- Built now, with the rest of the settings redesign, before deck downloads.
 
 ## Estimate
 
