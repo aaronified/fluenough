@@ -36,10 +36,12 @@ import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
 import 'log_files.dart';
+import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
@@ -129,6 +131,7 @@ class AppState extends ChangeNotifier {
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
     this.reports = const NullReportSender(),
+    this._mailShare = const NullMailShare(),
     AppLog? log,
     this._releases = const NullReleaseCheck(),
     this.releaseNotes = const NullReleaseNotes(),
@@ -141,6 +144,7 @@ class AppState extends ChangeNotifier {
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
     Random? random,
+    this._secureRandom,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
        volume = volume ?? FixedVolumeMonitor(),
@@ -196,6 +200,7 @@ class AppState extends ChangeNotifier {
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
     ReportSender reports = const NullReportSender(),
+    MailShare mailShare = const NullMailShare(),
     AppLog? log,
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
@@ -225,6 +230,7 @@ class AppState extends ChangeNotifier {
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
       reports: reports,
+      mailShare: mailShare,
       log: log,
       releases: releases,
       releaseNotes: releaseNotes,
@@ -237,6 +243,7 @@ class AppState extends ChangeNotifier {
       profiles: profiles,
       currentProfileId: currentProfileId,
       random: Random(0),
+      secureRandom: Random(1),
     );
     // Past the first-launch setup (#53, #117), unless a test brings its
     // own: speaking English, and learning every language.
@@ -274,6 +281,24 @@ class AppState extends ChangeNotifier {
   /// Where a report from the bug icon goes once mail is on (ADR-0021): the
   /// reporter's mail app, or nowhere in a build that was given none.
   final ReportSender reports;
+
+  /// Reviewer mode (docs/plans/deck-browser.md): the rater code, the
+  /// reviews kept until sent, and the mail that sends them to [AppLinks.feedbackEmail]
+  /// through [_mailShare], the phone's share.
+  late final Reviewing reviewing = Reviewing(
+    settings: settings,
+    clock: _clock,
+    random: _secureRandom ?? Random.secure(),
+    share: _mailShare,
+    address: AppLinks.feedbackEmail,
+    deckById: deckById,
+    log: log,
+  );
+  final MailShare _mailShare;
+
+  /// Where rater codes come from: the phone's secure source, unless a test
+  /// gives a seeded one.
+  final Random? _secureRandom;
 
   /// The app's own log (#162): errors, warnings and key events, which
   /// Settings shows and a report attaches if the reporter agrees.
