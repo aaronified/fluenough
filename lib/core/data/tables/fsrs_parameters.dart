@@ -4,7 +4,7 @@ import '../../models/drill_mode.dart';
 import 'converters.dart';
 
 /// FSRS's parameters as fitted to the learner, one row per language and
-/// skill (`docs/plans/skill-model.md`). Added by migration 7.
+/// skill (ADR-0035). Added by migration 7.
 ///
 /// Not a cache: each fit starts from the one before, so a row cannot be
 /// rebuilt from `reviews`. It goes into the backup with the log
