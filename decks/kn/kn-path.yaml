@@ -1,0 +1,55 @@
+# The order Kannada is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught kn-en-home for kn-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Kannada grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Kannada is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: kn-path
+language: kn
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - kn-script-vowels
+  - kn-script-consonants
+  - kn-script-reading
+  - kn-script-vowel-signs
+  - kn-script-conjuncts
+  - kn-spelling
+  - kn-reading-ravi
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [kn-first-words, kn-grammar-sentences, "*"]
+  - [kn-sound-differences]
+  - [kn-grammar-differences]
+  - [kn-questions, kn-grammar-questions, "*"]
+  - [kn-addressing, kn-grammar-pronouns, "*"]
+  - [kn-about-me, "*"]
+  - [kn-family, kn-grammar-be, "*"]
+  - [kn-work, kn-grammar-demonstratives, "*"]
+  - [kn-script-vowels, kn-script-consonants, kn-script-reading]
+  - [kn-script-vowel-signs, kn-script-conjuncts]
+  - [kn-numbers-1-20, "*"]
+  - [kn-numbers-big, "*"]
+  - [kn-market, kn-grammar-nouns, kn-grammar-articles, "*"]
+  - [kn-groceries, kn-grammar-gender-number, kn-grammar-needs, "*"]
+  - [kn-transport, kn-grammar-postpositions, "*"]
+  - [kn-directions, kn-grammar-continuous, "*"]
+  - [kn-home, kn-grammar-adjectives, "*"]
+  - [kn-time, kn-grammar-future, "*"]
+  - [kn-daily-life, kn-grammar-negative, "*"]
+  - [kn-calendar, kn-grammar-past, "*"]
+  - [kn-grammar-past-more, kn-grammar-conjunct-verbs]
+  - [kn-grammar-compound-verbs]
+  - [kn-eating-out, kn-grammar-conjunctions, kn-grammar-likes, "*"]
+  - [kn-help, kn-grammar-irregular, kn-grammar-pitfalls, "*"]
+  - [kn-registers]
+  - [kn-slang]
+  - [kn-grammar-can-must]
+  - [kn-spelling]
+  - [kn-reading-ravi]
+  - ["*"]

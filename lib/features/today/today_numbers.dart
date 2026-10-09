@@ -91,7 +91,7 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
       for (final skill in todaySkills)
         if (SkillFit.together(<SkillPace>[
               for (final p in shown)
-                if (p.adjusted && p.key.mode == skill.mode) p,
+                if (p.adjusted && skill.modes.contains(p.key.mode)) p,
             ])
             case final moved?)
           skill: PaceDirection.of(moved.start, moved.now),
@@ -183,7 +183,8 @@ class TodayNumbers {
         if (skill != Skill.speaking ||
             (state.settings.isEnabled(skill) &&
                 state.features.isAvailable(skill.feature)))
-          skill: skill.mode == null ? 0 : byMode[skill.mode] ?? 0,
+          skill: <int>[for (final mode in skill.modes) byMode[mode] ?? 0]
+              .fold(0, (a, b) => a + b),
     };
     // A skill switched off is not reviewed from its tile either.
     final dueIn = <Skill, int>{

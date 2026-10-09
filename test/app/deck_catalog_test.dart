@@ -29,7 +29,8 @@ facts:
     text: { en: "Spanish has two verbs for to be." }
 ''';
 
-/// Line 10 has an unquoted `no`, the bug rule 2 is about.
+/// Line 10 has an unquoted `true`, the bug rule 2 is about. (A bare `no`
+/// is text, as YAML 1.2 reads it.)
 const String brokenDeck = '''
 schema: 1
 id: xx-broken
@@ -39,8 +40,8 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: xx-broken-0001
-    target: の
-    native: no
+    target: ほんとう
+    native: true
 ''';
 
 void main() {
@@ -131,8 +132,8 @@ void main() {
       }
     });
 
-    test('every course has a path, which lists all its decks and only '
-        'them, and its decks come in that order (#117)', () {
+    test('every course has a path, built from its language\'s, which lists '
+        'all its decks and only them, in that order (#117, ADR-0036)', () {
       final byCourse = <String, List<String>>{};
       for (final d in catalog.decks) {
         byCourse
@@ -144,7 +145,27 @@ void main() {
         expect(ids, catalog.paths[course]!.deckIds.toList(), reason: course);
       }
       final hindi = catalog.byId('hi-en-addressing')!;
-      expect(catalog.pathOf(hindi)!.id, 'hi-en-path');
+      expect(catalog.pathOf(hindi)!.id, 'hi-path');
+      expect(catalog.pathOf(hindi)!.native, 'en');
+      expect(
+        catalog.languagePaths['hi']!.plan.first.decks,
+        contains('hi-first-words'),
+      );
+      // The regions of the two languages being written now (spec 10.5).
+      expect(catalog.languagePaths['te']!.regions.map((r) => r.id), [
+        'telangana',
+        'coastal-andhra',
+        'rayalaseema',
+      ]);
+      expect(catalog.languagePaths['bn']!.regions.map((r) => r.id), [
+        'rarhi',
+        'vangiya',
+        'varendri',
+        'kamrupi',
+        'manbhumi',
+        'south-eastern',
+      ]);
+      expect(catalog.languagePaths['hi']!.regions, isEmpty);
       expect(
         catalog.pathOf(hindi)!.units[catalog.pathOf(hindi)!.unitOf(hindi.id)!],
         contains('hi-en-grammar-pronouns'),
@@ -277,14 +298,19 @@ themes:
   - { id: help, name: "Help" }
 ''';
 
-    String deck(String id, {String? theme, String lang = 'hi'}) =>
+    String deck(
+      String id, {
+      String? theme,
+      String lang = 'hi',
+      String native = 'en',
+    }) =>
         '''
 schema: 1
 id: $id
 name: "$id"
 ${theme == null ? '' : 'theme: $theme'}
 language: { code: $lang, iso639_3: hin, name: Hindi, script: devanagari }
-native: { code: en, iso639_3: eng, name: English }
+native: { code: $native, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: $id-0001
@@ -331,12 +357,11 @@ cards:
           theme: 'first-words',
         ),
         'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
-        'decks/hi/hi-en-path.yaml': '''
+        'decks/hi/hi-path.yaml': '''
 schema: 1
 kind: path
-id: hi-en-path
+id: hi-path
 language: hi
-native: en
 units:
 $units''',
         'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
@@ -346,9 +371,9 @@ $units''',
           'themes', () {
         final catalog = DeckCatalog.parseAll(
           files(
-            '  - [hi-en-first-words, hi-en-core]\n'
-            '  - [hi-en-help]\n'
-            '  - [hi-en-market]\n',
+            '  - [hi-first-words, hi-core]\n'
+            '  - [hi-help]\n'
+            '  - [hi-market]\n',
           ),
         );
         expect(catalog.broken, isEmpty);
@@ -370,7 +395,7 @@ $units''',
       test('a deck the path leaves out comes after it, and a deck it names '
           'that does not exist is ignored', () {
         final catalog = DeckCatalog.parseAll(
-          files('  - [hi-en-market, hi-en-gone]\n  - [hi-en-help]\n'),
+          files('  - [hi-market, hi-gone]\n  - [hi-help]\n'),
         );
         expect(catalog.decks.map((d) => d.id), [
           'hi-en-market',
@@ -384,7 +409,7 @@ $units''',
       test('a broken path is reported, and the course falls back to its '
           'themes', () {
         final catalog = DeckCatalog.parseAll(files('  - []\n'));
-        expect(catalog.broken.single.path, 'decks/hi/hi-en-path.yaml');
+        expect(catalog.broken.single.path, 'decks/hi/hi-path.yaml');
         expect(catalog.paths, isEmpty);
         expect(catalog.decks.map((d) => d.id).take(4), [
           'hi-en-first-words',
@@ -392,6 +417,64 @@ $units''',
           'hi-en-help',
           'hi-en-core',
         ]);
+      });
+
+      test('each course reads the one path through its own decks, a unit '
+          'with none of them coming for it', () {
+        final catalog = DeckCatalog.parseAll(<String, String>{
+          ...files(
+            '  - [hi-first-words, hi-core]\n'
+            '  - [hi-help]\n'
+            '  - [hi-market, "*"]\n',
+          ),
+          'decks/hi/hi-bn-market.yaml': deck(
+            'hi-bn-market',
+            native: 'bn',
+            theme: 'market',
+          ),
+          'decks/hi/hi-bn-extra.yaml': deck(
+            'hi-bn-extra',
+            native: 'bn',
+            theme: 'market',
+          ),
+        });
+        expect(catalog.broken, isEmpty);
+        expect(catalog.paths.keys.toSet(), {'hi/en', 'hi/bn'});
+        final bengali = catalog.paths['hi/bn']!;
+        expect(bengali.units, [
+          ['hi-bn-market', 'hi-bn-extra'],
+        ]);
+        expect(bengali.plan.map((u) => u.isComing), [true, true, false]);
+        expect(bengali.coveredUnits, 1);
+        expect(bengali.writtenUnits, 3);
+        expect(catalog.paths['hi/en']!.coveredUnits, 3);
+      });
+
+      test('a path still in the per-course form, or a second path, is '
+          'broken', () {
+        final perCourse = DeckCatalog.parseAll(<String, String>{
+          ...files('  - [hi-market]\n')..remove('decks/hi/hi-path.yaml'),
+          'decks/hi/hi-en-path.yaml':
+              'schema: 1\nkind: path\nid: hi-en-path\nlanguage: hi\n'
+              'native: en\nunits:\n  - [hi-en-market]\n',
+        });
+        expect(perCourse.broken.single.path, 'decks/hi/hi-en-path.yaml');
+        expect(
+          perCourse.broken.single.error.message,
+          contains('a path is one per language learnt'),
+        );
+        expect(perCourse.paths, isEmpty);
+        final twice = DeckCatalog.parseAll(<String, String>{
+          ...files('  - [hi-market]\n'),
+          'decks/hi/zz/hi-path.yaml':
+              'schema: 1\nkind: path\nid: hi-path\nlanguage: hi\n'
+              'units:\n  - [hi-help]\n',
+        });
+        expect(twice.broken.single.path, 'decks/hi/zz/hi-path.yaml');
+        expect(
+          twice.broken.single.error.message,
+          contains('hi already has a path'),
+        );
       });
     });
 

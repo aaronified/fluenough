@@ -114,9 +114,13 @@ pip install pyyaml        # the only dependency
    for vocabulary, [`decks/es/es-en-grammar-present-ar.yaml`](decks/es/es-en-grammar-present-ar.yaml)
    for a grammar pattern, [`decks/hi/hi-en-script-vowels.yaml`](decks/hi/hi-en-script-vowels.yaml)
    for a non-Latin script.
-4. Add it to its course's path, `decks/<language-code>/<language>-<native>-path.yaml`,
-   in the unit it is taught with. A new course needs a path of its own. See
-   "Course paths" in the format specification.
+4. Add its core id to its language's path, `decks/<language-code>/<language-code>-path.yaml`,
+   in the unit it is taught with. The core id is the deck id without its
+   native language: `hi-en-market` is listed as `hi-market`. The path is the
+   language's, shared by every language it is taught from, so a new course
+   of a language that has a path adds no path, and a deck for a core id
+   already listed adds nothing to it; a new language adds
+   `<language-code>-path.yaml`. See "Paths" in the format specification.
 
 Converting an existing wordlist:
 

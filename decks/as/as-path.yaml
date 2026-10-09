@@ -1,0 +1,55 @@
+# The order Assamese is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught as-en-home for as-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Assamese grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Assamese is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: as-path
+language: as
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - as-script-vowels
+  - as-script-consonants
+  - as-script-reading
+  - as-script-vowel-signs
+  - as-script-conjuncts
+  - as-spelling
+  - as-reading-aitar-mas
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [as-first-words, as-grammar-sentences, "*"]
+  - [as-sound-differences]
+  - [as-grammar-differences]
+  - [as-questions, as-grammar-questions, "*"]
+  - [as-addressing, as-grammar-pronouns, "*"]
+  - [as-about-me, "*"]
+  - [as-family, as-grammar-be, "*"]
+  - [as-work, as-grammar-demonstratives, "*"]
+  - [as-script-vowels, as-script-consonants, as-script-reading]
+  - [as-script-vowel-signs, as-script-conjuncts]
+  - [as-numbers-1-20, "*"]
+  - [as-numbers-big, "*"]
+  - [as-market, as-grammar-nouns, as-grammar-articles, "*"]
+  - [as-groceries, as-grammar-gender-number, as-grammar-needs, "*"]
+  - [as-transport, as-grammar-postpositions, "*"]
+  - [as-directions, as-grammar-continuous, "*"]
+  - [as-home, as-grammar-adjectives, "*"]
+  - [as-time, as-grammar-future, "*"]
+  - [as-daily-life, as-grammar-negative, "*"]
+  - [as-calendar, as-grammar-past, "*"]
+  - [as-grammar-past-more, as-grammar-conjunct-verbs]
+  - [as-grammar-compound-verbs]
+  - [as-eating-out, as-grammar-conjunctions, as-grammar-likes, "*"]
+  - [as-help, as-grammar-irregular, as-grammar-pitfalls, "*"]
+  - [as-registers]
+  - [as-slang]
+  - [as-grammar-can-must]
+  - [as-spelling]
+  - [as-reading-aitar-mas]
+  - ["*"]

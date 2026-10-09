@@ -1,0 +1,49 @@
+# A single-file deck using the B1 card fields (spec 3 to 8): typed notes and
+# the old string, bases on a card and an example, a phrasebook chunk, rules,
+# Wiktionary marks, and refs to a core's cards.
+schema: 1
+id: "zz-en-words"
+name: "Words"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC0-1.0"
+cards:
+  - id: "zz-9401"
+    target: "నీళ్ళు"
+    reading: "nīḷḷu"
+    native: "water"
+    pos: "noun"
+    notes: "Plural in form."
+  - id: "zz-9402"
+    target: "పండు"
+    reading: "paṇḍu"
+    native: "fruit"
+    pos: "noun"
+    wiktionary: true
+    notes:
+      - { kind: "usage", text: "Also ripe." }
+      - { kind: "pair", ref: "zz-9403", text: "Not {1}, cart.", words: [{ word: "బండి", reading: "baṇḍi" }] }
+    examples:
+      - target: "పండు తిను."
+        native: "Eat the fruit."
+        reading: "paṇḍu tinu."
+        bases:
+          - { word: "తిను", base: "తిను", reading: "tinu", meaning: "to eat" }
+  - id: "zz-9403"
+    target: "బండి"
+    reading: "baṇḍi"
+    native: "cart"
+    pos: "noun"
+    notes: ""
+  - id: "zz-9404"
+    target: "నమస్కారం."
+    reading: "namaskāram."
+    native: "Hello."
+    pos: "phrase"
+    phrasebook: true
+    rules: ["zz-rule-ki"]
+    bases:
+      - { word: "నమస్కారం", base: "నమస్కారం", reading: "namaskāram", meaning: "a greeting", wiktionary: true }
+  - ref: "zz-9301"
+  - ref: "zz-9302"
+    wiktionary: true

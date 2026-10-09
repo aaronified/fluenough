@@ -1,0 +1,76 @@
+# The order Bengali is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught bn-en-home for bn-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Bengali grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Bengali is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: bn-path
+language: bn
+# Where Bengali is spoken, for a rater's region and a card's region note
+# (ADR-0036): its dialect groups, after Chatterji (1926) and his
+# successors, each named with example districts so that a rater who does
+# not know the terms can place themselves. Low confidence at each group's
+# edges, and on Sylheti and Chittagonian in one group: a native reviewer
+# checks this list before any rating names a region. The ids are
+# permanent, as card ids are; rename a name, never an id. The app adds
+# "Elsewhere" after them.
+regions:
+  - id: "rarhi"
+    name: { "en": "Rāṛhī (west-central: Kolkata, Nadia, Bardhaman)" }
+  - id: "vangiya"
+    name: { "en": "Vaṅgīya (east: Dhaka, Mymensingh, Barishal)" }
+  - id: "varendri"
+    name: { "en": "Varendrī (north-central: Rajshahi, Malda, Dinajpur)" }
+  - id: "kamrupi"
+    name: { "en": "Kāmarūpī or Rangpuri (north: Rangpur, Cooch Behar, Jalpaiguri)" }
+  - id: "manbhumi"
+    name: { "en": "Mānbhūmī (west: Purulia, Bankura, Bengali-speaking Jharkhand)" }
+  - id: "south-eastern"
+    name: { "en": "South-eastern (Chittagong, Noakhali, Sylhet, Tripura, Assam's Barak Valley)" }
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - bn-script-vowels
+  - bn-script-consonants
+  - bn-script-reading
+  - bn-script-vowel-signs
+  - bn-script-conjuncts
+  - bn-reading-sahaj-path-1
+  - bn-spelling
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [bn-first-words, bn-grammar-sentences, "*"]
+  - [bn-sound-differences]
+  - [bn-grammar-differences]
+  - [bn-questions, bn-grammar-questions, "*"]
+  - [bn-addressing, bn-grammar-pronouns, "*"]
+  - [bn-about-me, bn-grammar-present, "*"]
+  - [bn-family, bn-grammar-be, "*"]
+  - [bn-work, bn-grammar-demonstratives, "*"]
+  - [bn-script-vowels, bn-script-consonants, bn-script-reading]
+  - [bn-script-vowel-signs, bn-script-conjuncts]
+  - [bn-numbers-1-20, "*"]
+  - [bn-numbers-big, "*"]
+  - [bn-market, bn-grammar-nouns, bn-grammar-articles, "*"]
+  - [bn-groceries, bn-grammar-gender-number, bn-grammar-needs, "*"]
+  - [bn-transport, bn-grammar-postpositions, "*"]
+  - [bn-directions, bn-grammar-continuous, "*"]
+  - [bn-home, bn-grammar-adjectives, "*"]
+  - [bn-time, bn-grammar-future, "*"]
+  - [bn-daily-life, bn-grammar-conjunct-verbs, "*"]
+  - [bn-sadhu-cholito]
+  - [bn-reading-sahaj-path-1]
+  - [bn-calendar, bn-grammar-past, "*"]
+  - [bn-grammar-perfect, bn-grammar-past-negative]
+  - [bn-grammar-past-more]
+  - [bn-eating-out, bn-grammar-conjunctions, bn-grammar-likes, "*"]
+  - [bn-help, bn-grammar-irregular, bn-grammar-pitfalls, "*"]
+  - [bn-slang]
+  - [bn-grammar-verb-classes, bn-grammar-can-must]
+  - [bn-spelling]
+  - ["*"]

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Course paths (#117, ADR-0013): a path file on its own, and against the
-decks of its course.
+"""Paths (#117, ADR-0013, ADR-0036): a language's path file on its own, and
+against the decks of the language, in every course.
 
 Described in docs/DECK-FORMAT.md. Stdlib `unittest` plus PyYAML, like the
 validator itself.
@@ -38,14 +38,13 @@ license: CC0-1.0
 """
 
 
-def path_file(units: str, path_id: str = "hi-en-path", lang: str = "hi",
-              native: str = "en", extra: str = "") -> str:
+def path_file(units: str, path_id: str = "hi-path", lang: str = "hi",
+              extra: str = "") -> str:
     return f"""\
 schema: 1
 kind: path
 id: {path_id}
 language: {lang}
-native: {native}
 {extra}units:
 {units}"""
 
@@ -76,124 +75,157 @@ class Paths(unittest.TestCase):
 
 
 class PathFile(Paths):
-    def test_a_path_is_valid_and_lists_its_decks_in_order(self) -> None:
-        report = self.write("hi-en-path.yaml", path_file(
-            "  - [hi-en-market, hi-en-grammar-nouns]\n  - [hi-en-help]\n"))
+    def test_a_path_is_valid_and_lists_its_decks_by_core_id_in_order(self) -> None:
+        report = self.write("hi-path.yaml", path_file(
+            "  - [hi-market, hi-grammar-nouns]\n  - [hi-help]\n"))
         self.assertEqual(report.errors, [])
         self.assertEqual(report.course_path,
-                         ("hi", "en", ["hi-en-market", "hi-en-grammar-nouns",
-                                       "hi-en-help"]))
+                         ("hi", ["hi-market", "hi-grammar-nouns", "hi-help"]))
 
-    def test_the_id_is_the_file_name_and_names_the_course(self) -> None:
+    def test_the_id_is_the_languages_and_the_file_name(self) -> None:
         self.assertRejected(
-            self.write("hi-en-route.yaml", path_file("  - [hi-en-market]\n")),
-            "filename stem")
+            self.write("hi-route.yaml", path_file("  - [hi-market]\n",
+                                                  path_id="hi-route")),
+            "a path of hi has id hi-path, the filename stem, got 'hi-route'")
         self.assertRejected(
-            self.write("bn-en-path.yaml",
-                       path_file("  - [hi-en-market]\n", path_id="bn-en-path")),
-            "has id hi-en-path")
+            self.write("hi-route.yaml", path_file("  - [hi-market]\n")),
+            "is 'hi-path' but the filename stem is 'hi-route'")
 
-    def test_the_codes_are_language_codes(self) -> None:
-        report = self.write("hi-en-path.yaml",
-                            path_file("  - [hi-en-market]\n", native="no"))
-        # YAML reads a bare no as false; the message says so.
+    def test_a_path_for_one_course_is_refused_and_told_what_to_do(self) -> None:
+        report = self.write("hi-en-path.yaml", path_file(
+            "  - [hi-en-market]\n", path_id="hi-en-path", extra="native: en\n"))
+        self.assertIn(
+            "native: a path is one per language learnt, decks/hi/hi-path.yaml, shared "
+            "by every native language (ADR-0036); list core ids, such as "
+            "'hi-market', and remove native", report.errors)
+        self.assertIn("id: a path of hi has id hi-path, the filename stem, got "
+                      "'hi-en-path'", report.errors)
+
+    def test_the_language_is_a_language_code(self) -> None:
+        report = self.write("hi-path.yaml",
+                            path_file("  - [hi-market]\n", lang="false"))
+        # YAML reads a bare false as a boolean; the message says so. (A bare
+        # no is the string "no", YAML 1.2, as the app reads it.)
         self.assertRejected(report, "boolean")
         self.assertIsNone(report.course_path)
 
-    def test_units_are_non_empty_lists_of_deck_ids(self) -> None:
+    def test_units_are_non_empty_lists_of_core_ids(self) -> None:
         for units, needle in (
             ("  []\n", "non-empty list"),
-            ("  - hi-en-market\n", "non-empty list of deck ids"),
-            ("  - []\n", "non-empty list of deck ids"),
-            ("  - [Hi_Market]\n", "must list deck ids"),
-            ("  - [hi-en-market]\n  - [hi-en-market]\n", "listed twice"),
+            ("  - hi-market\n", "must be a list of core ids, or a mapping"),
+            ("  - []\n", "non-empty list of core ids"),
+            ("  - [Hi_Market]\n", "'Hi_Market' is not a core id of hi: hi- and a "
+                                  "name, such as hi-home"),
+            ("  - [bn-market]\n", "'bn-market' is not a core id of hi"),
+            ("  - [hi-market]\n  - [hi-market]\n", "'hi-market' is listed twice"),
         ):
             with self.subTest(units=units):
                 self.assertRejected(
-                    self.write("hi-en-path.yaml", path_file(units)), needle)
+                    self.write("hi-path.yaml", path_file(units)), needle)
 
     def test_a_wildcard_ends_a_unit_and_is_not_a_deck(self) -> None:
-        report = self.write("hi-en-path.yaml", path_file(
-            '  - [hi-en-market, "*"]\n  - [hi-en-help]\n  - ["*"]\n'))
+        report = self.write("hi-path.yaml", path_file(
+            '  - [hi-market, "*"]\n  - [hi-help]\n  - ["*"]\n'))
         self.assertEqual(report.errors, [])
-        self.assertEqual(report.course_path,
-                         ("hi", "en", ["hi-en-market", "hi-en-help"]))
-        self.assertEqual(report.open_units, [["hi-en-market"]])
+        self.assertEqual(report.course_path, ("hi", ["hi-market", "hi-help"]))
+        self.assertEqual(report.open_units, [["hi-market"]])
 
     def test_a_wildcard_only_ends_a_unit_and_alone_only_the_last(self) -> None:
         for units, needle in (
-            ('  - ["*", hi-en-market]\n', "can only end a unit"),
-            ('  - [hi-en-market, "*", "*"]\n', "can only end a unit"),
-            ('  - ["*"]\n  - [hi-en-market]\n', "alone can only be the last"),
+            ('  - ["*", hi-market]\n', "can only end a unit"),
+            ('  - [hi-market, "*", "*"]\n', "can only end a unit"),
+            ('  - ["*"]\n  - [hi-market]\n', "alone can only be the last"),
         ):
             with self.subTest(units=units):
                 self.assertRejected(
-                    self.write("hi-en-path.yaml", path_file(units)), needle)
+                    self.write("hi-path.yaml", path_file(units)), needle)
 
     def test_the_alphabet_decks_are_on_the_path(self) -> None:
-        units = "  - [hi-en-script-vowels]\n  - [hi-en-market]\n"
-        report = self.write("hi-en-path.yaml", path_file(
-            units, extra="alphabet: [hi-en-script-vowels]\n"))
+        units = "  - [hi-script-vowels]\n  - [hi-market]\n"
+        report = self.write("hi-path.yaml", path_file(
+            units, extra="alphabet: [hi-script-vowels]\n"))
         self.assertEqual(report.errors, [])
         self.assertRejected(
-            self.write("hi-en-path.yaml", path_file(
-                units, extra="alphabet: [hi-en-spelling]\n")),
-            "lists 'hi-en-spelling', which the path does not")
+            self.write("hi-path.yaml", path_file(
+                units, extra="alphabet: [hi-spelling]\n")),
+            "lists 'hi-spelling', which the path does not")
         self.assertRejected(
-            self.write("hi-en-path.yaml", path_file(
-                units, extra="alphabet: hi-en-script-vowels\n")),
+            self.write("hi-path.yaml", path_file(
+                units, extra="alphabet: [hi-en-script-vowels]\n")),
+            "lists 'hi-en-script-vowels', which the path does not")
+        self.assertRejected(
+            self.write("hi-path.yaml", path_file(
+                units, extra="alphabet: hi-script-vowels\n")),
             "must be a list")
 
     def test_unknown_fields_are_rejected(self) -> None:
         self.assertRejected(
-            self.write("hi-en-path.yaml",
-                       path_file("  - [hi-en-market]\n", extra="theme: x\n")),
+            self.write("hi-path.yaml",
+                       path_file("  - [hi-market]\n", extra="theme: x\n")),
             "unknown field 'theme'")
 
 
 class PathAcrossDecks(Paths):
     def problems(self, units: str, *more: validate_decks.Report) -> list[str]:
-        path = self.write("hi-en-path.yaml", path_file(units))
+        path = self.write("hi-path.yaml", path_file(units))
         return validate_decks.check_paths_across([*self.course(), path, *more])
 
-    def test_a_path_listing_every_deck_of_its_course_passes(self) -> None:
-        self.assertEqual(
-            self.problems("  - [hi-en-market, hi-en-grammar-nouns]\n"), [])
+    def test_a_path_listing_every_deck_of_the_language_passes(self) -> None:
+        self.assertEqual(self.problems("  - [hi-market, hi-grammar-nouns]\n"), [])
 
-    def test_every_deck_of_the_course_is_on_its_path(self) -> None:
-        problems = self.problems("  - [hi-en-market]\n")
-        self.assertTrue(any("does not list 'hi-en-grammar-nouns'" in p
-                            for p in problems), problems)
+    def test_every_deck_of_the_language_is_on_its_path(self) -> None:
+        problems = self.problems("  - [hi-market]\n")
+        self.assertIn(f"{self.tmp / 'hi-path.yaml'}: units: does not list "
+                      f"'hi-grammar-nouns', the core id of hi-en-grammar-nouns; every "
+                      f"deck of hi is on its path", problems)
 
-    def test_only_decks_of_the_course_and_only_decks(self) -> None:
+    def test_a_deck_of_a_second_native_language_is_on_it_by_its_core_id(self) -> None:
+        bengali = self.write("hi-bn-market.yaml", deck("hi-bn-market", native="bn"))
+        self.assertEqual(self.problems("  - [hi-market, hi-grammar-nouns]\n", bengali),
+                         [])
+        bengali = self.write("hi-bn-words.yaml", deck("hi-bn-words", native="bn"))
+        self.assertIn(f"{self.tmp / 'hi-path.yaml'}: units: does not list 'hi-words', "
+                      f"the core id of hi-bn-words; every deck of hi is on its path",
+                      self.problems("  - [hi-market, hi-grammar-nouns]\n", bengali))
+
+    def test_a_listed_id_is_a_core_id_of_a_deck_of_the_language(self) -> None:
         problems = self.problems(
-            "  - [hi-en-market, hi-en-grammar-nouns, bn-en-market, hi-en-gone]\n")
-        self.assertTrue(any("'bn-en-market', which teaches bn from en" in p
-                            for p in problems), problems)
-        self.assertTrue(any("'hi-en-gone', which is not a deck" in p
-                            for p in problems), problems)
+            "  - [hi-market, hi-grammar-nouns, hi-en-market, hi-gone]\n")
+        where = self.tmp / "hi-path.yaml"
+        self.assertIn(f"{where}: units[0]: lists 'hi-en-market', a deck of the hi-en "
+                      f"course; a path lists core ids, here 'hi-market'", problems)
+        self.assertIn(f"{where}: units[0]: lists 'hi-gone', which is no deck of hi: no "
+                      f"core hi-gone, and no deck hi-<native>-gone", problems)
 
     def test_a_wildcard_unit_needs_a_theme_deck(self) -> None:
         themed = self.write("hi-en-home.yaml", deck("hi-en-home", theme="home"))
         self.assertEqual(self.problems(
-            '  - [hi-en-home, "*"]\n  - [hi-en-market, hi-en-grammar-nouns]\n'
+            '  - [hi-home, "*"]\n  - [hi-market, hi-grammar-nouns]\n'
             '  - ["*"]\n', themed), [])
         problems = self.problems(
-            '  - [hi-en-home]\n  - [hi-en-market, hi-en-grammar-nouns, "*"]\n',
+            '  - [hi-home]\n  - [hi-market, hi-grammar-nouns, "*"]\n',
             themed)
         self.assertTrue(any("has no theme deck" in p for p in problems), problems)
 
-    def test_a_course_has_one_path(self) -> None:
+    def test_a_language_has_one_path(self) -> None:
         other = self.tmp / "other"
         other.mkdir()
-        (other / "hi-en-path.yaml").write_text(
-            path_file("  - [hi-en-market, hi-en-grammar-nouns]\n"),
-            encoding="utf-8")
-        problems = self.problems("  - [hi-en-market, hi-en-grammar-nouns]\n",
-                                 validate_decks.validate(other / "hi-en-path.yaml"))
-        self.assertTrue(any("already has a path" in p for p in problems), problems)
+        (other / "hi-path.yaml").write_text(
+            path_file("  - [hi-market, hi-grammar-nouns]\n"), encoding="utf-8")
+        problems = self.problems("  - [hi-market, hi-grammar-nouns]\n",
+                                 validate_decks.validate(other / "hi-path.yaml"))
+        self.assertIn(f"{other / 'hi-path.yaml'}: root: hi already has a path, "
+                      f"{self.tmp / 'hi-path.yaml'}; a language has one", problems)
 
-    def test_a_course_without_a_path_is_not_checked(self) -> None:
+    def test_a_course_path_left_beside_it_is_a_second_path(self) -> None:
+        (self.tmp / "hi-en-path.yaml").write_text(
+            path_file("  - [hi-en-market]\n", path_id="hi-en-path",
+                      extra="native: en\n"), encoding="utf-8")
+        self.assertIn(f"{self.tmp / 'hi-path.yaml'}: root: hi already has a path, "
+                      f"{self.tmp / 'hi-en-path.yaml'}; a language has one",
+                      self.problems("  - [hi-market, hi-grammar-nouns]\n"))
+
+    def test_a_language_without_a_path_is_not_checked(self) -> None:
         self.assertEqual(validate_decks.check_paths_across(self.course()), [])
 
 

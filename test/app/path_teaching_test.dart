@@ -35,9 +35,15 @@ List<List<String>> unitIds(AppState state) => <List<String>>[
 DeckBadgeKind badgeOf(AppState state, String deckId) =>
     DeckBadge.forEntry(state, state.deckById(deckId)!).kind;
 
-/// A tiny course: three single-card decks of Hindi from [native], in a path
-/// of three units, [first] first.
-Map<String, String> tinyCourse({String native = 'en', String first = 'a'}) {
+/// A tiny course: three single-card decks of Hindi from [native], and, with
+/// [path], Hindi's path of three units, [first] first. The path is the
+/// language's, every course's (ADR-0036), so a second course of Hindi
+/// leaves it out.
+Map<String, String> tinyCourse({
+  String native = 'en',
+  String first = 'a',
+  bool path = true,
+}) {
   String deck(String name) =>
       '''
 schema: 1
@@ -56,15 +62,15 @@ cards:
   return <String, String>{
     for (final name in <String>['a', 'b', 'c'])
       'decks/hi/hi-$native-$name.yaml': deck(name),
-    'decks/hi/hi-$native-path.yaml':
-        '''
+    if (path)
+      'decks/hi/hi-path.yaml':
+          '''
 schema: 1
 kind: path
-id: hi-$native-path
+id: hi-path
 language: hi
-native: $native
 units:
-${[for (final name in order) '  - [hi-$native-$name]'].join('\n')}
+${[for (final name in order) '  - [hi-$name]'].join('\n')}
 ''',
   };
 }
@@ -229,8 +235,8 @@ void main() {
       <String>['hi'],
       spoken: <String>['bn', 'en'],
       decks: MemoryDeckSource(<String, String>{
-        ...tinyCourse(),
-        ...tinyCourse(native: 'bn', first: 'c'),
+        ...tinyCourse(first: 'c'),
+        ...tinyCourse(native: 'bn', path: false),
       }),
     );
     addTearDown(state.dispose);

@@ -124,7 +124,7 @@ void main() {
       expect(dog.altTarget, ['can'], reason: 'the card\'s own');
       expect(dog.native, 'dog', reason: 'the same native, inherited');
       expect(dog.tags, ['animals']);
-      expect(dog.notes, 'Barks.', reason: 'given by the ref');
+      expect(dog.notes.single.text, 'Barks.', reason: 'given by the ref');
     });
 
     test('a deck taught from another language takes only what the ref '
@@ -141,7 +141,7 @@ void main() {
       expect(cards.map((c) => c.id), ['es-0001']);
       expect(cards.single.native, 'কুকুর');
       expect(cards.single.target, 'perro');
-      expect(cards.single.notes, isNull, reason: 'English notes stay behind');
+      expect(cards.single.notes, isEmpty, reason: 'English notes stay behind');
       expect(cards.single.tags, isEmpty);
     });
   });

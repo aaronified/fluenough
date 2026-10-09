@@ -42,12 +42,12 @@ void main() {
     expect(find.text(first.reading!), findsWidgets);
 
     // Two or three lines a card; the rest opens in place.
-    final noted = cards.firstWhere((c) => (c.notes ?? '').isNotEmpty);
-    expect(find.textContaining(noted.notes!), findsNothing);
+    final noted = cards.firstWhere((c) => c.notes.isNotEmpty);
+    expect(find.textContaining(noted.notes.first.text), findsNothing);
     await scrollTo(tester, find.text(l10n.inspectId(noted.id)));
     await tester.tap(find.text(l10n.inspectId(noted.id)));
     await tester.pumpAndSettle();
-    await scrollTo(tester, find.textContaining(noted.notes!));
+    await scrollTo(tester, find.textContaining(noted.notes.first.text));
 
     await scrollTo(tester, find.text(l10n.inspectId(cards.last.id)));
   });

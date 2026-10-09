@@ -12,6 +12,7 @@ import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/report_button.dart';
+import '../placement/native_choice.dart';
 import 'due_card.dart';
 import 'lesson_card.dart';
 import 'quick_revision.dart';
@@ -120,6 +121,9 @@ class _TodayContent extends StatelessWidget {
           const _NotSavedBanner(),
           const SizedBox(height: 16),
         ],
+        // Which language to learn a course from, once one the learner
+        // speaks starts teaching it (ADR-0036).
+        const NativeChoiceCards(),
         if (numbers.lessons.isNotEmpty) ...<Widget>[
           LessonCard(lessons: numbers.lessons),
           const SizedBox(height: 16),
