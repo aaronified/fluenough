@@ -42,6 +42,7 @@ import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
 import 'skill.dart';
+import 'system_settings.dart';
 import 'update_checker.dart';
 
 /// The current time. Injected so that tests and the gallery can fix it.
@@ -124,6 +125,7 @@ class AppState extends ChangeNotifier {
     this.logFiles = const PickerLogFiles(),
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
+    this.systemSettings = const NullSystemSettings(),
     this.reports = const NullReportSender(),
     this._releases = const NullReleaseCheck(),
     this.releaseNotes = const NullReleaseNotes(),
@@ -165,7 +167,8 @@ class AppState extends ChangeNotifier {
 
   /// An app on fakes, for widget tests: the real bundled decks unless
   /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
-  /// progress, links that open unless [links] says otherwise, no network
+  /// progress, links that open unless [links] says otherwise, phone settings
+  /// that open nothing unless [systemSettings] does, no network
   /// for the update check unless [releases] answers, none for the release
   /// notes unless [releaseNotes] does, no download unless
   /// [installer] does one, a clock fixed at [now] — by default Monday 28
@@ -183,6 +186,7 @@ class AppState extends ChangeNotifier {
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
     LinkOpener? links,
+    SystemSettings systemSettings = const NullSystemSettings(),
     ReportSender reports = const NullReportSender(),
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
@@ -210,6 +214,7 @@ class AppState extends ChangeNotifier {
       logFiles: logFiles,
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
+      systemSettings: systemSettings,
       reports: reports,
       releases: releases,
       releaseNotes: releaseNotes,
@@ -251,6 +256,10 @@ class AppState extends ChangeNotifier {
 
   /// Opens links in the browser, or the app that handles them.
   final LinkOpener links;
+
+  /// Opens the phone's own settings: Settings > Voices' "Install voices in
+  /// phone settings".
+  final SystemSettings systemSettings;
 
   /// Where a report from the bug icon goes once mail is on (ADR-0021): the
   /// reporter's mail app, or nowhere in a build that was given none.
