@@ -16,6 +16,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಮಸ್ಕಾರ", base: "ನಮಸ್ಕಾರ", reading: "namaskāra" }
   - id: "kn-0144"
     target: "ಹೇಗಿದ್ದೀರಿ?"
     reading: "hēgiddīri?"
@@ -26,6 +28,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹೇಗಿದ್ದೀರಿ", base: "ಹೇಗಿದ್ದೀರಿ", reading: "hēgiddīri" }
   - id: "kn-0145"
     target: "ಚೆನ್ನಾಗಿದ್ದೇನೆ."
     reading: "cennāgiddēne."
@@ -36,6 +40,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಚೆನ್ನಾಗಿದ್ದೇನೆ", base: "ಚೆನ್ನಾಗಿದ್ದೇನೆ", reading: "cennāgiddēne" }
   - id: "kn-0146"
     target: "ಧನ್ಯವಾದಗಳು"
     reading: "dhanyavādagaḷu"
@@ -46,12 +52,16 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಧನ್ಯವಾದಗಳು", base: "ಧನ್ಯವಾದಗಳು", reading: "dhanyavādagaḷu" }
   - id: "kn-0147"
     target: "ಸರಿ"
     reading: "sari"
     ipa: "sari"
     pos: "other"
     phrasebook: true
+    bases:
+      - { word: "ಸರಿ", base: "ಸರಿ", reading: "sari" }
   - id: "kn-0148"
     target: "ಹೋಗಿ ಬರುತ್ತೇನೆ"
     reading: "hōgi baruttēne"
@@ -62,6 +72,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹೋಗಿ", base: "ಹೋಗಿ", reading: "hōgi" }
   - id: "kn-0149"
     target: "ನನಗೆ ಕನ್ನಡ ಬರುವುದಿಲ್ಲ."
     reading: "nanage kannaḍa baruvudilla."
@@ -71,6 +83,10 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಕನ್ನಡ", base: "ಕನ್ನಡ", reading: "kannaḍa" }
+      - { word: "ಬರುವುದಿಲ್ಲ", base: "ಬರುವುದಿಲ್ಲ", reading: "baruvudilla" }
   - id: "kn-0150"
     target: "ನಾನು ಇನ್ನೂ ಕನ್ನಡ ಕಲಿಯುತ್ತಿದ್ದೇನೆ."
     reading: "nānu innū kannaḍa kaliyuttiddēne."
@@ -78,6 +94,11 @@ cards:
     alt_target: ["ನಾನು ಇನ್ನೂ ಕನ್ನಡ ಕಲೀತಿದ್ದೀನಿ."]
     pos: "phrase"
     phrasebook: true
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಇನ್ನೂ", base: "ಇನ್ನೂ", reading: "innū" }
+      - { word: "ಕನ್ನಡ", base: "ಕನ್ನಡ", reading: "kannaḍa" }
+      - { word: "ಕಲಿಯುತ್ತಿದ್ದೇನೆ", base: "ಕಲಿಯುತ್ತಿದ್ದೇನೆ", reading: "kaliyuttiddēne" }
   - id: "kn-0151"
     target: "ನಿಧಾನವಾಗಿ ಮಾತಾಡಿ."
     reading: "nidhānavāgi mātāḍi."
@@ -88,6 +109,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಿಧಾನವಾಗಿ", base: "ನಿಧಾನವಾಗಿ", reading: "nidhānavāgi" }
+      - { word: "ಮಾತಾಡಿ", base: "ಮಾತಾಡಿ", reading: "mātāḍi" }
   - id: "kn-0152"
     target: "ಇನ್ನೊಮ್ಮೆ ಹೇಳಿ."
     reading: "innomme hēḷi."
@@ -95,6 +119,9 @@ cards:
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
+    bases:
+      - { word: "ಇನ್ನೊಮ್ಮೆ", base: "ಇನ್ನೊಮ್ಮೆ", reading: "innomme" }
+      - { word: "ಹೇಳಿ", base: "ಹೇಳಿ", reading: "hēḷi" }
   - id: "kn-0153"
     target: "ಕ್ಷಮಿಸಿ"
     reading: "kṣamisi"
@@ -104,6 +131,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಕ್ಷಮಿಸಿ", base: "ಕ್ಷಮಿಸಿ", reading: "kṣamisi" }
   - id: "kn-0164"
     target: "ಹೌದು"
     reading: "haudu"
@@ -112,6 +141,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹೌದು", base: "ಹೌದು", reading: "haudu" }
   - id: "kn-0165"
     target: "ಇಲ್ಲ"
     reading: "illa"
@@ -120,6 +151,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಇಲ್ಲ", base: "ಇಲ್ಲ", reading: "illa" }
   - id: "kn-0197"
     target: "ನನ್ನ ಹೆಸರು …"
     reading: "nanna hesaru..."
@@ -128,6 +161,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನ್ನ", base: "ನನ್ನ", reading: "nanna" }
   - id: "kn-0198"
     target: "ನಿಮ್ಮ ಹೆಸರು ಏನು?"
     reading: "nimma hesaru ēnu?"
@@ -136,6 +171,8 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಿಮ್ಮ", base: "ನಿಮ್ಮ", reading: "nimma" }
   - id: "kn-0524"
     target: "ದಯವಿಟ್ಟು ಸಹಾಯ ಮಾಡಿ!"
     reading: "dayaviṭṭu sahāya māḍi!"
@@ -144,12 +181,16 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮಾಡಿ", base: "ಮಾಡಿ", reading: "māḍi" }
   - id: "kn-0525"
     target: "ಕಾಪಾಡಿ!"
     reading: "kāpāḍi!"
     ipa: "kaːpaːɖi"
     pos: "phrase"
     phrasebook: true
+    bases:
+      - { word: "ಕಾಪಾಡಿ", base: "ಕಾಪಾಡಿ", reading: "kāpāḍi" }
   - id: "kn-0531"
     target: "ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ."
     reading: "nānu dāri tappiddēne."
@@ -158,6 +199,9 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ತಪ್ಪಿದ್ದೇನೆ", base: "ತಪ್ಪಿದ್ದೇನೆ", reading: "tappiddēne" }
   - id: "kn-0532"
     target: "ನನಗೆ ಅರ್ಥ ಆಗಲಿಲ್ಲ."
     reading: "nanage artha āgalilla."
@@ -167,6 +211,10 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಅರ್ಥ", base: "ಅರ್ಥ", reading: "artha" }
+      - { word: "ಆಗಲಿಲ್ಲ", base: "ಆಗಲಿಲ್ಲ", reading: "āgalilla" }
   - id: "kn-0533"
     target: "ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ?"
     reading: "śaucālaya ellide?"

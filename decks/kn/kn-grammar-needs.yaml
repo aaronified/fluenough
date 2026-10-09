@@ -19,11 +19,15 @@ cards:
     ipa: "nimaɡe eːnu beːku"
     alt_target: ["ನಿಮಗೆ ಏನ್ ಬೇಕು?"]
     pos: "phrase"
+    bases:
+      - { word: "ನಿಮಗೆ", base: "ನಿಮಗೆ", reading: "nimage" }
   - id: "kn-0334"
     target: "ನನಗೆ ನೀರು ಬೇಕು."
     reading: "nanage nīru bēku."
     ipa: "nanaɡe niːru beːku"
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
   - id: "kn-0335"
     target: "ಬೇಡ"
     reading: "bēḍa"
@@ -36,6 +40,9 @@ cards:
     reading: "nanage idu bēḍa."
     ipa: "nanaɡe id̪u beːɖa"
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಇದು", base: "ಇದು", reading: "idu" }
   - id: "kn-0337"
     target: "ಸಾಕು"
     reading: "sāku"
@@ -54,11 +61,15 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಇಲ್ಲ", base: "ಇಲ್ಲ", reading: "illa" }
   - id: "kn-0340"
     target: "ನನಗೆ ಸಹಾಯ ಬೇಕು."
     reading: "nanage sahāya bēku."
     ipa: "nanaɡe sahaːja beːku"
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
   - id: "kn-0341"
     target: "ನನಗೆ ಮನೆಗೆ ಹೋಗಬೇಕು."
     reading: "nanage manege hōgabēku."
@@ -66,3 +77,7 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಮನೆಗೆ", ref: "kn-0201" }
+      - { word: "ಹೋಗಬೇಕು", base: "ಹೋಗಬೇಕು", reading: "hōgabēku" }

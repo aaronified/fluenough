@@ -19,17 +19,25 @@ cards:
     reading: "nanage māvinahaṇṇu iṣṭa."
     ipa: "nanaɡe maːʋinahaɳɳu iʂʈa"
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಮಾವಿನಹಣ್ಣು", base: "ಮಾವಿನಹಣ್ಣು", reading: "māvinahaṇṇu" }
   - id: "kn-0515"
     target: "ನನಗೆ ಕಾಫಿ ಇಷ್ಟ ಇಲ್ಲ."
     reading: "nanage kāfi iṣṭa illa."
     ipa: "nanaɡe kaːfi iʂʈa illa"
     alt_target: ["ನನಗೆ ಕಾಫಿ ಇಷ್ಟವಿಲ್ಲ."]
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಇಲ್ಲ", base: "ಇಲ್ಲ", reading: "illa" }
   - id: "kn-0516"
     target: "ನಿಮಗೆ ಏನು ಇಷ್ಟ?"
     reading: "nimage ēnu iṣṭa?"
     ipa: "nimaɡe eːnu iʂʈa"
     pos: "phrase"
+    bases:
+      - { word: "ನಿಮಗೆ", base: "ನಿಮಗೆ", reading: "nimage" }
   - id: "kn-0517"
     target: "ನನಗೆ ಸಿನಿಮಾ ನೋಡುವುದು ಇಷ್ಟ."
     reading: "nanage sinimā nōḍuvudu iṣṭa."
@@ -38,6 +46,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಸಿನಿಮಾ", base: "ಸಿನಿಮಾ", reading: "sinimā" }
+      - { word: "ನೋಡುವುದು", base: "ನೋಡುವುದು", reading: "nōḍuvudu" }
   - id: "kn-0518"
     target: "ಇಷ್ಟವಾಗು"
     reading: "iṣṭavāgu"
@@ -51,18 +63,28 @@ cards:
     ipa: "nanaɡe iʂʈaʋaːjit̪u"
     alt_target: ["ನನಗೆ ಇಷ್ಟ ಆಯ್ತು.", "ನಂಗೆ ಇಷ್ಟ ಆಯ್ತು."]
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಇಷ್ಟವಾಯಿತು", ref: "kn-0518" }
   - id: "kn-0520"
     target: "ನನಗೆ ಇಷ್ಟವಾಗಲಿಲ್ಲ."
     reading: "nanage iṣṭavāgalilla."
     ipa: "nanaɡe iʂʈaʋaːɡalilla"
     alt_target: ["ನನಗೆ ಇಷ್ಟ ಆಗ್ಲಿಲ್ಲ."]
     pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ಇಷ್ಟವಾಗಲಿಲ್ಲ", ref: "kn-0518" }
   - id: "kn-0521"
     target: "ನಿಮಗೆ ಇದು ಇಷ್ಟವಾಯಿತಾ?"
     reading: "nimage idu iṣṭavāyitā?"
     ipa: "nimaɡe id̪u iʂʈaʋaːjit̪aː"
     alt_target: ["ನಿಮಗೆ ಇದು ಇಷ್ಟ ಆಯ್ತಾ?"]
     pos: "phrase"
+    bases:
+      - { word: "ನಿಮಗೆ", base: "ನಿಮಗೆ", reading: "nimage" }
+      - { word: "ಇದು", base: "ಇದು", reading: "idu" }
+      - { word: "ಇಷ್ಟವಾಯಿತಾ", ref: "kn-0518" }
   - ref: "kn-0479"
     notes:
       - { id: "n1", kind: "note" }
@@ -72,3 +94,7 @@ cards:
     ipa: "naːnu ninnannu priːt̪isut̪t̪eːne"
     alt_target: ["ನಾನು ನಿನ್ನ ಪ್ರೀತಿಸ್ತೀನಿ."]
     pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ನಿನ್ನನ್ನು", base: "ನಿನ್ನನ್ನು", reading: "ninnannu" }
+      - { word: "ಪ್ರೀತಿಸುತ್ತೇನೆ", base: "ಪ್ರೀತಿಸುತ್ತೇನೆ", reading: "prītisuttēne" }

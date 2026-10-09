@@ -29,6 +29,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ರಾಮುವಿಗೆ", base: "ರಾಮುವಿಗೆ", reading: "rāmuvige" }
   - id: "kn-0358"
     target: "ನನ್ನ ಜೊತೆ"
     reading: "nanna jote"
@@ -36,6 +38,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನ್ನ", base: "ನನ್ನ", reading: "nanna" }
+      - { word: "ಜೊತೆ", base: "ಜೊತೆ", reading: "jote" }
   - id: "kn-0359"
     target: "ಮೇಜಿನ ಮೇಲೆ"
     reading: "mējina mēle"
@@ -43,16 +48,24 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮೇಜಿನ", ref: "kn-0392" }
+      - { word: "ಮೇಲೆ", base: "ಮೇಲೆ", reading: "mēle" }
   - id: "kn-0360"
     target: "ಮೇಜಿನ ಕೆಳಗೆ"
     reading: "mējina keḷage"
     ipa: "meːdʒina keɭaɡe"
     pos: "phrase"
+    bases:
+      - { word: "ಮೇಜಿನ", ref: "kn-0392" }
+      - { word: "ಕೆಳಗೆ", base: "ಕೆಳಗೆ", reading: "keḷage" }
   - id: "kn-0361"
     target: "ಸ್ಟೇಷನ್ ಹತ್ತಿರ"
     reading: "sṭēṣan hattira"
     ipa: "sʈeːʂan hat̪t̪ira"
     pos: "phrase"
+    bases:
+      - { word: "ಸ್ಟೇಷನ್", base: "ಸ್ಟೇಷನ್", reading: "sṭēṣan" }
   - id: "kn-0362"
     target: "ನಿಮಗಾಗಿ"
     reading: "nimagāgi"
@@ -68,6 +81,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಊಟದ", base: "ಊಟದ", reading: "ūṭada" }
+      - { word: "ನಂತರ", base: "ನಂತರ", reading: "nantara" }
   - id: "kn-0364"
     target: "ಊಟಕ್ಕೆ ಮುಂಚೆ"
     reading: "ūṭakke muñce"
@@ -75,6 +91,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಊಟಕ್ಕೆ", base: "ಊಟಕ್ಕೆ", reading: "ūṭakke" }
+      - { word: "ಮುಂಚೆ", base: "ಮುಂಚೆ", reading: "muñce" }
   - id: "kn-0365"
     target: "ಪೆನ್ನಿನಿಂದ"
     reading: "pennininda"
