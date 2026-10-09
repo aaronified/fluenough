@@ -1,6 +1,7 @@
 # ADR-0012: Revising a finished deck is not logged
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0033: revisions from Today and by
+  skill are recorded; a deck's Revise still records nothing.
 - **Date:** 2026-10-02
 
 ## Context

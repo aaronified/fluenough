@@ -46,6 +46,28 @@ git -C noto-emoji sparse-checkout set 2D/png/128
 python3 tools/pictures.py noto-emoji
 ```
 
+## `mail_to_issues.py`
+
+Turns the report mails the app sends to the Fluenough Gmail into GitHub
+issues (#160, ADR-0021). `.github/workflows/feedback-mail.yml` runs it hourly.
+Stdlib only.
+
+It reads the inbox over IMAP and takes only mails whose subject starts with
+`[Fluenough]`, as the app writes it. Each bug report and each piece of
+feedback not filed before becomes one issue, text only, and the mail gets
+the Gmail label `fluenough-filed` so that it is never filed twice. The
+sender's address is never written to the issue, `@mentions` are broken, and a
+screenshot or the app log stays in the mail, which the issue says it had.
+**Support mails are never made public:** one is skipped and left untouched in
+the inbox when its subject or its `Kind:` line says Support, read loosely
+(any case, with or without the colon).
+
+It needs two repository secrets, `FEEDBACK_GMAIL_ADDRESS` and
+`FEEDBACK_GMAIL_APP_PASSWORD` (a Gmail app password), and uses the
+workflow's own `GITHUB_TOKEN` for the issues. Without the two secrets it does
+nothing and says so. `python3 -m unittest discover -s tools -p test_mail_to_issues.py` tests
+it without a network.
+
 ## `import_csv.py`
 
 Turns a CSV wordlist into a deck. `target` and `native` columns are required;

@@ -14,7 +14,7 @@ small phrasebook first and grammar taught as rules over known words
 (`docs/plans/words-rules-sentences.md`), and for each deck to keep the
 learner's language in a layer of its own (`docs/plans/native-layers.md`).
 The skill model left grammar understood and produced to this format
-(`docs/plans/skill-model.md`, 2026-10-09). On 2026-10-09 the owner
+(ADR-0034, 2026-10-09). On 2026-10-09 the owner
 decided that the format is built in the parser, the validator and
 `docs/DECK-FORMAT.md` before any B1 deck is written; that a rule's forms
 are listed for every word, and the validator checks every taught word of
