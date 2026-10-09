@@ -13,6 +13,7 @@ import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/settings/app_log_page.dart';
 
 import '../../support/harness.dart';
+import '../settings/support.dart';
 
 /// Records what it is sent; its mail app always takes it.
 class _Sender implements ReportSender {
@@ -201,6 +202,15 @@ void main() {
     await tester.tap(find.text(l10n.reportLogSeeAll));
     await tester.pumpAndSettle();
     expect(find.byType(AppLogPage), findsOneWidget);
+  });
+
+  testWidgets('at twice the text size, the kinds and both boxes lay out '
+      'without overflowing', (tester) async {
+    tester.platformDispatcher.textScaleFactorTestValue = 2;
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+    await _pump(tester, reports: _Sender());
+    await scrollThrough(tester);
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('with the log incoming, there is no box', (tester) async {
