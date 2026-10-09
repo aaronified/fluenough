@@ -22,12 +22,14 @@ typedef LoggedReview = ({
 /// state, and a pair with no review since its reset has no state at the end.
 /// An undone reset is not in [effects], so it changes nothing.
 ///
-/// A right answer also counts in part for the skills [skills] says it
+/// With [skills], a right answer also counts in part for the skills it
 /// implies, of the same card, where that pair has a state ([implyReview]).
+/// Without, each pair is its own reviews alone: what the database's
+/// `card_states` caches.
 ({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states}) replayReviews(
   Iterable<LoggedReview> reviews, {
   LeechEffects effects = LeechEffects.none,
-  SkillMap skills = const SkillMap(),
+  SkillMap? skills,
 }) {
   final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
@@ -46,7 +48,7 @@ typedef LoggedReview = ({
       rated: review.answerGiven == null,
     );
     states[key] = after;
-    implyReview(states, skills, review);
+    if (skills != null) implyReview(states, skills, review);
     events.add(
       ReviewEvent(
         at: review.at,
