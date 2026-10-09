@@ -20,6 +20,7 @@ import 'package:fluenough/features/placement/placement_page.dart';
 
 import '../../support/deck_remote.dart';
 import '../../support/harness.dart';
+import '../../support/picker.dart';
 
 /// Deck downloads (#210, ADR-0037), through the app: the
 /// first launch, a language added and removed, updates, and every failure
@@ -105,8 +106,8 @@ void main() {
   });
 
   group('first launch', () {
-    testWidgets('lists every language on GitHub, downloads the one chosen, '
-        'then places', (tester) async {
+    testWidgets('lists every language on GitHub, downloads the one chosen '
+        'as it is chosen, then places', (tester) async {
       final state = await pump(
         tester,
         downloadingApp(remote: remote, phone: phone),
@@ -114,11 +115,19 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.text(l10n.learnTitle), findsOneWidget);
       expect(state.decks, isEmpty, reason: 'no deck ships in the app');
-      expect(find.text('Spanish'), findsOneWidget);
-      expect(find.text('Hindi'), findsOneWidget);
-      expect(find.textContaining('to download'), findsNWidgets(2));
+      for (final code in <String>['es', 'hi']) {
+        await scrollToInPicker(tester, languageCard(code));
+        expect(
+          find.descendant(
+            of: languageCard(code),
+            matching: find.textContaining('Not on the phone'),
+          ),
+          findsOneWidget,
+        );
+      }
 
-      await tapText(tester, 'Spanish');
+      await pickLanguage(tester, 'es');
+      expect(remote.asked, contains('decks/es/es-path.yaml'));
       await tapText(tester, l10n.commonContinue);
 
       // Ready after the first decks: placement asks, on the decks now in.
@@ -147,23 +156,43 @@ void main() {
       expect(find.text(l10nOf(tester).downloadsRateLimited), findsOneWidget);
     });
 
-    testWidgets('a download cut short says so, keeps nothing, and tries '
-        'again', (tester) async {
+    testWidgets('a download cut short says so on its card, keeps nothing, '
+        'and tries again', (tester) async {
       final state = await pump(
         tester,
         downloadingApp(remote: remote, phone: phone),
       );
       final l10n = l10nOf(tester);
       remote.failAfter = 1;
-      await tapText(tester, 'Hindi');
-      await tapText(tester, l10n.commonContinue);
-      expect(find.byType(DownloadPage), findsOneWidget);
-      expect(find.text(l10n.downloadsOffline), findsOneWidget);
+      await pickLanguage(tester, 'hi');
+      final card = languageCard('hi');
+      expect(
+        find.descendant(
+          of: card,
+          matching: find.text(
+            l10n.pickerDownloadFailed(
+              l10n.pickerNoConnection,
+              l10n.pickerDecksOnPhone(0),
+            ),
+          ),
+        ),
+        findsOneWidget,
+      );
       expect(phone.files, isEmpty);
+      final go = find.widgetWithText(FilledButton, l10n.commonContinue);
+      expect(tester.widget<FilledButton>(go).onPressed, isNull);
       expect(state.settings.learningChosen, isFalse);
 
       remote.failAfter = null;
-      await tapText(tester, l10n.commonRetry);
+      final retry = find.descendant(
+        of: card,
+        matching: find.text(l10n.commonRetry),
+      );
+      await scrollToInPicker(tester, retry);
+      await tester.tap(retry);
+      await tester.pumpAndSettle();
+      expect(isPicked(tester, 'hi'), isTrue);
+      await tapText(tester, l10n.commonContinue);
       expect(find.byType(PlacementPage), findsOneWidget);
     });
 
@@ -174,10 +203,17 @@ void main() {
       });
       await pump(tester, downloadingApp(remote: remote, phone: phone));
       final l10n = l10nOf(tester);
-      await tapText(tester, 'Spanish');
-      await tapText(tester, l10n.commonContinue);
-      expect(find.text(l10n.downloadsInvalid), findsOneWidget);
+      await pickLanguage(tester, 'es');
+      expect(
+        find.descendant(
+          of: languageCard('es'),
+          matching: find.textContaining(l10n.downloadsInvalid),
+        ),
+        findsOneWidget,
+      );
       expect(phone.files, isEmpty);
+      final go = find.widgetWithText(FilledButton, l10n.commonContinue);
+      expect(tester.widget<FilledButton>(go).onPressed, isNull);
     });
   });
 
@@ -309,7 +345,7 @@ cards:
       await tester.pumpAndSettle();
       await tapText(tester, l10n.settingsLearn);
       expect(find.byType(LanguagePickerPage), findsOneWidget);
-      await tapText(tester, 'Hindi');
+      await pickLanguage(tester, 'hi');
       await tapText(tester, l10n.commonContinue);
       expect(find.byType(PlacementPage), findsOneWidget);
       expect(
