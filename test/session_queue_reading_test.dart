@@ -77,7 +77,7 @@ void main() {
     ], newCardLimit: 2);
     // The passage's first question fits under the cap, so all three come.
     expect(ids(queue.fresh), [
-      'a:production',
+      'a:recognition',
       'p-q1:reading',
       'p-q2:reading',
       'p-q3:reading',
@@ -85,7 +85,7 @@ void main() {
     // With no room for its first, none comes.
     expect(
       ids(build(<Card>[word('a'), ...passage('p', 3)], newCardLimit: 1).fresh),
-      ['a:production'],
+      ['a:recognition'],
     );
   });
 

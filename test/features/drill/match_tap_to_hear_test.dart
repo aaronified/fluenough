@@ -42,10 +42,8 @@ SettingsNotifier settingsWith(void Function(SettingsNotifier s) change) {
   return s;
 }
 
-/// A match of four words. Matching is a lesson step (ADR-0034), and
-/// recognition is never a review, so the other three are taken from a
-/// scheduled mode's new pairs: what is tested here is the tiles, not what
-/// they record.
+/// A match of four words, the other three taken from Write's new pairs:
+/// what is tested here is the tiles, not what they record.
 Future<AppState> pumpMatch(WidgetTester tester, {required AppState state}) =>
     pumpScreen(
       tester,
