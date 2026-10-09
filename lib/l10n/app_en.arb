@@ -3427,6 +3427,165 @@
   "@settingsPinLockDesc": {
     "description": "Under PIN lock."
   },
+  "settingsAdjust": "Adjust to me",
+  "@settingsAdjust": {
+    "description": "Settings row that fits the app's review schedule to how well the learner remembers each skill. Worked out from the learner's own answers."
+  },
+  "settingsAdjustButton": "Adjust",
+  "@settingsAdjustButton": {
+    "description": "Button on the Adjust to me row: fits the schedule now."
+  },
+  "settingsAdjustNeedsMore": "Needs more answers first",
+  "@settingsAdjustNeedsMore": {
+    "description": "Under Adjust to me while no skill has enough answers to fit."
+  },
+  "settingsAdjustNotYet": "Not adjusted yet",
+  "@settingsAdjustNotYet": {
+    "description": "Under Adjust to me when a skill could be fitted but none has been."
+  },
+  "settingsAdjustLastToday": "Last adjusted today",
+  "@settingsAdjustLastToday": {
+    "description": "Under Adjust to me after a fit today."
+  },
+  "settingsAdjustLast": "Last adjusted {date}",
+  "@settingsAdjustLast": {
+    "description": "Under Adjust to me: the day of the last fit.",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "MMMd",
+        "example": "2026-10-02"
+      }
+    }
+  },
+  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}}… {current} of {total}",
+  "@settingsAdjusting": {
+    "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammar or reading), named by what the words were; current and total count the skills being fitted.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      },
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "current": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "settingsAdjustingLabel": "Adjusting",
+  "@settingsAdjustingLabel": {
+    "description": "Screen-reader name of the progress bar while fitting."
+  },
+  "settingsAdjustAuto": "Adjust automatically",
+  "@settingsAdjustAuto": {
+    "description": "Switch: fit a skill again in the background once it has more answers."
+  },
+  "settingsAdjustAutoDesc": "When a skill has 10% more answers",
+  "@settingsAdjustAutoDesc": {
+    "description": "Under Adjust automatically."
+  },
+  "settingsAdjustHelp": "Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.",
+  "@settingsAdjustHelp": {
+    "description": "Line under the Adjust to me rows."
+  },
+  "adjustedTitle": "Adjusted to you",
+  "@adjustedTitle": {
+    "description": "Title of the sheet shown after Adjust to me."
+  },
+  "adjustedSubtitle": "Your reviews now fit how you remember.",
+  "@adjustedSubtitle": {
+    "description": "Line under Adjusted to you."
+  },
+  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}} well: fewer reviews",
+  "@adjustedFewer": {
+    "description": "A skill the learner remembers better than the defaults assume. mode is the skill, named by what the words were.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammar{Grammar slips} reading{Passages slip} other{Words slip}} faster: more reviews",
+  "@adjustedMore": {
+    "description": "A skill the learner forgets faster than the defaults assume. 'Slip', never 'fade'.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: about the same",
+  "@adjustedSame": {
+    "description": "A skill whose schedule barely changed.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: not adjusted yet",
+  "@adjustedNotYet": {
+    "description": "A skill without enough answers to fit.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      }
+    }
+  },
+  "adjustedChange": "A word you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}. About {reviews, plural, =1{1 review} other{{reviews} reviews}} in the next 30 days, was {wasReviews}.",
+  "@adjustedChange": {
+    "description": "What a fit changed for one skill: days until a word answered right comes back, now and before, and the reviews of the next 30 days, now and before.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "6"
+      },
+      "was": {
+        "type": "int",
+        "example": "4"
+      },
+      "reviews": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      },
+      "wasReviews": {
+        "type": "int",
+        "example": "160",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "adjustedSameDetail": "A word you get right still comes back in {days, plural, =1{1 day} other{{days} days}}.",
+  "@adjustedSameDetail": {
+    "description": "Under a skill whose schedule barely changed.",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "adjustedNotYetDetail": "It needs more answers first.",
+  "@adjustedNotYetDetail": {
+    "description": "Under a skill without enough answers to fit."
+  },
+  "adjustedPrivacy": "Worked out on this phone from your answers. Nothing is sent anywhere.",
+  "@adjustedPrivacy": {
+    "description": "Foot of the Adjusted to you sheet."
+  },
   "settingsSectionData": "Your data",
   "@settingsSectionData": {
     "description": "Settings section heading."
