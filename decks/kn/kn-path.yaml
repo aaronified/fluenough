@@ -6,7 +6,7 @@
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
 # its listening and reading passages, described in English. It follows the
-# Hindi, Telugu and Bengali plans unit for unit where Kannada has the same
+# other Indian-language plans unit for unit where Kannada has the same
 # unit, so that the courses line up; Kannada's own grammar (gender and
 # number, the negative, adjectives, past-more, conjunct and compound verbs,
 # can and must) stays in the units of the decks that teach it, and the
@@ -21,11 +21,10 @@
 # First a few words and basic sentences, the sounds the learner's language
 # lacks and how Kannada grammar differs from it; then themes, each with the
 # grammar that goes with it; the script comes after the first themes, before
-# the rest. The grammar follows the Indo-Aryan order of
-# docs/plans/language-paths-scheme.md: be, postpositions, the present,
-# gender agreement, the oblique, the past, the perfect, compound and
-# conjunct verbs, then the subjunctive, the relative-correlative clauses
-# and the rest of B1. Every deck of Kannada is listed exactly once.
+# the rest. The grammar follows Kannada's own order: be, case endings,
+# verbs by gender and number, the dative of experience, the past, the
+# perfect, compound and conjunct verbs, the conjunctive participle (-ಇ),
+# then the relative participles and the rest of B1. Every deck of Kannada is listed exactly once.
 schema: 1
 kind: "path"
 id: "kn-path"
@@ -275,9 +274,9 @@ units:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
   - planned: { id: "kn-geography", theme: "geography", words: 45 }
     listening_passages:
-      - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }
+      - { id: "where-in-karnataka", text: { "en": "Naming districts and cities of Karnataka" } }
     reading_passages:
-      - { id: "kannada-states-map", text: { "en": "A map caption: the Kannada-speaking states" } }
+      - { id: "karnataka-map", text: { "en": "A map caption: Karnataka and its districts" } }
     milestone: "A2"
   - decks: ["kn-registers"]
     words: 15
@@ -358,12 +357,12 @@ units:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
   - planned: { id: "kn-environment", theme: "environment", words: 50 }
     listening_passages:
-      - { id: "floods-and-embankments", text: { "en": "Neighbours talk about the river, the flood and the embankment" } }
+      - { id: "monsoon-and-the-river", text: { "en": "Neighbours talk about the monsoon and the Kaveri in flood" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
   - planned: { id: "kn-agriculture", theme: "agriculture", words: 50 }
     listening_passages:
-      - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's rice and jute" } }
+      - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's ragi, coffee and areca" } }
     reading_passages:
       - { id: "market-prices", text: { "en": "A crop price board at a market" } }
   - planned: { id: "kn-grammar-while", grammar: "while" }

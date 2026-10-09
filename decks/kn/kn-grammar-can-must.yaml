@@ -15,9 +15,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಕನ್ನಡ", base: "ಕನ್ನಡ", reading: "kannaḍa" }
-      - { word: "ಮಾತಾಡಲು", base: "ಮಾತಾಡಲು", reading: "mātāḍalu" }
+      - { word: "ಮಾತಾಡಲು", base: "ಮಾತಾಡು", reading: "mātāḍu" }
   - id: "kn-0572"
     target: "ನಿಮಗೆ ನಾಳೆ ಬರಲು ಆಗುತ್ತದೆಯೇ?"
     reading: "nimage nāḷe baralu āguttadeyē?"
@@ -27,9 +27,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ನಿಮಗೆ", base: "ನಿಮಗೆ", reading: "nimage" }
-      - { word: "ಬರಲು", base: "ಬರಲು", reading: "baralu" }
-      - { word: "ಆಗುತ್ತದೆಯೇ", base: "ಆಗುತ್ತದೆಯೇ", reading: "āguttadeyē" }
+      - { word: "ನಿಮಗೆ", ref: "kn-0143" }
+      - { word: "ಬರಲು", base: "ಬರು", reading: "baru" }
+      - { word: "ಆಗುತ್ತದೆಯೇ", base: "ಆಗು", reading: "āgu" }
   - id: "kn-0573"
     target: "ನನಗೆ ಬರಲು ಆಗುವುದಿಲ್ಲ."
     reading: "nanage baralu āguvudilla."
@@ -37,9 +37,9 @@ cards:
     alt_target: ["ನಂಗೆ ಬರಕ್ಕಾಗಲ್ಲ."]
     pos: "phrase"
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
-      - { word: "ಬರಲು", base: "ಬರಲು", reading: "baralu" }
-      - { word: "ಆಗುವುದಿಲ್ಲ", base: "ಆಗುವುದಿಲ್ಲ", reading: "āguvudilla" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಬರಲು", base: "ಬರು", reading: "baru" }
+      - { word: "ಆಗುವುದಿಲ್ಲ", base: "ಆಗು", reading: "āgu" }
   - id: "kn-0574"
     target: "ನನಗೆ ಈಜು ಬರುತ್ತದೆ."
     reading: "nanage īju baruttade."
@@ -48,7 +48,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಈಜು", base: "ಈಜು", reading: "īju" }
   - ref: "kn-0149"
     notes:
@@ -62,7 +62,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ಒಳಗೆ", base: "ಒಳಗೆ", reading: "oḷage" }
-      - { word: "ಬರಬಹುದು", base: "ಬರಬಹುದು", reading: "barabahudu" }
+      - { word: "ಬರಬಹುದು", base: "ಬರು", reading: "baru" }
   - id: "kn-0576"
     target: "ಬರಬಹುದಾ?"
     reading: "barabahudā?"
@@ -79,7 +79,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "ಫೋಟೋ", base: "ಫೋಟೋ", reading: "fōṭō" }
-      - { word: "ತೆಗೆಯಬಾರದು", base: "ತೆಗೆಯಬಾರದು", reading: "tegeyabāradu" }
+      - { word: "ತೆಗೆಯಬಾರದು", base: "ತೆಗೆ", reading: "tege" }
   - ref: "kn-0538"
   - id: "kn-0578"
     target: "ನೀವು ನಾಳೆ ಬರಬೇಕು."
@@ -87,7 +87,7 @@ cards:
     ipa: "niːʋu naːɭe barabeːku"
     pos: "phrase"
     bases:
-      - { word: "ಬರಬೇಕು", base: "ಬರಬೇಕು", reading: "barabēku" }
+      - { word: "ಬರಬೇಕು", base: "ಬರು", reading: "baru" }
   - id: "kn-0579"
     target: "ನಾನು ಹೋಗಬೇಕಾಗಿಲ್ಲ."
     reading: "nānu hōgabēkāgilla."
@@ -96,4 +96,4 @@ cards:
     pos: "phrase"
     bases:
       - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
-      - { word: "ಹೋಗಬೇಕಾಗಿಲ್ಲ", base: "ಹೋಗಬೇಕಾಗಿಲ್ಲ", reading: "hōgabēkāgilla" }
+      - { word: "ಹೋಗಬೇಕಾಗಿಲ್ಲ", base: "ಹೋಗು", reading: "hōgu" }

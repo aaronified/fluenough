@@ -20,7 +20,7 @@ cards:
     ipa: "nanaɡe maːʋinahaɳɳu iʂʈa"
     pos: "phrase"
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಮಾವಿನಹಣ್ಣು", base: "ಮಾವಿನಹಣ್ಣು", reading: "māvinahaṇṇu" }
   - id: "kn-0515"
     target: "ನನಗೆ ಕಾಫಿ ಇಷ್ಟ ಇಲ್ಲ."
@@ -29,15 +29,15 @@ cards:
     alt_target: ["ನನಗೆ ಕಾಫಿ ಇಷ್ಟವಿಲ್ಲ."]
     pos: "phrase"
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
-      - { word: "ಇಲ್ಲ", base: "ಇಲ್ಲ", reading: "illa" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಇಲ್ಲ", ref: "kn-0165" }
   - id: "kn-0516"
     target: "ನಿಮಗೆ ಏನು ಇಷ್ಟ?"
     reading: "nimage ēnu iṣṭa?"
     ipa: "nimaɡe eːnu iʂʈa"
     pos: "phrase"
     bases:
-      - { word: "ನಿಮಗೆ", base: "ನಿಮಗೆ", reading: "nimage" }
+      - { word: "ನಿಮಗೆ", ref: "kn-0143" }
   - id: "kn-0517"
     target: "ನನಗೆ ಸಿನಿಮಾ ನೋಡುವುದು ಇಷ್ಟ."
     reading: "nanage sinimā nōḍuvudu iṣṭa."
@@ -47,9 +47,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಸಿನಿಮಾ", base: "ಸಿನಿಮಾ", reading: "sinimā" }
-      - { word: "ನೋಡುವುದು", base: "ನೋಡುವುದು", reading: "nōḍuvudu" }
+      - { word: "ನೋಡುವುದು", base: "ನೋಡು", reading: "nōḍu" }
   - id: "kn-0518"
     target: "ಇಷ್ಟವಾಗು"
     reading: "iṣṭavāgu"
@@ -64,7 +64,7 @@ cards:
     alt_target: ["ನನಗೆ ಇಷ್ಟ ಆಯ್ತು.", "ನಂಗೆ ಇಷ್ಟ ಆಯ್ತು."]
     pos: "phrase"
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಇಷ್ಟವಾಯಿತು", ref: "kn-0518" }
   - id: "kn-0520"
     target: "ನನಗೆ ಇಷ್ಟವಾಗಲಿಲ್ಲ."
@@ -73,7 +73,7 @@ cards:
     alt_target: ["ನನಗೆ ಇಷ್ಟ ಆಗ್ಲಿಲ್ಲ."]
     pos: "phrase"
     bases:
-      - { word: "ನನಗೆ", base: "ನನಗೆ", reading: "nanage" }
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
       - { word: "ಇಷ್ಟವಾಗಲಿಲ್ಲ", ref: "kn-0518" }
   - id: "kn-0521"
     target: "ನಿಮಗೆ ಇದು ಇಷ್ಟವಾಯಿತಾ?"
@@ -82,7 +82,7 @@ cards:
     alt_target: ["ನಿಮಗೆ ಇದು ಇಷ್ಟ ಆಯ್ತಾ?"]
     pos: "phrase"
     bases:
-      - { word: "ನಿಮಗೆ", base: "ನಿಮಗೆ", reading: "nimage" }
+      - { word: "ನಿಮಗೆ", ref: "kn-0143" }
       - { word: "ಇದು", base: "ಇದು", reading: "idu" }
       - { word: "ಇಷ್ಟವಾಯಿತಾ", ref: "kn-0518" }
   - ref: "kn-0479"
@@ -96,5 +96,5 @@ cards:
     pos: "phrase"
     bases:
       - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
-      - { word: "ನಿನ್ನನ್ನು", base: "ನಿನ್ನನ್ನು", reading: "ninnannu" }
-      - { word: "ಪ್ರೀತಿಸುತ್ತೇನೆ", base: "ಪ್ರೀತಿಸುತ್ತೇನೆ", reading: "prītisuttēne" }
+      - { word: "ನಿನ್ನನ್ನು", base: "ನೀನು", reading: "nīnu" }
+      - { word: "ಪ್ರೀತಿಸುತ್ತೇನೆ", base: "ಪ್ರೀತಿಸು", reading: "prītisu" }
