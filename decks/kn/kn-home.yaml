@@ -30,6 +30,8 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮಲಗುವ", ref: "kn-0441" }
   - id: "kn-0383"
     target: "ಹಾಲ್"
     reading: "hāl"
@@ -79,6 +81,8 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಬೀಗದ", base: "ಬೀಗದ", reading: "bīgada" }
   - id: "kn-0390"
     target: "ಮಂಚ"
     picture: "🛏"
@@ -140,8 +144,16 @@ cards:
     reading: "maneya munde ondu pārk ide."
     ipa: "maneja mund̪e ond̪u paːrk id̪e"
     pos: "phrase"
+    bases:
+      - { word: "ಮನೆಯ", ref: "kn-0201" }
+      - { word: "ಪಾರ್ಕ್", base: "ಪಾರ್ಕ್", reading: "pārk" }
+      - { word: "ಇದೆ", base: "ಇದೆ", reading: "ide" }
   - id: "kn-0399"
     target: "ನಮ್ಮ ಬೀದಿ ತುಂಬಾ ಶಾಂತವಾಗಿದೆ."
     reading: "namma bīdi tumbā śāntavāgide."
     ipa: "namma biːd̪i t̪umbaː ʃaːnt̪aʋaːɡid̪e"
     pos: "phrase"
+    bases:
+      - { word: "ನಮ್ಮ", base: "ನಮ್ಮ", reading: "namma" }
+      - { word: "ತುಂಬಾ", base: "ತುಂಬಾ", reading: "tumbā" }
+      - { word: "ಶಾಂತವಾಗಿದೆ", base: "ಶಾಂತವಾಗಿದೆ", reading: "śāntavāgide" }

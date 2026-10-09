@@ -73,6 +73,9 @@ cards:
     reading: "idu oḷḷeya pustaka."
     ipa: "id̪u oɭɭeja pust̪aka"
     pos: "phrase"
+    bases:
+      - { word: "ಇದು", base: "ಇದು", reading: "idu" }
+      - { word: "ಪುಸ್ತಕ", base: "ಪುಸ್ತಕ", reading: "pustaka" }
   - id: "kn-0411"
     target: "ಈ ಕೋಣೆ ದೊಡ್ಡದಾಗಿದೆ."
     reading: "ī kōṇe doḍḍadāgide."
@@ -81,6 +84,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ದೊಡ್ಡದಾಗಿದೆ", ref: "kn-0402" }
   - id: "kn-0412"
     target: "ಕಾಫಿ ತುಂಬಾ ಬಿಸಿಯಾಗಿದೆ."
     reading: "kāfi tumbā bisiyāgide."
@@ -88,3 +93,6 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ತುಂಬಾ", base: "ತುಂಬಾ", reading: "tumbā" }
+      - { word: "ಬಿಸಿಯಾಗಿದೆ", ref: "kn-0406" }

@@ -121,6 +121,8 @@ cards:
     ipa: "niːʋu eːnu kelasa maːɖut̪t̪iːri"
     alt_target: ["ನೀವು ಏನ್ ಕೆಲಸ ಮಾಡ್ತೀರಾ?"]
     pos: "phrase"
+    bases:
+      - { word: "ಮಾಡುತ್ತೀರಿ", base: "ಮಾಡುತ್ತೀರಿ", reading: "māḍuttīri" }
   - id: "kn-0241"
     target: "ನಾನು ಶಿಕ್ಷಕ."
     reading: "nānu śikṣaka."
@@ -129,14 +131,21 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
   - id: "kn-0242"
     target: "ನೀವು ಎಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತೀರಿ?"
     reading: "nīvu elli kelasa māḍuttīri?"
     ipa: "niːʋu elli kelasa maːɖut̪t̪iːri"
     pos: "phrase"
+    bases:
+      - { word: "ಮಾಡುತ್ತೀರಿ", base: "ಮಾಡುತ್ತೀರಿ", reading: "māḍuttīri" }
   - id: "kn-0243"
     target: "ನಾನು ಆಫೀಸಿನಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತೇನೆ."
     reading: "nānu āfīsinalli kelasa māḍuttēne."
     ipa: "naːnu aːfiːsinalli kelasa maːɖut̪t̪eːne"
     alt_target: ["ನಾನು ಆಫೀಸಲ್ಲಿ ಕೆಲಸ ಮಾಡ್ತೀನಿ."]
     pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಆಫೀಸಿನಲ್ಲಿ", ref: "kn-0224" }

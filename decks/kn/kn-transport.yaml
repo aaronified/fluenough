@@ -43,6 +43,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮೀಟರ್", base: "ಮೀಟರ್", reading: "mīṭar" }
+      - { word: "ಹಾಕಿ", base: "ಹಾಕಿ", reading: "hāki" }
   - id: "kn-0347"
     target: "ನಾನು ರೈಲು ನಿಲ್ದಾಣಕ್ಕೆ ಹೋಗಬೇಕು."
     reading: "nānu railu nildāṇakke hōgabēku."
@@ -50,6 +53,10 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ನಿಲ್ದಾಣಕ್ಕೆ", ref: "kn-0350" }
+      - { word: "ಹೋಗಬೇಕು", base: "ಹೋಗಬೇಕು", reading: "hōgabēku" }
   - id: "kn-0348"
     target: "ಎಷ್ಟು ಹೊತ್ತು ಆಗುತ್ತದೆ?"
     reading: "eṣṭu hottu āguttade?"
@@ -58,11 +65,16 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹೊತ್ತು", base: "ಹೊತ್ತು", reading: "hottu" }
+      - { word: "ಆಗುತ್ತದೆ", base: "ಆಗುತ್ತದೆ", reading: "āguttade" }
   - id: "kn-0349"
     target: "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ."
     reading: "illi nillisi."
     ipa: "illi nillisi"
     pos: "phrase"
+    bases:
+      - { word: "ನಿಲ್ಲಿಸಿ", base: "ನಿಲ್ಲಿಸಿ", reading: "nillisi" }
   - id: "kn-0350"
     target: "ನಿಲ್ದಾಣ"
     picture: "🚉"

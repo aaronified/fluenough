@@ -21,6 +21,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಸ್ನಾನ", base: "ಸ್ನಾನ", reading: "snāna" }
+      - { word: "ಮಾಡು", base: "ಮಾಡು", reading: "māḍu" }
   - id: "kn-0434"
     target: "ಹಲ್ಲು ಉಜ್ಜು"
     reading: "hallu ujju"
@@ -28,6 +31,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹಲ್ಲು", base: "ಹಲ್ಲು", reading: "hallu" }
+      - { word: "ಉಜ್ಜು", base: "ಉಜ್ಜು", reading: "ujju" }
   - id: "kn-0435"
     target: "ತಿಂಡಿ"
     reading: "tiṇḍi"
@@ -42,6 +48,8 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮಧ್ಯಾಹ್ನದ", base: "ಮಧ್ಯಾಹ್ನದ", reading: "madhyāhnada" }
   - id: "kn-0437"
     target: "ರಾತ್ರಿ ಊಟ"
     reading: "rātri ūṭa"
@@ -52,16 +60,25 @@ cards:
     reading: "kelasakke hōgu"
     ipa: "kelasakke hoːɡu"
     pos: "verb"
+    bases:
+      - { word: "ಕೆಲಸಕ್ಕೆ", ref: "kn-0203" }
+      - { word: "ಹೋಗು", base: "ಹೋಗು", reading: "hōgu" }
   - id: "kn-0439"
     target: "ಮನೆಗೆ ಬರು"
     reading: "manege baru"
     ipa: "maneɡe baru"
     pos: "verb"
+    bases:
+      - { word: "ಮನೆಗೆ", ref: "kn-0201" }
+      - { word: "ಬರು", base: "ಬರು", reading: "baru" }
   - id: "kn-0440"
     target: "ಅಡುಗೆ ಮಾಡು"
     reading: "aḍuge māḍu"
     ipa: "aɖuɡe maːɖu"
     pos: "verb"
+    bases:
+      - { word: "ಅಡುಗೆ", base: "ಅಡುಗೆ", reading: "aḍuge" }
+      - { word: "ಮಾಡು", base: "ಮಾಡು", reading: "māḍu" }
   - id: "kn-0441"
     target: "ಮಲಗು"
     reading: "malagu"
@@ -105,18 +122,30 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಗಂಟೆಗೆ", ref: "kn-0420" }
+      - { word: "ಏಳುತ್ತೇನೆ", base: "ಏಳುತ್ತೇನೆ", reading: "ēḷuttēne" }
   - id: "kn-0448"
     target: "ಆಮೇಲೆ ನಾನು ಕೆಲಸಕ್ಕೆ ಹೋಗುತ್ತೇನೆ."
     reading: "āmēle nānu kelasakke hōguttēne."
     ipa: "aːmeːle naːnu kelasakke hoːɡut̪t̪eːne"
     alt_target: ["ಆಮೇಲೆ ನಾನು ಕೆಲಸಕ್ಕೆ ಹೋಗ್ತೀನಿ."]
     pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಕೆಲಸಕ್ಕೆ", ref: "kn-0203" }
+      - { word: "ಹೋಗುತ್ತೇನೆ", base: "ಹೋಗುತ್ತೇನೆ", reading: "hōguttēne" }
   - id: "kn-0449"
     target: "ನಾನು ರಾತ್ರಿ ಹನ್ನೊಂದು ಗಂಟೆಗೆ ಮಲಗುತ್ತೇನೆ."
     reading: "nānu rātri hannondu gaṇṭege malaguttēne."
     ipa: "naːnu raːt̪ri hannond̪u ɡaɳʈeɡe malaɡut̪t̪eːne"
     alt_target: ["ನಾನು ರಾತ್ರಿ ಹನ್ನೊಂದು ಗಂಟೆಗೆ ಮಲಗ್ತೀನಿ."]
     pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಗಂಟೆಗೆ", ref: "kn-0420" }
+      - { word: "ಮಲಗುತ್ತೇನೆ", ref: "kn-0441" }
   - id: "kn-0450"
     target: "ನಾನು ಯಾವತ್ತೂ ತಡವಾಗಿ ಬರುವುದಿಲ್ಲ."
     reading: "nānu yāvattū taḍavāgi baruvudilla."
@@ -124,3 +153,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಯಾವತ್ತೂ", ref: "kn-0170" }
+      - { word: "ತಡವಾಗಿ", base: "ತಡವಾಗಿ", reading: "taḍavāgi" }
+      - { word: "ಬರುವುದಿಲ್ಲ", base: "ಬರುವುದಿಲ್ಲ", reading: "baruvudilla" }
