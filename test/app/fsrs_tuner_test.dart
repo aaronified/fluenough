@@ -228,7 +228,8 @@ void main() {
         await tuner.adjustAll();
         final fittedAt = p.parameters.fitted[hiWrite]!.reviewCount;
         runner.jobs.clear();
-        final needed = (fittedAt * FsrsTuner.growth).ceil() - fittedAt;
+        // The fewest answers that make 10% more, in whole numbers.
+        final needed = (fittedAt * 11 + 9) ~/ 10 - fittedAt;
         for (var i = 0; i < needed - 1; i++) {
           answer(p, tuner, 'hi-0001');
         }
@@ -242,6 +243,57 @@ void main() {
         expect(p.parameters.fitted[hiWrite]!.reviewCount, fittedAt + needed);
       },
     );
+
+    test('10% more is worked out exactly, in whole numbers', () {
+      // 100 * 1.1 is 110.00000000000001 in floating point, and so on.
+      for (final since in [50, 100, 200, 400, 1000]) {
+        final tenth = since ~/ 10;
+        expect(FsrsTuner.grown(since + tenth, since), isTrue, reason: '$since');
+        expect(
+          FsrsTuner.grown(since + tenth - 1, since),
+          isFalse,
+          reason: '$since',
+        );
+      }
+      expect(FsrsTuner.grown(1, 0), isTrue);
+      expect(FsrsTuner.grown(11, 10), isTrue);
+      expect(FsrsTuner.grown(12, 11), isFalse, reason: '12.1 is needed');
+      expect(FsrsTuner.grown(13, 11), isTrue);
+    });
+
+    test('a refit that gives nothing is not tried again after every '
+        'answer, only after 10% more', () async {
+      final p = progressOf(learner('hi'));
+      var giveNothing = false;
+      var runs = 0;
+      Future<SkillFitResult> runner(SkillFitJob job) async {
+        if (!giveNothing) return SkillFit.run(job);
+        runs++;
+        const none = (days: 0, reviews: 0);
+        return (key: job.key, fitted: null, before: none, after: none);
+      }
+
+      final tuner = FsrsTuner(progress: p, clock: () => now, runner: runner);
+      await tuner.adjustAll();
+      final stored = p.parameters.fitted[hiWrite]!;
+      giveNothing = true;
+      final triedAt = (stored.reviewCount * 11 + 9) ~/ 10;
+      while (p.log.length < triedAt) {
+        answer(p, tuner, 'hi-0001');
+        await pumpEventQueue();
+      }
+      expect(runs, 1, reason: 'tried once at 10% more');
+      expect(p.parameters.fitted[hiWrite], stored, reason: 'nothing stored');
+      final againAt = (triedAt * 11 + 9) ~/ 10;
+      while (p.log.length < againAt - 1) {
+        answer(p, tuner, 'hi-0001');
+        await pumpEventQueue();
+      }
+      expect(runs, 1, reason: 'not after every answer');
+      answer(p, tuner, 'hi-0001');
+      await pumpEventQueue();
+      expect(runs, 2, reason: 'again at 10% more than when tried');
+    });
 
     test('fits a skill for the first time once it can be fitted', () async {
       final reviews = learner('hi');
@@ -278,7 +330,7 @@ void main() {
         possible++;
       }
       expect(firstFitAt, greaterThanOrEqualTo(possible));
-      expect(firstFitAt, lessThanOrEqualTo(possible * FsrsTuner.growth + 1));
+      expect(firstFitAt, lessThanOrEqualTo((possible * 11 + 9) ~/ 10 + 1));
       expect(p.parameters.fitted[hiWrite], isNotNull);
     });
 

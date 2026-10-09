@@ -194,6 +194,30 @@ void main() {
       );
     });
 
+    test('a learner who stopped adding words long ago is still fitted, '
+        'keeping the first stabilities of the set in use', () {
+      // Every word first seen in the first 20 days of 2024: its first
+      // long-term review is long before the window.
+      final settled = simulate(
+        language: 'mr',
+        start: DateTime(2024, 1, 1),
+        until: now,
+        cards: 300,
+        recall: 0.9,
+      );
+      final h = SkillFit.histories(settled)[(language: 'mr', mode: write)]!;
+      final from = SkillFit.windowStart(h.reviews, now);
+      expect(from, isNotNull);
+      final gate = FsrsFit.gate(h.pairs, from: from);
+      expect(gate.firstLongTermItems, 0);
+      expect(gate.outcome, FsrsFitOutcome.trained);
+      expect(SkillFit.canFit(h, now), isTrue);
+      final inUse = <double>[...Fsrs.w]..[8] = 2.2;
+      final fitted = SkillFit.run(SkillFit.job(h, inUse, now)).fitted!;
+      expect(fitted.values.sublist(0, 4), inUse.sublist(0, 4));
+      expect(fitted.values, expected(h, inUse));
+    });
+
     test('too little to fit gives nothing to keep', () {
       final few = SkillFit.histories(
         simulate(language: 'te', start: start, until: now, cards: 5),

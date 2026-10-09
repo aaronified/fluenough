@@ -22,7 +22,9 @@ already written and checked against `fsrs-rs`.
 - **Which set schedules a pair:** its skill's own fit in its card's
   language; else that skill's fit in the language most recently studied,
   by its last review, of those that have one; else FSRS-6's defaults
-  (`SkillParameters`). `record()` and the replay use the same choice for
+  (`SkillParameters`). A stored set equal to FSRS-6's defaults, which a
+  lost first fit leaves when no language had a fit yet, is not a
+  baseline. `record()` and the replay use the same choice for
   the whole log, so the replay stays deterministic; when a review makes
   another language the baseline, or a fit is stored, every state is
   replayed with the new choice.
@@ -31,10 +33,17 @@ already written and checked against `fsrs-rs`.
   the log. It is stored in `fsrs_parameters` (migration 7): the 21 values,
   when it ran, the review count it ran at, and the log loss before and
   after. The JSONL backup carries it as a `parameters` line
-  (`docs/LOG-FORMAT.md`), so a restored phone schedules exactly as before.
+  (`docs/LOG-FORMAT.md`), so a restored phone schedules exactly as before;
+  a set outside the ranges fitting clips to refuses the file, since it
+  could make the scheduler divide by zero.
 - **What a fit learns from:** the skill's reviews of the last three months
   or its last 1,000, whichever is more. Earlier reviews still build each
-  pair's history; only the window is predicted (`FsrsFit`'s `from`).
+  pair's history; only the window is predicted (`FsrsFit`'s `from`). A
+  window can hold no pair's first long-term review, as when the learner
+  has stopped adding words, so there is nothing to fit w0 to w3 from: they
+  stay the start's, and w4 to w20 are trained if the window holds enough.
+  `FsrsFit.gate` says so, so "Adjust to me" is enabled only when a fit
+  will give something.
 - **Warm start:** `FsrsFit.fit`'s `start` replaces the defaults as what
   training starts from and what its L2 term pulls towards, as `fsrs-rs`
   does with the parameters its model starts from; the search for the first
@@ -46,7 +55,10 @@ already written and checked against `fsrs-rs`.
 - **When:** Settings' "Adjust to me", and, with "Adjust automatically" on
   (the default), after recording a review whose skill has 10% more reviews
   than at its last fit or can be fitted for the first time. Never at app
-  open. One fit at a time, on another isolate (`Isolate.run`).
+  open. One fit at a time, on another isolate (`Isolate.run`). A skill is
+  looked at again only once it has 10% more answers than when last looked
+  at, too, so that a fit that gives nothing is not retried after every
+  answer. 10% is counted in whole numbers: 110 is 10% more than 100.
 - **Nothing is gathered.** Every fit runs on the phone, from the learner's
   own log.
 

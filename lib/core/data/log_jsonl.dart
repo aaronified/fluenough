@@ -4,6 +4,7 @@ import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import '../scheduling/fsrs.dart';
+import '../scheduling/fsrs_fit.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_parameters.dart';
 
@@ -157,12 +158,16 @@ abstract final class LogJsonl {
         w.any((v) => v is! num || !v.toDouble().isFinite)) {
       throw FormatException('line $n: w is not ${Fsrs.w.length} numbers');
     }
+    final values = <double>[for (final v in w) (v as num).toDouble()];
+    if (!FsrsFit.isPlausible(values)) {
+      throw FormatException('line $n: w is out of range');
+    }
     final reviews = _int(o, 'reviews', n);
     if (reviews < 0) throw FormatException('line $n: reviews $reviews');
     return (
       (language: language, mode: mode),
       FittedParameters(
-        values: <double>[for (final v in w) (v as num).toDouble()],
+        values: values,
         fittedAt: _time(o, n),
         reviewCount: reviews,
         lossBefore: _loss(o, 'loss_before', n),

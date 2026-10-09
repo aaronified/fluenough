@@ -329,6 +329,30 @@ void main() {
         failsWith('line 2: loss_after is not a number'),
       );
     });
+
+    test('a set no fit could give refuses the file, naming the line', () {
+      String withLine(List<double> w) =>
+          '$header\n{"type":"parameters","ts":"2026-09-28T13:34:05Z",'
+          '"language":"hi","mode":"listening","w":${jsonEncode(w)},'
+          '"reviews":1}\n';
+      // w20 at 0 would divide by zero in the scheduler; a first stability
+      // of 0 or below, and a negative value, are not stabilities.
+      for (final w in <List<double>>[
+        List<double>.filled(21, 0),
+        <double>[...Fsrs.w]..[20] = 0,
+        <double>[...Fsrs.w]..[0] = 0,
+        <double>[...Fsrs.w]..[2] = -1,
+        <double>[...Fsrs.w]..[8] = -0.5,
+        <double>[...Fsrs.w]..[20] = 5,
+      ]) {
+        expect(
+          () => LogJsonl.decode(withLine(w)),
+          failsWith('line 2: w is out of range'),
+          reason: '$w',
+        );
+      }
+      expect(LogJsonl.decode(withLine(Fsrs.w)).fitted, hasLength(1));
+    });
   });
 
   test('a review is the same review by its pair and moment alone', () {

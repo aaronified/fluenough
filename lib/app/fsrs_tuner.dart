@@ -35,9 +35,12 @@ class FsrsTuner extends ChangeNotifier {
   final DateTime Function() _clock;
   final FitRunner _runner;
 
-  /// How much a skill's reviews must grow since its last fit before the
-  /// automatic refit runs: 10% (owner, 2026-10-09).
-  static const double growth = 1.1;
+  /// Whether [count] reviews are 10% or more above [since]: how much a
+  /// skill's reviews must grow since its last fit before the automatic
+  /// refit runs (owner, 2026-10-09). In whole numbers, so that 110 is
+  /// exactly 10% more than 100, which `100 * 1.1` in floating point is
+  /// not.
+  static bool grown(int count, int since) => count * 10 >= since * 11;
 
   bool _busy = false;
   SkillKey? _current;
@@ -138,6 +141,10 @@ class FsrsTuner extends ChangeNotifier {
   /// has 10% more answers than at its last fit, or, never fitted, has
   /// enough to fit for the first time. Nothing while a fit runs; the next
   /// answer looks again.
+  ///
+  /// Each skill is looked at again only once it has 10% more answers than
+  /// when last looked at, too, so that a fit that gives nothing, and so
+  /// stores nothing, is not tried again after every answer.
   void afterReview(ReviewEvent event) {
     final key = skillOf(event.key);
     final log = progress.log;
@@ -155,15 +162,13 @@ class FsrsTuner extends ChangeNotifier {
     final count = _counts[key] ?? 0;
     final fitted = progress.parameters.fitted[key];
     final now = _clock();
-    if (fitted != null) {
-      if (count < fitted.reviewCount * growth) return;
-    } else {
-      // Not fittable yet: looked at again once it has grown by as much,
-      // so that the gate is not worked out after every answer.
-      final checked = _checkedAt[key];
-      if (checked != null && count < checked * growth) return;
-      _checkedAt[key] = count;
-    }
+    if (fitted != null && !grown(count, fitted.reviewCount)) return;
+    // Not fittable yet, or a fit that gave nothing: looked at again once
+    // it has grown by as much, so that neither the gate nor the fit is
+    // worked out after every answer.
+    final checked = _checkedAt[key];
+    if (checked != null && !grown(count, checked)) return;
+    _checkedAt[key] = count;
     final history = _histories(log, only: key)[key];
     if (history == null) return;
     if (fitted == null && !SkillFit.canFit(history, now)) return;

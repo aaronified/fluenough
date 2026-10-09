@@ -204,6 +204,22 @@ void main() {
       expect(fitted.sublist(1, 4).toSet(), hasLength(1));
     });
 
+    test('every fit, and FSRS-6\'s defaults, are plausible sets', () {
+      expect(FsrsFit.isPlausible(Fsrs.w), isTrue);
+      for (final name in _all) {
+        final fitted = FsrsFit.fit(_Case.load(name).histories);
+        if (fitted != null) {
+          expect(FsrsFit.isPlausible(fitted), isTrue, reason: name);
+        }
+      }
+      expect(FsrsFit.isPlausible(Fsrs.w.sublist(1)), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[20] = 0), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[0] = 0), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[3] = 101), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[20] = 0.1), isTrue);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[20] = 0.8), isTrue);
+    });
+
     test('clip bounds', () {
       final ceiling = FsrsFit.fit(_Case.load('stability_ceiling').histories)!;
       expect(ceiling[3], 100);
@@ -404,6 +420,86 @@ void main() {
         isNot(closeTo(FsrsFit.logLoss(cut)!, 1e-9)),
       );
       expect(FsrsFit.fit(c.histories, from: from), isNot(FsrsFit.fit(cut)));
+    });
+
+    // Just after the last first long-term review in [histories]: a window
+    // in which every pair has reached its first long-term review before.
+    DateTime afterFirstLongTerm(List<List<FitReview>> histories) {
+      var last = DateTime.utc(1970);
+      for (final h in histories) {
+        for (var i = 1; i < h.length; i++) {
+          if (Fsrs.elapsedDays(h[i - 1].at, h[i].at) >= 1) {
+            if (h[i].at.isAfter(last)) last = h[i].at;
+            break;
+          }
+        }
+      }
+      return last.add(const Duration(milliseconds: 1));
+    }
+
+    test('no first long-term review in the window: the start\'s first '
+        'stabilities stay, and the rest are trained', () {
+      final start = FsrsFit.fit(_Case.load('slow').histories)!;
+      for (final name in ['quick', 'mixed', 'two_full_batches']) {
+        final c = _Case.load(name);
+        final from = afterFirstLongTerm(c.histories);
+        final gate = FsrsFit.gate(c.histories, from: from);
+        expect(gate.firstLongTermItems, 0, reason: name);
+        expect(gate.trainItems, greaterThanOrEqualTo(64), reason: name);
+        expect(gate.outcome, FsrsFitOutcome.trained, reason: name);
+        for (final s in <List<double>?>[null, start]) {
+          final fitted = FsrsFit.fit(c.histories, start: s, from: from)!;
+          final base = s ?? Fsrs.w;
+          expect(fitted.sublist(0, 4), base.sublist(0, 4), reason: name);
+          expect(fitted.sublist(4), isNot(base.sublist(4)), reason: name);
+          expect(
+            FsrsFit.logLoss(c.histories, parameters: fitted, from: from)!,
+            lessThan(
+              FsrsFit.logLoss(c.histories, parameters: base, from: from)!,
+            ),
+            reason: name,
+          );
+        }
+      }
+    });
+
+    test('no first long-term review in the window, and too little to '
+        'train: nothing is fitted, and the gate says so', () {
+      final c = _Case.load('quick');
+      final all = times(c.histories);
+      // From the last first long-term review on, shrink the window until
+      // it holds fewer than 64 items to train on.
+      var from = afterFirstLongTerm(c.histories);
+      var i = all.indexWhere((t) => !t.isBefore(from));
+      while (FsrsFit.gate(c.histories, from: from).trainItems >= 64) {
+        from = all[++i];
+      }
+      final gate = FsrsFit.gate(c.histories, from: from);
+      expect(gate.trainItems, greaterThanOrEqualTo(8));
+      expect(gate.survivingFirstLongTermItems, 0);
+      expect(gate.outcome, FsrsFitOutcome.defaults);
+      expect(FsrsFit.fit(c.histories, from: from), isNull);
+    });
+
+    test('whatever the window, the gate says what the fit gives', () {
+      final start = FsrsFit.fit(_Case.load('slow').histories)!;
+      for (final name in ['quick', 'mixed', 'small']) {
+        final c = _Case.load(name);
+        final all = times(c.histories);
+        for (var k = 0; k < 8; k++) {
+          final from = all[all.length * k ~/ 8];
+          final outcome = FsrsFit.gate(c.histories, from: from).outcome;
+          final fitted = FsrsFit.fit(c.histories, start: start, from: from);
+          expect(
+            fitted == null,
+            outcome == FsrsFitOutcome.defaults,
+            reason: '$name from $from: $outcome',
+          );
+          if (outcome == FsrsFitOutcome.pretrainOnly) {
+            expect(fitted!.sublist(4), start.sublist(4));
+          }
+        }
+      }
     });
 
     test('a window after every review predicts nothing', () {
