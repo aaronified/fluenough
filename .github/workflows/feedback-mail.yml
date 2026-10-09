@@ -1,9 +1,10 @@
 name: Feedback mail to issues
 
 # Reports from the app arrive as mails to the Fluenough Gmail (#160,
-# ADR-0021). Every hour this files the new ones as issues: text only, the
-# sender's address never written. Until the repository has the two
-# FEEDBACK_GMAIL_* secrets it does nothing and says so.
+# ADR-0021). Every hour this files the new bug reports and feedback as
+# issues: text only, the sender's address never written. Support mails stay
+# private in the inbox. Until the repository has the two FEEDBACK_GMAIL_*
+# secrets it does nothing and says so.
 
 on:
   schedule:

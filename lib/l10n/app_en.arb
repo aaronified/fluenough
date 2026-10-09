@@ -1875,29 +1875,77 @@
       }
     }
   },
-  "reportOpen": "Report a problem or idea",
+  "reportOpen": "Get support or report a problem",
   "@reportOpen": {
-    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen."
+    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback."
   },
-  "reportTitle": "Report a problem or idea",
+  "reportTitle": "Support and feedback",
   "@reportTitle": {
-    "description": "Title of the report screen."
+    "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
   },
-  "reportKindGroup": "What kind of report?",
+  "reportKindGroup": "What would you like to do?",
   "@reportKindGroup": {
-    "description": "Accessibility label of the bug / feature / suggestion choice."
+    "description": "Accessibility label of the choice between getting support, reporting a bug and giving feedback."
   },
-  "reportKindBug": "Bug",
+  "reportKindSupport": "Get support",
+  "@reportKindSupport": {
+    "description": "A report asking for help. Its mail stays private."
+  },
+  "reportKindSupportDesc": "A question, or help with the app. Private.",
+  "@reportKindSupportDesc": {
+    "description": "Under Get support on the report screen."
+  },
+  "reportKindBug": "Report a bug",
   "@reportKindBug": {
-    "description": "A report that something is wrong."
+    "description": "A report that something is wrong. Becomes a public GitHub issue."
   },
-  "reportKindFeature": "Feature",
-  "@reportKindFeature": {
-    "description": "A report asking for something new."
+  "reportKindBugDesc": "Something went wrong. Becomes a public issue.",
+  "@reportKindBugDesc": {
+    "description": "Under Report a bug on the report screen. The issue is on GitHub."
   },
-  "reportKindSuggestion": "Suggestion",
-  "@reportKindSuggestion": {
-    "description": "A report suggesting a change."
+  "reportKindFeedback": "Give feedback",
+  "@reportKindFeedback": {
+    "description": "A report with an idea, a wish or a feature request. Becomes a public GitHub issue."
+  },
+  "reportKindFeedbackDesc": "An idea, a wish or a new feature. Becomes a public issue.",
+  "@reportKindFeedbackDesc": {
+    "description": "Under Give feedback on the report screen. The issue is on GitHub."
+  },
+  "reportDetailsHintSupport": "What do you need help with?",
+  "@reportDetailsHintSupport": {
+    "description": "Hint in the details field when getting support."
+  },
+  "reportDetailsHintBug": "What did you do, and what happened?",
+  "@reportDetailsHintBug": {
+    "description": "Hint in the details field when reporting a bug."
+  },
+  "reportDetailsHintFeedback": "What would make Fluenough better for you?",
+  "@reportDetailsHintFeedback": {
+    "description": "Hint in the details field when giving feedback."
+  },
+  "reportPromptSupportTried": "What have you tried so far?",
+  "@reportPromptSupportTried": {
+    "description": "A question set in a support mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptBugSteps": "How can we make it happen again?",
+  "@reportPromptBugSteps": {
+    "description": "A question set in a bug report mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptBugExpected": "What did you expect instead?",
+  "@reportPromptBugExpected": {
+    "description": "A question set in a bug report mail's body, after the steps, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptFeedbackWhy": "How would it help you?",
+  "@reportPromptFeedbackWhy": {
+    "description": "A question set in a feedback mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPrivate": "Support mails stay private, between you and Fluenough. They never become public issues.",
+  "@reportPrivate": {
+    "description": "Note above Send when getting support."
+  },
+  "reportEditable": "Your mail app opens with all this filled in. Change anything you like before you send it.",
+  "@reportEditable": {
+    "description": "Note above Send on the report screen: the mail's subject and text can be edited in the mail app."
   },
   "reportTitleLabel": "Title",
   "@reportTitleLabel": {
@@ -1910,10 +1958,6 @@
   "reportDetailsLabel": "Details",
   "@reportDetailsLabel": {
     "description": "Label of the report's longer text."
-  },
-  "reportDetailsHint": "What did you do, and what happened? Or what would help?",
-  "@reportDetailsHint": {
-    "description": "Hint in the report's details field."
   },
   "reportInMailApp": "Your mail app has the report. Send it from there.",
   "@reportInMailApp": {
@@ -1931,9 +1975,9 @@
   "@reportLinkCopied": {
     "description": "SnackBar when nothing on the phone could open the GitHub link for a report, so it was copied instead."
   },
-  "reportPublic": "Reports become public GitHub issues. Your email address is not shown; leave out anything private.",
+  "reportPublic": "Bug reports and feedback become public GitHub issues. Your email address is not shown; leave out anything private.",
   "@reportPublic": {
-    "description": "Warning above Send, on the mail report."
+    "description": "Warning above Send, when reporting a bug or giving feedback."
   },
   "reportAlsoSent": "Always sent: this screen and what it showed.",
   "@reportAlsoSent": {
@@ -1942,6 +1986,33 @@
   "reportDeviceInfo": "Include device information",
   "@reportDeviceInfo": {
     "description": "Checkbox on a report, unticked until the reporter ticks it: adds the device details shown under it (app and system versions, screen size, text scale, languages)."
+  },
+  "reportLog": "Attach the app log",
+  "@reportLog": {
+    "description": "Checkbox on a report, unticked until the reporter ticks it: attaches the app's own log as a file (#162)."
+  },
+  "reportLogSummary": "{count, plural, =1{1 line} other{{count} lines}} from the last 7 days at most: screens opened, decks loaded, fits run, imports, exports, warnings and errors. Never your answers or cards. The newest:",
+  "@reportLogSummary": {
+    "description": "Under Attach the app log: what the file holds, above its newest lines.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "reportLogEmpty": "The app log is empty, so there is nothing to attach.",
+  "@reportLogEmpty": {
+    "description": "Under Attach the app log, when the log holds nothing."
+  },
+  "reportLogSeeAll": "See the whole log",
+  "@reportLogSeeAll": {
+    "description": "Button under Attach the app log that opens the app log, to see all that would be attached."
+  },
+  "reportInMailAppNoLog": "Your mail app has the report, but the app log couldn’t be attached. You can export it from Settings > Logs and attach it yourself.",
+  "@reportInMailAppNoLog": {
+    "description": "Shown when the report reached the mail app without the app log, because the phone could not share the file."
   },
   "reportGitHubTitle": "Report on GitHub",
   "@reportGitHubTitle": {
@@ -4426,13 +4497,76 @@
   "@settingsSectionLogs": {
     "description": "Settings section heading, for the app's own log (#162)."
   },
-  "settingsAppLog": "App log",
-  "@settingsAppLog": {
-    "description": "Settings row: the app's own log of what it did and what went wrong (#162). Feature incoming."
+  "settingsLogAbout": "What the app did and what went wrong, kept on this phone for 7 days, to add to a report if you choose. Never your answers or cards.",
+  "@settingsLogAbout": {
+    "description": "Under the Logs section in Settings: what the app log holds (#162)."
   },
-  "settingsAppLogDesc": "What the app did and what went wrong, to add to a report",
-  "@settingsAppLogDesc": {
-    "description": "Subtitle of the App log row in Settings."
+  "settingsLogView": "View app log",
+  "@settingsLogView": {
+    "description": "Settings row that opens the app's own log (#162)."
+  },
+  "settingsLogViewDesc": "{count, plural, =0{Nothing logged yet} =1{1 line} other{{count} lines}}",
+  "@settingsLogViewDesc": {
+    "description": "Under View app log: how many lines the app log holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "settingsLogCopy": "Copy app log",
+  "@settingsLogCopy": {
+    "description": "Settings row that copies the app log as text."
+  },
+  "settingsLogCopied": "App log copied",
+  "@settingsLogCopied": {
+    "description": "SnackBar after the app log is copied."
+  },
+  "settingsLogExport": "Export app log",
+  "@settingsLogExport": {
+    "description": "Settings row that saves the app log as a file."
+  },
+  "settingsLogExportDesc": "Text file",
+  "@settingsLogExportDesc": {
+    "description": "Under Export app log: the kind of file it saves."
+  },
+  "settingsLogExportFailed": "Couldn’t save the app log",
+  "@settingsLogExportFailed": {
+    "description": "SnackBar when saving the app log fails."
+  },
+  "settingsLogClear": "Clear app log",
+  "@settingsLogClear": {
+    "description": "Settings row that deletes everything in the app log."
+  },
+  "settingsLogClearTitle": "Clear the app log?",
+  "@settingsLogClearTitle": {
+    "description": "Title of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearBody": "Everything in it is deleted. Your progress and review log stay.",
+  "@settingsLogClearBody": {
+    "description": "Text of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearConfirm": "Clear",
+  "@settingsLogClearConfirm": {
+    "description": "Button in the dialog that clears the app log."
+  },
+  "settingsLogCleared": "App log cleared",
+  "@settingsLogCleared": {
+    "description": "SnackBar after the app log is cleared."
+  },
+  "appLogTitle": "App log",
+  "@appLogTitle": {
+    "description": "Title of the page that shows the app's own log (#162)."
+  },
+  "appLogEmpty": "Nothing logged yet.",
+  "@appLogEmpty": {
+    "description": "Shown on the App log page when the log is empty."
+  },
+  "appLogLabel": "The app log, oldest first",
+  "@appLogLabel": {
+    "description": "Accessibility label of the list of log lines on the App log page."
   },
   "settingsExport": "Export review log",
   "@settingsExport": {

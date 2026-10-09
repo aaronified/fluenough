@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/links.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/session.dart';
@@ -14,6 +15,7 @@ import 'package:fluenough/features/decks/deck_facts.dart';
 import 'package:fluenough/features/decks/unreviewed_notice.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/grammar_drill.dart';
+import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
@@ -440,7 +442,12 @@ void main() {
     final state = await pumpDeck(
       tester,
       'te-en-market',
-      state: AppState.test(links: links),
+      state: AppState.test(
+        links: links,
+        features: FeatureRegistry.only(
+          Feature.available.difference(<Feature>{Feature.feedbackMail}),
+        ),
+      ),
     );
     final l10n = l10nOf(tester);
     final entry = state.deckById('te-en-market')!;
@@ -453,6 +460,16 @@ void main() {
     final url = Uri.parse(links.asked.single);
     expect(url.path, '/aaronified/fluenough/issues/new');
     expect(url.queryParameters['body'], contains('Showing: te-en-market'));
+  });
+
+  testWidgets('with mail on, Report a mistake opens the report about that '
+      'deck', (tester) async {
+    usePhone(tester);
+    await pumpDeck(tester, 'te-en-market');
+    final l10n = l10nOf(tester);
+    await tapVisible(tester, find.text(l10n.deckUnreviewedReport));
+    final page = tester.widget<ReportPage>(find.byType(ReportPage));
+    expect(page.request.detail, 'te-en-market');
   });
 
   testWidgets('a checked deck shows no such notice', (tester) async {
