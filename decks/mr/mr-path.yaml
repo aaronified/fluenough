@@ -1,0 +1,55 @@
+# The order Marathi is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught mr-en-home for mr-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Marathi grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Marathi is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: mr-path
+language: mr
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - mr-script-vowels
+  - mr-script-consonants
+  - mr-script-reading
+  - mr-script-vowel-signs
+  - mr-script-conjuncts
+  - mr-spelling
+  - mr-reading-sunitacha-ravivar
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [mr-first-words, mr-grammar-sentences, "*"]
+  - [mr-sound-differences]
+  - [mr-grammar-differences]
+  - [mr-questions, mr-grammar-questions, "*"]
+  - [mr-addressing, mr-grammar-pronouns, "*"]
+  - [mr-about-me, mr-grammar-present, "*"]
+  - [mr-family, mr-grammar-be, "*"]
+  - [mr-work, mr-grammar-demonstratives, "*"]
+  - [mr-script-vowels, mr-script-consonants, mr-script-reading]
+  - [mr-script-vowel-signs, mr-script-conjuncts]
+  - [mr-numbers-1-20, "*"]
+  - [mr-numbers-big, "*"]
+  - [mr-market, mr-grammar-nouns, mr-grammar-articles, "*"]
+  - [mr-groceries, mr-grammar-gender-number, mr-grammar-needs, "*"]
+  - [mr-transport, mr-grammar-postpositions, "*"]
+  - [mr-directions, mr-grammar-continuous, "*"]
+  - [mr-home, mr-grammar-adjectives, "*"]
+  - [mr-time, mr-grammar-future, "*"]
+  - [mr-daily-life, mr-grammar-negative, "*"]
+  - [mr-calendar, mr-grammar-past, "*"]
+  - [mr-grammar-past-more, mr-grammar-conjunct-verbs]
+  - [mr-grammar-compound-verbs]
+  - [mr-eating-out, mr-grammar-conjunctions, mr-grammar-likes, "*"]
+  - [mr-help, mr-grammar-irregular, mr-grammar-pitfalls, "*"]
+  - [mr-registers]
+  - [mr-slang]
+  - [mr-grammar-can-must]
+  - [mr-spelling]
+  - [mr-reading-sunitacha-ravivar]
+  - ["*"]

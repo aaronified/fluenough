@@ -1,0 +1,18 @@
+# The order Japanese is taught in, from every language it is taught from:
+# each deck is named by its core id, and a learner from English is
+# taught ja-en-<name> for ja-<name>. First hiragana, which everything
+# else in Japanese assumes.
+# See ADR-0013, ADR-0036 and docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: ja-path
+language: ja
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - ja-hiragana
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [ja-hiragana]
+  - ["*"]

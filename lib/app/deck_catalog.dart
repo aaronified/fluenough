@@ -163,6 +163,7 @@ class Catalog {
     Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
+    Map<String, LanguagePath> languagePaths = const <String, LanguagePath>{},
     Map<String, SoundContrasts> sounds = const <String, SoundContrasts>{},
     Map<String, Romanisation> romanisations = const <String, Romanisation>{},
     Map<String, ScriptGuide> scriptGuides = const <String, ScriptGuide>{},
@@ -172,6 +173,7 @@ class Catalog {
        facts = Map<String, FactsFile>.unmodifiable(facts),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
        paths = Map<String, CoursePath>.unmodifiable(paths),
+       languagePaths = Map<String, LanguagePath>.unmodifiable(languagePaths),
        sounds = Map<String, SoundContrasts>.unmodifiable(sounds),
        romanisations = Map<String, Romanisation>.unmodifiable(romanisations),
        scriptGuides = Map<String, ScriptGuide>.unmodifiable(scriptGuides);
@@ -184,8 +186,13 @@ class Catalog {
   final Map<String, NumberRules> numberRules;
 
   /// Each course's curated path (#117, ADR-0013), by `CoursePath.course`,
-  /// such as `hi/en`. A course without a path file has none.
+  /// such as `hi/en`: its language's path as the course's learners are
+  /// taught it (ADR-0036). A course whose language has no path has none.
   final Map<String, CoursePath> paths;
+
+  /// Each language's path (ADR-0036), by language code, with its regions:
+  /// one per language learnt, shared by every native language.
+  final Map<String, LanguagePath> languagePaths;
 
   /// Each language's sound contrasts (#89, ADR-0015), by language code. A
   /// language without a sounds file has none.
@@ -293,7 +300,7 @@ class DeckCatalog {
     var themes = const <DeckTheme>[];
     final facts = <String, FactsFile>{};
     final numberRules = <String, NumberRules>{};
-    final coursePaths = <String, CoursePath>{};
+    final languagePaths = <String, LanguagePath>{};
     final sounds = <String, SoundContrasts>{};
     final romanisations = <String, Romanisation>{};
     final scriptGuides = <String, ScriptGuide>{};
@@ -354,12 +361,19 @@ class DeckCatalog {
         continue;
       }
       if (kind == 'path') {
+        // One path per language learnt (ADR-0036): a second is broken.
         try {
-          final coursePath = parseCoursePath(
-            text,
-            source: path.split('/').last,
-          );
-          coursePaths.putIfAbsent(coursePath.course, () => coursePath);
+          final source = path.split('/').last;
+          final languagePath = parseLanguagePath(text, source: source);
+          final earlier = languagePaths[languagePath.language];
+          if (earlier != null) {
+            throw DeckParseException(
+              '${languagePath.language} already has a path, ${earlier.id}; '
+              'a language has one',
+              source: source,
+            );
+          }
+          languagePaths[languagePath.language] = languagePath;
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
         }
@@ -437,7 +451,7 @@ class DeckCatalog {
       );
     }
     final resolved = _withRules(_withRefs(decks));
-    final placed = _placed(coursePaths, resolved);
+    final placed = _placed(_coursePaths(languagePaths, resolved), resolved);
     return Catalog(
       decks: _inTeachingOrder(resolved, themes, placed),
       broken: broken,
@@ -445,6 +459,7 @@ class DeckCatalog {
       facts: facts,
       numberRules: numberRules,
       paths: placed,
+      languagePaths: languagePaths,
       sounds: sounds,
       romanisations: romanisations,
       scriptGuides: scriptGuides,
@@ -508,6 +523,30 @@ class DeckCatalog {
             bundled: entry.bundled,
           ),
     ];
+  }
+
+  /// Each course's path, by `CoursePath.course`: its language's path as a
+  /// learner from the course's native language is taught it, for every
+  /// course that has a deck. A core id becomes the course's deck where the
+  /// catalog holds it, merged or single-file, bundled or added.
+  static Map<String, CoursePath> _coursePaths(
+    Map<String, LanguagePath> paths,
+    List<DeckEntry> decks,
+  ) {
+    final ids = <String>{for (final e in decks) e.id};
+    final courses = <String, (String, String)>{
+      for (final e in decks)
+        '${e.language.code}/${e.deck.native.code}': (
+          e.language.code,
+          e.deck.native.code,
+        ),
+    };
+    return <String, CoursePath>{
+      for (final MapEntry(key: course, value: (language, native))
+          in courses.entries)
+        if (paths[language] case final path?)
+          course: path.forNative(native, exists: ids.contains),
+    };
   }
 
   /// Each course's path with the course's decks it does not list put where
