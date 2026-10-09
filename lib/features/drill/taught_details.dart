@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
+import '../review/alike_warning.dart';
 import 'drill_session.dart';
 
 /// How [TaughtDetails] shows a word's reading.
@@ -43,6 +44,10 @@ enum TaughtReading {
 /// [meaning] where it asked for it. A card with no note and no example has
 /// neither. With nothing at all to show, this is empty, so keep it off the
 /// drill's card then, or the card's spacing leaves a gap.
+///
+/// A word that sounds or looks like a rude word ends with the warning
+/// ([AlikeWarning]), which is why this shows only once the word is shown
+/// or answered: seen, heard, spoken and written words alike.
 ///
 /// Put it on the drill's card, which scrolls, not in the frame's fixed
 /// foot. It measures like any other child of the card (see `DrillFrame`):
@@ -87,7 +92,9 @@ class TaughtDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final settings = AppScope.read(context).settings;
+    final state = AppScope.read(context);
+    final settings = state.settings;
+    final warnings = AlikeWarning.forCard(state, card, language);
     // Live, as the reading's line follows Show romanisation.
     return ListenableBuilder(
       listenable: settings,
@@ -123,6 +130,7 @@ class TaughtDetails extends StatelessWidget {
             ),
           if (card.examples.isNotEmpty)
             _Example(example: card.examples.first, language: language),
+          ...warnings,
         ];
         if (children.isEmpty) return const SizedBox.shrink();
         return Column(
