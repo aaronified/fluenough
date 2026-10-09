@@ -1,163 +1,150 @@
 schema: 1
-id: gu-en-work
-name: "Work"
-kind: vocab
-theme: work
-language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Jobs, the office, the shop and the family business, and how to say what you do. Many work words are English. Not yet checked by a Gujarati speaker: please report any mistake."
-tags: [beginner, unreviewed]
+id: "gu-work"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
 cards:
-  - id: gu-0352
+  - id: "gu-0352"
     target: "કામ"
-    native: "work"
     reading: "kām"
     ipa: "kam"
     pos: "noun"
     gender: "n"
-    notes: "Also 'a task' and 'use': શું કામ છે? (shun kam chhe?), what do you need?"
-  - id: gu-0353
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0353"
     target: "નોકરી"
-    native: "a job; employment"
     reading: "nokri"
     ipa: "nokri"
     pos: "noun"
     gender: "f"
-    notes: "Working for someone else, as against a business of your own."
-  - id: gu-0354
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0354"
     target: "ધંધો"
-    native: "business; trade"
     reading: "dhandho"
     ipa: "d̪ʱənd̪ʱo"
     pos: "noun"
     gender: "m"
-    notes: "Gujaratis are famous traders, and a family ધંધો (dhandho) is a point of pride: ધંધો કેમ ચાલે છે (dhandho kem cāle che)? how's business?"
-  - id: gu-0355
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0355"
     target: "ઑફિસ"
-    native: "office"
     picture: "🏢"
     reading: "ôfis"
     ipa: "ɔfis"
     alt_target: ["ઓફિસ"]
     pos: "noun"
     gender: "f"
-    notes: "Often written without the moon: ઓફિસ (ophis)."
-  - id: gu-0356
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0356"
     target: "દુકાન"
-    native: "shop"
     reading: "dukān"
     ipa: "d̪ukan"
     pos: "noun"
     gender: "f"
-  - id: gu-0357
+  - id: "gu-0357"
     target: "વેપારી"
-    native: "trader; merchant; shopkeeper"
     reading: "vepāri"
     ipa: "ʋepari"
     pos: "noun"
     gender: "m"
-  - id: gu-0358
+  - id: "gu-0358"
     target: "શિક્ષક"
-    native: "teacher"
     picture: "🧑‍🏫"
     reading: "śikśak"
     ipa: "ʃikʃək"
     pos: "noun"
     gender: "m"
-    notes: "Children say સાહેબ (sāheb) to a man teacher and બહેન (bahen) to a woman."
-  - id: gu-0359
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0359"
     target: "ડૉક્ટર"
-    native: "doctor"
     picture: "🧑‍⚕"
     reading: "ḍôkṭar"
     ipa: "ɖɔkʈər"
     alt_target: ["ડોક્ટર"]
     pos: "noun"
     gender: "m"
-  - id: gu-0360
+  - id: "gu-0360"
     target: "ખેડૂત"
-    native: "farmer"
     picture: "🧑‍🌾"
     reading: "kheḍut"
     ipa: "kʰeɖut̪"
     pos: "noun"
     gender: "m"
-  - id: gu-0361
+  - id: "gu-0361"
     target: "ડ્રાઇવર"
-    native: "driver"
     reading: "ḍrāivar"
     ipa: "ɖraiʋər"
     pos: "noun"
     gender: "m"
-  - id: gu-0362
+  - id: "gu-0362"
     target: "વિદ્યાર્થી"
-    native: "student"
     picture: "🧑‍🎓"
     reading: "vidyārthi"
     ipa: "ʋid̪jart̪ʰi"
     pos: "noun"
     gender: "m"
-    notes: "A woman student is વિદ્યાર્થિની (vidyārthini)."
-  - id: gu-0363
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0363"
     target: "કારખાનું"
-    native: "factory"
     picture: "🏭"
     reading: "kārkhānum̐"
     ipa: "karkʰanũ"
     pos: "noun"
     gender: "n"
-  - id: gu-0364
+  - id: "gu-0364"
     target: "પગાર"
-    native: "salary; pay"
     reading: "pagār"
     ipa: "pəɡar"
     pos: "noun"
     gender: "m"
-  - id: gu-0365
+  - id: "gu-0365"
     target: "રજા"
-    native: "leave; a day off; a holiday"
     reading: "rajā"
     ipa: "rədʒa"
     pos: "noun"
     gender: "f"
-    notes: "Also 'permission': રજા આપો (rajā āpo), please allow me, said when leaving."
-  - id: gu-0366
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0366"
     target: "મીટિંગ"
-    native: "meeting"
     reading: "miṭiṅg"
     ipa: "miʈiŋɡ"
     pos: "noun"
     gender: "f"
-  - id: gu-0367
+  - id: "gu-0367"
     target: "તમે શું કામ કરો છો?"
-    native: "What do you do (for work)?"
     reading: "tame śum̐ kām karo cho?"
     ipa: "t̪əme ʃũ kam kəro tʃʰo"
     pos: "phrase"
-  - id: gu-0368
+  - id: "gu-0368"
     target: "હું બૅન્કમાં કામ કરું છું."
-    native: "I work in a bank."
     reading: "hum̐ bênkmām̐ kām karum̐ chum̐."
     ipa: "ɦũ bɛnkmã kam kərũ tʃʰũ"
     pos: "phrase"
-    notes: "બૅન્ક (bênk) is often written બેંક (beṅk)."
-  - id: gu-0369
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0369"
     target: "મારો પોતાનો ધંધો છે."
-    native: "I have my own business."
     reading: "māro potāno dhandho che."
     ipa: "maro pot̪ano d̪ʱənd̪ʱo tʃʰe"
     pos: "phrase"
-    notes: "પોતાનો (potāno) is 'own'; it agrees like 'my'."
-  - id: gu-0370
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0370"
     target: "આજે મારે રજા છે."
-    native: "I have the day off today."
     reading: "āje māre rajā che."
     ipa: "adʒe mare rədʒa tʃʰe"
     pos: "phrase"
-  - id: gu-0371
+  - id: "gu-0371"
     target: "સાહેબ મીટિંગમાં છે."
-    native: "The boss is in a meeting."
     reading: "sāheb miṭiṅgmām̐ che."
     ipa: "saɦeb miʈiŋɡmã tʃʰe"
     pos: "phrase"
