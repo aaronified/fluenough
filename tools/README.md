@@ -26,7 +26,9 @@ It reads plain YAML values as the app does (YAML 1.2: a bare `no` is the text
 
 It also checks the B1 format (ADR-0036): cores (`part: "core"`) and their
 layers (`kind: "layer"`, in `decks/<lang>/<native>/`), rules decks, the
-phrasebook, typed notes, `bases`, `wiktionary`, and a path's B1 plan. Some of
+phrasebook, typed notes, `bases`, `wiktionary`, and the language's path,
+one per language learnt (`<lang>-path.yaml`), by core id, with its B1 plan
+and its regions. Some of
 these read the language's other files from disk, so a file validated alone is
 checked against them. Lines marked `info` (a layer's coverage of its core, a
 plan's sizes) never fail the build. `tools/fixtures/b1/zz/` is a valid set in

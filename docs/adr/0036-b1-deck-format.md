@@ -1,10 +1,10 @@
 # ADR-0036: Decks are a core and layers, with rules, bases, typed notes and a B1 plan
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-09
-- **Amends:** ADR-0013 (a path's units may be planned), ADR-0018 (a card
-  is written in a core or a layer), ADR-0034 (a second grammar schedule;
-  pairs from pair notes).
+- **Amends:** ADR-0013 (one path per language learnt, naming core ids; a
+  path's units may be planned), ADR-0018 (a card is written in a core or
+  a layer), ADR-0034 (a second grammar schedule; pairs from pair notes).
 
 ## Context
 
@@ -22,7 +22,16 @@ the rule's kind has its row; that layers live in `decks/<lang>/<native>/`;
 that notes keep their language facts in the core and each layer writes
 the explanation around them; that each planned unit names its listening
 and reading passages; and the words per level, A1 700, A2 900 more and
-B1 1,200 more.
+B1 1,200 more. Asked the format's open questions, the owner decided the
+same day that paths are one per language learnt now, shared by every
+layer; that understanding grammar is choosing what a form means, and
+choosing or typing the form is producing it; that pairs come from pair
+notes; that a plan is required once a language has a core; that every
+planned unit names its passages; that a grammar topic is one rule; and
+that scripts without spaces wait; and that the learner is asked which
+of their languages to learn a course from. The rating screen for
+offensive words asks where the rater speaks the language, which needed
+the language's regions defined.
 
 ## Decision
 
@@ -36,9 +45,23 @@ B1 1,200 more.
   single-file deck of that course has, which stays valid. A card the
   layer does not translate is not taught from that language. A layer
   may have cards of its own, numbered in the language's sequence.
-- **B1 decks.** The decks a path with a B1 plan lists, less its alphabet
-  decks, are held to the B1 checks below, whether split or not; a plan
-  is required of a path once its language has a core.
+- **One path per language learnt,** `decks/<lang>/<lang>-path.yaml`,
+  shared by every native language. It names each deck by its core id,
+  `<lang>-<name>`, and a learner from a native language is taught that
+  language's deck for it, `<lang>-<native>-<name>`, merged or
+  single-file; a unit with none is "Coming" for them. Its passages are
+  named once, with a description per native language; its regions
+  likewise. Today's nine course paths move to it once.
+- **The learner chooses the native language** a course is taught from,
+  when more than one they speak teaches it: asked when the course is
+  first opened, and once more when another starts teaching it, with how
+  many of the path's written units each teaches and the best covered
+  chosen to start with; changed per course in Settings. A unit with no
+  deck in the chosen language is "Coming", never taught from another's.
+- **B1 decks.** Each course's decks for the core ids a path with a B1
+  plan lists, less its alphabet decks, are held to the B1 checks below,
+  whether split or not; a plan is required of a path once its language
+  has a core.
 - **A phrasebook:** `phrasebook: true` on 15 to 25 cards per course,
   taught whole in the course's first unit, never held back.
 - **Base words:** `bases:` names the base of each derived word in a
@@ -51,10 +74,13 @@ B1 1,200 more.
   each with a name and an explanation. Every word of the kind a B1 deck
   teaches has its row, or is listed as an exception. Each cell is a card,
   `<core>-<word number>-<slot index>`, asked in two schedules.
-- **Two grammar schedules:** `grammar`, typing the form with the word and
-  the meaning given, keeps its name and its history and is grammar
-  produced; `grammarUnderstood`, choosing among the forms of the same
-  word, is new, with its choose question.
+- **Two grammar schedules:** `grammarUnderstood`, new, is shown a form and
+  chooses what it means among the meanings of the same word's forms;
+  `grammar`, grammar produced, chooses the form among the same word's
+  forms or types it with the word and the meaning given, and keeps its
+  name and its history. Neither implies the other, nor any word skill:
+  the research finds grammar practice skill-specific and gives no
+  figure. Each is fitted per language, as every skill is.
 - **Sentences name their rules:** `rules:` on a card, by rule id, the
   unlock gate's data beside `bases`. A path's grammar topics name rules,
   or grammar decks not yet turned into rules.
@@ -71,8 +97,10 @@ B1 1,200 more.
   and its listening and reading passages, or a `planned` unit not written
   yet, which lessons skip and which names its passages. A path with a
   plan has all three milestones in order.
-- **Paths stay per course for now,** moving to one per language learnt
-  before a second native language's layers are written.
+- **Regions:** a language's path may list its regions, each with an id
+  and a name per native language; the app adds "Elsewhere". A rater
+  says which region they speak in, and a note may name the regions it is
+  about.
 
 ## Consequences
 
@@ -90,7 +118,12 @@ B1 1,200 more.
   file of the language, so validating one file reads the rest from disk.
 - The validator reads plain YAML scalars as YAML 1.2 does, as the app
   does.
-- Moving to per-language paths will rewrite every path's unit lines.
+- Today's nine paths are rewritten once, mechanically, to core ids. A
+  second native language adds its layers and its passages' descriptions,
+  and never its own copy of a plan.
+- A unit can be written for one native language and "Coming" for
+  another; words are counted per course against one planned size.
+- Region ids are permanent, as card ids are.
 
 ## Alternatives considered
 
@@ -103,8 +136,20 @@ B1 1,200 more.
   and holds `grammar`.
 - **Inferring a core from a missing `native`:** a forgotten field would
   read as a different kind of file.
-- **Paths per language now:** placement, the catalog and the path
-  checks would all change before a second native language exists.
+- **Paths per course until a second native language** (this format's
+  first recommendation): every unit line would have been rewritten then,
+  and two courses' copies of a plan could drift.
+- **Choosing the form as understood:** the owner chose choosing the
+  meaning.
+- **Passages' descriptions in a path layer per native language:** one
+  more kind of file for a few lines of text; they are keyed by native
+  code in the path, as a facts file's texts are.
+- **Regions in the facts file, or in the app:** the path is already the
+  language's shared plan, and the app must stay language-agnostic.
+- **Choosing the learner's native language for them,** by the best-known
+  language they speak or by coverage alone: the owner chose to ask, since
+  a learner may prefer a fuller course in their second language, or their
+  first language's however far it has come.
 - **B1 checks on cores only:** a deck could escape them by staying
   single-file.
 - **A stored Wiktionary title:** the plan builds the link from the word.

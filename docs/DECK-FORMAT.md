@@ -12,7 +12,7 @@ and `reading` (passages with questions about them). Another kind of file,
 `facts`, holds a language's daily facts rather than anything drilled. All
 five share the same header, with the differences a core and a layer make. Beside them sit files that are not decks: the shared
 [themes](#themes), each language's [number rules](#number-rules), and each
-course's [path](#course-paths).
+language's [path](#paths).
 
 Validate before committing:
 
@@ -53,9 +53,10 @@ notes: "లేదు is 'there is not', the opposite of ఉంది."          
   rules layer's `slot_name`, slot labels, `prompts`, and each rule's `name`
   and `explanation`, a grammar layer's `name`, `slot_name`, `prompt`,
   glosses and `notes`, a layer's `name` and `description`, and a path's
-  `listening_passages` and `reading_passages`. The language facts beside
-  them (`word`, `base`, `ref`, `words`, a core's slot keys) are the word
-  itself and need none.
+  passage descriptions and region names, each read as written for its
+  key's language, as a facts file's texts are. The language facts beside
+  them (`word`, `base`, `ref`, `words`, `region`, a passage's `id`, a
+  core's slot keys) are the word itself and need none.
 - **Placeholders are checked before they are filled.** A layer that quotes
   its core's words as `{1}`, `{2}` (see [Notes](#notes)) holds no script at
   that point, so it needs no reading there: the reading comes with the word
@@ -170,8 +171,9 @@ from `python3 tools/validate_decks.py --next-id te`.
 - **`<name>`** matches `[a-z0-9]+(-[a-z0-9]+)*`, and is the same in the core
   and every layer of it.
 - **The merged deck's id is the id a single-file deck of that course has
-  today,** so a path, placement, a learner's added deck and the review log
-  all know it unchanged. Splitting `decks/te/te-en-home.yaml` into
+  today,** so placement, a learner's added deck and the review log all know
+  it unchanged, and the language's path, which lists the core id
+  (`te-home`), does not change. Splitting `decks/te/te-en-home.yaml` into
   `decks/te/te-home.yaml` and `decks/te/en/te-en-home.yaml` keeps the deck id
   and every card id.
 - **Reserved names:** a core is never `<lang>-facts`, `<lang>-numbers`,
@@ -439,9 +441,9 @@ checks the same deck:
    `pubspec.yaml`, `- decks/<lang>/<native>/`, under `flutter.assets`, in a
    one-line commit of its own: the app bundles only the folders listed
    there, and the validator fails a folder of decks that is not.
-7. The path does not change: it lists the merged deck's id, which is the
-   old one. Once a language has a core, its path needs its
-   [B1 plan](#the-b1-plan).
+7. The path does not change: it lists the deck's core id, `te-home`, which
+   the single-file deck had too. Once a language has a core, its path needs
+   its [B1 plan](#the-b1-plan).
 
 ---
 
@@ -574,7 +576,8 @@ inline base no `meaning`: the layer gives both.
   phrasebook card, or a [B1 plan](#the-b1-plan). A Bengali layer's own
   phrasebook cards count for Bengali learners only.
 - **In the course's first unit.** In a course with a B1 plan, every
-  phrasebook card is taught by a deck of the path's first unit. A later
+  phrasebook card is taught by a deck of the course's first unit on the
+  path, the first it has a deck in. A later
   deck may list one by `ref`, as long as a first-unit deck teaches it too.
 - **Its words are not counted as taught by it.** Each word of a phrase comes
   again later as a word card, and its `bases` say which. A phrasebook card
@@ -679,9 +682,25 @@ repeated until every note of the card has been shown once.
 | `ref` | on a `pair` note, and only there | The partner: another card of the language that sounds almost the same. |
 | `source` | on a `culture` note; optional on the rest | Where the claim can be checked: a URL, or a book with its author and year. |
 | `words` | no | The words of the language the text quotes, `{ word, reading, ipa? }`, `reading` required in a script that needs one. The text names them `{1}`, `{2}` (below). |
+| `region` | no | On a note of any kind: the [regions](#regions) of the language it is about, a region id or a list of them, each a region of the language's path. |
 
 `notes` may still be text, as every deck had it: it reads as one note of
 kind `note`. An empty string is no notes. A list may not be empty.
+
+**A region note** says how the word is used, or heard, in some of the
+language's regions: regional vocabulary, or an offensive word whose raters
+from different regions differ by a band or more. On ఉల్లిపాయ (ullipāya),
+onion:
+
+```yaml
+    notes:
+      - { kind: "usage", region: "telangana", text: "In Telangana often {1}.", words: [{ word: "ఉల్లిగడ్డ", reading: "ulligaḍḍa" }] }
+```
+
+A region is a fact about the language, the same for every learner, so in a
+core it is on the core's note, `{ id: "telangana", kind: "usage", region:
+"telangana", words: [...] }`, and each layer gives the text by the note's
+id.
 
 **In a core,** a note keeps its language facts, and each layer writes the
 explanation around them. A core note has an `id`, required, and no `text`;
@@ -1183,8 +1202,8 @@ passage's text shows.
 
 ### Rules
 
-- **On its course's path, after its theme.** A reading deck is an ordinary
-  deck: it is listed on the Decks tab, and its path puts it in a unit after
+- **On its language's path, after its theme.** A reading deck is an ordinary
+  deck: it is listed on the Decks tab, and the path puts it in a unit after
   the theme decks its passages use, so that its new questions come once
   their words are taught. The validator warns of a passage whose theme's
   deck is in the same unit or a later one.
@@ -1224,7 +1243,7 @@ A day, and Hindi and Telugu do not.
   `hi-en` deck for `market`, and a `theme` that `themes.yaml` does not list.
 - **New cards follow the path.** A course's theme decks are drilled in the
   file's order unless the learner picks a theme. Nothing is locked. A
-  course with a [path](#course-paths) is ordered by that instead.
+  course with a [path](#paths) is ordered by that instead.
 - **Phrases are not typed.** Mark a card of more than one word `pos: phrase`:
   a whole sentence is too hard to grade fairly when typed, so it is
   produced by putting its words in order instead (ADR-0024). Any card of
@@ -1232,63 +1251,95 @@ A day, and Hindi and Telugu do not.
 - **Grammar decks are not themes.** A course's path places them beside the
   theme decks they go with.
 
-## Course paths
+## Paths
 
-A course is taught along a curated path ([ADR-0013](adr/0013-course-paths.md)):
-its decks in teaching order, in **units**. `decks/hi/hi-en-path.yaml` is
-Hindi from English:
+A language is taught along a curated path
+([ADR-0013](adr/0013-course-paths.md), [ADR-0036](adr/0036-b1-deck-format.md)):
+its decks in teaching order, in **units**. There is **one path per language
+learnt**, shared by every native language it is taught from:
+`decks/hi/hi-path.yaml` is Hindi's, for learners from English and from any
+other language alike. It names each deck by its **core id**:
 
 ```yaml
 schema: 1
-kind: path
-id: hi-en-path
-language: hi
-native: en
+kind: "path"
+id: "hi-path"
+language: "hi"
 units:
-  - [hi-en-first-words, hi-en-grammar-sentences, "*"]
-  - [hi-en-questions, hi-en-grammar-questions, "*"]
-  - [hi-en-addressing, hi-en-grammar-pronouns, "*"]
+  - ["hi-first-words", "hi-grammar-sentences", "*"]
+  - ["hi-questions", "hi-grammar-questions", "*"]
+  - ["hi-addressing", "hi-grammar-pronouns", "*"]
   - ["*"]
 ```
 
 | Field | Required | Notes |
 |---|---|---|
-| `id` | yes | `<language>-<native>-path`, and the filename stem. |
-| `language` | yes | The code of the language learned, such as `hi`. |
-| `native` | yes | The code of the language it is taught from, such as `en`. |
-| `units` | yes | A non-empty list. Each unit is a non-empty list of deck ids, which may end in the wildcard `"*"`, or a mapping (see [The B1 plan](#the-b1-plan)). |
-| `alphabet` | no | The decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
+| `id` | yes | `<language>-path`, and the filename stem. |
+| `language` | yes | The code of the language learned, such as `hi`, the name of its folder. |
+| `native` | **not allowed** | The path is every native language's. A path still written for one course, `<lang>-<native>-path.yaml` with `native`, is refused, with what to do. |
+| `units` | yes | A non-empty list. Each unit is a non-empty list of core ids, which may end in the wildcard `"*"`, or a mapping (see [The B1 plan](#the-b1-plan)). |
+| `alphabet` | no | The core ids of the decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
+| `regions` | no | The language's regions ([Regions](#regions)). |
 | `description` | no | Free text. |
+
+**A deck's core id** is `<lang>-<name>`: a core's own id, a layer's core
+(`te-en-home` is `te-home`), or a single-file deck's id without its native
+(`hi-en-addressing` is `hi-addressing`). A deck split into a core and its
+layers keeps its core id, so the path does not change when a deck is split.
+
+**How a course reads its language's path.** For learners from a native
+language `n`, each core id `<lang>-<name>` stands for the deck
+`<lang>-<n>-<name>`: the layer merged with its core, or the single-file deck
+of that id. A core id with no deck in `n` is skipped for that course, and a
+written unit left with no deck is "Coming" for its learners, as a planned
+unit is: lessons and placement skip it. `alphabet` maps the same way, and
+`"*"` takes the course's decks the path does not list. A deck only one
+native language needs, such as English learners' "sounds English lacks",
+has a core id like any other, `te-sound-differences`; a Bengali course gives
+its own deck for it, `te-bn-sound-differences`, or none.
+
+**Which native language a learner is taught from** is the learner's choice.
+When more than one of the languages they speak teaches a language, the app
+asks, showing how many of the path's written units each one teaches ("From
+English: 30 of 34 units"), with the most covered chosen already. They can
+change it in Settings ("Learn Telugu from"). A unit with no deck in the
+chosen language is "Coming", never taught from another language's decks.
+Progress is kept by card id, so changing loses nothing the cores share.
 
 - **A unit is what is taught together**: a theme deck and the grammar that
   goes with it, or a script. Today takes new cards from the first unit not
   yet finished and the one after it, mixing the two, and placement passes
   or places a unit whole (ADR-0013), so keep a unit to what a learner would
   take in together.
-- **Every deck of the course is on its path, exactly once,** and only the
-  course's decks. A layer is a deck of its course, listed by its id, which is
-  the merged deck's; a core is on no path. The validator fails a deck left
-  out, one listed twice, one from another course, and an id that is no deck.
-  Adding a deck means adding it to its course's path.
-- **One path per course,** and every course with a deck in `decks/` has
-  one: the validator fails a course without. A deck added in the app to a
-  course with no path is taught in its course's theme order, and then its
-  other decks.
+- **Every deck of the language is on its path, exactly once,** by its core
+  id, in every course: a single-file deck and a layer of any native
+  language alike. A core is on the path through its id. The validator fails
+  a deck left out, an id listed twice, a course's deck id listed in place
+  of its core id (`hi-en-market` for `hi-market`), and a core id with no
+  core and no deck in any course. Adding a deck means adding its core id to
+  the path, once; a second native language's deck for a core id already
+  listed adds nothing.
+- **One path per language,** and every language with a deck in `decks/`
+  has one: the validator fails a language without, and a second path file
+  of the language, such as a course's path left beside the new one. A new
+  course of a language that has a path adds no path. A deck added in the app
+  to a course with no path is taught in its course's theme order, and then
+  its other decks.
 - **The wildcard `"*"` takes decks the path does not list,** such as a deck
   a learner adds in the app ([ADR-0020](adr/0020-added-decks.md)). Quote
   it: a bare `*` is YAML for an alias. It may only end a unit, and a unit
   of `"*"` alone may only be the last. A deck the path does not list goes
   at the bottom of the first unit ending in `"*"` that holds a theme deck
   of its theme, and otherwise into the unit of `"*"` alone, at the end of
-  the course. So a unit ending in `"*"` needs a theme deck, which the
-  validator checks. Every bundled path ends each unit that has a theme deck
-  in `"*"`, and has a last unit of `"*"` alone.
+  the course. So a unit ending in `"*"` needs a theme deck in some course,
+  which the validator checks. Every bundled path ends each unit that has a
+  theme deck in `"*"`, and has a last unit of `"*"` alone.
 - **Order is a teaching decision.** Grammar goes with the theme that first
   needs it, and a [reading deck](#reading-decks) in a unit after the themes
   it uses.
 - **A course opens with words, not letters.** Its first units are a few
-  words and basic sentences, the sounds English lacks and how the grammar
-  differs from English, then five more themes; the script comes after
+  words and basic sentences, the sounds the learner's language lacks and how
+  the grammar differs from it, then five more themes; the script comes after
   those six themes, before the rest. Until the learner is past the script
   units, answers typed in Latin letters count in full (ADR-0022), and
   readings show beside the script. The sound and grammar units are typed
@@ -1298,98 +1349,124 @@ units:
   reading and writing only (`modes: [recognition, production]`), since no
   ear and no recogniser can tell them apart; so is a mark that is not a
   sound of its own, written on a host letter (কং).
+- **The move from course paths.** Until ADR-0036 a path was one course's,
+  `hi-en-path.yaml`, with `native` and deck ids. The nine bundled paths
+  were moved once: renamed `<lang>-path.yaml`, `native` taken out, and each
+  deck id's native taken out (`hi-en-market` became `hi-market`). No deck,
+  card id or deck id changed.
 
 ### The B1 plan
 
-Every path is to carry a plan of the course up to B1, written by whoever
-writes the course and read by the app ([ADR-0036](adr/0036-b1-deck-format.md)).
-The app shows from it how far a course reaches ("18% of B1 · 12 of 30
-grammar topics"), shows the units not written yet as "Coming", and skips
-them in lessons.
+Every path is to carry a plan of the language up to B1, written once for
+every native language and read by the app
+([ADR-0036](adr/0036-b1-deck-format.md)). The app shows from it how far a
+course reaches ("18% of B1 · 12 of 30 grammar topics"), shows the units not
+written yet as "Coming", and skips them in lessons.
 
 ```yaml
 schema: 1
 kind: "path"
-id: "te-en-path"
+id: "te-path"
 language: "te"
-native: "en"
+regions:
+  - { id: "telangana", name: { "en": "Telangana" } }
+  - { id: "coastal-andhra", name: { "en": "Coastal Andhra" } }
+  - { id: "rayalaseema", name: { "en": "Rayalaseema" } }
 alphabet:
-  - "te-en-script-vowels"
+  - "te-script-vowels"
 units:
-  - decks: ["te-en-phrasebook", "te-en-first-words", "te-en-grammar-sentences", "*"]
+  - decks: ["te-first-words", "te-grammar-sentences", "*"]
     words: 40
     grammar: ["sentences"]
-  - decks: ["te-en-grammar-differences"]
+  - decks: ["te-grammar-differences"]
     words: 0
-  - decks: ["te-en-family", "te-en-grammar-be", "*"]
+  - decks: ["te-family", "te-grammar-be", "*"]
     words: 45
     grammar: ["be"]
-  - ["te-en-script-vowels"]
-  - decks: ["te-en-home", "te-en-grammar-case-endings", "te-en-home-sentences", "*"]
+  - ["te-script-vowels"]
+  - decks: ["te-home", "te-grammar-case-endings", "*"]
     words: 45
     grammar: ["lo", "ki", "to", "nunci"]
     milestone: "A1"
-  - decks: ["te-en-market", "*"]
+  - decks: ["te-market", "*"]
     words: 60
     milestone: "A2"
   - planned:
-      id: "te-en-health"
+      id: "te-health"
       theme: "health"
       words: 60
-    listening_passages: ["Booking a doctor's appointment by phone"]
-    reading_passages: ["A notice at the clinic"]
-  - planned: { id: "te-en-grammar-conditional", grammar: "conditional" }
-    listening_passages: ["A friend's plans if it rains"]
-    reading_passages: ["A message: if the train is late"]
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "te-grammar-conditional", grammar: "conditional" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
     milestone: "B1"
-  - ["te-en-registers"]
+  - ["te-registers"]
   - ["*"]
 ```
 
-A unit is a list of deck ids, as before, or a mapping:
+A unit is a list of core ids, as before, or a mapping:
 
 | Field | Notes |
 |---|---|
-| `decks` | A written unit's deck ids, as the list form, wildcard and all. |
-| `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. `id` is the deck it will be, a deck of the course (`te-en-health`), which must not exist yet: when its file is written, the unit turns into `decks` in the same change. A core of that name with no layer for this course does not count as written. |
-| `words` | The unit's planned size in words, a whole number: 0 or more on a written unit (a unit of grammar or reading decks gives 0), 1 or more on a planned theme unit. On a planned unit, inside `planned` or beside it, not both. |
+| `decks` | A written unit's core ids, as the list form, wildcard and all. |
+| `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. `id` is the core id its decks will have (`te-health`; each course's deck for it is then `te-en-health`, `te-bn-health`, …), which must not exist yet: no core of that id, and no deck `te-<native>-health` in any course. When the first of them is written, the unit turns into `decks` in the same change; the courses still without a deck for it see it as "Coming". |
+| `words` | The unit's planned size in words, a whole number: 0 or more on a written unit (a unit of grammar or reading decks gives 0), 1 or more on a planned theme unit. One size for every native language. On a planned unit, inside `planned` or beside it, not both. |
 | `grammar` | The grammar topics it teaches, below: a list, or one as text. On a planned unit, inside `planned` or beside it, not both. |
 | `milestone` | `"A1"`, `"A2"` or `"B1"`, on the unit where that level ends. A unit of `"*"` alone carries none. |
-| `listening_passages`, `reading_passages` | Short descriptions of the unit's listening and reading passages, in the course's native language, with [Script in prose](#script-in-prose-always-with-its-reading) applying. **Both are required on every planned unit.** A written unit's passages are its [reading decks](#reading-decks). |
+| `listening_passages`, `reading_passages` | The unit's listening and reading passages, each `{ id, text }`. **Both are required on every planned unit.** A written unit's passages are its [reading decks](#reading-decks), and it need not list them. |
+
+**A passage** is named once, in the path, and described in each native
+language:
+
+| Field | Notes |
+|---|---|
+| `id` | `[a-z0-9-]+`, unique in the path across both lists. It names the passage for every native language: reword a description and the id stays. |
+| `text` | The description, keyed by native language code as a facts file's texts are: `{ "en": "...", "bn": "..." }`. At least one; [Script in prose](#script-in-prose-always-with-its-reading) applies to each as written for its key's language. A native language a course of the language is taught from, with no text here, is warned of, once per passage: its learners see the passage without a description. |
+
+So a Bengali course written after the English one adds `"bn":` beside
+`"en":` on each passage, and nothing else in the path: its units, sizes and
+milestones are already there.
 
 - **A path has a B1 plan** when some unit is a mapping with `planned`,
   `words`, `grammar` or `milestone`. Then it has the three milestones, `A1`,
   `A2` and `B1`, each once and in that order. **A path needs one** once its
-  language has a core file; every path will need one once every course has
-  its plan.
+  language has a core file; every path will need one once every language
+  has its plan.
 - **Up to B1** is every unit before the one marked `B1`, and that one. Every
   unit up to B1 is a mapping with `words` or `grammar`, except two kinds
-  that may stay lists and count nothing: a unit all of whose decks are in
-  `alphabet`, and the unit of `"*"` alone. A planned unit after the B1 mark
-  is an error: the units after it are written as before.
+  that may stay lists and count nothing: a unit all of whose core ids are
+  in `alphabet`, and the unit of `"*"` alone. A planned unit after the B1
+  mark is an error: the units after it are written as before.
 - **A grammar topic** counts once toward the plan's figure, and is listed
   once up to B1. On a written unit, a topic names one of:
   - **a rule** of a rules deck the unit lists, by the rule id's name: topic
     `ki` is `te-rule-ki`, so a table of four rules is four topics;
-  - **a grammar deck** the unit lists, by its name, if it is not a rules
-    deck: topic `be` is `te-en-grammar-be`. A grammar deck not yet turned
-    into rules counts as one topic; once it is, its topics are its rules,
-    and its own name is no topic unless a rule has it: `case-endings` next
-    to `lo`, `ki`, `to` and `nunci` would count the table twice, and is an
-    error.
+  - **a grammar deck** the unit lists, by its core id's name, if it is not a
+    rules deck: topic `be` is `te-grammar-be` (today the single-file
+    `te-en-grammar-be`). A grammar deck not yet turned into rules counts as
+    one topic; once it is, its topics are its rules, and its own name is no
+    topic unless a rule has it: `case-endings` next to `lo`, `ki`, `to` and
+    `nunci` would count the table twice, and is an error.
 
   A planned unit's topic is any name, `[a-z0-9-]+`, checked once the unit is
   written.
-- **Words are counted** from a unit's decks, as distinct card ids written or
-  listed by ref: the vocab cards that are not phrasebook cards, not
-  `pos: phrase`, and are one word, or a noun, verb, adjective, adverb or
-  pronoun of several. Alphabet decks, grammar and rules decks, reading decks
-  and `"*"` count none.
-- **The B1 decks** of a course are the decks its plan's units list, less its
-  alphabet decks and reading decks. They are held to the B1 checks: every
-  word covered by a word card or a [base](#base-words-bases), every word
-  card with a [note](#notes) (a warning), every word of a rule's kind with
-  its [row](#every-word-of-its-kind-has-its-row), and the
+- **Words are counted per course** from a unit's decks in that course, as
+  distinct card ids written or listed by ref: the vocab cards that are not
+  phrasebook cards, not `pos: phrase`, and are one word, or a noun, verb,
+  adjective, adverb or pronoun of several. Alphabet decks, grammar and rules
+  decks, reading decks and `"*"` count none. Each course's count is held to
+  the unit's one size.
+- **The B1 decks** of a course are its decks for the core ids the plan's
+  units list, less the alphabet decks and reading decks. They are held to
+  the B1 checks: every word covered by a word card or a
+  [base](#base-words-bases), every word card with a [note](#notes) (a
+  warning), every word of a rule's kind with its
+  [row](#every-word-of-its-kind-has-its-row), and the
   [phrasebook](#the-phrasebook)'s size and place. A B1 deck still
   single-file is warned of: it is split into a core and its layers as the
   plan is written.
@@ -1398,8 +1475,45 @@ A unit is a list of deck ids, as before, or a mapping:
   validator's info line gives each level's words, the grammar topics and the
   units planned. It warns of a level outside half to one and a half times
   its size, of planned words up to B1 outside 2,000–3,500, of a written unit
-  with more words than it plans (raise `words`), and of a planned theme not
-  yet in `decks/themes.yaml`.
+  with more words than it plans for learners from some native language
+  (raise `words`), and of a planned theme not yet in `decks/themes.yaml`.
+
+### Regions
+
+A language's regions are listed in its path, since they are the language's
+and every native language shares them. The app asks a rater "Where you
+speak Telugu", offering the regions and then Elsewhere, and a card's
+[region note](#notes) names the regions it is about.
+
+```yaml
+regions:
+  - id: "telangana"
+    name: { "en": "Telangana" }
+  - id: "coastal-andhra"
+    name: { "en": "Coastal Andhra" }
+  - id: "rayalaseema"
+    name: { "en": "Rayalaseema" }
+```
+
+| Field | Notes |
+|---|---|
+| `id` | A region id: starts with a letter, `[a-z0-9-]+`, not one of YAML 1.1's boolean words, unique in the path, and not `elsewhere`, which the app keeps for its own answer. **Permanent, as a card id is:** a rater's answers and the cards' region notes name it. Rename a region's `name`, never its `id`; retire one only when nothing names it. |
+| `name` | The region's name, keyed by language code as a facts text is: `en` required, any other beside it. The app shows the learner's (or rater's) language where given, else English. [Script in prose](#script-in-prose-always-with-its-reading) applies per key: a Telugu name under `"en"` gives its reading, తెలంగాణ (telaṅgāṇa). |
+
+The list is in the order the app shows it. The app adds **Elsewhere** after
+it, an interface string, never deck data, stored as `elsewhere`. A language
+with no `regions` asks no region question.
+
+The validator checks the list's shape, and that every region a note names
+is a region of its language's path, given or on disk: a note naming one the
+path does not list, or a language whose path lists none, is an error.
+
+Telugu's regions are Telangana, Coastal Andhra and Rayalaseema, the three
+its dialects are usually grouped by. Bengali's are its dialect groups, each
+named with example districts so that a rater who does not know the terms
+can still place themselves: Rāṛhī, Vaṅgīya, Varendrī, Kāmarūpī, Mānbhūmī
+and south-eastern. A native reviewer checks both lists before any rating
+names a region.
 
 ## Writing a B1 course
 
@@ -1434,11 +1548,13 @@ error before moving on. Read the warnings; do not leave them unexplained.
    ([Romanisation files](#romanisation-files)). Every reading you write is
    checked against it, so settle it first. Where it exists, check it rather
    than rewrite it.
-2. **The path's B1 plan**, in `<lang>-en-path.yaml`
-   ([The B1 plan](#the-b1-plan)). Write every unit up to B1 in teaching
-   order: the written units as mappings with `words` and `grammar`, the rest
-   as `planned` units with their listening and reading passages, and the
-   three milestones, about 700, 1,600 and 2,800 words in. Take the themes
+2. **The path's B1 plan**, in the language's path, `<lang>-path.yaml`
+   ([The B1 plan](#the-b1-plan)), by core id, with the language's
+   [regions](#regions). Write every unit up to B1 in teaching order: the
+   written units as mappings with `words` and `grammar`, the rest as
+   `planned` units with their listening and reading passages, each with an
+   `id` and its English description, and the three milestones, about 700,
+   1,600 and 2,800 words in. Take the themes
    and grammar of each level from the CEFR skeleton in `b1-plans.md`, and
    their order from `docs/plans/language-paths-scheme.md` for the language's
    family. The first unit holds the phrasebook. The plan comes before the
@@ -1535,7 +1651,7 @@ error before moving on. Read the warnings; do not leave them unexplained.
 9. **Script decks**, in their place on the path: the letters, vowel signs,
    conjuncts and script reading decks, each listed in `alphabet`, split like
    the rest. A letter that sounds exactly like another is drilled by reading
-   and writing only ([Course paths](#course-paths)). The B1 checks pass them
+   and writing only ([Paths](#paths)). The B1 checks pass them
    by.
 10. **The facts file**, `<lang>-facts.yaml` ([Facts files](#facts-files)):
     at least 30 facts without a `contrast`, each in English, Bengali and
