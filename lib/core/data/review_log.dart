@@ -5,6 +5,7 @@ import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/fsrs.dart';
+import '../scheduling/skill_parameters.dart';
 import 'card_state_repository.dart';
 import 'log_jsonl.dart';
 import 'database.dart';
@@ -22,8 +23,9 @@ class ReviewLog {
   final AppDatabase _db;
 
   /// Records a review of one pair: runs [Fsrs.next] on its stored state,
-  /// appends the review and stores the new state, atomically. Returns the
-  /// event. Throws [ArgumentError], writing nothing, for a grade outside 0–5.
+  /// with the [parameters] that schedule the pair, appends the review and
+  /// stores the new state, atomically. Returns the event. Throws
+  /// [ArgumentError], writing nothing, for a grade outside 0–5.
   Future<ReviewEvent> record({
     required String deckId,
     required String cardId,
@@ -32,6 +34,7 @@ class ReviewLog {
     required DateTime now,
     Duration elapsed = Duration.zero,
     String? answerGiven,
+    List<double> parameters = Fsrs.w,
   }) => _db.transaction(() async {
     final key = (cardId: cardId, mode: mode);
     final before = await CardStateRepository(_db).stateOf(cardId, mode);
@@ -40,6 +43,7 @@ class ReviewLog {
       grade,
       now: now,
       rated: answerGiven == null,
+      parameters: parameters,
     );
     await _db.reviewsDao.append(
       ReviewsCompanion.insert(
@@ -72,8 +76,47 @@ class ReviewLog {
 
   /// Every review, in the order it was recorded, with each pair's state
   /// before and after it, worked out from the log alone by replaying it,
-  /// with the leech actions' resets (see [replayReviews]).
-  Future<List<ReviewEvent>> events() async => (await _replay()).events;
+  /// with the leech actions' resets (see [replayReviews]), and each skill's
+  /// [parameters].
+  Future<List<ReviewEvent>> events({SkillParameters? parameters}) async =>
+      (await _replay(parameters)).events;
+
+  /// Every review as the log keeps it, oldest first.
+  Future<List<LoggedReview>> reviews() async => inTimeOrder(<LoggedReview>[
+    for (final row in await _db.reviewsDao.all()) _logged(row),
+  ]);
+
+  /// FSRS's parameters as fitted to the learner, by language and skill.
+  Future<Map<SkillKey, FittedParameters>> fitted() async =>
+      <SkillKey, FittedParameters>{
+        for (final row in await _db.fsrsParametersDao.all())
+          (language: row.language, mode: row.mode): ?_fitted(row),
+      };
+
+  /// Keeps [value] as the fit of [key], replacing the one before, and
+  /// rebuilds `card_states` with [parameters], which hold it, in one
+  /// transaction.
+  Future<void> putFitted(
+    SkillKey key,
+    FittedParameters value, {
+    required SkillParameters parameters,
+  }) => _db.transaction(() async {
+    await _putFitted(key, value);
+    await _rebuild(parameters);
+  });
+
+  Future<void> _putFitted(SkillKey key, FittedParameters value) =>
+      _db.fsrsParametersDao.put(
+        FsrsParametersCompanion.insert(
+          language: key.language,
+          mode: key.mode,
+          parameters: value.values.join(','),
+          fittedAt: value.fittedAt,
+          reviewCount: value.reviewCount,
+          lossBefore: Value(value.lossBefore),
+          lossAfter: Value(value.lossAfter),
+        ),
+      );
 
   /// Every leech action, in the order it was taken.
   Future<List<LeechAction>> leechActions() => _db.leechActionsDao.all();
@@ -82,11 +125,13 @@ class ReviewLog {
   /// pair's reviews in order through [Fsrs.next], restarting a pair at a reset
   /// that still holds. In one transaction, so the cache is never seen
   /// half-built. This is the proof that the log is enough, and the path a
-  /// change of algorithm will take.
-  Future<void> rebuildStates() => _db.transaction(_rebuild);
+  /// change of algorithm will take. Each pair is scheduled with the
+  /// [parameters] of its skill.
+  Future<void> rebuildStates({SkillParameters? parameters}) =>
+      _db.transaction(() => _rebuild(parameters));
 
-  Future<void> _rebuild() async {
-    final states = (await _replay()).states;
+  Future<void> _rebuild(SkillParameters? parameters) async {
+    final states = (await _replay(parameters)).states;
     await _db.cardStatesDao.clear();
     await _db.batch((b) {
       b.insertAll(_db.cardStates, <CardStatesCompanion>[
@@ -105,10 +150,17 @@ class ReviewLog {
   /// replaying the merged log gives at that review. Rows already there keep
   /// theirs: those columns record what was computed when the row was
   /// written, and the state is always rebuilt from the grades.
-  Future<int> importAll(
+  ///
+  /// [fitted] are the backup's fitted parameters: each is kept unless the
+  /// profile has a later fit of its skill. Every state is then replayed
+  /// with [parameters] given the merged log's last studies and the merged
+  /// fits; the fits kept are returned with the count.
+  Future<({int added, Map<SkillKey, FittedParameters> fitted})> importAll(
     List<LoggedReview> reviews,
-    List<LeechAction> leechActions,
-  ) => _db.transaction(() async {
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted =
+        const <SkillKey, FittedParameters>{},
+  }) => _db.transaction(() async {
     final existing = inTimeOrder(<LoggedReview>[
       for (final row in await _db.reviewsDao.all()) _logged(row),
     ]);
@@ -125,10 +177,19 @@ class ReviewLog {
         await _db.leechActionsDao.append(a);
       }
     }
+    final all = inTimeOrder(<LoggedReview>[...existing, ...fresh]);
+    final parameters = SkillParameters(
+      fitted: await this.fitted(),
+      lastStudied: SkillParameters.lastStudiedIn(all.map(_studied)),
+    ).merged(fitted);
+    for (final MapEntry(:key, :value) in parameters.fitted.entries) {
+      await _putFitted(key, value);
+    }
     if (fresh.isNotEmpty) {
       final merged = replayReviews(
-        inTimeOrder(<LoggedReview>[...existing, ...fresh]),
+        all,
         effects: LeechEffects(await _actions()),
+        parameters: parameters,
       );
       final isFresh = <String>{for (final r in fresh) reviewIdentity(r)};
       for (final event in merged.events) {
@@ -150,37 +211,59 @@ class ReviewLog {
         );
       }
     }
-    await _rebuild();
-    return fresh.length;
+    await _rebuild(parameters);
+    return (added: fresh.length, fitted: parameters.fitted);
   });
 
   /// Appends [action] and brings its pair's state in `card_states` in line
   /// with it, in one transaction. No review is touched.
-  Future<void> act(LeechAction action) => _db.transaction(() async {
-    await _db.leechActionsDao.append(action);
-    final key = action.key;
-    final state = (await _replay()).states[key];
-    if (state == null) {
-      await (_db.delete(_db.cardStates)..where(
-            (s) => s.cardId.equals(key.cardId) & s.mode.equalsValue(key.mode),
-          ))
-          .go();
-    } else {
-      await _db.cardStatesDao.put(state.toRow(key));
-    }
-  });
+  Future<void> act(LeechAction action, {SkillParameters? parameters}) =>
+      _db.transaction(() async {
+        await _db.leechActionsDao.append(action);
+        final key = action.key;
+        final state = (await _replay(parameters)).states[key];
+        if (state == null) {
+          await (_db.delete(_db.cardStates)..where(
+                (s) =>
+                    s.cardId.equals(key.cardId) & s.mode.equalsValue(key.mode),
+              ))
+              .go();
+        } else {
+          await _db.cardStatesDao.put(state.toRow(key));
+        }
+      });
 
   Future<({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states})>
-  _replay() async => replayReviews(
-    inTimeOrder(<LoggedReview>[
-      for (final row in await _db.reviewsDao.all()) _logged(row),
-    ]),
+  _replay(SkillParameters? parameters) async => replayReviews(
+    await reviews(),
     effects: LeechEffects(await _actions()),
+    parameters: parameters,
   );
 
   /// Every leech action, oldest first.
   Future<List<LeechAction>> _actions() async =>
       actionsInTimeOrder(await _db.leechActionsDao.all());
+}
+
+({String cardId, DateTime at}) _studied(LoggedReview r) =>
+    (cardId: r.key.cardId, at: r.at);
+
+/// [row]'s fit, or null for one that does not hold 21 numbers.
+FittedParameters? _fitted(FsrsParametersRow row) {
+  final values = <double>[];
+  for (final text in row.parameters.split(',')) {
+    final value = double.tryParse(text);
+    if (value == null || !value.isFinite) return null;
+    values.add(value);
+  }
+  if (values.length != Fsrs.w.length) return null;
+  return FittedParameters(
+    values: values,
+    fittedAt: row.fittedAt,
+    reviewCount: row.reviewCount,
+    lossBefore: row.lossBefore,
+    lossAfter: row.lossAfter,
+  );
 }
 
 LoggedReview _logged(ReviewRow row) => (
