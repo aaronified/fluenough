@@ -127,8 +127,24 @@ void main() {
 
     for (final path in paths) {
       test('$path parses', () {
-        final deck = parseFile(path);
-        expect(deck.id, File(path).uri.pathSegments.last.split('.').first);
+        final stem = File(path).uri.pathSegments.last.split('.').first;
+        final text = File(path).readAsStringSync();
+        final doc = loadYaml(text);
+        // A core and a layer (the B1 format) are read apart, and a layer
+        // with its core, the file named for it in the folder above.
+        if (doc is Map && doc['part'] == 'core' && doc['kind'] != 'layer') {
+          expect(DeckParser.parseCore(text, source: path).id, stem);
+        } else if (doc is Map && doc['kind'] == 'layer') {
+          final layer = DeckParser.parseLayer(text, source: path);
+          final core = DeckParser.parseCore(
+            File('${File(path).parent.parent.path}/${layer.core}.yaml')
+                .readAsStringSync(),
+            source: '${layer.core}.yaml',
+          );
+          expect(mergeLayer(core, layer, source: path).id, stem);
+        } else {
+          expect(parseFile(path).id, stem);
+        }
       });
     }
 
@@ -251,7 +267,7 @@ cards:
       expect(card.pos, 'noun');
       expect(card.gender, 'm');
       expect(card.tags, ['home']);
-      expect(card.notes, 'Also a line of verse.');
+      expect(card.notes.single.text, 'Also a line of verse.');
       expect(card.audio, 'audio/bayt.ogg');
       expect(card.examples.single.target, 'هذا بيت.');
       expect(card.examples.single.native, 'This is a house.');
@@ -276,7 +292,7 @@ cards:
       expect(card.pos, isNull);
       expect(card.gender, isNull);
       expect(card.tags, isEmpty);
-      expect(card.notes, isNull);
+      expect(card.notes, isEmpty);
       expect(card.audio, isNull);
       expect(card.examples, isEmpty);
       expect(card.modes, isEmpty, reason: 'empty means every mode');

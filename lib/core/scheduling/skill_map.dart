@@ -41,7 +41,10 @@ class SkillMap {
           formHeardIn.contains(deckId)
               ? const <DrillMode, double>{DrillMode.production: implied}
               : const <DrillMode, double>{DrillMode.recognition: implied},
+        // Whether a right typed form implies the choice, as Write implies
+        // Recognition, waits on the research (spec 4.7, OPEN-11).
         DrillMode.recognition ||
+        DrillMode.grammarUnderstood ||
         DrillMode.grammar ||
         DrillMode.reading => const <DrillMode, double>{},
       };
