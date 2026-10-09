@@ -2957,7 +2957,12 @@ Also: `decks/README.md` (the tree gains a core and a `te/en/` layer
 folder, and the pubspec line per layer folder); `assets/deck-template.yaml`
 (comments only, showing a typed note and a base; its cards unchanged);
 `AGENTS.md`'s repo map row for `decks/<lang>/` ("one YAML file per deck,
-or a core and its layers", and the path is the language's); ADR-0013's
+or a core and its layers", and the path is the language's);
+`CONTRIBUTING.md`'s "Write it" step 4 (a deck's core id goes in its
+language's path, `decks/<lang>/<lang>-path.yaml`, in the unit it is taught
+with; a new course of a language that has a path adds no path, and a new
+language adds `<lang>-path.yaml`; "Course paths" becomes "Paths");
+ADR-0013's
 reader is pointed to ADR-0035 by the latter's `Amends` line (an accepted
 ADR's reasoning is not edited). `docs/ROADMAP.md` is not W's to edit
 (contention file).

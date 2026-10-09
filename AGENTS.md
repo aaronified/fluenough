@@ -117,16 +117,22 @@ or courses is one card (ADR-0018). Neither will be repeated. A new card takes
 
 ### 2. Quote YAML values that are not obviously prose.
 
-YAML resolves bare `no`, `yes`, `on`, `off`, `true` and `false` to booleans,
-and `007` or `1.0` to numbers. The hiragana `の` romanises to `no`, so this is
-not hypothetical — it was a real bug in the first draft of the hiragana deck.
+A bare `true` or `false` is a boolean, and `007` or `1.0` a number, however
+the field is meant. The validator and the app read plain values as YAML 1.2
+does, so a bare `no`, `yes`, `on` or `off` is text to both (the table is
+"YAML values" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md)). Quote it all
+the same: YAML 1.1, which PyYAML and many editors still read, makes those
+four booleans. The hiragana `の` romanises to `no`, so this is not
+hypothetical — it was a real bug in the first draft of the hiragana deck.
 
 ```yaml
-native: no        # WRONG — the boolean false
+native: true      # WRONG — the boolean true
+native: no        # text here, but the boolean false to YAML 1.1 tools
 native: "no"      # correct
 ```
 
-`tools/validate_decks.py` catches it and names the cause. Run it.
+`tools/validate_decks.py` refuses a boolean or a number where text is
+wanted, and for a boolean names the cause. Run it.
 
 ### 3. `lib/core/models`, `core/scheduling` and `core/grading` import nothing
 from Flutter.
@@ -361,7 +367,7 @@ Specific to this repository, roughly in order of likelihood:
 | The tempting change | Why it is wrong |
 |---|---|
 | Making card ids sequential and tidy | Destroys every user's review history. Rule 1. |
-| "Fixing" `native: "no"` to `native: no` | Reintroduces the YAML boolean bug. Rule 2. |
+| "Fixing" `native: "no"` to `native: no` | Text to the app and the validator, but the boolean false to any YAML 1.1 tool. Rule 2. |
 | Adding a package for something small | Dependencies are a shared cost. Rule 6. |
 | Regenerating a deck to change one card | 46-line diff for a 1-line fix. Rule 8. |
 | Running `flutter create` and committing the result | Rule 4. |
