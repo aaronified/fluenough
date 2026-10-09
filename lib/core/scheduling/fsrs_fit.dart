@@ -19,7 +19,10 @@ enum FsrsFitOutcome {
   /// alone; w4 to w20 stay at their defaults.
   pretrainOnly,
 
-  /// Enough to train all 21 parameters.
+  /// Enough to train all 21 parameters. In a window (`FsrsFit.fit`'s
+  /// `from`) where no pair's first long-term review survives, there is
+  /// nothing to fit w0 to w3 from: they stay the start's, and w4 to w20
+  /// are trained.
   trained,
 }
 
@@ -32,6 +35,11 @@ enum FsrsFitOutcome {
 /// first rating fewer than 20 pairs share among those that have reached a
 /// first long-term review, and the smallest and the very long first gaps
 /// of the rest, so nothing is fitted until 20 pairs share a first rating.
+///
+/// In a window, a pair whose first long-term review came before it has no
+/// first long-term item, but its later reviews are still items. A window
+/// can therefore hold many items and no surviving first long-term one;
+/// then only w4 to w20 can be fitted, and only with enough to train.
 class FsrsFitGate {
   const FsrsFitGate({
     required this.items,
@@ -60,7 +68,11 @@ class FsrsFitGate {
   FsrsFitOutcome get outcome {
     if (trainItems < 8) return FsrsFitOutcome.defaults;
     if (trainItems == survivingFirstLongTermItems || trainItems < 64) {
-      return FsrsFitOutcome.pretrainOnly;
+      // Nothing to fit the first stabilities from, and too little to
+      // train: only in a window.
+      return survivingFirstLongTermItems == 0
+          ? FsrsFitOutcome.defaults
+          : FsrsFitOutcome.pretrainOnly;
     }
     return FsrsFitOutcome.trained;
   }
@@ -131,6 +143,13 @@ class FsrsFitGate {
 ///   only the first stabilities fitted, the rest are the start's. A refit
 ///   so starts from the last instead of from scratch, and moves from it
 ///   only as far as the new answers argue.
+///
+/// The two meet in one case `fsrs-rs` never sees, since it always has the
+/// whole history: a window holding many reviews but no first long-term
+/// review that survives the outlier filter, such as a learner who has
+/// stopped adding words. `fsrs-rs` would refuse to fit; here w0 to w3 stay
+/// the start's, unchanged through training, and w4 to w20 are trained
+/// ([FsrsFitGate]).
 abstract final class FsrsFit {
   /// Seeds the shuffle of the batch order: `fsrs-rs`'s seed.
   static const int seed = 2023;
@@ -162,7 +181,9 @@ abstract final class FsrsFit {
   /// reviews since the reset, as the scheduler replays it.
   ///
   /// With [from], only the reviews given at or after it are predicted;
-  /// those before still build each pair's history. With [start], 21
+  /// those before still build each pair's history; a window with no
+  /// surviving first long-term review keeps w0 to w3 at [start]'s, or
+  /// FSRS-6's defaults, and trains the rest. With [start], 21
   /// values, fitting starts from them and is pulled towards them instead
   /// of FSRS-6's defaults (see the class), and with
   /// [FsrsFitOutcome.pretrainOnly] w4 to w20 are [start]'s exactly. Throws
@@ -184,7 +205,17 @@ abstract final class FsrsFit {
         : <double>[for (final v in start) _f32(v)];
     final prepared = _Prepared(_items(histories, from));
     final train = prepared.train;
-    if (train.length < 8) return null;
+    if (prepared.gate.outcome == FsrsFitOutcome.defaults) return null;
+    if (prepared.gate.survivingFirstLongTermItems == 0) {
+      // Only in a window, and only when trained (the gate): nothing to fit
+      // the first stabilities from, so they are the start's throughout.
+      final trained = _train(train, base.sublist(0, 4), base, keepFirst: true);
+      if (trained == null) return null;
+      return <double>[
+        ...(start ?? Fsrs.w).sublist(0, 4),
+        for (var i = 4; i < 21; i++) _shortest(trained[i]),
+      ];
+    }
 
     final ratingCount = <int, int>{};
     final pretrained = _pretrain(prepared, ratingCount, base);
@@ -513,11 +544,13 @@ abstract final class FsrsFit {
   // ---------------------------------------------------------------------
   // Training (fsrs-rs training.rs:1245-1419)
 
+  /// With [keepFirst], w0 to w3 are held at [pretrained] throughout.
   static Float32List? _train(
     List<_Item> train,
     List<double> pretrained,
-    List<double> base,
-  ) {
+    List<double> base, {
+    bool keepFirst = false,
+  }) {
     final weights = _recencyWeights(train.length);
     final kept = <(_Item, double)>[
       for (final (i, item) in train.indexed)
@@ -568,6 +601,7 @@ abstract final class FsrsFit {
         }
         adam.step(w, grad, schedule.step());
         _clip(w);
+        if (keepFirst) w.setRange(0, 4, initial);
       }
     }
     for (final v in w) {
@@ -586,25 +620,31 @@ abstract final class FsrsFit {
   }
 
   static final List<(double, double)> _clips = <(double, double)>[
-    for (var i = 0; i < 4; i++) (_sMin, _initSMax),
-    (1, 10),
-    (_f32(0.001), 4),
-    (_f32(0.001), 4),
-    (_f32(0.001), 0.75),
-    (0, 4.5),
-    (0, _f32(0.8)),
-    (_f32(0.001), 3.5),
-    (_f32(0.001), 5),
-    (_f32(0.001), 0.25),
-    (_f32(0.001), _f32(0.9)),
-    (0, 4),
-    (0, 1),
-    (1, 6),
-    (0, 2),
-    (0, 2),
-    (_f32(0.01), _f32(0.8)),
-    (_f32(0.1), _f32(0.8)),
+    for (final (low, high) in _bounds) (_f32(low), _f32(high)),
   ];
+
+  /// What training clips each of w0 to w20 to (fsrs-rs
+  /// parameter_clipper_v6.rs), as decimals.
+  static const List<(double, double)> _bounds = <(double, double)>[
+    (0.0001, 100), (0.0001, 100), (0.0001, 100), (0.0001, 100), //
+    (1, 10), (0.001, 4), (0.001, 4), (0.001, 0.75), (0, 4.5), (0, 0.8),
+    (0.001, 3.5), (0.001, 5), (0.001, 0.25), (0.001, 0.9), (0, 4), (0, 1),
+    (1, 6), (0, 2), (0, 2), (0.01, 0.8), (0.1, 0.8),
+  ];
+
+  /// Whether [w] is 21 values, each within what training clips it to:
+  /// what a fit, or FSRS-6's defaults, can be. A set outside them, such
+  /// as one with w20 at 0, can make the scheduler divide by zero.
+  static bool isPlausible(List<double> w) {
+    if (w.length != _bounds.length) return false;
+    for (final (i, v) in w.indexed) {
+      final (low, high) = _bounds[i];
+      // A fit stores the shortest decimal of a 32-bit float, which may
+      // lie a hair outside the decimal bound the float was clipped to.
+      if (!(v >= low * (1 - 1e-6) && v <= high * (1 + 1e-6))) return false;
+    }
+    return true;
+  }
 
   // ---------------------------------------------------------------------
   // Output

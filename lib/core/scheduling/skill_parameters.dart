@@ -89,7 +89,10 @@ class FittedParameters {
 /// 1. the skill's own fit in the pair's language;
 /// 2. else that skill's fit in the language most recently studied, by its
 ///    last review, of those that have one: "the fit on one language should
-///    be used as the baseline on the next language";
+///    be used as the baseline on the next language". A set that is
+///    FSRS-6's defaults is not one: a first fit that lost before any
+///    language had a fit stores them, and a baseline of them would hide a
+///    real fit in a language studied less recently;
 /// 3. else FSRS-6's defaults.
 ///
 /// Immutable. The baseline moves when another language becomes the one
@@ -103,7 +106,8 @@ class SkillParameters {
     Map<String, DateTime> lastStudied = const <String, DateTime>{},
   }) : fitted = Map<SkillKey, FittedParameters>.unmodifiable(fitted),
        lastStudied = Map<String, DateTime>.unmodifiable(lastStudied) {
-    for (final key in this.fitted.keys) {
+    for (final MapEntry(:key, :value) in this.fitted.entries) {
+      if (_isDefaults(value.values)) continue;
       final current = _baseline[key.mode];
       if (current == null || _isLater(key.language, current)) {
         _baseline[key.mode] = key.language;
@@ -122,6 +126,13 @@ class SkillParameters {
 
   /// For each mode, the language whose fit a language without one uses.
   final Map<DrillMode, String> _baseline = <DrillMode, String>{};
+
+  static bool _isDefaults(List<double> values) {
+    for (var i = 0; i < Fsrs.w.length; i++) {
+      if (values[i] != Fsrs.w[i]) return false;
+    }
+    return true;
+  }
 
   /// Whether [a] was studied after [b], ties by code, so that the choice
   /// never depends on the order of a map.

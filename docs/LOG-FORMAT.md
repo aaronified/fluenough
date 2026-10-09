@@ -72,7 +72,7 @@ from the language most recently studied, else FSRS-6's defaults.
 | `ts` | yes | When the fit ran: ISO 8601, in UTC. |
 | `language` | yes | The language learned, as card ids name it: `hi` for `hi-0231`. |
 | `mode` | yes | The skill, as for a review. |
-| `w` | yes | FSRS-6's 21 parameters, w0 to w20, in use for the skill from that fit on. |
+| `w` | yes | FSRS-6's 21 parameters, w0 to w20, in use for the skill from that fit on. Each must lie within the range fitting clips it to (`FsrsFit.isPlausible`): w20 from 0.1 to 0.8, for example. A set outside them refuses the file. |
 | `reviews` | yes | The skill's reviews in the language when it was fitted. The automatic refit waits for 10% more. |
 | `loss_before`, `loss_after` | no | The log loss, on the fit's window, of the set in use before and of the set the fit gave. The fitted set was kept when `loss_after` is lower; otherwise `w` is the set that was already in use. |
 

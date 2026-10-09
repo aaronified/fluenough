@@ -57,6 +57,42 @@ void main() {
       expect(p.of('te', write), Fsrs.w, reason: 'no Write fit anywhere');
     });
 
+    test('a fit that lost and kept the defaults is no baseline', () {
+      // bn, studied last, was fitted first, lost, and so stores FSRS-6's
+      // defaults; hi was fitted after and kept a set of its own.
+      final bnLost = FittedParameters(
+        values: Fsrs.w,
+        fittedAt: monday,
+        reviewCount: 500,
+        lossBefore: 0.30,
+        lossAfter: 0.31,
+      );
+      final hi = fitWith(5, at: tuesday);
+      final p = SkillParameters(
+        fitted: {
+          (language: 'bn', mode: hear): bnLost,
+          (language: 'hi', mode: hear): hi,
+        },
+        lastStudied: {'hi': monday, 'bn': tuesday},
+      );
+      expect(p.sourceOf('te', hear), 'hi');
+      expect(p.of('te', hear), hi.values);
+      expect(p.of('bn', hear), Fsrs.w, reason: 'its own set comes first');
+      // A lost fit that kept a real set is still a baseline.
+      final bnCopy = p.withFit(
+        (language: 'bn', mode: hear),
+        FittedParameters(
+          values: fitWith(7).values,
+          fittedAt: wednesday,
+          reviewCount: 600,
+          lossBefore: 0.30,
+          lossAfter: 0.31,
+        ),
+      );
+      expect(bnCopy.sourceOf('te', hear), 'bn');
+      expect(bnCopy.sameAs(p), isFalse);
+    });
+
     test('studying another language moves the baseline, and says so', () {
       final p = SkillParameters(
         fitted: {
