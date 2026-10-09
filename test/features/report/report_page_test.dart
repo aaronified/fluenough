@@ -246,8 +246,14 @@ void main() {
       state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.reportPublic), findsOneWidget);
     expect(find.text(contextLines(device)), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text(l10n.reportEditable),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text(l10n.reportPublic), findsOneWidget);
+    expect(find.text(l10n.reportPrivate), findsNothing);
 
     await tapInList(tester, find.text(l10n.reportSend));
     expect(find.text(l10n.reportTitleMissing), findsOneWidget);
@@ -266,6 +272,11 @@ void main() {
     expect(report.kind, ReportKind.bug);
     expect(report.subject, '[Fluenough] Bug: The card shows twice');
     expect(report.details, 'After Check');
+    expect(report.prompts, <String>[
+      l10n.reportPromptBugSteps,
+      l10n.reportPromptBugExpected,
+    ]);
+    expect(report.files, isEmpty);
     expect(report.context, <String, String>{
       'Screen': '/deck',
       'Showing': 'hi-en-market',
@@ -286,7 +297,8 @@ void main() {
       state: AppState.test(reports: reports, features: withMail),
     );
     final l10n = l10nOf(tester);
-    await tester.tap(find.text(l10n.reportKindFeature));
+    await tester.tap(find.text(l10n.reportKindFeedback));
+    await tester.pumpAndSettle();
     await tester.enterText(
       find.widgetWithText(TextField, l10n.reportTitleLabel),
       'Dark cards',
@@ -294,8 +306,54 @@ void main() {
     await tapInList(tester, find.text(l10n.reportDeviceInfo));
     await tapInList(tester, find.text(l10n.reportSend));
     final report = reports.sent.single;
-    expect(report.kind, ReportKind.feature);
+    expect(report.kind, ReportKind.feedback);
+    expect(report.subject, '[Fluenough] Feedback: Dark cards');
+    expect(report.prompts, <String>[l10n.reportPromptFeedbackWhy]);
     expect(report.context, <String, String>{'Screen': '/', ...device});
+  });
+
+  testWidgets('three kinds, bug chosen to begin with; support says it stays '
+      'private, and has its own hint and questions', (tester) async {
+    usePhone(tester);
+    final reports = FakeReportSender();
+    await pumpScreen(
+      tester,
+      const ReportPage(request: ReportRequest(screen: '/')),
+      state: AppState.test(reports: reports, features: withMail),
+    );
+    final l10n = l10nOf(tester);
+    for (final kind in ReportKind.values) {
+      expect(find.text(kind.title(l10n)), findsOneWidget);
+      expect(find.text(kind.description(l10n)), findsOneWidget);
+    }
+    expect(
+      tester
+          .widget<RadioGroup<ReportKind>>(find.byType(RadioGroup<ReportKind>))
+          .groupValue,
+      ReportKind.bug,
+    );
+    expect(find.text(l10n.reportDetailsHintBug), findsOneWidget);
+    await tester.tap(find.text(l10n.reportKindSupport));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reportDetailsHintSupport), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text(l10n.reportEditable),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text(l10n.reportPrivate), findsOneWidget);
+    expect(find.text(l10n.reportPublic), findsNothing);
+
+    await tester.enterText(
+      find.widgetWithText(TextField, l10n.reportTitleLabel),
+      'No sound',
+    );
+    await tapInList(tester, find.text(l10n.reportSend));
+    final report = reports.sent.single;
+    expect(report.kind, ReportKind.support);
+    expect(report.subject, '[Fluenough] Support: No sound');
+    expect(report.prompts, <String>[l10n.reportPromptSupportTried]);
+    expect(report.body, contains('Kind: Support'));
   });
 
   testWidgets('no mail app, or no address, says why; Send works again', (
