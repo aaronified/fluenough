@@ -88,7 +88,8 @@ class WaitingLanguage {
   final List<WaitingCard> unrated;
 
   /// Words like a rude one, in decks not yet signed off, whose pair this
-  /// reviewer has not confirmed or rejected.
+  /// reviewer has not confirmed or rejected: none without adult content,
+  /// which hides the pair, so that a deck's cards left agree.
   final List<WaitingCard> unconfirmed;
 
   /// Its decks this reviewer has reviewed and not sent.
@@ -153,7 +154,11 @@ WaitingLanguage waitingIn(
       if (isRudeIn(deck, card) && review?.rating == null) {
         unrated.add((deck: deck, card: card));
       }
-      if (review?.alike == null && rudeAlikesOf(state, card).isNotEmpty) {
+      // As [cardChecked]: a pair is confirmed only where adult content
+      // shows it, so without, it is not waiting.
+      if (shows &&
+          review?.alike == null &&
+          rudeAlikesOf(state, card).isNotEmpty) {
         unconfirmed.add((deck: deck, card: card));
       }
     }
