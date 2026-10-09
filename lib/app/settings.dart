@@ -106,6 +106,8 @@ class SettingsNotifier extends ChangeNotifier {
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
+  Map<String, ({String native, Set<String> offered})> _courseNatives =
+      const <String, ({String native, Set<String> offered})>{};
 
   /// When a lesson in [language] was last finished (ADR-0024), so that
   /// Today offers the day's lesson, then "Another lesson". Like
@@ -196,6 +198,38 @@ class SettingsNotifier extends ChangeNotifier {
     allowed ? next.add(code) : next.remove(code);
     if (setEquals(next, _speechOnline)) return;
     _speechOnline = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The native language the learner chose to learn [language] from, by
+  /// code, or null if they have not chosen (ADR-0036). Kept per course,
+  /// with the native languages offered when they chose, so that a native
+  /// language that starts teaching the course later is asked about once.
+  String? courseNative(String language) => _courseNatives[language]?.native;
+
+  /// The native languages offered when the learner chose [language]'s.
+  Set<String> nativesOffered(String language) =>
+      _courseNatives[language]?.offered ?? const <String>{};
+
+  /// Records that [language] is learned from [native], chosen among
+  /// [offered].
+  void setCourseNative(
+    String language,
+    String native, {
+    Iterable<String> offered = const <String>[],
+  }) {
+    final next = Set<String>.unmodifiable(<String>{...offered, native});
+    final now = _courseNatives[language];
+    if (now != null && now.native == native && setEquals(now.offered, next)) {
+      return;
+    }
+    _courseNatives =
+        Map<String, ({String native, Set<String> offered})>.unmodifiable(
+          <String, ({String native, Set<String> offered})>{
+            ..._courseNatives,
+            language: (native: native, offered: next),
+          },
+        );
     notifyListeners();
   }
 
@@ -498,6 +532,13 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _lessonsDone.entries)
         key: value.millisecondsSinceEpoch,
     }),
+    'course_natives': jsonEncode(<String, Object>{
+      for (final MapEntry(:key, :value) in _courseNatives.entries)
+        key: <String, Object>{
+          'native': value.native,
+          'offered': value.offered.toList()..sort(),
+        },
+    }),
   };
 
   /// Applies [stored], as [toStored] wrote it, through the setters, so that
@@ -631,6 +672,24 @@ class SettingsNotifier extends ChangeNotifier {
             foundSpeech(code, unsupported: unsupported);
           }
         }
+      }
+    }
+    if (pick('course_natives', _parseJsonMap) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!code.hasMatch(key) || value is! Map) continue;
+        final native = value['native'];
+        final offered = value['offered'];
+        if (native is! String || !code.hasMatch(native)) continue;
+        setCourseNative(
+          key,
+          native,
+          offered: <String>[
+            if (offered is List)
+              for (final c in offered)
+                if (c is String && code.hasMatch(c)) c,
+          ],
+        );
       }
     }
     if (pick('placed_decks', (t) => t) case final v?) {

@@ -3219,6 +3219,74 @@
   "@learnLoading": {
     "description": "Screen-reader label while the courses load on the choose-what-to-learn screen."
   },
+  "nativeChoiceTitle": "Learn {language} from",
+  "@nativeChoiceTitle": {
+    "description": "Title of the question, and of the Settings row, choosing which of the languages the learner speaks a course is taught from (ADR-0036). Followed by the choices, each a language name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceBody": "{language} is taught from more than one of the languages you speak. Each teaches its own share of the course so far; a part not yet written in yours shows as Coming. You can change this in Settings, and keep what you have learned.",
+  "@nativeChoiceBody": {
+    "description": "Under the question choosing which language a course is taught from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceCoverage": "{covered} of {total, plural, =1{1 unit} other{{total} units}} so far",
+  "@nativeChoiceCoverage": {
+    "description": "Under a language a course can be taught from: how many of the course's written units it teaches yet.",
+    "placeholders": {
+      "covered": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "34"
+      }
+    }
+  },
+  "nativeChoiceCoverageAll": "{total, plural, =1{The whole unit} other{All {total} units}}",
+  "@nativeChoiceCoverageAll": {
+    "description": "Under a language a course can be taught from, when it teaches every written unit of the course.",
+    "placeholders": {
+      "total": {
+        "type": "int",
+        "example": "34"
+      }
+    }
+  },
+  "nativeChoiceGroup": "Languages to learn {language} from",
+  "@nativeChoiceGroup": {
+    "description": "Screen-reader label of the group of choices.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceNew": "{language} is now taught from more of the languages you speak",
+  "@nativeChoiceNew": {
+    "description": "Today: a card shown once a language the learner speaks starts teaching a course they learn, until they choose which to learn from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceChoose": "Choose",
+  "@nativeChoiceChoose": {
+    "description": "Button on the Today card that opens the choice of which language a course is taught from."
+  },
   "alphabetAskTitle": "Learn the {language} alphabet?",
   "@alphabetAskTitle": {
     "description": "Asked for each language chosen to learn whose course has script decks, before placement.",
