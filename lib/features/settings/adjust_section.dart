@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/routes.dart';
 import '../../app/skill.dart';
 import '../../core/scheduling/skill_fit.dart';
 import '../../l10n/app_localizations.dart';
@@ -150,7 +151,7 @@ String _languageName(AppState state, String code) {
 /// "Adjusted to you": every skill a fit looked at, what changed for it or
 /// that it is not adjusted yet, in the languages the profile learns (all,
 /// when it learns none of them), with a heading per language when there
-/// are several.
+/// are several. "How you learn" leaves the sheet for that page.
 Future<void> showAdjustedSheet(
   BuildContext context,
   AppState state,
@@ -239,12 +240,22 @@ Future<void> showAdjustedSheet(
                 ],
               ),
               const SizedBox(height: 12),
-              Align(
-                alignment: AlignmentDirectional.centerEnd,
-                child: FilledButton(
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: Text(l10n.commonDone),
-                ),
+              Wrap(
+                alignment: WrapAlignment.end,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 8,
+                runSpacing: 8,
+                children: <Widget>[
+                  TextButton(
+                    onPressed: () =>
+                        AppNavigator.openHowYouLearn(context, replacing: true),
+                    child: Text(l10n.howYouLearnTitle),
+                  ),
+                  FilledButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: Text(l10n.commonDone),
+                  ),
+                ],
               ),
             ],
           ),
