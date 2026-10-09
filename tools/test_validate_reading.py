@@ -222,12 +222,12 @@ cards:
   - { id: bn-9002, target: "ভাত খায়", native: "eats rice", reading: "bhat khay" }
 """
 
-    def course(self, units: str = "  - [bn-en-market]\n  - [bn-en-reading-probe]\n"
+    def course(self, units: str = "  - [bn-market]\n  - [bn-reading-probe]\n"
                ) -> list[validate_decks.Report]:
         themes = self.write("schema: 1\nkind: themes\nthemes:\n"
                             "  - { id: market, name: \"Market\" }\n", "themes.yaml")
-        path = self.write("schema: 1\nkind: path\nid: bn-en-path\nlanguage: bn\n"
-                          f"native: en\nunits:\n{units}", "bn-en-path.yaml")
+        path = self.write("schema: 1\nkind: path\nid: bn-path\nlanguage: bn\n"
+                          f"units:\n{units}", "bn-path.yaml")
         words = self.write(self.WORDS, "bn-en-market.yaml")
         return [themes, path, words, self.write(deck())]
 
@@ -257,7 +257,7 @@ cards:
                             for p in problems), problems)
 
     def test_a_passage_comes_after_its_theme_on_the_path(self) -> None:
-        reports = self.course("  - [bn-en-reading-probe, bn-en-market]\n")
+        reports = self.course("  - [bn-reading-probe, bn-market]\n")
         validate_decks.check_reading_across(reports)
         self.assertTrue(any("put it in a later unit" in w for w in reports[-1].warnings),
                         reports[-1].warnings)

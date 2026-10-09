@@ -1338,10 +1338,23 @@ void main() {
     });
   });
 
-  group('the B1 plan in a path (9.5, 10)', () {
-    final path = parseCoursePath(read('$appendix/zz-en-path.yaml'));
+  group('the language\'s path and its B1 plan (9.5, 10)', () {
+    final language = parseLanguagePath(read('$appendix/zz-path.yaml'));
+    final path = language.forNative('en', exists: (_) => true);
 
-    test('Appendix A\'s plan', () {
+    test('Appendix A\'s plan, by core id', () {
+      expect(language.id, 'zz-path');
+      expect(language.plan.first.decks, ['zz-home']);
+      expect(language.plan[2].planned!.id, 'zz-health');
+      expect(language.regions.map((r) => r.id), [
+        'telangana',
+        'coastal-andhra',
+        'rayalaseema',
+      ]);
+      expect(language.regions[1].nameIn('bn'), 'Coastal Andhra');
+    });
+
+    test('Appendix A\'s plan, as learners from English are taught it', () {
       expect(path.units, [
         ['zz-en-home'],
         ['zz-en-grammar-case-endings'],
@@ -1356,14 +1369,18 @@ void main() {
       expect(path.plan[1].words, isNull);
       final planned = path.plan[2];
       expect(planned.isPlanned, isTrue);
+      expect(planned.isComing, isTrue);
       expect(planned.decks, isEmpty);
-      expect(planned.planned!.id, 'zz-en-health');
+      expect(planned.planned!.id, 'zz-health');
       expect(planned.planned!.theme, 'health');
       expect(planned.words, 60);
-      expect(planned.listeningPassages, [
+      expect(planned.listeningPassages.single.id, 'doctor-call');
+      expect(
+        planned.listeningPassages.single.textIn('en'),
         "Booking a doctor's appointment by phone",
-      ]);
-      expect(planned.readingPassages, ['A notice at the clinic']);
+      );
+      expect(planned.listeningPassages.single.textIn('bn'), isNull);
+      expect(planned.readingPassages.single.id, 'clinic-notice');
       expect(path.milestoneIndex(Milestone.a1), 0);
       expect(path.milestoneIndex(Milestone.a2), 1);
       expect(path.milestoneIndex(Milestone.b1), 2);
@@ -1372,19 +1389,39 @@ void main() {
       expect(path.placing(const [], (_) => null).plan, same(path.plan));
     });
 
+    test('every native language reads the same plan', () {
+      final fromBengali = language.forNative(
+        'bn',
+        exists: (id) => id == 'zz-bn-home',
+      );
+      expect(fromBengali.units, [
+        ['zz-bn-home'],
+      ]);
+      expect(fromBengali.plan[1].isComing, isTrue);
+      expect(fromBengali.plan[1].decks, isEmpty);
+      for (final p in <CoursePath>[path, fromBengali]) {
+        expect(p.hasB1Plan, language.hasB1Plan);
+        expect(p.grammarTopics, language.grammarTopics);
+        expect(p.plannedWords, language.plannedWords);
+        expect(p.milestoneIndex(Milestone.b1), 2);
+      }
+    });
+
     String pathOf(String units) => '''
 schema: 1
 kind: "path"
-id: "zz-en-path"
+id: "zz-path"
 language: "zz"
-native: "en"
-alphabet: ["zz-en-script"]
+alphabet: ["zz-script"]
 units:
 $units''';
 
+    CoursePath english(String text) =>
+        parseLanguagePath(text).forNative('en', exists: (_) => true);
+
     test('a path of lists has no plan, and reads as it always did', () {
-      final lists = parseCoursePath(
-        pathOf('  - ["zz-en-script"]\n  - ["zz-en-home", "*"]\n  - ["*"]\n'),
+      final lists = english(
+        pathOf('  - ["zz-script"]\n  - ["zz-home", "*"]\n  - ["*"]\n'),
       );
       expect(lists.hasB1Plan, isFalse);
       expect(lists.units, [
@@ -1404,15 +1441,17 @@ $units''';
     });
 
     test('mapping and planned units beside list units', () {
-      final mixed = parseCoursePath(
+      final mixed = english(
         pathOf('''
-  - ["zz-en-script"]
-  - planned: { id: "zz-en-grammar-conditional", grammar: "conditional" }
-    listening_passages: ["Plans if it rains"]
-    reading_passages: ["A message: if the train is late"]
-  - decks: ["zz-en-grammar-differences"]
+  - ["zz-script"]
+  - planned: { id: "zz-grammar-conditional", grammar: "conditional" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "Plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
+  - decks: ["zz-grammar-differences"]
     words: 0
-  - decks: ["zz-en-home", "*"]
+  - decks: ["zz-home", "*"]
     words: 45
     grammar: "be"
     milestone: "A1"
@@ -1441,114 +1480,215 @@ $units''';
 
     test('a malformed unit is refused', () {
       const passages =
-          '    listening_passages: ["x"]\n    reading_passages: ["y"]\n';
+          '    listening_passages: [{ id: "x", text: { "en": "x" } }]\n'
+          '    reading_passages: [{ id: "y", text: { "en": "y" } }]\n';
       for (final (units, why) in <(String, String)>[
         (
-          '  - decks: ["zz-en-home"]\n    size: 4\n',
+          '  - decks: ["zz-home"]\n    size: 4\n',
           'units[0]: unknown field "size" in a unit',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    planned: { id: "zz-en-x", theme: "x", '
+          '  - decks: ["zz-home"]\n    planned: { id: "zz-x", theme: "x", '
               'words: 1 }\n',
           'units[0] has decks or planned, not both',
         ),
         ('  - words: 4\n', 'units[0] has neither decks nor planned'),
-        ('  - "zz-en-home"\n', 'non-empty list of deck ids'),
+        ('  - "zz-home"\n', 'a list of core ids, or a mapping'),
         (
-          '  - decks: ["zz-en-home"]\n    words: -1\n',
+          '  - decks: ["zz-en-home", "yy-home"]\n',
+          '"yy-home" is not a core id of zz',
+        ),
+        (
+          '  - decks: ["zz-home"]\n    words: -1\n',
           'units[0].words must be a whole number of words, 0 or more, got "-1"',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    words: true\n',
+          '  - decks: ["zz-home"]\n    words: true\n',
           'units[0].words must be a whole number of words',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    words: 1_000\n',
+          '  - decks: ["zz-home"]\n    words: 1_000\n',
           'units[0].words must be a whole number of words',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    words: 4.5\n',
+          '  - decks: ["zz-home"]\n    words: 4.5\n',
           'units[0].words must be a whole number of words',
         ),
         (
-          '  - planned: { id: "zz-en-health", theme: "health", words: 0 }\n'
+          '  - planned: { id: "zz-health", theme: "health", words: 0 }\n'
               '$passages',
           'units[0].words must be a whole number of words, 1 or more',
         ),
         (
-          '  - planned: { id: "zz-en-health", theme: "health", words: 6 }\n'
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n'
               '    words: 6\n$passages',
           'units[0]: words is given both in planned and beside it',
         ),
         (
-          '  - planned: { id: "zz-en-health", theme: "health" }\n$passages',
+          '  - planned: { id: "zz-health", theme: "health" }\n$passages',
           'units[0].planned: a planned theme unit gives its size in words',
         ),
         (
-          '  - planned: { id: "zz-en-health", theme: "health", words: 6 }\n',
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n',
           'units[0]: a planned unit names its listening_passages and its '
               'reading_passages',
         ),
         (
-          '  - planned: { id: "zz-en-health", theme: "health", words: 6 }\n'
-              '    listening_passages: []\n    reading_passages: ["y"]\n',
-          'units[0].listening_passages must be a non-empty list of short '
-              'descriptions',
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n'
+              '    listening_passages: []\n'
+              '    reading_passages: [{ id: "y", text: { "en": "y" } }]\n',
+          'units[0].listening_passages must be a non-empty list of passages, '
+              'each { id, text }',
+        ),
+        (
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n'
+              '    listening_passages: ["Booking a doctor"]\n'
+              '    reading_passages: [{ id: "y", text: { "en": "y" } }]\n',
+          'units[0].listening_passages must be a non-empty list of passages',
+        ),
+        (
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n'
+              '    listening_passages: [{ id: "x", text: { "en": "x" } }]\n'
+              '    reading_passages: [{ id: "x", text: { "en": "y" } }]\n',
+          'units[0].reading_passages[0]: passage "x" is also earlier in this '
+              'unit',
+        ),
+        (
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n'
+              '    listening_passages: [{ id: "x", text: "Booking" }]\n'
+              '    reading_passages: [{ id: "y", text: { "en": "y" } }]\n',
+          'units[0].listening_passages[0].text must be a mapping of a native '
+              'language\'s code to the passage\'s description',
+        ),
+        (
+          '  - planned: { id: "zz-health", theme: "health", words: 6 }\n'
+              '    listening_passages: [{ id: "Doctor Call", text: { "en": "x" } }]\n'
+              '    reading_passages: [{ id: "y", text: { "en": "y" } }]\n',
+          'units[0].listening_passages[0]: id must match [a-z0-9-]+',
         ),
         (
           '  - planned: { id: "bn-en-health", theme: "health", words: 6 }\n'
               '$passages',
-          'units[0].planned.id must be a deck id starting with zz-en-, the '
-              'course, got "bn-en-health"',
+          'units[0].planned.id must be a core id of zz, zz- and a name, such '
+              'as zz-health, got "bn-en-health"',
         ),
         (
-          '  - planned: { id: "zz-en-x", theme: "x", grammar: "y", words: 6 }\n'
+          '  - planned: { id: "zz-x", theme: "x", grammar: "y", words: 6 }\n'
               '$passages',
           'units[0].planned names theme or grammar, not both',
         ),
         (
-          '  - planned: { id: "zz-en-x", words: 6 }\n$passages',
+          '  - planned: { id: "zz-x", words: 6 }\n$passages',
           'units[0].planned needs a theme or a grammar topic',
         ),
         (
-          '  - planned: { id: "zz-en-x", theme: "x", size: 6 }\n$passages',
+          '  - planned: { id: "zz-x", theme: "x", size: 6 }\n$passages',
           'units[0].planned: unknown field "size"',
         ),
         (
-          '  - planned: "zz-en-x"\n$passages',
+          '  - planned: "zz-x"\n$passages',
           'units[0].planned must be a mapping with id, and theme or grammar',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    grammar: ["Past"]\n',
+          '  - decks: ["zz-home"]\n    grammar: ["Past"]\n',
           'units[0].grammar must be a grammar topic id or a list of them, '
               'such as ["past"], got "Past"',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    grammar: ["be", "be"]\n',
+          '  - decks: ["zz-home"]\n    grammar: ["be", "be"]\n',
           'units[0].grammar: "be" is listed twice',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    milestone: "C1"\n',
+          '  - decks: ["zz-home"]\n    milestone: "C1"\n',
           'units[0].milestone must be "A1", "A2" or "B1", got "C1"',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    milestone: "A1"\n'
-              '  - decks: ["zz-en-food"]\n    milestone: "A1"\n',
+          '  - decks: ["zz-home"]\n    milestone: "A1"\n'
+              '  - decks: ["zz-food"]\n    milestone: "A1"\n',
           'units[1]: milestone "A1" is already on units[0]',
         ),
         (
-          '  - decks: ["zz-en-home"]\n    milestone: "A2"\n'
-              '  - decks: ["zz-en-food"]\n    milestone: "A1"\n',
+          '  - decks: ["zz-home"]\n    milestone: "A2"\n'
+              '  - decks: ["zz-food"]\n    milestone: "A1"\n',
           'units: the B1 plan needs the milestones A1, A2 and B1, each once '
               'and in that order; found A2, A1',
         ),
         (
-          '  - decks: ["zz-en-home"]\n  - ["zz-en-home"]\n',
-          'deck "zz-en-home" is listed twice',
+          '  - decks: ["zz-home"]\n  - ["zz-home"]\n',
+          'units[1]: "zz-home" is listed twice',
         ),
       ]) {
-        expect(() => parseCoursePath(pathOf(units)), fails(why), reason: why);
+        expect(() => parseLanguagePath(pathOf(units)), fails(why), reason: why);
       }
+    });
+
+    test('regions are read, and a malformed one is refused', () {
+      String withRegions(String regions) =>
+          pathOf('  - ["zz-script"]\n')
+              .replaceFirst('units:', '$regions\nunits:');
+      final read = parseLanguagePath(
+        withRegions(
+          'regions:\n'
+          '  - { id: "rarhi", name: { "en": "Rāṛhī (west-central)", '
+          '"bn": "রাঢ়ী (rāṛhī)" } }',
+        ),
+      );
+      expect(read.regions.single.id, 'rarhi');
+      expect(read.regions.single.nameIn('bn'), 'রাঢ়ী (rāṛhī)');
+      expect(read.regions.single.nameIn('hi'), 'Rāṛhī (west-central)');
+      for (final (regions, why) in <(String, String)>[
+        ('regions: []', 'regions must be a non-empty list of regions'),
+        ('regions: ["telangana"]', 'regions[0] must be a mapping'),
+        (
+          'regions:\n  - { id: "telangana", name: { "en": "T" }, capital: "x" }',
+          'regions[0]: unknown field "capital"',
+        ),
+        (
+          'regions:\n  - { id: "Telangana", name: { "en": "T" } }',
+          'regions[0].id must start with a letter',
+        ),
+        (
+          'regions:\n  - { id: "no", name: { "en": "T" } }',
+          'not be a YAML 1.1 boolean word, got "no"',
+        ),
+        (
+          'regions:\n  - { id: "elsewhere", name: { "en": "T" } }',
+          "elsewhere is the app's own answer",
+        ),
+        (
+          'regions:\n  - { id: "a", name: { "en": "A" } }\n'
+              '  - { id: "a", name: { "en": "B" } }',
+          'regions[1].id: "a" is used twice',
+        ),
+        (
+          'regions:\n  - { id: "a", name: "A" }',
+          'regions[0].name must be a mapping of a language code',
+        ),
+        (
+          'regions:\n  - { id: "a", name: { "bn": "এ (ē)" } }',
+          'regions[0].name has no "en"',
+        ),
+        (
+          'regions:\n  - { id: "a", name: { "English": "A" } }',
+          'regions[0].name: "English" is not a language code',
+        ),
+      ]) {
+        expect(
+          () => parseLanguagePath(withRegions(regions)),
+          fails(why),
+          reason: why,
+        );
+      }
+    });
+
+    test('a path in the per-course form is refused', () {
+      expect(
+        () => parseLanguagePath(
+          pathOf('  - ["zz-en-home"]\n')
+              .replaceFirst('language: "zz"', 'language: "zz"\nnative: "en"'),
+        ),
+        fails('a path is one per language learnt'),
+      );
     });
   });
 

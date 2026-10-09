@@ -1,0 +1,55 @@
+# The order Telugu is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught te-en-home for te-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Telugu grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Telugu is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: te-path
+language: te
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - te-script-vowels
+  - te-script-consonants
+  - te-script-reading
+  - te-script-vowel-signs
+  - te-script-conjuncts
+  - te-spelling
+  - te-reading-diddubatu
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [te-first-words, te-grammar-sentences, "*"]
+  - [te-sound-differences]
+  - [te-grammar-differences]
+  - [te-questions, te-grammar-questions, "*"]
+  - [te-addressing, te-grammar-pronouns, "*"]
+  - [te-about-me, "*"]
+  - [te-family, te-grammar-be, "*"]
+  - [te-work, te-grammar-demonstratives, "*"]
+  - [te-script-vowels, te-script-consonants, te-script-reading]
+  - [te-script-vowel-signs, te-script-conjuncts]
+  - [te-numbers-1-20, "*"]
+  - [te-numbers-big, "*"]
+  - [te-market, te-grammar-nouns, te-grammar-articles, "*"]
+  - [te-groceries, te-grammar-gender-number, te-grammar-needs, "*"]
+  - [te-transport, te-grammar-postpositions, "*"]
+  - [te-directions, te-grammar-continuous, "*"]
+  - [te-home, te-grammar-adjectives, "*"]
+  - [te-time, te-grammar-future, "*"]
+  - [te-daily-life, te-grammar-negative, "*"]
+  - [te-calendar, te-grammar-past, "*"]
+  - [te-grammar-past-more, te-grammar-conjunct-verbs]
+  - [te-grammar-compound-verbs]
+  - [te-eating-out, te-grammar-conjunctions, te-grammar-likes, "*"]
+  - [te-help, te-grammar-irregular, te-grammar-pitfalls, "*"]
+  - [te-registers]
+  - [te-slang]
+  - [te-grammar-can-must]
+  - [te-spelling]
+  - [te-reading-diddubatu]
+  - ["*"]

@@ -34,7 +34,7 @@ CORE = "zz-home.yaml"
 LAYER = "en/zz-en-home.yaml"
 RULES = "zz-grammar-case-endings.yaml"
 RULES_LAYER = "en/zz-en-grammar-case-endings.yaml"
-PATH = "zz-en-path.yaml"
+PATH = "zz-path.yaml"
 EXTRA = "zz-en-extra.yaml"
 
 LANGUAGE = {"code": "zz", "iso639_3": "zzz", "name": "Testlang", "script": "telugu",
@@ -43,6 +43,12 @@ NATIVES = {"en": {"code": "en", "iso639_3": "eng", "name": "English"},
            "bn": {"code": "bn", "iso639_3": "ben", "name": "Bengali"}}
 CAT = {"id": "zz-9501", "target": "పిల్లి", "reading": "pilli", "native": "cat",
        "pos": "noun"}
+# A Bengali layer of the fixture's core: a second course of the language.
+BENGALI_HOME = {"schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
+                "native": dict(NATIVES["bn"]), "name": "বাড়ি (bāṛi)",
+                "license": "CC0-1.0",
+                "cards": {"zz-9004": {"native": "মা (mā)",
+                                      "notes": {"address": "আদর (ādar)."}}}}
 
 
 def load(path: Path) -> object:
@@ -512,7 +518,7 @@ class LayerHeader(B1Case):
             "Zz Home": "must be the id of a core file, such as 'te-home', got 'Zz Home'",
             "zz-nothing": f"no core file zz-nothing.yaml in {self.dir}; a layer's core is "
                           f"in the folder above it",
-            "zz-en-path": 'zz-en-path.yaml is not a core: it has no part: "core"',
+            "zz-path": 'zz-path.yaml is not a core: it has no part: "core"',
         }
         for core, msg in cases.items():
             with self.subTest(core):
@@ -723,8 +729,8 @@ class LayersAcross(B1Case):
         self.in_repository()
         self.assertNotAcross("has no path", LAYER)
         self.p(PATH).unlink()
-        self.assertAcross(f"{self.p(LAYER)}: zz from en has no path; add zz-en-path.yaml "
-                          f"beside its decks", LAYER)
+        self.assertAcross(f"{self.p(LAYER)}: zz has no path; add zz-path.yaml in "
+                          f"decks/zz/", LAYER)
 
     def test_a_core_no_layer_names_is_warned_of(self) -> None:
         self.assertEqual(self.section(self.run_main(CORE), CORE), [])
@@ -732,19 +738,24 @@ class LayersAcross(B1Case):
         self.assertWarned(CORE, "root", "no layer names this core, so no learner is "
                                         "taught it", CORE)
 
-    def test_every_layer_of_the_course_is_on_its_path(self) -> None:
-        self.edit(PATH, lambda d: d["units"][0].update(decks=["zz-en-extra"]))
+    def test_every_layer_of_the_language_is_on_its_path(self) -> None:
+        self.edit(PATH, lambda d: d["units"][0].update(decks=["zz-extra"]))
         self.put(EXTRA, single())
-        self.assertAcross(f"{self.p(PATH)}: does not list 'zz-en-home'; every deck of zz "
-                          f"from en is on its path")
+        self.assertAcross(f"{self.p(PATH)}: units: does not list 'zz-home', the core id of "
+                          f"zz-en-home; every deck of zz is on its path")
+
+    def test_a_layer_of_a_second_native_language_is_on_it_through_its_core(self) -> None:
+        self.put("bn/zz-bn-home.yaml", BENGALI_HOME)
+        self.assertNotAcross("does not list")
+        self.assertNotAcross("which is no deck")
 
     def test_a_layer_whose_core_has_a_theme_is_a_theme_deck(self) -> None:
         self.put("../themes.yaml", {"schema": 1, "kind": "themes",
                                     "themes": [{"id": "home", "name": "Home"},
                                                {"id": "health", "name": "Health"}]})
-        self.edit(PATH, lambda d: d["units"][0].update(decks=["zz-en-home", "*"]))
+        self.edit(PATH, lambda d: d["units"][0].update(decks=["zz-home", "*"]))
         files = (CORE, LAYER, RULES, RULES_LAYER, PATH, "../themes.yaml")
-        self.assertAcross(f"{self.p(PATH)}: the unit [zz-en-home] ends in '*' but has no "
+        self.assertAcross(f"{self.p(PATH)}: the unit [zz-home] ends in '*' but has no "
                           f"theme deck to say which decks it takes", *files)
         self.edit(CORE, lambda d: d.update(theme="home"))
         self.assertClean(*files)
@@ -803,46 +814,52 @@ class Phrasebook(B1Case):
         self.phrasebook_of(0)
         self.assertAcross(f"{self.p(PATH)}: phrasebook: the zz-en course has 0 phrasebook "
                           f"cards; a course's phrasebook has 15 to 25 (none)")
-        # A course whose path has no plan is checked only once it has one.
-        self.put("zz-bn-words.yaml", single("zz-bn-words", native="bn", cards=[
-            {"id": "zz-9601", "target": "కుక్క", "reading": "kukka", "native": "কুকুর (kukur)"}]))
-        self.put("zz-bn-path.yaml", {"schema": 1, "kind": "path", "id": "zz-bn-path",
-                                     "language": "zz", "native": "bn",
-                                     "units": [["zz-bn-words"]]})
-        self.assertNotAcross("phrasebook:", "zz-bn-path.yaml", "zz-bn-words.yaml")
-        self.edit("zz-bn-words.yaml", lambda d: card(d, "zz-9601").update(phrasebook=True))
-        self.assertAcross(f"{self.p('zz-bn-path.yaml')}: phrasebook: the zz-bn course has 1 "
+        # A language whose path has no plan is checked only once it has one,
+        # or once a course of it has a phrasebook card.
+        zy = self.tmp / "zy"
+        zy.mkdir()
+        words = single("zy-bn-words", native="bn", cards=[
+            {"id": "zy-9601", "target": "కుక్క", "reading": "kukka",
+             "native": "কুকুর (kukur)"}])
+        words["language"] = dict(LANGUAGE, code="zy")
+        (zy / "zy-bn-words.yaml").write_text(dump(words), encoding="utf-8")
+        (zy / "zy-path.yaml").write_text(dump({
+            "schema": 1, "kind": "path", "id": "zy-path", "language": "zy",
+            "units": [["zy-words"]]}), encoding="utf-8")
+        self.assertNotAcross("phrasebook:", "../zy")
+        words["cards"][0]["phrasebook"] = True
+        (zy / "zy-bn-words.yaml").write_text(dump(words), encoding="utf-8")
+        self.assertAcross(f"{self.p('../zy/zy-path.yaml')}: phrasebook: the zy-bn course has 1 "
                           f"phrasebook cards; a course's phrasebook has 15 to 25 "
-                          f"(zz-bn-words)", "zz-bn-path.yaml", "zz-bn-words.yaml")
+                          f"(zy-bn-words)", "../zy")
 
     def test_a_bengali_layers_phrasebook_counts_for_bengali_learners_only(self) -> None:
-        self.put("bn/zz-bn-home.yaml", {
-            "schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
-            "native": dict(NATIVES["bn"]), "name": "বাড়ি (bāṛi)", "license": "CC0-1.0",
-            "cards": {"zz-9004": {"native": "মা (mā)", "notes": {"address": "আদর (ādar)."}},
-                      "zz-9150": {"target": "అమ్మ!", "reading": "amma!", "pos": "phrase",
-                                  "native": "মা! (mā!)", "phrasebook": True}}})
+        bn = dict(BENGALI_HOME, cards=dict(BENGALI_HOME["cards"], **{
+            "zz-9150": {"target": "అమ్మ!", "reading": "amma!", "pos": "phrase",
+                        "native": "মা! (mā!)", "phrasebook": True}}))
+        self.put("bn/zz-bn-home.yaml", bn)
         lines = self.run_main()
         self.assertNotIn("the zz-en course has", "\n".join(lines))
-        self.assertIn(f"error: {self.p('bn/zz-bn-home.yaml')}: phrasebook: the zz-bn course "
-                      f"has 1 phrasebook cards; a course's phrasebook has 15 to 25 "
+        # One path, read by the Bengali course too: the error is the path's.
+        self.assertIn(f"error: {self.p(PATH)}: phrasebook: the zz-bn course has 1 "
+                      f"phrasebook cards; a course's phrasebook has 15 to 25 "
                       f"(zz-bn-home)", lines)
 
     def test_the_phrasebook_comes_first(self) -> None:
         self.put(EXTRA, single(cards=[dict(CAT, pos="other")]))
-        self.edit(PATH, lambda d: d["units"].insert(0, {"decks": ["zz-en-extra"], "words": 1}))
+        self.edit(PATH, lambda d: d["units"].insert(0, {"decks": ["zz-extra"], "words": 1}))
         self.assertAcross(f"{self.p(PATH)}: units[1]: zz-en-home teaches phrasebook card "
                           f"zz-9101; the phrasebook comes first, in a deck of units[0]")
         # An alphabet unit first is exempt: the phrasebook is in the first
         # unit that is not.
-        self.edit(PATH, lambda d: d.update(alphabet=["zz-en-extra"]))
-        self.edit(PATH, lambda d: d["units"].__setitem__(0, ["zz-en-extra"]))
+        self.edit(PATH, lambda d: d.update(alphabet=["zz-extra"]))
+        self.edit(PATH, lambda d: d["units"].__setitem__(0, ["zz-extra"]))
         self.assertNotAcross("the phrasebook comes first")
         # A later deck may list a phrasebook card by ref.
         self.put(EXTRA, single(cards=[dict(CAT, pos="other"), {"ref": "zz-9101"}]))
         self.edit(PATH, lambda d: d.update(alphabet=[]))
         self.edit(PATH, lambda d: d["units"].pop(0))
-        self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-en-extra"))
+        self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-extra"))
         self.assertNotAcross("the phrasebook comes first")
 
 
@@ -1470,20 +1487,23 @@ class PathUnits(B1Case):
         self.assertIn(line, self.units(change))
 
     def test_a_unit_is_a_list_or_a_mapping(self) -> None:
-        self.assertUnits(lambda u: u.__setitem__(0, "zz-en-home"),
-                         "units[0]: must be a list of deck ids, or a mapping with decks or "
+        self.assertUnits(lambda u: u.__setitem__(0, "zz-home"),
+                         "units[0]: must be a list of core ids, or a mapping with decks or "
                          "planned")
         self.assertUnits(lambda u: u[0].update(colour="blue"),
                          "units[0]: unknown field 'colour' in a unit")
-        self.assertUnits(lambda u: u[0].update(planned={"id": "zz-en-x", "theme": "x",
+        self.assertUnits(lambda u: u[0].update(planned={"id": "zz-x", "theme": "x",
                                                         "words": 1}),
                          "units[0]: has decks or planned, not both")
         self.assertUnits(lambda u: u[0].pop("decks"), "units[0]: has neither decks nor "
                                                       "planned")
         self.assertUnits(lambda u: u[0].update(decks=[]),
-                         "units[0].decks: must be a non-empty list of deck ids")
-        self.assertUnits(lambda u: u[0].update(decks=["zz-en-home", "zz-en-home"]),
-                         "units[0].decks: deck 'zz-en-home' is listed twice")
+                         "units[0].decks: must be a non-empty list of core ids")
+        self.assertUnits(lambda u: u[0].update(decks=["zz-home", "zz-home"]),
+                         "units[0].decks: 'zz-home' is listed twice")
+        self.assertUnits(lambda u: u[0].update(decks=["yy-home"]),
+                         "units[0].decks: 'yy-home' is not a core id of zz: zz- and a "
+                         "name, such as zz-home")
 
     def test_words_is_a_whole_number(self) -> None:
         for value in (-1, True, 4.5, "4"):
@@ -1504,7 +1524,7 @@ class PathUnits(B1Case):
     def test_words_and_grammar_are_given_once(self) -> None:
         self.assertUnits(lambda u: u[2].update(words=60),
                          "units[2]: words is given both in planned and beside it")
-        self.assertUnits(lambda u: u[2].update(planned={"id": "zz-en-if", "grammar": "if",
+        self.assertUnits(lambda u: u[2].update(planned={"id": "zz-if", "grammar": "if",
                                                         "words": 10}, grammar=["if"]),
                          "units[2]: grammar is given both in planned and beside it")
 
@@ -1516,7 +1536,7 @@ class PathUnits(B1Case):
                          "units[1].grammar: 'lo' is listed twice")
         self.setUp()
         self.assertEqual(self.units(lambda u: u[2].update(
-            planned={"id": "zz-en-grammar-if", "grammar": "conditional"})), [])
+            planned={"id": "zz-grammar-if", "grammar": "conditional"})), [])
 
     def test_milestones(self) -> None:
         self.assertUnits(lambda u: u[0].update(milestone="C1"),
@@ -1531,13 +1551,13 @@ class PathUnits(B1Case):
                          "and in that order; found none")
 
     def test_a_planned_unit(self) -> None:
-        self.assertUnits(lambda u: u[2].update(planned="zz-en-health"),
+        self.assertUnits(lambda u: u[2].update(planned="zz-health"),
                          "units[2].planned: must be a mapping with id, and theme or grammar")
         self.assertUnits(lambda u: u[2]["planned"].update(size=1),
                          "units[2].planned: unknown field 'size'")
-        self.assertUnits(lambda u: u[2]["planned"].update(id="zz-bn-health"),
-                         "units[2].planned.id: must be a deck id starting with zz-en-, the "
-                         "course, got 'zz-bn-health'")
+        self.assertUnits(lambda u: u[2]["planned"].update(id="yy-health"),
+                         "units[2].planned.id: must be a core id of zz, zz- and a name, "
+                         "such as zz-health, got 'yy-health'")
         self.assertUnits(lambda u: u[2]["planned"].update(grammar="if"),
                          "units[2].planned: names theme or grammar, not both")
         self.assertUnits(lambda u: u[2]["planned"].pop("theme"),
@@ -1552,13 +1572,37 @@ class PathUnits(B1Case):
                          "units[2]: a planned unit names its listening_passages and its "
                          "reading_passages (b1-plans.md: each planned unit names its "
                          "listening and reading passages)")
-        self.assertUnits(lambda u: u[2].update(listening_passages=[]),
-                         "units[2].listening_passages: must be a non-empty list of short "
-                         "descriptions")
+        for value in ([], ["A notice at the clinic"]):
+            self.assertUnits(lambda u: u[2].update(listening_passages=value),
+                             "units[2].listening_passages: must be a non-empty list of "
+                             "passages, each { id, text }")
         # A written unit may name them too, and need not.
         self.setUp()
-        self.assertEqual(self.units(lambda u: u[0].update(
-            reading_passages=["A note on the door"])), [])
+        self.assertEqual(self.units(lambda u: u[0].update(reading_passages=[
+            {"id": "door-note", "text": {"en": "A note on the door"}}])), [])
+
+    def test_a_passage_has_an_id_once_in_the_path_and_its_texts(self) -> None:
+        def passage(**fields: object):
+            return lambda u: u[2]["reading_passages"][0].update(fields)
+        where = "units[2].reading_passages[0]"
+        self.assertUnits(passage(title="x"), f"{where}: unknown field 'title'")
+        self.assertUnits(passage(id="Clinic Notice"),
+                         f"{where}: id must match [a-z0-9-]+, got 'Clinic Notice'")
+        self.assertUnits(passage(id="doctor-call"),
+                         f"{where}: passage 'doctor-call' is also earlier in this unit")
+        self.assertUnits(lambda u: u[0].update(reading_passages=[
+            {"id": "clinic-notice", "text": {"en": "A note"}}]),
+            f"{where}: passage 'clinic-notice' is also in units[0]")
+        self.assertUnits(passage(text="A notice"),
+                         f"{where}.text: must be a mapping of a native language's code to "
+                         f"the passage's description, such as {{ \"en\": \"...\" }}")
+        self.assertUnits(passage(text={"English": "A notice"}),
+                         f"{where}.text: 'English' is not a language code")
+        self.assertUnits(passage(text={"en": True}), f"{where}.text: 'en' is not text")
+        # A second native language's description sits beside the first.
+        self.setUp()
+        self.assertEqual(self.units(passage(text={
+            "en": "A notice at the clinic", "bn": "ক্লিনিকের নোটিস (kliniker noṭis)"})), [])
 
     def test_the_wildcard_alone_carries_no_plan(self) -> None:
         self.assertUnits(lambda u: u.append({"decks": ["*"], "words": 3}),
@@ -1570,38 +1614,38 @@ class PathUnits(B1Case):
         self.assertUnits(lambda u: u[1].pop("grammar"),
                          "units[1]: a unit up to B1 gives its planned size (words) or its "
                          "grammar topics (grammar)")
-        self.assertUnits(lambda u: u.insert(0, ["zz-en-extra"]),
+        self.assertUnits(lambda u: u.insert(0, ["zz-extra"]),
                          'units[0]: a unit up to B1 is a mapping with its words or grammar; '
                          'only an alphabet unit or "*" alone stays a list')
         self.setUp()
-        self.edit(PATH, lambda d: d.update(alphabet=["zz-en-extra"]))
-        self.assertEqual(self.units(lambda u: u.insert(0, ["zz-en-extra"])), [])
+        self.edit(PATH, lambda d: d.update(alphabet=["zz-extra"]))
+        self.assertEqual(self.units(lambda u: u.insert(0, ["zz-extra"])), [])
         # A unit after B1 needs no size.
         self.setUp()
-        self.assertEqual(self.units(lambda u: u.append(["zz-en-extra"])), [])
+        self.assertEqual(self.units(lambda u: u.append(["zz-extra"])), [])
 
     def test_a_topic_is_planned_once(self) -> None:
         self.assertUnits(lambda u: u[0].update(grammar=["lo"]),
                          "units[1]: grammar topic 'lo' is already planned in units[0]")
 
     def test_planned_units_end_at_b1_and_are_planned_once(self) -> None:
-        later = {"planned": {"id": "zz-en-food", "theme": "food", "words": 50},
-                 "listening_passages": ["x"], "reading_passages": ["y"]}
+        later = {"planned": {"id": "zz-food", "theme": "food", "words": 50},
+                 "listening_passages": [{"id": "x", "text": {"en": "x"}}],
+                 "reading_passages": [{"id": "y", "text": {"en": "y"}}]}
         self.assertUnits(lambda u: u.append(later),
                          "units[3]: a planned unit after the B1 mark; a B1 plan ends at B1")
-        twice = dict(later, planned={"id": "zz-en-health", "theme": "health", "words": 5},
+        twice = dict(later, planned={"id": "zz-health", "theme": "health", "words": 5},
                      milestone="B1")
         self.assertUnits(lambda u: (u[2].pop("milestone"), u.append(twice)),
-                         "units[3].planned.id: 'zz-en-health' is planned twice, also in "
+                         "units[3].planned.id: 'zz-health' is planned twice, also in "
                          "units[2]")
-        self.assertUnits(lambda u: u[2]["planned"].update(id="zz-en-home"),
-                         "units[2].planned.id: 'zz-en-home' is planned and also listed as a "
+        self.assertUnits(lambda u: u[2]["planned"].update(id="zz-home"),
+                         "units[2].planned.id: 'zz-home' is planned and also listed as a "
                          "deck in units[0]")
 
     def test_a_path_without_a_mapping_unit_has_no_plan(self) -> None:
-        self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-en-path", "language": "zz",
-                        "native": "en",
-                        "units": [["zz-en-home"], ["zz-en-grammar-case-endings"], ["*"]]})
+        self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-path", "language": "zz",
+                        "units": [["zz-home"], ["zz-grammar-case-endings"], ["*"]]})
         report = validate_decks.validate(self.p(PATH))
         self.assertEqual(report.errors, [])
         self.assertFalse(report.plan.has_plan)
@@ -1626,20 +1670,36 @@ class PlansAcross(B1Case):
 
     def test_a_planned_deck_does_not_exist_yet(self) -> None:
         rel = self.health()
-        line = (f"{self.p(PATH)}: units[2].planned.id: zz-en-health already exists "
-                f"({self.p(rel)}); list it under decks in place of planned")
-        self.assertAcross(line)
+        line = (f"{self.p(PATH)}: units[2].planned.id: zz-health already exists "
+                f"({self.p('zz-health.yaml')}); list it under decks in place of planned")
         self.assertAcross(line, PATH)
-        # A core with no layer of the course: not the course's deck yet.
+        # The core alone, or a layer of another course: the unit is written
+        # once any native language has its deck.
+        self.p(rel).unlink()
+        self.assertAcross(line, PATH)
         self.setUp()
         self.health("bn")
-        self.assertNotAcross("already exists", PATH)
+        self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: zz-health already exists "
+                          f"({self.p('zz-health.yaml')}); list it under decks in place of "
+                          f"planned", PATH)
+        self.setUp()
+        self.put("zz-bn-health.yaml", single("zz-bn-health", native="bn", cards=[
+            dict(CAT, native="বিড়াল (biṛāl)")]))
+        self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: zz-health already exists "
+                          f"({self.p('zz-bn-health.yaml')}); list it under decks in place "
+                          f"of planned", PATH)
 
     def test_a_planned_single_file_deck_exists_too(self) -> None:
         self.put("zz-en-health.yaml", single("zz-en-health"))
-        self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: zz-en-health already "
+        self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: zz-health already "
                           f"exists ({self.p('zz-en-health.yaml')}); list it under decks in "
                           f"place of planned", PATH)
+
+    def test_a_planned_id_is_a_core_id(self) -> None:
+        self.edit(PATH, lambda d: d["units"][2]["planned"].update(id="zz-en-health"))
+        self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: lists 'zz-en-health', a "
+                          f"deck of the zz-en course; a path lists core ids, here "
+                          f"'zz-health'", PATH)
 
     def test_grammar_topics_name_a_rule_or_a_grammar_deck_of_the_unit(self) -> None:
         self.put("zz-en-grammar-be.yaml", {
@@ -1651,15 +1711,15 @@ class PlansAcross(B1Case):
                                      "forms": {"నేను": "ఉన్నాను"},
                                      "readings": {"నేను": "unnānu"}}]}})
         self.edit(PATH, lambda d: d["units"][1].update(
-            decks=["zz-en-grammar-case-endings", "zz-en-grammar-be"],
+            decks=["zz-grammar-case-endings", "zz-grammar-be"],
             grammar=["lo", "ki", "to", "nunci", "be"]))
         self.assertNotAcross(".grammar:")
         self.edit(PATH, lambda d: d["units"][1]["grammar"].append("past"))
         self.assertAcross(f"{self.p(PATH)}: units[1].grammar: 'past' is taught by none of the "
                           f"unit's decks; name a rule (zz-rule-past) of a rules deck it "
-                          f"lists, or a deck zz-en-grammar-past it lists")
+                          f"lists, or a deck zz-grammar-past it lists")
         # A unit listing a deck that is nowhere is not checked.
-        self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-en-missing"))
+        self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-missing"))
         self.assertNotAcross(".grammar:")
 
     def test_a_grammar_topic_does_not_name_a_rules_deck(self) -> None:
@@ -1670,17 +1730,17 @@ class PlansAcross(B1Case):
                           f"rules, 'lo', 'ki', 'to', 'nunci'")
 
     def test_a_path_needs_its_plan_once_the_language_has_a_core(self) -> None:
-        self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-en-path", "language": "zz",
-                        "native": "en", "units": [["zz-en-home", "zz-en-grammar-case-endings"]]})
+        self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-path", "language": "zz",
+                        "units": [["zz-home", "zz-grammar-case-endings"]]})
         self.assertAcross(f"{self.p(PATH)}: units: zz has core files "
-                          f"(zz-grammar-case-endings), so this path needs its B1 plan: the "
+                          f"(zz-grammar-case-endings), so its path needs its B1 plan: the "
                           f"milestones A1, A2 and B1, in that order", PATH)
         # A language with no core keeps its list paths.
         zy = self.tmp / "zy"
         zy.mkdir()
-        (zy / "zy-en-path.yaml").write_text(dump({
-            "schema": 1, "kind": "path", "id": "zy-en-path", "language": "zy",
-            "native": "en", "units": [["zy-en-words"]]}), encoding="utf-8")
+        (zy / "zy-path.yaml").write_text(dump({
+            "schema": 1, "kind": "path", "id": "zy-path", "language": "zy",
+            "units": [["zy-words"]]}), encoding="utf-8")
         words = single("zy-en-words")
         words["language"] = dict(LANGUAGE, code="zy")
         words["cards"] = [dict(CAT, id="zy-9501")]
@@ -1693,7 +1753,7 @@ class PlansAcross(B1Case):
     def test_a_b1_deck_still_single_file_is_warned_of(self) -> None:
         self.put(EXTRA, single(cards=[dict(CAT, pos="other",
                                            notes=[{"kind": "usage", "text": "Shy."}])]))
-        self.edit(PATH, lambda d: d["units"][0]["decks"].append("zz-en-extra"))
+        self.edit(PATH, lambda d: d["units"][0]["decks"].append("zz-extra"))
         self.edit(PATH, lambda d: d["units"][0].update(words=5))
         self.assertWarned(PATH, "units[0]", "zz-en-extra is a single-file deck; a deck in a "
                                             "B1 plan is split into a core and its layers as "
@@ -1701,10 +1761,34 @@ class PlansAcross(B1Case):
 
     def test_a_unit_with_more_words_than_planned_is_warned_of(self) -> None:
         self.edit(PATH, lambda d: d["units"][0].update(words=3))
-        self.assertWarned(PATH, "units[0]", "has 4 words, more than the 3 planned; raise "
-                                            "words")
+        self.assertWarned(PATH, "units[0]", "has 4 words for learners from English, more "
+                                            "than the 3 planned; raise words")
         self.edit(PATH, lambda d: d["units"][0].update(words=4))
         self.assertNotIn("more than the", "\n".join(self.run_main()))
+
+    def test_words_are_counted_per_course_against_one_size(self) -> None:
+        # The Bengali layer teaches one word of the unit: within its size.
+        self.put("bn/zz-bn-home.yaml", BENGALI_HOME)
+        self.edit(PATH, lambda d: d["units"][0].update(words=3))
+        lines = self.run_main()
+        self.assertIn("  warning units[0]: has 4 words for learners from English, more "
+                      "than the 3 planned; raise words", self.section(lines, PATH))
+        self.assertNotIn("from Bengali, more", "\n".join(lines))
+        self.edit(PATH, lambda d: d["units"][0].update(words=0))
+        self.assertIn("  warning units[0]: has 1 words for learners from Bengali, more "
+                      "than the 0 planned; raise words", self.section(self.run_main(), PATH))
+
+    def test_a_passage_without_a_description_in_a_courses_language(self) -> None:
+        self.put("bn/zz-bn-home.yaml", BENGALI_HOME)
+        lines = self.section(self.run_main(), PATH)
+        for where in ("units[2].listening_passages[0]", "units[2].reading_passages[0]"):
+            self.assertIn(f"  warning {where}: no description in Bengali, so learners "
+                          f"from Bengali see none", lines)
+        self.assertNotIn("no description in English", "\n".join(lines))
+        self.edit(PATH, lambda d: [p["text"].update(bn="ক্লিনিক (klinik)")
+                                   for key in ("listening_passages", "reading_passages")
+                                   for p in d["units"][2][key]])
+        self.assertNotIn("no description", "\n".join(self.run_main()))
 
     def test_sizes_near_the_levels_are_not_warned_of(self) -> None:
         self.edit(PATH, lambda d: (d["units"][0].update(words=700),
@@ -1726,6 +1810,110 @@ class PlansAcross(B1Case):
                                 "themes": [{"id": "health", "name": "Health"}]}),
                           encoding="utf-8")
         self.assertNotIn("is not in decks/themes.yaml", "\n".join(self.run_main(*files)))
+
+
+class Regions(B1Case):
+    """Section 10.5: a language's regions, in its path, and a note's."""
+
+    def regions(self, change) -> list[str]:
+        self.setUp()
+        self.edit(PATH, lambda d: change(d["regions"]))
+        return self.errors(PATH)
+
+    def test_the_fixtures_regions_are_valid(self) -> None:
+        report = validate_decks.validate(self.p(PATH))
+        self.assertEqual(report.errors, [])
+        self.assertEqual(report.plan.regions,
+                         ["telangana", "coastal-andhra", "rayalaseema"])
+
+    def test_each_per_file_message(self) -> None:
+        cases = [
+            (lambda r: r.clear(), "regions: must be a non-empty list of regions, each "
+                                  "{ id, name }"),
+            (lambda r: r.append("nizam"), "regions[3]: must be a mapping"),
+            (lambda r: r[0].update(capital="x"), "regions[0]: unknown field 'capital'"),
+            (lambda r: r[0].update(id="Telangana"),
+             "regions[0].id: must start with a letter and match [a-z0-9-]+, and not be a "
+             "YAML 1.1 boolean word, got 'Telangana'"),
+            (lambda r: r[0].update(id="no"),
+             "regions[0].id: must start with a letter and match [a-z0-9-]+, and not be a "
+             "YAML 1.1 boolean word, got 'no'"),
+            (lambda r: r[1].update(id="telangana"), "regions[1].id: 'telangana' is used twice"),
+            (lambda r: r[0].update(id="elsewhere"),
+             "regions[0].id: elsewhere is the app's own answer; give the region another id"),
+            (lambda r: r[0].update(name="Telangana"),
+             'regions[0].name: must be a mapping of a language code to the region\'s name, '
+             'with "en"'),
+            (lambda r: r[0].update(name={"bn": "তেলেঙ্গানা (telēṅgānā)"}),
+             'regions[0].name: has no "en"'),
+            (lambda r: r[0]["name"].update(English="Telangana"),
+             "regions[0].name: 'English' is not a language code"),
+            (lambda r: r[0]["name"].update(en=""), "regions[0].name: 'en' is not text"),
+        ]
+        for change, line in cases:
+            with self.subTest(line=line):
+                self.assertIn(line, self.regions(change))
+        self.setUp()
+        self.edit(PATH, lambda d: d.update(regions="telangana"))
+        self.assertIn("regions: must be a non-empty list of regions, each { id, name }",
+                      self.errors(PATH))
+
+    def test_a_note_names_its_regions(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
+            {"id": "telangana", "kind": "usage", "region": "telangana"}))
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"]["notes"].update(
+            telangana="Also a household, in Telangana."))
+        self.assertClean()
+        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"][-1].update(
+            region=["telangana", "rayalaseema"]))
+        self.assertClean()
+
+    def test_a_notes_region_has_its_shape(self) -> None:
+        for value, line in (
+            (5, 'notes[1].region must be a region id, or a list of them, such as '
+                '"telangana", got 5'),
+            ([], 'notes[1].region must be a region id, or a list of them, such as '
+                 '"telangana", got []'),
+            ("Telangana", 'notes[1].region must be a region id, or a list of them, such as '
+                          '"telangana", got \'Telangana\''),
+            (["telangana", "telangana"], "notes[1].region lists 'telangana' twice"),
+        ):
+            with self.subTest(value=value):
+                self.edit(CORE, lambda d: card(d, "zz-9001").update(notes=[
+                    card(d, "zz-9001")["notes"][0],
+                    {"id": "where", "kind": "usage", "region": value}]))
+                self.assertError(CORE, "card zz-9001", line)
+
+    def test_a_notes_region_is_a_region_of_its_languages_path(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
+            {"id": "where", "kind": "usage", "region": ["telangana", "nizam"]}))
+        line = (f"{self.p(CORE)}: card zz-9001: notes[1].region names 'nizam', which is "
+                f"not a region of zz; its path lists telangana, coastal-andhra, rayalaseema")
+        self.assertAcross(line)
+        # Validated alone, against the path on disk.
+        self.assertAcross(line, CORE)
+        # A path with no regions lists none.
+        self.edit(PATH, lambda d: d.pop("regions"))
+        self.assertAcross(f"{self.p(CORE)}: card zz-9001: notes[1].region names "
+                          f"'telangana', which is not a region of zz; its path lists none",
+                          CORE)
+        # A language with no path is told it has none, not this.
+        self.p(PATH).unlink()
+        self.assertNotAcross("region names", CORE)
+
+    def test_a_layer_only_cards_note_is_checked_where_the_layer_writes_it(self) -> None:
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
+            "target": "పిల్లి", "reading": "pilli", "pos": "noun", "native": "cat",
+            "notes": [{"kind": "usage", "text": "Also a shy person.",
+                       "region": "nizam"}]}}))
+        self.assertAcross(f"{self.p(LAYER)}: cards.zz-9200: notes[0].region names 'nizam', "
+                          f"which is not a region of zz; its path lists telangana, "
+                          f"coastal-andhra, rayalaseema")
+
+    def test_a_single_file_decks_note_names_a_region_too(self) -> None:
+        self.put(EXTRA, single(cards=[dict(CAT, notes=[
+            {"kind": "usage", "text": "Said in Telangana.", "region": "telangana"}])]))
+        self.assertNotAcross("region names", EXTRA)
 
 
 class ScriptInProse(B1Case):
@@ -1767,12 +1955,23 @@ class ScriptInProse(B1Case):
         self.edit(CORE, lambda d: d.update(source="ইল্লু"))
         self.assertNoError(CORE, "transliteration")
 
-    def test_a_paths_passages_are_prose(self) -> None:
-        self.edit(PATH, lambda d: d["units"][2].update(
-            listening_passages=["Going to the ఇల్లు"]))
-        self.assertError(PATH, "units.2.listening_passages.0",
+    def test_a_paths_passages_and_region_names_are_prose(self) -> None:
+        self.edit(PATH, lambda d: d["units"][2]["listening_passages"][0].update(
+            text={"en": "Going to the ఇల్లు"}))
+        self.assertError(PATH, "units.2.listening_passages.0.text.en",
                          "'ఇల్లు' has no transliteration beside it; write its ISO 15919 "
                          "reading in parentheses, as లేదు (lēdu)")
+        self.setUp()
+        self.edit(PATH, lambda d: d["regions"][0]["name"].update(en="Telangana, తెలంగాణ"))
+        self.assertError(PATH, "regions.0.name.en",
+                         "'తెలంగాణ' has no transliteration beside it; write its ISO 15919 "
+                         "reading in parentheses, as లేదు (lēdu)")
+        self.edit(PATH, lambda d: d["regions"][0]["name"].update(
+            en="Telangana, తెలంగాణ (telaṅgāṇa)"))
+        self.assertNoError(PATH)
+        # Each text is read as written for its key's language.
+        self.edit(PATH, lambda d: d["regions"][0]["name"].update(te="తెలంగాణ"))
+        self.assertNoError(PATH)
 
     def test_placeholders_are_checked_before_they_are_filled(self) -> None:
         # The fixture's note "{1}" stands for ఇంటి- (iṇṭi-): no reading needed.

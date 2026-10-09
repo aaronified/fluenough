@@ -1,0 +1,55 @@
+# The order Hindi is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught hi-en-home for hi-home. First a few words
+# and basic sentences, the sounds the learner's language lacks and how
+# Hindi grammar differs from it; then five more themes, each with the
+# grammar that goes with it; then the script, before the rest. Every
+# deck of Hindi is listed exactly once. See ADR-0013, ADR-0036 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: path
+id: hi-path
+language: hi
+# The decks that need the alphabet: a learner who learns without it
+# skips them.
+alphabet:
+  - hi-script-vowels
+  - hi-script-consonants
+  - hi-script-reading
+  - hi-script-vowel-signs
+  - hi-script-conjuncts
+  - hi-spelling
+  - hi-reading-panch-parmeshwar
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  - [hi-first-words, hi-grammar-sentences, "*"]
+  - [hi-sound-differences]
+  - [hi-grammar-differences]
+  - [hi-questions, hi-grammar-questions, "*"]
+  - [hi-addressing, hi-grammar-pronouns, "*"]
+  - [hi-about-me, hi-grammar-present, hi-grammar-possessives, "*"]
+  - [hi-family, hi-grammar-be, "*"]
+  - [hi-work, hi-grammar-demonstratives, "*"]
+  - [hi-script-vowels, hi-script-consonants, hi-script-reading]
+  - [hi-script-vowel-signs, hi-script-conjuncts]
+  - [hi-numbers-1-20, "*"]
+  - [hi-numbers-big, "*"]
+  - [hi-market, hi-grammar-nouns, hi-grammar-articles, "*"]
+  - [hi-groceries, hi-grammar-adjectives, hi-grammar-needs, "*"]
+  - [hi-transport, hi-grammar-postpositions, "*"]
+  - [hi-directions, hi-grammar-continuous, "*"]
+  - [hi-home, "*"]
+  - [hi-time, hi-grammar-future, "*"]
+  - [hi-daily-life, hi-grammar-conjunct-verbs, "*"]
+  - [hi-calendar, hi-grammar-past, "*"]
+  - [hi-grammar-ne, hi-grammar-perfect]
+  - [hi-grammar-past-more, hi-grammar-compound-verbs]
+  - [hi-eating-out, hi-grammar-conjunctions, hi-grammar-likes, "*"]
+  - [hi-help, hi-grammar-irregular, hi-grammar-pitfalls, "*"]
+  - [hi-registers]
+  - [hi-slang]
+  - [hi-grammar-can-must]
+  - [hi-spelling]
+  - [hi-reading-panch-parmeshwar]
+  - ["*"]
