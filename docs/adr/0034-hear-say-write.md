@@ -48,9 +48,9 @@ it) and speaking (say it).
   practice, where what is heard is written, Write. A right answer counts
   for half a review there (Pan & Rickard 2018, d 0.28 against 0.58;
   low confidence, to be fitted on the phone from the learner's own log):
-  FSRS moves the
-  implied pair's stability half way to a Good review, never its due date,
-  and never starts a pair not yet asked; the ability layer moves the
+  FSRS moves the implied pair's stability half way to a Good review, never
+  its due date, and never starts a pair not yet asked; the ability layer
+  moves the
   implied skill by half its own surprise. A miss counts against its own
   skill alone.
 - **The ability layer.** An Elo rating per language and schedule, and a
