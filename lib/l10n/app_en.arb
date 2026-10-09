@@ -908,6 +908,660 @@
   "@decksBrokenBadge": {
     "description": "Badge on a row for a deck file that failed to parse."
   },
+  "decksSearchOpen": "Search units",
+  "@decksSearchOpen": {
+    "description": "Tooltip of the search button on the Decks tab: opens a search across every course's units."
+  },
+  "decksSearchClose": "Close search",
+  "@decksSearchClose": {
+    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again."
+  },
+  "decksUnitSearchHint": "Search units in every course",
+  "@decksUnitSearchHint": {
+    "description": "Hint in the Decks tab's search field. A search finds units by their name, their decks' names, their theme or their language."
+  },
+  "decksCoursesLabel": "Courses",
+  "@decksCoursesLabel": {
+    "description": "What a screen reader calls the row of course chips on the Decks tab, one per language."
+  },
+  "decksCourseChipDue": "{language}, {count, plural, =1{1 due} other{{count} due}}",
+  "@decksCourseChipDue": {
+    "description": "What a screen reader hears for a course chip with reviews due: the language, then how many reviews are due in it.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      },
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "decksWhereIAm": "Where I am",
+  "@decksWhereIAm": {
+    "description": "Button floating over the Decks tab's path: scrolls the path back to the unit the learner is on."
+  },
+  "pathCourseProgress": "{done} of {total, plural, =1{1 unit} other{{total} units}} done",
+  "@pathCourseProgress": {
+    "description": "Line on the card at the top of a course's path: how many of its units are done.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "7"
+      },
+      "total": {
+        "type": "int",
+        "example": "29"
+      }
+    }
+  },
+  "pathUpdatesTitle": "Deck updates",
+  "@pathUpdatesTitle": {
+    "description": "Row on the course card: newer versions of the course's decks, downloaded on request. Shown with \"Feature incoming\" until decks download (#210)."
+  },
+  "pathUpdatesBody": "Your progress is kept",
+  "@pathUpdatesBody": {
+    "description": "Second line of the deck updates row: updating a deck keeps the learner's history."
+  },
+  "pathUpdatesButton": "Update",
+  "@pathUpdatesButton": {
+    "description": "Button on the deck updates row."
+  },
+  "pathHoursTitle": "Hours left to B1",
+  "@pathHoursTitle": {
+    "description": "Row on the course card: about how many hours of study are left to finish the course, at level B1. Shown with \"Feature incoming\" until it is built (#227)."
+  },
+  "pathHoursBody": "And the hours spent so far",
+  "@pathHoursBody": {
+    "description": "Second line of the hours row: it also says how many hours have been spent."
+  },
+  "pathUpNext": "Up next",
+  "@pathUpNext": {
+    "description": "Label over the unit the learner is on, on a course's path."
+  },
+  "pathUnitWords": "{count, plural, =1{1 word} other{{count} words}}",
+  "@pathUnitWords": {
+    "description": "Part of a unit's line on the path and in search: how many words it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "pathUnitRules": "{count, plural, =1{1 rule} other{{count} rules}}",
+  "@pathUnitRules": {
+    "description": "Part of a unit's line: how many grammar rules (tables) it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathUnitSentences": "{open}/{total} sentences",
+  "@pathUnitSentences": {
+    "description": "Part of a unit's line: how many of its sentences are open, out of all of them.",
+    "placeholders": {
+      "open": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "pathUnitLetters": "Script · {count, plural, =1{1 letter} other{{count} letters}}",
+  "@pathUnitLetters": {
+    "description": "A script unit's line on the path: how many letters it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "62"
+      }
+    }
+  },
+  "pathUnitPassages": "{count, plural, =1{1 reading passage} other{{count} reading passages}}",
+  "@pathUnitPassages": {
+    "description": "Part of a unit's line: how many passages it has to read.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "pathMetaJoin": "{first} · {rest}",
+  "@pathMetaJoin": {
+    "description": "Joins two parts of a line such as \"18 words · 2 rules\". Change the separator if your language uses another.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "18 words"
+      },
+      "rest": {
+        "type": "String",
+        "example": "2 rules"
+      }
+    }
+  },
+  "pathUnitNumber": "Unit {number}",
+  "@pathUnitNumber": {
+    "description": "A unit's place in its course, on the unit's screen.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathUnitDone": "Done",
+  "@pathUnitDone": {
+    "description": "What a screen reader hears of a unit on the path whose decks are all finished."
+  },
+  "pathUnitAhead": "Not started",
+  "@pathUnitAhead": {
+    "description": "What a screen reader hears of a unit on the path after the one the learner is on."
+  },
+  "pathUnitSemantics": "{title}, unit {number}, {status}. {meta}",
+  "@pathUnitSemantics": {
+    "description": "What a screen reader hears for a unit on the path: its name, its number, where it stands (Done, Up next, Not started) and its line.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Family"
+      },
+      "number": {
+        "type": "int",
+        "example": "7"
+      },
+      "status": {
+        "type": "String",
+        "example": "Up next"
+      },
+      "meta": {
+        "type": "String",
+        "example": "18 words · 2 rules"
+      }
+    }
+  },
+  "pathComing": "Coming",
+  "@pathComing": {
+    "description": "Badge and status of a unit that is planned but not written yet."
+  },
+  "pathComingWords": "Coming · about {count} words",
+  "@pathComingWords": {
+    "description": "Line of a unit still being written: about how many words it will teach.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "60"
+      }
+    }
+  },
+  "pathFirstDeck": "First deck finished",
+  "@pathFirstDeck": {
+    "description": "A milestone on the path: every word of one deck learned."
+  },
+  "pathFirstDeckToGo": "Finish every word of one deck",
+  "@pathFirstDeckToGo": {
+    "description": "Under the first-deck milestone before it is earned: how to earn it."
+  },
+  "pathWordsLearned": "{count} words learned",
+  "@pathWordsLearned": {
+    "description": "A milestone on the path: this many of the course's words learned.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  "pathWordsToGo": "{count, plural, =1{1 word to go} other{{count} words to go}}",
+  "@pathWordsToGo": {
+    "description": "Under a words milestone not earned yet: how many more words.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "21"
+      }
+    }
+  },
+  "pathRulesKnown": "{count} rules known",
+  "@pathRulesKnown": {
+    "description": "A milestone on the path: this many of the course's rules known, right on most recent answers.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "pathRulesToGo": "{count, plural, =1{1 rule to go} other{{count} rules to go}}",
+  "@pathRulesToGo": {
+    "description": "Under a rules milestone not earned yet: how many more rules.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "pathFirstPassage": "First passage read",
+  "@pathFirstPassage": {
+    "description": "A milestone on the path: the questions of one reading passage answered."
+  },
+  "pathFirstPassageToGo": "Read one story",
+  "@pathFirstPassageToGo": {
+    "description": "Under the first-passage milestone before it is earned: how to earn it."
+  },
+  "pathScriptLearned": "Script learned",
+  "@pathScriptLearned": {
+    "description": "A milestone on the path: the course's script units done."
+  },
+  "pathScriptToGo": "{count, plural, =1{1 script unit to go} other{{count} script units to go}}",
+  "@pathScriptToGo": {
+    "description": "Under the script milestone not earned yet: how many script units are left.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathEarnedOn": "Earned {date}",
+  "@pathEarnedOn": {
+    "description": "Under a milestone or achievement: the day it was earned.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "24 Sep"
+      }
+    }
+  },
+  "pathEarnedToday": "Earned today",
+  "@pathEarnedToday": {
+    "description": "Under a milestone or achievement earned today."
+  },
+  "pathEarned": "Earned",
+  "@pathEarned": {
+    "description": "Under a milestone or achievement earned on a day the review log does not tell, such as by placement."
+  },
+  "pathLevelA1": "Introduce yourself, ask about people and places",
+  "@pathLevelA1": {
+    "description": "What a learner can do at CEFR level A1, at the start of its part of a course's path."
+  },
+  "pathLevelA2": "Shop, ask the way, talk about your day",
+  "@pathLevelA2": {
+    "description": "What a learner can do at CEFR level A2, at the start of its part of the path."
+  },
+  "pathLevelB1": "Travel, describe plans, give reasons",
+  "@pathLevelB1": {
+    "description": "What a learner can do at CEFR level B1, at the start of its part of the path."
+  },
+  "pathLevelUnits": "{count, plural, =1{1 unit} other{{count} units}}",
+  "@pathLevelUnits": {
+    "description": "Part of a level's line on the path: how many units it has.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "pathLevelDone": "{count} done",
+  "@pathLevelDone": {
+    "description": "Part of a level's line on the path: how many of its units are done.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathLevelComing": "{count} coming",
+  "@pathLevelComing": {
+    "description": "Part of a level's line on the path: how many of its units are still being written.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathAchievement": "{level} achievement",
+  "@pathAchievement": {
+    "description": "An achievement on the path: reaching a CEFR level. The level is its code, such as A1.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "pathLevelReached": "{level} reached",
+  "@pathLevelReached": {
+    "description": "An achievement on the path once it is earned: the CEFR level reached.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "pathUnitsToGo": "{count, plural, =1{1 unit to go} other{{count} units to go}}",
+  "@pathUnitsToGo": {
+    "description": "Under a level achievement not earned yet: how many units are left.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "pathUnitsToGoComing": "{count, plural, =1{1 unit to go} other{{count} units to go}}, {coming} still being written",
+  "@pathUnitsToGoComing": {
+    "description": "Under a level achievement not earned yet, when some of its units are not written yet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      },
+      "coming": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathBeyondTitle": "Beyond the course",
+  "@pathBeyondTitle": {
+    "description": "Heading at the end of a course's path: songs, films and books to choose by interest. Shown with \"Feature incoming\" until it is built (#215)."
+  },
+  "pathBeyondBody": "Optional. Pick by interest; nothing here holds back the path.",
+  "@pathBeyondBody": {
+    "description": "Under the \"Beyond the course\" heading."
+  },
+  "pathBeyondSong": "Song",
+  "@pathBeyondSong": {
+    "description": "Kind of a \"Beyond the course\" item: a song."
+  },
+  "pathBeyondFilm": "Film",
+  "@pathBeyondFilm": {
+    "description": "Kind of a \"Beyond the course\" item: a film."
+  },
+  "pathBeyondBook": "Book",
+  "@pathBeyondBook": {
+    "description": "Kind of a \"Beyond the course\" item: a book."
+  },
+  "pathOtherDecks": "Other decks",
+  "@pathOtherDecks": {
+    "description": "Heading under a course's path: the language's decks its path leaves out, each opening its own screen."
+  },
+  "pathBrokenFiles": "Files that couldn’t be read",
+  "@pathBrokenFiles": {
+    "description": "Heading under a course's path: deck files that failed to parse."
+  },
+  "unitReview": "Review",
+  "@unitReview": {
+    "description": "Button at the top end of a unit's screen: checks the unit's cards before they ship, for speakers who review decks."
+  },
+  "unitLettersKnown": "letters known",
+  "@unitLettersKnown": {
+    "description": "Under a number on a script unit's screen: how many of its letters are known."
+  },
+  "unitWordsKnown": "words known",
+  "@unitWordsKnown": {
+    "description": "Under a number on a unit's screen: how many of its words are known."
+  },
+  "unitRulesKnown": "rules known",
+  "@unitRulesKnown": {
+    "description": "Under a number on a unit's screen: how many of its rules are known."
+  },
+  "unitSentencesOpen": "sentences open",
+  "@unitSentencesOpen": {
+    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught."
+  },
+  "unitFraction": "{count}/{total}",
+  "@unitFraction": {
+    "description": "A count out of a total on a unit's tile, such as 12/18.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "12"
+      },
+      "total": {
+        "type": "String",
+        "example": "18"
+      }
+    }
+  },
+  "unitSectionWords": "{number} · Words",
+  "@unitSectionWords": {
+    "description": "Heading of a unit's words, numbered in the order the unit teaches them.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitSectionLetters": "{number} · Letters",
+  "@unitSectionLetters": {
+    "description": "Heading of a script unit's letters.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitSectionRules": "{number} · Rules",
+  "@unitSectionRules": {
+    "description": "Heading of a unit's grammar rules.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "unitSectionSentences": "{number} · Sentences",
+  "@unitSectionSentences": {
+    "description": "Heading of a unit's sentences.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "unitKnownMeans": "Known means right on {percent}% of recent answers",
+  "@unitKnownMeans": {
+    "description": "Beside the words heading: what \"Known\" means.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "unitKnown": "Known",
+  "@unitKnown": {
+    "description": "Status of a word, rule or sentence answered right on most of its recent answers."
+  },
+  "unitLearning": "Learning {percent}%",
+  "@unitLearning": {
+    "description": "Status of a word, rule or sentence being learned: the share of its recent answers that were right.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "64"
+      }
+    }
+  },
+  "unitNew": "New",
+  "@unitNew": {
+    "description": "Status of a word or rule never answered yet."
+  },
+  "unitNotOpen": "Not open yet",
+  "@unitNotOpen": {
+    "description": "Status of a sentence a lesson has not taught yet."
+  },
+  "unitShowAll": "Show all {count}",
+  "@unitShowAll": {
+    "description": "Button under a unit's first words: shows every one.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "unitShowFewer": "Show fewer",
+  "@unitShowFewer": {
+    "description": "Button under a unit's words once all show: shows the first few again."
+  },
+  "unitRuleShowTable": "Show the table",
+  "@unitRuleShowTable": {
+    "description": "Button on a rule: shows its table of forms."
+  },
+  "unitRuleHideTable": "Hide the table",
+  "@unitRuleHideTable": {
+    "description": "Button on a rule whose table shows: hides it."
+  },
+  "unitRuleWord": "Word",
+  "@unitRuleWord": {
+    "description": "Heading of the first column of a rule's table: the word each row inflects."
+  },
+  "unitRuleCells": "Each cell is a question.",
+  "@unitRuleCells": {
+    "description": "Under a rule's table: each form in it is asked in grammar drills."
+  },
+  "unitSentencesCount": "{open} of {total} open",
+  "@unitSentencesCount": {
+    "description": "Beside the sentences heading: how many of the unit's sentences are open.",
+    "placeholders": {
+      "open": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "unitSentencesNote": "A sentence opens when a lesson teaches it. Reviews never wait.",
+  "@unitSentencesNote": {
+    "description": "Under a unit's sentences."
+  },
+  "unitDecks": "Decks in this unit",
+  "@unitDecks": {
+    "description": "Heading of the list of a unit's decks, each opening its own screen."
+  },
+  "unitContinue": "Continue · {fresh} new, {due} due",
+  "@unitContinue": {
+    "description": "Button at the foot of a unit's screen: reviews its cards due, or teaches its next words. Says how many new words the next lesson teaches and how many reviews are due.",
+    "placeholders": {
+      "fresh": {
+        "type": "int",
+        "example": "5"
+      },
+      "due": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "unitNothingLeft": "Nothing new or due",
+  "@unitNothingLeft": {
+    "description": "The button at the foot of a unit's screen, off, when the unit has nothing new to teach and nothing due."
+  },
+  "unitOpenWord": "Opens its card",
+  "@unitOpenWord": {
+    "description": "What a screen reader hears after a word's row on a unit's screen: tapping it opens the word's card."
+  },
+  "wordSheetIpa": "/{ipa}/",
+  "@wordSheetIpa": {
+    "description": "How a word is said, in the IPA, on its card. The slashes mark IPA; keep them.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "kaːlam"
+      }
+    }
+  },
+  "wordSheetLine": "{id} · {state}",
+  "@wordSheetLine": {
+    "description": "Top line of a word's card on a unit's screen: its id and where the learner stands with it, as the word's row says it.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "state": {
+        "type": "String",
+        "example": "Learning 58%"
+      }
+    }
+  },
+  "wordSheetLinePos": "{id} · {pos} · {state}",
+  "@wordSheetLinePos": {
+    "description": "Top line of a word's card on a unit's screen: its id, its part of speech as the deck gives it, and where the learner stands with it.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "pos": {
+        "type": "String",
+        "example": "noun"
+      },
+      "state": {
+        "type": "String",
+        "example": "Learning 58%"
+      }
+    }
+  },
+  "wordSheetSoundsLike": "Sounds almost like {word} ({reading}), {meaning}. Take care when you say it.",
+  "@wordSheetSoundsLike": {
+    "description": "Warning on a word's card: another word sounds almost the same.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కలం"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kalam"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "pen"
+      }
+    }
+  },
+  "wordSheetSoundsLikeNoReading": "Sounds almost like {word}, {meaning}. Take care when you say it.",
+  "@wordSheetSoundsLikeNoReading": {
+    "description": "Warning on a word's card: another word, with no reading, sounds almost the same.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "pero"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "but"
+      }
+    }
+  },
+  "wordSheetSoundsLikeTitle": "Sounds like another word",
+  "@wordSheetSoundsLikeTitle": {
+    "description": "Heading of the warning on a word's card that another word sounds almost the same."
+  },
   "deckKindScript": "Script",
   "@deckKindScript": {
     "description": "A deck that teaches a writing system."
@@ -1277,29 +1931,77 @@
       }
     }
   },
-  "reportOpen": "Report a problem or idea",
+  "reportOpen": "Get support or report a problem",
   "@reportOpen": {
-    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen."
+    "description": "Tooltip of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback."
   },
-  "reportTitle": "Report a problem or idea",
+  "reportTitle": "Support and feedback",
   "@reportTitle": {
-    "description": "Title of the report screen."
+    "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
   },
-  "reportKindGroup": "What kind of report?",
+  "reportKindGroup": "What would you like to do?",
   "@reportKindGroup": {
-    "description": "Accessibility label of the bug / feature / suggestion choice."
+    "description": "Accessibility label of the choice between getting support, reporting a bug and giving feedback."
   },
-  "reportKindBug": "Bug",
+  "reportKindSupport": "Get support",
+  "@reportKindSupport": {
+    "description": "A report asking for help. Its mail stays private."
+  },
+  "reportKindSupportDesc": "A question, or help with the app. Private.",
+  "@reportKindSupportDesc": {
+    "description": "Under Get support on the report screen."
+  },
+  "reportKindBug": "Report a bug",
   "@reportKindBug": {
-    "description": "A report that something is wrong."
+    "description": "A report that something is wrong. Becomes a public GitHub issue."
   },
-  "reportKindFeature": "Feature",
-  "@reportKindFeature": {
-    "description": "A report asking for something new."
+  "reportKindBugDesc": "Something went wrong. Becomes a public issue.",
+  "@reportKindBugDesc": {
+    "description": "Under Report a bug on the report screen. The issue is on GitHub."
   },
-  "reportKindSuggestion": "Suggestion",
-  "@reportKindSuggestion": {
-    "description": "A report suggesting a change."
+  "reportKindFeedback": "Give feedback",
+  "@reportKindFeedback": {
+    "description": "A report with an idea, a wish or a feature request. Becomes a public GitHub issue."
+  },
+  "reportKindFeedbackDesc": "An idea, a wish or a new feature. Becomes a public issue.",
+  "@reportKindFeedbackDesc": {
+    "description": "Under Give feedback on the report screen. The issue is on GitHub."
+  },
+  "reportDetailsHintSupport": "What do you need help with?",
+  "@reportDetailsHintSupport": {
+    "description": "Hint in the details field when getting support."
+  },
+  "reportDetailsHintBug": "What did you do, and what happened?",
+  "@reportDetailsHintBug": {
+    "description": "Hint in the details field when reporting a bug."
+  },
+  "reportDetailsHintFeedback": "What would make Fluenough better for you?",
+  "@reportDetailsHintFeedback": {
+    "description": "Hint in the details field when giving feedback."
+  },
+  "reportPromptSupportTried": "What have you tried so far?",
+  "@reportPromptSupportTried": {
+    "description": "A question set in a support mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptBugSteps": "How can we make it happen again?",
+  "@reportPromptBugSteps": {
+    "description": "A question set in a bug report mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptBugExpected": "What did you expect instead?",
+  "@reportPromptBugExpected": {
+    "description": "A question set in a bug report mail's body, after the steps, for the reporter to answer or delete in their mail app."
+  },
+  "reportPromptFeedbackWhy": "How would it help you?",
+  "@reportPromptFeedbackWhy": {
+    "description": "A question set in a feedback mail's body, under the details, for the reporter to answer or delete in their mail app."
+  },
+  "reportPrivate": "Support mails stay private, between you and Fluenough. They never become public issues.",
+  "@reportPrivate": {
+    "description": "Note above Send when getting support."
+  },
+  "reportEditable": "Your mail app opens with all this filled in. Change anything you like before you send it.",
+  "@reportEditable": {
+    "description": "Note above Send on the report screen: the mail's subject and text can be edited in the mail app."
   },
   "reportTitleLabel": "Title",
   "@reportTitleLabel": {
@@ -1312,10 +2014,6 @@
   "reportDetailsLabel": "Details",
   "@reportDetailsLabel": {
     "description": "Label of the report's longer text."
-  },
-  "reportDetailsHint": "What did you do, and what happened? Or what would help?",
-  "@reportDetailsHint": {
-    "description": "Hint in the report's details field."
   },
   "reportInMailApp": "Your mail app has the report. Send it from there.",
   "@reportInMailApp": {
@@ -1333,9 +2031,9 @@
   "@reportLinkCopied": {
     "description": "SnackBar when nothing on the phone could open the GitHub link for a report, so it was copied instead."
   },
-  "reportPublic": "Reports become public GitHub issues. Your email address is not shown; leave out anything private.",
+  "reportPublic": "Bug reports and feedback become public GitHub issues. Your email address is not shown; leave out anything private.",
   "@reportPublic": {
-    "description": "Warning above Send, on the mail report."
+    "description": "Warning above Send, when reporting a bug or giving feedback."
   },
   "reportAlsoSent": "Always sent: this screen and what it showed.",
   "@reportAlsoSent": {
@@ -1344,6 +2042,33 @@
   "reportDeviceInfo": "Include device information",
   "@reportDeviceInfo": {
     "description": "Checkbox on a report, unticked until the reporter ticks it: adds the device details shown under it (app and system versions, screen size, text scale, languages)."
+  },
+  "reportLog": "Attach the app log",
+  "@reportLog": {
+    "description": "Checkbox on a report, unticked until the reporter ticks it: attaches the app's own log as a file (#162)."
+  },
+  "reportLogSummary": "{count, plural, =1{1 line} other{{count} lines}} from the last 7 days at most: screens opened, decks loaded, fits run, imports, exports, warnings and errors. Never your answers or cards. The newest:",
+  "@reportLogSummary": {
+    "description": "Under Attach the app log: what the file holds, above its newest lines.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "reportLogEmpty": "The app log is empty, so there is nothing to attach.",
+  "@reportLogEmpty": {
+    "description": "Under Attach the app log, when the log holds nothing."
+  },
+  "reportLogSeeAll": "See the whole log",
+  "@reportLogSeeAll": {
+    "description": "Button under Attach the app log that opens the app log, to see all that would be attached."
+  },
+  "reportInMailAppNoLog": "Your mail app has the report, but the app log couldn’t be attached. You can export it from Settings > Logs and attach it yourself.",
+  "@reportInMailAppNoLog": {
+    "description": "Shown when the report reached the mail app without the app log, because the phone could not share the file."
   },
   "reportGitHubTitle": "Report on GitHub",
   "@reportGitHubTitle": {
@@ -3900,13 +4625,76 @@
   "@settingsSectionLogs": {
     "description": "Settings section heading, for the app's own log (#162)."
   },
-  "settingsAppLog": "App log",
-  "@settingsAppLog": {
-    "description": "Settings row: the app's own log of what it did and what went wrong (#162). Feature incoming."
+  "settingsLogAbout": "What the app did and what went wrong, kept on this phone for 7 days, to add to a report if you choose. Never your answers or cards.",
+  "@settingsLogAbout": {
+    "description": "Under the Logs section in Settings: what the app log holds (#162)."
   },
-  "settingsAppLogDesc": "What the app did and what went wrong, to add to a report",
-  "@settingsAppLogDesc": {
-    "description": "Subtitle of the App log row in Settings."
+  "settingsLogView": "View app log",
+  "@settingsLogView": {
+    "description": "Settings row that opens the app's own log (#162)."
+  },
+  "settingsLogViewDesc": "{count, plural, =0{Nothing logged yet} =1{1 line} other{{count} lines}}",
+  "@settingsLogViewDesc": {
+    "description": "Under View app log: how many lines the app log holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "settingsLogCopy": "Copy app log",
+  "@settingsLogCopy": {
+    "description": "Settings row that copies the app log as text."
+  },
+  "settingsLogCopied": "App log copied",
+  "@settingsLogCopied": {
+    "description": "SnackBar after the app log is copied."
+  },
+  "settingsLogExport": "Export app log",
+  "@settingsLogExport": {
+    "description": "Settings row that saves the app log as a file."
+  },
+  "settingsLogExportDesc": "Text file",
+  "@settingsLogExportDesc": {
+    "description": "Under Export app log: the kind of file it saves."
+  },
+  "settingsLogExportFailed": "Couldn’t save the app log",
+  "@settingsLogExportFailed": {
+    "description": "SnackBar when saving the app log fails."
+  },
+  "settingsLogClear": "Clear app log",
+  "@settingsLogClear": {
+    "description": "Settings row that deletes everything in the app log."
+  },
+  "settingsLogClearTitle": "Clear the app log?",
+  "@settingsLogClearTitle": {
+    "description": "Title of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearBody": "Everything in it is deleted. Your progress and review log stay.",
+  "@settingsLogClearBody": {
+    "description": "Text of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearConfirm": "Clear",
+  "@settingsLogClearConfirm": {
+    "description": "Button in the dialog that clears the app log."
+  },
+  "settingsLogCleared": "App log cleared",
+  "@settingsLogCleared": {
+    "description": "SnackBar after the app log is cleared."
+  },
+  "appLogTitle": "App log",
+  "@appLogTitle": {
+    "description": "Title of the page that shows the app's own log (#162)."
+  },
+  "appLogEmpty": "Nothing logged yet.",
+  "@appLogEmpty": {
+    "description": "Shown on the App log page when the log is empty."
+  },
+  "appLogLabel": "The app log, oldest first",
+  "@appLogLabel": {
+    "description": "Accessibility label of the list of log lines on the App log page."
   },
   "settingsExport": "Export review log",
   "@settingsExport": {
@@ -4415,5 +5203,1010 @@
   "localeOwnIso639_3": "eng",
   "@localeOwnIso639_3": {
     "description": "The ISO 639-3 code of THIS translation's language: hin, urd. Shown beside localeOwnName in the language picker. Not translated."
+  },
+  "reviewSettingsSection": "Reviewing",
+  "@reviewSettingsSection": {
+    "description": "Settings heading over Review decks, the rater code and How reviewing works (docs/plans/deck-browser.md)."
+  },
+  "reviewSettingsSwitch": "Review decks",
+  "@reviewSettingsSwitch": {
+    "description": "Settings switch that turns reviewer mode on: the reviewer checks cards and sends reviews by mail. The app calls this switch Review decks everywhere."
+  },
+  "reviewSettingsSwitchDesc": "Check cards and send your suggestions by mail. The two buttons are “Looks right” and “Suggest a change”.",
+  "@reviewSettingsSwitchDesc": {
+    "description": "Under the Review decks switch. The two quoted names must match reviewLooksRight and reviewSuggest."
+  },
+  "reviewSettingsCode": "Your rater code",
+  "@reviewSettingsCode": {
+    "description": "Settings row label over the reviewer's rater code, FL-XXXX-XXXX-C."
+  },
+  "reviewSettingsCopy": "Copy code",
+  "@reviewSettingsCopy": {
+    "description": "Tooltip of the button that copies the rater code."
+  },
+  "reviewSettingsCopied": "Rater code copied",
+  "@reviewSettingsCopied": {
+    "description": "Shown once the rater code is copied."
+  },
+  "reviewSettingsToSend": "Reviews to send",
+  "@reviewSettingsToSend": {
+    "description": "Settings row that opens the send sheet listing every deck with reviews not sent yet."
+  },
+  "reviewSettingsSendAgain": "Send the last mail again",
+  "@reviewSettingsSendAgain": {
+    "description": "Settings row for when the review mail did not go: puts the decks the last mail carried back to send, and opens the send sheet."
+  },
+  "reviewSettingsSendAgainDesc": "{count, plural, =1{If it did not go, its deck waits to send again} other{If it did not go, its {count} decks wait to send again}}",
+  "@reviewSettingsSendAgainDesc": {
+    "description": "Under Send the last mail again: how many decks the last mail carried.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewSettingsHelped": "Decks you helped build",
+  "@reviewSettingsHelped": {
+    "description": "Settings row listing the decks that list this reviewer's rater code among their reviewers."
+  },
+  "reviewSettingsHelpedDeck": "{deck} ({language})",
+  "@reviewSettingsHelpedDeck": {
+    "description": "One deck in the Decks you helped build row: the deck's name and its language.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewSettingsHow": "How reviewing works",
+  "@reviewSettingsHow": {
+    "description": "Settings row, and the title of the sheet, that explains reviewing step by step."
+  },
+  "reviewSettingsLanguages": "Languages you review",
+  "@reviewSettingsLanguages": {
+    "description": "Settings row under Review decks: the languages this reviewer checks decks in; opens a choice."
+  },
+  "reviewSettingsLanguagesNone": "None chosen",
+  "@reviewSettingsLanguagesNone": {
+    "description": "Under Languages you review when the reviewer has unticked every language."
+  },
+  "reviewLanguagesBody": "What waits for review shows for these languages, and the path marks their units \"To review\". At first, the languages you speak that the app teaches.",
+  "@reviewLanguagesBody": {
+    "description": "Under the title of the choice of languages a reviewer reviews."
+  },
+  "reviewSettingsWaiting": "Waiting for review",
+  "@reviewSettingsWaiting": {
+    "description": "Settings row under Review decks, and the title of its page: what still needs a native speaker in the reviewer's languages."
+  },
+  "reviewSettingsWaitingDesc": "{count, plural, =0{Nothing waiting in your languages} =1{1 deck waits for a native speaker} other{{count} decks wait for a native speaker}}",
+  "@reviewSettingsWaitingDesc": {
+    "description": "Under Waiting for review in Settings: how many decks in the reviewer's languages are not yet signed off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewWaitingIntro": "What still needs a native speaker in the languages you review. A deck waits until a native speaker signs it off.",
+  "@reviewWaitingIntro": {
+    "description": "At the top of the Waiting for review page."
+  },
+  "reviewWaitingNoLanguages": "You review no language yet. Choose the languages you review to see what waits in them.",
+  "@reviewWaitingNoLanguages": {
+    "description": "Waiting for review page, when the reviewer reviews no language."
+  },
+  "reviewWaitingChoose": "Choose languages",
+  "@reviewWaitingChoose": {
+    "description": "Button on the Waiting for review page that opens the choice of languages."
+  },
+  "reviewWaitingNothing": "Nothing waits for review in {language}",
+  "@reviewWaitingNothing": {
+    "description": "The one row of a language with nothing waiting.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewWaitingUnit": "Unit {number}: {title}",
+  "@reviewWaitingUnit": {
+    "description": "A unit of the path with a deck waiting for review.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      },
+      "title": {
+        "type": "String",
+        "example": "Family"
+      }
+    }
+  },
+  "reviewWaitingCardsLeft": "{count, plural, =0{Every card checked: sign it off} =1{1 card left to check} other{{count} cards left to check}}",
+  "@reviewWaitingCardsLeft": {
+    "description": "How many cards of a deck or unit waiting for review the reviewer has left to check.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewWaitingDeckCards": "{deck}: {count, plural, =0{every card checked} =1{1 card left} other{{count} cards left}}",
+  "@reviewWaitingDeckCards": {
+    "description": "One deck of a unit waiting for review, and its cards left to check.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family words"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewWaitingFrom": "From {language}",
+  "@reviewWaitingFrom": {
+    "description": "A deck waiting for review outside the reviewer's course: the language it is taught from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "reviewWaitingUnrated": "{count, plural, =1{1 offensive word not yet rated} other{{count} offensive words not yet rated}}",
+  "@reviewWaitingUnrated": {
+    "description": "Row of a language on the Waiting for review page. The words are not named.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "reviewWaitingUnconfirmed": "{count, plural, =1{1 sound-alike or look-alike pair not yet confirmed} other{{count} sound-alike and look-alike pairs not yet confirmed}}",
+  "@reviewWaitingUnconfirmed": {
+    "description": "Row of a language on the Waiting for review page: words like a rude one whose pair the reviewer has not confirmed or rejected.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewWaitingInDecks": "In {decks}",
+  "@reviewWaitingInDecks": {
+    "description": "Under a row of words waiting: the decks they are in, joined.",
+    "placeholders": {
+      "decks": {
+        "type": "String",
+        "example": "Rude words · Family words"
+      }
+    }
+  },
+  "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
+  "@reviewWaitingUnsent": {
+    "description": "Row of a language on the Waiting for review page; opens the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathToReview": "To review",
+  "@pathToReview": {
+    "description": "Mark on a unit of the path, in reviewer mode, that has a deck no native speaker has signed off yet."
+  },
+  "reviewTurnOnTitle": "Review decks?",
+  "@reviewTurnOnTitle": {
+    "description": "Title of the dialog shown when turning Review decks on."
+  },
+  "reviewTurnOnBody": "You get a rater code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
+  "@reviewTurnOnBody": {
+    "description": "First paragraph of the dialog shown when turning Review decks on."
+  },
+  "reviewTurnOnMany": "Review as many decks as you like, and send them together in one mail.",
+  "@reviewTurnOnMany": {
+    "description": "Second paragraph of the turn-on dialog: several decks go in one mail (owner, 2026-10-09)."
+  },
+  "reviewTurnOnPublic": "Rater codes are public, to thank you. Your mail address is not.",
+  "@reviewTurnOnPublic": {
+    "description": "Last paragraph of the turn-on dialog."
+  },
+  "reviewTurnOn": "Turn on",
+  "@reviewTurnOn": {
+    "description": "Button of the turn-on dialog that turns reviewing on."
+  },
+  "reviewHowCodeTitle": "Your rater code",
+  "@reviewHowCodeTitle": {
+    "description": "Step 1 of How reviewing works."
+  },
+  "reviewHowCodeBody": "Turning on reviewing gives you a code, made on this phone. Nothing is sent when you turn it on.",
+  "@reviewHowCodeBody": {
+    "description": "Step 1 of How reviewing works."
+  },
+  "reviewHowCheckTitle": "Check cards",
+  "@reviewHowCheckTitle": {
+    "description": "Step 2 of How reviewing works."
+  },
+  "reviewHowCheckBody": "Open a unit and tap Review. Mark each card that is right, or tap it to suggest a change and say why.",
+  "@reviewHowCheckBody": {
+    "description": "Step 2 of How reviewing works."
+  },
+  "reviewHowSendTitle": "Send by mail",
+  "@reviewHowSendTitle": {
+    "description": "Step 3 of How reviewing works."
+  },
+  "reviewHowSendBody": "Your reviews stay on this phone until you send them. Review as many decks as you like, then tap Send review: one mail takes them all, a file for each deck. Your mail app opens with Fluenough’s address filled in. Read it, then send it. If the mail does not go, tap Send the last mail again in Settings.",
+  "@reviewHowSendBody": {
+    "description": "Step 3 of How reviewing works."
+  },
+  "reviewHowSameTitle": "Always use the same address",
+  "@reviewHowSameTitle": {
+    "description": "Step 4 of How reviewing works."
+  },
+  "reviewHowSameBody": "Send every review from the same mail address. Your code is public, so the Fluenough team goes by the address too. If you change mail address, say so in the mail.",
+  "@reviewHowSameBody": {
+    "description": "Step 4 of How reviewing works."
+  },
+  "reviewHowPublicTitle": "What is public, and thanks",
+  "@reviewHowPublicTitle": {
+    "description": "Step 5 of How reviewing works."
+  },
+  "reviewHowPublicBody": "Fluenough’s public issue list shows your code and the languages you reviewed, so the team knows a review arrived. Your mail address and what you wrote stay private. When a deck you checked is updated, it lists your code, and the app says thank you.",
+  "@reviewHowPublicBody": {
+    "description": "Step 5 of How reviewing works."
+  },
+  "reviewHowAdult": "Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to native speakers in general, not to you.",
+  "@reviewHowAdult": {
+    "description": "Aside in How reviewing works."
+  },
+  "reviewHowOff": "You can turn reviewing off at any time; your code is kept.",
+  "@reviewHowOff": {
+    "description": "Last line of How reviewing works."
+  },
+  "reviewHowGotIt": "Got it",
+  "@reviewHowGotIt": {
+    "description": "Button that closes How reviewing works."
+  },
+  "reviewHowStep": "Step {number}",
+  "@reviewHowStep": {
+    "description": "Read by a screen reader before each step of How reviewing works.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewFirstTitle": "Turn on reviewing first",
+  "@reviewFirstTitle": {
+    "description": "Title of the dialog from a unit's Review button while reviewing is off."
+  },
+  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your rater code. Then come back here.",
+  "@reviewFirstBody": {
+    "description": "Body of the Turn on reviewing first dialog. The quoted name must match reviewSettingsSwitch.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewFirstNotNow": "Not now",
+  "@reviewFirstNotNow": {
+    "description": "Button that closes the Turn on reviewing first dialog."
+  },
+  "reviewFirstOpenSettings": "Open Settings",
+  "@reviewFirstOpenSettings": {
+    "description": "Button of the Turn on reviewing first dialog that goes to Settings."
+  },
+  "reviewThanksTitle": "Thanks for checking this unit",
+  "@reviewThanksTitle": {
+    "description": "On a unit whose decks list the reviewer's rater code, in place of the not-yet-checked notice."
+  },
+  "reviewThanksBy": "{count, plural, =0{Checked by {code}} =1{Checked by {code} and 1 other} other{Checked by {code} and {count} others}}",
+  "@reviewThanksBy": {
+    "description": "Under reviewThanksTitle: the reviewer's own code, and how many other reviewers the unit lists.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      },
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      }
+    }
+  },
+  "reviewPageTitle": "Review · {unit}",
+  "@reviewPageTitle": {
+    "description": "Title of the screen that reviews a unit's cards.",
+    "placeholders": {
+      "unit": {
+        "type": "String",
+        "example": "Family"
+      }
+    }
+  },
+  "reviewPageProgress": "{done}/{total}",
+  "@reviewPageProgress": {
+    "description": "At the top end of the review screen: cards checked of all.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewPageProgressLabel": "{done} of {total} cards checked",
+  "@reviewPageProgressLabel": {
+    "description": "Read by a screen reader for the review screen's progress.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your rater code.",
+  "@reviewPageInfo": {
+    "description": "At the top of the review screen."
+  },
+  "reviewSectionCards": "{count, plural, =1{1 card} other{{count} cards}}",
+  "@reviewSectionCards": {
+    "description": "Beside a deck's name on the review screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewSectionTally": "{right} right · {suggested} suggested",
+  "@reviewSectionTally": {
+    "description": "At the end of a deck's heading on the review screen.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "10"
+      },
+      "suggested": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewRight": "Right",
+  "@reviewRight": {
+    "description": "A card's button on the review screen once it is marked right."
+  },
+  "reviewCheck": "Check",
+  "@reviewCheck": {
+    "description": "A card's button on the review screen before it is marked: tapping it marks it right."
+  },
+  "reviewSuggested": "Suggested",
+  "@reviewSuggested": {
+    "description": "A card's mark on the review screen once a change is suggested."
+  },
+  "reviewCheckFor": "Check {meaning}: mark it right",
+  "@reviewCheckFor": {
+    "description": "Read by a screen reader for a card's Check button on the review screen. Starts with the button's word, then names the card by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewRightFor": "Right: {meaning}. Tap to take it back",
+  "@reviewRightFor": {
+    "description": "Read by a screen reader for a card's Right button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewSuggestedFor": "Suggested: {meaning}. Tap to change it",
+  "@reviewSuggestedFor": {
+    "description": "Read by a screen reader for a card's Suggested button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewRateFor": "Rate {meaning}",
+  "@reviewRateFor": {
+    "description": "Read by a screen reader for a rude word's Rate button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "idiot"
+      }
+    }
+  },
+  "reviewRatedFor": "Rated: {meaning}. Tap to change it",
+  "@reviewRatedFor": {
+    "description": "Read by a screen reader for a rude word's Rated button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "idiot"
+      }
+    }
+  },
+  "reviewRudeHidden": "{count, plural, =1{1 rude word is hidden} other{{count} rude words are hidden}}. Rude words show only with adult content on (18+).",
+  "@reviewRudeHidden": {
+    "description": "On the review screen of a unit with rude words while adult content is off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSignOff": "Sign off · {count} left",
+  "@reviewSignOff": {
+    "description": "Review screen button, disabled until every card is checked.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewSignOffReady": "Sign off",
+  "@reviewSignOffReady": {
+    "description": "Review screen button once every card is checked: the reviewer vouches for the unit."
+  },
+  "reviewSignedOff": "Signed off",
+  "@reviewSignedOff": {
+    "description": "Review screen button once the unit is signed off."
+  },
+  "reviewSignedOffDone": "Signed off. Send your review when you are ready.",
+  "@reviewSignedOffDone": {
+    "description": "Shown once a unit is signed off."
+  },
+  "reviewSend": "Send review",
+  "@reviewSend": {
+    "description": "Button that opens the send sheet, on the review screen."
+  },
+  "reviewDecksWaiting": "{count, plural, =1{1 deck waiting to send} other{{count} decks waiting to send}}",
+  "@reviewDecksWaiting": {
+    "description": "Over the review screen's buttons, and under Reviews to send in Settings.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewCardLine": "{id} · {state}",
+  "@reviewCardLine": {
+    "description": "Top line of a card in review: its id and where its review stands.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "state": {
+        "type": "String",
+        "example": "Not reviewed"
+      }
+    }
+  },
+  "reviewCardLinePos": "{id} · {pos} · {state}",
+  "@reviewCardLinePos": {
+    "description": "Top line of a card in review: its id, its part of speech as the deck gives it, and where its review stands.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "pos": {
+        "type": "String",
+        "example": "noun"
+      },
+      "state": {
+        "type": "String",
+        "example": "Not reviewed"
+      }
+    }
+  },
+  "reviewStateNot": "Not reviewed",
+  "@reviewStateNot": {
+    "description": "A card's review state."
+  },
+  "reviewStateRight": "Looks right",
+  "@reviewStateRight": {
+    "description": "A card's review state."
+  },
+  "reviewStateSuggested": "Suggested",
+  "@reviewStateSuggested": {
+    "description": "A card's review state."
+  },
+  "reviewLooksRight": "Looks right",
+  "@reviewLooksRight": {
+    "description": "Button on a card in review that marks it right."
+  },
+  "reviewSuggest": "Suggest a change",
+  "@reviewSuggest": {
+    "description": "Button on a card in review, and the title of its sheet."
+  },
+  "reviewSuggestOn": "Suggest a change to {word}",
+  "@reviewSuggestOn": {
+    "description": "Read by a screen reader for the pencil button on a card's row.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "daughter"
+      }
+    }
+  },
+  "reviewSuggestWhich": "Which part?",
+  "@reviewSuggestWhich": {
+    "description": "Over the part chips in Suggest a change."
+  },
+  "reviewPartWord": "Word",
+  "@reviewPartWord": {
+    "description": "Part of a card: the word in the language learned."
+  },
+  "reviewPartReading": "Reading",
+  "@reviewPartReading": {
+    "description": "Part of a card: its romanisation."
+  },
+  "reviewPartIpa": "IPA",
+  "@reviewPartIpa": {
+    "description": "Part of a card: how it is said, in the IPA."
+  },
+  "reviewPartMeaning": "Meaning",
+  "@reviewPartMeaning": {
+    "description": "Part of a card: its meaning."
+  },
+  "reviewPartNotes": "Notes",
+  "@reviewPartNotes": {
+    "description": "Part of a card: its note."
+  },
+  "reviewPartExample": "Example",
+  "@reviewPartExample": {
+    "description": "Part of a card: its example sentence."
+  },
+  "reviewPartPicture": "Picture",
+  "@reviewPartPicture": {
+    "description": "Part of a card: its picture."
+  },
+  "reviewSuggestNow": "Now",
+  "@reviewSuggestNow": {
+    "description": "Over what the chosen part of the card says now."
+  },
+  "reviewSuggestNothing": "Nothing yet",
+  "@reviewSuggestNothing": {
+    "description": "When the chosen part of the card is empty."
+  },
+  "reviewSuggestYours": "Your suggestion",
+  "@reviewSuggestYours": {
+    "description": "Label of the field for the suggested text."
+  },
+  "reviewSuggestWhy": "Why",
+  "@reviewSuggestWhy": {
+    "description": "Label of the field for the reason."
+  },
+  "reviewSuggestKept": "Kept on this phone until you send your review.",
+  "@reviewSuggestKept": {
+    "description": "Under the fields of Suggest a change."
+  },
+  "reviewSave": "Save",
+  "@reviewSave": {
+    "description": "Saves a suggestion, a rating or a pair check."
+  },
+  "reviewRudeLevel": "Level",
+  "@reviewRudeLevel": {
+    "description": "Row of a rude card: how offensive it is, as a band."
+  },
+  "reviewRudeType": "Type",
+  "@reviewRudeType": {
+    "description": "Row of a rude card: swear, slur, sexual or family insult."
+  },
+  "reviewRudeFriends": "Among friends",
+  "@reviewRudeFriends": {
+    "description": "Row of a rude card: whether it can be friendly among peers."
+  },
+  "reviewRudeRegion": "Region",
+  "@reviewRudeRegion": {
+    "description": "Row of a rude card: its region note."
+  },
+  "reviewRudeRegionNote": "{regions}: {note}",
+  "@reviewRudeRegionNote": {
+    "description": "A rude card's region note: the regions it names, joined, then the note's text, both from the deck.",
+    "placeholders": {
+      "regions": {
+        "type": "String",
+        "example": "Telangana · Rayalaseema"
+      },
+      "note": {
+        "type": "String",
+        "example": "Heard as a joke among friends here."
+      }
+    }
+  },
+  "reviewRudeNotSet": "Not set yet",
+  "@reviewRudeNotSet": {
+    "description": "A rude card's level, type, friendliness or region note when the deck does not give it yet."
+  },
+  "reviewRudeOnly": "Recognition only: learners are never asked to type or say it.",
+  "@reviewRudeOnly": {
+    "description": "Under a rude card in review."
+  },
+  "reviewRate": "Rate this word",
+  "@reviewRate": {
+    "description": "Button on a rude card in review, and the title of its sheet."
+  },
+  "reviewRated": "Rated {score} of 9",
+  "@reviewRated": {
+    "description": "On a rude card in review once rated.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewRateQuestion": "How offensive is this word to native speakers in general?",
+  "@reviewRateQuestion": {
+    "description": "The rating question (docs/plans/offensive-words.md): keep \"to native speakers in general\"."
+  },
+  "reviewRateLow": "1 Not at all",
+  "@reviewRateLow": {
+    "description": "Under the start of the 1 to 9 scale."
+  },
+  "reviewRateHigh": "9 Extremely",
+  "@reviewRateHigh": {
+    "description": "Under the end of the 1 to 9 scale."
+  },
+  "reviewRateScore": "{score} of 9",
+  "@reviewRateScore": {
+    "description": "Read by a screen reader for one step of the scale.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewRateNote": "Not how it feels to you: how native speakers around you hear it.",
+  "@reviewRateNote": {
+    "description": "Under the 1 to 9 scale."
+  },
+  "reviewRateWhere": "Where you speak {language}",
+  "@reviewRateWhere": {
+    "description": "Over the region chips.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewRateElsewhere": "Elsewhere",
+  "@reviewRateElsewhere": {
+    "description": "The last region chip, after the language's own regions."
+  },
+  "reviewRateFriendly": "Can it be friendly among friends?",
+  "@reviewRateFriendly": {
+    "description": "Over the Yes, No and Sometimes chips."
+  },
+  "reviewFriendlyYes": "Yes",
+  "@reviewFriendlyYes": {
+    "description": "Can it be friendly among friends: yes."
+  },
+  "reviewFriendlyNo": "No",
+  "@reviewFriendlyNo": {
+    "description": "Can it be friendly among friends: no."
+  },
+  "reviewFriendlySometimes": "Sometimes",
+  "@reviewFriendlySometimes": {
+    "description": "Can it be friendly among friends: sometimes."
+  },
+  "reviewAlikeSounds": "Sounds like {word} ({reading})",
+  "@reviewAlikeSounds": {
+    "description": "Title of a sound-alike pair in review: the rude word and its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "వెధవ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "vedhava"
+      }
+    }
+  },
+  "reviewAlikeSoundsNoReading": "Sounds like {word}",
+  "@reviewAlikeSoundsNoReading": {
+    "description": "Title of a sound-alike pair in review, for a word in Latin letters.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "puta"
+      }
+    }
+  },
+  "reviewAlikeLooks": "Looks like {word} ({reading})",
+  "@reviewAlikeLooks": {
+    "description": "Title of a look-alike pair in review: the rude word and its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "వెధవ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "vedhava"
+      }
+    }
+  },
+  "reviewAlikeLooksNoReading": "Looks like {word}",
+  "@reviewAlikeLooksNoReading": {
+    "description": "Title of a look-alike pair in review, for a word in Latin letters.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "puta"
+      }
+    }
+  },
+  "reviewAlikeSoundsAbout": "A rude word, found by the sound check. Learners are told to take care when speaking.",
+  "@reviewAlikeSoundsAbout": {
+    "description": "Under the title of a sound-alike pair in review."
+  },
+  "reviewAlikeLooksAbout": "A rude word, found by the writing check. Learners are told to take care when writing.",
+  "@reviewAlikeLooksAbout": {
+    "description": "Under the title of a look-alike pair in review."
+  },
+  "reviewAlikeCheck": "Check this pair",
+  "@reviewAlikeCheck": {
+    "description": "Button that opens a sound-alike or look-alike pair to confirm or reject."
+  },
+  "reviewAlikeReal": "Is this a real risk?",
+  "@reviewAlikeReal": {
+    "description": "Over Confirm and Reject."
+  },
+  "reviewAlikeConfirm": "Confirm",
+  "@reviewAlikeConfirm": {
+    "description": "The pair is a real risk."
+  },
+  "reviewAlikeReject": "Reject",
+  "@reviewAlikeReject": {
+    "description": "The pair is not a real risk."
+  },
+  "reviewAlikeConfirmed": "Pair confirmed",
+  "@reviewAlikeConfirmed": {
+    "description": "On a card in review once its pair is confirmed."
+  },
+  "reviewAlikeRejected": "Pair rejected",
+  "@reviewAlikeRejected": {
+    "description": "On a card in review once its pair is rejected."
+  },
+  "reviewAlikeCare": "Care note",
+  "@reviewAlikeCare": {
+    "description": "Label of the field for what learners should take care of, at most 40 letters."
+  },
+  "reviewAlikeCareHint": "Keep the long ā",
+  "@reviewAlikeCareHint": {
+    "description": "Hint in the empty care note field."
+  },
+  "reviewAlikeCareHelp": "Learners see this. Short and plain.",
+  "@reviewAlikeCareHelp": {
+    "description": "Under the care note field."
+  },
+  "reviewAlikeCareCount": "{count}/{limit} letters",
+  "@reviewAlikeCareCount": {
+    "description": "The care note's budget, counted as the reviewer types.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "30"
+      },
+      "limit": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "reviewSendTitle": "Send reviews",
+  "@reviewSendTitle": {
+    "description": "Title of the send sheet."
+  },
+  "reviewSendBody": "One mail takes every deck you tick, a file for each. Your mail app opens with Fluenough’s address and the files filled in. Read it, then send it.",
+  "@reviewSendBody": {
+    "description": "At the top of the send sheet."
+  },
+  "reviewSendSame": "Send it from the mail address you always use. Your code is public, so the Fluenough team goes by the address too.",
+  "@reviewSendSame": {
+    "description": "In the send sheet, under reviewSendBody."
+  },
+  "reviewSendDeck": "{deck} ({language})",
+  "@reviewSendDeck": {
+    "description": "A deck in the send sheet: its name and language.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewSendDeckCount": "{count, plural, =0{Signed off} =1{1 card} other{{count} cards}}",
+  "@reviewSendDeckCount": {
+    "description": "Under a deck in the send sheet: how many card reviews it sends.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewSendDeckSigned": "{count, plural, =1{1 card, signed off} other{{count} cards, signed off}}",
+  "@reviewSendDeckSigned": {
+    "description": "Under a signed-off deck in the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewSendButton": "{count, plural, =0{Send} =1{Send 1 deck} other{Send {count} decks}}",
+  "@reviewSendButton": {
+    "description": "Button of the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSendNothing": "Nothing to send yet.",
+  "@reviewSendNothing": {
+    "description": "When there is no review to send."
+  },
+  "reviewSendOpened": "Your mail app is open. Send the mail from there. If it does not go, Settings can send it again.",
+  "@reviewSendOpened": {
+    "description": "Once the mail app has the review."
+  },
+  "reviewSendNoApp": "No mail app took the review. It stays on this phone.",
+  "@reviewSendNoApp": {
+    "description": "When no app on the phone took the mail."
+  },
+  "reviewSendFailed": "The review could not be shared. It stays on this phone.",
+  "@reviewSendFailed": {
+    "description": "When the phone's share failed."
+  },
+  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "@reviewMailBody": {
+    "description": "Body of the review mail, for people only: the files are the record.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.3.4"
+      },
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      },
+      "decks": {
+        "type": "String",
+        "example": "• Family (te-family): 12 cards"
+      }
+    }
+  },
+  "reviewMailDeck": "• {deck} ({id}): {count, plural, =0{signed off} =1{1 card} other{{count} cards}}",
+  "@reviewMailDeck": {
+    "description": "One deck in the review mail's body.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "id": {
+        "type": "String",
+        "example": "te-family"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewMailDeckSigned": "• {deck} ({id}): {count, plural, =1{1 card, signed off} other{{count} cards, signed off}}",
+  "@reviewMailDeckSigned": {
+    "description": "One signed-off deck in the review mail's body.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "id": {
+        "type": "String",
+        "example": "te-family"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "alikeCarefulSpeaking": "Careful when speaking",
+  "@alikeCarefulSpeaking": {
+    "description": "Title of the warning on a word that sounds like a rude word (docs/plans/offensive-words.md)."
+  },
+  "alikeCarefulWriting": "Careful when writing",
+  "@alikeCarefulWriting": {
+    "description": "Title of the warning on a word that looks like a rude word when written."
+  },
+  "alikeSpeakingRude": "Said slightly wrong, this sounds like a rude word.",
+  "@alikeSpeakingRude": {
+    "description": "The warning on a word that sounds like a rude word."
+  },
+  "alikeWritingRude": "Written slightly wrong, this looks like a rude word.",
+  "@alikeWritingRude": {
+    "description": "The warning on a word that looks like a rude word."
+  },
+  "alikeHidden": "The rude word shows only with adult content on.",
+  "@alikeHidden": {
+    "description": "Under the warning while adult content is off."
+  },
+  "reviewCardAbout": "{word} · {reading} · {meaning} · {id}",
+  "@reviewCardAbout": {
+    "description": "Under the title of Suggest a change, Rate this word and Check this pair: the card's word, its reading, its meaning and its id.",
+    "placeholders": {
+      "word": {"type": "String", "example": "కూతురు"},
+      "reading": {"type": "String", "example": "kūturu"},
+      "meaning": {"type": "String", "example": "daughter"},
+      "id": {"type": "String", "example": "te-0384"}
+    }
+  },
+  "reviewCardAboutNoReading": "{word} · {meaning} · {id}",
+  "@reviewCardAboutNoReading": {
+    "description": "As reviewCardAbout, for a word in Latin letters, which has no reading.",
+    "placeholders": {
+      "word": {"type": "String", "example": "la casa"},
+      "meaning": {"type": "String", "example": "the house"},
+      "id": {"type": "String", "example": "es-0001"}
+    }
+  },
+  "reviewRateShort": "Rate",
+  "@reviewRateShort": {
+    "description": "A rude word's button on the review screen before it is rated: opens Rate this word."
+  },
+  "reviewRatedShort": "Rated",
+  "@reviewRatedShort": {
+    "description": "A rude word's button on the review screen once rated: opens the rating again."
   }
 }

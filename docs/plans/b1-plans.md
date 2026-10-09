@@ -1,7 +1,7 @@
 # Plan: a B1 plan in every path
 
-Written 2026-10-06. **After `skill-model.md`, before deck downloads**
-(owner's order).
+Written 2026-10-06. **After the skill model (done: ADR-0034), before deck
+downloads** (owner's order).
 
 ## What the owner asked
 
@@ -134,7 +134,14 @@ them. The validator rejects a deck that leaves one out.
   `bases:`, typed notes, planned units, core and layer) is built in the
   parser, the validator and `docs/DECK-FORMAT.md` before any B1 deck is
   written, so that what is written validates. Then one agent writes the
-  whole Bengali B1 course and another the Telugu one.
+  Bengali course and another the Telugu one (Sonnet writes the decks;
+  CLAUDE.md).
+- **A1 decks only, for now** (owner, 2026-10-09: "once B1 plan is done,
+  we will only create A1 level decks (if any existing deck goes beyond,
+  that's okay) for Bengali and Telugu"). The B1 plan is still written in
+  full, every unit to B1 with its passages, but the deck agents write
+  decks for the A1 units only; A2 and B1 units stay planned ("Coming").
+  An existing deck that already reaches past A1 stays as it is.
 - **Pictures:** the agents use `tools/data/picture-mapping.json`, the
   meanings already matched to Noto Emoji pictures and checked, with the
   matches dropped and why. The 330 cards given pictures keep them.
@@ -263,7 +270,7 @@ answers."
   validator *warning*, not an error (owner's choice).
 - **`pair` notes are proposed by a tool:** course words whose readings
   differ by one sound, such as కలం (kalaṁ) and కాలం (kālaṁ). The same pairs
-  give Hear its sound-alike options (`skill-model.md`).
+  give Hear its sound-alike options (ADR-0034).
 - **A `pair` note names its partner** (`ref`, the card of the word that
   sounds almost the same).
 - **`culture` notes follow the culture-deck rules (#99):** each checkable

@@ -65,7 +65,7 @@ class FsrsState {
 /// it is [w], and the method behaves exactly as it always has.
 ///
 /// A port of `py-fsrs` 6.3.2's scheduler, with fuzzing off so that replaying
-/// the log always gives the same dates (`docs/plans/fsrs.md`). Pure: nothing
+/// the log always gives the same dates (ADR-0033). Pure: nothing
 /// here imports Flutter.
 abstract final class Fsrs {
   /// FSRS-6's default parameters, w0 to w20.

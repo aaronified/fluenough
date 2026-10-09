@@ -23,7 +23,7 @@ cheap to test.
 
 ## Data model
 
-Six tables, in one SQLite database per profile (`lib/core/data/database.dart`,
+Seven tables, in one SQLite database per profile (`lib/core/data/database.dart`,
 which also says how a migration is added). Times are stored as milliseconds
 since the epoch.
 
@@ -45,13 +45,13 @@ or deleted:
 
 ```
 id, ts, deck_id, card_id, mode, grade, elapsed_ms, answer_given,
-interval_before, interval_after, ease_before, ease_after,
-stability_after, difficulty_after
+interval_before, interval_after, stability_after, difficulty_after
 ```
 
 `stability_after` and `difficulty_after` came with migration 5 and are null
-on older rows. Rows from then on write `ease_after` as 0 and `ease_before` as
-null: SM-2's ease belongs to the rows written before.
+on older rows. Migration 6 dropped SM-2's `ease_before` and `ease_after` and
+kept every row (ADR-0033), so the log still replays by grade and time, which
+is all FSRS needs.
 
 Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one

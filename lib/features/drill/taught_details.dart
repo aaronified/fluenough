@@ -8,6 +8,8 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/card_notes.dart';
+import '../review/alike_warning.dart';
 import 'drill_session.dart';
 
 /// How [TaughtDetails] shows a word's reading.
@@ -34,8 +36,9 @@ enum TaughtReading {
 }
 
 /// What a word's lesson showed of it (ADR-0024), laid out as the teach card
-/// does: the word and its reading, its meaning, its note and its first
-/// example, 12 apart and centred.
+/// does: the word and its reading, its meaning, its notes and its first
+/// example, 12 apart and centred. Its notes are every one but a pair note
+/// ([shownNotes]), whose text is the care note of the warning below.
 ///
 /// The teach card shows all of it. A review shows it again once the
 /// question is answered, never before, so that it gives nothing away:
@@ -43,6 +46,10 @@ enum TaughtReading {
 /// [meaning] where it asked for it. A card with no note and no example has
 /// neither. With nothing at all to show, this is empty, so keep it off the
 /// drill's card then, or the card's spacing leaves a gap.
+///
+/// A word that sounds or looks like a rude word ends with the warning
+/// ([AlikeWarning]), which is why this shows only once the word is shown
+/// or answered: seen, heard, spoken and written words alike.
 ///
 /// Put it on the drill's card, which scrolls, not in the frame's fixed
 /// foot. It measures like any other child of the card (see `DrillFrame`):
@@ -87,14 +94,16 @@ class TaughtDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final settings = AppScope.read(context).settings;
+    final state = AppScope.read(context);
+    final settings = state.settings;
+    final warnings = AlikeWarning.forCard(state, card, language);
     // Live, as the reading's line follows Show romanisation.
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) {
         final theme = Theme.of(context);
         final scheme = theme.colorScheme;
-        final notes = card.notes.firstOrNull?.text;
+        final notes = shownNotes(card);
         final children = <Widget>[
           if (word) ..._word(theme, showReading: _showsReading(settings)),
           if (meaning)
@@ -104,15 +113,15 @@ class TaughtDetails extends StatelessWidget {
               style: theme.textTheme.headlineMedium,
             ),
           ?between,
-          if (notes != null)
-            // Padding, not a max-width box: DrillFrame measures the card's
-            // intrinsic height, and a ConstrainedBox reports its child's
-            // height at the full width, so wrapped notes would overflow.
-            // 19 each side is the design's 280 on a phone's 318 card.
+          // Padding, not a max-width box: DrillFrame measures the card's
+          // intrinsic height, and a ConstrainedBox reports its child's
+          // height at the full width, so wrapped notes would overflow.
+          // 19 each side is the design's 280 on a phone's 318 card.
+          for (final note in notes)
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
               child: Text(
-                notes,
+                note,
                 textAlign: TextAlign.center,
                 style: theme.textTheme.bodyLarge!.copyWith(
                   fontSize: 15,
@@ -123,6 +132,7 @@ class TaughtDetails extends StatelessWidget {
             ),
           if (card.examples.isNotEmpty)
             _Example(example: card.examples.first, language: language),
+          ...warnings,
         ];
         if (children.isEmpty) return const SizedBox.shrink();
         return Column(
