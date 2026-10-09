@@ -124,7 +124,8 @@ units:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
       - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
-  - planned: { id: "te-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["te-more-verbs", "te-more-verbs-sentences", "*"]
+    words: 32
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
