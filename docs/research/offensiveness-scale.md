@@ -82,7 +82,7 @@ Only claims that passed the citation checks are used below. Where a check correc
 1. Draft a candidate list from attested sources:
    - Hindi, Bengali and the other Indian languages: HASOC, MACD, BD-SHS and MOLD data.
    - Spanish: SHARE (licence permitting) and the Sulpizio et al. (2024) Spain and Chile items.
-2. Have several native speakers per language rate each word, ideally from more than one region. Ask Janschewitz's question: "How offensive is this word to native speakers in general?" Use a 1-9 or 5-point Likert scale. This follows the Revised HurtLex method.
+2. Have several native speakers per language rate each word, ideally from more than one region. Ask Janschewitz's question: "How offensive is this word to people in general?" Use a 1-9 or 5-point Likert scale. This follows the Revised HurtLex method.
 3. Map the median rating to the four bands, with the cut points written down. Put slurs in strongest by rule.
 4. Where raters from different regions disagree by a band or more, add a region note instead of averaging. For Spanish, check against the Sulpizio et al. Spain and Chile data.
 5. Add a one-line context note (who says it to whom, friendly vs hostile). Record reviewer and date on the card.
