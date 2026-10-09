@@ -212,11 +212,8 @@ Converted as each language's B1 plan is written:
 
 - **The exact mastery bar,** between 80% and 90%, and how many recent
   answers it counts.
-- **How a rule makes its forms:**
-  - from each word's stem, with exceptions listed on the word's card; or
-  - every form listed per word.
-
-  Telugu's oblique stems (ఇల్లు → ఇంటి-) make the first harder to get right.
+- ~~How a rule makes its forms~~: every form listed per word (owner,
+  2026-10-09; see `b1-plans.md`).
 - **How many cells of a growing table** a lesson asks at once.
 
 ## Estimate
