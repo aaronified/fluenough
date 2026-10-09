@@ -15,7 +15,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
   - id: "mr-0159"
     target: "हे माझे घर आहे."
     reading: "he mājhe ghar āhe."
@@ -25,8 +25,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "हे", base: "हे", reading: "he" }
-      - { word: "माझे", base: "माझे", reading: "mājhe" }
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "माझे", base: "माझा", reading: "mājhā" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
   - id: "mr-0160"
     target: "मी चहा पितो."
     reading: "mi cahā pito."
@@ -36,7 +36,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "पितो", base: "पितो", reading: "pito" }
+      - { word: "पितो", base: "पिणे", reading: "piṇe" }
   - id: "mr-0161"
     target: "ती मराठी शिकत आहे."
     reading: "ti marāṭhi śikat āhe."
@@ -45,8 +45,8 @@ cards:
     bases:
       - { word: "ती", base: "ती", reading: "ti" }
       - { word: "मराठी", base: "मराठी", reading: "marāṭhi" }
-      - { word: "शिकत", base: "शिकत", reading: "śikat" }
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "शिकत", base: "शिकणे", reading: "śikṇe" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
   - id: "mr-0162"
     target: "मला मराठी आवडते."
     reading: "malā marāṭhi āvaḍte."
@@ -55,7 +55,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मला", base: "मला", reading: "malā" }
+      - { word: "मला", ref: "mr-0080" }
       - { word: "मराठी", base: "मराठी", reading: "marāṭhi" }
   - id: "mr-0163"
     target: "माझ्याकडे गाडी आहे."
@@ -65,8 +65,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "माझ्याकडे", base: "माझ्याकडे", reading: "mājhyākaḍe" }
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "माझ्याकडे", ref: "mr-0080" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
   - id: "mr-0164"
     target: "माझ्याकडे पैसे नाहीत."
     reading: "mājhyākaḍe paise nāhit."
@@ -75,8 +75,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "माझ्याकडे", base: "माझ्याकडे", reading: "mājhyākaḍe" }
-      - { word: "नाहीत", base: "नाहीत", reading: "nāhit" }
+      - { word: "माझ्याकडे", ref: "mr-0080" }
+      - { word: "नाहीत", ref: "mr-0169" }
   - id: "mr-0165"
     target: "हे चांगले नाही."
     reading: "he cāṅgle nāhi."
@@ -84,8 +84,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "हे", base: "हे", reading: "he" }
-      - { word: "चांगले", base: "चांगले", reading: "cāṅgle" }
-      - { word: "नाही", base: "नाही", reading: "nāhi" }
+      - { word: "चांगले", base: "चांगला", reading: "cāṅglā" }
+      - { word: "नाही", ref: "mr-0169" }
   - id: "mr-0166"
     target: "जाऊ नका."
     reading: "jāu nakā."
@@ -94,7 +94,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "जाऊ", base: "जाऊ", reading: "jāu" }
+      - { word: "जाऊ", base: "जाणे", reading: "jāṇe" }
       - { word: "नका", base: "नका", reading: "nakā" }
   - id: "mr-0167"
     target: "आज खूप उकाडा आहे."
@@ -106,4 +106,4 @@ cards:
     bases:
       - { word: "खूप", base: "खूप", reading: "khup" }
       - { word: "उकाडा", base: "उकाडा", reading: "ukāḍā" }
-      - { word: "आहे", base: "आहे", reading: "āhe" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }

@@ -15,8 +15,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "जाऊ", base: "जाऊ", reading: "jāu" }
-      - { word: "शकतो", base: "शकतो", reading: "śakto" }
+      - { word: "जाऊ", base: "जाणे", reading: "jāṇe" }
+      - { word: "शकतो", base: "शकणे", reading: "śakṇe" }
   - id: "mr-0640"
     target: "मला पोहता येते."
     reading: "malā pohtā yete."
@@ -25,9 +25,9 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मला", base: "मला", reading: "malā" }
-      - { word: "पोहता", base: "पोहता", reading: "pohtā" }
-      - { word: "येते", base: "येते", reading: "yete" }
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "पोहता", base: "पोहणे", reading: "pohṇe" }
+      - { word: "येते", base: "येणे", reading: "yeṇe" }
   - id: "mr-0641"
     target: "मला गाडी चालवता येत नाही."
     reading: "malā gāḍi cālavtā yet nāhi."
@@ -36,10 +36,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मला", base: "मला", reading: "malā" }
-      - { word: "चालवता", base: "चालवता", reading: "cālavtā" }
-      - { word: "येत", base: "येत", reading: "yet" }
-      - { word: "नाही", base: "नाही", reading: "nāhi" }
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "चालवता", base: "चालवणे", reading: "cālavṇe" }
+      - { word: "येत", base: "येणे", reading: "yeṇe" }
+      - { word: "नाही", ref: "mr-0169" }
   - id: "mr-0642"
     target: "मी आत येऊ का?"
     reading: "mi āt yeu kā?"
@@ -49,7 +49,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "आत", base: "आत", reading: "āt" }
-      - { word: "येऊ", base: "येऊ", reading: "yeu" }
+      - { word: "येऊ", base: "येणे", reading: "yeṇe" }
   - id: "mr-0643"
     target: "मला जायला हवे."
     reading: "malā jāylā have."
@@ -58,8 +58,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मला", base: "मला", reading: "malā" }
-      - { word: "जायला", base: "जायला", reading: "jāylā" }
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "जायला", base: "जाणे", reading: "jāṇe" }
   - id: "mr-0644"
     target: "मला उद्या कामावर जावे लागेल."
     reading: "malā udyā kāmāvar jāve lāgel."
@@ -68,10 +68,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "मला", base: "मला", reading: "malā" }
+      - { word: "मला", ref: "mr-0080" }
       - { word: "कामावर", ref: "mr-0234" }
-      - { word: "जावे", base: "जावे", reading: "jāve" }
-      - { word: "लागेल", base: "लागेल", reading: "lāgel" }
+      - { word: "जावे", base: "जाणे", reading: "jāṇe" }
+      - { word: "लागेल", base: "लागणे", reading: "lāgṇe" }
   - id: "mr-0645"
     target: "तुम्ही इथे बसू शकता."
     reading: "tumhi ithe basu śaktā."
@@ -81,8 +81,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "इथे", base: "इथे", reading: "ithe" }
-      - { word: "बसू", base: "बसू", reading: "basu" }
-      - { word: "शकता", base: "शकता", reading: "śaktā" }
+      - { word: "बसू", base: "बसणे", reading: "basṇe" }
+      - { word: "शकता", base: "शकणे", reading: "śakṇe" }
   - id: "mr-0646"
     target: "इथे फोटो काढू नये."
     reading: "ithe foṭo kāḍhu naye."
@@ -93,5 +93,5 @@ cards:
     bases:
       - { word: "इथे", base: "इथे", reading: "ithe" }
       - { word: "फोटो", base: "फोटो", reading: "foṭo" }
-      - { word: "काढू", base: "काढू", reading: "kāḍhu" }
+      - { word: "काढू", base: "काढणे", reading: "kāḍhṇe" }
       - { word: "नये", base: "नये", reading: "naye" }
