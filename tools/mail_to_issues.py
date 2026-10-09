@@ -35,6 +35,29 @@ the files and is marked "subject changed"; when the files carry different
 codes, or none, or a code whose check symbol fails, it is marked "check
 the files".
 
+The sender check (deck-browser.md, "The sender check lives in the Fluenough
+Gmail"): a code is public, so the first review mail with a code ties it to
+the address it came from. The tool keeps one private record per rater code
+in the Gmail label `fluenough/raters`, which it creates: a mail it puts
+there itself with IMAP APPEND (nothing is sent), its subject the code, its
+body the address. Addresses are compared with case ignored, and for
+gmail.com and googlemail.com with the dots of the local part and anything
+from `+` ignored. A later review from another address is filed marked
+"sender does not match", for the owner to decide; the issue still names
+only the code and the languages. The records are read afresh on every run,
+so a record the owner deletes in Gmail is tied again by the code's next
+mail, and one the owner adds or replaces is what counts from then on: a
+sender matching any record of its code passes. A record's address is
+read from the first line of its body, bare or as `Name <address>`; a
+record whose subject is not a code or whose first line is not one address
+is passed over, and the log counts those. When the label cannot be read
+or a record cannot be written, or the mail has no single sender, the mail
+is filed marked "sender not checked", never dropped. When the connection
+drops while a record is written, the run stops before filing that mail,
+which stays in the inbox for the next run: filing it unchecked would leave
+it unlabelled, and filed again an hour later. No address and no record's
+body is ever printed: the job's log is public, so it says counts only.
+
 Environment:
     FEEDBACK_GMAIL_ADDRESS, FEEDBACK_GMAIL_APP_PASSWORD  the inbox. Without
         them it does nothing and says so: the inbox is not set up yet.
@@ -47,6 +70,7 @@ import email
 import email.header
 import email.message
 import email.policy
+import email.utils
 import imaplib
 import json
 import os
@@ -93,6 +117,13 @@ REVIEW_SUBJECT = re.compile(
 LANGUAGE = re.compile(r"^[a-z]{2,3}$")
 # Crockford's base32, without I, L, O and U, as lib/core/review/rater_code.dart.
 CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"
+# The sender check: the Gmail label holding one record per rater code, and
+# the marks of a review whose sender differs or could not be compared.
+RATERS = "fluenough/raters"
+SENDER_DIFFERS = "sender does not match"
+SENDER_UNCHECKED = "sender not checked"
+# Gmail ignores dots in an address's local part and anything from `+`.
+GMAIL = ("gmail.com", "googlemail.com")
 REVIEW_FOOTER = ("<sub>Opened by the hourly mail workflow. The reviews stay "
                  "in the mail: no suggestion text, no mail address.</sub>")
 
@@ -238,10 +269,15 @@ def _unique(items: list[str]) -> list[str]:
     return list(dict.fromkeys(items))
 
 
-def review_issue_from(message: email.message.Message) -> dict | None:
+def review_issue_from(
+        message: email.message.Message,
+        check: Callable[[str], str | None] | None = None) -> dict | None:
     """The issue a review mail becomes, or None for a mail that is not one:
     neither its subject nor any file says so. Only the rater code and the
-    languages go into it, from the files."""
+    languages go into it, from the files.
+
+    When the files carry one good code, [check] is asked about it and
+    returns a mark for the sender, or None when the sender passes."""
     subject = subject_of(message)
     files = review_files(message)
     said = REVIEW_SUBJECT.match(subject)
@@ -265,6 +301,10 @@ def review_issue_from(message: email.message.Message) -> dict | None:
     if files and (subject_code not in codes
                   or set(subject_languages) != set(languages)):
         marks.append(SUBJECT_CHANGED)
+    if check is not None and CHECK_FILES not in marks:
+        mark = check(codes[0])
+        if mark:
+            marks.append(mark)
     if not files:
         # Nothing to go by but the subject; the owner checks the mail.
         codes = [subject_code] if subject_code else []
@@ -286,6 +326,13 @@ def review_issue_from(message: email.message.Message) -> dict | None:
     if CHECK_FILES in marks:
         body.append("**Check the files:** the files carry different rater "
                     "codes, or none, or one that fails its check.")
+    if SENDER_DIFFERS in marks:
+        body.append("**Sender does not match:** this code's first review "
+                    "came from another mail address. The owner decides.")
+    if SENDER_UNCHECKED in marks:
+        body.append("**Sender not checked:** the rater records in the "
+                    "Fluenough Gmail could not be read or written, or the "
+                    "mail had no single sender, so it was not compared.")
     body.append(REVIEW_FOOTER)
     return {
         "title": title,
@@ -293,6 +340,128 @@ def review_issue_from(message: email.message.Message) -> dict | None:
         "labels": [REVIEW, FROM_APP,
                    *(f"lang: {code}" for code in languages), *marks],
     }
+
+
+def normal_address(address: str) -> str:
+    """[address] as it is compared: lower case and, for Gmail, without the
+    dots of its local part or anything from `+`, which Gmail ignores."""
+    address = address.strip().lower()
+    local, at, domain = address.rpartition("@")
+    if not at:
+        return address
+    if domain in GMAIL:
+        local = local.split("+", 1)[0].replace(".", "")
+    return f"{local}@{domain}"
+
+
+def address_in(text: str) -> str:
+    """The one mail address [text] holds, bare or as `Name <address>` and
+    with any full stop or comma after it, or "" when it holds none or
+    several."""
+    _, address = email.utils.parseaddr(text.strip().rstrip(".,;"))
+    return address if "@" in address else ""
+
+
+def sender_of(message: email.message.Message) -> str:
+    """The address [message] came from, or "" when it has none, or
+    several."""
+    return address_in(str(message.get("From", "")))
+
+
+class Raters:
+    """The rater records in the Gmail label [RATERS]: one mail per rater
+    code, its subject the code and its body the address the code's first
+    review came from. Read once per run, before the inbox is selected.
+
+    Nothing here prints an address or a record's body; only the counts are
+    for the log."""
+
+    def __init__(self, imap: imaplib.IMAP4) -> None:
+        self.imap = imap
+        # Each code's addresses, compared normalised; None when the label
+        # could not be read.
+        self.known: dict[str, set[str]] | None = None
+        self.records = self.passed_over = self.tied = self.matched = 0
+        self.differed = self.unchecked = 0
+
+    def load(self) -> None:
+        """Reads every record, creating the label first if it is not there.
+        A record whose subject is not a code or whose body's first line is
+        not one address is passed over, as if deleted, and counted.
+
+        A dropped connection is read as None, like any failure here: the
+        inbox cannot be selected after it either, so the run stops before
+        filing anything, and no mail is filed twice."""
+        try:
+            # NO when the label is there already, which is fine.
+            self.imap.create(RATERS)
+            status, _ = self.imap.select(RATERS, readonly=True)
+            if status != "OK":
+                return
+            status, found = self.imap.search(None, "ALL")
+            if status != "OK":
+                return
+            known: dict[str, set[str]] = {}
+            for number in (found[0] or b"").split():
+                status, data = self.imap.fetch(number, "(BODY.PEEK[])")
+                if status != "OK":
+                    return
+                raw = next(part[1] for part in data if isinstance(part, tuple))
+                record = email.message_from_bytes(
+                    raw, policy=email.policy.default)
+                code = rater_code(subject_of(record))
+                address = address_in(text_of(record).split("\n", 1)[0])
+                if code and address:
+                    known.setdefault(code, set()).add(normal_address(address))
+                    self.records += 1
+                else:
+                    self.passed_over += 1
+            self.known = known
+        except (imaplib.IMAP4.error, OSError, StopIteration):
+            self.known = None
+
+    def _tie(self, code: str, sender: str) -> bool:
+        """Writes the record tying [code] to [sender], by APPEND: no mail is
+        sent. Whether it was written.
+
+        A dropped connection is raised, not answered False: the mail could
+        be filed but not labelled over it, and would be filed again by the
+        next run. Raised, the mail is neither, and the next run files it."""
+        record = email.message.EmailMessage()
+        record["Subject"] = code
+        record.set_content(sender)
+        try:
+            status, _ = self.imap.append(RATERS, "(\\Seen)", None,
+                                         record.as_bytes())
+        except (imaplib.IMAP4.abort, OSError):
+            raise
+        except imaplib.IMAP4.error:
+            # A BAD answer: the connection is still good.
+            return False
+        if status != "OK":
+            return False
+        assert self.known is not None
+        self.known.setdefault(code, set()).add(normal_address(sender))
+        return True
+
+    def check(self, code: str, sender: str) -> str | None:
+        """The mark for a review with [code] from [sender]: None when the
+        sender passes, the code's first mail tying it to [sender]."""
+        if self.known is None or not sender:
+            self.unchecked += 1
+            return SENDER_UNCHECKED
+        tied = self.known.get(code)
+        if not tied:
+            if not self._tie(code, sender):
+                self.unchecked += 1
+                return SENDER_UNCHECKED
+            self.tied += 1
+            return None
+        if normal_address(sender) in tied:
+            self.matched += 1
+            return None
+        self.differed += 1
+        return SENDER_DIFFERS
 
 
 def post_issue(repo: str, token: str, issue: dict) -> None:
@@ -337,6 +506,16 @@ def run(env: dict[str, str],
     imap = connect("imap.gmail.com")
     imap.login(address, password)
     try:
+        # Before the inbox: selecting the label afterwards would lose the
+        # inbox's message numbers.
+        raters = Raters(imap)
+        raters.load()
+        if raters.known is None:
+            print(f"::warning::The rater records ({RATERS}) could not be "
+                  f"read; review mails are filed as {SENDER_UNCHECKED!r}.")
+        else:
+            print(f"Read {raters.records} rater record(s), "
+                  f"{raters.passed_over} passed over.")
         imap.select("INBOX")
         # Gmail's own search, so that filed mail is left out by its label.
         # A review mail is found by its files too, in case its subject was
@@ -350,13 +529,19 @@ def run(env: dict[str, str],
             _, data = imap.fetch(number, "(BODY.PEEK[])")
             raw = next(part[1] for part in data if isinstance(part, tuple))
             message = email.message_from_bytes(raw, policy=email.policy.default)
-            issue = review_issue_from(message) or issue_from(message)
+            sender = sender_of(message)
+            issue = (review_issue_from(
+                message, lambda code: raters.check(code, sender))
+                or issue_from(message))
             if issue is None:
                 continue
             file_issue(issue)
             imap.store(number, "+X-GM-LABELS", FILED)
             filed += 1
         print(f"Filed {filed} report(s).")
+        print(f"Review senders: {raters.tied} tied, {raters.matched} "
+              f"matched, {raters.differed} did not match, "
+              f"{raters.unchecked} not checked.")
         return filed
     finally:
         imap.logout()
