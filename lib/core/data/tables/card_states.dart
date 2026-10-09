@@ -3,7 +3,7 @@ import 'package:drift/drift.dart';
 import '../../models/drill_mode.dart';
 import 'converters.dart';
 
-/// SM-2 scheduling state, keyed by `(card_id, mode)`: each skill is
+/// FSRS scheduling state, keyed by `(card_id, mode)`: each skill is
 /// scheduled on its own (ADR-0005), and a card has one schedule in every deck
 /// that lists it (ADR-0018).
 ///
@@ -16,13 +16,17 @@ class CardStates extends Table {
   /// Stored by name, so renaming a [DrillMode] value needs a migration.
   TextColumn get mode => textEnum<DrillMode>()();
 
-  IntColumn get intervalDays => integer()();
+  RealColumn get stability => real()();
 
-  RealColumn get easeFactor => real()();
+  RealColumn get difficulty => real()();
+
+  IntColumn get intervalDays => integer()();
 
   IntColumn get repetitions => integer()();
 
   IntColumn get dueAt => integer().map(const EpochMs())();
+
+  IntColumn get lastReviewAt => integer().map(const EpochMs())();
 
   IntColumn get lapses => integer().withDefault(const Constant(0))();
 

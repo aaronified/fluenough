@@ -16,7 +16,7 @@ void finishToday(AppState state) {
   const today = DrillRequest.today();
   while (state.buildSession(today).isNotEmpty) {
     for (final item in state.buildSession(today).items) {
-      state.record(item, SelfGrade.good.toSm2Grade());
+      state.record(item, SelfGrade.good.toGrade());
     }
   }
 }

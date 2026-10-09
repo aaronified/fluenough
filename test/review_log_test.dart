@@ -1,18 +1,25 @@
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/card_state_repository.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/review_log.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 /// Every field of [s], so two states compare by value.
-(int, double, int, DateTime, int) fields(Sm2State s) =>
-    (s.repetitions, s.easeFactor, s.intervalDays, s.dueAt, s.lapses);
+(double, double, int, DateTime, int, int) fields(FsrsState s) => (
+  s.stability,
+  s.difficulty,
+  s.intervalDays,
+  s.dueAt,
+  s.repetitions,
+  s.lapses,
+);
 
-Map<ProgressKey, (int, double, int, DateTime, int)> byValue(
-  Map<ProgressKey, Sm2State> states,
+Map<ProgressKey, (double, double, int, DateTime, int, int)> byValue(
+  Map<ProgressKey, FsrsState> states,
 ) => {for (final e in states.entries) e.key: fields(e.value)};
 
 void main() {
@@ -83,10 +90,7 @@ void main() {
       answerGiven: 'kitna',
     );
     expect(event.before, isNull);
-    expect(
-      fields(event.after),
-      fields(Sm2.next(Sm2State.fresh(start), 4, now: start)),
-    );
+    expect(fields(event.after), fields(Fsrs.next(null, 4, now: start)));
 
     final rows = await db.reviewsDao.all();
     expect(rows.single.intervalAfter, event.after.intervalDays);
@@ -102,7 +106,10 @@ void main() {
       now: start.add(const Duration(days: 1)),
     );
     expect(fields(second.before!), fields(event.after), reason: 'read back');
-    expect((await db.reviewsDao.all()).last.intervalBefore, 1);
+    expect(
+      (await db.reviewsDao.all()).last.intervalBefore,
+      event.after.intervalDays,
+    );
   });
 
   test(
@@ -149,8 +156,11 @@ void main() {
     // Wreck the cache: drop one pair, corrupt another.
     await db.cardStatesDao.clear();
     await db.cardStatesDao.put(
-      Sm2State.fresh(start)
-          .toRow((cardId: 'hi-0231', mode: DrillMode.recognition)),
+      Fsrs.next(
+        null,
+        1,
+        now: start,
+      ).toRow((cardId: 'hi-0231', mode: DrillMode.recognition)),
     );
 
     await log.rebuildStates();
@@ -176,9 +186,29 @@ void main() {
     }
   });
 
-  test('the database and the in-memory store agree', () async {
+  test('the database caches each pair\'s own reviews, as replaying them '
+      'without implied credit gives', () async {
     final recorded = await recordTwenty();
-    final memory = MemoryProgress.replaying(recorded);
-    expect(byValue(await states.all()), byValue(memory.states));
+    expect(
+      byValue(await states.all()),
+      byValue(replayReviews(recorded.map(logged)).states),
+    );
   });
+
+  test(
+    'the in-memory store adds implied credit, and moves no due date',
+    () async {
+      final recorded = await recordTwenty();
+      final memory = MemoryProgress.replaying(recorded);
+      final cached = await states.all();
+      for (final MapEntry(:key, :value) in memory.states.entries) {
+        expect(value.dueAt, cached[key]!.dueAt, reason: '$key');
+        expect(
+          value.stability,
+          greaterThanOrEqualTo(cached[key]!.stability),
+          reason: '$key',
+        );
+      }
+    },
+  );
 }

@@ -4,6 +4,7 @@ import '../../app/features.dart';
 import '../../app/shell_tab.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
+import 'how_you_learn_page.dart';
 import 'leeches.dart';
 import 'leeches_page.dart';
 import 'stats_numbers.dart';
@@ -72,6 +73,24 @@ final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
         ),
       ),
     ),
+  ),
+  GalleryEntry(
+    id: 'how-you-learn',
+    section: GallerySection.progressAndSettings,
+    label: 'How you learn', // ui-literal-ok: debug-only gallery
+    note: 'Each skill\'s pace beside the start', // ui-literal-ok: debug-only gallery
+    builder: (_) => const HowYouLearnPage(),
+    state: (app) => GalleryFixtures.adjusted(
+      GalleryFixtures.state(app, features: FeatureRegistry.all()),
+    ),
+  ),
+  GalleryEntry(
+    id: 'how-you-learn-none',
+    section: GallerySection.progressAndSettings,
+    label: 'How you learn, before a fit', // ui-literal-ok: debug-only gallery
+    note: 'What will happen; Settings', // ui-literal-ok: debug-only gallery
+    builder: (_) => const HowYouLearnPage(),
+    state: (app) => GalleryFixtures.state(app, features: FeatureRegistry.all()),
   ),
   GalleryEntry(
     id: 'leeches-acted',

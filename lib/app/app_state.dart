@@ -14,6 +14,7 @@ import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
+import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
@@ -24,6 +25,7 @@ import '../core/updates/release_check.dart';
 import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
+import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
@@ -32,7 +34,9 @@ import 'deck_import.dart';
 import 'features.dart';
 import 'links.dart';
 import 'log_files.dart';
+import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
+import 'pacing.dart';
 import 'profile.dart';
 import 'session.dart';
 import 'settings.dart';
@@ -127,6 +131,8 @@ class AppState extends ChangeNotifier {
     this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
+    this._fitRunner = fitInIsolate,
+    this._paceRunner = paceInIsolate,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -186,6 +192,8 @@ class AppState extends ChangeNotifier {
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
+    FitRunner fitRunner = fitInPlace,
+    PaceRunner paceRunner = paceInPlace,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -212,6 +220,8 @@ class AppState extends ChangeNotifier {
       releaseNotes: releaseNotes,
       installer: installer,
       downloads: downloads,
+      fitRunner: fitRunner,
+      paceRunner: paceRunner,
       settings: settings,
       volume: volume,
       profiles: profiles,
@@ -272,6 +282,26 @@ class AppState extends ChangeNotifier {
   final ReleaseNotesEngine releaseNotes;
   final ApkInstaller _installer;
   final DownloadStore _downloads;
+
+  /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
+  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// notifier.
+  late final FsrsTuner tuner = FsrsTuner(
+    progress: progress,
+    clock: _clock,
+    runner: _fitRunner,
+  );
+  final FitRunner _fitRunner;
+
+  /// How each skill is paced beside how it started: How you learn, and
+  /// Today's strip and tile marks. Worked out off the main thread, only
+  /// when asked for. Has its own notifier.
+  late final Pacing pacing = Pacing(
+    progress: progress,
+    clock: _clock,
+    runner: _paceRunner,
+  );
+  final PaceRunner _paceRunner;
 
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
@@ -455,14 +485,28 @@ class AppState extends ChangeNotifier {
   Future<void> _reloadDecks() async {
     deckCatalog.invalidate();
     _catalog = await deckCatalog.load();
+    _mapSkills();
     notifyListeners();
     await refreshVoices();
+  }
+
+  /// Tells progress which decks ask for what is heard rather than what it
+  /// means, so that a right answer there implies Write, not Recognition
+  /// (ADR-0034).
+  void _mapSkills() {
+    progress.skills = SkillMap(
+      formHeardIn: <String>{
+        for (final entry in decks)
+          if (needsAlphabet(entry)) entry.id,
+      },
+    );
   }
 
   Future<void> _load() async {
     try {
       _catalog = await deckCatalog.load();
       _status = CatalogStatus.ready;
+      _mapSkills();
     } catch (error) {
       _loadError = error;
       _status = CatalogStatus.failed;
@@ -1040,6 +1084,24 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// [card]'s minimal-pair partner (ADR-0034), as a deck of its language and
+  /// native language lists it, or null.
+  Card? pairOf(Card card) {
+    final id = card.pair;
+    final entry = deckOf(card);
+    if (id == null || entry == null) return null;
+    for (final other in decks) {
+      if (other.language.code != entry.language.code ||
+          other.deck.native.code != entry.deck.native.code) {
+        continue;
+      }
+      for (final c in other.cards) {
+        if (c.id == id) return c;
+      }
+    }
+    return null;
+  }
+
   /// Whether a [ask] question about [card] has at least two wrong options
   /// to offer. Without, it is asked its own way.
   bool canChoose(Card card, Ask ask) =>
@@ -1049,8 +1111,62 @@ class AppState extends ChangeNotifier {
   /// ([reviewAsks]): what a drill runs.
   List<SessionItem> sessionItems(DrillRequest request) => reviewAsks(
     _limited(buildSession(request).items, request.limit),
-    canChoose: (item) => canChoose(item.card, Ask.chooseMeaning),
+    canChoose: (item) => canChoose(
+      item.card,
+      item.ask == Ask.own ? Ask.chooseMeaning : item.ask,
+    ),
+    hearsForm: (item) => hearsForm(item.card),
+    recallsFirst: (item) => recallsFirst(item.card, item.mode),
   );
+
+  /// The ability layer (ADR-0034), rebuilt when the log grows.
+  Abilities get abilities {
+    final log = progress.log;
+    final skills = progress.skills;
+    if (_abilities == null ||
+        _abilitiesAt != log.length ||
+        _abilitiesSkills != skills) {
+      _abilities = Abilities.replay(
+        <({String cardId, String deckId, DrillMode mode, int grade})>[
+          for (final e in log)
+            (cardId: e.cardId, deckId: e.deckId, mode: e.mode, grade: e.grade),
+        ],
+        skills: skills,
+      );
+      _abilitiesAt = log.length;
+      _abilitiesSkills = skills;
+    }
+    return _abilities!;
+  }
+
+  Abilities? _abilities;
+  int _abilitiesAt = -1;
+  SkillMap? _abilitiesSkills;
+
+  /// The strength from which a pair never asked in [mode] starts at recall
+  /// rather than choice: the learner gets most words right there.
+  static const double recallFirstStrength = 0.8;
+
+  /// How many answers a strength must rest on before it is trusted.
+  static const int recallFirstAnswers = 20;
+
+  /// Whether [card], never asked in [mode], starts at recall (ADR-0034):
+  /// the learner's ability there says a choice would be too easy.
+  bool recallsFirst(Card card, DrillMode mode) {
+    final language = Abilities.languageOf(card.id);
+    final a = abilities;
+    return a.answersIn(language, mode) >= recallFirstAnswers &&
+        a.strength(language, mode) >= recallFirstStrength;
+  }
+
+  /// Whether hearing [card] asks for what was heard rather than what it
+  /// means: a card of a deck that teaches the alphabet, which is script
+  /// practice (ADR-0034), or a generated number.
+  bool hearsForm(Card card) {
+    if (card is NumberCard) return true;
+    final entry = deckOf(card);
+    return entry != null && needsAlphabet(entry);
+  }
 
   /// At most [limit] of [items], one per word, picked at random: a quick
   /// revision (ADR-0029). All of them, in order, when [limit] is null.
@@ -1157,11 +1273,19 @@ class AppState extends ChangeNotifier {
               SessionItem(card: question, mode: mode, state: null),
       ]);
     }
-    return lessonPlan(
-      lessonItems(cards.takeWhile((card) => card is! QuestionCard)),
-      modesOf: drillableModes,
-      canChoose: canChoose,
-    );
+    return <SessionItem>[
+      for (final item in lessonPlan(
+        lessonItems(cards.takeWhile((card) => card is! QuestionCard)),
+        modesOf: drillableModes,
+        canChoose: (card, ask) => canChoose(
+          card,
+          ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
+        ),
+      ))
+        item.ask == Ask.hearMeaning && hearsForm(item.card)
+            ? item.askedAs(Ask.hearAndChoose)
+            : item,
+    ];
   }
 
   /// Whether a lesson in [language] was finished today.
@@ -1270,21 +1394,27 @@ class AppState extends ChangeNotifier {
   }
 
   /// Records [grade] for [item] the moment the answer is given, and returns
-  /// the review. Minimal pairs have no mode and are not recorded.
+  /// the review. Minimal pairs have no mode and are not recorded. With
+  /// "Adjust automatically" on, the review's skill is then refitted in the
+  /// background if it has grown enough ([FsrsTuner.afterReview]).
   ReviewEvent record(
     SessionItem item,
     int grade, {
     Duration elapsed = Duration.zero,
     String? answerGiven,
-  }) => progress.record(
-    deckId: item.card.deckId,
-    cardId: item.card.id,
-    mode: item.mode,
-    grade: grade,
-    now: now(),
-    elapsed: elapsed,
-    answerGiven: answerGiven,
-  );
+  }) {
+    final event = progress.record(
+      deckId: item.card.deckId,
+      cardId: item.card.id,
+      mode: item.mode,
+      grade: grade,
+      now: now(),
+      elapsed: elapsed,
+      answerGiven: answerGiven,
+    );
+    if (settings.autoAdjust) tuner.afterReview(event);
+    return event;
+  }
 
   bool _disposed = false;
 
@@ -1295,6 +1425,8 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     shellTab.dispose();
     updates.dispose();
+    tuner.dispose();
+    pacing.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
     super.dispose();

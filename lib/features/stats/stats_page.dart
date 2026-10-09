@@ -11,6 +11,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_chips.dart';
+import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/stat_tile.dart';
@@ -18,7 +19,7 @@ import 'heatmap.dart';
 import 'leeches.dart';
 import 'stats_numbers.dart';
 
-/// The Progress tab: range, stat tiles, the activity grid, correct by skill, weakest tags, leeches. Shows a disabled empty state while `Feature.stats` is incoming.
+/// The Progress tab: range, stat tiles, the activity grid, correct by skill with How you learn under it, weakest tags, leeches. Shows a disabled empty state while `Feature.stats` is incoming.
 ///
 /// Design screen `stats`. Every number is computed from the review log and
 /// the current scheduling states (`StatsNumbers`), none from the design.
@@ -269,6 +270,16 @@ class _StatsBody extends StatelessWidget {
       color: color,
     );
 
+    // Until some skill is adjusted, what will happen and where: Settings.
+    // A fit that kept the defaults is not adjusted (Today agrees).
+    final howYouLearn = PaceStrip(
+      title: l10n.howYouLearnTitle,
+      subtitle: state.pacing.adjusted
+          ? l10n.howYouLearnCardMore
+          : l10n.howYouLearnCardBefore,
+      onTap: () => AppNavigator.openHowYouLearn(context, language: language),
+    );
+
     return ListView(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
       children: <Widget>[
@@ -277,17 +288,21 @@ class _StatsBody extends StatelessWidget {
         tileRow(2),
         const SizedBox(height: 16),
         ReviewHeatmap(numbers: numbers),
-        if (numbers.bySkill.isNotEmpty) ...<Widget>[
-          const SizedBox(height: 16),
+        const SizedBox(height: 16),
+        // One skills section: the bars, then How you learn, which says
+        // what the learner's answers have done to each skill's pace.
+        if (numbers.bySkill.isNotEmpty)
           StatsSection(
             title: l10n.statsBySkill,
             children: <Widget>[
               for (final MapEntry(key: skill, value: tally)
                   in numbers.bySkill.entries)
                 bar(skill.label(l10n), tally),
+              howYouLearn,
             ],
-          ),
-        ],
+          )
+        else
+          howYouLearn,
         if (numbers.weakestTags.isNotEmpty) ...<Widget>[
           const SizedBox(height: 16),
           StatsSection(

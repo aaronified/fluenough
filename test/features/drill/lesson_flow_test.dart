@@ -59,7 +59,10 @@ Future<void> finishLesson(WidgetTester tester) async {
     switch (session.ask) {
       case Ask.teach:
         session.learnt();
-      case Ask.chooseMeaning || Ask.chooseWord || Ask.hearAndChoose:
+      case Ask.chooseMeaning ||
+          Ask.chooseWord ||
+          Ask.hearAndChoose ||
+          Ask.hearMeaning:
         session.pick(session.options.firstWhere((o) => o.id == card.id));
         session.next();
       case Ask.matchPairs:
@@ -84,8 +87,8 @@ Future<void> finishLesson(WidgetTester tester) async {
         session.checkOrder();
         session.next();
       case Ask.own:
-        // A grammar cell, typed.
-        session.check(card.target);
+        // A grammar cell, typed, or a word heard and its meaning typed.
+        session.check(session.acceptedAnswers.first);
         session.next();
     }
     await tester.pumpAndSettle();
@@ -130,7 +133,15 @@ void main() {
     final log = state.progress.log;
     expect(log.map((e) => e.cardId).toSet(), hasLength(9));
     expect(log, hasLength(planned));
-    expect(log.every((e) => e.grade >= 4), isTrue);
+    // A right choice in Hear or Write records 3, a right choice or match
+    // of a meaning seen 4 (ADR-0034): every answer is right.
+    expect(log.every((e) => e.grade >= 3), isTrue);
+    expect(
+      log
+          .where((e) => e.mode == DrillMode.recognition)
+          .every((e) => e.grade >= 4),
+      isTrue,
+    );
     expect(state.lessonDoneToday('es'), isTrue);
 
     // The summary offers another; back on Today, so does its card.

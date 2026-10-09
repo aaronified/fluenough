@@ -2,7 +2,7 @@ import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
-import 'sm2.dart';
+import 'fsrs.dart';
 
 export 'ask.dart';
 
@@ -21,7 +21,7 @@ class SessionItem {
 
   /// The scheduling state going in, or null for a `(card, mode)` pair that
   /// has never been reviewed.
-  final Sm2State? state;
+  final FsrsState? state;
 
   /// How it is asked; whichever way, it records [mode] (ADR-0024).
   final Ask ask;
@@ -49,7 +49,7 @@ class SessionItem {
 
 /// Looks up the scheduling state of [card] in [mode], or null if that pair
 /// has never been reviewed.
-typedef StateLookup = Sm2State? Function(Card card, DrillMode mode);
+typedef StateLookup = FsrsState? Function(Card card, DrillMode mode);
 
 /// Whether the device has a voice for [card]'s language, which decides whether
 /// the card can be drilled by ear. See [Card.modesIn].
@@ -78,8 +78,8 @@ typedef PairFilter = bool Function(Card card, DrillMode mode);
 ///   in the order [SessionQueue.build] was given the cards, one per card, in
 ///   [DrillMode] declaration order, which puts recognising a word before
 ///   producing it. The cap counts new pairs rather than new cards, because
-///   scheduling is per pair (ADR-0005): a word learned by sight and never
-///   typed has a new production pair.
+///   scheduling is per pair (ADR-0005): a word heard and never typed has a
+///   new production pair.
 ///
 /// A mode is only ever offered where [Card.modesIn] allows it, so a card is
 /// never drilled by ear on a device without a voice for its language.
@@ -89,8 +89,9 @@ typedef PairFilter = bool Function(Card card, DrillMode mode);
 /// the rest come with it, which can pass the cap by up to three. And in
 /// [items], every question of a passage follows its first.
 ///
-/// "Again" is not re-queued: a failed card is due tomorrow, as SM-2 says, and
-/// is not drilled a second time in the same session.
+/// "Again" is not re-queued: FSRS sets a failed card a shorter interval, a
+/// day for a new one and often a few for one long known, and it is not
+/// drilled a second time in the same session.
 class SessionQueue {
   const SessionQueue._(this.due, this.fresh);
 

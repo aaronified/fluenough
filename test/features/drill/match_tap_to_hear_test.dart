@@ -42,12 +42,14 @@ SettingsNotifier settingsWith(void Function(SettingsNotifier s) change) {
   return s;
 }
 
+/// A match of four words, the other three taken from Write's new pairs:
+/// what is tested here is the tiles, not what they record.
 Future<AppState> pumpMatch(WidgetTester tester, {required AppState state}) =>
     pumpScreen(
       tester,
       DrillPage(
         key: UniqueKey(),
-        request: DrillRequest.untaught(spanish, skill: Skill.recognition),
+        request: DrillRequest.untaught(spanish, skill: Skill.production),
         preset: const DrillPreset(target: 'la casa', ask: Ask.matchPairs),
       ),
       state: state,

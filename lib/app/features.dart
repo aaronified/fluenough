@@ -79,7 +79,7 @@ enum Feature {
   /// What this version ships switched on.
   ///
   /// The recognition, production and listening drills run on the bundled
-  /// decks through `DeckParser`, `AnswerGrader` and in-memory SM-2. Everything
+  /// decks through `DeckParser`, `AnswerGrader` and in-memory FSRS. Everything
   /// else waits for its backend.
   static const Set<Feature> available = <Feature>{
     Feature.drillRecognition,

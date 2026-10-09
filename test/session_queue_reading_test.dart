@@ -3,7 +3,7 @@ import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/reading.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 /// Reading questions in a session (#98, ADR-0019): each scheduled like a
 /// card, and a passage's questions kept together.
@@ -30,16 +30,18 @@ List<QuestionCard> passage(String id, int questions) {
 Card word(String id) =>
     Card(id: id, deckId: 'words', target: 'target $id', native: 'native $id');
 
-Sm2State dueDaysAgo(int daysAgo) => Sm2State(
+FsrsState dueDaysAgo(int daysAgo) => FsrsState(
+  stability: 6,
+  difficulty: 5,
   repetitions: 2,
-  easeFactor: Sm2.defaultEase,
   intervalDays: 6,
   dueAt: now.subtract(Duration(days: daysAgo)),
+  lastReviewAt: now.subtract(Duration(days: daysAgo + 6)),
 );
 
 SessionQueue build(
   List<Card> cards, {
-  Map<(String, DrillMode), Sm2State> states = const {},
+  Map<(String, DrillMode), FsrsState> states = const {},
   bool voice = true,
   int newCardLimit = 20,
 }) => SessionQueue.build(
@@ -93,8 +95,8 @@ void main() {
     final queue = build(
       <Card>[word('a'), word('b'), ...p],
       states: {
-        ('a', DrillMode.recognition): dueDaysAgo(5),
-        ('b', DrillMode.recognition): dueDaysAgo(1),
+        ('a', DrillMode.production): dueDaysAgo(5),
+        ('b', DrillMode.production): dueDaysAgo(1),
         // q1 is due to be read, q2 to be heard; q3 is new.
         ('p-q1', DrillMode.reading): dueDaysAgo(3),
         ('p-q2', DrillMode.reading): dueDaysAgo(-2),
@@ -102,18 +104,18 @@ void main() {
       },
     );
     expect(ids(queue.due), [
-      'a:recognition',
+      'a:production',
       'p-q1:reading',
       'p-q2:listening',
-      'b:recognition',
+      'b:production',
     ]);
     // Heard first, so that the text is not seen before it is heard.
     expect(ids(queue.items), [
-      'a:recognition',
+      'a:production',
       'p-q2:listening',
       'p-q1:reading',
       'p-q3:reading',
-      'b:recognition',
+      'b:production',
     ]);
   });
 
@@ -134,14 +136,14 @@ void main() {
       <SessionItem>[for (final c in passage('p', 3)) fresh(c)],
       <SessionItem>[
         for (final c in <Card>[word('a'), word('b')])
-          SessionItem(card: c, mode: DrillMode.recognition, state: null),
+          SessionItem(card: c, mode: DrillMode.production, state: null),
       ],
     ], 2);
     expect(ids(shared), [
       'p-q1:reading',
       'p-q2:reading',
       'p-q3:reading',
-      'a:recognition',
+      'a:production',
     ]);
   });
 }

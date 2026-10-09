@@ -17,7 +17,6 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
-import '../../core/scheduling/sm2.dart';
 import '../../core/speech/speech_engine.dart';
 
 /// Where the current card is: the design's `phase`.
@@ -52,7 +51,7 @@ class TypedAnswer {
   /// The grader's verdict, or null when the learner chose "Don't know".
   final GradedAnswer? graded;
 
-  /// The SM-2 grade recorded, or null while a near miss waits for the
+  /// The grade recorded, or null while a near miss waits for the
   /// learner's judgement.
   final int? grade;
 
@@ -85,7 +84,7 @@ class DrillSession extends ChangeNotifier {
     InputMode? inputMode,
     this.recorded = true,
     this.revising = false,
-    this.recordsMisses = false,
+    this.recordsRevision = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
        assert(!revising || !recorded, 'revising is never recorded'),
@@ -109,19 +108,20 @@ class DrillSession extends ChangeNotifier {
   final DateTime startedAt;
 
   /// Whether answers go to the review log. False for number practice, which
-  /// has no schedule, and for [revising]; recognition shows no intervals
-  /// either.
+  /// has no schedule, for [revising], and for quick revision, which
+  /// [recordsRevision] records instead.
   final bool recorded;
 
   /// Revising a finished deck's cards ahead of their dates. Titled with the
-  /// deck, like a recorded session, but never [recorded]: an early review
-  /// would stretch the card's interval.
+  /// deck, like a recorded session, but never [recorded]: a deck's Revise
+  /// records nothing.
   final bool revising;
 
-  /// Whether a wrong answer is recorded although the session is not: a
-  /// quick revision (ADR-0029), where a lapse should bring the card back
-  /// sooner, and a right answer, given early, should not stretch it.
-  final bool recordsMisses;
+  /// Whether answers are recorded although the session is not: a quick
+  /// revision (ADR-0029, as ADR-0033 amends it). FSRS takes an early review
+  /// for what it is, so a right answer stretches the interval only a little,
+  /// and a miss brings the card back sooner.
+  final bool recordsRevision;
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
@@ -193,14 +193,14 @@ class DrillSession extends ChangeNotifier {
   int intervalFor(SelfGrade grade) {
     final card = item.card;
     return _state.progress
-        .preview(card.id, item.mode, grade.toSm2Grade(), now: _state.now())
+        .preview(card.id, item.mode, grade.toGrade(), now: _state.now())
         .intervalDays;
   }
 
   /// Records the learner's rating and moves on.
   void rate(SelfGrade grade) {
     if (_phase != DrillPhase.revealed) return;
-    _record(grade.toSm2Grade());
+    _record(grade.toGrade());
     _advance();
   }
 
@@ -213,6 +213,7 @@ class DrillSession extends ChangeNotifier {
   /// prompts give the reading away ("k (ka)").
   bool get canTransliterate =>
       _typedModes.contains(item.mode) &&
+      !hearsMeaning &&
       item.card is! NumberCard &&
       item.card.reading != null &&
       deck.language.needsReading &&
@@ -284,10 +285,24 @@ class DrillSession extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the current card is heard and its meaning typed: Hear's recall
+  /// grade (ADR-0034). Not in script practice, nor for a generated number
+  /// or a reading question, where what is heard is typed or chosen as it is.
+  bool get hearsMeaning =>
+      item.mode == DrillMode.listening &&
+      ask == Ask.own &&
+      item.card is! QuestionCard &&
+      !_state.hearsForm(item.card);
+
+  /// What a typed answer to [card] is graded against: its meanings when
+  /// [hearsMeaning], else what its mode accepts.
+  List<String> _answersOf(Card card) =>
+      hearsMeaning ? card.meanings : card.acceptedAnswers(item.mode);
+
   /// The answers the grader accepts, the canonical one first: while
   /// [transliterating], the reading, then the target, which is accepted too.
   List<String> get acceptedAnswers {
-    final accepted = item.card.acceptedAnswers(item.mode);
+    final accepted = _answersOf(item.card);
     final reading = item.card.reading;
     if (transliterating && reading != null) {
       return <String>[reading, ...accepted];
@@ -308,10 +323,14 @@ class DrillSession extends ChangeNotifier {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
     if (ask != Ask.own) return;
-    final accepted = item.card.acceptedAnswers(item.mode);
+    final accepted = _answersOf(item.card);
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
-        : AnswerGrader(articles: deck.language.articles);
+        : AnswerGrader(
+            articles: hearsMeaning
+                ? deck.deck.native.articles
+                : deck.language.articles,
+          );
     var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
       accepted.first,
@@ -337,7 +356,7 @@ class DrillSession extends ChangeNotifier {
         ? null
         : romanised && graded.outcome.isCorrect && expectsScript
         ? romanisedGrade
-        : graded.outcome.toSm2Grade();
+        : graded.outcome.toGrade();
     _answer = TypedAnswer(typed: typed, graded: graded, grade: grade);
     if (grade != null) _record(grade, answerGiven: typed);
     _phase = DrillPhase.feedback;
@@ -349,7 +368,9 @@ class DrillSession extends ChangeNotifier {
   /// form, so never a typo.
   bool _answersAnother(String typed, {required bool romanised}) {
     final exact = AnswerGrader(
-      articles: deck.language.articles,
+      articles: hearsMeaning
+          ? deck.deck.native.articles
+          : deck.language.articles,
       typoDistance: 0,
       longTypoDistance: 0,
     );
@@ -361,7 +382,7 @@ class DrillSession extends ChangeNotifier {
         if (card.readings.any((r) => spelling.key(r) == key)) return true;
         continue;
       }
-      final answers = card.acceptedAnswers(item.mode);
+      final answers = _answersOf(card);
       if (answers.isEmpty) continue;
       final graded = exact.grade(
         typed,
@@ -394,7 +415,7 @@ class DrillSession extends ChangeNotifier {
   void judge(TypoJudgement judgement) {
     final answer = _answer;
     if (answer == null || !answer.awaitsJudgement) return;
-    _record(judgement.toSm2Grade(), answerGiven: answer.typed);
+    _record(judgement.toGrade(), answerGiven: answer.typed);
     _advance();
   }
 
@@ -648,7 +669,7 @@ class DrillSession extends ChangeNotifier {
         }
       }
     }
-    final grade = graded.outcome.toSm2Grade();
+    final grade = graded.outcome.toGrade();
     // A wrong word that is the answer with one sound changed: the feedback
     // names the sound (ADR-0014's rule: only a slip that changes the word).
     SoundContrast? contrast;
@@ -719,15 +740,23 @@ class DrillSession extends ChangeNotifier {
   /// How many options a choice question offers at most.
   static const int optionCount = 4;
 
-  /// The grade a right choice or match records: right, but picked from a
-  /// few rather than recalled.
+  /// The grade a right match, or a right choice of a meaning seen, records:
+  /// right, but picked from a few rather than recalled. Recognition's
+  /// choice, its easiest way of asking (ADR-0034).
   static const int choiceGrade = 4;
+
+  /// The grade a right choice records in Hear or Write:
+  /// Hard, since a right choice counts for less than a right recall
+  /// (ADR-0034).
+  static const int scheduledChoiceGrade = 3;
 
   List<Card>? _options;
 
   /// The current choice question's options, the card itself among them, in
   /// the order shown: up to [optionCount], the others from
-  /// [AppState.choicePool], each showing something different.
+  /// [AppState.choicePool], each showing something different. In Hear, the
+  /// word's minimal-pair partner is one of them where it has one
+  /// ([AppState.pairOf], ADR-0034).
   List<Card> get options => _options ??= _pickOptions();
 
   List<Card> _pickOptions() {
@@ -735,6 +764,10 @@ class DrillSession extends ChangeNotifier {
     final pool = _state.choicePool(card, ask)..shuffle(_random);
     final shown = <String>{ask.optionOf(card)};
     final picked = <Card>[card];
+    final partner = ask == Ask.hearMeaning ? _state.pairOf(card) : null;
+    if (partner != null && shown.add(ask.optionOf(partner))) {
+      picked.add(partner);
+    }
     for (final other in pool) {
       if (picked.length == optionCount) break;
       if (shown.add(ask.optionOf(other))) picked.add(other);
@@ -756,7 +789,11 @@ class DrillSession extends ChangeNotifier {
     if (!ask.chooses || _phase != DrillPhase.prompt) return;
     _picked = option;
     _record(
-      isRight(option) ? choiceGrade : 1,
+      !isRight(option)
+          ? 1
+          : item.mode == DrillMode.recognition
+          ? choiceGrade
+          : scheduledChoiceGrade,
       answerGiven: ask.optionOf(option),
     );
     _phase = DrillPhase.feedback;
@@ -880,8 +917,8 @@ class DrillSession extends ChangeNotifier {
         : card.acceptedAnswers(DrillMode.production);
     final right = accepted.any((a) => tilesOf(a).join(' ') == given);
     final grade = right
-        ? AnswerOutcome.exact.toSm2Grade()
-        : AnswerOutcome.wrong.toSm2Grade();
+        ? AnswerOutcome.exact.toGrade()
+        : AnswerOutcome.wrong.toGrade();
     _answer = TypedAnswer(
       typed: given,
       graded: right
@@ -900,7 +937,7 @@ class DrillSession extends ChangeNotifier {
       _recordItem(item, grade, answerGiven: answerGiven);
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
-    if (recorded || (recordsMisses && grade < Sm2.passingGrade)) {
+    if (recorded || recordsRevision) {
       _state.record(
         entry,
         grade,

@@ -92,7 +92,8 @@ HEADER_KEYS = {
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
-    "pos", "gender", "tags", "notes", "audio", "examples", "modes",
+    "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
+    "picture",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -182,6 +183,8 @@ class Report:
     native_code: str | None = None
     card_defs: dict[str, list[str]] = field(default_factory=dict)
     refs: list[tuple[str, bool, str]] = field(default_factory=list)
+    # Each card's minimal-pair partner (ADR-0034): (partner id, where).
+    pairs: list[tuple[str, str]] = field(default_factory=list)
     # For reading decks (#98, ADR-0019): the unit each deck of a path is in;
     # the words a vocab or grammar deck teaches; and a reading deck's
     # passages, as (id, theme, words in its sentences, words it glosses).
@@ -345,7 +348,41 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
                 if isinstance(m, str) and m not in MODES:
                     r.error(where, f"unknown mode {m!r}")
 
+    if "pair" in card:
+        partner = card["pair"]
+        if not _is_str(partner) or not id_re.fullmatch(partner):
+            r.error(where, f"pair must be the id of another {lang} card, "
+                           f"got {partner!r}")
+        elif partner == cid:
+            r.error(where, "pair names the card itself")
+        else:
+            r.pairs.append((partner, where))
+
+    if "picture" in card:
+        check_picture(r, where, card["picture"])
+
     _check_examples(r, where, card.get("examples"))
+
+
+PICTURES = Path(__file__).resolve().parent.parent / "assets" / "pictures"
+
+
+def picture_file(emoji: str) -> str:
+    """The bundled file of a card's picture, as `picturePath` in
+    lib/core/models/card.dart names it: its code points in hex of at least
+    four digits, joined by `_`, without U+FE0F."""
+    points = [f"{ord(c):04x}" for c in emoji if c != "\ufe0f"]
+    return f"emoji_u{'_'.join(points)}.png"
+
+
+def check_picture(r: Report, where: str, picture: object) -> None:
+    """A picture is one emoji whose Noto Emoji image is bundled
+    (`tools/pictures.py` copies it)."""
+    if not _is_str(picture) or not picture.strip() or picture.isascii():
+        r.error(where, f"picture must be one emoji, got {picture!r}")
+    elif not (PICTURES / picture_file(picture)).is_file():
+        r.error(where, f"picture {picture} has no image: run "
+                       f"tools/pictures.py to copy {picture_file(picture)}")
 
 
 def _check_examples(r: Report, where: str, examples: object) -> None:
@@ -1606,6 +1643,12 @@ def check_cards_across(reports: list[Report]) -> list[str]:
                                 f"{rep.native_code!r}, so the ref needs its own native")
             if rep.number_taught is not None:
                 rep.number_taught[1].update(w for t in words for w in t.split())
+    for rep in reports:
+        for pid, where in rep.pairs:
+            if pid not in defs and (rep.lang_code is None
+                                    or pid not in repo_defs(rep.lang_code)):
+                problems.append(f"{rep.path}: {where}: pair names card {pid}, "
+                                f"which no deck writes")
     return problems
 
 

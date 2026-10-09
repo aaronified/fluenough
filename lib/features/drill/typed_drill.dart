@@ -7,6 +7,7 @@ import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/speaker.dart';
@@ -132,7 +133,9 @@ class _TypedDrillState extends State<TypedDrill> {
               card: card,
               expected: session.acceptedAnswers.first,
               transliterating: translit,
-              language: session.typesDigits ? null : language,
+              language: session.typesDigits || session.hearsMeaning
+                  ? null
+                  : language,
             ),
       actions: _actions(context, answer, typing: typing),
     );
@@ -156,6 +159,7 @@ class _TypedDrillState extends State<TypedDrill> {
           color: scheme.onSurfaceVariant,
         ),
       ),
+      if (card.picture != null) CardPicture(card, size: typing ? 56 : 88),
       Text(
         card.native,
         textAlign: TextAlign.center,
@@ -257,7 +261,11 @@ class _TypedDrillState extends State<TypedDrill> {
     bool translit,
   ) {
     if (_session.typesDigits) return l10n.numbersTypeDigits;
-    if (listening) return l10n.drillTypeHeard;
+    if (listening) {
+      return _session.hearsMeaning
+          ? l10n.drillTypeMeaning
+          : l10n.drillTypeHeard;
+    }
     if (translit) return l10n.drillTypeLatin(_exampleReading());
     return language.needsReading
         ? l10n.drillTypeInScript(language.name)

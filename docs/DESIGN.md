@@ -6,7 +6,7 @@
 lib/
   core/              pure Dart, no Flutter imports, fully unit-testable
     models/          Card, Deck, GrammarPattern, ReviewEvent, CardState
-    scheduling/      SM-2 and the Scheduler interface
+    scheduling/      FSRS and the Scheduler interface
     grading/         answer normalisation and comparison
     tts/             TtsEngine interface (implementations may touch platform)
     data/            drift database, deck repository, review log
@@ -36,16 +36,22 @@ be discarded and regenerated.
 **`card_states`** — scheduling state, keyed by `(card_id, mode)`: a card listed
 in several decks, or learned from several languages, has one schedule
 (ADR-0018).
-Holds `interval_days`, `ease_factor`, `repetitions`, `due_at`, `lapses`. This
-is a **derived cache**: it can be rebuilt in full by replaying `reviews`.
+Holds FSRS's state (ADR-0033): `stability`, `difficulty`, `interval_days`,
+`repetitions`, `due_at`, `last_review_at`, `lapses`. This is a **derived
+cache**: it can be rebuilt in full by replaying `reviews`.
 
 **`reviews`** — the append-only log. One row per answered card, never updated
 or deleted:
 
 ```
 id, ts, deck_id, card_id, mode, grade, elapsed_ms, answer_given,
-interval_before, interval_after, ease_before, ease_after
+interval_before, interval_after, ease_before, ease_after,
+stability_after, difficulty_after
 ```
+
+`stability_after` and `difficulty_after` came with migration 5 and are null
+on older rows. Rows from then on write `ease_after` as 0 and `ease_before` as
+null: SM-2's ease belongs to the rows written before.
 
 Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one
@@ -60,9 +66,17 @@ aside, Bring back (migration 3). Append-only and guarded like `reviews`.
 Replaying the log reads it: a pair restarts after a reset that still holds,
 and a set-aside pair is left out of every session. No review is touched.
 
-**Backup.** Settings → Export review log writes both logs as one JSONL file,
-and Import merges such a file back, adding only the reviews not already
-there and rebuilding `card_states` from the whole log. The log replays by
+**`fsrs_parameters`** — FSRS's parameters fitted to the learner, one row per
+language and skill (migration 7, ADR-0035): the 21 values, when the fit ran,
+the review count it ran at, and the log loss before and after. Not a cache:
+each fit starts from the one before, so it cannot be rebuilt from `reviews`.
+A pair is scheduled with its skill's set in its language, else that skill's
+set in the language studied most recently, else the defaults.
+
+**Backup.** Settings → Export review log writes both logs, and the fitted
+parameters, as one JSONL file, and Import merges such a file back, adding
+only the reviews not already there and rebuilding `card_states` from the
+whole log. The log replays by
 time, so older history imported onto a new phone takes its place. See
 [LOG-FORMAT.md](LOG-FORMAT.md).
 
@@ -74,8 +88,8 @@ time, so older history imported onto a new phone takes its place. See
 2. The drill presents the card according to its mode.
 3. The user answers. Machine-graded modes run the answer through
    `AnswerGrader`; `recognition` asks the user to self-assess.
-4. The outcome maps to an SM-2 grade of 0–5.
-5. `Sm2.next(state, grade)` returns the new state — a pure function, which is
+4. The outcome maps to a grade of 0–5, which FSRS reads as a rating.
+5. `Fsrs.next(state, grade)` returns the new state — a pure function, which is
    what makes the scheduler trivially testable.
 6. A `ReviewEvent` is appended to `reviews` **and** `card_states` is updated,
    in one transaction. Both, or neither.
@@ -84,7 +98,7 @@ time, so older history imported onto a new phone takes its place. See
 
 `AnswerGrader` returns `exact`, `closeDiacritics`, `closeTypo` or `wrong`
 rather than a boolean. The distinction drives both the UI ("right, but watch
-the accent") and the SM-2 grade, and keeps the policy decision out of the
+the accent") and the grade, and keeps the policy decision out of the
 comparison code. The pipeline is specified in
 [DECK-FORMAT.md](DECK-FORMAT.md#grading).
 

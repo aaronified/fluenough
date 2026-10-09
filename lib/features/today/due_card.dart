@@ -9,17 +9,31 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/mode_pill.dart';
+import '../../ui/widgets/pace_parts.dart';
 import 'today_numbers.dart';
 
-/// The design's opacity for a skill tile with nothing due.
+/// The design's opacity for a skill tile with nothing due: its fill and
+/// its content, but not its pace mark, which is the only place Today shows
+/// a skill's pace and keeps its full contrast.
 const double _emptyTileOpacity = 0.55;
 
 /// Above this text scale the skill tiles stack in one column, so that a
 /// skill's name keeps room to be read.
 const double _twoColumnMaxScale = 1.5;
 
+/// From this text scale, while the tiles are two to a row, a tile's mark
+/// shortens to its arrow and one word ("Fewer"); the strip and the screen
+/// reader keep the full words.
+const double _shortMarkScale = 1.3;
+
 /// Today's first card: how many words are due and roughly how long they take,
 /// the four skills, and Start review. Or, with nothing due, "All done".
+///
+/// Once some skill is adjusted to the learner ([TodayNumbers.pace]), the
+/// settled "Adjusted to you" strip sits under the count, with the 30-day
+/// change, and opens How you learn; each adjusted skill's tile carries a
+/// mark (mockup `docs/mockups/adapted-to-you.html`, screen 2). Before the
+/// first fit, neither shows.
 ///
 /// Design screen `today`, the `primaryContainer` section named "Due now".
 class DueCard extends StatelessWidget {
@@ -42,12 +56,26 @@ class DueCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppRadii.hero),
         ),
         child: numbers.allDone
-            ? const _AllDone()
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  const _AllDone(),
+                  if (numbers.pace case final pace?) ...<Widget>[
+                    const SizedBox(height: 16),
+                    _AdjustedStrip(pace: pace),
+                  ],
+                ],
+              )
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   _DueCount(due: numbers.due, minutes: numbers.minutes),
-                  const SizedBox(height: 20),
+                  if (numbers.pace case final pace?) ...<Widget>[
+                    const SizedBox(height: 16),
+                    _AdjustedStrip(pace: pace),
+                    const SizedBox(height: 16),
+                  ] else
+                    const SizedBox(height: 20),
                   _SkillGrid(numbers: numbers),
                   const SizedBox(height: 20),
                   FilledButton.icon(
@@ -119,6 +147,30 @@ class _DueCount extends StatelessWidget {
   }
 }
 
+/// "Adjusted to you", settled: one quiet line under it, the next 30 days'
+/// reviews beside what they were at the start. Opens How you learn.
+class _AdjustedStrip extends StatelessWidget {
+  const _AdjustedStrip({required this.pace});
+
+  final TodayPace pace;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final totals = pace.totals;
+    return PaceStrip(
+      title: l10n.adjustedTitle,
+      subtitle: totals == null
+          ? null
+          : totals.reviews == totals.was
+          ? l10n.paceReviewsSteady(totals.reviews)
+          : l10n.paceReviews(totals.reviews, totals.was),
+      onTap: () => AppNavigator.openHowYouLearn(context),
+      underTitle: true,
+    );
+  }
+}
+
 /// With nothing due: a tick, "All done for now" and when more arrives.
 class _AllDone extends StatelessWidget {
   const _AllDone();
@@ -161,7 +213,9 @@ class _AllDone extends StatelessWidget {
 }
 
 /// The skill tiles, two by two, or in one column at large text sizes. An
-/// odd last tile keeps its half of the row.
+/// odd last tile keeps its half of the row. The two tiles of a row are as
+/// tall as each other, and with marks shown, every tile keeps a line for
+/// one, so that names and marks sit level across the row.
 class _SkillGrid extends StatelessWidget {
   const _SkillGrid({required this.numbers});
 
@@ -169,6 +223,8 @@ class _SkillGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scale = MediaQuery.textScalerOf(context).scale(100) / 100;
+    final pace = numbers.pace;
     final tiles = <Widget>[
       for (final MapEntry(key: skill, value: count) in numbers.bySkill.entries)
         _SkillTile(
@@ -177,9 +233,14 @@ class _SkillGrid extends StatelessWidget {
           due: numbers.dueIn[skill] ?? 0,
           revisable: numbers.revisable[skill] ?? 0,
           noVoice: skill.needsVoice && numbers.noVoice,
+          marked: pace != null,
+          mark: pace?.marks[skill],
+          // Kept level with the tile beside it; alone in its row, a tile
+          // needs no empty line.
+          keepMarkLine: scale <= _twoColumnMaxScale,
+          shortMark: scale >= _shortMarkScale && scale <= _twoColumnMaxScale,
         ),
     ];
-    final scale = MediaQuery.textScalerOf(context).scale(100) / 100;
     if (scale > _twoColumnMaxScale) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -229,9 +290,24 @@ class _SkillTile extends StatelessWidget {
     required this.due,
     required this.revisable,
     required this.noVoice,
+    this.marked = false,
+    this.mark,
+    this.keepMarkLine = true,
+    this.shortMark = false,
   });
 
   final Skill skill;
+
+  /// Whether the tiles show the learner's pace: then each keeps a line
+  /// under its name for a [mark], which an adjusted skill fills.
+  final bool marked;
+  final PaceDirection? mark;
+
+  /// Whether a tile with no [mark] keeps the line for one.
+  final bool keepMarkLine;
+
+  /// The [mark] in one word, for large text.
+  final bool shortMark;
 
   /// Today's cards in this skill, as the tile shows.
   final int count;
@@ -269,6 +345,91 @@ class _SkillTile extends StatelessWidget {
     }
   }
 
+  /// With marks shown (mockup screen 2): the pill and the count on top,
+  /// the name under them, then the mark's line, kept even when empty, at
+  /// the foot, so that the lines of the two tiles of a row sit level.
+  /// [opacity] dims all but the mark.
+  Widget _markedBody(
+    BuildContext context,
+    Widget name,
+    Widget trailing, {
+    required double opacity,
+  }) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final locale = Localizations.localeOf(context).toLanguageTag();
+    final small = theme.textTheme.bodySmall!;
+    final markLine =
+        MediaQuery.textScalerOf(context).scale(small.fontSize!) *
+        (small.height ?? 1.2);
+    final moved = mark;
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 12, 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Opacity(
+            opacity: opacity,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    ModePill(
+                      skill: skill,
+                      size: ModePillSize.small,
+                      muted: noVoice,
+                    ),
+                    const Spacer(),
+                    // As tall as a count in every tile, an hourglass's or a
+                    // chevron's too, so that the names sit level.
+                    Stack(
+                      alignment: AlignmentDirectional.centerEnd,
+                      children: <Widget>[
+                        Visibility.maintain(
+                          visible: false,
+                          child: Text(
+                            NumberFormat.decimalPattern(locale).format(0),
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                        trailing,
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                name,
+                if (noVoice)
+                  Text(
+                    l10n.commonNoVoice,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: small.copyWith(color: scheme.onSurfaceVariant),
+                  ),
+              ],
+            ),
+          ),
+          if (moved != null || keepMarkLine)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(top: 2),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: markLine),
+                child: moved == null
+                    ? const SizedBox.shrink()
+                    : PaceMark(direction: moved, short: shortMark),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -299,42 +460,55 @@ class _SkillTile extends StatelessWidget {
             ),
           );
 
-    final body = ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 48),
-      child: Padding(
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: 12,
-          vertical: 6,
-        ),
-        child: Row(
-          children: <Widget>[
-            ModePill(skill: skill, size: ModePillSize.small, muted: noVoice),
-            const SizedBox(width: 10),
-            Expanded(
-              child: noVoice
-                  ? Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        name,
-                        Text(
-                          l10n.commonNoVoice,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.bodySmall!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    )
-                  : name,
+    // Incoming and voiceless tiles have their own look, never dimmed.
+    final opacity = count == 0 && !incoming && !noVoice
+        ? _emptyTileOpacity
+        : 1.0;
+    final body = marked
+        ? _markedBody(context, name, trailing, opacity: opacity)
+        : Opacity(
+            opacity: opacity,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 48),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
+                child: Row(
+                  children: <Widget>[
+                    ModePill(
+                      skill: skill,
+                      size: ModePillSize.small,
+                      muted: noVoice,
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: noVoice
+                          ? Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                name,
+                                Text(
+                                  l10n.commonNoVoice,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: theme.textTheme.bodySmall!.copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            )
+                          : name,
+                    ),
+                    const SizedBox(width: 10),
+                    trailing,
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(width: 10),
-            trailing,
-          ],
-        ),
-      ),
-    );
+          );
 
     final radius = BorderRadius.circular(AppRadii.small);
     void setUp() => AppNavigator.openVoices(context);
@@ -344,8 +518,10 @@ class _SkillTile extends StatelessWidget {
         ? () => _revise(context)
         : null;
     final onTap = incoming ? null : (noVoice ? setUp : start);
+    // The fill is dimmed as the content is, so that the tile looks as one
+    // dimmed whole, while the mark keeps its contrast.
     final tile = Material(
-      color: scheme.surfaceContainerLowest,
+      color: scheme.surfaceContainerLowest.withValues(alpha: opacity),
       borderRadius: radius,
       clipBehavior: Clip.antiAlias,
       child: onTap == null ? body : InkWell(onTap: onTap, child: body),
@@ -370,10 +546,13 @@ class _SkillTile extends StatelessWidget {
         child: tile,
       );
     }
+    final moved = mark;
     return Semantics(
       container: true,
       button: start != null,
-      label: l10n.todaySkillSemantics(label, count),
+      label: moved == null
+          ? l10n.todaySkillSemantics(label, count)
+          : l10n.todaySkillAdjustedSemantics(label, count, moved.name),
       onTap: start,
       onTapHint: start == null
           ? null
@@ -381,7 +560,7 @@ class _SkillTile extends StatelessWidget {
           ? l10n.todaySkillReviewHint
           : l10n.todaySkillRevise,
       excludeSemantics: true,
-      child: Opacity(opacity: count == 0 ? _emptyTileOpacity : 1, child: tile),
+      child: tile,
     );
   }
 }

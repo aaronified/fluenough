@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/scheduling/sm2.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 
 void main() {
   final monday = DateTime(2026, 9, 28, 19);
@@ -21,13 +21,13 @@ void main() {
     now: at ?? monday,
   );
 
-  test('recording runs Sm2.next from a fresh state', () {
+  test('recording runs Fsrs.next on a pair never reviewed', () {
     final progress = MemoryProgress();
     final event = answer(progress, 'es-0001', 4);
 
     expect(event.wasNew, isTrue);
     expect(event.before, isNull);
-    final expected = Sm2.next(Sm2State.fresh(monday), 4, now: monday);
+    final expected = Fsrs.next(null, 4, now: monday, rated: true);
     expect(event.after.intervalDays, expected.intervalDays);
     expect(event.after.dueAt, expected.dueAt);
     expect(progress.stateOf('es-0001', DrillMode.recognition)!.repetitions, 1);
@@ -75,7 +75,16 @@ void main() {
     final progress = MemoryProgress();
     answer(progress, 'a', 5);
     final state = progress.preview('a', DrillMode.recognition, 5, now: monday);
-    expect(state.intervalDays, 6);
+    expect(
+      state.intervalDays,
+      Fsrs.next(
+        progress.stateOf('a', DrillMode.recognition),
+        5,
+        now: monday,
+        rated: true,
+      ).intervalDays,
+    );
+    expect(state.intervalDays, greaterThan(1));
     expect(progress.log, hasLength(1));
   });
 
@@ -133,8 +142,8 @@ void main() {
   test('due tomorrow counts cards whose next review is tomorrow', () {
     final progress = MemoryProgress();
     answer(progress, 'a', 1); // failed: due tomorrow
-    answer(progress, 'b', 5); // new, passed: due tomorrow
-    answer(progress, 'b', 5, mode: DrillMode.production); // same card
+    answer(progress, 'b', 3); // new, Hard: due tomorrow
+    answer(progress, 'b', 3, mode: DrillMode.production); // same card
     final c = answer(progress, 'c', 5, at: DateTime(2026, 9, 20));
     answer(progress, 'c', 5, at: c.after.dueAt); // due again already
     expect(progress.dueTomorrow(monday), 2);

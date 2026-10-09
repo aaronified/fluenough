@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 
 Card card(String id, {String? target, String? native, String? pos}) => Card(
@@ -50,7 +51,13 @@ void main() {
         item(card('l0'), DrillMode.listening),
         ...recognising(4).skip(2),
       ];
-      expect(asked(items), <String>['p0:own', 'match(r0,r1,r2,r3)', 'l0:own']);
+      // A new listening pair is Hear's choice of meaning (ADR-0034), not part
+      // of the match.
+      expect(asked(items), <String>[
+        'p0:own',
+        'match(r0,r1,r2,r3)',
+        'l0:hearMeaning',
+      ]);
     });
 
     test('four that share a meaning are chosen, not matched', () {
@@ -85,7 +92,96 @@ void main() {
         's:rearrange',
         'p:rearrange',
         'w:own',
-        'l:own',
+        // Hearing a sentence is never rearranged: it asks the meaning.
+        'l:hearMeaning',
+      ]);
+    });
+  });
+
+  group('Hear (ADR-0034)', () {
+    final now = DateTime(2026, 10, 8, 9);
+    SessionItem heard(String id, {FsrsState? state}) =>
+        SessionItem(card: card(id), mode: DrillMode.listening, state: state);
+    final remembered = Fsrs.next(null, 4, now: now);
+    final missed = Fsrs.next(
+      remembered,
+      1,
+      now: now.add(const Duration(days: 3)),
+    );
+
+    test('chooses the meaning while new or last missed, types it once '
+        'remembered', () {
+      expect(
+        asked(<SessionItem>[
+          heard('a'),
+          heard('b', state: missed),
+          heard('c', state: remembered),
+        ]),
+        <String>['a:hearMeaning', 'b:hearMeaning', 'c:own'],
+      );
+    });
+
+    test('a new pair starts typed where the learner is strong in Hear', () {
+      expect(
+        reviewAsks(
+          <SessionItem>[heard('a'), heard('b', state: missed)],
+          canChoose: (_) => true,
+          recallsFirst: (_) => true,
+        ).map(shape),
+        <String>['a:own', 'b:hearMeaning'],
+      );
+    });
+
+    test('is typed as heard where the form is what is heard', () {
+      expect(
+        reviewAsks(
+          <SessionItem>[heard('a')],
+          canChoose: (_) => true,
+          hearsForm: (_) => true,
+        ).map(shape),
+        <String>['a:own'],
+      );
+    });
+
+    test('is typed where there is too little to choose from', () {
+      expect(
+        asked(<SessionItem>[heard('a')], canChoose: (_) => false),
+        <String>['a:own'],
+      );
+    });
+
+    test('options are meanings', () {
+      expect(Ask.hearMeaning.chooses, isTrue);
+      expect(Ask.hearMeaning.optionOf(card('a')), 'native a');
+    });
+  });
+
+  group('Card.meanings', () {
+    test('the whole meaning, its parts and the alternatives, each once', () {
+      const c = Card(
+        id: 'x',
+        deckId: 'd',
+        target: 't',
+        native: 'to go, to leave; depart',
+        altNative: <String>['go', 'to go'],
+      );
+      expect(c.meanings, <String>[
+        'to go, to leave; depart',
+        'to go',
+        'to leave',
+        'depart',
+        'go',
+      ]);
+    });
+
+    test('does not split inside brackets', () {
+      expect(card('x', native: 'eats (he, she)').meanings, <String>[
+        'eats (he, she)',
+      ]);
+      expect(card('y', native: 'pen / quill').meanings, <String>[
+        'pen / quill',
+        'pen',
+        'quill',
       ]);
     });
   });

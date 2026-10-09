@@ -1,6 +1,7 @@
 # ADR-0030: Today's skill tiles start a review of their skill, and quick revision can take one
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0033: a skill's revision records
+  every answer.
 - **Date:** 2026-10-05
 
 ## Context

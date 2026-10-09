@@ -7,7 +7,7 @@ import 'canonical.dart';
 /// How close a typed answer was to the expected one.
 ///
 /// Deliberately not a boolean: the distinction drives both what the UI says
-/// ("right, but watch the accent") and the SM-2 grade, and it keeps that policy
+/// ("right, but watch the accent") and the grade, and it keeps that policy
 /// decision out of the comparison code itself.
 enum AnswerOutcome {
   /// Matched after case, whitespace and punctuation normalisation.
@@ -25,12 +25,12 @@ enum AnswerOutcome {
 
   bool get isCorrect => this != AnswerOutcome.wrong;
 
-  /// Maps an outcome to an SM-2 grade for a machine-graded drill.
+  /// Maps an outcome to a grade (0–5) for a machine-graded drill.
   ///
   /// A typo is deliberately not treated as a failure — forgetting a word and
   /// mistyping it are different events, and conflating them makes the
   /// scheduler over-drill words the learner actually knows.
-  int toSm2Grade() => switch (this) {
+  int toGrade() => switch (this) {
     AnswerOutcome.exact => 5,
     AnswerOutcome.closeDiacritics => 4,
     AnswerOutcome.closeTypo => 3,
