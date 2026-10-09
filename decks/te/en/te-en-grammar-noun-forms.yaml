@@ -1,0 +1,37 @@
+schema: 1
+id: "te-en-grammar-noun-forms"
+kind: "layer"
+core: "te-grammar-noun-forms"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural, in, to, with, from"
+description: "Every noun the course teaches, in its plural and with the endings for in, to, with, from and the thing acted on. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC0-1.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "plural": "{meaning}, more than one"
+    "lo": "in {meaning}"
+    "ki": "to {meaning}"
+    "to": "with {meaning}"
+    "nunci": "from {meaning}"
+    "ni": "{meaning}, as the thing acted on"
+rules:
+  "te-rule-plural":
+    name: "-లు (-lu): more than one"
+    explanation: "{1} makes the plural: {2}, book, becomes {3}, books. A word in -ఉ (-u) usually just adds it, as {4} becomes {5}, and a few change their stem: {6} becomes {7}. A word that is already plural, or that is not counted, has no plural cell."
+  "te-rule-lo":
+    name: "-లో (-lō): in"
+    explanation: "{1} means in or at, and joins the noun: {2}, room, becomes {3}. Some nouns change their stem first, as {4} becomes {5}, and a noun in {6} keeps it: {7} becomes {8}."
+  "te-rule-ki":
+    name: "-కి (-ki): to"
+    explanation: "{1}, or {2}, means to or for: to a place, or to the person given something. {3}, school, becomes {4}. A noun in {5} takes {6} first: {7} becomes {8}. A man's word in {9} turns its last vowel to {10}: {11} becomes {12}."
+  "te-rule-to":
+    name: "-తో (-tō): with"
+    explanation: "{1} means with: with a person, or with a tool. {2}, mother, becomes {3}. A noun with a short stem uses it: {4} becomes {5}."
+  "te-rule-nunci":
+    name: "నుంచి (nuñci): from"
+    explanation: "{1} follows the noun as a separate word and means from. A noun with a short stem uses it: {2} becomes {3}; {4} keeps its {5}: {6}."
+  "te-rule-ni":
+    name: "-ని (-ni): the thing acted on"
+    explanation: "{1}, or {2}, marks what the verb acts on when it is a particular thing or a person: {3} becomes {4}, {5} becomes {6} and {7} becomes {8}. It is left off a thing that is not particular: {9}, I drink tea."
