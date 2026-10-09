@@ -143,6 +143,14 @@ them. The validator rejects a deck that leaves one out.
   1,600 and 2,800 in all; low confidence, scaled from English, Milton &
   Alexiou 2009), and each planned unit names its listening and reading
   passages too (owner).
+- **Paths are one per language learnt now** (`te-path.yaml`, shared by every
+  native layer), not one per course (owner).
+- **The minimal-pair partner comes from the card's pair notes;** a B1 core
+  has no `pair:` of its own; existing decks' `pair:` still works (owner).
+- **A B1 plan is required on a path once its language has a core** (written
+  in the new format), and on every path once all eight have plans (owner).
+- **Planned units must name their listening and reading passages** (an
+  error); written units need none (owner).
 - The format is built on its own branch, in parallel with the skill model,
   so that the Bengali and Telugu deck agents can start (owner).
 
