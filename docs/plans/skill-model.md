@@ -291,6 +291,15 @@ The owner's answers to #235, 2026-10-08:
 - **Settings** already has one switch per skill, so one per activity;
   their wording waits for `settings-wording.md`.
 
+- **FSRS fitted to the learner, per skill, in this pull request** (owner,
+  2026-10-09: "Option 3 in this PR"). Asked to "progressively adjust to the
+  user's aptitudes in terms of the skills ... if the user remembers all too
+  easily then less reviews until he starts forgetting", the owner chose to
+  fit FSRS's parameters from each learner's own reviews, separately for
+  each skill, over seeding new words from the ability layer or one fit for
+  all skills. This reverses "one set" above. Defaults hold until a skill
+  has enough reviews to fit.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
