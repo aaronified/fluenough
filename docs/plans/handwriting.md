@@ -50,6 +50,13 @@ Decided with the owner:
   order for kana and kanji. Its licence is CC BY-SA 3.0, so it must be
   credited and shared alike. That is the same licence question the
   Wiktionary plan raises for the CC0 decks.
+- **Chinese:** [Hanzi Writer](https://github.com/chanind/hanzi-writer)'s
+  data, from Make Me a Hanzi, has stroke paths and order for hanzi, under
+  the Arphic Public License (its graphics derive from Arphic fonts); the
+  licence terms are to be checked before use, like KanjiVG's.
+- **For later stroke-order decks** (owner, 2026-10-09): KanjiVG for
+  Japanese and Hanzi Writer / Make Me a Hanzi for Chinese are the sources
+  to use, each with its attribution and licence.
 - **Indian scripts:** I know of no open dataset of stroke orders
   (confidence medium). The strokes would be drawn by hand, about 490
   characters for seven scripts.
