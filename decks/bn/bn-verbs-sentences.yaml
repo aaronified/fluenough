@@ -1,0 +1,205 @@
+schema: 1
+id: "bn-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0900"
+    target: "আমরা ভাত খাই।"
+    reading: "āmrā bhāt khāi."
+    ipa: "amra bʱat̪ kʰai"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-0901"
+    target: "তুমি কী খাও?"
+    reading: "tumi ki khāo?"
+    ipa: "t̪umi ki kʰao"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "খাও", ref: "bn-0876" }
+  - id: "bn-0902"
+    target: "আপনি কী খান?"
+    reading: "āpni ki khān?"
+    ipa: "apni ki kʰan"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "খান", ref: "bn-0876" }
+  - id: "bn-0903"
+    target: "তুমি কোথায় যাও?"
+    reading: "tumi kothāy jāo?"
+    ipa: "t̪umi kot̪ʰaj dʒao"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "যাও", ref: "bn-0873" }
+  - id: "bn-0904"
+    target: "আপনি কোথায় যান?"
+    reading: "āpni kothāy jān?"
+    ipa: "apni kot̪ʰaj dʒan"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "যান", ref: "bn-0873" }
+  - id: "bn-0905"
+    target: "সে কোথায় থাকে?"
+    reading: "śe kothāy thāke?"
+    ipa: "ʃe kot̪ʰaj t̪ʰake"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "থাকে", ref: "bn-0875" }
+  - id: "bn-0906"
+    target: "আপনি কোথায় থাকেন?"
+    reading: "āpni kothāy thāken?"
+    ipa: "apni kot̪ʰaj t̪ʰaken"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "থাকেন", ref: "bn-0875" }
+  - id: "bn-0907"
+    target: "আমি বাংলা বলি।"
+    reading: "āmi bāṅlā boli."
+    ipa: "ami baŋla boli"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "বলি", ref: "bn-0879" }
+  - id: "bn-0908"
+    target: "আপনি বাংলা বলেন।"
+    reading: "āpni bāṅlā bôlen."
+    ipa: "apni baŋla bɔlen"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "বলেন", ref: "bn-0879" }
+  - id: "bn-0909"
+    target: "আমি বাংলা শিখি।"
+    reading: "āmi bāṅlā śikhi."
+    ipa: "ami baŋla ʃikʰi"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "শিখি", ref: "bn-0883" }
+  - id: "bn-0910"
+    target: "সে বাংলা শেখে।"
+    reading: "śe bāṅlā śekhe."
+    ipa: "ʃe baŋla ʃekʰe"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "শেখে", ref: "bn-0883" }
+  - id: "bn-0911"
+    target: "আপনি বাংলা জানেন?"
+    reading: "āpni bāṅlā jānen?"
+    ipa: "apni baŋla dʒanen"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "জানেন", ref: "bn-0881" }
+  - id: "bn-0912"
+    target: "আমি বাংলা বুঝি।"
+    reading: "āmi bāṅlā bujhi."
+    ipa: "ami baŋla budʒʱi"
+    pos: "phrase"
+    rules: ["bn-rule-present-first"]
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "বুঝি", ref: "bn-0882" }
+  - id: "bn-0913"
+    target: "তিনি কী করেন?"
+    reading: "tini ki kôren?"
+    ipa: "t̪ini ki kɔren"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "করেন", ref: "bn-0102" }
+  - id: "bn-0914"
+    target: "ও কী বলে?"
+    reading: "o ki bôle?"
+    ipa: "o ki bɔle"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases:
+      - { word: "বলে", ref: "bn-0879" }
+  - id: "bn-0915"
+    target: "তুই কী করিস?"
+    reading: "tui ki koriś?"
+    ipa: "t̪ui ki koriʃ"
+    pos: "phrase"
+    rules: ["bn-rule-present-second"]
+    bases:
+      - { word: "করিস", ref: "bn-0102" }
+  - id: "bn-0916"
+    target: "সে আমাকে ডাকে।"
+    reading: "śe āmāke ḍāke."
+    ipa: "ʃe amake ɖake"
+    pos: "phrase"
+    rules: ["bn-rule-present-third", "bn-rule-pronoun-obj"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "ডাকে", ref: "bn-0898" }
+  - id: "bn-0917"
+    target: "আমি তাকে ডাকি।"
+    reading: "āmi tāke ḍāki."
+    ipa: "ami t̪ake ɖaki"
+    pos: "phrase"
+    rules: ["bn-rule-present-first", "bn-rule-pronoun-obj"]
+    bases:
+      - { word: "তাকে", ref: "bn-0839" }
+      - { word: "ডাকি", ref: "bn-0898" }
+  - id: "bn-0918"
+    target: "বাবা আমাকে ডাকেন।"
+    reading: "bābā āmāke ḍāken."
+    ipa: "baba amake ɖaken"
+    pos: "phrase"
+    rules: ["bn-rule-present-third", "bn-rule-pronoun-obj"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "ডাকেন", ref: "bn-0898" }
+  - id: "bn-0919"
+    target: "মা আমাকে দেখেন।"
+    reading: "mā āmāke dekhen."
+    ipa: "ma amake d̪ekʰen"
+    pos: "phrase"
+    rules: ["bn-rule-present-third", "bn-rule-pronoun-obj"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "দেখেন", ref: "bn-0877" }
+  - id: "bn-0923"
+    target: "আপনি শুনুন।"
+    reading: "āpni śunun."
+    ipa: "apni ʃunun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "শুনুন", ref: "bn-0878" }
+  - id: "bn-0921"
+    target: "আপনি বলুন।"
+    reading: "āpni bolun."
+    ipa: "apni bolun"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request"]
+    bases:
+      - { word: "বলুন", ref: "bn-0879" }
+  - id: "bn-0922"
+    target: "আমাকে দিন।"
+    reading: "āmāke din."
+    ipa: "amake d̪in"
+    pos: "phrase"
+    rules: ["bn-rule-polite-request", "bn-rule-pronoun-obj"]
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "দিন", ref: "bn-0888" }
