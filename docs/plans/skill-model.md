@@ -246,6 +246,12 @@ The owner's answers to #235, 2026-10-08:
   difficulty in every skill, weighted by how related they are. Due dates
   stay per skill.
 
+- **One question, several skills; partial implication.** The owner:
+  "Same questions can judge multiple skills. And one skill may partially
+  imply other skills. These research based stuff is the backbone of the
+  app." Which skills each question judges, and how much one skill implies
+  another, are being taken from the research before they are built.
+
 ### How the work is run
 
 The owner, 2026-10-09: commit and push everything as it goes; no raters
