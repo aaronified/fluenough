@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-irregular
-name: "Irregular verbs"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "The common verbs whose stem changes in the past. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-irregular"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Irregular verbs"
-  slot_name: "form"
   slots: ["past, ನಾನು (nānu)", "future, ನಾನು (nānu)", "polite request, ನೀವು (nīvu)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "These change their stem in the past: ಬರು (to come) gives ಬಂದೆ (bande), but ಬರುತ್ತೇನೆ (baruttēne) and ಬನ್ನಿ (banni); ಕೊಡು (to give) gives ಕೊಟ್ಟೆ (koṭṭe). Where two forms are given, the second is everyday speech."
   entries:
     - lemma: "ಬರು"
-      key: baru
+      key: "baru"
       reading: "baru"
       ipa: "baru"
-      gloss: "to come"
       forms:
         "past, ನಾನು (nānu)": "ಬಂದೆ"
         "future, ನಾನು (nānu)": ["ಬರುತ್ತೇನೆ", "ಬರ್ತೀನಿ"]
@@ -32,10 +25,9 @@ pattern:
         "future, ನಾನು (nānu)": "barut̪t̪eːne"
         "polite request, ನೀವು (nīvu)": "banni"
     - lemma: "ಹೋಗು"
-      key: hoogu
+      key: "hoogu"
       reading: "hōgu"
       ipa: "hoːɡu"
-      gloss: "to go"
       forms:
         "past, ನಾನು (nānu)": "ಹೋದೆ"
         "future, ನಾನು (nānu)": ["ಹೋಗುತ್ತೇನೆ", "ಹೋಗ್ತೀನಿ"]
@@ -49,10 +41,9 @@ pattern:
         "future, ನಾನು (nānu)": "hoːɡut̪t̪eːne"
         "polite request, ನೀವು (nīvu)": "hoːɡi"
     - lemma: "ತಿನ್ನು"
-      key: tinnu
+      key: "tinnu"
       reading: "tinnu"
       ipa: "t̪innu"
-      gloss: "to eat"
       forms:
         "past, ನಾನು (nānu)": "ತಿಂದೆ"
         "future, ನಾನು (nānu)": ["ತಿನ್ನುತ್ತೇನೆ", "ತಿಂತೀನಿ"]
@@ -66,10 +57,9 @@ pattern:
         "future, ನಾನು (nānu)": "t̪innut̪t̪eːne"
         "polite request, ನೀವು (nīvu)": "t̪inni"
     - lemma: "ಕೊಡು"
-      key: kodu
+      key: "kodu"
       reading: "koḍu"
       ipa: "koɖu"
-      gloss: "to give"
       forms:
         "past, ನಾನು (nānu)": "ಕೊಟ್ಟೆ"
         "future, ನಾನು (nānu)": ["ಕೊಡುತ್ತೇನೆ", "ಕೊಡ್ತೀನಿ"]
@@ -83,10 +73,9 @@ pattern:
         "future, ನಾನು (nānu)": "koɖut̪t̪eːne"
         "polite request, ನೀವು (nīvu)": "koɖi"
     - lemma: "ತೆಗೆದುಕೊಳ್ಳು"
-      key: tegedukollu
+      key: "tegedukollu"
       reading: "tegedukoḷḷu"
       ipa: "t̪eɡed̪ukoɭɭu"
-      gloss: "to take"
       forms:
         "past, ನಾನು (nānu)": ["ತೆಗೆದುಕೊಂಡೆ", "ತಗೊಂಡೆ"]
         "future, ನಾನು (nānu)": ["ತೆಗೆದುಕೊಳ್ಳುತ್ತೇನೆ", "ತಗೊಳ್ತೀನಿ"]
@@ -100,10 +89,9 @@ pattern:
         "future, ನಾನು (nānu)": "t̪eɡed̪ukoɭɭut̪t̪eːne"
         "polite request, ನೀವು (nīvu)": "t̪eɡed̪ukoɭɭi"
     - lemma: "ಇಡು"
-      key: idu
+      key: "idu"
       reading: "iḍu"
       ipa: "iɖu"
-      gloss: "to put; to keep"
       forms:
         "past, ನಾನು (nānu)": "ಇಟ್ಟೆ"
         "future, ನಾನು (nānu)": ["ಇಡುತ್ತೇನೆ", "ಇಡ್ತೀನಿ"]

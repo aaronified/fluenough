@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-future
-name: "Future and habit"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I will go, she eats every day: one tense for both. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-future"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Future and habit"
-  slot_name: "person"
   slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The same form is the future and the habit: ನಾನು ಕಾಫಿ ಕುಡಿಯುತ್ತೇನೆ (nānu kāfi kuḍiyuttēne) is 'I will drink coffee' and 'I drink coffee'. Speech shortens -ಉತ್ತ- (-utta-) to -ತ್- (-t-): ಮಾಡ್ತೀನಿ (māḍtīni). The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು (avanu bandanu), ಅವಳು ಬಂದಳು (avaḷu bandaḷu), ಅದು ಬಂತು (adu bantu). ನೀವು (nīvu), plural or respectful, takes the plural, and so does ಅವರು (avaru), they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
   entries:
     - lemma: "ಮಾಡು"
-      key: maadu
+      key: "maadu"
       reading: "māḍu"
       ipa: "maːɖu"
-      gloss: "to do"
       forms:
         "ನಾನು": ["ಮಾಡುತ್ತೇನೆ", "ಮಾಡ್ತೀನಿ"]
         "ನಾವು": ["ಮಾಡುತ್ತೇವೆ", "ಮಾಡ್ತೀವಿ"]
@@ -47,10 +40,9 @@ pattern:
         "ಅದು": "maːɖut̪t̪ad̪e"
         "ಅವರು": "maːɖut̪t̪aːre"
     - lemma: "ಹೋಗು"
-      key: hoogu
+      key: "hoogu"
       reading: "hōgu"
       ipa: "hoːɡu"
-      gloss: "to go"
       forms:
         "ನಾನು": ["ಹೋಗುತ್ತೇನೆ", "ಹೋಗ್ತೀನಿ"]
         "ನಾವು": ["ಹೋಗುತ್ತೇವೆ", "ಹೋಗ್ತೀವಿ"]
@@ -79,10 +71,9 @@ pattern:
         "ಅದು": "hoːɡut̪t̪ad̪e"
         "ಅವರು": "hoːɡut̪t̪aːre"
     - lemma: "ಬರು"
-      key: baru
+      key: "baru"
       reading: "baru"
       ipa: "baru"
-      gloss: "to come"
       forms:
         "ನಾನು": ["ಬರುತ್ತೇನೆ", "ಬರ್ತೀನಿ"]
         "ನಾವು": ["ಬರುತ್ತೇವೆ", "ಬರ್ತೀವಿ"]

@@ -1,0 +1,23 @@
+schema: 1
+id: "kn-en-grammar-pronouns"
+kind: "layer"
+core: "kn-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and possessives"
+license: "CC0-1.0"
+description: "I, you, he and she, with my and your, to me, and me as an object. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "naanu": "I"
+    "niinu": "you, familiar"
+    "niivu": "you, respectful or plural"
+    "avanu": "he"
+    "avalu": "she"
+    "adu": "it"
+    "naavu": "we"
+    "avaru": "they; he or she, respectful"
+  notes: "Kannada has one 'we', ನಾವು (nāvu), and two 'you': ನೀನು (nīnu) to a friend or a child, ನೀವು (nīvu) to anyone you respect and to more than one. ಅವರು (avaru) is 'they', and 'he' or 'she' with respect. In speech ನನಗೆ (nanage) is often ನಂಗೆ (naṅge), and the object ending -ಅನ್ನು (-annu) is often dropped: ನನ್ನ (nanna), me."

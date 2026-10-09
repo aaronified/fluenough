@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-past
-name: "Past tense"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I did, she went: the past, by person, number and gender. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-past"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Past tense"
-  slot_name: "person"
   slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "Everyday speech drops the -ನು (-nu) of a man's form, ಬಂದ (banda) for ಬಂದನು (bandanu), and shortens the others: ಬಂದ್ರು (bandru) for ಬಂದರು (bandaru). The past of ನಾನು (nānu) and ನೀನು (nīnu) is the same: ಬಂದೆ (bande), I came, you came. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು (avanu bandanu), ಅವಳು ಬಂದಳು (avaḷu bandaḷu), ಅದು ಬಂತು (adu bantu). ನೀವು (nīvu), plural or respectful, takes the plural, and so does ಅವರು (avaru), they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
   entries:
     - lemma: "ಮಾಡು"
-      key: maadu
+      key: "maadu"
       reading: "māḍu"
       ipa: "maːɖu"
-      gloss: "to do"
       forms:
         "ನಾನು": ["ಮಾಡಿದೆ", "ಮಾಡ್ದೆ"]
         "ನಾವು": ["ಮಾಡಿದೆವು", "ಮಾಡಿದ್ವಿ"]
@@ -47,10 +40,9 @@ pattern:
         "ಅದು": "maːɖit̪u"
         "ಅವರು": "maːɖid̪aru"
     - lemma: "ಹೋಗು"
-      key: hoogu
+      key: "hoogu"
       reading: "hōgu"
       ipa: "hoːɡu"
-      gloss: "to go"
       forms:
         "ನಾನು": "ಹೋದೆ"
         "ನಾವು": ["ಹೋದೆವು", "ಹೋದ್ವಿ"]
@@ -79,10 +71,9 @@ pattern:
         "ಅದು": "hoːjit̪u"
         "ಅವರು": "hoːd̪aru"
     - lemma: "ಬರು"
-      key: baru
+      key: "baru"
       reading: "baru"
       ipa: "baru"
-      gloss: "to come"
       forms:
         "ನಾನು": "ಬಂದೆ"
         "ನಾವು": ["ಬಂದೆವು", "ಬಂದ್ವಿ"]

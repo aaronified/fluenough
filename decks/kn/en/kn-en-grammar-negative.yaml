@@ -1,0 +1,20 @@
+schema: 1
+id: "kn-en-grammar-negative"
+kind: "layer"
+core: "kn-grammar-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Won't, didn't and don't"
+license: "CC0-1.0"
+description: "I won't go, she didn't come, don't eat: Kannada's 'not' is one ending for every person. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Negatives"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+  notes: "The negative is the same for every person: ನಾನು ಬರುವುದಿಲ್ಲ (nānu baruvudilla), ಅವಳು ಬರುವುದಿಲ್ಲ (avaḷu baruvudilla), I won't come, she won't come. The future and the habit take -ಉವುದಿಲ್ಲ (-uvudilla), in speech -ಅಲ್ಲ (-alla); the past takes -ಅಲಿಲ್ಲ (-alilla); what is not happening now takes -ಉತ್ತಿಲ್ಲ (-uttilla). 'Don't!' is -ಬೇಡ (-bēḍa), and -ಬೇಡಿ (-bēḍi) to someone you respect. Where several forms are given, the first is written Kannada; all are accepted."

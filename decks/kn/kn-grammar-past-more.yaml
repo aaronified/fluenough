@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-past-more
-name: "Used to"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I used to go, she was coming: the past of a habit, and of what was going on. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-past-more"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Past habit and past continuous"
-  slot_name: "person"
   slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The verb with -ಉತ್ತ- (-utta-) and the past of ಇರು (iru): ಮಾಡುತ್ತಿದ್ದೆ (māḍuttidde). The same form is 'used to' and 'was doing': ನಾನು ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೆ (nānu beṅgaḷūrinalli kelasa māḍuttidde), I used to work in Bengaluru, or I was working there. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು (avanu bandanu), ಅವಳು ಬಂದಳು (avaḷu bandaḷu), ಅದು ಬಂತು (adu bantu). ನೀವು (nīvu), plural or respectful, takes the plural, and so does ಅವರು (avaru), they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
   entries:
     - lemma: "ಮಾಡು"
-      key: maadu
+      key: "maadu"
       reading: "māḍu"
       ipa: "maːɖu"
-      gloss: "to do"
       forms:
         "ನಾನು": ["ಮಾಡುತ್ತಿದ್ದೆ", "ಮಾಡ್ತಿದ್ದೆ"]
         "ನಾವು": ["ಮಾಡುತ್ತಿದ್ದೆವು", "ಮಾಡ್ತಿದ್ವಿ"]
@@ -47,10 +40,9 @@ pattern:
         "ಅದು": "maːɖut̪t̪it̪t̪u"
         "ಅವರು": "maːɖut̪t̪id̪d̪aru"
     - lemma: "ಹೋಗು"
-      key: hoogu
+      key: "hoogu"
       reading: "hōgu"
       ipa: "hoːɡu"
-      gloss: "to go"
       forms:
         "ನಾನು": ["ಹೋಗುತ್ತಿದ್ದೆ", "ಹೋಗ್ತಿದ್ದೆ"]
         "ನಾವು": ["ಹೋಗುತ್ತಿದ್ದೆವು", "ಹೋಗ್ತಿದ್ವಿ"]
@@ -79,10 +71,9 @@ pattern:
         "ಅದು": "hoːɡut̪t̪it̪t̪u"
         "ಅವರು": "hoːɡut̪t̪id̪d̪aru"
     - lemma: "ಬರು"
-      key: baru
+      key: "baru"
       reading: "baru"
       ipa: "baru"
-      gloss: "to come"
       forms:
         "ನಾನು": ["ಬರುತ್ತಿದ್ದೆ", "ಬರ್ತಿದ್ದೆ"]
         "ನಾವು": ["ಬರುತ್ತಿದ್ದೆವು", "ಬರ್ತಿದ್ವಿ"]
@@ -111,10 +102,9 @@ pattern:
         "ಅದು": "barut̪t̪it̪t̪u"
         "ಅವರು": "barut̪t̪id̪d̪aru"
     - lemma: "ಇರು"
-      key: iru
+      key: "iru"
       reading: "iru"
       ipa: "iru"
-      gloss: "to be; to live"
       forms:
         "ನಾನು": ["ಇರುತ್ತಿದ್ದೆ", "ಇರ್ತಿದ್ದೆ"]
         "ನಾವು": ["ಇರುತ್ತಿದ್ದೆವು", "ಇರ್ತಿದ್ವಿ"]

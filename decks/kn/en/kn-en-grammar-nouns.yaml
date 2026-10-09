@@ -1,0 +1,21 @@
+schema: 1
+id: "kn-en-grammar-nouns"
+kind: "layer"
+core: "kn-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural and case"
+license: "CC0-1.0"
+description: "The plural, and the endings for 'in', 'to', 'from' and 'of', often joined by a y or an -ಇನ- (-ina-). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Noun endings"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "mane": "house"
+    "pustaka": "book"
+    "angadi": "shop"
+    "koone": "room"
+    "bassu": "bus"
+    "uuru": "town"
+  notes: "-ಗಳು (-gaḷu) makes a plural. A noun in -e or -i joins its endings with a y: ಮನೆಯಲ್ಲಿ (maneyalli). A noun in -a takes -ದ- (-da-) before them and -ಕ್ಕೆ (-kke) for 'to': ಪುಸ್ತಕದಲ್ಲಿ (pustakadalli), ಪುಸ್ತಕಕ್ಕೆ (pustakakke). Many nouns in -u take -ಇನ- (-ina-): ಊರಿನಲ್ಲಿ (ūrinalli). Where two forms are given, the second is everyday speech."

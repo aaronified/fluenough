@@ -1,24 +1,17 @@
 schema: 1
-id: kn-en-grammar-continuous
-name: "Present continuous"
-kind: grammar
-language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I am doing, she is coming: what is happening now. Not yet checked by a Kannada speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "kn-grammar-continuous"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Present continuous"
-  slot_name: "person"
   slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The verb with -ಉತ್ತ- (-utta-) and then ಇರು (iru), to be: ಮಾಡುತ್ತಿದ್ದೇನೆ (māḍuttiddēne), 'I am doing'. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು (avanu bandanu), ಅವಳು ಬಂದಳು (avaḷu bandaḷu), ಅದು ಬಂತು (adu bantu). ನೀವು (nīvu), plural or respectful, takes the plural, and so does ಅವರು (avaru), they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."
   entries:
     - lemma: "ಮಾಡು"
-      key: maadu
+      key: "maadu"
       reading: "māḍu"
       ipa: "maːɖu"
-      gloss: "to do"
       forms:
         "ನಾನು": ["ಮಾಡುತ್ತಿದ್ದೇನೆ", "ಮಾಡ್ತಿದ್ದೀನಿ"]
         "ನಾವು": ["ಮಾಡುತ್ತಿದ್ದೇವೆ", "ಮಾಡ್ತಿದ್ದೀವಿ"]
@@ -47,10 +40,9 @@ pattern:
         "ಅದು": "maːɖut̪t̪id̪e"
         "ಅವರು": "maːɖut̪t̪id̪d̪aːre"
     - lemma: "ಹೋಗು"
-      key: hoogu
+      key: "hoogu"
       reading: "hōgu"
       ipa: "hoːɡu"
-      gloss: "to go"
       forms:
         "ನಾನು": ["ಹೋಗುತ್ತಿದ್ದೇನೆ", "ಹೋಗ್ತಿದ್ದೀನಿ"]
         "ನಾವು": ["ಹೋಗುತ್ತಿದ್ದೇವೆ", "ಹೋಗ್ತಿದ್ದೀವಿ"]
@@ -79,10 +71,9 @@ pattern:
         "ಅದು": "hoːɡut̪t̪id̪e"
         "ಅವರು": "hoːɡut̪t̪id̪d̪aːre"
     - lemma: "ಬರು"
-      key: baru
+      key: "baru"
       reading: "baru"
       ipa: "baru"
-      gloss: "to come"
       forms:
         "ನಾನು": ["ಬರುತ್ತಿದ್ದೇನೆ", "ಬರ್ತಿದ್ದೀನಿ"]
         "ನಾವು": ["ಬರುತ್ತಿದ್ದೇವೆ", "ಬರ್ತಿದ್ದೀವಿ"]
