@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-future
-name: "Future"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I will go, they will come: the future, which does not show gender, and the -णार (-ṇār) form everyday speech uses beside it. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "mr-grammar-future"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Future"
-  slot_name: "person"
   slots: ["मी", "आम्ही", "तू", "तुम्ही", "तो / ती / ते", "ते (te) / त्या (they)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "The endings: मी (mi) -ईन (-in) or -एन (-en), आम्ही (āmhi) -ऊ (-u), तू (tu) -शील (-śil), तुम्ही (tumhi) -आल (-āl), he, she or it -ईल (-il) or -एल (-el), they -तील (-til). येणे (yeṇe), घेणे (gheṇe) and देणे (deṇe) change their vowel for तुम्ही (tumhi): याल (yāl), घ्याल (ghyāl), द्याल (dyāl). आम्ही जाऊ (āmhi jāu) is also 'let's go', and with आपण (āpaṇ) it includes the listener: आपण जाऊ (āpaṇ jāu). Speech also uses -णार (-ṇār), which never changes: मी उद्या जाणार (mi udyā jāṇār), I'm going tomorrow; तुम्ही येणार का (tumhi yeṇār kā)?, will you come?"
   entries:
     - lemma: "जाणे"
-      key: jaane
+      key: "jaane"
       reading: "jāṇe"
       ipa: "dzaɳe"
-      gloss: "to go"
       forms:
         "मी": "जाईन"
         "आम्ही": "जाऊ"
@@ -41,10 +34,9 @@ pattern:
         "तो / ती / ते": "dzail"
         "ते (te) / त्या (they)": "dzat̪il"
     - lemma: "येणे"
-      key: yene
+      key: "yene"
       reading: "yeṇe"
       ipa: "jeɳe"
-      gloss: "to come"
       forms:
         "मी": "येईन"
         "आम्ही": "येऊ"
@@ -67,10 +59,9 @@ pattern:
         "तो / ती / ते": "jeil"
         "ते (te) / त्या (they)": "jet̪il"
     - lemma: "करणे"
-      key: karne
+      key: "karne"
       reading: "karṇe"
       ipa: "kərɳe"
-      gloss: "to do"
       forms:
         "मी": ["करीन", "करेन"]
         "आम्ही": "करू"
@@ -93,10 +84,9 @@ pattern:
         "तो / ती / ते": "kərel"
         "ते (te) / त्या (they)": "kərt̪il"
     - lemma: "घेणे"
-      key: ghene
+      key: "ghene"
       reading: "gheṇe"
       ipa: "ɡʱeɳe"
-      gloss: "to take"
       forms:
         "मी": "घेईन"
         "आम्ही": "घेऊ"
@@ -119,10 +109,9 @@ pattern:
         "तो / ती / ते": "ɡʱeil"
         "ते (te) / त्या (they)": "ɡʱet̪il"
     - lemma: "बसणे"
-      key: basne
+      key: "basne"
       reading: "basṇe"
       ipa: "bəsɳe"
-      gloss: "to sit"
       forms:
         "मी": ["बसेन", "बसीन"]
         "आम्ही": "बसू"

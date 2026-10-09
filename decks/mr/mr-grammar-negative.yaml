@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-negative
-name: "Don't and won't"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "I don't go, she won't come: नाही (nāhi) after the verb, taking the person's ending. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "mr-grammar-negative"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Negative"
-  slot_name: "person"
   slots: ["मी", "आम्ही", "तू", "तुम्ही", "तो / ती / ते", "ते (te) / त्या (they)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "'Don't' is the stem with -त (-ta), then नाही (nāhi): मी जात नाही (mi jāt nāhi), I don't go. 'Won't' is the -णार (-ṇār) form, then नाही (nāhi): मी जाणार नाही (mi jāṇār nāhi), I won't go. Neither shows gender. नाही (nāhi) takes -स (-sa) for तू (tu) and -त (-ta) for they: तू जात नाहीस (tu jāt nāhis), ते जात नाहीत (te jāt nāhit). A request uses नको (nako) and नका (nakā) instead: जाऊ नका (jāu nakā), please don't go. The past negative is the past with नाही (nāhi): मी गेलो नाही (mi gelo nāhi), I didn't go."
   entries:
     - lemma: "जाणे (jāṇe), don't"
-      key: jaat-naahii
+      key: "jaat-naahii"
       reading: "jāṇe, don't"
       ipa: "dzaɳe"
-      gloss: "not to go, as a habit"
       forms:
         "मी": "जात नाही"
         "आम्ही": "जात नाही"
@@ -41,10 +34,9 @@ pattern:
         "तो / ती / ते": "dzat̪ naɦi"
         "ते (te) / त्या (they)": "dzat̪ naɦit̪"
     - lemma: "करणे (karṇe), don't"
-      key: karat-naahii
+      key: "karat-naahii"
       reading: "karṇe, don't"
       ipa: "kərɳe"
-      gloss: "not to do, as a habit"
       forms:
         "मी": "करत नाही"
         "आम्ही": "करत नाही"
@@ -67,10 +59,9 @@ pattern:
         "तो / ती / ते": "kərət̪ naɦi"
         "ते (te) / त्या (they)": "kərət̪ naɦit̪"
     - lemma: "खाणे (khāṇe), don't"
-      key: khaat-naahii
+      key: "khaat-naahii"
       reading: "khāṇe, don't"
       ipa: "kʰaɳe"
-      gloss: "not to eat, as a habit"
       forms:
         "मी": "खात नाही"
         "आम्ही": "खात नाही"
@@ -93,10 +84,9 @@ pattern:
         "तो / ती / ते": "kʰat̪ naɦi"
         "ते (te) / त्या (they)": "kʰat̪ naɦit̪"
     - lemma: "जाणे (jāṇe), won't"
-      key: jaanaar-naahii
+      key: "jaanaar-naahii"
       reading: "jāṇe, won't"
       ipa: "dzaɳe"
-      gloss: "not to go, later"
       forms:
         "मी": "जाणार नाही"
         "आम्ही": "जाणार नाही"
@@ -119,10 +109,9 @@ pattern:
         "तो / ती / ते": "dzaɳar naɦi"
         "ते (te) / त्या (they)": "dzaɳar naɦit̪"
     - lemma: "येणे (yeṇe), won't"
-      key: yenaar-naahii
+      key: "yenaar-naahii"
       reading: "yeṇe, won't"
       ipa: "jeɳe"
-      gloss: "not to come, later"
       forms:
         "मी": "येणार नाही"
         "आम्ही": "येणार नाही"

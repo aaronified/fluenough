@@ -1,24 +1,17 @@
 schema: 1
-id: mr-en-grammar-adjectives
-name: "Describing words"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Big, good, new: a describing word that ends in -आ (-ā) agrees with its noun in three genders. Others never change. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "mr-grammar-adjectives"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Adjective agreement"
-  slot_name: "agreement"
   slots: ["with a masculine noun", "with a feminine noun", "with a neuter noun, or a masculine plural", "with a feminine plural, or before an ending"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "A describing word in -आ (-ā) changes with its noun: मोठा मुलगा (moṭhā mulgā), a big boy; मोठी मुलगी (moṭhi mulgi), a big girl; मोठे घर (moṭhe ghar), a big house; मोठे मुलगे (moṭhe mulge), big boys; मोठ्या मुली (moṭhyā muli), big girls. Before a noun with an ending, every gender takes -्या (-yā): मोठ्या घरात (moṭhyā gharāt), in a big house. A neuter plural takes -ई (-i): मोठी घरे (moṭhi ghare). Words that don't end in -आ (-ā) never change: लाल (red), सुंदर (beautiful), छान (nice), गरम (hot), थंड (cold), महाग (expensive)."
   entries:
     - lemma: "मोठा"
-      key: mothaa
+      key: "mothaa"
       reading: "moṭhā"
       ipa: "moʈʰa"
-      gloss: "big; older"
       forms:
         "with a masculine noun": "मोठा"
         "with a feminine noun": "मोठी"
@@ -35,10 +28,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "moʈʰe"
         "with a feminine plural, or before an ending": "moʈʰja"
     - lemma: "छोटा"
-      key: chhotaa
+      key: "chhotaa"
       reading: "choṭā"
       ipa: "tʃʰoʈa"
-      gloss: "small; little"
       forms:
         "with a masculine noun": "छोटा"
         "with a feminine noun": "छोटी"
@@ -55,10 +47,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "tʃʰoʈe"
         "with a feminine plural, or before an ending": "tʃʰoʈja"
     - lemma: "चांगला"
-      key: chaanglaa
+      key: "chaanglaa"
       reading: "cāṅglā"
       ipa: "tsaŋɡla"
-      gloss: "good"
       forms:
         "with a masculine noun": "चांगला"
         "with a feminine noun": "चांगली"
@@ -75,10 +66,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "tsaŋɡle"
         "with a feminine plural, or before an ending": "tsaŋɡlja"
     - lemma: "नवा"
-      key: navaa
+      key: "navaa"
       reading: "navā"
       ipa: "nəʋa"
-      gloss: "new"
       forms:
         "with a masculine noun": "नवा"
         "with a feminine noun": "नवी"
@@ -95,10 +85,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "nəʋe"
         "with a feminine plural, or before an ending": "nəʋja"
     - lemma: "जुना"
-      key: junaa
+      key: "junaa"
       reading: "junā"
       ipa: "dzuna"
-      gloss: "old (of things)"
       forms:
         "with a masculine noun": "जुना"
         "with a feminine noun": "जुनी"
@@ -115,10 +104,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "dzune"
         "with a feminine plural, or before an ending": "dzunja"
     - lemma: "काळा"
-      key: kaalaa
+      key: "kaalaa"
       reading: "kāḷā"
       ipa: "kaɭa"
-      gloss: "black"
       forms:
         "with a masculine noun": "काळा"
         "with a feminine noun": "काळी"
@@ -135,10 +123,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "kaɭe"
         "with a feminine plural, or before an ending": "kaɭja"
     - lemma: "पांढरा"
-      key: paandhraa
+      key: "paandhraa"
       reading: "pāṇḍhrā"
       ipa: "paɳɖʱra"
-      gloss: "white"
       forms:
         "with a masculine noun": "पांढरा"
         "with a feminine noun": "पांढरी"
@@ -155,10 +142,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "paɳɖʱre"
         "with a feminine plural, or before an ending": "paɳɖʱrja"
     - lemma: "पिवळा"
-      key: pivlaa
+      key: "pivlaa"
       reading: "pivḷā"
       ipa: "piʋɭa"
-      gloss: "yellow"
       forms:
         "with a masculine noun": "पिवळा"
         "with a feminine noun": "पिवळी"
@@ -175,10 +161,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "piʋɭe"
         "with a feminine plural, or before an ending": "piʋɭja"
     - lemma: "हिरवा"
-      key: hirvaa
+      key: "hirvaa"
       reading: "hirvā"
       ipa: "ɦirʋa"
-      gloss: "green"
       forms:
         "with a masculine noun": "हिरवा"
         "with a feminine noun": "हिरवी"
@@ -195,10 +180,9 @@ pattern:
         "with a neuter noun, or a masculine plural": "ɦirʋe"
         "with a feminine plural, or before an ending": "ɦirʋja"
     - lemma: "ताजा"
-      key: taajaa
+      key: "taajaa"
       reading: "tājā"
       ipa: "t̪adza"
-      gloss: "fresh"
       forms:
         "with a masculine noun": "ताजा"
         "with a feminine noun": "ताजी"

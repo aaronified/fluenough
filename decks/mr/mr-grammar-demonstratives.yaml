@@ -1,22 +1,15 @@
 schema: 1
-id: mr-en-grammar-demonstratives
-name: "This and that"
-kind: grammar
-language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari, tts: mr-IN, icon: "म" }
-native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "हा (hā) and तो (to), in three genders, and the words built on इ- (i-) and ति- (ti-): here, this way, like this, so much. Not yet checked by a Marathi speaker: please report any mistake."
-tags: [beginner, unreviewed, grammar]
+id: "mr-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
 pattern:
-  name: "Near and far"
-  slot_name: "near or far"
   slots: ["near: हा (hā), इ- (i-)", "far: तो (to), ति- (ti-)"]
-  prompt: "{lemma} ({gloss}) — {slot}"
-  notes: "'This' is हा (hā), ही (hi) or हे (he), 'that' is तो (to), ती (ti) or ते (te), agreeing with the noun: हा मुलगा (hā mulgā), this boy; ही मुलगी (hi mulgi), this girl; हे घर (he ghar), this house. They are also 'he', 'she' and 'it'. Most of the other words for near things start with इ- (i-), and for far ones with ति- (ti-). The older इथे (ithe) and तिथे (tithe) are also written येथे (yethe) and तेथे (tethe)."
   entries:
     - lemma: "this, that (masculine)"
-      key: masc
-      gloss: "a man, or a masculine noun"
+      key: "masc"
       forms:
         "near: हा (hā), इ- (i-)": "हा"
         "far: तो (to), ति- (ti-)": "तो"
@@ -27,8 +20,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "ɦa"
         "far: तो (to), ति- (ti-)": "t̪o"
     - lemma: "this, that (feminine)"
-      key: fem
-      gloss: "a woman, or a feminine noun"
+      key: "fem"
       forms:
         "near: हा (hā), इ- (i-)": "ही"
         "far: तो (to), ति- (ti-)": "ती"
@@ -39,8 +31,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "ɦi"
         "far: तो (to), ति- (ti-)": "t̪i"
     - lemma: "this, that (neuter)"
-      key: neut
-      gloss: "a neuter noun; these, those (masculine)"
+      key: "neut"
       forms:
         "near: हा (hā), इ- (i-)": "हे"
         "far: तो (to), ति- (ti-)": "ते"
@@ -51,8 +42,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "ɦe"
         "far: तो (to), ति- (ti-)": "t̪e"
     - lemma: "these, those (feminine)"
-      key: fem-pl
-      gloss: "women, or feminine nouns"
+      key: "fem-pl"
       forms:
         "near: हा (hā), इ- (i-)": ["या", "ह्या"]
         "far: तो (to), ति- (ti-)": "त्या"
@@ -63,8 +53,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "ja"
         "far: तो (to), ति- (ti-)": "t̪ja"
     - lemma: "here, there"
-      key: place
-      gloss: "at a place"
+      key: "place"
       forms:
         "near: हा (hā), इ- (i-)": ["इथे", "येथे"]
         "far: तो (to), ति- (ti-)": ["तिथे", "तेथे"]
@@ -75,8 +64,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "it̪ʰe"
         "far: तो (to), ति- (ti-)": "t̪it̪ʰe"
     - lemma: "this way, that way"
-      key: way
-      gloss: "towards a place"
+      key: "way"
       forms:
         "near: हा (hā), इ- (i-)": "इकडे"
         "far: तो (to), ति- (ti-)": "तिकडे"
@@ -87,8 +75,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "ikɖe"
         "far: तो (to), ति- (ti-)": "t̪ikɖe"
     - lemma: "like this, like that"
-      key: manner
-      gloss: "in this way"
+      key: "manner"
       forms:
         "near: हा (hā), इ- (i-)": ["असे", "असं"]
         "far: तो (to), ति- (ti-)": ["तसे", "तसं"]
@@ -99,8 +86,7 @@ pattern:
         "near: हा (hā), इ- (i-)": "əse"
         "far: तो (to), ति- (ti-)": "t̪əse"
     - lemma: "this much, that much"
-      key: amount
-      gloss: "so much"
+      key: "amount"
       forms:
         "near: हा (hā), इ- (i-)": ["इतके", "इतका", "इतकी"]
         "far: तो (to), ति- (ti-)": ["तितके", "तितका", "तितकी"]
