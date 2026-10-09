@@ -490,6 +490,7 @@ cards:
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
 | `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+| `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
 
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
@@ -1689,7 +1690,8 @@ downloads is listed in `decks/index.json`:
   decks have, per native language.
 - **Every file** of the language: its path, size, SHA-256, `schema` and
   `kind`, and for a deck its native language and the core id its path
-  lists it by. A core is marked `"part": "core"`.
+  lists it by. A core is marked `"part": "core"`, and a file holding
+  [proposals](#proposals-proposed) says how many, `"proposed": 2`.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 
@@ -1723,6 +1725,45 @@ So that an update never costs a learner anything:
   the deck, which the update then carries.
 - **Every file must parse.** A phone checks each downloaded file as it reads
   it, and keeps none of a language's update if any file fails.
+
+## Proposals: `proposed`
+
+A change a reviewer proposed to one field of a card, waiting for other
+reviewers to agree ([ADR-0038](adr/0038-review-proposals.md)). **The review
+bot writes and removes them; nobody writes one by hand.** Learners never see
+them: only reviewer mode shows a card's proposals, with Accept, Edit and
+Reject.
+
+```yaml
+  - id: "te-0986"
+    target: "కుక్క"
+    reading: "kukka"
+    proposed:
+      - { id: "3f9c0a1b2d", field: "reading", now: "kukka", text: "kukkā", by: "FL-7K3M-Q9TD-6", date: "2026-10-09", why: "The final vowel is long here.", accepted: ["FL-0000-0000-0"] }
+```
+
+A proposal sits on the card, in the file that holds the field: a core's
+card for its `target`, `reading`, `ipa` or plain-text `notes`; a layer's
+entry for its `native`; a single-file card, or a ref, for any it gives.
+Each is one line:
+
+| Field | Notes |
+|---|---|
+| `id` | Ten hex digits: the start of the SHA-256 of the card id, `field`, `now`, `text` and `by`, joined by U+001F. The validator checks it, so a proposal is never edited, only removed. |
+| `field` | `target`, `reading`, `ipa`, `native` or `notes`, as the entry may give it. A note is proposed only where `notes` is plain text. |
+| `now` | The field's text when the reviewer proposed the change, `""` if the card had none. |
+| `text` | The new text. Not checked as deck content until it is applied. |
+| `by` | The proposer's rater code, `FL-XXXX-XXXX-C`. |
+| `date` | `"YYYY-MM-DD"`, quoted: the day of the review. |
+| `why` | Optional: the reviewer's reason. |
+| `accepted` | Optional: the rater codes that accepted it verbatim, none of them the proposer's. |
+
+Once `REVIEW_AGREEMENTS_NEEDED` reviewers have accepted a proposal (1 by
+default), the bot writes `text` into the field and removes the proposal and
+every other proposal on that field of the card. A proposal whose field no
+longer says `now` is outdated: the validator notes it in an `info` line,
+the app does not show it, and the bot removes it. To overrule a proposal,
+delete its line, or change the field.
 
 ## Adding your own deck
 

@@ -16,8 +16,14 @@ from __future__ import annotations
 import re
 import sys
 import unicodedata
+import datetime
+import hashlib
 from dataclasses import dataclass, field
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from rater_codes import rater_code  # noqa: E402
 
 try:
     import yaml
@@ -1599,6 +1605,16 @@ def validate(path: Path) -> Report:
         r.error("root", "deck must be a YAML mapping")
         return r
 
+    # Proposals are not deck content until applied (ADR-0038): taken out
+    # before any other check, and checked on their own.
+    proposals = strip_proposals(raw)
+    _validate_raw(r, raw, path)
+    check_proposals(r, proposals)
+    return r
+
+
+def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
+    """Every check of a file but its proposals'."""
     # What the file is, before any other check (ADR-0036): a layer, a core,
     # or anything else as today.
     if raw.get("kind") == "layer":
@@ -1771,6 +1787,162 @@ def validate(path: Path) -> Report:
     return r
 
 
+# --- Proposals (ADR-0038) ----------------------------------------------------
+# A change a reviewer proposed to one field of a card, kept on the card in
+# the file that holds the field until enough other reviewers accept it.
+
+PROPOSAL_KEYS = {"id", "field", "now", "text", "by", "date", "why", "accepted"}
+PROPOSAL_REQUIRED = ("id", "field", "now", "text", "by", "date")
+PROPOSAL_ID_RE = re.compile(r"[0-9a-f]{10}")
+DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
+# The fields a proposal may change, by where the card's entry is: a card a
+# single-file deck writes, a ref there, a core's card or ref, a layer's
+# entry for its core's card, or a card only the layer has.
+PROPOSAL_FIELDS = {
+    "single": ("target", "reading", "ipa", "native", "notes"),
+    "ref": ("native", "reading", "ipa", "notes"),
+    "core": ("target", "reading", "ipa", "notes"),
+    "core-ref": ("reading", "ipa", "notes"),
+    "layer": ("native",),
+    "layer-own": ("target", "reading", "ipa", "native", "notes"),
+}
+
+
+def proposal_id(card: str, field_name: str, now: str, text: str, by: str) -> str:
+    """A proposal's id: the first ten hex digits of the SHA-256 of its
+    facts, so that the same proposal always has the same id."""
+    joined = "\x1f".join((card, field_name, now, text, by))
+    return hashlib.sha256(joined.encode("utf-8")).hexdigest()[:10]
+
+
+@dataclass
+class Proposed:
+    """A card entry's `proposed` list, taken out of the file: where it was,
+    the card's id, what kind of entry it is (a key of PROPOSAL_FIELDS) and
+    the entry as it is left."""
+    where: str
+    card: object
+    form: str
+    entry: dict
+    items: object
+
+
+def strip_proposals(raw: object) -> list[Proposed]:
+    """Takes every card's `proposed` out of [raw], a deck file as loaded,
+    and returns them. Only a card entry's is taken: one anywhere else stays,
+    and is an unknown field."""
+    if not isinstance(raw, dict):
+        return []
+    cards = raw.get("cards")
+    core = raw.get("part") == "core"
+    found = []
+    if isinstance(cards, list) and raw.get("kind") != "layer":
+        for i, entry in enumerate(cards):
+            if not isinstance(entry, dict) or "proposed" not in entry:
+                continue
+            ref = "ref" in entry
+            form = ("core-ref" if ref else "core") if core else ("ref" if ref else "single")
+            found.append(Proposed(f"cards[{i}]", entry.get("ref" if ref else "id"),
+                                  form, entry, entry.pop("proposed")))
+    elif isinstance(cards, dict) and raw.get("kind") == "layer":
+        for key, entry in cards.items():
+            if not isinstance(entry, dict) or "proposed" not in entry:
+                continue
+            form = "layer-own" if "target" in entry else "layer"
+            found.append(Proposed(f"cards.{key}", key, form, entry,
+                                  entry.pop("proposed")))
+    return found
+
+
+def check_proposals(r: Report, found: list[Proposed]) -> None:
+    """Each proposal's shape: its facts, an id that is theirs, a field its
+    entry may give, a good rater code and date, and acceptances by other
+    codes. What it proposes is not checked: it is not deck content until it
+    is applied, and then the field is checked as any field is."""
+    ids: dict[str, str] = {}
+    for p in found:
+        if not isinstance(p.items, list) or not p.items:
+            r.error(p.where, "proposed must be a non-empty list, one item per "
+                             "proposal")
+            continue
+        for i, item in enumerate(p.items):
+            where = f"{p.where}.proposed[{i}]"
+            if not isinstance(item, dict):
+                r.error(where, "must be a mapping")
+                continue
+            for unknown in sorted(set(item) - PROPOSAL_KEYS, key=str):
+                r.error(where, f"unknown field {unknown!r}")
+            missing = [k for k in PROPOSAL_REQUIRED if k not in item]
+            if missing:
+                r.error(where, f"missing {', '.join(missing)}")
+                continue
+            pid, name, now, text, by, date = (item[k] for k in PROPOSAL_REQUIRED)
+            allowed = PROPOSAL_FIELDS[p.form]
+            if name not in allowed:
+                r.error(where, f"field must be one of {', '.join(allowed)} here, "
+                               f"got {name!r}")
+            elif name == "notes" and not isinstance(p.entry.get("notes"), (str, type(None))):
+                r.error(where, "a proposal changes notes only where they are "
+                               "plain text, not a list of notes")
+            if not isinstance(now, str):
+                r.error(where, f"now must be text, the field as the proposer saw "
+                               f"it (\"\" when it had none), got {now!r}")
+            if not _is_str(text):
+                r.error(where, f"text must be non-empty text, got {text!r}")
+            elif isinstance(now, str) and text == now:
+                r.error(where, "text is what the field said already")
+            code = rater_code(by)
+            if code is None or code != by:
+                r.error(where, f"by must be a rater code, FL-XXXX-XXXX-C, got {by!r}")
+            if not isinstance(date, str) or not DATE_RE.fullmatch(date) \
+                    or not _is_date(date):
+                r.error(where, f"date must be YYYY-MM-DD, quoted, got {date!r}")
+            if "why" in item and not isinstance(item["why"], str):
+                r.error(where, f"why must be text, got {item['why']!r}")
+            accepted = item.get("accepted", [])
+            if not isinstance(accepted, list) or any(
+                    rater_code(a) is None or rater_code(a) != a for a in accepted):
+                r.error(where, "accepted must be a list of rater codes")
+            elif len(set(accepted)) != len(accepted):
+                r.error(where, "accepted names a rater code twice")
+            elif by in accepted:
+                r.error(where, "accepted names the proposer; an agreement is "
+                               "another reviewer's")
+            if not isinstance(pid, str) or not PROPOSAL_ID_RE.fullmatch(pid):
+                r.error(where, f"id must be ten hex digits, got {pid!r}")
+                continue
+            if pid in ids:
+                r.error(where, f"id {pid} is also {ids[pid]}")
+            ids[pid] = where
+            if all(isinstance(v, str) for v in (p.card, name, now, text, by)) \
+                    and pid != proposal_id(p.card, name, now, text, by):
+                r.error(where, "id is not its facts' (card, field, now, text "
+                               "and by); a proposal is never edited, only "
+                               "removed")
+            elif isinstance(now, str) and isinstance(name, str) \
+                    and name in allowed and p.entry.get(name, "") != now:
+                r.info(where, f"proposal {pid} is outdated: the {name} no longer "
+                              f"says what it was proposed against")
+
+
+def _is_date(text: str) -> bool:
+    try:
+        datetime.date.fromisoformat(text)
+    except ValueError:
+        return False
+    return True
+
+
+def proposal_count(path: Path) -> int:
+    """How many proposals [path] holds, for the index."""
+    try:
+        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+    except (OSError, UnicodeDecodeError, yaml.YAMLError):
+        return 0
+    return sum(len(p.items) for p in strip_proposals(raw)
+               if isinstance(p.items, list))
+
+
 def _script_of(lang: object) -> str:
     script = lang.get("script") if isinstance(lang, dict) else "other"
     return script if script in SCRIPTS else "other"
@@ -1814,10 +1986,13 @@ def _check_review_tags(r: Report, raw: dict) -> None:
 # --- Cores and layers (ADR-0036) ---------------------------------------------
 
 def _load_raw(path: Path) -> object:
+    """[path] as the checks read it: its proposals taken out (ADR-0038)."""
     try:
-        return yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         return None
+    strip_proposals(raw)
+    return raw
 
 
 def _yaml_files(directory: Path) -> list[Path]:
