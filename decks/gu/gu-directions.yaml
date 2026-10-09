@@ -14,6 +14,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "છે", base: "છે", reading: "che" }
   - id: "gu-0444"
     target: "રસ્તો"
     reading: "rasto"
@@ -41,6 +43,9 @@ cards:
     reading: "sidhā jāo."
     ipa: "sid̪ʱa dʒao"
     pos: "phrase"
+    bases:
+      - { word: "સીધા", base: "સીધા", reading: "sidhā" }
+      - { word: "જાઓ", base: "જાઓ", reading: "jāo" }
   - id: "gu-0448"
     target: "ડાબે વળો."
     reading: "ḍābe vaḷo."
@@ -48,6 +53,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "વળો", base: "વળો", reading: "vaḷo" }
   - id: "gu-0449"
     target: "ચાર રસ્તા"
     reading: "cār rastā"
@@ -55,6 +62,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "રસ્તા", ref: "gu-0444" }
   - id: "gu-0450"
     target: "ખૂણો"
     reading: "khuṇo"

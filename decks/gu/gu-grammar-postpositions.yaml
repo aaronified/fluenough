@@ -16,6 +16,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "પર", base: "પર", reading: "par" }
   - ref: "gu-0242"
     notes:
       - { id: "n1", kind: "note" }
@@ -33,6 +35,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારી", base: "મારી", reading: "māri" }
+      - { word: "સાથે", base: "સાથે", reading: "sāthe" }
   - id: "gu-0436"
     target: "તમારા માટે"
     reading: "tamārā māṭe"
@@ -40,6 +45,9 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "તમારા", base: "તમારા", reading: "tamārā" }
+      - { word: "માટે", base: "માટે", reading: "māṭe" }
   - id: "gu-0437"
     target: "દુકાનની પાસે"
     reading: "dukānni pāse"
@@ -47,21 +55,30 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "દુકાનની", ref: "gu-0356" }
   - id: "gu-0438"
     target: "ઘરની પાછળ"
     reading: "gharni pāchaḷ"
     ipa: "ɡʱərni patʃʰəɭ"
     pos: "phrase"
+    bases:
+      - { word: "ઘરની", base: "ઘરની", reading: "gharni" }
   - id: "gu-0439"
     target: "ટેબલની નીચે"
     reading: "ṭebalni nice"
     ipa: "ʈebəlni nitʃe"
     pos: "phrase"
+    bases:
+      - { word: "ટેબલની", ref: "gu-0464" }
   - id: "gu-0440"
     target: "મંદિરની સામે"
     reading: "mandirni sāme"
     ipa: "mənd̪irni same"
     pos: "phrase"
+    bases:
+      - { word: "મંદિરની", ref: "gu-0472" }
+      - { word: "સામે", base: "સામે", reading: "sāme" }
   - id: "gu-0441"
     target: "બપોર સુધી"
     reading: "bapor sudhi"
@@ -69,6 +86,8 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "સુધી", base: "સુધી", reading: "sudhi" }
   - id: "gu-0442"
     target: "મીનાનું ઘર"
     reading: "minānum̐ ghar"
@@ -76,3 +95,5 @@ cards:
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મીનાનું", base: "મીનાનું", reading: "minānum̐" }
