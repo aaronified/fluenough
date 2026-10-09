@@ -1,0 +1,265 @@
+schema: 1
+id: "bn-places"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC0-1.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1037"
+    target: "স্কুল"
+    reading: "skul"
+    ipa: "skul"
+    pos: "noun"
+    picture: "🏫"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1038"
+    target: "কলেজ"
+    reading: "kôlej"
+    ipa: "kɔledʒ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1039"
+    target: "বিশ্ববিদ্যালয়"
+    reading: "biśśobiddāloy"
+    ipa: "biʃʃobid̪d̪aloj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভার্সিটি", reading: "bhārsiṭi" }] }
+  - id: "bn-1040"
+    target: "বাজার"
+    reading: "bājār"
+    ipa: "badʒar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "বাজার করা", reading: "bājār kôrā" }] }
+  - id: "bn-1041"
+    target: "ব্যাংক"
+    reading: "bêṅk"
+    ipa: "bæŋk"
+    alt_target: ["ব্যাঙ্ক"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যাঙ্ক", reading: "bêṅk" }] }
+  - id: "bn-1042"
+    target: "ডাকঘর"
+    reading: "ḍākghor"
+    ipa: "ɖakɡʱor"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ডাক", reading: "ḍāk" }, { word: "ঘর", reading: "ghôr" }] }
+  - id: "bn-1043"
+    target: "থানা"
+    reading: "thānā"
+    ipa: "t̪ʰana"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1044"
+    target: "পার্ক"
+    reading: "pārk"
+    ipa: "park"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1045"
+    target: "মাঠ"
+    reading: "māṭh"
+    ipa: "maʈʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "খেলার মাঠ", reading: "khelār māṭh" }, { word: "ধানের মাঠ", reading: "dhāner māṭh" }] }
+  - id: "bn-1046"
+    target: "মন্দির"
+    reading: "mondir"
+    ipa: "mond̪ir"
+    pos: "noun"
+    picture: "🛕"
+    notes:
+      - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Bishnupur,_Bankura" }
+  - id: "bn-1047"
+    target: "মসজিদ"
+    reading: "môśjid"
+    ipa: "mɔʃdʒid̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আজান", reading: "ājān" }] }
+  - id: "bn-1048"
+    target: "গির্জা"
+    reading: "girjā"
+    ipa: "ɡirdʒa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1049"
+    target: "বাগান"
+    reading: "bāgān"
+    ipa: "baɡan"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চা বাগান", reading: "cā bāgān" }] }
+  - id: "bn-1050"
+    target: "নদী"
+    reading: "nodi"
+    ipa: "nod̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নদী", reading: "nodi" }, { word: "খাল", reading: "khāl" }] }
+  - id: "bn-1051"
+    target: "পুকুর"
+    reading: "pukur"
+    ipa: "pukur"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+  - id: "bn-1052"
+    target: "সেতু"
+    reading: "setu"
+    ipa: "set̪u"
+    alt_target: ["ব্রিজ"]
+    pos: "noun"
+    picture: "🌉"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্রিজ", reading: "brij" }] }
+  - id: "bn-1053"
+    target: "গ্রাম"
+    reading: "grām"
+    ipa: "ɡram"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শহর", reading: "śôhor" }, { word: "গাঁ", reading: "gām̐" }] }
+  - id: "bn-1054"
+    target: "হাট"
+    reading: "hāṭ"
+    ipa: "ɦaʈ"
+    pos: "noun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-0730", words: [{ word: "হাত", reading: "hāt" }, { word: "ট", reading: "ṭ" }, { word: "হাট", reading: "hāṭ" }] }
+      - { id: "n2", kind: "usage" }
+  - id: "bn-1055"
+    target: "ঘাট"
+    reading: "ghāṭ"
+    ipa: "ɡʱaʈ"
+    pos: "noun"
+    notes:
+      - { id: "pair", kind: "pair", ref: "bn-1011", words: [{ word: "ঘাট", reading: "ghāṭ" }, { word: "ঘাড়", reading: "ghāṛ" }] }
+      - { id: "n2", kind: "usage" }
+  - id: "bn-1056"
+    target: "গলি"
+    reading: "goli"
+    ipa: "ɡoli"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রাস্তা", reading: "rāstā" }] }
+  - id: "bn-1057"
+    target: "হোটেল"
+    reading: "hoṭel"
+    ipa: "ɦoʈel"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভাতের হোটেল", reading: "bhāter hoṭel" }] }
+  - id: "bn-1058"
+    target: "রেস্তোরাঁ"
+    reading: "restorām̐"
+    ipa: "rest̪orã"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "রেস্টুরেন্ট", reading: "resṭurenṭ" }] }
+  - id: "bn-1059"
+    target: "লাইব্রেরি"
+    reading: "lāibreri"
+    ipa: "laibreri"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গ্রন্থাগার", reading: "grônthāgār" }] }
+  - id: "bn-1060"
+    target: "সিনেমা"
+    reading: "sinemā"
+    ipa: "sinema"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সিনেমা দেখা", reading: "sinemā dekhā" }] }
+  - id: "bn-1061"
+    target: "কারখানা"
+    reading: "kārkhānā"
+    ipa: "karkʰana"
+    pos: "noun"
+    picture: "🏭"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1062"
+    target: "বিমানবন্দর"
+    reading: "bimānbondor"
+    ipa: "bimanbond̪or"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "বিমান", reading: "bimān" }, { word: "বন্দর", reading: "bôndor" }] }
+  - id: "bn-1063"
+    target: "বাসস্ট্যান্ড"
+    reading: "bāssṭênḍ"
+    ipa: "bassʈænɖ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাস স্ট্যান্ড", reading: "bās sṭênḍ" }] }
+  - id: "bn-1064"
+    target: "ফার্মেসি"
+    reading: "phārmesi"
+    ipa: "pʰarmesi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ওষুধের দোকান", reading: "ośudher dokān" }] }
+  - id: "bn-1065"
+    target: "আদালত"
+    reading: "ādālot"
+    ipa: "ad̪alot̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1066"
+    target: "সমুদ্র"
+    reading: "śomudro"
+    ipa: "ʃomud̪ro"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বঙ্গোপসাগর", reading: "bôṅgopośāgor" }] }
+  - id: "bn-1067"
+    target: "পাহাড়"
+    reading: "pāhāṛ"
+    ipa: "paɦaɽ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পাহাড়", reading: "pāhāṛ" }] }
+  - id: "bn-1068"
+    target: "রাজধানী"
+    reading: "rājdhāni"
+    ipa: "radʒd̪ʱani"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কলকাতা", reading: "kôlkātā" }, { word: "ঢাকা", reading: "ḍhākā" }] }
+  - id: "bn-1069"
+    target: "জেলা"
+    reading: "jelā"
+    ipa: "dʒela"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-1070"
+    target: "রাজ্য"
+    reading: "rājjo"
+    ipa: "radʒdʒo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পশ্চিমবঙ্গ", reading: "pościmboṅgo" }] }
+  - ref: "bn-0250"
+  - ref: "bn-0199"
+  - ref: "bn-0200"
+  - ref: "bn-0450"
+  - ref: "bn-0377"
+  - ref: "bn-0288"
+  - ref: "bn-0313"
+  - ref: "bn-0314"

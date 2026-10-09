@@ -135,7 +135,8 @@ units:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "bn-places", theme: "places", words: 40 }
+  - decks: ["bn-places", "bn-location", "bn-places-sentences", "*"]
+    words: 56
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
