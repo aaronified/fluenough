@@ -47,6 +47,10 @@ class BundledAssetCheck(unittest.TestCase):
         (self.tmp / "decks" / "es").mkdir(parents=True)
         shutil.copy(SAMPLE_DECK, self.tmp / "decks" / "es")
         self.write_path("es", ["es-en-core-100"])
+        # The sample deck's pictures, which the validator looks for beside
+        # the tools directory it runs from.
+        shutil.copytree(VALIDATOR.parent.parent / "assets" / "pictures",
+                        self.tmp / "assets" / "pictures")
 
     def write_path(self, lang: str, decks: list[str]) -> None:
         """The course path every course with a deck needs (ADR-0013)."""
