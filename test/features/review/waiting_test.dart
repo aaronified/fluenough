@@ -119,6 +119,21 @@ void main() {
       });
     });
 
+    test('without adult content, a pair the reviewer cannot confirm does '
+        'not wait, as its deck\'s cards left say', () async {
+      final state = await reviewer();
+      final words = state.deckById(wordsDeck)!;
+      for (final card in words.cards) {
+        state.reviewing.markRight(words, card);
+      }
+      final hidden = waitingIn(state, words.language, adult: false);
+      expect(hidden.units.first.decks.single.left, 0);
+      expect(hidden.unconfirmed, isEmpty);
+      final shown = waitingIn(state, words.language, adult: true);
+      expect(shown.units.first.decks.single.left, 1);
+      expect(shown.unconfirmed.map((c) => c.card.id), [alikeCard]);
+    });
+
     test('a rude word hidden without adult content counts as left', () async {
       final state = await reviewer();
       final rude = state.deckById(rudeDeck)!;
@@ -202,7 +217,7 @@ cards:
       usePhone(tester);
       await pumpScreen(
         tester,
-        const WaitingForReviewPage(),
+        const WaitingForReviewPage(adult: true),
         state: await reviewer(languages: const <String>{'te'}, more: true),
       );
       final l10n = l10nOf(tester);
