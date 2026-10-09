@@ -699,6 +699,44 @@ class DeckCatalog {
     }
   }
 
+  /// What is wrong with [text], the file at [path], read on its own as its
+  /// `kind` says, or null if nothing is. A downloaded file is checked so
+  /// before it replaces one on the phone (ADR-0037). A layer is read without
+  /// its core, which the catalog merges it with.
+  static String? checkFile(String path, String text) {
+    final source = path.split('/').last;
+    final header = _headerOf(text);
+    try {
+      switch (header.kind) {
+        case 'layer':
+          DeckParser.parseLayer(text, source: source);
+        case 'facts':
+          parseFacts(text, source: source);
+        case 'numbers':
+          parseNumberRules(text, source: source);
+        case 'path':
+          parseLanguagePath(text, source: source);
+        case 'romanisation':
+          parseRomanisation(text, source: source);
+        case 'sounds':
+          parseSounds(text, source: source);
+        case 'script':
+          parseScriptGuide(text, source: source);
+        case 'themes':
+          parseThemes(text, source: source);
+        default:
+          header.part == 'core'
+              ? DeckParser.parseCore(text, source: source)
+              : DeckParser.parse(text, source: source);
+      }
+      return null;
+    } on DeckParseException catch (e) {
+      return e.toString();
+    } on Object catch (e) {
+      return '$source: $e';
+    }
+  }
+
   /// Whether [text] is a facts file (`kind: facts`), which is valid beside
   /// the decks but is read by the facts loader, not `DeckParser`.
   static bool isFactsFile(String text) => kindOf(text) == 'facts';
