@@ -222,6 +222,26 @@ Settled with the owner, 2026-10-09:
   tickets. so i know that a reviewer has sent something and then consult
   the mail." One issue per review mail received: the rater code, the
   language and decks reviewed, counts at most; no suggestion text.
+- **Two reviewers make a change; the owner can override** (owner,
+  2026-10-09: "One reviewer's reviews should be shown to other reviewers
+  via a provisional acceptance (which is what I will do). If at least
+  another reviewer accepts that verbatim, the change will be in a
+  learner's deck (unless I override)"). Settled the same day:
+  - **Provisional acceptance by the owner:** a suggestion the owner
+    accepts becomes a proposal. It lives in the deck file, as a
+    `proposed` block on the card, which only reviewer mode shows; it
+    reaches reviewers through deck downloads. Learners never see it.
+    This is a deck-format change and needs its ADR.
+  - **Another reviewer accepts it verbatim:** a different rater code, in
+    that language, accepts the proposal unchanged. The mail bot then
+    opens a PR that applies it, and the PR merges after a waiting period
+    unless the owner closes it (the override).
+  - **Accept, edit or reject:** a reviewer who edits a proposal instead
+    makes a new suggestion, back to the owner; the old proposal keeps
+    waiting.
+  - **First acceptance wins:** the first verbatim acceptance by another
+    reviewer is enough; a later rejection only flags the change to the
+    owner.
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
