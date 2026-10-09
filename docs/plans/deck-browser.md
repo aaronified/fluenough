@@ -185,10 +185,14 @@ Settled with the owner, 2026-10-09:
   is approved as mocked.
 - **"How reviewing works"** is explained in a popup the reviewer can open
   again from Settings at any time (owner, 2026-10-09).
-- **Joining is automatic:** a join mail makes the sender a reviewer at
-  once. "I will also ask the people to either share their email or
-  rater_id to me in person to filter, if needed. We need maximum
-  participation. I do not see a huge risk of ghost reviews."
+- **Joining is automatic, with no join mail** (owner, 2026-10-09, over an
+  earlier plan in which a join mail made the sender a reviewer): turning
+  reviewer mode on is the whole of joining, and a reviewer's first review
+  mail is how the owner first hears of them; the sender check above binds
+  the code to that mail's address in the Fluenough Gmail record. "I will
+  also ask the people to either share their email or rater_id to me in
+  person to filter, if needed. We need maximum participation. I do not see
+  a huge risk of ghost reviews."
 - **No Sheet:** "no sheet needed anymore. the mail will have all the data.
   i then open the mail myself and consult with you on updating the decks."
   The workflow only opens the issue (rater code, language); the owner
@@ -294,10 +298,6 @@ Sheet. So:
 ## To decide
 
 - Whether a public deck browser on Pages is built at all (#404, #405).
-- **Two bullets above disagree:** "No join mail" says the owner first hears of
-  a reviewer with their first review, and "Joining is automatic" says a join
-  mail makes the sender a reviewer at once. The first is what PR #436 builds;
-  the owner settles which stands.
 - Whether a deck's page also shows the cards' history: when a card last
   changed, and by which issue.
 - Whether reviewers can filter to unreviewed decks only.
