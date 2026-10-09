@@ -120,6 +120,7 @@ cards:
 | `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading` and `ipa`. |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0412` (కాలం, time) on కలం (pen). Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. |
+| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
 
 ### A note on `id`
 

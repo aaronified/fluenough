@@ -233,3 +233,7 @@ the source. See [LICENSE](LICENSE) and
 [ADR-0003](docs/adr/0003-licence.md) for the reasoning.
 
 Deck content carries its own licence, declared per file.
+
+The pictures on cards are from [Noto Emoji](https://github.com/googlefonts/noto-emoji),
+by Google, under the Apache License 2.0; the licence ships with them in
+[assets/pictures/LICENSE](assets/pictures/LICENSE).
