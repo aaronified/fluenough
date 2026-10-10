@@ -72,3 +72,14 @@ that D stays separate per skill. It goes into v0.4 (owner, 2026-10-10).
 ## Estimate
 
 About 1–2 hours, with the decisions above. Confidence: medium.
+
+## Built (2026-10-10)
+
+`SkillDifficulty` in `lib/core/scheduling/skill_difficulty.dart` reads D
+per card and skill from the pair states, none for a skill not answered.
+Inspect lists it under "How hard, for you" when a card is opened, as
+"Hear: 7 of 10, harder" (easier up to 4, harder from 7). Tests:
+`test/skill_difficulty_test.dart` (D separate per skill; a miss, or a right
+answer implying another skill, leaves the others' D alone) and
+`test/features/decks/inspect_page_test.dart` (values shown, nothing for an
+unanswered skill, heading and contrast).
