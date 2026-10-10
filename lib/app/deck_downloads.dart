@@ -145,6 +145,7 @@ class DeckDownloads extends ChangeNotifier {
   DateTime? _checkedAt;
   String? _declined;
   bool _autoCheck = true;
+  bool _reviewer = false;
   List<String>? _spoken;
   Set<String> _complete = <String>{};
   Set<String> _paused = <String>{};
@@ -552,10 +553,14 @@ class DeckDownloads extends ChangeNotifier {
     List<IndexFile> wanted, {
     required bool groups,
   }) async {
-    final changes = changesFor(language, wanted, _onPhone);
+    final changes = changesFor(language, wanted, _onPhone, reviewer: _reviewer);
+    // Files not on the phone, and those whose proposals alone changed,
+    // which come along with them (#444). A change a learner sees waits
+    // for them to update.
     final fetch = <IndexFile>[
       for (final file in changes.fetch)
-        if (!_onPhone.containsKey(file.path)) file,
+        if (!_onPhone.containsKey(file.path) || changes.quiet.contains(file))
+          file,
     ];
     if (fetch.isEmpty || _stopping.remove(language)) {
       _failures.remove(language);
@@ -780,6 +785,18 @@ class DeckDownloads extends ChangeNotifier {
     await _saveState();
   }
 
+  /// Whether the learner reviews decks (Settings' "Review decks"): then a
+  /// change to reviewers' proposals alone is an update, as they see
+  /// proposals; for a learner it is not, and comes along quietly with the
+  /// next change they do see (#444). Set by `AppState`.
+  bool get reviewer => _reviewer;
+
+  set reviewer(bool on) {
+    if (on == _reviewer) return;
+    _reviewer = on;
+    if (_spoken case final spoken?) _findUpdates(spoken);
+  }
+
   /// Compares the index with the files on the phone, at most once a day
   /// unless [force]. Reads the index first. Afterwards [updates] says what
   /// changed, and [askToUpdate] whether to ask.
@@ -814,6 +831,7 @@ class DeckDownloads extends ChangeNotifier {
         language,
         entry.filesFor(entry.nativesFor(spoken)),
         _onPhone,
+        reviewer: _reviewer,
       );
       if (!changes.isEmpty) updates[language] = changes;
     }
@@ -919,11 +937,16 @@ class DeckDownloads extends ChangeNotifier {
   }
 
   /// A fingerprint of the updates waiting, to know whether the learner
-  /// already said "Not now" to them.
+  /// already said "Not now" to them. For a learner, a file's content hash:
+  /// a proposal made since is no reason to ask again (#444).
   String _fingerprint() {
     final parts = <String>[
       for (final changes in _updates.values) ...<String>[
-        for (final f in changes.fetch) '${f.path}:${f.sha256}',
+        for (final f in changes.fetch)
+          if (_reviewer)
+            '${f.path}:${f.sha256}'
+          else if (!changes.quiet.contains(f))
+            '${f.path}:${f.contentSha256}',
         for (final path in changes.remove) '-$path',
       ],
     ]..sort();

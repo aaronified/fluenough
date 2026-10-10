@@ -6,6 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/decks/deck_index.dart';
 import 'package:fluenough/core/decks/sha256.dart';
 
+import '../../support/deck_remote.dart';
+
 const String _sha =
     'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
 
@@ -79,6 +81,12 @@ void main() {
         final bytes = File(file.path).readAsBytesSync();
         expect(bytes.length, file.size, reason: file.path);
         expect(sha256Hex(bytes), file.sha256, reason: file.path);
+        // tools/deck_index.py's content hash, as the test remote makes it.
+        expect(
+          sha256Hex(utf8.encode(contentOf(utf8.decode(bytes)))),
+          file.contentSha256,
+          reason: file.path,
+        );
       }
     });
 
