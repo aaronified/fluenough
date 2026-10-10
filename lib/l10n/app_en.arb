@@ -6066,7 +6066,7 @@
   "@reviewHowPublicTitle": {
     "description": "Step 5 of How reviewing works."
   },
-  "reviewHowPublicBody": "Fluenough’s public issue list shows your code and the languages you reviewed, so the team knows a review arrived. Your mail address and what you wrote stay private. When a deck you checked is updated, it lists your code, and the app says thank you.",
+  "reviewHowPublicBody": "Fluenough’s public issue list shows your code and the languages you reviewed, so the team knows a review arrived. What you suggest goes into the decks, which are public, with your code, for other reviewers to agree on. Your mail address stays private. When a deck you checked is updated, it lists your code, and the app says thank you.",
   "@reviewHowPublicBody": {
     "description": "Step 5 of How reviewing works."
   },
@@ -6416,9 +6416,113 @@
   "@reviewSuggestWhy": {
     "description": "Label of the field for the reason."
   },
+  "reviewSuggestReplaces": "A card keeps one suggestion of yours. Saving replaces the one on its {part}: {text}",
+  "@reviewSuggestReplaces": {
+    "description": "In Suggest a change, when saving would replace the reviewer's earlier suggestion on the card, which is shown.",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "meaning"
+      },
+      "text": {
+        "type": "String",
+        "example": "the dog"
+      }
+    }
+  },
   "reviewSuggestKept": "Kept on this phone until you send your review.",
   "@reviewSuggestKept": {
     "description": "Under the fields of Suggest a change."
+  },
+  "reviewProposalTitle": "Proposed change to the {part}",
+  "@reviewProposalTitle": {
+    "description": "Over another reviewer's proposed change on a card in review (ADR-0038).",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "meaning"
+      }
+    }
+  },
+  "reviewProposalNew": "Proposed",
+  "@reviewProposalNew": {
+    "description": "Over the text a proposal would put in place of what the card says now."
+  },
+  "reviewProposalWhy": "Why: {why}",
+  "@reviewProposalWhy": {
+    "description": "The proposer's reason, under a proposed change.",
+    "placeholders": {
+      "why": {
+        "type": "String",
+        "example": "Less formal."
+      }
+    }
+  },
+  "reviewProposalBy": "Proposed by {code}. {count, plural, =0{No one has accepted it yet.} =1{Accepted by 1 reviewer.} other{Accepted by {count} reviewers.}}",
+  "@reviewProposalBy": {
+    "description": "Who proposed a change, and how many other reviewers have accepted it.",
+    "placeholders": {
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      },
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewProposalYours": "You proposed this. Other reviewers decide. {count, plural, =0{No one has accepted it yet.} =1{Accepted by 1 reviewer.} other{Accepted by {count} reviewers.}}",
+  "@reviewProposalYours": {
+    "description": "On the reviewer's own proposed change, which they cannot answer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "0"
+      }
+    }
+  },
+  "reviewProposalAccept": "Accept",
+  "@reviewProposalAccept": {
+    "description": "Button: accept another reviewer's proposed change as it is."
+  },
+  "reviewProposalEdit": "Edit",
+  "@reviewProposalEdit": {
+    "description": "Button: change another reviewer's proposed change into one of your own."
+  },
+  "reviewProposalReject": "Reject",
+  "@reviewProposalReject": {
+    "description": "Button: reject another reviewer's proposed change."
+  },
+  "reviewProposalAccepted": "You accept this change. It is sent with your review.",
+  "@reviewProposalAccepted": {
+    "description": "Under a proposed change the reviewer accepted."
+  },
+  "reviewProposalEdited": "You proposed your own change instead. It is sent with your review.",
+  "@reviewProposalEdited": {
+    "description": "Under a proposed change the reviewer edited into their own."
+  },
+  "reviewProposalRejected": "You reject this change. The Fluenough team is told when your review arrives.",
+  "@reviewProposalRejected": {
+    "description": "Under a proposed change the reviewer rejected."
+  },
+  "reviewProposalsWaiting": "{count, plural, =1{1 proposed change} other{{count} proposed changes}}",
+  "@reviewProposalsWaiting": {
+    "description": "On a card's row in review: changes other reviewers proposed, waiting for an answer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewHowProposalsTitle": "Agree on changes",
+  "@reviewHowProposalsTitle": {
+    "description": "Step 3 of How reviewing works: proposed changes (ADR-0038)."
+  },
+  "reviewHowProposalsBody": "What reviewers suggest shows on the card for the others who review the language. Accept a change as it is, edit it into your own, or reject it. Once enough reviewers accept a change, learners get it. Learners never see a change before then.",
+  "@reviewHowProposalsBody": {
+    "description": "Step 3 of How reviewing works."
   },
   "reviewSave": "Save",
   "@reviewSave": {

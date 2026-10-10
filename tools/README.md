@@ -34,6 +34,12 @@ checked against them. Lines marked `info` (a layer's coverage of its core, a
 plan's sizes) never fail the build. `tools/fixtures/b1/zz/` is a valid set in
 a made-up language, used by `test_validate_b1.py`.
 
+A card's `proposed` changes (ADR-0038) are taken out before any other
+check, so their text is never held to deck content's rules, and checked on
+their own: one line each, an id that is its facts' hash, a field the entry
+may give, a good rater code and date, and acceptances by other codes. An
+outdated proposal gets an `info` line.
+
 ## `deck_index.py`
 
 Writes `decks/index.json`, the list the app downloads decks from (#210,
@@ -50,7 +56,8 @@ has script decks, the native languages it is taught from, its path's order,
 each unit's planned words and the words its decks have (counted as the
 validator counts them, for completeness toward B1), and every file with its
 path, size, SHA-256, schema, kind, and the native language and core id of a
-deck. Languages in `HIDDEN` are left out; `decks/themes.yaml` stays bundled
+deck, and how many proposals a file holds (`proposed`). Languages in
+`HIDDEN` are left out; `decks/themes.yaml` stays bundled
 in the app. One file is one line, so a changed deck is a one-line diff.
 
 `validate_decks.py decks/` fails while the index is out of date, so CI keeps
@@ -89,6 +96,42 @@ It needs two repository secrets, `FEEDBACK_GMAIL_ADDRESS` and
 workflow's own `GITHUB_TOKEN` for the issues. Without the two secrets it does
 nothing and says so. `python3 -m unittest discover -s tools -p test_mail_to_issues.py` tests
 it without a network.
+
+A review mail's issue names the rater code and the languages, counts the
+changes suggested and the proposals accepted and rejected, and lists each
+rejected proposal by id and card, labelled `proposal rejected`: never the
+text. Once the review bot is set up, the job then runs it (below). The
+rater code check is in `rater_codes.py`, shared with the validator.
+
+## `review_bot.py` and `proposals.py`
+
+The review bot (ADR-0038, #441), run by `mail_to_issues.py`. A filed review
+mail whose sender passed the check becomes one pull request that adds its
+suggestions as `proposed` lines on their cards and records its acceptances;
+a proposal accepted by `REVIEW_AGREEMENTS_NEEDED` other rater codes (a
+repository variable, 1 when unset) gets a pull request that writes it into
+the field and closes the other proposals on that field; proposals whose
+field has changed are closed as outdated. Each PR is merged as soon as its
+checks pass. The mail gets the Gmail label `fluenough-proposed` once its PR
+is merged or closed.
+
+Every branch, `review-bot/…`, starts afresh from `main`, finds the card by
+id across the language, writes only if the field still says what the
+proposer saw, rewrites the index and validates the language before it is
+pushed. Branches are named after their mail or proposals, so a rerun finds
+its PR rather than opening another; a PR closed by the owner stays closed,
+and one whose checks fail stays open, labelled `review-bot: checks failed`.
+It logs rater codes, ids and counts, never an address or a suggestion.
+
+`proposals.py` makes every edit to a deck, one line at a time, and saves it
+only if the file then reads back as meant: a field written over several
+lines, or a card in flow style, is left for the owner.
+
+It needs a GitHub App's token (the secrets `FLUENOUGH_BOT_APP_ID` and
+`FLUENOUGH_BOT_PRIVATE_KEY`); without them it does nothing and says so.
+Setting it up: [docs/review-bot-setup.md](../docs/review-bot-setup.md).
+`test_review_bot.py` and `test_proposals.py` test it with fakes, without a
+network.
 
 ## `import_csv.py`
 

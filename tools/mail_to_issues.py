@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Turn report mails from the app into GitHub issues (#160, ADR-0021).
 
-Run hourly by `.github/workflows/feedback-mail.yml`. Stdlib only.
+Run hourly by `.github/workflows/feedback-mail.yml`. Filing needs only
+the standard library.
 
 It reads the Fluenough Gmail over IMAP with an app password and takes only
 mails whose subject starts with `[Fluenough]`, as the app writes it. Any
@@ -58,10 +59,26 @@ which stays in the inbox for the next run: filing it unchecked would leave
 it unlabelled, and filed again an hour later. No address and no record's
 body is ever printed: the job's log is public, so it says counts only.
 
+A review's issue also counts the changes it suggests and the proposals
+it accepts and rejects, and names each rejected proposal by id and card,
+marked "proposal rejected": a rejection only flags the change to the owner
+(ADR-0038).
+
+The review bot (`tools/review_bot.py`, ADR-0038) runs after the filing,
+once its GitHub App is set up: each filed review mail whose sender passed
+becomes a PR of proposals, and the mail gets the Gmail label
+`fluenough-proposed` once that PR is merged or closed; then the proposals
+agreed on `main` are applied. A mail with no single good code, or from
+another sender, is labelled and left to the owner. The bot needs PyYAML;
+filing does not.
+
 Environment:
     FEEDBACK_GMAIL_ADDRESS, FEEDBACK_GMAIL_APP_PASSWORD  the inbox. Without
         them it does nothing and says so: the inbox is not set up yet.
     GITHUB_TOKEN, GITHUB_REPOSITORY  where issues go.
+    FLUENOUGH_BOT_TOKEN, REVIEW_AGREEMENTS_NEEDED  the review bot's; see
+        tools/review_bot.py. Without the token there is no bot, and the
+        log says so.
 """
 
 from __future__ import annotations
@@ -71,6 +88,7 @@ import email.header
 import email.message
 import email.policy
 import email.utils
+import hashlib
 import imaplib
 import json
 import os
@@ -79,6 +97,10 @@ import sys
 import urllib.error
 import urllib.request
 from typing import Callable
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from rater_codes import CROCKFORD, check_symbol, rater_code  # noqa: E402,F401
 
 PREFIX = "[Fluenough]"
 FILED = "fluenough-filed"
@@ -115,8 +137,6 @@ CHECK_FILES = "check the files"
 REVIEW_SUBJECT = re.compile(
     r"^\[Fluenough review\]\s*([^\s(]+)?\s*(?:\(([^)]*)\))?", re.I)
 LANGUAGE = re.compile(r"^[a-z]{2,3}$")
-# Crockford's base32, without I, L, O and U, as lib/core/review/rater_code.dart.
-CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"
 # The sender check: the Gmail label holding one record per rater code, and
 # the marks of a review whose sender differs or could not be compared.
 RATERS = "fluenough/raters"
@@ -124,6 +144,11 @@ SENDER_DIFFERS = "sender does not match"
 SENDER_UNCHECKED = "sender not checked"
 # Gmail ignores dots in an address's local part and anything from `+`.
 GMAIL = ("gmail.com", "googlemail.com")
+# The review bot (ADR-0038): the label a review mail gets once its
+# proposals are in the decks, or once it is left to the owner, and the mark
+# of a review that rejects a proposal.
+PROPOSED = "fluenough-proposed"
+REJECTED = "proposal rejected"
 REVIEW_FOOTER = ("<sub>Opened by the hourly mail workflow. The reviews stay "
                  "in the mail: no suggestion text, no mail address.</sub>")
 
@@ -206,45 +231,6 @@ def issue_from(message: email.message.Message) -> dict | None:
     }
 
 
-def _gf_times(a: int, b: int) -> int:
-    """[a] times [b] in GF(32), modulo x^5 + x^2 + 1."""
-    product = 0
-    while b:
-        if b & 1:
-            product ^= a
-        b >>= 1
-        a <<= 1
-        if a & 0x20:
-            a ^= 0x25
-    return product
-
-
-def check_symbol(body: str) -> str:
-    """The check symbol of a rater code's eight symbols, as the app makes
-    it: a weighted sum in GF(32), the weights 2, 4, 8, ... in turn."""
-    total, weight = 0, 1
-    for symbol in body:
-        weight = _gf_times(weight, 2)
-        total ^= _gf_times(weight, CROCKFORD.index(symbol))
-    return CROCKFORD[total]
-
-
-def rater_code(text: object) -> str | None:
-    """[text] as a rater code, written FL-XXXX-XXXX-C, or None if it is not
-    one or its check fails. Read as loosely as the app reads it."""
-    if not isinstance(text, str):
-        return None
-    plain = re.sub(r"[\s-]", "", text.upper())
-    if plain.startswith("FL") and len(plain) == 11:
-        plain = plain[2:]
-    plain = plain.replace("I", "1").replace("L", "1").replace("O", "0")
-    if len(plain) != 9 or any(c not in CROCKFORD for c in plain):
-        return None
-    if check_symbol(plain[:8]) != plain[8]:
-        return None
-    return f"FL-{plain[:4]}-{plain[4:8]}-{plain[8]}"
-
-
 def review_files(message: email.message.Message) -> list[dict]:
     """The review files attached to [message]: JSON that says it is one."""
     files = []
@@ -267,6 +253,32 @@ def review_files(message: email.message.Message) -> list[dict]:
 
 def _unique(items: list[str]) -> list[str]:
     return list(dict.fromkeys(items))
+
+
+def review_counts(files: list[dict]) -> tuple[int, int, list[tuple[str, str]]]:
+    """How many changes [files] suggest and accept, and the proposals they
+    reject, (proposal id, card id) each. No text."""
+    suggested = accepted = 0
+    rejected: list[tuple[str, str]] = []
+    for f in files:
+        cards = f.get("cards") if isinstance(f.get("cards"), list) else []
+        for c in cards:
+            if not isinstance(c, dict):
+                continue
+            if isinstance(c.get("suggestion"), dict):
+                suggested += 1
+            answers = c.get("proposals") if isinstance(c.get("proposals"), list) else []
+            for a in answers:
+                if not isinstance(a, dict):
+                    continue
+                if a.get("answer") == "accept":
+                    accepted += 1
+                elif a.get("answer") == "reject" and isinstance(a.get("id"), str) \
+                        and re.fullmatch(r"[0-9a-f]{10}", a["id"]) \
+                        and isinstance(c.get("card"), str) \
+                        and re.fullmatch(r"[a-z]{2,3}-[0-9]{4,}", c["card"]):
+                    rejected.append((a["id"], c["card"]))
+    return suggested, accepted, rejected
 
 
 def review_issue_from(
@@ -319,6 +331,17 @@ def review_issue_from(
         f"- Language{'s' if len(languages) > 1 else ''}: "
         f"{', '.join(languages) or 'none given'}",
     ]
+    suggested, accepted, rejected = review_counts(files)
+    if suggested or accepted or rejected:
+        body.append(f"- Changes suggested: {suggested}\n"
+                    f"- Proposals accepted: {accepted}\n"
+                    f"- Proposals rejected: {len(rejected)}")
+    if rejected:
+        marks.append(REJECTED)
+        body.append("**Proposals rejected:** "
+                    + ", ".join(f"`{pid}` on `{card}`" for pid, card in rejected)
+                    + ". A rejection does not stop a proposal; the owner "
+                      "decides.")
     if SUBJECT_CHANGED in marks:
         body.append("**Subject changed:** the mail's subject is missing or "
                     "does not match the files. This issue goes by the "
@@ -489,11 +512,109 @@ def post_issue(repo: str, token: str, issue: dict) -> None:
         post({k: v for k, v in issue.items() if k != "labels"})
 
 
+def mail_key(message: email.message.Message) -> str:
+    """A name for [message] that stays the same from run to run: from its
+    Message-ID, or from the whole mail when it has none."""
+    ident = str(message.get("Message-ID", "")).strip()
+    raw = ident.encode("utf-8") if ident else message.as_bytes()
+    return hashlib.sha256(raw).hexdigest()[:12]
+
+
+def make_bot(env: dict[str, str]):
+    """The review bot, or None when its App is not set up."""
+    token = env.get("FLUENOUGH_BOT_TOKEN", "")
+    if not token:
+        return None
+    import tempfile
+    from pathlib import Path
+
+    import review_bot
+    repo = env.get("GITHUB_REPOSITORY", "")
+    root = Path(__file__).resolve().parent.parent
+    work = Path(env.get("RUNNER_TEMP") or tempfile.gettempdir()) / "review-bot"
+    work.mkdir(parents=True, exist_ok=True)
+    return review_bot.Bot(
+        review_bot.LocalGit(root, token, work),
+        review_bot.RestGitHub(repo, token, env.get("GITHUB_TOKEN", "")),
+        review_bot.agreements_needed(env))
+
+
+def propose_mails(imap: imaplib.IMAP4, raters: Raters, bot) -> dict[str, int]:
+    """Makes the proposals of every review mail filed and not yet proposed,
+    each through a PR of its own (ADR-0038). A mail is labelled
+    [PROPOSED] once its PR is merged, or closed, or there was nothing to
+    propose; until then it is tried again each run. A mail whose files
+    carry no single good code, or whose sender does not match, is left to
+    the owner: labelled, and not proposed. One whose sender could not be
+    checked waits for the next run."""
+    import review_bot
+    counts: dict[str, int] = {}
+    _, found = imap.search(
+        None, "X-GM-RAW",
+        f'"filename:fluenough-review label:{FILED} -label:{PROPOSED}"')
+    for number in (found[0] or b"").split():
+        _, data = imap.fetch(number, "(BODY.PEEK[])")
+        raw = next(part[1] for part in data if isinstance(part, tuple))
+        message = email.message_from_bytes(raw, policy=email.policy.default)
+        files = review_files(message)
+        file_codes = [rater_code(f.get("rater_code")) for f in files]
+        codes = _unique([c for c in file_codes if c])
+        if not files or None in file_codes or len(codes) != 1:
+            outcome = "left to the owner"
+        else:
+            mark = raters.check(codes[0], sender_of(message))
+            if mark == SENDER_UNCHECKED:
+                outcome = "waiting for the sender check"
+            elif mark == SENDER_DIFFERS:
+                outcome = "left to the owner"
+            else:
+                review = review_bot.read_review(files, codes[0])
+                try:
+                    outcome = bot.review(mail_key(message), codes[0], review)
+                except Exception as error:  # noqa: BLE001 - logged, next run retries
+                    print(f"::warning::The proposals of a review by "
+                          f"{codes[0]} failed: {type(error).__name__}: {error}")
+                    outcome = "failed"
+        if outcome in ("merged", "closed", "nothing", "invalid",
+                       "left to the owner"):
+            imap.store(number, "+X-GM-LABELS", PROPOSED)
+        counts[outcome] = counts.get(outcome, 0) + 1
+    return counts
+
+
 def run(env: dict[str, str],
         connect: Callable[[str], imaplib.IMAP4] = imaplib.IMAP4_SSL,
-        file_issue: Callable[[dict], None] | None = None) -> int:
+        file_issue: Callable[[dict], None] | None = None,
+        bot=None) -> int:
     """Files every bug report, feedback and review mail not filed yet, and
-    leaves support mails as they are. Returns how many were filed."""
+    leaves support mails as they are. With the review bot, then makes the
+    proposals of review mails, and applies the proposals agreed on `main`.
+    Returns how many mails were filed."""
+    if bot is None:
+        bot = make_bot(env)
+    if bot is None:
+        print("::notice::The review bot's GitHub App is not set up "
+              "(FLUENOUGH_BOT_APP_ID, FLUENOUGH_BOT_PRIVATE_KEY): review "
+              "mails wait to become proposals, and nothing is merged.")
+    else:
+        print(f"Review bot: {bot.threshold} other reviewer(s) must accept a "
+              f"proposal.")
+    filed = file_mails(env, connect, file_issue, bot)
+    if bot is not None:
+        try:
+            counts = bot.sweep()
+            print(f"Agreed proposals: {counts['applied']} merged, "
+                  f"{counts['waiting']} waiting; {counts['outdated']} outdated.")
+        except Exception as error:  # noqa: BLE001 - logged, next run retries
+            print(f"::warning::The agreement sweep failed: "
+                  f"{type(error).__name__}: {error}")
+    return filed
+
+
+def file_mails(env: dict[str, str],
+               connect: Callable[[str], imaplib.IMAP4],
+               file_issue: Callable[[dict], None] | None,
+               bot) -> int:
     address = env.get("FEEDBACK_GMAIL_ADDRESS", "")
     password = env.get("FEEDBACK_GMAIL_APP_PASSWORD", "")
     if not address or not password:
@@ -542,6 +663,11 @@ def run(env: dict[str, str],
         print(f"Review senders: {raters.tied} tied, {raters.matched} "
               f"matched, {raters.differed} did not match, "
               f"{raters.unchecked} not checked.")
+        if bot is not None:
+            counts = propose_mails(imap, raters, bot)
+            print("Review mails proposed: " + (", ".join(
+                f"{n} {outcome}" for outcome, n in sorted(counts.items()))
+                or "none waiting") + ".")
         return filed
     finally:
         imap.logout()

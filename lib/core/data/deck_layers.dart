@@ -24,6 +24,7 @@ class DeckCore {
     this.pattern,
     this.table,
     this.rules = const <CoreRule>[],
+    this.proposals = const <String, List<Proposal>>{},
   });
 
   /// `<lang>-<name>`, such as `te-home`.
@@ -49,6 +50,9 @@ class DeckCore {
 
   /// A rules core's rules, without their names and explanations.
   final List<CoreRule> rules;
+
+  /// Proposed changes to its cards' language side, by card id (ADR-0038).
+  final Map<String, List<Proposal>> proposals;
 
   @override
   String toString() => 'DeckCore($id)';
@@ -200,6 +204,7 @@ class DeckLayer {
     this.pattern,
     this.table,
     this.rules = const <String, LayerRule>{},
+    this.proposals = const <String, List<Proposal>>{},
   });
 
   /// `<lang>-<native>-<name>`: the merged deck's id.
@@ -222,6 +227,9 @@ class DeckLayer {
 
   /// By rule id.
   final Map<String, LayerRule> rules;
+
+  /// Proposed changes to its cards' meanings, by card id (ADR-0038).
+  final Map<String, List<Proposal>> proposals;
 
   /// Where the layer and its id and core are, for messages.
   final YamlMap node;
@@ -471,6 +479,18 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
     refs: refs,
     table: table,
     rules: rules,
+    proposals: Map<String, List<Proposal>>.unmodifiable(
+      <String, List<Proposal>>{
+        for (final card in <String>{
+          ...core.proposals.keys,
+          ...layer.proposals.keys,
+        })
+          card: List<Proposal>.unmodifiable(<Proposal>[
+            ...?core.proposals[card],
+            ...?layer.proposals[card],
+          ]),
+      },
+    ),
   );
 }
 
