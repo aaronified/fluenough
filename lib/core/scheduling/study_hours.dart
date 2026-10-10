@@ -130,6 +130,9 @@ abstract final class StudyHours {
   /// the reviews it still needs times the learner's time per answer in its
   /// mode, from [times] ([timeIn]). [parametersOf] gives the parameters
   /// that schedule a mode; FSRS-6's defaults without it.
+  ///
+  /// Pairs alike share one simulation: every new pair of a mode, and every
+  /// pair of a mode with the same memory state.
   static Duration left(
     Iterable<(DrillMode mode, FsrsState? state)> pairs, {
     required Map<DrillMode, Duration> times,
@@ -137,9 +140,13 @@ abstract final class StudyHours {
     List<double> Function(DrillMode mode)? parametersOf,
   }) {
     var ms = 0.0;
+    final simulated = <Object, double>{};
     for (final (mode, state) in pairs) {
       if (isRemembered(state)) continue;
-      final reviews = reviewsToRemember(
+      final key = state == null
+          ? mode
+          : (mode, state.stability, state.difficulty, state.intervalDays);
+      final reviews = simulated[key] ??= reviewsToRemember(
         state,
         missShare: missShare,
         parameters: parametersOf?.call(mode) ?? Fsrs.w,

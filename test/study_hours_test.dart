@@ -177,6 +177,56 @@ void main() {
       );
     });
 
+    test('3,000 cards in four skills, against 20,000 answers, take well '
+        'under a frame', () {
+      final pairs = <(DrillMode, FsrsState?)>[
+        for (var i = 0; i < 3000; i++)
+          for (final mode in <DrillMode>[
+            DrillMode.recognition,
+            DrillMode.production,
+            DrillMode.listening,
+            DrillMode.speaking,
+          ])
+            // A third learned, each in a state of its own; the rest new.
+            (
+              mode,
+              i % 3 == 0
+                  ? stateWith(1 + i % 20, stability: 1.0 + i / 1000)
+                  : null,
+            ),
+      ];
+      final log = <ReviewEvent>[
+        for (var i = 0; i < 20000; i++)
+          answer(5 + i % 50, grade: i % 7 == 0 ? 1 : 4),
+      ];
+      Duration run() {
+        final times = StudyHours.answerTimes(log);
+        StudyHours.spent(log);
+        return StudyHours.left(
+          pairs,
+          times: times,
+          missShare: StudyHours.missShare(log),
+        );
+      }
+
+      // Warmed up first: the test runs unoptimised JIT code until then,
+      // where the app runs compiled code.
+      for (var i = 0; i < 3; i++) {
+        expect(run(), greaterThan(Duration.zero));
+      }
+      // The fastest of five, so that other tests running alongside, as the
+      // full suite runs them, do not count.
+      var fastest = 1 << 30;
+      for (var i = 0; i < 5; i++) {
+        final watch = Stopwatch()..start();
+        run();
+        if (watch.elapsedMilliseconds < fastest) {
+          fastest = watch.elapsedMilliseconds;
+        }
+      }
+      expect(fastest, lessThan(16));
+    });
+
     test('uses the parameters that schedule each skill', () {
       final asked = <DrillMode>[];
       StudyHours.left(

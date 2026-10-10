@@ -1314,6 +1314,22 @@ class AppState extends ChangeNotifier {
   void _forgetPending() {
     _pendingUnits = null;
     _placed = null;
+    _derived.clear();
+  }
+
+  /// Values worked out from progress, settings and the decks, kept until
+  /// any of them changes, so that a screen rebuilding for another reason
+  /// does not work them out again.
+  final Map<Object, Object?> _derived = <Object, Object?>{};
+
+  /// [compute]'s value for [key], worked out once and kept until progress,
+  /// settings or this state changes. [key] must name what [compute] reads
+  /// besides those.
+  T derived<T>(Object key, T Function() compute) {
+    if (_derived.containsKey(key)) return _derived[key] as T;
+    final value = compute();
+    _derived[key] = value;
+    return value;
   }
 
   /// Whether placement found the learner already knows [entry]. It reads
@@ -1715,12 +1731,24 @@ class AppState extends ChangeNotifier {
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth
   /// only with a recogniser, each on for its language, and none set aside.
-  Set<DrillMode> drillableModes(Card card) {
+  Set<DrillMode> drillableModes(Card card) => drillableModesNow()(card);
+
+  /// [drillableModes] for many cards: the skills switched on and the
+  /// leeches set aside read once, not once a card.
+  Set<DrillMode> Function(Card card) drillableModesNow() {
+    final modes = _modes(ignorePauses: false);
+    final leeches = progress.leechEffects;
+    return (card) => _drillableModes(card, modes, leeches);
+  }
+
+  Set<DrillMode> _drillableModes(
+    Card card,
+    Set<DrillMode> modes,
+    LeechEffects leeches,
+  ) {
     final entry = deckOf(card);
     if (entry == null) return const <DrillMode>{};
     final language = entry.language;
-    final modes = _modes(ignorePauses: false);
-    final leeches = progress.leechEffects;
     return <DrillMode>{
       for (final mode in card.modesIn(
         ttsAvailable:
