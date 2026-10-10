@@ -224,7 +224,9 @@ void main() {
           fastest = watch.elapsedMilliseconds;
         }
       }
-      expect(fastest, lessThan(16));
+      // Generous, so a busy CI runner can't fail it: without the shared
+      // simulations this takes seconds, not milliseconds.
+      expect(fastest, lessThan(100));
     });
 
     test('uses the parameters that schedule each skill', () {
