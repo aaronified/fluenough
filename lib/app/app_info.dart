@@ -6,7 +6,7 @@ abstract final class AppInfo {
   /// is no package to read it from the build (AGENTS.md rule 6), so it is
   /// kept in step by hand, and
   /// `test/features/settings/settings_page_test.dart` checks it.
-  static const String version = '0.3.4';
+  static const String version = '0.4.0';
 
   /// The phone's system, such as `Android 14 (API 34)`, for a report whose
   /// reporter agrees to send it (ADR-0021). Android's own properties need no
