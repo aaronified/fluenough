@@ -11,7 +11,10 @@ it lists its name, icon and script; the native languages it is taught from;
 its path's order, and each unit's planned and counted words, so the
 language picker can show completeness toward B1 before a download; and
 each file's path, size, SHA-256, schema and kind, and how many proposals
-reviewers have made in it (ADR-0038).
+reviewers have made in it (ADR-0038). Each file's `content_sha256` is the
+SHA-256 of the file with its proposals taken out, so that a learner's
+phone, which never shows them, is not offered an update when only a
+proposal changed (#444).
 
 `tools/validate_decks.py decks/` fails when the index is out of date, so CI
 keeps it current. Run this after changing any file under decks/.
@@ -77,6 +80,52 @@ def _top(text: str, key: str) -> str | None:
     return m.group(1) if m else None
 
 
+_PROPOSED_KEY = re.compile(r"^( *)proposed:[ \t]*$")
+
+
+def content_bytes(data: bytes) -> bytes:
+    """[data], a deck file, with its proposals taken out: what a learner
+    sees of it (ADR-0038, #444).
+
+    The review bot writes a card's proposals as a `proposed:` line and its
+    items, one line each, indented under it; this drops those lines and
+    keeps every other byte as it is, blank lines after the items too: the
+    file with its last proposal removed hashes as it did before the
+    first. Items YAML allows at the key's own indent (`- ` lines straight
+    under it) go too, so a proposal written that way by hand still leaves
+    the content hash alone."""
+    lines = [line.decode("utf-8", errors="replace").rstrip("\r\n")
+             for line in data.splitlines(keepends=True)]
+    raw = data.splitlines(keepends=True)
+    out: list[bytes] = []
+    i = 0
+    while i < len(lines):
+        m = _PROPOSED_KEY.match(lines[i])
+        if m is None:
+            out.append(raw[i])
+            i += 1
+            continue
+        indent = len(m.group(1))
+        i += 1
+        # The items: every line indented deeper than the key, or a `- `
+        # item at the key's own indent, and blank lines between two of them.
+        while i < len(lines):
+            j = i
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            if j == len(lines):
+                break
+            line = lines[j]
+            depth = len(line) - len(line.lstrip(" "))
+            item = line[depth:]
+            same_indent_item = depth == indent and (
+                item == "-" or item.startswith("- "))
+            if depth <= indent and not same_indent_item:
+                break
+            i = j + 1
+    return b"".join(out)
+
+
 def _file_entry(path: Path, rep: vd.Report | None) -> dict:
     data = path.read_bytes()
     text = data.decode("utf-8", errors="replace")
@@ -85,6 +134,8 @@ def _file_entry(path: Path, rep: vd.Report | None) -> dict:
         "path": _rel(path),
         "size": len(data),
         "sha256": hashlib.sha256(data).hexdigest(),
+        # The hash a learner's phone compares: proposals left out (#444).
+        "content_sha256": hashlib.sha256(content_bytes(data)).hexdigest(),
         "schema": int(schema) if schema is not None and schema.isdigit() else 0,
         "kind": _top(text, "kind") or "vocab",
     }
