@@ -36,6 +36,7 @@ import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'deck_import.dart';
 import 'features.dart';
+import 'language_choice.dart';
 import 'links.dart';
 import 'log_files.dart';
 import 'mail_share.dart';
@@ -187,6 +188,18 @@ class AppState extends ChangeNotifier {
     deckDownloads?.onFilesChanged = _filesDownloaded;
     this.settings.addListener(_reviewerToDownloads);
     _reviewerToDownloads();
+    this.settings.addListener(_languageShownChanged);
+  }
+
+  /// The language the app showed when settings last changed, so that a
+  /// new one rebuilds every screen that reads this state (#461).
+  String? _lastShown;
+
+  void _languageShownChanged() {
+    final shown = shownLanguage;
+    if (shown == _lastShown) return;
+    _lastShown = shown;
+    notifyListeners();
   }
 
   /// A reviewer is offered a deck update when only proposals changed, as
@@ -503,17 +516,25 @@ class AppState extends ChangeNotifier {
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 
-  /// The decks in the languages the current profile learns.
+  /// The decks in the languages the current profile learns, and of those,
+  /// only the [shownLanguage]'s while one is chosen (#461): what Today
+  /// teaches and reviews, so that its counts and its sessions agree.
   ///
   /// Each language's decks taught from the language its course is learned
   /// from ([courseNative]) come first, then those taught from a language
   /// the learner speaks, best known first (#53); otherwise the catalog's
   /// order holds. A review takes a card shared across native languages from
   /// the first deck that has it, so it is shown as the course teaches it.
-  List<DeckEntry> get profileDecks {
+  List<DeckEntry> get profileDecks => _learnedDecks(onlyShown: true);
+
+  List<DeckEntry> _learnedDecks({required bool onlyShown}) {
+    final profile = currentProfile;
+    final shown = onlyShown ? shownLanguage : null;
     final mine = <DeckEntry>[
       for (final entry in decks)
-        if (currentProfile.learns(entry.language.code)) entry,
+        if (profile.learns(entry.language.code) &&
+            LanguageChoice.shows(shown, entry.language.code))
+          entry,
     ];
     final natives = <String, String?>{
       for (final code in <String>{for (final e in mine) e.language.code})
@@ -533,6 +554,43 @@ class AppState extends ChangeNotifier {
 
   /// Every language the catalog teaches, one per code.
   List<LanguageInfo> get languages => _catalog.languages;
+
+  /// The languages the language menu at the top of Today, Decks and
+  /// Progress offers (#461): those the profile learns that have decks, in
+  /// the order the learner chose them ([LanguageChoice.options]). "All
+  /// languages" is offered as well, and is not one of these.
+  List<LanguageInfo> get languageChoices {
+    final profile = currentProfile;
+    final learned = <String, LanguageInfo>{
+      for (final language in languages)
+        if (profile.learns(language.code)) language.code: language,
+    };
+    return <LanguageInfo>[
+      for (final code in LanguageChoice.options(
+        learning: settings.learningLanguages,
+        available: learned.keys,
+      ))
+        learned[code]!,
+    ];
+  }
+
+  /// The language the whole app shows, by code, or null for every
+  /// language (#461): the one chosen in the language menu while the
+  /// profile still learns it, else All; with only one language to show,
+  /// that one.
+  String? get shownLanguage => LanguageChoice.shown(
+    settings.languageChoice,
+    <String>[for (final language in languageChoices) language.code],
+  );
+
+  /// Whether [code]'s lessons, decks and numbers show, given the
+  /// [shownLanguage].
+  bool showsLanguage(String code) => LanguageChoice.shows(shownLanguage, code);
+
+  /// Shows only [code]'s content across the app, or with null, every
+  /// language's. Kept in Settings.
+  void showLanguage(String? code) =>
+      settings.languageChoice = code ?? LanguageChoice.all;
 
   /// Loads the catalog, then checks which languages have a voice. Safe to
   /// call more than once; later calls wait on the first.
@@ -1329,8 +1387,10 @@ class AppState extends ChangeNotifier {
       pendingUnits.any((unit) => unit.any((e) => e.id == entry.id));
 
   List<List<DeckEntry>> _findPending() {
+    // Every language learned, whichever is shown: where a course's path
+    // has got to does not depend on the language menu.
     final languages = <String>{
-      for (final entry in profileDecks) entry.language.code,
+      for (final entry in _learnedDecks(onlyShown: false)) entry.language.code,
     };
     return List<List<DeckEntry>>.unmodifiable(<List<DeckEntry>>[
       for (final code in languages)
@@ -1871,7 +1931,8 @@ class AppState extends ChangeNotifier {
     _disposed = true;
     settings
       ..removeListener(_forgetPending)
-      ..removeListener(_reviewerToDownloads);
+      ..removeListener(_reviewerToDownloads)
+      ..removeListener(_languageShownChanged);
     progress.removeListener(_forgetPending);
     shellTab
       ..removeListener(_logTab)

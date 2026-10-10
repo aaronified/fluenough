@@ -77,11 +77,18 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   if (paces == null) {
     return (totals: null, marks: const <Skill, PaceDirection>{});
   }
+  // Only the language shown, while one is chosen in the menu (#461).
+  final profile = state.currentProfile;
+  final language = state.shownLanguage;
   final learned = <SkillPace>[
     for (final p in paces.values)
-      if (state.currentProfile.learns(p.key.language)) p,
+      if (profile.learns(p.key.language) &&
+          (language == null || p.key.language == language))
+        p,
   ];
-  final shown = learned.isEmpty ? paces.values.toList() : learned;
+  final shown = learned.isEmpty && language == null
+      ? paces.values.toList()
+      : learned;
   final all = SkillFit.together(shown);
   return (
     totals: all == null

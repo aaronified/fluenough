@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/updates/release_check.dart';
+import 'language_choice.dart';
 import 'skill.dart';
 
 /// The colour seeds the Appearance screen offers. [forest] is the repository's
@@ -54,6 +55,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._learningChosen = false,
     Set<String> speechOnline = const <String>{},
     Set<String> noAlphabet = const <String>{},
+    this._languageChoice,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
@@ -97,6 +99,7 @@ class SettingsNotifier extends ChangeNotifier {
   String? _pendingUpdate;
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
+  String? _languageChoice;
   Set<String> _placedDecks;
   bool _learningChosen;
   Set<String> _speechOnline;
@@ -226,7 +229,26 @@ class SettingsNotifier extends ChangeNotifier {
     final next = List<String>.unmodifiable(<String>{...codes});
     if (listEquals(next, _learningLanguages)) return;
     _learningLanguages = next;
+    // A language no longer learned is no longer shown (#461): back to the
+    // default, All, or the one language left.
+    final chosen = _languageChoice;
+    if (chosen != null &&
+        chosen != LanguageChoice.all &&
+        next.isNotEmpty &&
+        !next.contains(chosen)) {
+      _languageChoice = null;
+    }
     notifyListeners();
+  }
+
+  /// The language the whole app shows (#461), as the menu at the top of
+  /// Today, Decks and Progress chose it: a code, [LanguageChoice.all] for
+  /// every language, or null before the learner has chosen, which shows
+  /// every language too. `AppState.shownLanguage` says what is shown.
+  String? get languageChoice => _languageChoice;
+  set languageChoice(String? value) {
+    if (value != null && !LanguageChoice.isValid(value)) return;
+    _set(_languageChoice, value, (v) => _languageChoice = v);
   }
 
   /// The decks placement found the learner already knows (#117,
@@ -588,6 +610,9 @@ class SettingsNotifier extends ChangeNotifier {
     'pending_update': _pendingUpdate ?? '',
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
+    // Not chosen yet is empty, which an older version never wrote and
+    // reads as All languages.
+    'language_choice': _languageChoice ?? '',
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
     'speech_online': (_speechOnline.toList()..sort()).join(','),
@@ -712,6 +737,19 @@ class SettingsNotifier extends ChangeNotifier {
         for (final code in v.split(','))
           if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
       ];
+    }
+    // After the languages learned, so that one no longer learned is not
+    // shown. Missing, as from before #461, it stays All.
+    if (pick('language_choice', (t) => t) case final v?) {
+      final learning = _learningLanguages;
+      languageChoice =
+          v.isEmpty ||
+              !LanguageChoice.isValid(v) ||
+              (v != LanguageChoice.all &&
+                  learning.isNotEmpty &&
+                  !learning.contains(v))
+          ? null
+          : v;
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
     if (pick('paused_until', _parseJsonMap) case final v?) {
