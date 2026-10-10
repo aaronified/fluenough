@@ -113,7 +113,7 @@ Each can start once what it waits for is done.
 | #99 | Culture decks | #210 |
 
 Issues outside the plans, in any order: #25 F-Droid, #26 TalkBack pass, #46
-interface language, #90 daily reminder, #204 profiles and PIN, then #97 child
+interface language, #90 daily reminder, #204 profiles and PIN, then #97 parental supervision (`profiles.md`), child
 lock, #108 home-screen widget, #111 native-speaker audio, #112 backup to a
 folder, #141 release tag check, #425 the analyzer bound, #411 shareable
 progress. After #392 and #413: #92 sample deck pack, #110 dialogue decks.

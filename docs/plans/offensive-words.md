@@ -3,7 +3,8 @@
 Written 2026-10-09. Tracks #96 (offensive words behind an adult gate),
 whose rules stand: decks marked `audience: adult` are hidden until the
 learner turns on adult content and confirms they are 18 or over, per
-profile; never in a child profile (#97); a disclaimer before the first
+profile; never in a child profile (#97), where the sound-alike and
+look-alike warnings are not shown either (`profiles.md`); a disclaimer before the first
 card; offensive cards are recognition only, never typed or said; a
 speaker reviews every card before it ships, Telugu included.
 
