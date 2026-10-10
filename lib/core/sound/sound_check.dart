@@ -37,6 +37,12 @@ abstract interface class SoundCheckEngine {
 
   /// Plays [recording] back. False when it could not be played.
   Future<bool> play(Recording recording);
+
+  /// Cuts short a recording or playback under way, and lets go of the
+  /// microphone: a drill moving on from "Hear yourself" (#231). A recording
+  /// cut short ends with what it has; playback ends at once. Nothing under
+  /// way: does nothing.
+  Future<void> stop();
 }
 
 /// No microphone and no speaker: tests, and the gallery.
@@ -49,6 +55,9 @@ class NullSoundCheck implements SoundCheckEngine {
 
   @override
   Future<bool> play(Recording recording) async => false;
+
+  @override
+  Future<void> stop() async {}
 }
 
 /// A sound check that records and plays what it is told to. For tests and
@@ -73,6 +82,9 @@ class FixedSoundCheck implements SoundCheckEngine {
   /// How many times [play] was called.
   int playbacks = 0;
 
+  /// How many times [stop] was called.
+  int stops = 0;
+
   @override
   Future<Recording> record(Duration duration) async {
     recordings++;
@@ -87,6 +99,11 @@ class FixedSoundCheck implements SoundCheckEngine {
   Future<bool> play(Recording recording) async {
     playbacks++;
     return plays && recording.ok;
+  }
+
+  @override
+  Future<void> stop() async {
+    stops++;
   }
 }
 
