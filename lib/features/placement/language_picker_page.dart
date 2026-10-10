@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -16,6 +17,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
+import '../downloads/update_escape.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'language_card.dart';
 import 'language_download.dart';
@@ -94,6 +96,21 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   /// say when all of it is in.
   final Set<String> _downloadShown = <String>{};
 
+  /// Each Try again after a failure, for [UpdateEscape]: of the list of
+  /// courses, and of reading the decks.
+  int _indexRetries = 0;
+  int _catalogRetries = 0;
+
+  /// Each chosen language's failures in a row, for [UpdateEscape], with
+  /// how many of its decks were on the phone at the last: a failure after
+  /// more decks came in starts again at one. Forgotten once it downloads,
+  /// is cancelled or is no longer chosen ([_watchFailures]).
+  final Map<String, ({int count, int decks})> _failedRuns =
+      <String, ({int count, int decks})>{};
+
+  /// The chosen languages whose download has failed, as last seen.
+  final Set<String> _failing = <String>{};
+
   /// Whether what was chosen here was saved. A language newly chosen but
   /// not saved stops downloading when the page closes.
   bool _saved = false;
@@ -112,6 +129,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     // The list of courses, read from GitHub the first time (#210).
     final state = _app = AppScope.read(context);
     final downloads = state.deckDownloads;
+    downloads?.addListener(_watchFailures);
     if (downloads != null && downloads.index == null) {
       WidgetsBinding.instance.addPostFrameCallback(
         (_) => downloads.refreshIndex(),
@@ -120,6 +138,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     for (final code in widget.initialChosen) {
       _startDownload(state, code);
     }
+    _watchFailures();
     _search.addListener(() => setState(() {}));
   }
 
@@ -151,6 +170,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         if (downloads.hasJob(code)) unawaited(downloads.cancel(code));
       }
     }
+    downloads?.removeListener(_watchFailures);
     _search.dispose();
     _scroll.dispose();
     super.dispose();
@@ -182,6 +202,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         downloads.hasJob(code)) {
       unawaited(downloads.cancel(code));
     }
+    _forgetFailures(code);
     setState(() => _ticked = <String>{..._ticked}..remove(code));
     _announce(l10n.pickerAnnounceUnchosen(language.name));
   }
@@ -273,6 +294,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final code = language.code;
     final downloads = state.deckDownloads!;
     final ready = downloads.isReady(code, _spoken);
+    _forgetFailures(code);
     unawaited(downloads.cancel(code));
     // Before its first decks are in, a cancelled language cannot be
     // started, so it is no longer chosen. After, the course works with
@@ -285,6 +307,38 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       context,
       AppLocalizations.of(context)!.pickerCancelledUnchosen(language.name),
     );
+  }
+
+  /// Counts each chosen language's failures in a row ([_failedRuns]): a
+  /// new failure adds one, unless decks arrived since the last; a download
+  /// that ends without one, finished or cancelled, forgets them.
+  void _watchFailures() {
+    final downloads = _app.deckDownloads;
+    if (downloads == null) return;
+    for (final code in _ticked) {
+      if (downloads.failureOf(code) != null) {
+        if (!_failing.add(code)) continue;
+        final decks =
+            downloads
+                .languageDownload(code, _app.settings.spokenLanguages)
+                ?.decks ??
+            0;
+        final last = _failedRuns[code];
+        _failedRuns[code] = (
+          count: last != null && decks <= last.decks ? last.count + 1 : 1,
+          decks: decks,
+        );
+      } else {
+        _failing.remove(code);
+        if (!downloads.isDownloading(code)) _failedRuns.remove(code);
+      }
+    }
+  }
+
+  /// Forgets [code]'s failures: it is no longer chosen, or was cancelled.
+  void _forgetFailures(String code) {
+    _failing.remove(code);
+    _failedRuns.remove(code);
   }
 
   void _retry(AppState state, String code) {
@@ -481,9 +535,16 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           icon: Icons.cloud_off_outlined,
           title: l10n.downloadsIndexFailed,
           body: downloadFailureText(l10n, indexing.indexFailure),
-          action: FilledButton(
-            onPressed: indexing.refreshIndex,
-            child: Text(l10n.commonRetry),
+          action: _withEscape(
+            FilledButton(
+              onPressed: () {
+                setState(() => _indexRetries++);
+                unawaited(indexing.refreshIndex());
+              },
+              child: Text(l10n.commonRetry),
+            ),
+            failures: _indexRetries + 1,
+            detail: 'course list: ${indexing.indexFailure?.name}',
           ),
         );
       }
@@ -501,14 +562,37 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         icon: Icons.error_outline,
         title: l10n.commonDecksFailed,
         body: l10n.commonDecksFailedBody,
-        action: FilledButton(
-          onPressed: state.reload,
-          child: Text(l10n.commonRetry),
+        action: _withEscape(
+          FilledButton(
+            onPressed: () {
+              setState(() => _catalogRetries++);
+              unawaited(state.reload());
+            },
+            child: Text(l10n.commonRetry),
+          ),
+          failures: _catalogRetries + 1,
+          detail: 'decks failed to load',
         ),
       ),
       CatalogStatus.ready => null,
     };
   }
+
+  /// A failure's Try again, with the update check under it: on first
+  /// launch, Settings and its check are out of reach, and a fault in the
+  /// app itself can be what fails, as in 0.4.0.
+  Widget _withEscape(
+    Widget retry, {
+    required int failures,
+    required String detail,
+  }) => Column(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      retry,
+      const SizedBox(height: 8),
+      UpdateEscape(failures: failures, detail: detail),
+    ],
+  );
 
   Widget _list(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
@@ -542,6 +626,19 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         ? l10n.pickerHintNext(join(added))
         : null;
     final canGo = _ticked.isNotEmpty && waiting.isEmpty;
+    // A chosen language whose decks will not come: on first launch nothing
+    // else can be reached, so the update check is offered here.
+    final failed = <String>[
+      for (final code in _ticked)
+        if (state.deckDownloads?.failureOf(code) case final failure?)
+          '$code: ${failure.name}',
+    ];
+    // Each language's own failures in a row: the most of any failing now.
+    final runs = <int>[
+      for (final code in _ticked)
+        if (state.deckDownloads?.failureOf(code) != null)
+          _failedRuns[code]?.count ?? 1,
+    ];
 
     Widget heading(String text) => Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -709,6 +806,13 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  if (failed.isNotEmpty) ...<Widget>[
+                    UpdateEscape(
+                      failures: runs.reduce(math.max),
+                      detail: 'decks of ${failed.join(', ')}',
+                    ),
+                    const SizedBox(height: 4),
+                  ],
                   if (hint != null) ...<Widget>[
                     // Not a live region: a download's ready point is
                     // announced from its card, once.
