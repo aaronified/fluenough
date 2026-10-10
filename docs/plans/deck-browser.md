@@ -272,6 +272,15 @@ Settled with the owner, 2026-10-09:
     writes only if the field still holds the text the proposer saw. It
     rebuilds `decks/index.json` with the tool. A proposal whose field has
     changed, or whose card is gone, is closed as outdated, not merged.
+- **The reviewer guide is the onboarding, in the app** (owner,
+  2026-10-10: "This should be part of the reviewer onboarding in the
+  app"). Becoming a reviewer walks through the guide's steps in the app:
+  what reviewing is, the rater code and languages, "To review", checking
+  and signing off, suggesting and answering proposals, offensive words
+  and sound-alikes, sending in one mail, what is public and private, how
+  agreement reaches learners, and the thanks. The same steps stay
+  readable later from "How reviewing works". `docs/REVIEWING.md` holds
+  the same text for anyone sent a link (#409).
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
