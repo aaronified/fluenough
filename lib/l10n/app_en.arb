@@ -1872,6 +1872,28 @@
   "@inspectQuestions": {
     "description": "Inspect: a passage's questions, the right answer marked."
   },
+  "inspectDifficulty": "How hard, for you",
+  "@inspectDifficulty": {
+    "description": "Inspect: heading over a card's difficulty in each skill it has been answered in, learned from the learner's own answers. Shown only when some skill has been answered."
+  },
+  "inspectDifficultyIn": "{mode, select, recognition{Recognition} production{Write} listening{Hear} speaking{Say} grammarUnderstood{Grammar understood} grammar{Grammar produced} reading{Reading} other{Other}}: {value} of 10, {lean, select, easier{easier} harder{harder} other{middling}}",
+  "@inspectDifficultyIn": {
+    "description": "Inspect: a card's difficulty in one skill, 1 the easiest and 10 the hardest, from the learner's own answers. mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading): production is Write, listening is Hear, speaking is Say, as the skills are named elsewhere; grammarUnderstood is choosing what a form means, grammar is giving the form. lean says which way the value leans: easier (1 to 4), harder (7 to 10), or other (5 or 6).",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "value": {
+        "type": "int",
+        "example": "7"
+      },
+      "lean": {
+        "type": "String",
+        "example": "harder"
+      }
+    }
+  },
   "deckScriptTips": "Tips: {guide}",
   "@deckScriptTips": {
     "description": "Button on a script deck's page (#30): opens the guide to the script's recurring features, such as Bengali's headline. The placeholder is the guide's own title, from its file.",

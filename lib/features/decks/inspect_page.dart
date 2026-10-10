@@ -6,6 +6,7 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart';
+import '../../core/scheduling/skill_difficulty.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -19,7 +20,8 @@ import 'card_notes.dart';
 /// that a whole deck reads quickly and a mistake can be pointed at exactly.
 /// A card with more to it (other accepted forms and meanings, part of
 /// speech, tags, notes, examples, the skills it is limited to) opens in
-/// place when tapped.
+/// place when tapped, with how hard it has been for the learner in each
+/// skill it has been answered in (FSRS's D, docs/plans/difficulty-by-skill.md).
 ///
 /// A grammar deck lists each table's cells under its lemma; a reading deck
 /// each passage's sentences, then its questions, the right answer shown,
@@ -205,6 +207,53 @@ class _Field extends StatelessWidget {
       style: Theme.of(context).textTheme.bodyMedium,
     ),
   );
+}
+
+/// How hard a card has been in each skill it has been answered in: a
+/// heading, then a line a skill, "Hear: 7 of 10, harder". Nothing for a
+/// skill not yet answered, and nothing at all for a card never answered.
+class _Difficulties extends StatelessWidget {
+  const _Difficulties(this.difficulties);
+
+  final List<SkillDifficulty> difficulties;
+
+  /// The lines for [card], or null when no skill of it has been answered.
+  static Widget? of(BuildContext context, Card card) {
+    final difficulties = SkillDifficulty.of(
+      card.id,
+      AppScope.of(context).progress.stateOf,
+    );
+    return difficulties.isEmpty ? null : _Difficulties(difficulties);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsetsDirectional.only(top: 6),
+          child: Semantics(
+            header: true,
+            child: Text(
+              l10n.inspectDifficulty,
+              style: Theme.of(context).textTheme.bodyMedium!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
+        ),
+        for (final d in difficulties)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(start: 12, top: 4),
+            child: Text(
+              l10n.inspectDifficultyIn(d.mode.name, d.shown, d.lean.name),
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+      ],
+    );
+  }
 }
 
 /// The script with its romanisation beside it: one line where it fits.
@@ -402,6 +451,7 @@ class _CardRow extends StatelessWidget {
               ),
             ),
         ],
+        ?_Difficulties.of(context, card),
       ],
     );
   }
@@ -435,6 +485,7 @@ class _CellRow extends StatelessWidget {
             l10n.inspectAlsoAccepted,
             card.altTarget.join(l10n.commonListSeparator),
           ),
+        ?_Difficulties.of(context, card),
       ],
     );
   }
