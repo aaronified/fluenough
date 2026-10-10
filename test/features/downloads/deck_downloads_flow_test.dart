@@ -450,6 +450,33 @@ cards:
       expect(state.deckDownloads!.updates, isEmpty);
     });
 
+    testWidgets('the course card on Decks updates its language, then says '
+        'up to date (#464)', (tester) async {
+      await downloaded(remote, phone, const <String>['es', 'hi']);
+      const deck = 'decks/es/en/es-en-core-100.yaml';
+      remote.files[deck] = '${remote.files[deck]!}# a fix\n';
+      final state = await pump(
+        tester,
+        downloadingApp(
+          remote: remote,
+          phone: phone,
+          settings: learning(const <String>['es']),
+          now: _now.add(const Duration(days: 2)),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      await tapText(tester, l10n.deckUpdatePromptLater);
+      await tester.tap(find.text(l10n.navDecks));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.pathUpdatesBody), findsOneWidget);
+      await tapText(tester, l10n.pathUpdatesButton);
+      expect(await phone.read(deck), endsWith('# a fix\n'));
+      expect(find.text(l10n.deckDownloadsUpdated), findsOneWidget);
+      expect(find.text(l10n.pathUpdatesButton), findsNothing);
+      expect(find.text(l10n.pathUpdatesUpToDate), findsOneWidget);
+      expect(state.deckDownloads!.updates, isEmpty);
+    });
+
     testWidgets('a reviewer\'s proposal alone asks a learner nothing, and '
         'a reviewer it does (#444)', (tester) async {
       await downloaded(remote, phone, const <String>['es']);

@@ -63,17 +63,34 @@ class CoursePathView extends StatelessWidget {
             },
         ];
 
-        final children = <Widget>[];
+        // A folded level shows its header and its achievement only (#465).
+        final language = view.language.code;
+        final settings = state.settings;
+        final shown = <int>[];
+        var folded = false;
         for (final (i, step) in steps.indexed) {
-          if (i > 0) {
+          if (step is LevelStep) {
+            folded = settings.isLevelCollapsed(language, step.level.label);
+          } else if (folded && step is! AchievementStep) {
+            continue;
+          }
+          shown.add(i);
+        }
+
+        final children = <Widget>[];
+        int? previous;
+        for (final i in shown) {
+          final step = steps[i];
+          if (previous != null) {
             children.add(
               _Connector(
-                from: centres[i - 1],
+                from: centres[previous],
                 to: centres[i],
                 behind: i <= reached,
               ),
             );
           }
+          previous = i;
           final Widget child = switch (step) {
             UnitStep() => _UnitNode(
               key: i == upNext ? upNextKey : null,
@@ -85,7 +102,16 @@ class CoursePathView extends StatelessWidget {
             ComingStep() => _ComingNode(step: step, width: nodeWidth),
             MilestoneStep() => MilestoneMark(step: step, now: now),
             AchievementStep() => AchievementMark(step: step, now: now),
-            LevelStep() => LevelHeader(step: step),
+            LevelStep() => () {
+              final level = step.level.label;
+              final collapsed = settings.isLevelCollapsed(language, level);
+              return LevelHeader(
+                step: step,
+                expanded: !collapsed,
+                onToggle: () =>
+                    settings.setLevelCollapsed(language, level, !collapsed),
+              );
+            }(),
           };
           if (step is LevelStep) {
             children.add(child);

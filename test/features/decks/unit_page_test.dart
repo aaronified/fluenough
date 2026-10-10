@@ -393,6 +393,33 @@ void main() {
     expect(state.shellTab.value, ShellTab.settings);
   });
 
+  testWidgets('Review is a compact button that fits the app bar, its tap '
+      'target still 48dp', (tester) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const UnitPage(deckId: 'te-en-family'),
+      state: await teluguLearner(),
+    );
+    final l10n = l10nOf(tester);
+    final button = find.ancestor(
+      of: find.text(l10n.unitReview),
+      matching: find.byWidgetPredicate((w) => w is ButtonStyleButton),
+    );
+    expect(button, findsOneWidget);
+    final drawn = tester.getSize(
+      find.descendant(of: button, matching: find.byType(Material)).first,
+    );
+    expect(drawn.height, lessThanOrEqualTo(40));
+    final target = tester.getSize(button);
+    expect(target.height, greaterThanOrEqualTo(48));
+    expect(target.height, lessThanOrEqualTo(kToolbarHeight));
+    final bar = tester.getRect(find.byType(AppBar));
+    final rect = tester.getRect(button);
+    expect(rect.top, greaterThanOrEqualTo(bar.top));
+    expect(rect.bottom, lessThanOrEqualTo(bar.bottom));
+  });
+
   testWidgets('Review, with reviewing on, opens the unit\'s review', (
     tester,
   ) async {

@@ -292,18 +292,23 @@ void main() {
     );
   });
 
-  testWidgets('deck updates and Beyond the course show as incoming', (
-    tester,
-  ) async {
+  testWidgets('Beyond the course shows as incoming; deck updates and hours '
+      'left are on (#464, #227)', (tester) async {
     usePhone(tester);
     await pumpDecks(tester, state: await teluguLearner());
     final l10n = l10nOf(tester);
-    expect(find.byType(IncomingBadge), findsNWidgets(2));
-    expect(
-      find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.pathHoursTitle)),
-      findsNothing,
-    );
-    for (final label in <String>[l10n.pathUpdatesTitle, l10n.pathBeyondTitle]) {
+    expect(find.byType(IncomingBadge), findsOneWidget);
+    expect(find.text(l10n.pathUpdatesTitle), findsOneWidget);
+    expect(find.text(l10n.pathUpdatesUpToDate), findsOneWidget);
+    expect(find.text(l10n.pathUpdatesButton), findsNothing);
+    for (final label in <String>[l10n.pathUpdatesTitle, l10n.pathHoursTitle]) {
+      expect(
+        find.bySemanticsLabel(l10n.incomingSemanticsLabel(label)),
+        findsNothing,
+        reason: label,
+      );
+    }
+    for (final label in <String>[l10n.pathBeyondTitle]) {
       expect(
         find.bySemanticsLabel(l10n.incomingSemanticsLabel(label)),
         findsOneWidget,
