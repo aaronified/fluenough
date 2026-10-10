@@ -1612,6 +1612,8 @@ def validate(path: Path) -> Report:
     _validate_raw(r, raw, path)
     check_proposals(r, proposals)
     check_checks(r, checks)
+    if checks:
+        check_checks_hashable(r, path)
     return r
 
 
@@ -1983,6 +1985,31 @@ def check_checks(r: Report, found: list[Checked]) -> None:
                            f"{', '.join(repr(b) for b in bad)}")
         elif len(set(c.codes)) != len(c.codes):
             r.error(where, "names a rater code twice")
+
+
+def check_checks_hashable(r: Report, path: Path) -> None:
+    """Each `checked_by` in [path] is written where tools/deck_index.py
+    can take it out of `content_sha256`: a line of its own on a block card,
+    or last before the closing brace of a card written on one line in flow
+    style, as the bot writes it. Anywhere else, a sign-off would offer
+    every learner an update (#449)."""
+    import deck_index
+    try:
+        rest = yaml.load(deck_index.content_bytes(path.read_bytes())
+                         .decode("utf-8"), Loader=DeckLoader)
+    except (OSError, UnicodeDecodeError, yaml.YAMLError):
+        r.error("checked_by", "must be written as the bot writes it, a line "
+                              "of its own or last in a card written on one "
+                              "line, ending `checked_by: [...] }`; written "
+                              "across lines in a flow card it cannot be left "
+                              "out of content_sha256")
+        return
+    for c in strip_checks(rest):
+        r.error(f"{c.where}.checked_by",
+                "must be a line of its own, or last in a card written on one "
+                "line, ending `checked_by: [...] }`; anywhere else it cannot "
+                "be left out of content_sha256, and a sign-off would offer "
+                "learners an update")
 
 
 def _is_date(text: str) -> bool:
