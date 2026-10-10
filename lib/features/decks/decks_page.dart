@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import 'broken_deck_tile.dart';
@@ -26,9 +27,11 @@ import 'word_mastery.dart';
 /// search across every course's units; "Where I am" and Add deck.
 ///
 /// Every language the catalog teaches has a chip, those the profile learns
-/// first, so that any course can be looked at and started, as before. A
-/// unit on the path opens its screen; a deck the path leaves out opens its
-/// own, from the path or from "Other decks" under it.
+/// first, so that any course can be looked at and started, as before. While
+/// the language menu at the top shows one language (#461), only its course
+/// shows, with no chips. A unit on the path opens its screen; a deck the
+/// path leaves out opens its own, from the path or from "Other decks" under
+/// it.
 class DecksPage extends StatefulWidget {
   const DecksPage({
     super.key,
@@ -76,9 +79,17 @@ class _DecksPageState extends State<DecksPage> {
 
   /// Every language the catalog teaches: those the profile learns first, in
   /// the order the learner chose them, then the rest in the catalog's
-  /// order.
+  /// order. While the language menu shows one language (#461), that one
+  /// alone.
   List<LanguageInfo> _languages(AppState state) {
     final all = state.languages;
+    final shown = state.shownLanguage;
+    if (shown != null) {
+      return <LanguageInfo>[
+        for (final l in all)
+          if (l.code == shown) l,
+      ];
+    }
     final profile = state.currentProfile;
     final order = <String>[
       ...state.settings.learningLanguages,
@@ -194,6 +205,7 @@ class _DecksPageState extends State<DecksPage> {
                       ),
                     ),
                   ),
+                  const LanguageMenu(),
                   IconButton(
                     tooltip: _searching
                         ? l10n.decksSearchClose
@@ -235,7 +247,8 @@ class _DecksPageState extends State<DecksPage> {
               ),
               const SizedBox(height: 12),
             ],
-            if (ready) ...<Widget>[
+            // One language shown, the menu names it: no chips to choose.
+            if (ready && state.shownLanguage == null) ...<Widget>[
               ListenableBuilder(
                 listenable: state.progress,
                 builder: (context, _) => CourseChips(

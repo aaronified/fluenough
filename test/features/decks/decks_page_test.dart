@@ -3,7 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/language_choice.dart';
 import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/course_chips.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -370,7 +372,12 @@ void main() {
     usePhone(tester);
     await pumpDecks(
       tester,
-      state: AppState.test(profiles: const [GalleryFixtures.mira]),
+      // Under All languages: Mira learns one language, which the language
+      // menu shows by default, and then search finds only its units (#461).
+      state: AppState.test(
+        profiles: const [GalleryFixtures.mira],
+        settings: SettingsNotifier(languageChoice: LanguageChoice.all),
+      ),
       page: const DecksPage(initialQuery: 'family'),
     );
     final l10n = l10nOf(tester);
