@@ -38,13 +38,14 @@ class IndexFile {
     required this.path,
     required this.size,
     required this.sha256,
+    String? contentSha256,
     this.schema = 1,
     this.kind = 'vocab',
     this.native,
     this.deck,
     this.core = false,
     this.proposed = 0,
-  });
+  }) : contentSha256 = contentSha256 ?? sha256;
 
   /// Where it is in the repository, which is also its path on the phone
   /// and in the catalog: `decks/hi/hi-en-family.yaml`.
@@ -56,6 +57,12 @@ class IndexFile {
   /// Its SHA-256, 64 lower-case hex digits. A download that does not match
   /// it is thrown away.
   final String sha256;
+
+  /// The SHA-256 of the file with its proposals taken out (ADR-0038,
+  /// #444): what a learner sees of it. A learner is offered an update only
+  /// when this changes; a reviewer when [sha256] does. Where the index or
+  /// the phone does not know it, it is [sha256].
+  final String contentSha256;
 
   final int schema;
 
@@ -103,12 +110,17 @@ class IndexFile {
     if (sha is! String || !_hex64.hasMatch(sha)) {
       throw FormatException('$path has a bad sha256');
     }
+    final content = json['content_sha256'];
+    if (content != null && (content is! String || !_hex64.hasMatch(content))) {
+      throw FormatException('$path has a bad content_sha256');
+    }
     final native = json['native'];
     final deck = json['deck'];
     return IndexFile(
       path: path,
       size: size,
       sha256: sha,
+      contentSha256: content as String?,
       schema: schema is int ? schema : 1,
       kind: kind is String ? kind : 'vocab',
       native: native is String ? native : null,
@@ -122,6 +134,7 @@ class IndexFile {
     'path': path,
     'size': size,
     'sha256': sha256,
+    'content_sha256': contentSha256,
     'schema': schema,
     'kind': kind,
     'native': ?native,
@@ -446,6 +459,7 @@ class LanguageChanges {
   const LanguageChanges({
     required this.language,
     this.fetch = const <IndexFile>[],
+    this.quiet = const <IndexFile>[],
     this.remove = const <String>[],
   });
 
@@ -453,6 +467,11 @@ class LanguageChanges {
 
   /// Files new to the phone, or changed since they were downloaded.
   final List<IndexFile> fetch;
+
+  /// Those of [fetch] whose only change is in reviewers' proposals, which
+  /// learners never see (ADR-0038, #444): they come along with a change
+  /// that is real, and are never one by themselves for a learner.
+  final List<IndexFile> quiet;
 
   /// Files on the phone that a file in [fetch] replaces under another name:
   /// a deck split into a core and its layer, a path renamed. A file GitHub
@@ -469,22 +488,43 @@ class LanguageChanges {
 /// phone (their path, and what the index said of each when it was
 /// downloaded), up to [wanted], the files the learner should have.
 ///
-/// A file whose hash differs is fetched; so is one not on the phone. A file
-/// on the phone that [wanted] does not list stays, unless a wanted file
-/// takes its role ([IndexFile.role]) under another path.
+/// A file not on the phone is fetched. So is one whose content hash
+/// ([IndexFile.contentSha256]) differs: a change a learner sees. A file
+/// whose only change is in reviewers' proposals, its [IndexFile.sha256]
+/// differing and its content hash not, is [LanguageChanges.quiet]: for a
+/// [reviewer], who sees proposals, it is a change like any other; for a
+/// learner it comes along with a real change, and with none there is
+/// nothing to fetch (#444). A file on the phone that [wanted] does not list
+/// stays, unless a wanted file takes its role ([IndexFile.role]) under
+/// another path.
 LanguageChanges changesFor(
   String language,
   List<IndexFile> wanted,
-  Map<String, IndexFile> onPhone,
-) {
+  Map<String, IndexFile> onPhone, {
+  bool reviewer = false,
+}) {
   final roles = <String>{for (final file in wanted) file.role};
   final paths = <String>{for (final file in wanted) file.path};
+  final fetch = <IndexFile>[];
+  final quiet = <IndexFile>[];
+  var real = false;
+  for (final file in wanted) {
+    final phone = onPhone[file.path];
+    if (phone != null && phone.sha256 == file.sha256) continue;
+    fetch.add(file);
+    if (phone != null && phone.contentSha256 == file.contentSha256) {
+      quiet.add(file);
+    } else {
+      real = true;
+    }
+  }
+  if (!real && !reviewer) {
+    return LanguageChanges(language: language);
+  }
   return LanguageChanges(
     language: language,
-    fetch: <IndexFile>[
-      for (final file in wanted)
-        if (onPhone[file.path]?.sha256 != file.sha256) file,
-    ],
+    fetch: fetch,
+    quiet: quiet,
     remove: <String>[
       for (final MapEntry(key: path, value: file) in onPhone.entries)
         if (file.language == language &&

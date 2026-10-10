@@ -207,4 +207,22 @@ void main() {
     expect(state.reviewing.reviewerCount(words), 2);
     expect(state.reviewing.helpedBuild(state.deckById(rudeDeck)!), isFalse);
   });
+
+  test('a deck whose cards list the reviewer\'s code in checked_by is one '
+      'they helped build; each code counts once', () async {
+    final state = await reviewState(
+      checkedBy: const <String>[reviewerCode, otherCode],
+      authors: const <String>[otherCode],
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningChosen: true,
+      )..raterCode = reviewerCode,
+    );
+    addTearDown(state.dispose);
+    final words = state.deckById(wordsDeck)!;
+    expect(words.deck.checkedBy[plainCard], <String>[reviewerCode, otherCode]);
+    expect(state.reviewing.helpedBuild(words), isTrue);
+    expect(state.reviewing.reviewerCount(words), 2);
+    expect(state.reviewing.helpedBuild(state.deckById(rudeDeck)!), isFalse);
+  });
 }

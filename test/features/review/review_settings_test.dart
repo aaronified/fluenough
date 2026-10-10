@@ -48,10 +48,12 @@ void main() {
     await tester.pumpAndSettle();
     final code = state.reviewing.code!;
     expect(find.byType(HowReviewingWorks), findsOneWidget);
-    expect(find.text(l10n.reviewHowSendBody), findsOneWidget);
-    await tester.tap(find.text(l10n.reviewHowGotIt));
+    expect(find.text(l10n.reviewGuideWhatTitle), findsOneWidget);
+    // Skippable: Skip closes it from the first step.
+    await tester.tap(find.text(l10n.onboardingSkip));
     await tester.pumpAndSettle();
     expect(find.byType(HowReviewingWorks), findsNothing);
+    expect(state.settings.reviewIntroShown, isTrue);
     expect(find.text(l10n.reviewSettingsCode), findsOneWidget);
     expect(find.text('$code'), findsOneWidget);
 
@@ -107,7 +109,34 @@ void main() {
     await tester.tap(find.text(l10n.reviewSettingsHow));
     await tester.pumpAndSettle();
     expect(find.byType(HowReviewingWorks), findsOneWidget);
-    expect(find.text(l10n.reviewHowAdult), findsOneWidget);
+    expect(find.text(l10n.reviewGuideWhatTitle), findsOneWidget);
+  });
+
+  testWidgets('after the walkthrough was skipped, How reviewing works opens '
+      'it again, from the first step, with reviewing on', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpScreen(
+      tester,
+      const SettingsPage(),
+      state: await reviewState(),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text(l10n.reviewSettingsSwitch));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewTurnOn));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.onboardingNext));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reviewGuideCodeTitle), findsOneWidget);
+    await tester.tap(find.text(l10n.onboardingSkip));
+    await tester.pumpAndSettle();
+    expect(state.reviewing.on, isTrue);
+
+    await tester.tap(find.text(l10n.reviewSettingsHow));
+    await tester.pumpAndSettle();
+    expect(find.byType(HowReviewingWorks), findsOneWidget);
+    expect(find.text(l10n.reviewGuideWhatTitle), findsOneWidget);
+    expect(find.text(l10n.reviewGuideCodeTitle), findsNothing);
   });
 
   testWidgets('Reviews to send says how many decks wait, and opens the send '

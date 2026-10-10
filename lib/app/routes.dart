@@ -14,6 +14,7 @@ import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
 import '../features/profiles/spoken_languages_page.dart';
 import '../features/report/report_page.dart';
+import '../features/review/offensive_review_page.dart';
 import '../features/review/review_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
@@ -102,6 +103,11 @@ abstract final class AppRoutes {
   /// What waits for review in the reviewer's languages.
   static const String waitingForReview = '/waiting-for-review';
 
+  /// A language's offensive words, reviewed apart and only on purpose
+  /// (docs/plans/deck-browser.md). Argument: the language's code, a
+  /// [String].
+  static const String offensiveReview = '/offensive-review';
+
   /// The page for [settings], or null for an unknown name or a wrong
   /// argument, which Flutter reports.
   static Route<void>? onGenerateRoute(RouteSettings settings) {
@@ -130,6 +136,9 @@ abstract final class AppRoutes {
       inspect when args is String => InspectPage(deckId: args),
       review when args is String => ReviewPage(deckId: args),
       waitingForReview => const WaitingForReviewPage(),
+      offensiveReview when args is String => OffensiveReviewPage(
+        language: args,
+      ),
       _ => null,
     };
     if (page == null) return null;
@@ -162,6 +171,15 @@ abstract final class AppNavigator {
   /// What waits for review in the reviewer's languages.
   static Future<void> openWaitingForReview(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.waitingForReview);
+
+  /// [language]'s Offensive words review, which explains why the words
+  /// are there and asks the reviewer's age before showing any.
+  static Future<void> openOffensiveReview(
+    BuildContext context,
+    String language,
+  ) =>
+      Navigator.of(context)
+          .pushNamed(AppRoutes.offensiveReview, arguments: language);
 
   static Future<void> openImport(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.import);

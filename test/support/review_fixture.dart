@@ -43,13 +43,17 @@ const String teluguRegions = '''
 /// the words' unit has a second deck, still unchecked. The path lists
 /// [regions], `- id: …` lines, none when empty; the rude word has
 /// [rudeNotes], a deck's `notes:` list, if given, and the plain word
-/// [proposed], a card's `proposed:` list (ADR-0038), if given.
+/// [proposed], a card's `proposed:` list (ADR-0038), if given,
+/// [bases], a card's `bases:` list (#410), if given, and the rater codes
+/// [checkedBy] in its `checked_by` (#449).
 Map<String, String> reviewCourse({
   List<String> authors = const <String>[],
   bool more = false,
   String regions = teluguRegions,
   String? rudeNotes,
   String? proposed,
+  String? bases,
+  List<String> checkedBy = const <String>[],
 }) {
   const header = '''
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
@@ -69,7 +73,7 @@ tags: [unreviewed]
 $credited
 cards:
   - { id: $alikeCard, target: "విధవ", native: "widow", reading: "vidhava", ipa: "ʋid̪ʱaʋa", pos: "noun", pair: $rudeCard }
-  - { id: $plainCard, target: "అమ్మ", native: "mother", reading: "amma", notes: "Also అమ్మా (ammā) when calling her."${proposed == null ? '' : ', proposed: $proposed'} }
+  - { id: $plainCard, target: "అమ్మ", native: "mother", reading: "amma", notes: "Also అమ్మా (ammā) when calling her."${proposed == null ? '' : ', proposed: $proposed'}${bases == null ? '' : ', bases: $bases'}${checkedBy.isEmpty ? '' : ', checked_by: [${checkedBy.map((c) => '"$c"').join(', ')}]'} }
 ''',
     'decks/te/$rudeDeck.yaml':
         '''
@@ -115,6 +119,8 @@ Future<AppState> reviewState({
   String regions = teluguRegions,
   String? rudeNotes,
   String? proposed,
+  String? bases,
+  List<String> checkedBy = const <String>[],
   TtsEngine tts = const NullTtsEngine(),
   MailShare share = const NullMailShare(),
   bool reviewing = false,
@@ -128,6 +134,8 @@ Future<AppState> reviewState({
         regions: regions,
         rudeNotes: rudeNotes,
         proposed: proposed,
+        bases: bases,
+        checkedBy: checkedBy,
       ),
     ),
     tts: tts,

@@ -185,7 +185,13 @@ class AppState extends ChangeNotifier {
     }
     shellTab.addListener(_logTab);
     deckDownloads?.onFilesChanged = _filesDownloaded;
+    this.settings.addListener(_reviewerToDownloads);
+    _reviewerToDownloads();
   }
+
+  /// A reviewer is offered a deck update when only proposals changed, as
+  /// they see them; a learner is not (#444).
+  void _reviewerToDownloads() => deckDownloads?.reviewer = settings.reviewDecks;
 
   void _logTab() => log.event('Opened tab ${shellTab.value.name}');
 
@@ -1863,7 +1869,9 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
-    settings.removeListener(_forgetPending);
+    settings
+      ..removeListener(_forgetPending)
+      ..removeListener(_reviewerToDownloads);
     progress.removeListener(_forgetPending);
     shellTab
       ..removeListener(_logTab)

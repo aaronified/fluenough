@@ -3,7 +3,9 @@
 It began on 2026-10-06 as a deck browser on GitHub Pages with a Google Form
 and a Sheet. On 2026-10-09 the owner moved the review into the app, sent by
 mail, and dropped the Sheet. **What stands is "Review in the app, by mail"
-below** (tracker #403; the app side merged in #436, the mail sender check in #439, and proposals in #444). The sections
+below** (tracker #403; built: the app side in #436, the mail sender check in #439, proposals in #441 and #444,
+checked-by per card in #449 and #454, offensive words reviewed apart in #428 and #451, and the reviewer
+onboarding in #409 and #453; left: the Pages site, #404 and #405). The sections
 about the Pages site, the form and the Sheet are kept for what they decided,
 and each says where it is superseded.
 
@@ -12,7 +14,7 @@ Settings and the phone makes their rater code; they review on the screens
 that already show decks and cards; one mail carries a review file per deck,
 with the code and the languages, to the Fluenough address; the hourly mail
 job opens one issue per mail with only the code and languages; the owner
-reads the mail and the decks are updated with him. No Form, no Sheet.
+reads the mail and the decks are updated with him (since #441, by the review bot). No Form, no Sheet.
 Whether a public deck browser on Pages survives at all is for the owner to
 decide (#404, #405). **Since 2026-10-09 (#441, ADR-0038)** the decks are no
 longer updated by hand from the mail: a review's suggestions become
@@ -225,8 +227,8 @@ Settled with the owner, 2026-10-09:
   tickets. so i know that a reviewer has sent something and then consult
   the mail." One issue per review mail received: the rater code, the
   language and decks reviewed, counts at most; no suggestion text.
-- **Reviewers change the decks, with no wait** (**built**, 2026-10-09, on
-  `feat/review-proposals`: ADR-0038, the `proposed` format, reviewer mode's
+- **Reviewers change the decks, with no wait** (**built**, 2026-10-09, in #444,
+  closes #441: ADR-0038, the `proposed` format, reviewer mode's
   Accept, Edit and Reject, the bot in `tools/review_bot.py`, and the owner's
   guide, `docs/review-bot-setup.md`; it waits for the App's secrets) (owner, 2026-10-09:
   "Make it totally automated then. The first review auto merges the PR
@@ -272,6 +274,63 @@ Settled with the owner, 2026-10-09:
     writes only if the field still holds the text the proposer saw. It
     rebuilds `decks/index.json` with the tool. A proposal whose field has
     changed, or whose card is gone, is closed as outdated, not merged.
+- **The reviewer guide is the onboarding, in the app** (owner,
+  2026-10-10: "This should be part of the reviewer onboarding in the
+  app"). Becoming a reviewer walks through the guide's steps in the app:
+  what reviewing is, the rater code and languages, "To review", checking
+  and signing off, suggesting and answering proposals, offensive words
+  and sound-alikes, sending in one mail, what is public and private, how
+  agreement reaches learners, and the thanks. The same steps stay
+  readable later from "How reviewing works". `docs/REVIEWING.md` holds
+  the same text for anyone sent a link (#409). Built in #453.
+- **Offensive words are reviewed apart, and only on purpose** (owner,
+  2026-10-10: "group offensive words separately for review and only
+  review them when the reviewer intentionally wants to check them. The
+  screen will basically tell them why we have included offensive words of
+  varying degrees (like how some are deeply offensive and unprintable,
+  while the others are mild and some are okay between friends). We want
+  learners to be able to understand abuses and not speak them without
+  understanding. Cultural differences also make some abuses more or less
+  severe across languages. This is the intention"). So:
+  - offensive words never appear in the ordinary review of a deck or
+    unit; they are grouped in their own "Offensive words" review per
+    language, which the reviewer opens deliberately;
+  - before showing any word, that screen says why they are there: from
+    deeply offensive and unprintable, through mild, to fine between
+    friends; learners should understand abuse, not use it unknowingly;
+    and the same word can be far stronger or milder from one language
+    or culture to another;
+  - it asks for the 18+ confirmation, then shows the words with the 1 to
+    9 rating and region (#428). Built in #451.
+  - a word that sounds or looks like an offensive one never names it in
+    the ordinary review, adult content on or off: it shows the warning a
+    learner sees, and its pair waits in the same Offensive words review,
+    after the words, to be confirmed or rejected; it never holds up a
+    unit's sign-off.
+- **Base words show on cards** (owner, 2026-10-10, for v0.4): a card
+  shows its base word and meaning, so reviewers can check the meanings
+  agents wrote in #445 (#410). Built as one line, "Base: जाना (jānā) ·
+  to go", on the unit's card sheet, on a drill card once answered, and on
+  the card in review. Suggest a change offers each base written in full;
+  a base by ref takes its meaning from the card it names, and is reviewed
+  there. The one format change: the review file's `part` may be `"base"`,
+  with a `"word"` beside it naming the base by the word as it stands in the
+  target, which is the key the layer gives the meaning by. A new field, so
+  the file's `version` stays 1; the review bot does not write bases yet,
+  and leaves these for the owner.
+- **No reviewers in child profiles** (owner, 2026-10-10: "a child cannot
+  become a reviewer"): a child profile never offers reviewing
+  (`profiles.md`).
+- **Each card records who checked it** (owner, 2026-10-10, for v0.4).
+  A card gains `checked_by: ["FL-…"]`, the rater codes that signed it
+  off. The review bot writes it when a sign-off arrives, as it applies
+  proposals, with no wait. The app shows "Checked by N speakers" on the
+  card, and a deck turns `reviewed` (and loses `unreviewed`) by itself
+  once every card in it is checked; a core and its layer still both
+  need it. Like proposals, a `checked_by` change alone doesn't prompt
+  learners for a deck update; it arrives with the next real one.
+  Sign-offs feed the thank-you, which already lists rater codes.
+  Built in #454 (closes #449).
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 

@@ -51,6 +51,46 @@ void main() {
     expect(both.suggestion!.text, 'b');
   });
 
+  test('a base suggestion names its word and reads back', () {
+    const suggestion = Suggestion(
+      part: CardPart.base,
+      word: 'रहता',
+      now: 'to live; to stay',
+      text: 'to live',
+      why: 'Stay is ठहरना (ṭhaharnā).',
+    );
+    final json = suggestion.toJson();
+    expect(json['part'], 'base');
+    expect(json['word'], 'रहता');
+    final back = Suggestion.fromJson(jsonDecode(jsonEncode(json)))!;
+    expect(back.part, CardPart.base);
+    expect(back.word, 'रहता');
+    expect(back.now, 'to live; to stay');
+    expect(back.text, 'to live');
+    // No other part writes a word, and a base without one is not read.
+    expect(
+      const Suggestion(part: CardPart.meaning, now: 'a', text: 'b').toJson(),
+      isNot(contains('word')),
+    );
+    expect(
+      Suggestion.fromJson(<String, Object?>{
+        'part': 'base',
+        'now': 'a',
+        'text': 'b',
+      }),
+      isNull,
+    );
+    expect(
+      Suggestion.fromJson(<String, Object?>{
+        'part': 'meaning',
+        'word': 'x',
+        'now': 'a',
+        'text': 'b',
+      })!.word,
+      isNull,
+    );
+  });
+
   test('a change that leaves nothing removes the card', () {
     final reviews = marked().withCard(
       'te-family',
