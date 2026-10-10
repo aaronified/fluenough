@@ -60,6 +60,21 @@ is separate from the child's own profile PIN.
 - **time:** an optional daily limit, after which Today says "done for
   today".
 
+**Growing up** (owner, 2026-10-10: "the child will grow up one day. So
+the intended way here is for the child to take a download of their
+learning history and then upload that in a new adult account without
+restrictions"). A child profile is never turned into an adult one in
+place. Instead:
+
+- the child's learning history is exported with the review log's export
+  (#20); in a child profile that export is one of the locked actions, so
+  the admin's PIN allows it;
+- it is imported into a new adult profile, which starts with no
+  restrictions;
+- the export carries the learning history only, never the child
+  profile's restrictions, so nothing of the supervision follows the
+  learner into the adult profile.
+
 **Unlocking.** The admin's PIN unlocks the child profile's locked
 settings for the session. A forgotten admin PIN uses the recovery the
 profile PIN has (`pinForgotBody`), which must not be something a child
