@@ -6094,65 +6094,165 @@
   "@reviewTurnOn": {
     "description": "Button of the turn-on dialog that turns reviewing on."
   },
-  "reviewHowCodeTitle": "Your rater code",
-  "@reviewHowCodeTitle": {
-    "description": "Step 1 of How reviewing works."
-  },
-  "reviewHowCodeBody": "Turning on reviewing gives you a code, made on this phone. Nothing is sent when you turn it on.",
-  "@reviewHowCodeBody": {
-    "description": "Step 1 of How reviewing works."
-  },
-  "reviewHowCheckTitle": "Check cards",
-  "@reviewHowCheckTitle": {
-    "description": "Step 2 of How reviewing works."
-  },
-  "reviewHowCheckBody": "Open a unit and tap Review. Mark each card that is right, or tap it to suggest a change and say why.",
-  "@reviewHowCheckBody": {
-    "description": "Step 2 of How reviewing works."
-  },
-  "reviewHowSendTitle": "Send by mail",
-  "@reviewHowSendTitle": {
-    "description": "Step 3 of How reviewing works."
-  },
-  "reviewHowSendBody": "Your reviews stay on this phone until you send them. Review as many decks as you like, then tap Send review: one mail takes them all, a file for each deck. Your mail app opens with Fluenough’s address filled in. Read it, then send it. If the mail does not go, tap Send the last mail again in Settings.",
-  "@reviewHowSendBody": {
-    "description": "Step 3 of How reviewing works."
-  },
-  "reviewHowSameTitle": "Always use the same address",
-  "@reviewHowSameTitle": {
-    "description": "Step 4 of How reviewing works."
-  },
-  "reviewHowSameBody": "Send every review from the same mail address. Your code is public, so the Fluenough team goes by the address too. If you change mail address, say so in the mail.",
-  "@reviewHowSameBody": {
-    "description": "Step 4 of How reviewing works."
-  },
-  "reviewHowPublicTitle": "What is public, and thanks",
-  "@reviewHowPublicTitle": {
-    "description": "Step 5 of How reviewing works."
-  },
-  "reviewHowPublicBody": "Fluenough’s public issue list shows your code and the languages you reviewed, so the team knows a review arrived. What you suggest goes into the decks, which are public, with your code, for other reviewers to agree on. Your mail address stays private. When a deck you checked is updated, it lists your code, and the app says thank you.",
-  "@reviewHowPublicBody": {
-    "description": "Step 5 of How reviewing works."
-  },
-  "reviewHowAdult": "Offensive words are never in a unit's review. Each language has its own Offensive words review, under Waiting for review, which shows them only when you open it and say you are 18 or over. Rate how offensive a word is to native speakers in general, not to you.",
-  "@reviewHowAdult": {
-    "description": "Aside in How reviewing works."
-  },
-  "reviewHowOff": "You can turn reviewing off at any time; your code is kept.",
-  "@reviewHowOff": {
-    "description": "Last line of How reviewing works."
-  },
   "reviewHowGotIt": "Got it",
   "@reviewHowGotIt": {
     "description": "Button that closes How reviewing works."
   },
-  "reviewHowStep": "Step {number}",
-  "@reviewHowStep": {
-    "description": "Read by a screen reader before each step of How reviewing works.",
+  "reviewGuideWhatTitle": "What reviewing is",
+  "@reviewGuideWhatTitle": {
+    "description": "Title of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideWhatBody": "Fluenough teaches from decks of cards: a word, how it is read, what it means, examples. Many decks were written without a native speaker and are marked unreviewed.",
+  "@reviewGuideWhatBody": {
+    "description": "First paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideWhatYou": "You are the check. You tell us which cards are right, which are wrong and what they should say, and how rude a word really sounds to native speakers. A review by a native speaker is the most useful thing anyone can give these decks.",
+  "@reviewGuideWhatYou": {
+    "description": "Second paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCodeTitle": "Your code and languages",
+  "@reviewGuideCodeTitle": {
+    "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCodeBody": "Turning on reviewing makes your rater code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
+  "@reviewGuideCodeBody": {
+    "description": "First paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). FL-XXXX-XXXX-C is the shape of a code, not words: keep it as it is."
+  },
+  "reviewGuideCodeLanguages": "Under Languages you review in Settings, pick your languages. At first these are the languages you speak that the app teaches. You can turn reviewing off whenever you like; your code is kept.",
+  "@reviewGuideCodeLanguages": {
+    "description": "Second paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Languages you review” must match reviewSettingsLanguages."
+  },
+  "reviewGuideToReviewTitle": "What “To review” shows",
+  "@reviewGuideToReviewTitle": {
+    "description": "Title of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “To review” must match pathToReview."
+  },
+  "reviewGuideToReviewBody": "Units on the learning path are marked To review when their deck is not yet signed off by a native speaker, in your languages.",
+  "@reviewGuideToReviewBody": {
+    "description": "First paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “To review” must match pathToReview."
+  },
+  "reviewGuideToReviewWaiting": "Waiting for review in Settings lists, per language, the units and decks still waiting, how many cards are left in each, the offensive words not yet rated, the sound-alike pairs not yet confirmed, and what you have reviewed but not sent.",
+  "@reviewGuideToReviewWaiting": {
+    "description": "Second paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Waiting for review” must match reviewSettingsWaiting."
+  },
+  "reviewGuideCheckTitle": "Check cards, then sign off",
+  "@reviewGuideCheckTitle": {
+    "description": "Title of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCheckBody": "Open a unit and tap Review. Mark each card that is right with Looks right.",
+  "@reviewGuideCheckBody": {
+    "description": "First paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Review” must match unitReview, “Looks right” reviewLooksRight."
+  },
+  "reviewGuideCheckSignOff": "When every card is checked, Sign off becomes available. It says you checked the whole unit.",
+  "@reviewGuideCheckSignOff": {
+    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Sign off” must match reviewSignOffReady."
+  },
+  "reviewGuideSuggestTitle": "Suggest, and answer proposals",
+  "@reviewGuideSuggestTitle": {
+    "description": "Title of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSuggestBody": "If something is wrong, tap the card, choose Suggest a change, pick the part (word, reading, IPA, meaning, notes), write your version and say why. A card keeps one suggestion of yours per part.",
+  "@reviewGuideSuggestBody": {
+    "description": "First paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Suggest a change” must match reviewSuggest."
+  },
+  "reviewGuideSuggestOthers": "Suggestions from other reviewers of your language show on the card. Accept one as written, Edit it into your own proposal, or Reject it. A rejection does not stop a change by itself; it tells the Fluenough team.",
+  "@reviewGuideSuggestOthers": {
+    "description": "Second paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). Accept, Edit and Reject must match reviewProposalAccept, reviewProposalEdit and reviewProposalReject."
+  },
+  "reviewGuideAdultTitle": "Offensive words and sound-alikes",
+  "@reviewGuideAdultTitle": {
+    "description": "Title of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAdultBody": "Offensive words are never in a unit's ordinary review. Each language has its own Offensive words review, under Waiting for review, which you open only if you choose to. It first explains why they are in the app, then asks if you are 18 or over. Rate how offensive a word is to native speakers in general, from 1 to 9, not how it feels to you, and say where you speak the language. Words that sound or look like an offensive one are confirmed or rejected there too.",
+  "@reviewGuideAdultBody": {
+    "description": "First paragraph of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAdultAlike": "For a sound-alike or look-alike pair you confirm, write a short care note, at most 40 letters, that learners will see.",
+  "@reviewGuideAdultAlike": {
+    "description": "Second paragraph of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). It is about checking a word that sounds or looks like a rude one."
+  },
+  "reviewGuideSendTitle": "Send several decks in one mail",
+  "@reviewGuideSendTitle": {
+    "description": "Title of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSendBody": "Reviews stay on your phone until you send them. Tap Send review, leave the decks you want ticked, and your mail app opens with Fluenough’s address and one file per deck ready. Read the mail and send it yourself.",
+  "@reviewGuideSendBody": {
+    "description": "First paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send review” must match reviewSend."
+  },
+  "reviewGuideSendKeep": "Do not change the mail’s subject or the files. They carry your code, language and deck, and the team reads those.",
+  "@reviewGuideSendKeep": {
+    "description": "Second paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSendSame": "Send from the same mail address each time: your first mail ties your code to it, and a mail from another address is flagged for the team to check. If you change address, say so in the mail. If a mail did not go, use Send the last mail again in Settings.",
+  "@reviewGuideSendSame": {
+    "description": "Third paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send the last mail again” must match reviewSettingsSendAgain."
+  },
+  "reviewGuidePublicTitle": "What is public, what is private",
+  "@reviewGuidePublicTitle": {
+    "description": "Title of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuidePublicBody": "Public: your rater code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
+  "@reviewGuidePublicBody": {
+    "description": "First paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuidePublicPrivate": "Private: your mail address. It is never written to the public issues.",
+  "@reviewGuidePublicPrivate": {
+    "description": "Second paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeTitle": "How changes reach learners",
+  "@reviewGuideAgreeTitle": {
+    "description": "Title of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeBody": "Your suggestions go into the decks as proposed changes soon after your mail arrives, for other reviewers of the language to see. Learners never see a proposal.",
+  "@reviewGuideAgreeBody": {
+    "description": "First paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeCount": "{count, plural, =1{When one other reviewer accepts a change exactly as written, it goes to learners} other{When {count} other reviewers accept a change exactly as written, it goes to learners}}, usually within an hour or two, after the automatic checks pass. The Fluenough team sets this number, and may raise it later.",
+  "@reviewGuideAgreeCount": {
+    "description": "Second paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). count is how many reviewers other than the proposer must accept a change.",
     "placeholders": {
-      "number": {
+      "count": {
         "type": "int",
         "example": "1"
+      }
+    }
+  },
+  "reviewGuideAgreeMore": "If several proposals concern the same part of a card, the first to be agreed wins and the others are closed. The team can undo any change. Until the team has set up the review bot, your reviews are filed for the team to read.",
+  "@reviewGuideAgreeMore": {
+    "description": "Third paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideThanksTitle": "Thank you",
+  "@reviewGuideThanksTitle": {
+    "description": "Title of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideThanksBody": "When a deck you checked is updated, it lists your code, and its unit says it was checked by your code and how many others. Settings lists Decks you helped build.",
+  "@reviewGuideThanksBody": {
+    "description": "First paragraph of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Decks you helped build” must match reviewSettingsHelped."
+  },
+  "reviewGuideThanksHelp": "Questions? Write to {address}, from the address you review with.",
+  "@reviewGuideThanksHelp": {
+    "description": "Second paragraph of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same).",
+    "placeholders": {
+      "address": {
+        "type": "String",
+        "example": "fluenough@gmail.com"
+      }
+    }
+  },
+  "reviewGuidePosition": "Step {current} of {total}: {title}",
+  "@reviewGuidePosition": {
+    "description": "Read by a screen reader for the progress dots of How reviewing works, whenever the step changes.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      },
+      "title": {
+        "type": "String",
+        "example": "Your code and languages"
       }
     }
   },
@@ -6751,14 +6851,6 @@
         "example": "1"
       }
     }
-  },
-  "reviewHowProposalsTitle": "Agree on changes",
-  "@reviewHowProposalsTitle": {
-    "description": "Step 3 of How reviewing works: proposed changes (ADR-0038)."
-  },
-  "reviewHowProposalsBody": "What reviewers suggest shows on the card for the others who review the language. Accept a change as it is, edit it into your own, or reject it. Once enough reviewers accept a change, learners get it. Learners never see a change before then.",
-  "@reviewHowProposalsBody": {
-    "description": "Step 3 of How reviewing works."
   },
   "reviewSave": "Save",
   "@reviewSave": {
