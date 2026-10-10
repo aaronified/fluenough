@@ -1,0 +1,98 @@
+schema: 1
+id: "mr-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["near: हा (hā), इ- (i-)", "far: तो (to), ति- (ti-)"]
+  entries:
+    - lemma: "this, that (masculine)"
+      key: "masc"
+      forms:
+        "near: हा (hā), इ- (i-)": "हा"
+        "far: तो (to), ति- (ti-)": "तो"
+      readings:
+        "near: हा (hā), इ- (i-)": "hā"
+        "far: तो (to), ति- (ti-)": "to"
+      ipas:
+        "near: हा (hā), इ- (i-)": "ɦa"
+        "far: तो (to), ति- (ti-)": "t̪o"
+    - lemma: "this, that (feminine)"
+      key: "fem"
+      forms:
+        "near: हा (hā), इ- (i-)": "ही"
+        "far: तो (to), ति- (ti-)": "ती"
+      readings:
+        "near: हा (hā), इ- (i-)": "hi"
+        "far: तो (to), ति- (ti-)": "ti"
+      ipas:
+        "near: हा (hā), इ- (i-)": "ɦi"
+        "far: तो (to), ति- (ti-)": "t̪i"
+    - lemma: "this, that (neuter)"
+      key: "neut"
+      forms:
+        "near: हा (hā), इ- (i-)": "हे"
+        "far: तो (to), ति- (ti-)": "ते"
+      readings:
+        "near: हा (hā), इ- (i-)": "he"
+        "far: तो (to), ति- (ti-)": "te"
+      ipas:
+        "near: हा (hā), इ- (i-)": "ɦe"
+        "far: तो (to), ति- (ti-)": "t̪e"
+    - lemma: "these, those (feminine)"
+      key: "fem-pl"
+      forms:
+        "near: हा (hā), इ- (i-)": ["या", "ह्या"]
+        "far: तो (to), ति- (ti-)": "त्या"
+      readings:
+        "near: हा (hā), इ- (i-)": ["yā", "hyā"]
+        "far: तो (to), ति- (ti-)": "tyā"
+      ipas:
+        "near: हा (hā), इ- (i-)": "ja"
+        "far: तो (to), ति- (ti-)": "t̪ja"
+    - lemma: "here, there"
+      key: "place"
+      forms:
+        "near: हा (hā), इ- (i-)": ["इथे", "येथे"]
+        "far: तो (to), ति- (ti-)": ["तिथे", "तेथे"]
+      readings:
+        "near: हा (hā), इ- (i-)": ["ithe", "yethe"]
+        "far: तो (to), ति- (ti-)": ["tithe", "tethe"]
+      ipas:
+        "near: हा (hā), इ- (i-)": "it̪ʰe"
+        "far: तो (to), ति- (ti-)": "t̪it̪ʰe"
+    - lemma: "this way, that way"
+      key: "way"
+      forms:
+        "near: हा (hā), इ- (i-)": "इकडे"
+        "far: तो (to), ति- (ti-)": "तिकडे"
+      readings:
+        "near: हा (hā), इ- (i-)": "ikḍe"
+        "far: तो (to), ति- (ti-)": "tikḍe"
+      ipas:
+        "near: हा (hā), इ- (i-)": "ikɖe"
+        "far: तो (to), ति- (ti-)": "t̪ikɖe"
+    - lemma: "like this, like that"
+      key: "manner"
+      forms:
+        "near: हा (hā), इ- (i-)": ["असे", "असं"]
+        "far: तो (to), ति- (ti-)": ["तसे", "तसं"]
+      readings:
+        "near: हा (hā), इ- (i-)": ["ase", "asam̐"]
+        "far: तो (to), ति- (ti-)": ["tase", "tasam̐"]
+      ipas:
+        "near: हा (hā), इ- (i-)": "əse"
+        "far: तो (to), ति- (ti-)": "t̪əse"
+    - lemma: "this much, that much"
+      key: "amount"
+      forms:
+        "near: हा (hā), इ- (i-)": ["इतके", "इतका", "इतकी"]
+        "far: तो (to), ति- (ti-)": ["तितके", "तितका", "तितकी"]
+      readings:
+        "near: हा (hā), इ- (i-)": ["itke", "itkā", "itki"]
+        "far: तो (to), ति- (ti-)": ["titke", "titkā", "titki"]
+      ipas:
+        "near: हा (hā), इ- (i-)": "it̪ke"
+        "far: तो (to), ति- (ti-)": "t̪it̪ke"

@@ -1,0 +1,18 @@
+schema: 1
+id: "hi-en-grammar-past-more"
+kind: "layer"
+core: "hi-grammar-past-more"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Was doing, used to, had gone"
+license: "CC0-1.0"
+description: "Three more pasts: what was going on, what used to happen, and what had already happened. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Past continuous, habitual past and past perfect"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "karnaa-rahaa": "to do"
+    "karnaa-taa": "to do"
+    "jaanaa-gayaa": "to go"
+  notes: "Each joins था (thā), थी (thī), थे (thē) or थीं (thīm̐) to a form you know: कर रहा था (kar rahā thā), was doing; करता था (kartā thā), used to do; गया था (gayā thā), had gone. गया था (gayā thā) is also the plain past for something further back: पिछले साल मैं दिल्ली गया था (pichlē sāl maim̐ dillī gayā thā), I went to Delhi last year."

@@ -1,0 +1,25 @@
+schema: 1
+id: "mr-en-grammar-nouns"
+kind: "layer"
+core: "mr-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural and endings"
+license: "CC0-1.0"
+description: "The plural, and the endings for 'in', 'on' and 'to', added to a noun that often changes first. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "ghar": "house (n)"
+    "shaalaa": "school (f)"
+    "kholii": "room (f)"
+    "rastaa": "road (m)"
+    "khisaa": "pocket (m)"
+    "baatlii": "bottle (f)"
+    "pustak": "book (n)"
+    "jhaad": "tree (n)"
+    "gaadii": "car; vehicle (f)"
+    "dabaa": "box; tiffin; train carriage (m)"
+  notes: "Before an ending a noun takes its oblique form, and Marathi writes the ending joined to it. A masculine noun in -आ (-ā) changes it to -्या (-yā): रस्ता (rastā), रस्त्यावर (rastyāvar). A feminine noun in -आ (-ā) changes it to -े (e): शाळा (śāḷā), शाळेत (śāḷet). Most nouns ending in a consonant add -ा (ā): घर (ghar), घरात (gharāt). The plural: a masculine -आ (-ā) becomes -े (e) (रस्ते (raste)); a neuter noun ending in a consonant adds -े (e) (घरे (ghare), in speech घरं (gharam̐)); a feminine -ई (-i) becomes -्या (-yā) (खोल्या (kholyā)); a feminine -आ (-ā) stays (शाळा). -ला (-lā) is 'to', and also marks a person as the object."

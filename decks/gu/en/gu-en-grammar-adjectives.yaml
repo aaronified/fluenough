@@ -1,0 +1,23 @@
+schema: 1
+id: "gu-en-grammar-adjectives"
+kind: "layer"
+core: "gu-grammar-adjectives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adjectives: gender and number"
+license: "CC0-1.0"
+description: "Adjectives in -ઓ (-o) agree with their noun in all three genders; the others never change. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Adjective agreement"
+  slot_name: "agreement"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "saaro": "good"
+    "moto": "big; older"
+    "naano": "small; younger"
+    "navo": "new"
+    "juuno": "old (a thing)"
+    "thando": "cold"
+    "kaalo": "black"
+    "liilo": "green"
+  notes: "An adjective in -ઓ (-o) agrees: સારો છોકરો (sāro chokro), સારી છોકરી (sāri chokri), સારું ઘર (sārum̐ ghar), સારા છોકરા (sārā chokrā), સારાં કેળાં (sārām̐ keḷām̐). Before an ending a masculine or neuter adjective takes -આ (-ā): સારા છોકરાને (sārā chokrāne). Any other adjective stays the same: ગરમ ચા (garam cā), ગરમ દૂધ (garam dudh); સુંદર (sundar), ખરાબ (kharāb), લાલ (lāl). A feminine plural keeps -ઈ (-i): સારી છોકરીઓ (sāri chokrio)."

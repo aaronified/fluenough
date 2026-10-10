@@ -1,0 +1,25 @@
+schema: 1
+id: "gu-en-grammar-irregular"
+kind: "layer"
+core: "gu-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs"
+license: "CC0-1.0"
+description: "The common verbs whose past breaks the pattern, with their future and polite request. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "javun": "to go"
+    "karvun": "to do"
+    "levun": "to take"
+    "devun": "to give"
+    "khaavun": "to eat"
+    "piivun": "to drink"
+    "besvun": "to sit"
+    "kahevun": "to say; to tell"
+    "thavun": "to become; to happen"
+    "suuvun": "to sleep; to lie down"
+  notes: "A regular verb makes its past with -યું (-yum̐) on the stem: બોલવું (bolvum̐), બોલ્યું (bolyum̐); આવવું (āvvum̐), આવ્યું (āvyum̐). These, among the most used verbs, don't: જવું (javum̐) gives ગયું (gayum̐), લેવું લીધું (levum̐ lidhum̐), ખાવું ખાધું (khāvum̐ khādhum̐). Their future and request are regular. The past here is neuter; it agrees as usual: ગયો (gayo), ગઈ (gai), ગયું (gayum̐)."

@@ -1,0 +1,84 @@
+schema: 1
+id: "mr-questions"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-0170"
+    target: "काय?"
+    reading: "kāy?"
+    ipa: "kaj"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0171"
+    target: "कोण?"
+    reading: "koṇ?"
+    ipa: "koɳ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0172"
+    target: "कुठे?"
+    reading: "kuṭhe?"
+    ipa: "kuʈʰe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0173"
+    target: "कधी?"
+    reading: "kadhi?"
+    ipa: "kəd̪ʱi"
+    pos: "other"
+  - id: "mr-0174"
+    target: "का?"
+    reading: "kā?"
+    ipa: "ka"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0175"
+    target: "कसे?"
+    reading: "kase?"
+    ipa: "kəse"
+    alt_target: ["कसा?", "कशी?"]
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0176"
+    target: "किती?"
+    reading: "kiti?"
+    ipa: "kit̪i"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0177"
+    target: "कोणता?"
+    reading: "koṇtā?"
+    ipa: "koɳt̪a"
+    alt_target: ["कोणती?", "कोणते?"]
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0178"
+    target: "हे काय आहे?"
+    reading: "he kāy āhe?"
+    ipa: "ɦe kaj aɦe"
+    pos: "phrase"
+    bases:
+      - { word: "हे", base: "हे", reading: "he" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
+  - id: "mr-0179"
+    target: "तुम्हाला माहीत आहे का?"
+    reading: "tumhālā māhit āhe kā?"
+    ipa: "t̪umɦala maɦit̪ aɦe ka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुम्हाला", ref: "mr-0145" }
+      - { word: "माहीत", base: "माहीत", reading: "māhit" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }

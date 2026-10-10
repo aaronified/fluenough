@@ -1,0 +1,116 @@
+schema: 1
+id: "as-grammar-postpositions"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - ref: "as-2003"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-2004"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2072"
+    target: "গুৱাহাটীৰ পৰা"
+    reading: "guwāhātir pôrā"
+    ipa: "ɡuwahatiɹ pɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "গুৱাহাটীৰ", base: "গুৱাহাটী", reading: "guwāhāti" }
+      - { word: "পৰা", base: "পৰা", reading: "pôrā" }
+  - id: "as-2073"
+    target: "ৰামক দিয়ক।"
+    reading: "rāmôk diyôk."
+    ipa: "ɹamɔk dijɔk"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ৰামক", base: "ৰাম", reading: "rām" }
+  - id: "as-2074"
+    target: "মোৰ লগত"
+    reading: "mur lôgôt"
+    ipa: "mʊɹ lɔɡɔt"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "লগত", base: "লগ", reading: "lôg" }
+  - id: "as-2075"
+    target: "কলমেৰে"
+    reading: "kôlômere"
+    ipa: "kɔlɔmeɹe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2076"
+    target: "মেজৰ ওপৰত"
+    reading: "mezôr upôrôt"
+    ipa: "mezɔɹ ʊpɔɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "মেজৰ", ref: "as-0340" }
+      - { word: "ওপৰত", base: "ওপৰ", reading: "upôr" }
+  - id: "as-2077"
+    target: "মেজৰ তলত"
+    reading: "mezôr tôlôt"
+    ipa: "mezɔɹ tɔlɔt"
+    pos: "phrase"
+    bases:
+      - { word: "মেজৰ", ref: "as-0340" }
+      - { word: "তলত", base: "তল", reading: "tôl" }
+  - id: "as-2078"
+    target: "নদীৰ ওচৰত"
+    reading: "nodir usôrôt"
+    ipa: "nodiɹ ʊsɔɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "নদীৰ", base: "নদী", reading: "nodi" }
+  - id: "as-2079"
+    target: "তোমাৰ বাবে"
+    reading: "tumār bābe"
+    ipa: "tʊmaɹ babe"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", base: "তুমি", reading: "tumi" }
+      - { word: "বাবে", base: "বাবে", reading: "bābe" }
+  - id: "as-2080"
+    target: "ভাত খোৱাৰ পাছত"
+    reading: "bhāt khuwār pāsôt"
+    ipa: "bʱat kʰʊwaɹ pasɔt"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খোৱাৰ", ref: "as-0109" }
+      - { word: "পাছত", ref: "as-0124" }
+  - id: "as-2081"
+    target: "ভাত খোৱাৰ আগতে"
+    reading: "bhāt khuwār āgôte"
+    ipa: "bʱat kʰʊwaɹ aɡɔte"
+    pos: "phrase"
+    bases:
+      - { word: "খোৱাৰ", ref: "as-0109" }
+      - { word: "আগতে", ref: "as-0319" }
+  - id: "as-2082"
+    target: "ঘৰৰ ভিতৰত"
+    reading: "ghôrôr bhitôrôt"
+    ipa: "ɡʱɔɹɔɹ bʱitɔɹɔt"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ঘৰৰ", ref: "as-0052" }
+      - { word: "ভিতৰত", base: "ভিতৰ", reading: "bhitôr" }
+  - id: "as-2083"
+    target: "সন্ধিয়ালৈকে"
+    reading: "xondhiyālôike"
+    ipa: "xondʱijalɔike"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }

@@ -1,0 +1,106 @@
+schema: 1
+id: "hi-transport"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "transport"
+tags: ["beginner"]
+cards:
+  - id: "hi-0262"
+    target: "बस"
+    picture: "🚌"
+    reading: "bas"
+    ipa: "bəs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0263"
+    target: "ऑटो"
+    picture: "🛺"
+    reading: "ôṭō"
+    ipa: "ɔʈoː"
+    alt_target: ["आटो"]
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0264"
+    target: "टैक्सी"
+    picture: "🚕"
+    reading: "ṭaiksī"
+    ipa: "ʈɛːksiː"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0265"
+    target: "किराया"
+    reading: "kirāyā"
+    ipa: "kɪraːjaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0266"
+    target: "मीटर से चलिए।"
+    reading: "mīṭar sē caliē."
+    ipa: "miːʈər seː tʃəlɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मीटर", base: "मीटर", reading: "mīṭar" }
+  - id: "hi-0267"
+    target: "स्टेशन जाना है।"
+    reading: "sṭēśan jānā hai."
+    ipa: "sʈeːʃən dʒaːnaː ɦɛː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "जाना", base: "जाना", reading: "jānā" }
+  - id: "hi-0268"
+    target: "कितनी देर लगेगी?"
+    reading: "kitnī dēr lagēgī?"
+    ipa: "kɪt̪niː d̪eːr ləɡeːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "कितनी", ref: "hi-0163" }
+      - { word: "देर", base: "देर", reading: "dēr" }
+      - { word: "लगेगी", base: "लगना", reading: "lagnā" }
+  - id: "hi-0269"
+    target: "यहाँ रोकिए।"
+    reading: "yahām̐ rōkiē."
+    ipa: "jəɦãː roːkɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "रोकिए", base: "रोकना", reading: "rōknā" }
+  - id: "hi-0270"
+    target: "स्टेशन"
+    picture: "🚉"
+    reading: "sṭēśan"
+    ipa: "sʈeːʃən"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0271"
+    target: "टिकट"
+    picture: "🎫"
+    reading: "ṭikaṭ"
+    ipa: "ʈɪkəʈ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0272"
+    target: "सीट"
+    picture: "💺"
+    reading: "sīṭ"
+    ipa: "siːʈ"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0273"
+    target: "चलिए"
+    reading: "caliē"
+    ipa: "tʃəlɪeː"
+    pos: "verb"
+    tags: ["polite"]

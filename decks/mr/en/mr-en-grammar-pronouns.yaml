@@ -1,0 +1,23 @@
+schema: 1
+id: "mr-en-grammar-pronouns"
+kind: "layer"
+core: "mr-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and possessives"
+license: "CC0-1.0"
+description: "I, you, he and she, with my and your, to me, and with me, which is how Marathi says 'I have'. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "mii": "I"
+    "tuu": "you, familiar"
+    "tumhii": "you, respectful or plural"
+    "aapan": "we, you and I"
+    "aamhii": "we, not you"
+    "to": "he"
+    "tii": "she"
+    "te": "they"
+  notes: "My, your and his agree with what is owned, not with the owner: माझा भाऊ (my brother), माझी बहीण (my sister), माझे घर (my house, neuter). Before a neuter noun or a masculine plural they end in -े (e), माझे (mājhe); before a feminine plural, -्या (-yā), माझ्या (mājhyā). -ला (-lā) is 'to' and also marks a person as the object: मी तुला ओळखतो (mi tulā oḷkhto), I know you. -कडे (-kaḍe) is 'with, at': माझ्याकडे पेन आहे (mājhyākḍe pen āhe), I have a pen. Marathi has two 'we': आपण (āpaṇ) includes the listener, आम्ही (āmhi) leaves them out. ते (te) is 'they', and also a respectful 'he'."

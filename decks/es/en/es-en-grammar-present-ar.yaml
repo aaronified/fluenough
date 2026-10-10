@@ -1,0 +1,19 @@
+schema: 1
+id: "es-en-grammar-present-ar"
+kind: "layer"
+core: "es-grammar-present-ar"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Spanish present tense, regular -ar verbs"
+license: "CC0-1.0"
+description: "The single most productive pattern in Spanish. Roughly three quarters of Spanish verbs are regular -ar verbs, so these six endings unlock most of them at once."
+pattern:
+  name: "Present tense, regular -ar verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "hablar": "to speak"
+    "trabajar": "to work"
+    "estudiar": "to study"
+    "comprar": "to buy"
+    "caminar": "to walk"
+  notes: "Drop -ar from the infinitive and add -o, -as, -a, -amos, -áis, -an. The vosotros form is used in Spain; Latin American Spanish uses ustedes with the ellos form."

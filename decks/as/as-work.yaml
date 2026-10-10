@@ -1,0 +1,175 @@
+schema: 1
+id: "as-work"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-0199"
+    target: "চাকৰি"
+    reading: "sākori"
+    ipa: "sakoɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-0120"
+  - id: "as-0200"
+    target: "অফিচ"
+    picture: "🏢"
+    reading: "ôphis"
+    ipa: "ɔpʰis"
+    alt_target: ["কাৰ্যালয়"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0201"
+    target: "শিক্ষক"
+    picture: "🧑‍🏫"
+    reading: "xikkhôk"
+    ipa: "xikkʰɔk"
+    alt_target: ["টিচাৰ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0202"
+    target: "দোকানী"
+    reading: "dukāni"
+    ipa: "dʊkani"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0203"
+    target: "ড্ৰাইভাৰ"
+    reading: "drāibhār"
+    ipa: "dɹaibʱaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0204"
+    target: "ইঞ্জিনিয়াৰ"
+    reading: "inziniyār"
+    ipa: "inzinijaɹ"
+    pos: "noun"
+  - id: "as-0205"
+    target: "উকীল"
+    reading: "ukil"
+    ipa: "ukil"
+    pos: "noun"
+  - id: "as-0206"
+    target: "নাৰ্চ"
+    reading: "nārs"
+    ipa: "naɹs"
+    pos: "noun"
+  - id: "as-0207"
+    target: "খেতিয়ক"
+    picture: "🧑‍🌾"
+    reading: "khetiyôk"
+    ipa: "kʰetijɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0208"
+    target: "ৰান্ধনী"
+    picture: "🧑‍🍳"
+    reading: "rāndhoni"
+    ipa: "ɹandʱoni"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0209"
+    target: "লেখক"
+    reading: "lekhôk"
+    ipa: "lekʰɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0210"
+    target: "সাংবাদিক"
+    reading: "xāṅbādik"
+    ipa: "xaŋbadik"
+    pos: "noun"
+  - id: "as-0211"
+    target: "ডাক্তৰ"
+    picture: "🧑‍⚕"
+    reading: "dāktôr"
+    ipa: "daktɔɹ"
+    pos: "noun"
+  - id: "as-0212"
+    target: "পুলিচ"
+    picture: "👮"
+    reading: "pulis"
+    ipa: "pulis"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0213"
+    target: "ছাত্ৰ"
+    picture: "🧑‍🎓"
+    reading: "sātrô"
+    ipa: "satɹɔ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0214"
+    target: "ছুটী"
+    reading: "suti"
+    ipa: "suti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0215"
+    target: "দৰমহা"
+    reading: "dôrmôhā"
+    ipa: "dɔɹmɔha"
+    pos: "noun"
+  - id: "as-0216"
+    target: "বেপাৰ"
+    reading: "bepār"
+    ipa: "bepaɹ"
+    pos: "noun"
+  - id: "as-0217"
+    target: "চাহ বাগান"
+    reading: "sāh bāgān"
+    ipa: "sah baɡan"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বাগান", base: "বাগান", reading: "bāgān" }
+  - id: "as-0218"
+    target: "আপুনি কি কাম কৰে?"
+    reading: "āpuni ki kām kôre?"
+    ipa: "apuni ki kam kɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "কৰে", base: "কৰা", reading: "kôrā" }
+  - id: "as-0219"
+    target: "মই শিক্ষক।"
+    reading: "moi xikkhôk."
+    ipa: "moi xikkʰɔk"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+  - id: "as-0220"
+    target: "আপুনি ক'ত কাম কৰে?"
+    reading: "āpuni kot kām kôre?"
+    ipa: "apuni kot kam kɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "কৰে", base: "কৰা", reading: "kôrā" }
+  - id: "as-0221"
+    target: "মই এটা অফিচত কাম কৰোঁ।"
+    reading: "moi etā ôphisôt kām kôrum̐."
+    ipa: "moi eta ɔpʰisɔt kam kɔɹʊ̃"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "এটা", ref: "as-0222" }
+      - { word: "অফিচত", ref: "as-0200" }
+      - { word: "কৰোঁ", base: "কৰা", reading: "kôrā" }

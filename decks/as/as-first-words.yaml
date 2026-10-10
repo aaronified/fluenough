@@ -1,0 +1,38 @@
+schema: 1
+id: "as-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-0127"
+    target: "আপুনি"
+    reading: "āpuni"
+    ipa: "apuni"
+    pos: "other"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0138"
+    target: "আহক, বহক।"
+    reading: "āhôk, bôhôk."
+    ipa: "ahɔk bɔhɔk"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আহক", base: "অহা", reading: "ôhā" }
+      - { word: "বহক", base: "বহা", reading: "bôhā" }
+  - id: "as-0139"
+    target: "কি খবৰ?"
+    reading: "ki khôbôr?"
+    ipa: "ki kʰɔbɔɹ"
+    pos: "phrase"
+    tags: ["greeting"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খবৰ", base: "খবৰ", reading: "khôbôr" }

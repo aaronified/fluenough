@@ -1,0 +1,97 @@
+schema: 1
+id: "mr-grammar-can-must"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["unreviewed", "grammar"]
+cards:
+  - id: "mr-0639"
+    target: "मी जाऊ शकतो."
+    reading: "mi jāu śakto."
+    ipa: "mi dzau ʃəkt̪o"
+    alt_target: ["मी जाऊ शकते."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "जाऊ", base: "जाणे", reading: "jāṇe" }
+      - { word: "शकतो", base: "शकणे", reading: "śakṇe" }
+  - id: "mr-0640"
+    target: "मला पोहता येते."
+    reading: "malā pohtā yete."
+    ipa: "məla poɦt̪a jet̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "पोहता", base: "पोहणे", reading: "pohṇe" }
+      - { word: "येते", base: "येणे", reading: "yeṇe" }
+  - id: "mr-0641"
+    target: "मला गाडी चालवता येत नाही."
+    reading: "malā gāḍi cālavtā yet nāhi."
+    ipa: "məla ɡaɖi tsaləʋt̪a jet̪ naɦi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "चालवता", base: "चालवणे", reading: "cālavṇe" }
+      - { word: "येत", base: "येणे", reading: "yeṇe" }
+      - { word: "नाही", ref: "mr-0169" }
+  - id: "mr-0642"
+    target: "मी आत येऊ का?"
+    reading: "mi āt yeu kā?"
+    ipa: "mi at̪ jeu ka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "आत", base: "आत", reading: "āt" }
+      - { word: "येऊ", base: "येणे", reading: "yeṇe" }
+  - id: "mr-0643"
+    target: "मला जायला हवे."
+    reading: "malā jāylā have."
+    ipa: "məla dzajla ɦəʋe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "जायला", base: "जाणे", reading: "jāṇe" }
+  - id: "mr-0644"
+    target: "मला उद्या कामावर जावे लागेल."
+    reading: "malā udyā kāmāvar jāve lāgel."
+    ipa: "məla ud̪ja kamaʋər dzaʋe laɡel"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "कामावर", ref: "mr-0234" }
+      - { word: "जावे", base: "जाणे", reading: "jāṇe" }
+      - { word: "लागेल", base: "लागणे", reading: "lāgṇe" }
+  - id: "mr-0645"
+    target: "तुम्ही इथे बसू शकता."
+    reading: "tumhi ithe basu śaktā."
+    ipa: "t̪umɦi it̪ʰe bəsu ʃəkt̪a"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "इथे", base: "इथे", reading: "ithe" }
+      - { word: "बसू", base: "बसणे", reading: "basṇe" }
+      - { word: "शकता", base: "शकणे", reading: "śakṇe" }
+  - id: "mr-0646"
+    target: "इथे फोटो काढू नये."
+    reading: "ithe foṭo kāḍhu naye."
+    ipa: "it̪ʰe foʈo kaɖʱu nəje"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "इथे", base: "इथे", reading: "ithe" }
+      - { word: "फोटो", base: "फोटो", reading: "foṭo" }
+      - { word: "काढू", base: "काढणे", reading: "kāḍhṇe" }
+      - { word: "नये", base: "नये", reading: "naye" }

@@ -1,0 +1,19 @@
+schema: 1
+id: "mr-en-grammar-past-more"
+kind: "layer"
+core: "mr-grammar-past-more"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Used to"
+license: "CC0-1.0"
+description: "I used to go, she used to come: the past of a habit, by person and gender. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Past habit"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "raahne": "to live; to stay"
+    "karne": "to do"
+  notes: "The stem with -आयचा (-āycā), agreeing with the doer like the past, even when there is an object: मी लहानपणी पुण्यात राहायचो (mi lahānpṇi puṇyāt rāhāyco), I used to live in Pune as a child; ती रोज स्वयंपाक करायची (ti roj svayampāk karāyci), she used to cook every day. Books use -त असे (-ta ase) instead: मी जात असे (mi jāt ase), I used to go."

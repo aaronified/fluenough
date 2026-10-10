@@ -1,0 +1,24 @@
+schema: 1
+id: "as-en-grammar-irregular"
+kind: "layer"
+core: "as-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs"
+license: "CC0-1.0"
+description: "The common verbs whose stem changes from tense to tense. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "juwa": "to go"
+    "oha": "to come"
+    "khuwa": "to eat; to drink"
+    "diya": "to give"
+    "luwa": "to take"
+    "kuwa": "to say"
+    "huwa": "to be; to become"
+    "suwa": "to look; to watch"
+    "thoka": "to stay; to live"
+  notes: "A stem that ends in a vowel changes it: খা- (khā-) gives খাওঁ (khāum̐), খালোঁ (khālum̐), খাম (khām), and with তুমি খোৱা (tumi khuwā); ক- (kô-) gives কওঁ (kôum̐), ক (kô)'লোঁ (lum̐) and কোৱা (kuwā). যোৱা (zuwā) takes গ (gô)'- in the past: গ (gô)'লোঁ (lum̐), I went. The verb noun, the form a dictionary lists, often changes its vowel too: থাক- (thāk-), stay, gives থকা (thôkā); আহ- (āh-), come, gives অহা (ôhā). A request to আপুনি (āpuni) ends in -ক (-kô) or -ওক (-uk): আহক (āhôk), বহক (bôhôk), খাওক (khāuk). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."

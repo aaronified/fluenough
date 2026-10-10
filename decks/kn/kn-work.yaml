@@ -1,0 +1,151 @@
+schema: 1
+id: "kn-work"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0203"
+  - id: "kn-0224"
+    target: "ಆಫೀಸು"
+    picture: "🏢"
+    reading: "āfīsu"
+    ipa: "aːfiːsu"
+    alt_target: ["ಆಫೀಸ್", "ಕಚೇರಿ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0225"
+    target: "ಶಿಕ್ಷಕ"
+    picture: "👨‍🏫"
+    reading: "śikṣaka"
+    ipa: "ʃikʂaka"
+    alt_target: ["ಟೀಚರ್"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0226"
+    target: "ಅಂಗಡಿಯವರು"
+    reading: "aṅgaḍiyavaru"
+    ipa: "aŋɡaɖijaʋaru"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0227"
+    target: "ಡ್ರೈವರ್"
+    reading: "ḍraivar"
+    ipa: "ɖraiʋar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0228"
+    target: "ಇಂಜಿನಿಯರ್"
+    reading: "iñjiniyar"
+    ipa: "iɲdʒinijar"
+    alt_target: ["ಎಂಜಿನಿಯರ್"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0229"
+    target: "ವಕೀಲ"
+    reading: "vakīla"
+    ipa: "ʋakiːla"
+    pos: "noun"
+  - id: "kn-0230"
+    target: "ನರ್ಸ್"
+    reading: "nars"
+    ipa: "nars"
+    pos: "noun"
+  - id: "kn-0231"
+    target: "ರೈತ"
+    picture: "🧑‍🌾"
+    reading: "raita"
+    ipa: "rait̪a"
+    pos: "noun"
+  - id: "kn-0232"
+    target: "ಅಡುಗೆಯವರು"
+    picture: "🧑‍🍳"
+    reading: "aḍugeyavaru"
+    ipa: "aɖuɡejaʋaru"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0233"
+    target: "ಬರಹಗಾರ"
+    reading: "barahagāra"
+    ipa: "barahaɡaːra"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0234"
+    target: "ಪತ್ರಕರ್ತ"
+    reading: "patrakarta"
+    ipa: "pat̪rakart̪a"
+    pos: "noun"
+  - id: "kn-0235"
+    target: "ಡಾಕ್ಟರ್"
+    picture: "🧑‍⚕"
+    reading: "ḍākṭar"
+    ipa: "ɖaːkʈar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0236"
+    target: "ವಿದ್ಯಾರ್ಥಿ"
+    picture: "🧑‍🎓"
+    reading: "vidyārthi"
+    ipa: "ʋid̪jaːrt̪ʰi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0237"
+    target: "ರಜೆ"
+    reading: "raje"
+    ipa: "radʒe"
+    pos: "noun"
+  - id: "kn-0238"
+    target: "ಸಂಬಳ"
+    reading: "sambaḷa"
+    ipa: "sambaɭa"
+    pos: "noun"
+  - id: "kn-0239"
+    target: "ವ್ಯಾಪಾರ"
+    reading: "vyāpāra"
+    ipa: "ʋjaːpaːra"
+    pos: "noun"
+  - id: "kn-0240"
+    target: "ನೀವು ಏನು ಕೆಲಸ ಮಾಡುತ್ತೀರಿ?"
+    reading: "nīvu ēnu kelasa māḍuttīri?"
+    ipa: "niːʋu eːnu kelasa maːɖut̪t̪iːri"
+    alt_target: ["ನೀವು ಏನ್ ಕೆಲಸ ಮಾಡ್ತೀರಾ?"]
+    pos: "phrase"
+    bases:
+      - { word: "ಮಾಡುತ್ತೀರಿ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-0241"
+    target: "ನಾನು ಶಿಕ್ಷಕ."
+    reading: "nānu śikṣaka."
+    ipa: "naːnu ʃikʂaka"
+    alt_target: ["ನಾನು ಶಿಕ್ಷಕಿ.", "ನಾನು ಟೀಚರ್."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+  - id: "kn-0242"
+    target: "ನೀವು ಎಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತೀರಿ?"
+    reading: "nīvu elli kelasa māḍuttīri?"
+    ipa: "niːʋu elli kelasa maːɖut̪t̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ಮಾಡುತ್ತೀರಿ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-0243"
+    target: "ನಾನು ಆಫೀಸಿನಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತೇನೆ."
+    reading: "nānu āfīsinalli kelasa māḍuttēne."
+    ipa: "naːnu aːfiːsinalli kelasa maːɖut̪t̪eːne"
+    alt_target: ["ನಾನು ಆಫೀಸಲ್ಲಿ ಕೆಲಸ ಮಾಡ್ತೀನಿ."]
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಆಫೀಸಿನಲ್ಲಿ", ref: "kn-0224" }

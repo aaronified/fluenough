@@ -104,7 +104,9 @@ void main() {
     final themes = state.themesByDeck;
     expect(themes['hi-en-market']?.id, 'market');
     // Grammar has no theme of its own: it takes its unit's on the path.
-    expect(themes['hi-en-grammar-nouns']?.id, 'market');
+    // The noun table has a unit of its own in Hindi's B1 plan, with no theme
+    // deck to lend one.
+    expect(themes['hi-en-grammar-nouns'], isNull);
     expect(themes['hi-en-grammar-articles']?.id, 'market');
   });
 }

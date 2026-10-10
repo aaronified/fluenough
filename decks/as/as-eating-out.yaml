@@ -1,0 +1,117 @@
+schema: 1
+id: "as-eating-out"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+theme: "eating-out"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-0407"
+    target: "আহাৰ"
+    reading: "āhār"
+    ipa: "ahaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-0111"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0408"
+    target: "পানী"
+    picture: "💧"
+    reading: "pāni"
+    ipa: "pani"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0409"
+    target: "চাহ"
+    picture: "🍵"
+    reading: "sāh"
+    ipa: "sah"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0410"
+    target: "কফি"
+    reading: "kophi"
+    ipa: "kopʰi"
+    pos: "noun"
+  - id: "as-0411"
+    target: "মোক … লাগে।"
+    reading: "muk... lāge."
+    ipa: "mʊk laɡe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোক", base: "মই", reading: "moi" }
+  - id: "as-0412"
+    target: "আৰু"
+    reading: "āru"
+    ipa: "aɹu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0413"
+    target: "জলা"
+    reading: "zôlā"
+    ipa: "zɔla"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0414"
+    target: "মিঠা"
+    reading: "mithā"
+    ipa: "mitʰa"
+    pos: "adj"
+  - id: "as-0415"
+    target: "টেঙা"
+    reading: "teṅā"
+    ipa: "teŋa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0416"
+    target: "পিঠা"
+    reading: "pithā"
+    ipa: "pitʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0417"
+    target: "নিৰামিষ"
+    reading: "nirāmix"
+    ipa: "niɹamix"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0418"
+    target: "বিলটো দিয়ক।"
+    reading: "biltu diyôk."
+    ipa: "biltʊ dijɔk"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "বিলটো", base: "বিল", reading: "bil" }
+  - id: "as-0419"
+    target: "বৰ সোৱাদ লাগিল।"
+    reading: "bôr xuwād lāgil."
+    ipa: "bɔɹ xʊwad laɡil"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "সোৱাদ", base: "সোৱাদ", reading: "xuwād" }
+      - { word: "লাগিল", ref: "as-2062" }
+  - id: "as-0420"
+    target: "ভাত খালেনে?"
+    reading: "bhāt khālene?"
+    ipa: "bʱat kʰalene"
+    pos: "phrase"
+    tags: ["greeting"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খালেনে", ref: "as-0109" }

@@ -1,0 +1,88 @@
+schema: 1
+id: "as-grammar-needs"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "as-2062"
+    target: "লাগে"
+    reading: "lāge"
+    ipa: "laɡe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2063"
+    target: "আপোনাক কি লাগে?"
+    reading: "āpunāk ki lāge?"
+    ipa: "apʊnak ki laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "আপোনাক", ref: "as-0127" }
+  - id: "as-2064"
+    target: "মোক পানী লাগে।"
+    reading: "muk pāni lāge."
+    ipa: "mʊk pani laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", base: "মই", reading: "moi" }
+  - id: "as-2065"
+    target: "নালাগে"
+    reading: "nālāge"
+    ipa: "nalaɡe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2066"
+    target: "মোক এইটো নালাগে।"
+    reading: "muk eitu nālāge."
+    ipa: "mʊk eitʊ nalaɡe"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", base: "মই", reading: "moi" }
+      - { word: "এইটো", base: "এই", reading: "ei" }
+  - id: "as-2067"
+    target: "দৰকাৰ"
+    reading: "dôrkār"
+    ipa: "dɔɹkaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2068"
+    target: "দৰকাৰ নাই।"
+    reading: "dôrkār nāi."
+    ipa: "dɔɹkaɹ nai"
+    pos: "phrase"
+    bases:
+      - { word: "নাই", ref: "as-0142" }
+  - id: "as-2069"
+    target: "মোক অলপ সহায় লাগে।"
+    reading: "muk ôlôp xôhāy lāge."
+    ipa: "mʊk ɔlɔp xɔhaj laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", base: "মই", reading: "moi" }
+      - { word: "অলপ", base: "অলপ", reading: "ôlôp" }
+  - id: "as-2070"
+    target: "মই ঘৰলৈ যাব খুজিছোঁ।"
+    reading: "moi ghôrôlôi zābô khuzisum̐."
+    ipa: "moi ɡʱɔɹɔlɔi zabɔ kʰuzisʊ̃"
+    alt_target: ["মই ঘৰলৈ যাব খুজিছো।"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "ঘৰলৈ", ref: "as-0052" }
+      - { word: "যাব", base: "যোৱা", reading: "zuwā" }
+      - { word: "খুজিছোঁ", base: "খোজা", reading: "khuzā" }
+  - id: "as-2071"
+    target: "আৰু অলপ ভাত লাগে।"
+    reading: "āru ôlôp bhāt lāge."
+    ipa: "aɹu ɔlɔp bʱat laɡe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "অলপ", base: "অলপ", reading: "ôlôp" }

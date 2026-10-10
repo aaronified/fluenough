@@ -294,7 +294,7 @@ void main() {
     usePhone(tester);
     final state = await pumpDrill(
       tester,
-      DrillRequest.untaught('hi-en-first-words', skill: Skill.production),
+      DrillRequest.untaught('hi-en-phrasebook', skill: Skill.production),
       preset: const DrillPreset(
         target: 'नमस्कार',
         inputMode: InputMode.translit,
@@ -375,7 +375,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await pumpDrill(
       tester,
-      DrillRequest.untaught('hi-en-first-words', skill: Skill.production),
+      DrillRequest.untaught('hi-en-phrasebook', skill: Skill.production),
       preset: const DrillPreset(
         target: 'नमस्कार',
         inputMode: InputMode.translit,

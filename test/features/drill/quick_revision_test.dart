@@ -31,7 +31,7 @@ Future<AppState> knowing(int count) async {
         learningLanguages: const <String>['hi'],
       ),
     ),
-    'hi-en-first-words',
+    'hi-en-phrasebook',
     count: count,
     // Known in Write, one of the schedules (ADR-0034).
     mode: DrillMode.production,
@@ -64,7 +64,7 @@ Future<AppState> knowingIn(
   final base = build(MemoryProgress());
   await base.load();
   final progress = MemoryProgress();
-  final cards = base.deckById('hi-en-first-words')!.cards.take(8);
+  final cards = base.deckById('hi-en-phrasebook')!.cards.take(8);
   for (final (i, card) in cards.indexed) {
     for (final mode in <DrillMode>{...modes, ...i.isEven ? even : odd}) {
       progress.record(
@@ -242,7 +242,7 @@ void main() {
       expect(request.revise, isTrue);
       expect(request.limit, isNull);
       expect(request.recordsRevision, isTrue);
-      expect(DrillRequest.revise('hi-en-first-words').recordsRevision, isFalse);
+      expect(DrillRequest.revise('hi-en-phrasebook').recordsRevision, isFalse);
       final state = await knowingIn(<DrillMode>{
         DrillMode.listening,
         DrillMode.production,

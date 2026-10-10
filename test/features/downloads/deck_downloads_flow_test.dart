@@ -199,7 +199,7 @@ void main() {
     testWidgets('a deck that fails its check changes nothing', (tester) async {
       remote = FakeDeckRemote(<String, String>{
         ...repoFiles(const <String>['es']),
-        'decks/es/es-en-core-100.yaml': 'schema: 1\nid: es-en-core-100\n',
+        'decks/es/en/es-en-core-100.yaml': 'schema: 1\nid: es-en-core-100\n',
       });
       await pump(tester, downloadingApp(remote: remote, phone: phone));
       final l10n = l10nOf(tester);
@@ -422,7 +422,7 @@ cards:
       tester,
     ) async {
       await downloaded(remote, phone, const <String>['es', 'hi']);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       remote.files[deck] = '${remote.files[deck]!}# a fix\n';
       // A day after the last check, the app looks again, and asks.
       final state = await pump(
@@ -452,7 +452,7 @@ cards:
 
     testWidgets('"Update" in the question updates', (tester) async {
       await downloaded(remote, phone, const <String>['es']);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       remote.files[deck] = '${remote.files[deck]!}# a fix\n';
       await pump(
         tester,
@@ -471,7 +471,7 @@ cards:
 
     testWidgets('Try again after a failed update updates', (tester) async {
       await downloaded(remote, phone, const <String>['es']);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       remote.files[deck] = '${remote.files[deck]!}# a fix\n';
       final state = await pump(
         tester,
@@ -511,7 +511,7 @@ cards:
       );
       await before.open();
       await before.setChecksAutomatically(false);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       remote.files[deck] = '${remote.files[deck]!}# a fix\n';
       final state = await pump(
         tester,
@@ -553,7 +553,7 @@ cards:
 
     testWidgets('a deck removed upstream stays on the phone', (tester) async {
       await downloaded(remote, phone, const <String>['es']);
-      remote.files.remove('decks/es/es-en-grammar-present-ar.yaml');
+      remote.files.remove('decks/es/en/es-en-grammar-present-ar.yaml');
       final state = await pump(
         tester,
         downloadingApp(
@@ -597,7 +597,7 @@ cards:
         'guidelines, at twice the text size too', (tester) async {
       final semantics = tester.ensureSemantics();
       await downloaded(remote, phone, const <String>['es', 'hi']);
-      const deck = 'decks/es/es-en-core-100.yaml';
+      const deck = 'decks/es/en/es-en-core-100.yaml';
       remote.files[deck] = '${remote.files[deck]!}# a fix\n';
       final state = downloadingApp(
         remote: remote,

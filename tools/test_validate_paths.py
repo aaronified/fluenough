@@ -202,8 +202,10 @@ class PathAcrossDecks(Paths):
         self.assertEqual(self.problems(
             '  - [hi-home, "*"]\n  - [hi-market, hi-grammar-nouns]\n'
             '  - ["*"]\n', themed), [])
+        # A unit of the grammar deck alone: the real hi-market core, which
+        # the validator also reads, has a theme, so it cannot stand here.
         problems = self.problems(
-            '  - [hi-home]\n  - [hi-market, hi-grammar-nouns, "*"]\n',
+            '  - [hi-home]\n  - [hi-grammar-nouns, "*"]\n  - [hi-market]\n',
             themed)
         self.assertTrue(any("has no theme deck" in p for p in problems), problems)
 

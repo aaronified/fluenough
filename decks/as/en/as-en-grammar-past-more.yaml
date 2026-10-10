@@ -1,0 +1,19 @@
+schema: 1
+id: "as-en-grammar-past-more"
+kind: "layer"
+core: "as-grammar-past-more"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Was doing, had done, used to"
+license: "CC0-1.0"
+description: "I was eating, I had gone, I used to go: the past continuous, and the -ইছিল (-isil) past, which says had done and used to. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Past continuous and past perfect"
+  slot_name: "tense, person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "juwa": "to go"
+    "oha": "to come"
+    "khuwa": "to eat; to drink"
+  notes: "Was doing is the present continuous with আছিল (āsil) in place of আছে (āse): কৰি আছোঁ (kori āsum̐), I am doing; কৰি আছিলোঁ (kori āsilum̐), I was doing. The -ইছিল (-isil) past says had done: মই অহাৰ আগতে সি গৈছিল (moi ôhār āgôte si gôisil), he had gone before I came. It is also the plain past for something further back, and for what used to happen: সৰুতে মই তাত থাকিছিলোঁ (sorute moi tāt thākisilum̐), I lived there as a child. যোৱা (zuwā) takes গৈ (gôi): গৈ আছিলোঁ (gôi āsilum̐), গৈছিলোঁ (gôisilum̐). আপুনি (āpuni) takes the same form as সি (si), তাই (tāi) and তেওঁ (teum̐). The ending -ওঁ (-um̐) is also written -ো (u), without ঁ (ôm̐), and both are accepted."

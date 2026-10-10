@@ -1,0 +1,93 @@
+schema: 1
+id: "gu-help"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-0601"
+    target: "મદદ"
+    reading: "madad"
+    ipa: "məd̪əd̪"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0602"
+    target: "પોલીસ"
+    picture: "👮"
+    reading: "polis"
+    ipa: "polis"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "gu-0359"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0603"
+    target: "હૉસ્પિટલ"
+    picture: "🏥"
+    reading: "hôspiṭal"
+    ipa: "ɦɔspiʈəl"
+    alt_target: ["હોસ્પિટલ"]
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0604"
+    target: "દવા"
+    picture: "💊"
+    reading: "davā"
+    ipa: "d̪əʋa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0606"
+    target: "મારું માથું દુખે છે."
+    reading: "mārum̐ māthum̐ dukhe che."
+    ipa: "marũ mat̪ʰũ d̪ukʰe tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારું", base: "મારું", reading: "mārum̐" }
+      - { word: "માથું", base: "માથું", reading: "māthum̐" }
+      - { word: "દુખે", base: "દુખવું", reading: "dukhvum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0607"
+    target: "મારું પાકીટ ખોવાઈ ગયું."
+    reading: "mārum̐ pākiṭ khovāi gayum̐."
+    ipa: "marũ pakiʈ kʰoʋai ɡəjũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારું", base: "મારું", reading: "mārum̐" }
+      - { word: "પાકીટ", base: "પાકીટ", reading: "pākiṭ" }
+      - { word: "ખોવાઈ", base: "ખોવાવું", reading: "khovāvum̐" }
+      - { word: "ગયું", ref: "gu-0508" }
+  - id: "gu-0609"
+    target: "ધ્યાન રાખો!"
+    reading: "dhyān rākho!"
+    ipa: "d̪ʱjan rakʰo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ધ્યાન", base: "ધ્યાન", reading: "dhyān" }
+      - { word: "રાખો", base: "રાખવું", reading: "rākhvum̐" }
+  - id: "gu-0610"
+    target: "ઍમ્બ્યુલન્સ બોલાવો."
+    reading: "êmbyulans bolāvo."
+    ipa: "ɛmbjuləns bolaʋo"
+    alt_target: ["એમ્બ્યુલન્સ બોલાવો."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ઍમ્બ્યુલન્સ", base: "ઍમ્બ્યુલન્સ", reading: "êmbyulans" }
+      - { word: "બોલાવો", base: "બોલાવવું", reading: "bolāvvum̐" }
+  - id: "gu-0611"
+    target: "ચોર!"
+    reading: "cor!"
+    ipa: "tʃor"
+    pos: "other"

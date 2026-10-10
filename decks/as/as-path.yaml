@@ -1,55 +1,487 @@
 # The order Assamese is taught in, one unit per line, from every language
 # it is taught from: each deck is named by its core id, and a learner
-# from English is taught as-en-home for as-home. First a few words
-# and basic sentences, the sounds the learner's language lacks and how
-# Assamese grammar differs from it; then five more themes, each with the
-# grammar that goes with it; then the script, before the rest. Every
-# deck of Assamese is listed exactly once. See ADR-0013, ADR-0036 and
-# docs/DECK-FORMAT.md.
+# from English is taught as-en-home for as-home (ADR-0013, ADR-0036).
+#
+# This is also Assamese's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, written or planned, with its size in
+# words, its grammar topics, the three milestones, and for each planned unit
+# its listening and reading passages, described in English. It follows the
+# other Indian-language plans unit for unit where Assamese has the same
+# unit, so that the courses line up; Assamese's own grammar (gender and
+# number, the negative, adjectives, past-more, conjunct and compound verbs,
+# can and must) stays in the units of the decks that teach it, and the
+# perfect, which Assamese has no deck for yet, is planned. A unit
+# with no deck yet is planned: the course teaches it as "Coming" until a
+# deck is written. Sizes follow the plan's levels (about 700, 900 and 1,200
+# words; low confidence) and are one number for every native language. A
+# written unit's size is what its decks hold today, and is raised as they
+# grow. A theme named here that decks/themes.yaml does not list yet is
+# added to it with its first deck.
+#
+# First a few words and basic sentences, the sounds the learner's language
+# lacks and how Assamese grammar differs from it; then themes, each with the
+# grammar that goes with it; the script comes after the first themes, before
+# the rest. The grammar follows the Indo-Aryan order of
+# docs/plans/language-paths-scheme.md: be, postpositions, the present,
+# gender agreement, the oblique, the past, the perfect, compound and
+# conjunct verbs, then the subjunctive, the relative-correlative clauses
+# and the rest of B1. Every deck of Assamese is listed exactly once.
 schema: 1
-kind: path
-id: as-path
-language: as
+kind: "path"
+id: "as-path"
+language: "as"
 # The decks that need the alphabet: a learner who learns without it
 # skips them.
 alphabet:
-  - as-script-vowels
-  - as-script-consonants
-  - as-script-reading
-  - as-script-vowel-signs
-  - as-script-conjuncts
-  - as-spelling
-  - as-reading-aitar-mas
+  - "as-script-vowels"
+  - "as-script-consonants"
+  - "as-script-reading"
+  - "as-script-vowel-signs"
+  - "as-script-conjuncts"
+  - "as-spelling"
+  - "as-reading-aitar-mas"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [as-first-words, as-grammar-sentences, "*"]
-  - [as-sound-differences]
-  - [as-grammar-differences]
-  - [as-questions, as-grammar-questions, "*"]
-  - [as-addressing, as-grammar-pronouns, "*"]
-  - [as-about-me, "*"]
-  - [as-family, as-grammar-be, "*"]
-  - [as-work, as-grammar-demonstratives, "*"]
-  - [as-script-vowels, as-script-consonants, as-script-reading]
-  - [as-script-vowel-signs, as-script-conjuncts]
-  - [as-numbers-1-20, "*"]
-  - [as-numbers-big, "*"]
-  - [as-market, as-grammar-nouns, as-grammar-articles, "*"]
-  - [as-groceries, as-grammar-gender-number, as-grammar-needs, "*"]
-  - [as-transport, as-grammar-postpositions, "*"]
-  - [as-directions, as-grammar-continuous, "*"]
-  - [as-home, as-grammar-adjectives, "*"]
-  - [as-time, as-grammar-future, "*"]
-  - [as-daily-life, as-grammar-negative, "*"]
-  - [as-calendar, as-grammar-past, "*"]
-  - [as-grammar-past-more, as-grammar-conjunct-verbs]
-  - [as-grammar-compound-verbs]
-  - [as-eating-out, as-grammar-conjunctions, as-grammar-likes, "*"]
-  - [as-help, as-grammar-irregular, as-grammar-pitfalls, "*"]
-  - [as-registers]
-  - [as-slang]
-  - [as-grammar-can-must]
-  - [as-spelling]
-  - [as-reading-aitar-mas]
+  - decks: ["as-phrasebook", "as-first-words", "as-grammar-sentences", "*"]
+    words: 1
+    grammar: ["sentences"]
+  - decks: ["as-sound-differences"]
+    words: 20
+  - decks: ["as-grammar-differences"]
+    words: 4
+    grammar: ["differences"]
+  - decks: ["as-questions", "as-grammar-questions", "*"]
+    words: 10
+    grammar: ["questions"]
+  - decks: ["as-addressing", "as-grammar-pronouns", "*"]
+    words: 13
+    grammar: ["pronouns"]
+  - planned: { id: "as-pronouns", theme: "pronouns", words: 24 }
+    listening_passages:
+      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
+    reading_passages:
+      - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
+  - decks: ["as-about-me", "*"]
+    words: 10
+  - decks: ["as-family", "as-grammar-be", "*"]
+    words: 25
+    grammar: ["be"]
+  - planned: { id: "as-verbs", theme: "everyday-verbs", words: 30 }
+    listening_passages:
+      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
+    reading_passages:
+      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
+  - decks: ["as-work", "as-grammar-demonstratives", "*"]
+    words: 19
+    grammar: ["demonstratives"]
+  - decks: ["as-grammar-nouns"]
+    words: 0
+    grammar: ["nouns"]
+  - ["as-script-vowels", "as-script-consonants", "as-script-reading"]
+  - ["as-script-vowel-signs", "as-script-conjuncts"]
+  - decks: ["as-numbers-1-20", "*"]
+    words: 20
+  - decks: ["as-numbers-big", "*"]
+    words: 24
+  - decks: ["as-market", "as-grammar-articles", "*"]
+    words: 13
+    grammar: ["articles"]
+  - decks: ["as-groceries", "as-grammar-gender-number", "as-grammar-needs", "*"]
+    words: 23
+    grammar: ["gender-number", "needs"]
+  - planned: { id: "as-food", theme: "food", words: 59 }
+    listening_passages:
+      - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
+    reading_passages:
+      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  - decks: ["as-transport", "as-grammar-postpositions", "*"]
+    words: 16
+    grammar: ["postpositions"]
+  - decks: ["as-directions", "as-grammar-continuous", "*"]
+    words: 12
+    grammar: ["continuous"]
+  - planned: { id: "as-body", theme: "body", words: 35 }
+    listening_passages:
+      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
+    reading_passages:
+      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - planned: { id: "as-places", theme: "places", words: 56 }
+    listening_passages:
+      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
+    reading_passages:
+      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
+  - planned: { id: "as-more-verbs", theme: "more-verbs", words: 25 }
+    listening_passages:
+      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
+    reading_passages:
+      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
+  - decks: ["as-home", "as-grammar-adjectives", "*"]
+    words: 30
+    grammar: ["adjectives"]
+  - planned: { id: "as-things", theme: "things", words: 32 }
+    listening_passages:
+      - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
+    reading_passages:
+      - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  - planned: { id: "as-clothes", theme: "clothes", words: 26 }
+    listening_passages:
+      - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
+    reading_passages:
+      - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
+  - planned: { id: "as-describing", theme: "describing", words: 28 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
+  - planned: { id: "as-animals", theme: "animals", words: 26 }
+    listening_passages:
+      - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
+    reading_passages:
+      - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
+  - planned: { id: "as-quantities", theme: "quantities", words: 23 }
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - decks: ["as-time", "as-grammar-future", "*"]
+    words: 18
+    grammar: ["future"]
+    milestone: "A1"
+  - decks: ["as-daily-life", "as-grammar-negative", "*"]
+    words: 9
+    grammar: ["negative"]
+  - planned: { id: "as-weather", theme: "weather", words: 45 }
+    listening_passages:
+      - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
+    reading_passages:
+      - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
+  - decks: ["as-calendar", "as-grammar-past", "*"]
+    words: 17
+    grammar: ["past"]
+  - planned: { id: "as-grammar-ordinals", grammar: "ordinals" }
+    listening_passages:
+      - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
+    reading_passages:
+      - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
+  - planned: { id: "as-festivals", theme: "festivals", words: 40 }
+    listening_passages:
+      - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
+    reading_passages:
+      - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
+  - planned: { id: "as-grammar-perfect", grammar: "perfect" }
+    listening_passages:
+      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
+    reading_passages:
+      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
+  - planned: { id: "as-shopping", theme: "shopping", words: 50 }
+    listening_passages:
+      - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
+    reading_passages:
+      - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
+  - decks: ["as-grammar-past-more", "as-grammar-conjunct-verbs", "as-grammar-compound-verbs"]
+    words: 0
+    grammar: ["past-more", "conjunct-verbs", "compound-verbs"]
+  - planned: { id: "as-illness", theme: "illness", words: 50 }
+    listening_passages:
+      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - decks: ["as-eating-out", "as-grammar-conjunctions", "as-grammar-likes", "*"]
+    words: 23
+    grammar: ["conjunctions", "likes"]
+  - planned: { id: "as-cooking", theme: "cooking", words: 50 }
+    listening_passages:
+      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
+    reading_passages:
+      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - planned: { id: "as-grammar-comparison", grammar: "comparison" }
+    listening_passages:
+      - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
+    reading_passages:
+      - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
+  - decks: ["as-help", "as-grammar-irregular", "as-grammar-pitfalls", "*"]
+    words: 7
+    grammar: ["irregular", "pitfalls"]
+  - planned: { id: "as-school", theme: "school", words: 50 }
+    listening_passages:
+      - { id: "school-day", text: { "en": "A child describes the school day" } }
+    reading_passages:
+      - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - planned: { id: "as-hobbies", theme: "hobbies", words: 50 }
+    listening_passages:
+      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
+    reading_passages:
+      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  - planned: { id: "as-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  - planned: { id: "as-grammar-past-continuous", grammar: "past-continuous" }
+    listening_passages:
+      - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
+    reading_passages:
+      - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
+  - planned: { id: "as-chores", theme: "chores", words: 40 }
+    listening_passages:
+      - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
+    reading_passages:
+      - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
+  - planned: { id: "as-appearance", theme: "appearance", words: 50 }
+    listening_passages:
+      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
+    reading_passages:
+      - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
+  - planned: { id: "as-verbs-3", theme: "verbs-3", words: 60 }
+    listening_passages:
+      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - planned: { id: "as-phone", theme: "phone", words: 40 }
+    listening_passages:
+      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
+    reading_passages:
+      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
+  - planned: { id: "as-journey", theme: "journey", words: 55 }
+    listening_passages:
+      - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
+    reading_passages:
+      - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
+  - planned: { id: "as-nature", theme: "nature", words: 50 }
+    listening_passages:
+      - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
+    reading_passages:
+      - { id: "park-signs", text: { "en": "Signs in a park" } }
+  - planned: { id: "as-grammar-conjunctive", grammar: "conjunctive" }
+    listening_passages:
+      - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
+    reading_passages:
+      - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
+  - planned: { id: "as-adjectives-2", theme: "adjectives-2", words: 55 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
+    reading_passages:
+      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - planned: { id: "as-adverbs", theme: "adverbs", words: 45 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "as-workplace", theme: "workplace", words: 45 }
+    listening_passages:
+      - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
+    reading_passages:
+      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - planned: { id: "as-geography", theme: "geography", words: 45 }
+    listening_passages:
+      - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }
+    reading_passages:
+      - { id: "assamese-region-map", text: { "en": "A map caption: the region where Assamese is spoken" } }
+    milestone: "A2"
+  - decks: ["as-registers"]
+    words: 13
+  - planned: { id: "as-health", theme: "health", words: 55 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "as-feelings", theme: "feelings", words: 55 }
+    listening_passages:
+      - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
+    reading_passages:
+      - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  - decks: ["as-slang"]
+    words: 9
+  - planned: { id: "as-grammar-relative", grammar: "relative" }
+    listening_passages:
+      - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
+    reading_passages:
+      - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - planned: { id: "as-news", theme: "news", words: 55 }
+    listening_passages:
+      - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
+    reading_passages:
+      - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
+  - planned: { id: "as-opinions", theme: "opinions", words: 50 }
+    listening_passages:
+      - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
+    reading_passages:
+      - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
+  - decks: ["as-grammar-can-must"]
+    words: 0
+    grammar: ["can-must"]
+  - planned: { id: "as-grammar-subjunctive", grammar: "subjunctive" }
+    listening_passages:
+      - { id: "making-suggestions", text: { "en": "Friends make suggestions and wishes: let us go, may it go well" } }
+    reading_passages:
+      - { id: "friendly-advice", text: { "en": "A friendly note that suggests what to do and what to hope for" } }
+  - planned: { id: "as-grammar-conditional", grammar: "conditional" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
+  - planned: { id: "as-travel", theme: "travel", words: 55 }
+    listening_passages:
+      - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
+    reading_passages:
+      - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
+  - planned: { id: "as-services", theme: "services", words: 45 }
+    listening_passages:
+      - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
+    reading_passages:
+      - { id: "bank-form", text: { "en": "A simple bank form" } }
+  - planned: { id: "as-government", theme: "government", words: 40 }
+    listening_passages:
+      - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
+    reading_passages:
+      - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  - planned: { id: "as-grammar-purpose", grammar: "purpose" }
+    listening_passages:
+      - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
+    reading_passages:
+      - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
+  - planned: { id: "as-technology", theme: "technology", words: 50 }
+    listening_passages:
+      - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
+    reading_passages:
+      - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  - planned: { id: "as-careers", theme: "careers", words: 50 }
+    listening_passages:
+      - { id: "job-interview", text: { "en": "A short job interview" } }
+    reading_passages:
+      - { id: "job-advert", text: { "en": "A job advert" } }
+  - planned: { id: "as-grammar-before-after", grammar: "before-after" }
+    listening_passages:
+      - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
+    reading_passages:
+      - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
+  - planned: { id: "as-environment", theme: "environment", words: 50 }
+    listening_passages:
+      - { id: "floods-and-embankments", text: { "en": "Neighbours talk about the river, the flood and the embankment" } }
+    reading_passages:
+      - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - planned: { id: "as-agriculture", theme: "agriculture", words: 50 }
+    listening_passages:
+      - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's rice and jute" } }
+    reading_passages:
+      - { id: "market-prices", text: { "en": "A crop price board at a market" } }
+  - planned: { id: "as-grammar-while", grammar: "while" }
+    listening_passages:
+      - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
+    reading_passages:
+      - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
+  - planned: { id: "as-cinema", theme: "cinema", words: 55 }
+    listening_passages:
+      - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
+    reading_passages:
+      - { id: "film-review", text: { "en": "A short film review" } }
+  - planned: { id: "as-arts", theme: "arts", words: 45 }
+    listening_passages:
+      - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
+    reading_passages:
+      - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
+  - planned: { id: "as-grammar-causative", grammar: "causative" }
+    listening_passages:
+      - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
+    reading_passages:
+      - { id: "service-request", text: { "en": "A written service request" } }
+  - planned: { id: "as-history", theme: "history", words: 45 }
+    listening_passages:
+      - { id: "a-fort-visit", text: { "en": "A guide tells the story of an old fort" } }
+    reading_passages:
+      - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
+  - planned: { id: "as-weddings", theme: "weddings", words: 45 }
+    listening_passages:
+      - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
+    reading_passages:
+      - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
+  - planned: { id: "as-grammar-concessive", grammar: "concessive" }
+    listening_passages:
+      - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
+    reading_passages:
+      - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
+  - planned: { id: "as-sports", theme: "sports", words: 40 }
+    listening_passages:
+      - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
+    reading_passages:
+      - { id: "match-report", text: { "en": "A short match report" } }
+  - planned: { id: "as-relationships", theme: "relationships", words: 45 }
+    listening_passages:
+      - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
+    reading_passages:
+      - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  - planned: { id: "as-grammar-indefinites", grammar: "indefinites" }
+    listening_passages:
+      - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
+    reading_passages:
+      - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
+  - planned: { id: "as-housing", theme: "housing", words: 40 }
+    listening_passages:
+      - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
+    reading_passages:
+      - { id: "rental-terms", text: { "en": "The terms of a rental" } }
+  - planned: { id: "as-emergencies", theme: "emergencies", words: 35 }
+    listening_passages:
+      - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
+    reading_passages:
+      - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
+  - planned: { id: "as-grammar-emphasis", grammar: "emphasis" }
+    listening_passages:
+      - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
+    reading_passages:
+      - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
+  - planned: { id: "as-law", theme: "law", words: 35 }
+    listening_passages:
+      - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
+    reading_passages:
+      - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - planned: { id: "as-verbs-4", theme: "verbs-4", words: 65 }
+    listening_passages:
+      - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
+    reading_passages:
+      - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - planned: { id: "as-grammar-passive", grammar: "passive" }
+    listening_passages:
+      - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
+    reading_passages:
+      - { id: "notice-board", text: { "en": "A notice board with announcements" } }
+  - planned: { id: "as-abstract-words", theme: "abstract-words", words: 55 }
+    listening_passages:
+      - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
+    reading_passages:
+      - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  - planned: { id: "as-money", theme: "money", words: 45 }
+    listening_passages:
+      - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
+    reading_passages:
+      - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
+  - planned: { id: "as-grammar-reported-speech", grammar: "reported-speech" }
+    listening_passages:
+      - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
+    reading_passages:
+      - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
+  - planned: { id: "as-literature", theme: "literature", words: 50 }
+    listening_passages:
+      - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
+    reading_passages:
+      - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
+  - planned: { id: "as-grammar-habitual-past", grammar: "habitual-past" }
+    listening_passages:
+      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
+    reading_passages:
+      - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
+  - planned: { id: "as-verbs-5", theme: "verbs-5", words: 45 }
+    listening_passages:
+      - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
+    reading_passages:
+      - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
+  - planned: { id: "as-grammar-honorifics", grammar: "honorifics" }
+    listening_passages:
+      - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend" } }
+    reading_passages:
+      - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
+    milestone: "B1"
+  - ["as-spelling"]
+  - ["as-reading-aitar-mas"]
   - ["*"]

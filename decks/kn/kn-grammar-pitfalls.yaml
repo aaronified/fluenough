@@ -1,0 +1,95 @@
+schema: 1
+id: "kn-grammar-pitfalls"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "kn-0534"
+    target: "ನಾವು ಹೋಗೋಣ."
+    reading: "nāvu hōgōṇa."
+    ipa: "naːʋu hoːɡoːɳa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾವು", base: "ನಾವು", reading: "nāvu" }
+  - id: "kn-0535"
+    target: "ಇದು ನೀರು ಅಲ್ಲ."
+    reading: "idu nīru alla."
+    ipa: "id̪u niːru alla"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಇದು", base: "ಇದು", reading: "idu" }
+  - id: "kn-0536"
+    target: "ನೀರು ಇಲ್ಲ."
+    reading: "nīru illa."
+    ipa: "niːru illa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಇಲ್ಲ", ref: "kn-0165" }
+  - id: "kn-0537"
+    target: "ನನಗೆ ಹಸಿವಾಗಿದೆ."
+    reading: "nanage hasivāgide."
+    ipa: "nanaɡe hasiʋaːɡid̪e"
+    alt_target: ["ನಂಗೆ ಹಸಿವಾಗಿದೆ."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಹಸಿವಾಗಿದೆ", base: "ಹಸಿವು", reading: "hasivu" }
+  - id: "kn-0538"
+    target: "ನಾನು ಹೋಗಬೇಕು."
+    reading: "nānu hōgabēku."
+    ipa: "naːnu hoːɡabeːku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಹೋಗಬೇಕು", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-0539"
+    target: "ನೀವು ಕುಳಿತುಕೊಳ್ಳಿ."
+    reading: "nīvu kuḷitukoḷḷi."
+    ipa: "niːʋu kuɭit̪ukoɭɭi"
+    alt_target: ["ಕುಳಿತುಕೊಳ್ಳಿ.", "ಕೂತ್ಕೊಳ್ಳಿ."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0540"
+    target: "ರಾಮು ಅವರು ಬಂದಿದ್ದಾರೆ."
+    reading: "rāmu avaru bandiddāre."
+    ipa: "raːmu aʋaru band̪id̪d̪aːre"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ರಾಮು", base: "ರಾಮು", reading: "rāmu" }
+      - { word: "ಬಂದಿದ್ದಾರೆ", base: "ಬರು", reading: "baru" }
+  - id: "kn-0541"
+    target: "ನನ್ನ ಅಕ್ಕ ಬಂದಳು."
+    reading: "nanna akka bandaḷu."
+    ipa: "nanna akka band̪aɭu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನ್ನ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಬಂದಳು", base: "ಬರು", reading: "baru" }
+  - id: "kn-0542"
+    target: "ನನಗೆ ಗೊತ್ತಿಲ್ಲ."
+    reading: "nanage gottilla."
+    ipa: "nanaɡe ɡot̪t̪illa"
+    alt_target: ["ನಂಗೆ ಗೊತ್ತಿಲ್ಲ."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಗೊತ್ತಿಲ್ಲ", base: "ಗೊತ್ತು", reading: "gottu" }

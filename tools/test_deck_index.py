@@ -19,7 +19,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 TOOLS = REPO / "tools"
-SAMPLE_DECK = REPO / "decks" / "es" / "es-en-core-100.yaml"
+SAMPLE_DECK = REPO / "tools" / "fixtures" / "index" / "es-en-core-100.yaml"
 B1 = TOOLS / "fixtures" / "b1" / "zz"
 
 
