@@ -93,10 +93,10 @@ typedef DeckFileCheck = String? Function(String path, String text);
 ///   ([downloadFirst]); the rest follow ([downloadRest]).
 /// - **Updates** are looked for at most once a day ([checkForUpdates]),
 ///   unless the learner turns that off ([checksAutomatically]). When decks
-///   have changed the app asks; "Not now" leaves them waiting on Settings >
-///   Deck downloads.
+///   have changed the app asks; "Not now" leaves them waiting on Languages I'm
+/// learning.
 /// - **Cancelling** a language's download ([cancel]) keeps what is in and
-///   stops the rest, which then waits on Settings > Deck downloads rather
+///   stops the rest, which then waits on Languages I'm learning rather
 ///   than resuming at launch.
 /// - **Removing** a language deletes its files ([remove]). Progress is in
 ///   the review log, by card id, so it stays, and comes back with the
@@ -396,7 +396,7 @@ class DeckDownloads extends ChangeNotifier {
   }
 
   /// Whether [language]'s download was cancelled: the rest waits on
-  /// Settings > Deck downloads, and is not resumed at launch.
+  /// Languages I'm learning, and is not resumed at launch.
   bool isPaused(String language) => _paused.contains(language);
 
   /// Why [language]'s last download failed, until it is tried again.
@@ -415,7 +415,7 @@ class DeckDownloads extends ChangeNotifier {
 
   /// Stops [language]'s download, keeping what is in: each deck whose
   /// files have all arrived, and the language's own files. The rest waits
-  /// on Settings > Deck downloads ([downloadRest]), and is not resumed at
+  /// on Languages I'm learning ([downloadRest]), and is not resumed at
   /// launch ([isPaused]).
   Future<void> cancel(String language) async {
     _paused.add(language);
@@ -839,7 +839,7 @@ class DeckDownloads extends ChangeNotifier {
     _notify();
   }
 
-  /// Answers "Not now": the update waits on Settings > Deck downloads, and
+  /// Answers "Not now": the update waits on Languages I'm learning, and
   /// is not asked about again until something else changes.
   Future<void> declineUpdate() async {
     _asked = true;

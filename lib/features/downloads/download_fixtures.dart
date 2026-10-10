@@ -88,7 +88,7 @@ abstract final class DownloadFixtures {
     ),
   );
 
-  /// Settings > Deck downloads, the day after the last check: Hindi has an
+  /// Languages I'm learning, the day after the last check: Hindi has an
   /// update waiting, Telugu is up to date.
   static AppState updateWaiting(AppState app) {
     final github = <String, String>{..._github, 'decks/index.json': _index()};
