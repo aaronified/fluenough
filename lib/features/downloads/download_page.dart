@@ -83,12 +83,10 @@ class _DownloadPageState extends State<DownloadPage> {
         );
         return;
       }
+      _failures = 0;
     }
     if (!mounted) return;
-    setState(() {
-      _running = false;
-      _failures = 0;
-    });
+    setState(() => _running = false);
     widget.onReady?.call();
   }
 
