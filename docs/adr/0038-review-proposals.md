@@ -5,6 +5,13 @@
 - **Amends:** ADR-0036 (a card may carry `proposed` changes), ADR-0037 (the
   index counts a file's proposals; `main` now also carries what reviewers
   propose).
+- **Amended:** 2026-10-10 (#444): the index also gives each file's
+  `content_sha256`, its hash with its proposals taken out. A learner's
+  phone is offered an update only when that changes, and files whose
+  proposals alone changed come along with the next real update; a phone in
+  reviewer mode is offered one when `sha256` changes. Every download is
+  still checked against `size` and `sha256`. This answers the third
+  consequence below.
 
 ## Context
 
