@@ -77,3 +77,50 @@ List<RudeAlike> rudeAlikesOf(AppState state, Card card) {
 /// Whether [card] in [deck] is rude: recognition only, and shown to a
 /// reviewer only with adult content on.
 bool isRudeIn(DeckEntry deck, Card card) => isRude(card, deck);
+
+/// Whether [deck] has a word that is not rude: one that the ordinary
+/// review of a deck or unit shows. A deck of rude words only is reviewed
+/// in its language's Offensive words review alone
+/// (docs/plans/deck-browser.md, owner, 2026-10-10).
+bool hasOrdinaryCards(DeckEntry deck) =>
+    deck.cards.any((card) => !isRudeIn(deck, card));
+
+/// [deck]'s rude words, which the ordinary review never shows.
+List<Card> rudeCardsOf(DeckEntry deck) => <Card>[
+  for (final card in deck.cards)
+    if (isRudeIn(deck, card)) card,
+];
+
+/// A deck of [language] with offensive words, and those words, in order.
+typedef OffensiveDeck = ({DeckEntry deck, List<Card> words});
+
+/// [language]'s decks with offensive words, in the catalog's order, each
+/// with its offensive words: what its Offensive words review lists. Empty
+/// for a language with none.
+List<OffensiveDeck> offensiveDecksIn(AppState state, String language) =>
+    <OffensiveDeck>[
+      for (final deck in state.decks)
+        if (deck.language.code == language)
+          if (rudeCardsOf(deck) case final words when words.isNotEmpty)
+            (deck: deck, words: words),
+    ];
+
+/// A word of [language] that is not rude but sounds or looks like a rude
+/// one, with that rude word: a pair its Offensive words review asks the
+/// reviewer to confirm or reject.
+typedef OffensivePair = ({DeckEntry deck, Card card, RudeAlike pair});
+
+/// [language]'s words like a rude one, in the catalog's order, each with
+/// the first rude word it is like, the one a review keeps its answer on
+/// ([CardReview.alike]): what its Offensive words review lists after the
+/// words themselves. The ordinary review of a deck or unit never names
+/// the rude word, so the pair is checked here alone (owner, 2026-10-10).
+List<OffensivePair> offensivePairsIn(AppState state, String language) =>
+    <OffensivePair>[
+      for (final deck in state.decks)
+        if (deck.language.code == language)
+          for (final card in deck.cards)
+            if (!isRudeIn(deck, card))
+              if (rudeAlikesOf(state, card).firstOrNull case final pair?)
+                (deck: deck, card: card, pair: pair),
+    ];

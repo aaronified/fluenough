@@ -11,7 +11,12 @@ import 'dart:convert';
 
 /// The part of a card a suggestion is about, as "Suggest a change" offers
 /// them. The names are written to the review file, so they are permanent.
-enum CardPart { word, reading, ipa, meaning, notes, example, picture }
+///
+/// [base] is the meaning of one of the card's base words written in full
+/// (its `bases`, #410): the [Suggestion] names which by its [Suggestion.word].
+/// A base given by ref takes its meaning from the card it names, so a
+/// change to that meaning is suggested on that card.
+enum CardPart { word, reading, ipa, meaning, notes, example, picture, base }
 
 /// Whether a rude word can be friendly among peers, as a rater says
 /// (docs/plans/offensive-words.md).
@@ -29,9 +34,15 @@ class Suggestion {
     required this.now,
     required this.text,
     this.why = '',
+    this.word,
   });
 
   final CardPart part;
+
+  /// For a [CardPart.base] suggestion, the base's word as it stands in the
+  /// card's target: the key the layer gives its meaning by. Null for any
+  /// other part.
+  final String? word;
 
   /// What the part said when the suggestion was made, so that the file
   /// stands on its own if the deck changes.
@@ -41,6 +52,7 @@ class Suggestion {
 
   Map<String, Object?> toJson() => <String, Object?>{
     'part': part.name,
+    'word': ?word,
     'now': now,
     'text': text,
     if (why.isNotEmpty) 'why': why,
@@ -52,12 +64,17 @@ class Suggestion {
     final now = json['now'];
     final text = json['text'];
     final why = json['why'];
+    final word = json['word'];
     if (part == null || now is! String || text is! String) return null;
+    if (part == CardPart.base && (word is! String || word.isEmpty)) {
+      return null;
+    }
     return Suggestion(
       part: part,
       now: now,
       text: text,
       why: why is String ? why : '',
+      word: part == CardPart.base ? word as String : null,
     );
   }
 }
