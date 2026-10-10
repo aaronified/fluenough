@@ -31,6 +31,7 @@ import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
+import 'package:fluenough/features/review/how_reviewing_works.dart';
 import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
@@ -694,6 +695,21 @@ void main() {
           (tester, state) async {
             state.settings.reviewLanguages = const <String>{'te'};
           },
+        ),
+        // The reviewer guide as the walkthrough (#409): its first step, one
+        // with three paragraphs, and the last, which closes with Got it.
+        ('how reviewing works, first step', const HowReviewingWorks(), null),
+        (
+          'how reviewing works, sending in one mail',
+          HowReviewingWorks(
+            initialStep: reviewGuideSteps.indexWhere((s) => s.id == 'send'),
+          ),
+          null,
+        ),
+        (
+          'how reviewing works, last step',
+          HowReviewingWorks(initialStep: reviewGuideSteps.length - 1),
+          null,
         ),
         (
           'a seen word like a rude one, answer shown',
