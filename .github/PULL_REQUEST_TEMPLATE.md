@@ -19,6 +19,7 @@
 - [ ] I have the right to contribute this content, and `license` says so
 - [ ] No existing card id was renumbered, reused or removed-and-replaced
 - [ ] Romanisations and other bare values are quoted (`"no"`, not `no`)
+- [ ] A card whose base changes its stem has a note saying so (రావడం (rāvaḍam) → వచ్చ- (vacc-))
 - [ ] `language.tts` is set if the language has regional variation
 - [ ] Every `language` and `native` block has its ISO 639-3 code (`iso639_3`)
 - [ ] A new language comes with a `<code>-facts.yaml` of 30+ facts, or an issue for one
