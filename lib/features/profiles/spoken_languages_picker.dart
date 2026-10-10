@@ -264,28 +264,59 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
               ],
             ),
     );
-    if (!ticked || onScript == null || script == null) {
+    if (!ticked || onScript == null) {
       return KeyedSubtree(key: ValueKey<String>(language.code), child: tile);
     }
     // Under the ticked language, on the name's 72 px line: whether its
-    // script is read, which reviewing needs (#462).
+    // script is read, which reviewing needs (#462). Asked, never assumed:
+    // neither answer is chosen until the learner chooses one.
+    final answer = _reads[language.code];
     return Column(
       key: ValueKey<String>(language.code),
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         tile,
-        SwitchListTile(
-          contentPadding: const EdgeInsetsDirectional.only(start: 72, end: 24),
-          value: _reads[language.code] ?? true,
-          onChanged: (on) {
-            setState(
-              () => _reads = <String, bool>{..._reads, language.code: on},
-            );
-            onScript(language.code, on);
-          },
-          title: Text(
-            l10n.knownReadsScript(script, language.name),
-            style: theme.textTheme.bodyMedium,
+        Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(72, 0, 24, 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 8,
+            children: <Widget>[
+              Text(
+                l10n.knownReadsScript(script ?? '', language.name),
+                style: theme.textTheme.bodyMedium,
+              ),
+              SegmentedButton<bool>(
+                key: ValueKey<String>('script-${language.code}'),
+                emptySelectionAllowed: true,
+                showSelectedIcon: false,
+                segments: <ButtonSegment<bool>>[
+                  ButtonSegment<bool>(
+                    value: true,
+                    label: Text(l10n.knownScriptYes),
+                  ),
+                  ButtonSegment<bool>(
+                    value: false,
+                    label: Text(l10n.knownScriptNo),
+                  ),
+                ],
+                selected: <bool>{?answer},
+                onSelectionChanged: (picked) {
+                  // Tapping the chosen answer again keeps it: an answer,
+                  // once given, is changed, never taken back.
+                  if (picked.isEmpty) return;
+                  final reads = picked.single;
+                  setState(
+                    () => _reads = <String, bool>{
+                      ..._reads,
+                      language.code: reads,
+                    },
+                  );
+                  onScript(language.code, reads);
+                },
+              ),
+            ],
           ),
         ),
       ],

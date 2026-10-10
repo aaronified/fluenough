@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import '../../app/app_state.dart';
 import '../../app/skill.dart';
 import '../../core/data/spoken_languages.dart';
-import '../profiles/spoken_languages_page.dart' show scriptAnswers;
+import '../profiles/spoken_languages_page.dart' show scriptsAnswered;
 import '../../core/sound/sound_check.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -96,6 +96,9 @@ class OnboardingAnswers extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether every language spoken has its script answered (#462).
+  bool get scriptsDone => scriptsAnswered(_spoken, _scripts);
+
   /// Whether the learner reads each language's script, by code (#462).
   Map<String, bool> get scripts => _scripts;
   Map<String, bool> _scripts = const <String, bool>{};
@@ -124,7 +127,7 @@ class OnboardingAnswers extends ChangeNotifier {
       }
     }
     state.settings
-      ..scriptsRead = scriptAnswers(_spoken, _scripts)
+      ..scriptsRead = _scripts
       ..spokenLanguages = _spoken;
   }
 }

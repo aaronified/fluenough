@@ -181,4 +181,25 @@ void main() {
     expect(state.deckDownloads!.languagesOnPhone, isNot(contains('hi')));
     expect(state.settings.learningLanguages, <String>['es']);
   });
+
+  testWidgets('a course ticked but not reviewable for now keeps its tick '
+      'when another is ticked', (tester) async {
+    usePhone(tester);
+    final (app, _) = await reviewerApp(
+      scripts: const <String, bool>{'en': true, 'hi': true},
+      onPhone: const <String>['hi'],
+    );
+    addTearDown(app.dispose);
+    // Spanish from English was ticked while the reviewer knew Spanish.
+    app.settings.reviewPairs = const <String>{'es/en'};
+    final state = await pumpScreen(
+      tester,
+      const ReviewLanguagesPage(),
+      state: app,
+    );
+    expect(tileOf(tester, 'Spanish', 'English').value, isFalse);
+    await tester.tap(pairTile('Hindi', 'English'));
+    await tester.pumpAndSettle();
+    expect(state.settings.reviewPairs, <String>{'es/en', 'hi/en'});
+  });
 }

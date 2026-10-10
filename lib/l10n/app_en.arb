@@ -4194,9 +4194,9 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "knownReadsScript": "I read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script",
+  "knownReadsScript": "Do you read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script?",
   "@knownReadsScript": {
-    "description": "Switch under a ticked language in Languages you know, on first launch and in Settings (#462): whether the learner reads the script the language is written in. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
+    "description": "Question under a ticked language in Languages you know, on first launch and in Settings (#462), answered Yes or No; neither is chosen until the learner answers. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
     "placeholders": {
       "script": {
         "type": "String",
@@ -4207,6 +4207,18 @@
         "example": "Telugu"
       }
     }
+  },
+  "knownScriptYes": "Yes",
+  "@knownScriptYes": {
+    "description": "Answer to knownReadsScript: the learner reads the script."
+  },
+  "knownScriptNo": "No",
+  "@knownScriptNo": {
+    "description": "Answer to knownReadsScript: the learner does not read the script."
+  },
+  "knownScriptsNeeded": "Say whether you read each language’s script to go on.",
+  "@knownScriptsNeeded": {
+    "description": "Above the button in Languages you know, on first launch and in Settings, while it is disabled because a ticked language's script question is unanswered (#462)."
   },
   "spokenTitle": "Languages you know",
   "@spokenTitle": {

@@ -99,7 +99,9 @@ void main() {
     });
 
     testWidgets('asks of each ticked language whether its script is read, '
-        'and keeps every answer', (tester) async {
+        'with no answer chosen, and saves only once every one is answered', (
+      tester,
+    ) async {
       usePhone(tester);
       final settings = SettingsNotifier(
         spokenLanguages: const <String>['en', 'bn'],
@@ -110,10 +112,8 @@ void main() {
         state: AppState.test(settings: settings),
       );
       final l10n = l10nOf(tester);
-      final bengali = find.text(l10n.knownReadsScript('bengali', 'Bengali'));
-      expect(bengali, findsOneWidget);
       expect(
-        find.text(l10n.knownReadsScript('latin', 'English')),
+        find.text(l10n.knownReadsScript('bengali', 'Bengali')),
         findsOneWidget,
       );
       expect(
@@ -121,14 +121,56 @@ void main() {
         findsNothing,
         reason: 'Hindi is not ticked',
       );
-      expect(settings.scriptsRead, isEmpty, reason: 'not answered yet');
-      await tester.tap(bengali);
-      await tester.pumpAndSettle();
-      await tester.tap(find.widgetWithText(FilledButton, l10n.commonContinue));
+      // Silence is not an answer: neither Yes nor No is chosen.
+      for (final code in <String>['en', 'bn']) {
+        final choice = tester.widget<SegmentedButton<bool>>(
+          find.byKey(ValueKey<String>('script-$code')),
+        );
+        expect(choice.selected, isEmpty, reason: code);
+      }
+      final go = find.widgetWithText(FilledButton, l10n.commonContinue);
+      expect(tester.widget<FilledButton>(go).onPressed, isNull);
+      expect(find.text(l10n.knownScriptsNeeded), findsOneWidget);
+
+      Future<void> answer(String code, String label) async {
+        await tester.tap(
+          find.descendant(
+            of: find.byKey(ValueKey<String>('script-$code')),
+            matching: find.text(label),
+          ),
+        );
+        await tester.pumpAndSettle();
+      }
+
+      await answer('en', l10n.knownScriptYes);
+      expect(tester.widget<FilledButton>(go).onPressed, isNull);
+      await answer('bn', l10n.knownScriptNo);
+      expect(find.text(l10n.knownScriptsNeeded), findsNothing);
+      await tester.tap(go);
       await tester.pumpAndSettle();
       expect(settings.scriptsRead, <String, bool>{'en': true, 'bn': false});
       final back = SettingsNotifier()..restore(settings.toStored());
       expect(back.scriptsRead, <String, bool>{'en': true, 'bn': false});
+    });
+
+    testWidgets('saved answers are shown chosen, and saving needs no more', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final settings = SettingsNotifier(spokenLanguages: const <String>['bn'])
+        ..scriptsRead = const <String, bool>{'bn': false};
+      await pumpScreen(
+        tester,
+        const SpokenLanguagesPage(),
+        state: AppState.test(settings: settings),
+      );
+      final l10n = l10nOf(tester);
+      final choice = tester.widget<SegmentedButton<bool>>(
+        find.byKey(const ValueKey<String>('script-bn')),
+      );
+      expect(choice.selected, <bool>{false});
+      final go = find.widgetWithText(FilledButton, l10n.commonContinue);
+      expect(tester.widget<FilledButton>(go).onPressed, isNotNull);
     });
   });
 
@@ -181,6 +223,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
 
+    await answerScripts(tester);
     await tester.tap(go);
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['bn', 'en']);
@@ -236,6 +279,7 @@ void main() {
 
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
     await tester.pump();
+    await answerScripts(tester);
     await tester.tap(find.widgetWithText(FilledButton, l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(state.settings.spokenLanguages, ['en', 'hi']);
@@ -295,6 +339,7 @@ void main() {
     expect(find.text(l10n.spokenRankHint), findsNothing);
     await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
     await tester.pumpAndSettle();
+    await scrollToFind(tester, find.text(l10n.spokenRankHint));
     expect(find.text(l10n.spokenRankHint), findsOneWidget);
   });
 
@@ -317,6 +362,7 @@ void main() {
       ),
     );
     final l10n = l10nOf(tester);
+    await scrollToFind(tester, find.text(l10n.spokenRankHintActions));
     expect(find.text(l10n.spokenRankHintActions), findsOneWidget);
     expect(find.text(l10n.spokenRankHint), findsNothing);
   });
