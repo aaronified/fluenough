@@ -324,6 +324,15 @@ void main() {
           await pumpApp(tester, state: state);
           state.shellTab.value = tab;
           await tester.pumpAndSettle();
+          if (tab == ShellTab.decks) {
+            // The first level's header folds its units, so it is a tap
+            // target; bring it fully into view, as the guideline measures
+            // only what shows above the navigation bar.
+            await tester.ensureVisible(
+              find.textContaining('Introduce yourself'),
+            );
+            await tester.pumpAndSettle();
+          }
           expect(tester.takeException(), isNull);
           expect(find.byType(LanguageMenu).hitTestable(), findsOneWidget);
           await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
