@@ -189,11 +189,15 @@ class AppState extends ChangeNotifier {
     this.settings.addListener(_reviewerToDownloads);
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);
+    addListener(_rememberShown);
   }
 
-  /// The language the app showed when settings last changed, so that a
-  /// new one rebuilds every screen that reads this state (#461).
+  /// The language shown when this state last notified, so that a change
+  /// in settings that shows another rebuilds every screen that reads this
+  /// state (#461), as the catalog loading or the profile changing do.
   String? _lastShown;
+
+  void _rememberShown() => _lastShown = shownLanguage;
 
   void _languageShownChanged() {
     final shown = shownLanguage;
