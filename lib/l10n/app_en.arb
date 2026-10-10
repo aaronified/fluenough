@@ -6474,6 +6474,20 @@
   "@reviewPartPicture": {
     "description": "Part of a card: its picture."
   },
+  "reviewPartBase": "Base word",
+  "@reviewPartBase": {
+    "description": "Part of a card: the meaning of one of its base words (the dictionary form of an inflected word in it). Names the part where a suggestion replaces another."
+  },
+  "reviewPartBaseOf": "Base: {base}",
+  "@reviewPartBaseOf": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card, the base named.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
   "reviewSuggestNow": "Now",
   "@reviewSuggestNow": {
     "description": "Over what the chosen part of the card says now."
