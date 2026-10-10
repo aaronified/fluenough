@@ -46,6 +46,13 @@ class Reviewing {
     required this._log,
   });
 
+  /// How many reviewers other than the proposer must accept a change before
+  /// learners get it: the review bot's `REVIEW_AGREEMENTS_NEEDED` when the
+  /// owner has not set it (tools/review_bot.py). "How reviewing works" and
+  /// docs/REVIEWING.md both state it; the app cannot read the owner's
+  /// setting, so a raised number is changed here too.
+  static const int agreementsNeeded = 1;
+
   final SettingsNotifier settings;
   final DateTime Function() _clock;
   final Random _random;
@@ -270,19 +277,25 @@ class Reviewing {
   }
 
   /// Whether [deck] lists this reviewer's code among the codes that
-  /// helped build it, as a deck's `authors` does once its review is in.
+  /// checked it: in a card's `checked_by`, which the review bot writes once
+  /// the review is in (#449), or among its `authors`, as decks did before.
   bool helpedBuild(DeckEntry deck) {
     final code = this.code;
     if (code == null) return false;
     return _codesIn(deck).contains(code);
   }
 
-  /// How many reviewers' codes [deck] lists, this one's among them or not.
+  /// How many reviewers' codes [deck] lists, this one's among them or not:
+  /// every code in its cards' `checked_by`, each once, and any among its
+  /// authors.
   int reviewerCount(DeckEntry deck) => _codesIn(deck).length;
 
-  /// The rater codes among [deck]'s authors: names written as a code is,
-  /// starting `FL-`, so that a person's name is never read as one.
+  /// The rater codes [deck] lists: those in its cards' `checked_by`, and
+  /// among its authors names written as a code is, starting `FL-`, so that
+  /// a person's name is never read as one.
   static Set<RaterCode> _codesIn(DeckEntry deck) => <RaterCode>{
+    for (final codes in deck.deck.checkedBy.values)
+      for (final code in codes) ?RaterCode.tryParse(code),
     for (final author in deck.deck.authors)
       if (author.name.trim().toUpperCase().startsWith('${RaterCode.prefix}-'))
         ?RaterCode.tryParse(author.name),

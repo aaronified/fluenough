@@ -491,6 +491,7 @@ cards:
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
 | `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
 | `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
+| `checked_by` | no | Written by the review bot: the rater codes of the reviewers who signed the card off, `["FL-7K3M-Q9TD-6"]`. See [Who checked it](#who-checked-it-checked_by). Allowed on any card entry, as `proposed` is. |
 
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
@@ -1692,6 +1693,12 @@ downloads is listed in `decks/index.json`:
   `kind`, and for a deck its native language and the core id its path
   lists it by. A core is marked `"part": "core"`, and a file holding
   [proposals](#proposals-proposed) says how many, `"proposed": 2`.
+  `content_sha256` is the SHA-256 of the file with its proposals taken
+  out, and its cards' [`checked_by`](#who-checked-it-checked_by) too: a
+  learner's phone is offered an update only when that changes, and a phone
+  in reviewer mode when `sha256` does (#444, #449). A deck's `tags` are
+  not taken out, so a deck becoming `reviewed` is an update. Every
+  download is still checked against `size` and `sha256`.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 
@@ -1764,6 +1771,53 @@ every other proposal on that field of the card. A proposal whose field no
 longer says `now` is outdated: the validator notes it in an `info` line,
 the app does not show it, and the bot removes it. To overrule a proposal,
 delete its line, or change the field.
+
+## Who checked it: `checked_by`
+
+The rater codes of the reviewers who signed a card off: who marked it
+"Looks right" in a review they sent ([ADR-0038](adr/0038-review-proposals.md),
+amended for #449). **The review bot writes it; nobody writes one by hand.**
+The app shows "Checked by 2 speakers" on the card, and thanks a reviewer
+whose code a deck lists.
+
+```yaml
+  - id: "te-0986"
+    target: "కుక్క"
+    reading: "kukka"
+    checked_by: ["FL-7K3M-Q9TD-6", "FL-0000-0000-0"]
+  - { id: "te-0987", target: "పిల్లి", reading: "pilli", checked_by: ["FL-7K3M-Q9TD-6"] }
+```
+
+- **One line.** On a card written as a block, `checked_by` is a line of its
+  own, among the card's fields, before any `proposed`; on a card written on
+  one line in flow style, the bot adds `, checked_by: [...]` before its
+  closing brace. Each sign-off rewrites that one line, adding the code at
+  the end, and a code is never listed twice.
+- **Where.** On the entry in the file of the deck that was reviewed. A
+  reviewer of a merged deck checked the word and the meaning, so the bot
+  writes the code on the layer's entry and on the core's card. The merged
+  deck's card is checked by the codes its layer's entry lists; for a card
+  the layer gives nothing for, a core ref that takes its meaning from
+  another deck, by the core's.
+- **The validator** checks that it is a non-empty list of rater codes,
+  `FL-XXXX-XXXX-C`, each written as the app writes it, none twice, and
+  that it is where the bot puts it: a line of its own, or last in a card
+  written on one line, `checked_by: [...] }`. In the middle of a flow card,
+  or a flow card wrapped over lines, it is an error, because
+  `content_sha256` could not leave it out.
+- **No update for it.** `content_sha256` in `index.json` leaves it out, so a
+  learner is not offered a deck update when only a sign-off changed.
+- **The deck's tag.** Once every card entry of a deck file lists a code,
+  the bot tags the file `reviewed` in place of `unreviewed` (adding a
+  `tags` line before `cards:` where it had none). A core and its layer
+  are tagged each on its own, and the merged deck reads as reviewed only
+  once both are ([What the merged deck is](#what-the-merged-deck-is)): a
+  core shared by several layers is reviewed once all its cards are
+  checked, from any of them. A grammar or rules deck, which has no card
+  entries, is left to the owner. Learners see this change, so it is an
+  update.
+
+To take a sign-off back, delete the code, or the line.
 
 ## Adding your own deck
 

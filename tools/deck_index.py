@@ -11,7 +11,10 @@ it lists its name, icon and script; the native languages it is taught from;
 its path's order, and each unit's planned and counted words, so the
 language picker can show completeness toward B1 before a download; and
 each file's path, size, SHA-256, schema and kind, and how many proposals
-reviewers have made in it (ADR-0038).
+reviewers have made in it (ADR-0038). Each file's `content_sha256` is the
+SHA-256 of the file with its proposals and its cards' `checked_by` taken
+out, so that a learner's phone is not offered an update when only a
+proposal or a reviewer's sign-off changed (#444, #449).
 
 `tools/validate_decks.py decks/` fails when the index is out of date, so CI
 keeps it current. Run this after changing any file under decks/.
@@ -77,6 +80,81 @@ def _top(text: str, key: str) -> str | None:
     return m.group(1) if m else None
 
 
+_PROPOSED_KEY = re.compile(r"^( *)proposed:[ \t]*$")
+# A card's `checked_by`, the rater codes that signed it off (#449): one
+# line as the bot writes it, `checked_by: ["FL-…"]`, or a bare key with
+# its items under it.
+_CHECKED_KEY = re.compile(r"^( *)checked_by:[ \t]*(\S.*)?$")
+# The same, at the end of a card written on one line in flow style, as the
+# bot writes it there: `- { id: "te-0001", …, checked_by: ["FL-…"] }`.
+_CHECKED_IN_FLOW = re.compile(rb", checked_by: \[[^\]\n]*\](?= ?\}[ \t]*\r?\n?$)")
+
+
+def content_bytes(data: bytes) -> bytes:
+    """[data], a deck file, with its proposals and its cards' `checked_by`
+    taken out: what a learner is offered an update for (ADR-0038, #444,
+    #449).
+
+    The review bot writes a card's proposals as a `proposed:` line and its
+    items, one line each, indented under it; this drops those lines and
+    keeps every other byte as it is, blank lines after the items too: the
+    file with its last proposal removed hashes as it did before the
+    first. Items YAML allows at the key's own indent (`- ` lines straight
+    under it) go too, so a proposal written that way by hand still leaves
+    the content hash alone.
+
+    The bot writes `checked_by` as one line, which is dropped the same way,
+    with any items under a bare `checked_by:` written by hand; on a card
+    written on one line in flow style it adds `, checked_by: [...]` before
+    the closing brace, and that is taken out of the line. A deck's
+    tags are kept: `reviewed` in place of `unreviewed` is a change a
+    learner sees."""
+    lines = [line.decode("utf-8", errors="replace").rstrip("\r\n")
+             for line in data.splitlines(keepends=True)]
+    raw = data.splitlines(keepends=True)
+    out: list[bytes] = []
+    i = 0
+    while i < len(lines):
+        m = _PROPOSED_KEY.match(lines[i])
+        checked = _CHECKED_KEY.match(lines[i]) if m is None else None
+        if checked is not None and checked.group(2) is not None \
+                and not checked.group(2).startswith("#"):
+            # The one line the bot writes, its value on it; a flow list
+            # carried on over the next lines by hand goes up to its `]`.
+            value = checked.group(2)
+            i += 1
+            if value.startswith("[") and "]" not in value:
+                while i < len(lines) and "]" not in lines[i]:
+                    i += 1
+                i = min(i + 1, len(lines))
+            continue
+        m = m or checked
+        if m is None:
+            out.append(_CHECKED_IN_FLOW.sub(b"", raw[i])
+                       if b"checked_by" in raw[i] else raw[i])
+            i += 1
+            continue
+        indent = len(m.group(1))
+        i += 1
+        # The items: every line indented deeper than the key, or a `- `
+        # item at the key's own indent, and blank lines between two of them.
+        while i < len(lines):
+            j = i
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            if j == len(lines):
+                break
+            line = lines[j]
+            depth = len(line) - len(line.lstrip(" "))
+            item = line[depth:]
+            same_indent_item = depth == indent and (
+                item == "-" or item.startswith("- "))
+            if depth <= indent and not same_indent_item:
+                break
+            i = j + 1
+    return b"".join(out)
+
+
 def _file_entry(path: Path, rep: vd.Report | None) -> dict:
     data = path.read_bytes()
     text = data.decode("utf-8", errors="replace")
@@ -85,6 +163,9 @@ def _file_entry(path: Path, rep: vd.Report | None) -> dict:
         "path": _rel(path),
         "size": len(data),
         "sha256": hashlib.sha256(data).hexdigest(),
+        # The hash a learner's phone compares: proposals and checked_by
+        # left out (#444, #449).
+        "content_sha256": hashlib.sha256(content_bytes(data)).hexdigest(),
         "schema": int(schema) if schema is not None and schema.isdigit() else 0,
         "kind": _top(text, "kind") or "vocab",
     }

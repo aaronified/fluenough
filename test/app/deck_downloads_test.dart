@@ -348,6 +348,106 @@ void main() {
       expect(await phone.read(deck), was);
     });
 
+    group('and proposals (#444)', () {
+      // A reviewer's proposal is written into the deck file, so it changes
+      // the file's sha256, but a learner never sees it.
+      const field = '    native: "the man"';
+      const path = 'decks/es/es-path.yaml';
+
+      test('a proposal alone is no update for a learner', () async {
+        final d = await withEs();
+        final was = await phone.read(deck);
+        remote.files[deck] = withProposal(remote.files[deck]!, field);
+        await d.checkForUpdates(english, force: true);
+        expect(d.updates, isEmpty);
+        expect(d.askToUpdate, isFalse);
+        expect(d.stateOf('es', english), LanguageDownloadState.upToDate);
+        expect(await phone.read(deck), was);
+      });
+
+      test('a change a learner sees is, and brings proposals along', () async {
+        final d = await withEs();
+        remote.files[deck] = withProposal(remote.files[deck]!, field);
+        remote.files[path] = '${remote.files[path]!}# a fix\n';
+        await d.checkForUpdates(english, force: true);
+        expect(d.askToUpdate, isTrue);
+        final changes = d.updates['es']!;
+        expect(changes.fetch.map((f) => f.path).toSet(), <String>{deck, path});
+        expect(changes.quiet.single.path, deck);
+        expect(await d.update(), isNull);
+        expect(await phone.read(deck), remote.files[deck]);
+        expect(await phone.read(path), remote.files[path]);
+        // The phone keeps each file's content hash, and the files stay
+        // up to date after a restart.
+        final kept = await phone.manifest();
+        final listed = d.index!.filesByPath;
+        expect(kept[deck]!.contentSha256, listed[deck]!.contentSha256);
+        expect(kept[deck]!.contentSha256, isNot(kept[deck]!.sha256));
+        final again = downloads();
+        await again.open();
+        await again.checkForUpdates(english, force: true);
+        expect(again.updates, isEmpty);
+      });
+
+      test('a proposal is an update for a reviewer', () async {
+        final d = await withEs();
+        d.reviewer = true;
+        final base = remote.files[deck]!;
+        remote.files[deck] = withProposal(base, field);
+        await d.checkForUpdates(english, force: true);
+        expect(d.updates['es']!.fetch.single.path, deck);
+        expect(d.askToUpdate, isTrue);
+        expect(await d.update(), isNull);
+        expect(await phone.read(deck), remote.files[deck]);
+        // Turned off, a further proposal no longer is.
+        d.reviewer = false;
+        remote.files[deck] = withProposal(base, field, to: 'other');
+        await d.checkForUpdates(english, force: true);
+        expect(d.updates, isEmpty);
+      });
+
+      test('a reviewer waiting on a proposal alone stops when '
+          'reviewing is turned off', () async {
+        final d = await withEs();
+        d.reviewer = true;
+        remote.files[deck] = withProposal(remote.files[deck]!, field);
+        await d.checkForUpdates(english, force: true);
+        expect(d.updates, isNotEmpty);
+        d.reviewer = false;
+        expect(d.updates, isEmpty);
+      });
+
+      test('a proposal made after "Not now" does not ask again', () async {
+        final d = await withEs();
+        remote.files[path] = '${remote.files[path]!}# a fix\n';
+        await d.checkForUpdates(english, force: true);
+        await d.declineUpdate();
+        remote.files[deck] = withProposal(remote.files[deck]!, field);
+        final again = downloads();
+        await again.open();
+        await again.checkForUpdates(english, force: true);
+        expect(again.updates['es']!.quiet.single.path, deck);
+        expect(again.askToUpdate, isFalse);
+      });
+
+      test('a file is still checked against its size and sha256', () async {
+        final d = await withEs();
+        final was = await phone.read(deck);
+        remote.files[deck] = withProposal(remote.files[deck]!, field);
+        remote.files[path] = '${remote.files[path]!}# a fix\n';
+        await d.checkForUpdates(english, force: true);
+        // Served with other proposals than the index lists: the same
+        // content hash, another size and sha256.
+        remote.served[deck] = withProposal(was, field, to: 'other one');
+        expect(await d.update(), DeckDownloadFailure.badFile);
+        expect(await phone.read(deck), was);
+        // And with the same size, another sha256.
+        remote.served[deck] = withProposal(was, field, to: 'chang3d');
+        expect(await d.update(), DeckDownloadFailure.badFile);
+        expect(await phone.read(deck), was);
+      });
+    });
+
     test('keep a deck GitHub removed', () async {
       final d = await withEs();
       const gone = 'decks/es/en/es-en-grammar-present-ar.yaml';

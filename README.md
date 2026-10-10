@@ -80,11 +80,16 @@ Settings > Deck downloads lists each language, with Update and Remove, and
 can turn the daily check off
 ([ADR-0037](docs/adr/0037-decks-download-from-main.md)).
 
-<!--
-Screenshots: the owner will add the app screenshots here (a "Screenshots"
-heading and a row of images) once all the visuals are complete. Nothing is
-shown until then.
--->
+## Screenshots
+
+A Bengali learner from English, three and a half weeks in, and the same phone
+in reviewer mode.
+
+| Deck path | Today |
+|:---:|:---:|
+| <img src="docs/screenshots/deck-path.gif" width="220" alt="The Bengali course path: done units, the unit up next, milestones, and the units still being written, shown as Coming"> | <img src="docs/screenshots/today.gif" width="220" alt="Today: the day's lesson, the words due by skill, the streak, quick revision and the day's fact"> |
+| **Progress** | **Reviewing** |
+| <img src="docs/screenshots/progress.gif" width="220" alt="Progress: reviews, what is remembered, the streak, twelve weeks of reviews, and how well each skill and tag is going"> | <img src="docs/screenshots/review.gif" width="220" alt="Reviewing the Bengali Family unit: the rater code, cards marked right, and cards still to check"> |
 
 ## Get it
 
@@ -110,6 +115,12 @@ Each part opens in place.
 | **Spoken words** (speaking) | see meaning → say target | the app, through the phone's speech recognition |
 | **Written words** (production) | see meaning → type target | the app, with diacritic and typo tolerance |
 | **Grammar** | understood: see a form → choose what it means; produced: prompt + slot → choose the form, then type it | the app |
+
+In a speaking drill, after a wrong or almost-right answer, Try again lets you
+say the word again as often as you like, and Hear yourself plays your voice
+back before the model's; only your first answer is scheduled. A word's base
+words show on its card ("Base: जाना (jānā) · to go"), and Inspect shows, for
+each card, how hard it has been for you in each skill you have answered it in.
 
 Reading passages, match pairs, multiple choice and word order come on top.
 Minimal-pair discrimination, for sound contrasts the learner's own language
@@ -311,7 +322,13 @@ first attempt written for Fluenough. No speaker has checked any of them
 yet. Each one says so in its description and on its screen in the app. If you
 speak one of these languages, turn on Review decks in Settings: the phone makes
 your rater code, and on each unit you mark cards right or suggest a change, then
-send the reviews in one mail from your own mail app. Or
+send the reviews in one mail from your own mail app
+([guide for reviewers](docs/REVIEWING.md)). Offensive words are not in an
+ordinary review: each language has an Offensive words review of its own, which
+explains why they are in the app, asks whether you are 18 or over every time,
+and has you rate each word and check the words that sound like one. Each card
+records the rater codes of the speakers who checked it, and a deck turns
+reviewed once every card is checked. Or
 [report mistakes](https://github.com/aaronified/fluenough/issues) or send a
 fix; a review by a speaker is the most useful contribution these decks could
 get.

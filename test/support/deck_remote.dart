@@ -139,6 +139,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
       'path': path,
       'size': bytes.length,
       'sha256': sha256Hex(bytes),
+      'content_sha256': sha256Hex(utf8.encode(contentOf(text))),
       'schema': header['schema'] is int ? header['schema'] : 1,
       'kind': kind,
       'native': ?native,
@@ -165,6 +166,51 @@ String indexFor(Map<String, String> files, {int version = 1}) {
         },
     ],
   });
+}
+
+/// [text], a deck file, with its proposals taken out, as
+/// `tools/deck_index.py` hashes it for `content_sha256` (#444): each
+/// `proposed:` line and the items indented under it, and blank lines
+/// between two items.
+String contentOf(String text) {
+  final lines = text.split('\n');
+  final out = <String>[];
+  final key = RegExp(r'^( *)proposed:[ \t]*\r?$');
+  int indentOf(String line) => line.length - line.trimLeft().length;
+  var i = 0;
+  while (i < lines.length) {
+    final m = key.firstMatch(lines[i]);
+    if (m == null) {
+      out.add(lines[i]);
+      i++;
+      continue;
+    }
+    final indent = m.group(1)!.length;
+    i++;
+    while (i < lines.length) {
+      var j = i;
+      while (j < lines.length && lines[j].trim().isEmpty) {
+        j++;
+      }
+      if (j == lines.length || indentOf(lines[j]) <= indent) break;
+      i = j + 1;
+    }
+  }
+  return out.join('\n');
+}
+
+/// [text] with a reviewer's proposal on the field line [field], as the
+/// review bot writes one (ADR-0038).
+String withProposal(String text, String field, {String to = 'changed'}) {
+  final at = text.indexOf('$field\n');
+  if (at < 0) throw ArgumentError.value(field, 'field', 'not in the file');
+  final indent = field.length - field.trimLeft().length;
+  final pad = ' ' * indent;
+  final end = at + field.length + 1;
+  return '${text.substring(0, end)}${pad}proposed:\n'
+      '$pad  - { id: "3f9c0a1b2d", field: "native", now: "x", text: "$to", '
+      'by: "FL-7K3M-Q9TD-6", date: "2026-10-09" }\n'
+      '${text.substring(end)}';
 }
 
 /// The repository's own files of [languages], by path, as GitHub serves

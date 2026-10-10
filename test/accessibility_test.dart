@@ -31,6 +31,8 @@ import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
+import 'package:fluenough/features/review/how_reviewing_works.dart';
+import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
@@ -618,17 +620,52 @@ void main() {
           },
         ),
         (
-          'review a unit, the pair with adult content on',
-          const ReviewPage(deckId: wordsDeck, adult: true),
-          (tester, state) async => tapShown(tester, find.text('widow')),
+          'review a unit, a word like a rude one, adult content on',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            state.settings.adultContent = true;
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text('widow'));
+          },
         ),
         (
-          'review rude words, rating one',
-          const ReviewPage(deckId: rudeDeck, adult: true),
+          'offensive words, why they are here',
+          const OffensiveReviewPage(language: 'te'),
+          null,
+        ),
+        (
+          'offensive words, the age question',
+          const OffensiveReviewPage(language: 'te'),
+          (tester, state) async =>
+              tapShown(tester, find.text(l10nOf(tester).commonContinue)),
+        ),
+        (
+          'offensive words, rating one',
+          const OffensiveReviewPage(language: 'te'),
           (tester, state) async {
+            final l10n = l10nOf(tester);
+            await tapShown(tester, find.text(l10n.commonContinue));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
+            await tester.pumpAndSettle();
             await tapShown(tester, find.text('idiot, good-for-nothing'));
             await tester.pumpAndSettle();
-            await tapShown(tester, find.text(l10nOf(tester).reviewRate));
+            await tapShown(tester, find.text(l10n.reviewRate));
+          },
+        ),
+        (
+          'offensive words, checking a pair',
+          const OffensiveReviewPage(language: 'te'),
+          (tester, state) async {
+            final l10n = l10nOf(tester);
+            await tapShown(tester, find.text(l10n.commonContinue));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
+            await tester.pumpAndSettle();
+            await tapShown(
+              tester,
+              find.widgetWithText(FilledButton, l10n.reviewAlikeCheckShort),
+            );
           },
         ),
         (
@@ -658,6 +695,21 @@ void main() {
           (tester, state) async {
             state.settings.reviewLanguages = const <String>{'te'};
           },
+        ),
+        // The reviewer guide as the walkthrough (#409): its first step, one
+        // with three paragraphs, and the last, which closes with Got it.
+        ('how reviewing works, first step', const HowReviewingWorks(), null),
+        (
+          'how reviewing works, sending in one mail',
+          HowReviewingWorks(
+            initialStep: reviewGuideSteps.indexWhere((s) => s.id == 'send'),
+          ),
+          null,
+        ),
+        (
+          'how reviewing works, last step',
+          HowReviewingWorks(initialStep: reviewGuideSteps.length - 1),
+          null,
         ),
         (
           'a seen word like a rude one, answer shown',

@@ -38,7 +38,9 @@ A card's `proposed` changes (ADR-0038) are taken out before any other
 check, so their text is never held to deck content's rules, and checked on
 their own: one line each, an id that is its facts' hash, a field the entry
 may give, a good rater code and date, and acceptances by other codes. An
-outdated proposal gets an `info` line.
+outdated proposal gets an `info` line. A card's `checked_by` (#449) is
+taken out the same way and checked to be a non-empty list of rater codes,
+none twice.
 
 ## `deck_index.py`
 
@@ -56,7 +58,9 @@ has script decks, the native languages it is taught from, its path's order,
 each unit's planned words and the words its decks have (counted as the
 validator counts them, for completeness toward B1), and every file with its
 path, size, SHA-256, schema, kind, and the native language and core id of a
-deck, and how many proposals a file holds (`proposed`). Languages in
+deck, how many proposals a file holds (`proposed`), and `content_sha256`,
+the file's hash without its proposals and `checked_by`, which a learner's
+phone compares (#444, #449). Languages in
 `HIDDEN` are left out; `decks/themes.yaml` stays bundled
 in the app. One file is one line, so a changed deck is a one-line diff.
 
@@ -111,7 +115,10 @@ suggestions as `proposed` lines on their cards and records its acceptances;
 a proposal accepted by `REVIEW_AGREEMENTS_NEEDED` other rater codes (a
 repository variable, 1 when unset) gets a pull request that writes it into
 the field and closes the other proposals on that field; proposals whose
-field has changed are closed as outdated. Each PR is merged as soon as its
+field has changed are closed as outdated. The review mail's PR also adds
+the reviewer's code to the `checked_by` of each card marked "Looks right",
+never twice, and tags a deck file `reviewed` once all its cards are
+checked (#449). Each PR is merged as soon as its
 checks pass. The mail gets the Gmail label `fluenough-proposed` once its PR
 is merged or closed.
 
@@ -173,3 +180,48 @@ python3 tools/brand_android.py
 
 Exit status is 0 on success, and 1 when `android/` is missing or its manifest
 or Gradle file is not the shape `flutter create` writes.
+
+## `check_release_version.py`
+
+Fails when a release tag and `pubspec.yaml`'s version differ (#141). The
+release workflow runs it before building, because the APK's versionName is
+the tag while the app reports `AppInfo.version`, which follows
+`pubspec.yaml`. Only the version name is compared; the `+build` part is
+ignored. Standard library only.
+
+```sh
+python3 tools/check_release_version.py v0.3.4             # reads ./pubspec.yaml
+python3 tools/check_release_version.py v0.3.4 pubspec.yaml
+```
+
+Exit status is 0 when they match, 1 when they differ or `pubspec.yaml` has no
+`version:` line, and 2 if the arguments are wrong or the file cannot be read.
+
+## `readme_fonts.py` and `make_gif.py`
+
+Remake the README's screenshots, `docs/screenshots/*.gif`: a slow scroll
+through four screens of a Bengali learner's phone. Not deck tools, and not
+run by CI: `readme_fonts.py` needs fontTools and `make_gif.py` Pillow
+(`pip install fonttools pillow`), with the Flutter SDK on `PATH`.
+
+A widget test draws text in boxes and turns font fallback off, so
+`readme_fonts.py` first merges the SDK's Roboto with static Noto Sans Bengali
+files (`NotoSansBengali-Regular.ttf`, `-SemiBold.ttf` and so on, from
+[notofonts/bengali](https://github.com/notofonts/bengali), OFL-1.1). Then
+`test/tools/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
+each screen's frames as PNGs, and `make_gif.py` turns each directory of
+frames into a looping GIF at 11 frames a second, one palette, under 1.5 MB
+(it narrows the GIF, then cuts colours, until it fits).
+
+```sh
+python3 tools/readme_fonts.py path/to/noto-bengali build/readme_fonts
+README_GIFS=1 README_GIFS_FONTS=build/readme_fonts \
+  flutter test test/tools/readme_gifs_test.dart
+for g in deck-path today progress review; do
+  python3 tools/make_gif.py build/readme_gifs/$g docs/screenshots/$g.gif
+done
+```
+
+The frames go to `build/readme_gifs/` (`README_GIFS_OUT` changes that). The
+learner, their three and a half weeks of reviews, and the clock are fixed, so
+a rerun changes a GIF only when the app's screens change.

@@ -25,6 +25,7 @@ class DeckCore {
     this.table,
     this.rules = const <CoreRule>[],
     this.proposals = const <String, List<Proposal>>{},
+    this.checkedBy = const <String, List<String>>{},
   });
 
   /// `<lang>-<name>`, such as `te-home`.
@@ -53,6 +54,9 @@ class DeckCore {
 
   /// Proposed changes to its cards' language side, by card id (ADR-0038).
   final Map<String, List<Proposal>> proposals;
+
+  /// Who checked each card's language side, by card id (#449).
+  final Map<String, List<String>> checkedBy;
 
   @override
   String toString() => 'DeckCore($id)';
@@ -205,6 +209,7 @@ class DeckLayer {
     this.table,
     this.rules = const <String, LayerRule>{},
     this.proposals = const <String, List<Proposal>>{},
+    this.checkedBy = const <String, List<String>>{},
   });
 
   /// `<lang>-<native>-<name>`: the merged deck's id.
@@ -230,6 +235,9 @@ class DeckLayer {
 
   /// Proposed changes to its cards' meanings, by card id (ADR-0038).
   final Map<String, List<Proposal>> proposals;
+
+  /// Who checked each card as this layer's deck has it, by card id (#449).
+  final Map<String, List<String>> checkedBy;
 
   /// Where the layer and its id and core are, for messages.
   final YamlMap node;
@@ -491,8 +499,27 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
           ]),
       },
     ),
+    checkedBy: mergedCheckedBy(core, layer),
   );
 }
+
+/// Who checked each card of the merged deck (#449): those its layer's
+/// entry lists, since they checked the card as this deck has it, word and
+/// meaning; the review bot writes them on the core's card too. A card the
+/// layer has no entry for, a core ref that takes its meaning from another
+/// deck, takes the core's.
+Map<String, List<String>> mergedCheckedBy(DeckCore core, DeckLayer layer) =>
+    Map<String, List<String>>.unmodifiable(<String, List<String>>{
+      for (final card in <String>{
+        ...core.checkedBy.keys,
+        ...layer.checkedBy.keys,
+      })
+        if ((layer.cards.containsKey(card)
+                ? layer.checkedBy[card]
+                : core.checkedBy[card])
+            case final codes? when codes.isNotEmpty)
+          card: codes,
+    });
 
 /// One merge of a core and a layer, failing through [reader].
 class _Merge {
