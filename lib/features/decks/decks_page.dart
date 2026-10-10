@@ -16,6 +16,7 @@ import '../../ui/widgets/report_button.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
 import 'course_chips.dart';
+import 'course_hours.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
 import 'path_view.dart';
@@ -359,6 +360,7 @@ class _DecksPageState extends State<DecksPage> {
               CourseCard(
                 view: view,
                 glyph: languageGlyph(view.language, state.decks),
+                hours: courseHours(state, code),
               ),
               const SizedBox(height: 20),
               CoursePathView(

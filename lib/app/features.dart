@@ -25,7 +25,8 @@ enum Feature {
   // Today.
   dailyFacts(48),
 
-  // The Decks tab's path: newer decks downloaded, hours left to B1, and
+  // The Decks tab's path: newer decks downloaded, hours left in the decks
+  // written so far and hours spent, and
   // books, films and songs beyond the course.
   deckUpdates(210),
   hoursLeft(227),
@@ -110,6 +111,7 @@ enum Feature {
     Feature.voiceSettingsLink,
     Feature.feedbackMail,
     Feature.logs,
+    Feature.hoursLeft,
   };
 }
 
