@@ -88,6 +88,13 @@ python3 tools/validate_decks.py decks/
   `contrast`. See "Facts files" in the format specification. CI checks a facts
   file when there is one; it does not yet require every language to have one.
 
+## A base whose stem changes
+
+When a card's `bases` word changes its stem in the inflected form, so the
+learner cannot see the link, the card's notes say so in one short line: for
+వచ్చింది (vaccindi), she came, "రావడం (rāvaḍam) changes its stem in the past:
+వచ్చ- (vacc-)." See "Base words" in the format specification.
+
 ## Romanising Indic languages
 
 A `reading` is there to help a learner say the word (#47). Each language
