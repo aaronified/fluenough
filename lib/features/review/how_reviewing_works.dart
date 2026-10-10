@@ -30,6 +30,7 @@ class HowReviewingWorks extends StatelessWidget {
     final steps = <(String, String)>[
       (l10n.reviewHowCodeTitle, l10n.reviewHowCodeBody),
       (l10n.reviewHowCheckTitle, l10n.reviewHowCheckBody),
+      (l10n.reviewHowProposalsTitle, l10n.reviewHowProposalsBody),
       (l10n.reviewHowSendTitle, l10n.reviewHowSendBody),
       (l10n.reviewHowSameTitle, l10n.reviewHowSameBody),
       (l10n.reviewHowPublicTitle, l10n.reviewHowPublicBody),

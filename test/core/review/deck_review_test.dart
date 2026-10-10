@@ -246,4 +246,79 @@ void main() {
       '[Fluenough review] $code (te, bn)',
     );
   });
+
+  test('answers to proposals are kept, read back and sent (ADR-0038)', () {
+    const accept = ProposalAnswer(
+      id: '3f9c0a1b2d',
+      verdict: ProposalVerdict.accept,
+      field: 'native',
+      text: 'mum',
+    );
+    const reject = ProposalAnswer(
+      id: '0123456789',
+      verdict: ProposalVerdict.reject,
+      field: 'target',
+      text: 'అమ్మా',
+    );
+    final reviews = const Reviews().withCard(
+      'te-family',
+      'te',
+      'te-0001',
+      monday,
+      (_) => CardReview(
+        at: monday,
+        answers: const <String, ProposalAnswer>{
+          '3f9c0a1b2d': accept,
+          '0123456789': reject,
+        },
+      ),
+    );
+    final card = reviews.card('te-family', 'te-0001')!;
+    // An answer alone is something to send.
+    expect(card.isEmpty, isFalse);
+    expect(card.marked, isFalse);
+    final back = Reviews.fromJson(reviews.toJson())!;
+    final answers = back.card('te-family', 'te-0001')!.answers;
+    expect(answers.keys, <String>['3f9c0a1b2d', '0123456789']);
+    expect(answers['3f9c0a1b2d']!.verdict, ProposalVerdict.accept);
+    expect(answers['0123456789']!.text, 'అమ్మా');
+
+    final file = jsonDecode(
+      ReviewFile.encode(
+        reviews.of('te-family')!,
+        code: code,
+        appVersion: '0.4.0',
+        made: monday,
+      ),
+    ) as Map<String, Object?>;
+    final sent = (file['cards']! as List).single as Map<String, Object?>;
+    expect(sent['proposals'], <Object?>[
+      <String, Object?>{
+        'id': '3f9c0a1b2d',
+        'answer': 'accept',
+        'field': 'native',
+        'text': 'mum',
+      },
+      <String, Object?>{
+        'id': '0123456789',
+        'answer': 'reject',
+        'field': 'target',
+        'text': 'అమ్మా',
+      },
+    ]);
+    // One that cannot be read is left out.
+    final odd = CardReview.fromJson(<String, Object?>{
+      'at': monday.toIso8601String(),
+      'proposals': <Object?>[
+        <String, Object?>{
+          'id': 'x',
+          'answer': 'maybe',
+          'field': 'f',
+          'text': 't',
+        },
+        accept.toJson(),
+      ],
+    })!;
+    expect(odd.answers.keys, <String>['3f9c0a1b2d']);
+  });
 }

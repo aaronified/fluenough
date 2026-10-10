@@ -14,7 +14,10 @@ with the code and the languages, to the Fluenough address; the hourly mail
 job opens one issue per mail with only the code and languages; the owner
 reads the mail and the decks are updated with him. No Form, no Sheet.
 Whether a public deck browser on Pages survives at all is for the owner to
-decide (#404, #405).
+decide (#404, #405). **Since 2026-10-09 (#441, ADR-0038)** the decks are no
+longer updated by hand from the mail: a review's suggestions become
+proposals in the decks at once, and agreement merges them to learners; see
+"Reviewers change the decks, with no wait" below.
 
 Written 2026-10-06. **Moved ahead, 2026-10-09:** built now, on today's
 deck format, before the native layers (`native-layers.md`), so that
@@ -222,7 +225,10 @@ Settled with the owner, 2026-10-09:
   tickets. so i know that a reviewer has sent something and then consult
   the mail." One issue per review mail received: the rater code, the
   language and decks reviewed, counts at most; no suggestion text.
-- **Reviewers change the decks, with no wait** (owner, 2026-10-09:
+- **Reviewers change the decks, with no wait** (**built**, 2026-10-09, on
+  `feat/review-proposals`: ADR-0038, the `proposed` format, reviewer mode's
+  Accept, Edit and Reject, the bot in `tools/review_bot.py`, and the owner's
+  guide, `docs/review-bot-setup.md`; it waits for the App's secrets) (owner, 2026-10-09:
   "Make it totally automated then. The first review auto merges the PR
   and shows all changes to all applicable reviewers. If anyone agrees,
   that gets an instant merge to learner decks. This number can be a
@@ -244,10 +250,16 @@ Settled with the owner, 2026-10-09:
   - **Accept, edit or reject:** a reviewer who edits a proposal makes a
     new proposal of their own, which goes in the same way; the old one
     keeps waiting. The first proposal on a field to reach enough
-    agreements wins; the others on that field are closed as outdated. A
-    rejection only flags the change to the owner.
-  - **The owner's override** is any later commit: reverting the change or
-    editing the card. Every bot PR names the rater codes involved.
+    agreements wins; the others on that field are closed as outdated.
+    "First" is the one whose agreement PR opened first: while it is open,
+    no other proposal on the field is applied. Several that reach it
+    before any PR opens go in the order they were proposed, which is
+    their order in the file. A rejection only flags the change to the
+    owner.
+  - **The owner's override** is any later commit: reverting the change,
+    editing the card, or deleting a proposal. The bot builds a PR again
+    from `main` before merging it whenever `main` has moved, and closes
+    an agreement PR whose proposal is no longer there. Every bot PR names the rater codes involved.
   - **Past the branch rules:** a dedicated GitHub App merges these PRs.
     It is the only actor allowed to skip the approval rule; the three
     required checks still apply to it. The owner creates and installs the

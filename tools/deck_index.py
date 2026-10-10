@@ -10,7 +10,8 @@ and downloads each language's files from there (ADR-0037). For each language
 it lists its name, icon and script; the native languages it is taught from;
 its path's order, and each unit's planned and counted words, so the
 language picker can show completeness toward B1 before a download; and
-each file's path, size, SHA-256, schema and kind.
+each file's path, size, SHA-256, schema and kind, and how many proposals
+reviewers have made in it (ADR-0038).
 
 `tools/validate_decks.py decks/` fails when the index is out of date, so CI
 keeps it current. Run this after changing any file under decks/.
@@ -93,6 +94,12 @@ def _file_entry(path: Path, rep: vd.Report | None) -> dict:
         entry["native"] = rep.native_code
     if rep is not None and rep.listed_as is not None:
         entry["deck"] = rep.listed_as
+    # What reviewers have proposed in the file and not yet agreed
+    # (ADR-0038); learners never see it.
+    if "proposed" in text:
+        proposed = vd.proposal_count(path)
+        if proposed:
+            entry["proposed"] = proposed
     return entry
 
 
