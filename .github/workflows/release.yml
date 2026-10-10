@@ -92,6 +92,13 @@ jobs:
       # Same reason as ci.yml: generated sources are not committed.
       - run: dart run build_runner build
       - run: flutter test
+      # Real downloads from GitHub through the app's own fetcher: 0.4.0
+      # shipped unable to download any deck, which only a test against the
+      # real GitHub could have caught.
+      - name: Download real decks from GitHub
+        run: flutter test test/live/
+        env:
+          LIVE_GITHUB: "1"
 
       # Secrets come in through env rather than being expanded into the script,
       # where a quote or $ in a password would become shell syntax. The
