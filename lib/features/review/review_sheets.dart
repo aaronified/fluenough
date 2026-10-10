@@ -72,11 +72,30 @@ CardBase? inlineBaseOf(Card card, String? word) {
 }
 
 /// The bases of [card] a reviewer can suggest a meaning for: those written
-/// in full, in order.
+/// in full, in order, every one of them, though the card's base line shows
+/// a base and meaning only once ([shownBases]).
 List<CardBase> inlineBasesOf(Card card) => <CardBase>[
   for (final base in card.bases)
     if (base.base != null && base.base!.trim().isNotEmpty) base,
 ];
+
+/// Whether another base [card] writes in full has the same base as the one
+/// for [word], so that the base alone does not say which it is.
+bool baseIsShared(Card card, String? word) {
+  final base = inlineBaseOf(card, word)?.base;
+  if (base == null) return false;
+  return inlineBasesOf(card)
+      .any((b) => b.word != word && b.base!.trim() == base.trim());
+}
+
+/// The name of the base [card] writes in full for [word]: "Base: जाना", or
+/// "Base of गया: जाना" when another of its bases is also जाना.
+String baseName(AppLocalizations l10n, Card card, String? word) {
+  final base = inlineBaseOf(card, word)?.base ?? word ?? '';
+  return word != null && baseIsShared(card, word)
+      ? l10n.reviewPartBaseOfWord(word, base)
+      : l10n.reviewPartBaseOf(base);
+}
 
 /// [part]'s name on its chip.
 String partName(AppLocalizations l10n, CardPart part) => switch (part) {
@@ -97,9 +116,7 @@ String suggestionPartName(
   Card card,
   CardPart part, {
   String? word,
-}) => part == CardPart.base
-    ? l10n.reviewPartBaseOf(inlineBaseOf(card, word)?.base ?? word ?? '')
-    : partName(l10n, part);
+}) => part == CardPart.base ? baseName(l10n, card, word) : partName(l10n, part);
 
 /// Where [review] stands, as a card's top line says it.
 String reviewStateName(AppLocalizations l10n, CardReview? review) =>
@@ -739,6 +756,9 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   if (old.part == CardPart.word) old.text,
                   if (inlineBaseOf(widget.card, old.word) case final b?)
                     b.base!,
+                  if (old.part == CardPart.base &&
+                      baseIsShared(widget.card, old.word))
+                    old.word!,
                 ],
                 language,
               ),
@@ -767,9 +787,14 @@ class _SuggestSheetState extends State<SuggestSheet> {
             for (final base in inlineBasesOf(widget.card))
               ChoiceChip(
                 label: Text.rich(
-                  quotingTarget(l10n.reviewPartBaseOf(base.base!), <String>[
-                    base.base!,
-                  ], language),
+                  quotingTarget(
+                    baseName(l10n, widget.card, base.word),
+                    <String>[
+                      if (baseIsShared(widget.card, base.word)) base.word,
+                      base.base!,
+                    ],
+                    language,
+                  ),
                 ),
                 selected: _part == CardPart.base && _word == base.word,
                 onSelected: (_) => _choose(CardPart.base, word: base.word),

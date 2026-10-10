@@ -157,6 +157,63 @@ void main() {
     );
   });
 
+  testWidgets('two words with the same base and meaning show one base, '
+      'and each still has its own chip, named by its word', (tester) async {
+    useTallPhone(tester);
+    final handle = tester.ensureSemantics();
+    const twice =
+        '[{ word: "అమ్మ", base: "అమ్మ", reading: "amma", meaning: "mum" }, '
+        '{ word: "అమ్మా", base: "అమ్మ", reading: "amma", meaning: "mum" }]';
+    final state = await pumpScreen(
+      tester,
+      const ReviewPage(deckId: wordsDeck),
+      state: await reviewState(reviewing: true, bases: twice),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    // The line names the base once.
+    expect(
+      find.descendant(
+        of: find.byType(CardFace),
+        matching: find.text(
+          l10n.cardBases(1, l10n.cardBaseReadingMeaning('అమ్మ', 'amma', 'mum')),
+        ),
+      ),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.widgetWithText(OutlinedButton, l10n.reviewSuggest));
+    await tester.pumpAndSettle();
+    // Two chips, which the base alone would not tell apart.
+    expect(find.text(l10n.reviewPartBaseOf('అమ్మ')), findsNothing);
+    final first = l10n.reviewPartBaseOfWord('అమ్మ', 'అమ్మ');
+    final second = l10n.reviewPartBaseOfWord('అమ్మా', 'అమ్మ');
+    expect(find.text(first), findsOneWidget);
+    expect(find.text(second), findsOneWidget);
+    await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+
+    await tester.tap(find.text(second));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.widgetWithText(TextField, l10n.reviewSuggestYours),
+      'mother',
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
+    await tester.pumpAndSettle();
+
+    final words = state.deckById(wordsDeck)!;
+    final mother = words.cards.firstWhere((c) => c.id == plainCard);
+    final suggestion = state.reviewing.reviewOf(words, mother)!.suggestion!;
+    expect(suggestion.part, CardPart.base);
+    expect(suggestion.word, 'అమ్మా');
+    expect(suggestion.now, 'mum');
+    expect(suggestion.text, 'mother');
+    handle.dispose();
+  });
+
   testWidgets('a card without bases offers no base chip and shows no base '
       'line', (tester) async {
     useTallPhone(tester);
