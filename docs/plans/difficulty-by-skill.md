@@ -1,6 +1,6 @@
 # Plan: difficulty by skill and by card
 
-Written 2026-10-05.
+Written 2026-10-05. **Status: built in #455** (closes #253, #208); every part shipped, and the decisions below are held only here.
 
 ## What the owner asked
 
