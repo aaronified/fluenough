@@ -116,7 +116,8 @@ class Review:
     # The cards signed off, marked "Looks right": (language, deck, card).
     checks: list[tuple[str, str, str]] = field(default_factory=list)
     edits: int = 0
-    # Suggestions on a part the bot does not write: an example, a picture.
+    # Suggestions on a part the bot does not write: an example, a picture,
+    # a base word's meaning.
     left: int = 0
     # Review files dropped for a language that is not a language code.
     dropped: int = 0
