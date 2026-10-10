@@ -36,6 +36,10 @@ import 'send_reviews_sheet.dart';
 /// speaks in, on the rating sheet the unit review used. Ratings are kept
 /// and sent as every review is: in the deck's review file, by mail.
 ///
+/// After the words, the language's words like an offensive one: each
+/// names the offensive word it sounds or looks like, so its pair is
+/// confirmed or rejected here, never in the ordinary review.
+///
 /// A deck of offensive words only is signed off here once every word in
 /// it is rated.
 class OffensiveReviewPage extends StatefulWidget {
@@ -117,6 +121,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
     final theme = Theme.of(context);
     final reviewing = state.reviewing;
     final decks = offensiveDecksIn(state, language.code);
+    final pairs = offensivePairsIn(state, language.code);
     var total = 0;
     var rated = 0;
     for (final d in decks) {
@@ -157,7 +162,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
           ),
         ),
       ),
-      body: decks.isEmpty
+      body: decks.isEmpty && pairs.isEmpty
           ? EmptyState(
               icon: Icons.check_circle_outline,
               title: l10n.reviewOffensiveNone(language.name),
@@ -179,6 +184,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
                   icon: Icons.info_outline,
                 ),
                 for (final d in decks) ..._deck(context, state, d),
+                if (pairs.isNotEmpty) ..._pairs(context, state, pairs),
               ],
             ),
       bottomNavigationBar: ReviewFoot(
@@ -247,6 +253,71 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
     ];
   }
 
+  /// The words like an offensive one: a heading, how many pairs are
+  /// checked, what checking one means, and the words, each naming the
+  /// offensive word it is like.
+  List<Widget> _pairs(
+    BuildContext context,
+    AppState state,
+    List<OffensivePair> pairs,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final checked = pairs
+        .where((p) => state.reviewing.reviewOf(p.deck, p.card)?.alike != null)
+        .length;
+    return <Widget>[
+      const SizedBox(height: 28),
+      Padding(
+        padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+        child: Wrap(
+          spacing: 12,
+          runSpacing: 4,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: <Widget>[
+            Semantics(
+              header: true,
+              child: Text(
+                l10n.reviewOffensivePairsTitle,
+                style: theme.textTheme.titleMedium,
+              ),
+            ),
+            Text(
+              l10n.reviewOffensivePairsProgress(checked, pairs.length),
+              style: theme.textTheme.labelMedium!.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(height: 10),
+      ReviewInfo(
+        text: l10n.reviewOffensivePairsInfo,
+        icon: Icons.hearing_outlined,
+      ),
+      const SizedBox(height: 10),
+      GroupedList(
+        outerRadius: AppRadii.card,
+        gap: 4,
+        children: <Widget>[
+          for (final p in pairs)
+            _PairRow(
+              pair: p,
+              check: state.reviewing.reviewOf(p.deck, p.card)?.alike,
+              onOpen: () => _open(context, state, p.deck, p.card),
+              onCheck: () => showAlikeSheet(
+                context,
+                deck: p.deck,
+                card: p.card,
+                pair: p.pair,
+              ),
+            ),
+        ],
+      ),
+    ];
+  }
+
   /// Opens [card] whole, then whatever its sheet asked for.
   Future<void> _open(
     BuildContext context,
@@ -258,7 +329,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
       context,
       deck: deck,
       card: card,
-      adult: true,
+      offensive: true,
     );
     if (!context.mounted || action == null) return;
     switch (action) {
@@ -516,6 +587,118 @@ class _WordRow extends StatelessWidget {
             label: rating == null
                 ? said(l10n.reviewRateShort, l10n.reviewRateFor(meaning))
                 : said(l10n.reviewRatedShort, l10n.reviewRatedFor(meaning)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// A word like an offensive one: the word, its reading and meaning, which
+/// open it whole; the offensive word it is like, named; where the pair
+/// stands; and Check or Checked.
+class _PairRow extends StatelessWidget {
+  const _PairRow({
+    required this.pair,
+    required this.check,
+    required this.onOpen,
+    required this.onCheck,
+  });
+
+  final OffensivePair pair;
+  final AlikeCheck? check;
+  final VoidCallback onOpen;
+  final VoidCallback onCheck;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final card = pair.card;
+    final language = pair.deck.language;
+    final reading = card.reading;
+    final meaning = card.native;
+    final check = this.check;
+    final small = theme.textTheme.labelSmall!.copyWith(
+      color: scheme.onSurfaceVariant,
+    );
+    // The label inside the button, so that it keeps its own tap for screen
+    // readers, starting with the button's word and naming the word.
+    Widget said(String text, String label) =>
+        Semantics(label: label, excludeSemantics: true, child: Text(text));
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Semantics(
+              hint: l10n.unitOpenWord,
+              child: MergeSemantics(
+                child: InkWell(
+                  onTap: onOpen,
+                  borderRadius: BorderRadius.circular(AppRadii.small),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(minHeight: 56),
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                        10,
+                        6,
+                        8,
+                        6,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          TargetText(
+                            card.target,
+                            language: language,
+                            fontSize: 20,
+                            textAlign: TextAlign.start,
+                          ),
+                          if (reading != null)
+                            Text(
+                              reading,
+                              style: theme.textTheme.bodySmall!.copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          Text(meaning, style: theme.textTheme.bodyMedium),
+                          Text.rich(
+                            quotingTarget(alikeTitle(l10n, pair.pair), <String>[
+                              pair.pair.partner.target,
+                            ], language),
+                            style: small,
+                          ),
+                          if (check != null)
+                            Text(
+                              check.real
+                                  ? l10n.reviewAlikeConfirmed
+                                  : l10n.reviewAlikeRejected,
+                              style: small,
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 8),
+          FilledButton.tonalIcon(
+            onPressed: onCheck,
+            icon: const Icon(Icons.hearing_outlined, size: 18),
+            label: check == null
+                ? said(
+                    l10n.reviewAlikeCheckShort,
+                    l10n.reviewAlikeCheckFor(meaning),
+                  )
+                : said(
+                    l10n.reviewAlikeCheckedShort,
+                    l10n.reviewAlikeCheckedFor(meaning),
+                  ),
           ),
         ],
       ),

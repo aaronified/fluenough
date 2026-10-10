@@ -619,9 +619,13 @@ void main() {
           },
         ),
         (
-          'review a unit, the pair with adult content on',
-          const ReviewPage(deckId: wordsDeck, adult: true),
-          (tester, state) async => tapShown(tester, find.text('widow')),
+          'review a unit, a word like a rude one, adult content on',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            state.settings.adultContent = true;
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text('widow'));
+          },
         ),
         (
           'offensive words, why they are here',
@@ -646,6 +650,21 @@ void main() {
             await tapShown(tester, find.text('idiot, good-for-nothing'));
             await tester.pumpAndSettle();
             await tapShown(tester, find.text(l10n.reviewRate));
+          },
+        ),
+        (
+          'offensive words, checking a pair',
+          const OffensiveReviewPage(language: 'te'),
+          (tester, state) async {
+            final l10n = l10nOf(tester);
+            await tapShown(tester, find.text(l10n.commonContinue));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
+            await tester.pumpAndSettle();
+            await tapShown(
+              tester,
+              find.widgetWithText(FilledButton, l10n.reviewAlikeCheckShort),
+            );
           },
         ),
         (

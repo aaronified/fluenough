@@ -24,19 +24,20 @@ enum ReviewCardAction { suggest, rate, checkAlike }
 /// Opens [card] of [deck] as a lesson shows it, with "Looks right" and
 /// "Suggest a change" (the approved card in reviewer mode); a rude word
 /// with its level, type, friendliness and region note, and "Rate this
-/// word"; a word like a rude one with the pair to check. [adult] says
-/// whether adult content is on, which names a rude word.
+/// word"; a word like a rude one with the warning a learner sees, or, in
+/// the [offensive] words review, with the rude word named and the pair to
+/// check.
 Future<ReviewCardAction?> showReviewCard(
   BuildContext context, {
   required DeckEntry deck,
   required Card card,
-  required bool adult,
+  bool offensive = false,
 }) => showModalBottomSheet<ReviewCardAction>(
   context: context,
   showDragHandle: true,
   isScrollControlled: true,
   useSafeArea: true,
-  builder: (_) => ReviewCardSheet(deck: deck, card: card, adult: adult),
+  builder: (_) => ReviewCardSheet(deck: deck, card: card, offensive: offensive),
 );
 
 /// The text of [part] of [card], as "Suggest a change" shows it under Now,
@@ -82,12 +83,20 @@ class ReviewCardSheet extends StatelessWidget {
     super.key,
     required this.deck,
     required this.card,
-    required this.adult,
+    this.offensive = false,
   });
 
   final DeckEntry deck;
   final Card card;
-  final bool adult;
+
+  /// Whether the sheet is opened from a language's Offensive words review,
+  /// past its 18+ question: only there does it name the rude word a card
+  /// is like, and offer to check the pair. Elsewhere, the ordinary review
+  /// of a deck or unit, it shows the warning a learner sees, the rude word
+  /// hidden, adult content on or off (owner, 2026-10-10: offensive words
+  /// are reviewed "only when the reviewer intentionally wants to check
+  /// them").
+  final bool offensive;
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +156,7 @@ class ReviewCardSheet extends StatelessWidget {
             ],
             for (final pair in alikes) ...<Widget>[
               const SizedBox(height: 16),
-              if (adult)
+              if (offensive)
                 _AlikeFound(pair: pair, language: language, check: alike)
               else
                 AlikeWarning(kind: pair.kind, care: pair.care),
@@ -179,7 +188,7 @@ class ReviewCardSheet extends StatelessWidget {
               icon: const Icon(Icons.edit_outlined),
               label: Text(l10n.reviewSuggest),
             ),
-            if (adult && alikes.isNotEmpty) ...<Widget>[
+            if (offensive && alikes.isNotEmpty) ...<Widget>[
               const SizedBox(height: 8),
               OutlinedButton.icon(
                 style: OutlinedButton.styleFrom(
@@ -371,7 +380,7 @@ class _RudeFacts extends StatelessWidget {
   }
 }
 
-/// For a reviewer with adult content on: the rude word the check found,
+/// In the Offensive words review: the rude word the check found,
 /// and where the reviewer's answer on the pair stands.
 class _AlikeFound extends StatelessWidget {
   const _AlikeFound({

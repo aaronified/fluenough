@@ -14,7 +14,6 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/path_model.dart';
-import '../decks/word_sheet.dart' show adultContentOn;
 import 'proposal_card.dart';
 import 'review_sheets.dart';
 import 'review_waiting.dart';
@@ -31,19 +30,17 @@ import 'send_reviews_sheet.dart';
 /// reviewed apart, in their language's Offensive words review, and only on
 /// purpose (docs/plans/deck-browser.md, owner, 2026-10-10). The screen says
 /// how many it leaves out, and they do not count as left to check. A deck
-/// of offensive words only is signed off there, not here.
+/// of offensive words only is signed off there, not here. Nor is a rude
+/// word named here through a word like it: such a word shows the warning
+/// a learner sees, and its pair is checked in the Offensive words review.
 class ReviewPage extends StatelessWidget {
-  const ReviewPage({super.key, required this.deckId, this.plan, this.adult});
+  const ReviewPage({super.key, required this.deckId, this.plan});
 
   /// A deck in the unit, by id: the unit is the one holding it.
   final String deckId;
 
   /// The course's plan, for tests and the gallery, as [UnitPage] takes it.
   final CoursePlan? plan;
-
-  /// Whether adult content is on, in place of the setting: for tests and
-  /// the gallery.
-  final bool? adult;
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +55,8 @@ class ReviewPage extends StatelessWidget {
     }
     return ListenableBuilder(
       listenable: state.settings,
-      builder: (context, _) => _build(
-        context,
-        state,
-        unitTitle(state, unit.decks),
-        unit.decks,
-        adult ?? adultContentOn(state),
-      ),
+      builder: (context, _) =>
+          _build(context, state, unitTitle(state, unit.decks), unit.decks),
     );
   }
 
@@ -73,7 +65,6 @@ class ReviewPage extends StatelessWidget {
     AppState state,
     String title,
     List<DeckEntry> decks,
-    bool adult,
   ) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -90,7 +81,7 @@ class ReviewPage extends StatelessWidget {
           continue;
         }
         total++;
-        if (cardChecked(state, deck, card, adult)) done++;
+        if (cardChecked(state, deck, card)) done++;
       }
     }
     final left = total - done;
@@ -165,7 +156,7 @@ class ReviewPage extends StatelessWidget {
             ),
           ],
           for (final deck in decks)
-            ..._deck(context, state, deck, adult, single: decks.length == 1),
+            ..._deck(context, state, deck, single: decks.length == 1),
         ],
       ),
       bottomNavigationBar: ReviewFoot(
@@ -190,8 +181,7 @@ class ReviewPage extends StatelessWidget {
   List<Widget> _deck(
     BuildContext context,
     AppState state,
-    DeckEntry deck,
-    bool adult, {
+    DeckEntry deck, {
     required bool single,
   }) {
     final l10n = AppLocalizations.of(context)!;
@@ -241,7 +231,7 @@ class ReviewPage extends StatelessWidget {
               deck: deck,
               card: card,
               review: state.reviewing.reviewOf(deck, card),
-              onOpen: () => _open(context, state, deck, card, adult),
+              onOpen: () => _open(context, deck, card),
               onSuggest: () => _suggest(context, state, deck, card),
             ),
         ],
@@ -250,19 +240,8 @@ class ReviewPage extends StatelessWidget {
   }
 
   /// Opens [card], then whatever its sheet asked for.
-  Future<void> _open(
-    BuildContext context,
-    AppState state,
-    DeckEntry deck,
-    Card card,
-    bool adult,
-  ) async {
-    final action = await showReviewCard(
-      context,
-      deck: deck,
-      card: card,
-      adult: adult,
-    );
+  Future<void> _open(BuildContext context, DeckEntry deck, Card card) async {
+    final action = await showReviewCard(context, deck: deck, card: card);
     if (!context.mounted || action == null) return;
     switch (action) {
       case ReviewCardAction.suggest:
@@ -273,10 +252,9 @@ class ReviewPage extends StatelessWidget {
           await showSuggestSheet(context, deck: deck, card: card);
         }
       case ReviewCardAction.checkAlike:
-        final pair = rudeAlikesOf(state, card).firstOrNull;
-        if (pair != null) {
-          await showAlikeSheet(context, deck: deck, card: card, pair: pair);
-        }
+        // Offered only in the Offensive words review, which names the
+        // rude word: never from here.
+        break;
     }
   }
 

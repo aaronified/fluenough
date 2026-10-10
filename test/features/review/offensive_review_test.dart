@@ -380,6 +380,93 @@ void main() {
     await tester.pumpAndSettle(const Duration(seconds: 5));
   });
 
+  test('a language\'s words like an offensive one are listed with the '
+      'offensive word; none for a language with none', () async {
+    final state = await reviewState();
+    final te = offensivePairsIn(state, 'te');
+    expect(te.map((p) => (p.card.id, p.pair.partner.id)), [
+      (alikeCard, rudeCard),
+    ]);
+    expect(offensivePairsIn(state, 'bn'), isEmpty);
+  });
+
+  testWidgets('words like an offensive one follow the words, past the gate, '
+      'naming it; a pair is confirmed with a care note of at most 40 '
+      'letters', (tester) async {
+    useTallPhone(tester);
+    final state = await pumpOffensive(tester);
+    final l10n = l10nOf(tester);
+    final title = l10n.reviewAlikeSounds('వెధవ', 'vedhava');
+    // Not before the reviewer has read why and said they are 18 or over.
+    expect(find.text(l10n.reviewOffensivePairsTitle), findsNothing);
+    expect(find.text(title), findsNothing);
+    await passGate(tester);
+    expect(find.text(l10n.reviewOffensivePairsTitle), findsOneWidget);
+    expect(find.text(l10n.reviewOffensivePairsInfo), findsOneWidget);
+    expect(find.text(l10n.reviewOffensivePairsProgress(0, 1)), findsOneWidget);
+    expect(find.text('widow'), findsOneWidget);
+    expect(find.text(title), findsOneWidget);
+    // The words come first.
+    expect(
+      tester.getTopLeft(find.text('idiot, good-for-nothing')).dy,
+      lessThan(tester.getTopLeft(find.text('widow')).dy),
+    );
+
+    await tester.ensureVisible(rowButton(l10n.reviewAlikeCheckShort));
+    await tester.tap(rowButton(l10n.reviewAlikeCheckShort));
+    await tester.pumpAndSettle();
+    expect(find.byType(AlikeSheet), findsOneWidget);
+    expect(find.text(l10n.reviewAlikeReal), findsOneWidget);
+    await tester.tap(find.text(l10n.reviewAlikeConfirm));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reviewAlikeCareCount(0, 40)), findsOneWidget);
+    await tester.enterText(
+      find.byType(TextField),
+      'Keep the short i at the start.',
+    );
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reviewAlikeCareCount(30, 40)), findsOneWidget);
+    // Never more than 40.
+    await tester.enterText(find.byType(TextField), 'x' * 50);
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.reviewAlikeCareCount(40, 40)), findsOneWidget);
+    await tester.enterText(
+      find.byType(TextField),
+      'Keep the short i at the start.',
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
+    await tester.pumpAndSettle();
+    final words = state.deckById(wordsDeck)!;
+    final alike = state.reviewing.reviewOf(words, words.cards.first)!.alike!;
+    expect(alike.real, isTrue);
+    expect(alike.partner, rudeCard);
+    expect(alike.kind, AlikeKind.sound);
+    expect(alike.care, 'Keep the short i at the start.');
+    expect(find.text(l10n.reviewAlikeConfirmed), findsOneWidget);
+    expect(find.text(l10n.reviewOffensivePairsProgress(1, 1)), findsOneWidget);
+    expect(rowButton(l10n.reviewAlikeCheckedShort), findsOneWidget);
+    // Kept in the deck's review, and sent with it.
+    expect(state.reviewing.unsent.map((d) => d.deckId), contains(wordsDeck));
+  });
+
+  testWidgets('a word like an offensive one opens whole here with the '
+      'offensive word named, and its pair to check', (tester) async {
+    useTallPhone(tester);
+    await pumpOffensive(tester);
+    await passGate(tester);
+    final l10n = l10nOf(tester);
+    await tester.ensureVisible(find.text('widow'));
+    await tester.tap(find.text('widow'));
+    await tester.pumpAndSettle();
+    expect(find.byType(ReviewCardSheet), findsOneWidget);
+    expect(find.text(l10n.reviewAlikeSoundsAbout), findsOneWidget);
+    await tester.ensureVisible(find.text(l10n.reviewAlikeCheck));
+    await tester.tap(find.text(l10n.reviewAlikeCheck));
+    await tester.pumpAndSettle();
+    expect(find.byType(AlikeSheet), findsOneWidget);
+  });
+
   testWidgets('a language with no offensive words says so', (tester) async {
     useTallPhone(tester);
     final state = AppState.test(
@@ -443,6 +530,27 @@ void main() {
             isFocusable: true,
           ),
         );
+        // So does a pair's Check button.
+        await tester.scrollUntilVisible(
+          find.text('widow'),
+          200,
+          scrollable: find.byType(Scrollable).last,
+        );
+        await tester.pumpAndSettle();
+        expect(
+          tester.getSemantics(
+            find.bySemanticsLabel(l10n.reviewAlikeCheckFor('widow')),
+          ),
+          isSemantics(
+            label: l10n.reviewAlikeCheckFor('widow'),
+            isButton: true,
+            hasTapAction: true,
+            hasEnabledState: true,
+            isEnabled: true,
+            isFocusable: true,
+          ),
+        );
+        expect(tester.takeException(), isNull);
         await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
         await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
         await expectLater(tester, meetsGuideline(textContrastGuideline));

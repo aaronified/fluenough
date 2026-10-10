@@ -14,19 +14,16 @@ import 'send_reviews_sheet.dart';
 
 /// "Waiting for review" (docs/plans/deck-browser.md): per language the
 /// reviewer reviews, the units and decks no native speaker has signed off,
-/// with the cards each has left; the offensive words not yet rated; the
-/// pairs not yet confirmed; and what the reviewer has reviewed and not
+/// with the cards each has left; the offensive words not yet rated and
+/// the pairs not yet confirmed; and what the reviewer has reviewed and not
 /// sent. Opened from Settings, under Review decks.
 ///
 /// A unit opens its review; the words waiting are counted, never named.
-/// Offensive words are never in a unit's review: each language with any
-/// has its own "Offensive words" row, which the reviewer opens on purpose
-/// (owner, 2026-10-10).
+/// Offensive words, and the pairs that name one, are never in a unit's
+/// review: each language with any has its own "Offensive words" row,
+/// which the reviewer opens on purpose (owner, 2026-10-10).
 class WaitingForReviewPage extends StatelessWidget {
-  const WaitingForReviewPage({super.key, this.adult});
-
-  /// Whether adult content is on, in place of the setting: for tests.
-  final bool? adult;
+  const WaitingForReviewPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +69,7 @@ class WaitingForReviewPage extends StatelessWidget {
           ),
         ),
         for (final language in languages)
-          _Language(waiting: waitingIn(state, language, adult: adult)),
+          _Language(waiting: waitingIn(state, language)),
       ],
     );
   }
@@ -88,12 +85,13 @@ class _Language extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final language = waiting.language;
-    String decksOf(Iterable<WaitingCard> cards) => l10n.reviewWaitingInDecks(
-      joinParts(
-        l10n,
-        <String>{for (final c in cards) c.deck.deck.name}.toList(),
-      ),
-    );
+    // What waits in the Offensive words review, counted, never named.
+    final offensive = <String>[
+      if (waiting.unrated.isNotEmpty)
+        l10n.reviewWaitingUnrated(waiting.unrated.length),
+      if (waiting.unconfirmed.isNotEmpty)
+        l10n.reviewWaitingUnconfirmed(waiting.unconfirmed.length),
+    ];
     // A unit opens its review; a deck outside the path, which has no unit
     // to review, opens its deck.
     void open(String deckId) => AppNavigator.openReview(context, deckId);
@@ -130,22 +128,16 @@ class _Language extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => AppNavigator.openDeck(context, d.deck.id),
           ),
-        if (waiting.offensive > 0)
+        if (waiting.hasOffensiveReview)
           GroupedTile(
             leading: const Icon(Icons.bar_chart),
             title: l10n.reviewOffensiveTitle,
-            subtitle: waiting.unrated.isEmpty
+            subtitle: offensive.isEmpty
                 ? l10n.reviewOffensiveNoneWaiting
-                : l10n.reviewWaitingUnrated(waiting.unrated.length),
+                : offensive.join('\n'),
             trailing: const Icon(Icons.chevron_right),
             onTap: () =>
                 AppNavigator.openOffensiveReview(context, language.code),
-          ),
-        if (waiting.unconfirmed.isNotEmpty)
-          GroupedTile(
-            leading: const Icon(Icons.hearing_outlined),
-            title: l10n.reviewWaitingUnconfirmed(waiting.unconfirmed.length),
-            subtitle: decksOf(waiting.unconfirmed),
           ),
         if (waiting.unsent.isNotEmpty)
           GroupedTile(

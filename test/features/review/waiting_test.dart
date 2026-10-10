@@ -80,7 +80,7 @@ void main() {
         'unsent', () async {
       final state = await reviewer();
       final te = state.deckById(wordsDeck)!.language;
-      final waiting = waitingIn(state, te, adult: true);
+      final waiting = waitingIn(state, te);
       // The unit of rude words only is not among them: its words are
       // reviewed apart, on purpose, in the Offensive words review.
       expect(waiting.units.map((u) => (u.number, u.title)), [
@@ -109,7 +109,7 @@ void main() {
         words.cards.first,
         const AlikeCheck(partner: rudeCard, kind: AlikeKind.sound, real: true),
       );
-      final waiting = waitingIn(state, words.language, adult: true);
+      final waiting = waitingIn(state, words.language);
       expect(waiting.units.single.decks.single.left, 1);
       expect(waiting.unrated, isEmpty);
       expect(waiting.offensive, 1);
@@ -120,19 +120,21 @@ void main() {
       });
     });
 
-    test('without adult content, a pair the reviewer cannot confirm does '
-        'not wait, as its deck\'s cards left say', () async {
+    test('a pair is never among a deck\'s cards left, adult content on or '
+        'off: it waits in the Offensive words review', () async {
       final state = await reviewer();
       final words = state.deckById(wordsDeck)!;
       for (final card in words.cards) {
         state.reviewing.markRight(words, card);
       }
-      final hidden = waitingIn(state, words.language, adult: false);
-      expect(hidden.units.first.decks.single.left, 0);
-      expect(hidden.unconfirmed, isEmpty);
-      final shown = waitingIn(state, words.language, adult: true);
-      expect(shown.units.first.decks.single.left, 1);
-      expect(shown.unconfirmed.map((c) => c.card.id), [alikeCard]);
+      for (final adult in <bool>[false, true]) {
+        state.settings.adultContent = adult;
+        final waiting = waitingIn(state, words.language);
+        expect(waiting.units.first.decks.single.left, 0);
+        expect(waiting.unconfirmed.map((c) => c.card.id), [alikeCard]);
+        expect(waiting.pairs, 1);
+        expect(waiting.hasOffensiveReview, isTrue);
+      }
     });
 
     test('offensive words are never among a unit\'s cards left, adult '
@@ -140,7 +142,8 @@ void main() {
       final state = await reviewer();
       final rude = state.deckById(rudeDeck)!;
       for (final adult in <bool>[false, true]) {
-        final waiting = waitingIn(state, rude.language, adult: adult);
+        state.settings.adultContent = adult;
+        final waiting = waitingIn(state, rude.language);
         expect(
           waiting.allDecks.map((d) => d.deck.id),
           isNot(contains(rudeDeck)),
@@ -148,7 +151,7 @@ void main() {
         expect(waiting.unrated.map((c) => c.card.id), [rudeCard]);
       }
       state.reviewing.rate(rude, rude.cards.single, const WordRating(score: 6));
-      expect(waitingIn(state, rude.language, adult: false).unrated, isEmpty);
+      expect(waitingIn(state, rude.language).unrated, isEmpty);
     });
 
     test('a deck with offensive and ordinary words counts only the '
@@ -176,11 +179,7 @@ cards:
         ),
       );
       await state.load();
-      final waiting = waitingIn(
-        state,
-        state.deckById(wordsDeck)!.language,
-        adult: true,
-      );
+      final waiting = waitingIn(state, state.deckById(wordsDeck)!.language);
       // A deck the path leaves out comes after its units.
       final mixed = waiting.units.last.decks.single;
       expect(mixed.deck.id, 'te-en-review-mixed');
@@ -202,7 +201,7 @@ cards:
         reviewing.markRight(words, card);
       }
       reviewing.signOff(words);
-      var waiting = waitingIn(state, words.language, adult: false);
+      var waiting = waitingIn(state, words.language);
       expect(waiting.units, isEmpty);
       expect(waiting.unrated.map((c) => c.card.id), [rudeCard]);
       expect(awaitsReview(state, words), isFalse);
@@ -210,7 +209,7 @@ cards:
 
       reviewing.signOff(rude);
       await reviewing.send(reviewing.unsent, body: '');
-      waiting = waitingIn(state, words.language, adult: false);
+      waiting = waitingIn(state, words.language);
       expect(waiting.isEmpty, isTrue);
 
       // A deck a native speaker has checked carries no unreviewed tag.
@@ -249,11 +248,7 @@ cards:
           ),
         );
         await state.load();
-        final waiting = waitingIn(
-          state,
-          state.deckById(wordsDeck)!.language,
-          adult: false,
-        );
+        final waiting = waitingIn(state, state.deckById(wordsDeck)!.language);
         expect(waiting.decks.map((d) => (d.deck.id, d.left)), [
           ('te-bn-review-words', 1),
         ]);
@@ -267,7 +262,7 @@ cards:
       usePhone(tester);
       await pumpScreen(
         tester,
-        const WaitingForReviewPage(adult: true),
+        const WaitingForReviewPage(),
         state: await reviewer(languages: const <String>{'te'}, more: true),
       );
       final l10n = l10nOf(tester);
@@ -289,8 +284,15 @@ cards:
       // own, opened on purpose.
       expect(find.text(l10n.reviewWaitingUnit(2, 'Rude words')), findsNothing);
       expect(find.text(l10n.reviewOffensiveTitle), findsOneWidget);
-      expect(find.text(l10n.reviewWaitingUnrated(1)), findsOneWidget);
-      expect(find.text(l10n.reviewWaitingUnconfirmed(1)), findsOneWidget);
+      // What waits in it, counted under its row: the word to rate and the
+      // pair to check, which names it.
+      expect(
+        find.text(
+          '${l10n.reviewWaitingUnrated(1)}\n'
+          '${l10n.reviewWaitingUnconfirmed(1)}',
+        ),
+        findsOneWidget,
+      );
       expect(find.textContaining('వెధవ'), findsNothing);
       expect(find.textContaining('idiot'), findsNothing);
       expect(find.text(l10n.reviewWaitingUnsent(1)), findsNothing);

@@ -122,8 +122,9 @@ void main() {
     for (final adult in <bool>[false, true]) {
       await pumpScreen(
         tester,
-        ReviewPage(deckId: rudeDeck, adult: adult),
-        state: await reviewState(reviewing: true),
+        const ReviewPage(deckId: rudeDeck),
+        state: await reviewState(reviewing: true)
+          ..settings.adultContent = adult,
       );
       final l10n = l10nOf(tester);
       expect(find.text(l10n.reviewOffensiveApart(1)), findsOneWidget);
@@ -165,9 +166,10 @@ cards:
     );
     await state.load();
     state.reviewing.turnOn();
+    state.settings.adultContent = true;
     await pumpScreen(
       tester,
-      const ReviewPage(deckId: 'te-en-review-mixed', adult: true),
+      const ReviewPage(deckId: 'te-en-review-mixed'),
       state: state,
     );
     final l10n = l10nOf(tester);
@@ -192,79 +194,54 @@ cards:
     useTallPhone(tester);
     await pumpScreen(
       tester,
-      const ReviewPage(deckId: wordsDeck, adult: true),
-      state: await reviewState(reviewing: true),
+      const ReviewPage(deckId: wordsDeck),
+      state: await reviewState(reviewing: true)
+        ..settings.adultContent = true,
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.reviewOffensiveApart(1)), findsNothing);
     expect(find.text(l10n.reviewPageProgress(0, 2)), findsOneWidget);
   });
 
-  testWidgets('a sound-alike pair is confirmed with a care note of at most '
-      '40 letters, its budget shown as it is typed', (tester) async {
-    useTallPhone(tester);
-    final state = await pumpScreen(
+  for (final adult in <bool>[true, false]) {
+    testWidgets('adult content ${adult ? 'on' : 'off'}: a word like a rude '
+        'one never names it here, nor offers its pair, nor waits on it', (
       tester,
-      const ReviewPage(deckId: wordsDeck, adult: true),
-      state: await reviewState(reviewing: true),
-    );
-    final l10n = l10nOf(tester);
-    await tester.tap(find.text('widow'));
-    await tester.pumpAndSettle();
-    expect(
-      find.text(l10n.reviewAlikeSounds('వెధవ', 'vedhava')),
-      findsOneWidget,
-    );
-    await tester.tap(find.text(l10n.reviewAlikeCheck));
-    await tester.pumpAndSettle();
-    expect(find.byType(AlikeSheet), findsOneWidget);
-    expect(find.text(l10n.reviewAlikeReal), findsOneWidget);
-    await tester.tap(find.text(l10n.reviewAlikeConfirm));
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewAlikeCareCount(0, 40)), findsOneWidget);
-    await tester.enterText(
-      find.byType(TextField),
-      'Keep the short i at the start.',
-    );
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewAlikeCareCount(30, 40)), findsOneWidget);
-    // Never more than 40.
-    await tester.enterText(find.byType(TextField), 'x' * 50);
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewAlikeCareCount(40, 40)), findsOneWidget);
-    await tester.enterText(
-      find.byType(TextField),
-      'Keep the short i at the start.',
-    );
-    await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
-    await tester.pumpAndSettle();
-    final words = state.deckById(wordsDeck)!;
-    final alike = state.reviewing.reviewOf(words, words.cards.first)!.alike!;
-    expect(alike.real, isTrue);
-    expect(alike.partner, rudeCard);
-    expect(alike.kind, AlikeKind.sound);
-    expect(alike.care, 'Keep the short i at the start.');
-    expect(find.text(l10n.reviewAlikeConfirmed), findsOneWidget);
-  });
-
-  testWidgets('without adult content the pair\'s rude word stays hidden', (
-    tester,
-  ) async {
-    useTallPhone(tester);
-    await pumpScreen(
-      tester,
-      const ReviewPage(deckId: wordsDeck),
-      state: await reviewState(reviewing: true),
-    );
-    final l10n = l10nOf(tester);
-    await tester.tap(find.text('widow'));
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.alikeCarefulSpeaking), findsOneWidget);
-    expect(find.text(l10n.alikeHidden), findsOneWidget);
-    expect(find.textContaining('వెధవ'), findsNothing);
-    expect(find.text(l10n.reviewAlikeCheck), findsNothing);
-  });
+    ) async {
+      useTallPhone(tester);
+      final state = await pumpScreen(
+        tester,
+        const ReviewPage(deckId: wordsDeck),
+        state: await reviewState(reviewing: true)
+          ..settings.adultContent = adult,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('వెధవ'), findsNothing);
+      expect(find.textContaining('vedhava'), findsNothing);
+      await tester.tap(find.text('widow'));
+      await tester.pumpAndSettle();
+      // The warning a learner sees, the rude word hidden.
+      expect(find.text(l10n.alikeCarefulSpeaking), findsOneWidget);
+      expect(find.text(l10n.alikeHidden), findsOneWidget);
+      expect(find.textContaining('వెధవ'), findsNothing);
+      expect(find.textContaining('vedhava'), findsNothing);
+      expect(find.textContaining('idiot'), findsNothing);
+      expect(find.text(l10n.reviewAlikeSoundsAbout), findsNothing);
+      expect(find.text(l10n.reviewAlikeCheck), findsNothing);
+      await tester.tap(find.text(l10n.reviewLooksRight));
+      await tester.pumpAndSettle();
+      // Its pair, unchecked, holds nothing up: both words checked, the unit
+      // signs off.
+      await tester.tap(rowButton(l10n.reviewCheck));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.reviewPageProgress(2, 2)), findsOneWidget);
+      final words = state.deckById(wordsDeck)!;
+      expect(state.reviewing.reviewOf(words, words.cards.first)!.alike, isNull);
+      await tester.tap(find.text(l10n.reviewSignOffReady));
+      await tester.pumpAndSettle();
+      expect(state.reviewing.reviews.of(wordsDeck)!.signedOff, isNotNull);
+    });
+  }
 
   testWidgets('Sign off once every card is checked; Send review sends every '
       'deck waiting in one mail, a file each, all ticked', (tester) async {
