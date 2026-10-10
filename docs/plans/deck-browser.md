@@ -303,6 +303,9 @@ Settled with the owner, 2026-10-09:
 - **Base words show on cards** (owner, 2026-10-10, for v0.4): a card
   shows its base word and meaning, so reviewers can check the meanings
   agents wrote in #445 (#410).
+- **No reviewers in child profiles** (owner, 2026-10-10: "a child cannot
+  become a reviewer"): a child profile never offers reviewing
+  (`profiles.md`).
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
