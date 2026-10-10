@@ -9,6 +9,7 @@ import '../../app/shell_tab.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/report_button.dart';
@@ -190,6 +191,7 @@ class _Header extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
+          const LanguageMenu(),
           const ReportButton(detail: 'Today'),
           IncomingFeature(
             feature: Feature.profiles,

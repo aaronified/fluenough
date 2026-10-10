@@ -1,6 +1,7 @@
 import '../../app/app_state.dart';
 import '../../app/profile.dart';
 import '../../app/session.dart';
+import '../../app/settings.dart';
 import '../../core/grading/self_grade.dart';
 import '../gallery/fixtures.dart';
 
@@ -54,3 +55,10 @@ AppState todayAllDoneState(AppState app) {
 /// Mira, who learns Marathi, which the fixture phone has no voice for.
 AppState todayNoVoiceState(AppState app) =>
     GalleryFixtures.state(app, currentProfileId: GalleryFixtures.mira.id);
+
+/// Aro, who learns Hindi and Spanish, with the language menu on Spanish
+/// (#461): Spanish's lesson, reviews and tiles alone.
+AppState todayOneLanguageState(AppState app) => GalleryFixtures.state(
+  app,
+  settings: SettingsNotifier(languageChoice: 'es'),
+);

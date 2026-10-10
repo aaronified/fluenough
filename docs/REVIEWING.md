@@ -46,6 +46,10 @@ You can turn reviewing off whenever you like. Your code is kept.
 
 Open a unit and tap **Review**. Mark each card that is right (**Looks right**).
 
+Where a base word changes its stem in the card's form, such as Telugu రావడం
+(rāvaḍam), "to come", in వచ్చింది (vaccindi), "she came", the notes should
+say so. If they don't, suggest a change to the notes.
+
 When every card is checked, **Sign off** becomes available. It says you
 checked the whole unit.
 

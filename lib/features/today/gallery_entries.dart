@@ -47,6 +47,14 @@ final List<GalleryEntry> todayGalleryStates = <GalleryEntry>[
     state: (app) => GalleryFixtures.adjusted(GalleryFixtures.state(app)),
   ),
   GalleryEntry(
+    id: 'today-one-language',
+    section: GallerySection.learn,
+    label: 'Today, one language shown', // ui-literal-ok: debug-only gallery
+    note: 'The language menu on Spanish, of two', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: todayOneLanguageState,
+  ),
+  GalleryEntry(
     id: 'today-no-voice',
     section: GallerySection.learn,
     label: 'Today, no voice', // ui-literal-ok: debug-only gallery

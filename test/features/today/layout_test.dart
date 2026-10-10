@@ -29,6 +29,7 @@ final Map<String, Future<AppState> Function()> states =
         return state;
       },
       'no voice, Mira': () async => todayNoVoiceState(await _loaded()),
+      'one language shown': () async => todayOneLanguageState(await _loaded()),
       'no decks': () async => AppState.test(
         profiles: const <Profile>[
           Profile(id: 'fr', name: 'Fr', languages: <String>{'fr'}),
