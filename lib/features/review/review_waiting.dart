@@ -1,8 +1,10 @@
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../core/decks/deck_index.dart' show IndexLanguage;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/review/deck_review.dart';
+import '../../core/review/review_pairs.dart';
 import '../decks/path_model.dart' show unitTitle;
 import '../decks/unreviewed_notice.dart';
 import 'review_words.dart';
@@ -19,17 +21,65 @@ import 'review_words.dart';
 /// rude word; and what the reviewer has reviewed but not sent. Read from the decks and the reviews on this
 /// phone, not kept: it changes as the reviewer reviews.
 
-/// The languages [state]'s reviewer reviews, in the catalog's order: those
-/// they chose in Settings, or before they chose, the languages they speak
-/// that the app teaches.
+/// What [state]'s reviewer has said about themselves (#462): the languages
+/// they know, and whether they read each one's script.
+ReviewerLanguages reviewerOf(AppState state) => ReviewerLanguages(
+  known: state.settings.spokenLanguages.toSet(),
+  readsScript: state.settings.scriptsRead,
+);
+
+/// Every course a reviewer could review (#462), a language and the one its
+/// decks are taught from: each in the deck index, downloaded or not, then
+/// any other on the phone.
+List<ReviewPair> offeredPairs(AppState state) => <ReviewPair>{
+  for (final language
+      in state.deckDownloads?.index?.languages ?? const <IndexLanguage>[])
+    for (final native in language.natives)
+      ReviewPair(language.code, native.code),
+  for (final deck in state.decks)
+    ReviewPair(deck.language.code, deck.deck.native.code),
+}.toList();
+
+/// The courses [state]'s reviewer reviews: those they ticked in Languages
+/// you review, or before they ticked any, those on the phone of the
+/// languages they chose before courses (#462), or of the languages they
+/// know, as before. Only those they can review: both languages known, both
+/// scripts read.
+Set<ReviewPair> reviewPairsOf(AppState state) => reviewedPairs(
+  chosenPairs: state.settings.reviewPairs,
+  chosenLanguages: state.settings.reviewLanguages,
+  offered: <ReviewPair>{for (final deck in state.decks) pairOf(deck)},
+  reviewer: reviewerOf(state),
+);
+
+/// The languages [state]'s reviewer reviews in one course or more, in the
+/// catalog's order.
 List<LanguageInfo> reviewLanguagesOf(AppState state) {
-  final chosen =
-      state.settings.reviewLanguages ?? state.settings.spokenLanguages.toSet();
+  final targets = <String>{for (final p in reviewPairsOf(state)) p.target};
   return <LanguageInfo>[
     for (final language in state.languages)
-      if (chosen.contains(language.code)) language,
+      if (targets.contains(language.code)) language,
   ];
 }
+
+/// Every language's English name the phone knows, by code: from the deck
+/// index, its natives included, and from the decks on the phone.
+Map<String, String> languageNamesOf(AppState state) => <String, String>{
+  for (final language
+      in state.deckDownloads?.index?.languages ??
+          const <IndexLanguage>[]) ...<String, String>{
+    language.code: language.name,
+    for (final native in language.natives) native.code: native.name,
+  },
+  for (final deck in state.decks) ...<String, String>{
+    deck.language.code: deck.language.name,
+    deck.deck.native.code: deck.deck.native.name,
+  },
+};
+
+/// The course [deck] belongs to, for review.
+ReviewPair pairOf(DeckEntry deck) =>
+    ReviewPair(deck.language.code, deck.deck.native.code);
 
 /// Whether [deck] waits for a native speaker's sign-off: its file still
 /// says no speaker has checked it (`unreviewed`), and this reviewer has not
@@ -139,9 +189,13 @@ WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
     );
   }
 
-  // A deck of rude words only waits in the Offensive words review alone.
+  // A deck of rude words only waits in the Offensive words review alone,
+  // and a deck of a course not reviewed does not wait for this reviewer.
+  final reviewed = reviewPairsOf(state);
   bool waits(DeckEntry deck) =>
-      awaitsReview(state, deck) && hasOrdinaryCards(deck);
+      reviewed.contains(pairOf(deck)) &&
+      awaitsReview(state, deck) &&
+      hasOrdinaryCards(deck);
 
   final units = <WaitingUnit>[];
   final inCourse = <String>{};
@@ -208,9 +262,11 @@ WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
 bool unitToReview(AppState state, List<DeckEntry> unit) {
   final reviewing = state.reviewing;
   if (!reviewing.on || reviewing.code == null || unit.isEmpty) return false;
-  final code = unit.first.language.code;
-  if (!reviewLanguagesOf(state).any((l) => l.code == code)) return false;
+  final pairs = reviewPairsOf(state);
   return unit.any(
-    (deck) => awaitsReview(state, deck) && hasOrdinaryCards(deck),
+    (deck) =>
+        pairs.contains(pairOf(deck)) &&
+        awaitsReview(state, deck) &&
+        hasOrdinaryCards(deck),
   );
 }

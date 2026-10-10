@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
-import '../../core/models/deck.dart';
+import '../../core/review/review_pairs.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
@@ -13,7 +13,7 @@ import 'how_reviewing_works.dart';
 import 'review_waiting.dart';
 import 'review_words.dart' show hasOrdinaryCards;
 import 'send_reviews_sheet.dart';
-import 'waiting_page.dart';
+import 'review_languages_page.dart';
 
 /// Settings' Reviewing group (docs/plans/deck-browser.md): the "Review
 /// decks" switch, which asks once and then shows the rater code the phone
@@ -44,15 +44,15 @@ class ReviewSection extends StatelessWidget {
     final on = reviewing.on && code != null;
     final waiting = reviewing.unsent.length;
     final lastSent = reviewing.lastSent.length;
-    final reviewed = on ? reviewLanguagesOf(state) : const <LanguageInfo>[];
+    final reviewed = on ? reviewPairsOf(state) : const <ReviewPair>{};
+    final names = languageNamesOf(state);
     final toReview = <String>{
-      for (final language in reviewed)
-        for (final deck in state.decks)
-          // A deck of offensive words only is reviewed apart, on purpose.
-          if (deck.language.code == language.code &&
-              awaitsReview(state, deck) &&
-              hasOrdinaryCards(deck))
-            deck.id,
+      for (final deck in state.decks)
+        // A deck of offensive words only is reviewed apart, on purpose.
+        if (reviewed.contains(pairOf(deck)) &&
+            awaitsReview(state, deck) &&
+            hasOrdinaryCards(deck))
+          deck.id,
     }.length;
     final helped = <String>[
       if (code != null)
@@ -94,7 +94,14 @@ class ReviewSection extends StatelessWidget {
             title: l10n.reviewSettingsLanguages,
             subtitle: reviewed.isEmpty
                 ? l10n.reviewSettingsLanguagesNone
-                : joinParts(l10n, <String>[for (final l in reviewed) l.name]),
+                : joinParts(l10n, <String>[
+                    for (final p in offeredPairs(state))
+                      if (reviewed.contains(p))
+                        l10n.reviewPairName(
+                          names[p.target] ?? p.target,
+                          names[p.native] ?? p.native,
+                        ),
+                  ]),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => showReviewLanguages(context),
           ),

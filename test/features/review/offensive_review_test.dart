@@ -143,11 +143,14 @@ void main() {
         const WaitingForReviewPage(),
         state: await reviewState(
           reviewing: true,
-          settings: SettingsNotifier(
-            spokenLanguages: const <String>['en'],
-            learningLanguages: const <String>['te'],
-            learningChosen: true,
-          )..reviewLanguages = const <String>{'te'},
+          settings:
+              SettingsNotifier(
+                  spokenLanguages: const <String>['en', 'te'],
+                  learningLanguages: const <String>['te'],
+                  learningChosen: true,
+                )
+                ..reviewLanguages = const <String>{'te'}
+                ..scriptsRead = const <String, bool>{'en': true, 'te': true},
         ),
       );
       final l10n = l10nOf(tester);

@@ -20,9 +20,10 @@ import '../../support/review_fixture.dart';
 /// (docs/plans/deck-browser.md): the languages they review, what waits in
 /// each, the page in Settings and the path's "To review" marks.
 
-/// A reviewer who speaks [spoken], with reviewing on.
+/// A reviewer who knows [spoken] and reads each one's script, with
+/// reviewing on: by default, Telugu from English is theirs to review.
 Future<AppState> reviewer({
-  List<String> spoken = const <String>['en'],
+  List<String> spoken = const <String>['en', 'te'],
   Set<String>? languages,
   bool more = false,
 }) async {
@@ -30,11 +31,14 @@ Future<AppState> reviewer({
     reviewing: true,
     more: more,
     share: FixedMailShare(),
-    settings: SettingsNotifier(
-      spokenLanguages: spoken,
-      learningLanguages: const <String>['te'],
-      learningChosen: true,
-    )..reviewLanguages = languages,
+    settings:
+        SettingsNotifier(
+            spokenLanguages: spoken,
+            learningLanguages: const <String>['te'],
+            learningChosen: true,
+          )
+          ..reviewLanguages = languages
+          ..scriptsRead = <String, bool>{for (final code in spoken) code: true},
   );
   return state;
 }
@@ -47,9 +51,12 @@ void useTallPhone(WidgetTester tester) {
 
 void main() {
   group('the languages a reviewer reviews', () {
-    test('before they choose, the languages they speak that the app '
+    test('before they choose, the languages they know that the app '
         'teaches; then what they chose, even none', () async {
-      expect(reviewLanguagesOf(await reviewer()), isEmpty);
+      expect(
+        reviewLanguagesOf(await reviewer(spoken: const <String>['en'])),
+        isEmpty,
+      );
       final state = await reviewer(spoken: const <String>['en', 'te', 'fr']);
       expect(reviewLanguagesOf(state).map((l) => l.code), <String>['te']);
       state.settings.reviewLanguages = const <String>{};
@@ -173,10 +180,10 @@ cards:
 ''',
         }),
         settings: SettingsNotifier(
-          spokenLanguages: const <String>['en'],
+          spokenLanguages: const <String>['en', 'te'],
           learningLanguages: const <String>['te'],
           learningChosen: true,
-        ),
+        )..scriptsRead = const <String, bool>{'en': true, 'te': true},
       );
       await state.load();
       final waiting = waitingIn(state, state.deckById(wordsDeck)!.language);
@@ -241,11 +248,18 @@ cards:
   - { id: te-9904, target: "అక్క", native: "দিদি", reading: "akka" }
 ''',
           }),
-          settings: SettingsNotifier(
-            spokenLanguages: const <String>['en'],
-            learningLanguages: const <String>['te'],
-            learningChosen: true,
-          ),
+          // Telugu from Bengali is reviewed only by one who knows both.
+          settings:
+              SettingsNotifier(
+                  spokenLanguages: const <String>['en', 'te', 'bn'],
+                  learningLanguages: const <String>['te'],
+                  learningChosen: true,
+                )
+                ..scriptsRead = const <String, bool>{
+                  'en': true,
+                  'te': true,
+                  'bn': true,
+                },
         );
         await state.load();
         final waiting = waitingIn(state, state.deckById(wordsDeck)!.language);
@@ -347,18 +361,23 @@ cards:
       final state = await pumpScreen(
         tester,
         const WaitingForReviewPage(),
-        state: await reviewer(),
+        state: await reviewer(languages: const <String>{}),
       );
       final l10n = l10nOf(tester);
       expect(find.text(l10n.reviewWaitingNoLanguages), findsOneWidget);
       await tester.tap(find.text(l10n.reviewWaitingChoose));
       await tester.pumpAndSettle();
       expect(find.text(l10n.reviewLanguagesBody), findsOneWidget);
-      await tester.tap(find.widgetWithText(CheckboxListTile, 'Telugu'));
+      await tester.tap(
+        find.widgetWithText(
+          CheckboxListTile,
+          l10n.reviewPairName('Telugu', 'English'),
+        ),
+      );
       await tester.pumpAndSettle();
-      await tester.tap(find.text(l10n.reviewSave));
+      expect(state.settings.reviewPairs, <String>{'te/en'});
+      await tester.pageBack();
       await tester.pumpAndSettle();
-      expect(state.settings.reviewLanguages, <String>{'te'});
       expect(
         find.text(l10n.reviewWaitingUnit(1, 'Family words')),
         findsOneWidget,
@@ -377,7 +396,10 @@ cards:
       );
       final l10n = l10nOf(tester);
       expect(find.text(l10n.reviewSettingsLanguages), findsOneWidget);
-      expect(find.text('Telugu'), findsWidgets);
+      expect(
+        find.text(l10n.reviewPairName('Telugu', 'English')),
+        findsOneWidget,
+      );
       // The deck of offensive words only is not counted: it is reviewed
       // apart, on purpose.
       expect(find.text(l10n.reviewSettingsWaitingDesc(1)), findsOneWidget);
@@ -396,10 +418,16 @@ cards:
       final l10n = l10nOf(tester);
       await tester.tap(find.text(l10n.reviewSettingsLanguages));
       await tester.pumpAndSettle();
-      await tester.tap(find.widgetWithText(CheckboxListTile, 'Telugu'));
-      await tester.tap(find.text(l10n.reviewSave));
+      await tester.tap(
+        find.widgetWithText(
+          CheckboxListTile,
+          l10n.reviewPairName('Telugu', 'English'),
+        ),
+      );
       await tester.pumpAndSettle();
-      expect(state.settings.reviewLanguages, isEmpty);
+      expect(state.settings.reviewPairs, isEmpty);
+      await tester.pageBack();
+      await tester.pumpAndSettle();
       expect(find.text(l10n.reviewSettingsLanguagesNone), findsOneWidget);
       expect(find.text(l10n.reviewSettingsWaitingDesc(0)), findsOneWidget);
     });
