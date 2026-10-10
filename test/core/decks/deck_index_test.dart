@@ -6,6 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/decks/deck_index.dart';
 import 'package:fluenough/core/decks/sha256.dart';
 
+import '../../support/deck_remote.dart';
+
 const String _sha =
     'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
 
@@ -53,10 +55,12 @@ IndexFile _phone(
   String kind = 'vocab',
   bool core = false,
   String sha = _sha,
+  String? content,
 }) => IndexFile(
   path: path,
   size: 10,
   sha256: sha,
+  contentSha256: content,
   kind: kind,
   native: native,
   deck: deck,
@@ -77,6 +81,12 @@ void main() {
         final bytes = File(file.path).readAsBytesSync();
         expect(bytes.length, file.size, reason: file.path);
         expect(sha256Hex(bytes), file.sha256, reason: file.path);
+        // tools/deck_index.py's content hash, as the test remote makes it.
+        expect(
+          sha256Hex(utf8.encode(contentOf(utf8.decode(bytes)))),
+          file.contentSha256,
+          reason: file.path,
+        );
       }
     });
 
@@ -157,6 +167,51 @@ void main() {
         () => DeckIndex.parse(
           _index(<Map<String, Object?>>[
             _file('decks/zz/zz-en-a.yaml', sha: 'nothex'),
+          ]),
+        ),
+        throwsFormatException,
+      );
+    });
+
+    test('reads a content hash, which is the hash where none is given', () {
+      final content = 'c' * 64;
+      final index = DeckIndex.parse(
+        _index(<Map<String, Object?>>[
+          <String, Object?>{
+            ..._file('decks/zz/zz-a.yaml', deck: 'zz-a'),
+            'content_sha256': content,
+          },
+          _file('decks/zz/zz-b.yaml', deck: 'zz-b'),
+        ]),
+      );
+      final files = index.language('zz')!.files;
+      expect(files.first.contentSha256, content);
+      expect(files.last.contentSha256, _sha);
+      // The phone keeps it beside the file, in the same form (#444).
+      final kept = DeckIndex.parse(
+        jsonEncode(<String, Object?>{
+          'version': 1,
+          'languages': <Object?>[
+            <String, Object?>{
+              'code': 'zz',
+              'name': 'Testlang',
+              'files': <Object?>[for (final f in files) f.toJson()],
+            },
+          ],
+        }),
+      ).language('zz')!.files;
+      expect(kept.first.contentSha256, content);
+      expect(kept.first.sha256, _sha);
+    });
+
+    test('refuses a bad content hash', () {
+      expect(
+        () => DeckIndex.parse(
+          _index(<Map<String, Object?>>[
+            <String, Object?>{
+              ..._file('decks/zz/zz-en-a.yaml'),
+              'content_sha256': 'nothex',
+            },
           ]),
         ),
         throwsFormatException,
@@ -317,6 +372,91 @@ void main() {
         'decks/zz/zz-en-a.yaml',
         'decks/zz/zz-en-path.yaml',
       ]);
+    });
+
+    group('proposals (#444)', () {
+      // What reviewers propose is in the file, so it changes the file's
+      // sha256; learners never see it, so it leaves its content hash.
+      final proposed = 'd' * 64;
+      final content = 'c' * 64;
+      Map<String, IndexFile> phone() => <String, IndexFile>{
+        for (final file in wanted)
+          file.path: _phone(
+            file.path,
+            native: file.native,
+            deck: file.deck,
+            kind: file.kind,
+            core: file.core,
+            sha: file.path.endsWith('zz-en-a.yaml') ? _sha : proposed,
+            content: content,
+          ),
+      };
+      List<IndexFile> now({String layerContent = 'c'}) => <IndexFile>[
+        for (final file in wanted)
+          _phone(
+            file.path,
+            native: file.native,
+            deck: file.deck,
+            kind: file.kind,
+            core: file.core,
+            sha: file.path.endsWith('zz-en-a.yaml') ? old : _sha,
+            content: file.path.endsWith('zz-en-a.yaml')
+                ? layerContent * 64
+                : content,
+          ),
+      ];
+
+      test('a proposal alone is no update for a learner', () {
+        // Every file's sha256 changed, none of their content.
+        final changes = changesFor('zz', now(), phone());
+        expect(changes.isEmpty, isTrue);
+        expect(changes.bytes, 0);
+      });
+
+      test('a change a learner sees is, and brings the rest along', () {
+        final changes = changesFor('zz', now(layerContent: 'e'), phone());
+        expect(changes.fetch.map((f) => f.path), <String>[
+          'decks/zz/zz-path.yaml',
+          'decks/zz/zz-a.yaml',
+          'decks/zz/en/zz-en-a.yaml',
+        ]);
+        expect(changes.quiet.map((f) => f.path), <String>[
+          'decks/zz/zz-path.yaml',
+          'decks/zz/zz-a.yaml',
+        ]);
+      });
+
+      test('a proposal is an update for a reviewer', () {
+        final changes = changesFor('zz', now(), phone(), reviewer: true);
+        expect(changes.fetch, hasLength(3));
+        expect(changes.quiet, hasLength(3));
+      });
+
+      test('a file not on the phone is fetched with its quiet ones', () {
+        final onPhone = phone()..remove('decks/zz/en/zz-en-a.yaml');
+        final changes = changesFor('zz', now(), onPhone);
+        expect(changes.fetch, hasLength(3));
+        expect(changes.quiet.map((f) => f.path), <String>[
+          'decks/zz/zz-path.yaml',
+          'decks/zz/zz-a.yaml',
+        ]);
+      });
+
+      test('a file kept before content hashes counts as changed', () {
+        // A phone that downloaded it before #444 knows only its sha256.
+        final onPhone = <String, IndexFile>{
+          for (final MapEntry(:key, :value) in phone().entries)
+            key: _phone(
+              key,
+              native: value.native,
+              deck: value.deck,
+              kind: value.kind,
+              core: value.core,
+              sha: value.sha256,
+            ),
+        };
+        expect(changesFor('zz', now(), onPhone).fetch, hasLength(3));
+      });
     });
 
     test('keeps a whole language GitHub no longer offers', () {

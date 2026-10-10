@@ -5,7 +5,6 @@ import '../../core/models/deck.dart';
 import '../../core/review/deck_review.dart';
 import '../decks/path_model.dart' show unitTitle;
 import '../decks/unreviewed_notice.dart';
-import '../decks/word_sheet.dart' show adultContentOn;
 import 'review_words.dart';
 
 /// What is waiting for review, in the reviewer's languages
@@ -13,9 +12,11 @@ import 'review_words.dart';
 /// also know what all is pending unreviewed in their chosen languages").
 ///
 /// Per language: the units and decks not yet signed off, with how many
-/// cards each has left; the offensive words not yet rated; the sound-alike
-/// and look-alike pairs not yet confirmed; and what the reviewer has
-/// reviewed but not sent. Read from the decks and the reviews on this
+/// cards each has left, its offensive words aside; the offensive words,
+/// which are reviewed apart and only on purpose (owner, 2026-10-10), and
+/// how many are not yet rated, and the sound-alike and look-alike pairs
+/// not yet confirmed, which that review checks too, since a pair names its
+/// rude word; and what the reviewer has reviewed but not sent. Read from the decks and the reviews on this
 /// phone, not kept: it changes as the reviewer reviews.
 
 /// The languages [state]'s reviewer reviews, in the catalog's order: those
@@ -37,24 +38,20 @@ bool awaitsReview(AppState state, DeckEntry deck) =>
     UnreviewedNotice.appliesTo(deck) &&
     state.reviewing.reviews.of(deck.id)?.signedOff == null;
 
-/// Whether [card] of [deck] needs nothing more from this reviewer: marked
-/// right or with a suggestion, rated if it is rude, and its pair checked
-/// if it is like a rude word and [adult] content shows it. A rude word
-/// [adult] content hides is never checked: it counts as left.
-bool cardChecked(AppState state, DeckEntry deck, Card card, bool adult) {
-  final rude = isRudeIn(deck, card);
-  if (rude && !adult) return false;
-  final review = state.reviewing.reviewOf(deck, card);
-  if (review == null) return false;
-  // A rude word is rated, not marked right.
-  if (rude ? review.rating == null : !review.marked) return false;
-  if (adult && rudeAlikesOf(state, card).isNotEmpty && review.alike == null) {
-    return false;
-  }
-  return true;
-}
+/// Whether [card] of [deck], a word of the ordinary review, needs nothing
+/// more from this reviewer there: marked right or with a suggestion.
+///
+/// A word like a rude one is checked here like any other: its pair names
+/// the rude word, so it is confirmed in the language's Offensive words
+/// review, opened on purpose, and never holds up the unit's sign-off
+/// (owner, 2026-10-10). A rude word is never in the ordinary review.
+bool cardChecked(AppState state, DeckEntry deck, Card card) =>
+    !isRudeIn(deck, card) &&
+    (state.reviewing.reviewOf(deck, card)?.marked ?? false);
 
-/// A deck waiting for review, and how many of its cards are left to check.
+/// A deck waiting for review, and how many of its cards are left to check,
+/// its offensive words aside: they are counted in its language's Offensive
+/// words review.
 typedef WaitingDeck = ({DeckEntry deck, int left, int total});
 
 /// A unit of the course's path with a deck waiting for review.
@@ -72,6 +69,8 @@ class WaitingLanguage {
     this.unrated = const <WaitingCard>[],
     this.unconfirmed = const <WaitingCard>[],
     this.unsent = const <DeckReview>[],
+    this.offensive = 0,
+    this.pairs = 0,
   });
 
   final LanguageInfo language;
@@ -87,10 +86,22 @@ class WaitingLanguage {
   /// Rude words, in decks not yet signed off, this reviewer has not rated.
   final List<WaitingCard> unrated;
 
+  /// How many offensive words the language has, in all its decks, rated or
+  /// not: whether it has an Offensive words review to open.
+  final int offensive;
+
   /// Words like a rude one, in decks not yet signed off, whose pair this
-  /// reviewer has not confirmed or rejected: none without adult content,
-  /// which hides the pair, so that a deck's cards left agree.
+  /// reviewer has not confirmed or rejected: checked in the Offensive words
+  /// review, with or without adult content, since that review asks its
+  /// own 18+ question. Never among a deck's cards left.
   final List<WaitingCard> unconfirmed;
+
+  /// How many words of the language are like a rude one, checked or not.
+  final int pairs;
+
+  /// Whether the language has an Offensive words review to open: a rude
+  /// word, or a word like one.
+  bool get hasOffensiveReview => offensive > 0 || pairs > 0;
 
   /// Its decks this reviewer has reviewed and not sent.
   final List<DeckReview> unsent;
@@ -99,6 +110,9 @@ class WaitingLanguage {
   Iterable<WaitingDeck> get allDecks =>
       units.expand((u) => u.decks).followedBy(decks);
 
+  /// Whether nothing waits for this reviewer. The Offensive words review
+  /// may still be listed beside it, saying none of its words wait: it is
+  /// opened on purpose, whether or not anything waits in it.
   bool get isEmpty =>
       units.isEmpty &&
       decks.isEmpty &&
@@ -107,20 +121,27 @@ class WaitingLanguage {
       unsent.isEmpty;
 }
 
-/// What waits for review in [language], with adult content on or not as
-/// [adult] says (the setting, by default).
-WaitingLanguage waitingIn(
-  AppState state,
-  LanguageInfo language, {
-  bool? adult,
-}) {
-  final shows = adult ?? adultContentOn(state);
+/// What waits for review in [language]. The adult content setting changes
+/// none of it: offensive words and the pairs that name them wait in the
+/// Offensive words review, which asks its own 18+ question.
+WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
   final code = language.code;
-  WaitingDeck count(DeckEntry deck) => (
-    deck: deck,
-    left: deck.cards.where((c) => !cardChecked(state, deck, c, shows)).length,
-    total: deck.cards.length,
-  );
+  // The ordinary review's cards: a deck's rude words are reviewed apart.
+  WaitingDeck count(DeckEntry deck) {
+    final cards = <Card>[
+      for (final card in deck.cards)
+        if (!isRudeIn(deck, card)) card,
+    ];
+    return (
+      deck: deck,
+      left: cards.where((c) => !cardChecked(state, deck, c)).length,
+      total: cards.length,
+    );
+  }
+
+  // A deck of rude words only waits in the Offensive words review alone.
+  bool waits(DeckEntry deck) =>
+      awaitsReview(state, deck) && hasOrdinaryCards(deck);
 
   final units = <WaitingUnit>[];
   final inCourse = <String>{};
@@ -128,7 +149,7 @@ WaitingLanguage waitingIn(
     inCourse.addAll(unit.map((e) => e.id));
     final waiting = <WaitingDeck>[
       for (final deck in unit)
-        if (awaitsReview(state, deck)) count(deck),
+        if (waits(deck)) count(deck),
     ];
     if (waiting.isNotEmpty) {
       units.add((number: i + 1, title: unitTitle(state, unit), decks: waiting));
@@ -138,28 +159,29 @@ WaitingLanguage waitingIn(
     for (final deck in state.decks)
       if (deck.language.code == code &&
           !inCourse.contains(deck.id) &&
-          awaitsReview(state, deck))
+          waits(deck))
         count(deck),
   ];
 
   final unrated = <WaitingCard>[];
   final unconfirmed = <WaitingCard>[];
-  for (final waiting in <WaitingDeck>[
-    for (final unit in units) ...unit.decks,
-    ...others,
-  ]) {
-    final deck = waiting.deck;
+  var offensive = 0;
+  var pairs = 0;
+  for (final deck in state.decks) {
+    if (deck.language.code != code) continue;
+    final waiting = awaitsReview(state, deck);
     for (final card in deck.cards) {
       final review = state.reviewing.reviewOf(deck, card);
-      if (isRudeIn(deck, card) && review?.rating == null) {
-        unrated.add((deck: deck, card: card));
-      }
-      // As [cardChecked]: a pair is confirmed only where adult content
-      // shows it, so without, it is not waiting.
-      if (shows &&
-          review?.alike == null &&
-          rudeAlikesOf(state, card).isNotEmpty) {
-        unconfirmed.add((deck: deck, card: card));
+      if (isRudeIn(deck, card)) {
+        offensive++;
+        if (waiting && review?.rating == null) {
+          unrated.add((deck: deck, card: card));
+        }
+      } else if (rudeAlikesOf(state, card).isNotEmpty) {
+        pairs++;
+        if (waiting && review?.alike == null) {
+          unconfirmed.add((deck: deck, card: card));
+        }
       }
     }
   }
@@ -174,15 +196,21 @@ WaitingLanguage waitingIn(
       for (final deck in state.reviewing.unsent)
         if (deck.language == code) deck,
     ],
+    offensive: offensive,
+    pairs: pairs,
   );
 }
 
 /// Whether [unit]'s decks have one waiting for review in a language this
-/// reviewer reviews, with reviewing on: the path's "To review" mark.
+/// reviewer reviews, with reviewing on: the path's "To review" mark. A deck
+/// of offensive words only never marks its unit: those words are reviewed
+/// only on purpose, from the Offensive words review.
 bool unitToReview(AppState state, List<DeckEntry> unit) {
   final reviewing = state.reviewing;
   if (!reviewing.on || reviewing.code == null || unit.isEmpty) return false;
   final code = unit.first.language.code;
   if (!reviewLanguagesOf(state).any((l) => l.code == code)) return false;
-  return unit.any((deck) => awaitsReview(state, deck));
+  return unit.any(
+    (deck) => awaitsReview(state, deck) && hasOrdinaryCards(deck),
+  );
 }

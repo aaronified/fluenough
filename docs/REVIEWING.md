@@ -61,14 +61,19 @@ checked the whole unit.
 
 ## Offensive words and sound-alikes
 
-- **Offensive words (18+).** These are reviewed on their own, and only if you
-  choose to: they show only if **Adult content (18+)** is on in Settings.
-  Rate how offensive a word is to native speakers in general, from 1 to 9,
-  not how it feels to you. You also say where you speak the language, and
-  whether it can be friendly among friends.
-- **Sound-alike checks.** A word may sound or look like a rude one. With adult
-  content on, confirm or reject the pair, and for a confirmed pair write a
-  short care note (at most 40 letters) that learners will see.
+- **Offensive words (18+).** These are never in a unit's ordinary review.
+  Each language has its own **Offensive words** review, under Waiting for
+  review, which you open only if you choose to. Before showing any word it
+  explains why they are in the app: some are deeply offensive, some mild,
+  some fine between friends; learners should understand abuse, not use it
+  without knowing; and a word's strength differs across languages and
+  cultures. Then it asks if you are 18 or over, each time. Rate how
+  offensive a word is to native speakers in general, from 1 to 9, not how
+  it feels to you, and say where you speak the language.
+- **Sound-alike checks.** A word may sound or look like a rude one. These
+  pairs are checked in the same Offensive words review: confirm or reject
+  each, and for a confirmed pair write a short care note (at most 40
+  letters) that learners will see.
 
 ## Send several decks in one mail
 
