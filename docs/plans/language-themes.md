@@ -187,11 +187,9 @@ dependency.
   all three. Pure black still forces the three surfaces black, so a language
   never lights up an OLED screen.
 - High contrast stays an overlay on whatever seed is in force.
-- **Proposed:** an Appearance switch, "Use each language's colours", on by
-  default, plus "Show language pictures", so a learner can have the app seed
-  everywhere and no images. Each is one `StoredSettings` key, additive
-  (rule 9), with an English token in `app_en.arb` (rule 10) and a row in the
-  settings tests. Both are listed as an open question.
+- **Always on** (owner, 2026-10-10: "Always on"): no switch turns a
+  language's colours or pictures off. With a language chosen, its look
+  applies.
 - The learner's chosen `ThemeSeed` stays the colour for All languages and
   Settings.
 
@@ -206,8 +204,7 @@ dependency.
 - Dart: a seed's three variants meet 4.5:1 for the key pairs (shares
   seeds with the Python check); the dropdown switches the theme and All
   languages restores the app one; Settings never changes; scrim text
-  contrast over white and black images; the switch off gives the app theme
-  and no images; a failed image download leaves the language working;
+  contrast over white and black images; a failed image download leaves the language working;
   glyph fallback without a look file.
 - Existing `theme_test.dart` and `language_chips` tests stay green.
 
@@ -217,7 +214,7 @@ dependency.
 2. Hindi and Spanish look files as the first two, without images.
 3. Download, `LanguageLook`, glyph read from the look file.
 4. Per-language theme with #461's dropdown (needs it first).
-5. Background images, the scrim, credits, the two settings switches.
+5. Background images, the scrim, credits.
 6. An ADR once the owner has answered the questions (it changes the deck
    format, which AGENTS.md says needs a human answer first).
 
@@ -234,8 +231,8 @@ Confidence: medium on the code, low on the dropdown's timing (it depends on
 
 1. **Name.** Keep "theme" in the interface and `look` in files, to avoid
    the course-topic `themes.yaml`, or rename one of them?
-2. **User override.** Add "Use each language's colours" and "Show language
-   pictures" switches (proposed, on by default), or always apply them?
+2. ~~**User override.**~~ Decided (owner, 2026-10-10): always on, no
+   switches.
 3. **Image icons.** Allow `icon.image`, or keep the glyph only (simpler,
    always legible, ADR-0027's "first letter of its own name")?
 4. **Background images: who makes and licenses them?** Contributors under
