@@ -90,6 +90,26 @@ class Validating(Base):
             errors = vd.validate(self.write(line)).errors
             self.assertTrue(any(said in e for e in errors), (line, errors))
 
+    def flow(self, card: str) -> Path:
+        self.single.write_text(SINGLE.replace(
+            '  - ref: "zz-9001"\n    native: "house"\n', card), encoding="utf-8")
+        return self.single
+
+    def test_last_in_a_one_line_flow_card_passes(self) -> None:
+        path = self.flow(f'  - {{ ref: "zz-9001", native: "house", checked_by: ["{ALICE}"] }}\n')
+        self.assertEqual(vd.validate(path).errors, [])
+        self.assertNotIn(b"checked_by", deck_index.content_bytes(path.read_bytes()))
+
+    def test_anywhere_the_index_cannot_take_it_out_is_an_error(self) -> None:
+        # In the middle of a flow card, or a flow card wrapped over lines:
+        # content_sha256 would change, and every learner be offered an update.
+        for card in (
+                f'  - {{ ref: "zz-9001", checked_by: ["{ALICE}"], native: "house" }}\n',
+                f'  - {{ ref: "zz-9001", native: "house",\n      checked_by: ["{ALICE}"] }}\n',
+                f'  - {{ ref: "zz-9001", native: "house", checked_by: [\n      "{ALICE}"] }}\n'):
+            errors = vd.validate(self.flow(card)).errors
+            self.assertTrue(any("content_sha256" in e for e in errors), (card, errors))
+
     def test_not_deck_content_for_other_checks(self) -> None:
         # Not an unknown field on a layer entry, which allows only the
         # learner's language.

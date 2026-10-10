@@ -1800,7 +1800,11 @@ whose code a deck lists.
   the layer gives nothing for, a core ref that takes its meaning from
   another deck, by the core's.
 - **The validator** checks that it is a non-empty list of rater codes,
-  `FL-XXXX-XXXX-C`, each written as the app writes it, none twice.
+  `FL-XXXX-XXXX-C`, each written as the app writes it, none twice, and
+  that it is where the bot puts it: a line of its own, or last in a card
+  written on one line, `checked_by: [...] }`. In the middle of a flow card,
+  or a flow card wrapped over lines, it is an error, because
+  `content_sha256` could not leave it out.
 - **No update for it.** `content_sha256` in `index.json` leaves it out, so a
   learner is not offered a deck update when only a sign-off changed.
 - **The deck's tag.** Once every card entry of a deck file lists a code,
