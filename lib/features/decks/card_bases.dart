@@ -26,6 +26,12 @@ typedef ShownBase = ({
 /// full with its own meaning, or by ref as the card [find] finds for its id
 /// teaches it. A ref to a card that is not on the phone, or to [card]
 /// itself, is left out, and a base shown once is not shown again.
+///
+/// That last is for the line alone: two words of the target with the same
+/// base and meaning, such as two forms of one verb, read as one base. A
+/// reviewer can still suggest a meaning for each of them, as "Suggest a
+/// change" offers every base written in full, by its
+/// word.
 List<ShownBase> shownBases(Card card, Card? Function(String id) find) {
   final seen = <String>{};
   final out = <ShownBase>[];

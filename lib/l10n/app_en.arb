@@ -6488,6 +6488,20 @@
       }
     }
   },
+  "reviewPartBaseOfWord": "Base of {word}: {base}",
+  "@reviewPartBaseOfWord": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card when another of its words has the same base: the word as it stands in the card, then its base.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "गया"
+      },
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
   "reviewSuggestNow": "Now",
   "@reviewSuggestNow": {
     "description": "Over what the chosen part of the card says now."
