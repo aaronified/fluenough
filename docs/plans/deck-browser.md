@@ -3,7 +3,7 @@
 It began on 2026-10-06 as a deck browser on GitHub Pages with a Google Form
 and a Sheet. On 2026-10-09 the owner moved the review into the app, sent by
 mail, and dropped the Sheet. **What stands is "Review in the app, by mail"
-below** (tracker #403; the app side is PR #436, still open). The sections
+below** (tracker #403; the app side merged in #436, the mail sender check in #439, and proposals in #444). The sections
 about the Pages site, the form and the Sheet are kept for what they decided,
 and each says where it is superseded.
 

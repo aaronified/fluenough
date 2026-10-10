@@ -5,6 +5,11 @@ Written 2026-10-06. **Part of the settings redesign,** with
 last in the owner's order, after the skill model (done), `b1-plans.md` and
 deck downloads ([ADR-0037](../adr/0037-decks-download-from-main.md)).
 
+**Built in #443 (closed #211).** Kept, not deleted: no ADR holds its
+decisions yet (the Alpha and Beta stages, the taught-from choice, the
+download progress, the completeness formula), so the "Decided" section
+below is where they live.
+
 ## What the owner asked
 
 > Languages i am learning should be redesigned to match world class
