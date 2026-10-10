@@ -5986,16 +5986,6 @@
       }
     }
   },
-  "reviewWaitingInDecks": "In {decks}",
-  "@reviewWaitingInDecks": {
-    "description": "Under a row of words waiting: the decks they are in, joined.",
-    "placeholders": {
-      "decks": {
-        "type": "String",
-        "example": "Rude words · Family words"
-      }
-    }
-  },
   "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
   "@reviewWaitingUnsent": {
     "description": "Row of a language on the Waiting for review page; opens the send sheet.",
@@ -6274,9 +6264,9 @@
   "@reviewOffensiveTitle": {
     "description": "Row of a language on the Waiting for review page that opens its offensive words, reviewed apart and only on purpose."
   },
-  "reviewOffensiveNoneWaiting": "None waiting for a rating",
+  "reviewOffensiveNoneWaiting": "None waiting to be rated or checked",
   "@reviewOffensiveNoneWaiting": {
-    "description": "Under Offensive words on the Waiting for review page, when every offensive word in a deck waiting for review is rated."
+    "description": "Under Offensive words on the Waiting for review page, when every offensive word in a deck waiting for review is rated, and every word like one has its pair confirmed or rejected."
   },
   "reviewOffensivePageTitle": "Offensive words in {language}",
   "@reviewOffensivePageTitle": {
@@ -6308,7 +6298,7 @@
   "@reviewOffensiveWhyRate": {
     "description": "First screen of the Offensive words review: what the reviewer is asked to do."
   },
-  "reviewOffensiveWhyApart": "These words never appear in the ordinary review of a deck or unit. They wait here until you choose to check them.",
+  "reviewOffensiveWhyApart": "These words never appear in the ordinary review of a deck or unit, and nor does the offensive word an ordinary one sounds or looks like. They wait here until you choose to check them.",
   "@reviewOffensiveWhyApart": {
     "description": "First screen of the Offensive words review, last line, in a quieter style."
   },
@@ -6361,6 +6351,56 @@
       "region": {
         "type": "String",
         "example": "Telangana"
+      }
+    }
+  },
+  "reviewOffensivePairsTitle": "Words like an offensive one",
+  "@reviewOffensivePairsTitle": {
+    "description": "Heading in a language's Offensive words review, after the offensive words: ordinary words that sound or look like an offensive one, whose pair the reviewer confirms or rejects."
+  },
+  "reviewOffensivePairsInfo": "Each of these ordinary words sounds or looks like an offensive one. Learners are told to take care, and never shown the offensive word unless they choose to see it. Confirm a pair if the risk is real, or reject it.",
+  "@reviewOffensivePairsInfo": {
+    "description": "Info line under Words like an offensive one, in the Offensive words review."
+  },
+  "reviewOffensivePairsProgress": "{checked} of {total} checked",
+  "@reviewOffensivePairsProgress": {
+    "description": "Beside Words like an offensive one: how many of the pairs the reviewer has confirmed or rejected.",
+    "placeholders": {
+      "checked": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewAlikeCheckShort": "Check",
+  "@reviewAlikeCheckShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, before its pair is confirmed or rejected: opens Check this pair."
+  },
+  "reviewAlikeCheckedShort": "Checked",
+  "@reviewAlikeCheckedShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, once its pair is confirmed or rejected: opens Check this pair again."
+  },
+  "reviewAlikeCheckFor": "Check the pair for {meaning}",
+  "@reviewAlikeCheckFor": {
+    "description": "Read by a screen reader for the Check button on a word like an offensive one. Starts with the button's word, then names the word by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
+      }
+    }
+  },
+  "reviewAlikeCheckedFor": "Checked the pair for {meaning}. Tap to change it",
+  "@reviewAlikeCheckedFor": {
+    "description": "Read by a screen reader for the Checked button on a word like an offensive one.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
       }
     }
   },
