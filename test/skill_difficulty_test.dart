@@ -93,6 +93,47 @@ void main() {
     expect(progress.stateOf('te-0001', DrillMode.recognition)!.difficulty, d);
   });
 
+  test('a right answer by ear or by voice leaves the skill it implies '
+      'alone in D', () {
+    final progress = MemoryProgress()
+      // Alphabet decks: hearing a form implies writing it.
+      ..skills = const SkillMap(formHeardIn: <String>{'te-script'});
+    answer(progress, 'te-0001', DrillMode.recognition, 1);
+    final d = progress.stateOf('te-0001', DrillMode.recognition)!.difficulty;
+    final stability = progress
+        .stateOf('te-0001', DrillMode.recognition)!
+        .stability;
+
+    // Hear right implies Recognition.
+    answer(progress, 'te-0001', DrillMode.listening, 4, day: 2);
+    final afterHear = progress.stateOf('te-0001', DrillMode.recognition)!;
+    expect(afterHear.difficulty, d, reason: 'Hear right kept Recognition D');
+    // The implied review did reach Recognition, so the D held for a reason.
+    expect(afterHear.stability, isNot(stability));
+
+    // Say right implies Recognition too.
+    answer(progress, 'te-0001', DrillMode.speaking, 4, day: 5);
+    final afterSay = progress.stateOf('te-0001', DrillMode.recognition)!;
+    expect(afterSay.difficulty, d, reason: 'Say right kept Recognition D');
+    expect(afterSay.stability, isNot(afterHear.stability));
+
+    // In an alphabet deck, Hear right implies Write: its D is kept as well.
+    void heard(DrillMode mode, int grade, int day) => progress.record(
+      deckId: 'te-script',
+      cardId: 'te-a',
+      mode: mode,
+      grade: grade,
+      now: monday.add(Duration(days: day)),
+      answerGiven: 'typed',
+    );
+    heard(DrillMode.production, 1, 0);
+    final write = progress.stateOf('te-a', DrillMode.production)!;
+    heard(DrillMode.listening, 4, 2);
+    final afterHeard = progress.stateOf('te-a', DrillMode.production)!;
+    expect(afterHeard.difficulty, write.difficulty);
+    expect(afterHeard.stability, isNot(write.stability));
+  });
+
   test('grammar understood and produced keep their own D', () {
     final progress = MemoryProgress();
     answer(progress, 'te-0100', DrillMode.grammarUnderstood, 4);
