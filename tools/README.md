@@ -196,3 +196,32 @@ python3 tools/check_release_version.py v0.3.4 pubspec.yaml
 
 Exit status is 0 when they match, 1 when they differ or `pubspec.yaml` has no
 `version:` line, and 2 if the arguments are wrong or the file cannot be read.
+
+## `readme_fonts.py` and `make_gif.py`
+
+Remake the README's screenshots, `docs/screenshots/*.gif`: a slow scroll
+through four screens of a Bengali learner's phone. Not deck tools, and not
+run by CI: `readme_fonts.py` needs fontTools and `make_gif.py` Pillow
+(`pip install fonttools pillow`), with the Flutter SDK on `PATH`.
+
+A widget test draws text in boxes and turns font fallback off, so
+`readme_fonts.py` first merges the SDK's Roboto with static Noto Sans Bengali
+files (`NotoSansBengali-Regular.ttf`, `-SemiBold.ttf` and so on, from
+[notofonts/bengali](https://github.com/notofonts/bengali), OFL-1.1). Then
+`test/tools/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
+each screen's frames as PNGs, and `make_gif.py` turns each directory of
+frames into a looping GIF at 11 frames a second, one palette, under 1.5 MB
+(it narrows the GIF, then cuts colours, until it fits).
+
+```sh
+python3 tools/readme_fonts.py path/to/noto-bengali build/readme_fonts
+README_GIFS=1 README_GIFS_FONTS=build/readme_fonts \
+  flutter test test/tools/readme_gifs_test.dart
+for g in deck-path today progress review; do
+  python3 tools/make_gif.py build/readme_gifs/$g docs/screenshots/$g.gif
+done
+```
+
+The frames go to `build/readme_gifs/` (`README_GIFS_OUT` changes that). The
+learner, their three and a half weeks of reviews, and the clock are fixed, so
+a rerun changes a GIF only when the app's screens change.

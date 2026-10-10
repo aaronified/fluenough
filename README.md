@@ -80,11 +80,16 @@ Settings > Deck downloads lists each language, with Update and Remove, and
 can turn the daily check off
 ([ADR-0037](docs/adr/0037-decks-download-from-main.md)).
 
-<!--
-Screenshots: the owner will add the app screenshots here (a "Screenshots"
-heading and a row of images) once all the visuals are complete. Nothing is
-shown until then.
--->
+## Screenshots
+
+A Bengali learner from English, three and a half weeks in, and the same phone
+in reviewer mode.
+
+| Deck path | Today |
+|:---:|:---:|
+| <img src="docs/screenshots/deck-path.gif" width="220" alt="The Bengali course path: done units, the unit up next, milestones, and the units still being written, shown as Coming"> | <img src="docs/screenshots/today.gif" width="220" alt="Today: the day's lesson, the words due by skill, the streak, quick revision and the day's fact"> |
+| **Progress** | **Reviewing** |
+| <img src="docs/screenshots/progress.gif" width="220" alt="Progress: reviews, what is remembered, the streak, twelve weeks of reviews, and how well each skill and tag is going"> | <img src="docs/screenshots/review.gif" width="220" alt="Reviewing the Bengali Family unit: the rater code, cards marked right, and cards still to check"> |
 
 ## Get it
 
