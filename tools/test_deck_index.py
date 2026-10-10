@@ -223,6 +223,18 @@ class ContentBytes(unittest.TestCase):
         )
         self.assertEqual(self.content(text.encode()), self.BASE.encode())
 
+    def test_items_at_the_keys_own_indent_are_left_out(self) -> None:
+        # YAML allows a list under a key at the key's own indent.
+        line = '{ id: "3f9c0a1b2d", field: "native", text: "1" }'
+        text = self.BASE.replace(
+            '    native: "one"\n',
+            f'    native: "one"\n    proposed:\n    - {line}\n    - {line}\n'
+            '    notes: "kept"\n',
+        )
+        want = self.BASE.replace(
+            '    native: "one"\n', '    native: "one"\n    notes: "kept"\n')
+        self.assertEqual(self.content(text.encode()), want.encode())
+
     def test_only_proposals_go(self) -> None:
         # A field named like it, or text that says it, stays.
         data = ('cards:\n  - id: "zz-0001"\n    notes: "proposed: no"\n'
