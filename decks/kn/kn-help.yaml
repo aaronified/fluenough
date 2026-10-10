@@ -1,0 +1,52 @@
+schema: 1
+id: "kn-help"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-0523"
+    target: "ಸಹಾಯ"
+    reading: "sahāya"
+    ipa: "sahaːja"
+    pos: "noun"
+  - id: "kn-0526"
+    target: "ನಿಲ್ಲಿ!"
+    reading: "nilli!"
+    ipa: "nilli"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0527"
+    target: "ಪೊಲೀಸ್"
+    picture: "👮"
+    reading: "polīs"
+    ipa: "poliːs"
+    pos: "noun"
+  - ref: "kn-0235"
+  - id: "kn-0528"
+    target: "ಆಸ್ಪತ್ರೆ"
+    picture: "🏥"
+    reading: "āspatre"
+    ipa: "aːspat̪re"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0529"
+    target: "ಔಷಧಿ"
+    picture: "💊"
+    reading: "auṣadhi"
+    ipa: "auʂad̪ʱi"
+    alt_target: ["ಔಷಧ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0530"
+    target: "ನೋವು"
+    reading: "nōvu"
+    ipa: "noːʋu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }

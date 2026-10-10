@@ -1,0 +1,115 @@
+schema: 1
+id: "gu-grammar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "gu-0273"
+    target: "આ મારું ઘર છે."
+    reading: "ā mārum̐ ghar che."
+    ipa: "a marũ ɡʱər tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારું", base: "મારું", reading: "mārum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0274"
+    target: "મારું નામ મીના છે."
+    reading: "mārum̐ nām minā che."
+    ipa: "marũ nam mina tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારું", base: "મારું", reading: "mārum̐" }
+      - { word: "મીના", base: "મીના", reading: "minā" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0275"
+    target: "અમે અમદાવાદમાં રહીએ છીએ."
+    reading: "ame amdāvādmām̐ rahie chie."
+    ipa: "əme əmd̪aʋad̪mã rəɦie tʃʰie"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "અમદાવાદમાં", base: "અમદાવાદ", reading: "amdāvād" }
+      - { word: "રહીએ", base: "રહેવું", reading: "rahevum̐" }
+      - { word: "છીએ", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0276"
+    target: "તે શાળાએ જાય છે."
+    reading: "te śāḷāe jāy che."
+    ipa: "t̪e ʃaɭae dʒaj tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "તે", base: "તે", reading: "te" }
+      - { word: "શાળાએ", ref: "gu-0473" }
+      - { word: "જાય", ref: "gu-0508" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0277"
+    target: "બા રસોડામાં છે."
+    reading: "bā rasoḍāmām̐ che."
+    ipa: "ba rəsoɖamã tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "રસોડામાં", ref: "gu-0458" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0278"
+    target: "હું રોજ દૂધ પીઉં છું."
+    reading: "hum̐ roj dudh pium̐ chum̐."
+    ipa: "ɦũ rodʒ d̪ud̪ʱ piũ tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "રોજ", base: "રોજ", reading: "roj" }
+      - { word: "પીઉં", ref: "gu-0506" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0279"
+    target: "પપ્પા છાપું વાંચે છે."
+    reading: "pappā chāpum̐ vāñce che."
+    ipa: "pəppa tʃʰapũ ʋaɲtʃe tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "છાપું", base: "છાપું", reading: "chāpum̐" }
+      - { word: "વાંચે", ref: "gu-0510" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0280"
+    target: "ચા ગરમ છે."
+    reading: "cā garam che."
+    ipa: "tʃa ɡərəm tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0281"
+    target: "તમે ક્યાં જાઓ છો?"
+    reading: "tame kyām̐ jāo cho?"
+    ipa: "t̪əme kjã dʒao tʃʰo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "જાઓ", ref: "gu-0508" }
+      - { word: "છો", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0282"
+    target: "હું કાલે મુંબઈ જઈશ."
+    reading: "hum̐ kāle mumbai jaiś."
+    ipa: "ɦũ kale mumbəi dʒəiʃ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "મુંબઈ", base: "મુંબઈ", reading: "mumbai" }
+      - { word: "જઈશ", ref: "gu-0508" }

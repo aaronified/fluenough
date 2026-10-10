@@ -24,7 +24,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 VALIDATOR = REPO / "tools" / "validate_decks.py"
 INDEXER = REPO / "tools" / "deck_index.py"
-SAMPLE_DECK = REPO / "decks" / "es" / "es-en-core-100.yaml"
+SAMPLE_DECK = REPO / "tools" / "fixtures" / "index" / "es-en-core-100.yaml"
 
 
 class IndexCheck(unittest.TestCase):

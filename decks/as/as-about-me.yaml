@@ -1,0 +1,86 @@
+schema: 1
+id: "as-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-0166"
+    target: "নাম"
+    reading: "nām"
+    ipa: "nam"
+    pos: "noun"
+  - id: "as-0169"
+    target: "মই …ৰ পৰা আহিছোঁ।"
+    reading: "moi...r pôrā āhisum̐."
+    ipa: "moi ɹ pɔɹa ahisʊ̃"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "পৰা", base: "পৰা", reading: "pôrā" }
+      - { word: "আহিছোঁ", base: "অহা", reading: "ôhā" }
+  - id: "as-0170"
+    target: "মই …ত থাকোঁ।"
+    reading: "moi...t thākum̐."
+    ipa: "moi t tʰakʊ̃"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "থাকোঁ", base: "থাকা", reading: "thākā" }
+  - ref: "as-0052"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0171"
+    target: "পৰিয়াল"
+    reading: "poriyāl"
+    ipa: "poɹijal"
+    pos: "noun"
+  - ref: "as-0120"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0172"
+    target: "গাঁও"
+    reading: "gām̐o"
+    ipa: "ɡão"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0173"
+    target: "দেশ"
+    reading: "dex"
+    ipa: "dex"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0174"
+    target: "ভাষা"
+    reading: "bhāxā"
+    ipa: "bʱaxa"
+    pos: "noun"
+  - id: "as-0175"
+    target: "অসমীয়া"
+    reading: "ôxomiyā"
+    ipa: "ɔxomija"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0176"
+    target: "ইংৰাজী"
+    reading: "iṅrāzi"
+    ipa: "iŋɹazi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0177"
+    target: "বয়স"
+    reading: "bôyôx"
+    ipa: "bɔjɔx"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }

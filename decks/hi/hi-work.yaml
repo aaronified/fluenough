@@ -1,0 +1,169 @@
+schema: 1
+id: "hi-work"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0399"
+    target: "नौकरी"
+    reading: "naukrī"
+    ipa: "nɔːkriː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "hi-0194"
+  - id: "hi-0400"
+    target: "दफ़्तर"
+    picture: "🏢"
+    reading: "daftar"
+    ipa: "d̪əft̪ər"
+    alt_target: ["दफ्तर", "ऑफ़िस", "ऑफिस"]
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0401"
+    target: "अध्यापक"
+    picture: "🧑‍🏫"
+    reading: "adhyāpak"
+    ipa: "əd̪ʱjaːpək"
+    alt_target: ["टीचर"]
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0402"
+    target: "दुकानदार"
+    reading: "dukāndār"
+    ipa: "d̪ʊkaːnd̪aːr"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0403"
+    target: "ड्राइवर"
+    reading: "ḍrāivar"
+    ipa: "ɖraːɪʋər"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0404"
+    target: "इंजीनियर"
+    reading: "iñjīniyar"
+    ipa: "ɪɲdʒiːnɪjər"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0405"
+    target: "वकील"
+    reading: "vakīl"
+    ipa: "ʋəkiːl"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0406"
+    target: "नर्स"
+    reading: "nars"
+    ipa: "nərs"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0407"
+    target: "किसान"
+    picture: "🧑‍🌾"
+    reading: "kisān"
+    ipa: "kɪsaːn"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0408"
+    target: "रसोइया"
+    picture: "🧑‍🍳"
+    reading: "rasōiyā"
+    ipa: "rəsoːɪjaː"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0409"
+    target: "लेखक"
+    reading: "lēkhak"
+    ipa: "leːkʰək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0410"
+    target: "पत्रकार"
+    reading: "patrakār"
+    ipa: "pət̪rəkaːr"
+    pos: "noun"
+    gender: "m"
+  - ref: "hi-0357"
+  - ref: "hi-0356"
+  - id: "hi-0411"
+    target: "छात्र"
+    picture: "🧑‍🎓"
+    reading: "chātra"
+    ipa: "tʃʰaːt̪rə"
+    alt_target: ["छात्रा"]
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0412"
+    target: "छुट्टी"
+    reading: "chuṭṭī"
+    ipa: "tʃʰʊʈʈiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0413"
+    target: "तनख़्वाह"
+    reading: "tank͟hvāh"
+    ipa: "t̪ənxʋaːɦ"
+    alt_target: ["तनख्वाह", "वेतन"]
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0414"
+    target: "व्यापार"
+    reading: "vyāpār"
+    ipa: "ʋjaːpaːr"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0415"
+    target: "आप क्या करते हैं?"
+    reading: "āp kyā kartē haim̐?"
+    ipa: "aːp kjaː kərt̪eː ɦɛ̃ː"
+    alt_target: ["आप क्या करती हैं?"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "करते", base: "करना", reading: "karnā" }
+  - id: "hi-0416"
+    target: "मैं टीचर हूँ।"
+    reading: "maim̐ ṭīcar hūm̐."
+    ipa: "mɛ̃ː ʈiːtʃər ɦũː"
+    alt_target: ["मैं अध्यापक हूँ।", "मैं अध्यापिका हूँ।"]
+    pos: "phrase"
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0417"
+    target: "आप कहाँ काम करते हैं?"
+    reading: "āp kahām̐ kām kartē haim̐?"
+    ipa: "aːp kəɦãː kaːm kərt̪eː ɦɛ̃ː"
+    alt_target: ["आप कहाँ काम करती हैं?"]
+    pos: "phrase"
+    bases:
+      - { word: "करते", base: "करना", reading: "karnā" }
+  - id: "hi-0418"
+    target: "मैं एक दफ़्तर में काम करता हूँ।"
+    reading: "maim̐ ēk daftar mēm̐ kām kartā hūm̐."
+    ipa: "mɛ̃ː eːk d̪əft̪ər mẽː kaːm kərt̪aː ɦũː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "करता", base: "करना", reading: "karnā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }

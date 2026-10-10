@@ -1,0 +1,20 @@
+schema: 1
+id: "mr-en-grammar-future"
+kind: "layer"
+core: "mr-grammar-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Future"
+license: "CC0-1.0"
+description: "I will go, they will come: the future, which does not show gender, and the -णार (-ṇār) form everyday speech uses beside it. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Future"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "ghene": "to take"
+    "basne": "to sit"
+  notes: "The endings: मी (mi) -ईन (-in) or -एन (-en), आम्ही (āmhi) -ऊ (-u), तू (tu) -शील (-śil), तुम्ही (tumhi) -आल (-āl), he, she or it -ईल (-il) or -एल (-el), they -तील (-til). येणे (yeṇe), घेणे (gheṇe) and देणे (deṇe) change their vowel for तुम्ही (tumhi): याल (yāl), घ्याल (ghyāl), द्याल (dyāl). आम्ही जाऊ (āmhi jāu) is also 'let's go', and with आपण (āpaṇ) it includes the listener: आपण जाऊ (āpaṇ jāu). Speech also uses -णार (-ṇār), which never changes: मी उद्या जाणार (mi udyā jāṇār), I'm going tomorrow; तुम्ही येणार का (tumhi yeṇār kā)?, will you come?"

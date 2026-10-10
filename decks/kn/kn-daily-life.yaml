@@ -1,0 +1,160 @@
+schema: 1
+id: "kn-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-0432"
+    target: "ಎದ್ದೇಳು"
+    reading: "eddēḷu"
+    ipa: "ed̪d̪eːɭu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0433"
+    target: "ಸ್ನಾನ ಮಾಡು"
+    reading: "snāna māḍu"
+    ipa: "snaːna maːɖu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಸ್ನಾನ", base: "ಸ್ನಾನ", reading: "snāna" }
+      - { word: "ಮಾಡು", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-0434"
+    target: "ಹಲ್ಲು ಉಜ್ಜು"
+    reading: "hallu ujju"
+    ipa: "hallu udʒdʒu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹಲ್ಲು", base: "ಹಲ್ಲು", reading: "hallu" }
+      - { word: "ಉಜ್ಜು", base: "ಉಜ್ಜು", reading: "ujju" }
+  - id: "kn-0435"
+    target: "ತಿಂಡಿ"
+    reading: "tiṇḍi"
+    ipa: "t̪iɳɖi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0436"
+    target: "ಮಧ್ಯಾಹ್ನದ ಊಟ"
+    reading: "madhyāhnada ūṭa"
+    ipa: "mad̪ʱjaːhnad̪a uːʈa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮಧ್ಯಾಹ್ನದ", base: "ಮಧ್ಯಾಹ್ನ", reading: "madhyāhna" }
+  - id: "kn-0437"
+    target: "ರಾತ್ರಿ ಊಟ"
+    reading: "rātri ūṭa"
+    ipa: "raːt̪ri uːʈa"
+    pos: "noun"
+  - id: "kn-0438"
+    target: "ಕೆಲಸಕ್ಕೆ ಹೋಗು"
+    reading: "kelasakke hōgu"
+    ipa: "kelasakke hoːɡu"
+    pos: "verb"
+    bases:
+      - { word: "ಕೆಲಸಕ್ಕೆ", ref: "kn-0203" }
+      - { word: "ಹೋಗು", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-0439"
+    target: "ಮನೆಗೆ ಬರು"
+    reading: "manege baru"
+    ipa: "maneɡe baru"
+    pos: "verb"
+    bases:
+      - { word: "ಮನೆಗೆ", ref: "kn-0201" }
+      - { word: "ಬರು", base: "ಬರು", reading: "baru" }
+  - id: "kn-0440"
+    target: "ಅಡುಗೆ ಮಾಡು"
+    reading: "aḍuge māḍu"
+    ipa: "aɖuɡe maːɖu"
+    pos: "verb"
+    bases:
+      - { word: "ಅಡುಗೆ", base: "ಅಡುಗೆ", reading: "aḍuge" }
+      - { word: "ಮಾಡು", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-0441"
+    target: "ಮಲಗು"
+    reading: "malagu"
+    ipa: "malaɡu"
+    pos: "verb"
+  - id: "kn-0442"
+    target: "ಪ್ರತಿದಿನ"
+    reading: "pratidina"
+    ipa: "prat̪id̪ina"
+    alt_target: ["ದಿನಾ"]
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0443"
+    target: "ಕೆಲವೊಮ್ಮೆ"
+    reading: "kelavomme"
+    ipa: "kelaʋomme"
+    pos: "other"
+  - id: "kn-0444"
+    target: "ಯಾವಾಗಲೂ"
+    reading: "yāvāgalū"
+    ipa: "jaːʋaːɡaluː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0445"
+    target: "ಸಾಮಾನ್ಯವಾಗಿ"
+    reading: "sāmānyavāgi"
+    ipa: "saːmaːnjaʋaːɡi"
+    pos: "other"
+  - id: "kn-0446"
+    target: "ಆಮೇಲೆ"
+    reading: "āmēle"
+    ipa: "aːmeːle"
+    pos: "other"
+  - id: "kn-0447"
+    target: "ನಾನು ಪ್ರತಿದಿನ ಏಳು ಗಂಟೆಗೆ ಏಳುತ್ತೇನೆ."
+    reading: "nānu pratidina ēḷu gaṇṭege ēḷuttēne."
+    ipa: "naːnu prat̪id̪ina eːɭu ɡaɳʈeɡe eːɭut̪t̪eːne"
+    alt_target: ["ನಾನು ದಿನಾ ಏಳು ಗಂಟೆಗೆ ಏಳ್ತೀನಿ."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಗಂಟೆಗೆ", ref: "kn-0420" }
+      - { word: "ಏಳುತ್ತೇನೆ", ref: "kn-0250" }
+  - id: "kn-0448"
+    target: "ಆಮೇಲೆ ನಾನು ಕೆಲಸಕ್ಕೆ ಹೋಗುತ್ತೇನೆ."
+    reading: "āmēle nānu kelasakke hōguttēne."
+    ipa: "aːmeːle naːnu kelasakke hoːɡut̪t̪eːne"
+    alt_target: ["ಆಮೇಲೆ ನಾನು ಕೆಲಸಕ್ಕೆ ಹೋಗ್ತೀನಿ."]
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಕೆಲಸಕ್ಕೆ", ref: "kn-0203" }
+      - { word: "ಹೋಗುತ್ತೇನೆ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-0449"
+    target: "ನಾನು ರಾತ್ರಿ ಹನ್ನೊಂದು ಗಂಟೆಗೆ ಮಲಗುತ್ತೇನೆ."
+    reading: "nānu rātri hannondu gaṇṭege malaguttēne."
+    ipa: "naːnu raːt̪ri hannond̪u ɡaɳʈeɡe malaɡut̪t̪eːne"
+    alt_target: ["ನಾನು ರಾತ್ರಿ ಹನ್ನೊಂದು ಗಂಟೆಗೆ ಮಲಗ್ತೀನಿ."]
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಗಂಟೆಗೆ", ref: "kn-0420" }
+      - { word: "ಮಲಗುತ್ತೇನೆ", ref: "kn-0441" }
+  - id: "kn-0450"
+    target: "ನಾನು ಯಾವತ್ತೂ ತಡವಾಗಿ ಬರುವುದಿಲ್ಲ."
+    reading: "nānu yāvattū taḍavāgi baruvudilla."
+    ipa: "naːnu jaːʋat̪t̪uː t̪aɖaʋaːɡi baruʋud̪illa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಯಾವತ್ತೂ", ref: "kn-0170" }
+      - { word: "ತಡವಾಗಿ", base: "ತಡ", reading: "taḍa" }
+      - { word: "ಬರುವುದಿಲ್ಲ", base: "ಬರು", reading: "baru" }

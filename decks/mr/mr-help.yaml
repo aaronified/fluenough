@@ -1,0 +1,95 @@
+schema: 1
+id: "mr-help"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "mr-0415"
+  - ref: "mr-0238"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0595"
+    target: "दवाखाना"
+    reading: "davākhānā"
+    ipa: "d̪əʋakʰana"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0596"
+    target: "रुग्णालय"
+    picture: "🏥"
+    reading: "rugṇālay"
+    ipa: "ruɡɳaləj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0597"
+    target: "औषध"
+    picture: "💊"
+    reading: "auṣadh"
+    ipa: "əuʂəd̪ʱ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0598"
+    target: "पोलीस"
+    picture: "👮"
+    reading: "polis"
+    ipa: "polis"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0600"
+    target: "माझे पाकीट हरवले."
+    reading: "mājhe pākiṭ haravle."
+    ipa: "madʒʱe pakiʈ ɦərəʋle"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "माझे", base: "माझा", reading: "mājhā" }
+      - { word: "पाकीट", base: "पाकीट", reading: "pākiṭ" }
+      - { word: "हरवले", base: "हरवणे", reading: "haravṇe" }
+  - id: "mr-0601"
+    target: "दुखते"
+    reading: "dukhte"
+    ipa: "d̪ukʰt̪e"
+    alt_target: ["दुखतो"]
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0602"
+    target: "ताप"
+    reading: "tāp"
+    ipa: "t̪ap"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0604"
+    target: "सांभाळून!"
+    reading: "sāmbhāḷun!"
+    ipa: "sambʱaɭun"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0605"
+    target: "आग"
+    picture: "🔥"
+    reading: "āg"
+    ipa: "aɡ"
+    pos: "noun"
+    gender: "f"
+  - id: "mr-0606"
+    target: "अपघात"
+    reading: "apghāt"
+    ipa: "əpɡʱat̪"
+    pos: "noun"
+    gender: "m"

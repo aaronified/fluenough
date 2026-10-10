@@ -1,0 +1,168 @@
+schema: 1
+id: "gu-work"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-0352"
+    target: "કામ"
+    reading: "kām"
+    ipa: "kam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0353"
+    target: "નોકરી"
+    reading: "nokri"
+    ipa: "nokri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0354"
+    target: "ધંધો"
+    reading: "dhandho"
+    ipa: "d̪ʱənd̪ʱo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0355"
+    target: "ઑફિસ"
+    picture: "🏢"
+    reading: "ôfis"
+    ipa: "ɔfis"
+    alt_target: ["ઓફિસ"]
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0356"
+    target: "દુકાન"
+    reading: "dukān"
+    ipa: "d̪ukan"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0357"
+    target: "વેપારી"
+    reading: "vepāri"
+    ipa: "ʋepari"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0358"
+    target: "શિક્ષક"
+    picture: "🧑‍🏫"
+    reading: "śikśak"
+    ipa: "ʃikʃək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0359"
+    target: "ડૉક્ટર"
+    picture: "🧑‍⚕"
+    reading: "ḍôkṭar"
+    ipa: "ɖɔkʈər"
+    alt_target: ["ડોક્ટર"]
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0360"
+    target: "ખેડૂત"
+    picture: "🧑‍🌾"
+    reading: "kheḍut"
+    ipa: "kʰeɖut̪"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0361"
+    target: "ડ્રાઇવર"
+    reading: "ḍrāivar"
+    ipa: "ɖraiʋər"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0362"
+    target: "વિદ્યાર્થી"
+    picture: "🧑‍🎓"
+    reading: "vidyārthi"
+    ipa: "ʋid̪jart̪ʰi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0363"
+    target: "કારખાનું"
+    picture: "🏭"
+    reading: "kārkhānum̐"
+    ipa: "karkʰanũ"
+    pos: "noun"
+    gender: "n"
+  - id: "gu-0364"
+    target: "પગાર"
+    reading: "pagār"
+    ipa: "pəɡar"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0365"
+    target: "રજા"
+    reading: "rajā"
+    ipa: "rədʒa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0366"
+    target: "મીટિંગ"
+    reading: "miṭiṅg"
+    ipa: "miʈiŋɡ"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0367"
+    target: "તમે શું કામ કરો છો?"
+    reading: "tame śum̐ kām karo cho?"
+    ipa: "t̪əme ʃũ kam kəro tʃʰo"
+    pos: "phrase"
+    bases:
+      - { word: "કરો", base: "કરવું", reading: "karvum̐" }
+      - { word: "છો", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0368"
+    target: "હું બૅન્કમાં કામ કરું છું."
+    reading: "hum̐ bênkmām̐ kām karum̐ chum̐."
+    ipa: "ɦũ bɛnkmã kam kərũ tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "બૅન્કમાં", base: "બૅન્ક", reading: "bênk" }
+      - { word: "કરું", base: "કરવું", reading: "karvum̐" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0369"
+    target: "મારો પોતાનો ધંધો છે."
+    reading: "māro potāno dhandho che."
+    ipa: "maro pot̪ano d̪ʱənd̪ʱo tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારો", base: "મારું", reading: "mārum̐" }
+      - { word: "પોતાનો", base: "પોતાનું", reading: "potānum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0370"
+    target: "આજે મારે રજા છે."
+    reading: "āje māre rajā che."
+    ipa: "adʒe mare rədʒa tʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "મારે", base: "મારું", reading: "mārum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0371"
+    target: "સાહેબ મીટિંગમાં છે."
+    reading: "sāheb miṭiṅgmām̐ che."
+    ipa: "saɦeb miʈiŋɡmã tʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "મીટિંગમાં", ref: "gu-0366" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }

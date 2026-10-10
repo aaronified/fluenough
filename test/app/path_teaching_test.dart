@@ -85,7 +85,11 @@ void main() {
     await state.load();
     // Hindi starts with words and basic sentences, not its script.
     expect(unitIds(state), <List<String>>[
-      <String>['hi-en-first-words', 'hi-en-grammar-sentences'],
+      <String>[
+        'hi-en-phrasebook',
+        'hi-en-first-words',
+        'hi-en-grammar-sentences',
+      ],
       <String>['hi-en-sound-differences'],
     ]);
     final untaught = state.untaughtCards('hi');
@@ -109,7 +113,11 @@ void main() {
   test('a placed unit is skipped, and its decks read Done', () async {
     final state = learning(
       <String>['hi'],
-      placed: <String>{'hi-en-first-words', 'hi-en-grammar-sentences'},
+      placed: <String>{
+        'hi-en-phrasebook',
+        'hi-en-first-words',
+        'hi-en-grammar-sentences',
+      },
     );
     addTearDown(state.dispose);
     await state.load();
@@ -129,7 +137,7 @@ void main() {
 
     // Placement is a setting: changing it moves the window at once.
     state.settings.placedDecks = const <String>{};
-    expect(unitIds(state).first.first, 'hi-en-first-words');
+    expect(unitIds(state).first.first, 'hi-en-phrasebook');
   });
 
   test('a deck finished inside a pending unit reads Done, its unit-mate '
@@ -233,7 +241,7 @@ void main() {
       'bn-en-first-words',
     ]);
     expect(bengaliUnits.last.first, 'bn-en-sound-differences');
-    expect(starts, contains('es-en-core-100'));
+    expect(starts, contains('es-en-phrasebook'));
     expect(starts, hasLength(16));
   });
 

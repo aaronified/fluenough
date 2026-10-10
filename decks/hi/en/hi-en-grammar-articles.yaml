@@ -1,0 +1,46 @@
+schema: 1
+id: "hi-en-grammar-articles"
+kind: "layer"
+core: "hi-grammar-articles"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "No articles: a and the"
+license: "CC0-1.0"
+description: "Hindi has no 'a' or 'the'. How it says them anyway."
+cards:
+  "hi-0243":
+    native: "The book is on the table."
+    notes:
+      "n1": "Hindi has no word for 'the' or 'a'. किताब (kitāb) is 'book', 'a book' or 'the book'; the context says which."
+    bases:
+      "किताब": "book"
+  "hi-0244":
+    native: "A boy came."
+    notes:
+      "n1": "एक (ēk), 'one', can mark 'a' when the thing is new to the listener."
+    bases:
+      "लड़का": "boy"
+      "आया": "to come"
+  "hi-0245":
+    native: "The boy came."
+    notes:
+      "n1": "Without एक (ēk), the listener takes it to be a boy they already know about."
+    bases:
+      "लड़का": "boy"
+      "आया": "to come"
+  "hi-0246":
+    native: "One tea, please."
+    notes:
+      "n1": "In a shop, एक (ēk) is simply 'one'."
+  "hi-0247":
+    native: "Someone has come."
+    notes:
+      "n1": "कोई (kōī) is 'some, any, someone'."
+    bases:
+      "कोई": "someone; anyone"
+      "आया": "to come"
+  "hi-0248":
+    native: "Some water, please."
+    notes:
+      "n1": "थोड़ा (thōṛā), 'a little', is the everyday 'some' before an amount. कुछ (kuch) is 'some' or 'something': कुछ चाहिए (kuch cāhiē)? Do you need anything?"
+    bases:
+      "थोड़ा": "a little; some"

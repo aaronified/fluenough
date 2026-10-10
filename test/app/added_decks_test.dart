@@ -128,7 +128,10 @@ void main() {
   });
 
   testWidgets('a bundled deck keeps its id over an added one', (tester) async {
-    final market = File('decks/hi/hi-en-market.yaml').readAsStringSync();
+    final market = (await template()).replaceFirst(
+      'id: hi-en-my-words',
+      'id: hi-en-market',
+    );
     final state = AppState.test(
       addedDecks: MemoryDeckStore(<String, String>{'hi-en-market': market}),
     );

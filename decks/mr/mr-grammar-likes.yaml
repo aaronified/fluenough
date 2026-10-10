@@ -1,0 +1,93 @@
+schema: 1
+id: "mr-grammar-likes"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["unreviewed", "grammar"]
+cards:
+  - ref: "mr-0162"
+  - id: "mr-0585"
+    target: "आवडणे"
+    reading: "āvaḍṇe"
+    ipa: "aʋəɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0586"
+    target: "मला चहा आवडतो."
+    reading: "malā cahā āvaḍto."
+    ipa: "məla tsəɦa aʋəɖt̪o"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "आवडतो", ref: "mr-0585" }
+  - id: "mr-0587"
+    target: "मला कॉफी आवडते."
+    reading: "malā kôfi āvaḍte."
+    ipa: "məla kɔfi aʋəɖt̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+  - id: "mr-0588"
+    target: "मला आंबे आवडतात."
+    reading: "malā āmbe āvaḍtāt."
+    ipa: "məla ambe aʋəɖt̪at̪"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "आंबे", ref: "mr-0404" }
+      - { word: "आवडतात", ref: "mr-0585" }
+  - id: "mr-0589"
+    target: "मला हा चित्रपट आवडला."
+    reading: "malā hā citrapaṭ āvaḍlā."
+    ipa: "məla ɦa tʃit̪rəpəʈ aʋəɖla"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "हा", base: "हा", reading: "hā" }
+      - { word: "चित्रपट", base: "चित्रपट", reading: "citrapaṭ" }
+      - { word: "आवडला", ref: "mr-0585" }
+  - id: "mr-0590"
+    target: "मला ते आवडत नाही."
+    reading: "malā te āvaḍat nāhi."
+    ipa: "məla t̪e aʋəɖət̪ naɦi"
+    pos: "phrase"
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "ते", base: "ते", reading: "te" }
+      - { word: "आवडत", ref: "mr-0585" }
+      - { word: "नाही", ref: "mr-0169" }
+  - id: "mr-0591"
+    target: "तुम्हाला काय आवडते?"
+    reading: "tumhālā kāy āvaḍte?"
+    ipa: "t̪umɦala kaj aʋəɖt̪e"
+    pos: "phrase"
+    bases:
+      - { word: "तुम्हाला", ref: "mr-0145" }
+  - id: "mr-0592"
+    target: "आवडता"
+    reading: "āvaḍtā"
+    ipa: "aʋəɖt̪a"
+    alt_target: ["आवडती", "आवडते"]
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0593"
+    target: "मला वाचायला आवडते."
+    reading: "malā vācāylā āvaḍte."
+    ipa: "məla ʋatsajla aʋəɖt̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "वाचायला", ref: "mr-0513" }

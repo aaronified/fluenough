@@ -1,0 +1,57 @@
+schema: 1
+id: "mr-grammar-articles"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "mr-0384"
+    target: "पुस्तक"
+    picture: "📖"
+    reading: "pustak"
+    ipa: "pust̪ək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "mr-0139"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0385"
+    target: "हे पुस्तक"
+    reading: "he pustak"
+    ipa: "ɦe pust̪ək"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "हे", base: "हे", reading: "he" }
+  - id: "mr-0386"
+    target: "तो मुलगा"
+    reading: "to mulgā"
+    ipa: "t̪o mulɡa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तो", base: "तो", reading: "to" }
+  - id: "mr-0387"
+    target: "एक मुलगी"
+    reading: "ek mulgi"
+    ipa: "ek mulɡi"
+    pos: "phrase"
+  - id: "mr-0388"
+    target: "कोणीतरी"
+    reading: "koṇitari"
+    ipa: "koɳit̪əri"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0389"
+    target: "काहीतरी"
+    reading: "kāhitari"
+    ipa: "kaɦit̪əri"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }

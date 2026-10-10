@@ -1,0 +1,103 @@
+schema: 1
+id: "as-grammar-likes"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - ref: "as-2023"
+  - id: "as-2138"
+    target: "ভাল পোৱা"
+    reading: "bhāl puwā"
+    ipa: "bʱal pʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "পোৱা", base: "পোৱা", reading: "puwā" }
+  - id: "as-2139"
+    target: "মই চাহ ভাল পাওঁ।"
+    reading: "moi sāh bhāl pāum̐."
+    ipa: "moi sah bʱal paʊ̃"
+    alt_target: ["মই চাহ ভাল পাও।"]
+    pos: "phrase"
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "পাওঁ", base: "পোৱা", reading: "puwā" }
+  - id: "as-2140"
+    target: "মই কফি ভাল নাপাওঁ।"
+    reading: "moi kophi bhāl nāpāum̐."
+    ipa: "moi kopʰi bʱal napaʊ̃"
+    alt_target: ["মই কফি ভাল নাপাও।"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "নাপাওঁ", base: "পোৱা", reading: "puwā" }
+  - id: "as-2141"
+    target: "আপুনি কি ভাল পায়?"
+    reading: "āpuni ki bhāl pāy?"
+    ipa: "apuni ki bʱal paj"
+    pos: "phrase"
+    bases:
+      - { word: "পায়", base: "পোৱা", reading: "puwā" }
+  - id: "as-2142"
+    target: "মই চিনেমা চাবলৈ ভাল পাওঁ।"
+    reading: "moi sinemā sābôlôi bhāl pāum̐."
+    ipa: "moi sinema sabɔlɔi bʱal paʊ̃"
+    alt_target: ["মই চিনেমা চাবলৈ ভাল পাও।"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "চিনেমা", base: "চিনেমা", reading: "sinemā" }
+      - { word: "চাবলৈ", base: "চোৱা", reading: "suwā" }
+      - { word: "পাওঁ", base: "পোৱা", reading: "puwā" }
+  - id: "as-2143"
+    target: "ভাল লগা"
+    reading: "bhāl lôgā"
+    ipa: "bʱal lɔɡa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "লগা", base: "লগা", reading: "lôgā" }
+  - id: "as-2144"
+    target: "মোৰ ভাল লাগিল।"
+    reading: "mur bhāl lāgil."
+    ipa: "mʊɹ bʱal laɡil"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "লাগিল", ref: "as-2062" }
+  - id: "as-2145"
+    target: "মোৰ ভাল নালাগিল।"
+    reading: "mur bhāl nālāgil."
+    ipa: "mʊɹ bʱal nalaɡil"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "নালাগিল", ref: "as-2065" }
+  - id: "as-2146"
+    target: "আপোনাৰ ভাল লাগিলনে?"
+    reading: "āpunār bhāl lāgilne?"
+    ipa: "apʊnaɹ bʱal laɡilne"
+    pos: "phrase"
+    bases:
+      - { word: "আপোনাৰ", ref: "as-0127" }
+      - { word: "লাগিলনে", ref: "as-2062" }
+  - id: "as-2147"
+    target: "মই তোমাক ভাল পাওঁ।"
+    reading: "moi tumāk bhāl pāum̐."
+    ipa: "moi tʊmak bʱal paʊ̃"
+    alt_target: ["মই তোমাক ভাল পাও।"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "তোমাক", base: "তুমি", reading: "tumi" }
+      - { word: "পাওঁ", base: "পোৱা", reading: "puwā" }

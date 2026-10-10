@@ -1,0 +1,161 @@
+schema: 1
+id: "hi-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0441"
+    target: "उठना"
+    reading: "uṭhnā"
+    ipa: "ʊʈʰnaː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0442"
+    target: "नहाना"
+    reading: "nahānā"
+    ipa: "nəɦaːnaː"
+    pos: "verb"
+  - id: "hi-0443"
+    target: "दाँत साफ़ करना"
+    reading: "dām̐t sāf karnā"
+    ipa: "d̪ãːt̪ saːf kərnaː"
+    alt_target: ["दांत साफ करना"]
+    pos: "phrase"
+    bases:
+      - { word: "दाँत", base: "दाँत", reading: "dām̐t" }
+      - { word: "साफ़", base: "साफ़", reading: "sāf" }
+      - { word: "करना", base: "करना", reading: "karnā" }
+  - id: "hi-0444"
+    target: "नाश्ता"
+    reading: "nāśtā"
+    ipa: "naːʃt̪aː"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0445"
+    target: "दोपहर का खाना"
+    reading: "dōpahar kā khānā"
+    ipa: "d̪oːpəɦər kaː kʰaːnaː"
+    pos: "phrase"
+    bases:
+      - { word: "दोपहर", base: "दोपहर", reading: "dōpahar" }
+  - id: "hi-0446"
+    target: "रात का खाना"
+    reading: "rāt kā khānā"
+    ipa: "raːt̪ kaː kʰaːnaː"
+    pos: "phrase"
+  - id: "hi-0447"
+    target: "काम पर जाना"
+    reading: "kām par jānā"
+    ipa: "kaːm pər dʒaːnaː"
+    pos: "phrase"
+    bases:
+      - { word: "जाना", base: "जाना", reading: "jānā" }
+  - id: "hi-0448"
+    target: "घर लौटना"
+    reading: "ghar lauṭnā"
+    ipa: "ɡʱər lɔːʈnaː"
+    alt_target: ["घर आना"]
+    pos: "phrase"
+    bases:
+      - { word: "लौटना", base: "लौटना", reading: "lauṭnā" }
+  - id: "hi-0449"
+    target: "खाना बनाना"
+    reading: "khānā banānā"
+    ipa: "kʰaːnaː bənaːnaː"
+    pos: "phrase"
+    bases:
+      - { word: "बनाना", base: "बनाना", reading: "banānā" }
+  - id: "hi-0450"
+    target: "सोना"
+    reading: "sōnā"
+    ipa: "soːnaː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0451"
+    target: "रोज़"
+    reading: "rōz"
+    ipa: "roːz"
+    alt_target: ["रोज", "हर दिन"]
+    pos: "adv"
+  - id: "hi-0452"
+    target: "कभी-कभी"
+    reading: "kabhī-kabhī"
+    ipa: "kəbʱiːkəbʱiː"
+    alt_target: ["कभी कभी"]
+    pos: "adv"
+    bases:
+      - { word: "कभी", base: "कभी", reading: "kabhī" }
+  - id: "hi-0453"
+    target: "हमेशा"
+    reading: "hamēśā"
+    ipa: "ɦəmeːʃaː"
+    pos: "adv"
+  - id: "hi-0454"
+    target: "आम तौर पर"
+    reading: "ām taur par"
+    ipa: "aːm t̪ɔːr pər"
+    alt_target: ["आमतौर पर"]
+    pos: "phrase"
+    bases:
+      - { word: "आम", base: "आम", reading: "ām" }
+      - { word: "तौर", base: "तौर", reading: "taur" }
+  - id: "hi-0455"
+    target: "उसके बाद"
+    reading: "uskē bād"
+    ipa: "ʊskeː baːd̪"
+    pos: "phrase"
+    bases:
+      - { word: "उसके", base: "वह", reading: "vah" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+  - id: "hi-0456"
+    target: "मैं रोज़ सात बजे उठता हूँ।"
+    reading: "maim̐ rōz sāt bajē uṭhtā hūm̐."
+    ipa: "mɛ̃ː roːz saːt̪ bədʒeː ʊʈʰt̪aː ɦũː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "उठता", ref: "hi-0441" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0457"
+    target: "उसके बाद मैं काम पर जाता हूँ।"
+    reading: "uskē bād maim̐ kām par jātā hūm̐."
+    ipa: "ʊskeː baːd̪ mɛ̃ː kaːm pər dʒaːt̪aː ɦũː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उसके", base: "वह", reading: "vah" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "जाता", base: "जाना", reading: "jānā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0458"
+    target: "मैं रात ग्यारह बजे सोता हूँ।"
+    reading: "maim̐ rāt gyārah bajē sōtā hūm̐."
+    ipa: "mɛ̃ː raːt̪ ɡjaːrəɦ bədʒeː soːt̪aː ɦũː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "सोता", ref: "hi-0450" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0459"
+    target: "मुझे कभी देर नहीं होती।"
+    reading: "mujhē kabhī dēr nahīm̐ hōtī."
+    ipa: "mʊdʒʱeː kəbʱiː d̪eːr nəɦĩː ɦoːt̪iː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
+      - { word: "कभी", base: "कभी", reading: "kabhī" }
+      - { word: "देर", base: "देर", reading: "dēr" }
+      - { word: "होती", base: "होना", reading: "hōnā" }

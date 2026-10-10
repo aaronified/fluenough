@@ -1,0 +1,227 @@
+schema: 1
+id: "as-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-0126"
+    target: "নমস্কাৰ"
+    reading: "nômôskār"
+    ipa: "nɔmɔskaɹ"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "নমস্কাৰ", base: "নমস্কাৰ", reading: "nômôskār" }
+  - id: "as-0128"
+    target: "আপুনি কেনে আছে?"
+    reading: "āpuni kene āse?"
+    ipa: "apuni kene ase"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কেনে", base: "কেনে", reading: "kene" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
+  - id: "as-0129"
+    target: "ভালে আছোঁ।"
+    reading: "bhāle āsum̐."
+    ipa: "bʱale asʊ̃"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ভালে", ref: "as-2084" }
+      - { word: "আছোঁ", base: "আছ", reading: "āsô" }
+  - id: "as-0130"
+    target: "ধন্যবাদ"
+    reading: "dhônyôbād"
+    ipa: "dʱɔnjɔbad"
+    pos: "other"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ধন্যবাদ", base: "ধন্যবাদ", reading: "dhônyôbād" }
+  - id: "as-0131"
+    target: "বাৰু"
+    reading: "bāru"
+    ipa: "baɹu"
+    alt_target: ["ঠিক আছে"]
+    pos: "other"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বাৰু", base: "বাৰু", reading: "bāru" }
+  - id: "as-0132"
+    target: "আকৌ লগ পাম।"
+    reading: "ākôu lôg pām."
+    ipa: "akɔu lɔɡ pam"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আকৌ", base: "আকৌ", reading: "ākôu" }
+      - { word: "লগ", base: "লগ", reading: "lôg" }
+      - { word: "পাম", base: "পোৱা", reading: "puwā" }
+  - id: "as-0133"
+    target: "মাফ কৰিব।"
+    reading: "māph koribô."
+    ipa: "mapʰ koɹibɔ"
+    alt_target: ["ক্ষমা কৰিব।"]
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মাফ", base: "মাফ", reading: "māph" }
+      - { word: "কৰিব", base: "কৰা", reading: "kôrā" }
+  - id: "as-0134"
+    target: "মই অসমীয়া নাজানো।"
+    reading: "moi ôxomiyā nāzānu."
+    ipa: "moi ɔxomija nazanʊ"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "নাজানো", base: "জনা", reading: "zônā" }
+  - id: "as-0135"
+    target: "মই এতিয়াও অসমীয়া শিকি আছোঁ।"
+    reading: "moi etiyāu ôxomiyā xiki āsum̐."
+    ipa: "moi etijaʊ ɔxomija xiki asʊ̃"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "এতিয়াও", ref: "as-0353" }
+      - { word: "শিকি", base: "শিকা", reading: "xikā" }
+      - { word: "আছোঁ", base: "আছ", reading: "āsô" }
+  - id: "as-0136"
+    target: "লাহে লাহে কওক।"
+    reading: "lāhe lāhe kôuk."
+    ipa: "lahe lahe kɔʊk"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "লাহে", base: "লাহে", reading: "lāhe" }
+      - { word: "কওক", ref: "as-0108" }
+  - id: "as-0137"
+    target: "আকৌ এবাৰ কওক।"
+    reading: "ākôu ebār kôuk."
+    ipa: "akɔu ebaɹ kɔʊk"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আকৌ", base: "আকৌ", reading: "ākôu" }
+      - { word: "এবাৰ", base: "এবাৰ", reading: "ebār" }
+      - { word: "কওক", ref: "as-0108" }
+  - id: "as-0140"
+    target: "হয়"
+    reading: "hôy"
+    ipa: "hɔj"
+    pos: "other"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0142"
+    target: "নাই"
+    reading: "nāi"
+    ipa: "nai"
+    pos: "other"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "নাই", base: "নাই", reading: "nāi" }
+  - id: "as-0167"
+    target: "মোৰ নাম …"
+    reading: "mur nām..."
+    ipa: "mʊɹ nam"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+  - id: "as-0168"
+    target: "আপোনাৰ নাম কি?"
+    reading: "āpunār nām ki?"
+    ipa: "apʊnaɹ nam ki"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আপোনাৰ", ref: "as-0127" }
+  - id: "as-0422"
+    target: "সহায় কৰক!"
+    reading: "xôhāy kôrôk!"
+    ipa: "xɔhaj kɔɹɔk"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    bases:
+      - { word: "কৰক", base: "কৰা", reading: "kôrā" }
+  - id: "as-0423"
+    target: "বচাওক!"
+    reading: "bôsāuk!"
+    ipa: "bɔsaʊk"
+    pos: "phrase"
+    phrasebook: true
+    bases:
+      - { word: "বচাওক", base: "বচোৱা", reading: "bôsuwā" }
+  - id: "as-0428"
+    target: "মই বাট হেৰুৱালোঁ।"
+    reading: "moi bāt heruwālum̐."
+    ipa: "moi bat heɹuwalʊ̃"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "হেৰুৱালোঁ", base: "হেৰুৱা", reading: "heruwā" }
+  - id: "as-0429"
+    target: "মই বুজি নাপালোঁ।"
+    reading: "moi buzi nāpālum̐."
+    ipa: "moi buzi napalʊ̃"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মই", base: "মই", reading: "moi" }
+      - { word: "বুজি", base: "বুজা", reading: "buzā" }
+      - { word: "নাপালোঁ", base: "পোৱা", reading: "puwā" }
+  - id: "as-0430"
+    target: "বাথৰুম ক'ত?"
+    reading: "bāthrum kot?"
+    ipa: "batʰɹum kot"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }

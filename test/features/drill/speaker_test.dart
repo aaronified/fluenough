@@ -31,7 +31,7 @@ import '../../support/harness.dart';
 /// with sound off it is greyed out and says why.
 
 const String spanish = 'es-en-core-100';
-const String hindi = 'hi-en-first-words';
+const String hindi = 'hi-en-phrasebook';
 
 AppState voiced({SettingsNotifier? settings, FixedTtsEngine? tts}) =>
     AppState.test(

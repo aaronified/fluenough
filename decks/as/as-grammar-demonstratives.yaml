@@ -1,0 +1,164 @@
+schema: 1
+id: "as-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["near: এই (ei), ই- (i-)", "far: সেই (sei), সি- (si-), ত- (tô-)"]
+  entries:
+    - lemma: "this, that"
+      key: "adj"
+      forms:
+        "near: এই (ei), ই- (i-)": "এই"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সেই"
+      readings:
+        "near: এই (ei), ই- (i-)": "ei"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xei"
+      ipas:
+        "near: এই (ei), ই- (i-)": "ei"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xei"
+    - lemma: "this one, that one"
+      key: "thing"
+      forms:
+        "near: এই (ei), ই- (i-)": "এইটো"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সেইটো"
+      readings:
+        "near: এই (ei), ই- (i-)": "eitu"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xeitu"
+      ipas:
+        "near: এই (ei), ই- (i-)": "eitʊ"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xeitʊ"
+    - lemma: "these, those"
+      key: "things"
+      forms:
+        "near: এই (ei), ই- (i-)": "এইবোৰ"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সেইবোৰ"
+      readings:
+        "near: এই (ei), ই- (i-)": "eibur"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xeibur"
+      ipas:
+        "near: এই (ei), ই- (i-)": "eibʊɹ"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xeibʊɹ"
+    - lemma: "he"
+      key: "man"
+      forms:
+        "near: এই (ei), ই- (i-)": "ই"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সি"
+      readings:
+        "near: এই (ei), ই- (i-)": "i"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xi"
+      ipas:
+        "near: এই (ei), ই- (i-)": "i"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xi"
+    - lemma: "she"
+      key: "woman"
+      forms:
+        "near: এই (ei), ই- (i-)": "এই"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তাই"
+      readings:
+        "near: এই (ei), ই- (i-)": "ei"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tāi"
+      ipas:
+        "near: এই (ei), ই- (i-)": "ei"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tai"
+    - lemma: "he or she, respectful"
+      key: "resp"
+      forms:
+        "near: এই (ei), ই- (i-)": "এওঁ"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তেওঁ"
+      readings:
+        "near: এই (ei), ই- (i-)": "eum̐"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "teum̐"
+      ipas:
+        "near: এই (ei), ই- (i-)": "eʊ̃"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "teʊ̃"
+    - lemma: "they"
+      key: "people"
+      forms:
+        "near: এই (ei), ই- (i-)": "ইহঁত"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সিহঁত"
+      readings:
+        "near: এই (ei), ই- (i-)": "ihôm̐t"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xihôm̐t"
+      ipas:
+        "near: এই (ei), ই- (i-)": "ihɔ̃t"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xihɔ̃t"
+    - lemma: "here, there"
+      key: "place"
+      forms:
+        "near: এই (ei), ই- (i-)": "ইয়াত"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তাত"
+      readings:
+        "near: এই (ei), ই- (i-)": "iyāt"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tāt"
+      ipas:
+        "near: এই (ei), ই- (i-)": "ijat"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tat"
+    - lemma: "to here, to there"
+      key: "toward"
+      forms:
+        "near: এই (ei), ই- (i-)": "ইয়ালৈ"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তালৈ"
+      readings:
+        "near: এই (ei), ই- (i-)": "iyālôi"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tālôi"
+      ipas:
+        "near: এই (ei), ই- (i-)": "ijalɔi"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "talɔi"
+    - lemma: "this way, that way"
+      key: "side"
+      forms:
+        "near: এই (ei), ই- (i-)": "ইফালে"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সিফালে"
+      readings:
+        "near: এই (ei), ই- (i-)": "iphāle"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xiphāle"
+      ipas:
+        "near: এই (ei), ই- (i-)": "ipʰale"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "xipʰale"
+    - lemma: "like this, like that"
+      key: "manner"
+      forms:
+        "near: এই (ei), ই- (i-)": "এনেকৈ"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তেনেকৈ"
+      readings:
+        "near: এই (ei), ই- (i-)": "enekôi"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tenekôi"
+      ipas:
+        "near: এই (ei), ই- (i-)": "enekɔi"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tenekɔi"
+    - lemma: "this kind of, that kind of"
+      key: "kind"
+      forms:
+        "near: এই (ei), ই- (i-)": "এনেকুৱা"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তেনেকুৱা"
+      readings:
+        "near: এই (ei), ই- (i-)": "enekuwā"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tenekuwā"
+      ipas:
+        "near: এই (ei), ই- (i-)": "enekuwa"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tenekuwa"
+    - lemma: "this much, that much"
+      key: "amount"
+      forms:
+        "near: এই (ei), ই- (i-)": "ইমান"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "সিমান"
+      readings:
+        "near: এই (ei), ই- (i-)": "imān"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "ximān"
+      ipas:
+        "near: এই (ei), ই- (i-)": "iman"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "ximan"
+    - lemma: "now, then"
+      key: "time"
+      forms:
+        "near: এই (ei), ই- (i-)": "এতিয়া"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "তেতিয়া"
+      readings:
+        "near: এই (ei), ই- (i-)": "etiyā"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tetiyā"
+      ipas:
+        "near: এই (ei), ই- (i-)": "etija"
+        "far: সেই (sei), সি- (si-), ত- (tô-)": "tetija"

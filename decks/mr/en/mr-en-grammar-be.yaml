@@ -1,0 +1,19 @@
+schema: 1
+id: "mr-en-grammar-be"
+kind: "layer"
+core: "mr-grammar-be"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: आहे (āhe), होता (hotā), नाही (nāhi)"
+license: "CC0-1.0"
+description: "Am, was, am not, will be: असणे (asṇe) in the present, the past, the negative and the future. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "असणे (asṇe) by tense"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "aahe": "to be, present"
+    "hotaa": "to be, past"
+    "naahii": "not to be, present"
+    "asel": "to be, future"
+  notes: "आहे (āhe) comes last and says what or where someone is: मी शिक्षक आहे (mi śikṣak āhe), I'm a teacher; मी घरी आहे (mi ghari āhe), I'm at home. It is also 'there is', and with -कडे (-kaḍe) 'have': माझ्याकडे गाडी आहे (mājhyākaḍe gāḍi āhe). The present and the future do not show gender; the past does: a man says मी होतो (mi hoto), a woman मी होते (mi hote). 'Am not' replaces आहे (āhe) with नाही (nāhi): मी घरी नाही (mi ghari nāhi). 'Was not' is नव्हतो (navhato), नव्हते (navhate) …: मी घरी नव्हतो (mi ghari navhato). तुम्ही (tumhi) takes the plural, for one person or many."

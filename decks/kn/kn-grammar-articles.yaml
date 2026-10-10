@@ -1,0 +1,56 @@
+schema: 1
+id: "kn-grammar-articles"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "kn-0309"
+    target: "ಪುಸ್ತಕ ಮೇಜಿನ ಮೇಲೆ ಇದೆ."
+    reading: "pustaka mējina mēle ide."
+    ipa: "pust̪aka meːdʒina meːle id̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಪುಸ್ತಕ", base: "ಪುಸ್ತಕ", reading: "pustaka" }
+      - { word: "ಮೇಜಿನ", ref: "kn-0392" }
+      - { word: "ಮೇಲೆ", base: "ಮೇಲೆ", reading: "mēle" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-0310"
+    target: "ಒಬ್ಬ ಹುಡುಗ ಬಂದ."
+    reading: "obba huḍuga banda."
+    ipa: "obba huɖuɡa band̪a"
+    alt_target: ["ಒಬ್ಬ ಹುಡುಗ ಬಂದನು."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಒಬ್ಬ", base: "ಒಬ್ಬ", reading: "obba" }
+      - { word: "ಹುಡುಗ", base: "ಹುಡುಗ", reading: "huḍuga" }
+      - { word: "ಬಂದ", base: "ಬರು", reading: "baru" }
+  - id: "kn-0311"
+    target: "ಹುಡುಗ ಬಂದ."
+    reading: "huḍuga banda."
+    ipa: "huɖuɡa band̪a"
+    alt_target: ["ಹುಡುಗ ಬಂದನು."]
+    pos: "phrase"
+    bases:
+      - { word: "ಹುಡುಗ", base: "ಹುಡುಗ", reading: "huḍuga" }
+      - { word: "ಬಂದ", base: "ಬರು", reading: "baru" }
+  - id: "kn-0312"
+    target: "ಒಂದು ಕಾಫಿ ಕೊಡಿ."
+    reading: "ondu kāfi koḍi."
+    ipa: "ond̪u kaːfi koɖi"
+    pos: "phrase"
+  - id: "kn-0313"
+    target: "ಯಾರೋ ಬಂದಿದ್ದಾರೆ."
+    reading: "yārō bandiddāre."
+    ipa: "jaːroː band̪id̪d̪aːre"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಯಾರೋ", ref: "kn-0168" }
+      - { word: "ಬಂದಿದ್ದಾರೆ", base: "ಬರು", reading: "baru" }

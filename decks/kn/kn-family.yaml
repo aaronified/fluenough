@@ -1,0 +1,151 @@
+schema: 1
+id: "kn-family"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0202"
+  - id: "kn-0207"
+    target: "ತಂದೆತಾಯಿ"
+    reading: "tandetāyi"
+    ipa: "t̪and̪et̪aːji"
+    alt_target: ["ತಂದೆ ತಾಯಿ", "ಅಪ್ಪ ಅಮ್ಮ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "kn-0059"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "kn-0058"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "kn-0061"
+  - ref: "kn-0186"
+  - ref: "kn-0060"
+  - ref: "kn-0187"
+  - id: "kn-0208"
+    target: "ಅಣ್ಣತಮ್ಮಂದಿರು"
+    reading: "aṇṇatammandiru"
+    ipa: "aɳɳat̪ammand̪iru"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "kn-0057"
+  - id: "kn-0209"
+    target: "ಮಗಳು"
+    reading: "magaḷu"
+    ipa: "maɡaɭu"
+    pos: "noun"
+  - id: "kn-0210"
+    target: "ಗಂಡ"
+    reading: "gaṇḍa"
+    ipa: "ɡaɳɖa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0211"
+    target: "ಹೆಂಡತಿ"
+    reading: "heṇḍati"
+    ipa: "heɳɖat̪i"
+    pos: "noun"
+  - id: "kn-0212"
+    target: "ಮಕ್ಕಳು"
+    reading: "makkaḷu"
+    ipa: "makkaɭu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0213"
+    target: "ಅಜ್ಜ"
+    reading: "ajja"
+    ipa: "adʒdʒa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "kn-0194"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0214"
+    target: "ಚಿಕ್ಕಪ್ಪ"
+    reading: "cikkappa"
+    ipa: "tʃikkappa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0215"
+    target: "ದೊಡ್ಡಪ್ಪ"
+    reading: "doḍḍappa"
+    ipa: "d̪oɖɖappa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0216"
+    target: "ಮಾವ"
+    reading: "māva"
+    ipa: "maːʋa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0217"
+    target: "ಅತ್ತೆ"
+    reading: "atte"
+    ipa: "at̪t̪e"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0218"
+    target: "ಚಿಕ್ಕಮ್ಮ"
+    reading: "cikkamma"
+    ipa: "tʃikkamma"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0219"
+    target: "ದೊಡ್ಡಮ್ಮ"
+    reading: "doḍḍamma"
+    ipa: "d̪oɖɖamma"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0220"
+    target: "ಸಂಬಂಧಿಕರು"
+    reading: "sambandhikaru"
+    ipa: "samband̪ʱikaru"
+    alt_target: ["ನೆಂಟರು"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0221"
+    target: "ನನಗೆ ಇಬ್ಬರು ತಮ್ಮಂದಿರು ಇದ್ದಾರೆ."
+    reading: "nanage ibbaru tammandiru iddāre."
+    ipa: "nanaɡe ibbaru t̪ammand̪iru id̪d̪aːre"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಇಬ್ಬರು", base: "ಇಬ್ಬರು", reading: "ibbaru" }
+      - { word: "ತಮ್ಮಂದಿರು", ref: "kn-0186" }
+      - { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-0222"
+    target: "ನಿಮಗೆ ಅಣ್ಣತಮ್ಮಂದಿರು ಇದ್ದಾರಾ?"
+    reading: "nimage aṇṇatammandiru iddārā?"
+    ipa: "nimaɡe aɳɳat̪ammand̪iru id̪d̪aːraː"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮಗೆ", ref: "kn-0143" }
+      - { word: "ಇದ್ದಾರಾ", base: "ಇರು", reading: "iru" }
+  - id: "kn-0223"
+    target: "ನನಗೆ ಮದುವೆ ಆಗಿದೆ."
+    reading: "nanage maduve āgide."
+    ipa: "nanaɡe mad̪uʋe aːɡid̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಮದುವೆ", base: "ಮದುವೆ", reading: "maduve" }
+      - { word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }

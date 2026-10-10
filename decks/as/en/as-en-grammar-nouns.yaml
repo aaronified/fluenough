@@ -1,0 +1,21 @@
+schema: 1
+id: "as-en-grammar-nouns"
+kind: "layer"
+core: "as-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: the, plural and case"
+license: "CC0-1.0"
+description: "A classifier for 'the', -বোৰ (-bur) for the plural, and the endings for of, in and to. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "ghor": "house"
+    "dukan": "shop"
+    "kutha": "room"
+    "sohor": "town; city"
+    "gari": "car"
+    "gao": "village"
+  notes: "Assamese has no 'the': a classifier after the noun does its work. -টো (-tu) is for most things and animals, -খন (-khôn) for flat or large things, vehicles, books and places, -জন (-zôn) for a man and -জনী (-zoni) for a woman. -বোৰ (-bur) makes a plural of anything; people also take -হঁত (-hôm̐t), or -সকল (-sôkôl) with respect: ল (lô)'ৰাহঁত (rāhôm̐t), the boys. The endings go straight onto the noun: ঘৰৰ (ghôrôr), ঘৰত (ghôrôt), ঘৰলৈ (ghôrôlôi). 'From' is -ৰ পৰা (-rô pôrā): ঘৰৰ পৰা (ghôrôr pôrā), from home. A few nouns change before an ending: গাঁও (gām̐o), village, becomes গাঁৱ- (gām̐w-): গাঁৱত (gām̐wôt), in the village."

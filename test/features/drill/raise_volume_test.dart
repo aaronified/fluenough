@@ -17,7 +17,7 @@ import '../../support/harness.dart';
 /// A phone at zero volume (ADR-0026): a question that needs sound is greyed
 /// out and asks, on the card, for the volume to be raised.
 
-const String hindi = 'hi-en-first-words';
+const String hindi = 'hi-en-phrasebook';
 
 Future<AppState> pumpHeard(
   WidgetTester tester,

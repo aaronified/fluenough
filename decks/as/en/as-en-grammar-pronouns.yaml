@@ -1,0 +1,29 @@
+schema: 1
+id: "as-en-grammar-pronouns"
+kind: "layer"
+core: "as-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and possessives"
+license: "CC0-1.0"
+description: "I, you, he and she, with my and your, me as an object, and for me. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "moi": "I"
+    "toi": "you, intimate"
+    "tumi": "you, familiar"
+    "apuni": "you, respectful"
+    "xi": "he"
+    "tai": "she"
+    "teu": "he or she, respectful"
+    "i": "he, here; this one"
+    "ami": "we"
+    "tohot": "you all, intimate"
+    "tumaluk": "you all, familiar"
+    "apunaluk": "you all, respectful"
+    "xihot": "they"
+    "teuluk": "they, respectful"
+  notes: "Assamese has three words for 'you': আপুনি (respectful), তুমি (familiar) and তই (intimate, only for the very close or a child). 'He' is সি (si) and 'she' is তাই (tāi); তেওঁ (teum̐) is a respectful he or she, and ই (i) is 'he' for someone here. Plurals add -হঁত (-hôm̐t) or -লোক (-luk): সিহঁত (sihôm̐t), তেওঁলোক (teum̐luk). A possessive never changes for the thing owned: মোৰ কিতাপ (mur kitāp), মোৰ ঘৰ (mur ghôr). -ক (-kô) marks the object and the one given to: মোক দিয়া (muk diyā), give it to me. -লৈ (-lôi) is for or towards: মোলৈ (mulôi), for me. মই (moi) takes the stem মো- (mo-) before an ending, and তুমি (tumi) and আপুনি (āpuni) take তোমা- (tumā-) and আপোনা- (āpunā-)."

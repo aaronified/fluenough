@@ -24,7 +24,7 @@ import '../../support/harness.dart';
 /// Multiple choice, match pairs and rearrange (ADR-0024).
 
 const String spanish = 'es-en-core-100';
-const String hindi = 'hi-en-first-words';
+const String hindi = 'hi-en-phrasebook';
 const String script = 'hi-en-script-reading';
 
 Future<AppState> pumpAsked(

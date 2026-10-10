@@ -1,0 +1,110 @@
+schema: 1
+id: "gu-transport"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "gu-0054"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0421"
+    target: "રિક્ષા"
+    picture: "🛺"
+    reading: "rikśā"
+    ipa: "rikʃa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0422"
+    target: "ટૅક્સી"
+    picture: "🚕"
+    reading: "ṭêksi"
+    ipa: "ʈɛksi"
+    alt_target: ["ટેક્સી"]
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0423"
+    target: "ગાડી"
+    reading: "gāḍi"
+    ipa: "ɡaɖi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0424"
+    target: "ટ્રેન"
+    picture: "🚆"
+    reading: "ṭren"
+    ipa: "ʈren"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0425"
+    target: "સ્ટેશન"
+    picture: "🚉"
+    reading: "sṭeśan"
+    ipa: "sʈeʃən"
+    pos: "noun"
+    gender: "n"
+  - id: "gu-0426"
+    target: "ટિકિટ"
+    picture: "🎫"
+    reading: "ṭikiṭ"
+    ipa: "ʈikiʈ"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0427"
+    target: "ભાડું"
+    reading: "bhāḍum̐"
+    ipa: "bʱaɖũ"
+    pos: "noun"
+    gender: "n"
+  - id: "gu-0428"
+    target: "સ્ટેશન જવું છે."
+    reading: "sṭeśan javum̐ che."
+    ipa: "sʈeʃən dʒəʋũ tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0429"
+    target: "કેટલું ભાડું થશે?"
+    reading: "keṭlum̐ bhāḍum̐ thaśe?"
+    ipa: "keʈlũ bʱaɖũ t̪ʰəʃe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "થશે", base: "થવું", reading: "thavum̐" }
+  - id: "gu-0430"
+    target: "મીટર ચાલુ કરો."
+    reading: "miṭar cālu karo."
+    ipa: "miʈər tʃalu kəro"
+    pos: "phrase"
+    bases:
+      - { word: "મીટર", base: "મીટર", reading: "miṭar" }
+      - { word: "ચાલુ", base: "ચાલુ", reading: "cālu" }
+      - { word: "કરો", base: "કરવું", reading: "karvum̐" }
+  - id: "gu-0431"
+    target: "અહીં ઊભી રાખો."
+    reading: "ahim̐ ubhi rākho."
+    ipa: "əɦĩ ubʱi rakʰo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "અહીં", base: "અહીં", reading: "ahim̐" }
+      - { word: "ઊભી", base: "ઊભું", reading: "ubhum̐" }
+      - { word: "રાખો", base: "રાખવું", reading: "rākhvum̐" }
+  - id: "gu-0432"
+    target: "આ બસ ક્યાં જાય છે?"
+    reading: "ā bas kyām̐ jāy che?"
+    ipa: "a bəs kjã dʒaj tʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "જાય", ref: "gu-0508" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }

@@ -1,0 +1,105 @@
+schema: 1
+id: "as-grammar-adjectives"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "as-2084"
+    target: "ভাল"
+    reading: "bhāl"
+    ipa: "bʱal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2085"
+    target: "বেয়া"
+    reading: "beyā"
+    ipa: "beja"
+    pos: "adj"
+  - id: "as-2086"
+    target: "ডাঙৰ"
+    reading: "dāṅôr"
+    ipa: "daŋɔɹ"
+    pos: "adj"
+  - id: "as-2087"
+    target: "সৰু"
+    reading: "xoru"
+    ipa: "xoɹu"
+    pos: "adj"
+  - id: "as-2088"
+    target: "নতুন"
+    reading: "notun"
+    ipa: "notun"
+    pos: "adj"
+  - id: "as-2089"
+    target: "পুৰণি"
+    reading: "puroni"
+    ipa: "puɹoni"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-2090"
+    target: "গৰম"
+    reading: "gôrôm"
+    ipa: "ɡɔɹɔm"
+    pos: "adj"
+  - id: "as-2091"
+    target: "ঠাণ্ডা"
+    reading: "thāndā"
+    ipa: "tʰanda"
+    pos: "adj"
+  - id: "as-2092"
+    target: "ধুনীয়া"
+    reading: "dhuniyā"
+    ipa: "dʱunija"
+    pos: "adj"
+  - id: "as-2093"
+    target: "চাফা"
+    reading: "sāphā"
+    ipa: "sapʰa"
+    pos: "adj"
+  - id: "as-2094"
+    target: "এইখন ভাল কিতাপ।"
+    reading: "eikhôn bhāl kitāp."
+    ipa: "eikʰɔn bʱal kitap"
+    pos: "phrase"
+    bases:
+      - { word: "এইখন", base: "এই", reading: "ei" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+  - id: "as-2095"
+    target: "কোঠাটো ডাঙৰ।"
+    reading: "kuthātu dāṅôr."
+    ipa: "kʊtʰatʊ daŋɔɹ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কোঠাটো", ref: "as-0328" }
+  - id: "as-2096"
+    target: "চাহখিনি বৰ গৰম।"
+    reading: "sāhkhini bôr gôrôm."
+    ipa: "sahkʰini bɔɹ ɡɔɹɔm"
+    pos: "phrase"
+    bases:
+      - { word: "চাহখিনি", ref: "as-0409" }
+  - id: "as-2097"
+    target: "এইটো সেইটোতকৈ ডাঙৰ।"
+    reading: "eitu xeitutkôi dāṅôr."
+    ipa: "eitʊ xeitʊtkɔi daŋɔɹ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এইটো", base: "এই", reading: "ei" }
+      - { word: "সেইটোতকৈ", base: "সেইটো", reading: "xeitu" }
+  - id: "as-2098"
+    target: "সকলোতকৈ ভাল"
+    reading: "xôkôlutkôi bhāl"
+    ipa: "xɔkɔlʊtkɔi bʱal"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "সকলোতকৈ", base: "সকলো", reading: "xôkôlo" }
