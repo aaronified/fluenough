@@ -1,0 +1,148 @@
+schema: 1
+id: "es-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0036"
+    target: "hola"
+    ipa: "ˈola"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "hola", base: "hola" }
+  - id: "es-0037"
+    target: "gracias"
+    ipa: "ˈɡɾaθjas"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "gracias", base: "gracias" }
+  - id: "es-0038"
+    target: "por favor"
+    ipa: "poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "por", base: "por" }
+      - { word: "favor", base: "favor" }
+  - id: "es-0039"
+    target: "buenos días"
+    ipa: "ˈbwenos ˈdias"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "buenos", ref: "es-0033" }
+      - { word: "días", ref: "es-0019" }
+  - id: "es-0040"
+    target: "buenas noches"
+    ipa: "ˈbwenas ˈnotʃes"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "buenas", ref: "es-0033" }
+      - { word: "noches", ref: "es-0020" }
+  - id: "es-0041"
+    target: "lo siento"
+    ipa: "lo ˈsjento"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "lo", base: "lo" }
+      - { word: "siento", base: "sentir" }
+  - id: "es-0012"
+    target: "el agua"
+    ipa: "el ˈaɡwa"
+    pos: "noun"
+    gender: "f"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["food"]
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "agua", base: "agua" }
+  - id: "es-0015"
+    target: "la comida"
+    ipa: "la koˈmida"
+    pos: "noun"
+    gender: "f"
+    tags: ["food"]
+    phrasebook: true
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "comida", base: "comida" }
+  - id: "es-0017"
+    target: "la calle"
+    ipa: "la ˈkaʝe"
+    pos: "noun"
+    gender: "f"
+    tags: ["places"]
+    phrasebook: true
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "calle", base: "calle" }
+  - id: "es-0022"
+    target: "ser"
+    ipa: "seɾ"
+    pos: "verb"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["verb", "irregular"]
+    examples:
+      - { target: "Ella es médica.", ipa: "ˈeʝa es ˈmedika", bases: [{ word: "Ella", base: "ella" }, { word: "es", base: "ser" }, { word: "médica", base: "médico" }] }
+    bases:
+      - { word: "ser", base: "ser" }
+  - id: "es-0023"
+    target: "estar"
+    ipa: "esˈtaɾ"
+    pos: "verb"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    tags: ["verb", "irregular"]
+    examples:
+      - { target: "Estoy cansado.", ipa: "esˈtoj kanˈsado", bases: [{ word: "Estoy", base: "estar" }, { word: "cansado", base: "cansado" }] }
+    bases:
+      - { word: "estar", base: "estar" }
+  - id: "es-0024"
+    target: "tener"
+    ipa: "teˈneɾ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+    phrasebook: true
+    bases:
+      - { word: "tener", base: "tener" }
+  - id: "es-0026"
+    target: "ir"
+    ipa: "iɾ"
+    pos: "verb"
+    tags: ["verb", "irregular"]
+    phrasebook: true
+    bases:
+      - { word: "ir", base: "ir" }
+  - id: "es-0027"
+    target: "hablar"
+    ipa: "aˈblaɾ"
+    pos: "verb"
+    tags: ["verb", "regular-ar"]
+    phrasebook: true
+    bases:
+      - { word: "hablar", base: "hablar" }
+  - id: "es-0028"
+    target: "comer"
+    ipa: "koˈmeɾ"
+    pos: "verb"
+    tags: ["verb", "regular-er"]
+    phrasebook: true
+    bases:
+      - { word: "comer", base: "comer" }

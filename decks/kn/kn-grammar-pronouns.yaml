@@ -1,0 +1,138 @@
+schema: 1
+id: "kn-grammar-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["possessive: my, your …", "to: to me …", "object: me …"]
+  entries:
+    - lemma: "ನಾನು"
+      key: "naanu"
+      reading: "nānu"
+      ipa: "naːnu"
+      forms:
+        "possessive: my, your …": ["ನನ್ನ"]
+        "to: to me …": ["ನನಗೆ", "ನಂಗೆ"]
+        "object: me …": ["ನನ್ನನ್ನು", "ನನ್ನ"]
+      readings:
+        "possessive: my, your …": ["nanna"]
+        "to: to me …": ["nanage", "naṅge"]
+        "object: me …": ["nannannu", "nanna"]
+      ipas:
+        "possessive: my, your …": "nanna"
+        "to: to me …": "nanaɡe"
+        "object: me …": "nannannu"
+    - lemma: "ನೀನು"
+      key: "niinu"
+      reading: "nīnu"
+      ipa: "niːnu"
+      forms:
+        "possessive: my, your …": ["ನಿನ್ನ"]
+        "to: to me …": ["ನಿನಗೆ", "ನಿಂಗೆ"]
+        "object: me …": ["ನಿನ್ನನ್ನು", "ನಿನ್ನ"]
+      readings:
+        "possessive: my, your …": ["ninna"]
+        "to: to me …": ["ninage", "niṅge"]
+        "object: me …": ["ninnannu", "ninna"]
+      ipas:
+        "possessive: my, your …": "ninna"
+        "to: to me …": "ninaɡe"
+        "object: me …": "ninnannu"
+    - lemma: "ನೀವು"
+      key: "niivu"
+      reading: "nīvu"
+      ipa: "niːʋu"
+      forms:
+        "possessive: my, your …": ["ನಿಮ್ಮ"]
+        "to: to me …": ["ನಿಮಗೆ", "ನಿಮ್ಗೆ"]
+        "object: me …": ["ನಿಮ್ಮನ್ನು", "ನಿಮ್ಮ"]
+      readings:
+        "possessive: my, your …": ["nimma"]
+        "to: to me …": ["nimage", "nimge"]
+        "object: me …": ["nimmannu", "nimma"]
+      ipas:
+        "possessive: my, your …": "nimma"
+        "to: to me …": "nimaɡe"
+        "object: me …": "nimmannu"
+    - lemma: "ಅವನು"
+      key: "avanu"
+      reading: "avanu"
+      ipa: "aʋanu"
+      forms:
+        "possessive: my, your …": ["ಅವನ"]
+        "to: to me …": ["ಅವನಿಗೆ"]
+        "object: me …": ["ಅವನನ್ನು"]
+      readings:
+        "possessive: my, your …": ["avana"]
+        "to: to me …": ["avanige"]
+        "object: me …": ["avanannu"]
+      ipas:
+        "possessive: my, your …": "aʋana"
+        "to: to me …": "aʋaniɡe"
+        "object: me …": "aʋanannu"
+    - lemma: "ಅವಳು"
+      key: "avalu"
+      reading: "avaḷu"
+      ipa: "aʋaɭu"
+      forms:
+        "possessive: my, your …": ["ಅವಳ"]
+        "to: to me …": ["ಅವಳಿಗೆ"]
+        "object: me …": ["ಅವಳನ್ನು"]
+      readings:
+        "possessive: my, your …": ["avaḷa"]
+        "to: to me …": ["avaḷige"]
+        "object: me …": ["avaḷannu"]
+      ipas:
+        "possessive: my, your …": "aʋaɭa"
+        "to: to me …": "aʋaɭiɡe"
+        "object: me …": "aʋaɭannu"
+    - lemma: "ಅದು"
+      key: "adu"
+      reading: "adu"
+      ipa: "ad̪u"
+      forms:
+        "possessive: my, your …": ["ಅದರ"]
+        "to: to me …": ["ಅದಕ್ಕೆ"]
+        "object: me …": ["ಅದನ್ನು"]
+      readings:
+        "possessive: my, your …": ["adara"]
+        "to: to me …": ["adakke"]
+        "object: me …": ["adannu"]
+      ipas:
+        "possessive: my, your …": "ad̪ara"
+        "to: to me …": "ad̪akke"
+        "object: me …": "ad̪annu"
+    - lemma: "ನಾವು"
+      key: "naavu"
+      reading: "nāvu"
+      ipa: "naːʋu"
+      forms:
+        "possessive: my, your …": ["ನಮ್ಮ"]
+        "to: to me …": ["ನಮಗೆ", "ನಮ್ಗೆ"]
+        "object: me …": ["ನಮ್ಮನ್ನು"]
+      readings:
+        "possessive: my, your …": ["namma"]
+        "to: to me …": ["namage", "namge"]
+        "object: me …": ["nammannu"]
+      ipas:
+        "possessive: my, your …": "namma"
+        "to: to me …": "namaɡe"
+        "object: me …": "nammannu"
+    - lemma: "ಅವರು"
+      key: "avaru"
+      reading: "avaru"
+      ipa: "aʋaru"
+      forms:
+        "possessive: my, your …": ["ಅವರ"]
+        "to: to me …": ["ಅವರಿಗೆ"]
+        "object: me …": ["ಅವರನ್ನು"]
+      readings:
+        "possessive: my, your …": ["avara"]
+        "to: to me …": ["avarige"]
+        "object: me …": ["avarannu"]
+      ipas:
+        "possessive: my, your …": "aʋara"
+        "to: to me …": "aʋariɡe"
+        "object: me …": "aʋarannu"

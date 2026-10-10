@@ -1,0 +1,197 @@
+schema: 1
+id: "hi-family"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "hi-0193"
+  - id: "hi-0375"
+    target: "माता-पिता"
+    reading: "mātā-pitā"
+    ipa: "maːt̪aːpɪt̪aː"
+    alt_target: ["माँ-बाप"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0376"
+    target: "पिता"
+    reading: "pitā"
+    ipa: "pɪt̪aː"
+    alt_target: ["पिताजी", "पापा"]
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0377"
+    target: "माँ"
+    reading: "mām̐"
+    ipa: "mãː"
+    alt_target: ["माता", "मम्मी"]
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0378"
+    target: "भाई"
+    reading: "bhāī"
+    ipa: "bʱaːiː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0379"
+    target: "बहन"
+    reading: "bahan"
+    ipa: "bəɦən"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "hi-0184"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0380"
+    target: "बेटी"
+    reading: "bēṭī"
+    ipa: "beːʈiː"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0381"
+    target: "पति"
+    reading: "pati"
+    ipa: "pət̪ɪ"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0382"
+    target: "पत्नी"
+    reading: "patnī"
+    ipa: "pət̪niː"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0383"
+    target: "बच्चे"
+    reading: "baccē"
+    ipa: "bətʃtʃeː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0384"
+    target: "दादा"
+    reading: "dādā"
+    ipa: "d̪aːd̪aː"
+    alt_target: ["दादाजी"]
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0385"
+    target: "दादी"
+    reading: "dādī"
+    ipa: "d̪aːd̪iː"
+    alt_target: ["दादीजी"]
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0386"
+    target: "नाना"
+    reading: "nānā"
+    ipa: "naːnaː"
+    alt_target: ["नानाजी"]
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0387"
+    target: "नानी"
+    reading: "nānī"
+    ipa: "naːniː"
+    alt_target: ["नानीजी"]
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0388"
+    target: "चाचा"
+    reading: "cācā"
+    ipa: "tʃaːtʃaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0389"
+    target: "ताऊ"
+    reading: "tāū"
+    ipa: "t̪aːuː"
+    alt_target: ["ताया"]
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0390"
+    target: "बुआ"
+    reading: "buā"
+    ipa: "bʊaː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0391"
+    target: "मामा"
+    reading: "māmā"
+    ipa: "maːmaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0392"
+    target: "मौसी"
+    reading: "mausī"
+    ipa: "mɔːsiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0393"
+    target: "ससुर"
+    reading: "sasur"
+    ipa: "səsʊr"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0394"
+    target: "सास"
+    reading: "sās"
+    ipa: "saːs"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0395"
+    target: "रिश्तेदार"
+    reading: "riśtēdār"
+    ipa: "rɪʃt̪eːd̪aːr"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0396"
+    target: "मेरे दो भाई और एक बहन हैं।"
+    reading: "mērē dō bhāī aur ēk bahan haim̐."
+    ipa: "meːreː d̪oː bʱaːiː ɔːr eːk bəɦən ɦɛ̃ː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērā" }
+  - id: "hi-0397"
+    target: "आपके कितने भाई-बहन हैं?"
+    reading: "āpkē kitnē bhāī-bahan haim̐?"
+    ipa: "aːpkeː kɪt̪neː bʱaːiːbəɦən ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आपके", ref: "hi-0134" }
+      - { word: "कितने", ref: "hi-0163" }
+  - id: "hi-0398"
+    target: "मेरी शादी हो गई है।"
+    reading: "mērī śādī hō gaī hai."
+    ipa: "meːriː ʃaːd̪iː ɦoː ɡəiː ɦɛː"
+    alt_target: ["मैं शादीशुदा हूँ।"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērā" }
+      - { word: "शादी", base: "शादी", reading: "śādī" }
+      - { word: "हो", base: "होना", reading: "hōnā" }
+      - { word: "गई", base: "जाना", reading: "jānā" }

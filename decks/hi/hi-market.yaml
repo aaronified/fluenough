@@ -1,0 +1,107 @@
+schema: 1
+id: "hi-market"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "market"
+tags: ["beginner"]
+cards:
+  - id: "hi-0231"
+    target: "कितने का है?"
+    reading: "kitnē kā hai?"
+    ipa: "kɪt̪neː kaː ɦɛː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कितने", ref: "hi-0163" }
+  - id: "hi-0232"
+    target: "दाम"
+    reading: "dām"
+    ipa: "d̪aːm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0233"
+    target: "रुपया"
+    reading: "rupayā"
+    ipa: "rʊpəjaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0234"
+    target: "पैसे"
+    picture: "💰"
+    reading: "paisē"
+    ipa: "pɛːseː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0235"
+    target: "खुले पैसे"
+    reading: "khulē paisē"
+    ipa: "kʰʊleː pɛːseː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "खुले", base: "खुला", reading: "khulā" }
+  - id: "hi-0236"
+    target: "महँगा"
+    reading: "maham̐gā"
+    ipa: "məɦə̃ɡaː"
+    alt_target: ["महंगा"]
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0237"
+    target: "सस्ता"
+    reading: "sastā"
+    ipa: "səst̪aː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0238"
+    target: "थोड़ा कम कीजिए।"
+    reading: "thōṛā kam kījiē."
+    ipa: "t̪ʰoːɽaː kəm kiːdʒɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "थोड़ा", base: "थोड़ा", reading: "thōṛā" }
+      - { word: "कीजिए", base: "करना", reading: "karnā" }
+  - id: "hi-0239"
+    target: "दुकान"
+    reading: "dukān"
+    ipa: "d̪ʊkaːn"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0240"
+    target: "दीजिए"
+    reading: "dījiē"
+    ipa: "d̪iːdʒɪeː"
+    pos: "verb"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0241"
+    target: "किलो"
+    reading: "kilō"
+    ipa: "kɪloː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0242"
+    target: "बस"
+    reading: "bas"
+    ipa: "bəs"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }

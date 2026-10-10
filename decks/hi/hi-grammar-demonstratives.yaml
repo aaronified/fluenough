@@ -1,0 +1,109 @@
+schema: 1
+id: "hi-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["near: यह (yah), इ- (i-)", "far: वह (vah), उ- (u-)"]
+  entries:
+    - lemma: "he, she, it"
+      key: "person"
+      forms:
+        "near: यह (yah), इ- (i-)": "यह"
+        "far: वह (vah), उ- (u-)": "वह"
+      readings:
+        "near: यह (yah), इ- (i-)": "yah"
+        "far: वह (vah), उ- (u-)": "vah"
+      ipas:
+        "near: यह (yah), इ- (i-)": "jəɦ"
+        "far: वह (vah), उ- (u-)": "ʋəɦ"
+    - lemma: "they"
+      key: "people"
+      forms:
+        "near: यह (yah), इ- (i-)": "ये"
+        "far: वह (vah), उ- (u-)": "वे"
+      readings:
+        "near: यह (yah), इ- (i-)": "yē"
+        "far: वह (vah), उ- (u-)": "vē"
+      ipas:
+        "near: यह (yah), इ- (i-)": "jeː"
+        "far: वह (vah), उ- (u-)": "ʋeː"
+    - lemma: "this, that, before a postposition"
+      key: "oblique"
+      forms:
+        "near: यह (yah), इ- (i-)": "इस"
+        "far: वह (vah), उ- (u-)": "उस"
+      readings:
+        "near: यह (yah), इ- (i-)": "is"
+        "far: वह (vah), उ- (u-)": "us"
+      ipas:
+        "near: यह (yah), इ- (i-)": "ɪs"
+        "far: वह (vah), उ- (u-)": "ʊs"
+    - lemma: "his, her, its"
+      key: "possessive"
+      forms:
+        "near: यह (yah), इ- (i-)": "इसका"
+        "far: वह (vah), उ- (u-)": "उसका"
+      readings:
+        "near: यह (yah), इ- (i-)": "iskā"
+        "far: वह (vah), उ- (u-)": "uskā"
+      ipas:
+        "near: यह (yah), इ- (i-)": "ɪskaː"
+        "far: वह (vah), उ- (u-)": "ʊskaː"
+    - lemma: "him, her, it"
+      key: "object"
+      forms:
+        "near: यह (yah), इ- (i-)": "इसे"
+        "far: वह (vah), उ- (u-)": "उसे"
+      readings:
+        "near: यह (yah), इ- (i-)": "isē"
+        "far: वह (vah), उ- (u-)": "usē"
+      ipas:
+        "near: यह (yah), इ- (i-)": "ɪseː"
+        "far: वह (vah), उ- (u-)": "ʊseː"
+    - lemma: "here, there"
+      key: "place"
+      forms:
+        "near: यह (yah), इ- (i-)": "यहाँ"
+        "far: वह (vah), उ- (u-)": "वहाँ"
+      readings:
+        "near: यह (yah), इ- (i-)": "yahām̐"
+        "far: वह (vah), उ- (u-)": "vahām̐"
+      ipas:
+        "near: यह (yah), इ- (i-)": "jəɦãː"
+        "far: वह (vah), उ- (u-)": "ʋəɦãː"
+    - lemma: "this way, that way"
+      key: "direction"
+      forms:
+        "near: यह (yah), इ- (i-)": "इधर"
+        "far: वह (vah), उ- (u-)": "उधर"
+      readings:
+        "near: यह (yah), इ- (i-)": "idhar"
+        "far: वह (vah), उ- (u-)": "udhar"
+      ipas:
+        "near: यह (yah), इ- (i-)": "ɪd̪ʱər"
+        "far: वह (vah), उ- (u-)": "ʊd̪ʱər"
+    - lemma: "like this, like that"
+      key: "manner"
+      forms:
+        "near: यह (yah), इ- (i-)": "ऐसा"
+        "far: वह (vah), उ- (u-)": "वैसा"
+      readings:
+        "near: यह (yah), इ- (i-)": "aisā"
+        "far: वह (vah), उ- (u-)": "vaisā"
+      ipas:
+        "near: यह (yah), इ- (i-)": "ɛːsaː"
+        "far: वह (vah), उ- (u-)": "ʋɛːsaː"
+    - lemma: "this much, that much"
+      key: "amount"
+      forms:
+        "near: यह (yah), इ- (i-)": "इतना"
+        "far: वह (vah), उ- (u-)": "उतना"
+      readings:
+        "near: यह (yah), इ- (i-)": "itnā"
+        "far: वह (vah), उ- (u-)": "utnā"
+      ipas:
+        "near: यह (yah), इ- (i-)": "ɪt̪naː"
+        "far: वह (vah), उ- (u-)": "ʊt̪naː"

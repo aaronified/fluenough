@@ -1,0 +1,95 @@
+schema: 1
+id: "hi-eating-out"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "eating-out"
+tags: ["beginner"]
+cards:
+  - id: "hi-0332"
+    target: "खाना"
+    reading: "khānā"
+    ipa: "kʰaːnaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0333"
+    target: "पानी"
+    picture: "💧"
+    reading: "pānī"
+    ipa: "paːniː"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0334"
+    target: "चाय"
+    picture: "🍵"
+    reading: "cāy"
+    ipa: "tʃaːj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0335"
+    target: "रोटी"
+    picture: "🫓"
+    reading: "rōṭī"
+    ipa: "roːʈiː"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0336"
+    target: "मुझे … चाहिए।"
+    reading: "mujhē... cāhiē."
+    ipa: "mʊdʒʱeː tʃaːɦɪeː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
+  - id: "hi-0337"
+    target: "और"
+    reading: "aur"
+    ipa: "ɔːr"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0338"
+    target: "तीखा"
+    reading: "tīkhā"
+    ipa: "t̪iːkʰaː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0339"
+    target: "मीठा"
+    reading: "mīṭhā"
+    ipa: "miːʈʰaː"
+    pos: "adj"
+  - id: "hi-0340"
+    target: "शाकाहारी"
+    reading: "śākāhārī"
+    ipa: "ʃaːkaːɦaːriː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0341"
+    target: "बिल लाइए।"
+    reading: "bil lāiē."
+    ipa: "bɪl laːɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बिल", base: "बिल", reading: "bil" }
+      - { word: "लाइए", base: "लाना", reading: "lānā" }
+  - id: "hi-0342"
+    target: "बहुत अच्छा था।"
+    reading: "bahut acchā thā."
+    ipa: "bəɦʊt̪ ətʃtʃʰaː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "बहुत", base: "बहुत", reading: "bahut" }
+      - { word: "अच्छा", base: "अच्छा", reading: "acchā" }
+      - { word: "था", base: "होना", reading: "hōnā" }

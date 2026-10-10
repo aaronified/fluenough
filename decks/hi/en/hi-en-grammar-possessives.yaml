@@ -1,0 +1,23 @@
+schema: 1
+id: "hi-en-grammar-possessives"
+kind: "layer"
+core: "hi-grammar-possessives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Possessives: my, your"
+license: "CC0-1.0"
+description: "My, your, his and her. They agree with the thing owned, not the owner."
+pattern:
+  name: "Possessive pronouns"
+  slot_name: "agreement"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "main": "my"
+    "tuu": "your, intimate"
+    "tum": "your, familiar"
+    "aap": "your, respectful"
+    "yah": "his, her, its: near"
+    "vah": "his, her, its: far"
+    "ham": "our"
+    "ye": "their: near"
+    "ve": "their: far"
+  notes: "A possessive agrees with what is owned, not with the owner: मेरा घर (my house) because घर (ghar) is masculine, मेरी किताब (my book) because किताब (kitāb) is feminine, whoever is speaking. So nothing in उसका (uskā) says whether it is his or hers."

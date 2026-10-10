@@ -1,0 +1,63 @@
+schema: 1
+id: "hi-grammar-articles"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar"]
+cards:
+  - id: "hi-0243"
+    target: "किताब मेज़ पर है।"
+    reading: "kitāb mēz par hai."
+    ipa: "kɪt̪aːb meːz pər ɦɛː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "किताब", base: "किताब", reading: "kitāb" }
+  - id: "hi-0244"
+    target: "एक लड़का आया।"
+    reading: "ēk laṛkā āyā."
+    ipa: "eːk ləɽkaː aːjaː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "लड़का", base: "लड़का", reading: "laṛkā" }
+      - { word: "आया", base: "आना", reading: "ānā" }
+  - id: "hi-0245"
+    target: "लड़का आया।"
+    reading: "laṛkā āyā."
+    ipa: "ləɽkaː aːjaː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "लड़का", base: "लड़का", reading: "laṛkā" }
+      - { word: "आया", base: "आना", reading: "ānā" }
+  - id: "hi-0246"
+    target: "एक चाय दीजिए।"
+    reading: "ēk cāy dījiē."
+    ipa: "eːk tʃaːj d̪iːdʒɪeː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0247"
+    target: "कोई आया है।"
+    reading: "kōī āyā hai."
+    ipa: "koːiː aːjaː ɦɛː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कोई", base: "कोई", reading: "kōī" }
+      - { word: "आया", base: "आना", reading: "ānā" }
+  - id: "hi-0248"
+    target: "थोड़ा पानी दीजिए।"
+    reading: "thōṛā pānī dījiē."
+    ipa: "t̪ʰoːɽaː paːniː d̪iːdʒɪeː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "थोड़ा", base: "थोड़ा", reading: "thōṛā" }

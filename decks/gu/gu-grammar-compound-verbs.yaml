@@ -1,0 +1,113 @@
+schema: 1
+id: "gu-grammar-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "gu-0553"
+    target: "ખાઈ લો."
+    reading: "khāi lo."
+    ipa: "kʰai lo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ખાઈ", ref: "gu-0504" }
+      - { word: "લો", base: "લેવું", reading: "levum̐" }
+  - id: "gu-0554"
+    target: "બેસી જાઓ."
+    reading: "besi jāo."
+    ipa: "besi dʒao"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "બેસી", base: "બેસવું", reading: "besvum̐" }
+      - { word: "જાઓ", ref: "gu-0508" }
+  - id: "gu-0555"
+    target: "હું ભૂલી ગયો."
+    reading: "hum̐ bhuli gayo."
+    ipa: "ɦũ bʱuli ɡəjo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "ભૂલી", base: "ભૂલવું", reading: "bhulvum̐" }
+      - { word: "ગયો", ref: "gu-0508" }
+  - id: "gu-0556"
+    target: "તે પડી ગયો."
+    reading: "te paḍi gayo."
+    ipa: "t̪e pəɖi ɡəjo"
+    pos: "phrase"
+    bases:
+      - { word: "તે", base: "તે", reading: "te" }
+      - { word: "પડી", base: "પડવું", reading: "paḍvum̐" }
+      - { word: "ગયો", ref: "gu-0508" }
+  - id: "gu-0557"
+    target: "કામ થઈ ગયું."
+    reading: "kām thai gayum̐."
+    ipa: "kam t̪ʰəi ɡəjũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "થઈ", base: "થવું", reading: "thavum̐" }
+      - { word: "ગયું", ref: "gu-0508" }
+  - id: "gu-0558"
+    target: "સૂઈ જાઓ."
+    reading: "sui jāo."
+    ipa: "sui dʒao"
+    pos: "phrase"
+    bases:
+      - { word: "સૂઈ", ref: "gu-0518" }
+      - { word: "જાઓ", ref: "gu-0508" }
+  - id: "gu-0559"
+    target: "કહી દો."
+    reading: "kahi do."
+    ipa: "kəɦi d̪o"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કહી", base: "કહેવું", reading: "kahevum̐" }
+      - { word: "દો", base: "દેવું", reading: "devum̐" }
+  - id: "gu-0560"
+    target: "મૂકી દો."
+    reading: "muki do."
+    ipa: "muki d̪o"
+    pos: "phrase"
+    bases:
+      - { word: "મૂકી", base: "મૂકવું", reading: "mukvum̐" }
+      - { word: "દો", base: "દેવું", reading: "devum̐" }
+  - id: "gu-0561"
+    target: "ફેંકી દો."
+    reading: "pheṅki do."
+    ipa: "pʰeŋki d̪o"
+    pos: "phrase"
+    bases:
+      - { word: "ફેંકી", base: "ફેંકવું", reading: "pheṅkvum̐" }
+      - { word: "દો", base: "દેવું", reading: "devum̐" }
+  - id: "gu-0562"
+    target: "લખી નાખો."
+    reading: "lakhi nākho."
+    ipa: "ləkʰi nakʰo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "લખી", ref: "gu-0511" }
+      - { word: "નાખો", base: "નાખવું", reading: "nākhvum̐" }
+  - id: "gu-0563"
+    target: "તે જતો રહ્યો."
+    reading: "te jato rahyo."
+    ipa: "t̪e dʒət̪o rəɦjo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "તે", base: "તે", reading: "te" }
+      - { word: "જતો", ref: "gu-0508" }
+      - { word: "રહ્યો", base: "રહેવું", reading: "rahevum̐" }

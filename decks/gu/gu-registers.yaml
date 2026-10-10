@@ -1,0 +1,137 @@
+schema: 1
+id: "gu-registers"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["reading", "unreviewed"]
+cards:
+  - ref: "gu-0316"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0620"
+    target: "ધન્યવાદ"
+    reading: "dhanyavād"
+    ipa: "d̪ʱənjəʋad̪"
+    pos: "other"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0621"
+    target: "પધારો"
+    reading: "padhāro"
+    ipa: "pəd̪ʱaro"
+    pos: "other"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0622"
+    target: "આપનું સ્વાગત છે"
+    reading: "āpnum̐ svāgat che"
+    ipa: "apnũ sʋaɡət̪ tʃʰe"
+    pos: "phrase"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "આપનું", ref: "gu-0316" }
+      - { word: "સ્વાગત", base: "સ્વાગત", reading: "svāgat" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0623"
+    target: "કૃપા કરીને"
+    reading: "krupā karine"
+    ipa: "krupa kərine"
+    pos: "phrase"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કૃપા", base: "કૃપા", reading: "krupā" }
+      - { word: "કરીને", base: "કરવું", reading: "karvum̐" }
+  - id: "gu-0624"
+    target: "વિનંતી"
+    reading: "vinanti"
+    ipa: "ʋinənt̪i"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0625"
+    target: "ભોજન"
+    reading: "bhojan"
+    ipa: "bʱodʒən"
+    pos: "noun"
+    gender: "n"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0626"
+    target: "જળ"
+    reading: "jaḷ"
+    ipa: "dʒəɭ"
+    pos: "noun"
+    gender: "n"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0627"
+    target: "માતા"
+    reading: "mātā"
+    ipa: "mat̪a"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0628"
+    target: "પિતા"
+    reading: "pitā"
+    ipa: "pit̪a"
+    pos: "noun"
+    gender: "m"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0629"
+    target: "સમાચાર"
+    reading: "samācār"
+    ipa: "səmatʃar"
+    pos: "noun"
+    modes: ["recognition"]
+  - id: "gu-0630"
+    target: "વિદ્યાલય"
+    reading: "vidyālay"
+    ipa: "ʋid̪jaləj"
+    pos: "noun"
+    gender: "n"
+    modes: ["recognition"]
+  - id: "gu-0631"
+    target: "પ્રવેશ"
+    reading: "praveś"
+    ipa: "prəʋeʃ"
+    pos: "noun"
+    gender: "m"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0632"
+    target: "ધૂમ્રપાન નિષેધ"
+    reading: "dhumrapān niśedh"
+    ipa: "d̪ʱumrəpan niʃed̪ʱ"
+    pos: "phrase"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ધૂમ્રપાન", base: "ધૂમ્રપાન", reading: "dhumrapān" }
+      - { word: "નિષેધ", base: "નિષેધ", reading: "niśedh" }
+  - id: "gu-0633"
+    target: "શ્રીમતી"
+    reading: "śrimati"
+    ipa: "ʃrimət̪i"
+    pos: "other"
+    modes: ["recognition"]
+    notes:
+      - { id: "n1", kind: "note" }

@@ -1,0 +1,113 @@
+schema: 1
+id: "mr-slang"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+tags: ["slang", "unreviewed"]
+cards:
+  - id: "mr-0626"
+    target: "भारी"
+    reading: "bhāri"
+    ipa: "bʱari"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0627"
+    target: "लय"
+    reading: "lay"
+    ipa: "ləj"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0628"
+    target: "झक्कास"
+    reading: "jhakkās"
+    ipa: "dzʱəkkas"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0629"
+    target: "राडा"
+    reading: "rāḍā"
+    ipa: "raɖa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0630"
+    target: "पोरगा"
+    picture: "👦"
+    reading: "porgā"
+    ipa: "porɡa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0631"
+    target: "यार"
+    reading: "yār"
+    ipa: "jar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0632"
+    target: "भावा"
+    reading: "bhāvā"
+    ipa: "bʱaʋa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0633"
+    target: "काय रे?"
+    reading: "kāy re?"
+    ipa: "kaj re"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "रे", base: "रे", reading: "re" }
+  - id: "mr-0634"
+    target: "चल, निघतो."
+    reading: "cal, nighto."
+    ipa: "tsəl niɡʱt̪o"
+    alt_target: ["चल, निघते."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "चल", ref: "mr-0512" }
+      - { word: "निघतो", base: "निघणे", reading: "nighṇe" }
+  - id: "mr-0635"
+    target: "खतरनाक"
+    reading: "khatarnāk"
+    ipa: "kʰət̪ərnak"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0636"
+    target: "टाईमपास"
+    reading: "ṭāimpās"
+    ipa: "ʈaimpas"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0637"
+    target: "बिनधास्त"
+    reading: "bindhāst"
+    ipa: "bind̪ʱast̪"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0638"
+    target: "वाट लागली."
+    reading: "vāṭ lāgli."
+    ipa: "ʋaʈ laɡli"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "लागली", base: "लागणे", reading: "lāgṇe" }

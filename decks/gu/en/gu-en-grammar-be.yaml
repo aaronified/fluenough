@@ -1,0 +1,18 @@
+schema: 1
+id: "gu-en-grammar-be"
+kind: "layer"
+core: "gu-grammar-be"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To be: છે (che), હતું (hatum̐), હશે (haśe)"
+license: "CC0-1.0"
+description: "Am, was, will be: હોવું (hovum̐) in the present, the past and the future. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "હોવું (hovum̐) by tense"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "chhe": "to be, present"
+    "hatun": "to be, past"
+    "hashe": "to be, future"
+  notes: "The present and the future change with the person, not the gender. The past is the other way round: it changes with gender and number, not the person, like an adjective: હતો (m), હતી (f), હતું (n), હતા (m plural). A group of women and men, or a woman spoken of with respect, takes હતાં (hatām̐). નથી (nathi) is 'am not, is not, are not' for every person: હું ઘરે નથી (hum̐ ghare nathi), I'm not at home."

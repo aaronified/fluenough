@@ -1,0 +1,94 @@
+schema: 1
+id: "es-en-phrasebook"
+kind: "layer"
+core: "es-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+description: "Fifteen things to say from the first day, before their words are taught: six courtesy phrases (hello, thank you, please, good morning, good night, sorry), then the first nouns (water, food, the street) and the verbs to be, to have, to go, to speak and to eat, as single words. Not yet checked by a Spanish speaker: please report any mistake."
+license: "CC0-1.0"
+cards:
+  "es-0036":
+    native: "hello"
+    bases:
+      "hola": "hello"
+  "es-0037":
+    native: "thank you"
+    alt_native: ["thanks"]
+    bases:
+      "gracias": "thank you"
+  "es-0038":
+    native: "please"
+    bases:
+      "por": "for"
+      "favor": "favour"
+  "es-0039":
+    native: "good morning"
+  "es-0040":
+    native: "good night"
+    alt_native: ["good evening"]
+  "es-0041":
+    native: "I'm sorry"
+    alt_native: ["sorry"]
+    bases:
+      "lo": "it"
+      "siento": "to feel; to be sorry"
+  "es-0012":
+    native: "the water"
+    notes:
+      "n1": "Feminine, but takes el in the singular because it begins with a stressed a. The plural is las aguas."
+    bases:
+      "el": "the"
+      "agua": "water"
+  "es-0015":
+    native: "the food"
+    alt_native: ["the meal"]
+    bases:
+      "la": "the"
+      "comida": "food"
+  "es-0017":
+    native: "the street"
+    bases:
+      "la": "the"
+      "calle": "street"
+  "es-0022":
+    native: "to be"
+    notes:
+      "n1": "Permanent or essential qualities: identity, origin, profession. Contrast with estar."
+    examples:
+      "Ella es médica.":
+        native: "She is a doctor."
+        bases:
+          "Ella": "she"
+          "es": "to be"
+          "médica": "doctor"
+    bases:
+      "ser": "to be"
+  "es-0023":
+    native: "to be"
+    notes:
+      "n1": "Temporary states and location. Contrast with ser."
+    examples:
+      "Estoy cansado.":
+        native: "I am tired."
+        bases:
+          "Estoy": "to be"
+          "cansado": "tired"
+    bases:
+      "estar": "to be"
+  "es-0024":
+    native: "to have"
+    bases:
+      "tener": "to have"
+  "es-0026":
+    native: "to go"
+    bases:
+      "ir": "to go"
+  "es-0027":
+    native: "to speak"
+    alt_native: ["to talk"]
+    bases:
+      "hablar": "to speak"
+  "es-0028":
+    native: "to eat"
+    bases:
+      "comer": "to eat"

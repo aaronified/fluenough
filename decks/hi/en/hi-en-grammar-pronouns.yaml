@@ -1,0 +1,23 @@
+schema: 1
+id: "hi-en-grammar-pronouns"
+kind: "layer"
+core: "hi-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns"
+license: "CC0-1.0"
+description: "I, you, he and she, and the forms they take with को (kō), से (sē) and ने (nē)."
+pattern:
+  name: "Personal pronouns"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "main": "I"
+    "tuu": "you, intimate"
+    "tum": "you, familiar"
+    "aap": "you, respectful"
+    "yah": "he, she, it: near"
+    "vah": "he, she, it: far"
+    "ham": "we"
+    "ye": "they: near"
+    "ve": "they: far"
+  notes: "Hindi has three words for 'you': आप (respectful), तुम (familiar) and तू (intimate). यह (yah) and वह (vah) are he, she or it: यह (yah) for someone near, वह (vah) for someone further off. मुझे (mujhē) and मुझको (mujhkō) mean the same; मुझे (mujhē) is more common."

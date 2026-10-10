@@ -1,0 +1,73 @@
+schema: 1
+id: "hi-slang"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["slang", "unreviewed"]
+cards:
+  - id: "hi-0595"
+    target: "यार"
+    reading: "yār"
+    ipa: "jaːr"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0596"
+    target: "जुगाड़"
+    reading: "jugāṛ"
+    ipa: "dʒʊɡaːɽ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0597"
+    target: "टाइमपास"
+    reading: "ṭāimpās"
+    ipa: "ʈaːɪmpaːs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0598"
+    target: "मस्त"
+    reading: "mast"
+    ipa: "məst̪"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0599"
+    target: "बिंदास"
+    reading: "bindās"
+    ipa: "bɪnd̪aːs"
+    pos: "adj"
+  - id: "hi-0600"
+    target: "बकवास"
+    reading: "bakvās"
+    ipa: "bəkʋaːs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0601"
+    target: "चलता है"
+    reading: "caltā hai"
+    ipa: "tʃəlt̪aː ɦɛː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "चलता", base: "चलना", reading: "calnā" }
+  - id: "hi-0602"
+    target: "पीना"
+    reading: "pīnā"
+    ipa: "piːnaː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0603"
+    target: "दारू"
+    reading: "dārū"
+    ipa: "d̪aːruː"
+    pos: "noun"
+    gender: "f"

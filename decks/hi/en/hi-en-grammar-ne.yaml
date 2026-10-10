@@ -1,0 +1,60 @@
+schema: 1
+id: "hi-en-grammar-ne"
+kind: "layer"
+core: "hi-grammar-ne"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The ने (nē) construction"
+license: "CC0-1.0"
+description: "In the past, a verb with an object takes ने (nē) after the doer and agrees with the object. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0480":
+    native: "I drank tea."
+    notes:
+      "n1": "पी (pī) is feminine because चाय (cāy) is, whoever drank it."
+    bases:
+      "मैंने": "I"
+  "hi-0481":
+    native: "He read a book. / She read a book."
+    notes:
+      "n1": "पढ़ी (paṛhī) agrees with किताब (kitāb), feminine. Nothing says whether the reader was a man or a woman."
+    bases:
+      "उसने": "he; she"
+      "किताब": "book"
+  "hi-0482":
+    native: "We saw a film."
+    bases:
+      "फ़िल्म": "film"
+      "देखी": "to see"
+  "hi-0483":
+    native: "Ram wrote a letter."
+    notes:
+      "n1": "After a name, ने (nē) is written apart."
+    bases:
+      "राम": "Ram (a man's name)"
+      "ने": "(marks who did the action, in the past tense)"
+      "पत्र": "letter"
+      "लिखा": "to write"
+  "hi-0484":
+    native: "What did you say?"
+    bases:
+      "कहा": "to say"
+  "hi-0485":
+    native: "They ate. / He ate. (respectful)"
+    bases:
+      "उन्होंने": "he; she; they (respectful)"
+  "hi-0486":
+    native: "I saw him. / I saw her."
+    notes:
+      "n1": "When the object takes को (kō) (उसे (usē) = उसको (uskō)), the verb stays masculine singular."
+    bases:
+      "मैंने": "I"
+      "उसे": "he; she"
+      "देखा": "to see"
+  "hi-0487":
+    native: "I came. (said by a man)"
+    notes:
+      "n1": "No ने (nē): आना (ānā) takes no object, so the verb agrees with the doer."
+    bases:
+      "मैं": "I"
+      "आया": "to come"

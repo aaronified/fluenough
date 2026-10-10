@@ -1,0 +1,135 @@
+schema: 1
+id: "gu-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-0501"
+    target: "ઊઠવું"
+    reading: "uṭhvum̐"
+    ipa: "uʈʰʋũ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0502"
+    target: "નહાવું"
+    reading: "nahāvum̐"
+    ipa: "nəɦaʋũ"
+    pos: "verb"
+  - id: "gu-0503"
+    target: "નાસ્તો"
+    reading: "nāsto"
+    ipa: "nast̪o"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0504"
+    target: "ખાવું"
+    reading: "khāvum̐"
+    ipa: "kʰaʋũ"
+    pos: "verb"
+  - id: "gu-0505"
+    target: "જમવું"
+    reading: "jamvum̐"
+    ipa: "dʒəmʋũ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0506"
+    target: "પીવું"
+    reading: "pivum̐"
+    ipa: "piʋũ"
+    pos: "verb"
+  - id: "gu-0507"
+    target: "રાંધવું"
+    reading: "rāndhvum̐"
+    ipa: "rand̪ʱʋũ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0508"
+    target: "જવું"
+    reading: "javum̐"
+    ipa: "dʒəʋũ"
+    pos: "verb"
+  - id: "gu-0509"
+    target: "આવવું"
+    reading: "āvvum̐"
+    ipa: "aʋʋũ"
+    pos: "verb"
+  - id: "gu-0510"
+    target: "વાંચવું"
+    reading: "vāñcvum̐"
+    ipa: "ʋaɲtʃʋũ"
+    pos: "verb"
+  - id: "gu-0511"
+    target: "લખવું"
+    reading: "lakhvum̐"
+    ipa: "ləkʰʋũ"
+    pos: "verb"
+  - id: "gu-0512"
+    target: "બોલવું"
+    reading: "bolvum̐"
+    ipa: "bolʋũ"
+    pos: "verb"
+  - id: "gu-0513"
+    target: "સાંભળવું"
+    reading: "sāmbhaḷvum̐"
+    ipa: "sambʱəɭʋũ"
+    pos: "verb"
+  - id: "gu-0514"
+    target: "જોવું"
+    reading: "jovum̐"
+    ipa: "dʒoʋũ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0515"
+    target: "રમવું"
+    reading: "ramvum̐"
+    ipa: "rəmʋũ"
+    pos: "verb"
+  - id: "gu-0516"
+    target: "ધોવું"
+    reading: "dhovum̐"
+    ipa: "d̪ʱoʋũ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0517"
+    target: "ખરીદવું"
+    reading: "kharidvum̐"
+    ipa: "kʰərid̪ʋũ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0518"
+    target: "સૂવું"
+    reading: "suvum̐"
+    ipa: "suʋũ"
+    pos: "verb"
+  - id: "gu-0519"
+    target: "હું સાત વાગ્યે ઊઠું છું."
+    reading: "hum̐ sāt vāgye uṭhum̐ chum̐."
+    ipa: "ɦũ sat̪ ʋaɡje uʈʰũ tʃʰũ"
+    pos: "phrase"
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "વાગ્યે", base: "વાગવું", reading: "vāgvum̐" }
+      - { word: "ઊઠું", ref: "gu-0501" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0520"
+    target: "રાત્રે હું ટીવી જોઉં છું."
+    reading: "rātre hum̐ ṭivi joum̐ chum̐."
+    ipa: "rat̪re ɦũ ʈiʋi dʒoũ tʃʰũ"
+    pos: "phrase"
+    bases:
+      - { word: "રાત્રે", ref: "gu-0489" }
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "ટીવી", base: "ટીવી", reading: "ṭivi" }
+      - { word: "જોઉં", ref: "gu-0514" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }

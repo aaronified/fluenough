@@ -1,0 +1,134 @@
+schema: 1
+id: "kn-grammar-be"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["ನಾನು", "ನಾವು", "ನೀನು", "ನೀವು", "ಅವನು", "ಅವಳು", "ಅದು", "ಅವರು"]
+  entries:
+    - lemma: "ಇರು (iru), now"
+      key: "iddeene"
+      reading: "iru, now"
+      ipa: "iru"
+      forms:
+        "ನಾನು": ["ಇದ್ದೇನೆ", "ಇದ್ದೀನಿ"]
+        "ನಾವು": ["ಇದ್ದೇವೆ", "ಇದ್ದೀವಿ"]
+        "ನೀನು": "ಇದ್ದೀಯ"
+        "ನೀವು": "ಇದ್ದೀರಿ"
+        "ಅವನು": "ಇದ್ದಾನೆ"
+        "ಅವಳು": "ಇದ್ದಾಳೆ"
+        "ಅದು": "ಇದೆ"
+        "ಅವರು": "ಇದ್ದಾರೆ"
+      readings:
+        "ನಾನು": ["iddēne", "iddīni"]
+        "ನಾವು": ["iddēve", "iddīvi"]
+        "ನೀನು": "iddīya"
+        "ನೀವು": "iddīri"
+        "ಅವನು": "iddāne"
+        "ಅವಳು": "iddāḷe"
+        "ಅದು": "ide"
+        "ಅವರು": "iddāre"
+      ipas:
+        "ನಾನು": "id̪d̪eːne"
+        "ನಾವು": "id̪d̪eːʋe"
+        "ನೀನು": "id̪d̪iːja"
+        "ನೀವು": "id̪d̪iːri"
+        "ಅವನು": "id̪d̪aːne"
+        "ಅವಳು": "id̪d̪aːɭe"
+        "ಅದು": "id̪e"
+        "ಅವರು": "id̪d̪aːre"
+    - lemma: "ಇರು (iru), then"
+      key: "idde"
+      reading: "iru, then"
+      ipa: "iru"
+      forms:
+        "ನಾನು": "ಇದ್ದೆ"
+        "ನಾವು": ["ಇದ್ದೆವು", "ಇದ್ವಿ"]
+        "ನೀನು": "ಇದ್ದೆ"
+        "ನೀವು": ["ಇದ್ದಿರಿ", "ಇದ್ರಿ"]
+        "ಅವನು": ["ಇದ್ದನು", "ಇದ್ದ"]
+        "ಅವಳು": ["ಇದ್ದಳು", "ಇದ್ಲು"]
+        "ಅದು": "ಇತ್ತು"
+        "ಅವರು": ["ಇದ್ದರು", "ಇದ್ರು"]
+      readings:
+        "ನಾನು": "idde"
+        "ನಾವು": ["iddevu", "idvi"]
+        "ನೀನು": "idde"
+        "ನೀವು": ["iddiri", "idri"]
+        "ಅವನು": ["iddanu", "idda"]
+        "ಅವಳು": ["iddaḷu", "idlu"]
+        "ಅದು": "ittu"
+        "ಅವರು": ["iddaru", "idru"]
+      ipas:
+        "ನಾನು": "id̪d̪e"
+        "ನಾವು": "id̪d̪eʋu"
+        "ನೀನು": "id̪d̪e"
+        "ನೀವು": "id̪d̪iri"
+        "ಅವನು": "id̪d̪anu"
+        "ಅವಳು": "id̪d̪aɭu"
+        "ಅದು": "it̪t̪u"
+        "ಅವರು": "id̪d̪aru"
+    - lemma: "ಇರು (iru), usually or later"
+      key: "irutteene"
+      reading: "iru, usually or later"
+      ipa: "iru"
+      forms:
+        "ನಾನು": ["ಇರುತ್ತೇನೆ", "ಇರ್ತೀನಿ"]
+        "ನಾವು": ["ಇರುತ್ತೇವೆ", "ಇರ್ತೀವಿ"]
+        "ನೀನು": ["ಇರುತ್ತೀಯ", "ಇರ್ತೀಯ"]
+        "ನೀವು": ["ಇರುತ್ತೀರಿ", "ಇರ್ತೀರಿ"]
+        "ಅವನು": ["ಇರುತ್ತಾನೆ", "ಇರ್ತಾನೆ"]
+        "ಅವಳು": ["ಇರುತ್ತಾಳೆ", "ಇರ್ತಾಳೆ"]
+        "ಅದು": ["ಇರುತ್ತದೆ", "ಇರುತ್ತೆ"]
+        "ಅವರು": ["ಇರುತ್ತಾರೆ", "ಇರ್ತಾರೆ"]
+      readings:
+        "ನಾನು": ["iruttēne", "irtīni"]
+        "ನಾವು": ["iruttēve", "irtīvi"]
+        "ನೀನು": ["iruttīya", "irtīya"]
+        "ನೀವು": ["iruttīri", "irtīri"]
+        "ಅವನು": ["iruttāne", "irtāne"]
+        "ಅವಳು": ["iruttāḷe", "irtāḷe"]
+        "ಅದು": ["iruttade", "irutte"]
+        "ಅವರು": ["iruttāre", "irtāre"]
+      ipas:
+        "ನಾನು": "irut̪t̪eːne"
+        "ನಾವು": "irut̪t̪eːʋe"
+        "ನೀನು": "irut̪t̪iːja"
+        "ನೀವು": "irut̪t̪iːri"
+        "ಅವನು": "irut̪t̪aːne"
+        "ಅವಳು": "irut̪t̪aːɭe"
+        "ಅದು": "irut̪t̪ad̪e"
+        "ಅವರು": "irut̪t̪aːre"
+    - lemma: "ಆಗು (āgu), became"
+      key: "aade"
+      reading: "āgu, became"
+      ipa: "aːɡu"
+      forms:
+        "ನಾನು": "ಆದೆ"
+        "ನಾವು": ["ಆದೆವು", "ಆದ್ವಿ"]
+        "ನೀನು": "ಆದೆ"
+        "ನೀವು": ["ಆದಿರಿ", "ಆದ್ರಿ"]
+        "ಅವನು": ["ಆದನು", "ಆದ"]
+        "ಅವಳು": ["ಆದಳು", "ಆದ್ಲು"]
+        "ಅದು": ["ಆಯಿತು", "ಆಯ್ತು"]
+        "ಅವರು": ["ಆದರು", "ಆದ್ರು"]
+      readings:
+        "ನಾನು": "āde"
+        "ನಾವು": ["ādevu", "ādvi"]
+        "ನೀನು": "āde"
+        "ನೀವು": ["ādiri", "ādri"]
+        "ಅವನು": ["ādanu", "āda"]
+        "ಅವಳು": ["ādaḷu", "ādlu"]
+        "ಅದು": ["āyitu", "āytu"]
+        "ಅವರು": ["ādaru", "ādru"]
+      ipas:
+        "ನಾನು": "aːd̪e"
+        "ನಾವು": "aːd̪eʋu"
+        "ನೀನು": "aːd̪e"
+        "ನೀವು": "aːd̪iri"
+        "ಅವನು": "aːd̪anu"
+        "ಅವಳು": "aːd̪aɭu"
+        "ಅದು": "aːjit̪u"
+        "ಅವರು": "aːd̪aru"

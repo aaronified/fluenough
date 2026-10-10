@@ -1,0 +1,172 @@
+schema: 1
+id: "gu-family"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-0331"
+    target: "કુટુંબ"
+    reading: "kuṭumb"
+    ipa: "kuʈumb"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0332"
+    target: "મમ્મી"
+    reading: "mammi"
+    ipa: "məmmi"
+    alt_target: ["મા"]
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0333"
+    target: "પપ્પા"
+    reading: "pappā"
+    ipa: "pəppa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "gu-0307"
+  - ref: "gu-0308"
+  - id: "gu-0334"
+    target: "મોટાભાઈ"
+    reading: "moṭābhāi"
+    ipa: "moʈabʱai"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0335"
+    target: "દીકરો"
+    reading: "dikro"
+    ipa: "d̪ikro"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0336"
+    target: "દીકરી"
+    reading: "dikri"
+    ipa: "d̪ikri"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0337"
+    target: "બાળક"
+    picture: "👶"
+    reading: "bāḷak"
+    ipa: "baɭək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0338"
+    target: "પતિ"
+    reading: "pati"
+    ipa: "pət̪i"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0339"
+    target: "પત્ની"
+    reading: "patni"
+    ipa: "pət̪ni"
+    pos: "noun"
+    gender: "f"
+  - ref: "gu-0311"
+  - id: "gu-0340"
+    target: "દાદી"
+    reading: "dādi"
+    ipa: "d̪ad̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0341"
+    target: "નાના"
+    reading: "nānā"
+    ipa: "nana"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0342"
+    target: "નાની"
+    reading: "nāni"
+    ipa: "nani"
+    pos: "noun"
+    gender: "f"
+  - ref: "gu-0309"
+  - id: "gu-0343"
+    target: "કાકી"
+    reading: "kāki"
+    ipa: "kaki"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0344"
+    target: "ફોઈ"
+    reading: "phoi"
+    ipa: "pʰoi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0345"
+    target: "મામા"
+    reading: "māmā"
+    ipa: "mama"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "gu-0310"
+  - id: "gu-0346"
+    target: "ભાભી"
+    reading: "bhābhi"
+    ipa: "bʱabʱi"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0347"
+    target: "બનેવી"
+    reading: "banevi"
+    ipa: "bəneʋi"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0348"
+    target: "સાસુ"
+    reading: "sāsu"
+    ipa: "sasu"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0349"
+    target: "છોકરો"
+    picture: "👦"
+    reading: "chokro"
+    ipa: "tʃʰokro"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0350"
+    target: "છોકરી"
+    picture: "👧"
+    reading: "chokri"
+    ipa: "tʃʰokri"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0351"
+    target: "મારે બે ભાઈ છે."
+    reading: "māre be bhāi che."
+    ipa: "mare be bʱai tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારે", base: "મારું", reading: "mārum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }

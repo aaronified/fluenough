@@ -11,6 +11,20 @@ Deck parse(String yaml) => DeckParser.parse(yaml, source: 'test.yaml');
 Deck parseFile(String path) =>
     DeckParser.parse(File(path).readAsStringSync(), source: path);
 
+/// Spanish's deck [name] as an English speaker is taught it: its core in
+/// `decks/es/` and its layer in `decks/es/en/`, merged.
+Deck parseSpanish(String name) => mergeLayer(
+  DeckParser.parseCore(
+    File('decks/es/es-$name.yaml').readAsStringSync(),
+    source: 'es-$name.yaml',
+  ),
+  DeckParser.parseLayer(
+    File('decks/es/en/es-en-$name.yaml').readAsStringSync(),
+    source: 'es-en-$name.yaml',
+  ),
+  source: 'es-en-$name.yaml',
+);
+
 /// The 1-based line of the [occurrence]th line of [yaml] containing [needle].
 int lineOf(String yaml, String needle, {int occurrence = 1}) {
   final lines = yaml.split('\n');
@@ -157,7 +171,7 @@ void main() {
     }
 
     test('carry both language codes', () {
-      final deck = parseFile('decks/es/es-en-core-100.yaml');
+      final deck = parseSpanish('core-100');
       expect(deck.language.code, 'es');
       expect(deck.language.iso639_3, 'spa');
       expect(deck.native.iso639_3, 'eng');
@@ -174,7 +188,7 @@ void main() {
     });
 
     test('es-en-grammar-present-ar is a pattern with no cards', () {
-      final deck = parseFile('decks/es/es-en-grammar-present-ar.yaml');
+      final deck = parseSpanish('grammar-present-ar');
       expect(deck.kind, DeckKind.grammar);
       expect(deck.cards, isEmpty);
       final pattern = deck.pattern!;
@@ -192,12 +206,12 @@ void main() {
     });
 
     test('es-en-core-100 has every card in the file', () {
-      const path = 'decks/es/es-en-core-100.yaml';
+      const path = 'decks/es/es-core-100.yaml';
       final inFile = RegExp(
         r'^  - id: ',
         multiLine: true,
       ).allMatches(File(path).readAsStringSync()).length;
-      final deck = parseFile(path);
+      final deck = parseSpanish('core-100');
       expect(inFile, greaterThan(0));
       expect(deck.cards, hasLength(inFile));
       final casa = deck.cards.singleWhere((c) => c.id == 'es-0006');

@@ -1,0 +1,128 @@
+schema: 1
+id: "mr-transport"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC0-1.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-0420"
+    target: "रिक्षा"
+    picture: "🛺"
+    reading: "rikṣā"
+    ipa: "rikʂa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0421"
+    target: "टॅक्सी"
+    picture: "🚕"
+    reading: "ṭêksi"
+    ipa: "ʈæksi"
+    pos: "noun"
+    gender: "f"
+  - ref: "mr-0052"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0422"
+    target: "स्टेशन"
+    picture: "🚉"
+    reading: "sṭeśan"
+    ipa: "sʈeʃən"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0423"
+    target: "तिकीट"
+    picture: "🎫"
+    reading: "tikiṭ"
+    ipa: "t̪ikiʈ"
+    pos: "noun"
+    gender: "n"
+  - id: "mr-0424"
+    target: "भाडे"
+    reading: "bhāḍe"
+    ipa: "bʱaɖe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0425"
+    target: "मीटरने चला."
+    reading: "miṭarne calā."
+    ipa: "miʈərne tsəla"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मीटरने", base: "मीटर", reading: "miṭar" }
+      - { word: "चला", ref: "mr-0512" }
+  - id: "mr-0426"
+    target: "इथे थांबा."
+    reading: "ithe thāmbā."
+    ipa: "it̪ʰe t̪ʰamba"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "इथे", base: "इथे", reading: "ithe" }
+      - { word: "थांबा", base: "थांबणे", reading: "thāmbṇe" }
+  - id: "mr-0427"
+    target: "कुठे जायचे आहे?"
+    reading: "kuṭhe jāyce āhe?"
+    ipa: "kuʈʰe dzajtʃe aɦe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "जायचे", base: "जाणे", reading: "jāṇe" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
+  - id: "mr-0428"
+    target: "स्टेशनला चला."
+    reading: "sṭeśanlā calā."
+    ipa: "sʈeʃənla tsəla"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "स्टेशनला", ref: "mr-0422" }
+      - { word: "चला", ref: "mr-0512" }
+  - id: "mr-0429"
+    target: "लोकल"
+    reading: "lokal"
+    ipa: "lokəl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0430"
+    target: "गाडी"
+    reading: "gāḍi"
+    ipa: "ɡaɖi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0431"
+    target: "विमानतळ"
+    reading: "vimāntaḷ"
+    ipa: "ʋimant̪əɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "mr-0432"
+    target: "मला इथे उतरायचे आहे."
+    reading: "malā ithe utrāyce āhe."
+    ipa: "məla it̪ʰe ut̪rajtʃe aɦe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मला", ref: "mr-0080" }
+      - { word: "इथे", base: "इथे", reading: "ithe" }
+      - { word: "उतरायचे", base: "उतरणे", reading: "utarṇe" }
+      - { word: "आहे", base: "असणे", reading: "asṇe" }
