@@ -104,6 +104,10 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
     expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
+    // Then whether Hindi's script is read (#462), which nothing assumes.
+    expect(tester.widget<FilledButton>(go).onPressed, isNull);
+    expect(find.text(l10n.knownScriptsNeeded), findsOneWidget);
+    await answerScripts(tester);
 
     await tester.tap(go);
     await tester.pumpAndSettle();
@@ -309,6 +313,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
     await tester.pumpAndSettle();
+    await answerScripts(tester);
     await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
@@ -404,6 +409,7 @@ void main() {
       find.bySemanticsLabel(l10n.onboardingQuestionPosition(1, 2)),
       findsOneWidget,
     );
+    await answerScripts(tester);
     await tester.tap(find.text(l10n.onboardingNext));
     await tester.pumpAndSettle();
     expect(

@@ -9,14 +9,19 @@ import 'onboarding_step.dart';
 final OnboardingStep spokenStep = OnboardingStep(
   id: 'spoken',
   asks: true,
-  blocked: (answers, l10n) =>
-      answers.spoken.isEmpty ? l10n.onboardingSpokenNeedOne : null,
+  blocked: (answers, l10n) => answers.spoken.isEmpty
+      ? l10n.onboardingSpokenNeedOne
+      : !answers.scriptsDone
+      ? l10n.knownScriptsNeeded
+      : null,
   content: (context, at) {
     final l10n = AppLocalizations.of(context)!;
     return SpokenLanguagesPicker(
       initial: at.answers.spoken,
       choices: at.choices,
       onChanged: (ranked) => at.answers.spoken = ranked,
+      readsScript: at.answers.scripts,
+      onScriptChanged: at.answers.setReadsScript,
       header: QuestionHeading(
         title: l10n.onboardingSpokenTitle,
         body: l10n.onboardingSpokenBody,

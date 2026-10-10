@@ -173,9 +173,12 @@ decks/<lang>/…    ──fetch──▶      size + SHA-256,         downloaded
   learner learns has none of its first decks, as after updating from a
   version that bundled them.
 - **Screens** (`lib/features/downloads/`): `DownloadPage`, the first decks
-  with their progress and Try again; the learn page's list, from the index;
-  Settings > Deck downloads, each language's size and state with Update and
-  Remove; and `DeckUpdatePrompt`, the daily question.
+  with their progress and Try again; the learn page's list, from the index,
+  which from Settings also checks for deck updates at its top and shows on
+  each downloaded language's card its size and state with Update and Remove
+  (#467), as Languages you review does for each course on the phone; and
+  `DeckUpdatePrompt`, the daily question. There is no separate Deck
+  downloads page.
 
 Progress is never part of a deck file. It is keyed by card id in the
 database, so replacing, removing and downloading decks again leaves it

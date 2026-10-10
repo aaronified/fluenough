@@ -253,7 +253,7 @@ abstract final class PickerFixtures {
       _downloading(app, decks: 3, failure: DeckDownloadFailure.offline);
 
   /// Kannada's download cancelled after its first decks: the rest waits on
-  /// Settings > Deck downloads.
+  /// Languages I'm learning.
   static AppState cancelled(AppState app) =>
       _downloading(app, decks: 12, paused: true);
 

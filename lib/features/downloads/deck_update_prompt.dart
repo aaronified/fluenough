@@ -7,8 +7,8 @@ import '../../ui/widgets/snack.dart';
 import 'download_text.dart';
 
 /// Asks, once, whether to download a deck update the daily check found
-/// (#210): "Update" downloads it; "Not now" leaves it waiting on Settings >
-/// Deck downloads, and it is not asked about again until something else
+/// (#210): "Update" downloads it; "Not now" leaves it waiting on Languages I'm
+/// learning, and it is not asked about again until something else
 /// changes. Wraps the app's shell, so it never asks over the first launch.
 class DeckUpdatePrompt extends StatefulWidget {
   const DeckUpdatePrompt({super.key, required this.child});

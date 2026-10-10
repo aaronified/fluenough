@@ -1,17 +1,18 @@
 import '../gallery/gallery_entry.dart';
-import 'deck_downloads_page.dart';
+import '../placement/language_picker_page.dart';
 import 'download_fixtures.dart';
 import 'download_page.dart';
 
-/// Deck downloads (#210): Settings > Deck downloads with an update waiting,
-/// and the first decks of a language with no network.
+/// Deck downloads (#210): Languages I'm learning with an update waiting,
+/// where deck updates now live (#467), and the first decks of a language
+/// with no network.
 final List<GalleryEntry> downloadsGalleryEntries = <GalleryEntry>[
   GalleryEntry(
-    id: 'deck-downloads',
+    id: 'learning-deck-updates',
     section: GallerySection.progressAndSettings,
-    label: 'Deck downloads', // ui-literal-ok: debug-only gallery
+    label: 'Languages I’m learning, deck updates', // ui-literal-ok: debug-only gallery
     note: 'An update waiting for Hindi', // ui-literal-ok: debug-only gallery
-    builder: (_) => const DeckDownloadsPage(),
+    builder: (_) => const LanguagePickerPage(),
     state: DownloadFixtures.updateWaiting,
   ),
   GalleryEntry(

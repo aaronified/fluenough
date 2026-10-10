@@ -15,8 +15,8 @@ import 'path_model.dart';
 /// The card at the top of a course's path: the course, how much of it is
 /// done, with the levels marked on the bar where the path has them, and two
 /// rows: deck updates (#210, #464), which updates the course's language as
-/// Settings > Deck downloads does, and the hours left in the decks written
-/// so far, with the hours spent (#227).
+/// its card in Languages I'm learning does, and the hours left in the decks
+/// written so far, with the hours spent (#227).
 class CourseCard extends StatelessWidget {
   const CourseCard({
     super.key,
@@ -179,7 +179,7 @@ class _ProgressBar extends StatelessWidget {
 }
 
 /// The deck updates row (#464): Update when an update waits for [language],
-/// running the same update as Settings > Deck downloads, and "Up to date"
+/// running the same update as Languages I'm learning, and "Up to date"
 /// when nothing waits, or where decks do not download.
 class _UpdatesRow extends StatelessWidget {
   const _UpdatesRow({required this.language});
