@@ -43,8 +43,10 @@ is separate from the child's own profile PIN.
   and nothing hints that an offensive word exists;
 - no offensive word in any drill, reading, search, Inspect or deck
   page;
-- reviewer mode is not available, so the separate offensive-words review
-  cannot be reached.
+- **a child can't become a reviewer** (owner, 2026-10-10: "And a child
+  cannot become a reviewer"): "Become a reviewer" is not shown, reviewer
+  mode can't be turned on, and the admin can't allow it either; so the
+  separate offensive-words review can't be reached.
 
 **The admin allows or disallows anything about the child's learning**
 (owner, 2026-10-10), from the admin's view of the child profile:
@@ -104,6 +106,8 @@ Family Link do that, and the help text points to them.
 - Making a child profile is refused until every adult profile has a PIN,
   and an adult PIN can't be removed while a child profile exists.
 - The admin sees the child's Progress, read-only.
+- A child profile never shows "Become a reviewer", and reviewer mode
+  can't be turned on in it, even by the admin.
 - A child profile's history, exported with the admin PIN and imported
   into a new adult profile, keeps its reviews and schedules and carries
   none of the restrictions; the line explaining this shows in all three
