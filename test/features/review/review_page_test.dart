@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -118,248 +120,132 @@ void main() {
     expect(rowButton(l10n.reviewSuggested), findsOneWidget);
   });
 
-  testWidgets('rude words are hidden without adult content, and count as '
-      'left to check', (tester) async {
+  testWidgets('offensive words never appear in a unit\'s review, adult '
+      'content on or off, nor count as left to check', (tester) async {
     useTallPhone(tester);
-    await pumpScreen(
-      tester,
-      const ReviewPage(deckId: rudeDeck),
-      state: await reviewState(reviewing: true),
-    );
-    final l10n = l10nOf(tester);
-    expect(find.text(l10n.reviewRudeHidden(1)), findsOneWidget);
-    expect(find.text('idiot, good-for-nothing'), findsNothing);
-    expect(find.text(l10n.reviewSignOff(1)), findsOneWidget);
-  });
-
-  testWidgets('a rude word shows its level, type, friendliness and region, '
-      'and is rated 1 to 9 with the language\'s regions', (tester) async {
-    useTallPhone(tester);
-    final state = await pumpScreen(
-      tester,
-      const ReviewPage(deckId: rudeDeck, adult: true),
-      state: await reviewState(reviewing: true),
-    );
-    final l10n = l10nOf(tester);
-    // Rated, not marked right.
-    expect(rowButton(l10n.reviewRateShort), findsOneWidget);
-    expect(rowButton(l10n.reviewCheck), findsNothing);
-    await tester.tap(find.text('idiot, good-for-nothing'));
-    await tester.pumpAndSettle();
-    for (final row in <String>[
-      l10n.reviewRudeLevel,
-      l10n.reviewRudeType,
-      l10n.reviewRudeFriends,
-      l10n.reviewRudeRegion,
-    ]) {
-      expect(find.text(row), findsOneWidget);
-    }
-    expect(find.text(l10n.reviewRudeNotSet), findsNWidgets(4));
-    expect(find.text(l10n.reviewLooksRight), findsNothing);
-    await tester.tap(find.text(l10n.reviewRate));
-    await tester.pumpAndSettle();
-    expect(find.byType(RateSheet), findsOneWidget);
-    expect(find.text(l10n.reviewRateQuestion), findsOneWidget);
-    expect(find.text(l10n.reviewRateWhere('Telugu')), findsOneWidget);
-    for (final region in <String>[
-      'Telangana',
-      'Coastal Andhra',
-      'Rayalaseema',
-      l10n.reviewRateElsewhere,
-    ]) {
-      expect(find.text(region), findsOneWidget);
-    }
-    final save = find.widgetWithText(FilledButton, l10n.reviewSave);
-    expect(tester.widget<FilledButton>(save).onPressed, isNull);
-    // Nine numbers, none chosen until the rater picks one: no score is
-    // given before then, 5 no more than any other.
-    expect(find.byType(Slider), findsNothing);
-    final handle = tester.ensureSemantics();
-    for (var n = 1; n <= 9; n++) {
-      expect(
-        tester.getSemantics(find.bySemanticsLabel(l10n.reviewRateScore(n))),
-        isSemantics(
-          label: l10n.reviewRateScore(n),
-          isButton: true,
-          hasCheckedState: true,
-          isChecked: false,
-          isInMutuallyExclusiveGroup: true,
-          hasTapAction: true,
-        ),
-        reason: '$n',
+    for (final adult in <bool>[false, true]) {
+      await pumpScreen(
+        tester,
+        const ReviewPage(deckId: rudeDeck),
+        state: await reviewState(reviewing: true)
+          ..settings.adultContent = adult,
       );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.reviewOffensiveApart(1)), findsOneWidget);
+      expect(find.text('idiot, good-for-nothing'), findsNothing);
+      expect(find.text('వెధవ'), findsNothing);
+      expect(rowButton(l10n.reviewRateShort), findsNothing);
+      expect(find.text(l10n.reviewPageProgress(0, 0)), findsOneWidget);
+      // A deck of offensive words only is signed off in their own review.
+      expect(find.textContaining(l10n.reviewSignOffReady), findsNothing);
+      expect(find.text(l10n.reviewSignedOff), findsNothing);
+      expect(find.text(l10n.reviewSend), findsOneWidget);
     }
-    expect(find.text(l10n.reviewRateLow), findsOneWidget);
-    expect(find.text(l10n.reviewRateHigh), findsOneWidget);
-    await tester.tap(find.text('4'));
-    await tester.pumpAndSettle();
-    expect(
-      tester.getSemantics(find.bySemanticsLabel(l10n.reviewRateScore(4))),
-      isSemantics(
-        label: l10n.reviewRateScore(4),
-        isButton: true,
-        hasCheckedState: true,
-        isChecked: true,
-        isInMutuallyExclusiveGroup: true,
-        hasTapAction: true,
-      ),
-    );
-    handle.dispose();
-    await tester.tap(find.text('Coastal Andhra'));
-    await tester.tap(find.text(l10n.reviewFriendlySometimes));
-    await tester.pumpAndSettle();
-    await tester.tap(save);
-    await tester.pumpAndSettle();
-    final rude = state.deckById(rudeDeck)!;
-    final rating = state.reviewing.reviewOf(rude, rude.cards.single)!.rating!;
-    expect(rating.score, 4);
-    expect(rating.region, 'coastal-andhra');
-    expect(rating.friendly, Friendly.sometimes);
-    expect(find.text(l10n.reviewRated(4)), findsOneWidget);
-    expect(rowButton(l10n.reviewRatedShort), findsOneWidget);
-    expect(find.text(l10n.reviewSignOffReady), findsOneWidget);
   });
 
-  Future<void> openRating(WidgetTester tester, String regions) async {
+  testWidgets('a deck with offensive and ordinary words shows only the '
+      'ordinary ones, and is signed off with them', (tester) async {
+    useTallPhone(tester);
+    final state = AppState.test(
+      decks: MemoryDeckSource(<String, String>{
+        ...reviewCourse(),
+        'decks/te/te-en-review-mixed.yaml': '''
+schema: 1
+id: te-en-review-mixed
+name: "Mixed words"
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+tags: [unreviewed]
+cards:
+  - { id: te-9905, target: "అక్క", native: "elder sister", reading: "akka" }
+  - { id: te-9952, target: "దొంగ", native: "thief", reading: "doṅga", tags: [offensive], modes: [recognition] }
+''',
+      }),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['te'],
+        learningChosen: true,
+      ),
+    );
+    await state.load();
+    state.reviewing.turnOn();
+    state.settings.adultContent = true;
     await pumpScreen(
       tester,
-      const ReviewPage(deckId: rudeDeck, adult: true),
-      state: await reviewState(reviewing: true, regions: regions),
+      const ReviewPage(deckId: 'te-en-review-mixed'),
+      state: state,
     );
     final l10n = l10nOf(tester);
-    await tester.tap(find.text('idiot, good-for-nothing'));
+    expect(find.text('elder sister'), findsOneWidget);
+    expect(find.text('thief'), findsNothing);
+    expect(find.text('దొంగ'), findsNothing);
+    expect(find.text(l10n.reviewOffensiveApart(1)), findsOneWidget);
+    expect(find.text(l10n.reviewPageProgress(0, 1)), findsOneWidget);
+    await tester.tap(rowButton(l10n.reviewCheck));
     await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.reviewRate));
-    await tester.pumpAndSettle();
-  }
-
-  testWidgets('the rating sheet offers the regions the language\'s path '
-      'lists, in its order, then Elsewhere', (tester) async {
-    useTallPhone(tester);
-    await openRating(tester, '''
-  - { id: "north", name: { "en": "The north", "te": "ఉత్తరం" } }
-  - { id: "coastal-andhra", name: { "en": "The coast" } }''');
-    final l10n = l10nOf(tester);
-    final chips = <String>['The north', 'The coast', l10n.reviewRateElsewhere];
-    for (final chip in chips) {
-      expect(find.text(chip), findsOneWidget);
-    }
-    for (var i = 1; i < chips.length; i++) {
-      expect(
-        tester.getTopLeft(find.text(chips[i - 1])).dy,
-        lessThan(tester.getTopLeft(find.text(chips[i])).dy),
-      );
-    }
-    // Nothing of the fixed list there was before the paths had regions.
-    expect(find.text('Telangana'), findsNothing);
-    expect(find.text('Rayalaseema'), findsNothing);
-  });
-
-  testWidgets('a language whose path lists no regions asks no region '
-      'question', (tester) async {
-    useTallPhone(tester);
-    await openRating(tester, '');
-    final l10n = l10nOf(tester);
-    expect(find.byType(RateSheet), findsOneWidget);
-    expect(find.text(l10n.reviewRateWhere('Telugu')), findsNothing);
-    expect(find.text(l10n.reviewRateElsewhere), findsNothing);
-  });
-
-  testWidgets('a rude word\'s Region row is its region note, its regions '
-      'named as the path names them', (tester) async {
-    useTallPhone(tester);
-    await pumpScreen(
-      tester,
-      const ReviewPage(deckId: rudeDeck, adult: true),
-      state: await reviewState(
-        reviewing: true,
-        rudeNotes:
-            '[{ kind: "usage", text: "A plain note." }, '
-            '{ kind: "usage", region: ["telangana", "rayalaseema"], '
-            'text: "Milder among friends here." }]',
-      ),
-    );
-    final l10n = l10nOf(tester);
-    await tester.tap(find.text('idiot, good-for-nothing'));
+    await tester.tap(find.text(l10n.reviewSignOffReady));
     await tester.pumpAndSettle();
     expect(
-      find.text(
-        l10n.reviewRudeRegionNote(
-          l10n.pathMetaJoin('Telangana', 'Rayalaseema'),
-          'Milder among friends here.',
-        ),
-      ),
-      findsOneWidget,
+      state.reviewing.reviews.of('te-en-review-mixed')!.signedOff,
+      isNotNull,
     );
-    // Level, type and friendliness are still not set; the region is.
-    expect(find.text(l10n.reviewRudeNotSet), findsNWidgets(3));
   });
 
-  testWidgets('a sound-alike pair is confirmed with a care note of at most '
-      '40 letters, its budget shown as it is typed', (tester) async {
-    useTallPhone(tester);
-    final state = await pumpScreen(
-      tester,
-      const ReviewPage(deckId: wordsDeck, adult: true),
-      state: await reviewState(reviewing: true),
-    );
-    final l10n = l10nOf(tester);
-    await tester.tap(find.text('widow'));
-    await tester.pumpAndSettle();
-    expect(
-      find.text(l10n.reviewAlikeSounds('వెధవ', 'vedhava')),
-      findsOneWidget,
-    );
-    await tester.tap(find.text(l10n.reviewAlikeCheck));
-    await tester.pumpAndSettle();
-    expect(find.byType(AlikeSheet), findsOneWidget);
-    expect(find.text(l10n.reviewAlikeReal), findsOneWidget);
-    await tester.tap(find.text(l10n.reviewAlikeConfirm));
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewAlikeCareCount(0, 40)), findsOneWidget);
-    await tester.enterText(
-      find.byType(TextField),
-      'Keep the short i at the start.',
-    );
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewAlikeCareCount(30, 40)), findsOneWidget);
-    // Never more than 40.
-    await tester.enterText(find.byType(TextField), 'x' * 50);
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewAlikeCareCount(40, 40)), findsOneWidget);
-    await tester.enterText(
-      find.byType(TextField),
-      'Keep the short i at the start.',
-    );
-    await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
-    await tester.pumpAndSettle();
-    final words = state.deckById(wordsDeck)!;
-    final alike = state.reviewing.reviewOf(words, words.cards.first)!.alike!;
-    expect(alike.real, isTrue);
-    expect(alike.partner, rudeCard);
-    expect(alike.kind, AlikeKind.sound);
-    expect(alike.care, 'Keep the short i at the start.');
-    expect(find.text(l10n.reviewAlikeConfirmed), findsOneWidget);
-  });
-
-  testWidgets('without adult content the pair\'s rude word stays hidden', (
+  testWidgets('a unit with no offensive words says nothing of them', (
     tester,
   ) async {
     useTallPhone(tester);
     await pumpScreen(
       tester,
       const ReviewPage(deckId: wordsDeck),
-      state: await reviewState(reviewing: true),
+      state: await reviewState(reviewing: true)
+        ..settings.adultContent = true,
     );
     final l10n = l10nOf(tester);
-    await tester.tap(find.text('widow'));
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.alikeCarefulSpeaking), findsOneWidget);
-    expect(find.text(l10n.alikeHidden), findsOneWidget);
-    expect(find.textContaining('వెధవ'), findsNothing);
-    expect(find.text(l10n.reviewAlikeCheck), findsNothing);
+    expect(find.text(l10n.reviewOffensiveApart(1)), findsNothing);
+    expect(find.text(l10n.reviewPageProgress(0, 2)), findsOneWidget);
   });
+
+  for (final adult in <bool>[true, false]) {
+    testWidgets('adult content ${adult ? 'on' : 'off'}: a word like a rude '
+        'one never names it here, nor offers its pair, nor waits on it', (
+      tester,
+    ) async {
+      useTallPhone(tester);
+      final state = await pumpScreen(
+        tester,
+        const ReviewPage(deckId: wordsDeck),
+        state: await reviewState(reviewing: true)
+          ..settings.adultContent = adult,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('వెధవ'), findsNothing);
+      expect(find.textContaining('vedhava'), findsNothing);
+      await tester.tap(find.text('widow'));
+      await tester.pumpAndSettle();
+      // The warning a learner sees, the rude word hidden.
+      expect(find.text(l10n.alikeCarefulSpeaking), findsOneWidget);
+      expect(find.text(l10n.alikeHidden), findsOneWidget);
+      expect(find.textContaining('వెధవ'), findsNothing);
+      expect(find.textContaining('vedhava'), findsNothing);
+      expect(find.textContaining('idiot'), findsNothing);
+      expect(find.text(l10n.reviewAlikeSoundsAbout), findsNothing);
+      expect(find.text(l10n.reviewAlikeCheck), findsNothing);
+      await tester.tap(find.text(l10n.reviewLooksRight));
+      await tester.pumpAndSettle();
+      // Its pair, unchecked, holds nothing up: both words checked, the unit
+      // signs off.
+      await tester.tap(rowButton(l10n.reviewCheck));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.reviewPageProgress(2, 2)), findsOneWidget);
+      final words = state.deckById(wordsDeck)!;
+      expect(state.reviewing.reviewOf(words, words.cards.first)!.alike, isNull);
+      await tester.tap(find.text(l10n.reviewSignOffReady));
+      await tester.pumpAndSettle();
+      expect(state.reviewing.reviews.of(wordsDeck)!.signedOff, isNotNull);
+    });
+  }
 
   testWidgets('Sign off once every card is checked; Send review sends every '
       'deck waiting in one mail, a file each, all ticked', (tester) async {

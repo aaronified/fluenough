@@ -450,6 +450,60 @@ cards:
       expect(state.deckDownloads!.updates, isEmpty);
     });
 
+    testWidgets('a reviewer\'s proposal alone asks a learner nothing, and '
+        'a reviewer it does (#444)', (tester) async {
+      await downloaded(remote, phone, const <String>['es']);
+      const deck = 'decks/es/en/es-en-core-100.yaml';
+      final was = await phone.read(deck);
+      remote.files[deck] = withProposal(
+        remote.files[deck]!,
+        '    native: "the man"',
+      );
+      final settings = learning(const <String>['es']);
+      final state = await pump(
+        tester,
+        downloadingApp(
+          remote: remote,
+          phone: phone,
+          settings: settings,
+          now: _now.add(const Duration(days: 2)),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      expect(remote.asked, contains('decks/index.json'));
+      expect(find.text(l10n.deckUpdatePromptTitle), findsNothing);
+      expect(state.deckDownloads!.updates, isEmpty);
+      expect(await phone.read(deck), was);
+
+      // Reviewing, the same change is an update: reviewers see proposals.
+      settings.reviewDecks = true;
+      await tester.pumpAndSettle();
+      expect(state.deckDownloads!.reviewer, isTrue);
+      expect(state.deckDownloads!.updates.keys, <String>['es']);
+      settings.reviewDecks = false;
+      await tester.pumpAndSettle();
+      expect(state.deckDownloads!.updates, isEmpty);
+    });
+
+    testWidgets('a reviewer is asked about a proposal (#444)', (tester) async {
+      await downloaded(remote, phone, const <String>['es']);
+      const deck = 'decks/es/en/es-en-core-100.yaml';
+      remote.files[deck] = withProposal(
+        remote.files[deck]!,
+        '    native: "the man"',
+      );
+      await pump(
+        tester,
+        downloadingApp(
+          remote: remote,
+          phone: phone,
+          settings: learning(const <String>['es'])..reviewDecks = true,
+          now: _now.add(const Duration(days: 2)),
+        ),
+      );
+      expect(find.text(l10nOf(tester).deckUpdatePromptTitle), findsOneWidget);
+    });
+
     testWidgets('"Update" in the question updates', (tester) async {
       await downloaded(remote, phone, const <String>['es']);
       const deck = 'decks/es/en/es-en-core-100.yaml';

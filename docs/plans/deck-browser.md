@@ -300,6 +300,11 @@ Settled with the owner, 2026-10-09:
     or culture to another;
   - it asks for the 18+ confirmation, then shows the words with the 1 to
     9 rating and region (#428).
+  - a word that sounds or looks like an offensive one never names it in
+    the ordinary review, adult content on or off: it shows the warning a
+    learner sees, and its pair waits in the same Offensive words review,
+    after the words, to be confirmed or rejected; it never holds up a
+    unit's sign-off.
 - **Base words show on cards** (owner, 2026-10-10, for v0.4): a card
   shows its base word and meaning, so reviewers can check the meanings
   agents wrote in #445 (#410). Built as one line, "Base: जाना (jānā) ·
@@ -314,6 +319,15 @@ Settled with the owner, 2026-10-09:
 - **No reviewers in child profiles** (owner, 2026-10-10: "a child cannot
   become a reviewer"): a child profile never offers reviewing
   (`profiles.md`).
+- **Each card records who checked it** (owner, 2026-10-10, for v0.4).
+  A card gains `checked_by: ["FL-…"]`, the rater codes that signed it
+  off. The review bot writes it when a sign-off arrives, as it applies
+  proposals, with no wait. The app shows "Checked by N speakers" on the
+  card, and a deck turns `reviewed` (and loses `unreviewed`) by itself
+  once every card in it is checked; a core and its layer still both
+  need it. Like proposals, a `checked_by` change alone doesn't prompt
+  learners for a deck update; it arrives with the next real one.
+  Sign-offs feed the thank-you, which already lists rater codes.
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 

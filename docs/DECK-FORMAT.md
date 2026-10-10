@@ -1692,6 +1692,10 @@ downloads is listed in `decks/index.json`:
   `kind`, and for a deck its native language and the core id its path
   lists it by. A core is marked `"part": "core"`, and a file holding
   [proposals](#proposals-proposed) says how many, `"proposed": 2`.
+  `content_sha256` is the SHA-256 of the file with its proposals taken
+  out: a learner's phone is offered an update only when that changes, and
+  a phone in reviewer mode when `sha256` does (#444). Every download is
+  still checked against `size` and `sha256`.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 

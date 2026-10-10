@@ -173,3 +173,19 @@ python3 tools/brand_android.py
 
 Exit status is 0 on success, and 1 when `android/` is missing or its manifest
 or Gradle file is not the shape `flutter create` writes.
+
+## `check_release_version.py`
+
+Fails when a release tag and `pubspec.yaml`'s version differ (#141). The
+release workflow runs it before building, because the APK's versionName is
+the tag while the app reports `AppInfo.version`, which follows
+`pubspec.yaml`. Only the version name is compared; the `+build` part is
+ignored. Standard library only.
+
+```sh
+python3 tools/check_release_version.py v0.3.4             # reads ./pubspec.yaml
+python3 tools/check_release_version.py v0.3.4 pubspec.yaml
+```
+
+Exit status is 0 when they match, 1 when they differ or `pubspec.yaml` has no
+`version:` line, and 2 if the arguments are wrong or the file cannot be read.

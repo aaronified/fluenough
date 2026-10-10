@@ -124,6 +124,34 @@ class DeckIndex(unittest.TestCase):
         self.assertEqual(files["decks/zz/en/zz-en-home.yaml"]["proposed"], 1)
         self.assertNotIn("proposed", files["decks/zz/zz-home.yaml"])
 
+    def test_the_content_hash_leaves_proposals_out(self) -> None:
+        # #444: a proposal changes the file's sha256, which every download
+        # is checked against, but not its content_sha256, which decides
+        # whether a learner is offered an update.
+        shutil.copytree(B1, self.tmp / "decks" / "zz")
+        layer = self.tmp / "decks" / "zz" / "en" / "zz-en-home.yaml"
+        rel = "decks/zz/en/zz-en-home.yaml"
+        original = layer.read_bytes()
+        before = {f["path"]: f for f in self.language(self.index(), "zz")["files"]}[rel]
+        self.assertEqual(before["content_sha256"], before["sha256"])
+        sys.path.insert(0, str(TOOLS))
+        import proposals
+        p = proposals.Proposal("zz-9004", "native", "mother", "mum",
+                               "FL-7K3M-Q9TD-6", "2026-10-09")
+        layer.write_text(original.decode("utf-8").replace(
+            '    native: "mother"\n',
+            f'    native: "mother"\n    proposed:\n      {p.line()}\n'),
+            encoding="utf-8")
+        proposed = {f["path"]: f for f in self.language(self.index(), "zz")["files"]}[rel]
+        self.assertNotEqual(proposed["sha256"], before["sha256"])
+        self.assertNotEqual(proposed["size"], before["size"])
+        self.assertEqual(proposed["content_sha256"], before["content_sha256"])
+        # A change a learner sees changes it.
+        layer.write_text(layer.read_text(encoding="utf-8").replace(
+            '    native: "mother"\n', '    native: "mum"\n'), encoding="utf-8")
+        changed = {f["path"]: f for f in self.language(self.index(), "zz")["files"]}[rel]
+        self.assertNotEqual(changed["content_sha256"], before["content_sha256"])
+
     def test_units_carry_their_planned_and_counted_words(self) -> None:
         shutil.copytree(B1, self.tmp / "decks" / "zz")
         zz = self.language(self.index(), "zz")
@@ -157,6 +185,68 @@ class DeckIndex(unittest.TestCase):
 
     def test_bad_arguments(self) -> None:
         self.assertEqual(self.run_tool("--wrong").returncode, 2)
+
+
+class ContentBytes(unittest.TestCase):
+    """deck_index.content_bytes: a deck file as a learner sees it (#444)."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(TOOLS))
+        import deck_index
+        cls.content = staticmethod(deck_index.content_bytes)
+
+    BASE = (
+        'cards:\n'
+        '  - id: "zz-0001"\n'
+        '    target: "a"\n'
+        '    native: "one"\n'
+        '\n'
+        '  - id: "zz-0002"\n'
+        '    target: "b"\n'
+        '    native: "two"\n'
+    )
+
+    def test_a_file_without_proposals_is_unchanged(self) -> None:
+        data = self.BASE.encode()
+        self.assertEqual(self.content(data), data)
+
+    def test_proposed_lines_are_left_out(self) -> None:
+        line = ('{ id: "3f9c0a1b2d", field: "native", now: "one", text: "1", '
+                'by: "FL-7K3M-Q9TD-6", date: "2026-10-09" }')
+        text = self.BASE.replace(
+            '    native: "one"\n',
+            f'    native: "one"\n    proposed:\n      - {line}\n      - {line}\n',
+        ).replace(
+            '    native: "two"\n',
+            f'    native: "two"\n    proposed:\n      - {line}\n',
+        )
+        self.assertEqual(self.content(text.encode()), self.BASE.encode())
+
+    def test_items_at_the_keys_own_indent_are_left_out(self) -> None:
+        # YAML allows a list under a key at the key's own indent.
+        line = '{ id: "3f9c0a1b2d", field: "native", text: "1" }'
+        text = self.BASE.replace(
+            '    native: "one"\n',
+            f'    native: "one"\n    proposed:\n    - {line}\n    - {line}\n'
+            '    notes: "kept"\n',
+        )
+        want = self.BASE.replace(
+            '    native: "one"\n', '    native: "one"\n    notes: "kept"\n')
+        self.assertEqual(self.content(text.encode()), want.encode())
+
+    def test_only_proposals_go(self) -> None:
+        # A field named like it, or text that says it, stays.
+        data = ('cards:\n  - id: "zz-0001"\n    notes: "proposed: no"\n'
+                '    proposed_by: "x"\n').encode()
+        self.assertEqual(self.content(data), data)
+
+    def test_crlf_line_ends(self) -> None:
+        line = '      - { id: "3f9c0a1b2d", field: "native" }\r\n'
+        base = self.BASE.replace("\n", "\r\n")
+        text = base.replace('    native: "one"\r\n',
+                            f'    native: "one"\r\n    proposed:\r\n{line}')
+        self.assertEqual(self.content(text.encode()), base.encode())
 
 
 if __name__ == "__main__":
