@@ -99,16 +99,33 @@ Family Link do that, and the help text points to them.
   test for each.
 - A held-off language is missing from the child's picker and downloads.
 - A turned-off activity never appears in the child's lessons or reviews.
+- First launch makes the admin profile and says it is the admin; no child
+  profile can be made there.
+- Making a child profile is refused until every adult profile has a PIN,
+  and an adult PIN can't be removed while a child profile exists.
+- The admin sees the child's Progress, read-only.
 - A child profile's history, exported with the admin PIN and imported
   into a new adult profile, keeps its reviews and schedules and carries
   none of the restrictions; the line explaining this shows in all three
   places.
 
-## To decide
+## Decided (owner, 2026-10-10)
 
-- Whether the admin can see the child's progress from their own profile.
-- Whether a child profile can be made from first launch, or only from an
-  existing admin profile.
+- **The parent sees the child's progress** from their own profile
+  ("Yes"): the admin's view of a child profile shows its Progress,
+  read-only.
+- **The first profile is the admin** ("Only from an existing admin
+  account. The first account will be admin account. This is to be
+  explicitly called out when creating the first account"). First launch
+  makes the admin profile and says so in so many words: this profile
+  manages the others, and child profiles are made from it. A child
+  profile is never made at first launch.
+- **Every adult profile is locked before a child profile can exist**
+  ("all adult accounts on the phone must be locked to create a child
+  account"). Making a child profile asks for a PIN on every adult
+  profile that has none, and is refused until each has one, so a child
+  can't open an unlocked adult profile and its content. While a child
+  profile exists, an adult profile's PIN can't be removed.
 
 ## Estimate
 
