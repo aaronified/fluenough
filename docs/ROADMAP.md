@@ -22,7 +22,7 @@ Up to 0.3.4; the [CHANGELOG](../CHANGELOG.md) has each change. In brief:
 - Saved progress, stats, leeches, the review log's export and import, adding
   a deck from a file, and signed releases.
 
-Merged since 0.3.4, not yet released (#432 to #440):
+Merged since 0.3.4, not yet released (#432 to #445):
 
 - FSRS-6 in place of SM-2, and four schedules per word: seen, heard, spoken
   and written words, plus two grammar schedules, understood and produced. A
@@ -43,28 +43,38 @@ Merged since 0.3.4, not yet released (#432 to #440):
 - Settings wording that says what each switch does now, voices per language,
   and the 18+ setting (#437, #96).
 - B1 plans for Telugu and Bengali, and their A1 decks (#438).
+- Hindi, Marathi, Gujarati, Kannada, Assamese and Spanish arranged in the B1
+  format, with a B1 plan in each path and no new content: a core and an
+  English layer per deck, a phrasebook, base words, planned units up to B1.
+  Every language but Japanese now has a B1 plan (#445).
 - The mail bot checks the sender of a review (#439, part of #403).
 - Decks downloaded from GitHub, not bundled: the index, the download
   source, first launch, updates and removing a language (#440, ADR-0037,
   closes #210).
+- Tests for the FSRS fitter against every mutation that could change a fit
+  (#442).
+- The language picker: search, Learning and Available, a card per language
+  with its course's progress toward B1 and its Alpha or Beta stage, the
+  script switch, the language taught from, and the download with its
+  progress on the card (#443, closes #211).
+- Reviews become proposals in the decks at once, and agreement between
+  reviewers merges them to learners (#444, ADR-0038, closes #441).
 
-The next release ships deck downloads together with the language picker.
+The next release (0.4.0, not yet tagged) ships deck downloads together with
+the language picker.
 
 ## Being built
 
-| Branch | What | Trackers |
-|---|---|---|
-| `feat/language-picker` | The language picker, reading the deck index | #211 |
-| `deck/b1-arrange` | The other languages' decks (Hindi, Marathi, Gujarati, Kannada, Assamese, Spanish) arranged to the B1 plan, with no new content | #209 |
+Nothing is in progress. The next work is in "In order" below.
 
 ## In order
 
 | Milestone | Tracker | Plan |
 |---|---|---|
 | 1 · Skill model + FSRS | #207, #113 (done, #432) | What is left of them: a switch for the other activities (#243), the phonemic contrasts drill (#31), pictures beyond Noto Emoji (#91), grammar exercises (#93) and the script TTS fallback (#32). #249 (quick revision, rating-button interval previews, leeches) is done in #432 and can be closed |
-| 2 · B1 plans | #209, #392, #413 | A B1 plan in every path (`b1-plans.md`; Telugu and Bengali done in #438); decks split into a core and a layer per native language (`native-layers.md`); a phrasebook, then words, then rules, then sentences (`words-rules-sentences.md`); then the Bengali and Telugu B1 decks |
+| 2 · B1 plans | #209, #392, #413 | A B1 plan in every path (`b1-plans.md`; all but Japanese done, Telugu and Bengali in #438, the other six in #445, with their decks arranged in the B1 format, no new content); base words shown on cards (#410); the A2 and B1 units, which are planned and show as "Coming"; decks split into a core and a layer per native language (`native-layers.md`); a phrasebook, then words, then rules, then sentences (`words-rules-sentences.md`); then the Bengali and Telugu B1 decks |
 | 3 · Deck downloads (done, #440) | #210 | Decks downloaded from GitHub, not bundled ([ADR-0037](adr/0037-decks-download-from-main.md)) |
-| 4 · Settings redesign | #211, #212, #213 | Settings wording and voices per language are done (#437; trackers #212 and #213 stay open until their sub-issues close). The language picker is being built (#211) |
+| 4 · Settings redesign (done) | #211, #212, #213 | Settings wording and voices per language (#437) and the language picker (#443) are done, and their trackers are closed |
 
 The skill model and FSRS (#207, #113) are done, in #432; milestone 1 stays
 open until its few leftovers are done or moved.
@@ -81,7 +91,7 @@ Each can start once what it waits for is done.
 | #222 | Building sentences, and cloze | |
 | #216 | A path for every language, by family | #392, #413 (the parts that write or reorder courses) |
 | #350 | New languages, one full course each | #210, #217, #392, #413 |
-| #403 | Reviewing in the app, sent by mail: sign-off, offensive-word ratings, similarity checks (`deck-browser.md`); app side merged in #436, sender check in #439 | |
+| #403 | Reviewing in the app, sent by mail (`deck-browser.md`): merged in #436, the sender check in #439, proposals and agreement in #444. Left: a screen of its own for offensive words (#428), and the deck browser site and Pages workflow, for the owner to decide (#404, #405) | |
 | | Offensive words: levels, and sound-alike and look-alike warnings (`offensive-words.md`) | #403 for the ratings |
 | #217 | IPA from Wiktionary | |
 | #218 | Fluenough on the web | |
