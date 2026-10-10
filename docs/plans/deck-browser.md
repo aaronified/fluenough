@@ -272,6 +272,37 @@ Settled with the owner, 2026-10-09:
     writes only if the field still holds the text the proposer saw. It
     rebuilds `decks/index.json` with the tool. A proposal whose field has
     changed, or whose card is gone, is closed as outdated, not merged.
+- **The reviewer guide is the onboarding, in the app** (owner,
+  2026-10-10: "This should be part of the reviewer onboarding in the
+  app"). Becoming a reviewer walks through the guide's steps in the app:
+  what reviewing is, the rater code and languages, "To review", checking
+  and signing off, suggesting and answering proposals, offensive words
+  and sound-alikes, sending in one mail, what is public and private, how
+  agreement reaches learners, and the thanks. The same steps stay
+  readable later from "How reviewing works". `docs/REVIEWING.md` holds
+  the same text for anyone sent a link (#409).
+- **Offensive words are reviewed apart, and only on purpose** (owner,
+  2026-10-10: "group offensive words separately for review and only
+  review them when the reviewer intentionally wants to check them. The
+  screen will basically tell them why we have included offensive words of
+  varying degrees (like how some are deeply offensive and unprintable,
+  while the others are mild and some are okay between friends). We want
+  learners to be able to understand abuses and not speak them without
+  understanding. Cultural differences also make some abuses more or less
+  severe across languages. This is the intention"). So:
+  - offensive words never appear in the ordinary review of a deck or
+    unit; they are grouped in their own "Offensive words" review per
+    language, which the reviewer opens deliberately;
+  - before showing any word, that screen says why they are there: from
+    deeply offensive and unprintable, through mild, to fine between
+    friends; learners should understand abuse, not use it unknowingly;
+    and the same word can be far stronger or milder from one language
+    or culture to another;
+  - it asks for the 18+ confirmation, then shows the words with the 1 to
+    9 rating and region (#428).
+- **Base words show on cards** (owner, 2026-10-10, for v0.4): a card
+  shows its base word and meaning, so reviewers can check the meanings
+  agents wrote in #445 (#410).
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
