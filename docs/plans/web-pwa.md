@@ -58,7 +58,7 @@ iPhone users try Fluenough from Safari, with progress kept on the phone.
 ## To decide
 
 - The URL: the default `aaronified.github.io/fluenough/` or a custom domain.
-- Whether the web build carries every language's decks, about the size of
+- (Settled by ADR-0037: it downloads decks like the app.) Whether the web build carries every language's decks, about the size of
   the APK's, or loads them as they are chosen.
 - Whether the web app may check for updates itself, or only through the
   service worker.
