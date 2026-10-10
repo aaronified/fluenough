@@ -472,12 +472,12 @@
       "script": "latin",
       "script_decks": false,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 47891,
-      "path": ["es-phrasebook", "es-core-100", "es-grammar-present-ar"],
+      "size": 52117,
+      "path": ["es-phrasebook", "es-core-100", "es-grammar-present-ar", "es-grammar-articles-gender"],
       "units": [
         {"decks": ["es-phrasebook", "es-core-100"], "has": {"en": 26}, "words": 26},
         {"decks": ["es-grammar-present-ar"], "grammar": ["present-ar"], "has": {"en": 0}, "words": 0},
-        {"decks": [], "grammar": ["articles-gender"], "planned": true},
+        {"decks": ["es-grammar-articles-gender"], "grammar": ["articles-gender"], "has": {"en": 0}, "words": 0},
         {"decks": [], "planned": true, "words": 20},
         {"decks": [], "planned": true, "words": 15},
         {"decks": [], "planned": true, "words": 20},
@@ -578,10 +578,12 @@
       ],
       "files": [
         {"deck": "es-core-100", "kind": "vocab", "part": "core", "path": "decks/es/es-core-100.yaml", "schema": 1, "sha256": "73c4a0b393fd179cfcc1a58955646e8baef3b495f86e4e894183b2960a981c68", "size": 5169},
+        {"deck": "es-grammar-articles-gender", "kind": "grammar", "part": "core", "path": "decks/es/es-grammar-articles-gender.yaml", "schema": 1, "sha256": "a30729c79f97c350938f9ce42f1f3543bea73ce27ce57395970ab249269b929b", "size": 3361},
         {"deck": "es-grammar-present-ar", "kind": "grammar", "part": "core", "path": "decks/es/es-grammar-present-ar.yaml", "schema": 1, "sha256": "8268dcaec71a0c694f54ddf2d62941c3dcd303d3c5b0680a0dfbe3027ad72082", "size": 2431},
-        {"kind": "path", "path": "decks/es/es-path.yaml", "schema": 1, "sha256": "824577586c84a3ac1d4e966540e8ad00815edaf35587f07f67953edf60083935", "size": 30832},
+        {"kind": "path", "path": "decks/es/es-path.yaml", "schema": 1, "sha256": "2647a03c0f6523e1a528d667629b46e0ecb76f3cac4a55f0da3d2a21274da306", "size": 30577},
         {"deck": "es-phrasebook", "kind": "vocab", "part": "core", "path": "decks/es/es-phrasebook.yaml", "schema": 1, "sha256": "8107eaf4d51f2b3d9852380420c88ea764b16a56223ad46c2de75634b13736f2", "size": 3673},
         {"deck": "es-core-100", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-core-100.yaml", "schema": 1, "sha256": "719e2b740ae0a79b6cc5dc0fe58f9e2988e2f6f5b84b9d4db8a1eefac583e7a3", "size": 2581},
+        {"deck": "es-grammar-articles-gender", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-grammar-articles-gender.yaml", "schema": 1, "sha256": "ade69007a0b502367d5b97b0bca1da60be870c6d2eb5872dfb612f6f804021fa", "size": 1120},
         {"deck": "es-grammar-present-ar", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-grammar-present-ar.yaml", "schema": 1, "sha256": "62061bd10fbb91c5c2ecf9cc36c527d47a9c687deea2e11e34cf8bc9f9335098", "size": 811},
         {"deck": "es-phrasebook", "kind": "layer", "native": "en", "path": "decks/es/en/es-en-phrasebook.yaml", "schema": 1, "sha256": "0a9a2c4abe9a901c9901d0e4e32199f929795dba03c88c5519486c162fd46df4", "size": 2394}
       ]
