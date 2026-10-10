@@ -89,7 +89,11 @@ void main() {
     expect(find.byType(SuggestSheet), findsOneWidget);
     expect(find.text(l10n.reviewSuggestWhich), findsOneWidget);
     for (final part in CardPart.values) {
-      expect(find.text(partName(l10n, part)), findsOneWidget);
+      // A base word's meaning has a chip a base; this card has none.
+      expect(
+        find.text(partName(l10n, part)),
+        part == CardPart.base ? findsNothing : findsOneWidget,
+      );
     }
     // Save waits for a change.
     final save = find.widgetWithText(FilledButton, l10n.reviewSave);
