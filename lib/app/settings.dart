@@ -104,6 +104,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
+  Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
@@ -363,6 +364,25 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the learner folded [level] (its label, such as "A1") on
+  /// [language]'s path on Decks (#465). Remembered per language.
+  bool isLevelCollapsed(String language, String level) =>
+      _collapsedLevels[language]?.contains(level) ?? false;
+
+  void setLevelCollapsed(String language, String level, bool collapsed) {
+    final was = _collapsedLevels[language] ?? const <String>{};
+    if (was.contains(level) == collapsed) return;
+    final next = Set<String>.of(was);
+    collapsed ? next.add(level) : next.remove(level);
+    _collapsedLevels = Map<String, Set<String>>.unmodifiable(
+      <String, Set<String>>{
+        ..._collapsedLevels,
+        language: Set<String>.unmodifiable(next),
+      }..removeWhere((_, levels) => levels.isEmpty),
+    );
+    notifyListeners();
+  }
+
   /// Forgets what listens found, so that the next ones find out again.
   void forgetFoundSpeech() {
     if (_speechNotOnDevice.isEmpty && _speechUnsupported.isEmpty) return;
@@ -595,6 +615,10 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
+    'collapsed_levels': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _collapsedLevels.entries)
+        key: value.toList()..sort(),
+    }),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
         key.name: value.millisecondsSinceEpoch,
@@ -750,6 +774,16 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('script_guides_seen', (t) => t) case final v?) {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markScriptGuideSeen(code);
+      }
+    }
+    if (pick('collapsed_levels', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        for (final level in value) {
+          if (level is String && level.isNotEmpty) {
+            setLevelCollapsed(key, level, true);
+          }
+        }
       }
     }
     for (final (name, unsupported) in <(String, bool)>[
