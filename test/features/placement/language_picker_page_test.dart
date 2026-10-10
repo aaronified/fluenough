@@ -862,10 +862,10 @@ void main() {
       await downloads.resume(const <String>['hi'], const <String>['en']);
       expect(downloads.missing('hi', const <String>['en']), isNotEmpty);
 
-      // It is, from Settings > Deck downloads.
+      // It is, from its card in Languages I'm learning (#467).
       await tester.tap(find.text(l10n.navSettings));
       await tester.pumpAndSettle();
-      final page = find.text(l10n.deckDownloadsTitle);
+      final page = find.text(l10n.settingsLearn);
       await tester.ensureVisible(page);
       await tester.pumpAndSettle();
       await tester.tap(page);

@@ -12,7 +12,6 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/features/downloads/deck_downloads_page.dart';
 import 'package:fluenough/features/downloads/download_fixtures.dart';
 import 'package:fluenough/features/downloads/download_page.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
@@ -70,6 +69,22 @@ Future<AppState> pump(WidgetTester tester, AppState state) async {
   await tester.pumpWidget(FluenoughApp(state: state));
   await tester.pumpAndSettle();
   return state;
+}
+
+/// Opens Languages I'm learning from Settings, where deck updates and
+/// each language's download now are (#467).
+Future<void> openLearning(WidgetTester tester) async {
+  final l10n = l10nOf(tester);
+  await tester.tap(find.text(l10n.navSettings));
+  await tester.pumpAndSettle();
+  await tapText(tester, l10n.settingsLearn);
+  expect(find.byType(LanguagePickerPage), findsOneWidget);
+}
+
+/// [code]'s card in Languages I'm learning, scrolled into view.
+Future<Finder> cardOf(WidgetTester tester, String code) async {
+  await scrollToInPicker(tester, languageCard(code));
+  return languageCard(code);
 }
 
 Future<void> tapText(WidgetTester tester, String text) async {
@@ -355,7 +370,7 @@ cards:
     });
   });
 
-  group('Settings > Deck downloads', () {
+  group('Languages I\'m learning, where Deck downloads was (#467)', () {
     Future<AppState> openPage(WidgetTester tester, {DateTime? now}) async {
       final state = await pump(
         tester,
@@ -366,20 +381,38 @@ cards:
           now: now,
         ),
       );
-      final l10n = l10nOf(tester);
-      await tester.tap(find.text(l10n.navSettings));
-      await tester.pumpAndSettle();
-      await tapText(tester, l10n.deckDownloadsTitle);
-      expect(find.byType(DeckDownloadsPage), findsOneWidget);
+      await openLearning(tester);
       return state;
     }
 
     testWidgets('lists each language with its size and state', (tester) async {
       await downloaded(remote, phone, const <String>['es', 'hi']);
       await openPage(tester);
-      expect(find.text('Spanish'), findsOneWidget);
-      expect(find.text('Hindi'), findsOneWidget);
-      expect(find.textContaining('Up to date'), findsNWidgets(2));
+      final l10n = l10nOf(tester);
+      // Check for deck updates and Check automatically lead the page.
+      expect(find.text(l10n.deckDownloadsCheck), findsOneWidget);
+      expect(find.text(l10n.deckDownloadsAuto), findsOneWidget);
+      for (final code in <String>['es', 'hi']) {
+        final card = await cardOf(tester, code);
+        expect(
+          find.descendant(
+            of: card,
+            matching: find.textContaining('Up to date'),
+          ),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(
+            of: card,
+            matching: find.text(l10n.deckDownloadsRemove),
+          ),
+          findsOneWidget,
+        );
+      }
+      // The separate page is gone, and Settings no longer links to it.
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      expect(find.text('Deck downloads'), findsNothing);
     });
 
     testWidgets('removing a language deletes its decks, keeps its '
@@ -396,14 +429,23 @@ cards:
         now: _now,
       );
 
-      await tester.tap(find.byTooltip(l10n.deckDownloadsRemove).first);
+      final spanish = await cardOf(tester, 'es');
+      await tester.tap(
+        find.descendant(
+          of: spanish,
+          matching: find.text(l10n.deckDownloadsRemove),
+        ),
+      );
       await tester.pumpAndSettle();
       expect(
         find.text(l10n.deckDownloadsRemoveTitle('Spanish')),
         findsOneWidget,
       );
       await tester.tap(
-        find.widgetWithText(TextButton, l10n.deckDownloadsRemove),
+        find.descendant(
+          of: find.byType(AlertDialog),
+          matching: find.text(l10n.deckDownloadsRemove),
+        ),
       );
       await tester.pumpAndSettle();
 
@@ -439,14 +481,30 @@ cards:
       await tapText(tester, l10n.deckUpdatePromptLater);
       expect(find.text(l10n.deckUpdatePromptTitle), findsNothing);
 
-      await tester.tap(find.text(l10n.navSettings));
+      await openLearning(tester);
+      final spanish = await cardOf(tester, 'es');
+      expect(
+        find.descendant(
+          of: spanish,
+          matching: find.textContaining('Update waiting'),
+        ),
+        findsOneWidget,
+      );
+      await tester.tap(
+        find.descendant(
+          of: spanish,
+          matching: find.text(l10n.deckDownloadsUpdate),
+        ),
+      );
       await tester.pumpAndSettle();
-      expect(find.text(l10n.deckDownloadsRowWaiting(1)), findsOneWidget);
-      await tapText(tester, l10n.deckDownloadsTitle);
-      expect(find.textContaining('Update waiting'), findsOneWidget);
-      await tapText(tester, l10n.deckDownloadsUpdate);
       expect(await phone.read(deck), endsWith('# a fix\n'));
-      expect(find.textContaining('Up to date'), findsNWidgets(2));
+      expect(
+        find.descendant(
+          of: spanish,
+          matching: find.textContaining('Up to date'),
+        ),
+        findsOneWidget,
+      );
       expect(state.deckDownloads!.updates, isEmpty);
     });
 
@@ -538,9 +596,8 @@ cards:
       );
       final l10n = l10nOf(tester);
       await tapText(tester, l10n.deckUpdatePromptLater);
-      await tester.tap(find.text(l10n.navSettings));
-      await tester.pumpAndSettle();
-      await tapText(tester, l10n.deckDownloadsTitle);
+      await openLearning(tester);
+      await cardOf(tester, 'es');
 
       remote.failAll = FetchFailure.offline;
       await tapText(tester, l10n.deckDownloadsUpdate);
@@ -581,9 +638,7 @@ cards:
       expect(remote.asked, isEmpty);
 
       // Check for deck updates still looks, when asked.
-      await tester.tap(find.text(l10n.navSettings));
-      await tester.pumpAndSettle();
-      await tapText(tester, l10n.deckDownloadsTitle);
+      await openLearning(tester);
       await tapText(tester, l10n.deckDownloadsCheck);
       expect(remote.asked, <String>['decks/index.json']);
       expect(state.deckDownloads!.updates.keys, <String>['es']);
@@ -647,7 +702,7 @@ cards:
       semantics.dispose();
     });
 
-    testWidgets('Deck downloads, with an update waiting, meets the '
+    testWidgets('Languages I\'m learning, with an update waiting, meets the '
         'guidelines, at twice the text size too', (tester) async {
       final semantics = tester.ensureSemantics();
       await downloaded(remote, phone, const <String>['es', 'hi']);
@@ -664,9 +719,13 @@ cards:
       ], force: true);
       await state.deckDownloads!.declineUpdate();
       addTearDown(state.dispose);
-      await pumpScreen(tester, const DeckDownloadsPage(), state: state);
-      expect(find.textContaining('Update waiting'), findsOneWidget);
+      await pumpScreen(tester, const LanguagePickerPage(), state: state);
+      final l10n = l10nOf(tester);
+      // At the top: the check, the switch and Update all.
+      expect(find.text(l10n.deckDownloadsCheck), findsOneWidget);
       await meetsGuidelines(tester);
+      await cardOf(tester, 'es');
+      expect(find.textContaining('Update waiting'), findsOneWidget);
       usePhone(tester, textScale: 2);
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
@@ -682,12 +741,12 @@ cards:
       addTearDown(app.dispose);
       final state = DownloadFixtures.updateWaiting(app);
       addTearDown(state.dispose);
-      await pumpScreen(tester, const DeckDownloadsPage(), state: state);
+      await pumpScreen(tester, const LanguagePickerPage(), state: state);
       await tester.pumpAndSettle();
-      expect(find.text('Hindi'), findsOneWidget);
+      await cardOf(tester, 'hi');
       expect(find.textContaining('Update waiting'), findsOneWidget);
+      await cardOf(tester, 'te');
       expect(find.textContaining('Up to date'), findsOneWidget);
-      expect(find.text('Spanish'), findsNothing);
     });
 
     testWidgets('shows the first decks failing with no network', (

@@ -155,7 +155,7 @@ final List<GalleryEntry> placementGalleryEntries = <GalleryEntry>[
     id: 'picker-cancelled',
     section: GallerySection.profiles,
     label: 'Languages, download cancelled', // ui-literal-ok: debug-only gallery
-    note: 'The rest from Settings, Deck downloads', // ui-literal-ok: debug-only gallery
+    note: 'The rest from its card in Languages I’m learning', // ui-literal-ok: debug-only gallery
     builder: (_) =>
         const LanguagePickerPage(firstRun: true, initialChosen: <String>{'kn'}),
     state: PickerFixtures.cancelled,
