@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-10
+
 ### Added
 
 - The README shows the app: four short GIFs, each a slow scroll through one screen of a Bengali learner's phone (the deck path, Today, Progress, and reviewing a unit), in `docs/screenshots/`. `test/tools/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, captures them with real fonts, and `tools/make_gif.py` assembles them; `tools/README.md` has the commands.
@@ -186,7 +188,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release. For changes before this point, see the commit history.
 
-[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.3.4...HEAD
+[Unreleased]: https://github.com/aaronified/fluenough/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/aaronified/fluenough/compare/v0.3.4...v0.4.0
 [0.3.4]: https://github.com/aaronified/fluenough/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/aaronified/fluenough/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/aaronified/fluenough/compare/v0.3.1...v0.3.2
