@@ -150,6 +150,8 @@ const _cardFields = {
   'wiktionary',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
+  // Who checked the card (#449), read by [checkedByIn].
+  'checked_by',
 };
 
 /// A layer-only card's fields: a single-file card's, its id being its key.
@@ -170,6 +172,8 @@ const _refFields = {
   'wiktionary',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
+  // Who checked the card (#449), read by [checkedByIn].
+  'checked_by',
 };
 
 // The B1 format (spec sections 2 to 8).
@@ -225,6 +229,8 @@ const _coreCardFields = {
   'rules',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
+  // Who checked the card (#449), read by [checkedByIn].
+  'checked_by',
 };
 const _coreRefFields = {
   'ref',
@@ -236,6 +242,8 @@ const _coreRefFields = {
   'notes',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
+  // Who checked the card (#449), read by [checkedByIn].
+  'checked_by',
 };
 const _coreExampleFields = {'target', 'reading', 'ipa', 'bases'};
 const _layerEntryFields = {
@@ -247,6 +255,8 @@ const _layerEntryFields = {
   'wiktionary',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
+  // Who checked the card (#449), read by [checkedByIn].
+  'checked_by',
 };
 const _noteFields = {'kind', 'text', 'id', 'ref', 'source', 'words', 'region'};
 const _noteWordFields = {'word', 'reading', 'ipa'};
@@ -524,6 +534,9 @@ class _Reader {
       proposals: fields.has('cards')
           ? proposalsIn(fields.require('cards'))
           : const <String, List<Proposal>>{},
+      checkedBy: fields.has('cards')
+          ? checkedByIn(fields.require('cards'))
+          : const <String, List<String>>{},
     );
   }
 
@@ -1292,6 +1305,9 @@ class _Reader {
       proposals: fields.has('cards')
           ? proposalsIn(fields.require('cards'))
           : const <String, List<Proposal>>{},
+      checkedBy: fields.has('cards')
+          ? checkedByIn(fields.require('cards'))
+          : const <String, List<String>>{},
     );
   }
 
@@ -1702,6 +1718,9 @@ class _Reader {
       proposals: fields.has('cards')
           ? proposalsIn(fields.require('cards'))
           : const <String, List<Proposal>>{},
+      checkedBy: fields.has('cards')
+          ? checkedByIn(fields.require('cards'))
+          : const <String, List<String>>{},
     );
   }
 
@@ -2639,6 +2658,40 @@ Map<String, List<Proposal>> proposalsIn(YamlNode cards) {
     for (final MapEntry(:key, :value) in out.entries)
       key: List<Proposal>.unmodifiable(value),
   });
+}
+
+/// Who checked each card of [cards], a deck's `cards` list or a layer's
+/// `cards` mapping, by card id: each entry's `checked_by` (#449). Read
+/// leniently, as proposals are: what is not text is left out, and the
+/// validator checks the codes.
+Map<String, List<String>> checkedByIn(YamlNode cards) {
+  final out = <String, List<String>>{};
+  void read(String? card, Object? entry) {
+    if (card == null || entry is! YamlMap) return;
+    final codes = entry.nodes['checked_by'];
+    if (codes is! YamlList) return;
+    final found = <String>[
+      for (final code in codes.nodes)
+        if (_value(code) case final String text) text,
+    ];
+    if (found.isNotEmpty) out[card] = List<String>.unmodifiable(found);
+  }
+
+  if (cards is YamlList) {
+    for (final entry in cards.nodes) {
+      if (entry is! YamlMap) continue;
+      final id = _value(
+        entry.nodes['id'] ?? entry.nodes['ref'] ?? YamlScalar.wrap(null),
+      );
+      read(id is String ? id : null, entry);
+    }
+  } else if (cards is YamlMap) {
+    for (final MapEntry(:key, :value) in cards.nodes.entries) {
+      final id = key is YamlNode ? _value(key) : key;
+      read(id is String ? id : null, value);
+    }
+  }
+  return Map<String, List<String>>.unmodifiable(out);
 }
 
 Proposal? _proposal(String card, YamlNode item) {
