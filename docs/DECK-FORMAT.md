@@ -644,7 +644,10 @@ are in each layer:
   sees the link. The base రావడం (rāvaḍam), to come, becomes వచ్చింది
   (vaccindi), she came, so that card's note reads "రావడం (rāvaḍam) changes
   its stem in the past: వచ్చ- (vacc-)." Every past-tense card built on it
-  carries the line.
+  carries the line. The validator warns where a base's word does not start
+  with its base's first letter and no note of the card, in its core or any
+  layer, names the base: a hint, not an error, since a prefix can move the
+  first letter without a new stem.
 
 **In a [B1 deck](#the-b1-plan), every word is covered.** Each word of a
 target, and of each example's target, is either the target, or an

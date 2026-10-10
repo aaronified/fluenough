@@ -437,6 +437,10 @@ class Report:
     merged: list[TCard] = field(default_factory=list)
     core_refs: list[tuple[str, bool]] = field(default_factory=list)
     core_theme: str | None = None
+    # The text of each card's notes this file gives, and the words they
+    # quote, by card id: a single-file card's, a core's quoted words, a
+    # layer's texts. For the stem check across files.
+    note_texts: dict[str, list[str]] = field(default_factory=dict)
     # A rules core: its rules, (id, where), and its table.
     rules_defined: list[tuple[str, str]] = field(default_factory=list)
     table: TableInfo | None = None
@@ -789,6 +793,8 @@ def check_notes(r: Report, where: str, notes: object, cid: str | None,
             r.error(where, core_list)
             return []
         # A blank string is no notes, as today, never one empty note.
+        if cid is not None and notes.strip():
+            r.note_texts.setdefault(cid, []).append(notes)
         return [Note(0, "1", "note", None)] if notes.strip() else []
     if not isinstance(notes, list):
         if core:
@@ -865,6 +871,9 @@ def check_notes(r: Report, where: str, notes: object, cid: str | None,
         words = check_note_words(r, where, f"{p}.words", note.get("words"), script)
         if not core and isinstance(text, str):
             check_placeholders(r, where, f"{p}.text ", text, words, "note")
+        if cid is not None:
+            r.note_texts.setdefault(cid, []).extend(
+                [t for t in (text, *words) if isinstance(t, str)])
         found.append(Note(i, nid if nid is not None else str(i + 1), kind or "note", ref))
     return found
 
@@ -2649,6 +2658,7 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
                     check_placeholders(r, f"{nwhere}.{nid}", "", text,
                                        known.notes[nid], "note")
                     notes.add(nid)
+                    r.note_texts.setdefault(cid, []).append(text)
     if shown:
         for nid in known.notes:
             if nid not in notes:
@@ -4480,6 +4490,43 @@ def check_bases_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+def warn_base_stems_across(reports: list[Report]) -> None:
+    """Warns on a base whose word does not start with the letter its base
+    does, ఇచ్చాడు (iccāḍu) on ఇవ్వడం (ivvaḍam), unless the card's notes, in
+    its core or any layer, name the base: the stem has changed, and the
+    learner is told which stem the form takes (DECK-FORMAT.md, "Base
+    words"). A warning, not an error: a prefix or a sound change can move
+    the first letter without a new stem."""
+    ctx = _context(reports)
+    for code in _languages(reports):
+        lang = ctx.lang(code)
+        tcards = lang.tcards()
+        texts: dict[str, list[str]] = {}
+        for rep in lang.all():
+            for cid, found in rep.note_texts.items():
+                texts.setdefault(cid, []).extend(_key(t) for t in found)
+        for rep in lang.given:
+            for c in rep.cards:
+                notes = texts.get(c.id, [])
+                bases = [("", b) for b in c.bases] + [
+                    (f"examples[{j}].", b) for j, _, bs in c.examples for b in bs]
+                for prefix, base in bases:
+                    word = base.get("word")
+                    lemma = base.get("base")
+                    if "ref" in base:
+                        ref = tcards.get(base["ref"]) if _is_str(base["ref"]) else None
+                        lemma = ref.target if ref is not None else None
+                    if not _is_str(word) or not _is_str(lemma):
+                        continue
+                    w, stem = _key(word), _key(lemma)
+                    if w[:1] == stem[:1] or any(stem in t for t in notes):
+                        continue
+                    rep.warn(c.where, f"{prefix}bases: {word!r} does not start as its "
+                                      f"base {lemma!r} does, and the card's notes do not "
+                                      f"name {lemma!r}; say in the notes which stem the "
+                                      f"form takes (DECK-FORMAT.md, \"Base words\")")
+
+
 def check_phrasebook_across(reports: list[Report]) -> list[str]:
     """A course's phrasebook: 15 to 25 cards, counted per course, and, where
     its path has a B1 plan, taught in the path's first unit."""
@@ -4798,6 +4845,7 @@ def main(argv: list[str]) -> int:
               + check_plans_across(reports) + check_regions_across(reports))
     for problem in across:
         print(f"error: {problem}")
+    warn_base_stems_across(reports)
 
     failed = 0
     warned = 0

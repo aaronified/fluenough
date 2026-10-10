@@ -1424,6 +1424,60 @@ class Bases(B1Case):
                           f"which no deck writes", EXTRA)
 
 
+class BaseStems(B1Case):
+    """A base whose word starts with another letter than its base: the
+    notes, in the core or any layer, say which stem the form takes."""
+
+    SENTENCE = Bases.SENTENCE
+    CAME = {"word": "వచ్చింది", "base": "రా", "reading": "rā", "meaning": "to come"}
+    MSG = ("bases: 'వచ్చింది' does not start as its base 'రా' does, and the card's "
+           "notes do not name 'రా'; say in the notes which stem the form takes "
+           "(DECK-FORMAT.md, \"Base words\")")
+
+    def warnings(self, bases: list, **extra: object) -> list[str]:
+        sentence = dict(self.SENTENCE, bases=bases, **extra)
+        self.put(EXTRA, single(cards=[dict(CAT), sentence]))
+        return self.section(self.run_main(), EXTRA)
+
+    def test_a_new_stem_not_in_the_notes_is_a_warning(self) -> None:
+        self.assertIn(f"  warning card zz-9502: {self.MSG}", self.warnings([self.CAME]))
+        self.assertEqual(self.errors(EXTRA), [])
+
+    def test_notes_naming_the_base_answer_it(self) -> None:
+        self.assertEqual(self.warnings([self.CAME], notes="Past of రా (rā), on the stem "
+                                                          "వచ్చ్ (vacc)."), [])
+        typed = [{"kind": "behaviour", "text": "The past takes the stem {1}.",
+                  "words": [{"word": "రా", "reading": "rā"}]}]
+        self.assertEqual(self.warnings([self.CAME], notes=typed), [])
+
+    def test_the_same_first_letter_needs_no_note(self) -> None:
+        same = dict(self.CAME, base="వచ్చు", reading="vaccu")
+        self.assertEqual(self.warnings([same]), [])
+
+    def test_a_ref_base_is_its_cards_target(self) -> None:
+        lines = self.warnings([{"word": "ఇంటికి", "ref": "zz-9003"}])
+        self.assertIn("  warning card zz-9502: " + self.MSG.replace("రా", "వెళ్ళు")
+                      .replace("వచ్చింది", "ఇంటికి"), lines)
+        example = {"target": "పిల్లి వచ్చింది.", "native": "The cat came.",
+                   "bases": [dict(self.CAME)]}
+        self.assertIn(f"  warning card zz-9502: examples[0].{self.MSG}",
+                      self.warnings([], examples=[example]))
+
+    def test_a_layers_note_answers_a_core_card(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9002")["bases"].__setitem__(
+            0, {"word": "నేను", "ref": "zz-9001"}))
+        warning = (f"  warning card zz-9002: bases: 'నేను' does not start as its base "
+                   f"'ఇల్లు' does")
+        self.assertTrue(any(x.startswith(warning)
+                            for x in self.section(self.run_main(), CORE)))
+        self.edit(CORE, lambda d: card(d, "zz-9002").update(
+            notes=[{"id": "stem", "kind": "behaviour"}]))
+        self.edit(LAYER, lambda d: d["cards"]["zz-9002"].update(
+            notes={"stem": "Not ఇల్లు (illu): a test."}))
+        self.assertFalse(any(x.startswith(warning)
+                             for x in self.section(self.run_main(), CORE)))
+
+
 class BasesCoverage(B1Case):
     """Section 8.3: in a B1 deck every word of a text is taught or based."""
 
