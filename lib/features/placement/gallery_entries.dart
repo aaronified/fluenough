@@ -29,7 +29,7 @@ final List<GalleryEntry> placementGalleryEntries = <GalleryEntry>[
     id: 'learn-languages',
     section: GallerySection.profiles,
     label: 'What to learn', // ui-literal-ok: debug-only gallery
-    note: 'First launch, after the languages you speak', // ui-literal-ok: debug-only gallery
+    note: 'First launch, after the languages you know', // ui-literal-ok: debug-only gallery
     builder: (_) => const LanguagePickerPage(firstRun: true),
     state: _firstLaunch,
   ),

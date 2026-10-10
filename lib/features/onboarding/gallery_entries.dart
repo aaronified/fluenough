@@ -31,7 +31,8 @@ final List<GalleryEntry> onboardingGalleryEntries = <GalleryEntry>[
   GalleryEntry(
     id: 'onboarding-spoken',
     section: GallerySection.profiles,
-    label: 'First launch: languages you speak', // ui-literal-ok: debug-only gallery
+    label:
+        'First launch: languages you know', // ui-literal-ok: debug-only gallery
     note: 'Nothing ticked: Continue waits', // ui-literal-ok: debug-only gallery
     builder: (_) => const OnboardingFlow(startAt: 'spoken'),
   ),

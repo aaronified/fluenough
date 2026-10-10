@@ -7,8 +7,10 @@ order; change a fact here and change it there too.
 test/features/review/how_reviewing_works_test.dart checks the headings. -->
 
 Thank you for considering this. You do not need to know anything about
-programming. You need to speak the language well and have an Android phone
-with the Fluenough app and a mail app.
+programming. You need an Android phone with the Fluenough app and a mail app,
+and for each course you review, such as Bengali from English, you must know
+both languages well, the one taught and the one it is taught from, and read
+both their scripts.
 
 ## What reviewing is
 
@@ -28,8 +30,18 @@ thing anyone can give these decks.
 3. **How reviewing works** then walks you through this guide once, one step
    per screen. Skip it whenever you like, and read it again any time from
    **How reviewing works** in Settings.
-4. Under **Languages you review**, pick your languages. At first these are the
-   languages you speak that the app teaches.
+4. Under **Languages you review**, tick the courses you review, such as
+   *Bengali from English*. Every course the app offers is listed, downloaded
+   or not. You can tick a course only if you know both languages and read
+   both scripts; the others are greyed, with the reason. Say which languages
+   you know, and whether you read each one's script, in **Languages you
+   know** (the button on the same screen opens it). Until you have said which
+   scripts you read, no course can be ticked.
+5. A course whose decks are not on your phone asks to download them. They are
+   for reviewing only: the language is not added to the languages you learn,
+   and stays out of Today, the language menu and your lessons. Each course on
+   your phone shows its size, whether an update is waiting, **Update** and
+   **Remove**.
 
 You can turn reviewing off whenever you like. Your code is kept.
 
