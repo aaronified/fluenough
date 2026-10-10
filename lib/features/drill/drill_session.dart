@@ -17,6 +17,7 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/session_queue.dart';
+import '../../core/sound/sound_check.dart';
 import '../../core/speech/speech_engine.dart';
 
 /// Where the current card is: the design's `phase`.
@@ -29,6 +30,18 @@ enum DrillPhase {
 
   /// A typed answer is in, and the feedback is showing.
   feedback,
+}
+
+/// Where "Hear yourself" is, on an answered speaking card (#231).
+enum SelfTake {
+  /// Not recording or playing: the button is offered.
+  idle,
+
+  /// Recording the learner saying the word.
+  recording,
+
+  /// Playing the recording back, then the voice.
+  playing,
 }
 
 /// How a typed answer is typed: in the language's own script, or in Latin
@@ -647,6 +660,17 @@ class DrillSession extends ChangeNotifier {
         alternatives.isEmpty) {
       return;
     }
+    final answer = _gradeSpoken(alternatives);
+    _unheard = null;
+    _answer = answer;
+    _record(answer.grade!, answerGiven: answer.typed);
+    _phase = DrillPhase.feedback;
+    notifyListeners();
+  }
+
+  /// What [alternatives], best first, say as an answer to the current card:
+  /// graded, and for a wrong word, the sound it differs by. Records nothing.
+  TypedAnswer _gradeSpoken(List<SpeechAlternative> alternatives) {
     final accepted = acceptedAnswers;
     final grader = AnswerGrader(
       articles: deck.language.articles,
@@ -669,7 +693,6 @@ class DrillSession extends ChangeNotifier {
         }
       }
     }
-    final grade = graded.outcome.toGrade();
     // A wrong word that is the answer with one sound changed: the feedback
     // names the sound (ADR-0014's rule: only a slip that changes the word).
     SoundContrast? contrast;
@@ -686,16 +709,117 @@ class DrillSession extends ChangeNotifier {
         }
       }
     }
-    _unheard = null;
-    _answer = TypedAnswer(
+    return TypedAnswer(
       typed: said.text,
       graded: graded,
-      grade: grade,
+      grade: graded.outcome.toGrade(),
       contrast: contrast,
       heardCard: heardCard,
     );
-    _record(grade, answerGiven: said.text);
-    _phase = DrillPhase.feedback;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Trying a pronunciation again (#231)
+
+  TypedAnswer? _retried;
+
+  /// What the last "Try again" heard, graded, or null before one. Never
+  /// recorded: the first answer is the one that counts for the schedule,
+  /// so a word that needed a retry comes back sooner.
+  TypedAnswer? get retried => _retried;
+
+  int _retries = 0;
+
+  /// How many tries again on this card were heard and graded.
+  int get retries => _retries;
+
+  /// Whether "Try again" is offered: a speaking card whose recorded answer
+  /// was wrong, almost right, or "Don't know". Once offered it stays, for
+  /// as many tries as the learner likes.
+  bool get canRetry {
+    final answer = _answer;
+    if (item.mode != DrillMode.speaking ||
+        _phase != DrillPhase.feedback ||
+        answer == null ||
+        answer.awaitsJudgement) {
+      return false;
+    }
+    return answer.graded?.outcome != AnswerOutcome.exact;
+  }
+
+  /// "Try again": listens once more and shows what was heard, graded as
+  /// the first answer was, but records nothing. Nothing heard says why, as
+  /// the first listen does ([unheard]).
+  Future<void> retry() async {
+    if (!canRetry || _hearing || _hearingSelf != SelfTake.idle) return;
+    final listeningIndex = _index;
+    _hearing = true;
+    _unheard = null;
+    notifyListeners();
+    final heard = await _state.listenFor(deck.language);
+    if (_disposed || _index != listeningIndex || !_hearing) return;
+    _hearing = false;
+    if (heard.failed) {
+      _unheard = heard.failure ?? SpeechFailure.noMatch;
+    } else {
+      _retried = _gradeSpoken(heard.alternatives);
+      _retries++;
+    }
+    notifyListeners();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Hearing yourself, then the voice (#231)
+
+  /// How long "Hear yourself" records: a word or a short phrase.
+  static const Duration selfTakeLength = Duration(seconds: 3);
+
+  SelfTake _hearingSelf = SelfTake.idle;
+  RecordFailure? _selfFailure;
+
+  /// Where "Hear yourself" is: recording, playing, or neither.
+  SelfTake get hearingSelf => _hearingSelf;
+
+  /// Why the last "Hear yourself" had nothing to play, or null.
+  RecordFailure? get selfFailure => _selfFailure;
+
+  /// Whether "Hear yourself" is offered: once a speaking card is answered.
+  bool get canHearSelf =>
+      item.mode == DrillMode.speaking && _phase == DrillPhase.feedback;
+
+  /// "Hear yourself": records the learner saying the word, after the
+  /// recogniser has let go of the microphone, plays it back, then plays the
+  /// voice. The recording stays in memory and is dropped once played, as
+  /// in the first launch's sound check. Records nothing in the review log.
+  Future<void> hearSelf() async {
+    if (!canHearSelf || _hearing || _hearingSelf != SelfTake.idle) return;
+    final index = _index;
+    bool stale() => _disposed || _index != index;
+    if (_playing) await _state.stopSpeaking();
+    _hearingSelf = SelfTake.recording;
+    _selfFailure = null;
+    notifyListeners();
+    final take = await _state.soundCheck.record(selfTakeLength);
+    if (stale()) return;
+    if (!take.ok) {
+      _hearingSelf = SelfTake.idle;
+      _selfFailure = take.failure;
+      notifyListeners();
+      return;
+    }
+    _hearingSelf = SelfTake.playing;
+    notifyListeners();
+    final played = await _state.soundCheck.play(take);
+    if (stale()) return;
+    if (!played) {
+      _hearingSelf = SelfTake.idle;
+      _selfFailure = RecordFailure.failed;
+      notifyListeners();
+      return;
+    }
+    if (canPlay) await play();
+    if (stale()) return;
+    _hearingSelf = SelfTake.idle;
     notifyListeners();
   }
 
@@ -993,6 +1117,8 @@ class DrillSession extends ChangeNotifier {
 
   void _advance() {
     if (_playing) _state.stopSpeaking();
+    // "Continue" while a "Try again" listens: what it hears is dropped.
+    if (_hearing) _state.stopListening();
     _playing = false;
     _playingSentence = null;
     var next = _index + 1;
@@ -1025,6 +1151,10 @@ class DrillSession extends ChangeNotifier {
     _placed.clear();
     _hearing = false;
     _unheard = null;
+    _retried = null;
+    _retries = 0;
+    _hearingSelf = SelfTake.idle;
+    _selfFailure = null;
     _watch
       ..reset()
       ..start();
