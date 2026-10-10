@@ -91,7 +91,9 @@ def content_bytes(data: bytes) -> bytes:
     items, one line each, indented under it; this drops those lines and
     keeps every other byte as it is, blank lines after the items too: the
     file with its last proposal removed hashes as it did before the
-    first."""
+    first. Items YAML allows at the key's own indent (`- ` lines straight
+    under it) go too, so a proposal written that way by hand still leaves
+    the content hash alone."""
     lines = [line.decode("utf-8", errors="replace").rstrip("\r\n")
              for line in data.splitlines(keepends=True)]
     raw = data.splitlines(keepends=True)
@@ -105,13 +107,20 @@ def content_bytes(data: bytes) -> bytes:
             continue
         indent = len(m.group(1))
         i += 1
-        # The items: every line indented deeper than the key, and blank
-        # lines between two of them.
+        # The items: every line indented deeper than the key, or a `- `
+        # item at the key's own indent, and blank lines between two of them.
         while i < len(lines):
             j = i
             while j < len(lines) and not lines[j].strip():
                 j += 1
-            if j == len(lines) or len(lines[j]) - len(lines[j].lstrip(" ")) <= indent:
+            if j == len(lines):
+                break
+            line = lines[j]
+            depth = len(line) - len(line.lstrip(" "))
+            item = line[depth:]
+            same_indent_item = depth == indent and (
+                item == "-" or item.startswith("- "))
+            if depth <= indent and not same_indent_item:
                 break
             i = j + 1
     return b"".join(out)
