@@ -55,6 +55,11 @@ class DecksPage extends StatefulWidget {
   State<DecksPage> createState() => _DecksPageState();
 }
 
+/// The room the path leaves at its end, so that the floating buttons hide
+/// no card when it is scrolled to the bottom: their margin, their height
+/// and a gap (#466).
+const double fabClearance = kFloatingActionButtonMargin + 56 + 40;
+
 class _DecksPageState extends State<DecksPage> {
   late final TextEditingController _search = TextEditingController(
     text: widget.initialQuery ?? '',
@@ -115,8 +120,27 @@ class _DecksPageState extends State<DecksPage> {
     ];
   }
 
-  /// Scrolls the path to the unit up next.
+  /// The level holding the unit up next on the path shown, as (language,
+  /// level), or null where there is none.
+  (String, String)? _currentLevel;
+
+  /// Scrolls the path to the unit up next, unfolding its level first if the
+  /// learner folded it (#465).
   void _toUpNext({bool animate = true}) {
+    if (_currentLevel case (final language, final level)) {
+      final settings = AppScope.read(context).settings;
+      if (settings.isLevelCollapsed(language, level)) {
+        settings.setLevelCollapsed(language, level, false);
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _scrollToUpNext(animate: animate);
+        });
+        return;
+      }
+    }
+    _scrollToUpNext(animate: animate);
+  }
+
+  void _scrollToUpNext({required bool animate}) {
     final target = _upNext.currentContext;
     if (target == null) return;
     Scrollable.ensureVisible(
@@ -171,7 +195,7 @@ class _DecksPageState extends State<DecksPage> {
                     icon: Icons.my_location,
                     label: l10n.decksWhereIAm,
                     compact: compact,
-                    secondary: true,
+                    distinct: true,
                     onPressed: _toUpNext,
                   ),
                 const Spacer(),
@@ -343,6 +367,14 @@ class _DecksPageState extends State<DecksPage> {
           answers: RecentAnswers(state.progress.log),
         );
         if (view == null) return const SizedBox.shrink();
+        _currentLevel = switch (view.steps
+            .whereType<LevelStep>()
+            .where((l) => l.current)
+            .firstOrNull) {
+          final level? => (code, level.level.label),
+          null => null,
+        };
+        // The level up next starts unfolded: _toUpNext unfolds it.
         if (_openedAt != code) {
           _openedAt = code;
           WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -351,8 +383,14 @@ class _DecksPageState extends State<DecksPage> {
         }
         return SingleChildScrollView(
           controller: _scroll,
-          // Clear of the buttons that float over the path's end.
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 112),
+          // Clear of the buttons that float over the path's end (#466):
+          // their margin, their height and a gap, above any system inset.
+          padding: EdgeInsetsDirectional.fromSTEB(
+            16,
+            4,
+            16,
+            fabClearance + MediaQuery.paddingOf(context).bottom,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -433,7 +471,7 @@ class _Fab extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.compact = false,
-    this.secondary = false,
+    this.distinct = false,
   });
 
   final Object heroTag;
@@ -441,7 +479,11 @@ class _Fab extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
   final bool compact;
-  final bool secondary;
+
+  /// In `tertiary`, a role no card on the path uses (#466), so that "Where
+  /// I am" reads as a control and not as one of the units under it, in
+  /// light, dark and pure black alike.
+  final bool distinct;
 
   /// About how wide the button is with its [label]: M3's 16 before the
   /// icon, the icon, 8 between, the label and 20 after it.
@@ -463,8 +505,8 @@ class _Fab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final bg = secondary ? scheme.secondaryContainer : null;
-    final fg = secondary ? scheme.onSecondaryContainer : null;
+    final bg = distinct ? scheme.tertiary : null;
+    final fg = distinct ? scheme.onTertiary : null;
     if (compact) {
       return FloatingActionButton(
         heroTag: heroTag,

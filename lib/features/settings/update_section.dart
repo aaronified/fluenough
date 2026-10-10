@@ -27,34 +27,63 @@ class UpdateSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final settings = AppScope.read(context).settings;
+    return ListenableBuilder(
+      listenable: settings,
+      builder: (context, _) => GroupedList.settings(
+        header: l10n.settingsSectionUpdates,
+        children: <Widget>[
+          const UpdateCheckRow(),
+          GroupedTile.toggle(
+            leading: const Icon(Icons.update),
+            title: l10n.settingsUpdateAuto,
+            subtitleOn: l10n.settingsUpdateAutoOn,
+            subtitleOff: l10n.settingsUpdateAutoOff,
+            value: settings.autoUpdateCheck,
+            onChanged: (on) => settings.autoUpdateCheck = on,
+          ),
+          GroupedTile(
+            leading: const Icon(Icons.new_releases_outlined),
+            title: l10n.settingsReleaseNotes,
+            subtitle: l10n.settingsReleaseNotesDesc,
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => AppNavigator.openReleaseNotes(context),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// What went wrong with an install, and what to do about it.
+  static String installFailureText(
+    AppLocalizations l10n,
+    InstallFailure? failure,
+  ) => switch (failure) {
+    InstallFailure.notAllowed => l10n.settingsUpdateNotAllowed,
+    InstallFailure.download => l10n.settingsUpdateDownloadFailed,
+    InstallFailure.checksum => l10n.settingsUpdateChecksumFailed,
+    InstallFailure.install => l10n.settingsUpdateInstallError,
+    InstallFailure.cancelled => l10n.settingsUpdateCancelled,
+    InstallFailure.internal || null => l10n.settingsUpdateInternalError,
+  };
+}
+
+/// Settings' "Check for updates" row, in each of its states: what the last
+/// check found, Download, the download's progress, and what went wrong.
+/// Also offered, in a sheet, where a failed download would otherwise leave
+/// the learner no way to Settings (`showUpdateSheet`).
+class UpdateCheckRow extends StatelessWidget {
+  const UpdateCheckRow({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     final state = AppScope.read(context);
-    final settings = state.settings;
     final updates = state.updates;
     return _DownloadAnnouncer(
       updates: updates,
       child: ListenableBuilder(
-        listenable: Listenable.merge(<Listenable>[updates, settings]),
-        builder: (context, _) => GroupedList.settings(
-          header: l10n.settingsSectionUpdates,
-          children: <Widget>[
-            _checkRow(context, updates),
-            GroupedTile.toggle(
-              leading: const Icon(Icons.update),
-              title: l10n.settingsUpdateAuto,
-              subtitleOn: l10n.settingsUpdateAutoOn,
-              subtitleOff: l10n.settingsUpdateAutoOff,
-              value: settings.autoUpdateCheck,
-              onChanged: (on) => settings.autoUpdateCheck = on,
-            ),
-            GroupedTile(
-              leading: const Icon(Icons.new_releases_outlined),
-              title: l10n.settingsReleaseNotes,
-              subtitle: l10n.settingsReleaseNotesDesc,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => AppNavigator.openReleaseNotes(context),
-            ),
-          ],
-        ),
+        listenable: Listenable.merge(<Listenable>[updates, state.settings]),
+        builder: (context, _) => _checkRow(context, updates),
       ),
     );
   }
@@ -141,7 +170,10 @@ class UpdateSection extends StatelessWidget {
         icon: Icons.error_outline,
         iconColor: Theme.of(context).colorScheme.error,
         title: l10n.settingsUpdateInstallFailed(latest),
-        subtitle: installFailureText(l10n, updates.installFailure),
+        subtitle: UpdateSection.installFailureText(
+          l10n,
+          updates.installFailure,
+        ),
         actions: <Widget>[
           TextButton(
             onPressed: updates.checkAndInstall,
@@ -160,19 +192,6 @@ class UpdateSection extends StatelessWidget {
       ),
     };
   }
-
-  /// What went wrong with an install, and what to do about it.
-  static String installFailureText(
-    AppLocalizations l10n,
-    InstallFailure? failure,
-  ) => switch (failure) {
-    InstallFailure.notAllowed => l10n.settingsUpdateNotAllowed,
-    InstallFailure.download => l10n.settingsUpdateDownloadFailed,
-    InstallFailure.checksum => l10n.settingsUpdateChecksumFailed,
-    InstallFailure.install => l10n.settingsUpdateInstallError,
-    InstallFailure.cancelled => l10n.settingsUpdateCancelled,
-    InstallFailure.internal || null => l10n.settingsUpdateInternalError,
-  };
 }
 
 /// Announces "Downloading 0.2.0" once, as a download starts.

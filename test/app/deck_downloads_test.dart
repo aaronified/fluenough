@@ -613,7 +613,7 @@ void main() {
       await again.resume(const <String>['hi'], english);
       expect(remote.asked.where((p) => p.startsWith('decks/hi/')), isEmpty);
 
-      // Settings > Deck downloads asks for the rest.
+      // Its card in Languages I'm learning asks for the rest.
       expect(await again.retry('hi', english), isNull);
       expect(again.isPaused('hi'), isFalse);
       expect(again.missing('hi', english), isEmpty);
