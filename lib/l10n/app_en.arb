@@ -1070,13 +1070,47 @@
   "@pathUpdatesButton": {
     "description": "Button on the deck updates row."
   },
-  "pathHoursTitle": "Hours left to B1",
+  "pathHoursTitle": "Hours left in the decks so far",
   "@pathHoursTitle": {
-    "description": "Row on the course card: about how many hours of study are left to finish the course, at level B1. Shown with \"Feature incoming\" until it is built (#227)."
+    "description": "Row on the course card: about how many hours of study are left in the course's decks written so far, not to the end of the course at B1. It grows as decks are added (#227)."
   },
-  "pathHoursBody": "And the hours spent so far",
+  "pathHoursBody": "{left} · {spent}",
   "@pathHoursBody": {
-    "description": "Second line of the hours row: it also says how many hours have been spent."
+    "description": "Second line of the hours row: the hours left (pathHoursLeft), then the hours spent (pathHoursSpent).",
+    "placeholders": {
+      "left": {
+        "type": "String",
+        "example": "About 140 hours left"
+      },
+      "spent": {
+        "type": "String",
+        "example": "12.4 hours spent so far"
+      }
+    }
+  },
+  "pathHoursLeft": "{hours, plural, =0{Nothing left to learn} =1{About 1 hour left} other{About {hours} hours left}}",
+  "@pathHoursLeft": {
+    "description": "About how many hours of study are left in the decks written so far, rounded up to whole hours. \"About\" because it changes as decks are added and as the learner's times change.",
+    "placeholders": {
+      "hours": {
+        "type": "int",
+        "example": "140"
+      }
+    }
+  },
+  "pathHoursSpent": "{hours} hours spent so far",
+  "@pathHoursSpent": {
+    "description": "Hours spent answering cards in this language, to one decimal place. Each answer counts for at most a minute.",
+    "placeholders": {
+      "hours": {
+        "type": "double",
+        "example": "12.4",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
   },
   "pathUpNext": "Up next",
   "@pathUpNext": {

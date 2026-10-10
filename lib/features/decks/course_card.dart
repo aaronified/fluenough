@@ -5,16 +5,26 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/incoming.dart';
+import 'course_hours.dart';
 import 'path_model.dart';
 
 /// The card at the top of a course's path: the course, how much of it is
-/// done, with the levels marked on the bar where the path has them, and the
-/// two rows the design adds that are not built yet: deck updates (#210) and
-/// hours left to B1 (#227), each with "Feature incoming".
+/// done, with the levels marked on the bar where the path has them, and two
+/// rows: deck updates (#210), with "Feature incoming" until it is built, and
+/// the hours left in the decks written so far, with the hours spent (#227).
 class CourseCard extends StatelessWidget {
-  const CourseCard({super.key, required this.view, required this.glyph});
+  const CourseCard({
+    super.key,
+    required this.view,
+    required this.glyph,
+    this.hours = (spent: 0, left: 0),
+  });
 
   final CourseView view;
+
+  /// The language's hours spent, and about how many are left in the decks
+  /// its course has ([courseHours]).
+  final CourseHours hours;
 
   /// The language's character, as its chip shows it.
   final String glyph;
@@ -89,7 +99,10 @@ class CourseCard extends StatelessWidget {
                   feature: Feature.hoursLeft,
                   icon: Icons.schedule,
                   title: l10n.pathHoursTitle,
-                  body: l10n.pathHoursBody,
+                  body: l10n.pathHoursBody(
+                    l10n.pathHoursLeft(hours.left.ceil()),
+                    l10n.pathHoursSpent(hours.spent),
+                  ),
                 ),
               ],
             ),
