@@ -204,7 +204,19 @@ class _UnitPageState extends State<UnitPage> {
               else
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 4),
+                  // Compact, to sit in the app bar: the theme's primary
+                  // button is taller than the bar. The tap target stays
+                  // 48dp, padded around the 40dp button.
                   child: FilledButton.tonalIcon(
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size(48, 40),
+                      padding: const EdgeInsetsDirectional.symmetric(
+                        horizontal: 16,
+                      ),
+                      visualDensity: VisualDensity.standard,
+                      tapTargetSize: MaterialTapTargetSize.padded,
+                      textStyle: Theme.of(context).textTheme.labelLarge,
+                    ),
                     onPressed: () => _review(context, state, language),
                     icon: const Icon(Icons.fact_check_outlined, size: 20),
                     label: Text(l10n.unitReview),
