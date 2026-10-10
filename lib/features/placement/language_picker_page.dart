@@ -97,10 +97,19 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   final Set<String> _downloadShown = <String>{};
 
   /// Each Try again after a failure, for [UpdateEscape]: of the list of
-  /// courses, of reading the decks, and of each language's download.
+  /// courses, and of reading the decks.
   int _indexRetries = 0;
   int _catalogRetries = 0;
-  final Map<String, int> _downloadRetries = <String, int>{};
+
+  /// Each chosen language's failures in a row, for [UpdateEscape], with
+  /// how many of its decks were on the phone at the last: a failure after
+  /// more decks came in starts again at one. Forgotten once it downloads,
+  /// is cancelled or is no longer chosen ([_watchFailures]).
+  final Map<String, ({int count, int decks})> _failedRuns =
+      <String, ({int count, int decks})>{};
+
+  /// The chosen languages whose download has failed, as last seen.
+  final Set<String> _failing = <String>{};
 
   /// Whether what was chosen here was saved. A language newly chosen but
   /// not saved stops downloading when the page closes.
@@ -120,6 +129,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     // The list of courses, read from GitHub the first time (#210).
     final state = _app = AppScope.read(context);
     final downloads = state.deckDownloads;
+    downloads?.addListener(_watchFailures);
     if (downloads != null && downloads.index == null) {
       WidgetsBinding.instance.addPostFrameCallback(
         (_) => downloads.refreshIndex(),
@@ -128,6 +138,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     for (final code in widget.initialChosen) {
       _startDownload(state, code);
     }
+    _watchFailures();
     _search.addListener(() => setState(() {}));
   }
 
@@ -159,6 +170,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         if (downloads.hasJob(code)) unawaited(downloads.cancel(code));
       }
     }
+    downloads?.removeListener(_watchFailures);
     _search.dispose();
     _scroll.dispose();
     super.dispose();
@@ -190,6 +202,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         downloads.hasJob(code)) {
       unawaited(downloads.cancel(code));
     }
+    _forgetFailures(code);
     setState(() => _ticked = <String>{..._ticked}..remove(code));
     _announce(l10n.pickerAnnounceUnchosen(language.name));
   }
@@ -281,6 +294,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final code = language.code;
     final downloads = state.deckDownloads!;
     final ready = downloads.isReady(code, _spoken);
+    _forgetFailures(code);
     unawaited(downloads.cancel(code));
     // Before its first decks are in, a cancelled language cannot be
     // started, so it is no longer chosen. After, the course works with
@@ -295,8 +309,39 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     );
   }
 
+  /// Counts each chosen language's failures in a row ([_failedRuns]): a
+  /// new failure adds one, unless decks arrived since the last; a download
+  /// that ends without one, finished or cancelled, forgets them.
+  void _watchFailures() {
+    final downloads = _app.deckDownloads;
+    if (downloads == null) return;
+    for (final code in _ticked) {
+      if (downloads.failureOf(code) != null) {
+        if (!_failing.add(code)) continue;
+        final decks =
+            downloads
+                .languageDownload(code, _app.settings.spokenLanguages)
+                ?.decks ??
+            0;
+        final last = _failedRuns[code];
+        _failedRuns[code] = (
+          count: last != null && decks <= last.decks ? last.count + 1 : 1,
+          decks: decks,
+        );
+      } else {
+        _failing.remove(code);
+        if (!downloads.isDownloading(code)) _failedRuns.remove(code);
+      }
+    }
+  }
+
+  /// Forgets [code]'s failures: it is no longer chosen, or was cancelled.
+  void _forgetFailures(String code) {
+    _failing.remove(code);
+    _failedRuns.remove(code);
+  }
+
   void _retry(AppState state, String code) {
-    _downloadRetries[code] = (_downloadRetries[code] ?? 0) + 1;
     final downloads = state.deckDownloads!;
     if (downloads.isReady(code, _spoken)) {
       unawaited(downloads.downloadRest(code, _spoken));
@@ -588,10 +633,11 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         if (state.deckDownloads?.failureOf(code) case final failure?)
           '$code: ${failure.name}',
     ];
-    final retries = <int>[
+    // Each language's own failures in a row: the most of any failing now.
+    final runs = <int>[
       for (final code in _ticked)
         if (state.deckDownloads?.failureOf(code) != null)
-          _downloadRetries[code] ?? 0,
+          _failedRuns[code]?.count ?? 1,
     ];
 
     Widget heading(String text) => Padding(
@@ -762,7 +808,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 children: <Widget>[
                   if (failed.isNotEmpty) ...<Widget>[
                     UpdateEscape(
-                      failures: retries.reduce(math.max) + 1,
+                      failures: runs.reduce(math.max),
                       detail: 'decks of ${failed.join(', ')}',
                     ),
                     const SizedBox(height: 4),

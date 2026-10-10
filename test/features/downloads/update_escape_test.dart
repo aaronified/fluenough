@@ -196,6 +196,41 @@ void main() {
       expect(find.byType(ReportPage), findsOneWidget);
     });
 
+    testWidgets('a language that downloads starts the count again: A fails '
+        'twice, then A comes and B fails, and there is no line', (
+      tester,
+    ) async {
+      // The page itself, as when languages are added: as the app's home it
+      // is rebuilt for each language still missing.
+      remote.failAll = FetchFailure.offline;
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        DownloadPage(languages: const <String>['es', 'hi'], onReady: () {}),
+        state: _app(
+          remote: remote,
+          release: FixedReleaseCheck(const LatestRelease(AppInfo.version)),
+        ),
+      );
+      await tester.pumpAndSettle();
+      final l10n = l10nOf(tester);
+      expect(find.byKey(const ValueKey<String>('failure-es')), findsOneWidget);
+      await _tap(tester, find.text(l10n.commonRetry));
+      expect(find.byKey(const ValueKey<String>('failure-es')), findsOneWidget);
+
+      remote.failAll = null;
+      for (final path in remote.files.keys) {
+        if (path.startsWith('decks/hi/')) {
+          remote.failures[path] = FetchFailure.offline;
+        }
+      }
+      await _tap(tester, find.text(l10n.commonRetry));
+      expect(find.byKey(const ValueKey<String>('failure-hi')), findsOneWidget);
+      expect(find.text(l10n.downloadsKeepsFailing), findsNothing);
+      expect(find.text(l10n.downloadsReportProblem), findsNothing);
+      expect(_check(l10n), findsOneWidget);
+    });
+
     testWidgets('at twice the text size, in dark, fits and meets the '
         'guidelines', (tester) async {
       final semantics = tester.ensureSemantics();
@@ -278,6 +313,75 @@ void main() {
       }
       expect(find.text(l10n.downloadsKeepsFailing), findsOneWidget);
       await _expectCheckWorks(tester, release, newer: true);
+    });
+
+    testWidgets('a language that fails, fails twice more, then gets its '
+        'first decks and fails again, starts the count again', (tester) async {
+      final state = await _pump(
+        tester,
+        _app(
+          remote: remote,
+          release: FixedReleaseCheck(const LatestRelease(AppInfo.version)),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      remote.failAll = FetchFailure.offline;
+      await pickLanguage(tester, 'hi');
+      final retry = find.descendant(
+        of: languageCard('hi'),
+        matching: find.text(l10n.commonRetry),
+      );
+      Future<void> again() async {
+        await scrollToInPicker(tester, retry);
+        await tester.tap(retry);
+        await tester.pumpAndSettle();
+      }
+
+      await again();
+      await again();
+      expect(find.text(l10n.downloadsKeepsFailing), findsOneWidget);
+
+      // The next try gets its first decks in, then fails on the rest.
+      remote.failAll = null;
+      remote.failAfter =
+          remote.asked.where((p) => p != 'decks/index.json').length + 30;
+      await again();
+      final downloads = state.deckDownloads!;
+      expect(downloads.isReady('hi', const <String>['en']), isTrue);
+      expect(downloads.failureOf('hi'), isNotNull);
+      expect(find.text(l10n.downloadsKeepsFailing), findsNothing);
+      expect(_check(l10n), findsOneWidget);
+    });
+
+    testWidgets('one language\'s failures do not count for another', (
+      tester,
+    ) async {
+      await _pump(
+        tester,
+        _app(
+          remote: remote,
+          release: FixedReleaseCheck(const LatestRelease(AppInfo.version)),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      remote.failAll = FetchFailure.offline;
+      await pickLanguage(tester, 'hi');
+      final retry = find.descendant(
+        of: languageCard('hi'),
+        matching: find.text(l10n.commonRetry),
+      );
+      for (var i = 0; i < 2; i++) {
+        await scrollToInPicker(tester, retry);
+        await tester.tap(retry);
+        await tester.pumpAndSettle();
+      }
+      expect(find.text(l10n.downloadsKeepsFailing), findsOneWidget);
+
+      // Un-chosen, its count goes; Spanish failing once shows no line.
+      await pickLanguage(tester, 'hi');
+      await pickLanguage(tester, 'es');
+      expect(_check(l10n), findsOneWidget);
+      expect(find.text(l10n.downloadsKeepsFailing), findsNothing);
     });
 
     testWidgets('decks that cannot be read offer the update check', (
