@@ -35,8 +35,9 @@ import validate_decks as vd  # noqa: E402
 import yaml  # noqa: E402
 
 # The part of a card a review's suggestion names (lib/core/review/
-# deck_review.dart, CardPart) and the field it is in the deck. An example or
-# a picture is left for the owner.
+# deck_review.dart, CardPart) and the field it is in the deck. An example,
+# a picture or a base word's meaning (`base`, with the base's `word`) is
+# left for the owner.
 FIELD_OF_PART = {
     "word": "target",
     "reading": "reading",

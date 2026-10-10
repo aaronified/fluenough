@@ -11,6 +11,7 @@ import '../../ui/widgets/snack.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'how_reviewing_works.dart';
 import 'review_waiting.dart';
+import 'review_words.dart' show hasOrdinaryCards;
 import 'send_reviews_sheet.dart';
 import 'waiting_page.dart';
 
@@ -47,7 +48,10 @@ class ReviewSection extends StatelessWidget {
     final toReview = <String>{
       for (final language in reviewed)
         for (final deck in state.decks)
-          if (deck.language.code == language.code && awaitsReview(state, deck))
+          // A deck of offensive words only is reviewed apart, on purpose.
+          if (deck.language.code == language.code &&
+              awaitsReview(state, deck) &&
+              hasOrdinaryCards(deck))
             deck.id,
     }.length;
     final helped = <String>[

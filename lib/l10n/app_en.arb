@@ -1572,6 +1572,80 @@
   "@unitOpenWord": {
     "description": "What a screen reader hears after a word's row on a unit's screen: tapping it opens the word's card."
   },
+  "cardBases": "{count, plural, =1{Base: {bases}} other{Bases: {bases}}}",
+  "@cardBases": {
+    "description": "On a word's card, after its meaning and notes: the base words of the card's inflected or derived words (the dictionary form and its meaning), so a learner sees where a form comes from. {bases} is one or more cardBase items joined by cardBasesJoin.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      },
+      "bases": {
+        "type": "String",
+        "example": "जाना (jānā) · to go"
+      }
+    }
+  },
+  "cardBase": "{base} · {meaning}",
+  "@cardBase": {
+    "description": "One base word and its meaning on a card's base line, when it has no reading to show.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "ir"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "to go"
+      }
+    }
+  },
+  "cardBaseReading": "{base} ({reading})",
+  "@cardBaseReading": {
+    "description": "One base word and its reading on a card's base line, when the deck gives it no meaning yet.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      },
+      "reading": {
+        "type": "String",
+        "example": "jānā"
+      }
+    }
+  },
+  "cardBaseReadingMeaning": "{base} ({reading}) · {meaning}",
+  "@cardBaseReadingMeaning": {
+    "description": "One base word, its reading in Latin letters and its meaning on a card's base line.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      },
+      "reading": {
+        "type": "String",
+        "example": "jānā"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "to go"
+      }
+    }
+  },
+  "cardBasesJoin": "{first}, {rest}",
+  "@cardBasesJoin": {
+    "description": "Joins two base words on a card's base line. Change the separator if your language uses another.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "रहना (rahnā) · to live"
+      },
+      "rest": {
+        "type": "String",
+        "example": "होना (honā) · to be"
+      }
+    }
+  },
   "wordSheetIpa": "/{ipa}/",
   "@wordSheetIpa": {
     "description": "How a word is said, in the IPA, on its card. The slashes mark IPA; keep them.",
@@ -5986,16 +6060,6 @@
       }
     }
   },
-  "reviewWaitingInDecks": "In {decks}",
-  "@reviewWaitingInDecks": {
-    "description": "Under a row of words waiting: the decks they are in, joined.",
-    "placeholders": {
-      "decks": {
-        "type": "String",
-        "example": "Rude words · Family words"
-      }
-    }
-  },
   "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
   "@reviewWaitingUnsent": {
     "description": "Row of a language on the Waiting for review page; opens the send sheet.",
@@ -6030,65 +6094,165 @@
   "@reviewTurnOn": {
     "description": "Button of the turn-on dialog that turns reviewing on."
   },
-  "reviewHowCodeTitle": "Your rater code",
-  "@reviewHowCodeTitle": {
-    "description": "Step 1 of How reviewing works."
-  },
-  "reviewHowCodeBody": "Turning on reviewing gives you a code, made on this phone. Nothing is sent when you turn it on.",
-  "@reviewHowCodeBody": {
-    "description": "Step 1 of How reviewing works."
-  },
-  "reviewHowCheckTitle": "Check cards",
-  "@reviewHowCheckTitle": {
-    "description": "Step 2 of How reviewing works."
-  },
-  "reviewHowCheckBody": "Open a unit and tap Review. Mark each card that is right, or tap it to suggest a change and say why.",
-  "@reviewHowCheckBody": {
-    "description": "Step 2 of How reviewing works."
-  },
-  "reviewHowSendTitle": "Send by mail",
-  "@reviewHowSendTitle": {
-    "description": "Step 3 of How reviewing works."
-  },
-  "reviewHowSendBody": "Your reviews stay on this phone until you send them. Review as many decks as you like, then tap Send review: one mail takes them all, a file for each deck. Your mail app opens with Fluenough’s address filled in. Read it, then send it. If the mail does not go, tap Send the last mail again in Settings.",
-  "@reviewHowSendBody": {
-    "description": "Step 3 of How reviewing works."
-  },
-  "reviewHowSameTitle": "Always use the same address",
-  "@reviewHowSameTitle": {
-    "description": "Step 4 of How reviewing works."
-  },
-  "reviewHowSameBody": "Send every review from the same mail address. Your code is public, so the Fluenough team goes by the address too. If you change mail address, say so in the mail.",
-  "@reviewHowSameBody": {
-    "description": "Step 4 of How reviewing works."
-  },
-  "reviewHowPublicTitle": "What is public, and thanks",
-  "@reviewHowPublicTitle": {
-    "description": "Step 5 of How reviewing works."
-  },
-  "reviewHowPublicBody": "Fluenough’s public issue list shows your code and the languages you reviewed, so the team knows a review arrived. What you suggest goes into the decks, which are public, with your code, for other reviewers to agree on. Your mail address stays private. When a deck you checked is updated, it lists your code, and the app says thank you.",
-  "@reviewHowPublicBody": {
-    "description": "Step 5 of How reviewing works."
-  },
-  "reviewHowAdult": "Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to native speakers in general, not to you.",
-  "@reviewHowAdult": {
-    "description": "Aside in How reviewing works."
-  },
-  "reviewHowOff": "You can turn reviewing off at any time; your code is kept.",
-  "@reviewHowOff": {
-    "description": "Last line of How reviewing works."
-  },
   "reviewHowGotIt": "Got it",
   "@reviewHowGotIt": {
     "description": "Button that closes How reviewing works."
   },
-  "reviewHowStep": "Step {number}",
-  "@reviewHowStep": {
-    "description": "Read by a screen reader before each step of How reviewing works.",
+  "reviewGuideWhatTitle": "What reviewing is",
+  "@reviewGuideWhatTitle": {
+    "description": "Title of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideWhatBody": "Fluenough teaches from decks of cards: a word, how it is read, what it means, examples. Many decks were written without a native speaker and are marked unreviewed.",
+  "@reviewGuideWhatBody": {
+    "description": "First paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideWhatYou": "You are the check. You tell us which cards are right, which are wrong and what they should say, and how rude a word really sounds to native speakers. A review by a native speaker is the most useful thing anyone can give these decks.",
+  "@reviewGuideWhatYou": {
+    "description": "Second paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCodeTitle": "Your code and languages",
+  "@reviewGuideCodeTitle": {
+    "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCodeBody": "Turning on reviewing makes your rater code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
+  "@reviewGuideCodeBody": {
+    "description": "First paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). FL-XXXX-XXXX-C is the shape of a code, not words: keep it as it is."
+  },
+  "reviewGuideCodeLanguages": "Under Languages you review in Settings, pick your languages. At first these are the languages you speak that the app teaches. You can turn reviewing off whenever you like; your code is kept.",
+  "@reviewGuideCodeLanguages": {
+    "description": "Second paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Languages you review” must match reviewSettingsLanguages."
+  },
+  "reviewGuideToReviewTitle": "What “To review” shows",
+  "@reviewGuideToReviewTitle": {
+    "description": "Title of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “To review” must match pathToReview."
+  },
+  "reviewGuideToReviewBody": "Units on the learning path are marked To review when their deck is not yet signed off by a native speaker, in your languages.",
+  "@reviewGuideToReviewBody": {
+    "description": "First paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “To review” must match pathToReview."
+  },
+  "reviewGuideToReviewWaiting": "Waiting for review in Settings lists, per language, the units and decks still waiting, how many cards are left in each, the offensive words not yet rated, the sound-alike pairs not yet confirmed, and what you have reviewed but not sent.",
+  "@reviewGuideToReviewWaiting": {
+    "description": "Second paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Waiting for review” must match reviewSettingsWaiting."
+  },
+  "reviewGuideCheckTitle": "Check cards, then sign off",
+  "@reviewGuideCheckTitle": {
+    "description": "Title of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCheckBody": "Open a unit and tap Review. Mark each card that is right with Looks right.",
+  "@reviewGuideCheckBody": {
+    "description": "First paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Review” must match unitReview, “Looks right” reviewLooksRight."
+  },
+  "reviewGuideCheckSignOff": "When every card is checked, Sign off becomes available. It says you checked the whole unit.",
+  "@reviewGuideCheckSignOff": {
+    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Sign off” must match reviewSignOffReady."
+  },
+  "reviewGuideSuggestTitle": "Suggest, and answer proposals",
+  "@reviewGuideSuggestTitle": {
+    "description": "Title of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSuggestBody": "If something is wrong, tap the card, choose Suggest a change, pick the part (word, reading, IPA, meaning, notes), write your version and say why. A card keeps one suggestion of yours per part.",
+  "@reviewGuideSuggestBody": {
+    "description": "First paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Suggest a change” must match reviewSuggest."
+  },
+  "reviewGuideSuggestOthers": "Suggestions from other reviewers of your language show on the card. Accept one as written, Edit it into your own proposal, or Reject it. A rejection does not stop a change by itself; it tells the Fluenough team.",
+  "@reviewGuideSuggestOthers": {
+    "description": "Second paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). Accept, Edit and Reject must match reviewProposalAccept, reviewProposalEdit and reviewProposalReject."
+  },
+  "reviewGuideAdultTitle": "Offensive words and sound-alikes",
+  "@reviewGuideAdultTitle": {
+    "description": "Title of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAdultBody": "Offensive words are never in a unit's ordinary review. Each language has its own Offensive words review, under Waiting for review, which you open only if you choose to. It first explains why they are in the app, then asks if you are 18 or over. Rate how offensive a word is to native speakers in general, from 1 to 9, not how it feels to you, and say where you speak the language. Words that sound or look like an offensive one are confirmed or rejected there too.",
+  "@reviewGuideAdultBody": {
+    "description": "First paragraph of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAdultAlike": "For a sound-alike or look-alike pair you confirm, write a short care note, at most 40 letters, that learners will see.",
+  "@reviewGuideAdultAlike": {
+    "description": "Second paragraph of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). It is about checking a word that sounds or looks like a rude one."
+  },
+  "reviewGuideSendTitle": "Send several decks in one mail",
+  "@reviewGuideSendTitle": {
+    "description": "Title of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSendBody": "Reviews stay on your phone until you send them. Tap Send review, leave the decks you want ticked, and your mail app opens with Fluenough’s address and one file per deck ready. Read the mail and send it yourself.",
+  "@reviewGuideSendBody": {
+    "description": "First paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send review” must match reviewSend."
+  },
+  "reviewGuideSendKeep": "Do not change the mail’s subject or the files. They carry your code, language and deck, and the team reads those.",
+  "@reviewGuideSendKeep": {
+    "description": "Second paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSendSame": "Send from the same mail address each time: your first mail ties your code to it, and a mail from another address is flagged for the team to check. If you change address, say so in the mail. If a mail did not go, use Send the last mail again in Settings.",
+  "@reviewGuideSendSame": {
+    "description": "Third paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send the last mail again” must match reviewSettingsSendAgain."
+  },
+  "reviewGuidePublicTitle": "What is public, what is private",
+  "@reviewGuidePublicTitle": {
+    "description": "Title of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuidePublicBody": "Public: your rater code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
+  "@reviewGuidePublicBody": {
+    "description": "First paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuidePublicPrivate": "Private: your mail address. It is never written to the public issues.",
+  "@reviewGuidePublicPrivate": {
+    "description": "Second paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeTitle": "How changes reach learners",
+  "@reviewGuideAgreeTitle": {
+    "description": "Title of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeBody": "Your suggestions go into the decks as proposed changes soon after your mail arrives, for other reviewers of the language to see. Learners never see a proposal.",
+  "@reviewGuideAgreeBody": {
+    "description": "First paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeCount": "{count, plural, =1{When one other reviewer accepts a change exactly as written, it goes to learners} other{When {count} other reviewers accept a change exactly as written, it goes to learners}}, usually within an hour or two, after the automatic checks pass. The Fluenough team sets this number, and may raise it later.",
+  "@reviewGuideAgreeCount": {
+    "description": "Second paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). count is how many reviewers other than the proposer must accept a change.",
     "placeholders": {
-      "number": {
+      "count": {
         "type": "int",
         "example": "1"
+      }
+    }
+  },
+  "reviewGuideAgreeMore": "If several proposals concern the same part of a card, the first to be agreed wins and the others are closed. The team can undo any change. Until the team has set up the review bot, your reviews are filed for the team to read.",
+  "@reviewGuideAgreeMore": {
+    "description": "Third paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideThanksTitle": "Thank you",
+  "@reviewGuideThanksTitle": {
+    "description": "Title of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideThanksBody": "When a deck you checked is updated, it lists your code, and its unit says it was checked by your code and how many others. Settings lists Decks you helped build.",
+  "@reviewGuideThanksBody": {
+    "description": "First paragraph of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Decks you helped build” must match reviewSettingsHelped."
+  },
+  "reviewGuideThanksHelp": "Questions? Write to {address}, from the address you review with.",
+  "@reviewGuideThanksHelp": {
+    "description": "Second paragraph of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same).",
+    "placeholders": {
+      "address": {
+        "type": "String",
+        "example": "fluenough@gmail.com"
+      }
+    }
+  },
+  "reviewGuidePosition": "Step {current} of {total}: {title}",
+  "@reviewGuidePosition": {
+    "description": "Read by a screen reader for the progress dots of How reviewing works, whenever the step changes.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      },
+      "title": {
+        "type": "String",
+        "example": "Your code and languages"
       }
     }
   },
@@ -6270,13 +6434,157 @@
       }
     }
   },
-  "reviewRudeHidden": "{count, plural, =1{1 rude word is hidden} other{{count} rude words are hidden}}. Rude words show only with adult content on (18+).",
-  "@reviewRudeHidden": {
-    "description": "On the review screen of a unit with rude words while adult content is off.",
+  "reviewOffensiveApart": "{count, plural, =1{1 offensive word in this unit is reviewed apart} other{{count} offensive words in this unit are reviewed apart}}, only when you choose to: under Offensive words in Waiting for review.",
+  "@reviewOffensiveApart": {
+    "description": "On a unit's review screen, in place of its offensive words, which never show there. The words are not named.",
     "placeholders": {
       "count": {
         "type": "int",
         "example": "3"
+      }
+    }
+  },
+  "reviewOffensiveTitle": "Offensive words",
+  "@reviewOffensiveTitle": {
+    "description": "Row of a language on the Waiting for review page that opens its offensive words, reviewed apart and only on purpose."
+  },
+  "reviewOffensiveNoneWaiting": "None waiting to be rated or checked",
+  "@reviewOffensiveNoneWaiting": {
+    "description": "Under Offensive words on the Waiting for review page, when every offensive word in a deck waiting for review is rated, and every word like one has its pair confirmed or rejected."
+  },
+  "reviewOffensivePageTitle": "Offensive words in {language}",
+  "@reviewOffensivePageTitle": {
+    "description": "Title of a language's Offensive words review.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveWhyTitle": "Why offensive words are here",
+  "@reviewOffensiveWhyTitle": {
+    "description": "Heading of the first screen of the Offensive words review, shown before any word."
+  },
+  "reviewOffensiveWhyRange": "Offensive words are not all alike. Some are deeply offensive, the kind no newspaper would print. Others are mild, and some are fine between friends while from a stranger they insult.",
+  "@reviewOffensiveWhyRange": {
+    "description": "First screen of the Offensive words review, before any word: the range of offensiveness."
+  },
+  "reviewOffensiveWhyUnderstand": "Fluenough teaches them so that learners understand abuse when they hear it, and never say a word without knowing what it means. Learners only ever recognise them: they are never asked to type or say one.",
+  "@reviewOffensiveWhyUnderstand": {
+    "description": "First screen of the Offensive words review: why the words are taught."
+  },
+  "reviewOffensiveWhyCulture": "How strong a word is depends on the language and the culture. A word that is mild in one can be far stronger in another, even where it means the same, and speakers from different regions can disagree.",
+  "@reviewOffensiveWhyCulture": {
+    "description": "First screen of the Offensive words review: cultural differences in severity."
+  },
+  "reviewOffensiveWhyRate": "So native speakers rate them. Rate each word for how offensive it is to native speakers in general, from 1 to 9, not to you, and say where you speak the language. Several speakers rate every word, and the middle rating sets its level.",
+  "@reviewOffensiveWhyRate": {
+    "description": "First screen of the Offensive words review: what the reviewer is asked to do."
+  },
+  "reviewOffensiveWhyApart": "These words never appear in the ordinary review of a deck or unit, and nor does the offensive word an ordinary one sounds or looks like. They wait here until you choose to check them.",
+  "@reviewOffensiveWhyApart": {
+    "description": "First screen of the Offensive words review, last line, in a quieter style."
+  },
+  "reviewOffensiveNotNow": "Not now",
+  "@reviewOffensiveNotNow": {
+    "description": "Button on the first two screens of the Offensive words review: leaves without showing any word."
+  },
+  "reviewOffensiveAgeBody": "The next screen shows offensive words in {language}, written in full, some of them deeply offensive. Go on only if you are 18 or over.",
+  "@reviewOffensiveAgeBody": {
+    "description": "Second screen of the Offensive words review, under Are you 18 or over?, asked every time before the words show.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveWordsInfo": "Rate each word for how offensive it is to native speakers in general, not to you. Tap a word to see it whole. Ratings are sent with your review, by mail.",
+  "@reviewOffensiveWordsInfo": {
+    "description": "Info line at the top of a language's offensive words, once the reviewer has confirmed their age."
+  },
+  "reviewOffensiveProgress": "{rated} of {total} rated",
+  "@reviewOffensiveProgress": {
+    "description": "How many offensive words are rated, in a language's Offensive words review: at the top, and under each deck's name.",
+    "placeholders": {
+      "rated": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "reviewOffensiveNone": "No offensive words in {language} yet.",
+  "@reviewOffensiveNone": {
+    "description": "A language's Offensive words review when its decks have none.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveRegion": "Where you speak it: {region}",
+  "@reviewOffensiveRegion": {
+    "description": "Under a rated offensive word: the region the reviewer said they speak the language in, or Elsewhere.",
+    "placeholders": {
+      "region": {
+        "type": "String",
+        "example": "Telangana"
+      }
+    }
+  },
+  "reviewOffensivePairsTitle": "Words like an offensive one",
+  "@reviewOffensivePairsTitle": {
+    "description": "Heading in a language's Offensive words review, after the offensive words: ordinary words that sound or look like an offensive one, whose pair the reviewer confirms or rejects."
+  },
+  "reviewOffensivePairsInfo": "Each of these ordinary words sounds or looks like an offensive one. Learners are told to take care, and never shown the offensive word unless they choose to see it. Confirm a pair if the risk is real, or reject it.",
+  "@reviewOffensivePairsInfo": {
+    "description": "Info line under Words like an offensive one, in the Offensive words review."
+  },
+  "reviewOffensivePairsProgress": "{checked} of {total} checked",
+  "@reviewOffensivePairsProgress": {
+    "description": "Beside Words like an offensive one: how many of the pairs the reviewer has confirmed or rejected.",
+    "placeholders": {
+      "checked": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewAlikeCheckShort": "Check",
+  "@reviewAlikeCheckShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, before its pair is confirmed or rejected: opens Check this pair."
+  },
+  "reviewAlikeCheckedShort": "Checked",
+  "@reviewAlikeCheckedShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, once its pair is confirmed or rejected: opens Check this pair again."
+  },
+  "reviewAlikeCheckFor": "Check the pair for {meaning}",
+  "@reviewAlikeCheckFor": {
+    "description": "Read by a screen reader for the Check button on a word like an offensive one. Starts with the button's word, then names the word by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
+      }
+    }
+  },
+  "reviewAlikeCheckedFor": "Checked the pair for {meaning}. Tap to change it",
+  "@reviewAlikeCheckedFor": {
+    "description": "Read by a screen reader for the Checked button on a word like an offensive one.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
       }
     }
   },
@@ -6410,6 +6718,34 @@
   "@reviewPartPicture": {
     "description": "Part of a card: its picture."
   },
+  "reviewPartBase": "Base word",
+  "@reviewPartBase": {
+    "description": "Part of a card: the meaning of one of its base words (the dictionary form of an inflected word in it). Names the part where a suggestion replaces another."
+  },
+  "reviewPartBaseOf": "Base: {base}",
+  "@reviewPartBaseOf": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card, the base named.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
+  "reviewPartBaseOfWord": "Base of {word}: {base}",
+  "@reviewPartBaseOfWord": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card when another of its words has the same base: the word as it stands in the card, then its base.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "गया"
+      },
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
   "reviewSuggestNow": "Now",
   "@reviewSuggestNow": {
     "description": "Over what the chosen part of the card says now."
@@ -6525,14 +6861,6 @@
         "example": "1"
       }
     }
-  },
-  "reviewHowProposalsTitle": "Agree on changes",
-  "@reviewHowProposalsTitle": {
-    "description": "Step 3 of How reviewing works: proposed changes (ADR-0038)."
-  },
-  "reviewHowProposalsBody": "What reviewers suggest shows on the card for the others who review the language. Accept a change as it is, edit it into your own, or reject it. Once enough reviewers accept a change, learners get it. Learners never see a change before then.",
-  "@reviewHowProposalsBody": {
-    "description": "Step 3 of How reviewing works."
   },
   "reviewSave": "Save",
   "@reviewSave": {

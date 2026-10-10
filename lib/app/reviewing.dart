@@ -46,6 +46,13 @@ class Reviewing {
     required this._log,
   });
 
+  /// How many reviewers other than the proposer must accept a change before
+  /// learners get it: the review bot's `REVIEW_AGREEMENTS_NEEDED` when the
+  /// owner has not set it (tools/review_bot.py). "How reviewing works" and
+  /// docs/REVIEWING.md both state it; the app cannot read the owner's
+  /// setting, so a raised number is changed here too.
+  static const int agreementsNeeded = 1;
+
   final SettingsNotifier settings;
   final DateTime Function() _clock;
   final Random _random;
