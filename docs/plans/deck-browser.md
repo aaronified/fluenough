@@ -3,7 +3,9 @@
 It began on 2026-10-06 as a deck browser on GitHub Pages with a Google Form
 and a Sheet. On 2026-10-09 the owner moved the review into the app, sent by
 mail, and dropped the Sheet. **What stands is "Review in the app, by mail"
-below** (tracker #403; the app side merged in #436, the mail sender check in #439, and proposals in #444). The sections
+below** (tracker #403; built: the app side in #436, the mail sender check in #439, proposals in #441 and #444,
+checked-by per card in #449 and #454, offensive words reviewed apart in #428 and #451, and the reviewer
+onboarding in #409 and #453; left: the Pages site, #404 and #405). The sections
 about the Pages site, the form and the Sheet are kept for what they decided,
 and each says where it is superseded.
 
@@ -12,7 +14,7 @@ Settings and the phone makes their rater code; they review on the screens
 that already show decks and cards; one mail carries a review file per deck,
 with the code and the languages, to the Fluenough address; the hourly mail
 job opens one issue per mail with only the code and languages; the owner
-reads the mail and the decks are updated with him. No Form, no Sheet.
+reads the mail and the decks are updated with him (since #441, by the review bot). No Form, no Sheet.
 Whether a public deck browser on Pages survives at all is for the owner to
 decide (#404, #405). **Since 2026-10-09 (#441, ADR-0038)** the decks are no
 longer updated by hand from the mail: a review's suggestions become
@@ -225,8 +227,8 @@ Settled with the owner, 2026-10-09:
   tickets. so i know that a reviewer has sent something and then consult
   the mail." One issue per review mail received: the rater code, the
   language and decks reviewed, counts at most; no suggestion text.
-- **Reviewers change the decks, with no wait** (**built**, 2026-10-09, on
-  `feat/review-proposals`: ADR-0038, the `proposed` format, reviewer mode's
+- **Reviewers change the decks, with no wait** (**built**, 2026-10-09, in #444,
+  closes #441: ADR-0038, the `proposed` format, reviewer mode's
   Accept, Edit and Reject, the bot in `tools/review_bot.py`, and the owner's
   guide, `docs/review-bot-setup.md`; it waits for the App's secrets) (owner, 2026-10-09:
   "Make it totally automated then. The first review auto merges the PR
@@ -280,7 +282,7 @@ Settled with the owner, 2026-10-09:
   and sound-alikes, sending in one mail, what is public and private, how
   agreement reaches learners, and the thanks. The same steps stay
   readable later from "How reviewing works". `docs/REVIEWING.md` holds
-  the same text for anyone sent a link (#409).
+  the same text for anyone sent a link (#409). Built in #453.
 - **Offensive words are reviewed apart, and only on purpose** (owner,
   2026-10-10: "group offensive words separately for review and only
   review them when the reviewer intentionally wants to check them. The
@@ -299,7 +301,7 @@ Settled with the owner, 2026-10-09:
     and the same word can be far stronger or milder from one language
     or culture to another;
   - it asks for the 18+ confirmation, then shows the words with the 1 to
-    9 rating and region (#428).
+    9 rating and region (#428). Built in #451.
   - a word that sounds or looks like an offensive one never names it in
     the ordinary review, adult content on or off: it shows the warning a
     learner sees, and its pair waits in the same Offensive words review,
@@ -328,6 +330,7 @@ Settled with the owner, 2026-10-09:
   need it. Like proposals, a `checked_by` change alone doesn't prompt
   learners for a deck update; it arrives with the next real one.
   Sign-offs feed the thank-you, which already lists rater codes.
+  Built in #454 (closes #449).
 - **Reviewer mode is hidden until a code is set;** everyone sees only
   "Become a reviewer" in Settings.
 
