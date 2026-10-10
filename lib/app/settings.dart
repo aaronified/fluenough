@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
+import '../core/review/review_pairs.dart';
 import '../core/updates/release_check.dart';
 import 'language_choice.dart';
 import 'skill.dart';
@@ -118,6 +119,8 @@ class SettingsNotifier extends ChangeNotifier {
   bool _reviewIntroShown = false;
   Reviews _reviews = const Reviews();
   Set<String>? _reviewLanguages;
+  Set<String>? _reviewPairs;
+  Map<String, bool> _scriptsRead = const <String, bool>{};
 
   /// Settings' "Review decks" (docs/plans/deck-browser.md): whether this
   /// profile checks decks and sends its reviews by mail. Turning it off
@@ -169,6 +172,33 @@ class SettingsNotifier extends ChangeNotifier {
       return;
     }
     _reviewLanguages = next;
+    notifyListeners();
+  }
+
+  /// The target–native pairs this reviewer reviews (#462), each written
+  /// `bn/en`, as they ticked them in Languages you review, or null before
+  /// they ticked any: then [reviewLanguages], an earlier choice by
+  /// language, stands, turned into its pairs. Kept apart from
+  /// [reviewLanguages], so an older version still reads that.
+  Set<String>? get reviewPairs => _reviewPairs;
+  set reviewPairs(Set<String>? keys) {
+    final next = keys == null ? null : Set<String>.unmodifiable(keys);
+    final now = _reviewPairs;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _reviewPairs = next;
+    notifyListeners();
+  }
+
+  /// Whether the learner reads each language's script, by code, as they
+  /// said in Languages you know (#462). A language they know but have not
+  /// answered for is missing; until every one is answered, no pair can be
+  /// reviewed.
+  Map<String, bool> get scriptsRead => _scriptsRead;
+  set scriptsRead(Map<String, bool> answers) {
+    if (mapEquals(answers, _scriptsRead)) return;
+    _scriptsRead = Map<String, bool>.unmodifiable(answers);
     notifyListeners();
   }
 
@@ -647,6 +677,12 @@ class SettingsNotifier extends ChangeNotifier {
       null => 'default',
       final codes => (codes.toList()..sort()).join(','),
     },
+    // Not chosen yet is "default", like review_languages.
+    'review_pairs': switch (_reviewPairs) {
+      null => 'default',
+      final keys => (keys.toList()..sort()).join(','),
+    },
+    'scripts_read': jsonEncode(_scriptsRead),
     'course_natives': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _courseNatives.entries)
         key: <String, Object>{
@@ -826,6 +862,21 @@ class SettingsNotifier extends ChangeNotifier {
               for (final c in v.split(','))
                 if (code.hasMatch(c)) c,
             };
+    }
+    if (pick('review_pairs', (t) => t) case final v?) {
+      reviewPairs = v == 'default'
+          ? null
+          : <String>{
+              for (final k in v.split(','))
+                if (ReviewPair.parse(k) != null) k,
+            };
+    }
+    if (pick('scripts_read', _parseJsonMap) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      scriptsRead = <String, bool>{
+        for (final MapEntry(:key, :value) in v.entries)
+          if (code.hasMatch(key) && value is bool) key: value,
+      };
     }
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
