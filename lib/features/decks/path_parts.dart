@@ -308,10 +308,21 @@ class AchievementMark extends StatelessWidget {
 
 /// The start of a level on the path: its code, what it lets the learner
 /// do, and its size. Highlighted while the learner is in it.
+///
+/// With [onToggle], tapping it folds or unfolds the level's units (#465):
+/// an arrow shows which, and a screen reader hears it as expanded or
+/// collapsed.
 class LevelHeader extends StatelessWidget {
-  const LevelHeader({super.key, required this.step});
+  const LevelHeader({
+    super.key,
+    required this.step,
+    this.expanded = true,
+    this.onToggle,
+  });
 
   final LevelStep step;
+  final bool expanded;
+  final VoidCallback? onToggle;
 
   @override
   Widget build(BuildContext context) {
@@ -326,62 +337,80 @@ class LevelHeader extends StatelessWidget {
       if (step.words > 0) l10n.pathUnitWords(step.words),
       if (step.coming > 0) l10n.pathLevelComing(step.coming),
     ]);
+    final radius = BorderRadius.circular(AppRadii.group);
     return Semantics(
       header: true,
+      expanded: onToggle == null ? null : expanded,
       child: MergeSemantics(
-        child: Container(
-          padding: const EdgeInsetsDirectional.fromSTEB(14, 14, 16, 14),
-          decoration: BoxDecoration(
-            color: current
-                ? scheme.primaryContainer
-                : scheme.surfaceContainerHigh,
-            borderRadius: BorderRadius.circular(AppRadii.group),
-          ),
-          child: Row(
-            children: <Widget>[
-              Container(
-                constraints: const BoxConstraints(minWidth: 48, minHeight: 36),
-                alignment: Alignment.center,
-                padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-                decoration: BoxDecoration(
-                  color: current
-                      ? scheme.onPrimaryContainer
-                      : scheme.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                child: Text(
-                  step.level.label,
-                  style: theme.textTheme.titleSmall!.copyWith(
-                    fontWeight: FontWeight.w800,
-                    color: current
-                        ? scheme.primaryContainer
-                        : scheme.onSurfaceVariant,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      levelLine(l10n, step.level),
-                      style: theme.textTheme.titleMedium!.copyWith(
-                        color: fg,
-                        fontWeight: FontWeight.w700,
+        child: Material(
+          color: current
+              ? scheme.primaryContainer
+              : scheme.surfaceContainerHigh,
+          borderRadius: radius,
+          child: InkWell(
+            borderRadius: radius,
+            onTap: onToggle,
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(14, 14, 16, 14),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    constraints: const BoxConstraints(
+                      minWidth: 48,
+                      minHeight: 36,
+                    ),
+                    alignment: Alignment.center,
+                    padding: const EdgeInsetsDirectional.symmetric(
+                      horizontal: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: current
+                          ? scheme.onPrimaryContainer
+                          : scheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Text(
+                      step.level.label,
+                      style: theme.textTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w800,
+                        color: current
+                            ? scheme.primaryContainer
+                            : scheme.onSurfaceVariant,
                       ),
                     ),
-                    const SizedBox(height: 2),
-                    Text(
-                      line,
-                      style: theme.textTheme.bodySmall!.copyWith(
-                        color: current ? fg : scheme.onSurfaceVariant,
-                      ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          levelLine(l10n, step.level),
+                          style: theme.textTheme.titleMedium!.copyWith(
+                            color: fg,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          line,
+                          style: theme.textTheme.bodySmall!.copyWith(
+                            color: current ? fg : scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (onToggle != null) ...<Widget>[
+                    const SizedBox(width: 8),
+                    Icon(
+                      expanded ? Icons.expand_less : Icons.expand_more,
+                      color: current ? fg : scheme.onSurfaceVariant,
                     ),
                   ],
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

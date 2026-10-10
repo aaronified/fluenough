@@ -104,8 +104,27 @@ class _DecksPageState extends State<DecksPage> {
     ];
   }
 
-  /// Scrolls the path to the unit up next.
+  /// The level holding the unit up next on the path shown, as (language,
+  /// level), or null where there is none.
+  (String, String)? _currentLevel;
+
+  /// Scrolls the path to the unit up next, unfolding its level first if the
+  /// learner folded it (#465).
   void _toUpNext({bool animate = true}) {
+    if (_currentLevel case (final language, final level)) {
+      final settings = AppScope.read(context).settings;
+      if (settings.isLevelCollapsed(language, level)) {
+        settings.setLevelCollapsed(language, level, false);
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _scrollToUpNext(animate: animate);
+        });
+        return;
+      }
+    }
+    _scrollToUpNext(animate: animate);
+  }
+
+  void _scrollToUpNext({required bool animate}) {
     final target = _upNext.currentContext;
     if (target == null) return;
     Scrollable.ensureVisible(
@@ -330,6 +349,14 @@ class _DecksPageState extends State<DecksPage> {
           answers: RecentAnswers(state.progress.log),
         );
         if (view == null) return const SizedBox.shrink();
+        _currentLevel = switch (view.steps
+            .whereType<LevelStep>()
+            .where((l) => l.current)
+            .firstOrNull) {
+          final level? => (code, level.level.label),
+          null => null,
+        };
+        // The level up next starts unfolded: _toUpNext unfolds it.
         if (_openedAt != code) {
           _openedAt = code;
           WidgetsBinding.instance.addPostFrameCallback((_) {
