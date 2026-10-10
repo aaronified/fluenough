@@ -206,36 +206,35 @@ void main() {
         );
       }
 
-      // Another card, never answered, shows no difficulty in its row.
-      final other = state.deckById('hi-en-market')!.cards[1];
-      await scrollTo(tester, find.text(l10n.inspectId(other.id)));
-      final row = find.ancestor(
+      // Another card, never answered, shows no difficulty in its own row,
+      // opened: the page still has the one heading, the first card's.
+      final other = state
+          .deckById('hi-en-market')!
+          .cards
+          .firstWhere((c) => c.id != card.id && c.notes.isNotEmpty);
+      await open(tester, other.id);
+      final otherRow = find.ancestor(
         of: find.text(l10n.inspectId(other.id)),
-        matching: find.byWidgetPredicate(
-          (w) => w is ListTile || w is ExpansionTile,
-        ),
+        matching: find.byType(ExpansionTile),
       );
-      if (tester.any(
-        find.ancestor(
-          of: find.text(l10n.inspectId(other.id)),
-          matching: find.byType(ExpansionTile),
-        ),
-      )) {
-        await open(tester, other.id);
-      }
+      expect(otherRow, findsOneWidget);
       expect(
         find.descendant(
-          of: row.first,
+          of: otherRow,
           matching: find.text(l10n.inspectDifficulty),
         ),
         findsNothing,
       );
       expect(
         find.descendant(
-          of: row.first,
+          of: otherRow,
           matching: find.textContaining(' of 10, '),
         ),
         findsNothing,
+      );
+      expect(
+        find.text(l10n.inspectDifficulty, skipOffstage: false),
+        findsOneWidget,
       );
     });
 
@@ -275,13 +274,76 @@ void main() {
       expect(find.textContaining('Grammar produced: '), findsOneWidget);
     });
 
+    /// Whether [id]'s row opens in place, scrolled to.
+    Future<bool> opens(WidgetTester tester, String id) async {
+      final l10n = l10nOf(tester);
+      await scrollTo(tester, find.text(l10n.inspectId(id)));
+      return tester.any(
+        find.ancestor(
+          of: find.text(l10n.inspectId(id)),
+          matching: find.byType(ExpansionTile),
+        ),
+      );
+    }
+
     testWidgets('a card never answered shows no difficulty, and opens only '
         'for what it has', (tester) async {
       usePhone(tester);
-      await pumpScreen(tester, const InspectPage(deckId: 'hi-en-market'));
+      final probe = AppState.test();
+      await probe.load();
+      final cards = probe.deckById('hi-en-market')!.cards;
+      await pumpScreen(
+        tester,
+        const InspectPage(deckId: 'hi-en-market'),
+        state: probe,
+      );
       final l10n = l10nOf(tester);
+
+      // A card with notes opens, to its notes and no difficulty.
+      final noted = cards.firstWhere((c) => c.notes.isNotEmpty);
+      expect(await opens(tester, noted.id), isTrue);
+      await open(tester, noted.id);
+      await scrollTo(tester, find.textContaining(noted.notes.first.text));
       expect(find.text(l10n.inspectDifficulty), findsNothing);
       expect(find.textContaining(' of 10, '), findsNothing);
+
+      // A grammar cell with nothing more to show does not open at all.
+      const grammar = 'hi-en-grammar-present';
+      await pumpScreen(
+        tester,
+        const InspectPage(deckId: grammar),
+        state: probe,
+      );
+      String? plain;
+      for (final c in probe.deckById(grammar)!.cards) {
+        if (!await opens(tester, c.id)) {
+          plain = c.id;
+          break;
+        }
+      }
+      expect(plain, isNotNull, reason: 'the deck has a cell with no extras');
+      expect(find.text(l10n.inspectDifficulty), findsNothing);
+      expect(find.textContaining(' of 10, '), findsNothing);
+
+      // Answered once, that same cell opens, to its difficulty alone.
+      final progress = answered(grammar, plain!, const [
+        (DrillMode.grammar, 4),
+      ]);
+      await pumpScreen(
+        tester,
+        const InspectPage(deckId: grammar),
+        state: AppState.test(progress: progress),
+      );
+      expect(await opens(tester, plain), isTrue);
+      await open(tester, plain);
+      final d = SkillDifficulty(
+        DrillMode.grammar,
+        progress.stateOf(plain, DrillMode.grammar)!.difficulty,
+      );
+      final text = l10n.inspectDifficultyIn('grammar', d.shown, d.lean.name);
+      await scrollTo(tester, find.text(text));
+      expect(find.text(l10n.inspectDifficulty), findsOneWidget);
+      expect(find.textContaining(' of 10, '), findsOneWidget);
     });
 
     for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
