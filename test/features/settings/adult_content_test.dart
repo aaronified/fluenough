@@ -77,8 +77,8 @@ void main() {
     expect(find.text(l10n.settingsAdultOff), findsOneWidget);
   });
 
-  testWidgets('with it on, a reviewer sees the rude word and can rate it; '
-      'off again hides it at once', (tester) async {
+  testWidgets('on or off, a unit\'s review never shows a rude word: it is '
+      'reviewed apart, on purpose', (tester) async {
     usePhone(tester);
     tester.view.physicalSize = const Size(390 * 3, 1600 * 3);
     final state = await pumpScreen(
@@ -88,21 +88,14 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final rate = find.widgetWithText(FilledButton, l10n.reviewRateShort);
-    expect(find.text(l10n.reviewRudeHidden(1)), findsOneWidget);
-    expect(find.text('idiot, good-for-nothing'), findsNothing);
-    expect(rate, findsNothing);
-
-    state.settings.adultContent = true;
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewRudeHidden(1)), findsNothing);
-    expect(find.text('idiot, good-for-nothing'), findsOneWidget);
-    expect(rate, findsOneWidget);
-
-    state.settings.adultContent = false;
-    await tester.pumpAndSettle();
-    expect(find.text('idiot, good-for-nothing'), findsNothing);
-    expect(rate, findsNothing);
-    expect(find.text(l10n.reviewRudeHidden(1)), findsOneWidget);
+    for (final on in <bool>[false, true, false]) {
+      state.settings.adultContent = on;
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.reviewOffensiveApart(1)), findsOneWidget);
+      expect(find.text('idiot, good-for-nothing'), findsNothing);
+      expect(find.text('వెధవ'), findsNothing);
+      expect(rate, findsNothing);
+    }
   });
 
   testWidgets('with it on, the warning on a word like a rude one names it; '
