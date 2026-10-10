@@ -16,7 +16,6 @@ thing anyone can give these decks.
 ## Start
 
 1. Open **Settings**, find the **Reviewing** group and turn on **Review decks**.
-   (The app has no button called "Become a reviewer"; this switch is it.)
 2. The app asks first, then makes your **rater code** on your phone, like
    `FL-XXXX-XXXX-C`. Nothing is sent when you turn reviewing on. You can copy
    the code from Settings.
@@ -67,8 +66,8 @@ ready. Read the mail and send it yourself.
 - **Do not change the mail's subject or the files.** The files carry your code,
   language and deck, and the team reads those. Please send without editing them.
 - **Send from the same mail address each time.** Your first mail ties your code
-  to that address. A later mail from another address is held for the team to
-  look at. If you change address, say so in the mail.
+  to that address. A later mail from another address is flagged for the team to
+  check. If you change address, say so in the mail.
 - The phone cannot tell whether you pressed send. If the mail did not go, use
   **Send the last mail again** in Settings.
 
@@ -88,7 +87,8 @@ Private: your **mail address**. It is never written to the public issues.
   mail arrives, for other reviewers of the language to see. Learners never see
   a proposal.
 - When enough **other** reviewers accept a change exactly as written, it goes
-  to learners, usually within the hour. The number is
+  to learners, usually within an hour or two of the agreeing mail (after the
+  automatic checks pass). The number is
   `REVIEW_AGREEMENTS_NEEDED`, set by the owner, and is 1 by default: one other
   reviewer is enough. It may be raised later.
 - If several proposals concern the same part of a card, the first to be agreed
@@ -99,8 +99,8 @@ Private: your **mail address**. It is never written to the public issues.
 
 ## Thanks
 
-When a deck you checked is updated, it lists your code, and a unit says
-"Checked by" you. Settings lists **Decks you helped build**.
+When a deck you checked is updated, it lists your code, and a unit
+says "Checked by <your code> and N others". Settings lists **Decks you helped build**.
 
 ## Help
 
