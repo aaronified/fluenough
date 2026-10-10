@@ -1,0 +1,159 @@
+schema: 1
+id: "kn-home"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0201"
+  - id: "kn-0380"
+    target: "ಕೋಣೆ"
+    reading: "kōṇe"
+    ipa: "koːɳe"
+    alt_target: ["ರೂಮು"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0381"
+    target: "ಅಡುಗೆಮನೆ"
+    reading: "aḍugemane"
+    ipa: "aɖuɡemane"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0382"
+    target: "ಮಲಗುವ ಕೋಣೆ"
+    reading: "malaguva kōṇe"
+    ipa: "malaɡuʋa koːɳe"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮಲಗುವ", ref: "kn-0441" }
+  - id: "kn-0383"
+    target: "ಹಾಲ್"
+    reading: "hāl"
+    ipa: "haːl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0384"
+    target: "ಬಚ್ಚಲುಮನೆ"
+    reading: "baccalumane"
+    ipa: "batʃtʃalumane"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0385"
+    target: "ಬಾಗಿಲು"
+    picture: "🚪"
+    reading: "bāgilu"
+    ipa: "baːɡilu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0386"
+    target: "ಕಿಟಕಿ"
+    picture: "🪟"
+    reading: "kiṭaki"
+    ipa: "kiʈaki"
+    pos: "noun"
+  - id: "kn-0387"
+    target: "ಮೆಟ್ಟಿಲು"
+    reading: "meṭṭilu"
+    ipa: "meʈʈilu"
+    pos: "noun"
+  - id: "kn-0388"
+    target: "ಮಹಡಿ"
+    reading: "mahaḍi"
+    ipa: "mahaɖi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0389"
+    target: "ಬೀಗದ ಕೈ"
+    picture: "🔑"
+    reading: "bīgada kai"
+    ipa: "biːɡad̪a kai"
+    alt_target: ["ಕೀ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಬೀಗದ", base: "ಬೀಗ", reading: "bīga" }
+  - id: "kn-0390"
+    target: "ಮಂಚ"
+    picture: "🛏"
+    reading: "mañca"
+    ipa: "maɲtʃa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0391"
+    target: "ಕುರ್ಚಿ"
+    picture: "🪑"
+    reading: "kurci"
+    ipa: "kurtʃi"
+    pos: "noun"
+  - id: "kn-0392"
+    target: "ಮೇಜು"
+    reading: "mēju"
+    ipa: "meːdʒu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0393"
+    target: "ಫ್ಯಾನು"
+    reading: "fyānu"
+    ipa: "fjaːnu"
+    alt_target: ["ಫ್ಯಾನ್"]
+    pos: "noun"
+  - id: "kn-0394"
+    target: "ದೀಪ"
+    picture: "🪔"
+    reading: "dīpa"
+    ipa: "d̪iːpa"
+    alt_target: ["ಲೈಟು"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0395"
+    target: "ಅಕ್ಕಪಕ್ಕದವರು"
+    reading: "akkapakkadavaru"
+    ipa: "akkapakkad̪aʋaru"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "kn-0345"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0396"
+    target: "ಫ್ಲಾಟ್"
+    reading: "flāṭ"
+    ipa: "flaːʈ"
+    pos: "noun"
+  - id: "kn-0397"
+    target: "ಬೀದಿ"
+    reading: "bīdi"
+    ipa: "biːd̪i"
+    pos: "noun"
+  - id: "kn-0398"
+    target: "ಮನೆಯ ಮುಂದೆ ಒಂದು ಪಾರ್ಕ್ ಇದೆ."
+    reading: "maneya munde ondu pārk ide."
+    ipa: "maneja mund̪e ond̪u paːrk id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಮನೆಯ", ref: "kn-0201" }
+      - { word: "ಪಾರ್ಕ್", base: "ಪಾರ್ಕ್", reading: "pārk" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-0399"
+    target: "ನಮ್ಮ ಬೀದಿ ತುಂಬಾ ಶಾಂತವಾಗಿದೆ."
+    reading: "namma bīdi tumbā śāntavāgide."
+    ipa: "namma biːd̪i t̪umbaː ʃaːnt̪aʋaːɡid̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನಮ್ಮ", base: "ನಾವು", reading: "nāvu" }
+      - { word: "ತುಂಬಾ", base: "ತುಂಬಾ", reading: "tumbā" }
+      - { word: "ಶಾಂತವಾಗಿದೆ", base: "ಶಾಂತ", reading: "śānta" }

@@ -1,0 +1,27 @@
+schema: 1
+id: "mr-en-grammar-irregular"
+kind: "layer"
+core: "mr-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs"
+license: "CC0-1.0"
+description: "The common verbs whose past or polite request does not follow the pattern. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do; to make"
+    "ghene": "to take"
+    "dene": "to give"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "hone": "to become; to happen"
+    "lihine": "to write"
+    "dhune": "to wash"
+    "saangne": "to tell"
+    "mhanne": "to say"
+  notes: "The past masculine is the form for तो (to) with a verb that takes no object, तो गेला (to gelā), he went. A verb that takes an object agrees with the object instead: त्याने चहा केला (tyāne cahā kelā), he made tea (चहा (cahā) is masculine); त्याने पोळी केली (tyāne poḷi keli), he made a chapati (पोळी (poḷi) is feminine). The polite request goes with तुम्ही (tumhi): या (yā), please come; to a friend, the bare stem: ये (ye)."

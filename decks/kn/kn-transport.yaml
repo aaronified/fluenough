@@ -1,0 +1,111 @@
+schema: 1
+id: "kn-transport"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-0342"
+    target: "ಬಸ್ಸು"
+    picture: "🚌"
+    reading: "bassu"
+    ipa: "bassu"
+    alt_target: ["ಬಸ್"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0343"
+    target: "ಆಟೋ"
+    picture: "🛺"
+    reading: "āṭō"
+    ipa: "aːʈoː"
+    pos: "noun"
+  - id: "kn-0344"
+    target: "ಟ್ಯಾಕ್ಸಿ"
+    picture: "🚕"
+    reading: "ṭyāksi"
+    ipa: "ʈjaːksi"
+    alt_target: ["ಕ್ಯಾಬ್"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0345"
+    target: "ಬಾಡಿಗೆ"
+    reading: "bāḍige"
+    ipa: "baːɖiɡe"
+    pos: "noun"
+  - id: "kn-0346"
+    target: "ಮೀಟರ್ ಹಾಕಿ."
+    reading: "mīṭar hāki."
+    ipa: "miːʈar haːki"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಮೀಟರ್", base: "ಮೀಟರ್", reading: "mīṭar" }
+      - { word: "ಹಾಕಿ", base: "ಹಾಕು", reading: "hāku" }
+  - id: "kn-0347"
+    target: "ನಾನು ರೈಲು ನಿಲ್ದಾಣಕ್ಕೆ ಹೋಗಬೇಕು."
+    reading: "nānu railu nildāṇakke hōgabēku."
+    ipa: "naːnu railu nild̪aːɳakke hoːɡabeːku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ನಿಲ್ದಾಣಕ್ಕೆ", ref: "kn-0350" }
+      - { word: "ಹೋಗಬೇಕು", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-0348"
+    target: "ಎಷ್ಟು ಹೊತ್ತು ಆಗುತ್ತದೆ?"
+    reading: "eṣṭu hottu āguttade?"
+    ipa: "eʂʈu hot̪t̪u aːɡut̪t̪ad̪e"
+    alt_target: ["ಎಷ್ಟು ಹೊತ್ತು ಆಗುತ್ತೆ?"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಹೊತ್ತು", base: "ಹೊತ್ತು", reading: "hottu" }
+      - { word: "ಆಗುತ್ತದೆ", base: "ಆಗು", reading: "āgu" }
+  - id: "kn-0349"
+    target: "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ."
+    reading: "illi nillisi."
+    ipa: "illi nillisi"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಲ್ಲಿಸಿ", base: "ನಿಲ್ಲಿಸು", reading: "nillisu" }
+  - id: "kn-0350"
+    target: "ನಿಲ್ದಾಣ"
+    picture: "🚉"
+    reading: "nildāṇa"
+    ipa: "nild̪aːɳa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0351"
+    target: "ರೈಲು"
+    picture: "🚆"
+    reading: "railu"
+    ipa: "railu"
+    pos: "noun"
+  - id: "kn-0352"
+    target: "ಟಿಕೆಟ್"
+    picture: "🎫"
+    reading: "ṭikeṭ"
+    ipa: "ʈikeʈ"
+    pos: "noun"
+  - id: "kn-0353"
+    target: "ಸೀಟು"
+    picture: "💺"
+    reading: "sīṭu"
+    ipa: "siːʈu"
+    alt_target: ["ಸೀಟ್"]
+    pos: "noun"
+  - id: "kn-0354"
+    target: "ಹೋಗೋಣ"
+    reading: "hōgōṇa"
+    ipa: "hoːɡoːɳa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }

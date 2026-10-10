@@ -1,0 +1,57 @@
+schema: 1
+id: "hi-help"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner"]
+cards:
+  - id: "hi-0352"
+    target: "मदद"
+    reading: "madad"
+    ipa: "məd̪əd̪"
+    pos: "noun"
+    gender: "f"
+  - id: "hi-0356"
+    target: "पुलिस"
+    picture: "👮"
+    reading: "pulis"
+    ipa: "pʊlɪs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0357"
+    target: "डॉक्टर"
+    picture: "🧑‍⚕"
+    reading: "ḍôkṭar"
+    ipa: "ɖɔkʈər"
+    alt_target: ["डाक्टर"]
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0358"
+    target: "अस्पताल"
+    picture: "🏥"
+    reading: "aspatāl"
+    ipa: "əspət̪aːl"
+    pos: "noun"
+    gender: "m"
+  - id: "hi-0359"
+    target: "दवाई"
+    picture: "💊"
+    reading: "davāī"
+    ipa: "d̪əʋaːiː"
+    alt_target: ["दवा"]
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0360"
+    target: "दर्द"
+    reading: "dard"
+    ipa: "d̪ərd̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }

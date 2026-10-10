@@ -1,0 +1,113 @@
+schema: 1
+id: "kn-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-0314"
+    target: "ತರಕಾರಿ"
+    reading: "tarakāri"
+    ipa: "t̪arakaːri"
+    pos: "noun"
+  - id: "kn-0315"
+    target: "ಆಲೂಗಡ್ಡೆ"
+    picture: "🥔"
+    reading: "ālūgaḍḍe"
+    ipa: "aːluːɡaɖɖe"
+    pos: "noun"
+  - id: "kn-0316"
+    target: "ಈರುಳ್ಳಿ"
+    picture: "🧅"
+    reading: "īruḷḷi"
+    ipa: "iːruɭɭi"
+    pos: "noun"
+  - id: "kn-0317"
+    target: "ಟೊಮೆಟೊ"
+    picture: "🍅"
+    reading: "ṭomeṭo"
+    ipa: "ʈomeʈo"
+    alt_target: ["ಟೊಮ್ಯಾಟೋ", "ಟೊಮೇಟೊ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0318"
+    target: "ಮೆಣಸಿನಕಾಯಿ"
+    picture: "🌶"
+    reading: "meṇasinakāyi"
+    ipa: "meɳasinakaːji"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0319"
+    target: "ಬೆಳ್ಳುಳ್ಳಿ"
+    picture: "🧄"
+    reading: "beḷḷuḷḷi"
+    ipa: "beɭɭuɭɭi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0320"
+    target: "ಮೀನು"
+    picture: "🐟"
+    reading: "mīnu"
+    ipa: "miːnu"
+    pos: "noun"
+  - id: "kn-0321"
+    target: "ಕುರಿ ಮಾಂಸ"
+    reading: "kuri māmsa"
+    ipa: "kuri maːmsa"
+    alt_target: ["ಮಟನ್"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಕುರಿ", base: "ಕುರಿ", reading: "kuri" }
+      - { word: "ಮಾಂಸ", base: "ಮಾಂಸ", reading: "māmsa" }
+  - id: "kn-0322"
+    target: "ಕೋಳಿ"
+    picture: "🐔"
+    reading: "kōḷi"
+    ipa: "koːɭi"
+    alt_target: ["ಚಿಕನ್"]
+    pos: "noun"
+  - id: "kn-0323"
+    target: "ಮೊಟ್ಟೆ"
+    picture: "🥚"
+    reading: "moṭṭe"
+    ipa: "moʈʈe"
+    pos: "noun"
+  - ref: "kn-0120"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0324"
+    target: "ಅಕ್ಕಿ"
+    reading: "akki"
+    ipa: "akki"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0325"
+    target: "ಬೇಳೆ"
+    reading: "bēḷe"
+    ipa: "beːɭe"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0326"
+    target: "ಮೊಸರು"
+    reading: "mosaru"
+    ipa: "mosaru"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0327"
+    target: "ಬಾಳೆಹಣ್ಣು"
+    picture: "🍌"
+    reading: "bāḷehaṇṇu"
+    ipa: "baːɭehaɳɳu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }

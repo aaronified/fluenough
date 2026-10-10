@@ -1,0 +1,22 @@
+schema: 1
+id: "gu-en-grammar-past-more"
+kind: "layer"
+core: "gu-grammar-past-more"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past tense with an object"
+license: "CC0-1.0"
+description: "I ate, she saw: in the past a verb with an object agrees with the object, and the doer takes -એ (-e). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Simple past, verbs with an object"
+  slot_name: "the object"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "khaavun": "to eat"
+    "piivun": "to drink"
+    "levun": "to take; to buy"
+    "karvun": "to do"
+    "jovun": "to see"
+    "aapvun": "to give"
+    "vaanchvun": "to read"
+  notes: "With an object, the doer takes -એ (-e): હું (hum̐) → મેં (mem̐), તું (tum̐) → તેં (tem̐), તે (te) → તેણે (teṇe), તેઓ (teo) → તેમણે (temṇe), મીના (minā) → મીનાએ (mināe); અમે (ame) and તમે (tame) stay the same. The verb then agrees with the object, not with the doer: મેં ચા પીધી (mem̐ cā pidhi) (ચા (cā) is feminine), મેં પાણી પીધું (neuter), મેં રોટલો ખાધો (masculine). With no object named, the verb is neuter: મેં ખાધું (mem̐ khādhum̐), I ate. A woman and a man say it alike."

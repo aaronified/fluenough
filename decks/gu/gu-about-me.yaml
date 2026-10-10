@@ -1,0 +1,116 @@
+schema: 1
+id: "gu-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-0319"
+    target: "નામ"
+    reading: "nām"
+    ipa: "nam"
+    pos: "noun"
+    gender: "n"
+  - id: "gu-0320"
+    target: "હું લંડનથી આવ્યો છું."
+    reading: "hum̐ laṇḍanthi āvyo chum̐."
+    ipa: "ɦũ ləɳɖənt̪ʰi aʋjo tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "લંડનથી", base: "લંડન", reading: "laṇḍan" }
+      - { word: "આવ્યો", ref: "gu-0509" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0321"
+    target: "હું અમદાવાદમાં રહું છું."
+    reading: "hum̐ amdāvādmām̐ rahum̐ chum̐."
+    ipa: "ɦũ əmd̪aʋad̪mã rəɦũ tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "અમદાવાદમાં", base: "અમદાવાદ", reading: "amdāvād" }
+      - { word: "રહું", base: "રહેવું", reading: "rahevum̐" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0322"
+    target: "હું શિક્ષક છું."
+    reading: "hum̐ śikśak chum̐."
+    ipa: "ɦũ ʃikʃək tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0323"
+    target: "મારી ઉંમર ત્રીસ વર્ષ છે."
+    reading: "māri ummar tris varś che."
+    ipa: "mari ummər t̪ris ʋərʃ tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "મારી", base: "મારું", reading: "mārum̐" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0324"
+    target: "ઉંમર"
+    reading: "ummar"
+    ipa: "ummər"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0325"
+    target: "હું પરણેલો છું."
+    reading: "hum̐ parṇelo chum̐."
+    ipa: "ɦũ pərɳelo tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "પરણેલો", base: "પરણવું", reading: "parṇavum̐" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0326"
+    target: "હું શાકાહારી છું."
+    reading: "hum̐ śākāhāri chum̐."
+    ipa: "ɦũ ʃakaɦari tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "શાકાહારી", base: "શાકાહારી", reading: "śākāhāri" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0327"
+    target: "હું અંગ્રેજી બોલું છું."
+    reading: "hum̐ aṅgreji bolum̐ chum̐."
+    ipa: "ɦũ əŋɡredʒi bolũ tʃʰũ"
+    pos: "phrase"
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "અંગ્રેજી", base: "અંગ્રેજી", reading: "aṅgreji" }
+      - { word: "બોલું", ref: "gu-0512" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0329"
+    target: "દેશ"
+    reading: "deś"
+    ipa: "d̪eʃ"
+    pos: "noun"
+    gender: "m"
+  - id: "gu-0330"
+    target: "હું અહીં ફરવા આવ્યો છું."
+    reading: "hum̐ ahim̐ pharvā āvyo chum̐."
+    ipa: "ɦũ əɦĩ pʰərʋa aʋjo tʃʰũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "અહીં", base: "અહીં", reading: "ahim̐" }
+      - { word: "ફરવા", base: "ફરવું", reading: "pharvum̐" }
+      - { word: "આવ્યો", ref: "gu-0509" }
+      - { word: "છું", base: "હોવું", reading: "hovum̐" }

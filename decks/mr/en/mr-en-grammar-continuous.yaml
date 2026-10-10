@@ -1,0 +1,19 @@
+schema: 1
+id: "mr-en-grammar-continuous"
+kind: "layer"
+core: "mr-grammar-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present continuous"
+license: "CC0-1.0"
+description: "I am going, she is coming: what is happening now, in its full form and in the short forms of speech. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Present continuous"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "shikne": "to learn"
+  notes: "The stem with -त (-ta), then आहे (āhe) in its person: मी जात आहे (mi jāt āhe), I'm going. The full form does not show gender. Speech runs the two together, and then gender shows: a man says जातोय (jātoy), a woman जातेय (jātey); to a man तू जातोयस (tu jātoyas), to a woman जातेयस (jāteyas). The full form comes first here, and the short forms are accepted too."

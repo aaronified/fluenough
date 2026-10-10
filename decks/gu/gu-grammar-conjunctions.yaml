@@ -1,0 +1,95 @@
+schema: 1
+id: "gu-grammar-conjunctions"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "gu-0579"
+    target: "અને"
+    reading: "ane"
+    ipa: "əne"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "gu-0055"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0580"
+    target: "કે"
+    reading: "ke"
+    ipa: "ke"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0581"
+    target: "અથવા"
+    reading: "athvā"
+    ipa: "ət̪ʰʋa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0582"
+    target: "કારણ કે"
+    reading: "kāraṇ ke"
+    ipa: "karəɳ ke"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કારણ", base: "કારણ", reading: "kāraṇ" }
+  - id: "gu-0583"
+    target: "એટલે"
+    reading: "eṭle"
+    ipa: "eʈle"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0584"
+    target: "જો"
+    reading: "jo"
+    ipa: "dʒo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0585"
+    target: "જો વરસાદ પડશે, તો હું નહીં આવું."
+    reading: "jo varsād paḍśe, to hum̐ nahim̐ āvum̐."
+    ipa: "dʒo ʋərsad̪ pəɖʃe t̪o ɦũ nəɦĩ aʋũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "વરસાદ", base: "વરસાદ", reading: "varsād" }
+      - { word: "પડશે", base: "પડવું", reading: "paḍvum̐" }
+      - { word: "તો", base: "તો", reading: "to" }
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "નહીં", base: "નહીં", reading: "nahim̐" }
+      - { word: "આવું", ref: "gu-0509" }
+  - id: "gu-0586"
+    target: "જ્યારે હું આવીશ, ત્યારે વાત કરીશું."
+    reading: "jyāre hum̐ āviś, tyāre vāt kariśum̐."
+    ipa: "dʒjare ɦũ aʋiʃ t̪jare ʋat̪ kəriʃũ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "જ્યારે", base: "જ્યારે", reading: "jyāre" }
+      - { word: "હું", base: "હું", reading: "hum̐" }
+      - { word: "આવીશ", ref: "gu-0509" }
+      - { word: "ત્યારે", base: "ત્યારે", reading: "tyāre" }
+      - { word: "વાત", base: "વાત", reading: "vāt" }
+      - { word: "કરીશું", base: "કરવું", reading: "karvum̐" }
+  - id: "gu-0587"
+    target: "નહીંતર"
+    reading: "nahintar"
+    ipa: "nəɦint̪ər"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0588"
+    target: "તોપણ"
+    reading: "topaṇ"
+    ipa: "t̪opəɳ"
+    pos: "other"

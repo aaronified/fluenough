@@ -1,0 +1,175 @@
+schema: 1
+id: "as-family"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "as-0171"
+  - id: "as-0178"
+    target: "মা-দেউতা"
+    reading: "mā-deutā"
+    ipa: "madeuta"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0179"
+    target: "দেউতা"
+    reading: "deutā"
+    ipa: "deuta"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0180"
+    target: "মা"
+    reading: "mā"
+    ipa: "ma"
+    alt_target: ["আই"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0181"
+    target: "ককাই"
+    reading: "kôkāi"
+    ipa: "kɔkai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-0155"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0182"
+    target: "বাই"
+    reading: "bāi"
+    ipa: "bai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-0156"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0183"
+    target: "ভাই-ককাই"
+    reading: "bhāi-kôkāi"
+    ipa: "bʱaikɔkai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0184"
+    target: "ল'ৰা"
+    reading: "lorā"
+    ipa: "loɹa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0185"
+    target: "ছোৱালী"
+    reading: "suwāli"
+    ipa: "sʊwali"
+    alt_target: ["জীয়ৰী"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0186"
+    target: "ল'ৰা-ছোৱালী"
+    reading: "lorā-suwāli"
+    ipa: "loɹasʊwali"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0187"
+    target: "স্বামী"
+    reading: "xāmi"
+    ipa: "xami"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0188"
+    target: "ঘৈণী"
+    reading: "ghôini"
+    ipa: "ɡʱɔini"
+    alt_target: ["পত্নী"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-0159"
+  - ref: "as-0160"
+  - ref: "as-0157"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "as-0158"
+  - id: "as-0189"
+    target: "বৰদেউতা"
+    reading: "bôrdeutā"
+    ipa: "bɔɹdeuta"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0190"
+    target: "মামা"
+    reading: "māmā"
+    ipa: "mama"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0191"
+    target: "মাহী"
+    reading: "māhi"
+    ipa: "mahi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0192"
+    target: "পেহী"
+    reading: "pehi"
+    ipa: "pehi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0193"
+    target: "শহুৰ"
+    reading: "xohur"
+    ipa: "xohuɹ"
+    pos: "noun"
+  - id: "as-0194"
+    target: "শাহু"
+    reading: "xāhu"
+    ipa: "xahu"
+    pos: "noun"
+  - id: "as-0195"
+    target: "আত্মীয়"
+    reading: "ātmiyô"
+    ipa: "atmijɔ"
+    pos: "noun"
+  - id: "as-0196"
+    target: "মোৰ দুজন ভাইটি আছে।"
+    reading: "mur duzôn bhāiti āse."
+    ipa: "mʊɹ duzɔn bʱaiti ase"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "দুজন", ref: "as-0223" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
+  - id: "as-0197"
+    target: "আপোনাৰ ভাই-ককাই আছে নেকি?"
+    reading: "āpunār bhāi-kôkāi āse neki?"
+    ipa: "apʊnaɹ bʱaikɔkai ase neki"
+    pos: "phrase"
+    bases:
+      - { word: "আপোনাৰ", ref: "as-0127" }
+      - { word: "আছে", base: "আছ", reading: "āsô" }
+  - id: "as-0198"
+    target: "মোৰ বিয়া হৈছে।"
+    reading: "mur biyā hôise."
+    ipa: "mʊɹ bija hɔise"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মোৰ", base: "মই", reading: "moi" }
+      - { word: "বিয়া", base: "বিয়া", reading: "biyā" }
+      - { word: "হৈছে", base: "হোৱা", reading: "huwā" }

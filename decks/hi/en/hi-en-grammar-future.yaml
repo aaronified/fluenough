@@ -1,0 +1,16 @@
+schema: 1
+id: "hi-en-grammar-future"
+kind: "layer"
+core: "hi-grammar-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Future tense"
+license: "CC0-1.0"
+description: "I will go, they will speak."
+pattern:
+  name: "Future"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaanaa": "to go"
+    "bolnaa": "to speak"
+  notes: "The stem, a vowel for the person (-ऊँ (-ūm̐), -ओ (-ō), -ए (-ē), -एँ (-ēm̐)), then -गा (-gā), -गी (-gī) or -गे (-gē) for gender and number. Some writers spell जाएगा (jāēgā) as जायेगा (jāyēgā)."

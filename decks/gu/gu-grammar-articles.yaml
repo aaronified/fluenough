@@ -1,0 +1,60 @@
+schema: 1
+id: "gu-grammar-articles"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "gu-0385"
+    target: "ચોપડી ટેબલ પર છે."
+    reading: "copḍi ṭebal par che."
+    ipa: "tʃopɖi ʈebəl pər tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ચોપડી", base: "ચોપડી", reading: "copḍi" }
+      - { word: "પર", base: "પર", reading: "par" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0386"
+    target: "એક છોકરો આવ્યો."
+    reading: "ek chokro āvyo."
+    ipa: "ek tʃʰokro aʋjo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "આવ્યો", ref: "gu-0509" }
+  - ref: "gu-0244"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0387"
+    target: "એક ચા આપજો."
+    reading: "ek cā āpjo."
+    ipa: "ek tʃa apdʒo"
+    pos: "phrase"
+    bases:
+      - { word: "આપજો", base: "આપવું", reading: "āpvum̐" }
+  - id: "gu-0388"
+    target: "કોઈ આવ્યું છે."
+    reading: "koi āvyum̐ che."
+    ipa: "koi aʋjũ tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કોઈ", base: "કોઈ", reading: "koi" }
+      - { word: "આવ્યું", ref: "gu-0509" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0389"
+    target: "કોઈ સારી દુકાન બતાવો."
+    reading: "koi sāri dukān batāvo."
+    ipa: "koi sari d̪ukan bət̪aʋo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કોઈ", base: "કોઈ", reading: "koi" }
+      - { word: "સારી", base: "સારું", reading: "sārum̐" }
+      - { word: "બતાવો", base: "બતાવવું", reading: "batāvvum̐" }

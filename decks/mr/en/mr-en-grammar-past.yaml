@@ -1,0 +1,19 @@
+schema: 1
+id: "mr-en-grammar-past"
+kind: "layer"
+core: "mr-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past tense"
+license: "CC0-1.0"
+description: "I went, she came: the simple past of verbs without an object, by person and gender. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Simple past, verbs without an object"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "basne": "to sit"
+    "uthne": "to get up"
+  notes: "The stem, then -ल- (-la-), then an ending that agrees with the doer: a man says मी गेलो (mi gelo), a woman मी गेले (mi gele); to a man तू गेलास (tu gelās), to a woman तू गेलीस (tu gelis); तो गेला (to gelā), ती गेली (ti geli), ते (it) गेले (gele). आम्ही (āmhi) takes -लो (-lo), and तुम्ही (tumhi) -लात (-lāt), often shortened to -ला (-lā). जाणे (jāṇe) and येणे (yeṇe) have stems of their own: गेला (gelā), आला (ālā). With an object the rule is different: see Pitfalls."

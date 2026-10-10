@@ -1,0 +1,51 @@
+schema: 1
+id: "as-help"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC0-1.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-0421"
+    target: "সহায়"
+    reading: "xôhāy"
+    ipa: "xɔhaj"
+    pos: "noun"
+  - id: "as-0424"
+    target: "অলপ ৰ'ব!"
+    reading: "ôlôp robô!"
+    ipa: "ɔlɔp ɹobɔ"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "অলপ", base: "অলপ", reading: "ôlôp" }
+      - { word: "ৰ'ব", base: "ৰোৱা", reading: "ruwā" }
+  - ref: "as-0212"
+  - ref: "as-0211"
+  - id: "as-0425"
+    target: "হস্পিতাল"
+    picture: "🏥"
+    reading: "hospitāl"
+    ipa: "hospital"
+    alt_target: ["চিকিৎসালয়"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0426"
+    target: "দৰব"
+    picture: "💊"
+    reading: "dôrôb"
+    ipa: "dɔɹɔb"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-0427"
+    target: "বিষ"
+    reading: "bix"
+    ipa: "bix"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }

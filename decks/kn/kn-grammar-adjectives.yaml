@@ -1,0 +1,98 @@
+schema: 1
+id: "kn-grammar-adjectives"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "kn-0400"
+    target: "ಒಳ್ಳೆಯ"
+    reading: "oḷḷeya"
+    ipa: "oɭɭeja"
+    alt_target: ["ಒಳ್ಳೆ"]
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0401"
+    target: "ಕೆಟ್ಟ"
+    reading: "keṭṭa"
+    ipa: "keʈʈa"
+    pos: "adj"
+  - id: "kn-0402"
+    target: "ದೊಡ್ಡ"
+    reading: "doḍḍa"
+    ipa: "d̪oɖɖa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0403"
+    target: "ಚಿಕ್ಕ"
+    reading: "cikka"
+    ipa: "tʃikka"
+    pos: "adj"
+  - id: "kn-0404"
+    target: "ಹೊಸ"
+    reading: "hosa"
+    ipa: "hosa"
+    pos: "adj"
+  - id: "kn-0405"
+    target: "ಹಳೆಯ"
+    reading: "haḷeya"
+    ipa: "haɭeja"
+    alt_target: ["ಹಳೆ"]
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0406"
+    target: "ಬಿಸಿ"
+    reading: "bisi"
+    ipa: "bisi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0407"
+    target: "ತಣ್ಣನೆಯ"
+    reading: "taṇṇaneya"
+    ipa: "t̪aɳɳaneja"
+    pos: "adj"
+  - id: "kn-0408"
+    target: "ಸುಂದರ"
+    reading: "sundara"
+    ipa: "sund̪ara"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0409"
+    target: "ಸ್ವಚ್ಛ"
+    reading: "svaccha"
+    ipa: "sʋatʃtʃʰa"
+    pos: "adj"
+  - id: "kn-0410"
+    target: "ಇದು ಒಳ್ಳೆಯ ಪುಸ್ತಕ."
+    reading: "idu oḷḷeya pustaka."
+    ipa: "id̪u oɭɭeja pust̪aka"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", base: "ಇದು", reading: "idu" }
+      - { word: "ಪುಸ್ತಕ", base: "ಪುಸ್ತಕ", reading: "pustaka" }
+  - id: "kn-0411"
+    target: "ಈ ಕೋಣೆ ದೊಡ್ಡದಾಗಿದೆ."
+    reading: "ī kōṇe doḍḍadāgide."
+    ipa: "iː koːɳe d̪oɖɖad̪aːɡid̪e"
+    alt_target: ["ಈ ಕೋಣೆ ದೊಡ್ಡದು."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ದೊಡ್ಡದಾಗಿದೆ", ref: "kn-0402" }
+  - id: "kn-0412"
+    target: "ಕಾಫಿ ತುಂಬಾ ಬಿಸಿಯಾಗಿದೆ."
+    reading: "kāfi tumbā bisiyāgide."
+    ipa: "kaːfi t̪umbaː bisijaːɡid̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ತುಂಬಾ", base: "ತುಂಬಾ", reading: "tumbā" }
+      - { word: "ಬಿಸಿಯಾಗಿದೆ", ref: "kn-0406" }

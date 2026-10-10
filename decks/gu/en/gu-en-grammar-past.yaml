@@ -1,0 +1,19 @@
+schema: 1
+id: "gu-en-grammar-past"
+kind: "layer"
+core: "gu-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past tense"
+license: "CC0-1.0"
+description: "I came, she went: the simple past of verbs without an object, which agrees with the doer's gender and number. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Simple past, verbs without an object"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "javun": "to go"
+    "aavvun": "to come"
+    "uuthvun": "to get up"
+    "besvun": "to sit"
+  notes: "With a verb that takes no object, the past agrees with the doer like an adjective: -યો (m), -ઈ (f), -યું (n), -યા (men), -યાં (a mixed group, or a woman spoken of with respect). It shows no person: હું ગયો (hum̐ gayo), તે ગયો (te gayo). જવું (javum̐) and બેસવું (besvum̐) are irregular: ગયો (gayo), બેઠો (beṭho). Add છું (chum̐) or છે (che) for 'have': હું આવ્યો છું (hum̐ āvyo chum̐), I have come. With an object the rule is different: see the next deck."

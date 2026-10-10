@@ -1,0 +1,20 @@
+schema: 1
+id: "mr-en-grammar-negative"
+kind: "layer"
+core: "mr-grammar-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Don't and won't"
+license: "CC0-1.0"
+description: "I don't go, she won't come: नाही (nāhi) after the verb, taking the person's ending. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Negative"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaat-naahii": "not to go, as a habit"
+    "karat-naahii": "not to do, as a habit"
+    "khaat-naahii": "not to eat, as a habit"
+    "jaanaar-naahii": "not to go, later"
+    "yenaar-naahii": "not to come, later"
+  notes: "'Don't' is the stem with -त (-ta), then नाही (nāhi): मी जात नाही (mi jāt nāhi), I don't go. 'Won't' is the -णार (-ṇār) form, then नाही (nāhi): मी जाणार नाही (mi jāṇār nāhi), I won't go. Neither shows gender. नाही (nāhi) takes -स (-sa) for तू (tu) and -त (-ta) for they: तू जात नाहीस (tu jāt nāhis), ते जात नाहीत (te jāt nāhit). A request uses नको (nako) and नका (nakā) instead: जाऊ नका (jāu nakā), please don't go. The past negative is the past with नाही (nāhi): मी गेलो नाही (mi gelo nāhi), I didn't go."

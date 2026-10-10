@@ -1,0 +1,99 @@
+schema: 1
+id: "kn-grammar-can-must"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC0-1.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "kn-0571"
+    target: "ನನಗೆ ಕನ್ನಡ ಮಾತಾಡಲು ಬರುತ್ತದೆ."
+    reading: "nanage kannaḍa mātāḍalu baruttade."
+    ipa: "nanaɡe kannaɖa maːt̪aːɖalu barut̪t̪ad̪e"
+    alt_target: ["ನಾನು ಕನ್ನಡ ಮಾತಾಡಬಲ್ಲೆ.", "ನಂಗೆ ಕನ್ನಡ ಮಾತಾಡಕ್ಕೆ ಬರುತ್ತೆ."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಕನ್ನಡ", base: "ಕನ್ನಡ", reading: "kannaḍa" }
+      - { word: "ಮಾತಾಡಲು", base: "ಮಾತಾಡು", reading: "mātāḍu" }
+  - id: "kn-0572"
+    target: "ನಿಮಗೆ ನಾಳೆ ಬರಲು ಆಗುತ್ತದೆಯೇ?"
+    reading: "nimage nāḷe baralu āguttadeyē?"
+    ipa: "nimaɡe naːɭe baralu aːɡut̪t̪ad̪ejeː"
+    alt_target: ["ನಾಳೆ ಬರಕ್ಕಾಗುತ್ತಾ?"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನಿಮಗೆ", ref: "kn-0143" }
+      - { word: "ಬರಲು", base: "ಬರು", reading: "baru" }
+      - { word: "ಆಗುತ್ತದೆಯೇ", base: "ಆಗು", reading: "āgu" }
+  - id: "kn-0573"
+    target: "ನನಗೆ ಬರಲು ಆಗುವುದಿಲ್ಲ."
+    reading: "nanage baralu āguvudilla."
+    ipa: "nanaɡe baralu aːɡuʋud̪illa"
+    alt_target: ["ನಂಗೆ ಬರಕ್ಕಾಗಲ್ಲ."]
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಬರಲು", base: "ಬರು", reading: "baru" }
+      - { word: "ಆಗುವುದಿಲ್ಲ", base: "ಆಗು", reading: "āgu" }
+  - id: "kn-0574"
+    target: "ನನಗೆ ಈಜು ಬರುತ್ತದೆ."
+    reading: "nanage īju baruttade."
+    ipa: "nanaɡe iːdʒu barut̪t̪ad̪e"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಈಜು", base: "ಈಜು", reading: "īju" }
+  - ref: "kn-0149"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0575"
+    target: "ನೀವು ಒಳಗೆ ಬರಬಹುದು."
+    reading: "nīvu oḷage barabahudu."
+    ipa: "niːʋu oɭaɡe barabahud̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಒಳಗೆ", base: "ಒಳಗೆ", reading: "oḷage" }
+      - { word: "ಬರಬಹುದು", base: "ಬರು", reading: "baru" }
+  - id: "kn-0576"
+    target: "ಬರಬಹುದಾ?"
+    reading: "barabahudā?"
+    ipa: "barabahud̪aː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "kn-0577"
+    target: "ಇಲ್ಲಿ ಫೋಟೋ ತೆಗೆಯಬಾರದು."
+    reading: "illi fōṭō tegeyabāradu."
+    ipa: "illi foːʈoː t̪eɡejabaːrad̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ಫೋಟೋ", base: "ಫೋಟೋ", reading: "fōṭō" }
+      - { word: "ತೆಗೆಯಬಾರದು", base: "ತೆಗೆ", reading: "tege" }
+  - ref: "kn-0538"
+  - id: "kn-0578"
+    target: "ನೀವು ನಾಳೆ ಬರಬೇಕು."
+    reading: "nīvu nāḷe barabēku."
+    ipa: "niːʋu naːɭe barabeːku"
+    pos: "phrase"
+    bases:
+      - { word: "ಬರಬೇಕು", base: "ಬರು", reading: "baru" }
+  - id: "kn-0579"
+    target: "ನಾನು ಹೋಗಬೇಕಾಗಿಲ್ಲ."
+    reading: "nānu hōgabēkāgilla."
+    ipa: "naːnu hoːɡabeːkaːɡilla"
+    alt_target: ["ನಾನು ಹೋಗಬೇಕಿಲ್ಲ."]
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಹೋಗಬೇಕಾಗಿಲ್ಲ", base: "ಹೋಗು", reading: "hōgu" }

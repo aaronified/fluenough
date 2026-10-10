@@ -1,0 +1,131 @@
+schema: 1
+id: "es-en-core-100"
+kind: "layer"
+core: "es-core-100"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Spanish Core"
+license: "CC0-1.0"
+description: "High-frequency Spanish nouns, verbs, adjectives and courtesy phrases. A starting point rather than a complete course."
+cards:
+  "es-0001":
+    native: "the man"
+    bases:
+      "el": "the"
+      "hombre": "man"
+  "es-0002":
+    native: "the woman"
+    bases:
+      "la": "the"
+      "mujer": "woman"
+  "es-0003":
+    native: "the boy"
+    alt_native: ["the child"]
+    bases:
+      "el": "the"
+      "niño": "boy"
+  "es-0004":
+    native: "the girl"
+    bases:
+      "la": "the"
+      "niña": "girl"
+  "es-0005":
+    native: "the friend"
+    notes:
+      "n1": "la amiga when the friend is female."
+    bases:
+      "el": "the"
+      "amigo": "friend"
+  "es-0006":
+    native: "the house"
+    alt_native: ["the home"]
+    examples:
+      "La casa es muy grande.":
+        native: "The house is very big."
+        bases:
+          "La": "the"
+          "casa": "house"
+          "muy": "very"
+    bases:
+      "la": "the"
+      "casa": "house"
+  "es-0007":
+    native: "the door"
+    bases:
+      "la": "the"
+      "puerta": "door"
+  "es-0008":
+    native: "the window"
+    bases:
+      "la": "the"
+      "ventana": "window"
+  "es-0009":
+    native: "the table"
+    bases:
+      "la": "the"
+      "mesa": "table"
+  "es-0010":
+    native: "the chair"
+    bases:
+      "la": "the"
+      "silla": "chair"
+  "es-0011":
+    native: "the book"
+    bases:
+      "el": "the"
+      "libro": "book"
+  "es-0013":
+    native: "the bread"
+    bases:
+      "el": "the"
+      "pan": "bread"
+  "es-0014":
+    native: "the milk"
+    bases:
+      "la": "the"
+      "leche": "milk"
+  "es-0016":
+    native: "the city"
+    bases:
+      "la": "the"
+      "ciudad": "city"
+  "es-0018":
+    native: "the country"
+    bases:
+      "el": "the"
+      "país": "country"
+  "es-0019":
+    native: "the day"
+    notes:
+      "n1": "Masculine despite ending in -a."
+    bases:
+      "el": "the"
+      "día": "day"
+  "es-0020":
+    native: "the night"
+    bases:
+      "la": "the"
+      "noche": "night"
+  "es-0021":
+    native: "the year"
+    bases:
+      "el": "the"
+      "año": "year"
+  "es-0025":
+    native: "to do"
+    alt_native: ["to make"]
+  "es-0029":
+    native: "to drink"
+  "es-0030":
+    native: "to live"
+  "es-0031":
+    native: "big"
+    alt_native: ["large"]
+  "es-0032":
+    native: "small"
+    alt_native: ["little"]
+  "es-0033":
+    native: "good"
+  "es-0034":
+    native: "bad"
+  "es-0035":
+    native: "new"

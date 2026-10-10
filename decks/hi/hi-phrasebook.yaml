@@ -1,0 +1,223 @@
+schema: 1
+id: "hi-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindi", script: "devanagari", tts: "hi-IN", icon: "हि" }
+license: "CC0-1.0"
+tags: ["beginner"]
+cards:
+  - id: "hi-0132"
+    target: "नमस्ते"
+    reading: "namastē"
+    ipa: "nəməst̪eː"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्ते", base: "नमस्ते", reading: "namastē" }
+  - id: "hi-0133"
+    target: "नमस्कार"
+    reading: "namaskār"
+    ipa: "nəməskaːr"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }
+  - id: "hi-0136"
+    target: "आप कैसे हैं?"
+    reading: "āp kaisē haim̐?"
+    ipa: "aːp kɛːseː ɦɛ̃ː"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "hi-0137"
+    target: "मैं ठीक हूँ।"
+    reading: "maim̐ ṭhīk hūm̐."
+    ipa: "mɛ̃ː ʈʰiːk ɦũː"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0144"
+    target: "फिर मिलेंगे।"
+    reading: "phir milēṅgē."
+    ipa: "pʰɪr mɪleːŋɡeː"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मिलेंगे", base: "मिलना", reading: "milnā" }
+  - id: "hi-0138"
+    target: "धन्यवाद"
+    reading: "dhanyavād"
+    ipa: "d̪ʱənjəʋaːd̪"
+    pos: "other"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }
+  - id: "hi-0139"
+    target: "शुक्रिया"
+    reading: "śukriyā"
+    ipa: "ʃʊkrɪjaː"
+    pos: "other"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शुक्रिया", base: "शुक्रिया", reading: "śukriyā" }
+  - id: "hi-0188"
+    target: "मेरा नाम … है।"
+    reading: "mērā nām... hai."
+    ipa: "meːraː naːm ɦɛː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरा", base: "मेरा", reading: "mērā" }
+  - id: "hi-0189"
+    target: "आपका नाम क्या है?"
+    reading: "āpkā nām kyā hai?"
+    ipa: "aːpkaː naːm kjaː ɦɛː"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    bases:
+      - { word: "आपका", ref: "hi-0134" }
+  - id: "hi-0190"
+    target: "मैं … से हूँ।"
+    reading: "maim̐... sē hūm̐."
+    ipa: "mɛ̃ː seː ɦũː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0140"
+    target: "मुझे हिंदी नहीं आती।"
+    reading: "mujhē hindī nahīm̐ ātī."
+    ipa: "mʊdʒʱeː ɦɪnd̪iː nəɦĩː aːt̪iː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "आती", base: "आना", reading: "ānā" }
+  - id: "hi-0141"
+    target: "मैं अभी हिंदी सीख रहा हूँ।"
+    reading: "maim̐ abhī hindī sīkh rahā hūm̐."
+    ipa: "mɛ̃ː əbʱiː ɦɪnd̪iː siːkʰ rəɦaː ɦũː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "सीख", base: "सीखना", reading: "sīkhnā" }
+      - { word: "रहा", base: "रहना", reading: "rahnā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0142"
+    target: "धीरे बोलिए।"
+    reading: "dhīrē bōliē."
+    ipa: "d̪ʱiːreː boːlɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धीरे", base: "धीरे", reading: "dhīrē" }
+      - { word: "बोलिए", base: "बोलना", reading: "bōlnā" }
+  - id: "hi-0143"
+    target: "फिर से बोलिए।"
+    reading: "phir sē bōliē."
+    ipa: "pʰɪr seː boːlɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    bases:
+      - { word: "बोलिए", base: "बोलना", reading: "bōlnā" }
+  - id: "hi-0362"
+    target: "मुझे समझ नहीं आया।"
+    reading: "mujhē samajh nahīm̐ āyā."
+    ipa: "mʊdʒʱeː səmədʒʱ nəɦĩː aːjaː"
+    pos: "phrase"
+    phrasebook: true
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "maim̐" }
+      - { word: "समझ", base: "समझना", reading: "samajhnā" }
+      - { word: "आया", base: "आना", reading: "ānā" }
+  - id: "hi-0363"
+    target: "टॉयलेट कहाँ है?"
+    reading: "ṭôylēṭ kahām̐ hai?"
+    ipa: "ʈɔjleːʈ kəɦãː ɦɛː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "टॉयलेट", base: "टॉयलेट", reading: "ṭôylēṭ" }
+  - id: "hi-0361"
+    target: "मैं खो गया हूँ।"
+    reading: "maim̐ khō gayā hūm̐."
+    ipa: "mɛ̃ː kʰoː ɡəjaː ɦũː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "खो", base: "खोना", reading: "khōnā" }
+      - { word: "गया", base: "जाना", reading: "jānā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+  - id: "hi-0353"
+    target: "मदद कीजिए!"
+    reading: "madad kījiē!"
+    ipa: "məd̪əd̪ kiːdʒɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    bases:
+      - { word: "कीजिए", base: "करना", reading: "karnā" }
+  - id: "hi-0354"
+    target: "बचाओ!"
+    reading: "bacāō!"
+    ipa: "bətʃaːoː"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "बचाओ", base: "बचाना", reading: "bacānā" }
+  - id: "hi-0355"
+    target: "रुकिए!"
+    reading: "rukiē!"
+    ipa: "rʊkɪeː"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    bases:
+      - { word: "रुकिए", base: "रुकना", reading: "ruknā" }

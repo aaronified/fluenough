@@ -1,0 +1,25 @@
+schema: 1
+id: "gu-en-grammar-nouns"
+kind: "layer"
+core: "gu-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural and before an ending"
+license: "CC0-1.0"
+description: "How a noun changes for the plural, and before an ending such as -માં (-mām̐), -ને (-ne) or -નું (-num̐). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "chhokro": "boy, m"
+    "rasto": "road, m"
+    "kelun": "banana, n"
+    "rasodun": "kitchen, n"
+    "ghar": "house, n"
+    "maanas": "person, m"
+    "bhaaii": "brother, m"
+    "chhokrii": "girl, f"
+    "vaat": "talk; a matter, f"
+    "baarii": "window, f"
+  notes: "A masculine noun in -ઓ (-o) ends in -આ (-ā) in the plural and before an ending: છોકરો (chokro), છોકરા (chokrā), છોકરાને (chokrāne). A neuter noun in -ઉં (-um̐) ends in -આં (-ām̐) in the plural and -આ (-ā) before an ending: કેળું (keḷum̐), કેળાં (keḷām̐), કેળાનું (keḷānum̐). Other nouns add -ઓ (-o) for the plural and don't change before an ending. Many speakers add -ઓ (-o) to a plural that already shows it: છોકરાઓ (chokrāo)."

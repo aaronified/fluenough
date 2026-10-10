@@ -1,0 +1,21 @@
+schema: 1
+id: "kn-en-grammar-irregular"
+kind: "layer"
+core: "kn-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs"
+license: "CC0-1.0"
+description: "The common verbs whose stem changes in the past. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "baru": "to come"
+    "hoogu": "to go"
+    "tinnu": "to eat"
+    "kodu": "to give"
+    "tegedukollu": "to take"
+    "idu": "to put; to keep"
+  notes: "These change their stem in the past: ಬರು (to come) gives ಬಂದೆ (bande), but ಬರುತ್ತೇನೆ (baruttēne) and ಬನ್ನಿ (banni); ಕೊಡು (to give) gives ಕೊಟ್ಟೆ (koṭṭe). Where two forms are given, the second is everyday speech."

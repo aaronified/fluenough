@@ -1,0 +1,18 @@
+schema: 1
+id: "kn-en-grammar-past"
+kind: "layer"
+core: "kn-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past tense"
+license: "CC0-1.0"
+description: "I did, she went: the past, by person, number and gender. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Past tense"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+  notes: "Everyday speech drops the -ನು (-nu) of a man's form, ಬಂದ (banda) for ಬಂದನು (bandanu), and shortens the others: ಬಂದ್ರು (bandru) for ಬಂದರು (bandaru). The past of ನಾನು (nānu) and ನೀನು (nīnu) is the same: ಬಂದೆ (bande), I came, you came. The verb agrees with the doer's person and number. In the third person a man, a woman and a thing each have a form of their own: ಅವನು ಬಂದನು (avanu bandanu), ಅವಳು ಬಂದಳು (avaḷu bandaḷu), ಅದು ಬಂತು (adu bantu). ನೀವು (nīvu), plural or respectful, takes the plural, and so does ಅವರು (avaru), they, or he or she with respect. Where two forms are given, the first is written Kannada and the second everyday speech; both are accepted."

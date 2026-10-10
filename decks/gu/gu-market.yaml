@@ -1,0 +1,121 @@
+schema: 1
+id: "gu-market"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC0-1.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gu-0372"
+    target: "બજાર"
+    reading: "bajār"
+    ipa: "bədʒar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0373"
+    target: "આ કેટલાનું છે?"
+    reading: "ā keṭlānum̐ che?"
+    ipa: "a keʈlanũ tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કેટલાનું", ref: "gu-0291" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0374"
+    target: "કેટલા રૂપિયા?"
+    reading: "keṭlā rupiyā?"
+    ipa: "keʈla rupija"
+    pos: "phrase"
+    bases:
+      - { word: "કેટલા", ref: "gu-0291" }
+      - { word: "રૂપિયા", ref: "gu-0375" }
+  - id: "gu-0375"
+    target: "રૂપિયો"
+    reading: "rupiyo"
+    ipa: "rupijo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0376"
+    target: "પૈસા"
+    picture: "💰"
+    reading: "paisā"
+    ipa: "pəisa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0377"
+    target: "મોંઘું"
+    reading: "moṅghum̐"
+    ipa: "moŋɡʱũ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0378"
+    target: "સસ્તું"
+    reading: "sastum̐"
+    ipa: "səst̪ũ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "gu-0379"
+    target: "બહુ મોંઘું છે."
+    reading: "bahu moṅghum̐ che."
+    ipa: "bəɦu moŋɡʱũ tʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "બહુ", base: "બહુ", reading: "bahu" }
+      - { word: "છે", base: "હોવું", reading: "hovum̐" }
+  - id: "gu-0380"
+    target: "થોડું ઓછું કરો."
+    reading: "thoḍum̐ ochum̐ karo."
+    ipa: "t̪ʰoɖũ otʃʰũ kəro"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "થોડું", base: "થોડું", reading: "thoḍum̐" }
+      - { word: "ઓછું", base: "ઓછું", reading: "ochum̐" }
+      - { word: "કરો", base: "કરવું", reading: "karvum̐" }
+  - id: "gu-0381"
+    target: "છૂટા પૈસા"
+    reading: "chuṭā paisā"
+    ipa: "tʃʰuʈa pəisa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "છૂટા", base: "છૂટું", reading: "chuṭum̐" }
+  - id: "gu-0382"
+    target: "થેલી"
+    reading: "theli"
+    ipa: "t̪ʰeli"
+    pos: "noun"
+    gender: "f"
+  - id: "gu-0383"
+    target: "બે કિલો આપો."
+    reading: "be kilo āpo."
+    ipa: "be kilo apo"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "કિલો", base: "કિલો", reading: "kilo" }
+      - { word: "આપો", base: "આપવું", reading: "āpvum̐" }
+  - id: "gu-0384"
+    target: "બીજું કંઈ?"
+    reading: "bijum̐ kaim̐?"
+    ipa: "bidʒũ kə̃i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "બીજું", base: "બીજું", reading: "bijum̐" }
+      - { word: "કંઈ", base: "કંઈ", reading: "kaim̐" }
