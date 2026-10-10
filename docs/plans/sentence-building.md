@@ -32,7 +32,7 @@ Then, on cloze:
 - **Grammar** is taught in tables and in sentence cards, along the path.
 - **Every deck today teaches from English,** so the English bank comes first.
   Bengali and Hindi speakers learn from English decks for now (owner's
-  ruling in `decks-from-github.md`).
+  ruling in ADR-0037).
 
 ## What it takes
 

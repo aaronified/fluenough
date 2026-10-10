@@ -256,19 +256,29 @@ class _DeckDownloadsPageState extends State<DeckDownloadsPage> {
           leading: const Icon(Icons.translate),
           title: name,
           subtitle: line,
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ?action,
-              if (downloads.languagesOnPhone.contains(code))
-                IconButton(
+          trailing: downloads.languagesOnPhone.contains(code)
+              ? IconButton(
                   tooltip: l10n.deckDownloadsRemove,
                   icon: const Icon(Icons.delete_outline),
                   onPressed: busy ? null : () => _remove(state, code, name),
-                ),
-            ],
-          ),
+                )
+              : null,
         ),
+        // Under the row, not beside it: beside the remove button, "Download
+        // the rest" left the name no room on a phone and overflowed.
+        if (action != null)
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(
+              AppSizes.gutter,
+              0,
+              AppSizes.gutter,
+              8,
+            ),
+            child: Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: action,
+            ),
+          ),
         if (progress != null)
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(

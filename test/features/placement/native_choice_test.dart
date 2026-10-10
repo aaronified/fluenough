@@ -6,11 +6,13 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/placement/native_choice.dart';
+import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
 
 import '../../support/harness.dart';
 import '../../support/hindi_courses.dart';
+import '../../support/picker.dart';
 
 /// The question of which native language to learn a course from (ADR-0036,
 /// B1 format spec 9.5): in placement, on Today, and in Settings.
@@ -41,8 +43,8 @@ Radio<String> radioOf(WidgetTester tester, String code) => tester
     .singleWhere((r) => r.value == code);
 
 void main() {
-  testWidgets('opening a course the first time asks which language to learn '
-      'it from, each with its coverage, the best covered chosen', (
+  testWidgets('choosing a course asks on its card which language to learn '
+      'it from, the best covered chosen, and placement does not ask again', (
     tester,
   ) async {
     usePhone(tester);
@@ -51,19 +53,22 @@ void main() {
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
 
-    await tapText(tester, 'Hindi');
-    await tapText(tester, l10n.commonContinue);
-    expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsOneWidget);
-    expect(find.text(l10n.nativeChoiceCoverageAll(3)), findsOneWidget);
-    expect(find.text(l10n.nativeChoiceCoverage(1, 3)), findsOneWidget);
-    final group = tester.widget<RadioGroup<String>>(
-      find.byType(RadioGroup<String>),
-    );
-    expect(group.groupValue, 'en', reason: 'the best covered');
-    expect(radioOf(tester, 'bn').value, 'bn');
+    await pickLanguage(tester, 'hi');
+    final choice = find.byType(SegmentedButton<String>);
+    await scrollToInPicker(tester, choice);
+    final buttons = tester.widget<SegmentedButton<String>>(choice);
+    expect(buttons.segments.map((s) => s.value), <String>['bn', 'en']);
+    expect(buttons.selected, <String>{'en'}, reason: 'the best covered');
 
-    await tapText(tester, 'Bengali');
+    await tester.tap(
+      find.descendant(of: choice, matching: find.text('Bengali')),
+    );
+    await tester.pumpAndSettle();
+    expect(tester.widget<SegmentedButton<String>>(choice).selected, <String>{
+      'bn',
+    });
     await tapText(tester, l10n.commonContinue);
+    expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsNothing);
     expect(find.text(l10n.placementAskTitle('Hindi')), findsOneWidget);
     expect(state.settings.courseNative('hi'), isNull, reason: 'not yet saved');
 
@@ -73,6 +78,28 @@ void main() {
     expect(state.settings.nativesOffered('hi'), <String>{'bn', 'en'});
     expect(state.needsNativeChoice('hi'), isFalse);
     expect(state.courseUnits('hi').single.single.id, 'hi-bn-a');
+  });
+
+  testWidgets('placement asks which language to learn a course from when '
+      'nothing has, each with its coverage, the best covered chosen', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = bengaliFirst();
+    await pumpScreen(
+      tester,
+      PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsOneWidget);
+    expect(find.text(l10n.nativeChoiceCoverageAll(3)), findsOneWidget);
+    expect(find.text(l10n.nativeChoiceCoverage(1, 3)), findsOneWidget);
+    final group = tester.widget<RadioGroup<String>>(
+      find.byType(RadioGroup<String>),
+    );
+    expect(group.groupValue, 'en', reason: 'the best covered');
+    expect(radioOf(tester, 'bn').value, 'bn');
   });
 
   testWidgets('with one language the learner speaks teaching it, placement '

@@ -12,7 +12,7 @@ import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
-import 'package:fluenough/features/placement/learn_languages_page.dart';
+import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 
 import '../../support/harness.dart';
@@ -128,7 +128,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['bn', 'en']);
     // Then what to learn (#117), before the app.
-    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(LanguagePickerPage), findsOneWidget);
     expect(find.byType(AppShell), findsNothing);
   });
 
