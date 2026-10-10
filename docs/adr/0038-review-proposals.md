@@ -49,8 +49,12 @@ another review, may change it first.
   other rater codes that accepted it verbatim. `id` is the first ten hex
   digits of the SHA-256 of the card id, field, now, text and code, joined
   by U+001F, so the same proposal always has the same id and two never
-  collide in practice. Suggestions on an example or a picture stay for
-  the owner.
+  collide in practice. Suggestions on an example, a picture or a base
+  word's meaning stay for the owner. A base word's meaning (#410) is
+  suggested with `part: base` and a `word` field naming the base by the
+  word as it stands in the card's target, since a card may have several;
+  only a base written in full on the card can be suggested, as a base by
+  ref takes its meaning from the card it names.
 - **Learners never see a proposal.** The app reads `proposed` only in
   reviewer mode. The validator checks its shape and nothing else in it:
   a proposal is not deck content until it is applied, and then the field
