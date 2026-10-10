@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/card_bases.dart';
 import '../decks/card_notes.dart';
 import '../review/alike_warning.dart';
 import 'drill_session.dart';
@@ -36,8 +37,9 @@ enum TaughtReading {
 }
 
 /// What a word's lesson showed of it (ADR-0024), laid out as the teach card
-/// does: the word and its reading, its meaning, its notes and its first
-/// example, 12 apart and centred. Its notes are every one but a pair note
+/// does: the word and its reading, its meaning, its notes, its base words
+/// on one line ([BaseLine], #410) and its first example, 12 apart and
+/// centred. Its notes are every one but a pair note
 /// ([shownNotes]), whose text is the care note of the warning below.
 ///
 /// The teach card shows all of it. A review shows it again once the
@@ -105,6 +107,7 @@ class TaughtDetails extends StatelessWidget {
         final theme = Theme.of(context);
         final scheme = theme.colorScheme;
         final notes = shownNotes(card);
+        final bases = basesOf(state, card, language);
         final children = <Widget>[
           if (word) ..._word(theme, showReading: _showsReading(settings)),
           if (meaning)
@@ -129,6 +132,17 @@ class TaughtDetails extends StatelessWidget {
                   height: 22 / 15,
                   color: scheme.onSurfaceVariant,
                 ),
+              ),
+            ),
+          // One line, padded as a note is, so as not to crowd the card.
+          if (bases.isNotEmpty)
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 19),
+              child: BaseLine(
+                bases: bases,
+                language: language,
+                reading: _showsReading(settings),
+                fontSize: 14,
               ),
             ),
           if (card.examples.isNotEmpty)

@@ -10,6 +10,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/card_bases.dart';
 import '../decks/card_notes.dart';
 import '../decks/card_top_line.dart';
 import '../decks/path_parts.dart' show joinParts;
@@ -41,8 +42,9 @@ Future<ReviewCardAction?> showReviewCard(
 );
 
 /// The text of [part] of [card], as "Suggest a change" shows it under Now,
-/// or null when the card has none.
-String? partText(Card card, CardPart part) => switch (part) {
+/// or null when the card has none. For [CardPart.base], the meaning of the
+/// base written in full for [word], as it stands in the target.
+String? partText(Card card, CardPart part, {String? word}) => switch (part) {
   CardPart.word => card.target,
   CardPart.reading => card.reading,
   CardPart.ipa => card.ipa,
@@ -56,7 +58,45 @@ String? partText(Card card, CardPart part) => switch (part) {
     ),
   },
   CardPart.picture => card.picture,
+  CardPart.base => inlineBaseOf(card, word)?.meaning,
 };
+
+/// [card]'s base written in full for [word], the word as it stands in its
+/// target, or null. A base given by ref is not one: its meaning is the
+/// card's it names, and a change to it is suggested there.
+CardBase? inlineBaseOf(Card card, String? word) {
+  if (word == null) return null;
+  for (final base in card.bases) {
+    if (base.word == word && base.base != null) return base;
+  }
+  return null;
+}
+
+/// The bases of [card] a reviewer can suggest a meaning for: those written
+/// in full, in order, every one of them, though the card's base line shows
+/// a base and meaning only once ([shownBases]).
+List<CardBase> inlineBasesOf(Card card) => <CardBase>[
+  for (final base in card.bases)
+    if (base.base != null && base.base!.trim().isNotEmpty) base,
+];
+
+/// Whether another base [card] writes in full has the same base as the one
+/// for [word], so that the base alone does not say which it is.
+bool baseIsShared(Card card, String? word) {
+  final base = inlineBaseOf(card, word)?.base;
+  if (base == null) return false;
+  return inlineBasesOf(card)
+      .any((b) => b.word != word && b.base!.trim() == base.trim());
+}
+
+/// The name of the base [card] writes in full for [word]: "Base: जाना", or
+/// "Base of गया: जाना" when another of its bases is also जाना.
+String baseName(AppLocalizations l10n, Card card, String? word) {
+  final base = inlineBaseOf(card, word)?.base ?? word ?? '';
+  return word != null && baseIsShared(card, word)
+      ? l10n.reviewPartBaseOfWord(word, base)
+      : l10n.reviewPartBaseOf(base);
+}
 
 /// [part]'s name on its chip.
 String partName(AppLocalizations l10n, CardPart part) => switch (part) {
@@ -67,7 +107,17 @@ String partName(AppLocalizations l10n, CardPart part) => switch (part) {
   CardPart.notes => l10n.reviewPartNotes,
   CardPart.example => l10n.reviewPartExample,
   CardPart.picture => l10n.reviewPartPicture,
+  CardPart.base => l10n.reviewPartBase,
 };
+
+/// What a suggestion on [part] is about, by name: [partName], or for a base
+/// word's meaning, "Base: जाना" with the base [card] writes for [word].
+String suggestionPartName(
+  AppLocalizations l10n,
+  Card card,
+  CardPart part, {
+  String? word,
+}) => part == CardPart.base ? baseName(l10n, card, word) : partName(l10n, part);
 
 /// Where [review] stands, as a card's top line says it.
 String reviewStateName(AppLocalizations l10n, CardReview? review) =>
@@ -211,7 +261,9 @@ class ReviewCardSheet extends StatelessWidget {
 }
 
 /// A card as a lesson shows it: its picture, the word, its reading and IPA,
-/// its meaning, its note and its first example.
+/// its meaning, its note, its base words ([BaseLine]) and its first example.
+/// The base words are here so that a reviewer can check their meanings,
+/// which agents wrote (#410), and suggest a change to one.
 class CardFace extends StatelessWidget {
   const CardFace({super.key, required this.card, required this.language});
 
@@ -227,6 +279,7 @@ class CardFace extends StatelessWidget {
     final ipa = card.ipa;
     final notes = shownNotes(card);
     final example = card.examples.firstOrNull;
+    final bases = basesOf(AppScope.read(context), card, language);
     final muted = theme.textTheme.bodyLarge!.copyWith(
       color: scheme.onSurfaceVariant,
     );
@@ -261,6 +314,10 @@ class CardFace extends StatelessWidget {
         if (notes.isNotEmpty) const SizedBox(height: 4),
         for (final note in notes)
           Text(note, textAlign: TextAlign.center, style: muted),
+        if (bases.isNotEmpty) ...<Widget>[
+          const SizedBox(height: 4),
+          BaseLine(bases: bases, language: language),
+        ],
         if (example != null) ...<Widget>[
           const SizedBox(height: 8),
           Semantics(
@@ -592,6 +649,10 @@ class SuggestSheet extends StatefulWidget {
 
 class _SuggestSheetState extends State<SuggestSheet> {
   late CardPart _part;
+
+  /// For a base word's meaning, which base: its word as it stands in the
+  /// target. Null for any other part.
+  String? _word;
   final TextEditingController _text = TextEditingController();
   final TextEditingController _why = TextEditingController();
   bool _seeded = false;
@@ -616,7 +677,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
       return;
     }
     _part = old?.part ?? CardPart.word;
-    _text.text = old?.text ?? partText(widget.card, _part) ?? '';
+    _word = old?.word;
+    _text.text = old?.text ?? partText(widget.card, _part, word: _word) ?? '';
     _why.text = old?.why ?? '';
   }
 
@@ -627,12 +689,15 @@ class _SuggestSheetState extends State<SuggestSheet> {
     super.dispose();
   }
 
-  void _choose(CardPart part) {
-    final before = partText(widget.card, _part) ?? '';
+  void _choose(CardPart part, {String? word}) {
+    final before = partText(widget.card, _part, word: _word) ?? '';
     setState(() {
       // A suggestion not yet changed follows the part chosen.
-      if (_text.text == before) _text.text = partText(widget.card, part) ?? '';
+      if (_text.text == before) {
+        _text.text = partText(widget.card, part, word: word) ?? '';
+      }
       _part = part;
+      _word = word;
     });
   }
 
@@ -642,11 +707,13 @@ class _SuggestSheetState extends State<SuggestSheet> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final language = widget.deck.language;
-    final now = partText(widget.card, _part);
+    final now = partText(widget.card, _part, word: _word);
     final changed =
         _text.text.trim().isNotEmpty && _text.text.trim() != (now ?? '');
     final old = _old;
-    final replaces = old != null && (widget.from != null || old.part != _part);
+    final replaces =
+        old != null &&
+        (widget.from != null || old.part != _part || old.word != _word);
     return _FormSheet(
       title: l10n.reviewSuggest,
       about: _about(context, widget.card, language),
@@ -661,6 +728,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
                   now: now ?? '',
                   text: _text.text.trim(),
                   why: _why.text.trim(),
+                  word: _part == CardPart.base ? _word : null,
                 ),
               );
               if (widget.from case final from?) {
@@ -684,8 +752,23 @@ class _SuggestSheetState extends State<SuggestSheet> {
             ),
             child: Text.rich(
               quotingTarget(
-                l10n.reviewSuggestReplaces(partName(l10n, old.part), old.text),
-                <String>[if (old.part == CardPart.word) old.text],
+                l10n.reviewSuggestReplaces(
+                  suggestionPartName(
+                    l10n,
+                    widget.card,
+                    old.part,
+                    word: old.word,
+                  ),
+                  old.text,
+                ),
+                <String>[
+                  if (old.part == CardPart.word) old.text,
+                  if (inlineBaseOf(widget.card, old.word) case final b?)
+                    b.base!,
+                  if (old.part == CardPart.base &&
+                      baseIsShared(widget.card, old.word))
+                    old.word!,
+                ],
                 language,
               ),
               style: theme.textTheme.bodyMedium!.copyWith(
@@ -702,10 +785,28 @@ class _SuggestSheetState extends State<SuggestSheet> {
           runSpacing: 4,
           children: <Widget>[
             for (final part in CardPart.values)
+              if (part != CardPart.base)
+                ChoiceChip(
+                  label: Text(partName(l10n, part)),
+                  selected: part == _part,
+                  onSelected: (_) => _choose(part),
+                ),
+            // A base word's meaning, one chip a base written in full
+            // (#410): agents wrote them, and native reviewers check them.
+            for (final base in inlineBasesOf(widget.card))
               ChoiceChip(
-                label: Text(partName(l10n, part)),
-                selected: part == _part,
-                onSelected: (_) => _choose(part),
+                label: Text.rich(
+                  quotingTarget(
+                    baseName(l10n, widget.card, base.word),
+                    <String>[
+                      if (baseIsShared(widget.card, base.word)) base.word,
+                      base.base!,
+                    ],
+                    language,
+                  ),
+                ),
+                selected: _part == CardPart.base && _word == base.word,
+                onSelected: (_) => _choose(CardPart.base, word: base.word),
               ),
           ],
         ),
