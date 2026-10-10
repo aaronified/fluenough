@@ -9,7 +9,7 @@ Until now every deck shipped inside the APK, as Flutter assets, one
 `pubspec.yaml` entry per language. A fixed card, or a new language, reached
 learners only with a new release.
 
-The owner asked (#210, `docs/plans/decks-from-github.md`):
+The owner asked (#210):
 
 > add another feature so that the app will not get installed with any
 > language decks, but download them from github itself on demand (start
@@ -134,6 +134,7 @@ agreement (rule 6): there is no HTTP or hashing package.
 - Tests no longer read bundled assets. `RepositoryDeckSource` reads the
   checkout's `decks/` through its index, so the tests see what a phone that
   downloaded every language has.
+- The web build (`web-pwa.md`) downloads decks the same way, so it need not carry every language.
 - The APK is only a little smaller: the decks were about 2 MB of YAML.
 
 ## Alternatives considered

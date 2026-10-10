@@ -113,7 +113,7 @@ from by interest: `books-films-songs.md`.
 | Achievements (`achievements.md`) | The A1, A2 and B1 badges come from the milestones |
 | Hours per language (`hours-per-language.md`) | "Hours left" counts down to the end of the B1 plan |
 | Pacing (`language-paths.md`) | The scheme's phases line up with the milestones |
-| Deck downloads (`decks-from-github.md`) | The index carries each plan and the counted words, so the picker shows completeness before a download |
+| Deck downloads ([ADR-0037](../adr/0037-decks-download-from-main.md)) | The index carries each plan and the counted words, so the picker shows completeness before a download |
 
 The words a unit has are always counted from its decks: distinct
 vocabulary cards. Script decks, grammar tables and learners' own decks

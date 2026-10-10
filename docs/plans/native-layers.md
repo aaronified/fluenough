@@ -2,7 +2,7 @@
 
 Written 2026-10-06. **With the B1 plans** (`b1-plans.md`), owner's choice:
 decks are split as their B1 plans are written, so that deck downloads
-(`decks-from-github.md`) design their index around cores and layers.
+([ADR-0037](../adr/0037-decks-download-from-main.md)) designed their index around cores and layers.
 
 ## What the owner asked
 

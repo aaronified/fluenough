@@ -8,7 +8,7 @@ import '../features/decks/inspect_page.dart';
 import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
 import '../features/gallery/gallery_page.dart';
-import '../features/placement/learn_languages_page.dart';
+import '../features/placement/language_picker_page.dart';
 import '../features/profiles/new_profile_page.dart';
 import '../features/profiles/pin_page.dart';
 import '../features/profiles/profiles_page.dart';
@@ -116,7 +116,7 @@ abstract final class AppRoutes {
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
       spokenLanguages => const SpokenLanguagesPage(),
-      learnLanguages => const LearnLanguagesPage(),
+      learnLanguages => const LanguagePickerPage(),
       voices => const VoicesPage(),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),

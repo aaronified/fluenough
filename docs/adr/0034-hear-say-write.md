@@ -127,7 +127,7 @@ Hear, Say and Write.
 > as well. before the deck grading (the B1 target plan).
 
 The order the owner gave: the skill model, then the B1 plans, then deck
-downloads (`docs/plans/decks-from-github.md`), then the settings redesign
+downloads (ADR-0037), then the settings redesign
 (`language-picker.md`, `settings-wording.md`, `voices-per-language.md`).
 The skill model is done; `docs/ROADMAP.md` holds the order that remains.
 

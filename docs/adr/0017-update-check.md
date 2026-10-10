@@ -1,6 +1,6 @@
 # ADR-0017: The app checks GitHub for updates and installs them itself
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0037: decks are downloaded, not bundled.
 - **Date:** 2026-10-03
 
 ## Context
