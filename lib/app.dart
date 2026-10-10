@@ -10,7 +10,7 @@ import 'features/decks/decks_page.dart';
 import 'features/downloads/deck_update_prompt.dart';
 import 'features/downloads/download_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
-import 'features/placement/learn_languages_page.dart';
+import 'features/placement/language_picker_page.dart';
 import 'features/settings/settings_page.dart';
 import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
@@ -84,7 +84,7 @@ class _FluenoughAppState extends State<FluenoughApp> {
           home: settings.spokenLanguages.isEmpty
               ? const OnboardingFlow()
               : !settings.learningChosen
-              ? const LearnLanguagesPage(firstRun: true)
+              ? const LanguagePickerPage(firstRun: true)
               : const _Home(),
         ),
       ),
