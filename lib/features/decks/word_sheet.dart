@@ -11,6 +11,7 @@ import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/target_text.dart';
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
+import 'card_bases.dart';
 import 'card_notes.dart';
 import 'card_top_line.dart';
 import 'path_model.dart' show isSentence;
@@ -46,7 +47,8 @@ bool adultContentOn(AppState state) => state.settings.adultContent;
 /// The card of a word on a unit's screen: a top line with its id, part of
 /// speech and where the learner stands with it, a speaker and the bug icon;
 /// then its picture, the word and its reading, how it is said in the IPA,
-/// its meaning, its notes and its first example.
+/// its meaning, its notes, its base words ([BaseLine]) and its first
+/// example.
 ///
 /// Where a minimal-pair partner, a word that sounds almost the same (its
 /// `pair` or a pair note's), is rude, it carries the warning the drill cards carry, "Careful when
@@ -85,6 +87,7 @@ class WordSheet extends StatelessWidget {
     final ipa = card.ipa;
     final notes = shownNotes(card);
     final example = card.examples.firstOrNull;
+    final bases = basesOf(state, card, language);
     final rudeAlikes = rudeAlikesOf(state, card);
     final rudeIds = <String>{for (final a in rudeAlikes) a.partner.id};
     final partners = <({Card card, String? care})>[
@@ -154,6 +157,10 @@ class WordSheet extends StatelessWidget {
                   color: scheme.onSurfaceVariant,
                 ),
               ),
+            ],
+            if (bases.isNotEmpty) ...<Widget>[
+              const SizedBox(height: 12),
+              BaseLine(bases: bases, language: language),
             ],
             if (example != null) ...<Widget>[
               const SizedBox(height: 16),

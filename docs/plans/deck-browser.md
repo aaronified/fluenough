@@ -300,9 +300,22 @@ Settled with the owner, 2026-10-09:
     or culture to another;
   - it asks for the 18+ confirmation, then shows the words with the 1 to
     9 rating and region (#428).
+  - a word that sounds or looks like an offensive one never names it in
+    the ordinary review, adult content on or off: it shows the warning a
+    learner sees, and its pair waits in the same Offensive words review,
+    after the words, to be confirmed or rejected; it never holds up a
+    unit's sign-off.
 - **Base words show on cards** (owner, 2026-10-10, for v0.4): a card
   shows its base word and meaning, so reviewers can check the meanings
-  agents wrote in #445 (#410).
+  agents wrote in #445 (#410). Built as one line, "Base: जाना (jānā) ·
+  to go", on the unit's card sheet, on a drill card once answered, and on
+  the card in review. Suggest a change offers each base written in full;
+  a base by ref takes its meaning from the card it names, and is reviewed
+  there. The one format change: the review file's `part` may be `"base"`,
+  with a `"word"` beside it naming the base by the word as it stands in the
+  target, which is the key the layer gives the meaning by. A new field, so
+  the file's `version` stays 1; the review bot does not write bases yet,
+  and leaves these for the owner.
 - **No reviewers in child profiles** (owner, 2026-10-10: "a child cannot
   become a reviewer"): a child profile never offers reviewing
   (`profiles.md`).

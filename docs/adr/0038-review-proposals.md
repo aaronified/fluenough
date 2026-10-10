@@ -5,6 +5,15 @@
 - **Amends:** ADR-0036 (a card may carry `proposed` changes), ADR-0037 (the
   index counts a file's proposals; `main` now also carries what reviewers
   propose).
+- **Amended:** 2026-10-10 (#444): the index also gives each file's
+  `content_sha256`, its hash with its proposals taken out. A learner's
+  phone is offered an update only when that changes, and files whose
+  proposals alone changed come along with the next real update; a phone in
+  reviewer mode is offered one when `sha256` changes. Every download is
+  still checked against `size` and `sha256`. This resolves the third
+  consequence below. `content_sha256` drops a `proposed:` key's items
+  whether they are indented under it, as the bot writes them, or at its
+  own indent.
 
 ## Context
 
@@ -40,8 +49,12 @@ another review, may change it first.
   other rater codes that accepted it verbatim. `id` is the first ten hex
   digits of the SHA-256 of the card id, field, now, text and code, joined
   by U+001F, so the same proposal always has the same id and two never
-  collide in practice. Suggestions on an example or a picture stay for
-  the owner.
+  collide in practice. Suggestions on an example, a picture or a base
+  word's meaning stay for the owner. A base word's meaning (#410) is
+  suggested with `part: base` and a `word` field naming the base by the
+  word as it stands in the card's target, since a card may have several;
+  only a base written in full on the card can be suggested, as a base by
+  ref takes its meaning from the card it names.
 - **Learners never see a proposal.** The app reads `proposed` only in
   reviewer mode. The validator checks its shape and nothing else in it:
   a proposal is not deck content until it is applied, and then the field
@@ -110,10 +123,12 @@ another review, may change it first.
   decks it has rather than use a batch with a file that fails. The
   owner's guide says to set the App up only once a release that reads
   `proposed` is out.
-- A proposal changes the file's hash, so learners of that language are
+- ~~A proposal changes the file's hash, so learners of that language are
   offered a deck update when a proposal lands, though nothing they see
-  has changed. A later change could let the update check pass over a
-  change to proposals only.
+  has changed.~~ Resolved by the 2026-10-10 amendment (#444): the update
+  check of a learner's phone compares `content_sha256`, the hash with
+  proposals taken out, so a change to proposals only offers no update.
+  Only reviewer mode is offered one.
 - Rater codes, card ids and proposal ids appear in public PRs and issues,
   and the proposed text appears in the decks, which are public, as the
   plan allows. Mail addresses never do.
