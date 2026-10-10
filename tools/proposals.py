@@ -501,3 +501,238 @@ def languages(root: Path) -> list[str]:
     decks = root / "decks"
     return sorted(p.name for p in decks.iterdir()
                   if p.is_dir() and vd.LANG_RE.fullmatch(p.name))
+
+
+# --- Who checked a card (#449) ------------------------------------------------
+# A reviewer who marks a card "Looks right" signs it off. The bot adds their
+# rater code to the card's `checked_by`, one line of the file, as it writes
+# proposals: on its own line in a card written as a block, or at the end of
+# a card written on one line in flow style. `tools/deck_index.py` leaves
+# both out of the content hash, so learners are not offered an update for
+# it. Once every card entry of a deck file lists a code, the file's tag
+# `unreviewed` becomes `reviewed`, which learners do see.
+
+_CHECKED_IN_FLOW = re.compile(r", checked_by: \[[^\]\n]*\](?= ?\}\s*$)")
+
+
+def checked_line(codes: list[str] | tuple[str, ...]) -> str:
+    """`checked_by: [...]`, as the bot writes it."""
+    return f"checked_by: [{', '.join(_quoted(c) for c in codes)}]"
+
+
+def checked_by(entry: Entry) -> list[str]:
+    """The rater codes [entry] lists as having checked it."""
+    codes = entry.data.get("checked_by")
+    if not isinstance(codes, list):
+        return []
+    return [c for c in codes if isinstance(c, str)]
+
+
+def _save_lines(entry: Entry, lines: list[str], check) -> None:
+    """Writes [lines] to [entry]'s file, if it then reads as [check]
+    expects of the entry and no other card has changed."""
+    text = "".join(lines)
+    try:
+        raw = yaml.load(text, Loader=vd.DeckLoader)
+    except yaml.YAMLError as error:
+        raise Unsupported("the edit does not parse") from error
+    found = [e for e in _entries_in(entry.path, raw)
+             if e.card == entry.card and e.form == entry.form]
+    if len(found) != 1 or not check(found[0]):
+        raise Unsupported("the edit did not read back as meant")
+    others = [(e.card, e.data) for e in _entries_in(entry.path, raw)
+              if e.card != entry.card]
+    before = [(e.card, e.data) for e in _entries_in(entry.path, _load(entry.path))
+              if e.card != entry.card]
+    if others != before:
+        raise Unsupported("the edit changed another card")
+    entry.path.write_text(text, encoding="utf-8")
+
+
+def _flow_line(entry: Entry, lines: list[str]) -> int:
+    """The line of [entry] written on one line in flow style: `- { id: … }`
+    in a list, `"id": { … }` in a layer."""
+    for i, line in enumerate(lines):
+        if entry.card not in line or not line.rstrip().endswith("}"):
+            continue
+        try:
+            parsed = yaml.load(line.strip(), Loader=vd.DeckLoader)
+        except yaml.YAMLError:
+            continue
+        if entry.form in ("layer", "layer-own"):
+            if isinstance(parsed, dict) and list(parsed) == [entry.card] \
+                    and isinstance(parsed[entry.card], dict):
+                return i
+        elif isinstance(parsed, list) and len(parsed) == 1 \
+                and isinstance(parsed[0], dict) \
+                and parsed[0].get("ref" if entry.form in ("ref", "core-ref") else "id") \
+                == entry.card:
+            return i
+    raise Unsupported("entry not found on one line")
+
+
+def _write_checked(entry: Entry, codes: list[str]) -> None:
+    """Writes [codes] as [entry]'s `checked_by`, one line."""
+    def check(e: Entry) -> bool:
+        return checked_by(e) == codes
+    try:
+        edit = _Text(entry)
+    except Unsupported:
+        edit = None
+    if edit is not None:
+        line = f"{' ' * edit.fi}{checked_line(codes)}\n"
+        i = edit._key_line("checked_by")
+        if i is not None:
+            if edit._block_end(i) != i + 1:
+                raise Unsupported("checked_by is written over several lines")
+            edit.lines[i] = line
+        else:
+            # Last among the card's fields, before its proposals.
+            j = edit._key_line("proposed")
+            edit.lines.insert(j if j is not None else edit.end, line)
+        _save_lines(entry, edit.lines, check)
+        return
+    lines = entry.path.read_text(encoding="utf-8").splitlines(keepends=True)
+    i = _flow_line(entry, lines)
+    body = lines[i].rstrip("\r\n")
+    end = lines[i][len(body):]
+    added = f", {checked_line(codes)}"
+    if _CHECKED_IN_FLOW.search(body):
+        body = _CHECKED_IN_FLOW.sub(added, body)
+    elif "checked_by" in body:
+        raise Unsupported("checked_by is not written as the bot writes it")
+    else:
+        stripped = body.rstrip()
+        cut = len(stripped) - 1
+        if stripped[cut - 1] == " ":
+            cut -= 1
+        body = stripped[:cut] + added + stripped[cut:]
+    lines[i] = body + end
+    _save_lines(entry, lines, check)
+
+
+@dataclass
+class Checks:
+    """What came of a review's sign-offs: each (card, deck file) a code was
+    added to, the cards it was on already, those not found in the deck, and
+    those that cannot be written one line at a time. And the decks whose
+    every card is now checked, tagged `reviewed`."""
+    checked: list[tuple[str, str]] = field(default_factory=list)
+    already: list[str] = field(default_factory=list)
+    missing: list[str] = field(default_factory=list)
+    unsupported: list[str] = field(default_factory=list)
+    reviewed: list[str] = field(default_factory=list)
+    touched: set[Path] = field(default_factory=set)
+
+    @property
+    def changed(self) -> bool:
+        return bool(self.checked or self.reviewed)
+
+
+def _core_of(root: Path, lang: str, deck: str) -> str | None:
+    """The core of [deck], when it is a layer of [lang]."""
+    for path in language_files(root, lang):
+        if path.stem != deck:
+            continue
+        raw = _load(path)
+        if isinstance(raw, dict) and raw.get("kind") == "layer" \
+                and isinstance(raw.get("core"), str):
+            return raw["core"]
+    return None
+
+
+def check(root: Path, lang: str, deck: str, card: str, code: str,
+          result: Checks) -> None:
+    """Adds [code] to the `checked_by` of [card] as deck [deck] has it: its
+    entry in the deck's file, and for a layer its core's entry too, since
+    a reviewer of the merged deck checked the word as well as the meaning.
+    A code already there is not added again."""
+    core = _core_of(root, lang, deck)
+    found = [e for e in entries(root, lang, card)
+             if e.deck == deck or (core is not None and e.deck == core)]
+    if not found:
+        result.missing.append(card)
+        return
+    added = False
+    for e in found:
+        # Looked at for its tag even when the code is on it already: the
+        # file may be fully checked with its tag not yet changed.
+        result.touched.add(e.path)
+        have = checked_by(e)
+        if code in have:
+            continue
+        try:
+            _write_checked(e, [*have, code])
+        except Unsupported:
+            result.unsupported.append(card)
+            continue
+        result.checked.append((card, e.deck))
+        added = True
+    if not added and card not in result.unsupported:
+        result.already.append(card)
+
+
+def all_checked(path: Path) -> bool:
+    """Whether every card entry of [path] lists a code in `checked_by`; a
+    file with no card entries never is."""
+    found = _entries_in(path, _load(path))
+    return bool(found) and all(checked_by(e) for e in found)
+
+
+_TAGS = re.compile(r"^tags[ \t]*:[ \t]*(\[.*\])[ \t]*(#.*)?$")
+
+
+def mark_reviewed(path: Path) -> bool:
+    """Tags [path] `reviewed` in place of `unreviewed`, its `tags` line
+    written again and no other; adds the line, before `cards:`, to a file
+    with no tags. False when it is reviewed already or cannot be edited
+    one line at a time."""
+    raw = _load(path)
+    if not isinstance(raw, dict):
+        return False
+    tags = raw.get("tags", [])
+    if not isinstance(tags, list) or not all(isinstance(t, str) for t in tags):
+        return False
+    if "reviewed" in tags and "unreviewed" not in tags:
+        return False
+    new: list[str] = []
+    for t in tags:
+        t = "reviewed" if t == "unreviewed" else t
+        if t not in new:
+            new.append(t)
+    if "reviewed" not in new:
+        new.append("reviewed")
+    line = f"tags: [{', '.join(_quoted(t) for t in new)}]"
+    lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+    at = [i for i, l in enumerate(lines) if _TAGS.match(l.rstrip("\r\n"))]
+    if "tags" in raw:
+        if len(at) != 1:
+            return False
+        comment = _TAGS.match(lines[at[0]].rstrip("\r\n")).group(2)
+        lines[at[0]] = line + (f"  {comment}" if comment else "") + "\n"
+    else:
+        cards = next((i for i, l in enumerate(lines)
+                      if re.match(r"^cards\s*:", l)), None)
+        if cards is None:
+            return False
+        lines.insert(cards, line + "\n")
+    text = "".join(lines)
+    after = yaml.load(text, Loader=vd.DeckLoader)
+    if not isinstance(after, dict) or after.get("tags") != new:
+        return False
+    rest = {k: v for k, v in after.items() if k != "tags"}
+    if rest != {k: v for k, v in raw.items() if k != "tags"}:
+        return False
+    path.write_text(text, encoding="utf-8")
+    return True
+
+
+def review_done(result: Checks) -> None:
+    """Tags `reviewed` each file [result] touched whose every card is now
+    checked. A core and its layer are tagged each on its own, and the
+    merged deck reads as reviewed only once both are."""
+    for path in sorted(result.touched):
+        if all_checked(path) and mark_reviewed(path):
+            raw = _load(path)
+            result.reviewed.append(raw.get("id") if isinstance(raw, dict)
+                                   and isinstance(raw.get("id"), str) else path.stem)
