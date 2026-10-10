@@ -12,7 +12,7 @@ import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/onboarding/onboarding_step.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
-import 'package:fluenough/features/placement/learn_languages_page.dart';
+import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/fluenough_mark.dart';
@@ -109,7 +109,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['hi']);
     // Then what to learn (#117), before the app.
-    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(LanguagePickerPage), findsOneWidget);
     expect(find.byType(OnboardingFlow), findsNothing);
     semantics.dispose();
   });
@@ -313,7 +313,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     expect(settings.spokenLanguages, ['hi']);
-    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(LanguagePickerPage), findsOneWidget);
   });
 
   testWidgets('with animations off, nothing moves', (tester) async {

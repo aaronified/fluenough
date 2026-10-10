@@ -142,6 +142,7 @@ class IndexUnit {
     this.planned = false,
     this.words,
     this.milestone,
+    this.grammar = const <String>[],
     this.has = const <String, int>{},
   });
 
@@ -157,6 +158,9 @@ class IndexUnit {
   /// `A1`, `A2` or `B1` where a level ends on it.
   final String? milestone;
 
+  /// The grammar topics it teaches, or plans to, by topic id.
+  final List<String> grammar;
+
   /// The words its decks have, by native language.
   final Map<String, int> has;
 
@@ -170,6 +174,7 @@ class IndexUnit {
       milestone: json['milestone'] is String
           ? json['milestone'] as String
           : null,
+      grammar: _strings(json['grammar']),
       has: <String, int>{
         if (has is Map)
           for (final MapEntry(:key, :value) in has.entries)
