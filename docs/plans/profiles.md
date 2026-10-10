@@ -74,6 +74,13 @@ place. Instead:
 - the export carries the learning history only, never the child
   profile's restrictions, so nothing of the supervision follows the
   learner into the adult profile.
+- **The app says so** (owner, 2026-10-10: "That needs to be mentioned in
+  the plan and in the builds"): where a child profile is made, in the
+  admin's view of it, and in the child profile's own Settings, one line
+  explains that its limits can't be lifted, and that a grown-up learner
+  takes their history to a new adult profile with Export and Import.
+  The export, the import into a new profile, and that no restriction
+  carries over are each tested.
 
 **Unlocking.** The admin's PIN unlocks the child profile's locked
 settings for the session. A forgotten admin PIN uses the recovery the
@@ -92,6 +99,10 @@ Family Link do that, and the help text points to them.
   test for each.
 - A held-off language is missing from the child's picker and downloads.
 - A turned-off activity never appears in the child's lessons or reviews.
+- A child profile's history, exported with the admin PIN and imported
+  into a new adult profile, keeps its reviews and schedules and carries
+  none of the restrictions; the line explaining this shows in all three
+  places.
 
 ## To decide
 
