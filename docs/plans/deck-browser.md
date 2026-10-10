@@ -300,6 +300,11 @@ Settled with the owner, 2026-10-09:
     or culture to another;
   - it asks for the 18+ confirmation, then shows the words with the 1 to
     9 rating and region (#428).
+  - a word that sounds or looks like an offensive one never names it in
+    the ordinary review, adult content on or off: it shows the warning a
+    learner sees, and its pair waits in the same Offensive words review,
+    after the words, to be confirmed or rejected; it never holds up a
+    unit's sign-off.
 - **Base words show on cards** (owner, 2026-10-10, for v0.4): a card
   shows its base word and meaning, so reviewers can check the meanings
   agents wrote in #445 (#410).
