@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -16,6 +17,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
+import '../downloads/update_escape.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'language_card.dart';
 import 'language_download.dart';
@@ -93,6 +95,12 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   /// The languages whose download has shown on their card: it stays, to
   /// say when all of it is in.
   final Set<String> _downloadShown = <String>{};
+
+  /// Each Try again after a failure, for [UpdateEscape]: of the list of
+  /// courses, of reading the decks, and of each language's download.
+  int _indexRetries = 0;
+  int _catalogRetries = 0;
+  final Map<String, int> _downloadRetries = <String, int>{};
 
   /// Whether what was chosen here was saved. A language newly chosen but
   /// not saved stops downloading when the page closes.
@@ -288,6 +296,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   }
 
   void _retry(AppState state, String code) {
+    _downloadRetries[code] = (_downloadRetries[code] ?? 0) + 1;
     final downloads = state.deckDownloads!;
     if (downloads.isReady(code, _spoken)) {
       unawaited(downloads.downloadRest(code, _spoken));
@@ -481,9 +490,16 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           icon: Icons.cloud_off_outlined,
           title: l10n.downloadsIndexFailed,
           body: downloadFailureText(l10n, indexing.indexFailure),
-          action: FilledButton(
-            onPressed: indexing.refreshIndex,
-            child: Text(l10n.commonRetry),
+          action: _withEscape(
+            FilledButton(
+              onPressed: () {
+                setState(() => _indexRetries++);
+                unawaited(indexing.refreshIndex());
+              },
+              child: Text(l10n.commonRetry),
+            ),
+            failures: _indexRetries + 1,
+            detail: 'course list: ${indexing.indexFailure?.name}',
           ),
         );
       }
@@ -501,14 +517,37 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         icon: Icons.error_outline,
         title: l10n.commonDecksFailed,
         body: l10n.commonDecksFailedBody,
-        action: FilledButton(
-          onPressed: state.reload,
-          child: Text(l10n.commonRetry),
+        action: _withEscape(
+          FilledButton(
+            onPressed: () {
+              setState(() => _catalogRetries++);
+              unawaited(state.reload());
+            },
+            child: Text(l10n.commonRetry),
+          ),
+          failures: _catalogRetries + 1,
+          detail: 'decks failed to load',
         ),
       ),
       CatalogStatus.ready => null,
     };
   }
+
+  /// A failure's Try again, with the update check under it: on first
+  /// launch, Settings and its check are out of reach, and a fault in the
+  /// app itself can be what fails, as in 0.4.0.
+  Widget _withEscape(
+    Widget retry, {
+    required int failures,
+    required String detail,
+  }) => Column(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      retry,
+      const SizedBox(height: 8),
+      UpdateEscape(failures: failures, detail: detail),
+    ],
+  );
 
   Widget _list(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
@@ -542,6 +581,18 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         ? l10n.pickerHintNext(join(added))
         : null;
     final canGo = _ticked.isNotEmpty && waiting.isEmpty;
+    // A chosen language whose decks will not come: on first launch nothing
+    // else can be reached, so the update check is offered here.
+    final failed = <String>[
+      for (final code in _ticked)
+        if (state.deckDownloads?.failureOf(code) case final failure?)
+          '$code: ${failure.name}',
+    ];
+    final retries = <int>[
+      for (final code in _ticked)
+        if (state.deckDownloads?.failureOf(code) != null)
+          _downloadRetries[code] ?? 0,
+    ];
 
     Widget heading(String text) => Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -709,6 +760,13 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  if (failed.isNotEmpty) ...<Widget>[
+                    UpdateEscape(
+                      failures: retries.reduce(math.max) + 1,
+                      detail: 'decks of ${failed.join(', ')}',
+                    ),
+                    const SizedBox(height: 4),
+                  ],
                   if (hint != null) ...<Widget>[
                     // Not a live region: a download's ready point is
                     // announced from its card, once.

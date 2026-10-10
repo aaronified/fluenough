@@ -4360,6 +4360,18 @@
   "@downloadsChooseOther": {
     "description": "Button on the download screen, when it fails, that opens the choose-what-to-learn screen."
   },
+  "downloadsCheckAppUpdate": "Check for an app update",
+  "@downloadsCheckAppUpdate": {
+    "description": "Quiet button under Try again wherever downloading decks or the list of courses failed and Settings cannot be reached: checks GitHub for a newer version of the app and offers it, as Settings' Check for updates does. A fault in the app itself can be what fails the downloads."
+  },
+  "downloadsKeepsFailing": "If this keeps happening, check for an app update or report it.",
+  "@downloadsKeepsFailing": {
+    "description": "Line shown once a deck download, or the list of courses, has failed three times in a row (Try again failed twice). Above Check for an app update and Report a problem."
+  },
+  "downloadsReportProblem": "Report a problem",
+  "@downloadsReportProblem": {
+    "description": "Button beside Check for an app update, once a download has failed again and again: opens a report from this screen, as the bug icon does."
+  },
   "settingsSectionDecks": "Decks",
   "@settingsSectionDecks": {
     "description": "Header of the Settings group for the decks downloaded from GitHub."

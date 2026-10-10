@@ -11,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 import 'download_text.dart';
+import 'update_escape.dart';
 
 /// Downloads the first decks of [languages] before they can be learned
 /// (#210, ADR-0037): on first launch after choosing them,
@@ -20,7 +21,9 @@ import 'download_text.dart';
 ///
 /// Each language is ready once its first five decks are in; the rest
 /// follow in the background. With no network, or any other failure, it
-/// says why and offers Try again. Nothing is bundled to fall back on.
+/// says why and offers Try again. Nothing is bundled to fall back on. As the
+/// app's home, nothing else can be reached either, Settings and its update
+/// check included, so a failure offers that check too ([UpdateEscape]).
 class DownloadPage extends StatefulWidget {
   const DownloadPage({super.key, required this.languages, this.onReady});
 
@@ -39,6 +42,9 @@ class _DownloadPageState extends State<DownloadPage> {
   DeckDownloadFailure? _failure;
   String? _failedOn;
   bool _running = false;
+
+  /// Failures in a row, for [UpdateEscape]: none once one succeeds.
+  int _failures = 0;
 
   @override
   void initState() {
@@ -66,6 +72,7 @@ class _DownloadPageState extends State<DownloadPage> {
           _running = false;
           _failure = failure;
           _failedOn = code;
+          _failures++;
         });
         unawaited(
           SemanticsService.sendAnnouncement(
@@ -78,7 +85,10 @@ class _DownloadPageState extends State<DownloadPage> {
       }
     }
     if (!mounted) return;
-    setState(() => _running = false);
+    setState(() {
+      _running = false;
+      _failures = 0;
+    });
     widget.onReady?.call();
   }
 
@@ -152,6 +162,11 @@ class _DownloadPageState extends State<DownloadPage> {
                         child: Text(l10n.downloadsChooseOther),
                       ),
                     ],
+                    const SizedBox(height: 8),
+                    UpdateEscape(
+                      failures: _failures,
+                      detail: 'decks of $_failedOn: ${failure.name}',
+                    ),
                   ],
                 ],
               ),
