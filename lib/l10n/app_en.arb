@@ -1572,6 +1572,80 @@
   "@unitOpenWord": {
     "description": "What a screen reader hears after a word's row on a unit's screen: tapping it opens the word's card."
   },
+  "cardBases": "{count, plural, =1{Base: {bases}} other{Bases: {bases}}}",
+  "@cardBases": {
+    "description": "On a word's card, after its meaning and notes: the base words of the card's inflected or derived words (the dictionary form and its meaning), so a learner sees where a form comes from. {bases} is one or more cardBase items joined by cardBasesJoin.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      },
+      "bases": {
+        "type": "String",
+        "example": "जाना (jānā) · to go"
+      }
+    }
+  },
+  "cardBase": "{base} · {meaning}",
+  "@cardBase": {
+    "description": "One base word and its meaning on a card's base line, when it has no reading to show.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "ir"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "to go"
+      }
+    }
+  },
+  "cardBaseReading": "{base} ({reading})",
+  "@cardBaseReading": {
+    "description": "One base word and its reading on a card's base line, when the deck gives it no meaning yet.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      },
+      "reading": {
+        "type": "String",
+        "example": "jānā"
+      }
+    }
+  },
+  "cardBaseReadingMeaning": "{base} ({reading}) · {meaning}",
+  "@cardBaseReadingMeaning": {
+    "description": "One base word, its reading in Latin letters and its meaning on a card's base line.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      },
+      "reading": {
+        "type": "String",
+        "example": "jānā"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "to go"
+      }
+    }
+  },
+  "cardBasesJoin": "{first}, {rest}",
+  "@cardBasesJoin": {
+    "description": "Joins two base words on a card's base line. Change the separator if your language uses another.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "रहना (rahnā) · to live"
+      },
+      "rest": {
+        "type": "String",
+        "example": "होना (honā) · to be"
+      }
+    }
+  },
   "wordSheetIpa": "/{ipa}/",
   "@wordSheetIpa": {
     "description": "How a word is said, in the IPA, on its card. The slashes mark IPA; keep them.",
@@ -6533,6 +6607,34 @@
   "reviewPartPicture": "Picture",
   "@reviewPartPicture": {
     "description": "Part of a card: its picture."
+  },
+  "reviewPartBase": "Base word",
+  "@reviewPartBase": {
+    "description": "Part of a card: the meaning of one of its base words (the dictionary form of an inflected word in it). Names the part where a suggestion replaces another."
+  },
+  "reviewPartBaseOf": "Base: {base}",
+  "@reviewPartBaseOf": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card, the base named.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
+  "reviewPartBaseOfWord": "Base of {word}: {base}",
+  "@reviewPartBaseOfWord": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card when another of its words has the same base: the word as it stands in the card, then its base.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "गया"
+      },
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
   },
   "reviewSuggestNow": "Now",
   "@reviewSuggestNow": {
