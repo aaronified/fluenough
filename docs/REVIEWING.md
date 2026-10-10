@@ -1,10 +1,16 @@
 # Reviewing Fluenough decks
 
+<!-- This guide is also the app's reviewer onboarding, "How reviewing works"
+(lib/features/review/how_reviewing_works.dart, strings reviewGuide* in
+lib/l10n/app_en.arb). Each `## ` section but Help is one step there, in this
+order; change a fact here and change it there too.
+test/features/review/how_reviewing_works_test.dart checks the headings. -->
+
 Thank you for considering this. You do not need to know anything about
 programming. You need to speak the language well and have an Android phone
 with the Fluenough app and a mail app.
 
-## What reviewing is, and why it matters
+## What reviewing is
 
 Fluenough teaches languages from decks of cards: a word, how it is read, what
 it means, examples. Many decks were written without a native speaker and are
@@ -13,13 +19,15 @@ right, which are wrong and what they should say, and how rude a word really
 sounds to native speakers. A review by a native speaker is the most useful
 thing anyone can give these decks.
 
-## Start
+## Your code and languages
 
 1. Open **Settings**, find the **Reviewing** group and turn on **Review decks**.
 2. The app asks first, then makes your **rater code** on your phone, like
    `FL-XXXX-XXXX-C`. Nothing is sent when you turn reviewing on. You can copy
    the code from Settings.
-3. **How reviewing works** opens once by itself, and any time from Settings.
+3. **How reviewing works** then walks you through this guide once, one step
+   per screen. Skip it whenever you like, and read it again any time from
+   **How reviewing works** in Settings.
 4. Under **Languages you review**, pick your languages. At first these are the
    languages you speak that the app teaches.
 
@@ -34,29 +42,35 @@ You can turn reviewing off whenever you like. Your code is kept.
   rated, the sound-alike pairs not yet confirmed, and what you have reviewed
   but not sent.
 
-## Reviewing a unit
+## Check cards, then sign off
 
-Open a unit and tap **Review**.
+Open a unit and tap **Review**. Mark each card that is right (**Looks right**).
 
-- **Check cards.** Mark each card that is right (**Looks right**). If something
-  is wrong, tap the card, choose **Suggest a change**, pick the part (word,
-  reading, IPA, meaning, notes), write your version and say why. A card keeps
-  one suggestion of yours per part.
-- **Sign off.** When every card is checked, **Sign off** becomes available. It
-  says you checked the whole unit.
+When every card is checked, **Sign off** becomes available. It says you
+checked the whole unit.
+
+## Suggest, and answer proposals
+
+- **Suggest a change.** If something is wrong, tap the card, choose **Suggest
+  a change**, pick the part (word, reading, IPA, meaning, notes), write your
+  version and say why. A card keeps one suggestion of yours per part.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
   change by itself; it tells the Fluenough team.
-- **Offensive words (18+).** These show only if Adult content (18+) is on in
-  Settings. Rate how offensive a word is to native speakers in general, from 1
-  to 9, not how it feels to you. You also say where you speak the language, and
-  whether it can be friendly among friends.
-- **Sound-alike checks.** A word may sound or look like a rude one. Confirm or
-  reject the pair, and for a confirmed pair write a short care note (at most 40
-  letters) that learners will see.
 
-## Sending your reviews
+## Offensive words and sound-alikes
+
+- **Offensive words (18+).** These are reviewed on their own, and only if you
+  choose to: they show only if **Adult content (18+)** is on in Settings.
+  Rate how offensive a word is to native speakers in general, from 1 to 9,
+  not how it feels to you. You also say where you speak the language, and
+  whether it can be friendly among friends.
+- **Sound-alike checks.** A word may sound or look like a rude one. With adult
+  content on, confirm or reject the pair, and for a confirmed pair write a
+  short care note (at most 40 letters) that learners will see.
+
+## Send several decks in one mail
 
 Reviews stay on your phone until you send them. You can review several decks and
 send them **together in one mail**: tap **Send review**, leave the decks you want
@@ -97,7 +111,7 @@ Private: your **mail address**. It is never written to the public issues.
 - This runs only once the owner has set up the review bot; until then your
   reviews are filed for the owner to read ([setup](review-bot-setup.md)).
 
-## Thanks
+## Thank you
 
 When a deck you checked is updated, it lists your code, and a unit
 says "Checked by <your code> and N others". Settings lists **Decks you helped build**.
