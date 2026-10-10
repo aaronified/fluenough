@@ -116,6 +116,12 @@ Each part opens in place.
 | **Written words** (production) | see meaning → type target | the app, with diacritic and typo tolerance |
 | **Grammar** | understood: see a form → choose what it means; produced: prompt + slot → choose the form, then type it | the app |
 
+In a speaking drill, after a wrong or almost-right answer, Try again lets you
+say the word again as often as you like, and Hear yourself plays your voice
+back before the model's; only your first answer is scheduled. A word's base
+words show on its card ("Base: जाना (jānā) · to go"), and Inspect shows, for
+each card, how hard it has been for you in each skill you have answered it in.
+
 Reading passages, match pairs, multiple choice and word order come on top.
 Minimal-pair discrimination, for sound contrasts the learner's own language
 does not make, is planned; a word can already name its minimal-pair partner,
@@ -317,7 +323,12 @@ yet. Each one says so in its description and on its screen in the app. If you
 speak one of these languages, turn on Review decks in Settings: the phone makes
 your rater code, and on each unit you mark cards right or suggest a change, then
 send the reviews in one mail from your own mail app
-([guide for reviewers](docs/REVIEWING.md)). Or
+([guide for reviewers](docs/REVIEWING.md)). Offensive words are not in an
+ordinary review: each language has an Offensive words review of its own, which
+explains why they are in the app, asks whether you are 18 or over every time,
+and has you rate each word and check the words that sound like one. Each card
+records the rater codes of the speakers who checked it, and a deck turns
+reviewed once every card is checked. Or
 [report mistakes](https://github.com/aaronified/fluenough/issues) or send a
 fix; a review by a speaker is the most useful contribution these decks could
 get.
