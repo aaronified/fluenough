@@ -29,6 +29,11 @@ void main() {
       expect(languages.map((l) => l.code), ['en', 'bn', 'hi']);
       expect(languages[1].ownName, 'বাংলা');
       expect(languages.map((l) => l.iso639_3), ['eng', 'ben', 'hin']);
+      expect(languages.map((l) => l.script), [
+        'latin',
+        'bengali',
+        'devanagari',
+      ]);
     });
 
     test('a malformed list is refused with where it is wrong', () {
@@ -72,6 +77,58 @@ void main() {
       final junk = SettingsNotifier()
         ..restore(const {'spoken_languages': 'bn,Bengali,,x1,hi'});
       expect(junk.spokenLanguages, ['bn', 'hi']);
+    });
+  });
+
+  group('Languages you know (#462)', () {
+    testWidgets('is named so, in Settings and on the first launch', (
+      tester,
+    ) async {
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        const SpokenLanguagesPage(),
+        state: AppState.test(
+          settings: SettingsNotifier(spokenLanguages: const <String>['en']),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text('Languages you know'), findsOneWidget);
+      expect(l10n.settingsSpoken, 'Languages I know');
+      expect(l10n.onboardingSpokenTitle, contains('know'));
+    });
+
+    testWidgets('asks of each ticked language whether its script is read, '
+        'and keeps every answer', (tester) async {
+      usePhone(tester);
+      final settings = SettingsNotifier(
+        spokenLanguages: const <String>['en', 'bn'],
+      );
+      await pumpScreen(
+        tester,
+        const SpokenLanguagesPage(),
+        state: AppState.test(settings: settings),
+      );
+      final l10n = l10nOf(tester);
+      final bengali = find.text(l10n.knownReadsScript('bengali', 'Bengali'));
+      expect(bengali, findsOneWidget);
+      expect(
+        find.text(l10n.knownReadsScript('latin', 'English')),
+        findsOneWidget,
+      );
+      expect(
+        find.text(l10n.knownReadsScript('devanagari', 'Hindi')),
+        findsNothing,
+        reason: 'Hindi is not ticked',
+      );
+      expect(settings.scriptsRead, isEmpty, reason: 'not answered yet');
+      await tester.tap(bengali);
+      await tester.pumpAndSettle();
+      await tester.tap(find.widgetWithText(FilledButton, l10n.commonContinue));
+      await tester.pumpAndSettle();
+      expect(settings.scriptsRead, <String, bool>{'en': true, 'bn': false});
+      final back = SettingsNotifier()..restore(settings.toStored());
+      expect(back.scriptsRead, <String, bool>{'en': true, 'bn': false});
     });
   });
 

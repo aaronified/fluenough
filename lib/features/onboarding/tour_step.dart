@@ -53,7 +53,7 @@ const Set<Feature> tourClaims = <Feature>{
 };
 
 /// The tour's slides, in order. The facts slide is last: it ends on "the
-/// languages you speak", which the next screen asks for.
+/// languages you know", which the next screen asks for.
 final List<TourSlide> tourSlides = <TourSlide>[
   TourSlide(
     id: 'skills',

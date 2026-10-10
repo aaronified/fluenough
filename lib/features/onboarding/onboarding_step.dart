@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import '../../app/app_state.dart';
 import '../../app/skill.dart';
 import '../../core/data/spoken_languages.dart';
+import '../profiles/spoken_languages_page.dart' show scriptAnswers;
 import '../../core/sound/sound_check.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -95,6 +96,14 @@ class OnboardingAnswers extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the learner reads each language's script, by code (#462).
+  Map<String, bool> get scripts => _scripts;
+  Map<String, bool> _scripts = const <String, bool>{};
+  void setReadsScript(String code, bool reads) {
+    _scripts = <String, bool>{..._scripts, code: reads};
+    notifyListeners();
+  }
+
   /// What the sound check found (#89), or null if it was not run, which
   /// leaves both switches as they are.
   SoundCheckResult? get soundCheck => _soundCheck;
@@ -114,7 +123,9 @@ class OnboardingAnswers extends ChangeNotifier {
         state.settings.setSkillEnabled(Skill.listening, on);
       }
     }
-    state.settings.spokenLanguages = _spoken;
+    state.settings
+      ..scriptsRead = scriptAnswers(_spoken, _scripts)
+      ..spokenLanguages = _spoken;
   }
 }
 

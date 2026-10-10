@@ -369,13 +369,13 @@
   "@skillPairSettingsTitle": {
     "description": "Title of the switch in Settings that turns the minimal-pairs skill on. Used in Settings only: everywhere else that skill is called skillPair, Minimal pairs. Switching it on lets the learner practise the sounds of the language they learn that the languages they speak do not have, and the differences between them. Sentence case, like the other Settings titles."
   },
-  "skillPairSettingsOn": "Practise the sounds the languages you speak don’t have",
+  "skillPairSettingsOn": "Practise the sounds the languages you know don’t have",
   "@skillPairSettingsOn": {
-    "description": "Under a skill’s switch in Settings, while it is on. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner speaks (Languages I speak) do not have. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner knows (Languages I know) do not have. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
   "skillPairSettingsOff": "No practice with sounds your languages lack",
   "@skillPairSettingsOff": {
-    "description": "Under a skill’s switch in Settings, while it is off. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner speaks (Languages I speak) do not have. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner knows (Languages I know) do not have. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsSkillNoVoice": "{line}. No voice for {languages} on this phone",
   "@settingsSkillNoVoice": {
@@ -4074,7 +4074,7 @@
   "@onboardingTourFactsTitle": {
     "description": "Tour slide 4, title: the daily fact on the Today tab."
   },
-  "onboardingTourFactsBody": "Most languages here come with a short fact each day, shown on Today in the languages you speak.",
+  "onboardingTourFactsBody": "Most languages here come with a short fact each day, shown on Today in the languages you know.",
   "@onboardingTourFactsBody": {
     "description": "Tour slide 4, body. 'Most' because not every language has facts yet. Leads into the next screen, which asks which languages the learner speaks."
   },
@@ -4164,7 +4164,7 @@
       }
     }
   },
-  "onboardingSpokenTitle": "Which languages do you already speak?",
+  "onboardingSpokenTitle": "Which languages do you already know?",
   "@onboardingSpokenTitle": {
     "description": "First-launch question: the languages the learner already knows, not the one they want to learn, which is asked separately. The same choice as the Settings screen spokenTitle."
   },
@@ -4182,7 +4182,7 @@
       },
       "row": {
         "type": "String",
-        "example": "Languages I speak"
+        "example": "Languages I know"
       }
     }
   },
@@ -4190,11 +4190,25 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "spokenTitle": "Languages you speak",
-  "@spokenTitle": {
-    "description": "Title of the screen opened from Settings where the learner picks and ranks the languages they speak. The first launch asks the same question as onboardingSpokenTitle."
+  "knownReadsScript": "I read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script",
+  "@knownReadsScript": {
+    "description": "Switch under a ticked language in Languages you know, on first launch and in Settings (#462): whether the learner reads the script the language is written in. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "telugu"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
-  "spokenBody": "Tick every language you know. They decide which comparisons and daily facts you see.",
+  "spokenTitle": "Languages you know",
+  "@spokenTitle": {
+    "description": "Title of the screen opened from Settings where the learner picks and ranks the languages they know, and says whether they read each one's script (#462). The first launch asks the same question as onboardingSpokenTitle. Was “Languages you speak”."
+  },
+  "spokenBody": "Tick every language you know, and say whether you read its script. They decide which comparisons and daily facts you see, and which decks you can review.",
   "@spokenBody": {
     "description": "Under the title of the spoken-languages screen opened from Settings: how to answer, and what the answer changes. How to rank them is the hint under the list (spokenRankHint), shown once two are ticked."
   },
@@ -4244,7 +4258,7 @@
       }
     }
   },
-  "settingsSpoken": "Languages I speak",
+  "settingsSpoken": "Languages I know",
   "@settingsSpoken": {
     "description": "Settings row that opens the spoken-languages screen."
   },
@@ -4528,6 +4542,16 @@
       }
     }
   },
+  "deckDownloadsRemoveReviewBody": "Its decks are deleted from this phone. Your reviews are kept, and come back if you download {language} again.",
+  "@deckDownloadsRemoveReviewBody": {
+    "description": "Body of the Remove dialog for a language downloaded only for reviewing (#462), which is not one the learner learns.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
   "deckDownloadsRemoved": "{language} removed",
   "@deckDownloadsRemoved": {
     "description": "Toast after a language's decks are deleted.",
@@ -4592,7 +4616,7 @@
       }
     }
   },
-  "nativeChoiceBody": "{language} is taught from more than one of the languages you speak. Each teaches its own share of the course so far; a part not yet written in yours is left out until it is. You can change this in Settings, and keep what you have learned.",
+  "nativeChoiceBody": "{language} is taught from more than one of the languages you know. Each teaches its own share of the course so far; a part not yet written in yours is left out until it is. You can change this in Settings, and keep what you have learned.",
   "@nativeChoiceBody": {
     "description": "Under the question choosing which language a course is taught from.",
     "placeholders": {
@@ -4636,7 +4660,7 @@
       }
     }
   },
-  "nativeChoiceNew": "{language} is now taught from more of the languages you speak",
+  "nativeChoiceNew": "{language} is now taught from more of the languages you know",
   "@nativeChoiceNew": {
     "description": "Today: a card shown once a language the learner speaks starts teaching a course they learn, until they choose which to learn from.",
     "placeholders": {
@@ -6036,9 +6060,101 @@
   "@reviewSettingsLanguagesNone": {
     "description": "Under Languages you review when the reviewer has unticked every language."
   },
-  "reviewLanguagesBody": "What waits for review shows for these languages, and the path marks their units \"To review\". At first, the languages you speak that the app teaches.",
+  "reviewLanguagesBody": "Tick the courses you review, such as Bengali from English. What waits for review shows for them, and the path marks their units “To review”. You can review a course only if you know both languages and read both scripts.",
   "@reviewLanguagesBody": {
-    "description": "Under the title of the choice of languages a reviewer reviews."
+    "description": "Top of Languages you review (#462): what the ticks change, and who can review a course, a language taught from another."
+  },
+  "reviewPairName": "{target} from {native}",
+  "@reviewPairName": {
+    "description": "A course in Languages you review (#462): a language and the language its decks are taught from, such as “Bengali from English”.",
+    "placeholders": {
+      "target": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "native": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "reviewPairUnknown": "You don’t know {language}",
+  "@reviewPairUnknown": {
+    "description": "Under a greyed course in Languages you review: why it cannot be ticked. {language} is the course's language, or the one it is taught from, that the reviewer has not ticked in Languages you know.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewPairNoScript": "You can’t read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script",
+  "@reviewPairNoScript": {
+    "description": "Under a greyed course in Languages you review: why it cannot be ticked, a script the reviewer said in Languages you know they do not read. {script} is the deck files’ script code; another script takes the language’s name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "telugu"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewPairNotOnPhone": "Not on this phone · {size} to download",
+  "@reviewPairNotOnPhone": {
+    "description": "Under a course in Languages you review whose decks are not on the phone: ticking it offers the download. {size} is how much, such as 2.4 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "2.4 MB"
+      }
+    }
+  },
+  "reviewScriptsGateTitle": "Tell us which scripts you read",
+  "@reviewScriptsGateTitle": {
+    "description": "Languages you review, until the reviewer has said in Languages you know whether they read each language's script (#462): no course can be ticked until then."
+  },
+  "reviewScriptsGateBody": "You can review a course only if you read both its scripts. Say which you read in Languages you know.",
+  "@reviewScriptsGateBody": {
+    "description": "Under reviewScriptsGateTitle."
+  },
+  "reviewOpenKnown": "Edit languages you know",
+  "@reviewOpenKnown": {
+    "description": "Button on Languages you review that opens Languages you know, where the reviewer ticks the languages they know and says which scripts they read."
+  },
+  "reviewDownloadTitle": "Download {language} to review it?",
+  "@reviewDownloadTitle": {
+    "description": "Dialog when the reviewer ticks a course whose decks are not on the phone, in Languages you review.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewDownloadBody": "Its decks take {size}. They are for reviewing only: {language} is not added to the languages you learn, and stays out of Today and your lessons.",
+  "@reviewDownloadBody": {
+    "description": "Body of reviewDownloadTitle. {size} is how much, such as 2.4 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "2.4 MB"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewDownload": "Download",
+  "@reviewDownload": {
+    "description": "Button in reviewDownloadTitle's dialog: downloads the language's decks for reviewing, and ticks the course."
+  },
+  "reviewPairsNone": "No courses to show yet. The list of courses comes from GitHub when you are online.",
+  "@reviewPairsNone": {
+    "description": "Languages you review when neither the list of courses nor any deck is on the phone."
   },
   "reviewSettingsWaiting": "Waiting for review",
   "@reviewSettingsWaiting": {
@@ -6202,7 +6318,7 @@
   "@reviewGuideCodeBody": {
     "description": "First paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). FL-XXXX-XXXX-C is the shape of a code, not words: keep it as it is."
   },
-  "reviewGuideCodeLanguages": "Under Languages you review in Settings, pick your languages. At first these are the languages you speak that the app teaches. You can turn reviewing off whenever you like; your code is kept.",
+  "reviewGuideCodeLanguages": "Under Languages you review in Settings, tick the courses you review, such as Bengali from English. You can review a course only if you know both the language and the one it is taught from, and read both their scripts: say which in Languages you know. A course whose decks are not on your phone downloads for reviewing only; it is not added to the languages you learn. You can turn reviewing off whenever you like; your code is kept.",
   "@reviewGuideCodeLanguages": {
     "description": "Second paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Languages you review” must match reviewSettingsLanguages."
   },
