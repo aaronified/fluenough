@@ -6296,6 +6296,16 @@
       }
     }
   },
+  "cardCheckedBy": "{count, plural, =1{Checked by 1 speaker} other{Checked by {count} speakers}}",
+  "@cardCheckedBy": {
+    "description": "On a word's card and on its row in review: how many reviewers who speak the language signed the card off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
   "reviewPageTitle": "Review · {unit}",
   "@reviewPageTitle": {
     "description": "Title of the screen that reviews a unit's cards.",

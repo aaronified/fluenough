@@ -7,9 +7,11 @@ GitHub App that merges is set up. Three kinds of pull request, each on a
 branch of its own under `review-bot/`, each started afresh from `main`:
 
 - **A review's proposals** (`review-bot/review/<mail>`): each suggestion
-  of one review mail becomes a proposal on its card, and each acceptance
-  is recorded on the proposal it accepts. Merged as soon as the required
-  checks pass.
+  of one review mail becomes a proposal on its card, each acceptance
+  is recorded on the proposal it accepts, and each card the reviewer
+  marked "Looks right" gets their rater code in its `checked_by` (#449);
+  a deck file whose every card is then checked is tagged `reviewed` in
+  place of `unreviewed`. Merged as soon as the required checks pass.
 - **An agreement** (`review-bot/apply/<proposal>-<date>`): once
   REVIEW_AGREEMENTS_NEEDED rater codes other than the proposer's have
   accepted a proposal, its text is written into the field, and it and the
@@ -111,6 +113,8 @@ class Review:
     accepts: list[tuple[str, str, str]] = field(default_factory=list)
     # (language, proposal id, card)
     rejects: list[tuple[str, str, str]] = field(default_factory=list)
+    # The cards signed off, marked "Looks right": (language, deck, card).
+    checks: list[tuple[str, str, str]] = field(default_factory=list)
     edits: int = 0
     # Suggestions on a part the bot does not write: an example, a picture,
     # a base word's meaning.
@@ -148,6 +152,8 @@ def read_review(files: list[dict], code: str) -> Review:
             if not isinstance(c, dict) or not isinstance(c.get("card"), str):
                 continue
             card = c["card"]
+            if c.get("looks_right") is True and "suggestion" not in c:
+                out.checks.append((lang, deck, card))
             s = c.get("suggestion")
             if isinstance(s, dict):
                 name = pr.FIELD_OF_PART.get(s.get("part"))
@@ -511,18 +517,25 @@ class Bot:
         """The PR of one review mail, by [code]: its proposals and
         acceptances. What is left out is logged, as counts."""
         made: list[pr.Proposed] = []
+        checked: list[pr.Checks] = []
 
         def build(root: Path) -> Built | None:
             result = pr.Proposed()
             made.append(result)
+            checks = pr.Checks()
+            checked.append(checks)
             for s in review.suggestions:
                 pr.propose(root, s, result)
             for lang, pid, text in review.accepts:
                 pr.accept(root, lang, pid, code, text, result)
-            if not result.changed:
+            for lang, deck, card in review.checks:
+                pr.check(root, lang, deck, card, code, checks)
+            pr.review_done(checks)
+            if not result.changed and not checks.changed:
                 return None
             langs = sorted({s.lang for s in review.suggestions}
-                           | {lang for lang, _, _ in review.accepts})
+                           | {lang for lang, _, _ in review.accepts}
+                           | {lang for lang, _, _ in review.checks})
             lines = [f"Review by **{code}**, from the review mail (ADR-0038).", ""]
             if result.added:
                 lines.append(f"- New proposals: {len(result.added)}, on "
@@ -535,10 +548,21 @@ class Bot:
                 lines.append(f"- Left out as outdated: {len(result.outdated)}")
             if result.unsupported:
                 lines.append(f"- Left for the owner: {len(result.unsupported)}")
+            if checks.checked:
+                cards = sorted({card for card, _ in checks.checked})
+                lines.append(f"- Checked by {code}: {len(cards)} card(s), "
+                             + ", ".join(f"`{c}`" for c in cards))
+            if checks.unsupported:
+                lines.append(f"- Sign-offs left for the owner: "
+                             f"{len(checks.unsupported)}")
+            if checks.reviewed:
+                lines.append("- Every card checked, now tagged reviewed: "
+                             + ", ".join(f"`{d}`" for d in checks.reviewed))
             lines += ["", "Learners do not see proposals. Reviewers of the "
                           "language see them once this merges.", "", FOOTER]
             return Built(
-                title=f"Review proposals by {code}",
+                title=(f"Review proposals by {code}"
+                       if result.changed else f"Review sign-offs by {code}"),
                 body="\n".join(lines),
                 labels=[LABEL, KIND_LABELS["review"]],
                 langs=langs)
@@ -549,6 +573,10 @@ class Bot:
             self.log(f"Review by {code}: {left} suggestion(s) left for the "
                      f"owner, {outdated} outdated, {review.dropped} file(s) "
                      f"with no good language; the PR: {outcome}.")
+        if checked and (checked[-1].missing or checked[-1].unsupported):
+            self.log(f"Review by {code}: sign-offs of "
+                     f"{len(checked[-1].missing)} card(s) not in their deck, "
+                     f"{len(checked[-1].unsupported)} left for the owner.")
         return outcome
 
     def apply(self, lang: str, proposal: pr.Proposal) -> str:

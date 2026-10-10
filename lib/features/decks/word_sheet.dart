@@ -14,6 +14,7 @@ import '../review/review_words.dart';
 import 'card_bases.dart';
 import 'card_notes.dart';
 import 'card_top_line.dart';
+import 'checked_by_line.dart';
 import 'path_model.dart' show isSentence;
 import 'path_parts.dart' show masteryName;
 import 'word_mastery.dart';
@@ -103,6 +104,7 @@ class WordSheet extends StatelessWidget {
       notOpen: isSentence(card) && !state.isTaught(card),
     );
     final pos = card.pos;
+    final checked = checkedByOf(state.decks, card).length;
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 24),
@@ -148,6 +150,10 @@ class WordSheet extends StatelessWidget {
               textAlign: TextAlign.center,
               style: theme.textTheme.headlineSmall,
             ),
+            if (checked > 0) ...<Widget>[
+              const SizedBox(height: 8),
+              CheckedByLine(count: checked),
+            ],
             for (final note in notes) ...<Widget>[
               const SizedBox(height: 12),
               Text(
