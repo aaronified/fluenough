@@ -86,6 +86,7 @@ class Deck {
     this.table,
     this.rules = const <Rule>[],
     this.proposals = const <String, List<Proposal>>{},
+    this.checkedBy = const <String, List<String>>{},
   });
 
   final String id;
@@ -134,6 +135,11 @@ class Deck {
   /// agreement (ADR-0038). Only reviewer mode shows them.
   final Map<String, List<Proposal>> proposals;
 
+  /// The rater codes of the reviewers who signed each card off, by card id
+  /// (#449): its `checked_by`, which the review bot writes. A card no one
+  /// has checked is not in it.
+  final Map<String, List<String>> checkedBy;
+
   int get cardCount => cards.length;
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
@@ -156,6 +162,7 @@ class Deck {
     table: table,
     rules: rules,
     proposals: proposals,
+    checkedBy: checkedBy,
   );
 
   @override

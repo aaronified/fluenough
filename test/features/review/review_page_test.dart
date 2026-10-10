@@ -8,6 +8,7 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/features/decks/checked_by_line.dart';
 import 'package:fluenough/features/decks/thanks_notice.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/unreviewed_notice.dart';
@@ -407,5 +408,45 @@ cards:
       ),
       findsOneWidget,
     );
+  });
+
+  testWidgets('the thanks come from checked_by too', (tester) async {
+    useTallPhone(tester);
+    await pumpScreen(
+      tester,
+      const UnitPage(deckId: wordsDeck),
+      state: await reviewState(
+        checkedBy: const <String>[otherCode, reviewerCode],
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['te'],
+          learningChosen: true,
+        )..raterCode = reviewerCode,
+      ),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.byType(ThanksNotice), findsOneWidget);
+    expect(find.text(l10n.reviewThanksBy(1, reviewerCode)), findsOneWidget);
+  });
+
+  testWidgets('a card some speakers checked says how many, on its row and '
+      'its sheet', (tester) async {
+    useTallPhone(tester);
+    await pumpScreen(
+      tester,
+      const ReviewPage(deckId: wordsDeck),
+      state: await reviewState(
+        reviewing: true,
+        checkedBy: const <String>[reviewerCode, otherCode],
+      ),
+    );
+    final l10n = l10nOf(tester);
+    // On the plain word's row only.
+    expect(find.text(l10n.cardCheckedBy(2)), findsOneWidget);
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    expect(find.byType(ReviewCardSheet), findsOneWidget);
+    expect(find.byType(CheckedByLine), findsOneWidget);
+    expect(find.text(l10n.cardCheckedBy(2)), findsNWidgets(2));
   });
 }
