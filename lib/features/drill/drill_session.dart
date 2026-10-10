@@ -16,6 +16,7 @@ import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
+import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/sound/sound_check.dart';
 import '../../core/speech/speech_engine.dart';
@@ -733,6 +734,14 @@ class DrillSession extends ChangeNotifier {
   /// How many tries again on this card were heard and graded.
   int get retries => _retries;
 
+  /// Whether the recorded first answer on this card failed (FSRS's Again),
+  /// so that the word comes back sooner. Only then does a try again that
+  /// passes say so: an almost-right first answer is scheduled as a pass.
+  bool get firstTryFailed {
+    final grade = _answer?.grade;
+    return grade != null && grade < Fsrs.passingGrade;
+  }
+
   /// Whether "Try again" is offered: a speaking card whose recorded answer
   /// was wrong, almost right, or "Don't know". Once offered it stays, for
   /// as many tries as the learner likes.
@@ -757,7 +766,10 @@ class DrillSession extends ChangeNotifier {
     _unheard = null;
     notifyListeners();
     final heard = await _state.listenFor(deck.language);
-    if (_disposed || _index != listeningIndex || !_hearing) return;
+    // Continue was tapped while it listened, here or on the last card.
+    if (_disposed || _index != listeningIndex || !_hearing || finished) {
+      return;
+    }
     _hearing = false;
     if (heard.failed) {
       _unheard = heard.failure ?? SpeechFailure.noMatch;
@@ -794,7 +806,7 @@ class DrillSession extends ChangeNotifier {
   Future<void> hearSelf() async {
     if (!canHearSelf || _hearing || _hearingSelf != SelfTake.idle) return;
     final index = _index;
-    bool stale() => _disposed || _index != index;
+    bool stale() => _disposed || _index != index || finished;
     if (_playing) await _state.stopSpeaking();
     _hearingSelf = SelfTake.recording;
     _selfFailure = null;
@@ -1119,6 +1131,10 @@ class DrillSession extends ChangeNotifier {
     if (_playing) _state.stopSpeaking();
     // "Continue" while a "Try again" listens: what it hears is dropped.
     if (_hearing) _state.stopListening();
+    // "Continue" while "Hear yourself" records or plays: the recording is
+    // cut short, never played over the next card, and the microphone is
+    // free for it. The voice after it is stopped above, or never starts.
+    if (_hearingSelf != SelfTake.idle) _state.soundCheck.stop();
     _playing = false;
     _playingSentence = null;
     var next = _index + 1;
@@ -1166,6 +1182,7 @@ class DrillSession extends ChangeNotifier {
     _disposed = true;
     if (_playing) _state.stopSpeaking();
     if (_hearing) _state.stopListening();
+    if (_hearingSelf != SelfTake.idle) _state.soundCheck.stop();
     super.dispose();
   }
 }
