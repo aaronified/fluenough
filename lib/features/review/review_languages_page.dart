@@ -292,9 +292,13 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
       // For review only: never added to the languages learned.
       unawaited(state.downloadLanguage(pair.target));
     }
+    // From what was ticked, not only what can be reviewed now: a course
+    // whose language or script was unticked for a while keeps its tick.
+    final chosen =
+        state.settings.reviewPairs ?? <String>{for (final p in reviewed) p.key};
     state.settings.reviewPairs = <String>{
-      for (final p in reviewed)
-        if (p != pair) p.key,
+      for (final key in chosen)
+        if (key != pair.key) key,
       if (on) pair.key,
     };
   }

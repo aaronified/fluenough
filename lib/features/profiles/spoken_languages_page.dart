@@ -15,14 +15,10 @@ import 'spoken_languages_picker.dart';
 /// code. The order of the ticked languages is their rank, best known first;
 /// the list is reordered by dragging, and screen readers get its move
 /// actions.
-/// The script answers to keep for [known] (#462): each language's switch,
-/// on where it was never moved, so that saving answers every one. Answers
-/// for languages no longer known are kept, in case they come back.
-Map<String, bool> scriptAnswers(List<String> known, Map<String, bool> given) =>
-    <String, bool>{
-      ...given,
-      for (final code in known) code: given[code] ?? true,
-    };
+/// Whether every language in [known] has an explicit script answer in
+/// [given] (#462): until then, Languages you know cannot be saved.
+bool scriptsAnswered(List<String> known, Map<String, bool> given) =>
+    known.every(given.containsKey);
 
 class SpokenLanguagesPage extends StatefulWidget {
   const SpokenLanguagesPage({super.key, this.choices});
@@ -43,7 +39,7 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
   void _save() {
     final settings = AppScope.read(context).settings;
     settings
-      ..scriptsRead = scriptAnswers(_ranked, _scripts)
+      ..scriptsRead = _scripts
       ..spokenLanguages = _ranked;
     Navigator.of(context).pop();
   }
@@ -84,10 +80,28 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
             top: false,
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 16),
-              child: FilledButton(
-                style: AppButtonStyles.tall(context),
-                onPressed: _ranked.isEmpty ? null : _save,
-                child: Text(l10n.commonContinue),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  // Why the button waits: a script not yet answered.
+                  if (_ranked.isNotEmpty && !scriptsAnswered(_ranked, _scripts))
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(bottom: 8),
+                      child: Text(
+                        l10n.knownScriptsNeeded,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    ),
+                  FilledButton(
+                    style: AppButtonStyles.tall(context),
+                    onPressed:
+                        _ranked.isEmpty || !scriptsAnswered(_ranked, _scripts)
+                        ? null
+                        : _save,
+                    child: Text(l10n.commonContinue),
+                  ),
+                ],
               ),
             ),
           ),
