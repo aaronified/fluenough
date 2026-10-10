@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
+import '../../app/deck_downloads.dart';
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/snack.dart';
+import '../downloads/download_text.dart';
 import 'path_model.dart';
 
 /// The card at the top of a course's path: the course, how much of it is
 /// done, with the levels marked on the bar where the path has them, and the
-/// two rows the design adds that are not built yet: deck updates (#210) and
-/// hours left to B1 (#227), each with "Feature incoming".
+/// two rows the design adds: deck updates (#210, #464), which updates the
+/// course's language as Settings > Deck downloads does, and hours left to
+/// B1 (#227), still with "Feature incoming".
 class CourseCard extends StatelessWidget {
   const CourseCard({super.key, required this.view, required this.glyph});
 
@@ -73,17 +78,7 @@ class CourseCard extends StatelessWidget {
             ),
             child: Column(
               children: <Widget>[
-                _IncomingRow(
-                  feature: Feature.deckUpdates,
-                  icon: Icons.sync,
-                  title: l10n.pathUpdatesTitle,
-                  body: l10n.pathUpdatesBody,
-                  // Off until decks download: nothing to update from yet.
-                  action: FilledButton.tonal(
-                    onPressed: null,
-                    child: Text(l10n.pathUpdatesButton),
-                  ),
-                ),
+                _UpdatesRow(language: view.language.code),
                 Divider(height: 1, color: scheme.outlineVariant),
                 _IncomingRow(
                   feature: Feature.hoursLeft,
@@ -166,6 +161,70 @@ class _ProgressBar extends StatelessWidget {
             ),
         ],
       ),
+    );
+  }
+}
+
+/// The deck updates row (#464): Update when an update waits for [language],
+/// running the same update as Settings > Deck downloads, and "Up to date"
+/// when nothing waits, or where decks do not download.
+class _UpdatesRow extends StatelessWidget {
+  const _UpdatesRow({required this.language});
+
+  final String language;
+
+  static Future<void> _update(
+    BuildContext context,
+    DeckDownloads downloads,
+    String language,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    final failure = await downloads.update(<String>[language]);
+    if (!context.mounted) return;
+    showAppSnackBar(
+      context,
+      failure == null
+          ? l10n.deckDownloadsUpdated
+          : downloadFailureText(l10n, failure),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final downloads = AppScope.read(context).deckDownloads;
+    if (downloads == null) {
+      return _IncomingRow(
+        feature: Feature.deckUpdates,
+        icon: Icons.sync,
+        title: l10n.pathUpdatesTitle,
+        body: l10n.pathUpdatesUpToDate,
+      );
+    }
+    return ListenableBuilder(
+      listenable: downloads,
+      builder: (context, _) {
+        final busy = downloads.updating || downloads.isDownloading(language);
+        final waiting = downloads.updates.containsKey(language);
+        return _IncomingRow(
+          feature: Feature.deckUpdates,
+          icon: Icons.sync,
+          title: l10n.pathUpdatesTitle,
+          body: busy
+              ? l10n.deckDownloadsRowDownloading
+              : waiting
+              ? l10n.pathUpdatesBody
+              : l10n.pathUpdatesUpToDate,
+          action: waiting
+              ? FilledButton.tonal(
+                  onPressed: busy
+                      ? null
+                      : () => _update(context, downloads, language),
+                  child: Text(l10n.pathUpdatesButton),
+                )
+              : null,
+        );
+      },
     );
   }
 }

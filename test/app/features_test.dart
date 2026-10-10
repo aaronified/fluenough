@@ -42,7 +42,7 @@ void main() {
       'answers in Latin letters, saved progress, '
       'appearance but for wallpaper colours, stats, leeches, daily facts, '
       'the log backup, adding a deck from a file, opening the phone\'s '
-      'voice settings, reports by mail and the app log', () {
+      'voice settings, reports by mail, the app log and deck updates', () {
     expect(Feature.available, {
       Feature.drillRecognition,
       Feature.drillProduction,
@@ -65,6 +65,7 @@ void main() {
       Feature.voiceSettingsLink,
       Feature.feedbackMail,
       Feature.logs,
+      Feature.deckUpdates,
     });
   });
 

@@ -110,6 +110,7 @@ enum Feature {
     Feature.voiceSettingsLink,
     Feature.feedbackMail,
     Feature.logs,
+    Feature.deckUpdates,
   };
 }
 
