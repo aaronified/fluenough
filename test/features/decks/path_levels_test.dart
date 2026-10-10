@@ -53,7 +53,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(
       tester.getSemantics(header),
-      containsSemantics(hasExpandedState: true, isExpanded: true),
+      isSemantics(hasExpandedState: true, isExpanded: true),
     );
     expect(
       find.descendant(of: header, matching: find.byIcon(Icons.expand_less)),
@@ -66,7 +66,7 @@ void main() {
     expect(state.settings.isLevelCollapsed('te', 'A2'), isTrue);
     expect(
       tester.getSemantics(header),
-      containsSemantics(hasExpandedState: true, isExpanded: false),
+      isSemantics(hasExpandedState: true, isExpanded: false),
     );
     expect(
       find.descendant(of: header, matching: find.byIcon(Icons.expand_more)),

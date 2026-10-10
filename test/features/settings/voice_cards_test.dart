@@ -110,6 +110,9 @@ void main() {
     state.settings.learningLanguages = const <String>['te'];
     await pumpScreen(tester, const VoicesPage(), state: state);
     final l10n = l10nOf(tester);
+    // Only Telugu, learned, until the other languages are unfolded (#463).
+    expect(find.byType(LanguageVoiceCard), findsOneWidget);
+    await _tap(tester, find.text(l10n.voicesOtherLanguages));
     final cards = tester.widgetList<LanguageVoiceCard>(
       find.byType(LanguageVoiceCard),
     );

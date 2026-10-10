@@ -110,7 +110,7 @@ void main() {
     expect(others, findsOneWidget);
     expect(
       tester.getSemantics(others),
-      containsSemantics(hasExpandedState: true, isExpanded: false),
+      isSemantics(hasExpandedState: true, isExpanded: false),
     );
 
     await tester.ensureVisible(others);
