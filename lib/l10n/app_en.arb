@@ -2908,6 +2908,42 @@
   "@drillUnheardOther": {
     "description": "Speaking: any other recogniser error."
   },
+  "drillTryAgain": "Try again",
+  "@drillTryAgain": {
+    "description": "Speaking drill, after a wrong or almost-right answer: say the word again, as practice. Only the first answer is recorded (#231)."
+  },
+  "drillRetryPassed": "That’s it. Only your first try counts, so the word comes back a little sooner.",
+  "@drillRetryPassed": {
+    "description": "Speaking drill: a try again was right. It changes nothing in the schedule; the first answer is the one recorded."
+  },
+  "drillRetryPractice": "Practice only: your first try is the one that counts.",
+  "@drillRetryPractice": {
+    "description": "Speaking drill: under the result of a try again that was not right. Nothing is recorded for it."
+  },
+  "drillHearYourself": "Hear yourself",
+  "@drillHearYourself": {
+    "description": "Speaking drill, once answered: records the learner saying the word, plays it back, then plays the voice."
+  },
+  "drillHearYourselfRecording": "Say it now…",
+  "@drillHearYourselfRecording": {
+    "description": "Speaking drill: the Hear yourself button while it records the learner, for a few seconds."
+  },
+  "drillHearYourselfPlaying": "Playing yours, then the voice…",
+  "@drillHearYourselfPlaying": {
+    "description": "Speaking drill: the Hear yourself button while the learner's recording plays, then the voice."
+  },
+  "drillHearYourselfRefused": "Fluenough can’t use the microphone. Allow it in your phone’s settings, under Apps, Fluenough, Permissions.",
+  "@drillHearYourselfRefused": {
+    "description": "Speaking drill: Hear yourself could not record, because the microphone permission was refused."
+  },
+  "drillHearYourselfSilent": "Only silence was recorded. Is the microphone covered?",
+  "@drillHearYourselfSilent": {
+    "description": "Speaking drill: Hear yourself recorded nothing but silence."
+  },
+  "drillHearYourselfFailed": "Couldn’t record on this phone.",
+  "@drillHearYourselfFailed": {
+    "description": "Speaking drill: Hear yourself could not record, or could not play the recording back."
+  },
   "drillOnlineAsk": "Your phone can’t recognise {language} by itself. Recognise it online? What you say would go to your phone’s speech service.",
   "@drillOnlineAsk": {
     "description": "Speaking: the language has no on-device recogniser; asks before sending audio off the phone.",
