@@ -311,7 +311,8 @@ first attempt written for Fluenough. No speaker has checked any of them
 yet. Each one says so in its description and on its screen in the app. If you
 speak one of these languages, turn on Review decks in Settings: the phone makes
 your rater code, and on each unit you mark cards right or suggest a change, then
-send the reviews in one mail from your own mail app. Or
+send the reviews in one mail from your own mail app
+([guide for reviewers](docs/REVIEWING.md)). Or
 [report mistakes](https://github.com/aaronified/fluenough/issues) or send a
 fix; a review by a speaker is the most useful contribution these decks could
 get.
