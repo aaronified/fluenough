@@ -1608,8 +1608,12 @@ def validate(path: Path) -> Report:
     # Proposals are not deck content until applied (ADR-0038): taken out
     # before any other check, and checked on their own.
     proposals = strip_proposals(raw)
+    checks = strip_checks(raw)
     _validate_raw(r, raw, path)
     check_proposals(r, proposals)
+    check_checks(r, checks)
+    if checks:
+        check_checks_hashable(r, path)
     return r
 
 
@@ -1925,6 +1929,89 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                               f"says what it was proposed against")
 
 
+# --- Who checked a card (#449, ADR-0038 amended) ----------------------------
+# The rater codes of the reviewers who signed a card off, written on the
+# card's entry by the review bot as one line: `checked_by: ["FL-…"]`.
+
+@dataclass
+class Checked:
+    """A card entry's `checked_by`, taken out of the file: where it was,
+    the card's id, and the codes as written."""
+    where: str
+    card: object
+    codes: object
+
+
+def _card_entries(raw: object) -> list[tuple[str, object, dict]]:
+    """Each card entry of [raw], a deck file as loaded, with where it is
+    and its card's id: a list's cards and refs, or a layer's entries."""
+    if not isinstance(raw, dict):
+        return []
+    cards = raw.get("cards")
+    out: list[tuple[str, object, dict]] = []
+    if isinstance(cards, list) and raw.get("kind") != "layer":
+        for i, entry in enumerate(cards):
+            if isinstance(entry, dict):
+                out.append((f"cards[{i}]",
+                            entry.get("ref" if "ref" in entry else "id"), entry))
+    elif isinstance(cards, dict) and raw.get("kind") == "layer":
+        for key, entry in cards.items():
+            if isinstance(entry, dict):
+                out.append((f"cards.{key}", key, entry))
+    return out
+
+
+def strip_checks(raw: object) -> list[Checked]:
+    """Takes every card entry's `checked_by` out of [raw], a deck file as
+    loaded, and returns them, as strip_proposals does proposals: it is a
+    record of review, allowed on any card entry, and checked on its own."""
+    return [Checked(where, card, entry.pop("checked_by"))
+            for where, card, entry in _card_entries(raw) if "checked_by" in entry]
+
+
+def check_checks(r: Report, found: list[Checked]) -> None:
+    """Each `checked_by`: a non-empty list of rater codes, each written as
+    the app writes it, none twice."""
+    for c in found:
+        where = f"{c.where}.checked_by"
+        if not isinstance(c.codes, list) or not c.codes:
+            r.error(where, "must be a non-empty list of rater codes, "
+                           '["FL-XXXX-XXXX-C"]')
+            continue
+        bad = [code for code in c.codes
+               if rater_code(code) is None or rater_code(code) != code]
+        if bad:
+            r.error(where, f"must list rater codes, FL-XXXX-XXXX-C, got "
+                           f"{', '.join(repr(b) for b in bad)}")
+        elif len(set(c.codes)) != len(c.codes):
+            r.error(where, "names a rater code twice")
+
+
+def check_checks_hashable(r: Report, path: Path) -> None:
+    """Each `checked_by` in [path] is written where tools/deck_index.py
+    can take it out of `content_sha256`: a line of its own on a block card,
+    or last before the closing brace of a card written on one line in flow
+    style, as the bot writes it. Anywhere else, a sign-off would offer
+    every learner an update (#449)."""
+    import deck_index
+    try:
+        rest = yaml.load(deck_index.content_bytes(path.read_bytes())
+                         .decode("utf-8"), Loader=DeckLoader)
+    except (OSError, UnicodeDecodeError, yaml.YAMLError):
+        r.error("checked_by", "must be written as the bot writes it, a line "
+                              "of its own or last in a card written on one "
+                              "line, ending `checked_by: [...] }`; written "
+                              "across lines in a flow card it cannot be left "
+                              "out of content_sha256")
+        return
+    for c in strip_checks(rest):
+        r.error(f"{c.where}.checked_by",
+                "must be a line of its own, or last in a card written on one "
+                "line, ending `checked_by: [...] }`; anywhere else it cannot "
+                "be left out of content_sha256, and a sign-off would offer "
+                "learners an update")
+
+
 def _is_date(text: str) -> bool:
     try:
         datetime.date.fromisoformat(text)
@@ -1986,12 +2073,14 @@ def _check_review_tags(r: Report, raw: dict) -> None:
 # --- Cores and layers (ADR-0036) ---------------------------------------------
 
 def _load_raw(path: Path) -> object:
-    """[path] as the checks read it: its proposals taken out (ADR-0038)."""
+    """[path] as the checks read it: its proposals and `checked_by` taken
+    out (ADR-0038)."""
     try:
         raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         return None
     strip_proposals(raw)
+    strip_checks(raw)
     return raw
 
 
