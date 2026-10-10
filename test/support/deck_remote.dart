@@ -82,6 +82,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
   final paths = <String, List<String>>{};
   final names = <String, String>{};
   final natives = <String, Set<String>>{};
+  final alphabets = <String>{};
   for (final path in files.keys.toList()..sort()) {
     final parts = path.split('/');
     if (parts.length < 3 || parts[0] != 'decks') continue;
@@ -121,9 +122,18 @@ String indexFor(Map<String, String> files, {int version = 1}) {
     if (kind == 'path') {
       paths[code] = <String>[
         for (final unit in header['units'] as YamlList)
-          for (final deck in unit is YamlList ? unit : const <Object?>[])
+          for (final deck in switch (unit) {
+            final YamlList decks => decks,
+            final YamlMap map when map['decks'] is YamlList =>
+              map['decks'] as YamlList,
+            _ => const <Object?>[],
+          })
             if (deck is String && deck != '*') deck,
       ];
+      if (header['alphabet'] case final YamlList alphabet
+          when alphabet.isNotEmpty) {
+        alphabets.add(code);
+      }
     }
     (languages[code] ??= <Map<String, Object?>>[]).add(<String, Object?>{
       'path': path,
@@ -149,6 +159,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
             for (final n in (natives[code] ?? <String>{}).toList()..sort())
               <String, String>{'code': n, 'name': n},
           ],
+          'script_decks': alphabets.contains(code),
           'path': paths[code] ?? const <String>[],
           'files': languages[code],
         },
