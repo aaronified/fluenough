@@ -14,6 +14,14 @@
   consequence below. `content_sha256` drops a `proposed:` key's items
   whether they are indented under it, as the bot writes them, or at its
   own indent.
+- **Amended:** 2026-10-10 (#449, owner's decision of the same day for
+  v0.4): each card records who checked it. A card entry may carry
+  `checked_by`, the rater codes of the reviewers who marked it "Looks
+  right", which the review mail's PR adds, one line, never naming a code
+  twice. Once every card entry of a deck file lists a code, the same PR
+  tags the file `reviewed` in place of `unreviewed`. `content_sha256`
+  leaves `checked_by` out as it does proposals; the tag is not left out,
+  since learners see it. See "Who checked a card" below.
 
 ## Context
 
@@ -107,6 +115,37 @@ another review, may change it first.
 - **The index counts proposals:** a file's entry in `decks/index.json`
   gives `proposed`, the number of proposals in it, when it has any.
 
+### Who checked a card (#449)
+
+- **A sign-off is a fact on the card,** like a proposal: `checked_by:
+  ["FL-…", …]` on the entry, in the file of the deck the reviewer
+  reviewed, and, for a layer, on its core's card too, since a reviewer of
+  the merged deck checked the word as well as the meaning. Written as one
+  line: its own line on a card written as a block, `, checked_by: [...]`
+  before the closing brace of a card written in flow style. A code
+  already listed is not added again.
+- **The review mail's PR writes it,** beside the mail's proposals and
+  acceptances, from each card the review file marks `looks_right`, and is
+  merged the same way once the checks pass. A card the reviewed deck does
+  not hold, or an entry the bot cannot edit one line at a time, is left
+  for the owner and counted in the log.
+- **The deck's tag follows.** When every card entry of a file the PR
+  looked at lists a code, the PR rewrites the file's `tags` line with
+  `reviewed` in place of `unreviewed`. A core and a layer are tagged each
+  on its own; the merged deck drops `reviewed` while either says
+  `unreviewed` (ADR-0036), so it reads as reviewed only once both are
+  checked. A file with no card entries, a grammar or rules deck, is never
+  tagged by the bot.
+- **No update prompt for a sign-off.** `content_sha256` leaves out
+  `checked_by` lines, and the `checked_by` part of a flow-style card's
+  line, so the file with every sign-off removed hashes as it did before
+  the first. The `reviewed` tag counts: learners see it, on the unit's
+  screen, and are offered the update.
+- **The app** shows "Checked by N speakers" on a word's card and in
+  review, and the thanks on a unit, and Settings' decks you helped build,
+  read the codes in `checked_by` (and in `authors`, as decks listed them
+  before).
+
 ## Consequences
 
 - Native speakers change the decks learners download without the owner,
@@ -125,6 +164,13 @@ another review, may change it first.
   check of a learner's phone compares `content_sha256`, the hash with
   proposals taken out, so a change to proposals only offers no update.
   Only reviewer mode is offered one.
+- Every app released before v0.4 refuses a deck file with `checked_by`
+  as an unknown field, as with `proposed`: the App is set up only once a
+  release that reads both is out.
+- A sign-off is not undone when a card changes later, by an agreed
+  proposal or the owner's edit: the codes still say who checked the card,
+  not its present text. The owner deletes a code, or the line, to take a
+  sign-off back; a deck tagged `reviewed` is not tagged back by the bot.
 - Rater codes, card ids and proposal ids appear in public PRs and issues,
   and the proposed text appears in the decks, which are public, as the
   plan allows. Mail addresses never do.

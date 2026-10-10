@@ -38,7 +38,9 @@ A card's `proposed` changes (ADR-0038) are taken out before any other
 check, so their text is never held to deck content's rules, and checked on
 their own: one line each, an id that is its facts' hash, a field the entry
 may give, a good rater code and date, and acceptances by other codes. An
-outdated proposal gets an `info` line.
+outdated proposal gets an `info` line. A card's `checked_by` (#449) is
+taken out the same way and checked to be a non-empty list of rater codes,
+none twice.
 
 ## `deck_index.py`
 
@@ -56,7 +58,9 @@ has script decks, the native languages it is taught from, its path's order,
 each unit's planned words and the words its decks have (counted as the
 validator counts them, for completeness toward B1), and every file with its
 path, size, SHA-256, schema, kind, and the native language and core id of a
-deck, and how many proposals a file holds (`proposed`). Languages in
+deck, how many proposals a file holds (`proposed`), and `content_sha256`,
+the file's hash without its proposals and `checked_by`, which a learner's
+phone compares (#444, #449). Languages in
 `HIDDEN` are left out; `decks/themes.yaml` stays bundled
 in the app. One file is one line, so a changed deck is a one-line diff.
 
@@ -111,7 +115,10 @@ suggestions as `proposed` lines on their cards and records its acceptances;
 a proposal accepted by `REVIEW_AGREEMENTS_NEEDED` other rater codes (a
 repository variable, 1 when unset) gets a pull request that writes it into
 the field and closes the other proposals on that field; proposals whose
-field has changed are closed as outdated. Each PR is merged as soon as its
+field has changed are closed as outdated. The review mail's PR also adds
+the reviewer's code to the `checked_by` of each card marked "Looks right",
+never twice, and tags a deck file `reviewed` once all its cards are
+checked (#449). Each PR is merged as soon as its
 checks pass. The mail gets the Gmail label `fluenough-proposed` once its PR
 is merged or closed.
 
