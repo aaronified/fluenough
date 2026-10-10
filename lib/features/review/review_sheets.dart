@@ -12,6 +12,7 @@ import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_notes.dart';
 import '../decks/card_top_line.dart';
+import '../decks/checked_by_line.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'alike_warning.dart';
 import 'proposal_card.dart';
@@ -104,6 +105,7 @@ class ReviewCardSheet extends StatelessWidget {
     final rating = review?.rating;
     final alike = review?.alike;
     final proposals = waitingProposals(state.decks, deck, card);
+    final checked = checkedByOf(state.decks, card, deck: deck).length;
     void close(ReviewCardAction? action) => Navigator.of(context).pop(action);
 
     return SafeArea(
@@ -121,6 +123,10 @@ class ReviewCardSheet extends StatelessWidget {
               report: '${card.id} in ${deck.id}',
             ),
             CardFace(card: card, language: language),
+            if (checked > 0) ...<Widget>[
+              const SizedBox(height: 8),
+              CheckedByLine(count: checked),
+            ],
             for (final proposal in proposals) ...<Widget>[
               const SizedBox(height: 16),
               ProposalCard(deck: deck, card: card, proposal: proposal),

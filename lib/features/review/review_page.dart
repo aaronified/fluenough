@@ -13,6 +13,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/target_text.dart';
+import '../decks/checked_by_line.dart';
 import '../decks/path_model.dart';
 import '../decks/word_sheet.dart' show adultContentOn;
 import 'proposal_card.dart';
@@ -392,7 +393,9 @@ class _ReviewRow extends StatelessWidget {
       ),
     };
     final proposals = waitingProposals(state.decks, deck, card).length;
+    final checked = checkedByOf(state.decks, card, deck: deck).length;
     final extra = <String>[
+      if (checked > 0) l10n.cardCheckedBy(checked),
       if (proposals > 0) l10n.reviewProposalsWaiting(proposals),
       if (review?.rating case final r?) l10n.reviewRated(r.score),
       if (review?.alike case final a?)
