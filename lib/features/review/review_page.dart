@@ -14,7 +14,6 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/path_model.dart';
-import '../decks/word_sheet.dart' show adultContentOn;
 import 'proposal_card.dart';
 import 'review_sheets.dart';
 import 'review_waiting.dart';
@@ -27,21 +26,21 @@ import 'send_reviews_sheet.dart';
 /// a card opens it whole. Sign off once every card is checked; Send review
 /// opens the send sheet, which sends every deck waiting, in one mail.
 ///
-/// Rude words show only with adult content on (#96); while it is off the
-/// screen says how many are hidden, and they count as left to check.
-/// Switching it off in Settings hides them again at once.
+/// Offensive words never show here, adult content on or off: they are
+/// reviewed apart, in their language's Offensive words review, and only on
+/// purpose (docs/plans/deck-browser.md, owner, 2026-10-10). The screen says
+/// how many it leaves out, and they do not count as left to check. A deck
+/// of offensive words only is signed off there, not here. Nor is a rude
+/// word named here through a word like it: such a word shows the warning
+/// a learner sees, and its pair is checked in the Offensive words review.
 class ReviewPage extends StatelessWidget {
-  const ReviewPage({super.key, required this.deckId, this.plan, this.adult});
+  const ReviewPage({super.key, required this.deckId, this.plan});
 
   /// A deck in the unit, by id: the unit is the one holding it.
   final String deckId;
 
   /// The course's plan, for tests and the gallery, as [UnitPage] takes it.
   final CoursePlan? plan;
-
-  /// Whether adult content is on, in place of the setting: for tests and
-  /// the gallery.
-  final bool? adult;
 
   @override
   Widget build(BuildContext context) {
@@ -56,13 +55,8 @@ class ReviewPage extends StatelessWidget {
     }
     return ListenableBuilder(
       listenable: state.settings,
-      builder: (context, _) => _build(
-        context,
-        state,
-        unitTitle(state, unit.decks),
-        unit.decks,
-        adult ?? adultContentOn(state),
-      ),
+      builder: (context, _) =>
+          _build(context, state, unitTitle(state, unit.decks), unit.decks),
     );
   }
 
@@ -71,7 +65,6 @@ class ReviewPage extends StatelessWidget {
     AppState state,
     String title,
     List<DeckEntry> decks,
-    bool adult,
   ) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -80,19 +73,25 @@ class ReviewPage extends StatelessWidget {
     final code = reviewing.code;
     var total = 0;
     var done = 0;
-    var hidden = 0;
+    var apart = 0;
     for (final deck in decks) {
       for (final card in deck.cards) {
-        total++;
-        if (isRudeIn(deck, card) && !adult) {
-          hidden++;
-        } else if (cardChecked(state, deck, card, adult)) {
-          done++;
+        if (isRudeIn(deck, card)) {
+          apart++;
+          continue;
         }
+        total++;
+        if (cardChecked(state, deck, card)) done++;
       }
     }
     final left = total - done;
-    final signed = decks.every(
+    // The decks this review signs off: a deck of offensive words only is
+    // signed off in the Offensive words review.
+    final ordinary = <DeckEntry>[
+      for (final deck in decks)
+        if (hasOrdinaryCards(deck)) deck,
+    ];
+    final signed = ordinary.every(
       (d) => reviewing.reviews.of(d.id)?.signedOff != null,
     );
     final waiting = reviewing.unsent.length;
@@ -148,25 +147,26 @@ class ReviewPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 24),
         children: <Widget>[
-          _Info(text: l10n.reviewPageInfo, icon: Icons.info_outline),
-          if (hidden > 0) ...<Widget>[
+          ReviewInfo(text: l10n.reviewPageInfo, icon: Icons.info_outline),
+          if (apart > 0) ...<Widget>[
             const SizedBox(height: 8),
-            _Info(
-              text: l10n.reviewRudeHidden(hidden),
+            ReviewInfo(
+              text: l10n.reviewOffensiveApart(apart),
               icon: Icons.visibility_off_outlined,
             ),
           ],
           for (final deck in decks)
-            ..._deck(context, state, deck, adult, single: decks.length == 1),
+            ..._deck(context, state, deck, single: decks.length == 1),
         ],
       ),
-      bottomNavigationBar: _Foot(
+      bottomNavigationBar: ReviewFoot(
         left: left,
         signed: signed,
         waiting: waiting,
+        showSignOff: ordinary.isNotEmpty,
         onSignOff: left == 0 && !signed
             ? () {
-                for (final deck in decks) {
+                for (final deck in ordinary) {
                   reviewing.signOff(deck);
                 }
                 showAppSnackBar(context, l10n.reviewSignedOffDone);
@@ -181,15 +181,14 @@ class ReviewPage extends StatelessWidget {
   List<Widget> _deck(
     BuildContext context,
     AppState state,
-    DeckEntry deck,
-    bool adult, {
+    DeckEntry deck, {
     required bool single,
   }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final cards = <Card>[
       for (final card in deck.cards)
-        if (adult || !isRudeIn(deck, card)) card,
+        if (!isRudeIn(deck, card)) card,
     ];
     if (cards.isEmpty) return const <Widget>[];
     final reviews = state.reviewing.reviews.of(deck.id);
@@ -232,11 +231,8 @@ class ReviewPage extends StatelessWidget {
               deck: deck,
               card: card,
               review: state.reviewing.reviewOf(deck, card),
-              onOpen: () => _open(context, state, deck, card, adult),
+              onOpen: () => _open(context, deck, card),
               onSuggest: () => _suggest(context, state, deck, card),
-              onRate: isRudeIn(deck, card)
-                  ? () => _rate(context, deck, card)
-                  : null,
             ),
         ],
       ),
@@ -244,19 +240,8 @@ class ReviewPage extends StatelessWidget {
   }
 
   /// Opens [card], then whatever its sheet asked for.
-  Future<void> _open(
-    BuildContext context,
-    AppState state,
-    DeckEntry deck,
-    Card card,
-    bool adult,
-  ) async {
-    final action = await showReviewCard(
-      context,
-      deck: deck,
-      card: card,
-      adult: adult,
-    );
+  Future<void> _open(BuildContext context, DeckEntry deck, Card card) async {
+    final action = await showReviewCard(context, deck: deck, card: card);
     if (!context.mounted || action == null) return;
     switch (action) {
       case ReviewCardAction.suggest:
@@ -267,18 +252,9 @@ class ReviewPage extends StatelessWidget {
           await showSuggestSheet(context, deck: deck, card: card);
         }
       case ReviewCardAction.checkAlike:
-        final pair = rudeAlikesOf(state, card).firstOrNull;
-        if (pair != null) {
-          await showAlikeSheet(context, deck: deck, card: card, pair: pair);
-        }
-    }
-  }
-
-  /// Rates the rude word [card], and suggests a change if asked from there.
-  Future<void> _rate(BuildContext context, DeckEntry deck, Card card) async {
-    final suggest = await showRateSheet(context, deck: deck, card: card);
-    if (suggest == true && context.mounted) {
-      await showSuggestSheet(context, deck: deck, card: card);
+        // Offered only in the Offensive words review, which names the
+        // rude word: never from here.
+        break;
     }
   }
 
@@ -291,8 +267,8 @@ class ReviewPage extends StatelessWidget {
 }
 
 /// A tinted line with an icon: what reviewing asks, or what is hidden.
-class _Info extends StatelessWidget {
-  const _Info({required this.text, required this.icon});
+class ReviewInfo extends StatelessWidget {
+  const ReviewInfo({super.key, required this.text, required this.icon});
 
   final String text;
   final IconData icon;
@@ -335,7 +311,6 @@ class _ReviewRow extends StatelessWidget {
     required this.review,
     required this.onOpen,
     required this.onSuggest,
-    this.onRate,
   });
 
   final DeckEntry deck;
@@ -344,16 +319,12 @@ class _ReviewRow extends StatelessWidget {
   final VoidCallback onOpen;
   final VoidCallback onSuggest;
 
-  /// For a rude word, which is rated rather than marked right.
-  final VoidCallback? onRate;
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final state = AppScope.read(context);
-    final onRate = this.onRate;
     final reading = card.reading;
     final review = this.review;
     final LanguageInfo language = deck.language;
@@ -364,13 +335,6 @@ class _ReviewRow extends StatelessWidget {
         Semantics(label: label, excludeSemantics: true, child: Text(text));
     final meaning = card.native;
     final Widget mark = switch (review) {
-      _ when onRate != null => FilledButton.tonalIcon(
-        onPressed: onRate,
-        icon: const Icon(Icons.bar_chart, size: 18),
-        label: review?.rating == null
-            ? said(l10n.reviewRateShort, l10n.reviewRateFor(meaning))
-            : said(l10n.reviewRatedShort, l10n.reviewRatedFor(meaning)),
-      ),
       CardReview(suggestion: _?) => FilledButton.tonalIcon(
         onPressed: onSuggest,
         icon: const Icon(Icons.edit_outlined, size: 18),
@@ -394,7 +358,6 @@ class _ReviewRow extends StatelessWidget {
     final proposals = waitingProposals(state.decks, deck, card).length;
     final extra = <String>[
       if (proposals > 0) l10n.reviewProposalsWaiting(proposals),
-      if (review?.rating case final r?) l10n.reviewRated(r.score),
       if (review?.alike case final a?)
         a.real ? l10n.reviewAlikeConfirmed : l10n.reviewAlikeRejected,
     ];
@@ -465,13 +428,17 @@ class _ReviewRow extends StatelessWidget {
 }
 
 /// The foot: how many decks wait to send, then Sign off and Send review.
-class _Foot extends StatelessWidget {
-  const _Foot({
+/// Without [showSignOff], Send review alone: nothing on the screen is
+/// signed off from it.
+class ReviewFoot extends StatelessWidget {
+  const ReviewFoot({
+    super.key,
     required this.left,
     required this.signed,
     required this.waiting,
     required this.onSignOff,
     required this.onSend,
+    this.showSignOff = true,
   });
 
   final int left;
@@ -479,6 +446,7 @@ class _Foot extends StatelessWidget {
   final int waiting;
   final VoidCallback? onSignOff;
   final VoidCallback onSend;
+  final bool showSignOff;
 
   @override
   Widget build(BuildContext context) {
@@ -530,7 +498,9 @@ class _Foot extends StatelessWidget {
                     color: scheme.onSurfaceVariant,
                   ),
                 ),
-              if (stacked) ...<Widget>[signOff, send] else
+              if (!showSignOff)
+                send
+              else if (stacked) ...<Widget>[signOff, send] else
                 Row(
                   spacing: 12,
                   children: <Widget>[
