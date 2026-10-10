@@ -475,7 +475,11 @@ void main() {
       final semantics = tester.ensureSemantics();
       final state = await teluguLearner();
       state.reviewing.turnOn();
-      state.settings.reviewLanguages = const <String>{'te'};
+      // Reviewing Telugu from English needs both known, both scripts read.
+      state.settings
+        ..spokenLanguages = const <String>['en', 'te']
+        ..scriptsRead = const <String, bool>{'en': true, 'te': true}
+        ..reviewLanguages = const <String>{'te'};
       await pumpScreen(
         tester,
         const DecksPage(planOf: PathFixtures.planOf),
