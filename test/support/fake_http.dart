@@ -23,6 +23,10 @@ class FakeHttpClient implements HttpClient {
   /// The length the reply claims, when not its body's: a body cut short.
   int? contentLength;
 
+  /// Whether the reply came gzipped and was unzipped on arrival, as
+  /// GitHub's are: its [contentLength] is then the compressed size.
+  bool compressed = false;
+
   @override
   Duration? connectionTimeout;
 
@@ -54,6 +58,9 @@ class _FakeRequest implements HttpClientRequest {
       status,
       bytes,
       contentLength: client.contentLength ?? bytes.length,
+      compressionState: client.compressed
+          ? HttpClientResponseCompressionState.decompressed
+          : HttpClientResponseCompressionState.notCompressed,
     );
   }
 
@@ -75,7 +82,15 @@ class _FakeHeaders implements HttpHeaders {
 }
 
 class _FakeResponse extends Stream<List<int>> implements HttpClientResponse {
-  _FakeResponse(this.statusCode, this.bytes, {required this.contentLength});
+  _FakeResponse(
+    this.statusCode,
+    this.bytes, {
+    required this.contentLength,
+    required this.compressionState,
+  });
+
+  @override
+  final HttpClientResponseCompressionState compressionState;
 
   @override
   final int statusCode;

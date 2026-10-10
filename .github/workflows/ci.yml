@@ -62,6 +62,13 @@ jobs:
       # code actually compiles and passes.
       - run: flutter analyze
       - run: flutter test
+      # Real downloads from GitHub through the app's own fetcher: 0.4.0
+      # shipped unable to download any deck, which only a test against the
+      # real GitHub could have caught.
+      - name: Download real decks from GitHub
+        run: flutter test test/live/
+        env:
+          LIVE_GITHUB: "1"
 
       - name: Check formatting
         id: fmt

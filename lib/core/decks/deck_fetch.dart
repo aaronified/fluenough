@@ -135,8 +135,14 @@ class GitHubDeckFetcher implements DeckFetcher {
       if (bytes.length > maxBytes) throw const _TooLarge();
     }
     final expected = response.contentLength;
-    // A body cut short of what the server said is a broken connection.
-    if (expected >= 0 && bytes.length != expected) {
+    // A body cut short of what the server said is a broken connection. A
+    // compressed reply is unzipped as it arrives, and its Content-Length is
+    // the compressed size, so it cannot be compared: GitHub gzips every
+    // file. The SHA-256 in the index still catches a file cut short.
+    if (response.compressionState ==
+            HttpClientResponseCompressionState.notCompressed &&
+        expected >= 0 &&
+        bytes.length != expected) {
       return const Fetched.failed(FetchFailure.offline);
     }
     return Fetched(bytes.takeBytes());

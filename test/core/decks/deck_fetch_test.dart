@@ -13,8 +13,11 @@ void main() {
   Future<(Fetched, FakeHttpClient)> fetch(
     Future<(int, List<int>)> Function() reply, {
     int? claims,
+    bool compressed = false,
   }) async {
-    final client = FakeHttpClient(reply)..contentLength = claims;
+    final client = FakeHttpClient(reply)
+      ..contentLength = claims
+      ..compressed = compressed;
     final fetched = await withFakeClient(
       client,
       () => fetcher.fetch('decks/hi/hi-path.yaml'),
@@ -68,6 +71,19 @@ void main() {
       claims: 20,
     );
     expect(fetched.failure, FetchFailure.offline);
+  });
+
+  test('a gzipped reply, unzipped on arrival, is the whole file', () async {
+    // GitHub gzips every file: the Content-Length it sends is the
+    // compressed size, smaller than what arrives once unzipped (0.4.0).
+    final text = 'kind: path\n' * 200;
+    final (fetched, _) = await fetch(
+      () async => (200, utf8.encode(text)),
+      claims: 57,
+      compressed: true,
+    );
+    expect(fetched.failure, isNull);
+    expect(utf8.decode(fetched.bytes!), text);
   });
 
   test('refuses a file too large to be a deck', () async {
