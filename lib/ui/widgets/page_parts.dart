@@ -9,9 +9,16 @@ import 'report_button.dart';
 /// A page pushed on top of a tab uses an [AppBar] instead; the theme gives it
 /// the design's 64 px height and 22/28 title.
 class TabHeader extends StatelessWidget {
-  const TabHeader({super.key, required this.title});
+  const TabHeader({
+    super.key,
+    required this.title,
+    this.actions = const <Widget>[],
+  });
 
   final String title;
+
+  /// Buttons before the report button, such as the language menu.
+  final List<Widget> actions;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -27,6 +34,7 @@ class TabHeader extends StatelessWidget {
             ),
           ),
         ),
+        ...actions,
         ReportButton(detail: title),
       ],
     ),

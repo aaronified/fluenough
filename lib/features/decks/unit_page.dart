@@ -14,6 +14,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
@@ -210,6 +211,7 @@ class _UnitPageState extends State<UnitPage> {
                     label: Text(l10n.unitReview),
                   ),
                 ),
+              LanguageMenu(pageLanguage: language.code),
               ReportButton(detail: decks.map((e) => e.id).join(', ')),
             ],
           ),
