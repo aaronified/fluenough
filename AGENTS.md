@@ -422,6 +422,8 @@ explain most of what is otherwise surprising about this codebase.
       says plainly that they were not run
 - [ ] `dart format lib test` applied, and nothing else reformatted
 - [ ] No card id renumbered, reused, or removed-and-replaced
+- [ ] Every card whose base changes its stem (రావడం (rāvaḍam) to వచ్చింది
+      (vaccindi)) says so in its notes
 - [ ] A new language has `iso639_3` on every language block, and a
       `<code>-facts.yaml` with 30+ facts or an issue for one
 - [ ] Tests added for anything touching scheduling or grading

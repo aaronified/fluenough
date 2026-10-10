@@ -639,6 +639,12 @@ are in each layer:
   and `wiktionary` are only for a base written in full.
 - **Words** are the text split at spaces and punctuation (an apostrophe
   inside a word is kept), with digits dropped.
+- **A changed stem is said in the card's notes.** When the inflected form
+  does not show its base, the card says so in one short line, so the learner
+  sees the link. The base రావడం (rāvaḍam), to come, becomes వచ్చింది
+  (vaccindi), she came, so that card's note reads "రావడం (rāvaḍam) changes
+  its stem in the past: వచ్చ- (vacc-)." Every past-tense card built on it
+  carries the line.
 
 **In a [B1 deck](#the-b1-plan), every word is covered.** Each word of a
 target, and of each example's target, is either the target, or an
@@ -1610,7 +1616,8 @@ error before moving on. Read the warnings; do not leave them unexplained.
         a single or a double consonant), naming the partner, which must be
         taught in the course; the partner gets the note naming this word;
       - **`bases`** on every inflected or derived word, in the target and
-        in each example.
+        in each example, and a note on each card whose base changes its
+        stem ([Base words](#base-words-bases)).
    2. **Its rules**, a rules core `<lang>-grammar-<topic>` and its layer
       ([Rules decks](#rules-decks)): word forms first (a noun's plural,
       oblique stem, case endings and postpositions; pronouns and their

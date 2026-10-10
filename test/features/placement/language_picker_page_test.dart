@@ -827,7 +827,7 @@ void main() {
     });
 
     testWidgets('Cancel after the first decks keeps what is in, and the rest '
-        'waits on Settings > Deck downloads', (tester) async {
+        'waits on its card in Languages I\'m learning', (tester) async {
       final state = await start(tester);
       final l10n = l10nOf(tester);
       final downloads = state.deckDownloads!;
