@@ -131,6 +131,20 @@
   "@commonListSeparator": {
     "description": "Placed between items when the app lists several names in a row, such as the languages a profile learns: \"Hindi, Spanish\". Keep any spacing your language uses."
   },
+  "languageMenuAll": "All languages",
+  "@languageMenuAll": {
+    "description": "In the language menu at the top of Today, Decks and Progress: the choice that shows every language the learner learns together, rather than one."
+  },
+  "languageMenuLabel": "Language shown: {language}",
+  "@languageMenuLabel": {
+    "description": "Tooltip and screen-reader label of the language menu button at the top of Today, Decks, Progress and a deck's page. It chooses which language's lessons, decks and numbers the whole app shows. The placeholder is a language's name, such as \"Telugu\", or languageMenuAll.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
   "commonNotSavedTitle": "Progress isn’t being saved",
   "@commonNotSavedTitle": {
     "description": "Banner title while this version keeps reviews in memory only."
