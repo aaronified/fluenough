@@ -42,6 +42,19 @@ enum IndexStatus { none, loading, ready, failed }
 /// How far a language's download has got: files and bytes, of how many.
 typedef DownloadProgress = ({int done, int total, int bytes, int totalBytes});
 
+/// How much of a language is on the phone, for a learner who speaks some
+/// languages, counting what is downloading (the language picker's bar,
+/// #211): its decks and bytes, of how many, and the bytes of the first
+/// [decksBeforeReady] decks, where it can be learned.
+typedef LanguageDownload = ({
+  int decks,
+  int totalDecks,
+  int bytes,
+  int totalBytes,
+  int readyBytes,
+  bool ready,
+});
+
 /// What a language is, on this phone, beside what GitHub offers.
 enum LanguageDownloadState {
   /// None of its files are on the phone.
@@ -82,6 +95,9 @@ typedef DeckFileCheck = String? Function(String path, String text);
 ///   unless the learner turns that off ([checksAutomatically]). When decks
 ///   have changed the app asks; "Not now" leaves them waiting on Settings >
 ///   Deck downloads.
+/// - **Cancelling** a language's download ([cancel]) keeps what is in and
+///   stops the rest, which then waits on Settings > Deck downloads rather
+///   than resuming at launch.
 /// - **Removing** a language deletes its files ([remove]). Progress is in
 ///   the review log, by card id, so it stays, and comes back with the
 ///   decks.
@@ -131,6 +147,9 @@ class DeckDownloads extends ChangeNotifier {
   bool _autoCheck = true;
   List<String>? _spoken;
   Set<String> _complete = <String>{};
+  Set<String> _paused = <String>{};
+  final Set<String> _stopping = <String>{};
+  final Map<String, Set<String>> _fetched = <String, Set<String>>{};
   final Map<String, DownloadProgress> _progress = <String, DownloadProgress>{};
   final Map<String, DeckDownloadFailure> _failures =
       <String, DeckDownloadFailure>{};
@@ -183,6 +202,11 @@ class DeckDownloads extends ChangeNotifier {
           _autoCheck = json['auto'] != false;
           _complete = <String>{
             if (json['complete'] case final List<Object?> codes)
+              for (final code in codes)
+                if (code is String) code,
+          };
+          _paused = <String>{
+            if (json['paused'] case final List<Object?> codes)
               for (final code in codes)
                 if (code is String) code,
           };
@@ -337,13 +361,75 @@ class DeckDownloads extends ChangeNotifier {
   /// How far [language]'s download has got, while it downloads.
   DownloadProgress? progressOf(String language) => _progress[language];
 
+  /// How much of [language] a learner who speaks [spoken] has on the phone,
+  /// with what has arrived of a download under way: its decks (a deck
+  /// counts once all its files are in) and bytes, of all it has for them,
+  /// and where the first [decksBeforeReady] decks end. Null without an
+  /// index that lists it.
+  LanguageDownload? languageDownload(String language, List<String> spoken) {
+    final entry = _index?.language(language);
+    if (entry == null) return null;
+    final natives = entry.nativesFor(spoken);
+    final wanted = entry.filesFor(natives);
+    final fetched = _fetched[language] ?? const <String>{};
+    bool isIn(IndexFile f) =>
+        _onPhone.containsKey(f.path) || fetched.contains(f.path);
+    final byDeck = <String, List<IndexFile>>{};
+    for (final file in wanted) {
+      if (file.deck case final deck?) {
+        (byDeck[deck] ??= <IndexFile>[]).add(file);
+      }
+    }
+    // A deck counts once a learner can open it: a core alone teaches nobody.
+    final teaching = byDeck.values.where((files) => files.any((f) => !f.core));
+    return (
+      decks: teaching.where((files) => files.every(isIn)).length,
+      totalDecks: teaching.length,
+      bytes: wanted.where(isIn).fold(0, (sum, f) => sum + f.size),
+      totalBytes: wanted.fold(0, (sum, f) => sum + f.size),
+      readyBytes: entry
+          .firstFiles(natives, count: decksBeforeReady)
+          .fold(0, (sum, f) => sum + f.size),
+      ready: isReady(language, spoken),
+    );
+  }
+
+  /// Whether [language]'s download was cancelled: the rest waits on
+  /// Settings > Deck downloads, and is not resumed at launch.
+  bool isPaused(String language) => _paused.contains(language);
+
   /// Why [language]'s last download failed, until it is tried again.
   DeckDownloadFailure? failureOf(String language) => _failures[language];
 
   bool isDownloading(String language) => _progress.containsKey(language);
 
+  /// Whether [language] has a job under way or waiting, from the moment it
+  /// is asked for: [isDownloading] only once the index is read and its
+  /// files are known. What [cancel] needs to stop.
+  bool hasJob(String language) =>
+      _jobs.containsKey(language) || _progress.containsKey(language);
+
   // ---------------------------------------------------------------------------
   // Downloading a language
+
+  /// Stops [language]'s download, keeping what is in: each deck whose
+  /// files have all arrived, and the language's own files. The rest waits
+  /// on Settings > Deck downloads ([downloadRest]), and is not resumed at
+  /// launch ([isPaused]).
+  Future<void> cancel(String language) async {
+    _paused.add(language);
+    if (_jobs.containsKey(language)) _stopping.add(language);
+    _failures.remove(language);
+    _log?.event('Deck download cancelled: $language');
+    _notify();
+    await _saveState();
+  }
+
+  /// Lets [language] download again after [cancel], when the learner asks.
+  void _unpause(String language) {
+    _stopping.remove(language);
+    if (_paused.remove(language)) unawaited(_saveState());
+  }
 
   /// Downloads what [language] needs before it can be learned by someone
   /// who speaks [spoken] ([isReady]). Reads the index first if none is
@@ -351,19 +437,25 @@ class DeckDownloads extends ChangeNotifier {
   Future<DeckDownloadFailure?> downloadFirst(
     String language,
     List<String> spoken,
-  ) => _job(
-    language,
-    () => _againIfStale(language, () async {
-      if (!await ensureIndex()) return _indexFailure;
-      final entry = _index!.language(language);
-      if (entry == null) return DeckDownloadFailure.notOffered;
-      final first = entry.firstFiles(
-        entry.nativesFor(spoken),
-        count: decksBeforeReady,
+  ) {
+    _unpause(language);
+    return _first(language, spoken);
+  }
+
+  Future<DeckDownloadFailure?> _first(String language, List<String> spoken) =>
+      _job(
+        language,
+        () => _againIfStale(language, () async {
+          if (!await ensureIndex()) return _indexFailure;
+          final entry = _index!.language(language);
+          if (entry == null) return DeckDownloadFailure.notOffered;
+          final first = entry.firstFiles(
+            entry.nativesFor(spoken),
+            count: decksBeforeReady,
+          );
+          return _fetchAndKeep(language, first, groups: false);
+        }),
       );
-      return _fetchAndKeep(language, first, groups: false);
-    }),
-  );
 
   /// Downloads the rest of [language] for someone who speaks [spoken], a
   /// few decks at a time, and marks it complete. Returns null when all of
@@ -371,24 +463,30 @@ class DeckDownloads extends ChangeNotifier {
   Future<DeckDownloadFailure?> downloadRest(
     String language,
     List<String> spoken,
-  ) => _job(
-    language,
-    () => _againIfStale(language, () async {
-      if (!await ensureIndex()) return _indexFailure;
-      final entry = _index!.language(language);
-      if (entry == null) return DeckDownloadFailure.notOffered;
-      final failure = await _fetchAndKeep(
+  ) {
+    _unpause(language);
+    return _rest(language, spoken);
+  }
+
+  Future<DeckDownloadFailure?> _rest(String language, List<String> spoken) =>
+      _job(
         language,
-        entry.filesFor(entry.nativesFor(spoken)),
-        groups: true,
+        () => _againIfStale(language, () async {
+          if (!await ensureIndex()) return _indexFailure;
+          final entry = _index!.language(language);
+          if (entry == null) return DeckDownloadFailure.notOffered;
+          final failure = await _fetchAndKeep(
+            language,
+            entry.filesFor(entry.nativesFor(spoken)),
+            groups: true,
+          );
+          if (failure == null && !_paused.contains(language)) {
+            _complete.add(language);
+            await _saveState();
+          }
+          return failure;
+        }),
       );
-      if (failure == null) {
-        _complete.add(language);
-        await _saveState();
-      }
-      return failure;
-    }),
-  );
 
   /// "Try again" for [language], on the phone, whose last download or
   /// update failed: its update again, when one is waiting, else the rest
@@ -406,7 +504,9 @@ class DeckDownloads extends ChangeNotifier {
     List<String> spoken,
   ) async {
     final failure = await downloadFirst(language, spoken);
-    if (failure == null) unawaited(downloadRest(language, spoken));
+    if (failure == null && !_paused.contains(language)) {
+      unawaited(_rest(language, spoken));
+    }
     return failure;
   }
 
@@ -415,7 +515,7 @@ class DeckDownloads extends ChangeNotifier {
   /// was.
   Future<void> resume(Iterable<String> learning, List<String> spoken) async {
     for (final language in <String>{...learning, ...languagesOnPhone}) {
-      if (_complete.contains(language)) continue;
+      if (_complete.contains(language) || _paused.contains(language)) continue;
       if (_index?.language(language) == null) continue;
       if (missing(language, spoken).isEmpty) {
         _complete.add(language);
@@ -423,7 +523,7 @@ class DeckDownloads extends ChangeNotifier {
         continue;
       }
       if (!languagesOnPhone.contains(language)) continue;
-      await downloadRest(language, spoken);
+      await _rest(language, spoken);
     }
   }
 
@@ -457,7 +557,7 @@ class DeckDownloads extends ChangeNotifier {
       for (final file in changes.fetch)
         if (!_onPhone.containsKey(file.path)) file,
     ];
-    if (fetch.isEmpty) {
+    if (fetch.isEmpty || _stopping.remove(language)) {
       _failures.remove(language);
       _notify();
       return null;
@@ -476,15 +576,20 @@ class DeckDownloads extends ChangeNotifier {
     _notify();
     final batches = groups ? _batches(fetch) : <List<IndexFile>>[fetch];
     var remove = changes.remove;
+    final fetched = _fetched[language] = <String>{};
     try {
       for (final batch in batches) {
         final got = <IndexFile, List<int>>{};
         for (final file in batch) {
+          if (_stopping.contains(language)) {
+            return await _stopped(language, batch, got, remove);
+          }
           final result = await _fetchChecked(file);
           if (result.failure case final failure?) {
             return _failed(language, failure);
           }
           got[file] = result.bytes!;
+          fetched.add(file.path);
           done++;
           bytes += file.size;
           _progress[language] = (
@@ -501,8 +606,40 @@ class DeckDownloads extends ChangeNotifier {
       }
     } finally {
       _progress.remove(language);
+      _fetched.remove(language);
+      _stopping.remove(language);
     }
     _log?.event('Decks downloaded for $language: $total files');
+    _notify();
+    await _filesChanged();
+    return null;
+  }
+
+  /// After [cancel]: keeps those of [got], fetched of [batch], that leave
+  /// whole decks on the phone, with the language's own files, and stops.
+  /// A batch that replaces files ([remove]) is kept whole or not at all.
+  Future<DeckDownloadFailure?> _stopped(
+    String language,
+    List<IndexFile> batch,
+    Map<IndexFile, List<int>> got,
+    List<String> remove,
+  ) async {
+    final whole = <IndexFile, List<int>>{
+      if (remove.isEmpty)
+        for (final MapEntry(key: file, value: bytes) in got.entries)
+          if (file.deck == null ||
+              batch.where((f) => f.deck == file.deck).every(got.containsKey))
+            file: bytes,
+    };
+    _log?.event(
+      'Deck download stopped for $language: ${whole.length} more files kept',
+    );
+    if (whole.isEmpty) {
+      _notify();
+      return null;
+    }
+    final failure = await _keep(language, whole, const <String>[]);
+    if (failure != null) return _failed(language, failure);
     _notify();
     await _filesChanged();
     return null;
@@ -804,6 +941,9 @@ class DeckDownloads extends ChangeNotifier {
       _onPhone = await files.manifest();
       _complete.remove(language);
       _failures.remove(language);
+      // Nothing of it is left to finish: no longer cancelled.
+      _paused.remove(language);
+      _stopping.remove(language);
       _updates = Map<String, LanguageChanges>.of(_updates)..remove(language);
       await _saveState();
       _log?.event('Language removed from the phone: $language');
@@ -824,6 +964,7 @@ class DeckDownloads extends ChangeNotifier {
           'declined': ?_declined,
           if (!_autoCheck) 'auto': false,
           'complete': _complete.toList()..sort(),
+          if (_paused.isNotEmpty) 'paused': _paused.toList()..sort(),
         }),
       );
     } on Object catch (e) {

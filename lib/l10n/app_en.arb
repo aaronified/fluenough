@@ -6810,5 +6810,433 @@
   "reviewRatedShort": "Rated",
   "@reviewRatedShort": {
     "description": "A rude word's button on the review screen once rated: opens the rating again."
+  },
+  "pickerSettingsTitle": "Languages I’m learning",
+  "@pickerSettingsTitle": {
+    "description": "Title of the language picker opened from Settings, with a back arrow. The first launch's title is learnTitle."
+  },
+  "pickerSearchHint": "Search languages",
+  "@pickerSearchHint": {
+    "description": "Hint in the language picker's search field. It matches English names, a language's own name and its code."
+  },
+  "pickerClearSearch": "Clear search",
+  "@pickerClearSearch": {
+    "description": "Tooltip of the button that empties the language picker's search."
+  },
+  "pickerGroupLearning": "Learning · {count}",
+  "@pickerGroupLearning": {
+    "description": "Group heading in the language picker: the languages the learner has chosen, and how many.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerGroupAvailable": "Available · {count}",
+  "@pickerGroupAvailable": {
+    "description": "Group heading in the language picker: the languages not chosen, and how many.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerNoMatchTitle": "No language matches “{query}”",
+  "@pickerNoMatchTitle": {
+    "description": "Language picker, when the search matches no language. {query} is what was typed.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNoMatchBody": "Check the spelling. Only languages with decks are listed.",
+  "@pickerNoMatchBody": {
+    "description": "Under pickerNoMatchTitle."
+  },
+  "pickerNameSeparator": " · ",
+  "@pickerNameSeparator": {
+    "description": "Between a language's English name and its own name on its card: “Telugu · తెలుగు”, and between parts of a line."
+  },
+  "pickerScript": "{script, select, devanagari{Devanagari script} bengali{Bengali script} gujarati{Gujarati script} kannada{Kannada script} telugu{Telugu script} latin{Latin script} kana{Kana} arabic{Arabic script} other{}}",
+  "@pickerScript": {
+    "description": "On a language's card, under its names: the script its decks write it in. {script} is the deck files' script code; an unknown one shows nothing.",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerWritten": "{percent}% of B1 written",
+  "@pickerWritten": {
+    "description": "On a language's card, the bold start of its course's completeness: how much of the course up to level B1 its decks have, the same for every learner. Worked out from the course's B1 plan.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerGrammarTopics": "{total, plural, =1{{done} of 1 grammar topic} other{{done} of {total} grammar topics}}",
+  "@pickerGrammarTopics": {
+    "description": "On a language's card, after pickerWritten: how many of the grammar topics its B1 plan names are taught yet.",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerCourseSize": "{count, plural, =1{Course size: 1 word} other{Course size: {count} words}}",
+  "@pickerCourseSize": {
+    "description": "On a language's card in place of pickerWritten, when its course has no B1 plan yet: how many words its decks teach.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerYou": "You: {percent}% of B1",
+  "@pickerYou": {
+    "description": "On the card of a language the learner learns: how far they are toward level B1, from the words they have learned. Never more than pickerWritten.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerYouWords": "{count, plural, =1{You: 1 word learned} other{You: {count} words learned}}",
+  "@pickerYouWords": {
+    "description": "On the card of a language the learner learns whose course has no B1 plan: the words they have learned.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerTaughtFrom": "Taught from",
+  "@pickerTaughtFrom": {
+    "description": "On a language's card, before the languages its decks teach from, which follow as chips; and the heading of the choice among them."
+  },
+  "pickerTaughtFromLine": "Taught from {languages}",
+  "@pickerTaughtFromLine": {
+    "description": "What a screen reader says for a card's Taught from chips. {languages} is joined by commonListSeparator.",
+    "placeholders": {
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNotYours": "Not one of your languages.",
+  "@pickerNotYours": {
+    "description": "Under a card's Taught from chips, when the course is taught from no language the learner speaks."
+  },
+  "pickerAlpha": "Alpha",
+  "@pickerAlpha": {
+    "description": "Tag on a language's card: its course is still being written up to level A1."
+  },
+  "pickerBeta": "Beta",
+  "@pickerBeta": {
+    "description": "Tag on a language's card: its course is written to A1, and still being written up to B1."
+  },
+  "pickerAlphaLabel": "Alpha: A1 is still being written",
+  "@pickerAlphaLabel": {
+    "description": "What a screen reader says for the Alpha tag."
+  },
+  "pickerBetaLabel": "Beta: A1 is written, B1 is still being written",
+  "@pickerBetaLabel": {
+    "description": "What a screen reader says for the Beta tag."
+  },
+  "pickerAlphaUnplannedLabel": "Alpha: its levels are not mapped out yet",
+  "@pickerAlphaUnplannedLabel": {
+    "description": "What a screen reader says for the Alpha tag of a course whose path has no level plan yet, so nothing says how much of A1 is written."
+  },
+  "pickerAlphaUnplannedNotice": "{language} is in alpha: its course has no level plan yet, so how far it goes is not known. Start with what is there. More decks arrive as they are written.",
+  "@pickerAlphaUnplannedNotice": {
+    "description": "Notice inside an Alpha course's card once it is chosen, when its path has no level plan yet.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAlphaNotice": "{language} is in alpha: its first level, A1, is still being written. Start with what is there. More decks arrive as they are written.",
+  "@pickerAlphaNotice": {
+    "description": "Notice inside an Alpha course's card once it is chosen.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerOnPhone": "On the phone · {size}",
+  "@pickerOnPhone": {
+    "description": "On a language's card: its decks are on the phone, and the room they take, such as “304 KB”.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNotOnPhone": "Not on the phone · {size}",
+  "@pickerNotOnPhone": {
+    "description": "On a language's card: its decks are not on the phone yet, and what choosing it downloads, such as “287 KB”.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerLearnScript": "Learn the {language} script",
+  "@pickerLearnScript": {
+    "description": "A switch inside a chosen language's card, on by default: learn the language with its script, or in Latin letters only.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerScriptDecks": "{count, plural, =1{Includes 1 deck on letters, spelling and reading.} other{Includes {count} decks on letters, spelling and reading.}}",
+  "@pickerScriptDecks": {
+    "description": "Under pickerLearnScript while it is on: what learning the script includes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerScriptDecksSome": "Includes decks on letters, spelling and reading.",
+  "@pickerScriptDecksSome": {
+    "description": "Under pickerLearnScript while it is on, before the language's decks are on the phone and their number known."
+  },
+  "pickerScriptOff": "Latin letters only. Words show their reading first, and the script decks are left out.",
+  "@pickerScriptOff": {
+    "description": "Under pickerLearnScript while it is off."
+  },
+  "pickerStartWith": "You start with",
+  "@pickerStartWith": {
+    "description": "Inside a chosen card, before the first letters of the script with their readings."
+  },
+  "pickerLetter": "{letter}, {reading}",
+  "@pickerLetter": {
+    "description": "What a screen reader says for one of the first letters shown: the letter, then its reading.",
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      },
+      "reading": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerLearnFrom": "Learn {language} from",
+  "@pickerLearnFrom": {
+    "description": "Title of the sheet that chooses which of the learner's languages a course is taught from, when there are more than three.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerChangeNative": "Change",
+  "@pickerChangeNative": {
+    "description": "Button beside the language a course is taught from, when there are more than three to choose from: opens the list."
+  },
+  "pickerDownloadDecks": "{total, plural, =1{{percent}% · {done} of 1 deck} other{{percent}% · {done} of {total} decks}}",
+  "@pickerDownloadDecks": {
+    "description": "Above a language's download bar: the share downloaded, by size, and how many of its decks are in.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerDownloadSize": "{done} of {total}",
+  "@pickerDownloadSize": {
+    "description": "Above a language's download bar, at its end: how much is downloaded of how much, such as “60 of 287 KB”.",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerReadyAfter": "{count, plural, =1{Ready to start after 1 deck} other{Ready to start after {count} decks}}",
+  "@pickerReadyAfter": {
+    "description": "Under a language's download bar, below a mark where its first decks end: the language can be started once they are in.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerReady": "Ready to start. The rest keeps downloading.",
+  "@pickerReady": {
+    "description": "Under a language's download bar once its first decks are in."
+  },
+  "pickerDownloaded": "Every deck is on the phone.",
+  "@pickerDownloaded": {
+    "description": "Under a language's download bar once all of it is in."
+  },
+  "pickerDecksOnPhone": "{count, plural, =0{No decks are on the phone yet.} =1{1 deck is on the phone.} other{{count} decks are on the phone.}}",
+  "@pickerDecksOnPhone": {
+    "description": "After why a language's download stopped: how many of its decks are in.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerCancelledUnchosen": "{language}’s download stopped, and {language} is no longer chosen. Any of its decks that arrived stay on the phone: Settings, Deck downloads can finish them.",
+  "@pickerCancelledUnchosen": {
+    "description": "Toast after a language's download is cancelled before its first decks are in: it is no longer chosen, and what arrived can be finished from Settings, Deck downloads.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceChosen": "{language} chosen, now under Learning",
+  "@pickerAnnounceChosen": {
+    "description": "Announced to a screen reader when a language is ticked in the picker and its card moves to the Learning group.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceUnchosen": "{language} no longer chosen, now under Available",
+  "@pickerAnnounceUnchosen": {
+    "description": "Announced to a screen reader when a language is un-ticked in the picker and its card moves back to the Available group.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerCancelDownloadLabel": "Cancel the {language} download",
+  "@pickerCancelDownloadLabel": {
+    "description": "What a screen reader says for the Cancel button of a language's download in the picker.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerRetryDownloadLabel": "Try the {language} download again",
+  "@pickerRetryDownloadLabel": {
+    "description": "What a screen reader says for the Try again button of a language's failed download in the picker.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNativeChoiceLabel": "Taught from {native}, change",
+  "@pickerNativeChoiceLabel": {
+    "description": "What a screen reader says for the row that shows which of the learner's languages a course is taught from, when there are more than three; tapping it opens the choice.",
+    "placeholders": {
+      "native": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerCancelled": "Stopped. The rest can be downloaded from Settings, Deck downloads.",
+  "@pickerCancelled": {
+    "description": "Under a language's download bar after Cancel, once its first decks are in: the course works with what arrived."
+  },
+  "pickerAnnounceReady": "{language} is ready to start",
+  "@pickerAnnounceReady": {
+    "description": "Announced to a screen reader once, when a language's first decks are in.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceDone": "{language} is downloaded",
+  "@pickerAnnounceDone": {
+    "description": "Announced to a screen reader once, when all of a language's decks are in.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerHintChoose": "Choose a language to go on.",
+  "@pickerHintChoose": {
+    "description": "Above Continue on first launch while no language is chosen."
+  },
+  "pickerHintNext": "Next, a short check for {languages}.",
+  "@pickerHintNext": {
+    "description": "Above Continue: what comes after it, placement for the newly chosen languages. {languages} is joined by commonListSeparator.",
+    "placeholders": {
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerHintWaiting": "{count, plural, =1{Waiting for the first deck of {languages}.} other{Waiting for the first {count} decks of {languages}.}}",
+  "@pickerHintWaiting": {
+    "description": "Above Continue, which is off while a newly chosen language's first decks download. {languages} is joined by commonListSeparator.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerStopTitle": "Stop learning {language}?",
+  "@pickerStopTitle": {
+    "description": "Title of the dialog when the learner un-ticks a language they learn.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerStopBody": "Your progress is kept ({percent}% of B1), but its decks leave Today. You can add it again any time.",
+  "@pickerStopBody": {
+    "description": "Body of the stop-learning dialog, with the learner's progress toward B1.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerStopBodyPlain": "Your progress is kept, but its decks leave Today. You can add it again any time.",
+  "@pickerStopBodyPlain": {
+    "description": "Body of the stop-learning dialog, for a course with no B1 plan."
+  },
+  "pickerStopConfirm": "Stop learning",
+  "@pickerStopConfirm": {
+    "description": "The stop-learning dialog's button that un-ticks the language."
+  },
+  "pickerNoConnection": "No connection.",
+  "@pickerNoConnection": {
+    "description": "Why a language's download stopped, before pickerDecksOnPhone: there is no network."
+  },
+  "pickerDownloadFailed": "{reason} {onPhone}",
+  "@pickerDownloadFailed": {
+    "description": "Under a language's stopped download bar: why it stopped, then how many of its decks are on the phone (pickerDecksOnPhone).",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "onPhone": {
+        "type": "String"
+      }
+    }
   }
 }
