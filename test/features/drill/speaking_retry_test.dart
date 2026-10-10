@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -13,6 +15,7 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
+import 'package:fluenough/features/drill/speaking_practice.dart';
 
 import '../../support/harness.dart';
 
@@ -52,6 +55,69 @@ class _OrderedTts extends FixedTtsEngine {
   }
 }
 
+/// A recogniser that holds each listen open until [stop] or [release],
+/// as Android's does while the learner speaks. Then it hears [next].
+class _HeldSpeech extends FixedSpeechEngine {
+  _HeldSpeech() : super(onDevice: <String>{'es'});
+
+  Completer<void>? _held;
+
+  /// How many times [stop] was called.
+  int stops = 0;
+
+  /// Whether a listen is held open.
+  bool get holding => _held != null;
+
+  /// Lets the listen held open hear [next].
+  void release() {
+    _held?.complete();
+    _held = null;
+  }
+
+  @override
+  Future<SpeechHeard> listen({
+    required String bcp47,
+    required bool onDevice,
+    Duration listenFor = const Duration(seconds: 8),
+  }) async {
+    final held = _held = Completer<void>();
+    await held.future;
+    return super.listen(bcp47: bcp47, onDevice: onDevice, listenFor: listenFor);
+  }
+
+  @override
+  Future<void> stop() async {
+    stops++;
+    release();
+  }
+}
+
+/// A sound check whose playback lasts until [stop] or [release].
+class _HeldSoundCheck extends _OrderedSoundCheck {
+  Completer<void>? _held;
+
+  bool get holding => _held != null;
+
+  void release() {
+    _held?.complete();
+    _held = null;
+  }
+
+  @override
+  Future<bool> play(Recording recording) async {
+    final held = _held = Completer<void>();
+    final played = super.play(recording);
+    await held.future;
+    return played;
+  }
+
+  @override
+  Future<void> stop() async {
+    await super.stop();
+    release();
+  }
+}
+
 AppState _state(
   FixedSpeechEngine speech, {
   SoundCheckEngine? soundCheck,
@@ -87,9 +153,10 @@ void main() {
     Future<DrillSession> session({
       SoundCheckEngine? soundCheck,
       TtsEngine? tts,
+      FixedSpeechEngine? recogniser,
       bool Function(SessionItem item)? where,
     }) async {
-      speech = FixedSpeechEngine(onDevice: <String>{'es'});
+      speech = recogniser ?? FixedSpeechEngine(onDevice: <String>{'es'});
       state = _state(speech, soundCheck: soundCheck, tts: tts);
       await state.load();
       await state.startSpeech();
@@ -208,6 +275,120 @@ void main() {
       expect(state.progress.log, hasLength(1));
     });
 
+    test('only a failed first answer is one that brings the word back '
+        'sooner', () async {
+      var s = await session();
+      speech.next = const <SpeechAlternative>[SpeechAlternative('el perro')];
+      await s.listen();
+      expect(s.firstTryFailed, isTrue);
+
+      s = await session();
+      s.dontKnow();
+      expect(s.firstTryFailed, isTrue);
+
+      s = await session(
+        where: (item) => _unaccented(item.card.target) != item.card.target,
+      );
+      speech.next = <SpeechAlternative>[
+        SpeechAlternative(_unaccented(s.item.card.target)),
+      ];
+      await s.listen();
+      expect(s.answer!.grade, 4);
+      // Recorded as a pass: a try again changes nothing, sooner or later.
+      expect(s.firstTryFailed, isFalse);
+      speech.next = <SpeechAlternative>[SpeechAlternative(s.item.card.target)];
+      await s.retry();
+      expect(s.retried!.graded!.outcome, AnswerOutcome.exact);
+      expect(s.firstTryFailed, isFalse);
+      expect(state.progress.log.single.grade, 4);
+    });
+
+    test('Continue while a try again listens stops the recogniser, and what '
+        'it hears is dropped, not carried to the next card', () async {
+      final held = _HeldSpeech();
+      final s = await session(recogniser: held);
+      final word = s.item.card.target;
+      held.next = const <SpeechAlternative>[SpeechAlternative('el perro')];
+      final first = s.listen();
+      held.release();
+      await first;
+      expect(s.canRetry, isTrue);
+
+      // The learner says the right word, but taps Continue before the
+      // recogniser gives it back.
+      held.next = <SpeechAlternative>[SpeechAlternative(word)];
+      final retrying = s.retry();
+      await pumpEventQueue();
+      expect(s.hearing, isTrue);
+      expect(held.holding, isTrue);
+      s.next();
+      expect(held.stops, 1);
+      expect(s.hearing, isFalse);
+      expect(s.position, 2);
+      await retrying;
+      expect(s.retried, isNull);
+      expect(s.retries, 0);
+      expect(s.unheard, isNull);
+      expect(s.answer, isNull);
+      expect(s.phase, DrillPhase.prompt);
+      expect(state.progress.log.single.answerGiven, 'el perro');
+    });
+
+    test('Hear yourself waits while a try again listens, and a try again '
+        'waits while Hear yourself plays', () async {
+      final held = _HeldSpeech();
+      final sound = _HeldSoundCheck();
+      final s = await session(recogniser: held, soundCheck: sound);
+      s.dontKnow();
+      final retrying = s.retry();
+      await pumpEventQueue();
+      expect(s.hearing, isTrue);
+      await s.hearSelf();
+      expect(sound.recordings, 0);
+      expect(s.hearingSelf, SelfTake.idle);
+      held.release();
+      await retrying;
+      expect(held.listens, hasLength(1));
+
+      final hearing = s.hearSelf();
+      await pumpEventQueue();
+      expect(s.hearingSelf, SelfTake.playing);
+      await s.retry();
+      expect(held.listens, hasLength(1));
+      sound.release();
+      await hearing;
+      expect(s.hearingSelf, SelfTake.idle);
+    });
+
+    test('Continue while Hear yourself plays stops it, and the voice after it '
+        'never plays over the next card', () async {
+      final sound = _HeldSoundCheck();
+      final s = await session(soundCheck: sound);
+      s.dontKnow();
+      _played.clear();
+      final hearing = s.hearSelf();
+      await pumpEventQueue();
+      expect(s.hearingSelf, SelfTake.playing);
+      expect(sound.holding, isTrue);
+      s.next();
+      expect(sound.stops, 1);
+      expect(s.hearingSelf, SelfTake.idle);
+      expect(s.position, 2);
+      await hearing;
+      expect(_played, <String>['self']);
+      expect(s.hearingSelf, SelfTake.idle);
+      expect(s.playing, isFalse);
+    });
+
+    test('Continue without Hear yourself under way stops nothing', () async {
+      final sound = _OrderedSoundCheck();
+      final s = await session(soundCheck: sound);
+      s.dontKnow();
+      await s.hearSelf();
+      s.next();
+      expect(sound.stops, 0);
+    });
+
     test('Hear yourself records, plays the recording, then the voice, and '
         'records nothing in the log', () async {
       final sound = _OrderedSoundCheck();
@@ -265,8 +446,9 @@ void main() {
     Future<(AppState, FixedSpeechEngine)> pump(
       WidgetTester tester, {
       SoundCheckEngine? soundCheck,
+      FixedSpeechEngine? recogniser,
     }) async {
-      final speech = FixedSpeechEngine(onDevice: <String>{'es'});
+      final speech = recogniser ?? FixedSpeechEngine(onDevice: <String>{'es'});
       final state = _state(speech, soundCheck: soundCheck);
       await state.load();
       await state.startSpeech();
@@ -318,7 +500,7 @@ void main() {
       speech.next = <SpeechAlternative>[SpeechAlternative(word)];
       await tapText(tester, l10n.drillTryAgain);
       expect(find.text(l10n.feedbackCorrect), findsOneWidget);
-      expect(find.text(l10n.drillRetryPassed), findsOneWidget);
+      expect(find.text(l10n.drillRetryPassedSooner), findsOneWidget);
       expect(state.progress.log.single.grade, 1);
 
       speech.next = const <SpeechAlternative>[SpeechAlternative('el gato')];
@@ -339,6 +521,130 @@ void main() {
       expect(find.text(l10n.drillTryAgain), findsNothing);
       expect(state.progress.log, hasLength(1));
       handle.dispose();
+    });
+
+    /// The banner under a speaking card whose word has an accent to miss,
+    /// on a session the test drives.
+    Future<(AppState, FixedSpeechEngine, DrillSession)> accented(
+      WidgetTester tester,
+    ) async {
+      final speech = FixedSpeechEngine(onDevice: <String>{'es'});
+      final state = _state(speech);
+      await state.load();
+      await state.startSpeech();
+      final items = state
+          .buildSession(DrillRequest.untaught(spanish, skill: Skill.speaking))
+          .items
+          .where((item) => _unaccented(item.card.target) != item.card.target)
+          .toList();
+      final s = DrillSession(state: state, items: items);
+      addTearDown(s.dispose);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: ListenableBuilder(
+            listenable: s,
+            builder: (context, _) => SpeakingPractice(session: s),
+          ),
+        ),
+        state: state,
+      );
+      return (state, speech, s);
+    }
+
+    testWidgets('after an almost-right word, a right try says only that the '
+        'first try counts, and an almost-right one says Almost', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final (state, speech, s) = await accented(tester);
+      final l10n = l10nOf(tester);
+      final word = s.item.card.target;
+      speech.next = <SpeechAlternative>[SpeechAlternative(_unaccented(word))];
+      await s.listen();
+      expect(state.progress.log.single.grade, 4);
+
+      speech.next = <SpeechAlternative>[SpeechAlternative(word)];
+      await s.retry();
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.drillRetryPassed), findsOneWidget);
+      expect(find.text(l10n.drillRetryPassedSooner), findsNothing);
+
+      speech.next = <SpeechAlternative>[SpeechAlternative(_unaccented(word))];
+      await s.retry();
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.drillRetryAlmost), findsOneWidget);
+      expect(find.text(l10n.drillRetryAlmostSooner), findsNothing);
+      expect(state.progress.log, hasLength(1));
+    });
+
+    testWidgets('after a wrong word, an almost-right try says Almost, and that '
+        'the word comes back sooner', (tester) async {
+      usePhone(tester);
+      final (state, speech, s) = await accented(tester);
+      final l10n = l10nOf(tester);
+      final word = s.item.card.target;
+      speech.next = const <SpeechAlternative>[SpeechAlternative('el perro')];
+      await s.listen();
+      speech.next = <SpeechAlternative>[SpeechAlternative(_unaccented(word))];
+      await s.retry();
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.drillRetryAlmostSooner), findsOneWidget);
+      expect(find.text(l10n.drillRetryPassedSooner), findsNothing);
+      expect(state.progress.log.single.grade, 1);
+    });
+
+    testWidgets('while a try again listens, its button says Stop listening '
+        'and stops the recogniser; Continue moves on', (tester) async {
+      usePhone(tester);
+      final held = _HeldSpeech();
+      final (state, _) = await pump(tester, recogniser: held);
+      final l10n = l10nOf(tester);
+      final word = target(state);
+      held.next = const <SpeechAlternative>[SpeechAlternative('el perro')];
+      final mic = find.bySemanticsLabel(l10n.drillSpeak);
+      await tester.ensureVisible(mic);
+      await tester.pumpAndSettle();
+      await tester.tap(mic);
+      await tester.pump();
+      held.release();
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.drillTryAgain), findsOneWidget);
+
+      held.next = <SpeechAlternative>[SpeechAlternative(word)];
+      await tester.ensureVisible(find.text(l10n.drillTryAgain));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.drillTryAgain));
+      await tester.pump();
+      expect(find.text(l10n.drillStopHearing), findsOneWidget);
+      expect(find.text(l10n.drillTryAgain), findsNothing);
+      expect(find.text(l10n.drillHearingHint), findsOneWidget);
+      // Hear yourself waits until the listen is over.
+      final hearYourself = tester.widget<TextButton>(
+        find.ancestor(
+          of: find.text(l10n.drillHearYourself),
+          matching: find.byWidgetPredicate((w) => w is TextButton),
+        ),
+      );
+      expect(hearYourself.onPressed, isNull);
+
+      await tester.tap(find.text(l10n.drillStopHearing));
+      await tester.pumpAndSettle();
+      expect(held.stops, 1);
+      expect(find.text(l10n.drillTryAgain), findsOneWidget);
+      expect(find.text(l10n.drillRetryPassedSooner), findsOneWidget);
+
+      // Once more, and Continue while it listens.
+      await tester.tap(find.text(l10n.drillTryAgain));
+      await tester.pump();
+      expect(find.text(l10n.drillStopHearing), findsOneWidget);
+      await tester.ensureVisible(find.text(l10n.commonContinue));
+      await tester.tap(find.text(l10n.commonContinue));
+      await tester.pumpAndSettle();
+      expect(held.stops, 2);
+      expect(find.text(l10n.drillStopHearing), findsNothing);
+      expect(find.text(l10n.drillTryAgain), findsNothing);
+      expect(state.progress.log, hasLength(1));
     });
 
     testWidgets('a right word offers Hear yourself but not Try again', (

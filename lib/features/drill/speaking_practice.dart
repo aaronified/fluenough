@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/grading/answer_grader.dart';
 import '../../core/models/deck.dart';
 import '../../core/sound/sound_check.dart';
 import '../../core/speech/speech_engine.dart';
@@ -57,9 +58,14 @@ class SpeakingPractice extends StatelessWidget {
       status = unheardMessage(l10n, unheard, language);
       statusStyle = error;
     } else if (retried != null) {
-      status = retried.graded?.outcome.isCorrect ?? false
-          ? l10n.drillRetryPassed
-          : l10n.drillRetryPractice;
+      final sooner = session.firstTryFailed;
+      status = switch (retried.graded?.outcome) {
+        AnswerOutcome.exact =>
+          sooner ? l10n.drillRetryPassedSooner : l10n.drillRetryPassed,
+        AnswerOutcome.closeDiacritics || AnswerOutcome.closeTypo =>
+          sooner ? l10n.drillRetryAlmostSooner : l10n.drillRetryAlmost,
+        AnswerOutcome.wrong || null => l10n.drillRetryPractice,
+      };
       statusStyle = hint;
     } else {
       status = null;

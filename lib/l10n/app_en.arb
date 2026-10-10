@@ -2912,9 +2912,21 @@
   "@drillTryAgain": {
     "description": "Speaking drill, after a wrong or almost-right answer: say the word again, as practice. Only the first answer is recorded (#231)."
   },
-  "drillRetryPassed": "That’s it. Only your first try counts, so the word comes back a little sooner.",
+  "drillRetryPassed": "That’s it. Only your first try counts.",
   "@drillRetryPassed": {
-    "description": "Speaking drill: a try again was right. It changes nothing in the schedule; the first answer is the one recorded."
+    "description": "Speaking drill: a try again was right, after a first answer that was almost right and so scheduled as a pass. It changes nothing in the schedule; the first answer is the one recorded."
+  },
+  "drillRetryPassedSooner": "That’s it. Only your first try counts, so the word comes back a little sooner.",
+  "@drillRetryPassedSooner": {
+    "description": "Speaking drill: a try again was right, after a first answer that was wrong or Don't know. The first answer is the one recorded, a failure, so the word is scheduled sooner."
+  },
+  "drillRetryAlmost": "Almost. Only your first try counts.",
+  "@drillRetryAlmost": {
+    "description": "Speaking drill: a try again was almost right (the word, but an accent off), after a first answer that was almost right too. Nothing is recorded for it."
+  },
+  "drillRetryAlmostSooner": "Almost. Only your first try counts, so the word comes back a little sooner.",
+  "@drillRetryAlmostSooner": {
+    "description": "Speaking drill: a try again was almost right (the word, but an accent off), after a first answer that was wrong or Don't know, which is recorded, so the word is scheduled sooner."
   },
   "drillRetryPractice": "Practice only: your first try is the one that counts.",
   "@drillRetryPractice": {
