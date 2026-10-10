@@ -65,8 +65,12 @@ than hard-coded rules. Adding a language means adding files, never code.
 
 Taught from English: Assamese, Bengali, Gujarati, Hindi, Kannada, Marathi and
 Telugu, each starting with its script decks and a script guide. Spanish is
-started. Japanese (`decks/ja/`) is kept in the repository but not offered in
-the app for now. See [docs/ROADMAP.md](docs/ROADMAP.md).
+started. Every one of these has a B1 plan in its path: the units up to B1, in
+teaching order, those not yet written shown as "Coming". Telugu and Bengali
+have their A1 units written in full. A course is tagged Alpha until its A1
+units are written and Beta until its B1 units are. Japanese (`decks/ja/`) is
+kept in the repository but not offered in the app for now. See
+[docs/ROADMAP.md](docs/ROADMAP.md).
 
 The app comes with no decks. It downloads a language's decks from this
 repository's `main` branch when you choose it, and you can start once its
@@ -141,7 +145,8 @@ Listening drills use the **operating system's own TTS** — `android.speech.tts`
 on Android, `AVSpeechSynthesizer` on iOS — through a pluggable `TtsEngine`
 interface. This adds nothing to the download size, needs no network, and
 covers far more languages than any bundled model could. Users install voices
-through system settings.
+through system settings, and Settings > Voices picks which of the phone's
+voices speaks each language.
 
 A neural backend (Kokoro) is a candidate for a later release; see
 [ADR-0002](docs/adr/0002-system-tts.md) for why it is not in v1.
@@ -294,17 +299,19 @@ fails while `decks/index.json` is out of date.
 </details>
 
 <details>
-<summary><b>The Telugu, Marathi, Kannada, Gujarati and Assamese decks have not been checked by a speaker</b></summary>
+<summary><b>The Telugu, Marathi, Kannada, Gujarati, Assamese and Spanish decks have not been checked by a speaker</b></summary>
 
 
 A deck no speaker has checked yet is tagged unreviewed and says so: some
-Hindi and Bengali decks, and all the Telugu, Marathi, Kannada, Gujarati and
-Assamese ones. The Telugu decks (`decks/te/`) were written from published
+Hindi and Bengali decks, and all the Telugu, Marathi, Kannada, Gujarati,
+Assamese and Spanish ones. The Telugu decks (`decks/te/`) were written from published
 sources; the Marathi (`decks/mr/`), Kannada (`decks/kn/`), Gujarati
-(`decks/gu/`) and Assamese (`decks/as/`) decks are a first attempt written for
-Fluenough. No speaker has checked any of them
+(`decks/gu/`), Assamese (`decks/as/`) and Spanish (`decks/es/`) decks are a
+first attempt written for Fluenough. No speaker has checked any of them
 yet. Each one says so in its description and on its screen in the app. If you
-speak one of these languages, please
+speak one of these languages, turn on Review decks in Settings: the phone makes
+your rater code, and on each unit you mark cards right or suggest a change, then
+send the reviews in one mail from your own mail app. Or
 [report mistakes](https://github.com/aaronified/fluenough/issues) or send a
 fix; a review by a speaker is the most useful contribution these decks could
 get.
