@@ -87,6 +87,10 @@ class VoicesPage extends StatefulWidget {
 class _VoicesPageState extends State<VoicesPage> {
   /// Asking the phone again, after Check again.
   bool _rechecking = false;
+
+  /// Whether "Other languages on this phone" is open, once the learner
+  /// opened or closed it.
+  bool? _othersOpen;
   bool _opening = false;
 
   /// The voices each available tag has, once asked.
@@ -190,7 +194,41 @@ class _VoicesPageState extends State<VoicesPage> {
     final theme = Theme.of(context);
     final state = AppScope.of(context);
     final languages = VoicesPage.ordered(state);
+    final learns = state.currentProfile.learns;
+    // The languages learned, as cards; every other language with decks on
+    // the phone, those only reviewed among them, folded below (#463).
+    final learning = <LanguageInfo>[
+      for (final l in languages)
+        if (learns(l.code)) l,
+    ];
+    final others = <LanguageInfo>[
+      for (final l in languages)
+        if (!learns(l.code)) l,
+    ];
+    // Folded unless nothing is learned, then open, until the learner says.
+    final othersOpen = _othersOpen ?? learning.isEmpty;
     final speaking = state.features.isAvailable(Feature.drillSpeaking);
+    Widget card(LanguageInfo language) => LanguageVoiceCard(
+      language: language,
+      glyph: _glyphOf(state, language),
+      voiceStatus: _rechecking
+          ? VoiceStatus.checking
+          : state.voiceStatus(language),
+      voices: _voices[language.ttsTag],
+      chosen: state.settings.voiceFor(language.code),
+      sample: VoicesPage.sampleFor(state, language),
+      playFailed: _playFailed[language.code],
+      speechStatus: speaking ? _speechOf(state, language) : null,
+      allowsOnline: state.settings.allowsOnlineSpeech(language.code),
+      onAskVoices: () => _askVoices(state, language),
+      onChoose: (voice) => state.settings.chooseVoice(language.code, voice),
+      onPlay: (text) => _play(state, language, text),
+      onInstall: _installVoices,
+      onSay: () => showSpeechTest(context, language),
+      onSwitchOnSpeaking: _switchOnSpeaking,
+      onAllowOnline: (on) =>
+          state.settings.allowOnlineSpeech(language.code, on),
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -214,39 +252,29 @@ class _VoicesPageState extends State<VoicesPage> {
                 ),
               ),
             ),
-            if (languages.isNotEmpty) ...<Widget>[
+            if (learning.isNotEmpty) ...<Widget>[
               const SizedBox(height: 16),
               GroupedList(
                 children: <Widget>[
-                  for (final language in languages)
-                    LanguageVoiceCard(
-                      language: language,
-                      glyph: _glyphOf(state, language),
-                      voiceStatus: _rechecking
-                          ? VoiceStatus.checking
-                          : state.voiceStatus(language),
-                      voices: _voices[language.ttsTag],
-                      chosen: state.settings.voiceFor(language.code),
-                      sample: VoicesPage.sampleFor(state, language),
-                      playFailed: _playFailed[language.code],
-                      speechStatus: speaking
-                          ? _speechOf(state, language)
-                          : null,
-                      allowsOnline: state.settings.allowsOnlineSpeech(
-                        language.code,
-                      ),
-                      onAskVoices: () => _askVoices(state, language),
-                      onChoose: (voice) =>
-                          state.settings.chooseVoice(language.code, voice),
-                      onPlay: (text) => _play(state, language, text),
-                      onInstall: _installVoices,
-                      onSay: () => showSpeechTest(context, language),
-                      onSwitchOnSpeaking: _switchOnSpeaking,
-                      onAllowOnline: (on) =>
-                          state.settings.allowOnlineSpeech(language.code, on),
-                    ),
+                  for (final language in learning) card(language),
                 ],
               ),
+            ],
+            if (others.isNotEmpty) ...<Widget>[
+              const SizedBox(height: 16),
+              _FoldHeader(
+                label: l10n.voicesOtherLanguages,
+                expanded: othersOpen,
+                onToggle: () => setState(() => _othersOpen = !othersOpen),
+              ),
+              if (othersOpen) ...<Widget>[
+                const SizedBox(height: 8),
+                GroupedList(
+                  children: <Widget>[
+                    for (final language in others) card(language),
+                  ],
+                ),
+              ],
             ],
             const SizedBox(height: 16),
             OutlinedButton.icon(
@@ -290,6 +318,52 @@ class _VoicesPageState extends State<VoicesPage> {
       if (entry.language.code == language.code) return entry.glyph;
     }
     return language.name.characters.first;
+  }
+}
+
+/// The header of "Other languages on this phone" (#463): tapping it opens
+/// or folds the section, its arrow shows which, and a screen reader hears
+/// it as expanded or collapsed.
+class _FoldHeader extends StatelessWidget {
+  const _FoldHeader({
+    required this.label,
+    required this.expanded,
+    required this.onToggle,
+  });
+
+  final String label;
+  final bool expanded;
+  final VoidCallback onToggle;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return MergeSemantics(
+      child: Semantics(
+        expanded: expanded,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(AppRadii.small),
+          onTap: onToggle,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(label, style: theme.textTheme.titleMedium),
+                  ),
+                  Icon(
+                    expanded ? Icons.expand_less : Icons.expand_more,
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
 

@@ -1060,15 +1060,19 @@
   },
   "pathUpdatesTitle": "Deck updates",
   "@pathUpdatesTitle": {
-    "description": "Row on the course card: newer versions of the course's decks, downloaded on request. Shown with \"Feature incoming\" until decks download (#210)."
+    "description": "Row on the course card: newer versions of the course's decks, downloaded on request. Updates the course's language as Settings > Deck downloads does (#464)."
   },
   "pathUpdatesBody": "Your progress is kept",
   "@pathUpdatesBody": {
-    "description": "Second line of the deck updates row: updating a deck keeps the learner's history."
+    "description": "Second line of the deck updates row when an update waits: updating a deck keeps the learner's history."
   },
   "pathUpdatesButton": "Update",
   "@pathUpdatesButton": {
-    "description": "Button on the deck updates row."
+    "description": "Button on the deck updates row, shown when an update waits for the course's language."
+  },
+  "pathUpdatesUpToDate": "Up to date",
+  "@pathUpdatesUpToDate": {
+    "description": "Second line of the deck updates row on the course card when no update waits for the course's language."
   },
   "pathHoursTitle": "Hours left in the decks so far",
   "@pathHoursTitle": {
@@ -5865,6 +5869,10 @@
   "voicesInstallSteps": "Open your phone’s Settings and search for “Text-to-speech”. Choose the preferred engine, open its settings, and install the voice data for the language. Then come back here.",
   "@voicesInstallSteps": {
     "description": "How to install a voice. Android's own menu names vary by phone, so keep it general."
+  },
+  "voicesOtherLanguages": "Other languages on this phone",
+  "@voicesOtherLanguages": {
+    "description": "Heading of the folded section on the Voices page that holds every language with decks on the phone that the learner does not learn, the languages only reviewed among them (#463)."
   },
   "voicesCheckAgain": "Check again",
   "@voicesCheckAgain": {

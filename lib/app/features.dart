@@ -112,6 +112,7 @@ enum Feature {
     Feature.feedbackMail,
     Feature.logs,
     Feature.hoursLeft,
+    Feature.deckUpdates,
   };
 }
 
