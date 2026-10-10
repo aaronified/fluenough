@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/system_settings.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -78,6 +79,51 @@ void main() {
     // Test only where there is a voice.
     expect(find.bySemanticsLabel(l10n.voicesPlayLabel(es.name)), findsOne);
     expect(find.bySemanticsLabel(l10n.voicesPlayLabel(hi.name)), findsNothing);
+    semantics.dispose();
+  });
+
+  testWidgets('the languages learned come first, as cards; every other '
+      'language on the phone, reviewed ones too, is folded under Other '
+      'languages on this phone (#463)', (tester) async {
+    usePhone(tester);
+    final semantics = tester.ensureSemantics();
+    final state = await pumpScreen(
+      tester,
+      const VoicesPage(),
+      state: AppState.test(
+        tts: FixedTtsEngine(const <String>{'es'}),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es'],
+        )..reviewLanguages = const <String>{'hi'},
+      ),
+    );
+    await tester.pumpAndSettle();
+    final l10n = l10nOf(tester);
+    final es = _language(state, 'es');
+    final hi = _language(state, 'hi');
+    expect(state.languages.length, greaterThan(1));
+    expect(find.byType(LanguageVoiceCard), findsOneWidget);
+    expect(find.textContaining(es.name, findRichText: true), findsOneWidget);
+    expect(find.textContaining(hi.name, findRichText: true), findsNothing);
+    final others = find.text(l10n.voicesOtherLanguages);
+    expect(others, findsOneWidget);
+    expect(
+      tester.getSemantics(others),
+      containsSemantics(hasExpandedState: true, isExpanded: false),
+    );
+
+    await tester.ensureVisible(others);
+    await tester.tap(others);
+    await tester.pumpAndSettle();
+    expect(
+      find.byType(LanguageVoiceCard, skipOffstage: false),
+      findsNWidgets(state.languages.length),
+    );
+    expect(
+      find.textContaining(hi.name, findRichText: true, skipOffstage: false),
+      findsOneWidget,
+    );
     semantics.dispose();
   });
 
@@ -271,7 +317,12 @@ void main() {
       state: app,
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.voicesChecking), findsNWidgets(app.languages.length));
+    // The languages learned; the rest are folded (#463).
+    expect(find.byType(LanguageVoiceCard), findsWidgets);
+    expect(
+      find.text(l10n.voicesChecking),
+      findsNWidgets(find.byType(LanguageVoiceCard).evaluate().length),
+    );
     expect(find.text(l10n.voicesPlay), findsNothing);
 
     await pumpScreen(
