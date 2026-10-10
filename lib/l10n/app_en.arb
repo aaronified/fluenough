@@ -6060,16 +6060,6 @@
       }
     }
   },
-  "reviewWaitingInDecks": "In {decks}",
-  "@reviewWaitingInDecks": {
-    "description": "Under a row of words waiting: the decks they are in, joined.",
-    "placeholders": {
-      "decks": {
-        "type": "String",
-        "example": "Rude words · Family words"
-      }
-    }
-  },
   "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
   "@reviewWaitingUnsent": {
     "description": "Row of a language on the Waiting for review page; opens the send sheet.",
@@ -6144,7 +6134,7 @@
   "@reviewHowPublicBody": {
     "description": "Step 5 of How reviewing works."
   },
-  "reviewHowAdult": "Offensive words appear only if you have turned on adult content (18+). Rate how offensive a word is to native speakers in general, not to you.",
+  "reviewHowAdult": "Offensive words are never in a unit's review. Each language has its own Offensive words review, under Waiting for review, which shows them only when you open it and say you are 18 or over. Rate how offensive a word is to native speakers in general, not to you.",
   "@reviewHowAdult": {
     "description": "Aside in How reviewing works."
   },
@@ -6334,13 +6324,157 @@
       }
     }
   },
-  "reviewRudeHidden": "{count, plural, =1{1 rude word is hidden} other{{count} rude words are hidden}}. Rude words show only with adult content on (18+).",
-  "@reviewRudeHidden": {
-    "description": "On the review screen of a unit with rude words while adult content is off.",
+  "reviewOffensiveApart": "{count, plural, =1{1 offensive word in this unit is reviewed apart} other{{count} offensive words in this unit are reviewed apart}}, only when you choose to: under Offensive words in Waiting for review.",
+  "@reviewOffensiveApart": {
+    "description": "On a unit's review screen, in place of its offensive words, which never show there. The words are not named.",
     "placeholders": {
       "count": {
         "type": "int",
         "example": "3"
+      }
+    }
+  },
+  "reviewOffensiveTitle": "Offensive words",
+  "@reviewOffensiveTitle": {
+    "description": "Row of a language on the Waiting for review page that opens its offensive words, reviewed apart and only on purpose."
+  },
+  "reviewOffensiveNoneWaiting": "None waiting to be rated or checked",
+  "@reviewOffensiveNoneWaiting": {
+    "description": "Under Offensive words on the Waiting for review page, when every offensive word in a deck waiting for review is rated, and every word like one has its pair confirmed or rejected."
+  },
+  "reviewOffensivePageTitle": "Offensive words in {language}",
+  "@reviewOffensivePageTitle": {
+    "description": "Title of a language's Offensive words review.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveWhyTitle": "Why offensive words are here",
+  "@reviewOffensiveWhyTitle": {
+    "description": "Heading of the first screen of the Offensive words review, shown before any word."
+  },
+  "reviewOffensiveWhyRange": "Offensive words are not all alike. Some are deeply offensive, the kind no newspaper would print. Others are mild, and some are fine between friends while from a stranger they insult.",
+  "@reviewOffensiveWhyRange": {
+    "description": "First screen of the Offensive words review, before any word: the range of offensiveness."
+  },
+  "reviewOffensiveWhyUnderstand": "Fluenough teaches them so that learners understand abuse when they hear it, and never say a word without knowing what it means. Learners only ever recognise them: they are never asked to type or say one.",
+  "@reviewOffensiveWhyUnderstand": {
+    "description": "First screen of the Offensive words review: why the words are taught."
+  },
+  "reviewOffensiveWhyCulture": "How strong a word is depends on the language and the culture. A word that is mild in one can be far stronger in another, even where it means the same, and speakers from different regions can disagree.",
+  "@reviewOffensiveWhyCulture": {
+    "description": "First screen of the Offensive words review: cultural differences in severity."
+  },
+  "reviewOffensiveWhyRate": "So native speakers rate them. Rate each word for how offensive it is to native speakers in general, from 1 to 9, not to you, and say where you speak the language. Several speakers rate every word, and the middle rating sets its level.",
+  "@reviewOffensiveWhyRate": {
+    "description": "First screen of the Offensive words review: what the reviewer is asked to do."
+  },
+  "reviewOffensiveWhyApart": "These words never appear in the ordinary review of a deck or unit, and nor does the offensive word an ordinary one sounds or looks like. They wait here until you choose to check them.",
+  "@reviewOffensiveWhyApart": {
+    "description": "First screen of the Offensive words review, last line, in a quieter style."
+  },
+  "reviewOffensiveNotNow": "Not now",
+  "@reviewOffensiveNotNow": {
+    "description": "Button on the first two screens of the Offensive words review: leaves without showing any word."
+  },
+  "reviewOffensiveAgeBody": "The next screen shows offensive words in {language}, written in full, some of them deeply offensive. Go on only if you are 18 or over.",
+  "@reviewOffensiveAgeBody": {
+    "description": "Second screen of the Offensive words review, under Are you 18 or over?, asked every time before the words show.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveWordsInfo": "Rate each word for how offensive it is to native speakers in general, not to you. Tap a word to see it whole. Ratings are sent with your review, by mail.",
+  "@reviewOffensiveWordsInfo": {
+    "description": "Info line at the top of a language's offensive words, once the reviewer has confirmed their age."
+  },
+  "reviewOffensiveProgress": "{rated} of {total} rated",
+  "@reviewOffensiveProgress": {
+    "description": "How many offensive words are rated, in a language's Offensive words review: at the top, and under each deck's name.",
+    "placeholders": {
+      "rated": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "reviewOffensiveNone": "No offensive words in {language} yet.",
+  "@reviewOffensiveNone": {
+    "description": "A language's Offensive words review when its decks have none.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveRegion": "Where you speak it: {region}",
+  "@reviewOffensiveRegion": {
+    "description": "Under a rated offensive word: the region the reviewer said they speak the language in, or Elsewhere.",
+    "placeholders": {
+      "region": {
+        "type": "String",
+        "example": "Telangana"
+      }
+    }
+  },
+  "reviewOffensivePairsTitle": "Words like an offensive one",
+  "@reviewOffensivePairsTitle": {
+    "description": "Heading in a language's Offensive words review, after the offensive words: ordinary words that sound or look like an offensive one, whose pair the reviewer confirms or rejects."
+  },
+  "reviewOffensivePairsInfo": "Each of these ordinary words sounds or looks like an offensive one. Learners are told to take care, and never shown the offensive word unless they choose to see it. Confirm a pair if the risk is real, or reject it.",
+  "@reviewOffensivePairsInfo": {
+    "description": "Info line under Words like an offensive one, in the Offensive words review."
+  },
+  "reviewOffensivePairsProgress": "{checked} of {total} checked",
+  "@reviewOffensivePairsProgress": {
+    "description": "Beside Words like an offensive one: how many of the pairs the reviewer has confirmed or rejected.",
+    "placeholders": {
+      "checked": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewAlikeCheckShort": "Check",
+  "@reviewAlikeCheckShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, before its pair is confirmed or rejected: opens Check this pair."
+  },
+  "reviewAlikeCheckedShort": "Checked",
+  "@reviewAlikeCheckedShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, once its pair is confirmed or rejected: opens Check this pair again."
+  },
+  "reviewAlikeCheckFor": "Check the pair for {meaning}",
+  "@reviewAlikeCheckFor": {
+    "description": "Read by a screen reader for the Check button on a word like an offensive one. Starts with the button's word, then names the word by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
+      }
+    }
+  },
+  "reviewAlikeCheckedFor": "Checked the pair for {meaning}. Tap to change it",
+  "@reviewAlikeCheckedFor": {
+    "description": "Read by a screen reader for the Checked button on a word like an offensive one.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
       }
     }
   },
