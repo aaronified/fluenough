@@ -56,17 +56,19 @@ replaced.
 4. **Tests:** D stays separate per skill. A miss in one skill leaves the
    others' D alone. Reviews and quick revision read D as decided.
 
-## To decide
+## Decided (owner, 2026-10-10)
 
-- Whether a review session orders its pairs by D, spreads them, or ignores
-  it.
-- Whether quick revision picks the hardest words first, or keeps picking at
-  random.
-- Whether to replace `Difficulty.of(card)` for new words, which have no D
-  yet, or keep it.
-- ~~One set of FSRS parameters for all skills, or one per skill.~~ Settled:
-  one per language and skill (ADR-0035).
+- **Reviews ignore D** ("Ignore it"): a review session stays ordered by
+  due date.
+- **Quick revision stays random** ("Keep random").
+- **New words keep `Difficulty.of(card)`** ("Keep it"), until FSRS has a
+  D for them.
+- One set of FSRS parameters per language and skill (ADR-0035).
+
+So what is built is the reading of D per card and skill, and **Inspect
+showing a card's D in each skill it has been answered in**, with the tests
+that D stays separate per skill. It goes into v0.4 (owner, 2026-10-10).
 
 ## Estimate
 
-About 2–3 hours, now that FSRS has landed. Confidence: medium.
+About 1–2 hours, with the decisions above. Confidence: medium.
