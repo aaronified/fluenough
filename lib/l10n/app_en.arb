@@ -4388,43 +4388,9 @@
   "@downloadsChooseOther": {
     "description": "Button on the download screen, when it fails, that opens the choose-what-to-learn screen."
   },
-  "settingsSectionDecks": "Decks",
-  "@settingsSectionDecks": {
-    "description": "Header of the Settings group for the decks downloaded from GitHub."
-  },
-  "deckDownloadsTitle": "Deck downloads",
-  "@deckDownloadsTitle": {
-    "description": "Settings row, and the title of its page, listing each language's decks on the phone, with updates."
-  },
-  "deckDownloadsRowUpToDate": "Your decks are up to date",
-  "@deckDownloadsRowUpToDate": {
-    "description": "Line under the Deck downloads row when no update is waiting."
-  },
-  "deckDownloadsRowWaiting": "{count, plural, =1{An update is waiting for 1 language} other{Updates are waiting for {count} languages}}",
-  "@deckDownloadsRowWaiting": {
-    "description": "Line under the Deck downloads row when updates are waiting.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "2"
-      }
-    }
-  },
-  "deckDownloadsRowDownloading": "Downloading decks…",
-  "@deckDownloadsRowDownloading": {
-    "description": "Line under the Deck downloads row while decks download."
-  },
-  "deckDownloadsRowNone": "No languages on this phone yet",
-  "@deckDownloadsRowNone": {
-    "description": "Line under the Deck downloads row when no language is downloaded."
-  },
-  "deckDownloadsIntro": "Decks come from Fluenough’s page on GitHub. Your progress is kept on this phone, card by card, so updating or removing a language never loses it.",
-  "@deckDownloadsIntro": {
-    "description": "Explanation at the top of the Deck downloads page."
-  },
   "deckDownloadsCheck": "Check for deck updates",
   "@deckDownloadsCheck": {
-    "description": "Row on the Deck downloads page that checks GitHub for changed decks."
+    "description": "Row at the top of Languages I’m learning, opened from Settings, that checks GitHub for changed decks (#467)."
   },
   "deckDownloadsChecked": "Last checked {when}",
   "@deckDownloadsChecked": {
@@ -4446,19 +4412,19 @@
   },
   "deckDownloadsAuto": "Check automatically",
   "@deckDownloadsAuto": {
-    "description": "Switch on Settings > Deck downloads: look for deck updates by itself. On unless the learner turns it off."
+    "description": "Switch at the top of Languages I’m learning: look for deck updates by itself. On unless the learner turns it off."
   },
   "deckDownloadsAutoOn": "Checks GitHub for deck updates once a day, when the app opens",
   "@deckDownloadsAutoOn": {
-    "description": "Under Check automatically, on Deck downloads, while it is on. Says what happens now, and changes the moment it is flipped; each check is a request to GitHub, a website."
+    "description": "Under Check automatically, at the top of Languages I’m learning, while it is on. Says what happens now, and changes the moment it is flipped; each check is a request to GitHub, a website."
   },
   "deckDownloadsAutoOff": "Only when you tap Check for deck updates",
   "@deckDownloadsAutoOff": {
-    "description": "Under Check automatically, on Deck downloads, while it is off. Says what happens now, and changes the moment it is flipped."
+    "description": "Under Check automatically, at the top of Languages I’m learning, while it is off. Says what happens now, and changes the moment it is flipped."
   },
   "deckDownloadsUpdateAll": "Update all, {size}",
   "@deckDownloadsUpdateAll": {
-    "description": "Button on the Deck downloads page that downloads every waiting update. {size} is how much, such as 120 KB.",
+    "description": "Button at the top of Languages I’m learning that downloads every waiting update. {size} is how much, such as 120 KB.",
     "placeholders": {
       "size": {
         "type": "String",
@@ -4480,7 +4446,7 @@
   },
   "deckDownloadsUpToDate": "Up to date · {size}",
   "@deckDownloadsUpToDate": {
-    "description": "A language's line on the Deck downloads page. {size} is what it takes on the phone.",
+    "description": "A downloaded language's line on its card in Languages I’m learning and on its course in Languages you review (#467). {size} is what it takes on the phone.",
     "placeholders": {
       "size": {
         "type": "String",
@@ -4566,10 +4532,6 @@
   "@deckDownloadsUpdated": {
     "description": "Toast after an update is downloaded."
   },
-  "deckDownloadsEmpty": "No languages on this phone yet. Choose one in Languages I’m learning.",
-  "@deckDownloadsEmpty": {
-    "description": "The Deck downloads page when no language is downloaded."
-  },
   "deckDownloadsProgressLabel": "Downloading {language}",
   "@deckDownloadsProgressLabel": {
     "description": "Screen-reader label of a language's download progress bar.",
@@ -4600,7 +4562,7 @@
   },
   "deckUpdatePromptLater": "Not now",
   "@deckUpdatePromptLater": {
-    "description": "Button that leaves a deck update waiting on Settings > Deck downloads."
+    "description": "Button that leaves a deck update waiting on its language's card in Languages I’m learning."
   },
   "deckUpdatePromptUpdate": "Update",
   "@deckUpdatePromptUpdate": {
@@ -7738,9 +7700,9 @@
       }
     }
   },
-  "pickerCancelledUnchosen": "{language}’s download stopped, and {language} is no longer chosen. Any of its decks that arrived stay on the phone: Settings, Deck downloads can finish them.",
+  "pickerCancelledUnchosen": "{language}’s download stopped, and {language} is no longer chosen. Any of its decks that arrived stay on the phone: its card in Languages I’m learning can finish them.",
   "@pickerCancelledUnchosen": {
-    "description": "Toast after a language's download is cancelled before its first decks are in: it is no longer chosen, and what arrived can be finished from Settings, Deck downloads.",
+    "description": "Toast after a language's download is cancelled before its first decks are in: it is no longer chosen, and what arrived can be finished from its card in Languages I’m learning (#467).",
     "placeholders": {
       "language": {
         "type": "String"
@@ -7792,7 +7754,7 @@
       }
     }
   },
-  "pickerCancelled": "Stopped. The rest can be downloaded from Settings, Deck downloads.",
+  "pickerCancelled": "Stopped. The rest can be downloaded from its card in Languages I’m learning.",
   "@pickerCancelled": {
     "description": "Under a language's download bar after Cancel, once its first decks are in: the course works with what arrived."
   },

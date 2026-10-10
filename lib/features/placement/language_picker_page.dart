@@ -15,7 +15,9 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
+import '../downloads/language_download_row.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'language_card.dart';
 import 'language_download.dart';
@@ -32,7 +34,9 @@ import 'placement_page.dart';
 /// in place: "Learn the script", on to start with, which tells placement
 /// not to ask; which of the learner's languages to learn it from, when more
 /// than one teaches it; and with deck downloads, its download, which starts
-/// as it is chosen. Continue waits only for each new language's first five
+/// as it is chosen. From Settings, deck updates are checked at the top, and
+/// each language on the phone shows its size and state, with Update and
+/// Remove (#467). Continue waits only for each new language's first five
 /// decks, then runs placement for the new ones (ADR-0013) and saves; a
 /// language already learned needs none. Un-ticking a language the learner
 /// learns asks first: its progress is kept, but its decks leave Today.
@@ -144,7 +148,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   void dispose() {
     // Leaving without saving (Back, or a placement abandoned): a language
     // chosen here is not learned, so its download stops. What is in stays,
-    // and Settings > Deck downloads can finish it.
+    // and its card here can finish it.
     final downloads = _app.deckDownloads;
     if (!_saved && downloads != null) {
       for (final code in _ticked.difference(_learning)) {
@@ -276,7 +280,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     unawaited(downloads.cancel(code));
     // Before its first decks are in, a cancelled language cannot be
     // started, so it is no longer chosen. After, the course works with
-    // what arrived, and the rest comes from Settings > Deck downloads.
+    // what arrived, and the rest comes from its card here.
     if (ready) return;
     setState(() => _ticked = <String>{..._ticked}..remove(code));
     // Its card closes, taking the line that says where the rest comes
@@ -681,6 +685,19 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                             ),
                           ),
                         ),
+                      // Deck updates (#467), where Settings' Deck downloads
+                      // page was: above the languages, out of a search.
+                      if (!widget.firstRun && query.isEmpty)
+                        if (state.deckDownloads case final downloads?)
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                              AppSizes.gutter,
+                              8,
+                              AppSizes.gutter,
+                              0,
+                            ),
+                            child: DeckUpdateControls(downloads: downloads),
+                          ),
                       if (learning.isNotEmpty) ...<Widget>[
                         heading(l10n.pickerGroupLearning(learning.length)),
                         for (final language in learning) card(language),
@@ -770,6 +787,29 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         ? state.learnedShare(code)
         : null;
     final expanded = <Widget>[
+      // A language on the phone, learned or not chosen, has its download's
+      // row (#467): size, state, Update and Remove. One newly chosen shows
+      // its download below instead.
+      if (!widget.firstRun &&
+          downloads != null &&
+          (learns || !ticked) &&
+          hasDownloadRow(downloads, code))
+        _DownloadRow(
+          line: languageDownloadLine(l10n, downloads, code, spoken),
+          actions: LanguageDownloadActions(
+            code: code,
+            name: language.name,
+            // Removed, it is no longer learned: Continue must not bring it
+            // back.
+            onRemoved: () {
+              if (!mounted) return;
+              setState(() {
+                _learning.remove(code);
+                _ticked = <String>{..._ticked}..remove(code);
+              });
+            },
+          ),
+        ),
       if (ticked && !learns) ...<Widget>[
         if (language.scriptDecks)
           ScriptChoice(
@@ -827,6 +867,31 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             ),
       query: query,
       expanded: expanded,
+    );
+  }
+}
+
+/// A downloaded language's line and buttons, on its card.
+class _DownloadRow extends StatelessWidget {
+  const _DownloadRow({required this.line, required this.actions});
+
+  final String line;
+  final Widget actions;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Text(
+          line,
+          style: theme.textTheme.bodyMedium!.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+        actions,
+      ],
     );
   }
 }

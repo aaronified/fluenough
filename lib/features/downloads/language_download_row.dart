@@ -74,12 +74,16 @@ class LanguageDownloadActions extends StatelessWidget {
     super.key,
     required this.code,
     required this.name,
+    this.onRemoved,
   });
 
   final String code;
 
   /// Its English name, for the remove dialog and the bar's label.
   final String name;
+
+  /// Called once it is removed, which also stops it being learned.
+  final VoidCallback? onRemoved;
 
   @override
   Widget build(BuildContext context) {
@@ -174,6 +178,7 @@ class LanguageDownloadActions extends StatelessWidget {
     );
     if (sure != true) return;
     await state.removeLanguage(code);
+    onRemoved?.call();
     if (context.mounted) {
       showAppSnackBar(context, l10n.deckDownloadsRemoved(name));
     }
