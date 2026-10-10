@@ -18,8 +18,10 @@ import 'send_reviews_sheet.dart';
 /// pairs not yet confirmed; and what the reviewer has reviewed and not
 /// sent. Opened from Settings, under Review decks.
 ///
-/// A unit opens its review; the words waiting are counted, never named,
-/// since a rude word shows only with adult content on.
+/// A unit opens its review; the words waiting are counted, never named.
+/// Offensive words are never in a unit's review: each language with any
+/// has its own "Offensive words" row, which the reviewer opens on purpose
+/// (owner, 2026-10-10).
 class WaitingForReviewPage extends StatelessWidget {
   const WaitingForReviewPage({super.key, this.adult});
 
@@ -128,11 +130,16 @@ class _Language extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => AppNavigator.openDeck(context, d.deck.id),
           ),
-        if (waiting.unrated.isNotEmpty)
+        if (waiting.offensive > 0)
           GroupedTile(
             leading: const Icon(Icons.bar_chart),
-            title: l10n.reviewWaitingUnrated(waiting.unrated.length),
-            subtitle: decksOf(waiting.unrated),
+            title: l10n.reviewOffensiveTitle,
+            subtitle: waiting.unrated.isEmpty
+                ? l10n.reviewOffensiveNoneWaiting
+                : l10n.reviewWaitingUnrated(waiting.unrated.length),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () =>
+                AppNavigator.openOffensiveReview(context, language.code),
           ),
         if (waiting.unconfirmed.isNotEmpty)
           GroupedTile(

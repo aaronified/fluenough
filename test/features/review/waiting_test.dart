@@ -81,15 +81,16 @@ void main() {
       final state = await reviewer();
       final te = state.deckById(wordsDeck)!.language;
       final waiting = waitingIn(state, te, adult: true);
+      // The unit of rude words only is not among them: its words are
+      // reviewed apart, on purpose, in the Offensive words review.
       expect(waiting.units.map((u) => (u.number, u.title)), [
         (1, 'Family words'),
-        (2, 'Rude words'),
       ]);
       expect(waiting.units.first.decks.single.left, 2);
       expect(waiting.units.first.decks.single.total, 2);
-      expect(waiting.units.last.decks.single.left, 1);
       expect(waiting.decks, isEmpty);
       expect(waiting.unrated.map((c) => c.card.id), [rudeCard]);
+      expect(waiting.offensive, 1);
       expect(waiting.unconfirmed.map((c) => c.card.id), [alikeCard]);
       expect(waiting.unsent, isEmpty);
       expect(waiting.isEmpty, isFalse);
@@ -109,9 +110,9 @@ void main() {
         const AlikeCheck(partner: rudeCard, kind: AlikeKind.sound, real: true),
       );
       final waiting = waitingIn(state, words.language, adult: true);
-      expect(waiting.units.first.decks.single.left, 1);
-      expect(waiting.units.last.decks.single.left, 0);
+      expect(waiting.units.single.decks.single.left, 1);
       expect(waiting.unrated, isEmpty);
+      expect(waiting.offensive, 1);
       expect(waiting.unconfirmed, isEmpty);
       expect(waiting.unsent.map((d) => d.deckId).toSet(), {
         wordsDeck,
@@ -134,13 +135,61 @@ void main() {
       expect(shown.unconfirmed.map((c) => c.card.id), [alikeCard]);
     });
 
-    test('a rude word hidden without adult content counts as left', () async {
+    test('offensive words are never among a unit\'s cards left, adult '
+        'content on or off: they wait to be rated, apart', () async {
       final state = await reviewer();
       final rude = state.deckById(rudeDeck)!;
+      for (final adult in <bool>[false, true]) {
+        final waiting = waitingIn(state, rude.language, adult: adult);
+        expect(
+          waiting.allDecks.map((d) => d.deck.id),
+          isNot(contains(rudeDeck)),
+        );
+        expect(waiting.unrated.map((c) => c.card.id), [rudeCard]);
+      }
       state.reviewing.rate(rude, rude.cards.single, const WordRating(score: 6));
-      final hidden = waitingIn(state, rude.language, adult: false);
-      expect(hidden.units.last.decks.single.left, 1);
-      expect(hidden.unrated, isEmpty);
+      expect(waitingIn(state, rude.language, adult: false).unrated, isEmpty);
+    });
+
+    test('a deck with offensive and ordinary words counts only the '
+        'ordinary ones as its cards left', () async {
+      final state = AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          ...reviewCourse(),
+          'decks/te/te-en-review-mixed.yaml': '''
+schema: 1
+id: te-en-review-mixed
+name: "Mixed words"
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+tags: [unreviewed]
+cards:
+  - { id: te-9905, target: "అక్క", native: "elder sister", reading: "akka" }
+  - { id: te-9952, target: "దొంగ", native: "thief", reading: "doṅga", tags: [offensive], modes: [recognition] }
+''',
+        }),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['te'],
+          learningChosen: true,
+        ),
+      );
+      await state.load();
+      final waiting = waitingIn(
+        state,
+        state.deckById(wordsDeck)!.language,
+        adult: true,
+      );
+      // A deck the path leaves out comes after its units.
+      final mixed = waiting.units.last.decks.single;
+      expect(mixed.deck.id, 'te-en-review-mixed');
+      expect((mixed.left, mixed.total), (1, 1));
+      expect(waiting.unrated.map((c) => c.card.id), <String>[
+        rudeCard,
+        'te-9952',
+      ]);
+      expect(waiting.offensive, 2);
     });
 
     test('a deck signed off on the phone, or whose file no longer says '
@@ -154,7 +203,8 @@ void main() {
       }
       reviewing.signOff(words);
       var waiting = waitingIn(state, words.language, adult: false);
-      expect(waiting.units.map((u) => u.number), [2]);
+      expect(waiting.units, isEmpty);
+      expect(waiting.unrated.map((c) => c.card.id), [rudeCard]);
       expect(awaitsReview(state, words), isFalse);
       expect(awaitsReview(state, rude), isTrue);
 
@@ -235,11 +285,10 @@ cards:
         ),
         findsOneWidget,
       );
-      expect(
-        find.text(l10n.reviewWaitingUnit(2, 'Rude words')),
-        findsOneWidget,
-      );
-      expect(find.text(l10n.reviewWaitingCardsLeft(1)), findsOneWidget);
+      // The offensive words: never a unit to review, but a row of their
+      // own, opened on purpose.
+      expect(find.text(l10n.reviewWaitingUnit(2, 'Rude words')), findsNothing);
+      expect(find.text(l10n.reviewOffensiveTitle), findsOneWidget);
       expect(find.text(l10n.reviewWaitingUnrated(1)), findsOneWidget);
       expect(find.text(l10n.reviewWaitingUnconfirmed(1)), findsOneWidget);
       expect(find.textContaining('వెధవ'), findsNothing);
@@ -285,6 +334,9 @@ cards:
       final l10n = l10nOf(tester);
       expect(find.text(l10n.reviewWaitingNothing('Telugu')), findsOneWidget);
       expect(find.text(l10n.reviewWaitingUnrated(1)), findsNothing);
+      // The language's offensive words can still be opened, on purpose.
+      expect(find.text(l10n.reviewOffensiveTitle), findsOneWidget);
+      expect(find.text(l10n.reviewOffensiveNoneWaiting), findsOneWidget);
     });
 
     testWidgets('with no language reviewed, it asks for them, and shows '
@@ -324,7 +376,9 @@ cards:
       final l10n = l10nOf(tester);
       expect(find.text(l10n.reviewSettingsLanguages), findsOneWidget);
       expect(find.text('Telugu'), findsWidgets);
-      expect(find.text(l10n.reviewSettingsWaitingDesc(2)), findsOneWidget);
+      // The deck of offensive words only is not counted: it is reviewed
+      // apart, on purpose.
+      expect(find.text(l10n.reviewSettingsWaitingDesc(1)), findsOneWidget);
       await tester.tap(find.text(l10n.reviewSettingsWaiting));
       await tester.pumpAndSettle();
       expect(find.byType(WaitingForReviewPage), findsOneWidget);
@@ -376,18 +430,23 @@ cards:
       );
       final l10n = l10nOf(tester);
       final handle = tester.ensureSemantics();
-      expect(find.text(l10n.pathToReview), findsNWidgets(2));
+      expect(find.text(l10n.pathToReview), findsOneWidget);
       expect(marked(tester, 'Family words'), findsOneWidget);
-      expect(marked(tester, 'Rude words'), findsOneWidget);
+      // A unit of offensive words only is never marked: they are reviewed
+      // only on purpose.
+      expect(marked(tester, 'Rude words'), findsNothing);
 
       // Signed off, the unit's mark goes.
       final words = state.deckById(wordsDeck)!;
       state.reviewing.signOff(words);
       await tester.pumpAndSettle();
-      expect(find.text(l10n.pathToReview), findsOneWidget);
+      expect(find.text(l10n.pathToReview), findsNothing);
       expect(marked(tester, 'Family words'), findsNothing);
 
       // Off, or a language not reviewed: no mark.
+      state.settings.reviews = const Reviews();
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.pathToReview), findsOneWidget);
       state.settings.reviewLanguages = const <String>{};
       await tester.pumpAndSettle();
       expect(find.text(l10n.pathToReview), findsNothing);
