@@ -1,6 +1,6 @@
 # Plan: what reviewing covers, and how reviewers change cards
 
-Written 2026-10-11, for 0.5.0. Tracks #476 and #477.
+Written 2026-10-11, for 0.6.0 (moved from 0.5.0 by the owner). Tracks #476 and #477.
 
 ## What the owner asked
 
