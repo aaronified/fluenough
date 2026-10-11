@@ -270,9 +270,13 @@ Confidence: medium on the code, low on the dropdown's timing (it depends on
    switches.
 3. ~~**Image icons.**~~ Decided (owner, 2026-10-11): small SVG image allowed,
    made during deck building; glyph is the fallback.
-4. **Silhouettes: who draws and licenses them?** Contributors under CC0 or
-   CC-BY, commissioned art, or generated? Who checks the licence before
-   merge? Is the licence allow-list above right?
+4. ~~**Silhouettes: who draws and licenses them?**~~ Decided (owner,
+   2026-10-11: "You"): Claude draws each language's silhouette and icon as
+   original SVG line art, written by hand as paths, never traced from a
+   photo or another artist's work. Each is released as `CC0-1.0`, with
+   `credit: "Fluenough"`, so it needs no attribution and contributors
+   may change it. Contributed drawings stay allowed under the allow-list,
+   and the owner checks their licence at merge.
 5. ~~**Where backgrounds show.**~~ Decided (owner, 2026-10-11): course card,
    Today card, picker row, and Decks header / Progress.
 6. ~~**Size cap.**~~ Decided (owner, 2026-10-11: "It will be svg only."):
