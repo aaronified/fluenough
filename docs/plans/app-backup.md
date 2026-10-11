@@ -97,6 +97,25 @@ A plain zip of text files, so a backup outlives the app, like the log.
   get a stuck user going (retry, update); a restore there is a different
   decision and needs the confirmation. Keep one place, Settings.
 
+## Automatic backup on app update
+
+Owner, 2026-10-11: "The app backup should also run automatically when app
+update is clicked. Will start along with the download."
+
+- Tapping Download in the app update check (Settings, or the "Check for an
+  app update" sheet on the download-failure screens) starts a backup at the
+  same moment as the APK download, in parallel.
+- It is written to the app's own storage (no picker, no share sheet), so it
+  needs no answer from the user and survives the update, which keeps app
+  data. The last three are kept; older ones are deleted.
+- Backup and restore lists them as "Before updating to {version}, {date}",
+  each with Restore, beside restoring from a file.
+- A failed backup never blocks the update. The update screen says the
+  backup failed, and the app log records why.
+- Tests: the backup starts with the download; it lands in app storage; only
+  three are kept; a failed backup still lets the update go on; the list
+  shows them and restores from one.
+
 ## Testing value
 
 Install a new APK, restore, same state: languages, settings, progress,
