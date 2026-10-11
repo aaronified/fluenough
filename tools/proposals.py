@@ -446,6 +446,7 @@ class Applied:
     outcome: str
     proposal: Proposal | None = None
     closed: list[Proposal] = field(default_factory=list)
+    entry: Entry | None = None
 
 
 def apply(root: Path, lang: str, pid: str) -> Applied:
@@ -468,7 +469,24 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
                   and not any(o.field == p.field for o in e.proposals()))
     except Unsupported:
         return Applied("unsupported", p)
-    return Applied("applied", p, rivals)
+    return Applied("applied", p, rivals, entry)
+
+
+def fill(entry: Entry, values: dict[str, str]) -> bool:
+    """Writes [values], field to text, into [entry]'s card, line by line as
+    apply does: the reading and IPA worked out for a changed word (#468).
+    False, with nothing written, when a field may not change here or the
+    edit cannot be made one line at a time."""
+    if not values or not all(entry.may_change(n) for n in values):
+        return False
+    try:
+        edit = _Text(entry)
+        for name, text in values.items():
+            edit.set_field(name, text)
+        edit.save(lambda e: all(e.value(n) == t for n, t in values.items()))
+    except Unsupported:
+        return False
+    return True
 
 
 def outdated(root: Path, lang: str) -> list[tuple[Entry, Proposal]]:
