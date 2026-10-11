@@ -1,6 +1,6 @@
 # Plan: a look for each language (colour, icon, background image)
 
-Written 2026-10-10. Not yet tracked by an issue. Builds on #461 (the
+Written 2026-10-10; owner's answers recorded 2026-10-11. Not yet tracked by an issue. Builds on #461 (the
 language dropdown), ADR-0027 (language icons) and ADR-0037 (decks download
 from `main`).
 
@@ -10,13 +10,26 @@ from `main`).
 
 > each language should get their own themes (a separate yaml). Theme should include colour, icon, and background image.
 
-## Name clash to settle first
+## Owner's answers (2026-10-11)
 
-"Theme" already means a course topic: `decks/themes.yaml` and ADR-0010 list
-"First words", "Family" and so on, and `BUNDLED` in `tools/deck_index.py`
-names that file. This plan calls the new thing a **look** in files and code
-(`kind: look`, `LanguageLook`), and "theme" only in the interface. See
-Open questions.
+1. Naming. Owner: "Must be consistent." Course topics keep "theme"
+   (`decks/themes.yaml`, ADR-0010, the theme filter). The per-language
+   visual identity is a **look** everywhere: files
+   (`decks/<code>/<code>-look.yaml`, `kind: look`), code (`LanguageLook`),
+   docs and the app's interface. "Theme" is never used for it.
+2. Icon. Owner: "Image allowed, and it will be part of deck building.
+   Small image." A look may carry a small icon image made during deck
+   building, alongside the decks. The first-letter glyph stays as the
+   fallback when there is none.
+3. Background. Owner chose all four places: the course card on Decks, the
+   Today lesson card, the language picker row, and the Decks header /
+   Progress. And: "This will be a line drawing. Like cultural silhouette".
+   So backgrounds are line-drawing cultural silhouettes drawn in the look's
+   colour, tinted to the scheme, not photos, and subtle so text stays
+   readable.
+4. Size. Owner: "It will be svg only." Icon and background are SVG only (no
+   WebP, JPEG or PNG). Limits set by this plan: 50 KB for a background,
+   10 KB for an icon.
 
 ## What exists
 
@@ -55,13 +68,13 @@ colour:
   seed: "#C2410C"            # quoted: a bare # starts a YAML comment
 icon:
   glyph: "हि"                # what today's `icon` becomes
-  image: "hi-icon.png"       # optional; see below
+  image: "hi-icon.svg"       # optional; see below
 background:
-  image: "hi-background.webp"
-  credit: "Photo by A. Name, 2024"
+  image: "hi-background.svg"
+  credit: "Drawing by A. Name, 2026"
   licence: "CC-BY-4.0"
   source: "https://example.org/original"
-  alt: "Marigolds at a temple in Varanasi"
+  alt: "Line drawing of a temple silhouette"
   focus: "centre"            # where to crop: centre, top, bottom, start, end
 ```
 
@@ -93,42 +106,57 @@ mark it deprecated in `docs/DECK-FORMAT.md`; the index writes
 `languages[].icon` from whichever exists, so older apps keep working and
 `INDEX_VERSION` does not rise.
 
-An **image icon** is optional and off by default: `icon.image`, PNG or WebP,
-square, at most 128 x 128 px and 20 KB, with a transparent or solid
-background, shown where the glyph shows now. The glyph stays required
-because it is the fallback, and the text a screen reader and the chip's
-label use. Whether to allow images at all is an open question.
+An **image icon** is optional (owner, 2026-10-11: "Image allowed, and it
+will be part of deck building. Small image."): `icon.image`, an SVG, square
+viewBox, at most 10 KB, made during deck building and committed beside the
+decks. It is drawn in the look's colour, shown where the glyph shows now.
+The glyph stays required because it is the fallback when there is no image,
+and the text a screen reader and the chip's label use.
 
 ### Background image
 
-- **Format and size.** WebP or JPEG (no PNG photos), at most 1080 x 720 px
-  and 150 KB, landscape. The validator reads the header with the stdlib
-  (no Pillow, rule 6) and checks type, dimensions and size.
+- **Style.** A line drawing, a cultural silhouette (owner: "This will be a
+  line drawing. Like cultural silhouette"), not a photo. It is drawn in the
+  look's colour: the app tints strokes to the scheme (`primary` at low
+  opacity), so one file serves light, dark and pure black. Subtle, so text
+  stays readable.
+- **Format and size.** SVG only (owner: "It will be svg only."), at most
+  50 KB, landscape viewBox. The validator checks with the stdlib (no
+  third-party package, rule 6) that the file parses as XML with an `svg`
+  root, and rejects: a `<script>` element, any `on*` event-handler
+  attribute, any `href` / `xlink:href` or `url(...)` pointing outside the
+  file (http, https or anything not a `#fragment`), and an embedded raster
+  (`<image>`, `data:image/` URIs). The icon follows the same rules with a
+  10 KB cap.
 - **Licence.** `credit`, `licence` (an SPDX id such as `CC0-1.0`, `CC-BY-4.0`)
-  and `source` are required when `image` is set; the validator refuses an
+  and `source` stay required when `image` is set; the validator refuses an
   image without them and a licence that is not on an allow-list that is
   GPL-compatible for the repo's content (CC0, CC-BY, CC-BY-SA, public domain).
   The credit shows in the app (a line on the language's page in the deck
   browser and in About), never hidden.
-- **`alt`** is required, in English, and is the image's description. The
-  image is decorative on every screen, so a screen reader skips it; `alt`
+- **`alt`** is required, in English, and is the drawing's description. The
+  drawing is decorative on every screen, so a screen reader skips it; `alt`
   is for review and the credits page.
-- **Where it shows:** the language's **course card** and its **Today lesson
-  card** (a header band behind the title), and the **language picker** row.
-  Not behind lists, drills or card faces. The whole-screen background is out
-  of scope.
-- **Text over it stays readable.** The image sits under a scrim of
-  `scheme.surface` at 70 to 85 percent, so title and body text use ordinary
-  `onSurface` and keep 4.5:1 against the worst case. A widget test renders a
-  white image and a black image under the scrim in all three variants and
-  asserts the ratio. No text sits on the bare image.
+- **Where it shows** (owner chose all four): the language's **course card**
+  on Decks, the **Today lesson card**, the **language picker** row, and the
+  **Decks header / Progress**. Not behind lists, drills or card faces.
+- **Text over it stays readable.** Line art covers little of the card, so the
+  scrim can be lighter than for a photo: `scheme.surface` at 40 to 60
+  percent under the drawing, text in ordinary `onSurface`. The contrast
+  tests stay: a widget test renders the strongest drawing (a dense, fully
+  opaque stroke in `primary`) behind text in all three variants and asserts
+  4.5:1. No text sits on bare strokes.
+- **Rendering.** Needs an SVG renderer. `pubspec.yaml` has no `flutter_svg`
+  today, so adding it is a **new dependency for review** (AGENTS.md); it is
+  the one change to `pubspec.yaml` in this plan.
 
 ## Where it applies
 
 - **A language is selected** (#461's dropdown): the app theme is rebuilt
   from that language's seed, so every screen but Settings takes its colours:
-  app bar, buttons, navigation bar, chips. The language's background shows on
-  its course card and Today lesson card.
+  app bar, buttons, navigation bar, chips. The language's drawing shows on
+  its course card, Today lesson card, picker row and the Decks header /
+  Progress.
 - **All languages:** the app theme, from the learner's `ThemeSeed`. Each
   language's own look still shows on its own cards in lists, because a card
   belongs to one language.
@@ -136,28 +164,28 @@ label use. Whether to allow images at all is an open question.
   colour choice never change under the learner.
 - A language with no look file uses the app theme, with its glyph from the
   block `icon`.
-- The theme change animates over `AnimatedTheme`'s default duration; with
+- The look change animates over `AnimatedTheme`'s default duration; with
   reduced motion on it switches at once.
 
 `AppTheme.light/dark` take an optional seed override; the language's seed
-replaces `settings.seed` only when the language is selected. No new
-dependency.
+replaces `settings.seed` only when the language is selected. One new
+dependency, `flutter_svg`, for review (see Background image).
 
 ## Downloads
 
-- `tools/deck_index.py` lists each look file and each image it names as
+- `tools/deck_index.py` lists each look file and each SVG it names as
   files of that language, with `path`, `size`, `sha256`, `content_sha256`
-  (equal to `sha256` for an image) and `kind` (`look`, `look-image`). It
+  (equal to `sha256` for an SVG) and `kind` (`look`, `look-image`). It
   writes the glyph and seed into `languages[]` too, so the picker can show
   them before any download.
 - The app fetches the look file with the language's first files, so the
-  colour and icon are there at once, then the background images afterwards;
-  a missing or failed image just means no image, never a failed language.
-  An image whose SHA-256 does not match is discarded (ADR-0037).
+  colour and icon are there at once, then the SVGs afterwards;
+  a missing or failed SVG just means the glyph and no drawing, never a failed
+  language. An SVG whose SHA-256 does not match is discarded (ADR-0037).
 - Removing a language deletes its look files. Updates follow the existing
-  "ask, don't push" rule; an image change is a small update.
-- The index rises in size by roughly 100 to 200 KB per language with an
-  image. No change to `INDEX_VERSION`: new file kinds are ignored by an app
+  "ask, don't push" rule; an SVG change is a small update.
+- The index rises in size by at most about 60 KB per language (50 KB
+  background plus 10 KB icon, usually far less). No change to `INDEX_VERSION`: new file kinds are ignored by an app
   that does not know them.
 
 ## Validator (`tools/validate_decks.py`)
@@ -165,8 +193,9 @@ dependency.
 - Accepts `kind: look`; one per language at most; `language` matches the
   folder; unknown keys are errors (as for decks).
 - Checks the seed, the contrast, the glyph (letter or two of the language's
-  own name, as ADR-0027), image paths exist inside `decks/<code>/`, image
-  type, size and dimensions, and the licence fields.
+  own name, as ADR-0027), image paths exist inside `decks/<code>/`, `.svg` only,
+  the SVG safety rules and byte caps above (50 KB background, 10 KB icon),
+  and the licence fields.
 - Errors if a deck's block `icon` differs from the look glyph.
 - `deck_index.py`'s staleness check covers the new files.
 
@@ -176,7 +205,7 @@ dependency.
   high-contrast mode applied on top of the language seed.
 - Colour is never the only signal: a language is also named by its glyph and
   name wherever its colour shows.
-- Text over images only on the scrim; images are decorative to a screen
+- Text over drawings only on the scrim; drawings are decorative to a screen
   reader; the glyph carries the chip's semantic label.
 - Reduced motion and system font scaling are untouched.
 - RTL: `focus` uses `start` and `end`, not left and right (rule 10).
@@ -196,15 +225,17 @@ dependency.
 ## Tests
 
 - Validator: a good look file passes; bad seed, low contrast, missing
-  licence, oversized or wrong-type image, wrong language and unquoted
+  licence, oversized SVG, non-SVG file, SVG with script, event handler, external
+  reference or embedded raster, wrong language and unquoted
   boolean-like scalars each fail with a clear message; the block-icon
   mismatch fails.
 - Index: look files and images appear with correct SHA-256 and sizes;
   a changed image makes the index stale.
 - Dart: a seed's three variants meet 4.5:1 for the key pairs (shares
-  seeds with the Python check); the dropdown switches the theme and All
+  seeds with the Python check); the dropdown switches the look and All
   languages restores the app one; Settings never changes; scrim text
-  contrast over white and black images; a failed image download leaves the language working;
+  contrast under the strongest line drawing in all three variants; a failed
+  SVG download leaves the language working;
   glyph fallback without a look file.
 - Existing `theme_test.dart` and `language_chips` tests stay green.
 
@@ -213,38 +244,43 @@ dependency.
 1. Format, `docs/DECK-FORMAT.md`, validator and index (Python, no Flutter).
 2. Hindi and Spanish look files as the first two, without images.
 3. Download, `LanguageLook`, glyph read from the look file.
-4. Per-language theme with #461's dropdown (needs it first).
-5. Background images, the scrim, credits.
+4. Per-language look with #461's dropdown (needs it first).
+5. Add `flutter_svg` (after review); SVG icons and backgrounds, the scrim,
+   credits.
 6. An ADR once the owner has answered the questions (it changes the deck
    format, which AGENTS.md says needs a human answer first).
 
 ## Estimate
 
-About 5 to 7 days with tests: 1 to 2 for format, validator and index, 1 to 2
-for download and `LanguageLook`, 1 to 2 for theming and the dropdown, 1 to 2
-for images, scrim and switches. Image sourcing and licence checking for the
-seven or eight languages is separate, human work, not counted.
+About 5 to 7 days with tests, unchanged in total: 1 to 2 for format, SVG
+validator and index, 1 to 2 for download and `LanguageLook`, 1 to 2 for
+theming and the dropdown, 1 to 2 for SVG rendering, scrim and four
+placements (the SVG safety checks replace the raster header checks; the
+extra placements and `flutter_svg` add about half a day). Drawing the
+silhouettes and icons and checking their licences, for the seven or eight
+languages, is separate, human work during deck building, not counted.
 Confidence: medium on the code, low on the dropdown's timing (it depends on
 #461 landing) and on image sourcing.
 
 ## Open questions
 
-1. **Name.** Keep "theme" in the interface and `look` in files, to avoid
-   the course-topic `themes.yaml`, or rename one of them?
+1. ~~**Name.**~~ Decided (owner, 2026-10-11: "Must be consistent."): topics
+   keep "theme"; the per-language identity is a "look" everywhere.
 2. ~~**User override.**~~ Decided (owner, 2026-10-10): always on, no
    switches.
-3. **Image icons.** Allow `icon.image`, or keep the glyph only (simpler,
-   always legible, ADR-0027's "first letter of its own name")?
-4. **Background images: who makes and licenses them?** Contributors under
-   CC0 or CC-BY, commissioned art, or generated? Who checks the licence
-   before merge? Is the licence allow-list above right?
-5. **Where backgrounds show.** Course card, Today card and picker as
-   proposed, or also the Decks tab header or Progress?
-6. **Size cap.** Is 150 KB a card for about eight languages acceptable
-   against the offline-first promise, or lower?
+3. ~~**Image icons.**~~ Decided (owner, 2026-10-11): small SVG image allowed,
+   made during deck building; glyph is the fallback.
+4. **Silhouettes: who draws and licenses them?** Contributors under CC0 or
+   CC-BY, commissioned art, or generated? Who checks the licence before
+   merge? Is the licence allow-list above right?
+5. ~~**Where backgrounds show.**~~ Decided (owner, 2026-10-11): course card,
+   Today card, picker row, and Decks header / Progress.
+6. ~~**Size cap.**~~ Decided (owner, 2026-10-11: "It will be svg only."):
+   SVG only, 50 KB background and 10 KB icon.
 7. **Block `icon` migration.** Move it to the look file and deprecate the
    block field (proposed), or keep both?
 8. **Colour in All languages.** App seed, as proposed, or the colour of the
    language that owns the card on each card?
-9. **Cultural care.** Who reviews a language's colours and pictures so a
+9. **Cultural care.** Who reviews a language's colours and silhouettes so a
    choice is not a stereotype or has an unintended meaning?
+10. **`flutter_svg`.** Approve the new dependency (see Background image).
