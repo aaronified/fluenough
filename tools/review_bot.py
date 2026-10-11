@@ -40,7 +40,15 @@ by `tools/validate_decks.py` before anything is pushed.
 
 What it logs and writes in PRs: rater codes, card ids, proposal ids,
 counts and PR numbers. Never a mail address, and never a suggestion's
-text, which reaches only the decks.
+text, which reaches only the decks. The one exception is an agreement that
+changes a card's word: the reading and IPA the bot works out for it are
+listed with their source, for the owner to check (#468).
+
+An agreed word change brings the reading and IPA with it (owner, #468):
+an agreed proposal on the card's reading or IPA is applied in the same PR;
+a field none changes is worked out, the reading by tools/transcribe.py
+(not for a Latin-script language), the IPA from en.wiktionary.org or, if
+it has none or cannot be reached, by tools/transcribe.py.
 
 Environment, through `mail_to_issues.py`:
     FLUENOUGH_BOT_TOKEN  the App's installation token, made by the
@@ -56,12 +64,14 @@ from __future__ import annotations
 import base64
 import datetime
 import hashlib
+import html as htmllib
 import json
 import re
 import shutil
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -70,6 +80,7 @@ from typing import Callable, Protocol
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import proposals as pr  # noqa: E402
+import transcribe as tr  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
 
 PREFIX = "review-bot/"
@@ -418,6 +429,128 @@ def outdated_branch(lang: str, stale: list[pr.Proposal]) -> str:
     return f"{PREFIX}outdated/{lang}-{key.hexdigest()[:10]}"
 
 
+# --- A changed word's reading and IPA (#468) -----------------------------------
+
+# When an agreement changes a card's word and no agreed proposal changes its
+# reading or IPA, the bot works them out (owner, #468): the reading by
+# tools/transcribe.py, the IPA from Wiktionary or else by transcribe.py.
+WIKTIONARY = "https://en.wiktionary.org/api/rest_v1/page/html/"
+WIKTIONARY_TIMEOUT = 5.0
+USER_AGENT = "fluenough-review-bot/1 (https://github.com/aaronified/fluenough)"
+# A deck's script, to the language transcribe.py reads it as, for a
+# language it has no table of its own for.
+SCRIPT_LANG = {"devanagari": "hi", "bengali": "bn", "gujarati": "gu",
+               "telugu": "te", "kannada": "kn"}
+SOURCE_WIKTIONARY = "Wiktionary"
+SOURCE_RULES = "transcribe rules"
+AUTO_FIELDS = ("reading", "ipa")
+
+
+class LookupFailed(Exception):
+    """Wiktionary could not be reached: not the same as no IPA there."""
+
+
+Lookup = Callable[[str, str], "str | None"]
+
+
+def ipa_in_html(page: str, language: str) -> str | None:
+    """The first IPA, in /.../ or [...], in [language]'s section of a
+    Wiktionary page's HTML, without its delimiters."""
+    anchor = re.search(r'<h2[^>]*\bid="' + re.escape(language.replace(" ", "_"))
+                       + r'"', page)
+    if anchor is None:
+        return None
+    section = page[anchor.end():]
+    following = section.find("<h2")
+    if following >= 0:
+        section = section[:following]
+    for raw in re.findall(r'<span[^>]*class="[^"]*\bIPA\b[^"]*"[^>]*>(.*?)</span>',
+                          section, re.S):
+        text = htmllib.unescape(re.sub(r"<[^>]+>", "", raw)).strip()
+        if len(text) > 2 and (text[0], text[-1]) in (("/", "/"), ("[", "]")):
+            return normalise_ipa(text)
+    return None
+
+
+def normalise_ipa(text: str) -> str:
+    """IPA as the decks write it: no slashes or brackets, no syllable dots."""
+    text = text.strip().strip("/[]").replace(".", "")
+    return " ".join(text.split())
+
+
+def wiktionary_ipa(word: str, language: str) -> str | None:
+    """[word]'s IPA from en.wiktionary.org's [language] section, None when
+    there is none. LookupFailed when Wiktionary cannot be reached."""
+    url = WIKTIONARY + urllib.parse.quote(word.replace(" ", "_"), safe="")
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(request, timeout=WIKTIONARY_TIMEOUT) as r:
+            page = r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return None
+        raise LookupFailed(f"HTTP {e.code}") from e
+    except (OSError, ValueError) as e:
+        raise LookupFailed(type(e).__name__) from e
+    return ipa_in_html(page, language)
+
+
+def language_of(root: Path, lang: str) -> tuple[str, str]:
+    """[lang]'s name and script, as its deck files say."""
+    for path in pr.language_files(root, lang):
+        raw = pr._load(path)
+        found = raw.get("language") if isinstance(raw, dict) else None
+        if isinstance(found, dict) and isinstance(found.get("name"), str):
+            return found["name"], str(found.get("script", ""))
+    return "", ""
+
+
+@dataclass
+class Filled:
+    """What was worked out for a changed word: each field to its text and
+    source, and what could not be."""
+    values: dict[str, tuple[str, str]] = field(default_factory=dict)
+    notes: list[str] = field(default_factory=list)
+
+
+def work_out(word: str, lang: str, name: str, script: str, wanted: list[str],
+             lookup: Lookup) -> Filled:
+    """The reading and IPA ([wanted] of them) of [word]."""
+    out = Filled()
+    rules_lang = lang if lang in tr.BLOCKS or lang == "es" else SCRIPT_LANG.get(script)
+    rules = None
+    if rules_lang:
+        try:
+            rules = tr.transcribe(word, rules_lang)
+        except Exception:  # noqa: BLE001 - a word it cannot read
+            rules = None
+    if "reading" in wanted and script != "latin":
+        if rules is not None and rules_lang in tr.BLOCKS and rules.reading:
+            out.values["reading"] = (rules.reading, SOURCE_RULES)
+        else:
+            out.notes.append("No reading could be worked out; the old one is "
+                             "left for the owner to change.")
+    if "ipa" in wanted:
+        ipa, failed = None, False
+        if name and not any(c.isspace() for c in word.strip()):
+            try:
+                ipa = lookup(word.strip(), name)
+            except LookupFailed as e:
+                failed = True
+                out.notes.append(f"Wiktionary could not be reached ({e}); "
+                                 "the IPA falls back on transcribe rules.")
+        if ipa:
+            out.values["ipa"] = (ipa, SOURCE_WIKTIONARY)
+        elif rules is not None and rules.ipa:
+            out.values["ipa"] = (rules.ipa, SOURCE_RULES)
+            if not failed:
+                out.notes.append("No IPA on Wiktionary; transcribe rules used.")
+        else:
+            out.notes.append("No IPA could be worked out; the old one is left "
+                             "for the owner to change.")
+    return out
+
+
 # --- The bot ----------------------------------------------------------------------
 
 @dataclass
@@ -435,8 +568,10 @@ Build = Callable[[Path], Built | None]
 
 class Bot:
     def __init__(self, git: Git, github: GitHub, threshold: int,
-                 log: Callable[[str], None] = print) -> None:
+                 log: Callable[[str], None] = print,
+                 lookup: Lookup = wiktionary_ipa) -> None:
         self.git, self.github, self.threshold, self.log = git, github, threshold, log
+        self.lookup = lookup
 
     def job(self, branch: str, build: Build) -> str:
         """Brings [branch]'s PR one step on, opening it first if need be.
@@ -601,6 +736,8 @@ class Bot:
             if applied.closed:
                 lines.append("- Closed as outdated with it: " + ", ".join(
                     f"`{o.id}` by {o.by}" for o in applied.closed))
+            if p.field == "target" and applied.entry is not None:
+                lines += self._with_word(root, lang, applied.entry, p)
             lines += ["", FOOTER]
             return Built(
                 title=f"Apply the agreed change to {p.card} ({p.field})",
@@ -608,6 +745,60 @@ class Bot:
                 labels=[LABEL, KIND_LABELS["apply"]],
                 langs=[lang])
         return self.job(apply_branch(proposal), build)
+
+    def _agreed_with(self, entry: pr.Entry, name: str) -> pr.Proposal | None:
+        """The agreed proposal on [entry]'s field [name] that goes first,
+        if any: it goes in with an agreed change to the word."""
+        agreed = [o for o in entry.proposals() if o.field == name
+                  and len(o.accepted) >= self.threshold
+                  and entry.value(name) == o.now]
+        return min(agreed, key=lambda o: (o.date, o.id)) if agreed else None
+
+    def _with_word(self, root: Path, lang: str, entry: pr.Entry,
+                   p: pr.Proposal) -> list[str]:
+        """After [p] changed [entry]'s word: applies the agreed proposals on
+        its reading and IPA with it, and works out the fields none of them
+        changes (owner, #468). The PR body's lines saying what was done."""
+        lines: list[str] = []
+        fresh = next((e for e in pr.entries(root, lang, entry.card)
+                      if e.path == entry.path and e.form == entry.form), None)
+        if fresh is None:
+            return lines
+        wanted = []
+        for name in AUTO_FIELDS:
+            if not fresh.may_change(name):
+                continue
+            agreed = self._agreed_with(fresh, name)
+            if agreed is not None:
+                done = pr.apply(root, lang, agreed.id)
+                if done.outcome == "applied":
+                    lines.append(f"- Applied with it, agreed: `{agreed.id}` on "
+                                 f"{name}, by {agreed.by}")
+                    fresh = done.entry or fresh
+                    continue
+            wanted.append(name)
+        if not wanted:
+            return lines
+        fresh = next((e for e in pr.entries(root, lang, entry.card)
+                      if e.path == entry.path and e.form == entry.form), None)
+        if fresh is None:
+            return lines
+        name, script = language_of(root, lang)
+        worked = work_out(p.text, lang, name, script, wanted, self.lookup)
+        values = {k: v for k, (v, _) in worked.values.items()
+                  if fresh.value(k) != v}
+        if values and not pr.fill(fresh, values):
+            return lines + ["- The reading and IPA could not be written here; "
+                            "they are left for the owner."]
+        if worked.values or worked.notes:
+            lines += ["", "Worked out for the new word, for the owner to check "
+                          "(#468):", ""]
+            lines += [f"- {k}: `{v}` ({source})"
+                      for k, (v, source) in worked.values.items()]
+            lines += [f"- {note}" for note in worked.notes]
+        for note in worked.notes:
+            self.log(f"{p.card}: {note}")
+        return lines
 
     def close_outdated(self, lang: str, stale: list[pr.Proposal]) -> str:
         pids = sorted(p.id for p in stale)
@@ -648,7 +839,13 @@ class Bot:
             for e, p in found:
                 if p.id not in stale and len(p.accepted) >= self.threshold:
                     groups.setdefault((str(e.path), p.card, p.field), []).append(p)
-            for ready in groups.values():
+            # Words first: an agreed reading or IPA goes in with an agreed
+            # word on its card, unless the owner closed every word's PR.
+            words: set[tuple] = set()
+            for key in sorted(groups, key=lambda k: k[2] != "target"):
+                ready = groups[key]
+                if key[2] in AUTO_FIELDS and key[:2] in words:
+                    continue
                 # The first to reach the agreement wins: the one whose PR
                 # was opened first goes on, and the rest wait behind it.
                 opened = {p.id: self._open(apply_branch(p)) for p in ready}
@@ -660,6 +857,8 @@ class Bot:
                     if outcome == "closed":
                         continue
                     counts["applied" if outcome == "merged" else "waiting"] += 1
+                    if key[2] == "target":
+                        words.add(key[:2])
                     break
             if stale:
                 counts["outdated"] += len(stale)
