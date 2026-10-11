@@ -154,7 +154,17 @@ class Base(unittest.TestCase):
         self.bot = self.make_bot(1)
 
     def make_bot(self, threshold: int) -> rb.Bot:
-        return rb.Bot(self.git, self.github, threshold, self.logged.append)
+        return rb.Bot(self.git, self.github, threshold, self.logged.append,
+                      lookup=self.wiktionary)
+
+    # Wiktionary, faked: what a test sets in self.wiki, and the calls made.
+    wiki: object = None
+
+    def wiktionary(self, word: str, language: str) -> str | None:
+        self.looked_up = getattr(self, "looked_up", []) + [(word, language)]
+        if isinstance(self.wiki, Exception):
+            raise self.wiki
+        return self.wiki
 
     def main_text(self, rel: str = "decks/zz/zz-en-extra.yaml") -> str:
         return (self.git.main / rel).read_text(encoding="utf-8")
@@ -542,6 +552,111 @@ class Agreement(Base):
         text = self.main_text()
         self.assertIn('native: "fresh milk"', text)
         self.assertNotIn("proposed", text)
+
+
+class ChangedWord(Base):
+    """An agreed word brings its reading and IPA (owner, #468)."""
+
+    WORD = "పెరుగు"
+
+    def word(self, **kw) -> pr.Proposal:
+        return self.p(field="target", now="పాలు", text=self.WORD,
+                      accepted=(BOB,), **kw)
+
+    def card_lines(self) -> list[str]:
+        text = self.main_text()
+        block = text[text.index('id: "zz-9201"'):text.index('id: "zz-9202"')]
+        return [l.strip() for l in block.splitlines() if l.strip()]
+
+    def test_a_word_alone_fills_reading_and_ipa_from_wiktionary(self) -> None:
+        self.wiki = "peɾuɡu"
+        self.put_on_main(self.word())
+        self.assertEqual(self.bot.sweep()["applied"], 1)
+        lines = self.card_lines()
+        self.assertEqual(lines[1:4], [f'target: "{self.WORD}"', 'reading: "perugu"',
+                                      'ipa: "peɾuɡu"'])
+        self.assertEqual(self.looked_up, [(self.WORD, "Testlang")])
+        body = self.github.prs[0]["body"]
+        self.assertIn("- reading: `perugu` (transcribe rules)", body)
+        self.assertIn("- ipa: `peɾuɡu` (Wiktionary)", body)
+
+    def test_not_on_wiktionary_the_ipa_is_transcribed(self) -> None:
+        self.wiki = None
+        self.put_on_main(self.word())
+        self.bot.sweep()
+        self.assertIn('ipa: "peruɡu"', self.card_lines())
+        body = self.github.prs[0]["body"]
+        self.assertIn("- ipa: `peruɡu` (transcribe rules)", body)
+        self.assertIn("No IPA on Wiktionary", body)
+
+    def test_a_network_failure_falls_back_and_says_so(self) -> None:
+        self.wiki = rb.LookupFailed("URLError")
+        self.put_on_main(self.word())
+        self.assertEqual(self.bot.sweep()["applied"], 1)
+        self.assertIn('ipa: "peruɡu"', self.card_lines())
+        body = self.github.prs[0]["body"]
+        self.assertIn("Wiktionary could not be reached (URLError)", body)
+        self.assertIn("- ipa: `peruɡu` (transcribe rules)", body)
+
+    def test_an_agreed_ipa_goes_with_the_word_and_only_the_reading_is_made(self) -> None:
+        word = self.word()
+        ipa = self.p(field="ipa", now="", text="peɾuɡu", by=BOB, accepted=(ALICE,))
+        for p in (word, ipa):
+            self.put_on_main(p)
+        self.wiki = "WRONG"
+        self.assertEqual(self.bot.sweep()["applied"], 1)
+        self.assertEqual(len(self.github.prs), 1)
+        lines = self.card_lines()
+        self.assertIn('reading: "perugu"', lines)
+        self.assertIn('ipa: "peɾuɡu"', lines)
+        self.assertNotIn("proposed:", lines)
+        self.assertEqual(getattr(self, "looked_up", []), [])
+        body = self.github.prs[0]["body"]
+        self.assertIn(f"Applied with it, agreed: `{ipa.id}` on ipa", body)
+        self.assertIn("- reading: `perugu` (transcribe rules)", body)
+        self.assertNotIn("- ipa:", body)
+
+    def test_a_latin_script_language_gets_no_reading(self) -> None:
+        got = rb.work_out("casa", "es", "Spanish", "latin", ["reading", "ipa"],
+                          lambda w, l: None)
+        self.assertEqual(list(got.values), ["ipa"])
+        self.assertEqual(got.values["ipa"][1], rb.SOURCE_RULES)
+
+
+class Wiktionary(unittest.TestCase):
+    PAGE = ('<section><h2 id="Telugu">Telugu</h2><span class="IPA">/x/</span>'
+            '</section><section><h2 id="Hindi">Hindi</h2><ul><li>'
+            '<span class="IPA">[mə.ɦiː.naː]</span></li></ul></section>')
+
+    def test_the_languages_first_ipa_without_delimiters_or_dots(self) -> None:
+        self.assertEqual(rb.ipa_in_html(self.PAGE, "Hindi"), "məɦiːnaː")
+        self.assertEqual(rb.ipa_in_html(self.PAGE, "Telugu"), "x")
+        self.assertIsNone(rb.ipa_in_html(self.PAGE, "Bengali"))
+
+    def fetch(self, effect) -> object:
+        from unittest import mock
+        with mock.patch.object(rb.urllib.request, "urlopen", side_effect=effect):
+            return rb.wiktionary_ipa("महीना", "Hindi")
+
+    def test_found(self) -> None:
+        page = io.BytesIO(self.PAGE.encode("utf-8"))
+        self.assertEqual(self.fetch(lambda *a, **k: contextlib.nullcontext(page)),
+                         "məɦiːnaː")
+
+    def test_not_found(self) -> None:
+        import urllib.error
+        missing = urllib.error.HTTPError("u", 404, "Not Found", {}, None)
+        self.assertIsNone(self.fetch(missing))
+
+    def test_a_network_error_is_a_failed_lookup(self) -> None:
+        import urllib.error
+        with self.assertRaises(rb.LookupFailed):
+            self.fetch(urllib.error.URLError("offline"))
+        with self.assertRaises(rb.LookupFailed):
+            self.fetch(TimeoutError())
+        import http.client
+        with self.assertRaises(rb.LookupFailed):
+            self.fetch(http.client.IncompleteRead(b"half"))
 
 
 def review_mail(files: list[dict], sender: str = "anvi@example.com",
