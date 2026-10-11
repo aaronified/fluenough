@@ -1,6 +1,6 @@
 # Plan: full app backup and restore
 
-Written 2026-10-11. **Priority for the next release (0.4.3/0.5).**
+Written 2026-10-11. **Priority for 0.5.0** (milestone 0.5.0, #470).
 
 ## What the owner asked
 
