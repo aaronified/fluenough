@@ -59,7 +59,7 @@ void main() {
   });
 
   testWidgets('a card opens whole; Looks right marks it, Suggest a change '
-      'picks a part, shows it now, and saves the change and why', (
+      'shows every part, and saves the change and why of the one edited', (
     tester,
   ) async {
     useTallPhone(tester);
@@ -88,32 +88,41 @@ void main() {
     await tester.tap(find.widgetWithText(OutlinedButton, l10n.reviewSuggest));
     await tester.pumpAndSettle();
     expect(find.byType(SuggestSheet), findsOneWidget);
-    expect(find.text(l10n.reviewSuggestWhich), findsOneWidget);
     for (final part in CardPart.values) {
-      // A base word's meaning has a chip a base; this card has none.
+      // A base word's meaning has a card a base; this card has none.
       expect(
-        find.text(partName(l10n, part)),
+        find.byTooltip(l10n.reviewSuggestEditPart(partName(l10n, part))),
         part == CardPart.base ? findsNothing : findsOneWidget,
       );
     }
-    // Save waits for a change.
-    final save = find.widgetWithText(FilledButton, l10n.reviewSave);
-    expect(tester.widget<FilledButton>(save).onPressed, isNull);
-    await tester.tap(find.text(l10n.reviewPartNotes));
+    // No field until a pencil is tapped, and Save waits for a change.
+    expect(find.byType(TextField), findsNothing);
+    final save = find.byTooltip(l10n.reviewSuggestSaveAll);
+    IconButton saveButton() => tester.widget<IconButton>(
+      find.ancestor(of: save, matching: find.byType(IconButton)),
+    );
+    expect(saveButton().onPressed, isNull);
+    await tester.tap(
+      find.byTooltip(l10n.reviewSuggestEditPart(l10n.reviewPartNotes)),
+    );
     await tester.pumpAndSettle();
     expect(find.text(l10n.reviewSuggestNow), findsOneWidget);
+    expect(find.byType(TextField), findsNWidgets(2));
     await tester.enterText(
-      find.widgetWithText(TextField, l10n.reviewSuggestYours),
+      find.byKey(SuggestSheet.textKey(CardPart.notes)),
       'Also అమ్మా (ammā), and మా అమ్మ (mā amma), our mother.',
     );
     await tester.enterText(
-      find.widgetWithText(TextField, l10n.reviewSuggestWhy),
+      find.byKey(SuggestSheet.whyKey(CardPart.notes)),
       'Common in speech',
     );
     await tester.pumpAndSettle();
     await tester.tap(save);
     await tester.pumpAndSettle();
-    final suggestion = state.reviewing.reviewOf(words, mother)!.suggestion!;
+    final suggestion = state.reviewing
+        .reviewOf(words, mother)!
+        .suggestions
+        .single;
     expect(suggestion.part, CardPart.notes);
     expect(suggestion.now, 'Also అమ్మా (ammā) when calling her.');
     expect(suggestion.why, 'Common in speech');

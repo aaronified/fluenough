@@ -27,19 +27,21 @@ void main() {
         monday,
         (_) => CardReview(
           at: monday,
-          suggestion: const Suggestion(
-            part: CardPart.notes,
-            now: 'Formally కుమార్తె (kumārte).',
-            text: 'In speech also అమ్మాయి (ammāyi).',
-            why: 'As common',
-          ),
+          suggestions: const <Suggestion>[
+            Suggestion(
+              part: CardPart.notes,
+              now: 'Formally కుమార్తె (kumārte).',
+              text: 'In speech also అమ్మాయి (ammāyi).',
+              why: 'As common',
+            ),
+          ],
         ),
       );
 
   test('a card is marked right or suggested, never both', () {
     final reviews = marked();
     expect(reviews.card('te-family', 'te-0001')!.marked, isTrue);
-    expect(reviews.card('te-family', 'te-0384')!.suggestion, isNotNull);
+    expect(reviews.card('te-family', 'te-0384')!.suggestions, isNotEmpty);
     expect(reviews.of('te-family')!.markedCount, 2);
     // Read back, a stored card with both keeps the suggestion.
     final both = CardReview.fromJson(<String, Object?>{
@@ -48,7 +50,36 @@ void main() {
       'suggestion': <String, Object?>{'part': 'word', 'now': 'a', 'text': 'b'},
     })!;
     expect(both.right, isFalse);
-    expect(both.suggestion!.text, 'b');
+    expect(both.suggestions.single.text, 'b');
+  });
+
+  test('a card keeps one suggestion a part, one written as before and '
+      'more in a list, and reads both back (#468)', () {
+    const word = Suggestion(part: CardPart.word, now: 'a', text: 'b');
+    const ipa = Suggestion(part: CardPart.ipa, now: 'c', text: 'd');
+    final one = CardReview(
+      at: monday,
+      suggestions: const <Suggestion>[word],
+    ).toJson();
+    expect(one['suggestion'], word.toJson());
+    expect(one.containsKey('suggestions'), isFalse);
+    final two = CardReview(
+      at: monday,
+      suggestions: const <Suggestion>[word, ipa],
+    ).toJson();
+    expect(two.containsKey('suggestion'), isFalse);
+    final back = CardReview.fromJson(jsonDecode(jsonEncode(two)))!;
+    expect(back.suggestions.map((s) => s.part), <CardPart>[
+      CardPart.word,
+      CardPart.ipa,
+    ]);
+    // A part twice keeps the first.
+    final twice = CardReview.fromJson(<String, Object?>{
+      'at': monday.toIso8601String(),
+      'suggestion': word.toJson(),
+      'suggestions': <Object?>[ipa.toJson(), word.toJson()],
+    })!;
+    expect(twice.suggestions.length, 2);
   });
 
   test('a base suggestion names its word and reads back', () {

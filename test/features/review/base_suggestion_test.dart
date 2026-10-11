@@ -16,7 +16,7 @@ import '../../support/review_fixture.dart';
 /// A reviewer sees a card's base words with their meanings, which agents
 /// wrote (#445), and can suggest a change to the meaning of one written in
 /// full (#410). A base by ref takes its meaning from the card it names, so
-/// it has no chip here.
+/// it has no card here.
 
 /// The plain word's bases: one written in full, one by ref to the word
 /// that sounds like a rude one.
@@ -58,11 +58,16 @@ void main() {
     await tester.tap(find.widgetWithText(OutlinedButton, l10n.reviewSuggest));
     await tester.pumpAndSettle();
     expect(find.byType(SuggestSheet), findsOneWidget);
-    // One chip for the base written in full; none for the base by ref.
-    expect(find.text(l10n.reviewPartBaseOf('అమ్మ')), findsOneWidget);
-    expect(find.text(l10n.reviewPartBaseOf('విధవ')), findsNothing);
+    // One card for the base written in full, its name in capitals but the
+    // base as the deck writes it; none for the base by ref.
+    final name = l10n.reviewPartBaseOf('అమ్మ');
+    expect(find.text(name.toUpperCase()), findsOneWidget);
+    expect(
+      find.text(l10n.reviewPartBaseOf('విధవ').toUpperCase()),
+      findsNothing,
+    );
 
-    await tester.tap(find.text(l10n.reviewPartBaseOf('అమ్మ')));
+    await tester.tap(find.byTooltip(l10n.reviewSuggestEditPart(name)));
     await tester.pumpAndSettle();
     // Now shows the meaning, and the field starts from it.
     expect(
@@ -72,14 +77,12 @@ void main() {
       ),
       findsOneWidget,
     );
-    final save = find.widgetWithText(FilledButton, l10n.reviewSave);
-    expect(tester.widget<FilledButton>(save).onPressed, isNull);
+    final text = find.byKey(SuggestSheet.textKey(CardPart.base, word: 'అమ్మ'));
+    expect(tester.widget<TextField>(text).controller!.text, 'mum');
+    final save = find.byTooltip(l10n.reviewSuggestSaveAll);
+    await tester.enterText(text, 'mother');
     await tester.enterText(
-      find.widgetWithText(TextField, l10n.reviewSuggestYours),
-      'mother',
-    );
-    await tester.enterText(
-      find.widgetWithText(TextField, l10n.reviewSuggestWhy),
+      find.byKey(SuggestSheet.whyKey(CardPart.base, word: 'అమ్మ')),
       'Mum is informal',
     );
     await tester.pumpAndSettle();
@@ -88,7 +91,10 @@ void main() {
 
     final words = state.deckById(wordsDeck)!;
     final mother = words.cards.firstWhere((c) => c.id == plainCard);
-    final suggestion = state.reviewing.reviewOf(words, mother)!.suggestion!;
+    final suggestion = state.reviewing
+        .reviewOf(words, mother)!
+        .suggestions
+        .single;
     expect(suggestion.part, CardPart.base);
     expect(suggestion.word, 'అమ్మ');
     expect(suggestion.now, 'mum');
@@ -114,22 +120,15 @@ void main() {
     });
   });
 
-  testWidgets('opened again, the sheet is on the base, and a change to '
-      'another part says it replaces the base suggestion', (tester) async {
+  testWidgets('opened again, the base shows the suggestion on it, and a '
+      'change to another part keeps it', (tester) async {
     useTallPhone(tester);
     final state = await reviewState(reviewing: true, bases: bases);
     final words = state.deckById(wordsDeck)!;
     final mother = words.cards.firstWhere((c) => c.id == plainCard);
-    state.reviewing.suggest(
-      words,
-      mother,
-      const Suggestion(
-        part: CardPart.base,
-        word: 'అమ్మ',
-        now: 'mum',
-        text: 'mother',
-      ),
-    );
+    state.reviewing.suggest(words, mother, const <Suggestion>[
+      Suggestion(part: CardPart.base, word: 'అమ్మ', now: 'mum', text: 'mother'),
+    ]);
     await pumpScreen(
       tester,
       Scaffold(
@@ -138,27 +137,33 @@ void main() {
       state: state,
     );
     final l10n = l10nOf(tester);
-    final chip = tester.widget<ChoiceChip>(
-      find.ancestor(
-        of: find.text(l10n.reviewPartBaseOf('అమ్మ')),
-        matching: find.byType(ChoiceChip),
-      ),
-    );
-    expect(chip.selected, isTrue);
-    expect(find.textContaining(l10n.reviewPartBaseOf('అమ్మ')), findsOneWidget);
+    final name = l10n.reviewPartBaseOf('అమ్మ');
+    // Marked as the reviewer's, with a way to remove it.
+    expect(find.text(l10n.reviewSuggestYours), findsOneWidget);
+    expect(find.byTooltip(l10n.reviewSuggestRemove(name)), findsOneWidget);
 
-    await tester.tap(find.text(l10n.reviewPartMeaning));
+    await tester.tap(
+      find.byTooltip(l10n.reviewSuggestEditPart(l10n.reviewPartMeaning)),
+    );
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(SuggestSheet.textKey(CardPart.meaning)),
+      'mother dear',
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
     await tester.pumpAndSettle();
     expect(
-      find.textContaining(
-        l10n.reviewSuggestReplaces(l10n.reviewPartBaseOf('అమ్మ'), 'mother'),
-      ),
-      findsOneWidget,
+      <String>[
+        for (final s in state.reviewing.reviewOf(words, mother)!.suggestions)
+          s.text,
+      ],
+      <String>['mother dear', 'mother'],
     );
   });
 
   testWidgets('two words with the same base and meaning show one base, '
-      'and each still has its own chip, named by its word', (tester) async {
+      'and each still has its own card, named by its word', (tester) async {
     useTallPhone(tester);
     final handle = tester.ensureSemantics();
     const twice =
@@ -185,28 +190,34 @@ void main() {
 
     await tester.tap(find.widgetWithText(OutlinedButton, l10n.reviewSuggest));
     await tester.pumpAndSettle();
-    // Two chips, which the base alone would not tell apart.
-    expect(find.text(l10n.reviewPartBaseOf('అమ్మ')), findsNothing);
+    // Two cards, which the base alone would not tell apart.
+    expect(
+      find.text(l10n.reviewPartBaseOf('అమ్మ').toUpperCase()),
+      findsNothing,
+    );
     final first = l10n.reviewPartBaseOfWord('అమ్మ', 'అమ్మ');
     final second = l10n.reviewPartBaseOfWord('అమ్మా', 'అమ్మ');
-    expect(find.text(first), findsOneWidget);
-    expect(find.text(second), findsOneWidget);
+    expect(find.text(first.toUpperCase()), findsOneWidget);
+    expect(find.text(second.toUpperCase()), findsOneWidget);
     await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
     await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
 
-    await tester.tap(find.text(second));
+    await tester.tap(find.byTooltip(l10n.reviewSuggestEditPart(second)));
     await tester.pumpAndSettle();
     await tester.enterText(
-      find.widgetWithText(TextField, l10n.reviewSuggestYours),
+      find.byKey(SuggestSheet.textKey(CardPart.base, word: 'అమ్మా')),
       'mother',
     );
     await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
+    await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
     await tester.pumpAndSettle();
 
     final words = state.deckById(wordsDeck)!;
     final mother = words.cards.firstWhere((c) => c.id == plainCard);
-    final suggestion = state.reviewing.reviewOf(words, mother)!.suggestion!;
+    final suggestion = state.reviewing
+        .reviewOf(words, mother)!
+        .suggestions
+        .single;
     expect(suggestion.part, CardPart.base);
     expect(suggestion.word, 'అమ్మా');
     expect(suggestion.now, 'mum');

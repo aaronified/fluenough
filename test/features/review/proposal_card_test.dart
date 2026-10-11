@@ -110,52 +110,62 @@ void main() {
     await tester.tap(find.text(l10n.reviewProposalEdit));
     await tester.pumpAndSettle();
     expect(find.byType(SuggestSheet), findsOneWidget);
-    final yours = find.widgetWithText(TextField, l10n.reviewSuggestYours);
+    // Only the proposal's part is open, started from its text.
+    expect(find.byType(TextField), findsNWidgets(2));
+    final yours = find.byKey(SuggestSheet.textKey(CardPart.meaning));
     expect(tester.widget<TextField>(yours).controller!.text, 'mum');
     await tester.enterText(yours, 'mum, mother');
     await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
+    await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
     await tester.pumpAndSettle();
 
     final words = state.deckById(wordsDeck)!;
     final review = state.reviewing.reviewOf(words, words.cards.last)!;
-    expect(review.suggestion!.part, CardPart.meaning);
-    expect(review.suggestion!.now, 'mother');
-    expect(review.suggestion!.text, 'mum, mother');
+    final suggestion = review.suggestions.single;
+    expect(suggestion.part, CardPart.meaning);
+    expect(suggestion.now, 'mother');
+    expect(suggestion.text, 'mum, mother');
     expect(review.answers['aaaaaaaaaa']!.verdict, ProposalVerdict.edit);
     expect(find.text(l10n.reviewProposalEdited), findsOneWidget);
   });
 
-  testWidgets('Edit says it replaces a suggestion already on the card, '
-      'and shows it', (tester) async {
+  testWidgets('Edit keeps a suggestion already on another part of the '
+      'card, and shows it there', (tester) async {
     final state = await open(tester);
     final l10n = l10nOf(tester);
     final words = state.deckById(wordsDeck)!;
     final mother = words.cards.last;
-    state.reviewing.suggest(
-      words,
-      mother,
-      const Suggestion(part: CardPart.notes, now: '', text: 'Said to elders.'),
-    );
+    state.reviewing.suggest(words, mother, const <Suggestion>[
+      Suggestion(part: CardPart.notes, now: '', text: 'Said to elders.'),
+    ]);
     await tester.pumpAndSettle();
     await tester.tap(find.text('mother'));
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.reviewProposalEdit));
     await tester.pumpAndSettle();
-    final notice = l10n.reviewSuggestReplaces(
-      l10n.reviewPartNotes,
-      'Said to elders.',
+    expect(
+      find.descendant(
+        of: find.byType(SuggestSheet),
+        matching: find.text('Said to elders.'),
+      ),
+      findsOneWidget,
     );
-    expect(find.text(notice), findsOneWidget);
-    await tester.tap(find.widgetWithText(FilledButton, l10n.reviewSave));
+    await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
     await tester.pumpAndSettle();
-    final review = state.reviewing.reviewOf(words, mother)!;
-    expect(review.suggestion!.part, CardPart.meaning);
-    expect(review.suggestion!.text, 'mum');
+    final review = state.reviewing.reviewOf(words, mother)! as CardReview;
+    expect(
+      <(CardPart, String)>[
+        for (final s in review.suggestions) (s.part, s.text),
+      ],
+      <(CardPart, String)>[
+        (CardPart.meaning, 'mum'),
+        (CardPart.notes, 'Said to elders.'),
+      ],
+    );
   });
 
-  testWidgets('Suggest a change on a card with no suggestion yet says '
-      'nothing of replacing', (tester) async {
+  testWidgets('Suggest a change on a card with no suggestion yet marks '
+      'none as yours', (tester) async {
     await open(tester);
     final l10n = l10nOf(tester);
     await tester.tap(find.text('mother'));
@@ -163,10 +173,9 @@ void main() {
     await tester.tap(find.text(l10n.reviewProposalEdit));
     await tester.pumpAndSettle();
     expect(find.byType(SuggestSheet), findsOneWidget);
-    expect(
-      find.textContaining(l10n.reviewSuggestReplaces('', '').split(':').first),
-      findsNothing,
-    );
+    // The label of the one field open, and no suggestion marked yours.
+    expect(find.text(l10n.reviewSuggestYours), findsOneWidget);
+    expect(find.byIcon(Icons.delete_outline), findsNothing);
   });
 
   testWidgets('without proposals a card shows none', (tester) async {

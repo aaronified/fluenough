@@ -50,6 +50,10 @@ class Suggestion {
   final String text;
   final String why;
 
+  /// Whether this and [other] are about the same part: the same [part],
+  /// and for a base, the same [word]. A card keeps one suggestion a part.
+  bool samePart(Suggestion other) => part == other.part && word == other.word;
+
   Map<String, Object?> toJson() => <String, Object?>{
     'part': part.name,
     'word': ?word,
@@ -216,7 +220,7 @@ class CardReview {
   const CardReview({
     required this.at,
     this.right = false,
-    this.suggestion,
+    this.suggestions = const <Suggestion>[],
     this.rating,
     this.alike,
     this.answers = const <String, ProposalAnswer>{},
@@ -224,9 +228,12 @@ class CardReview {
 
   final DateTime at;
 
-  /// "Looks right". Never with a [suggestion].
+  /// "Looks right". Never with [suggestions].
   final bool right;
-  final Suggestion? suggestion;
+
+  /// The changes suggested to the card, one a part at most (#468), in the
+  /// order the parts are shown.
+  final List<Suggestion> suggestions;
   final WordRating? rating;
   final AlikeCheck? alike;
 
@@ -235,7 +242,7 @@ class CardReview {
   final Map<String, ProposalAnswer> answers;
 
   /// Whether the card is marked: right, or with a suggestion.
-  bool get marked => right || suggestion != null;
+  bool get marked => right || suggestions.isNotEmpty;
 
   /// Whether there is anything to send.
   bool get isEmpty =>
@@ -244,7 +251,12 @@ class CardReview {
   Map<String, Object?> toJson() => <String, Object?>{
     'at': at.toUtc().toIso8601String(),
     if (right) 'looks_right': true,
-    'suggestion': ?suggestion?.toJson(),
+    // One suggestion is written as before; more go in a list, which the
+    // review bot reads as well (#468).
+    if (suggestions.length == 1)
+      'suggestion': suggestions.single.toJson()
+    else if (suggestions.isNotEmpty)
+      'suggestions': <Object?>[for (final s in suggestions) s.toJson()],
     'rating': ?rating?.toJson(),
     'alike': ?alike?.toJson(),
     if (answers.isNotEmpty)
@@ -255,12 +267,19 @@ class CardReview {
     if (json is! Map) return null;
     final at = DateTime.tryParse('${json['at']}');
     if (at == null) return null;
-    final suggestion = Suggestion.fromJson(json['suggestion']);
+    final many = json['suggestions'];
+    final suggestions = <Suggestion>[];
+    for (final s in <Suggestion?>[
+      Suggestion.fromJson(json['suggestion']),
+      if (many is List) ...many.map(Suggestion.fromJson),
+    ].nonNulls) {
+      if (!suggestions.any(s.samePart)) suggestions.add(s);
+    }
     final proposals = json['proposals'];
     return CardReview(
       at: at,
-      right: json['looks_right'] == true && suggestion == null,
-      suggestion: suggestion,
+      right: json['looks_right'] == true && suggestions.isEmpty,
+      suggestions: List<Suggestion>.unmodifiable(suggestions),
       rating: WordRating.fromJson(json['rating']),
       alike: AlikeCheck.fromJson(json['alike']),
       answers: Map<String, ProposalAnswer>.unmodifiable(

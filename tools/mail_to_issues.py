@@ -267,6 +267,8 @@ def review_counts(files: list[dict]) -> tuple[int, int, list[tuple[str, str]]]:
                 continue
             if isinstance(c.get("suggestion"), dict):
                 suggested += 1
+            if isinstance(c.get("suggestions"), list):
+                suggested += sum(isinstance(s, dict) for s in c["suggestions"])
             answers = c.get("proposals") if isinstance(c.get("proposals"), list) else []
             for a in answers:
                 if not isinstance(a, dict):

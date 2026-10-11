@@ -322,15 +322,13 @@ void main() {
       state.reviewing.markRight(family, card);
     }
     final suggested = family.cards[6];
-    state.reviewing.suggest(
-      family,
-      suggested,
+    state.reviewing.suggest(family, suggested, <Suggestion>[
       Suggestion(
         part: CardPart.meaning,
         now: suggested.native,
         text: '${suggested.native} (formal)',
       ),
-    );
+    ]);
     state.shellTab.value = ShellTab.decks;
     await _settle(tester);
     tester

@@ -254,6 +254,14 @@ class ReviewIssueFrom(unittest.TestCase):
                         "12 reviews"):
             self.assertNotIn(private, str(issue))
 
+    def test_suggestions_on_several_parts_each_count(self) -> None:
+        # Since #468 a card keeps one suggestion a part, in a list.
+        many = review_file()
+        many["cards"].append({"card": "te-0385", "suggestions": [
+            {"part": "word", "now": "a", "text": "b"},
+            {"part": "ipa", "now": "a", "text": "b"}]})
+        self.assertEqual(mail_to_issues.review_counts([many])[:2], (3, 0))
+
     def test_several_decks_in_one_mail_are_one_issue(self) -> None:
         issue = mail_to_issues.review_issue_from(review_mail(
             f"[Fluenough review] {CODE} (te, bn)",

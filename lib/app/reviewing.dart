@@ -120,19 +120,25 @@ class Reviewing {
     ),
   );
 
-  /// A suggested change, in place of "Looks right"; null takes it back.
-  void suggest(DeckEntry deck, Card card, Suggestion? suggestion) => _change(
-    deck,
-    card,
-    (old, at) => CardReview(
-      at: at,
-      right: suggestion == null && (old?.right ?? false),
-      suggestion: suggestion,
-      rating: old?.rating,
-      alike: old?.alike,
-      answers: old?.answers ?? const <String, ProposalAnswer>{},
-    ),
-  );
+  /// The changes suggested to [card], one a part at most, in place of
+  /// "Looks right": every one the card keeps, so a part left out has its
+  /// suggestion taken back, and an empty list takes back them all.
+  void suggest(DeckEntry deck, Card card, List<Suggestion> suggestions) =>
+      _change(
+        deck,
+        card,
+        (old, at) => CardReview(
+          at: at,
+          right: suggestions.isEmpty && (old?.right ?? false),
+          suggestions: List<Suggestion>.unmodifiable(<Suggestion>[
+            for (final (i, s) in suggestions.indexed)
+              if (!suggestions.take(i).any(s.samePart)) s,
+          ]),
+          rating: old?.rating,
+          alike: old?.alike,
+          answers: old?.answers ?? const <String, ProposalAnswer>{},
+        ),
+      );
 
   /// How offensive the rude word [card] is, by this rater.
   void rate(DeckEntry deck, Card card, WordRating rating) => _change(
@@ -141,7 +147,7 @@ class Reviewing {
     (old, at) => CardReview(
       at: at,
       right: old?.right ?? false,
-      suggestion: old?.suggestion,
+      suggestions: old?.suggestions ?? const <Suggestion>[],
       rating: rating,
       alike: old?.alike,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
@@ -155,7 +161,7 @@ class Reviewing {
     (old, at) => CardReview(
       at: at,
       right: old?.right ?? false,
-      suggestion: old?.suggestion,
+      suggestions: old?.suggestions ?? const <Suggestion>[],
       rating: old?.rating,
       alike: check,
       answers: old?.answers ?? const <String, ProposalAnswer>{},
@@ -186,7 +192,7 @@ class Reviewing {
     return CardReview(
       at: at,
       right: old?.right ?? false,
-      suggestion: old?.suggestion,
+      suggestions: old?.suggestions ?? const <Suggestion>[],
       rating: old?.rating,
       alike: old?.alike,
       answers: Map<String, ProposalAnswer>.unmodifiable(answers),
