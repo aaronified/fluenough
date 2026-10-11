@@ -43,7 +43,7 @@ That is slow for testing.
 | Leech actions | leech_actions | as `LogJsonl` today |
 | Schedules / FSRS state | rebuilt by replay; fitted parameters stored | same rule as #20: only what replay cannot recover is stored |
 | Settings, every key | settings table | language choice, scripts read, review pairs, collapsed levels, skills, theme, reminder, 18+ and the rest; written as the raw key/value map |
-| Reviewer mode, code and proposal answers | reviewing state | included for the reviewer's own testing; the access code is a secret, see Privacy |
+| Reviewer mode, code and proposal answers | reviewing state | included, with the access code (owner, 2026-10-11); see Privacy |
 | Downloaded languages | `files.json` manifest | the list only, never deck files; after restore they re-download |
 | Profiles | profile store, once #204 exists | one section per profile; see Profiles |
 | App version and schema version | `app_info`, `schemaVersion` | for the compatibility check |
@@ -108,8 +108,10 @@ cloud sync.
 
 The file stays on the phone unless the user shares it. No upload, no
 network call. A backup holds a full learning history, so the share sheet
-copy says so. The reviewer access code is left out of a backup by default
-and asked again after restore; reviewer proposals and answers are kept.
+copy says so. The reviewer access code is included (owner, 2026-10-11:
+"Yes"), so a restore brings reviewing back as it was; because the file then
+holds a secret, the share sheet copy also says it contains the reviewer
+code. Reviewer proposals and answers are kept.
 
 ## Profiles and child profiles (compatible with `profiles.md`)
 
@@ -163,4 +165,5 @@ depends on #204.
 - Zip dependency versus a single JSON file with the log embedded as lines.
   A zip is cleaner; a JSON file avoids a package. Decide at build time by
   what is already in `pubspec.yaml`.
-- Whether the reviewer code should ever be exported (default: no).
+- ~~Whether the reviewer code is exported.~~ Decided (owner, 2026-10-11):
+  yes, it is included.
