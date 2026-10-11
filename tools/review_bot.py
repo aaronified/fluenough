@@ -65,6 +65,7 @@ import base64
 import datetime
 import hashlib
 import html as htmllib
+import http.client
 import json
 import re
 import shutil
@@ -490,7 +491,9 @@ def wiktionary_ipa(word: str, language: str) -> str | None:
         if e.code == 404:
             return None
         raise LookupFailed(f"HTTP {e.code}") from e
-    except (OSError, ValueError) as e:
+    except (OSError, ValueError, http.client.HTTPException) as e:
+        # http.client's errors (a cut-off body, a bad status line) are not
+        # OSErrors; none of them may fail the run.
         raise LookupFailed(type(e).__name__) from e
     return ipa_in_html(page, language)
 
