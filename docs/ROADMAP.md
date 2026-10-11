@@ -74,14 +74,26 @@ Merged since 0.3.4, not yet released (#432 to #458):
 - Try a pronunciation again, and hear yourself (#457, closes #231).
 - The README shows the app in four GIFs (#458).
 
-The next release (0.4.0, not yet tagged) ships deck downloads together with
-the language picker and reviewing decks in the app.
+Released: 0.4.0 (deck downloads, the language picker and reviewing in the
+app), 0.4.1 (gzip download fix), 0.4.2 (language menu, review by course,
+downloads folded into the language pages) and 0.4.3 (Suggest a change by
+part, the bot filling in a changed word's reading and IPA).
 
 ## Being built
 
 Nothing is in progress. The next work is in "In order" below.
 
 ## In order
+
+Releases next, by GitHub milestone (owner, 2026-10-11):
+
+| Release | What |
+|---|---|
+| 0.5.0 | Bugs (#478, #479, #480, #482, #483); minor changes (#475, #469, #227); backup (#470, #473) |
+| 0.6.0 | Review pipeline (#476, #477, #471); profiles (#204, #97); reminders (#90) |
+| 0.7.0 | Placement v2 (#481); onboarding journey (#474) |
+
+The numbered milestones below are the longer tracks.
 
 | Milestone | Tracker | Plan |
 |---|---|---|
