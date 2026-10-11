@@ -1,6 +1,6 @@
 # Plan: placement, script first, then a three-skill check
 
-Written 2026-10-11, for **0.6.0** (owner: too large for 0.5). Tracks #481. It is the top priority of 0.6.0. Replaces the placement in ADR-0013 and keeps
+Written 2026-10-11, for **0.7.0** (owner: too large for 0.5; moved from 0.6). Tracks #481. It is the top priority of 0.7.0. Replaces the placement in ADR-0013 and keeps
 ADR-0023's no-alphabet path.
 
 ## What exists (origin/main)
