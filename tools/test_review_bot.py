@@ -639,6 +639,9 @@ class Wiktionary(unittest.TestCase):
             self.fetch(urllib.error.URLError("offline"))
         with self.assertRaises(rb.LookupFailed):
             self.fetch(TimeoutError())
+        import http.client
+        with self.assertRaises(rb.LookupFailed):
+            self.fetch(http.client.IncompleteRead(b"half"))
 
 
 def review_mail(files: list[dict], sender: str = "anvi@example.com",
