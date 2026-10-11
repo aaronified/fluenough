@@ -35,30 +35,47 @@ ADR-0023's no-alphabet path.
 > Or better, ask 3 letters and if those are all correct, ask 2 complicated
 > words. Add a placement deck for languages as part of the B1 route.
 
+Owner, later the same day:
+
+> Without the alphabet, it shows the romanised reading instead: this must
+> be via checking the script first (user can skip by saying "I do not know
+> the script").
+>
+> For close scripts like Spanish (when user knows English script), only the
+> deviations will be checked.
+>
+> Thus each deck will have a placement section, and script placement will
+> be via the native language.
+
 ## The new flow, per language
 
 1. **Learn from:** pick the native language, as now, when there is a choice.
-2. **Script check, first.**
-   - **Skipped** when the language's script is one the learner already
-     reads, from Languages you know (#462). For example, Spanish's Latin
-     script for someone who knows English. The answer is then "with
-     the script".
-   - **Otherwise, three letters.** Pick three letters at random from the
-     placement deck's script set: plain letters, letters with vowel marks,
-     or conjuncts. For each, the learner chooses its sound (ISO reading)
-     from 4 options.
-     - **All 3 right:** two **harder words**, each with vowel marks and a
-       conjunct, again choosing the reading from 4 options.
-     - **Both words right:** the learner reads the script. They learn
-       with it, and the script units are placed.
-     - **One letter wrong, or one word wrong:** they are offered the
-       alphabet, and the script units are taught. The words below are
-       still shown in script, with the reading beside them.
-     - **Two or more letters wrong (fails conclusively):** the
-       no-alphabet path (ADR-0023). From here on every word is shown
-       and typed in Latin letters (ISO 15919 reading).
-   - "I don't know" counts as wrong, and the learner can choose to skip
-     the check and start with the alphabet.
+2. **Script check, first, always.** There is no yes-or-no alphabet
+   question any more. Romanised (ISO) words are used only as the outcome
+   of this check, never as a default.
+   - **"I don't know the script"** is a button on the check's first
+     screen. It skips the check and takes the no-alphabet path at once.
+   - **The check is set by the course's native language** (the language it
+     is taught from). It asks only what that native language's script
+     doesn't already give the learner:
+     - **Close scripts** (the target shares the native's script, as
+       Spanish does English's Latin): only the **deviations** are
+       checked, the letters and marks the native script lacks or reads
+       differently (Spanish ñ, á é í ó ú, ü, ll, j, h). Two or three
+       questions; if none differ, the check is skipped.
+     - **Different scripts:** three letters at random (plain letters,
+       letters with vowel marks, or joined letters), then two harder words
+       if all three are right.
+   - Each question asks for the sound (ISO reading), with 4 options to
+     choose from.
+   - **All right:** the learner reads the script. They learn with it, and
+     the script units are placed.
+   - **One wrong:** they are offered the alphabet, and the script units are
+     taught. The words below are still shown in script, with the reading
+     beside them.
+   - **Two or more wrong (fails conclusively):** the no-alphabet path
+     (ADR-0023). From here on every word is shown and typed in Latin
+     (ISO 15919) letters.
 3. **Find my level or I'm new,** as now.
 4. **Word check, by unit, in path order.** Each unit asks:
    - **Meaning:** 2 questions. The word is shown in script, or in Latin
@@ -91,21 +108,30 @@ ADR-0023's no-alphabet path.
   log. They are marked as placement, are not counted in stats or streaks,
   and are exported with the log so a backup keeps them.
 
-## The placement deck (part of the B1 route)
+## The placement section in every deck (part of the B1 route)
 
-- Each language gets one deck, `decks/<lang>/<lang>-placement.yaml`, made
-  with the B1 plan. It holds:
-  - the **script set**, letters and harder words tagged by difficulty, for
-    the script check;
-  - for each unit of the path, **chosen questions**: the clearest words
-    and sentences, reviewed like any deck.
-- When a unit has no chosen questions, the check falls back on the unit's
-  own cards, as now.
-- The placement deck is never taught. It isn't on the path or in Today.
-- The deck format gets `kind: placement`, and the validator checks it:
-  - every unit of the path is covered;
-  - each script-set entry has a reading;
-  - every unit ref resolves.
+- Each deck gets a `placement:` section, written with the B1 plan and
+  reviewed like the rest of the deck. It names the deck's clearest cards to
+  ask, by card id: two for meaning, one for listening and one for typing.
+  The unit's check draws from its decks' placement sections.
+- **The script check lives in the native-language layer**
+  (`decks/<lang>/<native>/...`), because what has to be checked depends on
+  the script the learner already reads. A `placement: script:` section
+  lists:
+  - for a different script, the letters, letters with marks and joined
+    letters to draw from, and the harder words;
+  - for a close script, only the deviations from the native script.
+
+  Each entry has its reading.
+- **Fallback:** a deck with no placement section falls back on its own
+  cards, as now. A layer with no script section falls back on the script
+  decks' cards.
+- **Validator:**
+  - placement entries point at real card ids;
+  - every script entry has a reading;
+  - by the B1 milestone, every unit of the path has placement entries.
+- **Never taught:** the placement section is never taught as a deck, and
+  isn't on the path or in Today.
 
 ## Retake from Settings
 
@@ -133,21 +159,25 @@ ADR-0023's no-alphabet path.
   - due dates spread over 2 to 4 weeks;
   - left out of stats and streaks;
   - kept in exports.
-- Placement deck:
+- Placement sections:
   - the validator rules;
-  - the fallback to unit cards.
+  - the fallback to the deck's own cards;
+  - the close-script deviations come from the native layer (Spanish from
+    English);
+  - "I don't know the script" goes straight to Latin.
 - Retake: replaces the placement and keeps real reviews.
 - Accessibility at 2x text, in light and dark.
 
 ## Estimate
 
-About 5 to 7 days for the app and tools, plus writing a placement deck for
-each language: about half a day each, with Sonnet writing and a review.
+About 5 to 7 days for the app and tools, plus the placement sections: about half a day per
+language with Sonnet writing them and a review, and the script sections
+per native layer.
 Confidence is medium; seeding FSRS states and typing in the check are the
 larger parts.
 
 ## Open
 
 - How many harder words count as "complicated" for each script: one
-  conjunct and one vowel mark, or a per-language list in the placement
-  deck. The plan uses the deck's list.
+  joined letter and one vowel mark, or a per-language list. The plan uses
+  the native layer's script section.
