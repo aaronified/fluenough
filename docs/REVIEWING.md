@@ -68,8 +68,9 @@ checked the whole unit.
 ## Suggest, and answer proposals
 
 - **Suggest a change.** If something is wrong, tap the card, choose **Suggest
-  a change**, pick the part (word, reading, IPA, meaning, notes), write your
-  version and say why. A card keeps one suggestion of yours per part.
+  a change**, tap the pencil on a part (word, reading, IPA, meaning, notes),
+  write your version and say why. Edit as many parts as you like, then tap
+  the tick to save them all. A card keeps one suggestion of yours per part.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a

@@ -42,11 +42,9 @@ void main() {
     final words = state.deckById(wordsDeck)!;
     final card = words.cards.first;
     state.reviewing.markRight(words, card);
-    state.reviewing.suggest(
-      words,
-      words.cards.last,
-      const Suggestion(part: CardPart.meaning, now: 'mother', text: 'mum'),
-    );
+    state.reviewing.suggest(words, words.cards.last, const <Suggestion>[
+      Suggestion(part: CardPart.meaning, now: 'mother', text: 'mum'),
+    ]);
 
     final restored = SettingsNotifier()..restore(state.settings.toStored());
     expect(restored.reviewDecks, isTrue);
@@ -81,17 +79,15 @@ void main() {
     );
     reviewing.markRight(words, card);
     expect(reviewing.reviewOf(words, card)!.right, isTrue);
-    reviewing.suggest(
-      words,
-      card,
-      const Suggestion(part: CardPart.notes, now: '', text: 'Formal word'),
-    );
+    reviewing.suggest(words, card, const <Suggestion>[
+      Suggestion(part: CardPart.notes, now: '', text: 'Formal word'),
+    ]);
     final review = reviewing.reviewOf(words, card)!;
     expect(review.right, isFalse);
-    expect(review.suggestion!.text, 'Formal word');
+    expect(review.suggestions.single.text, 'Formal word');
     expect(review.alike!.care, 'Keep the short i.');
     reviewing.markRight(words, card);
-    expect(reviewing.reviewOf(words, card)!.suggestion, isNull);
+    expect(reviewing.reviewOf(words, card)!.suggestions, isEmpty);
   });
 
   test('several decks go in one mail, a file each, to Fluenough; then they '

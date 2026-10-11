@@ -207,6 +207,21 @@ class ReadingReviews(unittest.TestCase):
         self.assertEqual(review.edits, 1)
 
 
+    def test_a_card_with_suggestions_on_two_parts_makes_two(self) -> None:
+        # Since #468 a card keeps one suggestion a part, in a list.
+        files = [review_file([
+            {"card": "zz-9201", "at": "2026-10-09T09:40:00.000Z",
+             "looks_right": True, "suggestions": [
+                 {"part": "meaning", "now": "milk", "text": "cow's milk"},
+                 {"part": "notes", "now": "", "text": "Said of cows."},
+             ]},
+        ])]
+        review = rb.read_review(files, ALICE)
+        self.assertEqual([s.proposal.field for s in review.suggestions],
+                         ["native", "notes"])
+        self.assertEqual(review.checks, [])
+
+
     def test_a_file_whose_language_is_not_a_code_is_dropped(self) -> None:
         files = []
         for lang in ("", ".", "..", "../x", "zz/..", "ZZ", "*", "zzzz"):

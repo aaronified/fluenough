@@ -132,6 +132,13 @@ def _date(made: object) -> str:
     return text
 
 
+def card_suggestions(c: dict) -> list[dict]:
+    """A card's suggestions in a review file: one under "suggestion", or
+    since #468, several, one a part, under "suggestions"."""
+    many = c.get("suggestions") if isinstance(c.get("suggestions"), list) else []
+    return [s for s in [c.get("suggestion"), *many] if isinstance(s, dict)]
+
+
 def read_review(files: list[dict], code: str) -> Review:
     """What [files], the review files of one mail, all by [code], ask: the
     suggestions as proposals to make, and the answers to proposals."""
@@ -152,10 +159,10 @@ def read_review(files: list[dict], code: str) -> Review:
             if not isinstance(c, dict) or not isinstance(c.get("card"), str):
                 continue
             card = c["card"]
-            if c.get("looks_right") is True and "suggestion" not in c:
+            if c.get("looks_right") is True and "suggestion" not in c \
+                    and not c.get("suggestions"):
                 out.checks.append((lang, deck, card))
-            s = c.get("suggestion")
-            if isinstance(s, dict):
+            for s in card_suggestions(c):
                 name = pr.FIELD_OF_PART.get(s.get("part"))
                 now, text, why = s.get("now"), s.get("text"), s.get("why", "")
                 if name is None or not isinstance(now, str) \

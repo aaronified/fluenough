@@ -195,7 +195,8 @@ class ReviewPage extends StatelessWidget {
     final reviews = state.reviewing.reviews.of(deck.id);
     final right = reviews?.cards.values.where((c) => c.right).length ?? 0;
     final suggested =
-        reviews?.cards.values.where((c) => c.suggestion != null).length ?? 0;
+        reviews?.cards.values.where((c) => c.suggestions.isNotEmpty).length ??
+        0;
     return <Widget>[
       const SizedBox(height: 20),
       Padding(
@@ -336,7 +337,7 @@ class _ReviewRow extends StatelessWidget {
         Semantics(label: label, excludeSemantics: true, child: Text(text));
     final meaning = card.native;
     final Widget mark = switch (review) {
-      CardReview(suggestion: _?) => FilledButton.tonalIcon(
+      CardReview(suggestions: [_, ...]) => FilledButton.tonalIcon(
         onPressed: onSuggest,
         icon: const Icon(Icons.edit_outlined, size: 18),
         label: said(l10n.reviewSuggested, l10n.reviewSuggestedFor(meaning)),

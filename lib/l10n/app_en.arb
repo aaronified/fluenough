@@ -6382,7 +6382,7 @@
   "@reviewGuideSuggestTitle": {
     "description": "Title of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideSuggestBody": "If something is wrong, tap the card, choose Suggest a change, pick the part (word, reading, IPA, meaning, notes), write your version and say why. A card keeps one suggestion of yours per part.",
+  "reviewGuideSuggestBody": "If something is wrong, tap the card, choose Suggest a change, tap the pencil on a part (word, reading, IPA, meaning, notes), write your version and say why. A card keeps one suggestion of yours per part.",
   "@reviewGuideSuggestBody": {
     "description": "First paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Suggest a change” must match reviewSuggest."
   },
@@ -6918,10 +6918,6 @@
       }
     }
   },
-  "reviewSuggestWhich": "Which part?",
-  "@reviewSuggestWhich": {
-    "description": "Over the part chips in Suggest a change."
-  },
   "reviewPartWord": "Word",
   "@reviewPartWord": {
     "description": "Part of a card: the word in the language learned."
@@ -6980,7 +6976,7 @@
   },
   "reviewSuggestNow": "Now",
   "@reviewSuggestNow": {
-    "description": "Over what the chosen part of the card says now."
+    "description": "In Suggest a change, over what a part being edited says now."
   },
   "reviewSuggestNothing": "Nothing yet",
   "@reviewSuggestNothing": {
@@ -6988,25 +6984,47 @@
   },
   "reviewSuggestYours": "Your suggestion",
   "@reviewSuggestYours": {
-    "description": "Label of the field for the suggested text."
+    "description": "In Suggest a change, the label of the field for the suggested text of one part, and the mark over a suggestion already kept on a part."
   },
   "reviewSuggestWhy": "Why",
   "@reviewSuggestWhy": {
-    "description": "Label of the field for the reason."
+    "description": "In Suggest a change, the label of the field for the reason, one for each part being edited."
   },
-  "reviewSuggestReplaces": "A card keeps one suggestion of yours. Saving replaces the one on its {part}: {text}",
-  "@reviewSuggestReplaces": {
-    "description": "In Suggest a change, when saving would replace the reviewer's earlier suggestion on the card, which is shown.",
+  "reviewSuggestNotSet": "not set",
+  "@reviewSuggestNotSet": {
+    "description": "In Suggest a change, in place of the value of a part the card has none for. A suggestion there adds one."
+  },
+  "reviewSuggestEditPart": "Suggest a change: {part}",
+  "@reviewSuggestEditPart": {
+    "description": "Read by a screen reader, and shown on a long press, for the pencil on one part in Suggest a change, which opens a field for that part.",
     "placeholders": {
       "part": {
         "type": "String",
-        "example": "meaning"
-      },
-      "text": {
-        "type": "String",
-        "example": "the dog"
+        "example": "Meaning"
       }
     }
+  },
+  "reviewSuggestRemove": "Remove your suggestion: {part}",
+  "@reviewSuggestRemove": {
+    "description": "Read by a screen reader, and shown on a long press, for the button that drops the reviewer's suggestion on one part in Suggest a change.",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "Meaning"
+      }
+    }
+  },
+  "reviewSuggestRemoved": "Your suggestion is removed when you save.",
+  "@reviewSuggestRemoved": {
+    "description": "In Suggest a change, on a part whose suggestion the reviewer has removed, before saving. Beside an Undo button."
+  },
+  "reviewSuggestDiscard": "Discard changes",
+  "@reviewSuggestDiscard": {
+    "description": "Read by a screen reader, and shown on a long press, for the close button at the top of Suggest a change, which closes it without saving."
+  },
+  "reviewSuggestSaveAll": "Save every change",
+  "@reviewSuggestSaveAll": {
+    "description": "Read by a screen reader, and shown on a long press, for the tick at the top of Suggest a change, which saves the suggestion on every part edited."
   },
   "reviewSuggestKept": "Kept on this phone until you send your review.",
   "@reviewSuggestKept": {

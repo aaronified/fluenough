@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -123,7 +125,7 @@ String suggestionPartName(
 /// Where [review] stands, as a card's top line says it.
 String reviewStateName(AppLocalizations l10n, CardReview? review) =>
     switch (review) {
-      CardReview(suggestion: _?) => l10n.reviewStateSuggested,
+      CardReview(suggestions: [_, ...]) => l10n.reviewStateSuggested,
       CardReview(right: true) => l10n.reviewStateRight,
       _ => l10n.reviewStateNot,
     };
@@ -626,17 +628,19 @@ Future<void> showSuggestSheet(
   builder: (_) => SuggestSheet(deck: deck, card: card, from: from),
 );
 
-/// "Suggest a change": which part, what it says now, the suggestion and
-/// why. Kept on the phone until the review is sent.
+/// "Suggest a change" (#468): one card a part of the card under review,
+/// each with its name, what it says now, and a pencil. The pencil turns
+/// that part into a field of its own, with its own why, started from the
+/// reviewer's suggestion on it or from what it says now; nothing is shared
+/// between parts, so no text carries over from one to another. A part
+/// with a suggestion shows it under what it says now, marked, with a way
+/// to remove it. The tick saves every part edited at once; the cross
+/// discards them. Kept on the phone until the review is sent.
 ///
-/// Opened [from] another reviewer's proposal (ADR-0038), it starts with
-/// the proposal's part and text; saved, it is this reviewer's own
-/// suggestion, which becomes a new proposal, and the answer to [from] is
-/// "edit". The proposal edited keeps waiting.
-///
-/// A card keeps one suggestion: where saving would replace one already
-/// made on another part, or one made before an Edit, the sheet says so and
-/// shows it.
+/// Opened [from] another reviewer's proposal (ADR-0038), the proposal's
+/// part starts edited, with the proposal's text; saved, it is this
+/// reviewer's own suggestion, which becomes a new proposal, and the answer
+/// to [from] is "edit". The proposal edited keeps waiting.
 class SuggestSheet extends StatefulWidget {
   const SuggestSheet({
     super.key,
@@ -649,230 +653,409 @@ class SuggestSheet extends StatefulWidget {
   final Card card;
   final Proposal? from;
 
+  /// The key of the suggestion field of [part], and for a base, of the
+  /// base for [word].
+  static Key textKey(CardPart part, {String? word}) =>
+      ValueKey<String>('suggest-text-${part.name}-${word ?? ''}');
+
+  /// The key of the why field of [part].
+  static Key whyKey(CardPart part, {String? word}) =>
+      ValueKey<String>('suggest-why-${part.name}-${word ?? ''}');
+
   @override
   State<SuggestSheet> createState() => _SuggestSheetState();
 }
 
-class _SuggestSheetState extends State<SuggestSheet> {
-  late CardPart _part;
+/// A part of a card a suggestion can be about: for a base word's meaning,
+/// the base's [word] as it stands in the target; null for any other part.
+typedef _Part = ({CardPart part, String? word});
 
-  /// For a base word's meaning, which base: its word as it stands in the
-  /// target. Null for any other part.
-  String? _word;
-  final TextEditingController _text = TextEditingController();
-  final TextEditingController _why = TextEditingController();
+/// The fields of a part being edited.
+class _Edit {
+  _Edit(String text, String why)
+    : text = TextEditingController(text: text),
+      why = TextEditingController(text: why);
+
+  final TextEditingController text;
+  final TextEditingController why;
+
+  void dispose() {
+    text.dispose();
+    why.dispose();
+  }
+}
+
+class _SuggestSheetState extends State<SuggestSheet> {
+  /// The suggestions already kept on the card.
+  List<Suggestion> _saved = const <Suggestion>[];
+
+  /// The parts being edited, each with its own fields.
+  final Map<_Part, _Edit> _edits = <_Part, _Edit>{};
+
+  /// The parts whose kept suggestion is removed when the sheet is saved.
+  final Set<_Part> _removed = <_Part>{};
   bool _seeded = false;
 
-  /// The suggestion already kept on the card, which saving replaces.
-  Suggestion? _old;
+  late final List<_Part> _parts = <_Part>[
+    for (final part in CardPart.values)
+      if (part != CardPart.base) (part: part, word: null),
+    // A base word's meaning, one a base written in full (#410): agents
+    // wrote them, and native reviewers check them.
+    for (final base in inlineBasesOf(widget.card))
+      (part: CardPart.base, word: base.word),
+  ];
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_seeded) return;
     _seeded = true;
-    final old = AppScope.read(context).reviewing
-        .reviewOf(widget.deck, widget.card)
-        ?.suggestion;
-    _old = old;
-    final from = widget.from;
-    if (from != null) {
-      _part = partOf(from.field);
-      _text.text = from.text;
-      _why.text = old?.part == _part ? old!.why : '';
-      return;
+    _saved =
+        AppScope.read(context).reviewing
+            .reviewOf(widget.deck, widget.card)
+            ?.suggestions ??
+        const <Suggestion>[];
+    if (widget.from case final from?) {
+      final _Part part = (part: partOf(from.field), word: null);
+      _edits[part] = _Edit(from.text, _savedOn(part)?.why ?? '');
     }
-    _part = old?.part ?? CardPart.word;
-    _word = old?.word;
-    _text.text = old?.text ?? partText(widget.card, _part, word: _word) ?? '';
-    _why.text = old?.why ?? '';
   }
 
   @override
   void dispose() {
-    _text.dispose();
-    _why.dispose();
+    for (final edit in _edits.values) {
+      edit.dispose();
+    }
     super.dispose();
   }
 
-  void _choose(CardPart part, {String? word}) {
-    final before = partText(widget.card, _part, word: _word) ?? '';
-    setState(() {
-      // A suggestion not yet changed follows the part chosen.
-      if (_text.text == before) {
-        _text.text = partText(widget.card, part, word: word) ?? '';
+  String? _now(_Part p) => partText(widget.card, p.part, word: p.word);
+
+  Suggestion? _savedOn(_Part p) =>
+      _saved.where((s) => s.part == p.part && s.word == p.word).firstOrNull;
+
+  void _edit(_Part p) => setState(() {
+    final saved = _removed.remove(p) ? null : _savedOn(p);
+    _edits[p] = _Edit(saved?.text ?? _now(p) ?? '', saved?.why ?? '');
+  });
+
+  /// The suggestion [p] has once saved: its edit, when the text differs
+  /// from what the part says now, or the one kept, unless removed.
+  Suggestion? _resultOn(_Part p) {
+    final edit = _edits[p];
+    if (edit == null) return _removed.contains(p) ? null : _savedOn(p);
+    final now = _now(p) ?? '';
+    final text = edit.text.text.trim();
+    if (text.isEmpty || text == now) return null;
+    return Suggestion(
+      part: p.part,
+      now: now,
+      text: text,
+      why: edit.why.text.trim(),
+      word: p.word,
+    );
+  }
+
+  /// Every suggestion the card keeps once saved, those on parts this sheet
+  /// does not show (a base no longer written in full) left as they are.
+  List<Suggestion> _result() => <Suggestion>[
+    for (final p in _parts) ?_resultOn(p),
+    for (final s in _saved)
+      if (!_parts.any((p) => p.part == s.part && p.word == s.word)) s,
+  ];
+
+  bool get _changed {
+    String key(List<Suggestion> list) =>
+        jsonEncode(<Object?>[for (final s in list) s.toJson()]);
+    return key(_result()) != key(_saved);
+  }
+
+  void _save() {
+    final reviewing = AppScope.read(context).reviewing;
+    final result = _result();
+    reviewing.suggest(widget.deck, widget.card, result);
+    if (widget.from case final from?) {
+      final part = partOf(from.field);
+      if (result.any((s) => s.part == part && s.word == null)) {
+        reviewing.answer(widget.deck, widget.card, from, ProposalVerdict.edit);
       }
-      _part = part;
-      _word = word;
-    });
+    }
+    Navigator.of(context).pop();
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    return Padding(
+      padding: EdgeInsetsDirectional.only(
+        bottom: MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      child: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 12, 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  IconButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    tooltip: l10n.reviewSuggestDiscard,
+                    icon: const Icon(Icons.close),
+                  ),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Semantics(
+                      header: true,
+                      child: Text(
+                        l10n.reviewSuggest,
+                        style: theme.textTheme.titleLarge,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  IconButton(
+                    onPressed: _changed ? _save : null,
+                    tooltip: l10n.reviewSuggestSaveAll,
+                    icon: const Icon(Icons.check),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
+                child: _about(context, widget.card, widget.deck.language),
+              ),
+              const SizedBox(height: 16),
+              for (final p in _parts) ...<Widget>[
+                _partCard(context, p),
+                const SizedBox(height: 8),
+              ],
+              const SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
+                child: Text(
+                  l10n.reviewSuggestKept,
+                  style: theme.textTheme.bodySmall!.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// One part: its name in small capitals, what it says now, and the
+  /// reviewer's suggestion on it, or its own fields while edited.
+  Widget _partCard(BuildContext context, _Part p) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final language = widget.deck.language;
-    final now = partText(widget.card, _part, word: _word);
-    final changed =
-        _text.text.trim().isNotEmpty && _text.text.trim() != (now ?? '');
-    final old = _old;
-    final replaces =
-        old != null &&
-        (widget.from != null || old.part != _part || old.word != _word);
-    return _FormSheet(
-      title: l10n.reviewSuggest,
-      about: _about(context, widget.card, language),
-      onSave: changed
-          ? () {
-              final reviewing = AppScope.read(context).reviewing;
-              reviewing.suggest(
-                widget.deck,
-                widget.card,
-                Suggestion(
-                  part: _part,
-                  now: now ?? '',
-                  text: _text.text.trim(),
-                  why: _why.text.trim(),
-                  word: _part == CardPart.base ? _word : null,
-                ),
-              );
-              if (widget.from case final from?) {
-                reviewing.answer(
-                  widget.deck,
-                  widget.card,
-                  from,
-                  ProposalVerdict.edit,
-                );
-              }
-              Navigator.of(context).pop();
-            }
-          : null,
-      children: <Widget>[
-        if (replaces) ...<Widget>[
-          Container(
-            padding: const EdgeInsetsDirectional.all(12),
-            decoration: BoxDecoration(
-              color: scheme.tertiaryContainer,
-              borderRadius: BorderRadius.circular(AppRadii.small),
+    final name = suggestionPartName(l10n, widget.card, p.part, word: p.word);
+    final now = _now(p);
+    final edit = _edits[p];
+    final saved = _removed.contains(p) ? null : _savedOn(p);
+    final muted = theme.textTheme.bodySmall!.copyWith(
+      color: scheme.onSurfaceVariant,
+    );
+    final Widget value = now == null
+        ? Text(
+            l10n.reviewSuggestNotSet,
+            style: theme.textTheme.bodyLarge!.copyWith(
+              color: scheme.onSurfaceVariant,
+              fontStyle: FontStyle.italic,
             ),
-            child: Text.rich(
-              quotingTarget(
-                l10n.reviewSuggestReplaces(
-                  suggestionPartName(
-                    l10n,
-                    widget.card,
-                    old.part,
-                    word: old.word,
-                  ),
-                  old.text,
-                ),
-                <String>[
-                  if (old.part == CardPart.word) old.text,
-                  if (inlineBaseOf(widget.card, old.word) case final b?)
-                    b.base!,
-                  if (old.part == CardPart.base &&
-                      baseIsShared(widget.card, old.word))
-                    old.word!,
-                ],
-                language,
-              ),
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: scheme.onTertiaryContainer,
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-        ],
-        Text(l10n.reviewSuggestWhich, style: theme.textTheme.titleSmall),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 8,
-          runSpacing: 4,
-          children: <Widget>[
-            for (final part in CardPart.values)
-              if (part != CardPart.base)
-                ChoiceChip(
-                  label: Text(partName(l10n, part)),
-                  selected: part == _part,
-                  onSelected: (_) => _choose(part),
-                ),
-            // A base word's meaning, one chip a base written in full
-            // (#410): agents wrote them, and native reviewers check them.
-            for (final base in inlineBasesOf(widget.card))
-              ChoiceChip(
-                label: Text.rich(
-                  quotingTarget(
-                    baseName(l10n, widget.card, base.word),
-                    <String>[
-                      if (baseIsShared(widget.card, base.word)) base.word,
-                      base.base!,
-                    ],
-                    language,
-                  ),
-                ),
-                selected: _part == CardPart.base && _word == base.word,
-                onSelected: (_) => _choose(CardPart.base, word: base.word),
-              ),
+          )
+        : Text.rich(
+            quotingTarget(now, <String>[
+              if (p.part == CardPart.word) now,
+            ], language),
+            style: theme.textTheme.bodyLarge,
+          );
+    final label = Text.rich(
+      _smallCaps(
+        quotingTarget(name, <String>[
+          if (p.part == CardPart.base) ...<String>[
+            if (baseIsShared(widget.card, p.word)) p.word!,
+            ?inlineBaseOf(widget.card, p.word)?.base,
           ],
-        ),
-        const SizedBox(height: 16),
-        MergeSemantics(
-          child: Container(
-            padding: const EdgeInsetsDirectional.all(12),
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadii.small),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        ], language),
+      ),
+      semanticsLabel: name,
+      style: theme.textTheme.labelMedium!.copyWith(
+        color: scheme.onSurfaceVariant,
+        letterSpacing: 0.8,
+      ),
+    );
+    return Container(
+      padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 4, 12),
+      decoration: BoxDecoration(
+        color: edit == null ? scheme.surfaceContainerLow : null,
+        border: edit == null ? null : Border.all(color: scheme.outline),
+        borderRadius: BorderRadius.circular(AppRadii.small),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 48),
+            child: Row(
               children: <Widget>[
-                Text(
-                  l10n.reviewSuggestNow,
-                  style: theme.textTheme.bodySmall!.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                if (now == null)
-                  Text(l10n.reviewSuggestNothing)
-                else
-                  Text.rich(
-                    quotingTarget(now, <String>[
-                      if (_part == CardPart.word) now,
-                    ], language),
-                    style: theme.textTheme.bodyMedium,
+                Expanded(child: label),
+                if (edit == null)
+                  IconButton(
+                    onPressed: () => _edit(p),
+                    tooltip: l10n.reviewSuggestEditPart(name),
+                    icon: const Icon(Icons.edit_outlined),
                   ),
               ],
             ),
           ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _text,
-          minLines: 1,
-          maxLines: 4,
-          onChanged: (_) => setState(() {}),
-          decoration: InputDecoration(
-            labelText: l10n.reviewSuggestYours,
-            border: const OutlineInputBorder(),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 12),
+            child: edit == null
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      value,
+                      if (saved != null) ...<Widget>[
+                        const SizedBox(height: 8),
+                        _yours(context, p, saved, name),
+                      ],
+                      if (_removed.contains(p))
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                l10n.reviewSuggestRemoved,
+                                style: muted,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () =>
+                                  setState(() => _removed.remove(p)),
+                              child: Text(l10n.commonUndo),
+                            ),
+                          ],
+                        ),
+                    ],
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      MergeSemantics(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(l10n.reviewSuggestNow, style: muted),
+                            value,
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      TextField(
+                        key: SuggestSheet.textKey(p.part, word: p.word),
+                        controller: edit.text,
+                        minLines: 1,
+                        maxLines: 4,
+                        onChanged: (_) => setState(() {}),
+                        decoration: InputDecoration(
+                          labelText: l10n.reviewSuggestYours,
+                          border: const OutlineInputBorder(),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      TextField(
+                        key: SuggestSheet.whyKey(p.part, word: p.word),
+                        controller: edit.why,
+                        minLines: 1,
+                        maxLines: 3,
+                        onChanged: (_) => setState(() {}),
+                        decoration: InputDecoration(
+                          labelText: l10n.reviewSuggestWhy,
+                          border: const OutlineInputBorder(),
+                        ),
+                      ),
+                    ],
+                  ),
           ),
-        ),
-        const SizedBox(height: 16),
-        TextField(
-          controller: _why,
-          minLines: 1,
-          maxLines: 3,
-          decoration: InputDecoration(
-            labelText: l10n.reviewSuggestWhy,
-            border: const OutlineInputBorder(),
-            helperText: l10n.reviewSuggestKept,
-            helperMaxLines: 2,
+        ],
+      ),
+    );
+  }
+
+  /// The reviewer's suggestion kept on [p], marked as theirs, with a
+  /// button that removes it.
+  Widget _yours(BuildContext context, _Part p, Suggestion saved, String name) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Container(
+      padding: const EdgeInsetsDirectional.fromSTEB(12, 8, 0, 8),
+      decoration: BoxDecoration(
+        color: scheme.primaryContainer,
+        borderRadius: BorderRadius.circular(AppRadii.innerRow),
+      ),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: MergeSemantics(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    l10n.reviewSuggestYours,
+                    style: theme.textTheme.labelMedium!.copyWith(
+                      color: scheme.onPrimaryContainer,
+                    ),
+                  ),
+                  Text.rich(
+                    quotingTarget(saved.text, <String>[
+                      if (p.part == CardPart.word) saved.text,
+                    ], widget.deck.language),
+                    style: theme.textTheme.bodyLarge!.copyWith(
+                      color: scheme.onPrimaryContainer,
+                    ),
+                  ),
+                  if (saved.why.isNotEmpty)
+                    Text(
+                      saved.why,
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        color: scheme.onPrimaryContainer,
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ],
+          IconButton(
+            onPressed: () => setState(() => _removed.add(p)),
+            tooltip: l10n.reviewSuggestRemove(name),
+            color: scheme.onPrimaryContainer,
+            icon: const Icon(Icons.delete_outline),
+          ),
+        ],
+      ),
     );
   }
 }
+
+/// [span], an interface string quoting deck content as [quotingTarget]
+/// marks it, in capitals but for the content quoted, whose case is its
+/// language's own.
+TextSpan _smallCaps(TextSpan span) => TextSpan(
+  children: <TextSpan>[
+    for (final child in span.children!.cast<TextSpan>())
+      TextSpan(
+        text: child.locale == null ? child.text!.toUpperCase() : child.text,
+        locale: child.locale,
+      ),
+  ],
+);
 
 /// Opens "Rate this word" on the rude word [card] of [deck]. True if the
 /// rater chose "Suggest a change" from it.
