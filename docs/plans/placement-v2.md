@@ -1,7 +1,6 @@
 # Plan: placement, script first, then a three-skill check
 
-Written 2026-10-11, for 0.5.0. Tracks #481. **Top priority** (owner: "Any change here
-will also be top priority"). Replaces the placement in ADR-0013 and keeps
+Written 2026-10-11, for **0.6.0** (owner: too large for 0.5). Tracks #481. It is the top priority of 0.6.0. Replaces the placement in ADR-0013 and keeps
 ADR-0023's no-alphabet path.
 
 ## What exists (origin/main)
@@ -53,8 +52,9 @@ Owner, later the same day:
 2. **Script check, first, always.** There is no yes-or-no alphabet
    question any more. Romanised (ISO) words are used only as the outcome
    of this check, never as a default.
-   - **"I don't know the script"** is a button on the check's first
-     screen. It skips the check and takes the no-alphabet path at once.
+   - **"I don't know the script"** is a button on **every** script
+     question (owner, 2026-10-11). Tapping it on any of them ends the check
+     and takes the no-alphabet path at once.
    - **The check is set by the course's native language** (the language it
      is taught from). It asks only what that native language's script
      doesn't already give the learner:
