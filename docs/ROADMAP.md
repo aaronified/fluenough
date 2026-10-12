@@ -89,9 +89,10 @@ Releases next, by GitHub milestone (owner, 2026-10-11):
 
 | Release | What |
 |---|---|
-| 0.5.0 | Bugs (#478, #479, #480, #482, #483); minor changes (#475, #469, #227); backup (#470, #473) |
+| 0.4.4 | Bug fixes (#478, #479, #480, #482, #483, #486, #487, #488, #489) |
+| 0.5.0 | Minor changes (#475, #469, #227, #484, #490); backup (#470, #473) |
 | 0.6.0 | Review pipeline (#476, #477, #471); profiles (#204, #97); reminders (#90) |
-| 0.7.0 | Placement v2 (#481); onboarding journey (#474) |
+| 0.7.0 | Placement v2 (#481); onboarding journey (#474); daily commitment (#485) |
 
 The numbered milestones below are the longer tracks.
 
