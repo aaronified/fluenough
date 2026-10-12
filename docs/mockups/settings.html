@@ -73,6 +73,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .thumb{position:absolute;right:3px;width:4px;border-radius:2px;background:var(--onS);opacity:.42}
 .ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--onSv);flex:none}
 .ibtn.back{color:var(--onS)}
+.ibtn.dl{color:var(--p)}
 /* text: size × the phone's text scale; icons do not scale, as in Flutter */
 .hL{font-size:calc(32px*var(--th));line-height:calc(40px*var(--th));font-weight:600}
 .tL{font-size:calc(22px*var(--th));line-height:calc(28px*var(--th));font-weight:600}
@@ -176,6 +177,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .ph.x2 .wrapbtn .line{flex-wrap:wrap;row-gap:4px}
 .ph.x2 .wrapbtn .line>.trl{margin:-8px 0 -12px auto!important}
 .ph.x2 .wrapbtn .line>.tx{flex-basis:calc(100% - 40px)}
+.ph.x2 .bk .line>.tx{flex-basis:calc(100% - 56px)}
 .time{color:var(--p);font-weight:700}
 /* the modal bottom sheet over a scrim (M3: surfaceContainerLow, 28 top corners, drag handle) */
 .scrim{position:absolute;inset:0;background:rgba(0,0,0,.32);z-index:4}
@@ -190,10 +192,45 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .facts .f:first-child{border-radius:20px 20px 6px 6px}
 .facts .f:last-child{border-radius:6px 6px 20px 20px}
 .facts .f .mi{color:var(--onSv);margin-top:2px}
+.facts .f[aria-checked=true] .mi{color:var(--p)}
+.facts .f[data-tap]{align-items:center;min-height:56px}
 .facts .f>div{flex:1;min-width:0}
 .warn{display:flex;gap:12px;margin-top:16px;align-items:flex-start}
 .warn .mi{color:var(--err)}
 .acts{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px;margin-top:16px}
+/* a backup's three actions, icon over label, a third of the row each; at 2x one under another */
+.acts3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:8px -8px -8px}
+.acts3.two{grid-template-columns:repeat(2,1fr)}
+.act{min-height:56px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;color:var(--p);text-align:center}
+.act.st{color:var(--onSv)}
+.act.st .mi{color:var(--p)}
+.ph.x2 .acts3{display:flex;gap:8px;margin:4px -12px -12px}
+.ph.x2 .act{min-height:48px;min-width:48px;padding:0;border-radius:24px}
+.ph.x2 .act>span:not(.mi){display:none}   /* at 2x: icons only, each named by its tooltip and for screen readers */
+.incl{display:inline-flex;align-items:center;gap:4px}
+.incl .mi{color:var(--p)}
+/* the profile screens, after the design file's "Profiles" and "New profile" */
+.who{display:flex;flex-direction:column;align-items:center;padding:40px 24px 16px;text-align:center}
+.who .brand{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.who .brand svg{width:36px;height:36px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px;padding:24px 16px}
+.pcell{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.pav{width:112px;height:112px;position:relative;display:flex;align-items:center;justify-content:center;color:var(--onPc)}
+.pav svg{position:absolute;inset:0}
+.pav .mi{position:relative;font-size:56px;width:56px;height:56px}
+.addp{width:112px;height:112px;border-radius:56px;border:2px dashed var(--ol);display:flex;align-items:center;justify-content:center;color:var(--p)}
+.addp .mi{font-size:40px;width:40px;height:40px}
+.shapes{display:flex;justify-content:space-between;padding:0 16px}
+.shp{width:72px;height:72px;border-radius:20px;display:flex;align-items:center;justify-content:center}
+.shp.on{box-shadow:inset 0 0 0 3px var(--p)}
+.field{margin:0 16px;min-height:56px;border-radius:16px;box-shadow:inset 0 0 0 1px var(--ol);display:flex;align-items:center;padding:0 16px}
+.card{margin:0 16px;background:var(--sLow);border-radius:24px}
+.card .row{background:transparent}
+.foot2{display:flex;gap:12px;align-items:center;justify-content:center;padding:16px 24px;color:var(--onSv)}
+/* the reminder as Android shows it: drawn approximately */
+.notif{margin:0 16px;background:var(--sHigh);border-radius:24px;padding:14px 16px}
+.notif .nh{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.notif .nh svg{width:20px;height:20px;flex:none}
 /* Android's permission dialog (the system's, not the app's): drawn approximately */
 .dlg{position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);z-index:5;background:var(--sHigh);border-radius:28px;padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .dlg .mi.big{color:var(--p);margin-bottom:16px}
@@ -205,7 +242,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <body class="marks">
 <div class="wrap">
 <h1>Settings, with every planned change, drawn once</h1>
-<p class="lede">The whole Settings tab, top to bottom, with what 0.5.0 and 0.6.0 plan for it folded in, so it is rearranged once rather than five times. <b>#469</b> Sources moves from Logs to Learning. <b>#473</b> Your data and Back up to the cloud become one section, which holds <b>#470</b> Backup and restore. <b>#475</b> Add deck leaves the Decks screen for an Advanced row. <b>#243</b> gives every activity its own switch, each with a line for on and a line for off. <b>#90</b> Reminders gets its page now and ships in 0.6.0. Languages I know opens the approved screen of <b>#490</b>. Everything else is as <code>settings_page.dart</code> draws it today, in its order, with its icons and words. The learner speaks Hindi and English, learns Bengali, and reviews Hindi from English. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="languages-you-know.html">languages-you-know.html</a>; the default, Clay on pure black, is the owner's phone. Dashed outlines mark what changes and are not part of the app. Decisions this page makes are marked <span class="prop">Proposed</span>.</p>
+<p class="lede">The whole Settings tab, top to bottom, with what 0.5.0 and 0.6.0 plan for it folded in, so it is rearranged once rather than five times. <b>#469</b> Sources moves from Logs to Learning. <b>#473</b> Your data and Back up to the cloud become one section, which holds <b>#470</b> Backup and restore; cloud backup moves onto that page, built with it. <b>#475</b> Add deck leaves the Decks screen for an Advanced row. <b>#243</b>, as the owner narrowed it on 2026-10-12: switches only for the activities a learner may skip, with the Sound section merged into them. <b>#90</b> Reminders gets its page now and ships in 0.6.0. Languages I know opens the approved screen of <b>#490</b>. Everything else is as <code>settings_page.dart</code> draws it today, in its order, with its icons and words. The learner knows English, learns Bengali and Hindi, and has reviewing on. <b>Revised 2026-10-12</b> after the owner's review: recent backups, cloud backup on the backup page, reminders for several languages without quiet hours, and fewer activity switches. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="languages-you-know.html">languages-you-know.html</a>; the default, Clay on pure black, is the owner's phone. Dashed outlines mark what changes and are not part of the app. Decisions this page makes are marked <span class="prop">Proposed</span>.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -250,20 +287,19 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 </section>
 
 <section class="opt" id="backup">
-<h2>4 · Backup and restore (#470), and its restore sheet</h2>
-<p>One file, <code>fluenough-backup-&lt;date&gt;.fnbackup</code>, holds the review log, every setting, reviewer mode with its rater code, and the list of downloaded languages (<code>docs/plans/app-backup.md</code>). <b>Back up now</b> saves it where the learner picks. <b>Restore from a file</b> opens the system picker. Below them are the backups the app made by itself as each app update downloaded, the last three, each “Before updating to {version}, {date}” with <b>Restore</b>. Every restore, from a file or from that list, first shows the sheet: what the backup holds, then a confirmation that it replaces everything. A file from a newer Fluenough is refused in the same sheet, and nothing changes.</p>
+One file, <code>fluenough-backup-&lt;date&gt;.fnbackup</code>, holds the review log, every setting, reviewer mode with its rater code, and the list of downloaded languages (<code>docs/plans/app-backup.md</code>). <b>Back up now</b> saves it where the learner picks and keeps a copy here; <b>Restore from a file</b> opens the system picker. <b>Cloud</b> is set up once: the service and its folder, then a row to <b>Cloud backups</b>. <b>Recent backups</b> are the last five on the phone, whatever made them, each named by how and when, each with <b>Download</b> (to the phone's Downloads), <b>Send to cloud</b> and <b>Restore</b>; one already sent says “In the cloud”. <b>Cloud backups</b> lists every backup in the cloud, seven here, in the same rows with Download and Restore; a restore fetches the file to the phone first. Every restore shows the same sheet: what the backup holds, that the decks are not restored and will be downloaded, and that a copy of what it replaces is kept first. A file from a newer Fluenough is refused, and nothing changes. All of it is built with local backup (owner), so it is drawn live. Delete this profile leaves Your data for Your profile, opened from the card at the top; it and Who’s practising? follow the design file's <b>New profile</b> and <b>Profiles</b> screens (<code>Fluenough app · App screens</code>), and arrive with profiles in 0.6.0 (#204)</p>
 <div class="frames" id="fr-backup"></div>
 </section>
 
 <section class="opt" id="rem">
 <h2>5 · Reminders (#90, ships in 0.6.0)</h2>
-<p>Placed now so Settings is not rearranged again. Rescoped by the owner on 2026-10-06 to one daily reminder: “streak at risk” is dropped (<code>docs/plans/achievements.md</code>). It comes only on days with cards due, at the time the learner picks, says either how many cards are due or today's fact (#48), and keeps out of quiet hours. Android 13 and later ask for notifications the moment the switch is turned on, never at launch; a refusal leaves it off and says how to allow them.</p>
+<p>Placed now so Settings is not rearranged again. Rescoped by the owner on 2026-10-06 to one daily reminder: “streak at risk” is dropped (<code>docs/plans/achievements.md</code>). It comes only on days with cards due, at the time the learner picks. With Bengali and Hindi both learned it is still one reminder: it names each language with cards due and its count, or gives a fact for each (#48). The Languages row picks which learned languages it counts. Quiet hours are gone (owner, 2026-10-12: the learner sets the time). Android 13 and later ask for notifications the moment the switch is turned on, never at launch; a refusal leaves it off and says how to allow them.</p>
 <div class="frames" id="fr-rem"></div>
 </section>
 
 <section class="opt" id="switches">
 <h2>6 · Every switch, on and off (#243)</h2>
-<p>From <code>docs/plans/settings-wording.md</code> and <code>app_en.arb</code>; the two new activity switches' lines are <span class="prop">Proposed</span>. The self-check confirms no switch keeps the same line in both states.</p>
+<p>From <code>docs/plans/settings-wording.md</code> and <code>app_en.arb</code>; Heard words' new off line is <span class="prop">Proposed</span>. The self-check confirms no switch keeps the same line in both states.</p>
 <table>
 <thead><tr><th>Section</th><th>Switch</th><th>On</th><th>Off</th></tr></thead>
 <tbody id="switch-rows"></tbody>
@@ -275,22 +311,24 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <table>
 <thead><tr><th>#</th><th>Decision</th><th>Why</th></tr></thead>
 <tbody>
-<tr><th>1</th><td data-h="Decision"><span class="prop">Proposed</span> The merged section is called <b>Your data</b> and holds, in order: Backup and restore (a row to its page), Export review log, Import review log, Back up to the cloud, Delete this profile.</td><td data-h="Why">The name people already know, and short enough for 2x text. The whole-app backup leads, as the thing most people want; the log export and import stay as they are (#20), with the merge-only import the plan keeps.</td></tr>
-<tr><th>2</th><td data-h="Decision"><span class="prop">Proposed</span> Cloud backup is <b>one</b> incoming row, its line naming the five services, instead of five rows.</td><td data-h="Why">Five rows that do nothing yet were a third of the old section. #112 decides how each service signs in; its page can list them.</td></tr>
-<tr><th>3</th><td data-h="Decision"><span class="prop">Proposed</span> The Backup and restore page holds Back up now, Restore from a file, and “Made before app updates”. It does not repeat the log export and import.</td><td data-h="Why">The page is the plan's “Settings, Backup and restore”. The section already shows the log rows one tap up.</td></tr>
-<tr><th>4</th><td data-h="Decision"><span class="prop">Proposed</span> Restore from the list opens the same summary sheet as a file does. Its button says <b>Replace and restore</b>.</td><td data-h="Why">The plan asks for the summary before anything changes, and a confirmation that names what is erased. One sheet for both ways in.</td></tr>
-<tr><th>5</th><td data-h="Decision"><span class="prop">Proposed</span> Above 1.3x text, a row's button goes under its line: a backup's Restore, Adjust to me's Adjust (outlined at 2x only), and the times on Reminders.</td><td data-h="Why">Beside it at 2x, “Before updating to 0.5.3, Nov 30” would get a column a word wide, and today Adjust leaves “Adjust to me” narrower than its words. The profile card already stacks Switch this way.</td></tr>
-<tr><th>6</th><td data-h="Decision"><span class="prop">Proposed</span> The activity switches leave Learning for a section of their own, <b>Activities</b>, under it.</td><td data-h="Why">With two more switches (#243) Learning would hold 17 rows. ADR-0034 calls them activities: “what you do, and what Settings switches on”.</td></tr>
-<tr><th>7</th><td data-h="Decision"><span class="prop">Proposed</span> The two activities that are not skills get their switches after the skills and before Phonemic contrasts: <b>Matching pairs</b> and <b>Choosing answers</b>, wording in section 6.</td><td data-h="Why">The skills keep today's order, which the Today tiles and the summary rows share.</td></tr>
-<tr><th>8</th><td data-h="Decision"><span class="prop">Proposed</span> Add deck is the only row in a new <b>Advanced</b> section, before Logs. Icon and name are the Decks button's (+, “Add deck”), and its line is the import page's “A .yaml deck on this phone”.</td><td data-h="Why">The owner called it advanced (#475). Beside Languages I'm learning it would sit among the choices everyone makes. Logs, also for reports, follows it.</td></tr>
-<tr><th>9</th><td data-h="Decision"><span class="prop">Proposed</span> The daily reminder's switch and time move onto a Reminders page. Settings keeps one row, its line saying what is set, and it stays in Reminder and privacy.</td><td data-h="Why">Time, what it says and quiet hours are four more rows; the settings-wording rule says a row that opens a page shows its value.</td></tr>
-<tr><th>10</th><td data-h="Decision"><span class="prop">Proposed</span> Reminder kinds after the rescope: the reminder comes only on days with cards due (the approved line says so), and says either the cards due or today's fact. Quiet hours hold back a reminder the phone missed (after a restart or a time-zone change) until they end.</td><td data-h="Why">#90's kinds without “streak at risk”. With one reminder a day at a time the learner picks, quiet hours matter only for a late one.</td></tr>
-<tr><th>11</th><td data-h="Decision"><span class="prop">Proposed</span> A refused notification permission: the switch stays off, its line says Android blocks the notifications, and a row under it opens Android's settings for Fluenough.</td><td data-h="Why">#90: “a refusal is handled”. Speaking does the same with the microphone today, as a message.</td></tr>
-<tr><th>12</th><td data-h="Decision"><span class="prop">Proposed</span> The help line under Your data now points to Backup and restore; “Version {version} is available” adds that a backup is made with the download.</td><td data-h="Why">The old line said “Export it”; the automatic backup should not be a surprise.</td></tr>
+<tr><th>1</th><td data-h="Decision"><span class="prop">Proposed</span> The merged section is called <b>Your data</b> and holds, in order: Backup and restore (a row to its page), Export review log, Import review log. Delete this profile goes to the profile area (owner), drawn after the owner's design file <code>Fluenough app · App screens</code>: <b>Switch</b> opens its <b>Profiles</b> screen (“Who’s practising?”), and <span class="prop">Proposed</span> a tap on the card opens <b>Your profile</b>, its <b>New profile</b> screen for the profile in use (shape, name, PIN lock), with Delete this profile, still “Feature incoming”, at its foot. The design's language fields are left out: Learning holds them.</td><td data-h="Why">The name people already know, and short enough for 2x text. The whole-app backup leads; the log export and import stay as they are (#20).</td></tr>
+<tr><th>2</th><td data-h="Decision">Cloud backup leaves Settings' list for the Backup and restore page, drawn live, and is set up once there (owner). <span class="prop">Proposed</span> The Cloud group is two rows: the service with its folder (“Fluenough backups”, made by the app), which opens the chooser to change or disconnect; and <b>Cloud backups</b>, with how many and when the last was sent. Not connected, it is one row, <b>Connect a cloud</b>, and Send to cloud opens the same chooser.</td><td data-h="Why">Sending and restoring are done backup by backup, so the group only has to say where they go and open the cloud's list.</td></tr>
+<tr><th>3</th><td data-h="Decision">Recent backups (owner): the five newest on the phone, of any kind. <span class="prop">Proposed</span> names: “Made by you, {date}”, “Before updating to {version}, {date}”, “Before restoring, {date}”, “Restored from a file, {date}”. Back up now also keeps a copy here, and a restore first keeps a copy of what it replaces.</td><td data-h="Why">A restore that keeps what it replaces can be undone from the same list.</td></tr>
+<tr><th>4</th><td data-h="Decision">Each backup has three actions (owner): <b>Download</b>, <b>Send to cloud</b>, <b>Restore</b>. <span class="prop">Proposed</span> Each is an icon over its word, a third of the row wide and 56 dp tall. At 2x the words would not fit, so the three are icons alone, 48 dp each, named by their tooltips and to screen readers. The single icon at the row's left is <b>dropped</b>. A backup already in the cloud shows “In the cloud” in place of Send. Cloud backups uses the same row with Download and Restore only.</td><td data-h="Why">With Download a labelled action, a left icon would only repeat it or decorate, and it costs the name 40 dp at 2x; the name already says what made the backup. Words under the icons, not tooltips alone, since a tooltip needs a long press. Three in a row fit at 1x (“Send to cloud” is the widest, in a 96 dp third). At 2x, stacked words made each backup half a screen tall.</td></tr>
+<tr><th>5</th><td data-h="Decision">The restore sheet's deck line reads “Not restored, will be downloaded” (owner). <span class="prop">Proposed</span> Its warning now says a copy is kept first, and its button stays <b>Replace and restore</b>.</td><td data-h="Why">The decks are never in a backup; the app downloads them after.</td></tr>
+<tr><th>6</th><td data-h="Decision"><span class="prop">Proposed</span> Above 1.3x text, a row's button or value goes under its line: Restore, Adjust (outlined at 2x only), and the reminder time.</td><td data-h="Why">Beside it at 2x the name would get a column a word wide. The profile card already stacks Switch this way.</td></tr>
+<tr><th>7</th><td data-h="Decision">Seen words, Grammar, Matching pairs, Choosing answers and Phonemic contrasts have no switch: always asked (owner). <span class="prop">Proposed</span> switches stay for <b>Written words</b>, <b>Heard words</b>, <b>Spoken words</b> and <b>Reading</b>, with a line under them naming what is always asked.</td><td data-h="Why">Each needs something a learner may not have: a keyboard in the script, sound, a microphone, time for a passage. Seen words is always on, so every activity can never be off, and a lesson always has questions.</td></tr>
+<tr><th>8</th><td data-h="Decision"><span class="prop">Proposed</span> The Sound section goes. Its <b>Sound</b> switch is dropped; Play words automatically, Speech rate and Voices move under Heard words, shown whatever Heard words is set to. Heard words off reads “No listening questions. Words still play when you tap a speaker”.</td><td data-h="Why">Sound off did two things: muted every speaker, which the phone's volume does, and skipped listening, which Heard words off (or Pause for an hour) does. The “while sound is off” lines only explained that nothing plays when nothing can, which the owner rightly calls normal.</td></tr>
+<tr><th>9</th><td data-h="Decision"><span class="prop">Proposed</span> On updating, a learner who had switched off Seen words, Grammar or Phonemic contrasts finds them on again; one who had Sound off finds Heard words off, so listening stays skipped.</td><td data-h="Why">No stored choice is silently turned into a different one.</td></tr>
+<tr><th>10</th><td data-h="Decision"><span class="prop">Proposed</span> Add deck is the only row in a new <b>Advanced</b> section, before Logs, with the Decks button's + and “Add deck”, and the import page's line.</td><td data-h="Why">The owner called it advanced (#475).</td></tr>
+<tr><th>11</th><td data-h="Decision"><span class="prop">Proposed</span> The daily reminder moves onto a Reminders page; Settings keeps one row that says what is set, in Reminder and privacy. Quiet hours are removed (owner).</td><td data-h="Why">The settings-wording rule: a row that opens a page shows its value.</td></tr>
+<tr><th>12</th><td data-h="Decision"><span class="prop">Proposed</span> Several languages, one reminder: “Cards due” gives a line per language with cards due (“Bengali: 12 due · Hindi: 5 due”), a language with none left out; “Today's fact” gives one fact per language due, in the language you know best, then the counts. A Languages row picks which learned languages count, all by default. A preview shows the notification.</td><td data-h="Why">One notification a day, never one per language; the owner asked that it handle several languages.</td></tr>
+<tr><th>13</th><td data-h="Decision"><span class="prop">Proposed</span> A refused notification permission: the switch stays off, its line says Android blocks them, and a row under it opens Android's settings for Fluenough.</td><td data-h="Why">#90: “a refusal is handled”.</td></tr>
+<tr><th>14</th><td data-h="Decision"><span class="prop">Proposed</span> The help line under Your data points to backing up; “Version {version} is available” adds that a backup is made with the download.</td><td data-h="Why">The automatic backup should not be a surprise.</td></tr>
 </tbody></table>
 <ul>
 <li>Unchanged: Languages I know is the same row and opens the approved <a href="languages-you-know.html">Languages you know</a> screen (#490). Languages I'm learning already holds deck downloads (#467): checking for deck updates, and each language's size, Update and Remove. Languages you review (#462) stays in Reviewing, shown while reviewing is on.</li>
-<li>Not drawn, unchanged: the alphabet and per-language dialogs, the adult-content question, Voices, Appearance, the update states, and How reviewing works.</li>
+<li>Not drawn, unchanged: the alphabet and per-language dialogs, the adult-content question, Voices, Appearance, the update states, and How reviewing works. Not drawn, new: the service's own sign-in page, and the cloud's restore list, which is the summary sheet's.</li>
 <li>After a restore the app downloads the backup's languages with the usual progress screen (the plan's Flow); that screen is today's.</li>
 </ul>
 </section>
@@ -305,26 +343,33 @@ const MARK={light:['#085231','#C2621D'],dark:['#AEF2C6','#FFB68A']};   // Flueno
 
 /* ---------- the learner ---------- */
 const APP='0.5.3';
-const ME={know:'Hindi, English',learn:'Bengali',sources:4,voiced:2,languages:2,reviews:3412,logLines:214,
- rater:'FL-7K3M-Q9TD-6',reviewPairs:'Hindi from English',waiting:3,adjusted:'Oct 9',time:'7:00 PM',quiet:['10:00 PM','7:00 AM']};
+const ME={know:'English',learn:'Bengali, Hindi',learnAnd:'Bengali and Hindi',sources:4,voiced:2,languages:2,reviews:3620,logLines:214,
+ rater:'FL-7K3M-Q9TD-6',reviewPairs:'None chosen',waiting:'Nothing waiting in your languages',adjusted:'Oct 9',time:'7:00 PM',
+ due:[['Bengali',12],['Hindi',5]]};
 /* the backups the app made as each update downloaded: the last three (app-backup.md) */
-const AUTO=[['0.5.3','Nov 30',3412],['0.5.2','Nov 16',2980],['0.5.1','Nov 2',2415]];
-const autoLine=(v,d)=>`Before updating to ${v}, ${d}`;
+const RECENT=[['you','','Dec 2',3620],['update','0.5.3','Nov 30',3412],['restore','','Nov 20',3190],['file','','Nov 20',2980],['update','0.5.2','Nov 16',2980]];
+const KEEP=5;
+const CLOUD={service:'Google Drive',folder:'Fluenough backups'};
+const IN_CLOUD=new Set(['you||Dec 2']);   // the local backups already sent
+const CLOUD_LIST=[['you','','Dec 2',3620],['you','','Nov 24',3301],['you','','Nov 12',3044],['update','0.5.1','Nov 2',2415],['you','','Oct 25',2133],['you','','Oct 18',1902],['you','','Oct 14',1788]];   // the last five, whatever made them (owner, 2026-10-12)
+const recentLine=(kind,v,d)=>({you:`Made by you, ${d}`,update:`Before updating to ${v}, ${d}`,restore:`Before restoring, ${d}`,file:`Restored from a file, ${d}`})[kind];
 
 /* ---------- what changes: the sections, today and after ---------- */
-const ORDER=['Profile','Learning','Activities','Adjust to me','Sound','Look and language','Reminder and privacy','Your data','Reviewing','Advanced','Logs','Updates','Footer'];
+const ORDER=['Profile','Learning','Activities','Adjust to me','Look and language','Reminder and privacy','Your data','Reviewing','Advanced','Logs','Updates','Footer'];
+const ACTIVITY_SWITCHES=['Written words','Heard words','Spoken words','Reading'];
+const ALWAYS=['Seen words','Grammar','Matching pairs','Choosing answers','Phonemic contrasts','Sound','Quiet hours'];
 const ORDER_TABLE=[
- ['Profile card','Profile card','—'],
+ ['Profile card','Profile card; tapping it opens Your profile, with Delete this profile, after the design file <span class="prop">Proposed</span>','owner, 2026-10-12'],
  ['Learning: languages, the skill switches, readings, 18+, alphabets','Learning: Languages I know, Languages I’m learning, readings, 18+, alphabets, <b>Sources</b>','#469 · Sources moves here'],
- ['—','<b>Activities</b>: a switch per activity, skills first, then Matching pairs and Choosing answers, then Phonemic contrasts <span class="prop">Proposed</span>','#243'],
+ ['—','<b>Activities</b>: switches only for Written words, Heard words (with Play words automatically, Speech rate and Voices under it), Spoken words and Reading; the rest always asked <span class="prop">Proposed</span>','#243 · owner, 2026-10-12'],
  ['Adjust to me','Adjust to me','—'],
- ['Sound','Sound','—'],
+ ['Sound: Sound, Play words automatically, Speech rate, Voices','— (merged into Activities; the Sound switch dropped) <span class="prop">Proposed</span>','owner, 2026-10-12'],
  ['Look and language','Look and language','—'],
  ['Reminder and privacy: Daily reminder, its time, PIN lock','Reminder and privacy: <b>Reminders</b> (a page), PIN lock','#90, from 0.6.0'],
- ['Your data: export, import, delete','<b>Your data</b>: <b>Backup and restore</b>, export, import, <b>Back up to the cloud</b>, delete','#473, #470'],
+ ['Your data: export, import, delete','<b>Your data</b>: <b>Backup and restore</b> (a page: local backup, the cloud set up once, Recent backups, Cloud backups), export, import. Delete this profile moves to the profile page','#473, #470'],
  ['Reviewing','Reviewing, with Languages you review','#462, unchanged'],
  ['Logs, then a Sources row','<b>Advanced</b>: Add deck <span class="prop">Proposed</span>','#475 · from the Decks screen'],
- ['Back up to the cloud: five services','Logs (without Sources)','#469'],
+ ['Back up to the cloud: five services','Logs (without Sources). Cloud backup is now on the Backup and restore page','#469 · owner, 2026-10-12'],
  ['Updates','Updates','—'],
  ['Version line','Version line','—'],
 ];
@@ -357,29 +402,26 @@ const sect=(id,name,label,rows,{chg,after='',grp=''}={})=>`<div class="sect" id=
 const hlp=(t,icon)=>`<div class="hlp lf">${icon?ic(icon,'m18 mo'):''}<span class="hs">${t}</span></div>`;
 function cookie(){let d='';const n=9,a=0.07,R=28;for(let i=0;i<=240;i++){const t=i/240*2*Math.PI;const r=R*(1+a*Math.cos(n*t))/(1+a);const g=t-Math.PI/2;d+=(i?'L':'M')+(28+r*Math.cos(g)).toFixed(2)+' '+(28+r*Math.sin(g)).toFixed(2)}
  return `<svg viewBox="0 0 56 56" aria-hidden="true"><path d="${d}Z" fill="var(--pc)"/></svg>`}
+/* ExpressiveShape (lib/ui/widgets/expressive_shape.dart): lobes, amplitude, turn */
+const SHAPES={cookie:[9,0.07,0],clover:[4,0.16,Math.PI/4],flower:[6,0.11,0],sunny:[8,0.045,0]};
+function shape(name,size,fill){const [n,a,rot]=SHAPES[name];const R=size/2;let d='';for(let i=0;i<=240;i++){const t=i/240*2*Math.PI;const r=R*(1+a*Math.cos(n*t))/(1+a);const g=t-Math.PI/2+rot;d+=(i?'L':'M')+(R+r*Math.cos(g)).toFixed(2)+' '+(R+r*Math.sin(g)).toFixed(2)}
+ return `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" aria-hidden="true"><path d="${d}Z" fill="${fill}"/></svg>`}
 const mark=()=>`<svg viewBox="14 14 76 76" aria-hidden="true"><path d="M46 84V42c0-14 8-22 21-22" fill="none" stroke="var(--mk1)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 48l19 13 30-27" fill="none" stroke="var(--mk2)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
 /* ---------- the switches (app_en.arb; the two activity switches proposed) ---------- */
 const SW={
  romanisation:['Latin-letter readings','A Latin-letter reading under words in other scripts','Only the script, no reading',true],
  adult:['Adult content (18+)','Rude words and offensive cards are shown','Rude words stay hidden behind their warnings',false],
- recognition:['Seen words','See the word, recall its meaning','No see-the-word questions',true],
  production:['Written words','See the meaning, write the word','No written answers',true],
- listening:['Heard words','Hear the word, give its meaning','No listening questions',true],
+ listening:['Heard words','Hear the word, give its meaning','No listening questions. Words still play when you tap a speaker',true,'new'],
  speaking:['Spoken words','Say the word, your phone listens','No speaking questions. Switching on asks for the microphone',false],
- grammar:['Grammar','Understand a form of a word, and use the right one','No grammar questions',true],
  reading:['Reading','Read a short passage, answer questions','No passages',true],
- matching:['Matching pairs','Match words to their meanings, a few at a time','No matching: each word is asked on its own',true,'new'],
- choosing:['Choosing answers','Pick the answer from a few choices','No choices: you write or say every answer',true,'new'],
- pair:['Phonemic contrasts','Practise the sounds the languages you know don’t have','No practice with sounds your languages lack',false,'inc'],
  autoAdjust:['Adjust automatically','Adjusts by itself when a skill has 10% more answers','Only when you tap Adjust',true],
- sound:['Sound','Words are spoken; listening questions are asked','Nothing is spoken; listening questions are skipped',true],
  autoplay:['Play words automatically','Words play by themselves, as a card shows or once you answer','Words play only when you tap the speaker',true],
  pin:['PIN lock','This profile asks for its PIN when it opens','This profile opens without a PIN',false,'inc'],
  review:['Review decks','Check cards, then send your suggestions by mail','No reviewing on this phone. Switching on asks first',true],
  autoUpdate:['Check automatically','Checks GitHub once a day, when the app opens','Only when you tap Check for updates',false],
  reminder:['Daily reminder',`A reminder at ${ME.time} on days with cards due`,'No reminders',true],
- quiet:['Quiet hours',`Nothing from ${ME.quiet[0]} to ${ME.quiet[1]}; a late reminder waits`,'A late reminder can come at any hour',true,'new'],
 };
 const S=(k,extra={})=>{const [title,on,off,value,kind]=SW[k];return tog({title,on,off,value,inc:kind==='inc',chg:kind==='new',...extra})};
 const isOn=(k)=>SW[k][4]==='inc'?false:(FLIP?!SW[k][3]:SW[k][3]);
@@ -396,20 +438,20 @@ function settingsBody(o={}){
   tile({icon:'abc',filled:true,title:'Alphabets',sub:'Learning every alphabet',trail:chev()}),
   tile({icon:'menu_book',title:'Sources',sub:`${ME.sources} sources`,trail:chev(),chg:true,attrs:' data-k="sources"'}),
  ]);
- const listeningOn=isOn('listening');
+ const listeningOn=isOn('listening'),speakingOn=isOn('speaking');
+ const pauseLang=()=>[tile({icon:'timer',title:'Pause for an hour'}),tile({icon:'translate',filled:true,title:'Languages',sub:'On for every language',trail:chev()})];
  const activities=sect('s-activities','Activities','Activities',[
-  S('recognition'),S('production'),S('listening'),
-  ...(listeningOn?[tile({icon:'timer',title:'Pause for an hour'}),tile({icon:'translate',filled:true,title:'Languages',sub:'On for every language',trail:chev()})]:[]),
-  S('speaking'),S('grammar'),S('reading'),S('matching'),S('choosing'),S('pair'),
- ],{chg:true});
+  S('production'),S('listening'),
+  ...(listeningOn?pauseLang():[]),
+  // from the old Sound section: they govern every word the app says, so they stay whatever Heard words is set to
+  tog({title:'Play words automatically',on:SW.autoplay[1],off:SW.autoplay[2],value:SW.autoplay[3],chg:true,attrs:''}).replace('row lf','row lf'),
+  `<div class="row lf sl tall chg"><div class="head"><span class="tM">Speech rate</span><span class="bL val one">1.0×</span></div><div class="track" role="img" aria-label="Speech rate 1.0×"><span class="in"></span><span class="act" style="width:40%"></span><span class="th" style="left:40%"></span></div></div>`,
+  tile({title:'Voices',sub:`${ME.voiced} of ${ME.languages} languages have a voice`,trail:chev(),chg:true}),
+  S('speaking'),
+  ...(speakingOn?pauseLang():[]),
+  S('reading'),
+ ],{chg:true,after:hlp('Seen words, grammar, matching pairs, choosing answers and phonemic contrasts are always asked, so a lesson always has questions.','check_circle').replace('hlp lf','hlp lf chg')});
  const adjust=`<div class="sect" id="s-adjust" data-name="Adjust to me"><div class="grp">${tile({icon:'tune',filled:true,title:'Adjust to me',sub:`Last adjusted ${ME.adjusted}`,trail:`<span class="ftonal" data-tap><span class="one">Adjust</span></span>`,tap:false,cls:'wrapbtn',chg:!!o.x2})}${S('autoAdjust',{icon:'autorenew',filled:true})}</div>${hlp('Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.','lock')}</div>`;
- const soundOn=isOn('sound');
- const sound=sect('s-sound','Sound','Sound',[
-  S('sound'),
-  tog({title:'Play words automatically',on:soundOn?SW.autoplay[1]:'Nothing plays while sound is off; then words play by themselves',off:soundOn?SW.autoplay[2]:'Nothing plays while sound is off; then only when you tap the speaker',value:SW.autoplay[3]}),
-  `<div class="row lf sl tall"><div class="head"><span class="tM">Speech rate</span><span class="bL val one">1.0×</span></div><div class="track" role="img" aria-label="Speech rate 1.0×"><span class="in"></span><span class="act" style="width:40%"></span><span class="th" style="left:40%"></span></div></div>`,
-  tile({title:'Voices',sub:`${ME.voiced} of ${ME.languages} languages have a voice`,trail:chev()}),
- ]);
  const look=sect('s-look','Look and language','Look and language',[
   tile({icon:'palette',title:'Appearance',sub:'System · Clay',trail:chev()}),
   tile({icon:'translate',filled:true,title:'App language',inc:true,cls:'pad12',trail:`<span class="dd bL"><span class="one">English (eng)</span>${ic('arrow_drop_down')}</span>`}),
@@ -419,11 +461,9 @@ function settingsBody(o={}){
   :tile({icon:'notifications',title:'Reminders',sub:'No reminders',trail:chev(),inc:true,chg:true,attrs:' data-k="reminders"'});
  const reminder=sect('s-reminder','Reminder and privacy','Reminder and privacy',[remRow,S('pin',{icon:'lock'})]);
  const data=sect('s-data','Your data','Your data',[
-  tile({icon:'settings_backup_restore',filled:true,title:'Backup and restore',sub:`Last backup ${AUTO[0][1]}, before updating to ${AUTO[0][0]}`,trail:chev(),cls:'tall',chg:true,attrs:' data-k="backup"'}),
+  tile({icon:'settings_backup_restore',filled:true,title:'Backup and restore',sub:`Last backup ${RECENT[0][2]}, made by you`,trail:chev(),cls:'tall',chg:true,attrs:' data-k="backup"'}),
   tile({icon:'file_download',title:'Export review log',sub:`${ME.reviews.toLocaleString('en')} reviews · JSONL file`,cls:'tall',attrs:' data-k="export"'}),
   tile({icon:'file_upload',title:'Import review log',sub:'Merges with this profile’s history',cls:'tall',attrs:' data-k="import"'}),
-  tile({icon:'cloud_upload',title:'Back up to the cloud',sub:'Dropbox, Box, Google Drive, OneDrive, Nextcloud',inc:true,cls:'tall',chg:true,attrs:' data-k="cloud"'}),
-  tile({icon:'delete',title:'Delete this profile',inc:true,err:true,cls:'tall',attrs:' data-k="delete"'}),
  ],{chg:true,after:hlp('Your progress stays on this phone. Back it up to keep a copy anywhere else.').replace('hlp lf','hlp lf chg')});
  const reviewOn=isOn('review');
  const review=sect('s-review','Reviewing','Reviewing',[
@@ -431,7 +471,7 @@ function settingsBody(o={}){
   ...(reviewOn?[
    tile({icon:'key',title:'Your rater code',sub:`<span class="one">${ME.rater}</span>`,tap:false,trail:`<span class="ibtn" data-tap style="margin:-12px -12px -12px 0">${ic('content_copy','mo')}</span>`}),
    tile({icon:'translate',title:'Languages you review',sub:ME.reviewPairs,trail:chev()}),
-   tile({icon:'pending_actions',title:'Waiting for review',sub:`${ME.waiting} decks wait for a native speaker`,trail:chev()}),
+   tile({icon:'pending_actions',title:'Waiting for review',sub:ME.waiting,trail:chev()}),
   ]:[]),
   tile({icon:'info',title:'How reviewing works',trail:chev()}),
  ]);
@@ -450,40 +490,81 @@ function settingsBody(o={}){
   tile({icon:'new_releases',title:'What’s new',sub:'Release notes for each version. Opening them asks GitHub.',trail:chev()}),
  ]);
  const foot=`<div class="sect" id="s-footer" data-name="Footer"><div class="foot lf">${mark()}<span class="hs">Fluenough ${APP} · Free software, GPL-3.0 · Works offline once decks are downloaded</span></div></div>`;
- return `<div class="tabh lf"><span class="hL" role="heading">Settings</span><span class="ibtn rep" data-tap>${ic('bug_report','mo')}</span></div><div class="body">${profile}${learning}${activities}${adjust}${sound}${look}${reminder}${data}${review}${advanced}${logs}${updates}${foot}</div>`;
+ return `<div class="tabh lf"><span class="hL" role="heading">Settings</span><span class="ibtn rep" data-tap>${ic('bug_report','mo')}</span></div><div class="body">${profile}${learning}${activities}${adjust}${look}${reminder}${data}${review}${advanced}${logs}${updates}${foot}</div>`;
 }
 /* pos: {off:px} | {skip:selector} | {end:true} | {} for the top */
 function settingsPhone(o={}){
  const pos=o.end?' data-pos="end"':o.off!=null?` data-off="${o.off}"`:o.skip?` data-skip="${o.skip}"`:'';
- return `<div class="ph set${o.x2?' x2':''}" data-screen="settings"${o.group?` data-group="${o.group}"`:''}>${stat()}<div class="scroll"${pos}><div class="clip"><div class="content">${settingsBody(o)}</div></div></div>${navb()}${nav3(true)}</div>`;
+ return `<div class="ph set${o.x2?' x2':''}" data-screen="settings"${o.group?` data-group="${o.group}"`:''}>${stat()}<div class="scroll"${pos}><div class="clip"><div class="content">${settingsBody(o)}</div></div></div>${navb()}${nav3(true)}${o.overlay||''}</div>`;
 }
 
 /* ---------- Backup and restore ---------- */
-function backupBody(){
- const auto=AUTO.map(([v,d,n])=>tile({title:autoLine(v,d),sub:`${n.toLocaleString('en')} reviews`,tap:false,cls:'wrapbtn',
-  trail:`<span class="tbtn lL" data-tap><span class="one">Restore</span></span>`,attrs:` data-auto="${v}|${d}"`}).replace('class="trl"','class="trl" style="margin:-12px 0"'));
+/* one backup, in the phone's list or the cloud's: its name says how and when it was made; then its actions */
+function backupRow([k,v,d,n],{cloud=false,connected=true}={}){
+ const inCloud=!cloud&&connected&&IN_CLOUD.has(`${k}|${v}|${d}`);
+ const act=(icon,label,name)=>`<span class="act lL" data-tap data-act="${name}" role="button" aria-label="${label}" title="${label}">${ic(icon,'mo')}<span>${label}</span></span>`;
+ const mid=cloud?'':inCloud?`<span class="act st lL" data-act="incloud" aria-label="In the cloud" title="In the cloud">${ic('cloud_done','mo')}<span>In the cloud</span></span>`:act('cloud_upload','Send to cloud','send');
+ return `<div class="row lf bk" data-recent="${k}|${v}|${d}"${cloud?' data-incloudlist':''}><div class="tM">${recentLine(k,v,d)}</div><div class="bM v">${n.toLocaleString('en')} reviews</div><div class="acts3${cloud?' two':''}">${act('download','Download','download')}${mid}${act('settings_backup_restore','Restore','restore')}</div></div>`;
+}
+function backupBody(o={}){
+ const connected=o.connected!==false;
+ const cloud=connected
+  ?`${tile({icon:'cloud_done',title:CLOUD.service,sub:`Connected · folder “${CLOUD.folder}”`,trail:chev()})}${tile({icon:'cloud',title:'Cloud backups',sub:`${CLOUD_LIST.length} in ${CLOUD.service} · last sent ${CLOUD_LIST[0][2]}`,trail:chev(),attrs:' data-k="cloudlist"'})}`
+  :tile({icon:'cloud_off',title:'Connect a cloud',sub:'Dropbox, Box, Google Drive, OneDrive or Nextcloud. Set up once',trail:chev(),attrs:' data-k="connect"'});
  return `<div class="intro"><div class="bL v lf">One file holds your progress, your settings, your rater code and the languages you downloaded. Their decks download again after a restore.</div></div>
- <div class="grp cnt">${tile({icon:'backup',title:'Back up now',sub:'Saves one file, where you choose',trail:chev(),chg:true})}${tile({icon:'restore_page',title:'Restore from a file',sub:'Shows what is in it before anything changes',trail:chev(),chg:true})}</div>
- <div class="lbl lf" role="heading">Made before app updates</div>
- <div class="grp cnt chg" data-autolist>${auto.join('')}</div>
- <div class="note lf">${ic('info','mo')}<span class="bM">Made on this phone as each app update downloads. The last three are kept.</span></div>
- <div class="note lf">${ic('lock','mo')}<span class="bM">A backup holds your whole learning history and your rater code. It leaves this phone only if you share it.</span></div>`;
+ <div class="grp cnt">${tile({icon:'backup',title:'Back up now',sub:'Saves one file, where you choose, and keeps a copy here',trail:chev(),chg:true})}${tile({icon:'restore_page',title:'Restore from a file',sub:'Shows what is in it before anything changes',trail:chev(),chg:true})}</div>
+ <div class="lbl lf" id="lbl-cloud" role="heading">Cloud</div>
+ <div class="grp cnt chg" data-cloud="${connected}">${cloud}</div>
+ <div class="lbl lf" id="lbl-recent" role="heading">Recent backups</div>
+ <div class="grp cnt chg" data-recentlist>${RECENT.slice(0,KEEP).map(r=>backupRow(r,{connected})).join('')}</div>
+ <div class="note lf">${ic('info','mo')}<span class="bM">The last five are kept on this phone, whatever made them: you, an app update, or a restore. Download saves a copy in your phone's Downloads; Send to cloud copies it to ${connected?CLOUD.service:'the cloud you connect'}.</span></div>
+ <div class="note lf">${ic('lock','mo')}<span class="bM">A backup holds your whole learning history and your rater code. It leaves this phone only if you share it or send it to the cloud you chose.</span></div>`;
+}
+function cloudBody(){
+ return `<div class="intro"><div class="bL v lf">Every backup in ${CLOUD.service}, folder “${CLOUD.folder}”, newest first. Restore fetches it to the phone, then shows what is in it before anything changes.</div></div>
+ <div class="grp cnt chg" data-cloudlist>${CLOUD_LIST.map(r=>backupRow(r,{cloud:true})).join('')}</div>
+ <div class="note lf">${ic('info','mo')}<span class="bM">Kept until you delete them in ${CLOUD.service}. Download saves a copy in your phone's Downloads.</span></div>`;
 }
 function pagePhone(title,body,o={}){
  const pos=o.end?' data-pos="end"':o.skip?` data-skip="${o.skip}"`:'';
  return `<div class="ph page${o.x2?' x2':''}" data-screen="${o.screen}">${stat()}${appBar(title)}<div class="scroll"${o.sheet?'':pos}><div class="clip"><div class="content">${body}</div></div></div>${nav3(false)}${o.overlay||''}</div>`;
 }
-const backupPhone=(o={})=>pagePhone('Backup and restore',backupBody(),{...o,screen:'backup'});
+const backupPhone=(o={})=>pagePhone('Backup and restore',backupBody(o),{...o,screen:'backup'});
+/* "Who's practising?": the design's Profiles screen, opened by Switch (and, from 0.6.0, a tap on the card) */
+function whoBody(){
+ const cell=(av,name,sub)=>`<div class="pcell lf" data-tap>${av}<div class="tM">${name}</div><div class="bM v">${sub}</div></div>`;
+ return `<div class="who"><div class="brand lf">${mark()}<span class="sT">fluenough</span></div><div class="hL lf" role="heading">Who’s practising?</div></div>
+ <div class="pgrid">${cell(`<span class="pav">${shape('cookie',112,'var(--pc)')}${ic('person')}</span>`,'You',ME.learn)}${cell(`<span class="addp">${ic('person_add','mo')}</span>`,'Add profile','')}</div>
+ <div class="foot2 lf">${ic('cloud_off','mo')}<span class="bM">Profiles stay on this phone. Nothing is uploaded.</span></div>`;
+}
+/* Your profile: the design's New profile screen for the profile in use, with Delete this profile at its foot */
+function profileBody(){
+ const shapes=['cookie','clover','flower','sunny'].map((n,i)=>`<span class="shp${i===0?' on':''}" data-tap role="radio" aria-checked="${i===0}" aria-label="${n}">${shape(n,56,['var(--pc)','var(--sc)','var(--tc)','var(--pc)'][i])}</span>`).join('');
+ return `<div class="lbl lf" role="heading">Pick a shape</div><div class="shapes lf">${shapes}</div>
+ <div class="lbl lf" role="heading">Name</div><div class="field lf" data-tap><span class="bL v">Add a name</span></div>
+ <div class="hlp lf" style="padding:8px 32px 0"><span class="hs">Your languages are in Settings, under Learning.</span></div>
+ <div class="lbl lf" role="heading">Lock</div><div class="card">${S('pin',{icon:'lock',inc:false})}</div>
+ <div class="lbl lf" role="heading">This profile</div><div class="grp cnt" data-profilepage>${tile({icon:'delete',title:'Delete this profile',sub:'Deletes its review log for good. Back it up first',inc:true,err:true,chg:true,attrs:' data-k="delete"'})}</div>
+ <div style="padding:24px 16px 0"><span class="filled lf" data-tap style="display:flex"><span class="one">Save</span></span></div>`;
+}
+const whoPhone=(o={})=>`<div class="ph page${o.x2?' x2':''}" data-screen="who">${stat()}<div class="scroll"><div class="clip"><div class="content">${whoBody()}</div></div></div>${nav3(false)}</div>`;
+const profilePhone=(o={})=>pagePhone('Your profile',profileBody(),{...o,screen:'profile'});
+const cloudPhone=(o={})=>pagePhone('Cloud backups',cloudBody(),{...o,screen:'cloud'});
 function sheetHtml(kind,o={}){
  const pos=o.end?' data-pos="end"':'';
  let body;
  if(kind==='restore'){
-  const [v,d,n]=AUTO[0];
+  const [k,v,d,n]=o.from==='cloud'?CLOUD_LIST[1]:RECENT[1];
   const f=(icon,label,value)=>`<div class="f lf">${ic(icon,'mo')}<div><div class="bM v">${label}</div><div class="bL">${value}</div></div></div>`;
-  body=`<div class="tL lf" role="heading">Restore this backup?</div><div class="bM v sub lf">Made before updating to ${v}</div>
-  <div class="facts">${f('event','Made',`${d}, 2026, 6:40 PM`)}${f('phone_android','By','Fluenough 0.5.2')}${f('history','Progress',`${n.toLocaleString('en')} reviews in ${ME.learn}`)}${f('tune','Also','Your settings, the languages you know, and your rater code')}${f('download','Then downloads',`${ME.learn} and Hindi decks, 38 MB`)}</div>
-  <div class="warn lf">${ic('warning_amber','mo')}<span class="bM">Your progress and settings on this phone are replaced. Back up now first if you might want them back.</span></div>
+  body=`<div class="tL lf" role="heading">Restore this backup?</div><div class="bM v sub lf">${o.from==='cloud'?`From ${CLOUD.service}, fetched to this phone · `:''}${recentLine(k,v,d)}</div>
+  <div class="facts">${f('event','Made',`${d}, 2026, 6:40 PM`)}${f('phone_android','By',o.from==='cloud'?'Fluenough 0.5.3':'Fluenough 0.5.2')}${f('history','Progress',`${n.toLocaleString('en')} reviews in ${ME.learnAnd}`)}${f('tune','Also','Your settings, the languages you know, and your rater code')}<div class="chg" data-notrestored>${f('download','Not restored, will be downloaded',`${ME.learnAnd} decks, 38 MB`)}</div></div>
+  <div class="warn lf">${ic('warning_amber','mo')}<span class="bM">Your progress and settings on this phone are replaced. A copy of them is kept first, in Recent backups.</span></div>
   <div class="acts"><span class="tbtn lL lf" data-tap><span class="one">Cancel</span></span><span class="filled lf" data-tap data-confirm><span class="one">Replace and restore</span></span></div>`;
+ }else if(kind==='cloud'){
+  const svc=['Dropbox','Box','Google Drive','OneDrive','Nextcloud'];
+  body=`<div class="tL lf" role="heading">Connect a cloud</div><div class="bM v sub lf">Set up once. The service signs you in on its own page. Backups go to a folder Fluenough makes, “${CLOUD.folder}”, and Fluenough reads nothing else.</div>
+  <div class="facts" data-services>${svc.map(n=>`<div class="f lf" data-tap role="radio" aria-checked="${n==='Google Drive'}">${ic(n==='Google Drive'?'radio_button_checked':'radio_button_unchecked',' ')}<div><div class="bL">${n}</div></div></div>`).join('')}</div>
+  <div class="acts"><span class="tbtn lL lf" data-tap><span class="one">Cancel</span></span><span class="filled lf" data-tap><span class="one">Connect</span></span></div>`;
  }else{
   body=`<div class="tL lf" role="heading">This backup is from a newer Fluenough</div>
   <div class="bL v sub lf">It was made by Fluenough 0.7.0, and this is ${APP}. Update the app, then restore it. Nothing has changed.</div>
@@ -506,11 +587,12 @@ function remindersBody(st){
    +(on?tile({icon:'schedule',title:'Reminder time',cls:'wrapbtn',trail:`<span class="bL time one">${ME.time}</span>`}):'');
  }
  const live=st==='on';
+ const due=ME.due.map(([l,n])=>`${l}: ${n} due`).join(' · ');
+ const preview=`<div class="notif lf chg" role="img" aria-label="The reminder as Android shows it"><div class="nh">${mark()}<span class="bM v">Fluenough · ${ME.time}</span></div><div class="tM">Cards due today</div><div class="bM">${due}</div></div>`;
  const rest=live?`<div class="lbl lf" id="lbl-says" role="heading">What it says</div>
- <div class="grp cnt chg">${kind(true,'Cards due',`“12 ${ME.learn} cards due”`)}${kind(false,'Today’s fact',`A fact about ${ME.learn}, then the cards due`)}</div>
- <div class="lbl lf" id="lbl-quiet" role="heading">Quiet hours</div>
- <div class="grp cnt chg">${S('quiet',{icon:'bedtime',chg:false})}${tile({icon:'dark_mode',title:'From',cls:'wrapbtn',trail:`<span class="bL time one">${ME.quiet[0]}</span>`})}${tile({icon:'wb_sunny',title:'Until',cls:'wrapbtn',trail:`<span class="bL time one">${ME.quiet[1]}</span>`})}</div>`:'';
- return `<div class="intro"><div class="bL v lf">One reminder a day, only on days with cards due, only for the profile in use, and never while Fluenough is open. Tapping it opens Today.</div></div>
+ <div class="grp cnt chg">${kind(true,'Cards due',`One line for each language with cards due, like “${ME.due[0][0]}: ${ME.due[0][1]} due”`)}${kind(false,'Today’s fact',`A fact for each language with cards due, in ${ME.know}, then the cards due`)}${tile({icon:'translate',filled:true,title:'Languages',sub:ME.learn,trail:chev(),chg:true})}</div>
+ <div class="lbl lf" id="lbl-preview" role="heading">On your phone</div>${preview}`:'';
+ return `<div class="intro"><div class="bL v lf">One reminder a day, at the time you set, only on days with cards due in your languages, only for the profile in use, and never while Fluenough is open. Tapping it opens Today.</div></div>
  <div class="grp cnt">${first}</div>${rest}`;
 }
 const remindersPhone=(st,o={})=>pagePhone('Reminders',remindersBody(st),{...o,screen:'reminders'});
@@ -521,23 +603,34 @@ let TAB_PAGES=[];   // scroll offsets, worked out from the page's own layout (pa
 let X2_FRAMES=[];
 const BACKUP_FRAMES=[
  ['Settings, scrolled to Your data: the merged section',()=>settingsPhone({skip:'#s-data'})],
- ['Backup and restore',()=>backupPhone()],
+ ['Switch: Who’s practising? (design screen “Profiles”)',()=>whoPhone()],
+ ['Your profile, with Delete this profile (design screen “New profile”)',()=>profilePhone()],
+ ['2x text: Your profile, from Lock',()=>profilePhone({x2:true,skip:'.card'})],
+ ['Backup and restore, no cloud connected yet',()=>backupPhone({connected:false})],
+ ['Connect a cloud: set up once',()=>backupPhone({connected:false,sheet:true,overlay:sheetHtml('cloud')})],
+ ['Connected: Cloud and Recent backups, one already in the cloud',()=>backupPhone({skip:'#lbl-cloud'})],
+ ['Recent backups, the rest',()=>backupPhone({skip:'[data-recent^=restore]'})],
  ['Restore tapped: the sheet',()=>backupPhone({sheet:true,overlay:sheetHtml('restore')})],
+ ['Cloud backups: all seven in Google Drive',()=>cloudPhone()],
+ ['Cloud backups, the rest',()=>cloudPhone({end:true})],
+ ['Restore from the cloud: fetched, then the sheet',()=>cloudPhone({sheet:true,overlay:sheetHtml('restore',{from:'cloud'})})],
  ['A file from a newer Fluenough',()=>backupPhone({sheet:true,overlay:sheetHtml('newer')})],
- ['2x text: the top',()=>backupPhone({x2:true})],
- ['2x text: made before app updates',()=>backupPhone({x2:true,skip:'.lbl'})],
+ ['2x text: Cloud',()=>backupPhone({x2:true,skip:'#lbl-cloud'})],
+ ['2x text: recent backups',()=>backupPhone({x2:true,skip:'#lbl-recent'})],
+ ['2x text: a backup already in the cloud',()=>backupPhone({x2:true,skip:'[data-recent^=you]'})],
+ ['2x text: Cloud backups',()=>cloudPhone({x2:true,skip:'[data-cloudlist]'})],
  ['2x text: the sheet, its top',()=>backupPhone({x2:true,sheet:true,overlay:sheetHtml('restore')})],
  ['2x text: the sheet, at its end',()=>backupPhone({x2:true,sheet:true,overlay:sheetHtml('restore',{end:true})})],
 ];
 const REM_FRAMES=[
  ['Settings from 0.6.0: Reminders live',()=>settingsPhone({reminderLive:true,skip:'#s-reminder'})],
  ['Reminders, on',()=>remindersPhone('on')],
- ['Reminders, on: scrolled to quiet hours',()=>remindersPhone('on',{skip:'#lbl-quiet'})],
+ ['Reminders, on: scrolled to what it says',()=>remindersPhone('on',{skip:'#lbl-says'})],
  ['Turned on: Android asks',()=>remindersPhone('off',{overlay:permDialog(),sheet:true})],
  ['Don’t allow: it stays off',()=>remindersPhone('refused')],
  ['2x text: the switch and its time',()=>remindersPhone('on',{x2:true,skip:'.grp'})],
  ['2x text: what it says',()=>remindersPhone('on',{x2:true,skip:'#lbl-says'})],
- ['2x text: quiet hours',()=>remindersPhone('on',{x2:true,skip:'#lbl-quiet'})],
+ ['2x text: on your phone',()=>remindersPhone('on',{x2:true,end:true})],
 ];
 
 /* ---------- theme ---------- */
@@ -598,9 +691,8 @@ function render(){
 }
 function tables(){
  document.getElementById('order-rows').innerHTML=ORDER_TABLE.map((r,i)=>`<tr><th>${i+1}</th><td data-h="Today">${r[0]}</td><td data-h="After">${r[1]}</td><td data-h="Why">${r[2]}</td></tr>`).join('');
- const where={romanisation:'Learning',adult:'Learning',recognition:'Activities',production:'Activities',listening:'Activities',speaking:'Activities',grammar:'Activities',reading:'Activities',matching:'Activities',choosing:'Activities',pair:'Activities',autoAdjust:'Adjust to me',sound:'Sound',autoplay:'Sound',pin:'Reminder and privacy',review:'Reviewing',autoUpdate:'Updates',reminder:'Reminders page',quiet:'Reminders page'};
- document.getElementById('switch-rows').innerHTML=Object.keys(where).map(k=>{const [t,on,off,,kind]=SW[k];return `<tr><td data-h="Section">${where[k]}</td><th>${t}${kind==='new'?' <span class="prop">Proposed</span>':kind==='inc'?' (incoming)':''}</th><td data-h="On">${on}</td><td data-h="Off">${off}</td></tr>`}).join('')
-  +`<tr><td data-h="Section">Sound</td><th>Play words automatically, while Sound is off</th><td data-h="On">Nothing plays while sound is off; then words play by themselves</td><td data-h="Off">Nothing plays while sound is off; then only when you tap the speaker</td></tr>`;
+ const where={romanisation:'Learning',adult:'Learning',production:'Activities',listening:'Activities',autoplay:'Activities, under Heard words',speaking:'Activities',reading:'Activities',autoAdjust:'Adjust to me',pin:'Reminder and privacy',review:'Reviewing',autoUpdate:'Updates',reminder:'Reminders page'};
+ document.getElementById('switch-rows').innerHTML=Object.keys(where).map(k=>{const [t,on,off,,kind]=SW[k];return `<tr><td data-h="Section">${where[k]}</td><th>${t}${kind==='new'?' <span class="prop">Proposed</span>':kind==='inc'?' (incoming)':''}</th><td data-h="On">${on}</td><td data-h="Off">${off}</td></tr>`}).join('');
 }
 
 /* GroupedTile's rule: the badge beside the text when it takes at most 40% of the room the text and badge share, else under it.
@@ -679,21 +771,37 @@ function structureProblems(){
   if(inSect('sources')!=='Learning')bad.push(`${tag}: Sources is not in Learning (#469)`);
   if(ph.querySelector('#s-logs').textContent.includes('Sources'))bad.push(`${tag}: Sources still in Logs`);
   const data=[...ph.querySelectorAll('#s-data [data-k]')].map(e=>e.dataset.k).join(',');
-  if(data!=='backup,export,import,cloud,delete')bad.push(`${tag}: Your data holds ${data}`);
+  if(data!=='backup,export,import')bad.push(`${tag}: Your data holds ${data}`);
   if([...ph.querySelectorAll('.glab')].some(g=>/cloud/i.test(g.textContent)))bad.push(`${tag}: a separate cloud section remains (#473)`);
   if(inSect('adddeck')!=='Advanced')bad.push(`${tag}: Add deck is not in Advanced (#475)`);
   if(inSect('reminders')!=='Reminder and privacy')bad.push(`${tag}: Reminders not in Reminder and privacy (#90)`);
-  const acts=[...ph.querySelectorAll('#s-activities .tog .tM')].map(e=>e.textContent);
-  for(const t of ['Seen words','Written words','Heard words','Spoken words','Grammar','Reading','Matching pairs','Choosing answers','Phonemic contrasts'])if(!acts.includes(t))bad.push(`${tag}: no switch for ${t} (#243)`);
+  const acts=[...ph.querySelectorAll('#s-activities .tog .tM')].map(e=>e.textContent).filter(t=>t!=='Play words automatically');
+  if(acts.join('|')!==ACTIVITY_SWITCHES.join('|'))bad.push(`${tag}: activity switches are ${acts.join(', ')}`);
+  for(const t of ALWAYS)if([...ph.querySelectorAll('.tog .tM')].some(e=>e.textContent===t))bad.push(`${tag}: ${t} still has a switch`);
+  if(!ph.querySelector('#s-activities .hlp')?.textContent.includes('always asked'))bad.push(`${tag}: no line saying which activities are always asked`);
+  if(ph.querySelector('[data-name="Sound"]'))bad.push(`${tag}: a Sound section remains`);
+  for(const t of ['Play words automatically','Speech rate','Voices'])if(![...ph.querySelectorAll('#s-activities .tM')].some(e=>e.textContent===t))bad.push(`${tag}: ${t} not under Activities`);
  });
  document.querySelectorAll('[data-toggle]').forEach(el=>{const ph=el.closest('.ph');
   if(el.dataset.on===el.dataset.off)bad.push(`${tagOf(ph)}: “${el.querySelector('.tM').textContent}” has one line for both states`);
   const shown=el.querySelector('.tx .bM')?.textContent;const want=el.dataset.value==='true'?el.dataset.on:el.dataset.off;
   if(shown!==want.replace(/&amp;/g,'&').replace(/&quot;/g,'"'))bad.push(`${tagOf(ph)}: “${el.querySelector('.tM').textContent}” shows the line for the other state`)});
- document.querySelectorAll('[data-autolist]').forEach(l=>{const rows=[...l.querySelectorAll('[data-auto]')];
-  if(rows.length>3)bad.push('more than three automatic backups listed');
-  rows.forEach(r=>{const [v,d]=r.dataset.auto.split('|');if(r.querySelector('.tM').textContent!==autoLine(v,d))bad.push(`automatic backup not named “Before updating to {version}, {date}”`);
-   if(!r.querySelector('[data-tap]')||r.querySelector('[data-tap]').textContent.trim()!=='Restore')bad.push('an automatic backup without Restore')})});
+ const acts=(r)=>[...r.querySelectorAll('.act')].map(a=>a.dataset.act).join(',');
+ document.querySelectorAll('[data-recentlist]').forEach(l=>{const rows=[...l.querySelectorAll('[data-recent]')];
+  if(rows.length!==KEEP)bad.push(`Recent backups lists ${rows.length}, not ${KEEP}`);
+  if(new Set(rows.map(r=>r.dataset.recent.split('|')[0])).size<4)bad.push('Recent backups does not show every kind');
+  rows.forEach(r=>{const [k,v,d]=r.dataset.recent.split('|');if(r.querySelector('.tM').textContent!==recentLine(k,v,d))bad.push('a backup not labelled with how and when it was made');
+   if(!/^download,(send|incloud),restore$/.test(acts(r)))bad.push(`a local backup's actions are ${acts(r)}`)});
+  if(l.closest('.ph').querySelector('[data-cloud=true]')&&!rows.some(r=>acts(r).includes('incloud')))bad.push('no local backup marked as in the cloud')});
+ document.querySelectorAll('[data-cloudlist]').forEach(l=>{const rows=[...l.querySelectorAll('[data-recent]')];
+  if(rows.length!==CLOUD_LIST.length||rows.length<=KEEP)bad.push('Cloud backups does not list them all');
+  rows.forEach(r=>{if(acts(r)!=='download,restore')bad.push(`a cloud backup's actions are ${acts(r)}`)})});
+ document.querySelectorAll('.ph[data-screen=settings]').forEach(ph=>{if(ph.querySelector('#s-data [data-k=delete]'))bad.push('Delete this profile still in Your data')});
+ document.querySelectorAll('[data-profilepage]').forEach(p=>{if(!p.querySelector('[data-k=delete].inc'))bad.push('profile page: no incoming Delete this profile')});
+ if(!document.querySelector('[data-profilepage]'))bad.push('no profile page drawn');
+ document.querySelectorAll('[data-notrestored]').forEach(e=>{if(!e.textContent.includes('Not restored, will be downloaded'))bad.push('restore sheet: decks line')});
+ document.querySelectorAll('.ph[data-screen=reminders]').forEach(ph=>{if(/quiet/i.test(ph.textContent))bad.push(`${tagOf(ph)}: quiet hours remain`);
+  const n=ph.querySelector('.notif');if(n&&!ME.due.every(([l])=>n.textContent.includes(l)))bad.push(`${tagOf(ph)}: the reminder does not name every language due`)});
  // top to bottom: every row and line of the tab is whole in at least one frame of section 2, and so is every changed part
  for(const th of ['dark','light']){const phones=[...document.querySelectorAll(`#fr-tab .fcol[data-th=${th}] .ph`)];if(!phones.length)continue;
   const n=phones[0].querySelectorAll('.content .lf').length;
@@ -780,7 +888,7 @@ function check(){
  const all=[...new Set([...T,...L,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. Plan: the ${ORDER.length - 2} sections are in the planned order in every Settings frame; Sources is in Learning and not in Logs (#469); Your data holds Backup and restore, export, import, cloud backup and delete, and no cloud section is left (#473, #470); Add deck is in Advanced (#475); Activities has a switch for each of the 9 activities (#243); Reminders sits in Reminder and privacy (#90); every switch shows the line for its state and no switch keeps one line in both, checked with every switch as set and again flipped; at most three automatic backups, each “Before updating to {version}, {date}” with Restore; every row and line of the tab, and every changed part, is whole in one of the ${TAB_PAGES.length} frames of section 2. Layout: ${frames} frames at 360 × 800 dp, both ways: nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
+  :`Self-check: 0 problems. Plan: the ${ORDER.length - 2} sections are in the planned order in every Settings frame; Sources is in Learning and not in Logs (#469); Your data holds only Backup and restore, export and import, with no cloud row and no Delete this profile, which is on the profile page; cloud backup is live on the Backup and restore page (#473, #470, owner); Add deck is in Advanced (#475); Activities has switches only for Written words, Heard words, Spoken words and Reading, says the rest are always asked, and holds the old Sound rows, with no Sound section left; Reminders sits in Reminder and privacy (#90); every switch shows the line for its state and no switch keeps one line in both, checked with every switch as set and again flipped; Recent backups lists five of four kinds, each named how and when it was made, each with Download, Send to cloud (or “In the cloud”, as one is) and Restore; Cloud backups lists all seven with Download and Restore only; Delete this profile is on the profile page, incoming; the restore sheet says the decks are not restored and will be downloaded; Reminders has no quiet hours and its preview names every language due; every row and line of the tab, and every changed part, is whole in one of the ${TAB_PAGES.length} frames of section 2. Layout: ${frames} frames at 360 × 800 dp, both ways: nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
  window.__check={problems:all,frames,pairs:C1.checked,pages:TAB_PAGES.length};
  if(marks)document.body.classList.add('marks');
  applyTheme(state());
