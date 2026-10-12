@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adjusted to You</title>
+<style>
+/* ---------- Page chrome (not the app) ---------- */
+:root{--page-bg:#ECEEEA;--page-fg:#1B1D1A;--page-muted:#4A504B;--page-card:#FFFFFF;--page-line:#C9CFC8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#101210;--page-fg:#E3E6E1;--page-muted:#A9B0AA;--page-card:#1A1D1A;--page-line:#343A34}}
+:root[data-theme="dark"]{--page-bg:#101210;--page-fg:#E3E6E1;--page-muted:#A9B0AA;--page-card:#1A1D1A;--page-line:#343A34}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Liberation Sans",Arial,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+.wrap{max-width:1200px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:26px;line-height:34px;margin:0 0 6px;font-weight:700}
+.lede{max-width:780px;color:var(--page-muted);margin:0 0 14px;font-size:15px}
+.toggles{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 28px;font-size:14px}
+.toggles label{display:flex;gap:8px;align-items:center;cursor:pointer;min-height:32px}
+.toggles input{width:18px;height:18px;margin:0}
+#check{font-size:13px;color:var(--page-muted);margin:0 0 24px}
+section.scr{margin:0 0 44px}
+section.scr h2{font-size:18px;line-height:24px;margin:0 0 14px}
+.frames{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fcap{font-size:12px;font-weight:600;color:var(--page-muted);letter-spacing:.03em}
+.what{margin:12px 0 0;font-size:14px;color:var(--page-muted);max-width:780px}
+
+/* ---------- App tokens: Forest, seed #3F6C51, M3 tonal spot (ColorScheme.fromSeed) ---------- */
+.light{--primary:#296A48;--onPrimary:#FFFFFF;--pc:#AEF2C6;--onPc:#085231;
+ --secondary:#4E6355;--sc:#D1E8D6;--onSc:#374B3E;--tertiary:#3B6471;--tc:#BFE9F8;--onTc:#224C58;
+ --surface:#F6FBF4;--onSurface:#171D19;--onSv:#404942;--outline:#717972;--ov:#C0C9C0;
+ --sLowest:#FFFFFF;--sLow:#F0F5EE;--sCont:#EAEFE8;--sHigh:#E4EAE3;--sHighest:#DFE4DD;
+ --scrim:rgba(0,0,0,.32);
+ --recC:#D6E3FF;--recOn:#001B3E;--wriC:#FFDCC2;--wriOn:#2E1500;--hearC:#EADDFF;--hearOn:#21005D;--sayC:#BDF0B3;--sayOn:#002203}
+.dark{--primary:#92D5AB;--onPrimary:#003920;--pc:#085231;--onPc:#AEF2C6;
+ --secondary:#B5CCBA;--sc:#374B3E;--onSc:#D1E8D6;--tertiary:#A3CDDC;--tc:#224C58;--onTc:#BFE9F8;
+ --surface:#0F1511;--onSurface:#DFE4DD;--onSv:#C0C9C0;--outline:#8A938B;--ov:#404942;
+ --sLowest:#0A0F0C;--sLow:#171D19;--sCont:#1B211D;--sHigh:#262B27;--sHighest:#313632;
+ --scrim:rgba(0,0,0,.6);
+ --recC:#284777;--recOn:#D6E3FF;--wriC:#6E3900;--wriOn:#FFDCC2;--hearC:#4F378B;--hearOn:#EADDFF;--sayC:#255023;--sayOn:#BDF0B3}
+/* Pure black: surface, surfaceDim and surfaceContainerLowest go black; containers keep their tones. */
+body.black .dark{--surface:#000000;--sLowest:#000000}
+
+/* ---------- Phone ---------- */
+.phone{--ts:1;width:360px;height:780px;flex:none;border-radius:28px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--surface);color:var(--onSurface);font-family:Roboto,"Liberation Sans",Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line),0 8px 24px rgba(0,0,0,.12);
+ font-size:calc(var(--ts)*14px);line-height:calc(var(--ts)*20px)}
+.phone.ts13{--ts:1.3}
+@media (max-width:392px){.fcol{width:100%}.phone{transform:scale(.88);transform-origin:top left;margin:0 0 -94px}}
+.sbar{height:28px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font-size:12px;line-height:16px;font-weight:600}
+.sbar .ic{display:flex;gap:5px;align-items:center}
+.sbar .ic i{display:block;width:14px;height:9px;border-radius:2px;background:var(--onSurface);opacity:.85}
+.scroll{flex:1;min-height:0;overflow:hidden;position:relative}
+.nav{height:80px;flex:none;background:var(--sCont);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:12px}
+.nav div{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;line-height:16px;font-weight:600;color:var(--onSv);min-width:0}
+.nav .ind{width:64px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.nav .on{color:var(--onSurface)} .nav .on .ind{background:var(--sc);color:var(--onSc)}
+svg.i{width:24px;height:24px;fill:currentColor;flex:none;display:block}
+.s14{width:14px!important;height:14px!important}.s16{width:16px!important;height:16px!important}.s18{width:18px!important;height:18px!important}.s20{width:20px!important;height:20px!important}
+
+/* type scale, all multiplied by the text scale */
+.tBodyL{font-size:calc(var(--ts)*16px);line-height:calc(var(--ts)*24px)}
+.tBody{font-size:calc(var(--ts)*14px);line-height:calc(var(--ts)*20px)}
+.tSmall{font-size:calc(var(--ts)*12px);line-height:calc(var(--ts)*16px)}
+.tTitleM{font-size:calc(var(--ts)*16px);line-height:calc(var(--ts)*24px);font-weight:600}
+.tSection{font-size:calc(var(--ts)*18px);line-height:calc(var(--ts)*24px);font-weight:600}
+.tTitleL{font-size:calc(var(--ts)*22px);line-height:calc(var(--ts)*28px);font-weight:600}
+.tHeadS{font-size:calc(var(--ts)*24px);line-height:calc(var(--ts)*32px);font-weight:600}
+.tHeadL{font-size:calc(var(--ts)*32px);line-height:calc(var(--ts)*40px);font-weight:600}
+.tHero{font-size:calc(var(--ts)*72px);line-height:calc(var(--ts)*72px);font-weight:800;letter-spacing:-2px}
+.muted{color:var(--onSv)}
+.semi{font-weight:600}.bold{font-weight:700}
+
+/* ---------- Today ---------- */
+.hdr{min-height:72px;padding:0 16px 0 24px;display:flex;align-items:center;gap:12px}
+.hdr .t{flex:1;min-width:0}
+.av{width:44px;height:44px;border-radius:50%;background:var(--tc);color:var(--onTc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex:none}
+.col16{padding:8px 16px 24px;display:flex;flex-direction:column;gap:16px}
+.lesson{background:var(--sc);color:var(--onSc);border-radius:32px;padding:24px;display:flex;flex-direction:column;gap:4px}
+.lesson .sub{opacity:.8}
+.fbtn{min-height:64px;border-radius:32px;background:var(--primary);color:var(--onPrimary);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;padding:0 24px;font-size:calc(var(--ts)*18px);line-height:calc(var(--ts)*24px)}
+.lesson .fbtn{margin-top:12px}
+.due{background:var(--pc);color:var(--onPc);border-radius:32px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.count{display:flex;flex-wrap:wrap;align-items:last baseline;column-gap:12px;row-gap:4px}
+.count .lines{min-width:0}
+.count .l2{opacity:.8}
+.due .fbtn{margin-top:4px}
+
+/* the "Adjusted to you" strip: a 3-column grid so every line shares one text edge */
+.strip{display:grid;grid-template-columns:32px minmax(0,1fr) 24px;column-gap:12px;row-gap:6px;align-items:start;
+ border-radius:16px;padding:12px 8px 12px 12px;background:var(--sLowest);color:var(--onSurface)}
+.strip .dot{width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--onPrimary);display:flex;align-items:center;justify-content:center;grid-column:1;align-self:center}
+.strip .head{grid-column:2;align-self:center;min-width:0}
+.strip .chev{grid-column:3;align-self:center;color:var(--onSv)}
+.strip .ri{grid-column:1;justify-self:center;margin-top:calc((var(--ts)*20px - 18px)/2)}
+.strip .rt{grid-column:2 / 4;min-width:0}
+.strip .sm{grid-column:2 / 4;min-width:0;color:var(--onSv);text-wrap:balance}
+.strip .rt,.res .rt span{text-wrap:balance}
+.strip.fresh{background:var(--primary);color:var(--onPrimary)}
+.strip.fresh .dot{background:var(--onPrimary);color:var(--primary)}
+.strip.fresh .chev,.strip.fresh .sm{color:var(--onPrimary)}
+.strip.fresh .sm{opacity:.9}
+.strip .rule{grid-column:2 / 4;height:1px;background:currentColor;opacity:.25;margin:2px 0}
+
+/* skill tiles: 2 equal columns; each tile is a subgrid of 3 rows (pill+count, name, mark),
+   so the name and the mark line sit at the same height in both tiles of a row, and the mark
+   line is reserved even on a tile without a mark. */
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:8px;row-gap:8px}
+.tile{grid-row:span 3;display:grid;grid-template-rows:subgrid;row-gap:2px;min-width:0;
+ background:var(--sLowest);color:var(--onSurface);border-radius:16px;padding:10px 12px}
+.tile .top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0}
+.tile .n{font-weight:700;font-size:calc(var(--ts)*16px);line-height:calc(var(--ts)*24px);font-variant-numeric:tabular-nums}
+.tile .nm{font-weight:600;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.tile .mk{display:flex;align-items:center;gap:4px;min-height:calc(var(--ts)*16px);min-width:0;font-weight:600;color:var(--onSv)}
+.tile .mk span{min-width:0}
+/* at text scale >= 1.3 the mark shortens to the arrow plus one word; the full words stay in the strip and the semantics label */
+.tile .mk .short{display:none}
+.phone.ts13 .tile .mk .long{display:none}.phone.ts13 .tile .mk .short{display:inline}
+.tile.fresh{box-shadow:inset 0 0 0 2px var(--primary)}
+.tile.fresh .mk{color:var(--primary)}
+.pill{width:36px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none}
+.p-rec{background:var(--recC);color:var(--recOn)}.p-wri{background:var(--wriC);color:var(--wriOn)}
+.p-hear{background:var(--hearC);color:var(--hearOn)}.p-say{background:var(--sayC);color:var(--sayOn)}
+.streak{background:var(--sLow);border-radius:24px;padding:20px}
+.streak .h{display:flex;align-items:center;gap:8px}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:12px}
+.week span{height:32px;border-radius:16px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.week span.d{background:var(--primary);color:var(--onPrimary)}
+
+/* ---------- Progress ---------- */
+.tabh{padding:12px 24px 8px}
+.chips{display:flex;gap:8px;padding:0 16px 8px;flex-wrap:wrap}
+.chip{height:32px;padding:0 12px;border-radius:10px;border:1px solid var(--outline);display:flex;align-items:center;font-weight:600;color:var(--onSv)}
+.chip.sel{background:var(--sc);border-color:var(--sc);color:var(--onSc)}
+.stiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.stile{background:var(--sLow);border-radius:20px;padding:14px 16px;min-width:0}
+.stile b{display:block;font-size:calc(var(--ts)*28px);line-height:calc(var(--ts)*34px);font-weight:700}
+.section{background:var(--sLow);border-radius:28px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.bar{display:grid;grid-template-columns:100px minmax(0,1fr) auto;column-gap:12px;align-items:center}
+.bar .tr{height:12px;border-radius:6px;background:var(--sc);overflow:hidden}
+.bar .tr i{display:block;height:100%;border-radius:6px;background:var(--secondary)}
+.bar .v{font-weight:600;text-align:end;min-width:3ch}
+
+/* ---------- How you learn ---------- */
+.appbar{height:64px;display:flex;align-items:center;gap:4px;padding:0 4px;flex:none}
+.ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;flex:none}
+.hyl{padding:4px 16px 24px;display:flex;flex-direction:column;gap:16px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-weight:600;color:var(--onSv)}
+.legend span{display:flex;align-items:center;gap:6px}
+.lg-you{width:16px;height:8px;border-radius:4px;background:var(--primary)}
+.lg-start{width:2px;height:14px;border-radius:1px;background:var(--onSurface)}
+.group{display:flex;flex-direction:column;gap:2px}
+.grow{background:var(--sLow);border-radius:6px;padding:16px;min-width:0}
+.group>.grow:first-child{border-top-left-radius:28px;border-top-right-radius:28px}
+.group>.grow:last-child{border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+.sk{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;row-gap:8px;align-items:center}
+.sk .nm{min-width:0}
+.sk .body{grid-column:2;min-width:0;display:flex;flex-direction:column;gap:8px}
+.track{position:relative;height:10px;border-radius:5px;background:var(--sHighest);margin:6px 0 2px}
+.track .fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--primary)}
+.track .tick{position:absolute;top:-4px;width:2px;height:18px;margin-left:-1px;border-radius:1px;background:var(--onSurface)}
+.track.empty{background:transparent;box-shadow:inset 0 0 0 1.5px var(--outline)}
+.axis{display:flex;justify-content:space-between;color:var(--onSv)}
+.verdict{display:inline-flex;align-items:center;gap:4px;font-weight:700;padding:4px 10px 4px 6px;border-radius:10px;align-self:flex-start;max-width:100%}
+.verdict.fewer{background:var(--pc);color:var(--onPc)}
+.verdict.more{background:var(--tc);color:var(--onTc)}
+.verdict.same,.verdict.none{background:var(--sHigh);color:var(--onSv)}
+.foot{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;color:var(--onSv);padding:0 16px}
+.sk .muted{text-wrap:balance}
+.foot svg{justify-self:center;margin-top:calc((var(--ts)*16px - 18px)/2 + 1px)}
+
+/* ---------- Settings ---------- */
+.glabel{color:var(--primary);font-weight:700;padding:16px 16px 8px}
+.srow{display:grid;grid-template-columns:24px minmax(0,1fr) auto;column-gap:16px;row-gap:12px;align-items:center;background:var(--sLow);border-radius:6px;padding:14px 16px;min-width:0}
+.group>.srow:first-child{border-top-left-radius:28px;border-top-right-radius:28px}
+.group>.srow:last-child{border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+.srow>svg{color:var(--onSv)}
+.srow .tx{min-width:0}
+.srow .tx .muted{text-wrap:balance}
+.srow .full{grid-column:2 / 4;min-width:0}
+.srow.adj{row-gap:0}
+.srow.adj .lp{margin-top:12px}
+.tonal{min-height:40px;padding:0 14px;border-radius:20px;background:var(--sc);color:var(--onSc);display:inline-flex;align-items:center;gap:8px;font-weight:600;white-space:nowrap}
+.tonal.off{background:color-mix(in srgb,var(--onSurface) 12%,transparent);color:color-mix(in srgb,var(--onSurface) 38%,transparent)}
+.sw{width:52px;height:32px;border-radius:16px;background:var(--primary);position:relative;flex:none}
+.sw::after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:var(--onPrimary);top:4px;right:4px}
+/* M3 determinate linear progress: active part, a 4px gap, the track, and the stop dot */
+.lp{display:flex;align-items:center;height:4px;gap:4px}
+.lp .a{height:4px;border-radius:2px;background:var(--primary)}
+.lp .t{flex:1;height:4px;border-radius:2px;background:var(--sc);position:relative}
+.lp .t::after{content:"";position:absolute;right:0;top:0;width:4px;height:4px;border-radius:2px;background:var(--primary)}
+.help{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:16px;padding:10px 16px 0 16px;color:var(--onSv)}
+.help svg{justify-self:center;margin-top:calc((var(--ts)*16px - 18px)/2 + 1px)}
+.help span{text-wrap:pretty}
+.profile{background:var(--sLow);border-radius:24px;padding:16px;display:flex;align-items:center;gap:16px}
+
+/* ---------- Result sheet ---------- */
+.scrim{position:absolute;inset:0;background:var(--scrim)}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;padding:0 24px 24px;display:flex;flex-direction:column}
+.handle{width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:22px auto 22px}
+.res{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;padding:12px 0;border-top:1px solid var(--ov)}
+.sheet .sub + .res{border-top:0}
+.res .pill{margin-top:calc((var(--ts)*22px - 28px)/2)}
+.res .rt{display:grid;grid-template-columns:18px minmax(0,1fr);column-gap:6px;font-weight:600;font-size:calc(var(--ts)*15px);line-height:calc(var(--ts)*22px)}
+.res .rt svg{margin-top:calc((var(--ts)*22px - 18px)/2)}
+.res .rd{color:var(--onSv);margin-top:2px;padding-left:24px;text-wrap:pretty}
+.sheet .sub{text-wrap:pretty}
+.sheet .acts{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px}
+.tbtn{min-height:40px;padding:0 12px;border-radius:20px;display:inline-flex;align-items:center;font-weight:600;color:var(--primary)}
+.fbtn.c{min-height:40px;font-size:calc(var(--ts)*14px);line-height:calc(var(--ts)*20px);font-weight:600;padding:0 24px;border-radius:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Adjusted to you, revised</h1>
+<p class="lede">The owner's picks put together: ambient's strip and tile marks on Today, a "How you learn" card in Progress that opens story's page, and moment's Settings with a progress bar and the result sheet. Colours are Forest (<code>ColorScheme.fromSeed(#3F6C51)</code>) and the fixed <code>ModeColors</code>; radii are the app's (card 24, group 28, due card 32); type is the phone's system font, Roboto, with Arial-metric fallbacks. The check line below measures every frame on load. Direction is always words plus an arrow; "More reviews" uses primary or the tertiary container, never the error colour.</p>
+<div class="toggles">
+ <label><input type="checkbox" id="black"> Pure black (dark frames)</label>
+ <label><input type="checkbox" id="pagedark"> Dark page</label>
+</div>
+<p id="check" aria-live="polite"></p>
+<div id="screens"></div>
+</div>
+
+<script>
+const P={
+ eye:'M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.020 4.5-4.5S14.48 7 12 7z',
+ kbd:'M20 7v10H4V7h16m0-2H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2zm0 3h2v2h-2zM8 8h2v2H8zm0 3h2v2H8zm-3 0h2v2H5zm0-3h2v2H5zm3 6h8v2H8zm6-3h2v2h-2zm0-3h2v2h-2zm3 3h2v2h-2zm0-3h2v2h-2z',
+ ear:'M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.290 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2zM7.64 2.64L6.22 1.22C4.23 3.21 3 5.96 3 9s1.23 5.79 3.22 7.780l1.41-1.41C6.01 13.74 5 11.49 5 9s1.01-4.74 2.64-6.36zM11.5 9c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5z',
+ mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1.2-9.1c0-.66.54-1.2 1.2-1.2.66 0 1.2.54 1.2 1.2l-.01 6.2c0 .66-.53 1.2-1.19 1.2-.66 0-1.2-.54-1.2-1.2V4.9zm6.5 6.1c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ play:'M8 5v14l11-7z',
+ school:'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z',
+ tune:'M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z',
+ down:'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z',
+ up:'M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z',
+ same:'M4 11h16v2H4z',
+ hour:'M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z',
+ chev:'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ lock:'M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z',
+ auto:'M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z',
+ lang:'M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z',
+ sound:'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+ cal:'M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z',
+ decks:'M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z',
+ chart:'M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ fire:'M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z'
+};
+const I=(n,c='')=>`<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P[n]}"/></svg>`;
+// skill: [name, icon, pill class]
+const SK={rec:['Recognition','eye','p-rec'],wri:['Write','kbd','p-wri'],hear:['Hear','ear','p-hear'],say:['Say','mic','p-say']};
+const pill=k=>`<span class="pill ${SK[k][2]}">${I(SK[k][1],'s20')}</span>`;
+const DIR={fewer:['down','Fewer reviews'],more:['up','More reviews'],same:['same','About the same']};
+
+/* ---------- The learner's numbers (one consistent story) ---------- */
+// Gap after a right answer, in days: every skill starts at 4.
+// Hear 6 (fewer), Write 3 (more), Recognition 4 (about the same), Say not fitted: 212 of 400 answers.
+// Next 30 days: Hear 120 was 160, Write 175 was 150, Recognition 300 was 305, Say 140 -> about 735, was 755.
+
+function frame(body,{tab=null,scrollTo=null,extra=''}={}){
+ const tabs=[['Today','cal'],['Decks','decks'],['Progress','chart'],['Settings','gear']];
+ const nav=tab?`<div class="nav" role="navigation">${tabs.map(([t,ic])=>`<div class="${t===tab?'on':''}"><span class="ind">${I(ic)}</span>${t}</div>`).join('')}</div>`:'';
+ return `<div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i style="width:20px"></i></span></div>
+ <div class="scroll"${scrollTo?` data-scroll-to="${scrollTo}"`:''}>${body}</div>${nav}${extra}`;
+}
+
+/* ---------- Today ---------- */
+const header=`<div class="hdr"><div class="t"><div class="tBody muted">Friday, October 9</div><div class="tHeadS">Good morning, Aro</div></div><div class="av">A</div></div>`;
+const lesson=`<div class="lesson"><div class="tSection">Today’s lesson</div><div class="tBody sub">9 new words, easy to hard, taught then practised</div><div class="fbtn">${I('school')}Start lesson</div></div>`;
+const streak=`<div class="streak"><div class="h tSection"><span style="color:var(--tertiary)">${I('fire')}</span>12-day streak</div><div class="week"><span class="d">M</span><span class="d">T</span><span class="d">W</span><span class="d">T</span><span>F</span><span>S</span><span>S</span></div></div>`;
+
+function tile(k,n,mark,fresh){
+ const m=mark?`${I(DIR[mark][0],'s14')}<span class="long">${DIR[mark][1]}</span><span class="short">${{fewer:'Fewer',more:'More',same:'Same'}[mark]}</span>`:'';
+ const sr=`${SK[k][0]}: ${n} due.${mark?' Adjusted to you: '+DIR[mark][1].toLowerCase()+'.':''}`;
+ return `<div class="tile${fresh&&mark&&mark!=='same'?' fresh':''}" role="button" aria-label="${sr}">
+  <div class="top">${pill(k)}<span class="n tBody">${n}</span></div>
+  <div class="nm tBody">${SK[k][0]}</div>
+  <div class="mk tSmall">${m}</div></div>`;
+}
+function strip(kind,rows,more){
+ if(kind==='settled'){
+  return `<div class="strip" role="button" aria-label="Adjusted to you. About 735&nbsp;reviews in the next 30&nbsp;days, was&nbsp;755. Opens How you learn.">
+   <span class="dot">${I('tune','s18')}</span><span class="head tBody semi">Adjusted to you</span><span class="chev">${I('chev')}</span>
+   <span class="sm tSmall" style="margin-top:-4px">About 735 reviews in the next 30 days, was&nbsp;755</span></div>`;
+ }
+ const lines=rows.map(([dir,text])=>`<span class="ri">${I(DIR[dir][0],'s18')}</span><span class="rt tBody semi">${text.replace(/ (\S+)$/,'&nbsp;$1')}</span>`).join('');
+ return `<div class="strip fresh" role="button" aria-label="Adjusted to you. ${rows.map(r=>r[1]).join('. ')}.${more?' And '+more+' more skill.':''} Opens How you learn.">
+  <span class="dot">${I('tune','s18')}</span><span class="head tBody bold">Adjusted to you</span><span class="chev">${I('chev')}</span>
+  <span class="rule"></span>
+  ${lines}
+  ${more?`<span class="sm tBody" style="grid-column:2/4">and ${more} more skill</span>`:''}
+  <span class="sm tSmall">About 735 reviews in the next 30 days, was&nbsp;755</span></div>`;
+}
+function today(mode){
+ let s,t;
+ if(mode==='four'){
+  s=strip('fresh',[['fewer','You remember Hear words well: fewer reviews'],['fewer','You remember Recognition words well: fewer reviews'],['more','Write words slip faster: more reviews']],1);
+  t=[tile('rec',18,'fewer',true),tile('wri',12,'more',true),tile('hear',8,'fewer',true),tile('say',6,'more',true)];
+ } else {
+  const fresh=mode==='fresh';
+  s=fresh?strip('fresh',[['fewer','You remember Hear words well: fewer reviews'],['more','Write words slip faster: more reviews']]):strip('settled');
+  t=[tile('rec',18,'same',fresh),tile('wri',12,'more',fresh),tile('hear',8,'fewer',fresh),tile('say',6,null,fresh)];
+ }
+ const due=`<div class="due" data-anchor="16"><div class="count"><span class="tHero">44</span><span class="lines"><div class="tSection">words due</div><div class="tBody l2">about 15 min</div></span></div>
+  ${s}<div class="tiles">${t.join('')}</div>
+  <div class="fbtn">${I('play')}Start review</div></div>`;
+ return frame(header+`<div class="col16">${lesson}${due}${streak}</div>`,{tab:'Today',scrollTo:'anchor'});
+}
+
+/* ---------- Progress ---------- */
+function progress(){
+ const bar=(l,v,t)=>`<div class="bar tBody"><span>${l}</span><span class="tr"><i style="width:${v}%${t?';background:var(--tertiary)':''}"></i></span><span class="v">${v}%</span></div>`;
+ const card=`<div class="strip" role="button" aria-label="How you learn. Learn more about your pacing. Opens How you learn.">
+   <span class="dot">${I('tune','s18')}</span><span class="head"><div class="tBody semi">How you learn</div><div class="tSmall muted">Learn more about your pacing</div></span><span class="chev">${I('chev')}</span></div>`;
+ const body=`<div class="tabh tHeadL">Progress</div>
+ <div class="chips tBody"><span class="chip sel">Hindi</span><span class="chip">Bengali</span><span class="chip">All languages</span></div>
+ <div class="col16" style="gap:0;padding-top:0">
+  <div class="stiles"><div class="stile tBody"><b>1,204</b>Reviews</div><div class="stile tBody"><b>86%</b>Remembered</div></div>
+  <div style="height:16px"></div>
+  <div class="section" data-anchor="8"><div class="tTitleM">Correct, by skill</div>${bar('Recognition',91)}${bar('Hear',88)}${bar('Write',79)}${bar('Say',72)}</div>
+  <div style="height:16px"></div>
+  <div class="section"><div class="tTitleM">Your strengths</div>
+   <div class="tSmall muted">How likely you are to get a word of average difficulty right, learned from every answer you’ve given.</div>
+   ${bar('Recognition',91)}${bar('Hear',88)}${bar('Write',72)}${bar('Say',64)}
+   <div style="height:4px"></div>${card}</div>
+  <div style="height:16px"></div>
+  <div class="section"><div class="tTitleM">Weakest tags</div>${bar('numbers',58,1)}${bar('food',66,1)}${bar('family',71,1)}</div>
+  <div style="height:16px"></div>
+ </div>`;
+ return frame(body,{tab:'Progress',scrollTo:'anchor'});
+}
+
+/* ---------- How you learn ---------- */
+const MAX=8; const pct=d=>`${d/MAX*100}%`;
+function skillRow(k,o){
+ const name=`<span class="nm tTitleM">${SK[k][0]}</span>`;
+ if(o.none){
+  return `<div class="grow"><div class="sk">${pill(k)}${name}<div class="body">
+   <div class="tBody">Every skill starts at the same pace until it has 400 answers; you have ${o.none}.</div>
+   <div><div class="track empty"><div class="tick" style="left:${pct(4)}"></div></div><div class="axis tSmall"><span>0</span><span>${MAX} days</span></div></div>
+   <span class="verdict none tSmall">${I('hour','s16')}Not adjusted yet</span></div></div></div>`;
+ }
+ const dir=o.you>o.start?'fewer':o.you<o.start?'more':'same';
+ const sentence=dir==='same'
+  ?`A ${SK[k][0]} word you get right comes back in ${o.you}&nbsp;days, as at the start.`
+  :`A ${SK[k][0]} word you get right comes back in ${o.you}&nbsp;days, not&nbsp;${o.start}.`;
+ return `<div class="grow"><div class="sk">${pill(k)}${name}<div class="body">
+  <div class="tBody">${sentence}</div>
+  <div><div class="track" role="img" aria-label="${o.you} days for you, ${o.start} at the start"><div class="fill" style="width:${pct(o.you)}"></div><div class="tick" style="left:${pct(o.start)}"></div></div><div class="axis tSmall"><span>0</span><span>${MAX} days</span></div></div>
+  <span class="verdict ${dir} tSmall">${I(DIR[dir][0],'s16')}${DIR[dir][1]}</span>
+  <div class="tSmall muted">About ${o.n} reviews in the next 30 days, was&nbsp;${o.was}</div></div></div></div>`;
+}
+function howYouLearn(){
+ const body=`<div class="hyl" data-anchor>
+  <div class="tBodyL">Fluenough brings a word back just before you would forget it. Each skill keeps its own pace, worked out from your answers.</div>
+  <div class="legend tSmall"><span><i class="lg-you"></i>You</span><span><i class="lg-start"></i>At the start</span></div>
+  <div class="group">
+   ${skillRow('hear',{you:6,start:4,n:120,was:160})}
+   ${skillRow('wri',{you:3,start:4,n:175,was:150})}
+   ${skillRow('rec',{you:4,start:4,n:300,was:305})}
+   ${skillRow('say',{none:212})}
+  </div>
+  <div class="foot tSmall"><span aria-hidden="true"></span><span>Adjusted today, from 2,140 of your answers.</span></div>
+  <div class="foot tSmall" data-end>${I('lock','s18')}<span>Worked out on this phone from your answers. Nothing is sent anywhere.</span></div>
+ </div>`;
+ return `<div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i style="width:20px"></i></span></div>
+  <div class="appbar"><span class="ibtn">${I('back')}</span><span class="tTitleL">How you learn</span></div>
+  <div class="scroll">${body}</div>`;
+}
+
+/* ---------- Settings ---------- */
+function settings(state){
+ const btn=on=>`<span class="tonal${on?'':' off'} tBody"${on?'':' aria-disabled="true"'}>Adjust</span>`;
+ const sub={none:'Needs more answers first',busy:'Adjusting Write… 2 of 3 skills',done:'Last adjusted today',ready:'Last adjusted 2 Oct'}[state];
+ const bar=state==='busy'?`<div class="full lp" role="progressbar" aria-label="Adjusting" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1.6" aria-valuetext="2 of 3 skills"><span class="a" style="width:53%"></span><span class="t"></span></div>`:'';
+ const adjust=`<div class="srow adj">${I('tune')}<div class="tx"><div class="tTitleM">Adjust to me</div><div class="tBody muted"${state==='busy'?' aria-live="polite"':''}>${sub}</div></div>${btn(state==='ready'||state==='done')}${bar}</div>`;
+ const body=`<div class="tabh tHeadL">Settings</div>
+ <div style="padding:8px 16px 24px">
+  <div class="profile"><div class="av">A</div><div style="min-width:0"><div class="tTitleM">Aro</div><div class="tBody muted">Learning Hindi and Bengali</div></div></div>
+  <div class="glabel tBody">Learning</div>
+  <div class="group">
+   <div class="srow">${I('lang')}<div class="tx"><div class="tTitleM">Languages I’m learning</div><div class="tBody muted">Hindi, Bengali</div></div>${I('chev')}</div>
+   ${adjust}
+   <div class="srow">${I('auto')}<div class="tx"><div class="tTitleM">Adjust automatically</div><div class="tBody muted">When a skill has 10% more answers</div></div><span class="sw" role="switch" aria-checked="true"></span></div>
+  </div>
+  <div class="help tSmall">${I('lock','s18')}<span>Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.</span></div>
+  <div class="glabel tBody">Sound</div>
+  <div class="group">
+   <div class="srow">${I('sound')}<div class="tx"><div class="tTitleM">Sound</div><div class="tBody muted">On</div></div><span class="sw"></span></div>
+  </div>
+ </div>`;
+ let extra='';
+ if(state==='done'){
+  const r=(k,dir,title,desc)=>`<div class="res">${pill(k)}<div style="min-width:0"><div class="rt">${I(DIR[dir]?DIR[dir][0]:dir,'s18')}<span>${title.replace(/ (\S+)$/,'&nbsp;$1')}</span></div><div class="rd tBody">${desc}</div></div></div>`;
+  extra=`<div class="scrim"></div><div class="sheet" role="dialog" aria-label="Adjusted to you"><div class="handle"></div>
+   <div class="tTitleL">Adjusted to you</div>
+   <div class="tBody muted sub" style="margin:4px 0 8px">Your reviews now fit how you remember.</div>
+   ${r('hear','fewer','You remember Hear words well: fewer reviews','A word you get right comes back in 6&nbsp;days, not&nbsp;4. About 120&nbsp;reviews in the next 30&nbsp;days, was&nbsp;160.')}
+   ${r('wri','more','Write words slip faster: more reviews','A word you get right comes back in 3&nbsp;days, not&nbsp;4. About 175&nbsp;reviews in the next 30&nbsp;days, was&nbsp;150.')}
+   ${r('rec','same','Recognition: about the same','A word you get right still comes back in 4&nbsp;days.')}
+   ${r('say','hour','Say: not adjusted yet','Needs 400 answers; you have 212.')}
+   <div class="acts"><span class="tbtn tBody">How you learn</span><span class="fbtn c">Done</span></div></div>`;
+ }
+ return frame(body,{tab:'Settings',extra});
+}
+
+/* ---------- Screens ---------- */
+const L='light',D='dark';
+const SCREENS=[
+ {h:'1 · Today, right after a refit',f:[['Light',L,()=>today('fresh')],['Dark',D,()=>today('fresh')],['Light, text 1.3×',L+' ts13',()=>today('fresh')],['Light, all four changed',L,()=>today('four')]],
+  w:'The strip turns primary and names each changed skill in words (at most three, then "and 1 more skill"); changed tiles get a primary outline and mark; Say is not fitted, so it has no mark, but its mark line is kept so both tiles in the row match. At 1.3× text the marks shorten to the arrow plus Fewer, More or Same; the full words stay in the strip and the screen-reader label.'},
+ {h:'2 · Today, settled (days later)',f:[['Light',L,()=>today('settled')],['Dark',D,()=>today('settled')]],
+  w:'The strip goes quiet (one line, the 30-day change) and the marks stay in onSurfaceVariant; tapping the strip opens How you learn.'},
+ {h:'3 · Progress, Your strengths',f:[['Light',L,progress],['Dark',D,progress]],
+  w:'A card in the strip’s style at the end of Your strengths, after the bars it explains: "How you learn · Learn more about your pacing", which opens screen 4.'},
+ {h:'4 · How you learn',f:[['Light',L,howYouLearn],['Dark',D,howYouLearn],['Light, scrolled to the end',L+' toEnd',howYouLearn]],
+  w:'Per skill, one plain sentence, a gap bar (you filled, the start as a tick), the direction in words with an arrow, and the 30-day count; Say shows how far it is from being adjusted.'},
+ {h:'5 · Settings, Adjust to me',f:[['Light, ready',L,()=>settings('ready')],['Dark, ready',D,()=>settings('ready')],['Light, nothing to fit yet',L,()=>settings('none')],['Dark, nothing to fit yet',D,()=>settings('none')]],
+  w:'"Adjust to me" with its Adjust button and the "Adjust automatically" switch, on by default; with no skill past 400 answers the button is disabled and says "Needs more answers first".'},
+ {h:'6 · Settings, adjusting, then the result',f:[['Light, adjusting',L,()=>settings('busy')],['Dark, adjusting',D,()=>settings('busy')],['Light, result',L,()=>settings('done')],['Dark, result',D,()=>settings('done')]],
+  w:'While adjusting, a determinate bar under the row with "Adjusting Write… 2 of 3 skills"; when done, the result sheet lists every skill, changed or not.'}
+];
+document.getElementById('screens').innerHTML=SCREENS.map(s=>`<section class="scr"><h2>${s.h}</h2><div class="frames">${
+ s.f.map(([cap,cls,fn])=>`<div class="fcol"><span class="fcap">${cap}</span><div class="phone ${cls}">${fn()}</div></div>`).join('')}</div><p class="what">${s.w}</p></section>`).join('');
+
+/* scroll each frame the way the screen would be scrolled */
+function place(){
+ document.querySelectorAll('.phone').forEach(ph=>{
+  const sc=ph.querySelector('.scroll'); if(!sc) return;
+  sc.scrollTop=0;
+  if(ph.classList.contains('toEnd')){ sc.scrollTop=sc.scrollHeight; return; }
+  if(sc.dataset.scrollTo){
+   const a=sc.querySelector('[data-anchor]');
+   if(a){ const top=a.getBoundingClientRect().top-sc.getBoundingClientRect().top; sc.scrollTop=Math.max(0,top-Number(a.dataset.anchor||0)); }
+  }
+ });
+}
+
+/* layout check: nothing may overflow its box, tiles in a row must match */
+function check(){
+ const problems=[];
+ document.querySelectorAll('.phone').forEach((ph,pi)=>{
+  ph.querySelectorAll('*').forEach(el=>{
+   if(el.scrollWidth>el.clientWidth+1 && getComputedStyle(el).overflowX!=='visible' && !el.classList.contains('scroll')) problems.push(`frame ${pi}: ${el.className} clipped`);
+   const p=el.parentElement; if(!p||el.tagName==='path') return;
+   const r=el.getBoundingClientRect(), q=p.getBoundingClientRect();
+   if(r.width&&(r.right>q.right+0.5||r.left<q.left-0.5)) problems.push(`frame ${pi}: ${el.className||el.tagName} sticks out of ${p.className||p.tagName}`);
+  });
+  ph.querySelectorAll('.tiles').forEach(g=>{
+   const ts=[...g.querySelectorAll('.tile')];
+   for(let i=0;i+1<ts.length;i+=2){
+    const a=ts[i].getBoundingClientRect(),b=ts[i+1].getBoundingClientRect();
+    if(Math.abs(a.height-b.height)>0.5||Math.abs(a.top-b.top)>0.5) problems.push(`frame ${pi}: tile row ${i/2} heights ${a.height}/${b.height}`);
+    if(Math.abs(a.width-b.width)>0.5) problems.push(`frame ${pi}: tile widths differ`);
+    const gl=a.left-g.getBoundingClientRect().left, gr=g.getBoundingClientRect().right-b.right;
+    if(Math.abs(gl)>0.5||Math.abs(gr)>0.5) problems.push(`frame ${pi}: grid not flush`);
+    const card=g.parentElement.getBoundingClientRect();
+    if(Math.abs((a.left-card.left)-(card.right-b.right))>0.5) problems.push(`frame ${pi}: unequal gutters`);
+   }
+  });
+ });
+ const out=document.getElementById('check');
+ out.textContent=problems.length?`Layout check: ${problems.length} problem(s). ${problems.slice(0,6).join('; ')}`:'Layout check: no text clipped or overflowing; every tile row has equal heights and equal gutters.';
+ window.__problems=problems;
+}
+
+const black=document.getElementById('black'), pd=document.getElementById('pagedark');
+black.addEventListener('change',()=>document.body.classList.toggle('black',black.checked));
+pd.addEventListener('change',()=>document.documentElement.setAttribute('data-theme',pd.checked?'dark':'light'));
+try{ if(matchMedia('(prefers-color-scheme: dark)').matches) pd.checked=true; }catch(e){}
+function run(){ place(); check(); }
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(run); else run();
+window.addEventListener('resize',run);
+</script>
+</body>
+</html>

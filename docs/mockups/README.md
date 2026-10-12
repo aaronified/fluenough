@@ -1,21 +1,27 @@
 # Mockups
 
-Current, approved designs. Each is the spec for its screen. Don't rewrite
-one without the owner's approval.
+## Current and approved
+
+Each is the spec for its screen. Don't rewrite one without the owner's
+approval.
 
 - `languages-you-know.html`: Languages you know, with the bottom-sheet
   script question (#490, `docs/plans/languages-you-know.md`).
 
-## Deleted (owner, 2026-10-12)
+## Older: to be adapted (owner, 2026-10-12)
 
-These older mockups were deleted. Code comments and docs still name them,
-and they remain in git at 19d200b:
+These predate today's decisions. They are to be brought up to the current
+app and plans in the style of `languages-you-know.html`: real theme colours,
+light and dark, 2x text, a contrast self-check, and Hindi or Bengali
+examples. Until then, treat them as history, not spec.
 
-- `adapted-to-you.html`, `ambient.html`, `moment.html` and
-  `story.html`: the "Adjusted to you" designs (ADR-0035), already built.
-- `language-picker.html`: the language picker, built in #443.
-- `reviewer-mode.html` and `drafts/`: reviewer mode, built and since
-  superseded. The owner's parked notes from the drafts are kept in
-  `docs/plans/reviewing-scope.md`.
+- `adapted-to-you.html`, `ambient.html`, `moment.html` and `story.html`:
+  the "Adjusted to you" designs (ADR-0035). Merge them into one current
+  mockup.
+- `language-picker.html`: the language picker (#443). It needs to match
+  deck downloads, the language menu (#461) and review by course (#462).
+- `reviewer-mode.html` and `drafts/`: reviewer mode. It needs the owner's
+  2026-10-09 notes (`drafts/README.md`, also in
+  `docs/plans/reviewing-scope.md`), plus #476, #477 and #471.
 
-To see one: `git show 19d200b:docs/mockups/<name>.html`.
+Order: after the current mockups (#486 and #227) and the Settings mockup.
