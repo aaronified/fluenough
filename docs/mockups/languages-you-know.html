@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Languages You Know</title>
+<style>
+/* ---------- Page chrome (not the app) ---------- */
+:root{--page-bg:#ECEEEA;--page-fg:#1B1D1A;--page-muted:#4A504B;--page-card:#FFFFFF;--page-line:#C9CFC8;--page-acc:#296A48}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#101210;--page-fg:#E3E6E1;--page-muted:#A9B0AA;--page-card:#1A1D1A;--page-line:#343A34;--page-acc:#92D5AB}}
+:root[data-theme="dark"]{--page-bg:#101210;--page-fg:#E3E6E1;--page-muted:#A9B0AA;--page-card:#1A1D1A;--page-line:#343A34;--page-acc:#92D5AB}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Liberation Sans",Arial,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+.wrap{max-width:1560px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:26px;line-height:34px;margin:0 0 6px;font-weight:700}
+.lede{max-width:820px;color:var(--page-muted);margin:0 0 14px;font-size:15px}
+.toggles{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 12px;font-size:14px}
+.toggles label{display:flex;gap:8px;align-items:center;cursor:pointer;min-height:32px}
+.toggles input{width:18px;height:18px;margin:0}
+#check{font-size:13px;color:var(--page-muted);margin:0 0 28px}
+section.scr{margin:0 0 48px}
+section.scr h2{font-size:18px;line-height:24px;margin:0 0 14px}
+.states{display:flex;flex-wrap:wrap;gap:32px 40px;align-items:flex-start}
+.pair{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;min-width:0}
+.fcol{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fcap{font-size:12px;line-height:16px;font-weight:600;color:var(--page-muted);letter-spacing:.03em}
+.what{margin:14px 0 0;font-size:14px;color:var(--page-muted);max-width:820px}
+code{font-size:.92em}
+
+/* ---------- App tokens: Forest, seed #3F6C51, M3 tonal spot (ColorScheme.fromSeed) ---------- */
+.light{--primary:#296A48;--onPrimary:#FFFFFF;--pc:#AEF2C6;--onPc:#085231;
+ --secondary:#4E6355;--sc:#D1E8D6;--onSc:#374B3E;--tertiary:#3B6471;--tc:#BFE9F8;--onTc:#224C58;
+ --error:#BA1A1A;--ec:#FFDAD6;--onEc:#93000A;
+ --surface:#F6FBF4;--onSurface:#171D19;--onSv:#404942;--outline:#717972;--ov:#C0C9C0;
+ --sLowest:#FFFFFF;--sLow:#F0F5EE;--sCont:#EAEFE8;--sHigh:#E4EAE3;--sHighest:#DFE4DD;
+ --inv:#2C322D;--onInv:#EDF2EB;--invPrimary:#92D5AB;--scrim:rgba(0,0,0,.32);
+ /* the mail app's own colours (Gmail, Material 3) */
+ --gmBg:#FFFFFF;--gmFg:#1F1F1F;--gmMuted:#444746;--gmLine:#E1E3E1;--gmChip:#747775;--gmAcc:#0B57D0;--gmCard:#F0F4F9}
+.dark{--primary:#92D5AB;--onPrimary:#003920;--pc:#085231;--onPc:#AEF2C6;
+ --secondary:#B5CCBA;--sc:#374B3E;--onSc:#D1E8D6;--tertiary:#A3CDDC;--tc:#224C58;--onTc:#BFE9F8;
+ --error:#FFB4AB;--ec:#93000A;--onEc:#FFDAD6;
+ --surface:#0F1511;--onSurface:#DFE4DD;--onSv:#C0C9C0;--outline:#8A938B;--ov:#404942;
+ --sLowest:#0A0F0C;--sLow:#171D19;--sCont:#1B211D;--sHigh:#262B27;--sHighest:#313632;
+ --inv:#DFE4DD;--onInv:#2C322D;--invPrimary:#296A48;--scrim:rgba(0,0,0,.6);
+ --gmBg:#1F1F1F;--gmFg:#E3E3E3;--gmMuted:#C4C7C5;--gmLine:#444746;--gmChip:#8E918F;--gmAcc:#A8C7FA;--gmCard:#282A2C}
+/* Pure black: surface, surfaceDim and surfaceContainerLowest go black; containers keep their tones. */
+body.black .dark{--surface:#000000;--sLowest:#000000}
+
+.phone{width:360px;height:780px;flex:none;border-radius:28px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+
+.phone{--t:1;font-size:calc(var(--t)*14px);line-height:1.43}.phone.x2{--t:2}
+@media (max-width:392px){.fcol{width:100%}}
+.sbar{height:28px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font-size:12px;line-height:16px;font-weight:600}
+.sbar .ic{display:flex;gap:5px;align-items:center}
+.sbar .ic i{display:block;width:14px;height:9px;border-radius:2px;background:currentColor;opacity:.85}
+.scroll{flex:1;min-height:0;overflow:hidden;position:relative}
+.sysnav{height:24px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--sCont)}
+.sysnav i{display:block;width:108px;height:4px;border-radius:2px;background:var(--onSurface);opacity:.7}
+.sysnav.plain{background:var(--surface)}
+svg.i{width:24px;height:24px;fill:currentColor;flex:none;display:block}
+.s18{width:18px!important;height:18px!important}.s20{width:20px!important;height:20px!important}
+.t{font-size:calc(var(--t)*14px);line-height:1.43}
+.tBodyL{font-size:calc(var(--t)*16px);line-height:1.5}
+.tSmall{font-size:calc(var(--t)*12px);line-height:1.33}
+.tTitleM{font-size:calc(var(--t)*16px);line-height:1.4;font-weight:600}
+.tTitleL{font-size:calc(var(--t)*22px);line-height:1.27;font-weight:600}
+.tHeadS{font-size:calc(var(--t)*24px);line-height:1.33;font-weight:600}
+.tBody{font-size:calc(var(--t)*14px);line-height:1.43}
+.tLabel{font-size:calc(var(--t)*14px);line-height:1.43;font-weight:600}
+.muted{color:var(--onSv)}.prim{color:var(--primary)}.semi{font-weight:600}
+.ell{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;flex:none;color:var(--onSv)}
+.appbar{min-height:64px;display:flex;align-items:center;gap:4px;padding:0 4px;flex:none;background:var(--surface)}
+.appbar .abt{flex:1;min-width:0;padding-left:4px}
+.appbar .ibtn:first-child{color:var(--onSurface)}
+.tbtn{min-height:48px;padding:0 16px;display:flex;align-items:center;border-radius:24px;font-weight:700;color:var(--primary);font-size:calc(var(--t)*14px)}
+.tbtn.dis{color:var(--onSurface);opacity:.38}
+.onb{padding:12px 16px 0;display:flex;flex-direction:column;gap:6px;flex:none}
+.lp{display:flex;align-items:center;height:4px;gap:4px}
+.lp .a{height:4px;border-radius:2px;background:var(--primary)}
+.lp .tr{flex:1;height:4px;border-radius:2px;background:var(--sc)}
+.pad{padding:8px 16px 16px;display:flex;flex-direction:column;gap:14px}
+.foot{flex:none;background:var(--sCont);padding:10px 16px 12px;display:flex;flex-direction:column;gap:8px}
+.btn{min-height:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 24px;font-size:calc(var(--t)*16px);line-height:1.5;font-weight:700;text-align:center;min-width:0}
+.btn.f{background:var(--primary);color:var(--onPrimary)}
+.btn.f.dis{background:color-mix(in srgb,var(--onSurface) 12%,transparent);color:color-mix(in srgb,var(--onSurface) 38%,transparent)}
+.btn.o{border:1px solid var(--outline);color:var(--onSurface);font-weight:600}
+.search{min-height:56px;border-radius:28px;background:var(--sHigh);display:flex;align-items:center;gap:8px;padding:0 8px 0 16px;color:var(--onSv)}
+.search .ph{flex:1;min-width:0}
+.search.focus{box-shadow:inset 0 0 0 2px var(--primary)}
+.search .q{flex:1;min-width:0;color:var(--onSurface);display:flex;align-items:center}
+.search .q::after{content:"";width:2px;height:1.2em;background:var(--primary);margin-left:1px}
+.lab{color:var(--primary);font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--outline);display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--onSv);max-width:100%;min-width:0}
+.chip.sel{background:var(--sc);border-color:var(--sc);color:var(--onSc);padding:0 4px 0 14px}
+.chip .own{color:inherit}.chip .en{font-weight:400}
+.chip .x{width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;flex:none}
+.own{font-weight:600}
+.card{background:var(--sLow);border-radius:20px;padding:8px 8px 12px 12px;display:flex;flex-direction:column;gap:8px}
+.card .q{display:flex;flex-direction:column;gap:6px;padding:0 4px 0 0}
+.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--outline);border-radius:24px;overflow:hidden;min-width:0}
+.seg span{min-height:48px;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;min-width:0}
+.seg span+span{border-left:1px solid var(--outline)}
+.seg span.sel{background:var(--sc);color:var(--onSc)}
+.list{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:center;min-height:56px;padding:4px 4px 4px 8px;border-top:1px solid var(--ov);min-width:0}
+.list>.row:first-child{border-top:0}
+.row .nm{min-width:0;display:flex;flex-direction:column}
+.row .nm>*{overflow-wrap:anywhere}
+.row.on .own{color:var(--primary)}
+.act{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.act.done{color:var(--onPrimary)}
+.act.done span{width:28px;height:28px;border-radius:14px;background:var(--primary);display:flex;align-items:center;justify-content:center}
+.fold{display:grid;grid-template-columns:minmax(0,1fr) auto 48px;align-items:center;column-gap:8px;min-height:64px;padding:6px 4px 6px 16px;background:var(--sLow);border-radius:6px;min-width:0}
+.fold .nm{min-width:0;display:flex;flex-direction:column}
+.fold .cnt{background:var(--sc);color:var(--onSc);border-radius:12px;padding:0 10px;font-weight:700;min-height:24px;display:flex;align-items:center}
+.fold .cnt.none{background:transparent;color:var(--onSv);font-weight:400}
+.fold.open{background:var(--sHigh)}
+.group{display:flex;flex-direction:column;gap:2px}
+.group>.fold:first-child,.group>.gw:first-child>.fold{border-top-left-radius:24px;border-top-right-radius:24px}
+.group>.fold:last-child,.group>.gw:last-child>.fold:last-child{border-bottom-left-radius:24px;border-bottom-right-radius:24px}
+.inner{background:var(--sLow);padding:0 8px 8px 12px;border-radius:6px 6px 24px 24px;margin-top:-2px}
+.letter{font-weight:700;color:var(--primary);padding:12px 8px 4px;position:relative}
+.scrollbar{position:absolute;right:2px;top:8px;bottom:8px;width:24px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;font-size:10px;line-height:12px;color:var(--onSv);font-weight:700}
+.qrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;min-height:64px;padding:6px 0;border-top:1px solid var(--ov)}
+.qrow:first-child{border-top:0}
+.qrow .nm{flex:1 1 130px;min-width:0;display:flex;flex-direction:column}
+.qrow .seg{flex:0 0 132px}
+.hint{display:grid;grid-template-columns:20px minmax(0,1fr);column-gap:10px;color:var(--onSv)}
+.nores{padding:12px 8px;color:var(--onSv)}
+.desc{margin:14px 0 0;font-size:14px;color:var(--page-muted);max-width:820px}
+table.cmp{border-collapse:collapse;width:100%;max-width:1100px;font-size:14px;background:var(--page-card)}
+.cmp th,.cmp td{border:1px solid var(--page-line);padding:10px 12px;text-align:left;vertical-align:top}
+.cmp th{background:var(--page-bg);font-weight:700}
+.cmp-wrap{overflow-x:auto;max-width:100%}
+.rec{max-width:820px;background:var(--page-card);border:1px solid var(--page-line);border-radius:12px;padding:16px 20px;margin-top:20px}
+.rec ol{margin:8px 0 0;padding-left:20px}.rec li{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Languages you know, for about 35 languages</h1>
+<p class="lede">GitHub issue #490. The list grows from three languages to about 35 (English, India's 22 scheduled languages, and twelve more), so a tick box per language no longer works. Three options follow, each as <b>one screen used in both places</b> (owner, 2026-10-12): first launch and Settings show the same body and differ only in the chrome around it (first launch: progress and a pinned Continue; Settings: app bar, back and Save). Every language shows its own name in its own script beside the English name. Targets are 48dp or more, the pinned bar sits above the system navigation bar (#489), the lists wrap rather than scroll sideways, and each option has a frame at 2x text. The keyboard is not drawn in the searching frames; the list area shrinks above it and the pinned Continue stays above the keyboard. The demo person is on an English-language phone set to India, and knows English, Hindi and Telugu.</p>
+<div class="toggles">
+ <label><input type="checkbox" id="black"> Pure black (dark frames)</label>
+ <label><input type="checkbox" id="pagedark"> Dark page</label>
+</div>
+<p id="check" aria-live="polite"></p>
+<div id="screens"></div>
+<section class="scr"><h2>Comparison</h2>
+<div class="cmp-wrap"><table class="cmp">
+<tr><th></th><th>A. Search first</th><th>B. Grouped and folded</th><th>C. Two steps</th></tr>
+<tr><th>Taps to pick English, Hindi, Telugu</th><td>3 (two suggested chips, then type "te" and tap Telugu). With the 3 script answers and Continue: 7.</td><td>6 (open Latin, tap; open Devanagari, tap; open Dravidian, tap), or 3 plus typing by search. With answers and Continue: 10.</td><td>3 on step 1, then Next, 3 answers, Continue: 8.</td></tr>
+<tr><th>Findability of one of 35</th><td>Very good if the person can spell it, in English or its own script. Without a guess there is only "Browse all 35".</td><td>Good without typing, if the person knows which script family the language is in. Many do not (is Tulu Dravidian? is Santali "others"?).</td><td>Best: search, suggestions and a full A to Z list with own names, all on one step.</td></tr>
+<tr><th>Where the script question sits</th><td>Inline, under the chosen chip, where the answer is obvious. The screen grows as people choose.</td><td>Inline in the "You know" section, one row each. Same as A.</td><td>Separate second screen, a compact list of Yes/No. Clean, and no screen grows, but a second screen is an extra step and, in Settings, an extra page.</td></tr>
+<tr><th>Risks</th><td>The suggested row needs locale and region data; a wrong guess wastes a row. A blank search field can feel like a quiz.</td><td>The script families are our taxonomy, not the learner's. Six folded rows hide the languages, so the screen looks empty at first.</td><td>Two screens means Settings needs a two-step editor too, or a different layout from first launch, which breaks "one screen". Highest effort.</td></tr>
+</table></div>
+<div class="rec"><b>Recommendation (best first)</b>
+<ol>
+<li><b>A, search first.</b> Fewest taps for the common case (suggested chips), every language findable by either name, one screen for first launch and Settings, with the script question next to the language it is about. Main downside: someone who cannot spell the name must use "Browse all 35", a plain A to Z list, which has to be built as well.</li>
+<li><b>C, two steps.</b> The best list, but it needs a second page in Settings, so it does not reuse as one screen. Main downside: extra step and extra work.</li>
+<li><b>B, grouped and folded.</b> Good for browsing but needs the person to know our script families. Main downside: it hides the list behind six folds and costs the most taps.</li>
+</ol>
+<p><b>One screen, two places.</b> Whichever is chosen, build the body once. First launch wraps it in the onboarding header (step progress) and the pinned Continue; Settings wraps it in the app bar with back and Save. The body, the rows and the script questions are the same widget, so onboarding can later simply reuse the Settings page.</p></div>
+</section>
+</div>
+<script>
+const P={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ search:'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
+ close:'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ check:'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ down:'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z',
+ up:'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z',
+ info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+ list:'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z'
+};
+const I=(n,c='')=>`<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P[n]}"/></svg>`;
+
+/* code, English name, own name, script family (the fold in option B), the script's name in the question */
+const L=[
+['en','English','English','Latin','Latin'],['hi','Hindi','हिन्दी','Devanagari','Devanagari'],['bn','Bengali','বাংলা','Bengali–Assamese','Bengali'],
+['as','Assamese','অসমীয়া','Bengali–Assamese','Assamese'],['brx','Bodo','बड़ो','Devanagari','Devanagari'],['doi','Dogri','डोगरी','Devanagari','Devanagari'],
+['gu','Gujarati','ગુજરાતી','Other scripts','Gujarati'],['kn','Kannada','ಕನ್ನಡ','Dravidian scripts','Kannada'],['ks','Kashmiri','كٲشُر','Perso-Arabic','Perso-Arabic'],
+['kok','Konkani','कोंकणी','Devanagari','Devanagari'],['mai','Maithili','मैथिली','Devanagari','Devanagari'],['ml','Malayalam','മലയാളം','Dravidian scripts','Malayalam'],
+['mni','Manipuri','মৈতৈলোন্','Bengali–Assamese','Bengali'],['mr','Marathi','मराठी','Devanagari','Devanagari'],['ne','Nepali','नेपाली','Devanagari','Devanagari'],
+['or','Odia','ଓଡ଼ିଆ','Other scripts','Odia'],['pa','Punjabi','ਪੰਜਾਬੀ','Other scripts','Gurmukhi'],['sa','Sanskrit','संस्कृतम्','Devanagari','Devanagari'],
+['sat','Santali','ᱥᱟᱱᱛᱟᱲᱤ','Other scripts','Ol Chiki'],['sd','Sindhi','سنڌي','Perso-Arabic','Perso-Arabic'],['ta','Tamil','தமிழ்','Dravidian scripts','Tamil'],
+['te','Telugu','తెలుగు','Dravidian scripts','Telugu'],['ur','Urdu','اردو','Perso-Arabic','Perso-Arabic'],['bho','Bhojpuri','भोजपुरी','Devanagari','Devanagari'],
+['tcy','Tulu','ತುಳು','Dravidian scripts','Kannada'],['raj','Rajasthani','राजस्थानी','Devanagari','Devanagari'],['mag','Magahi','मगही','Devanagari','Devanagari'],
+['hne','Chhattisgarhi','छत्तीसगढ़ी','Devanagari','Devanagari'],['awa','Awadhi','अवधी','Devanagari','Devanagari'],['bgc','Haryanvi','हरियाणवी','Devanagari','Devanagari'],
+['kfy','Kumaoni','कुमाऊँनी','Devanagari','Devanagari'],['gbm','Garhwali','गढ़वळी','Devanagari','Devanagari'],['lus','Mizo','Mizo','Latin','Latin'],
+['kha','Khasi','Khasi','Latin','Latin'],['gom','Goan Konkani','Konknni','Latin','Latin']
+];
+const BY=Object.fromEntries(L.map(l=>[l[0],{c:l[0],en:l[1],own:l[2],fam:l[3],scr:l[4]}]));
+const FAMS=['Latin','Devanagari','Bengali–Assamese','Dravidian scripts','Perso-Arabic','Other scripts'];
+const FSAMPLE={'Latin':'Abc','Devanagari':'देवनागरी','Bengali–Assamese':'বাংলা','Dravidian scripts':'తెలుగు, தமிழ்','Perso-Arabic':'اردو','Other scripts':'ગુજરાતી, ਪੰਜਾਬੀ'};
+const famCount=f=>L.filter(l=>l[3]===f).length;
+const SUGG=['en','hi','bn','te','ta','mr'];
+/* the demo person: English, Hindi and Telugu chosen; Telugu not yet answered unless done */
+const lname=c=>`<bdi>${BY[c].own}</bdi>`;
+function match(q){q=q.toLowerCase();return L.filter(l=>l[1].toLowerCase().includes(q)||l[2].toLowerCase().includes(q)).map(l=>l[0])
+ .sort((a,b)=>(BY[b].en.toLowerCase().startsWith(q)?1:0)-(BY[a].en.toLowerCase().startsWith(q)?1:0));}
+
+/* ---------- shared pieces ---------- */
+const same=c=>BY[c].own===BY[c].en?'':`<span class="tSmall muted">${BY[c].en}</span>`;
+function names(c,cls='nm'){const b=BY[c];return `<div class="${cls}"><span class="tBodyL own">${lname(c)}</span>${b.own===b.en?`<span class="tSmall muted">${b.scr} script</span>`:`<span class="tSmall muted">${b.en}</span>`}</div>`;}
+const searchBox=(q)=>q?`<div class="search focus" role="search">${I('search')}<span class="q tBodyL">${q}</span><span class="ibtn">${I('close')}</span></div>`
+ :`<div class="search" role="search">${I('search')}<span class="ph tBody">Type a language, in English or its own name</span></div>`;
+const seg=(c,v)=>`<div class="seg" role="radiogroup" aria-label="Do you read the ${BY[c].scr} script?"><span role="radio" aria-checked="${v===true}" class="${v===true?'sel':''}">${v===true?I('check','s18'):''}Yes</span><span role="radio" aria-checked="${v===false}" class="${v===false?'sel':''}">${v===false?I('check','s18'):''}No</span></div>`;
+const question=c=>`<div class="tBody">Do you read the ${BY[c].scr} script?</div>`;
+const chipSel=c=>`<span class="chip sel" role="button" aria-label="${BY[c].en}, chosen. Remove"><span class="own tBody">${lname(c)}</span>${BY[c].own===BY[c].en?'':`<span class="en tSmall">${BY[c].en}</span>`}<span class="x">${I('close','s18')}</span></span>`;
+const chipAdd=c=>`<span class="chip" role="button">${I('plus','s18')}<span class="own tBody">${lname(c)}</span>${BY[c].own===BY[c].en?'':`<span class="en tSmall">${BY[c].en}</span>`}</span>`;
+const rowAdd=(c,on)=>`<div class="row${on?' on':''}">${names(c)}<span class="act${on?' done':''}">${on?'<span>'+I('check','s18')+'</span>':I('plus')}</span></div>`;
+const rowAnswer=(c,v)=>`<div class="row on">${names(c)}<span class="act done"><span>${I('check','s18')}</span></span></div><div style="padding:0 8px 10px;display:flex;flex-direction:column;gap:6px">${question(c)}${seg(c,v)}</div>`;
+const PEOPLE=['en','hi','te'];
+const need=(ans)=>PEOPLE.filter(c=>ans[c]===undefined).length;
+
+/* ---------- shared chrome: first launch vs Settings ---------- */
+function frame(mode,body,{ans={},bodyText=true}={}){
+ const n=need(ans);
+ const lead=`<div class="tBody muted">Choose every language you know. They decide which comparisons and daily facts you see, and which decks you can review.</div>`;
+ const chrome=mode==='first'
+  ?`<div class="onb"><div class="lp"><div class="a" style="width:50%"></div><div class="tr"></div></div><div class="tSmall muted">Step 2 of 4</div></div>`
+  :`<div class="appbar"><span class="ibtn">${I('back')}</span><span class="abt tTitleL ell">Languages you know</span><span class="tbtn${n?' dis':''}">Save</span></div>`;
+ const head=mode==='first'?`<div class="tHeadS" style="padding:6px 16px 0">Languages you know</div>`:'';
+ const foot=mode==='first'?`<div class="foot">${n?`<div class="hint tSmall">${I('info','s18')}<span>Say whether you read the script of ${n===1?'the language':n+' languages'} you chose to go on.</span></div>`:''}<div class="btn f${n?' dis':''}" ${n?'aria-disabled="true"':''}>Continue</div></div>`:'';
+ return `<div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i style="width:20px"></i></span></div>${chrome}${head}<div class="scroll"><div class="pad">${bodyText?lead:''}${body}</div></div>${foot}<div class="sysnav${foot?'':' plain'}"><i></i></div>`;
+}
+
+/* ---------- Option A: search first ---------- */
+function A(st){
+ const ch=st.chosen||[];let h=searchBox(st.q);
+ if(st.q){const r=match(st.q);
+  h+=`<div class="list" role="listbox">${r.map(c=>rowAdd(c,ch.includes(c))).join('')||`<div class="nores tBody">No language called "${st.q}". Try the English name or the name in its own script.</div>`}</div>`;
+  if(ch.length)h=`<div class="chips">${ch.map(chipSel).join('')}</div>`+h;
+  return h;}
+ if(ch.length){h+=`<div class="lab tTitleM"><span>You know</span><span class="tBody muted">${ch.length}</span></div>`+ch.map(c=>`<div class="card"><div class="chips">${chipSel(c)}</div><div class="q">${question(c)}${seg(c,(st.ans||{})[c])}</div></div>`).join('');}
+ const sg=SUGG.filter(c=>!ch.includes(c));
+ h+=`<div class="lab tTitleM"><span>Suggested</span><span class="tSmall muted">from your phone: English, India</span></div><div class="chips">${sg.map(chipAdd).join('')}</div>`;
+ if(!ch.length)h+=`<div class="chip" style="align-self:flex-start;border-color:transparent;color:var(--primary);padding:0 8px" role="button">${I('list')}Browse all 35 languages</div>`;
+ else h+=`<div class="chip" style="align-self:flex-start;border-color:transparent;color:var(--primary);padding:0 8px" role="button">${I('list')}Browse all 35</div>`;
+ return h;
+}
+
+/* ---------- Option B: grouped and folded ---------- */
+function Bfold(f,open,ch,list){
+ const n=ch.filter(c=>BY[c].fam===f).length,tot=list?list.length:famCount(f);
+ const head=`<div class="fold${open?' open':''}"><div class="nm"><span class="tBodyL own">${f}</span><span class="tSmall muted">${FSAMPLE[f]}</span></div><span class="cnt tSmall${list||n?'':' none'}">${list?tot+' found':(n?n+' of ':'')+tot}</span><span class="act" style="color:var(--onSv)">${I(open?'up':'down')}</span></div>`;
+ if(!open)return `<div class="gw">${head}</div>`;
+ const items=list||L.filter(l=>l[3]===f).map(l=>l[0]);
+ return `<div class="gw">${head}<div class="inner list">${items.map(c=>rowAdd(c,ch.includes(c))).join('')}</div></div>`;
+}
+function B(st){
+ const ch=st.chosen||[];let h=searchBox(st.q);
+ if(ch.length&&!st.q)h+=`<div class="lab tTitleM"><span>You know</span><span class="tBody muted">${ch.length}</span></div><div class="list" style="background:var(--sLow);border-radius:24px;padding:4px 12px">${ch.map(c=>rowAnswer(c,(st.ans||{})[c])).join('')}</div>`;
+ if(st.q){const r=match(st.q);
+  h+=`<div class="group">${FAMS.map(f=>{const m=r.filter(c=>BY[c].fam===f);return m.length?Bfold(f,true,ch,m):'';}).join('')}</div>`;return h;}
+ h+=`<div class="lab tTitleM"><span>All languages</span><span class="tSmall muted">by script</span></div><div class="group">${FAMS.map(f=>Bfold(f,(st.open||[]).includes(f),ch)).join('')}</div>`;
+ return h;
+}
+
+/* ---------- Option C: two steps ---------- */
+function C1(st){
+ const ch=st.chosen||[];let h=searchBox(st.q);
+ if(st.q){const r=match(st.q);return h+`<div class="list">${r.map(c=>rowAdd(c,ch.includes(c))).join('')}</div>`;}
+ const sg=SUGG.filter(c=>!ch.includes(c));
+ h+=`<div class="lab tTitleM"><span>Suggested</span></div><div class="chips">${[...ch.map(chipSel),...sg.map(chipAdd)].join('')}</div><div class="lab tTitleM"><span>All languages, A to Z</span><span class="tBody muted">35</span></div>`;
+ const sorted=[...L].sort((a,b)=>a[1].localeCompare(b[1])).map(l=>l[0]);let last='',rows='';
+ sorted.slice(0,st.az||8).forEach(c=>{const ltr=BY[c].en[0];if(ltr!==last){rows+=`<div class="letter tBody">${ltr}</div>`;last=ltr;}rows+=rowAdd(c,ch.includes(c));});
+ return h+`<div class="list">${rows}</div>`;
+}
+function C2(st){
+ return `<div class="tTitleM">Do you read the script?</div><div class="tBody muted">Yes or No for each language. Not sure? Choose No: you will see the sounds, not the letters.</div><div style="background:var(--sLow);border-radius:24px;padding:4px 16px">${PEOPLE.map(c=>`<div class="qrow">${names(c)}${seg(c,(st.ans||{})[c])}</div>`).join('')}</div>
+ <div class="tSmall muted">Hindi, Marathi and other Devanagari languages share one script, so one answer could cover them all.</div>`;
+}
+/* step 1 and step 2 of C share the frame; Settings is the same two pages behind "Change languages" */
+function frameC(mode,step,st,opt){
+ if(step===1){
+  const n=(st.chosen||[]).length;
+  const f=frame(mode,C1(st),{ans:{en:true,hi:true,te:true}});
+  /* Continue becomes Next with the count */
+  return f.replace('>Continue<',`>Next${n?` · ${n} chosen`:''}<`).replace('<div class="btn f"','<div class="btn f'+(n?'':' dis')+'"').replace(/<div class="hint[^]*?<\/div>/,'');
+ }
+ const n=need(st.ans||{});
+ const lead='';
+ const chrome=mode==='first'
+  ?`<div class="onb"><div class="lp"><div class="a" style="width:50%"></div><div class="tr"></div></div><div class="tSmall muted">Step 2 of 4 · Languages you know, 2 of 2</div></div>`
+  :`<div class="appbar"><span class="ibtn">${I('back')}</span><span class="abt tTitleL ell">Languages you know</span><span class="tbtn${n?' dis':''}">Save</span></div>`;
+ const foot=mode==='first'?`<div class="foot">${n?`<div class="hint tSmall">${I('info','s18')}<span>Answer for ${n===1?'the language':n+' languages'} to go on.</span></div>`:''}<div class="btn f${n?' dis':''}">Continue</div></div>`:'';
+ return `<div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i style="width:20px"></i></span></div>${chrome}${mode==='first'?'<div class="tHeadS" style="padding:6px 16px 0">Languages you know</div>':''}<div class="scroll"><div class="pad">${C2(st)}</div></div>${foot}<div class="sysnav${foot?'':' plain'}"><i></i></div>`;
+}
+
+/* ---------- Layout ---------- */
+const CH=['en','hi','te'];
+const part=(a)=>({chosen:CH,ans:a});
+const OPTS=[
+ {t:'A. Search first',w:'A search field leads, with the phone\'s language and region (here English, India) feeding a "Suggested" row of chips. Chosen languages become removable chips in a "You know" list, and the script question sits right under each chip, so nobody scrolls back to find what is unanswered. "Browse all 35 languages" is the plain list for someone who does not know a spelling. First launch and Settings are the same body: only the header and the bottom bar change.',
+  s:[['First launch: empty',m=>frame(m,A({}))],['Searching "ma"',m=>frame(m,A({q:'ma',chosen:['en','hi']}))],
+     ['Chosen, script questions',m=>frame(m,A(part({en:true,hi:true})),{ans:{en:true,hi:true}})],
+     ['Settings: same screen, all answered',m=>frame('settings',A(part({en:true,hi:true,te:false})),{ans:{en:true,hi:true,te:false}})],
+     ['2x text',m=>frame(m,A(part({en:true,hi:true})),{ans:{en:true,hi:true}}),'x2']]},
+ {t:'B. Grouped and folded',w:'The languages are folded under six script families, each with its count and a sample of the script. Chosen languages rise to a "You know" section with their script question. Searching opens only the families that have matches. First launch and Settings differ only in the chrome.',
+  s:[['First launch: all folded',m=>frame(m,B({}))],['Searching "ma": families with matches open',m=>frame(m,B({q:'ma',chosen:['en','hi']}))],
+     ['Chosen, Dravidian open',m=>frame(m,B({...part({en:true,hi:true}),open:['Dravidian scripts']}),{ans:{en:true,hi:true}})],
+     ['Settings: same screen, all answered',m=>frame('settings',B({...part({en:true,hi:true,te:false}),open:[]}),{ans:{en:true,hi:true,te:false}})],
+     ['2x text',m=>frame(m,B({...part({en:true,hi:true}),open:[]}),{ans:{en:true,hi:true}}),'x2']]},
+ {t:'C. Two steps',w:'Step 1 only picks languages: search, suggested chips and a full A to Z list with own names, with Next showing how many are chosen. Step 2 is a single compact list, one Yes/No per language. In Settings the same two pages sit behind one entry, so it needs a small stepper or two pages, which is why it fits "one screen" least well.',
+  s:[['Step 1: empty',m=>frameC(m,1,{})],['Step 1: searching "ma"',m=>frameC(m,1,{q:'ma',chosen:['en','hi']})],
+     ['Step 1: chosen',m=>frameC(m,1,{chosen:CH,az:5})],
+     ['Step 2: the script questions',m=>frameC(m,2,{ans:{en:true,hi:true}})],
+     ['Settings, step 2: same list, all answered',m=>frameC('settings',2,{ans:{en:true,hi:true,te:false}})],
+     ['2x text, step 2',m=>frameC(m,2,{ans:{en:true,hi:true}}),'x2']]}
+];
+
+function render(){
+ document.getElementById('screens').innerHTML=OPTS.map(o=>`<section class="scr"><h2>${o.t}</h2><div class="states">${o.s.map(([cap,fn,x])=>{
+  const mode=cap.startsWith('Settings')?'settings':'first';
+  const pair=['light','dark'].map(th=>`<div class="fcol"><span class="fcap">${cap} · ${th==='light'?'Light':'Dark'}</span><div class="phone ${th}${x?' '+x:''}">${fn(mode)}</div></div>`).join('');
+  return `<div class="pair">${pair}</div>`;}).join('')}</div><p class="desc">${o.w}</p></section>`).join('');
+ check();
+}
+
+/* Measures every frame: nothing sticks out sideways, no bar falls below the phone, text is not cut unless marked to ellipsise,
+   and every tap target in a row, chip, button or segment is at least 48 by 48 (the chip's close mark is 40, inside a 48 chip). */
+function check(){
+ let bad=[];const phones=[...document.querySelectorAll('.phone')];
+ phones.forEach((ph,pi)=>{
+  const pr=ph.getBoundingClientRect();
+  ph.querySelectorAll('*').forEach(el=>{
+   if(el.closest('svg')&&el.tagName!=='svg')return;
+   const r=el.getBoundingClientRect();if(!r.width&&!r.height)return;
+   const inScroll=el.closest('.scroll');
+   if(r.left<pr.left-0.5||r.right>pr.right+0.5)bad.push(`frame ${pi+1}: ${el.className||el.tagName} sideways`);
+   if(!inScroll&&r.bottom>pr.bottom+0.5)bad.push(`frame ${pi+1}: ${el.className||el.tagName} below`);
+   if(el.scrollWidth>el.clientWidth+1&&!el.classList.contains('ell')&&!el.classList.contains('scroll')&&getComputedStyle(el).overflow!=='visible'&&el.tagName!=='svg')bad.push(`frame ${pi+1}: ${el.className} clipped`);
+   if(el.matches('.chip,.btn,.seg span,.act,.fold,.tbtn,.ibtn')&&(r.height<47.5||(el.matches('.btn,.seg span,.tbtn')&&r.width<47.5)))bad.push(`frame ${pi+1}: ${el.className} under 48`);
+  });
+  /* the pinned bar must sit fully above the navigation bar and inside the phone */
+  const ft=ph.querySelector('.foot'),sn=ph.querySelector('.sysnav');
+  if(ft&&sn&&ft.getBoundingClientRect().bottom>sn.getBoundingClientRect().top+0.5)bad.push(`frame ${pi+1}: Continue under the navigation bar`);
+ });
+ const el=document.getElementById('check');
+ el.textContent=bad.length?`Layout check: ${bad.length} problem(s): ${[...new Set(bad)].slice(0,8).join('; ')}`:`Layout check: ${phones.length} frames at 360 × 780, nothing overflows or is cut, targets are 48 or more.`;
+ window.__bad=bad;
+}
+document.getElementById('black').addEventListener('change',e=>document.body.classList.toggle('black',e.target.checked));
+document.getElementById('pagedark').addEventListener('change',e=>{document.documentElement.dataset.theme=e.target.checked?'dark':'light';});
+render();
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(check,check);}
+</script>
+</body>
+</html>
