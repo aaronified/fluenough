@@ -13,8 +13,9 @@ approval.
 - `settings.html`: Settings as a short list of section pages, with every
   planned change folded in: Sources in Your languages (#469); Look and
   language as the Look screen with an App language row, English only until
-  #46; Your data with Backup and restore, cloud, recent and cloud backups,
-  the restore sheet and the review log fully expanded (#473, #470); Your
+  #46; Your data as the backup page itself, with backup and restore
+  (cloud, recent and cloud backups, the restore sheet) and the review log
+  fully expanded on it, no page between (#473, #470; owner, 2026-10-12); Your
   decks with the custom deck check after an upload (#475, #495, 0.6.0);
   switches only for the activities a learner may skip (#243); Reminders for
   several languages (#90, 0.6.0); an App log screen; Profiles and privacy
