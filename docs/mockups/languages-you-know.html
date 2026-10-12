@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Languages You Know</title>
-<meta name="description" content="One layout for choosing among 35 languages (search, top picks, every language by family), with four ways to ask whether the learner reads each script (#490).">
+<meta name="description" content="Languages you know for 35 languages: a one-line search, top picks, families folded, and a bottom sheet that asks about the script in the script itself (#490).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&family=Noto+Sans+Oriya:wght@400;600&family=Noto+Sans+Ol+Chiki:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
@@ -16,10 +16,10 @@
 :root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
 *,*::before,*::after{box-sizing:border-box}
 html,body{overflow-x:hidden}
-body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Telugu",system-ui,sans-serif;line-height:1.5}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
 .wrap{max-width:1500px;margin:0 auto;padding:28px 16px 72px}
 h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
-h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 8px;font-weight:700}
 .lede{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
 .controls{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:0 0 10px;font-size:14px}
 .controls fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -29,17 +29,17 @@ h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
 .controls input{margin:0;accent-color:var(--page-acc)}
 #check{font-size:13px;line-height:18px;margin:0 0 28px;padding:10px 12px;border-radius:10px;background:var(--page-card);border:1px solid var(--page-line);max-width:880px}
 #check.bad{border-color:#BA1A1A}
-section.opt{margin:0 0 56px}
-.opt>p{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
-.frames{display:flex;flex-wrap:wrap;gap:28px 24px;align-items:flex-start}
+section.opt{margin:0 0 48px}
+.opt>p,.opt li{max-width:880px;color:var(--page-muted);font-size:15px}
+.opt>p{margin:0 0 16px}
 [hidden]{display:none!important}
+.frames{display:flex;flex-wrap:wrap;gap:28px 24px;align-items:flex-start}
 .fcol{display:flex;flex-direction:column;gap:8px;width:360px;max-width:100%}
 .fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
-table{border-collapse:collapse;width:100%;max-width:1200px;font-size:14px;background:var(--page-card)}
+table{border-collapse:collapse;width:100%;max-width:1100px;font-size:14px;background:var(--page-card)}
 th,td{border-bottom:1px solid var(--page-line);padding:10px 12px;text-align:left;vertical-align:top}
 th{font-weight:700}
-.rec{max-width:880px;background:var(--page-card);border:1px solid var(--page-line);border-left:4px solid var(--page-acc);border-radius:12px;padding:14px 18px;margin-top:20px}
-.rec ol{margin:6px 0 0;padding-left:20px}
+td .big{font-size:17px;line-height:26px;color:var(--page-fg)}
 @media (max-width:700px){
   table,thead,tbody,tr,th,td{display:block}
   thead{display:none}
@@ -66,9 +66,10 @@ th{font-weight:700}
 .bM{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));letter-spacing:.25px}
 .bS{font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));letter-spacing:.4px}
 .lL{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:600;letter-spacing:.1px}
-.lM{font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));font-weight:600;letter-spacing:.5px}
 .gl{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:700;letter-spacing:.1px;color:var(--p)}
 .v{color:var(--onSv)}
+/* Indic text needs taller lines than Latin at the same size */
+.ph :lang(bn).tall,.ph :lang(hi).tall{line-height:1.5}
 /* system bars */
 .stat{height:28px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 24px;font-size:14px;font-weight:500;color:var(--onS)}
 .stat .ic{display:flex;gap:4px;align-items:center}
@@ -76,6 +77,7 @@ th{font-weight:700}
 .ph:has(.sheet) .nav3{background:transparent}
 .nav3{position:relative;z-index:4;height:48px;flex:none;display:flex;align-items:center;justify-content:space-around;padding:0 48px;background:var(--s)}
 .nav3 svg{width:20px;height:20px;fill:var(--onSv)}
+.nav3 .kdown{transform:rotate(90deg)}
 /* top bars: Settings' AppBar (64, 22/28 title) and the first launch's back, progress wave and report */
 .ab{min-height:64px;flex:none;display:flex;align-items:center;padding:0 4px}
 .ab .lead{width:56px;display:flex;justify-content:center}
@@ -109,6 +111,7 @@ th{font-weight:700}
 .chip.on .mi{color:var(--onSc)}
 /* GroupedList: 3 px gaps, 28 outside, 6 inside, surfaceContainerLow */
 .grp{margin:0 16px;display:flex;flex-direction:column;gap:3px}
+.grp+.grp{margin-top:12px}
 .row{background:var(--sLow);border-radius:6px;padding:14px 12px 14px 20px;min-height:48px}
 .grp>.row:first-child{border-top-left-radius:28px;border-top-right-radius:28px}
 .grp>.row:last-child{border-bottom-left-radius:28px;border-bottom-right-radius:28px}
@@ -118,62 +121,28 @@ th{font-weight:700}
 .row.sel .v{color:var(--onSc)}
 .trail{color:var(--onSv);width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex:none;margin:-12px 0}
 .row.sel .trail{color:var(--onSc)}
+/* a family's header: a row of its own, folded or open */
+.row.fam{padding-top:12px;padding-bottom:12px}
+.row.fam .tM{color:var(--onS)}
+.row.fam.open{background:var(--sCont)}
 .mark{font-weight:700;text-decoration:underline;text-underline-offset:3px}
-/* V1: the question under the chosen row */
-.ask{display:flex;flex-wrap:wrap;align-items:center;column-gap:12px;margin-top:8px;padding-top:4px}
-.ask .q{flex:1 1 150px;padding:4px 0}
-.segHit{min-height:48px;display:flex;align-items:center;flex:none;margin-left:auto}
-.seg{display:flex}
-.seg span{min-height:40px;min-width:56px;display:flex;align-items:center;justify-content:center;border:1px solid var(--ol);padding:0 12px;color:var(--onS);text-align:center}
-.seg span:first-child{border-radius:20px 0 0 20px}
-.seg span:last-child{border-radius:0 20px 20px 0;border-left:0}
-.seg span.on{background:var(--sc);color:var(--onSc);border-color:var(--ol)}
-.row.sel .seg span{border-color:var(--onSc);color:var(--onSc)}
-.row.sel .seg span.on{background:var(--p);color:var(--onP);border-color:var(--p)}
-.row.sel .ask{border-top:1px solid color-mix(in srgb,var(--onSc) 24%,transparent)}
-/* V2: the chosen language as a chip with its script toggle */
-.pills{display:flex;flex-direction:column;gap:8px;padding:0 16px}
-.pill{border-radius:10px;border:1px solid var(--ol);padding:4px 4px 8px 12px;color:var(--onS)}
-.pill.on{background:var(--sc);border-color:var(--sc);color:var(--onSc)}
-.pill .top{display:flex;align-items:center;gap:8px}
-.pill .top .tx{flex:1;min-width:0}
-.pill .top .ibtn{color:inherit}
-.pill .seg{flex-wrap:wrap}
-.pill .seg span{min-height:36px;color:inherit}
-.pill.on .seg span{border-color:var(--onSc)}
-.pill.on .seg span.on{background:var(--p);color:var(--onP);border-color:var(--p)}
-.pill .segHit{margin-left:0}
-/* V3: modal bottom sheet over a scrim */
+/* the modal bottom sheet over a scrim (M3: surfaceContainerLow, 28 top corners, drag handle) */
 .scrim{position:absolute;inset:0;background:rgba(0,0,0,.32);z-index:2}
 .sheet{position:absolute;left:0;right:0;bottom:0;z-index:3;background:var(--sLow);border-radius:28px 28px 0 0;padding:0 0 48px}
 .sheet .handle{width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:22px auto 18px}
-.sheet .sh{padding:0 24px 8px}
-.sheet .opts{padding:8px 16px 8px;display:flex;flex-direction:column;gap:3px}
+.sheet .sh{padding:0 24px 12px}
+.sheet .sh .own{font-size:calc(22px*var(--t));line-height:calc(32px*var(--t));font-weight:600;margin-bottom:4px}
+/* the sheet's text grows at most 1.5x, as the first launch's question does */
+.ph.x2 .sheet{--t:1.5}
+.sheet .opts{padding:4px 16px 8px;display:flex;flex-direction:column;gap:3px}
 .sheet .sopt{background:var(--sHigh);border-radius:6px;min-height:64px;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 20px}
 .sheet .sopt:first-child{border-radius:20px 20px 6px 6px}
 .sheet .sopt:last-child{border-radius:6px 6px 20px 20px}
-.sheet .sopt .tx{flex:1}
+.sheet .sopt .tx{flex:1;min-width:0}
+.sheet .sopt .own{font-size:calc(17px*var(--t));line-height:calc(28px*var(--t));font-weight:600}
 .sheet .sopt .mi{color:var(--onSv)}
 .sheet .cancel{display:flex;justify-content:flex-end;padding:4px 16px 8px}
 .tbtn{min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 12px;border-radius:24px;color:var(--p)}
-/* V4: Speak and Read checkboxes, M3 (18 px box, 48 target) */
-.cbs{display:flex;flex:none;margin:-12px -4px -12px 0}
-.cbHit{width:56px;height:48px;display:flex;align-items:center;justify-content:center}
-.cb{width:18px;height:18px;border-radius:2px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
-.cb.on{background:var(--p);border-color:var(--p);color:var(--onP)}
-.cb.on .mi{font-size:16px;width:16px;height:16px;font-weight:700}
-.row.sel .cb{border-color:var(--onSc)}
-.row.sel .cb.on{border-color:var(--p)}
-.colhead{display:flex;justify-content:flex-end;padding:0 24px 4px 0;margin-top:-4px}
-.lbl.withcols{padding-right:24px;align-items:center;flex-wrap:wrap}
-.lbl.withcols .gl{flex:none}
-.lbl .cols{margin-left:auto;display:flex}
-.lbl .cols span{min-width:56px;text-align:center;color:var(--onSv)}
-.x2 .pill .seg{flex-direction:column}
-.x2 .pill .seg span:first-child{border-radius:18px 18px 0 0}
-.x2 .pill .seg span:last-child{border-radius:0 0 18px 18px;border-top:0;border-left-width:1px;border-left-style:solid;border-left-color:var(--ol)}
-.x2 .pill.on .seg span:last-child{border-left-color:var(--onSc)}
-.colhead span{width:56px;text-align:center;color:var(--onSv)}
 /* notes */
 .note{display:flex;gap:28px;padding:16px 24px 4px;color:var(--onSv)}
 .note .mi{color:var(--onSv)}
@@ -187,19 +156,18 @@ th{font-weight:700}
 /* keyboard while searching */
 .kbd{flex:none;background:var(--sCont);padding:8px 4px 6px}
 .kbd .kr{display:flex;justify-content:center;gap:5px;margin-bottom:9px}
-.kbd .k{height:42px;flex:1;max-width:31px;border-radius:7px;background:var(--sHighest);color:var(--onS);display:flex;align-items:center;justify-content:center;font-size:20px}
+.kbd .k{height:42px;flex:1;max-width:31px;border-radius:7px;background:var(--sHighest);color:var(--onS);display:flex;align-items:center;justify-content:center;font-size:19px}
 .kbd .k.w{max-width:46px;font-size:14px;background:var(--sc);color:var(--onSc)}
 .kbd .k.sp{max-width:none;flex:5}
 .kbd .k.go{max-width:52px;background:var(--p);color:var(--onP)}
 .kbd .k .mi{font-size:20px;width:20px;height:20px}
 .kbd .sugg{display:flex;justify-content:space-around;height:36px;align-items:center;color:var(--onS);font-size:15px;margin-bottom:6px}
-.nav3 .kdown{transform:rotate(90deg)}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Languages you know: four ways to ask about the script</h1>
-<p class="lede">Issue #490 grows the list from 3 languages to 35. Every frame below uses <b>one layout</b>: a one-line search at the top, a few top picks from the phone's language and region, then all 35 languages grouped by family, each row with its English name and its own name. It is <b>one screen</b>, used at first launch (back, progress wave, <b>Continue</b>) and in Settings (app bar, back, <b>Save</b>); only that chrome differs. The four variations differ only in how a chosen language asks <i>whether you read its script</i>. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds; the default, Clay on pure black, is the owner's phone.</p>
+<h1>Languages you know: the bottom sheet, families folded</h1>
+<p class="lede">Issue #490 grows the list from 3 languages to 35. The owner chose the bottom sheet (2026-10-12): tapping a language opens a sheet that asks about its script <b>in that script</b>, so the answer that says “I can read it” can only be read by someone who can. The other answer, in the app's language, is “I can only speak it”. One tap chooses the language and answers for its script. Nothing is labelled Yes or No. Above the list: a one-line search, Your languages and the top picks. Below: the five families, folded. It is <b>one screen</b>, used at first launch (back, progress wave, <b>Continue</b>) and in Settings (app bar, back, <b>Save</b>); only that chrome differs. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds. The default, Clay on pure black, is the owner's phone.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -221,39 +189,25 @@ th{font-weight:700}
 
 <div id="screens"></div>
 
-<section class="opt" id="compare">
-<h2>Comparison</h2>
-<p>The task: on a phone set to English (India), choose Hindi and Telugu from the top picks and Bhojpuri from the Indo-Aryan list (one swipe), say that you read Devanagari but not Telugu, and press Continue.</p>
+<section class="opt" id="strings">
+<h2>The sheet's words</h2>
+<p>The question and the “I can read it” answer are in the language's own script, each with a line in the app's language under it. The other answer is in the app's language only. Both Hindi lines use <i>मुझे … आती है</i> / <i>क्या आपको … आती है?</i>, “is known to me”. The verb agrees with <i>लिपि</i> (feminine), not with the speaker, so one sentence serves everyone. <i>मैं … पढ़ सकता/सकती हूँ</i> would need a form for each gender. The Bengali verb does not mark gender, and <i>আপনি</i> is the polite “you”, as the app uses elsewhere.</p>
 <table>
-<thead><tr><th></th><th>1. Inline Yes/No</th><th>2. Chip with toggle</th><th>3. Bottom sheet</th><th>4. Speak and Read columns</th></tr></thead>
+<thead><tr><th></th><th>Bengali · বাংলা</th><th>Hindi · हिन्दी</th></tr></thead>
 <tbody>
-<tr><th>Taps for 3 languages, scripts answered</th>
- <td data-h="1. Inline Yes/No"><b>7</b> and 1 swipe: a tap to choose and a tap to answer, each, then Continue.</td>
- <td data-h="2. Chip with toggle"><b>7</b> and 2 swipes: as 1, but Bhojpuri's chip appears at the top, so you swipe back up to answer.</td>
- <td data-h="3. Bottom sheet"><b>7</b> and 1 swipe: a tap opens the sheet, a tap answers, each, then Continue.</td>
- <td data-h="4. Speak and Read columns"><b>6</b> and 1 swipe: Speak for each, Read for Hindi and Bhojpuri; Telugu's “no” is an empty box.</td></tr>
-<tr><th>Clarity</th>
- <td data-h="1. Inline Yes/No">High: the question appears under the row you tapped, in its own words, with a sample of the letters.</td>
- <td data-h="2. Chip with toggle">Medium: the answer sits at the top, away from the row you tapped; “Reads / Speaks only” is terse.</td>
- <td data-h="3. Bottom sheet">Highest: the sheet names the language, asks the one question, and offers two whole sentences.</td>
- <td data-h="4. Speak and Read columns">Lowest: two columns of boxes on 35 rows; “Read” for English is a strange question.</td></tr>
-<tr><th>Error-proneness</th>
- <td data-h="1. Inline Yes/No">Low: neither answer is picked; Continue waits and says why. An unanswered row can be off-screen.</td>
- <td data-h="2. Chip with toggle">Low to medium: the same waiting rule, but a chosen language from far down the list has its question out of sight.</td>
- <td data-h="3. Bottom sheet">Lowest: a language cannot be chosen without an answer, so the button never waits.</td>
- <td data-h="4. Speak and Read columns">High: an empty Read box means both “no” and “not answered”, so the rule that nothing is assumed cannot hold.</td></tr>
-<tr><th>Accessibility</th>
- <td data-h="1. Inline Yes/No">Good: the row grows and the new question takes focus; Yes and No are a segmented button. At 2x the buttons move under the text.</td>
- <td data-h="2. Chip with toggle">Fair: focus has to jump to the top of the page; chips with a toggle inside are two nodes in one.</td>
- <td data-h="3. Bottom sheet">Good: a modal sheet holds focus and returns it to the row; each choice is one 64 dp target. One extra screen change per language.</td>
- <td data-h="4. Speak and Read columns">Poor: each box needs “Speak Hindi” and “Read Hindi” labels; the column headings scroll away.</td></tr>
+<tr><th>Question, own script</th><td data-h="Bengali"><span class="big" lang="bn">আপনি কি বাংলা লিপি পড়তে পারেন?</span></td><td data-h="Hindi"><span class="big" lang="hi">क्या आपको हिंदी लिपि पढ़नी आती है?</span></td></tr>
+<tr><th>Under it, app language</th><td data-h="Bengali">Can you read the Bengali script?</td><td data-h="Hindi">Can you read the Hindi script?</td></tr>
+<tr><th>Answer 1, own script</th><td data-h="Bengali"><span class="big" lang="bn">আমি বাংলা লিপি পড়তে পারি</span></td><td data-h="Hindi"><span class="big" lang="hi">मुझे हिंदी लिपि पढ़नी आती है</span></td></tr>
+<tr><th>Its gloss</th><td data-h="Bengali">I can read the Bengali script</td><td data-h="Hindi">I can read the Hindi script</td></tr>
+<tr><th>Answer 2, app language only</th><td data-h="Bengali">I can only speak Bengali</td><td data-h="Hindi">I can only speak Hindi</td></tr>
+<tr><th>Row line once answered</th><td data-h="Bengali">Can read the Bengali script / Can only speak Bengali</td><td data-h="Hindi">Can read the Hindi script / Can only speak Hindi</td></tr>
 </tbody></table>
-<div class="rec"><b>Recommendation</b>
-<ol>
-<li><b>3. Bottom sheet.</b> Choosing and answering are one act, so no language is ever left unanswered and Continue never waits for a hidden question. Main downside: a sheet opens for every language, one more screen change than inline.</li>
-<li><b>1. Inline Yes/No.</b> The same taps without a modal and the closest to today's screen, but an unanswered question can scroll out of sight.</li>
-<li><b>2. Chip with toggle</b>, then <b>4. Speak and Read columns</b>, which cannot tell “no” from “not answered”.</li>
-</ol></div>
+<ul>
+<li>Hindi's script is Devanagari, which Hindi shares with Marathi, Nepali, Bhojpuri and others. “Hindi script” (<i>हिंदी लिपि</i>) is what people say; for a language whose script name is better known, such as Gurmukhi for Punjabi, the sentence names the script itself. Each language's three sentences are data in <code>assets/languages.yaml</code>, written and checked by a speaker, never put together from parts.</li>
+<li>A language with no own-script sentences yet asks in the app's language only, with the same two answers.</li>
+<li>Folding: each family is a row with its name, how many languages it holds, and an arrow. A screen reader hears “Indo-Aryan, 24 languages, collapsed, button” and then “expanded”. Searching shows every match whatever is folded. Your languages and the top picks stay above the families.</li>
+<li>Tapping a chosen language opens the same sheet with its answer marked, plus “Remove Bengali”.</li><li>The sheet's own question is its heading: it already names the language. Its text grows at most 1.5x, as the first launch's question does, so both answers stay in view at the largest text size.</li>
+</ul>
 </section>
 </div>
 
@@ -277,25 +231,21 @@ const L=[
 ['kha','Khasi','Ka Ktien Khasi','latin','aa'],['gom','Goan Konkani','Konknni','latin','ia']];
 const LANG=Object.fromEntries(L.map(([c,n,o,s,f])=>[c,{c,n,o,s,f}]));
 const FAMILIES=[['ia','Indo-Aryan'],['dr','Dravidian'],['tb','Tibeto-Burman'],['aa','Austroasiatic'],['ger','Germanic']];
-const SCRIPT={latin:['Latin','A B C'],devanagari:['Devanagari','अ आ इ'],bengali:['Bengali','অ আ ই'],telugu:['Telugu','అ ఆ ఇ'],tamil:['Tamil','அ ஆ இ'],
- gujarati:['Gujarati','અ આ ઇ'],kannada:['Kannada','ಅ ಆ ಇ'],malayalam:['Malayalam','അ ആ ഇ'],odia:['Odia','ଅ ଆ ଇ'],gurmukhi:['Gurmukhi','ਅ ਆ ਇ'],
- arabic:['Arabic','ا ب پ'],ol_chiki:['Ol Chiki','ᱚ ᱛ ᱜ']};
-const SCRIPT_LANG={latin:'en',devanagari:'hi',bengali:'bn',telugu:'te',tamil:'ta',gujarati:'gu',kannada:'kn',malayalam:'ml',odia:'or',gurmukhi:'pa',arabic:'ur',ol_chiki:'sat'};
 const RTL=new Set(['ur','ks','sd']);
-const PICKS=['en','hi','bn','te','ta','mr'];   // top picks for a phone set to English (India)
-const ORDER=['te','hi','bho'];                  // chosen, best known first
-const DONE={te:false,hi:true,bho:true};          // reads Devanagari, not Telugu
-const MID={te:undefined};                        // Telugu just chosen, not answered
+const PICKS=['en','hi','bn','te'];   // top picks for a phone set to English (India)
+
+/* The sheet's sentences: see "The sheet's words" below the frames. */
+const ASK={
+ bn:{q:'আপনি কি বাংলা লিপি পড়তে পারেন?',qEn:'Can you read the Bengali script?',read:'আমি বাংলা লিপি পড়তে পারি',readEn:'I can read the Bengali script',speak:'I can only speak Bengali'},
+ hi:{q:'क्या आपको हिंदी लिपि पढ़नी आती है?',qEn:'Can you read the Hindi script?',read:'मुझे हिंदी लिपि पढ़नी आती है',readEn:'I can read the Hindi script',speak:'I can only speak Hindi'},
+};
+const answerLine=(c,reads)=>reads?`Can read the ${LANG[c].n} script`:`Can only speak ${LANG[c].n}`;
 
 /* ---------- builders ---------- */
 const ic=(n,cls='')=>`<span class="mi ${cls}" aria-hidden="true">${n}</span>`;
 const own=(c)=>`<bdi lang="${c}"${RTL.has(c)?' dir="rtl"':''}>${LANG[c].o}</bdi>`;
 const nm=(c)=>LANG[c].o===LANG[c].n?LANG[c].n:`${LANG[c].n} · ${own(c)}`;   // spokenOption: "{name} · {ownName}"
-const sample=(s)=>`<bdi lang="${SCRIPT_LANG[s]}"${s==='arabic'?' dir="rtl"':''}>${SCRIPT[s][1]}</bdi>`;
-const sName=(c)=>SCRIPT[LANG[c].s][0];
-const question=(c)=>`Do you read the ${sName(c)} script (${sample(LANG[c].s)})?`;
-const mark=(text,q)=>{if(!q)return text;const i=text.toLowerCase().indexOf(q);return i<0?text:`${text.slice(0,i)}<span class="mark">${text.slice(i,i+q.length)}</span>${text.slice(i+q.length)}`};
-
+const mark=(text,q)=>{if(!q)return text;const i=text.toLowerCase().indexOf(q.toLowerCase());return i<0?text:`${text.slice(0,i)}<span class="mark">${text.slice(i,i+q.length)}</span>${text.slice(i+q.length)}`};
 function wave(value){ // WavePainter: a primary sine to value, the secondaryContainer track, the end dot
  const W=212,H=16,mid=8,usable=W-8,end=Math.max(0,Math.min(usable,value*usable));let d='M2 '+mid;
  for(let x=2;x<=end;x+=2)d+=` L${x} ${(mid+3*Math.sin(x/20*2*Math.PI)).toFixed(2)}`;
@@ -309,113 +259,80 @@ const appBar=(t)=>`<div class="ab"><span class="lead"><span class="ibtn back lf"
 const OB_T='Which languages do you already know?';
 const BODY='They decide your daily facts and which decks you can review.';
 const head=(mode)=>mode==='ob'?`<div class="qh"><div class="hM lf">${OB_T}</div><div class="bL v lf">${BODY}</div></div>`:`<div class="intro"><div class="bL v lf">${BODY}</div></div>`;
-function search(q,focus){
- const field=q?`<span class="q bL lf">${q}${focus?'<span class="caret"></span>':''}</span><span class="ibtn lf" data-tap>${ic('close')}</span>`
+function search(q,focus,qlang){
+ const field=q?`<span class="q bL lf"${qlang?` lang="${qlang}"`:''}>${q}${focus?'<span class="caret"></span>':''}</span><span class="ibtn lf" data-tap>${ic('close')}</span>`
   :`<span class="q bL hint lf">Search languages</span><span class="pad"></span>`;
- return `<div class="sbw"><div class="sb lf" data-search>${ic('search')}${field}</div></div>${q?'':`<div class="help bS lf">By its English name or its own, like Telugu or ${own('te')}</div>`}`;
+ return `<div class="sbw"><div class="sb lf" data-search>${ic('search')}${field}</div></div>${q?'':`<div class="help bS lf">By its English name or its own, like Bengali or ${own('bn')}</div>`}`;
 }
-const label=(t,end='',cls='')=>`<div class="lbl ${cls} lf"><span class="gl">${t}</span>${end}</div>`;
+const label=(t,end='')=>`<div class="lbl lf"><span class="gl">${t}</span>${end}</div>`;
 const chip=(c,on)=>`<span class="chipHit lf" data-tap><span class="chip lL${on?' on':''}">${ic(on?'check':'add','m18')}<span>${nm(c)}</span></span></span>`;
-const seg=(a,yes='Yes',no='No')=>`<span class="segHit lf" data-tap><span class="seg lL" role="group"><span class="${a===true?'on':''}">${yes}</span><span class="${a===false?'on':''}">${no}</span></span></span>`;
 const grp=(rows,id='')=>`<div class="grp"${id?` data-id="${id}"`:''}>${rows.join('')}</div>`;
 const note=(icon,t)=>`<div class="note lf">${ic(icon,'m20')}<span class="bM">${t}</span></div>`;
 function bottom(why,lab,on){return `<div class="bot">${why?`<div class="why bM lf">${why}</div>`:'<div class="sp"></div>'}<div class="btn lf" data-tap${on?'':' data-dis'}>${lab}</div></div>`}
-function kbd(){
- const row=(s)=>`<div class="kr">${[...s].map(k=>`<span class="k">${k}</span>`).join('')}</div>`;
- return `<div class="kbd" aria-hidden="true"><div class="sugg"><span>pu</span><span>puri</span><span>Punjabi</span></div>${row('qwertyuiop')}${row('asdfghjkl')}<div class="kr"><span class="k w">${ic('arrow_upward')}</span>${[...'zxcvbnm'].map(k=>`<span class="k">${k}</span>`).join('')}<span class="k w">${ic('backspace','mo')}</span></div><div class="kr"><span class="k w">?123</span><span class="k">,</span><span class="k sp"></span><span class="k">.</span><span class="k go">${ic('search')}</span></div></div>`;
+function kbd(bengali){
+ const row=(s)=>`<div class="kr">${[...s].map(k=>`<span class="k"${bengali?' lang="bn"':''}>${k}</span>`).join('')}</div>`;
+ const rows=bengali?[['ৌ','ৈ','া','ী','ূ','ব','হ','গ','দ','জ'],['ো','ে','্','ি','ু','প','র','ক','ত','চ'],['ং','ম','ন','ব','ল','স','য']]
+  :[[...'qwertyuiop'],[...'asdfghjkl'],[...'zxcvbnm']];
+ const sugg=bengali?['বাং','বাংলা','বাংলায়']:['hin','Hindi','hindi'];
+ return `<div class="kbd" aria-hidden="true"><div class="sugg"${bengali?' lang="bn"':''}>${sugg.map(s=>`<span>${s}</span>`).join('')}</div>${row(rows[0])}${row(rows[1])}<div class="kr"><span class="k w">${ic('arrow_upward')}</span>${rows[2].map(k=>`<span class="k"${bengali?' lang="bn"':''}>${k}</span>`).join('')}<span class="k w">${ic('backspace','mo')}</span></div><div class="kr"><span class="k w">?123</span><span class="k">,</span><span class="k sp"></span><span class="k">.</span><span class="k go">${ic('search')}</span></div></div>`;
 }
 function phone({mode,body,skip,bot,keyboard,x2,overlay=''}){
- return `<div class="ph${x2?' x2':''}" data-mode="${mode}">${stat()}${mode==='ob'?obTop():appBar('Languages you know')}<div class="scroll"${skip?` data-skip="${skip}"`:''}><div class="clip"><div class="content">${body}</div></div></div>${bot}${keyboard?kbd():''}${nav3(keyboard)}${overlay}</div>`;
+ return `<div class="ph${x2?' x2':''}" data-mode="${mode}">${stat()}${mode==='ob'?obTop():appBar('Languages you know')}<div class="scroll"${skip?` data-skip="${skip}"`:''}><div class="clip"><div class="content">${body}</div></div></div>${bot}${keyboard?kbd(keyboard==='bn'):''}${nav3(keyboard)}${overlay}</div>`;
 }
 const WAIT_ONE='Choose at least one language to go on.';
-const WAIT_SCRIPT='Say whether you read each script to go on.';
 
-/* ---------- the shared layout: search, your languages, top picks, every language by family ---------- */
-/* v: the variation's renderers. st: {chosen:{code:answer}, order:[...], q:'' , focus} */
-function screen(v,mode,st){
- const chosen=st.chosen,codes=st.order.filter(c=>c in chosen);let out=head(mode)+search(st.q,st.focus);
- if(!st.q){
-  if(codes.length)out+=label('Your languages','<span class="bS v">best known first</span>')+v.yours(codes,chosen);
-  out+=label('Top picks')+`<div class="chips">${PICKS.map(c=>chip(c,c in chosen)).join('')}</div>`;
+/* ---------- the screen: search, your languages, top picks, families (folded unless open or searching) ---------- */
+/* st: {chosen:{code:readsScript}, q, focus, qlang, open:[family ids]} */
+function screen(mode,st){
+ const chosen=st.chosen||{},codes=Object.keys(chosen);let out=head(mode)+search(st.q,st.focus,st.qlang);
+ const row=(c)=>{const on=c in chosen;const sub=on?`<div class="bM v">${LANG[c].o!==LANG[c].n?own(c)+' · ':''}${answerLine(c,chosen[c])}</div>`:(LANG[c].o!==LANG[c].n?`<div class="bM v">${mark(LANG[c].o,st.q)}</div>`:'');
+  return `<div class="row${on?' sel':''}" data-row="${c}" data-tap role="button"><div class="line lf"><div class="tx"><div class="tM">${mark(LANG[c].n,st.q)}</div>${sub}</div><span class="trail">${ic(on?'check_circle':'add_circle_outline')}</span></div></div>`};
+ if(st.q){
+  for(const [f,fname] of FAMILIES){
+   const all=L.filter(l=>l[4]===f).map(l=>l[0]);
+   const hits=all.filter(c=>LANG[c].n.toLowerCase().includes(st.q.toLowerCase())||LANG[c].o.includes(st.q));
+   if(hits.length)out+=label(fname,`<span class="bS v">${hits.length} of ${all.length}</span>`)+grp(hits.map(row));
+  }
+  return out;
  }
+ if(codes.length)out+=label('Your languages','<span class="bS v">best known first</span>')+grp(codes.map(c=>
+  `<div class="row sel" data-tap role="button"><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div><div class="bM v">${answerLine(c,chosen[c])}</div></div><span class="trail">${ic('edit','mo')}</span></div></div>`),'yours');
+ out+=label('Top picks')+`<div class="chips">${PICKS.map(c=>chip(c,c in chosen)).join('')}</div>`;
+ out+=label('All languages','<span class="bS v">by family</span>');
+ const famRows=[];let html='';
+ const famRow=(f,fname,n,open)=>`<div class="row fam${open?' open':''}" data-fam="${f}" data-tap role="button" aria-expanded="${open}"><div class="line lf"><div class="tx tM">${fname}</div><span class="bM v" aria-label="${n} ${n>1?'languages':'language'}">${n}</span><span class="trail">${ic(open?'expand_less':'expand_more')}</span></div></div>`;
+ // folded families sit in one group; an open one starts a group of its own, its languages under it
+ let pending=[];
+ const flush=()=>{if(pending.length){html+=grp(pending);pending=[]}};
  for(const [f,fname] of FAMILIES){
-  let langs=L.filter(l=>l[4]===f).map(l=>l[0]).sort((a,b)=>LANG[a].n.localeCompare(LANG[b].n));
-  const n=langs.length;
-  if(st.q)langs=langs.filter(c=>LANG[c].n.toLowerCase().includes(st.q)||LANG[c].o.includes(st.q));
-  if(!langs.length)continue;
-  out+=v.familyHead(fname,st.q?`${langs.length} of ${n}`:`${n}`,f)+grp(langs.map(c=>v.row(c,chosen,st.q)),f);
+  const langs=L.filter(l=>l[4]===f).map(l=>l[0]).sort((a,b)=>LANG[a].n.localeCompare(LANG[b].n));
+  const open=(st.open||[]).includes(f);
+  if(open){flush();html+=grp([famRow(f,fname,langs.length,true),...langs.map(row)])}
+  else pending.push(famRow(f,fname,langs.length,false));
  }
- if(!st.q)out+=note('lock_outline','Kept on this phone. Change it any time in Settings.');
+ flush();
+ out+=html+note('lock_outline','Kept on this phone. Change it any time in Settings.');
  return out;
 }
-const famHead=(fname,count,f)=>`<div data-fam="${f}">${label(fname,`<span class="bS v">${count}</span>`)}</div>`;
-const baseTitle=(c,q,sub)=>`<div class="tx"><div class="tM">${mark(LANG[c].n,q)}</div>${sub!==undefined?`<div class="bM v">${sub}</div>`:(LANG[c].o!==LANG[c].n?`<div class="bM v">${own(c)}</div>`:'')}</div>`;
-const pickRow=(c,chosen,q,extra='',sub)=>{const on=c in chosen;return `<div class="row${on?' sel':''}" data-row="${c}" data-tap><div class="line lf">${baseTitle(c,q,sub)}<span class="trail">${ic(on?'check_circle':'add_circle_outline')}</span></div>${extra}</div>`};
-function waiting(st){const cs=Object.keys(st.chosen);return !cs.length?WAIT_ONE:cs.some(c=>st.chosen[c]===undefined)?WAIT_SCRIPT:''}
+const sheet=(c,current)=>{const a=ASK[c];return `<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${LANG[c].n}"><div class="handle"></div>
+ <div class="sh"><div class="own lf" lang="${c}">${a.q}</div><div class="bM v lf">${a.qEn}</div></div>
+ <div class="opts"><div class="sopt lf" data-tap role="button"><span class="tx"><span class="own" lang="${c}" style="display:block">${a.read}</span><span class="bM v" style="display:block">${a.readEn}</span></span>${ic(current===true?'radio_button_checked':'menu_book','mo')}</div>
+ <div class="sopt lf" data-tap role="button"><span class="tx"><span class="tM">${a.speak}</span></span>${ic(current===false?'radio_button_checked':'record_voice_over','mo')}</div></div>
+ <div class="cancel"><span class="tbtn lL lf" data-tap>Cancel</span></div></div>`};
 
-/* 1. Inline: the chosen row grows a Yes/No question */
-const V1={
- familyHead:famHead,
- row:(c,chosen,q)=>pickRow(c,chosen,q,c in chosen?`<div class="ask"><div class="q bM lf">${question(c)}</div>${seg(chosen[c])}</div>`:''),
- yours:(codes,chosen)=>grp(codes.map(c=>`<div class="row sel"><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div></div><span class="trail" data-tap>${ic('close')}</span></div><div class="ask"><div class="q bM lf">${question(c)}</div>${seg(chosen[c])}</div></div>`),'yours'),
-};
-/* 2. The chosen language becomes a chip with a small script toggle */
-const V2={
- familyHead:famHead,
- row:(c,chosen,q)=>pickRow(c,chosen,q),
- yours:(codes,chosen)=>`<div class="pills" data-id="yours">${codes.map(c=>{const a=chosen[c];return `<div class="pill${a===undefined?'':' on'}"><div class="top lf"><div class="tx lL">${nm(c)}</div><span class="ibtn" data-tap>${ic('close','m18')}</span></div>${seg(a,`Reads&nbsp;${sample(LANG[c].s)}`,'Speaks only')}</div>`}).join('')}</div>`,
-};
-/* 3. A tap opens a sheet: I speak it / I speak and read it */
-const ans3=(a)=>a===true?'Speaks and reads':'Speaks only';
-const V3={
- familyHead:famHead,
- row:(c,chosen,q)=>pickRow(c,chosen,q,'',c in chosen&&chosen[c]!==undefined?`${LANG[c].o!==LANG[c].n?own(c)+' · ':''}${ans3(chosen[c])}`:undefined),
- yours:(codes,chosen)=>grp(codes.map(c=>`<div class="row sel" data-tap><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div><div class="bM v">${ans3(chosen[c])}${chosen[c]?` · ${sName(c)}`:''}</div></div><span class="trail">${ic('edit','mo')}</span></div></div>`),'yours'),
-};
-const sheet=(c)=>`<div class="scrim"></div><div class="sheet" role="dialog"><div class="handle"></div><div class="sh"><div class="tL lf">${nm(c)}</div><div class="bM v lf" style="margin-top:8px">${question(c)}</div></div>
- <div class="opts"><div class="sopt lf" data-tap><span class="tx"><span class="tM">No, I speak it</span></span>${ic('record_voice_over','mo')}</div><div class="sopt lf" data-tap><span class="tx"><span class="tM">Yes, I speak and read it</span></span>${ic('menu_book','mo')}</div></div>
- <div class="cancel"><span class="tbtn lL lf" data-tap>Cancel</span></div></div>`;
-/* 4. Speak and Read checkboxes on every row */
-const cb=(on,what,c)=>`<span class="cbHit" data-tap aria-label="${what} ${LANG[c].n}"><span class="cb${on?' on':''}">${on?ic('check'):''}</span></span>`;
-const V4={
- familyHead:(fname,count,f)=>`<div data-fam="${f}"><div class="lbl withcols lf"><span class="gl">${fname}</span><span class="bS v">${count}</span><span class="cols lM"><span>Speak</span><span>Read</span></span></div></div>`,
- row:(c,chosen,q)=>{const on=c in chosen;return `<div class="row${on?' sel':''}" data-row="${c}"><div class="line lf">${baseTitle(c,q)}<span class="cbs">${cb(on,'Speak',c)}${cb(chosen[c]===true,'Read',c)}</span></div></div>`},
- yours:(codes,chosen)=>`<div class="colhead lf"><span class="lM">Speak</span><span class="lM">Read</span></div>`+grp(codes.map(c=>`<div class="row sel"><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div></div><span class="cbs">${cb(true,'Speak',c)}${cb(chosen[c]===true,'Read',c)}</span></div></div>`),'yours'),
-};
-
-const S_EMPTY={chosen:{},order:ORDER,q:''};
-const S_SEARCH={chosen:{},order:ORDER,q:'pu',focus:true};
-const S_MID={chosen:MID,order:ORDER,q:''};
-const S_DONE={chosen:DONE,order:ORDER,q:''};
-const btn=(mode,st,always)=>bottom(always?'':waiting(st),mode==='ob'?'Continue':'Save',always||!waiting(st));
-
-function frames(v,{midSkip,midOverlay,doneSkip,x2State,x2Skip,x2Overlay,v4}){
- return [
- ['First launch: empty',()=>phone({mode:'ob',body:screen(v,'ob',S_EMPTY),bot:btn('ob',S_EMPTY)})],
- ['Searching “pu”',()=>phone({mode:'ob',skip:'.sbw',body:screen(v,'ob',S_SEARCH),bot:btn('ob',S_SEARCH),keyboard:true})],
- ['Telugu just chosen',()=>phone({mode:'ob',skip:midSkip,body:screen(v,'ob',S_MID),bot:btn('ob',S_MID,v4),overlay:midOverlay||''})],
- ['Three chosen and answered',()=>phone({mode:'ob',skip:doneSkip,body:screen(v,'ob',S_DONE),bot:btn('ob',S_DONE)})],
- ['Settings',()=>phone({mode:'set',body:screen(v,'set',S_DONE),bot:btn('set',S_DONE)})],
- ['Settings at 2x text',()=>phone({mode:'set',x2:true,skip:x2Skip,body:screen(v,'set',x2State),bot:btn('set',x2State,v4),overlay:x2Overlay||''})],
- ];
-}
-const VARS_=[
- {id:'v1',t:'1. Inline: the row asks Yes or No',
-  p:'Choosing a language, by its row or a top pick, ticks the row and opens a question under it: “Do you read the Telugu script (అ ఆ ఇ)?”, Yes or No, neither picked. The chosen languages also collect under Your languages at the top, with the same question. Continue waits until every one is answered and says why.',
-  f:frames(V1,{midSkip:'[data-fam=dr]',doneSkip:'.lbl',x2State:S_MID,x2Skip:'.lbl'})},
- {id:'v2',t:'2. Chip state: the chosen language becomes a chip with a script toggle',
-  p:'The family rows only tick. Each chosen language appears as a chip under Your languages, with a two-way toggle inside it: “Reads అ ఆ ఇ” or “Speaks only”, neither picked. An unanswered chip stays outlined; answered, it fills.',
-  f:frames(V2,{midSkip:'.lbl',doneSkip:'.lbl',x2State:S_MID,x2Skip:'.lbl'})},
- {id:'v3',t:'3. Bottom sheet: one tap answers both',
-  p:'Tapping a language opens a sheet that asks its script question with two whole answers: “No, I speak it” or “Yes, I speak and read it”. One tap chooses the language and answers for its script, so nothing is ever left unanswered. Tapping a chosen row opens the sheet again to change it, or to remove the language.',
-  f:frames(V3,{midSkip:'[data-fam=dr]',midOverlay:sheet('te'),doneSkip:'.lbl',x2State:S_DONE,x2Skip:'[data-fam=dr]',x2Overlay:sheet('te')})},
- {id:'v4',t:'4. Two checkboxes per row: Speak and Read',
-  p:'Every row carries a Speak and a Read box under column headings. Read implies Speak. It is the quickest to tick, but an empty Read box is both “no” and “not answered yet”: the button cannot wait for an answer, so this variation breaks the rule that nothing is assumed.',
-  f:frames(V4,{midSkip:'[data-fam=dr]',doneSkip:'.lbl',x2State:S_MID,x2Skip:'.lbl',v4:true})},
+const DONE={bn:true,hi:false};   // reads Bengali; speaks Hindi only
+const btn=(mode,chosen)=>{const n=Object.keys(chosen).length;return bottom(n?'':WAIT_ONE,mode==='ob'?'Continue':'Save',n>0)};
+const FRAMES=[
+ ['First launch: families folded',()=>phone({mode:'ob',skip:'.sbw',body:screen('ob',{}),bot:btn('ob',{})})],
+ ['Searching “hin”',()=>phone({mode:'ob',skip:'.sbw',body:screen('ob',{q:'hin',focus:true}),bot:btn('ob',{}),keyboard:'en'})],
+ ['Searching “বাং”, by its own name',()=>phone({mode:'ob',skip:'.sbw',body:screen('ob',{q:'বাং',focus:true,qlang:'bn'}),bot:btn('ob',{}),keyboard:'bn'})],
+ ['Bengali tapped: the sheet',()=>phone({mode:'ob',body:screen('ob',{}),bot:btn('ob',{}),overlay:sheet('bn')})],
+ ['Hindi tapped: the sheet',()=>phone({mode:'ob',skip:'.sbw',body:screen('ob',{chosen:{bn:true}}),bot:btn('ob',{bn:true}),overlay:sheet('hi')})],
+ ['Two chosen and answered',()=>phone({mode:'ob',skip:'.sbw',body:screen('ob',{chosen:DONE}),bot:btn('ob',DONE)})],
+ ['Settings, Indo-Aryan open',()=>phone({mode:'set',skip:'.lbl',body:screen('set',{chosen:DONE,open:['ia']}),bot:btn('set',DONE)})],
+ ['Settings at 2x text',()=>phone({mode:'set',x2:true,skip:'.lbl',body:screen('set',{chosen:DONE}),bot:btn('set',DONE)})],
+ ['Settings at 2x text: the Bengali sheet',()=>phone({mode:'set',x2:true,body:screen('set',{chosen:DONE}),bot:btn('set',DONE),overlay:sheet('bn',true)})],
 ];
-/* Telugu just chosen in variation 3 is the sheet itself: Telugu is not yet chosen behind it. */
-VARS_[2].f[2]=['Telugu tapped: the sheet',()=>phone({mode:'ob',skip:'[data-fam=dr]',body:screen(V3,'ob',S_EMPTY),bot:btn('ob',S_EMPTY),overlay:sheet('te')})];
-VARS_[2].f[5]=['Settings at 2x text: the sheet',()=>phone({mode:'set',x2:true,skip:'[data-fam=dr]',body:screen(V3,'set',{chosen:{hi:true,bho:true},order:ORDER,q:''}),bot:btn('set',{chosen:{hi:true}}),overlay:sheet('te')})];
 
 /* ---------- theme ---------- */
 const VARS=['p','onP','sc','onSc','s','onS','onSv','sLowest','sLow','sCont','sHigh','sHighest','ol','olv','pc','onPc'];
@@ -432,22 +349,20 @@ function applyTheme({seed,mode,black}){
  });
 }
 function render(){
- document.getElementById('screens').innerHTML=VARS_.map(o=>`<section class="opt" id="${o.id}"><h2>${o.t}</h2><p>${o.p}</p><div class="frames">${
-  o.f.flatMap(([cap,fn])=>['dark','light'].map(th=>`<div class="fcol" data-th="${th}"><span class="fcap">${cap} · <span class="th"></span></span>${fn()}</div>`)).join('')}</div></section>`).join('');
+ document.getElementById('screens').innerHTML=`<section class="opt" id="sheet"><h2>Frames</h2><p>Bengali and Hindi throughout: the learner reads Bengali and speaks Hindi only. Tapping a language, from its row or a top pick, opens the sheet. Answering closes it and adds the language to Your languages. Cancel adds nothing.</p><div class="frames">${
+  FRAMES.flatMap(([cap,fn])=>['dark','light'].map(th=>`<div class="fcol" data-th="${th}"><span class="fcap">${cap} · <span class="th"></span></span>${fn()}</div>`)).join('')}</div></section>`;
 }
 
 /* A frame is a scroll position: [data-skip] scrolls that element to the top. The visible area then ends
-   above the first line or target the edge would cut, as a list stopped between two rows does, and the
+   above the first line or row the edge would cut, as a list stopped between two rows does, and the
    scrollbar thumb (thumbVisibility: true, as in the picker today) shows there is more. Nothing is cut in half. */
 function fit(){
  document.querySelectorAll('.scroll').forEach(sc=>{
   const clip=sc.querySelector('.clip'),content=sc.querySelector('.content');
   clip.style.height=sc.clientHeight+'px';content.style.transform='';
   const sk=sc.dataset.skip?content.querySelector(sc.dataset.skip):null;
-  // the skipped-to element's own top padding, past 8, scrolls away too
   const padTop=(e)=>{let p=0;for(let x=e;x&&x.nodeType===1;x=x.firstElementChild){p+=parseFloat(getComputedStyle(x).paddingTop)||0;if(x.classList.contains('lbl'))break}return p};
   let off=sk?Math.max(0,sk.getBoundingClientRect().top-content.getBoundingClientRect().top+Math.max(0,padTop(sk)-8)):0;
-  // never start the view half way through a line: move past anything the top edge would cut
   const c0=content.getBoundingClientRect().top;
   for(const el of content.querySelectorAll('.lf')){const r=el.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)off=b}
   content.style.transform=`translateY(${-off}px)`;
@@ -455,7 +370,7 @@ function fit(){
   const leaves=[...content.querySelectorAll('.lf')];
   for(let guard=0;guard<60;guard++){let moved=false;
    for(const el of leaves){const r=el.getBoundingClientRect();if(!r.height)continue;const t=r.top-top0,b=r.bottom-top0;
-    if(t<cut-0.5&&b>cut+0.5){const box=el.closest(".row,.pill,.sopt")||el;const bt=box.getBoundingClientRect().top-top0;cut=Math.max(0,Math.min(t,bt));moved=true}}
+    if(t<cut-0.5&&b>cut+0.5){const box=el.closest('.row')||el;const bt=box.getBoundingClientRect().top-top0;cut=Math.max(0,Math.min(t,bt));moved=true}}
    if(!moved)break;}
   clip.style.height=cut+'px';
   sc.querySelector('.thumb')?.remove();
@@ -474,7 +389,7 @@ const lum=(c)=>{const a=c.slice(0,3).map(v=>{v/=255;return v<=0.03928?v/12.92:Ma
 const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)};
 function bgOf(el){const stack=[];for(let e=el;e;e=e.parentElement){const c=rgba(getComputedStyle(e).backgroundColor);if(c[3]>0)stack.push(c);if(c[3]>=1||e.classList.contains('ph'))break}
  let col=[255,255,255,1];for(let i=stack.length-1;i>=0;i--)col=over(stack[i],col);return col}
-const tagOf=(ph)=>`${ph.closest('section').id.toUpperCase()} “${ph.parentElement.querySelector('.fcap').firstChild.textContent.replace(' · ','').trim()}”`;
+const tagOf=(ph)=>`“${ph.parentElement.querySelector('.fcap').firstChild.textContent.replace(' · ','').trim()}” (${ph.parentElement.dataset.th})`;
 function layoutProblems(){
  const bad=[];const phones=[...document.querySelectorAll('.ph')];
  phones.forEach(ph=>{const tag=tagOf(ph);
@@ -492,16 +407,19 @@ function layoutProblems(){
   if(bot.bottom>nav.top+0.5)bad.push(`${tag}: button under the navigation bar`);
   if(sc.getBoundingClientRect().bottom>bot.top+0.5)bad.push(`${tag}: content under the pinned bar`);
   if(nav.bottom>pr.bottom+0.5)bad.push(`${tag}: navigation bar below the frame`);
-  const sh=ph.querySelector('.sheet');if(sh){const r=sh.getBoundingClientRect();if(r.top<pr.top+80)bad.push(`${tag}: sheet too tall`);
+  const sh=ph.querySelector('.sheet');if(sh){const r=sh.getBoundingClientRect();if(r.top<pr.top+72)bad.push(`${tag}: sheet too tall`);
    sh.querySelectorAll('[data-tap]').forEach(el=>{if(el.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: sheet choice under the navigation bar`)})}
   ph.querySelectorAll('[data-search]').forEach(sb=>{const q=sb.querySelector('.q');const lh=parseFloat(getComputedStyle(q).lineHeight);
    if(q.getBoundingClientRect().height>lh*1.5)bad.push(`${tag}: search text wraps`);
    if(sb.getBoundingClientRect().height>Math.max(56,lh+16)+0.5)bad.push(`${tag}: search field taller than one line`)});
+  // the words: never Yes or No, and every family header says whether it is open
+  ph.querySelectorAll('[data-tap]').forEach(el=>{if(/^(yes|no)$/i.test(el.textContent.trim()))bad.push(`${tag}: an option labelled Yes or No`)});
+  ph.querySelectorAll('.row.fam').forEach(el=>{if(!el.hasAttribute('aria-expanded'))bad.push(`${tag}: family without its folded state`)});
  });
  if(document.documentElement.scrollWidth>window.innerWidth+0.5)bad.push(`page scrolls sideways (${document.documentElement.scrollWidth} > ${window.innerWidth})`);
  return {bad,frames:phones.length};
 }
-/* Every visible text 4.5:1 and every icon, outline and checkbox 3:1 against what is really behind it, in 4 seeds × light, dark and
+/* Every visible text 4.5:1 and every icon and outline 3:1 against what is really behind it, in 4 seeds × light, dark and
    pure black. Text under the sheet's scrim is not read; the disabled button is exempt (WCAG 1.4.3), drawn at M3's 38%. */
 function contrastProblems(){
  const bad=[];let checked=0;const cols=[...document.querySelectorAll('.fcol')];
@@ -521,8 +439,8 @@ function contrastProblems(){
     const need=isIcon?3:4.5;const c=ratio(fg,bg);checked++;
     if(c<need)bad.push(`${theme} ${tagOf(ph)}: “${el.textContent.trim().slice(0,20)}” ${c.toFixed(2)}:1`);
    });
-   if(!scrim)ph.querySelectorAll('.chip:not(.on),.pill:not(.on),.seg span:not(.on),.cb:not(.on)').forEach(el=>{const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);const c=ratio(over(b,bg),bg);checked++;
-    if(c<3)bad.push(`${theme} ${tagOf(ph)}: ${el.className} outline ${c.toFixed(2)}:1`)});
+   if(!scrim)ph.querySelectorAll('.chip:not(.on)').forEach(el=>{const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);const c=ratio(over(b,bg),bg);checked++;
+    if(c<3)bad.push(`${theme} ${tagOf(ph)}: chip outline ${c.toFixed(2)}:1`)});
   });
  }
  return {bad,checked};
@@ -534,7 +452,7 @@ function check(){
  const all=[...new Set([...L1.bad,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp: nothing sticks out or is cut in half, every content area is at least 60% filled, no sideways scroll, the search field is one line, the pinned button and the sheet sit above the 3-button navigation bar, every target is at least 48 × 48. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1; the disabled button is exempt).`;
+  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp: nothing sticks out or is cut in half, every content area is at least 60% filled, no sideways scroll, the search field is one line, the pinned button and the sheet sit above the 3-button navigation bar, every target is at least 48 × 48, no option says Yes or No, every family states whether it is folded. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1; the disabled button is exempt).`;
  window.__check={problems:all,frames:L1.frames,pairs:C1.checked};
  applyTheme(state());
 }
