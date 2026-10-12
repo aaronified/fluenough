@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 
 /// One source a deck names, and what kind of deck names it.
 typedef DeckSourceLine = ({String source, DeckKind kind});
@@ -56,7 +57,12 @@ class SourcesPage extends StatelessWidget {
         actions: const <Widget>[ReportButton()],
       ),
       body: ListView(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          16,
+          4,
+          16,
+          24,
+        ).clearingSystemBar(context),
         children: <Widget>[
           GroupedList.settings(
             children: <Widget>[

@@ -11,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/grammar_cells.dart';
 import 'card_notes.dart';
@@ -62,7 +63,12 @@ class InspectPage extends StatelessWidget {
       ),
       body: SelectionArea(
         child: ListView.separated(
-          padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
+          padding: const EdgeInsetsDirectional.fromSTEB(
+            8,
+            8,
+            8,
+            24,
+          ).clearingSystemBar(context),
           itemCount: rows.length + 1,
           separatorBuilder: (_, i) =>
               i == 0 ? const SizedBox(height: 8) : const Divider(height: 1),

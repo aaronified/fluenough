@@ -12,6 +12,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/checked_by_line.dart';
 import '../decks/path_model.dart';
@@ -146,7 +147,12 @@ class ReviewPage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 24),
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          16,
+          12,
+          16,
+          24,
+        ).clearingSystemBar(context),
         children: <Widget>[
           ReviewInfo(text: l10n.reviewPageInfo, icon: Icons.info_outline),
           if (apart > 0) ...<Widget>[

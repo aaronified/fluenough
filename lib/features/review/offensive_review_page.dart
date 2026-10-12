@@ -12,6 +12,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'review_page.dart' show ReviewFoot, ReviewInfo;
 import 'review_sheets.dart';
@@ -168,7 +169,12 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
               title: l10n.reviewOffensiveNone(language.name),
             )
           : ListView(
-              padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 24),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                16,
+                12,
+                16,
+                24,
+              ).clearingSystemBar(context),
               children: <Widget>[
                 // How far the rating has got, in the body rather than the
                 // bar, where at twice the text size it has no room.
