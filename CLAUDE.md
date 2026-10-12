@@ -39,3 +39,9 @@ wherever the table above allows it.
   ones to it when the owner calls them a priority.
 - **Budget.** Tokens are limited: one review per change, no extra
   verification passes, and no new work unless the owner asks for it.
+
+## Repositories off limits (owner, 2026-10-12)
+
+`homelab-stacks` is not part of this work. Never clone or download it, never
+modify it, and never push to it, even if it appears in a session's
+repositories.
