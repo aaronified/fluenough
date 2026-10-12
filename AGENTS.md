@@ -279,35 +279,18 @@ people fall into under time pressure.
 | --- | --- | --- |
 | cheap | Searching, extraction, parsing, grouping, transcribing, running a test suite, running a linter | Haiku |
 | standard | Writing and synthesis with judgement | Sonnet |
-| deep | Adversarial review, correctness reasoning, rating | Opus |
+| deep | Adversarial review, correctness reasoning | Opus |
 
 For work done for the owner, the table in [CLAUDE.md](CLAUDE.md) decides
 instead: reviews and audits are Sonnet, and Opus is for fixing, coding and UI
 mockups, never more than two at once.
 
-**Rate the work before calling it done, and 8/10 is the bar.** At the end of
-any task touching more than a couple of files, an independent subagent rates
-the work out of 10 against the user's own prompts. Below 8, fix what it found
-and re-rate against the new diff — do not commit, and do not report the task
-complete.
-
-The rater is the one subagent that is not cheap-tier. It is judging whether the
-work matches the request, which is the judgement call in the whole loop; a
-cheap rater rubber-stamps and the gate stops meaning anything.
-
-Three things make the score worth having, and all three are easy to lose:
-
-- **Never tell the rater the target.** Not the pass mark, not a previous score,
-  not that the score has a consequence. A rater that knows the bar rates to it.
-- **Hand it the prompts verbatim**, in order, including the ones that arrived
-  mid-task. A paraphrase is where the request quietly becomes the thing that
-  got built.
-- **Report the number as given.** Do not round, soften, or argue with a finding
-  by dropping it — answer it in a line and leave it in.
-
-The procedure is `.claude/skills/work-rating/SKILL.md`; the rater's instructions
-are `.claude/agents/work-rater.md`. Follow it inline if you have no subagents,
-and say in the pull request that the rating is self-assessed.
+**One review before calling it done** (owner, 2026-10-12: the independent
+8/10 rating is dropped; "the review is enough"). A change gets one
+independent review, which reports only blocking defects it has confirmed.
+Fix those, then finish. The work-rating skill
+(`.claude/skills/work-rating/SKILL.md`) is still there for anyone who wants a
+score, but nothing requires it.
 
 ### Files where you should expect contention
 
@@ -441,6 +424,5 @@ explain most of what is otherwise surprising about this codebase.
 - [ ] An ADR added if an architectural decision was made
 - [ ] No user-visible string is a literal in a widget; new tokens are in
       `lib/l10n/app_en.arb`
-- [ ] The work was rated 8/10 or better by an independent subagent, or the PR
-      says the rating is self-assessed
+- [ ] One independent review found nothing blocking, or its findings are fixed
 - [ ] The PR describes what was verified and what was not
