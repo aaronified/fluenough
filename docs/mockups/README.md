@@ -16,7 +16,8 @@ approval.
 - `settings.html`: Settings as a short list of section pages, with every
   planned change folded in: Sources in Learning (#469), Your data with
   Backup and restore, cloud, recent and cloud backups and the restore
-  sheet (#473, #470) and a Review log screen, Add deck as a row (#475),
+  sheet (#473, #470) and a Review log screen, Your decks with the
+  custom deck check after an upload (#475), Reminders and Privacy apart,
   switches only for the activities a learner may skip (#243), Reminders
   for several languages (#90, 0.6.0), an App log screen, Delete this
   profile on the profile page, and destructive actions in the error
