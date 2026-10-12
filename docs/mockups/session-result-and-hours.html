@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session Result and Hours</title>
+<meta name="description" content="The end-of-session result with every card counted and minutes from capped answer times (#486), and hours spent and hours left on Progress (#227).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Bengali","Noto Sans Devanagari",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1500px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 8px;font-weight:700}
+.lede{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
+.controls{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:0 0 10px;font-size:14px}
+.controls fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.controls legend{float:left;margin-right:8px;color:var(--page-muted);font-weight:600}
+.controls label{display:inline-flex;gap:6px;align-items:center;min-height:36px;padding:0 12px;border:1px solid var(--page-line);border-radius:18px;cursor:pointer;background:var(--page-card)}
+.controls label:has(input:checked){border-color:var(--page-acc);box-shadow:inset 0 0 0 1px var(--page-acc)}
+.controls input{margin:0;accent-color:var(--page-acc)}
+#check{font-size:13px;line-height:18px;margin:0 0 28px;padding:10px 12px;border-radius:10px;background:var(--page-card);border:1px solid var(--page-line);max-width:880px}
+#check.bad{border-color:#BA1A1A}
+section.opt{margin:0 0 48px}
+.opt>p,.opt li{max-width:880px;color:var(--page-muted);font-size:15px}
+.opt>p{margin:0 0 16px}
+[hidden]{display:none!important}
+.frames{display:flex;flex-wrap:wrap;gap:28px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:8px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+table{border-collapse:collapse;width:100%;max-width:1100px;font-size:14px;background:var(--page-card)}
+th,td{border-bottom:1px solid var(--page-line);padding:10px 12px;text-align:left;vertical-align:top}
+th{font-weight:700}
+@media (max-width:700px){
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{border-bottom:2px solid var(--page-line);padding:6px 0}
+  td{border:0;padding:4px 12px}
+  td::before{content:attr(data-h);display:block;font-weight:700;font-size:12px;color:var(--page-muted)}
+}
+/* "Mark what changes": an outline outside the app's boxes, never part of the app */
+body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
+
+/* ===== The app: lib/ui/theme.dart (M3, Roboto, the design's heavier weights and radii) ===== */
+.ph{--t:1;--th:1;--tn:1;width:360px;height:800px;flex:none;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Bengali","Noto Sans Devanagari",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+/* 2x text: body text 2x; text of 22 and over 1.5x, as in languages-you-know.html; NavigationBar labels clamp at 1.3x, as Flutter does */
+.ph.x2{--t:2;--th:1.5;--tn:1.3}
+.mi{font-family:"Material Icons";font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:"liga";flex:none;width:24px;height:24px;overflow:hidden}
+.mo{font-family:"Material Icons Outlined"}
+.mr{font-family:"Material Icons Round"}
+.m18{font-size:18px;width:18px;height:18px}
+/* system bars */
+.stat{height:28px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 24px;font-size:14px;font-weight:500;color:var(--onS)}
+.stat .ic{display:flex;gap:4px;align-items:center}
+.stat .ic .mi{font-size:16px;width:16px;height:16px}
+.nav3{position:relative;z-index:4;height:48px;flex:none;display:flex;align-items:center;justify-content:space-around;padding:0 48px;background:var(--s)}
+.nav3.shell{background:var(--sCont)}   /* edge to edge: the NavigationBar's colour runs behind the system bar */
+.nav3 svg{width:20px;height:20px;fill:var(--onSv)}
+.scroll{flex:1;min-height:0;position:relative;overflow:hidden}
+.clip{position:absolute;left:0;right:0;top:0;overflow:hidden}
+.thumb{position:absolute;right:3px;width:4px;border-radius:2px;background:var(--onS);opacity:.42}
+.ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--onSv);flex:none}
+/* text: size × the phone's text scale; icons do not scale, as in Flutter */
+.bL{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));letter-spacing:.5px}
+.bM{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));letter-spacing:.25px}
+.bS{font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));letter-spacing:.4px}
+.lL{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:600;letter-spacing:.1px}
+.tM{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));font-weight:600;letter-spacing:.15px}
+.v{color:var(--onSv)}
+.one{white-space:nowrap}
+
+/* ---- the summary (lib/features/summary/summary_page.dart) ---- */
+.sum .content{display:flex;flex-direction:column;padding:56px 16px 0}
+.rep{position:absolute;top:32px;right:4px;z-index:3}   /* WithReportButton: top 4, end 4, inside the SafeArea */
+.tick{width:120px;height:120px;margin:0 auto;display:block}
+.sum h3{margin:20px 0 0;text-align:center;font-weight:700;font-size:calc(32px*var(--th));line-height:calc(40px*var(--th))}
+.sline{margin-top:12px;text-align:center;color:var(--onSv)}
+.tiles3{margin-top:24px;display:flex;gap:8px;align-items:stretch}
+.tiles3>.st{flex:1;min-width:0}
+.x2 .tiles3{flex-direction:column}                       /* _rowMaxScale 1.5: above it the numbers stack */
+.st{border-radius:24px;padding:16px 8px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--sHigh)}
+.st.em{background:var(--pc);color:var(--onPc)}
+.st .val{font-size:calc(28px*var(--th));line-height:calc(34px*var(--th));font-weight:800;max-width:100%;overflow:hidden}
+.st .lab{margin-top:2px;color:var(--onSv);max-width:100%;overflow:hidden}
+.st.em .lab{color:var(--onPc)}
+.grp{display:flex;flex-direction:column;gap:3px;margin-top:24px}
+.grp>.br{background:var(--sLow);border-radius:6px;padding:12px 16px}
+.grp>.br:first-child{border-top-left-radius:24px;border-top-right-radius:24px}
+.grp>.br:last-child{border-bottom-left-radius:24px;border-bottom-right-radius:24px}
+.bar{display:flex;align-items:center;gap:12px}
+.bar .bl{width:110px;flex:none;font-weight:600;overflow:hidden}
+.bar .track{flex:1;min-width:24px;height:8px;border-radius:4px;background:var(--sc);overflow:hidden}
+.bar .fill{height:100%;border-radius:4px;background:var(--p)}
+.bar .bv{min-width:40px;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+/* proposed (#486): above 1.5x text the skill's name gets its own line, as the tiles stack, so it is never broken mid-word */
+.x2 .bar{flex-wrap:wrap;row-gap:4px}
+.x2 .bar .bl{width:100%}
+.due{margin-top:24px;text-align:center;color:var(--onSv)}
+.btns{margin-top:auto;padding:24px 0 20px;display:flex;flex-direction:column;gap:8px}
+.fb{border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.fb.close{min-height:60px;background:var(--p);color:var(--onP);font-weight:700;font-size:calc(17px*var(--t));line-height:calc(24px*var(--t))}
+.fb.sec{min-height:52px;background:var(--sc);color:var(--onSc);font-weight:600;font-size:calc(15px*var(--t));line-height:calc(20px*var(--t))}
+
+/* ---- Progress (lib/features/stats/stats_page.dart) ---- */
+.tabh{display:flex;align-items:center;padding:16px 12px 8px 24px;flex:none}
+.tabh h3{flex:1;min-width:0;margin:0;font-weight:600;font-size:calc(32px*var(--th));line-height:calc(40px*var(--th))}
+.lmenu{min-width:48px;height:48px;display:flex;align-items:center;padding:4px 2px 4px 8px;color:var(--onSv);border-radius:24px}
+.ctl{flex:none;padding:4px 0 8px}
+.chipsH{display:flex;gap:8px;padding:0 16px;overflow:hidden;white-space:nowrap}
+.fhit{min-height:48px;display:flex;align-items:center;flex:none}
+.fchip{min-height:32px;border-radius:10px;border:1px solid var(--ol);display:flex;align-items:center;gap:6px;padding:5px 12px 5px 8px;color:var(--onSv)}
+.fchip.on{background:var(--sc);border-color:var(--sc);color:var(--onSc)}
+.fchip.on .mi{color:var(--onSc)}
+.glyph{min-width:22px;height:22px;padding:0 4px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:22px;background:var(--sc);color:var(--onSc)}
+.fchip.on .glyph{background:var(--sLowest);color:var(--onS)}
+.seg{display:flex;gap:4px;padding:0 16px;margin-top:8px}
+.seg>span{flex:1;min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 8px;background:var(--sHigh);color:var(--onS);border-radius:8px}
+.seg>span:first-child{border-top-left-radius:20px;border-bottom-left-radius:20px}
+.seg>span:last-child{border-top-right-radius:20px;border-bottom-right-radius:20px}
+.seg>span.on{background:var(--p);color:var(--onP);border-radius:20px}
+.prog .content{padding:8px 16px 24px}
+.trow{display:flex;gap:8px;align-items:stretch}
+.trow+.trow{margin-top:8px}
+.lt{flex:1;min-width:0;background:var(--sLow);border-radius:24px;padding:16px 18px;display:flex;flex-direction:column;align-items:flex-start}
+.lt .val{font-size:calc(30px*var(--th));line-height:calc(36px*var(--th));font-weight:800;max-width:100%;overflow:hidden}
+.lt .lab{margin-top:2px;color:var(--onSv);max-width:100%;overflow:hidden}
+.sec2{margin-top:16px;background:var(--sLow);border-radius:28px;padding:18px}
+.sec2 .tM{margin-bottom:12px}
+.heat{display:flex;gap:4px}
+.heat .wk{flex:1;display:flex;flex-direction:column;gap:4px}
+.heat .sq{height:18px;border-radius:5px}
+.legend{margin-top:12px;display:flex;justify-content:flex-end;align-items:center;gap:6px;color:var(--onSv)}
+.legend .sq{width:14px;height:14px;border-radius:4px}
+.navb{flex:none;height:80px;background:var(--sCont);display:flex}
+.navb .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0}
+.navb .ind{width:64px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--onSv)}
+.navb .d.on .ind{background:var(--sc);color:var(--onSc)}
+.navb .nl{font-size:calc(12px*var(--tn));line-height:calc(16px*var(--tn));font-weight:600;letter-spacing:.5px;color:var(--onSv)}
+.navb .d.on .nl{color:var(--onS)}
+</style>
+</head>
+<body class="marks">
+<div class="wrap">
+<h1>The session result, counted right, and hours on Progress</h1>
+<p class="lede">Two screens, drawn only where they change. <b>#486</b>: the result after a session counts every card worked through, gives the share right over the answers that were graded, takes its minutes from the answers' own times (each at most 60 s), and its skill rows add up to the answers. <b>#227</b>: Progress shows the hours spent in the chosen range and the hours left in the decks written so far. Bengali throughout. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="languages-you-know.html">languages-you-know.html</a>; the default, Clay on pure black, is the owner's phone. The dashed outlines mark what changes and are not part of the app.</p>
+
+<div class="controls" role="group" aria-label="Theme">
+ <fieldset><legend>Seed</legend>
+  <label><input type="radio" name="seed" value="clay" checked> Clay #8F4C36</label>
+  <label><input type="radio" name="seed" value="forest"> Forest #3F6C51</label>
+  <label><input type="radio" name="seed" value="ocean"> Ocean #35618E</label>
+  <label><input type="radio" name="seed" value="iris"> Iris #65558F</label>
+ </fieldset>
+ <fieldset><legend>Frames</legend>
+  <label><input type="radio" name="mode" value="dark" checked> Dark</label>
+  <label><input type="radio" name="mode" value="light"> Light</label>
+  <label><input type="radio" name="mode" value="both"> Both</label>
+ </fieldset>
+ <fieldset><legend>Dark</legend>
+  <label><input type="checkbox" id="black" checked> Pure black</label>
+ </fieldset>
+ <fieldset><legend>Show</legend>
+  <label><input type="checkbox" id="marks" checked> Mark what changes</label>
+ </fieldset>
+</div>
+<p id="check" role="status">Self-check runs once the fonts load…</p>
+
+<section class="opt" id="result">
+<h2>1 · The result after a session (#486)</h2>
+<p>A Bengali lesson of 27 steps: 9 new cards taught, then 18 questions (multiple choice, match pairs, rearrange, typed). Today's screen says “5 cards · 4 correct” and 31 minutes. After the fix the line counts every card, the percentage is right answers over graded answers (15 of 18 is 83%), the minutes are the 18 answers' times with each capped at 60 s, and Recognition and Write add up to the 18 answered.</p>
+<div class="frames" id="fr-result"></div>
+<table style="margin-top:24px">
+<thead><tr><th>Part</th><th>Today</th><th>After #486</th></tr></thead>
+<tbody>
+<tr><th>Line under the heading</th><td data-h="Today">5 cards · 4 correct (graded answers of some kinds only)</td><td data-h="After">27 cards · 9 new · 18 answered, 15 right</td></tr>
+<tr><th>% correct</th><td data-h="Today">4 of 5</td><td data-h="After">right ÷ answered: 15 of 18 = 83%. Teach cards are not graded and are left out.</td></tr>
+<tr><th>Minutes</th><td data-h="Today">wall clock from start to end, idle and backgrounded time included (31)</td><td data-h="After">the sum of the answers' times, each at most 60 s, rounded, at least 1. Here 292 s: 5. A 7-minute pause on one card counts as 1 minute.</td></tr>
+<tr><th>Skill rows</th><td data-h="Today">add up to 5</td><td data-h="After">add up to the answered count: Recognition 11/13 + Write 4/5 = 15/18</td></tr>
+</tbody></table>
+<ul>
+<li>Variants of the line, each a plural-aware string: with no new cards, “18 cards · 15 right” (every card was answered, so “answered” would repeat the count); with only new cards, “9 cards · 9 new”, and the % tile shows “–”. With one card: “1 card · 1 new”.</li>
+<li>Teach cards record no time (the plan's open question), so the minutes count answers only. Reading a passage before its questions is not counted, as for hours.</li>
+<li>Proposed with it: above 1.5x text the skill rows put the skill's name on its own line, as the three numbers already stack there. At 2x, “Recognition” no longer fits the 110 dp label column and Flutter would break it mid-word.</li>
+</ul>
+</section>
+
+<section class="opt" id="hours">
+<h2>2 · Hours on Progress (#227)</h2>
+<p>A third row of tiles, under today's four and above the activity grid, in the same large tiles. <b>Hours spent</b> follows the range chosen above (7 days, 30 days, All time) and the language chip: each answer at most 60 s, summed, to one decimal. <b>Hours left in the decks so far</b> uses the Decks course card's words: it counts only units whose decks exist, rounded up to whole hours, and grows as decks are added. It is what is left now, so it is the same in every range.</p>
+<div class="frames" id="fr-hours"></div>
+<table style="margin-top:24px">
+<thead><tr><th>Tile</th><th>Value</th><th>Label</th><th>Screen reader</th></tr></thead>
+<tbody>
+<tr><th>Hours spent</th><td data-h="Value">0.9 · 3.2 · 12.4 (7 days · 30 days · All time)</td><td data-h="Label">Hours spent</td><td data-h="Screen reader">“3.2 hours spent in the last 30 days” / “12.4 hours spent in all”</td></tr>
+<tr><th>Hours left</th><td data-h="Value">140, the same in every range</td><td data-h="Label">Hours left in the decks so far</td><td data-h="Screen reader">“About 140 hours left in the decks written so far”</td></tr>
+</tbody></table>
+<ul>
+<li>“About” is in the screen-reader label but not on the tile: “About 140” at 30 dp does not fit a half-width tile. The number is rounded up, as on the Decks card.</li>
+<li>All languages: hours spent sums every language's answers in the range; hours left adds each language's decks so far.</li>
+<li>While a language has no decks yet, its hours left reads “–”; the Decks card shows no hours row for it either.</li>
+</ul>
+</section>
+</div>
+
+<script>
+/* ColorScheme.fromSeed, printed by Flutter 3.47 for each ThemeSeed in lib/app/settings.dart, light and dark, contrast 0
+   (copied from languages-you-know.html). tc/onTc (tertiaryContainer) added from material-color-utilities' SchemeTonalSpot,
+   which reproduces every one of the earlier values exactly. */
+const SCHEMES={"forest-dark":{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLowest":"#0a0f0c","sLow":"#171d19","sCont":"#1b211d","sHigh":"#262b27","sHighest":"#313632","ol":"#8a938b","olv":"#404942","pc":"#085231","onPc":"#aef2c6","tc":"#224c58","onTc":"#bfe9f8"},"forest-light":{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLowest":"#ffffff","sLow":"#f0f5ee","sCont":"#eaefe8","sHigh":"#e4eae3","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","pc":"#aef2c6","onPc":"#085231","tc":"#bfe9f8","onTc":"#224c58"},"ocean-dark":{"p":"#a0cafd","onP":"#003258","sc":"#3b4858","onSc":"#d6e3f7","s":"#101418","onS":"#e1e2e8","onSv":"#c3c7cf","sLowest":"#0b0e13","sLow":"#191c20","sCont":"#1d2024","sHigh":"#272a2f","sHighest":"#32353a","ol":"#8d9199","olv":"#42474e","pc":"#184975","onPc":"#d1e4ff","tc":"#523f5f","onTc":"#f2daff"},"ocean-light":{"p":"#35618e","onP":"#ffffff","sc":"#d6e3f7","onSc":"#3b4858","s":"#f8f9ff","onS":"#191c20","onSv":"#42474e","sLowest":"#ffffff","sLow":"#f2f3f9","sCont":"#eceef4","sHigh":"#e6e8ee","sHighest":"#e1e2e8","ol":"#73777f","olv":"#c3c7cf","pc":"#d1e4ff","onPc":"#184975","tc":"#f2daff","onTc":"#523f5f"},"clay-dark":{"p":"#ffb59e","onP":"#55200d","sc":"#5d4037","onSc":"#ffdbd0","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLowest":"#140c0a","sLow":"#231917","sCont":"#271d1b","sHigh":"#322825","sHighest":"#3d322f","ol":"#a08d87","olv":"#53433f","pc":"#723521","onPc":"#ffdbd0","tc":"#52461a","onTc":"#f4e2a7"},"clay-light":{"p":"#8f4c36","onP":"#ffffff","sc":"#ffdbd0","onSc":"#5d4037","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLowest":"#ffffff","sLow":"#fff1ed","sCont":"#fceae5","sHigh":"#f7e4df","sHighest":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","pc":"#ffdbd0","onPc":"#723521","tc":"#f4e2a7","onTc":"#52461a"},"iris-dark":{"p":"#cfbdfe","onP":"#36265d","sc":"#4a4458","onSc":"#e8def8","s":"#141218","onS":"#e6e0e9","onSv":"#cac4cf","sLowest":"#0f0d13","sLow":"#1d1b20","sCont":"#211f24","sHigh":"#2b292f","sHighest":"#36343a","ol":"#948f99","olv":"#49454e","pc":"#4d3d75","onPc":"#e9ddff","tc":"#633b48","onTc":"#ffd9e3"},"iris-light":{"p":"#65558f","onP":"#ffffff","sc":"#e8def8","onSc":"#4a4458","s":"#fdf7ff","onS":"#1d1b20","onSv":"#49454e","sLowest":"#ffffff","sLow":"#f8f2fa","sCont":"#f2ecf4","sHigh":"#ece6ee","sHighest":"#e6e0e9","ol":"#7a757f","olv":"#cac4cf","pc":"#e9ddff","onPc":"#4d3d75","tc":"#ffd9e3","onTc":"#633b48"}};
+
+/* ---------- the session (#486): what the drill logged ---------- */
+const SESSION={
+ language:'Bengali',
+ taught:9,                                   // teach cards: shown, not graded, not timed
+ answers:[                                   // [skill, right, seconds from question shown to answer]
+  ['rec',1,6],['rec',1,9],['rec',1,14],['rec',0,7],['rec',1,11],['rec',1,412],['rec',1,8],['rec',1,5],['rec',0,22],['rec',1,13],['rec',1,9],['rec',1,17],['rec',1,6],
+  ['wri',1,10],['wri',0,95],['wri',1,12],['wri',1,8],['wri',1,15]],
+ streak:4, dueTomorrow:30,
+};
+const SKILL={rec:'Recognition',wri:'Write'};
+function result(s){
+ const answered=s.answers.length,right=s.answers.filter(a=>a[1]).length;
+ const secs=s.answers.reduce((t,a)=>t+Math.min(60,a[2]),0);
+ const skills=Object.keys(SKILL).map(k=>({k,label:SKILL[k],right:s.answers.filter(a=>a[0]===k&&a[1]).length,total:s.answers.filter(a=>a[0]===k).length})).filter(x=>x.total);
+ return {cards:s.taught+answered,taught:s.taught,answered,right,pct:Math.round(right/answered*100),secs,minutes:Math.max(1,Math.round(secs/60)),skills};
+}
+const plural=(n,one,other)=>n===1?one:other;
+function line(r){
+ const c=`${r.cards} ${plural(r.cards,'card','cards')}`;
+ if(!r.answered)return `${c} · ${r.taught} new`;
+ if(!r.taught)return `${c} · ${r.right} right`;
+ return `${c} · ${r.taught} new · ${r.answered} answered, ${r.right} right`;
+}
+
+/* ---------- builders ---------- */
+const ic=(n,cls='')=>`<span class="mi ${cls}" aria-hidden="true">${n}</span>`;
+const stat=()=>`<div class="stat"><span>9:41</span><span class="ic">${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>`;
+const nav3=(shell)=>`<div class="nav3${shell?' shell':''}" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg><svg viewBox="0 0 20 20"><path d="M16 2.5v15L4 10z"/></svg></div>`;
+/* ExpressiveShape.sunny: a 9-point soft star, as in the owner's screenshot */
+function sunny(){let d='';const n=9,R=60,amp=3.6;for(let i=0;i<=360;i++){const a=i/360*2*Math.PI-Math.PI/2;const r=R-amp-amp*Math.cos(n*a);d+=(i?'L':'M')+(60+r*Math.cos(a)).toFixed(2)+' '+(60+r*Math.sin(a)).toFixed(2)}
+ return `<svg class="tick" viewBox="0 0 120 120" aria-hidden="true"><path d="${d}Z" fill="var(--tc)"/><path d="M38 61l15 15 29-31" fill="none" stroke="var(--onTc)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
+function summaryScreen(r){
+ const tile=(v,l,em,cls='')=>`<div class="st${em?' em':''} ${cls} lf"><div class="val one">${v}</div><div class="lab bM">${l}</div></div>`;
+ return `<div class="content">${sunny()}
+ <h3 class="lf">You’ve completed ${SESSION.language} for today</h3>
+ <div class="sline bL lf chg" data-line>${line(r)}</div>
+ <div class="tiles3">${tile(r.pct+'%','correct',true,'chg')}${tile(r.minutes,plural(r.minutes,'minute','minutes'),false,'chg')}${tile(SESSION.streak,'day streak')}</div>
+ <div class="grp chg" data-skills>${r.skills.map(s=>`<div class="br lf" role="img" aria-label="${s.label}: ${s.right} of ${s.total} correct"><div class="bar"><span class="bl bM">${s.label}</span><span class="track"><span class="fill" style="display:block;width:${(s.right/s.total*100).toFixed(1)}%"></span></span><span class="bv lL one">${s.right}/${s.total}</span></div></div>`).join('')}</div>
+ <div class="due bM lf">Next due: ${SESSION.dueTomorrow} cards tomorrow</div>
+ <div class="btns"><div class="fb close lf" data-tap><span class="one">Done</span></div><div class="fb sec lf" data-tap><span class="one">Another lesson</span></div></div>
+ </div>`;
+}
+function summaryPhone(x2,pos){
+ return `<div class="ph sum${x2?' x2':''}">${stat()}<div class="scroll"${pos==='end'?' data-pos="end"':pos==='top'?'':` data-skip="${pos}"`}><div class="clip">${summaryScreen(result(SESSION))}</div></div><span class="ibtn rep lf" data-tap>${ic('bug_report','mo')}</span>${nav3(false)}</div>`;
+}
+
+/* ---------- Progress ---------- */
+const HOURS={spent:{7:0.9,30:3.2,all:12.4},left:140};   // hours left is what is left now: one figure for every range
+const fmt1=(h)=>h.toFixed(1);
+/* 12 weeks of review days, quiet at first, most days lately */
+const HEAT=(()=>{const a=[];let x=7;for(let i=0;i<84;i++){x=(x*53+19)%97;const busy=i>40?0.85:0.35;a.push((x/97)<busy?1+((x+i)%4):0)}return a})();
+const LEVELS=['var(--sHighest)','color-mix(in srgb,var(--p) 30%,transparent)','color-mix(in srgb,var(--p) 50%,transparent)','color-mix(in srgb,var(--p) 75%,transparent)','var(--p)'];
+function progressScreen(range){
+ const all=range==='all';
+ const t=(v,l,cls='',aria='')=>`<div class="lt ${cls} lf"${aria?` role="img" aria-label="${aria}"`:''}><div class="val one">${v}</div><div class="lab bM">${l}</div></div>`;
+ const spent=HOURS.spent[range];
+ const tiles=[['412','Reviews'],['86%','Remembered'],all?['21','Longest streak']:['4','Day streak'],all?['380','Cards learned']:['63','New cards learned']];
+ if(range==='7'){tiles[0][0]='96';tiles[1][0]='88%';tiles[3][0]='17'}
+ if(all){tiles[0][0]='1,604';tiles[1][0]='84%'}
+ const heat=`<div class="heat" role="img" aria-label="Daily review activity">${Array.from({length:12},(_,w)=>`<div class="wk">${HEAT.slice(w*7,w*7+7).map(l=>`<span class="sq" style="background:${LEVELS[l]}"></span>`).join('')}</div>`).join('')}</div>`;
+ return `<div class="content">
+ <div class="trow">${t(...tiles[0])}${t(...tiles[1])}</div>
+ <div class="trow">${t(...tiles[2])}${t(...tiles[3])}</div>
+ <div class="trow hrs" data-hours data-range="${range}" data-spent="${spent}" data-left="${HOURS.left}">${t(fmt1(spent),'Hours spent','chg',`${fmt1(spent)} hours spent ${all?'in all':`in the last ${range} days`}`)}${t(HOURS.left,'Hours left in the decks so far','chg',`About ${HOURS.left} hours left in the decks written so far`)}</div>
+ <div class="sec2"><div class="tM lf">Reviews, last 12 weeks</div>${heat}<div class="legend bS lf" aria-hidden="true"><span>Fewer</span>${LEVELS.map(c=>`<span class="sq" style="background:${c}"></span>`).join('')}<span>More</span></div></div>
+ <div class="sec2"><div class="tM lf">Correct, by skill</div></div>
+ </div>`;
+}
+function progressPhone(range,x2,skip){
+ const seg=[['7','7 days'],['30','30 days'],['all','All time']].map(([v,l])=>`<span class="lL lf${v===range?' on':''}" data-tap-existing>${l}</span>`).join('');
+ const chip=(g,lang,name,on)=>`<span class="fhit lf" data-tap><span class="fchip lL${on?' on':''}">${on?ic('check','m18'):''}<span class="glyph" lang="${lang}">${g}</span><span class="one">${name}</span></span></span>`;
+ return `<div class="ph prog${x2?' x2':''}">${stat()}
+ <div class="tabh"><h3 class="lf">Progress</h3><span class="lmenu lf" data-tap>${ic('language')}${ic('arrow_drop_down')}</span><span class="ibtn lf" data-tap>${ic('bug_report','mo')}</span></div>
+ <div class="ctl"><div class="chipsH">${chip('বা','bn','Bengali',true)}${chip('हि','hi','Hindi',false)}<span class="fhit lf" data-tap><span class="fchip lL"><span class="one">All languages</span></span></span></div><div class="seg" role="radiogroup" aria-label="Time range">${seg}</div></div>
+ <div class="scroll"${skip?` data-skip="${skip}"`:''}><div class="clip">${progressScreen(range)}</div></div>
+ <div class="navb" aria-hidden="true">${[['home','Today'],['style','Decks'],['insert_chart','Progress',1],['settings','Settings']].map(([i,l,on])=>`<span class="d${on?' on':''}"><span class="ind">${ic(i,on?'':'mo')}</span><span class="nl one lf">${l}</span></span>`).join('')}</div>
+ ${nav3(true)}</div>`;
+}
+
+const RESULT_FRAMES=[
+ ['A Bengali lesson, scrolled to the end',()=>summaryPhone(false,'end')],
+ ['2x text, scrolled to the count line',()=>summaryPhone(true,'.sline')],
+ ['2x text: scrolled to the end',()=>summaryPhone(true,'end')],
+];
+const HOUR_FRAMES=[
+ ['Bengali, 30 days',()=>progressPhone('30')],
+ ['Bengali, 7 days',()=>progressPhone('7')],
+ ['Bengali, All time',()=>progressPhone('all')],
+ ['2x text, scrolled to the hours',()=>progressPhone('30',true,'.hrs')],
+];
+
+/* ---------- theme ---------- */
+const VARS=['p','onP','sc','onSc','s','onS','onSv','sLowest','sLow','sCont','sHigh','sHighest','ol','olv','pc','onPc','tc','onTc'];
+function varsFor(seed,dark,black){const s={...SCHEMES[`${seed}-${dark?'dark':'light'}`]};
+ if(dark&&black){s.s='#000000';s.sLowest='#000000'}  // AppTheme.dark(pureBlack): surface, surfaceDim and surfaceContainerLowest go black
+ return VARS.map(k=>`--${k}:${s[k]}`).join(';')}
+const state=()=>({seed:document.querySelector('[name=seed]:checked').value,mode:document.querySelector('[name=mode]:checked').value,black:document.getElementById('black').checked});
+function applyTheme({seed,mode,black}){
+ document.querySelectorAll('.fcol').forEach(col=>{
+  const dark=mode==='both'?col.dataset.th==='dark':mode==='dark';
+  col.hidden=mode!=='both'&&col.dataset.th!==mode;
+  col.querySelector('.ph').setAttribute('style',varsFor(seed,dark,black));
+  col.querySelector('.fcap .th').textContent=dark?(black?'Dark, pure black':'Dark'):'Light';
+ });
+ document.body.classList.toggle('marks',document.getElementById('marks').checked);
+}
+function render(){
+ const cols=(frames)=>frames.flatMap(([cap,fn])=>['dark','light'].map(th=>`<div class="fcol" data-th="${th}"><span class="fcap">${cap} · <span class="th"></span></span>${fn()}</div>`)).join('');
+ document.getElementById('fr-result').innerHTML=cols(RESULT_FRAMES);
+ document.getElementById('fr-hours').innerHTML=cols(HOUR_FRAMES);
+}
+
+/* A frame is a scroll position. 'top' and [data-skip] scroll that element to the top; the visible area then ends above
+   the first line or box the edge would cut, as a list stopped between two rows does, and the scrollbar thumb shows there is
+   more. 'end' scrolls to the end, as SliverFillRemaining puts the buttons there; a line the top edge would cut is left out. */
+function fit(){
+ document.querySelectorAll('.scroll').forEach(sc=>{
+  const clip=sc.querySelector('.clip'),content=sc.querySelector('.content');
+  clip.style.top='0px';clip.style.height=sc.clientHeight+'px';content.style.transform='';
+  if(sc.closest('.sum'))content.style.minHeight=sc.clientHeight+'px';   // SliverFillRemaining: buttons at the bottom when it fits
+  const vh=sc.clientHeight,total=content.scrollHeight;
+  const c0=content.getBoundingClientRect().top;
+  const leaves=[...content.querySelectorAll('.lf,.tick,.sec2,.heat')];
+  sc.querySelector('.thumb')?.remove();
+  if(sc.dataset.pos==='end'){
+   const off=Math.max(0,total-vh);let topCut=0;
+   for(const el of leaves){const r=el.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)topCut=Math.max(topCut,b-off)}
+   clip.style.top=topCut+'px';clip.style.height=(vh-topCut)+'px';content.style.transform=`translateY(${-(off+topCut)}px)`;
+   if(off>0)thumb(sc,vh,total,off);
+   return;
+  }
+  const sk=sc.dataset.skip?content.querySelector(sc.dataset.skip):null;
+  let off=sk?Math.max(0,sk.getBoundingClientRect().top-c0-(sc.closest('.sum')?60:8)):0;   // the result's report button floats over its top 56 dp
+  // a line the top edge would cut is left out, as at the end
+  let topCut=0;for(const el of leaves){const r=el.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)topCut=Math.max(topCut,b-off)}
+  clip.style.top=topCut+'px';off+=topCut;
+  content.style.transform=`translateY(${-off}px)`;
+  const top0=sc.getBoundingClientRect().top;let cut=vh;
+  const boxes=[...content.querySelectorAll('.lf,.tick,.heat,.trow')];
+  for(let guard=0;guard<60;guard++){let moved=false;
+   for(const el of boxes){const r=el.getBoundingClientRect();if(!r.height)continue;const t=r.top-top0,b=r.bottom-top0;
+    if(t<cut-0.5&&b>cut+0.5){const box=el.closest('.trow,.st,.grp>.br')||el;const bt=box.getBoundingClientRect().top-top0;cut=Math.max(0,Math.min(t,bt));moved=true}}
+   if(!moved)break;}
+  clip.style.height=Math.max(0,cut-topCut)+'px';
+  if(total>cut+1||off>0)thumb(sc,cut-topCut,total,off);
+ });
+}
+function thumb(sc,vis,total,off){const th=document.createElement('div');th.className='thumb';
+ const top=parseFloat(sc.querySelector('.clip').style.top)||0;
+ const h=Math.max(32,vis*vis/total),y=top+(off/Math.max(1,total-vis))*(vis-h);
+ th.style.height=h+'px';th.style.top=Math.max(0,y)+'px';sc.appendChild(th)}
+
+/* ---------- self-check: the numbers, layout, and WCAG contrast in every seed and mode ---------- */
+function rgba(str){const m=str.match(/rgba?\(([^)]+)\)/);if(m){const p=m[1].split(/[ ,\/]+/).filter(Boolean).map(Number);return [p[0],p[1],p[2],p.length>3?p[3]:1]}
+ const c=str.match(/color\(srgb ([^)]+)\)/);if(c){const p=c[1].split(/[ \/]+/).filter(Boolean).map(Number);return [p[0]*255,p[1]*255,p[2]*255,p.length>3?p[3]:1]}return [0,0,0,0]}
+const over=(f,b)=>[0,1,2].map(i=>f[i]*f[3]+b[i]*(1-f[3])).concat(1);
+const lum=(c)=>{const a=c.slice(0,3).map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2]};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)};
+function bgOf(el){const stack=[];for(let e=el;e;e=e.parentElement){const c=rgba(getComputedStyle(e).backgroundColor);if(c[3]>0)stack.push(c);if(c[3]>=1||e.classList.contains('ph'))break}
+ let col=[255,255,255,1];for(let i=stack.length-1;i>=0;i--)col=over(stack[i],col);return col}
+const tagOf=(ph)=>`“${ph.parentElement.querySelector('.fcap').firstChild.textContent.replace(' · ','').trim()}” (${ph.parentElement.dataset.th})`;
+const visibleIn=(el,cr)=>{const r=el.getBoundingClientRect();return r.height&&r.width&&r.bottom>cr.top+0.5&&r.top<cr.bottom-0.5};
+function numberProblems(){
+ const bad=[];const r=result(SESSION);
+ if(r.cards!==r.taught+r.answered)bad.push('cards ≠ new + answered');
+ if(r.skills.reduce((t,s)=>t+s.total,0)!==r.answered)bad.push('skill rows do not add up to the answered count');
+ if(r.skills.reduce((t,s)=>t+s.right,0)!==r.right)bad.push('skill rows do not add up to the right count');
+ if(SESSION.answers.some(a=>a[2]>60)&&r.secs>=SESSION.answers.reduce((t,a)=>t+a[2],0))bad.push('answer times not capped at 60 s');
+ document.querySelectorAll('.sum').forEach(ph=>{const tag=tagOf(ph);
+  if(ph.querySelector('[data-line]').textContent!==`${r.cards} cards · ${r.taught} new · ${r.answered} answered, ${r.right} right`)bad.push(`${tag}: count line`);
+  const vals=[...ph.querySelectorAll('.st .val')].map(e=>e.textContent);
+  if(vals[0]!==`${Math.round(r.right/r.answered*100)}%`)bad.push(`${tag}: % is not right ÷ answered`);
+  if(+vals[1]!==Math.max(1,Math.round(r.secs/60)))bad.push(`${tag}: minutes are not the capped answer times`);
+  const rows=[...ph.querySelectorAll('[data-skills] .bv')].map(e=>e.textContent.split('/').map(Number));
+  if(rows.reduce((t,x)=>t+x[1],0)!==r.answered||rows.reduce((t,x)=>t+x[0],0)!==r.right)bad.push(`${tag}: skill rows ≠ ${r.right}/${r.answered}`)});
+ const left=new Set();document.querySelectorAll('[data-hours]').forEach(h=>left.add(h.dataset.left));
+ if(left.size!==1)bad.push('hours left differs between ranges');
+ if(!(HOURS.spent[7]<=HOURS.spent[30]&&HOURS.spent[30]<=HOURS.spent.all))bad.push('hours spent does not grow with the range');
+ return bad;
+}
+function layoutProblems(){
+ const bad=[];const phones=[...document.querySelectorAll('.ph')];
+ phones.forEach(ph=>{const tag=tagOf(ph);
+  const pr=ph.getBoundingClientRect();const sc=ph.querySelector('.scroll'),clip=ph.querySelector('.clip');const cr=clip.getBoundingClientRect();
+  const shown=(el)=>!el.closest('.content')||visibleIn(el,cr);
+  ph.querySelectorAll('*').forEach(el=>{if(el.closest('svg')&&el.tagName!=='svg')return;const r=el.getBoundingClientRect();if(!r.width||!r.height||!shown(el))return;
+   if(!el.closest('.chipsH')&&(r.left<pr.left-0.5||r.right>pr.right+0.5))bad.push(`${tag}: ${el.className||el.tagName} sticks out sideways`);
+   if(el.scrollWidth>el.clientWidth+1&&getComputedStyle(el).overflowX!=='visible'&&!el.matches('.clip,.scroll,.ph,.mi,.chipsH,.track'))bad.push(`${tag}: ${el.className} “${el.textContent.trim().slice(0,20)}” text cut`);
+  });
+  // a chip the screen edge cuts is how a sideways list says there is more; the first one, the language shown, is whole
+  const c1=ph.querySelector('.chipsH .fhit');if(c1&&c1.getBoundingClientRect().right>pr.right)bad.push(`${tag}: first language chip cut`);
+  ph.querySelectorAll('.content .lf').forEach(el=>{const r=el.getBoundingClientRect();if(!r.height||r.bottom<=cr.top+0.5||r.top>=cr.bottom-0.5)return;
+   if(r.top<cr.top-0.5||r.bottom>cr.bottom+0.5)bad.push(`${tag}: ${el.className} cut at the edge`)});
+  // things that must stay on one line: numbers, scores, button labels, chip names, tab labels
+  ph.querySelectorAll('.one').forEach(el=>{if(!shown(el))return;const lh=parseFloat(getComputedStyle(el).lineHeight)||parseFloat(getComputedStyle(el).fontSize)*1.2;if(el.getBoundingClientRect().height>lh*1.5)bad.push(`${tag}: “${el.textContent}” wraps`)});
+  // a word broken in the middle: any text box narrower than its longest word
+  ph.querySelectorAll('.lab,.bl,h3,.sline,.due').forEach(el=>{if(!shown(el))return;const cs=getComputedStyle(el);const cv=document.createElement('canvas').getContext('2d');cv.font=`${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+   const longest=Math.max(...el.textContent.split(/\s+/).map(w=>cv.measureText(w).width+parseFloat(cs.letterSpacing||0)*w.length));
+   if(longest>el.clientWidth+0.5)bad.push(`${tag}: a word in “${el.textContent.trim().slice(0,24)}” is wider than its box`)});
+  ph.querySelectorAll('[data-tap]').forEach(el=>{if(!shown(el))return;const r=el.getBoundingClientRect();
+   if(r.height<47.5||r.width<47.5)bad.push(`${tag}: target ${Math.round(r.width)}×${Math.round(r.height)} (${el.textContent.trim().slice(0,16)})`)});
+  if(cr.height<sc.clientHeight*0.6)bad.push(`${tag}: only ${Math.round(cr.height)} of ${sc.clientHeight} dp of content shown`);
+  const rep=ph.querySelector('.rep');if(rep){const rr=rep.getBoundingClientRect();ph.querySelectorAll('.content .lf').forEach(el=>{if(!visibleIn(el,cr))return;const r=el.getBoundingClientRect();if(r.top<rr.bottom&&r.bottom>rr.top&&r.right>rr.left&&r.left<rr.right)bad.push(`${tag}: “${el.textContent.trim().slice(0,16)}” under the report button`)})}
+  const nav=ph.querySelector('.nav3').getBoundingClientRect();
+  ph.querySelectorAll('[data-tap]').forEach(el=>{if(!shown(el))return;if(el.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: a button under the navigation bar`)});
+  const nb=ph.querySelector('.navb');if(nb&&nb.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: tab bar under the navigation bar`);
+  if(nb&&sc.getBoundingClientRect().bottom>nb.getBoundingClientRect().top+0.5)bad.push(`${tag}: content under the tab bar`);
+  if(sc.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: content under the navigation bar`);
+  if(nav.bottom>pr.bottom+0.5)bad.push(`${tag}: navigation bar below the frame`);
+  // what this mockup is for must be in view
+  const inView=(el)=>{const r=el.getBoundingClientRect();return r.top>=cr.top-0.5&&r.bottom<=cr.bottom+0.5};
+  if(!(ph.classList.contains('sum')&&ph.classList.contains('x2')))ph.querySelectorAll('.chg').forEach(el=>{if(!inView(el))bad.push(`${tag}: a changed part is out of view`)});
+  else{ph.__seen=[...ph.querySelectorAll('.chg')].map(inView)}
+  if(ph.classList.contains('sum')){const end=sc.dataset.pos==='end';const btn=ph.querySelector('.fb.close').getBoundingClientRect();if(end&&(btn.bottom>cr.bottom+0.5||btn.top<cr.top))bad.push(`${tag}: Done not in view at the end`)}
+ });
+ // at 2x the result takes two frames (the count line and tiles, then the skill rows and buttons): each changed part is whole in one of them
+ for(const th of ['dark','light']){const pair=[...document.querySelectorAll(`.fcol[data-th=${th}] .sum.x2`)];
+  if(pair.length)pair[0].__seen.forEach((_,i)=>{if(!pair.some(p=>p.__seen[i]))bad.push(`2x text (${th}): changed part ${i+1} is in neither frame`)})}
+ if(document.documentElement.scrollWidth>window.innerWidth+0.5)bad.push(`page scrolls sideways (${document.documentElement.scrollWidth} > ${window.innerWidth})`);
+ return {bad,frames:phones.length};
+}
+/* Every visible text 4.5:1 and every icon 3:1 against what is really behind it, in 4 seeds × light, dark and pure black;
+   the skill bars' fill against their track and the tick against its shape 3:1 (non-text, WCAG 1.4.11). */
+function contrastProblems(){
+ const bad=[];let checked=0;const cols=[...document.querySelectorAll('.fcol')];
+ for(const seed of ['clay','forest','ocean','iris'])for(const [dark,black] of [[false,false],[true,false],[true,true]]){
+  cols.forEach(col=>col.querySelector('.ph').setAttribute('style',varsFor(seed,dark,black)));
+  const theme=`${seed} ${dark?(black?'black':'dark'):'light'}`;
+  const S={...SCHEMES[`${seed}-${dark?'dark':'light'}`]};
+  const hex=(h)=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)).concat(1);
+  const cTick=ratio(hex(S.onTc),hex(S.tc));checked++;if(cTick<3)bad.push(`${theme}: tick ${cTick.toFixed(2)}:1`);
+  const cBar=ratio(hex(S.p),hex(S.sc));checked++;if(cBar<3)bad.push(`${theme}: bar fill on track ${cBar.toFixed(2)}:1`);
+  document.querySelectorAll('.ph').forEach(ph=>{const cr=ph.querySelector('.clip').getBoundingClientRect();
+   ph.querySelectorAll('*').forEach(el=>{
+    if(el.closest('svg'))return;
+    const hasText=[...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());
+    const isIcon=el.classList.contains('mi');
+    if(!hasText&&!isIcon)return;
+    if(el.closest('.content')&&!visibleIn(el,cr))return;
+    const r=el.getBoundingClientRect();if(!r.width)return;
+    let fg=rgba(getComputedStyle(el).color);const bg=bgOf(el);fg=over(fg,bg);
+    const need=isIcon?3:4.5;const c=ratio(fg,bg);checked++;
+    if(c<need)bad.push(`${theme} ${tagOf(ph)}: “${el.textContent.trim().slice(0,20)}” ${c.toFixed(2)}:1`);
+   });
+   ph.querySelectorAll('.fchip:not(.on)').forEach(el=>{const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);const c=ratio(over(b,bg),bg);checked++;
+    if(c<3)bad.push(`${theme} ${tagOf(ph)}: chip outline ${c.toFixed(2)}:1`)});
+  });
+ }
+ return {bad,checked};
+}
+function check(){
+ const marks=document.body.classList.contains('marks');document.body.classList.remove('marks');
+ document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);
+ fit();
+ const N=numberProblems(),L1=layoutProblems(),C1=contrastProblems();
+ const all=[...new Set([...N,...L1.bad,...C1.bad])];
+ const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
+ const r=result(SESSION);
+ el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
+  :`Self-check: 0 problems. Numbers: ${r.cards} cards = ${r.taught} new + ${r.answered} answered; ${r.right} of ${r.answered} right = ${r.pct}%; minutes ${r.minutes} from ${r.secs} s of answers capped at 60 s each (uncapped ${SESSION.answers.reduce((t,a)=>t+a[2],0)} s); the skill rows add up to ${r.right}/${r.answered}; hours spent grows with the range and hours left is the same in each. Layout: ${L1.frames} frames at 360 × 800 dp: nothing sticks out or is cut in half, every changed part is in view, no sideways scroll, numbers, scores, buttons, chips and tab labels stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar. Contrast: ${C1.checked} text, icon, outline and bar pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons, outlines and bars 3:1). Not counted: the range segments are 40 dp tall today (Segmented's height), unchanged here.`;
+ window.__check={problems:all,frames:L1.frames,pairs:C1.checked};
+ if(marks)document.body.classList.add('marks');
+ applyTheme(state());
+}
+document.querySelectorAll('.controls input').forEach(i=>i.addEventListener('change',()=>applyTheme(state())));
+render();applyTheme(state());
+const go=()=>check();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go,go);else go();
+</script>
+</body>
+</html>
