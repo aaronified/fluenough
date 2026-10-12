@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings, Redrawn Once</title>
+<meta name="description" content="The whole Settings tab with every planned change folded in: Sources in Learning (#469), one data section with Backup and restore (#473, #470), Add deck as an advanced row (#475), a switch per activity (#243) and Reminders (#90).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36;--page-prop:#7A4E00;--page-prop-bg:#FFF0D1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E;--page-prop:#FFD597;--page-prop-bg:#3A2A0C}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E;--page-prop:#FFD597;--page-prop-bg:#3A2A0C}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Bengali","Noto Sans Devanagari",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1500px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 8px;font-weight:700}
+.lede{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
+.controls{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:0 0 10px;font-size:14px}
+.controls fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.controls legend{float:left;margin-right:8px;color:var(--page-muted);font-weight:600}
+.controls label{display:inline-flex;gap:6px;align-items:center;min-height:36px;padding:0 12px;border:1px solid var(--page-line);border-radius:18px;cursor:pointer;background:var(--page-card)}
+.controls label:has(input:checked){border-color:var(--page-acc);box-shadow:inset 0 0 0 1px var(--page-acc)}
+.controls input{margin:0;accent-color:var(--page-acc)}
+#check{font-size:13px;line-height:18px;margin:0 0 28px;padding:10px 12px;border-radius:10px;background:var(--page-card);border:1px solid var(--page-line);max-width:880px}
+#check.bad{border-color:#BA1A1A}
+section.opt{margin:0 0 48px}
+.opt>p,.opt li{max-width:880px;color:var(--page-muted);font-size:15px}
+.opt>p{margin:0 0 16px}
+[hidden]{display:none!important}
+.frames{display:flex;flex-wrap:wrap;gap:28px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:8px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+table{border-collapse:collapse;width:100%;max-width:1100px;font-size:14px;background:var(--page-card)}
+th,td{border-bottom:1px solid var(--page-line);padding:10px 12px;text-align:left;vertical-align:top}
+th{font-weight:700}
+@media (max-width:700px){
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{border-bottom:2px solid var(--page-line);padding:6px 0}
+  td{border:0;padding:4px 12px}
+  td::before{content:attr(data-h);display:block;font-weight:700;font-size:12px;color:var(--page-muted)}
+}
+/* a decision this mockup proposes, waiting for the owner */
+.prop{display:inline-block;font-size:12px;line-height:18px;font-weight:700;padding:0 8px;border-radius:9px;background:var(--page-prop-bg);color:var(--page-prop);border:1px solid var(--page-prop);vertical-align:1px;white-space:nowrap}
+/* "Mark what changes": an outline outside the app's boxes, never part of the app */
+body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
+
+/* ===== The app: lib/ui/theme.dart (M3, Roboto, the design's heavier weights and radii) ===== */
+.ph{--t:1;--th:1;--tn:1;width:360px;height:800px;flex:none;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Bengali","Noto Sans Devanagari",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+/* 2x text: body text 2x; text of 22 and over 1.5x, as in languages-you-know.html; NavigationBar labels clamp at 1.3x, as Flutter does */
+.ph.x2{--t:2;--th:1.5;--tn:1.3}
+.mi{font-family:"Material Icons";font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:"liga";flex:none;width:24px;height:24px;overflow:hidden}
+.mo{font-family:"Material Icons Outlined"}
+.m18{font-size:18px;width:18px;height:18px}
+/* system bars */
+.stat{height:28px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 24px;font-size:14px;font-weight:500;color:var(--onS)}
+.stat .ic{display:flex;gap:4px;align-items:center}
+.stat .ic .mi{font-size:16px;width:16px;height:16px}
+.nav3{position:relative;z-index:6;height:48px;flex:none;display:flex;align-items:center;justify-content:space-around;padding:0 48px;background:var(--s)}
+.nav3.shell{background:var(--sCont)}   /* edge to edge: the NavigationBar's colour runs behind the system bar */
+.ph:has(.scrim) .nav3{background:transparent}
+.nav3 svg{width:20px;height:20px;fill:var(--onSv)}
+.scroll{flex:1;min-height:0;position:relative;overflow:hidden}
+.clip{position:absolute;left:0;right:0;top:0;overflow:hidden}
+.thumb{position:absolute;right:3px;width:4px;border-radius:2px;background:var(--onS);opacity:.42}
+.ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--onSv);flex:none}
+.ibtn.back{color:var(--onS)}
+/* text: size × the phone's text scale; icons do not scale, as in Flutter */
+.hL{font-size:calc(32px*var(--th));line-height:calc(40px*var(--th));font-weight:600}
+.tL{font-size:calc(22px*var(--th));line-height:calc(28px*var(--th));font-weight:600}
+.sT{font-size:calc(18px*var(--t));line-height:calc(24px*var(--t));font-weight:600}
+.tM{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));font-weight:600;letter-spacing:.15px}
+.bL{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));letter-spacing:.5px}
+.bM{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));letter-spacing:.25px}
+.lL{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:600;letter-spacing:.1px}
+.hs{font-size:calc(13px*var(--t));line-height:calc(18px*var(--t));letter-spacing:.4px;color:var(--onSv)}   /* settingsHelpStyle: bodySmall at 13/18 */
+.v{color:var(--onSv)}
+.one{white-space:nowrap}
+/* top of a tab (TabHeader: 24, 16, 12, 8; headlineLarge; the report button) and of a pushed page (AppBar 64, titleLarge) */
+.tabh{display:flex;align-items:center;padding:16px 12px 8px 24px}
+.tabh .hL{flex:1;min-width:0;margin:0}
+.ab{min-height:64px;flex:none;display:flex;align-items:center;padding:0 4px}
+.ab .lead{width:56px;display:flex;justify-content:center}
+.ab .ttl{flex:1;min-width:0;padding:8px 0 8px 4px}
+/* the tab bar */
+.navb{flex:none;height:80px;background:var(--sCont);display:flex}
+.navb .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0}
+.navb .ind{width:64px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--onSv)}
+.navb .d.on .ind{background:var(--sc);color:var(--onSc)}
+.navb .nl{font-size:calc(12px*var(--tn));line-height:calc(16px*var(--tn));font-weight:600;letter-spacing:.5px;color:var(--onSv)}
+.navb .d.on .nl{color:var(--onS)}
+
+/* ---- Settings (lib/features/settings/settings_page.dart): 16 at the sides, 20 between sections ---- */
+.set .content{padding:0 0 24px}
+.set .body{padding:8px 16px 0}
+.sect+.sect{margin-top:20px}
+/* GroupedList.settings: a label heading (14/20 bold, primary, indented 16, 8 above the rows), 2 px gaps, 24 outside, square inside */
+.glab{padding:0 16px;margin-bottom:8px;font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:700;letter-spacing:.1px;color:var(--p)}
+.grp{display:flex;flex-direction:column;gap:2px}
+.grp>.row{background:var(--sLow)}
+.grp>.row:first-child{border-top-left-radius:24px;border-top-right-radius:24px}
+.grp>.row:last-child{border-bottom-left-radius:24px;border-bottom-right-radius:24px}
+/* GroupedList (content pages: Backup and restore, Reminders): 3 px gaps, 28 outside, 6 inside */
+.grp.cnt{gap:3px;margin:0 16px}
+.grp.cnt>.row{border-radius:6px}
+.grp.cnt>.row:first-child{border-top-left-radius:28px;border-top-right-radius:28px}
+.grp.cnt>.row:last-child{border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+/* GroupedTile: 20 at the sides, 14 above and below (16 for the data rows); icon, 16, text, 16, trailing */
+.row{padding:14px 20px;min-height:48px}
+.row.tall{padding-top:16px;padding-bottom:16px}
+.row.pad12{padding-top:12px;padding-bottom:12px}
+.line{display:flex;align-items:center;gap:16px}
+.line>.lead{color:var(--onSv);display:flex;flex:none}
+.line>.tx{flex:1;min-width:0}
+.line>.trl{flex:none;display:flex;align-items:center;color:var(--onSv)}
+.row.err .lead,.row.err .tM{color:var(--err)}
+.dim{opacity:.38}
+/* the "Feature incoming" badge: full contrast, under the text unless it takes at most 40% of the room */
+.badge{display:inline-block;min-height:24px;padding:4px 10px;border-radius:12px;background:var(--sHighest);color:var(--onSv);font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));font-weight:700;letter-spacing:.5px;white-space:nowrap;max-width:100%;overflow:hidden;
+ -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 12px),transparent);mask-image:none}
+.badge.fade{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 16px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 16px),transparent)}
+.tx>.badge{margin-top:8px}
+.tx.beside{display:flex;align-items:center;gap:12px}
+.tx.beside>.dim{flex:1;min-width:0}
+.tx.beside>.badge{margin-top:0}
+/* M3 Switch: 52 × 32 */
+.sw{width:52px;height:32px;border-radius:16px;position:relative;flex:none;background:var(--sHighest);box-shadow:inset 0 0 0 2px var(--ol)}
+.sw::after{content:"";position:absolute;width:16px;height:16px;border-radius:8px;left:8px;top:8px;background:var(--ol)}
+.sw.on{background:var(--p);box-shadow:none}
+.sw.on::after{width:24px;height:24px;border-radius:12px;left:24px;top:4px;background:var(--onP)}
+.swhit{width:60px;height:48px;display:flex;align-items:center;justify-content:center;margin:-8px -4px}
+/* buttons */
+.tonal{min-height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:inline-flex;align-items:center;gap:8px;padding:0 16px}
+.ftonal{min-height:56px;border-radius:28px;background:var(--sc);color:var(--onSc);display:inline-flex;align-items:center;justify-content:center;padding:0 24px;font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));font-weight:700}
+.filled{min-height:56px;border-radius:28px;background:var(--p);color:var(--onP);display:inline-flex;align-items:center;justify-content:center;padding:0 24px;text-align:center;font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));font-weight:700}
+.tbtn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 12px;border-radius:24px;color:var(--p)}
+.hit{min-height:48px;min-width:48px;display:inline-flex;align-items:center;justify-content:center}
+/* the profile card: surfaceContainerHigh, 28 corners, 16 inside; avatar 56 */
+.pcard{background:var(--sHigh);border-radius:28px;padding:16px}
+.prow{display:flex;align-items:center;gap:14px}
+.prow .ptx{flex:1;min-width:0}
+.pbel{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px 12px;margin-top:12px}
+.av{width:56px;height:56px;flex:none;position:relative;display:flex;align-items:center;justify-content:center;color:var(--onPc)}
+.av svg{position:absolute;inset:0}
+.av .mi{position:relative;font-size:28px;width:28px;height:28px}
+/* help lines under a group: 8 above, 16 at the sides */
+.hlp{padding:8px 16px 0;display:flex;gap:12px;align-items:flex-start}
+.hlp .mi{color:var(--onSv);margin-top:0}
+/* the speech-rate slider (SettingsSlider): heading and value, then the M3 slider */
+.sl .head{display:flex;align-items:flex-start;gap:12px}
+.sl .head .tM{flex:1;min-width:0}
+.sl .val{color:var(--p);font-weight:700}
+.track{position:relative;height:20px;margin-top:8px}
+.track .in{position:absolute;left:0;right:0;top:8px;height:4px;border-radius:2px;background:var(--sHighest)}
+.track .act{position:absolute;left:0;top:8px;height:4px;border-radius:2px;background:var(--p)}
+.track .th{position:absolute;top:0;width:20px;height:20px;border-radius:10px;background:var(--p);margin-left:-10px}
+.dd{display:flex;align-items:center;gap:4px}
+.foot{display:flex;align-items:center;gap:12px;padding:0 16px}
+.foot svg{width:32px;height:32px;flex:none}
+/* content pages */
+.page .content{padding:0 0 24px}
+.intro{padding:8px 24px 16px}
+.lbl{padding:20px 32px 8px;font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:700;letter-spacing:.1px;color:var(--p)}
+.note{display:flex;gap:16px;padding:16px 32px 4px;color:var(--onSv)}
+.note .mi{color:var(--onSv)}
+.cnt .row{padding:14px 12px 14px 20px}
+.cnt .row.tog{padding-right:16px}
+.ph.x2 .wrapbtn .line{flex-wrap:wrap;row-gap:4px}
+.ph.x2 .wrapbtn .line>.trl{margin:-8px 0 -12px auto!important}
+.ph.x2 .wrapbtn .line>.tx{flex-basis:calc(100% - 40px)}
+.time{color:var(--p);font-weight:700}
+/* the modal bottom sheet over a scrim (M3: surfaceContainerLow, 28 top corners, drag handle) */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.32);z-index:4}
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:5;background:var(--sLow);border-radius:28px 28px 0 0;padding:0 0 48px;display:flex;flex-direction:column}
+.sheet .handle{flex:none;height:48px;display:flex;align-items:center;justify-content:center}
+.sheet .handle::before{content:"";width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4}
+.sheet .scroll{flex:none}
+.sheet .content{padding:0 24px 24px}
+.sheet .sub{margin-top:4px}
+.facts{margin-top:16px;display:flex;flex-direction:column;gap:3px}
+.facts .f{background:var(--sHigh);border-radius:6px;padding:12px 16px;display:flex;gap:16px;align-items:flex-start}
+.facts .f:first-child{border-radius:20px 20px 6px 6px}
+.facts .f:last-child{border-radius:6px 6px 20px 20px}
+.facts .f .mi{color:var(--onSv);margin-top:2px}
+.facts .f>div{flex:1;min-width:0}
+.warn{display:flex;gap:12px;margin-top:16px;align-items:flex-start}
+.warn .mi{color:var(--err)}
+.acts{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px;margin-top:16px}
+/* Android's permission dialog (the system's, not the app's): drawn approximately */
+.dlg{position:absolute;left:24px;right:24px;top:50%;transform:translateY(-50%);z-index:5;background:var(--sHigh);border-radius:28px;padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.dlg .mi.big{color:var(--p);margin-bottom:16px}
+.dlg .q{font-size:calc(20px*var(--t));line-height:calc(28px*var(--t));font-weight:400;margin-bottom:20px}
+.dlg .opt2{align-self:stretch;min-height:48px;border-radius:24px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;padding:4px 16px}
+.dlg .opt2+.opt2{margin-top:8px}
+</style>
+</head>
+<body class="marks">
+<div class="wrap">
+<h1>Settings, with every planned change, drawn once</h1>
+<p class="lede">The whole Settings tab, top to bottom, with what 0.5.0 and 0.6.0 plan for it folded in, so it is rearranged once rather than five times. <b>#469</b> Sources moves from Logs to Learning. <b>#473</b> Your data and Back up to the cloud become one section, which holds <b>#470</b> Backup and restore. <b>#475</b> Add deck leaves the Decks screen for an Advanced row. <b>#243</b> gives every activity its own switch, each with a line for on and a line for off. <b>#90</b> Reminders gets its page now and ships in 0.6.0. Languages I know opens the approved screen of <b>#490</b>. Everything else is as <code>settings_page.dart</code> draws it today, in its order, with its icons and words. The learner speaks Hindi and English, learns Bengali, and reviews Hindi from English. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="languages-you-know.html">languages-you-know.html</a>; the default, Clay on pure black, is the owner's phone. Dashed outlines mark what changes and are not part of the app. Decisions this page makes are marked <span class="prop">Proposed</span>.</p>
+
+<div class="controls" role="group" aria-label="Theme">
+ <fieldset><legend>Seed</legend>
+  <label><input type="radio" name="seed" value="clay" checked> Clay #8F4C36</label>
+  <label><input type="radio" name="seed" value="forest"> Forest #3F6C51</label>
+  <label><input type="radio" name="seed" value="ocean"> Ocean #35618E</label>
+  <label><input type="radio" name="seed" value="iris"> Iris #65558F</label>
+ </fieldset>
+ <fieldset><legend>Frames</legend>
+  <label><input type="radio" name="mode" value="dark" checked> Dark</label>
+  <label><input type="radio" name="mode" value="light"> Light</label>
+  <label><input type="radio" name="mode" value="both"> Both</label>
+ </fieldset>
+ <fieldset><legend>Dark</legend>
+  <label><input type="checkbox" id="black" checked> Pure black</label>
+ </fieldset>
+ <fieldset><legend>Show</legend>
+  <label><input type="checkbox" id="marks" checked> Mark what changes</label>
+  <label><input type="checkbox" id="flip"> Flip every switch</label>
+ </fieldset>
+</div>
+<p id="check" role="status">Self-check runs once the fonts load…</p>
+
+<section class="opt" id="order">
+<h2>1 · The sections, in order</h2>
+<table>
+<thead><tr><th>#</th><th>Today (0.4.3)</th><th>After</th><th>Why</th></tr></thead>
+<tbody id="order-rows"></tbody>
+</table>
+</section>
+
+<section class="opt" id="tab">
+<h2>2 · The Settings tab, top to bottom</h2>
+<p>Scrolled frame by frame: each frame starts at the first row the one before could not show whole, so every row is in one frame or another. Reminders and the PIN lock are “Feature incoming” in 0.5.0, as today; section 5 draws Reminders live. Logs keeps its four rows and loses Sources. <b>Flip every switch</b>, above, redraws every frame with every switch the other way, so each line can be read in both states.</p>
+<div class="frames" id="fr-tab"></div>
+</section>
+
+<section class="opt" id="tab2x">
+<h2>3 · 2x text, the busiest parts</h2>
+<p>The top of the tab, then Activities and the merged data section from first row to last, at the phone's largest text size. The profile card stacks Switch under the name, as it does today above 1.3x.</p>
+<div class="frames" id="fr-2x"></div>
+</section>
+
+<section class="opt" id="backup">
+<h2>4 · Backup and restore (#470), and its restore sheet</h2>
+<p>One file, <code>fluenough-backup-&lt;date&gt;.fnbackup</code>, holds the review log, every setting, reviewer mode with its rater code, and the list of downloaded languages (<code>docs/plans/app-backup.md</code>). <b>Back up now</b> saves it where the learner picks. <b>Restore from a file</b> opens the system picker. Below them are the backups the app made by itself as each app update downloaded, the last three, each “Before updating to {version}, {date}” with <b>Restore</b>. Every restore, from a file or from that list, first shows the sheet: what the backup holds, then a confirmation that it replaces everything. A file from a newer Fluenough is refused in the same sheet, and nothing changes.</p>
+<div class="frames" id="fr-backup"></div>
+</section>
+
+<section class="opt" id="rem">
+<h2>5 · Reminders (#90, ships in 0.6.0)</h2>
+<p>Placed now so Settings is not rearranged again. Rescoped by the owner on 2026-10-06 to one daily reminder: “streak at risk” is dropped (<code>docs/plans/achievements.md</code>). It comes only on days with cards due, at the time the learner picks, says either how many cards are due or today's fact (#48), and keeps out of quiet hours. Android 13 and later ask for notifications the moment the switch is turned on, never at launch; a refusal leaves it off and says how to allow them.</p>
+<div class="frames" id="fr-rem"></div>
+</section>
+
+<section class="opt" id="switches">
+<h2>6 · Every switch, on and off (#243)</h2>
+<p>From <code>docs/plans/settings-wording.md</code> and <code>app_en.arb</code>; the two new activity switches' lines are <span class="prop">Proposed</span>. The self-check confirms no switch keeps the same line in both states.</p>
+<table>
+<thead><tr><th>Section</th><th>Switch</th><th>On</th><th>Off</th></tr></thead>
+<tbody id="switch-rows"></tbody>
+</table>
+</section>
+
+<section class="opt" id="decisions">
+<h2>7 · Decisions made here, for approval</h2>
+<table>
+<thead><tr><th>#</th><th>Decision</th><th>Why</th></tr></thead>
+<tbody>
+<tr><th>1</th><td data-h="Decision"><span class="prop">Proposed</span> The merged section is called <b>Your data</b> and holds, in order: Backup and restore (a row to its page), Export review log, Import review log, Back up to the cloud, Delete this profile.</td><td data-h="Why">The name people already know, and short enough for 2x text. The whole-app backup leads, as the thing most people want; the log export and import stay as they are (#20), with the merge-only import the plan keeps.</td></tr>
+<tr><th>2</th><td data-h="Decision"><span class="prop">Proposed</span> Cloud backup is <b>one</b> incoming row, its line naming the five services, instead of five rows.</td><td data-h="Why">Five rows that do nothing yet were a third of the old section. #112 decides how each service signs in; its page can list them.</td></tr>
+<tr><th>3</th><td data-h="Decision"><span class="prop">Proposed</span> The Backup and restore page holds Back up now, Restore from a file, and “Made before app updates”. It does not repeat the log export and import.</td><td data-h="Why">The page is the plan's “Settings, Backup and restore”. The section already shows the log rows one tap up.</td></tr>
+<tr><th>4</th><td data-h="Decision"><span class="prop">Proposed</span> Restore from the list opens the same summary sheet as a file does. Its button says <b>Replace and restore</b>.</td><td data-h="Why">The plan asks for the summary before anything changes, and a confirmation that names what is erased. One sheet for both ways in.</td></tr>
+<tr><th>5</th><td data-h="Decision"><span class="prop">Proposed</span> Above 1.3x text, a row's button goes under its line: a backup's Restore, Adjust to me's Adjust (outlined at 2x only), and the times on Reminders.</td><td data-h="Why">Beside it at 2x, “Before updating to 0.5.3, Nov 30” would get a column a word wide, and today Adjust leaves “Adjust to me” narrower than its words. The profile card already stacks Switch this way.</td></tr>
+<tr><th>6</th><td data-h="Decision"><span class="prop">Proposed</span> The activity switches leave Learning for a section of their own, <b>Activities</b>, under it.</td><td data-h="Why">With two more switches (#243) Learning would hold 17 rows. ADR-0034 calls them activities: “what you do, and what Settings switches on”.</td></tr>
+<tr><th>7</th><td data-h="Decision"><span class="prop">Proposed</span> The two activities that are not skills get their switches after the skills and before Phonemic contrasts: <b>Matching pairs</b> and <b>Choosing answers</b>, wording in section 6.</td><td data-h="Why">The skills keep today's order, which the Today tiles and the summary rows share.</td></tr>
+<tr><th>8</th><td data-h="Decision"><span class="prop">Proposed</span> Add deck is the only row in a new <b>Advanced</b> section, before Logs. Icon and name are the Decks button's (+, “Add deck”), and its line is the import page's “A .yaml deck on this phone”.</td><td data-h="Why">The owner called it advanced (#475). Beside Languages I'm learning it would sit among the choices everyone makes. Logs, also for reports, follows it.</td></tr>
+<tr><th>9</th><td data-h="Decision"><span class="prop">Proposed</span> The daily reminder's switch and time move onto a Reminders page. Settings keeps one row, its line saying what is set, and it stays in Reminder and privacy.</td><td data-h="Why">Time, what it says and quiet hours are four more rows; the settings-wording rule says a row that opens a page shows its value.</td></tr>
+<tr><th>10</th><td data-h="Decision"><span class="prop">Proposed</span> Reminder kinds after the rescope: the reminder comes only on days with cards due (the approved line says so), and says either the cards due or today's fact. Quiet hours hold back a reminder the phone missed (after a restart or a time-zone change) until they end.</td><td data-h="Why">#90's kinds without “streak at risk”. With one reminder a day at a time the learner picks, quiet hours matter only for a late one.</td></tr>
+<tr><th>11</th><td data-h="Decision"><span class="prop">Proposed</span> A refused notification permission: the switch stays off, its line says Android blocks the notifications, and a row under it opens Android's settings for Fluenough.</td><td data-h="Why">#90: “a refusal is handled”. Speaking does the same with the microphone today, as a message.</td></tr>
+<tr><th>12</th><td data-h="Decision"><span class="prop">Proposed</span> The help line under Your data now points to Backup and restore; “Version {version} is available” adds that a backup is made with the download.</td><td data-h="Why">The old line said “Export it”; the automatic backup should not be a surprise.</td></tr>
+</tbody></table>
+<ul>
+<li>Unchanged: Languages I know is the same row and opens the approved <a href="languages-you-know.html">Languages you know</a> screen (#490). Languages I'm learning already holds deck downloads (#467): checking for deck updates, and each language's size, Update and Remove. Languages you review (#462) stays in Reviewing, shown while reviewing is on.</li>
+<li>Not drawn, unchanged: the alphabet and per-language dialogs, the adult-content question, Voices, Appearance, the update states, and How reviewing works.</li>
+<li>After a restore the app downloads the backup's languages with the usual progress screen (the plan's Flow); that screen is today's.</li>
+</ul>
+</section>
+</div>
+
+<script>
+/* ColorScheme.fromSeed, printed by Flutter 3.47 for each ThemeSeed in lib/app/settings.dart, light and dark, contrast 0
+   (copied from session-result-and-hours.html). err is M3's error, which fromSeed keeps whatever the seed. */
+const SCHEMES={"forest-dark":{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLowest":"#0a0f0c","sLow":"#171d19","sCont":"#1b211d","sHigh":"#262b27","sHighest":"#313632","ol":"#8a938b","olv":"#404942","pc":"#085231","onPc":"#aef2c6","tc":"#224c58","onTc":"#bfe9f8"},"forest-light":{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLowest":"#ffffff","sLow":"#f0f5ee","sCont":"#eaefe8","sHigh":"#e4eae3","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","pc":"#aef2c6","onPc":"#085231","tc":"#bfe9f8","onTc":"#224c58"},"ocean-dark":{"p":"#a0cafd","onP":"#003258","sc":"#3b4858","onSc":"#d6e3f7","s":"#101418","onS":"#e1e2e8","onSv":"#c3c7cf","sLowest":"#0b0e13","sLow":"#191c20","sCont":"#1d2024","sHigh":"#272a2f","sHighest":"#32353a","ol":"#8d9199","olv":"#42474e","pc":"#184975","onPc":"#d1e4ff","tc":"#523f5f","onTc":"#f2daff"},"ocean-light":{"p":"#35618e","onP":"#ffffff","sc":"#d6e3f7","onSc":"#3b4858","s":"#f8f9ff","onS":"#191c20","onSv":"#42474e","sLowest":"#ffffff","sLow":"#f2f3f9","sCont":"#eceef4","sHigh":"#e6e8ee","sHighest":"#e1e2e8","ol":"#73777f","olv":"#c3c7cf","pc":"#d1e4ff","onPc":"#184975","tc":"#f2daff","onTc":"#523f5f"},"clay-dark":{"p":"#ffb59e","onP":"#55200d","sc":"#5d4037","onSc":"#ffdbd0","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLowest":"#140c0a","sLow":"#231917","sCont":"#271d1b","sHigh":"#322825","sHighest":"#3d322f","ol":"#a08d87","olv":"#53433f","pc":"#723521","onPc":"#ffdbd0","tc":"#52461a","onTc":"#f4e2a7"},"clay-light":{"p":"#8f4c36","onP":"#ffffff","sc":"#ffdbd0","onSc":"#5d4037","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLowest":"#ffffff","sLow":"#fff1ed","sCont":"#fceae5","sHigh":"#f7e4df","sHighest":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","pc":"#ffdbd0","onPc":"#723521","tc":"#f4e2a7","onTc":"#52461a"},"iris-dark":{"p":"#cfbdfe","onP":"#36265d","sc":"#4a4458","onSc":"#e8def8","s":"#141218","onS":"#e6e0e9","onSv":"#cac4cf","sLowest":"#0f0d13","sLow":"#1d1b20","sCont":"#211f24","sHigh":"#2b292f","sHighest":"#36343a","ol":"#948f99","olv":"#49454e","pc":"#4d3d75","onPc":"#e9ddff","tc":"#633b48","onTc":"#ffd9e3"},"iris-light":{"p":"#65558f","onP":"#ffffff","sc":"#e8def8","onSc":"#4a4458","s":"#fdf7ff","onS":"#1d1b20","onSv":"#49454e","sLowest":"#ffffff","sLow":"#f8f2fa","sCont":"#f2ecf4","sHigh":"#ece6ee","sHighest":"#e6e0e9","ol":"#7a757f","olv":"#cac4cf","pc":"#e9ddff","onPc":"#4d3d75","tc":"#ffd9e3","onTc":"#633b48"}};
+const ERR={light:'#ba1a1a',dark:'#ffb4ab'};
+const MARK={light:['#085231','#C2621D'],dark:['#AEF2C6','#FFB68A']};   // FluenoughMark: the brand's, not the theme's
+
+/* ---------- the learner ---------- */
+const APP='0.5.3';
+const ME={know:'Hindi, English',learn:'Bengali',sources:4,voiced:2,languages:2,reviews:3412,logLines:214,
+ rater:'FL-7K3M-Q9TD-6',reviewPairs:'Hindi from English',waiting:3,adjusted:'Oct 9',time:'7:00 PM',quiet:['10:00 PM','7:00 AM']};
+/* the backups the app made as each update downloaded: the last three (app-backup.md) */
+const AUTO=[['0.5.3','Nov 30',3412],['0.5.2','Nov 16',2980],['0.5.1','Nov 2',2415]];
+const autoLine=(v,d)=>`Before updating to ${v}, ${d}`;
+
+/* ---------- what changes: the sections, today and after ---------- */
+const ORDER=['Profile','Learning','Activities','Adjust to me','Sound','Look and language','Reminder and privacy','Your data','Reviewing','Advanced','Logs','Updates','Footer'];
+const ORDER_TABLE=[
+ ['Profile card','Profile card','—'],
+ ['Learning: languages, the skill switches, readings, 18+, alphabets','Learning: Languages I know, Languages I’m learning, readings, 18+, alphabets, <b>Sources</b>','#469 · Sources moves here'],
+ ['—','<b>Activities</b>: a switch per activity, skills first, then Matching pairs and Choosing answers, then Phonemic contrasts <span class="prop">Proposed</span>','#243'],
+ ['Adjust to me','Adjust to me','—'],
+ ['Sound','Sound','—'],
+ ['Look and language','Look and language','—'],
+ ['Reminder and privacy: Daily reminder, its time, PIN lock','Reminder and privacy: <b>Reminders</b> (a page), PIN lock','#90, from 0.6.0'],
+ ['Your data: export, import, delete','<b>Your data</b>: <b>Backup and restore</b>, export, import, <b>Back up to the cloud</b>, delete','#473, #470'],
+ ['Reviewing','Reviewing, with Languages you review','#462, unchanged'],
+ ['Logs, then a Sources row','<b>Advanced</b>: Add deck <span class="prop">Proposed</span>','#475 · from the Decks screen'],
+ ['Back up to the cloud: five services','Logs (without Sources)','#469'],
+ ['Updates','Updates','—'],
+ ['Version line','Version line','—'],
+];
+
+/* ---------- builders ---------- */
+const ic=(n,cls='')=>`<span class="mi ${cls}" aria-hidden="true">${n}</span>`;
+const stat=()=>`<div class="stat"><span>9:41</span><span class="ic">${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>`;
+const nav3=(shell)=>`<div class="nav3${shell?' shell':''}" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg><svg viewBox="0 0 20 20"><path d="M16 2.5v15L4 10z"/></svg></div>`;
+const navb=()=>`<div class="navb" aria-hidden="true">${[['home','Today'],['style','Decks'],['insert_chart','Progress'],['settings','Settings',1]].map(([i,l,on])=>`<span class="d${on?' on':''}"><span class="ind">${ic(i,on?'':'mo')}</span><span class="nl one">${l}</span></span>`).join('')}</div>`;
+const appBar=(t)=>`<div class="ab"><span class="lead"><span class="ibtn back" data-tap>${ic('arrow_back')}</span></span><span class="ttl tL">${t}</span><span class="ibtn rep" data-tap>${ic('bug_report','mo')}</span></div>`;
+const chev=()=>ic('chevron_right');
+const sw=(on)=>`<span class="swhit"><span class="sw${on?' on':''}"></span></span>`;
+const badge=()=>`<span class="badge">Feature incoming</span>`;
+let FLIP=false;   // "Flip every switch"
+/* one GroupedTile. o: {icon, title, sub, trail (html), inc, chg, err, cls, tap, attrs} */
+function tile(o){
+ const d=o.inc?' dim':'';
+ const lead=o.icon?`<span class="lead${d}">${ic(o.icon,o.filled?'':'mo')}</span>`:'';
+ const text=`<div class="${d.trim()}"><div class="tM">${o.title}</div>${o.sub!=null?`<div class="bM v">${o.sub}</div>`:''}</div>`;
+ const trl=o.trail?`<span class="trl${d}">${o.trail}</span>`:'';
+ return `<div class="row lf${o.inc?' inc':''}${o.chg?' chg':''}${o.err?' err':''}${o.cls?' '+o.cls:''}"${o.tap===false?'':' data-tap'}${o.attrs||''}><div class="line">${lead}<div class="tx">${text}${o.inc?badge():''}</div>${trl}</div></div>`;
+}
+/* GroupedTile.toggle: the line for its value (settings-wording.md). Incoming shows it off. */
+function tog(o){
+ const value=o.inc?false:(FLIP?!o.value:o.value);
+ return tile({...o,sub:value?o.on:o.off,trail:sw(value),attrs:` data-toggle data-on="${esc(o.on)}" data-off="${esc(o.off)}" data-value="${value}"`,cls:(o.cls||'')+' tog'});
+}
+const esc=(s)=>s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+const sect=(id,name,label,rows,{chg,after='',grp=''}={})=>`<div class="sect" id="${id}" data-name="${name}">${label?`<div class="glab lf${chg?' chg':''}" role="heading">${label}</div>`:''}<div class="grp ${grp}">${rows.join('')}</div>${after}</div>`;
+const hlp=(t,icon)=>`<div class="hlp lf">${icon?ic(icon,'m18 mo'):''}<span class="hs">${t}</span></div>`;
+function cookie(){let d='';const n=9,a=0.07,R=28;for(let i=0;i<=240;i++){const t=i/240*2*Math.PI;const r=R*(1+a*Math.cos(n*t))/(1+a);const g=t-Math.PI/2;d+=(i?'L':'M')+(28+r*Math.cos(g)).toFixed(2)+' '+(28+r*Math.sin(g)).toFixed(2)}
+ return `<svg viewBox="0 0 56 56" aria-hidden="true"><path d="${d}Z" fill="var(--pc)"/></svg>`}
+const mark=()=>`<svg viewBox="14 14 76 76" aria-hidden="true"><path d="M46 84V42c0-14 8-22 21-22" fill="none" stroke="var(--mk1)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 48l19 13 30-27" fill="none" stroke="var(--mk2)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+/* ---------- the switches (app_en.arb; the two activity switches proposed) ---------- */
+const SW={
+ romanisation:['Latin-letter readings','A Latin-letter reading under words in other scripts','Only the script, no reading',true],
+ adult:['Adult content (18+)','Rude words and offensive cards are shown','Rude words stay hidden behind their warnings',false],
+ recognition:['Seen words','See the word, recall its meaning','No see-the-word questions',true],
+ production:['Written words','See the meaning, write the word','No written answers',true],
+ listening:['Heard words','Hear the word, give its meaning','No listening questions',true],
+ speaking:['Spoken words','Say the word, your phone listens','No speaking questions. Switching on asks for the microphone',false],
+ grammar:['Grammar','Understand a form of a word, and use the right one','No grammar questions',true],
+ reading:['Reading','Read a short passage, answer questions','No passages',true],
+ matching:['Matching pairs','Match words to their meanings, a few at a time','No matching: each word is asked on its own',true,'new'],
+ choosing:['Choosing answers','Pick the answer from a few choices','No choices: you write or say every answer',true,'new'],
+ pair:['Phonemic contrasts','Practise the sounds the languages you know don’t have','No practice with sounds your languages lack',false,'inc'],
+ autoAdjust:['Adjust automatically','Adjusts by itself when a skill has 10% more answers','Only when you tap Adjust',true],
+ sound:['Sound','Words are spoken; listening questions are asked','Nothing is spoken; listening questions are skipped',true],
+ autoplay:['Play words automatically','Words play by themselves, as a card shows or once you answer','Words play only when you tap the speaker',true],
+ pin:['PIN lock','This profile asks for its PIN when it opens','This profile opens without a PIN',false,'inc'],
+ review:['Review decks','Check cards, then send your suggestions by mail','No reviewing on this phone. Switching on asks first',true],
+ autoUpdate:['Check automatically','Checks GitHub once a day, when the app opens','Only when you tap Check for updates',false],
+ reminder:['Daily reminder',`A reminder at ${ME.time} on days with cards due`,'No reminders',true],
+ quiet:['Quiet hours',`Nothing from ${ME.quiet[0]} to ${ME.quiet[1]}; a late reminder waits`,'A late reminder can come at any hour',true,'new'],
+};
+const S=(k,extra={})=>{const [title,on,off,value,kind]=SW[k];return tog({title,on,off,value,inc:kind==='inc',chg:kind==='new',...extra})};
+const isOn=(k)=>SW[k][4]==='inc'?false:(FLIP?!SW[k][3]:SW[k][3]);
+
+/* ---------- the Settings tab ---------- */
+function settingsBody(o={}){
+ const x2=o.x2;
+ const btn=`<span class="hit" data-tap><span class="tonal dim lL"><span class="mi m18" aria-hidden="true">swap_horiz</span><span class="one">Switch</span></span></span>`;
+ const profile=`<div class="sect" id="s-profile" data-name="Profile"><div class="pcard lf"><div class="prow"><span class="av">${cookie()}${ic('person')}</span><div class="ptx"><div class="sT">You</div><div class="bM v">Learning ${ME.learn}</div></div>${x2?'':btn}</div><div class="pbel">${x2?btn:''}${badge().replace('badge','badge one')}</div></div></div>`;
+ const learning=sect('s-learning','Learning','Learning',[
+  tile({icon:'record_voice_over',title:'Languages I know',sub:ME.know,trail:chev()}),
+  tile({icon:'school',title:'Languages I’m learning',sub:ME.learn,trail:chev()}),
+  S('romanisation'),S('adult'),
+  tile({icon:'abc',filled:true,title:'Alphabets',sub:'Learning every alphabet',trail:chev()}),
+  tile({icon:'menu_book',title:'Sources',sub:`${ME.sources} sources`,trail:chev(),chg:true,attrs:' data-k="sources"'}),
+ ]);
+ const listeningOn=isOn('listening');
+ const activities=sect('s-activities','Activities','Activities',[
+  S('recognition'),S('production'),S('listening'),
+  ...(listeningOn?[tile({icon:'timer',title:'Pause for an hour'}),tile({icon:'translate',filled:true,title:'Languages',sub:'On for every language',trail:chev()})]:[]),
+  S('speaking'),S('grammar'),S('reading'),S('matching'),S('choosing'),S('pair'),
+ ],{chg:true});
+ const adjust=`<div class="sect" id="s-adjust" data-name="Adjust to me"><div class="grp">${tile({icon:'tune',filled:true,title:'Adjust to me',sub:`Last adjusted ${ME.adjusted}`,trail:`<span class="ftonal" data-tap><span class="one">Adjust</span></span>`,tap:false,cls:'wrapbtn',chg:!!o.x2})}${S('autoAdjust',{icon:'autorenew',filled:true})}</div>${hlp('Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.','lock')}</div>`;
+ const soundOn=isOn('sound');
+ const sound=sect('s-sound','Sound','Sound',[
+  S('sound'),
+  tog({title:'Play words automatically',on:soundOn?SW.autoplay[1]:'Nothing plays while sound is off; then words play by themselves',off:soundOn?SW.autoplay[2]:'Nothing plays while sound is off; then only when you tap the speaker',value:SW.autoplay[3]}),
+  `<div class="row lf sl tall"><div class="head"><span class="tM">Speech rate</span><span class="bL val one">1.0×</span></div><div class="track" role="img" aria-label="Speech rate 1.0×"><span class="in"></span><span class="act" style="width:40%"></span><span class="th" style="left:40%"></span></div></div>`,
+  tile({title:'Voices',sub:`${ME.voiced} of ${ME.languages} languages have a voice`,trail:chev()}),
+ ]);
+ const look=sect('s-look','Look and language','Look and language',[
+  tile({icon:'palette',title:'Appearance',sub:'System · Clay',trail:chev()}),
+  tile({icon:'translate',filled:true,title:'App language',inc:true,cls:'pad12',trail:`<span class="dd bL"><span class="one">English (eng)</span>${ic('arrow_drop_down')}</span>`}),
+ ]);
+ const remRow=o.reminderLive
+  ?tile({icon:'notifications',title:'Reminders',sub:`Daily at ${ME.time}, on days with cards due`,trail:chev(),chg:true,attrs:' data-k="reminders"'})
+  :tile({icon:'notifications',title:'Reminders',sub:'No reminders',trail:chev(),inc:true,chg:true,attrs:' data-k="reminders"'});
+ const reminder=sect('s-reminder','Reminder and privacy','Reminder and privacy',[remRow,S('pin',{icon:'lock'})]);
+ const data=sect('s-data','Your data','Your data',[
+  tile({icon:'settings_backup_restore',filled:true,title:'Backup and restore',sub:`Last backup ${AUTO[0][1]}, before updating to ${AUTO[0][0]}`,trail:chev(),cls:'tall',chg:true,attrs:' data-k="backup"'}),
+  tile({icon:'file_download',title:'Export review log',sub:`${ME.reviews.toLocaleString('en')} reviews · JSONL file`,cls:'tall',attrs:' data-k="export"'}),
+  tile({icon:'file_upload',title:'Import review log',sub:'Merges with this profile’s history',cls:'tall',attrs:' data-k="import"'}),
+  tile({icon:'cloud_upload',title:'Back up to the cloud',sub:'Dropbox, Box, Google Drive, OneDrive, Nextcloud',inc:true,cls:'tall',chg:true,attrs:' data-k="cloud"'}),
+  tile({icon:'delete',title:'Delete this profile',inc:true,err:true,cls:'tall',attrs:' data-k="delete"'}),
+ ],{chg:true,after:hlp('Your progress stays on this phone. Back it up to keep a copy anywhere else.').replace('hlp lf','hlp lf chg')});
+ const reviewOn=isOn('review');
+ const review=sect('s-review','Reviewing','Reviewing',[
+  S('review',{icon:'rate_review'}),
+  ...(reviewOn?[
+   tile({icon:'key',title:'Your rater code',sub:`<span class="one">${ME.rater}</span>`,tap:false,trail:`<span class="ibtn" data-tap style="margin:-12px -12px -12px 0">${ic('content_copy','mo')}</span>`}),
+   tile({icon:'translate',title:'Languages you review',sub:ME.reviewPairs,trail:chev()}),
+   tile({icon:'pending_actions',title:'Waiting for review',sub:`${ME.waiting} decks wait for a native speaker`,trail:chev()}),
+  ]:[]),
+  tile({icon:'info',title:'How reviewing works',trail:chev()}),
+ ]);
+ const advanced=sect('s-advanced','Advanced','Advanced',[
+  tile({icon:'add',filled:true,title:'Add deck',sub:'A .yaml deck on this phone',trail:chev(),chg:true,attrs:' data-k="adddeck"'}),
+ ],{chg:true});
+ const logs=sect('s-logs','Logs','Logs',[
+  tile({icon:'receipt_long',title:'View app log',sub:`${ME.logLines} lines`,trail:chev()}),
+  tile({icon:'content_copy',title:'Copy app log'}),
+  tile({icon:'file_download',title:'Export app log',sub:'Text file'}),
+  tile({icon:'delete',title:'Clear app log'}),
+ ],{after:hlp('What the app did and what went wrong, kept on this phone for 7 days, to add to a report if you choose. Never your answers or cards.')});
+ const updates=sect('s-updates','Updates','Updates',[
+  tile({icon:'system_update',title:'Check for updates',sub:`You have ${APP}`}),
+  S('autoUpdate',{icon:'update',filled:true}),
+  tile({icon:'new_releases',title:'What’s new',sub:'Release notes for each version. Opening them asks GitHub.',trail:chev()}),
+ ]);
+ const foot=`<div class="sect" id="s-footer" data-name="Footer"><div class="foot lf">${mark()}<span class="hs">Fluenough ${APP} · Free software, GPL-3.0 · Works offline once decks are downloaded</span></div></div>`;
+ return `<div class="tabh lf"><span class="hL" role="heading">Settings</span><span class="ibtn rep" data-tap>${ic('bug_report','mo')}</span></div><div class="body">${profile}${learning}${activities}${adjust}${sound}${look}${reminder}${data}${review}${advanced}${logs}${updates}${foot}</div>`;
+}
+/* pos: {off:px} | {skip:selector} | {end:true} | {} for the top */
+function settingsPhone(o={}){
+ const pos=o.end?' data-pos="end"':o.off!=null?` data-off="${o.off}"`:o.skip?` data-skip="${o.skip}"`:'';
+ return `<div class="ph set${o.x2?' x2':''}" data-screen="settings"${o.group?` data-group="${o.group}"`:''}>${stat()}<div class="scroll"${pos}><div class="clip"><div class="content">${settingsBody(o)}</div></div></div>${navb()}${nav3(true)}</div>`;
+}
+
+/* ---------- Backup and restore ---------- */
+function backupBody(){
+ const auto=AUTO.map(([v,d,n])=>tile({title:autoLine(v,d),sub:`${n.toLocaleString('en')} reviews`,tap:false,cls:'wrapbtn',
+  trail:`<span class="tbtn lL" data-tap><span class="one">Restore</span></span>`,attrs:` data-auto="${v}|${d}"`}).replace('class="trl"','class="trl" style="margin:-12px 0"'));
+ return `<div class="intro"><div class="bL v lf">One file holds your progress, your settings, your rater code and the languages you downloaded. Their decks download again after a restore.</div></div>
+ <div class="grp cnt">${tile({icon:'backup',title:'Back up now',sub:'Saves one file, where you choose',trail:chev(),chg:true})}${tile({icon:'restore_page',title:'Restore from a file',sub:'Shows what is in it before anything changes',trail:chev(),chg:true})}</div>
+ <div class="lbl lf" role="heading">Made before app updates</div>
+ <div class="grp cnt chg" data-autolist>${auto.join('')}</div>
+ <div class="note lf">${ic('info','mo')}<span class="bM">Made on this phone as each app update downloads. The last three are kept.</span></div>
+ <div class="note lf">${ic('lock','mo')}<span class="bM">A backup holds your whole learning history and your rater code. It leaves this phone only if you share it.</span></div>`;
+}
+function pagePhone(title,body,o={}){
+ const pos=o.end?' data-pos="end"':o.skip?` data-skip="${o.skip}"`:'';
+ return `<div class="ph page${o.x2?' x2':''}" data-screen="${o.screen}">${stat()}${appBar(title)}<div class="scroll"${o.sheet?'':pos}><div class="clip"><div class="content">${body}</div></div></div>${nav3(false)}${o.overlay||''}</div>`;
+}
+const backupPhone=(o={})=>pagePhone('Backup and restore',backupBody(),{...o,screen:'backup'});
+function sheetHtml(kind,o={}){
+ const pos=o.end?' data-pos="end"':'';
+ let body;
+ if(kind==='restore'){
+  const [v,d,n]=AUTO[0];
+  const f=(icon,label,value)=>`<div class="f lf">${ic(icon,'mo')}<div><div class="bM v">${label}</div><div class="bL">${value}</div></div></div>`;
+  body=`<div class="tL lf" role="heading">Restore this backup?</div><div class="bM v sub lf">Made before updating to ${v}</div>
+  <div class="facts">${f('event','Made',`${d}, 2026, 6:40 PM`)}${f('phone_android','By','Fluenough 0.5.2')}${f('history','Progress',`${n.toLocaleString('en')} reviews in ${ME.learn}`)}${f('tune','Also','Your settings, the languages you know, and your rater code')}${f('download','Then downloads',`${ME.learn} and Hindi decks, 38 MB`)}</div>
+  <div class="warn lf">${ic('warning_amber','mo')}<span class="bM">Your progress and settings on this phone are replaced. Back up now first if you might want them back.</span></div>
+  <div class="acts"><span class="tbtn lL lf" data-tap><span class="one">Cancel</span></span><span class="filled lf" data-tap data-confirm><span class="one">Replace and restore</span></span></div>`;
+ }else{
+  body=`<div class="tL lf" role="heading">This backup is from a newer Fluenough</div>
+  <div class="bL v sub lf">It was made by Fluenough 0.7.0, and this is ${APP}. Update the app, then restore it. Nothing has changed.</div>
+  <div class="acts"><span class="tbtn lL lf" data-tap><span class="one">Close</span></span><span class="filled lf" data-tap><span class="one">Check for updates</span></span></div>`;
+ }
+ return `<div class="scrim"></div><div class="sheet" role="dialog"><div class="handle"></div><div class="scroll"${pos}><div class="clip"><div class="content">${body}</div></div></div></div>`;
+}
+
+/* ---------- Reminders (0.6.0) ---------- */
+function remindersBody(st){
+ const radio=(on)=>`<span class="lead" style="color:var(--${on?'p':'onSv'})">${ic(on?'radio_button_checked':'radio_button_unchecked')}</span>`;
+ const kind=(on,title,sub)=>`<div class="row lf" data-tap><div class="line">${radio(on)}<div class="tx"><div class="tM">${title}</div><div class="bM v">${sub}</div></div></div></div>`;
+ let first;
+ if(st==='refused'){
+  first=tog({icon:'notifications',title:'Daily reminder',on:SW.reminder[1],off:'No reminders. Android blocks Fluenough’s notifications',value:false,chg:true})
+   +tile({icon:'open_in_new',title:'Allow notifications',sub:'Opens Android’s settings for Fluenough',chg:true});
+ }else{
+  const on=st==='on';
+  first=tog({icon:'notifications',title:'Daily reminder',on:SW.reminder[1],off:SW.reminder[2],value:on})
+   +(on?tile({icon:'schedule',title:'Reminder time',cls:'wrapbtn',trail:`<span class="bL time one">${ME.time}</span>`}):'');
+ }
+ const live=st==='on';
+ const rest=live?`<div class="lbl lf" id="lbl-says" role="heading">What it says</div>
+ <div class="grp cnt chg">${kind(true,'Cards due',`“12 ${ME.learn} cards due”`)}${kind(false,'Today’s fact',`A fact about ${ME.learn}, then the cards due`)}</div>
+ <div class="lbl lf" id="lbl-quiet" role="heading">Quiet hours</div>
+ <div class="grp cnt chg">${S('quiet',{icon:'bedtime',chg:false})}${tile({icon:'dark_mode',title:'From',cls:'wrapbtn',trail:`<span class="bL time one">${ME.quiet[0]}</span>`})}${tile({icon:'wb_sunny',title:'Until',cls:'wrapbtn',trail:`<span class="bL time one">${ME.quiet[1]}</span>`})}</div>`:'';
+ return `<div class="intro"><div class="bL v lf">One reminder a day, only on days with cards due, only for the profile in use, and never while Fluenough is open. Tapping it opens Today.</div></div>
+ <div class="grp cnt">${first}</div>${rest}`;
+}
+const remindersPhone=(st,o={})=>pagePhone('Reminders',remindersBody(st),{...o,screen:'reminders'});
+const permDialog=()=>`<div class="scrim"></div><div class="dlg" role="dialog">${ic('notifications','big mo')}<div class="q lf">Allow <b>Fluenough</b> to send you notifications?</div><span class="opt2 lL lf" data-tap><span class="one">Allow</span></span><span class="opt2 lL lf" data-tap><span class="one">Don’t allow</span></span></div>`;
+
+/* ---------- the frames ---------- */
+let TAB_PAGES=[];   // scroll offsets, worked out from the page's own layout (paginate)
+let X2_FRAMES=[];
+const BACKUP_FRAMES=[
+ ['Settings, scrolled to Your data: the merged section',()=>settingsPhone({skip:'#s-data'})],
+ ['Backup and restore',()=>backupPhone()],
+ ['Restore tapped: the sheet',()=>backupPhone({sheet:true,overlay:sheetHtml('restore')})],
+ ['A file from a newer Fluenough',()=>backupPhone({sheet:true,overlay:sheetHtml('newer')})],
+ ['2x text: the top',()=>backupPhone({x2:true})],
+ ['2x text: made before app updates',()=>backupPhone({x2:true,skip:'.lbl'})],
+ ['2x text: the sheet, its top',()=>backupPhone({x2:true,sheet:true,overlay:sheetHtml('restore')})],
+ ['2x text: the sheet, at its end',()=>backupPhone({x2:true,sheet:true,overlay:sheetHtml('restore',{end:true})})],
+];
+const REM_FRAMES=[
+ ['Settings from 0.6.0: Reminders live',()=>settingsPhone({reminderLive:true,skip:'#s-reminder'})],
+ ['Reminders, on',()=>remindersPhone('on')],
+ ['Reminders, on: scrolled to quiet hours',()=>remindersPhone('on',{skip:'#lbl-quiet'})],
+ ['Turned on: Android asks',()=>remindersPhone('off',{overlay:permDialog(),sheet:true})],
+ ['Don’t allow: it stays off',()=>remindersPhone('refused')],
+ ['2x text: the switch and its time',()=>remindersPhone('on',{x2:true,skip:'.grp'})],
+ ['2x text: what it says',()=>remindersPhone('on',{x2:true,skip:'#lbl-says'})],
+ ['2x text: quiet hours',()=>remindersPhone('on',{x2:true,skip:'#lbl-quiet'})],
+];
+
+/* ---------- theme ---------- */
+const VARS=['p','onP','sc','onSc','s','onS','onSv','sLowest','sLow','sCont','sHigh','sHighest','ol','olv','pc','onPc','tc','onTc'];
+function varsFor(seed,dark,black){const s={...SCHEMES[`${seed}-${dark?'dark':'light'}`]};
+ if(dark&&black){s.s='#000000';s.sLowest='#000000'}  // AppTheme.dark(pureBlack): surface, surfaceDim and surfaceContainerLowest go black
+ const m=MARK[dark?'dark':'light'];
+ return VARS.map(k=>`--${k}:${s[k]}`).join(';')+`;--err:${ERR[dark?'dark':'light']};--mk1:${m[0]};--mk2:${m[1]}`}
+const state=()=>({seed:document.querySelector('[name=seed]:checked').value,mode:document.querySelector('[name=mode]:checked').value,black:document.getElementById('black').checked});
+function applyTheme({seed,mode,black}){
+ document.querySelectorAll('.fcol').forEach(col=>{
+  const dark=mode==='both'?col.dataset.th==='dark':mode==='dark';
+  col.hidden=mode!=='both'&&col.dataset.th!==mode;
+  col.querySelector('.ph').setAttribute('style',varsFor(seed,dark,black));
+  col.querySelector('.fcap .th').textContent=dark?(black?'Dark, pure black':'Dark'):'Light';
+ });
+ document.body.classList.toggle('marks',document.getElementById('marks').checked);
+}
+const cols=(frames)=>frames.flatMap(([cap,fn])=>['dark','light'].map(th=>`<div class="fcol" data-th="${th}"><span class="fcap">${cap} · <span class="th"></span></span>${fn()}</div>`)).join('');
+/* Where each frame of the tab starts: at the top, then at the first row or line the frame before could not show whole
+   (8 dp of the row before kept above it, as a list scrolled by hand), and the last one scrolled to the end. */
+function paginate(o={},from,to){
+ const host=document.createElement('div');host.style.cssText='position:absolute;left:-9999px;top:0';host.innerHTML=settingsPhone(o);document.body.appendChild(host);
+ const ph=host.querySelector('.ph');ph.setAttribute('style',varsFor('clay',true,true));layoutBadges(host);
+ const sc=ph.querySelector('.scroll'),content=ph.querySelector('.content');const vh=sc.clientHeight,total=content.scrollHeight;
+ const c0=content.getBoundingClientRect().top;
+ const boxes=[...content.querySelectorAll('.lf')].map(e=>{const r=e.getBoundingClientRect();return [r.top-c0,r.bottom-c0]}).filter(b=>b[1]>b[0]).sort((a,b)=>a[0]-b[0]);
+ const at=(sel)=>sel?content.querySelector(sel).getBoundingClientRect().top-c0:null;
+ const begin=from?Math.max(0,at(from)-8):0,stop=to?at(to):total;
+ const pages=[Math.round(begin)];let start=begin;
+ for(let guard=0;guard<40;guard++){
+  if(start+vh>=stop-0.5)break;
+  if(total-start<=vh)break;
+  const cut=boxes.find(b=>b[1]>start+vh+0.5);if(!cut)break;
+  let next=Math.max(start+1,cut[0]-8);
+  if(next>=stop-8)break;
+  if(total-next<=vh){pages.push('end');break}
+  pages.push(Math.round(next));start=next;
+ }
+ if(pages[pages.length-1]!=='end'&&total>vh&&pages.length>1){/* the last frame scrolled to the end */}
+ host.remove();return pages;
+}
+function sectionsIn(ph){const cr=ph.querySelector('.clip').getBoundingClientRect();
+ return [...ph.querySelectorAll('.sect')].filter(s=>{const r=s.getBoundingClientRect();return r.bottom>cr.top+20&&r.top<cr.bottom-20}).map(s=>s.dataset.name).join(', ')}
+function render(){
+ TAB_PAGES=paginate();
+ const x2=(cap,from,to)=>paginate({x2:true},from,to).map((p,i,a)=>[`2x text: ${cap}${a.length>1?` ${i+1} of ${a.length}`:''}`,()=>settingsPhone(p==='end'?{x2:true,end:true,group:'x2'}:{x2:true,off:p,group:'x2'})]);
+ X2_FRAMES=[...x2('the top',null,'#s-learning .grp'),...x2('Activities','#s-activities','#s-adjust'),...x2('Your data','#s-data','#s-review')];
+ const tabFrames=TAB_PAGES.map((p,i)=>[`${i+1} of ${TAB_PAGES.length}`,()=>settingsPhone(p==='end'?{end:true,group:'tab'}:{off:p,group:'tab'})]);
+ document.getElementById('fr-tab').innerHTML=cols(tabFrames);
+ document.getElementById('fr-2x').innerHTML=cols(X2_FRAMES);
+ document.getElementById('fr-backup').innerHTML=cols(BACKUP_FRAMES);
+ document.getElementById('fr-rem').innerHTML=cols(REM_FRAMES);
+ layoutBadges();
+ sizeSheets();
+ fit();
+ document.querySelectorAll('#fr-tab .fcol').forEach(col=>{const cap=col.querySelector('.fcap');const n=cap.firstChild.textContent.replace(' · ','');cap.firstChild.textContent=`${n}: ${sectionsIn(col.querySelector('.ph'))} · `});
+}
+function tables(){
+ document.getElementById('order-rows').innerHTML=ORDER_TABLE.map((r,i)=>`<tr><th>${i+1}</th><td data-h="Today">${r[0]}</td><td data-h="After">${r[1]}</td><td data-h="Why">${r[2]}</td></tr>`).join('');
+ const where={romanisation:'Learning',adult:'Learning',recognition:'Activities',production:'Activities',listening:'Activities',speaking:'Activities',grammar:'Activities',reading:'Activities',matching:'Activities',choosing:'Activities',pair:'Activities',autoAdjust:'Adjust to me',sound:'Sound',autoplay:'Sound',pin:'Reminder and privacy',review:'Reviewing',autoUpdate:'Updates',reminder:'Reminders page',quiet:'Reminders page'};
+ document.getElementById('switch-rows').innerHTML=Object.keys(where).map(k=>{const [t,on,off,,kind]=SW[k];return `<tr><td data-h="Section">${where[k]}</td><th>${t}${kind==='new'?' <span class="prop">Proposed</span>':kind==='inc'?' (incoming)':''}</th><td data-h="On">${on}</td><td data-h="Off">${off}</td></tr>`}).join('')
+  +`<tr><td data-h="Section">Sound</td><th>Play words automatically, while Sound is off</th><td data-h="On">Nothing plays while sound is off; then words play by themselves</td><td data-h="Off">Nothing plays while sound is off; then only when you tap the speaker</td></tr>`;
+}
+
+/* GroupedTile's rule: the badge beside the text when it takes at most 40% of the room the text and badge share, else under it.
+   At 2x on a switch row the badge is wider than its column and fades at its end (softWrap false, TextOverflow.fade), as today. */
+function layoutBadges(root=document){
+ root.querySelectorAll('.row.inc .tx').forEach(tx=>{const b=tx.querySelector('.badge');tx.classList.remove('beside');b.classList.remove('fade');
+  const w=tx.clientWidth,bw=b.scrollWidth;
+  if(bw<=w*0.4)tx.classList.add('beside');
+  if(b.scrollWidth>b.clientWidth+0.5)b.classList.add('fade');
+ });
+}
+/* A sheet is as tall as what it holds, up to 72 dp from the top; then it scrolls, as a shrink-wrapped ListView does. */
+function sizeSheets(){
+ document.querySelectorAll('.sheet').forEach(sh=>{const ph=sh.closest('.ph');const sc=sh.querySelector('.scroll'),content=sc.querySelector('.content');
+  sc.style.height='0px';
+  const avail=ph.clientHeight-72-48-48;   // 72 from the top, the drag handle, the 3-button bar
+  sc.style.height=Math.min(content.scrollHeight,avail)+'px';
+ });
+}
+
+/* A frame is a scroll position. 'top', [data-off] and [data-skip] put that place at the top; the visible area then ends above
+   the first row or line the edge would cut, as a list stopped between two rows does, and the scrollbar thumb shows there is
+   more. 'end' scrolls to the end; a row the top edge would cut is left out. */
+function fit(){
+ document.querySelectorAll('.scroll').forEach(sc=>{
+  const clip=sc.querySelector('.clip'),content=sc.querySelector('.content');
+  clip.style.top='0px';clip.style.height=sc.clientHeight+'px';content.style.transform='';
+  const vh=sc.clientHeight,total=content.scrollHeight;
+  const c0=content.getBoundingClientRect().top;
+  const leaves=[...content.querySelectorAll('.lf')];
+  sc.querySelector('.thumb')?.remove();
+  const box=(el)=>el.closest('.row,.pcard,.f')||el;
+  let off;
+  if(sc.dataset.pos==='end')off=Math.max(0,total-vh);
+  else if(sc.dataset.off!=null)off=+sc.dataset.off;
+  else{const sk=sc.dataset.skip?content.querySelector(sc.dataset.skip):null;off=sk?Math.max(0,sk.getBoundingClientRect().top-c0-8):0}
+  off=Math.min(off,Math.max(0,total-vh));
+  // a row the top edge would cut is left out
+  let topCut=0;for(const el of leaves){const b0=box(el);const r=b0.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)topCut=Math.max(topCut,b-off)}
+  clip.style.top=topCut+'px';
+  content.style.transform=`translateY(${-(off+topCut)}px)`;
+  const top0=sc.getBoundingClientRect().top;let cut=vh;
+  for(let guard=0;guard<60;guard++){let moved=false;
+   for(const el of leaves){const r=el.getBoundingClientRect();if(!r.height)continue;const t=r.top-top0,b=r.bottom-top0;
+    if(t<cut-0.5&&b>cut+0.5){const bt=box(el).getBoundingClientRect().top-top0;cut=Math.max(0,Math.min(t,bt));moved=true}}
+   if(!moved)break;}
+  clip.style.height=Math.max(0,cut-topCut)+'px';
+  if(total>vh+1)thumb(sc,cut-topCut,total,off+topCut);
+ });
+}
+function thumb(sc,vis,total,off){const th=document.createElement('div');th.className='thumb';
+ const top=parseFloat(sc.querySelector('.clip').style.top)||0;
+ const h=Math.max(32,vis*vis/total),y=top+(off/Math.max(1,total-vis))*(vis-h);
+ th.style.height=h+'px';th.style.top=Math.max(0,Math.min(top+vis-h,y))+'px';sc.appendChild(th)}
+
+/* ---------- self-check: what goes where, layout, and WCAG contrast in every seed and mode ---------- */
+function rgba(str){const m=str.match(/rgba?\(([^)]+)\)/);if(m){const p=m[1].split(/[ ,\/]+/).filter(Boolean).map(Number);return [p[0],p[1],p[2],p.length>3?p[3]:1]}
+ const c=str.match(/color\(srgb ([^)]+)\)/);if(c){const p=c[1].split(/[ \/]+/).filter(Boolean).map(Number);return [p[0]*255,p[1]*255,p[2]*255,p.length>3?p[3]:1]}return [0,0,0,0]}
+const over=(f,b)=>[0,1,2].map(i=>f[i]*f[3]+b[i]*(1-f[3])).concat(1);
+const lum=(c)=>{const a=c.slice(0,3).map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2]};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)};
+function bgOf(el){const stack=[];for(let e=el;e;e=e.parentElement){const c=rgba(getComputedStyle(e).backgroundColor);if(c[3]>0)stack.push(c);if(c[3]>=1||e.classList.contains('ph'))break}
+ let col=[255,255,255,1];for(let i=stack.length-1;i>=0;i--)col=over(stack[i],col);return col}
+const tagOf=(ph)=>`“${ph.parentElement.querySelector('.fcap').firstChild.textContent.replace(/ · $/,'').trim()}” (${ph.parentElement.dataset.th})`;
+/* shown: inside its own scroll area's visible part (a sheet's or the page's), and not under a scrim unless in the sheet or dialog */
+function shownIn(el){const clip=el.closest('.clip');const r=el.getBoundingClientRect();if(!r.width||!r.height)return false;
+ if(clip){const cr=clip.getBoundingClientRect();if(r.bottom<=cr.top+0.5||r.top>=cr.bottom-0.5)return false}
+ const ph=el.closest('.ph');if(ph.querySelector('.scrim')&&!el.closest('.sheet,.dlg')&&!el.closest('.stat,.nav3'))return false;return true}
+const wholeIn=(el)=>{const clip=el.closest('.clip');if(!clip)return true;const r=el.getBoundingClientRect(),cr=clip.getBoundingClientRect();return r.height>0&&r.top>=cr.top-0.5&&r.bottom<=cr.bottom+0.5};
+function structureProblems(){
+ const bad=[];
+ document.querySelectorAll('.ph[data-screen=settings]').forEach(ph=>{const tag=tagOf(ph);
+  const names=[...ph.querySelectorAll('.sect')].map(s=>s.dataset.name);
+  if(names.join('|')!==ORDER.join('|'))bad.push(`${tag}: sections not in the planned order`);
+  const inSect=(k)=>ph.querySelector(`[data-k=${k}]`)?.closest('.sect')?.dataset.name;
+  if(inSect('sources')!=='Learning')bad.push(`${tag}: Sources is not in Learning (#469)`);
+  if(ph.querySelector('#s-logs').textContent.includes('Sources'))bad.push(`${tag}: Sources still in Logs`);
+  const data=[...ph.querySelectorAll('#s-data [data-k]')].map(e=>e.dataset.k).join(',');
+  if(data!=='backup,export,import,cloud,delete')bad.push(`${tag}: Your data holds ${data}`);
+  if([...ph.querySelectorAll('.glab')].some(g=>/cloud/i.test(g.textContent)))bad.push(`${tag}: a separate cloud section remains (#473)`);
+  if(inSect('adddeck')!=='Advanced')bad.push(`${tag}: Add deck is not in Advanced (#475)`);
+  if(inSect('reminders')!=='Reminder and privacy')bad.push(`${tag}: Reminders not in Reminder and privacy (#90)`);
+  const acts=[...ph.querySelectorAll('#s-activities .tog .tM')].map(e=>e.textContent);
+  for(const t of ['Seen words','Written words','Heard words','Spoken words','Grammar','Reading','Matching pairs','Choosing answers','Phonemic contrasts'])if(!acts.includes(t))bad.push(`${tag}: no switch for ${t} (#243)`);
+ });
+ document.querySelectorAll('[data-toggle]').forEach(el=>{const ph=el.closest('.ph');
+  if(el.dataset.on===el.dataset.off)bad.push(`${tagOf(ph)}: “${el.querySelector('.tM').textContent}” has one line for both states`);
+  const shown=el.querySelector('.tx .bM')?.textContent;const want=el.dataset.value==='true'?el.dataset.on:el.dataset.off;
+  if(shown!==want.replace(/&amp;/g,'&').replace(/&quot;/g,'"'))bad.push(`${tagOf(ph)}: “${el.querySelector('.tM').textContent}” shows the line for the other state`)});
+ document.querySelectorAll('[data-autolist]').forEach(l=>{const rows=[...l.querySelectorAll('[data-auto]')];
+  if(rows.length>3)bad.push('more than three automatic backups listed');
+  rows.forEach(r=>{const [v,d]=r.dataset.auto.split('|');if(r.querySelector('.tM').textContent!==autoLine(v,d))bad.push(`automatic backup not named “Before updating to {version}, {date}”`);
+   if(!r.querySelector('[data-tap]')||r.querySelector('[data-tap]').textContent.trim()!=='Restore')bad.push('an automatic backup without Restore')})});
+ // top to bottom: every row and line of the tab is whole in at least one frame of section 2, and so is every changed part
+ for(const th of ['dark','light']){const phones=[...document.querySelectorAll(`#fr-tab .fcol[data-th=${th}] .ph`)];if(!phones.length)continue;
+  const n=phones[0].querySelectorAll('.content .lf').length;
+  for(let i=0;i<n;i++){if(!phones.some(p=>wholeIn(p.querySelectorAll('.content .lf')[i])))bad.push(`tab (${th}): “${phones[0].querySelectorAll('.content .lf')[i].textContent.trim().slice(0,24)}” is whole in no frame`)}
+  const m=phones[0].querySelectorAll('.content .chg').length;
+  for(let i=0;i<m;i++){if(!phones.some(p=>wholeIn(p.querySelectorAll('.content .chg')[i])))bad.push(`tab (${th}): changed part ${i+1} is whole in no frame`)}}
+ // 2x: every row and changed part of Activities and Your data is whole in one of their 2x frames
+ for(const th of ['dark','light']){const phones=[...document.querySelectorAll(`#fr-2x .fcol[data-th=${th}] .ph`)];if(!phones.length)continue;
+  const sel='#s-activities .lf,#s-data .lf';const n=phones[0].querySelectorAll(sel).length;
+  for(let i=0;i<n;i++){if(!phones.some(p=>wholeIn(p.querySelectorAll(sel)[i])))bad.push(`2x (${th}): “${phones[0].querySelectorAll(sel)[i].textContent.trim().slice(0,24)}” is whole in no frame`)}}
+ return bad;
+}
+const txt=(el)=>{const c=el.cloneNode(true);c.querySelectorAll('.mi').forEach(m=>m.remove());return c.textContent.trim()};
+function layoutProblems(){
+ const bad=[];const phones=[...document.querySelectorAll('.ph')];
+ phones.forEach(ph=>{const tag=tagOf(ph);
+  const pr=ph.getBoundingClientRect();const sc=ph.querySelector('.scroll');
+  ph.querySelectorAll('*').forEach(el=>{if(el.closest('svg')&&el.tagName!=='svg')return;if(!shownIn(el))return;const r=el.getBoundingClientRect();
+   if(r.left<pr.left-0.5||r.right>pr.right+0.5)bad.push(`${tag}: ${el.className||el.tagName} sticks out sideways`);
+   if(el.scrollWidth>el.clientWidth+1&&getComputedStyle(el).overflowX!=='visible'&&!el.matches('.clip,.scroll,.ph,.mi,.badge.fade'))bad.push(`${tag}: ${el.className} “${el.textContent.trim().slice(0,20)}” text cut`);
+  });
+  ph.querySelectorAll('.content .lf').forEach(el=>{if(!shownIn(el))return;if(!wholeIn(el))bad.push(`${tag}: ${el.className} “${el.textContent.trim().slice(0,16)}” cut at the edge`)});
+  // things that must stay on one line: buttons, times, versions, the rater code, tab labels
+  ph.querySelectorAll('.one').forEach(el=>{if(!shownIn(el))return;const lh=parseFloat(getComputedStyle(el).lineHeight)||parseFloat(getComputedStyle(el).fontSize)*1.2;if(el.getBoundingClientRect().height>lh*1.5)bad.push(`${tag}: “${el.textContent}” wraps`)});
+  // a word broken in the middle: any text box narrower than its longest word
+  ph.querySelectorAll('.tM,.bM,.bL,.hs,.glab,.lbl,.tL,.hL,.sT').forEach(el=>{if(!shownIn(el)||el.closest('.one'))return;const cs=getComputedStyle(el);const cv=document.createElement('canvas').getContext('2d');cv.font=`${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+   const longest=Math.max(...txt(el).split(/\s+/).map(w=>cv.measureText(w).width+(parseFloat(cs.letterSpacing)||0)*w.length));
+   if(longest>el.clientWidth+0.5)bad.push(`${tag}: a word in “${el.textContent.trim().slice(0,24)}” is wider than its box`)});
+  ph.querySelectorAll('[data-tap]').forEach(el=>{if(!shownIn(el))return;const r=el.getBoundingClientRect();
+   if(r.height<47.5||r.width<47.5)bad.push(`${tag}: target ${Math.round(r.width)}×${Math.round(r.height)} (${el.textContent.trim().slice(0,16)})`)});
+  const clip=sc.querySelector('.clip');const shownH=clip.getBoundingClientRect().height;
+  if(!ph.querySelector('.scrim')&&sc.dataset.pos!=='end'&&shownH<sc.clientHeight*0.6&&sc.querySelector('.content').scrollHeight>sc.clientHeight)bad.push(`${tag}: only ${Math.round(shownH)} of ${sc.clientHeight} dp of content shown`);
+  // nothing under the report button but its own bar
+  const rep=ph.querySelector('.rep');if(rep&&shownIn(rep)){const rr=rep.getBoundingClientRect();ph.querySelectorAll('.lf,[data-tap]').forEach(el=>{if(el.contains(rep)||el===rep||!shownIn(el))return;const r=el.getBoundingClientRect();if(r.top<rr.bottom-0.5&&r.bottom>rr.top+0.5&&r.right>rr.left+0.5&&r.left<rr.right-0.5)bad.push(`${tag}: “${el.textContent.trim().slice(0,16)}” under the report button`)})}
+  const nav=ph.querySelector('.nav3').getBoundingClientRect();
+  ph.querySelectorAll('[data-tap]').forEach(el=>{if(!shownIn(el))return;if(el.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: “${el.textContent.trim().slice(0,16)}” under the navigation bar`)});
+  const nb=ph.querySelector('.navb');if(nb&&nb.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: tab bar under the navigation bar`);
+  if(nb&&sc.getBoundingClientRect().bottom>nb.getBoundingClientRect().top+0.5)bad.push(`${tag}: content under the tab bar`);
+  if(sc.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: content under the navigation bar`);
+  if(nav.bottom>pr.bottom+0.5)bad.push(`${tag}: navigation bar below the frame`);
+  const sh=ph.querySelector('.sheet,.dlg');if(sh){const r=sh.getBoundingClientRect();if(r.top<pr.top+72-0.5)bad.push(`${tag}: sheet too tall`);
+   const ssc=sh.querySelector('.scroll');if(ssc&&ssc.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: sheet content under the navigation bar`)}
+  // a frame that scrolls to the end shows the confirm button
+  ph.querySelectorAll('.sheet .scroll[data-pos=end] [data-confirm]').forEach(b=>{if(!wholeIn(b))bad.push(`${tag}: Replace and restore not in view at the end`)});
+ });
+ if(document.documentElement.scrollWidth>window.innerWidth+0.5)bad.push(`page scrolls sideways (${document.documentElement.scrollWidth} > ${window.innerWidth})`);
+ return {bad,frames:phones.length};
+}
+/* Every visible text 4.5:1 and every icon 3:1 against what is really behind it, in 4 seeds × light, dark and pure black;
+   a switch's outline or track 3:1 (WCAG 1.4.11). Incoming rows are disabled controls, dimmed to M3's 38% and exempt
+   (WCAG 1.4.3); their badge is not. Under a scrim only the sheet or dialog is read. */
+function contrastProblems(){
+ const bad=[];let checked=0;const colsAll=[...document.querySelectorAll('.fcol')];
+ for(const seed of ['clay','forest','ocean','iris'])for(const [dark,black] of [[false,false],[true,false],[true,true]]){
+  colsAll.forEach(col=>col.querySelector('.ph').setAttribute('style',varsFor(seed,dark,black)));
+  const theme=`${seed} ${dark?(black?'black':'dark'):'light'}`;
+  document.querySelectorAll('.ph').forEach(ph=>{
+   ph.querySelectorAll('*').forEach(el=>{
+    if(el.closest('svg')||el.closest('.dim'))return;
+    const hasText=[...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());
+    const isIcon=el.classList.contains('mi');
+    if(!hasText&&!isIcon)return;
+    if(!shownIn(el))return;
+    let fg=rgba(getComputedStyle(el).color);const bg=bgOf(el);fg=over(fg,bg);
+    const need=isIcon?3:4.5;const c=ratio(fg,bg);checked++;
+    if(c<need)bad.push(`${theme} ${tagOf(ph)}: “${el.textContent.trim().slice(0,20)}” ${c.toFixed(2)}:1`);
+   });
+   ph.querySelectorAll('.sw').forEach(el=>{if(el.closest('.dim')||!shownIn(el))return;const on=el.classList.contains('on');const bg=bgOf(el.parentElement);
+    const edge=on?rgba(getComputedStyle(el).backgroundColor):rgba(getComputedStyle(el).boxShadow.match(/rgba?\([^)]+\)|color\([^)]+\)/)?.[0]||'rgb(0,0,0)');
+    const c=ratio(over(edge,bg),bg);checked++;if(c<3)bad.push(`${theme} ${tagOf(ph)}: switch ${on?'track':'outline'} ${c.toFixed(2)}:1`)});
+  });
+ }
+ return {bad,checked};
+}
+function check(){
+ const marks=document.body.classList.contains('marks');document.body.classList.remove('marks');
+ document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);
+ const flip=FLIP;
+ // every switch both ways: the layout and the lines are checked with the switches as set and all flipped
+ const L=[];let frames=0;const T=[];
+ for(const f of [false,true]){FLIP=f;render();applyAll(true);T.push(...structureProblems());const l=layoutProblems();L.push(...l.bad.map(b=>f?`flipped: ${b}`:b));frames=l.frames}
+ FLIP=flip;render();applyAll(true);
+ const C1=contrastProblems();
+ const all=[...new Set([...T,...L,...C1.bad])];
+ const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
+ el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
+  :`Self-check: 0 problems. Plan: the ${ORDER.length - 2} sections are in the planned order in every Settings frame; Sources is in Learning and not in Logs (#469); Your data holds Backup and restore, export, import, cloud backup and delete, and no cloud section is left (#473, #470); Add deck is in Advanced (#475); Activities has a switch for each of the 9 activities (#243); Reminders sits in Reminder and privacy (#90); every switch shows the line for its state and no switch keeps one line in both, checked with every switch as set and again flipped; at most three automatic backups, each “Before updating to {version}, {date}” with Restore; every row and line of the tab, and every changed part, is whole in one of the ${TAB_PAGES.length} frames of section 2. Layout: ${frames} frames at 360 × 800 dp, both ways: nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
+ window.__check={problems:all,frames,pairs:C1.checked,pages:TAB_PAGES.length};
+ if(marks)document.body.classList.add('marks');
+ applyTheme(state());
+}
+function applyAll(all){applyTheme(state());if(all)document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);layoutBadges();sizeSheets();fit()}
+document.querySelectorAll('.controls input').forEach(i=>i.addEventListener('change',()=>{
+ if(i.id==='flip'){FLIP=i.checked;render()}
+ applyAll();
+}));
+tables();
+render();applyAll();
+const go=()=>{check()};
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go,go);else go();
+</script>
+</body>
+</html>
