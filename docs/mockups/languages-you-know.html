@@ -4,350 +4,544 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Languages You Know</title>
+<meta name="description" content="One layout for choosing among 35 languages (search, top picks, every language by family), with four ways to ask whether the learner reads each script (#490).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&family=Noto+Sans+Oriya:wght@400;600&family=Noto+Sans+Ol+Chiki:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
 <style>
-/* ---------- Page chrome (not the app) ---------- */
-:root{--page-bg:#ECEEEA;--page-fg:#1B1D1A;--page-muted:#4A504B;--page-card:#FFFFFF;--page-line:#C9CFC8;--page-acc:#8F4C36}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#101210;--page-fg:#E3E6E1;--page-muted:#A9B0AA;--page-card:#1A1D1A;--page-line:#343A34;--page-acc:#FFB59E}}
-:root[data-theme="dark"]{--page-bg:#101210;--page-fg:#E3E6E1;--page-muted:#A9B0AA;--page-card:#1A1D1A;--page-line:#343A34;--page-acc:#FFB59E}
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Liberation Sans",Arial,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}
-.wrap{max-width:1560px;margin:0 auto;padding:28px 16px 64px}
-h1{font-size:26px;line-height:34px;margin:0 0 6px;font-weight:700}
-.lede{max-width:820px;color:var(--page-muted);margin:0 0 14px;font-size:15px}
-.toggles{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 12px;font-size:14px}
-.toggles label{display:flex;gap:8px;align-items:center;cursor:pointer;min-height:32px}
-.toggles input{width:18px;height:18px;margin:0}
-#check{font-size:13px;color:var(--page-muted);margin:0 0 28px}
-section.scr{margin:0 0 48px}
-section.scr h2{font-size:18px;line-height:24px;margin:0 0 14px}
-.states{display:flex;flex-wrap:wrap;gap:32px 40px;align-items:flex-start}
-.pair{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;min-width:0}
-.fcol{display:flex;flex-direction:column;gap:8px;min-width:0}
-.fcap{font-size:12px;line-height:16px;font-weight:600;color:var(--page-muted);letter-spacing:.03em}
-.what{margin:14px 0 0;font-size:14px;color:var(--page-muted);max-width:820px}
-code{font-size:.92em}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Telugu",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1500px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.lede{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
+.controls{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:0 0 10px;font-size:14px}
+.controls fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.controls legend{float:left;margin-right:8px;color:var(--page-muted);font-weight:600}
+.controls label{display:inline-flex;gap:6px;align-items:center;min-height:36px;padding:0 12px;border:1px solid var(--page-line);border-radius:18px;cursor:pointer;background:var(--page-card)}
+.controls label:has(input:checked){border-color:var(--page-acc);box-shadow:inset 0 0 0 1px var(--page-acc)}
+.controls input{margin:0;accent-color:var(--page-acc)}
+#check{font-size:13px;line-height:18px;margin:0 0 28px;padding:10px 12px;border-radius:10px;background:var(--page-card);border:1px solid var(--page-line);max-width:880px}
+#check.bad{border-color:#BA1A1A}
+section.opt{margin:0 0 56px}
+.opt>p{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
+.frames{display:flex;flex-wrap:wrap;gap:28px 24px;align-items:flex-start}
+[hidden]{display:none!important}
+.fcol{display:flex;flex-direction:column;gap:8px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+table{border-collapse:collapse;width:100%;max-width:1200px;font-size:14px;background:var(--page-card)}
+th,td{border-bottom:1px solid var(--page-line);padding:10px 12px;text-align:left;vertical-align:top}
+th{font-weight:700}
+.rec{max-width:880px;background:var(--page-card);border:1px solid var(--page-line);border-left:4px solid var(--page-acc);border-radius:12px;padding:14px 18px;margin-top:20px}
+.rec ol{margin:6px 0 0;padding-left:20px}
+@media (max-width:700px){
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{border-bottom:2px solid var(--page-line);padding:6px 0}
+  td{border:0;padding:4px 12px}
+  td::before{content:attr(data-h);display:block;font-weight:700;font-size:12px;color:var(--page-muted)}
+}
 
-/* ---------- App tokens: Clay, seed #8F4C36, M3 tonal spot (ColorScheme.fromSeed), the warm palette on the owner's phone ---------- */
-.light{--primary:#8F4C36;--onPrimary:#FFFFFF;--pc:#FFDBD0;--onPc:#723521;
- --secondary:#77574D;--sc:#FFDBD0;--onSc:#5D4037;--tertiary:#6A5E2F;--tc:#F4E2A7;--onTc:#52461A;
- --error:#BA1A1A;--ec:#FFDAD6;--onEc:#93000A;
- --surface:#FFF8F6;--onSurface:#231917;--onSv:#53433F;--outline:#85736E;--ov:#D8C2BC;
- --sLowest:#FFFFFF;--sLow:#FFF1ED;--sCont:#FCEAE5;--sHigh:#F7E4DF;--sHighest:#F1DFDA;
- --inv:#392E2B;--onInv:#FFEDE8;--invPrimary:#FFB59E;--scrim:rgba(0,0,0,.32)}
-.dark{--primary:#FFB59E;--onPrimary:#55200D;--pc:#723521;--onPc:#FFDBD0;
- --secondary:#E7BDB1;--sc:#5D4037;--onSc:#FFDBD0;--tertiary:#D7C68D;--tc:#52461A;--onTc:#F4E2A7;
- --error:#FFB4AB;--ec:#93000A;--onEc:#FFDAD6;
- --surface:#1A110F;--onSurface:#F1DFDA;--onSv:#D8C2BC;--outline:#A08D87;--ov:#53433F;
- --sLowest:#140C0A;--sLow:#231917;--sCont:#271D1B;--sHigh:#322825;--sHighest:#3D322F;
- --inv:#F1DFDA;--onInv:#392E2B;--invPrimary:#8F4C36;--scrim:rgba(0,0,0,.6)}
-/* Pure black: surface, surfaceDim and surfaceContainerLowest go black (lib/ui/theme.dart); containers keep their tones. */
-body.black .dark{--surface:#000000;--sLowest:#000000}
-
-.phone{width:360px;height:780px;flex:none;border-radius:28px;overflow:hidden;position:relative;display:flex;flex-direction:column;
-
-.phone{--t:1;font-size:calc(var(--t)*14px);line-height:1.43}.phone.x2{--t:2}
-@media (max-width:392px){.fcol{width:100%}.phone{transform:scale(.88);transform-origin:top left;margin:0 0 -94px}}
-.sbar{height:28px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font-size:12px;line-height:16px;font-weight:600}
-.sbar .ic{display:flex;gap:5px;align-items:center}
-.sbar .ic i{display:block;width:14px;height:9px;border-radius:2px;background:currentColor;opacity:.85}
-.scroll{flex:1;min-height:0;overflow:hidden;position:relative}
-.sysnav{height:24px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--sCont)}
-.sysnav i{display:block;width:108px;height:4px;border-radius:2px;background:var(--onSurface);opacity:.7}
-.sysnav.plain{background:var(--surface)}
-svg.i{width:24px;height:24px;fill:currentColor;flex:none;display:block}
-.s18{width:18px!important;height:18px!important}.s20{width:20px!important;height:20px!important}
-.t{font-size:calc(var(--t)*14px);line-height:1.43}
-.tBodyL{font-size:calc(var(--t)*16px);line-height:1.5}
-.tSmall{font-size:calc(var(--t)*12px);line-height:1.33}
-.tTitleM{font-size:calc(var(--t)*16px);line-height:1.4;font-weight:600}
-.tTitleL{font-size:calc(var(--t)*22px);line-height:1.27;font-weight:600}
-.tHeadS{font-size:calc(var(--t)*24px);line-height:1.33;font-weight:600}
-.tBody{font-size:calc(var(--t)*14px);line-height:1.43}
-.tLabel{font-size:calc(var(--t)*14px);line-height:1.43;font-weight:600}
-.muted{color:var(--onSv)}.prim{color:var(--primary)}.semi{font-weight:600}
-.ell{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;flex:none;color:var(--onSv)}
-.appbar{min-height:64px;display:flex;align-items:center;gap:4px;padding:0 4px;flex:none;background:var(--surface)}
-.appbar .abt{flex:1;min-width:0;padding-left:4px}
-.appbar .ibtn:first-child{color:var(--onSurface)}
-.tbtn{min-height:48px;padding:0 16px;display:flex;align-items:center;border-radius:24px;font-weight:700;color:var(--primary);font-size:calc(var(--t)*14px)}
-.tbtn.dis{color:var(--onSurface);opacity:.38}
-.onb{padding:12px 16px 0;display:flex;flex-direction:column;gap:6px;flex:none}
-.lp{display:flex;align-items:center;height:4px;gap:4px}
-.lp .a{height:4px;border-radius:2px;background:var(--primary)}
-.lp .tr{flex:1;height:4px;border-radius:2px;background:var(--sc)}
-.pad{padding:8px 16px 16px;display:flex;flex-direction:column;gap:14px}
-.foot{flex:none;background:var(--sCont);padding:10px 16px 12px;display:flex;flex-direction:column;gap:8px}
-.btn{min-height:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 24px;font-size:calc(var(--t)*16px);line-height:1.5;font-weight:700;text-align:center;min-width:0}
-.btn.f{background:var(--primary);color:var(--onPrimary)}
-.btn.f.dis{background:color-mix(in srgb,var(--onSurface) 12%,transparent);color:color-mix(in srgb,var(--onSurface) 38%,transparent)}
-.btn.o{border:1px solid var(--outline);color:var(--onSurface);font-weight:600}
-.search{height:56px;white-space:nowrap;overflow:hidden;border-radius:28px;background:var(--sHigh);display:flex;align-items:center;gap:8px;padding:0 8px 0 16px;color:var(--onSv)}
-.search .ph{flex:1;min-width:0;display:block}
-.search.focus{box-shadow:inset 0 0 0 2px var(--primary)}
-.search .q{min-width:0;color:var(--onSurface);display:block;flex:0 1 auto;border-right:2px solid var(--primary);padding-right:1px}
-.search .ibtn{margin-left:auto}
-.sbox{display:flex;flex-direction:column;gap:6px}
-.lab{color:var(--primary);font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{flex-wrap:wrap;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--outline);display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--onSv);max-width:100%;min-width:0}
-.chip.sel{background:var(--sc);border-color:var(--sc);color:var(--onSc);padding:0 4px 0 14px}
-.chip .own{color:inherit}.chip .en{font-weight:400}
-.chip .x{width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;flex:none}
-.own{font-weight:600}
-.card{background:var(--sLow);border-radius:20px;padding:8px 8px 12px 12px;display:flex;flex-direction:column;gap:8px}
-.card .q{display:flex;flex-direction:column;gap:6px;padding:0 4px 0 0}
-.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--outline);border-radius:24px;overflow:hidden;min-width:0}
-.seg span{min-height:48px;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;min-width:0}
-.seg span+span{border-left:1px solid var(--outline)}
-.seg span.sel{background:var(--sc);color:var(--onSc)}
-.list{display:flex;flex-direction:column}
-.row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:center;min-height:56px;padding:4px 4px 4px 8px;border-top:1px solid var(--ov);min-width:0}
-.list>.row:first-child{border-top:0}
-.row .nm{min-width:0;display:flex;flex-direction:column}
-.row .nm>*{overflow-wrap:anywhere}
-.row.on .own{color:var(--primary)}
-.act{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--primary)}
-.act.done{color:var(--onPrimary)}
-.act.done span{width:28px;height:28px;border-radius:14px;background:var(--primary);display:flex;align-items:center;justify-content:center}
-.fold{display:grid;grid-template-columns:minmax(0,1fr) auto 48px;align-items:center;column-gap:8px;min-height:64px;padding:6px 4px 6px 16px;background:var(--sLow);border-radius:6px;min-width:0}
-.fold .nm{min-width:0;display:flex;flex-direction:column}
-.fold .cnt{background:var(--sc);color:var(--onSc);border-radius:12px;padding:0 10px;font-weight:700;min-height:24px;display:flex;align-items:center}
-.fold .cnt.none{background:transparent;color:var(--onSv);font-weight:400}
-.fold.open{background:var(--sHigh)}
-.group{display:flex;flex-direction:column;gap:2px}
-.group>.fold:first-child,.group>.gw:first-child>.fold{border-top-left-radius:24px;border-top-right-radius:24px}
-.group>.fold:last-child,.group>.gw:last-child>.fold:last-child{border-bottom-left-radius:24px;border-bottom-right-radius:24px}
-.inner{background:var(--sLow);padding:0 8px 8px 12px;border-radius:6px 6px 24px 24px;margin-top:-2px}
-.letter{font-weight:700;color:var(--primary);padding:12px 8px 4px;position:relative}
-.scrollbar{position:absolute;right:2px;top:8px;bottom:8px;width:24px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;font-size:10px;line-height:12px;color:var(--onSv);font-weight:700}
-.qrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;min-height:64px;padding:6px 0;border-top:1px solid var(--ov)}
-.qrow:first-child{border-top:0}
-.qrow .nm{flex:1 1 130px;min-width:0;display:flex;flex-direction:column}
-.qrow .seg{flex:0 0 132px}.x2 .qrow .seg{flex:1 1 100%}
-.hint{display:grid;grid-template-columns:20px minmax(0,1fr);column-gap:10px;color:var(--onSv)}
-.nores{padding:12px 8px;color:var(--onSv)}
-.desc{margin:14px 0 0;font-size:14px;color:var(--page-muted);max-width:820px}
-table.cmp{border-collapse:collapse;width:100%;max-width:1100px;font-size:14px;background:var(--page-card)}
-.cmp th,.cmp td{border:1px solid var(--page-line);padding:10px 12px;text-align:left;vertical-align:top}
-.cmp th{background:var(--page-bg);font-weight:700}
-.cmp-wrap{max-width:100%}@media (max-width:760px){.cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:100%}.cmp tr:first-child{display:none}}
-.rec{max-width:820px;background:var(--page-card);border:1px solid var(--page-line);border-radius:12px;padding:16px 20px;margin-top:20px}
-.rec ol{margin:8px 0 0;padding-left:20px}.rec li{margin:6px 0}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto, the design's heavier weights and radii) ===== */
+.ph{--t:1;--th:1;width:360px;height:800px;flex:none;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu","Noto Sans Tamil","Noto Sans Gurmukhi","Noto Sans Gujarati","Noto Sans Kannada","Noto Sans Malayalam","Noto Sans Oriya","Noto Sans Ol Chiki","Noto Naskh Arabic",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph.x2{--t:2;--th:1.5}
+.ph :lang(ur){font-family:"Noto Nastaliq Urdu",serif;line-height:1}
+.ph :lang(ks),.ph :lang(sd){font-family:"Noto Naskh Arabic",serif}
+.mi{font-family:"Material Icons";font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:"liga";flex:none;width:24px;height:24px;overflow:hidden}
+.mo{font-family:"Material Icons Outlined"}
+.m18{font-size:18px;width:18px;height:18px}.m20{font-size:20px;width:20px;height:20px}
+/* type: size × the phone's text scale; icons do not scale, as in Flutter */
+.hM{font-size:calc(28px*var(--th));line-height:calc(36px*var(--th));font-weight:600}
+.tL{font-size:calc(22px*var(--t));line-height:calc(28px*var(--t));font-weight:600}
+.tM{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));font-weight:600;letter-spacing:.15px}
+.bL{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));letter-spacing:.5px}
+.bM{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));letter-spacing:.25px}
+.bS{font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));letter-spacing:.4px}
+.lL{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:600;letter-spacing:.1px}
+.lM{font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));font-weight:600;letter-spacing:.5px}
+.gl{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:700;letter-spacing:.1px;color:var(--p)}
+.v{color:var(--onSv)}
+/* system bars */
+.stat{height:28px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 24px;font-size:14px;font-weight:500;color:var(--onS)}
+.stat .ic{display:flex;gap:4px;align-items:center}
+.stat .ic .mi{font-size:16px;width:16px;height:16px}
+.ph:has(.sheet) .nav3{background:transparent}
+.nav3{position:relative;z-index:4;height:48px;flex:none;display:flex;align-items:center;justify-content:space-around;padding:0 48px;background:var(--s)}
+.nav3 svg{width:20px;height:20px;fill:var(--onSv)}
+/* top bars: Settings' AppBar (64, 22/28 title) and the first launch's back, progress wave and report */
+.ab{min-height:64px;flex:none;display:flex;align-items:center;padding:0 4px}
+.ab .lead{width:56px;display:flex;justify-content:center}
+.ab .ttl{flex:1;min-width:0;padding:8px 0 8px 4px;font-size:calc(22px*var(--th));line-height:calc(28px*var(--th))}
+.ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--onSv);flex:none}
+.ibtn.back{color:var(--onS)}
+.ob{min-height:64px;flex:none;display:flex;align-items:center;padding:0 12px 0 8px}
+.ob .wave{flex:1;margin:0 16px;height:16px;display:block}
+/* content */
+.scroll{flex:1;min-height:0;position:relative;overflow:hidden}
+.clip{position:absolute;left:0;right:0;top:0;overflow:hidden}
+.content{padding-bottom:16px}
+.thumb{position:absolute;right:3px;width:4px;border-radius:2px;background:var(--onS);opacity:.42}
+.qh{padding:8px 24px 16px}
+.qh .hM{margin:0 0 12px}
+.intro{padding:8px 24px 16px}
+.sbw{padding:0 16px}
+.sb{min-height:56px;border-radius:28px;background:var(--sHigh);display:flex;align-items:center;padding:0 4px 0 16px;gap:16px}
+.sb .q{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:calc(16px*var(--th));line-height:calc(24px*var(--th))}
+.sb .q.hint{color:var(--onSv)}
+.caret{display:inline-block;width:2px;height:1.2em;background:var(--p);vertical-align:-0.2em;margin-left:1px}
+.sb .pad{width:12px}
+.help{padding:4px 32px 0;color:var(--onSv)}
+.lbl{padding:20px 32px 8px;display:flex;align-items:baseline;gap:8px}
+.lbl .gl{flex:1}
+.chips{display:flex;flex-wrap:wrap;column-gap:8px;padding:0 16px}
+.chipHit{min-height:48px;display:flex;align-items:center;max-width:100%}
+.chip{min-height:32px;border-radius:10px;border:1px solid var(--ol);display:flex;align-items:center;gap:8px;padding:5px 16px 5px 8px;color:var(--onSv);max-width:100%}
+.chip .mi{color:var(--p)}
+.chip.on{background:var(--sc);border-color:var(--sc);color:var(--onSc)}
+.chip.on .mi{color:var(--onSc)}
+/* GroupedList: 3 px gaps, 28 outside, 6 inside, surfaceContainerLow */
+.grp{margin:0 16px;display:flex;flex-direction:column;gap:3px}
+.row{background:var(--sLow);border-radius:6px;padding:14px 12px 14px 20px;min-height:48px}
+.grp>.row:first-child{border-top-left-radius:28px;border-top-right-radius:28px}
+.grp>.row:last-child{border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+.line{display:flex;align-items:center;gap:12px}
+.line .tx{flex:1;min-width:0}
+.row.sel{background:var(--sc);color:var(--onSc)}
+.row.sel .v{color:var(--onSc)}
+.trail{color:var(--onSv);width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex:none;margin:-12px 0}
+.row.sel .trail{color:var(--onSc)}
+.mark{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* V1: the question under the chosen row */
+.ask{display:flex;flex-wrap:wrap;align-items:center;column-gap:12px;margin-top:8px;padding-top:4px}
+.ask .q{flex:1 1 150px;padding:4px 0}
+.segHit{min-height:48px;display:flex;align-items:center;flex:none;margin-left:auto}
+.seg{display:flex}
+.seg span{min-height:40px;min-width:56px;display:flex;align-items:center;justify-content:center;border:1px solid var(--ol);padding:0 12px;color:var(--onS);text-align:center}
+.seg span:first-child{border-radius:20px 0 0 20px}
+.seg span:last-child{border-radius:0 20px 20px 0;border-left:0}
+.seg span.on{background:var(--sc);color:var(--onSc);border-color:var(--ol)}
+.row.sel .seg span{border-color:var(--onSc);color:var(--onSc)}
+.row.sel .seg span.on{background:var(--p);color:var(--onP);border-color:var(--p)}
+.row.sel .ask{border-top:1px solid color-mix(in srgb,var(--onSc) 24%,transparent)}
+/* V2: the chosen language as a chip with its script toggle */
+.pills{display:flex;flex-direction:column;gap:8px;padding:0 16px}
+.pill{border-radius:10px;border:1px solid var(--ol);padding:4px 4px 8px 12px;color:var(--onS)}
+.pill.on{background:var(--sc);border-color:var(--sc);color:var(--onSc)}
+.pill .top{display:flex;align-items:center;gap:8px}
+.pill .top .tx{flex:1;min-width:0}
+.pill .top .ibtn{color:inherit}
+.pill .seg{flex-wrap:wrap}
+.pill .seg span{min-height:36px;color:inherit}
+.pill.on .seg span{border-color:var(--onSc)}
+.pill.on .seg span.on{background:var(--p);color:var(--onP);border-color:var(--p)}
+.pill .segHit{margin-left:0}
+/* V3: modal bottom sheet over a scrim */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.32);z-index:2}
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:3;background:var(--sLow);border-radius:28px 28px 0 0;padding:0 0 48px}
+.sheet .handle{width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:22px auto 18px}
+.sheet .sh{padding:0 24px 8px}
+.sheet .opts{padding:8px 16px 8px;display:flex;flex-direction:column;gap:3px}
+.sheet .sopt{background:var(--sHigh);border-radius:6px;min-height:64px;display:flex;align-items:center;gap:16px;padding:12px 16px 12px 20px}
+.sheet .sopt:first-child{border-radius:20px 20px 6px 6px}
+.sheet .sopt:last-child{border-radius:6px 6px 20px 20px}
+.sheet .sopt .tx{flex:1}
+.sheet .sopt .mi{color:var(--onSv)}
+.sheet .cancel{display:flex;justify-content:flex-end;padding:4px 16px 8px}
+.tbtn{min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 12px;border-radius:24px;color:var(--p)}
+/* V4: Speak and Read checkboxes, M3 (18 px box, 48 target) */
+.cbs{display:flex;flex:none;margin:-12px -4px -12px 0}
+.cbHit{width:56px;height:48px;display:flex;align-items:center;justify-content:center}
+.cb{width:18px;height:18px;border-radius:2px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.cb.on{background:var(--p);border-color:var(--p);color:var(--onP)}
+.cb.on .mi{font-size:16px;width:16px;height:16px;font-weight:700}
+.row.sel .cb{border-color:var(--onSc)}
+.row.sel .cb.on{border-color:var(--p)}
+.colhead{display:flex;justify-content:flex-end;padding:0 24px 4px 0;margin-top:-4px}
+.lbl.withcols{padding-right:24px;align-items:center;flex-wrap:wrap}
+.lbl.withcols .gl{flex:none}
+.lbl .cols{margin-left:auto;display:flex}
+.lbl .cols span{min-width:56px;text-align:center;color:var(--onSv)}
+.x2 .pill .seg{flex-direction:column}
+.x2 .pill .seg span:first-child{border-radius:18px 18px 0 0}
+.x2 .pill .seg span:last-child{border-radius:0 0 18px 18px;border-top:0;border-left-width:1px;border-left-style:solid;border-left-color:var(--ol)}
+.x2 .pill.on .seg span:last-child{border-left-color:var(--onSc)}
+.colhead span{width:56px;text-align:center;color:var(--onSv)}
+/* notes */
+.note{display:flex;gap:28px;padding:16px 24px 4px;color:var(--onSv)}
+.note .mi{color:var(--onSv)}
+/* the pinned bottom bar (#489): above the 3-button navigation bar */
+.bot{flex:none;padding:0 24px 16px;background:var(--s)}
+.bot .why{padding:4px 0 12px;color:var(--onSv)}
+.bot .sp{height:8px}
+.btn{min-height:64px;border-radius:32px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;padding:0 24px;text-align:center;
+ font-size:calc(18px*var(--t));line-height:calc(24px*var(--t));font-weight:700}
+.btn[data-dis]{background:color-mix(in srgb,var(--onS) 12%,transparent);color:color-mix(in srgb,var(--onS) 38%,transparent)}
+/* keyboard while searching */
+.kbd{flex:none;background:var(--sCont);padding:8px 4px 6px}
+.kbd .kr{display:flex;justify-content:center;gap:5px;margin-bottom:9px}
+.kbd .k{height:42px;flex:1;max-width:31px;border-radius:7px;background:var(--sHighest);color:var(--onS);display:flex;align-items:center;justify-content:center;font-size:20px}
+.kbd .k.w{max-width:46px;font-size:14px;background:var(--sc);color:var(--onSc)}
+.kbd .k.sp{max-width:none;flex:5}
+.kbd .k.go{max-width:52px;background:var(--p);color:var(--onP)}
+.kbd .k .mi{font-size:20px;width:20px;height:20px}
+.kbd .sugg{display:flex;justify-content:space-around;height:36px;align-items:center;color:var(--onS);font-size:15px;margin-bottom:6px}
+.nav3 .kdown{transform:rotate(90deg)}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Languages you know, for about 35 languages</h1>
-<p class="lede">GitHub issue #490. The list grows from three languages to about 35 (English, India's 22 scheduled languages, and twelve more), so a tick box per language no longer works. Three options follow, each as <b>one screen used in both places</b> (owner, 2026-10-12): first launch and Settings show the same body and differ only in the chrome around it (first launch: progress and a pinned Continue; Settings: app bar, back and Save). Every language shows its own name in its own script beside the English name. Targets are 48dp or more, the pinned bar sits above the system navigation bar (#489), the lists wrap rather than scroll sideways, and each option has a frame at 2x text. The keyboard is not drawn in the searching frames; the list area shrinks above it and the pinned Continue stays above the keyboard. Colours are the app's M3 scheme from the Clay seed (#8F4C36, the warm palette), light and dark, with the app's pure-black option on the toggle. The search field is one line at every width (placeholder cut with an ellipsis, a helper line below). The demo person is on an English-language phone set to India, and knows English, Hindi and Telugu.</p>
-<div class="toggles">
- <label><input type="checkbox" id="black"> Pure black (dark frames)</label>
- <label><input type="checkbox" id="pagedark"> Dark page</label>
+<h1>Languages you know: four ways to ask about the script</h1>
+<p class="lede">Issue #490 grows the list from 3 languages to 35. Every frame below uses <b>one layout</b>: a one-line search at the top, a few top picks from the phone's language and region, then all 35 languages grouped by family, each row with its English name and its own name. It is <b>one screen</b>, used at first launch (back, progress wave, <b>Continue</b>) and in Settings (app bar, back, <b>Save</b>); only that chrome differs. The four variations differ only in how a chosen language asks <i>whether you read its script</i>. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds; the default, Clay on pure black, is the owner's phone.</p>
+
+<div class="controls" role="group" aria-label="Theme">
+ <fieldset><legend>Seed</legend>
+  <label><input type="radio" name="seed" value="clay" checked> Clay #8F4C36</label>
+  <label><input type="radio" name="seed" value="forest"> Forest #3F6C51</label>
+  <label><input type="radio" name="seed" value="ocean"> Ocean #35618E</label>
+  <label><input type="radio" name="seed" value="iris"> Iris #65558F</label>
+ </fieldset>
+ <fieldset><legend>Frames</legend>
+  <label><input type="radio" name="mode" value="dark" checked> Dark</label>
+  <label><input type="radio" name="mode" value="light"> Light</label>
+  <label><input type="radio" name="mode" value="both"> Both</label>
+ </fieldset>
+ <fieldset><legend>Dark</legend>
+  <label><input type="checkbox" id="black" checked> Pure black</label>
+ </fieldset>
 </div>
-<p id="check" aria-live="polite"></p>
+<p id="check" role="status">Self-check runs once the fonts load…</p>
+
 <div id="screens"></div>
-<section class="scr"><h2>Comparison</h2>
-<div class="cmp-wrap"><table class="cmp">
-<tr><th></th><th>A. Search first</th><th>B. Grouped and folded</th><th>C. Two steps</th></tr>
-<tr><th>Taps to pick English, Hindi, Telugu</th><td>3 (two suggested chips, then type "te" and tap Telugu). With the 3 script answers and Continue: 7.</td><td>6 (open Latin, tap; open Devanagari, tap; open Dravidian, tap), or 3 plus typing by search. With answers and Continue: 10.</td><td>3 on step 1, then Next, 3 answers, Continue: 8.</td></tr>
-<tr><th>Findability of one of 35</th><td>Very good if the person can spell it, in English or its own script. Without a guess there is only "Browse all 35".</td><td>Good without typing, if the person knows which script family the language is in. Many do not (is Tulu Dravidian? is Santali "others"?).</td><td>Best: search, suggestions and a full A to Z list with own names, all on one step.</td></tr>
-<tr><th>Where the script question sits</th><td>Inline, under the chosen chip, where the answer is obvious. The screen grows as people choose.</td><td>Inline in the "You know" section, one row each. Same as A.</td><td>Separate second screen, a compact list of Yes/No. Clean, and no screen grows, but a second screen is an extra step and, in Settings, an extra page.</td></tr>
-<tr><th>Risks</th><td>The suggested row needs locale and region data; a wrong guess wastes a row. A blank search field can feel like a quiz.</td><td>The script families are our taxonomy, not the learner's. Six folded rows hide the languages, so the screen looks empty at first.</td><td>Two screens means Settings needs a two-step editor too, or a different layout from first launch, which breaks "one screen". Highest effort.</td></tr>
-</table></div>
-<div class="rec"><b>Recommendation (best first)</b>
+
+<section class="opt" id="compare">
+<h2>Comparison</h2>
+<p>The task: on a phone set to English (India), choose Hindi and Telugu from the top picks and Bhojpuri from the Indo-Aryan list (one swipe), say that you read Devanagari but not Telugu, and press Continue.</p>
+<table>
+<thead><tr><th></th><th>1. Inline Yes/No</th><th>2. Chip with toggle</th><th>3. Bottom sheet</th><th>4. Speak and Read columns</th></tr></thead>
+<tbody>
+<tr><th>Taps for 3 languages, scripts answered</th>
+ <td data-h="1. Inline Yes/No"><b>7</b> and 1 swipe: a tap to choose and a tap to answer, each, then Continue.</td>
+ <td data-h="2. Chip with toggle"><b>7</b> and 2 swipes: as 1, but Bhojpuri's chip appears at the top, so you swipe back up to answer.</td>
+ <td data-h="3. Bottom sheet"><b>7</b> and 1 swipe: a tap opens the sheet, a tap answers, each, then Continue.</td>
+ <td data-h="4. Speak and Read columns"><b>6</b> and 1 swipe: Speak for each, Read for Hindi and Bhojpuri; Telugu's “no” is an empty box.</td></tr>
+<tr><th>Clarity</th>
+ <td data-h="1. Inline Yes/No">High: the question appears under the row you tapped, in its own words, with a sample of the letters.</td>
+ <td data-h="2. Chip with toggle">Medium: the answer sits at the top, away from the row you tapped; “Reads / Speaks only” is terse.</td>
+ <td data-h="3. Bottom sheet">Highest: the sheet names the language, asks the one question, and offers two whole sentences.</td>
+ <td data-h="4. Speak and Read columns">Lowest: two columns of boxes on 35 rows; “Read” for English is a strange question.</td></tr>
+<tr><th>Error-proneness</th>
+ <td data-h="1. Inline Yes/No">Low: neither answer is picked; Continue waits and says why. An unanswered row can be off-screen.</td>
+ <td data-h="2. Chip with toggle">Low to medium: the same waiting rule, but a chosen language from far down the list has its question out of sight.</td>
+ <td data-h="3. Bottom sheet">Lowest: a language cannot be chosen without an answer, so the button never waits.</td>
+ <td data-h="4. Speak and Read columns">High: an empty Read box means both “no” and “not answered”, so the rule that nothing is assumed cannot hold.</td></tr>
+<tr><th>Accessibility</th>
+ <td data-h="1. Inline Yes/No">Good: the row grows and the new question takes focus; Yes and No are a segmented button. At 2x the buttons move under the text.</td>
+ <td data-h="2. Chip with toggle">Fair: focus has to jump to the top of the page; chips with a toggle inside are two nodes in one.</td>
+ <td data-h="3. Bottom sheet">Good: a modal sheet holds focus and returns it to the row; each choice is one 64 dp target. One extra screen change per language.</td>
+ <td data-h="4. Speak and Read columns">Poor: each box needs “Speak Hindi” and “Read Hindi” labels; the column headings scroll away.</td></tr>
+</tbody></table>
+<div class="rec"><b>Recommendation</b>
 <ol>
-<li><b>A, search first.</b> Fewest taps for the common case (suggested chips), every language findable by either name, one screen for first launch and Settings, with the script question next to the language it is about. Main downside: someone who cannot spell the name must use "Browse all 35", a plain A to Z list, which has to be built as well.</li>
-<li><b>C, two steps.</b> The best list, but it needs a second page in Settings, so it does not reuse as one screen. Main downside: extra step and extra work.</li>
-<li><b>B, grouped and folded.</b> Good for browsing but needs the person to know our script families. Main downside: it hides the list behind six folds and costs the most taps.</li>
-</ol>
-<p><b>One screen, two places.</b> Whichever is chosen, build the body once. First launch wraps it in the onboarding header (step progress) and the pinned Continue; Settings wraps it in the app bar with back and Save. The body, the rows and the script questions are the same widget, so onboarding can later simply reuse the Settings page.</p></div>
+<li><b>3. Bottom sheet.</b> Choosing and answering are one act, so no language is ever left unanswered and Continue never waits for a hidden question. Main downside: a sheet opens for every language, one more screen change than inline.</li>
+<li><b>1. Inline Yes/No.</b> The same taps without a modal and the closest to today's screen, but an unanswered question can scroll out of sight.</li>
+<li><b>2. Chip with toggle</b>, then <b>4. Speak and Read columns</b>, which cannot tell “no” from “not answered”.</li>
+</ol></div>
 </section>
 </div>
+
 <script>
-const P={
- back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
- search:'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
- close:'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
- check:'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
- plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
- down:'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z',
- up:'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z',
- info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
- list:'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z'
-};
-const I=(n,c='')=>`<svg class="i ${c}" viewBox="0 0 24 24" aria-hidden="true"><path d="${P[n]}"/></svg>`;
+/* ColorScheme.fromSeed, printed by Flutter 3.47 for each ThemeSeed in lib/app/settings.dart, light and dark, contrast 0. */
+const SCHEMES={"forest-dark":{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLowest":"#0a0f0c","sLow":"#171d19","sCont":"#1b211d","sHigh":"#262b27","sHighest":"#313632","ol":"#8a938b","olv":"#404942","pc":"#085231","onPc":"#aef2c6"},"forest-light":{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLowest":"#ffffff","sLow":"#f0f5ee","sCont":"#eaefe8","sHigh":"#e4eae3","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","pc":"#aef2c6","onPc":"#085231"},"ocean-dark":{"p":"#a0cafd","onP":"#003258","sc":"#3b4858","onSc":"#d6e3f7","s":"#101418","onS":"#e1e2e8","onSv":"#c3c7cf","sLowest":"#0b0e13","sLow":"#191c20","sCont":"#1d2024","sHigh":"#272a2f","sHighest":"#32353a","ol":"#8d9199","olv":"#42474e","pc":"#184975","onPc":"#d1e4ff"},"ocean-light":{"p":"#35618e","onP":"#ffffff","sc":"#d6e3f7","onSc":"#3b4858","s":"#f8f9ff","onS":"#191c20","onSv":"#42474e","sLowest":"#ffffff","sLow":"#f2f3f9","sCont":"#eceef4","sHigh":"#e6e8ee","sHighest":"#e1e2e8","ol":"#73777f","olv":"#c3c7cf","pc":"#d1e4ff","onPc":"#184975"},"clay-dark":{"p":"#ffb59e","onP":"#55200d","sc":"#5d4037","onSc":"#ffdbd0","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLowest":"#140c0a","sLow":"#231917","sCont":"#271d1b","sHigh":"#322825","sHighest":"#3d322f","ol":"#a08d87","olv":"#53433f","pc":"#723521","onPc":"#ffdbd0"},"clay-light":{"p":"#8f4c36","onP":"#ffffff","sc":"#ffdbd0","onSc":"#5d4037","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLowest":"#ffffff","sLow":"#fff1ed","sCont":"#fceae5","sHigh":"#f7e4df","sHighest":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","pc":"#ffdbd0","onPc":"#723521"},"iris-dark":{"p":"#cfbdfe","onP":"#36265d","sc":"#4a4458","onSc":"#e8def8","s":"#141218","onS":"#e6e0e9","onSv":"#cac4cf","sLowest":"#0f0d13","sLow":"#1d1b20","sCont":"#211f24","sHigh":"#2b292f","sHighest":"#36343a","ol":"#948f99","olv":"#49454e","pc":"#4d3d75","onPc":"#e9ddff"},"iris-light":{"p":"#65558f","onP":"#ffffff","sc":"#e8def8","onSc":"#4a4458","s":"#fdf7ff","onS":"#1d1b20","onSv":"#49454e","sLowest":"#ffffff","sLow":"#f8f2fa","sCont":"#f2ecf4","sHigh":"#ece6ee","sHighest":"#e6e0e9","ol":"#7a757f","olv":"#cac4cf","pc":"#e9ddff","onPc":"#4d3d75"}};
 
-/* code, English name, own name, script family (the fold in option B), the script's name in the question */
+/* assets/languages.yaml after #490: code, English name, own name, script, family. */
 const L=[
-['en','English','English','Latin','Latin'],['hi','Hindi','हिन्दी','Devanagari','Devanagari'],['bn','Bengali','বাংলা','Bengali–Assamese','Bengali'],
-['as','Assamese','অসমীয়া','Bengali–Assamese','Assamese'],['brx','Bodo','बड़ो','Devanagari','Devanagari'],['doi','Dogri','डोगरी','Devanagari','Devanagari'],
-['gu','Gujarati','ગુજરાતી','Other scripts','Gujarati'],['kn','Kannada','ಕನ್ನಡ','Dravidian scripts','Kannada'],['ks','Kashmiri','كٲشُر','Perso-Arabic','Perso-Arabic'],
-['kok','Konkani','कोंकणी','Devanagari','Devanagari'],['mai','Maithili','मैथिली','Devanagari','Devanagari'],['ml','Malayalam','മലയാളം','Dravidian scripts','Malayalam'],
-['mni','Manipuri','মৈতৈলোন্','Bengali–Assamese','Bengali'],['mr','Marathi','मराठी','Devanagari','Devanagari'],['ne','Nepali','नेपाली','Devanagari','Devanagari'],
-['or','Odia','ଓଡ଼ିଆ','Other scripts','Odia'],['pa','Punjabi','ਪੰਜਾਬੀ','Other scripts','Gurmukhi'],['sa','Sanskrit','संस्कृतम्','Devanagari','Devanagari'],
-['sat','Santali','ᱥᱟᱱᱛᱟᱲᱤ','Other scripts','Ol Chiki'],['sd','Sindhi','سنڌي','Perso-Arabic','Perso-Arabic'],['ta','Tamil','தமிழ்','Dravidian scripts','Tamil'],
-['te','Telugu','తెలుగు','Dravidian scripts','Telugu'],['ur','Urdu','اردو','Perso-Arabic','Perso-Arabic'],['bho','Bhojpuri','भोजपुरी','Devanagari','Devanagari'],
-['tcy','Tulu','ತುಳು','Dravidian scripts','Kannada'],['raj','Rajasthani','राजस्थानी','Devanagari','Devanagari'],['mag','Magahi','मगही','Devanagari','Devanagari'],
-['hne','Chhattisgarhi','छत्तीसगढ़ी','Devanagari','Devanagari'],['awa','Awadhi','अवधी','Devanagari','Devanagari'],['bgc','Haryanvi','हरियाणवी','Devanagari','Devanagari'],
-['kfy','Kumaoni','कुमाऊँनी','Devanagari','Devanagari'],['gbm','Garhwali','गढ़वळी','Devanagari','Devanagari'],['lus','Mizo','Mizo','Latin','Latin'],
-['kha','Khasi','Khasi','Latin','Latin'],['gom','Goan Konkani','Konknni','Latin','Latin']
-];
-const BY=Object.fromEntries(L.map(l=>[l[0],{c:l[0],en:l[1],own:l[2],fam:l[3],scr:l[4]}]));
-const FAMS=['Latin','Devanagari','Bengali–Assamese','Dravidian scripts','Perso-Arabic','Other scripts'];
-const FSAMPLE={'Latin':'Abc','Devanagari':'देवनागरी','Bengali–Assamese':'বাংলা','Dravidian scripts':'తెలుగు, தமிழ்','Perso-Arabic':'اردو','Other scripts':'ગુજરાતી, ਪੰਜਾਬੀ'};
-const famCount=f=>L.filter(l=>l[3]===f).length;
-const SUGG=['en','hi','bn','te','ta','mr'];
-/* the demo person: English, Hindi and Telugu chosen; Telugu not yet answered unless done */
-const lname=c=>`<bdi>${BY[c].own}</bdi>`;
-function match(q){q=q.toLowerCase();return L.filter(l=>l[1].toLowerCase().includes(q)||l[2].toLowerCase().includes(q)).map(l=>l[0])
- .sort((a,b)=>(BY[b].en.toLowerCase().startsWith(q)?1:0)-(BY[a].en.toLowerCase().startsWith(q)?1:0));}
+['en','English','English','latin','ger'],['bn','Bengali','বাংলা','bengali','ia'],['hi','Hindi','हिन्दी','devanagari','ia'],
+['as','Assamese','অসমীয়া','bengali','ia'],['brx','Bodo','बड़ो','devanagari','tb'],['doi','Dogri','डोगरी','devanagari','ia'],
+['gu','Gujarati','ગુજરાતી','gujarati','ia'],['kn','Kannada','ಕನ್ನಡ','kannada','dr'],['ks','Kashmiri','کٲشُر','arabic','ia'],
+['kok','Konkani','कोंकणी','devanagari','ia'],['mai','Maithili','मैथिली','devanagari','ia'],['ml','Malayalam','മലയാളം','malayalam','dr'],
+['mni','Manipuri','মৈতৈলোন্','bengali','tb'],['mr','Marathi','मराठी','devanagari','ia'],['ne','Nepali','नेपाली','devanagari','ia'],
+['or','Odia','ଓଡ଼ିଆ','odia','ia'],['pa','Punjabi','ਪੰਜਾਬੀ','gurmukhi','ia'],['sa','Sanskrit','संस्कृतम्','devanagari','ia'],
+['sat','Santali','ᱥᱟᱱᱛᱟᱲᱤ','ol_chiki','aa'],['sd','Sindhi','سنڌي','arabic','ia'],['ta','Tamil','தமிழ்','tamil','dr'],
+['te','Telugu','తెలుగు','telugu','dr'],['ur','Urdu','اردو','arabic','ia'],['bho','Bhojpuri','भोजपुरी','devanagari','ia'],
+['tcy','Tulu','ತುಳು','kannada','dr'],['raj','Rajasthani','राजस्थानी','devanagari','ia'],['mag','Magahi','मगही','devanagari','ia'],
+['hne','Chhattisgarhi','छत्तीसगढ़ी','devanagari','ia'],['awa','Awadhi','अवधी','devanagari','ia'],['bgc','Haryanvi','हरियाणवी','devanagari','ia'],
+['kfy','Kumaoni','कुमाऊँनी','devanagari','ia'],['gbm','Garhwali','गढ़वळि','devanagari','ia'],['lus','Mizo','Mizo ṭawng','latin','tb'],
+['kha','Khasi','Ka Ktien Khasi','latin','aa'],['gom','Goan Konkani','Konknni','latin','ia']];
+const LANG=Object.fromEntries(L.map(([c,n,o,s,f])=>[c,{c,n,o,s,f}]));
+const FAMILIES=[['ia','Indo-Aryan'],['dr','Dravidian'],['tb','Tibeto-Burman'],['aa','Austroasiatic'],['ger','Germanic']];
+const SCRIPT={latin:['Latin','A B C'],devanagari:['Devanagari','अ आ इ'],bengali:['Bengali','অ আ ই'],telugu:['Telugu','అ ఆ ఇ'],tamil:['Tamil','அ ஆ இ'],
+ gujarati:['Gujarati','અ આ ઇ'],kannada:['Kannada','ಅ ಆ ಇ'],malayalam:['Malayalam','അ ആ ഇ'],odia:['Odia','ଅ ଆ ଇ'],gurmukhi:['Gurmukhi','ਅ ਆ ਇ'],
+ arabic:['Arabic','ا ب پ'],ol_chiki:['Ol Chiki','ᱚ ᱛ ᱜ']};
+const SCRIPT_LANG={latin:'en',devanagari:'hi',bengali:'bn',telugu:'te',tamil:'ta',gujarati:'gu',kannada:'kn',malayalam:'ml',odia:'or',gurmukhi:'pa',arabic:'ur',ol_chiki:'sat'};
+const RTL=new Set(['ur','ks','sd']);
+const PICKS=['en','hi','bn','te','ta','mr'];   // top picks for a phone set to English (India)
+const ORDER=['te','hi','bho'];                  // chosen, best known first
+const DONE={te:false,hi:true,bho:true};          // reads Devanagari, not Telugu
+const MID={te:undefined};                        // Telugu just chosen, not answered
 
-/* ---------- shared pieces ---------- */
-const same=c=>BY[c].own===BY[c].en?'':`<span class="tSmall muted">${BY[c].en}</span>`;
-function names(c,cls='nm'){const b=BY[c];return `<div class="${cls}"><span class="tBodyL own">${lname(c)}</span>${b.own===b.en?`<span class="tSmall muted">${b.scr} script</span>`:`<span class="tSmall muted">${b.en}</span>`}</div>`;}
-const HELP=`<div class="tSmall muted" style="padding:0 16px">In English or in its own name, for example Telugu or తెలుగు.</div>`;
-const searchBox=(q)=>`<div class="sbox"><div class="search${q?' focus':''}" role="search">${I('search')}${q?`<span class="q tBodyL ell">${q}</span><span class="ibtn">${I('close')}</span>`:`<span class="ph tBodyL ell">Search languages</span>`}</div>${q?'':HELP}</div>`;
-const seg=(c,v)=>`<div class="seg" role="radiogroup" aria-label="Do you read the ${BY[c].scr} script?"><span role="radio" aria-checked="${v===true}" class="${v===true?'sel':''}">${v===true?I('check','s18'):''}Yes</span><span role="radio" aria-checked="${v===false}" class="${v===false?'sel':''}">${v===false?I('check','s18'):''}No</span></div>`;
-const question=c=>`<div class="tBody">Do you read the ${BY[c].scr} script?</div>`;
-const chipSel=c=>`<span class="chip sel" role="button" aria-label="${BY[c].en}, chosen. Remove"><span class="own tBody">${lname(c)}</span>${BY[c].own===BY[c].en?'':`<span class="en tSmall">${BY[c].en}</span>`}<span class="x">${I('close','s18')}</span></span>`;
-const chipAdd=c=>`<span class="chip" role="button">${I('plus','s18')}<span class="own tBody">${lname(c)}</span>${BY[c].own===BY[c].en?'':`<span class="en tSmall">${BY[c].en}</span>`}</span>`;
-const rowAdd=(c,on)=>`<div class="row${on?' on':''}">${names(c)}<span class="act${on?' done':''}">${on?'<span>'+I('check','s18')+'</span>':I('plus')}</span></div>`;
-const rowAnswer=(c,v)=>`<div class="row on">${names(c)}<span class="act done"><span>${I('check','s18')}</span></span></div><div style="padding:0 8px 10px;display:flex;flex-direction:column;gap:6px">${question(c)}${seg(c,v)}</div>`;
-const PEOPLE=['en','hi','te'];
-const need=(ans)=>PEOPLE.filter(c=>ans[c]===undefined).length;
+/* ---------- builders ---------- */
+const ic=(n,cls='')=>`<span class="mi ${cls}" aria-hidden="true">${n}</span>`;
+const own=(c)=>`<bdi lang="${c}"${RTL.has(c)?' dir="rtl"':''}>${LANG[c].o}</bdi>`;
+const nm=(c)=>LANG[c].o===LANG[c].n?LANG[c].n:`${LANG[c].n} · ${own(c)}`;   // spokenOption: "{name} · {ownName}"
+const sample=(s)=>`<bdi lang="${SCRIPT_LANG[s]}"${s==='arabic'?' dir="rtl"':''}>${SCRIPT[s][1]}</bdi>`;
+const sName=(c)=>SCRIPT[LANG[c].s][0];
+const question=(c)=>`Do you read the ${sName(c)} script (${sample(LANG[c].s)})?`;
+const mark=(text,q)=>{if(!q)return text;const i=text.toLowerCase().indexOf(q);return i<0?text:`${text.slice(0,i)}<span class="mark">${text.slice(i,i+q.length)}</span>${text.slice(i+q.length)}`};
 
-/* ---------- shared chrome: first launch vs Settings ---------- */
-function frame(mode,body,{ans={},bodyText=true}={}){
- const n=need(ans);
- const lead=`<div class="tBody muted">Choose every language you know. They decide which comparisons and daily facts you see, and which decks you can review.</div>`;
- const chrome=mode==='first'
-  ?`<div class="onb"><div class="lp"><div class="a" style="width:50%"></div><div class="tr"></div></div><div class="tSmall muted">Step 2 of 4</div></div>`
-  :`<div class="appbar"><span class="ibtn">${I('back')}</span><span class="abt tTitleL ell">Languages you know</span><span class="tbtn${n?' dis':''}">Save</span></div>`;
- const head=mode==='first'?`<div class="tHeadS" style="padding:6px 16px 0">Languages you know</div>`:'';
- const foot=mode==='first'?`<div class="foot">${n?`<div class="hint tSmall">${I('info','s18')}<span>Say whether you read the script of ${n===1?'the language':n+' languages'} you chose to go on.</span></div>`:''}<div class="btn f${n?' dis':''}" ${n?'aria-disabled="true"':''}>Continue</div></div>`:'';
- return `<div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i style="width:20px"></i></span></div>${chrome}${head}<div class="scroll"><div class="pad">${bodyText?lead:''}${body}</div></div>${foot}<div class="sysnav${foot?'':' plain'}"><i></i></div>`;
+function wave(value){ // WavePainter: a primary sine to value, the secondaryContainer track, the end dot
+ const W=212,H=16,mid=8,usable=W-8,end=Math.max(0,Math.min(usable,value*usable));let d='M2 '+mid;
+ for(let x=2;x<=end;x+=2)d+=` L${x} ${(mid+3*Math.sin(x/20*2*Math.PI)).toFixed(2)}`;
+ const ts=Math.min(usable,end+8);
+ return `<svg class="wave" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Question 1 of 3"><path d="${d}" fill="none" stroke="var(--p)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${ts<usable?`<line x1="${ts}" y1="${mid}" x2="${usable}" y2="${mid}" stroke="var(--sc)" stroke-width="4" stroke-linecap="round"/>`:''}<circle cx="${W-3}" cy="${mid}" r="2" fill="var(--p)"/></svg>`;
 }
+const stat=()=>`<div class="stat"><span>9:41</span><span class="ic">${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>`;
+const nav3=(kbd)=>`<div class="nav3" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg>${kbd?`<svg viewBox="0 0 20 20" class="kdown"><path d="M3 7l7 7 7-7z"/></svg>`:`<svg viewBox="0 0 20 20"><path d="M16 2.5v15L4 10z"/></svg>`}</div>`;
+const obTop=()=>`<div class="ob"><span class="ibtn back lf" data-tap>${ic('arrow_back')}</span>${wave(1/3)}<span class="ibtn lf" data-tap>${ic('bug_report','mo')}</span></div>`;
+const appBar=(t)=>`<div class="ab"><span class="lead"><span class="ibtn back lf" data-tap>${ic('arrow_back')}</span></span><span class="ttl tL lf">${t}</span><span class="ibtn lf" data-tap>${ic('bug_report','mo')}</span></div>`;
+const OB_T='Which languages do you already know?';
+const BODY='They decide your daily facts and which decks you can review.';
+const head=(mode)=>mode==='ob'?`<div class="qh"><div class="hM lf">${OB_T}</div><div class="bL v lf">${BODY}</div></div>`:`<div class="intro"><div class="bL v lf">${BODY}</div></div>`;
+function search(q,focus){
+ const field=q?`<span class="q bL lf">${q}${focus?'<span class="caret"></span>':''}</span><span class="ibtn lf" data-tap>${ic('close')}</span>`
+  :`<span class="q bL hint lf">Search languages</span><span class="pad"></span>`;
+ return `<div class="sbw"><div class="sb lf" data-search>${ic('search')}${field}</div></div>${q?'':`<div class="help bS lf">By its English name or its own, like Telugu or ${own('te')}</div>`}`;
+}
+const label=(t,end='',cls='')=>`<div class="lbl ${cls} lf"><span class="gl">${t}</span>${end}</div>`;
+const chip=(c,on)=>`<span class="chipHit lf" data-tap><span class="chip lL${on?' on':''}">${ic(on?'check':'add','m18')}<span>${nm(c)}</span></span></span>`;
+const seg=(a,yes='Yes',no='No')=>`<span class="segHit lf" data-tap><span class="seg lL" role="group"><span class="${a===true?'on':''}">${yes}</span><span class="${a===false?'on':''}">${no}</span></span></span>`;
+const grp=(rows,id='')=>`<div class="grp"${id?` data-id="${id}"`:''}>${rows.join('')}</div>`;
+const note=(icon,t)=>`<div class="note lf">${ic(icon,'m20')}<span class="bM">${t}</span></div>`;
+function bottom(why,lab,on){return `<div class="bot">${why?`<div class="why bM lf">${why}</div>`:'<div class="sp"></div>'}<div class="btn lf" data-tap${on?'':' data-dis'}>${lab}</div></div>`}
+function kbd(){
+ const row=(s)=>`<div class="kr">${[...s].map(k=>`<span class="k">${k}</span>`).join('')}</div>`;
+ return `<div class="kbd" aria-hidden="true"><div class="sugg"><span>pu</span><span>puri</span><span>Punjabi</span></div>${row('qwertyuiop')}${row('asdfghjkl')}<div class="kr"><span class="k w">${ic('arrow_upward')}</span>${[...'zxcvbnm'].map(k=>`<span class="k">${k}</span>`).join('')}<span class="k w">${ic('backspace','mo')}</span></div><div class="kr"><span class="k w">?123</span><span class="k">,</span><span class="k sp"></span><span class="k">.</span><span class="k go">${ic('search')}</span></div></div>`;
+}
+function phone({mode,body,skip,bot,keyboard,x2,overlay=''}){
+ return `<div class="ph${x2?' x2':''}" data-mode="${mode}">${stat()}${mode==='ob'?obTop():appBar('Languages you know')}<div class="scroll"${skip?` data-skip="${skip}"`:''}><div class="clip"><div class="content">${body}</div></div></div>${bot}${keyboard?kbd():''}${nav3(keyboard)}${overlay}</div>`;
+}
+const WAIT_ONE='Choose at least one language to go on.';
+const WAIT_SCRIPT='Say whether you read each script to go on.';
 
-/* ---------- Option A: search first ---------- */
-function A(st){
- const ch=st.chosen||[];let h=searchBox(st.q);
- if(st.q){const r=match(st.q);
-  h+=`<div class="list" role="listbox">${r.map(c=>rowAdd(c,ch.includes(c))).join('')||`<div class="nores tBody">No language called "${st.q}". Try the English name or the name in its own script.</div>`}</div>`;
-  if(ch.length)h=`<div class="chips">${ch.map(chipSel).join('')}</div>`+h;
-  return h;}
- if(ch.length){h+=`<div class="lab tTitleM"><span>You know</span><span class="tBody muted">${ch.length}</span></div>`+ch.map(c=>`<div class="card"><div class="chips">${chipSel(c)}</div><div class="q">${question(c)}${seg(c,(st.ans||{})[c])}</div></div>`).join('');}
- const sg=SUGG.filter(c=>!ch.includes(c));
- h+=`<div class="lab tTitleM"><span>Suggested</span><span class="tSmall muted">from your phone: English, India</span></div><div class="chips">${sg.map(chipAdd).join('')}</div>`;
- if(!ch.length)h+=`<div class="chip" style="align-self:flex-start;border-color:transparent;color:var(--primary);padding:0 8px" role="button">${I('list')}Browse all 35 languages</div>`;
- else h+=`<div class="chip" style="align-self:flex-start;border-color:transparent;color:var(--primary);padding:0 8px" role="button">${I('list')}Browse all 35</div>`;
- return h;
-}
-
-/* ---------- Option B: grouped and folded ---------- */
-function Bfold(f,open,ch,list){
- const n=ch.filter(c=>BY[c].fam===f).length,tot=list?list.length:famCount(f);
- const head=`<div class="fold${open?' open':''}"><div class="nm"><span class="tBodyL own">${f}</span><span class="tSmall muted">${FSAMPLE[f]}</span></div><span class="cnt tSmall${list||n?'':' none'}">${list?tot+' found':(n?n+' of ':'')+tot}</span><span class="act" style="color:var(--onSv)">${I(open?'up':'down')}</span></div>`;
- if(!open)return `<div class="gw">${head}</div>`;
- const items=list||L.filter(l=>l[3]===f).map(l=>l[0]);
- return `<div class="gw">${head}<div class="inner list">${items.map(c=>rowAdd(c,ch.includes(c))).join('')}</div></div>`;
-}
-function B(st){
- const ch=st.chosen||[];let h=searchBox(st.q);
- if(ch.length&&!st.q)h+=`<div class="lab tTitleM"><span>You know</span><span class="tBody muted">${ch.length}</span></div><div class="list" style="background:var(--sLow);border-radius:24px;padding:4px 12px">${ch.map(c=>rowAnswer(c,(st.ans||{})[c])).join('')}</div>`;
- if(st.q){const r=match(st.q);
-  h+=`<div class="group">${FAMS.map(f=>{const m=r.filter(c=>BY[c].fam===f);return m.length?Bfold(f,true,ch,m):'';}).join('')}</div>`;return h;}
- h+=`<div class="lab tTitleM"><span>All languages</span><span class="tSmall muted">by script</span></div><div class="group">${FAMS.map(f=>Bfold(f,(st.open||[]).includes(f),ch)).join('')}</div>`;
- return h;
-}
-
-/* ---------- Option C: two steps ---------- */
-function C1(st){
- const ch=st.chosen||[];let h=searchBox(st.q);
- if(st.q){const r=match(st.q);return h+`<div class="list">${r.map(c=>rowAdd(c,ch.includes(c))).join('')}</div>`;}
- const sg=SUGG.filter(c=>!ch.includes(c));
- h+=`<div class="lab tTitleM"><span>Suggested</span></div><div class="chips">${[...ch.map(chipSel),...sg.map(chipAdd)].join('')}</div><div class="lab tTitleM"><span>All languages, A to Z</span><span class="tBody muted">35</span></div>`;
- const sorted=[...L].sort((a,b)=>a[1].localeCompare(b[1])).map(l=>l[0]);let last='',rows='';
- sorted.slice(0,st.az||8).forEach(c=>{const ltr=BY[c].en[0];if(ltr!==last){rows+=`<div class="letter tBody">${ltr}</div>`;last=ltr;}rows+=rowAdd(c,ch.includes(c));});
- return h+`<div class="list">${rows}</div>`;
-}
-function C2(st){
- return `<div class="tTitleM">Do you read the script?</div><div class="tBody muted">Yes or No for each language. Not sure? Choose No: you will see the sounds, not the letters.</div><div style="background:var(--sLow);border-radius:24px;padding:4px 16px">${PEOPLE.map(c=>`<div class="qrow">${names(c)}${seg(c,(st.ans||{})[c])}</div>`).join('')}</div>
- <div class="tSmall muted">Hindi, Marathi and other Devanagari languages share one script, so one answer could cover them all.</div>`;
-}
-/* step 1 and step 2 of C share the frame; Settings is the same two pages behind "Change languages" */
-function frameC(mode,step,st,opt){
- if(step===1){
-  const n=(st.chosen||[]).length;
-  const f=frame(mode,C1(st),{ans:{en:true,hi:true,te:true}});
-  /* Continue becomes Next with the count */
-  return f.replace('>Continue<',`>Next${n?` · ${n} chosen`:''}<`).replace('<div class="btn f"','<div class="btn f'+(n?'':' dis')+'"').replace(/<div class="hint[^]*?<\/div>/,'');
+/* ---------- the shared layout: search, your languages, top picks, every language by family ---------- */
+/* v: the variation's renderers. st: {chosen:{code:answer}, order:[...], q:'' , focus} */
+function screen(v,mode,st){
+ const chosen=st.chosen,codes=st.order.filter(c=>c in chosen);let out=head(mode)+search(st.q,st.focus);
+ if(!st.q){
+  if(codes.length)out+=label('Your languages','<span class="bS v">best known first</span>')+v.yours(codes,chosen);
+  out+=label('Top picks')+`<div class="chips">${PICKS.map(c=>chip(c,c in chosen)).join('')}</div>`;
  }
- const n=need(st.ans||{});
- const lead='';
- const chrome=mode==='first'
-  ?`<div class="onb"><div class="lp"><div class="a" style="width:50%"></div><div class="tr"></div></div><div class="tSmall muted">Step 2 of 4 · Languages you know, 2 of 2</div></div>`
-  :`<div class="appbar"><span class="ibtn">${I('back')}</span><span class="abt tTitleL ell">Languages you know</span><span class="tbtn${n?' dis':''}">Save</span></div>`;
- const foot=mode==='first'?`<div class="foot">${n?`<div class="hint tSmall">${I('info','s18')}<span>Answer for ${n===1?'the language':n+' languages'} to go on.</span></div>`:''}<div class="btn f${n?' dis':''}">Continue</div></div>`:'';
- return `<div class="sbar"><span>9:41</span><span class="ic"><i></i><i></i><i style="width:20px"></i></span></div>${chrome}${mode==='first'?'<div class="tHeadS" style="padding:6px 16px 0">Languages you know</div>':''}<div class="scroll"><div class="pad">${C2(st)}</div></div>${foot}<div class="sysnav${foot?'':' plain'}"><i></i></div>`;
+ for(const [f,fname] of FAMILIES){
+  let langs=L.filter(l=>l[4]===f).map(l=>l[0]).sort((a,b)=>LANG[a].n.localeCompare(LANG[b].n));
+  const n=langs.length;
+  if(st.q)langs=langs.filter(c=>LANG[c].n.toLowerCase().includes(st.q)||LANG[c].o.includes(st.q));
+  if(!langs.length)continue;
+  out+=v.familyHead(fname,st.q?`${langs.length} of ${n}`:`${n}`,f)+grp(langs.map(c=>v.row(c,chosen,st.q)),f);
+ }
+ if(!st.q)out+=note('lock_outline','Kept on this phone. Change it any time in Settings.');
+ return out;
 }
+const famHead=(fname,count,f)=>`<div data-fam="${f}">${label(fname,`<span class="bS v">${count}</span>`)}</div>`;
+const baseTitle=(c,q,sub)=>`<div class="tx"><div class="tM">${mark(LANG[c].n,q)}</div>${sub!==undefined?`<div class="bM v">${sub}</div>`:(LANG[c].o!==LANG[c].n?`<div class="bM v">${own(c)}</div>`:'')}</div>`;
+const pickRow=(c,chosen,q,extra='',sub)=>{const on=c in chosen;return `<div class="row${on?' sel':''}" data-row="${c}" data-tap><div class="line lf">${baseTitle(c,q,sub)}<span class="trail">${ic(on?'check_circle':'add_circle_outline')}</span></div>${extra}</div>`};
+function waiting(st){const cs=Object.keys(st.chosen);return !cs.length?WAIT_ONE:cs.some(c=>st.chosen[c]===undefined)?WAIT_SCRIPT:''}
 
-/* ---------- Layout ---------- */
-const CH=['en','hi','te'];
-const part=(a)=>({chosen:CH,ans:a});
-const OPTS=[
- {t:'A. Search first',w:'A search field leads, with the phone\'s language and region (here English, India) feeding a "Suggested" row of chips. Chosen languages become removable chips in a "You know" list, and the script question sits right under each chip, so nobody scrolls back to find what is unanswered. "Browse all 35 languages" is the plain list for someone who does not know a spelling. First launch and Settings are the same body: only the header and the bottom bar change.',
-  s:[['First launch: empty',m=>frame(m,A({}))],['Searching "ma"',m=>frame(m,A({q:'ma',chosen:['en','hi']}))],
-     ['Chosen, script questions',m=>frame(m,A(part({en:true,hi:true})),{ans:{en:true,hi:true}})],
-     ['Settings: same screen, all answered',m=>frame('settings',A(part({en:true,hi:true,te:false})),{ans:{en:true,hi:true,te:false}})],
-     ['2x text',m=>frame(m,A(part({en:true,hi:true})),{ans:{en:true,hi:true}}),'x2']]},
- {t:'B. Grouped and folded',w:'The languages are folded under six script families, each with its count and a sample of the script. Chosen languages rise to a "You know" section with their script question. Searching opens only the families that have matches. First launch and Settings differ only in the chrome.',
-  s:[['First launch: all folded',m=>frame(m,B({}))],['Searching "ma": families with matches open',m=>frame(m,B({q:'ma',chosen:['en','hi']}))],
-     ['Chosen, Dravidian open',m=>frame(m,B({...part({en:true,hi:true}),open:['Dravidian scripts']}),{ans:{en:true,hi:true}})],
-     ['Settings: same screen, all answered',m=>frame('settings',B({...part({en:true,hi:true,te:false}),open:[]}),{ans:{en:true,hi:true,te:false}})],
-     ['2x text',m=>frame(m,B({...part({en:true,hi:true}),open:[]}),{ans:{en:true,hi:true}}),'x2']]},
- {t:'C. Two steps',w:'Step 1 only picks languages: search, suggested chips and a full A to Z list with own names, with Next showing how many are chosen. Step 2 is a single compact list, one Yes/No per language. In Settings the same two pages sit behind one entry, so it needs a small stepper or two pages, which is why it fits "one screen" least well.',
-  s:[['Step 1: empty',m=>frameC(m,1,{})],['Step 1: searching "ma"',m=>frameC(m,1,{q:'ma',chosen:['en','hi']})],
-     ['Step 1: chosen',m=>frameC(m,1,{chosen:CH,az:5})],
-     ['Step 2: the script questions',m=>frameC(m,2,{ans:{en:true,hi:true}})],
-     ['Settings, step 2: same list, all answered',m=>frameC('settings',2,{ans:{en:true,hi:true,te:false}})],
-     ['2x text, step 2',m=>frameC(m,2,{ans:{en:true,hi:true}}),'x2']]}
+/* 1. Inline: the chosen row grows a Yes/No question */
+const V1={
+ familyHead:famHead,
+ row:(c,chosen,q)=>pickRow(c,chosen,q,c in chosen?`<div class="ask"><div class="q bM lf">${question(c)}</div>${seg(chosen[c])}</div>`:''),
+ yours:(codes,chosen)=>grp(codes.map(c=>`<div class="row sel"><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div></div><span class="trail" data-tap>${ic('close')}</span></div><div class="ask"><div class="q bM lf">${question(c)}</div>${seg(chosen[c])}</div></div>`),'yours'),
+};
+/* 2. The chosen language becomes a chip with a small script toggle */
+const V2={
+ familyHead:famHead,
+ row:(c,chosen,q)=>pickRow(c,chosen,q),
+ yours:(codes,chosen)=>`<div class="pills" data-id="yours">${codes.map(c=>{const a=chosen[c];return `<div class="pill${a===undefined?'':' on'}"><div class="top lf"><div class="tx lL">${nm(c)}</div><span class="ibtn" data-tap>${ic('close','m18')}</span></div>${seg(a,`Reads&nbsp;${sample(LANG[c].s)}`,'Speaks only')}</div>`}).join('')}</div>`,
+};
+/* 3. A tap opens a sheet: I speak it / I speak and read it */
+const ans3=(a)=>a===true?'Speaks and reads':'Speaks only';
+const V3={
+ familyHead:famHead,
+ row:(c,chosen,q)=>pickRow(c,chosen,q,'',c in chosen&&chosen[c]!==undefined?`${LANG[c].o!==LANG[c].n?own(c)+' · ':''}${ans3(chosen[c])}`:undefined),
+ yours:(codes,chosen)=>grp(codes.map(c=>`<div class="row sel" data-tap><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div><div class="bM v">${ans3(chosen[c])}${chosen[c]?` · ${sName(c)}`:''}</div></div><span class="trail">${ic('edit','mo')}</span></div></div>`),'yours'),
+};
+const sheet=(c)=>`<div class="scrim"></div><div class="sheet" role="dialog"><div class="handle"></div><div class="sh"><div class="tL lf">${nm(c)}</div><div class="bM v lf" style="margin-top:8px">${question(c)}</div></div>
+ <div class="opts"><div class="sopt lf" data-tap><span class="tx"><span class="tM">No, I speak it</span></span>${ic('record_voice_over','mo')}</div><div class="sopt lf" data-tap><span class="tx"><span class="tM">Yes, I speak and read it</span></span>${ic('menu_book','mo')}</div></div>
+ <div class="cancel"><span class="tbtn lL lf" data-tap>Cancel</span></div></div>`;
+/* 4. Speak and Read checkboxes on every row */
+const cb=(on,what,c)=>`<span class="cbHit" data-tap aria-label="${what} ${LANG[c].n}"><span class="cb${on?' on':''}">${on?ic('check'):''}</span></span>`;
+const V4={
+ familyHead:(fname,count,f)=>`<div data-fam="${f}"><div class="lbl withcols lf"><span class="gl">${fname}</span><span class="bS v">${count}</span><span class="cols lM"><span>Speak</span><span>Read</span></span></div></div>`,
+ row:(c,chosen,q)=>{const on=c in chosen;return `<div class="row${on?' sel':''}" data-row="${c}"><div class="line lf">${baseTitle(c,q)}<span class="cbs">${cb(on,'Speak',c)}${cb(chosen[c]===true,'Read',c)}</span></div></div>`},
+ yours:(codes,chosen)=>`<div class="colhead lf"><span class="lM">Speak</span><span class="lM">Read</span></div>`+grp(codes.map(c=>`<div class="row sel"><div class="line lf"><div class="tx"><div class="tM">${nm(c)}</div></div><span class="cbs">${cb(true,'Speak',c)}${cb(chosen[c]===true,'Read',c)}</span></div></div>`),'yours'),
+};
+
+const S_EMPTY={chosen:{},order:ORDER,q:''};
+const S_SEARCH={chosen:{},order:ORDER,q:'pu',focus:true};
+const S_MID={chosen:MID,order:ORDER,q:''};
+const S_DONE={chosen:DONE,order:ORDER,q:''};
+const btn=(mode,st,always)=>bottom(always?'':waiting(st),mode==='ob'?'Continue':'Save',always||!waiting(st));
+
+function frames(v,{midSkip,midOverlay,doneSkip,x2State,x2Skip,x2Overlay,v4}){
+ return [
+ ['First launch: empty',()=>phone({mode:'ob',body:screen(v,'ob',S_EMPTY),bot:btn('ob',S_EMPTY)})],
+ ['Searching “pu”',()=>phone({mode:'ob',skip:'.sbw',body:screen(v,'ob',S_SEARCH),bot:btn('ob',S_SEARCH),keyboard:true})],
+ ['Telugu just chosen',()=>phone({mode:'ob',skip:midSkip,body:screen(v,'ob',S_MID),bot:btn('ob',S_MID,v4),overlay:midOverlay||''})],
+ ['Three chosen and answered',()=>phone({mode:'ob',skip:doneSkip,body:screen(v,'ob',S_DONE),bot:btn('ob',S_DONE)})],
+ ['Settings',()=>phone({mode:'set',body:screen(v,'set',S_DONE),bot:btn('set',S_DONE)})],
+ ['Settings at 2x text',()=>phone({mode:'set',x2:true,skip:x2Skip,body:screen(v,'set',x2State),bot:btn('set',x2State,v4),overlay:x2Overlay||''})],
+ ];
+}
+const VARS_=[
+ {id:'v1',t:'1. Inline: the row asks Yes or No',
+  p:'Choosing a language, by its row or a top pick, ticks the row and opens a question under it: “Do you read the Telugu script (అ ఆ ఇ)?”, Yes or No, neither picked. The chosen languages also collect under Your languages at the top, with the same question. Continue waits until every one is answered and says why.',
+  f:frames(V1,{midSkip:'[data-fam=dr]',doneSkip:'.lbl',x2State:S_MID,x2Skip:'.lbl'})},
+ {id:'v2',t:'2. Chip state: the chosen language becomes a chip with a script toggle',
+  p:'The family rows only tick. Each chosen language appears as a chip under Your languages, with a two-way toggle inside it: “Reads అ ఆ ఇ” or “Speaks only”, neither picked. An unanswered chip stays outlined; answered, it fills.',
+  f:frames(V2,{midSkip:'.lbl',doneSkip:'.lbl',x2State:S_MID,x2Skip:'.lbl'})},
+ {id:'v3',t:'3. Bottom sheet: one tap answers both',
+  p:'Tapping a language opens a sheet that asks its script question with two whole answers: “No, I speak it” or “Yes, I speak and read it”. One tap chooses the language and answers for its script, so nothing is ever left unanswered. Tapping a chosen row opens the sheet again to change it, or to remove the language.',
+  f:frames(V3,{midSkip:'[data-fam=dr]',midOverlay:sheet('te'),doneSkip:'.lbl',x2State:S_DONE,x2Skip:'[data-fam=dr]',x2Overlay:sheet('te')})},
+ {id:'v4',t:'4. Two checkboxes per row: Speak and Read',
+  p:'Every row carries a Speak and a Read box under column headings. Read implies Speak. It is the quickest to tick, but an empty Read box is both “no” and “not answered yet”: the button cannot wait for an answer, so this variation breaks the rule that nothing is assumed.',
+  f:frames(V4,{midSkip:'[data-fam=dr]',doneSkip:'.lbl',x2State:S_MID,x2Skip:'.lbl',v4:true})},
 ];
+/* Telugu just chosen in variation 3 is the sheet itself: Telugu is not yet chosen behind it. */
+VARS_[2].f[2]=['Telugu tapped: the sheet',()=>phone({mode:'ob',skip:'[data-fam=dr]',body:screen(V3,'ob',S_EMPTY),bot:btn('ob',S_EMPTY),overlay:sheet('te')})];
+VARS_[2].f[5]=['Settings at 2x text: the sheet',()=>phone({mode:'set',x2:true,skip:'[data-fam=dr]',body:screen(V3,'set',{chosen:{hi:true,bho:true},order:ORDER,q:''}),bot:btn('set',{chosen:{hi:true}}),overlay:sheet('te')})];
 
-function render(){
- document.getElementById('screens').innerHTML=OPTS.map(o=>`<section class="scr"><h2>${o.t}</h2><div class="states">${o.s.map(([cap,fn,x])=>{
-  const mode=cap.startsWith('Settings')?'settings':'first';
-  const pair=['light','dark'].map(th=>`<div class="fcol"><span class="fcap">${cap} · ${th==='light'?'Light':'Dark'}</span><div class="phone ${th}${x?' '+x:''}">${fn(mode)}</div></div>`).join('');
-  return `<div class="pair">${pair}</div>`;}).join('')}</div><p class="desc">${o.w}</p></section>`).join('');
- check();
-}
-
-/* Measures every frame: nothing sticks out sideways, no bar falls below the phone, text is not cut unless marked to ellipsise,
-   and every tap target in a row, chip, button or segment is at least 48 by 48 (the chip's close mark is 40, inside a 48 chip). */
-function check(){
- let bad=[];const phones=[...document.querySelectorAll('.phone')];
- phones.forEach((ph,pi)=>{
-  const pr=ph.getBoundingClientRect();
-  ph.querySelectorAll('*').forEach(el=>{
-   if(el.closest('svg')&&el.tagName!=='svg')return;
-   const r=el.getBoundingClientRect();if(!r.width&&!r.height)return;
-   const inScroll=el.closest('.scroll');
-   if(r.left<pr.left-0.5||r.right>pr.right+0.5)bad.push(`frame ${pi+1}: ${el.className||el.tagName} sideways`);
-   if(!inScroll&&r.bottom>pr.bottom+0.5)bad.push(`frame ${pi+1}: ${el.className||el.tagName} below`);
-   if(el.scrollWidth>el.clientWidth+1&&!el.classList.contains('ell')&&!el.classList.contains('scroll')&&getComputedStyle(el).overflow!=='visible'&&el.tagName!=='svg')bad.push(`frame ${pi+1}: ${el.className} clipped`);
-   if(el.matches('.chip,.btn,.seg span,.act,.fold,.tbtn,.ibtn')&&(r.height<47.5||(el.matches('.btn,.seg span,.tbtn')&&r.width<47.5)))bad.push(`frame ${pi+1}: ${el.className} under 48`);
-  });
-  /* the pinned bar must sit fully above the navigation bar and inside the phone */
-  const ft=ph.querySelector('.foot'),sn=ph.querySelector('.sysnav');
-  if(ft&&sn&&ft.getBoundingClientRect().bottom>sn.getBoundingClientRect().top+0.5)bad.push(`frame ${pi+1}: Continue under the navigation bar`);
+/* ---------- theme ---------- */
+const VARS=['p','onP','sc','onSc','s','onS','onSv','sLowest','sLow','sCont','sHigh','sHighest','ol','olv','pc','onPc'];
+function varsFor(seed,dark,black){const s={...SCHEMES[`${seed}-${dark?'dark':'light'}`]};
+ if(dark&&black){s.s='#000000';s.sLowest='#000000'}  // AppTheme.dark(pureBlack): surface, surfaceDim and surfaceContainerLowest go black
+ return VARS.map(k=>`--${k}:${s[k]}`).join(';')}
+const state=()=>({seed:document.querySelector('[name=seed]:checked').value,mode:document.querySelector('[name=mode]:checked').value,black:document.getElementById('black').checked});
+function applyTheme({seed,mode,black}){
+ document.querySelectorAll('.fcol').forEach(col=>{
+  const dark=mode==='both'?col.dataset.th==='dark':mode==='dark';
+  col.hidden=mode!=='both'&&col.dataset.th!==mode;
+  col.querySelector('.ph').setAttribute('style',varsFor(seed,dark,black));
+  col.querySelector('.fcap .th').textContent=dark?(black?'Dark, pure black':'Dark'):'Light';
  });
- const el=document.getElementById('check');
- el.textContent=bad.length?`Layout check: ${bad.length} problem(s): ${[...new Set(bad)].slice(0,8).join('; ')}`:`Layout check: ${phones.length} frames at 360 × 780, nothing overflows or is cut, targets are 48 or more.`;
- window.__bad=bad;
 }
-document.getElementById('black').addEventListener('change',e=>document.body.classList.toggle('black',e.target.checked));
-document.getElementById('pagedark').addEventListener('change',e=>{document.documentElement.dataset.theme=e.target.checked?'dark':'light';});
-render();
-if(document.fonts&&document.fonts.ready){document.fonts.ready.then(check,check);}
+function render(){
+ document.getElementById('screens').innerHTML=VARS_.map(o=>`<section class="opt" id="${o.id}"><h2>${o.t}</h2><p>${o.p}</p><div class="frames">${
+  o.f.flatMap(([cap,fn])=>['dark','light'].map(th=>`<div class="fcol" data-th="${th}"><span class="fcap">${cap} · <span class="th"></span></span>${fn()}</div>`)).join('')}</div></section>`).join('');
+}
+
+/* A frame is a scroll position: [data-skip] scrolls that element to the top. The visible area then ends
+   above the first line or target the edge would cut, as a list stopped between two rows does, and the
+   scrollbar thumb (thumbVisibility: true, as in the picker today) shows there is more. Nothing is cut in half. */
+function fit(){
+ document.querySelectorAll('.scroll').forEach(sc=>{
+  const clip=sc.querySelector('.clip'),content=sc.querySelector('.content');
+  clip.style.height=sc.clientHeight+'px';content.style.transform='';
+  const sk=sc.dataset.skip?content.querySelector(sc.dataset.skip):null;
+  // the skipped-to element's own top padding, past 8, scrolls away too
+  const padTop=(e)=>{let p=0;for(let x=e;x&&x.nodeType===1;x=x.firstElementChild){p+=parseFloat(getComputedStyle(x).paddingTop)||0;if(x.classList.contains('lbl'))break}return p};
+  let off=sk?Math.max(0,sk.getBoundingClientRect().top-content.getBoundingClientRect().top+Math.max(0,padTop(sk)-8)):0;
+  // never start the view half way through a line: move past anything the top edge would cut
+  const c0=content.getBoundingClientRect().top;
+  for(const el of content.querySelectorAll('.lf')){const r=el.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)off=b}
+  content.style.transform=`translateY(${-off}px)`;
+  const top0=sc.getBoundingClientRect().top;let cut=sc.clientHeight;
+  const leaves=[...content.querySelectorAll('.lf')];
+  for(let guard=0;guard<60;guard++){let moved=false;
+   for(const el of leaves){const r=el.getBoundingClientRect();if(!r.height)continue;const t=r.top-top0,b=r.bottom-top0;
+    if(t<cut-0.5&&b>cut+0.5){const box=el.closest(".row,.pill,.sopt")||el;const bt=box.getBoundingClientRect().top-top0;cut=Math.max(0,Math.min(t,bt));moved=true}}
+   if(!moved)break;}
+  clip.style.height=cut+'px';
+  sc.querySelector('.thumb')?.remove();
+  const total=content.scrollHeight;
+  if(total>cut+1||off>0){const th=document.createElement('div');th.className='thumb';
+   const h=Math.max(32,cut*cut/total),y=(off/Math.max(1,total-cut))*(cut-h);
+   th.style.height=h+'px';th.style.top=Math.min(cut-h,Math.max(0,y))+'px';sc.appendChild(th);}
+ });
+}
+
+/* ---------- self-check: layout, and WCAG contrast in every seed and mode ---------- */
+function rgba(str){const m=str.match(/rgba?\(([^)]+)\)/);if(m){const p=m[1].split(/[ ,\/]+/).filter(Boolean).map(Number);return [p[0],p[1],p[2],p.length>3?p[3]:1]}
+ const c=str.match(/color\(srgb ([^)]+)\)/);if(c){const p=c[1].split(/[ \/]+/).filter(Boolean).map(Number);return [p[0]*255,p[1]*255,p[2]*255,p.length>3?p[3]:1]}return [0,0,0,0]}
+const over=(f,b)=>[0,1,2].map(i=>f[i]*f[3]+b[i]*(1-f[3])).concat(1);
+const lum=(c)=>{const a=c.slice(0,3).map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2]};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)};
+function bgOf(el){const stack=[];for(let e=el;e;e=e.parentElement){const c=rgba(getComputedStyle(e).backgroundColor);if(c[3]>0)stack.push(c);if(c[3]>=1||e.classList.contains('ph'))break}
+ let col=[255,255,255,1];for(let i=stack.length-1;i>=0;i--)col=over(stack[i],col);return col}
+const tagOf=(ph)=>`${ph.closest('section').id.toUpperCase()} “${ph.parentElement.querySelector('.fcap').firstChild.textContent.replace(' · ','').trim()}”`;
+function layoutProblems(){
+ const bad=[];const phones=[...document.querySelectorAll('.ph')];
+ phones.forEach(ph=>{const tag=tagOf(ph);
+  const pr=ph.getBoundingClientRect();const sc=ph.querySelector('.scroll'),clip=ph.querySelector('.clip');const cr=clip.getBoundingClientRect();
+  ph.querySelectorAll('*').forEach(el=>{if(el.closest('svg')&&el.tagName!=='svg')return;const r=el.getBoundingClientRect();if(!r.width||!r.height)return;
+   if(r.left<pr.left-0.5||r.right>pr.right+0.5)bad.push(`${tag}: ${el.className||el.tagName} sticks out sideways`);
+   if(el.scrollWidth>el.clientWidth+1&&getComputedStyle(el).overflowX!=='visible'&&!el.matches('.clip,.scroll,.ph,.mi'))bad.push(`${tag}: ${el.className} text cut`);
+  });
+  ph.querySelectorAll('.content .lf').forEach(el=>{const r=el.getBoundingClientRect();if(!r.height||r.bottom<=cr.top+0.5||r.top>=cr.bottom-0.5)return;
+   if(r.top<cr.top-0.5||r.bottom>cr.bottom+0.5)bad.push(`${tag}: ${el.className} cut at the edge`)});
+  ph.querySelectorAll('[data-tap]').forEach(el=>{const r=el.getBoundingClientRect();if(el.closest('.content')&&(r.bottom<=cr.top||r.top>=cr.bottom))return;
+   if(r.height<47.5||r.width<47.5)bad.push(`${tag}: target ${Math.round(r.width)}×${Math.round(r.height)} (${el.textContent.trim().slice(0,16)})`)});
+  if(cr.height<sc.clientHeight*0.6)bad.push(`${tag}: only ${Math.round(cr.height)} of ${sc.clientHeight} dp of content shown`);
+  const bot=ph.querySelector('.bot').getBoundingClientRect(),nav=ph.querySelector('.nav3').getBoundingClientRect();
+  if(bot.bottom>nav.top+0.5)bad.push(`${tag}: button under the navigation bar`);
+  if(sc.getBoundingClientRect().bottom>bot.top+0.5)bad.push(`${tag}: content under the pinned bar`);
+  if(nav.bottom>pr.bottom+0.5)bad.push(`${tag}: navigation bar below the frame`);
+  const sh=ph.querySelector('.sheet');if(sh){const r=sh.getBoundingClientRect();if(r.top<pr.top+80)bad.push(`${tag}: sheet too tall`);
+   sh.querySelectorAll('[data-tap]').forEach(el=>{if(el.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: sheet choice under the navigation bar`)})}
+  ph.querySelectorAll('[data-search]').forEach(sb=>{const q=sb.querySelector('.q');const lh=parseFloat(getComputedStyle(q).lineHeight);
+   if(q.getBoundingClientRect().height>lh*1.5)bad.push(`${tag}: search text wraps`);
+   if(sb.getBoundingClientRect().height>Math.max(56,lh+16)+0.5)bad.push(`${tag}: search field taller than one line`)});
+ });
+ if(document.documentElement.scrollWidth>window.innerWidth+0.5)bad.push(`page scrolls sideways (${document.documentElement.scrollWidth} > ${window.innerWidth})`);
+ return {bad,frames:phones.length};
+}
+/* Every visible text 4.5:1 and every icon, outline and checkbox 3:1 against what is really behind it, in 4 seeds × light, dark and
+   pure black. Text under the sheet's scrim is not read; the disabled button is exempt (WCAG 1.4.3), drawn at M3's 38%. */
+function contrastProblems(){
+ const bad=[];let checked=0;const cols=[...document.querySelectorAll('.fcol')];
+ for(const seed of ['clay','forest','ocean','iris'])for(const [dark,black] of [[false,false],[true,false],[true,true]]){
+  cols.forEach(col=>col.querySelector('.ph').setAttribute('style',varsFor(seed,dark,black)));
+  const theme=`${seed} ${dark?(black?'black':'dark'):'light'}`;
+  document.querySelectorAll('.ph').forEach(ph=>{const scrim=!!ph.querySelector('.scrim');const cr=ph.querySelector('.clip').getBoundingClientRect();
+   ph.querySelectorAll('*').forEach(el=>{
+    if(el.closest('[data-dis]')||el.closest('svg'))return;
+    if(scrim&&!el.closest('.sheet'))return;
+    const hasText=[...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());
+    const isIcon=el.classList.contains('mi');
+    if(!hasText&&!isIcon)return;
+    const r=el.getBoundingClientRect();if(!r.width)return;
+    if(el.closest('.content')&&(r.bottom<=cr.top||r.top>=cr.bottom))return;
+    let fg=rgba(getComputedStyle(el).color);const bg=bgOf(el);fg=over(fg,bg);
+    const need=isIcon?3:4.5;const c=ratio(fg,bg);checked++;
+    if(c<need)bad.push(`${theme} ${tagOf(ph)}: “${el.textContent.trim().slice(0,20)}” ${c.toFixed(2)}:1`);
+   });
+   if(!scrim)ph.querySelectorAll('.chip:not(.on),.pill:not(.on),.seg span:not(.on),.cb:not(.on)').forEach(el=>{const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);const c=ratio(over(b,bg),bg);checked++;
+    if(c<3)bad.push(`${theme} ${tagOf(ph)}: ${el.className} outline ${c.toFixed(2)}:1`)});
+  });
+ }
+ return {bad,checked};
+}
+function check(){
+ document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);
+ fit();
+ const L1=layoutProblems(),C1=contrastProblems();
+ const all=[...new Set([...L1.bad,...C1.bad])];
+ const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
+ el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
+  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp: nothing sticks out or is cut in half, every content area is at least 60% filled, no sideways scroll, the search field is one line, the pinned button and the sheet sit above the 3-button navigation bar, every target is at least 48 × 48. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1; the disabled button is exempt).`;
+ window.__check={problems:all,frames:L1.frames,pairs:C1.checked};
+ applyTheme(state());
+}
+document.querySelectorAll('.controls input').forEach(i=>i.addEventListener('change',()=>applyTheme(state())));
+render();applyTheme(state());
+const go=()=>check();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go,go);else go();
 </script>
 </body>
 </html>
