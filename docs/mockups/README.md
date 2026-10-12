@@ -13,14 +13,15 @@ approval.
 
 ## Awaiting approval
 
-- `settings.html`: the whole Settings tab with every planned change
-  folded in: Sources in Learning (#469), one Your data section with
-  Backup and restore, cloud backup, recent and cloud backups and the
-  restore sheet (#473, #470), Add deck as an Advanced row (#475),
-  switches only for the activities a learner may skip, with Sound merged
-  in (#243), Reminders for several languages (#90, 0.6.0), and Delete
-  this profile on the profile page. Revised after the owner's review of
-  2026-10-12; its proposed decisions are listed in the page.
+- `settings.html`: Settings as a short list of section pages, with every
+  planned change folded in: Sources in Learning (#469), Your data with
+  Backup and restore, cloud, recent and cloud backups and the restore
+  sheet (#473, #470) and a Review log screen, Add deck as a row (#475),
+  switches only for the activities a learner may skip (#243), Reminders
+  for several languages (#90, 0.6.0), an App log screen, Delete this
+  profile on the profile page, and destructive actions in the error
+  colour. Revised after the owner's reviews of 2026-10-12; its proposed
+  decisions are listed in the page.
 
 ## Older: to be adapted (owner, 2026-10-12)
 
