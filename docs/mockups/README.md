@@ -11,15 +11,16 @@ approval.
   correct share and minutes (#486), and hours spent and hours left on
   Progress (#227). Approved by the owner, 2026-10-12.
 - `settings.html`: Settings as a short list of section pages, with every
-  planned change folded in: Sources in Your languages (#469), Your data with
-  Backup and restore, cloud, recent and cloud backups and the restore
-  sheet (#473, #470) and a Review log screen, Your decks with the
-  custom deck check after an upload (#475, #495, 0.6.0), Reminders and Privacy apart,
-  switches only for the activities a learner may skip (#243), Reminders
-  for several languages (#90, 0.6.0), an App log screen, Delete this
-  profile on the profile page, and destructive actions in the error
-  colour. Approved by the owner, 2026-10-12, with the decisions the page marks
-  Proposed (#496).
+  planned change folded in: Sources in Your languages (#469); Look and
+  language as the Look screen with an App language row, English only until
+  #46; Your data with Backup and restore, cloud, recent and cloud backups,
+  the restore sheet and the review log fully expanded (#473, #470); Your
+  decks with the custom deck check after an upload (#475, #495, 0.6.0);
+  switches only for the activities a learner may skip (#243); Reminders for
+  several languages (#90, 0.6.0); an App log screen; Profiles and privacy
+  (PIN lock, profiles, Delete this profile) from the profile card (#204);
+  and destructive actions in the error colour. Approved by the owner,
+  2026-10-12, with the decisions the page marks Proposed (#496).
 
 ## Older: to be adapted (owner, 2026-10-12)
 
