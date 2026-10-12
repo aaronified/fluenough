@@ -17,11 +17,28 @@ import 'package:fluenough/ui/theme.dart';
 /// Shared helpers for widget tests. Import from any test directory:
 /// `import '../support/harness.dart';` (adjust the depth).
 
+/// The height of Android's three-button navigation bar, in logical pixels.
+const double navBarHeight = 48;
+
 /// The design's phone: 390 × 844 logical pixels at 3×. Resets after the test.
-void usePhone(WidgetTester tester, {double textScale = 1.0}) {
+///
+/// [navBar] gives it Android's three-button navigation bar: 48 logical pixels
+/// at the bottom that the app draws under and must keep its content clear of
+/// (#489). Gesture navigation leaves far less, so it hides the same bug.
+void usePhone(
+  WidgetTester tester, {
+  double textScale = 1.0,
+  bool navBar = false,
+}) {
   tester.view
     ..physicalSize = const Size(390 * 3, 844 * 3)
     ..devicePixelRatio = 3;
+  if (navBar) {
+    const bar = FakeViewPadding(bottom: navBarHeight * 3);
+    tester.view
+      ..padding = bar
+      ..viewPadding = bar;
+  }
   tester.platformDispatcher.textScaleFactorTestValue = textScale;
   addTearDown(tester.view.reset);
   addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
