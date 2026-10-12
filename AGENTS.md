@@ -9,7 +9,9 @@ This document exists to make those things true.
 
 [CONTRIBUTING.md](CONTRIBUTING.md) covers licensing and how to submit a deck.
 This file covers how to work in the repository without colliding with everyone
-else.
+else. [CLAUDE.md](CLAUDE.md) adds what the owner has asked of agents working
+for them: which model does what, and pushing to main directly. Where it
+differs from this file, it wins for the owner's work.
 
 ---
 
@@ -207,6 +209,7 @@ Text(AppLocalizations.of(context)!.dueToday)   // correct
 Deck content — `target`, `native`, `reading`, `notes` — is not interface text
 and stays exactly as it is. So do log messages, exception text, and ids.
 
+Readings are *based on* ISO 15919; never write that they strictly follow it.
 Within deck content, a word in a script other than Latin is never left without
 its reading: a note says లేదు (lēdu), not లేదు. The validator rejects it; see
 "Script in prose" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
@@ -278,6 +281,10 @@ people fall into under time pressure.
 | standard | Writing and synthesis with judgement | Sonnet |
 | deep | Adversarial review, correctness reasoning, rating | Opus |
 
+For work done for the owner, the table in [CLAUDE.md](CLAUDE.md) decides
+instead: reviews and audits are Sonnet, and Opus is for fixing, coding and UI
+mockups, never more than two at once.
+
 **Rate the work before calling it done, and 8/10 is the bar.** At the end of
 any task touching more than a couple of files, an independent subagent rates
 the work out of 10 against the user's own prompts. Below 8, fix what it found
@@ -313,11 +320,14 @@ large feature branch that sits open for a week.
 
 ## Branches, commits, pull requests
 
-`main` is protected. You cannot push to it directly: every change goes through
-a pull request that needs one approving review, all three CI jobs green, and
-every review conversation resolved. Force pushes and branch deletion are
-refused. Work on a branch from the start — there is no path where committing
-straight to `main` works, and finding that out after the fact wastes your time.
+`main` is protected. As a contributor you cannot push to it directly: every
+change goes through a pull request that needs one approving review, all three
+CI jobs green, and every review conversation resolved. Force pushes and branch
+deletion are refused. Work on a branch from the start. (The owner's own work,
+and an agent's work for the owner, goes straight to main: see
+[CLAUDE.md](CLAUDE.md). A change to decks only needs "Validate decks" green.)
+
+Never create or push git tags; the owner tags releases.
 
 Branch names: `<area>/<short-description>` — `deck/fr-core-100`,
 `feat/production-drill`, `fix/grader-article-stripping`, `docs/adr-tts-update`.
@@ -355,7 +365,8 @@ Open an issue and get a human answer before:
 - changing the database schema in a non-additive way
 - changing the application id or anything about signing
 
-Agents must not merge their own pull requests. Every change gets human review.
+Agents must not merge their own pull requests. Every contributor's change gets
+human review.
 
 Superseding an existing ADR is a decision, not a refactor. If your change
 contradicts one, that is a conversation first — and if agreed, a **new** ADR
@@ -410,7 +421,7 @@ What this costs, not only what it buys. Be honest about the downsides.
 What was rejected, and why.
 ```
 
-The existing five are worth reading before your first substantial change — they
+The ADRs are worth reading before your first substantial change — they
 explain most of what is otherwise surprising about this codebase.
 
 ---

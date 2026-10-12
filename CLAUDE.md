@@ -14,6 +14,7 @@ When work is handed to subagents or workflows, pick the model by the job:
 | Writing decks | Sonnet |
 | Fan-outs and large reads | Haiku |
 | Fixing and coding | Opus |
+| UI mockups | Opus (Sonnet was not enough, owner, 2026-10-12) |
 
 At most **two Opus agents run at the same time** (owner, 2026-10-09). The
 quota is shared: each Opus slot left unused buys 1.5 Sonnet agents, and each
@@ -23,11 +24,15 @@ wherever the table above allows it.
 
 ## How the owner works (owner, 2026-10-11)
 
-- **Push straight to main.** Documentation, plans and the 0.5.0 work go
-  directly to main, with no pull request. Push only after the checks pass:
-  analyze, the full test suite (read its "All tests passed" line, not just
-  the last line of output), the deck validator and the tools' tests, and
-  after one Sonnet review finds nothing blocking.
+- **Push straight to main.** The owner cannot merge for you ("You cannot
+  merge. You will have to push to main directly"), so work done for the
+  owner goes directly to main, with no pull request. Documentation goes
+  straight away. Code goes after the checks pass: `flutter analyze` clean,
+  the full `flutter test` (read its "All tests passed" line, never a
+  truncated tail), the deck validator and the tools' tests, and after one
+  Sonnet review finds nothing blocking. Rebase on `origin/main` if the push
+  is rejected. Outside contributors still use pull requests
+  ([CONTRIBUTING.md](CONTRIBUTING.md#pull-requests)).
 - **Releases.** Bump `pubspec.yaml` and `lib/app/app_info.dart`, check with
   `tools/check_release_version.py`, and push to main. The owner tags the
   release and writes the CHANGELOG; never edit CHANGELOG.md for a release.
@@ -35,8 +40,20 @@ wherever the table above allows it.
   answers, quoted and dated, in the plan and the issue they belong to.
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
   follow it.
-- **Milestone 0.5.0** holds the high-priority features and fixes. Tag new
-  ones to it when the owner calls them a priority.
+- **Milestones are releases** (0.4.4, 0.5.0, 0.6.0, 0.7.0). The milestone's
+  description holds its order. Until the roadmap is generated from them
+  (#484), update `docs/ROADMAP.md` by hand to match. Tidy issues and plans
+  after work lands, and close issues when done. Tag new issues to a
+  milestone only as the owner says.
+- **Mockups** follow `docs/mockups/README.md`: build the approved specs
+  exactly, never rewrite one without approval, and adapt the older ones.
+  Each uses the app's real theme, light and dark, 2x text, a contrast
+  self-check, and Hindi and Bengali examples, and is checked in Chromium.
+- **Content.** Keep transliteration in deck prose, and say in a card's notes
+  when its base word changes its stem (`docs/DECK-FORMAT.md`).
+- **Reviewers** are bilingual and the meaning of a card never changes; new
+  themes come only by pull request (`docs/plans/reviewing-scope.md`).
+- **CI.** "Validate decks" is the only check a deck-only change needs.
 - **Budget.** Tokens are limited: one review per change, no extra
   verification passes, and no new work unless the owner asks for it.
 
