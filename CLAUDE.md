@@ -45,3 +45,7 @@ wherever the table above allows it.
 `homelab-stacks` is not part of this work. Never clone or download it, never
 modify it, and never push to it, even if it appears in a session's
 repositories.
+
+## Tags (owner, 2026-10-12)
+
+Never create or push git tags. Only the owner tags releases.
