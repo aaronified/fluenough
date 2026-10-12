@@ -14,6 +14,10 @@ contributions are often content rather than software.
 | Understand why something is the way it is | [docs/adr/](docs/adr/) |
 | Set up the toolchain | [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) |
 
+**Start with an issue labelled `direct-code`.** It is fully decided: the
+owner's answers are in it and any mockup is approved, so you can build it as
+written without asking anything. For any other issue, ask first.
+
 **[AGENTS.md](AGENTS.md) is required reading before your first code change**,
 whether or not you use an agent. It carries the constraints that are easy to
 break and expensive to undo.
@@ -148,7 +152,7 @@ commit it with your deck. CI runs the second, which fails while the index is
 out of date. Errors fail the build; warnings do not, but are usually worth
 fixing.
 
-### The four things reviewers check
+### The things reviewers check
 
 **You have the right to contribute the content.** Wordlists taken from
 textbooks or commercial courses are not acceptable, *even reworded* — a
@@ -170,7 +174,12 @@ card takes the language's next free id
 the language already teaches is listed with `ref:` rather than written again
 (see "A word in more than one deck" in docs/DECK-FORMAT.md).
 
-Non-Latin scripts also need `reading` on every card.
+**A changed stem is said.** A card whose base word changes its stem says so
+in its notes (see DECK-FORMAT.md).
+
+Non-Latin scripts also need `reading` on every card, and a word in a script
+quoted in prose keeps its transliteration. Readings are *based on* ISO 15919:
+never write that they strictly follow it.
 
 ### What makes a deck good
 
@@ -196,8 +205,8 @@ went unrun for a while, so that is worth knowing rather than assuming. If
 `flutter analyze` reports an error on a fresh checkout, it is most likely your
 change rather than the design.
 
-Nobody has run it on a device yet, though, and the iOS folder has never been
-generated. See #17.
+It has since been built and run on Android phones for every release. Nobody
+has built it on macOS or Windows, or generated the iOS folder.
 
 **Open an issue before anything substantial**, and say which files you expect
 to touch. Several people are working on this in parallel, frequently with
@@ -209,6 +218,7 @@ agents, and that one sentence prevents most collisions. See
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
 rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
+python3 tools/brand_android.py
 flutter pub get
 flutter test
 ```
@@ -248,8 +258,11 @@ flutter test
 
 ## Pull requests
 
-`main` is protected: every change needs a pull request, one approving review,
-and green CI. Branch before you start.
+`main` is protected: every change from a contributor needs a pull request,
+one approving review, and green CI. Branch before you start. A change to
+decks only needs the "Validate decks" job green. (The owner's own work goes
+straight to main; see [CLAUDE.md](CLAUDE.md). Contributors never create or
+push tags.)
 
 **One concern per pull request.** A change that adds a feature, refactors
 something and fixes formatting cannot be reviewed properly and conflicts with
@@ -274,8 +287,12 @@ The checklist in the pull request template is the definition of done.
 
 ## Review
 
-Every change gets human review, including agent-authored ones. Nobody merges
-their own pull request.
+Every contributor's change gets human review, including agent-authored ones.
+Nobody merges their own pull request.
+
+Reviewing decks in the app has its own rules: reviewers are bilingual, the
+meaning of a card never changes, and a new theme comes only by pull request.
+See [docs/REVIEWING.md](docs/REVIEWING.md).
 
 Expect review to be about *why* as much as *what*. If a change contradicts an
 ADR, that is a conversation before it is a diff — and if the decision does
