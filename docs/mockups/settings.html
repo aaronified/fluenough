@@ -160,9 +160,9 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .sl .head .tM{flex:1;min-width:0}
 .sl .val{color:var(--p);font-weight:700}
 .track{position:relative;height:20px;margin-top:8px}
-.track .in{position:absolute;left:0;right:0;top:8px;height:4px;border-radius:2px;background:var(--sHighest)}
-.track .act{position:absolute;left:0;top:8px;height:4px;border-radius:2px;background:var(--p)}
-.track .th{position:absolute;top:0;width:20px;height:20px;border-radius:10px;background:var(--p);margin-left:-10px}
+.track .sl-in{position:absolute;left:0;right:0;top:8px;height:4px;border-radius:2px;background:var(--sHighest)}
+.track .sl-act{position:absolute;left:0;top:8px;height:4px;border-radius:2px;background:var(--p)}
+.track .sl-th{position:absolute;top:0;width:20px;height:20px;border-radius:10px;background:var(--p);margin-left:-10px}
 .dd{display:flex;align-items:center;gap:4px}
 .foot{display:flex;align-items:center;gap:12px;padding:0 16px}
 .foot svg{width:32px;height:32px;flex:none}
@@ -201,12 +201,12 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 /* a backup's three actions, icon over label, a third of the row each; at 2x one under another */
 .acts3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:8px -8px -8px}
 .acts3.two{grid-template-columns:repeat(2,1fr)}
-.act{min-height:56px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;color:var(--p);text-align:center}
-.act.st{color:var(--onSv)}
-.act.st .mi{color:var(--p)}
+.bact{min-height:56px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;color:var(--p);text-align:center}
+.bact.st{color:var(--onSv)}
+.bact.st .mi{color:var(--p)}
 .ph.x2 .acts3{display:flex;gap:8px;margin:4px -12px -12px}
-.ph.x2 .act{min-height:48px;min-width:48px;padding:0;border-radius:24px}
-.ph.x2 .act>span:not(.mi){display:none}   /* at 2x: icons only, each named by its tooltip and for screen readers */
+.ph.x2 .bact{min-height:48px;min-width:48px;padding:0;border-radius:24px}
+.ph.x2 .bact>span:not(.mi){display:none}   /* at 2x: icons only, each named by its tooltip and for screen readers */
 .incl{display:inline-flex;align-items:center;gap:4px}
 .incl .mi{color:var(--p)}
 /* the profile screens, after the design file's "Profiles" and "New profile" */
@@ -318,7 +318,7 @@ One file, <code>fluenough-backup-&lt;date&gt;.fnbackup</code>, holds the review 
 <tr><th>5</th><td data-h="Decision">The restore sheet's deck line reads “Not restored, will be downloaded” (owner). <span class="prop">Proposed</span> Its warning now says a copy is kept first, and its button stays <b>Replace and restore</b>.</td><td data-h="Why">The decks are never in a backup; the app downloads them after.</td></tr>
 <tr><th>6</th><td data-h="Decision"><span class="prop">Proposed</span> Above 1.3x text, a row's button or value goes under its line: Restore, Adjust (outlined at 2x only), and the reminder time.</td><td data-h="Why">Beside it at 2x the name would get a column a word wide. The profile card already stacks Switch this way.</td></tr>
 <tr><th>7</th><td data-h="Decision">Seen words, Grammar, Matching pairs, Choosing answers and Phonemic contrasts have no switch: always asked (owner). <span class="prop">Proposed</span> switches stay for <b>Written words</b>, <b>Heard words</b>, <b>Spoken words</b> and <b>Reading</b>, with a line under them naming what is always asked.</td><td data-h="Why">Each needs something a learner may not have: a keyboard in the script, sound, a microphone, time for a passage. Seen words is always on, so every activity can never be off, and a lesson always has questions.</td></tr>
-<tr><th>8</th><td data-h="Decision"><span class="prop">Proposed</span> The Sound section goes. Its <b>Sound</b> switch is dropped; Play words automatically, Speech rate and Voices move under Heard words, shown whatever Heard words is set to. Heard words off reads “No listening questions. Words still play when you tap a speaker”.</td><td data-h="Why">Sound off did two things: muted every speaker, which the phone's volume does, and skipped listening, which Heard words off (or Pause for an hour) does. The “while sound is off” lines only explained that nothing plays when nothing can, which the owner rightly calls normal.</td></tr>
+<tr><th>8</th><td data-h="Decision"><span class="prop">Proposed</span> The Sound section goes. Its <b>Sound</b> switch is dropped; Play words automatically moves under Heard words; Speech rate and Voices, shared by hearing and speaking, go below Spoken words (owner). All three show whatever the switches are set to. Heard words off reads “No listening questions. Words still play when you tap a speaker”.</td><td data-h="Why">Sound off did two things: muted every speaker, which the phone's volume does, and skipped listening, which Heard words off (or Pause for an hour) does. The “while sound is off” lines only explained that nothing plays when nothing can, which the owner rightly calls normal.</td></tr>
 <tr><th>9</th><td data-h="Decision"><span class="prop">Proposed</span> On updating, a learner who had switched off Seen words, Grammar or Phonemic contrasts finds them on again; one who had Sound off finds Heard words off, so listening stays skipped.</td><td data-h="Why">No stored choice is silently turned into a different one.</td></tr>
 <tr><th>10</th><td data-h="Decision"><span class="prop">Proposed</span> Add deck is the only row in a new <b>Advanced</b> section, before Logs, with the Decks button's + and “Add deck”, and the import page's line.</td><td data-h="Why">The owner called it advanced (#475).</td></tr>
 <tr><th>11</th><td data-h="Decision"><span class="prop">Proposed</span> The daily reminder moves onto a Reminders page; Settings keeps one row that says what is set, in Reminder and privacy. Quiet hours are removed (owner).</td><td data-h="Why">The settings-wording rule: a row that opens a page shows its value.</td></tr>
@@ -361,7 +361,7 @@ const ALWAYS=['Seen words','Grammar','Matching pairs','Choosing answers','Phonem
 const ORDER_TABLE=[
  ['Profile card','Profile card; tapping it opens Your profile, with Delete this profile, after the design file <span class="prop">Proposed</span>','owner, 2026-10-12'],
  ['Learning: languages, the skill switches, readings, 18+, alphabets','Learning: Languages I know, Languages I’m learning, readings, 18+, alphabets, <b>Sources</b>','#469 · Sources moves here'],
- ['—','<b>Activities</b>: switches only for Written words, Heard words (with Play words automatically, Speech rate and Voices under it), Spoken words and Reading; the rest always asked <span class="prop">Proposed</span>','#243 · owner, 2026-10-12'],
+ ['—','<b>Activities</b>: switches only for Written words, Heard words (with Play words automatically under it), Spoken words (then Speech rate and Voices, shared by both) and Reading; the rest always asked <span class="prop">Proposed</span>','#243 · owner, 2026-10-12'],
  ['Adjust to me','Adjust to me','—'],
  ['Sound: Sound, Play words automatically, Speech rate, Voices','— (merged into Activities; the Sound switch dropped) <span class="prop">Proposed</span>','owner, 2026-10-12'],
  ['Look and language','Look and language','—'],
@@ -445,10 +445,11 @@ function settingsBody(o={}){
   ...(listeningOn?pauseLang():[]),
   // from the old Sound section: they govern every word the app says, so they stay whatever Heard words is set to
   tog({title:'Play words automatically',on:SW.autoplay[1],off:SW.autoplay[2],value:SW.autoplay[3],chg:true,attrs:''}).replace('row lf','row lf'),
-  `<div class="row lf sl tall chg"><div class="head"><span class="tM">Speech rate</span><span class="bL val one">1.0×</span></div><div class="track" role="img" aria-label="Speech rate 1.0×"><span class="in"></span><span class="act" style="width:40%"></span><span class="th" style="left:40%"></span></div></div>`,
-  tile({title:'Voices',sub:`${ME.voiced} of ${ME.languages} languages have a voice`,trail:chev(),chg:true}),
   S('speaking'),
   ...(speakingOn?pauseLang():[]),
+  // shared by hearing and speaking (owner, 2026-10-12): below Spoken words
+  `<div class="row lf sl tall chg"><div class="head"><span class="tM">Speech rate</span><span class="bL val one">1.0×</span></div><div class="track" role="img" aria-label="Speech rate 1.0×"><span class="sl-in"></span><span class="sl-act" style="width:40%"></span><span class="sl-th" style="left:40%"></span></div></div>`,
+  tile({title:'Voices',sub:`${ME.voiced} of ${ME.languages} languages have a voice`,trail:chev(),chg:true}),
   S('reading'),
  ],{chg:true,after:hlp('Seen words, grammar, matching pairs, choosing answers and phonemic contrasts are always asked, so a lesson always has questions.','check_circle').replace('hlp lf','hlp lf chg')});
  const adjust=`<div class="sect" id="s-adjust" data-name="Adjust to me"><div class="grp">${tile({icon:'tune',filled:true,title:'Adjust to me',sub:`Last adjusted ${ME.adjusted}`,trail:`<span class="ftonal" data-tap><span class="one">Adjust</span></span>`,tap:false,cls:'wrapbtn',chg:!!o.x2})}${S('autoAdjust',{icon:'autorenew',filled:true})}</div>${hlp('Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.','lock')}</div>`;
@@ -502,8 +503,8 @@ function settingsPhone(o={}){
 /* one backup, in the phone's list or the cloud's: its name says how and when it was made; then its actions */
 function backupRow([k,v,d,n],{cloud=false,connected=true}={}){
  const inCloud=!cloud&&connected&&IN_CLOUD.has(`${k}|${v}|${d}`);
- const act=(icon,label,name)=>`<span class="act lL" data-tap data-act="${name}" role="button" aria-label="${label}" title="${label}">${ic(icon,'mo')}<span>${label}</span></span>`;
- const mid=cloud?'':inCloud?`<span class="act st lL" data-act="incloud" aria-label="In the cloud" title="In the cloud">${ic('cloud_done','mo')}<span>In the cloud</span></span>`:act('cloud_upload','Send to cloud','send');
+ const act=(icon,label,name)=>`<span class="bact lL" data-tap data-act="${name}" role="button" aria-label="${label}" title="${label}">${ic(icon,'mo')}<span>${label}</span></span>`;
+ const mid=cloud?'':inCloud?`<span class="bact st lL" data-act="incloud" aria-label="In the cloud" title="In the cloud">${ic('cloud_done','mo')}<span>In the cloud</span></span>`:act('cloud_upload','Send to cloud','send');
  return `<div class="row lf bk" data-recent="${k}|${v}|${d}"${cloud?' data-incloudlist':''}><div class="tM">${recentLine(k,v,d)}</div><div class="bM v">${n.toLocaleString('en')} reviews</div><div class="acts3${cloud?' two':''}">${act('download','Download','download')}${mid}${act('settings_backup_restore','Restore','restore')}</div></div>`;
 }
 function backupBody(o={}){
@@ -780,13 +781,14 @@ function structureProblems(){
   for(const t of ALWAYS)if([...ph.querySelectorAll('.tog .tM')].some(e=>e.textContent===t))bad.push(`${tag}: ${t} still has a switch`);
   if(!ph.querySelector('#s-activities .hlp')?.textContent.includes('always asked'))bad.push(`${tag}: no line saying which activities are always asked`);
   if(ph.querySelector('[data-name="Sound"]'))bad.push(`${tag}: a Sound section remains`);
-  for(const t of ['Play words automatically','Speech rate','Voices'])if(![...ph.querySelectorAll('#s-activities .tM')].some(e=>e.textContent===t))bad.push(`${tag}: ${t} not under Activities`);
+  const order=[...ph.querySelectorAll('#s-activities .row')].map(r=>r.querySelector('.tM')?.textContent).filter(t=>['Heard words','Play words automatically','Spoken words','Speech rate','Voices','Reading'].includes(t)).join('|');
+  if(order!=='Heard words|Play words automatically|Spoken words|Speech rate|Voices|Reading')bad.push(`${tag}: Activities rows in the order ${order}`);
  });
  document.querySelectorAll('[data-toggle]').forEach(el=>{const ph=el.closest('.ph');
   if(el.dataset.on===el.dataset.off)bad.push(`${tagOf(ph)}: “${el.querySelector('.tM').textContent}” has one line for both states`);
   const shown=el.querySelector('.tx .bM')?.textContent;const want=el.dataset.value==='true'?el.dataset.on:el.dataset.off;
   if(shown!==want.replace(/&amp;/g,'&').replace(/&quot;/g,'"'))bad.push(`${tagOf(ph)}: “${el.querySelector('.tM').textContent}” shows the line for the other state`)});
- const acts=(r)=>[...r.querySelectorAll('.act')].map(a=>a.dataset.act).join(',');
+ const acts=(r)=>[...r.querySelectorAll('.bact')].map(a=>a.dataset.act).join(',');
  document.querySelectorAll('[data-recentlist]').forEach(l=>{const rows=[...l.querySelectorAll('[data-recent]')];
   if(rows.length!==KEEP)bad.push(`Recent backups lists ${rows.length}, not ${KEEP}`);
   if(new Set(rows.map(r=>r.dataset.recent.split('|')[0])).size<4)bad.push('Recent backups does not show every kind');
@@ -818,6 +820,18 @@ const txt=(el)=>{const c=el.cloneNode(true);c.querySelectorAll('.mi').forEach(m=
 function layoutProblems(){
  const bad=[];const phones=[...document.querySelectorAll('.ph')];
  phones.forEach(ph=>{const tag=tagOf(ph);
+  // nothing in one row may cover another row's box: sibling rows never intersect, and no part of a row reaches into another
+  const rowsIn=[...ph.querySelectorAll('.row')].filter(shownIn).map(r=>[r,r.getBoundingClientRect()]);
+  for(let i=0;i<rowsIn.length;i++)for(let j=i+1;j<rowsIn.length;j++){const [a,ra]=rowsIn[i],[b,rb]=rowsIn[j];if(a.contains(b)||b.contains(a))continue;
+   if(ra.top<rb.bottom-1&&ra.bottom>rb.top+1&&ra.left<rb.right-1&&ra.right>rb.left+1)bad.push(`${tag}: rows “${a.textContent.trim().slice(0,14)}” and “${b.textContent.trim().slice(0,14)}” overlap`)}
+  ph.querySelectorAll('.row *').forEach(el=>{if(el.closest('svg')&&el.tagName!=='svg')return;if(!shownIn(el))return;const own=el.closest('.row');const r=el.getBoundingClientRect();if(!r.width||!r.height)return;
+   for(const [b,rb] of rowsIn){if(b===own||b.contains(own)||own.contains(b))continue;
+    if(r.top<rb.bottom-1&&r.bottom>rb.top+1&&r.left<rb.right-1&&r.right>rb.left+1){bad.push(`${tag}: part of “${own.textContent.trim().slice(0,14)}” covers “${b.textContent.trim().slice(0,14)}”`);break}}});
+  // a filled shape inside a control stays within the control's own area: a slider's track and thumb within its 20 dp track box
+  ph.querySelectorAll('.track').forEach(t=>{if(!shownIn(t))return;const tr=t.getBoundingClientRect();if(tr.height>20.5)bad.push(`${tag}: slider track box ${Math.round(tr.height)} dp tall`);
+   t.querySelectorAll('*').forEach(el=>{const c=rgba(getComputedStyle(el).backgroundColor);if(c[3]===0)return;const r=el.getBoundingClientRect();
+    if(r.height>20.5||r.top<tr.top-0.5||r.bottom>tr.bottom+0.5)bad.push(`${tag}: a slider part ${Math.round(r.width)}×${Math.round(r.height)} outside its track`)})});
+  ph.querySelectorAll('.sw').forEach(el=>{if(!shownIn(el))return;const r=el.getBoundingClientRect();if(Math.abs(r.width-52)>0.5||Math.abs(r.height-32)>0.5)bad.push(`${tag}: a switch drawn ${Math.round(r.width)}×${Math.round(r.height)}`)});
   const pr=ph.getBoundingClientRect();const sc=ph.querySelector('.scroll');
   ph.querySelectorAll('*').forEach(el=>{if(el.closest('svg')&&el.tagName!=='svg')return;if(!shownIn(el))return;const r=el.getBoundingClientRect();
    if(r.left<pr.left-0.5||r.right>pr.right+0.5)bad.push(`${tag}: ${el.className||el.tagName} sticks out sideways`);
@@ -888,7 +902,7 @@ function check(){
  const all=[...new Set([...T,...L,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. Plan: the ${ORDER.length - 2} sections are in the planned order in every Settings frame; Sources is in Learning and not in Logs (#469); Your data holds only Backup and restore, export and import, with no cloud row and no Delete this profile, which is on the profile page; cloud backup is live on the Backup and restore page (#473, #470, owner); Add deck is in Advanced (#475); Activities has switches only for Written words, Heard words, Spoken words and Reading, says the rest are always asked, and holds the old Sound rows, with no Sound section left; Reminders sits in Reminder and privacy (#90); every switch shows the line for its state and no switch keeps one line in both, checked with every switch as set and again flipped; Recent backups lists five of four kinds, each named how and when it was made, each with Download, Send to cloud (or “In the cloud”, as one is) and Restore; Cloud backups lists all seven with Download and Restore only; Delete this profile is on the profile page, incoming; the restore sheet says the decks are not restored and will be downloaded; Reminders has no quiet hours and its preview names every language due; every row and line of the tab, and every changed part, is whole in one of the ${TAB_PAGES.length} frames of section 2. Layout: ${frames} frames at 360 × 800 dp, both ways: nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
+  :`Self-check: 0 problems. Plan: the ${ORDER.length - 2} sections are in the planned order in every Settings frame; Sources is in Learning and not in Logs (#469); Your data holds only Backup and restore, export and import, with no cloud row and no Delete this profile, which is on the profile page; cloud backup is live on the Backup and restore page (#473, #470, owner); Add deck is in Advanced (#475); Activities has switches only for Written words, Heard words, Spoken words and Reading, says the rest are always asked, with Play words automatically under Heard words and Speech rate and Voices below Spoken words, and no Sound section left; Reminders sits in Reminder and privacy (#90); every switch shows the line for its state and no switch keeps one line in both, checked with every switch as set and again flipped; Recent backups lists five of four kinds, each named how and when it was made, each with Download, Send to cloud (or “In the cloud”, as one is) and Restore; Cloud backups lists all seven with Download and Restore only; Delete this profile is on the profile page, incoming; the restore sheet says the decks are not restored and will be downloaded; Reminders has no quiet hours and its preview names every language due; every row and line of the tab, and every changed part, is whole in one of the ${TAB_PAGES.length} frames of section 2. Layout: all ${frames} frames at 360 × 800 dp, both ways: no row overlaps another and no part of a row covers another, every slider's track and thumb stay in their 20 dp track and every switch is 52 × 32, nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
  window.__check={problems:all,frames,pairs:C1.checked,pages:TAB_PAGES.length};
  if(marks)document.body.classList.add('marks');
  applyTheme(state());
