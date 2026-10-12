@@ -49,3 +49,11 @@ repositories.
 ## Tags (owner, 2026-10-12)
 
 Never create or push git tags. Only the owner tags releases.
+
+## The `direct-code` label (owner, 2026-10-12)
+
+Label an issue `direct-code` once every decision on it is made: the owner's
+answers are in the issue, and any mockup it needs is approved. A
+contributor can then build it as written, without asking anything. Remove
+the label if a new question comes up, and add it when the last one is
+answered.
