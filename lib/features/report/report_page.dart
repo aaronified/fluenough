@@ -9,6 +9,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/widgets/system_bar.dart';
 import 'log_consent.dart';
 
 /// What each [ReportKind] looks like and asks, in the reporter's language.
@@ -162,7 +163,12 @@ class _ReportPageState extends State<ReportPage> {
     return Scaffold(
       appBar: AppBar(title: Text(l10n.reportTitle)),
       body: ListView(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          16,
+          8,
+          16,
+          24,
+        ).clearingSystemBar(context),
         children: <Widget>[
           Semantics(
             container: true,

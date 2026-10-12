@@ -7,6 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'review_languages_page.dart';
 import 'review_waiting.dart';
@@ -57,7 +58,12 @@ class WaitingForReviewPage extends StatelessWidget {
       );
     }
     return ListView(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
+      padding: const EdgeInsetsDirectional.fromSTEB(
+        16,
+        4,
+        16,
+        24,
+      ).clearingSystemBar(context),
       children: <Widget>[
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(4, 8, 4, 8),
