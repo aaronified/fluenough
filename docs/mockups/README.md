@@ -15,13 +15,15 @@ app and plans in the style of `languages-you-know.html`: real theme colours,
 light and dark, 2x text, a contrast self-check, and Hindi or Bengali
 examples. Until then, treat them as history, not spec.
 
-- `adapted-to-you.html`, `ambient.html`, `moment.html` and `story.html`:
-  the "Adjusted to you" designs (ADR-0035). Merge them into one current
-  mockup.
+- `adapted-to-you.html`: the "Adjusted to you" designs (ADR-0035).
 - `language-picker.html`: the language picker (#443). It needs to match
   deck downloads, the language menu (#461) and review by course (#462).
 - `reviewer-mode.html` and `drafts/`: reviewer mode. It needs the owner's
   2026-10-09 notes (`drafts/README.md`, also in
   `docs/plans/reviewing-scope.md`), plus #476, #477 and #471.
+
+Deleted, as not needing adaptation: `ambient.html`, `moment.html` and
+`story.html`, earlier versions of `adapted-to-you.html`. They are in git
+at 19d200b.
 
 Order: after the current mockups (#486 and #227) and the Settings mockup.
