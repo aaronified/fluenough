@@ -191,20 +191,18 @@ td .big{font-size:17px;line-height:26px;color:var(--page-fg)}
 
 <section class="opt" id="strings">
 <h2>The sheet's words</h2>
-<p>The question and the “I can read it” answer are in the language's own script, each with a line in the app's language under it. The other answer is in the app's language only. Both Hindi lines use <i>मुझे … आती है</i> / <i>क्या आपको … आती है?</i>, “is known to me”. The verb agrees with <i>लिपि</i> (feminine), not with the speaker, so one sentence serves everyone. <i>मैं … पढ़ सकता/सकती हूँ</i> would need a form for each gender. The Bengali verb does not mark gender, and <i>আপনি</i> is the polite “you”, as the app uses elsewhere.</p>
+<p>The question and the “I can read it” answer are <b>only</b> in the language's own script: no translation under either, since a translation would answer the question for anyone. Someone who cannot read the script sees one choice they can read, “I can only speak Bengali”, in the app's language. A screen reader reads the question and the first answer in the language's own voice, from their own-script text (each is marked with its language), and the second answer in the app's language. Both Hindi lines use <i>मुझे … आती है</i> / <i>क्या आपको … आती है?</i>, “is known to me”. The verb agrees with <i>लिपि</i> (feminine), not with the speaker, so one sentence serves everyone. <i>मैं … पढ़ सकता/सकती हूँ</i> would need a form for each gender. The Bengali verb does not mark gender, and <i>আপনি</i> is the polite “you”, as the app uses elsewhere.</p>
 <table>
 <thead><tr><th></th><th>Bengali · বাংলা</th><th>Hindi · हिन्दी</th></tr></thead>
 <tbody>
 <tr><th>Question, own script</th><td data-h="Bengali"><span class="big" lang="bn">আপনি কি বাংলা লিপি পড়তে পারেন?</span></td><td data-h="Hindi"><span class="big" lang="hi">क्या आपको हिंदी लिपि पढ़नी आती है?</span></td></tr>
-<tr><th>Under it, app language</th><td data-h="Bengali">Can you read the Bengali script?</td><td data-h="Hindi">Can you read the Hindi script?</td></tr>
 <tr><th>Answer 1, own script</th><td data-h="Bengali"><span class="big" lang="bn">আমি বাংলা লিপি পড়তে পারি</span></td><td data-h="Hindi"><span class="big" lang="hi">मुझे हिंदी लिपि पढ़नी आती है</span></td></tr>
-<tr><th>Its gloss</th><td data-h="Bengali">I can read the Bengali script</td><td data-h="Hindi">I can read the Hindi script</td></tr>
 <tr><th>Answer 2, app language only</th><td data-h="Bengali">I can only speak Bengali</td><td data-h="Hindi">I can only speak Hindi</td></tr>
-<tr><th>Row line once answered</th><td data-h="Bengali">Can read the Bengali script / Can only speak Bengali</td><td data-h="Hindi">Can read the Hindi script / Can only speak Hindi</td></tr>
+<tr><th>Row line once answered, app language (a summary after the choice)</th><td data-h="Bengali">Can read the Bengali script / Can only speak Bengali</td><td data-h="Hindi">Can read the Hindi script / Can only speak Hindi</td></tr>
 </tbody></table>
 <ul>
 <li>Hindi's script is Devanagari, which Hindi shares with Marathi, Nepali, Bhojpuri and others. “Hindi script” (<i>हिंदी लिपि</i>) is what people say; for a language whose script name is better known, such as Gurmukhi for Punjabi, the sentence names the script itself. Each language's three sentences are data in <code>assets/languages.yaml</code>, written and checked by a speaker, never put together from parts.</li>
-<li>A language with no own-script sentences yet asks in the app's language only, with the same two answers.</li>
+<li>A language is listed only once it has both own-script sentences; a test checks that they are in its script. Asked in the app's language, the question would test nothing.</li>
 <li>Folding: each family is a row with its name, how many languages it holds, and an arrow. A screen reader hears “Indo-Aryan, 24 languages, collapsed, button” and then “expanded”. Searching shows every match whatever is folded. Your languages and the top picks stay above the families.</li>
 <li>Tapping a chosen language opens the same sheet with its answer marked, plus “Remove Bengali”.</li><li>The sheet's own question is its heading: it already names the language. Its text grows at most 1.5x, as the first launch's question does, so both answers stay in view at the largest text size.</li>
 </ul>
@@ -236,8 +234,8 @@ const PICKS=['en','hi','bn','te'];   // top picks for a phone set to English (In
 
 /* The sheet's sentences: see "The sheet's words" below the frames. */
 const ASK={
- bn:{q:'আপনি কি বাংলা লিপি পড়তে পারেন?',qEn:'Can you read the Bengali script?',read:'আমি বাংলা লিপি পড়তে পারি',readEn:'I can read the Bengali script',speak:'I can only speak Bengali'},
- hi:{q:'क्या आपको हिंदी लिपि पढ़नी आती है?',qEn:'Can you read the Hindi script?',read:'मुझे हिंदी लिपि पढ़नी आती है',readEn:'I can read the Hindi script',speak:'I can only speak Hindi'},
+ bn:{q:'আপনি কি বাংলা লিপি পড়তে পারেন?',read:'আমি বাংলা লিপি পড়তে পারি',speak:'I can only speak Bengali'},
+ hi:{q:'क्या आपको हिंदी लिपि पढ़नी आती है?',read:'मुझे हिंदी लिपि पढ़नी आती है',speak:'I can only speak Hindi'},
 };
 const answerLine=(c,reads)=>reads?`Can read the ${LANG[c].n} script`:`Can only speak ${LANG[c].n}`;
 
@@ -314,10 +312,10 @@ function screen(mode,st){
  out+=html+note('lock_outline','Kept on this phone. Change it any time in Settings.');
  return out;
 }
-const sheet=(c,current)=>{const a=ASK[c];return `<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${LANG[c].n}"><div class="handle"></div>
- <div class="sh"><div class="own lf" lang="${c}">${a.q}</div><div class="bM v lf">${a.qEn}</div></div>
- <div class="opts"><div class="sopt lf" data-tap role="button"><span class="tx"><span class="own" lang="${c}" style="display:block">${a.read}</span><span class="bM v" style="display:block">${a.readEn}</span></span>${ic(current===true?'radio_button_checked':'menu_book','mo')}</div>
- <div class="sopt lf" data-tap role="button"><span class="tx"><span class="tM">${a.speak}</span></span>${ic(current===false?'radio_button_checked':'record_voice_over','mo')}</div></div>
+const sheet=(c,current)=>{const a=ASK[c];return `<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${a.q}" lang="${c}"><div class="handle"></div>
+ <div class="sh"><div class="own lf" lang="${c}" data-own>${a.q}</div></div>
+ <div class="opts"><div class="sopt lf" data-tap role="button" lang="${c}" aria-label="${a.read}"><span class="tx"><span class="own" lang="${c}" data-own style="display:block">${a.read}</span></span>${ic(current===true?'radio_button_checked':'menu_book','mo')}</div>
+ <div class="sopt lf" data-tap role="button" lang="en" aria-label="${a.speak}"><span class="tx"><span class="tM">${a.speak}</span></span>${ic(current===false?'radio_button_checked':'record_voice_over','mo')}</div></div>
  <div class="cancel"><span class="tbtn lL lf" data-tap>Cancel</span></div></div>`};
 
 const DONE={bn:true,hi:false};   // reads Bengali; speaks Hindi only
@@ -414,6 +412,11 @@ function layoutProblems(){
    if(sb.getBoundingClientRect().height>Math.max(56,lh+16)+0.5)bad.push(`${tag}: search field taller than one line`)});
   // the words: never Yes or No, and every family header says whether it is open
   ph.querySelectorAll('[data-tap]').forEach(el=>{if(/^(yes|no)$/i.test(el.textContent.trim()))bad.push(`${tag}: an option labelled Yes or No`)});
+  // the sheet: question and "I can read it" in the own script only, nothing translated, labels the same text
+  const sh2=ph.querySelector('.sheet');if(sh2){const txt=[...sh2.querySelectorAll('.sh,.sopt[lang]:not([lang=en])')].map(e=>[...e.querySelectorAll('[lang]:not(.mi)')].map(x=>x.textContent).join(' ')||e.textContent).join(' ');
+   if(/[A-Za-z]/.test(txt))bad.push(`${tag}: English in the script question or its answer`);
+   sh2.querySelectorAll('.sopt[lang]:not([lang=en])').forEach(o=>{if(!/[^\x00-\x7F]/.test(o.getAttribute('aria-label')||''))bad.push(`${tag}: read answer's label not in its script`)});
+   if(sh2.querySelectorAll('.sopt').length!==2)bad.push(`${tag}: sheet without two answers`)}
   ph.querySelectorAll('.row.fam').forEach(el=>{if(!el.hasAttribute('aria-expanded'))bad.push(`${tag}: family without its folded state`)});
  });
  if(document.documentElement.scrollWidth>window.innerWidth+0.5)bad.push(`page scrolls sideways (${document.documentElement.scrollWidth} > ${window.innerWidth})`);
@@ -452,7 +455,7 @@ function check(){
  const all=[...new Set([...L1.bad,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp: nothing sticks out or is cut in half, every content area is at least 60% filled, no sideways scroll, the search field is one line, the pinned button and the sheet sit above the 3-button navigation bar, every target is at least 48 × 48, no option says Yes or No, every family states whether it is folded. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1; the disabled button is exempt).`;
+  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp: nothing sticks out or is cut in half, every content area is at least 60% filled, no sideways scroll, the search field is one line, the pinned button and the sheet sit above the 3-button navigation bar, every target is at least 48 × 48, no option says Yes or No, the sheet's question and read answer are in the own script only, every family states whether it is folded. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1; the disabled button is exempt).`;
  window.__check={problems:all,frames:L1.frames,pairs:C1.checked};
  applyTheme(state());
 }
