@@ -441,6 +441,9 @@ class Report:
     # quote, by card id: a single-file card's, a core's quoted words, a
     # layer's texts. For the stem check across files.
     note_texts: dict[str, list[str]] = field(default_factory=dict)
+    # A grammar deck's lemmas, for the stem check: a pronoun's case forms are
+    # forms of the pronoun, not a new stem (#480).
+    pattern_lemmas: list[str] = field(default_factory=list)
     # A rules core: its rules, (id, where), and its table.
     rules_defined: list[tuple[str, str]] = field(default_factory=list)
     table: TableInfo | None = None
@@ -1149,6 +1152,7 @@ def check_pattern(r: Report, pattern: object, *, core: bool = False) -> None:
             if lemma in lemmas:
                 r.error(ewhere, "duplicate lemma")
             lemmas.add(lemma)
+            r.pattern_lemmas.append(lemma)
             # Card ids are ASCII (AGENTS.md rule 1): a lemma such as जाना
             # names its row with a key instead.
             key = entry.get("key")
@@ -4496,11 +4500,19 @@ def warn_base_stems_across(reports: list[Report]) -> None:
     its core or any layer, name the base: the stem has changed, and the
     learner is told which stem the form takes (DECK-FORMAT.md, "Base
     words"). A warning, not an error: a prefix or a sound change can move
-    the first letter without a new stem."""
+    the first letter without a new stem. A pronoun's case forms are not a
+    new stem either: তাৰ (tār) is a form of সি (xi), not সি on another stem, so
+    a base that is a pronoun, a card of `pos: pronoun` or a lemma of a
+    pronoun grammar deck, is left out (#480)."""
     ctx = _context(reports)
     for code in _languages(reports):
         lang = ctx.lang(code)
         tcards = lang.tcards()
+        pronouns = {_key(t) for c in tcards.values() if c.pos == "pronoun"
+                    for t in [c.target, *c.alt_targets]}
+        pronouns.update(_key(lemma) for rep in lang.all()
+                        if rep.deck_kind == "grammar" and "grammar-pronoun" in rep.path.stem
+                        for lemma in rep.pattern_lemmas)
         texts: dict[str, list[str]] = {}
         for rep in lang.all():
             for cid, found in rep.note_texts.items():
@@ -4519,7 +4531,9 @@ def warn_base_stems_across(reports: list[Report]) -> None:
                     if not _is_str(word) or not _is_str(lemma):
                         continue
                     w, stem = _key(word), _key(lemma)
-                    if w[:1] == stem[:1] or any(stem in t for t in notes):
+                    if w[:1] == stem[:1] or stem in pronouns:
+                        continue
+                    if any(stem in t for t in notes):
                         continue
                     rep.warn(c.where, f"{prefix}bases: {word!r} does not start as its "
                                       f"base {lemma!r} does, and the card's notes do not "
