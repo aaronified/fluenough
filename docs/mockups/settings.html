@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Settings, Redrawn Once</title>
-<meta name="description" content="The whole Settings tab with every planned change folded in: Sources in Learning (#469), one data section with Backup and restore (#473, #470), Add deck as an advanced row (#475), a switch per activity (#243) and Reminders (#90).">
+<meta name="description" content="The whole Settings tab with every planned change folded in: Sources in Your languages (#469), one data section with Backup and restore (#473, #470), Add deck as an advanced row (#475), a switch per activity (#243) and Reminders (#90).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
@@ -241,6 +241,21 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .logl .tm{color:var(--onSv);flex:none}
 .spage .body{padding:8px 16px 0}
 .spage .glab{margin-top:20px}
+/* Your decks, and the custom deck review */
+.iss .lead{align-self:flex-start;margin-top:2px}
+.iss.err .lead{color:var(--err)}
+.iss.warn .lead{color:var(--onSv)}
+.iss.ok .lead{color:var(--p)}
+.code{font-family:"Roboto Mono",ui-monospace,monospace;font-size:calc(13px*var(--t));line-height:calc(20px*var(--t))}
+.fixrow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:8px}
+.field2{flex:1;min-width:120px;min-height:48px;border-radius:12px;box-shadow:inset 0 0 0 2px var(--p);display:flex;align-items:center;padding:0 12px}
+.caret{display:inline-block;width:2px;height:1.2em;background:var(--p);vertical-align:-0.2em;margin-left:1px}
+.tonalb{min-height:48px;border-radius:24px;background:var(--sc);color:var(--onSc);display:inline-flex;align-items:center;gap:8px;padding:0 16px}
+.rbar{flex:none;background:var(--sCont);padding:8px 16px 12px}
+.rbar .why{padding:0 4px 8px}
+.rbar .acts{margin-top:0}
+.filled[data-dis]{background:color-mix(in srgb,var(--onS) 12%,transparent);color:color-mix(in srgb,var(--onS) 38%,transparent)}
+.dhead{padding:4px 24px 0}
 /* the reminder as Android shows it: drawn approximately */
 .notif{margin:0 16px;background:var(--sHigh);border-radius:24px;padding:14px 16px}
 .notif .nh{display:flex;align-items:center;gap:8px;margin-bottom:4px}
@@ -256,7 +271,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <body class="marks">
 <div class="wrap">
 <h1>Settings, with every planned change, drawn once</h1>
-<p class="lede">The whole Settings tab, top to bottom, with what 0.5.0 and 0.6.0 plan for it folded in, so it is rearranged once rather than five times. <b>#469</b> Sources moves from Logs to Learning. <b>#473</b> Your data and Back up to the cloud become one section, which holds <b>#470</b> Backup and restore; cloud backup moves onto that page, built with it. <b>#475</b> Add deck leaves the Decks screen for a row of Settings. <b>#243</b>, as the owner narrowed it on 2026-10-12: switches only for the activities a learner may skip, with the Sound section merged into them. <b>#90</b> Reminders gets its page now and ships in 0.6.0. Languages I know opens the approved screen of <b>#490</b>. Everything else is as <code>settings_page.dart</code> draws it today, in its order, with its icons and words. The learner knows English, learns Bengali and Hindi, and has reviewing on. <b>Revised 2026-10-12</b> after the owner's reviews: Settings is now a short list of section pages, with a Review log and an App log screen, destructive actions in the error colour, recent backups, cloud backup on the backup page, reminders for several languages without quiet hours, and fewer activity switches. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="languages-you-know.html">languages-you-know.html</a>; the default, Clay on pure black, is the owner's phone. Dashed outlines mark what changes and are not part of the app. Decisions this page makes are marked <span class="prop">Proposed</span>.</p>
+<p class="lede">The whole Settings tab, top to bottom, with what 0.5.0 and 0.6.0 plan for it folded in, so it is rearranged once rather than five times. <b>#469</b> Sources moves from Logs to Your languages (the page once called Learning). <b>#473</b> Your data and Back up to the cloud become one section, which holds <b>#470</b> Backup and restore; cloud backup moves onto that page, built with it. <b>#475</b> Add deck leaves the Decks screen for a row of Settings. <b>#243</b>, as the owner narrowed it on 2026-10-12: switches only for the activities a learner may skip, with the Sound section merged into them. <b>#90</b> Reminders gets its page now and ships in 0.6.0. Languages I know opens the approved screen of <b>#490</b>. Everything else is as <code>settings_page.dart</code> draws it today, in its order, with its icons and words. The learner knows English, learns Bengali and Hindi, and has reviewing on. <b>Revised 2026-10-12</b> after the owner's reviews: Settings is now a short list of section pages, with a Review log and an App log screen, destructive actions in the error colour, recent backups, cloud backup on the backup page, reminders for several languages without quiet hours, and fewer activity switches. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="languages-you-know.html">languages-you-know.html</a>; the default, Clay on pure black, is the owner's phone. Dashed outlines mark what changes and are not part of the app. Decisions this page makes are marked <span class="prop">Proposed</span>.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -282,7 +297,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 
 <section class="opt" id="order">
 <h2>1 · The Settings tab: a short list of pages</h2>
-<p>Owner, 2026-10-12: “the settings is too long now.” The tab is now the profile card and one row per section, each with a one-line summary of what is set, opening that section's page. Every control left the tab. The list is about one and a half screens at 1x. <b>Add deck</b> stays a row of its own because it is one action and opens its flow straight away; <b>App log</b> opens the log itself. Rows marked by the dashed outline are new.</p>
+<p>Owner, 2026-10-12: “the settings is too long now.” The tab is now the profile card and one row per section, each with a one-line summary of what is set, opening that section's page. Every control left the tab. The list is about one and three quarters screens at 1x, with ten rows. <b>Add deck</b> stays a row of its own because it is one action and opens its flow straight away; <b>App log</b> opens the log itself. Rows marked by the dashed outline are new.</p>
 <table>
 <thead><tr><th>#</th><th>Row</th><th>Its line</th><th>Opens</th></tr></thead>
 <tbody id="order-rows"></tbody>
@@ -298,8 +313,14 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <div class="frames" id="fr-pages"></div>
 </section>
 
+<section class="opt" id="decks">
+<h2>3 · Your decks, and checking an upload</h2>
+<p>Owner, 2026-10-12: Add deck becomes <b>Your decks</b>: the learner's own decks, grouped by the language learned and then the language it is taught from, each with Open and Remove (in the error colour); <b>Get a template</b> in two formats, a standalone deck or a full language (core, layer and path), saved to Downloads; and <b>Upload a deck</b>. Own decks live only in the app's data on this phone and are in every backup. An upload is checked at once, and <b>Check the deck</b> lists what was found: problems that must be fixed, each naming its card or line with a fix right there (an edit in place, or one tap such as “Add quotes” or “Use the next free id”), and warnings that do not block. <b>Add to my decks</b> stays off until no problem is left. Bengali, Hindi.</p>
+<div class="frames" id="fr-decks"></div>
+</section>
+
 <section class="opt" id="logs">
-<h2>3 · Review log and App log</h2>
+<h2>3b · Review log and App log</h2>
 <p>Owner: the review log's export and import belong on “a review log screen where users can also see the logs”, and the app log is one screen, the log shown as it opens. Both put their actions in a bottom bar above Android's buttons: Review log has <b>Export</b> and <b>Import</b>, App log <b>Copy</b>, <b>Export</b> and <b>Clear</b>. Clear deletes, so it is in the error colour. Review log rows are the card in its script with its reading, its meaning, the activity and the time, and the rating at the end. Hindi and Bengali.</p>
 <div class="frames" id="fr-logs"></div>
 </section>
@@ -329,8 +350,10 @@ One file, <code>fluenough-backup-&lt;date&gt;.fnbackup</code>, holds the review 
 <table>
 <thead><tr><th>#</th><th>Decision</th><th>Why</th></tr></thead>
 <tbody>
-<tr><th>1</th><td data-h="Decision">The tab is a short list (owner). <span class="prop">Proposed</span> rows, in order: Learning, Activities and memory, Look and language, Reminders and privacy, Your data, Reviewing; then Add deck, App log, Updates. Each line is one line at 1x and says what is set.</td><td data-h="Why">The everyday choices first, the ones for reports and testing after. Two groups, no headings: a heading over one row says nothing the row does not.</td></tr>
-<tr><th>1a</th><td data-h="Decision"><span class="prop">Proposed</span> Only Add deck stays a row that acts at once; everything else opens a page. Adjust to me joins Activities and memory instead of a page of its own; the Advanced and Logs sections are gone.</td><td data-h="Why">Add deck is one row and opens a flow, so a page around it would be a page of one row. Adjust to me fits each activity's memory, so it belongs beside the activities, and keeps the tab near one and a half screens.</td></tr>
+<tr><th>1</th><td data-h="Decision">The tab is a short list in two groups (owner): Your languages (once Learning), Activities and memory, Look and language, Reviewing, Your decks; then Reminders, Privacy, Your data, App log, Updates. Each line is one line at 1x and says what is set.</td><td data-h="Why">The owner put Your decks under Reviewing and moved Reminders, Privacy and Your data to the bottom group.</td></tr>
+<tr><th>1a</th><td data-h="Decision"><span class="prop">Proposed</span> Reminders opens its page straight from the tab (“Feature incoming” until 0.6.0); Privacy holds the PIN lock. Adjust to me stays in Activities and memory.</td><td data-h="Why">Reminders and Privacy are apart now (owner), so each row opens what it names.</td></tr>
+<tr><th>1e</th><td data-h="Decision"><span class="prop">Proposed</span> Your decks: Upload a deck and Get a template first, then the decks under “{language} › from {language}” headings, each with Open and Remove; Remove asks first and is in the error colour.</td><td data-h="Why">The two actions are what a new user comes for; the list grows below them.</td></tr>
+<tr><th>1f</th><td data-h="Decision"><span class="prop">Proposed</span> Check the deck opens right after the file is picked. Problems first, then warnings; each problem names its card id or line and offers its fix in place; fixed problems stay listed, ticked. Add to my decks is in a bottom bar, off with a line saying how many problems remain.</td><td data-h="Why">The owner asked that minor problems be corrected right after the upload; seeing what was fixed lets the learner trust the deck.</td></tr>
 <tr><th>1b</th><td data-h="Decision">Your data holds Backup and restore and Review log (owner); Delete this profile is on Your profile (owner).</td><td data-h="Why">Export and import live on the Review log, beside the log they act on.</td></tr>
 <tr><th>1c</th><td data-h="Decision"><span class="prop">Proposed</span> Review log and App log put their actions in a bottom bar, icon over word; at 2x icons alone, named by tooltips.</td><td data-h="Why">The same as a backup's actions, so the app has one way to show a row of actions.</td></tr>
 <tr><th>1d</th><td data-h="Decision">Destructive actions in the error colour, text and icon (owner): Clear, Delete this profile, and Replace and restore, <span class="prop">Proposed</span> drawn as an error-filled button.</td><td data-h="Why">Replace and restore replaces everything; the copy it keeps makes it undoable, but it is still the one irreversible-looking step. Remove (on a language) and Disconnect (the cloud) follow the same rule where they are built; they are not drawn here.</td></tr>
@@ -371,6 +394,8 @@ const ME={know:'English',learn:'Bengali, Hindi',learnAnd:'Bengali and Hindi',sou
 /* the backups the app made as each update downloaded: the last three (app-backup.md) */
 const RECENT=[['you','','Dec 2',3620],['update','0.5.3','Nov 30',3412],['restore','','Nov 20',3190],['file','','Nov 20',2980],['update','0.5.2','Nov 16',2980]];
 const KEEP=5;
+/* the learner's own decks, grouped by language learned, then the language it is taught from */
+const DECKS=[{target:'Bengali',native:'English',decks:[['Market words',24,'Nov 3'],['My family',18,'Oct 21']]},{target:'Hindi',native:'English',decks:[['Cricket',30,'Nov 14']]}];
 const CLOUD={service:'Google Drive',folder:'Fluenough backups'};
 const IN_CLOUD=new Set(['you||Dec 2']);   // the local backups already sent
 const CLOUD_LIST=[['you','','Dec 2',3620],['you','','Nov 24',3301],['you','','Nov 12',3044],['update','0.5.1','Nov 2',2415],['you','','Oct 25',2133],['you','','Oct 18',1902],['you','','Oct 14',1788]];   // the last five, whatever made them (owner, 2026-10-12)
@@ -382,7 +407,7 @@ const ACTIVITY_SWITCHES=['Written words','Heard words','Spoken words','Reading']
 const ALWAYS=['Seen words','Grammar','Matching pairs','Choosing answers','Phonemic contrasts','Sound','Quiet hours'];
 const ORDER_TABLE=[
  ['Profile card','Profile card; tapping it opens Your profile, with Delete this profile, after the design file <span class="prop">Proposed</span>','owner, 2026-10-12'],
- ['Learning: languages, the skill switches, readings, 18+, alphabets','Learning: Languages I know, Languages I’m learning, readings, 18+, alphabets, <b>Sources</b>','#469 · Sources moves here'],
+ ['Learning: languages, the skill switches, readings, 18+, alphabets','Your languages: Languages I know, Languages I’m learning, readings, 18+, alphabets, <b>Sources</b>','#469 · Sources moves here'],
  ['—','<b>Activities</b>: switches only for Written words, Heard words (with Play words automatically under it), Spoken words (then Speech rate and Voices, shared by both) and Reading; the rest always asked <span class="prop">Proposed</span>','#243 · owner, 2026-10-12'],
  ['Adjust to me','Adjust to me','—'],
  ['Sound: Sound, Play words automatically, Speech rate, Voices','— (merged into Activities; the Sound switch dropped) <span class="prop">Proposed</span>','owner, 2026-10-12'],
@@ -482,7 +507,7 @@ function sections(o={}){
  const remRow=o.reminderLive
   ?tile({icon:'notifications',title:'Reminders',sub:`Daily at ${ME.time}, on days with cards due`,trail:chev(),chg:true,attrs:' data-k="reminders"'})
   :tile({icon:'notifications',title:'Reminders',sub:'No reminders',trail:chev(),inc:true,chg:true,attrs:' data-k="reminders"'});
- const reminder=sect('s-reminder','Reminders and privacy',null,[remRow,S('pin',{icon:'lock',attrs:' data-k="pin"'})]);
+ const reminder=sect('s-privacy','Privacy',null,[S('pin',{icon:'lock',attrs:' data-k="pin"'})],{after:hlp('Profiles, and the PIN that locks one, come in 0.6.0 (#204).')});
  const data=sect('s-data','Your data',null,[
   tile({icon:'settings_backup_restore',filled:true,title:'Backup and restore',sub:`Last backup ${RECENT[0][2]}, made by you`,trail:chev(),cls:'tall',attrs:' data-k="backup"'}),
   tile({icon:'history',title:'Review log',sub:`${ME.reviews.toLocaleString('en')} reviews · export and import there`,trail:chev(),cls:'tall',chg:true,attrs:' data-k="reviewlog"'}),
@@ -507,26 +532,27 @@ function sections(o={}){
 }
 /* The Settings tab: the profile card, then one row per section, each opening its page (owner, 2026-10-12). Add deck,
    one row, opens its flow straight away. */
-const TOP=()=>{const on=['production','listening','speaking','reading'].filter(k=>isOn(k)).length;
+const TOP=(o={})=>{const on=['production','listening','speaking','reading'].filter(k=>isOn(k)).length;
  return [
- [['learning','school','Learning',ME.learn],
+ [['learning','school','Your languages',ME.learn],
   ['activities','checklist','Activities and memory',on===4?'All on':`${4-on} off · Seen words always on`],
   ['look','palette','Look and language','System · Clay · English'],
-  ['privacy','notifications','Reminders and privacy','No reminders · no PIN lock'],
+  ['review','rate_review','Reviewing',isOn('review')?'On · no languages chosen':'Off'],
+  ['decks','style','Your decks',`${DECKS.reduce((n,g)=>n+g.decks.length,0)+(o.added?1:0)} decks of your own`]],
+ [o.reminderLive?['reminders','notifications','Reminders',`Daily at ${ME.time}`]:['reminders','notifications','Reminders','No reminders','inc'],
+  ['privacy','lock','Privacy','No PIN lock'],
   ['data','folder','Your data',`Last backup ${RECENT[0][2]} · review log`],
-  ['review','rate_review','Reviewing',isOn('review')?'On · no languages chosen':'Off']],
- [['adddeck','add','Add deck','A .yaml deck on this phone'],
   ['applog','receipt_long','App log',`${ME.logLines} lines`],
   ['updates','system_update','Updates',`You have ${APP}`]]]};
 function settingsBody(o={}){
  const S=sections(o);
- const groups=TOP().map(g=>`<div class="sect" data-name="list"><div class="grp">${g.map(([k,icon,title,sub])=>tile({icon,filled:['checklist','add','folder'].includes(icon)?false:false,title,sub,trail:chev(),chg:true,attrs:` data-top="${k}"`})).join('')}</div></div>`).join('');
+ const groups=TOP(o).map(g=>`<div class="sect" data-name="list"><div class="grp">${g.map(([k,icon,title,sub,inc])=>tile({icon,title,sub,trail:chev(),chg:true,inc:inc==='inc',attrs:` data-top="${k}"`})).join('')}</div></div>`).join('');
  const foot=`<div class="sect" id="s-footer" data-name="Footer"><div class="foot lf">${mark()}<span class="hs">Fluenough ${APP} · Free software, GPL-3.0 · Works offline once decks are downloaded</span></div></div>`;
  return `<div class="tabh lf"><span class="hL" role="heading">Settings</span><span class="ibtn rep" data-tap>${ic('bug_report','mo')}</span></div><div class="body">${S.profile}${groups}${foot}</div>`;
 }
-const PAGE_TITLES={learning:'Learning',activities:'Activities and memory',look:'Look and language',privacy:'Reminders and privacy',data:'Your data',review:'Reviewing',updates:'Updates'};
+const PAGE_TITLES={learning:'Your languages',activities:'Activities and memory',look:'Look and language',privacy:'Privacy',decks:'Your decks',data:'Your data',review:'Reviewing',updates:'Updates'};
 function sectionBody(key,o={}){const S=sections(o);
- const inner={learning:S.learning,activities:S.activities+S.adjust,look:S.look,privacy:S.reminder,data:S.data,review:S.review,updates:S.updates}[key];
+ const inner={learning:S.learning,activities:S.activities+S.adjust,look:S.look,privacy:S.reminder,decks:decksBody(o),data:S.data,review:S.review,updates:S.updates}[key];
  return `<div class="body" data-page="${key}">${inner}</div>`}
 const pageOf=(key,o={})=>pagePhone(PAGE_TITLES[key],sectionBody(key,o),{...o,screen:'sp-'+key,cls:'spage'});
 /* pos: {off:px} | {skip:selector} | {end:true} | {} for the top */
@@ -579,7 +605,7 @@ function profileBody(){
  const shapes=['cookie','clover','flower','sunny'].map((n,i)=>`<span class="shp${i===0?' on':''}" data-tap role="radio" aria-checked="${i===0}" aria-label="${n}">${shape(n,56,['var(--pc)','var(--sc)','var(--tc)','var(--pc)'][i])}</span>`).join('');
  return `<div class="lbl lf" role="heading">Pick a shape</div><div class="shapes lf">${shapes}</div>
  <div class="lbl lf" role="heading">Name</div><div class="field lf" data-tap><span class="bL v">Add a name</span></div>
- <div class="hlp lf" style="padding:8px 32px 0"><span class="hs">Your languages are in Settings, under Learning.</span></div>
+ <div class="hlp lf" style="padding:8px 32px 0"><span class="hs">Languages are set in Settings, Your languages.</span></div>
  <div class="lbl lf" role="heading">Lock</div><div class="card">${S('pin',{icon:'lock',inc:false})}</div>
  <div class="lbl lf" role="heading">This profile</div><div class="grp cnt" data-profilepage>${tile({icon:'delete',title:'Delete this profile',sub:'Deletes its review log for good. Back it up first',inc:true,err:true,chg:true,attrs:' data-k="delete" data-destructive'})}</div>
  <div style="padding:24px 16px 0"><span class="filled lf" data-tap style="display:flex"><span class="one">Save</span></span></div>`;
@@ -603,6 +629,37 @@ function appLogBody(){
  <div class="logcard" data-loglines>${LOG.map(([tm,txt])=>`<div class="logl bM lf"><span class="tm one">${tm}</span><span>${txt}</span></div>`).join('')}</div>`;
 }
 const appLogPhone=(o={})=>pagePhone('App log',appLogBody(),{...o,screen:'applog',bar:bar([['content_copy','Copy','copy'],['ios_share','Export','export'],['delete','Clear','clear',true]])});
+/* Your decks (owner): the learner's own decks, kept only on this phone and in every backup */
+function decksBody(o={}){
+ const act=(icon,label,name,dz)=>`<span class="bact lL${dz?' dz':''}" data-tap data-act="${name}"${dz?' data-destructive':''} role="button" aria-label="${label}" title="${label}">${ic(icon,'mo')}<span>${label}</span></span>`;
+ const groups=DECKS.map(g=>{const decks=[...g.decks];if(o.added&&g.target==='Bengali')decks.unshift(['Kitchen words',40,'today']);
+  return `<div class="lbl lf" role="heading" data-deckgroup="${g.target}|${g.native}">${g.target} › from ${g.native}</div><div class="grp cnt">${decks.map(([n,c,d])=>`<div class="row lf bk${d==='today'?' chg':''}" data-deck="${n}"><div class="tM">${n}</div><div class="bM v">${c} cards · added ${d}</div><div class="acts3 two">${act('visibility','Open','open')}${act('delete','Remove','remove',true)}</div></div>`).join('')}</div>`}).join('');
+ return `<div class="intro"><div class="bL v lf">Decks you made yourself. They are kept only on this phone, and every backup holds them.</div></div>
+ <div class="grp cnt">${tile({icon:'upload_file',title:'Upload a deck',sub:'Choose a .yaml file. It is checked before it is added',trail:chev(),chg:true,attrs:' data-k="upload"'})}${tile({icon:'description',title:'Get a template',sub:'A standalone deck, or a full language',trail:chev(),chg:true,attrs:' data-k="template"'})}</div>
+ ${groups}
+ <div class="note lf">${ic('settings_backup_restore')}<span class="bM">Kept in Backup and restore with everything else. Removing one deletes it and its progress from this phone.</span></div>`;
+}
+/* the custom deck review (owner): right after an upload; errors must be fixed, minor ones here; warnings do not block */
+function deckReviewBody(st){
+ const iss=(kind,icon,title,sub,fix='',key='')=>`<div class="row lf iss ${kind}" data-issue="${kind}"${key?` data-key="${key}"`:''}><div class="line"><span class="lead">${ic(icon,'mo')}</span><div class="tx"><div class="tM">${title}</div><div class="bM v">${sub}</div>${fix}</div></div></div>`;
+ const errs=st==='fixed'
+  ?iss('ok','check_circle','Card bn-u-0007: reading added','<span lang="bn">ছুরি</span> (churi), knife','','reading')+iss('ok','check_circle','Line 42: quotes added','<span class="code">native: "no"</span>','','quotes')
+  :iss('err','error','Card bn-u-0007: ‘reading’ is missing','The card <span lang="bn">ছুরি</span>, knife, has no reading in Latin letters. Add it:',`<div class="fixrow"><span class="field2 bL">churi<span class="caret"></span></span><span class="tbtn lL" data-tap><span class="one">Save</span></span></div>`,'reading')
+   +iss('err','error','Line 42: the value must be in quotes','<span class="code">native: no</span> is read as false by some tools.',`<div class="fixrow"><span class="tonalb lL" data-tap>${ic('format_quote','mo')}<span class="one">Add quotes</span></span></div>`,'quotes');
+ const warns=iss('warn','warning_amber','Card bn-u-0015: a word in its note has no reading','<span lang="bn">নির্ভর</span> needs its reading after it, (nirbhôr). It can be added later.')
+  +iss('warn','warning_amber','Card bn-u-0022: no example sentence','Cards learn better with one. It can be added later.')
+  +iss('warn','warning_amber','No licence given','The deck stays on this phone and is never offered to others.');
+ const n=st==='fixed'?0:2;
+ return `<div class="dhead"><div class="tM lf">kitchen-words.yaml</div><div class="bM v lf">40 cards · Bengali from English</div></div>
+ <div class="lbl lf" role="heading">${n?`Must be fixed (${n})`:'Fixed'}</div><div class="grp cnt chg" data-errors="${n}">${errs}</div>
+ <div class="lbl lf" role="heading">Warnings (3)</div><div class="grp cnt" data-warnings="3">${warns}</div>
+ <div class="note lf">${ic('info','mo')}<span class="bM">Warnings do not stop the deck. One-tap fixes also cover an id another deck has: “Use the next free id”.</span></div>`;
+}
+function deckReviewPhone(st,o={}){
+ const n=st==='fixed'?0:2;
+ const bar=`<div class="rbar">${n?`<div class="why bM v lf">Fix the ${n} problems above to add it.</div>`:''}<div class="acts"><span class="tbtn lL" data-tap><span class="one">Cancel</span></span><span class="filled" data-tap data-add${n?' data-dis':''}><span class="one">Add to my decks</span></span></div></div>`;
+ return pagePhone('Check the deck',deckReviewBody(st),{...o,screen:'deckreview',bar});
+}
 const cloudPhone=(o={})=>pagePhone('Cloud backups',cloudBody(),{...o,screen:'cloud'});
 function sheetHtml(kind,o={}){
  const pos=o.end?' data-pos="end"':'';
@@ -614,6 +671,10 @@ function sheetHtml(kind,o={}){
   <div class="facts">${f('event','Made',`${d}, 2026, 6:40 PM`)}${f('phone_android','By',o.from==='cloud'?'Fluenough 0.5.3':'Fluenough 0.5.2')}${f('history','Progress',`${n.toLocaleString('en')} reviews in ${ME.learnAnd}`)}${f('tune','Also','Your settings, the languages you know, and your rater code')}<div class="chg" data-notrestored>${f('download','Not restored, will be downloaded',`${ME.learnAnd} decks, 38 MB`)}</div></div>
   <div class="warn lf">${ic('warning_amber','mo')}<span class="bM">Your progress and settings on this phone are replaced. A copy of them is kept first, in Recent backups.</span></div>
   <div class="acts"><span class="tbtn lL lf" data-tap><span class="one">Cancel</span></span><span class="filled dz lf" data-tap data-confirm data-destructive><span class="one">Replace and restore</span></span></div>`;
+ }else if(kind==='template'){
+  body=`<div class="tL lf" role="heading">Get a template</div><div class="bM v sub lf">Saved to your phone's Downloads, every field explained in it.</div>
+  <div class="facts" data-templates>${[['description','A standalone deck','One .yaml file: a deck of cards in one language, taught from another'],['folder_zip','A full language','A .zip: its core deck, a layer for the language it is taught from, and its path']].map(([i,t,d])=>`<div class="f lf" data-tap role="button">${ic(i,'mo')}<div><div class="bL">${t}</div><div class="bM v">${d}</div></div></div>`).join('')}</div>
+  <div class="acts"><span class="tbtn lL lf" data-tap><span class="one">Cancel</span></span></div>`;
  }else if(kind==='cloud'){
   const svc=['Dropbox','Box','Google Drive','OneDrive','Nextcloud'];
   body=`<div class="tL lf" role="heading">Connect a cloud</div><div class="bM v sub lf">Set up once. The service signs you in on its own page. Backups go to a folder Fluenough makes, “${CLOUD.folder}”, and Fluenough reads nothing else.</div>
@@ -656,16 +717,28 @@ const permDialog=()=>`<div class="scrim"></div><div class="dlg" role="dialog">${
 let TAB_PAGES=[];   // scroll offsets, worked out from the page's own layout (paginate)
 let X2_FRAMES=[];
 const PAGE_FRAMES=[
- ['Learning',()=>pageOf('learning')],
+ ['Your languages (once Learning)',()=>pageOf('learning')],
  ['Activities and memory',()=>pageOf('activities')],
  ['Activities and memory, scrolled to Adjust to me',()=>pageOf('activities',{end:true})],
  ['Look and language',()=>pageOf('look')],
- ['Reminders and privacy (0.5.0: both incoming)',()=>pageOf('privacy')],
+ ['Privacy (0.5.0: incoming)',()=>pageOf('privacy')],
  ['Your data',()=>pageOf('data')],
  ['Reviewing',()=>pageOf('review')],
  ['Updates',()=>pageOf('updates')],
  ['2x text: Activities and memory',()=>pageOf('activities',{x2:true})],
  ['2x text: Your data',()=>pageOf('data',{x2:true})],
+];
+const DECK_FRAMES=[
+ ['Your decks',()=>pageOf('decks')],
+ ['Your decks, scrolled',()=>pageOf('decks',{end:true})],
+ ['Get a template',()=>pageOf('decks',{sheet:true,overlay:sheetHtml('template')})],
+ ['Uploaded: 2 problems to fix, 3 warnings',()=>deckReviewPhone('errors')],
+ ['Uploaded, scrolled to the warnings',()=>deckReviewPhone('errors',{end:true})],
+ ['Both fixed: only warnings left, Add on',()=>deckReviewPhone('fixed')],
+ ['Added: Kitchen words in Your decks',()=>pageOf('decks',{added:true,skip:'[data-deckgroup]'})],
+ ['2x text: the first problem',()=>deckReviewPhone('errors',{x2:true,skip:'[data-key=reading]'})],
+ ['2x text: the quotes fix',()=>deckReviewPhone('errors',{x2:true,skip:'[data-key=quotes]'})],
+ ['2x text: Your decks',()=>pageOf('decks',{x2:true,skip:'[data-deckgroup]'})],
 ];
 const LOG_FRAMES=[
  ['Review log',()=>reviewLogPhone()],
@@ -695,7 +768,7 @@ const BACKUP_FRAMES=[
  ['2x text: the sheet, at its end',()=>backupPhone({x2:true,sheet:true,overlay:sheetHtml('restore',{end:true})})],
 ];
 const REM_FRAMES=[
- ['Reminders and privacy from 0.6.0: Reminders live',()=>pageOf('privacy',{reminderLive:true})],
+ ['Settings from 0.6.0: Reminders live',()=>settingsPhone({reminderLive:true,end:true})],
  ['Reminders, on',()=>remindersPhone('on')],
  ['Reminders, on: scrolled to what it says',()=>remindersPhone('on',{skip:'#lbl-says'})],
  ['Turned on: Android asks',()=>remindersPhone('off',{overlay:permDialog(),sheet:true})],
@@ -755,6 +828,7 @@ function render(){
  document.getElementById('fr-2x').innerHTML=cols(X2_FRAMES);
  document.getElementById('fr-pages').innerHTML=cols(PAGE_FRAMES);
  document.getElementById('fr-logs').innerHTML=cols(LOG_FRAMES);
+ document.getElementById('fr-decks').innerHTML=cols(DECK_FRAMES);
  document.getElementById('fr-backup').innerHTML=cols(BACKUP_FRAMES);
  document.getElementById('fr-rem').innerHTML=cols(REM_FRAMES);
  layoutBadges();
@@ -762,9 +836,9 @@ function render(){
  fit();
 }
 function tables(){
- const OPENS={learning:'Languages I know, Languages I’m learning, Latin-letter readings, Adult content (18+), Alphabets, Sources',activities:'Written words, Heard words (Play words automatically under it), Spoken words, Speech rate, Voices, Reading; the line on what is always asked; Adjust to me and Adjust automatically',look:'Appearance, App language',privacy:'Reminders (its own page, 0.6.0), PIN lock',data:'Backup and restore (its own page), Review log (its own screen)',review:'Review decks, Your rater code, Languages you review, Waiting for review, How reviewing works',adddeck:'The add-a-deck flow, straight away',applog:'The App log screen',updates:'Check for updates, Check automatically, What’s new'};
+ const OPENS={decks:'Your own decks by language, Upload a deck, Get a template',reminders:'The Reminders page (0.6.0)',learning:'Languages I know, Languages I’m learning, Latin-letter readings, Adult content (18+), Alphabets, Sources',activities:'Written words, Heard words (Play words automatically under it), Spoken words, Speech rate, Voices, Reading; the line on what is always asked; Adjust to me and Adjust automatically',look:'Appearance, App language',privacy:'PIN lock (0.6.0)',data:'Backup and restore (its own page), Review log (its own screen)',review:'Review decks, Your rater code, Languages you review, Waiting for review, How reviewing works',applog:'The App log screen',updates:'Check for updates, Check automatically, What’s new'};
  document.getElementById('order-rows').innerHTML=TOP().flat().map(([k,,t,sub],i)=>`<tr><th>${i+1}</th><td data-h="Row"><b>${t}</b></td><td data-h="Its line">${sub}</td><td data-h="Opens">${OPENS[k]}</td></tr>`).join('');
- const where={romanisation:'Learning',adult:'Learning',production:'Activities and memory',listening:'Activities and memory',autoplay:'Activities and memory, under Heard words',speaking:'Activities and memory',reading:'Activities and memory',autoAdjust:'Activities and memory, Adjust to me',pin:'Reminders and privacy, Your profile',review:'Reviewing',autoUpdate:'Updates',reminder:'Reminders page'};
+ const where={romanisation:'Your languages',adult:'Your languages',production:'Activities and memory',listening:'Activities and memory',autoplay:'Activities and memory, under Heard words',speaking:'Activities and memory',reading:'Activities and memory',autoAdjust:'Activities and memory, Adjust to me',pin:'Privacy, Your profile',review:'Reviewing',autoUpdate:'Updates',reminder:'Reminders page'};
  document.getElementById('switch-rows').innerHTML=Object.keys(where).map(k=>{const [t,on,off,,kind]=SW[k];return `<tr><td data-h="Section">${where[k]}</td><th>${t}${kind==='new'?' <span class="prop">Proposed</span>':kind==='inc'?' (incoming)':''}</th><td data-h="On">${on}</td><td data-h="Off">${off}</td></tr>`}).join('');
 }
 
@@ -844,11 +918,25 @@ function structureProblems(){
   if(ph.querySelector('.tog,.sl,[data-k]'))bad.push(`${tag}: the tab holds a control or a section's row; it should hold only rows to pages`);
   if(!ph.querySelector('.pcard'))bad.push(`${tag}: no profile card on top`);
   if(!ph.classList.contains('x2')){ph.querySelectorAll('[data-top] .bM').forEach(e=>{const lh=parseFloat(getComputedStyle(e).lineHeight);if(e.getBoundingClientRect().height>lh*1.5)bad.push(`${tag}: “${e.textContent}” is more than one line`)});
-   const sc=ph.querySelector('.scroll'),h=ph.querySelector('.content').scrollHeight/sc.clientHeight;window.__tabScreens=h;if(h>1.6)bad.push(`${tag}: the tab is ${h.toFixed(2)} screens long`)}
+   const sc=ph.querySelector('.scroll'),h=ph.querySelector('.content').scrollHeight/sc.clientHeight;window.__tabScreens=h;if(h>1.8)bad.push(`${tag}: the tab is ${h.toFixed(2)} screens long`)}
  });
  const page=(k)=>document.querySelector(`[data-page=${k}]`);
  const holds=(k,list)=>{const pg=page(k);if(!pg){bad.push(`no ${k} page drawn`);return}for(const d of list)if(!pg.querySelector(`[data-k=${d}]`))bad.push(`the ${k} page has no ${d}`)};
- holds('learning',['sources']);holds('data',['backup','reviewlog']);holds('privacy',['reminders','pin']);holds('review',isOn('review')?['reviewlangs']:[]);holds('updates',['check']);
+ holds('learning',['sources']);holds('data',['backup','reviewlog']);holds('privacy',['pin']);holds('decks',['upload','template']);holds('review',isOn('review')?['reviewlangs']:[]);holds('updates',['check']);
+ if(document.querySelector('[data-page=privacy] [data-k=reminders]'))bad.push('Reminders still on the Privacy page');
+ document.querySelectorAll('[data-page=decks]').forEach(pg=>{const tag=tagOf(pg.closest('.ph'));const gs=[...pg.querySelectorAll('[data-deckgroup]')];
+  if(gs.length<2||gs.some(g=>!/^.+ › from .+$/.test(g.textContent)))bad.push(`${tag}: decks not grouped by language, then the language taught from`);
+  pg.querySelectorAll('[data-deck]').forEach(d=>{const a=[...d.querySelectorAll('.bact')].map(x=>x.dataset.act).join(',');if(a!=='open,remove')bad.push(`${tag}: a deck's actions are ${a}`);
+   const r=d.querySelector('[data-act=remove]');if(!r.hasAttribute('data-destructive'))bad.push(`${tag}: Remove is not marked destructive`)});
+  if(!/only on this phone/.test(pg.textContent)||!/backup/i.test(pg.textContent))bad.push(`${tag}: no line saying the decks are kept only here and backed up`)});
+ document.querySelectorAll('[data-templates]').forEach(t=>{if(t.querySelectorAll('[data-tap]').length!==2)bad.push('template sheet: not two formats')});
+ document.querySelectorAll('.ph[data-screen=deckreview]').forEach(ph=>{const tag=tagOf(ph);const n=+ph.querySelector('[data-errors]').dataset.errors;const add=ph.querySelector('[data-add]');
+  if(n>0&&!add.hasAttribute('data-dis'))bad.push(`${tag}: Add is on with problems left`);
+  if(n===0&&add.hasAttribute('data-dis'))bad.push(`${tag}: Add is off with none left`);
+  if(n>0&&ph.querySelectorAll('[data-issue=err]').length!==n)bad.push(`${tag}: the count of problems does not match`);
+  ph.querySelectorAll('[data-issue=err] .tM,[data-issue=warn] .tM').forEach(t=>{if(!/^(Card [a-z]{2}-u-\d{4}|Line \d+|No licence)/.test(t.textContent))bad.push(`${tag}: “${t.textContent}” names no card or line`)});
+  if(ph.querySelectorAll('[data-issue=warn]').length!==3)bad.push(`${tag}: not 3 warnings`);
+  ph.querySelectorAll('[data-issue=err]').forEach(e=>{if(!e.querySelector('[data-tap]'))bad.push(`${tag}: a problem with no fix here`)})});
  document.querySelectorAll('[data-page=data]').forEach(pg=>{if(pg.querySelector('[data-k=export],[data-k=import],[data-k=delete]'))bad.push('Your data still holds export, import or delete')});
  document.querySelectorAll('[data-page=activities]').forEach(pg=>{const tag=tagOf(pg.closest('.ph'));
   const acts=[...pg.querySelectorAll('#s-activities .tog .tM')].map(e=>e.textContent).filter(t=>t!=='Play words automatically');
@@ -959,7 +1047,7 @@ function contrastProblems(){
   const theme=`${seed} ${dark?(black?'black':'dark'):'light'}`;
   document.querySelectorAll('.ph').forEach(ph=>{
    ph.querySelectorAll('*').forEach(el=>{
-    if(el.closest('svg')||el.closest('.dim'))return;
+    if(el.closest('svg')||el.closest('.dim')||el.closest('[data-dis]'))return;
     const hasText=[...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());
     const isIcon=el.classList.contains('mi');
     if(!hasText&&!isIcon)return;
@@ -987,7 +1075,7 @@ function check(){
  const all=[...new Set([...T,...L,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. Plan: the tab is the profile card and ${TOP().flat().length} rows to pages, each with a one-line summary, ${(window.__tabScreens||0).toFixed(2)} screens long at 1x; each page holds its rows (Learning has Sources; Activities and memory has the four activity switches in order, the always-asked line and Adjust to me; Reminders and privacy has Reminders and PIN lock; Your data has Backup and restore and Review log, and no export, import or delete; Reviewing has Languages you review; Updates has Check for updates); the Review log shows its entries newest first with Export and Import, and the App log its lines with Copy, Export and Clear; every destructive action (Clear, Replace and restore, Delete this profile) is in the error colour; every switch shows the line for its state and no switch keeps one line in both, checked as set and flipped; Recent backups lists five of four kinds with Download, Send to cloud (or “In the cloud”) and Restore; Cloud backups lists all seven with Download and Restore; the restore sheet says the decks are not restored and will be downloaded; Reminders has no quiet hours and its preview names every language due; every row of the tab is whole in one of its 1x frames and one of its 2x frames. Layout: all ${frames} frames at 360 × 800 dp, both ways: no row overlaps another and no part of a row covers another, every slider's track and thumb stay in their 20 dp track and every switch is 52 × 32, nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
+  :`Self-check: 0 problems. Plan: the tab is the profile card and ${TOP().flat().length} rows to pages, each with a one-line summary, ${(window.__tabScreens||0).toFixed(2)} screens long at 1x; each page holds its rows (Your languages has Sources; Activities and memory has the four activity switches in order, the always-asked line and Adjust to me; Privacy has PIN lock; Your decks has Upload a deck, Get a template, and the decks grouped by language then the language taught from, each with Open and Remove (destructive); the custom deck review names a card or line in every problem and warning, offers a fix for every problem, and keeps Add off until none is left; Your data has Backup and restore and Review log, and no export, import or delete; Reviewing has Languages you review; Updates has Check for updates); the Review log shows its entries newest first with Export and Import, and the App log its lines with Copy, Export and Clear; every destructive action (Clear, Remove, Replace and restore, Delete this profile) is in the error colour; every switch shows the line for its state and no switch keeps one line in both, checked as set and flipped; Recent backups lists five of four kinds with Download, Send to cloud (or “In the cloud”) and Restore; Cloud backups lists all seven with Download and Restore; the restore sheet says the decks are not restored and will be downloaded; Reminders has no quiet hours and its preview names every language due; every row of the tab is whole in one of its 1x frames and one of its 2x frames. Layout: all ${frames} frames at 360 × 800 dp, both ways: no row overlaps another and no part of a row covers another, every slider's track and thumb stay in their 20 dp track and every switch is 52 × 32, nothing sticks out or is cut in half, no sideways scroll, buttons, times and versions stay on one line, no word is wider than its box, every target is at least 48 × 48, nothing sits under the report button, the tab bar or the 3-button navigation bar, sheets stop 72 dp from the top. Contrast: ${C1.checked} text, icon and switch pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and switches 3:1). Not counted: incoming rows, which are disabled and dimmed to 38% (WCAG 1.4.3 exempts them; their badge is counted); where the “Feature incoming” badge is wider than its column (App language, beside its picker; at 2x, switch rows) it fades at its end, as it does today. Every row of Activities and Your data is also whole in one of their 2x frames.`;
  window.__check={problems:all,frames,pairs:C1.checked,pages:TAB_PAGES.length};
  if(marks)document.body.classList.add('marks');
  applyTheme(state());
