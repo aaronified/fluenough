@@ -7,6 +7,9 @@ approval.
 
 - `languages-you-know.html`: Languages you know, with the bottom-sheet
   script question (#490, `docs/plans/languages-you-know.md`).
+- `session-result-and-hours.html`: the session result's count line,
+  correct share and minutes (#486), and hours spent and hours left on
+  Progress (#227). Approved by the owner, 2026-10-12.
 
 ## Older: to be adapted (owner, 2026-10-12)
 
