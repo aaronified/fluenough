@@ -74,3 +74,9 @@ answers are in the issue, and any mockup it needs is approved. A
 contributor can then build it as written, without asking anything. Remove
 the label if a new question comes up, and add it when the last one is
 answered.
+
+## Dependencies are marked, never assumed (owner, 2026-10-12)
+
+When one issue needs another done first, record it on GitHub: set "blocked
+by" between the issues and add the `blocked` label. Never rely on both
+landing in the same milestone, or on any other timing.
