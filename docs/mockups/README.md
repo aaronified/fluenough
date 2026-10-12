@@ -11,6 +11,14 @@ approval.
   correct share and minutes (#486), and hours spent and hours left on
   Progress (#227). Approved by the owner, 2026-10-12.
 
+## Awaiting approval
+
+- `settings.html`: the whole Settings tab with every planned change
+  folded in: Sources in Learning (#469), one Your data section with
+  Backup and restore and its restore sheet (#473, #470), Add deck as an
+  Advanced row (#475), a switch per activity (#243), and the Reminders
+  page (#90, 0.6.0). Its proposed decisions are listed in the page.
+
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
