@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme.dart';
 import 'report_button.dart';
+import 'system_bar.dart';
 
 /// The large title at the top of a tab: "Decks", "Progress", "Settings".
 /// 32/40 semibold, 24 from the start edge, marked as a heading.
@@ -66,7 +67,7 @@ class EmptyState extends StatelessWidget {
     final scheme = theme.colorScheme;
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsetsDirectional.all(32),
+        padding: const EdgeInsetsDirectional.all(32).clearingSystemBar(context),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
