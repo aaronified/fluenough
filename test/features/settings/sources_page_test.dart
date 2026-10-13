@@ -104,6 +104,28 @@ void main() {
     expect(find.byType(SourcesPage), findsNothing);
   });
 
+  testWidgets('the Sources row is the last in Learning, not in Logs (#469)', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const SettingsPage(),
+      state: AppState.test(decks: readingFixtureDecks()),
+    );
+    final l10n = l10nOf(tester);
+    GroupedList section(String header) => tester.widget<GroupedList>(
+      find.byWidgetPredicate((w) => w is GroupedList && w.header == header),
+    );
+    final learning = section(l10n.settingsSectionLearning).children;
+    expect((learning.last as GroupedTile).title, l10n.settingsSources);
+    final logs = section(l10n.settingsSectionLogs).children;
+    expect(
+      logs.whereType<GroupedTile>().map((t) => t.title),
+      isNot(contains(l10n.settingsSources)),
+    );
+  });
+
   testWidgets('the row counts the sources, in every language', (tester) async {
     usePhone(tester);
     await pumpScreen(
