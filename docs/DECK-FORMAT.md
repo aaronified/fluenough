@@ -1034,24 +1034,29 @@ pipeline yet again)."
 the card and the field; an error per language once its fill issue is closed;
 each new field lands with its check and its entry here, with tests.
 
-### Card data still open
+### Card data: decided on 2026-10-13
 
-**Proposed**, none decided; each needs the owner:
+Answers from the owner, asked one at a time (#506). All of them are
+**Decided, not yet built**. Each field group is built in its own issue in
+0.5.0, after the relicensing (#510).
 
-- The root-of-itself form for a word that is its own root.
-- Whether `source` (for Wiktionary and Tatoeba data) is one field on the card
-  or one per field.
-- Classes for Spanish (m/f?) and Japanese (none?).
-- Which open frequency list per language, and its licence.
-- The names of the other new fields (`synonyms`, `antonyms`, `frequency`,
-  `facts` on a card), and the register, forms, collocations and senses
-  fields that were drafted but not approved.
-- How the validator checks gender: each language file lists its classes and
-  the parts of speech that need one, and a value outside the list is an
-  error.
-- Confusables used as word-order tiles: 2 or 3 per sentence, none equal to a
-  tile the answer needs, and a missing "why" as a warning.
-- When the new ADR on relicensing is written, and in which milestone.
+- **A word that is its own root:** `bases: self` (#513).
+- **`source` for Wiktionary, Tatoeba and Leipzig data:** "Per item". Each
+  item taken from outside names its own source.
+- **Gender classes:** Spanish and Japanese are "es m/f; ja none". The
+  validator checks "Nouns only": on a noun, a value outside the language's
+  classes is an error, and so is a missing gender once the language is
+  filled in (#512).
+- **Frequency:** "Leipzig Corpora lists" (#516).
+- **Field names:** "Approve these names": `synonyms`, `antonyms` and
+  `frequency` on a card, and `cards` on a fact (#513, #516).
+- **Drafted fields:** all four are kept: `register`, `forms`,
+  `collocations` and `senses`. Their shapes still need the owner's approval
+  (#517).
+- **Confusables as word-order tiles:** "2–3, never a needed tile". One
+  equal to a tile the answer needs is an error, and a missing "why" is a
+  warning (#514).
+- **The relicensing ADR** is written "In the relicensing issue" (#510).
 
 ---
 
