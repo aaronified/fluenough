@@ -12,6 +12,7 @@ import '../../core/models/reading.dart' show QuestionCard;
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/language_menu.dart';
@@ -901,25 +902,14 @@ class _ContinueBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        border: Border(top: BorderSide(color: scheme.outlineVariant)),
-      ),
-      child: SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 16),
-          child: FilledButton.icon(
-            style: FilledButton.styleFrom(
-              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
-            ),
-            onPressed: onPressed,
-            icon: const Icon(Icons.play_arrow_rounded, size: 22),
-            label: Text(label, textAlign: TextAlign.center),
-          ),
+    return BottomActions(
+      child: FilledButton.icon(
+        style: FilledButton.styleFrom(
+          minimumSize: const Size.fromHeight(AppSizes.primaryButton),
         ),
+        onPressed: onPressed,
+        icon: const Icon(Icons.play_arrow_rounded, size: 22),
+        label: Text(label, textAlign: TextAlign.center),
       ),
     );
   }
