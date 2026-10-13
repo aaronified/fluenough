@@ -80,3 +80,22 @@ answered.
 When one issue needs another done first, record it on GitHub: set "blocked
 by" between the issues and add the `blocked` label. Never rely on both
 landing in the same milestone, or on any other timing.
+
+## Contributor DhyanendraSinghSikarwar (2026-10-13)
+
+When the session's GitHub user is `DhyanendraSinghSikarwar`, these rules
+replace "Push straight to main" above:
+
+- **Author.** Before the first commit, run:
+  `git config user.name "DhyanendraSinghSikarwar"` and
+  `git config user.email "87273551+DhyanendraSinghSikarwar@users.noreply.github.com"`.
+- **Trailer.** End each commit message with
+  `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. No
+  `Claude-Session` line.
+- **Branches and PRs.** One branch and one PR per issue, named
+  `issue-<n>-<slug>`. Work without an issue uses a branch name without a
+  number. Never push to main.
+- **Commits.** One commit per fix, even within a PR. Push each one as soon
+  as it is made.
+- **Skills.** Use the repo's skills in `.claude/skills/`.
+- **Decisions.** Ask whenever in doubt. Never decide alone.
