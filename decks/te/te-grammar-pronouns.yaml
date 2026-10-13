@@ -1,0 +1,154 @@
+schema: 1
+id: "te-grammar-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["possessive: my, your …", "to: to me …", "object: me …"]
+  entries:
+    - lemma: "నేను"
+      key: "neenu"
+      reading: "nēnu"
+      ipa: "neːnu"
+      forms:
+        "possessive: my, your …": "నా"
+        "to: to me …": "నాకు"
+        "object: me …": "నన్ను"
+      readings:
+        "possessive: my, your …": "nā"
+        "to: to me …": "nāku"
+        "object: me …": "nannu"
+      ipas:
+        "possessive: my, your …": "naː"
+        "to: to me …": "naːku"
+        "object: me …": "nannu"
+    - lemma: "నువ్వు"
+      key: "nuvvu"
+      reading: "nuvvu"
+      ipa: "nuʋʋu"
+      forms:
+        "possessive: my, your …": "నీ"
+        "to: to me …": "నీకు"
+        "object: me …": "నిన్ను"
+      readings:
+        "possessive: my, your …": "nī"
+        "to: to me …": "nīku"
+        "object: me …": "ninnu"
+      ipas:
+        "possessive: my, your …": "niː"
+        "to: to me …": "niːku"
+        "object: me …": "ninnu"
+    - lemma: "మీరు"
+      key: "miiru"
+      reading: "mīru"
+      ipa: "miːru"
+      forms:
+        "possessive: my, your …": "మీ"
+        "to: to me …": "మీకు"
+        "object: me …": "మిమ్మల్ని"
+      readings:
+        "possessive: my, your …": "mī"
+        "to: to me …": "mīku"
+        "object: me …": "mimmalni"
+      ipas:
+        "possessive: my, your …": "miː"
+        "to: to me …": "miːku"
+        "object: me …": "mimmalni"
+    - lemma: "అతను"
+      key: "atanu"
+      reading: "atanu"
+      ipa: "at̪anu"
+      forms:
+        "possessive: my, your …": "అతని"
+        "to: to me …": "అతనికి"
+        "object: me …": "అతన్ని"
+      readings:
+        "possessive: my, your …": "atani"
+        "to: to me …": "ataniki"
+        "object: me …": "atanni"
+      ipas:
+        "possessive: my, your …": "at̪ani"
+        "to: to me …": "at̪aniki"
+        "object: me …": "at̪anni"
+    - lemma: "ఆమె"
+      key: "aame"
+      reading: "āme"
+      ipa: "aːme"
+      forms:
+        "possessive: my, your …": "ఆమె"
+        "to: to me …": "ఆమెకు"
+        "object: me …": "ఆమెను"
+      readings:
+        "possessive: my, your …": "āme"
+        "to: to me …": "āmeku"
+        "object: me …": "āmenu"
+      ipas:
+        "possessive: my, your …": "aːme"
+        "to: to me …": "aːmeku"
+        "object: me …": "aːmenu"
+    - lemma: "అది"
+      key: "adi"
+      reading: "adi"
+      ipa: "ad̪i"
+      forms:
+        "possessive: my, your …": "దాని"
+        "to: to me …": "దానికి"
+        "object: me …": "దాన్ని"
+      readings:
+        "possessive: my, your …": "dāni"
+        "to: to me …": "dāniki"
+        "object: me …": "dānni"
+      ipas:
+        "possessive: my, your …": "d̪aːni"
+        "to: to me …": "d̪aːniki"
+        "object: me …": "d̪aːnni"
+    - lemma: "మేము"
+      key: "meemu"
+      reading: "mēmu"
+      ipa: "meːmu"
+      forms:
+        "possessive: my, your …": "మా"
+        "to: to me …": "మాకు"
+        "object: me …": "మమ్మల్ని"
+      readings:
+        "possessive: my, your …": "mā"
+        "to: to me …": "māku"
+        "object: me …": "mammalni"
+      ipas:
+        "possessive: my, your …": "maː"
+        "to: to me …": "maːku"
+        "object: me …": "mammalni"
+    - lemma: "మనం"
+      key: "manam"
+      reading: "manam"
+      ipa: "manam"
+      forms:
+        "possessive: my, your …": "మన"
+        "to: to me …": "మనకు"
+        "object: me …": "మనల్ని"
+      readings:
+        "possessive: my, your …": "mana"
+        "to: to me …": "manaku"
+        "object: me …": "manalni"
+      ipas:
+        "possessive: my, your …": "mana"
+        "to: to me …": "manaku"
+        "object: me …": "manalni"
+    - lemma: "వాళ్ళు"
+      key: "vaallu"
+      reading: "vāḷḷu"
+      ipa: "ʋaːɭɭu"
+      forms:
+        "possessive: my, your …": "వాళ్ళ"
+        "to: to me …": "వాళ్ళకి"
+        "object: me …": "వాళ్ళని"
+      readings:
+        "possessive: my, your …": "vāḷḷa"
+        "to: to me …": "vāḷḷaki"
+        "object: me …": "vāḷḷani"
+      ipas:
+        "possessive: my, your …": "ʋaːɭɭa"
+        "to: to me …": "ʋaːɭɭaki"
+        "object: me …": "ʋaːɭɭani"

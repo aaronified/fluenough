@@ -1,0 +1,78 @@
+schema: 1
+id: "te-grammar-needs"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - ref: "te-0345"
+  - id: "te-0460"
+    target: "కావాలి"
+    reading: "kāvāli"
+    ipa: "kaːʋaːli"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0461"
+    target: "మీకు ఏం కావాలి?"
+    reading: "mīku ēm kāvāli?"
+    ipa: "miːku eːm kaːʋaːli"
+    pos: "phrase"
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "ఏం", ref: "te-0160" }
+  - id: "te-0462"
+    target: "నాకు నీళ్ళు కావాలి."
+    reading: "nāku nīḷḷu kāvāli."
+    ipa: "naːku niːɭɭu kaːʋaːli"
+    pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: "te-0463"
+    target: "వద్దు"
+    reading: "vaddu"
+    ipa: "ʋad̪d̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0464"
+    target: "నాకు ఇది వద్దు."
+    reading: "nāku idi vaddu."
+    ipa: "naːku id̪i ʋad̪d̪u"
+    pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇది", ref: "te-0600" }
+  - ref: "te-0249"
+  - id: "te-0465"
+    target: "అవసరం"
+    reading: "avasaram"
+    ipa: "aʋasaram"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0466"
+    target: "అవసరం లేదు."
+    reading: "avasaram lēdu."
+    ipa: "aʋasaram leːd̪u"
+    pos: "phrase"
+  - id: "te-0467"
+    target: "నాకు సహాయం కావాలి."
+    reading: "nāku sahāyam kāvāli."
+    ipa: "naːku sahaːjam kaːʋaːli"
+    pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: "te-0468"
+    target: "నాకు ఇంటికి వెళ్ళాలని ఉంది."
+    reading: "nāku iṇṭiki veḷḷālani undi."
+    ipa: "naːku iɳʈiki ʋeɭɭaːlani und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇంటికి", ref: "te-0195" }
+      - { word: "వెళ్ళాలని", ref: "te-0622" }
+      - { word: "ఉంది", ref: "te-0633" }

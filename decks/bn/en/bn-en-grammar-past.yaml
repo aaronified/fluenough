@@ -1,0 +1,19 @@
+schema: 1
+id: "bn-en-grammar-past"
+kind: "layer"
+core: "bn-grammar-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past tense"
+description: "I did, you went: the simple past, by person and respect."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+pattern:
+  name: "Simple past"
+  slot_name: "person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "bola": "to say"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি (āmi) and আমরা (āmorā) take the same form. The endings are -লাম (-lām), -লি (-li), -লে (-le), -লেন (-len), -ল (-lô), -লেন (-len). যাওয়া (jāoyā) takes a different stem: গেলাম (gelām). খাওয়া (khāoyā) changes its vowel: খেলাম (khelām)."

@@ -1,0 +1,19 @@
+schema: 1
+id: "bn-en-grammar-future"
+kind: "layer"
+core: "bn-grammar-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Future tense"
+description: "I will do, you will go."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+pattern:
+  name: "Future"
+  slot_name: "person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "jaoa": "to go"
+    "khaoa": "to eat"
+    "bola": "to say"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি (āmi) and আমরা (āmorā) take the same form. The endings are -ব (-bô), -বি (-bi), -বে (-be), -বেন (-ben). Some writers add the o: করবো (kôrobo), যাবো (jābo), and both are accepted."

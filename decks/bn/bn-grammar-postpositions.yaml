@@ -1,0 +1,163 @@
+schema: 1
+id: "bn-grammar-postpositions"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+cards:
+  - ref: "bn-0124"
+    tags: []
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0292"
+    target: "রামের বাড়ি"
+    reading: "rāmer bāṛi"
+    ipa: "ramer baɽi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "রামের", base: "রাম", reading: "rām" }
+  - id: "bn-0293"
+    target: "রামকে দিন।"
+    reading: "rāmke din."
+    ipa: "ramke d̪in"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "রামকে", base: "রাম", reading: "rām" }
+  - id: "bn-0294"
+    target: "থেকে"
+    reading: "theke"
+    ipa: "t̪ʰeke"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0295"
+    target: "দিয়ে"
+    reading: "diye"
+    ipa: "d̪ije"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0296"
+    target: "সঙ্গে"
+    reading: "śôṅge"
+    ipa: "ʃɔŋɡe"
+    alt_target: ["সাথে"]
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0297"
+    target: "জন্য"
+    reading: "jonno"
+    ipa: "dʒonno"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "bn-0309"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0298"
+    target: "পরে"
+    reading: "pôre"
+    ipa: "pɔre"
+    alt_target: ["পর"]
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0299"
+    target: "আগে"
+    reading: "āge"
+    ipa: "aɡe"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0300"
+    target: "ওপরে"
+    reading: "opore"
+    ipa: "opore"
+    alt_target: ["উপরে"]
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0301"
+    target: "নিচে"
+    reading: "nice"
+    ipa: "nitʃe"
+    alt_target: ["নীচে"]
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0585"
+    target: "ভিতরে"
+    reading: "bhitore"
+    ipa: "bʱit̪ore"
+    alt_target: ["ভেতরে"]
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0586"
+    target: "বাইরে"
+    reading: "bāire"
+    ipa: "baire"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0587"
+    target: "মধ্যে"
+    reading: "moddhe"
+    ipa: "mod̪d̪ʱe"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0588"
+    target: "চেয়ে"
+    reading: "ceye"
+    ipa: "tʃeje"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0589"
+    target: "ছাড়া"
+    reading: "chāṛā"
+    ipa: "tʃʰaɽa"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0590"
+    target: "নিয়ে"
+    reading: "niye"
+    ipa: "nije"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0591"
+    target: "পর্যন্ত"
+    reading: "pôrjonto"
+    ipa: "pɔrdʒont̪o"
+    alt_target: ["অবধি"]
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0592"
+    target: "আমি ওকে চিনি।"
+    reading: "āmi oke cini."
+    ipa: "ami oke tʃini"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "ওকে", ref: "bn-0844" }
+  - id: "bn-0593"
+    target: "কাঠের টেবিল"
+    reading: "kāṭher ṭebil"
+    ipa: "kaʈʰer ʈebil"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কাঠের", base: "কাঠ", reading: "kāṭh" }

@@ -1,0 +1,130 @@
+schema: 1
+id: "bn-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner"]
+cards:
+  - id: "bn-0191"
+    target: "নাম"
+    reading: "nām"
+    ipa: "nam"
+    pos: "noun"
+  - id: "bn-0192"
+    target: "আমার নাম …"
+    reading: "āmār nām..."
+    ipa: "amar nam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0193"
+    target: "আপনার নাম কী?"
+    reading: "āpnār nām ki?"
+    ipa: "apnar nam ki"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+  - id: "bn-0194"
+    target: "আমি … থেকে এসেছি।"
+    reading: "āmi... theke eśechi."
+    ipa: "ami t̪ʰeke eʃetʃʰi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "এসেছি", ref: "bn-0872" }
+  - id: "bn-0195"
+    target: "আমি … থাকি।"
+    reading: "āmi... thāki."
+    ipa: "ami t̪ʰaki"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "থাকি", ref: "bn-0875" }
+  - id: "bn-0196"
+    target: "বাড়ি"
+    reading: "bāṛi"
+    ipa: "baɽi"
+    alt_target: ["বাসা"]
+    pos: "noun"
+    picture: "🏠"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0197"
+    target: "পরিবার"
+    reading: "poribār"
+    ipa: "poribar"
+    pos: "noun"
+  - id: "bn-0198"
+    target: "কাজ"
+    reading: "kāj"
+    ipa: "kadʒ"
+    pos: "noun"
+  - id: "bn-0199"
+    target: "শহর"
+    reading: "śôhor"
+    ipa: "ʃɔɦor"
+    pos: "noun"
+    picture: "🏙"
+  - id: "bn-0200"
+    target: "দেশ"
+    reading: "deś"
+    ipa: "d̪eʃ"
+    pos: "noun"
+  - id: "bn-0201"
+    target: "ভাষা"
+    reading: "bhāśā"
+    ipa: "bʱaʃa"
+    pos: "noun"
+  - id: "bn-0416"
+    target: "বয়স"
+    reading: "bôyoś"
+    ipa: "bɔjoʃ"
+    pos: "noun"
+  - id: "bn-0417"
+    target: "আপনার বয়স কত?"
+    reading: "āpnār bôyoś kôto?"
+    ipa: "apnar bɔjoʃ kɔt̪o"
+    pos: "phrase"
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+  - id: "bn-0418"
+    target: "আমার বয়স ত্রিশ।"
+    reading: "āmār bôyoś triś."
+    ipa: "amar bɔjoʃ t̪riʃ"
+    alt_target: ["আমার বয়স তিরিশ।"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0419"
+    target: "বিদেশি"
+    reading: "bideśi"
+    ipa: "bid̪eʃi"
+    pos: "noun"
+  - id: "bn-0420"
+    target: "বাঙালি"
+    reading: "bāṅāli"
+    ipa: "baŋali"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0421"
+    target: "ভারতীয়"
+    reading: "bhārotiyo"
+    ipa: "bʱarot̪ijo"
+    pos: "adj"
+  - id: "bn-0422"
+    target: "বাংলাদেশি"
+    reading: "bāṅlādeśi"
+    ipa: "baŋlad̪eʃi"
+    pos: "adj"

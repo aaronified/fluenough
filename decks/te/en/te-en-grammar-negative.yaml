@@ -1,0 +1,20 @@
+schema: 1
+id: "te-en-grammar-negative"
+kind: "layer"
+core: "te-grammar-negative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Won't and don't"
+description: "I don't go, she won't come: the negative of the future and the habit is a tense of its own. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  name: "Negative"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "cheeyadam": "to do"
+    "velladam": "to go"
+    "raavadam": "to come"
+    "tinadam": "to eat"
+    "taagadam": "to drink"
+  notes: "The negative of the future and the habit needs no word for not: రాను (rānu), I won't come, I don't come. In the past one form serves everyone, the verb with -లేదు (-lēdu): నేను రాలేదు (nēnu rālēdu), ఆమె రాలేదు (āme rālēdu), I didn't come, she didn't come. The verb agrees with the doer's person and number. In the third person 'he' takes a masculine ending, and 'she' and 'it' share a non-masculine one. మీరు (mīru), plural or respectful, takes the plural."

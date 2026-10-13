@@ -161,6 +161,24 @@ ids before committing** — they are permanent once published, because they key
 every user's review history. A word another deck already teaches should be
 listed there by `ref` instead.
 
+## `split_deck.py`
+
+Splits a single-file deck into a core and an English layer, as
+`docs/DECK-FORMAT.md`, "Splitting a deck", describes (#397, #498). It
+keeps every card id, entry key and slot, deletes the old file, and refuses a
+split that, merged back, would not give the old deck. A language's script
+guide and sounds file split the same way: the core keeps the path, the
+English text goes to `en/<lang>-en-script.yaml`.
+
+```sh
+python3 tools/split_deck.py decks/te/te-en-home.yaml     # te-home + en/te-en-home
+python3 tools/split_deck.py --check decks/te/te-en-*.yaml  # try, write nothing
+python3 tools/deck_index.py
+```
+
+Reading decks stay single-file, and so do paths, facts, numbers and
+romanisation files. `test_split_deck.py` tests it.
+
 ## `brand_android.py`
 
 Run after every `flutter create`. It copies `fluenough-brand/android/` into

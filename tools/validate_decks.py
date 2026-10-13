@@ -88,6 +88,14 @@ CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
 FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
                 "letters"}
+# A script guide or sounds file may be split, like a deck, into a core and a
+# layer per native language (#498): the core keeps the letters, the layer
+# the text a learner reads.
+GUIDE_KINDS = ("script", "sounds")
+GUIDE_LAYER_KEYS = {
+    "script": {"schema", "id", "kind", "core", "native", "name", "intro", "features"},
+    "sounds": {"schema", "id", "kind", "core", "native", "description", "contrasts"},
+}
 CODE_RE = re.compile(r"[a-z]{2,3}")
 # `grammarUnderstood` is only for a rules table's cells (ADR-0036): a card or
 # a ref that names it is refused.
@@ -1637,6 +1645,14 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
     if raw.get("kind") == "layer":
         validate_layer(r, raw, path)
         return r
+    if raw.get("part") == "core" and raw.get("kind") in GUIDE_KINDS:
+        check_romanised(r, raw, path)
+        check_ipa(r, raw)
+        if raw["kind"] == "sounds":
+            check_sounds_file(r, raw, path, core=True)
+        else:
+            check_script_file(r, raw, path, core=True)
+        return r
     if raw.get("part") == "core":
         validate_core(r, raw, path)
         return r
@@ -2469,6 +2485,9 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
     core = _load_raw(file)
     if not isinstance(core, dict) or core.get("part") != "core":
         r.error("core", f'{core_id}.yaml is not a core: it has no part: "core"')
+        return
+    if core.get("kind") in GUIDE_KINDS:
+        validate_guide_layer(r, raw, path, core)
         return
     r.core_id = r.listed_as = core_id
     code = _lang_code(core.get("language"))
@@ -3557,12 +3576,17 @@ def _check_plan(r: Report, units: list[Unit], has_plan: bool, sized: set[int],
     return marks, end
 
 
-def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
+def check_sounds_file(r: Report, raw: dict, path: Path, *, core: bool = False) -> None:
     """A language's sound contrasts, decks/<lang>/<lang>-sounds.yaml: pairs
     of letters or signs that change a word, for the speaking drill's
-    feedback (#89). See ADR-0015."""
-    for unknown in sorted(set(raw) - SOUNDS_KEYS):
-        r.error("root", f"unknown field {unknown!r} in a sounds file")
+    feedback (#89). See ADR-0015. A core (`part: "core"`, #498) leaves each
+    contrast's name and the description to its layers."""
+    keys = (SOUNDS_KEYS - {"description"}) | {"part"} if core else SOUNDS_KEYS
+    for unknown in sorted(set(raw) - keys, key=str):
+        if core and unknown == "description":
+            r.error("description", "a sounds core's description is in each layer")
+        else:
+            r.error("root", f"unknown field {unknown!r} in a sounds file")
     schema = raw.get("schema")
     if isinstance(schema, bool) or schema != SCHEMA:
         r.error("schema", f"must be {SCHEMA}, got {schema!r}")
@@ -3588,8 +3612,10 @@ def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
         if not isinstance(contrast, dict):
             r.error(where, "must be a mapping with id, name and pairs")
             continue
-        for unknown in sorted(set(contrast) - CONTRAST_KEYS):
+        for unknown in sorted(set(contrast) - CONTRAST_KEYS, key=str):
             r.error(where, f"unknown field {unknown!r}")
+        if core and "name" in contrast:
+            r.error(where, "a sounds core's names are in each layer, under contrasts")
         cid = contrast.get("id")
         if not _is_str(cid) or not ID_RE.fullmatch(cid):
             r.error(where, f"id must match [a-z0-9-]+, got {cid!r}")
@@ -3597,7 +3623,7 @@ def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
             r.error(where, f"contrast {cid!r} is listed twice")
         else:
             ids.add(cid)
-        if not _is_str(contrast.get("name")) or not contrast["name"].strip():
+        if not core and (not _is_str(contrast.get("name")) or not contrast["name"].strip()):
             r.error(where, "needs a name, such as 'a breath after the consonant'")
         within = contrast.get("within_word", False)
         if not isinstance(within, bool):
@@ -3615,12 +3641,18 @@ def check_sounds_file(r: Report, raw: dict, path: Path) -> None:
                         f"must be two different quoted strings, at most one empty, got {pair!r}")
 
 
-def check_script_file(r: Report, raw: dict, path: Path) -> None:
+def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -> None:
     """A script's guide, decks/<lang>/<lang>-script.yaml: the recurring
     features a learner from English misses, shown before the first script
-    card (#30). See ADR-0016."""
-    for unknown in sorted(set(raw) - SCRIPT_KEYS):
-        r.error("root", f"unknown field {unknown!r} in a script guide")
+    card (#30). See ADR-0016. A core (`part: "core"`, #498) leaves its name,
+    intro and each feature's name and text to its layers."""
+    texts = ("name", "intro")
+    keys = (SCRIPT_KEYS - set(texts)) | {"part"} if core else SCRIPT_KEYS
+    for unknown in sorted(set(raw) - keys, key=str):
+        if core and unknown in texts:
+            r.error(unknown, f"a script core's {unknown} is in each layer")
+        else:
+            r.error("root", f"unknown field {unknown!r} in a script guide")
     schema = raw.get("schema")
     if isinstance(schema, bool) or schema != SCHEMA:
         r.error("schema", f"must be {SCHEMA}, got {schema!r}")
@@ -3635,7 +3667,7 @@ def check_script_file(r: Report, raw: dict, path: Path) -> None:
         r.error("id", f"is {guide_id!r} but the filename stem is {path.stem!r}")
     elif lang is not None and guide_id != f"{lang}-script":
         r.error("id", f"a script guide for {lang} has id {lang}-script, got {guide_id!r}")
-    for key in ("name", "intro"):
+    for key in () if core else texts:
         if not _is_str(raw.get(key)) or not raw[key].strip():
             r.error(key, "is required text")
     features = raw.get("features")
@@ -3648,8 +3680,12 @@ def check_script_file(r: Report, raw: dict, path: Path) -> None:
         if not isinstance(feature, dict):
             r.error(where, "must be a mapping with id, name, example and text")
             continue
-        for unknown in sorted(set(feature) - FEATURE_KEYS):
+        for unknown in sorted(set(feature) - FEATURE_KEYS, key=str):
             r.error(where, f"unknown field {unknown!r}")
+        for key in ("name", "text") if core else ():
+            if key in feature:
+                r.error(where, f"a script core's feature {key} is in each layer, under "
+                               f"features")
         fid = feature.get("id")
         if not _is_str(fid) or not ID_RE.fullmatch(fid):
             r.error(where, f"id must match [a-z0-9-]+, got {fid!r}")
@@ -3657,7 +3693,7 @@ def check_script_file(r: Report, raw: dict, path: Path) -> None:
             r.error(where, f"feature {fid!r} is listed twice")
         else:
             ids.add(fid)
-        for key in ("name", "example", "text"):
+        for key in ("example",) if core else ("name", "example", "text"):
             if not _is_str(feature.get(key)) or not feature[key].strip():
                 r.error(where, f"needs {key}, quoted text")
         if "term" in feature and (not _is_str(feature["term"]) or not feature["term"].strip()):
@@ -3670,6 +3706,77 @@ def check_script_file(r: Report, raw: dict, path: Path) -> None:
         letters = feature.get("letters", [])
         if not isinstance(letters, list) or not all(_is_str(x) and x for x in letters):
             r.error(where, "letters must be a list of quoted letters")
+
+
+def validate_guide_layer(r: Report, raw: dict, path: Path, core: dict) -> None:
+    """decks/<lang>/<native>/<lang>-<native>-script.yaml (or -sounds), the
+    layer of a script guide or sounds core (#498): its text in one native
+    language, keyed by the core's feature or contrast ids."""
+    kind = core["kind"]
+    lang = core.get("language") if _is_str(core.get("language")) else None
+    native = raw.get("native")
+    ncode = _lang_code(native)
+    what = "script guide" if kind == "script" else "sounds file"
+    check_transliterated(r, raw, fixed=ncode or "")
+    _check_string_keys(r, raw, "root")
+    for unknown in sorted(set(raw) - GUIDE_LAYER_KEYS[kind], key=str):
+        if unknown == "part":
+            r.error("part", 'a layer has no part; only a core is marked part: "core"')
+        else:
+            r.error("root", f"unknown field {unknown!r} in the layer of a {what}")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    check_langblock(r, "native", native, full=False)
+    lid = raw.get("id")
+    if lid != path.stem:
+        r.error("id", f"is {lid!r} but the filename stem is {path.stem!r}")
+    elif lang and ncode and lid != f"{lang}-{ncode}-{kind}":
+        r.error("id", f"the {ncode} layer of {lang}-{kind} has id {lang}-{ncode}-{kind}, "
+                      f"got {lid!r}")
+    if ncode and path.parent.name != ncode:
+        r.error("root", f"a layer lives in decks/{lang}/{ncode}/, the folder of its "
+                        f"native language; this one is in {path.parent.name!r}")
+    if ncode:
+        r.native_code = ncode
+
+    def texts(key: str, items: object) -> dict[str, object]:
+        """The core's [key] ids, each with its text here."""
+        given = raw.get(key)
+        if not isinstance(given, dict):
+            r.error(key, f"must be a mapping from each of the core's {key} ids to "
+                         f"its text")
+            return {}
+        ids = [x.get("id") for x in items if isinstance(x, dict)] \
+            if isinstance(items, list) else []
+        for k in given:
+            if k not in ids:
+                r.error(f"{key}.{k}", f"is not one of the core's {key}")
+        for i in ids:
+            if i not in given:
+                r.error(key, f"gives no text for {i!r}")
+        return {k: v for k, v in given.items() if k in ids}
+
+    def text(where: str, value: object) -> None:
+        if not _is_str(value) or not value.strip():
+            r.error(where, "is required text")
+
+    if kind == "script":
+        text("name", raw.get("name"))
+        text("intro", raw.get("intro"))
+        for fid, value in texts("features", core.get("features")).items():
+            where = f"features.{fid}"
+            if not isinstance(value, dict):
+                r.error(where, "must be a mapping with name and text")
+                continue
+            for unknown in sorted(set(value) - {"name", "text"}, key=str):
+                r.error(where, f"unknown field {unknown!r}: the core gives the rest")
+            text(f"{where}.name", value.get("name"))
+            text(f"{where}.text", value.get("text"))
+    else:
+        _check_optional_text(r, "root", raw, "description")
+        for cid, value in texts("contrasts", core.get("contrasts")).items():
+            text(f"contrasts.{cid}", value)
 
 
 NUMBERS_KEYS = {
@@ -3955,7 +4062,8 @@ class _Language:
                 continue
             if re.search(r"(?m)^[\"']?part[\"']?\s*:", text):
                 raw = _load_raw(p)
-                if isinstance(raw, dict) and raw.get("part") == "core":
+                if isinstance(raw, dict) and raw.get("part") == "core" \
+                        and raw.get("kind") not in GUIDE_KINDS:
                     cores.append(raw.get("id") if _is_str(raw.get("id")) else p.stem)
         return sorted(cores)[0] if cores else None
 
