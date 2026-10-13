@@ -27,7 +27,7 @@ name: Japanese kana (import fixture)
 kind: vocab
 language: { code: ja, iso639_3: jpn, name: Japanese, script: kana, tts: ja-JP }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 tags: [fixture]
 
 cards:

@@ -150,7 +150,7 @@ used when present. `front`/`back` work as aliases. List columns split on `|`.
 python3 tools/import_csv.py words.csv \
     --id es-en-food --name "Spanish food" \
     --language es --language-name Spanish --iso639-3 spa --tts es-ES \
-    --license CC0-1.0 > decks/es/es-en-food.yaml
+    --license CC-BY-SA-4.0 > decks/es/es-en-food.yaml
 
 python3 tools/validate_decks.py decks/es/es-en-food.yaml
 ```

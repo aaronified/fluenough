@@ -20,7 +20,7 @@ id: hi-en-probe
 name: Probe
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
   - id: hi-0001
     target: घर
@@ -34,7 +34,7 @@ id: hi-en-probe
 name: Hindi facts
 kind: facts
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 facts:
 """
 
@@ -312,7 +312,7 @@ name: Probe
 kind: grammar
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 pattern:
   name: P
   slot_name: person
@@ -352,7 +352,7 @@ id: hi-numbers
 name: Hindi numbers
 kind: numbers
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 words:
   1: "एक"
   2: ["दो"]
@@ -367,7 +367,7 @@ name: Tens and big numbers
 theme: numbers-big
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
   - { id: hi-0001, target: "एक", native: "1", reading: "ek" }
   - { id: hi-0002, target: "दो", native: "2", reading: "do" }

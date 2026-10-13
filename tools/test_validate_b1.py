@@ -46,7 +46,7 @@ CAT = {"id": "zz-9501", "target": "పిల్లి", "reading": "pilli", "nat
 # A Bengali layer of the fixture's core: a second course of the language.
 BENGALI_HOME = {"schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
                 "native": dict(NATIVES["bn"]), "name": "বাড়ি (bāṛi)",
-                "license": "CC0-1.0",
+                "license": "CC-BY-SA-4.0",
                 "cards": {"zz-9004": {"native": "মা (mā)",
                                       "notes": {"address": "আদর (ādar)."}}}}
 
@@ -63,7 +63,7 @@ def single(deck_id: str = "zz-en-extra", cards: list | None = None,
            native: str = "en", **extra: object) -> dict:
     """A single-file deck of the zz language."""
     deck = {"schema": 1, "id": deck_id, "name": "Extra", "language": dict(LANGUAGE),
-            "native": dict(NATIVES[native]), "license": "CC0-1.0",
+            "native": dict(NATIVES[native]), "license": "CC-BY-SA-4.0",
             "cards": cards if cards is not None else [dict(CAT)]}
     deck.update(extra)
     return deck
@@ -464,7 +464,7 @@ class GrammarCore(B1Case):
         super().setUp()
         self.put(self.CORE_FILE, {
             "schema": 1, "id": "zz-grammar-past", "part": "core", "kind": "grammar",
-            "language": dict(LANGUAGE), "license": "CC0-1.0",
+            "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
             "pattern": {"slots": ["నేను", "నువ్వు"], "entries": [{
                 "lemma": "వెళ్ళు", "key": "vellu", "reading": "veḷḷu",
                 "forms": {"నేను": "వెళ్ళాను", "నువ్వు": "వెళ్ళావు"},
@@ -472,7 +472,7 @@ class GrammarCore(B1Case):
         self.put(self.LAYER_FILE, {
             "schema": 1, "id": "zz-en-grammar-past", "kind": "layer",
             "core": "zz-grammar-past", "native": dict(NATIVES["en"]),
-            "name": "Past tense", "license": "CC0-1.0",
+            "name": "Past tense", "license": "CC-BY-SA-4.0",
             "pattern": {"name": "Past tense", "slot_name": "person",
                         "prompt": "{lemma} ({gloss}) — {slot}",
                         "slots": {"నేను": "I, నేను (nēnu)", "నువ్వు": "you, నువ్వు (nuvvu)"},
@@ -1486,7 +1486,7 @@ class BaseStems(B1Case):
             with self.subTest(deck_id):
                 self.put(f"{deck_id}.yaml", {
                     "schema": 1, "id": deck_id, "part": "core", "kind": "grammar",
-                    "language": dict(LANGUAGE), "license": "CC0-1.0",
+                    "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
                     "pattern": {"slots": ["నేను"], "entries": [{
                         "lemma": "అతడు", "key": "ataddu", "reading": "ataḍu",
                         "forms": {"నేను": "తన"}, "readings": {"నేను": "tana"}}]}})
@@ -1540,7 +1540,7 @@ class BasesCoverage(B1Case):
             target="నేను పిల్లి ఇంటికి వెళ్తాను.", reading="nēnu pilli iṇṭiki veḷtānu."))
         self.put("bn/zz-bn-home.yaml", {
             "schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
-            "native": dict(NATIVES["bn"]), "name": "বাড়ি (bāṛi)", "license": "CC0-1.0",
+            "native": dict(NATIVES["bn"]), "name": "বাড়ি (bāṛi)", "license": "CC-BY-SA-4.0",
             "cards": {"zz-9010": {"native": "বিড়াল (biṛāl)", "notes": {"tail": "লেজ (lej)."}}}})
         self.assertAcross(f"{self.p(CORE)}: card zz-9002: 'పిల్లి' is not a word the zz-en "
                           f"course teaches as a card, and has no bases entry; add {{ word: "
@@ -1744,13 +1744,13 @@ class PlansAcross(B1Case):
         """A core zz-health, and its layer for [native]."""
         self.put("zz-health.yaml", {
             "schema": 1, "id": "zz-health", "part": "core", "language": dict(LANGUAGE),
-            "license": "CC0-1.0",
+            "license": "CC-BY-SA-4.0",
             "cards": [{"id": "zz-9701", "target": "జ్వరం", "reading": "jvaraṁ",
                        "pos": "noun"}]})
         rel = f"{native}/zz-{native}-health.yaml"
         self.put(rel, {"schema": 1, "id": f"zz-{native}-health", "kind": "layer",
                        "core": "zz-health", "native": dict(NATIVES[native]),
-                       "name": "Health", "license": "CC0-1.0",
+                       "name": "Health", "license": "CC-BY-SA-4.0",
                        "cards": {"zz-9701": {"native": "fever"}}})
         return rel
 
@@ -1790,7 +1790,7 @@ class PlansAcross(B1Case):
     def test_grammar_topics_name_a_rule_or_a_grammar_deck_of_the_unit(self) -> None:
         self.put("zz-en-grammar-be.yaml", {
             "schema": 1, "id": "zz-en-grammar-be", "name": "Be", "kind": "grammar",
-            "language": dict(LANGUAGE), "native": dict(NATIVES["en"]), "license": "CC0-1.0",
+            "language": dict(LANGUAGE), "native": dict(NATIVES["en"]), "license": "CC-BY-SA-4.0",
             "pattern": {"name": "Be", "slot_name": "person", "slots": ["నేను"],
                         "prompt": "{lemma} ({gloss}) — {slot}",
                         "entries": [{"lemma": "ఉండు", "key": "undu", "gloss": "to be",
@@ -2026,7 +2026,7 @@ class ScriptInProse(B1Case):
 
     def test_a_bengali_layers_own_words_need_no_reading(self) -> None:
         bn = {"schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
-              "native": dict(NATIVES["bn"]), "name": "বাড়ি", "license": "CC0-1.0",
+              "native": dict(NATIVES["bn"]), "name": "বাড়ি", "license": "CC-BY-SA-4.0",
               "cards": {"zz-9004": {"native": "মা", "notes": {"address": "আদর।"}}}}
         self.put("bn/zz-bn-home.yaml", bn)
         self.assertNoError("bn/zz-bn-home.yaml")

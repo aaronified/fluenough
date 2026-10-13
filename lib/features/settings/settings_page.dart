@@ -232,7 +232,7 @@ class SettingsPage extends StatelessWidget {
           ),
         // Where the decks' texts come from (#98), on a page of its own; no
         // row when no deck names a source.
-        ?_sources(context, state),
+        _sources(context, state),
       ],
     );
   }
@@ -797,17 +797,19 @@ class SettingsPage extends StatelessWidget {
     if (context.mounted) showAppSnackBar(context, l10n.settingsLogCleared);
   }
 
-  /// The row to the sources the decks name (#98), or null when no deck
-  /// names one.
-  Widget? _sources(BuildContext context, AppState state) {
+  /// The row to the decks' licence and the sources they name (#98,
+  /// ADR-0040). It is always there, since the licence always applies; with
+  /// no source named, its line names the licence.
+  Widget _sources(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
     final sources = sourcesOf(state.decks);
-    if (sources.isEmpty) return null;
     final count = sources.fold(0, (n, source) => n + source.lines.length);
     return GroupedTile(
       leading: const Icon(Icons.menu_book_outlined),
       title: l10n.settingsSources,
-      subtitle: l10n.settingsSourcesSummary(count),
+      subtitle: count == 0
+          ? l10n.sourcesLicence
+          : l10n.settingsSourcesSummary(count),
       trailing: const Icon(Icons.chevron_right),
       onTap: () => AppNavigator.openSources(context),
     );

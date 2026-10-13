@@ -185,5 +185,7 @@ Never correct a quoted text: explain a difference in a note.
 ## Deck licences
 
 Each deck declares its own `license`, separate from the app's GPL-3.0. The
-decks here are CC0-1.0 (public domain). Contributed decks may use any licence
-permitting redistribution, declared in the file.
+decks here are `"CC-BY-SA-4.0"`, with attribution
+([ADR-0040](../docs/adr/0040-decks-are-cc-by-sa.md)); content once given as
+CC0 stays usable. Data taken from outside names its source per item. See
+[DECK-FORMAT.md, Licensing deck content](../docs/DECK-FORMAT.md#licensing-deck-content).

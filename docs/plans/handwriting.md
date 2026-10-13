@@ -48,8 +48,8 @@ Decided with the owner:
   in, such as Devanagari's headline.
 - **Japanese:** [KanjiVG](https://kanjivg.tagaini.net/) has stroke paths in
   order for kana and kanji. Its licence is CC BY-SA 3.0, so it must be
-  credited and shared alike. That is the same licence question the
-  Wiktionary plan raises for the CC0 decks.
+  credited and shared alike. The decks are CC BY-SA 4.0 since
+  ADR-0040; whether its 3.0 data may go in them is still to decide.
 - **Chinese:** [Hanzi Writer](https://github.com/chanind/hanzi-writer)'s
   data, from Make Me a Hanzi, has stroke paths and order for hanzi, under
   the Arphic Public License (its graphics derive from Arphic fonts); the
@@ -96,7 +96,7 @@ Decided with the owner:
 ## To decide
 
 - The stroke-order convention for each Indian script, and who checks it.
-- KanjiVG's CC BY-SA licence beside the CC0 decks.
+- KanjiVG's CC BY-SA 3.0 licence beside the CC BY-SA 4.0 decks.
 - How forgiving the check is, tuned on real drawings.
 - Whether a vowel sign is drawn alone, or on a consonant (कि).
 

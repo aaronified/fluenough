@@ -30,7 +30,7 @@ name: "Bengali reading (fixture)"
 kind: reading
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 source: "$readingFixtureDeckSource"
 tags: [fixture]
 

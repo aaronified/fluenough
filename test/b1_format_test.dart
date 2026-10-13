@@ -828,7 +828,7 @@ void main() {
       expect(deck.kind, DeckKind.vocab);
       expect(deck.language.code, 'zz');
       expect(deck.native.code, 'en');
-      expect(deck.license, 'CC0-1.0');
+      expect(deck.license, 'CC-BY-SA-4.0');
       expect(deck.tags, ['unreviewed']);
       expect(deck.refs, isEmpty);
       expect(deck.cards.map((c) => c.id).take(5), [
@@ -943,7 +943,7 @@ void main() {
       final deck = merge(marketCore, marketLayer);
       expect(deck.name, 'At the market');
       expect(deck.description, 'Buying and selling.');
-      expect(deck.license, 'CC0-1.0 AND CC-BY-4.0');
+      expect(deck.license, 'CC-BY-SA-4.0 AND CC-BY-4.0');
       expect(deck.authors.map((a) => a.name), ['Core author', 'Layer author']);
       expect(deck.source, 'https://example.org/core');
       expect(deck.theme, 'market');

@@ -288,7 +288,7 @@ id: es-en-core-100
 name: Spanish Core 100
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC-BY-SA-4.0
+license: "CC-BY-SA-4.0"
 cards:
   - id: es-0001
     target: la casa
@@ -406,8 +406,8 @@ to one concern each.
 
 ## Licence
 
-**GPL-3.0, with an App Store Distribution Exception.** See [LICENSE](LICENSE)
-and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md).
+**Code: GPL-3.0, with an App Store Distribution Exception.** See [LICENSE](LICENSE)
+and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md). **Decks: CC BY-SA 4.0.**
 
 <details>
 <summary><b>The licence in detail</b></summary>
@@ -419,7 +419,10 @@ the source. See [LICENSE](LICENSE) and
 [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md), and
 [ADR-0003](docs/adr/0003-licence.md) for the reasoning.
 
-Deck content carries its own licence, declared per file.
+Deck content is **CC BY-SA 4.0**, with attribution, declared in each deck's
+`license` ([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). Data taken
+from Wiktionary, Wikimedia Commons, Wikipedia or Tatoeba names its source,
+and the app credits them under Settings, Sources.
 
 </details>
 

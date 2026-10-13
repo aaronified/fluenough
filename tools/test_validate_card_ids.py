@@ -29,7 +29,7 @@ id: {deck_id}
 name: Probe
 language: {{ code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }}
 native: {{ code: {native}, iso639_3: {names[native]} }}
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
 {cards}"""
 
@@ -169,7 +169,7 @@ name: Probe
 kind: grammar
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 pattern:
   name: Present
   slot_name: person

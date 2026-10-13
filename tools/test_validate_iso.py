@@ -20,7 +20,7 @@ name: Probe
 kind: {kind}
 language: {{ code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }}
 native: {{ code: en, iso639_3: eng, name: English }}
-license: CC0-1.0
+license: CC-BY-SA-4.0
 """
 
 ROMANISATION = """\
