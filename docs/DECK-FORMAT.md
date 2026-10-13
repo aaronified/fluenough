@@ -1041,13 +1041,17 @@ Answers from the owner, asked one at a time (#506). All of them are
 0.5.0, after the relicensing (#510).
 
 - **A word that is its own root:** `bases: self` (#513).
-- **`source` for Wiktionary, Tatoeba and Leipzig data:** "Per item". Each
+- **`source` for Wiktionary and Tatoeba data:** "Per item". Each
   item taken from outside names its own source.
 - **Gender classes:** Spanish and Japanese are "es m/f; ja none". The
   validator checks "Nouns only": on a noun, a value outside the language's
   classes is an error, and so is a missing gender once the language is
   filled in (#512).
-- **Frequency:** "Leipzig Corpora lists" (#516).
+- **Frequency:** first "Leipzig Corpora lists", then, because Leipzig's
+  terms conflict, "Count from Wikipedia instead" (#516).
+- **Word data from Wiktionary:** "Yes, in 0.5.0". A tool imports from the
+  kaikki.org extracts, naming the source per item (#518). IndoWordNet:
+  "Don't use it".
 - **Field names:** "Approve these names": `synonyms`, `antonyms` and
   `frequency` on a card, and `cards` on a fact (#513, #516).
 - **Drafted fields:** all four are kept: `register`, `forms`,
