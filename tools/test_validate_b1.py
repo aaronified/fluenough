@@ -1463,6 +1463,38 @@ class BaseStems(B1Case):
         self.assertIn(f"  warning card zz-9502: examples[0].{self.MSG}",
                       self.warnings([], examples=[example]))
 
+    # A sentence with a pronoun's case form in it, as the Assamese decks have.
+    HIS = {"target": "తన పిల్లి వచ్చింది.", "reading": "tana pilli vaccindi."}
+    HIS_BASE = {"word": "తన", "base": "అతడు", "reading": "ataḍu", "meaning": "he"}
+
+    def test_a_pronouns_case_form_is_not_a_new_stem(self) -> None:
+        # తన (tana) is a form of అతడు (ataḍu), not అతడు on another stem (#480).
+        warning = (f"  warning card zz-9502: bases: 'తన' does not start as its base "
+                   f"'అతడు' does")
+        self.assertTrue(any(x.startswith(warning) for x in
+                            self.warnings([self.HIS_BASE], **self.HIS)))
+        he = {"id": "zz-9503", "target": "అతడు", "reading": "ataḍu", "native": "he",
+              "pos": "pronoun"}
+        sentence = dict(self.SENTENCE, bases=[self.HIS_BASE, self.CAME], **self.HIS)
+        self.put(EXTRA, single(cards=[dict(CAT), he, sentence]))
+        # Only the pronoun is let off: the verb's new stem still warns.
+        self.assertEqual(self.section(self.run_main(), EXTRA),
+                         [f"  warning card zz-9502: {self.MSG}"])
+
+    def test_a_lemma_of_a_pronoun_grammar_deck_is_not_a_new_stem(self) -> None:
+        for deck_id, warned in (("zz-grammar-pronouns", False), ("zz-grammar-past", True)):
+            with self.subTest(deck_id):
+                self.put(f"{deck_id}.yaml", {
+                    "schema": 1, "id": deck_id, "part": "core", "kind": "grammar",
+                    "language": dict(LANGUAGE), "license": "CC0-1.0",
+                    "pattern": {"slots": ["నేను"], "entries": [{
+                        "lemma": "అతడు", "key": "ataddu", "reading": "ataḍu",
+                        "forms": {"నేను": "తన"}, "readings": {"నేను": "tana"}}]}})
+                found = self.warnings([self.HIS_BASE], **self.HIS)
+                self.assertEqual(any("does not start as its base" in x for x in found),
+                                 warned)
+                self.p(f"{deck_id}.yaml").unlink()
+
     def test_a_layers_note_answers_a_core_card(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9002")["bases"].__setitem__(
             0, {"word": "నేను", "ref": "zz-9001"}))
