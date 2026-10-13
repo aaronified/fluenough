@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter_test/flutter_test.dart';
@@ -5,18 +7,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/features/gallery/gallery_entry.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
+import 'package:fluenough/ui/theme.dart';
 
 import 'harness.dart';
 
 /// The bottom of the phone's usable screen: above the navigation bar.
 const double clearLine = 844 - navBarHeight;
-
-/// Screens left out at 2x text, each with the issue that fixes it.
-const Map<String, String> knownAt2x = <String, String>{
-  // A drill doesn't scroll, so at 2x the typo buttons overflow onto the
-  // bar. #482 makes drills scroll when they don't fit.
-  'drill-production-typo': '#482',
-};
 
 /// Whether [rect] reaches into the strip the three-button bar covers.
 bool underBar(Rect rect) => rect.bottom > clearLine + 0.5 && rect.top < 844;
@@ -47,7 +43,18 @@ Future<List<String>> underBarAtEnd(WidgetTester tester) async {
     of: find.byType(GalleryPreview),
     matching: find.byType(RichText),
   );
+  final tabLabels = find
+      .descendant(
+        of: find.byType(NavigationBar),
+        matching: find.byType(RichText),
+      )
+      .evaluate()
+      .toSet();
   for (final element in texts.evaluate()) {
+    // In the test font every letter is a full square, so "Progress" and
+    // "Settings" wrap where Roboto keeps them on one line: the tab labels
+    // are checked in Roboto by nav_bar_labels_test.dart instead.
+    if (tabLabels.contains(element)) continue;
     final box = element.renderObject! as RenderParagraph;
     if (!box.hasSize || !box.attached) continue;
     final rect = box.localToGlobal(Offset.zero) & box.size;
@@ -70,9 +77,11 @@ Future<List<String>> underBarAtEnd(WidgetTester tester) async {
   return found;
 }
 
-/// Walks every gallery screen on a phone with the three-button bar at
-/// [scale] text, and expects none to leave text or a button under the bar
-/// once scrolled to its end (#501).
+/// Walks every gallery screen on a phone with the three-button bar, its
+/// text set to [scale], and expects none to leave text or a button under
+/// the bar once scrolled to its end (#501). The screens draw through the
+/// app's own cap (`capTextScale` in app.dart), so a phone at 2x shows them at
+/// [AppSizes.maxTextScale], and the walk checks that it does (#505).
 ///
 /// Each scale runs in a test file of its own: run one after the other in
 /// one file, the second walk's language list never settles.
@@ -82,13 +91,20 @@ Future<void> expectNothingUnderBar(WidgetTester tester, double scale) async {
   await app.load();
   final under = <String, List<String>>{};
   for (final entry in <GalleryEntry>[fullAppEntry, ...allGalleryEntries]) {
-    if (scale > 1 && knownAt2x.containsKey(entry.id)) continue;
     await pumpScreen(
       tester,
       GalleryPreview(key: UniqueKey(), entry: entry),
       state: app,
     );
-    // Overflows at 2x are the accessibility tests' to catch.
+    final drawn = MediaQuery.textScalerOf(
+      tester.element(find.byType(GalleryPreview)),
+    ).scale(1);
+    expect(
+      drawn,
+      closeTo(math.min(scale, AppSizes.maxTextScale), 0.001),
+      reason: entry.id,
+    );
+    // Overflows at large text are the accessibility tests' to catch.
     tester.takeException();
     final found = await underBarAtEnd(tester);
     if (found.isNotEmpty) under[entry.id] = found;
