@@ -12,6 +12,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/segmented.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'settings_controls.dart';
 
@@ -76,7 +77,12 @@ class AppearancePage extends StatelessWidget {
               features.isAvailable(Feature.dynamicColour) &&
               settings.dynamicColour;
           return ListView(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
+            padding: const EdgeInsetsDirectional.fromSTEB(
+              16,
+              4,
+              16,
+              24,
+            ).clearingSystemBar(context),
             children: <Widget>[
               _Preview(sample: previewCard(state), settings: settings),
               const SizedBox(height: 24),
