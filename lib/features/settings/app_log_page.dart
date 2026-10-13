@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../core/logs/log_entry.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 
 /// The app's own log (#162), a line an entry, oldest at the top and the
 /// newest at the foot, where it opens. The text can be selected. Opened
@@ -51,7 +52,12 @@ class AppLogPage extends StatelessWidget {
               // first, so that the oldest is still at the top.
               child: ListView.builder(
                 reverse: true,
-                padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
+                padding: const EdgeInsetsDirectional.fromSTEB(
+                  16,
+                  8,
+                  16,
+                  24,
+                ).clearingSystemBar(context),
                 itemCount: entries.length,
                 itemBuilder: (context, i) {
                   final entry = entries[entries.length - 1 - i];

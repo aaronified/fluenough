@@ -16,6 +16,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/stat_tile.dart';
+import '../../ui/widgets/system_bar.dart';
 import 'deck_content.dart';
 import 'deck_facts.dart';
 import 'passage_preview.dart';
@@ -142,7 +143,12 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             ],
           ),
           body: ListView(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
+            padding: const EdgeInsetsDirectional.fromSTEB(
+              16,
+              0,
+              16,
+              24,
+            ).clearingSystemBar(context),
             children: <Widget>[
               _Header(entry: entry),
               const SizedBox(height: 20),
