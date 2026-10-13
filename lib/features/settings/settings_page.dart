@@ -92,9 +92,6 @@ class SettingsPage extends StatelessWidget {
                     const ReviewSection(),
                     const SizedBox(height: 20),
                     _logs(context, state),
-                    // Where the decks' texts come from (#98), on a page of
-                    // its own; no row when no deck names a source.
-                    ..._sources(context, state),
                     const SizedBox(height: 20),
                     const BackupSection(),
                     const SizedBox(height: 20),
@@ -233,6 +230,9 @@ class SettingsPage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => NativeChoicePage.open(context, language),
           ),
+        // Where the decks' texts come from (#98), on a page of its own; no
+        // row when no deck names a source.
+        ?_sources(context, state),
       ],
     );
   }
@@ -797,27 +797,20 @@ class SettingsPage extends StatelessWidget {
     if (context.mounted) showAppSnackBar(context, l10n.settingsLogCleared);
   }
 
-  /// The way to the sources the decks name (#98), with a gap above it, or
-  /// nothing when no deck names one.
-  List<Widget> _sources(BuildContext context, AppState state) {
+  /// The row to the sources the decks name (#98), or null when no deck
+  /// names one.
+  Widget? _sources(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
     final sources = sourcesOf(state.decks);
-    if (sources.isEmpty) return const <Widget>[];
+    if (sources.isEmpty) return null;
     final count = sources.fold(0, (n, source) => n + source.lines.length);
-    return <Widget>[
-      const SizedBox(height: 20),
-      GroupedList.settings(
-        children: <Widget>[
-          GroupedTile(
-            leading: const Icon(Icons.menu_book_outlined),
-            title: l10n.settingsSources,
-            subtitle: l10n.settingsSourcesSummary(count),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => AppNavigator.openSources(context),
-          ),
-        ],
-      ),
-    ];
+    return GroupedTile(
+      leading: const Icon(Icons.menu_book_outlined),
+      title: l10n.settingsSources,
+      subtitle: l10n.settingsSourcesSummary(count),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => AppNavigator.openSources(context),
+    );
   }
 
   /// Saves the review log as `fluenough-<profile>-reviews.jsonl`, where the
