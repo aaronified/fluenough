@@ -137,12 +137,16 @@ class CoreExample {
     this.reading,
     this.ipa,
     this.bases = const <CardBase>[],
+    this.source,
   });
 
   final String target;
   final String? reading;
   final String? ipa;
   final List<CardBase> bases;
+
+  /// Where the example was taken from, named per item (#511).
+  final String? source;
 }
 
 /// A core card's note: its language facts, its text being in each layer.
@@ -714,6 +718,7 @@ class _Merge {
             native: translation.native,
             reading: example.reading,
             ipa: example.ipa,
+            source: example.source,
             bases: bases(
               example.bases,
               translation.bases,

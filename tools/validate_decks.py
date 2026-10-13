@@ -126,7 +126,7 @@ PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glo
 SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
 GLOSS_KEYS = {"word", "modern", "reading", "ipa", "meaning", "note"}
-EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases"}
+EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases", "source"}
 # A reading question has this many options, and a passage this many
 # questions (#98, ADR-0019).
 CHOICES = range(2, 5)
@@ -146,7 +146,13 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
                   "notes", "phrasebook", "bases", "rules"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
-CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases"}
+CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
+# A word card has at least this many examples (owner, #506: "At least 2").
+MIN_EXAMPLES = 2
+# The languages whose examples are filled in (#511). In these, a word card
+# with fewer than MIN_EXAMPLES examples is an error; in any other, nothing is
+# reported yet. A language is added here when its fill issue is closed.
+FILLED_LANGUAGES: set[str] = set()
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "wiktionary")
 LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
@@ -681,6 +687,11 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
                         core=core)
     examples = _check_examples(r, where, card.get("examples"), form=form,
                                cid=cid, lang=lang, script=script)
+    if (lang in FILLED_LANGUAGES and counts_as_word(card, r.deck_kind or "vocab")
+            and len(examples) < MIN_EXAMPLES):
+        r.error(where, f"{len(examples)} example(s); a word card has at least "
+                       f"{MIN_EXAMPLES} once {lang} is filled in "
+                       f"(DECK-FORMAT.md, Card data)")
     if cid is not None and _is_str(target):
         alts = card.get("alt_target")
         tags = card.get("tags")
@@ -1044,7 +1055,7 @@ def _check_examples(r: Report, where: str, examples: object, *,
         elif set(ex) - EXAMPLE_KEYS:
             r.error(where, f"examples[{j}] has unknown fields")
             continue
-        for key in ("reading", "ipa"):
+        for key in ("reading", "ipa", "source"):
             if key in ex and not _is_str(ex.get(key)):
                 r.error(where, f"examples[{j}].{key} must be a non-empty "
                                f"string or omitted")

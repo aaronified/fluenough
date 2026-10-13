@@ -61,7 +61,8 @@ Before you start:
    - Core: `decks/<lang>/<lang>-<name>.yaml`, `part: "core"` ("A core"). Only
      the language learnt: `target`, `reading` (letters *based on* ISO 15919;
      never write that it strictly follows it), `ipa`, `alt_target`, `pos`,
-     `gender`, `picture`, `examples` (`target`, `reading`, `ipa`, `bases`),
+     `gender`, `picture`, `examples` (`target`, `reading`, `ipa`, `bases`,
+     and `source` on one taken from outside, such as Tatoeba),
      `notes` (core form, with ids and `words`), `bases`, `rules`. No `native`.
      `python3 tools/transcribe.py <code> "<word>"` gives reading and IPA.
    - Layer: `decks/<lang>/en/<lang>-en-<name>.yaml`, `kind: "layer"`, keyed by
@@ -86,6 +87,13 @@ Before you start:
    - Tag the files `"unreviewed"`; a culture note needs a `source`
      ([docs/REVIEWING.md](../../../docs/REVIEWING.md) is how a speaker clears it).
    - Every word card gets at least one typed note ("Notes").
+   - Every word card gets at least 2 examples ("Card data", "Examples"):
+     natural sentences that use the word, each with its `reading` and `ipa`
+     in the core and its translation in each layer, keyed by the target.
+     The validator makes fewer than 2 an error only for a language in
+     `FILLED_LANGUAGES` (`tools/validate_decks.py`); write 2 anyway. An
+     example taken from outside names its own `source`; one written for the
+     deck has none.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep
