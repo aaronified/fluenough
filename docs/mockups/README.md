@@ -23,6 +23,15 @@ approval.
   and destructive actions in the error colour. Approved by the owner,
   2026-10-12, with the decisions the page marks Proposed (#496).
 
+## Awaiting approval
+
+Drawn to the approved shape, with what they decide themselves marked
+Proposed. Not spec until the owner approves.
+
+- `set-cards.html`: a set card in a lesson (#515): the whole closed group
+  shown once, before its members, the known ones marked; then only the new
+  members taught and asked. Hindi and Bengali, at 1x and 1.4x.
+
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
