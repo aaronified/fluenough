@@ -26,7 +26,7 @@ approval.
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
-`languages-you-know.html`: real theme colours, light and dark, 2x text, a
+`languages-you-know.html`: real theme colours, light and dark, 1.4x text (the app's cap, #505), a
 contrast self-check, and Hindi or Bengali examples. Until then, they are
 history, not spec.
 
