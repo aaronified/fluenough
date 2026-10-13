@@ -255,6 +255,11 @@ extension AppTextStyles on TextTheme {
 
 /// Sizes the design uses again and again.
 abstract final class AppSizes {
+  /// The largest text the app draws, whatever the phone's setting: Android
+  /// goes to 2x, the app stops at 1.4x, on every screen alike (owner,
+  /// 2026-10-13, #505).
+  static const double maxTextScale = 1.4;
+
   /// A primary button: "Review all due", "Create profile".
   static const double primaryButton = 56;
 

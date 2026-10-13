@@ -76,6 +76,7 @@ class _FluenoughAppState extends State<FluenoughApp> {
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
           navigatorObservers: _observers,
+          builder: capTextScale,
           // The first launch: welcome, tour and the languages the learner
           // speaks (#118, #53), then which they want to learn, their first
           // decks downloaded (#210), and placement (#117). Each answer saved
@@ -91,6 +92,15 @@ class _FluenoughAppState extends State<FluenoughApp> {
     );
   }
 }
+
+/// Caps the phone's text size at [AppSizes.maxTextScale] for everything
+/// under [MaterialApp]: every screen, sheet, dialog and the tab bar (#505).
+/// [MaterialApp.builder] for the app, and for the tests' harness.
+Widget capTextScale(BuildContext context, Widget? child) =>
+    MediaQuery.withClampedTextScaling(
+      maxScaleFactor: AppSizes.maxTextScale,
+      child: child ?? const SizedBox.shrink(),
+    );
 
 /// The app once the first launch is done: [AppShell], or, while a language
 /// the learner learns has none of its first decks on the phone, the page

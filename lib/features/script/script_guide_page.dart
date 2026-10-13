@@ -5,6 +5,7 @@ import '../../core/models/deck.dart';
 import '../../core/models/script_guide.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -118,8 +119,8 @@ class ScriptGuideView extends StatelessWidget {
           ],
         ],
       ),
-      bottomNavigationBar: SafeArea(
-        minimum: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+      bottomNavigationBar: BottomActions(
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
         child: FilledButton(
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(AppSizes.primaryButton),

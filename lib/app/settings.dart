@@ -580,7 +580,9 @@ class SettingsNotifier extends ChangeNotifier {
   set pureBlack(bool value) => _set(_pureBlack, value, (v) => _pureBlack = v);
 
   /// A multiplier on target text in drills, 0.8–1.4. Menus follow the phone's
-  /// own font size instead.
+  /// own font size instead. Drills draw it no larger than keeps a card within
+  /// a 1.4x total with the phone's own size (`cardTextScaleOf`, #505), and
+  /// leave this value as saved.
   double get cardTextScale => _cardTextScale;
   set cardTextScale(double value) => _set(
     _cardTextScale,

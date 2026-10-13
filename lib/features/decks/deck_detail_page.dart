@@ -10,6 +10,7 @@ import '../../core/models/reading.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/page_parts.dart';
@@ -415,39 +416,29 @@ class _ReviewAllBar extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final note = this.note;
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        border: Border(top: BorderSide(color: scheme.outlineVariant)),
-      ),
-      child: SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              if (note != null) ...<Widget>[
-                Text(
-                  note,
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: 12),
-              ],
-              FilledButton.icon(
-                style: FilledButton.styleFrom(
-                  minimumSize: const Size.fromHeight(AppSizes.primaryButton),
-                ),
-                onPressed: onPressed,
-                icon: Icon(icon, size: 22),
-                label: Text(label),
+    return BottomActions(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          if (note != null) ...<Widget>[
+            Text(
+              note,
+              style: theme.textTheme.bodyMedium!.copyWith(
+                color: scheme.onSurfaceVariant,
               ),
-            ],
+            ),
+            const SizedBox(height: 12),
+          ],
+          FilledButton.icon(
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+            ),
+            onPressed: onPressed,
+            icon: Icon(icon, size: 22),
+            label: Text(label),
           ),
-        ),
+        ],
       ),
     );
   }

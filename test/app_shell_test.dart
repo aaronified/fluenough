@@ -107,15 +107,14 @@ void main() {
     );
   });
 
-  testWidgets('the shell does not overflow at twice the text size', (
-    tester,
-  ) async {
+  testWidgets('the shell does not overflow with the phone at twice the '
+      'text size, drawn at the app\'s 1.4x cap (#505)', (tester) async {
     usePhone(tester, textScale: 2.0);
     final state = await pumpApp(tester);
     final l10n = l10nOf(tester);
     expect(
       MediaQuery.textScalerOf(tester.element(find.byType(AppShell))).scale(10),
-      20,
+      10 * AppSizes.maxTextScale,
     );
     for (final tab in ShellTab.values) {
       state.shellTab.value = tab;

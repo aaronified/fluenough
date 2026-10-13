@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
@@ -8,6 +10,7 @@ import '../../app/settings.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
@@ -76,6 +79,9 @@ class AppearancePage extends StatelessWidget {
           final dynamicOn =
               features.isAvailable(Feature.dynamicColour) &&
               settings.dynamicColour;
+          // Card text stops at a 1.4x total with the phone's own (#505).
+          final cardMax = maxCardTextScaleOf(context);
+          final cardScale = cardTextScaleOf(context, settings);
           return ListView(
             padding: const EdgeInsetsDirectional.fromSTEB(
               16,
@@ -180,13 +186,17 @@ class AppearancePage extends StatelessWidget {
                   feature: Feature.cardSize,
                   title: l10n.appearanceCardSize,
                   help: l10n.appearanceCardSizeHelp,
-                  valueLabel: l10n.commonPercent(settings.cardTextScale),
-                  value: settings.cardTextScale,
+                  valueLabel: l10n.commonPercent(cardScale),
+                  value: cardScale,
                   min: SettingsNotifier.minCardTextScale,
                   max: SettingsNotifier.maxCardTextScale,
                   divisions: 6,
-                  semanticValue: (v) => l10n.commonPercent(_step(v)),
-                  onChanged: (v) => settings.cardTextScale = _step(v),
+                  reachable: cardMax,
+                  note: cardMax <= 1.0 ? l10n.appearanceCardSizeAtLimit : null,
+                  semanticValue: (v) =>
+                      l10n.commonPercent(math.min(_step(v), cardMax)),
+                  onChanged: (v) =>
+                      settings.cardTextScale = math.min(_step(v), cardMax),
                 ),
               ),
             ],
@@ -319,7 +329,7 @@ class _Preview extends StatelessWidget {
                         TargetText(
                           s.card.target,
                           language: s.language,
-                          fontSize: 40 * settings.cardTextScale,
+                          fontSize: 40 * cardTextScaleOf(context, settings),
                           color: scheme.onSurface,
                         ),
                       if (reading != null && settings.showRomanisation) ...[
