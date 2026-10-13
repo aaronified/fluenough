@@ -501,6 +501,18 @@ void main() {
         final semantics = tester.ensureSemantics();
         await pumpScreen(tester, page, state: await teluguLearner());
         expect(tester.takeException(), isNull);
+        // The path opens with its current unit a third of the way down,
+        // which can leave a sliver of the unit above at the top edge: at
+        // the app's 1.4x cap, 2.6 high. A sliver is where the list
+        // stopped, not a target's size, so check from the top (#505).
+        for (final element in find.byType(Scrollable).evaluate()) {
+          final position =
+              (element as StatefulElement).state as ScrollableState;
+          if (position.position.axis == Axis.vertical) {
+            position.position.jumpTo(0);
+          }
+        }
+        await tester.pumpAndSettle();
         await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
         await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
         semantics.dispose();

@@ -8,6 +8,7 @@ import '../../core/models/deck.dart';
 import '../../core/review/deck_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
@@ -486,41 +487,32 @@ class ReviewFoot extends StatelessWidget {
       label: Text(l10n.reviewSend, textAlign: TextAlign.center),
     );
     final stacked = MediaQuery.textScalerOf(context).scale(1) > 1.3;
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        border: Border(top: BorderSide(color: scheme.outlineVariant)),
-      ),
-      child: SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: 8,
-            children: <Widget>[
-              if (waiting > 0)
-                Text(
-                  l10n.reviewDecksWaiting(waiting),
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.bodySmall!.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              if (!showSignOff)
-                send
-              else if (stacked) ...<Widget>[signOff, send] else
-                Row(
-                  spacing: 12,
-                  children: <Widget>[
-                    Expanded(child: signOff),
-                    Expanded(child: send),
-                  ],
-                ),
-            ],
-          ),
-        ),
+    return BottomActions(
+      padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        spacing: 8,
+        children: <Widget>[
+          if (waiting > 0)
+            Text(
+              l10n.reviewDecksWaiting(waiting),
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          if (!showSignOff)
+            send
+          else if (stacked) ...<Widget>[signOff, send] else
+            Row(
+              spacing: 12,
+              children: <Widget>[
+                Expanded(child: signOff),
+                Expanded(child: send),
+              ],
+            ),
+        ],
       ),
     );
   }

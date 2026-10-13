@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
+import '../card_text_scale.dart';
 import '../theme.dart';
 
 /// The typed-answer field: a label above, then a 64 px field with a 2 px
@@ -93,7 +94,7 @@ class AnswerField extends StatelessWidget {
               textInputAction: TextInputAction.done,
               keyboardType: digits ? TextInputType.number : null,
               style: TextStyle(
-                fontSize: script ? 22 * settings.cardTextScale : 22,
+                fontSize: script ? 22 * cardTextScaleOf(context, settings) : 22,
                 color: scheme.onSurface,
                 height: rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
               ),

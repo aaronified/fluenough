@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
@@ -35,6 +37,8 @@ class SettingsSlider extends StatelessWidget {
     required this.semanticValue,
     this.help,
     this.feature,
+    this.reachable,
+    this.note,
   });
 
   final String title;
@@ -56,12 +60,22 @@ class SettingsSlider extends StatelessWidget {
 
   final Feature? feature;
 
+  /// The highest value that can be chosen right now, when lower than [max]:
+  /// the slider stops there, and the track above it is drawn disabled.
+  final double? reachable;
+
+  /// A line under [help] saying why the slider stops short of [max].
+  final String? note;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final f = feature;
     final incoming = f != null && isIncoming(context, f);
+    final top = math.min(reachable ?? max, max);
+    final limited = top < max;
+    double held(double v) => math.min(v, top);
     Widget dimmed(Widget child) =>
         incoming ? Opacity(opacity: kIncomingOpacity, child: child) : child;
 
@@ -105,19 +119,37 @@ class SettingsSlider extends StatelessWidget {
           heading,
           const SizedBox(height: 8),
           dimmed(
-            Slider(
-              value: value.clamp(min, max),
-              min: min,
-              max: max,
-              divisions: divisions,
-              padding: EdgeInsets.zero,
-              semanticFormatterCallback: semanticValue,
-              onChanged: incoming ? null : onChanged,
+            SliderTheme(
+              // Above [reachable] the track takes the disabled colour; the
+              // part the thumb can still reach is the secondary track, drawn
+              // in the usual inactive colour.
+              data: limited
+                  ? SliderTheme.of(context).copyWith(
+                      inactiveTrackColor: scheme.onSurface.withValues(
+                        alpha: 0.12,
+                      ),
+                      secondaryActiveTrackColor: scheme.secondaryContainer,
+                    )
+                  : SliderTheme.of(context),
+              child: Slider(
+                value: held(value.clamp(min, max)),
+                secondaryTrackValue: limited ? top : null,
+                min: min,
+                max: max,
+                divisions: divisions,
+                padding: EdgeInsets.zero,
+                semanticFormatterCallback: (v) => semanticValue(held(v)),
+                onChanged: incoming ? null : (v) => onChanged(held(v)),
+              ),
             ),
           ),
           if (help != null) ...<Widget>[
             const SizedBox(height: 8),
             dimmed(Text(help!, style: settingsHelpStyle(theme))),
+          ],
+          if (note != null) ...<Widget>[
+            const SizedBox(height: 8),
+            dimmed(Text(note!, style: settingsHelpStyle(theme))),
           ],
         ],
       ),
