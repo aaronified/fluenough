@@ -88,8 +88,11 @@ class IndexFile {
   /// The language it belongs to: its folder under `decks/`.
   String get language => path.split('/')[1];
 
-  /// Whether it is one of the language's own files, not a deck.
-  bool get isLanguageFile => languageFileKinds.contains(kind);
+  /// Whether it is one of the language's own files, not a deck: a script
+  /// guide or sounds file, say, or the layer of one (#498), a layer listed
+  /// as no deck.
+  bool get isLanguageFile =>
+      languageFileKinds.contains(kind) || kind == 'layer' && deck == null;
 
   /// Whether this app can read it.
   bool get readable => schema <= supportedDeckSchema;
@@ -146,7 +149,9 @@ class IndexFile {
   /// What this file is to its language, so that a file it replaces can be
   /// found under another name: a deck by its core id and native language,
   /// a core by its id, and a language file by its kind.
-  String get role => isLanguageFile
+  String get role => kind == 'layer' && deck == null
+      ? 'file:$path'
+      : isLanguageFile
       ? 'kind:$kind'
       : core
       ? 'core:$deck'

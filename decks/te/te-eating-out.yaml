@@ -1,0 +1,94 @@
+schema: 1
+id: "te-eating-out"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "eating-out"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0340"
+    target: "భోజనం"
+    reading: "bhōjanam"
+    ipa: "bʱoːdʒanam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0341"
+    target: "నీళ్ళు"
+    reading: "nīḷḷu"
+    ipa: "niːɭɭu"
+    pos: "noun"
+    picture: "💧"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0342"
+    target: "టీ"
+    reading: "ṭī"
+    ipa: "ʈiː"
+    pos: "noun"
+    picture: "🍵"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0343"
+    target: "కాఫీ"
+    reading: "kāfī"
+    ipa: "kaːfiː"
+    pos: "noun"
+  - id: "te-0344"
+    target: "అన్నం"
+    reading: "annam"
+    ipa: "annam"
+    pos: "noun"
+    picture: "🍚"
+  - id: "te-0345"
+    target: "నాకు … కావాలి."
+    reading: "nāku... kāvāli."
+    ipa: "naːku kaːʋaːli"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: "te-0346"
+    target: "ఇంకా"
+    reading: "iṅkā"
+    ipa: "iŋkaː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0347"
+    target: "కారం"
+    reading: "kāram"
+    ipa: "kaːram"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0348"
+    target: "తీపి"
+    reading: "tīpi"
+    ipa: "t̪iːpi"
+    pos: "adj"
+  - id: "te-0349"
+    target: "శాకాహారం"
+    reading: "śākāhāram"
+    ipa: "ʃaːkaːhaːram"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0350"
+    target: "బిల్లు ఇవ్వండి."
+    reading: "billu ivvaṇḍi."
+    ipa: "billu iʋʋaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "బిల్లు", base: "బిల్లు", reading: "billu" }
+  - id: "te-0351"
+    target: "చాలా బాగుంది."
+    reading: "cālā bāgundi."
+    ipa: "tʃaːlaː baːɡund̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "బాగుంది", base: "బాగు", reading: "bāgu" }

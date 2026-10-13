@@ -1,0 +1,77 @@
+schema: 1
+id: "te-grammar-postpositions"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-0283"
+    target: "ఇంట్లో"
+    reading: "iṇṭlō"
+    ipa: "iɳʈloː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0284"
+    target: "హైదరాబాద్ నుంచి"
+    reading: "haidarābād nuñci"
+    ipa: "haid̪araːbaːd̪ nuɲtʃi"
+    pos: "phrase"
+    bases:
+      - { word: "హైదరాబాద్", base: "హైదరాబాద్", reading: "haidarābād" }
+      - { word: "నుంచి", base: "నుంచి", reading: "nuñci" }
+  - id: "te-0285"
+    target: "రాముకి ఇవ్వండి."
+    reading: "rāmuki ivvaṇḍi."
+    ipa: "raːmuki iʋʋaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "రాముకి", base: "రాము", reading: "rāmu" }
+  - id: "te-0286"
+    target: "నాతో"
+    reading: "nātō"
+    ipa: "naːt̪oː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0287"
+    target: "బల్ల మీద"
+    reading: "balla mīda"
+    ipa: "balla miːd̪a"
+    pos: "phrase"
+    bases:
+      - { word: "మీద", ref: "te-0805" }
+  - id: "te-0288"
+    target: "బల్ల కింద"
+    reading: "balla kinda"
+    ipa: "balla kind̪a"
+    pos: "phrase"
+    bases:
+      - { word: "కింద", ref: "te-0799" }
+  - id: "te-0289"
+    target: "స్టేషన్ దగ్గర"
+    reading: "sṭēṣan daggara"
+    ipa: "sʈeːʂan d̪aɡɡara"
+    pos: "phrase"
+  - id: "te-0290"
+    target: "మీ కోసం"
+    reading: "mī kōsam"
+    ipa: "miː koːsam"
+    pos: "phrase"
+    bases:
+      - { word: "కోసం", base: "కోసం", reading: "kōsam" }
+  - id: "te-0291"
+    target: "భోజనం తర్వాత"
+    reading: "bhōjanam tarvāta"
+    ipa: "bʱoːdʒanam t̪arʋaːt̪a"
+    pos: "phrase"
+  - id: "te-0292"
+    target: "భోజనానికి ముందు"
+    reading: "bhōjanāniki mundu"
+    ipa: "bʱoːdʒanaːniki mund̪u"
+    pos: "phrase"
+    bases:
+      - { word: "భోజనానికి", ref: "te-0340" }

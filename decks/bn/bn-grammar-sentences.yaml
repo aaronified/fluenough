@@ -1,0 +1,101 @@
+schema: 1
+id: "bn-grammar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+cards:
+  - id: "bn-0149"
+    target: "আমি ছাত্র।"
+    reading: "āmi chātro."
+    ipa: "ami tʃʰat̪ro"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+  - id: "bn-0150"
+    target: "এটা আমার বাড়ি।"
+    reading: "eṭā āmār bāṛi."
+    ipa: "eʈa amar baɽi"
+    pos: "phrase"
+    bases:
+      - { word: "এটা", ref: "bn-0849" }
+      - { word: "আমার", ref: "bn-0833" }
+  - id: "bn-0151"
+    target: "আমি চা খাই।"
+    reading: "āmi cā khāi."
+    ipa: "ami tʃa kʰai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "খাই", ref: "bn-0876" }
+  - id: "bn-0152"
+    target: "ও বাংলা শিখছে।"
+    reading: "o bāṅlā śikhche."
+    ipa: "o baŋla ʃikʰtʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "শিখছে", ref: "bn-0883" }
+  - id: "bn-0153"
+    target: "আমার বাংলা ভালো লাগে।"
+    reading: "āmār bāṅlā bhālo lāge."
+    ipa: "amar baŋla bʱalo laɡe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "বাংলা", base: "বাংলা", reading: "bāṅlā" }
+      - { word: "লাগে", base: "লাগা", reading: "lāgā" }
+  - id: "bn-0154"
+    target: "আমার একটা গাড়ি আছে।"
+    reading: "āmār ekṭā gāṛi āche."
+    ipa: "amar ekʈa ɡaɽi atʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "গাড়ি", ref: "bn-1163" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-0155"
+    target: "আমার টাকা নেই।"
+    reading: "āmār ṭākā nei."
+    ipa: "amar ʈaka nei"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "নেই", base: "নেই", reading: "nei" }
+  - id: "bn-0156"
+    target: "এটা ভালো না।"
+    reading: "eṭā bhālo nā."
+    ipa: "eʈa bʱalo na"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "এটা", ref: "bn-0849" }
+  - id: "bn-0157"
+    target: "যাবেন না।"
+    reading: "jāben nā."
+    ipa: "dʒaben na"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "যাবেন", ref: "bn-0873" }
+  - id: "bn-0158"
+    target: "আজ খুব গরম।"
+    reading: "āj khub gôrom."
+    ipa: "adʒ kʰub ɡɔrom"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
