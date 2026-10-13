@@ -18,10 +18,16 @@ const double clearLine = 844 - navBarHeight;
 bool underBar(Rect rect) => rect.bottom > clearLine + 0.5 && rect.top < 844;
 
 /// Scrolls every vertical list on the screen to its end, then names each
-/// text and button that sits under the three-button bar.
-Future<List<String>> underBarAtEnd(WidgetTester tester) async {
+/// text and button that sits under the three-button bar. [within] narrows
+/// it to part of the screen, such as an open bottom sheet; by default, a
+/// gallery screen.
+Future<List<String>> underBarAtEnd(
+  WidgetTester tester, {
+  Finder? within,
+}) async {
+  final area = within ?? find.byType(GalleryPreview);
   final scrollables = find.descendant(
-    of: find.byType(GalleryPreview),
+    of: area,
     matching: find.byType(Scrollable),
   );
   for (final element in scrollables.evaluate().toList()) {
@@ -39,10 +45,7 @@ Future<List<String>> underBarAtEnd(WidgetTester tester) async {
     }
   }
   final found = <String>[];
-  final texts = find.descendant(
-    of: find.byType(GalleryPreview),
-    matching: find.byType(RichText),
-  );
+  final texts = find.descendant(of: area, matching: find.byType(RichText));
   final tabLabels = find
       .descendant(
         of: find.byType(NavigationBar),
@@ -61,13 +64,18 @@ Future<List<String>> underBarAtEnd(WidgetTester tester) async {
     if (underBar(rect)) found.add('text "${box.text.toPlainText()}"');
   }
   final buttons = find.descendant(
-    of: find.byType(GalleryPreview),
+    of: area,
     matching: find.byWidgetPredicate(
       (w) =>
           w is ButtonStyleButton ||
           w is IconButton ||
           w is FloatingActionButton ||
-          w is ListTile,
+          w is ListTile ||
+          w is Checkbox ||
+          w is Switch ||
+          w is Slider ||
+          w is TextField ||
+          w is RawChip,
     ),
   );
   for (final element in buttons.hitTestable().evaluate()) {
