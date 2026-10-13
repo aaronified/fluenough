@@ -146,31 +146,38 @@ class AppShell extends StatelessWidget {
                 SettingsPage(),
               ],
             ),
-            bottomNavigationBar: NavigationBar(
-              selectedIndex: current.index,
-              onDestinationSelected: (i) => tab.value = ShellTab.values[i],
-              destinations: <Widget>[
-                NavigationDestination(
-                  icon: const Icon(Icons.home_outlined),
-                  selectedIcon: const Icon(Icons.home),
-                  label: l10n.navToday,
-                ),
-                NavigationDestination(
-                  icon: const Icon(Icons.style_outlined),
-                  selectedIcon: const Icon(Icons.style),
-                  label: l10n.navDecks,
-                ),
-                NavigationDestination(
-                  icon: const Icon(Icons.insert_chart_outlined),
-                  selectedIcon: const Icon(Icons.insert_chart),
-                  label: l10n.navProgress,
-                ),
-                NavigationDestination(
-                  icon: const _SettingsIcon(Icons.settings_outlined),
-                  selectedIcon: const _SettingsIcon(Icons.settings),
-                  label: l10n.navSettings,
-                ),
-              ],
+            // Material's bar is a fixed 80 in height and lets its labels
+            // grow to 1.3x, where Progress and Settings wrap to two lines
+            // and run under the system navigation bar. At 1.1x they keep
+            // to one line (#501).
+            bottomNavigationBar: MediaQuery.withClampedTextScaling(
+              maxScaleFactor: 1.1,
+              child: NavigationBar(
+                selectedIndex: current.index,
+                onDestinationSelected: (i) => tab.value = ShellTab.values[i],
+                destinations: <Widget>[
+                  NavigationDestination(
+                    icon: const Icon(Icons.home_outlined),
+                    selectedIcon: const Icon(Icons.home),
+                    label: l10n.navToday,
+                  ),
+                  NavigationDestination(
+                    icon: const Icon(Icons.style_outlined),
+                    selectedIcon: const Icon(Icons.style),
+                    label: l10n.navDecks,
+                  ),
+                  NavigationDestination(
+                    icon: const Icon(Icons.insert_chart_outlined),
+                    selectedIcon: const Icon(Icons.insert_chart),
+                    label: l10n.navProgress,
+                  ),
+                  NavigationDestination(
+                    icon: const _SettingsIcon(Icons.settings_outlined),
+                    selectedIcon: const _SettingsIcon(Icons.settings),
+                    label: l10n.navSettings,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
