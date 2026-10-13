@@ -10,6 +10,7 @@ import '../../app/routes.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import 'download_text.dart';
 import 'update_escape.dart';
 
@@ -116,7 +117,7 @@ class _DownloadPageState extends State<DownloadPage> {
                   8,
                   AppSizes.gutter,
                   AppSizes.gutter,
-                ),
+                ).clearingSystemBar(context),
                 children: <Widget>[
                   Text(
                     l10n.downloadsBody,
