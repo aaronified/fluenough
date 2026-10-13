@@ -110,7 +110,7 @@ Common to every kind.
 | `core` | on a layer | The id of the core the layer translates, `"te-home"`. |
 | `language` | yes, except on a layer | The language being learned. See below. A layer takes its core's. |
 | `native` | yes, except on a facts file or a core | The language explanations are written in. A core has none: each layer names its own. |
-| `license` | yes | SPDX identifier, or `CC0-1.0` for public domain. |
+| `license` | yes | SPDX identifier: `"CC-BY-SA-4.0"` in this repository ([Licensing deck content](#licensing-deck-content)). |
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | Where the content comes from: a URL, or for a book its title, author, year and licence, as in `"Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"`. The app shows it on the deck's page, and Settings lists it under Sources. |
 | `description` | no | One or two sentences. |
@@ -242,7 +242,7 @@ id: "te-home"
 part: "core"
 kind: "vocab"
 language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
-license: "CC0-1.0"
+license: "CC-BY-SA-4.0"
 authors:
   - { name: "Fluenough contributors" }
 theme: "home"
@@ -313,7 +313,7 @@ id: "te-grammar-past"
 part: "core"
 kind: "grammar"
 language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
-license: "CC0-1.0"
+license: "CC-BY-SA-4.0"
 pattern:
   slots: ["నేను", "నువ్వు"]
   entries:
@@ -340,7 +340,7 @@ core: "te-home"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Home and neighbourhood"
 description: "Rooms, the house and the street."
-license: "CC0-1.0"
+license: "CC-BY-SA-4.0"
 tags: ["unreviewed"]
 cards:
   "te-9001":
@@ -516,7 +516,7 @@ name: Spanish Core 100
 kind: vocab
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 tags: [beginner, core]
 cards:
   - id: es-0001
@@ -1060,7 +1060,7 @@ Answers from the owner, asked one at a time (#506). All of them are
 - **Confusables as word-order tiles:** "2–3, never a needed tile". One
   equal to a tile the answer needs is an error, and a missing "why" is a
   warning (#514).
-- **The relicensing ADR** is written "In the relicensing issue" (#510).
+- **The relicensing ADR** is written "In the relicensing issue" (#510): ADR-0040, built.
 
 ---
 
@@ -1110,7 +1110,7 @@ name: Spanish present tense, regular -ar verbs
 kind: grammar
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 pattern:
   name: Present tense, regular -ar verbs
   slot_name: person
@@ -1220,7 +1220,7 @@ id: "te-grammar-case-endings"
 part: "core"
 kind: "rules"
 language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
-license: "CC0-1.0"
+license: "CC-BY-SA-4.0"
 tags: ["grammar", "unreviewed"]
 table:
   applies_to:
@@ -1327,7 +1327,7 @@ kind: "layer"
 core: "te-grammar-case-endings"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "In, to, with, from: case endings"
-license: "CC0-1.0"
+license: "CC-BY-SA-4.0"
 table:
   slot_name: "case"
   slots:
@@ -1431,7 +1431,7 @@ name: "Bengali reading: going home"
 kind: reading
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 source: "Written for this example"
 passages:
   - id: bn-going-home
@@ -2418,7 +2418,7 @@ id: hi-facts
 name: Hindi facts
 kind: facts
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 facts:
   - id: hi-fact-001
     tags: [script]
@@ -2497,7 +2497,7 @@ id: te-numbers
 name: "Telugu numbers"
 kind: numbers
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 tens_and_units: true
 words:
   1: "ఒకటి"
@@ -2618,23 +2618,31 @@ to spot by eye.
 
 ## Licensing deck content
 
-Every deck declares its own `license`, independent of the app's GPL-3.0.
+Decks are **CC BY-SA 4.0**, with attribution
+([ADR-0040](adr/0040-decks-are-cc-by-sa.md); owner, 2026-10-13, #506:
+"Relicense decks to CC BY-SA"). Every deck in the repository declares
+`license: "CC-BY-SA-4.0"`, and so does the deck template. The app's code
+stays GPL-3.0, and the pictures stay Noto Emoji under Apache-2.0.
 
-Only contribute content you may legally relicense. Wordlists derived from
-copyrighted textbooks or commercial courses **are not acceptable** even when
-reworded. Good sources are public-domain frequency lists, Wiktionary
-(CC-BY-SA-4.0), Tatoeba (CC-BY-2.0-FR) and original work.
+```yaml
+license: "CC-BY-SA-4.0"
+```
 
-**Decided, not yet built** (owner, 2026-10-13, #506: "Relicense decks to
-CC BY-SA"; approval 4: "Approve as proposed"): decks move from CC0-1.0 to
-**CC BY-SA 4.0**. Until that change lands, decks stay `CC0-1.0` and the
-validator accepts the licences it does today. A new ADR supersedes ADR-0003;
-one change updates every deck's `license`, the templates, this guide,
-CONTRIBUTING, README, the app's licence and attribution screen and the
-validator's licence list (with a check that data taken from a source carries
-its attribution), and it is made before any Wiktionary or Tatoeba data goes
-in. Wiktionary (CC BY-SA 4.0) and Tatoeba (CC BY 2.0 FR, attribution per
-sentence) data may then be used, each with its source named. Noto Emoji stays
-Apache-2.0, and the GPL-3.0 app code is unchanged. Open: whether contributors
-who gave CC0 content keep that grant (**Proposed**: yes), and the shape of
-`source`.
+Only contribute content you may legally relicense under CC BY-SA 4.0.
+Wordlists derived from copyrighted textbooks or commercial courses **are not
+acceptable** even when reworded. Good sources are public-domain frequency
+lists, Wiktionary (CC BY-SA 4.0), counts from Wikipedia (CC BY-SA), Tatoeba
+(CC BY 2.0 FR, attribution per sentence) and original work. Recordings from
+Wikimedia Commons each keep their own licence and speaker credit.
+
+- **Data from outside names its source, per item** (owner: "Per item"). The
+  shape of the per-item `source` comes with the card data fields (#518);
+  until then, a deck's own `source` names a source the whole deck draws on.
+- **CC0 content already given stays usable,** because CC0 allows it.
+- **The app credits the sources.** Settings, Sources names CC BY-SA 4.0 for
+  deck content, and credits Wiktionary, Wikimedia Commons, Wikipedia and
+  Tatoeba when a deck's source names them.
+- **The validator accepts any SPDX identifier** in `license`, so a deck a
+  learner adds from a file may carry its own. It does not yet check that an
+  item taken from a source carries its attribution: that check comes with
+  the per-item `source` (open, #518).

@@ -1,6 +1,8 @@
 # ADR-0003: GPL-3.0 with an App Store Distribution Exception
 
-- **Status:** Accepted
+- **Status:** Superseded by [ADR-0040](0040-decks-are-cc-by-sa.md), which keeps
+  this decision for the app's code unchanged and licenses deck content
+  under CC BY-SA 4.0.
 - **Date:** 2026-09-19
 
 ## Context

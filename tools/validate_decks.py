@@ -1695,7 +1695,7 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
     if not _is_str(raw.get("name")):
         r.error("name", "is required")
     if not _is_str(raw.get("license")):
-        r.error("license", "is required (SPDX identifier, or CC0-1.0)")
+        r.error("license", "is required (an SPDX identifier, such as CC-BY-SA-4.0)")
 
     kind = raw.get("kind", "vocab")
     if kind == "rules":
@@ -2210,7 +2210,7 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
             r.error("root", f"a core file lives in decks/{code}/, the folder of its "
                             f"language; this one is in {path.parent.name!r}")
     if not _is_str(raw.get("license")):
-        r.error("license", "is required (SPDX identifier, or CC0-1.0)")
+        r.error("license", "is required (an SPDX identifier, such as CC-BY-SA-4.0)")
     _check_common_header(r, {k: v for k, v in raw.items() if k != "description"})
 
     script = _script_of(lang)
@@ -2519,7 +2519,7 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
     if not _is_str(raw.get("name")):
         r.error("name", "is required")
     if not _is_str(raw.get("license")):
-        r.error("license", "is required (SPDX identifier, or CC0-1.0)")
+        r.error("license", "is required (an SPDX identifier, such as CC-BY-SA-4.0)")
     _check_common_header(r, raw)
     owners = {"cards": "vocab", "pattern": "grammar", "table": "rules", "rules": "rules"}
     for key, owner in owners.items():

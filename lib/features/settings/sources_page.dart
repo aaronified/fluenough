@@ -40,17 +40,59 @@ List<({LanguageInfo language, List<DeckSourceLine> lines})> sourcesOf(
   return byLanguage.values.toList();
 }
 
-/// Where the decks' texts come from, a row per language and a line per
-/// source, such as the books the Bengali passages are taken from. Opened by
-/// Settings' Sources row (#98), which is not shown when no deck names a
-/// source.
+/// A project whose data the decks may use, credited on the Sources page
+/// when a deck names it (ADR-0040).
+enum ContentCredit {
+  /// Word data, CC BY-SA 4.0 (#518).
+  wiktionary(<String>['wiktionary']),
+
+  /// Recordings, each under its own licence and speaker credit (#518).
+  commons(<String>['wikimedia commons', 'commons.wikimedia.org']),
+
+  /// Frequency, counted from each language's Wikipedia, CC BY-SA (#516).
+  wikipedia(<String>['wikipedia']),
+
+  /// Sentences, CC BY 2.0 FR.
+  tatoeba(<String>['tatoeba']);
+
+  const ContentCredit(this.marks);
+
+  /// How a source names the project, in lower case: its name or its host.
+  final List<String> marks;
+
+  /// Whether [source] names this project.
+  bool namedIn(String source) {
+    final text = source.toLowerCase();
+    return marks.any(text.contains);
+  }
+}
+
+/// The projects [decks] use, in [ContentCredit]'s order: those a deck's own
+/// `source` names. Each item's own `source` joins this when the card data
+/// carries one (#518).
+List<ContentCredit> creditsOf(List<DeckEntry> decks) => <ContentCredit>[
+  for (final credit in ContentCredit.values)
+    if (decks.any((entry) {
+      final source = entry.deck.source;
+      return source != null && credit.namedIn(source);
+    }))
+      credit,
+];
+
+/// The decks' licence and credits, then where their texts come from, a row
+/// per language and a line per source, such as the books the Bengali
+/// passages are taken from. Opened by Settings' Sources row (#98).
+///
+/// The licence row names CC BY-SA 4.0 for deck content, and a row credits
+/// each project whose data the decks use (ADR-0040).
 class SourcesPage extends StatelessWidget {
   const SourcesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final sources = sourcesOf(AppScope.of(context).decks);
+    final decks = AppScope.of(context).decks;
+    final sources = sourcesOf(decks);
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.settingsSources),
@@ -65,18 +107,36 @@ class SourcesPage extends StatelessWidget {
         ).clearingSystemBar(context),
         children: <Widget>[
           GroupedList.settings(
+            header: l10n.sourcesDeckContent,
             children: <Widget>[
-              for (final (:language, :lines) in sources)
+              GroupedTile(
+                leading: const Icon(Icons.copyright_outlined),
+                title: l10n.sourcesLicence,
+                subtitle: l10n.sourcesLicenceLine,
+              ),
+              for (final credit in creditsOf(decks))
                 GroupedTile(
-                  leading: const Icon(Icons.menu_book_outlined),
-                  title: language.name,
-                  subtitle: <String>[
-                    for (final line in lines)
-                      l10n.settingsSourceLine(line.source, line.kind.name),
-                  ].join('\n'),
+                  leading: const Icon(Icons.public),
+                  title: l10n.sourcesCreditName(credit.name),
+                  subtitle: l10n.sourcesCreditLine(credit.name),
                 ),
             ],
           ),
+          if (sources.isNotEmpty) const SizedBox(height: 16),
+          if (sources.isNotEmpty)
+            GroupedList.settings(
+              children: <Widget>[
+                for (final (:language, :lines) in sources)
+                  GroupedTile(
+                    leading: const Icon(Icons.menu_book_outlined),
+                    title: language.name,
+                    subtitle: <String>[
+                      for (final line in lines)
+                        l10n.settingsSourceLine(line.source, line.kind.name),
+                    ].join('\n'),
+                  ),
+              ],
+            ),
         ],
       ),
     );

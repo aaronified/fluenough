@@ -170,9 +170,10 @@ contributors need no Flutter toolchain — do not add a Python package to them.
 
 ### 7. Do not touch the licence.
 
-GPL-3.0 with an App Store Distribution Exception, reasoned out in
-[ADR-0003](docs/adr/0003-licence.md). It cannot be changed now without the
-agreement of every contributor. Do not remove the exception, "simplify" to MIT,
+GPL-3.0 with an App Store Distribution Exception for the code, reasoned out
+in [ADR-0003](docs/adr/0003-licence.md); CC BY-SA 4.0 for the decks
+([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). It cannot be changed now
+without the agreement of every contributor. Do not remove the exception, "simplify" to MIT,
 or add a CLA — there is deliberately no CLA.
 
 ### 8. Do not reformat or rewrite files you are not changing.

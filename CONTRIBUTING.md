@@ -26,14 +26,17 @@ break and expensive to undo.
 
 ## Licensing of contributions
 
-Fluenough is **GPL-3.0 with an App Store Distribution Exception** (see
-[LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md)). By
-opening a pull request you license your contribution under those same terms.
+Fluenough's code is **GPL-3.0 with an App Store Distribution Exception** (see
+[LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md)). Its
+decks are **CC BY-SA 4.0**, with attribution. By opening a pull request you
+license code under the first and deck content under the second
+([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). Content once given as
+CC0 stays usable, because CC0 allows it.
 
 **There is no CLA.** The exception is part of the project licence from the
 first commit rather than something maintainers grant separately, so you keep
 your copyright and there is nothing to sign. The reasoning is in
-[ADR-0003](docs/adr/0003-licence.md).
+[ADR-0003](docs/adr/0003-licence.md), carried over by ADR-0040.
 
 A consequence worth understanding: the licence cannot be changed later without
 the agreement of every contributor. That is deliberate. It means no one —
@@ -112,10 +115,13 @@ which itself follows DECK-FORMAT.md.
 
 Whatever the format says, two things are yours to check as a contributor:
 
-**You have the right to contribute the content.** Wordlists taken from
-textbooks or commercial courses are not acceptable, *even reworded*. Public
-domain frequency lists, Wiktionary (CC-BY-SA-4.0), Tatoeba (CC-BY-2.0-FR) and
-your own work are fine. Declare it in the deck's `license` field.
+**You have the right to contribute the content under CC BY-SA 4.0.**
+Wordlists taken from textbooks or commercial courses are not acceptable,
+*even reworded*. Public domain frequency lists, Wiktionary (CC BY-SA 4.0),
+counts from Wikipedia (CC BY-SA), Tatoeba (CC BY 2.0 FR) and your own work
+are fine, and each item taken from outside names its source. The deck's
+`license` field is `"CC-BY-SA-4.0"`; see
+[Licensing deck content](docs/DECK-FORMAT.md#licensing-deck-content).
 
 **Run the tools before you push** (see the checklist under *Contributing
 code*): `python3 tools/deck_index.py`, then

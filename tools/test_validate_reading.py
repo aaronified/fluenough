@@ -24,7 +24,7 @@ name: "Probe"
 kind: reading
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 source: "A book, in the public domain"
 """
 
@@ -217,7 +217,7 @@ name: "Market"
 theme: market
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
   - { id: bn-9001, target: "সে", native: "he, she", reading: "she" }
   - { id: bn-9002, target: "ভাত খায়", native: "eats rice", reading: "bhat khay" }

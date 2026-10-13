@@ -31,7 +31,7 @@ id: "zz-en-extra"
 name: "Extra"
 language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "telugu", tts: "te-IN", icon: "తె" }
 native: { code: "en", iso639_3: "eng", name: "English" }
-license: "CC0-1.0"
+license: "CC-BY-SA-4.0"
 cards:
   - id: "zz-9201"
     target: "పాలు"

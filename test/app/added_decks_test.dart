@@ -199,7 +199,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text(l10n.importChecked), findsOneWidget);
       expect(find.text('My words'), findsOneWidget);
-      expect(find.text(l10n.importDeckMeta(3, 'CC0-1.0')), findsOneWidget);
+      expect(find.text(l10n.importDeckMeta(3, 'CC-BY-SA-4.0')), findsOneWidget);
 
       await tester.tap(find.text(l10n.importAdd));
       await tester.pumpAndSettle();

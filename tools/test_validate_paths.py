@@ -29,7 +29,7 @@ id: {deck_id}
 name: Probe
 language: {{ code: {lang}, iso639_3: {iso}, name: {name}, script: {script}, tts: {tts} }}
 native: {{ code: {native}, iso639_3: {n_iso}, name: {n_name} }}
-license: CC0-1.0
+license: CC-BY-SA-4.0
 {f"theme: {theme}" + chr(10) if theme else ""}cards:
   - id: {deck_id}-0001
     target: "x"

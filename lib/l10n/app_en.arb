@@ -2398,7 +2398,7 @@
       },
       "licence": {
         "type": "String",
-        "example": "CC0-1.0"
+        "example": "CC-BY-SA-4.0"
       }
     }
   },
@@ -2901,6 +2901,38 @@
   "settingsSources": "Sources",
   "@settingsSources": {
     "description": "Row in Settings that opens the sources screen, and that screen's title: where the decks' texts come from."
+  },
+  "sourcesDeckContent": "Deck content",
+  "@sourcesDeckContent": {
+    "description": "Heading on the Sources screen above the decks' licence and the projects credited."
+  },
+  "sourcesLicence": "Decks: CC BY-SA 4.0",
+  "@sourcesLicence": {
+    "description": "The decks' content licence, on the Sources screen and under Settings' Sources row when no deck names a source. CC BY-SA 4.0 is a licence name; keep it as is."
+  },
+  "sourcesLicenceLine": "Fluenough's decks are under the Creative Commons Attribution-ShareAlike 4.0 licence. You may share and adapt them, crediting their sources and keeping the same licence. The app itself is GPL-3.0.",
+  "@sourcesLicenceLine": {
+    "description": "The line under the licence row on the Sources screen: what the deck licence allows. Licence names stay as they are."
+  },
+  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
+  "@sourcesCreditName": {
+    "description": "A project whose data the decks use, credited on the Sources screen. Project names stay as they are.",
+    "placeholders": {
+      "project": {
+        "type": "String",
+        "example": "wiktionary"
+      }
+    }
+  },
+  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings of words, each under its own licence and with its speaker's credit} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
+  "@sourcesCreditLine": {
+    "description": "The line under a credited project on the Sources screen: what the decks take from it, and its licence. Licence names stay as they are.",
+    "placeholders": {
+      "project": {
+        "type": "String",
+        "example": "wiktionary"
+      }
+    }
   },
   "settingsSourcesSummary": "{count, plural, =1{1 source} other{{count} sources}}",
   "@settingsSourcesSummary": {
