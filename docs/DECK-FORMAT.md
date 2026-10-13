@@ -538,11 +538,11 @@ cards:
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
-| `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). |
+| `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). Per-language classes are decided but not yet checked: see [Card data](#card-data). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
-| `examples` | no | List of `{target, native}` sentence pairs. An example may also give its `reading`, `ipa` and [`bases`](#base-words-bases). |
+| `examples` | no | List of `{target, native}` sentence pairs; a word card is to have at least 2 (decided, not yet checked: see [Card data](#card-data)). An example may also give its `reading`, `ipa` and [`bases`](#base-words-bases). |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
 | `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). |
 | `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
@@ -896,6 +896,196 @@ does not hold back its unit.
   a [rules deck](#rules-decks) of the language.
 - Written where the sentence is written: a single-file card, a core card or
   a layer's own card. Not on a ref.
+
+---
+
+## Card data
+
+Owner, 2026-10-13 (#506): "not just example sentences. we need also synonyms,
+antonyms, root word, meaning, minimal pairs, phonemic contrasts, facts,
+images, etc on each card, as applicable. some would be mandatory, others will
+be optional." And: "a simple card should be able to generate all kinds of
+questions". So a question type asks for **data**, and any card that has the
+data can be asked it ([ADR-0039](adr/0039-questions-derived-from-card-data.md),
+[the question engine plan](plans/question-engine.md)).
+
+**One marker.** This section holds rules the owner decided before the
+validator and the app support them. Each is marked **Decided, not yet built**.
+Until it is built, the validator rejects the field (an unknown field is an
+error) and the app ignores it, so do not write it into a deck yet. A field
+that is not marked is built, and the [card fields](#card-fields) table is
+what the validator accepts today. **Core** below means a fact about the
+language, the same for every learner; **layer** means text in the learner's
+language ([Core and layer files](#core-and-layer-files)).
+
+### The data a card carries
+
+Each item says where it lives. Every item is **Decided, not yet built** except
+where it says it exists.
+
+- **Meaning.** `native` (and `alt_native`): exists. A word's separate senses
+  stay in `usage` notes.
+- **Reading and `ipa`.** Exist. Required for a non-Latin script (the reading).
+- **Examples.** `examples` exists. Owner: a word card has "At least 2".
+  Fewer than 2 is not yet checked. Cloze, listening in context and the
+  sentence bank ship before the examples are filled and are asked only for
+  cards that have them (owner: "Ship; use cards that have them"). Native
+  text is in the layer.
+- **Gender.** One field, `gender`, with per-language values (owner: "One
+  field, per-language values"; approved "Decided as listed"). Today `gender`
+  is free text; the closed lists are not yet checked:
+
+  | Language | Values |
+  |---|---|
+  | hi | `m`, `f` |
+  | mr, gu, kn | `m`, `f`, `n` |
+  | te | `mahat`, `amahat` |
+  | bn, as | none: the field is not used |
+
+  Spanish and Japanese are not decided (see [Still open](#card-data-still-open)).
+- **Root word, `bases`.** Exists for the words of a text ([Base words](#base-words-bases)).
+  Owner: a word card has its "Root word / base". Say in the card's notes when
+  its base word changes its stem. How a word that is its own root says so is
+  open. The word family is derived from `bases` across the language and is
+  never stored.
+- **Synonyms and antonyms.** Each is a list in the core, with the learner's
+  text in the layer. A word a card teaches is a `ref`; one no card teaches is
+  a `word` with its `reading`, and its meaning in the layer (owner: "Yes, with
+  reading + meaning"). The field names `synonyms` and `antonyms` are
+  proposed, not approved.
+- **Confusables**, the shared wrong alternatives (owner: "One shared list",
+  for word-order extra tiles, known mistakes and listening in context).
+  Mandatory on a sentence used for word order (owner: "Confusables on
+  word-order sentences"). Shape approved (owner, approval 3: "Approve as
+  proposed"): an `id`, a `word` or card `ref`, its `reading`, a `kind`
+  (`form`, `word`, `sound` or `mark`), and an optional `why` in the layer, by
+  id, as notes are:
+
+  ```yaml
+  confusables:
+    - { id: "masc", word: "पिया", reading: "piyā", kind: "form" }
+    - { id: "mark", word: "?", kind: "mark" }
+  ```
+  and in the layer `confusables: { "masc": { why: "चाय is feminine, so पी." } }`.
+  A card with none has them "Generated from card data" (owner): the engine
+  draws them from the same part of speech and theme, the pair partner, other
+  forms and words of the same root. Nothing is stored for them.
+- **Frequency.** Optional, from an open list (owner: "Yes, optional, from an
+  open list"). Which list is open.
+- **Facts naming cards.** A language fact can name cards (owner: "Yes, a
+  fact can name cards"), so it shows beside the words it is about. See
+  [Facts files](#facts-files).
+- **Learner-language text** of all the new data (a `why`, a synonym's
+  meaning) lives in each native layer (owner: "In each native layer"), keyed
+  by id as notes are.
+- **Picture, audio, `pair`, notes, the sounds file.** Exist, optional.
+  Phonemic contrasts come from a word's `ipa` and the sounds file, not from a
+  field on the card.
+
+### What applies to which card type
+
+M is mandatory, R recommended, O optional, `-` not applicable. Only the
+owner's mandatory set is decided: meaning, the reading for a non-Latin
+script, at least 2 examples on a word card, the root word, gender where the
+language has it, and confusables on word-order sentences. **Every other
+cell is Proposed**, and so is applying the owner's set to a type the owner
+did not name.
+
+| Data | word | phrase | sentence | cell | sound | number |
+|---|---|---|---|---|---|---|
+| Meaning (`native`) | M | M | M | M | R | M |
+| Reading | M | M | M | M | M | - |
+| `ipa` | R | R | R | R | M | - |
+| Examples | M (2) | O | - | R | R | - |
+| Synonyms | R | O | - | - | - | - |
+| Antonyms | O | - | - | - | - | - |
+| Root word (`bases`) | M | R | R | M | - | - |
+| Gender | M if the language has it | - | - | - | - | - |
+| Confusables | R | O | M (word order) | R | - | - |
+| Facts, notes | O | O | O | - | O | - |
+| Picture | O | - | - | - | - | - |
+| Audio | O | O | O | - | R | - |
+| Frequency | R | O | - | - | - | - |
+
+A set card has no row: it is taught, never asked (see [Set cards](#set-cards)).
+
+### What the validator enforces
+
+The owner's rule (approval 5, 2026-10-13): "Confusables or other stuff are
+mandatory when available. But when they aren't available we have no way to
+verfiy and will need to depend on the deck builder. The reviewer will have
+access to each and every field anyway (will need to enhance the review
+pipeline yet again)."
+
+- **The validator enforces only what it can check:** the meaning, the
+  reading, at least 2 examples on a word card, and gender on nouns in a
+  language that has gender. These become **errors once a language is filled
+  in.** The 2 examples and the gender check are **Decided, not yet built**.
+- **Data that is "mandatory when available" is never a validator error:**
+  confusables, root word, synonyms, antonyms, minimal pairs and the rest. The
+  validator cannot tell whether such data was available. The deck builder
+  adds it (the build-deck skill says so) and reviewers check it. The review
+  pipeline work this needs is #508.
+- **A field's content is checked when it is present:** a `ref` must exist, a
+  reading is needed in a script that needs one, and so on. Only the
+  *presence* of "mandatory when available" data is never checked.
+
+**Proposed rollout** for the checks that are enforced: a warning first, naming
+the card and the field; an error per language once its fill issue is closed;
+each new field lands with its check and its entry here, with tests.
+
+### Card data still open
+
+**Proposed**, none decided; each needs the owner:
+
+- The root-of-itself form for a word that is its own root.
+- Whether `source` (for Wiktionary and Tatoeba data) is one field on the card
+  or one per field.
+- Classes for Spanish (m/f?) and Japanese (none?).
+- Which open frequency list per language, and its licence.
+- The names of the other new fields (`synonyms`, `antonyms`, `frequency`,
+  `facts` on a card), and the register, forms, collocations and senses
+  fields that were drafted but not approved.
+- How the validator checks gender: each language file lists its classes and
+  the parts of speech that need one, and a value outside the list is an
+  error.
+- Confusables used as word-order tiles: 2 or 3 per sentence, none equal to a
+  tile the answer needs, and a missing "why" as a warning.
+- When the new ADR on relicensing is written, and in which milestone.
+
+---
+
+## Set cards
+
+Owner, 2026-10-13 (#506): "a language's grammar decks must cover adjectives,
+genders, pronouns, etc. not just as cards, but also together. like a card with
+"English has three articles, a, an, and the", and then drill each one
+separately in the same lesson."
+
+**Decided, not yet built.** DECK-FORMAT does not allow a set card yet.
+
+- **Shape** (approval 2: "Approve as proposed"): kind `set`; its members are
+  cards by id, `members: [{ ref: "<card id>" }]`; the explanation is text in
+  the layer, keyed by the set card's id, as a note is (for example "English
+  has three articles, a, an, and the"); closed groups are listed per
+  language. A set card is a card, so its id is permanent. It has no question
+  data of its own, and is never scheduled, asked or logged. Its members are
+  ordinary cards, asked as they are.
+- **Teach only** (owner): the set card is shown once, in its lesson, as the
+  introduction. Only its members are reviewed afterwards.
+- **Every closed group** (owner) needs one, in each language where the group
+  applies: articles, pronouns (by person, number and formality), genders,
+  cases and postpositions, demonstratives, question words, conjunctions,
+  days, months, number words 1-10 and colours. The validator warns when a
+  closed group in the B1 plan has members but no set card.
+- **Show the whole set; drill only new ones** (owner): every member is
+  shown, the known ones marked; only members not yet taught are drilled; a
+  known one is added only as review, when due.
+
+Still open (**Proposed**): how a card is placed in a closed group (the
+language file lists the groups by id and a set card names its group);
+whether the warning becomes an error per language; whether the learner can
+open a set card again from a card list or the course map.
 
 ---
 
@@ -2262,6 +2452,8 @@ fact carries its own text in every language it is written in. It has
 | `tags` | no | What the fact is about, e.g. `[script]`, `[pronunciation]`, `[grammar]`, `[history]`. |
 | `source` | no | Where the fact can be checked. Give one whenever the fact is not common knowledge. |
 
+**Decided, not yet built** (owner: "Yes, a fact can name cards"): a fact can name the cards it is about, so it shows beside them. See [Card data](#card-data).
+
 ### Rules
 
 - **At least 30 facts without a `contrast`.** These are true whatever the
@@ -2423,3 +2615,17 @@ Only contribute content you may legally relicense. Wordlists derived from
 copyrighted textbooks or commercial courses **are not acceptable** even when
 reworded. Good sources are public-domain frequency lists, Wiktionary
 (CC-BY-SA-4.0), Tatoeba (CC-BY-2.0-FR) and original work.
+
+**Decided, not yet built** (owner, 2026-10-13, #506: "Relicense decks to
+CC BY-SA"; approval 4: "Approve as proposed"): decks move from CC0-1.0 to
+**CC BY-SA 4.0**. Until that change lands, decks stay `CC0-1.0` and the
+validator accepts the licences it does today. A new ADR supersedes ADR-0003;
+one change updates every deck's `license`, the templates, this guide,
+CONTRIBUTING, README, the app's licence and attribution screen and the
+validator's licence list (with a check that data taken from a source carries
+its attribution), and it is made before any Wiktionary or Tatoeba data goes
+in. Wiktionary (CC BY-SA 4.0) and Tatoeba (CC BY 2.0 FR, attribution per
+sentence) data may then be used, each with its source named. Noto Emoji stays
+Apache-2.0, and the GPL-3.0 app code is unchanged. Open: whether contributors
+who gave CC0 content keep that grant (**Proposed**: yes), and the shape of
+`source`.

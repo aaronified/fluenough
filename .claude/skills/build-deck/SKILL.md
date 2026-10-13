@@ -20,7 +20,7 @@ Before you start:
   #506) is that a simple card should be able to generate all kinds of
   questions. Questions will be derived from card data (ADR-0039, accepted).
   The owner decided the mandatory set (2026-10-13, #506,
-  `docs/plans/card-data.md`): meaning; the reading for a non-Latin script; at
+  `docs/DECK-FORMAT.md`, "Card data"): meaning; the reading for a non-Latin script; at
   least 2 examples on a word card; the root word (`bases`); gender where the
   language has it (per-language classes, decided: hi m/f; mr, gu, kn m/f/n;
   te mahat/amahat; bn and as none); and confusables on a sentence used for word
@@ -42,7 +42,7 @@ Before you start:
   demonstratives, question words, conjunctions, days, months, number words
   1-10, colours) need a set card that introduces the whole set, "Teach only"
   (owner, 2026-10-13, #506); its format is approved (kind `set`,
-  members by card id, explanation in the layer; `docs/plans/card-data.md`)
+  members by card id, explanation in the layer; DECK-FORMAT, "Set cards")
   and DECK-FORMAT does not allow it yet.
 - Model: Sonnet writes decks (CLAUDE.md). Haiku for large reads.
 

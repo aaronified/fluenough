@@ -5,7 +5,7 @@
 - **Amends:** ADR-0024 (which question each skill is asked as), ADR-0034
   (Hear asks for the meaning; the skills stay as they are).
 - **Plan:** `docs/plans/question-engine.md`. The card data it relies on is
-  listed in `docs/plans/card-data.md`.
+  in `docs/DECK-FORMAT.md`, "Card data".
 
 ## Context
 
@@ -78,7 +78,7 @@ drills) would add one more special case. The audit is in
   first so decks can be filled; the engine follows (owner: "Fields first").
 - **Neutral card data, not per-question fields.** A card does not carry
   "its cloze", "its Hear options" or "its question". It carries what is
-  true of the word (`docs/plans/card-data.md`), and each type reads that.
+  true of the word (`docs/DECK-FORMAT.md`, "Card data"), and each type reads that.
   Where a type needs something nobody can derive, such as the wrong
   alternatives of a sentence, the field is a shared one with a neutral
   name that several types read: `confusables` (owner: "One shared list"),
@@ -97,7 +97,7 @@ drills) would add one more special case. The audit is in
   known ones as review when due. Its members are ordinary cards. The shape
   is approved (owner, 2026-10-13): kind `set`, members by card id, the
   explanation in the layer, closed groups listed per language, in
-  `docs/plans/card-data.md`.
+  `docs/DECK-FORMAT.md`, "Set cards".
 - **Nothing is rewritten.** Existing cards, ids and log entries stay valid;
   card ids are permanent.
 - **`lib/core` stays free of Flutter.** The registry is plain Dart; pages

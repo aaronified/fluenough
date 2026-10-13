@@ -1,7 +1,8 @@
 # Plan: the question engine, derived from card data
 
-Written 2026-10-13. Decision: ADR-0039. The card data list is
-`docs/plans/card-data.md`.
+Written 2026-10-13. Decision: ADR-0039. The card data it asks for is
+in `docs/DECK-FORMAT.md`, "Card data" and "Set cards" (folded in from the
+card data plan, 2026-10-13, #506).
 
 **Status:** the owner answered the six open questions one by one on
 2026-10-13 (recorded under "Decisions") and approved the drafts the same
@@ -18,11 +19,12 @@ exams (see "Reading passages"). ADR-0039 is Accepted.
 | 4 | Reading passages | replaced: exam-only, see Reading passages below |
 | 5 | Build order | "Fields first" |
 
-The wrong-alternatives question (old 1) was decided in the card data plan:
+The wrong-alternatives question (old 1) was decided with the card data
+(DECK-FORMAT, "Card data"):
 one shared `confusables` list, generated from card data when a card has none.
 
 The owner also decided on set cards (2026-10-13, #506, recorded in
-`docs/plans/card-data.md`): "Teach only"; "Every closed group"; "Show the
+`docs/DECK-FORMAT.md`, "Set cards"): "Teach only"; "Every closed group"; "Show the
 whole set; drill only new ones". See "Set cards" below.
 
 Only the quotations above, the approvals below and the exam answers
@@ -125,10 +127,41 @@ every card in the shipped decks, then deletes the old.
 ## Build order: fields first
 
 The owner's order (2026-10-13: "Fields first"): the format and validator for
-the new card data (`docs/plans/card-data.md`, "Migration") land first, so
-filling the decks can start. The engine, steps 1 to 10, comes after.
+the new card data (`docs/DECK-FORMAT.md`, "Card data"; see "Filling the
+decks" below) land first, so filling the decks can start. The engine,
+steps 1 to 10, comes after.
 Step 1 (pinning today's behaviour) can be done at any time, as it changes no
 code.
+
+## Filling the decks
+
+From the card data plan, kept here because it is still to build. Only the
+language order is the owner's (2026-10-13: "Hindi, Bengali, Telugu, then
+path order"); the rest is **Proposed**.
+
+1. **Format and validator,** one change per field family: (a) confusables,
+   (b) examples (at least 2) and gender classes per language, (c) synonyms
+   and antonyms, (d) register, forms, frequency, collocations, senses, facts
+   links. The relicensing change set (DECK-FORMAT, "Licensing deck content")
+   goes before any Wiktionary or Tatoeba data. Each change lands with its
+   DECK-FORMAT entry and tests.
+2. **One issue per language:** Hindi, Bengali, Telugu, then the rest in the
+   path order (`docs/ROADMAP.md`), each "blocked by" the previous one and by
+   the format issues, with the `blocked` label, and `direct-code` once its
+   questions are answered.
+3. **Per language:** examples (the largest gap, needed by cloze and
+   listening); confusables for sentences (word order, #329); `gender` and
+   `pos`; `bases` to the B1 rule; pair notes; synonyms and antonyms; the
+   optional rest.
+4. Agents write the content in the layers' own languages, validated and
+   marked `unreviewed`. Reviewers are bilingual and never change a card's
+   meaning (`reviewing-scope.md`). Card ids are permanent.
+
+Coverage when this was written: reading and IPA about 99% for hi, bn, te;
+`gender` 20% hi, 0 bn and te; `bases` 17-28%; examples 0.
+Estimate (mine, not the owner's): format, validator and tests 8-12 hours;
+examples 40 hours per language (about 1,100 cards); confusables for
+sentences 8-16; other fields 6-10.
 
 ## Choosing a type: coverage and ability
 
@@ -244,6 +277,27 @@ decided the answers, the wording of the mechanism is mine):
 Cloze, sentence bank and listening in context also need data most cards do
 not have yet: examples are 0 on hi, bn and te. They arrive as the data is
 filled, not as code.
+
+## Card data still open
+
+The questions about card data are listed in `docs/DECK-FORMAT.md`, "Card data
+still open" and "Set cards". Also **Proposed** and about questions: what a
+question type needs from each data item (a type is eligible when its card has
+the data; it is asked for any card that has it):
+
+| Question | Needs |
+|---|---|
+| chooseMeaning, Hear, matchPairs, Write, Say | meaning, target |
+| chooseWord, chooseForm distractors | confusables, else generated from card data |
+| cloze | an example, or the card's own text with 2+ words |
+| word order | 3+ words, 2-3 tile confusables |
+| listening in context | an example, and confusables with a meaning |
+| explain a wrong answer | confusables with `why`, rule ids, else cell siblings |
+| sounds of this word | `ipa`, the sounds file |
+| picture options | `picture` |
+| synonym, antonym match and sort | synonyms, antonyms, word family |
+
+`modes` stays as an author's switch off, not as the kind marker.
 
 ## Still open
 
