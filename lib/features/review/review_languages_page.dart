@@ -11,6 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
 import '../profiles/spoken_languages_picker.dart';
@@ -101,7 +102,12 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     final names = <String, String>{...languageNamesOf(state), ..._knownNames};
     String name(String code) => names[code] ?? code;
     return ListView(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
+      padding: const EdgeInsetsDirectional.fromSTEB(
+        16,
+        8,
+        16,
+        24,
+      ).clearingSystemBar(context),
       children: <Widget>[
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),

@@ -6,6 +6,7 @@ import '../../core/models/script_guide.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 
 /// How a script works, opened from a script deck's Tips (#30, ADR-0016).
@@ -91,7 +92,12 @@ class ScriptGuideView extends StatelessWidget {
         actions: const <Widget>[ReportButton()],
       ),
       body: ListView(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          16,
+          8,
+          16,
+          24,
+        ).clearingSystemBar(context),
         children: <Widget>[
           Text(
             guide.intro,

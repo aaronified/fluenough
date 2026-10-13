@@ -13,6 +13,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 import 'speech_test_sheet.dart';
@@ -239,7 +240,12 @@ class _VoicesPageState extends State<VoicesPage> {
       body: ListenableBuilder(
         listenable: state.settings,
         builder: (context, _) => ListView(
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
+          padding: const EdgeInsetsDirectional.fromSTEB(
+            16,
+            0,
+            16,
+            24,
+          ).clearingSystemBar(context),
           children: <Widget>[
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
