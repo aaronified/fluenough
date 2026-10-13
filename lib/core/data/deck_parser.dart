@@ -246,7 +246,7 @@ const _coreRefFields = {
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
 };
-const _coreExampleFields = {'target', 'reading', 'ipa', 'bases'};
+const _coreExampleFields = {'target', 'reading', 'ipa', 'bases', 'source'};
 const _layerEntryFields = {
   'native',
   'alt_native',
@@ -319,7 +319,14 @@ const _passageFields = {
 const _sentenceFields = {'text', 'reading', 'ipa'};
 const _glossFields = {'word', 'modern', 'reading', 'ipa', 'meaning', 'note'};
 const _questionFields = {'id', 'prompt', 'options', 'answer'};
-const _exampleFields = {'target', 'native', 'reading', 'ipa', 'bases'};
+const _exampleFields = {
+  'target',
+  'native',
+  'reading',
+  'ipa',
+  'bases',
+  'source',
+};
 const _authorFields = {'name', 'url'};
 
 /// Deck and card ids: lowercase letters and digits, joined by single hyphens.
@@ -755,6 +762,7 @@ class _Reader {
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
       bases: bases(fields.node('bases'), '$path.bases', core: false),
+      source: fields.optionalString('source', allowEmpty: false),
     );
   }
 
@@ -1445,6 +1453,7 @@ class _Reader {
           reading: fields.optionalString('reading', allowEmpty: false),
           ipa: fields.optionalString('ipa', allowEmpty: false),
           bases: bases(fields.node('bases'), '$where.bases', core: true),
+          source: fields.optionalString('source', allowEmpty: false),
         ),
       );
     }

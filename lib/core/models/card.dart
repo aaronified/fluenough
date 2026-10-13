@@ -8,6 +8,7 @@ class CardExample {
     this.reading,
     this.ipa,
     this.bases = const <CardBase>[],
+    this.source,
   });
 
   final String target;
@@ -21,6 +22,10 @@ class CardExample {
 
   /// The base words of [target]'s inflected or derived words.
   final List<CardBase> bases;
+
+  /// Where the example was taken from, when it was taken from outside
+  /// (Tatoeba, Wiktionary): named per item (#506, #511).
+  final String? source;
 }
 
 /// What a note is about (DECK-FORMAT.md, Notes).

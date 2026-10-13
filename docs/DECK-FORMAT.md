@@ -299,10 +299,15 @@ of: no learner is taught it.
 layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
 the card's sound-alike is taken from it.
 
-**A core example** is `{ target, reading?, ipa?, bases? }`. Its translation
-is in each layer, keyed by its target, so two examples of one card may not
-have the same target, and the target is written in Unicode's composed form
-(NFC), as every layer key that names it is.
+**A core example** is `{ target, reading?, ipa?, bases?, source? }`. Its
+translation is in each layer, keyed by its target, so two examples of one
+card may not have the same target, and the target is written in Unicode's
+composed form (NFC), as every layer key that names it is. `source` names
+where an example taken from outside came from (a Tatoeba sentence, a
+Wiktionary quotation), per item (owner, #506: "Per item"); an example
+written for the deck leaves it out. A layer never gives a `source`: the
+sentence is the core's. How many examples a word card needs is in
+[Card data](#examples).
 
 **A core ref**, `- ref: "te-9010"`, lists a card written in another deck. It
 may give `reading`, `ipa`, `tags`, `modes`, and `examples` and `notes` in the
@@ -563,7 +568,7 @@ cards:
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
-| `examples` | no | List of `{target, native}` sentence pairs; a word card is to have at least 2 (decided, not yet checked: see [Card data](#card-data)). An example may also give its `reading`, `ipa` and [`bases`](#base-words-bases). |
+| `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases) and `source`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
 | `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). |
 | `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
@@ -947,11 +952,7 @@ where it says it exists.
 - **Meaning.** `native` (and `alt_native`): exists. A word's separate senses
   stay in `usage` notes.
 - **Reading and `ipa`.** Exist. Required for a non-Latin script (the reading).
-- **Examples.** `examples` exists. Owner: a word card has "At least 2".
-  Fewer than 2 is not yet checked. Cloze, listening in context and the
-  sentence bank ship before the examples are filled and are asked only for
-  cards that have them (owner: "Ship; use cards that have them"). Native
-  text is in the layer.
+- **Examples.** Built (#511); see [Examples](#examples) below.
 - **Gender.** One field, `gender`, with per-language values (owner: "One
   field, per-language values"; approved "Decided as listed"). Today `gender`
   is free text; the closed lists are not yet checked:
@@ -1003,6 +1004,47 @@ where it says it exists.
   Phonemic contrasts come from a word's `ipa` and the sounds file, not from a
   field on the card.
 
+### Examples
+
+Built (#511). Owner (#506): a word card has "At least 2" examples.
+
+- **Shape.** Each example is a sentence. Its `target`, `reading` (for a
+  script that needs one) and `ipa` are in the core; its translation is in
+  each native layer, keyed by the target (owner: "In each native layer").
+  An example taken from outside names its own `source` (owner: "Per
+  item"), in the core. A single-file deck writes `native` on the example
+  itself.
+
+  ```yaml
+  # core
+  examples:
+    - target: "घर बड़ा है।"
+      reading: "ghar baṛā hai."
+      ipa: "ɡʱəɾ bəɽaː ɦɛː"
+    - target: "मेरा घर यहाँ है।"
+      reading: "merā ghar yahā̃ hai."
+      source: "https://tatoeba.org/en/sentences/show/<n>"
+  # layer (hi-9001 is a made-up id)
+  cards:
+    "hi-9001":
+      native: "house; home"
+      examples:
+        "घर बड़ा है।": "The house is big."
+        "मेरा घर यहाँ है।": "My house is here."
+  ```
+- **At least 2 on a word card** (a word card as in [Notes](#notes)): fewer
+  is a validator **error once the language is filled in**, and nothing is
+  reported before. The languages filled in are `FILLED_LANGUAGES` in
+  `tools/validate_decks.py`, empty for now; a language is added there when
+  its fill issue is closed (owner: "Hindi, Bengali, Telugu, then path
+  order"). Whether a language not yet filled in should be warned meanwhile
+  (the proposed rollout below) is **open**.
+- **The questions** that use examples (cloze, listening in context, the
+  sentence bank) are asked only of cards that have them (owner: "Ship; use
+  cards that have them"). They come with the question engine
+  ([plan](plans/question-engine.md)); the app reads the examples today but
+  shows no new question from them.
+
 ### What applies to which card type
 
 M is mandatory, R recommended, O optional, `-` not applicable. Only the
@@ -1041,7 +1083,8 @@ pipeline yet again)."
 - **The validator enforces only what it can check:** the meaning, the
   reading, at least 2 examples on a word card, and gender on nouns in a
   language that has gender. These become **errors once a language is filled
-  in.** The 2 examples and the gender check are **Decided, not yet built**.
+  in.** The 2 examples are built ([Examples](#examples)); the gender check
+  is **Decided, not yet built**.
 - **Data that is "mandatory when available" is never a validator error:**
   confusables, root word, synonyms, antonyms, minimal pairs and the rest. The
   validator cannot tell whether such data was available. The deck builder
