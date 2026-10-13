@@ -8,10 +8,10 @@ import 'features.dart';
 /// yet, and adding the mode needs an ADR (#31). So the interface counts one
 /// more skill than the scheduler knows modes. [mode] is null for [pair].
 ///
-/// Grammar is one skill with two schedules (B1 format spec 4.7, 4.8 item
-/// 7): understood ([DrillMode.grammarUnderstood]) and produced
-/// ([DrillMode.grammar]) share its tile on Today and its switch in
-/// Settings, so [modes] gives both.
+/// Grammar is one skill with two schedules (DECK-FORMAT.md, Rules decks):
+/// understood ([DrillMode.grammarUnderstood]) and produced
+/// ([DrillMode.grammar]) share its tile on Today and its switch in Settings, so
+/// [modes] gives both.
 ///
 /// Icons, labels and colours for a skill are in `lib/ui`: `SkillVisuals` in
 /// `lib/ui/skill_visuals.dart` and `ModeColors` in `lib/ui/theme.dart`.
@@ -53,7 +53,7 @@ enum Skill {
     DrillMode.reading => Skill.reading,
     DrillMode.listening => Skill.listening,
     // Understood and produced share the grammar tile (skill model,
-    // 2026-10-08) and its switch (B1 format spec 4.7, 4.8 item 7).
+    // 2026-10-08) and its switch (DECK-FORMAT.md, Rules decks).
     DrillMode.grammarUnderstood || DrillMode.grammar => Skill.grammar,
     DrillMode.speaking => Skill.speaking,
   };

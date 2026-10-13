@@ -74,15 +74,16 @@ abstract final class DeckParser {
   static Deck parse(String yaml, {required String source}) =>
       _Reader(source).deck(_load(yaml, source));
 
-  /// Parses [yaml], a core file (`part: "core"`, B1 format spec 2.2), into a
-  /// [DeckCore], or throws a [DeckParseException]. A core is not a deck: it
-  /// is merged with each of its layers by [mergeLayer].
+  /// Parses [yaml], a core file (`part: "core"`, DECK-FORMAT.md, Core and layer
+  /// files), into a [DeckCore], or throws a [DeckParseException]. A core is not
+  /// a deck: it is merged with each of its layers by [mergeLayer].
   static DeckCore parseCore(String yaml, {required String source}) =>
       _Reader(source).core(_load(yaml, source));
 
-  /// Parses [yaml], a layer (`kind: "layer"`, spec 2.6), into a
-  /// [DeckLayer], or throws a [DeckParseException]. What it says about its
-  /// core's cards is checked when the two are merged, by [mergeLayer].
+  /// Parses [yaml], a layer (`kind: "layer"`, DECK-FORMAT.md, Core and layer
+  /// files), into a [DeckLayer], or throws a [DeckParseException]. What it says
+  /// about its core's cards is checked when the two are merged, by
+  /// [mergeLayer].
   static DeckLayer parseLayer(String yaml, {required String source}) =>
       _Reader(source).layer(_load(yaml, source));
 
@@ -176,7 +177,7 @@ const _refFields = {
   'checked_by',
 };
 
-// The B1 format (spec sections 2 to 8).
+// The B1 format (docs/DECK-FORMAT.md).
 const _coreHeaderFields = {
   'schema',
   'id',
@@ -282,8 +283,8 @@ const _yaml11Words = {'yes', 'no', 'on', 'off', 'true', 'false', 'y', 'n'};
 /// a number, nor a note's position.
 final _letterKey = RegExp(r'^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$');
 
-/// A placeholder in a note's text or a rule's explanation (spec 6.4), and
-/// anything that looks like one.
+/// A placeholder in a note's text or a rule's explanation (DECK-FORMAT.md,
+/// Notes), and anything that looks like one.
 final _placeholder = RegExp(r'\{([1-9][0-9]*)\}');
 final _bracedNumber = RegExp(r'\{([0-9]+)\}');
 
@@ -369,7 +370,8 @@ class _Reader {
   }
 
   /// Refuses a core, a layer, and what only they have, in a single-file
-  /// deck, in the order the validator tells them apart (spec 2.2).
+  /// deck, in the order the validator tells them apart (DECK-FORMAT.md, Core
+  /// and layer files).
   void refuseCoreAndLayer(_Fields fields, YamlNode? kindNode) {
     if (kindNode != null && _value(kindNode) == 'layer') {
       fail(kindNode, 'this is a layer; it is read with DeckParser.parseLayer');
@@ -723,8 +725,8 @@ class _Reader {
       audio: fields.optionalString('audio'),
       examples: examples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
-      // Pair notes are the one source of pairs (OPEN-16); a written pair
-      // stays valid, and comes first.
+      // Pair notes are the one source of pairs (DECK-FORMAT.md, Notes); a
+      // written pair stays valid, and comes first.
       pair:
           fields.optionalString('pair', allowEmpty: false) ??
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
@@ -769,7 +771,7 @@ class _Reader {
     final name = text(node, path);
     final mode = DrillMode.tryParse(name);
     // Grammar understood is asked of a rules table's cells, which the
-    // expander makes; a card cannot declare it (spec 4.7).
+    // expander makes; a card cannot declare it (DECK-FORMAT.md, Rules decks).
     if (mode == DrillMode.grammarUnderstood) {
       fail(node, "$path: grammarUnderstood is only for a rules table's cells");
     }
@@ -788,7 +790,7 @@ class _Reader {
     return mode;
   }
 
-  // The B1 format's card fields (spec 3 to 8).
+  // The B1 format's card fields (DECK-FORMAT.md, Vocab decks).
 
   /// A mark such as `phrasebook: true`: true, or left out. False is refused
   /// too, as the validator refuses it. [rule] says what it must be.
@@ -799,8 +801,9 @@ class _Reader {
     fail(node, '$path: $key must be $rule; got ${_describe(node)}');
   }
 
-  /// A card's notes (spec 6.1): text, read as one note of kind `note`, or a
-  /// list of typed notes, their placeholders filled. Blank text is no notes.
+  /// A card's notes (DECK-FORMAT.md, Notes): text, read as one note of kind
+  /// `note`, or a list of typed notes, their placeholders filled. Blank text is
+  /// no notes.
   List<CardNote> notes(YamlNode? node, String path) =>
       List<CardNote>.unmodifiable(<CardNote>[
         for (final note in noteItems(node, path, core: false))
@@ -814,8 +817,8 @@ class _Reader {
           ),
       ]);
 
-  /// A core card's notes (spec 6.2): each with its id and its language
-  /// facts, its text being in each layer.
+  /// A core card's notes (DECK-FORMAT.md, Notes): each with its id and its
+  /// language facts, its text being in each layer.
   List<CoreNote> coreNotes(YamlNode? node, String path) =>
       List<CoreNote>.unmodifiable(<CoreNote>[
         for (final note in noteItems(node, path, core: true))
@@ -980,9 +983,9 @@ class _Reader {
     );
   }
 
-  /// A region note's regions (spec 10.5): a region id, or a non-empty list
-  /// of them. Whether each is a region of the language's path is the
-  /// validator's to say.
+  /// A region note's regions (DECK-FORMAT.md, Regions): a region id, or a
+  /// non-empty list of them. Whether each is a region of the language's path is
+  /// the validator's to say.
   List<String> noteRegions(YamlNode? node, String path) {
     if (node == null) return const <String>[];
     final items = node is YamlList ? node.nodes : <YamlNode>[node];
@@ -1036,7 +1039,7 @@ class _Reader {
 
   /// Fails on a placeholder in [text] past its [count] words, and on a
   /// braced number that is not a placeholder, such as `{0}` or `{01}`
-  /// (spec 6.4). [owner] is what has the words: a note or a rule.
+  /// (DECK-FORMAT.md, Notes). [owner] is what has the words: a note or a rule.
   void placeholders(
     YamlNode node,
     String text,
@@ -1060,8 +1063,9 @@ class _Reader {
     }
   }
 
-  /// A card's or an example's base words (spec 8.1). A [core] file gives a
-  /// base written in full without its meaning, which is in each layer.
+  /// A card's or an example's base words (DECK-FORMAT.md, Base words). A [core]
+  /// file gives a base written in full without its meaning, which is in each
+  /// layer.
   List<CardBase> bases(YamlNode? node, String path, {required bool core}) {
     if (node == null || _value(node) == null) return const <CardBase>[];
     if (node is! YamlList) {
@@ -1125,7 +1129,8 @@ class _Reader {
     );
   }
 
-  /// The rules a sentence uses, by rule id (spec 5).
+  /// The rules a sentence uses, by rule id (DECK-FORMAT.md, Sentences and their
+  /// rules).
   List<String> ruleIds(YamlNode? node, String path) {
     if (node == null || _value(node) == null) return const <String>[];
     if (node is! YamlList) {
@@ -1151,7 +1156,8 @@ class _Reader {
   }
 
   /// The key of a mapping entry as text. A key YAML reads as anything else
-  /// is refused, so that `1:` is never the number 1 (spec 2.6).
+  /// is refused, so that `1:` is never the number 1 (DECK-FORMAT.md, Core and
+  /// layer files).
   String keyText(YamlNode key, String path) {
     final value = _value(key);
     if (value is String) return value;
@@ -1180,7 +1186,7 @@ class _Reader {
     ];
   }
 
-  // A core file (spec 2.2 to 2.5, 4.2).
+  // A core file (DECK-FORMAT.md, Core and layer files).
 
   DeckCore core(YamlNode root) {
     final fields = top(root);
@@ -1312,7 +1318,7 @@ class _Reader {
   }
 
   /// A core's cards: each written, with the language side only, or listed
-  /// by ref (spec 2.3).
+  /// by ref (DECK-FORMAT.md, Core and layer files).
   List<CoreCard> coreCards(YamlNode node) {
     final seen = <String, YamlNode>{};
     return List<CoreCard>.unmodifiable(<CoreCard>[
@@ -1473,8 +1479,8 @@ class _Reader {
     );
   }
 
-  /// A rules core's table (spec 4.2): which words are its rows, its slots,
-  /// and each row's forms. Its labels are each layer's.
+  /// A rules core's table (DECK-FORMAT.md, Rules decks): which words are its
+  /// rows, its slots, and each row's forms. Its labels are each layer's.
   RuleTable ruleTable(YamlNode node) {
     final fields = this.fields(node, 'table');
     keyed(node, 'table', 'must be a mapping');
@@ -1656,7 +1662,7 @@ class _Reader {
     return List<CoreRule>.unmodifiable(rules);
   }
 
-  // A layer (spec 2.6, 4.5).
+  // A layer (DECK-FORMAT.md, Core and layer files).
 
   DeckLayer layer(YamlNode root) {
     final fields = top(root);
@@ -2246,7 +2252,7 @@ class _Reader {
       final value = entry.value;
       if (forms[slot] == null) {
         // A null reading under a null form is a reading left out, as the
-        // validator reads it (spec 4.2).
+        // validator reads it (DECK-FORMAT.md, Rules decks).
         if (value is YamlScalar && _value(value) == null) continue;
         fail(key, '$path: "$slot" has no form, so it has no reading');
       }
@@ -2447,8 +2453,8 @@ const _phrasebookRule = 'true, unquoted, or left out';
 const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
 
 /// [text] with each placeholder replaced by the word it counts to, shown
-/// with its reading (spec 6.4). One past [words] stays as written; the
-/// reader refuses it first.
+/// with its reading (DECK-FORMAT.md, Notes). One past [words] stays as written;
+/// the reader refuses it first.
 String _filled(String text, List<NoteWord> words) =>
     text.replaceAllMapped(_placeholder, (m) {
       final n = int.tryParse(m[1]!);
@@ -2490,12 +2496,12 @@ String _pythonType(Object? value) => switch (value) {
 /// What [node] holds, typed the way the validator types it.
 ///
 /// `tools/validate_decks.py` reads plain scalars as YAML 1.2's core schema
-/// does (its `DeckResolver`; spec ground rule 8): only `true` and `false` in
-/// three spellings are booleans, so a bare `no`, `yes`, `on` or `off` is text;
-/// digits are a decimal integer (`060` is 60), `0o` and `0x` octal and
-/// hexadecimal; `1_000`, `1:30` and `0b101` are text. package:yaml reads
-/// nearly the same, but builds a few scalars by Dart's rules rather than the
-/// schema's, so an unquoted scalar is retyped here by the validator's
+/// does (its `DeckResolver`; DECK-FORMAT.md, YAML values): only `true` and
+/// `false` in three spellings are booleans, so a bare `no`, `yes`, `on` or
+/// `off` is text; digits are a decimal integer (`060` is 60), `0o` and `0x`
+/// octal and hexadecimal; `1_000`, `1:30` and `0b101` are text. package:yaml
+/// reads nearly the same, but builds a few scalars by Dart's rules rather than
+/// the schema's, so an unquoted scalar is retyped here by the validator's
 /// patterns, character for character, and the two can never disagree.
 ///
 /// A tag types a scalar in both parsers, as in `!!str 007`. The bare `!` is

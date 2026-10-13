@@ -3,9 +3,9 @@
 phrasebook, rules decks, sentences' rules, typed notes, the Wiktionary mark,
 bases, and the B1 plan in a path.
 
-Each test copies tools/fixtures/b1/zz, Appendix A of the format's spec in a
-made-up language with no decks in the repository, into a temporary
-directory, breaks one thing, and checks the exact message and where. The
+Each test copies tools/fixtures/b1/zz, the valid example set (the old format
+spec's Appendix A) in a made-up language with no decks in the repository,
+into a temporary directory, breaks one thing, and checks the exact message and where. The
 fixture itself is the passing case of every rule; a rule with more than one
 valid shape has its own passing case too.
 
@@ -1558,7 +1558,7 @@ class BasesCoverage(B1Case):
         self.edit(CORE, lambda d: d["language"].update(script="thai"))
         self.assertAcross(f"{self.p(PATH)}: units[0]: zz-en-home is in the thai script, "
                           f"written without spaces; bases cannot be checked until the format "
-                          f"gives its words (OPEN-26)")
+                          f"gives its words (DECK-FORMAT.md, Base words)")
 
 
 class PathUnits(B1Case):

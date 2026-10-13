@@ -5,7 +5,7 @@ import '../models/rule.dart';
 
 /// A merged rules deck's table as cards: one per filled cell whose word is
 /// taught in the deck's native language and whose rule the deck's layer
-/// gives (B1 format, spec 4.6).
+/// gives (DECK-FORMAT.md, Rules decks).
 ///
 /// - **id** [ruleCellId]: `<core id>-<part>-<slot index>`, the part being
 ///   the row's `key`, else the digits of its word. A skipped row or slot

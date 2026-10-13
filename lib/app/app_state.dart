@@ -1584,7 +1584,8 @@ class AppState extends ChangeNotifier {
   /// (ADR-0024): its deck's other cards of the same kind, each showing a
   /// different option, or, when they show fewer than three, those of every
   /// deck of its course as well. A rules table's form, or its meaning, is
-  /// chosen among its own row's alone ([formChoices], spec 4.8).
+  /// chosen among its own row's alone ([formChoices], DECK-FORMAT.md, Rules
+  /// decks).
   List<Card> choicePool(Card card, Ask ask) {
     final entry = deckOf(card);
     if (entry == null) return const <Card>[];
@@ -1629,8 +1630,8 @@ class AppState extends ChangeNotifier {
 
   /// Whether a [ask] question about [card] has at least two wrong options
   /// to offer, or, choosing among a rules table's forms or their meanings,
-  /// one (spec 4.8: a row of two forms is still a choice). Without, it is
-  /// asked its own way.
+  /// one (DECK-FORMAT.md, Rules decks: a row of two forms is still a choice).
+  /// Without, it is asked its own way.
   bool canChoose(Card card, Ask ask) =>
       choicePool(card, ask).map(ask.optionOf).toSet().length >=
       (ask.choosesAmongForms ? 1 : 2);

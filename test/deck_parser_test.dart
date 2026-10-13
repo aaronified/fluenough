@@ -626,9 +626,9 @@ cards:
       );
     });
 
-    // The validator reads plain scalars as YAML 1.2 does (spec ground rule
-    // 8), so the hiragana の's romanisation is text in both, as package:yaml
-    // reads it too.
+    // The validator reads plain scalars as YAML 1.2 does (DECK-FORMAT.md,
+    // YAML values), so the hiragana の's romanisation is text in both, as
+    // package:yaml reads it too.
     test('a bare no is text, as in CI', () {
       final card = parse(vocab(cards: '$oneCard    reading: no\n'))
           .cards
@@ -895,9 +895,9 @@ cards:
       );
     });
 
-    // The validator reads a null reading as one left out (spec 4.2): so a
-    // slot with no form may give its reading and IPA as null, and only as
-    // null.
+    // The validator reads a null reading as one left out (DECK-FORMAT.md, Rules
+    // decks): so a slot with no form may give its reading and IPA as null, and
+    // only as null.
     test('a null reading or IPA under a null form is none, as in CI', () {
       final entry = parse(
         grammarWith(

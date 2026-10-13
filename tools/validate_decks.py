@@ -4469,7 +4469,7 @@ def check_bases_across(reports: list[Report]) -> list[str]:
                         problems.append(f"{path.path}: units[{ui}]: {deck_id} is in the "
                                         f"{drep.script} script, written without spaces; "
                                         f"bases cannot be checked until the format gives "
-                                        f"its words (OPEN-26)")
+                                        f"its words (DECK-FORMAT.md, Base words)")
                     continue
                 for c in list(drep.merged) + list(drep.cards):
                     if c.path.resolve() not in given:

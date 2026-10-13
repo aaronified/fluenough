@@ -184,7 +184,8 @@ void main() {
         catalog.languagePaths['hi']!.plan.first.decks,
         contains('hi-first-words'),
       );
-      // The regions of the two languages being written now (spec 10.5).
+      // The regions of the two languages being written now (DECK-FORMAT.md,
+      // Regions).
       expect(catalog.languagePaths['te']!.regions.map((r) => r.id), [
         'telangana',
         'coastal-andhra',

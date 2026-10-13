@@ -12,7 +12,7 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import '../support/hindi_courses.dart';
 
 /// Which native language a learner is taught a language from (ADR-0036,
-/// B1 format spec 9.5): asked when more than one they speak teaches it,
+/// DECK-FORMAT.md, Paths): asked when more than one they speak teaches it,
 /// each offered with its coverage, the best covered first; kept per course.
 
 Future<AppState> learner(

@@ -871,7 +871,8 @@ class DrillSession extends ChangeNotifier {
   // Choosing, matching and rearranging (ADR-0024)
 
   /// How the current item is asked. Grammar understood is only ever
-  /// asked by choosing the meaning (spec 4.8), whatever built the item.
+  /// asked by choosing the meaning (DECK-FORMAT.md, Rules decks), whatever
+  /// built the item.
   Ask get ask => item.mode == DrillMode.grammarUnderstood && item.ask == Ask.own
       ? Ask.chooseFormMeaning
       : item.ask;

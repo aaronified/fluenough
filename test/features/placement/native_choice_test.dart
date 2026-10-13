@@ -15,7 +15,7 @@ import '../../support/hindi_courses.dart';
 import '../../support/picker.dart';
 
 /// The question of which native language to learn a course from (ADR-0036,
-/// B1 format spec 9.5): in placement, on Today, and in Settings.
+/// DECK-FORMAT.md, Paths): in placement, on Today, and in Settings.
 
 AppState bengaliFirst({bool chosen = false, Map<String, String>? decks}) {
   final state = AppState.test(

@@ -1,7 +1,7 @@
-// Grammar understood where skills are shown (B1 format spec 4.7, 4.8 item
-// 7): the Grammar switch in Settings and the Grammar tile on Today cover it
-// with grammar produced; its own row on the Adjust sheet and on How you
-// learn, where each schedule is fitted, named in the learner's words.
+// Grammar understood where skills are shown (DECK-FORMAT.md, Rules decks): the
+// Grammar switch in Settings and the Grammar tile on Today cover it with
+// grammar produced; its own row on the Adjust sheet and on How you learn, where
+// each schedule is fitted, named in the learner's words.
 import 'dart:io';
 
 import 'package:flutter/material.dart' hide Card;
@@ -34,7 +34,7 @@ import 'settings/support.dart';
 const appendix = 'test/fixtures/b1/appendix-a/zz';
 const rulesDeck = 'zz-en-grammar-case-endings';
 
-/// Every file of Appendix A, keyed as the catalog keys bundled decks.
+/// Every file of the example set, keyed as the catalog keys bundled decks.
 Map<String, String> appendixFiles() => <String, String>{
   for (final file in Directory(appendix).parent.listSync(recursive: true))
     if (file is File && file.path.endsWith('.yaml'))

@@ -4,8 +4,8 @@
 //
 // The fixtures are in test/fixtures/b1/, in a language with no decks in the
 // repository, `zz` (Testlang, written in the Telugu script):
-// appendix-a/ is the spec's Appendix A, a valid set; features/ exercises
-// what Appendix A does not.
+// appendix-a/ is the valid example set (the old spec's Appendix A);
+// features/ exercises what it does not.
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -1224,7 +1224,8 @@ void main() {
 
     test('what each grammar mode shows', () {
       final card = cells(rulesCore, rulesLayer)[6];
-      // Understood: the form is shown, and its meaning chosen (OPEN-22).
+      // Understood: the form is shown, and its meaning chosen (DECK-FORMAT.md,
+      // Rules decks).
       expect(card.promptFor(DrillMode.grammarUnderstood), 'అమ్మతో (ammatō)');
       expect(card.acceptedAnswers(DrillMode.grammarUnderstood), [
         'with mother',
