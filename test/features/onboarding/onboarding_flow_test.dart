@@ -15,6 +15,7 @@ import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/fluenough_mark.dart';
 import 'package:fluenough/ui/widgets/wave_progress.dart';
 
@@ -285,9 +286,8 @@ void main() {
     });
   }
 
-  testWidgets('the question\'s title grows at most one and a half times', (
-    tester,
-  ) async {
+  testWidgets('the question\'s title grows no further than the app\'s '
+      '1.4x cap (#505)', (tester) async {
     usePhone(tester, textScale: 2.0);
     await pumpScreen(
       tester,
@@ -295,7 +295,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final title = tester.widget<Text>(find.text(l10n.onboardingSpokenTitle));
-    expect(title.textScaler!.scale(28), 42);
+    expect(title.textScaler!.scale(28), 28 * AppSizes.maxTextScale);
   });
 
   testWidgets('with animations off, Continue still saves and asks what to '
