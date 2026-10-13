@@ -384,8 +384,10 @@ void main() {
   }
 
   for (final dark in <bool>[false, true]) {
-    testWidgets('at text scale 2.0${dark ? ', dark' : ''}: one column, full '
-        'marks, nothing clipped', (tester) async {
+    // The phone's largest text, drawn at the app's 1.4x cap (#505): the
+    // tiles stay two to a row with short marks.
+    testWidgets('at text scale 2.0${dark ? ', dark' : ''}: two columns, '
+        'short marks, nothing clipped', (tester) async {
       usePhone(tester, textScale: 2.0);
       final state = await pacedLearner(
         Paced.fewer,
@@ -399,10 +401,11 @@ void main() {
       );
       final l10n = l10nOf(tester);
       expect(tester.takeException(), isNull);
-      await tester.ensureVisible(find.text(l10n.paceMore));
+      await tester.ensureVisible(find.text(l10n.paceMoreShort));
       await tester.pumpAndSettle();
-      expect(find.text(l10n.paceMore), findsOneWidget);
-      expect(find.text(l10n.paceMoreShort), findsNothing);
+      expect(find.text(l10n.paceMoreShort), findsOneWidget);
+      expect(find.text(l10n.paceMore), findsNothing);
+      expect(tester.takeException(), isNull);
     });
   }
 }

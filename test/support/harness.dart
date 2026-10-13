@@ -78,6 +78,7 @@ Future<AppState> pumpScreen(
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
         onGenerateRoute: AppRoutes.onGenerateRoute,
+        builder: capTextScale,
         home: child,
       ),
     ),
