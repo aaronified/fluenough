@@ -27,10 +27,10 @@ import 'taught_details.dart';
 ///   (ADR-0034).
 /// - [Ask.chooseFormMeaning]: a rules table's form with its reading, as a
 ///   word is shown, and its meaning to choose among those of the same
-///   word's forms. Grammar understood (spec 4.8).
+///   word's forms. Grammar understood (DECK-FORMAT.md, Rules decks).
 /// - [Ask.chooseForm]: a rules table's word and the meaning to express, and
 ///   the form to choose among the same word's, with their readings. Grammar
-///   produced (spec 4.8).
+///   produced (DECK-FORMAT.md, Rules decks).
 ///
 /// Words to choose show their reading first until the script is expected
 /// of the learner, as typed answers start in Latin letters then. The word

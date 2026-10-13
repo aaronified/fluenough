@@ -1,10 +1,10 @@
-// Grammar understood and produced (B1 format spec 4.7 and 4.8): a rules
+// Grammar understood and produced (DECK-FORMAT.md, Rules decks): a rules
 // table's cell is understood by choosing what its form means, and produced
 // by choosing its form among its word's, then typing it. Each is a schedule
 // of its own, fitted per language, implying nothing of the other.
 //
-// The fixtures are Appendix A's, in test/fixtures/b1/appendix-a/, in the
-// language `zz` (Testlang, in the Telugu script).
+// The fixtures are the valid example set, in test/fixtures/b1/appendix-a/, in
+// the language `zz` (Testlang, in the Telugu script).
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -60,7 +60,7 @@ List<Card> cellsOf({String? core, String? layer}) {
 Card cell(List<Card> cells, String suffix) =>
     cells.firstWhere((c) => c.id == 'zz-grammar-case-endings-$suffix');
 
-/// Every file of Appendix A, keyed as the catalog keys bundled decks.
+/// Every file of the example set, keyed as the catalog keys bundled decks.
 Map<String, String> appendixFiles() => <String, String>{
   for (final file in Directory(appendix).parent.listSync(recursive: true))
     if (file is File && file.path.endsWith('.yaml'))

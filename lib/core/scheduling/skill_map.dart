@@ -14,7 +14,7 @@ import '../models/drill_mode.dart';
 ///   2018).
 ///
 /// - **Grammar,** understood or produced, implies nothing: no study gives
-///   a figure for a rule's forms (B1 format spec 4.7).
+///   a figure for a rule's forms (DECK-FORMAT.md, Rules decks).
 ///
 /// Only a right answer implies anything: a miss in Write says little about
 /// Recognition, which is easier. A miss counts against its own skill alone.
@@ -48,8 +48,8 @@ class SkillMap {
         // form chosen or typed) imply nothing, of each other or of a word's
         // skills: the research finds grammar practice skill-specific
         // (DeKeyser 1997; Shintani et al. 2013) and gives no figure for a
-        // rule's forms and their meanings (spec 4.7, OPEN-11). Should one
-        // appear, produced implying understood is one arm here, as Write's.
+        // rule's forms and their meanings (DECK-FORMAT.md, Rules decks). Should
+        // one appear, produced implying understood is one arm here, as Write's.
         DrillMode.recognition ||
         DrillMode.grammarUnderstood ||
         DrillMode.grammar ||

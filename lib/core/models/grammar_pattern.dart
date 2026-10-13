@@ -88,6 +88,7 @@ class GrammarPattern {
 
   /// What `{slot}` shows for a slot, where it is not the slot itself: a
   /// grammar core's layer labels its slots in the learner's language (B1
-  /// format, spec 2.7). A slot without a label shows itself.
+  /// format, DECK-FORMAT.md, Core and layer files). A slot without a label
+  /// shows itself.
   final Map<String, String> slotLabels;
 }

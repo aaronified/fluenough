@@ -342,15 +342,15 @@ class DeckCatalog {
     final headers = <String, ({String? kind, String? part})>{
       for (final path in paths) path: _headerOf(files[path]!),
     };
-    // A file a learner added is single-file (OPEN-19): DeckParser.parse
-    // refuses a core or a layer among them.
+    // A file a learner added is single-file (DECK-FORMAT.md, Adding your own
+    // deck): DeckParser.parse refuses a core or a layer among them.
     bool isLayer(String path) =>
         !isAdded(path) && headers[path]!.kind == 'layer';
     bool isCore(String path) =>
         !isAdded(path) && !isLayer(path) && headers[path]!.part == 'core';
     // Cores first, so that a layer finds its core wherever the two sort
-    // (B1 format, spec 9.6). A core is not shown: each of its layers is,
-    // merged with it.
+    // (DECK-FORMAT.md, Core and layer files). A core is not shown: each of its
+    // layers is, merged with it.
     final cores = <String, DeckCore>{};
     final brokenCores = <String>{};
     for (final path in paths.where(isCore)) {
@@ -493,7 +493,8 @@ class DeckCatalog {
   }
 
   /// The layer at [path], whose text is [text], merged with its core: the
-  /// file `<core>.yaml` in the folder above the layer's (spec 2.6).
+  /// file `<core>.yaml` in the folder above the layer's (DECK-FORMAT.md, Core
+  /// and layer files).
   static Deck _merged(
     String path,
     String text,
@@ -604,7 +605,8 @@ class DeckCatalog {
   static List<DeckEntry> _withRefs(List<DeckEntry> decks) {
     // Each card as each native language's decks write it: a core card is
     // written once per layer that translates it, and a ref resolves through
-    // the one of its own native language when there is one (spec 2.7).
+    // the one of its own native language when there is one (DECK-FORMAT.md,
+    // Core and layer files).
     final written = <String, Map<String, Card>>{};
     for (final entry in decks) {
       if (entry.deck.kind != DeckKind.vocab) continue;
@@ -710,7 +712,8 @@ class DeckCatalog {
   static String? kindOf(String text) => _headerOf(text).kind;
 
   /// A file's `kind` and `part`, each null when it has none: a layer is
-  /// `kind: "layer"`, a core `part: "core"` (spec 2.2).
+  /// `kind: "layer"`, a core `part: "core"` (DECK-FORMAT.md, Core and layer
+  /// files).
   static ({String? kind, String? part}) _headerOf(String text) {
     try {
       final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);

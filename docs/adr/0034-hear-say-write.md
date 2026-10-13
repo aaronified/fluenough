@@ -279,7 +279,8 @@ before the script, six after):
   the skill model's pull request (owner, 2026-10-09). **Understood is shown a
   form and choosing what it means;** choosing among forms of the same word,
   the rule cards' question, or typing the form, is produced (owner,
-  2026-10-09, settling `b1-format-spec.md` #22). Until then grammar keeps one
+  2026-10-09, settling question 22 of the B1 format spec, now folded into
+  `docs/DECK-FORMAT.md`). Until then grammar keeps one
   schedule, typed.
 - **Settings** already has one switch per skill, so one per activity; their
   wording waits for `docs/plans/settings-wording.md`.
@@ -293,9 +294,8 @@ before the script, six after):
 
 ### Open, not built, or kept elsewhere
 
-- **Grammar understood and produced:** moved to the B1 format's spec,
-  `docs/plans/b1-format-spec.md` on branch `feat/b1-format` (4.7, and OPEN-22,
-  settled 2026-10-09), which holds the owner's ruling and the questions.
+- **Grammar understood and produced:** moved to the B1 format, built in #434
+  and described in `docs/DECK-FORMAT.md` ("Rules decks"; settled 2026-10-09).
 - **Cloze,** with the owner's wording of how it is asked and its easier and
   harder grades: `docs/plans/sentence-building.md` (#222).
 - **The optimiser:** done, ADR-0035.

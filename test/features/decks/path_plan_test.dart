@@ -16,12 +16,12 @@ import '../../support/harness.dart';
 /// The Decks path reads a course's plan from its language's path
 /// (ADR-0036): where each level ends, and each unit coming, planned or
 /// written with no deck in the course's native language yet. On the
-/// B1 format's Appendix A, whose path marks A1, A2 and B1 and plans a
-/// Health unit, and a Bengali deck for its first unit only.
+/// B1 format's example set (appendix-a), whose path marks A1, A2 and B1 and
+/// plans a Health unit, and a Bengali deck for its first unit only.
 
 const String appendix = 'test/fixtures/b1/appendix-a';
 
-/// Every file of Appendix A, keyed as the catalog keys bundled decks, with
+/// Every file of the example set, keyed as the catalog keys bundled decks, with
 /// [path] in place of its path where given.
 Map<String, String> appendixFiles({String? path}) => <String, String>{
   for (final file in Directory(appendix).listSync(recursive: true))

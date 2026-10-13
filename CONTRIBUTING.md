@@ -8,7 +8,7 @@ contributions are often content rather than software.
 
 | You want to | Read |
 |---|---|
-| Add or fix deck content | This file, then [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md) |
+| Add or fix deck content | [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md) (and the licensing rule under *Contributing a deck* below) |
 | Write code | This file, then [AGENTS.md](AGENTS.md) |
 | Work with a coding agent | [AGENTS.md](AGENTS.md) — the rules that keep parallel work from colliding |
 | Understand why something is the way it is | [docs/adr/](docs/adr/) |
@@ -104,94 +104,24 @@ If something here was confusing, that is a bug in this file.
 
 ## Contributing a deck
 
-### Setup
+Deck work follows [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md). That file is
+the guide: where a deck goes, how cards, ids and paths work, and what makes a
+deck good. Agents building a deck use the `build-deck` skill at
+[.claude/skills/build-deck/SKILL.md](.claude/skills/build-deck/SKILL.md),
+which itself follows DECK-FORMAT.md.
 
-```sh
-git clone <your fork>
-cd fluenough
-pip install pyyaml        # the only dependency
-```
-
-### Write it
-
-1. Read [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md). It is short.
-2. Create `decks/<language-code>/<deck-id>.yaml`. The deck id must equal the
-   filename stem.
-3. Start from an existing deck — [`decks/es/es-en-core-100.yaml`](decks/es/es-en-core-100.yaml)
-   for vocabulary, [`decks/es/es-en-grammar-present-ar.yaml`](decks/es/es-en-grammar-present-ar.yaml)
-   for a grammar pattern, [`decks/hi/hi-en-script-vowels.yaml`](decks/hi/hi-en-script-vowels.yaml)
-   for a non-Latin script.
-4. Add its core id to its language's path, `decks/<language-code>/<language-code>-path.yaml`,
-   in the unit it is taught with. The core id is the deck id without its
-   native language: `hi-en-market` is listed as `hi-market`. The path is the
-   language's, shared by every language it is taught from, so a new course
-   of a language that has a path adds no path, and a deck for a core id
-   already listed adds nothing to it; a new language adds
-   `<language-code>-path.yaml`. See "Paths" in the format specification.
-
-Converting an existing wordlist:
-
-```sh
-python3 tools/import_csv.py words.csv \
-    --id fr-core-100 --name "French Core" \
-    --language fr --language-name French --iso639-3 fra --tts fr-FR \
-    --license CC0-1.0 > decks/fr/fr-core-100.yaml
-```
-
-Then **read the generated card ids before committing.** They are permanent.
-
-### Index it, then validate it
-
-```sh
-python3 tools/deck_index.py
-python3 tools/validate_decks.py decks/
-```
-
-The first writes `decks/index.json`, the list the app downloads decks by;
-commit it with your deck. CI runs the second, which fails while the index is
-out of date. Errors fail the build; warnings do not, but are usually worth
-fixing.
-
-### The things reviewers check
+Whatever the format says, two things are yours to check as a contributor:
 
 **You have the right to contribute the content.** Wordlists taken from
-textbooks or commercial courses are not acceptable, *even reworded* — a
-translated derivative of a copyrighted list is still a derivative. Public
+textbooks or commercial courses are not acceptable, *even reworded*. Public
 domain frequency lists, Wiktionary (CC-BY-SA-4.0), Tatoeba (CC-BY-2.0-FR) and
-your own work are all fine. Declare it in the deck's `license` field.
+your own work are fine. Declare it in the deck's `license` field.
 
-**Bare values are quoted.** YAML turns `no`, `yes`, `on` and `off` into
-booleans. The hiragana `の` romanises to `no`. The validator catches this.
-
-**`language.tts` is set** where the language has meaningful regional variation
-— `pt-BR` versus `pt-PT`, `es-ES` versus `es-MX`. Without it, learners get
-whatever accent the device defaults to.
-
-**Card ids are new.** Never renumber, reuse, or remove-and-replace an existing
-one; they key every user's review history. To retire a card, delete it. A new
-card takes the language's next free id
-(`python3 tools/validate_decks.py --next-id fr`), and a word another deck of
-the language already teaches is listed with `ref:` rather than written again
-(see "A word in more than one deck" in docs/DECK-FORMAT.md).
-
-**A changed stem is said.** A card whose base word changes its stem says so
-in its notes (see DECK-FORMAT.md).
-
-Non-Latin scripts also need `reading` on every card, and a word in a script
-quoted in prose keeps its transliteration. Readings are *based on* ISO 15919:
-never write that they strictly follow it.
-
-### What makes a deck good
-
-Small and focused beats enormous. A hundred well-chosen cards with example
-sentences are worth more than a thousand bare word pairs.
-
-Prefer words a beginner will actually meet in their first months. Add `notes`
-where a word has a trap in it — grammatical gender that contradicts the
-ending, a false friend, a form that only exists in one region. Add `examples`
-for anything whose meaning depends on context.
-
-Frequency order is a good default when you are unsure what to include.
+**Run the tools before you push** (see the checklist under *Contributing
+code*): `python3 tools/deck_index.py`, then
+`python3 tools/validate_decks.py decks/`. They need PyYAML
+(`pip install pyyaml`). To turn a wordlist into a deck, use
+`tools/import_csv.py` (see `tools/README.md`).
 
 ---
 

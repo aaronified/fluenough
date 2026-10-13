@@ -32,7 +32,7 @@ enum DrillMode {
 
   /// Grammar understood: shown a form, అమ్మతో (ammatō), choose what it
   /// means among the meanings of the same word's forms: "with mother", "to
-  /// mother" (owner, 2026-10-09; B1 format spec 4.7, OPEN-22). Only a rules
+  /// mother" (owner, 2026-10-09; DECK-FORMAT.md, Rules decks). Only a rules
   /// table's cells take it. Stored by this name, so its place here does not
   /// matter to the log; it comes before [grammar] so that a session ordered
   /// by [values] asks the meaning before the form, as Recognition comes
@@ -42,8 +42,9 @@ enum DrillMode {
   /// Grammar produced: shown the meaning to express, give the form. On a
   /// pattern deck's cell, typed; on a rules table's cell, chosen among the
   /// same word's forms while the pair is new or was last missed, then typed
-  /// (spec 4.8). Machine-graded. Its name, and what every logged review in
-  /// it means, a typed form, is unchanged by [grammarUnderstood].
+  /// (DECK-FORMAT.md, Rules decks). Machine-graded. Its name, and what every
+  /// logged review in it means, a typed form, is unchanged by
+  /// [grammarUnderstood].
   grammar,
 
   /// Say: shown the meaning, say the target. Graded from what the phone's

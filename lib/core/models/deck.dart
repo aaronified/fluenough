@@ -63,7 +63,7 @@ class LanguageInfo {
 
 /// What a deck holds: cards, a pattern table that expands into cards,
 /// passages with questions, which are its cards (#98, ADR-0019), or a rules
-/// table, whose cells are its cards (B1 format, spec 4).
+/// table, whose cells are its cards (DECK-FORMAT.md, Rules decks).
 enum DeckKind { vocab, grammar, reading, rules }
 
 class Deck {
@@ -169,9 +169,9 @@ class Deck {
   String toString() => 'Deck($id, ${cards.length} cards)';
 }
 
-/// Whether [card], in a deck of [kind], counts as a word (spec 8.5): the
-/// words a unit plans and a course teaches. True for a card of a vocab deck
-/// that is not a phrasebook chunk nor a phrase, and is one word by
+/// Whether [card], in a deck of [kind], counts as a word (DECK-FORMAT.md, The
+/// B1 plan): the words a unit plans and a course teaches. True for a card of a
+/// vocab deck that is not a phrasebook chunk nor a phrase, and is one word by
 /// [wordsForBases] or a noun, verb, adjective, adverb or pronoun of several
 /// words. Grammar and rules cells and reading questions are not words.
 bool countsAsWord(Card card, DeckKind kind) =>

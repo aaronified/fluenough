@@ -64,10 +64,10 @@ typedef LessonQuestion = ({DrillMode mode, Ask ask});
 /// it can is its check, straight after it is taught, and the next in
 /// another mode its question in the exercise.
 ///
-/// A rules table's cell (spec 4.8) is understood before it is produced: its
-/// form's meaning chosen, then its form chosen among its word's, each where
-/// its row has the options; with none, it is typed. A pattern deck's
-/// grammar cell is typed.
+/// A rules table's cell (DECK-FORMAT.md, Rules decks) is understood before it
+/// is produced: its form's meaning chosen, then its form chosen among its
+/// word's, each where its row has the options; with none, it is typed. A
+/// pattern deck's grammar cell is typed.
 List<LessonQuestion> lessonQuestions(Card card) {
   if (card.rule != null) {
     return <LessonQuestion>[

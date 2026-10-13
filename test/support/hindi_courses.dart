@@ -1,5 +1,5 @@
 /// A tiny Hindi course taught from English, Bengali and Telugu in turn,
-/// for the native-language choice (ADR-0036, B1 format spec 9.5).
+/// for the native-language choice (ADR-0036, DECK-FORMAT.md, Paths).
 library;
 
 const _hindi =

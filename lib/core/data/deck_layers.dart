@@ -1,9 +1,9 @@
 part of 'deck_parser.dart';
 
-// Cores and layers (B1 format, spec section 2): a deck written as one file
-// for the language learnt, the core, and one for each language it is taught
-// from, its layers. Merged, a core and one layer are today's [Deck], with
-// the layer's id, so that everything keyed by deck id keeps working.
+// Cores and layers (DECK-FORMAT.md, Core and layer files): a deck written as
+// one file for the language learnt, the core, and one for each language it is
+// taught from, its layers. Merged, a core and one layer are today's [Deck],
+// with the layer's id, so that everything keyed by deck id keeps working.
 //
 // These shapes are the parser's: nothing outside lib/core/data uses them,
 // except to hand a core and a layer to [mergeLayer].
@@ -445,7 +445,8 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
   for (final tag in <String>[...core.tags, ...layer.tags]) {
     if (!tags.contains(tag)) tags.add(tag);
   }
-  // A deck is unreviewed until both its files are checked (spec 6.5).
+  // A deck is unreviewed until both its files are checked (DECK-FORMAT.md,
+  // Notes).
   if (tags.contains('unreviewed')) tags.remove('reviewed');
 
   var cards = const <Card>[];
@@ -530,7 +531,8 @@ class _Merge {
   final DeckLayer layer;
 
   /// The core's cards the layer translates, then the layer's own; the
-  /// core's refs, each with what the layer gives it (spec 2.7).
+  /// core's refs, each with what the layer gives it (DECK-FORMAT.md, Core and
+  /// layer files).
   ({List<Card> cards, List<CardRef> refs}) cards() {
     final ids = <String>{for (final card in core.cards) card.id};
     for (final MapEntry(key: id, value: entry) in layer.cards.entries) {
@@ -602,7 +604,8 @@ class _Merge {
       audio: card.audio,
       examples: examples(card.examples, entry.examples, '$path.examples'),
       modes: card.modes,
-      // Pair notes are the one source of pairs in a core (OPEN-16).
+      // Pair notes are the one source of pairs in a core (DECK-FORMAT.md,
+      // Notes).
       pair: notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: card.picture,
       phrasebook: card.phrasebook,
@@ -807,7 +810,7 @@ class _Merge {
   }
 
   /// The core's table with the layer's labels and prompts, and the rules
-  /// the layer gives, in the core's order (spec 4.5).
+  /// the layer gives, in the core's order (DECK-FORMAT.md, Rules decks).
   ({RuleTable table, List<Rule> rules}) rules() {
     final forms = core.table!;
     final words = layer.table!;

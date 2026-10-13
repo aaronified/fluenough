@@ -1,5 +1,5 @@
 /// A rules deck: one table of word forms, whose columns belong to rules
-/// (the B1 format, spec section 4).
+/// (the DECK-FORMAT.md, Rules decks).
 ///
 /// The table's rows are the language's words of one kind, each with every
 /// form listed; its columns, the slots, belong to rules, each with its own
@@ -10,7 +10,7 @@ library;
 
 /// A language fact a note's text or a rule's explanation quotes: written
 /// once, in the core, and shown as `word (reading)` wherever the text says
-/// `{1}`, `{2}`, … (spec 6.4).
+/// `{1}`, `{2}`, … (DECK-FORMAT.md, Notes).
 class NoteWord {
   const NoteWord({required this.word, this.reading, this.ipa});
 

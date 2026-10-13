@@ -66,7 +66,7 @@ units:
 
 The path names each deck by its core id (`te-family`), and a learner is
 taught their own native language's deck for it (`te-en-family` from
-English); the exact format is `b1-format-spec.md`, section 10.
+English); the exact format is in `docs/DECK-FORMAT.md`, "Paths" and "The B1 plan".
 
 Units after the B1 mark, if any, are written as today. Units with the
 alphabet stay where they are; they count neither words nor grammar.
@@ -177,8 +177,8 @@ them. The validator rejects a deck that leaves one out.
 
 ### The format's open questions, answered 2026-10-09
 
-The owner's answers to `b1-format-spec.md`'s questions (that spec's last
-section has them all):
+The owner's answers to the questions of the B1 format spec (now folded into
+`docs/DECK-FORMAT.md`, and in git history):
 
 - **One path per language learnt,** `<lang>-path.yaml`, shared by every
   native layer, now, before the deck agents start: it lists core ids, and

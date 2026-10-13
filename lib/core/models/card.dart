@@ -23,7 +23,7 @@ class CardExample {
   final List<CardBase> bases;
 }
 
-/// What a note is about (B1 format, spec 6).
+/// What a note is about (DECK-FORMAT.md, Notes).
 enum NoteKind {
   /// A word that sounds almost the same: the minimal-pair partner.
   pair,
@@ -324,7 +324,8 @@ class Card {
   ///
   /// A rules table's cell is understood ([DrillMode.grammarUnderstood]) only
   /// where its form can be told from the row's others by what it means
-  /// ([choosesMeaning]); otherwise it is only produced (spec 4.8).
+  /// ([choosesMeaning]); otherwise it is only produced (DECK-FORMAT.md, Rules
+  /// decks).
   Set<DrillMode> modesIn({
     required bool ttsAvailable,
     bool speechAvailable = false,
@@ -349,14 +350,14 @@ class Card {
   }
 
   /// Whether this rules table's cell can be asked what its form means
-  /// (`Ask.chooseFormMeaning`, spec 4.8): another form of its row means
-  /// something else. False for any other card.
+  /// (`Ask.chooseFormMeaning`, DECK-FORMAT.md, Rules decks): another form of
+  /// its row means something else. False for any other card.
   bool get choosesMeaning =>
       rule?.options.any((option) => option.prompt != native) ?? false;
 
   /// Whether this rules table's cell can be asked to choose its form among
-  /// its row's (`Ask.chooseForm`, spec 4.8): the row has another form.
-  /// False for any other card.
+  /// its row's (`Ask.chooseForm`, DECK-FORMAT.md, Rules decks): the row has
+  /// another form. False for any other card.
   bool get choosesForm => rule?.options.isNotEmpty ?? false;
 
   /// Whether producing this card is asked by putting its words in order
@@ -415,11 +416,12 @@ class Card {
     DrillMode.speaking => <String>[target, ...altTarget],
   };
 
-  /// What the learner is shown (spec 4.6). A rules table's cell understood
-  /// ([DrillMode.grammarUnderstood]) shows its form with its reading, whose
-  /// meaning is chosen: "అమ్మతో (ammatō)". Produced ([DrillMode.grammar]),
-  /// it shows its word, with its reading, before the meaning to express, so
-  /// that only the rule is tested: "అమ్మ (amma): with mother".
+  /// What the learner is shown (DECK-FORMAT.md, Rules decks). A rules table's
+  /// cell understood ([DrillMode.grammarUnderstood]) shows its form with its
+  /// reading, whose meaning is chosen: "అమ్మతో (ammatō)". Produced
+  /// ([DrillMode.grammar]), it shows its word, with its reading, before the
+  /// meaning to express, so that only the rule is tested: "అమ్మ (amma): with
+  /// mother".
   String promptFor(DrillMode mode) => switch (mode) {
     DrillMode.recognition || DrillMode.reading => target,
     DrillMode.grammarUnderstood => switch (reading) {
@@ -449,10 +451,10 @@ List<String> wordsOf(String text) => <String>[
 
 /// The words of [text] as the validator's `_words` splits them, for
 /// comparing a text's words with its `bases` and with the words a course
-/// teaches (spec 8.3): split at white space; within each piece, every
-/// punctuation mark, symbol or separator except `’` and `'` splits it too;
-/// `’` and `'` are stripped from each end; and what is left empty or is all
-/// digits is dropped. Unlike the validator, this does not NFC-normalise
+/// teaches (DECK-FORMAT.md, Base words): split at white space; within each
+/// piece, every punctuation mark, symbol or separator except `’` and `'` splits
+/// it too; `’` and `'` are stripped from each end; and what is left empty or is
+/// all digits is dropped. Unlike the validator, this does not NFC-normalise
 /// (#28).
 List<String> wordsForBases(String text) => <String>[
   for (final chunk in text.split(_pySpace))

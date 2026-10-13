@@ -32,14 +32,15 @@ enum Ask {
   rearrange,
 
   /// Shown a rules table's form with its reading, choose what it means
-  /// among the meanings of the same word's other forms (spec 4.8): "with
-  /// mother" for అమ్మతో (ammatō), beside "to mother" and "in mother". The
-  /// question of grammar understood.
+  /// among the meanings of the same word's other forms (DECK-FORMAT.md, Rules
+  /// decks): "with mother" for అమ్మతో (ammatō), beside "to mother" and "in
+  /// mother". The question of grammar understood.
   chooseFormMeaning,
 
   /// Shown a rules table's word and the meaning to express, choose its form
-  /// among the same word's forms (spec 4.8). Grammar produced, while the
-  /// pair is new or was last missed; it is typed once remembered.
+  /// among the same word's forms (DECK-FORMAT.md, Rules decks). Grammar
+  /// produced, while the pair is new or was last missed; it is typed once
+  /// remembered.
   chooseForm,
 
   /// Shown the word, its reading and meaning, and played aloud: a lesson
@@ -60,7 +61,7 @@ enum Ask {
       this == chooseMeaning || this == hearMeaning || this == chooseFormMeaning;
 
   /// Whether the options are the forms of one word in a rules table, or
-  /// their meanings, rather than other words (spec 4.8).
+  /// their meanings, rather than other words (DECK-FORMAT.md, Rules decks).
   bool get choosesAmongForms => this == chooseFormMeaning || this == chooseForm;
 
   /// What [card] shows as an option of this kind of question: its meaning
@@ -69,19 +70,19 @@ enum Ask {
   String optionOf(Card card) => choosesMeaning ? card.native : card.target;
 
   /// The grade a right answer to this kind of question records in [mode]
-  /// (ADR-0034, spec 4.7): Good (4) for a meaning seen and chosen, in
-  /// Recognition or of a rule's form, since choosing what a seen form means
-  /// is how understanding is asked; Hard (3) for any other choice, which
-  /// counts for less than a right recall.
+  /// (ADR-0034, DECK-FORMAT.md, Rules decks): Good (4) for a meaning seen and
+  /// chosen, in Recognition or of a rule's form, since choosing what a seen
+  /// form means is how understanding is asked; Hard (3) for any other choice,
+  /// which counts for less than a right recall.
   int rightChoiceGrade(DrillMode mode) =>
       mode == DrillMode.recognition || this == chooseFormMeaning ? 4 : 3;
 }
 
 /// The cards a [ask] question about the rules table's cell [card] offers
-/// besides it (spec 4.8), from [cells], its deck's cards: the cells of its
-/// own row, the same word, that its expansion lists as options, each
-/// showing something different from [card] and from the others. Never
-/// another word's form, nor a form of a rule its layer leaves out, since
+/// besides it (DECK-FORMAT.md, Rules decks), from [cells], its deck's cards:
+/// the cells of its own row, the same word, that its expansion lists as
+/// options, each showing something different from [card] and from the others.
+/// Never another word's form, nor a form of a rule its layer leaves out, since
 /// such a cell is not among the options. Empty for a card that is not a
 /// rules table's cell, or for another kind of question.
 List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
@@ -117,7 +118,7 @@ const int matchSize = 4;
 ///   in Hear is high enough. Where [hearsForm] says what is heard is the
 ///   form itself, as in script practice, it is typed as heard.
 /// - **Grammar understood** is always chosen: the meaning of the form shown
-///   ([Ask.chooseFormMeaning], spec 4.8).
+///   ([Ask.chooseFormMeaning], DECK-FORMAT.md, Rules decks).
 /// - **Grammar produced**, on a rules table's cell whose row has another
 ///   form, is chosen among the forms ([Ask.chooseForm]) while the pair is
 ///   new or was last missed, and typed once it was last remembered, as Hear
