@@ -47,8 +47,9 @@ wherever the table above allows it.
   milestone only as the owner says.
 - **Mockups** follow `docs/mockups/README.md`: build the approved specs
   exactly, never rewrite one without approval, and adapt the older ones.
-  Each uses the app's real theme, light and dark, 2x text, a contrast
-  self-check, and Hindi and Bengali examples, and is checked in Chromium.
+  Each uses the app's real theme, light and dark, 1.4x text (the app's
+  cap, #505), a contrast self-check, and Hindi and Bengali examples, and
+  is checked in Chromium.
 - **Content.** Keep transliteration in deck prose, and say in a card's notes
   when its base word changes its stem (`docs/DECK-FORMAT.md`).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
@@ -80,3 +81,22 @@ answered.
 When one issue needs another done first, record it on GitHub: set "blocked
 by" between the issues and add the `blocked` label. Never rely on both
 landing in the same milestone, or on any other timing.
+
+## Contributor DhyanendraSinghSikarwar (2026-10-13)
+
+When the session's GitHub user is `DhyanendraSinghSikarwar`, these rules
+replace "Push straight to main" above:
+
+- **Author.** Before the first commit, run:
+  `git config user.name "DhyanendraSinghSikarwar"` and
+  `git config user.email "87273551+DhyanendraSinghSikarwar@users.noreply.github.com"`.
+- **Trailer.** End each commit message with
+  `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. No
+  `Claude-Session` line.
+- **Branches and PRs.** One branch and one PR per issue, named
+  `issue-<n>-<slug>`. Work without an issue uses a branch name without a
+  number. Never push to main.
+- **Commits.** One commit per fix, even within a PR. Push each one as soon
+  as it is made.
+- **Skills.** Use the repo's skills in `.claude/skills/`.
+- **Decisions.** Ask whenever in doubt. Never decide alone.
