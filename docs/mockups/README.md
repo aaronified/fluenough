@@ -10,18 +10,18 @@ approval.
 - `session-result-and-hours.html`: the session result's count line,
   correct share and minutes (#486), and hours spent and hours left on
   Progress (#227). Approved by the owner, 2026-10-12.
-
-## Awaiting approval
-
 - `settings.html`: Settings as a short list of section pages, with every
-  planned change folded in: Sources in Learning (#469), Your data with
-  Backup and restore, cloud, recent and cloud backups and the restore
-  sheet (#473, #470) and a Review log screen, Add deck as a row (#475),
-  switches only for the activities a learner may skip (#243), Reminders
-  for several languages (#90, 0.6.0), an App log screen, Delete this
-  profile on the profile page, and destructive actions in the error
-  colour. Revised after the owner's reviews of 2026-10-12; its proposed
-  decisions are listed in the page.
+  planned change folded in: Sources in Your languages (#469); Look and
+  language as the Look screen with an App language row, English only until
+  #46; Your data as the backup page itself, with backup and restore
+  (cloud, recent and cloud backups, the restore sheet) and the review log
+  fully expanded on it, no page between (#473, #470; owner, 2026-10-12); Your
+  decks with the custom deck check after an upload (#475, #495, 0.6.0);
+  switches only for the activities a learner may skip (#243); Reminders for
+  several languages (#90, 0.6.0); an App log screen; Profiles and privacy
+  (PIN lock, profiles, Delete this profile) from the profile card (#204);
+  and destructive actions in the error colour. Approved by the owner,
+  2026-10-12, with the decisions the page marks Proposed (#496).
 
 ## Older: to be adapted (owner, 2026-10-12)
 
