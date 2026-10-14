@@ -59,7 +59,7 @@ KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "sc
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
-             "regions"}
+             "regions", "genders"}
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -149,9 +149,10 @@ CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
 # A word card has at least this many examples (owner, #506: "At least 2").
 MIN_EXAMPLES = 2
-# The languages whose examples are filled in (#511). In these, a word card
-# with fewer than MIN_EXAMPLES examples is an error; in any other, nothing is
-# reported yet. A language is added here when its fill issue is closed.
+# The languages filled in (#511, #512). In these, a word card with fewer than
+# MIN_EXAMPLES examples is an error, and so is a noun with no gender where the
+# language's path lists gender classes; in any other, neither is reported
+# yet. A language is added here when its fill issue is closed.
 FILLED_LANGUAGES: set[str] = set()
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "wiktionary")
@@ -380,6 +381,9 @@ class PathPlan:
     marks: dict[str, int]      # milestone -> the unit it is on, when in order
     end: int                   # the last unit up to B1
     regions: list[str] | None = None   # its region ids; None without regions
+    # Its gender classes (#512); [] for a language without gender, None when
+    # the path does not list them.
+    genders: list[str] | None = None
 
 
 @dataclass
@@ -435,6 +439,8 @@ class Report:
     card_rules: list[tuple[str, str]] = field(default_factory=list)
     # The regions a note names: (region id, where, the note's place).
     note_regions: list[tuple[str, str, int]] = field(default_factory=list)
+    # Each noun card's gender, or None without one: (gender, where) (#512).
+    noun_genders: list[tuple[str | None, str]] = field(default_factory=list)
     # A layer: the ids of its core's cards and refs whose entry gives native.
     translated: set[str] | None = None
     # A core: the ids of its cards and refs, in order, each marked written.
@@ -648,6 +654,9 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             _check_str_list(r, where, key, card[key])
 
     _check_optional_text(r, where, card, "gender")
+    if card.get("pos") == "noun":
+        gender = card.get("gender")
+        r.noun_genders.append((gender if isinstance(gender, str) else None, where))
     notes = check_notes(r, where, card.get("notes"), cid, lang, script, core=core)
     _check_optional_text(r, where, card, "audio")
 
@@ -3270,6 +3279,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
         r.error("id", f"is {path_id!r} but the filename stem is {path.stem!r}")
     _check_optional_text(r, "root", raw, "description")
     regions = check_regions(r, raw)
+    genders = check_genders(r, raw)
     if not isinstance(units, list) or not units:
         r.error("units", "must be a non-empty list")
         return
@@ -3346,7 +3356,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
     if lang_ok:
         r.course_path = (lang, listed)
         r.plan = PathPlan(lang, parsed, [d for d in alphabet if isinstance(d, str)],
-                          has_plan, marks, end, regions)
+                          has_plan, marks, end, regions, genders)
 
 
 def check_regions(r: Report, raw: dict) -> list[str] | None:
@@ -3391,6 +3401,29 @@ def check_regions(r: Report, raw: dict) -> list[str] | None:
         if "en" not in name:
             r.error(f"{where}.name", 'has no "en"')
     return ids
+
+
+def check_genders(r: Report, raw: dict) -> list[str] | None:
+    """A language's gender classes (#512), such as ["m", "f"]: what a noun's
+    `gender` may be. An empty list says the language has none. Returns
+    them, or None when the path lists none."""
+    if "genders" not in raw:
+        return None
+    genders = raw["genders"]
+    if not isinstance(genders, list):
+        r.error("genders", 'must be a list of the language\'s gender classes, such '
+                           'as ["m", "f"], or [] for a language without gender')
+        return []
+    classes: list[str] = []
+    for i, value in enumerate(genders):
+        if not _is_str(value) or value != value.strip():
+            r.error(f"genders[{i}]", f"must be a class name, quoted text with no "
+                                     f"spaces around it, got {value!r}")
+        elif value in classes:
+            r.error(f"genders[{i}]", f"{value!r} is listed twice")
+        else:
+            classes.append(value)
+    return classes
 
 
 def _check_passages(r: Report, where: str, i: int, key: str, value: object,
@@ -4913,6 +4946,36 @@ def check_regions_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+def check_genders_across(reports: list[Report]) -> list[str]:
+    """A noun's gender is one of its language's classes, which its path
+    lists (#512, "Nouns only"); a noun with none is an error once the
+    language is filled in. A language whose path lists no classes is not
+    checked, and other parts of speech never are."""
+    ctx = _context(reports)
+    problems: list[str] = []
+    for rep in reports:
+        if not rep.noun_genders or rep.lang_code is None:
+            continue
+        path = ctx.lang(rep.lang_code).path()
+        if path is None or path.plan.genders is None:
+            continue
+        code, classes = rep.lang_code, path.plan.genders
+        listed = ", ".join(classes)
+        for gender, where in rep.noun_genders:
+            if gender is None:
+                if classes and code in FILLED_LANGUAGES:
+                    problems.append(f"{rep.path}: {where}: a noun has a gender once "
+                                    f"{code} is filled in, one of {listed} "
+                                    f"(DECK-FORMAT.md, Card data)")
+            elif not classes:
+                problems.append(f"{rep.path}: {where}: gender {gender!r}, but {code} "
+                                f"has no gender classes; leave gender out")
+            elif gender not in classes:
+                problems.append(f"{rep.path}: {where}: gender {gender!r} is not a "
+                                f"class of {code}; its path lists {listed}")
+    return problems
+
+
 def collect(target: Path) -> list[Path]:
     if target.is_file():
         return [target]
@@ -4975,7 +5038,8 @@ def main(argv: list[str]) -> int:
               + check_reading_across(reports) + check_icons_across(reports)
               + check_rules_across(reports) + check_notes_across(reports)
               + check_bases_across(reports) + check_phrasebook_across(reports)
-              + check_plans_across(reports) + check_regions_across(reports))
+              + check_plans_across(reports) + check_regions_across(reports)
+              + check_genders_across(reports))
     for problem in across:
         print(f"error: {problem}")
     warn_base_stems_across(reports)

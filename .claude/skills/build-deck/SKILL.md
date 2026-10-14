@@ -23,14 +23,14 @@ Before you start:
   `docs/DECK-FORMAT.md`, "Card data"): meaning; the reading for a non-Latin script; at
   least 2 examples on a word card; the root word (`bases`); gender where the
   language has it (per-language classes, decided: hi m/f; mr, gu, kn m/f/n;
-  te mahat/amahat; bn and as none); and confusables on a sentence used for word
+  te mahat/amahat; es m/f; bn, as and ja none); and confusables on a sentence used for word
   order. **The validator enforces only what it can check** (meaning, reading,
   2 examples per word card, gender on nouns in gendered languages, as errors
   once a language is filled in). Data that is "mandatory when available"
   (confusables, root word, synonyms, antonyms, minimal pairs and the rest) is
   never a validator error, so **you, the builder, must add it whenever it is
   available**, and reviewers check it (owner, 2026-10-13, #506; review
-  pipeline work is #508). The new fields (`confusables`, the gender classes, the rest) arrive
+  pipeline work is #508). The new fields (`confusables` and the rest) arrive
   with their format and validator change (fields first), and DECK-FORMAT does
   not allow them yet. Until then, fill what DECK-FORMAT allows (reading, ipa,
   alt_target, pos, gender, examples, notes, bases, pair, picture where it
@@ -94,6 +94,14 @@ Before you start:
      `FILLED_LANGUAGES` (`tools/validate_decks.py`); write 2 anyway. An
      example taken from outside names its own `source`; one written for the
      deck has none.
+   - Every noun (`pos: "noun"`) in a language with gender gets its
+     `gender`, one of the language's classes ("Card data", "Gender"): hi
+     `"m"`/`"f"`; mr, gu, kn `"m"`/`"f"`/`"n"`; te `"mahat"`/`"amahat"`; es
+     `"m"`/`"f"`. In bn, as and ja leave `gender` out. It goes on the core
+     card, never in a layer. The classes belong in the language's path as
+     `genders`, which the validator checks nouns against; whether to add
+     them to the paths yet is open (DECK-FORMAT, "Gender"), so do not add
+     them yourself.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep
