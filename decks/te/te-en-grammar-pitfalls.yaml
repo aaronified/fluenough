@@ -1,0 +1,86 @@
+schema: 1
+id: te-en-grammar-pitfalls
+name: "Pitfalls"
+kind: vocab
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "The mistakes English speakers make most in Telugu. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - id: te-0372
+    target: "మనం వెళ్దాం."
+    native: "Let's go (you and I)."
+    reading: "manam veḷdām."
+    ipa: "manam ʋeɭd̪aːm"
+    pos: "phrase"
+    notes: "Telugu has two 'we': మనం (manam) includes the listener, మేము (mēmu) leaves them out."
+    bases:
+      - { word: "వెళ్దాం", ref: "te-0622" }
+  - id: te-0373
+    target: "మేము వెళ్తున్నాము."
+    native: "We are going (not you)."
+    reading: "mēmu veḷtunnāmu."
+    ipa: "meːmu ʋeɭt̪unnaːmu"
+    pos: "phrase"
+    notes: "Said to someone who is staying behind."
+    bases:
+      - { word: "వెళ్తున్నాము", ref: "te-0622" }
+  - id: te-0374
+    target: "ఇది నీళ్ళు కాదు."
+    native: "This isn't water."
+    reading: "idi nīḷḷu kādu."
+    ipa: "id̪i niːɭɭu kaːd̪u"
+    pos: "phrase"
+    notes: "కాదు (kādu) denies what something is."
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+  - id: te-0375
+    target: "నీళ్ళు లేవు."
+    native: "There's no water."
+    reading: "nīḷḷu lēvu."
+    ipa: "niːɭɭu leːʋu"
+    pos: "phrase"
+    notes: "లేదు (lēdu) or లేవు (lēvu) denies that something is there."
+    bases:
+      - { word: "లేవు", ref: "te-0159" }
+  - id: te-0376
+    target: "నాకు ఆకలిగా ఉంది."
+    native: "I'm hungry."
+    reading: "nāku ākaligā undi."
+    ipa: "naːku aːkaliɡaː und̪i"
+    pos: "phrase"
+    notes: "'To me there is hunger'."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఆకలిగా", ref: "te-0966" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: te-0377
+    target: "నేను వెళ్ళాలి."
+    native: "I have to go."
+    reading: "nēnu veḷḷāli."
+    ipa: "neːnu ʋeɭɭaːli"
+    pos: "phrase"
+    notes: "-ఆలి (-āli) on the stem says 'must'."
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "వెళ్ళాలి", ref: "te-0622" }
+  - id: te-0378
+    target: "మీరు కూర్చోండి."
+    native: "Please sit down."
+    reading: "mīru kūrcōṇḍi."
+    ipa: "miːru kuːrtʃoːɳɖi"
+    pos: "phrase"
+    notes: "With మీరు (mīru), a request ends in -అండి (-aṇḍi). నువ్వు కూర్చో (nuvvu kūrcō) is for friends and children."
+    bases:
+      - { word: "కూర్చోండి", ref: "te-0634" }
+  - id: te-0379
+    target: "రాము గారు వచ్చారు."
+    native: "Mr Ramu has come."
+    reading: "rāmu gāru vaccāru."
+    ipa: "raːmu ɡaːru ʋatʃtʃaːru"
+    pos: "phrase"
+    notes: "Respect for one person takes the plural verb: వచ్చారు (vaccāru), not వచ్చాడు (vaccāḍu). రావడం (rāvaḍam) changes its stem in the past: వచ్చ- (vacc-)."
+    bases:
+      - { word: "రాము", base: "రాము", reading: "rāmu", meaning: "Ramu (a man's name)" }
+      - { word: "వచ్చారు", ref: "te-0623" }

@@ -65,9 +65,7 @@ void main() {
       );
       final onDisk = index.filesByPath.keys
           // Facts, themes, number rules, course paths, sounds and
-          // romanisation files sit beside the decks but are not decks, nor
-          // is the layer of a script guide or sounds file (#498).
-          .where((p) => !index.filesByPath[p]!.isLanguageFile)
+          // romanisation files sit beside the decks but are not decks.
           .where(
             (p) => !{
               'facts',

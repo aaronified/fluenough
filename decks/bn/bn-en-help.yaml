@@ -1,0 +1,172 @@
+schema: 1
+id: bn-en-help
+name: "Help"
+kind: vocab
+theme: help
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Asking for help, saying you feel ill, doctors and medicine, and saying you are lost."
+tags: [beginner]
+cards:
+  - id: bn-0371
+    target: "সাহায্য"
+    native: "help"
+    reading: "śāhājjo"
+    ipa: "ʃaɦadʒdʒo"
+    pos: "noun"
+  - id: bn-0372
+    target: "সাহায্য করুন!"
+    native: "Please help!"
+    reading: "śāhājjo korun!"
+    ipa: "ʃaɦadʒdʒo korun"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "করুন", ref: "bn-0102" }
+  - id: bn-0373
+    target: "বাঁচাও!"
+    native: "Help! (in danger)"
+    reading: "bām̐cāo!"
+    ipa: "bãtʃao"
+    pos: "phrase"
+    notes: "What you shout in danger: literally 'save me!'"
+  - id: bn-0374
+    target: "দাঁড়ান!"
+    native: "Stop! Wait, please!"
+    reading: "dām̐ṛān!"
+    ipa: "d̪ãɽan"
+    pos: "phrase"
+    tags: ["polite"]
+  - ref: bn-0375
+    native: "police"
+    notes: "The emergency number is 112 in India and 999 in Bangladesh."
+  - id: bn-0376
+    target: "ডাক্তার"
+    native: "doctor"
+    picture: "🧑‍⚕"
+    reading: "ḍāktār"
+    ipa: "ɖakt̪ar"
+    pos: "noun"
+  - id: bn-0377
+    target: "হাসপাতাল"
+    native: "hospital"
+    picture: "🏥"
+    reading: "hāśpātāl"
+    ipa: "ɦaʃpat̪al"
+    pos: "noun"
+  - id: bn-0378
+    target: "ওষুধ"
+    native: "medicine"
+    picture: "💊"
+    reading: "ośudh"
+    ipa: "oʃud̪ʱ"
+    pos: "noun"
+    notes: "A chemist's is ওষুধের দোকান (ośudher dokān)."
+  - id: bn-0379
+    target: "ব্যথা"
+    native: "pain"
+    reading: "bêthā"
+    ipa: "bæt̪ʰa"
+    pos: "noun"
+    notes: "মাথা ব্যথা করছে (māthā bêthā kôrche), I have a headache."
+  - id: bn-0380
+    target: "আমি হারিয়ে গেছি।"
+    native: "I'm lost."
+    reading: "āmi hāriye gechi."
+    ipa: "ami ɦarije ɡetʃʰi"
+    pos: "phrase"
+    notes: "যাওয়া (jāoā) changes its stem in the past and perfect: গে- (ge-)."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "হারিয়ে", ref: "bn-1106" }
+      - { word: "গেছি", ref: "bn-0873" }
+  - id: bn-0381
+    target: "আমি বুঝতে পারিনি।"
+    native: "I didn't understand."
+    reading: "āmi bujhte pārini."
+    ipa: "ami budʒʱt̪e parini"
+    pos: "phrase"
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "বুঝতে", ref: "bn-0882" }
+      - { word: "পারিনি", ref: "bn-0736" }
+  - id: bn-0382
+    target: "বাথরুম কোথায়?"
+    native: "Where is the toilet?"
+    reading: "bāthrum kothāy?"
+    ipa: "bat̪ʰrum kot̪ʰaj"
+    pos: "phrase"
+    notes: "Signs say শৌচাগার (śoucāgār)."
+  - id: bn-0726
+    target: "আমার শরীর খারাপ।"
+    native: "I'm not well."
+    reading: "āmār śorir khārāp."
+    ipa: "amar ʃorir kʰarap"
+    pos: "phrase"
+    notes: "Literally 'my body is bad'."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "শরীর", ref: "bn-1024" }
+  - id: bn-0727
+    target: "জ্বর"
+    native: "fever"
+    reading: "jôr"
+    ipa: "dʒɔr"
+    pos: "noun"
+    notes: "The ব (bô) under জ (jô) is not said. আমার জ্বর হয়েছে (āmār jôr hôyeche), I have a fever."
+  - id: bn-0728
+    target: "মাথা"
+    native: "head"
+    reading: "māthā"
+    ipa: "mat̪ʰa"
+    pos: "noun"
+  - id: bn-0729
+    target: "পেট"
+    native: "stomach"
+    reading: "peṭ"
+    ipa: "peʈ"
+    pos: "noun"
+  - id: bn-0730
+    target: "হাত"
+    native: "hand; arm"
+    picture: "✋"
+    reading: "hāt"
+    ipa: "ɦat̪"
+    pos: "noun"
+  - id: bn-0731
+    target: "পা"
+    native: "foot; leg"
+    picture: "🦵"
+    reading: "pā"
+    ipa: "pa"
+    pos: "noun"
+  - id: bn-0732
+    target: "চোখ"
+    native: "eye"
+    picture: "👁"
+    reading: "cokh"
+    ipa: "tʃokʰ"
+    pos: "noun"
+  - id: bn-0733
+    target: "দাঁত"
+    native: "tooth"
+    picture: "🦷"
+    reading: "dām̐t"
+    ipa: "d̪ãt̪"
+    pos: "noun"
+  - id: bn-0734
+    target: "গলা"
+    native: "throat; neck"
+    reading: "gôlā"
+    ipa: "ɡɔla"
+    pos: "noun"
+  - id: bn-0735
+    target: "আমার পেট ব্যথা করছে।"
+    native: "I have a stomach ache."
+    reading: "āmār peṭ bêthā kôrche."
+    ipa: "amar peʈ bæt̪ʰa kɔrtʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "করছে", ref: "bn-0102" }

@@ -1,0 +1,108 @@
+schema: 1
+id: te-en-grammar-sentences
+name: "Basic sentences"
+kind: vocab
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Word order, no 'is', and how Telugu says 'have' and 'like'. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, grammar, unreviewed]
+cards:
+  - id: te-0147
+    target: "నేను విద్యార్థిని."
+    native: "I am a student."
+    reading: "nēnu vidyārthini."
+    ipa: "neːnu ʋid̪jaːrt̪ʰini"
+    pos: "phrase"
+    notes: "No separate 'am': the ending -ని (-ni) on విద్యార్థి (vidyārthi) says it."
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "విద్యార్థిని", ref: "te-0412" }
+  - id: te-0148
+    target: "ఇది నా ఇల్లు."
+    native: "This is my house."
+    reading: "idi nā illu."
+    ipa: "id̪i naː illu"
+    pos: "phrase"
+    notes: "There is no 'is' in the present."
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "నా", ref: "te-0593" }
+  - id: te-0149
+    target: "నేను టీ తాగుతాను."
+    native: "I drink tea."
+    reading: "nēnu ṭī tāgutānu."
+    ipa: "neːnu ʈiː t̪aːɡut̪aːnu"
+    pos: "phrase"
+    notes: "Subject, object, verb: the verb comes last."
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తాగుతాను", ref: "te-0625" }
+  - id: te-0150
+    target: "ఆమె తెలుగు నేర్చుకుంటోంది."
+    native: "She is learning Telugu."
+    reading: "āme telugu nērcukuṇṭōndi."
+    ipa: "aːme t̪eluɡu neːrtʃukuɳʈoːnd̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
+      - { word: "నేర్చుకుంటోంది", ref: "te-0645" }
+  - id: te-0151
+    target: "నాకు తెలుగు ఇష్టం."
+    native: "I like Telugu."
+    reading: "nāku telugu iṣṭam."
+    ipa: "naːku t̪eluɡu iʂʈam"
+    pos: "phrase"
+    notes: "'To me, Telugu is liked': the one who likes takes -కి (-ki) or -కు (-ku)."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu", meaning: "Telugu (the language)" }
+  - id: te-0152
+    target: "నాకు ఒక కారు ఉంది."
+    native: "I have a car."
+    reading: "nāku oka kāru undi."
+    ipa: "naːku oka kaːru und̪i"
+    pos: "phrase"
+    notes: "'To me there is a car': ఉంది (undi), 'there is'."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "కారు", ref: "te-0879" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: te-0153
+    target: "నా దగ్గర డబ్బులు లేవు."
+    native: "I don't have any money on me."
+    reading: "nā daggara ḍabbulu lēvu."
+    ipa: "naː d̪aɡɡara ɖabbulu leːʋu"
+    pos: "phrase"
+    notes: "లేవు (lēvu), 'there aren't', agrees with the plural డబ్బులు (ḍabbulu)."
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "లేవు", ref: "te-0159" }
+  - id: te-0154
+    target: "ఇది బాగా లేదు."
+    native: "This isn't good."
+    reading: "idi bāgā lēdu."
+    ipa: "id̪i baːɡaː leːd̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "బాగా", base: "బాగు", reading: "bāgu", meaning: "good; well" }
+  - id: te-0155
+    target: "వెళ్ళకండి."
+    native: "Please don't go."
+    reading: "veḷḷakaṇḍi."
+    ipa: "ʋeɭɭakaɳɖi"
+    pos: "phrase"
+    notes: "-కండి (-kaṇḍi) makes a polite 'don't'."
+  - id: te-0156
+    target: "ఈరోజు చాలా వేడిగా ఉంది."
+    native: "It's very hot today."
+    reading: "īrōju cālā vēḍigā undi."
+    ipa: "iːroːdʒu tʃaːlaː ʋeːɖiɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "వేడిగా", ref: "te-0505" }
+      - { word: "ఉంది", ref: "te-0633" }

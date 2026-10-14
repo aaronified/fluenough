@@ -6,7 +6,6 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/shell_tab.dart';
-import 'package:fluenough/core/models/card.dart' show NoteKind;
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/card_notes.dart';
@@ -490,17 +489,9 @@ void main() {
     expect(inSheet(word.reading!), findsOneWidget);
     expect(inSheet(l10n.wordSheetIpa(word.ipa!)), findsOneWidget);
     expect(inSheet(word.native), findsOneWidget);
-    // Its notes, and its pair note's text with the word it sounds like: in
-    // a core, the note that names the partner is the pair note (#498).
-    final texts = <String>[
-      ...shownNotes(word),
-      for (final note in word.notes)
-        if (note.kind == NoteKind.pair && note.text.trim().isNotEmpty)
-          note.text,
-    ];
-    expect(texts, isNotEmpty);
-    for (final text in texts) {
-      expect(inSheet(text), findsOneWidget);
+    expect(shownNotes(word), isNotEmpty);
+    for (final note in shownNotes(word)) {
+      expect(inSheet(note), findsOneWidget);
     }
     expect(inSheet(l10n.wordSheetSoundsLikeTitle), findsOneWidget);
     final partner = state

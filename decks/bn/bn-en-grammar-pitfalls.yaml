@@ -1,0 +1,102 @@
+schema: 1
+id: bn-en-grammar-pitfalls
+name: "Pitfalls"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "The mistakes English speakers make most in Bengali."
+tags: [beginner, grammar]
+cards:
+  - id: bn-0383
+    target: "আপনি বসুন।"
+    native: "Please sit down."
+    reading: "āpni bośun."
+    ipa: "apni boʃun"
+    pos: "phrase"
+    notes: "With আপনি (āpni), the verb takes its respectful form. তুমি বসো (tumi bôso) is for friends; তুই বস (tui bôs) for the very close, and rude to a stranger."
+    bases:
+      - { word: "বসুন", ref: "bn-0884" }
+  - id: bn-0384
+    target: "আমি জানি না।"
+    native: "I don't know."
+    reading: "āmi jāni nā."
+    ipa: "ami dʒani na"
+    pos: "phrase"
+    notes: "না (nā) comes after the verb, never before it as 'not' does in English."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "জানি", ref: "bn-0881" }
+  - id: bn-0385
+    target: "আমি জল খাই।"
+    native: "I drink water."
+    reading: "āmi jôl khāi."
+    ipa: "ami dʒɔl kʰai"
+    alt_target: ["আমি পানি খাই।"]
+    pos: "phrase"
+    notes: "Bengali eats water and tea, and even cigarettes: খাওয়া (khāoyā) covers drinking and smoking. Also পানি (pāni): আমি পানি খাই (āmi pāni khāi)."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "খাই", ref: "bn-0876" }
+  - id: bn-0386
+    target: "আমার খিদে পেয়েছে।"
+    native: "I'm hungry."
+    reading: "āmār khide peyeche."
+    ipa: "amar kʰid̪e pejetʃʰe"
+    alt_target: ["আমার ক্ষুধা লেগেছে।"]
+    pos: "phrase"
+    notes: "'Hunger has come to me'. So too আমার তেষ্টা পেয়েছে (āmār teśṭā peyeche), I'm thirsty. Also আমার ক্ষুধা লেগেছে (āmār khudhā legeche) and আমার পিপাসা লেগেছে (āmār pipāśā legeche)."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "খিদে", ref: "bn-1245" }
+      - { word: "পেয়েছে", ref: "bn-0891" }
+  - id: bn-0387
+    target: "আমাকে যেতে হবে।"
+    native: "I have to go."
+    reading: "āmāke jete hôbe."
+    ipa: "amake dʒet̪e ɦɔbe"
+    pos: "phrase"
+    notes: "'To me, going will be': the one who must takes -কে (-ke)."
+    bases:
+      - { word: "আমাকে", ref: "bn-0833" }
+      - { word: "যেতে", ref: "bn-0873" }
+      - { word: "হবে", ref: "bn-0874" }
+  - id: bn-0388
+    target: "ও আমার বোন।"
+    native: "She is my sister."
+    reading: "o āmār bon."
+    ipa: "o amar bon"
+    pos: "phrase"
+    notes: "ও (o) is he or she. Only বোন (bon), sister, says it is a woman."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: bn-0389
+    target: "কাল আসব।"
+    native: "I'll come tomorrow."
+    reading: "kāl āśbo."
+    ipa: "kal aʃbo"
+    pos: "phrase"
+    notes: "The doer is often left out: the verb's ending already says 'I'."
+    bases:
+      - { word: "আসব", ref: "bn-0872" }
+  - id: bn-0390
+    target: "দাদা, একটু সরুন।"
+    native: "Excuse me, could you move a little?"
+    reading: "dādā, ekṭu śorun."
+    ipa: "d̪ad̪a ekʈu ʃorun"
+    alt_target: ["ভাই, একটু সরুন।", "দিদি, একটু সরুন।", "আপা, একটু সরুন।"]
+    pos: "phrase"
+    notes: "A request to a stranger often starts with an address: দাদা (dādā) or দিদি (didi), also ভাই (bhāi) or আপা (āpā). In many families দাদা (dādā) means grandfather. Without an address, a request can sound curt."
+    bases:
+      - { word: "সরুন", base: "সরা", reading: "śôrā", meaning: "to move aside" }
+  - id: bn-0747
+    target: "সিগারেট খাওয়া"
+    native: "to smoke a cigarette"
+    reading: "sigāreṭ khāoā"
+    ipa: "siɡareʈ kʰaoa"
+    alt_target: ["তামাক সেবন করা", "তামাক সেবন"]
+    pos: "phrase"
+    notes: "Cigarettes are eaten too: ও সিগারেট খায় না (o sigāreṭ khāy nā), he or she doesn't smoke. Also তামাক সেবন (tāmāk śebon), the slang for it."
+    bases:
+      - { word: "সিগারেট", base: "সিগারেট", reading: "sigāreṭ", meaning: "cigarette" }
+      - { word: "খাওয়া", ref: "bn-0876" }

@@ -73,11 +73,11 @@ Before you start:
      rules deck is core and layer only ("Rules decks"). Reading decks stay
      single-file. See "Writing a B1 course", step 7, for what each part of a
      unit holds.
-   - Every vocab and grammar deck is split (#498); only the reading decks
-     and Japanese's `ja-en-hiragana` (no B1 plan yet) are single-file. To split a single-file deck, run
-     `python3 tools/split_deck.py <file>` ("Splitting a deck"), never by
-     hand. A language's script guide and sounds file are a core and an
-     English layer too ("Script guides", "Sounds files").
+   - Bengali and Telugu are partly split: Bengali has cores in `decks/bn`
+     with layers in `decks/bn/en`, plus 54 single-file `bn-en-*` decks;
+     Telugu has 28 cores and 52 single-file decks. Those single-file decks
+     stay until issue #498 is done. New decks there are written split anyway;
+     do not convert the old ones in passing.
 4. **Content rules.**
    - Transliteration in deck prose: every non-Latin word in a note, meaning
      or description is followed by its reading ("Script in prose").
