@@ -98,10 +98,10 @@ Before you start:
      `gender`, one of the language's classes ("Card data", "Gender"): hi
      `"m"`/`"f"`; mr, gu, kn `"m"`/`"f"`/`"n"`; te `"mahat"`/`"amahat"`; es
      `"m"`/`"f"`. In bn, as and ja leave `gender` out. It goes on the core
-     card, never in a layer. The classes belong in the language's path as
-     `genders`, which the validator checks nouns against; whether to add
-     them to the paths yet is open (DECK-FORMAT, "Gender"), so do not add
-     them yourself.
+     card, never in a layer. The validator checks nouns against these
+     classes (`DECIDED_GENDERS`, or the path's `genders` once it has one).
+     Whether to add `genders` to the paths yet is open and the owner's to
+     decide (DECK-FORMAT, "Gender"), so do not add them yourself.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep
