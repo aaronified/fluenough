@@ -1,0 +1,104 @@
+schema: 1
+id: bn-en-grammar-articles
+name: "Classifiers: a and the"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Bengali has no 'a' or 'the'. -টা (-ṭā), -টি (-ṭi) and -গুলো (-gulo) do their work, -জন (-jôn) counts people, and -খানা (-khānā) is for flat things."
+tags: [beginner, grammar]
+cards:
+  - id: bn-0254
+    target: "বইটা টেবিলের ওপর।"
+    native: "The book is on the table."
+    reading: "boiṭā ṭebiler opor."
+    ipa: "boiʈa ʈebiler opor"
+    pos: "phrase"
+    alt_target: ["বইটা টেবিলের ওপরে আছে।"]
+    notes: "Bengali has no 'the': -টা (-ṭā) after the noun does its work. In speech the 'is' can be left out here; in full, বইটা টেবিলের ওপরে আছে (boiṭā ṭebiler opore āche)."
+    bases:
+      - { word: "টেবিলের", ref: "bn-0608" }
+      - { word: "ওপর", base: "ওপর", reading: "opor", meaning: "top; above; on" }
+  - id: bn-0255
+    target: "একটা বই দিন।"
+    native: "A book, please."
+    reading: "ekṭā boi din."
+    ipa: "ekʈa boi d̪in"
+    pos: "phrase"
+    notes: "একটা (ekoṭā), 'one' with -টা (-ṭā), does the work of 'a'."
+    bases:
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "বই", ref: "bn-1139" }
+  - id: bn-0256
+    target: "ছেলেটা এসেছে।"
+    native: "The boy has come."
+    reading: "cheleṭā eśeche."
+    ipa: "tʃʰeleʈa eʃetʃʰe"
+    pos: "phrase"
+    notes: "আসা (āśā) changes its stem in the perfect: এস- (eś-)."
+    bases:
+      - { word: "ছেলেটা", ref: "bn-0426" }
+      - { word: "এসেছে", ref: "bn-0872" }
+  - id: bn-0257
+    target: "একটি মেয়ে গান গাইছে।"
+    native: "A girl is singing."
+    reading: "ekṭi meye gān gāiche."
+    ipa: "ekʈi meje ɡan ɡaitʃʰe"
+    pos: "phrase"
+    notes: "-টি (-ṭi) is a gentler, more formal -টা (-ṭā), often used for people and small things."
+    bases:
+      - { word: "একটি", ref: "bn-0202" }
+      - { word: "গান", base: "গান", reading: "gān", meaning: "song" }
+      - { word: "গাইছে", base: "গাওয়া", reading: "gāoā", meaning: "to sing" }
+  - id: bn-0258
+    target: "বইগুলো কোথায়?"
+    native: "Where are the books?"
+    reading: "boigulo kothāy?"
+    ipa: "boiɡulo kot̪ʰaj"
+    pos: "phrase"
+    notes: "-গুলো (-gulo), 'the several', makes a plural."
+    bases:
+      - { word: "বইগুলো", ref: "bn-1139" }
+  - id: bn-0259
+    target: "দুটো চা দিন।"
+    native: "Two teas, please."
+    reading: "duṭo cā din."
+    ipa: "d̪uʈo tʃa d̪in"
+    alt_target: ["দুইটা চা দিন।"]
+    pos: "phrase"
+    notes: "Numbers take the classifier too: দুটো (duṭo), তিনটে (tinoṭe), চারটে (duto, tinte, charte), also দুইটা (duiṭā), তিনটা (tinoṭā), চারটা (duita, tinta, charta)."
+    bases:
+      - { word: "দুটো", ref: "bn-0203" }
+  - id: bn-0557
+    target: "একজন লোক"
+    native: "a man; one person"
+    reading: "ekjon lok"
+    ipa: "ekdʒon lok"
+    pos: "phrase"
+    notes: "-জন (-jôn) counts people: একজন (ekojon), দুজন (dujon), কয়েকজন (kôyekojon). Not for things, and not usually for small children."
+    bases:
+      - { word: "একজন", ref: "bn-0202" }
+      - { word: "লোক", base: "লোক", reading: "lok", meaning: "person; man" }
+  - id: bn-0558
+    target: "কয়েকজন বন্ধু"
+    native: "a few friends"
+    reading: "kôyekjon bondhu"
+    ipa: "kɔjekdʒon bond̪ʱu"
+    pos: "phrase"
+    bases:
+      - { word: "কয়েকজন", ref: "bn-1312" }
+  - id: bn-0559
+    target: "দু কেজি আলু"
+    native: "two kilos of potatoes"
+    reading: "du keji ālu"
+    ipa: "d̪u kedʒi alu"
+    alt_target: ["দুই কেজি আলু"]
+    pos: "phrase"
+    notes: "With a unit (a kilo, a day, a metre) the number takes no -টা (-ṭā): দু কেজি (du keji), তিন দিন (tin din). দু (du) and দুই (dui) are both right here."
+  - id: bn-0560
+    target: "বইখানা"
+    native: "the book (-খানা)"
+    reading: "boikhānā"
+    ipa: "boikʰana"
+    pos: "noun"
+    notes: "-খানা (-khānā) is used mostly for flat, thin things like a book or a letter: চিঠিখানা (ciṭhikhānā), the letter. -টা (-ṭā) is always right too."

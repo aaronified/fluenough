@@ -1,0 +1,100 @@
+schema: 1
+id: te-en-help
+name: "Help"
+kind: vocab
+theme: help
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Asking for help, doctors and medicine, and saying you are lost. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: te-0360
+    target: "సహాయం"
+    native: "help"
+    reading: "sahāyam"
+    ipa: "sahaːjam"
+    pos: "noun"
+  - id: te-0361
+    target: "సహాయం చేయండి!"
+    native: "Please help!"
+    reading: "sahāyam cēyaṇḍi!"
+    ipa: "sahaːjam tʃeːjaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "చేయండి", ref: "te-0621" }
+  - id: te-0362
+    target: "కాపాడండి!"
+    native: "Help! Save me!"
+    reading: "kāpāḍaṇḍi!"
+    ipa: "kaːpaːɖaɳɖi"
+    pos: "phrase"
+  - id: te-0363
+    target: "ఆగండి!"
+    native: "Stop! Wait, please!"
+    reading: "āgaṇḍi!"
+    ipa: "aːɡaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+  - id: te-0364
+    target: "పోలీసు"
+    native: "police"
+    picture: "👮"
+    reading: "pōlīsu"
+    ipa: "poːliːsu"
+    pos: "noun"
+    notes: "The emergency number in India is 112."
+  - id: te-0365
+    target: "డాక్టర్"
+    native: "doctor"
+    picture: "🧑‍⚕"
+    reading: "ḍākṭar"
+    ipa: "ɖaːkʈar"
+    pos: "noun"
+  - id: te-0366
+    target: "ఆసుపత్రి"
+    native: "hospital"
+    picture: "🏥"
+    reading: "āsupatri"
+    ipa: "aːsupat̪ri"
+    pos: "noun"
+  - id: te-0367
+    target: "మందు"
+    native: "medicine"
+    picture: "💊"
+    reading: "mandu"
+    ipa: "mand̪u"
+    pos: "noun"
+  - id: te-0368
+    target: "నొప్పి"
+    native: "pain"
+    reading: "noppi"
+    ipa: "noppi"
+    pos: "noun"
+    notes: "తలనొప్పి (talanoppi), headache."
+  - id: te-0369
+    target: "నేను దారి తప్పిపోయాను."
+    native: "I'm lost."
+    reading: "nēnu dāri tappipōyānu."
+    ipa: "neːnu d̪aːri t̪appipoːjaːnu"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తప్పిపోయాను", base: "తప్పిపోవడం", reading: "tappipōvaḍam", meaning: "to get lost; to go astray" }
+  - id: te-0370
+    target: "నాకు అర్థం కాలేదు."
+    native: "I didn't understand."
+    reading: "nāku artham kālēdu."
+    ipa: "naːku art̪ʰam kaːleːd̪u"
+    pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "అర్థం", base: "అర్థం", reading: "artham", meaning: "meaning; understanding" }
+      - { word: "కాలేదు", ref: "te-0646" }
+  - id: te-0371
+    target: "బాత్‌రూమ్ ఎక్కడ?"
+    native: "Where is the toilet?"
+    reading: "bātrūm ekkaḍa?"
+    ipa: "baːt̪ruːm ekkaɖa"
+    pos: "phrase"

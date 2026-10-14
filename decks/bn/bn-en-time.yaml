@@ -1,0 +1,226 @@
+schema: 1
+id: bn-en-time
+name: "Time and days"
+kind: vocab
+theme: time
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Today and tomorrow, the parts of the day, telling the time, and the days of the week."
+tags: [beginner]
+cards:
+  - id: bn-0315
+    target: "আজ"
+    native: "today"
+    reading: "āj"
+    ipa: "adʒ"
+    pos: "adv"
+  - id: bn-0316
+    target: "কাল"
+    native: "tomorrow; yesterday"
+    reading: "kāl"
+    ipa: "kal"
+    pos: "adv"
+    notes: "One word for both; the verb's tense says which. গতকাল (gôtokāl) is only yesterday, আগামীকাল (āgāmikāl) only tomorrow."
+  - id: bn-0317
+    target: "এখন"
+    native: "now"
+    reading: "ekhon"
+    ipa: "ekʰon"
+    pos: "adv"
+  - id: bn-0318
+    target: "সকাল"
+    native: "morning"
+    reading: "śôkāl"
+    ipa: "ʃɔkal"
+    pos: "noun"
+  - id: bn-0319
+    target: "বিকেল"
+    native: "afternoon"
+    reading: "bikel"
+    ipa: "bikel"
+    alt_target: ["বিকাল"]
+    pos: "noun"
+    notes: "Bengali divides the day finely: ভোর (bhor, dawn), সকাল (śôkāl), দুপুর (dupur, midday), বিকেল (bikel), সন্ধ্যা (evening), রাত (night). Also বিকাল (bikāl)."
+  - id: bn-0320
+    target: "সন্ধ্যা"
+    native: "evening"
+    reading: "śônddhā"
+    ipa: "ʃɔnd̪d̪ʱa"
+    alt_target: ["সন্ধে"]
+    pos: "noun"
+    notes: "Often said সন্ধে (śôndhe)."
+  - id: bn-0321
+    target: "রাত"
+    native: "night"
+    reading: "rāt"
+    ipa: "rat̪"
+    pos: "noun"
+  - id: bn-0322
+    target: "বাজে"
+    native: "o'clock (it strikes)"
+    reading: "bāje"
+    ipa: "badʒe"
+    pos: "verb"
+    notes: "চারটে বাজে (cārṭe bāje), it's four o'clock. The number takes -টা (-ṭā): একটা (ekoṭā), পাঁচটা (pām̐coṭā), ছটা (chôṭā). Two, three and four are different: দুটো (duṭo), তিনটে (tinoṭe), চারটে (cāroṭe), and so is half past two, আড়াইটে (āṛāiṭe). Also with -টা (-ṭā) for every number: দুইটা (duiṭā), তিনটা (tinoṭā), চারটা বাজে (cāroṭā bāje)."
+  - id: bn-0323
+    target: "সাড়ে"
+    native: "half past; and a half"
+    reading: "śāṛe"
+    ipa: "ʃaɽe"
+    pos: "other"
+    notes: "সাড়ে চারটে (śāṛe cāroṭe), half past four. Half past one and half past two are দেড়টা (deṛṭā) and আড়াইটে (āṛāiṭe), also আড়াইটা (āṛāiṭā)."
+  - id: bn-0324
+    target: "কটা বাজে?"
+    native: "What time is it?"
+    reading: "kôṭā bāje?"
+    ipa: "kɔʈa badʒe"
+    alt_target: ["কয়টা বাজে?"]
+    pos: "phrase"
+    notes: "Also কয়টা বাজে? (koyta baje?)"
+  - id: bn-0325
+    target: "দিন"
+    native: "day"
+    reading: "din"
+    ipa: "d̪in"
+    pos: "noun"
+  - id: bn-0326
+    target: "সপ্তাহ"
+    native: "week"
+    reading: "śôptāho"
+    ipa: "ʃɔpt̪aɦo"
+    alt_target: ["হপ্তা"]
+    pos: "noun"
+    notes: "Also হপ্তা (hôptā), in everyday speech."
+  - id: bn-0327
+    target: "সোমবার"
+    native: "Monday"
+    reading: "śombār"
+    ipa: "ʃombar"
+    pos: "noun"
+    notes: "Each day ends in বার (bār). Most names match Hindi's, but for Thursday Hindi usually says गुरुवार (guruvār) where Bengali says বৃহস্পতিবার (brihośpotibār)."
+  - id: bn-0328
+    target: "মঙ্গলবার"
+    native: "Tuesday"
+    reading: "môṅgolbār"
+    ipa: "mɔŋɡolbar"
+    pos: "noun"
+  - id: bn-0329
+    target: "বুধবার"
+    native: "Wednesday"
+    reading: "budhbār"
+    ipa: "bud̪ʱbar"
+    pos: "noun"
+  - id: bn-0330
+    target: "বৃহস্পতিবার"
+    native: "Thursday"
+    reading: "brihośpotibār"
+    ipa: "briɦoʃpot̪ibar"
+    alt_target: ["বিষ্যুদবার"]
+    pos: "noun"
+    notes: "In speech often বিষ্যুদবার (bishshudbar)."
+  - id: bn-0331
+    target: "শুক্রবার"
+    native: "Friday"
+    reading: "śukrobār"
+    ipa: "ʃukrobar"
+    pos: "noun"
+  - id: bn-0332
+    target: "শনিবার"
+    native: "Saturday"
+    reading: "śonibār"
+    ipa: "ʃonibar"
+    pos: "noun"
+  - id: bn-0333
+    target: "রবিবার"
+    native: "Sunday"
+    reading: "robibār"
+    ipa: "robibar"
+    pos: "noun"
+  - id: bn-0645
+    target: "দুপুর"
+    native: "midday; early afternoon"
+    reading: "dupur"
+    ipa: "d̪upur"
+    pos: "noun"
+  - id: bn-0646
+    target: "ভোর"
+    native: "dawn; early morning"
+    reading: "bhor"
+    ipa: "bʱor"
+    pos: "noun"
+  - id: bn-0647
+    target: "সোয়া"
+    native: "a quarter past"
+    reading: "śoyā"
+    ipa: "ʃoja"
+    pos: "other"
+    notes: "সোয়া তিনটে (śoyā tinoṭe), a quarter past three, also সোয়া তিনটা (śoyā tinoṭā)."
+  - id: bn-0648
+    target: "পৌনে"
+    native: "a quarter to"
+    reading: "poune"
+    ipa: "poune"
+    pos: "other"
+    notes: "পৌনে চারটে (poune cāroṭe), a quarter to four: 'four, less a quarter'. Also পৌনে চারটা (poune cāroṭā)."
+  - id: bn-0649
+    target: "কটায়?"
+    native: "At what time?"
+    reading: "kôṭāy?"
+    ipa: "kɔʈaj"
+    alt_target: ["কয়টায়?", "কখন?"]
+    pos: "phrase"
+    notes: "-টায় (-ṭāy) is 'at' with a time: সাতটায় (sātoṭāy), at seven; দুটোয় (duṭoy), at two. Also কয়টায়? (koytay?)"
+  - id: bn-0650
+    target: "গতকাল"
+    native: "yesterday"
+    reading: "gôtokāl"
+    ipa: "ɡɔt̪okal"
+    alt_target: ["কাল"]
+    pos: "adv"
+  - id: bn-0651
+    target: "আগামীকাল"
+    native: "tomorrow"
+    reading: "āgāmikāl"
+    ipa: "aɡamikal"
+    alt_target: ["কাল"]
+    pos: "adv"
+  - id: bn-0652
+    target: "পরশু"
+    native: "the day after tomorrow; the day before yesterday"
+    reading: "pôrśu"
+    ipa: "pɔrʃu"
+    pos: "adv"
+    notes: "Like কাল (kāl), one word for both; the verb's tense says which."
+  - id: bn-0653
+    target: "গত সপ্তাহে"
+    native: "last week"
+    reading: "gôto śôptāhe"
+    ipa: "ɡɔt̪o ʃɔpt̪aɦe"
+    pos: "phrase"
+    bases:
+      - { word: "গত", base: "গত", reading: "gôto", meaning: "last; past" }
+      - { word: "সপ্তাহে", ref: "bn-0326" }
+  - id: bn-0654
+    target: "পরের সপ্তাহে"
+    native: "next week"
+    reading: "pôrer śôptāhe"
+    ipa: "pɔrer ʃɔpt̪aɦe"
+    alt_target: ["আগামী সপ্তাহে"]
+    pos: "phrase"
+    bases:
+      - { word: "পরের", ref: "bn-0114" }
+      - { word: "সপ্তাহে", ref: "bn-0326" }
+  - id: bn-0655
+    target: "ঘণ্টা"
+    native: "hour"
+    reading: "ghônṭā"
+    ipa: "ɡʱɔnʈa"
+    pos: "noun"
+    notes: "এক ঘণ্টা (ek ghônṭā), an hour; আধ ঘণ্টা (ādh ghônṭā), half an hour."
+  - id: bn-0656
+    target: "মিনিট"
+    native: "minute"
+    reading: "miniṭ"
+    ipa: "miniʈ"
+    pos: "noun"

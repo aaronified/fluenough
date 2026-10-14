@@ -1,0 +1,120 @@
+schema: 1
+id: bn-en-grammar-future
+name: "Future tense"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "I will do, you will go."
+tags: [beginner, grammar]
+pattern:
+  name: "Future"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "The verb changes for person and for respect, never for gender or number: আমি (āmi) and আমরা (āmorā) take the same form. The endings are -ব (-bô), -বি (-bi), -বে (-be), -বেন (-ben). Some writers add the o: করবো (kôrobo), যাবো (jābo), and both are accepted."
+  entries:
+    - lemma: "করা"
+      key: kora
+      reading: "kôrā"
+      ipa: "kɔra"
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": ["করব", "করবো"]
+        "তুই / তোরা": "করবি"
+        "তুমি / তোমরা": "করবে"
+        "আপনি / আপনারা": "করবেন"
+        "সে / তারা": "করবে"
+        "তিনি / তাঁরা": "করবেন"
+      readings:
+        "আমি / আমরা": ["kôrbo", "kôrbo"]
+        "তুই / তোরা": "kôrbi"
+        "তুমি / তোমরা": "kôrbe"
+        "আপনি / আপনারা": "kôrben"
+        "সে / তারা": "kôrbe"
+        "তিনি / তাঁরা": "kôrben"
+      ipas:
+        "আমি / আমরা": "kɔrbo"
+        "তুই / তোরা": "kɔrbi"
+        "তুমি / তোমরা": "kɔrbe"
+        "আপনি / আপনারা": "kɔrben"
+        "সে / তারা": "kɔrbe"
+        "তিনি / তাঁরা": "kɔrben"
+    - lemma: "যাওয়া"
+      key: jaoa
+      reading: "jāoā"
+      ipa: "dʒaoa"
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": ["যাব", "যাবো"]
+        "তুই / তোরা": "যাবি"
+        "তুমি / তোমরা": "যাবে"
+        "আপনি / আপনারা": "যাবেন"
+        "সে / তারা": "যাবে"
+        "তিনি / তাঁরা": "যাবেন"
+      readings:
+        "আমি / আমরা": ["jābo", "jābo"]
+        "তুই / তোরা": "jābi"
+        "তুমি / তোমরা": "jābe"
+        "আপনি / আপনারা": "jāben"
+        "সে / তারা": "jābe"
+        "তিনি / তাঁরা": "jāben"
+      ipas:
+        "আমি / আমরা": "dʒabo"
+        "তুই / তোরা": "dʒabi"
+        "তুমি / তোমরা": "dʒabe"
+        "আপনি / আপনারা": "dʒaben"
+        "সে / তারা": "dʒabe"
+        "তিনি / তাঁরা": "dʒaben"
+    - lemma: "খাওয়া"
+      key: khaoa
+      reading: "khāoā"
+      ipa: "kʰaoa"
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": ["খাব", "খাবো"]
+        "তুই / তোরা": "খাবি"
+        "তুমি / তোমরা": "খাবে"
+        "আপনি / আপনারা": "খাবেন"
+        "সে / তারা": "খাবে"
+        "তিনি / তাঁরা": "খাবেন"
+      readings:
+        "আমি / আমরা": ["khābo", "khābo"]
+        "তুই / তোরা": "khābi"
+        "তুমি / তোমরা": "khābe"
+        "আপনি / আপনারা": "khāben"
+        "সে / তারা": "khābe"
+        "তিনি / তাঁরা": "khāben"
+      ipas:
+        "আমি / আমরা": "kʰabo"
+        "তুই / তোরা": "kʰabi"
+        "তুমি / তোমরা": "kʰabe"
+        "আপনি / আপনারা": "kʰaben"
+        "সে / তারা": "kʰabe"
+        "তিনি / তাঁরা": "kʰaben"
+    - lemma: "বলা"
+      key: bola
+      reading: "bôlā"
+      ipa: "bɔla"
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": ["বলব", "বলবো"]
+        "তুই / তোরা": "বলবি"
+        "তুমি / তোমরা": "বলবে"
+        "আপনি / আপনারা": "বলবেন"
+        "সে / তারা": "বলবে"
+        "তিনি / তাঁরা": "বলবেন"
+      readings:
+        "আমি / আমরা": ["bôlbo", "bôlbo"]
+        "তুই / তোরা": "bôlbi"
+        "তুমি / তোমরা": "bôlbe"
+        "আপনি / আপনারা": "bôlben"
+        "সে / তারা": "bôlbe"
+        "তিনি / তাঁরা": "bôlben"
+      ipas:
+        "আমি / আমরা": "bɔlbo"
+        "তুই / তোরা": "bɔlbi"
+        "তুমি / তোমরা": "bɔlbe"
+        "আপনি / আপনারা": "bɔlben"
+        "সে / তারা": "bɔlbe"
+        "তিনি / তাঁরা": "bɔlben"

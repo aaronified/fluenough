@@ -1,0 +1,151 @@
+schema: 1
+id: bn-en-questions
+name: "Yes, no and questions"
+kind: vocab
+theme: questions
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the question words, and how a sentence becomes a question."
+tags: [beginner]
+cards:
+  - id: bn-0159
+    target: "হ্যাঁ"
+    native: "yes"
+    reading: "hêm̐"
+    ipa: "ɦæ̃"
+    alt_target: ["জি"]
+    pos: "other"
+    notes: "Said softly, also হুঁ (hum̐). A polite yes is also জি (ji)."
+  - id: bn-0160
+    target: "না"
+    native: "no; not"
+    reading: "nā"
+    ipa: "na"
+    pos: "other"
+    notes: "As 'not' it comes after the verb: আমি জানি না (āmi jāni nā), I don't know."
+  - id: bn-0161
+    target: "কী"
+    native: "what"
+    reading: "ki"
+    ipa: "ki"
+    pos: "other"
+    notes: "Spelled with a long ী (i) as 'what'. With a short ি (i), কি (ki) turns a sentence into a yes/no question: আপনি কি বাংলা বলেন (āpni ki bāṅlā bôlen)? Do you speak Bengali?"
+  - id: bn-0162
+    target: "কে"
+    native: "who"
+    reading: "ke"
+    ipa: "ke"
+    pos: "other"
+  - id: bn-0163
+    target: "কোথায়"
+    native: "where"
+    reading: "kothāy"
+    ipa: "kot̪ʰaj"
+    pos: "other"
+  - id: bn-0164
+    target: "কখন"
+    native: "when; at what time"
+    reading: "kôkhon"
+    ipa: "kɔkʰon"
+    alt_target: ["কটায়", "কয়টায়"]
+    pos: "other"
+    notes: "কবে (kôbe) is 'when' as in 'on which day'."
+  - id: bn-0165
+    target: "কেন"
+    native: "why"
+    reading: "keno"
+    ipa: "keno"
+    pos: "other"
+  - id: bn-0166
+    target: "কেমন"
+    native: "how; what … like"
+    reading: "kemon"
+    ipa: "kemon"
+    pos: "other"
+    notes: "কীভাবে (kibhābe) is 'how' as in 'in what way'."
+  - id: bn-0167
+    target: "কত"
+    native: "how much; how many"
+    reading: "kôto"
+    ipa: "kɔt̪o"
+    pos: "other"
+    notes: "কত দাম (kôto dām)? How much does it cost?"
+  - id: bn-0168
+    target: "কোনটা"
+    native: "which one"
+    reading: "konṭā"
+    ipa: "konʈa"
+    pos: "other"
+  - id: bn-0169
+    target: "ঠিক আছে?"
+    native: "Is that OK? / OK?"
+    reading: "ṭhik āche?"
+    ipa: "ʈʰik atʃʰe"
+    pos: "phrase"
+    notes: "As a reply, ঠিক আছে (ṭhik āche) means 'OK, fine'."
+    bases:
+      - { word: "ঠিক", ref: "bn-1243" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
+  - id: bn-0170
+    target: "সত্যি?"
+    native: "Really?"
+    reading: "śotti?"
+    ipa: "ʃot̪t̪i"
+    pos: "phrase"
+  - id: bn-0406
+    target: "কবে"
+    native: "when (on what day)"
+    reading: "kôbe"
+    ipa: "kɔbe"
+    pos: "other"
+    notes: "কখন (kôkhon) is the hour, কবে (kôbe) the day: কবে আসবেন (kôbe āsoben)? When will you come?"
+  - id: bn-0407
+    target: "কার"
+    native: "whose"
+    reading: "kār"
+    ipa: "kar"
+    pos: "other"
+    notes: "কার বই (kār boi)? Whose book?"
+  - id: bn-0408
+    target: "কাকে"
+    native: "whom; to whom"
+    reading: "kāke"
+    ipa: "kake"
+    pos: "other"
+  - id: bn-0409
+    target: "কারা"
+    native: "who (more than one)"
+    reading: "kārā"
+    ipa: "kara"
+    pos: "other"
+  - id: bn-0410
+    target: "কীভাবে"
+    native: "how; in what way"
+    reading: "kibhābe"
+    ipa: "kibʱabe"
+    alt_target: ["কী করে"]
+    pos: "other"
+    notes: "Also কী করে (ki kôre)."
+  - id: bn-0411
+    target: "কটা"
+    native: "how many (things you count)"
+    reading: "kôṭā"
+    ipa: "kɔʈa"
+    alt_target: ["কয়টা"]
+    pos: "other"
+    notes: "কটা বই (kôṭā boi)? How many books? কত (kôto) is for amounts: কত টাকা (kôto ṭākā)? Also কয়টা (kôyṭā)."
+  - id: bn-0412
+    target: "কোন"
+    native: "which"
+    reading: "kon"
+    ipa: "kon"
+    pos: "other"
+    notes: "Before a noun: কোন বাস (kon bās)? Which bus? On its own: কোনটা (konṭā)."
+  - id: bn-0413
+    target: "কোথা থেকে"
+    native: "from where"
+    reading: "kothā theke"
+    ipa: "kot̪ʰa t̪ʰeke"
+    pos: "phrase"
+    notes: "আপনি কোথা থেকে এসেছেন (āpni kothā theke esechen)? Where have you come from?"

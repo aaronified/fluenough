@@ -1,0 +1,101 @@
+schema: 1
+id: te-en-eating-out
+name: "Eating out"
+kind: vocab
+theme: eating-out
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Ordering, asking for less spice, and paying the bill. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [beginner, unreviewed]
+cards:
+  - id: te-0340
+    target: "భోజనం"
+    native: "meal; food"
+    reading: "bhōjanam"
+    ipa: "bʱoːdʒanam"
+    pos: "noun"
+    notes: "భోజనం చేశారా (bhōjanam cēśārā)? Have you eaten? It is often asked as a greeting."
+  - id: te-0341
+    target: "నీళ్ళు"
+    native: "water"
+    picture: "💧"
+    reading: "nīḷḷu"
+    ipa: "niːɭɭu"
+    pos: "noun"
+    notes: "Plural in grammar: నీళ్ళు కావాలి (nīḷḷu kāvāli)."
+  - id: te-0342
+    target: "టీ"
+    native: "tea"
+    picture: "🍵"
+    reading: "ṭī"
+    ipa: "ʈiː"
+    pos: "noun"
+    notes: "In Telangana also చాయ్ (cāy)."
+  - id: te-0343
+    target: "కాఫీ"
+    native: "coffee"
+    reading: "kāfī"
+    ipa: "kaːfiː"
+    pos: "noun"
+  - id: te-0344
+    target: "అన్నం"
+    native: "cooked rice; a meal"
+    picture: "🍚"
+    reading: "annam"
+    ipa: "annam"
+    pos: "noun"
+  - id: te-0345
+    target: "నాకు … కావాలి."
+    native: "I'd like …; I need …"
+    reading: "nāku... kāvāli."
+    ipa: "naːku kaːʋaːli"
+    pos: "phrase"
+    notes: "'To me … is needed': నాకు నీళ్ళు కావాలి (nāku nīḷḷu kāvāli), I'd like some water."
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+  - id: te-0346
+    target: "ఇంకా"
+    native: "more; still"
+    reading: "iṅkā"
+    ipa: "iŋkaː"
+    pos: "other"
+    notes: "ఇంకా కొంచెం (iṅkā koñcem), a little more."
+  - id: te-0347
+    target: "కారం"
+    native: "spicy heat; chilli powder"
+    reading: "kāram"
+    ipa: "kaːram"
+    pos: "noun"
+    notes: "కారం తక్కువ (kāram takkuva), less spicy. Andhra food is known for its heat."
+  - id: te-0348
+    target: "తీపి"
+    native: "sweet"
+    reading: "tīpi"
+    ipa: "t̪iːpi"
+    pos: "adj"
+  - id: te-0349
+    target: "శాకాహారం"
+    native: "vegetarian food"
+    reading: "śākāhāram"
+    ipa: "ʃaːkaːhaːram"
+    pos: "noun"
+    notes: "Menus say 'veg' and 'non-veg'."
+  - id: te-0350
+    target: "బిల్లు ఇవ్వండి."
+    native: "The bill, please."
+    reading: "billu ivvaṇḍi."
+    ipa: "billu iʋʋaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "బిల్లు", base: "బిల్లు", reading: "billu", meaning: "bill" }
+  - id: te-0351
+    target: "చాలా బాగుంది."
+    native: "It's very good."
+    reading: "cālā bāgundi."
+    ipa: "tʃaːlaː baːɡund̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "బాగుంది", base: "బాగు", reading: "bāgu", meaning: "good; well" }

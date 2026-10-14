@@ -1,0 +1,106 @@
+schema: 1
+id: bn-en-grammar-needs
+name: "Need and want"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "I need, I don't need, I want: লাগবে (lāgobe) and দরকার (dôrkār) take the needer's -র (-rô), চাই (cāi) does not. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+cards:
+  - id: bn-0571
+    target: "আমার একটা ছাতা লাগবে।"
+    native: "I need an umbrella."
+    reading: "āmār ekṭā chātā lāgbe."
+    ipa: "amar ekʈa tʃʰat̪a laɡbe"
+    pos: "phrase"
+    notes: "The one who needs takes -র (-rô), and লাগবে (lāgobe) stays the same for everyone: তোর (tor), তোমার (tomār), আপনার (āponār), ওর (or), ওঁর একটা ছাতা লাগবে (om̐r ekoṭā chātā lāgobe). For something needed now, Bengali uses the future লাগবে (lāgobe), 'will be needed'; the present লাগে (lāge) is not used this way."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "ছাতা", ref: "bn-1148" }
+      - { word: "লাগবে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
+  - id: bn-0572
+    target: "আপনার কী লাগবে?"
+    native: "What do you need? (what a shopkeeper asks)"
+    reading: "āpnār ki lāgbe?"
+    ipa: "apnar ki laɡbe"
+    alt_target: ["কী লাগবে?"]
+    pos: "phrase"
+    notes: "In a shop often just কী লাগবে (ki lāgobe)? To a friend: তোমার কী লাগবে (tomār ki lāgobe)?"
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "লাগবে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
+  - id: bn-0573
+    target: "আমার আর কিছু লাগবে না।"
+    native: "I don't need anything else."
+    reading: "āmār ār kichu lāgbe nā."
+    ipa: "amar ar kitʃʰu laɡbe na"
+    pos: "phrase"
+    notes: "না (nā) goes at the end, after লাগবে (lāgobe)."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "লাগবে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
+  - id: bn-0574
+    target: "লাগবে না, ধন্যবাদ।"
+    native: "I don't need it, thanks."
+    reading: "lāgbe nā, dhonnobād."
+    ipa: "laɡbe na d̪ʱonnobad̪"
+    pos: "phrase"
+    notes: "The polite way to turn down what a shopkeeper offers."
+    bases:
+      - { word: "লাগবে", base: "লাগা", reading: "lāgā", meaning: "to feel; to be needed; to take (of time)" }
+  - id: bn-0577
+    target: "দরকার"
+    native: "need; necessary"
+    reading: "dôrkār"
+    ipa: "d̪ɔrkar"
+    pos: "noun"
+    notes: "A noun, so it needs no verb in the present: আমার টাকা দরকার (āmār ṭākā dôrkār), I need money. It is a little more formal than লাগবে (lāgobe)."
+  - id: bn-0578
+    target: "আমার একটু সাহায্য দরকার।"
+    native: "I need a little help."
+    reading: "āmār ekṭu śāhājjo dôrkār."
+    ipa: "amar ekʈu ʃaɦadʒdʒo d̪ɔrkar"
+    pos: "phrase"
+    notes: "Like লাগবে (lāgobe), দরকার (dôrkār) takes the needer's -র (-rô)."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+  - id: bn-0579
+    target: "দরকার নেই।"
+    native: "There's no need."
+    reading: "dôrkār nei."
+    ipa: "d̪ɔrkar nei"
+    pos: "phrase"
+    notes: "The negative of দরকার (dôrkār) is নেই (nei): আমার টাকা দরকার নেই (āmār ṭākā dôrkār nei), I don't need money."
+    bases:
+      - { word: "নেই", base: "নেই", reading: "nei", meaning: "there is not" }
+  - id: bn-0580
+    target: "আমার টাকা দরকার ছিল।"
+    native: "I needed money."
+    reading: "āmār ṭākā dôrkār chilo."
+    ipa: "amar ʈaka d̪ɔrkar tʃʰilo"
+    pos: "phrase"
+    notes: "In the past দরকার (dôrkār) takes ছিল (chil), and ছিল না (chil nā) for 'didn't need': দরকার ছিল না (dôrkār chil nā). আছে (āche) changes its stem in the past: ছিল (chil)."
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "ছিল", base: "আছে", reading: "āche", meaning: "to be; there is" }
+  - id: bn-0581
+    target: "আমি এক কাপ চা চাই।"
+    native: "I want a cup of tea."
+    reading: "āmi ek kāp cā cāi."
+    ipa: "ami ek kap tʃa tʃai"
+    pos: "phrase"
+    notes: "চাওয়া (cāoā), 'to want', is an ordinary verb: no -র (-rô) on the one who wants, and the verb changes for the person: আমি চাই (āmi cāi), তুই চাস (tui cās), তুমি চাও (tumi cāo), আপনি চান (āpni cān), ও চায় (o cāy), উনি চান (uni cān)."
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "কাপ", base: "কাপ", reading: "kāp", meaning: "cup" }
+      - { word: "চাই", ref: "bn-0741" }
+  - id: bn-0582
+    target: "ও আরও সময় চায়।"
+    native: "She wants more time. / He wants more time."
+    reading: "o āro śômoy cāy."
+    ipa: "o aro ʃɔmoj tʃaj"
+    pos: "phrase"
+    bases:
+      - { word: "চায়", ref: "bn-0741" }

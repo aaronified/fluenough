@@ -1,0 +1,224 @@
+schema: 1
+id: bn-en-grammar-past-negative
+name: "Didn't, haven't: -নি (-ni)"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "I didn't go, she hasn't eaten: the present form with -নি (-ni) joined on. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past negative"
+  slot_name: "person and respect"
+  slots: ["আমি / আমরা", "তুই / তোরা", "তুমি / তোমরা", "আপনি / আপনারা", "সে / তারা", "তিনি / তাঁরা"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Take the present form and join -নি (-ni) to it, written as one word: যাই (jāi), যাইনি (jāini); বোঝো (bojho), বোঝোনি (bojhoni), also written বোঝনি (bojhoni), and both are accepted. It is both 'didn't' and 'haven't': আমি খাইনি (āmi khāini), I didn't eat, or I haven't eaten; এখনও খাইনি (ekhonoo khāini), I haven't eaten yet. For a state, such as knowing, 'didn't' is the -তাম (-tām) form with না (nā): আমি জানতাম না (āmi jānotām nā), I didn't know. ও (o) and এ (e) take the same form as সে (se), and উনি (uni) and ইনি (ini) the same as তিনি (tini)."
+  entries:
+    - lemma: "করা"
+      key: kora
+      reading: "kôrā"
+      ipa: "kɔra"
+      gloss: "to do"
+      forms:
+        "আমি / আমরা": "করিনি"
+        "তুই / তোরা": "করিসনি"
+        "তুমি / তোমরা": ["করোনি", "করনি"]
+        "আপনি / আপনারা": "করেননি"
+        "সে / তারা": "করেনি"
+        "তিনি / তাঁরা": "করেননি"
+      readings:
+        "আমি / আমরা": "korini"
+        "তুই / তোরা": "koriśni"
+        "তুমি / তোমরা": ["kôroni", "kôroni"]
+        "আপনি / আপনারা": "kôrenni"
+        "সে / তারা": "kôreni"
+        "তিনি / তাঁরা": "kôrenni"
+      ipas:
+        "আমি / আমরা": "korini"
+        "তুই / তোরা": "koriʃni"
+        "তুমি / তোমরা": "kɔroni"
+        "আপনি / আপনারা": "kɔrenni"
+        "সে / তারা": "kɔreni"
+        "তিনি / তাঁরা": "kɔrenni"
+    - lemma: "যাওয়া"
+      key: jaoa
+      reading: "jāoā"
+      ipa: "dʒaoa"
+      gloss: "to go"
+      forms:
+        "আমি / আমরা": "যাইনি"
+        "তুই / তোরা": "যাসনি"
+        "তুমি / তোমরা": "যাওনি"
+        "আপনি / আপনারা": "যাননি"
+        "সে / তারা": "যায়নি"
+        "তিনি / তাঁরা": "যাননি"
+      readings:
+        "আমি / আমরা": "jāini"
+        "তুই / তোরা": "jāśni"
+        "তুমি / তোমরা": "jāoni"
+        "আপনি / আপনারা": "jānni"
+        "সে / তারা": "jāyni"
+        "তিনি / তাঁরা": "jānni"
+      ipas:
+        "আমি / আমরা": "dʒaini"
+        "তুই / তোরা": "dʒaʃni"
+        "তুমি / তোমরা": "dʒaoni"
+        "আপনি / আপনারা": "dʒanni"
+        "সে / তারা": "dʒajni"
+        "তিনি / তাঁরা": "dʒanni"
+    - lemma: "খাওয়া"
+      key: khaoa
+      reading: "khāoā"
+      ipa: "kʰaoa"
+      gloss: "to eat"
+      forms:
+        "আমি / আমরা": "খাইনি"
+        "তুই / তোরা": "খাসনি"
+        "তুমি / তোমরা": "খাওনি"
+        "আপনি / আপনারা": "খাননি"
+        "সে / তারা": "খায়নি"
+        "তিনি / তাঁরা": "খাননি"
+      readings:
+        "আমি / আমরা": "khāini"
+        "তুই / তোরা": "khāśni"
+        "তুমি / তোমরা": "khāoni"
+        "আপনি / আপনারা": "khānni"
+        "সে / তারা": "khāyni"
+        "তিনি / তাঁরা": "khānni"
+      ipas:
+        "আমি / আমরা": "kʰaini"
+        "তুই / তোরা": "kʰaʃni"
+        "তুমি / তোমরা": "kʰaoni"
+        "আপনি / আপনারা": "kʰanni"
+        "সে / তারা": "kʰajni"
+        "তিনি / তাঁরা": "kʰanni"
+    - lemma: "আসা"
+      key: asha
+      reading: "āśā"
+      ipa: "aʃa"
+      gloss: "to come"
+      forms:
+        "আমি / আমরা": "আসিনি"
+        "তুই / তোরা": "আসিসনি"
+        "তুমি / তোমরা": ["আসোনি", "আসনি"]
+        "আপনি / আপনারা": "আসেননি"
+        "সে / তারা": "আসেনি"
+        "তিনি / তাঁরা": "আসেননি"
+      readings:
+        "আমি / আমরা": "āśini"
+        "তুই / তোরা": "āśiśni"
+        "তুমি / তোমরা": ["āśoni", "āśoni"]
+        "আপনি / আপনারা": "āśenni"
+        "সে / তারা": "āśeni"
+        "তিনি / তাঁরা": "āśenni"
+      ipas:
+        "আমি / আমরা": "aʃini"
+        "তুই / তোরা": "aʃiʃni"
+        "তুমি / তোমরা": "aʃoni"
+        "আপনি / আপনারা": "aʃenni"
+        "সে / তারা": "aʃeni"
+        "তিনি / তাঁরা": "aʃenni"
+    - lemma: "দেখা"
+      key: dekha
+      reading: "dekhā"
+      ipa: "d̪ekʰa"
+      gloss: "to see"
+      forms:
+        "আমি / আমরা": "দেখিনি"
+        "তুই / তোরা": "দেখিসনি"
+        "তুমি / তোমরা": ["দেখোনি", "দেখনি"]
+        "আপনি / আপনারা": "দেখেননি"
+        "সে / তারা": "দেখেনি"
+        "তিনি / তাঁরা": "দেখেননি"
+      readings:
+        "আমি / আমরা": "dekhini"
+        "তুই / তোরা": "dekhiśni"
+        "তুমি / তোমরা": ["dekhoni", "dekhoni"]
+        "আপনি / আপনারা": "dekhenni"
+        "সে / তারা": "dekheni"
+        "তিনি / তাঁরা": "dekhenni"
+      ipas:
+        "আমি / আমরা": "d̪ekʰini"
+        "তুই / তোরা": "d̪ekʰiʃni"
+        "তুমি / তোমরা": "d̪ekʰoni"
+        "আপনি / আপনারা": "d̪ekʰenni"
+        "সে / তারা": "d̪ekʰeni"
+        "তিনি / তাঁরা": "d̪ekʰenni"
+    - lemma: "বলা"
+      key: bola
+      reading: "bôlā"
+      ipa: "bɔla"
+      gloss: "to say"
+      forms:
+        "আমি / আমরা": "বলিনি"
+        "তুই / তোরা": "বলিসনি"
+        "তুমি / তোমরা": ["বলোনি", "বলনি"]
+        "আপনি / আপনারা": "বলেননি"
+        "সে / তারা": "বলেনি"
+        "তিনি / তাঁরা": "বলেননি"
+      readings:
+        "আমি / আমরা": "bolini"
+        "তুই / তোরা": "boliśni"
+        "তুমি / তোমরা": ["bôloni", "bôloni"]
+        "আপনি / আপনারা": "bôlenni"
+        "সে / তারা": "bôleni"
+        "তিনি / তাঁরা": "bôlenni"
+      ipas:
+        "আমি / আমরা": "bolini"
+        "তুই / তোরা": "boliʃni"
+        "তুমি / তোমরা": "bɔloni"
+        "আপনি / আপনারা": "bɔlenni"
+        "সে / তারা": "bɔleni"
+        "তিনি / তাঁরা": "bɔlenni"
+    - lemma: "বোঝা"
+      key: bojha
+      reading: "bojhā"
+      ipa: "bodʒʱa"
+      gloss: "to understand"
+      forms:
+        "আমি / আমরা": "বুঝিনি"
+        "তুই / তোরা": "বুঝিসনি"
+        "তুমি / তোমরা": ["বোঝোনি", "বোঝনি"]
+        "আপনি / আপনারা": "বোঝেননি"
+        "সে / তারা": "বোঝেনি"
+        "তিনি / তাঁরা": "বোঝেননি"
+      readings:
+        "আমি / আমরা": "bujhini"
+        "তুই / তোরা": "bujhiśni"
+        "তুমি / তোমরা": ["bojhoni", "bojhoni"]
+        "আপনি / আপনারা": "bojhenni"
+        "সে / তারা": "bojheni"
+        "তিনি / তাঁরা": "bojhenni"
+      ipas:
+        "আমি / আমরা": "budʒʱini"
+        "তুই / তোরা": "budʒʱiʃni"
+        "তুমি / তোমরা": "bodʒʱoni"
+        "আপনি / আপনারা": "bodʒʱenni"
+        "সে / তারা": "bodʒʱeni"
+        "তিনি / তাঁরা": "bodʒʱenni"
+    - lemma: "হওয়া"
+      key: hoa
+      reading: "hoā"
+      ipa: "ɦoa"
+      gloss: "to become; to happen"
+      forms:
+        "আমি / আমরা": "হইনি"
+        "তুই / তোরা": "হসনি"
+        "তুমি / তোমরা": "হওনি"
+        "আপনি / আপনারা": "হননি"
+        "সে / তারা": "হয়নি"
+        "তিনি / তাঁরা": "হননি"
+      readings:
+        "আমি / আমরা": "hoini"
+        "তুই / তোরা": "hôśni"
+        "তুমি / তোমরা": "hôoni"
+        "আপনি / আপনারা": "hônni"
+        "সে / তারা": "hôyni"
+        "তিনি / তাঁরা": "hônni"
+      ipas:
+        "আমি / আমরা": "ɦoini"
+        "তুই / তোরা": "ɦɔʃni"
+        "তুমি / তোমরা": "ɦɔoni"
+        "আপনি / আপনারা": "ɦɔnni"
+        "সে / তারা": "ɦɔjni"
+        "তিনি / তাঁরা": "ɦɔnni"

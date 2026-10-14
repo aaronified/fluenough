@@ -1,0 +1,202 @@
+schema: 1
+id: bn-en-grammar-past-more
+name: "Was doing, had done, used to"
+kind: grammar
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "I was eating, I had gone, I used to go: three more pasts, -ছিলাম (-chilām), -এছিলাম (-echilām) and -তাম (-tām). Not yet checked by a Bengali speaker: please report any mistake."
+tags: [beginner, unreviewed, grammar]
+pattern:
+  name: "Past continuous, past perfect and habitual past"
+  slot_name: "tense, person and respect"
+  slots: ["was doing, আমি (āmi) / আমরা (āmorā)", "was doing, তুই (tui) / তোরা (torā)", "was doing, তুমি (tumi) / তোমরা (tomorā)", "was doing, আপনি (āpni) / আপনারা (āponārā)", "was doing, সে (se) / তারা (tārā)", "was doing, তিনি (tini) / তাঁরা (tām̐rā)", "had done, আমি (āmi) / আমরা (āmorā)", "had done, তুই (tui) / তোরা (torā)", "had done, তুমি (tumi) / তোমরা (tomorā)", "had done, আপনি (āpni) / আপনারা (āponārā)", "had done, সে (se) / তারা (tārā)", "had done, তিনি (tini) / তাঁরা (tām̐rā)", "used to, আমি (āmi) / আমরা (āmorā)", "used to, তুই (tui) / তোরা (torā)", "used to, তুমি (tumi) / তোমরা (tomorā)", "used to, আপনি (āpni) / আপনারা (āponārā)", "used to, সে (se) / তারা (tārā)", "used to, তিনি (tini) / তাঁরা (tām̐rā)"]
+  prompt: "{lemma} ({gloss}) — {slot}"
+  notes: "Was doing and had done end in the forms of ছিল (chil): -ছিলাম (-chilām), -ছিলি (-chili), -ছিলে (-chile), -ছিলেন (-chilen), -ছিল (-chil), -ছিলেন (-chilen). Used to takes -তাম (-tām), -তিস (-tis), -তে (-te), -তেন (-ten), -তো (-to), -তেন (-ten); তুমি করতে (tumi kôrote) looks like the করতে (kôrote) of করতে হবে (kôrote hôbe), and the sentence tells them apart. Was doing is the present continuous with ছিল (chil) in place of its ending: করছি (kôrochi), করছিলাম (kôrochilām); যাচ্ছি (jācchi), যাচ্ছিলাম (jācchilām). Had done is the present perfect the same way: করেছি (kôrechi), করেছিলাম (kôrechilām); যাওয়া (jāoyā) gives গিয়েছিলাম (giyechilām), said গেছিলাম (gechilām) in everyday speech, and both are accepted. It is also the plain past for something further back: গত বছর আমি দিল্লি গিয়েছিলাম (gôt bôchor āmi dilli giyechilām), I went to Delhi last year. Used to also means would: জানলে বলতাম (jānole bôlotām), I'd have said if I'd known. ও (o) and এ (e) take the same form as সে (se), and উনি (uni) and ইনি (ini) the same as তিনি (tini). করতো (kôroto) is also written করত (kôrot), and both are accepted."
+  entries:
+    - lemma: "করা"
+      key: kora
+      reading: "kôrā"
+      ipa: "kɔra"
+      gloss: "to do"
+      forms:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "করছিলাম"
+        "was doing, তুই (tui) / তোরা (torā)": "করছিলি"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "করছিলে"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "করছিলেন"
+        "was doing, সে (se) / তারা (tārā)": "করছিল"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "করছিলেন"
+        "had done, আমি (āmi) / আমরা (āmorā)": "করেছিলাম"
+        "had done, তুই (tui) / তোরা (torā)": "করেছিলি"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "করেছিলে"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "করেছিলেন"
+        "had done, সে (se) / তারা (tārā)": "করেছিল"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "করেছিলেন"
+        "used to, আমি (āmi) / আমরা (āmorā)": "করতাম"
+        "used to, তুই (tui) / তোরা (torā)": "করতিস"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "করতে"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "করতেন"
+        "used to, সে (se) / তারা (tārā)": ["করতো", "করত"]
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "করতেন"
+      readings:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "kôrchilām"
+        "was doing, তুই (tui) / তোরা (torā)": "kôrchili"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "kôrchile"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "kôrchilen"
+        "was doing, সে (se) / তারা (tārā)": "kôrchilo"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "kôrchilen"
+        "had done, আমি (āmi) / আমরা (āmorā)": "kôrechilām"
+        "had done, তুই (tui) / তোরা (torā)": "kôrechili"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "kôrechile"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "kôrechilen"
+        "had done, সে (se) / তারা (tārā)": "kôrechilo"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "kôrechilen"
+        "used to, আমি (āmi) / আমরা (āmorā)": "kôrtām"
+        "used to, তুই (tui) / তোরা (torā)": "kôrtiś"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "kôrte"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "kôrten"
+        "used to, সে (se) / তারা (tārā)": ["kôrto", "kôrto"]
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "kôrten"
+      ipas:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "kɔrtʃʰilam"
+        "was doing, তুই (tui) / তোরা (torā)": "kɔrtʃʰili"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "kɔrtʃʰile"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "kɔrtʃʰilen"
+        "was doing, সে (se) / তারা (tārā)": "kɔrtʃʰilo"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "kɔrtʃʰilen"
+        "had done, আমি (āmi) / আমরা (āmorā)": "kɔretʃʰilam"
+        "had done, তুই (tui) / তোরা (torā)": "kɔretʃʰili"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "kɔretʃʰile"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "kɔretʃʰilen"
+        "had done, সে (se) / তারা (tārā)": "kɔretʃʰilo"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "kɔretʃʰilen"
+        "used to, আমি (āmi) / আমরা (āmorā)": "kɔrt̪am"
+        "used to, তুই (tui) / তোরা (torā)": "kɔrt̪iʃ"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "kɔrt̪e"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "kɔrt̪en"
+        "used to, সে (se) / তারা (tārā)": "kɔrt̪o"
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "kɔrt̪en"
+    - lemma: "যাওয়া"
+      key: jaoa
+      reading: "jāoā"
+      ipa: "dʒaoa"
+      gloss: "to go"
+      forms:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "যাচ্ছিলাম"
+        "was doing, তুই (tui) / তোরা (torā)": "যাচ্ছিলি"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "যাচ্ছিলে"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "যাচ্ছিলেন"
+        "was doing, সে (se) / তারা (tārā)": "যাচ্ছিল"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "যাচ্ছিলেন"
+        "had done, আমি (āmi) / আমরা (āmorā)": ["গিয়েছিলাম", "গেছিলাম"]
+        "had done, তুই (tui) / তোরা (torā)": ["গিয়েছিলি", "গেছিলি"]
+        "had done, তুমি (tumi) / তোমরা (tomorā)": ["গিয়েছিলে", "গেছিলে"]
+        "had done, আপনি (āpni) / আপনারা (āponārā)": ["গিয়েছিলেন", "গেছিলেন"]
+        "had done, সে (se) / তারা (tārā)": ["গিয়েছিল", "গেছিল"]
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": ["গিয়েছিলেন", "গেছিলেন"]
+        "used to, আমি (āmi) / আমরা (āmorā)": "যেতাম"
+        "used to, তুই (tui) / তোরা (torā)": "যেতিস"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "যেতে"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "যেতেন"
+        "used to, সে (se) / তারা (tārā)": ["যেতো", "যেত"]
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "যেতেন"
+      readings:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "jācchilām"
+        "was doing, তুই (tui) / তোরা (torā)": "jācchili"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "jācchile"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "jācchilen"
+        "was doing, সে (se) / তারা (tārā)": "jācchilo"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "jācchilen"
+        "had done, আমি (āmi) / আমরা (āmorā)": ["giyechilām", "gechilām"]
+        "had done, তুই (tui) / তোরা (torā)": ["giyechili", "gechili"]
+        "had done, তুমি (tumi) / তোমরা (tomorā)": ["giyechile", "gechile"]
+        "had done, আপনি (āpni) / আপনারা (āponārā)": ["giyechilen", "gechilen"]
+        "had done, সে (se) / তারা (tārā)": ["giyechilo", "gechilo"]
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": ["giyechilen", "gechilen"]
+        "used to, আমি (āmi) / আমরা (āmorā)": "jetām"
+        "used to, তুই (tui) / তোরা (torā)": "jetiś"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "jete"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "jeten"
+        "used to, সে (se) / তারা (tārā)": ["jeto", "jeto"]
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "jeten"
+      ipas:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "dʒatʃtʃʰilam"
+        "was doing, তুই (tui) / তোরা (torā)": "dʒatʃtʃʰili"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "dʒatʃtʃʰile"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "dʒatʃtʃʰilen"
+        "was doing, সে (se) / তারা (tārā)": "dʒatʃtʃʰilo"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "dʒatʃtʃʰilen"
+        "had done, আমি (āmi) / আমরা (āmorā)": "ɡijetʃʰilam"
+        "had done, তুই (tui) / তোরা (torā)": "ɡijetʃʰili"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "ɡijetʃʰile"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "ɡijetʃʰilen"
+        "had done, সে (se) / তারা (tārā)": "ɡijetʃʰilo"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "ɡijetʃʰilen"
+        "used to, আমি (āmi) / আমরা (āmorā)": "dʒet̪am"
+        "used to, তুই (tui) / তোরা (torā)": "dʒet̪iʃ"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "dʒet̪e"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "dʒet̪en"
+        "used to, সে (se) / তারা (tārā)": "dʒet̪o"
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "dʒet̪en"
+    - lemma: "খাওয়া"
+      key: khaoa
+      reading: "khāoā"
+      ipa: "kʰaoa"
+      gloss: "to eat"
+      forms:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "খাচ্ছিলাম"
+        "was doing, তুই (tui) / তোরা (torā)": "খাচ্ছিলি"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "খাচ্ছিলে"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "খাচ্ছিলেন"
+        "was doing, সে (se) / তারা (tārā)": "খাচ্ছিল"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "খাচ্ছিলেন"
+        "had done, আমি (āmi) / আমরা (āmorā)": "খেয়েছিলাম"
+        "had done, তুই (tui) / তোরা (torā)": "খেয়েছিলি"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "খেয়েছিলে"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "খেয়েছিলেন"
+        "had done, সে (se) / তারা (tārā)": "খেয়েছিল"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "খেয়েছিলেন"
+        "used to, আমি (āmi) / আমরা (āmorā)": "খেতাম"
+        "used to, তুই (tui) / তোরা (torā)": "খেতিস"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "খেতে"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "খেতেন"
+        "used to, সে (se) / তারা (tārā)": ["খেতো", "খেত"]
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "খেতেন"
+      readings:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "khācchilām"
+        "was doing, তুই (tui) / তোরা (torā)": "khācchili"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "khācchile"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "khācchilen"
+        "was doing, সে (se) / তারা (tārā)": "khācchilo"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "khācchilen"
+        "had done, আমি (āmi) / আমরা (āmorā)": "kheyechilām"
+        "had done, তুই (tui) / তোরা (torā)": "kheyechili"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "kheyechile"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "kheyechilen"
+        "had done, সে (se) / তারা (tārā)": "kheyechilo"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "kheyechilen"
+        "used to, আমি (āmi) / আমরা (āmorā)": "khetām"
+        "used to, তুই (tui) / তোরা (torā)": "khetiś"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "khete"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "kheten"
+        "used to, সে (se) / তারা (tārā)": ["kheto", "kheto"]
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "kheten"
+      ipas:
+        "was doing, আমি (āmi) / আমরা (āmorā)": "kʰatʃtʃʰilam"
+        "was doing, তুই (tui) / তোরা (torā)": "kʰatʃtʃʰili"
+        "was doing, তুমি (tumi) / তোমরা (tomorā)": "kʰatʃtʃʰile"
+        "was doing, আপনি (āpni) / আপনারা (āponārā)": "kʰatʃtʃʰilen"
+        "was doing, সে (se) / তারা (tārā)": "kʰatʃtʃʰilo"
+        "was doing, তিনি (tini) / তাঁরা (tām̐rā)": "kʰatʃtʃʰilen"
+        "had done, আমি (āmi) / আমরা (āmorā)": "kʰejetʃʰilam"
+        "had done, তুই (tui) / তোরা (torā)": "kʰejetʃʰili"
+        "had done, তুমি (tumi) / তোমরা (tomorā)": "kʰejetʃʰile"
+        "had done, আপনি (āpni) / আপনারা (āponārā)": "kʰejetʃʰilen"
+        "had done, সে (se) / তারা (tārā)": "kʰejetʃʰilo"
+        "had done, তিনি (tini) / তাঁরা (tām̐rā)": "kʰejetʃʰilen"
+        "used to, আমি (āmi) / আমরা (āmorā)": "kʰet̪am"
+        "used to, তুই (tui) / তোরা (torā)": "kʰet̪iʃ"
+        "used to, তুমি (tumi) / তোমরা (tomorā)": "kʰet̪e"
+        "used to, আপনি (āpni) / আপনারা (āponārā)": "kʰet̪en"
+        "used to, সে (se) / তারা (tārā)": "kʰet̪o"
+        "used to, তিনি (tini) / তাঁরা (tām̐rā)": "kʰet̪en"

@@ -129,22 +129,16 @@ void main() {
             // (#47) are valid in decks/ but are not decks.
             .where((p) {
               final doc = loadYaml(File(p).readAsStringSync());
-              // A script guide's or sounds file's layer is no deck (#498).
-              final guideLayer =
-                  doc is Map &&
-                  doc['kind'] == 'layer' &&
-                  RegExp(r'-(?:script|sounds)$').hasMatch('${doc['core']}');
-              return !guideLayer &&
-                  !(doc is Map &&
-                      {
-                        'facts',
-                        'themes',
-                        'numbers',
-                        'path',
-                        'sounds',
-                        'script',
-                        'romanisation',
-                      }.contains(doc['kind']));
+              return !(doc is Map &&
+                  {
+                    'facts',
+                    'themes',
+                    'numbers',
+                    'path',
+                    'sounds',
+                    'script',
+                    'romanisation',
+                  }.contains(doc['kind']));
             })
             .toList()
           ..sort();

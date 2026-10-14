@@ -1,0 +1,30 @@
+schema: 1
+id: bn-en-slang
+name: "Slang"
+kind: vocab
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Everyday slang: what people say where the textbook word means something else."
+tags: [slang]
+cards:
+  - id: bn-0750
+    target: "তামাক সেবন"
+    native: "smoking (slang)"
+    reading: "tāmāk śebon"
+    ipa: "t̪amak ʃebon"
+    alt_target: ["তামাক সেবন করা"]
+    pos: "phrase"
+    notes: "Literally 'taking tobacco', and exactly সিগারেট খাওয়া (sigāreṭ khāoā), smoking. As a verb, তামাক সেবন করা (tāmāk sebon kôrā)."
+    bases:
+      - { word: "তামাক", base: "তামাক", reading: "tāmāk", meaning: "tobacco" }
+      - { word: "সেবন", base: "সেবন", reading: "śebon", meaning: "taking (formal)" }
+  - id: bn-0748
+    target: "পান করা"
+    native: "to drink alcohol (slang)"
+    reading: "pān kôrā"
+    ipa: "pan kɔra"
+    pos: "phrase"
+    notes: "Formally just 'to drink', as in writing: জল পান করা (jôl pān kôrā). In speech it usually means drinking alcohol, so for tea or water say খাওয়া (khāoyā). Not পান খাওয়া (pān khāoyā), which is chewing a betel leaf."
+    bases:
+      - { word: "পান", base: "পান", reading: "pān", meaning: "drinking (also: a betel leaf)" }

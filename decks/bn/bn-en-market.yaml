@@ -1,0 +1,178 @@
+schema: 1
+id: bn-en-market
+name: "Market"
+kind: vocab
+theme: market
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Asking the price, bargaining, paying, and saying how much: what a market stall needs."
+tags: [beginner]
+cards:
+  - id: bn-0243
+    target: "কত দাম?"
+    native: "How much is it?"
+    reading: "kôto dām?"
+    ipa: "kɔt̪o d̪am"
+    pos: "phrase"
+    notes: "Also এটা কত? (eta koto?), how much is this?"
+  - id: bn-0244
+    target: "দাম"
+    native: "price"
+    reading: "dām"
+    ipa: "d̪am"
+    pos: "noun"
+  - id: bn-0245
+    target: "টাকা"
+    native: "rupee; money"
+    reading: "ṭākā"
+    ipa: "ʈaka"
+    pos: "noun"
+    notes: "টাকা (ṭākā) is the word for money, and for the currency: the rupee in India, the taka in Bangladesh. একশো টাকা (ekśo ṭākā), a hundred rupees."
+  - id: bn-0246
+    target: "খুচরো"
+    native: "change; small notes and coins"
+    reading: "khucro"
+    ipa: "kʰutʃro"
+    pos: "noun"
+    notes: "খুচরো আছে (khucro āche)? Do you have change?"
+  - id: bn-0247
+    target: "দামি"
+    native: "expensive"
+    reading: "dāmi"
+    ipa: "d̪ami"
+    pos: "adj"
+    notes: "খুব দামি (khub dāmi)! It's very expensive! Adjectives don't change for number, and almost never for gender."
+  - id: bn-0248
+    target: "সস্তা"
+    native: "cheap"
+    reading: "śôstā"
+    ipa: "ʃɔst̪a"
+    pos: "adj"
+  - id: bn-0249
+    target: "একটু কম করুন।"
+    native: "Please lower it a little."
+    reading: "ekṭu kôm korun."
+    ipa: "ekʈu kɔm korun"
+    pos: "phrase"
+    tags: ["polite"]
+    notes: "The polite way to bargain. Bargaining is expected at markets, not in shops with fixed prices."
+    bases:
+      - { word: "করুন", ref: "bn-0102" }
+  - id: bn-0250
+    target: "দোকান"
+    native: "shop"
+    reading: "dokān"
+    ipa: "d̪okan"
+    pos: "noun"
+  - id: bn-0251
+    target: "দিন"
+    native: "please give (me)"
+    reading: "din"
+    ipa: "d̪in"
+    pos: "verb"
+    tags: ["polite"]
+    notes: "The polite request form of দেওয়া (deoā, to give): এক কিলো দিন (ek kilo din), a kilo, please. দিন (din) also means 'day'."
+  - id: bn-0252
+    target: "কিলো"
+    native: "kilo"
+    reading: "kilo"
+    ipa: "kilo"
+    alt_target: ["কেজি"]
+    pos: "noun"
+    notes: "Also কেজি (keji). আধ কিলো (ādh kilo) is half a kilo."
+  - id: bn-0253
+    target: "আর কিছু না।"
+    native: "Nothing else."
+    reading: "ār kichu nā."
+    ipa: "ar kitʃʰu na"
+    pos: "phrase"
+    notes: "What you say when the shopkeeper asks আর কিছু? (anything else?)."
+  - id: bn-0545
+    target: "আমি শুধু দেখছি।"
+    native: "I'm just looking."
+    reading: "āmi śudhu dekhchi."
+    ipa: "ami ʃud̪ʱu d̪ekʰtʃʰi"
+    pos: "phrase"
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "দেখছি", ref: "bn-0877" }
+  - id: bn-0546
+    target: "কত করে কেজি?"
+    native: "How much a kilo?"
+    reading: "kôto kôre keji?"
+    ipa: "kɔt̪o kɔre kedʒi"
+    alt_target: ["কত করে কিলো?"]
+    pos: "phrase"
+    notes: "কত করে (kôto kôre), 'at how much', asks the rate: কত করে ডজন (kôto kôre ḍôjon)? How much a dozen?"
+    bases:
+      - { word: "করে", ref: "bn-0102" }
+  - id: bn-0547
+    target: "এটা নেব।"
+    native: "I'll take this."
+    reading: "eṭā nebo."
+    ipa: "eʈa nebo"
+    pos: "phrase"
+    bases:
+      - { word: "এটা", ref: "bn-0849" }
+      - { word: "নেব", ref: "bn-0889" }
+  - id: bn-0548
+    target: "অন্য রং আছে?"
+    native: "Do you have another colour?"
+    reading: "ônno rôṅ āche?"
+    ipa: "ɔnno rɔŋ atʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "অন্য", ref: "bn-1332" }
+      - { word: "রং", ref: "bn-1203" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
+  - id: bn-0549
+    target: "কিছু"
+    native: "some; something"
+    reading: "kichu"
+    ipa: "kitʃʰu"
+    pos: "other"
+  - id: bn-0550
+    target: "অনেক"
+    native: "many; a lot"
+    reading: "ônek"
+    ipa: "ɔnek"
+    pos: "other"
+  - id: bn-0551
+    target: "একটু"
+    native: "a little"
+    reading: "ekṭu"
+    ipa: "ekʈu"
+    pos: "other"
+    notes: "Also the softener in any request: একটু দেখুন (ekṭu dekhun), please have a look."
+  - id: bn-0552
+    target: "সব"
+    native: "all; everything"
+    reading: "śôb"
+    ipa: "ʃɔb"
+    pos: "other"
+  - id: bn-0553
+    target: "শুধু"
+    native: "only; just"
+    reading: "śudhu"
+    ipa: "ʃud̪ʱu"
+    pos: "other"
+  - id: bn-0554
+    target: "যথেষ্ট"
+    native: "enough"
+    reading: "jôtheśṭo"
+    ipa: "dʒɔt̪ʰeʃʈo"
+    pos: "other"
+  - id: bn-0555
+    target: "বেশি"
+    native: "too much; too many"
+    reading: "beśi"
+    ipa: "beʃi"
+    pos: "other"
+    notes: "খুব বেশি দাম (khub beśi dām), the price is too high."
+  - id: bn-0556
+    target: "কম"
+    native: "less; low"
+    reading: "kôm"
+    ipa: "kɔm"
+    pos: "other"
