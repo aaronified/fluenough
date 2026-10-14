@@ -1064,19 +1064,22 @@ Japanese "es m/f; ja none").
   is any `gender` in a language with `[]`. A noun with no `gender` is an
   error **once the language is filled in** (`FILLED_LANGUAGES` in
   `tools/validate_decks.py`, as for [examples](#examples)), and nothing is
-  reported before. Other parts of speech are never checked. A language
-  whose path lists no `genders` is not checked at all.
+  reported before. Other parts of speech are never checked. While a
+  language's path lists no `genders`, the validator checks its nouns
+  against the table above (`DECIDED_GENDERS` in `tools/validate_decks.py`);
+  a path's own list wins once it has one.
 - **Where it is written.** `gender` is a fact of the language: on a core's
   card or a single-file deck's, never in a layer's entry for a core card.
-- **Open: the nine paths do not list their classes yet.** The app reads
-  `genders` from this change on, but the released app (0.4.3) refuses a
-  path file with a field it does not know, and the app downloads paths
-  from `main` (ADR-0037), so writing `genders` into a path now would stop
-  every language downloading or updating on 0.4.3. When the classes go
+- **Open (owner to decide): the nine paths do not list their classes yet.**
+  #512 says the classes are listed in each language's file, and the app
+  reads `genders` from this change on. But the released app (0.4.3)
+  refuses a path file with a field it does not know, and the app downloads
+  paths from `main` (ADR-0037), so writing `genders` into a path now would
+  stop every language downloading or updating on 0.4.3. When the classes go
   into the paths (after a release that reads them, or with a schema
-  change) is the owner's to decide. Until then the validator checks no
-  language's genders, and a deck builder writes `gender` on nouns from
-  the table above.
+  change) is the owner's call. Until then the validator holds the same
+  table in `DECIDED_GENDERS`, so every language's nouns are checked, and
+  the table is removed once every path lists its classes.
 
 ### What applies to which card type
 

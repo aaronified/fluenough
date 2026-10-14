@@ -154,6 +154,17 @@ MIN_EXAMPLES = 2
 # language's path lists gender classes; in any other, neither is reported
 # yet. A language is added here when its fill issue is closed.
 FILLED_LANGUAGES: set[str] = set()
+# Each language's gender classes as the owner decided them (#512, "Decided as
+# listed"), checked while its path lists no `genders`; a path's own list wins.
+# OPEN (owner to decide): the classes belong in each path (#512), but the
+# released app (0.4.3) refuses a path field it does not know and paths are
+# downloaded from main, so they are held here until the owner says when the
+# paths may carry them. Remove this table once every path lists its classes.
+DECIDED_GENDERS: dict[str, list[str]] = {
+    "hi": ["m", "f"], "mr": ["m", "f", "n"], "gu": ["m", "f", "n"],
+    "kn": ["m", "f", "n"], "te": ["mahat", "amahat"], "es": ["m", "f"],
+    "bn": [], "as": [], "ja": [],
+}
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "wiktionary")
 LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
@@ -4949,17 +4960,23 @@ def check_regions_across(reports: list[Report]) -> list[str]:
 def check_genders_across(reports: list[Report]) -> list[str]:
     """A noun's gender is one of its language's classes, which its path
     lists (#512, "Nouns only"); a noun with none is an error once the
-    language is filled in. A language whose path lists no classes is not
+    language is filled in. While a path lists no classes, the owner's table
+    (DECIDED_GENDERS) stands in for it; a language in neither is not
     checked, and other parts of speech never are."""
     ctx = _context(reports)
     problems: list[str] = []
     for rep in reports:
         if not rep.noun_genders or rep.lang_code is None:
             continue
-        path = ctx.lang(rep.lang_code).path()
-        if path is None or path.plan.genders is None:
+        code = rep.lang_code
+        path = ctx.lang(code).path()
+        if path is not None and path.plan.genders is not None:
+            classes, source = path.plan.genders, "its path lists"
+        elif code in DECIDED_GENDERS:
+            classes = DECIDED_GENDERS[code]
+            source = "the decided classes (DECK-FORMAT.md, Gender) are"
+        else:
             continue
-        code, classes = rep.lang_code, path.plan.genders
         listed = ", ".join(classes)
         for gender, where in rep.noun_genders:
             if gender is None:
@@ -4972,7 +4989,7 @@ def check_genders_across(reports: list[Report]) -> list[str]:
                                 f"has no gender classes; leave gender out")
             elif gender not in classes:
                 problems.append(f"{rep.path}: {where}: gender {gender!r} is not a "
-                                f"class of {code}; its path lists {listed}")
+                                f"class of {code}; {source} {listed}")
     return problems
 
 

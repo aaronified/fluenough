@@ -76,9 +76,34 @@ class GenderClasses(B1Case):
         self.assertEqual(self.across(), [])
 
     def test_no_classes_listed_checks_nothing(self) -> None:
+        # zz is in neither its path nor the decided table.
         self.gender("zz-9001", "anything")
         with mock.patch(FILLED, {"zz"}):
             self.assertEqual(self.across(), [])
+
+    def test_without_a_path_list_the_decided_classes_are_checked(self) -> None:
+        # OPEN (#512): the paths do not list their classes yet; the owner's
+        # table in the validator stands in until they do.
+        with mock.patch("validate_decks.DECIDED_GENDERS", {"zz": ["mahat", "amahat"]}):
+            self.gender("zz-9001", "m")
+            self.assertEqual(self.across(), [
+                f"error: {self.p(CORE)}: card zz-9001: gender 'm' is not a class of zz; "
+                f"the decided classes (DECK-FORMAT.md, Gender) are mahat, amahat"])
+            self.gender("zz-9001", "amahat")
+            self.assertEqual(self.across(), [])
+
+    def test_a_path_list_wins_over_the_decided_classes(self) -> None:
+        with mock.patch("validate_decks.DECIDED_GENDERS", {"zz": []}):
+            self.classes(["mahat", "amahat"])
+            self.gender("zz-9001", "amahat")
+            self.assertEqual(self.across(), [])
+
+    def test_the_decided_classes_match_the_owner_table(self) -> None:
+        import validate_decks
+        self.assertEqual(validate_decks.DECIDED_GENDERS, {
+            "hi": ["m", "f"], "mr": ["m", "f", "n"], "gu": ["m", "f", "n"],
+            "kn": ["m", "f", "n"], "te": ["mahat", "amahat"], "es": ["m", "f"],
+            "bn": [], "as": [], "ja": []})
 
     def test_a_missing_gender_is_an_error_once_filled_in(self) -> None:
         self.classes(["mahat", "amahat"])
