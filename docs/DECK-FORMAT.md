@@ -564,7 +564,7 @@ cards:
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
-| `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). Per-language classes are decided but not yet checked: see [Card data](#card-data). |
+| `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
 | `audio` | no | Asset path or URL overriding TTS for this card. |
@@ -953,18 +953,7 @@ where it says it exists.
   stay in `usage` notes.
 - **Reading and `ipa`.** Exist. Required for a non-Latin script (the reading).
 - **Examples.** Built (#511); see [Examples](#examples) below.
-- **Gender.** One field, `gender`, with per-language values (owner: "One
-  field, per-language values"; approved "Decided as listed"). Today `gender`
-  is free text; the closed lists are not yet checked:
-
-  | Language | Values |
-  |---|---|
-  | hi | `m`, `f` |
-  | mr, gu, kn | `m`, `f`, `n` |
-  | te | `mahat`, `amahat` |
-  | bn, as | none: the field is not used |
-
-  Spanish and Japanese are not decided (see [Still open](#card-data-still-open)).
+- **Gender.** Built (#512); see [Gender](#gender) below.
 - **Root word, `bases`.** Exists for the words of a text ([Base words](#base-words-bases)).
   Owner: a word card has its "Root word / base". Say in the card's notes when
   its base word changes its stem. How a word that is its own root says so is
@@ -1045,6 +1034,50 @@ Built (#511). Owner (#506): a word card has "At least 2" examples.
   ([plan](plans/question-engine.md)); the app reads the examples today but
   shows no new question from them.
 
+### Gender
+
+Built (#512). One field, `gender`, with per-language values (owner: "One
+field, per-language values"; approved "Decided as listed"; Spanish and
+Japanese "es m/f; ja none").
+
+- **The classes** are listed once per language, in its path file,
+  `decks/<lang>/<lang>-path.yaml` ([Paths](#paths)), as `genders`:
+
+  ```yaml
+  # decks/te/te-path.yaml
+  genders: ["mahat", "amahat"]
+  # decks/bn/bn-path.yaml: a language without gender
+  genders: []
+  ```
+
+  | Language | `genders` |
+  |---|---|
+  | hi | `["m", "f"]` |
+  | mr, gu, kn | `["m", "f", "n"]` |
+  | te | `["mahat", "amahat"]` |
+  | es | `["m", "f"]` |
+  | bn, as, ja | `[]`: the field is not used |
+
+  Each class is quoted text, listed once. The app reads them with the path.
+- **Nouns only** (owner: "Nouns only"). On a card with `pos: "noun"`, a
+  `gender` outside its language's classes is a validator **error**, and so
+  is any `gender` in a language with `[]`. A noun with no `gender` is an
+  error **once the language is filled in** (`FILLED_LANGUAGES` in
+  `tools/validate_decks.py`, as for [examples](#examples)), and nothing is
+  reported before. Other parts of speech are never checked. A language
+  whose path lists no `genders` is not checked at all.
+- **Where it is written.** `gender` is a fact of the language: on a core's
+  card or a single-file deck's, never in a layer's entry for a core card.
+- **Open: the nine paths do not list their classes yet.** The app reads
+  `genders` from this change on, but the released app (0.4.3) refuses a
+  path file with a field it does not know, and the app downloads paths
+  from `main` (ADR-0037), so writing `genders` into a path now would stop
+  every language downloading or updating on 0.4.3. When the classes go
+  into the paths (after a release that reads them, or with a schema
+  change) is the owner's to decide. Until then the validator checks no
+  language's genders, and a deck builder writes `gender` on nouns from
+  the table above.
+
 ### What applies to which card type
 
 M is mandatory, R recommended, O optional, `-` not applicable. Only the
@@ -1083,8 +1116,8 @@ pipeline yet again)."
 - **The validator enforces only what it can check:** the meaning, the
   reading, at least 2 examples on a word card, and gender on nouns in a
   language that has gender. These become **errors once a language is filled
-  in.** The 2 examples are built ([Examples](#examples)); the gender check
-  is **Decided, not yet built**.
+  in.** The 2 examples ([Examples](#examples)) and the gender check
+  ([Gender](#gender)) are built.
 - **Data that is "mandatory when available" is never a validator error:**
   confusables, root word, synonyms, antonyms, minimal pairs and the rest. The
   validator cannot tell whether such data was available. The deck builder
@@ -1110,7 +1143,7 @@ Answers from the owner, asked one at a time (#506). All of them are
 - **Gender classes:** Spanish and Japanese are "es m/f; ja none". The
   validator checks "Nouns only": on a noun, a value outside the language's
   classes is an error, and so is a missing gender once the language is
-  filled in (#512).
+  filled in (#512): built, see [Gender](#gender).
 - **Frequency:** first "Leipzig Corpora lists", then, because Leipzig's
   terms conflict, "Count from Wikipedia instead" (#516).
 - **Word data from Wiktionary:** "Yes, in 0.5.0". A tool imports from the
@@ -1666,6 +1699,7 @@ units:
 | `units` | yes | A non-empty list. Each unit is a non-empty list of core ids, which may end in the wildcard `"*"`, or a mapping (see [The B1 plan](#the-b1-plan)). |
 | `alphabet` | no | The core ids of the decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
 | `regions` | no | The language's regions ([Regions](#regions)). |
+| `genders` | no | The language's gender classes, such as `["m", "f"]`, or `[]` for a language without gender: what a noun's `gender` may be ([Gender](#gender)). |
 | `description` | no | Free text. |
 
 **A deck's core id** is `<lang>-<name>`: a core's own id, a layer's core
