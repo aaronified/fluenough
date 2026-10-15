@@ -149,6 +149,8 @@ const _cardFields = {
   'bases',
   'rules',
   'wiktionary',
+  'register',
+  'frequency',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
@@ -228,11 +230,31 @@ const _coreCardFields = {
   'phrasebook',
   'bases',
   'rules',
+  'register',
+  'frequency',
+  // Card data (DECK-FORMAT.md, Card data): the fields of [_itemFields].
+  'synonyms',
+  'antonyms',
+  'collocations',
+  'confusables',
+  'forms',
+  'senses',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
 };
+
+/// A core card's item lists (DECK-FORMAT.md, Card data), and each item's
+/// fields: a card by `ref`, or a word written in full.
+const _itemFields = <String, Set<String>>{
+  'synonyms': {'id', 'word', 'ref', 'reading', 'source'},
+  'antonyms': {'id', 'word', 'ref', 'reading', 'source'},
+  'collocations': {'id', 'word', 'ref', 'reading', 'source'},
+  'confusables': {'id', 'word', 'ref', 'reading', 'kind'},
+  'forms': {'id', 'kind', 'word', 'reading', 'ipa', 'source'},
+};
+const _senseFields = {'id', 'pos', 'examples', 'source'};
 const _coreRefFields = {
   'ref',
   'reading',
@@ -254,6 +276,13 @@ const _layerEntryFields = {
   'examples',
   'bases',
   'wiktionary',
+  // Card data (DECK-FORMAT.md, Card data): the fields of [_itemFields].
+  'synonyms',
+  'antonyms',
+  'collocations',
+  'confusables',
+  'forms',
+  'senses',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
@@ -716,6 +745,7 @@ class _Reader {
     seen[id] = idNode;
 
     final notes = this.notes(fields.node('notes'), '$path.notes');
+    final ownRoot = isOwnRoot(fields.node('bases'));
     return Card(
       id: id,
       deckId: deckId,
@@ -739,10 +769,34 @@ class _Reader {
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
       phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
-      bases: bases(fields.node('bases'), '$path.bases', core: false),
+      bases: ownRoot
+          ? const <CardBase>[]
+          : bases(fields.node('bases'), '$path.bases', core: false),
       rules: ruleIds(fields.node('rules'), '$path.rules'),
       wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule),
+      ownRoot: ownRoot,
+      register: fields.optionalString('register', allowEmpty: false),
+      frequency: frequency(fields.node('frequency'), '$path.frequency'),
     );
+  }
+
+  /// Whether a card's `bases` says its word is its own root, `self` (#513).
+  bool isOwnRoot(YamlNode? node) => node != null && _value(node) == 'self';
+
+  /// A card's frequency (#516): `{ rank, source }`.
+  CardFrequency? frequency(YamlNode? node, String path) {
+    if (node == null) return null;
+    final fields = this.fields(node, path);
+    fields.allowOnly(const {'rank', 'source'});
+    final rankNode = fields.require('rank');
+    final rank = _value(rankNode);
+    if (rank is! int || rank < 1) {
+      fail(
+        rankNode,
+        '$path.rank must be a whole number from 1, got ${_describe(rankNode)}',
+      );
+    }
+    return CardFrequency(rank: rank, source: fields.string('source'));
   }
 
   List<CardExample> examples(YamlNode? node, String path) {
@@ -1371,6 +1425,7 @@ class _Reader {
       );
     }
     fields.allowOnly(_coreCardFields);
+    final ownRoot = isOwnRoot(fields.node('bases'));
     return CoreWritten(
       id: id,
       target: fields.string('target'),
@@ -1386,9 +1441,81 @@ class _Reader {
       picture: fields.optionalString('picture', allowEmpty: false),
       notes: coreNotes(fields.node('notes'), '$path.notes'),
       phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
-      bases: bases(fields.node('bases'), '$path.bases', core: true),
+      bases: ownRoot
+          ? const <CardBase>[]
+          : bases(fields.node('bases'), '$path.bases', core: true),
       rules: ruleIds(fields.node('rules'), '$path.rules'),
+      ownRoot: ownRoot,
+      register: fields.optionalString('register', allowEmpty: false),
+      frequency: frequency(fields.node('frequency'), '$path.frequency'),
+      items: <String, List<CardItem>>{
+        for (final MapEntry(key: key, value: allowed) in _itemFields.entries)
+          if (fields.node(key) case final node?)
+            key: coreItems(node, '$path.$key', allowed),
+      },
+      senses: coreSenses(fields.node('senses'), '$path.senses'),
     );
+  }
+
+  /// A core card's items of one field (DECK-FORMAT.md, Card data), their
+  /// text being in each layer, by id.
+  List<CardItem> coreItems(YamlNode node, String path, Set<String> allowed) {
+    final ids = <String>{};
+    return List<CardItem>.unmodifiable(<CardItem>[
+      for (final (i, item) in list(node, path).indexed)
+        coreItem(item, '$path[$i]', allowed, ids),
+    ]);
+  }
+
+  CardItem coreItem(
+    YamlNode node,
+    String path,
+    Set<String> allowed,
+    Set<String> ids,
+  ) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(allowed);
+    final idNode = fields.require('id');
+    final id = text(idNode, '$path.id');
+    if (!ids.add(id)) fail(idNode, '$path.id "$id" is used twice');
+    if (fields.has('ref') == fields.has('word')) {
+      fail(node, '$path gives word or ref, one of them');
+    }
+    return CardItem(
+      id: id,
+      ref: fields.has('ref')
+          ? this.id(fields.require('ref'), '$path.ref')
+          : null,
+      word: fields.optionalString('word', allowEmpty: false),
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
+      kind: fields.optionalString('kind', allowEmpty: false),
+      source: fields.optionalString('source', allowEmpty: false),
+    );
+  }
+
+  /// A core card's senses (#517), their meanings being in each layer, by id.
+  List<CoreSense> coreSenses(YamlNode? node, String path) {
+    if (node == null) return const <CoreSense>[];
+    final senses = <CoreSense>[];
+    final ids = <String>{};
+    for (final (i, item) in list(node, path).indexed) {
+      final where = '$path[$i]';
+      final fields = this.fields(item, where);
+      fields.allowOnly(_senseFields);
+      final idNode = fields.require('id');
+      final id = text(idNode, '$where.id');
+      if (!ids.add(id)) fail(idNode, '$where.id "$id" is used twice');
+      senses.add(
+        CoreSense(
+          id: id,
+          pos: fields.optionalString('pos', allowEmpty: false),
+          source: fields.optionalString('source', allowEmpty: false),
+          examples: coreExamples(fields.node('examples'), '$where.examples'),
+        ),
+      );
+    }
+    return List<CoreSense>.unmodifiable(senses);
   }
 
   CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {
@@ -1790,8 +1917,67 @@ class _Reader {
       wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule)
           ? true
           : null,
+      items: <String, Map<String, LayerText>>{
+        for (final key in _itemFields.keys)
+          if (fields.node(key) case final node?)
+            key: layerItems(node, '$path.$key', key),
+      },
+      senses: fields.has('senses')
+          ? layerSenses(fields.require('senses'), '$path.senses')
+          : null,
       key: key,
     );
+  }
+
+  /// A layer's text for a core card's items of [field], by id: a
+  /// confusable's `{ why }`, a collocation's meaning or `{ native, note }`,
+  /// any other item's text.
+  Map<String, LayerText> layerItems(YamlNode node, String path, String field) {
+    final texts = <String, LayerText>{};
+    for (final (id, key, value) in keyed(
+      node,
+      path,
+      "a mapping of the core item's id to its text",
+    )) {
+      final where = '$path.$id';
+      if (field == 'confusables' ||
+          (field == 'collocations' && value is YamlMap)) {
+        final fields = this.fields(value, where);
+        final name = field == 'confusables' ? 'why' : 'native';
+        fields.allowOnly({name, if (field == 'collocations') 'note'});
+        texts[id] = LayerText(
+          text: fields.string(name),
+          note: fields.optionalString('note', allowEmpty: false),
+          key: key,
+          node: fields.require(name),
+        );
+      } else {
+        texts[id] = LayerText(text: text(value, where), key: key, node: value);
+      }
+    }
+    return Map<String, LayerText>.unmodifiable(texts);
+  }
+
+  /// A layer's senses of a core card (#517), by id: `{ native, examples }`.
+  Map<String, LayerSense> layerSenses(YamlNode node, String path) {
+    final senses = <String, LayerSense>{};
+    for (final (id, key, value) in keyed(
+      node,
+      path,
+      "a mapping of the core sense's id to { native, examples }",
+    )) {
+      final where = '$path.$id';
+      final fields = this.fields(value, where);
+      fields.allowOnly(const {'native', 'examples'});
+      senses[id] = LayerSense(
+        native: fields.string('native'),
+        examples: fields.has('examples')
+            ? layerExamples(fields.require('examples'), '$where.examples')
+            : const <String, LayerExample>{},
+        key: key,
+      );
+    }
+    return Map<String, LayerSense>.unmodifiable(senses);
   }
 
   /// A mapping of keys to text in the learner's language.

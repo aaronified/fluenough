@@ -7,6 +7,7 @@ class Fact {
     this.contrast,
     this.tags = const <String>[],
     this.source,
+    this.cards = const <String>[],
   });
 
   /// Permanent, like a card id: the app remembers seen facts by it.
@@ -21,6 +22,10 @@ class Fact {
 
   final List<String> tags;
   final String? source;
+
+  /// The cards the fact is about, by id (#516), so that it can show beside
+  /// them.
+  final List<String> cards;
 }
 
 /// A language's facts file: its facts, in the file's order.

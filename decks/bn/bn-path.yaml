@@ -27,6 +27,8 @@ schema: 1
 kind: "path"
 id: "bn-path"
 language: "bn"
+# No gender classes: a noun takes no gender (#512; DECK-FORMAT.md, Card data).
+genders: []
 # Where Bengali is spoken, for a rater's region and a card's region note
 # (ADR-0036): its dialect groups, after Chatterji (1926) and his
 # successors, each named with example districts so that a rater who does

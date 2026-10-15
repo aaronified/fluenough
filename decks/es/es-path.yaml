@@ -26,6 +26,8 @@ schema: 1
 kind: "path"
 id: "es-path"
 language: "es"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card data).
+genders: ["m", "f"]
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:

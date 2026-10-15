@@ -570,7 +570,10 @@ cards:
 | `audio` | no | Asset path or URL overriding TTS for this card. |
 | `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases) and `source`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
-| `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). |
+| `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). `"self"` on a word that is its own root ([Card data](#root-word-synonyms-and-antonyms)). |
+| `register` | no | How formal or rude the word is: `"formal"`, `"neutral"`, `"informal"`, `"slang"` or `"offensive"`. See [Register, forms, collocations and senses](#register-forms-collocations-and-senses). |
+| `frequency` | no | `{ rank, source }`: the word's rank in a count of its language, and where it was counted. See [Frequency](#frequency). |
+| `synonyms`, `antonyms`, `collocations`, `confusables`, `forms`, `senses` | no | A core card's [card data](#card-data), its text in each layer by id. Not on a single-file card or a layer's own card. |
 | `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
@@ -582,7 +585,7 @@ cards:
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
 layer gives `native`, `alt_native` and `wiktionary`, and the texts of the
-core's notes and examples.
+core's notes, examples and card data.
 
 ### A note on `id`
 
@@ -946,46 +949,23 @@ language ([Core and layer files](#core-and-layer-files)).
 
 ### The data a card carries
 
-Each item says where it lives. Every item is **Decided, not yet built** except
-where it says it exists.
+Each item says where it lives, and each is built.
 
-- **Meaning.** `native` (and `alt_native`): exists. A word's separate senses
-  stay in `usage` notes.
+- **Meaning.** `native` (and `alt_native`): exists. A word's separate
+  meanings can be its `senses` (#517).
 - **Reading and `ipa`.** Exist. Required for a non-Latin script (the reading).
 - **Examples.** Built (#511); see [Examples](#examples) below.
 - **Gender.** Built (#512); see [Gender](#gender) below.
-- **Root word, `bases`.** Exists for the words of a text ([Base words](#base-words-bases)).
-  Owner: a word card has its "Root word / base". Say in the card's notes when
-  its base word changes its stem. How a word that is its own root says so is
-  open. The word family is derived from `bases` across the language and is
-  never stored.
-- **Synonyms and antonyms.** Each is a list in the core, with the learner's
-  text in the layer. A word a card teaches is a `ref`; one no card teaches is
-  a `word` with its `reading`, and its meaning in the layer (owner: "Yes, with
-  reading + meaning"). The field names `synonyms` and `antonyms` are
-  proposed, not approved.
-- **Confusables**, the shared wrong alternatives (owner: "One shared list",
-  for word-order extra tiles, known mistakes and listening in context).
-  Mandatory on a sentence used for word order (owner: "Confusables on
-  word-order sentences"). Shape approved (owner, approval 3: "Approve as
-  proposed"): an `id`, a `word` or card `ref`, its `reading`, a `kind`
-  (`form`, `word`, `sound` or `mark`), and an optional `why` in the layer, by
-  id, as notes are:
-
-  ```yaml
-  confusables:
-    - { id: "masc", word: "पिया", reading: "piyā", kind: "form" }
-    - { id: "mark", word: "?", kind: "mark" }
-  ```
-  and in the layer `confusables: { "masc": { why: "चाय is feminine, so पी." } }`.
-  A card with none has them "Generated from card data" (owner): the engine
-  draws them from the same part of speech and theme, the pair partner, other
-  forms and words of the same root. Nothing is stored for them.
-- **Frequency.** Optional, from an open list (owner: "Yes, optional, from an
-  open list"). Which list is open.
-- **Facts naming cards.** A language fact can name cards (owner: "Yes, a
-  fact can name cards"), so it shows beside the words it is about. See
+- **Root word, synonyms and antonyms.** Built (#513); see [Root word,
+  synonyms and antonyms](#root-word-synonyms-and-antonyms) below.
+- **Confusables.** Built (#514); see [Confusables](#confusables) below.
+- **Frequency.** Built, the field only (#516); see [Frequency](#frequency)
+  below.
+- **Facts naming cards.** Built (#516): a fact's `cards`, see
   [Facts files](#facts-files).
+- **Register, forms, collocations and senses.** Built (#517); see
+  [Register, forms, collocations and senses](#register-forms-collocations-and-senses)
+  below.
 - **Learner-language text** of all the new data (a `why`, a synonym's
   meaning) lives in each native layer (owner: "In each native layer"), keyed
   by id as notes are.
@@ -1064,22 +1044,144 @@ Japanese "es m/f; ja none").
   is any `gender` in a language with `[]`. A noun with no `gender` is an
   error **once the language is filled in** (`FILLED_LANGUAGES` in
   `tools/validate_decks.py`, as for [examples](#examples)), and nothing is
-  reported before. Other parts of speech are never checked. While a
-  language's path lists no `genders`, the validator checks its nouns
-  against the table above (`DECIDED_GENDERS` in `tools/validate_decks.py`);
-  a path's own list wins once it has one.
+  reported before. Other parts of speech are never checked, and nor is a
+  language whose path lists no `genders`. The nine paths list theirs.
 - **Where it is written.** `gender` is a fact of the language: on a core's
   card or a single-file deck's, never in a layer's entry for a core card.
-- **Open (owner to decide): the nine paths do not list their classes yet.**
-  #512 says the classes are listed in each language's file, and the app
-  reads `genders` from this change on. But the released app (0.4.3)
-  refuses a path file with a field it does not know, and the app downloads
-  paths from `main` (ADR-0037), so writing `genders` into a path now would
-  stop every language downloading or updating on 0.4.3. When the classes go
-  into the paths (after a release that reads them, or with a schema
-  change) is the owner's call. Until then the validator holds the same
-  table in `DECIDED_GENDERS`, so every language's nouns are checked, and
-  the table is removed once every path lists its classes.
+
+### Root word, synonyms and antonyms
+
+Built (#513). The fields are "mandatory when available": the builder adds
+them, and their absence is never an error.
+
+- **A word that is its own root** says `bases: "self"` (owner, 2026-10-13),
+  on the card, never on an example. Any other card gives its root as
+  [Base words](#base-words-bases) says.
+- **`synonyms` and `antonyms`** (owner: "Approve these names") are lists on
+  a core card. Each item has an `id`, and names the card that teaches the
+  word, `ref`, when one exists; otherwise it gives the `word` with its
+  `reading` (owner: "Yes, with reading + meaning"). An item taken from
+  outside names its `source` (owner: "Per item"). The meaning of a `word`
+  is in each layer, by id; a `ref` takes its card's meaning.
+
+  ```yaml
+  # core
+  synonyms:
+    - { id: "abode", word: "निवास", reading: "nivās", source: "https://en.wiktionary.org/wiki/निवास" }
+  antonyms:
+    - { id: "out", ref: "hi-9002" }
+  # layer
+  synonyms: { "abode": "abode, dwelling" }
+  ```
+- **Checked when present:** each `id` starts with a letter, `[a-z0-9-]+`,
+  once in its list; an item gives `word` or `ref`, not both; a `ref` is a
+  card of the language, not the card itself; a `word` has its `reading` in
+  a script that needs one; a layer key that is no item of the core card is
+  an error, and a `word` with no meaning in a layer is a warning.
+
+### Confusables
+
+Built (#514). `confusables` are the shared wrong alternatives (owner: "One
+shared list", for word-order extra tiles, known mistakes and listening in
+context). Shape (owner, approval 3: "Approve as proposed"): an `id`, a
+`word` or card `ref`, its `reading` where the script needs one, a `kind`
+(`form`, `word`, `sound` or `mark`), and an optional `why` in the layer, by
+id, as notes are:
+
+```yaml
+confusables:
+  - { id: "masc", word: "पिया", reading: "piyā", kind: "form" }
+  - { id: "mark", word: "?", kind: "mark" }
+```
+and in the layer `confusables: { "masc": { why: "चाय (cāy) is feminine, so पी (pī)." } }`.
+
+- **Mandatory when available,** on a sentence used for word order above all
+  (owner: "Confusables on word-order sentences"), but never an error when
+  absent. A card with none has them "Generated from card data" (owner): the
+  engine draws them from the same part of speech and theme, the pair
+  partner, other forms and words of the same root. Nothing is stored for
+  them.
+- **As word-order tiles** (owner: "2–3, never a needed tile"): on a card put
+  in order (three words or more, or a phrase of two or more), a card has 2
+  to 3, and none is a tile the answer needs; either is an error. A
+  missing `why` in a layer is a warning.
+- **Checked when present:** the ids, `word` or `ref` and the `ref` as for
+  [synonyms](#root-word-synonyms-and-antonyms); `kind` is one of the four;
+  a `word` other than a `mark` has its `reading` in a script that needs one.
+
+### Frequency
+
+Built, the field only (#516). `frequency` is optional: the word's rank in a
+count of its language's **Wikipedia** (owner, 2026-10-13: "Count from
+Wikipedia instead"), and where it was counted, named on the item (owner:
+"Per item"). It is a fact of the language, on a core's card or a
+single-file deck's.
+
+```yaml
+frequency: { rank: 412, source: "hi.wikipedia.org, 2026-10" }
+```
+
+`rank` is a whole number from 1, the most frequent; `source` is required.
+The tool that counts the ranks is not built yet.
+
+### Register, forms, collocations and senses
+
+Built (#517), with the shapes the owner approved on 2026-10-13 ("Ok on the
+forms"; `register`, `collocations` and `senses`: "Approve as proposed").
+Each is a fact of the language on a core card, with its text in each layer
+by id, and none is ever an error when absent.
+
+- **`register`:** one of `"formal"`, `"neutral"`, `"informal"`, `"slang"`
+  and `"offensive"`. It has no layer text: why goes in a `usage` or
+  `behaviour` note. A layer cannot give it. It may also be written on a
+  single-file card.
+- **`forms`:** a word's inflected forms, `{ id, kind, word, reading, ipa?,
+  source? }`, `kind` one of `"plural"`, `"oblique"`, `"oblique-plural"`,
+  `"feminine"`, `"masculine"` and `"other"`. The `word` differs from the
+  target, and has its `reading` in a script that needs one. A layer may
+  give one line per id, and must for a form of kind `other`. A form a rules
+  table already has as a cell of the card's row is warned of: the table is
+  the source.
+- **`collocations`:** words the word often goes with, `{ id, word or ref,
+  reading?, source? }`, checked as [synonyms](#root-word-synonyms-and-antonyms)
+  are. A layer gives a `word`'s meaning, as text or `{ native, note }`; a
+  `word` with none is warned of.
+- **`senses`:** separate meanings, `{ id, pos?, examples?, source? }`, each
+  example as a core card's (`target`, `reading`, `ipa`, `bases`), with its
+  `reading` in a script that needs one. A layer gives each `{ native,
+  examples? }`, its examples keyed by target as a card's are. A sense with
+  no `native` in a layer is a warning, and an error once the language is
+  filled in; two senses with the same `native` are warned of. The card's
+  own `native` stays its main meaning: senses add, never replace.
+
+```yaml
+# core
+- id: "hi-9201"
+  target: "लड़का"
+  reading: "laṛkā"
+  pos: "noun"
+  gender: "m"
+  register: "neutral"
+  forms:
+    - { id: "pl", kind: "plural", word: "लड़के", reading: "laṛke" }
+  collocations:
+    - { id: "good", word: "अच्छा", reading: "acchā" }
+  senses:
+    - id: "boy"
+      examples:
+        - { target: "लड़का घर पर है।", reading: "laṛkā ghar par hai." }
+# layer
+"hi-9201":
+  native: "boy"
+  forms: { "pl": "boys; also the form before a postposition" }
+  collocations: { "good": "good" }
+  senses:
+    "boy": { native: "boy", examples: { "लड़का घर पर है।": "The boy is at home." } }
+```
+
+Open: "a card in the offensive-words ratings must be `offensive`" is
+approved, but no ratings exist in the repository yet, so it is not checked;
+and a rules table's cell cannot carry a `register` yet.
 
 ### What applies to which card type
 
@@ -1120,7 +1222,7 @@ pipeline yet again)."
   reading, at least 2 examples on a word card, and gender on nouns in a
   language that has gender. These become **errors once a language is filled
   in.** The 2 examples ([Examples](#examples)) and the gender check
-  ([Gender](#gender)) are built.
+  ([Gender](#gender)) are built, and so is every field above.
 - **Data that is "mandatory when available" is never a validator error:**
   confusables, root word, synonyms, antonyms, minimal pairs and the rest. The
   validator cannot tell whether such data was available. The deck builder
@@ -1136,11 +1238,11 @@ each new field lands with its check and its entry here, with tests.
 
 ### Card data: decided on 2026-10-13
 
-Answers from the owner, asked one at a time (#506). All of them are
-**Decided, not yet built**. Each field group is built in its own issue in
-0.5.0, after the relicensing (#510).
+Answers from the owner, asked one at a time (#506). Each field group is
+built in its own issue in 0.5.0, after the relicensing (#510); all are
+built but the Wiktionary import (#518) and the frequency count (#516).
 
-- **A word that is its own root:** `bases: self` (#513).
+- **A word that is its own root:** `bases: self` (#513): built.
 - **`source` for Wiktionary and Tatoeba data:** "Per item". Each
   item taken from outside names its own source.
 - **Gender classes:** Spanish and Japanese are "es m/f; ja none". The
@@ -1148,18 +1250,18 @@ Answers from the owner, asked one at a time (#506). All of them are
   classes is an error, and so is a missing gender once the language is
   filled in (#512): built, see [Gender](#gender).
 - **Frequency:** first "Leipzig Corpora lists", then, because Leipzig's
-  terms conflict, "Count from Wikipedia instead" (#516).
+  terms conflict, "Count from Wikipedia instead" (#516): the field is
+  built, the count is not.
 - **Word data from Wiktionary:** "Yes, in 0.5.0". A tool imports from the
   kaikki.org extracts, naming the source per item (#518). IndoWordNet:
   "Don't use it".
 - **Field names:** "Approve these names": `synonyms`, `antonyms` and
-  `frequency` on a card, and `cards` on a fact (#513, #516).
+  `frequency` on a card, and `cards` on a fact (#513, #516): built.
 - **Drafted fields:** all four are kept: `register`, `forms`,
-  `collocations` and `senses`. Their shapes still need the owner's approval
-  (#517).
+  `collocations` and `senses`, their shapes approved (#517): built.
 - **Confusables as word-order tiles:** "2–3, never a needed tile". One
   equal to a tile the answer needs is an error, and a missing "why" is a
-  warning (#514).
+  warning (#514): built.
 - **The relicensing ADR** is written "In the relicensing issue" (#510): ADR-0040, built.
 
 ---
@@ -2633,8 +2735,7 @@ fact carries its own text in every language it is written in. It has
 | `contrast` | no | A language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners who speak that language, and `text` must have an entry for it. |
 | `tags` | no | What the fact is about, e.g. `[script]`, `[pronunciation]`, `[grammar]`, `[history]`. |
 | `source` | no | Where the fact can be checked. Give one whenever the fact is not common knowledge. |
-
-**Decided, not yet built** (owner: "Yes, a fact can name cards"): a fact can name the cards it is about, so it shows beside them. See [Card data](#card-data).
+| `cards` | no | The cards the fact is about, by id, `["hi-0042"]` (owner: "Yes, a fact can name cards"; #516), so it can show beside them. Each is a card of the language, listed once. |
 
 ### Rules
 

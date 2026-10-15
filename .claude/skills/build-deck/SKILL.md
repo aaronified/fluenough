@@ -30,14 +30,14 @@ Before you start:
   (confusables, root word, synonyms, antonyms, minimal pairs and the rest) is
   never a validator error, so **you, the builder, must add it whenever it is
   available**, and reviewers check it (owner, 2026-10-13, #506; review
-  pipeline work is #508). The new fields (`confusables` and the rest) arrive
-  with their format and validator change (fields first), and DECK-FORMAT does
-  not allow them yet. Until then, fill what DECK-FORMAT allows (reading, ipa,
-  alt_target, pos, gender, examples, notes, bases, pair, picture where it
-  fits), at least 2 examples on a word card, and do not set modes to
-  restrict a card to one drill unless DECK-FORMAT requires it. When a field
-  lands, DECK-FORMAT and this list are updated in the same change. New text
-  for the learner goes in each native layer.
+  pipeline work is #508). Fill what DECK-FORMAT allows (reading, ipa,
+  alt_target, pos, gender, examples, notes, bases, pair, picture, and the
+  card data: synonyms, antonyms, confusables, register, forms,
+  collocations, senses, frequency where it fits), at least 2 examples on a
+  word card, and do not set modes to restrict a card to one drill unless
+  DECK-FORMAT requires it. When a field lands, DECK-FORMAT and this list
+  are updated in the same change. New text for the learner goes in each
+  native layer.
 - Closed groups (articles, pronouns, genders, cases and postpositions,
   demonstratives, question words, conjunctions, days, months, number words
   1-10, colours) need a set card that introduces the whole set, "Teach only"
@@ -98,10 +98,18 @@ Before you start:
      `gender`, one of the language's classes ("Card data", "Gender"): hi
      `"m"`/`"f"`; mr, gu, kn `"m"`/`"f"`/`"n"`; te `"mahat"`/`"amahat"`; es
      `"m"`/`"f"`. In bn, as and ja leave `gender` out. It goes on the core
-     card, never in a layer. The validator checks nouns against these
-     classes (`DECIDED_GENDERS`, or the path's `genders` once it has one).
-     Whether to add `genders` to the paths yet is open and the owner's to
-     decide (DECK-FORMAT, "Gender"), so do not add them yourself.
+     card, never in a layer. The validator checks nouns against the
+     path's `genders`.
+   - Card data, whenever it is available ("Card data"), on the core card
+     with its text in each layer by id: a word that is its own root gets
+     `bases: "self"`; `synonyms` and `antonyms` name a card by `ref`, or
+     give the `word` and `reading` with its meaning in the layer;
+     `confusables` (2 to 3 on a sentence put in order, none a tile the
+     answer needs, each with its `kind` and a `why` in the layer);
+     `register`; `forms` (a label in the layer for kind `other`);
+     `collocations`; `senses` (each with its `native` in the layer). Data
+     taken from outside names its `source` per item. Leave out `frequency`
+     until the Wikipedia count is built.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep

@@ -114,6 +114,84 @@ class CardBase {
   final bool wiktionary;
 }
 
+/// An item of a card's data (DECK-FORMAT.md, Card data): a synonym or an
+/// antonym (#513), a confusable (#514), a form or a collocation (#517). It
+/// names a card of the language ([ref]) or is a word written in full
+/// ([word]) with its reading; its [text] is in the learner's language.
+class CardItem {
+  const CardItem({
+    required this.id,
+    this.ref,
+    this.word,
+    this.reading,
+    this.ipa,
+    this.kind,
+    this.source,
+    this.text,
+    this.note,
+  });
+
+  /// Unique among the card's items of its field; the layer names it by it.
+  final String id;
+
+  /// The card it names; null for a word written in full.
+  final String? ref;
+
+  /// The word written in full; null for an item given by [ref].
+  final String? word;
+
+  /// [word] romanised.
+  final String? reading;
+
+  /// [word] in the IPA (a form's).
+  final String? ipa;
+
+  /// A confusable's kind (`form`, `word`, `sound`, `mark`) or a form's
+  /// (`plural`, `oblique`, `oblique-plural`, `feminine`, `masculine`,
+  /// `other`); null for any other item.
+  final String? kind;
+
+  /// Where the item was taken from, named per item (#506).
+  final String? source;
+
+  /// Its text in the learner's language: a word's meaning, a confusable's
+  /// why, a form's line. Null when the layer gives none.
+  final String? text;
+
+  /// A collocation's note beside its meaning.
+  final String? note;
+}
+
+/// One of a word's separate meanings (#517), with its own examples. The
+/// card's [Card.native] stays its main meaning.
+class CardSense {
+  const CardSense({
+    required this.id,
+    required this.native,
+    this.pos,
+    this.source,
+    this.examples = const <CardExample>[],
+  });
+
+  final String id;
+
+  /// The sense's meaning in the learner's language.
+  final String native;
+  final String? pos;
+  final String? source;
+  final List<CardExample> examples;
+}
+
+/// A word's rank in a count of its language (#516), and where it was
+/// counted.
+class CardFrequency {
+  const CardFrequency({required this.rank, required this.source});
+
+  /// From 1, the most frequent.
+  final int rank;
+  final String source;
+}
+
 /// A card written in another deck, listed in this one by its id (ADR-0018).
 ///
 /// A card id names a word of the language learned, not a deck or a course,
@@ -160,11 +238,12 @@ class CardRef {
   /// [written] as this ref lists it in [deckId]. A deck taught from the
   /// language [written] was written for takes the card's own native-side
   /// fields where the ref gives none. A deck taught from another language
-  /// takes none of its notes, tags, alternative meanings, examples or
-  /// Wiktionary mark, and is null when the ref gives no [native]. The card's
-  /// [reading], [ipa] and [modes], which belong to the word, come across
-  /// either way unless the ref gives its own, and so do its phrasebook mark,
-  /// bases, rules and rule cell, which a ref cannot give.
+  /// takes none of its notes, tags, alternative meanings, examples, card
+  /// data with text (items and senses) or Wiktionary mark, and is null when
+  /// the ref gives no [native]. The card's [reading], [ipa] and [modes],
+  /// which belong to the word, come across either way unless the ref gives
+  /// its own, and so do its phrasebook mark, bases, rules, rule cell,
+  /// register and frequency, which a ref cannot give.
   Card? resolve(
     Card written, {
     required String deckId,
@@ -198,6 +277,15 @@ class CardRef {
       rules: written.rules,
       wiktionary: wiktionary ?? (sameNative && written.wiktionary),
       rule: written.rule,
+      ownRoot: written.ownRoot,
+      register: written.register,
+      frequency: written.frequency,
+      synonyms: sameNative ? written.synonyms : const <CardItem>[],
+      antonyms: sameNative ? written.antonyms : const <CardItem>[],
+      collocations: sameNative ? written.collocations : const <CardItem>[],
+      confusables: sameNative ? written.confusables : const <CardItem>[],
+      forms: sameNative ? written.forms : const <CardItem>[],
+      senses: sameNative ? written.senses : const <CardSense>[],
     );
   }
 }
@@ -235,6 +323,15 @@ class Card {
     this.rules = const <String>[],
     this.wiktionary = false,
     this.rule,
+    this.ownRoot = false,
+    this.register,
+    this.frequency,
+    this.synonyms = const <CardItem>[],
+    this.antonyms = const <CardItem>[],
+    this.collocations = const <CardItem>[],
+    this.confusables = const <CardItem>[],
+    this.forms = const <CardItem>[],
+    this.senses = const <CardSense>[],
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -316,6 +413,33 @@ class Card {
 
   /// For a rules table's cell, its rule and word; null for any other card.
   final RuleCell? rule;
+
+  // Card data (DECK-FORMAT.md, Card data), read for the question engine.
+
+  /// Whether the word is its own root, `bases: self` (#513).
+  final bool ownRoot;
+
+  /// How formal or rude the word is (#517): `formal`, `neutral`,
+  /// `informal`, `slang` or `offensive`.
+  final String? register;
+
+  final CardFrequency? frequency;
+
+  /// Words of like and of opposite meaning (#513).
+  final List<CardItem> synonyms;
+  final List<CardItem> antonyms;
+
+  /// Words it often goes with (#517).
+  final List<CardItem> collocations;
+
+  /// The shared wrong alternatives (#514).
+  final List<CardItem> confusables;
+
+  /// Its inflected forms (#517).
+  final List<CardItem> forms;
+
+  /// Its separate meanings (#517), each the layer gives a meaning.
+  final List<CardSense> senses;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
