@@ -246,12 +246,13 @@ const _coreCardFields = {
 };
 
 /// A core card's item lists (DECK-FORMAT.md, Card data), and each item's
-/// fields: a card by `ref`, or a word written in full.
+/// fields: a card by `ref`, or a word written in full. Every item may take
+/// `ipa` and `source` (owner, 2026-10-15, #506).
 const _itemFields = <String, Set<String>>{
-  'synonyms': {'id', 'word', 'ref', 'reading', 'source'},
-  'antonyms': {'id', 'word', 'ref', 'reading', 'source'},
-  'collocations': {'id', 'word', 'ref', 'reading', 'source'},
-  'confusables': {'id', 'word', 'ref', 'reading', 'kind'},
+  'synonyms': {'id', 'word', 'ref', 'reading', 'ipa', 'source'},
+  'antonyms': {'id', 'word', 'ref', 'reading', 'ipa', 'source'},
+  'collocations': {'id', 'word', 'ref', 'reading', 'ipa', 'source'},
+  'confusables': {'id', 'word', 'ref', 'reading', 'ipa', 'kind', 'source'},
   'forms': {'id', 'kind', 'word', 'reading', 'ipa', 'source'},
 };
 const _senseFields = {'id', 'pos', 'examples', 'source'};

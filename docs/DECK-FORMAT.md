@@ -1063,6 +1063,10 @@ them, and their absence is never an error.
   `reading` (owner: "Yes, with reading + meaning"). An item taken from
   outside names its `source` (owner: "Per item"). The meaning of a `word`
   is in each layer, by id; a `ref` takes its card's meaning.
+- **`ipa` and `source` on every item** (owner, 2026-10-15: "Yes, all items
+  may take ipa and source"): synonyms, antonyms, collocations, confusables
+  and forms all accept both. `ipa` is for a word written in full, as
+  `reading` is; a `ref` takes its card's.
 
   ```yaml
   # core
@@ -1076,8 +1080,9 @@ them, and their absence is never an error.
 - **Checked when present:** each `id` starts with a letter, `[a-z0-9-]+`,
   once in its list; an item gives `word` or `ref`, not both; a `ref` is a
   card of the language, not the card itself; a `word` has its `reading` in
-  a script that needs one; a layer key that is no item of the core card is
-  an error, and a `word` with no meaning in a layer is a warning.
+  a script that needs one; `reading` and `ipa` are on a `word` only, never
+  on a `ref`; a layer key that is no item of the core card is an error, and
+  a `word` with no meaning in a layer is a warning.
 
 ### Confusables
 
@@ -1086,7 +1091,8 @@ shared list", for word-order extra tiles, known mistakes and listening in
 context). Shape (owner, approval 3: "Approve as proposed"): an `id`, a
 `word` or card `ref`, its `reading` where the script needs one, a `kind`
 (`form`, `word`, `sound` or `mark`), and an optional `why` in the layer, by
-id, as notes are:
+id, as notes are. Like every item, it may also give `ipa` and `source`
+(owner, 2026-10-15):
 
 ```yaml
 confusables:
@@ -1143,7 +1149,7 @@ by id, and none is ever an error when absent.
   table already has as a cell of the card's row is warned of: the table is
   the source.
 - **`collocations`:** words the word often goes with, `{ id, word or ref,
-  reading?, source? }`, checked as [synonyms](#root-word-synonyms-and-antonyms)
+  reading?, ipa?, source? }`, checked as [synonyms](#root-word-synonyms-and-antonyms)
   are. A layer gives a `word`'s meaning, as text or `{ native, note }`; a
   `word` with none is warned of.
 - **`senses`:** separate meanings, `{ id, pos?, examples?, source? }`, each

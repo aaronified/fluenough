@@ -108,7 +108,8 @@ Before you start:
      answer needs, each with its `kind` and a `why` in the layer);
      `register`; `forms` (a label in the layer for kind `other`);
      `collocations`; `senses` (each with its `native` in the layer). Data
-     taken from outside names its `source` per item. Leave out `frequency`
+     taken from outside names its `source` per item, and any item may
+     give its `ipa` (a `word` only, never a `ref`). Leave out `frequency`
      until the Wikipedia count is built.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)

@@ -160,11 +160,13 @@ FILLED_LANGUAGES: set[str] = set()
 # list is a core card's, each item with an id by which each layer gives its
 # text; an item is a card of the language by `ref`, or a word written in
 # full with its reading.
+# Every item may take `ipa` and `source` (owner, 2026-10-15, #506: "Yes,
+# all items may take ipa and source").
 ITEM_KEYS = {
-    "synonyms": {"id", "word", "ref", "reading", "source"},
-    "antonyms": {"id", "word", "ref", "reading", "source"},
-    "collocations": {"id", "word", "ref", "reading", "source"},
-    "confusables": {"id", "word", "ref", "reading", "kind"},
+    "synonyms": {"id", "word", "ref", "reading", "ipa", "source"},
+    "antonyms": {"id", "word", "ref", "reading", "ipa", "source"},
+    "collocations": {"id", "word", "ref", "reading", "ipa", "source"},
+    "confusables": {"id", "word", "ref", "reading", "ipa", "kind", "source"},
     "forms": {"id", "kind", "word", "reading", "ipa", "source"},
 }
 CARD_DATA = (*ITEM_KEYS, "senses")
@@ -1140,8 +1142,9 @@ def check_items(r: Report, where: str, key: str, items: object, cid: str | None,
                 r.base_refs.append((ref, where, f"{p}.ref"))
                 if key == "confusables" and tiles is not None:
                     r.tile_refs.append((ref, where, p, tiles))
-            if "reading" in item:
-                r.error(where, f"{p}.reading is only for a word written in full")
+            for k in ("reading", "ipa"):
+                if k in item:
+                    r.error(where, f"{p}.{k} is only for a word written in full")
             continue
         word = item.get("word")
         if not _is_str(word):

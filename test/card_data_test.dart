@@ -21,13 +21,13 @@ const _data = '''
     register: "neutral"
     frequency: { rank: 120, source: "te.wikipedia.org, 2026-10" }
     synonyms:
-      - { id: "abode", word: "నివాసం", reading: "nivāsaṃ", source: "Wiktionary" }
+      - { id: "abode", word: "నివాసం", reading: "nivāsaṃ", ipa: "niʋaːsam", source: "Wiktionary" }
     antonyms:
       - { id: "out", ref: "zz-9004" }
     collocations:
       - { id: "go", word: "వెళ్ళు", reading: "veḷḷu" }
     confusables:
-      - { id: "stem", word: "ఇంటి", reading: "iṇṭi", kind: "form" }
+      - { id: "stem", word: "ఇంటి", reading: "iṇṭi", ipa: "iɳʈi", kind: "form", source: "Wiktionary" }
     forms:
       - { id: "pl", kind: "plural", word: "ఇళ్ళు", reading: "iḷḷu" }
     senses:
@@ -82,7 +82,11 @@ void main() {
     expect(house.collocations.map((i) => (i.text, i.note)), [
       ('to go', 'Home-ward.'),
     ]);
+    expect(house.synonyms.single.ipa, 'niʋaːsam');
+    // Every item may take ipa and source (owner, 2026-10-15, #506).
     expect(house.confusables.single.kind, 'form');
+    expect(house.confusables.single.ipa, 'iɳʈi');
+    expect(house.confusables.single.source, 'Wiktionary');
     expect(
       house.confusables.single.text,
       'ఇంటి (iṇṭi) is the stem before an ending.',
