@@ -11,7 +11,11 @@ it lists its name, icon and script; the native languages it is taught from;
 its path's order, and each unit's planned and counted words, so the
 language picker can show completeness toward B1 before a download; and
 each file's path, size, SHA-256, schema and kind, and how many proposals
-reviewers have made in it (ADR-0038). Each file's `content_sha256` is the
+reviewers have made in it (ADR-0038); and, under `media`, the recordings
+and images its cards name (#518, #523), each with its path, size, SHA-256
+and kind, `audio` or `image`, which the language's size counts. They are
+listed apart from `files` so that an app too old to read them passes them
+by. Each file's `content_sha256` is the
 SHA-256 of the file with its proposals and its cards' `checked_by` taken
 out, so that a learner's phone is not offered an update when only a
 proposal or a reviewer's sign-off changed (#444, #449).
@@ -184,6 +188,17 @@ def _file_entry(path: Path, rep: vd.Report | None) -> dict:
     return entry
 
 
+def _media_entries(directory: Path) -> list[dict]:
+    """The recordings and images in a language's folders (#518, #523)."""
+    entries = []
+    for kind, (folder, ending) in vd.MEDIA.items():
+        for p in sorted((directory / folder).glob(f"*{ending}")):
+            data = p.read_bytes()
+            entries.append({"path": _rel(p), "size": len(data),
+                            "sha256": hashlib.sha256(data).hexdigest(), "kind": kind})
+    return entries
+
+
 def _language_block(files: list[Path]) -> dict:
     """The language block of the first deck that has one."""
     for p in files:
@@ -231,7 +246,8 @@ def build(reports: list[vd.Report] | None = None) -> dict:
             language["script"] = block["script"]
         language["script_decks"] = bool(plan and plan.alphabet)
         language["natives"] = [{"code": n, "name": lang.native_name(n)} for n in natives]
-        language["size"] = sum(e["size"] for e in entries)
+        media = _media_entries(d)
+        language["size"] = sum(e["size"] for e in entries + media)
         if plan is not None:
             language["path"] = [core for u in plan.units for core in u.decks]
             units = []
@@ -255,6 +271,8 @@ def build(reports: list[vd.Report] | None = None) -> dict:
                 units.append(unit)
             language["units"] = units
         language["files"] = entries
+        if media:
+            language["media"] = media
         out.append(language)
     return {
         "version": INDEX_VERSION,
@@ -278,7 +296,7 @@ def render(index: dict) -> str:
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        keys = [k for k in language if k not in ("files", "units")]
+        keys = [k for k in language if k not in ("files", "units", "media")]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')
         if "units" in language:
@@ -287,11 +305,15 @@ def render(index: dict) -> str:
             for j, unit in enumerate(units):
                 lines.append(f"        {dump(unit)}{',' if j < len(units) - 1 else ''}")
             lines.append("      ],")
-        lines.append('      "files": [')
-        files = language["files"]
-        for j, f in enumerate(files):
-            lines.append(f"        {dump(f)}{',' if j < len(files) - 1 else ''}")
-        lines.append("      ]")
+        for key in ("files", "media"):
+            if key not in language:
+                continue
+            last = key == "media" or "media" not in language
+            lines.append(f'      "{key}": [')
+            files = language[key]
+            for j, f in enumerate(files):
+                lines.append(f"        {dump(f)}{',' if j < len(files) - 1 else ''}")
+            lines.append("      ]" + ("" if last else ","))
         lines.append("    }" + ("," if i < len(index["languages"]) - 1 else ""))
     lines.append("  ]")
     lines.append("}")

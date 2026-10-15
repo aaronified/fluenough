@@ -21,6 +21,7 @@ import 'app/system_settings.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/system_speech_engine.dart';
+import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
 import 'core/updates/apk_install.dart';
@@ -66,6 +67,7 @@ Future<void> main() async {
         progress: storage.progress,
         settings: storage.settings,
         tts: SystemTtsEngine(),
+        clips: SystemClipPlayer(),
         speech: SystemSpeechEngine(),
         volume: SystemVolumeMonitor(),
         soundCheck: SystemSoundCheck(),

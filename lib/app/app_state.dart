@@ -19,6 +19,7 @@ import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
+import '../core/tts/clip_player.dart';
 import '../core/tts/tts_engine.dart';
 import '../core/tts/volume_monitor.dart';
 import '../core/updates/apk_install.dart';
@@ -32,6 +33,7 @@ import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
 import '../core/decks/deck_index.dart';
 import 'app_log.dart';
+import 'card_media.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'deck_import.dart';
@@ -145,6 +147,8 @@ class AppState extends ChangeNotifier {
     required DeckCatalog catalog,
     required this.progress,
     required this._tts,
+    this._clips = const NullClipPlayer(),
+    this._media,
     this._speech = const NullSpeechEngine(),
     this.soundCheck = const NullSoundCheck(),
     this.features = const FeatureRegistry.shipped(),
@@ -236,6 +240,8 @@ class AppState extends ChangeNotifier {
   factory AppState.test({
     DeckSource? decks,
     TtsEngine tts = const NullTtsEngine(),
+    ClipPlayer clips = const NullClipPlayer(),
+    CardMedia media = const NoCardMedia(),
     SpeechEngine speech = const NullSpeechEngine(),
     SoundCheckEngine soundCheck = const NullSoundCheck(),
     ProgressStore? progress,
@@ -269,6 +275,8 @@ class AppState extends ChangeNotifier {
       ),
       progress: progress ?? MemoryProgress(),
       tts: tts,
+      clips: clips,
+      media: media,
       speech: speech,
       soundCheck: soundCheck,
       features: features,
@@ -403,6 +411,20 @@ class AppState extends ChangeNotifier {
   final DeckDownloads? deckDownloads;
 
   final TtsEngine _tts;
+
+  /// Plays a card's own recording (#518).
+  final ClipPlayer _clips;
+
+  final CardMedia? _media;
+
+  /// Where cards' recordings and images are on the phone: those downloaded
+  /// with their decks, unless one was given.
+  CardMedia get media => _media ?? deckDownloads?.files ?? const NoCardMedia();
+
+  /// The file on the phone of [path], a card's recording or image, or null
+  /// where there is none.
+  String? mediaFile(String? path) =>
+      path == null ? null : media.localPath(path);
   final SpeechEngine _speech;
 
   /// The microphone and speaker, for the first launch's sound check (#89).
@@ -1066,7 +1088,33 @@ class AppState extends ChangeNotifier {
     }
   }
 
-  Future<void> stopSpeaking() => _tts.stop();
+  /// Says [card]'s target in [language]: its own recording, a person's
+  /// voice, where it has one on the phone (#518), else the phone's voice
+  /// ([speak]). A recording is only ever of exactly the card's text, so a
+  /// sentence with none is always spoken. A recording that cannot play is
+  /// logged, and the phone's voice says the card instead.
+  Future<String?> speakCard(
+    Card card,
+    LanguageInfo language, {
+    bool slower = false,
+  }) async {
+    if (!settings.soundOn) return null;
+    if (mediaFile(card.audio) case final file?) {
+      try {
+        // "Slower" plays a recording at 0.7 times its speed.
+        await _clips.play(file, rate: slower ? 0.7 : 1);
+        return null;
+      } catch (e) {
+        log.warning('Recording error: ${card.id} ${e.runtimeType}');
+      }
+    }
+    return speak(card.target, language, slower: slower);
+  }
+
+  Future<void> stopSpeaking() async {
+    await _clips.stop();
+    await _tts.stop();
+  }
 
   // ---------------------------------------------------------------------------
   // Profiles

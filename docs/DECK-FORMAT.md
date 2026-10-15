@@ -292,8 +292,8 @@ The file sits in `decks/<language.code>/`. A core no layer names is warned
 of: no learner is taught it.
 
 **A core card** has the language side only. It may give `id`, `target`,
-`reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio`,
-`examples`, `modes`, `picture`, `notes` (the core form, below),
+`reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio` (with
+`audio_credit`), `examples`, `modes`, `picture`, `notes` (the core form, below),
 `phrasebook`, `bases` and `rules`. It may **not** give `native`,
 `alt_native` or `wiktionary`, which are the native language's and go in each
 layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
@@ -567,7 +567,8 @@ cards:
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
-| `audio` | no | Asset path or URL overriding TTS for this card. |
+| `audio` | no | The card's own recording, played in place of text-to-speech: `"decks/hi/audio/hi-0001.opus"`, a file shipped with the deck, with its `audio_credit`. See [A card's own recording](#a-cards-own-recording-audio). |
+| `audio_credit` | with a shipped `audio` | `{ source, license, credit }`: the file it was made from, its licence and its speaker. |
 | `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases) and `source`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
 | `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). `"self"` on a word that is its own root ([Card data](#root-word-synonyms-and-antonyms)). |
@@ -901,6 +902,44 @@ the entry exists:
 - **Mark only an entry you have seen:** the word's own page, with a section
   for the language. A tool will mark them from Wiktionary's extracts; until
   then, check each one.
+
+### A card's own recording: `audio`
+
+Owner, 2026-10-13 (#518): "No stream, download and ship with deck". A card
+may have a recording of a person saying it, played in place of the phone's
+text-to-speech voice. It is an Opus file beside the deck, named by the
+card's id, and it downloads with the deck, so it plays offline:
+
+```yaml
+  - id: "hi-0001"
+    target: "घर"
+    audio: "decks/hi/audio/hi-0001.opus"
+    audio_credit: { source: "https://commons.wikimedia.org/wiki/File:Hi-घर.ogg", license: "CC-BY-SA-4.0", credit: "A. Speaker" }
+```
+
+- **Exactly the card's text** (owner: "If the phrase itself exists then the
+  sound can be used"). A recording is only ever of the word or phrase the
+  card teaches, never joined from recordings of its words. Sentences,
+  examples, and any card without its own recording are spoken by
+  text-to-speech ("Sentences will still be tts").
+- **The file** is `decks/<lang>/audio/<card id>.opus`, and `audio` names it
+  by that path. It belongs to the word: on a core card or a single-file
+  card, never in a layer, and a ref cannot give it. Every file in the
+  folder is named by its card; a file no card names is an error.
+- **`audio_credit`** is required with it: `source`, the file it was made
+  from (its Wikimedia Commons page); `license`, its licence as an SPDX-like
+  id; and `credit`, the speaker as the source credits them. The licence is
+  one that can ship in a CC BY-SA 4.0 deck
+  ([ADR-0040](adr/0040-decks-are-cc-by-sa.md)): `CC0-1.0`, `public-domain`,
+  or `CC-BY` or `CC-BY-SA` from 2.0 to 4.0, ported versions too
+  (`CC-BY-SA-3.0-DE`). GFDL alone, NC and ND cannot. The deck screen shows
+  each credit, and Settings' Sources screen each language's.
+- **Reviewers judge every recording** (owner: "All, reviewers judge"): one
+  that is not a native speaker, or not the word, is removed with its file.
+- **`tools/import_wiktionary.py`** fills it from the recordings Wiktionary
+  links, converted with `ffmpeg` (see `tools/README.md`).
+- An `audio` that is an asset path or a URL, with no credit, is still read,
+  but not played.
 
 ### Sentences and their rules: `rules`
 
@@ -2254,6 +2293,11 @@ downloads is listed in `decks/index.json`:
   in reviewer mode when `sha256` does (#444, #449). A deck's `tags` are
   not taken out, so a deck becoming `reviewed` is an update. Every
   download is still checked against `size` and `sha256`.
+- **`media`**: every [recording](#a-cards-own-recording-audio) in the
+  language's folders, with its path, size, SHA-256 and `kind`, `"audio"`.
+  They are listed apart from `files`, so that an app too old to read them
+  passes them by, and the language's `size` counts them. They download
+  after the decks, and are checked against their hash alone.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 

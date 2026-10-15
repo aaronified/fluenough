@@ -182,6 +182,26 @@ class CardSense {
   final List<CardExample> examples;
 }
 
+/// Where a card's own recording or image came from (#518, #523): the file
+/// it was made from, its licence and whom to credit. Shown on the deck
+/// screen and the Sources screen.
+class MediaCredit {
+  const MediaCredit({
+    required this.source,
+    required this.license,
+    required this.credit,
+  });
+
+  /// The file it was made from, such as its Wikimedia Commons page.
+  final String source;
+
+  /// Its licence, such as `CC-BY-SA-4.0`.
+  final String license;
+
+  /// Whom to credit: the speaker, or the photographer.
+  final String credit;
+}
+
 /// A word's rank in a count of its language (#516), and where it was
 /// counted.
 class CardFrequency {
@@ -267,6 +287,7 @@ class CardRef {
       tags: tags ?? (sameNative ? written.tags : const <String>[]),
       notes: notes ?? (sameNative ? written.notes : const <CardNote>[]),
       audio: written.audio,
+      audioCredit: written.audioCredit,
       examples:
           examples ?? (sameNative ? written.examples : const <CardExample>[]),
       modes: modes ?? written.modes,
@@ -314,6 +335,7 @@ class Card {
     this.tags = const <String>[],
     this.notes = const <CardNote>[],
     this.audio,
+    this.audioCredit,
     this.examples = const <CardExample>[],
     this.modes = const <DrillMode>{},
     this.pair,
@@ -377,8 +399,13 @@ class Card {
   /// [NoteKind.note].
   final List<CardNote> notes;
 
-  /// Asset path or URL overriding TTS for this card.
+  /// Its own recording, played in place of text-to-speech: a file shipped
+  /// with the deck, `decks/hi/audio/hi-0001.opus` (#518), downloaded with
+  /// it. An asset path or a URL is read too, and not played yet.
   final String? audio;
+
+  /// Where [audio] came from, when it is a file shipped with the deck.
+  final MediaCredit? audioCredit;
 
   final List<CardExample> examples;
 

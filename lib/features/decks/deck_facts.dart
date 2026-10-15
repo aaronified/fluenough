@@ -117,6 +117,12 @@ class DeckFacts extends StatelessWidget {
     final tag = entry.language.ttsTag;
     final origin = deck.source;
     final authors = deck.authors;
+    // Each recording's credit (#518): whom, and its licence.
+    final recordings = <String>[
+      for (final card in deck.cards)
+        if (card.audioCredit case final credit?)
+          l10n.deckMediaCredit(card.target, credit.credit, credit.license),
+    ];
 
     final facts = <(String, String, bool)>[
       (l10n.deckLicence, deck.license, false),
@@ -134,6 +140,8 @@ class DeckFacts extends StatelessWidget {
           authors.map((a) => a.name).join(l10n.commonListSeparator),
           false,
         ),
+      if (recordings.isNotEmpty)
+        (l10n.deckRecordings, recordings.join('\n'), false),
       (
         l10n.deckVoice,
         switch (state.voiceStatus(entry.language)) {

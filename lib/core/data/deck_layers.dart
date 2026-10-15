@@ -81,6 +81,7 @@ class CoreWritten extends CoreCard {
     this.gender,
     this.tags = const <String>[],
     this.audio,
+    this.audioCredit,
     this.examples = const <CoreExample>[],
     this.modes = const <DrillMode>{},
     this.picture,
@@ -103,6 +104,7 @@ class CoreWritten extends CoreCard {
   final String? gender;
   final List<String> tags;
   final String? audio;
+  final MediaCredit? audioCredit;
   final List<CoreExample> examples;
   final Set<DrillMode> modes;
   final String? picture;
@@ -665,6 +667,7 @@ class _Merge {
       tags: card.tags,
       notes: notes,
       audio: card.audio,
+      audioCredit: card.audioCredit,
       examples: examples(card.examples, entry.examples, '$path.examples'),
       modes: card.modes,
       // Pair notes are the one source of pairs in a core (DECK-FORMAT.md,
