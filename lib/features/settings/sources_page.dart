@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
+import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -67,17 +68,78 @@ enum ContentCredit {
   }
 }
 
+/// The sources [card]'s data names, item by item (#506, #518): its
+/// examples', its items' and senses', its frequency's, and its recording's.
+Iterable<String> cardSources(Card card) sync* {
+  for (final example in card.examples) {
+    if (example.source case final source?) yield source;
+  }
+  for (final items in <List<CardItem>>[
+    card.synonyms,
+    card.antonyms,
+    card.collocations,
+    card.confusables,
+    card.forms,
+  ]) {
+    for (final item in items) {
+      if (item.source case final source?) yield source;
+    }
+  }
+  for (final sense in card.senses) {
+    if (sense.source case final source?) yield source;
+  }
+  if (card.frequency case final frequency?) yield frequency.source;
+  if (card.audioCredit case final credit?) yield credit.source;
+}
+
 /// The projects [decks] use, in [ContentCredit]'s order: those a deck's own
-/// `source` names. Each item's own `source` joins this when the card data
-/// carries one (#518).
-List<ContentCredit> creditsOf(List<DeckEntry> decks) => <ContentCredit>[
-  for (final credit in ContentCredit.values)
-    if (decks.any((entry) {
-      final source = entry.deck.source;
-      return source != null && credit.namedIn(source);
-    }))
-      credit,
-];
+/// `source` names, or any item of its cards' data names (#518).
+List<ContentCredit> creditsOf(List<DeckEntry> decks) {
+  final sources = <String>{
+    for (final entry in decks) ...<String>[
+      ?entry.deck.source,
+      for (final card in entry.deck.cards) ...cardSources(card),
+    ],
+  };
+  return <ContentCredit>[
+    for (final credit in ContentCredit.values)
+      if (sources.any(credit.namedIn)) credit,
+  ];
+}
+
+/// One credit of a language's recordings and pictures: whom, and the
+/// licence.
+typedef MediaCreditLine = ({String credit, String license});
+
+/// The credits of the recordings that ship with [decks] (#518), by
+/// language, each credit and licence once. Languages with none are left
+/// out.
+List<({LanguageInfo language, List<MediaCreditLine> lines})> mediaCreditsOf(
+  List<DeckEntry> decks,
+) {
+  final byLanguage =
+      <String, ({LanguageInfo language, Set<MediaCreditLine> lines})>{};
+  for (final entry in decks) {
+    for (final card in entry.deck.cards) {
+      for (final credit in mediaCredits(card)) {
+        byLanguage
+            .putIfAbsent(
+              entry.language.code,
+              () => (language: entry.language, lines: <MediaCreditLine>{}),
+            )
+            .lines
+            .add((credit: credit.credit, license: credit.license));
+      }
+    }
+  }
+  return <({LanguageInfo language, List<MediaCreditLine> lines})>[
+    for (final (:language, :lines) in byLanguage.values)
+      (language: language, lines: lines.toList()),
+  ];
+}
+
+/// The credits of [card]'s own files: its recording's.
+List<MediaCredit> mediaCredits(Card card) => <MediaCredit>[?card.audioCredit];
 
 /// The decks' licence and credits, then where their texts come from, a row
 /// per language and a line per source, such as the books the Bengali
@@ -93,6 +155,7 @@ class SourcesPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final decks = AppScope.of(context).decks;
     final sources = sourcesOf(decks);
+    final media = mediaCreditsOf(decks);
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.settingsSources),
@@ -122,6 +185,23 @@ class SourcesPage extends StatelessWidget {
                 ),
             ],
           ),
+          if (media.isNotEmpty) ...<Widget>[
+            const SizedBox(height: 16),
+            GroupedList.settings(
+              header: l10n.sourcesMedia,
+              children: <Widget>[
+                for (final (:language, :lines) in media)
+                  GroupedTile(
+                    leading: const Icon(Icons.perm_media_outlined),
+                    title: language.name,
+                    subtitle: <String>[
+                      for (final line in lines)
+                        l10n.sourcesMediaLine(line.credit, line.license),
+                    ].join('\n'),
+                  ),
+              ],
+            ),
+          ],
           if (sources.isNotEmpty) const SizedBox(height: 16),
           if (sources.isNotEmpty)
             GroupedList.settings(

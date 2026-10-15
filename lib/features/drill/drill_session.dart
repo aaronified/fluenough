@@ -593,7 +593,7 @@ class DrillSession extends ChangeNotifier {
     _playing = true;
     notifyListeners();
     try {
-      await _state.speak(item.card.target, deck.language, slower: _slower);
+      await _state.speakCard(item.card, deck.language, slower: _slower);
     } finally {
       if (!_disposed && _index == playingIndex && _playing) {
         _playing = false;
@@ -602,10 +602,11 @@ class DrillSession extends ChangeNotifier {
     }
   }
 
-  /// Speaks [card]'s target once, at the learner's rate: a word tile of a
-  /// match, tapped while its speaker button is on (ADR-0032).
-  Future<void> playCard(Card card) => _state.speak(
-    card.target,
+  /// Speaks [card]'s target once, at the learner's rate, in its own
+  /// recording where it has one (#518): a word tile of a match, tapped
+  /// while its speaker button is on (ADR-0032).
+  Future<void> playCard(Card card) => _state.speakCard(
+    card,
     _state.deckOf(card)?.language ?? deck.language,
     slower: _slower,
   );

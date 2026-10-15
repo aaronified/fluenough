@@ -112,6 +112,7 @@ CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
+    "audio_credit",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -146,7 +147,7 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
-                  "senses"}
+                  "senses", "audio_credit"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
 # A word card has at least this many examples (owner, #506: "At least 2").
@@ -178,6 +179,17 @@ FREQUENCY_KEYS = {"rank", "source"}
 # A confusable on a sentence put in order is a wrong tile: it has 2 to 3
 # (owner, #506: "2–3, never a needed tile").
 CONFUSABLE_TILES = range(2, 4)
+# A card's own recording (#518) and image (#523), shipped with the deck:
+# the field, its folder in the language's directory, and the file's ending.
+# Each file is named by its card's id and carries its credit in
+# `<field>_credit`.
+MEDIA = {"audio": ("audio", ".opus")}
+MEDIA_CREDIT_KEYS = {"source", "license", "credit"}
+# The licences a recording or an image may have to ship in a CC BY-SA 4.0
+# deck (ADR-0040): CC0, the public domain, CC BY and CC BY-SA 2.0 to 4.0,
+# ported versions too (`CC-BY-SA-3.0-DE`). GFDL alone, NC and ND cannot.
+MEDIA_LICENSE_RE = re.compile(r"CC0-1\.0|public-domain|CC-BY(?:-SA)?-(?:2\.0|2\.5|3\.0|4\.0)"
+                              r"(?:-[A-Z]{2,3})?")
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "wiktionary")
 LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
@@ -473,6 +485,9 @@ class Report:
     card_rules: list[tuple[str, str]] = field(default_factory=list)
     # The regions a note names: (region id, where, the note's place).
     note_regions: list[tuple[str, str, int]] = field(default_factory=list)
+    # The recordings and images its cards name (#518, #523), as paths in the
+    # repository: `decks/hi/audio/hi-0001.opus`.
+    media: list[str] = field(default_factory=list)
     # Each noun card's gender, or None without one: (gender, where) (#512).
     noun_genders: list[tuple[str | None, str]] = field(default_factory=list)
     # A layer: the ids of its core's cards and refs whose entry gives native.
@@ -696,6 +711,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         r.noun_genders.append((gender if isinstance(gender, str) else None, where))
     notes = check_notes(r, where, card.get("notes"), cid, lang, script, core=core)
     _check_optional_text(r, where, card, "audio")
+    for field in MEDIA:
+        check_media(r, where, card, field, cid, lang)
 
     pos = card.get("pos")
     if pos is not None and pos not in POS:
@@ -1074,6 +1091,86 @@ def _tiles(text: str) -> list[str]:
             b -= 1
         tiles += [*word[:a], word[a:b].lower(), *word[b:]]
     return [t for t in tiles if t]
+
+
+def _lang_dir(path: Path, lang: str) -> Path:
+    """The language's directory a deck file is in: its own, or, for a
+    layer in decks/<lang>/<native>/, its parent."""
+    return path.parent if path.parent.name == lang else path.parent.parent
+
+
+def check_media(r: Report, where: str, card: dict, field: str, cid: str | None,
+                lang: str) -> None:
+    """A card's own recording or image shipped with the deck (#518, #523):
+    `decks/<lang>/<folder>/<card id><ending>`, the file there, and its
+    credit, `{ source, license, credit }`, beside it in `<field>_credit`.
+    `audio` may still be an asset path or a URL, with no credit."""
+    folder, ending = MEDIA[field]
+    value = card.get(field)
+    credit_key = f"{field}_credit"
+    shipped = _is_str(value) and value.startswith("decks/")
+    if field != "audio" and value is not None and not shipped:
+        r.error(where, f"{field} must be decks/{lang}/{folder}/<card id>{ending}, "
+                       f"got {value!r}")
+    if shipped and cid is not None:
+        wanted = f"decks/{lang}/{folder}/{cid}{ending}"
+        if value != wanted:
+            r.error(where, f"{field} must be {wanted}: the file is named by its card, "
+                           f"got {value!r}")
+        elif not (_lang_dir(r.path, lang) / folder / f"{cid}{ending}").is_file():
+            r.error(where, f"{field} {value} has no file")
+        else:
+            r.media.append(value)
+        if credit_key not in card:
+            r.error(where, f"{credit_key} is required with {field}: the file's "
+                           f"{{ source, license, credit }}")
+    if credit_key not in card:
+        return
+    credit = card[credit_key]
+    if not shipped:
+        r.error(where, f"{credit_key} is only for a file shipped with the deck, "
+                       f"{field}: decks/{lang}/{folder}/<card id>{ending}")
+        return
+    if not isinstance(credit, dict):
+        r.error(where, f"{credit_key} must be {{ source, license, credit }}")
+        return
+    for unknown in sorted(set(credit) - MEDIA_CREDIT_KEYS, key=str):
+        r.error(where, f"{credit_key}: unknown field {unknown!r}")
+    for key in sorted(MEDIA_CREDIT_KEYS):
+        if not _is_str(credit.get(key)):
+            r.error(where, f"{credit_key}.{key} is required and must be a non-empty "
+                           f"string")
+    licence = credit.get("license")
+    if _is_str(licence) and not MEDIA_LICENSE_RE.fullmatch(licence):
+        r.error(where, f"{credit_key}.license {licence!r} cannot ship in a CC BY-SA "
+                       f"4.0 deck: CC0-1.0, public-domain, or CC-BY or CC-BY-SA 2.0 "
+                       f"to 4.0, such as CC-BY-SA-4.0")
+
+
+def check_media_across(reports: list[Report]) -> list[str]:
+    """Every recording and image in a language's folders is a file a card
+    names (#518, #523), so nothing ships that no card plays or shows.
+    Checked for a language whose deck files are all being validated."""
+    given = {rep.path.resolve() for rep in reports}
+    named: dict[Path, set[str]] = {}
+    for rep in reports:
+        if rep.lang_code is None:
+            continue
+        d = _lang_dir(rep.path, rep.lang_code).resolve()
+        named.setdefault(d, set()).update(rep.media)
+    problems: list[str] = []
+    for d in sorted(named):
+        if any(p.resolve() not in given for p in _yaml_files(d)):
+            continue
+        for field, (folder, ending) in MEDIA.items():
+            for f in sorted((d / folder).glob("*")) if (d / folder).is_dir() else []:
+                rel = f"decks/{d.name}/{folder}/{f.name}"
+                if f.suffix != ending:
+                    problems.append(f"{rel}: a card's {field} file ends in {ending}")
+                elif rel not in named[d]:
+                    problems.append(f"{rel}: no card names it as its {field}; remove "
+                                    f"it, or name it on the card {f.stem}")
+    return problems
 
 
 def _check_frequency(r: Report, where: str, value: object) -> None:
@@ -5417,7 +5514,7 @@ def main(argv: list[str]) -> int:
               + check_rules_across(reports) + check_notes_across(reports)
               + check_bases_across(reports) + check_phrasebook_across(reports)
               + check_plans_across(reports) + check_regions_across(reports)
-              + check_genders_across(reports))
+              + check_genders_across(reports) + check_media_across(reports))
     for problem in across:
         print(f"error: {problem}")
     warn_base_stems_across(reports)

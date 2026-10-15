@@ -83,6 +83,28 @@ class DeckIndex(unittest.TestCase):
         self.assertNotIn("native", path)
         self.assertEqual(es["size"], sum(f["size"] for f in es["files"]))
 
+    def test_recordings_are_listed_under_media(self) -> None:
+        # #518: a card's recording ships with the deck; the index lists it
+        # apart from the deck files, and the language's size counts it.
+        audio = self.tmp / "decks" / "es" / "audio"
+        audio.mkdir()
+        (audio / "es-0001.opus").write_bytes(b"OggS-not-really")
+        index = self.index()
+        es = self.language(index, "es")
+        self.assertEqual(es["media"], [{
+            "path": "decks/es/audio/es-0001.opus", "size": 15,
+            "sha256": hashlib.sha256(b"OggS-not-really").hexdigest(),
+            "kind": "audio"}])
+        self.assertNotIn("decks/es/audio/es-0001.opus",
+                         [f["path"] for f in es["files"]])
+        self.assertEqual(es["size"], sum(f["size"] for f in es["files"]) + 15)
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        self.assertIn('\n        {"kind": "audio", "path": "decks/es/audio/es-0001.opus"',
+                      text)
+
+    def test_no_media_key_without_media(self) -> None:
+        self.assertNotIn("media", self.language(self.index(), "es"))
+
     def test_the_theme_list_stays_bundled(self) -> None:
         index = self.index()
         self.assertEqual(index["bundled"], ["decks/themes.yaml"])

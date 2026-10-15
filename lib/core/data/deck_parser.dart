@@ -141,6 +141,7 @@ const _cardFields = {
   'tags',
   'notes',
   'audio',
+  'audio_credit',
   'examples',
   'modes',
   'pair',
@@ -223,6 +224,7 @@ const _coreCardFields = {
   'gender',
   'tags',
   'audio',
+  'audio_credit',
   'examples',
   'modes',
   'picture',
@@ -761,6 +763,10 @@ class _Reader {
       tags: fields.strings('tags'),
       notes: notes,
       audio: fields.optionalString('audio'),
+      audioCredit: mediaCredit(
+        fields.node('audio_credit'),
+        '$path.audio_credit',
+      ),
       examples: examples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       // Pair notes are the one source of pairs (DECK-FORMAT.md, Notes); a
@@ -783,6 +789,19 @@ class _Reader {
 
   /// Whether a card's `bases` says its word is its own root, `self` (#513).
   bool isOwnRoot(YamlNode? node) => node != null && _value(node) == 'self';
+
+  /// Where a card's recording or image came from (#518, #523): `{ source,
+  /// license, credit }`.
+  MediaCredit? mediaCredit(YamlNode? node, String path) {
+    if (node == null) return null;
+    final fields = this.fields(node, path);
+    fields.allowOnly(const {'source', 'license', 'credit'});
+    return MediaCredit(
+      source: fields.string('source'),
+      license: fields.string('license'),
+      credit: fields.string('credit'),
+    );
+  }
 
   /// A card's frequency (#516): `{ rank, source }`.
   CardFrequency? frequency(YamlNode? node, String path) {
@@ -1437,6 +1456,10 @@ class _Reader {
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       audio: fields.optionalString('audio'),
+      audioCredit: mediaCredit(
+        fields.node('audio_credit'),
+        '$path.audio_credit',
+      ),
       examples: coreExamples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       picture: fields.optionalString('picture', allowEmpty: false),

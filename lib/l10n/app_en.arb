@@ -2037,6 +2037,28 @@
   "@deckAuthors": {
     "description": "Label for the people credited with the deck."
   },
+  "deckRecordings": "Recordings",
+  "@deckRecordings": {
+    "description": "Label on the deck screen for the credits of the deck's recordings of words: who said each, and its licence."
+  },
+  "deckMediaCredit": "{target}: {credit}, {licence}",
+  "@deckMediaCredit": {
+    "description": "One recording's or picture's credit on the deck screen: the word, whom to credit (a speaker or a photographer), and the file's licence, such as CC-BY-SA-4.0. Names and licences stay as they are.",
+    "placeholders": {
+      "target": {
+        "type": "String",
+        "example": "घर"
+      },
+      "credit": {
+        "type": "String",
+        "example": "A. Speaker"
+      },
+      "licence": {
+        "type": "String",
+        "example": "CC-BY-SA-4.0"
+      }
+    }
+  },
   "deckVoice": "Voice",
   "@deckVoice": {
     "description": "Label for the deck language's voice status."
@@ -2905,6 +2927,24 @@
   "sourcesDeckContent": "Deck content",
   "@sourcesDeckContent": {
     "description": "Heading on the Sources screen above the decks' licence and the projects credited."
+  },
+  "sourcesMedia": "Recordings and pictures",
+  "@sourcesMedia": {
+    "description": "Heading on the Sources screen above the credits of the recordings and pictures that ship with the decks, a row per language."
+  },
+  "sourcesMediaLine": "{credit}, {licence}",
+  "@sourcesMediaLine": {
+    "description": "One credit under a language on the Sources screen: whom to credit for some of its recordings or pictures, and their licence. Names and licences stay as they are.",
+    "placeholders": {
+      "credit": {
+        "type": "String",
+        "example": "A. Speaker"
+      },
+      "licence": {
+        "type": "String",
+        "example": "CC-BY-SA-4.0"
+      }
+    }
   },
   "sourcesLicence": "Decks: CC BY-SA 4.0",
   "@sourcesLicence": {
