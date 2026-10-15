@@ -143,7 +143,7 @@ class CardItem {
   /// [word] romanised.
   final String? reading;
 
-  /// [word] in the IPA (a form's).
+  /// [word] in the IPA.
   final String? ipa;
 
   /// A confusable's kind (`form`, `word`, `sound`, `mark`) or a form's

@@ -85,7 +85,8 @@ class WordItems(Case):
             {"id": "Yes", "ref": HOUSE},
             {"id": "c", "ref": "zz-9004", "reading": "amma"},
             {"id": "d"},
-            {"id": "e", "word": "నివాసం", "reading": "nivāsaṃ", "ipa": "x"}])
+            {"id": "e", "word": "నివాసం", "reading": "nivāsaṃ", "gloss": "x"},
+            {"id": "f", "ref": "zz-9004", "ipa": "amma"}])
         errors = self.errors(CORE)
         w = f"card {HOUSE}"
         for msg in ("synonyms[0] gives word or ref, not both",
@@ -97,8 +98,24 @@ class WordItems(Case):
                     "synonyms[2].ref names the card itself",
                     "synonyms[3].reading is only for a word written in full",
                     "synonyms[4] needs word or ref",
-                    "synonyms[5]: unknown field 'ipa'"):
+                    "synonyms[5]: unknown field 'gloss'",
+                    "synonyms[6].ipa is only for a word written in full"):
             self.assertIn(f"{w}: {msg}", errors)
+
+    def test_every_item_may_take_ipa_and_source(self) -> None:
+        # Owner, 2026-10-15 (#506): "Yes, all items may take ipa and source".
+        word = {"id": "w", "word": "ఇంటి", "reading": "iṇṭi", "ipa": "iɳʈi",
+                "source": "https://en.wiktionary.org/wiki/ఇంటి"}
+        for key, extra in (("synonyms", {}), ("antonyms", {}), ("collocations", {}),
+                           ("confusables", {"kind": "form"}), ("forms", {"kind": "other"})):
+            with self.subTest(key=key):
+                self.setUp()
+                self.core(HOUSE, **{key: [dict(word, **extra)]})
+                self.assertNoError(CORE)
+        self.setUp()
+        self.core(HOUSE, confusables=[{"id": "r", "ref": "zz-9004", "kind": "word",
+                                       "source": "Wiktionary"}])
+        self.assertNoError(CORE)
 
     def test_a_ref_names_a_card_of_the_language(self) -> None:
         self.core(HOUSE, antonyms=[{"id": "x", "ref": "zz-9999"}])
