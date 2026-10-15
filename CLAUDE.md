@@ -33,6 +33,10 @@ wherever the table above allows it.
   Sonnet review finds nothing blocking. Rebase on `origin/main` if the push
   is rejected. Outside contributors still use pull requests
   ([CONTRIBUTING.md](CONTRIBUTING.md#pull-requests)).
+- **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
+  to a branch frequently"). Long work is committed in small steps and pushed
+  to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
+  session ends. Only checked work reaches main or `decks-next`.
 - **Releases.** Bump `pubspec.yaml` and `lib/app/app_info.dart`, check with
   `tools/check_release_version.py`, and push to main. The owner tags the
   release and writes the CHANGELOG; never edit CHANGELOG.md for a release.
