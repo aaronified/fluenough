@@ -1899,19 +1899,15 @@ class AppState extends ChangeNotifier {
     ];
   }
 
-  /// The sets of the courses [picked] is taught in, as the learner sees
-  /// them with [picked] in the lesson.
+  /// The sets of the courses [picked] is taught in.
   List<ResolvedSet> _lessonSets(List<Card> picked) {
     final courses = <(String, String)>{
       for (final card in picked)
         if (deckOf(card) case final entry?)
           (entry.language.code, entry.deck.native.code),
     };
-    final ids = <String>{for (final card in picked) card.id};
     return <ResolvedSet>[
-      for (final (language, native) in courses)
-        for (final set in courseSets(language, native))
-          ?forLearner(set, also: ids),
+      for (final (language, native) in courses) ...courseSets(language, native),
     ];
   }
 

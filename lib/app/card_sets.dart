@@ -41,10 +41,7 @@ extension CardSets on AppState {
     return List<ResolvedSet>.unmodifiable(<ResolvedSet>[
       for (final deck in course)
         for (final set in deck.sets)
-          ResolvedSet(
-            set: set,
-            members: setMembers(set, cards, ruleOf: (id) => rulesOf[id] ?? {}),
-          ),
+          resolveSet(set, cards, ruleOf: (id) => rulesOf[id] ?? {}),
     ]);
   }
 
@@ -52,36 +49,18 @@ extension CardSets on AppState {
   bool taughtId(String id) =>
       DrillMode.values.any((mode) => progress.stateOf(id, mode) != null);
 
-  /// [set] as this learner sees it: a set of one slot across the words
-  /// ("one person across the verbs taught") holds only the cells whose word
-  /// the learner was taught, or which are taught already, or which [also]
-  /// holds. Any other set is whole. Null when fewer than two are left.
-  ResolvedSet? forLearner(ResolvedSet set, {Set<String> also = const {}}) {
-    if (set.set.rule?.fixesRow != false) return set;
-    final members = <Card>[
-      for (final member in set.members)
-        if (also.contains(member.id) ||
-            taughtId(member.id) ||
-            (member.rule != null && taughtId(member.rule!.word)))
-          member,
-    ];
-    if (members.length < 2) return null;
-    return ResolvedSet(set: set.set, members: members);
-  }
-
-  /// The sets [card] is a member of, as the learner sees them, that are
-  /// split over more than one card: those whose question shows a Full list
-  /// once answered (owner, 2026-10-16: "Split sets only"; a form in both
-  /// sets: "Show both").
-  List<ResolvedSet> splitSetsOf(Card card) {
+  /// The sets whose Full list [card]'s question shows once answered: a
+  /// set split over more than one card that [card] is a member of (owner,
+  /// 2026-10-16: "Split sets only"), and a set of one slot across the
+  /// words whose Full list holds it, every verb of the course; a form in
+  /// both sets: "Show both".
+  List<ResolvedSet> fullListSetsOf(Card card) {
     final entry = deckOf(card);
     if (entry == null) return const <ResolvedSet>[];
     return <ResolvedSet>[
       for (final set in courseSets(entry.language.code, entry.deck.native.code))
-        if (set.has(card))
-          if (forLearner(set, also: {card.id}) case final shown?
-              when shown.isSplit && shown.has(card))
-            shown,
+        if (set.set.acrossRows ? set.lists(card) : set.isSplit && set.has(card))
+          set,
     ];
   }
 }

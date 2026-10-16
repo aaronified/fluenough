@@ -49,8 +49,9 @@ class RefSets(SetCase):
 
     def test_a_set_card_has_only_id_kind_and_members(self) -> None:
         self.add_set({**SET, "target": "x"})
-        self.assertError(CORE, f"card {SET_ID}", "a set card has only id, kind and "
-                         "members, its name and explanation in each layer; got 'target'")
+        self.assertError(CORE, f"card {SET_ID}", "a set card has only id, kind, members "
+                         "and shown, its name and explanation in each layer; got "
+                         "'target'")
 
     def test_a_set_has_two_members_or_more(self) -> None:
         self.add_set({**SET, "members": [{"ref": "zz-9001"}]})
@@ -134,7 +135,8 @@ class RuleSets(SetCase):
             {"id": "zz-9202", "kind": "set",
              "members": {"rule": "zz-grammar-case-endings", "noun": "zz-9001"}},
             {"id": "zz-9203", "kind": "set",
-             "members": {"rule": "zz-rule-lo", "case": "lo"}},
+             "members": {"rule": "zz-rule-lo", "case": "lo"},
+             "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]},
         ]
         for s in sets:
             self.add_set(s)
@@ -153,7 +155,8 @@ class RuleSets(SetCase):
                           f"card writes it, or its id")
 
     def test_a_slot_is_a_slot_of_the_rule(self) -> None:
-        self.add_set({**SET, "members": {"rule": "zz-rule-lo", "case": "ki"}})
+        self.add_set({**SET, "members": {"rule": "zz-rule-lo", "case": "ki"},
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]})
         self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members.case: 'ki' is not a "
                           f"slot of zz-rule-lo; a value that is not a row's word is a "
                           f"slot, one of ['lo'], or use a part of speech of its rows "
@@ -178,6 +181,56 @@ class RuleSets(SetCase):
         self.assertError(CORE, f"card {SET_ID}.members",
                          "rule must name a rule, such as zz-rule-past, or a rules core, "
                          "such as zz-grammar-past, got 'lo'")
+
+
+class ShownRows(SetCase):
+    """A set of one slot across the words names the rows its card shows, a
+    few the deck chooses; its Full list shows every row (owner, 2026-10-16,
+    #515: "A few curated verbs should be good enough")."""
+
+    SLOT = {"rule": "zz-rule-lo", "case": "lo"}
+
+    def test_a_slot_set_names_the_rows_it_shows(self) -> None:
+        self.add_set({**SET, "members": self.SLOT})
+        self.assertError(CORE, f"card {SET_ID}.shown",
+                         'is required: the rows its card shows, a few of the table\'s, '
+                         'as [{ ref: "zz-0001" }, ...]; its Full list shows every row')
+
+    def test_at_least_two_rows_each_once(self) -> None:
+        self.add_set({**SET, "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9004"}]})
+        self.assertError(CORE, f"card {SET_ID}.shown[1]", "zz-9004 is a row already")
+        self.add_set({**SET, "id": "zz-9202", "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}]}, dict(SET_TEXT))
+        self.assertError(CORE, "card zz-9202.shown", "a set shows at least 2 rows, got 1")
+
+    def test_each_row_is_a_row_of_the_table(self) -> None:
+        self.add_set({**SET, "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9006"}]})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: shown[1]: zz-9006 is no row "
+                          f"of zz-grammar-case-endings")
+
+    def test_each_row_has_a_form_in_the_slot(self) -> None:
+        def no_lo(d: dict) -> None:
+            d["table"]["rows"][0]["forms"]["lo"] = None
+            d["table"]["rows"][0]["readings"]["lo"] = None
+        self.edit(RULES, no_lo)
+        self.add_set({**SET, "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: shown[1]: zz-9001 has no lo "
+                          f"form in zz-grammar-case-endings")
+
+    def test_only_a_slot_set_names_rows(self) -> None:
+        self.add_set({**SET, "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]})
+        self.assertError(CORE, f"card {SET_ID}.shown",
+                         "only a set of one slot across the words names the rows its "
+                         "card shows; a set by refs shows its members")
+        self.add_set({**SET, "id": "zz-9202",
+                      "members": {"rule": "zz-grammar-case-endings", "noun": "అమ్మ"},
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]}, dict(SET_TEXT))
+        self.assertError(CORE, "card zz-9202.shown",
+                         "only a set of one slot across the words names the rows its "
+                         "card shows; this set shows every form of its row")
 
 
 class Untouched(SetCase):
