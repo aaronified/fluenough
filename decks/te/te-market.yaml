@@ -1,0 +1,93 @@
+schema: 1
+id: "te-market"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0239"
+    target: "ఎంత?"
+    reading: "enta?"
+    ipa: "ent̪a"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0240"
+    target: "ధర"
+    reading: "dhara"
+    ipa: "d̪ʱara"
+    pos: "noun"
+  - id: "te-0241"
+    target: "రూపాయి"
+    reading: "rūpāyi"
+    ipa: "ruːpaːji"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0242"
+    target: "డబ్బులు"
+    reading: "ḍabbulu"
+    ipa: "ɖabbulu"
+    pos: "noun"
+    picture: "💰"
+  - id: "te-0243"
+    target: "చిల్లర"
+    reading: "cillara"
+    ipa: "tʃillara"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0244"
+    target: "చాలా ఎక్కువ!"
+    reading: "cālā ekkuva!"
+    ipa: "tʃaːlaː ekkuʋa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "ఎక్కువ", ref: "te-1029" }
+  - id: "te-0245"
+    target: "కొంచెం తగ్గించండి."
+    reading: "koñcem taggiñcaṇḍi."
+    ipa: "koɲtʃem t̪aɡɡiɲtʃaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "కొంచెం", ref: "te-1024" }
+      - { word: "తగ్గించండి", base: "తగ్గించడం", reading: "taggiñcaḍam" }
+  - id: "te-0246"
+    target: "దుకాణం"
+    reading: "dukāṇam"
+    ipa: "d̪ukaːɳam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0247"
+    target: "ఇవ్వండి"
+    reading: "ivvaṇḍi"
+    ipa: "iʋʋaɳɖi"
+    pos: "verb"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0248"
+    target: "కిలో"
+    reading: "kilō"
+    ipa: "kiloː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0249"
+    target: "ఇంకేమీ వద్దు."
+    reading: "iṅkēmī vaddu."
+    ipa: "iŋkeːmiː ʋad̪d̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇంకేమీ", ref: "te-0346" }

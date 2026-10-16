@@ -4,28 +4,24 @@ Deck content, one YAML file per deck, organised by language code.
 
 ```
 decks/
-  bn/  bn-en-first-words.yaml     one deck per theme in themes.yaml
-       bn-en-questions.yaml …
+  bn/  bn-first-words.yaml        a core: the Bengali side of a deck, for every learner
+       en/  bn-en-first-words.yaml  its English layer; merged, they are the deck bn-en-first-words
+       bn-en-reading-sahaj-path-1.yaml  a reading deck, single-file
+       bn-script.yaml             how the script works: a core, with its English layer in en/
+       bn-sounds.yaml             the sound contrasts: a core, with its English layer in en/
        bn-path.yaml               the order Bengali is taught in, from every language
-  es/  es-en-core-100.yaml
-       es-en-grammar-present-ar.yaml
+  es/  es-core-100.yaml, en/es-en-core-100.yaml …
        es-path.yaml
-  hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
-       hi-en-questions.yaml …
+  hi/  hi-first-words.yaml, en/hi-en-first-words.yaml …
        hi-path.yaml
-  ja/  ja-en-hiragana.yaml        kept in the repository but not offered in the app for now
+  ja/  ja-en-hiragana.yaml        single-file; kept in the repository but not offered in the app for now
        ja-path.yaml
-  te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
-       te-en-questions.yaml …
-       te-home.yaml               planned shape: a core, the Telugu side of a deck, for every learner
-       en/  te-en-home.yaml       planned shape: its English layer; merged, they are the deck te-en-home
-                                  (neither exists yet: the split tool, #397, has not run, and
-                                  te-en-home is a single file)
+  te/  te-home.yaml, en/te-en-home.yaml …   not yet checked by a Telugu speaker
        te-path.yaml               the path, by core id, with Telugu's regions
-  mr/  mr-en-first-words.yaml     the same, for Marathi; not yet checked by a Marathi speaker
-  kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker
-  gu/  gu-en-first-words.yaml     the same, for Gujarati; not yet checked by a Gujarati speaker
-  as/  as-en-first-words.yaml     the same, for Assamese; not yet checked by an Assamese speaker
+  mr/  the same, for Marathi; not yet checked by a Marathi speaker
+  kn/  the same, for Kannada; not yet checked by a Kannada speaker
+  gu/  the same, for Gujarati; not yet checked by a Gujarati speaker
+  as/  the same, for Assamese; not yet checked by an Assamese speaker
   themes.yaml                   the shared themes; the one file the app bundles
   index.json                    what the app downloads, written by tools/deck_index.py
 ```
@@ -34,8 +30,9 @@ decks/
 `decks/<lang>/<lang>-<name>.yaml`, holds the language learnt; each layer,
 `decks/<lang>/<native>/<lang>-<native>-<name>.yaml`, holds one native
 language's meanings, notes and labels, and the two merged are the deck
-`<lang>-<native>-<name>`. Every deck in a B1 plan is split as its plan is
-written. See "Core and layer files" in the format specification.
+`<lang>-<native>-<name>`. Every vocab and grammar deck is split
+(`tools/split_deck.py` splits a single-file one) but Japanese's, which has
+no B1 plan yet; reading decks stay one file. See "Core and layer files" in the format specification.
 
 **Every deck is on its language's path.** `<lang>-path.yaml` lists the
 language's decks in teaching order, in units, by core id (`te-home` for

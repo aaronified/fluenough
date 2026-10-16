@@ -3,22 +3,18 @@
 # Each id is the tag the language's sound-differences deck uses. See
 # ADR-0015 and docs/DECK-FORMAT.md.
 schema: 1
-kind: sounds
-id: kn-sounds
-language: kn
+kind: "sounds"
+part: "core"
+id: "kn-sounds"
+language: "kn"
 contrasts:
-  - id: vowel-length
-    name: "a short or a long vowel"
+  - id: "vowel-length"
     pairs: [["", "ಾ"], ["ಿ", "ೀ"], ["ು", "ೂ"], ["ೆ", "ೇ"], ["ೊ", "ೋ"], ["ಅ", "ಆ"], ["ಇ", "ಈ"], ["ಉ", "ಊ"], ["ಎ", "ಏ"], ["ಒ", "ಓ"]]
-  - id: dental-retroflex
-    name: "the tongue on the teeth or curled back"
+  - id: "dental-retroflex"
     pairs: [["ತ", "ಟ"], ["ಥ", "ಠ"], ["ದ", "ಡ"], ["ಧ", "ಢ"], ["ನ", "ಣ"]]
-  - id: lateral
-    name: "the l on the teeth or curled back"
+  - id: "lateral"
     pairs: [["ಲ", "ಳ"]]
-  - id: gemination
-    name: "a single or a double consonant"
+  - id: "gemination"
     pairs: [["ಕ", "ಕ್ಕ"], ["ಗ", "ಗ್ಗ"], ["ಚ", "ಚ್ಚ"], ["ಟ", "ಟ್ಟ"], ["ಡ", "ಡ್ಡ"], ["ತ", "ತ್ತ"], ["ದ", "ದ್ದ"], ["ನ", "ನ್ನ"], ["ಣ", "ಣ್ಣ"], ["ಪ", "ಪ್ಪ"], ["ಬ", "ಬ್ಬ"], ["ಮ", "ಮ್ಮ"], ["ಲ", "ಲ್ಲ"], ["ಳ", "ಳ್ಳ"], ["ಯ", "ಯ್ಯ"]]
-  - id: aspiration
-    name: "a breath after the consonant"
+  - id: "aspiration"
     pairs: [["ಕ", "ಖ"], ["ಗ", "ಘ"], ["ಚ", "ಛ"], ["ಜ", "ಝ"], ["ಟ", "ಠ"], ["ಡ", "ಢ"], ["ತ", "ಥ"], ["ದ", "ಧ"], ["ಪ", "ಫ"], ["ಬ", "ಭ"]]

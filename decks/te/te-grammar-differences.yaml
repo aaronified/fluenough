@@ -1,0 +1,169 @@
+schema: 1
+id: "te-grammar-differences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "te-0117"
+    target: "నేను అన్నం తింటాను."
+    reading: "nēnu annam tiṇṭānu."
+    ipa: "neːnu annam t̪iɳʈaːnu"
+    tags: ["grammar", "word-order"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తింటాను", ref: "te-0624" }
+  - id: "te-0118"
+    target: "ఆయన డాక్టర్."
+    reading: "āyana ḍākṭar."
+    ipa: "aːjana ɖaːkʈar"
+    tags: ["grammar", "no-is"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆయన", ref: "te-0597" }
+  - id: "te-0119"
+    target: "గదిలో"
+    reading: "gadilō"
+    ipa: "ɡad̪iloː"
+    tags: ["grammar", "case-endings"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0120"
+    target: "బడికి"
+    reading: "baḍiki"
+    ipa: "baɖiki"
+    tags: ["grammar", "case-endings"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0121"
+    target: "అమ్మతో"
+    reading: "ammatō"
+    ipa: "ammat̪oː"
+    tags: ["grammar", "case-endings"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0122"
+    target: "అతను వచ్చాడు."
+    reading: "atanu vaccāḍu."
+    ipa: "at̪anu ʋatʃtʃaːɖu"
+    pos: "phrase"
+    tags: ["grammar", "gender"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "వచ్చాడు", ref: "te-0623" }
+  - id: "te-0123"
+    target: "ఆమె వచ్చింది."
+    reading: "āme vaccindi."
+    ipa: "aːme ʋatʃtʃind̪i"
+    pos: "phrase"
+    tags: ["grammar", "gender"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "వచ్చింది", ref: "te-0623" }
+  - id: "te-0124"
+    target: "అది వచ్చింది."
+    reading: "adi vaccindi."
+    ipa: "ad̪i ʋatʃtʃind̪i"
+    pos: "phrase"
+    tags: ["grammar", "gender"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "అది", ref: "te-0599" }
+      - { word: "వచ్చింది", ref: "te-0623" }
+  - id: "te-0125"
+    target: "నువ్వు రా."
+    reading: "nuvvu rā."
+    ipa: "nuʋʋu raː"
+    tags: ["grammar", "two-yous"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "రా", ref: "te-0623" }
+  - id: "te-0126"
+    target: "మీరు రండి."
+    reading: "mīru raṇḍi."
+    ipa: "miːru raɳɖi"
+    tags: ["grammar", "two-yous"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "రండి", ref: "te-0623" }
+  - id: "te-0127"
+    target: "మనం"
+    reading: "manam"
+    ipa: "manam"
+    tags: ["grammar", "two-wes"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0128"
+    target: "మేము"
+    reading: "mēmu"
+    ipa: "meːmu"
+    tags: ["grammar", "two-wes"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0129"
+    target: "వస్తాను."
+    reading: "vastānu."
+    ipa: "ʋast̪aːnu"
+    tags: ["grammar", "person-endings"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0130"
+    target: "ఒక పుస్తకం"
+    reading: "oka pustakam"
+    ipa: "oka pust̪akam"
+    tags: ["grammar", "articles"]
+    picture: "📖"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "పుస్తకం", ref: "te-0865" }
+  - id: "te-0131"
+    target: "నా దగ్గర పుస్తకం ఉంది."
+    reading: "nā daggara pustakam undi."
+    ipa: "naː d̪aɡɡara pust̪akam und̪i"
+    tags: ["grammar", "have"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "పుస్తకం", ref: "te-0865" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0132"
+    target: "నేను రాను."
+    reading: "nēnu rānu."
+    ipa: "neːnu raːnu"
+    tags: ["grammar", "negation"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రాను", ref: "te-0623" }
+  - id: "te-0133"
+    target: "సమయం లేదు."
+    reading: "samayam lēdu."
+    ipa: "samajam leːd̪u"
+    tags: ["grammar", "negation"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0134"
+    target: "మీరు వస్తారా?"
+    reading: "mīru vastārā?"
+    ipa: "miːru ʋast̪aːraː"
+    tags: ["grammar", "questions"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వస్తారా", ref: "te-0623" }
