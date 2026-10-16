@@ -268,6 +268,14 @@ class Licences(unittest.TestCase):
                             ("CC BY-NC-SA 4.0", None), ("CC BY-ND 4.0", None)):
             self.assertEqual(iw.licence_id(short), want, short)
 
+    def test_a_gloss_quoting_the_language_is_left_out(self) -> None:
+        self.assertIsNone(iw._gloss({"glosses": ["then; तो"]}))
+        self.assertEqual(iw._gloss({"glosses": ["café."]}), "café")
+
+    def test_a_reconstruction_is_no_word(self) -> None:
+        self.assertFalse(iw._plain_word("* मार्ग"))
+        self.assertTrue(iw._plain_word("मार्ग"))
+
     def test_html_credit(self) -> None:
         self.assertEqual(iw.strip_html('<a href="x">A&amp;B</a>  <span>C</span>'), "A&B C")
 
