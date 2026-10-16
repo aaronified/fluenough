@@ -8,7 +8,16 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/gallery/gallery_entry.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
+import 'package:fluenough/features/settings/activities_page.dart';
+import 'package:fluenough/features/settings/app_log_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
+import 'package:fluenough/features/settings/profiles_privacy_page.dart';
+import 'package:fluenough/features/settings/reminders_page.dart';
+import 'package:fluenough/features/settings/reviewing_page.dart';
+import 'package:fluenough/features/settings/updates_page.dart';
+import 'package:fluenough/features/settings/your_data_page.dart';
+import 'package:fluenough/features/settings/your_decks_page.dart';
 import 'package:fluenough/features/settings/gallery_entries.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
@@ -28,6 +37,34 @@ final Map<String, (Widget, AppState Function(AppState))> screens =
           features: FeatureRegistry.all(),
           settings: SettingsNotifier(reminder: true),
         ),
+      ),
+      'Your languages': (const LanguagesSettingsPage(), GalleryFixtures.state),
+      'Activities and memory': (const ActivitiesPage(), GalleryFixtures.state),
+      'Activities and memory, all on': (
+        const ActivitiesPage(),
+        (app) => GalleryFixtures.state(app, features: FeatureRegistry.all()),
+      ),
+      'Reviewing': (const ReviewingPage(), GalleryFixtures.state),
+      'Your decks': (const YourDecksPage(), GalleryFixtures.state),
+      'Reminders': (const RemindersPage(), GalleryFixtures.state),
+      'Reminders, all on': (
+        const RemindersPage(),
+        (app) => GalleryFixtures.state(
+          app,
+          features: FeatureRegistry.all(),
+          settings: SettingsNotifier(reminder: true),
+        ),
+      ),
+      'Your data': (const YourDataPage(), GalleryFixtures.state),
+      'App log': (const AppLogPage(), GalleryFixtures.state),
+      'Updates': (const UpdatesPage(), GalleryFixtures.state),
+      'Profiles and privacy': (
+        const ProfilesPrivacyPage(),
+        GalleryFixtures.state,
+      ),
+      'Profiles and privacy, all on': (
+        const ProfilesPrivacyPage(),
+        (app) => GalleryFixtures.state(app, features: FeatureRegistry.all()),
       ),
       'Appearance': (const AppearancePage(), GalleryFixtures.state),
       'Appearance, all on': (

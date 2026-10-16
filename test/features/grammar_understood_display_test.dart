@@ -19,8 +19,7 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
-import 'package:fluenough/ui/widgets/grouped_list.dart';
+import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -140,25 +139,20 @@ void main() {
     });
   });
 
-  testWidgets('Settings\' one Grammar switch stops both schedules', (
-    tester,
-  ) async {
+  testWidgets('Grammar has no switch in Settings, but turning the skill '
+      'off would still stop both schedules', (tester) async {
     usePhone(tester);
     final state = await zzLearner();
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const ActivitiesPage(), state: state);
     final l10n = l10nOf(tester);
-    final title = find.text(l10n.skillGrammar);
-    await scrollTo(tester, title);
-    expect(title, findsOneWidget);
-    expect(find.text(l10n.skillGrammarSettingsOn), findsOneWidget);
+    // Always asked (#243): no switch, so nothing in Settings turns it off.
+    expect(find.text(l10n.skillGrammar), findsNothing);
+    expect(Skill.grammar.hasSwitch, isFalse);
     expect(
       state.sessionModes,
       containsAll(<DrillMode>[DrillMode.grammarUnderstood, DrillMode.grammar]),
     );
-    final toggle = find.ancestor(of: title, matching: find.byType(GroupedTile));
-    await tester.tap(toggle.first);
-    await tester.pumpAndSettle();
-    expect(state.settings.isEnabled(Skill.grammar), isFalse);
+    state.settings.setSkillEnabled(Skill.grammar, false);
     expect(state.sessionModes, isNot(contains(DrillMode.grammarUnderstood)));
     expect(state.sessionModes, isNot(contains(DrillMode.grammar)));
     expect(state.buildSession(const DrillRequest.today()).items, isEmpty);
@@ -244,7 +238,7 @@ void main() {
       );
     }
     final state = AppState.test(progress: progress, now: now);
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const ActivitiesPage(), state: state);
     final l10n = l10nOf(tester);
     final button = find.widgetWithText(FilledButton, l10n.settingsAdjustButton);
     await scrollTo(tester, button);

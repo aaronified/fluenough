@@ -6,14 +6,22 @@ import '../../app/shell_tab.dart';
 import '../../core/speech/speech_engine.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
+import 'activities_page.dart';
+import 'app_log_page.dart';
 import 'appearance_page.dart';
-import 'backup_section.dart';
+import 'languages_page.dart';
+import 'profiles_privacy_page.dart';
+import 'reminders_page.dart';
+import 'reviewing_page.dart';
+import 'updates_page.dart';
+import 'your_data_page.dart';
+import 'your_decks_page.dart';
 import 'release_notes_page.dart';
 import 'settings_fixtures.dart';
 import 'speech_test_sheet.dart';
 import 'voices_page.dart';
 
-/// Settings, Appearance and Voices, as the design's Gallery lists them.
+/// Settings, its pages, Look and language and Voices, as the design's Gallery lists them.
 /// Owned by B5.
 ///
 /// Settings runs the whole shell, as this version ships it. Appearance runs
@@ -25,8 +33,7 @@ final List<GalleryEntry> settingsGalleryEntries = <GalleryEntry>[
     id: 'settings',
     section: GallerySection.progressAndSettings,
     label: 'Settings', // ui-literal-ok: debug-only gallery
-    note:
-        'Learning, sound, reminder, data', // ui-literal-ok: debug-only gallery
+    note: 'The profile card and a row per section', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: (app) =>
         GalleryFixtures.state(app)..shellTab.value = ShellTab.settings,
@@ -34,7 +41,7 @@ final List<GalleryEntry> settingsGalleryEntries = <GalleryEntry>[
   GalleryEntry(
     id: 'appearance',
     section: GallerySection.progressAndSettings,
-    label: 'Appearance', // ui-literal-ok: debug-only gallery
+    label: 'Look and language', // ui-literal-ok: debug-only gallery
     note: 'Theme, colour, contrast, text size', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppearancePage(),
     state: SettingsFixtures.appearanceLive,
@@ -57,7 +64,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     id: 'settings-all-on',
     section: GallerySection.progressAndSettings,
     label: 'Settings, every feature on', // ui-literal-ok: debug-only gallery
-    note: 'Reminder time, PIN, export, app language', // ui-literal-ok: debug-only gallery
+    note: 'Every row on the list, and each page with its features on', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: (app) =>
         SettingsFixtures.allOn(app)..shellTab.value = ShellTab.settings,
@@ -66,8 +73,8 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     id: 'settings-update-available',
     section: GallerySection.progressAndSettings,
     label: 'Settings, update available', // ui-literal-ok: debug-only gallery
-    note: 'Download, and a dot on the tab', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    note: 'Download, in the Updates page', // ui-literal-ok: debug-only gallery
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.updateAvailable,
   ),
   GalleryEntry(
@@ -75,7 +82,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     section: GallerySection.progressAndSettings,
     label: 'Settings, up to date', // ui-literal-ok: debug-only gallery
     note: 'Nothing newer on GitHub', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.upToDate,
   ),
   GalleryEntry(
@@ -84,7 +91,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     label:
         'Settings, checking for updates', // ui-literal-ok: debug-only gallery
     note: 'GitHub has not answered yet', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.updateChecking,
   ),
   GalleryEntry(
@@ -92,7 +99,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     section: GallerySection.progressAndSettings,
     label: 'Settings, update check failed', // ui-literal-ok: debug-only gallery
     note: 'Offline, with Try again', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.updateFailed,
   ),
   GalleryEntry(
@@ -101,7 +108,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     label:
         'Settings, downloading an update', // ui-literal-ok: debug-only gallery
     note: 'Its progress, in the row', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.updateDownloading,
   ),
   GalleryEntry(
@@ -110,7 +117,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     label:
         'Settings, installing an update', // ui-literal-ok: debug-only gallery
     note: "Android's installer is open", // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.updateInstalling,
   ),
   GalleryEntry(
@@ -118,7 +125,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     section: GallerySection.progressAndSettings,
     label: 'Settings, update not allowed', // ui-literal-ok: debug-only gallery
     note: 'How to allow installs, and the download page', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const UpdatesPage(),
     state: SettingsFixtures.updateNotAllowed,
   ),
   GalleryEntry(
@@ -138,18 +145,61 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     state: SettingsFixtures.releaseNotesFailed,
   ),
   GalleryEntry(
-    id: 'settings-backup',
+    id: 'settings-data',
     section: GallerySection.progressAndSettings,
-    label: 'Back up to the cloud', // ui-literal-ok: debug-only gallery
-    note: 'Five services, each incoming (#112)', // ui-literal-ok: debug-only gallery
-    builder: (_) => const Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsetsDirectional.all(16),
-          child: BackupSection(),
-        ),
-      ),
-    ),
+    label: 'Your data', // ui-literal-ok: debug-only gallery
+    note: 'Backup and restore (incoming), then the review log', // ui-literal-ok: debug-only gallery
+    builder: (_) => const YourDataPage(),
+  ),
+  GalleryEntry(
+    id: 'settings-languages',
+    section: GallerySection.progressAndSettings,
+    label: 'Your languages', // ui-literal-ok: debug-only gallery
+    note: 'Known, learned, readings, 18+, sources', // ui-literal-ok: debug-only gallery
+    builder: (_) => const LanguagesSettingsPage(),
+  ),
+  GalleryEntry(
+    id: 'settings-activities',
+    section: GallerySection.progressAndSettings,
+    label: 'Activities and memory', // ui-literal-ok: debug-only gallery
+    note: 'A switch per activity, Adjust to me (#243)', // ui-literal-ok: debug-only gallery
+    builder: (_) => const ActivitiesPage(),
+  ),
+  GalleryEntry(
+    id: 'settings-reminders',
+    section: GallerySection.progressAndSettings,
+    label: 'Reminders, every feature on', // ui-literal-ok: debug-only gallery
+    note: 'Incoming until #90', // ui-literal-ok: debug-only gallery
+    builder: (_) => const RemindersPage(),
+    state: SettingsFixtures.allOn,
+  ),
+  GalleryEntry(
+    id: 'settings-decks',
+    section: GallerySection.progressAndSettings,
+    label: 'Your decks', // ui-literal-ok: debug-only gallery
+    note: 'Upload, template (incoming), decks of your own', // ui-literal-ok: debug-only gallery
+    builder: (_) => const YourDecksPage(),
+  ),
+  GalleryEntry(
+    id: 'settings-profiles',
+    section: GallerySection.progressAndSettings,
+    label: 'Profiles and privacy', // ui-literal-ok: debug-only gallery
+    note: 'Opened from the profile card; incoming (#204)', // ui-literal-ok: debug-only gallery
+    builder: (_) => const ProfilesPrivacyPage(),
+  ),
+  GalleryEntry(
+    id: 'settings-reviewing',
+    section: GallerySection.progressAndSettings,
+    label: 'Reviewing', // ui-literal-ok: debug-only gallery
+    note: 'Reviewer mode', // ui-literal-ok: debug-only gallery
+    builder: (_) => const ReviewingPage(),
+  ),
+  GalleryEntry(
+    id: 'settings-app-log',
+    section: GallerySection.progressAndSettings,
+    label: 'App log', // ui-literal-ok: debug-only gallery
+    note: 'Copy, Export and Clear in a bottom bar', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppLogPage(),
   ),
   GalleryEntry(
     id: 'appearance-incoming',
@@ -163,7 +213,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     section: GallerySection.progressAndSettings,
     label: 'Settings, adult content on', // ui-literal-ok: debug-only gallery
     note: 'Rude words shown (#96)', // ui-literal-ok: debug-only gallery
-    builder: (_) => const AppShell(),
+    builder: (_) => const LanguagesSettingsPage(),
     state: SettingsFixtures.adultOn,
   ),
   GalleryEntry(

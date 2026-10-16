@@ -36,7 +36,15 @@ import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/activities_page.dart';
+import 'package:fluenough/features/settings/app_log_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
+import 'package:fluenough/features/settings/profiles_privacy_page.dart';
+import 'package:fluenough/features/settings/reminders_page.dart';
+import 'package:fluenough/features/settings/updates_page.dart';
+import 'package:fluenough/features/settings/your_data_page.dart';
+import 'package:fluenough/features/settings/your_decks_page.dart';
+import 'package:fluenough/features/settings/reviewing_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
@@ -369,7 +377,15 @@ void main() {
     ('a deck marked unreviewed', const DeckDetailPage(deckId: 'te-en-market')),
     ('add a deck', const ImportPage()),
     ('leeches', const LeechesPage()),
-    ('appearance', const AppearancePage()),
+    ('your languages', const LanguagesSettingsPage()),
+    ('activities and memory', const ActivitiesPage()),
+    ('look and language', const AppearancePage()),
+    ('reminders', const RemindersPage()),
+    ('your decks', const YourDecksPage()),
+    ('your data', const YourDataPage()),
+    ('the app log', const AppLogPage()),
+    ('updates', const UpdatesPage()),
+    ('profiles and privacy', const ProfilesPrivacyPage()),
     ('voices', const VoicesPage()),
     ('sources', const SourcesPage()),
     ('profiles', const ProfilesPage()),
@@ -621,10 +637,10 @@ void main() {
           Future<void> Function(WidgetTester tester, AppState state)?,
         )
       >[
-        ('settings, reviewing on', const SettingsPage(), null),
+        ('settings, reviewing on', const ReviewingPage(), null),
         (
           'how reviewing works',
-          const SettingsPage(),
+          const ReviewingPage(),
           (tester, state) async {
             await tapShown(tester, find.text(l10nOf(tester).reviewSettingsHow));
           },
