@@ -113,19 +113,15 @@ void main() {
     // Only Telugu, learned, until the other languages are unfolded (#463).
     expect(find.byType(LanguageVoiceCard), findsOneWidget);
     await _tap(tester, find.text(l10n.voicesOtherLanguages));
+    // The IPA has no voice of its own, so it has no card (ADR-0041).
+    final voiced = state.languages.where((l) => !l.isIpa).length;
     final cards = tester.widgetList<LanguageVoiceCard>(
       find.byType(LanguageVoiceCard),
     );
-    expect(cards, hasLength(state.languages.length));
+    expect(cards, hasLength(voiced));
     expect(cards.first.language.code, 'te');
-    expect(
-      find.text(l10n.voicesListening),
-      findsNWidgets(state.languages.length),
-    );
-    expect(
-      find.text(l10n.voicesSpeakingPart),
-      findsNWidgets(state.languages.length),
-    );
+    expect(find.text(l10n.voicesListening), findsNWidgets(voiced));
+    expect(find.text(l10n.voicesSpeakingPart), findsNWidgets(voiced));
     // No second list for speech below the voices.
     expect(find.text('Recognising your speech'), findsNothing);
     final hindi = _card('Hindi');
