@@ -104,9 +104,6 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .todayh h3{margin:0;font-weight:600;font-size:calc(24px*var(--t));line-height:calc(32px*var(--t))}
 .avatar{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex:none}
 .avatar>span{width:44px;height:44px;border-radius:22px;background:var(--pc);color:var(--onPc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;line-height:1}
-/* LanguageMenu: a TextButton, 48 high, the glyph tile and arrow_drop_down */
-.lmenu{min-width:48px;height:48px;display:flex;align-items:center;padding:4px 2px 4px 8px;color:var(--onSv);border-radius:24px;flex:none;position:relative}
-.mglyph{min-width:28px;height:28px;padding:0 4px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:24px;background:var(--sc);color:var(--onSc);position:relative;overflow:hidden}
 /* chips (FilterChip): 32 high inside a 48 target */
 .chipsH{display:flex;gap:8px;padding:0 16px;overflow:hidden;white-space:nowrap}
 .fhit{min-height:48px;min-width:48px;display:flex;align-items:center;justify-content:center;flex:none}
@@ -209,18 +206,26 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .strip.x14{--t:1.4;--tn:1.3}
 .strip .top{padding-bottom:0}
 .strip.lab{padding-bottom:48px}
-.lbar{display:flex;align-items:center;height:56px;padding:0 4px 0 8px;background:var(--s);position:relative;box-shadow:0 1px 0 var(--olv)}
+.lbar{display:flex;align-items:center;height:56px;padding:0 4px;background:var(--s);position:relative;box-shadow:0 1px 0 var(--olv)}
 /* the whole bar but the bug button is one target: a tap opens the menu, a sideways drag changes the language */
 .lzone{flex:1;min-width:0;height:48px;display:flex;align-items:center;padding:0 4px;border-radius:24px;overflow:hidden}
 /* the shown language: the chip (FilterChip, selected), its glyph tile and name, no arrow */
-.lchip{flex:none;min-height:calc(32px + 12px*(var(--t) - 1));border-radius:10px;display:flex;align-items:center;gap:6px;padding:5px 12px 5px 8px;background:var(--sc);color:var(--onSc);white-space:nowrap}
-.lchip.nock{padding-left:12px}
+.lchip{flex:none;min-height:calc(32px + 12px*(var(--t) - 1));border-radius:10px;border:1px solid var(--sc);display:flex;align-items:center;gap:6px;padding:4px 11px 4px 7px;background:var(--sc);color:var(--onSc);white-space:nowrap}
 .lchip .glyph{background:var(--sLowest);color:var(--onS)}
+/* Progress with All on: the chip keeps its place, unselected (FilterChip's outline), so nothing moves */
+.lchip.off{background:transparent;border-color:var(--ol);color:var(--onSv)}
+.lchip.off .glyph{background:var(--sc);color:var(--onSc)}
 /* every other choice: its bare glyph, no tile, onSurface at 64% alpha; glyphs do not scale with text (TextScaler.noScaling) */
-.lg{flex:none;min-width:26px;height:32px;display:flex;align-items:center;justify-content:center;font-size:18px;line-height:24px;font-weight:600;color:color-mix(in srgb,var(--onS) 64%,transparent)}
-.lg.all{font-size:14px;font-weight:700;letter-spacing:.2px;min-width:30px}
+.lg{flex:none;min-width:23px;height:32px;display:flex;align-items:center;justify-content:center;font-size:18px;line-height:24px;font-weight:600;color:color-mix(in srgb,var(--onS) 64%,transparent)}
 /* mid-swipe: the next one rises to full alpha */
 .lg.to{color:var(--onS)}
+/* the All slot, just before the bug button, 48 dp wide on every screen: All on Progress, empty on Today and Decks */
+.aslot{flex:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.allb{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center}
+.allb>span{min-width:40px;height:32px;padding:0 8px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:20px;font-weight:700;letter-spacing:.2px;color:color-mix(in srgb,var(--onS) 64%,transparent)}
+.allb[aria-pressed="true"]>span{background:var(--sc);color:var(--onSc)}
+/* the empty slot is marked on the page only, never drawn in the app */
+body.marks .aslot:empty{outline:1px dotted var(--page-muted);outline-offset:-6px;border-radius:24px}
 /* the menu: every choice with its chip */
 .menu{left:8px;min-width:220px}
 .menu .it{padding:0 16px 0 12px}
@@ -237,13 +242,14 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .srch{margin:0 0 12px}
 .srin{min-height:48px;border-radius:24px;background:var(--sHigh);color:var(--onSv);display:flex;align-items:center;gap:12px;padding:0 16px}
 .srin .mi{color:var(--onSv)}
+.guide{position:absolute;z-index:9;left:0;right:0;height:0;border-top:1px dashed var(--page-acc);pointer-events:none}
 td code,li code{font-size:13px}
 </style>
 </head>
 <body class="marks">
 <div class="wrap">
 <h1>The language bar</h1>
-<p class="lede"><b>#528</b>, awaiting the owner's approval. The bar the owner chose from <code>language-bar-proposals.html</code>: proposal D's folded bar, always folded, with no dropdown and the glyphs in place of the dots (owner, 2026-10-16: “The folded top bar. No dropdown. Instead of dots, use the glyphs (not filled icons, just the glyphs, alpha passed). Show mockup. Searchbar looked fine”). It sits at the top of Today, Decks and Progress and holds two things: the languages and the bug report button. A sideways swipe on the bar, and only on the bar, changes the language (“Swipe on top row only”), and a tap on it opens the menu of every language with its chip (“Clicking that top bar will also show the menu with all languages (with their chips)”). Hindi and Bengali are the languages on screen; Telugu, Marathi, Gujarati and Kannada fill the bar for 4 and 6. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds (<code>lib/ui/theme.dart</code>). The dashed outlines mark what changes, and the grey finger and its trail show the gesture; neither is part of the app. <span class="dec">Decided</span> is the owner's; <span class="prop">Proposed</span> waits for the owner.</p>
+<p class="lede"><b>#528</b>, awaiting the owner's approval. The bar the owner chose from <code>language-bar-proposals.html</code>: proposal D's folded bar, always folded, with no dropdown and the glyphs in place of the dots (owner, 2026-10-16: “The folded top bar. No dropdown. Instead of dots, use the glyphs (not filled icons, just the glyphs, alpha passed). Show mockup. Searchbar looked fine”). It sits at the top of Today, Decks and Progress and holds the languages and the bug report button, and on Progress only an All button just before the bug button (owner, 2026-10-16: “Only on progress we need an all button.fix it to the right (near debug) so that the top bar doesn't shift when changing between the 3 screens.”). A sideways swipe on the bar, and only on the bar, changes the language (“Swipe on top row only”), and a tap on it opens the menu of every language with its chip (“Clicking that top bar will also show the menu with all languages (with their chips)”). Hindi and Bengali are the languages on screen; Telugu, Marathi, Gujarati and Kannada fill the bar for 4 and 6. Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds (<code>lib/ui/theme.dart</code>). The dashed outlines mark what changes, and the grey finger and its trail show the gesture; neither is part of the app. <span class="dec">Decided</span> is the owner's; <span class="prop">Proposed</span> waits for the owner.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -266,14 +272,16 @@ td code,li code{font-size:13px}
 
 <section class="opt" id="bar">
 <h2>1 · The bar, with 1, 2, 4 and 6 languages</h2>
-<p>From the start: the choices in the menu's order, All first, then the languages in the order the learner added them. The shown one is its chip, glyph and name. Every other one is only its glyph, as plain text: हि (hi) for Hindi, বা (bā) for Bengali, తె (te), म (ma), ગુ (gu) and ಕ (ka). The bug report button is at the end. The bar is always 56 dp high, at 1x and at 1.4x, on every screen.</p>
+<p>From the start: the languages in the order the learner added them. The shown one is its chip, glyph and name. Every other one is only its glyph, as plain text: हि (hi) for Hindi, বা (bā) for Bengali, తె (te), म (ma), ગુ (gu) and ಕ (ka). Then the All slot and the bug report button. On Progress the slot holds the All button; on Today and Decks it is kept empty (dotted here, on the page only), so the chip and the glyphs sit in the same places on all three screens. The bar is always 56 dp high, at 1x and at 1.4x, on every screen.</p>
 <div class="strips" id="st"></div>
 <ul>
 <li><span class="dec">Decided</span> Always folded: one line, the shown language's chip with its glyph and name, and no dropdown arrow (owner, 2026-10-16).</li>
 <li><span class="dec">Decided</span> The other choices are their glyphs, not filled tiles or icons, drawn faded (“just the glyphs, alpha passed”).</li>
-<li><span class="prop">Proposed</span> The fade is <code>onSurface</code> at <b>64% alpha</b>. That still meets 4.5:1, the contrast for ordinary text, in every seed in light, dark and pure black; the self-check above gives the lowest ratio it found. 38%, Material's disabled alpha, would fail.</li>
-<li><span class="prop">Proposed</span> <b>All</b> is a plain mark, the word “All” in the same faded colour, with no globe. Shown, its chip reads “All”, with no glyph tile.</li>
-<li><span class="prop">Proposed</span> The choices keep their order, and the chip sits in its own place among them, so the glyphs to its left are a right swipe away and those to its right a left swipe away.</li>
+<li><span class="dec">Decided</span> The fade is <code>onSurface</code> at <b>64% alpha</b> (owner, 2026-10-16: “64% is right”). That still meets 4.5:1, the contrast for ordinary text, in every seed in light, dark and pure black; the self-check above gives the lowest ratio it found. 38%, Material's disabled alpha, would fail.</li>
+<li><span class="dec">Decided</span> The languages keep their order, and the chip sits in its own place among them (owner, 2026-10-16: “Own place”), so the glyphs to its left are a right swipe away and those to its right a left swipe away.</li>
+<li><span class="dec">Decided</span> <b>All</b> is on Progress only, not on Today or Decks, and not in the bar's glyphs or its menu (owner, 2026-10-16: “How will all work in the deck menu? That will bring on the old language bar? It doesn't make sense there. On home, multiple language being reviewed together is a bit tricky. Only on progress we need an all button.”). It is fixed at the right, next to the bug button (“fix it to the right (near debug) so that the top bar doesn't shift when changing between the 3 screens”).</li>
+<li><span class="prop">Proposed</span> On Today and Decks the All slot is kept, empty and 48 dp wide, so the chip and every glyph stay in exactly the same place when the tab changes; the self-check measures it. With one language Progress keeps the slot empty too, since All would show the same numbers.</li>
+<li><span class="prop">Proposed</span> The All button is the word “All” in the glyphs' faded colour, with no globe. On, it is filled (<code>secondaryContainer</code>), and the language chip stays in its place drawn unselected, its outline only, so turning All on or off moves nothing either.</li>
 <li><span class="prop">Proposed</span> The glyphs stay their size at 1.4x, as the language glyph tiles do today (<code>TextScaler.noScaling</code>); the chip's name grows. With 6 languages at 1.4x the widest chip (Gujarati, Kannada) still fits beside every glyph.</li>
 <li><span class="prop">Proposed</span> A thin line under the bar, <code>outlineVariant</code>, parts it from the screen once the screen scrolls under it.</li>
 </ul>
@@ -281,36 +289,39 @@ td code,li code{font-size:13px}
 
 <section class="opt" id="swipe">
 <h2>2 · A swipe: before, during and after</h2>
-<p>Hindi shown, with two languages. A drag to the left goes to the next choice, Bengali.</p>
+<p>Hindi shown, with two languages. A drag to the left goes to the next language, Bengali.</p>
 <div class="frames" id="fr-swipe"></div>
 <ul>
 <li><span class="dec">Decided</span> The swipe works on this bar only; the screen under it keeps its own scrolling (#528, “Swipe on top row only”).</li>
-<li><span class="prop">Proposed</span> Left goes to the next choice, right to the previous one, past a third of the bar's width or on a flick. At either end the bar gives a little and springs back; it does not wrap round.</li>
+<li><span class="prop">Proposed</span> Left goes to the next language, right to the previous one, past a third of the bar's width or on a flick. At either end the bar gives a little and springs back; it does not wrap round.</li>
+<li><span class="prop">Proposed</span> On Progress a swipe never lands on All: All is only tapped. A swipe with All on turns All off and goes to the next or previous language as usual. Today and Decks show the language under All, the one the chip holds.</li>
 <li><span class="prop">Proposed</span> While dragging, the next glyph rises to full alpha and a label under the bar names it, “বা Bengali”. After, the chip moves to Bengali, Hindi shrinks back to हि (hi), and the label fades out after a second.</li>
 </ul>
 </section>
 
 <section class="opt" id="menu">
 <h2>3 · A tap on the bar: the menu of every language</h2>
-<p>A tap anywhere on the bar but the bug button opens the menu under it, with every choice as its chip. The shown one is filled and ticked.</p>
+<p>A tap anywhere on the languages opens the menu under it, with every language as its chip. The shown one is filled and ticked. The All slot and the bug button are not part of it.</p>
 <div class="frames" id="fr-menu"></div>
 <ul>
 <li><span class="dec">Decided</span> Tapping the bar shows the menu with all languages, each with its chip (owner, 2026-10-16).</li>
-<li><span class="prop">Proposed</span> The menu is the app's ordinary menu (<code>MenuAnchor</code>), one choice per row, All first. A tap on a row shows that language and closes the menu. The glyphs on the bar are not separate buttons: the whole bar is one.</li>
-<li><span class="prop">Proposed</span> In the menu All reads “All languages”, with no glyph tile.</li>
+<li><span class="prop">Proposed</span> The menu is the app's ordinary menu (<code>MenuAnchor</code>), one language per row, in the bar's order, with no All on any screen (All is Progress's own button). A tap on a row shows that language and closes the menu; on Progress it also turns All off. The glyphs on the bar are not separate buttons: the languages are one.</li>
 </ul>
 </section>
 
 <section class="opt" id="screens">
 <h2>4 · Today, Decks and Progress</h2>
-<p>The same bar on all three screens, so it never jumps when the tab changes. Decks keeps the search bar of the proposals' section 0, unchanged.</p>
+<p>The same bar on all three screens, so it never jumps when the tab changes. Decks keeps the search bar of the proposals' section 0, unchanged. Progress adds All in the slot before the bug button.</p>
 <div class="frames" id="fr-screens"></div>
+<h2 style="margin-top:28px">The bar does not shift between the three screens</h2>
+<p>Four languages, Bengali shown, on Today, Decks and Progress, then Progress with All on. The dashed lines are the page's, at the chip's edges, to show nothing moves; the self-check measures every glyph, the chip, the slot and the bug button on each frame and finds them in the same places.</p>
+<div class="frames" id="fr-same"></div>
 <ul>
 <li><span class="dec">Decided</span> The bar is on Today, Decks and Progress (#528).</li>
 <li><span class="dec">Decided</span> Decks' search bar at the top of the path, as drawn in the proposals (“Searchbar looked fine”). What it searches is <code>deck-search.html</code>'s (#527).</li>
 <li><span class="prop">Proposed</span> Today's date, greeting and profile button move into the top of Today's screen, in one row, and scroll away with it.</li>
 <li><span class="prop">Proposed</span> The titles “Decks” and “Progress” go; the tab bar names the screen, and the screen reader still hears the tab's name.</li>
-<li><span class="prop">Proposed</span> Progress's own language chips go: Progress follows the bar, and All shows every language's numbers together.</li>
+<li><span class="prop">Proposed</span> Progress's own language chips go: Progress follows the bar, and its All button shows every language's numbers together.</li>
 </ul>
 </section>
 
@@ -319,7 +330,8 @@ td code,li code{font-size:13px}
 <p>The bar is one button for TalkBack, with the swipe as two actions. The glyphs are not read one by one.</p>
 <div class="frames" id="fr-tb"></div>
 <ul>
-<li><span class="prop">Proposed</span> TalkBack says “Language shown: Hindi, 1 of 4 languages. Button. Double-tap to choose a language. Actions available.” The actions are “Next language: Bengali” and “Previous language: All languages”. After a change it says “Language shown: Bengali”.</li>
+<li><span class="prop">Proposed</span> TalkBack says “Language shown: Bengali, 2 of 4 languages. Button. Double-tap to choose a language. Actions available.” The actions are “Next language: Telugu” and “Previous language: Hindi”; on the first or last language only one is offered. After a change it says “Language shown: Telugu”. The empty slot on Today and Decks is not read.</li>
+<li><span class="prop">Proposed</span> On Progress the All button is a toggle: “All languages. Toggle button, not pressed. Double-tap to show every language's numbers together.”</li>
 <li><span class="prop">Proposed</span> In the menu each row is a radio item, “Bengali, not checked”.</li>
 </ul>
 </section>
@@ -332,18 +344,21 @@ td code,li code{font-size:13px}
 <tr><td data-h="What">Which bar</td><td data-h="Drawn">Proposal D's folded bar, always folded, the other proposals dropped</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
 <tr><td data-h="What">The shown language</td><td data-h="Drawn">A chip with its glyph and name, no dropdown arrow</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
 <tr><td data-h="What">The other choices</td><td data-h="Drawn">Bare glyphs, faded, in place of the dots</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
-<tr><td data-h="What">How faded</td><td data-h="Drawn"><code>onSurface</code> at 64% alpha, 4.5:1 or more everywhere</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="What">All</td><td data-h="Drawn">The plain mark “All”, no globe; “All languages” in the menu</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="What">Order</td><td data-h="Drawn">All, then the languages as added; the chip in its own place</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="What">How faded</td><td data-h="Drawn"><code>onSurface</code> at 64% alpha, 4.5:1 or more everywhere</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16: “64% is right”</td></tr>
+<tr><td data-h="What">Where the chip sits</td><td data-h="Drawn">In its own place among the glyphs, the languages as added</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16: “Own place”</td></tr>
+<tr><td data-h="What">All</td><td data-h="Drawn">On Progress only, a button fixed at the right, next to the bug button; not on Today or Decks, not among the glyphs, not in the menu</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16: “Only on progress we need an all button.fix it to the right (near debug) so that the top bar doesn't shift when changing between the 3 screens.”</td></tr>
+<tr><td data-h="What">The All slot on Today and Decks</td><td data-h="Drawn">Kept empty, 48 dp, so the chip and glyphs never move; empty on Progress too with one language</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="What">How All looks</td><td data-h="Drawn">The word “All”, faded off, filled on; the chip stays in place, outlined</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="What">All and the swipe</td><td data-h="Drawn">A swipe never lands on All; with All on it turns All off and moves as usual</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 <tr><td data-h="What">Glyphs at 1.4x</td><td data-h="Drawn">Not scaled; the chip's name is</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="What">Swipe</td><td data-h="Drawn">On the bar only; next and previous choice</td><td data-h="Status"><span class="dec">Decided</span> #528</td></tr>
+<tr><td data-h="What">Swipe</td><td data-h="Drawn">On the bar only; next and previous language</td><td data-h="Status"><span class="dec">Decided</span> #528</td></tr>
 <tr><td data-h="What">Swipe feedback and ends</td><td data-h="Drawn">Next glyph to full alpha, a label naming it; no wrapping</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 <tr><td data-h="What">A tap on the bar</td><td data-h="Drawn">The menu of every language with its chip</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
-<tr><td data-h="What">The menu's layout</td><td data-h="Drawn">One chip per row, the shown one filled and ticked</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="What">Bug report button</td><td data-h="Drawn">At the end of the bar</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
+<tr><td data-h="What">The menu's layout</td><td data-h="Drawn">One chip per row, the shown one filled and ticked, no All</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="What">Bug report button</td><td data-h="Drawn">At the end of the bar, the All slot just before it</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
 <tr><td data-h="What">Decks' search bar</td><td data-h="Drawn">As in the proposals' section 0</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16</td></tr>
 <tr><td data-h="What">Where the rest of the headers goes</td><td data-h="Drawn">Greeting into Today, titles dropped, Progress's chips dropped</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="What">TalkBack</td><td data-h="Drawn">One button, next and previous as actions</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="What">TalkBack</td><td data-h="Drawn">One button, next and previous as actions; All a toggle button</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 </tbody></table>
 </section>
 </div>
@@ -449,13 +464,12 @@ const LANGS={
  gu:{code:'gu',name:'Gujarati',icon:'ગુ',tr:'gu'},
  kn:{code:'kn',name:'Kannada',icon:'ಕ',tr:'ka'},
 };
-/* the choices, in the menu's order: All first, then the languages learned */
-const C1=[null,'hi'],C2=[null,'hi','bn'],C4=[null,'hi','bn','te','mr'],C6=[null,'hi','bn','te','mr','gu','kn'];
-const SETS={2:C1,3:C2,5:C4,7:C6};
+/* the languages, in the order they were added; All is not among them (Progress's own button) */
+const C1=['hi'],C2=['hi','bn'],C4=['hi','bn','te','mr'],C6=['hi','bn','te','mr','gu','kn'];
+const SETS={1:C1,2:C2,4:C4,6:C6};
 const key=(c)=>c||'all';
 const unkey=(k)=>k==='all'?null:k;
 const nameOf=(c)=>c?LANGS[c].name:'All languages';
-const shortOf=(c)=>c?LANGS[c].name:'All';
 const AT={hi:7,bn:9};
 const DUE={hi:4,bn:12};
 const LESSON={hi:9,bn:9};
@@ -463,29 +477,30 @@ const tile=(c)=>`<span class="glyph" lang="${c}">${LANGS[c].icon}</span>`;
 
 /* ---------- the bar ---------- */
 const debugBtn=()=>`<span class="ibtn lf" data-tap data-debug aria-label="Get support or report a problem">${ic('bug_report','mo')}</span>`;
-function bar(ch,shown,o={}){
- const i=ch.indexOf(shown);const n=ch.length-1;
+/* the All slot: on Progress (more than one language) the All toggle, on Today and Decks kept empty */
+ const allSlot=(screen,ch,all)=>`<span class="aslot" data-slot>${screen==='progress'&&ch.length>1?`<span class="allb lf" data-tap data-all role="button" aria-pressed="${!!all}" aria-label="All languages. Double-tap to show every language's numbers together"><span>All</span></span>`:''}</span>`;
+ function bar(screen,ch,shown,o={}){
+ const i=ch.indexOf(shown);const n=ch.length;const all=!!o.all;
  const prev=i>0?ch[i-1]:undefined,next=i<ch.length-1?ch[i+1]:undefined;
  const acts=[next!==undefined?`Next language: ${nameOf(next)}`:'',prev!==undefined?`Previous language: ${nameOf(prev)}`:''].filter(Boolean).join('; ');
  const items=ch.map(c=>{
-  if(c===shown)return `<span class="lchip lL${c?'':' nock'}" data-choice="${key(c)}" data-on>${c?tile(c):''}<span class="one">${shortOf(c)}</span></span>`;
-  const to=o.to!==undefined&&c===o.to;
-  return c?`<span class="lg${to?' to':''}" data-choice="${key(c)}" lang="${c}" aria-hidden="true">${LANGS[c].icon}</span>`
-          :`<span class="lg all${to?' to':''}" data-choice="all" aria-hidden="true">All</span>`;
+  if(c===shown)return `<span class="lchip lL${all?' off':''}" data-choice="${c}" data-on>${tile(c)}<span class="one">${LANGS[c].name}</span></span>`;
+ const to=o.to!==undefined&&c===o.to;
+ return `<span class="lg${to?' to':''}" data-choice="${c}" lang="${c}" aria-hidden="true">${LANGS[c].icon}</span>`;
  }).join('');
- return `<div class="lbar chg" data-n="${ch.length}" data-shown="${key(shown)}"${o.to!==undefined?` data-to="${key(o.to)}"`:''}><span class="lzone lf" data-tap data-zone role="button" aria-haspopup="menu" aria-label="Language shown: ${nameOf(shown)}${shown?`, ${i} of ${n} ${plural(n,'language','languages')}`:''}. Double-tap to choose a language" data-actions="${acts}">${items}</span>${debugBtn()}</div>`;
+ return `<div class="lbar chg" data-screen="${screen}" data-n="${ch.length}" data-shown="${shown}"${all?' data-allon':''}${o.to!==undefined?` data-to="${o.to}"`:''}><span class="lzone lf" data-tap data-zone role="button" aria-haspopup="menu" aria-label="Language shown: ${nameOf(shown)}, ${i+1} of ${n} ${plural(n,'language','languages')}. Double-tap to choose a language" data-actions="${acts}">${items}</span>${allSlot(screen,ch,all)}${debugBtn()}</div>`;
 }
 const label=(c)=>`<span class="lname lL" data-label="${key(c)}">${c?`<span class="glyph" lang="${c}">${LANGS[c].icon}</span>`:''}<span class="one">${nameOf(c)}</span></span>`;
 const finger=(x,y,trail)=>`<span class="ann finger" style="left:${x}px;top:${y}px"></span>${trail?`<span class="ann trail" style="left:${x+30}px;top:${y+20}px;width:${trail}px"></span>`:''}`;
 function topRow(screen,ch,shown,o){
  const lab=o.to!==undefined?label(o.to):o.after?label(shown):'';
- return `<div class="top swipe" data-screen="${screen}">${bar(ch,shown,o)}${lab}${o.finger?finger(...o.finger):''}</div>`;
+ return `<div class="top swipe" data-screen="${screen}">${bar(screen,ch,shown,o)}${lab}${o.finger?finger(...o.finger):''}</div>`;
 }
 function menuOf(ch,shown){
  return `<div class="menu" data-open role="menu" aria-label="Language">${ch.map(c=>{const on=c===shown;
-  return `<span class="it lf" data-tap data-item="${key(c)}" role="menuitemradio" aria-checked="${on}">${on?ic('check','ck'):'<span class="ck"></span>'}<span class="fchip lL${on?' on':''}${c?'':' nock'}">${c?tile(c):''}<span class="one">${nameOf(c)}</span></span></span>`}).join('')}</div>`;
+  return `<span class="it lf" data-tap data-item="${c}" role="menuitemradio" aria-checked="${on}">${on?ic('check','ck'):'<span class="ck"></span>'}<span class="fchip lL${on?' on':''}">${tile(c)}<span class="one">${nameOf(c)}</span></span></span>`}).join('')}</div>`;
 }
-const strip=(ch,shown,x14,o={})=>()=>`<div class="strip${x14?' x14':''}${o.to!==undefined?' lab':''}" data-n="${ch.length}">${topRow('strip',ch,shown,o)}</div>`;
+const strip=(screen,ch,shown,x14,o={})=>()=>`<div class="strip${x14?' x14':''}${o.to!==undefined?' lab':''}" data-n="${ch.length}" data-screen="${screen}">${topRow(screen,ch,shown,o)}</div>`;
 
 /* ---------- the screens under it ---------- */
 const greet=()=>`<div class="greet box"><span class="gr"><span class="bM v lf">Thursday, 16 October</span><span class="hS lf">Good morning, Aro</span></span><span class="avatar lf" data-tap aria-label="Switch profile"><span>A</span></span></div>`;
@@ -503,9 +518,9 @@ const STATS={all:['1,604','84%','4','63'],hi:['512','88%','4','21'],bn:['731','8
 const HEAT=(()=>{const a=[];let x=7;for(let i=0;i<84;i++){x=(x*53+19)%97;const busy=i>40?0.85:0.35;a.push((x/97)<busy?1+((x+i)%4):0)}return a})();
 const LEVELS=['var(--sHighest)','color-mix(in srgb,var(--p) 30%,transparent)','color-mix(in srgb,var(--p) 50%,transparent)','color-mix(in srgb,var(--p) 75%,transparent)','var(--p)'];
 function progressContent(c){
- const s=STATS[key(c)];const t=(v,l)=>`<div class="lt lf"><div class="val one">${v}</div><div class="lab bM">${l}</div></div>`;
+ const s=STATS[c];const t=(v,l)=>`<div class="lt lf"><div class="val one">${v}</div><div class="lab bM">${l}</div></div>`;
  const heat=`<div class="heat" role="img" aria-label="Daily review activity">${Array.from({length:12},(_,w)=>`<div class="wk">${HEAT.slice(w*7,w*7+7).map(l=>`<span class="sq" style="background:${LEVELS[l]}"></span>`).join('')}</div>`).join('')}</div>`;
- return `<div class="content" data-lang="${key(c)}"><div class="trow box">${t(s[0],'Reviews')}${t(s[1],'Remembered')}</div><div class="trow box">${t(s[2],'Day streak')}${t(s[3],'New cards learned')}</div><div class="sec2 box"><div class="tM lf">Reviews, last 12 weeks</div>${heat}</div></div>`;
+ return `<div class="content" data-lang="${c}"><div class="trow box">${t(s[0],'Reviews')}${t(s[1],'Remembered')}</div><div class="trow box">${t(s[2],'Day streak')}${t(s[3],'New cards learned')}</div><div class="sec2 box"><div class="tM lf">Reviews, last 12 weeks</div>${heat}</div></div>`;
 }
 const rangeSeg=()=>`<div class="ctl"><div class="seg" role="radiogroup" aria-label="Time range">${[['7 days'],['30 days',1],['All time']].map(([l,on])=>`<span class="lL lf${on?' on':''}">${l}</span>`).join('')}</div></div>`;
 const fabs=()=>`<div class="fabs"><span class="fab ter lf" data-tap>${ic('my_location')}<span class="lL one">Where I am</span></span><span class="sp"></span><span class="fab lf" data-tap>${ic('add')}<span class="lL one">Add deck</span></span></div>`;
@@ -513,22 +528,24 @@ const TAB={today:'Today',decks:'Decks',progress:'Progress'};
 const CLS={today:'td',decks:'dk',progress:'prog'};
 
 function phone({screen,ch,shown,x14=false,o={}}){
- const body=screen==='today'?todayContent(shown):screen==='decks'?decksContent(shown,x14):progressContent(shown);
+ const body=screen==='today'?todayContent(shown):screen==='decks'?decksContent(shown,x14):progressContent(o.all?'all':shown);
  const tb=o.tb?`<span class="tbfocus" data-tb="${o.tb}"></span>`:'';
- return `<div class="ph ${CLS[screen]}${x14?' x14':''}" data-screen="${screen}" data-shown="${key(shown)}" data-content="${key(shown)}" data-n="${ch.length}"${o.menu?' data-menu':''}>${stat()}${topRow(screen,ch,shown,o)}${screen==='progress'?rangeSeg():''}<div class="scroll"><div class="clip">${body}</div></div>${screen==='decks'?fabs():''}${navb(TAB[screen])}${nav3()}${o.menu?menuOf(ch,shown):''}${tb}</div>`;
+ return `<div class="ph ${CLS[screen]}${x14?' x14':''}" data-screen="${screen}" data-shown="${shown}" data-content="${o.all?'all':shown}" data-n="${ch.length}"${o.menu?' data-menu':''}${o.guide?' data-guide':''}>${stat()}${topRow(screen,ch,shown,o)}${screen==='progress'?rangeSeg():''}<div class="scroll"><div class="clip">${body}</div></div>${screen==='decks'?fabs():''}${navb(TAB[screen])}${nav3()}${o.menu?menuOf(ch,shown):''}${tb}</div>`;
 }
 
 /* ---------- the frames ---------- */
 const STRIPS=[
- ['1 language: All and Hindi, Hindi shown',strip(C1,'hi',false)],
- ['2 languages, Bengali shown',strip(C2,'bn',false)],
- ['4 languages, Hindi shown',strip(C4,'hi',false)],
- ['6 languages, Gujarati shown',strip(C6,'gu',false)],
- ['6 languages, All shown',strip(C6,null,false)],
- ['1.4x · 4 languages, Bengali shown',strip(C4,'bn',true)],
- ['1.4x · 6 languages, Gujarati shown',strip(C6,'gu',true)],
- ['1.4x · 6 languages, Kannada shown',strip(C6,'kn',true)],
-];
+ ['Today or Decks · 1 language, Hindi',strip('today',C1,'hi',false)],
+ ['Today or Decks · 2 languages, Bengali shown',strip('today',C2,'bn',false)],
+ ['Today or Decks · 4 languages, Hindi shown',strip('today',C4,'hi',false)],
+ ['Today or Decks · 6 languages, Gujarati shown',strip('today',C6,'gu',false)],
+ ['Progress · 6 languages, Gujarati shown, All off',strip('progress',C6,'gu',false)],
+ ['Progress · 6 languages, All on (Gujarati under it)',strip('progress',C6,'gu',false,{all:true})],
+ ['Progress · 1 language: no All',strip('progress',C1,'hi',false)],
+ ['1.4x · Today or Decks, 4 languages, Bengali shown',strip('today',C4,'bn',true)],
+ ['1.4x · Progress, 6 languages, Gujarati shown',strip('progress',C6,'gu',true)],
+ ['1.4x · Progress, 6 languages, Kannada shown, All on',strip('progress',C6,'kn',true,{all:true})],
+ ];
 const SWIPE=[
  ['Today · before: Hindi shown, two languages',()=>phone({screen:'today',ch:C2,shown:'hi'})],
  ['Today · during: dragged 40% left, toward Bengali',()=>phone({screen:'today',ch:C2,shown:'hi',o:{to:'bn',finger:[150,6,90]}})],
@@ -540,15 +557,24 @@ const MENU=[
 ];
 const SCREENS=[
  ['Decks · four languages, Bengali shown',()=>phone({screen:'decks',ch:C4,shown:'bn'})],
- ['Progress · six languages, All shown',()=>phone({screen:'progress',ch:C6,shown:null})],
+ ['Progress · six languages, All on',()=>phone({screen:'progress',ch:C6,shown:'hi',o:{all:true}})],
  ['1.4x · Today, four languages, Hindi shown',()=>phone({screen:'today',ch:C4,shown:'hi',x14:true})],
  ['1.4x · Progress, two languages, Bengali shown',()=>phone({screen:'progress',ch:C2,shown:'bn',x14:true})],
 ];
-const TBF=[
- ['TalkBack · focus on the bar',()=>phone({screen:'today',ch:C4,shown:'hi',o:{tb:'[data-zone]'}}),'TalkBack says: “Language shown: Hindi, 1 of 4 languages. Double-tap to choose a language. Button. Actions available.” Its actions menu holds “Next language: Bengali” and “Previous language: All languages”. The glyphs are not read.'],
-];
+const SAME=[
+ ['Today · four languages, Bengali shown',()=>phone({screen:'today',ch:C4,shown:'bn',o:{guide:true}})],
+ ['Decks · four languages, Bengali shown',()=>phone({screen:'decks',ch:C4,shown:'bn',o:{guide:true}})],
+ ['Progress · four languages, Bengali shown',()=>phone({screen:'progress',ch:C4,shown:'bn',o:{guide:true}})],
+ ['Progress · All on, Bengali under it',()=>phone({screen:'progress',ch:C4,shown:'bn',o:{guide:true,all:true}})],
+ ];
+ const TBF=[
+ ['TalkBack · focus on the bar',()=>phone({screen:'today',ch:C4,shown:'bn',o:{tb:'[data-zone]'}}),'TalkBack says: “Language shown: Bengali, 2 of 4 languages. Double-tap to choose a language. Button. Actions available.” Its actions menu holds “Next language: Telugu” and “Previous language: Hindi”. The glyphs and the empty slot are not read.'],
+ ['TalkBack · Progress, focus on All',()=>phone({screen:'progress',ch:C4,shown:'bn',o:{tb:'[data-all]'}}),'TalkBack says: “All languages. Toggle button, not pressed. Double-tap to show every language\'s numbers together.”'],
+ ];
 
 function placeOverlays(){
+document.querySelectorAll('.ph[data-guide]').forEach(ph=>{ph.querySelectorAll('.guide').forEach(g=>g.remove());const chip=ph.querySelector('.lchip');const pr=ph.getBoundingClientRect(),r=chip.getBoundingClientRect();
+for(const x of [r.left,r.right]){const g=document.createElement('span');g.className='guide';Object.assign(g.style,{left:(x-pr.left)+'px',right:'auto',top:'0px',height:'100%',width:'0',borderTop:'0',borderLeft:'1px dashed var(--page-acc)'});ph.appendChild(g)}});
  document.querySelectorAll('[data-tb]').forEach(f=>{const ph=f.closest('.ph');const b=ph.querySelector(f.dataset.tb);const pr=ph.getBoundingClientRect(),r=b.getBoundingClientRect();
   Object.assign(f.style,{left:(r.left-pr.left-3)+'px',top:(r.top-pr.top-3)+'px',width:(r.width+6)+'px',height:(r.height+6)+'px'})});
  document.querySelectorAll('.ph .menu').forEach(m=>{const ph=m.closest('.ph');const b=ph.querySelector('.lbar');const pr=ph.getBoundingClientRect(),r=b.getBoundingClientRect();
@@ -611,7 +637,8 @@ function contrastProblems(){
     if(c<need)bad.push(`${theme} ${tagOf(ph)}: “${el.textContent.trim().slice(0,20)}” ${c.toFixed(2)}:1`);
    });
    ph.querySelectorAll('.menu .fchip:not(.on)').forEach(el=>{const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);edge(ratio(over(b,bg),bg),'menu chip outline',theme,ph)});
-   ph.querySelectorAll('.lname').forEach(l=>{const under=ph.querySelector('.scroll')||ph;edge(ratio(bgOf(l),bgOf(under)),'label against the screen',theme,ph)});
+   ph.querySelectorAll('.lchip.off').forEach(el=>{const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);edge(ratio(over(b,bg),bg),'unselected chip outline',theme,ph)});
+ ph.querySelectorAll('.lname').forEach(l=>{const under=ph.querySelector('.scroll')||ph;edge(ratio(bgOf(l),bgOf(under)),'label against the screen',theme,ph)});
   });
  }
  return {bad,checked,glyphMin};
@@ -619,49 +646,69 @@ function contrastProblems(){
 function numbers(){
  const bad=[];
  document.querySelectorAll('.ph,.strip').forEach(ph=>{const tag=tagOf(ph);
-  const b=ph.querySelector('.lbar');const n=+b.dataset.n;const ch=SETS[n];const shown=b.dataset.shown;
+  const b=ph.querySelector('.lbar');const n=+b.dataset.n;const ch=SETS[n];const shown=b.dataset.shown;const scr=b.dataset.screen;const allOn=b.dataset.allon!==undefined;const hasAll=scr==='progress'&&n>1;
   // 56 dp, at 1x and 1.4x
   const h=b.getBoundingClientRect().height;if(Math.abs(h-56)>0.5)bad.push(`${tag}: the bar is ${h} dp high, not 56`);
-  // the bar holds the language zone and the bug button, nothing else
-  const taps=[...b.querySelectorAll('[data-tap]')];
-  if(taps.length!==2||!b.querySelector('[data-zone][data-tap]')||b.querySelectorAll('[data-debug]').length!==1)bad.push(`${tag}: the bar is not one language button and one bug button`);
-  if(b.lastElementChild.dataset.debug===undefined)bad.push(`${tag}: the bug button is not at the end`);
-  // every choice, in the menu's order, the shown one as the chip and the rest as bare glyphs
-  const got=[...b.querySelectorAll('[data-choice]')].map(e=>e.dataset.choice);
-  if(got.join()!==ch.map(key).join())bad.push(`${tag}: the bar shows ${got.join(' ')} for ${ch.map(key).join(' ')}`);
-  const on=[...b.querySelectorAll('[data-on]')];if(on.length!==1||!on[0].classList.contains('lchip'))bad.push(`${tag}: ${on.length} chips`);
-  else if(on[0].dataset.choice!==shown)bad.push(`${tag}: the chip is not the shown language`);
-  if(b.querySelectorAll('.lg').length!==n-1)bad.push(`${tag}: not every other choice is a bare glyph`);
+  // the bar holds the language zone, the All slot and the bug button, nothing else; All only on Progress
+ const taps=[...b.querySelectorAll('[data-tap]')];
+ if(taps.length!==(hasAll?3:2)||!b.querySelector('[data-zone][data-tap]')||b.querySelectorAll('[data-debug]').length!==1)bad.push(`${tag}: the bar is not the languages, ${hasAll?'All, ':''}and one bug button`);
+ if(b.lastElementChild.dataset.debug===undefined)bad.push(`${tag}: the bug button is not at the end`);
+ const slot=b.lastElementChild.previousElementSibling;
+ if(!slot||slot.dataset.slot===undefined)bad.push(`${tag}: the All slot is not just before the bug button`);
+ else{if(Math.abs(slot.getBoundingClientRect().width-48)>0.5)bad.push(`${tag}: the All slot is not 48 dp wide`);
+ if(hasAll&&!slot.querySelector('[data-all]'))bad.push(`${tag}: no All button on Progress`);
+ if(!hasAll&&(slot.children.length||slot.textContent.trim()))bad.push(`${tag}: the All slot is not empty on ${scr}`);
+ const ab=slot.querySelector('[data-all]');if(ab&&(ab.getAttribute('aria-pressed')==='true')!==allOn)bad.push(`${tag}: All is drawn ${allOn?'off':'on'}`)}
+ if([...b.querySelectorAll('[data-zone] *')].some(e=>/^All/.test(e.textContent.trim())))bad.push(`${tag}: All among the languages`);
+ // every language, in the order added, the shown one as the chip and the rest as bare glyphs
+ const got=[...b.querySelectorAll('[data-choice]')].map(e=>e.dataset.choice);
+ if(got.join()!==ch.join())bad.push(`${tag}: the bar shows ${got.join(' ')} for ${ch.join(' ')}`);
+ const on=[...b.querySelectorAll('[data-on]')];if(on.length!==1||!on[0].classList.contains('lchip'))bad.push(`${tag}: ${on.length} chips`);
+ else{if(on[0].dataset.choice!==shown)bad.push(`${tag}: the chip is not the shown language`);
+ if(on[0].classList.contains('off')!==allOn)bad.push(`${tag}: the chip's state does not follow All`)}
+ if(b.querySelectorAll('.lg').length!==n-1)bad.push(`${tag}: not every other language is a bare glyph`);
   b.querySelectorAll('.lg').forEach(g=>{const cs=getComputedStyle(g);if(rgba(cs.backgroundColor)[3]>0||cs.borderTopWidth!=='0px')bad.push(`${tag}: a glyph is drawn on a tile`);
    if(g.querySelector('.mi'))bad.push(`${tag}: a glyph is an icon`);
    if(!g.classList.contains('to')&&Math.abs(rgba(cs.color)[3]-0.64)>0.005)bad.push(`${tag}: a glyph is not at 64% alpha`);
-   const fs=parseFloat(cs.fontSize);if(fs!==(g.classList.contains('all')?14:18))bad.push(`${tag}: a glyph scales with text (${fs})`)});
+   const fs=parseFloat(cs.fontSize);if(fs!==18)bad.push(`${tag}: a glyph scales with text (${fs})`)});
   if([...b.querySelectorAll('.mi')].some(i=>/arrow_drop_down|expand_more|language/.test(i.textContent)))bad.push(`${tag}: a dropdown arrow or globe in the bar`);
   // everything fits in the zone, before the bug button
   const z=b.querySelector('[data-zone]');const zr=z.getBoundingClientRect();const last=z.lastElementChild.getBoundingClientRect();
   if(last.right>zr.right-4+0.5)bad.push(`${tag}: the glyphs do not fit the bar`);
   // TalkBack: one button naming the shown language, next and previous as actions
-  const lab=z.getAttribute('aria-label');if(!lab.startsWith(`Language shown: ${nameOf(unkey(shown))}`))bad.push(`${tag}: TalkBack does not name the shown language`);
-  const i=ch.indexOf(unkey(shown));const acts=z.dataset.actions;
+  const i=ch.indexOf(shown);const acts=z.dataset.actions;
+ const lab=z.getAttribute('aria-label');if(!lab.startsWith(`Language shown: ${nameOf(shown)}, ${i+1} of ${n} `))bad.push(`${tag}: TalkBack does not name the shown language`);
+ if(/All/.test(acts))bad.push(`${tag}: a swipe lands on All`);
   if(i<ch.length-1&&!acts.includes(`Next language: ${nameOf(ch[i+1])}`))bad.push(`${tag}: no Next action`);
   if(i>0&&!acts.includes(`Previous language: ${nameOf(ch[i-1])}`))bad.push(`${tag}: no Previous action`);
-  if(ph.classList.contains('ph')&&ph.dataset.content!==shown)bad.push(`${tag}: the screen shows another language than the bar`);
-  if(b.dataset.to){const j=ch.indexOf(unkey(b.dataset.to));if(Math.abs(i-j)!==1)bad.push(`${tag}: a swipe goes to a choice not next to the shown one`);
+  if(ph.classList.contains('ph')&&ph.dataset.content!==(allOn?'all':shown))bad.push(`${tag}: the screen shows another language than the bar`);
+ if(b.dataset.to){const j=ch.indexOf(b.dataset.to);if(j<0)bad.push(`${tag}: a swipe goes to something not a language`);if(Math.abs(i-j)!==1)bad.push(`${tag}: a swipe goes to a choice not next to the shown one`);
    const t=b.querySelector('.lg.to');if(!t||t.dataset.choice!==b.dataset.to||b.querySelectorAll('.lg.to').length!==1)bad.push(`${tag}: the next glyph is not the one raised`);
    if(ph.querySelector('[data-label]')?.dataset.label!==b.dataset.to)bad.push(`${tag}: the label does not name the next choice`)}
   else if(ph.querySelector('[data-label]')&&ph.querySelector('[data-label]').dataset.label!==shown)bad.push(`${tag}: the label after a change is not the new language`);
   if(ph.classList.contains('x14')){const fs=parseFloat(getComputedStyle(b.querySelector('.lchip .one')).fontSize);if(Math.abs(fs-19.6)>0.1)bad.push(`${tag}: text not at 1.4x (${fs})`)}
   // the menu: every choice with its chip, the shown one filled and checked
   const m=ph.querySelector('.menu');if(m){const its=[...m.querySelectorAll('[data-item]')];
-   if(its.map(e=>e.dataset.item).join()!==ch.map(key).join())bad.push(`${tag}: the menu does not list every choice in order`);
-   its.forEach(it=>{const c=unkey(it.dataset.item);const fc=it.querySelector('.fchip');if(!fc)bad.push(`${tag}: a menu row without its chip`);
-    else{if(c&&!fc.querySelector('.glyph'))bad.push(`${tag}: a menu chip without its glyph`);if(fc.classList.contains('on')!==(it.dataset.item===shown)||(it.getAttribute('aria-checked')==='true')!==(it.dataset.item===shown))bad.push(`${tag}: the menu's checked row is not the shown language`)}});
+   if(its.map(e=>e.dataset.item).join()!==ch.join())bad.push(`${tag}: the menu does not list every language in order, and only them`);
+ its.forEach(it=>{const fc=it.querySelector('.fchip');if(!fc)bad.push(`${tag}: a menu row without its chip`);
+ else{if(!fc.querySelector('.glyph'))bad.push(`${tag}: a menu chip without its glyph`);if(fc.classList.contains('on')!==(it.dataset.item===shown)||(it.getAttribute('aria-checked')==='true')!==(it.dataset.item===shown))bad.push(`${tag}: the menu's checked row is not the shown language`)}});
    const br=b.getBoundingClientRect(),mr=m.getBoundingClientRect();if(Math.abs(mr.top-br.bottom)>0.5)bad.push(`${tag}: the menu does not open under the bar`)}
   if(ph.classList.contains('ph')){const t=ph.querySelector('.top').getBoundingClientRect();ph.querySelectorAll('.ctl,.scroll').forEach(el=>{if(el.getBoundingClientRect().top<t.bottom-0.5)bad.push(`${tag}: the swipe area overlaps the screen`)});
    if(ph.dataset.screen==='today'&&!ph.querySelector('.greet'))bad.push(`${tag}: the greeting is lost`);
    if(ph.dataset.screen==='decks'&&ph.querySelector('.srin .one')?.textContent!=='Search units')bad.push(`${tag}: the search bar is not section 0's`)}
  });
- for(const n of [2,3,5,7])if(!document.querySelector(`.strip[data-n="${n}"]`))bad.push(`no bar with ${n-1} languages`);
+ for(const n of [1,2,4,6])if(!document.querySelector(`.strip[data-n="${n}"]`))bad.push(`no bar with ${n} languages`);
+// no shift: the same languages and shown language put the chip, every glyph, the slot and the bug button in the same places on Today, Decks and Progress
+const groups={};document.querySelectorAll('.ph').forEach(ph=>{const k=`${ph.dataset.n}|${ph.dataset.shown}|${ph.classList.contains('x14')}|${ph.parentElement.dataset.th}`;(groups[k]=groups[k]||[]).push(ph)});
+let spanning=0,compared=0;
+for(const [k,phs] of Object.entries(groups)){if(phs.length<2)continue;
+const pos=(ph)=>{const pr=ph.getBoundingClientRect();return [...ph.querySelectorAll('.lbar [data-choice],.lbar [data-slot],.lbar [data-debug]')].map(e=>{const r=e.getBoundingClientRect();return [r.left-pr.left,r.top-pr.top,r.width,r.height].map(v=>v.toFixed(1)).join(',')}).join(' ')};
+const ref=pos(phs[0]);phs.slice(1).forEach(ph=>{compared++;if(pos(ph)!==ref)bad.push(`${tagOf(ph)}: the bar shifts against ${tagOf(phs[0])}`)});
+if(new Set(phs.map(p=>p.dataset.screen)).size===3)spanning++}
+if(!spanning)bad.push('no Today, Decks and Progress frames to compare the bar across');
+window.__same={groups:spanning,compared};
+if(!document.querySelector('.ph [data-allon]'))bad.push('no Progress frame with All on');
+if(!document.querySelector('.strip[data-screen="progress"] [data-all]')||!document.querySelector('.strip[data-screen="today"] [data-slot]:empty'))bad.push('no bar with All and no bar with the empty slot');
  for(const s of ['today','decks','progress'])if(!document.querySelector(`.ph[data-screen="${s}"]`))bad.push(`no ${s} frame`);
  if(!document.querySelector('.ph [data-to]')||!document.querySelector('.ph [data-label]:not([data-to])'))bad.push('no swipe drawn');
  if(!document.querySelector('.ph [data-tb]'))bad.push('no TalkBack frame');
@@ -678,13 +725,13 @@ function check(){
  const all=[...new Set([...N,...L1.bad,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. ${L1.frames} frames (bars at 360 dp, phones at 360 × 800 dp) in light, dark and pure black, 1x and 1.4x, with 1, 2, 4 and 6 languages and Today, Decks and Progress. Every bar is 56 dp high and holds one language button and the bug button, last; it shows every choice in the menu's order, the shown one as its chip (no arrow, no globe) and every other as its bare glyph, no tile or icon, at 64% alpha and not scaled at 1.4x; everything fits before the bug button; TalkBack names the shown language with Next and Previous actions. Mid-swipe the raised glyph is the next choice and the label names it. Every menu lists every choice in order, each with its chip, the shown one filled and checked, opening under the bar. Layout: nothing sticks out or is cut, no sideways page scroll, labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the 3-button navigation bar. Contrast: ${C1.checked} text, glyph, icon, outline and edge pairs across 4 seeds × light, dark and pure black meet WCAG (text and glyphs 4.5:1; icons, outlines and edges 3:1). The faded glyphs' lowest is ${C1.glyphMin.toFixed(2)}:1. Not counted: the finger and its trail, TalkBack's green focus box, which the system draws, and two lines of today's Today drawn unchanged (the lesson card's second line and the due card's minutes), reported apart in language-swipe.html.`;
+  :`Self-check: 0 problems. ${L1.frames} frames (bars at 360 dp, phones at 360 × 800 dp) in light, dark and pure black, 1x and 1.4x, with 1, 2, 4 and 6 languages and Today, Decks and Progress. Every bar is 56 dp high and holds the languages as one button, the 48 dp All slot and the bug button, last; the slot holds All on Progress and is empty on Today and Decks; it shows every language in the order added, never All, the shown one as its chip (no arrow, no globe; outlined while All is on) and every other as its bare glyph, no tile or icon, at 64% alpha and not scaled at 1.4x; everything fits before the slot; TalkBack names the shown language with Next and Previous actions, never All. Mid-swipe the raised glyph is the next language and the label names it. Every menu lists every language in order and no All, each with its chip, the shown one filled and checked, opening under the bar. No shift: in ${window.__same.compared} frame pairs with the same languages, shown language, text size and theme (${window.__same.groups} of them across Today, Decks and Progress), the chip, every glyph, the All slot and the bug button sit at the same positions and sizes. Layout: nothing sticks out or is cut, no sideways page scroll, labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the 3-button navigation bar. Contrast: ${C1.checked} text, glyph, icon, outline and edge pairs across 4 seeds × light, dark and pure black meet WCAG (text and glyphs 4.5:1; icons, outlines and edges 3:1). The faded glyphs' lowest is ${C1.glyphMin.toFixed(2)}:1. Not counted: the finger and its trail, TalkBack's green focus box, which the system draws, and two lines of today's Today drawn unchanged (the lesson card's second line and the due card's minutes), reported apart in language-swipe.html.`;
  window.__check={problems:all,frames:L1.frames,pairs:C1.checked,glyphMin:C1.glyphMin};
  if(marksOn)document.body.classList.add('marks');
  applyTheme(state());
 }
 document.querySelectorAll('.controls input').forEach(i=>i.addEventListener('change',()=>{applyTheme(state());placeOverlays()}));
-renderFrames('st',STRIPS);renderFrames('fr-swipe',SWIPE);renderFrames('fr-menu',MENU);renderFrames('fr-screens',SCREENS);renderFrames('fr-tb',TBF);
+renderFrames('st',STRIPS);renderFrames('fr-swipe',SWIPE);renderFrames('fr-menu',MENU);renderFrames('fr-screens',SCREENS);renderFrames('fr-same',SAME);renderFrames('fr-tb',TBF);
 applyTheme(state());
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(check,check);else check();
 </script>
