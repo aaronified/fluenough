@@ -440,7 +440,13 @@ class _SetListSheet extends StatelessWidget {
           Expanded(
             child: ListView(
               controller: controller,
-              padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
+              // Clear of the navigation bar the sheet is drawn under.
+              padding: EdgeInsetsDirectional.fromSTEB(
+                16,
+                0,
+                16,
+                24 + MediaQuery.viewPaddingOf(context).bottom,
+              ),
               children: <Widget>[
                 for (final set in sets) ...<Widget>[
                   if (!one)
