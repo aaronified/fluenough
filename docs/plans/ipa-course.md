@@ -71,6 +71,21 @@ the skill model and the support mails (#432, #433), and `LanguageInfo` on
 `main` has no `typed` or `scoped`. The app side is still to be written; the
 next free ADR number is 0037.
 
+## Decided with the owner, 2026-10-16
+
+Plan item 4's two open points are answered ("Yes, recorded"; "Show, offer to
+add"):
+
+- The answers given through "The sounds of this word" button are recorded:
+  they count as IPA course practice and are scheduled.
+- The button shows for a learner who is not learning the IPA, and tapping it
+  first offers to add the course.
+
+The app side, plan items 1 (the example field), 3 and 4, is built on
+`wip/ipa-course` and described in
+[ADR-0041](../adr/0041-the-ipa-course.md) and DECK-FORMAT.md, "The IPA
+course". The content, items 1 (the examples), 2 and 5, is not.
+
 ## What is left
 
 1. **Examples, by the new rule.** Every symbol has at least two examples:
