@@ -1,12 +1,15 @@
 import '../../core/models/deck.dart';
 
 /// One side of a minimal pair: the sound as the deck writes it, and how it
-/// reads.
+/// reads, and, where the deck gives it, how it is said in the IPA.
 class PairSound {
-  const PairSound({required this.target, required this.reading});
+  const PairSound({required this.target, required this.reading, this.ipa});
 
   final String target;
   final String reading;
+
+  /// Broad, without the slashes; null where the deck gives none.
+  final String? ipa;
 }
 
 /// Two sounds a learner must tell apart, and what the difference is.
@@ -54,8 +57,8 @@ const String pairFixtureDeckName = 'Hindi Devanagari';
 const List<PairRound> pairFixtureRounds = <PairRound>[
   PairRound(
     MinimalPair(
-      a: PairSound(target: 'क', reading: 'ka'),
-      b: PairSound(target: 'ख', reading: 'kha'),
+      a: PairSound(target: 'क', reading: 'ka', ipa: 'kə'),
+      b: PairSound(target: 'ख', reading: 'kha', ipa: 'kʰə'),
       contrast:
           'ख is aspirated: a puff of air follows the k. English does not '
           'tell these two apart.',
@@ -64,8 +67,8 @@ const List<PairRound> pairFixtureRounds = <PairRound>[
   ),
   PairRound(
     MinimalPair(
-      a: PairSound(target: 'ग', reading: 'ga'),
-      b: PairSound(target: 'घ', reading: 'gha'),
+      a: PairSound(target: 'ग', reading: 'ga', ipa: 'ɡə'),
+      b: PairSound(target: 'घ', reading: 'gha', ipa: 'ɡʱə'),
       contrast: 'ग has no breath after it. घ does.',
     ),
     playsB: false,

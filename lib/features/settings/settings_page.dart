@@ -39,7 +39,7 @@ import 'update_section.dart';
 /// footer.
 ///
 /// Design screen `settings`. Live: the skill switches, Latin-letter
-/// readings, Show IPA (#533), adult content (18+, #96), sound, playing words automatically,
+/// readings, IPA pronunciations (#533), adult content (18+, #96), sound, playing words automatically,
 /// speech rate, and the Voices row. Every switch's line says what happens
 /// in its state (docs/plans/settings-wording.md).
 /// Export and import save the review log as a file and merge one back

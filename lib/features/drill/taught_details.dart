@@ -38,7 +38,7 @@ enum TaughtReading {
 }
 
 /// What a word's lesson showed of it (ADR-0024), laid out as the teach card
-/// does: the word, its reading and its IPA while Show IPA is on, its meaning, its notes, its base words
+/// does: the word, its reading and its IPA while IPA pronunciations is on, its meaning, its notes, its base words
 /// on one line ([BaseLine], #410) and its first example, 12 apart and
 /// centred. Its notes are every one but a pair note
 /// ([shownNotes]), whose text is the care note of the warning below.
@@ -100,7 +100,7 @@ class TaughtDetails extends StatelessWidget {
     final state = AppScope.read(context);
     final settings = state.settings;
     // Live, as the reading's line follows Latin-letter readings, the IPA's
-    // Show IPA, and the warnings name a rude word only while adult content
+    // IPA pronunciations, and the warnings name a rude word only while adult content
     // is on.
     return ListenableBuilder(
       listenable: settings,
@@ -211,7 +211,7 @@ class TaughtDetails extends StatelessWidget {
 }
 
 /// An example sentence under the meaning: the target sentence, bold, its
-/// IPA while Show IPA is on, over its translation.
+/// IPA while IPA pronunciations is on, over its translation.
 class _Example extends StatelessWidget {
   const _Example({required this.example, required this.language});
 

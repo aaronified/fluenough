@@ -62,7 +62,7 @@ class InspectPage extends StatelessWidget {
         title: Text(l10n.inspectTitle(entry.deck.name)),
         actions: <Widget>[ReportButton(detail: entry.id)],
       ),
-      // Built again as Show IPA changes.
+      // Built again as IPA pronunciations changes.
       body: ListenableBuilder(
         listenable: state.settings,
         builder: (context, _) => SelectionArea(

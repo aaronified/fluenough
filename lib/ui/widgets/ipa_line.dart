@@ -4,7 +4,7 @@ import '../../app/app_scope.dart';
 import '../../l10n/app_localizations.dart';
 
 /// How a word is said, in the IPA (ADR-0025): `/paːlu/`, muted, under the
-/// word or its answer, as the word sheet shows it. Show IPA in Settings
+/// word or its answer, as the word sheet shows it. IPA pronunciations in Settings
 /// switches it; see [ipaToShow].
 ///
 /// The IPA is always left to right, whatever the deck's language, and is
@@ -52,7 +52,7 @@ class IpaLine extends StatelessWidget {
 }
 
 /// [ipa], if it is to be shown: the deck gives one, it is not just [target]
-/// again (a card written in the IPA itself), and Show IPA is on. Null
+/// again (a card written in the IPA itself), and IPA pronunciations is on. Null
 /// otherwise, so that no line is left for it.
 ///
 /// Reads the setting without listening to it: a screen that shows the IPA
