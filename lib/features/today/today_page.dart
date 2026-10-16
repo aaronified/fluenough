@@ -9,10 +9,9 @@ import '../../app/shell_tab.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
-import '../../ui/widgets/language_menu.dart';
+import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
-import '../../ui/widgets/report_button.dart';
 import '../placement/native_choice.dart';
 import 'due_card.dart';
 import 'lesson_card.dart';
@@ -84,7 +83,16 @@ class TodayPage extends StatelessWidget {
         ),
       ),
     };
-    return Scaffold(body: SafeArea(bottom: false, child: body));
+    return Scaffold(
+      body: SafeArea(
+        bottom: false,
+        child: LanguageBarFrame(
+          screen: LanguageBarScreen.today,
+          reportDetail: 'Today',
+          child: body,
+        ),
+      ),
+    );
   }
 }
 
@@ -102,7 +110,6 @@ class _TodayContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           _Header(state: state),
-          const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(
               horizontal: AppSizes.gutter,
@@ -150,7 +157,8 @@ class _TodayContent extends StatelessWidget {
 }
 
 /// The date, the greeting, and the profile's avatar, which will switch
-/// profiles once they ship.
+/// profiles once they ship: the top of Today's content, under the language
+/// bar, scrolling away with it (#528).
 class _Header extends StatelessWidget {
   const _Header({required this.state});
 
@@ -163,10 +171,10 @@ class _Header extends StatelessWidget {
     final now = state.now();
     final locale = Localizations.localeOf(context).toLanguageTag();
     final profile = state.currentProfile;
-    // The design's header: 72 high, 24 from the start edge, 16 from the end.
-    return Container(
-      constraints: const BoxConstraints(minHeight: 72),
-      padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 16, 0),
+    // As docs/mockups/language-bar.html draws it: 24 from the start edge,
+    // 16 from the end, 8 above and 12 below.
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 16, 12),
       child: Row(
         children: <Widget>[
           Expanded(
@@ -190,9 +198,7 @@ class _Header extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 12),
-          const LanguageMenu(),
-          const ReportButton(detail: 'Today'),
+          const SizedBox(width: 8),
           IncomingFeature(
             feature: Feature.profiles,
             label: l10n.todaySwitchProfile,
