@@ -20,7 +20,7 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
-import '../review/review_waiting.dart' show reviewLanguagesOf;
+import '../review/review_waiting.dart' show pairOf, reviewPairsOf;
 import 'deck_content.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -191,10 +191,9 @@ class _UnitPageState extends State<UnitPage> {
             ? DrillRequest(deckIds: ids)
             : lesson;
         var section = 0;
-        // Reviewing is for the languages the learner reviews, not those
-        // they are learning (#525).
-        final reviews = reviewLanguagesOf(state)
-            .any((l) => l.code == language.code);
+        // Reviewing is for a course whose two languages the learner knows
+        // (and reads), not for one they are learning (#525).
+        final reviews = reviewPairsOf(state).contains(pairOf(first));
         return Scaffold(
           appBar: AppBar(
             title: Text(

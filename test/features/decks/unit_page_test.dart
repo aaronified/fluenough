@@ -43,6 +43,17 @@ Future<AppState> teluguReviewer() async {
   return app;
 }
 
+/// One who knows Telugu but not the course's other language, English: the
+/// course is not one they can review (#525).
+Future<AppState> teluguOnlyReviewer() async {
+  final app = await teluguLearner();
+  app.settings
+    ..spokenLanguages = const <String>['te']
+    ..scriptsRead = const <String, bool>{'te': true}
+    ..reviewLanguages = const <String>{'te'};
+  return app;
+}
+
 /// Family's number on the Telugu path: its unit's place in the course.
 int familyNumber(AppState state) =>
     state
@@ -386,6 +397,7 @@ void main() {
       for (final (learner, offered) in <(AppState, bool)>[
         (await teluguLearner(), false),
         (await teluguReviewer(), true),
+        (await teluguOnlyReviewer(), false),
       ]) {
         await pumpScreen(
           tester,
