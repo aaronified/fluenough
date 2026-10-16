@@ -7,6 +7,7 @@ import 'package:yaml/yaml.dart';
 import '../core/data/course_path.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/facts_parser.dart';
+import '../core/data/guide_layers.dart';
 import '../core/data/script_guide_parser.dart';
 import '../core/data/romanisation_parser.dart';
 import '../core/data/sounds_parser.dart';
@@ -339,15 +340,23 @@ class DeckCatalog {
         (a, b) =>
             isAdded(a) != isAdded(b) ? (isAdded(a) ? 1 : -1) : a.compareTo(b),
       );
-    final headers = <String, ({String? kind, String? part})>{
+    final headers = <String, ({String? kind, String? part, String? core})>{
       for (final path in paths) path: _headerOf(files[path]!),
     };
     // A file a learner added is single-file (DECK-FORMAT.md, Adding your own
     // deck): DeckParser.parse refuses a core or a layer among them.
     bool isLayer(String path) =>
         !isAdded(path) && headers[path]!.kind == 'layer';
+    // A script guide or sounds file split into a core and layers (#498).
+    bool isGuide(String path) =>
+        !isAdded(path) && _guideKinds.contains(headers[path]!.kind);
+    bool isGuideLayer(String path) =>
+        isLayer(path) && isGuideCoreId(headers[path]!.core);
     bool isCore(String path) =>
-        !isAdded(path) && !isLayer(path) && headers[path]!.part == 'core';
+        !isAdded(path) &&
+        !isLayer(path) &&
+        !isGuide(path) &&
+        headers[path]!.part == 'core';
     // Cores first, so that a layer finds its core wherever the two sort
     // (DECK-FORMAT.md, Core and layer files). A core is not shown: each of its
     // layers is, merged with it.
@@ -364,10 +373,77 @@ class DeckCatalog {
         brokenCores.add(path);
       }
     }
+    final guideCores = <String, Object>{};
+    for (final path in paths.where(
+      (p) => isGuide(p) && headers[p]!.part == 'core',
+    )) {
+      final source = path.split('/').last;
+      try {
+        guideCores[path] = headers[path]!.kind == 'script'
+            ? parseScriptGuideCore(files[path]!, source: source)
+            : parseSoundsCore(files[path]!, source: source);
+      } on DeckParseException catch (e) {
+        broken.add(BrokenDeck(path: path, error: e));
+        brokenCores.add(path);
+      }
+    }
+    // Which native language's guide a language shows: English where there
+    // is one, as every guide was English before the split. Choosing by the
+    // learner's language is not decided (#498).
+    final guideNative = <String, String>{};
     for (final path in paths) {
       final text = files[path]!;
       final kind = headers[path]!.kind;
       if (isCore(path)) continue;
+      if (isGuide(path) && headers[path]!.part == 'core') continue;
+      if (isGuideLayer(path)) {
+        try {
+          final source = path.split('/').last;
+          final layer = parseGuideLayer(text, source: source);
+          final folders = path.split('/')..removeLast();
+          final above = folders.isEmpty
+              ? ''
+              : (folders..removeLast()).join('/');
+          final corePath =
+              '${above.isEmpty ? '' : '$above/'}${layer.core}.yaml';
+          final core = guideCores[corePath];
+          if (core == null) {
+            throw DeckParseException(
+              brokenCores.contains(corePath)
+                  ? 'its core, ${layer.core}.yaml, could not be read'
+                  : 'no core file ${layer.core}.yaml with part: "core" in '
+                        "${above.isEmpty ? '.' : above}; a layer's core is in "
+                        'the folder above it',
+              source: source,
+            );
+          }
+          final (String language, Object merged) = switch (core) {
+            ScriptGuide() => (
+              core.language,
+              mergeScriptGuide(core, layer, source: source),
+            ),
+            SoundContrasts() => (
+              core.language,
+              mergeSounds(core, layer, source: source),
+            ),
+            _ => throw StateError('not a guide core'),
+          };
+          final key = '${layer.core}:$language';
+          final earlier = guideNative[key];
+          if (earlier == null || earlier != 'en' && layer.native == 'en') {
+            guideNative[key] = layer.native;
+            switch (merged) {
+              case ScriptGuide():
+                scriptGuides[language] = merged;
+              case SoundContrasts():
+                sounds[language] = merged;
+            }
+          }
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       if (kind == 'facts') {
         try {
           final file = parseFacts(text, source: path.split('/').last);
@@ -714,19 +790,25 @@ class DeckCatalog {
   /// A file's `kind` and `part`, each null when it has none: a layer is
   /// `kind: "layer"`, a core `part: "core"` (DECK-FORMAT.md, Core and layer
   /// files).
-  static ({String? kind, String? part}) _headerOf(String text) {
+  static ({String? kind, String? part, String? core}) _headerOf(String text) {
     try {
       final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
       final kind = root is YamlMap ? root['kind'] : null;
       final part = root is YamlMap ? root['part'] : null;
+      final core = root is YamlMap ? root['core'] : null;
       return (
         kind: kind is String ? kind : null,
         part: part is String ? part : null,
+        core: core is String ? core : null,
       );
     } catch (_) {
-      return (kind: null, part: null);
+      return (kind: null, part: null, core: null);
     }
   }
+
+  /// The kinds of language file that may be split into a core and layers
+  /// (#498).
+  static const _guideKinds = {'script', 'sounds'};
 
   /// What is wrong with [text], the file at [path], read on its own as its
   /// `kind` says, or null if nothing is. A downloaded file is checked so
@@ -737,6 +819,8 @@ class DeckCatalog {
     final header = _headerOf(text);
     try {
       switch (header.kind) {
+        case 'layer' when isGuideCoreId(header.core):
+          parseGuideLayer(text, source: source);
         case 'layer':
           DeckParser.parseLayer(text, source: source);
         case 'facts':
@@ -748,9 +832,13 @@ class DeckCatalog {
         case 'romanisation':
           parseRomanisation(text, source: source);
         case 'sounds':
-          parseSounds(text, source: source);
+          header.part == 'core'
+              ? parseSoundsCore(text, source: source)
+              : parseSounds(text, source: source);
         case 'script':
-          parseScriptGuide(text, source: source);
+          header.part == 'core'
+              ? parseScriptGuideCore(text, source: source)
+              : parseScriptGuide(text, source: source);
         case 'themes':
           parseThemes(text, source: source);
         default:

@@ -1371,7 +1371,8 @@ class Bases(B1Case):
     def test_bad_bases(self) -> None:
         full = {"word": "వచ్చింది", "base": "వచ్చు", "reading": "vaccu", "meaning": "to come"}
         cases = [
-            ("x", "bases must be a list of { word, ref } or { word, base, reading }"),
+            ("x", 'bases must be a list of { word, ref } or { word, base, reading }, '
+                  'or "self" for a word that is its own root'),
             (["x"], "bases[0] must be a mapping"),
             ([dict(full, colour=1)], "bases[0]: unknown field 'colour'"),
             ([{"ref": "zz-9001"}], "bases[0].word is required and must be a non-empty "

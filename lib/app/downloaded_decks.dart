@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import '../core/decks/deck_index.dart';
 import '../core/decks/sha256.dart';
+import 'card_media.dart';
 import 'deck_catalog.dart';
 
 /// The deck files downloaded from GitHub (#210, ADR-0037), kept in the
@@ -19,8 +20,10 @@ import 'deck_catalog.dart';
 /// ([DeckDownloads]); [putAll] then writes each beside its place and moves
 /// it in only once all are written, so that a download cut short never
 /// leaves half a file, or half a language's update, in use.
-abstract interface class DownloadedDecks implements DeckSource {
-  /// Every deck file on the phone, sorted: `decks/...`.
+abstract interface class DownloadedDecks implements DeckSource, CardMedia {
+  /// Every deck file on the phone, sorted: `decks/...`. Its cards'
+  /// recordings and images are not deck files: [manifest] lists them, and
+  /// [localPath] finds them.
   @override
   Future<List<String>> list();
 
@@ -67,15 +70,20 @@ class FileDownloadedDecks implements DownloadedDecks {
 
   File _file(String path) => File('${directory.path}/$path');
 
-  /// Refuses a path that is not a deck file's, so nothing is written or
-  /// read outside [directory].
+  /// Refuses a path that is not a deck file's, or a card's recording's or
+  /// image's, so nothing is written or read outside [directory].
   static String _checked(String path) {
-    if (!RegExp(
-      r'^decks/[a-z]{2,3}/(?:[a-z]{2,3}/)?[a-z0-9]+(?:-[a-z0-9]+)*\.yaml$',
-    ).hasMatch(path)) {
+    if (!isDeckFilePath(path) && !mediaPathPattern.hasMatch(path)) {
       throw ArgumentError.value(path, 'path', 'not a deck file');
     }
     return path;
+  }
+
+  @override
+  String? localPath(String path) {
+    if (!mediaPathPattern.hasMatch(path)) return null;
+    final file = _file(path);
+    return file.existsSync() ? file.path : null;
   }
 
   @override
@@ -116,13 +124,18 @@ class FileDownloadedDecks implements DownloadedDecks {
     final prefix = '${directory.path}/';
     return <String>[
       await for (final entity in decks.list(recursive: true))
-        if (entity is File && entity.path.endsWith('.yaml'))
+        if (entity is File &&
+            (entity.path.endsWith('.yaml') ||
+                mediaPathPattern.hasMatch(
+                  entity.path.substring(prefix.length),
+                )))
           entity.path.substring(prefix.length),
     ]..sort();
   }
 
   @override
-  Future<List<String>> list() async => (await manifest()).keys.toList()..sort();
+  Future<List<String>> list() async =>
+      (await manifest()).keys.where(isDeckFilePath).toList()..sort();
 
   @override
   Future<String> read(String path) => _file(_checked(path)).readAsString();
@@ -225,7 +238,12 @@ class MemoryDownloadedDecks implements DownloadedDecks {
   Object? failPut;
 
   @override
-  Future<List<String>> list() async => files.keys.toList()..sort();
+  Future<List<String>> list() async =>
+      files.keys.where(isDeckFilePath).toList()..sort();
+
+  /// Not on a disk: a recording or an image has no file to play or show.
+  @override
+  String? localPath(String path) => null;
 
   @override
   Future<String> read(String path) async {

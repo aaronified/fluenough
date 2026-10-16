@@ -501,7 +501,7 @@ void main() {
           // Nothing is given away beforehand.
           expectDetails(tester, card, shown: false);
           expect(
-            inCard(find.text(card.target)),
+            inCard(findTarget(card.target)),
             question.showsWord ? findsOneWidget : findsNothing,
             reason: 'the word, before the answer',
           );
@@ -527,7 +527,7 @@ void main() {
 
           // Now: the word, the meaning, the note and the example.
           expectDetails(tester, card, shown: true);
-          expect(inCard(find.text(card.target)), findsOneWidget);
+          expect(inCard(findTarget(card.target)), findsOneWidget);
           expect(inCard(find.text(card.native)), findsOneWidget);
           // On the card, which scrolls, not in the frame's fixed foot.
           expect(inCard(find.text(card.notes.first.text)), findsOneWidget);
@@ -553,7 +553,7 @@ void main() {
         await question.answer(tester, rig, card, Outcome.wrong);
         expect(tester.takeException(), isNull);
         // The word is there; the example and the note are not.
-        expect(inCard(find.text(card.target)), findsOneWidget);
+        expect(inCard(findTarget(card.target)), findsOneWidget);
         expect(exampleNamed(tester), findsNothing);
         expect(find.text(rich.notes.first.text), findsNothing);
         expect(find.text(rich.examples.first.target), findsNothing);
@@ -621,7 +621,7 @@ void main() {
       );
       final card = rig.card(spanish, 'la casa');
       expect(find.text(l10nOf(tester).drillTeachTitle), findsOneWidget);
-      expect(inCard(find.text(card.target)), findsOneWidget);
+      expect(inCard(findTarget(card.target)), findsOneWidget);
       expect(inCard(find.text(card.native)), findsOneWidget);
       expectDetails(tester, card, shown: true);
     });
@@ -654,7 +654,7 @@ void main() {
       final card = rig.card(hindi, 'किताब');
       expectDetails(tester, card, shown: true);
       expect(
-        tester.getTopLeft(find.text(card.target)).dy,
+        tester.getTopLeft(findTarget(card.target)).dy,
         lessThan(tester.getTopLeft(find.text(card.reading!)).dy),
       );
     });
@@ -686,7 +686,7 @@ void main() {
         expect(inCard(find.text(card.reading!)), findsOneWidget);
         // The script first, the reading under it.
         expect(
-          tester.getTopLeft(inCard(find.text(card.target))).dy,
+          tester.getTopLeft(inCard(findTarget(card.target))).dy,
           lessThan(tester.getTopLeft(inCard(find.text(card.reading!))).dy),
         );
         expectDetails(tester, card, shown: true);
@@ -711,7 +711,7 @@ void main() {
           final card = rig.card(hindi, 'किताब');
           await question.answer(tester, rig, card, Outcome.wrong);
           expect(inCard(find.text(card.reading!)), findsNothing);
-          expect(inCard(find.text(card.target)), findsOneWidget);
+          expect(inCard(findTarget(card.target)), findsOneWidget);
           // The rest is shown all the same.
           expectDetails(tester, card, shown: true);
         });
@@ -734,7 +734,7 @@ void main() {
         final card = rig.card(hindi, 'किताब');
         await question.answer(tester, rig, card, Outcome.wrong);
         final reading = inCard(find.text(card.reading!));
-        final script = inCard(find.text(card.target));
+        final script = inCard(findTarget(card.target));
         expect(reading, findsOneWidget);
         expect(script, findsOneWidget);
         expect(
@@ -831,7 +831,14 @@ void main() {
           await question.answer(tester, rig, card, Outcome.wrong);
           expect(tester.takeException(), isNull);
 
-          final viewport = tester.getRect(find.byType(CustomScrollView));
+          final viewport = tester.getRect(
+            find
+                .descendant(
+                  of: find.byType(DrillFrame),
+                  matching: find.byType(SingleChildScrollView),
+                )
+                .first,
+          );
           double footTop() => question == recognition
               ? tester.getTopLeft(find.text(l10nOf(tester).drillRatePrompt)).dy
               : tester.getTopLeft(find.byType(FeedbackBanner)).dy;

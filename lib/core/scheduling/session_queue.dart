@@ -3,6 +3,7 @@ import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
 import 'fsrs.dart';
+import 'lesson_sets.dart';
 
 export 'ask.dart';
 
@@ -14,6 +15,7 @@ class SessionItem {
     required this.state,
     this.ask = Ask.own,
     this.group = const <SessionItem>[],
+    this.setPart,
   });
 
   final Card card;
@@ -30,12 +32,26 @@ class SessionItem {
   /// recorded on its own. Empty otherwise.
   final List<SessionItem> group;
 
+  /// For [Ask.showSet], the set part it shows; its [card] is the part's
+  /// first member. Null otherwise.
+  final SetPart? setPart;
+
   /// This item asked as [ask], with [group] for match pairs.
   SessionItem askedAs(
     Ask ask, {
     List<SessionItem> group = const <SessionItem>[],
   }) =>
       SessionItem(card: card, mode: mode, state: state, ask: ask, group: group);
+
+  /// A lesson's item showing [part] of a set (DECK-FORMAT.md, Set cards).
+  /// It records nothing, so its mode only names the pill it shows.
+  factory SessionItem.set(SetPart part, DrillMode mode) => SessionItem(
+    card: part.members.first,
+    mode: mode,
+    state: null,
+    ask: Ask.showSet,
+    setPart: part,
+  );
 
   /// Whether this is the pair's first review. New items are what the daily
   /// new-card cap counts.

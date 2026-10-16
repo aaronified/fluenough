@@ -45,7 +45,16 @@ enum Ask {
 
   /// Shown the word, its reading and meaning, and played aloud: a lesson
   /// teaching it, before its first question. Records nothing.
-  teach;
+  teach,
+
+  /// Shown a set card, or one part of it: a closed group's members
+  /// together, before they are drilled (DECK-FORMAT.md, Set cards). Its
+  /// item's [SessionItem.setPart] says which. Records nothing.
+  showSet;
+
+  /// Whether it only shows something and records nothing: a word taught,
+  /// or a set shown.
+  bool get onlyShows => this == teach || this == showSet;
 
   /// Whether the learner picks one of the options the session offers.
   bool get chooses =>

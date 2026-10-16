@@ -6,8 +6,8 @@ import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart';
-import '../../core/scheduling/ask.dart';
 import '../../core/scheduling/skill_fit.dart';
+import '../../core/scheduling/lesson.dart';
 import '../../ui/widgets/pace_parts.dart';
 
 /// How long the design allows for one card when it estimates a session:
@@ -170,7 +170,7 @@ class TodayNumbers {
             case final items when items.isNotEmpty)
           (
             language: languages[code]!,
-            words: items.where((i) => i.ask == Ask.teach).length,
+            words: lessonCardCount(items),
             reading: items.first.card is QuestionCard,
             done: state.lessonDoneToday(code),
           ),

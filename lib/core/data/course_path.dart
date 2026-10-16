@@ -18,6 +18,7 @@ class LanguagePath with _B1Plan {
     required this.plan,
     this.alphabet = const <String>{},
     this.regions = const <Region>[],
+    this.genders,
   });
 
   /// `<language>-path`, the file's name.
@@ -36,6 +37,12 @@ class LanguagePath with _B1Plan {
   /// The language's regions, in the order the app shows them. The app adds
   /// Elsewhere after them; it is no region of the file's.
   final List<Region> regions;
+
+  /// The language's gender classes (#512), such as `['m', 'f']`: what a
+  /// noun's `gender` may be. Empty for a language without gender, such as
+  /// Bengali; null when the path does not list them, and a card's gender is
+  /// then taken as it is written.
+  final List<String>? genders;
 
   /// The deck a learner from [native] is taught for [coreId]: `te-home`
   /// from `en` is `te-en-home`.
@@ -371,6 +378,7 @@ const _pathFields = {
   'units',
   'alphabet',
   'regions',
+  'genders',
 };
 const _unitFields = {
   'decks',
@@ -453,6 +461,7 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
       'as $language-home';
 
   final regions = _regions(root.nodes['regions'], bad);
+  final genders = _genders(root.nodes['genders'], bad);
   final list = root.nodes['units'];
   if (list is! YamlList || list.nodes.isEmpty) {
     throw bad('units must be a non-empty list', list ?? root);
@@ -718,7 +727,40 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
     alphabet: Set<String>.unmodifiable(alphabet),
     plan: List<PlanUnit>.unmodifiable(plan),
     regions: regions,
+    genders: genders,
   );
+}
+
+/// A path's gender classes (#512): a list of distinct class names, empty
+/// for a language without gender. Null when the path lists none.
+List<String>? _genders(
+  YamlNode? node,
+  DeckParseException Function(String, [YamlNode?]) bad,
+) {
+  if (node == null) return null;
+  if (node is! YamlList) {
+    throw bad(
+      'genders must be a list of the language\'s gender classes, such as '
+      '["m", "f"], or [] for a language without gender',
+      node,
+    );
+  }
+  final genders = <String>[];
+  for (final (i, item) in node.nodes.indexed) {
+    final value = item.value;
+    if (value is! String || value.trim().isEmpty || value.trim() != value) {
+      throw bad(
+        'genders[$i] must be a class name, quoted text with no spaces around '
+        'it, got "$value"',
+        item,
+      );
+    }
+    if (genders.contains(value)) {
+      throw bad('genders[$i]: "$value" is listed twice', item);
+    }
+    genders.add(value);
+  }
+  return List<String>.unmodifiable(genders);
 }
 
 Passage _passage(

@@ -23,21 +23,21 @@ Before you start:
   `docs/DECK-FORMAT.md`, "Card data"): meaning; the reading for a non-Latin script; at
   least 2 examples on a word card; the root word (`bases`); gender where the
   language has it (per-language classes, decided: hi m/f; mr, gu, kn m/f/n;
-  te mahat/amahat; bn and as none); and confusables on a sentence used for word
+  te mahat/amahat; es m/f; bn, as and ja none); and confusables on a sentence used for word
   order. **The validator enforces only what it can check** (meaning, reading,
   2 examples per word card, gender on nouns in gendered languages, as errors
   once a language is filled in). Data that is "mandatory when available"
   (confusables, root word, synonyms, antonyms, minimal pairs and the rest) is
   never a validator error, so **you, the builder, must add it whenever it is
   available**, and reviewers check it (owner, 2026-10-13, #506; review
-  pipeline work is #508). The new fields (`confusables`, the gender classes, the rest) arrive
-  with their format and validator change (fields first), and DECK-FORMAT does
-  not allow them yet. Until then, fill what DECK-FORMAT allows (reading, ipa,
-  alt_target, pos, gender, examples, notes, bases, pair, picture where it
-  fits), at least 2 examples on a word card, and do not set modes to
-  restrict a card to one drill unless DECK-FORMAT requires it. When a field
-  lands, DECK-FORMAT and this list are updated in the same change. New text
-  for the learner goes in each native layer.
+  pipeline work is #508). Fill what DECK-FORMAT allows (reading, ipa,
+  alt_target, pos, gender, examples, notes, bases, pair, picture, and the
+  card data: synonyms, antonyms, confusables, register, forms,
+  collocations, senses, frequency where it fits), at least 2 examples on a
+  word card, and do not set modes to restrict a card to one drill unless
+  DECK-FORMAT requires it. When a field lands, DECK-FORMAT and this list
+  are updated in the same change. New text for the learner goes in each
+  native layer.
 - Closed groups (articles, pronouns, genders, cases and postpositions,
   demonstratives, question words, conjunctions, days, months, number words
   1-10, colours) need a set card that introduces the whole set, "Teach only"
@@ -75,11 +75,12 @@ Before you start:
      rules deck is core and layer only ("Rules decks"). Reading decks stay
      single-file. See "Writing a B1 course", step 7, for what each part of a
      unit holds.
-   - Bengali and Telugu are partly split: Bengali has cores in `decks/bn`
-     with layers in `decks/bn/en`, plus 54 single-file `bn-en-*` decks;
-     Telugu has 28 cores and 52 single-file decks. Those single-file decks
-     stay until issue #498 is done. New decks there are written split anyway;
-     do not convert the old ones in passing.
+   - Every vocab and grammar deck is split (#498); only the reading decks
+     (owner, 2026-10-14: "Keep reading decks single-file") and Japanese's
+     `ja-en-hiragana` (owner, 2026-10-16: "Keep single-file") are single-file. To split a single-file deck, run
+     `python3 tools/split_deck.py <file>` ("Splitting a deck"), never by
+     hand. A language's script guide and sounds file are a core and an
+     English layer too ("Script guides", "Sounds files").
 4. **Content rules.**
    - Transliteration in deck prose: every non-Latin word in a note, meaning
      or description is followed by its reading ("Script in prose").
@@ -96,6 +97,29 @@ Before you start:
      `FILLED_LANGUAGES` (`tools/validate_decks.py`); write 2 anyway. An
      example taken from outside names its own `source`; one written for the
      deck has none.
+   - Every noun (`pos: "noun"`) in a language with gender gets its
+     `gender`, one of the language's classes ("Card data", "Gender"): hi
+     `"m"`/`"f"`; mr, gu, kn `"m"`/`"f"`/`"n"`; te `"mahat"`/`"amahat"`; es
+     `"m"`/`"f"`. In bn, as and ja leave `gender` out. It goes on the core
+     card, never in a layer. The validator checks nouns against the
+     path's `genders`.
+   - Card data, whenever it is available ("Card data"), on the core card
+     with its text in each layer by id: a word that is its own root gets
+     `bases: "self"`; `synonyms` and `antonyms` name a card by `ref`, or
+     give the `word` and `reading` with its meaning in the layer;
+     `confusables` (2 to 3 on a sentence put in order, none a tile the
+     answer needs, each with its `kind` and a `why` in the layer);
+     `register`; `forms` (a label in the layer for kind `other`);
+     `collocations`; `senses` (each with its `native` in the layer). Data
+     taken from outside names its `source` per item, and any item may
+     give its `ipa` (a `word` only, never a `ref`). Never write
+     `frequency` by hand: `tools/wikipedia_frequency.py` writes it (step 6).
+   - A card's own `audio` and `image` ("A card's own recording", "A card's
+     own image") come only from `tools/import_wiktionary.py --audio
+     --images` (step 6), never by hand: an image on a card with a
+     `picture`, or on a noun without one only once a reviewer approves the
+     report's proposal (`--approve <card id>`); a recording only of exactly
+     the card's text.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep
@@ -104,7 +128,29 @@ Before you start:
    ("Writing a B1 course", step 2); theme ids are permanent. The first layer
    folder of a language needs its `pubspec.yaml` line, in a commit of its
    own ("Splitting a deck").
-6. **Check.** Run both until clean:
+6. **Fill from Wiktionary and Wikipedia** (semi-verified data, each item
+   naming its source; `tools/README.md`). Once the cards are written, fill
+   their empty fields from the language's kaikki.org extract
+   (`https://kaikki.org/dictionary/<Language>/`), then read the report: it
+   lists, card by card, what is still missing for you to write (a second
+   example, antonyms, confusables), and nothing it adds changes a meaning.
+
+   ```sh
+   python3 tools/import_wiktionary.py <lang> <Language>.jsonl --dump-date <YYYY-MM-DD>
+   python3 tools/import_wiktionary.py <lang> <Language>.jsonl --dump-date <YYYY-MM-DD> --write --report <lang>-report.md
+   ```
+
+   Add `--audio --images` where `ffmpeg` and the network are there. Images
+   come from the word's Wiktionary page, then OpenMoji, never Wikidata. A
+   noun without a `picture` gets none: the report's "Image proposals" lists
+   its candidate, and a reviewer approves each before it lands. Each item's
+   `source` is its Wiktionary page only. With a
+   Wikipedia dump of the language, write the ranks:
+
+   ```sh
+   python3 tools/wikipedia_frequency.py <lang> <lang>wiki-<date>-pages-articles.xml.bz2 --write
+   ```
+7. **Check.** Run both until clean:
 
    ```sh
    python3 tools/deck_index.py
@@ -113,7 +159,7 @@ Before you start:
 
    Errors block; read every warning and fix or explain it. Commit
    `decks/index.json` with the decks. Tools details: `tools/README.md`.
-7. **Ship.** Never create tags. For the owner's work, open a pull request
+8. **Ship.** Never create tags. For the owner's work, open a pull request
    (owner, 2026-10-16: "Do use PRs for everything"); a deck-only change
    needs only "Validate decks" green (CLAUDE.md). Contributors open a pull request on a branch
    `deck/<name>` ([CONTRIBUTING.md](../../../CONTRIBUTING.md), AGENTS.md
