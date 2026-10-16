@@ -31,9 +31,9 @@ so every learner keeps their schedule:
 - Every scalar is quoted. Comments at the top of the file, and those
   directly above a card, are kept in the core.
 
-Reading decks are not split: DECK-FORMAT.md keeps them single-file (open
-question for the owner, #498). Paths, facts, numbers and romanisation files
-stay single-file by design.
+Reading decks are not split: they stay single-file (owner, 2026-10-14,
+#498: "Keep reading decks single-file"). Paths, facts, numbers and
+romanisation files stay single-file by design.
 
 `--check` writes nothing: it splits in memory and reports whether merging
 the two files back gives the old deck.
