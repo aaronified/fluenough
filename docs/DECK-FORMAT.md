@@ -301,6 +301,9 @@ of: no learner is taught it.
 layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
 the card's sound-alike is taken from it.
 
+**A set card,** `kind: "set"`, is the one other card a vocab core writes:
+`id`, `kind` and `members` only ([Set cards](#set-cards)).
+
 **A core example** is `{ target, reading?, ipa?, bases?, source? }`. Its
 translation is in each layer, keyed by its target, so two examples of one
 card may not have the same target, and the target is written in Unicode's
@@ -406,6 +409,7 @@ readings against the core's language and its
 | `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
 | `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
 | `wiktionary` | `true` ([The Wiktionary link](#the-wiktionary-link)). |
+| `explanation` | Only on a [set card's](#set-cards) entry, which gives `native`, its name, and `explanation`, both required, and nothing else. |
 
 Anything else, `target`, `reading`, `ipa`, `pos`, `tags`, `modes` and the
 rest, is an error on such an entry: a layer cannot change the word.
@@ -1377,31 +1381,122 @@ built, and so are the Wiktionary import (#518) and the frequency count
 Owner, 2026-10-13 (#506): "a language's grammar decks must cover adjectives,
 genders, pronouns, etc. not just as cards, but also together. like a card with
 "English has three articles, a, an, and the", and then drill each one
-separately in the same lesson."
+separately in the same lesson." Verb forms are a closed group too (owner,
+2026-10-16, #515: "Verb forms need set cards too."). The lesson is drawn in
+the approved mockup, [`docs/mockups/set-cards.html`](mockups/set-cards.html).
 
-**Decided, not yet built.** DECK-FORMAT does not allow a set card yet.
+A set card is a card of a **vocab core**, `kind: "set"`. Its id is a card id
+of the language, taken from `--next-id`, and permanent like any other. It
+has no question data of its own: it is **taught only**, shown in its lesson
+before its members, and never scheduled, asked or logged. Its members are
+ordinary cards, asked as they are.
 
-- **Shape** (approval 2: "Approve as proposed"): kind `set`; its members are
-  cards by id, `members: [{ ref: "<card id>" }]`; the explanation is text in
-  the layer, keyed by the set card's id, as a note is (for example "English
-  has three articles, a, an, and the"); closed groups are listed per
-  language. A set card is a card, so its id is permanent. It has no question
-  data of its own, and is never scheduled, asked or logged. Its members are
-  ordinary cards, asked as they are.
-- **Teach only** (owner): the set card is shown once, in its lesson, as the
-  introduction. Only its members are reviewed afterwards.
-- **Every closed group** (owner) needs one, in each language where the group
-  applies: articles, pronouns (by person, number and formality), genders,
-  cases and postpositions, demonstratives, question words, conjunctions,
-  days, months, number words 1-10 and colours. The validator warns when a
-  closed group in the B1 plan has members but no set card.
-- **Show the whole set; drill only new ones** (owner): every member is
-  shown, the known ones marked; only members not yet taught are drilled; a
-  known one is added only as review, when due.
+```yaml
+# decks/hi/hi-pronouns.yaml, a core
+cards:
+  - id: "hi-9301"
+    kind: "set"
+    members: [{ ref: "hi-0101" }, { ref: "hi-0102" }, { ref: "hi-0103" }]
+```
 
-Still open (**Proposed**): how a card is placed in a closed group (the
+```yaml
+# decks/hi/en/hi-en-pronouns.yaml, its layer
+cards:
+  "hi-9301":
+    native: "You: three words"
+    explanation: "Hindi has three words for you, from the most respectful to the most intimate."
+```
+
+**Members by ref.** `members` lists cards of the language by `ref`, in the
+order the set shows them: at least two, each once, none a set card. A ref
+names a card any deck of the language writes, as a ref does.
+
+**Members of a rules table: rule and axis** (owner, 2026-10-16: "Rule +
+axis"). A set of verb forms names a rule and one fixed value of its table,
+and its members are the table's cells with that value:
+
+```yaml
+  - id: "te-9401"
+    kind: "set"
+    members: { rule: "te-grammar-verb-present", verb: "తాగు" }
+  - id: "te-9402"
+    kind: "set"
+    members: { rule: "te-grammar-verb-present", person: "atanu" }
+```
+
+- **`rule`** names a rule, such as `te-rule-present-third`, for its slots
+  only, or a rules core, such as `te-grammar-verb-present`, for every slot
+  of its table.
+- **The one other key** fixes a value. A part of speech of the table's rows
+  (`verb`, `noun`) fixes a **row**: its value is the row's word, as its card
+  writes it (`తాగు`) or by its card id, and the members are that word's
+  cells in slot order, one verb across the persons. Any other key
+  (`person`, `case`) fixes a **slot**: its value is a slot key of the table
+  (and of the rule, where `rule` names one), and the members are that
+  slot's cells in row order, one person across the verbs. A learner is
+  shown only the cells whose word they were taught ("one person across the
+  verbs taught").
+- **Member order is the table's** (owner, 2026-10-16: "Grammar order,
+  request in"): a row's cells come in slot order, so the polite request,
+  the last slot, is the last member.
+
+**The layer** gives each set it teaches `native`, its name, shown at the
+top of the Full list, and `explanation`, the text on the set card, both
+required. A set card the layer gives no entry is not taught from its
+language. Nothing else goes on the entry. Its explanation keeps the
+transliteration of every word it quotes, as any prose does ([Script in
+prose](#script-in-prose-always-with-its-reading)).
+
+**In a lesson** (owner, 2026-10-13 and 2026-10-16, #515):
+
+- **Show the whole set; drill only new ones.** A set is shown when one of
+  the lesson's new cards is a member and it has a member not taught yet.
+  Every member is shown, the known ones marked **Known**, the others
+  **New**; a set with no new member is not shown.
+- **Taught together.** Every new member of a set is taught in that lesson,
+  however many: "The cap is for per card, not set. Set can have whatever.
+  And it will be taught together." The lesson's cap of three cells
+  (#414) holds only outside sets.
+- **At most four on a card.** A larger set is divided into the fewest even
+  parts of at most four, in its order: nine as 3 + 3 + 3, eight as 4 + 4,
+  six as 3 + 3. Each part is a card of the lesson, labelled "The set · 1
+  of 3", and repeats the explanation. A part whose members are all known
+  is still shown.
+- **Both sets, then drills.** Every set's parts come first, in the order
+  their first member is reached, a row's set (one verb across the persons)
+  before a slot's (one person across the verbs). Then the drills.
+- **A new word** keeps its own New card and its first question. **A new
+  verb form** (a rules table's cell) goes straight to its question, with
+  no New card: the set card taught it. Each is asked once, in the order it
+  first appears, even when it is in two sets.
+- **The Full list** (owner: "Split sets only"): a set split over two cards
+  or more has a Full list button on each part. It opens the whole set in a
+  bottom sheet, each member marked as on the card. A question about a
+  member of a split set shows the same button once answered, in a lesson,
+  in practice and in review, never before; for a form in two sets the
+  sheet lists both ("Show both").
+- **Long words** on a question card break between syllables ("Break
+  between syllables"): only between aksharas (grapheme clusters, a virama
+  joined to the consonant after it), never inside one.
+
+**What the validator checks:** a set card only in a vocab core (a
+single-file deck or a layer's own card is refused), with only `id`,
+`kind` and `members`; at least two members, each a `{ ref }` once, not the
+set itself; across files, each ref a card of the language and not a set,
+and no deck listing a set card by ref; a rules set's `rule` a rule or rules
+core of the language, its value a row of the table under a part of speech
+of its rows, or else a slot of the table and the rule; and on each layer
+entry, `native` and `explanation`, and nothing else.
+
+**Every closed group** (owner) needs one, in each language where the group
+applies: articles, pronouns (by person, number and formality), genders,
+cases and postpositions, demonstratives, question words, conjunctions,
+days, months, number words 1-10, colours, and verb forms.
+
+Still open (**Proposed**): how a closed group of the B1 plan is listed, so
+that the validator can warn of one with members but no set card (the
 language file lists the groups by id and a set card names its group);
-whether the warning becomes an error per language; whether the learner can
+whether that warning becomes an error per language; whether the learner can
 open a set card again from a card list or the course map.
 
 ---
