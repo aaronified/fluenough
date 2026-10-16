@@ -1,0 +1,1493 @@
+f5c8dbab02c0fd156594769d5c838a6b184ba77f Show each word's IPA, with a switch to hide it
+
+ lib/app/settings.dart                     |  10 +
+ lib/features/decks/deck_content.dart      |  15 +-
+ lib/features/decks/deck_facts.dart        |   8 +-
+ lib/features/decks/inspect_page.dart      |  78 +++--
+ lib/features/drill/answer_feedback.dart   |   5 +
+ lib/features/drill/choice_drill.dart      |  10 +
+ lib/features/drill/grammar_drill.dart     |  14 +-
+ lib/features/drill/pair_drill.dart        |   2 +
+ lib/features/drill/pair_fixture.dart      |  15 +-
+ lib/features/drill/reading_drill.dart     |  17 +-
+ lib/features/drill/rearrange_drill.dart   |   4 +
+ lib/features/drill/recognition_drill.dart |   4 +
+ lib/features/drill/speaking_drill.dart    |   2 +
+ lib/features/drill/teach_drill.dart       |   8 +-
+ lib/features/drill/typed_drill.dart       |   2 +
+ lib/features/settings/settings_page.dart  |   8 +-
+ lib/l10n/app_en.arb                       |  18 ++
+ lib/ui/widgets/feedback_banner.dart       |  16 +
+ lib/ui/widgets/ipa_text.dart              |  67 +++++
+ test/app/stored_settings_test.dart        |   1 +
+ test/features/drill/ipa_test.dart         | 466 ++++++++++++++++++++++++++++++
+ test/features/settings/show_ipa_test.dart |  43 +++
+ 22 files changed, 775 insertions(+), 38 deletions(-)
+commit f5c8dbab02c0fd156594769d5c838a6b184ba77f
+Author: Claude <noreply@anthropic.com>
+Date:   Sun Oct 4 18:30:28 2026 +0000
+
+    Show each word's IPA, with a switch to hide it
+    
+    The IPA line, /paːlu/, shows where a deck gives one: on the teach card;
+    under the word on a question that shows it (recognition, choosing the
+    meaning); with the answer, once it is in, where the word is the answer
+    (typing, choosing the word, rearranging, grammar) or the question is
+    about how it sounds (listening, speaking, minimal pairs); for a
+    passage's sentences and glossary; and in Inspect. Not on choice or match
+    tiles. Settings > Learning > Show IPA, on by default, hides it.
+    
+    Stacked on the ISO 15919 readings, which add the ipa data, and on the
+    speaker work, whose drill screens this changes too.
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+    Claude-Session: https://claude.ai/code/session_01Hxozk8Tp6QhwCiBraJpHGM
+
+diff --git a/lib/app/settings.dart b/lib/app/settings.dart
+index b0cbf64..8f2e433 100644
+--- a/lib/app/settings.dart
++++ b/lib/app/settings.dart
+@@ -32,6 +32,7 @@ class SettingsNotifier extends ChangeNotifier {
+   SettingsNotifier({
+     Set<Skill>? enabledSkills,
+     this._showRomanisation = true,
++    this._showIpa = true,
+     this._soundOn = true,
+     this._autoplay = false,
+     this._speechRate = 1.0,
+@@ -73,6 +74,7 @@ class SettingsNotifier extends ChangeNotifier {
+ 
+   Set<Skill> _enabledSkills;
+   bool _showRomanisation;
++  bool _showIpa;
+   bool _soundOn;
+   bool _autoplay;
+   int _speakerTaps = 0;
+@@ -323,6 +325,12 @@ class SettingsNotifier extends ChangeNotifier {
+   set showRomanisation(bool value) =>
+       _set(_showRomanisation, value, (v) => _showRomanisation = v);
+ 
++  /// Whether a word's IPA line, `/paːlu/`, shows where the deck gives one:
++  /// on the teach card, under a word asked about, and with the answer once
++  /// it is in (ADR-0025).
++  bool get showIpa => _showIpa;
++  set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
++
+   /// Sound for the whole app. Off, nothing is spoken, every speaker is
+   /// greyed out, and listening is not drilled, as on a phone with no voice.
+   bool get soundOn => _soundOn;
+@@ -435,6 +443,7 @@ class SettingsNotifier extends ChangeNotifier {
+       for (final s in Skill.values) isEnabled(s) ? s.name : '!${s.name}',
+     ].join(','),
+     'show_romanisation': '$_showRomanisation',
++    'show_ipa': '$_showIpa',
+     'sound_on': '$_soundOn',
+     'autoplay': '$_autoplay',
+     'speaker_taps': '$_speakerTaps',
+@@ -506,6 +515,7 @@ class SettingsNotifier extends ChangeNotifier {
+       }
+     }
+     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
++    if (pick('show_ipa', flag) case final v?) showIpa = v;
+     if (pick('sound_on', flag) case final v?) soundOn = v;
+     if (pick('autoplay', flag) case final v?) autoplay = v;
+     if (pick('speaker_taps', int.tryParse) case final v? when v >= 0) {
+diff --git a/lib/features/decks/deck_content.dart b/lib/features/decks/deck_content.dart
+index fe696ae..d1f1cdd 100644
+--- a/lib/features/decks/deck_content.dart
++++ b/lib/features/decks/deck_content.dart
+@@ -51,7 +51,12 @@ List<String> cardTagsOf(DeckEntry entry) =>
+ bool showsTagFilter(DeckEntry entry) => cardTagsOf(entry).length >= 2;
+ 
+ /// One line of a deck's card preview: deck content, never a card id.
+-typedef PreviewLine = ({String target, String native, String? reading});
++typedef PreviewLine = ({
++  String target,
++  String native,
++  String? reading,
++  String? ipa,
++});
+ 
+ /// The first [count] cards of [entry], as its screen previews them. A
+ /// grammar deck previews its pattern's cells that have a form: the form, and
+@@ -71,12 +76,18 @@ List<PreviewLine> previewOf(
+               target: form,
+               native: l10n.deckGrammarCell(row.lemma, slot),
+               reading: null,
++              ipa: row.ipas[slot],
+             ),
+     ].take(count).toList();
+   }
+   return <PreviewLine>[
+     for (final card in entry.cards.take(count))
+-      (target: card.target, native: card.native, reading: card.reading),
++      (
++        target: card.target,
++        native: card.native,
++        reading: card.reading,
++        ipa: card.ipa,
++      ),
+   ];
+ }
+ 
+diff --git a/lib/features/decks/deck_facts.dart b/lib/features/decks/deck_facts.dart
+index f0610ab..9ec3059 100644
+--- a/lib/features/decks/deck_facts.dart
++++ b/lib/features/decks/deck_facts.dart
+@@ -6,11 +6,12 @@ import '../../app/deck_catalog.dart';
+ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/grouped_list.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/target_text.dart';
+ import 'deck_content.dart';
+ 
+-/// "Cards": the first few cards of a deck, target, meaning and reading. Deck
+-/// content only — never a card id (AGENTS.md rule 1).
++/// "Cards": the first few cards of a deck, target, meaning, reading and IPA.
++/// Deck content only — never a card id (AGENTS.md rule 1).
+ class CardPreview extends StatelessWidget {
+   const CardPreview({super.key, required this.entry});
+ 
+@@ -91,6 +92,9 @@ class _PreviewRow extends StatelessWidget {
+                         color: theme.colorScheme.onSurfaceVariant,
+                       ),
+                     ),
++                  if (ipaToShow(context, line.ipa, target: line.target)
++                      case final ipa?)
++                    IpaText(ipa, fontSize: 13, textAlign: TextAlign.start),
+                 ],
+               ),
+             ),
+diff --git a/lib/features/decks/inspect_page.dart b/lib/features/decks/inspect_page.dart
+index 6a951cf..556882c 100644
+--- a/lib/features/decks/inspect_page.dart
++++ b/lib/features/decks/inspect_page.dart
+@@ -8,13 +8,14 @@ import '../../core/models/deck.dart';
+ import '../../core/models/reading.dart';
+ import '../../l10n/app_localizations.dart';
+ import '../../ui/skill_visuals.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/page_parts.dart';
+ import '../../ui/widgets/report_button.dart';
+ import '../../ui/widgets/target_text.dart';
+ import '../drill/grammar_cells.dart';
+ 
+ /// Every card of a deck as one scrolling list, for reviewers: two or three
+-/// lines a card, its script and romanisation, its meaning, and its id, so
++/// lines a card, its script, romanisation and IPA, its meaning, and its id, so
+ /// that a whole deck reads quickly and a mistake can be pointed at exactly.
+ /// A card with more to it (other accepted forms and meanings, part of
+ /// speech, tags, notes, examples, the skills it is limited to) opens in
+@@ -56,18 +57,24 @@ class InspectPage extends StatelessWidget {
+         title: Text(l10n.inspectTitle(entry.deck.name)),
+         actions: <Widget>[ReportButton(detail: entry.id)],
+       ),
+-      body: SelectionArea(
+-        child: ListView.separated(
+-          padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
+-          itemCount: rows.length + 1,
+-          separatorBuilder: (_, i) =>
+-              i == 0 ? const SizedBox(height: 8) : const Divider(height: 1),
+-          itemBuilder: (context, i) => i == 0
+-              ? Padding(
+-                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+-                  child: _Muted(l10n.inspectIntro(entry.id)),
+-                )
+-              : rows[i - 1](context),
++      // Built again as Show IPA changes.
++      body: ListenableBuilder(
++        listenable: state.settings,
++        builder: (context, _) => SelectionArea(
++          child: ListView.separated(
++            padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
++            itemCount: rows.length + 1,
++            separatorBuilder: (_, i) =>
++                i == 0 ? const SizedBox(height: 8) : const Divider(height: 1),
++            itemBuilder: (context, i) => i == 0
++                ? Padding(
++                    padding: const EdgeInsetsDirectional.symmetric(
++                      horizontal: 8,
++                    ),
++                    child: _Muted(l10n.inspectIntro(entry.id)),
++                  )
++                : rows[i - 1](context),
++          ),
+         ),
+       ),
+     );
+@@ -94,6 +101,7 @@ class InspectPage extends StatelessWidget {
+         (_) => _Heading(
+           title: cells.first.$1.entry.lemma,
+           subtitle: cells.first.$1.entry.gloss,
++          ipa: cells.first.$1.entry.ipa,
+           language: entry.language,
+         ),
+         for (final (cell, card) in cells)
+@@ -125,6 +133,7 @@ class InspectPage extends StatelessWidget {
+           textAlign: TextAlign.start,
+         ),
+         middle: sentence.reading,
++        ipa: sentence.ipa,
+       ),
+     for (final question in passage.questions)
+       (_) => _QuestionRow(question: question, spoken: spoken, deckId: entry.id),
+@@ -141,6 +150,7 @@ class InspectPage extends StatelessWidget {
+           gloss.modern,
+           ?gloss.reading,
+         ].join(' · '), // ui-literal-ok: a separator, not language
++        ipa: gloss.ipa,
+         bottom: gloss.meaning[bestLanguage(gloss.meaning.keys, spoken)],
+       ),
+   ];
+@@ -205,17 +215,20 @@ class _Field extends StatelessWidget {
+   );
+ }
+ 
+-/// The script with its romanisation beside it: one line where it fits.
++/// The script with its romanisation and IPA beside it: one line where it
++/// fits.
+ class _Script extends StatelessWidget {
+   const _Script(
+     this.text,
+     this.reading, {
+     required this.language,
++    this.ipa,
+     this.size = 20,
+   });
+ 
+   final String text;
+   final String? reading;
++  final String? ipa;
+   final LanguageInfo language;
+   final double size;
+ 
+@@ -233,19 +246,22 @@ class _Script extends StatelessWidget {
+           textAlign: TextAlign.start,
+         ),
+         if (reading != null && reading.isNotEmpty) _Muted(reading),
++        if (ipaToShow(context, ipa, target: text) case final ipa?)
++          IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
+       ],
+     );
+   }
+ }
+ 
+ /// Two or three lines: [top] (the script and its romanisation), [middle]
+-/// and [bottom], then the [id], with "Report this card" beside it when the
+-/// row has a [deckId] to report it in (#160). With [more], it opens in
+-/// place to show it.
++/// and its [ipa], and [bottom], then the [id], with "Report this card"
++/// beside it when the row has a [deckId] to report it in (#160). With
++/// [more], it opens in place to show it.
+ class _Line extends StatelessWidget {
+   const _Line({
+     required this.top,
+     this.middle,
++    this.ipa,
+     this.bottom,
+     this.id,
+     this.deckId,
+@@ -254,6 +270,7 @@ class _Line extends StatelessWidget {
+ 
+   final Widget top;
+   final String? middle;
++  final String? ipa;
+   final String? bottom;
+   final String? id;
+   final String? deckId;
+@@ -267,6 +284,8 @@ class _Line extends StatelessWidget {
+     final id = this.id;
+     final subtitle = <Widget>[
+       if (middle != null && middle.isNotEmpty) _Muted(middle),
++      if (ipaToShow(context, ipa) case final ipa?)
++        IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
+       if (bottom != null && bottom.isNotEmpty)
+         Text(bottom, style: theme.textTheme.bodyLarge),
+       if (id != null)
+@@ -307,12 +326,20 @@ class _Line extends StatelessWidget {
+   }
+ }
+ 
+-/// A heading over a grammar row's cells, or a passage.
++/// A heading over a grammar row's cells, with the lemma's IPA, or a
++/// passage.
+ class _Heading extends StatelessWidget {
+-  const _Heading({required this.title, this.subtitle, this.id, this.language});
++  const _Heading({
++    required this.title,
++    this.subtitle,
++    this.ipa,
++    this.id,
++    this.language,
++  });
+ 
+   final String title;
+   final String? subtitle;
++  final String? ipa;
+   final String? id;
+   final LanguageInfo? language;
+ 
+@@ -338,6 +365,8 @@ class _Heading extends StatelessWidget {
+                     textAlign: TextAlign.start,
+                   ),
+           ),
++          if (ipaToShow(context, ipa, target: title) case final ipa?)
++            IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
+           if (subtitle != null) _Muted(subtitle),
+           ?(id == null ? null : _Id(id)),
+         ],
+@@ -364,7 +393,12 @@ class _CardRow extends StatelessWidget {
+           skill.label(l10n),
+     ];
+     return _Line(
+-      top: _Script(card.target, card.reading, language: language),
++      top: _Script(
++        card.target,
++        card.reading,
++        ipa: card.ipa,
++        language: language,
++      ),
+       bottom: card.native,
+       id: card.id,
+       deckId: entry.id,
+@@ -396,6 +430,9 @@ class _CardRow extends StatelessWidget {
+                     fontWeight: FontWeight.w400,
+                     textAlign: TextAlign.start,
+                   ),
++                  if (ipaToShow(context, example.ipa, target: example.target)
++                      case final ipa?)
++                    IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
+                   _Muted(example.native),
+                 ],
+               ),
+@@ -422,6 +459,7 @@ class _CellRow extends StatelessWidget {
+       top: _Script(
+         card.target,
+         card.reading,
++        ipa: card.ipa,
+         language: entry.language,
+         size: 18,
+       ),
+diff --git a/lib/features/drill/answer_feedback.dart b/lib/features/drill/answer_feedback.dart
+index 70c75ba..25636a8 100644
+--- a/lib/features/drill/answer_feedback.dart
++++ b/lib/features/drill/answer_feedback.dart
+@@ -29,6 +29,7 @@ class AnswerFeedback extends StatelessWidget {
+     required this.transliterating,
+     this.language,
+     this.spoken = false,
++    this.ipa,
+   });
+ 
+   final TypedAnswer answer;
+@@ -50,6 +51,9 @@ class AnswerFeedback extends StatelessWidget {
+   /// (#89).
+   final bool spoken;
+ 
++  /// The answer's IPA, under the rest; null for none (see `ipaToShow`).
++  final String? ipa;
++
+   @override
+   Widget build(BuildContext context) {
+     final l10n = AppLocalizations.of(context)!;
+@@ -77,6 +81,7 @@ class AnswerFeedback extends StatelessWidget {
+           detail: detail,
+           quotes: quotes,
+           language: language,
++          ipa: ipa,
+         );
+ 
+     if (graded == null) {
+diff --git a/lib/features/drill/choice_drill.dart b/lib/features/drill/choice_drill.dart
+index 1ae4e12..3257dcb 100644
+--- a/lib/features/drill/choice_drill.dart
++++ b/lib/features/drill/choice_drill.dart
+@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
+ import '../../ui/widgets/feedback_banner.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+@@ -42,6 +43,11 @@ class ChoiceDrill extends StatelessWidget {
+     final picked = session.picked;
+     final answered = picked != null;
+     final right = picked != null && session.isRight(picked);
++    // With the answer, where the word is chosen or heard; where it is shown,
++    // it has its IPA under it from the start.
++    final ipa = ask == Ask.chooseMeaning
++        ? null
++        : ipaToShow(context, card.ipa, target: card.target);
+ 
+     return DrillFrame(
+       skill: session.skill,
+@@ -91,6 +97,7 @@ class ChoiceDrill extends StatelessWidget {
+           ? FeedbackBanner(
+               kind: FeedbackKind.correct,
+               title: l10n.feedbackCorrect,
++              ipa: ipa,
+             )
+           : FeedbackBanner(
+               kind: FeedbackKind.wrong,
+@@ -98,6 +105,7 @@ class ChoiceDrill extends StatelessWidget {
+               detail: l10n.feedbackAnswer(ask.optionOf(card)),
+               quotes: <String>[if (ask != Ask.chooseMeaning) card.target],
+               language: ask == Ask.chooseMeaning ? null : language,
++              ipa: ipa,
+             ),
+       actions: answered
+           ? <Widget>[
+@@ -158,6 +166,8 @@ class ChoiceDrill extends StatelessWidget {
+             ),
+           ),
+       ],
++      if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
++        IpaText(ipa),
+       // From the start: the word is shown anyway.
+       ?_speaker(),
+       if (answered) _notes(context, card),
+diff --git a/lib/features/drill/grammar_drill.dart b/lib/features/drill/grammar_drill.dart
+index 6c2a29b..b0e747c 100644
+--- a/lib/features/drill/grammar_drill.dart
++++ b/lib/features/drill/grammar_drill.dart
+@@ -13,6 +13,7 @@ import '../../ui/widgets/answer_field.dart';
+ import '../../ui/widgets/drill_frame.dart';
+ import '../../ui/widgets/feedback_banner.dart';
+ import '../../ui/widgets/incoming.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+@@ -285,6 +286,11 @@ class _GrammarDrillState extends State<GrammarDrill> {
+               reading == null
+                   ? cell.answer
+                   : l10n.feedbackReadingWithTarget(reading, cell.answer),
++              ipaToShow(
++                context,
++                cell.entry.ipas[cell.slot],
++                target: cell.answer,
++              ),
+             ),
+       actions: _actions(context, answer, incoming, moves),
+     );
+@@ -389,12 +395,13 @@ class _GrammarDrillState extends State<GrammarDrill> {
+   }
+ 
+   /// [shown] is the form, or its reading with the form after it when the
+-  /// answer was typed in Latin letters.
++  /// answer was typed in Latin letters; [ipa], the form's IPA, if shown.
+   Widget _feedback(
+     AppLocalizations l10n,
+     GrammarCell cell,
+     _Answer answer,
+     String shown,
++    String? ipa,
+   ) {
+     final graded = answer.graded;
+     if (graded == null) {
+@@ -402,6 +409,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
+         kind: FeedbackKind.wrong,
+         title: l10n.feedbackGaveUp,
+         detail: l10n.feedbackAnswer(shown),
++        ipa: ipa,
+       );
+     }
+     return switch (graded.outcome) {
+@@ -409,21 +417,25 @@ class _GrammarDrillState extends State<GrammarDrill> {
+         kind: FeedbackKind.correct,
+         title: l10n.feedbackCorrect,
+         detail: shown,
++        ipa: ipa,
+       ),
+       AnswerOutcome.closeDiacritics => FeedbackBanner(
+         kind: FeedbackKind.close,
+         title: l10n.feedbackAccent,
+         detail: l10n.feedbackTypedWritten(answer.typed, shown),
++        ipa: ipa,
+       ),
+       AnswerOutcome.closeTypo => FeedbackBanner(
+         kind: FeedbackKind.nearMiss,
+         title: l10n.feedbackTypo(shown),
+         detail: l10n.feedbackTypoDetail(answer.typed),
++        ipa: ipa,
+       ),
+       AnswerOutcome.wrong => FeedbackBanner(
+         kind: FeedbackKind.wrong,
+         title: l10n.feedbackWrong,
+         detail: l10n.feedbackAnswer(shown),
++        ipa: ipa,
+       ),
+     };
+   }
+diff --git a/lib/features/drill/pair_drill.dart b/lib/features/drill/pair_drill.dart
+index 0aa8bb9..45fc0ce 100644
+--- a/lib/features/drill/pair_drill.dart
++++ b/lib/features/drill/pair_drill.dart
+@@ -10,6 +10,7 @@ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
+ import '../../ui/widgets/feedback_banner.dart';
+ import '../../ui/widgets/incoming.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+ import '../gallery/fixtures.dart';
+@@ -169,6 +170,7 @@ class _PairDrillState extends State<PairDrill> {
+                   ? l10n.feedbackPairCorrect(heard.reading)
+                   : l10n.feedbackPairWrong(heard.reading),
+               detail: l10n.feedbackPairHeard(heard.target),
++              ipa: ipaToShow(context, heard.ipa, target: heard.target),
+             ),
+       actions: picked == null
+           ? const <Widget>[]
+diff --git a/lib/features/drill/pair_fixture.dart b/lib/features/drill/pair_fixture.dart
+index 7373446..b194b37 100644
+--- a/lib/features/drill/pair_fixture.dart
++++ b/lib/features/drill/pair_fixture.dart
+@@ -1,12 +1,13 @@
+ import '../../core/models/deck.dart';
+ 
+-/// One side of a minimal pair: the sound as the deck writes it, and how it
+-/// reads.
++/// One side of a minimal pair: the sound as the deck writes it, how it
++/// reads, and how it is said, in the IPA, without slashes.
+ class PairSound {
+-  const PairSound({required this.target, required this.reading});
++  const PairSound({required this.target, required this.reading, this.ipa});
+ 
+   final String target;
+   final String reading;
++  final String? ipa;
+ }
+ 
+ /// Two sounds a learner must tell apart, and what the difference is.
+@@ -54,8 +55,8 @@ const String pairFixtureDeckName = 'Hindi Devanagari';
+ const List<PairRound> pairFixtureRounds = <PairRound>[
+   PairRound(
+     MinimalPair(
+-      a: PairSound(target: 'क', reading: 'ka'),
+-      b: PairSound(target: 'ख', reading: 'kha'),
++      a: PairSound(target: 'क', reading: 'ka', ipa: 'kə'),
++      b: PairSound(target: 'ख', reading: 'kha', ipa: 'kʰə'),
+       contrast:
+           'ख is aspirated: a puff of air follows the k. English does not '
+           'tell these two apart.',
+@@ -64,8 +65,8 @@ const List<PairRound> pairFixtureRounds = <PairRound>[
+   ),
+   PairRound(
+     MinimalPair(
+-      a: PairSound(target: 'ग', reading: 'ga'),
+-      b: PairSound(target: 'घ', reading: 'gha'),
++      a: PairSound(target: 'ग', reading: 'ga', ipa: 'ɡə'),
++      b: PairSound(target: 'घ', reading: 'gha', ipa: 'ɡʱə'),
+       contrast: 'ग has no breath after it. घ does.',
+     ),
+     playsB: false,
+diff --git a/lib/features/drill/reading_drill.dart b/lib/features/drill/reading_drill.dart
+index 84f282a..a342fd3 100644
+--- a/lib/features/drill/reading_drill.dart
++++ b/lib/features/drill/reading_drill.dart
+@@ -9,6 +9,7 @@ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
+ import '../../ui/widgets/feedback_banner.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+ import 'cant_now.dart';
+@@ -400,7 +401,8 @@ class _InLanguage extends StatelessWidget {
+ }
+ 
+ /// The passage, a sentence at a time: the text, its reading when Show
+-/// romanisation is on, and with a voice, a button to hear it.
++/// romanisation is on, its IPA when Show IPA is, and with a voice, a button
++/// to hear it.
+ class _PassageText extends StatelessWidget {
+   const _PassageText({
+     required this.session,
+@@ -448,6 +450,12 @@ class _PassageText extends StatelessWidget {
+                               color: scheme.onSurfaceVariant,
+                             ),
+                           ),
++                        if (ipaToShow(context, sentence.ipa) case final ipa?)
++                          IpaText(
++                            ipa,
++                            fontSize: 14,
++                            textAlign: TextAlign.start,
++                          ),
+                       ],
+                     ),
+                   ),
+@@ -533,8 +541,9 @@ class _WordsButton extends StatelessWidget {
+ }
+ 
+ /// A passage's glossary: each older or unusual word as the passage writes
+-/// it, today's form, its reading when Show romanisation is on, its meaning
+-/// and any note, in the language the learner speaks best of those given.
++/// it, today's form, its reading when Show romanisation is on, its IPA when
++/// Show IPA is, its meaning and any note, in the language the learner
++/// speaks best of those given.
+ class Glossary extends StatelessWidget {
+   const Glossary({super.key, required this.passage, required this.language});
+ 
+@@ -608,6 +617,8 @@ class Glossary extends StatelessWidget {
+                         color: scheme.onSurfaceVariant,
+                       ),
+                     ),
++                  if (ipaToShow(context, entry.ipa) case final ipa?)
++                    IpaText(ipa, fontSize: 14, textAlign: TextAlign.start),
+                   _InLanguage(
+                     entry.meaning[bestLanguage(entry.meaning.keys, spoken)]!,
+                     code: bestLanguage(entry.meaning.keys, spoken),
+diff --git a/lib/features/drill/rearrange_drill.dart b/lib/features/drill/rearrange_drill.dart
+index f56a8a4..64d6368 100644
+--- a/lib/features/drill/rearrange_drill.dart
++++ b/lib/features/drill/rearrange_drill.dart
+@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
+ import '../../ui/widgets/feedback_banner.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+@@ -41,6 +42,7 @@ class RearrangeDrill extends StatelessWidget {
+     final tiles = session.tiles;
+     final placed = session.placed;
+     final reading = card.reading;
++    final ipa = ipaToShow(context, card.ipa, target: card.target);
+ 
+     Widget word(int index, {required bool inAnswer}) => _WordTile(
+       text: tiles[index],
+@@ -150,6 +152,7 @@ class RearrangeDrill extends StatelessWidget {
+           ? FeedbackBanner(
+               kind: FeedbackKind.correct,
+               title: l10n.feedbackCorrect,
++              ipa: ipa,
+             )
+           : FeedbackBanner(
+               kind: FeedbackKind.wrong,
+@@ -159,6 +162,7 @@ class RearrangeDrill extends StatelessWidget {
+               ),
+               quotes: <String>[if (!latin) card.target],
+               language: latin ? null : language,
++              ipa: ipa,
+             ),
+       actions: <Widget>[
+         if (answer == null)
+diff --git a/lib/features/drill/recognition_drill.dart b/lib/features/drill/recognition_drill.dart
+index 91521dc..1c95c6b 100644
+--- a/lib/features/drill/recognition_drill.dart
++++ b/lib/features/drill/recognition_drill.dart
+@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
+ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+@@ -79,6 +80,9 @@ class RecognitionDrill extends StatelessWidget {
+               color: scheme.onSurfaceVariant,
+             ),
+           ),
++        // How it is said: the word is shown, so this gives nothing away.
++        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
++          IpaText(ipa),
+         // From the start: hearing the word gives nothing away. Keyed, so
+         // that showing the answer does not play it again.
+         if (session.canPlay)
+diff --git a/lib/features/drill/speaking_drill.dart b/lib/features/drill/speaking_drill.dart
+index 284ef4f..847590d 100644
+--- a/lib/features/drill/speaking_drill.dart
++++ b/lib/features/drill/speaking_drill.dart
+@@ -7,6 +7,7 @@ import '../../core/speech/speech_engine.dart';
+ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+@@ -60,6 +61,7 @@ class SpeakingDrill extends StatelessWidget {
+               transliterating: false,
+               language: language,
+               spoken: true,
++              ipa: ipaToShow(context, card.ipa, target: card.target),
+             ),
+       actions: _actions(context, l10n),
+     );
+diff --git a/lib/features/drill/teach_drill.dart b/lib/features/drill/teach_drill.dart
+index 3cf087e..1ea64ee 100644
+--- a/lib/features/drill/teach_drill.dart
++++ b/lib/features/drill/teach_drill.dart
+@@ -5,13 +5,14 @@ import '../../core/models/deck.dart';
+ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/drill_frame.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+ import 'drill_session.dart';
+ 
+-/// A lesson teaching a word (ADR-0024): the word and its reading, its
+-/// meaning, its note and an example, played aloud as it shows where the
++/// A lesson teaching a word (ADR-0024): the word, its reading and its IPA,
++/// its meaning, its note and an example, played aloud as it shows where the
+ /// phone has a voice and sound is on. Continue goes on to its first question; nothing is
+ /// recorded.
+ ///
+@@ -73,6 +74,9 @@ class _TeachDrillState extends State<TeachDrill> {
+               ),
+             ),
+         ],
++        // How it is said, under the reading.
++        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
++          IpaText(ipa),
+         Text(
+           card.native,
+           textAlign: TextAlign.center,
+diff --git a/lib/features/drill/typed_drill.dart b/lib/features/drill/typed_drill.dart
+index 9d0b2fb..557e49f 100644
+--- a/lib/features/drill/typed_drill.dart
++++ b/lib/features/drill/typed_drill.dart
+@@ -9,6 +9,7 @@ import '../../l10n/app_localizations.dart';
+ import '../../ui/theme.dart';
+ import '../../ui/widgets/answer_field.dart';
+ import '../../ui/widgets/drill_frame.dart';
++import '../../ui/widgets/ipa_text.dart';
+ import '../../ui/widgets/reading_first.dart';
+ import '../../ui/widgets/speaker.dart';
+ import '../../ui/widgets/target_text.dart';
+@@ -122,6 +123,7 @@ class _TypedDrillState extends State<TypedDrill> {
+               expected: session.acceptedAnswers.first,
+               transliterating: translit,
+               language: session.typesDigits ? null : language,
++              ipa: ipaToShow(context, card.ipa, target: card.target),
+             ),
+       actions: _actions(context, answer),
+     );
+diff --git a/lib/features/settings/settings_page.dart b/lib/features/settings/settings_page.dart
+index 57af1c4..b086a45 100644
+--- a/lib/features/settings/settings_page.dart
++++ b/lib/features/settings/settings_page.dart
+@@ -32,7 +32,7 @@ import 'update_section.dart';
+ /// backup, updates, and the footer.
+ ///
+ /// Design screen `settings`. Live, in memory until #15 stores them: new cards
+-/// per day, the skill switches, romanisation, sound, playing
++/// per day, the skill switches, romanisation and the IPA, sound, playing
+ /// words automatically, speech rate, and the Voices row.
+ /// Export and import save the review log as a file and merge one back
+ /// (#20). Updates, which the design does not draw, checks GitHub for a newer
+@@ -184,6 +184,12 @@ class SettingsPage extends StatelessWidget {
+           value: settings.showRomanisation,
+           onChanged: (on) => settings.showRomanisation = on,
+         ),
++        GroupedTile.toggle(
++          title: l10n.settingsIpa,
++          subtitle: l10n.settingsIpaDesc,
++          value: settings.showIpa,
++          onChanged: (on) => settings.showIpa = on,
++        ),
+         if (_withAlphabet(state).isNotEmpty)
+           GroupedTile(
+             leading: const Icon(Icons.abc),
+diff --git a/lib/l10n/app_en.arb b/lib/l10n/app_en.arb
+index e3ae93a..6d2855f 100644
+--- a/lib/l10n/app_en.arb
++++ b/lib/l10n/app_en.arb
+@@ -1710,6 +1710,16 @@
+   "@speakerMuted": {
+     "description": "Screen-reader value of a speaker while sound is off in Settings: it is greyed out."
+   },
++  "ipaSemantics": "In the IPA: {ipa}",
++  "@ipaSemantics": {
++    "description": "Screen-reader label of a word's IPA line, how it is said in the International Phonetic Alphabet. The IPA is deck content.",
++    "placeholders": {
++      "ipa": {
++        "type": "String",
++        "example": "paːlu"
++      }
++    }
++  },
+   "drillRaiseVolume": "Please raise the volume",
+   "@drillRaiseVolume": {
+     "description": "On a listening card while the phone's media volume is at zero and sound is on in the app: the card is greyed out until the volume is raised."
+@@ -2742,6 +2752,14 @@
+   "@settingsRomanisationDesc": {
+     "description": "Under Show romanisation."
+   },
++  "settingsIpa": "Show IPA",
++  "@settingsIpa": {
++    "description": "Switch: show how words are said in the International Phonetic Alphabet, as /paːlu/, where a deck gives it."
++  },
++  "settingsIpaDesc": "How words are said, in the phonetic alphabet",
++  "@settingsIpaDesc": {
++    "description": "Under Show IPA."
++  },
+   "settingsAlphabet": "Alphabets",
+   "@settingsAlphabet": {
+     "description": "Settings row: which languages are learned with their alphabet, and which in Latin letters only."
+diff --git a/lib/ui/widgets/feedback_banner.dart b/lib/ui/widgets/feedback_banner.dart
+index 217edb2..20d1e48 100644
+--- a/lib/ui/widgets/feedback_banner.dart
++++ b/lib/ui/widgets/feedback_banner.dart
+@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
+ import 'package:intl/intl.dart' as intl;
+ 
+ import '../../core/models/deck.dart';
++import 'ipa_text.dart';
+ import 'target_text.dart';
+ 
+ /// What a drill's feedback says about the answer, which sets its colour and
+@@ -28,6 +29,7 @@ enum FeedbackKind {
+ /// A live region, so screen readers announce it as it appears. [detail]
+ /// often quotes deck content, so its direction is taken from its own text,
+ /// and each of [quotes] in the title or the detail is read in [language].
++/// [ipa], the answer's IPA, goes under them.
+ class FeedbackBanner extends StatelessWidget {
+   const FeedbackBanner({
+     super.key,
+@@ -36,12 +38,17 @@ class FeedbackBanner extends StatelessWidget {
+     this.detail,
+     this.quotes = const <String>[],
+     this.language,
++    this.ipa,
+   });
+ 
+   final FeedbackKind kind;
+   final String title;
+   final String? detail;
+ 
++  /// How the answer is said, in the IPA, without the slashes; null for none
++  /// (see `ipaToShow`).
++  final String? ipa;
++
+   /// The deck content the title and the detail quote: the answer, what was
+   /// typed.
+   final List<String> quotes;
+@@ -121,6 +128,15 @@ class FeedbackBanner extends StatelessWidget {
+                       style: theme.textTheme.bodyMedium!.copyWith(color: fg),
+                     ),
+                   ],
++                  if (ipa case final ipa?) ...<Widget>[
++                    const SizedBox(height: 2),
++                    IpaText(
++                      ipa,
++                      fontSize: 15,
++                      color: fg.withValues(alpha: 0.85),
++                      textAlign: TextAlign.start,
++                    ),
++                  ],
+                 ],
+               ),
+             ),
+diff --git a/lib/ui/widgets/ipa_text.dart b/lib/ui/widgets/ipa_text.dart
+new file mode 100644
+index 0000000..7f1528a
+--- /dev/null
++++ b/lib/ui/widgets/ipa_text.dart
+@@ -0,0 +1,67 @@
++import 'package:flutter/material.dart';
++
++import '../../app/app_scope.dart';
++import '../../l10n/app_localizations.dart';
++
++/// How a word is said, in the IPA (ADR-0025): `/paːlu/`, muted, under the
++/// word or with its answer. Show IPA in Settings switches it; see
++/// [ipaToShow].
++///
++/// The IPA is always left to right and in Latin-based letters, whatever the
++/// deck's language, so it is drawn in the interface's own sans-serif, not in
++/// the deck's locale, whose font may lack the IPA Extensions block. Roboto,
++/// Android's, has it, and Noto Sans is the fallback; no font is bundled for
++/// it. Screen readers hear "In the IPA: paːlu".
++class IpaText extends StatelessWidget {
++  const IpaText(
++    this.ipa, {
++    super.key,
++    this.fontSize = 16,
++    this.color,
++    this.textAlign = TextAlign.center,
++  });
++
++  /// As the deck gives it: broad, without the slashes.
++  final String ipa;
++
++  final double fontSize;
++
++  /// The text's colour; `onSurfaceVariant` by default.
++  final Color? color;
++
++  final TextAlign textAlign;
++
++  /// Fonts that cover the IPA, tried where the theme's font has no glyph.
++  static const List<String> fontFallback = <String>['Roboto', 'Noto Sans'];
++
++  @override
++  Widget build(BuildContext context) {
++    final theme = Theme.of(context);
++    return Semantics(
++      label: AppLocalizations.of(context)!.ipaSemantics(ipa),
++      excludeSemantics: true,
++      child: Text(
++        '/$ipa/', // ui-literal-ok: the IPA's slashes are notation, not language
++        textAlign: textAlign,
++        textDirection: TextDirection.ltr,
++        style: theme.textTheme.bodyLarge!.copyWith(
++          fontSize: fontSize,
++          height: 1.3,
++          color: color ?? theme.colorScheme.onSurfaceVariant,
++          fontFamilyFallback: fontFallback,
++        ),
++      ),
++    );
++  }
++}
++
++/// [ipa], if it is to be shown: the deck gives one, it is not just
++/// [target] again (a card in the IPA itself), and Show IPA is on. Null
++/// otherwise, so that no line is left for it.
++///
++/// Reads the setting without listening to it: a screen that shows the IPA
++/// listens to the settings, or is built again when they change.
++String? ipaToShow(BuildContext context, String? ipa, {String? target}) {
++  if (ipa == null || ipa.trim().isEmpty || ipa == target) return null;
++  return AppScope.read(context).settings.showIpa ? ipa : null;
++}
+diff --git a/test/app/stored_settings_test.dart b/test/app/stored_settings_test.dart
+index 50d8ba3..28b60f1 100644
+--- a/test/app/stored_settings_test.dart
++++ b/test/app/stored_settings_test.dart
+@@ -13,6 +13,7 @@ void changeAll(SettingsNotifier s) {
+   s
+     ..setSkillEnabled(Skill.listening, false)
+     ..showRomanisation = false
++    ..showIpa = false
+     ..soundOn = false
+     ..autoplay = true
+     ..countSpeakerTap()
+diff --git a/test/features/drill/ipa_test.dart b/test/features/drill/ipa_test.dart
+new file mode 100644
+index 0000000..6a0f1dd
+--- /dev/null
++++ b/test/features/drill/ipa_test.dart
+@@ -0,0 +1,466 @@
++import 'package:flutter/material.dart';
++import 'package:flutter_test/flutter_test.dart';
++
++import 'package:fluenough/app/app_state.dart';
++import 'package:fluenough/app/deck_catalog.dart';
++import 'package:fluenough/app/features.dart';
++import 'package:fluenough/app/session.dart';
++import 'package:fluenough/app/settings.dart';
++import 'package:fluenough/app/skill.dart';
++import 'package:fluenough/core/scheduling/session_queue.dart';
++import 'package:fluenough/core/speech/speech_engine.dart';
++import 'package:fluenough/core/tts/fixed_tts_engine.dart';
++import 'package:fluenough/features/decks/deck_facts.dart';
++import 'package:fluenough/features/decks/inspect_page.dart';
++import 'package:fluenough/features/drill/drill_page.dart';
++import 'package:fluenough/features/drill/drill_preset.dart';
++import 'package:fluenough/features/drill/match_drill.dart';
++import 'package:fluenough/features/drill/pair_drill.dart';
++import 'package:fluenough/features/drill/pair_fixture.dart';
++import 'package:fluenough/ui/widgets/feedback_banner.dart';
++import 'package:fluenough/ui/widgets/ipa_text.dart';
++
++import '../../support/harness.dart';
++
++/// The IPA line (ADR-0025), as the owner placed it: on the teach card, under
++/// a word the question shows, with the answer once it is in where the word
++/// is the answer or the question is about how it sounds, under a passage's
++/// sentences and glossary words, and in Inspect and the deck's preview.
++/// Never on an option or a match tile; and Show IPA switches it off.
++
++const String vocab = 'es-en-ipa-probe';
++const String grammar = 'es-en-ipa-grammar';
++const String reading = 'bn-en-ipa-reading';
++
++const String casa = 'la ˈkasa';
++const String example = 'mi ˈkasa es tu ˈkasa';
++
++const String vocabYaml = '''
++schema: 1
++id: es-en-ipa-probe
++name: "IPA probe"
++language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
++native:   { code: en, iso639_3: eng, name: English }
++license: CC0-1.0
++cards:
++  - id: es-ipa-0001
++    target: "la casa"
++    native: "the house"
++    ipa: "la ˈkasa"
++    examples:
++      - target: "Mi casa es tu casa."
++        native: "My house is your house."
++        ipa: "mi ˈkasa es tu ˈkasa"
++  - { id: es-ipa-0002, target: "el perro", native: "the dog", ipa: "el ˈpero" }
++  - { id: es-ipa-0003, target: "el gato", native: "the cat", ipa: "el ˈɡato" }
++  - { id: es-ipa-0004, target: "la mesa", native: "the table", ipa: "la ˈmesa" }
++  - { id: es-ipa-0005, target: "el libro", native: "the book", ipa: "el ˈliβɾo" }
++''';
++
++const String grammarYaml = '''
++schema: 1
++id: es-en-ipa-grammar
++name: "IPA grammar probe"
++kind: grammar
++language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
++native:   { code: en, iso639_3: eng, name: English }
++license: CC0-1.0
++pattern:
++  name: Present tense
++  slot_name: person
++  slots: [yo, tú]
++  prompt: "{lemma} ({gloss}) — {slot}"
++  entries:
++    - lemma: hablar
++      gloss: to speak
++      ipa: "aˈβlaɾ"
++      forms: { yo: hablo, tú: hablas }
++      ipas: { yo: "ˈaβlo", tú: "ˈaβlas" }
++''';
++
++const String readingYaml = '''
++schema: 1
++id: bn-en-ipa-reading
++name: "IPA reading probe"
++kind: reading
++language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
++native:   { code: en, iso639_3: eng, name: English }
++license: CC0-1.0
++passages:
++  - id: bn-en-ipa-reading-shop
++    title: "At the shop"
++    sentences:
++      - text: "কত দাম?"
++        reading: "koto dam?"
++        ipa: "kɔt̪o d̪am"
++      - text: "পঞ্চাশ টাকা।"
++        reading: "ponchash taka."
++        ipa: "pɔntʃaʃ ʈaka"
++    glossary:
++      - word: "দাম"
++        modern: "দাম"
++        reading: "dam"
++        ipa: "d̪am"
++        meaning: { en: "price" }
++    questions:
++      - id: bn-en-ipa-reading-shop-q1
++        prompt: { en: "The buyer asks the price." }
++        answer: true
++''';
++
++AppState ipaApp({void Function(SettingsNotifier s)? change}) {
++  final settings = SettingsNotifier(
++    spokenLanguages: const <String>['en'],
++    learningChosen: true,
++    enabledSkills: Skill.values.toSet(),
++  );
++  change?.call(settings);
++  return AppState.test(
++    decks: MemoryDeckSource(const <String, String>{
++      'decks/es/es-en-ipa-probe.yaml': vocabYaml,
++      'decks/es/es-en-ipa-grammar.yaml': grammarYaml,
++      'decks/bn/bn-en-ipa-reading.yaml': readingYaml,
++    }),
++    tts: FixedTtsEngine(const <String>{'es', 'bn'}),
++    speech: FixedSpeechEngine(onDevice: <String>{'es'}),
++    settings: settings,
++  );
++}
++
++Finder ipaLine(String ipa) => find.text('/$ipa/');
++
++Finder inFeedback(String ipa) =>
++    find.descendant(of: find.byType(FeedbackBanner), matching: ipaLine(ipa));
++
++Future<void> tapVisible(WidgetTester tester, Finder finder) async {
++  await tester.ensureVisible(finder.first);
++  await tester.pumpAndSettle();
++  await tester.tap(finder.first);
++  await tester.pumpAndSettle();
++}
++
++Future<AppState> pumpAsked(
++  WidgetTester tester, {
++  required Skill skill,
++  Ask ask = Ask.own,
++  AppState? state,
++}) async {
++  final app = state ?? ipaApp();
++  await app.load();
++  // Speaking enters a session only once the recogniser is ready.
++  await app.startSpeech();
++  return pumpScreen(
++    tester,
++    DrillPage(
++      request: DrillRequest.untaught(vocab, skill: skill),
++      preset: DrillPreset(target: 'la casa', ask: ask),
++    ),
++    state: app,
++  );
++}
++
++void main() {
++  testWidgets('the IPA line reads as the IPA to a screen reader', (
++    tester,
++  ) async {
++    usePhone(tester);
++    final semantics = tester.ensureSemantics();
++    await pumpAsked(tester, skill: Skill.recognition);
++    expect(find.byType(IpaText), findsOneWidget);
++    expect(
++      find.bySemanticsLabel(l10nOf(tester).ipaSemantics(casa)),
++      findsOneWidget,
++    );
++    semantics.dispose();
++  });
++
++  group('shown with the word from the start', () {
++    testWidgets('the teach card: under the word', (tester) async {
++      usePhone(tester);
++      final state = ipaApp();
++      await pumpScreen(
++        tester,
++        DrillPage(request: DrillRequest.lesson(language: 'es')),
++        state: state,
++      );
++      final first = state.lessonFor(DrillRequest.lesson(language: 'es')).first;
++      expect(first.ask, Ask.teach);
++      expect(ipaLine(first.card.ipa!), findsOneWidget);
++    });
++
++    testWidgets('recognition: under the word, before the answer', (
++      tester,
++    ) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.recognition);
++      expect(ipaLine(casa), findsOneWidget);
++      await tapVisible(tester, find.text(l10nOf(tester).drillShowAnswer));
++      expect(ipaLine(casa), findsOneWidget);
++    });
++
++    testWidgets('choosing the meaning: under the word, never on an option', (
++      tester,
++    ) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.recognition, ask: Ask.chooseMeaning);
++      // Once, under the word: the options are meanings, without IPA.
++      expect(find.byType(IpaText), findsOneWidget);
++      expect(ipaLine(casa), findsOneWidget);
++      await tapVisible(tester, find.text('the house'));
++      expect(find.byType(IpaText), findsOneWidget);
++      expect(inFeedback(casa), findsNothing);
++    });
++  });
++
++  group('shown only with the answer', () {
++    Future<void> expectAfter(
++      WidgetTester tester,
++      Future<void> Function() answer,
++    ) async {
++      expect(find.byType(IpaText), findsNothing, reason: 'before answering');
++      await answer();
++      expect(find.byType(FeedbackBanner), findsOneWidget);
++      expect(inFeedback(casa), findsOneWidget);
++    }
++
++    testWidgets('typed production', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.production);
++      await expectAfter(tester, () async {
++        await tester.enterText(find.byType(TextField), 'la casa');
++        await tester.pump();
++        await tapVisible(tester, find.text(l10nOf(tester).drillCheck));
++      });
++    });
++
++    testWidgets('choosing the word: never on an option', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.production, ask: Ask.chooseWord);
++      await expectAfter(tester, () => tapVisible(tester, find.text('la casa')));
++    });
++
++    testWidgets('rearrange', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.production, ask: Ask.rearrange);
++      await expectAfter(tester, () async {
++        await tapVisible(tester, find.text('la'));
++        await tapVisible(tester, find.text('casa'));
++        await tapVisible(tester, find.text(l10nOf(tester).drillCheck));
++      });
++    });
++
++    testWidgets('typed listening', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.listening);
++      await expectAfter(
++        tester,
++        () => tapVisible(tester, find.text(l10nOf(tester).drillDontKnow)),
++      );
++    });
++
++    testWidgets('hearing and choosing', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.listening, ask: Ask.hearAndChoose);
++      await expectAfter(tester, () => tapVisible(tester, find.text('la casa')));
++    });
++
++    testWidgets('speaking', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.speaking);
++      await expectAfter(
++        tester,
++        () => tapVisible(tester, find.text(l10nOf(tester).drillDontKnow)),
++      );
++    });
++
++    testWidgets('grammar: the form\'s own IPA', (tester) async {
++      usePhone(tester);
++      await pumpScreen(
++        tester,
++        DrillPage(
++          request: DrillRequest.untaught(grammar, skill: Skill.grammar),
++        ),
++        state: ipaApp(),
++      );
++      expect(find.byType(IpaText), findsNothing);
++      await tapVisible(tester, find.text(l10nOf(tester).drillDontKnow));
++      final shown = tester.widget<IpaText>(
++        find.descendant(
++          of: find.byType(FeedbackBanner),
++          matching: find.byType(IpaText),
++        ),
++      );
++      expect(<String>['ˈaβlo', 'ˈaβlas'], contains(shown.ipa));
++    });
++
++    testWidgets('minimal pairs: the sound heard', (tester) async {
++      usePhone(tester);
++      await pumpScreen(
++        tester,
++        const PairDrill(),
++        state: AppState.test(
++          tts: FixedTtsEngine(const <String>{'hi'}),
++          features: const FeatureRegistry.only(<Feature>{
++            ...Feature.available,
++            Feature.drillPair,
++          }),
++        ),
++      );
++      final heard = pairFixtureRounds.first.heard;
++      expect(find.byType(IpaText), findsNothing);
++      await tapVisible(
++        tester,
++        find.text(pairFixtureRounds.first.pair.a.target),
++      );
++      expect(inFeedback(heard.ipa!), findsOneWidget);
++    });
++  });
++
++  testWidgets('match pairs shows none on its tiles', (tester) async {
++    usePhone(tester);
++    await pumpAsked(tester, skill: Skill.recognition, ask: Ask.matchPairs);
++    expect(find.byType(MatchDrill), findsOneWidget);
++    expect(find.byType(IpaText), findsNothing);
++  });
++
++  testWidgets('a passage: under each sentence and in its glossary', (
++    tester,
++  ) async {
++    usePhone(tester);
++    await pumpScreen(
++      tester,
++      DrillPage(request: DrillRequest.untaught(reading, skill: Skill.reading)),
++      state: ipaApp(),
++    );
++    expect(ipaLine('kɔt̪o d̪am'), findsOneWidget);
++    expect(ipaLine('pɔntʃaʃ ʈaka'), findsOneWidget);
++    await tapVisible(tester, find.text(l10nOf(tester).readingWords));
++    expect(ipaLine('d̪am'), findsOneWidget);
++  });
++
++  testWidgets('a heard passage: only once the question is answered', (
++    tester,
++  ) async {
++    usePhone(tester);
++    await pumpScreen(
++      tester,
++      DrillPage(
++        request: DrillRequest.untaught(reading, skill: Skill.listening),
++      ),
++      state: ipaApp(),
++    );
++    final l10n = l10nOf(tester);
++    expect(find.byType(IpaText), findsNothing);
++    await tapVisible(tester, find.text(l10n.readingToQuestions));
++    expect(find.byType(IpaText), findsNothing);
++    await tapVisible(tester, find.text(l10n.readingTrue));
++    expect(ipaLine('kɔt̪o d̪am'), findsOneWidget);
++  });
++
++  testWidgets('Inspect: beside the card\'s word, its example\'s when opened, '
++      'and a grammar row\'s lemma and forms', (tester) async {
++    usePhone(tester);
++    final state = ipaApp();
++    await pumpScreen(tester, const InspectPage(deckId: vocab), state: state);
++    expect(ipaLine(casa), findsOneWidget);
++    expect(ipaLine('el ˈpero'), findsOneWidget);
++    expect(ipaLine(example), findsNothing);
++    await tapVisible(tester, find.text('la casa'));
++    expect(ipaLine(example), findsOneWidget);
++
++    state.settings.showIpa = false;
++    await tester.pumpAndSettle();
++    expect(find.byType(IpaText), findsNothing);
++
++    state.settings.showIpa = true;
++    await pumpScreen(tester, const InspectPage(deckId: grammar), state: state);
++    expect(ipaLine('aˈβlaɾ'), findsOneWidget);
++    expect(ipaLine('ˈaβlo'), findsOneWidget);
++    expect(ipaLine('ˈaβlas'), findsOneWidget);
++  });
++
++  testWidgets('a deck\'s card preview', (tester) async {
++    usePhone(tester);
++    final state = ipaApp();
++    await state.load();
++    await pumpScreen(
++      tester,
++      Scaffold(
++        body: SingleChildScrollView(
++          child: CardPreview(entry: state.deckById(vocab)!),
++        ),
++      ),
++      state: state,
++    );
++    expect(ipaLine(casa), findsOneWidget);
++    state.settings.showIpa = false;
++    await tester.pumpAndSettle();
++    expect(find.byType(IpaText), findsNothing);
++  });
++
++  group('Show IPA off', () {
++    AppState off() => ipaApp(change: (s) => s.showIpa = false);
++
++    testWidgets('none under the word, on recognition or the teach card', (
++      tester,
++    ) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.recognition, state: off());
++      expect(find.byType(IpaText), findsNothing);
++      await pumpScreen(
++        tester,
++        DrillPage(
++          key: UniqueKey(),
++          request: DrillRequest.lesson(language: 'es'),
++        ),
++        state: off(),
++      );
++      expect(find.byType(IpaText), findsNothing);
++    });
++
++    testWidgets('none with the answer', (tester) async {
++      usePhone(tester);
++      await pumpAsked(tester, skill: Skill.production, state: off());
++      await tester.enterText(find.byType(TextField), 'la casa');
++      await tester.pump();
++      await tapVisible(tester, find.text(l10nOf(tester).drillCheck));
++      expect(find.byType(FeedbackBanner), findsOneWidget);
++      expect(find.byType(IpaText), findsNothing);
++    });
++
++    testWidgets('none in a passage', (tester) async {
++      usePhone(tester);
++      await pumpScreen(
++        tester,
++        DrillPage(
++          request: DrillRequest.untaught(reading, skill: Skill.reading),
++        ),
++        state: off(),
++      );
++      expect(find.byType(IpaText), findsNothing);
++    });
++  });
++
++  testWidgets('ipaToShow: none for no IPA, for a word written in the IPA '
++      'already, or with Show IPA off', (tester) async {
++    final state = ipaApp();
++    late BuildContext context;
++    await pumpScreen(
++      tester,
++      Builder(
++        builder: (c) {
++          context = c;
++          return const SizedBox();
++        },
++      ),
++      state: state,
++    );
++    expect(ipaToShow(context, casa, target: 'la casa'), casa);
++    expect(ipaToShow(context, null), isNull);
++    expect(ipaToShow(context, ' '), isNull);
++    // A card of the IPA course, whose word is already the IPA.
++    expect(ipaToShow(context, 'pʰ', target: 'pʰ'), isNull);
++    state.settings.showIpa = false;
++    expect(ipaToShow(context, casa, target: 'la casa'), isNull);
++  });
++}
+diff --git a/test/features/settings/show_ipa_test.dart b/test/features/settings/show_ipa_test.dart
+new file mode 100644
+index 0000000..9e45b71
+--- /dev/null
++++ b/test/features/settings/show_ipa_test.dart
+@@ -0,0 +1,43 @@
++import 'package:flutter/material.dart';
++import 'package:flutter_test/flutter_test.dart';
++
++import 'package:fluenough/app/settings.dart';
++import 'package:fluenough/features/settings/settings_page.dart';
++import 'package:fluenough/ui/widgets/grouped_list.dart';
++
++import '../../support/harness.dart';
++
++/// Show IPA (ADR-0025): on by default, stored, and switched in Settings.
++void main() {
++  test('on by default, and kept like every setting', () {
++    final s = SettingsNotifier();
++    expect(s.showIpa, isTrue);
++    expect(s.toStored()['show_ipa'], 'true');
++    final restored = SettingsNotifier()
++      ..restore((SettingsNotifier()..showIpa = false).toStored());
++    expect(restored.showIpa, isFalse);
++    final unreadable = SettingsNotifier()
++      ..restore(const <String, String>{'show_ipa': 'yes'});
++    expect(unreadable.showIpa, isTrue);
++  });
++
++  testWidgets('Settings > Learning switches it', (tester) async {
++    usePhone(tester);
++    final state = await pumpScreen(tester, const SettingsPage());
++    final l10n = l10nOf(tester);
++    final row = find.ancestor(
++      of: find.text(l10n.settingsIpa),
++      matching: find.byType(GroupedTile),
++    );
++    await tester.scrollUntilVisible(
++      find.text(l10n.settingsIpa),
++      200,
++      scrollable: find.byType(Scrollable).first,
++    );
++    await tester.pumpAndSettle();
++    expect(find.text(l10n.settingsIpaDesc), findsOneWidget);
++    await tester.tap(row);
++    await tester.pumpAndSettle();
++    expect(state.settings.showIpa, isFalse);
++  });
++}

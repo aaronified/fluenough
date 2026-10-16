@@ -1,0 +1,76 @@
+# How the IPA works: the recurring ideas behind its symbols, shown before
+# the first card and from a deck's Tips. See ADR-0016 and
+# docs/DECK-FORMAT.md. Arranged after the IPA chart, 2020 revision, and the
+# Handbook of the International Phonetic Association (1999).
+schema: 1
+kind: script
+id: ipa-script
+language: ipa
+name: "How the IPA works"
+intro: "The International Phonetic Alphabet writes sounds, not spellings: one symbol for each sound, the same in every language. Its symbols are not a random list. They sit on a chart that is a map of the mouth, and a few ideas come back again and again in how they are drawn. Learn the ideas, and most new symbols explain themselves."
+features:
+  - id: one-sound
+    name: "One symbol, one sound"
+    example: "ʃ"
+    text: "Each symbol stands for one sound wherever it is used. English writes the sound ʃ as sh in ship and as ti in nation; Hindi writes it श and Bengali শ; the IPA always writes ʃ. A symbol never changes its sound with the language either: c is never s, and j is always the y of yes."
+    letters: ["ʃ", "j", "c", "x", "ŋ"]
+  - id: slashes
+    name: "Slashes and square brackets"
+    example: "/ /"
+    text: "Between slashes is a broad transcription: only the sounds that tell words apart in that language, as /pɪn/ for English pin. Between square brackets is a narrow one, with as much detail as you need: [pʰɪn]. This app's transcriptions are broad, and shown between slashes."
+    letters: ["/ /", "[ ]"]
+  - id: rows
+    name: "Rows: how the air gets out"
+    example: "p"
+    text: "The rows of the consonant chart are the ways of making a sound: stopped and let go (plosive), through the nose (nasal), rolled (trill), tapped, hissed (fricative), hissed at the side (lateral fricative), let through freely (approximant), and round the sides of the tongue (lateral approximant). Each row has the same way at every place."
+    letters: ["p", "m", "r", "ɾ", "f", "ɬ", "ɹ", "l"]
+  - id: columns
+    name: "Columns: from the lips to the throat"
+    example: "k"
+    text: "The columns are the places where a sound is made, from the front of the mouth to the back: both lips, lip and teeth, the teeth, the ridge behind them, behind the ridge, curled back, the hard palate, the soft palate, the uvula, the throat and the glottis. Read the plosive row left to right and you travel back through the mouth: p t ʈ c k q ʔ."
+    letters: ["p", "t", "ʈ", "c", "k", "q", "ʔ"]
+  - id: voicing
+    name: "Voiceless on the left, voiced on the right"
+    example: "z"
+    text: "Where a cell of the chart holds two symbols, the left one is voiceless and the right one voiced, said with the vocal folds humming: p b, t d, s z, k ɡ. Put a finger on your throat and say s, then z, to feel the difference."
+    letters: ["p", "b", "f", "v", "s", "z", "k", "ɡ"]
+  - id: retroflex-hook
+    name: "A hook below: the tongue curled back"
+    example: "ʈ"
+    text: "A hook below a letter, turning right, curls the tongue back: retroflex. t becomes ʈ, d becomes ɖ, n ɳ, s ʂ, l ɭ, and the flap ɾ becomes ɽ. These are the sounds of Hindi ट, ड and ड़, and of Marathi ण and ळ, and one rule covers them all."
+    letters: ["ʈ", "ɖ", "ɳ", "ʂ", "ʐ", "ɭ", "ɻ", "ɽ"]
+  - id: turned
+    name: "Turned letters"
+    example: "ə"
+    text: "Many symbols are ordinary letters turned upside down: ə is a turned e, ɐ a turned a, ɹ a turned r, ɯ a turned m and ʌ a turned v, and ʁ is a small capital R turned over. Printers could make them from type they already had, and a turned letter is often a sound close to the upright one."
+    letters: ["ə", "ɐ", "ɹ", "ɯ", "ʌ", "ʁ", "ɥ", "ʎ"]
+  - id: small-capitals
+    name: "Small capitals"
+    example: "ɢ"
+    text: "Small capitals mostly stand for sounds made further back than the ordinary letter: ɢ, ɴ and ʀ are made at the uvula, behind ɡ, n and r. Among the vowels, ɪ and ʏ are a little lower and more central than i and y."
+    letters: ["ɢ", "ɴ", "ʀ", "ʟ", "ʙ", "ɪ", "ʏ"]
+  - id: top-hook
+    name: "A hook on top: air drawn in"
+    example: "ɓ"
+    text: "A hook on top of a voiced stop makes it an implosive, said with air drawn inwards: ɓ ɗ ʄ ɠ ʛ. Do not confuse it with the hook below, for retroflex, or with the tail of ŋ."
+    letters: ["ɓ", "ɗ", "ʄ", "ɠ", "ʛ"]
+  - id: superscripts
+    name: "A small raised letter changes the one before"
+    example: "kʰ"
+    text: "A small raised letter after a symbol colours the sound before it: ʰ adds a puff of breath, ʱ a breathy voice, ʲ a y-like tongue and ʷ rounded lips. So kʰ is one sound, Hindi ख, not k followed by h."
+    letters: ["ʰ", "ʱ", "ʲ", "ʷ", "ⁿ", "ˡ"]
+  - id: marks
+    name: "Marks above and below"
+    example: "ã"
+    text: "Small marks above or below a letter adjust it without changing what it basically is: the bridge below puts it on the teeth (t̪), the tilde above sends air through the nose (ã), a short line below makes a consonant a syllable (n̩), and a ring below takes the voice away (n̥)."
+    letters: ["t̪", "ã", "n̩", "n̥"]
+  - id: between
+    name: "Length and stress between the letters"
+    example: "aː"
+    text: "Some marks stand between letters. ː, two small triangles, makes the sound before it long: Telugu కాలం, time, has a long aː. ˈ goes before the stressed syllable, ˌ before a lighter stress, and a full stop splits syllables."
+    letters: ["aː", "iː", "ˈ", "ˌ", "."]
+  - id: vowel-chart
+    name: "The vowel chart is a map of the mouth"
+    example: "i"
+    text: "The vowel chart is a side view of the mouth, facing left: up is the tongue high, down is the jaw open, left is the front of the mouth and right the back. So i is high and front, u high and back, a open and front, ɑ open and back. Where two vowels share a dot, the left one has spread lips and the right one rounded."
+    letters: ["i", "y", "u", "e", "o", "ə", "a", "ɑ"]

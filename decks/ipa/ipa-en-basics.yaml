@@ -1,0 +1,60 @@
+schema: 1
+id: ipa-en-basics
+name: "IPA: the basics"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "What the IPA writes, and the marks every transcription uses: slashes and brackets, stress, length and the syllable break."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0001
+    target: "/ /"
+    native: "slashes: only the sounds that tell words apart (phonemic transcription)"
+    notes: "Slashes hold a broad transcription: only the sounds that make a difference between words in that language, as /kæt/ for English cat. Two speakers can say a word a little differently and still share one transcription between slashes. Every transcription in this app is broad, and is shown between slashes."
+    examples:
+      - { target: "cat", native: "cat (English)", language: en, ipa: "kæt" }
+    tags: [core]
+    modes: [recognition, production]
+  - id: ipa-0002
+    target: "[ ]"
+    native: "square brackets: the sounds exactly as said (phonetic transcription)"
+    notes: "Square brackets hold a narrow transcription: the sounds as actually said, in as much detail as you need. English pin is /pɪn/ between slashes but [pʰɪn] in brackets, because its p has a puff of breath that English never uses to tell words apart. Most of the small marks in the later units are for brackets."
+    tags: [core]
+    modes: [recognition, production]
+  - id: ipa-0003
+    target: "ˈ"
+    native: "a raised tick: the next syllable is stressed (primary stress)"
+    notes: "The mark goes before the stressed syllable, not over its vowel: English about is əˈbaʊt. In Spanish, stress alone can change a word, as in término, end, and terminó, finished. Hindi and the other Indian languages in this app do not use stress to tell words apart, so their transcriptions rarely need it."
+    examples:
+      - { target: "término", native: "end; term (Spanish)", language: es, ipa: "ˈteɾmino" }
+      - { target: "terminó", native: "he or she finished (Spanish)", language: es, ipa: "teɾmiˈno" }
+      - { target: "about", native: "about (English)", language: en, ipa: "əˈbaʊt" }
+    tags: [core, es, en]
+    modes: [recognition, production]
+  - id: ipa-0004
+    target: "ˌ"
+    native: "a low tick: a lighter, second stress (secondary stress)"
+    notes: "A long word can carry a second, lighter stress, marked with a tick at the foot of the line before its syllable. English Japanese is ˌdʒæpəˈniːz: its strongest stress is on the last syllable and a lighter one on the first. English dictionaries use it; most other transcriptions leave it out."
+    examples:
+      - { target: "Japanese", native: "Japanese (English)", language: en, ipa: "ˌdʒæpəˈniːz" }
+    tags: [core, en]
+    modes: [recognition, production]
+  - id: ipa-0005
+    target: "ː"
+    native: "two small triangles: the sound before is long (length mark)"
+    notes: "ː is not a colon but two small triangles pointing at each other, and it makes the sound before it long: aː is a long a. Telugu కాలం, time, has a long aː, and with a short a it would be another word. In Hindi a long vowel also sounds different, so आ is aː but अ is ə, as in काम, work, against कम, less."
+    examples:
+      - { target: "కాలం", native: "time; season (Telugu)", language: te }
+      - { target: "काम", native: "work (Hindi)", language: hi }
+    tags: [core, hi, te, kn, en]
+    modes: [recognition, production]
+  - id: ipa-0006
+    target: "."
+    native: "a full stop: a break between syllables (syllable break)"
+    notes: "A full stop splits syllables where a reader could go wrong, such as between two vowels that do not glide into one: Spanish día is ˈdi.a, two syllables. The chart's own example is English react, ɹi.ækt. Transcriptions usually mark syllables only where it helps."
+    examples:
+      - { target: "día", native: "day (Spanish)", language: es, ipa: "ˈdi.a" }
+    tags: [core]
+    modes: [recognition, production]

@@ -1,0 +1,156 @@
+schema: 1
+id: ipa-en-breath
+name: "A puff of breath and a breathy voice"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "ʰ and ʱ, which give Indian languages four stops at each place, as in p pʰ b bʱ; then the affricates, a stop that slides into a hiss."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0038
+    target: "ʰ"
+    native: "a small raised h: a puff of breath after (aspirated)"
+    notes: "A small raised h changes the letter before it: kʰ is k followed by a puff of breath, as in Hindi ख. Hold a hand before your mouth: English pin has a puff and spin has none, but English never tells words apart by it. Hindi, Bengali and the other Indian languages do, so kʰ and k are different sounds, as in खिड़की, window, against कमरा, room."
+    examples:
+      - { target: "खिड़की", native: "window (Hindi)", language: hi }
+    tags: [core, hi, mr, gu, bn, as, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0039
+    target: "ʱ"
+    native: "a small raised hooked h: a murmured, breathy voice (breathy voice)"
+    notes: "A small raised h with a hook, the letter ɦ in miniature, gives the sound before it a breathy, murmured voice: bʱ is b said while letting out breath, as in Bengali ভাত, rice. With ʰ and ʱ, Indian languages have four stops at each place, as in प फ ब भ: p, pʰ, b and bʱ. The official chart writes breathy voice with two dots below, b̤, but many transcriptions of Indian languages use ʱ."
+    examples:
+      - { target: "ভাত", native: "cooked rice (Bengali)", language: bn }
+    tags: [hi, mr, gu, bn, as, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0040
+    target: "pʰ"
+    native: "p with a puff of breath (aspirated voiceless bilabial plosive)"
+    notes: "p followed by a puff of breath, like a firmly said English pin. Hindi फ, Bengali and Assamese ফ and Telugu ఫ are pʰ, though many speakers say it close to f in some words. With p, b and bʱ it makes the four bilabial stops of Indian languages."
+    examples:
+      - { target: "চাফা", native: "clean (Assamese)", language: as }
+    tags: [hi, mr, gu, bn, as, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0041
+    target: "bʱ"
+    native: "b with a breathy voice (breathy-voiced bilabial plosive)"
+    notes: "b said with a murmur of breath, as in Hindi भाई, brother. English has nothing like it, and English speakers tend to hear plain b; try saying b while sighing. It is the fourth of the series p, pʰ, b, bʱ."
+    examples:
+      - { target: "भाई", native: "brother (Hindi)", language: hi }
+      - { target: "ভাত", native: "cooked rice (Assamese)", language: as }
+    tags: [hi, mr, gu, bn, as, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0042
+    target: "t̪ʰ"
+    native: "t on the teeth with a puff of breath (aspirated voiceless dental plosive)"
+    notes: "t̪ followed by a puff of breath: Hindi थ, Bengali থ, Telugu థ. It is not the th of English thin, which is the fricative θ. Romanisations write th for both, but the IPA keeps them apart."
+    examples:
+      - { target: "পথ", native: "way; path (Bengali)", language: bn }
+      - { target: "के साथ", native: "with (Hindi)", language: hi }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0043
+    target: "d̪ʱ"
+    native: "d on the teeth with a breathy voice (breathy-voiced dental plosive)"
+    notes: "d̪ said with a murmur of breath: Hindi ध, Bengali ধ, Telugu ధ, as at the end of Hindi दूध, milk. It is not the th of English this, which is ð. Two marks combine here: the bridge below says where the tongue is, and the raised ʱ after says what the voice does."
+    examples:
+      - { target: "दूध", native: "milk (Hindi)", language: hi }
+      - { target: "ధర", native: "price (Telugu)", language: te }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0044
+    target: "tʰ"
+    native: "t on the ridge with a puff of breath (aspirated voiceless alveolar plosive)"
+    notes: "Assamese has a single t, made at the ridge as in English, and gives it a breathy partner: থ is tʰ, as in পথ, way. In a narrow transcription English ten is [tʰɛn], since English t has a puff at the start of a stressed syllable."
+    examples:
+      - { target: "পথ", native: "way; path (Assamese)", language: as }
+    tags: [as]
+    modes: [recognition, production]
+  - id: ipa-0045
+    target: "dʱ"
+    native: "d on the ridge with a breathy voice (breathy-voiced alveolar plosive)"
+    notes: "Assamese ধ and ঢ are both dʱ: a d at the ridge said with a murmur of breath, as in ধুনীয়া, beautiful. The other Indian languages here split it into d̪ʱ on the teeth and ɖʱ curled back."
+    examples:
+      - { target: "ধুনীয়া", native: "beautiful (Assamese)", language: as }
+    tags: [as]
+    modes: [recognition, production]
+  - id: ipa-0046
+    target: "kʰ"
+    native: "k with a puff of breath (aspirated voiceless velar plosive)"
+    notes: "k followed by a puff of breath: Hindi ख, Bengali and Assamese খ, Telugu ఖ. Do not confuse it with x, the rasp of Hindi ख़, ख with a dot below. Romanisations write kh for both."
+    examples:
+      - { target: "खाना", native: "food (Hindi)", language: hi }
+      - { target: "খুৰা", native: "uncle (Assamese)", language: as }
+    tags: [hi, mr, gu, bn, as, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0047
+    target: "ɡʱ"
+    native: "g with a breathy voice (breathy-voiced velar plosive)"
+    notes: "ɡ said with a murmur of breath: Hindi and Marathi घ, Bengali and Assamese ঘ, as in घर, house. Romanisations write gh, but it is one sound, not g followed by h."
+    examples:
+      - { target: "घर", native: "home; house (Hindi)", language: hi }
+      - { target: "घरी", native: "at home (Marathi)", language: mr }
+      - { target: "ঘৰ", native: "house; home (Assamese)", language: as }
+    tags: [hi, mr, gu, bn, as, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0048
+    target: "tʃ"
+    native: "ch as in church (voiceless postalveolar affricate)"
+    notes: "An affricate is a stop that slides into a hiss as one sound: tʃ is t released into ʃ, the ch of English church. It is Hindi च, Bengali চ, Telugu చ and Spanish ch, as in leche. It takes two letters, and a tie bar, t͡ʃ, can join them to show that they are one sound."
+    examples:
+      - { target: "चाय", native: "tea (Hindi)", language: hi }
+      - { target: "leche", native: "milk (Spanish)", language: es, ipa: "ˈletʃe" }
+    tags: [hi, mr, gu, bn, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0049
+    target: "tʃʰ"
+    native: "ch with a puff of breath (aspirated voiceless postalveolar affricate)"
+    notes: "tʃ followed by a puff of breath: Hindi छ, Bengali ছ, as in Hindi छह, six. Romanisations often write it chh. Assamese says its ছ as plain s."
+    examples:
+      - { target: "छह", native: "six (Hindi)", language: hi }
+      - { target: "मछली", native: "fish (Hindi)", language: hi }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0050
+    target: "dʒ"
+    native: "j as in jam (voiced postalveolar affricate)"
+    notes: "d released into ʒ, the j of English jam: Hindi ज, Bengali জ, Telugu జ. It is the sound English speakers expect from the letter j, which the IPA keeps for the y of yes. Assamese says its জ as z."
+    examples:
+      - { target: "आज", native: "today (Hindi)", language: hi }
+      - { target: "জল", native: "water (Bengali)", language: bn }
+      - { target: "jam", native: "jam (English)", language: en, ipa: "dʒæm" }
+    tags: [hi, mr, gu, bn, te, kn, en]
+    modes: [recognition, production]
+  - id: ipa-0051
+    target: "dʒʱ"
+    native: "j with a breathy voice (breathy-voiced postalveolar affricate)"
+    notes: "dʒ said with a murmur of breath: Hindi झ, Bengali ঝ, Telugu ఝ, as in Bengali ঝাল, spicy. Romanisations write it jh, but it is one sound."
+    examples:
+      - { target: "ঝাল", native: "spicy (Bengali)", language: bn }
+    tags: [hi, mr, gu, bn, te, kn]
+    modes: [recognition, production]
+  - id: ipa-0052
+    target: "ts"
+    native: "ts as in cats (voiceless alveolar affricate)"
+    notes: "t released into s as one sound, like the ts of English cats or German Zeit. Marathi says च this way before a, o and u in most native words: चार, four, and चहा, tea, begin with ts. Many Telugu speakers do the same in words such as చాలా, very."
+    examples:
+      - { target: "चार", native: "four (Marathi)", language: mr }
+      - { target: "चहा", native: "tea (Marathi)", language: mr }
+    tags: [mr]
+    modes: [recognition, production]
+  - id: ipa-0053
+    target: "dz"
+    native: "dz as in adze (voiced alveolar affricate)"
+    notes: "d released into z as one sound, the voiced partner of ts. Marathi says ज this way before a, o and u in most native words, as in जवळ, near. The two letters look like d followed by z; only a tie bar, d͡z, or knowing the language shows they are one sound."
+    examples:
+      - { target: "जवळ", native: "near (Marathi)", language: mr }
+    tags: [mr]
+    modes: [recognition, production]
+  - id: ipa-0054
+    target: "t͡ʃ"
+    native: "a tie bar: two letters said as one sound"
+    notes: "The arch joins two letters into one sound: t͡ʃ is the single sound of church, not t followed by ʃ. The chart also uses it for a sound made at two places at once, such as the k͡p of Yoruba and other West African languages. Broad transcriptions, like this app's, usually leave it out and write tʃ."
+    tags: [hi, mr, gu, bn, te, kn, es, en]
+    modes: [recognition, production]

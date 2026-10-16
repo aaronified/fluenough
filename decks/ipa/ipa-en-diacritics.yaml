@@ -1,0 +1,101 @@
+schema: 1
+id: ipa-en-diacritics
+name: "Marks on and between letters"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "The diacritics you meet most, each shown on a typical letter: nasal vowels, syllabic consonants, voice and breath, the tongue and the lips; then the smaller marks of length, linking and phrasing."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0122
+    target: "ã"
+    native: "a tilde above: said through the nose too (nasalised)"
+    notes: "A tilde above a letter, shown here on a, lets air out through the nose as well as the mouth. Hindi writes a nasal vowel with the moon and dot ँ, as in माँ, mother, and Bengali with ঁ, as in দাঁত, tooth. French has nasal vowels too, as in vin, wine."
+    examples:
+      - { target: "माँ", native: "mother (Hindi)", language: hi }
+      - { target: "দাঁত", native: "tooth (Bengali)", language: bn }
+    tags: [hi, gu, bn, as]
+    modes: [recognition, production]
+  - id: ipa-0123
+    target: "n̩"
+    native: "a short line below: a consonant makes the syllable (syllabic)"
+    notes: "A short upright line below a consonant, shown here on n, makes it a syllable by itself, with no vowel: English hidden is ˈhɪdn̩, two syllables. On a letter with a tail below, such as ŋ, the line goes above instead."
+    examples:
+      - { target: "hidden", native: "hidden (English)", language: en, ipa: "ˈhɪdn̩" }
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0124
+    target: "i̯"
+    native: "an arch below: a vowel that is not a syllable (non-syllabic)"
+    notes: "An arch below a vowel, shown here on i, says it makes no syllable of its own but glides into or out of the vowel beside it: Spanish aire, air, is ˈai̯ɾe, two syllables, not three. It is one way to write the second half of a diphthong; many transcriptions write j or w there instead."
+    examples:
+      - { target: "aire", native: "air (Spanish)", language: es, ipa: "ˈai̯ɾe" }
+    tags: [es]
+    modes: [recognition, production]
+  - id: ipa-0125
+    target: "n̥"
+    native: "a small ring below: said without voice (voiceless)"
+    notes: "A small ring below a letter, shown here on n, takes the voice away: n̥ is an n breathed out through the nose. On a letter with a tail below, such as ŋ, the ring goes above. Welsh and Burmese have voiceless nasals, and English l loses its voice after p, as in play, [pl̥eɪ]."
+    modes: [recognition, production]
+  - id: ipa-0126
+    target: "t̬"
+    native: "a small v below: said with voice (voiced)"
+    notes: "A small v below a letter, shown here on t, adds voice to a sound that usually has none. American English water has a voiced t, [ˈwɑt̬ɚ]. It is the opposite of the ring below."
+    modes: [recognition, production]
+  - id: ipa-0127
+    target: "b̤"
+    native: "two dots below: a breathy, murmured voice (breathy voiced)"
+    notes: "Two dots below a letter, shown here on b, give it a breathy voice. This is the chart's own way to write the murmur of Hindi भ, which this course writes bʱ. It goes on vowels too: Gujarati has breathy vowels."
+    modes: [recognition, production]
+  - id: ipa-0128
+    target: "ʲ"
+    native: "a small raised j: the tongue rises as for y (palatalised)"
+    notes: "A small raised j after a letter means the middle of the tongue rises towards the palate during that sound, giving it a y-like colour: tʲ. Russian tells such soft consonants from plain ones, as in мать, mother, which ends in tʲ."
+    modes: [recognition, production]
+  - id: ipa-0129
+    target: "ʷ"
+    native: "a small raised w: the lips round (labialised)"
+    notes: "A small raised w after a letter rounds the lips during that sound: kʷ is a k with rounded lips, as at the start of English queen. Many languages of Africa and the Caucasus tell words apart with it."
+    modes: [recognition, production]
+  - id: ipa-0130
+    target: "ɫ"
+    native: "dark l, a tilde through it (velarised or pharyngealised l)"
+    notes: "A tilde through a letter means the back of the tongue is raised towards the soft palate, or pulled into the throat. Its usual use is ɫ, the dark, hollow l at the end of English feel and full. Indian languages and Spanish have only the clear l, and a broad transcription of English writes l for both."
+    modes: [recognition, production]
+  - id: ipa-0131
+    target: "t̚"
+    native: "a corner after: no audible release (unreleased)"
+    notes: "A small corner at the top right of a stop, shown here on t, means it is held and never released with a pop: English that cat often ends in t̚. In Thai, Vietnamese and Korean, stops at the end of a word are always unreleased."
+    modes: [recognition, production]
+  - id: ipa-0132
+    target: "ɚ"
+    native: "a hook on a vowel: r-coloured (rhoticity)"
+    notes: "A small hook on the right of a vowel colours it with r, the tongue curling or bunching while the vowel is said. ɚ is the r-coloured schwa of American English butter, and ɝ the vowel of American bird. British speech has plain ə and ɜː there."
+    modes: [recognition, production]
+  - id: ipa-0133
+    target: "ˑ"
+    native: "one small triangle: a little longer (half-long)"
+    notes: "The top half of the length mark makes a sound only a little longer than short, as in eˑ. It is for narrow transcription, and for languages such as Estonian that have three degrees of length."
+    modes: [recognition, production]
+  - id: ipa-0134
+    target: "ĕ"
+    native: "a small cup above: extra short (extra-short)"
+    notes: "A breve, the small cup above a letter, shown here on e, makes a sound shorter than usual, such as a vowel squeezed between two consonants. It is the opposite of ː."
+    modes: [recognition, production]
+  - id: ipa-0135
+    target: "‿"
+    native: "a curve below the line: no break between words (linking)"
+    notes: "A curve at the foot of the line joins two words with no break between them, as in French liaison: les amis, the friends, is le‿zami. It is the opposite of the syllable break, the full stop."
+    modes: [recognition, production]
+  - id: ipa-0136
+    target: "|"
+    native: "a single bar: the end of a short group within a phrase (minor group)"
+    notes: "A single upright bar marks the end of a minor, or foot, group: a short stretch of speech inside a longer phrase. It is for transcribing whole utterances, not single words, and it looks like the click ǀ but is a different character."
+    modes: [recognition, production]
+  - id: ipa-0137
+    target: "‖"
+    native: "a double bar: the end of an intonation phrase (major group)"
+    notes: "Two upright bars mark the end of a major, or intonation, group: a stretch of speech said on one tune, often a whole sentence. The single bar | marks a smaller group inside it, and the click ǁ is another character that looks the same."
+    modes: [recognition, production]

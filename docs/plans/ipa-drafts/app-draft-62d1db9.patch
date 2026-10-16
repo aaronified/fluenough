@@ -1,0 +1,893 @@
+commit 62d1db9bc95f9c35fd4cde2210fb0b9fa65a7bd9
+Author: Claude <noreply@anthropic.com>
+Date:   Tue Oct 13 11:07:14 2026 +0000
+
+    Draft, not approved: card data plan, question-engine ADR and plan, b1-format-spec folded into DECK-FORMAT, build-deck skill (#506)
+    
+    Awaiting the owner's review. Not for main until approved.
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+    Claude-Session: https://claude.ai/code/session_01Hxozk8Tp6QhwCiBraJpHGM
+
+diff --git a/docs/adr/0034-hear-say-write.md b/docs/adr/0034-hear-say-write.md
+index 5f19f47..3ebc9d7 100644
+--- a/docs/adr/0034-hear-say-write.md
++++ b/docs/adr/0034-hear-say-write.md
+@@ -279,7 +279,8 @@ before the script, six after):
+   the skill model's pull request (owner, 2026-10-09). **Understood is shown a
+   form and choosing what it means;** choosing among forms of the same word,
+   the rule cards' question, or typing the form, is produced (owner,
+-  2026-10-09, settling `b1-format-spec.md` #22). Until then grammar keeps one
++  2026-10-09, settling question 22 of the B1 format spec, now folded into
++  `docs/DECK-FORMAT.md`). Until then grammar keeps one
+   schedule, typed.
+ - **Settings** already has one switch per skill, so one per activity; their
+   wording waits for `docs/plans/settings-wording.md`.
+@@ -293,9 +294,8 @@ before the script, six after):
+ 
+ ### Open, not built, or kept elsewhere
+ 
+-- **Grammar understood and produced:** moved to the B1 format's spec,
+-  `docs/plans/b1-format-spec.md` on branch `feat/b1-format` (4.7, and OPEN-22,
+-  settled 2026-10-09), which holds the owner's ruling and the questions.
++- **Grammar understood and produced:** moved to the B1 format, built in #434
++  and described in `docs/DECK-FORMAT.md` ("Rules decks"; settled 2026-10-09).
+ - **Cloze,** with the owner's wording of how it is asked and its easier and
+   harder grades: `docs/plans/sentence-building.md` (#222).
+ - **The optimiser:** done, ADR-0035.
+diff --git a/docs/adr/0039-questions-derived-from-card-data.md b/docs/adr/0039-questions-derived-from-card-data.md
+new file mode 100644
+index 0000000..ba27838
+--- /dev/null
++++ b/docs/adr/0039-questions-derived-from-card-data.md
+@@ -0,0 +1,102 @@
++# ADR-0039: Questions are derived from card data
++
++- **Status:** Proposed. The principle is accepted (owner, 2026-10-13, #506): questions are derived from card data, whatever the card's kind. The design below waits on the open questions in `docs/plans/question-engine.md`.
++- **Date:** 2026-10-13
++- **Amends:** ADR-0024 (which question each skill is asked as), ADR-0034
++  (Hear asks for the meaning; the skills stay as they are).
++- **Plan:** `docs/plans/question-engine.md`. The card data it relies on is
++  listed in `docs/plans/card-data.md`.
++
++## Context
++
++The owner decided on 2026-10-13 (#506): "a simple card should be able to
++generate all kinds of questions", so questions must be agnostic of card
++type. The card data is to grow to match: "not just example sentences. we
++need also synonyms, antonyms, root word, meaning, minimal pairs, phonemic
++contrasts, facts, images, etc on each card, as applicable. some would be
++mandatory, others will be optional."
++
++Today the question follows the card's kind, not its data:
++
++- the grammar questions (`chooseForm`, `chooseFormMeaning`) exist only for
++  a rules cell (`card.rule != null`);
++- `lessonQuestions` is a switch on the card's kind;
++- rearranging is gated by word count or by `pos == phrase`;
++- `modes` is written by the author and doubles as the marker of a kind;
++- reading questions are a `QuestionCard` with a mode of their own;
++- numbers are a special card class;
++- whether Hear asks for the form or the meaning depends on the deck being
++  in the path's alphabet list;
++- the wrong options are drawn by the card's kind and class;
++- a pattern carries an author-written question template (`prompt`).
++
++So each planned type (cloze, sentence bank, word-order extras, listening
++in context, explaining mistakes, the IPA course, handwriting, audio
++drills) would add one more special case. The audit is in
++`docs/plans/question-engine.md`.
++
++## Decision
++
++- **A `QuestionType` registry.** Each type is one entry. It declares:
++  - its **skill**: one of the existing `DrillMode` values. `DrillMode` is
++    the skill label and nothing more. The review log is append-only, so a
++    `DrillMode` name never changes and no value is removed;
++  - **`eligible(card)`**: true when the card has the data the question
++    needs. Nothing else decides it;
++  - **how it grades**: choice, typed, ordered, spoken or matched, and what
++    a right answer records (ADR-0034's grades stay);
++  - its **distractor source**, drawn from card data: the same `pos`, the
++    same theme or tags, the `pair` partner, `bases`, confusables, the other
++    forms of the same word.
++- **Selection is by data.** The engine asks the registry for the types
++  eligible for a card in a skill, and picks one. No question is selected
++  by a deck's kind, a card's class, or the deck's membership of a path.
++- **`modes` becomes an opt-out.** It lists the skills a card is excluded
++  from, and nothing more. It no longer marks a kind of card, and an
++  absent `modes` means every skill the data allows.
++- **Neutral card data, not per-question fields.** A card does not carry
++  "its cloze", "its Hear options" or "its question". It carries what is
++  true of the word (`docs/plans/card-data.md`), and each type reads that.
++  Where a type needs something nobody can derive, such as the wrong
++  alternatives of a sentence, the field is a shared one with a neutral
++  name that several types read. Its shape is decided in the card data
++  list.
++- **Reading questions, numbers and rules cells are cards with data.** A
++  reading question is a card whose data has a passage and options. A
++  number is a card whose forms are generated. A rules cell is a card with
++  a `rule`. Each is eligible for a type because of what it has, not
++  because of what it is.
++- **Nothing is rewritten.** Existing cards, ids and log entries stay valid;
++  card ids are permanent.
++- **`lib/core` stays free of Flutter.** The registry is plain Dart; pages
++  only draw the question a type returns.
++
++## Consequences
++
++- A new question type is one registry entry and its tests, plus its page.
++  It reaches every card that has its data, without a change to the decks.
++- Richer cards make more questions without being touched again. A card
++  with an antonym can be asked its opposite; one with a pair, a minimal
++  pair question.
++- Coverage decides what is asked. Today examples are 0 on hi/bn/te, audio
++  is 0, bases are 17 to 28%, so some types stay silent on most cards until
++  the data is filled. The registry makes the gaps countable.
++- `reviewAsks` and `lessonQuestions` get smaller, then go. During the
++  migration both run, and every step keeps all tests passing.
++- The `Ask` values are the pages' contract and stay until each page is
++  moved.
++
++## Alternatives considered
++
++- **Keep the kind switches and add a case per new type:** each planned
++  type adds a branch to six places, and a card of another kind can never
++  be asked it.
++- **Author a question list on each card** (`questions:` with prompt and
++  options): it is what `pattern.prompt` already does, and it is the cost
++  the owner's decision removes. It cannot be reviewed in bulk and cannot
++  change when a type improves.
++- **New `DrillMode` per question type:** the log would hold names the
++  scheduler must keep for ever, and the skills (ADR-0035) are fitted per
++  mode. A type belongs to a skill; it is not one.
++- **Generate questions with a model at run time:** not offline, not
++  checked by reviewers, and not repeatable.
+diff --git a/lib/app/app_state.dart b/lib/app/app_state.dart
+index a40d1a3..a776cc9 100644
+--- a/lib/app/app_state.dart
++++ b/lib/app/app_state.dart
+@@ -1584,7 +1584,8 @@ class AppState extends ChangeNotifier {
+   /// (ADR-0024): its deck's other cards of the same kind, each showing a
+   /// different option, or, when they show fewer than three, those of every
+   /// deck of its course as well. A rules table's form, or its meaning, is
+-  /// chosen among its own row's alone ([formChoices], spec 4.8).
++  /// chosen among its own row's alone ([formChoices], DECK-FORMAT.md, Rules
++  /// decks).
+   List<Card> choicePool(Card card, Ask ask) {
+     final entry = deckOf(card);
+     if (entry == null) return const <Card>[];
+@@ -1629,8 +1630,8 @@ class AppState extends ChangeNotifier {
+ 
+   /// Whether a [ask] question about [card] has at least two wrong options
+   /// to offer, or, choosing among a rules table's forms or their meanings,
+-  /// one (spec 4.8: a row of two forms is still a choice). Without, it is
+-  /// asked its own way.
++  /// one (DECK-FORMAT.md, Rules decks: a row of two forms is still a choice).
++  /// Without, it is asked its own way.
+   bool canChoose(Card card, Ask ask) =>
+       choicePool(card, ask).map(ask.optionOf).toSet().length >=
+       (ask.choosesAmongForms ? 1 : 2);
+diff --git a/lib/app/deck_catalog.dart b/lib/app/deck_catalog.dart
+index 32ef0cc..8fa3ea1 100644
+--- a/lib/app/deck_catalog.dart
++++ b/lib/app/deck_catalog.dart
+@@ -342,15 +342,15 @@ class DeckCatalog {
+     final headers = <String, ({String? kind, String? part})>{
+       for (final path in paths) path: _headerOf(files[path]!),
+     };
+-    // A file a learner added is single-file (OPEN-19): DeckParser.parse
+-    // refuses a core or a layer among them.
++    // A file a learner added is single-file (DECK-FORMAT.md, Adding your own
++    // deck): DeckParser.parse refuses a core or a layer among them.
+     bool isLayer(String path) =>
+         !isAdded(path) && headers[path]!.kind == 'layer';
+     bool isCore(String path) =>
+         !isAdded(path) && !isLayer(path) && headers[path]!.part == 'core';
+     // Cores first, so that a layer finds its core wherever the two sort
+-    // (B1 format, spec 9.6). A core is not shown: each of its layers is,
+-    // merged with it.
++    // (DECK-FORMAT.md, Core and layer files). A core is not shown: each of its
++    // layers is, merged with it.
+     final cores = <String, DeckCore>{};
+     final brokenCores = <String>{};
+     for (final path in paths.where(isCore)) {
+@@ -493,7 +493,8 @@ class DeckCatalog {
+   }
+ 
+   /// The layer at [path], whose text is [text], merged with its core: the
+-  /// file `<core>.yaml` in the folder above the layer's (spec 2.6).
++  /// file `<core>.yaml` in the folder above the layer's (DECK-FORMAT.md, Core
++  /// and layer files).
+   static Deck _merged(
+     String path,
+     String text,
+@@ -604,7 +605,8 @@ class DeckCatalog {
+   static List<DeckEntry> _withRefs(List<DeckEntry> decks) {
+     // Each card as each native language's decks write it: a core card is
+     // written once per layer that translates it, and a ref resolves through
+-    // the one of its own native language when there is one (spec 2.7).
++    // the one of its own native language when there is one (DECK-FORMAT.md,
++    // Core and layer files).
+     final written = <String, Map<String, Card>>{};
+     for (final entry in decks) {
+       if (entry.deck.kind != DeckKind.vocab) continue;
+@@ -710,7 +712,8 @@ class DeckCatalog {
+   static String? kindOf(String text) => _headerOf(text).kind;
+ 
+   /// A file's `kind` and `part`, each null when it has none: a layer is
+-  /// `kind: "layer"`, a core `part: "core"` (spec 2.2).
++  /// `kind: "layer"`, a core `part: "core"` (DECK-FORMAT.md, Core and layer
++  /// files).
+   static ({String? kind, String? part}) _headerOf(String text) {
+     try {
+       final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
+diff --git a/lib/app/skill.dart b/lib/app/skill.dart
+index b508849..9862927 100644
+--- a/lib/app/skill.dart
++++ b/lib/app/skill.dart
+@@ -8,10 +8,10 @@ import 'features.dart';
+ /// yet, and adding the mode needs an ADR (#31). So the interface counts one
+ /// more skill than the scheduler knows modes. [mode] is null for [pair].
+ ///
+-/// Grammar is one skill with two schedules (B1 format spec 4.7, 4.8 item
+-/// 7): understood ([DrillMode.grammarUnderstood]) and produced
+-/// ([DrillMode.grammar]) share its tile on Today and its switch in
+-/// Settings, so [modes] gives both.
++/// Grammar is one skill with two schedules (DECK-FORMAT.md, Rules decks):
++/// understood ([DrillMode.grammarUnderstood]) and produced
++/// ([DrillMode.grammar]) share its tile on Today and its switch in Settings, so
++/// [modes] gives both.
+ ///
+ /// Icons, labels and colours for a skill are in `lib/ui`: `SkillVisuals` in
+ /// `lib/ui/skill_visuals.dart` and `ModeColors` in `lib/ui/theme.dart`.
+@@ -53,7 +53,7 @@ enum Skill {
+     DrillMode.reading => Skill.reading,
+     DrillMode.listening => Skill.listening,
+     // Understood and produced share the grammar tile (skill model,
+-    // 2026-10-08) and its switch (B1 format spec 4.7, 4.8 item 7).
++    // 2026-10-08) and its switch (DECK-FORMAT.md, Rules decks).
+     DrillMode.grammarUnderstood || DrillMode.grammar => Skill.grammar,
+     DrillMode.speaking => Skill.speaking,
+   };
+diff --git a/lib/core/data/deck_layers.dart b/lib/core/data/deck_layers.dart
+index 1a43722..49f9a16 100644
+--- a/lib/core/data/deck_layers.dart
++++ b/lib/core/data/deck_layers.dart
+@@ -1,9 +1,9 @@
+ part of 'deck_parser.dart';
+ 
+-// Cores and layers (B1 format, spec section 2): a deck written as one file
+-// for the language learnt, the core, and one for each language it is taught
+-// from, its layers. Merged, a core and one layer are today's [Deck], with
+-// the layer's id, so that everything keyed by deck id keeps working.
++// Cores and layers (DECK-FORMAT.md, Core and layer files): a deck written as
++// one file for the language learnt, the core, and one for each language it is
++// taught from, its layers. Merged, a core and one layer are today's [Deck],
++// with the layer's id, so that everything keyed by deck id keeps working.
+ //
+ // These shapes are the parser's: nothing outside lib/core/data uses them,
+ // except to hand a core and a layer to [mergeLayer].
+@@ -445,7 +445,8 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
+   for (final tag in <String>[...core.tags, ...layer.tags]) {
+     if (!tags.contains(tag)) tags.add(tag);
+   }
+-  // A deck is unreviewed until both its files are checked (spec 6.5).
++  // A deck is unreviewed until both its files are checked (DECK-FORMAT.md,
++  // Notes).
+   if (tags.contains('unreviewed')) tags.remove('reviewed');
+ 
+   var cards = const <Card>[];
+@@ -530,7 +531,8 @@ class _Merge {
+   final DeckLayer layer;
+ 
+   /// The core's cards the layer translates, then the layer's own; the
+-  /// core's refs, each with what the layer gives it (spec 2.7).
++  /// core's refs, each with what the layer gives it (DECK-FORMAT.md, Core and
++  /// layer files).
+   ({List<Card> cards, List<CardRef> refs}) cards() {
+     final ids = <String>{for (final card in core.cards) card.id};
+     for (final MapEntry(key: id, value: entry) in layer.cards.entries) {
+@@ -602,7 +604,8 @@ class _Merge {
+       audio: card.audio,
+       examples: examples(card.examples, entry.examples, '$path.examples'),
+       modes: card.modes,
+-      // Pair notes are the one source of pairs in a core (OPEN-16).
++      // Pair notes are the one source of pairs in a core (DECK-FORMAT.md,
++      // Notes).
+       pair: notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
+       picture: card.picture,
+       phrasebook: card.phrasebook,
+@@ -807,7 +810,7 @@ class _Merge {
+   }
+ 
+   /// The core's table with the layer's labels and prompts, and the rules
+-  /// the layer gives, in the core's order (spec 4.5).
++  /// the layer gives, in the core's order (DECK-FORMAT.md, Rules decks).
+   ({RuleTable table, List<Rule> rules}) rules() {
+     final forms = core.table!;
+     final words = layer.table!;
+diff --git a/lib/core/data/deck_parser.dart b/lib/core/data/deck_parser.dart
+index 8a0f978..3f0e54e 100644
+--- a/lib/core/data/deck_parser.dart
++++ b/lib/core/data/deck_parser.dart
+@@ -74,15 +74,16 @@ abstract final class DeckParser {
+   static Deck parse(String yaml, {required String source}) =>
+       _Reader(source).deck(_load(yaml, source));
+ 
+-  /// Parses [yaml], a core file (`part: "core"`, B1 format spec 2.2), into a
+-  /// [DeckCore], or throws a [DeckParseException]. A core is not a deck: it
+-  /// is merged with each of its layers by [mergeLayer].
++  /// Parses [yaml], a core file (`part: "core"`, DECK-FORMAT.md, Core and layer
++  /// files), into a [DeckCore], or throws a [DeckParseException]. A core is not
++  /// a deck: it is merged with each of its layers by [mergeLayer].
+   static DeckCore parseCore(String yaml, {required String source}) =>
+       _Reader(source).core(_load(yaml, source));
+ 
+-  /// Parses [yaml], a layer (`kind: "layer"`, spec 2.6), into a
+-  /// [DeckLayer], or throws a [DeckParseException]. What it says about its
+-  /// core's cards is checked when the two are merged, by [mergeLayer].
++  /// Parses [yaml], a layer (`kind: "layer"`, DECK-FORMAT.md, Core and layer
++  /// files), into a [DeckLayer], or throws a [DeckParseException]. What it says
++  /// about its core's cards is checked when the two are merged, by
++  /// [mergeLayer].
+   static DeckLayer parseLayer(String yaml, {required String source}) =>
+       _Reader(source).layer(_load(yaml, source));
+ 
+@@ -176,7 +177,7 @@ const _refFields = {
+   'checked_by',
+ };
+ 
+-// The B1 format (spec sections 2 to 8).
++// The B1 format (docs/DECK-FORMAT.md).
+ const _coreHeaderFields = {
+   'schema',
+   'id',
+@@ -282,8 +283,8 @@ const _yaml11Words = {'yes', 'no', 'on', 'off', 'true', 'false', 'y', 'n'};
+ /// a number, nor a note's position.
+ final _letterKey = RegExp(r'^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$');
+ 
+-/// A placeholder in a note's text or a rule's explanation (spec 6.4), and
+-/// anything that looks like one.
++/// A placeholder in a note's text or a rule's explanation (DECK-FORMAT.md,
++/// Notes), and anything that looks like one.
+ final _placeholder = RegExp(r'\{([1-9][0-9]*)\}');
+ final _bracedNumber = RegExp(r'\{([0-9]+)\}');
+ 
+@@ -369,7 +370,8 @@ class _Reader {
+   }
+ 
+   /// Refuses a core, a layer, and what only they have, in a single-file
+-  /// deck, in the order the validator tells them apart (spec 2.2).
++  /// deck, in the order the validator tells them apart (DECK-FORMAT.md, Core
++  /// and layer files).
+   void refuseCoreAndLayer(_Fields fields, YamlNode? kindNode) {
+     if (kindNode != null && _value(kindNode) == 'layer') {
+       fail(kindNode, 'this is a layer; it is read with DeckParser.parseLayer');
+@@ -723,8 +725,8 @@ class _Reader {
+       audio: fields.optionalString('audio'),
+       examples: examples(fields.node('examples'), '$path.examples'),
+       modes: modes(fields.node('modes'), '$path.modes'),
+-      // Pair notes are the one source of pairs (OPEN-16); a written pair
+-      // stays valid, and comes first.
++      // Pair notes are the one source of pairs (DECK-FORMAT.md, Notes); a
++      // written pair stays valid, and comes first.
+       pair:
+           fields.optionalString('pair', allowEmpty: false) ??
+           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
+@@ -769,7 +771,7 @@ class _Reader {
+     final name = text(node, path);
+     final mode = DrillMode.tryParse(name);
+     // Grammar understood is asked of a rules table's cells, which the
+-    // expander makes; a card cannot declare it (spec 4.7).
++    // expander makes; a card cannot declare it (DECK-FORMAT.md, Rules decks).
+     if (mode == DrillMode.grammarUnderstood) {
+       fail(node, "$path: grammarUnderstood is only for a rules table's cells");
+     }
+@@ -788,7 +790,7 @@ class _Reader {
+     return mode;
+   }
+ 
+-  // The B1 format's card fields (spec 3 to 8).
++  // The B1 format's card fields (DECK-FORMAT.md, Vocab decks).
+ 
+   /// A mark such as `phrasebook: true`: true, or left out. False is refused
+   /// too, as the validator refuses it. [rule] says what it must be.
+@@ -799,8 +801,9 @@ class _Reader {
+     fail(node, '$path: $key must be $rule; got ${_describe(node)}');
+   }
+ 
+-  /// A card's notes (spec 6.1): text, read as one note of kind `note`, or a
+-  /// list of typed notes, their placeholders filled. Blank text is no notes.
++  /// A card's notes (DECK-FORMAT.md, Notes): text, read as one note of kind
++  /// `note`, or a list of typed notes, their placeholders filled. Blank text is
++  /// no notes.
+   List<CardNote> notes(YamlNode? node, String path) =>
+       List<CardNote>.unmodifiable(<CardNote>[
+         for (final note in noteItems(node, path, core: false))
+@@ -814,8 +817,8 @@ class _Reader {
+           ),
+       ]);
+ 
+-  /// A core card's notes (spec 6.2): each with its id and its language
+-  /// facts, its text being in each layer.
++  /// A core card's notes (DECK-FORMAT.md, Notes): each with its id and its
++  /// language facts, its text being in each layer.
+   List<CoreNote> coreNotes(YamlNode? node, String path) =>
+       List<CoreNote>.unmodifiable(<CoreNote>[
+         for (final note in noteItems(node, path, core: true))
+@@ -980,9 +983,9 @@ class _Reader {
+     );
+   }
+ 
+-  /// A region note's regions (spec 10.5): a region id, or a non-empty list
+-  /// of them. Whether each is a region of the language's path is the
+-  /// validator's to say.
++  /// A region note's regions (DECK-FORMAT.md, Regions): a region id, or a
++  /// non-empty list of them. Whether each is a region of the language's path is
++  /// the validator's to say.
+   List<String> noteRegions(YamlNode? node, String path) {
+     if (node == null) return const <String>[];
+     final items = node is YamlList ? node.nodes : <YamlNode>[node];
+@@ -1036,7 +1039,7 @@ class _Reader {
+ 
+   /// Fails on a placeholder in [text] past its [count] words, and on a
+   /// braced number that is not a placeholder, such as `{0}` or `{01}`
+-  /// (spec 6.4). [owner] is what has the words: a note or a rule.
++  /// (DECK-FORMAT.md, Notes). [owner] is what has the words: a note or a rule.
+   void placeholders(
+     YamlNode node,
+     String text,
+@@ -1060,8 +1063,9 @@ class _Reader {
+     }
+   }
+ 
+-  /// A card's or an example's base words (spec 8.1). A [core] file gives a
+-  /// base written in full without its meaning, which is in each layer.
++  /// A card's or an example's base words (DECK-FORMAT.md, Base words). A [core]
++  /// file gives a base written in full without its meaning, which is in each
++  /// layer.
+   List<CardBase> bases(YamlNode? node, String path, {required bool core}) {
+     if (node == null || _value(node) == null) return const <CardBase>[];
+     if (node is! YamlList) {
+@@ -1125,7 +1129,8 @@ class _Reader {
+     );
+   }
+ 
+-  /// The rules a sentence uses, by rule id (spec 5).
++  /// The rules a sentence uses, by rule id (DECK-FORMAT.md, Sentences and their
++  /// rules).
+   List<String> ruleIds(YamlNode? node, String path) {
+     if (node == null || _value(node) == null) return const <String>[];
+     if (node is! YamlList) {
+@@ -1151,7 +1156,8 @@ class _Reader {
+   }
+ 
+   /// The key of a mapping entry as text. A key YAML reads as anything else
+-  /// is refused, so that `1:` is never the number 1 (spec 2.6).
++  /// is refused, so that `1:` is never the number 1 (DECK-FORMAT.md, Core and
++  /// layer files).
+   String keyText(YamlNode key, String path) {
+     final value = _value(key);
+     if (value is String) return value;
+@@ -1180,7 +1186,7 @@ class _Reader {
+     ];
+   }
+ 
+-  // A core file (spec 2.2 to 2.5, 4.2).
++  // A core file (DECK-FORMAT.md, Core and layer files).
+ 
+   DeckCore core(YamlNode root) {
+     final fields = top(root);
+@@ -1312,7 +1318,7 @@ class _Reader {
+   }
+ 
+   /// A core's cards: each written, with the language side only, or listed
+-  /// by ref (spec 2.3).
++  /// by ref (DECK-FORMAT.md, Core and layer files).
+   List<CoreCard> coreCards(YamlNode node) {
+     final seen = <String, YamlNode>{};
+     return List<CoreCard>.unmodifiable(<CoreCard>[
+@@ -1473,8 +1479,8 @@ class _Reader {
+     );
+   }
+ 
+-  /// A rules core's table (spec 4.2): which words are its rows, its slots,
+-  /// and each row's forms. Its labels are each layer's.
++  /// A rules core's table (DECK-FORMAT.md, Rules decks): which words are its
++  /// rows, its slots, and each row's forms. Its labels are each layer's.
+   RuleTable ruleTable(YamlNode node) {
+     final fields = this.fields(node, 'table');
+     keyed(node, 'table', 'must be a mapping');
+@@ -1656,7 +1662,7 @@ class _Reader {
+     return List<CoreRule>.unmodifiable(rules);
+   }
+ 
+-  // A layer (spec 2.6, 4.5).
++  // A layer (DECK-FORMAT.md, Core and layer files).
+ 
+   DeckLayer layer(YamlNode root) {
+     final fields = top(root);
+@@ -2246,7 +2252,7 @@ class _Reader {
+       final value = entry.value;
+       if (forms[slot] == null) {
+         // A null reading under a null form is a reading left out, as the
+-        // validator reads it (spec 4.2).
++        // validator reads it (DECK-FORMAT.md, Rules decks).
+         if (value is YamlScalar && _value(value) == null) continue;
+         fail(key, '$path: "$slot" has no form, so it has no reading');
+       }
+@@ -2447,8 +2453,8 @@ const _phrasebookRule = 'true, unquoted, or left out';
+ const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
+ 
+ /// [text] with each placeholder replaced by the word it counts to, shown
+-/// with its reading (spec 6.4). One past [words] stays as written; the
+-/// reader refuses it first.
++/// with its reading (DECK-FORMAT.md, Notes). One past [words] stays as written;
++/// the reader refuses it first.
+ String _filled(String text, List<NoteWord> words) =>
+     text.replaceAllMapped(_placeholder, (m) {
+       final n = int.tryParse(m[1]!);
+@@ -2490,12 +2496,12 @@ String _pythonType(Object? value) => switch (value) {
+ /// What [node] holds, typed the way the validator types it.
+ ///
+ /// `tools/validate_decks.py` reads plain scalars as YAML 1.2's core schema
+-/// does (its `DeckResolver`; spec ground rule 8): only `true` and `false` in
+-/// three spellings are booleans, so a bare `no`, `yes`, `on` or `off` is text;
+-/// digits are a decimal integer (`060` is 60), `0o` and `0x` octal and
+-/// hexadecimal; `1_000`, `1:30` and `0b101` are text. package:yaml reads
+-/// nearly the same, but builds a few scalars by Dart's rules rather than the
+-/// schema's, so an unquoted scalar is retyped here by the validator's
++/// does (its `DeckResolver`; DECK-FORMAT.md, YAML values): only `true` and
++/// `false` in three spellings are booleans, so a bare `no`, `yes`, `on` or
++/// `off` is text; digits are a decimal integer (`060` is 60), `0o` and `0x`
++/// octal and hexadecimal; `1_000`, `1:30` and `0b101` are text. package:yaml
++/// reads nearly the same, but builds a few scalars by Dart's rules rather than
++/// the schema's, so an unquoted scalar is retyped here by the validator's
+ /// patterns, character for character, and the two can never disagree.
+ ///
+ /// A tag types a scalar in both parsers, as in `!!str 007`. The bare `!` is
+diff --git a/lib/core/data/rule_expander.dart b/lib/core/data/rule_expander.dart
+index f264f66..f53b15a 100644
+--- a/lib/core/data/rule_expander.dart
++++ b/lib/core/data/rule_expander.dart
+@@ -5,7 +5,7 @@ import '../models/rule.dart';
+ 
+ /// A merged rules deck's table as cards: one per filled cell whose word is
+ /// taught in the deck's native language and whose rule the deck's layer
+-/// gives (B1 format, spec 4.6).
++/// gives (DECK-FORMAT.md, Rules decks).
+ ///
+ /// - **id** [ruleCellId]: `<core id>-<part>-<slot index>`, the part being
+ ///   the row's `key`, else the digits of its word. A skipped row or slot
+diff --git a/lib/core/models/card.dart b/lib/core/models/card.dart
+index 132060a..7c0df30 100644
+--- a/lib/core/models/card.dart
++++ b/lib/core/models/card.dart
+@@ -23,7 +23,7 @@ class CardExample {
+   final List<CardBase> bases;
+ }
+ 
+-/// What a note is about (B1 format, spec 6).
++/// What a note is about (DECK-FORMAT.md, Notes).
+ enum NoteKind {
+   /// A word that sounds almost the same: the minimal-pair partner.
+   pair,
+@@ -324,7 +324,8 @@ class Card {
+   ///
+   /// A rules table's cell is understood ([DrillMode.grammarUnderstood]) only
+   /// where its form can be told from the row's others by what it means
+-  /// ([choosesMeaning]); otherwise it is only produced (spec 4.8).
++  /// ([choosesMeaning]); otherwise it is only produced (DECK-FORMAT.md, Rules
++  /// decks).
+   Set<DrillMode> modesIn({
+     required bool ttsAvailable,
+     bool speechAvailable = false,
+@@ -349,14 +350,14 @@ class Card {
+   }
+ 
+   /// Whether this rules table's cell can be asked what its form means
+-  /// (`Ask.chooseFormMeaning`, spec 4.8): another form of its row means
+-  /// something else. False for any other card.
++  /// (`Ask.chooseFormMeaning`, DECK-FORMAT.md, Rules decks): another form of
++  /// its row means something else. False for any other card.
+   bool get choosesMeaning =>
+       rule?.options.any((option) => option.prompt != native) ?? false;
+ 
+   /// Whether this rules table's cell can be asked to choose its form among
+-  /// its row's (`Ask.chooseForm`, spec 4.8): the row has another form.
+-  /// False for any other card.
++  /// its row's (`Ask.chooseForm`, DECK-FORMAT.md, Rules decks): the row has
++  /// another form. False for any other card.
+   bool get choosesForm => rule?.options.isNotEmpty ?? false;
+ 
+   /// Whether producing this card is asked by putting its words in order
+@@ -415,11 +416,12 @@ class Card {
+     DrillMode.speaking => <String>[target, ...altTarget],
+   };
+ 
+-  /// What the learner is shown (spec 4.6). A rules table's cell understood
+-  /// ([DrillMode.grammarUnderstood]) shows its form with its reading, whose
+-  /// meaning is chosen: "అమ్మతో (ammatō)". Produced ([DrillMode.grammar]),
+-  /// it shows its word, with its reading, before the meaning to express, so
+-  /// that only the rule is tested: "అమ్మ (amma): with mother".
++  /// What the learner is shown (DECK-FORMAT.md, Rules decks). A rules table's
++  /// cell understood ([DrillMode.grammarUnderstood]) shows its form with its
++  /// reading, whose meaning is chosen: "అమ్మతో (ammatō)". Produced
++  /// ([DrillMode.grammar]), it shows its word, with its reading, before the
++  /// meaning to express, so that only the rule is tested: "అమ్మ (amma): with
++  /// mother".
+   String promptFor(DrillMode mode) => switch (mode) {
+     DrillMode.recognition || DrillMode.reading => target,
+     DrillMode.grammarUnderstood => switch (reading) {
+@@ -449,10 +451,10 @@ List<String> wordsOf(String text) => <String>[
+ 
+ /// The words of [text] as the validator's `_words` splits them, for
+ /// comparing a text's words with its `bases` and with the words a course
+-/// teaches (spec 8.3): split at white space; within each piece, every
+-/// punctuation mark, symbol or separator except `’` and `'` splits it too;
+-/// `’` and `'` are stripped from each end; and what is left empty or is all
+-/// digits is dropped. Unlike the validator, this does not NFC-normalise
++/// teaches (DECK-FORMAT.md, Base words): split at white space; within each
++/// piece, every punctuation mark, symbol or separator except `’` and `'` splits
++/// it too; `’` and `'` are stripped from each end; and what is left empty or is
++/// all digits is dropped. Unlike the validator, this does not NFC-normalise
+ /// (#28).
+ List<String> wordsForBases(String text) => <String>[
+   for (final chunk in text.split(_pySpace))
+diff --git a/lib/core/models/deck.dart b/lib/core/models/deck.dart
+index 0dd08b6..af34ed6 100644
+--- a/lib/core/models/deck.dart
++++ b/lib/core/models/deck.dart
+@@ -63,7 +63,7 @@ class LanguageInfo {
+ 
+ /// What a deck holds: cards, a pattern table that expands into cards,
+ /// passages with questions, which are its cards (#98, ADR-0019), or a rules
+-/// table, whose cells are its cards (B1 format, spec 4).
++/// table, whose cells are its cards (DECK-FORMAT.md, Rules decks).
+ enum DeckKind { vocab, grammar, reading, rules }
+ 
+ class Deck {
+@@ -169,9 +169,9 @@ class Deck {
+   String toString() => 'Deck($id, ${cards.length} cards)';
+ }
+ 
+-/// Whether [card], in a deck of [kind], counts as a word (spec 8.5): the
+-/// words a unit plans and a course teaches. True for a card of a vocab deck
+-/// that is not a phrasebook chunk nor a phrase, and is one word by
++/// Whether [card], in a deck of [kind], counts as a word (DECK-FORMAT.md, The
++/// B1 plan): the words a unit plans and a course teaches. True for a card of a
++/// vocab deck that is not a phrasebook chunk nor a phrase, and is one word by
+ /// [wordsForBases] or a noun, verb, adjective, adverb or pronoun of several
+ /// words. Grammar and rules cells and reading questions are not words.
+ bool countsAsWord(Card card, DeckKind kind) =>
+diff --git a/lib/core/models/drill_mode.dart b/lib/core/models/drill_mode.dart
+index 11e4fd6..f3fc7e8 100644
+--- a/lib/core/models/drill_mode.dart
++++ b/lib/core/models/drill_mode.dart
+@@ -32,7 +32,7 @@ enum DrillMode {
+ 
+   /// Grammar understood: shown a form, అమ్మతో (ammatō), choose what it
+   /// means among the meanings of the same word's forms: "with mother", "to
+-  /// mother" (owner, 2026-10-09; B1 format spec 4.7, OPEN-22). Only a rules
++  /// mother" (owner, 2026-10-09; DECK-FORMAT.md, Rules decks). Only a rules
+   /// table's cells take it. Stored by this name, so its place here does not
+   /// matter to the log; it comes before [grammar] so that a session ordered
+   /// by [values] asks the meaning before the form, as Recognition comes
+@@ -42,8 +42,9 @@ enum DrillMode {
+   /// Grammar produced: shown the meaning to express, give the form. On a
+   /// pattern deck's cell, typed; on a rules table's cell, chosen among the
+   /// same word's forms while the pair is new or was last missed, then typed
+-  /// (spec 4.8). Machine-graded. Its name, and what every logged review in
+-  /// it means, a typed form, is unchanged by [grammarUnderstood].
++  /// (DECK-FORMAT.md, Rules decks). Machine-graded. Its name, and what every
++  /// logged review in it means, a typed form, is unchanged by
++  /// [grammarUnderstood].
+   grammar,
+ 
+   /// Say: shown the meaning, say the target. Graded from what the phone's
+diff --git a/lib/core/models/grammar_pattern.dart b/lib/core/models/grammar_pattern.dart
+index 785a8e2..2c9a6a5 100644
+--- a/lib/core/models/grammar_pattern.dart
++++ b/lib/core/models/grammar_pattern.dart
+@@ -88,6 +88,7 @@ class GrammarPattern {
+ 
+   /// What `{slot}` shows for a slot, where it is not the slot itself: a
+   /// grammar core's layer labels its slots in the learner's language (B1
+-  /// format, spec 2.7). A slot without a label shows itself.
++  /// format, DECK-FORMAT.md, Core and layer files). A slot without a label
++  /// shows itself.
+   final Map<String, String> slotLabels;
+ }
+diff --git a/lib/core/models/rule.dart b/lib/core/models/rule.dart
+index 062f94e..815faf3 100644
+--- a/lib/core/models/rule.dart
++++ b/lib/core/models/rule.dart
+@@ -1,5 +1,5 @@
+ /// A rules deck: one table of word forms, whose columns belong to rules
+-/// (the B1 format, spec section 4).
++/// (the DECK-FORMAT.md, Rules decks).
+ ///
+ /// The table's rows are the language's words of one kind, each with every
+ /// form listed; its columns, the slots, belong to rules, each with its own
+@@ -10,7 +10,7 @@ library;
+ 
+ /// A language fact a note's text or a rule's explanation quotes: written
+ /// once, in the core, and shown as `word (reading)` wherever the text says
+-/// `{1}`, `{2}`, … (spec 6.4).
++/// `{1}`, `{2}`, … (DECK-FORMAT.md, Notes).
+ class NoteWord {
+   const NoteWord({required this.word, this.reading, this.ipa});
+ 
+diff --git a/lib/core/scheduling/ask.dart b/lib/core/scheduling/ask.dart
+index 923e62d..cb7f606 100644
+--- a/lib/core/scheduling/ask.dart
++++ b/lib/core/scheduling/ask.dart
+@@ -32,14 +32,15 @@ enum Ask {
+   rearrange,
+ 
+   /// Shown a rules table's form with its reading, choose what it means
+-  /// among the meanings of the same word's other forms (spec 4.8): "with
+-  /// mother" for అమ్మతో (ammatō), beside "to mother" and "in mother". The
+-  /// question of grammar understood.
++  /// among the meanings of the same word's other forms (DECK-FORMAT.md, Rules
++  /// decks): "with mother" for అమ్మతో (ammatō), beside "to mother" and "in
++  /// mother". The question of grammar understood.
+   chooseFormMeaning,
+ 
+   /// Shown a rules table's word and the meaning to express, choose its form
+-  /// among the same word's forms (spec 4.8). Grammar produced, while the
+-  /// pair is new or was last missed; it is typed once remembered.
++  /// among the same word's forms (DECK-FORMAT.md, Rules decks). Grammar
++  /// produced, while the pair is new or was last missed; it is typed once
++  /// remembered.
+   chooseForm,
+ 
+   /// Shown the word, its reading and meaning, and played aloud: a lesson
+@@ -60,7 +61,7 @@ enum Ask {
+       this == chooseMeaning || this == hearMeaning || this == chooseFormMeaning;
+ 
+   /// Whether the options are the forms of one word in a rules table, or
+-  /// their meanings, rather than other words (spec 4.8).
++  /// their meanings, rather than other words (DECK-FORMAT.md, Rules decks).
+   bool get choosesAmongForms => this == chooseFormMeaning || this == chooseForm;
+ 
+   /// What [card] shows as an option of this kind of question: its meaning
+@@ -69,19 +70,19 @@ enum Ask {
+   String optionOf(Card card) => choosesMeaning ? card.native : card.target;
+ 
+   /// The grade a right answer to this kind of question records in [mode]
+-  /// (ADR-0034, spec 4.7): Good (4) for a meaning seen and chosen, in
+-  /// Recognition or of a rule's form, since choosing what a seen form means
+-  /// is how understanding is asked; Hard (3) for any other choice, which
+-  /// counts for less than a right recall.
++  /// (ADR-0034, DECK-FORMAT.md, Rules decks): Good (4) for a meaning seen and
++  /// chosen, in Recognition or of a rule's form, since choosing what a seen
++  /// form means is how understanding is asked; Hard (3) for any other choice,
++  /// which counts for less than a right recall.
+   int rightChoiceGrade(DrillMode mode) =>
+       mode == DrillMode.recognition || this == chooseFormMeaning ? 4 : 3;
+ }
+ 
+ /// The cards a [ask] question about the rules table's cell [card] offers
+-/// besides it (spec 4.8), from [cells], its deck's cards: the cells of its
+-/// own row, the same word, that its expansion lists as options, each
+-/// showing something different from [card] and from the others. Never
+-/// another word's form, nor a form of a rule its layer leaves out, since
++/// besides it (DECK-FORMAT.md, Rules decks), from [cells], its deck's cards:
++/// the cells of its own row, the same word, that its expansion lists as
++/// options, each showing something different from [card] and from the others.
++/// Never another word's form, nor a form of a rule its layer leaves out, since
+ /// such a cell is not among the options. Empty for a card that is not a
+ /// rules table's cell, or for another kind of question.
+ List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
+@@ -117,7 +118,7 @@ const int matchSize = 4;
+ ///   in Hear is high enough. Where [hearsForm] says what is heard is the
+ ///   form itself, as in script practice, it is typed as heard.
+ /// - **Grammar understood** is always chosen: the meaning of the form shown
+-///   ([Ask.chooseFormMeaning], spec 4.8).
++///   ([Ask.chooseFormMeaning], DECK-FORMAT.md, Rules decks).
+ /// - **Grammar produced**, on a rules table's cell whose row has another
+ ///   form, is chosen among the forms ([Ask.chooseForm]) while the pair is
+ ///   new or was last missed, and typed once it was last remembered, as Hear
+diff --git a/lib/core/scheduling/lesson.dart b/lib/core/scheduling/lesson.dart
+index 9c77a4a..5627532 100644
+--- a/lib/core/scheduling/lesson.dart
++++ b/lib/core/scheduling/lesson.dart
+@@ -64,10 +64,10 @@ typedef LessonQuestion = ({DrillMode mode, Ask ask});
+ /// it can is its check, straight after it is taught, and the next in
+ /// another mode its question in the exercise.
+ ///
+-/// A rules table's cell (spec 4.8) is understood before it is produced: its
+-/// form's meaning chosen, then its form chosen among its word's, each where
+-/// its row has the options; with none, it is typed. A pattern deck's
+-/// grammar cell is typed.
++/// A rules table's cell (DECK-FORMAT.md, Rules decks) is understood before it
++/// is produced: its form's meaning chosen, then its form chosen among its
++/// word's, each where its row has the options; with none, it is typed. A
++/// pattern deck's grammar cell is typed.
+ List<LessonQuestion> lessonQuestions(Card card) {
+   if (card.rule != null) {
+     return <LessonQuestion>[
+diff --git a/lib/core/scheduling/skill_map.dart b/lib/core/scheduling/skill_map.dart
+index 3e9b0a2..143cff5 100644
+--- a/lib/core/scheduling/skill_map.dart
++++ b/lib/core/scheduling/skill_map.dart
+@@ -14,7 +14,7 @@ import '../models/drill_mode.dart';
+ ///   2018).
+ ///
+ /// - **Grammar,** understood or produced, implies nothing: no study gives
+-///   a figure for a rule's forms (B1 format spec 4.7).
++///   a figure for a rule's forms (DECK-FORMAT.md, Rules decks).
+ ///
+ /// Only a right answer implies anything: a miss in Write says little about
+ /// Recognition, which is easier. A miss counts against its own skill alone.
+@@ -48,8 +48,8 @@ class SkillMap {
+         // form chosen or typed) imply nothing, of each other or of a word's
+         // skills: the research finds grammar practice skill-specific
+         // (DeKeyser 1997; Shintani et al. 2013) and gives no figure for a
+-        // rule's forms and their meanings (spec 4.7, OPEN-11). Should one
+-        // appear, produced implying understood is one arm here, as Write's.
++        // rule's forms and their meanings (DECK-FORMAT.md, Rules decks). Should
++        // one appear, produced implying understood is one arm here, as Write's.
+         DrillMode.recognition ||
+         DrillMode.grammarUnderstood ||
+         DrillMode.grammar ||
+diff --git a/lib/features/drill/choice_drill.dart b/lib/features/drill/choice_drill.dart
+index 5d1e75b..0edfde6 100644
+--- a/lib/features/drill/choice_drill.dart
++++ b/lib/features/drill/choice_drill.dart
+@@ -27,10 +27,10 @@ import 'taught_details.dart';
+ ///   (ADR-0034).
+ /// - [Ask.chooseFormMeaning]: a rules table's form with its reading, as a
+ ///   word is shown, and its meaning to choose among those of the same
+-///   word's forms. Grammar understood (spec 4.8).
++///   word's forms. Grammar understood (DECK-FORMAT.md, Rules decks).
+ /// - [Ask.chooseForm]: a rules table's word and the meaning to express, and
+ ///   the form to choose among the same word's, with their readings. Grammar
+-///   produced (spec 4.8).
++///   produced (DECK-FORMAT.md, Rules decks).
+ ///
+ /// Words to choose show their reading first until the script is expected
+ /// of the learner, as typed answers start in Latin letters then. The word
+diff --git a/lib/features/drill/drill_session.dart b/lib/features/drill/drill_session.dart
+index 142718f..39cf861 100644
+--- a/lib/features/drill/drill_session.dart
++++ b/lib/features/drill/drill_session.dart
+@@ -871,7 +871,8 @@ class DrillSession extends ChangeNotifier {
+   // Choosing, matching and rearranging (ADR-0024)
+ 
+   /// How the current item is asked. Grammar understood is only ever
+-  /// asked by choosing the meaning (spec 4.8), whatever built the item.
++  /// asked by choosing the meaning (DECK-FORMAT.md, Rules decks), whatever
++  /// built the item.
+   Ask get ask => item.mode == DrillMode.grammarUnderstood && item.ask == Ask.own
+       ? Ask.chooseFormMeaning
+       : item.ask;
+diff --git a/lib/features/drill/typed_drill.dart b/lib/features/drill/typed_drill.dart
+index cccab90..411c8a2 100644
+--- a/lib/features/drill/typed_drill.dart
++++ b/lib/features/drill/typed_drill.dart
+@@ -161,7 +161,8 @@ class _TypedDrillState extends State<TypedDrill> {
+       ),
+       if (card.picture != null) CardPicture(card, size: typing ? 56 : 88),
+       Text(
+-        // The meaning; for a rules table's cell, its word first (spec 4.6).
++        // The meaning; for a rules table's cell, its word first
++        // (DECK-FORMAT.md, Rules decks).
+         card.promptFor(_session.item.mode),
+         textAlign: TextAlign.center,
+         style:
+diff --git a/lib/l10n/app_en.arb b/lib/l10n/app_en.arb
+index e3c1a7a..2921e52 100644
+--- a/lib/l10n/app_en.arb
++++ b/lib/l10n/app_en.arb
+@@ -3109,7 +3109,7 @@
+   },
+   "drillChooseForm": "Which form says this?",
+   "@drillChooseForm": {
+-    "description": "Multiple choice (B1 format spec 4.8): above a word and the meaning to express with it, like \"amma: with mother\", whose right form is chosen from the word's forms under it."
++    "description": "Multiple choice (DECK-FORMAT.md, Rules decks): above a word and the meaning to express with it, like \"amma: with mother\", whose right form is chosen from the word's forms under it."
+   },
+   "drillChooseWord": "Which is it in {language}?",
+   "@drillChooseWord": {
