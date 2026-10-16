@@ -218,9 +218,12 @@ a core and layers; the app's parser refuses the same words.
   (`te-home`), does not change. Splitting `decks/te/te-en-home.yaml` into
   `decks/te/te-home.yaml` and `decks/te/en/te-en-home.yaml` keeps the deck id
   and every card id.
-- **Reserved names:** a core is never `<lang>-facts`, `<lang>-numbers`,
-  `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds` or `<lang>-path`,
-  the files beside the decks.
+- **Reserved names:** a deck's core is never `<lang>-facts`,
+  `<lang>-numbers`, `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds`
+  or `<lang>-path`, the files beside the decks. (The script guide and the
+  sounds file have cores of their own under those names: a layer whose
+  `core` is `<lang>-script` or `<lang>-sounds` is theirs, see
+  [Script guides](#script-guides) and [Sounds files](#sounds-files).)
 - **A core's name never starts with a native language's code,** nor with the
   name of a folder beside it: a core `te-en-x` would read as a deck of the
   `te-en` course. Nor is a core's id the id of any other file of the
@@ -488,12 +491,22 @@ checks the same deck:
 
 ### Splitting a deck
 
+`python3 tools/split_deck.py decks/te/te-en-home.yaml` does all of this
+(#397): it writes the core and the English layer, deletes the old file,
+and refuses to write a split that, merged back, would not be the old deck.
+`--check` tries it without writing. Run `python3 tools/deck_index.py` after
+it. By hand, or checking what the tool did:
+
 1. The core is `decks/<lang>/<lang>-<name>.yaml`, its id the old deck id
    without the native language: `te-en-home` gives `te-home`.
 2. The layer is `decks/<lang>/<native>/<old id>.yaml`, with the old id.
 3. **Every card id stays as it is.** A card the old deck wrote is written in
    the core, with its meaning, notes and translations in the layer; a ref
-   stays a ref.
+   stays a ref. A note written as text becomes a core note
+   `{ id: "n1", kind: "note" }`, its text the layer's `"n1"`. A card's
+   `pair`, which a core cannot give, becomes a pair note: the card's one
+   note when it names the partner, else a new note `"pair"` whose text names
+   the partner, its reading and its meaning.
 4. A grammar deck keeps every entry's `key` and the order of its slots, so
    its cells keep their ids.
 5. **The old file is deleted in the same change.** The validator refuses the
@@ -2781,6 +2794,38 @@ Each contrast:
 | `pairs` | yes | A non-empty list of two different quoted strings, letters or signs, at most one of them empty (a sign there or not). |
 | `within_word` | no | `true`: a sign added or taken away counts only inside a word, for a language that drops a word's final vowel (Bengali, Hindi), where a vowel sign added at the end adds a syllable. Swaps always count. |
 
+**A core and its layers** (#498). The file may be split like a deck
+([Core and layer files](#core-and-layer-files)): the core keeps its path and
+id, `decks/bn/bn-sounds.yaml`, adds `part: "core"`, and leaves out the
+`description` and each contrast's `name`; each native language's layer,
+`decks/bn/en/bn-en-sounds.yaml`, gives them, keyed by contrast id:
+
+```yaml
+schema: 1
+kind: "sounds"
+part: "core"
+id: "bn-sounds"
+language: "bn"
+contrasts:
+  - id: "aspiration"
+    pairs: [["ক", "খ"], ["ব", "ভ"]]
+```
+
+```yaml
+schema: 1
+id: "bn-en-sounds"
+kind: "layer"
+core: "bn-sounds"
+native: { code: "en", iso639_3: "eng", name: "English" }
+contrasts:
+  "aspiration": "a breath after the consonant"
+```
+
+The layer's id is `<lang>-<native>-sounds`, and it gives `contrasts`, a
+name for every contrast of the core and no other, and may give
+`description`; nothing else. The app reads the English layer; which layer a
+learner from another language sees is not decided yet (#498).
+
 ## Script guides
 
 How a script works, before its letters ([ADR-0016](adr/0016-script-guides.md)):
@@ -2827,6 +2872,46 @@ Each feature:
 | `example` | yes | One letter or short word that shows it, drawn large. |
 | `text` | yes | What to look for, for a beginner from English. |
 | `letters` | no | More letters that share it, each quoted. |
+
+**A core and its layers** (#498). A guide may be split like a deck
+([Core and layer files](#core-and-layer-files)): the core keeps its path and
+id, `decks/bn/bn-script.yaml`, adds `part: "core"`, and leaves out `name`,
+`intro`, and each feature's `name` and `text`; each native language's
+layer, `decks/bn/en/bn-en-script.yaml`, gives them, keyed by feature id:
+
+```yaml
+schema: 1
+kind: "script"
+part: "core"
+id: "bn-script"
+language: "bn"
+features:
+  - id: "headline"
+    term: "মাত্রা"
+    reading: "mātrā"
+    example: "ক"
+    letters: ["ক", "ঘ", "ত", "ন"]
+```
+
+```yaml
+schema: 1
+id: "bn-en-script"
+kind: "layer"
+core: "bn-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Bengali script works"
+intro: "A few ideas come back in letter after letter."
+features:
+  "headline":
+    name: "The headline"
+    text: "Most letters hang from a line along the top."
+```
+
+The layer's id is `<lang>-<native>-script`. It gives `name`, `intro` and
+`features`, a `name` and `text` for every feature of the core and no other;
+nothing else. [Script in prose](#script-in-prose-always-with-its-reading)
+holds in its text. The app reads the English layer; which layer a learner
+from another language sees is not decided yet (#498).
 
 ## Facts files
 
