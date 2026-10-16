@@ -51,13 +51,6 @@ approval.
   bar, unchanged) and Progress, light, dark and pure black, 1.4x and
   TalkBack. Approved by the owner, 2026-10-16 ("Approve"); it replaces the
   earlier swipe mockup and the four bar proposals (in git history).
-
-## Awaiting approval
-
-Built 2026-10-16 at the owner's request ("Both", "Yes, build them now").
-They are not spec until the owner approves them. Everything they mark
-Proposed is listed in their decisions tables.
-
 - `deck-search.html`: the Decks tab's one search for decks, units and
   words, in place of the filter row (#527; owner, 2026-10-16: "I just want
   people to quickly find stuff. The filters can be replaced by a fts5
@@ -100,6 +93,7 @@ Proposed is listed in their decisions tables.
   ("Only this course's"); the status order and the 21-day learnt line
   stand ("Yes, both"); and the languages-you-know rows leave out languages
   the learner already has a course in ("Leave them out").
+
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
