@@ -31,6 +31,25 @@ approval.
   list button on split sets and on an answered question, and long forms
   breaking between syllables (owner, 2026-10-16, #515).
 
+## Awaiting approval
+
+Built 2026-10-16 at the owner's request ("Both", "Yes, build them now").
+They are not spec until the owner approves them. Everything they mark
+Proposed is listed in their decisions tables.
+
+- `deck-filter.html`: the Decks tab with a filter for All, Words,
+  Phrases, Grammar and Reading (#527). All is today's path. The other
+  filters list that kind's decks in path order. Each deck is mapped from
+  what decks carry today (`kind`, the `grammar` tag, phrasebook cards and
+  sentence content), with every Bengali and Hindi deck's mapping listed.
+  It shows every filter, one language shown, 1.4x text and an empty
+  result (Spanish, Reading).
+- `language-swipe.html`: a sideways swipe on the top row of Today, Decks
+  and Progress changes the language shown, and the row's marks show the
+  active one (#528). It shows before, during and after a swipe, with two
+  and with four languages, at 1.4x, and with the menu and TalkBack as the
+  tap and screen-reader alternatives.
+
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
