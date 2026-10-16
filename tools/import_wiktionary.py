@@ -269,6 +269,10 @@ def choose(t: Target, entries: list[dict]) -> tuple[dict | None, list[dict]]:
     meaning, and the entries that fit at all."""
     fits = [e for e in entries
             if t.pos is None or t.pos == "other" or e.get("pos") in POS.get(t.pos, set())]
+    if not fits and t.pos == "phrase" and len(vd._words(t.target)) > 1:
+        # Wiktionary files a phrase of more than one word under the part of
+        # speech it acts as: `काम करना`, to work, is a verb.
+        fits = list(entries)
     if len(fits) > 1 and t.native:
         meaning = _content(t.native)
         close = [e for e in fits
@@ -311,10 +315,27 @@ def derived(entry: dict, code: str) -> bool:
     return False
 
 
+# A script's language for `tools/transcribe.py`, for a language it has no
+# table of its own for.
+SCRIPT_LANG = {"devanagari": "hi", "bengali": "bn", "gujarati": "gu", "telugu": "te",
+               "kannada": "kn"}
+
+
 def reading(word: str, code: str, script: str, hint: str | None) -> str | None:
+    """[word]'s reading, by `tools/transcribe.py`, from Wiktionary's own
+    romanisation as a hint; None in a script that needs none, or one the
+    transcriber cannot read, which leaves the item out (NoReading)."""
     if script in vd.NO_READING:
         return None
-    return transcribe.transcribe(word, code, hint).reading
+    lang = code if code in transcribe.BLOCKS else SCRIPT_LANG.get(script)
+    if lang is None:
+        raise NoReading(word)
+    return transcribe.transcribe(word, lang, hint).reading
+
+
+class NoReading(Exception):
+    """A word that needs a reading the transcriber cannot give: the item is
+    left out, as the validator would refuse it."""
 
 
 def item_id(text: str, ids: set[str], fallback: str) -> str:
@@ -470,13 +491,15 @@ class Importer:
     def items(self, t: Target, entry: dict, key: str, src: str
               ) -> tuple[list[str], list[tuple[str, str]]]:
         found: list[tuple[str, str | None]] = []
-        lists = [entry.get(key, [])] + [s.get(key, []) for s in entry.get("senses", [])]
+        own = {nfc(x) for x in [t.target, *(t.card.get("alt_target") or [])]
+               if isinstance(x, str)}
+        lists = [entry.get(key, [])] + [s.get(key, []) for s in self.card_senses(t, entry)]
         for item in (x for xs in lists for x in xs):
             if not isinstance(item.get("word"), str):
                 continue
             word, roman = _split_word(item["word"])
             roman = item.get("roman") or roman
-            if word == t.target or re.search(r"[A-Za-z]", word) \
+            if word in own or re.search(r"[A-Za-z]", word) \
                     or any(w == word for w, _ in found):
                 continue
             found.append((word, roman))
@@ -491,18 +514,35 @@ class Importer:
                 items.append(flow_map([("id", iid), ("ref", ref), ("source", src)]))
                 continue
             pairs: list[tuple[str, object]] = [("id", iid), ("word", word)]
-            if (rd := reading(word, self.lang.code, self.lang.script, hint)) is not None:
+            try:
+                rd = reading(word, self.lang.code, self.lang.script, hint)
+            except NoReading:
+                continue
+            if rd is not None:
                 pairs.append(("reading", rd))
             items.append(flow_map([*pairs, ("source", src)]))
             if known.gloss:
                 texts.append((q(iid), known.gloss))
         return items, texts
 
+    @staticmethod
+    def card_senses(t: Target, entry: dict) -> list[dict]:
+        """The entry's senses that are the card's meaning: those whose
+        gloss shares a word with it, or the only one. A synonym of another
+        sense is not one of the card's word."""
+        senses = [s for s in entry.get("senses", [])
+                  if not s.get("form_of") and not s.get("alt_of")]
+        if len(senses) <= 1 or not t.native:
+            return senses if len(senses) <= 1 else []
+        meaning = _content(t.native)
+        return [s for s in senses
+                if meaning & _content(" ".join(s.get("glosses") or []))]
+
     def examples(self, t: Target, entry: dict, src: str) -> tuple[list[str], list[str]]:
         core: list[str] = []
         layer: list[str] = []
         seen: set[str] = set()
-        for sense in entry.get("senses", []):
+        for sense in self.card_senses(t, entry):
             for ex in sense.get("examples", []):
                 text = ex.get("text")
                 english = ex.get("english") or ex.get("translation")
@@ -516,10 +556,13 @@ class Importer:
                 if bases is None:
                     self.report.examples_skipped += 1
                     continue
+                try:
+                    rd = reading(text, self.lang.code, self.lang.script, ex.get("roman"))
+                except NoReading:
+                    continue
                 seen.add(text)
                 pairs: list[tuple[str, object]] = [("target", text)]
-                if (rd := reading(text, self.lang.code, self.lang.script,
-                                  ex.get("roman"))) is not None:
+                if rd is not None:
                     pairs.append(("reading", rd))
                 if bases:
                     pairs.append(("bases", bases))
@@ -561,10 +604,13 @@ class Importer:
                 if word == t.target:
                     done.add(kind)
                     continue
+                try:
+                    rd = reading(word, self.lang.code, self.lang.script, form.get("roman"))
+                except NoReading:
+                    continue
                 pairs: list[tuple[str, object]] = [("id", item_id(kind, ids, kind)),
                                                    ("kind", kind), ("word", word)]
-                if (rd := reading(word, self.lang.code, self.lang.script,
-                                  form.get("roman"))) is not None:
+                if rd is not None:
                     pairs.append(("reading", rd))
                 pairs.append(("source", src))
                 out.append(flow_map(pairs))
