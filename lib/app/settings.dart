@@ -274,10 +274,11 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// The language the whole app shows (#461), as the menu at the top of
-  /// Today, Decks and Progress chose it: a code, [LanguageChoice.all] for
-  /// every language, or null before the learner has chosen, which shows
-  /// every language too. `AppState.shownLanguage` says what is shown.
+  /// The language the whole app shows (#461), as the language bar at the
+  /// top of Today, Decks and Progress chose it (#528): a code, or null
+  /// before the learner has chosen, which shows the first language. All,
+  /// stored before #528, is read as null with [progressAll] on.
+  /// `AppState.shownLanguage` says what is shown.
   String? get languageChoice => _languageChoice;
   set languageChoice(String? value) {
     if (value != null && !LanguageChoice.isValid(value)) return;
@@ -811,17 +812,24 @@ class SettingsNotifier extends ChangeNotifier {
       ];
     }
     // After the languages learned, so that one no longer learned is not
-    // shown. Missing, as from before #461, it stays All.
+    // shown. Missing, as from before #461, it is unchosen: the first.
     if (pick('language_choice', (t) => t) case final v?) {
       final learning = _learningLanguages;
-      languageChoice =
-          v.isEmpty ||
-              !LanguageChoice.isValid(v) ||
-              (v != LanguageChoice.all &&
-                  learning.isNotEmpty &&
-                  !learning.contains(v))
-          ? null
-          : v;
+      if (v == LanguageChoice.all) {
+        // All chosen before #528, when it was every screen's: the bar
+        // shows the first language, and Progress's All starts on (owner,
+        // 2026-10-16: "On for them"). A stored progress_all, read below,
+        // wins.
+        languageChoice = null;
+        progressAll = true;
+      } else {
+        languageChoice =
+            v.isEmpty ||
+                !LanguageChoice.isValid(v) ||
+                (learning.isNotEmpty && !learning.contains(v))
+            ? null
+            : v;
+      }
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
     if (pick('progress_all', flag) case final v?) progressAll = v;

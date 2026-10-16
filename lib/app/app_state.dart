@@ -1236,6 +1236,17 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// The languages the summary after [finished]'s part of Today offers
+  /// next (#528): the others of [languageChoices], in their order, with
+  /// something left in their own session. Starting one switches the
+  /// language bar to it.
+  List<LanguageInfo> nextTodayLanguages(String finished) => <LanguageInfo>[
+    for (final language in languageChoices)
+      if (language.code != finished &&
+          buildSession(DrillRequest.today(language: language.code)).isNotEmpty)
+        language,
+  ];
+
   /// The queue for [request], built by [SessionQueue] from the catalog, the
   /// progress store, the settings, the feature registry and the voices.
   ///
@@ -1246,9 +1257,14 @@ class AppState extends ChangeNotifier {
   SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
     final ids = request.deckIds;
     final language = request.language;
+    // A request that names a language takes its decks even while the bar
+    // shows another, as the summary offers the next language (#528).
     final decks = ids == null
         ? <DeckEntry>[
-            for (final entry in profileDecks)
+            for (final entry
+                in language == null
+                    ? profileDecks
+                    : _learnedDecks(onlyShown: false))
               if (language == null || entry.language.code == language) entry,
           ]
         : <DeckEntry>[

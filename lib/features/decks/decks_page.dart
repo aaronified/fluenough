@@ -22,14 +22,13 @@ import 'unit_search.dart';
 import 'word_mastery.dart';
 
 /// The Decks tab: under the language bar (#528), the course of the
-/// language it shows, its path (docs/plans/path-redesign.md, the owner's
-/// design) opening where the learner is; the search across every course's
-/// units above the path; "Where I am" and Add deck.
+/// language it shows, its path (the owner's design) opening where the
+/// learner is; the search above the path; "Where I am" and Add deck.
 ///
-/// A unit on the path opens its screen; a deck the path leaves out opens
-/// its own, from the path or from "Other decks" under it. While no language
-/// the profile learns has a deck, the first course the catalog teaches
-/// shows.
+/// Only the languages the learner learns show (owner, 2026-10-16: "No,
+/// only my languages"). A unit on the path opens its screen; a deck the
+/// path leaves out opens its own, from the path or from "Other decks"
+/// under it.
 class DecksPage extends StatefulWidget {
   const DecksPage({super.key, this.planOf, this.initialQuery});
 
@@ -67,38 +66,13 @@ class _DecksPageState extends State<DecksPage> {
     super.dispose();
   }
 
-  /// The languages whose courses the search looks in, the one the bar
-  /// shows first: every language the catalog teaches, those the profile
-  /// learns first, in the order the learner chose them, then the rest in
-  /// the catalog's order.
-  List<LanguageInfo> _languages(AppState state) {
-    final all = state.languages;
-    final shown = state.shownLanguage;
-    final profile = state.currentProfile;
-    final order = <String>[
-      ?shown,
-      ...state.settings.learningLanguages,
-      ...?profile.languages,
-    ];
-    int rank(LanguageInfo l) {
-      final i = order.indexOf(l.code);
-      return i < 0 ? order.length : i;
-    }
-
-    final learned = <LanguageInfo>[
-      for (final l in all)
-        if (profile.learns(l.code)) l,
-    ];
-    final ranked = learned.indexed.toList()
-      ..sort((a, b) {
-        final byRank = rank(a.$2).compareTo(rank(b.$2));
-        return byRank != 0 ? byRank : a.$1.compareTo(b.$1);
-      });
-    return <LanguageInfo>[
-      for (final (_, l) in ranked) l,
-      ...all.where((l) => !profile.learns(l.code)),
-    ];
-  }
+  /// The languages whose courses the search looks in: the one the bar
+  /// shows. Until deck search (#527) it covers this course alone, as #527
+  /// decided ("Yes, this course").
+  List<LanguageInfo> _languages(AppState state) => <LanguageInfo>[
+    for (final language in state.languages)
+      if (language.code == state.shownLanguage) language,
+  ];
 
   /// The level holding the unit up next on the path shown, as (language,
   /// level), or null where there is none.
@@ -131,9 +105,9 @@ class _DecksPageState extends State<DecksPage> {
     );
   }
 
-  /// The search field above the path (#528, as docs/mockups/language-bar.html
-  /// draws it): always there, it finds units across every course while it
-  /// holds a search.
+  /// The search field above the path (#528, as the approved mockup drew
+  /// it): always there, it finds units in the bar's course while it holds
+  /// a search.
   Widget _searchField(AppLocalizations l10n) => Padding(
     padding: const EdgeInsetsDirectional.only(bottom: 12),
     // One screen-reader node, the bar's full 56 in height (#26), named by
@@ -171,7 +145,7 @@ class _DecksPageState extends State<DecksPage> {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final languages = _languages(state);
-    final code = state.shownLanguage ?? languages.firstOrNull?.code;
+    final code = state.shownLanguage;
     final ready = state.status == CatalogStatus.ready && code != null;
 
     return Scaffold(

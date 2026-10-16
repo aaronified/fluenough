@@ -121,15 +121,48 @@ void main() {
       expect((SettingsNotifier()..restore(old)).progressAll, isFalse);
     });
 
-    test('survives toStored and restore, a language or All', () {
-      for (final choice in <String>['te', LanguageChoice.all]) {
-        final changed = SettingsNotifier()
-          ..learningLanguages = const <String>['hi', 'te']
-          ..languageChoice = choice;
-        expect(changed.toStored()['language_choice'], choice);
-        final restored = SettingsNotifier()..restore(changed.toStored());
-        expect(restored.languageChoice, choice);
-        expect(restored.toStored(), changed.toStored());
+    test('survives toStored and restore, a language', () {
+      final changed = SettingsNotifier()
+        ..learningLanguages = const <String>['hi', 'te']
+        ..languageChoice = 'te';
+      expect(changed.toStored()['language_choice'], 'te');
+      final restored = SettingsNotifier()..restore(changed.toStored());
+      expect(restored.languageChoice, 'te');
+      expect(restored.toStored(), changed.toStored());
+    });
+
+    test('All stored before #528 turns Progress\'s All on, and the bar '
+        'shows the first language (owner, 2026-10-16: "On for them")', () {
+      final before = SettingsNotifier()
+        ..learningLanguages = const <String>['hi', 'te'];
+      final stored = Map<String, String>.of(before.toStored())
+        ..['language_choice'] = LanguageChoice.all
+        ..remove('progress_all');
+      final restored = SettingsNotifier()..restore(stored);
+      expect(restored.progressAll, isTrue);
+      expect(restored.languageChoice, isNull);
+      expect(
+        LanguageChoice.shown(restored.languageChoice, const <String>[
+          'hi',
+          'te',
+        ]),
+        'hi',
+      );
+      // Stored again, it stays migrated.
+      expect(restored.toStored()['language_choice'], '');
+      expect(restored.toStored()['progress_all'], 'true');
+      final again = SettingsNotifier()..restore(restored.toStored());
+      expect(again.progressAll, isTrue);
+
+      // Another choice, or none, leaves All off.
+      for (final choice in <String>['te', '']) {
+        final other = Map<String, String>.of(stored)
+          ..['language_choice'] = choice;
+        expect(
+          (SettingsNotifier()..restore(other)).progressAll,
+          isFalse,
+          reason: choice,
+        );
       }
     });
 
