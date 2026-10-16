@@ -15,6 +15,7 @@ class LanguageInfo {
     this.tts,
     this.rtl = false,
     this.icon,
+    this.typed = true,
   });
 
   /// BCP-47 primary subtag, e.g. `hi`: the tag voices and the article table
@@ -37,6 +38,11 @@ class LanguageInfo {
   /// हि for Hindi (ADR-0027). Null for a deck that gives none.
   final String? icon;
 
+  /// Whether an answer in this language can be typed. False for the IPA
+  /// (`script: ipa`), which has no keyboard: production is asked by
+  /// choosing (ADR-0041).
+  final bool typed;
+
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks
   /// for languages with major regional variation should set it explicitly.
@@ -44,7 +50,7 @@ class LanguageInfo {
 
   /// Whether this script needs a romanisation shown alongside the target.
   bool get needsReading =>
-      !const {'latin', 'cyrillic', 'greek'}.contains(script);
+      !const {'latin', 'cyrillic', 'greek', 'ipa'}.contains(script);
 
   /// Leading articles ignored when grading typed answers.
   ///
