@@ -1697,7 +1697,13 @@ class AppState extends ChangeNotifier {
     ),
     hearsForm: (item) => hearsForm(item.card),
     recallsFirst: (item) => recallsFirst(item.card, item.mode),
+    typed: (item) => isTyped(item.card),
   );
+
+  /// Whether an answer about [card] can be typed: false for the IPA
+  /// (`typed: false` in its language block), whose production is chosen
+  /// (ADR-0041).
+  bool isTyped(Card card) => deckOf(card)?.language.typed ?? true;
 
   /// The ability layer (ADR-0034), rebuilt when the log grows.
   Abilities get abilities {
@@ -1892,6 +1898,7 @@ class AppState extends ChangeNotifier {
         ),
         straightToQuestion: (card) =>
             card.rule != null && lesson.members.contains(card.id),
+        typed: isTyped,
       ))
         item.ask == Ask.hearMeaning && hearsForm(item.card)
             ? item.askedAs(Ask.hearAndChoose)
