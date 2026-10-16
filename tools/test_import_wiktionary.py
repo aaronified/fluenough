@@ -29,7 +29,7 @@ FIXTURE = Path(__file__).resolve().parent / "fixtures" / "wiktionary"
 DUMP = FIXTURE / "Testlang.jsonl"
 CORE = "zz/zz-home.yaml"
 LAYER = "zz/en/zz-en-home.yaml"
-SRC = "https://en.wiktionary.org/wiki/{} (kaikki.org 2026-10-13)"
+SRC = "https://en.wiktionary.org/wiki/{}"
 
 
 def commons_reply(name: str, licence: str = "CC BY-SA 4.0",
@@ -113,6 +113,11 @@ class Report(Case):
         self.assertIn("- `ipa` (1): zz-9007 रसोईघर", out)
         self.assertIn("Examples left out because a word is not taught: 1.", out)
         self.assertIn("Recordings Wiktionary links for exactly a card's text: 1.", out)
+
+    def test_the_dump_date_is_in_the_report_only(self) -> None:
+        self.run_tool()
+        self.assertNotIn("kaikki.org", self.text(CORE) + self.text(LAYER))
+        self.assertNotIn("2026-10-13", self.text(CORE) + self.text(LAYER))
 
     def test_the_report_to_a_file(self) -> None:
         path = self.tmp / "report.md"
