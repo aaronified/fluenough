@@ -166,6 +166,20 @@ class CoreRef extends CoreCard {
   final List<CoreNote>? notes;
 }
 
+/// A set card a core writes (DECK-FORMAT.md, Set cards): its members, by
+/// card id or by a rule and one value of its table. Its name and
+/// explanation are each layer's.
+class CoreSet extends CoreCard {
+  const CoreSet({
+    required String id,
+    this.members = const <String>[],
+    this.rule,
+  }) : super(id);
+
+  final List<String> members;
+  final SetRule? rule;
+}
+
 /// A core card's example, its translation being in each layer.
 class CoreExample {
   const CoreExample({
@@ -301,6 +315,7 @@ class LayerEntry extends LayerCard {
   const LayerEntry({
     required YamlNode key,
     this.native,
+    this.explanation,
     this.altNative,
     this.notes,
     this.examples,
@@ -311,6 +326,9 @@ class LayerEntry extends LayerCard {
   }) : super(key);
 
   final String? native;
+
+  /// A set card's explanation; null on any other card's entry.
+  final String? explanation;
   final List<String>? altNative;
 
   /// Note texts, by the core note's id.
@@ -520,13 +538,14 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
 
   var cards = const <Card>[];
   var refs = const <CardRef>[];
+  var sets = const <CardSet>[];
   GrammarPattern? pattern;
   RuleTable? table;
   var rules = const <Rule>[];
   final merge = _Merge(reader, core, layer);
   switch (core.kind) {
     case DeckKind.vocab:
-      (:cards, :refs) = merge.cards();
+      (:cards, :refs, :sets) = merge.cards();
     case DeckKind.grammar:
       pattern = merge.pattern();
     case DeckKind.rules:
@@ -570,6 +589,7 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
       },
     ),
     checkedBy: mergedCheckedBy(core, layer),
+    sets: sets,
   );
 }
 
@@ -602,7 +622,7 @@ class _Merge {
   /// The core's cards the layer translates, then the layer's own; the
   /// core's refs, each with what the layer gives it (DECK-FORMAT.md, Core and
   /// layer files).
-  ({List<Card> cards, List<CardRef> refs}) cards() {
+  ({List<Card> cards, List<CardRef> refs, List<CardSet> sets}) cards() {
     final ids = <String>{for (final card in core.cards) card.id};
     for (final MapEntry(key: id, value: entry) in layer.cards.entries) {
       if (entry is LayerOnlyCard && ids.contains(id)) {
@@ -623,13 +643,23 @@ class _Merge {
 
     final cards = <Card>[];
     final refs = <CardRef>[];
+    final sets = <CardSet>[];
     // Every entry included before a ref, cards and refs, so that the
     // catalog puts the ref back in its place.
     var position = 0;
     for (final card in core.cards) {
       final entry = layer.cards[card.id] as LayerEntry?;
       final path = 'cards.${card.id}';
+      if (card is! CoreSet && entry?.explanation != null) {
+        reader.fail(
+          entry!.key,
+          '$path: explanation is only for a set card; a note goes in notes',
+        );
+      }
       switch (card) {
+        case CoreSet():
+          if (entry == null) continue;
+          sets.add(set(card, entry, path));
         case CoreWritten():
           if (entry == null) continue;
           final native =
@@ -652,6 +682,46 @@ class _Merge {
     return (
       cards: List<Card>.unmodifiable(cards),
       refs: List<CardRef>.unmodifiable(refs),
+      sets: List<CardSet>.unmodifiable(sets),
+    );
+  }
+
+  /// A set card as this layer teaches it: with its name, the entry's
+  /// `native`, and its explanation, both required.
+  CardSet set(CoreSet card, LayerEntry entry, String path) {
+    final name =
+        entry.native ??
+        reader.fail(
+          entry.key,
+          '$path: native is required: without it the set is not taught from '
+          '${layer.native.name}',
+        );
+    final explanation =
+        entry.explanation ??
+        reader.fail(
+          entry.key,
+          '$path: explanation is required: without it the set is not taught '
+          'from ${layer.native.name}',
+        );
+    if (entry.altNative != null ||
+        entry.notes != null ||
+        entry.examples != null ||
+        entry.bases != null ||
+        entry.wiktionary != null ||
+        entry.items.isNotEmpty ||
+        entry.senses != null) {
+      reader.fail(
+        entry.key,
+        "$path: a set card's entry gives native, its name, and explanation",
+      );
+    }
+    return CardSet(
+      id: card.id,
+      deckId: layer.id,
+      name: name,
+      explanation: explanation,
+      members: card.members,
+      rule: card.rule,
     );
   }
 

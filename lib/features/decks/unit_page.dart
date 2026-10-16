@@ -9,7 +9,7 @@ import '../../app/session.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
-import '../../core/scheduling/session_queue.dart';
+import '../../core/scheduling/lesson.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
@@ -184,7 +184,7 @@ class _UnitPageState extends State<UnitPage> {
           // A reading lesson is a passage's questions, none taught first.
           fresh = items.first.card is QuestionCard
               ? items.length
-              : items.where((i) => i.ask == Ask.teach).length;
+              : lessonCardCount(items);
           break;
         }
         final DrillRequest? next = due > 0

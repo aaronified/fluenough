@@ -11,6 +11,7 @@ import '../../ui/widgets/speaker.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'speaking_practice.dart';
 import 'taught_details.dart';
 
@@ -54,7 +55,10 @@ class SpeakingDrill extends StatelessWidget {
       reportDetail: '${session.item.card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
-      card: _card(context, card, language),
+      card: <Widget>[
+        ..._card(context, card, language),
+        ...answeredSetList(context, session, answered: answer != null),
+      ],
       belowCard: answer != null
           ? <Widget>[SpeakingPractice(session: session)]
           : _microphone(context, language),

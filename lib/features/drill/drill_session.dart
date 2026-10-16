@@ -862,9 +862,10 @@ class DrillSession extends ChangeNotifier {
   /// Whether sound is on in Settings.
   bool get soundOn => _state.settings.soundOn;
 
-  /// On from a card being taught. Nothing is recorded: its questions are.
+  /// On from a card being taught, or a set shown. Nothing is recorded: its
+  /// questions are.
   void learnt() {
-    if (ask != Ask.teach) return;
+    if (!ask.onlyShows) return;
     _advance();
   }
 
@@ -1110,8 +1111,8 @@ class DrillSession extends ChangeNotifier {
   /// be heard at all, or whose online question the learner declined and has
   /// not since allowed.
   bool _drillable(SessionItem item) {
-    // A word is taught whatever comes of its questions.
-    if (item.ask == Ask.teach) return true;
+    // A word is taught, and a set shown, whatever comes of its questions.
+    if (item.ask.onlyShows) return true;
     if (item.mode == DrillMode.listening && !soundOn) return false;
     final itemSkill = Skill.of(item.mode);
     final language = _state.deckOf(item.card)?.language;

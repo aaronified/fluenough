@@ -57,7 +57,7 @@ Future<void> finishLesson(WidgetTester tester) async {
     final session = sessionOf(tester);
     final card = session.item.card;
     switch (session.ask) {
-      case Ask.teach:
+      case Ask.teach || Ask.showSet:
         session.learnt();
       case Ask.chooseMeaning ||
           Ask.chooseWord ||
