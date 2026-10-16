@@ -4,8 +4,16 @@ Written 2026-10-05.
 
 ## What the owner asked
 
-The course path itself is built to the owner's design (2026-10-09): "the
-decks need to be shown as slightly rounded rectangles", "a little playful".
+With the course path (owner, 2026-10-09; the path itself is now built):
+
+> I also want the deck path to look a bit like duolingo (but not the small
+> round shapes, the decks need to be shown as slightly rounded rectangles).
+> The achievements can be bakes in, as well as milestones (the CEFR levels
+> are achivements, new milestones have to be built, like 100 words learnt,
+> etc.). Do discuss before implementation.
+>
+> It should look a little playful. Show me mockups before you change
+> anything here.
 
 > wait, the milestones need to be awarded to the user like badges /
 > achievements. we need some gamification. add that as a plan as well. not
