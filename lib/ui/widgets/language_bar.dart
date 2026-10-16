@@ -14,7 +14,7 @@ import 'report_button.dart';
 /// The three screens the language bar is on (#528).
 enum LanguageBarScreen { today, decks, progress }
 
-/// The bar's language bar at the top of [child], and the thin line under it
+/// The language bar at the top of [child], and the thin line under it
 /// once [child] scrolls under it (#528). [below] sits between the two and
 /// does not scroll, such as Progress's range.
 class LanguageBarFrame extends StatefulWidget {
@@ -41,8 +41,7 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
   bool _scrolledUnder = false;
 
   bool _onScroll(ScrollNotification notification) {
-    if (notification.depth != 0 ||
-        notification.metrics.axis != Axis.vertical) {
+    if (notification.depth != 0 || notification.metrics.axis != Axis.vertical) {
       return false;
     }
     final under =
@@ -399,8 +398,10 @@ class _LanguageBarState extends State<LanguageBar> {
           onTapHint: l10n.languageBarHint,
           customSemanticsActions: <CustomSemanticsAction, VoidCallback>{
             if (next != null)
-              CustomSemanticsAction(label: l10n.languageBarNext(next.name)):
-                  () => _choose(state, next),
+              CustomSemanticsAction(
+                label: l10n.languageBarNext(next.name),
+              ): () =>
+                  _choose(state, next),
             if (previous != null)
               CustomSemanticsAction(
                 label: l10n.languageBarPrevious(previous.name),
@@ -655,6 +656,7 @@ class _AllButton extends StatelessWidget {
       button: true,
       toggled: on,
       label: l10n.languageBarAllLabel,
+      onTap: onPressed,
       onTapHint: l10n.languageBarAllHint,
       excludeSemantics: true,
       child: InkWell(
