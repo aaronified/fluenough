@@ -48,7 +48,7 @@ class Segmented<T> extends StatelessWidget {
   /// The group's name for screen readers, such as "Time range".
   final String semanticLabel;
 
-  /// 40 for a range, 44 for input mode, 48 for contrast, 72 with icons.
+  /// 40 for a range, 48 for input mode and contrast, 72 with icons.
   final double height;
 
   /// The design's springy curve, cubic-bezier(.3, 1.4, .5, 1).
