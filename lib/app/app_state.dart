@@ -577,7 +577,10 @@ class AppState extends ChangeNotifier {
     };
     return <LanguageInfo>[
       for (final code in LanguageChoice.options(
-        learning: settings.learningLanguages,
+        // The learner's order: as chosen, else as the profile lists them.
+        learning: <String>[
+          ...<String>{...settings.learningLanguages, ...?profile.languages},
+        ],
         available: learned.keys,
       ))
         learned[code]!,

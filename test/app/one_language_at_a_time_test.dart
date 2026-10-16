@@ -6,14 +6,13 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
 
 import '../support/harness.dart';
 
-/// Today with several languages, one at a time, with a break between: each
-/// language's part is a session of its own, and the summary after one offers
-/// the next.
+/// Today with several languages learned: since the language bar (#528) it
+/// shows one at a time, the bar's, each language's part a session of its
+/// own.
 
 AppState learning(List<String> languages, {MemoryProgress? progress}) =>
     AppState.test(
@@ -56,19 +55,24 @@ Set<String> languagesIn(AppState state, DrillRequest request) => <String>{
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('each language\'s part holds only that language, and the parts make '
-      'up the day', () async {
+  test('Today is the language bar\'s language alone (#528), each '
+      'language\'s part only that language', () async {
     final state = await withReviews(const <String>['bn', 'hi']);
     addTearDown(state.dispose);
-    expect(state.todayLanguages.map((l) => l.code), <String>['bn', 'hi']);
     final bengali = const DrillRequest.today(language: 'bn');
     final hindi = const DrillRequest.today(language: 'hi');
+    expect(state.shownLanguage, 'bn');
+    expect(state.todayLanguages.map((l) => l.code), <String>['bn']);
     expect(languagesIn(state, bengali), <String>{'bn'});
-    expect(languagesIn(state, hindi), <String>{'hi'});
+    expect(state.buildSession(hindi).isEmpty, isTrue);
     expect(
-      state.buildSession(bengali).length + state.buildSession(hindi).length,
       state.buildSession(const DrillRequest.today()).length,
+      state.buildSession(bengali).length,
     );
+
+    state.showLanguage('hi');
+    expect(state.todayLanguages.map((l) => l.code), <String>['hi']);
+    expect(languagesIn(state, hindi), <String>{'hi'});
   });
 
   test(
@@ -77,22 +81,26 @@ void main() {
       final state = await withReviews(const <String>['bn', 'hi']);
       addTearDown(state.dispose);
       final hindi = const DrillRequest.today(language: 'hi');
+      state.showLanguage('hi');
       final before = state.buildSession(hindi).length;
       expect(before, greaterThan(0));
       // Its reviews, then the new skills of its words, until none is left.
+      state.showLanguage('bn');
       const bengali = DrillRequest.today(language: 'bn');
       while (state.buildSession(bengali).isNotEmpty) {
         for (final item in state.buildSession(bengali).items) {
           state.record(item, 5);
         }
       }
+      expect(state.todayLanguages, isEmpty);
+      state.showLanguage('hi');
       expect(state.buildSession(hindi).length, before);
       expect(state.todayLanguages.map((l) => l.code), <String>['hi']);
     },
   );
 
-  testWidgets('after one language, the summary says it is done and offers '
-      'the next', (tester) async {
+  testWidgets('after one language, the summary says it is done, and with '
+      'Today on that language alone offers no other (#528)', (tester) async {
     usePhone(tester);
     final state = await withReviews(const <String>['bn', 'hi']);
     final now = state.now();
@@ -110,23 +118,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.summaryLanguageDone('Bengali')), findsOneWidget);
-    expect(find.text(l10n.summaryNextLanguage), findsOneWidget);
-    final next = state
-        .buildSession(const DrillRequest.today(language: 'hi'))
-        .length;
-    final start = find.text(l10n.summaryStartLanguage('Hindi', next));
-    await tester.ensureVisible(start);
-    await tester.tap(start);
-    await tester.pumpAndSettle();
-    expect(
-      tester.widget<DrillPage>(find.byType(DrillPage)).request.language,
-      'hi',
-    );
-    expect(
-      find.byType(SummaryPage),
-      findsNothing,
-      reason: 'replaced, not stacked',
-    );
+    expect(find.text(l10n.summaryNextLanguage), findsNothing);
   });
 
   testWidgets('a session over every language keeps the plain summary', (
