@@ -13,6 +13,7 @@ void changeAll(SettingsNotifier s) {
   s
     ..setSkillEnabled(Skill.listening, false)
     ..showRomanisation = false
+    ..showIpa = false
     ..soundOn = false
     ..autoplay = true
     ..matchTapToHear = false
@@ -63,6 +64,7 @@ void main() {
         'reminder_time': '25:00',
         'card_text_scale': '9',
         'show_romanisation': 'maybe',
+        'show_ipa': 'maybe',
         'enabled_skills': 'recognition,unknown',
         'learning_languages': 'hi,Hindi,,bn',
         'placed_decks': 'hi-en-market,Not A Deck',
@@ -78,6 +80,7 @@ void main() {
     expect(s.reminderTime, defaults.reminderTime);
     expect(s.cardTextScale, SettingsNotifier.maxCardTextScale);
     expect(s.showRomanisation, defaults.showRomanisation);
+    expect(s.showIpa, defaults.showIpa);
     // Reading is newer than a list with no marks, so it keeps its default.
     expect(s.enabledSkills, {Skill.recognition, Skill.reading});
     expect(s.learningLanguages, ['hi', 'bn']);
