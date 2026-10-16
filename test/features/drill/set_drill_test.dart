@@ -10,9 +10,14 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/aksharas.dart';
+import 'package:fluenough/core/models/card.dart';
+import 'package:fluenough/core/models/card_set.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/models/rule.dart';
+import 'package:fluenough/core/scheduling/lesson_sets.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
@@ -276,5 +281,185 @@ void main() {
     expect(lines.length, greaterThan(1), reason: 'the word is long enough');
     // A screen reader reads the word as written.
     expect(find.bySemanticsLabel(word), findsOneWidget);
+  });
+
+  test('the skip line always names the known members, for a split set and '
+      'for verb forms too', () {
+    final l10n = lookupAppLocalizations(const Locale('en'));
+    Card form(String slot, String target, String reading) => Card(
+      id: 'te-grammar-verb-present-tagu-$slot',
+      deckId: 'te-en-grammar-verb-present',
+      target: target,
+      reading: reading,
+      native: slot,
+      modes: const <DrillMode>{DrillMode.grammar},
+      rule: RuleCell(
+        ruleId: 'te-rule-present',
+        word: 'te-9001',
+        wordTarget: 'తాగు',
+        slot: slot,
+      ),
+    );
+    final forms = <Card>[
+      form('nenu', 'తాగుతాను', 'tāgutānu'),
+      form('memu', 'తాగుతాము', 'tāgutāmu'),
+      form('nuvvu', 'తాగుతావు', 'tāgutāvu'),
+      form('miru', 'తాగుతారు', 'tāgutāru'),
+      form('atanu', 'తాగుతాడు', 'tāgutāḍu'),
+    ];
+    final set = ResolvedSet(
+      set: const CardSet(
+        id: 'te-9401',
+        deckId: 'te-en-x',
+        name: 'Drink',
+        explanation: '',
+        rule: SetRule(
+          rule: 'te-grammar-verb-present',
+          axis: 'verb',
+          value: 'తాగు',
+        ),
+      ),
+      members: forms,
+    );
+    final known = <String>{forms[0].id, forms[3].id};
+    final fresh = <Card>[
+      for (final c in forms)
+        if (!known.contains(c.id)) c,
+    ];
+    final last = SetPart(
+      set: set,
+      index: 1,
+      count: 2,
+      members: forms.sublist(3),
+      newIds: <String>{for (final c in fresh) c.id},
+      knownIds: known,
+      lessonNew: fresh,
+    );
+    expect(
+      nextLine(l10n, last),
+      '${l10n.setNextForms(3, 'తాగుతాము (tāgutāmu), తాగుతావు (tāgutāvu) and '
+      'తాగుతాడు (tāgutāḍu)')} '
+      '${l10n.setKnownWords('తాగుతాను (tāgutānu) and తాగుతారు (tāgutāru)')}',
+    );
+  });
+
+  testWidgets('a slot across the words lists every row, the learnt first, '
+      'the unlearnt marked', (tester) async {
+    usePhone(tester);
+    const telugu = LanguageInfo(
+      code: 'te',
+      iso639_3: 'tel',
+      name: 'Telugu',
+      script: 'telugu',
+    );
+    Card cellOf(String verb, String target) => Card(
+      id: 'te-grammar-verb-present-$verb-atanu',
+      deckId: 'te-en-grammar-verb-present',
+      target: target,
+      native: verb,
+      modes: const <DrillMode>{DrillMode.grammar},
+      rule: RuleCell(
+        ruleId: 'te-rule-present',
+        word: 'te-$verb',
+        wordTarget: verb,
+        slot: 'atanu',
+      ),
+    );
+    final ceyu = cellOf('ceyu', 'చేస్తాడు');
+    final tagu = cellOf('tagu', 'తాగుతాడు');
+    final cudu = cellOf('cudu', 'చూస్తాడు');
+    final tinu = cellOf('tinu', 'తింటాడు');
+    final set = ResolvedSet(
+      set: const CardSet(
+        id: 'te-9402',
+        deckId: 'te-en-x',
+        name: 'He: every verb',
+        explanation: '',
+        rule: SetRule(
+          rule: 'te-grammar-verb-present',
+          axis: 'person',
+          value: 'atanu',
+        ),
+        shown: <String>['te-tagu', 'te-cudu'],
+      ),
+      members: <Card>[tagu, cudu],
+      all: <Card>[ceyu, tagu, cudu, tinu],
+    );
+    await pumpScreen(
+      tester,
+      Builder(
+        builder: (context) => Scaffold(
+          body: Center(
+            child: FullListButton(
+              sets: <ResolvedSet>[set],
+              language: telugu,
+              isKnown: (c) => c == cudu || c == tinu,
+              isNew: (c) => c == tagu,
+              onPlay: (_) async {},
+              canPlay: false,
+            ),
+          ),
+        ),
+      ),
+    );
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text(l10n.setFullList));
+    await tester.pumpAndSettle();
+    expect(find.text(l10n.setSheetLearnt(4, 2)), findsOneWidget);
+    final rows = tester
+        .widgetList<SetMemberRow>(find.byType(SetMemberRow))
+        .map((r) => (r.card.target, r.mark))
+        .toList();
+    expect(rows, [
+      ('చూస్తాడు', SetMark.known),
+      ('తింటాడు', SetMark.known),
+      ('తాగుతాడు', SetMark.fresh),
+      ('చేస్తాడు', SetMark.notLearnt),
+    ]);
+    expect(find.text(l10n.setNotLearnt), findsOneWidget);
+  });
+
+  testWidgets('a long word in a joined script shrinks to fit, unbroken', (
+    tester,
+  ) async {
+    usePhone(tester, textScale: 1.4);
+    const word = 'غیرذمہدارانہخوبصورتیاں';
+    const urdu = LanguageInfo(
+      code: 'ur',
+      iso639_3: 'urd',
+      name: 'Urdu',
+      script: 'arabic',
+      rtl: true,
+    );
+    await pumpScreen(
+      tester,
+      const Scaffold(
+        body: Center(child: TargetText.hero(word, language: urdu)),
+      ),
+    );
+    final text = tester.widget<Text>(
+      find.descendant(of: find.byType(TargetText), matching: find.byType(Text)),
+    );
+    expect(text.data, word, reason: 'never broken between its letters');
+    final paragraph = tester.renderObject<RenderParagraph>(
+      find.descendant(
+        of: find.byType(TargetText),
+        matching: find.byType(RichText),
+      ),
+    );
+    final room = tester.view.physicalSize.width / tester.view.devicePixelRatio;
+    expect(paragraph.size.width, lessThanOrEqualTo(room - 72));
+    expect(paragraph.didExceedMaxLines, isFalse);
+    expect(
+      paragraph
+          .getBoxesForSelection(
+            const TextSelection(baseOffset: 0, extentOffset: word.length),
+          )
+          .map((b) => b.top.round())
+          .toSet(),
+      hasLength(1),
+      reason: 'on one line',
+    );
+    expect(text.style!.fontSize, lessThan(48 * 1.0));
   });
 }

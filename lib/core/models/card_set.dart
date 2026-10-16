@@ -42,6 +42,7 @@ class CardSet {
     required this.explanation,
     this.members = const <String>[],
     this.rule,
+    this.shown = const <String>[],
   });
 
   /// A card id of the language, permanent like every card id.
@@ -62,6 +63,16 @@ class CardSet {
 
   /// What a rules table's set fixes; null for a set by refs.
   final SetRule? rule;
+
+  /// For a set of one slot across the words, the rows its card shows, by
+  /// the row's card id, in the deck's order (owner, 2026-10-16, #515: "A
+  /// few curated verbs should be good enough"); its Full list shows every
+  /// row of the course. Empty for any other set.
+  final List<String> shown;
+
+  /// Whether it is one slot across the words, a person across the verbs,
+  /// whose card shows the [shown] rows and whose Full list every row.
+  bool get acrossRows => rule?.fixesRow == false;
 
   @override
   String toString() => 'CardSet($id)';
@@ -93,17 +104,34 @@ List<List<T>> setParts<T>(List<T> members, {int most = setPartSize}) {
 /// One set with its members resolved: the cards a learner from the set's
 /// native language is taught, in the set's order.
 class ResolvedSet {
-  const ResolvedSet({required this.set, required this.members});
+  const ResolvedSet({required this.set, required this.members, List<Card>? all})
+    : all = all ?? members;
 
   final CardSet set;
+
+  /// The members its card shows, in the set's order: for a set of one slot
+  /// across the words, the cells of its [CardSet.shown] rows.
   final List<Card> members;
 
-  /// Whether it is shown over more than one card, and so has a Full list
-  /// (owner, 2026-10-16: "Split sets only").
+  /// The members its Full list shows: for a set of one slot across the
+  /// words, every cell of that slot in the course, in the table's order
+  /// (owner, 2026-10-16: "a full list will show all verbs in the course");
+  /// for any other set, its [members].
+  final List<Card> all;
+
+  /// Whether it is shown over more than one card.
   bool get isSplit => members.length > setPartSize;
 
-  /// Whether [card] is one of its members.
+  /// Whether it has a Full list: when it is split (owner, 2026-10-16:
+  /// "Split sets only"), and always for a set of one slot across the
+  /// words, whose card shows only a few of them.
+  bool get hasFullList => isSplit || set.acrossRows;
+
+  /// Whether [card] is one of its members, on its card.
   bool has(Card card) => members.any((member) => member.id == card.id);
+
+  /// Whether [card] is in its Full list.
+  bool lists(Card card) => all.any((member) => member.id == card.id);
 }
 
 /// The cards [set]'s members are, from [cards], every card a learner from
@@ -114,7 +142,8 @@ class ResolvedSet {
 ///
 /// [ruleOf] names the rule ids of a rules core by its id, so that a set
 /// naming a whole table takes every one of its rules. A member no card is
-/// left out.
+/// left out. For a set of one slot across the words, these are its Full
+/// list; [resolveSet] picks the ones its card shows.
 List<Card> setMembers(
   CardSet set,
   Iterable<Card> cards, {
@@ -140,6 +169,29 @@ List<Card> setMembers(
               seen.add(card.id))
         card,
   ];
+}
+
+/// [set] with its members resolved from [cards], as [setMembers] does: a
+/// set of one slot across the words shows on its card the cells of its
+/// [CardSet.shown] rows, in that order, and every cell of the slot in its
+/// Full list; any other set shows every member on both.
+ResolvedSet resolveSet(
+  CardSet set,
+  Iterable<Card> cards, {
+  Set<String> Function(String coreId)? ruleOf,
+}) {
+  final members = setMembers(set, cards, ruleOf: ruleOf);
+  if (!set.acrossRows) return ResolvedSet(set: set, members: members);
+  final byRow = <String, Card>{
+    for (final cell in members) cell.rule!.word: cell,
+  };
+  return ResolvedSet(
+    set: set,
+    members: List<Card>.unmodifiable(<Card>[
+      for (final row in set.shown) ?byRow[row],
+    ]),
+    all: members,
+  );
 }
 
 /// The parts of speech a rules table's rows may be (DECK-FORMAT.md, Rules
