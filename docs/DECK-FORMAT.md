@@ -519,11 +519,10 @@ it. By hand, or checking what the tool did:
 a core and an English layer: Hindi, Marathi, Gujarati, Kannada, Assamese
 and Spanish with their B1 rewrite, and Bengali and Telugu by
 `tools/split_deck.py` (#498: "Change them via grep", owner, 2026-10-13).
-Japanese (hidden) is still single-file: its `ja-en-hiragana` is to be split
-(#498; owner, 2026-10-14), but a language with a core needs a
-[B1 plan](#the-b1-plan) in its path, and Japanese has none. **Open question
-for the owner:** write Japanese's B1 plan so that `ja-en-hiragana` can be
-split, or let a language whose path has no B1 plan have a core?
+Japanese (hidden) stays single-file: a language with a core needs a
+[B1 plan](#the-b1-plan) in its path, and Japanese has none, so
+`ja-en-hiragana` is not split (owner, 2026-10-16, #498: "Keep
+single-file"). It stays as it is until Japanese is worked on again.
 Each language's script guide and sounds file are split too ("Split script
 + sounds", owner, 2026-10-13); its path, facts, numbers and romanisation
 files stay one file. **Reading decks stay single-file** (owner, 2026-10-14:
@@ -946,12 +945,14 @@ card's id, and it downloads with the deck, so it plays offline:
 
 ### A card's own image: `image`
 
-Owner, 2026-10-13 (#523): "Oh, decks need images too". Sources:
-"OpenMoji, Wikimedia Commons via Wikidata/Wiktionary, Keep Noto emoji
-only", and which wins: "Commons photo, then OpenMoji, then Noto". Delivery:
-"Yes, ship with the deck". A card may have its own image, a photo from
-Wikimedia Commons or an [OpenMoji](https://openmoji.org) drawing (CC BY-SA
-4.0), a WebP of about 256 pixels beside the deck, named by the card's id:
+Owner, 2026-10-13 (#523): "Oh, decks need images too". Delivery: "Yes,
+ship with the deck". Owner, 2026-10-16 (#523): the shape `image` and
+`image_credit`, "Approve"; where images come from, "Wiktionary only" (no
+Wikidata), in this order: the one picture in the language's section of the
+word's Wiktionary page, then OpenMoji, then the Noto picture. A card may
+have its own image, a picture from Wikimedia Commons or an
+[OpenMoji](https://openmoji.org) drawing (CC BY-SA 4.0), a WebP of about
+256 pixels beside the deck, named by the card's id:
 
 ```yaml
   - id: "hi-0419"
@@ -963,7 +964,10 @@ Wikimedia Commons or an [OpenMoji](https://openmoji.org) drawing (CC BY-SA
 
 - **Only for a concrete word it shows exactly**, as [`picture`](#card-fields)
   is ([ADR-0034](adr/0034-hear-say-write.md)): not for abstract words,
-  kinship, or near misses.
+  kinship, or near misses. A card with a `picture` is such a word. So is a
+  noun without one that a reviewer approves (owner, 2026-10-16, #523:
+  "Also mark concrete", and how: "Importer proposes"): the importer
+  proposes its image, and a reviewer approves each before it lands.
 - **The shape is `audio`'s** ([A card's own recording](#a-cards-own-recording-audio)):
   the file is `decks/<lang>/images/<card id>.webp`, and `image` names it by
   that path, on a core card or a single-file card, never in a layer or on a
@@ -979,10 +983,13 @@ Wikimedia Commons or an [OpenMoji](https://openmoji.org) drawing (CC BY-SA
 - **Reviewers can flag a bad image,** and it is dropped with its file, as a
   recording is (#508).
 - **`tools/import_wiktionary.py --images`** fills it, for a card that has a
-  `picture`: the Wikidata image (P18) of the item Wiktionary's sense names,
-  else an image on the language's section of the word's Wiktionary page,
-  else OpenMoji's drawing of the card's `picture`, converted with `ffmpeg`
-  (see `tools/README.md`).
+  `picture`: the one picture in the language's section of the word's
+  Wiktionary page, from Commons with its licence and credit checked, else
+  OpenMoji's drawing of the card's `picture`, converted with `ffmpeg`. For
+  a noun without a `picture` it writes nothing: its report proposes the
+  page's picture (the card, word, Commons file, licence, credit and pages),
+  and `--approve <card id>` writes it once a reviewer has approved it (see
+  `tools/README.md`).
 
 ### Sentences and their rules: `rules`
 
@@ -1216,6 +1223,9 @@ of the language's Wikipedia dump (`<lang>wiki-<date>-pages-articles.xml.bz2`),
 and gives each card whose target is one word its rank, with the source
 `"<lang>.wikipedia.org, <the dump's month>"`. A card that has a
 `frequency` keeps it, and a phrase gets none (see `tools/README.md`).
+Words are ranked by their surface form: an inflected form is not counted
+with its lemma. The owner approved these choices on 2026-10-16 (#516):
+"Approve as built".
 
 ### Register, forms, collocations and senses
 
@@ -1338,7 +1348,9 @@ built, and so are the Wiktionary import (#518) and the frequency count
 
 - **A word that is its own root:** `bases: self` (#513): built.
 - **`source` for Wiktionary and Tatoeba data:** "Per item". Each
-  item taken from outside names its own source.
+  item taken from outside names its own source. For Wiktionary, "Link
+  only" (owner, 2026-10-16, #518): the entry's page,
+  `https://en.wiktionary.org/wiki/<word>`, with no dump date.
 - **Gender classes:** Spanish and Japanese are "es m/f; ja none". The
   validator checks "Nouns only": on a noun, a value outside the language's
   classes is an error, and so is a missing gender once the language is
@@ -3011,9 +3023,10 @@ lists, Wiktionary (CC BY-SA 4.0), counts from Wikipedia (CC BY-SA), Tatoeba
 (CC BY 2.0 FR, attribution per sentence) and original work. Recordings from
 Wikimedia Commons each keep their own licence and speaker credit.
 
-- **Data from outside names its source, per item** (owner: "Per item"). The
-  shape of the per-item `source` comes with the card data fields (#518);
-  until then, a deck's own `source` names a source the whole deck draws on.
+- **Data from outside names its source, per item** (owner: "Per item"). An
+  item has its own `source`: for Wiktionary, the entry's page and nothing
+  else (owner, 2026-10-16, #518: "Link only"). A deck's own `source` names
+  a source the whole deck draws on.
 - **CC0 content already given stays usable,** because CC0 allows it.
 - **The app credits the sources.** Settings, Sources names CC BY-SA 4.0 for
   deck content, and credits Wiktionary, Wikimedia Commons, Wikipedia and

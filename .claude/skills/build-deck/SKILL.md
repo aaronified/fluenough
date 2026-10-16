@@ -75,7 +75,7 @@ Before you start:
      unit holds.
    - Every vocab and grammar deck is split (#498); only the reading decks
      (owner, 2026-10-14: "Keep reading decks single-file") and Japanese's
-     `ja-en-hiragana` (no B1 plan yet) are single-file. To split a single-file deck, run
+     `ja-en-hiragana` (owner, 2026-10-16: "Keep single-file") are single-file. To split a single-file deck, run
      `python3 tools/split_deck.py <file>` ("Splitting a deck"), never by
      hand. A language's script guide and sounds file are a core and an
      English layer too ("Script guides", "Sounds files").
@@ -114,8 +114,10 @@ Before you start:
      `frequency` by hand: `tools/wikipedia_frequency.py` writes it (step 6).
    - A card's own `audio` and `image` ("A card's own recording", "A card's
      own image") come only from `tools/import_wiktionary.py --audio
-     --images` (step 6), never by hand: an image only on a card with a
-     `picture`, a recording only of exactly the card's text.
+     --images` (step 6), never by hand: an image on a card with a
+     `picture`, or on a noun without one only once a reviewer approves the
+     report's proposal (`--approve <card id>`); a recording only of exactly
+     the card's text.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep
@@ -136,7 +138,11 @@ Before you start:
    python3 tools/import_wiktionary.py <lang> <Language>.jsonl --dump-date <YYYY-MM-DD> --write --report <lang>-report.md
    ```
 
-   Add `--audio --images` where `ffmpeg` and the network are there. With a
+   Add `--audio --images` where `ffmpeg` and the network are there. Images
+   come from the word's Wiktionary page, then OpenMoji, never Wikidata. A
+   noun without a `picture` gets none: the report's "Image proposals" lists
+   its candidate, and a reviewer approves each before it lands. Each item's
+   `source` is its Wiktionary page only. With a
    Wikipedia dump of the language, write the ranks:
 
    ```sh

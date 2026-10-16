@@ -189,8 +189,10 @@ lines from `https://kaikki.org/dictionary/<Language>/`, such as
 `ref`, `synonyms` and `antonyms`, `examples` with their translations in the
 English layer (only of words the course teaches), `forms`, `senses`, and
 `wiktionary: true` in the layer. Every item names its `source`, the
-Wiktionary page and the dump's date. The decks stay `unreviewed`: what it
-adds is semi-verified, for reviewers to check (#508).
+Wiktionary page only, `https://en.wiktionary.org/wiki/<word>` (owner,
+2026-10-16, #518: "Link only"); the dump's date and checksum are in the
+report alone. The decks stay `unreviewed`: what it adds is semi-verified,
+for reviewers to check (#508).
 
 ```sh
 # The report alone, writing nothing: what it would fill, and what is
@@ -203,6 +205,8 @@ cp -r decks /tmp/decks-copy
 python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --decks /tmp/decks-copy
 # Recordings and images too: needs ffmpeg and the network.
 python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --audio --images
+# The image proposals a reviewer approved, by card id.
+python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --images --approve hi-0419,hi-0420
 python3 tools/deck_index.py
 python3 tools/validate_decks.py decks/
 ```
@@ -211,11 +215,22 @@ python3 tools/validate_decks.py decks/
   (never joined from other recordings; sentences stay text-to-speech),
   downloaded from Wikimedia Commons and converted to Opus at
   `decks/<lang>/audio/<card id>.opus`, with its `audio_credit`.
-- **`--images`**: for a card with a `picture`, the Wikidata image of the
-  item its sense names, else the one picture in the language's section of
-  its Wiktionary page, else OpenMoji's drawing of its `picture`, shrunk to
-  256 pixels and converted to WebP at `decks/<lang>/images/<card id>.webp`,
-  with its `image_credit`. With none, the card keeps its Noto picture.
+- **`--images`**: for a card with a `picture`, the one picture in the
+  language's section of its Wiktionary page, from Wikimedia Commons, else
+  OpenMoji's drawing of its `picture`, shrunk to 256 pixels and converted
+  to WebP at `decks/<lang>/images/<card id>.webp`, with its
+  `image_credit`. With none, the card keeps its Noto picture. Images come
+  from Wiktionary only, never Wikidata (owner, 2026-10-16, #523:
+  "Wiktionary only").
+- **Image proposals**: a noun card without a `picture` gets no image from
+  `--images`. Where its Wiktionary section has one picture that can ship,
+  the report's "Image proposals" table lists it: the card, word, Commons
+  file, licence, credit, Commons page and Wiktionary page (owner,
+  2026-10-16, #523: "Also mark concrete", "Importer proposes"). Only the
+  lookups run, so this works without `--write` too, and no file is
+  downloaded. A reviewer approves each; then `--images --write --approve
+  <card id>` (repeated, or ids separated by commas) writes those cards'
+  images. An approved id that is not such a card is listed in the report.
 - A file whose licence cannot ship in a CC BY-SA 4.0 deck, or that names
   no one to credit, is skipped and listed in the report. Without `ffmpeg`
   on the PATH, `--audio` and `--images` stop with an error before anything
