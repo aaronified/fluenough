@@ -18,6 +18,8 @@ void main() {
     final state = AppState.test();
     addTearDown(state.dispose);
     await state.load();
+    // Today shows one language, the language bar's (#528).
+    state.showLanguage('es');
     final cards = state.deckById('es-en-core-100')!.cards;
     // Answered Hard today, so due tomorrow.
     for (final card in cards.take(3)) {
@@ -145,7 +147,8 @@ void main() {
 
     test('once a word is taught, its other skills join the reviews, and '
         'it leaves the lessons', () async {
-      final state = await loaded(features: vocabOnly);
+      final state = await loaded(features: vocabOnly)
+        ..showLanguage('es');
       final lesson = DrillRequest.lesson(language: 'es');
       final check = state.lessonFor(lesson)[1];
       state.record(check, 4);
@@ -194,6 +197,7 @@ void main() {
         settings: settings,
         features: vocabOnly,
       );
+      state.showLanguage('es');
       // A taught word's other skills join the reviews, Write first; with
       // Write switched off, Hear comes in its place.
       state.record(state.lessonFor(DrillRequest.lesson(language: 'es'))[1], 4);
@@ -317,7 +321,16 @@ themes:
       final state = await loaded();
       expect(state.currentProfile.id, Profile.defaultProfile.id);
       expect(state.currentProfile.name, isNull);
-      expect(state.profileDecks, hasLength(state.decks.length));
+      // It learns every language; Today shows the language bar's (#528).
+      expect(
+        state.languageChoices.map((l) => l.code).toSet(),
+        state.decks.map((d) => d.language.code).toSet(),
+      );
+      expect(state.profileDecks, isNotEmpty);
+      expect(
+        state.profileDecks.every((d) => d.language.code == state.shownLanguage),
+        isTrue,
+      );
     });
 
     test('creating adds, selecting switches and notifies', () async {
