@@ -473,6 +473,8 @@ class AppState extends ChangeNotifier {
   /// counts, lessons, finished decks and Inspect read one list
   /// (ADR-0041).
   Catalog get _view {
+    // Nothing to cut where no IPA deck is on the phone, the usual case.
+    if (!_catalog.hasIpa) return _catalog;
     final scope = settings.ipaScope;
     final learned = <String>{
       for (final code in learningCodes)
@@ -481,12 +483,16 @@ class AppState extends ChangeNotifier {
     // A card the learner has answered stays in their course, whatever its
     // tags: it is scheduled (ADR-0041). Read again only when the log grows.
     final answered = scope == IpaScope.whole ? 0 : progress.log.length;
-    final key =
-        '${scope.name}:${(learned.toList()..sort()).join(',')}:$answered:'
-        '${_ipaPinned.length}';
-    if (!identical(_viewOf, _catalog) || _viewKey != key) {
+    if (!identical(_viewOf, _catalog) ||
+        _viewScope != scope ||
+        !setEquals(_viewLearned, learned) ||
+        _viewAnswered != answered ||
+        _viewPinned != _ipaPinVersion) {
       _viewOf = _catalog;
-      _viewKey = key;
+      _viewScope = scope;
+      _viewLearned = learned;
+      _viewAnswered = answered;
+      _viewPinned = _ipaPinVersion;
       _scoped = _catalog.forIpa(
         scope,
         learned,
@@ -501,16 +507,20 @@ class AppState extends ChangeNotifier {
     return _scoped;
   }
 
-  /// The IPA cards of the "sounds of this word" session under way, which the
-  /// learner's course has while they are practised ([DrillRequest.sounds]).
-  final Set<String> _ipaPinned = <String>{};
-
   Catalog? _viewOf;
-  String _viewKey = '';
+  IpaScope _viewScope = IpaScope.mine;
+  Set<String> _viewLearned = const <String>{};
+  int _viewAnswered = -1;
+  int _viewPinned = -1;
   Catalog _scoped = Catalog.empty;
 
   /// Which of the IPA course the learner has (ADR-0041).
   IpaScope get ipaScope => settings.ipaScope;
+
+  /// The IPA cards of the "sounds of this word" session under way, which the
+  /// learner's course has while they are practised ([DrillRequest.sounds]).
+  final Set<String> _ipaPinned = <String>{};
+  int _ipaPinVersion = 0;
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -2039,9 +2049,13 @@ class AppState extends ChangeNotifier {
     _ipaPinned
       ..clear()
       ..addAll(ids);
+    _ipaPinVersion++;
   }
 
-  void unpinIpaCards() => _ipaPinned.clear();
+  void unpinIpaCards() {
+    _ipaPinned.clear();
+    _ipaPinVersion++;
+  }
 
   /// The items of the sounds session [request] asks for: each card taught,
   /// checked and practised as a lesson does (ADR-0024), in the course's
