@@ -6,6 +6,7 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
 
 import '../support/harness.dart';
@@ -64,7 +65,6 @@ void main() {
     expect(state.shownLanguage, 'bn');
     expect(state.todayLanguages.map((l) => l.code), <String>['bn']);
     expect(languagesIn(state, bengali), <String>{'bn'});
-    expect(state.buildSession(hindi).isEmpty, isTrue);
     expect(
       state.buildSession(const DrillRequest.today()).length,
       state.buildSession(bengali).length,
@@ -99,8 +99,10 @@ void main() {
     },
   );
 
-  testWidgets('after one language, the summary says it is done, and with '
-      'Today on that language alone offers no other (#528)', (tester) async {
+  testWidgets('after one language, the summary says it is done and offers '
+      'the next; starting it switches the language bar (#528)', (
+    tester,
+  ) async {
     usePhone(tester);
     final state = await withReviews(const <String>['bn', 'hi']);
     final now = state.now();
@@ -118,7 +120,26 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.summaryLanguageDone('Bengali')), findsOneWidget);
-    expect(find.text(l10n.summaryNextLanguage), findsNothing);
+    expect(find.text(l10n.summaryNextLanguage), findsOneWidget);
+    expect(state.shownLanguage, 'bn');
+    final next = state
+        .buildSession(const DrillRequest.today(language: 'hi'))
+        .length;
+    expect(next, greaterThan(0));
+    final start = find.text(l10n.summaryStartLanguage('Hindi', next));
+    await tester.ensureVisible(start);
+    await tester.tap(start);
+    await tester.pumpAndSettle();
+    expect(state.shownLanguage, 'hi');
+    expect(
+      tester.widget<DrillPage>(find.byType(DrillPage)).request.language,
+      'hi',
+    );
+    expect(
+      find.byType(SummaryPage),
+      findsNothing,
+      reason: 'replaced, not stacked',
+    );
   });
 
   testWidgets('a session over every language keeps the plain summary', (
