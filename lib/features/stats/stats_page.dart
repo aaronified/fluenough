@@ -316,7 +316,13 @@ class _LeechesRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final incoming = isIncoming(context, Feature.leeches);
     final title = l10n.statsLeeches(count);
-    final fg = scheme.onErrorContainer;
+    // The error colour is for leeches there are; with none it is a plain card
+    // like the ones above it, not a problem that is not there (#500).
+    final hasLeeches = count > 0;
+    final fg = hasLeeches ? scheme.onErrorContainer : scheme.onSurface;
+    final subtitleFg = hasLeeches
+        ? scheme.onErrorContainer
+        : scheme.onSurfaceVariant;
     Widget dim(Widget child) =>
         incoming ? Opacity(opacity: kIncomingOpacity, child: child) : child;
 
@@ -343,7 +349,9 @@ class _LeechesRow extends StatelessWidget {
                       ),
                       Text(
                         l10n.statsLeechesSubtitle,
-                        style: theme.textTheme.bodyMedium!.copyWith(color: fg),
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: subtitleFg,
+                        ),
                       ),
                     ],
                   ),
@@ -362,7 +370,7 @@ class _LeechesRow extends StatelessWidget {
     );
 
     final tile = Material(
-      color: scheme.errorContainer,
+      color: hasLeeches ? scheme.errorContainer : scheme.surfaceContainerLow,
       borderRadius: BorderRadius.circular(AppRadii.group),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
