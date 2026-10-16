@@ -2061,6 +2061,32 @@
   "@deckAuthors": {
     "description": "Label for the people credited with the deck."
   },
+  "deckRecordings": "Recordings",
+  "@deckRecordings": {
+    "description": "Label on the deck screen for the credits of the deck's recordings of words: who said each, and its licence."
+  },
+  "deckImages": "Pictures",
+  "@deckImages": {
+    "description": "Label on the deck screen for the credits of the pictures of words that ship with the deck (photos and drawings): who made each, and its licence."
+  },
+  "deckMediaCredit": "{target}: {credit}, {licence}",
+  "@deckMediaCredit": {
+    "description": "One recording's or picture's credit on the deck screen: the word, whom to credit (a speaker or a photographer), and the file's licence, such as CC-BY-SA-4.0. Names and licences stay as they are.",
+    "placeholders": {
+      "target": {
+        "type": "String",
+        "example": "घर"
+      },
+      "credit": {
+        "type": "String",
+        "example": "A. Speaker"
+      },
+      "licence": {
+        "type": "String",
+        "example": "CC-BY-SA-4.0"
+      }
+    }
+  },
   "deckVoice": "Voice",
   "@deckVoice": {
     "description": "Label for the deck language's voice status."
@@ -2930,6 +2956,24 @@
   "@sourcesDeckContent": {
     "description": "Heading on the Sources screen above the decks' licence and the projects credited."
   },
+  "sourcesMedia": "Recordings and pictures",
+  "@sourcesMedia": {
+    "description": "Heading on the Sources screen above the credits of the recordings and pictures that ship with the decks, a row per language."
+  },
+  "sourcesMediaLine": "{credit}, {licence}",
+  "@sourcesMediaLine": {
+    "description": "One credit under a language on the Sources screen: whom to credit for some of its recordings or pictures, and their licence. Names and licences stay as they are.",
+    "placeholders": {
+      "credit": {
+        "type": "String",
+        "example": "A. Speaker"
+      },
+      "licence": {
+        "type": "String",
+        "example": "CC-BY-SA-4.0"
+      }
+    }
+  },
   "sourcesLicence": "Decks: CC BY-SA 4.0",
   "@sourcesLicence": {
     "description": "The decks' content licence, on the Sources screen and under Settings' Sources row when no deck names a source. CC BY-SA 4.0 is a licence name; keep it as is."
@@ -2938,7 +2982,7 @@
   "@sourcesLicenceLine": {
     "description": "The line under the licence row on the Sources screen: what the deck licence allows. Licence names stay as they are."
   },
-  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
+  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} openmoji{OpenMoji} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
   "@sourcesCreditName": {
     "description": "A project whose data the decks use, credited on the Sources screen. Project names stay as they are.",
     "placeholders": {
@@ -2948,7 +2992,7 @@
       }
     }
   },
-  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings of words, each under its own licence and with its speaker's credit} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
+  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings and pictures of words, each under its own licence and with its credit} openmoji{Drawings of what words mean, under CC BY-SA 4.0} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
   "@sourcesCreditLine": {
     "description": "The line under a credited project on the Sources screen: what the decks take from it, and its licence. Licence names stay as they are.",
     "placeholders": {
@@ -3158,6 +3202,212 @@
   "drillTeachTitle": "New",
   "@drillTeachTitle": {
     "description": "A lesson teaching a word (ADR-0024): above the word, its reading and meaning, before it is asked."
+  },
+  "setTitle": "The set",
+  "@setTitle": {
+    "description": "A set card (#515): its label at the top of the card, where a new word's card says New. A set card shows a closed group, such as the three words for 'you', before its words are drilled."
+  },
+  "setPartTitle": "The set · {part} of {count}",
+  "@setPartTitle": {
+    "description": "A part of a set card too big for one card (#515): its label, which part it is and how many there are.",
+    "placeholders": {
+      "part": {
+        "type": "int",
+        "example": "1"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "setKnown": "Known",
+  "@setKnown": {
+    "description": "A member of a set the learner was taught before (#515), beside a check mark."
+  },
+  "setNew": "New",
+  "@setNew": {
+    "description": "A member of a set the lesson teaches now (#515), on a chip."
+  },
+  "setRowKnown": "{word}, {meaning}, known. Play",
+  "@setRowKnown": {
+    "description": "A screen reader's label for a known member's row on a set card (#515); tapping the row plays the word.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "तुम (tum)"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "you (familiar)"
+      }
+    }
+  },
+  "setRowNotLearnt": "{word}, {meaning}, not learnt yet. Play",
+  "@setRowNotLearnt": {
+    "description": "Screen reader label of a set member in a Full list of every verb of the course that the learner has not learnt yet, #515. {word} is the word with its reading, {meaning} its meaning.",
+    "placeholders": {
+      "word": { "type": "String" },
+      "meaning": { "type": "String" }
+    }
+  },
+  "setNotLearnt": "Not learnt yet",
+  "@setNotLearnt": {
+    "description": "Mark on a set member in a Full list of every verb of the course that the learner has not learnt yet, #515."
+  },
+  "setSheetLearnt": "{count, plural, =1{1 form · {learnt} learnt} other{{count} forms · {learnt} learnt}}",
+  "@setSheetLearnt": {
+    "description": "Under the title of a Full list of one form across every verb of the course, #515: how many forms, and how many of them the learner has learnt.",
+    "placeholders": {
+      "count": { "type": "int" },
+      "learnt": { "type": "int" }
+    }
+  },
+  "setRowNew": "{word}, {meaning}, new. Play",
+  "@setRowNew": {
+    "description": "A screen reader's label for a new member's row on a set card (#515); tapping the row plays the word.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "आप (āp)"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "you (respectful)"
+      }
+    }
+  },
+  "setFullList": "Full list",
+  "@setFullList": {
+    "description": "The button that opens the whole set (#515), on a split set's card and on an answered question about a member of one."
+  },
+  "setFullListLabel": "Full list: all {count} of {name}",
+  "@setFullListLabel": {
+    "description": "A screen reader's label for the Full list button (#515).",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      },
+      "name": {
+        "type": "String",
+        "example": "తాగు (tāgu), drink: every person"
+      }
+    }
+  },
+  "setNextSet": "Next: {name}.",
+  "@setNextSet": {
+    "description": "Under a set card's last part, when another set follows it (#515): the next set's name.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "అతను (atanu), he: every verb"
+      }
+    }
+  },
+  "setNextWords": "{count, plural, =1{Next: {words}, on its own.} other{Next: {words}, one at a time.}}",
+  "@setNextWords": {
+    "description": "Under a set card (#515): the new words the lesson teaches next, each with its own New card and question.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      },
+      "words": {
+        "type": "String",
+        "example": "आप (āp) and तू (tū)"
+      }
+    }
+  },
+  "setNextForms": "{count, plural, =1{Next: a question on the new form, {words}.} other{Next: a question on each new form, {words}.}}",
+  "@setNextForms": {
+    "description": "Under a set card of verb forms (#515): the new forms the lesson asks next, straight to their question.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      },
+      "words": {
+        "type": "String",
+        "example": "తాగుతాడు (tāgutāḍu) and తాగుతుంది (tāgutundi)"
+      }
+    }
+  },
+  "setKnownWords": "You know {words} already.",
+  "@setKnownWords": {
+    "description": "After a set card's Next line (#515): the members the learner knows, which the lesson does not ask.",
+    "placeholders": {
+      "words": {
+        "type": "String",
+        "example": "तुम (tum)"
+      }
+    }
+  },
+  "setListPair": "{first} and {second}",
+  "@setListPair": {
+    "description": "Joins the last two words of a list in a set card's line (#515): 'आप (āp) and तू (tū)'.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "आप (āp)"
+      },
+      "second": {
+        "type": "String",
+        "example": "तू (tū)"
+      }
+    }
+  },
+  "setListMore": "{list}, {item}",
+  "@setListMore": {
+    "description": "Joins one more word to the front of a list in a set card's line (#515): 'A, B' before ' and C'.",
+    "placeholders": {
+      "list": {
+        "type": "String",
+        "example": "आप (āp)"
+      },
+      "item": {
+        "type": "String",
+        "example": "तुम (tum)"
+      }
+    }
+  },
+  "setSheetForms": "{count, plural, =1{1 form · {fresh} new} other{{count} forms · {fresh} new}}",
+  "@setSheetForms": {
+    "description": "Under the Full list sheet's title, for a set of verb forms (#515): how many forms, and how many are new.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      },
+      "fresh": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "setSheetWords": "{count, plural, =1{1 word · {fresh} new} other{{count} words · {fresh} new}}",
+  "@setSheetWords": {
+    "description": "Under the Full list sheet's title, for a set of words (#515): how many words, and how many are new.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      },
+      "fresh": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "setSheetSets": "{count, plural, =1{1 set} other{{count} sets}}",
+  "@setSheetSets": {
+    "description": "The Full list sheet's title when the form is in more than one set (#515): it lists them all, one after the other.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
   },
   "drillChooseMeaning": "What does it mean?",
   "@drillChooseMeaning": {

@@ -22,6 +22,7 @@ import 'match_drill.dart';
 import 'rearrange_drill.dart';
 import 'reading_drill.dart';
 import 'recognition_drill.dart';
+import 'set_drill.dart';
 import 'speaking_drill.dart';
 import 'teach_drill.dart';
 import 'typed_drill.dart';
@@ -299,6 +300,12 @@ class _DrillPageState extends State<DrillPage> {
           ),
           // A lesson teaching a word, and the questions asked another way
           // than the mode's own (ADR-0024).
+          // A set card, or one part of it (#515).
+          _ when session.ask == Ask.showSet => SetDrill(
+            key: ValueKey<int>(session.position),
+            session: session,
+            onClose: _close,
+          ),
           _ when session.ask == Ask.teach => TeachDrill(
             key: ValueKey<int>(session.position),
             session: session,

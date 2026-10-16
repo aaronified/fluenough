@@ -47,7 +47,7 @@ class CardTopLine extends StatelessWidget {
         ),
         if (state.hasVoice(language))
           SpeakerIcon(
-            onPlay: () => state.speak(card.target, language),
+            onPlay: () => state.speakCard(card, language),
             label: l10n.drillPlay,
           ),
         ReportButton(detail: report),

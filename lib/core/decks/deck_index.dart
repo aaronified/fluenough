@@ -30,6 +30,15 @@ final RegExp _filePath = RegExp(
   r'^decks/[a-z]{2,3}/(?:[a-z]{2,3}/)?[a-z0-9]+(?:-[a-z0-9]+)*\.yaml$',
 );
 
+/// What a recording's or an image's path must look like (#518, #523): in
+/// its language's `audio` or `images` folder, named by its card's id.
+final RegExp mediaPathPattern = RegExp(
+  r'^decks/([a-z]{2,3})/(?:audio/\1-[0-9]{4,}\.opus|images/\1-[0-9]{4,}\.webp)$',
+);
+
+/// Whether [path] is a deck file's path, as the index may list it.
+bool isDeckFilePath(String path) => _filePath.hasMatch(path);
+
 final RegExp _hex64 = RegExp(r'^[0-9a-f]{64}$');
 
 /// One file of a language in the index (`decks/index.json`).
@@ -66,7 +75,8 @@ class IndexFile {
 
   final int schema;
 
-  /// The file's `kind`: `vocab`, `grammar`, `layer`, `path`, `facts`…
+  /// The file's `kind`: `vocab`, `grammar`, `layer`, `path`, `facts`…, or
+  /// for a card's recording or image, `audio` or `image` ([isMedia]).
   final String kind;
 
   /// The native language a deck or layer teaches from; null for a core and
@@ -91,17 +101,23 @@ class IndexFile {
   /// Whether it is one of the language's own files, not a deck.
   bool get isLanguageFile => languageFileKinds.contains(kind);
 
+  /// Whether it is a card's own recording or image (#518, #523), not a
+  /// deck: it downloads after the decks, and is never read as one.
+  bool get isMedia => mediaPathPattern.hasMatch(path);
+
   /// Whether this app can read it.
   bool get readable => schema <= supportedDeckSchema;
 
-  static IndexFile _parse(Object? json) {
+  static IndexFile _parse(Object? json, {bool media = false}) {
     if (json is! Map) throw const FormatException('a file is not an object');
     final path = json['path'];
     final size = json['size'];
     final sha = json['sha256'];
     final schema = json['schema'];
     final kind = json['kind'];
-    if (path is! String || !_filePath.hasMatch(path)) {
+    if (path is! String ||
+        !(mediaPathPattern.hasMatch(path) ||
+            !media && _filePath.hasMatch(path))) {
       throw FormatException('a file has a bad path: $path');
     }
     if (size is! int || size < 0) {
@@ -221,6 +237,7 @@ class IndexLanguage {
     this.path = const <String>[],
     this.units = const <IndexUnit>[],
     this.files = const <IndexFile>[],
+    this.media = const <IndexFile>[],
   });
 
   final String code;
@@ -249,6 +266,10 @@ class IndexLanguage {
   final List<IndexUnit> units;
   final List<IndexFile> files;
 
+  /// Its cards' recordings and images (#518, #523), listed apart from
+  /// [files] so that an app too old to read them passes them by.
+  final List<IndexFile> media;
+
   /// The native languages a learner who speaks [spoken], best known first,
   /// is taught this language from: those of [spoken] it has decks for, or
   /// where it has none, English, or failing that every one it has
@@ -270,8 +291,9 @@ class IndexLanguage {
       natives.isNotEmpty && !natives.any((n) => spoken.contains(n.code));
 
   /// The files a learner from [natives] downloads: the language's own
-  /// files, its cores, and its decks and layers for [natives]. Files of a
-  /// schema this app cannot read are left out ([unreadable]).
+  /// files, its cores, and its decks and layers for [natives], then its
+  /// cards' recordings and images ([media]). Files of a schema this app
+  /// cannot read are left out ([unreadable]).
   List<IndexFile> filesFor(Iterable<String> natives) {
     final wanted = natives.toSet();
     return <IndexFile>[
@@ -279,6 +301,7 @@ class IndexLanguage {
         if (file.readable &&
             (file.native == null || wanted.contains(file.native)))
           file,
+      ...media,
     ];
   }
 
@@ -341,7 +364,11 @@ class IndexLanguage {
     final files = <IndexFile>[
       for (final file in _list(json['files'])) IndexFile._parse(file),
     ];
-    for (final file in files) {
+    final media = <IndexFile>[
+      for (final file in _list(json['media']))
+        IndexFile._parse(file, media: true),
+    ];
+    for (final file in <IndexFile>[...files, ...media]) {
       if (file.language != code) {
         throw FormatException('${file.path} is not in decks/$code/');
       }
@@ -366,12 +393,13 @@ class IndexLanguage {
       natives: natives,
       size: json['size'] is int
           ? json['size'] as int
-          : files.fold(0, (sum, f) => sum + f.size),
+          : <IndexFile>[...files, ...media].fold(0, (sum, f) => sum + f.size),
       path: _strings(json['path']),
       units: <IndexUnit>[
         for (final unit in _list(json['units'])) IndexUnit._parse(unit),
       ],
       files: files,
+      media: media,
     );
   }
 }
@@ -396,10 +424,11 @@ class DeckIndex {
     return null;
   }
 
-  /// Every file of every language, by path.
+  /// Every file of every language, by path, its recordings and images too.
   Map<String, IndexFile> get filesByPath => <String, IndexFile>{
     for (final language in languages)
-      for (final file in language.files) file.path: file,
+      for (final file in <IndexFile>[...language.files, ...language.media])
+        file.path: file,
   };
 
   /// Reads [text], the index as GitHub serves it.
