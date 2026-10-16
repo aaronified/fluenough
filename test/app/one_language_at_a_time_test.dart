@@ -100,9 +100,7 @@ void main() {
   );
 
   testWidgets('after one language, the summary says it is done and offers '
-      'the next; starting it switches the language bar (#528)', (
-    tester,
-  ) async {
+      'the next; starting it switches the language bar (#528)', (tester) async {
     usePhone(tester);
     final state = await withReviews(const <String>['bn', 'hi']);
     final now = state.now();
