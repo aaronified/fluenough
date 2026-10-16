@@ -1,12 +1,15 @@
-/// The one language the whole app shows (#461): Today, Decks and Progress
-/// show that language's lessons, reviews, decks and numbers, or every
-/// language's together under "All languages". Settings keeps the choice
+/// The one language the whole app shows (#461), chosen in the language bar
+/// at the top of Today, Decks and Progress (#528): those show that
+/// language's lessons, reviews, decks and numbers. Only Progress can count
+/// every language together, with its All button
+/// (`SettingsNotifier.progressAll`). Settings keeps the choice
 /// (`SettingsNotifier.languageChoice`); `AppState.shownLanguage` reads it.
 ///
 /// Plain Dart, with no Flutter, so that it is tested on its own.
 abstract final class LanguageChoice {
-  /// What Settings stores for "All languages" chosen on purpose. Not a
-  /// language code, which is two or three letters: `all` is one.
+  /// What Settings stored for "All languages" chosen on purpose, before
+  /// All became Progress's alone (#528). Not a language code, which is two
+  /// or three letters: `all` is one. Still read, as the first language.
   static const String all = '*';
 
   /// The languages the menu offers, by code: those of [available] the
@@ -27,19 +30,29 @@ abstract final class LanguageChoice {
     ];
   }
 
-  /// The language shown, by code, or null for every language.
+  /// The language shown, by code, or null only when [options] is empty.
   ///
   /// [chosen] is as Settings stores it: null before the learner has chosen,
-  /// [all] for All, else a code. Before they choose, and when what they
-  /// chose is no longer among [options], it is All, unless there is only
-  /// one language to show: then that one, which shows the same.
+  /// [all] from before #528, else a code. Before they choose, and when
+  /// what they chose is no longer among [options], it is the first of
+  /// [options]: the bar always shows one language (#528).
   static String? shown(String? chosen, List<String> options) {
-    if (chosen == all) return null;
     if (chosen != null && options.contains(chosen)) return chosen;
-    return options.length == 1 ? options.single : null;
+    return options.firstOrNull;
   }
 
-  /// Whether [code]'s content shows while [shown] is the language shown.
+  /// The language [step] places after (1) or before (-1) [shown] among
+  /// [options], as a swipe on the language bar moves (#528); null at
+  /// either end, where it does not wrap round.
+  static String? step(String? shown, List<String> options, int step) {
+    final i = shown == null ? -1 : options.indexOf(shown);
+    if (i < 0) return null;
+    final j = i + step;
+    return j < 0 || j >= options.length ? null : options[j];
+  }
+
+  /// Whether [code]'s content shows while [shown] is the language shown,
+  /// null for every language.
   static bool shows(String? shown, String code) =>
       shown == null || shown == code;
 

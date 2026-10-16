@@ -53,10 +53,9 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     id: 'decks-another-course',
     section: GallerySection.learn,
     label: 'Decks: another course', // ui-literal-ok: debug-only gallery
-    note: 'Course chips switch the path', // ui-literal-ok: debug-only gallery
-    builder: (_) =>
-        const DecksPage(planOf: PathFixtures.planOf, initialLanguage: 'hi'),
-    state: PathFixtures.state,
+    note: 'The language bar switches the path', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DecksPage(planOf: PathFixtures.planOf),
+    state: (app) => PathFixtures.state(app)..showLanguage('hi'),
   ),
   GalleryEntry(
     id: 'decks-search',

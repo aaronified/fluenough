@@ -57,6 +57,7 @@ class SettingsNotifier extends ChangeNotifier {
     Set<String> speechOnline = const <String>{},
     Set<String> noAlphabet = const <String>{},
     this._languageChoice,
+    this._progressAll = false,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
@@ -101,6 +102,7 @@ class SettingsNotifier extends ChangeNotifier {
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   String? _languageChoice;
+  bool _progressAll;
   Set<String> _placedDecks;
   bool _learningChosen;
   Set<String> _speechOnline;
@@ -281,6 +283,13 @@ class SettingsNotifier extends ChangeNotifier {
     if (value != null && !LanguageChoice.isValid(value)) return;
     _set(_languageChoice, value, (v) => _languageChoice = v);
   }
+
+  /// Whether Progress counts every language's reviews together, its All
+  /// button in the language bar (#528). Today and Decks always show the
+  /// [languageChoice]'s language; All is Progress's alone.
+  bool get progressAll => _progressAll;
+  set progressAll(bool value) =>
+      _set(_progressAll, value, (v) => _progressAll = v);
 
   /// The decks placement found the learner already knows (#117,
   /// ADR-0013), by id. A placed deck reads Done and is not taught by Today,
@@ -665,6 +674,7 @@ class SettingsNotifier extends ChangeNotifier {
     // Not chosen yet is empty, which an older version never wrote and
     // reads as All languages.
     'language_choice': _languageChoice ?? '',
+    'progress_all': '$_progressAll',
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
     'speech_online': (_speechOnline.toList()..sort()).join(','),
@@ -814,6 +824,7 @@ class SettingsNotifier extends ChangeNotifier {
           : v;
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
+    if (pick('progress_all', flag) case final v?) progressAll = v;
     if (pick('paused_until', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         final skill = Skill.values.asNameMap()[key];
