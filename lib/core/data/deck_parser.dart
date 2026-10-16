@@ -276,7 +276,15 @@ const _coreRefFields = {
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
 };
-const _coreExampleFields = {'target', 'reading', 'ipa', 'bases', 'source'};
+const _coreExampleFields = {
+  'target',
+  'reading',
+  'ipa',
+  'bases',
+  'source',
+  'language',
+  'sounds',
+};
 const _layerEntryFields = {
   'native',
   // A set card's explanation (DECK-FORMAT.md, Set cards).
@@ -365,10 +373,14 @@ const _exampleFields = {
   'ipa',
   'bases',
   'source',
+  'language',
+  'sounds',
 };
 const _authorFields = {'name', 'url'};
 
 /// Deck and card ids: lowercase letters and digits, joined by single hyphens.
+final _languageCodePattern = RegExp(r'^[a-z]{2,3}(?:-[A-Za-z0-9]+)*$');
+
 final _idPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
 
 /// A language code keying a reading question's text, such as `en`.
@@ -655,6 +667,7 @@ class _Reader {
       tts: fields.optionalString('tts', allowEmpty: false),
       rtl: fields.optionalBool('rtl') ?? false,
       icon: fields.optionalString('icon', allowEmpty: false),
+      typed: fields.optionalBool('typed') ?? true,
     );
   }
 
@@ -856,8 +869,26 @@ class _Reader {
       ipa: fields.optionalString('ipa', allowEmpty: false),
       bases: bases(fields.node('bases'), '$path.bases', core: false),
       source: fields.optionalString('source', allowEmpty: false),
+      language: exampleLanguage(fields, path),
+      sounds: exampleSounds(fields, path),
     );
   }
+
+  /// An example's `language`: a language code, such as `en`.
+  String? exampleLanguage(_Fields fields, String path) {
+    final language = fields.optionalString('language', allowEmpty: false);
+    if (language != null && !_languageCodePattern.hasMatch(language)) {
+      fail(
+        fields.node('language')!,
+        '$path.language: "$language" is not a language code',
+      );
+    }
+    return language;
+  }
+
+  /// An example's `sounds`: a boolean, true when left out.
+  bool exampleSounds(_Fields fields, String path) =>
+      fields.optionalBool('sounds') ?? true;
 
   /// Empty, meaning every applicable mode, when the card names none.
   Set<DrillMode> modes(YamlNode? node, String path) {
@@ -1736,6 +1767,8 @@ class _Reader {
           ipa: fields.optionalString('ipa', allowEmpty: false),
           bases: bases(fields.node('bases'), '$where.bases', core: true),
           source: fields.optionalString('source', allowEmpty: false),
+          language: exampleLanguage(fields, where),
+          sounds: exampleSounds(fields, where),
         ),
       );
     }

@@ -134,12 +134,18 @@ const int matchSize = 4;
 ///   is, a new pair starting typed where [recallsFirst] says so. A pattern
 ///   deck's grammar cell is typed, as before.
 ///
+/// - **Production** of a card whose language is not typed ([typed] says
+///   false, as for the IPA, DECK-FORMAT.md, `typed`) is chosen: the word
+///   among others ([Ask.chooseWord]), where [canChoose] finds enough to
+///   choose from.
+///
 /// Reading questions and every other mode are asked their own way.
 List<SessionItem> reviewAsks(
   List<SessionItem> items, {
   required bool Function(SessionItem item) canChoose,
   bool Function(SessionItem item)? hearsForm,
   bool Function(SessionItem item)? recallsFirst,
+  bool Function(SessionItem item)? typed,
 }) {
   final recognised = <int>[
     for (final (i, item) in items.indexed)
@@ -169,6 +175,11 @@ List<SessionItem> reviewAsks(
   for (final (i, item) in items.indexed) {
     if (item.mode == DrillMode.production && item.card.rearranges) {
       asked[i] = item.askedAs(Ask.rearrange);
+    } else if (item.mode == DrillMode.production &&
+        item.card is! QuestionCard &&
+        !(typed?.call(item) ?? true) &&
+        canChoose(item.askedAs(Ask.chooseWord))) {
+      asked[i] = item.askedAs(Ask.chooseWord);
     }
     if (item.mode == DrillMode.listening &&
         item.card is! QuestionCard &&
