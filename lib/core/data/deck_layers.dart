@@ -188,12 +188,19 @@ class CoreExample {
     this.ipa,
     this.bases = const <CardBase>[],
     this.source,
+    this.language,
+    this.sounds = true,
   });
 
   final String target;
   final String? reading;
   final String? ipa;
   final List<CardBase> bases;
+
+  /// The language of the example when it is not the card's, and whether the
+  /// letter has the card's sound in it (DECK-FORMAT.md, Examples).
+  final String? language;
+  final bool sounds;
 
   /// Where the example was taken from, named per item (#511).
   final String? source;
@@ -938,6 +945,8 @@ class _Merge {
             reading: example.reading,
             ipa: example.ipa,
             source: example.source,
+            language: example.language,
+            sounds: example.sounds,
             bases: bases(
               example.bases,
               translation.bases,

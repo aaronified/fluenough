@@ -9,10 +9,21 @@ class CardExample {
     this.ipa,
     this.bases = const <CardBase>[],
     this.source,
+    this.language,
+    this.sounds = true,
   });
 
   final String target;
   final String native;
+
+  /// The language the example is in, when it is not the card's: an IPA card
+  /// takes its examples from several (ADR-0041). Null means the card's own.
+  final String? language;
+
+  /// Whether the letter the card is about is said with the card's sound in
+  /// this example (true), or is said as something else (false): the IPA
+  /// course's "sounds / does not sound" pair (ADR-0041).
+  final bool sounds;
 
   /// [target] romanised, for an example in a script that needs it.
   final String? reading;
