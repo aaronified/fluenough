@@ -189,9 +189,6 @@ void main() {
       final l10n = l10nOf(tester);
       final bengali = find.text(l10n.spokenOption('Bengali', 'বাংলা'));
       expect(quotedIn(tester, bengali), <String, String>{'বাংলা': 'bn'});
-      final node = tester.getSemantics(bengali);
-      expect(node, isSemantics(isChecked: true));
-      expect(node.label, contains(l10n.spokenRankSemantics(1, 2)));
       semantics.dispose();
     });
 
@@ -914,7 +911,6 @@ void main() {
             addTearDown(settings.dispose);
             await tester.pumpWidget(FluenoughApp(state: state));
             await tester.pumpAndSettle();
-            final l10n = l10nOf(tester);
             await expectLater(tester, meetsGuideline(textContrastGuideline));
             await tester.tap(find.byType(FilledButton));
             await tester.pumpAndSettle();
@@ -927,10 +923,17 @@ void main() {
             await expectLater(tester, meetsGuideline(textContrastGuideline));
             await tester.tap(find.byType(FilledButton));
             await tester.pumpAndSettle();
-            await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
-            await tester.tap(
-              find.text(l10n.spokenOption('English', 'English')),
+            await knowLanguage(tester, 'Bengali');
+            await tester.enterText(
+              find.byKey(const ValueKey<String>('known-search')),
+              '',
             );
+            await tester.pumpAndSettle();
+            // The sheet, open (#490), then the list with answers.
+            await tester.tap(find.byKey(const ValueKey<String>('pick-en')));
+            await tester.pumpAndSettle();
+            await expectLater(tester, meetsGuideline(textContrastGuideline));
+            await tester.tap(find.byKey(const ValueKey<String>('know-read')));
             await tester.pumpAndSettle();
             await expectLater(tester, meetsGuideline(textContrastGuideline));
             semantics.dispose();

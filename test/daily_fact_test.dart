@@ -169,4 +169,31 @@ void main() {
     expect(settings.factShownAt('hi', 'hi-fact-001'), isNotNull);
     settings.dispose();
   });
+
+  testWidgets('a learner who knows only a language with no facts gets no '
+      'fact card, not an empty one (#490)', (tester) async {
+    usePhone(tester);
+    final settings = SettingsNotifier(spokenLanguages: const ['ta']);
+    final state = AppState.test(
+      decks: MemoryDeckSource(const <String, String>{
+        'decks/hi/hi-en-core.yaml': deck,
+        'decks/hi/hi-facts.yaml': facts,
+      }),
+      settings: settings,
+    );
+    await pumpScreen(tester, const TodayPage(), state: state);
+    final l10n = l10nOf(tester);
+    expect(
+      factForToday(
+        const <Fact>[],
+        spoken: ['ta'],
+        shownAt: {},
+        now: DateTime(2026),
+      ),
+      isNull,
+    );
+    expect(state.todaysFacts(), isEmpty);
+    expect(find.text(l10n.todayFactFor('Hindi')), findsNothing);
+    settings.dispose();
+  });
 }
