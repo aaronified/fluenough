@@ -59,7 +59,12 @@ Proposed is listed in their decisions tables.
   choice as its bare glyph at 64% alpha (4.5:1 or more everywhere); the bug
   report button at the end. A sideways swipe on the bar changes the
   language, and a tap opens the menu of every language with its chip
-  (owner, 2026-10-16). Drawn with 1, 2, 4 and 6 languages, before, during
+  (owner, 2026-10-16). All is a button on Progress only, fixed just
+  before the bug button, and its slot is kept empty on Today and Decks so
+  the bar never shifts between the three screens (owner, 2026-10-16:
+  "Only on progress we need an all button.fix it to the right (near
+  debug) so that the top bar doesn't shift when changing between the 3
+  screens."). Drawn with 1, 2, 4 and 6 languages, before, during
   and after a swipe, the menu, Today, Decks (with the proposals' search
   bar, unchanged) and Progress, light, dark and pure black, 1.4x and
   TalkBack. It supersedes `language-swipe.html` and
