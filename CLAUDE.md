@@ -38,9 +38,12 @@ wherever the table above allows it.
   (or to `decks-next`). Before opening it the checks pass: `flutter analyze`
   clean, the full `flutter test` (read its "All tests passed" line, never a
   truncated tail), the deck validator and the tools' tests, and one review
-  finds nothing blocking. The owner approves it in review; then merge it
-  once CI is green (owner, 2026-10-16, on #529: "I have approved it in
-  review. So you should be able to merge").
+  finds nothing blocking. The owner approves it, then merge it once CI is
+  green (owner, 2026-10-16, on #529: "I have approved it in review. So you
+  should be able to merge"). This session's pull requests are authored as
+  the owner, who cannot approve their own on GitHub, so the owner approves
+  them in chat (owner, 2026-10-16: "Say so in chat"); a contributor's pull
+  request is approved on GitHub.
 - **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
   to a branch frequently"). Long work is committed in small steps and pushed
   to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
