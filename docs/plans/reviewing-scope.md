@@ -93,8 +93,8 @@ medium, because moving cards between deck files is the least known part.
 
 ## Earlier notes on reviewer mode (owner, 2026-10-09)
 
-These come from the reviewer-mode mockup drafts. The drafts were deleted on
-2026-10-12 and stay in git history at 19d200b:
+These come from the reviewer-mode mockup drafts (`docs/mockups/drafts/`;
+their notes file is folded in here):
 
 `reviewer-mode-screens.js`: half-done rework of `../reviewer-mode.html`
 (owner, 2026-10-09): the deck screen becomes the owner's Unit design

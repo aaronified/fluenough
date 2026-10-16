@@ -11,7 +11,7 @@ import 'deck_content.dart';
 import 'path_model.dart';
 import 'path_parts.dart';
 
-/// A course's path, winding down the screen (docs/plans/path-redesign.md):
+/// A course's path, winding down the screen (the owner's design):
 /// each unit a slightly rounded rectangle, playfully off-centre, joined by a
 /// line that is solid up to the unit the learner is on and dotted after it;
 /// milestones and level achievements between them.

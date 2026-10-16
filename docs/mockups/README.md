@@ -79,8 +79,8 @@ Bring these up to the current app and plans, in the style of
 contrast self-check, and Hindi or Bengali examples. Until then, they are
 history, not spec.
 
-- `reviewer-mode.html` and `drafts/`: reviewer mode. It needs the owner's
-  2026-10-09 notes (`drafts/README.md`, also in
+- `reviewer-mode.html` and `drafts/reviewer-mode-screens.js`: reviewer
+  mode. It needs the owner's 2026-10-09 notes (in
   `docs/plans/reviewing-scope.md`), plus #476, #477 and #471.
 
 Order: after the current mockups (#486 and #227) and the Settings mockup.
