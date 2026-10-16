@@ -43,6 +43,10 @@ class LanguageInfo {
   /// choosing (ADR-0041).
   final bool typed;
 
+  /// Whether this is the IPA, a notation taught like a language
+  /// (ADR-0041): its cards' examples are in other languages.
+  bool get isIpa => script == 'ipa';
+
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks
   /// for languages with major regional variation should set it explicitly.

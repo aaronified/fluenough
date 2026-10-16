@@ -453,6 +453,14 @@ class _CardRow extends StatelessWidget {
                     textAlign: TextAlign.start,
                   ),
                   _Muted(example.native),
+                  // The IPA course's pair: which example has the card's
+                  // sound and which does not (ADR-0041).
+                  if (language.isIpa)
+                    _Muted(
+                      example.sounds
+                          ? l10n.ipaExampleSounds
+                          : l10n.ipaExampleDoesNot,
+                    ),
                 ],
               ),
             ),

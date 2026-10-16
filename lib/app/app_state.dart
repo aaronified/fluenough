@@ -1063,10 +1063,35 @@ class AppState extends ChangeNotifier {
   bool canSpeak(LanguageInfo language) =>
       settings.soundOn && hasVoice(language);
 
+  /// Every language the app can say a word in: those the decks teach and
+  /// those they teach from, one per code, the IPA, which has no voice, left
+  /// out. An IPA card's examples are said in these (ADR-0041).
+  List<LanguageInfo> get voiceLanguages {
+    final found = <String, LanguageInfo>{};
+    for (final entry in decks) {
+      if (entry.language.script != 'ipa') {
+        found.putIfAbsent(entry.language.code, () => entry.language);
+      }
+    }
+    for (final entry in decks) {
+      found.putIfAbsent(entry.deck.native.code, () => entry.deck.native);
+    }
+    return List<LanguageInfo>.unmodifiable(found.values);
+  }
+
+  /// The language with [code], as the decks name it, or null when none does:
+  /// what an example in that language is said in.
+  LanguageInfo? languageByCode(String code) {
+    for (final language in voiceLanguages) {
+      if (language.code == code) return language;
+    }
+    return null;
+  }
+
   /// Asks the engine about every catalog language again, for when the
   /// learner has been off to install a voice.
   Future<void> refreshVoices() async {
-    for (final language in languages) {
+    for (final language in voiceLanguages) {
       final tag = language.ttsTag;
       try {
         _voices[tag] = await _tts.isLanguageAvailable(tag);
