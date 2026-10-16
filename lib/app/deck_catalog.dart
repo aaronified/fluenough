@@ -240,6 +240,9 @@ class Catalog {
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
+  /// Whether a deck of the IPA course is in it.
+  late final bool hasIpa = decks.any((e) => e.language.isIpa);
+
   /// This catalog as the learner has it: the decks of the IPA course (a
   /// language with `script: ipa`) cut to the cards in [scope] when they
   /// learn [learned], and one left with none gone (ADR-0041). The same
