@@ -301,9 +301,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
     );
   }
 
-  /// The prompt, the slot and, once answered, the form's IPA and the table; with
-  /// [readingFirst], for a language learned without its alphabet, the
-  /// readings first.
+  /// The prompt, its word's IPA, the slot and, once answered, the form's
+  /// IPA and the table; with [readingFirst], for a language learned without
+  /// its alphabet, the readings first.
   List<Widget> _card(
     BuildContext context,
     GrammarCell cell,
@@ -333,6 +333,12 @@ class _GrammarDrillState extends State<GrammarDrill> {
           fontSize: promptSize,
           fontWeight: FontWeight.w600,
         ),
+      // The word asked about, as it is said: not the form, which is the
+      // answer. Left out while typing, to keep the field in view.
+      if (!typing)
+        if (ipaToShow(context, cell.entry.ipa, target: cell.entry.lemma)
+            case final ipa?)
+          IpaLine(ipa, fontSize: 16),
       Padding(
         padding: EdgeInsetsDirectional.only(top: typing ? 0 : 8),
         child: Wrap(
