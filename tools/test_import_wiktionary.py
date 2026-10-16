@@ -259,6 +259,89 @@ class Recordings(Case):
         self.assertEqual(network.asked, [])
 
 
+def wikidata_reply(name: str) -> bytes:
+    return json.dumps({"claims": {"P18": [{"mainsnak": {"datavalue": {
+        "value": name}}}]}}).encode()
+
+
+class Images(Case):
+    """A card's own image (#523): Commons via Wikidata or the Wiktionary page,
+    then OpenMoji, for a card with a picture."""
+
+    def run_images(self, network: Network, *extra: str) -> tuple[int, str, str]:
+        with mock.patch.object(iw, "http_get", network), \
+                mock.patch.object(iw, "convert", fake_convert), \
+                mock.patch.object(iw.shutil, "which", return_value="/usr/bin/ffmpeg"):
+            return self.run_tool("--images", *extra)
+
+    def test_commons_through_wikidata_first(self) -> None:
+        network = Network({
+            "wikidata.org": wikidata_reply("House.jpg"),
+            "commons.wikimedia.org/w/api.php": commons_reply(
+                "House.jpg", artist="<span>A. Photographer</span>"),
+            "upload.wikimedia.org/thumb/": b"PNG"})
+        code, out, _ = self.run_images(network)
+        self.assertEqual(code, 0)
+        house = self.card(CORE, "zz-9001")
+        self.assertEqual(house["image"], "decks/zz/images/zz-9001.webp")
+        self.assertEqual(house["image_credit"], {
+            "source": "https://commons.wikimedia.org/wiki/File:House.jpg",
+            "license": "CC-BY-SA-4.0", "credit": "A. Photographer"})
+        self.assertIn("entity=Q3947", network.asked[0])
+        self.assertTrue(network.asked[-1].startswith("https://upload.wikimedia.org/thumb/"))
+        self.assertEqual((self.decks / "zz/images/zz-9001.webp").read_bytes(), b"converted")
+        self.assertIn("Images by source: wikidata 1.", out)
+        self.assertEqual(vd.validate(self.decks / CORE).errors, [])
+
+    def test_then_the_wiktionary_page(self) -> None:
+        sections = json.dumps({"parse": {"sections": [
+            {"level": "2", "line": "Nepali", "index": "1"},
+            {"level": "2", "line": "Testlang", "index": "4"}]}}).encode()
+        images = json.dumps({"parse": {"images": ["Wiktionary-logo.svg",
+                                                  "A house.jpg"]}}).encode()
+        network = Network({
+            "wikidata.org": b"{}",
+            "prop=sections": sections,
+            "prop=images": images,
+            "commons.wikimedia.org/w/api.php": commons_reply("A house.jpg"),
+            "upload.wikimedia.org/thumb/": b"PNG"})
+        _, out, _ = self.run_images(network)
+        self.assertEqual(self.card(CORE, "zz-9001")["image_credit"]["source"],
+                         "https://commons.wikimedia.org/wiki/File:A house.jpg")
+        self.assertTrue(any("section=4" in url for url in network.asked))
+        self.assertIn("Images by source: wiktionary 1.", out)
+
+    def test_then_openmoji(self) -> None:
+        network = Network({
+            "wikidata.org": wikidata_reply("House.jpg"),
+            "commons.wikimedia.org/w/api.php": commons_reply("House.jpg", licence="GFDL"),
+            "prop=sections": json.dumps({"parse": {"sections": []}}).encode(),
+            "openmoji@15.1.0/color/618x618/1F3E0.png": b"PNG"})
+        _, out, _ = self.run_images(network)
+        self.assertEqual(self.card(CORE, "zz-9001")["image_credit"], {
+            "source": "https://openmoji.org/library/emoji-1F3E0/",
+            "license": "CC-BY-SA-4.0", "credit": "OpenMoji"})
+        self.assertIn("Images by source: openmoji 1.", out)
+
+    def test_none_and_the_card_keeps_its_noto_picture(self) -> None:
+        _, out, _ = self.run_images(Network({}))
+        house = self.card(CORE, "zz-9001")
+        self.assertNotIn("image", house)
+        self.assertEqual(house["picture"], "🏠")
+        self.assertIn("Images not imported (the card keeps its Noto picture):", out)
+        self.assertIn("- zz-9001 घर: ", out)
+
+    def test_only_for_a_card_with_a_picture(self) -> None:
+        network = Network({"openmoji": b"PNG"})
+        self.run_images(network)
+        for cid in ("zz-9002", "zz-9003", "zz-9004", "zz-9005", "zz-9007"):
+            self.assertNotIn("image", self.card(CORE, cid))
+
+    def test_the_emoji_names(self) -> None:
+        self.assertEqual(iw.emoji_hex("🏠"), ["1F3E0"])
+        self.assertEqual(iw.emoji_hex("\u2764\ufe0f"), ["2764", "2764-FE0F"])
+
+
 class Licences(unittest.TestCase):
 
     def test_licence_ids(self) -> None:
