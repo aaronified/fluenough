@@ -13,8 +13,16 @@ When work is handed to subagents or workflows, pick the model by the job:
 | Docs, reviews and audits | Sonnet |
 | Writing decks | Sonnet |
 | Fan-outs and large reads | Haiku |
-| Fixing and coding | Opus |
+| Small coding jobs and bug fixes | Sonnet, reviewed by Opus (owner, 2026-10-16) |
+| Complex coding that touches several files | Opus |
 | UI mockups | Opus (Sonnet was not enough, owner, 2026-10-12) |
+
+"All small coding jobs will be by sonnet from now on. Only complex ones that
+touch multiple files will be via opus." (owner, 2026-10-16)
+
+**Bug fixes are only for decks and reviews** (owner, 2026-10-16: "Don't do
+bugfixes that are not relevant to decks and reviews"). Others wait for a
+contributor.
 
 At most **two Opus agents run at the same time** (owner, 2026-10-09). The
 quota is shared: each Opus slot left unused buys 1.5 Sonnet agents, and each
@@ -24,22 +32,23 @@ wherever the table above allows it.
 
 ## How the owner works (owner, 2026-10-11)
 
-- **Push straight to main.** The owner cannot merge for you ("You cannot
-  merge. You will have to push to main directly"), so work done for the
-  owner goes directly to main, with no pull request. Documentation goes
-  straight away. Code goes after the checks pass: `flutter analyze` clean,
-  the full `flutter test` (read its "All tests passed" line, never a
-  truncated tail), the deck validator and the tools' tests, and after one
-  Sonnet review finds nothing blocking. Rebase on `origin/main` if the push
-  is rejected. Outside contributors still use pull requests
-  ([CONTRIBUTING.md](CONTRIBUTING.md#pull-requests)).
+- **Pull requests for everything** (owner, 2026-10-16: "Do use PRs for
+  everything", replacing "Push straight to main" of 2026-10-11). Every
+  change, documentation included, goes through a pull request to main
+  (or to `decks-next`). Before opening it the checks pass: `flutter analyze`
+  clean, the full `flutter test` (read its "All tests passed" line, never a
+  truncated tail), the deck validator and the tools' tests, and one review
+  finds nothing blocking. The owner approves it in review; then merge it
+  once CI is green (owner, 2026-10-16, on #529: "I have approved it in
+  review. So you should be able to merge").
 - **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
   to a branch frequently"). Long work is committed in small steps and pushed
   to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
-  session ends. Only checked work reaches main or `decks-next`.
+  session ends. Only checked, approved work reaches main or `decks-next`.
 - **Releases.** Bump `pubspec.yaml` and `lib/app/app_info.dart`, check with
-  `tools/check_release_version.py`, and push to main. The owner tags the
-  release and writes the CHANGELOG; never edit CHANGELOG.md for a release.
+  `tools/check_release_version.py`, write the release's CHANGELOG.md entry
+  (owner, 2026-10-16: "I will not write changelog"), and open the release
+  pull request. The owner tags the release.
 - **Questions.** Ask them as soon as they come up. Record the owner's
   answers, quoted and dated, in the plan and the issue they belong to.
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
