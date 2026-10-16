@@ -83,9 +83,8 @@ a voice, and the IPA is neither.
   the course's own data and may come later.
 - Two entries in the picker share one language's card state (download,
   alpha notice, its progress) and differ only in their name, tick and scope.
-- The decks' licence is `CC0-1.0` in the drafts, as every deck was before
-  [ADR-0040](0040-decks-are-cc-by-sa.md); whether the IPA decks follow it is
-  a question for the owner.
+- The decks are `CC-BY-SA-4.0`, as every deck is since
+  [ADR-0040](0040-decks-are-cc-by-sa.md).
 
 ## Alternatives considered
 
