@@ -69,6 +69,15 @@ enum Skill {
   /// language: the ones that need sound, out loud or in the ear (#89).
   bool get pausable => this == Skill.listening || this == Skill.speaking;
 
+  /// Whether Settings has a switch for the skill (#243). The others are
+  /// always asked, so a lesson always has questions: seen words, grammar and
+  /// matching pairs.
+  bool get hasSwitch =>
+      this == Skill.production ||
+      this == Skill.listening ||
+      this == Skill.speaking ||
+      this == Skill.reading;
+
   /// Whether the skill starts switched on. Speaking starts off: switching it
   /// on asks for the microphone, which the app never does unasked.
   bool get onByDefault => this != Skill.speaking;
