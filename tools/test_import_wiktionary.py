@@ -264,14 +264,14 @@ class Recordings(Case):
         self.assertEqual(network.asked, [])
 
 
-def wikidata_reply(name: str) -> bytes:
-    return json.dumps({"claims": {"P18": [{"mainsnak": {"datavalue": {
-        "value": name}}}]}}).encode()
+SECTIONS = json.dumps({"parse": {"sections": [
+    {"level": "2", "line": "Nepali", "index": "1"},
+    {"level": "2", "line": "Testlang", "index": "4"}]}}).encode()
 
 
 class Images(Case):
-    """A card's own image (#523): Commons via Wikidata or the Wiktionary page,
-    then OpenMoji, for a card with a picture."""
+    """A card's own image (#523): the Wiktionary page's one Commons picture,
+    then OpenMoji, for a card with a picture; never Wikidata."""
 
     def run_images(self, network: Network, *extra: str) -> tuple[int, str, str]:
         with mock.patch.object(iw, "http_get", network), \
@@ -279,48 +279,48 @@ class Images(Case):
                 mock.patch.object(iw.shutil, "which", return_value="/usr/bin/ffmpeg"):
             return self.run_tool("--images", *extra)
 
-    def test_commons_through_wikidata_first(self) -> None:
+    def test_the_wiktionary_page_first(self) -> None:
         network = Network({
-            "wikidata.org": wikidata_reply("House.jpg"),
+            "prop=sections": SECTIONS,
+            "prop=images": json.dumps({"parse": {"images": [
+                "Wiktionary-logo.svg", "A house.jpg"]}}).encode(),
             "commons.wikimedia.org/w/api.php": commons_reply(
-                "House.jpg", artist="<span>A. Photographer</span>"),
+                "A house.jpg", artist="<span>A. Photographer</span>"),
             "upload.wikimedia.org/thumb/": b"PNG"})
         code, out, _ = self.run_images(network)
         self.assertEqual(code, 0)
         house = self.card(CORE, "zz-9001")
         self.assertEqual(house["image"], "decks/zz/images/zz-9001.webp")
         self.assertEqual(house["image_credit"], {
-            "source": "https://commons.wikimedia.org/wiki/File:House.jpg",
+            "source": "https://commons.wikimedia.org/wiki/File:A house.jpg",
             "license": "CC-BY-SA-4.0", "credit": "A. Photographer"})
-        self.assertIn("entity=Q3947", network.asked[0])
+        self.assertTrue(any("section=4" in url for url in network.asked))
         self.assertTrue(network.asked[-1].startswith("https://upload.wikimedia.org/thumb/"))
         self.assertEqual((self.decks / "zz/images/zz-9001.webp").read_bytes(), b"converted")
-        self.assertIn("Images by source: wikidata 1.", out)
+        self.assertIn("Images by source: wiktionary 1.", out)
         self.assertEqual(vd.validate(self.decks / CORE).errors, [])
 
-    def test_then_the_wiktionary_page(self) -> None:
-        sections = json.dumps({"parse": {"sections": [
-            {"level": "2", "line": "Nepali", "index": "1"},
-            {"level": "2", "line": "Testlang", "index": "4"}]}}).encode()
-        images = json.dumps({"parse": {"images": ["Wiktionary-logo.svg",
-                                                  "A house.jpg"]}}).encode()
+    def test_never_wikidata(self) -> None:
+        network = Network({"openmoji": b"PNG"})
+        self.run_images(network)
+        self.assertFalse(any("wikidata" in url for url in network.asked))
+        self.assertFalse(hasattr(iw, "wikidata_image"))
+
+    def test_two_pictures_on_the_page_are_none(self) -> None:
         network = Network({
-            "wikidata.org": b"{}",
-            "prop=sections": sections,
-            "prop=images": images,
-            "commons.wikimedia.org/w/api.php": commons_reply("A house.jpg"),
-            "upload.wikimedia.org/thumb/": b"PNG"})
+            "prop=sections": SECTIONS,
+            "prop=images": json.dumps({"parse": {"images": [
+                "A house.jpg", "Another house.jpg"]}}).encode(),
+            "openmoji@15.1.0/color/618x618/1F3E0.png": b"PNG"})
         _, out, _ = self.run_images(network)
-        self.assertEqual(self.card(CORE, "zz-9001")["image_credit"]["source"],
-                         "https://commons.wikimedia.org/wiki/File:A house.jpg")
-        self.assertTrue(any("section=4" in url for url in network.asked))
-        self.assertIn("Images by source: wiktionary 1.", out)
+        self.assertEqual(self.card(CORE, "zz-9001")["image_credit"]["credit"], "OpenMoji")
+        self.assertFalse(any("commons.wikimedia.org" in url for url in network.asked))
 
     def test_then_openmoji(self) -> None:
         network = Network({
-            "wikidata.org": wikidata_reply("House.jpg"),
+            "prop=sections": SECTIONS,
+            "prop=images": json.dumps({"parse": {"images": ["House.jpg"]}}).encode(),
             "commons.wikimedia.org/w/api.php": commons_reply("House.jpg", licence="GFDL"),
-            "prop=sections": json.dumps({"parse": {"sections": []}}).encode(),
             "openmoji@15.1.0/color/618x618/1F3E0.png": b"PNG"})
         _, out, _ = self.run_images(network)
         self.assertEqual(self.card(CORE, "zz-9001")["image_credit"], {
