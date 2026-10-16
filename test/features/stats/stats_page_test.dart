@@ -11,6 +11,7 @@ import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/leeches_page.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
+import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/ui/widgets/segmented.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
@@ -215,6 +216,53 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(LeechesPage), findsOneWidget);
   });
+
+  for (final (name, theme) in <(String, ThemeData)>[
+    ('light', AppTheme.light()),
+    ('dark', AppTheme.dark()),
+    ('pure black', AppTheme.dark(pureBlack: true)),
+  ]) {
+    testWidgets('in $name, the leeches row is a plain card with none and '
+        'in the error colour with some (#500)', (tester) async {
+      usePhone(tester);
+      final state = await pumpScreen(
+        tester,
+        Theme(data: theme, child: const StatsPage()),
+        state: await fixture(),
+      );
+      await showAll(tester);
+      final l10n = l10nOf(tester);
+      final scheme = theme.colorScheme;
+
+      Color? fill(String title) => tester
+          .widget<Material>(
+            find
+                .ancestor(of: find.text(title), matching: find.byType(Material))
+                .first,
+          )
+          .color;
+      Color? ink(String text) =>
+          tester.widget<Text>(find.text(text)).style!.color;
+
+      // Two leeches: the row is a problem, and says so in the error colour.
+      await scrollTo(tester, find.text(l10n.statsLeeches(2)));
+      expect(fill(l10n.statsLeeches(2)), scheme.errorContainer);
+      expect(ink(l10n.statsLeeches(2)), scheme.onErrorContainer);
+      expect(ink(l10n.statsLeechesSubtitle), scheme.onErrorContainer);
+
+      // None: the same row, drawn like the cards above it.
+      final cardOf = cardLookupOf(state);
+      for (final leech in findLeeches(state.progress, cardOf: cardOf)) {
+        LeechActions.of(state.progress)
+            .toggleSetAside(leech.key, now: state.now());
+      }
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.statsLeeches(2)), findsNothing);
+      expect(fill(l10n.statsLeeches(0)), scheme.surfaceContainerLow);
+      expect(ink(l10n.statsLeeches(0)), scheme.onSurface);
+      expect(ink(l10n.statsLeechesSubtitle), scheme.onSurfaceVariant);
+    });
+  }
 
   testWidgets('before #19 the leeches row is incoming and stays put', (
     tester,
