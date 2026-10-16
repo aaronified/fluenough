@@ -44,7 +44,9 @@ Before you start:
   (owner, 2026-10-13, #506); its format is approved (kind `set`,
   members by card id, explanation in the layer; DECK-FORMAT, "Set cards")
   and DECK-FORMAT does not allow it yet.
-- Model: Sonnet writes decks (CLAUDE.md). Haiku for large reads.
+- Model: Sonnet writes decks (CLAUDE.md). Haiku for large reads. A small
+  change to a tool or the validator is Sonnet, reviewed by Opus; only a
+  complex change across several files is Opus (owner, 2026-10-16).
 
 ## Checklist
 
