@@ -37,6 +37,7 @@ import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'card_media.dart';
 import 'card_sets.dart';
+import '../core/decks/ipa_course.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'deck_import.dart';
@@ -465,7 +466,33 @@ class AppState extends ChangeNotifier {
   Object? get loadError => _loadError;
 
   /// Every deck that parsed, in path order. Empty until loaded.
-  List<DeckEntry> get decks => _catalog.decks;
+  List<DeckEntry> get decks => _view.decks;
+
+  /// The catalog as the learner has it: the IPA course's decks cut to the
+  /// cards of their [ipaScope] for the languages they learn, so that the
+  /// counts, lessons, finished decks and Inspect read one list
+  /// (ADR-0041).
+  Catalog get _view {
+    final scope = settings.ipaScope;
+    final learned = <String>{
+      for (final code in learningCodes)
+        if (code != ipaLanguageCode) code,
+    };
+    final key = '${scope.name}:${(learned.toList()..sort()).join(',')}';
+    if (!identical(_viewOf, _catalog) || _viewKey != key) {
+      _viewOf = _catalog;
+      _viewKey = key;
+      _scoped = _catalog.forIpa(scope, learned);
+    }
+    return _scoped;
+  }
+
+  Catalog? _viewOf;
+  String _viewKey = '';
+  Catalog _scoped = Catalog.empty;
+
+  /// Which of the IPA course the learner has (ADR-0041).
+  IpaScope get ipaScope => settings.ipaScope;
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -531,7 +558,7 @@ class AppState extends ChangeNotifier {
     return today;
   }
 
-  DeckEntry? deckById(String id) => _catalog.byId(id);
+  DeckEntry? deckById(String id) => _view.byId(id);
 
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
@@ -543,7 +570,7 @@ class AppState extends ChangeNotifier {
       _catalog.languagePaths[language];
 
   /// The deck a card came from.
-  DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
+  DeckEntry? deckOf(Card card) => _view.byId(card.deckId);
 
   /// The decks in the languages the current profile learns, and of those,
   /// only the [shownLanguage]'s while one is chosen (#461): what Today
@@ -582,7 +609,7 @@ class AppState extends ChangeNotifier {
   }
 
   /// Every language the catalog teaches, one per code.
-  List<LanguageInfo> get languages => _catalog.languages;
+  List<LanguageInfo> get languages => _view.languages;
 
   /// The languages the language menu at the top of Today, Decks and
   /// Progress offers (#461): those the profile learns that have decks, in

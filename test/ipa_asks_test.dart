@@ -82,11 +82,7 @@ void main() {
     });
 
     test('no question of a lesson asks for a typed production', () {
-      final cards = <Card>[
-        card('e', 'ɒ'),
-        card('m', 'ɒ ɔ'),
-        hard,
-      ];
+      final cards = <Card>[card('e', 'ɒ'), card('m', 'ɒ ɔ'), hard];
       final items = lessonPlan(
         cards,
         modesOf: (_) => const {DrillMode.production, DrillMode.recognition},
