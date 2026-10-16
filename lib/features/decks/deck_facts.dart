@@ -6,11 +6,12 @@ import '../../app/deck_catalog.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/target_text.dart';
 import 'deck_content.dart';
 
-/// "Cards": the first few cards of a deck, target, meaning and reading. Deck
-/// content only — never a card id (AGENTS.md rule 1).
+/// "Cards": the first few cards of a deck, target, meaning, reading and IPA.
+/// Deck content only — never a card id (AGENTS.md rule 1).
 class CardPreview extends StatelessWidget {
   const CardPreview({super.key, required this.entry});
 
@@ -91,6 +92,9 @@ class _PreviewRow extends StatelessWidget {
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
                     ),
+                  if (ipaToShow(context, line.ipa, target: line.target)
+                      case final ipa?)
+                    IpaLine(ipa, fontSize: 13, textAlign: TextAlign.start),
                 ],
               ),
             ),
@@ -117,6 +121,18 @@ class DeckFacts extends StatelessWidget {
     final tag = entry.language.ttsTag;
     final origin = deck.source;
     final authors = deck.authors;
+    // Each recording's credit (#518): whom, and its licence.
+    final recordings = <String>[
+      for (final card in deck.cards)
+        if (card.audioCredit case final credit?)
+          l10n.deckMediaCredit(card.target, credit.credit, credit.license),
+    ];
+    // Each image's credit (#523): whom, and its licence.
+    final images = <String>[
+      for (final card in deck.cards)
+        if (card.imageCredit case final credit?)
+          l10n.deckMediaCredit(card.target, credit.credit, credit.license),
+    ];
 
     final facts = <(String, String, bool)>[
       (l10n.deckLicence, deck.license, false),
@@ -134,6 +150,9 @@ class DeckFacts extends StatelessWidget {
           authors.map((a) => a.name).join(l10n.commonListSeparator),
           false,
         ),
+      if (recordings.isNotEmpty)
+        (l10n.deckRecordings, recordings.join('\n'), false),
+      if (images.isNotEmpty) (l10n.deckImages, images.join('\n'), false),
       (
         l10n.deckVoice,
         switch (state.voiceStatus(entry.language)) {

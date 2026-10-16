@@ -1,0 +1,21 @@
+schema: 1
+id: "bn-en-grammar-irregular"
+kind: "layer"
+core: "bn-grammar-irregular"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Irregular verbs"
+description: "The common verbs whose stem shifts from tense to tense."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+pattern:
+  name: "Irregular verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "jaoa": "to go"
+    "asha": "to come"
+    "deoa": "to give"
+    "neoa": "to take"
+    "khaoa": "to eat"
+    "hoa": "to be, to become"
+  notes: "These are among the most used verbs in Bengali, so they are worth learning by heart. The stem's vowel shifts: দেওয়া (deoyā) gives দিই (dii), দিলাম (dilām), দেব (deb). আসা (āsā) and যাওয়া (jāoyā) take different pasts: এলাম (elām), গেলাম (gelām). আসা (āsā)'s past is এলাম (elām), also আসলাম (āślām); the drill accepts both. হোন (hon), the polite request of হওয়া (hôoyā), is written with ো (o) to keep it apart from the present হন (hôn)."

@@ -1,0 +1,150 @@
+schema: 1
+id: "te-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0441"
+    target: "లేవడం"
+    reading: "lēvaḍam"
+    ipa: "leːʋaɖam"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0442"
+    target: "స్నానం చేయడం"
+    reading: "snānam cēyaḍam"
+    ipa: "snaːnam tʃeːjaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "స్నానం", base: "స్నానం", reading: "snānam" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0443"
+    target: "పళ్ళు తోముకోవడం"
+    reading: "paḷḷu tōmukōvaḍam"
+    ipa: "paɭɭu t̪oːmukoːʋaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "పళ్ళు", ref: "te-0736" }
+      - { word: "తోముకోవడం", base: "తోముకోవడం", reading: "tōmukōvaḍam" }
+  - id: "te-0444"
+    target: "టిఫిన్"
+    reading: "ṭifin"
+    ipa: "ʈifin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0445"
+    target: "మధ్యాహ్న భోజనం"
+    reading: "madhyāhna bhōjanam"
+    ipa: "mad̪ʱjaːhna bʱoːdʒanam"
+    pos: "phrase"
+    bases:
+      - { word: "మధ్యాహ్న", base: "మధ్యాహ్నం", reading: "madhyāhnam" }
+  - id: "te-0446"
+    target: "రాత్రి భోజనం"
+    reading: "rātri bhōjanam"
+    ipa: "raːt̪ri bʱoːdʒanam"
+    pos: "phrase"
+  - id: "te-0447"
+    target: "పనికి వెళ్ళడం"
+    reading: "paniki veḷḷaḍam"
+    ipa: "paniki ʋeɭɭaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్ళడం", ref: "te-0622" }
+  - id: "te-0448"
+    target: "ఇంటికి రావడం"
+    reading: "iṇṭiki rāvaḍam"
+    ipa: "iɳʈiki raːʋaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "ఇంటికి", ref: "te-0195" }
+      - { word: "రావడం", ref: "te-0623" }
+  - id: "te-0449"
+    target: "వంట చేయడం"
+    reading: "vaṇṭa cēyaḍam"
+    ipa: "ʋaɳʈa tʃeːjaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "వంట", base: "వంట", reading: "vaṇṭa" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0450"
+    target: "పడుకోవడం"
+    reading: "paḍukōvaḍam"
+    ipa: "paɖukoːʋaɖam"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0451"
+    target: "రోజూ"
+    reading: "rōjū"
+    ipa: "roːdʒuː"
+    alt_target: ["ప్రతిరోజూ"]
+    pos: "adv"
+  - id: "te-0452"
+    target: "అప్పుడప్పుడు"
+    reading: "appuḍappuḍu"
+    ipa: "appuɖappuɖu"
+    pos: "adv"
+  - id: "te-0453"
+    target: "ఎప్పుడూ"
+    reading: "eppuḍū"
+    ipa: "eppuɖuː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0454"
+    target: "సాధారణంగా"
+    reading: "sādhāraṇaṅgā"
+    ipa: "saːd̪ʱaːraɳaŋɡaː"
+    pos: "adv"
+  - id: "te-0455"
+    target: "తర్వాత"
+    reading: "tarvāta"
+    ipa: "t̪arʋaːt̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0456"
+    target: "నేను రోజూ ఏడు గంటలకు లేస్తాను."
+    reading: "nēnu rōjū ēḍu gaṇṭalaku lēstānu."
+    ipa: "neːnu roːdʒuː eːɖu ɡaɳʈalaku leːst̪aːnu"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "గంటలకు", ref: "te-0313" }
+      - { word: "లేస్తాను", ref: "te-0441" }
+  - id: "te-0457"
+    target: "తర్వాత నేను పనికి వెళ్తాను."
+    reading: "tarvāta nēnu paniki veḷtānu."
+    ipa: "t̪arʋaːt̪a neːnu paniki ʋeɭt̪aːnu"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్తాను", ref: "te-0622" }
+  - id: "te-0458"
+    target: "నేను రాత్రి పదకొండు గంటలకు పడుకుంటాను."
+    reading: "nēnu rātri padakoṇḍu gaṇṭalaku paḍukuṇṭānu."
+    ipa: "neːnu raːt̪ri pad̪akoɳɖu ɡaɳʈalaku paɖukuɳʈaːnu"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "గంటలకు", ref: "te-0313" }
+      - { word: "పడుకుంటాను", ref: "te-0450" }
+  - id: "te-0459"
+    target: "నేను ఎప్పుడూ ఆలస్యంగా రాను."
+    reading: "nēnu eppuḍū ālasyaṅgā rānu."
+    ipa: "neːnu eppuɖuː aːlasjaŋɡaː raːnu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "ఆలస్యంగా", base: "ఆలస్యం", reading: "ālasyam" }
+      - { word: "రాను", ref: "te-0623" }

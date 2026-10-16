@@ -1,0 +1,28 @@
+schema: 1
+id: "te-en-grammar-demonstratives"
+kind: "layer"
+core: "te-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This and that"
+description: "ఈ (ī) and ఆ (ā), and the words built on them: this one, here, this way, so much. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  name: "Near and far"
+  slot_name: "near or far"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "adj": "before a noun"
+    "thing": "a thing"
+    "things": "things"
+    "man": "a man"
+    "woman": "a woman"
+    "man-resp": "a man, with respect"
+    "woman-resp": "a woman, with respect"
+    "people": "people"
+    "place": "place"
+    "direction": "direction"
+    "manner": "manner"
+    "amount": "amount"
+    "time": "time"
+  notes: "Words for near things start with ఇ- (i-) or ఈ- (ī-), words for far ones with అ- (a-) or ఆ- (people: వీళ్ళు (vīḷḷu) and వాళ్ళు (vāḷḷu)). ఈ (ī) and ఆ (ā) stand before a noun and never change: ఈ పుస్తకం (ī pustakam), this book; ఆ ఇల్లు (ā illu), that house."

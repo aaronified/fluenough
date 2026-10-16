@@ -659,6 +659,48 @@ class Wiktionary(unittest.TestCase):
             self.fetch(http.client.IncompleteRead(b"half"))
 
 
+class IpaStyle(unittest.TestCase):
+    """Wiktionary's IPA is written in each deck's style (#479)."""
+
+    def test_hindi_open_back_a_is_the_decks_a(self) -> None:
+        self.assertEqual(rb.deck_style("məɦiːnɑː", "hi"), "məɦiːnaː")
+        self.assertEqual(rb.deck_style("ɑ̃ːɡ", "hi"), "a\u0303ːɡ")
+
+    def test_every_other_language_is_unchanged_until_a_difference_is_known(self) -> None:
+        for lang in ("as", "bn", "es", "gu", "ja", "kn", "mr", "te"):
+            with self.subTest(lang):
+                self.assertEqual(rb.deck_style("məɦiːnɑː", lang), "məɦiːnɑː")
+
+    def test_the_table_only_has_languages_the_decks_have(self) -> None:
+        self.assertLessEqual(set(rb.IPA_STYLE), {"as", "bn", "es", "gu", "hi",
+                                                 "ja", "kn", "mr", "te"})
+
+    def test_each_languages_style_gives_symbols_its_decks_use(self) -> None:
+        root = Path(__file__).resolve().parent.parent
+        for lang, table in rb.IPA_STYLE.items():
+            inventory = rb.deck_ipa_symbols(root, lang)
+            for deck in table.values():
+                with self.subTest(lang=lang, symbol=deck):
+                    self.assertTrue(set(deck) <= inventory)
+
+    def test_symbols_outside_the_inventory_are_listed_in_order_once(self) -> None:
+        self.assertEqual(rb.unknown_symbols("aɑbɑc ɒ", {"a", "b", "c"}), ["ɑ", "ɒ"])
+        self.assertEqual(rb.unknown_symbols("ɑ", set()), [])
+
+    def test_work_out_styles_the_ipa_and_names_unknown_symbols(self) -> None:
+        got = rb.work_out("महीना", "hi", "Hindi", "devanagari", ["ipa"],
+                          lambda w, n: "məɦiːnɑːʕ", {"a", "ː", "ə", "ɦ", "i", "m", "n"})
+        self.assertEqual(got.values["ipa"], ("məɦiːnaːʕ", rb.SOURCE_WIKTIONARY))
+        self.assertEqual(got.notes,
+                         ["The IPA has symbols the deck's IPA does not use: `ʕ`."])
+
+    def test_a_clean_ipa_adds_no_note(self) -> None:
+        got = rb.work_out("महीना", "hi", "Hindi", "devanagari", ["ipa"],
+                          lambda w, n: "məɦiːnɑː", {"a", "ː", "ə", "ɦ", "i", "m", "n"})
+        self.assertEqual(got.values["ipa"][0], "məɦiːnaː")
+        self.assertEqual(got.notes, [])
+
+
 def review_mail(files: list[dict], sender: str = "anvi@example.com",
                 ident: str = "<one@example.com>") -> email.message.EmailMessage:
     message = email.message.EmailMessage()

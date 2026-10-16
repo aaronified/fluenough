@@ -114,6 +114,24 @@ void main() {
         first.where((f) => f.isLanguageFile).map((f) => f.kind).toSet(),
         containsAll(<String>['path', 'facts', 'romanisation']),
       );
+      // The script guide and sounds file, and their English layers (#498).
+      expect(
+        first.where((f) => f.isLanguageFile).map((f) => f.path),
+        containsAll(<String>[
+          'decks/hi/hi-script.yaml',
+          'decks/hi/en/hi-en-script.yaml',
+          'decks/hi/hi-sounds.yaml',
+          'decks/hi/en/hi-en-sounds.yaml',
+        ]),
+      );
+    });
+
+    test('a guide layer is a language file of its native language', () {
+      final layer = index.filesByPath['decks/hi/en/hi-en-script.yaml']!;
+      expect(layer.isLanguageFile, isTrue);
+      expect(layer.native, 'en');
+      expect(layer.role, 'file:decks/hi/en/hi-en-script.yaml');
+      expect(index.filesByPath['decks/hi/hi-script.yaml']!.role, 'kind:script');
     });
   });
 

@@ -1,0 +1,192 @@
+schema: 1
+id: "bn-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["near: এ- (e-)", "over there: ও- (o-)", "not here, or already mentioned: সে- (se-)"]
+  entries:
+    - lemma: "he, she"
+      key: "person"
+      forms:
+        "near: এ- (e-)": "এ"
+        "over there: ও- (o-)": "ও"
+        "not here, or already mentioned: সে- (se-)": "সে"
+      readings:
+        "near: এ- (e-)": "e"
+        "over there: ও- (o-)": "o"
+        "not here, or already mentioned: সে- (se-)": "śe"
+      ipas:
+        "near: এ- (e-)": "e"
+        "over there: ও- (o-)": "o"
+        "not here, or already mentioned: সে- (se-)": "ʃe"
+    - lemma: "he, she, respectful"
+      key: "person-respectful"
+      forms:
+        "near: এ- (e-)": "ইনি"
+        "over there: ও- (o-)": "উনি"
+        "not here, or already mentioned: সে- (se-)": "তিনি"
+      readings:
+        "near: এ- (e-)": "ini"
+        "over there: ও- (o-)": "uni"
+        "not here, or already mentioned: সে- (se-)": "tini"
+      ipas:
+        "near: এ- (e-)": "ini"
+        "over there: ও- (o-)": "uni"
+        "not here, or already mentioned: সে- (se-)": "t̪ini"
+    - lemma: "they"
+      key: "people"
+      forms:
+        "near: এ- (e-)": "এরা"
+        "over there: ও- (o-)": "ওরা"
+        "not here, or already mentioned: সে- (se-)": "তারা"
+      readings:
+        "near: এ- (e-)": "erā"
+        "over there: ও- (o-)": "orā"
+        "not here, or already mentioned: সে- (se-)": "tārā"
+      ipas:
+        "near: এ- (e-)": "era"
+        "over there: ও- (o-)": "ora"
+        "not here, or already mentioned: সে- (se-)": "t̪ara"
+    - lemma: "they, respectful"
+      key: "people-respectful"
+      forms:
+        "near: এ- (e-)": ["এঁরা", "এনারা"]
+        "over there: ও- (o-)": ["ওঁরা", "ওনারা"]
+        "not here, or already mentioned: সে- (se-)": "তাঁরা"
+      readings:
+        "near: এ- (e-)": ["em̐rā", "enārā"]
+        "over there: ও- (o-)": ["om̐rā", "onārā"]
+        "not here, or already mentioned: সে- (se-)": "tām̐rā"
+      ipas:
+        "near: এ- (e-)": "ẽra"
+        "over there: ও- (o-)": "õra"
+        "not here, or already mentioned: সে- (se-)": "t̪ãra"
+    - lemma: "his, her"
+      key: "possessive"
+      forms:
+        "near: এ- (e-)": "এর"
+        "over there: ও- (o-)": "ওর"
+        "not here, or already mentioned: সে- (se-)": "তার"
+      readings:
+        "near: এ- (e-)": "er"
+        "over there: ও- (o-)": "or"
+        "not here, or already mentioned: সে- (se-)": "tār"
+      ipas:
+        "near: এ- (e-)": "er"
+        "over there: ও- (o-)": "or"
+        "not here, or already mentioned: সে- (se-)": "t̪ar"
+    - lemma: "his, her, respectful"
+      key: "possessive-respectful"
+      forms:
+        "near: এ- (e-)": ["এঁর", "এনার"]
+        "over there: ও- (o-)": ["ওঁর", "ওনার"]
+        "not here, or already mentioned: সে- (se-)": "তাঁর"
+      readings:
+        "near: এ- (e-)": ["em̐r", "enār"]
+        "over there: ও- (o-)": ["om̐r", "onār"]
+        "not here, or already mentioned: সে- (se-)": "tām̐r"
+      ipas:
+        "near: এ- (e-)": "ẽr"
+        "over there: ও- (o-)": "õr"
+        "not here, or already mentioned: সে- (se-)": "t̪ãr"
+    - lemma: "him, her"
+      key: "object"
+      forms:
+        "near: এ- (e-)": "একে"
+        "over there: ও- (o-)": "ওকে"
+        "not here, or already mentioned: সে- (se-)": "তাকে"
+      readings:
+        "near: এ- (e-)": "eke"
+        "over there: ও- (o-)": "oke"
+        "not here, or already mentioned: সে- (se-)": "tāke"
+      ipas:
+        "near: এ- (e-)": "eke"
+        "over there: ও- (o-)": "oke"
+        "not here, or already mentioned: সে- (se-)": "t̪ake"
+    - lemma: "this one, that one"
+      key: "thing"
+      forms:
+        "near: এ- (e-)": "এটা"
+        "over there: ও- (o-)": "ওটা"
+        "not here, or already mentioned: সে- (se-)": "সেটা"
+      readings:
+        "near: এ- (e-)": "eṭā"
+        "over there: ও- (o-)": "oṭā"
+        "not here, or already mentioned: সে- (se-)": "śeṭā"
+      ipas:
+        "near: এ- (e-)": "eʈa"
+        "over there: ও- (o-)": "oʈa"
+        "not here, or already mentioned: সে- (se-)": "ʃeʈa"
+    - lemma: "these, those"
+      key: "things"
+      forms:
+        "near: এ- (e-)": "এগুলো"
+        "over there: ও- (o-)": "ওগুলো"
+        "not here, or already mentioned: সে- (se-)": "সেগুলো"
+      readings:
+        "near: এ- (e-)": "egulo"
+        "over there: ও- (o-)": "ogulo"
+        "not here, or already mentioned: সে- (se-)": "śegulo"
+      ipas:
+        "near: এ- (e-)": "eɡulo"
+        "over there: ও- (o-)": "oɡulo"
+        "not here, or already mentioned: সে- (se-)": "ʃeɡulo"
+    - lemma: "this, that"
+      key: "before-noun"
+      forms:
+        "near: এ- (e-)": "এই"
+        "over there: ও- (o-)": ["ওই", "ঐ"]
+        "not here, or already mentioned: সে- (se-)": "সেই"
+      readings:
+        "near: এ- (e-)": "ei"
+        "over there: ও- (o-)": ["oi", "oi"]
+        "not here, or already mentioned: সে- (se-)": "śei"
+      ipas:
+        "near: এ- (e-)": "ei"
+        "over there: ও- (o-)": "oi"
+        "not here, or already mentioned: সে- (se-)": "ʃei"
+    - lemma: "here, there"
+      key: "place"
+      forms:
+        "near: এ- (e-)": "এখানে"
+        "over there: ও- (o-)": "ওখানে"
+        "not here, or already mentioned: সে- (se-)": "সেখানে"
+      readings:
+        "near: এ- (e-)": "ekhāne"
+        "over there: ও- (o-)": "okhāne"
+        "not here, or already mentioned: সে- (se-)": "śekhāne"
+      ipas:
+        "near: এ- (e-)": "ekʰane"
+        "over there: ও- (o-)": "okʰane"
+        "not here, or already mentioned: সে- (se-)": "ʃekʰane"
+    - lemma: "this way, that way"
+      key: "way"
+      forms:
+        "near: এ- (e-)": "এদিকে"
+        "over there: ও- (o-)": "ওদিকে"
+        "not here, or already mentioned: সে- (se-)": "সেদিকে"
+      readings:
+        "near: এ- (e-)": "edike"
+        "over there: ও- (o-)": "odike"
+        "not here, or already mentioned: সে- (se-)": "śedike"
+      ipas:
+        "near: এ- (e-)": "ed̪ike"
+        "over there: ও- (o-)": "od̪ike"
+        "not here, or already mentioned: সে- (se-)": "ʃed̪ike"
+    - lemma: "like this, like that"
+      key: "kind"
+      forms:
+        "near: এ- (e-)": "এরকম"
+        "over there: ও- (o-)": "ওরকম"
+        "not here, or already mentioned: সে- (se-)": "সেরকম"
+      readings:
+        "near: এ- (e-)": "erokom"
+        "over there: ও- (o-)": "orokom"
+        "not here, or already mentioned: সে- (se-)": "śerokom"
+      ipas:
+        "near: এ- (e-)": "erokom"
+        "over there: ও- (o-)": "orokom"
+        "not here, or already mentioned: সে- (se-)": "ʃerokom"

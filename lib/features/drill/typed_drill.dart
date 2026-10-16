@@ -14,6 +14,7 @@ import '../../ui/widgets/speaker.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'input_mode_choice.dart';
 import 'keyboard_hint.dart';
 import 'taught_details.dart';
@@ -103,9 +104,12 @@ class _TypedDrillState extends State<TypedDrill> {
       progress: session.progress,
       onClose: widget.onClose,
       needsSound: listening && session.answer == null,
-      card: listening
-          ? _listeningCard(context, card, language, typing: typing)
-          : _productionCard(context, card, language, typing: typing),
+      card: <Widget>[
+        ...listening
+            ? _listeningCard(context, card, language, typing: typing)
+            : _productionCard(context, card, language, typing: typing),
+        ...answeredSetList(context, session, answered: answer != null),
+      ],
       belowCard: answer != null
           ? null
           : <Widget>[
@@ -159,7 +163,7 @@ class _TypedDrillState extends State<TypedDrill> {
           color: scheme.onSurfaceVariant,
         ),
       ),
-      if (card.picture != null) CardPicture(card, size: typing ? 56 : 88),
+      if (card.hasPicture) CardPicture(card, size: typing ? 56 : 88),
       Text(
         // The meaning; for a rules table's cell, its word first
         // (DECK-FORMAT.md, Rules decks).

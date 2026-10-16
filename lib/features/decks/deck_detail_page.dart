@@ -8,6 +8,7 @@ import '../../app/session.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart';
 import '../../core/scheduling/session_queue.dart';
+import '../../core/scheduling/lesson.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
@@ -122,9 +123,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             : state.lessonFor(more);
         // A reading deck's lesson is its next passage.
         final reading = lesson.isNotEmpty && lesson.first.card is QuestionCard;
-        final moreCount = reading
-            ? lesson.length
-            : lesson.where((i) => i.ask == Ask.teach).length;
+        final moreCount = reading ? lesson.length : lessonCardCount(lesson);
         final revise = DrillRequest.revise(entry.id, tags: _tags);
         final reviseCount = allCount > 0 || moreCount > 0
             ? 0

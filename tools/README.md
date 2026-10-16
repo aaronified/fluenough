@@ -161,6 +161,108 @@ ids before committing** — they are permanent once published, because they key
 every user's review history. A word another deck already teaches should be
 listed there by `ref` instead.
 
+## `split_deck.py`
+
+Splits a single-file deck into a core and an English layer, as
+`docs/DECK-FORMAT.md`, "Splitting a deck", describes (#397, #498). It
+keeps every card id, entry key and slot, deletes the old file, and refuses a
+split that, merged back, would not give the old deck. A language's script
+guide and sounds file split the same way: the core keeps the path, the
+English text goes to `en/<lang>-en-script.yaml`.
+
+```sh
+python3 tools/split_deck.py decks/te/te-en-home.yaml     # te-home + en/te-en-home
+python3 tools/split_deck.py --check decks/te/te-en-*.yaml  # try, write nothing
+python3 tools/deck_index.py
+```
+
+Reading decks stay single-file, and so do paths, facts, numbers and
+romanisation files. `test_split_deck.py` tests it.
+
+## `import_wiktionary.py`
+
+Fills a language's core cards from Wiktionary (#518, #523), through
+kaikki.org's Wiktextract extract: the language's "all word senses" JSON
+lines from `https://kaikki.org/dictionary/<Language>/`, such as
+`Hindi.jsonl`. It fills **only empty fields** and never a card's meaning:
+`ipa`, `gender` (in the path's classes), `bases: "self"` or a base by
+`ref`, `synonyms` and `antonyms`, `examples` with their translations in the
+English layer (only of words the course teaches), `forms`, `senses`, and
+`wiktionary: true` in the layer. Every item names its `source`, the
+Wiktionary page only, `https://en.wiktionary.org/wiki/<word>` (owner,
+2026-10-16, #518: "Link only"); the dump's date and checksum are in the
+report alone. The decks stay `unreviewed`: what it adds is semi-verified,
+for reviewers to check (#508).
+
+```sh
+# The report alone, writing nothing: what it would fill, and what is
+# still missing card by card.
+python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13
+# Fill the decks, and keep the report.
+python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --report hi-report.md
+# A dry run on a copy of the decks.
+cp -r decks /tmp/decks-copy
+python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --decks /tmp/decks-copy
+# Recordings and images too: needs ffmpeg and the network.
+python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --audio --images
+# The image proposals a reviewer approved, by card id.
+python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --images --approve hi-0419,hi-0420
+python3 tools/deck_index.py
+python3 tools/validate_decks.py decks/
+```
+
+- **`--audio`**: the recording Wiktionary links for exactly the card's text
+  (never joined from other recordings; sentences stay text-to-speech),
+  downloaded from Wikimedia Commons and converted to Opus at
+  `decks/<lang>/audio/<card id>.opus`, with its `audio_credit`.
+- **`--images`**: for a card with a `picture`, the one picture in the
+  language's section of its Wiktionary page, from Wikimedia Commons, else
+  OpenMoji's drawing of its `picture`, shrunk to 256 pixels and converted
+  to WebP at `decks/<lang>/images/<card id>.webp`, with its
+  `image_credit`. With none, the card keeps its Noto picture. Images come
+  from Wiktionary only, never Wikidata (owner, 2026-10-16, #523:
+  "Wiktionary only").
+- **Image proposals**: a noun card without a `picture` gets no image from
+  `--images`. Where its Wiktionary section has one picture that can ship,
+  the report's "Image proposals" table lists it: the card, word, Commons
+  file, licence, credit, Commons page and Wiktionary page (owner,
+  2026-10-16, #523: "Also mark concrete", "Importer proposes"). Only the
+  lookups run, so this works without `--write` too, and no file is
+  downloaded. A reviewer approves each; then `--images --write --approve
+  <card id>` (repeated, or ids separated by commas) writes those cards'
+  images. An approved id that is not such a card is listed in the report.
+- A file whose licence cannot ship in a CC BY-SA 4.0 deck, or that names
+  no one to credit, is skipped and listed in the report. Without `ffmpeg`
+  on the PATH, `--audio` and `--images` stop with an error before anything
+  is written. A card written in flow style, `- { id: ... }`, is left alone
+  and listed.
+
+`test_import_wiktionary.py` tests it on `fixtures/wiktionary`, with the
+network and ffmpeg replaced.
+
+## `wikipedia_frequency.py`
+
+Counts how often each word is used in a language's Wikipedia, and gives
+each card whose target is one word its `frequency: { rank, source }` (#516;
+owner: "Count from Wikipedia instead"). The text is a pages-articles dump,
+`<lang>wiki-<date>-pages-articles.xml.bz2` from
+`https://dumps.wikimedia.org/<lang>wiki/`, or a file or folder of plain
+text extracted from one. A card that has a `frequency` keeps it; a phrase
+gets none.
+
+```sh
+# The report alone: the source, and the cards Wikipedia never uses.
+python3 tools/wikipedia_frequency.py hi hiwiki-20261001-pages-articles.xml.bz2
+# Write the ranks, and save the count for later runs.
+python3 tools/wikipedia_frequency.py hi hiwiki-20261001-pages-articles.xml.bz2 --write --counts hi-counts.tsv
+# Rank again from the saved count, without the dump.
+python3 tools/wikipedia_frequency.py hi --from-counts hi-counts.tsv --month 2026-10 --write
+```
+
+The source is `"<lang>.wikipedia.org, <month>"`, the month taken from the
+dump's name or given with `--month YYYY-MM`. `test_wikipedia_frequency.py`
+tests it on a dump of four pages in `fixtures/wikipedia`.
+
 ## `brand_android.py`
 
 Run after every `flutter create`. It copies `fluenough-brand/android/` into

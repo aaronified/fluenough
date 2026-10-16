@@ -9,12 +9,14 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'taught_details.dart';
 
 /// Multiple choice (ADR-0024), recorded as soon as an option is picked:
@@ -65,17 +67,20 @@ class ChoiceDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,
-      card: switch (ask) {
-        Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
-          context,
-          card,
-          language,
-          answered,
-        ),
-        Ask.hearAndChoose ||
-        Ask.hearMeaning => _heardCard(context, card, language, answered),
-        _ => _wordCard(context, card, language, answered),
-      },
+      card: <Widget>[
+        ...switch (ask) {
+          Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
+            context,
+            card,
+            language,
+            answered,
+          ),
+          Ask.hearAndChoose ||
+          Ask.hearMeaning => _heardCard(context, card, language, answered),
+          _ => _wordCard(context, card, language, answered),
+        },
+        ...answeredSetList(context, session, answered: answered),
+      ],
       belowCard: <Widget>[
         Semantics(
           container: true,
@@ -177,6 +182,9 @@ class ChoiceDrill extends StatelessWidget {
             ),
           ),
       ],
+      // How it is said: the word is shown, so this gives nothing away.
+      if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
+        IpaLine(ipa, fontSize: 16),
       // From the start: the word is shown anyway.
       ?_speaker(),
       // The word is on the card already: what its lesson showed under it.
@@ -221,7 +229,7 @@ class ChoiceDrill extends StatelessWidget {
           color: scheme.onSurfaceVariant,
         ),
       ),
-      if (card.picture != null) CardPicture(card, size: 88),
+      if (card.hasPicture) CardPicture(card, size: 88),
       Text(
         card.promptFor(session.item.mode),
         textAlign: TextAlign.center,
@@ -340,7 +348,7 @@ class _OptionMeaning extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final meaning = Text(card.native, style: style);
-    if (card.picture == null) return meaning;
+    if (!card.hasPicture) return meaning;
     return Row(
       children: <Widget>[
         CardPicture(card, size: 32),

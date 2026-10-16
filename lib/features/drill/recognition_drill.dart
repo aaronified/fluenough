@@ -4,10 +4,12 @@ import '../../app/app_scope.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'rating_buttons.dart';
 import 'taught_details.dart';
 
@@ -80,6 +82,9 @@ class RecognitionDrill extends StatelessWidget {
               color: scheme.onSurfaceVariant,
             ),
           ),
+        // How it is said: the word is shown, so this gives nothing away.
+        if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
+          IpaLine(ipa, fontSize: 16),
         // From the start: hearing the word gives nothing away. Keyed, so
         // that showing the answer does not play it again.
         if (session.canPlay)
@@ -107,6 +112,7 @@ class RecognitionDrill extends StatelessWidget {
             word: false,
           ),
         ],
+        ...answeredSetList(context, session, answered: revealed),
       ],
       actions: revealed
           ? <Widget>[
