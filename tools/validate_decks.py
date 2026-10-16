@@ -149,6 +149,16 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
+# A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
+# together before its members are drilled. It is a card of a vocab core,
+# `kind: "set"`, its members named by ref, or for a rules table, a rule and
+# one fixed value of the table, the members coming from the table ("Rule +
+# axis", owner, 2026-10-16). Its name and explanation are in each layer.
+SET_KEYS = {"id", "kind", "members"}
+SET_MEMBER_KEYS = {"ref"}
+LAYER_SET_KEYS = {"native", "explanation"}
+# A set needs at least this many members: one card alone is no group.
+MIN_SET_MEMBERS = 2
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
 # A word card has at least this many examples (owner, #506: "At least 2").
 MIN_EXAMPLES = 2
@@ -342,6 +352,7 @@ class CardDef:
     vocab: bool = False        # written in a vocab deck, core or layer
     reading: bool = False      # it has a reading
     in_core: bool = False      # written in a core: its layers give natives
+    is_set: bool = False       # a set card: never a ref's, a pair's or a base's card
 
 
 @dataclass
@@ -382,6 +393,9 @@ class TableInfo:
     rows: list[str]            # the rows' words, card ids
     script: str
     forms: dict[str, set[str]] = field(default_factory=dict)  # each row's cells
+    slots: list[str] = field(default_factory=list)  # the table's slot keys, in order
+    # Each rule's slots, by rule id, for the sets that name a rule.
+    rule_slots: dict[str, list[str]] = field(default_factory=dict)
 
 
 @dataclass
@@ -516,6 +530,9 @@ class Report:
     # A rules core: its rules, (id, where), and its table.
     rules_defined: list[tuple[str, str]] = field(default_factory=list)
     table: TableInfo | None = None
+    # A core's set cards (DECK-FORMAT.md, Set cards): (id, where, members),
+    # their members checked across files.
+    sets: list[tuple[str, str, object]] = field(default_factory=list)
     # A layer of a rules core: the rule ids it gives, of the core's.
     layer_rules: list[str] = field(default_factory=list)
     # A path: its units and B1 plan.
@@ -625,6 +642,11 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         return
     id_re = card_id_re(lang)
     core = form == "core"
+
+    if _is_set(card):
+        r.error(where, "a set card is written in a vocab core, kind: \"set\", its "
+                       "name and explanation in each layer (DECK-FORMAT.md, Set cards)")
+        return
 
     if "ref" in card and form != "layer":
         check_ref(r, idx, card, seen, id_re, form=form, lang=lang, script=script)
@@ -2598,7 +2620,10 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
         else:
             seen: set[str] = set()
             for i, card in enumerate(cards):
-                check_card(r, i, card, seen, script, lc, form="core")
+                if _is_set(card):
+                    check_set_card(r, i, card, seen, lc)
+                else:
+                    check_card(r, i, card, seen, script, lc, form="core")
             r.core_cards = [(cid, c.written) for cid, c in _core_index(raw, lc).items()]
     elif kind == "grammar":
         if "pattern" not in raw:
@@ -2608,6 +2633,108 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
     elif kind == "rules":
         check_rules_core(r, raw, lc, script)
     _check_review_tags(r, raw)
+
+
+def _is_set(card: object) -> bool:
+    """Whether [card], an item of a deck's cards, is a set card."""
+    return isinstance(card, dict) and card.get("kind") == "set"
+
+
+def _set_ids(core: dict) -> set[str]:
+    """The ids of a core's set cards."""
+    cards = core.get("cards")
+    return {c["id"] for c in cards if _is_set(c) and _is_str(c.get("id"))} \
+        if isinstance(cards, list) else set()
+
+
+def check_set_card(r: Report, idx: int, card: dict, seen: set[str], lang: str) -> None:
+    """A set card of a vocab core (DECK-FORMAT.md, Set cards): its id, a card
+    id, permanent; its members, by ref, or a rule and one fixed value of its
+    table. It has no question data: it is taught, never asked."""
+    where = f"cards[{idx}]"
+    cid = card.get("id")
+    if not _is_str(cid) or not card_id_re(lang).fullmatch(cid):
+        r.error(where, f"id must be {lang}- and at least four digits, such as "
+                       f"{lang}-0001, got {cid!r}")
+        cid = None
+    else:
+        where = f"card {cid}"
+        if cid in seen:
+            r.error(where, "duplicate card id")
+        seen.add(cid)
+        r.card_defs[cid] = CardDef(path=r.path, natives=set(), words=[], in_core=True,
+                                   is_set=True)
+    for unknown in sorted(set(card) - SET_KEYS, key=str):
+        r.error(where, f"a set card has only id, kind and members, its name and "
+                       f"explanation in each layer; got {unknown!r}")
+    members = card.get("members")
+    if isinstance(members, list):
+        refs: list[str] = []
+        for i, m in enumerate(members):
+            mwhere = f"{where}.members[{i}]"
+            if not isinstance(m, dict) or set(m) != SET_MEMBER_KEYS:
+                r.error(mwhere, f'must be {{ ref: "{lang}-0001" }}, a card of the '
+                                f"language, got {m!r}")
+                continue
+            ref = m["ref"]
+            if not _is_str(ref) or not card_id_re(lang).fullmatch(ref):
+                r.error(mwhere, f"ref must be a {lang} card id, got {ref!r}")
+            elif ref == cid:
+                r.error(mwhere, "a set is not a member of itself")
+            elif ref in refs:
+                r.error(mwhere, f"{ref} is a member already")
+            else:
+                refs.append(ref)
+        if len(members) < MIN_SET_MEMBERS:
+            r.error(f"{where}.members", f"a set has at least {MIN_SET_MEMBERS} members, "
+                                        f"got {len(members)}")
+        if cid is not None:
+            r.sets.append((cid, where, refs))
+    elif isinstance(members, dict):
+        rule = members.get("rule")
+        axes = [k for k in members if k != "rule"]
+        ok = True
+        if not _is_str(rule) or not (rule_id_re(lang).fullmatch(rule)
+                                     or (ID_RE.fullmatch(rule)
+                                         and rule.startswith(f"{lang}-"))):
+            r.error(f"{where}.members", f"rule must name a rule, such as "
+                                        f"{lang}-rule-past, or a rules core, such as "
+                                        f"{lang}-grammar-past, got {rule!r}")
+            ok = False
+        if len(axes) != 1 or not all(isinstance(k, str) and KEY_RE.fullmatch(k)
+                                     for k in axes):
+            r.error(f"{where}.members", "a rule's set fixes one value of its table "
+                                        "beside rule, as { rule: ..., verb: \"...\" } "
+                                        "or { rule: ..., person: \"...\" }, got "
+                                        f"{sorted(map(str, axes))}")
+            ok = False
+        elif not _is_str(members[axes[0]]):
+            r.error(f"{where}.members.{axes[0]}", "must be non-empty text")
+            ok = False
+        if ok and cid is not None:
+            r.sets.append((cid, where, (rule, axes[0], members[axes[0]])))
+    else:
+        r.error(f"{where}.members", f'is required: a list of {{ ref: "{lang}-0001" }}, '
+                                    f"or {{ rule, and one value of its table }}")
+
+
+def _check_layer_set(r: Report, where: str, entry: object) -> None:
+    """A layer's entry for a set card of its core: its name, `native`, and
+    its explanation, both text in this language."""
+    if not isinstance(entry, dict):
+        r.error(where, "must be a mapping")
+        return
+    for unknown in sorted(set(entry) - LAYER_SET_KEYS, key=str):
+        r.error(where, f"a set card's entry gives native, its name, and explanation; "
+                       f"got {unknown!r}")
+    for key in ("native", "explanation"):
+        value = entry.get(key)
+        if isinstance(value, bool):
+            r.error(where, f"{key} parsed as the boolean {value!r} -- YAML read a "
+                           f"bare true or false as a bool. Quote the value.")
+        elif not _is_str(value):
+            r.error(where, f"{key} is required: without it the set is not taught "
+                           f"from this language")
 
 
 def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
@@ -2713,7 +2840,7 @@ def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
                 r.warn(where, "has one form only, so its grammar questions cannot "
                               "offer a choice")
         r.table = TableInfo(pos_list, tags_list, excepted,
-                            list(dict.fromkeys(words)), script, cells)
+                            list(dict.fromkeys(words)), script, cells, slots)
 
     rules = raw.get("rules")
     if not isinstance(rules, list) or not rules:
@@ -2742,6 +2869,8 @@ def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
                 ids.add(rid)
                 r.rules_defined.append((rid, where))
         rule_slots = rule.get("slots")
+        if r.table is not None and _is_str(rid) and isinstance(rule_slots, list):
+            r.table.rule_slots[rid] = [s for s in rule_slots if isinstance(s, str)]
         if (not isinstance(rule_slots, list) or not rule_slots
                 or not all(isinstance(s, str) for s in rule_slots)):
             r.error(where, "slots must be a non-empty list of the table's slots")
@@ -2800,7 +2929,7 @@ def _core_index(core: dict, lang: str) -> dict[str, _CoreCard]:
     id_re = card_id_re(lang)
     cards = core.get("cards")
     for card in cards if isinstance(cards, list) else []:
-        if not isinstance(card, dict):
+        if not isinstance(card, dict) or _is_set(card):
             continue
         written = "ref" not in card
         cid = card.get("id") if written else card.get("ref")
@@ -2954,6 +3083,7 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
         cards = {}
     index = _core_index(core, lang)
     r.core_cards = [(cid, c.written) for cid, c in index.items()]
+    sets = _set_ids(core)
     translated: set[str] = set()
     given: dict[str, tuple[set[str], set[str]]] = {}
     seen: set[str] = set(index)
@@ -2962,6 +3092,9 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
         if not isinstance(cid, str):
             continue
         where = f"cards.{cid}"
+        if cid in sets:
+            _check_layer_set(r, where, entry)
+            continue
         known = index.get(cid)
         if known is None:
             if not id_re.fullmatch(cid):
@@ -2987,7 +3120,8 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
     scratch.deck_kind = "vocab"
     core_cards = core.get("cards") if isinstance(core.get("cards"), list) else []
     for i, card in enumerate(core_cards):
-        check_card(scratch, i, card, set(), script, lang, form="core")
+        if not _is_set(card):
+            check_card(scratch, i, card, set(), script, lang, form="core")
     for c in scratch.cards:
         if c.id not in translated:
             continue
@@ -4621,6 +4755,10 @@ def check_cards_across(reports: list[Report]) -> list[str]:
             if found is None:
                 problems.append(f"{rep.path}: {where}: no deck writes card {rid}")
                 continue
+            if found.is_set:
+                problems.append(f"{rep.path}: {where}: {rid} is a set card, taught in "
+                                f"its own deck and never listed by ref")
+                continue
             # A ref to a card its own deck writes is refused within the deck.
             natives = ctx.lang(rep.lang_code).natives_of(rid, found) \
                 if rep.lang_code is not None else found.natives
@@ -4891,6 +5029,57 @@ def counts_as_word(card: object, deck_kind: str) -> bool:
 
 def _languages(reports: list[Report]) -> list[str]:
     return sorted({code for rep in reports if (code := _lang_of(rep)) is not None})
+
+
+def check_sets_across(reports: list[Report]) -> list[str]:
+    """A set card's members (DECK-FORMAT.md, Set cards): each ref a card of
+    the language that is not a set; a rule's set a rule or rules core of the
+    language, and the value it fixes a row of its table, by the word's
+    target or id, under a part of speech of its rows, or else a slot of the
+    table and of the rule."""
+    ctx = _context(reports)
+    problems: list[str] = []
+    for rep in reports:
+        if rep.lang_code is None or not rep.sets:
+            continue
+        lang = ctx.lang(rep.lang_code)
+        defs = lang.defs()
+        tables = [(o.core_id, o.table) for o in lang.all()
+                  if o.part == "core" and o.table is not None]
+        for cid, where, members in rep.sets:
+            at = f"{rep.path}: {where}"
+            if isinstance(members, list):
+                for i, ref in enumerate(members):
+                    d = defs.get(ref)
+                    if d is None:
+                        problems.append(f"{at}: members names card {ref}, which no deck "
+                                        f"writes")
+                    elif d.is_set:
+                        problems.append(f"{at}: members names {ref}, a set card; a "
+                                        f"set's members are cards that are asked")
+                continue
+            rule, axis, value = members
+            found = [(core_id, t) for core_id, t in tables
+                     if rule == core_id or rule in t.rule_slots]
+            if not found:
+                problems.append(f"{at}: members.rule names {rule}, which no rules deck "
+                                f"of {rep.lang_code} defines")
+                continue
+            core_id, t = found[0]
+            slots = t.slots if rule == core_id else t.rule_slots[rule]
+            if axis in t.pos:
+                rows = [w for w in t.rows
+                        if w == value or (w in defs and defs[w].target == value)]
+                if not rows:
+                    problems.append(f"{at}: members.{axis}: {value!r} is no row of "
+                                    f"{core_id}; give a row's word, as its card writes "
+                                    f"it, or its id")
+            elif value not in slots:
+                problems.append(f"{at}: members.{axis}: {value!r} is not a slot of "
+                                f"{rule}; a value that is not a row's word is a slot, "
+                                f"one of {slots}, or use a part of speech of its rows "
+                                f"({', '.join(t.pos)}) as the key")
+    return problems
 
 
 def check_layers_across(reports: list[Report]) -> list[str]:
@@ -5514,7 +5703,8 @@ def main(argv: list[str]) -> int:
               + check_rules_across(reports) + check_notes_across(reports)
               + check_bases_across(reports) + check_phrasebook_across(reports)
               + check_plans_across(reports) + check_regions_across(reports)
-              + check_genders_across(reports) + check_media_across(reports))
+              + check_genders_across(reports) + check_media_across(reports)
+              + check_sets_across(reports))
     for problem in across:
         print(f"error: {problem}")
     warn_base_stems_across(reports)
