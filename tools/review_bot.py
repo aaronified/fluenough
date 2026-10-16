@@ -454,6 +454,58 @@ SOURCE_RULES = "transcribe rules"
 AUTO_FIELDS = ("reading", "ipa")
 
 
+# Wiktionary writes some IPA differently from the decks (#479). Per language
+# code, the Wiktionary symbols to the deck style, applied before the IPA is
+# written. Hindi: Wiktionary's open back ɑ(ː) is the decks' a(ː), so महीना
+# (mahīnā) is məɦiːnɑː there and məɦiːnaː in the decks. A language not listed
+# has no known difference yet; any symbol outside its deck's inventory is
+# listed in the PR body instead (see unknown_symbols).
+IPA_STYLE: dict[str, dict[str, str]] = {
+    "hi": {"ɑ": "a"},
+}
+
+
+def deck_style(ipa: str, lang: str) -> str:
+    """[ipa] from Wiktionary, written the way [lang]'s decks write it."""
+    for wiki, deck in IPA_STYLE.get(lang, {}).items():
+        ipa = ipa.replace(wiki, deck)
+    return ipa
+
+
+def deck_ipa_symbols(root: Path, lang: str) -> set[str]:
+    """Every character [lang]'s decks write in an `ipa` or `ipas` field."""
+    found: set[str] = set()
+
+    def walk(node: object) -> None:
+        if isinstance(node, dict):
+            for key, value in node.items():
+                if key in ("ipa", "ipas"):
+                    for item in value if isinstance(value, list) else [value]:
+                        if isinstance(item, str):
+                            found.update(item)
+                else:
+                    walk(value)
+        elif isinstance(node, list):
+            for item in node:
+                walk(item)
+    for path in pr.language_files(root, lang):
+        walk(pr._load(path))
+    found.discard(" ")
+    return found
+
+
+def unknown_symbols(ipa: str, inventory: set[str]) -> list[str]:
+    """The symbols of [ipa] the deck's [inventory] does not have, in order.
+    An empty inventory (a deck with no IPA yet) says nothing."""
+    if not inventory:
+        return []
+    out: list[str] = []
+    for ch in ipa:
+        if ch != " " and ch not in inventory and ch not in out:
+            out.append(ch)
+    return out
+
+
 class LookupFailed(Exception):
     """Wiktionary could not be reached: not the same as no IPA there."""
 
@@ -524,7 +576,7 @@ class Filled:
 
 
 def work_out(word: str, lang: str, name: str, script: str, wanted: list[str],
-             lookup: Lookup) -> Filled:
+             lookup: Lookup, inventory: set[str] | None = None) -> Filled:
     """The reading and IPA ([wanted] of them) of [word]."""
     out = Filled()
     rules_lang = lang if lang in tr.BLOCKS or lang == "es" else SCRIPT_LANG.get(script)
@@ -550,7 +602,13 @@ def work_out(word: str, lang: str, name: str, script: str, wanted: list[str],
                 out.notes.append(f"Wiktionary could not be reached ({e}); "
                                  "the IPA falls back on transcribe rules.")
         if ipa:
+            ipa = deck_style(ipa, lang)
             out.values["ipa"] = (ipa, SOURCE_WIKTIONARY)
+            odd = unknown_symbols(ipa, inventory or set())
+            if odd:
+                out.notes.append(
+                    "The IPA has symbols the deck's IPA does not use: "
+                    + ", ".join(f"`{c}`" for c in odd) + ".")
         elif rules is not None and rules.ipa:
             out.values["ipa"] = (rules.ipa, SOURCE_RULES)
             if not failed:
@@ -794,7 +852,8 @@ class Bot:
         if fresh is None:
             return lines
         name, script = language_of(root, lang)
-        worked = work_out(p.text, lang, name, script, wanted, self.lookup)
+        worked = work_out(p.text, lang, name, script, wanted, self.lookup,
+                          deck_ipa_symbols(root, lang))
         values = {k: v for k, (v, _) in worked.values.items()
                   if fresh.value(k) != v}
         if values and not pr.fill(fresh, values):
