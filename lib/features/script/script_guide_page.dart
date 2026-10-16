@@ -5,7 +5,9 @@ import '../../core/models/deck.dart';
 import '../../core/models/script_guide.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 
 /// How a script works, opened from a script deck's Tips (#30, ADR-0016).
@@ -54,7 +56,7 @@ class ScriptGuidePage extends StatelessWidget {
 /// letters that share it. Modelled on Duolingo's script tips
 /// (docs/market-research.md, "Script lessons").
 ///
-/// Only the term has a reading, under Show romanisation as on a card. The
+/// Only the term has a reading, under Latin-letter readings as on a card. The
 /// example and the letters are shapes to look at, and the text gives a
 /// sound where it matters, as a card's notes do.
 class ScriptGuideView extends StatelessWidget {
@@ -91,7 +93,12 @@ class ScriptGuideView extends StatelessWidget {
         actions: const <Widget>[ReportButton()],
       ),
       body: ListView(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
+        padding: const EdgeInsetsDirectional.fromSTEB(
+          16,
+          8,
+          16,
+          24,
+        ).clearingSystemBar(context),
         children: <Widget>[
           Text(
             guide.intro,
@@ -112,8 +119,8 @@ class ScriptGuideView extends StatelessWidget {
           ],
         ],
       ),
-      bottomNavigationBar: SafeArea(
-        minimum: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+      bottomNavigationBar: BottomActions(
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 16),
         child: FilledButton(
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(AppSizes.primaryButton),

@@ -104,6 +104,28 @@ void main() {
     expect(find.byType(SourcesPage), findsNothing);
   });
 
+  testWidgets('the Sources row is the last in Learning, not in Logs (#469)', (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const SettingsPage(),
+      state: AppState.test(decks: readingFixtureDecks()),
+    );
+    final l10n = l10nOf(tester);
+    GroupedList section(String header) => tester.widget<GroupedList>(
+      find.byWidgetPredicate((w) => w is GroupedList && w.header == header),
+    );
+    final learning = section(l10n.settingsSectionLearning).children;
+    expect((learning.last as GroupedTile).title, l10n.settingsSources);
+    final logs = section(l10n.settingsSectionLogs).children;
+    expect(
+      logs.whereType<GroupedTile>().map((t) => t.title),
+      isNot(contains(l10n.settingsSources)),
+    );
+  });
+
   testWidgets('the row counts the sources, in every language', (tester) async {
     usePhone(tester);
     await pumpScreen(
@@ -215,7 +237,8 @@ void main() {
       ),
     );
     final l10n = l10nOf(tester);
-    expect(find.byType(GroupedTile), findsNWidgets(2));
+    // The licence, then a row per language that names a source.
+    expect(find.byType(GroupedTile), findsNWidgets(3));
     final spanish = find.widgetWithText(GroupedTile, 'Spanish');
     expect(
       find.descendant(
@@ -233,7 +256,8 @@ void main() {
     expect(find.text('French'), findsNothing, reason: 'it names no source');
   });
 
-  testWidgets('and has no row when no deck names a source', (tester) async {
+  testWidgets('the row is there when no deck names a source, and names '
+      'the licence (ADR-0040)', (tester) async {
     usePhone(tester);
     await pumpScreen(
       tester,
@@ -245,8 +269,128 @@ void main() {
       ),
     );
     final l10n = l10nOf(tester);
-    await scrollThrough(tester);
-    expect(find.text(l10n.settingsSources), findsNothing);
-    expect(find.byIcon(Icons.menu_book_outlined), findsNothing);
+    final title = find.text(l10n.settingsSources);
+    await scrollTo(tester, title);
+    final row = find.widgetWithText(GroupedTile, l10n.settingsSources);
+    expect(row, findsOneWidget);
+    expect(
+      find.descendant(of: row, matching: find.text(l10n.sourcesLicence)),
+      findsOneWidget,
+    );
+    expect(l10n.sourcesLicence, 'Decks: CC BY-SA 4.0');
+  });
+
+  testWidgets('the page names CC BY-SA 4.0 for deck content, with no '
+      'credit when no deck uses a project', (tester) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const SourcesPage(),
+      state: AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          'decks/es/es-en-more.yaml': vocab('es-en-more', 'es', 'Spanish'),
+        }),
+      ),
+    );
+    final l10n = l10nOf(tester);
+    expect(find.text(l10n.sourcesDeckContent), findsOneWidget);
+    final licence = find.widgetWithText(GroupedTile, l10n.sourcesLicence);
+    expect(licence, findsOneWidget);
+    expect(
+      find.descendant(
+        of: licence,
+        matching: find.text(l10n.sourcesLicenceLine),
+      ),
+      findsOneWidget,
+    );
+    expect(l10n.sourcesLicenceLine, contains('Attribution-ShareAlike 4.0'));
+    for (final credit in ContentCredit.values) {
+      expect(find.text(l10n.sourcesCreditName(credit.name)), findsNothing);
+    }
+    expect(find.byType(GroupedTile), findsOneWidget);
+  });
+
+  test('a deck\'s source names the projects it credits', () {
+    final catalog = DeckCatalog.parseAll(<String, String>{
+      'decks/hi/hi-en-words.yaml': vocab(
+        'hi-en-words',
+        'hi',
+        'Hindi',
+        source: 'https://en.wiktionary.org/wiki/घर and Wikimedia Commons',
+      ),
+      'decks/bn/bn-en-words.yaml': vocab(
+        'bn-en-words',
+        'bn',
+        'Bengali',
+        source: 'Counted from https://bn.wikipedia.org',
+      ),
+      'decks/es/es-en-words.yaml': vocab(
+        'es-en-words',
+        'es',
+        'Spanish',
+        source: 'A word list',
+      ),
+    });
+    expect(creditsOf(catalog.decks), <ContentCredit>[
+      ContentCredit.wiktionary,
+      ContentCredit.commons,
+      ContentCredit.wikipedia,
+    ]);
+    expect(
+      ContentCredit.commons.namedIn(
+        'https://commons.wikimedia.org/wiki/File:Hi-ghar.ogg',
+      ),
+      isTrue,
+    );
+    expect(ContentCredit.wikipedia.namedIn('Wikimedia Commons'), isFalse);
+    expect(ContentCredit.tatoeba.namedIn('Tatoeba sentence 123'), isTrue);
+  });
+
+  testWidgets('the page credits each project the decks use, with what it '
+      'gives and its licence', (tester) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const SourcesPage(),
+      state: AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          'decks/hi/hi-en-words.yaml': vocab(
+            'hi-en-words',
+            'hi',
+            'Hindi',
+            source: 'Wiktionary, recordings from Wikimedia Commons',
+          ),
+          'decks/es/es-en-words.yaml': vocab(
+            'es-en-words',
+            'es',
+            'Spanish',
+            source: 'Tatoeba',
+          ),
+        }),
+      ),
+    );
+    final l10n = l10nOf(tester);
+    for (final credit in <ContentCredit>[
+      ContentCredit.wiktionary,
+      ContentCredit.commons,
+      ContentCredit.tatoeba,
+    ]) {
+      final row = find.widgetWithText(
+        GroupedTile,
+        l10n.sourcesCreditName(credit.name),
+      );
+      expect(row, findsOneWidget, reason: credit.name);
+      expect(
+        find.descendant(
+          of: row,
+          matching: find.text(l10n.sourcesCreditLine(credit.name)),
+        ),
+        findsOneWidget,
+      );
+    }
+    expect(find.text(l10n.sourcesCreditName('wikipedia')), findsNothing);
+    expect(l10n.sourcesCreditName('commons'), 'Wikimedia Commons');
+    expect(l10n.sourcesCreditLine('wiktionary'), contains('CC BY-SA 4.0'));
+    expect(l10n.sourcesCreditLine('tatoeba'), contains('CC BY 2.0 FR'));
   });
 }

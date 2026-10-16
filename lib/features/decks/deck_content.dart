@@ -30,7 +30,7 @@ List<Skill> deckSkills(DeckEntry entry, SettingsNotifier settings) {
       if (settings.isEnabled(skill) &&
           (skill == Skill.pair
               ? declaresPairs(entry)
-              : modes.contains(skill.mode)))
+              : skill.modes.any(modes.contains)))
         skill,
   ];
 }
@@ -86,7 +86,7 @@ String deckKindLabel(AppLocalizations l10n, DeckEntry entry) => entry.isScript
     ? l10n.deckKindScript
     : switch (entry.deck.kind) {
         DeckKind.vocab => l10n.deckKindVocabulary,
-        DeckKind.grammar => l10n.deckKindGrammar,
+        DeckKind.grammar || DeckKind.rules => l10n.deckKindGrammar,
         DeckKind.reading => l10n.deckKindReading,
       };
 

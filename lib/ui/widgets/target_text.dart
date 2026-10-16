@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
+import '../card_text_scale.dart';
 import '../theme.dart';
 
 /// Deck content in the deck's language: a card's target, a lemma, a leech.
@@ -70,11 +71,14 @@ class TargetText extends StatelessWidget {
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
       listenable: settings,
-      builder: (context, _) => _text(
-        _sizing == _Sizing.hero
-            ? TargetSizes.forText(text, scale: settings.cardTextScale)
-            : fontSize! * settings.cardTextScale,
-      ),
+      builder: (context, _) {
+        final scale = cardTextScaleOf(context, settings);
+        return _text(
+          _sizing == _Sizing.hero
+              ? TargetSizes.forText(text, scale: scale)
+              : fontSize! * scale,
+        );
+      },
     );
   }
 

@@ -6,6 +6,7 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../ui/theme.dart';
 import '../decks/gallery_entries.dart';
+import '../downloads/gallery_entries.dart';
 import '../drill/gallery_entries.dart';
 import '../drill/grammar_drill.dart';
 import '../drill/pair_drill.dart';
@@ -44,12 +45,16 @@ List<GalleryEntry> get allGalleryEntries => <GalleryEntry>[
   ...statsGalleryStates,
   ...settingsGalleryEntries,
   ...settingsGalleryStates,
+  ...downloadsGalleryEntries,
 ];
 
 /// The design's "Dark theme" section: these screens again, dark.
 const List<String> darkGalleryIds = <String>[
   'profiles',
   'today',
+  'decks',
+  'decks-a1-earned',
+  'unit',
   'deck',
   'drill-production-accent',
   'stats',

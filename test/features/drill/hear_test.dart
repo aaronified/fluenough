@@ -291,7 +291,7 @@ void main() {
       }
       // A deck that does not teach the alphabet chooses the meaning.
       final words = state.sessionItems(
-        DrillRequest.untaught('hi-en-first-words', skill: Skill.listening),
+        DrillRequest.untaught('hi-en-phrasebook', skill: Skill.listening),
       );
       expect(words.map((i) => i.ask), everyElement(Ask.hearMeaning));
     });

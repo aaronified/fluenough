@@ -17,6 +17,8 @@ class SpokenLanguagesPicker extends StatefulWidget {
     this.choices,
     this.header,
     this.footer,
+    this.readsScript = const <String, bool>{},
+    this.onScriptChanged,
   });
 
   static const String asset = 'assets/languages.yaml';
@@ -29,6 +31,14 @@ class SpokenLanguagesPicker extends StatefulWidget {
 
   /// Null reads [asset].
   final List<SpokenLanguage>? choices;
+
+  /// Whether the learner reads each language's script, by code (#462).
+  /// A ticked language with a script and no answer shows its switch on.
+  final Map<String, bool> readsScript;
+
+  /// Called with a language's code and its script switch's new value.
+  /// Null shows no script switches.
+  final void Function(String code, bool reads)? onScriptChanged;
 
   /// Scrolls with the list, above it.
   final Widget? header;
@@ -48,6 +58,10 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
   List<SpokenLanguage>? _choices;
   List<String> _order = const <String>[];
   Set<String> _ticked = const <String>{};
+
+  /// The script switches, kept here so that they move at once wherever the
+  /// owner does not rebuild this picker.
+  late Map<String, bool> _reads = <String, bool>{...widget.readsScript};
 
   @override
   void initState() {
@@ -179,8 +193,9 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final ticked = rank > 0;
-    return CheckboxListTile(
-      key: ValueKey<String>(language.code),
+    final onScript = widget.onScriptChanged;
+    final script = language.script;
+    final tile = CheckboxListTile(
       controlAffinity: ListTileControlAffinity.leading,
       // The checkbox is shrink-wrapped to 40 px with its 18 px box centred:
       // 13 + 11 puts the box on the 24 px line, and 13 + 40 + 19 puts every
@@ -248,6 +263,63 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
                 ),
               ],
             ),
+    );
+    if (!ticked || onScript == null) {
+      return KeyedSubtree(key: ValueKey<String>(language.code), child: tile);
+    }
+    // Under the ticked language, on the name's 72 px line: whether its
+    // script is read, which reviewing needs (#462). Asked, never assumed:
+    // neither answer is chosen until the learner chooses one.
+    final answer = _reads[language.code];
+    return Column(
+      key: ValueKey<String>(language.code),
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        tile,
+        Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(72, 0, 24, 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 8,
+            children: <Widget>[
+              Text(
+                l10n.knownReadsScript(script ?? '', language.name),
+                style: theme.textTheme.bodyMedium,
+              ),
+              SegmentedButton<bool>(
+                key: ValueKey<String>('script-${language.code}'),
+                emptySelectionAllowed: true,
+                showSelectedIcon: false,
+                segments: <ButtonSegment<bool>>[
+                  ButtonSegment<bool>(
+                    value: true,
+                    label: Text(l10n.knownScriptYes),
+                  ),
+                  ButtonSegment<bool>(
+                    value: false,
+                    label: Text(l10n.knownScriptNo),
+                  ),
+                ],
+                selected: <bool>{?answer},
+                onSelectionChanged: (picked) {
+                  // Tapping the chosen answer again keeps it: an answer,
+                  // once given, is changed, never taken back.
+                  if (picked.isEmpty) return;
+                  final reads = picked.single;
+                  setState(
+                    () => _reads = <String, bool>{
+                      ..._reads,
+                      language.code: reads,
+                    },
+                  );
+                  onScript(language.code, reads);
+                },
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

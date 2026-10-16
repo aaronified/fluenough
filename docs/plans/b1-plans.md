@@ -1,7 +1,7 @@
 # Plan: a B1 plan in every path
 
-Written 2026-10-06. **After `skill-model.md`, before deck downloads**
-(owner's order).
+Written 2026-10-06. **After the skill model (done: ADR-0034), before deck
+downloads** (owner's order).
 
 ## What the owner asked
 
@@ -21,7 +21,9 @@ Asked what it should entail, the owner decided:
 
 - A path (`decks/<lang>/<lang>-<native>-path.yaml`, ADR-0013) is a list of
   units, each a list of existing deck ids in teaching order, plus the decks
-  that need the alphabet. Telugu's has 30 units.
+  that need the alphabet. Telugu's has 30 units. Paths become one per
+  language learnt, `<lang>-path.yaml`, naming core ids (owner,
+  2026-10-09; below).
 - Nothing marks a level, and nothing records what is still to write.
 - `language-paths.md` sets B1 as the target, about 2,500–3,000 words, and
   estimates 280–420 hours of content for the seven Indian languages to get
@@ -42,17 +44,29 @@ unchanged:
 
 ```yaml
 units:
-  - decks: [te-en-family, te-en-grammar-be, "*"]
+  - decks: ["te-family", "te-grammar-be", "*"]
     words: 45
-    grammar: [be]
-  - decks: [te-en-work, te-en-grammar-demonstratives, "*"]
+    grammar: ["be"]
+  - decks: ["te-work", "te-grammar-demonstratives", "*"]
     words: 45
-    grammar: [demonstratives]
-    milestone: A1
-  - planned: { id: te-en-health, theme: health, words: 60 }
-  - planned: { id: te-en-grammar-conditional, grammar: conditional }
-    milestone: B1
+    grammar: ["demonstratives"]
+    milestone: "A1"
+  - planned: { id: "te-health", theme: "health", words: 60 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "te-grammar-conditional", grammar: "conditional" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
+    milestone: "B1"
 ```
+
+The path names each deck by its core id (`te-family`), and a learner is
+taught their own native language's deck for it (`te-en-family` from
+English); the exact format is in `docs/DECK-FORMAT.md`, "Paths" and "The B1 plan".
 
 Units after the B1 mark, if any, are written as today. Units with the
 alphabet stay where they are; they count neither words nor grammar.
@@ -99,7 +113,7 @@ from by interest: `books-films-songs.md`.
 | Achievements (`achievements.md`) | The A1, A2 and B1 badges come from the milestones |
 | Hours per language (`hours-per-language.md`) | "Hours left" counts down to the end of the B1 plan |
 | Pacing (`language-paths.md`) | The scheme's phases line up with the milestones |
-| Deck downloads (`decks-from-github.md`) | The index carries each plan and the counted words, so the picker shows completeness before a download |
+| Deck downloads ([ADR-0037](../adr/0037-decks-download-from-main.md)) | The index carries each plan and the counted words, so the picker shows completeness before a download |
 
 The words a unit has are always counted from its decks: distinct
 vocabulary cards. Script decks, grammar tables and learners' own decks
@@ -120,7 +134,14 @@ them. The validator rejects a deck that leaves one out.
   `bases:`, typed notes, planned units, core and layer) is built in the
   parser, the validator and `docs/DECK-FORMAT.md` before any B1 deck is
   written, so that what is written validates. Then one agent writes the
-  whole Bengali B1 course and another the Telugu one.
+  Bengali course and another the Telugu one (Sonnet writes the decks;
+  CLAUDE.md).
+- **A1 decks only, for now** (owner, 2026-10-09: "once B1 plan is done,
+  we will only create A1 level decks (if any existing deck goes beyond,
+  that's okay) for Bengali and Telugu"). The B1 plan is still written in
+  full, every unit to B1 with its passages, but the deck agents write
+  decks for the A1 units only; A2 and B1 units stay planned ("Coming").
+  An existing deck that already reaches past A1 stays as it is.
 - **Pictures:** the agents use `tools/data/picture-mapping.json`, the
   meanings already matched to Noto Emoji pictures and checked, with the
   matches dropped and why. The 330 cards given pictures keep them.
@@ -130,10 +151,13 @@ them. The validator rejects a deck that leaves one out.
 
 ### Format details, settled 2026-10-09
 
-- **A rule's forms are listed for every word,** not made from a stem with
-  exceptions: exact for Telugu's oblique stems (ఇల్లు (illu) → ఇంట్లో
-  (iṇṭlō)), and the validator checks every taught word of the rule's kind
-  has its row (owner).
+- **A rule's forms are made from each word's stem, with exceptions listed,
+  and checked** (owner, 2026-10-16: "Stem + exceptions, checked", replacing
+  "listed for every word" of 2026-10-09). The rule gives the endings; a word
+  gives its stem (ఇల్లు (illu) → ఇంటి- (iṇṭi-), so ఇంట్లో (iṇṭlō)) and any
+  exceptions; the validator compares the generated forms with Wiktionary's
+  where they exist and flags mismatches, and checks every taught word of the
+  rule's kind has a stem.
 - **A layer's files live in `decks/<lang>/<native>/`,** the core in
   `decks/<lang>/` (owner).
 - **Notes about the language learnt** keep their language facts (the
@@ -153,6 +177,25 @@ them. The validator rejects a deck that leaves one out.
   error); written units need none (owner).
 - The format is built on its own branch, in parallel with the skill model,
   so that the Bengali and Telugu deck agents can start (owner).
+
+### The format's open questions, answered 2026-10-09
+
+The owner's answers to the questions of the B1 format spec (now folded into
+`docs/DECK-FORMAT.md`, and in git history):
+
+- **One path per language learnt,** `<lang>-path.yaml`, shared by every
+  native layer, now, before the deck agents start: it lists core ids, and
+  each passage is named once with a description per native language.
+  Today's course paths move to it once.
+- **Grammar understood is choosing what a form means;** choosing among the
+  same word's forms, or typing the form, is grammar produced.
+- **A plan is required** on a path whose language has a core; every
+  planned unit names its passages; a grammar topic is one rule; scripts
+  without spaces wait; pairs come from pair notes.
+- **Regions** (the owner asked where the rating screen's "Where you speak
+  Telugu" is defined): in the language's path, `regions:`, each with an
+  id and a name per native language; the app adds "Elsewhere". A rater's
+  region and a card's region note name them.
 
 ### Phrasebook, words, rules, then sentences
 
@@ -230,7 +273,7 @@ answers."
   validator *warning*, not an error (owner's choice).
 - **`pair` notes are proposed by a tool:** course words whose readings
   differ by one sound, such as కలం (kalaṁ) and కాలం (kālaṁ). The same pairs
-  give Hear its sound-alike options (`skill-model.md`).
+  give Hear its sound-alike options (ADR-0034).
 - **A `pair` note names its partner** (`ref`, the card of the word that
   sounds almost the same).
 - **`culture` notes follow the culture-deck rules (#99):** each checkable
@@ -298,7 +341,7 @@ browser:
 1. **Format:** the path parser, the validator, `docs/DECK-FORMAT.md`, and
    an ADR.
 2. **The skeleton**, from the descriptors above.
-3. **A plan for each of the eight courses.** Telugu and Kannada are written
+3. **A plan for each of the eight languages,** in its one path. Telugu and Kannada are written
    together with their reorder to the Dravidian order, which
    `language-paths.md` calls for.
 4. **"Coming"** on the Decks tab, and lessons skipping planned units.

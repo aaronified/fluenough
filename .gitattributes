@@ -1,0 +1,4 @@
+# The app checks each deck file it downloads against the SHA-256 in
+# decks/index.json (ADR-0037), which tools/deck_index.py computes from the
+# bytes on disk. Keep them the bytes GitHub serves, whatever the platform.
+decks/** text eol=lf

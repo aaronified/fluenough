@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
@@ -277,7 +278,7 @@ void main() {
   test('the bundled Bengali guide loads, and its reading deck opens the '
       'script units', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    final catalog = await DeckCatalog.bundled().load();
+    final catalog = await DeckCatalog(RepositoryDeckSource()).load();
     expect(catalog.broken, isEmpty);
     final bengali = catalog.scriptGuides['bn']!;
     expect(bengali.features.map((f) => f.id), contains('rows'));

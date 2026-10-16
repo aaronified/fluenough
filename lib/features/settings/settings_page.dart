@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
@@ -9,6 +10,7 @@ import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/data/log_jsonl.dart';
+import '../../core/logs/log_entry.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
@@ -21,6 +23,8 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/snack.dart';
 import '../gallery/gallery_link.dart';
+import '../review/review_section.dart';
+import '../placement/native_choice.dart';
 import 'adjust_section.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
@@ -30,14 +34,17 @@ import 'update_section.dart';
 
 /// The Settings tab: the profile card, learning, "Adjust to me" (FSRS fitted
 /// to the learner, [AdjustSection]), sound, look and language,
-/// reminder and privacy, your data, a row to the sources the decks name, cloud
-/// backup, updates, and the footer.
+/// reminder and privacy, your data, reviewing ([ReviewSection]), logs, a
+/// row to the sources the decks name, cloud backup, updates, and the
+/// footer.
 ///
-/// Design screen `settings`. Live, in memory until #15 stores them: new cards
-/// per day, the skill switches, romanisation, sound, playing
-/// words automatically, speech rate, and the Voices row.
+/// Design screen `settings`. Live: the skill switches, Latin-letter
+/// readings, adult content (18+, #96), sound, playing words automatically,
+/// speech rate, and the Voices row. Every switch's line says what happens
+/// in its state (docs/plans/settings-wording.md).
 /// Export and import save the review log as a file and merge one back
-/// (#20). Updates, which the design does not draw, checks GitHub for a newer
+/// (#20). Logs shows, copies, exports and clears the app's own log (#162).
+/// Updates, which the design does not draw, checks GitHub for a newer
 /// version, beside the version line, and installs it (ADR-0017). Everything
 /// else is built and shown disabled behind its [Feature]: switching profile,
 /// the app language, the reminder, the PIN lock, deleting the profile, and
@@ -81,10 +88,10 @@ class SettingsPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     _data(context, state),
                     const SizedBox(height: 20),
-                    _logs(context),
-                    // Where the decks' texts come from (#98), on a page of
-                    // its own; no row when no deck names a source.
-                    ..._sources(context, state),
+                    // Reviewer mode (docs/plans/deck-browser.md).
+                    const ReviewSection(),
+                    const SizedBox(height: 20),
+                    _logs(context, state),
                     const SizedBox(height: 20),
                     const BackupSection(),
                     const SizedBox(height: 20),
@@ -132,6 +139,7 @@ class SettingsPage extends StatelessWidget {
         GroupedTile(
           leading: const Icon(Icons.record_voice_over_outlined),
           title: l10n.settingsSpoken,
+          subtitle: _spokenLine(l10n, state),
           trailing: const Icon(Icons.chevron_right),
           onTap: () => AppNavigator.openSpokenLanguages(context),
         ),
@@ -145,7 +153,8 @@ class SettingsPage extends StatelessWidget {
         for (final skill in Skill.values) ...<Widget>[
           GroupedTile.toggle(
             title: skill.settingsLabel(l10n),
-            subtitle: skill.settingsDescription(l10n),
+            subtitleOn: _skillLine(l10n, state, skill, on: true),
+            subtitleOff: _skillLine(l10n, state, skill, on: false),
             feature: skill.feature,
             // Shown off while incoming, as the design draws it.
             value:
@@ -191,9 +200,17 @@ class SettingsPage extends StatelessWidget {
         ],
         GroupedTile.toggle(
           title: l10n.settingsRomanisation,
-          subtitle: l10n.settingsRomanisationDesc,
+          subtitleOn: l10n.settingsRomanisationOn,
+          subtitleOff: l10n.settingsRomanisationOff,
           value: settings.showRomanisation,
           onChanged: (on) => settings.showRomanisation = on,
+        ),
+        GroupedTile.toggle(
+          title: l10n.settingsAdult,
+          subtitleOn: l10n.settingsAdultOn,
+          subtitleOff: l10n.settingsAdultOff,
+          value: settings.adultContent,
+          onChanged: (on) => _setAdult(context, settings, on),
         ),
         if (_withAlphabet(state).isNotEmpty)
           GroupedTile(
@@ -203,9 +220,99 @@ class SettingsPage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => _chooseAlphabets(context, state),
           ),
+        // "Learn Telugu from", for each course more than one of the
+        // languages the learner speaks teaches (ADR-0036).
+        for (final language in _withNatives(state))
+          GroupedTile(
+            leading: const Icon(Icons.translate),
+            title: l10n.nativeChoiceTitle(language.name),
+            subtitle: _nativeName(state, language.code),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => NativeChoicePage.open(context, language),
+          ),
+        // Where the decks' texts come from (#98), on a page of its own; no
+        // row when no deck names a source.
+        _sources(context, state),
       ],
     );
   }
+
+  /// The languages the profile learns that more than one of the languages
+  /// the learner speaks teaches.
+  static List<LanguageInfo> _withNatives(AppState state) => <LanguageInfo>[
+    for (final language in state.languages)
+      if (state.currentProfile.learns(language.code) &&
+          state.offersNativeChoice(language.code))
+        language,
+  ];
+
+  /// The name of the language [language] is learned from.
+  static String? _nativeName(AppState state, String language) {
+    final code = state.courseNative(language);
+    return state
+        .nativeOptions(language)
+        .where((o) => o.native.code == code)
+        .firstOrNull
+        ?.native
+        .name;
+  }
+
+  /// The languages the learner speaks, best known first, by the names the
+  /// decks give them, or their codes where no deck names them.
+  static String _spokenLine(AppLocalizations l10n, AppState state) {
+    final names = <String, String>{
+      for (final deck in state.decks)
+        deck.deck.native.code: deck.deck.native.name,
+      for (final language in state.languages) language.code: language.name,
+    };
+    return <String>[
+      for (final code in state.settings.spokenLanguages) names[code] ?? code,
+    ].join(l10n.commonListSeparator);
+  }
+
+  /// A skill switch's line for [on] (docs/plans/settings-wording.md): what
+  /// is asked, or not, or that it is skipped while sound is off, then what
+  /// the phone lacks for the languages the profile learns: a voice for a
+  /// skill that needs one, a recogniser for speaking.
+  static String _skillLine(
+    AppLocalizations l10n,
+    AppState state,
+    Skill skill, {
+    required bool on,
+  }) {
+    final line = !on
+        ? skill.settingsOff(l10n)
+        : skill.needsVoice && !state.settings.soundOn
+        ? l10n.settingsSkillSoundOff
+        : skill.settingsOn(l10n);
+    if (!state.features.isAvailable(skill.feature)) return line;
+    final learned = <LanguageInfo>[
+      for (final language in state.languages)
+        if (state.currentProfile.learns(language.code)) language,
+    ];
+    String names(bool Function(LanguageInfo) lacks) => <String>[
+      for (final language in learned)
+        if (lacks(language)) language.name,
+    ].join(l10n.commonListSeparator);
+    if (skill.needsVoice) {
+      final missing = names((l) => state.voiceStatus(l) == VoiceStatus.missing);
+      if (missing.isNotEmpty) return l10n.settingsSkillNoVoice(line, missing);
+    }
+    if (skill.needsMicrophone) {
+      final missing = names(
+        (l) => state.speechStatus(l) == SpeechStatus.missing,
+      );
+      if (missing.isNotEmpty) {
+        return l10n.settingsSkillNoRecogniser(line, missing);
+      }
+    }
+    return line;
+  }
+
+  /// A switch's row in a dialog: no room at the sides, the dialog has it.
+  static const EdgeInsetsGeometry _dialogRow = EdgeInsetsDirectional.symmetric(
+    vertical: 10,
+  );
 
   /// The languages the profile learns whose course has decks that need the
   /// alphabet.
@@ -243,13 +350,16 @@ class SettingsPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     for (final language in _withAlphabet(state))
-                      SwitchListTile(
-                        title: Text(language.name),
-                        subtitle:
-                            !settings.learnsAlphabet(language.code) &&
-                                state.courseUnits(language.code).isEmpty
-                            ? Text(l10n.settingsAlphabetEmpty)
-                            : null,
+                      GroupedTile.toggle(
+                        title: language.name,
+                        subtitleOn: l10n.settingsAlphabetOn(
+                          language.script,
+                          language.name,
+                        ),
+                        subtitleOff: state.courseUnits(language.code).isEmpty
+                            ? l10n.settingsAlphabetOffEmpty
+                            : l10n.settingsAlphabetOff,
+                        padding: _dialogRow,
                         value: settings.learnsAlphabet(language.code),
                         onChanged: (on) =>
                             settings.setLearnsAlphabet(language.code, on),
@@ -294,7 +404,9 @@ class SettingsPage extends StatelessWidget {
           if (state.currentProfile.learns(language.code)) language,
       ];
       return AlertDialog(
-        title: Text(l10n.settingsSkillLanguagesTitle(skill.label(l10n))),
+        title: Text(
+          l10n.settingsSkillLanguagesTitle(skill.settingsLabel(l10n)),
+        ),
         content: ListenableBuilder(
           listenable: settings,
           builder: (context, _) => SingleChildScrollView(
@@ -302,11 +414,14 @@ class SettingsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 for (final language in languages)
-                  CheckboxListTile(
-                    title: Text(language.name),
+                  GroupedTile.toggle(
+                    title: language.name,
+                    subtitleOn: l10n.settingsSkillAskedIn(language.name),
+                    subtitleOff: l10n.settingsSkillNotAskedIn(language.name),
+                    padding: _dialogRow,
                     value: !settings.isOffFor(skill, language.code),
                     onChanged: (on) =>
-                        settings.setOffFor(skill, language.code, on != true),
+                        settings.setOffFor(skill, language.code, !on),
                   ),
               ],
             ),
@@ -321,6 +436,42 @@ class SettingsPage extends StatelessWidget {
       );
     },
   );
+
+  /// Adult content asks the learner to confirm their age as it is switched
+  /// on (#96), and is off again at once, hiding every rude word.
+  static Future<void> _setAdult(
+    BuildContext context,
+    SettingsNotifier settings,
+    bool on,
+  ) async {
+    if (!on) {
+      settings.adultContent = false;
+      return;
+    }
+    final adult = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(l10n.settingsAdultConfirmTitle),
+          content: SingleChildScrollView(
+            child: Text(l10n.settingsAdultConfirmBody),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.commonCancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.settingsAdultConfirm),
+            ),
+          ],
+        );
+      },
+    );
+    if (adult == true) settings.adultContent = true;
+  }
 
   /// Speaking asks for the microphone as it is switched on (ADR-0014), and
   /// stays off, saying why, when it cannot be had.
@@ -351,17 +502,24 @@ class SettingsPage extends StatelessWidget {
       children: <Widget>[
         GroupedTile.toggle(
           title: l10n.settingsSound,
-          subtitle: l10n.settingsSoundDesc,
+          subtitleOn: l10n.settingsSoundOn,
+          subtitleOff: l10n.settingsSoundOff,
           value: settings.soundOn,
           onChanged: (on) {
             settings.soundOn = on;
             if (!on) showAppSnackBar(context, l10n.settingsSoundOffSkipped);
           },
         ),
-        // Shown as it is set, but cannot be changed while nothing plays.
+        // Shown as it is set, but cannot be changed while nothing plays,
+        // and its line says so.
         GroupedTile.toggle(
           title: l10n.settingsAutoplay,
-          subtitle: l10n.settingsAutoplayDesc,
+          subtitleOn: settings.soundOn
+              ? l10n.settingsAutoplayOn
+              : l10n.settingsAutoplayOnSoundOff,
+          subtitleOff: settings.soundOn
+              ? l10n.settingsAutoplayOff
+              : l10n.settingsAutoplayOffSoundOff,
           value: settings.autoplay,
           titleColor: settings.soundOn
               ? null
@@ -439,7 +597,15 @@ class SettingsPage extends StatelessWidget {
         GroupedTile.toggle(
           leading: const Icon(Icons.notifications_outlined),
           title: l10n.settingsReminder,
-          subtitle: l10n.settingsReminderDesc,
+          subtitleOn: l10n.settingsReminderOn(
+            MaterialLocalizations.of(context).formatTimeOfDay(
+              settings.reminderTime,
+              alwaysUse24HourFormat: MediaQuery.alwaysUse24HourFormatOf(
+                context,
+              ),
+            ),
+          ),
+          subtitleOff: l10n.settingsReminderOff,
           feature: Feature.reminder,
           value: reminderOn && settings.reminder,
           onChanged: (on) => settings.reminder = on,
@@ -475,7 +641,8 @@ class SettingsPage extends StatelessWidget {
         GroupedTile.toggle(
           leading: const Icon(Icons.lock_outline),
           title: l10n.settingsPinLock,
-          subtitle: l10n.settingsPinLockDesc,
+          subtitleOn: l10n.settingsPinLockOn,
+          subtitleOff: l10n.settingsPinLockOff,
           feature: Feature.pinLock,
           value: pinOn && state.currentProfile.isLocked,
           onChanged: null,
@@ -518,45 +685,134 @@ class SettingsPage extends StatelessWidget {
     );
   }
 
-  /// The app's own log, for reports (#162). Incoming: the app keeps none
-  /// yet.
-  Widget _logs(BuildContext context) {
+  /// The app's own log, for reports (#162): view it, copy it, export it as
+  /// a file, or clear it.
+  Widget _logs(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
-    return GroupedList.settings(
-      header: l10n.settingsSectionLogs,
-      children: <Widget>[
-        GroupedTile(
-          leading: const Icon(Icons.receipt_long_outlined),
-          title: l10n.settingsAppLog,
-          subtitle: l10n.settingsAppLogDesc,
-          feature: Feature.logs,
-          padding: _tallRow,
-        ),
-      ],
+    final log = state.log;
+    return ListenableBuilder(
+      listenable: log,
+      builder: (context, _) {
+        final empty = log.isEmpty;
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            GroupedList.settings(
+              header: l10n.settingsSectionLogs,
+              children: <Widget>[
+                GroupedTile(
+                  leading: const Icon(Icons.receipt_long_outlined),
+                  title: l10n.settingsLogView,
+                  subtitle: l10n.settingsLogViewDesc(log.entries.length),
+                  trailing: const Icon(Icons.chevron_right),
+                  feature: Feature.logs,
+                  onTap: () => AppNavigator.openAppLog(context),
+                ),
+                GroupedTile(
+                  leading: const Icon(Icons.copy_outlined),
+                  title: l10n.settingsLogCopy,
+                  feature: Feature.logs,
+                  onTap: empty ? null : () => _copyLog(context, state),
+                ),
+                GroupedTile(
+                  leading: const Icon(Icons.file_download_outlined),
+                  title: l10n.settingsLogExport,
+                  subtitle: l10n.settingsLogExportDesc,
+                  feature: Feature.logs,
+                  onTap: empty ? null : () => _exportLog(context, state),
+                ),
+                GroupedTile(
+                  leading: const Icon(Icons.delete_outline),
+                  title: l10n.settingsLogClear,
+                  feature: Feature.logs,
+                  onTap: empty ? null : () => _clearLog(context, state),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
+              child: Text(
+                l10n.settingsLogAbout,
+                style: settingsHelpStyle(Theme.of(context)),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
-  /// The way to the sources the decks name (#98), with a gap above it, or
-  /// nothing when no deck names one.
-  List<Widget> _sources(BuildContext context, AppState state) {
+  Future<void> _copyLog(BuildContext context, AppState state) async {
     final l10n = AppLocalizations.of(context)!;
-    final sources = sourcesOf(state.decks);
-    if (sources.isEmpty) return const <Widget>[];
-    final count = sources.fold(0, (n, source) => n + source.lines.length);
-    return <Widget>[
-      const SizedBox(height: 20),
-      GroupedList.settings(
-        children: <Widget>[
-          GroupedTile(
-            leading: const Icon(Icons.menu_book_outlined),
-            title: l10n.settingsSources,
-            subtitle: l10n.settingsSourcesSummary(count),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => AppNavigator.openSources(context),
+    await Clipboard.setData(ClipboardData(text: state.log.text));
+    if (context.mounted) showAppSnackBar(context, l10n.settingsLogCopied);
+  }
+
+  /// Saves the app log as [appLogFileName], where the learner picks.
+  Future<void> _exportLog(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    final bool saved;
+    try {
+      saved = await state.logFiles.save(
+        appLogFileName,
+        state.log.text,
+        mimeType: 'text/plain',
+      );
+    } on Exception catch (e) {
+      state.log.warning('App log not exported: ${e.runtimeType}');
+      if (context.mounted) {
+        showAppSnackBar(context, l10n.settingsLogExportFailed);
+      }
+      return;
+    }
+    if (!saved) return;
+    state.log.event('App log exported');
+    if (context.mounted) {
+      showAppSnackBar(context, l10n.settingsExported(appLogFileName));
+    }
+  }
+
+  /// Asks, then clears the app log.
+  Future<void> _clearLog(BuildContext context, AppState state) async {
+    final l10n = AppLocalizations.of(context)!;
+    final clear = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.settingsLogClearTitle),
+        content: Text(l10n.settingsLogClearBody),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.commonCancel),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.settingsLogClearConfirm),
           ),
         ],
       ),
-    ];
+    );
+    if (clear != true) return;
+    await state.log.clear();
+    if (context.mounted) showAppSnackBar(context, l10n.settingsLogCleared);
+  }
+
+  /// The row to the decks' licence and the sources they name (#98,
+  /// ADR-0040). It is always there, since the licence always applies; with
+  /// no source named, its line names the licence.
+  Widget _sources(BuildContext context, AppState state) {
+    final l10n = AppLocalizations.of(context)!;
+    final sources = sourcesOf(state.decks);
+    final count = sources.fold(0, (n, source) => n + source.lines.length);
+    return GroupedTile(
+      leading: const Icon(Icons.menu_book_outlined),
+      title: l10n.settingsSources,
+      subtitle: count == 0
+          ? l10n.sourcesLicence
+          : l10n.settingsSourcesSummary(count),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => AppNavigator.openSources(context),
+    );
   }
 
   /// Saves the review log as `fluenough-<profile>-reviews.jsonl`, where the
@@ -567,13 +823,14 @@ class SettingsPage extends StatelessWidget {
     final bool saved;
     try {
       saved = await state.logFiles.save(name, state.progress.exportJsonl());
-    } on Exception {
+    } on Exception catch (e) {
+      state.log.warning('Review log not exported: ${e.runtimeType}');
       if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
       return;
     }
-    if (saved && context.mounted) {
-      showAppSnackBar(context, l10n.settingsExported(name));
-    }
+    if (!saved) return;
+    state.log.event('Review log exported');
+    if (context.mounted) showAppSnackBar(context, l10n.settingsExported(name));
   }
 
   /// Merges a picked backup into this profile's log and says how many
@@ -584,6 +841,7 @@ class SettingsPage extends StatelessWidget {
     try {
       text = await state.logFiles.open(title: l10n.settingsImportPick);
     } on Exception catch (e) {
+      state.log.warning('Review log not imported: ${e.runtimeType}');
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsImportFailed('$e'));
       }
@@ -599,11 +857,13 @@ class SettingsPage extends StatelessWidget {
         fitted: backup.fitted,
       );
     } on FormatException catch (e) {
+      state.log.warning('Review log not imported: not a backup');
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsImportFailed(e.message));
       }
       return;
     }
+    state.log.event('Review log imported: $added new');
     if (context.mounted) showAppSnackBar(context, l10n.settingsImported(added));
   }
 

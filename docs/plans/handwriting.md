@@ -19,7 +19,7 @@ Decided with the owner:
   the learner can override it with "I drew it right".
 - **Handwriting answers Write** (owner's decision, 2026-10-06; it replaces
   "a skill of its own"): writing in the script by hand is one way to answer
-  a Write question (`skill-model.md`), not a schedule of its own:
+  a Write question (ADR-0034), not a schedule of its own:
   - a letter is traced first, in the script units;
   - then drawn blind;
   - after that, Write's script questions can be answered by hand;
@@ -48,8 +48,8 @@ Decided with the owner:
   in, such as Devanagari's headline.
 - **Japanese:** [KanjiVG](https://kanjivg.tagaini.net/) has stroke paths in
   order for kana and kanji. Its licence is CC BY-SA 3.0, so it must be
-  credited and shared alike. That is the same licence question the
-  Wiktionary plan raises for the CC0 decks.
+  credited and shared alike. The decks are CC BY-SA 4.0 since
+  ADR-0040; whether its 3.0 data may go in them is still to decide.
 - **Chinese:** [Hanzi Writer](https://github.com/chanind/hanzi-writer)'s
   data, from Make Me a Hanzi, has stroke paths and order for hanzi, under
   the Arphic Public License (its graphics derive from Arphic fonts); the
@@ -96,7 +96,7 @@ Decided with the owner:
 ## To decide
 
 - The stroke-order convention for each Indian script, and who checks it.
-- KanjiVG's CC BY-SA licence beside the CC0 decks.
+- KanjiVG's CC BY-SA 3.0 licence beside the CC BY-SA 4.0 decks.
 - How forgiving the check is, tuned on real drawings.
 - Whether a vowel sign is drawn alone, or on a consonant (कि).
 

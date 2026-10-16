@@ -136,7 +136,7 @@ void main() {
       final probe = AppState.test();
       await probe.load();
       final deck = probe.decks.firstWhere(
-        (d) => d.language.code == 'es' && d.cards.length >= 4,
+        (d) => d.id == 'es-en-core-100' && d.cards.length >= 4,
       );
       probe.dispose();
       final cards = deck.cards.take(4).toList();

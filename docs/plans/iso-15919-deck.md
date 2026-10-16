@@ -13,8 +13,9 @@ deck with only that language's letters.
 
 ## Why it is needed
 
-Since #180, every reading is in ISO 15919's letters, spelled as the word is
-said: *pālu*, *pāṭa*, *kôthā*. A learner meets ā, ṭ, ś and m̐ on the first
+Since #180, every reading is in letters based on ISO 15919's, spelled as the
+word is said, with deliberate departures from the standard (the README lists
+them): *pālu*, *pāṭa*, *kôthā*. A learner meets ā, ṭ, ś and m̐ on the first
 card, and the README's table is not in the app.
 
 ## The deck
@@ -22,7 +23,8 @@ card, and the README's table is not in the app.
 - One vocab deck per language, `<code>-en-iso-letters`, placed in the
   path's first unit or straight after it, before the sounds-to-tell-apart
   deck.
-- A card is a letter of ISO 15919 as that language's readings use it:
+- A card is a letter of ISO 15919 as that language's readings use it, which
+  includes the letters it departs from the standard in (ô, x):
   - `target` is the Latin letter or letters (ā, ṭh, m̐);
   - `native` says what they mean ("a, held twice as long");
   - `notes` give the script letter it stands for, and how it differs from

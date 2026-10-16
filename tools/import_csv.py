@@ -4,7 +4,7 @@
     python3 tools/import_csv.py words.csv \
         --id es-en-food --name "Spanish food" \
         --language es --language-name Spanish --iso639-3 spa --tts es-ES \
-        --license CC0-1.0 > decks/es/es-en-food.yaml
+        --license CC-BY-SA-4.0 > decks/es/es-en-food.yaml
 
 The CSV needs a header row. `target` and `native` are required; `reading`,
 `tags`, `pos`, `notes`, `alt_target` and `alt_native` are used if present.
@@ -72,7 +72,7 @@ def main() -> int:
     p.add_argument("--native-name", default="English")
     p.add_argument("--native-iso639-3", default=None, dest="native_iso639_3",
                    help="ISO 639-3 code of --native; defaults to eng only when --native is en")
-    p.add_argument("--license", required=True, help="SPDX id, or CC0-1.0")
+    p.add_argument("--license", required=True, help="SPDX id; the repository's decks are CC-BY-SA-4.0")
     p.add_argument("--tags", default="", help="deck-level tags, comma separated")
     p.add_argument("--delimiter", default=",")
     args = p.parse_args()

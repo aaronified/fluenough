@@ -11,6 +11,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_chips.dart';
+import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/segmented.dart';
@@ -28,6 +29,8 @@ import 'stats_numbers.dart';
 /// in names it, most recently reviewed first, and "All languages" after
 /// them counts every review together when there are several languages, or
 /// reviews whose language cannot be told. The tab opens on the first chip.
+/// While the language menu at the top shows one language (#461), the
+/// numbers are that language's, and there are no chips.
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key, this.initialRange = StatsRange.month});
 
@@ -51,7 +54,10 @@ class _StatsPageState extends State<StatsPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final header = TabHeader(title: l10n.statsTitle);
+    final header = TabHeader(
+      title: l10n.statsTitle,
+      actions: const <Widget>[LanguageMenu()],
+    );
 
     if (state.features.isIncoming(Feature.stats)) {
       return _Frame(
@@ -79,6 +85,36 @@ class _StatsPageState extends State<StatsPage> {
           );
         }
         final languageOf = languageLookupOf(state);
+        // One language shown in the menu at the top (#461): its numbers
+        // alone, with no chips to choose another.
+        if (state.shownLanguage case final shown?) {
+          if (!state.progress.log.any((e) => languageOf(e.deckId) == shown)) {
+            return _Frame(
+              header: header,
+              child: EmptyState(
+                icon: Icons.insights_outlined,
+                title: l10n.statsNoReviews,
+              ),
+            );
+          }
+          return _Frame(
+            header: header,
+            controls: Padding(
+              padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
+              child: _RangeChoice(
+                range: _range,
+                onSelected: (range) => setState(() => _range = range),
+              ),
+            ),
+            child: _StatsBody(
+              state: state,
+              actions: actions,
+              range: _range,
+              language: shown,
+              languageOf: languageOf,
+            ),
+          );
+        }
         final practised = practisedLanguages(
           state.progress,
           languages: state.languages,
@@ -123,24 +159,9 @@ class _StatsPageState extends State<StatsPage> {
                   ),
                   const SizedBox(height: 8),
                 ],
-                Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 16,
-                  ),
-                  child: Segmented<StatsRange>(
-                    semanticLabel: l10n.statsRangeGroup,
-                    selected: _range,
-                    onSelected: (range) => setState(() => _range = range),
-                    options: <SegmentOption<StatsRange>>[
-                      for (final range in StatsRange.values)
-                        SegmentOption<StatsRange>(
-                          value: range,
-                          label: range.days == null
-                              ? l10n.statsRangeAll
-                              : l10n.statsRangeDays(range.days!),
-                        ),
-                    ],
-                  ),
+                _RangeChoice(
+                  range: _range,
+                  onSelected: (range) => setState(() => _range = range),
                 ),
               ],
             ),
@@ -154,6 +175,36 @@ class _StatsPageState extends State<StatsPage> {
           ),
         );
       },
+    );
+  }
+}
+
+/// 7 days, 30 days or All.
+class _RangeChoice extends StatelessWidget {
+  const _RangeChoice({required this.range, required this.onSelected});
+
+  final StatsRange range;
+  final ValueChanged<StatsRange> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+      child: Segmented<StatsRange>(
+        semanticLabel: l10n.statsRangeGroup,
+        selected: range,
+        onSelected: onSelected,
+        options: <SegmentOption<StatsRange>>[
+          for (final range in StatsRange.values)
+            SegmentOption<StatsRange>(
+              value: range,
+              label: range.days == null
+                  ? l10n.statsRangeAll
+                  : l10n.statsRangeDays(range.days!),
+            ),
+        ],
+      ),
     );
   }
 }

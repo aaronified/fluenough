@@ -1,6 +1,6 @@
 # ADR-0018: A card id names the language, and a word is one card
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0036: a card is written in a core or in a layer.
 - **Date:** 2026-10-03
 
 ## Context

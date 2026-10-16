@@ -4,15 +4,15 @@ name: "Gender and number"
 kind: vocab
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-description: "Men, women and things in the third person, and the plural. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+description: "He, she and it in the third person, and the plural. Not yet checked by a Telugu speaker: please report any mistake."
 tags: [beginner, grammar, unreviewed]
 cards:
   - ref: te-0122
     tags: []
   - ref: te-0123
     tags: []
-    notes: "In the third person a woman takes the same verb form as a thing: ఆమె వచ్చింది (āme vaccindi), అది వచ్చింది (adi vaccindi). Only men have a form of their own."
+    notes: "Telugu's third person has a masculine ending, -డు (-ḍu), and a non-masculine one, -ది (-di), shared by 'she' and 'it': ఆమె వచ్చింది (āme vaccindi), అది వచ్చింది (adi vaccindi). It is a grammar class, not a statement about people. For respect, ఆవిడ వచ్చారు (āviḍa vaccāru), she came, just as ఆయన వచ్చారు (āyana vaccāru) for a man."
   - ref: te-0124
     tags: []
   - id: te-0268
@@ -21,6 +21,10 @@ cards:
     reading: "vāḷḷu vaccāru."
     ipa: "ʋaːɭɭu ʋatʃtʃaːru"
     pos: "phrase"
+    notes: "రావడం (rāvaḍam) changes its stem in the past: వచ్చ- (vacc-)."
+    bases:
+      - { word: "వాళ్ళు", ref: "te-0601" }
+      - { word: "వచ్చారు", ref: "te-0623" }
   - id: te-0269
     target: "పిల్లలు ఆడుతున్నారు."
     native: "The children are playing."
@@ -28,6 +32,8 @@ cards:
     ipa: "pillalu aːɖut̪unnaːru"
     pos: "phrase"
     notes: "-లు (-lu) makes a plural: పిల్ల (pilla) → పిల్లలు (pillalu)."
+    bases:
+      - { word: "ఆడుతున్నారు", ref: "te-0637" }
   - id: te-0270
     target: "మూడు పుస్తకాలు"
     native: "three books"
@@ -35,3 +41,5 @@ cards:
     ipa: "muːɖu pust̪akaːlu"
     pos: "phrase"
     notes: "After a number, the noun is plural."
+    bases:
+      - { word: "పుస్తకాలు", ref: "te-0865" }

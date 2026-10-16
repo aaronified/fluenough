@@ -5,7 +5,7 @@ kind: vocab
 theme: questions
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 description: "Yes and no, the question words, and how a sentence becomes a question."
 tags: [beginner]
 cards:
@@ -84,6 +84,9 @@ cards:
     ipa: "ʈʰik atʃʰe"
     pos: "phrase"
     notes: "As a reply, ঠিক আছে (ṭhik āche) means 'OK, fine'."
+    bases:
+      - { word: "ঠিক", ref: "bn-1243" }
+      - { word: "আছে", base: "আছে", reading: "āche", meaning: "to be; there is" }
   - id: bn-0170
     target: "সত্যি?"
     native: "Really?"

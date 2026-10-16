@@ -12,9 +12,10 @@ import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/onboarding/onboarding_step.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
-import 'package:fluenough/features/placement/learn_languages_page.dart';
+import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/fluenough_mark.dart';
 import 'package:fluenough/ui/widgets/wave_progress.dart';
 
@@ -104,12 +105,16 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
     expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
+    // Then whether Hindi's script is read (#462), which nothing assumes.
+    expect(tester.widget<FilledButton>(go).onPressed, isNull);
+    expect(find.text(l10n.knownScriptsNeeded), findsOneWidget);
+    await answerScripts(tester);
 
     await tester.tap(go);
     await tester.pumpAndSettle();
     expect(settings.spokenLanguages, ['hi']);
     // Then what to learn (#117), before the app.
-    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(LanguagePickerPage), findsOneWidget);
     expect(find.byType(OnboardingFlow), findsNothing);
     semantics.dispose();
   });
@@ -281,9 +286,8 @@ void main() {
     });
   }
 
-  testWidgets('the question\'s title grows at most one and a half times', (
-    tester,
-  ) async {
+  testWidgets('the question\'s title grows no further than the app\'s '
+      '1.4x cap (#505)', (tester) async {
     usePhone(tester, textScale: 2.0);
     await pumpScreen(
       tester,
@@ -291,7 +295,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final title = tester.widget<Text>(find.text(l10n.onboardingSpokenTitle));
-    expect(title.textScaler!.scale(28), 42);
+    expect(title.textScaler!.scale(28), 28 * AppSizes.maxTextScale);
   });
 
   testWidgets('with animations off, Continue still saves and asks what to '
@@ -309,11 +313,12 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
     await tester.pumpAndSettle();
+    await answerScripts(tester);
     await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     expect(settings.spokenLanguages, ['hi']);
-    expect(find.byType(LearnLanguagesPage), findsOneWidget);
+    expect(find.byType(LanguagePickerPage), findsOneWidget);
   });
 
   testWidgets('with animations off, nothing moves', (tester) async {
@@ -404,6 +409,7 @@ void main() {
       find.bySemanticsLabel(l10n.onboardingQuestionPosition(1, 2)),
       findsOneWidget,
     );
+    await answerScripts(tester);
     await tester.tap(find.text(l10n.onboardingNext));
     await tester.pumpAndSettle();
     expect(

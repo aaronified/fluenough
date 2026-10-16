@@ -216,6 +216,7 @@ class ApplyTest(unittest.TestCase):
         self.assertEqual(
             sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
             [
+                "android.intent.action.SENDTO",
                 "android.intent.action.TTS_SERVICE",
                 "android.intent.action.VIEW",
                 "android.speech.RecognitionService",
@@ -239,7 +240,7 @@ class ApplyTest(unittest.TestCase):
         root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
         self.assertEqual(
             sorted(d.get(SCHEME) for d in root.findall("queries/intent/data")),
-            ["geo", "https"],
+            ["geo", "https", "mailto"],
         )
 
     def test_an_existing_queries_block_keeps_what_it_had(self) -> None:
@@ -260,6 +261,7 @@ class ApplyTest(unittest.TestCase):
             sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
             [
                 "android.intent.action.PROCESS_TEXT",
+                "android.intent.action.SENDTO",
                 "android.intent.action.TTS_SERVICE",
                 "android.intent.action.VIEW",
                 "android.speech.RecognitionService",
@@ -274,7 +276,11 @@ class ApplyTest(unittest.TestCase):
         # own manifest does not declare one.
         brand_android.apply(self.root)
         root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        providers = root.findall("application/provider")
+        providers = [
+            p
+            for p in root.findall("application/provider")
+            if p.get(NAME) == "sk.fourq.otaupdate.OtaUpdateFileProvider"
+        ]
         self.assertEqual(len(providers), 1)
         provider = providers[0]
         self.assertEqual(provider.get(NAME), "sk.fourq.otaupdate.OtaUpdateFileProvider")
@@ -445,11 +451,15 @@ class ApplyTest(unittest.TestCase):
             sorted([
                 "android.content.ActivityNotFoundException",
                 "android.content.Intent",
+                "android.net.Uri",
                 "android.provider.Settings",
                 "android.speech.tts.TextToSpeech",
+                "androidx.core.content.FileProvider",
                 "io.flutter.embedding.android.FlutterActivity",
                 "io.flutter.embedding.engine.FlutterEngine",
+                "io.flutter.plugin.common.MethodCall",
                 "io.flutter.plugin.common.MethodChannel",
+                "java.io.File",
             ]),
         )
         # Imports come before the class.
@@ -528,6 +538,158 @@ class ApplyTest(unittest.TestCase):
         self.activity.unlink()
         with self.assertRaisesRegex(brand_android.BrandError, "MainActivity.kt"):
             brand_android.apply(self.root)
+
+    # Sharing a mail with files: a report's app log (ADR-0021), and later
+    # the review files. Checked by shape, as nothing here can compile it.
+
+    def test_the_channel_shares_files_by_mail(self) -> None:
+        brand_android.apply(self.root)
+        text = self.kotlin()
+        self.assertEqual(
+            text.count('"shareFiles" -> result.success(shareFiles(call))'), 1
+        )
+        self.assertEqual(text.count("private fun shareFiles(call: MethodCall)"), 1)
+        for line in (
+            "Intent.ACTION_SEND_MULTIPLE else Intent.ACTION_SEND",
+            "send.putExtra(Intent.EXTRA_EMAIL, to.toTypedArray())",
+            "send.putExtra(Intent.EXTRA_SUBJECT, it)",
+            "send.putExtra(Intent.EXTRA_TEXT, it)",
+            "send.putExtra(Intent.EXTRA_STREAM, uris[0])",
+            "send.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris)",
+            "send.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)",
+            'mail.selector = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))',
+            "Intent.createChooser(send, null)",
+        ):
+            self.assertIn(line, text)
+        # Mail apps first, then any app that takes the files.
+        self.assertLess(
+            text.index("startIfHandled(mail)"),
+            text.index("startIfHandled(Intent.createChooser"),
+        )
+        # A file outside the shared folder is refused, not a crash.
+        self.assertIn("catch (e: IllegalArgumentException)", text)
+        self.assertEqual(text.count("{"), text.count("}"))
+        self.assertEqual(text.count("("), text.count(")"))
+
+    def test_the_files_are_lent_through_the_apps_own_provider(self) -> None:
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        shares = [
+            p
+            for p in root.findall("application/provider")
+            if p.get(NAME) == "app.fluenough.ShareFileProvider"
+        ]
+        self.assertEqual(len(shares), 1)
+        provider = shares[0]
+        authority = provider.get(f"{ANDROID}authorities")
+        self.assertEqual(authority, "${applicationId}.share")
+        self.assertEqual(provider.get(f"{ANDROID}exported"), "false")
+        self.assertEqual(provider.get(f"{ANDROID}grantUriPermissions"), "true")
+        self.assertEqual(
+            [
+                (m.get(NAME), m.get(f"{ANDROID}resource"))
+                for m in provider.findall("meta-data")
+            ],
+            [("android.support.FILE_PROVIDER_PATHS", "@xml/share_paths")],
+        )
+        # The activity asks for the same authority: the app's id, ".share".
+        self.assertIn('"$packageName.share"', self.kotlin())
+        # ota_update's is still there, beside it.
+        self.assertEqual(len(root.findall("application/provider")), 2)
+
+    def test_the_provider_shares_only_the_cache_shared_folder(self) -> None:
+        brand_android.apply(self.root)
+        paths = self.root / brand_android.SHARE_PATHS
+        self.assertEqual(
+            paths.relative_to(self.root / brand_android.RES).as_posix(),
+            "xml/share_paths.xml",
+        )
+        root = ET.parse(paths).getroot()
+        self.assertEqual(
+            [(e.tag, e.get("name"), e.get("path")) for e in root],
+            [("cache-path", "shared", "shared/")],
+        )
+
+    def test_the_provider_class_is_written_beside_the_activity(self) -> None:
+        brand_android.apply(self.root)
+        kotlin = self.root / brand_android.SHARE_PROVIDER_FILE
+        self.assertEqual(kotlin.parent, self.activity.parent)
+        text = kotlin.read_text(encoding="utf-8")
+        self.assertTrue(text.startswith("package app.fluenough\n"))
+        self.assertIn("import androidx.core.content.FileProvider\n", text)
+        self.assertIn("class ShareFileProvider : FileProvider()", text)
+        once = text
+        brand_android.apply(self.root)
+        self.assertEqual(kotlin.read_text(encoding="utf-8"), once)
+
+    def test_mail_apps_are_queried(self) -> None:
+        # Android 11+ hides them otherwise, and the mailto selector would
+        # resolve to nothing.
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
+        sendto = [
+            intent
+            for intent in root.findall("queries/intent")
+            if [a.get(NAME) for a in intent.findall("action")]
+            == ["android.intent.action.SENDTO"]
+        ]
+        self.assertEqual(len(sendto), 1)
+        self.assertEqual(
+            [d.get(SCHEME) for d in sendto[0].findall("data")], ["mailto"]
+        )
+
+    def earlier_activity(self) -> str:
+        """MainActivity as the version before shareFiles wrote it."""
+        old_imports = [
+            "android.content.ActivityNotFoundException",
+            "android.content.Intent",
+            "android.provider.Settings",
+            "android.speech.tts.TextToSpeech",
+            "io.flutter.embedding.android.FlutterActivity",
+            "io.flutter.embedding.engine.FlutterEngine",
+            "io.flutter.plugin.common.MethodChannel",
+        ]
+        return (
+            "package app.fluenough\n\n"
+            + "".join(f"import {name}\n" for name in old_imports)
+            + "\nclass MainActivity : FlutterActivity() {"
+            + brand_android.VOICE_MEMBERS
+            + "}\n"
+        )
+
+    def test_an_activity_from_before_sharing_is_brought_up_to_date(self) -> None:
+        old = self.earlier_activity()
+        self.assertNotIn('"shareFiles"', old)
+        self.activity.write_text(old, encoding="utf-8")
+        brand_android.apply(self.root)
+        text = self.kotlin()
+        self.assertEqual(text.count('"shareFiles" ->'), 1)
+        self.assertEqual(text.count("private fun shareFiles("), 1)
+        self.assertEqual(text.count('"openVoiceSettings" ->'), 1)
+        self.assertEqual(text.count("override fun configureFlutterEngine("), 1)
+        self.assertEqual(
+            sorted(re.findall(r"^import (\S+)$", text, re.M)),
+            sorted(brand_android.KOTLIN_IMPORTS),
+        )
+        self.assertEqual(text.count("{"), text.count("}"))
+        once = text
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), once)
+
+    def test_a_channel_of_another_shape_is_an_error_and_nothing_changes(
+        self,
+    ) -> None:
+        own = (
+            ACTIVITY.replace("FlutterActivity()", "FlutterActivity() {\n")
+            + '    // "app.fluenough/system", set up by hand\n}\n'
+        )
+        self.activity.write_text(own, encoding="utf-8")
+        with self.assertRaisesRegex(brand_android.BrandError, "shareFiles"):
+            brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), own)
+        self.assertEqual(self.manifest.read_text(encoding="utf-8"), MANIFEST)
 
 
 class ResourcesTest(unittest.TestCase):

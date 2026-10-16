@@ -19,7 +19,7 @@ Written 2026-10-05. **A long-term plan.**
   path's grammar units done. So "known vocabulary and current grammar" can
   be listed exactly.
 - **The app holds no secrets and makes no account.** It reaches GitHub only
-  for updates and, once planned, decks (`decks-from-github.md`).
+  for updates and, once planned, decks (ADR-0037).
 
 ## Two ways to run the model
 

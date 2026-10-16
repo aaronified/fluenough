@@ -3,7 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
+import '../core/review/deck_review.dart';
+import '../core/review/rater_code.dart';
+import '../core/review/review_pairs.dart';
 import '../core/updates/release_check.dart';
+import 'language_choice.dart';
 import 'skill.dart';
 
 /// The colour seeds the Appearance screen offers. [forest] is the repository's
@@ -52,6 +56,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._learningChosen = false,
     Set<String> speechOnline = const <String>{},
     Set<String> noAlphabet = const <String>{},
+    this._languageChoice,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
@@ -95,6 +100,7 @@ class SettingsNotifier extends ChangeNotifier {
   String? _pendingUpdate;
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
+  String? _languageChoice;
   Set<String> _placedDecks;
   bool _learningChosen;
   Set<String> _speechOnline;
@@ -102,10 +108,103 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
+  Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
+  bool _reviewDecks = false;
+  bool _adultContent = false;
+  Map<String, String> _voices = const <String, String>{};
+  String? _raterCode;
+  bool _reviewIntroShown = false;
+  Reviews _reviews = const Reviews();
+  Set<String>? _reviewLanguages;
+  Set<String>? _reviewPairs;
+  Map<String, bool> _scriptsRead = const <String, bool>{};
+
+  /// Settings' "Review decks" (docs/plans/deck-browser.md): whether this
+  /// profile checks decks and sends its reviews by mail. Turning it off
+  /// keeps the [raterCode] and the [reviews].
+  bool get reviewDecks => _reviewDecks;
+  set reviewDecks(bool value) =>
+      _set(_reviewDecks, value, (v) => _reviewDecks = v);
+
+  /// Settings' "Adult content (18+)" (#96): whether rude words show where
+  /// a sound-alike or look-alike warning would hide them, and offensive
+  /// cards, with their rating for a reviewer, are shown. Off by default;
+  /// Settings asks the learner to confirm their age before switching it on.
+  /// Per profile, like every setting.
+  bool get adultContent => _adultContent;
+  set adultContent(bool value) =>
+      _set(_adultContent, value, (v) => _adultContent = v);
+
+  /// The rater code the phone made when reviewing was first turned on,
+  /// written `FL-XXXX-XXXX-C`, or null before. Kept when reviewing is
+  /// turned off, so that turning it on again gives the same code.
+  String? get raterCode => _raterCode;
+  set raterCode(String? value) =>
+      _set(_raterCode, value, (v) => _raterCode = v);
+
+  /// Whether "How reviewing works" has opened by itself, which it does
+  /// once, the first time reviewing is turned on.
+  bool get reviewIntroShown => _reviewIntroShown;
+  set reviewIntroShown(bool value) =>
+      _set(_reviewIntroShown, value, (v) => _reviewIntroShown = v);
+
+  /// Every deck's review on this phone, sent or not. Not something the
+  /// learner sets here: the review screens change it.
+  Reviews get reviews => _reviews;
+  set reviews(Reviews value) {
+    if (identical(value, _reviews)) return;
+    _reviews = value;
+    notifyListeners();
+  }
+
+  /// The languages this reviewer reviews, by code, as they chose them in
+  /// Settings (docs/plans/deck-browser.md, "What is waiting for review"),
+  /// or null before they chose: then the languages they speak that the
+  /// app teaches.
+  Set<String>? get reviewLanguages => _reviewLanguages;
+  set reviewLanguages(Set<String>? codes) {
+    final next = codes == null ? null : Set<String>.unmodifiable(codes);
+    final now = _reviewLanguages;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _reviewLanguages = next;
+    notifyListeners();
+  }
+
+  /// The target–native pairs this reviewer reviews (#462), each written
+  /// `bn/en`, as they ticked them in Languages you review, or null before
+  /// they ticked any: then [reviewLanguages], an earlier choice by
+  /// language, stands, turned into its pairs. Kept apart from
+  /// [reviewLanguages], so an older version still reads that.
+  Set<String>? get reviewPairs => _reviewPairs;
+  set reviewPairs(Set<String>? keys) {
+    final next = keys == null ? null : Set<String>.unmodifiable(keys);
+    final now = _reviewPairs;
+    if (next == null ? now == null : now != null && setEquals(next, now)) {
+      return;
+    }
+    _reviewPairs = next;
+    notifyListeners();
+  }
+
+  /// Whether the learner reads each language's script, by code, as they
+  /// said in Languages you know (#462). A language they know but have not
+  /// answered for is missing; until every one is answered, no pair can be
+  /// reviewed.
+  Map<String, bool> get scriptsRead => _scriptsRead;
+  set scriptsRead(Map<String, bool> answers) {
+    if (mapEquals(answers, _scriptsRead)) return;
+    _scriptsRead = Map<String, bool>.unmodifiable(answers);
+    notifyListeners();
+  }
+
+  Map<String, ({String native, Set<String> offered})> _courseNatives =
+      const <String, ({String native, Set<String> offered})>{};
 
   /// When a lesson in [language] was last finished (ADR-0024), so that
   /// Today offers the day's lesson, then "Another lesson". Like
@@ -161,7 +260,26 @@ class SettingsNotifier extends ChangeNotifier {
     final next = List<String>.unmodifiable(<String>{...codes});
     if (listEquals(next, _learningLanguages)) return;
     _learningLanguages = next;
+    // A language no longer learned is no longer shown (#461): back to the
+    // default, All, or the one language left.
+    final chosen = _languageChoice;
+    if (chosen != null &&
+        chosen != LanguageChoice.all &&
+        next.isNotEmpty &&
+        !next.contains(chosen)) {
+      _languageChoice = null;
+    }
     notifyListeners();
+  }
+
+  /// The language the whole app shows (#461), as the menu at the top of
+  /// Today, Decks and Progress chose it: a code, [LanguageChoice.all] for
+  /// every language, or null before the learner has chosen, which shows
+  /// every language too. `AppState.shownLanguage` says what is shown.
+  String? get languageChoice => _languageChoice;
+  set languageChoice(String? value) {
+    if (value != null && !LanguageChoice.isValid(value)) return;
+    _set(_languageChoice, value, (v) => _languageChoice = v);
   }
 
   /// The decks placement found the learner already knows (#117,
@@ -196,6 +314,54 @@ class SettingsNotifier extends ChangeNotifier {
     allowed ? next.add(code) : next.remove(code);
     if (setEquals(next, _speechOnline)) return;
     _speechOnline = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The voice the learner chose for [code]'s language on the Voices page
+  /// (#123), by the engine's name for it, or null for the phone's default.
+  String? voiceFor(String code) => _voices[code];
+
+  /// Chooses [voice] for [code]'s language; null goes back to the phone's
+  /// default.
+  void chooseVoice(String code, String? voice) {
+    if (_voices[code] == voice) return;
+    _voices = Map<String, String>.unmodifiable(<String, String>{
+      for (final MapEntry(:key, :value) in _voices.entries)
+        if (key != code) key: value,
+      code: ?voice,
+    });
+    notifyListeners();
+  }
+
+  /// The native language the learner chose to learn [language] from, by
+  /// code, or null if they have not chosen (ADR-0036). Kept per course,
+  /// with the native languages offered when they chose, so that a native
+  /// language that starts teaching the course later is asked about once.
+  String? courseNative(String language) => _courseNatives[language]?.native;
+
+  /// The native languages offered when the learner chose [language]'s.
+  Set<String> nativesOffered(String language) =>
+      _courseNatives[language]?.offered ?? const <String>{};
+
+  /// Records that [language] is learned from [native], chosen among
+  /// [offered].
+  void setCourseNative(
+    String language,
+    String native, {
+    Iterable<String> offered = const <String>[],
+  }) {
+    final next = Set<String>.unmodifiable(<String>{...offered, native});
+    final now = _courseNatives[language];
+    if (now != null && now.native == native && setEquals(now.offered, next)) {
+      return;
+    }
+    _courseNatives =
+        Map<String, ({String native, Set<String> offered})>.unmodifiable(
+          <String, ({String native, Set<String> offered})>{
+            ..._courseNatives,
+            language: (native: native, offered: next),
+          },
+        );
     notifyListeners();
   }
 
@@ -247,6 +413,25 @@ class SettingsNotifier extends ChangeNotifier {
       ..._scriptGuidesSeen,
       code,
     });
+    notifyListeners();
+  }
+
+  /// Whether the learner folded [level] (its label, such as "A1") on
+  /// [language]'s path on Decks (#465). Remembered per language.
+  bool isLevelCollapsed(String language, String level) =>
+      _collapsedLevels[language]?.contains(level) ?? false;
+
+  void setLevelCollapsed(String language, String level, bool collapsed) {
+    final was = _collapsedLevels[language] ?? const <String>{};
+    if (was.contains(level) == collapsed) return;
+    final next = Set<String>.of(was);
+    collapsed ? next.add(level) : next.remove(level);
+    _collapsedLevels = Map<String, Set<String>>.unmodifiable(
+      <String, Set<String>>{
+        ..._collapsedLevels,
+        language: Set<String>.unmodifiable(next),
+      }..removeWhere((_, levels) => levels.isEmpty),
+    );
     notifyListeners();
   }
 
@@ -395,7 +580,9 @@ class SettingsNotifier extends ChangeNotifier {
   set pureBlack(bool value) => _set(_pureBlack, value, (v) => _pureBlack = v);
 
   /// A multiplier on target text in drills, 0.8–1.4. Menus follow the phone's
-  /// own font size instead.
+  /// own font size instead. Drills draw it no larger than keeps a card within
+  /// a 1.4x total with the phone's own size (`cardTextScaleOf`, #505), and
+  /// leave this value as saved.
   double get cardTextScale => _cardTextScale;
   set cardTextScale(double value) => _set(
     _cardTextScale,
@@ -418,7 +605,7 @@ class SettingsNotifier extends ChangeNotifier {
       _set(_autoUpdateCheck, value, (v) => _autoUpdateCheck = v);
 
   /// Whether a skill is fitted again, in the background, once it has 10%
-  /// more answers than at its last fit (`docs/plans/skill-model.md`). On
+  /// more answers than at its last fit (ADR-0035). On
   /// by default (owner, 2026-10-09).
   bool get autoAdjust => _autoAdjust;
   set autoAdjust(bool value) =>
@@ -475,6 +662,9 @@ class SettingsNotifier extends ChangeNotifier {
     'pending_update': _pendingUpdate ?? '',
     'spoken_languages': _spokenLanguages.join(','),
     'learning_languages': _learningLanguages.join(','),
+    // Not chosen yet is empty, which an older version never wrote and
+    // reads as All languages.
+    'language_choice': _languageChoice ?? '',
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
     'speech_online': (_speechOnline.toList()..sort()).join(','),
@@ -482,6 +672,10 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
+    'collapsed_levels': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _collapsedLevels.entries)
+        key: value.toList()..sort(),
+    }),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
         key.name: value.millisecondsSinceEpoch,
@@ -497,6 +691,30 @@ class SettingsNotifier extends ChangeNotifier {
     'lessons_done': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _lessonsDone.entries)
         key: value.millisecondsSinceEpoch,
+    }),
+    'review_decks': '$_reviewDecks',
+    'adult_content': '$_adultContent',
+    'tts_voices': jsonEncode(_voices),
+    'rater_code': _raterCode ?? '',
+    'review_intro_shown': '$_reviewIntroShown',
+    'reviews': _reviews.toJson(),
+    // Not chosen yet is "default"; chosen, the codes, which may be none.
+    'review_languages': switch (_reviewLanguages) {
+      null => 'default',
+      final codes => (codes.toList()..sort()).join(','),
+    },
+    // Not chosen yet is "default", like review_languages.
+    'review_pairs': switch (_reviewPairs) {
+      null => 'default',
+      final keys => (keys.toList()..sort()).join(','),
+    },
+    'scripts_read': jsonEncode(_scriptsRead),
+    'course_natives': jsonEncode(<String, Object>{
+      for (final MapEntry(:key, :value) in _courseNatives.entries)
+        key: <String, Object>{
+          'native': value.native,
+          'offered': value.offered.toList()..sort(),
+        },
     }),
   };
 
@@ -582,6 +800,19 @@ class SettingsNotifier extends ChangeNotifier {
           if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
       ];
     }
+    // After the languages learned, so that one no longer learned is not
+    // shown. Missing, as from before #461, it stays All.
+    if (pick('language_choice', (t) => t) case final v?) {
+      final learning = _learningLanguages;
+      languageChoice =
+          v.isEmpty ||
+              !LanguageChoice.isValid(v) ||
+              (v != LanguageChoice.all &&
+                  learning.isNotEmpty &&
+                  !learning.contains(v))
+          ? null
+          : v;
+    }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
     if (pick('paused_until', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
@@ -621,6 +852,16 @@ class SettingsNotifier extends ChangeNotifier {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markScriptGuideSeen(code);
       }
     }
+    if (pick('collapsed_levels', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        for (final level in value) {
+          if (level is String && level.isNotEmpty) {
+            setLevelCollapsed(key, level, true);
+          }
+        }
+      }
+    }
     for (final (name, unsupported) in <(String, bool)>[
       ('speech_not_on_device', false),
       ('speech_unsupported', true),
@@ -631,6 +872,64 @@ class SettingsNotifier extends ChangeNotifier {
             foundSpeech(code, unsupported: unsupported);
           }
         }
+      }
+    }
+    if (pick('review_decks', flag) case final v?) reviewDecks = v;
+    if (pick('adult_content', flag) case final v?) adultContent = v;
+    if (pick('tts_voices', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
+            value is String &&
+            value.isNotEmpty) {
+          chooseVoice(key, value);
+        }
+      }
+    }
+    if (pick('rater_code', RaterCode.tryParse) case final v?) {
+      raterCode = '$v';
+    }
+    if (pick('review_intro_shown', flag) case final v?) reviewIntroShown = v;
+    if (pick('reviews', Reviews.fromJson) case final v?) reviews = v;
+    if (pick('review_languages', (t) => t) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      reviewLanguages = v == 'default'
+          ? null
+          : <String>{
+              for (final c in v.split(','))
+                if (code.hasMatch(c)) c,
+            };
+    }
+    if (pick('review_pairs', (t) => t) case final v?) {
+      reviewPairs = v == 'default'
+          ? null
+          : <String>{
+              for (final k in v.split(','))
+                if (ReviewPair.parse(k) != null) k,
+            };
+    }
+    if (pick('scripts_read', _parseJsonMap) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      scriptsRead = <String, bool>{
+        for (final MapEntry(:key, :value) in v.entries)
+          if (code.hasMatch(key) && value is bool) key: value,
+      };
+    }
+    if (pick('course_natives', _parseJsonMap) case final v?) {
+      final code = RegExp(r'^[a-z]{2,3}$');
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!code.hasMatch(key) || value is! Map) continue;
+        final native = value['native'];
+        final offered = value['offered'];
+        if (native is! String || !code.hasMatch(native)) continue;
+        setCourseNative(
+          key,
+          native,
+          offered: <String>[
+            if (offered is List)
+              for (final c in offered)
+                if (c is String && code.hasMatch(c)) c,
+          ],
+        );
       }
     }
     if (pick('placed_decks', (t) => t) case final v?) {

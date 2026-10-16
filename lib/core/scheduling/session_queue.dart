@@ -195,6 +195,7 @@ class SessionQueue {
       DrillMode.production,
       DrillMode.reading,
       DrillMode.listening,
+      DrillMode.grammarUnderstood,
       DrillMode.grammar,
       DrillMode.speaking,
     },

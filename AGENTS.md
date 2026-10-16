@@ -9,7 +9,9 @@ This document exists to make those things true.
 
 [CONTRIBUTING.md](CONTRIBUTING.md) covers licensing and how to submit a deck.
 This file covers how to work in the repository without colliding with everyone
-else.
+else. [CLAUDE.md](CLAUDE.md) adds what the owner has asked of agents working
+for them: which model does what, and pushing to main directly. Where it
+differs from this file, it wins for the owner's work.
 
 ---
 
@@ -30,7 +32,8 @@ database; what the backend lacks is shown disabled, marked "Feature incoming"
 SDK available, and for a while nobody had run it. That has been done: on
 Flutter 3.47.1, from a clean checkout following the sequence below with
 `--platforms=android`,
-`flutter analyze` reports no issues, `flutter test` passes 35 tests,
+`flutter analyze` reports no issues, `flutter test` passes (35 tests then;
+over 2,200 now),
 `dart format lib test` changes nothing, and `dart run build_runner build`
 succeeds. The Python tooling is tested and working too.
 
@@ -44,6 +47,7 @@ it on macOS or Windows, or generated the iOS folder.
 
 ```sh
 # Decks — no Flutter toolchain needed, just Python 3.11+ and PyYAML
+python3 tools/deck_index.py                     # after any change to decks/
 python3 tools/validate_decks.py decks/          # 0 ok, 1 errors, 2 bad args
 
 # Code — needs the Flutter SDK (3.47+)
@@ -80,7 +84,8 @@ and why Waydroid cannot test audio, is in
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
-| `decks/<lang>/` | Content, one YAML file per deck | very low |
+| `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`); the language's path, `<lang>-path.yaml`, shared by every native language. The app downloads them from `main` (ADR-0037) | very low |
+| `decks/index.json` | What the app downloads, written by `tools/deck_index.py`; CI fails while it is stale | low — regenerate, never hand-edit |
 | `tools/` | Python deck validator and importer | low |
 | `docs/adr/` | Architecture decision records | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
@@ -117,16 +122,22 @@ or courses is one card (ADR-0018). Neither will be repeated. A new card takes
 
 ### 2. Quote YAML values that are not obviously prose.
 
-YAML resolves bare `no`, `yes`, `on`, `off`, `true` and `false` to booleans,
-and `007` or `1.0` to numbers. The hiragana `の` romanises to `no`, so this is
-not hypothetical — it was a real bug in the first draft of the hiragana deck.
+A bare `true` or `false` is a boolean, and `007` or `1.0` a number, however
+the field is meant. The validator and the app read plain values as YAML 1.2
+does, so a bare `no`, `yes`, `on` or `off` is text to both (the table is
+"YAML values" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md)). Quote it all
+the same: YAML 1.1, which PyYAML and many editors still read, makes those
+four booleans. The hiragana `の` romanises to `no`, so this is not
+hypothetical — it was a real bug in the first draft of the hiragana deck.
 
 ```yaml
-native: no        # WRONG — the boolean false
+native: true      # WRONG — the boolean true
+native: no        # text here, but the boolean false to YAML 1.1 tools
 native: "no"      # correct
 ```
 
-`tools/validate_decks.py` catches it and names the cause. Run it.
+`tools/validate_decks.py` refuses a boolean or a number where text is
+wanted, and for a boolean names the cause. Run it.
 
 ### 3. `lib/core/models`, `core/scheduling` and `core/grading` import nothing
 from Flutter.
@@ -159,9 +170,10 @@ contributors need no Flutter toolchain — do not add a Python package to them.
 
 ### 7. Do not touch the licence.
 
-GPL-3.0 with an App Store Distribution Exception, reasoned out in
-[ADR-0003](docs/adr/0003-licence.md). It cannot be changed now without the
-agreement of every contributor. Do not remove the exception, "simplify" to MIT,
+GPL-3.0 with an App Store Distribution Exception for the code, reasoned out
+in [ADR-0003](docs/adr/0003-licence.md); CC BY-SA 4.0 for the decks
+([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). It cannot be changed now
+without the agreement of every contributor. Do not remove the exception, "simplify" to MIT,
 or add a CLA — there is deliberately no CLA.
 
 ### 8. Do not reformat or rewrite files you are not changing.
@@ -198,6 +210,7 @@ Text(AppLocalizations.of(context)!.dueToday)   // correct
 Deck content — `target`, `native`, `reading`, `notes` — is not interface text
 and stays exactly as it is. So do log messages, exception text, and ids.
 
+Readings are *based on* ISO 15919; never write that they strictly follow it.
 Within deck content, a word in a script other than Latin is never left without
 its reading: a note says లేదు (lēdu), not లేదు. The validator rejects it; see
 "Script in prose" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
@@ -267,31 +280,18 @@ people fall into under time pressure.
 | --- | --- | --- |
 | cheap | Searching, extraction, parsing, grouping, transcribing, running a test suite, running a linter | Haiku |
 | standard | Writing and synthesis with judgement | Sonnet |
-| deep | Adversarial review, correctness reasoning, rating | Opus |
+| deep | Adversarial review, correctness reasoning | Opus |
 
-**Rate the work before calling it done, and 8/10 is the bar.** At the end of
-any task touching more than a couple of files, an independent subagent rates
-the work out of 10 against the user's own prompts. Below 8, fix what it found
-and re-rate against the new diff — do not commit, and do not report the task
-complete.
+For work done for the owner, the table in [CLAUDE.md](CLAUDE.md) decides
+instead: reviews and audits are Sonnet, and Opus is for fixing, coding and UI
+mockups, never more than two at once.
 
-The rater is the one subagent that is not cheap-tier. It is judging whether the
-work matches the request, which is the judgement call in the whole loop; a
-cheap rater rubber-stamps and the gate stops meaning anything.
-
-Three things make the score worth having, and all three are easy to lose:
-
-- **Never tell the rater the target.** Not the pass mark, not a previous score,
-  not that the score has a consequence. A rater that knows the bar rates to it.
-- **Hand it the prompts verbatim**, in order, including the ones that arrived
-  mid-task. A paraphrase is where the request quietly becomes the thing that
-  got built.
-- **Report the number as given.** Do not round, soften, or argue with a finding
-  by dropping it — answer it in a line and leave it in.
-
-The procedure is `.claude/skills/work-rating/SKILL.md`; the rater's instructions
-are `.claude/agents/work-rater.md`. Follow it inline if you have no subagents,
-and say in the pull request that the rating is self-assessed.
+**One review before calling it done** (owner, 2026-10-12: the independent
+8/10 rating is dropped; "the review is enough"). A change gets one
+independent review, which reports only blocking defects it has confirmed.
+Fix those, then finish. The work-rating skill
+(`.claude/skills/work-rating/SKILL.md`) is still there for anyone who wants a
+score, but nothing requires it.
 
 ### Files where you should expect contention
 
@@ -304,11 +304,14 @@ large feature branch that sits open for a week.
 
 ## Branches, commits, pull requests
 
-`main` is protected. You cannot push to it directly: every change goes through
-a pull request that needs one approving review, all three CI jobs green, and
-every review conversation resolved. Force pushes and branch deletion are
-refused. Work on a branch from the start — there is no path where committing
-straight to `main` works, and finding that out after the fact wastes your time.
+`main` is protected. As a contributor you cannot push to it directly: every
+change goes through a pull request that needs one approving review, all three
+CI jobs green, and every review conversation resolved. Force pushes and branch
+deletion are refused. Work on a branch from the start. (The owner's own work,
+and an agent's work for the owner, goes straight to main: see
+[CLAUDE.md](CLAUDE.md). A change to decks only needs "Validate decks" green.)
+
+Never create or push git tags; the owner tags releases.
 
 Branch names: `<area>/<short-description>` — `deck/fr-core-100`,
 `feat/production-drill`, `fix/grader-article-stripping`, `docs/adr-tts-update`.
@@ -346,7 +349,8 @@ Open an issue and get a human answer before:
 - changing the database schema in a non-additive way
 - changing the application id or anything about signing
 
-Agents must not merge their own pull requests. Every change gets human review.
+Agents must not merge their own pull requests. Every contributor's change gets
+human review.
 
 Superseding an existing ADR is a decision, not a refactor. If your change
 contradicts one, that is a conversation first — and if agreed, a **new** ADR
@@ -361,7 +365,7 @@ Specific to this repository, roughly in order of likelihood:
 | The tempting change | Why it is wrong |
 |---|---|
 | Making card ids sequential and tidy | Destroys every user's review history. Rule 1. |
-| "Fixing" `native: "no"` to `native: no` | Reintroduces the YAML boolean bug. Rule 2. |
+| "Fixing" `native: "no"` to `native: no` | Text to the app and the validator, but the boolean false to any YAML 1.1 tool. Rule 2. |
 | Adding a package for something small | Dependencies are a shared cost. Rule 6. |
 | Regenerating a deck to change one card | 46-line diff for a 1-line fix. Rule 8. |
 | Running `flutter create` and committing the result | Rule 4. |
@@ -401,7 +405,7 @@ What this costs, not only what it buys. Be honest about the downsides.
 What was rejected, and why.
 ```
 
-The existing five are worth reading before your first substantial change — they
+The ADRs are worth reading before your first substantial change — they
 explain most of what is otherwise surprising about this codebase.
 
 ---
@@ -413,12 +417,13 @@ explain most of what is otherwise surprising about this codebase.
       says plainly that they were not run
 - [ ] `dart format lib test` applied, and nothing else reformatted
 - [ ] No card id renumbered, reused, or removed-and-replaced
+- [ ] Every card whose base changes its stem (రావడం (rāvaḍam) to వచ్చింది
+      (vaccindi)) says so in its notes
 - [ ] A new language has `iso639_3` on every language block, and a
       `<code>-facts.yaml` with 30+ facts or an issue for one
 - [ ] Tests added for anything touching scheduling or grading
 - [ ] An ADR added if an architectural decision was made
 - [ ] No user-visible string is a literal in a widget; new tokens are in
       `lib/l10n/app_en.arb`
-- [ ] The work was rated 8/10 or better by an independent subagent, or the PR
-      says the rating is self-assessed
+- [ ] One independent review found nothing blocking, or its findings are fixed
 - [ ] The PR describes what was verified and what was not

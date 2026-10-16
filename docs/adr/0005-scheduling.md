@@ -1,7 +1,8 @@
 # ADR-0005: SM-2 scheduling over an append-only review log
 
 - **Status:** Accepted. Superseded in part by ADR-0033: FSRS replaces SM-2;
-  the review log and per-pair scheduling stand.
+  the review log and per-pair scheduling stand. Amended by ADR-0034: which
+  pairs are scheduled.
 - **Date:** 2026-09-19
 
 ## Context

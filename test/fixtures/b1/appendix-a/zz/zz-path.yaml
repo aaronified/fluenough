@@ -1,0 +1,24 @@
+# The language's path with a B1 plan (ADR-0036): one per language learnt,
+# naming core ids, with mapping units with their sizes, grammar topics and
+# milestones, a planned unit not written yet, and the language's regions.
+schema: 1
+kind: "path"
+id: "zz-path"
+language: "zz"
+regions:
+  - { id: "telangana", name: { "en": "Telangana" } }
+  - { id: "coastal-andhra", name: { "en": "Coastal Andhra" } }
+  - { id: "rayalaseema", name: { "en": "Rayalaseema" } }
+units:
+  - decks: ["zz-home"]
+    words: 4
+    milestone: "A1"
+  - decks: ["zz-grammar-case-endings"]
+    grammar: ["lo", "ki", "to", "nunci"]
+    milestone: "A2"
+  - planned: { id: "zz-health", theme: "health", words: 60 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+    milestone: "B1"

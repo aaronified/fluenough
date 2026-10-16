@@ -69,7 +69,7 @@ class AppDatabase extends _$AppDatabase {
   /// 6: `reviews` loses SM-2's `ease_before` and `ease_after`; every row is
   ///    kept (owner, 2026-10-09).
   /// 7: `fsrs_parameters`, FSRS fitted to the learner per language and
-  ///    skill (`docs/plans/skill-model.md`).
+  ///    skill (ADR-0035).
   @override
   int get schemaVersion => 7;
 

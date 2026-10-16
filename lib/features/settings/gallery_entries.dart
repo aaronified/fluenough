@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../app.dart';
+import '../../app/app_scope.dart';
 import '../../app/shell_tab.dart';
+import '../../core/speech/speech_engine.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'appearance_page.dart';
 import 'backup_section.dart';
 import 'release_notes_page.dart';
 import 'settings_fixtures.dart';
+import 'speech_test_sheet.dart';
 import 'voices_page.dart';
 
 /// Settings, Appearance and Voices, as the design's Gallery lists them.
@@ -156,6 +159,57 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     builder: (_) => const AppearancePage(),
   ),
   GalleryEntry(
+    id: 'settings-adult-on',
+    section: GallerySection.progressAndSettings,
+    label: 'Settings, adult content on', // ui-literal-ok: debug-only gallery
+    note: 'Rude words shown (#96)', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: SettingsFixtures.adultOn,
+  ),
+  GalleryEntry(
+    id: 'voices-speaking',
+    section: GallerySection.progressAndSettings,
+    label: 'Voices, speaking on', // ui-literal-ok: debug-only gallery
+    note: 'Say something, a voice to choose, online leave', // ui-literal-ok: debug-only gallery
+    builder: (_) => const VoicesPage(),
+    state: SettingsFixtures.voicesSpeaking,
+  ),
+  GalleryEntry(
+    id: 'voices-test',
+    section: GallerySection.progressAndSettings,
+    label: 'Speaking test', // ui-literal-ok: debug-only gallery
+    note: 'A word of the course to say, or anything', // ui-literal-ok: debug-only gallery
+    builder: (context) => _speechTest(context),
+    state: SettingsFixtures.voicesSpeaking,
+  ),
+  GalleryEntry(
+    id: 'voices-test-heard',
+    section: GallerySection.progressAndSettings,
+    label: 'Speaking test, heard', // ui-literal-ok: debug-only gallery
+    note: 'What the phone heard, not the word', // ui-literal-ok: debug-only gallery
+    builder: (context) => _speechTest(
+      context,
+      heard: const SpeechHeard(<SpeechAlternative>[
+        SpeechAlternative('नमस्ते'), // ui-literal-ok: deck content, heard
+      ]),
+    ),
+    state: SettingsFixtures.voicesSpeaking,
+  ),
+  GalleryEntry(
+    id: 'voices-test-failed',
+    section: GallerySection.progressAndSettings,
+    label: 'Speaking test, failed', // ui-literal-ok: debug-only gallery
+    note: 'Why, and the error code in small print', // ui-literal-ok: debug-only gallery
+    builder: (context) => _speechTest(
+      context,
+      heard: const SpeechHeard.failed(
+        SpeechFailure.network,
+        code: 'error_network',
+      ),
+    ),
+    state: SettingsFixtures.voicesSpeaking,
+  ),
+  GalleryEntry(
     id: 'voices-checking',
     section: GallerySection.progressAndSettings,
     label: 'Voices, checking', // ui-literal-ok: debug-only gallery
@@ -172,3 +226,22 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     state: SettingsFixtures.noDecks,
   ),
 ];
+
+/// Hindi's speaking test, on a page of its own, after [heard] when given.
+Widget _speechTest(BuildContext context, {SpeechHeard? heard}) {
+  final languages = AppScope.of(context).languages;
+  if (languages.isEmpty) return const Scaffold();
+  final hindi = languages.firstWhere(
+    (l) => l.code == 'hi',
+    orElse: () => languages.first,
+  );
+  return Scaffold(
+    body: SafeArea(
+      child: SpeechTestSheet(
+        language: hindi,
+        heard: heard,
+        heardWord: heard != null,
+      ),
+    ),
+  );
+}

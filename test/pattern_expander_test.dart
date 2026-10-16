@@ -3,14 +3,26 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/pattern_expander.dart';
+import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/features/drill/grammar_cells.dart';
 
+/// Spanish's deck [name], its core and its English layer merged: the deck
+/// the app teaches an English speaker, as the single file it once was.
+Deck spanish(String name) => mergeLayer(
+  DeckParser.parseCore(
+    File('decks/es/es-$name.yaml').readAsStringSync(),
+    source: 'es-$name.yaml',
+  ),
+  DeckParser.parseLayer(
+    File('decks/es/en/es-en-$name.yaml').readAsStringSync(),
+    source: 'es-en-$name.yaml',
+  ),
+  source: 'es-en-$name.yaml',
+);
+
 void main() {
-  final bundled = DeckParser.parse(
-    File('decks/es/es-en-grammar-present-ar.yaml').readAsStringSync(),
-    source: 'es-en-grammar-present-ar.yaml',
-  );
+  final bundled = spanish('grammar-present-ar');
 
   test('the bundled -ar deck expands to 30 cards, 5 lemmas by 6 slots', () {
     final cards = expandPattern(bundled);
@@ -36,7 +48,7 @@ void main() {
     for (final card in expandPattern(bundled)) {
       expect(card.modes, {DrillMode.grammar});
       expect(card.modesIn(ttsAvailable: true), {DrillMode.grammar});
-      expect(card.notes, bundled.pattern!.notes);
+      expect(card.notes.single.text, bundled.pattern!.notes);
       expect(card.deckId, bundled.id);
     }
   });
@@ -69,10 +81,7 @@ pattern:
   });
 
   test('a deck without a pattern has no cards to expand', () {
-    final vocab = DeckParser.parse(
-      File('decks/es/es-en-core-100.yaml').readAsStringSync(),
-      source: 'es-en-core-100.yaml',
-    );
+    final vocab = spanish('core-100');
     expect(expandPattern(vocab), isEmpty);
   });
 

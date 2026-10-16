@@ -1,6 +1,6 @@
 # ADR-0004: Decks are YAML files in git
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0037: decks are downloaded, not bundled.
 - **Date:** 2026-09-19
 
 ## Context

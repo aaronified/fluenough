@@ -18,9 +18,19 @@ class SystemSoundCheck implements SoundCheckEngine {
   /// microphone still picks up a little noise.
   static const double silence = 0.01;
 
+  /// Completed by [stop] to end the recording under way early.
+  Completer<void>? _cut;
+
+  /// The player under way, and what [stop] completes to end its wait.
+  AudioPlayer? _player;
+  Completer<void>? _done;
+
   @override
   Future<Recording> record(Duration duration) async {
     final recorder = AudioRecorder();
+    // Set before the recorder starts, so that a stop while it starts still
+    // cuts the recording short.
+    final cut = _cut = Completer<void>();
     try {
       if (!await recorder.hasPermission()) {
         return const Recording.failed(RecordFailure.refused);
@@ -42,7 +52,10 @@ class SystemSoundCheck implements SoundCheckEngine {
         ),
       );
       final listening = stream.listen(bytes.add);
-      await Future<void>.delayed(duration);
+      await Future.any(<Future<void>>[
+        Future<void>.delayed(duration),
+        cut.future,
+      ]);
       await recorder.stop();
       await listening.cancel();
       final pcm = bytes.takeBytes();
@@ -56,6 +69,7 @@ class SystemSoundCheck implements SoundCheckEngine {
     } catch (_) {
       return const Recording.failed(RecordFailure.failed);
     } finally {
+      if (identical(_cut, cut)) _cut = null;
       unawaited(recorder.dispose());
     }
   }
@@ -64,8 +78,8 @@ class SystemSoundCheck implements SoundCheckEngine {
   Future<bool> play(Recording recording) async {
     final wav = recording.wav;
     if (wav == null) return false;
-    final player = AudioPlayer();
-    final done = Completer<void>();
+    final player = _player = AudioPlayer();
+    final done = _done = Completer<void>();
     final completes = player.onPlayerComplete.listen((_) {
       if (!done.isCompleted) done.complete();
     });
@@ -81,8 +95,29 @@ class SystemSoundCheck implements SoundCheckEngine {
     } catch (_) {
       return false;
     } finally {
+      if (identical(_player, player)) {
+        _player = null;
+        _done = null;
+      }
       await completes.cancel();
       unawaited(player.dispose());
+    }
+  }
+
+  @override
+  Future<void> stop() async {
+    final cut = _cut;
+    if (cut != null && !cut.isCompleted) cut.complete();
+    _cut = null;
+    final player = _player;
+    final done = _done;
+    if (done != null && !done.isCompleted) done.complete();
+    if (player != null) {
+      try {
+        await player.stop();
+      } catch (_) {
+        // Already disposed, or never started: nothing is playing.
+      }
     }
   }
 }

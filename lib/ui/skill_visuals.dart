@@ -32,13 +32,18 @@ extension SkillVisuals on Skill {
     Skill.pair => l10n.skillPair,
   };
 
-  /// A skill's title on its switch in Settings: [label] for every skill but
-  /// minimal pairs, which Settings calls "Phonemic contrasts". What the
-  /// switch turns on is practice with the sounds the learner's own languages
-  /// do not have; the minimal-pairs drill keeps its name on decks and pills.
+  /// A skill's title on its switch in Settings, in the learner's words
+  /// (docs/plans/settings-wording.md): "Seen words", "Written words",
+  /// "Heard words", "Spoken words"; grammar and reading keep their [label];
+  /// minimal pairs is "Phonemic contrasts", practice with the sounds the
+  /// learner's own languages do not have. Decks and pills keep [label].
   String settingsLabel(AppLocalizations l10n) => switch (this) {
+    Skill.recognition => l10n.skillRecognitionSettingsTitle,
+    Skill.production => l10n.skillProductionSettingsTitle,
+    Skill.listening => l10n.skillListeningSettingsTitle,
+    Skill.speaking => l10n.skillSpeakingSettingsTitle,
     Skill.pair => l10n.skillPairSettingsTitle,
-    _ => label(l10n),
+    Skill.grammar || Skill.reading => label(l10n),
   };
 
   /// The line under a skill on a deck's screen. [language] is the deck's
@@ -54,14 +59,27 @@ extension SkillVisuals on Skill {
         Skill.pair => l10n.skillPairDeckDesc,
       };
 
-  /// The line under a skill's switch in Settings.
-  String settingsDescription(AppLocalizations l10n) => switch (this) {
-    Skill.recognition => l10n.skillRecognitionSettingsDesc,
-    Skill.production => l10n.skillProductionSettingsDesc,
-    Skill.listening => l10n.skillListeningSettingsDesc,
-    Skill.speaking => l10n.skillSpeakingSettingsDesc,
-    Skill.grammar => l10n.skillGrammarSettingsDesc,
-    Skill.reading => l10n.skillReadingSettingsDesc,
-    Skill.pair => l10n.skillPairSettingsDesc,
+  /// The line under a skill's switch in Settings while it is on: what the
+  /// learner is asked.
+  String settingsOn(AppLocalizations l10n) => switch (this) {
+    Skill.recognition => l10n.skillRecognitionSettingsOn,
+    Skill.production => l10n.skillProductionSettingsOn,
+    Skill.listening => l10n.skillListeningSettingsOn,
+    Skill.speaking => l10n.skillSpeakingSettingsOn,
+    Skill.grammar => l10n.skillGrammarSettingsOn,
+    Skill.reading => l10n.skillReadingSettingsOn,
+    Skill.pair => l10n.skillPairSettingsOn,
+  };
+
+  /// The line under a skill's switch in Settings while it is off: what is
+  /// no longer asked.
+  String settingsOff(AppLocalizations l10n) => switch (this) {
+    Skill.recognition => l10n.skillRecognitionSettingsOff,
+    Skill.production => l10n.skillProductionSettingsOff,
+    Skill.listening => l10n.skillListeningSettingsOff,
+    Skill.speaking => l10n.skillSpeakingSettingsOff,
+    Skill.grammar => l10n.skillGrammarSettingsOff,
+    Skill.reading => l10n.skillReadingSettingsOff,
+    Skill.pair => l10n.skillPairSettingsOff,
   };
 }

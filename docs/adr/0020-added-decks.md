@@ -1,6 +1,6 @@
 # ADR-0020: Decks a learner adds are kept apart, and paths place them by wildcard
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0037: decks are downloaded, not bundled.
 - **Date:** 2026-10-03
 
 ## Context

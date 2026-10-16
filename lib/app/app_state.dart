@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
@@ -29,15 +30,22 @@ import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
 import 'added_decks.dart';
+import '../core/decks/deck_index.dart';
+import 'app_log.dart';
 import 'deck_catalog.dart';
+import 'deck_downloads.dart';
 import 'deck_import.dart';
 import 'features.dart';
+import 'language_choice.dart';
 import 'links.dart';
 import 'log_files.dart';
+import 'mail_share.dart';
 import 'fsrs_tuner.dart';
 import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
+import 'repository_decks.dart';
+import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
 import 'shell_tab.dart';
@@ -45,8 +53,27 @@ import 'skill.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
 
+/// A native language that teaches a course, as the learner is offered it
+/// (ADR-0036): the language, and how many of the language's written units
+/// its decks teach, of how many. Both are null for a language with no
+/// path, where coverage is not defined.
+typedef NativeOption = ({LanguageInfo native, int? covered, int? total});
+
 /// The current time. Injected so that tests and the gallery can fix it.
 typedef Clock = DateTime Function();
+
+/// A language the learner can choose to learn: from the decks on GitHub's
+/// index (#210), or the catalog's where nothing downloads. [taughtFrom] is
+/// the name of the language its decks teach from when the learner speaks
+/// none of those it is taught from ("Taught from English"); [size] what
+/// choosing it downloads, 0 when it is on the phone.
+typedef OfferedLanguage = ({
+  String code,
+  String name,
+  String? icon,
+  String? taughtFrom,
+  int size,
+});
 
 /// Where the deck catalog is in loading.
 enum CatalogStatus { loading, ready, failed }
@@ -127,23 +154,29 @@ class AppState extends ChangeNotifier {
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
     this.reports = const NullReportSender(),
+    this._mailShare = const NullMailShare(),
+    AppLog? log,
     this._releases = const NullReleaseCheck(),
     this.releaseNotes = const NullReleaseNotes(),
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
     this._fitRunner = fitInIsolate,
     this._paceRunner = paceInIsolate,
+    this.deckDownloads,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
     String? currentProfileId,
     Random? random,
+    this._secureRandom,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
        volume = volume ?? FixedVolumeMonitor(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
        _ownsSettings = settings == null,
+       log = log ?? AppLog(),
+       _ownsLog = log == null,
        _profiles = List<Profile>.of(profiles),
        _currentProfileId = currentProfileId ?? profiles.first.id {
     // What is pending follows progress, settings and this state's own
@@ -151,7 +184,33 @@ class AppState extends ChangeNotifier {
     for (final source in <Listenable>[this, this.settings, progress]) {
       source.addListener(_forgetPending);
     }
+    shellTab.addListener(_logTab);
+    deckDownloads?.onFilesChanged = _filesDownloaded;
+    this.settings.addListener(_reviewerToDownloads);
+    _reviewerToDownloads();
+    this.settings.addListener(_languageShownChanged);
+    addListener(_rememberShown);
   }
+
+  /// The language shown when this state last notified, so that a change
+  /// in settings that shows another rebuilds every screen that reads this
+  /// state (#461), as the catalog loading or the profile changing do.
+  String? _lastShown;
+
+  void _rememberShown() => _lastShown = shownLanguage;
+
+  void _languageShownChanged() {
+    final shown = shownLanguage;
+    if (shown == _lastShown) return;
+    _lastShown = shown;
+    notifyListeners();
+  }
+
+  /// A reviewer is offered a deck update when only proposals changed, as
+  /// they see them; a learner is not (#444).
+  void _reviewerToDownloads() => deckDownloads?.reviewer = settings.reviewDecks;
+
+  void _logTab() => log.event('Opened tab ${shellTab.value.name}');
 
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
@@ -165,8 +224,8 @@ class AppState extends ChangeNotifier {
   /// questions are still asked; with sound off they are skipped instead.
   bool get needsVolume => settings.soundOn && volume.muted;
 
-  /// An app on fakes, for widget tests: the real bundled decks unless
-  /// [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
+  /// An app on fakes, for widget tests: the repository's decks, as a phone
+  /// that downloaded every language has them, unless [decks] is given, decks added in memory, no voices unless [tts] has some, empty in-memory
   /// progress, links that open unless [links] says otherwise, phone settings
   /// that open nothing unless [systemSettings] does, no network
   /// for the update check unless [releases] answers, none for the release
@@ -188,12 +247,15 @@ class AppState extends ChangeNotifier {
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
     ReportSender reports = const NullReportSender(),
+    MailShare mailShare = const NullMailShare(),
+    AppLog? log,
     ReleaseCheckEngine releases = const NullReleaseCheck(),
     ReleaseNotesEngine releaseNotes = const NullReleaseNotes(),
     ApkInstaller installer = const NullApkInstaller(),
     DownloadStore downloads = const NullDownloadStore(),
     FitRunner fitRunner = fitInPlace,
     PaceRunner paceRunner = paceInPlace,
+    DeckDownloads? deckDownloads,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -202,7 +264,7 @@ class AppState extends ChangeNotifier {
     final fixed = now ?? DateTime(2026, 9, 28, 19);
     final state = AppState(
       catalog: DeckCatalog(
-        decks ?? AssetDeckSource(),
+        decks ?? RepositoryDeckSource(),
         added: addedDecks ?? MemoryDeckStore(),
       ),
       progress: progress ?? MemoryProgress(),
@@ -216,17 +278,21 @@ class AppState extends ChangeNotifier {
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
       reports: reports,
+      mailShare: mailShare,
+      log: log,
       releases: releases,
       releaseNotes: releaseNotes,
       installer: installer,
       downloads: downloads,
       fitRunner: fitRunner,
       paceRunner: paceRunner,
+      deckDownloads: deckDownloads,
       settings: settings,
       volume: volume,
       profiles: profiles,
       currentProfileId: currentProfileId,
       random: Random(0),
+      secureRandom: Random(1),
     );
     // Past the first-launch setup (#53, #117), unless a test brings its
     // own: speaking English, and learning every language.
@@ -265,6 +331,29 @@ class AppState extends ChangeNotifier {
   /// reporter's mail app, or nowhere in a build that was given none.
   final ReportSender reports;
 
+  /// Reviewer mode (docs/plans/deck-browser.md): the rater code, the
+  /// reviews kept until sent, and the mail that sends them to [AppLinks.feedbackEmail]
+  /// through [_mailShare], the phone's share.
+  late final Reviewing reviewing = Reviewing(
+    settings: settings,
+    clock: _clock,
+    random: _secureRandom ?? Random.secure(),
+    share: _mailShare,
+    address: AppLinks.feedbackEmail,
+    deckById: deckById,
+    log: log,
+  );
+  final MailShare _mailShare;
+
+  /// Where rater codes come from: the phone's secure source, unless a test
+  /// gives a seeded one.
+  final Random? _secureRandom;
+
+  /// The app's own log (#162): errors, warnings and key events, which
+  /// Settings shows and a report attaches if the reporter agrees.
+  final AppLog log;
+  final bool _ownsLog;
+
   /// Settings' "Check for updates", the check at launch, and installing
   /// what it finds (ADR-0017). Has its own notifier; what it finds is kept
   /// in [settings].
@@ -284,12 +373,13 @@ class AppState extends ChangeNotifier {
   final DownloadStore _downloads;
 
   /// Fits FSRS to the learner: Settings' "Adjust to me", and the automatic
-  /// refit after a review (`docs/plans/skill-model.md`). Has its own
+  /// refit after a review (ADR-0035). Has its own
   /// notifier.
   late final FsrsTuner tuner = FsrsTuner(
     progress: progress,
     clock: _clock,
     runner: _fitRunner,
+    log: log,
   );
   final FitRunner _fitRunner;
 
@@ -306,6 +396,11 @@ class AppState extends ChangeNotifier {
   /// The catalog loader. Screens read decks through [decks] and [deckById];
   /// this is exposed so that gallery fixtures can share one loaded catalog.
   final DeckCatalog deckCatalog;
+
+  /// Downloads the decks from GitHub and keeps them up to date (#210,
+  /// ADR-0037). Has its own notifier. Null where decks do not download, as
+  /// in tests and the gallery: the catalog's decks are then all there is.
+  final DeckDownloads? deckDownloads;
 
   final TtsEngine _tts;
   final SpeechEngine _speech;
@@ -416,20 +511,43 @@ class AppState extends ChangeNotifier {
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
 
+  /// [language]'s own path (ADR-0036), shared by every native language it
+  /// is taught from, with the units it plans and its regions; null if it
+  /// has none.
+  LanguagePath? languagePathOf(String language) =>
+      _catalog.languagePaths[language];
+
   /// The deck a card came from.
   DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
 
-  /// The decks in the languages the current profile learns.
+  /// The decks in the languages the current profile learns, and of those,
+  /// only the [shownLanguage]'s while one is chosen (#461): what Today
+  /// teaches and reviews, so that its counts and its sessions agree.
   ///
-  /// Decks taught from a language the learner speaks come first, best known
-  /// first (#53); otherwise the catalog's order holds.
-  List<DeckEntry> get profileDecks {
+  /// Each language's decks taught from the language its course is learned
+  /// from ([courseNative]) come first, then those taught from a language
+  /// the learner speaks, best known first (#53); otherwise the catalog's
+  /// order holds. A review takes a card shared across native languages from
+  /// the first deck that has it, so it is shown as the course teaches it.
+  List<DeckEntry> get profileDecks => _learnedDecks(onlyShown: true);
+
+  List<DeckEntry> _learnedDecks({required bool onlyShown}) {
+    final profile = currentProfile;
+    final shown = onlyShown ? shownLanguage : null;
     final mine = <DeckEntry>[
       for (final entry in decks)
-        if (currentProfile.learns(entry.language.code)) entry,
+        if (profile.learns(entry.language.code) &&
+            LanguageChoice.shows(shown, entry.language.code))
+          entry,
     ];
-    int rank(DeckEntry e) =>
-        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
+    final natives = <String, String?>{
+      for (final code in <String>{for (final e in mine) e.language.code})
+        code: courseNative(code),
+    };
+    int rank(DeckEntry e) => e.deck.native.code == natives[e.language.code]
+        ? -1
+        : settings.rankOf(e.deck.native.code) ??
+              settings.spokenLanguages.length;
     final byRank = mine.indexed.toList()
       ..sort((a, b) {
         final order = rank(a.$2).compareTo(rank(b.$2));
@@ -440,6 +558,43 @@ class AppState extends ChangeNotifier {
 
   /// Every language the catalog teaches, one per code.
   List<LanguageInfo> get languages => _catalog.languages;
+
+  /// The languages the language menu at the top of Today, Decks and
+  /// Progress offers (#461): those the profile learns that have decks, in
+  /// the order the learner chose them ([LanguageChoice.options]). "All
+  /// languages" is offered as well, and is not one of these.
+  List<LanguageInfo> get languageChoices {
+    final profile = currentProfile;
+    final learned = <String, LanguageInfo>{
+      for (final language in languages)
+        if (profile.learns(language.code)) language.code: language,
+    };
+    return <LanguageInfo>[
+      for (final code in LanguageChoice.options(
+        learning: settings.learningLanguages,
+        available: learned.keys,
+      ))
+        learned[code]!,
+    ];
+  }
+
+  /// The language the whole app shows, by code, or null for every
+  /// language (#461): the one chosen in the language menu while the
+  /// profile still learns it, else All; with only one language to show,
+  /// that one.
+  String? get shownLanguage => LanguageChoice.shown(
+    settings.languageChoice,
+    <String>[for (final language in languageChoices) language.code],
+  );
+
+  /// Whether [code]'s lessons, decks and numbers show, given the
+  /// [shownLanguage].
+  bool showsLanguage(String code) => LanguageChoice.shows(shownLanguage, code);
+
+  /// Shows only [code]'s content across the app, or with null, every
+  /// language's. Kept in Settings.
+  void showLanguage(String? code) =>
+      settings.languageChoice = code ?? LanguageChoice.all;
 
   /// Loads the catalog, then checks which languages have a voice. Safe to
   /// call more than once; later calls wait on the first.
@@ -470,6 +625,7 @@ class AppState extends ChangeNotifier {
   /// it where its wildcards say (`CoursePath.placing`).
   Future<void> addDeck(Deck deck, String text) async {
     await deckCatalog.added!.save(deck.id, text);
+    log.event('Deck added: ${deck.id}');
     await _reloadDecks();
   }
 
@@ -477,6 +633,7 @@ class AppState extends ChangeNotifier {
   /// back if the deck is added again.
   Future<void> removeDeck(String deckId) async {
     await deckCatalog.added!.remove(deckId);
+    log.event('Deck removed: $deckId');
     await _reloadDecks();
   }
 
@@ -485,9 +642,133 @@ class AppState extends ChangeNotifier {
   Future<void> _reloadDecks() async {
     deckCatalog.invalidate();
     _catalog = await deckCatalog.load();
+    _status = CatalogStatus.ready;
+    _loadError = null;
     _mapSkills();
     notifyListeners();
     await refreshVoices();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Deck downloads (#210, ADR-0037)
+
+  /// Reads the catalog again once downloaded files are on the phone, after
+  /// the first load if it is still under way.
+  Future<void> _filesDownloaded() async {
+    if (_disposed) return;
+    await _loading;
+    if (!_disposed) await _reloadDecks();
+  }
+
+  /// At launch, once the catalog is read: finishes downloads cut short,
+  /// then looks for deck updates, at most once a day, unless the learner
+  /// has turned that off. In the background.
+  Future<void> _afterLaunch() async {
+    final downloads = deckDownloads;
+    if (downloads == null || !settings.learningChosen || _disposed) return;
+    final spoken = settings.spokenLanguages;
+    await downloads.resume(learningCodes, spoken);
+    if (!_disposed && downloads.checksAutomatically) {
+      await downloads.checkForUpdates(spoken);
+    }
+  }
+
+  /// The codes of the languages the current profile learns.
+  Set<String> get learningCodes =>
+      currentProfile.languages ?? settings.learningLanguages.toSet();
+
+  /// The languages the learner can choose to learn, in the index's order
+  /// then the catalog's: every language on GitHub, and every one on the
+  /// phone. Where decks do not download, the catalog's languages.
+  List<OfferedLanguage> get languagesOnOffer {
+    final spoken = settings.spokenLanguages;
+    final index = deckDownloads?.index;
+    final onPhone = deckDownloads?.languagesOnPhone ?? const <String>{};
+    final offered = <String, OfferedLanguage>{};
+    for (final language in index?.languages ?? const <IndexLanguage>[]) {
+      final natives = language.nativesFor(spoken);
+      offered[language.code] = (
+        code: language.code,
+        name: language.name,
+        icon: language.icon,
+        taughtFrom: language.taughtFromOther(spoken)
+            ? language.natives
+                  .where((n) => n.code == natives.first)
+                  .firstOrNull
+                  ?.name
+            : null,
+        size: onPhone.contains(language.code)
+            ? 0
+            : language
+                  .filesFor(natives)
+                  .fold(0, (sum, file) => sum + file.size),
+      );
+    }
+    for (final language in languages) {
+      offered.putIfAbsent(
+        language.code,
+        () => (
+          code: language.code,
+          name: language.name,
+          icon: language.icon,
+          taughtFrom: null,
+          size: 0,
+        ),
+      );
+    }
+    return offered.values.toList();
+  }
+
+  /// Those of [codes] that must download before they can be learned.
+  List<String> languagesToDownload(Iterable<String> codes) {
+    final downloads = deckDownloads;
+    if (downloads == null) return const <String>[];
+    final spoken = settings.spokenLanguages;
+    return <String>[
+      for (final code in codes)
+        if (!downloads.isReady(code, spoken)) code,
+    ];
+  }
+
+  /// The languages the current profile learns with no deck on the phone,
+  /// that GitHub offers or may: what the app downloads before it opens, as
+  /// after updating from a version that bundled its decks. A language with
+  /// some of its decks in is not one: what it lacks, such as the decks of a
+  /// language the learner has since said they speak, comes in the
+  /// background or as an update, and the app opens offline. Empty until the
+  /// catalog is read, and where decks do not download.
+  List<String> get missingLanguages {
+    final downloads = deckDownloads;
+    if (downloads == null ||
+        _status == CatalogStatus.loading ||
+        !settings.learningChosen) {
+      return const <String>[];
+    }
+    final index = downloads.index;
+    return <String>[
+      for (final code in learningCodes)
+        if (!downloads.hasDecks(code) &&
+            (index == null || index.language(code) != null))
+          code,
+    ];
+  }
+
+  /// Downloads [language]'s first decks, and the rest behind them. Null
+  /// once it can be learned, else why not.
+  Future<DeckDownloadFailure?> downloadLanguage(String language) =>
+      deckDownloads!.download(language, settings.spokenLanguages);
+
+  /// Deletes [language]'s decks from the phone, and stops learning it. Its
+  /// progress stays in the review log, by card id, and comes back with its
+  /// decks.
+  Future<void> removeLanguage(String language) async {
+    if (learningCodes.contains(language)) {
+      setLearningLanguages(<String>[
+        for (final code in learningCodes)
+          if (code != language) code,
+      ]);
+    }
+    await deckDownloads!.remove(language);
   }
 
   /// Tells progress which decks ask for what is heard rather than what it
@@ -504,12 +785,17 @@ class AppState extends ChangeNotifier {
 
   Future<void> _load() async {
     try {
+      // What is downloaded, before the catalog reads it. Never the network.
+      await deckDownloads?.open();
       _catalog = await deckCatalog.load();
       _status = CatalogStatus.ready;
       _mapSkills();
-    } catch (error) {
+      log.event('Decks loaded: ${decks.length}');
+      unawaited(_afterLaunch());
+    } catch (error, stack) {
       _loadError = error;
       _status = CatalogStatus.failed;
+      log.error(describeError('Decks failed to load', error, stack));
     }
     notifyListeners();
     await refreshVoices();
@@ -520,8 +806,21 @@ class AppState extends ChangeNotifier {
   }
 
   Future<void> _checkSpeechQuietly() async {
-    if (await _speech.hasPermission() && !_disposed) await startSpeech();
+    try {
+      if (!await _speech.hasPermission() || _disposed) return;
+    } catch (e) {
+      log.warning('Speech error: permission ${_errorCode(e)}');
+      return;
+    }
+    await startSpeech();
   }
+
+  /// A speech or voice error's code for the app log: the engine's own, or
+  /// else the error's type. Never what was said or spoken.
+  static String _errorCode(Object error) => switch (error) {
+    SpeechError(:final code) || TtsFailure(:final code) => code,
+    _ => '${error.runtimeType}',
+  };
 
   // ---------------------------------------------------------------------------
   // Speech recognition (#89, ADR-0014)
@@ -544,13 +843,17 @@ class AppState extends ChangeNotifier {
     try {
       final ready = await _speech.start();
       _speechReady = ready;
-      _speechLanguages = ready ? await _speech.languages() : const <String>{};
+      _speechLanguages = ready ? await _recognised() : const <String>{};
       setup = ready
           ? SpeechSetup.ready
           : await _speech.hasPermission()
           ? SpeechSetup.noRecogniser
           : SpeechSetup.refused;
-    } catch (_) {
+      if (setup != SpeechSetup.ready) {
+        log.warning('Speech error: start ${setup.name}');
+      }
+    } catch (e) {
+      log.warning('Speech error: start ${_errorCode(e)}');
       _speechReady = false;
       _speechLanguages = const <String>{};
     } finally {
@@ -558,6 +861,17 @@ class AppState extends ChangeNotifier {
       if (!_disposed) notifyListeners();
     }
     return setup;
+  }
+
+  /// The languages the recogniser lists, or none when it cannot say, which
+  /// goes to the app log: every language is then tried on the device.
+  Future<Set<String>> _recognised() async {
+    try {
+      return await _speech.languages();
+    } catch (e) {
+      log.warning('Speech error: languages ${_errorCode(e)}');
+      return const <String>{};
+    }
   }
 
   /// Asks the recogniser again which languages it knows, and forgets what
@@ -622,16 +936,26 @@ class AppState extends ChangeNotifier {
       case SpeechStatus.online:
         onDevice = false;
       case SpeechStatus.onlineOnly:
-        return const SpeechHeard.failed(SpeechFailure.notOnDevice);
+        return _logUnheard(
+          language,
+          const SpeechHeard.failed(SpeechFailure.notOnDevice),
+        );
       case SpeechStatus.missing:
-        return const SpeechHeard.failed(SpeechFailure.unsupported);
+        return _logUnheard(
+          language,
+          const SpeechHeard.failed(SpeechFailure.unsupported),
+        );
       case SpeechStatus.off || SpeechStatus.checking:
-        return const SpeechHeard.failed(SpeechFailure.noRecogniser);
+        return _logUnheard(
+          language,
+          const SpeechHeard.failed(SpeechFailure.noRecogniser),
+        );
     }
     final heard = await _speech.listen(
       bcp47: language.ttsTag,
       onDevice: onDevice,
     );
+    if (heard.failed) _logUnheard(language, heard);
     switch (heard.failure) {
       case SpeechFailure.notOnDevice when onDevice:
         settings.foundSpeech(code);
@@ -642,8 +966,26 @@ class AppState extends ChangeNotifier {
     return heard;
   }
 
-  /// Stops a listen early, keeping what was heard.
-  Future<void> stopListening() => _speech.stop();
+  /// Puts a listen that gave nothing to grade in the app log (#162): the
+  /// language, why, and the recogniser's own code, or "none" when the app
+  /// knew beforehand. Never what was said. Returns [heard].
+  SpeechHeard _logUnheard(LanguageInfo language, SpeechHeard heard) {
+    final why = heard.failure ?? SpeechFailure.noMatch;
+    log.warning(
+      'Speech error: ${language.ttsTag} ${why.name} ${heard.code ?? 'none'}',
+    );
+    return heard;
+  }
+
+  /// Stops a listen early, keeping what was heard. A failure goes to the
+  /// app log.
+  Future<void> stopListening() async {
+    try {
+      await _speech.stop();
+    } catch (e) {
+      log.warning('Speech error: stop ${_errorCode(e)}');
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // Voices
@@ -676,31 +1018,52 @@ class AppState extends ChangeNotifier {
       final tag = language.ttsTag;
       try {
         _voices[tag] = await _tts.isLanguageAvailable(tag);
-      } catch (_) {
+      } catch (e) {
+        log.warning('Voice error: $tag availability ${_errorCode(e)}');
         _voices[tag] = false;
       }
     }
     notifyListeners();
   }
 
-  /// The voices the engine offers for [language].
-  Future<List<TtsVoice>> voicesFor(LanguageInfo language) =>
-      _tts.voicesFor(language.ttsTag);
+  /// The voices the engine offers for [language]: none when it cannot say,
+  /// which goes to the app log.
+  Future<List<TtsVoice>> voicesFor(LanguageInfo language) async {
+    try {
+      return await _tts.voicesFor(language.ttsTag);
+    } catch (e) {
+      log.warning('Voice error: ${language.ttsTag} voices ${_errorCode(e)}');
+      return const <TtsVoice>[];
+    }
+  }
 
-  /// Speaks [text] in [language] at the learner's speech rate, or slower.
-  /// Completes when playback ends. Does nothing without a voice, or while
-  /// sound is off in Settings.
-  Future<void> speak(
+  /// Speaks [text] in [language] at the learner's speech rate, or slower,
+  /// in the voice chosen for it on the Voices page (#123). Completes when
+  /// playback ends. Does nothing without a voice, or while sound is off in
+  /// Settings.
+  ///
+  /// Returns the engine's error code when it could not speak, or null. The
+  /// error goes to the app log too, by its code and the language, never
+  /// the text.
+  Future<String?> speak(
     String text,
     LanguageInfo language, {
     bool slower = false,
   }) async {
-    if (!settings.soundOn) return;
-    await _tts.speak(
-      text,
-      bcp47: language.ttsTag,
-      rate: settings.ttsRate(slower: slower),
-    );
+    if (!settings.soundOn) return null;
+    try {
+      await _tts.speak(
+        text,
+        bcp47: language.ttsTag,
+        rate: settings.ttsRate(slower: slower),
+        voice: settings.voiceFor(language.code),
+      );
+      return null;
+    } catch (e) {
+      final code = _errorCode(e);
+      log.warning('Voice error: ${language.ttsTag} $code');
+      return code;
+    }
   }
 
   Future<void> stopSpeaking() => _tts.stop();
@@ -799,11 +1162,10 @@ class AppState extends ChangeNotifier {
 
   Set<DrillMode> _modes({required bool ignorePauses}) => <DrillMode>{
     for (final skill in Skill.values)
-      if (skill.mode != null &&
-          settings.isEnabled(skill) &&
+      if (settings.isEnabled(skill) &&
           (ignorePauses || !settings.isPaused(skill, now())) &&
           features.isAvailable(skill.feature))
-        skill.mode!,
+        ...skill.modes,
   };
 
   /// Cards due tomorrow, as Today will count them: in the decks the profile
@@ -830,8 +1192,7 @@ class AppState extends ChangeNotifier {
   bool canDrill(DeckEntry entry) {
     final shipped = <DrillMode>{
       for (final skill in Skill.values)
-        if (skill.mode != null && features.isAvailable(skill.feature))
-          skill.mode!,
+        if (features.isAvailable(skill.feature)) ...skill.modes,
     };
     return entry.cards.any(
       (card) => card.modesIn(ttsAvailable: true).any(shipped.contains),
@@ -889,10 +1250,9 @@ class AppState extends ChangeNotifier {
         ? _modes(ignorePauses: ignorePauses)
         : <DrillMode>{
             for (final skill in named)
-              if (skill.mode != null &&
-                  features.isAvailable(skill.feature) &&
+              if (features.isAvailable(skill.feature) &&
                   (ignorePauses || !settings.isPaused(skill, now())))
-                skill.mode!,
+                ...skill.modes,
           };
 
     // A new pair is a new skill of a word already taught: a word is new
@@ -949,12 +1309,85 @@ class AppState extends ChangeNotifier {
   // The path (#117, ADR-0013)
 
   List<List<DeckEntry>>? _pendingUnits;
+  Set<String>? _placed;
 
-  void _forgetPending() => _pendingUnits = null;
+  void _forgetPending() {
+    _pendingUnits = null;
+    _placed = null;
+    _derived.clear();
+  }
+
+  /// Values worked out from progress, settings and the decks, kept until
+  /// any of them changes, so that a screen rebuilding for another reason
+  /// does not work them out again.
+  final Map<Object, Object?> _derived = <Object, Object?>{};
+
+  /// [compute]'s value for [key], worked out once and kept until progress,
+  /// settings or this state changes. [key] must name what [compute] reads
+  /// besides those.
+  T derived<T>(Object key, T Function() compute) {
+    if (_derived.containsKey(key)) return _derived[key] as T;
+    final value = compute();
+    _derived[key] = value;
+    return value;
+  }
 
   /// Whether placement found the learner already knows [entry]. It reads
   /// Done and Today does not teach it, though it can still be studied.
-  bool isPlaced(DeckEntry entry) => settings.isPlaced(entry.id);
+  ///
+  /// Placement is saved by deck id, in the course it was taken in. What it
+  /// found holds in the language's other courses too (ADR-0036), so that
+  /// changing the language a course is learned from keeps it: a deck reads
+  /// as placed where its core's deck in another course was placed, and so
+  /// does every deck of a unit of the language's path placed whole in
+  /// another course.
+  bool isPlaced(DeckEntry entry) =>
+      (_placed ??= _placedAcross()).contains(entry.id);
+
+  Set<String> _placedAcross() {
+    final placed = settings.placedDecks;
+    if (placed.isEmpty) return const <String>{};
+    final out = <String>{...placed};
+    final natives = <String, Set<String>>{};
+    for (final entry in decks) {
+      natives
+          .putIfAbsent(entry.language.code, () => <String>{})
+          .add(entry.deck.native.code);
+    }
+    // The same core's deck in each course: hi-en-market is hi-bn-market.
+    for (final id in placed) {
+      final entry = deckById(id);
+      if (entry == null) continue;
+      final language = entry.language.code;
+      final prefix = '$language-${entry.deck.native.code}-';
+      if (!id.startsWith(prefix)) continue;
+      final name = id.substring(prefix.length);
+      for (final native in natives[language] ?? const <String>{}) {
+        final sibling = '$language-$native-$name';
+        if (deckById(sibling) != null) out.add(sibling);
+      }
+    }
+    // A unit placed whole in one course is placed in each, decks its
+    // native language alone has included: the courses read one path, so
+    // their plans' units line up.
+    final byLanguage = <String, List<CoursePath>>{};
+    for (final path in _catalog.paths.values) {
+      byLanguage.putIfAbsent(path.language, () => <CoursePath>[]).add(path);
+    }
+    for (final paths in byLanguage.values) {
+      for (final from in paths) {
+        for (final (i, unit) in from.plan.indexed) {
+          if (unit.decks.isEmpty || !unit.decks.every(placed.contains)) {
+            continue;
+          }
+          for (final to in paths) {
+            if (i < to.plan.length) out.addAll(to.plan[i].decks);
+          }
+        }
+      }
+    }
+    return out;
+  }
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
@@ -963,8 +1396,8 @@ class AppState extends ChangeNotifier {
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and
-  /// the one after it. The course is the one taught from the best-known
-  /// language the learner speaks, as [profileDecks] orders them. A course
+  /// the one after it. The course is the one taught from [courseNative]
+  /// ([courseUnits]). A course
   /// without a path is taught as if each deck were a unit, in catalog order,
   /// and a deck its path leaves out follows it as a unit of its own.
   List<List<DeckEntry>> get pendingUnits => _pendingUnits ??= _findPending();
@@ -974,8 +1407,10 @@ class AppState extends ChangeNotifier {
       pendingUnits.any((unit) => unit.any((e) => e.id == entry.id));
 
   List<List<DeckEntry>> _findPending() {
+    // Every language learned, whichever is shown: where a course's path
+    // has got to does not depend on the language menu.
     final languages = <String>{
-      for (final entry in profileDecks) entry.language.code,
+      for (final entry in _learnedDecks(onlyShown: false)) entry.language.code,
     };
     return List<List<DeckEntry>>.unmodifiable(<List<DeckEntry>>[
       for (final code in languages)
@@ -983,29 +1418,117 @@ class AppState extends ChangeNotifier {
     ]);
   }
 
+  /// The native languages the learner may learn [language] from, in
+  /// catalog order, each with its coverage (ADR-0036): those that teach it
+  /// and that the learner speaks, or, when they speak none of them, every
+  /// one that teaches it. Empty if no deck teaches [language].
+  List<NativeOption> nativeOptions(String language) {
+    final natives = <String, LanguageInfo>{
+      for (final entry in decks)
+        if (entry.language.code == language)
+          entry.deck.native.code: entry.deck.native,
+    };
+    final spoken = <LanguageInfo>[
+      for (final native in natives.values)
+        if (settings.rankOf(native.code) != null) native,
+    ];
+    CoursePath? pathOf(LanguageInfo native) =>
+        _catalog.paths['$language/${native.code}'];
+    return <NativeOption>[
+      for (final native in spoken.isEmpty ? natives.values : spoken)
+        (
+          native: native,
+          covered: pathOf(native)?.coveredUnits,
+          total: pathOf(native)?.writtenUnits,
+        ),
+    ];
+  }
+
+  /// The native language [language] is offered from first: the one whose
+  /// decks teach the most of its written units, ties going to the
+  /// best-known language the learner speaks, else to the first in the
+  /// catalog. With only one to choose from, that one.
+  String? suggestedNative(String language) {
+    final options = nativeOptions(language);
+    if (options.isEmpty) return null;
+    int rank(NativeOption o) =>
+        settings.rankOf(o.native.code) ?? settings.spokenLanguages.length;
+    return options
+        .reduce((best, o) {
+          final more = (o.covered ?? 0).compareTo(best.covered ?? 0);
+          if (more != 0) return more > 0 ? o : best;
+          return rank(o) < rank(best) ? o : best;
+        })
+        .native
+        .code;
+  }
+
+  /// The native language [language]'s course is taught from: the one the
+  /// learner chose, while it still teaches it, else [suggestedNative]. A
+  /// unit with no deck in it is "Coming", never taught from another
+  /// language's decks. Null if no deck teaches [language].
+  String? courseNative(String language) {
+    final chosen = settings.courseNative(language);
+    if (chosen != null &&
+        nativeOptions(language).any((o) => o.native.code == chosen)) {
+      return chosen;
+    }
+    return suggestedNative(language);
+  }
+
+  /// Whether to ask the learner which language to learn [language] from:
+  /// more than one they speak teaches it, and they have not chosen among
+  /// these. Asked on opening the course the first time, and once more when
+  /// a native language starts teaching a course already chosen for; never
+  /// again for the same choice.
+  bool needsNativeChoice(String language) {
+    if (!offersNativeChoice(language)) return false;
+    final offered = settings.nativesOffered(language);
+    return settings.courseNative(language) == null ||
+        nativeOptions(language).any((o) => !offered.contains(o.native.code));
+  }
+
+  /// Whether the learner has a choice of languages to learn [language]
+  /// from: more than one they speak teaches it. Settings then offers
+  /// "Learn Telugu from".
+  bool offersNativeChoice(String language) {
+    final options = nativeOptions(language);
+    return options.length > 1 &&
+        options.every((o) => settings.rankOf(o.native.code) != null);
+  }
+
+  /// Records that [language] is learned from [native], among the options
+  /// offered now.
+  void chooseNative(String language, String native) => settings.setCourseNative(
+    language,
+    native,
+    offered: <String>[
+      for (final option in nativeOptions(language)) option.native.code,
+    ],
+  );
+
   /// The units of [language]'s course, in teaching order: the course taught
-  /// from the best-known language the learner speaks that has one, else the
-  /// first in the catalog. Its path's units, or without a path each deck as
-  /// a unit, in catalog order; a deck its path leaves out follows as a unit
-  /// of its own. Without its alphabet, the decks the path marks as needing
-  /// it are left out. Empty if no deck teaches [language]. Whether the profile
-  /// learns it does not matter: placement asks before it does.
+  /// from [courseNative], or [native] where given. Its path's units, or
+  /// without a path each deck as a unit, in catalog order; a deck its path
+  /// leaves out follows as a unit of its own. Without its alphabet, the
+  /// decks the path marks as needing it are left out. Empty if no deck
+  /// teaches [language]. Whether the profile learns it does not matter:
+  /// placement asks before it does.
   ///
-  /// [alphabet] overrides whether the alphabet is learned, for placement,
-  /// which asks before it is saved.
-  List<List<DeckEntry>> courseUnits(String language, {bool? alphabet}) {
+  /// [alphabet] overrides whether the alphabet is learned, and [native]
+  /// which language it is learned from, for placement, which asks before
+  /// either is saved.
+  List<List<DeckEntry>> courseUnits(
+    String language, {
+    bool? alphabet,
+    String? native,
+  }) {
     final teaching = <DeckEntry>[
       for (final entry in decks)
         if (entry.language.code == language) entry,
     ];
     if (teaching.isEmpty) return const <List<DeckEntry>>[];
-    int rank(DeckEntry e) =>
-        settings.rankOf(e.deck.native.code) ?? settings.spokenLanguages.length;
-    final native = teaching
-        .reduce((best, e) => rank(e) < rank(best) ? e : best)
-        .deck
-        .native
-        .code;
+    native ??= courseNative(language);
     final course = <DeckEntry>[
       for (final entry in teaching)
         if (entry.deck.native.code == native) entry,
@@ -1060,10 +1583,13 @@ class AppState extends ChangeNotifier {
   /// The cards a [ask] question about [card] takes its other options from
   /// (ADR-0024): its deck's other cards of the same kind, each showing a
   /// different option, or, when they show fewer than three, those of every
-  /// deck of its course as well.
+  /// deck of its course as well. A rules table's form, or its meaning, is
+  /// chosen among its own row's alone ([formChoices], DECK-FORMAT.md, Rules
+  /// decks).
   List<Card> choicePool(Card card, Ask ask) {
     final entry = deckOf(card);
     if (entry == null) return const <Card>[];
+    if (ask.choosesAmongForms) return formChoices(card, ask, entry.cards);
     final right = ask.optionOf(card);
     final cell = card.modes.contains(DrillMode.grammar);
     bool alike(Card c) =>
@@ -1103,9 +1629,12 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether a [ask] question about [card] has at least two wrong options
-  /// to offer. Without, it is asked its own way.
+  /// to offer, or, choosing among a rules table's forms or their meanings,
+  /// one (DECK-FORMAT.md, Rules decks: a row of two forms is still a choice).
+  /// Without, it is asked its own way.
   bool canChoose(Card card, Ask ask) =>
-      choicePool(card, ask).map(ask.optionOf).toSet().length >= 2;
+      choicePool(card, ask).map(ask.optionOf).toSet().length >=
+      (ask.choosesAmongForms ? 1 : 2);
 
   /// The items of the session for [request], each asked as a review asks it
   /// ([reviewAsks]): what a drill runs.
@@ -1203,12 +1732,24 @@ class AppState extends ChangeNotifier {
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth
   /// only with a recogniser, each on for its language, and none set aside.
-  Set<DrillMode> drillableModes(Card card) {
+  Set<DrillMode> drillableModes(Card card) => drillableModesNow()(card);
+
+  /// [drillableModes] for many cards: the skills switched on and the
+  /// leeches set aside read once, not once a card.
+  Set<DrillMode> Function(Card card) drillableModesNow() {
+    final modes = _modes(ignorePauses: false);
+    final leeches = progress.leechEffects;
+    return (card) => _drillableModes(card, modes, leeches);
+  }
+
+  Set<DrillMode> _drillableModes(
+    Card card,
+    Set<DrillMode> modes,
+    LeechEffects leeches,
+  ) {
     final entry = deckOf(card);
     if (entry == null) return const <DrillMode>{};
     final language = entry.language;
-    final modes = _modes(ignorePauses: false);
-    final leeches = progress.leechEffects;
     return <DrillMode>{
       for (final mode in card.modesIn(
         ttsAvailable:
@@ -1421,14 +1962,21 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
-    settings.removeListener(_forgetPending);
+    settings
+      ..removeListener(_forgetPending)
+      ..removeListener(_reviewerToDownloads)
+      ..removeListener(_languageShownChanged);
     progress.removeListener(_forgetPending);
-    shellTab.dispose();
+    shellTab
+      ..removeListener(_logTab)
+      ..dispose();
     updates.dispose();
+    deckDownloads?.onFilesChanged = null;
     tuner.dispose();
     pacing.dispose();
     volume.dispose();
     if (_ownsSettings) settings.dispose();
+    if (_ownsLog) log.dispose();
     super.dispose();
   }
 }

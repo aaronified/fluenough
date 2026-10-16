@@ -11,6 +11,7 @@ import '../../ui/widgets/speaker.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'speaking_practice.dart';
 import 'taught_details.dart';
 
 /// Speaking (#89, ADR-0014): the meaning ("Say it in Hindi"), a microphone
@@ -24,7 +25,11 @@ import 'taught_details.dart';
 /// cards for the rest of the session unrecorded.
 ///
 /// Once answered, the card shows what the word's lesson showed
-/// ([TaughtDetails]). Build one per card (key it by the card's position).
+/// ([TaughtDetails]). A wrong or almost-right answer, or "Don't know",
+/// offers "Try again" as often as the learner likes, each try graded in
+/// the banner but never recorded; any answered card offers "Hear
+/// yourself" ([SpeakingPractice], #231). Build one per card (key it by the
+/// card's position).
 class SpeakingDrill extends StatelessWidget {
   const SpeakingDrill({
     super.key,
@@ -50,11 +55,15 @@ class SpeakingDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       card: _card(context, card, language),
-      belowCard: answer != null ? null : _microphone(context, language),
+      belowCard: answer != null
+          ? <Widget>[SpeakingPractice(session: session)]
+          : _microphone(context, language),
       feedback: answer == null
           ? null
           : AnswerFeedback(
-              answer: answer,
+              // A new banner for each try again, so that it is announced.
+              key: ValueKey<int>(session.retries),
+              answer: session.retried ?? answer,
               card: card,
               expected: session.acceptedAnswers.first,
               transliterating: false,
@@ -133,17 +142,7 @@ class SpeakingDrill extends StatelessWidget {
         Semantics(
           liveRegion: true,
           child: Text(
-            switch (unheard) {
-              SpeechFailure.noMatch => l10n.drillUnheardNoMatch,
-              SpeechFailure.permissionDenied => l10n.drillUnheardPermission,
-              SpeechFailure.noRecogniser => l10n.drillUnheardNoRecogniser,
-              SpeechFailure.unsupported => l10n.drillUnheardUnsupported(
-                language.name,
-              ),
-              SpeechFailure.network => l10n.drillUnheardNetwork,
-              SpeechFailure.notOnDevice ||
-              SpeechFailure.other => l10n.drillUnheardOther,
-            },
+            unheardMessage(l10n, unheard, language),
             textAlign: TextAlign.center,
             style: theme.textTheme.bodyLarge!.copyWith(color: scheme.error),
           ),
@@ -219,6 +218,28 @@ class SpeakingDrill extends StatelessWidget {
       ];
     }
     return <Widget>[
+      if (session.canRetry) ...<Widget>[
+        OutlinedButton.icon(
+          onPressed: session.hearing
+              ? session.stopListening
+              : session.hearingSelf == SelfTake.idle
+              ? session.retry
+              : null,
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size(64, AppSizes.primaryButton),
+            textStyle: theme.textTheme.titleMedium!.copyWith(
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          icon: Icon(session.hearing ? Icons.stop_rounded : Icons.mic),
+          label: Text(
+            session.hearing ? l10n.drillStopHearing : l10n.drillTryAgain,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        const SizedBox(height: 4),
+      ],
       FilledButton(
         onPressed: session.next,
         style: FilledButton.styleFrom(

@@ -4,7 +4,7 @@ name: "Describing words"
 kind: vocab
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 description: "Good, big, new: a describing word before a noun never changes; after it, it takes -గా (-gā). Not yet checked by a Telugu speaker: please report any mistake."
 tags: [beginner, unreviewed, grammar]
 cards:
@@ -71,6 +71,9 @@ cards:
     reading: "idi mañci pustakam."
     ipa: "id̪i maɲtʃi pust̪akam"
     pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "పుస్తకం", ref: "te-0865" }
   - id: te-0510
     target: "ఈ గది పెద్దగా ఉంది."
     native: "This room is big."
@@ -78,9 +81,16 @@ cards:
     ipa: "iː ɡad̪i ped̪d̪aɡaː und̪i"
     pos: "phrase"
     notes: "To say a thing is big, the describing word takes -గా (-gā) and ఉంది (undi) follows: పెద్దగా ఉంది (peddagā undi)."
+    bases:
+      - { word: "పెద్దగా", ref: "te-0502" }
+      - { word: "ఉంది", ref: "te-0633" }
   - id: te-0511
     target: "కాఫీ చాలా వేడిగా ఉంది."
     native: "The coffee is very hot."
     reading: "kāfī cālā vēḍigā undi."
     ipa: "kaːfiː tʃaːlaː ʋeːɖiɡaː und̪i"
     pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "వేడిగా", ref: "te-0505" }
+      - { word: "ఉంది", ref: "te-0633" }

@@ -1,0 +1,49 @@
+# The English layer of zz-market (B1 format, spec 2.6): it leaves out
+# zz-9304, gives one note no text and one example no translation, and has a
+# card of its own, zz-9501.
+schema: 1
+id: "zz-en-market"
+kind: "layer"
+core: "zz-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "At the market"
+description: "Buying and selling."
+license: "CC-BY-4.0"
+authors:
+  - { name: "Layer author" }
+tags: ["unreviewed", "market"]
+cards:
+  "zz-9301":
+    native: "pen"
+    alt_native: ["ink pen"]
+    wiktionary: true
+    notes:
+      "pair": "Not కాలం (kālam), time: the a is long there."
+      "plural": "Its plural is {1}."
+    examples:
+      "నా కలం.":
+        native: "my pen"
+        bases:
+          "నా": { meaning: "I", wiktionary: true }
+  "zz-9302":
+    native: "time"
+    notes:
+      "pair": "Not కలం (kalam), pen."
+  "zz-9303":
+    native: "I don't know it."
+    bases:
+      "నాకు": "to me"
+      "రాదు": { meaning: "to come; here, to know", wiktionary: true }
+  "zz-9402":
+    notes:
+      "use": "Said of any fruit."
+  "zz-9305":
+    native: "price"
+  "zz-9501":
+    target: "కూర"
+    reading: "kūra"
+    native: "curry"
+    pos: "noun"
+    wiktionary: true
+    notes:
+      - { kind: "culture", text: "Eaten with rice.", source: "https://example.org/curry" }

@@ -64,7 +64,7 @@ Future<AppState> hindiReviewed(
   final base = build(MemoryProgress());
   await base.load();
   final progress = MemoryProgress();
-  for (final card in base.deckById('hi-en-first-words')!.cards.take(8)) {
+  for (final card in base.deckById('hi-en-phrasebook')!.cards.take(8)) {
     for (final MapEntry(key: mode, value: back) in ago.entries) {
       progress.record(
         deckId: card.deckId,
@@ -306,7 +306,7 @@ void main() {
           learningLanguages: const <String>['hi'],
         ),
       ),
-      'hi-en-first-words',
+      'hi-en-phrasebook',
       count: 8,
       // Known in Write, one of the schedules (ADR-0034).
       mode: DrillMode.production,

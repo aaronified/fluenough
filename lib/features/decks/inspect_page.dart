@@ -6,19 +6,23 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart';
+import '../../core/scheduling/skill_difficulty.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/grammar_cells.dart';
+import 'card_notes.dart';
 
 /// Every card of a deck as one scrolling list, for reviewers: two or three
 /// lines a card, its script and romanisation, its meaning, and its id, so
 /// that a whole deck reads quickly and a mistake can be pointed at exactly.
 /// A card with more to it (other accepted forms and meanings, part of
 /// speech, tags, notes, examples, the skills it is limited to) opens in
-/// place when tapped.
+/// place when tapped, with how hard it has been for the learner in each
+/// skill it has been answered in (FSRS's D, docs/plans/difficulty-by-skill.md).
 ///
 /// A grammar deck lists each table's cells under its lemma; a reading deck
 /// each passage's sentences, then its questions, the right answer shown,
@@ -46,7 +50,8 @@ class InspectPage extends StatelessWidget {
         for (final passage in entry.deck.passages)
           ..._passageRows(passage, entry, spoken),
       ],
-      DeckKind.vocab => <WidgetBuilder>[
+      // A rules deck's cells are cards, listed as a vocab deck's are.
+      DeckKind.vocab || DeckKind.rules => <WidgetBuilder>[
         for (final card in entry.cards)
           (_) => _CardRow(card: card, entry: entry),
       ],
@@ -58,7 +63,12 @@ class InspectPage extends StatelessWidget {
       ),
       body: SelectionArea(
         child: ListView.separated(
-          padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 24),
+          padding: const EdgeInsetsDirectional.fromSTEB(
+            8,
+            8,
+            8,
+            24,
+          ).clearingSystemBar(context),
           itemCount: rows.length + 1,
           separatorBuilder: (_, i) =>
               i == 0 ? const SizedBox(height: 8) : const Divider(height: 1),
@@ -203,6 +213,53 @@ class _Field extends StatelessWidget {
       style: Theme.of(context).textTheme.bodyMedium,
     ),
   );
+}
+
+/// How hard a card has been in each skill it has been answered in: a
+/// heading, then a line a skill, "Hear: 7 of 10, harder". Nothing for a
+/// skill not yet answered, and nothing at all for a card never answered.
+class _Difficulties extends StatelessWidget {
+  const _Difficulties(this.difficulties);
+
+  final List<SkillDifficulty> difficulties;
+
+  /// The lines for [card], or null when no skill of it has been answered.
+  static Widget? of(BuildContext context, Card card) {
+    final difficulties = SkillDifficulty.of(
+      card.id,
+      AppScope.of(context).progress.stateOf,
+    );
+    return difficulties.isEmpty ? null : _Difficulties(difficulties);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsetsDirectional.only(top: 6),
+          child: Semantics(
+            header: true,
+            child: Text(
+              l10n.inspectDifficulty,
+              style: Theme.of(context).textTheme.bodyMedium!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
+        ),
+        for (final d in difficulties)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(start: 12, top: 4),
+            child: Text(
+              l10n.inspectDifficultyIn(d.mode.name, d.shown, d.lean.name),
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+      ],
+    );
+  }
 }
 
 /// The script with its romanisation beside it: one line where it fits.
@@ -357,11 +414,10 @@ class _CardRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final language = entry.language;
     final separator = l10n.commonListSeparator;
-    final notes = card.notes;
+    final notes = notesText(card);
     final skills = <String>[
       for (final skill in Skill.values)
-        if (skill.mode != null && card.modes.contains(skill.mode))
-          skill.label(l10n),
+        if (skill.modes.any(card.modes.contains)) skill.label(l10n),
     ];
     return _Line(
       top: _Script(card.target, card.reading, language: language),
@@ -380,7 +436,7 @@ class _CardRow extends StatelessWidget {
         // A card that names no skills is drilled in all that apply.
         if (skills.isNotEmpty)
           _Field(l10n.inspectOnlyIn, skills.join(separator)),
-        if (notes != null && notes.isNotEmpty) _Field(l10n.inspectNotes, notes),
+        if (notes != null) _Field(l10n.inspectNotes, notes),
         if (card.examples.isNotEmpty) ...<Widget>[
           _Field(l10n.inspectExamples, ''),
           for (final example in card.examples)
@@ -401,6 +457,7 @@ class _CardRow extends StatelessWidget {
               ),
             ),
         ],
+        ?_Difficulties.of(context, card),
       ],
     );
   }
@@ -434,6 +491,7 @@ class _CellRow extends StatelessWidget {
             l10n.inspectAlsoAccepted,
             card.altTarget.join(l10n.commonListSeparator),
           ),
+        ?_Difficulties.of(context, card),
       ],
     );
   }

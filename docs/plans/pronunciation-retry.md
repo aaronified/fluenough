@@ -1,6 +1,6 @@
 # Plan: pronunciation, pass or retry
 
-Written 2026-10-05.
+Written 2026-10-05. **Status: built in #457** (closes #231); every part shipped, and the decisions here are held only in this plan.
 
 ## What the owner asked
 

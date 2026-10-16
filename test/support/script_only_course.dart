@@ -14,15 +14,14 @@ cards:
   - { id: hi-en-letters-0001, target: "क", native: "k", reading: "ka" }
   - { id: hi-en-letters-0002, target: "ख", native: "kh", reading: "kha" }
 ''',
-  'decks/hi/hi-en-path.yaml': '''
+  'decks/hi/hi-path.yaml': '''
 schema: 1
 kind: path
-id: hi-en-path
+id: hi-path
 language: hi
-native: en
 alphabet:
-  - hi-en-letters
+  - hi-letters
 units:
-  - [hi-en-letters]
+  - [hi-letters]
 ''',
 };

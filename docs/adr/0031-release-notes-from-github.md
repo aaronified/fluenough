@@ -1,6 +1,6 @@
 # ADR-0031: What's new shows GitHub's release notes, fetched when the page opens
 
-- **Status:** Accepted
+- **Status:** Accepted. Amended by ADR-0037: decks are downloaded, not bundled.
 - **Date:** 2026-10-06
 
 ## Context

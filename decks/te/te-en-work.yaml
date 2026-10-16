@@ -5,7 +5,7 @@ kind: vocab
 theme: work
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: "CC-BY-SA-4.0"
 description: "Jobs, the workplace, and how to ask and say what someone does. Not yet checked by a Telugu speaker: please report any mistake."
 tags: [beginner, unreviewed]
 cards:
@@ -132,6 +132,10 @@ cards:
     reading: "mīru ēm pani cēstāru?"
     ipa: "miːru eːm pani tʃeːst̪aːru"
     pos: "phrase"
+    notes: "చేయడం (cēyaḍam) changes its stem in the present and future: చేస్- (cēs-)."
+    bases:
+      - { word: "ఏం", ref: "te-0160" }
+      - { word: "చేస్తారు", ref: "te-0621" }
   - id: te-0417
     target: "నేను టీచర్‌ని."
     native: "I'm a teacher."
@@ -139,16 +143,27 @@ cards:
     ipa: "neːnu ʈiːtʃarni"
     pos: "phrase"
     notes: "With నేను (nēnu) a noun takes -ని (-ni), and no verb is needed."
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "టీచర్‌ని", base: "టీచర్", reading: "ṭīcar", meaning: "teacher" }
   - id: te-0418
     target: "మీరు ఎక్కడ పని చేస్తారు?"
     native: "Where do you work?"
     reading: "mīru ekkaḍa pani cēstāru?"
     ipa: "miːru ekkaɖa pani tʃeːst̪aːru"
     pos: "phrase"
+    notes: "చేయడం (cēyaḍam) changes its stem in the present and future: చేస్- (cēs-)."
+    bases:
+      - { word: "చేస్తారు", ref: "te-0621" }
   - id: te-0419
     target: "నేను ఒక ఆఫీసులో పని చేస్తాను."
     native: "I work in an office."
     reading: "nēnu oka āfīsulō pani cēstānu."
     ipa: "neːnu oka aːfiːsuloː pani tʃeːst̪aːnu"
     pos: "phrase"
-    notes: "A man and a woman say the same: only he has a form of his own, and she and it share one."
+    notes: "A man and a woman say the same. In the third person, he has -డు (-ḍu), and she and it share -ది (-di). చేయడం (cēyaḍam) changes its stem in the present and future: చేస్- (cēs-)."
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "ఆఫీసులో", ref: "te-0401" }
+      - { word: "చేస్తాను", ref: "te-0621" }

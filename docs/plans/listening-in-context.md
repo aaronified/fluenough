@@ -75,7 +75,7 @@ This example is illustrative and has not been checked by a speaker.
    - the answer is in range;
    - readings in ISO 15919 and the IPA, as on cards.
 3. **Scheduling**, one of two ways:
-   - a harder way of asking the word's Hear schedule (`skill-model.md`),
+   - a harder way of asking the word's Hear schedule (ADR-0034),
      once its FSRS stability passes a threshold, with no new schedule; or
    - a schedule of its own.
 4. **The drill:**

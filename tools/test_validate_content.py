@@ -20,7 +20,7 @@ id: hi-en-probe
 name: Probe
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
   - id: hi-0001
     target: घर
@@ -34,7 +34,7 @@ id: hi-en-probe
 name: Hindi facts
 kind: facts
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 facts:
 """
 
@@ -89,7 +89,7 @@ class Iso6393Codes(Validated):
                 self.assertRejected(VOCAB.replace(old, ""), "iso639_3 must be")
 
     def test_it_must_be_three_lowercase_letters(self) -> None:
-        for bad in ("hi", "hind", "HIN", "h1n", '"hin\\n"', "yes"):
+        for bad in ("hi", "hind", "HIN", "h1n", '"hin\\n"', "true"):
             with self.subTest(bad=bad):
                 self.assertRejected(VOCAB.replace("iso639_3: hin", f"iso639_3: {bad}"),
                                     "iso639_3 must be")
@@ -153,8 +153,8 @@ class FactsFiles(Validated):
         cases = {
             "a plain string": ('"Just text."', "text must map language codes"),
             "a bad code": ('{ english: "Text." }', "text key must be"),
-            "a bare no": ('{ no: "Tekst." }', "Quote the code"),
-            "a boolean value": ("{ en: yes }", "parsed as the boolean"),
+            "a bare false": ('{ false: "Tekst." }', "Quote the code"),
+            "a boolean value": ("{ en: true }", "parsed as the boolean"),
             "an empty value": ('{ en: "" }', "must be non-empty text"),
         }
         for name, (text, needle) in cases.items():
@@ -293,7 +293,7 @@ class Scripts(Validated):
         self.assertTrue(any("'ethiopic' is not one" in w for w in report.warnings))
 
     def test_a_script_that_is_not_a_lowercase_name_is_an_error(self) -> None:
-        for bad in ("Bengali", "5", '""', "yes", "bengali script"):
+        for bad in ("Bengali", "5", '""', "true", "bengali script"):
             with self.subTest(bad=bad):
                 self.assertRejected(
                     VOCAB.replace("script: devanagari", f"script: {bad}"),
@@ -312,7 +312,7 @@ name: Probe
 kind: grammar
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 pattern:
   name: P
   slot_name: person
@@ -352,7 +352,7 @@ id: hi-numbers
 name: Hindi numbers
 kind: numbers
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 words:
   1: "एक"
   2: ["दो"]
@@ -367,7 +367,7 @@ name: Tens and big numbers
 theme: numbers-big
 language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari, tts: hi-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
   - { id: hi-0001, target: "एक", native: "1", reading: "ek" }
   - { id: hi-0002, target: "दो", native: "2", reading: "do" }

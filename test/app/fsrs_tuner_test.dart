@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/app/app_log.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/fsrs_tuner.dart';
 import 'package:fluenough/app/memory_progress.dart';
@@ -110,15 +111,22 @@ void main() {
       expect(tuner.busy, isFalse);
     });
 
-    test('the words of the skill are rescheduled with the new set', () async {
+    test('the words of the skill are rescheduled with the new set, and the '
+        'fit is logged by its skill only', () async {
       final p = progressOf(learner('hi'));
       final before = p.stateOf('hi-0001', write)!;
+      final log = AppLog();
       final tuner = FsrsTuner(
         progress: p,
         clock: () => now,
         runner: fitInPlace,
+        log: log,
       );
       await tuner.adjustAll();
+      expect(
+        <String>[for (final e in log.entries) e.message],
+        <String>['Fit run: hi ${write.name}, kept'],
+      );
       final values = p.parameters.of('hi', write);
       expect(values, isNot(Fsrs.w));
       final after = p.stateOf('hi-0001', write)!;

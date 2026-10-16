@@ -51,7 +51,7 @@ typedef TodayLesson = ({
   bool done,
 });
 
-/// What Today shows of the learner's pace (`docs/plans/skill-model.md`,
+/// What Today shows of the learner's pace (ADR-0035,
 /// "Shown prominently"): the strip on the due card, and a mark on each
 /// adjusted skill's tile.
 typedef TodayPace = ({
@@ -77,11 +77,18 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   if (paces == null) {
     return (totals: null, marks: const <Skill, PaceDirection>{});
   }
+  // Only the language shown, while one is chosen in the menu (#461).
+  final profile = state.currentProfile;
+  final language = state.shownLanguage;
   final learned = <SkillPace>[
     for (final p in paces.values)
-      if (state.currentProfile.learns(p.key.language)) p,
+      if (profile.learns(p.key.language) &&
+          (language == null || p.key.language == language))
+        p,
   ];
-  final shown = learned.isEmpty ? paces.values.toList() : learned;
+  final shown = learned.isEmpty && language == null
+      ? paces.values.toList()
+      : learned;
   final all = SkillFit.together(shown);
   return (
     totals: all == null
@@ -91,7 +98,7 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
       for (final skill in todaySkills)
         if (SkillFit.together(<SkillPace>[
               for (final p in shown)
-                if (p.adjusted && p.key.mode == skill.mode) p,
+                if (p.adjusted && skill.modes.contains(p.key.mode)) p,
             ])
             case final moved?)
           skill: PaceDirection.of(moved.start, moved.now),
@@ -183,7 +190,8 @@ class TodayNumbers {
         if (skill != Skill.speaking ||
             (state.settings.isEnabled(skill) &&
                 state.features.isAvailable(skill.feature)))
-          skill: skill.mode == null ? 0 : byMode[skill.mode] ?? 0,
+          skill: <int>[for (final mode in skill.modes) byMode[mode] ?? 0]
+              .fold(0, (a, b) => a + b),
     };
     // A skill switched off is not reviewed from its tile either.
     final dueIn = <Skill, int>{
