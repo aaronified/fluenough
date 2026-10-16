@@ -50,6 +50,10 @@ class _ChangingTts implements TtsEngine {
   Future<void> dispose() async {}
 }
 
+/// How many languages the Voices page lists: every one but the IPA, which
+/// has no voice (ADR-0041).
+int _voiced(AppState state) => state.languages.where((l) => !l.isIpa).length;
+
 LanguageInfo _language(AppState state, String code) =>
     state.languages.firstWhere((l) => l.code == code);
 
@@ -68,7 +72,7 @@ void main() {
     final es = _language(state, 'es');
     final hi = _language(state, 'hi');
 
-    final others = state.languages.length - 1;
+    final others = _voiced(state) - 1;
     expect(others, greaterThan(0));
     expect(find.textContaining(es.name, findRichText: true), findsOneWidget);
     expect(find.textContaining(es.ttsTag, findRichText: true), findsWidgets);
@@ -118,7 +122,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(
       find.byType(LanguageVoiceCard, skipOffstage: false),
-      findsNWidgets(state.languages.length),
+      findsNWidgets(_voiced(state)),
     );
     expect(
       find.textContaining(hi.name, findRichText: true, skipOffstage: false),
@@ -187,7 +191,7 @@ void main() {
       state: AppState.test(tts: tts),
     );
     final l10n = l10nOf(tester);
-    final languages = state.languages.length;
+    final languages = _voiced(state);
     expect(find.text(l10n.voicesMissing), findsNWidgets(languages));
     expect(find.text(l10n.voicesPlay), findsNothing);
 

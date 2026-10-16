@@ -76,8 +76,10 @@ class VoicesPage extends StatefulWidget {
   static List<LanguageInfo> ordered(AppState state) {
     final learns = state.currentProfile.learns;
     return <LanguageInfo>[
-      ...state.languages.where((l) => learns(l.code)),
-      ...state.languages.where((l) => !learns(l.code)),
+      // The IPA has no voice to choose: its examples are said in their own
+      // languages' (ADR-0041).
+      ...state.languages.where((l) => !l.isIpa && learns(l.code)),
+      ...state.languages.where((l) => !l.isIpa && !learns(l.code)),
     ];
   }
 
