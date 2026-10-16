@@ -9,6 +9,14 @@ tags: ["beginner", "unreviewed"]
 cards:
   - id: "ipa-0024"
     target: "ɱ"
+    examples:
+      - target: "enfermo"
+        language: "es"
+        ipa: "eɱˈfeɾmo"
+      - target: "enemigo"
+        language: "es"
+        ipa: "eneˈmiɣo"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -18,19 +26,16 @@ cards:
     examples:
       - target: "तीन"
         language: "hi"
+        reading: "tīn"
+        ipa: "t̪iːn"
       - target: "తాత"
         language: "te"
-    modes: ["recognition", "production"]
-    notes:
-      - { id: "n1", kind: "note" }
-  - id: "ipa-0026"
-    target: "d̪"
-    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
-    examples:
-      - target: "दस"
-        language: "hi"
-      - target: "দুধ"
-        language: "bn"
+        reading: "tāta"
+        ipa: "t̪aːt̪a"
+      - target: "tea"
+        language: "en"
+        ipa: "tiː"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -40,8 +45,36 @@ cards:
     examples:
       - target: "टमाटर"
         language: "hi"
+        reading: "ṭamāṭar"
+        ipa: "ʈəmaːʈər"
       - target: "টাকা"
         language: "bn"
+        reading: "ṭākā"
+        ipa: "ʈaka"
+      - target: "तीन"
+        language: "hi"
+        reading: "tīn"
+        ipa: "t̪iːn"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0026"
+    target: "d̪"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "दस"
+        language: "hi"
+        reading: "das"
+        ipa: "d̪əs"
+      - target: "দুধ"
+        language: "bn"
+        reading: "dudh"
+        ipa: "d̪ud̪ʱ"
+      - target: "day"
+        language: "en"
+        ipa: "deɪ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -51,8 +84,17 @@ cards:
     examples:
       - target: "डॉक्टर"
         language: "hi"
+        reading: "ḍôkṭar"
+        ipa: "ɖɔkʈər"
       - target: "ડાબે"
         language: "gu"
+        reading: "ḍābe"
+        ipa: "ɖabe"
+      - target: "दस"
+        language: "hi"
+        reading: "das"
+        ipa: "d̪əs"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -62,18 +104,43 @@ cards:
     examples:
       - target: "पाणी"
         language: "mr"
+        reading: "pāṇi"
+        ipa: "paɳi"
       - target: "ಕೋಣೆ"
         language: "kn"
+        reading: "kōṇe"
+        ipa: "koːɳe"
+      - target: "नाम"
+        language: "hi"
+        reading: "nām"
+        ipa: "naːm"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0030"
     target: "c"
+    examples:
+      - target: "tyúk"
+        language: "hu"
+        ipa: "ˈcuːk"
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0031"
     target: "ɟ"
+    examples:
+      - target: "gyár"
+        language: "hu"
+        ipa: "ˈɟaːr"
+      - target: "gem"
+        language: "en"
+        ipa: "dʒɛm"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -87,38 +154,87 @@ cards:
       - target: "niño"
         language: "es"
         ipa: "ˈniɲo"
+      - target: "nada"
+        language: "es"
+        ipa: "ˈnada"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0033"
     target: "ŋ"
     tags: ["bn", "as", "en"]
     examples:
       - target: "বাঙালি"
         language: "bn"
+        reading: "bāṅāli"
+        ipa: "baŋali"
       - target: "sing"
         language: "en"
         ipa: "sɪŋ"
+      - target: "sin"
+        language: "en"
+        ipa: "sɪn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0034"
     target: "q"
+    examples:
+      - target: "قلب"
+        language: "ar"
+        reading: "qalb"
+        ipa: "qalb"
+      - target: "queen"
+        language: "en"
+        ipa: "kwiːn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0035"
     target: "ɢ"
+    examples:
+      - target: "قند"
+        language: "fa"
+        reading: "qand"
+        ipa: "ɢænd"
+      - target: "go"
+        language: "en"
+        ipa: "ɡəʊ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0036"
     target: "ɴ"
+    examples:
+      - target: "ほん"
+        language: "ja"
+        reading: "hon"
+        ipa: "hoɴ"
+      - target: "no"
+        language: "en"
+        ipa: "nəʊ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0037"
     target: "ʔ"
+    examples:
+      - target: "uh-oh"
+        language: "en"
+        ipa: "ˈʌʔəʊ"
+      - target: "don't"
+        language: "en"
+        ipa: "dəʊnt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }

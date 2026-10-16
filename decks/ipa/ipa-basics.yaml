@@ -14,12 +14,24 @@ cards:
       - target: "cat"
         language: "en"
         ipa: "kæt"
+      - target: "pin"
+        language: "en"
+        ipa: "pʰɪn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0002"
     target: "[ ]"
     tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "pʰɪn"
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -36,6 +48,10 @@ cards:
       - target: "about"
         language: "en"
         ipa: "əˈbaʊt"
+      - target: "the"
+        language: "en"
+        ipa: "ðə"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -46,6 +62,10 @@ cards:
       - target: "Japanese"
         language: "en"
         ipa: "ˌdʒæpəˈniːz"
+      - target: "about"
+        language: "en"
+        ipa: "əˈbaʊt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -55,8 +75,22 @@ cards:
     examples:
       - target: "కాలం"
         language: "te"
+        reading: "kālam"
+        ipa: "kaːlam"
       - target: "काम"
         language: "hi"
+        reading: "kām"
+        ipa: "kaːm"
+      - target: "కలం"
+        language: "te"
+        reading: "kalam"
+        ipa: "kalam"
+        sounds: false
+      - target: "कम"
+        language: "hi"
+        reading: "kam"
+        ipa: "kəm"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -67,6 +101,10 @@ cards:
       - target: "día"
         language: "es"
         ipa: "ˈdi.a"
+      - target: "aire"
+        language: "es"
+        ipa: "ˈai̯ɾe"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }

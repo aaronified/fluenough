@@ -13,6 +13,16 @@ cards:
     examples:
       - target: "खिड़की"
         language: "hi"
+        reading: "khiṛkī"
+        ipa: "kʰɪɽkiː"
+      - target: "pin"
+        language: "en"
+        ipa: "pʰɪn"
+      - target: "किताब"
+        language: "hi"
+        reading: "kitāb"
+        ipa: "kɪt̪aːb"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -22,6 +32,13 @@ cards:
     examples:
       - target: "ভাত"
         language: "bn"
+        reading: "bhāt"
+        ipa: "bʱat̪"
+      - target: "बात"
+        language: "hi"
+        reading: "bāt"
+        ipa: "baːt̪"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -29,8 +46,18 @@ cards:
     target: "pʰ"
     tags: ["hi", "mr", "gu", "bn", "as", "te", "kn"]
     examples:
+      - target: "फल"
+        language: "hi"
+        reading: "phal"
+        ipa: "pʰəl"
       - target: "চাফা"
         language: "as"
+        reading: "sāphā"
+        ipa: "sapʰa"
+      - target: "phone"
+        language: "en"
+        ipa: "fəʊn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -40,8 +67,17 @@ cards:
     examples:
       - target: "भाई"
         language: "hi"
+        reading: "bhāī"
+        ipa: "bʱaːiː"
       - target: "ভাত"
         language: "as"
+        reading: "bhāt"
+        ipa: "bʱat"
+      - target: "बाल"
+        language: "hi"
+        reading: "bāl"
+        ipa: "baːl"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -51,19 +87,16 @@ cards:
     examples:
       - target: "পথ"
         language: "bn"
-      - target: "के साथ"
+        reading: "pôth"
+        ipa: "pɔt̪ʰ"
+      - target: "साथ"
         language: "hi"
-    modes: ["recognition", "production"]
-    notes:
-      - { id: "n1", kind: "note" }
-  - id: "ipa-0043"
-    target: "d̪ʱ"
-    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
-    examples:
-      - target: "दूध"
-        language: "hi"
-      - target: "ధర"
-        language: "te"
+        reading: "sāth"
+        ipa: "saːt̪ʰ"
+      - target: "thin"
+        language: "en"
+        ipa: "θɪn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -73,6 +106,31 @@ cards:
     examples:
       - target: "পথ"
         language: "as"
+        reading: "pôth"
+        ipa: "pɔtʰ"
+      - target: "Thomas"
+        language: "en"
+        ipa: "ˈtɒməs"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0043"
+    target: "d̪ʱ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "दूध"
+        language: "hi"
+        reading: "dūdh"
+        ipa: "d̪uːd̪ʱ"
+      - target: "ధర"
+        language: "te"
+        reading: "dhara"
+        ipa: "d̪ʱara"
+      - target: "adhere"
+        language: "en"
+        ipa: "ədˈhɪə"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -82,6 +140,13 @@ cards:
     examples:
       - target: "ধুনীয়া"
         language: "as"
+        reading: "dhuniyā"
+        ipa: "dʱunija"
+      - target: "দহ"
+        language: "as"
+        reading: "dôh"
+        ipa: "dɔh"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -91,8 +156,16 @@ cards:
     examples:
       - target: "खाना"
         language: "hi"
+        reading: "khānā"
+        ipa: "kʰaːnaː"
       - target: "খুৰা"
         language: "as"
+        reading: "khurā"
+        ipa: "kʰuɹa"
+      - target: "khaki"
+        language: "en"
+        ipa: "ˈkɑːki"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -102,10 +175,20 @@ cards:
     examples:
       - target: "घर"
         language: "hi"
+        reading: "ghar"
+        ipa: "ɡʱər"
       - target: "घरी"
         language: "mr"
+        reading: "ghari"
+        ipa: "ɡʱəri"
       - target: "ঘৰ"
         language: "as"
+        reading: "ghôr"
+        ipa: "ɡʱɔɹ"
+      - target: "ghost"
+        language: "en"
+        ipa: "ɡəʊst"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -115,9 +198,29 @@ cards:
     examples:
       - target: "चाय"
         language: "hi"
+        reading: "cāy"
+        ipa: "tʃaːj"
       - target: "leche"
         language: "es"
         ipa: "ˈletʃe"
+      - target: "chef"
+        language: "en"
+        ipa: "ʃɛf"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0054"
+    target: "t͡ʃ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn", "es", "en"]
+    examples:
+      - target: "chair"
+        language: "en"
+        ipa: "t͡ʃeə"
+      - target: "cats"
+        language: "en"
+        ipa: "kæts"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -127,8 +230,16 @@ cards:
     examples:
       - target: "छह"
         language: "hi"
+        reading: "chah"
+        ipa: "tʃʰəɦ"
       - target: "मछली"
         language: "hi"
+        reading: "machlī"
+        ipa: "mətʃʰliː"
+      - target: "Christmas"
+        language: "en"
+        ipa: "ˈkrɪsməs"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -138,11 +249,19 @@ cards:
     examples:
       - target: "आज"
         language: "hi"
+        reading: "āj"
+        ipa: "aːdʒ"
       - target: "জল"
         language: "bn"
+        reading: "jôl"
+        ipa: "dʒɔl"
       - target: "jam"
         language: "en"
         ipa: "dʒæm"
+      - target: "jamón"
+        language: "es"
+        ipa: "xaˈmon"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -152,6 +271,13 @@ cards:
     examples:
       - target: "ঝাল"
         language: "bn"
+        reading: "jhāl"
+        ipa: "dʒʱal"
+      - target: "जल"
+        language: "hi"
+        reading: "jal"
+        ipa: "dʒəl"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -161,23 +287,35 @@ cards:
     examples:
       - target: "चार"
         language: "mr"
+        reading: "cār"
+        ipa: "tsar"
       - target: "चहा"
         language: "mr"
+        reading: "cahā"
+        ipa: "tsəɦa"
+      - target: "चिमणी"
+        language: "mr"
+        reading: "cimaṇī"
+        ipa: "tʃimɳi"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0053"
     target: "dz"
     tags: ["mr"]
     examples:
       - target: "जवळ"
         language: "mr"
+        reading: "javaḷ"
+        ipa: "dzəʋəɭ"
+      - target: "जीभ"
+        language: "mr"
+        reading: "jībh"
+        ipa: "dʒiːbʱ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
-  - id: "ipa-0054"
-    target: "t͡ʃ"
-    tags: ["hi", "mr", "gu", "bn", "te", "kn", "es", "en"]
-    modes: ["recognition", "production"]
-    notes:
-      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }

@@ -9,6 +9,15 @@ tags: ["beginner", "unreviewed"]
 cards:
   - id: "ipa-0063"
     target: "ɸ"
+    examples:
+      - target: "ふじ"
+        language: "ja"
+        reading: "fuji"
+        ipa: "ɸɯdʑi"
+      - target: "fan"
+        language: "en"
+        ipa: "fæn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -17,7 +26,11 @@ cards:
     examples:
       - target: "beber"
         language: "es"
-        ipa: "beˈbeɾ"
+        ipa: "beˈβeɾ"
+      - target: "bien"
+        language: "es"
+        ipa: "bjen"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -31,6 +44,10 @@ cards:
       - target: "thin"
         language: "en"
         ipa: "θɪn"
+      - target: "Thames"
+        language: "en"
+        ipa: "temz"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -43,7 +60,11 @@ cards:
         ipa: "ðɪs"
       - target: "nada"
         language: "es"
-        ipa: "ˈnada"
+        ipa: "ˈnaða"
+      - target: "thin"
+        language: "en"
+        ipa: "θɪn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -53,11 +74,32 @@ cards:
     examples:
       - target: "शाम"
         language: "hi"
+        reading: "śām"
+        ipa: "ʃaːm"
       - target: "দেশ"
         language: "bn"
+        reading: "deś"
+        ipa: "d̪eʃ"
       - target: "she"
         language: "en"
         ipa: "ʃiː"
+      - target: "mishap"
+        language: "en"
+        ipa: "ˈmɪshæp"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0069"
+    target: "ɕ"
+    examples:
+      - target: "siedem"
+        language: "pl"
+        ipa: "ˈɕɛdɛm"
+      - target: "sad"
+        language: "pl"
+        ipa: "sat"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -68,21 +110,36 @@ cards:
       - target: "vision"
         language: "en"
         ipa: "ˈvɪʒən"
-    modes: ["recognition", "production"]
-    notes:
-      - { id: "n1", kind: "note" }
-  - id: "ipa-0069"
-    target: "ɕ"
+      - target: "mission"
+        language: "en"
+        ipa: "ˈmɪʃən"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0070"
     target: "ʑ"
+    examples:
+      - target: "zima"
+        language: "pl"
+        ipa: "ˈʑima"
+      - target: "zero"
+        language: "pl"
+        ipa: "ˈzɛrɔ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0071"
     target: "ç"
+    examples:
+      - target: "ich"
+        language: "de"
+        ipa: "ɪç"
+      - target: "Buch"
+        language: "de"
+        ipa: "buːx"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -96,6 +153,10 @@ cards:
       - target: "calle"
         language: "es"
         ipa: "ˈkaʝe"
+      - target: "y"
+        language: "es"
+        ipa: "i"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -103,42 +164,93 @@ cards:
     target: "ɣ"
     tags: ["hi"]
     examples:
-      - target: "ग़लती करना"
+      - target: "ग़लती"
         language: "hi"
+        reading: "ġaltī"
+        ipa: "ɣəlt̪iː"
       - target: "agua"
         language: "es"
-        ipa: "ˈaɡwa"
+        ipa: "ˈaɣwa"
+      - target: "gato"
+        language: "es"
+        ipa: "ˈɡato"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0074"
     target: "χ"
+    examples:
+      - target: "bach"
+        language: "cy"
+        ipa: "baːχ"
+      - target: "church"
+        language: "en"
+        ipa: "tʃɜːtʃ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0075"
     target: "ʁ"
+    examples:
+      - target: "rouge"
+        language: "fr"
+        ipa: "ʁuʒ"
+      - target: "pero"
+        language: "es"
+        ipa: "ˈpeɾo"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0076"
     target: "ħ"
+    examples:
+      - target: "حليب"
+        language: "ar"
+        reading: "ḥalīb"
+        ipa: "ħaliːb"
+      - target: "hat"
+        language: "en"
+        ipa: "hæt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0077"
     target: "ʕ"
+    examples:
+      - target: "عربي"
+        language: "ar"
+        reading: "ʿarabī"
+        ipa: "ʕarabiː"
+      - target: "עברית"
+        language: "he"
+        reading: "ʿivrit"
+        ipa: "ivˈʁit"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0078"
     target: "ɦ"
     tags: ["hi", "gu"]
     examples:
       - target: "बहन"
         language: "hi"
+        reading: "bahan"
+        ipa: "bəɦən"
       - target: "હા"
         language: "gu"
+        reading: "hā"
+        ipa: "ɦa"
+      - target: "hat"
+        language: "en"
+        ipa: "hæt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }

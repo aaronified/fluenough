@@ -13,8 +13,17 @@ cards:
     examples:
       - target: "माँ"
         language: "hi"
+        reading: "mām̐"
+        ipa: "mãː"
       - target: "দাঁত"
         language: "bn"
+        reading: "dām̐t"
+        ipa: "d̪ãt̪"
+      - target: "काम"
+        language: "hi"
+        reading: "kām"
+        ipa: "kaːm"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -25,6 +34,10 @@ cards:
       - target: "hidden"
         language: "en"
         ipa: "ˈhɪdn̩"
+      - target: "tin"
+        language: "en"
+        ipa: "tɪn"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
@@ -35,71 +48,184 @@ cards:
       - target: "aire"
         language: "es"
         ipa: "ˈai̯ɾe"
+      - target: "día"
+        language: "es"
+        ipa: "ˈdia"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0125"
     target: "n̥"
+    examples:
+      - target: "snow"
+        language: "en"
+        ipa: "sn̥əʊ"
+      - target: "now"
+        language: "en"
+        ipa: "naʊ"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0126"
     target: "t̬"
+    examples:
+      - target: "better"
+        language: "en"
+        ipa: "ˈbɛt̬ɚ"
+      - target: "tea"
+        language: "en"
+        ipa: "tiː"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0127"
     target: "b̤"
+    examples:
+      - target: "ભાઈ"
+        language: "gu"
+        reading: "bhāī"
+        ipa: "b̤aːi"
+      - target: "बात"
+        language: "hi"
+        reading: "bāt"
+        ipa: "baːt̪"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0128"
     target: "ʲ"
+    examples:
+      - target: "мать"
+        language: "ru"
+        reading: "mat'"
+        ipa: "matʲ"
+      - target: "мат"
+        language: "ru"
+        reading: "mat"
+        ipa: "mat"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0129"
     target: "ʷ"
+    examples:
+      - target: "quick"
+        language: "en"
+        ipa: "kʷɪk"
+      - target: "kick"
+        language: "en"
+        ipa: "kɪk"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0130"
     target: "ɫ"
+    examples:
+      - target: "full"
+        language: "en"
+        ipa: "fʊɫ"
+      - target: "light"
+        language: "en"
+        ipa: "laɪt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0131"
     target: "t̚"
+    examples:
+      - target: "act"
+        language: "en"
+        ipa: "ækt̚"
+      - target: "tea"
+        language: "en"
+        ipa: "tiː"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0132"
     target: "ɚ"
+    examples:
+      - target: "butter"
+        language: "en"
+        ipa: "ˈbʌtɚ"
+      - target: "hammer"
+        language: "en"
+        ipa: "ˈhæmə"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0133"
     target: "ˑ"
+    examples:
+      - target: "bit"
+        language: "en"
+        ipa: "bɪt"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0134"
     target: "ĕ"
+    examples:
+      - target: "police"
+        language: "en"
+        ipa: "pə̆ˈliːs"
+      - target: "peace"
+        language: "en"
+        ipa: "piːs"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
   - id: "ipa-0135"
     target: "‿"
+    examples:
+      - target: "les amis"
+        language: "fr"
+        ipa: "le‿zami"
+      - target: "les cafés"
+        language: "fr"
+        ipa: "le kafe"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0136"
     target: "|"
+    examples:
+      - target: "yes, please"
+        language: "en"
+        ipa: "jɛs | pliːz"
+      - target: "thank you"
+        language: "en"
+        ipa: "θæŋk juː"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0137"
     target: "‖"
+    examples:
+      - target: "yes, please. Thanks."
+        language: "en"
+        ipa: "jɛs | pliːz ‖ θæŋks"
+      - target: "yes"
+        language: "en"
+        ipa: "jɛs"
+        sounds: false
     modes: ["recognition", "production"]
     notes:
       - { id: "n1", kind: "note" }
