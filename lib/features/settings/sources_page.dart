@@ -47,8 +47,12 @@ enum ContentCredit {
   /// Word data, CC BY-SA 4.0 (#518).
   wiktionary(<String>['wiktionary']),
 
-  /// Recordings, each under its own licence and speaker credit (#518).
+  /// Recordings and images, each under its own licence and credit (#518,
+  /// #523).
   commons(<String>['wikimedia commons', 'commons.wikimedia.org']),
+
+  /// Drawings of what words mean, CC BY-SA 4.0 (#523).
+  openmoji(<String>['openmoji']),
 
   /// Frequency, counted from each language's Wikipedia, CC BY-SA (#516).
   wikipedia(<String>['wikipedia']),
@@ -90,6 +94,7 @@ Iterable<String> cardSources(Card card) sync* {
   }
   if (card.frequency case final frequency?) yield frequency.source;
   if (card.audioCredit case final credit?) yield credit.source;
+  if (card.imageCredit case final credit?) yield credit.source;
 }
 
 /// The projects [decks] use, in [ContentCredit]'s order: those a deck's own
@@ -111,7 +116,8 @@ List<ContentCredit> creditsOf(List<DeckEntry> decks) {
 /// licence.
 typedef MediaCreditLine = ({String credit, String license});
 
-/// The credits of the recordings that ship with [decks] (#518), by
+/// The credits of the recordings and images that ship with [decks] (#518,
+/// #523), by
 /// language, each credit and licence once. Languages with none are left
 /// out.
 List<({LanguageInfo language, List<MediaCreditLine> lines})> mediaCreditsOf(
@@ -138,8 +144,11 @@ List<({LanguageInfo language, List<MediaCreditLine> lines})> mediaCreditsOf(
   ];
 }
 
-/// The credits of [card]'s own files: its recording's.
-List<MediaCredit> mediaCredits(Card card) => <MediaCredit>[?card.audioCredit];
+/// The credits of [card]'s own files: its recording's and its image's.
+List<MediaCredit> mediaCredits(Card card) => <MediaCredit>[
+  ?card.audioCredit,
+  ?card.imageCredit,
+];
 
 /// The decks' licence and credits, then where their texts come from, a row
 /// per language and a line per source, such as the books the Bengali

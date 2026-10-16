@@ -123,6 +123,12 @@ class DeckFacts extends StatelessWidget {
         if (card.audioCredit case final credit?)
           l10n.deckMediaCredit(card.target, credit.credit, credit.license),
     ];
+    // Each image's credit (#523): whom, and its licence.
+    final images = <String>[
+      for (final card in deck.cards)
+        if (card.imageCredit case final credit?)
+          l10n.deckMediaCredit(card.target, credit.credit, credit.license),
+    ];
 
     final facts = <(String, String, bool)>[
       (l10n.deckLicence, deck.license, false),
@@ -142,6 +148,7 @@ class DeckFacts extends StatelessWidget {
         ),
       if (recordings.isNotEmpty)
         (l10n.deckRecordings, recordings.join('\n'), false),
+      if (images.isNotEmpty) (l10n.deckImages, images.join('\n'), false),
       (
         l10n.deckVoice,
         switch (state.voiceStatus(entry.language)) {

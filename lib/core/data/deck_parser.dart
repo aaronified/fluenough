@@ -146,6 +146,8 @@ const _cardFields = {
   'modes',
   'pair',
   'picture',
+  'image',
+  'image_credit',
   'phrasebook',
   'bases',
   'rules',
@@ -228,6 +230,8 @@ const _coreCardFields = {
   'examples',
   'modes',
   'picture',
+  'image',
+  'image_credit',
   'notes',
   'phrasebook',
   'bases',
@@ -775,6 +779,11 @@ class _Reader {
           fields.optionalString('pair', allowEmpty: false) ??
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
+      image: fields.optionalString('image', allowEmpty: false),
+      imageCredit: mediaCredit(
+        fields.node('image_credit'),
+        '$path.image_credit',
+      ),
       phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
       bases: ownRoot
           ? const <CardBase>[]
@@ -1463,6 +1472,11 @@ class _Reader {
       examples: coreExamples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       picture: fields.optionalString('picture', allowEmpty: false),
+      image: fields.optionalString('image', allowEmpty: false),
+      imageCredit: mediaCredit(
+        fields.node('image_credit'),
+        '$path.image_credit',
+      ),
       notes: coreNotes(fields.node('notes'), '$path.notes'),
       phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
       bases: ownRoot
