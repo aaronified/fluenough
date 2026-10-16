@@ -9,11 +9,8 @@ import 'onboarding_step.dart';
 final OnboardingStep spokenStep = OnboardingStep(
   id: 'spoken',
   asks: true,
-  blocked: (answers, l10n) => answers.spoken.isEmpty
-      ? l10n.onboardingSpokenNeedOne
-      : !answers.scriptsDone
-      ? l10n.knownScriptsNeeded
-      : null,
+  blocked: (answers, l10n) =>
+      answers.spoken.isEmpty ? l10n.onboardingSpokenNeedOne : null,
   content: (context, at) {
     final l10n = AppLocalizations.of(context)!;
     return SpokenLanguagesPicker(

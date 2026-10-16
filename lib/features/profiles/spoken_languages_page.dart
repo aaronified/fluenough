@@ -7,19 +7,14 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 import 'spoken_languages_picker.dart';
 
-/// The languages the learner knows, ticked and ranked (#53), each with
-/// whether they read its script (#462), opened from Settings. Kept apart from the interface language, which is #46. The first
-/// launch asks the same question inside `OnboardingFlow`.
+/// The languages the learner knows, each with whether they read its script
+/// (#53, #462, #490), opened from Settings, with an app bar, Back and Save.
+/// Kept apart from the interface language, which is #46. The first launch
+/// asks the same question, on the same screen ([SpokenLanguagesPicker]),
+/// inside `OnboardingFlow`, with Continue.
 ///
 /// The choices are data, `assets/languages.yaml`, so a new one needs no
-/// code. The order of the ticked languages is their rank, best known first;
-/// the list is reordered by dragging, and screen readers get its move
-/// actions.
-/// Whether every language in [known] has an explicit script answer in
-/// [given] (#462): until then, Languages you know cannot be saved.
-bool scriptsAnswered(List<String> known, Map<String, bool> given) =>
-    known.every(given.containsKey);
-
+/// code. The order of the chosen languages is their rank, best known first.
 class SpokenLanguagesPage extends StatefulWidget {
   const SpokenLanguagesPage({super.key, this.choices});
 
@@ -39,7 +34,9 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
   void _save() {
     final settings = AppScope.read(context).settings;
     settings
-      ..scriptsRead = _scripts
+      ..scriptsRead = <String, bool>{
+        for (final code in _ranked) code: ?_scripts[code],
+      }
       ..spokenLanguages = _ranked;
     Navigator.of(context).pop();
   }
@@ -83,23 +80,20 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  // Why the button waits: a script not yet answered.
-                  if (_ranked.isNotEmpty && !scriptsAnswered(_ranked, _scripts))
+                  // Why the button waits: no language chosen yet.
+                  if (_ranked.isEmpty)
                     Padding(
                       padding: const EdgeInsetsDirectional.only(bottom: 8),
                       child: Text(
-                        l10n.knownScriptsNeeded,
+                        l10n.onboardingSpokenNeedOne,
                         textAlign: TextAlign.center,
                         style: theme.textTheme.bodyMedium,
                       ),
                     ),
                   FilledButton(
                     style: AppButtonStyles.tall(context),
-                    onPressed:
-                        _ranked.isEmpty || !scriptsAnswered(_ranked, _scripts)
-                        ? null
-                        : _save,
-                    child: Text(l10n.commonContinue),
+                    onPressed: _ranked.isEmpty ? null : _save,
+                    child: Text(l10n.knownSave),
                   ),
                 ],
               ),
