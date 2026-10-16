@@ -283,12 +283,12 @@ cards:
 
     test('refs in the set\'s order; a ref no card is left out', () {
       final cards = [word('a-1', 'a'), word('a-2', 'b'), word('a-3', 'c')];
-      final set = CardSet(
+      const set = CardSet(
         id: 's',
         deckId: 'd',
         name: 'n',
         explanation: 'e',
-        members: const ['a-3', 'a-9', 'a-1'],
+        members: ['a-3', 'a-9', 'a-1'],
       );
       expect(setMembers(set, cards).map((c) => c.id), ['a-3', 'a-1']);
     });

@@ -218,3 +218,12 @@ Future<void> scrollToFind(WidgetTester tester, Finder finder) async {
     await tester.pumpAndSettle();
   }
 }
+
+/// A drill card's target [text], as `find.text` finds it, but also where a
+/// long word is given its breaks between aksharas (`breakableWord`, #515),
+/// which a line may wrap at.
+Finder findTarget(String text) => find.byWidgetPredicate(
+  (widget) =>
+      widget is Text && widget.data?.replaceAll('​', '') == text,
+  description: 'target "$text"',
+);

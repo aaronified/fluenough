@@ -54,12 +54,20 @@ List<String> aksharasOf(String text) {
 /// The zero-width space a line may break at.
 const String breakOpportunity = '​';
 
+/// Whether [text] is in a script whose words are made of aksharas, the
+/// Brahmic scripts from Devanagari to Sinhala, and Myanmar: where a long
+/// word may break between them. Never a joined script such as Arabic,
+/// whose letters a break between them would tear apart.
+bool hasAksharas(String text) => _brahmic.hasMatch(text);
+
+final RegExp _brahmic = RegExp(r'[\u0900-\u0DFF\u1000-\u109F]');
+
 /// [word] with a break opportunity between each of its aksharas, so that a
-/// word too long for its line breaks only there; any other text, and a
-/// word of fewer than [least] aksharas, as it is. Text with a space in it
-/// breaks between its words.
+/// word too long for its line breaks only there; text in a script without
+/// aksharas, and a word of fewer than [least] of them, as it is. Text with
+/// a space in it breaks between its words.
 String breakableWord(String word, {int least = 3}) {
-  if (word.contains(RegExp(r'\s'))) return word;
+  if (word.contains(RegExp(r'\s')) || !hasAksharas(word)) return word;
   final pieces = aksharasOf(word);
   return pieces.length < least ? word : pieces.join(breakOpportunity);
 }

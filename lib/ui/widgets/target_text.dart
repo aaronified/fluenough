@@ -5,6 +5,7 @@ import '../../core/models/aksharas.dart';
 import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
+import 'drill_frame.dart';
 
 /// Deck content in the deck's language: a card's target, a lemma, a leech.
 ///
@@ -74,13 +75,14 @@ class TargetText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (_sizing == _Sizing.fixed) return _text(fontSize!);
+    if (_sizing == _Sizing.fixed) return _text(context, fontSize!);
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) {
         final scale = cardTextScaleOf(context, settings);
         return _text(
+          context,
           _sizing == _Sizing.hero
               ? TargetSizes.forText(text, scale: scale)
               : fontSize! * scale,
@@ -89,8 +91,8 @@ class TargetText extends StatelessWidget {
     );
   }
 
-  Widget _text(double size) {
-    final shown = _sizing != _Sizing.fixed && language.needsReading
+  Widget _text(BuildContext context, double size) {
+    final shown = _sizing != _Sizing.fixed && _tooWide(context, size)
         ? breakableWord(text)
         : text;
     return Text(
@@ -107,6 +109,32 @@ class TargetText extends StatelessWidget {
       ),
     );
   }
+
+  /// Whether [text], one word in a script with aksharas, does not fit on a
+  /// line of the drill card at [size]: wider than the screen less the
+  /// page's margins and the card's padding. A word that fits is left whole,
+  /// as written.
+  bool _tooWide(BuildContext context, double size) {
+    if (!hasAksharas(text) || text.contains(RegExp(r'\s'))) return false;
+    final room = MediaQuery.sizeOf(context).width - _cardMargins;
+    final painter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(fontSize: size, fontWeight: fontWeight),
+        locale: Locale(language.code),
+      ),
+      textDirection: TextDirection.ltr,
+      textScaler: MediaQuery.textScalerOf(context),
+      maxLines: 1,
+    )..layout();
+    final wide = painter.width > room;
+    painter.dispose();
+    return wide;
+  }
+
+  /// The drill page's margins and the card's padding, both sides
+  /// ([DrillFrame]).
+  static const double _cardMargins = 2 * (16 + 20);
 }
 
 enum _Sizing { fixed, hero, card }
