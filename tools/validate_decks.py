@@ -112,7 +112,7 @@ CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
-    "audio_credit",
+    "audio_credit", "image", "image_credit",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -147,7 +147,7 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
-                  "senses", "audio_credit"}
+                  "senses", "audio_credit", "image", "image_credit"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
 # A word card has at least this many examples (owner, #506: "At least 2").
@@ -183,7 +183,7 @@ CONFUSABLE_TILES = range(2, 4)
 # the field, its folder in the language's directory, and the file's ending.
 # Each file is named by its card's id and carries its credit in
 # `<field>_credit`.
-MEDIA = {"audio": ("audio", ".opus")}
+MEDIA = {"audio": ("audio", ".opus"), "image": ("images", ".webp")}
 MEDIA_CREDIT_KEYS = {"source", "license", "credit"}
 # The licences a recording or an image may have to ship in a CC BY-SA 4.0
 # deck (ADR-0040): CC0, the public domain, CC BY and CC BY-SA 2.0 to 4.0,
@@ -1861,7 +1861,7 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
-              "source", "scheme", "audio",
+              "source", "scheme", "audio", "image",
               # The B1 format's (ADR-0036): a base's word, a card or a rule
               # named by id.
               "word", "base", "ref", "core", "except", "rules", "part", "region"}

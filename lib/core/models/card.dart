@@ -293,6 +293,8 @@ class CardRef {
       modes: modes ?? written.modes,
       pair: written.pair,
       picture: written.picture,
+      image: written.image,
+      imageCredit: written.imageCredit,
       phrasebook: written.phrasebook,
       bases: written.bases,
       rules: written.rules,
@@ -340,6 +342,8 @@ class Card {
     this.modes = const <DrillMode>{},
     this.pair,
     this.picture,
+    this.image,
+    this.imageCredit,
     this.phrasebook = false,
     this.bases = const <CardBase>[],
     this.rules = const <String>[],
@@ -422,6 +426,19 @@ class Card {
   /// from Noto Emoji ([picturePath]). A cue beside the meaning in Write, and
   /// beside each meaning Hear offers (ADR-0034).
   final String? picture;
+
+  /// Its own image, shown where [picture] is, and in its place: a photo
+  /// from Wikimedia Commons or an OpenMoji drawing, shipped with the deck,
+  /// `decks/hi/images/hi-0001.webp` (#523), downloaded with it. Without
+  /// the file on the phone, [picture] shows.
+  final String? image;
+
+  /// Where [image] came from.
+  final MediaCredit? imageCredit;
+
+  /// Whether the card shows a picture of what it means: [picture], or its
+  /// own [image].
+  bool get hasPicture => picture != null || image != null;
 
   /// Whether the card is one of the course's phrasebook chunks: taught whole
   /// in the first lessons, never held back, its words not counted as taught

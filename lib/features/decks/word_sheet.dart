@@ -119,7 +119,7 @@ class WordSheet extends StatelessWidget {
               language: language,
               report: card.id,
             ),
-            if (card.picture != null) ...<Widget>[
+            if (card.hasPicture) ...<Widget>[
               Center(child: CardPicture(card, size: 88)),
               const SizedBox(height: 12),
             ],

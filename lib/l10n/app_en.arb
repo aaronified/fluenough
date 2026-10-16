@@ -2041,6 +2041,10 @@
   "@deckRecordings": {
     "description": "Label on the deck screen for the credits of the deck's recordings of words: who said each, and its licence."
   },
+  "deckImages": "Pictures",
+  "@deckImages": {
+    "description": "Label on the deck screen for the credits of the pictures of words that ship with the deck (photos and drawings): who made each, and its licence."
+  },
   "deckMediaCredit": "{target}: {credit}, {licence}",
   "@deckMediaCredit": {
     "description": "One recording's or picture's credit on the deck screen: the word, whom to credit (a speaker or a photographer), and the file's licence, such as CC-BY-SA-4.0. Names and licences stay as they are.",
@@ -2954,7 +2958,7 @@
   "@sourcesLicenceLine": {
     "description": "The line under the licence row on the Sources screen: what the deck licence allows. Licence names stay as they are."
   },
-  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
+  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} openmoji{OpenMoji} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
   "@sourcesCreditName": {
     "description": "A project whose data the decks use, credited on the Sources screen. Project names stay as they are.",
     "placeholders": {
@@ -2964,7 +2968,7 @@
       }
     }
   },
-  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings of words, each under its own licence and with its speaker's credit} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
+  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings and pictures of words, each under its own licence and with its credit} openmoji{Drawings of what words mean, under CC BY-SA 4.0} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
   "@sourcesCreditLine": {
     "description": "The line under a credited project on the Sources screen: what the decks take from it, and its licence. Licence names stay as they are.",
     "placeholders": {

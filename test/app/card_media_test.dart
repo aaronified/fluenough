@@ -172,10 +172,7 @@ cards:
         kind: 'audio',
       );
       await store.putAll(<IndexFile, List<int>>{file: bytes});
-      expect(
-        store.localPath(recording),
-        '${dir.path}/downloaded/$recording',
-      );
+      expect(store.localPath(recording), '${dir.path}/downloaded/$recording');
       expect(store.localPath('decks/zz/audio/zz-9002.opus'), isNull);
       expect(store.localPath('decks/zz/zz-home.yaml'), isNull);
       expect(await store.list(), isEmpty);

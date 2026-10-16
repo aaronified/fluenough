@@ -102,6 +102,17 @@ class DeckIndex(unittest.TestCase):
         self.assertIn('\n        {"kind": "audio", "path": "decks/es/audio/es-0001.opus"',
                       text)
 
+    def test_images_are_listed_under_media(self) -> None:
+        # #523: a card's image ships with the deck as a recording does.
+        images = self.tmp / "decks" / "es" / "images"
+        images.mkdir()
+        (images / "es-0001.webp").write_bytes(b"RIFF")
+        es = self.language(self.index(), "es")
+        self.assertEqual(es["media"], [{
+            "path": "decks/es/images/es-0001.webp", "size": 4,
+            "sha256": hashlib.sha256(b"RIFF").hexdigest(), "kind": "image"}])
+        self.assertEqual(es["size"], sum(f["size"] for f in es["files"]) + 4)
+
     def test_no_media_key_without_media(self) -> None:
         self.assertNotIn("media", self.language(self.index(), "es"))
 

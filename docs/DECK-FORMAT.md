@@ -294,7 +294,8 @@ of: no learner is taught it.
 
 **A core card** has the language side only. It may give `id`, `target`,
 `reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio` (with
-`audio_credit`), `examples`, `modes`, `picture`, `notes` (the core form, below),
+`audio_credit`), `examples`, `modes`, `picture`, `image` (with
+`image_credit`), `notes` (the core form, below),
 `phrasebook`, `bases` and `rules`. It may **not** give `native`,
 `alt_native` or `wiktionary`, which are the native language's and go in each
 layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
@@ -569,6 +570,8 @@ cards:
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
 | `audio` | no | The card's own recording, played in place of text-to-speech: `"decks/hi/audio/hi-0001.opus"`, a file shipped with the deck, with its `audio_credit`. See [A card's own recording](#a-cards-own-recording-audio). |
 | `audio_credit` | with a shipped `audio` | `{ source, license, credit }`: the file it was made from, its licence and its speaker. |
+| `image` | no | The card's own image, shown where `picture` shows and in its place: `"decks/hi/images/hi-0001.webp"`, a file shipped with the deck, with its `image_credit`. See [A card's own image](#a-cards-own-image-image). |
+| `image_credit` | with `image` | `{ source, license, credit }`: the file it was made from, its licence, and whom to credit. |
 | `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases) and `source`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
 | `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). `"self"` on a word that is its own root ([Card data](#root-word-synonyms-and-antonyms)). |
@@ -941,6 +944,46 @@ card's id, and it downloads with the deck, so it plays offline:
 - An `audio` that is an asset path or a URL, with no credit, is still read,
   but not played.
 
+### A card's own image: `image`
+
+Owner, 2026-10-13 (#523): "Oh, decks need images too". Sources:
+"OpenMoji, Wikimedia Commons via Wikidata/Wiktionary, Keep Noto emoji
+only", and which wins: "Commons photo, then OpenMoji, then Noto". Delivery:
+"Yes, ship with the deck". A card may have its own image, a photo from
+Wikimedia Commons or an [OpenMoji](https://openmoji.org) drawing (CC BY-SA
+4.0), a WebP of about 256 pixels beside the deck, named by the card's id:
+
+```yaml
+  - id: "hi-0419"
+    target: "मकान"
+    picture: "🏠"
+    image: "decks/hi/images/hi-0419.webp"
+    image_credit: { source: "https://openmoji.org/library/emoji-1F3E0/", license: "CC-BY-SA-4.0", credit: "OpenMoji" }
+```
+
+- **Only for a concrete word it shows exactly**, as [`picture`](#card-fields)
+  is ([ADR-0034](adr/0034-hear-say-write.md)): not for abstract words,
+  kinship, or near misses.
+- **The shape is `audio`'s** ([A card's own recording](#a-cards-own-recording-audio)):
+  the file is `decks/<lang>/images/<card id>.webp`, and `image` names it by
+  that path, on a core card or a single-file card, never in a layer or on a
+  ref. Every file in the folder is named by its card; a file no card names
+  is an error. **`image_credit`** is required with it, `{ source, license,
+  credit }`, with a licence that can ship in a CC BY-SA 4.0 deck, as for a
+  recording. `source` is the file's Commons page, or the OpenMoji page of
+  its emoji, and names it per item.
+- **The app** shows the image where `picture` shows, in its place, once it
+  is downloaded; without it, `picture`'s Noto Emoji drawing, which stays
+  bundled with the app. The deck screen credits each image, and Settings'
+  Sources screen each language's.
+- **Reviewers can flag a bad image,** and it is dropped with its file, as a
+  recording is (#508).
+- **`tools/import_wiktionary.py --images`** fills it, for a card that has a
+  `picture`: the Wikidata image (P18) of the item Wiktionary's sense names,
+  else an image on the language's section of the word's Wiktionary page,
+  else OpenMoji's drawing of the card's `picture`, converted with `ffmpeg`
+  (see `tools/README.md`).
+
 ### Sentences and their rules: `rules`
 
 A sentence names the rules it uses, by their ids:
@@ -1008,7 +1051,8 @@ Each item says where it lives, and each is built.
 - **Learner-language text** of all the new data (a `why`, a synonym's
   meaning) lives in each native layer (owner: "In each native layer"), keyed
   by id as notes are.
-- **Picture, audio, `pair`, notes, the sounds file.** Exist, optional.
+- **Picture, image, audio, `pair`, notes, the sounds file.** Exist,
+  optional. A card's own image is [`image`](#a-cards-own-image-image) (#523).
   Phonemic contrasts come from a word's `ipa` and the sounds file, not from a
   field on the card.
 
@@ -2300,8 +2344,9 @@ downloads is listed in `decks/index.json`:
   in reviewer mode when `sha256` does (#444, #449). A deck's `tags` are
   not taken out, so a deck becoming `reviewed` is an update. Every
   download is still checked against `size` and `sha256`.
-- **`media`**: every [recording](#a-cards-own-recording-audio) in the
-  language's folders, with its path, size, SHA-256 and `kind`, `"audio"`.
+- **`media`**: every [recording](#a-cards-own-recording-audio) and
+  [image](#a-cards-own-image-image) in the language's folders, with its
+  path, size, SHA-256 and `kind`, `"audio"` or `"image"`.
   They are listed apart from `files`, so that an app too old to read them
   passes them by, and the language's `size` counts them. They download
   after the decks, and are checked against their hash alone.

@@ -221,7 +221,7 @@ class ChoiceDrill extends StatelessWidget {
           color: scheme.onSurfaceVariant,
         ),
       ),
-      if (card.picture != null) CardPicture(card, size: 88),
+      if (card.hasPicture) CardPicture(card, size: 88),
       Text(
         card.promptFor(session.item.mode),
         textAlign: TextAlign.center,
@@ -340,7 +340,7 @@ class _OptionMeaning extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final meaning = Text(card.native, style: style);
-    if (card.picture == null) return meaning;
+    if (!card.hasPicture) return meaning;
     return Row(
       children: <Widget>[
         CardPicture(card, size: 32),
