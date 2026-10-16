@@ -74,10 +74,11 @@ typedef LessonSets = ({
 ///   together."): a member [isNew] is added where the first member picked
 ///   is, in the set's order. The lesson's cap holds only outside sets.
 /// - Its known members are shown, marked, and not drilled.
-/// - **Both sets, then drills**: every set's parts come first, in the order
-///   their first member was picked, a set of one word across its forms (or
-///   of words by ref) before a set of one slot across words, and each set
-///   divided by [setParts]; a part whose members are all known is still
+/// - **Both sets, then drills**: every set's parts come first, each set of
+///   one word across its forms (or of words by ref) before every set of one
+///   slot across words, even when a slot's set has a member picked earlier;
+///   within each kind, in the order their first member was picked. Each set
+///   is divided by [setParts]; a part whose members are all known is still
 ///   shown.
 ///
 /// [isNew] says whether a member can be taught now: not taught yet, and
@@ -100,8 +101,8 @@ LessonSets lessonSets(
   }
   shown.sort((a, b) {
     for (final (x, y) in <(int, int)>[
-      (a.$1, b.$1),
       (a.$2, b.$2),
+      (a.$1, b.$1),
       (a.$3, b.$3),
     ]) {
       if (x != y) return x.compareTo(y);

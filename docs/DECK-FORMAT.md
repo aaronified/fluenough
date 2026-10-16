@@ -1462,9 +1462,10 @@ prose](#script-in-prose-always-with-its-reading)).
   six as 3 + 3. Each part is a card of the lesson, labelled "The set · 1
   of 3", and repeats the explanation. A part whose members are all known
   is still shown.
-- **Both sets, then drills.** Every set's parts come first, in the order
-  their first member is reached, a row's set (one verb across the persons)
-  before a slot's (one person across the verbs). Then the drills.
+- **Both sets, then drills.** Every set's parts come first: every row's
+  set (one verb across the persons) before every slot's (one person across
+  the verbs), even when a slot's set has a member picked first, and each
+  kind in the order its first member is reached. Then the drills.
 - **A new word** keeps its own New card and its first question. **A new
   verb form** (a rules table's cell) goes straight to its question, with
   no New card: the set card taught it. Each is asked once, in the order it

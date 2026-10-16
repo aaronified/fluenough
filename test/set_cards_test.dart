@@ -434,6 +434,17 @@ cards:
       ]);
     });
 
+    test('the verb set first, even when a form only the person set has '
+        'was picked first', () {
+      final lesson = telugu([form('cudu', 'atanu'), form('tagu', 'atanu')]);
+      expect(lesson.parts.map((p) => p.set.set.id).toSet().toList(), [
+        'verb',
+        'person',
+      ]);
+      expect(lesson.parts.first.set.set.id, 'verb');
+      expect(lesson.parts.last.set.set.id, 'person');
+    });
+
     test('every new form is taught, past the cap, each once', () {
       final lesson = telugu([form('tagu', 'atanu')]);
       expect(lesson.cards, [
