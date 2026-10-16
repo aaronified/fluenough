@@ -49,6 +49,17 @@ Proposed is listed in their decisions tables.
   active one (#528). It shows before, during and after a swipe, with two
   and with four languages, at 1.4x, and with the menu and TalkBack as the
   tap and screen-reader alternatives.
+- `language-bar-proposals.html`: four proposals (A to D) for a top bar on
+  Today, Decks and Progress that holds only the language chips and the
+  bug report button (owner, 2026-10-16: "Language chips is better. I was
+  thinking a top bar only for the language and the debug button. Do 3-4
+  different proposals on this first."). A is a scrolling chip row, B
+  segments with More, C the shown language named and the others as
+  glyphs, and D every chip at the top, folding to one line on scroll.
+  Each is drawn with 1, 2, 4 and 6 languages, a swipe before, during and
+  after, all three screens, 1.4x and TalkBack. Section 0 shows where the
+  rest of today's headers goes, and a measured comparison table ends it.
+  All Proposed: the owner chooses one.
 
 ## Older: to be adapted (owner, 2026-10-12)
 
