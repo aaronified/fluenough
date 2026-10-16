@@ -159,6 +159,12 @@ class RuleSets(SetCase):
                           f"slot, one of ['lo'], or use a part of speech of its rows "
                           f"(noun) as the key")
 
+    def test_a_part_of_speech_is_one_of_its_rows(self) -> None:
+        self.add_set({**SET, "members": {"rule": "zz-grammar-case-endings",
+                                         "verb": "lo"}})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members.verb: "
+                          f"zz-grammar-case-endings's rows are noun, not verb")
+
     def test_one_value_beside_the_rule(self) -> None:
         self.add_set({**SET, "members": {"rule": "zz-rule-lo", "case": "lo",
                                          "noun": "అమ్మ"}})
