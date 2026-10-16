@@ -2,6 +2,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/decks/ipa_course.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
 
 /// A small IPA course, as single-file decks (ADR-0041): two decks, the
 /// first with symbols every learner needs and one for Hindi, the second with
@@ -41,6 +42,7 @@ const String ipaExamples = '''
     examples:
       - { target: "hot", native: "hot", language: en, ipa: "hɒt" }
       - { target: "go", native: "go", language: en, sounds: false, ipa: "ɡəʊ" }
+      - { target: "pato", native: "duck", language: es, ipa: "ˈpato" }
 ''';
 
 final Map<String, String> ipaFiles = <String, String>{
@@ -92,12 +94,20 @@ cards:
 };
 
 /// An app learning [languages], with the IPA course at [scope].
-AppState ipaApp(List<String> languages, {IpaScope? scope}) {
+AppState ipaApp(
+  List<String> languages, {
+  IpaScope? scope,
+  TtsEngine tts = const NullTtsEngine(),
+}) {
   final settings = SettingsNotifier(
     spokenLanguages: const <String>['en'],
     learningLanguages: languages,
     learningChosen: true,
   );
   if (scope != null) settings.ipaScope = scope;
-  return AppState.test(decks: MemoryDeckSource(ipaFiles), settings: settings);
+  return AppState.test(
+    decks: MemoryDeckSource(ipaFiles),
+    settings: settings,
+    tts: tts,
+  );
 }
