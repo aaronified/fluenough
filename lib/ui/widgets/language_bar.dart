@@ -71,7 +71,7 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
 }
 
 /// The language bar at the top of Today, Decks and Progress (#528,
-/// `docs/mockups/language-bar.html`): always folded, 56 high. The language
+/// its approved mockup, in git history): always folded, 56 high. The language
 /// shown is its chip, glyph and name; every other language the learner
 /// learns is its bare glyph, faded to 64%, in the learner's order, the chip
 /// in its own place. Then a 48 wide slot, which on Progress holds the All
@@ -126,7 +126,9 @@ class _LanguageBarState extends State<LanguageBar> {
 
   bool _dragging = false;
   double _drag = 0;
-  double _zoneWidth = 0;
+
+  /// The scroll offset the row is animating to, while it is.
+  double? _animatingTo;
 
   /// While dragging, the language the swipe would show.
   String? _target;
@@ -205,7 +207,8 @@ class _LanguageBarState extends State<LanguageBar> {
     final velocity = details.primaryVelocity ?? 0;
     final flick = velocity.abs() > 300 && (velocity < 0) == (_drag < 0);
     final target = _target;
-    final far = _drag.abs() > _zoneWidth / 3;
+    // Past a third of the whole bar's width, as the mockup says (#528).
+    final far = _drag.abs() > (context.size?.width ?? 0) / 3;
     setState(() {
       _dragging = false;
       _drag = 0;
@@ -250,14 +253,24 @@ class _LanguageBarState extends State<LanguageBar> {
         position.minScrollExtent,
         position.maxScrollExtent,
       );
-      if ((target - position.pixels).abs() > 0.5) {
+      final animating = _animatingTo;
+      if (animating != null && (animating - target).abs() <= 0.5) {
+        // Already on its way there: a rebuild meanwhile does not cut the
+        // animation short with a jump.
+      } else if ((target - position.pixels).abs() > 0.5) {
         if (_centredOn != null && _centredOn != shown) {
-          _row.animateTo(
-            target,
-            duration: const Duration(milliseconds: 250),
-            curve: Curves.easeOut,
-          );
+          _animatingTo = target;
+          _row
+              .animateTo(
+                target,
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeOut,
+              )
+              .whenComplete(() {
+                if (_animatingTo == target) _animatingTo = null;
+              });
         } else {
+          _animatingTo = null;
           _row.jumpTo(target);
         }
       }
@@ -409,10 +422,7 @@ class _LanguageBarState extends State<LanguageBar> {
                   _choose(state, previous),
           },
           excludeSemantics: true,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              _zoneWidth = constraints.maxWidth;
-              return GestureDetector(
+          child: GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onHorizontalDragStart: (_) {
                   _dragging = true;
@@ -437,8 +447,6 @@ class _LanguageBarState extends State<LanguageBar> {
                     ),
                   ),
                 ),
-              );
-            },
           ),
         ),
       );
