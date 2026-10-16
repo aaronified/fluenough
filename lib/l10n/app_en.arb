@@ -1724,11 +1724,21 @@
   },
   "wordSheetIpa": "/{ipa}/",
   "@wordSheetIpa": {
-    "description": "How a word is said, in the IPA, on its card. The slashes mark IPA; keep them.",
+    "description": "How a word is said, in the IPA: on its card, on drill cards, in passages and in Inspect. The slashes mark IPA; keep them.",
     "placeholders": {
       "ipa": {
         "type": "String",
         "example": "kaːlam"
+      }
+    }
+  },
+  "ipaSemantics": "In the IPA: {ipa}",
+  "@ipaSemantics": {
+    "description": "Screen-reader label of a word's IPA line: how it is said, in the International Phonetic Alphabet. The IPA is deck content.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "paːlu"
       }
     }
   },
@@ -4141,6 +4151,18 @@
   "settingsRomanisationOff": "Only the script, no reading",
   "@settingsRomanisationOff": {
     "description": "Under Latin-letter readings, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsIpa": "IPA pronunciations",
+  "@settingsIpa": {
+    "description": "Switch in Settings, Learning (#533): show how words are said in the International Phonetic Alphabet, as /paːlu/, where a deck gives it. IPA is the alphabet's usual abbreviation."
+  },
+  "settingsIpaOn": "How each word is pronounced will be shown under words, in IPA standards",
+  "@settingsIpaOn": {
+    "description": "Under IPA pronunciations, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsIpaOff": "No IPA on cards or passages",
+  "@settingsIpaOff": {
+    "description": "Under IPA pronunciations, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped. A word's own page still shows it."
   },
   "settingsAdult": "Adult content (18+)",
   "@settingsAdult": {
